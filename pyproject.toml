@@ -5,14 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "conlanger"
 dynamic = ["version"]
-requires-python = ">= 3.12"
+requires-python = ">= 3.8"
 
 dependencies = [
-    "cldfbench_wals @ git+https://github.com/cldf-datasets/wals@v2020.3",
+    "cldfbench_wals @ git+https://github.com/cldf-datasets/wals.git@v2020#egg=cldfbench_wals",
 ]
 
 [project.optional-dependencies]
-testing = ["pytest", "pytest-cov", "pytest-mock"]
+testing = ["pytest", "pytest-cov", "pytest-mock", "ipykernel"]
 
 [tool.setuptools.dynamic]
 version = { attr = "conlanger.__VERSION__" }
