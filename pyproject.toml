@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "conlanger"
+dynamic = ["version"]
+requires-python = ">= 3.12"
+
+dependencies = [
+    "cldfbench_wals @ git+https://github.com/cldf-datasets/wals@v2020.3",
+]
+
+[project.optional-dependencies]
+testing = ["pytest", "pytest-cov", "pytest-mock"]
+
+[tool.setuptools.dynamic]
+version = { attr = "conlanger.__VERSION__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["tests", "notebooks"]
+
+[tool.pytest.ini_options]
+testpaths = "tests"
+addopts = ["--cov=src", "--cov-report=html"]
+
+[tool.coverage.run]
+branch = true
+source = ["src"]
+
+[tool.coverage.report]
+fail_under = 95
+skip_empty = true
