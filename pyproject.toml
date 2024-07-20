@@ -11,6 +11,7 @@ dependencies = [
     # "cldfbench_wals @ git+https://github.com/cldf-datasets/wals.git@v2020#egg=cldfbench_wals",
     "requests",
     "ipykernel",
+    "matplotlib",
 ]
 
 [project.optional-dependencies]
