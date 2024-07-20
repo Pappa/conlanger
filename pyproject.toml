@@ -5,13 +5,17 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "conlanger"
 dynamic = ["version"]
-requires-python = ">= 3.8"
+requires-python = ">= 3.12"
 
 dependencies = [
     # "cldfbench_wals @ git+https://github.com/cldf-datasets/wals.git@v2020#egg=cldfbench_wals",
     "requests",
     "ipykernel",
     "matplotlib",
+    "tensorflow",
+    "keras",
+    "pandas",
+    "scikit-learn",
 ]
 
 [project.optional-dependencies]
