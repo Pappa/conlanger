@@ -19,7 +19,7 @@ Language phonemes npy file: [language_phonemes.npy](./notebooks/data/language_ph
 
 Before using a GAN to generate phoneme collections for new languages, I wanted to ensure that it was possible to predict languages by their phonemes.
 
-[Language prediction notebook](./notebooks/predict_languages.ipynb)
+Language prediction notebook: [predict_languages.ipynb](./notebooks/predict_languages.ipynb)
 
 Overall, it's difficult because a small number of languages have many training examples while the majority have only 1 or 2. Also, the number of classes is very high relative to the number of training samples (approx 80%). The model tends to juts pick languages with the most samples in the training data. However, it does perform better than random chance and better than just picking one of the 5 most common languages in the training set.
 
