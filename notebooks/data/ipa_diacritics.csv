@@ -1,34 +1,37 @@
 suffix,description
+None,Standard
 ː,Long
+ˑ,Half-long
 ̥,Voiceless
 ̊,Voiceless
-̤,Breathy voiced
-̪,Dental
 ̬,Voiced
-̰,Creaky voiced
-̺,Apical
 ʰ,Aspirated
-̼,Linguolabial
-̻,Laminal
 ̹,More rounded
-ʷ,Labialized
-̃,Nasalized
 ̜,Less rounded
-ʲ,Palatalized
-ⁿ,Nasal release
 ̟,Advanced
-ˠ,Velarized
-ˡ,Lateral release
 ̠,Retracted
-ˤ,Pharyngealized
-̚,No audible release
 ̈,Centralized
 ̽,Mid-centralized
-̝,Raised
 ̩,Syllabic
-̞,Lowered
 ̯,Non-syllabic
-̘,Advanced tongue root    
-ʼ,Ejective
 ˞,Rhoticity
+̤,Breathy voiced
+̰,Creaky voiced
+̼,Linguolabial
+ʷ,Labialized
+ʲ,Palatalized
+ˠ,Velarized
+ˤ,Pharyngealized
+◌̴,Velarized or pharyngealized
+̝,Raised
+̞,Lowered
+̘,Advanced tongue root
 ̙,Retracted tongue root
+̪,Dental
+̺,Apical
+̻,Laminal
+̃,Nasalized
+ⁿ,Nasal release
+ˡ,Lateral release
+̚,No audible release
+ʼ,Ejective
