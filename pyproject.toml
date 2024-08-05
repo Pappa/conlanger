@@ -16,6 +16,7 @@ dependencies = [
     "keras",
     "pandas",
     "scikit-learn",
+    "tqdm",
 ]
 
 [project.optional-dependencies]
