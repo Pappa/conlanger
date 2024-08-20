@@ -1,9 +1,15 @@
-,Bilabial,Bilabial_v,Labiodental,Labiodental_v,Dental,Dental_v,Alveolar,Alveolar_v,Postalveolar,Postalveolar_v,Retroflex,Retroflex_v,Palatal,Palatal_v,Velar,Velar_v,Uvular,Uvular_v,Pharyngeal,Pharyngeal_v,Glottal,Glottal_v
-Plosive,p,b,,,t̪,d̪,t,d,,,ʈ,ɖ,c,ɟ,k,ɡ,q,ɢ,,-1,ʔ,-1
-Nasal,,m,,ɱ,,n̪,,n,,,,ɳ,,ɲ,,ŋ,,ɴ,-1,-1,-1,-1
-Trill,,ʙ,,,,r̪,,r,,,,,,,-1,-1,,ʀ,,,-1,-1
-Tap or Flap,,,,ⱱ,,ɾ̪,,ɾ,,,,ɽ,,,-1,-1,,,,,-1,-1
-Fricative,ɸ,β,f,v,θ,ð,s,z,ʃ,ʒ,ʂ,ʐ,ç,ʝ,x,ɣ,χ,ʁ,ħ,ʕ,h,ɦ
-Lateral fricative,-1,-1,-1,-1,,,ɬ,ɮ,,,,,,,,,,,-1,-1,-1,-1
-Approximant,,,,ʋ,,,,ɹ,,,,ɻ,,j,,ɰ,,,,,-1,-1
-Lateral approximant,-1,-1,-1,-1,,l̪,,l,,,,ɭ,,ʎ,,ʟ,,,-1,-1,-1,-1
+,Bilabial,Bilabial_v,Labiodental,Labiodental_v,Linguolabial,Linguolabial_v,Dental,Dental_v,Alveolar,Alveolar_v,Postalveolar,Postalveolar_v,Retroflex,Retroflex_v,Palatal,Palatal_v,Velar,Velar_v,Uvular,Uvular_v,Pharyngeal,Pharyngeal_v,Glottal,Glottal_v
+Nasal,m̥,m,ɱ̊,ɱ,,n̼,,,n̥,n,,,ɳ̊,ɳ,ɲ̊,ɲ,ŋ̊,ŋ,ɴ̥,ɴ,-1,-1,-1,-1
+Plosive,p,b,p̪,b̪,t̼,d̼,,,t,d,,,ʈ,ɖ,c,ɟ,k,ɡ,q,ɢ,,-1,ʔ,-1
+Sibilant affricate,-1,-1,-1,-1,-1,-1,,,ts,dz,t̠ʃ,d̠ʒ,tʂ,dʐ,tɕ,dʑ,-1,-1,-1,-1,-1,-1,-1,-1
+Non-sibilant affricate,pɸ,bβ,p̪f,b̪v,,,t̪θ,d̪ð,tɹ̝̊,dɹ̝,t̠ɹ̠̊˔,d̠ɹ̠˔,,,cç,ɟʝ,kx,ɡɣ,qχ,ɢʁ,ʡʜ,ʡʢ,ʔh,,
+Sibilant fricative,-1,-1,-1,-1,-1,-1,,,s,z,ʃ,ʒ,ʂ,ʐ,ɕ,ʑ,-1,-1,-1,-1,-1,-1,-1,-1
+Non-sibilant fricative,ɸ,β,f,v,θ̼,ð̼,θ,ð,θ̠,ð̠,ɹ̠̊˔,ɹ̠˔,ɻ̊˔,ɻ˔,ç,ʝ,x,ɣ,χ,ʁ,ħ,ʕ,h,ɦ
+Approximant,,,,ʋ,,,,,,ɹ,,,,ɻ,,j,,ɰ,,,,,,ʔ̞
+Tap/flap,,ⱱ̟,,ⱱ,,ɾ̼,,,ɾ̥,ɾ,,,ɽ̊,ɽ,,,,,,ɢ̆,,ʡ̆,,,
+Trill,ʙ̥,ʙ,,,,,,,r̥,r,,,ɽ̊r̥,ɽr,,,-1,-1,ʀ̥,ʀ,ʜ,ʢ,-1,-1
+Fricative,ɸ,β,f,v,,,θ,ð,s,z,ʃ,ʒ,ʂ,ʐ,ç,ʝ,x,ɣ,χ,ʁ,ħ,ʕ,h,ɦ
+Lateral affricate,-1,-1,-1,-1,,,,,tɬ,dɮ,,,tꞎ,d𝼅,c𝼆,ɟʎ̝,k𝼄,ɡʟ̝,,,-1,-1,-1,-1
+Lateral fricative,-1,-1,-1,-1,,,,,ɬ,ɮ,,,ꞎ,𝼅,𝼆,ʎ̝,𝼄,ʟ̝,,,-1,-1,-1,-1
+Lateral approximant,-1,-1,-1,-1,,,,,,l,,,,ɭ,,ʎ,,ʟ,,ʟ̠,-1,-1,-1,-1
+Lateral tap/flap,-1,-1,-1,-1,,,,,ɺ̥,ɺ,,,𝼈̥,𝼈,,ʎ̆,,ʟ̆,,,-1,-1,-1,-1
