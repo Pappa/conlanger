@@ -54,7 +54,7 @@ def display_rows(
     cnt = 0
     for i in range(r):
         for j in range(c):
-            if titles[cnt] is not None:
+            if titles is not None and titles[cnt] is not None:
                 axs[i, j].set_title(titles[cnt][0:20], fontsize=12)
             axs[i, j].imshow(images[cnt], cmap=cmap)
             axs[i, j].axis("off")
