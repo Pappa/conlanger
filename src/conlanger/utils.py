@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import tensorflow as tf
+import numpy as np
 
 
 
@@ -55,7 +56,7 @@ def display_rows(
     for i in range(r):
         for j in range(c):
             if titles is not None and titles[cnt] is not None:
-                axs[i, j].set_title(titles[cnt][0:20], fontsize=12)
+                axs[i, j].set_title(titles[cnt][0:18], fontsize=12)
             axs[i, j].imshow(images[cnt], cmap=cmap)
             axs[i, j].axis("off")
             cnt += 1
@@ -71,3 +72,19 @@ def normalize_image_data(img):
 
 def denormalize_image_data(img):
     return img * 255
+
+def get_closest_matches(train, generated, n=12):
+    closest = np.zeros(shape=(n, *generated.shape[1:]))
+    closest_idx = np.zeros(shape=(n)).astype(int)
+
+    cnt = 0
+    for _ in range(n):
+        c_diff = 99999
+        for sample_idx, sample in enumerate(train):
+            diff = np.mean(np.abs(generated[cnt] - sample))
+            if diff < c_diff:
+                closest_idx[cnt] = sample_idx
+                closest[cnt] = sample.copy()
+                c_diff = diff
+        cnt += 1
+    return closest_idx, closest
