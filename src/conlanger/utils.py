@@ -88,3 +88,13 @@ def get_closest_matches(train, generated, n=12):
                 c_diff = diff
         cnt += 1
     return closest_idx, closest
+
+def get_exact_matches(train, generated):
+    matches_idx = []
+    for idx, sample in enumerate(train):
+        for g in generated:
+            if np.sum(g - sample) == 0:
+                matches_idx.append(idx)
+                break
+        
+    return np.array(matches_idx)
