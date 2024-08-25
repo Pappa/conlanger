@@ -1,6 +1,6 @@
 ,Bilabial,Bilabial_v,Labiodental,Labiodental_v,Linguolabial,Linguolabial_v,Dental,Dental_v,Alveolar,Alveolar_v,Postalveolar,Postalveolar_v,Retroflex,Retroflex_v,Palatal,Palatal_v,Velar,Velar_v,Uvular,Uvular_v,Pharyngeal,Pharyngeal_v,Glottal,Glottal_v
 Nasal,m̥,m,ɱ̊,ɱ,,n̼,,,n̥,n,,,ɳ̊,ɳ,ɲ̊,ɲ,ŋ̊,ŋ,ɴ̥,ɴ,-1,-1,-1,-1
-Plosive,p,b,p̪,b̪,t̼,d̼,,,t,d,,,ʈ,ɖ,c,ɟ,k,ɡ,q,ɢ,,-1,ʔ,-1
+Plosive,p,b,p̪,b̪,t̼,d̼,t̪,d̪,t,d,t̠,d̠,ʈ,ɖ,c,ɟ,k,ɡ,q,ɢ,,-1,ʔ,-1
 Sibilant affricate,-1,-1,-1,-1,-1,-1,,,ts,dz,t̠ʃ,d̠ʒ,tʂ,dʐ,tɕ,dʑ,-1,-1,-1,-1,-1,-1,-1,-1
 Non-sibilant affricate,pɸ,bβ,p̪f,b̪v,,,t̪θ,d̪ð,tɹ̝̊,dɹ̝,t̠ɹ̠̊˔,d̠ɹ̠˔,,,cç,ɟʝ,kx,ɡɣ,qχ,ɢʁ,ʡʜ,ʡʢ,ʔh,
 Sibilant fricative,-1,-1,-1,-1,-1,-1,,,s,z,ʃ,ʒ,ʂ,ʐ,ɕ,ʑ,-1,-1,-1,-1,-1,-1,-1,-1
