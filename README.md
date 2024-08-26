@@ -2,7 +2,7 @@
 
 An experiment in automatic Conlang creation. 
 
-I am a novice Conlanger, currently enjoying the view from the peak of Mount Stupid, so this may go nowhere.
+I am a novice Conlanger, currently enjoying the view from the peak of Mount Stupid, so this may go nowhere useful. I'm mostly hoping it goes somewhere dumb and ridiculous.
 
 ![Peak of Mount Stupid](./docs/dunning-kruger.png)
 
