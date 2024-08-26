@@ -33,7 +33,7 @@ Phoneme inventory generation notebook: [phoneme_gan.ipynb](./notebooks/phoneme_g
 - Determine phonotactics (probably just default to _(C)V_ to begin with)
 - Generate root words using the phoneme inventory
 - Determine basic grammar
-- Create proto-language lexocon
+- Create proto-language lexicon
 - Apply (random?) selection of sound change rules
    - Update phonology, phonotactics, grammar and lexicon after each iteration
    - Is it possible to determine and update language morphology here?
