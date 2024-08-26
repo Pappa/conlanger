@@ -1,6 +1,8 @@
 # conlanger
 
-An experiment in automatic Conlang creation. I am a novice Conlanger, currently enjoying the view from the peak of Mount Stupid, so this may go nowhere.
+An experiment in automatic Conlang creation. 
+
+I am a novice Conlanger, currently enjoying the view from the peak of Mount Stupid, so this may go nowhere.
 
 ![Peak of Mount Stupid](./docs/dunning-kruger.png)
 
