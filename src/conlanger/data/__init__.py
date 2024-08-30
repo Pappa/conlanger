@@ -1,0 +1,1 @@
+from .syllable_structure import SYLLABLE_STRUCTURE

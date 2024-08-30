@@ -31,11 +31,12 @@ exclude = ["tests", "notebooks"]
 
 [tool.pytest.ini_options]
 testpaths = "tests"
-addopts = ["--cov=src", "--cov-report=html"]
+addopts = ["--cov=src", "--cov-report=html", "-s", "-vv"]
 
 [tool.coverage.run]
 branch = true
 source = ["src"]
+omit = ["src/conlanger/models/*"]
 
 [tool.coverage.report]
 fail_under = 95

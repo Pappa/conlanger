@@ -1,1 +1,1 @@
-from .SyllableStructure import SyllableStructure
+from conlanger.tools.SyllableStructure import SyllableStructure
