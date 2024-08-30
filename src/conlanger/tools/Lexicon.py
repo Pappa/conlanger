@@ -1,39 +1,42 @@
+import re
+import random
+
 class Lexicon:
 
     def __init__(
         self,
         syllable_structure: str,
-        phonemes=None,
+        consonants=None,
+        vowels=None,
+        glides=None,
+        nasals=None,
         word_list=None,
         style=None,
         weirdness=0.5,
+        seed=None
     ) -> None:
-        self._allowed_phoneme_types = ("C", "V", "G", "N")
+        self._phonemes = {
+            "C": consonants, "V": vowels, "G": glides, "N": nasals
+        }
         self._syllable_structure = self._parse_syllable_structure(syllable_structure)
-        self._phonemes = phonemes
         self._word_list = word_list
         self._style = style
         self._weirdness = weirdness
+        random.seed(seed)
 
-    def _parse_syllable_structure(self, structure: str):
-        syllable_structure = []
-        optional = False
 
-        if len(structure) == 0:
+    def _parse_syllable_structure(self, structure: str) -> list[dict]:
+        types = "".join(self._phonemes.keys())
+        matches = re.findall(r"\([{0}]\)|[{0}]".format(types), structure)
+
+        if len(matches) == 0 or "".join(matches) != structure:
             raise ValueError("Invalid syllable structure")
+        
+        return [{"type": re.search(r"[{0}]".format(types), c)[0], "optional": len(c) > 1} for c in matches]
+    
+    def create_syllable(self) -> str:
+        syllable = ""
+        for c in self._syllable_structure:
+            if c.optional and random.random() < self._weirdness:
+                pass
 
-        for c in list(structure):
-            if c == "(":
-                if optional:
-                    raise ValueError("Invalid syllable structure")
-                optional = True
-            elif c == ")":
-                if not optional:
-                    raise ValueError("Invalid syllable structure")
-                optional = False
-            elif c in self._allowed_phoneme_types:
-                syllable_structure.append({"type": c, "optional": optional})
-            else:
-                raise ValueError("Invalid syllable structure")
-
-        return syllable_structure
