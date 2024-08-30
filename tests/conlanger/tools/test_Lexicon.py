@@ -10,10 +10,7 @@ def test_Lexicon_syllable_structure(structure):
     try:
         Lexicon(syllable_structure=structure)
     except ValueError:
-        pytest.fail("Unexpected ValueError") @ pytest.mark.parametrize(
-            "structure",
-            [("(C)V(C)"), ("(C)(G)V(C)"), ("(C)(G)V(N)")],
-        )
+        pytest.fail("Unexpected ValueError")
 
 
 @pytest.mark.parametrize(
