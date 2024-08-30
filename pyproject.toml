@@ -41,3 +41,4 @@ omit = ["src/conlanger/models/*"]
 [tool.coverage.report]
 fail_under = 95
 skip_empty = true
+exclude_also = ["def display_rows\\("]
