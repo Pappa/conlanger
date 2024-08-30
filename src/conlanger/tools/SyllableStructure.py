@@ -3,7 +3,8 @@ from conlanger.data import SYLLABLE_STRUCTURE
 
 
 class SyllableStructure:
-    def __init__(self, seed=None):
+
+    def __init__(self, seed=None) -> None:
         np.random.seed(seed)
         self._structures, counts = np.unique(
             np.array(SYLLABLE_STRUCTURE)[:, 1],
