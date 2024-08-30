@@ -1,0 +1,2 @@
+class Lexicon:
+    pass
