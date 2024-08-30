@@ -1,13 +1,19 @@
 class Lexicon:
 
     def __init__(
-        self, syllable_structure: str, phonemes=None, word_list=None, weirdness=0.5
+        self,
+        syllable_structure: str,
+        phonemes=None,
+        word_list=None,
+        style=None,
+        weirdness=0.5,
     ) -> None:
         self._allowed_phoneme_types = ("C", "V", "G", "N")
         self._syllable_structure = self._parse_syllable_structure(syllable_structure)
         self._phonemes = phonemes
-        self._weirdness = weirdness
         self._word_list = word_list
+        self._style = style
+        self._weirdness = weirdness
 
     def _parse_syllable_structure(self, structure: str):
         syllable_structure = []
