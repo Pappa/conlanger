@@ -24,6 +24,8 @@ class Lexicon:
 
         for c in list(structure):
             if c == "(":
+                if optional:
+                    raise ValueError("Invalid syllable structure")
                 optional = True
             elif c == ")":
                 if not optional:

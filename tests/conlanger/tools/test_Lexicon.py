@@ -15,7 +15,7 @@ def test_Lexicon_syllable_structure(structure):
 
 @pytest.mark.parametrize(
     "structure",
-    [(""), ("C)(G)V(C)"), ("(A)(C)V(C)")],
+    [(""), ("C)(G)V(C)"), ("(C(G)V(C)"), ("(A)(C)V(C)")],
 )
 def test_Lexicon_syllable_structure_errors(structure):
     with pytest.raises(ValueError, match="Invalid syllable structure"):
