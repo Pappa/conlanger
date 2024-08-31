@@ -6,6 +6,7 @@ from conlanger.tools import SyllableStructure
 @dataclass
 class Phoneme:
     token: str
+    nucleus: bool = False
 
     def __str__(self):
         return self.token
@@ -59,7 +60,12 @@ class Lexicon:
         syllable = []
         for c in self._syllable_structure:
             if not c.optional or (c.optional and random.random() < self._probability):
-                syllable.append(Phoneme(random.choice(self._phonemes[c.type])))
+                syllable.append(
+                    Phoneme(
+                        random.choice(self._phonemes[c.type]),
+                        nucleus=c.optional is False,
+                    )
+                )
 
         return Syllable(syllable)
 
