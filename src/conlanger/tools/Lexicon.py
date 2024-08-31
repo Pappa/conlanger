@@ -7,15 +7,24 @@ from conlanger.tools import SyllableStructure
 class Phoneme:
     token: str
 
+    def __str__(self):
+        return self.token
+
 
 @dataclass
 class Syllable:
     phonemes: list[Phoneme]
 
+    def __str__(self):
+        return "".join([str(p) for p in self.phonemes])
+
 
 @dataclass
 class Word:
     syllables: list[Syllable]
+
+    def __str__(self):
+        return "".join([str(p) for p in self.syllables])
 
 
 class Lexicon:
@@ -46,16 +55,16 @@ class Lexicon:
         except ValueError as e:
             raise ValueError("Invalid syllable structure") from e
 
-    def create_syllable(self) -> str:
-        syllable = ""
+    def create_syllable(self) -> Syllable:
+        syllable = []
         for c in self._syllable_structure:
             if not c.optional or (c.optional and random.random() < self._probability):
-                syllable += random.choice(self._phonemes[c.type])
+                syllable.append(Phoneme(random.choice(self._phonemes[c.type])))
 
-        return syllable
+        return Syllable(syllable)
 
-    def create_word(self) -> str:
-        return "".join(
+    def create_word(self) -> Word:
+        return Word(
             [
                 self.create_syllable()
                 for _ in range(random.randint(1, self._max_syllables))
