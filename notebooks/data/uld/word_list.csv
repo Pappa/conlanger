@@ -1,0 +1,605 @@
+idx,word,usage
+001,about,pr
+002,over,pr
+003,across (at / to the other side of),pr
+004,after (in the future of),pr
+006,at,pr
+007,because of,pr
+008,before / in front of,pr
+009,before,pr
+00A,in back of,pr
+00B,between / among,pr
+00D,with,pr
+00F,other than,pr
+010,for (for the purpose of),pr
+011,for (in exchange for),pr
+012,from / out of,,pr
+013,in,pr
+015,like,pr
+016,near,pr
+017,of,pr
+018,of,pr
+019,on,pr
+01B,than,pr/cj
+01C,through,pr
+01D,to / at,pr
+01E,under,pr
+01F,with,pr
+020,with no...,pr
+021,be,v
+023,become,v
+024,cause,v
+025,make,v
+026,do,v
+027,have,v
+028,is/are able to...,aux/v/pres
+02A,this,adj/pn
+02B,that,adj/pn
+02C,and,cj
+02D,but,cj
+02E,if / on condition that,cj
+02F,or,cj
+030,that,cj
+033,here (in/to this place),av
+034,how?,av
+036,not,av
+037,only,av
+038,there (at/to that place),av
+039,together,av
+03A,when?,av
+03B,where?,av
+03C,why?,av
+03D,any,adj
+03E,every,adj
+03F,person,n
+040,baby,n
+042,boy,n
+043,girl,n
+044,man,n
+045,woman,n
+046,family,n
+047,father,n
+048,mother,n
+04C,son,n
+04D,daughter,n
+04E,brother,n
+04F,sister,n
+050,chief,n
+05B,friend,n
+061,society,n
+062,committee,n
+066,nation,n
+067,public,n
+06C,arm,n
+06D,back,n
+06F,blood,n
+070,body,n
+071,bone,n
+072,brain,n
+076,chest,n
+077,chin,n
+078,ear,n
+079,egg,n
+07A,eye,n
+07B,face,n
+07C,feather,n
+07F,finger,n
+081,foot,n
+084,hair,n
+085,hair,n
+086,hand,n
+087,head,n
+088,heart,n
+08B,horn (bone-like growth from animal's head),n
+08F,knee,n
+090,leg,n
+091,lip,n
+094,meat,n
+095,mouth,n
+096,muscle,n
+097,nail / finger nail,n
+099,neck,n
+09A,nerve,n
+09B,nose,n
+0A2,skin,n
+0A4,stomach,n
+0A6,tail,n
+0A9,throat,n
+0AA,thumb,n
+0AB,toe,n
+0AC,tongue (body-part),n
+0AD,tooth,n
+0B0,blood vessel,n
+0B2,wing (of bird),n
+0B3,wound,n
+0B5,berry (small fruit),n
+0B7,flower,n
+0B8,fruit,n
+0B9,leaf,n
+0BA,nut,n
+0BC,root (of a plant),n
+0BD,seed,n
+0C0,dead,adj
+0C1,birth,n
+0C3,healthy,adj
+0C4,disease,n
+0C5,fat,adj
+0C6,sex,n
+0C7,female,adj
+0C8,male,adj
+0CA,sense,n
+0CB,pain,n
+0CC,pleasure,n
+0CD,tired,adj
+0CF,sleep,v/vn
+0D0,awake,adj
+0D2,bite,v/vn
+0D6,have sex (with),v
+0D8,cry out,v/vn
+0D9,cry,v/vn
+0DC,drink,v/vn
+0E3,jump,v/vn
+0E4,kick,v/vn
+0E6,kiss,v/vn
+0E7,laugh,v/vn
+0EA,run,v/vn
+0ED,smile,v/vn
+0EE,sneeze,v/vn
+0F3,swim,v/vn
+0F4,taste,v/vn
+0F6,touch,v/vn
+0F8,walk,v/vn
+0FA,animal,n
+0FB,ant,n
+0FD,bee,n
+0FE,bird,n
+100,cat,n
+103,cow,n
+105,dog,n
+108,fish,n
+109,fly,n
+10C,goat,n
+10E,horse,n
+10F,insect,n
+115,monkey,n
+118,pig,n
+11B,sheep,n
+11C,snake,n
+125,worm,n
+126,apple,n
+12D,cork,n
+12F,cotton,n
+139,grass,n
+146,orange,n
+14D,potato,n
+14E,rice,n
+15B,garden,n
+15C,grain,n
+15E,plant,n
+15F,tree,n
+164,cloud,n
+166,earth,n
+169,field,n
+16F,island,n
+172,moon,n
+173,mountain,n
+176,rain,n
+178,river,n
+17A,sky,n
+17B,snow,n
+17C,star,n
+17E,sun,n
+180,thunder,n
+186,weather,n
+187,wind,n
+18C,rod,n
+18E,basket,n
+18F,bed,n
+190,bell,n
+191,blade,n
+193,board,n
+195,bottle,n
+198,box,n
+199,brake,n
+19A,brick,n
+19C,brush,n
+19F,button,n
+1A4,chain,n
+1A7,clock,n
+1AA,comb,n
+1AD,cord,n
+1AE,cover,n
+1AF,cup,n
+1B0,curtain,n
+1B5,drain,n
+1BD,fork,n
+1BE,frame,n
+1C2,gun,n
+1C3,hammer,n
+1C6,hook,n
+1C7,horn,n
+1CA,key,n
+1CB,knife,n
+1D1,lock,n
+1D2,machine,n
+1D3,match (little fire-stick),n
+1D6,engine,n
+1D7,nail,n
+1D8,needle,n
+1D9,net,n
+1DA,oven,n
+1DB,parcel,n
+1E0,pen,n
+1E1,pencil,n
+1E2,cushion,n
+1E3,pipe,n
+1E4,plate,n
+1E5,plough,n
+1E6,pocket,n
+1E7,stick,n
+1E9,pot (deep round vessel),n
+1EB,pump,n
+1EE,rail,n
+1F3,bag,n
+1F4,sail,n
+1F6,scale,n
+1F7,scissors,n
+1F9,screw,n
+1FA,sign,n
+1FB,shelf,n
+1FF,sponge,n
+201,spoon,n
+202,spring,n
+209,table,n
+213,tray,n
+214,umbrella,n
+217,wheel,n
+218,wire,n
+21C,coat,n
+21D,collar,n
+220,glove,n
+226,trousers,n
+227,shirt,n
+229,shoe,n
+22A,skirt / dress,n
+22E,building,n
+233,door,n
+234,lift,n
+236,floor,n
+237,roof,n
+23A,wall,n
+23B,window,n
+23C,church,n
+23E,hospital,n
+240,house,n
+241,library,n
+244,school,n
+249,bridge,n
+24A,farm,n
+24C,market,n
+24F,army,n
+250,authority,n
+253,control,v/vn
+255,crime,n
+257,free,n
+258,government,n
+25C,law,n
+25D,military,adj
+25E,nation,n
+264,let,v
+26C,tax,n
+270,war,n
+272,account,n
+27A,company (a business organization),n
+27C,credit,n
+283,give,v
+284,insurance,n
+287,keep,n
+28C,money,n
+28D,offer,n
+292,private,n
+296,public,n
+29B,reward,v/vn
+2A0,take,n
+2A2,value,n
+2AE,religion,n
+2B4,angry,adj
+2B6,art,n
+2B7,attention,n
+2BD,care,n
+2C1,comfort,n
+2C9,doubt,v/vn
+2CE,experience,n
+2D0,fear,n
+2D2,foolish,adj
+2DA,guide / lead,v/vn
+2DD,happy,adj
+2DE,hate,v/vn
+2DF,hope,v/vn
+2E3,important,adj
+2E8,interest,n
+2EB,judge,n
+2ED,knowledge,n
+2F2,love,v/vn
+2F5,mind,n
+2F8,kind,adj
+2FA,opinion,n
+2FC,peace,n
+2FF,design,n
+300,play,n
+301,act,v/vn
+302,self-respect,n
+304,thought,n
+306,regret,v/vn
+30C,look for,v/vn
+30F,shame,n
+318,theory,n
+31C,desire,v/vn
+31E,wise,adj
+322,advertisement,n
+329,book,n
+32F,order,n
+336,talk about,v/vn
+339,fact,n
+33A,fiction,n
+33D,history,n
+33E,be a sign of,v
+344,language,n
+345,letter,n
+347,list,n
+34A,map,n
+34D,motion picture,n
+34E,name,n
+351,noise,n
+353,page,n
+357,print,n
+35D,record,n
+360,secret,adj
+367,sign,n
+36A,voice,n
+36D,word,n
+370,match,n
+374,ball,n
+375,stick,n
+383,different,adj
+385,change,n
+389,copy,n
+399,amount / number,n
+39A,number,n
+39C,measure,v/vn
+39D,rate,n
+3A5,rest (of...),n
+3A6,complete,adj
+3A7,all,n
+3A9,a small number of,adj
+3B4,group,n
+3BE,degree,n
+3C1,much / very,n
+3C4,little,n
+3CB,size,n
+3D2,distance,n
+3D3,far,adj/av
+3D4,near,adj/av
+3D5,present,n
+3DC,wide,n
+3DD,narrow,n
+3DF,thick / fat,n
+3E0,thin,n
+3E3,low / short,n
+3EB,angle,n
+3EC,position,n
+3F1,front,n
+3F2,back part of,n
+3F7,edge,n
+3FD,direction,n
+3FE,up,av
+3FF,down,av
+400,north,n
+401,south,n
+402,east,n
+403,west,n
+404,right(-hand),adj
+405,left(-hand),adj
+407,back,n
+416,base / station,n
+41A,come,v
+41E,go into,v
+420,fly (move through the air),v/vn
+423,go,v
+427,come across,v
+433,roll,n
+435,slip,v/vn
+43C,boat,n
+440,cart / carriage,n
+444,road,n
+446,ship,n
+447,street,n
+448,train,n
+44C,young,n
+44D,old,n
+44E,new,n
+44F,old,n
+456,rhythm,n
+457,time,n
+463,start,v/vn
+467,stop,v/vn
+46D,ever (at any time),av
+46F,time,n
+470,past,n
+471,the present,n
+472,future,n
+474,still,n
+475,yesterday,av
+477,tomorrow,av
+479,in the near past,av
+47A,now / at this time,av
+47B,in the near future,av
+47C,in the far future,av
+47E,on time,av/adj
+484,order,n
+489,spring,n
+48A,summer,n
+48B,fall,n
+48C,winter,n
+48E,year,n
+48F,month,n
+490,week,n
+491,day,n
+493,day,n
+494,night,n
+495,morning,n
+49A,middle of the night,n
+49B,hour,n
+49C,minute,n
+49D,second,n
+4A1,air,n
+4A4,brass,n
+4A6,chalk,n
+4A7,chemical,n
+4A9,cloth,n
+4AA,coal,n
+4AB,copper,n
+4AC,earth,n
+4AD,dust,n
+4B1,glass,n
+4B2,gold,n
+4B3,ice,n
+4B4,ink,n
+4B5,iron,n
+4B8,lead (the metal),n
+4B9,leather,n
+4BB,metal,n
+4C0,oil,n
+4C3,paint,n
+4C4,paper,n
+4C9,stone,n
+4CB,salt,n
+4CC,sand,n
+4CD,silk,n
+4CE,silver (the metal),n
+4CF,soap,n
+4D1,steam,n
+4D2,steel,n
+4D5,tin (the metal),n
+4D6,water,n
+4D7,wax,n
+4D8,wood (the substance),n
+4D9,wool,n
+4DB,bitter,adj
+4DC,bread,n
+4DD,butter,n
+4DE,cheese,n
+4E0,taste,n
+4E1,grain-powder,n
+4E2,food,n
+4E4,milk,n
+4EA,soup,n
+4ED,sugar,n
+4EE,sweet,adj
+4F0,wine,n
+4F1,arch,n
+4F4,branch,n
+4F6,card,n
+4F7,circle,n
+4FE,curve,n
+502,drop (of liquid),n
+50B,hole,n
+50C,jelly,n
+50F,line,n
+510,liquid,n
+513,mark,n
+514,material / substance,n
+518,parallel,adj
+519,paste,n
+51E,powder,n
+520,ray,n
+528,smoke,n
+529,solid,n
+52D,square,n
+534,wave,n
+538,level / even (on the same level),adj
+539,smooth,adj
+53B,straight / not bent,adj
+53C,bent,adj
+53E,clean,adj
+540,open / not shut,adj
+541,shut,adj
+542,wet,adj
+543,dry,adj
+54A,elastic,n
+54B,strong,adj
+54C,delicate,adj
+54D,weight,n
+54E,of much weight,adj
+54F,light / of little weight,adj
+550,solid,n
+551,hollow,adj
+553,loose,n
+554,tight,adj
+556,thick,adj
+55B,blow,n
+560,burn,v/vn
+561,burst,v/vn
+564,crush,n
+56C,fold,v/vn
+578,pull,n
+579,push,n
+57D,shake,v/vn
+589,wash,v/vn
+58C,acid,n
+593,fire,n
+594,force,n
+598,power,n
+59B,a blow of force,n
+59D,mist,n
+5A3,see,v
+5A4,light,n
+5A5,colour,n
+5A6,shade,n
+5A9,bright,adj
+5AA,dark,n
+5AB,black,adj
+5AC,grey,adj
+5AD,white,adj
+5AE,red,adj
+5AF,orange,n
+5B0,yellow,adj
+5B1,green,adj
+5B2,blue,adj
+5B4,brown,adj
+5B5,beautiful,adj
+5BD,sound,n
+5BF,quiet / soft,n
+5C0,loud,n
+5C1,hear,v
+5C2,music,n
+5C4,whistle,v/vn
+5C8,of little heat,adj
+5C9,warm,adj
+5CA,of very much heat,adj
+5CB,cook,v/vn
+5CC,cook,n
+5D7,attack,v/vn
+5D8,good,adj
+5D9,bad,adj
+5DB,kind / sort,n
+5DD,probable,n
+5E4,simple,adj
+5E5,complex,adj
+5E7,make,v
+5EA,danger,n
+5EC,hard,adj
+5ED,true,adj
+5F1,damage,v/vn
+605,special,adj
+608,automatic,adj
+610,detail,n
+611,equal,adj
+617,fertile,adj
+618,harmony,n
+61A,match,n
+62A,right (a right to do/be...),n
+62F,system,n
+633,attempt,v/vn
+63A,science,n
+63E,support,v/vn

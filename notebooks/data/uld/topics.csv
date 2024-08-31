@@ -1,0 +1,39 @@
+id,topic,idx_from,idx_to
+1,adpositions,001,020
+2,function words,021,03E
+3,people,03F,05C
+4,titles,05D,060
+5,groupings of people,061,069
+6,body parts and substances,06A,0BE
+7,body terms,0BF,0D1
+8,bodily actions,0D2,0F9
+9,animal species and types,0FA,125
+10,plant species and types,126,15F
+11,natural world,160,188
+12,tools and implements,189,219
+13,clothing,21A,22D
+14,buildings and institutions,22E,24D
+15,government and hierarchy,24E,270
+16,business and transactions,271,2A2
+17,religion and the supernatural,2A3,2B1
+18,mind and emotion,2B2,31F
+19,communication,320,36E
+20,games,36F,380
+21,identity,381,389
+22,numerals,38A,398
+23,quantity,399,3BD
+24,degree,3BE,3CA
+25,dimension, direction,3CB,40E
+26,motion,40F,439
+27,vehicles, etc.,43A,44A
+28,time and sequence,44B,4A0
+29,substances,4A1,4D9
+30,foodstuffs,4DA,4F0
+31,forms of matter,4F1,536
+32,qualities of matter,537,557
+33,matter-related actions,558,58B
+34,misc. matter/energy terms,58C,5A2
+35,light,5A3,5BC
+36,sound,5BD,5C4
+37,heat,5C5,5CC
+38,assorted abstract concepts,5CD,640
