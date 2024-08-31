@@ -63,7 +63,7 @@ class Lexicon:
                 phonemes.append(
                     Phoneme(
                         random.choice(self._phonemes[c.type]),
-                        nucleus=c.optional is False,
+                        nucleus=not c.optional,
                     )
                 )
 
