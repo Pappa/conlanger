@@ -1,5 +1,21 @@
+from dataclasses import dataclass, field
 import random
 from conlanger.tools import SyllableStructure
+
+
+@dataclass
+class Phoneme:
+    token: str
+
+
+@dataclass
+class Syllable:
+    phonemes: list[Phoneme]
+
+
+@dataclass
+class Word:
+    syllables: list[Syllable]
 
 
 class Lexicon:
