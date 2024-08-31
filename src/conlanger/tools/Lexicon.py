@@ -57,17 +57,17 @@ class Lexicon:
             raise ValueError("Invalid syllable structure") from e
 
     def create_syllable(self) -> Syllable:
-        syllable = []
+        phonemes = []
         for c in self._syllable_structure:
             if not c.optional or (c.optional and random.random() < self._probability):
-                syllable.append(
+                phonemes.append(
                     Phoneme(
                         random.choice(self._phonemes[c.type]),
                         nucleus=c.optional is False,
                     )
                 )
 
-        return Syllable(syllable)
+        return Syllable(phonemes)
 
     def create_word(self) -> Word:
         return Word(
