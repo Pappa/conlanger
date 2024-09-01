@@ -23,9 +23,9 @@ id,topic,idx_from,idx_to
 22,numerals,38A,398
 23,quantity,399,3BD
 24,degree,3BE,3CA
-25,dimension, direction,3CB,40E
+25,dimension/direction,3CB,40E
 26,motion,40F,439
-27,vehicles, etc.,43A,44A
+27,vehicles,43A,44A
 28,time and sequence,44B,4A0
 29,substances,4A1,4D9
 30,foodstuffs,4DA,4F0

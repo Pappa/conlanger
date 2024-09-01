@@ -1,14 +1,14 @@
 abbreviation,description
 adj,adjective
 aux,auxiliary
-av,adverb
-cj,conjunction
-ij,interjection
+adv,adverb
+conj,conjunction
+int,interjection
 n,noun
 num,numeral
 pfx,prefix
-pn,pronoun
-pr,preposition
+pron,pronoun
+prep,preposition
 pres,present tense
 rel,relative
 sfx,suffix

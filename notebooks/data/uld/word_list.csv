@@ -1,31 +1,31 @@
 idx,word,usage
-001,about,pr
-002,over,pr
-003,across (at / to the other side of),pr
-004,after (in the future of),pr
-006,at,pr
-007,because of,pr
-008,before / in front of,pr
-009,before,pr
-00A,in back of,pr
-00B,between / among,pr
-00D,with,pr
-00F,other than,pr
-010,for (for the purpose of),pr
-011,for (in exchange for),pr
-012,from / out of,,pr
-013,in,pr
-015,like,pr
-016,near,pr
-017,of,pr
-018,of,pr
-019,on,pr
-01B,than,pr/cj
-01C,through,pr
-01D,to / at,pr
-01E,under,pr
-01F,with,pr
-020,with no...,pr
+001,about,prep
+002,over,prep
+003,across (at / to the other side of),prep
+004,after (in the future of),prep
+006,at,prep
+007,because of,prep
+008,before / in front of,prep
+009,before,prep
+00A,in back of,prep
+00B,between / among,prep
+00D,with,prep
+00F,other than,prep
+010,for (for the purpose of),prep
+011,for (in exchange for),prep
+012,from / out of,prep
+013,in,prep
+015,like,prep
+016,near,prep
+017,of,prep
+018,of,prep
+019,on,prep
+01B,than,pr/conj
+01C,through,prep
+01D,to / at,prep
+01E,under,prep
+01F,with,prep
+020,with no...,prep
 021,be,v
 023,become,v
 024,cause,v
@@ -33,22 +33,22 @@ idx,word,usage
 026,do,v
 027,have,v
 028,is/are able to...,aux/v/pres
-02A,this,adj/pn
-02B,that,adj/pn
-02C,and,cj
-02D,but,cj
-02E,if / on condition that,cj
-02F,or,cj
-030,that,cj
-033,here (in/to this place),av
-034,how?,av
-036,not,av
-037,only,av
-038,there (at/to that place),av
-039,together,av
-03A,when?,av
-03B,where?,av
-03C,why?,av
+02A,this,adj/pron
+02B,that,adj/pron
+02C,and,conj
+02D,but,conj
+02E,if / on condition that,conj
+02F,or,conj
+030,that,conj
+033,here (in/to this place),adv
+034,how?,adv
+036,not,adv
+037,only,adv
+038,there (at/to that place),adv
+039,together,adv
+03A,when?,adv
+03B,where?,adv
+03C,why?,adv
 03D,any,adj
 03E,every,adj
 03F,person,n
@@ -378,8 +378,8 @@ idx,word,usage
 3C4,little,n
 3CB,size,n
 3D2,distance,n
-3D3,far,adj/av
-3D4,near,adj/av
+3D3,far,adj/adv
+3D4,near,adj/adv
 3D5,present,n
 3DC,wide,n
 3DD,narrow,n
@@ -392,8 +392,8 @@ idx,word,usage
 3F2,back part of,n
 3F7,edge,n
 3FD,direction,n
-3FE,up,av
-3FF,down,av
+3FE,up,adv
+3FF,down,adv
 400,north,n
 401,south,n
 402,east,n
@@ -423,19 +423,19 @@ idx,word,usage
 457,time,n
 463,start,v/vn
 467,stop,v/vn
-46D,ever (at any time),av
+46D,ever (at any time),adv
 46F,time,n
 470,past,n
 471,the present,n
 472,future,n
 474,still,n
-475,yesterday,av
-477,tomorrow,av
-479,in the near past,av
-47A,now / at this time,av
-47B,in the near future,av
-47C,in the far future,av
-47E,on time,av/adj
+475,yesterday,adv
+477,tomorrow,adv
+479,in the near past,adv
+47A,now / at this time,adv
+47B,in the near future,adv
+47C,in the far future,adv
+47E,on time,adv/adj
 484,order,n
 489,spring,n
 48A,summer,n
