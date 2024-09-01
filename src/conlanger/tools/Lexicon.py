@@ -16,8 +16,14 @@ class Phoneme:
 class Syllable:
     phonemes: list[Phoneme]
 
+    def __iter__(self):
+        yield from self.phonemes
+
+    def __len__(self):
+        return len(self.phonemes)
+
     def __str__(self):
-        return "".join([str(p) for p in self.phonemes])
+        return "".join(list(map(str, self.phonemes)))
 
 
 @dataclass
@@ -25,7 +31,7 @@ class Word:
     syllables: list[Syllable]
 
     def __str__(self):
-        return "".join([str(p) for p in self.syllables])
+        return "".join(list(map(str, self.syllables)))
 
 
 class Lexicon:
@@ -49,6 +55,7 @@ class Lexicon:
         self._style = style
         self._probability = probability
         self._max_syllables = max_syllables
+        self._lexicon = []
 
     def _parse_syllable_structure(self, structure: str) -> SyllableStructure:
         try:
@@ -76,3 +83,23 @@ class Lexicon:
                 for _ in range(random.randint(1, self._max_syllables))
             ]
         )
+
+    def create(self, word_list=False, count=0):
+        if word_list:
+            self._word_list = word_list
+
+        word_count = max(len(self._word_list), count)
+
+        if word_count == 0:
+            raise ValueError("No word list or count provided")
+        self._lexicon = [self.create_word() for _ in range(word_count)]
+        return self
+
+    def __iter__(self):
+        yield from self._lexicon
+
+    def __len__(self):
+        return len(self._lexicon)
+
+    def __str__(self):
+        return ",".join(list(map(str, self._lexicon)))
