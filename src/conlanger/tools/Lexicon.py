@@ -29,6 +29,12 @@ class Syllable:
 @dataclass
 class Word:
     syllables: list[Syllable]
+    meaning: str | None = None
+    topic: str | None = None
+    v: bool = False
+    n: bool = False
+    adj: bool = False
+    adv: bool = False
 
     def __str__(self):
         return "".join(list(map(str, self.syllables)))
@@ -51,7 +57,7 @@ class Lexicon:
         random.seed(seed)
         self._phonemes = {"C": consonants, "V": vowels, "G": glides, "N": nasals}
         self._syllable_structure = self._parse_syllable_structure(syllable_structure)
-        self._word_list = word_list
+        self._word_list = word_list if word_list else []
         self._style = style
         self._probability = probability
         self._max_syllables = max_syllables
@@ -76,23 +82,17 @@ class Lexicon:
 
         return Syllable(phonemes)
 
-    def create_word(self) -> Word:
+    def create_word(self, **args) -> Word:
         return Word(
             [
                 self.create_syllable()
                 for _ in range(random.randint(1, self._max_syllables))
-            ]
+            ],
+            **args,
         )
 
-    def create(self, word_list=False, count=0):
-        if word_list:
-            self._word_list = word_list
-
-        word_count = max(len(self._word_list), count)
-
-        if word_count == 0:
-            raise ValueError("No word list or count provided")
-        self._lexicon = [self.create_word() for _ in range(word_count)]
+    def create(self):
+        self._lexicon = [self.create_word(**word) for word in self._word_list]
         return self
 
     def __iter__(self):

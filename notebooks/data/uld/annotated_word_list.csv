@@ -1,605 +1,605 @@
 ,idx,word,topic,topic_id,adj,aux,adv,conj,int,n,num,pfx,pron,prep,pres,rel,sfx,v,vn,vi,vt
-0,001,about,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-1,002,over,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-2,003,across (at / to the other side of),adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-3,004,after (in the future of),adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-4,006,at,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-5,007,because of,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-6,008,before / in front of,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-7,009,before,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-8,00A,in back of,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-9,00B,between / among,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-10,00D,with,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-11,00F,other than,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-12,010,for (for the purpose of),adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-13,011,for (in exchange for),adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-14,012,from / out of,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-15,013,in,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-16,015,like,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-17,016,near,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-18,017,of,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-19,018,of,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-20,019,on,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-21,01B,than,adpositions,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
-22,01C,through,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-23,01D,to / at,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-24,01E,under,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-25,01F,with,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-26,020,with no...,adpositions,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-27,021,be,function words,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-28,023,become,function words,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-29,024,cause,function words,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-30,025,make,function words,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-31,026,do,function words,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-32,027,have,function words,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-33,028,is/are able to...,function words,2,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0
-34,02A,this,function words,2,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
-35,02B,that,function words,2,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
-36,02C,and,function words,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
-37,02D,but,function words,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
-38,02E,if / on condition that,function words,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
-39,02F,or,function words,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
-40,030,that,function words,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
-41,033,here (in/to this place),function words,2,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-42,034,how?,function words,2,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-43,036,not,function words,2,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-44,037,only,function words,2,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-45,038,there (at/to that place),function words,2,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-46,039,together,function words,2,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-47,03A,when?,function words,2,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-48,03B,where?,function words,2,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-49,03C,why?,function words,2,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-50,03D,any,function words,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-51,03E,every,function words,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-52,03F,person,people,3,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-53,040,baby,people,3,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-54,042,boy,people,3,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-55,043,girl,people,3,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-56,044,man,people,3,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-57,045,woman,people,3,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-58,046,family,people,3,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-59,047,father,people,3,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-60,048,mother,people,3,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-61,04C,son,people,3,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-62,04D,daughter,people,3,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-63,04E,brother,people,3,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-64,04F,sister,people,3,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-65,050,chief,people,3,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-66,05B,friend,people,3,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-67,061,society,groupings of people,5,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-68,062,committee,groupings of people,5,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-69,066,nation,groupings of people,5,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-70,067,public,groupings of people,5,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-71,06C,arm,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-72,06D,back,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-73,06F,blood,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-74,070,body,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-75,071,bone,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-76,072,brain,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-77,076,chest,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-78,077,chin,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-79,078,ear,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-80,079,egg,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-81,07A,eye,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-82,07B,face,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-83,07C,feather,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-84,07F,finger,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-85,081,foot,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-86,084,hair,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-87,085,hair,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-88,086,hand,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-89,087,head,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-90,088,heart,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-91,08B,horn (bone-like growth from animal's head),body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-92,08F,knee,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-93,090,leg,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-94,091,lip,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-95,094,meat,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-96,095,mouth,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-97,096,muscle,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-98,097,nail / finger nail,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-99,099,neck,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-100,09A,nerve,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-101,09B,nose,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-102,0A2,skin,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-103,0A4,stomach,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-104,0A6,tail,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-105,0A9,throat,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-106,0AA,thumb,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-107,0AB,toe,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-108,0AC,tongue (body-part),body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-109,0AD,tooth,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-110,0B0,blood vessel,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-111,0B2,wing (of bird),body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-112,0B3,wound,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-113,0B5,berry (small fruit),body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-114,0B7,flower,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-115,0B8,fruit,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-116,0B9,leaf,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-117,0BA,nut,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-118,0BC,root (of a plant),body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-119,0BD,seed,body parts and substances,6,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-120,0C0,dead,body terms,7,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-121,0C1,birth,body terms,7,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-122,0C3,healthy,body terms,7,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-123,0C4,disease,body terms,7,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-124,0C5,fat,body terms,7,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-125,0C6,sex,body terms,7,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-126,0C7,female,body terms,7,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-127,0C8,male,body terms,7,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-128,0CA,sense,body terms,7,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-129,0CB,pain,body terms,7,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-130,0CC,pleasure,body terms,7,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-131,0CD,tired,body terms,7,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-132,0CF,sleep,body terms,7,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-133,0D0,awake,body terms,7,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-134,0D2,bite,bodily actions,8,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-135,0D6,have sex (with),bodily actions,8,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-136,0D8,cry out,bodily actions,8,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-137,0D9,cry,bodily actions,8,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-138,0DC,drink,bodily actions,8,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-139,0E3,jump,bodily actions,8,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-140,0E4,kick,bodily actions,8,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-141,0E6,kiss,bodily actions,8,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-142,0E7,laugh,bodily actions,8,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-143,0EA,run,bodily actions,8,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-144,0ED,smile,bodily actions,8,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-145,0EE,sneeze,bodily actions,8,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-146,0F3,swim,bodily actions,8,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-147,0F4,taste,bodily actions,8,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-148,0F6,touch,bodily actions,8,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-149,0F8,walk,bodily actions,8,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-150,0FA,animal,animal species and types,9,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-151,0FB,ant,animal species and types,9,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-152,0FD,bee,animal species and types,9,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-153,0FE,bird,animal species and types,9,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-154,100,cat,animal species and types,9,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-155,103,cow,animal species and types,9,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-156,105,dog,animal species and types,9,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-157,108,fish,animal species and types,9,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-158,109,fly,animal species and types,9,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-159,10C,goat,animal species and types,9,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-160,10E,horse,animal species and types,9,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-161,10F,insect,animal species and types,9,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-162,115,monkey,animal species and types,9,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-163,118,pig,animal species and types,9,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-164,11B,sheep,animal species and types,9,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-165,11C,snake,animal species and types,9,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-166,125,worm,animal species and types,9,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-167,126,apple,plant species and types,10,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-168,12D,cork,plant species and types,10,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-169,12F,cotton,plant species and types,10,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-170,139,grass,plant species and types,10,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-171,146,orange,plant species and types,10,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-172,14D,potato,plant species and types,10,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-173,14E,rice,plant species and types,10,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-174,15B,garden,plant species and types,10,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-175,15C,grain,plant species and types,10,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-176,15E,plant,plant species and types,10,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-177,15F,tree,plant species and types,10,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-178,164,cloud,natural world,11,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-179,166,earth,natural world,11,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-180,169,field,natural world,11,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-181,16F,island,natural world,11,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-182,172,moon,natural world,11,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-183,173,mountain,natural world,11,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-184,176,rain,natural world,11,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-185,178,river,natural world,11,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-186,17A,sky,natural world,11,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-187,17B,snow,natural world,11,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-188,17C,star,natural world,11,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-189,17E,sun,natural world,11,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-190,180,thunder,natural world,11,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-191,186,weather,natural world,11,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-192,187,wind,natural world,11,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-193,18C,rod,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-194,18E,basket,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-195,18F,bed,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-196,190,bell,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-197,191,blade,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-198,193,board,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-199,195,bottle,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-200,198,box,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-201,199,brake,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-202,19A,brick,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-203,19C,brush,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-204,19F,button,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-205,1A4,chain,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-206,1A7,clock,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-207,1AA,comb,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-208,1AD,cord,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-209,1AE,cover,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-210,1AF,cup,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-211,1B0,curtain,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-212,1B5,drain,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-213,1BD,fork,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-214,1BE,frame,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-215,1C2,gun,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-216,1C3,hammer,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-217,1C6,hook,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-218,1C7,horn,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-219,1CA,key,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-220,1CB,knife,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-221,1D1,lock,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-222,1D2,machine,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-223,1D3,match (little fire-stick),tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-224,1D6,engine,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-225,1D7,nail,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-226,1D8,needle,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-227,1D9,net,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-228,1DA,oven,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-229,1DB,parcel,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-230,1E0,pen,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-231,1E1,pencil,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-232,1E2,cushion,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-233,1E3,pipe,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-234,1E4,plate,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-235,1E5,plough,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-236,1E6,pocket,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-237,1E7,stick,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-238,1E9,pot (deep round vessel),tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-239,1EB,pump,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-240,1EE,rail,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-241,1F3,bag,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-242,1F4,sail,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-243,1F6,scale,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-244,1F7,scissors,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-245,1F9,screw,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-246,1FA,sign,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-247,1FB,shelf,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-248,1FF,sponge,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-249,201,spoon,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-250,202,spring,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-251,209,table,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-252,213,tray,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-253,214,umbrella,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-254,217,wheel,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-255,218,wire,tools and implements,12,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-256,21C,coat,clothing,13,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-257,21D,collar,clothing,13,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-258,220,glove,clothing,13,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-259,226,trousers,clothing,13,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-260,227,shirt,clothing,13,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-261,229,shoe,clothing,13,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-262,22A,skirt / dress,clothing,13,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-263,22E,building,buildings and institutions,14,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-264,233,door,buildings and institutions,14,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-265,234,lift,buildings and institutions,14,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-266,236,floor,buildings and institutions,14,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-267,237,roof,buildings and institutions,14,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-268,23A,wall,buildings and institutions,14,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-269,23B,window,buildings and institutions,14,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-270,23C,church,buildings and institutions,14,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-271,23E,hospital,buildings and institutions,14,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-272,240,house,buildings and institutions,14,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-273,241,library,buildings and institutions,14,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-274,244,school,buildings and institutions,14,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-275,249,bridge,buildings and institutions,14,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-276,24A,farm,buildings and institutions,14,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-277,24C,market,buildings and institutions,14,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-278,24F,army,government and hierarchy,15,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-279,250,authority,government and hierarchy,15,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-280,253,control,government and hierarchy,15,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-281,255,crime,government and hierarchy,15,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-282,257,free,government and hierarchy,15,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-283,258,government,government and hierarchy,15,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-284,25C,law,government and hierarchy,15,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-285,25D,military,government and hierarchy,15,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-286,25E,nation,government and hierarchy,15,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-287,264,let,government and hierarchy,15,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-288,26C,tax,government and hierarchy,15,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-289,270,war,government and hierarchy,15,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-290,272,account,business and transactions,16,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-291,27A,company (a business organization),business and transactions,16,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-292,27C,credit,business and transactions,16,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-293,283,give,business and transactions,16,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-294,284,insurance,business and transactions,16,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-295,287,keep,business and transactions,16,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-296,28C,money,business and transactions,16,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-297,28D,offer,business and transactions,16,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-298,292,private,business and transactions,16,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-299,296,public,business and transactions,16,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-300,29B,reward,business and transactions,16,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-301,2A0,take,business and transactions,16,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-302,2A2,value,business and transactions,16,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-303,2AE,religion,religion and the supernatural,17,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-304,2B4,angry,mind and emotion,18,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-305,2B6,art,mind and emotion,18,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-306,2B7,attention,mind and emotion,18,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-307,2BD,care,mind and emotion,18,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-308,2C1,comfort,mind and emotion,18,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-309,2C9,doubt,mind and emotion,18,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-310,2CE,experience,mind and emotion,18,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-311,2D0,fear,mind and emotion,18,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-312,2D2,foolish,mind and emotion,18,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-313,2DA,guide / lead,mind and emotion,18,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-314,2DD,happy,mind and emotion,18,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-315,2DE,hate,mind and emotion,18,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-316,2DF,hope,mind and emotion,18,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-317,2E3,important,mind and emotion,18,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-318,2E8,interest,mind and emotion,18,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-319,2EB,judge,mind and emotion,18,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-320,2ED,knowledge,mind and emotion,18,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-321,2F2,love,mind and emotion,18,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-322,2F5,mind,mind and emotion,18,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-323,2F8,kind,mind and emotion,18,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-324,2FA,opinion,mind and emotion,18,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-325,2FC,peace,mind and emotion,18,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-326,2FF,design,mind and emotion,18,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-327,300,play,mind and emotion,18,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-328,301,act,mind and emotion,18,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-329,302,self-respect,mind and emotion,18,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-330,304,thought,mind and emotion,18,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-331,306,regret,mind and emotion,18,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-332,30C,look for,mind and emotion,18,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-333,30F,shame,mind and emotion,18,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-334,318,theory,mind and emotion,18,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-335,31C,desire,mind and emotion,18,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-336,31E,wise,mind and emotion,18,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-337,322,advertisement,communication,19,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-338,329,book,communication,19,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-339,32F,order,communication,19,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-340,336,talk about,communication,19,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-341,339,fact,communication,19,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-342,33A,fiction,communication,19,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-343,33D,history,communication,19,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-344,33E,be a sign of,communication,19,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-345,344,language,communication,19,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-346,345,letter,communication,19,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-347,347,list,communication,19,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-348,34A,map,communication,19,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-349,34D,motion picture,communication,19,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-350,34E,name,communication,19,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-351,351,noise,communication,19,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-352,353,page,communication,19,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-353,357,print,communication,19,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-354,35D,record,communication,19,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-355,360,secret,communication,19,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-356,367,sign,communication,19,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-357,36A,voice,communication,19,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-358,36D,word,communication,19,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-359,370,match,games,20,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-360,374,ball,games,20,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-361,375,stick,games,20,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-362,383,different,identity,21,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-363,385,change,identity,21,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-364,389,copy,identity,21,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-365,399,amount / number,quantity,23,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-366,39A,number,quantity,23,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-367,39C,measure,quantity,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-368,39D,rate,quantity,23,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-369,3A5,rest (of...),quantity,23,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-370,3A6,complete,quantity,23,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-371,3A7,all,quantity,23,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-372,3A9,a small number of,quantity,23,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-373,3B4,group,quantity,23,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-374,3BE,degree,degree,24,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-375,3C1,much / very,degree,24,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-376,3C4,little,degree,24,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-377,3CB,size,dimension/direction,25,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-378,3D2,distance,dimension/direction,25,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-379,3D3,far,dimension/direction,25,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-380,3D4,near,dimension/direction,25,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-381,3D5,present,dimension/direction,25,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-382,3DC,wide,dimension/direction,25,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-383,3DD,narrow,dimension/direction,25,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-384,3DF,thick / fat,dimension/direction,25,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-385,3E0,thin,dimension/direction,25,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-386,3E3,low / short,dimension/direction,25,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-387,3EB,angle,dimension/direction,25,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-388,3EC,position,dimension/direction,25,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-389,3F1,front,dimension/direction,25,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-390,3F2,back part of,dimension/direction,25,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-391,3F7,edge,dimension/direction,25,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-392,3FD,direction,dimension/direction,25,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-393,3FE,up,dimension/direction,25,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-394,3FF,down,dimension/direction,25,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-395,400,north,dimension/direction,25,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-396,401,south,dimension/direction,25,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-397,402,east,dimension/direction,25,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-398,403,west,dimension/direction,25,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-399,404,right(-hand),dimension/direction,25,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-400,405,left(-hand),dimension/direction,25,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-401,407,back,dimension/direction,25,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-402,416,base / station,motion,26,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-403,41A,come,motion,26,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-404,41E,go into,motion,26,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-405,420,fly (move through the air),motion,26,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-406,423,go,motion,26,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-407,427,come across,motion,26,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-408,433,roll,motion,26,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-409,435,slip,motion,26,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-410,43C,boat,vehicles,27,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-411,440,cart / carriage,vehicles,27,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-412,444,road,vehicles,27,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-413,446,ship,vehicles,27,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-414,447,street,vehicles,27,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-415,448,train,vehicles,27,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-416,44C,young,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-417,44D,old,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-418,44E,new,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-419,44F,old,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-420,456,rhythm,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-421,457,time,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-422,463,start,time and sequence,28,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-423,467,stop,time and sequence,28,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-424,46D,ever (at any time),time and sequence,28,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-425,46F,time,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-426,470,past,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-427,471,the present,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-428,472,future,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-429,474,still,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-430,475,yesterday,time and sequence,28,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-431,477,tomorrow,time and sequence,28,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-432,479,in the near past,time and sequence,28,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-433,47A,now / at this time,time and sequence,28,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-434,47B,in the near future,time and sequence,28,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-435,47C,in the far future,time and sequence,28,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-436,47E,on time,time and sequence,28,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-437,484,order,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-438,489,spring,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-439,48A,summer,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-440,48B,fall,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-441,48C,winter,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-442,48E,year,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-443,48F,month,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-444,490,week,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-445,491,day,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-446,493,day,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-447,494,night,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-448,495,morning,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-449,49A,middle of the night,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-450,49B,hour,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-451,49C,minute,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-452,49D,second,time and sequence,28,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-453,4A1,air,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-454,4A4,brass,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-455,4A6,chalk,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-456,4A7,chemical,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-457,4A9,cloth,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-458,4AA,coal,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-459,4AB,copper,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-460,4AC,earth,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-461,4AD,dust,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-462,4B1,glass,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-463,4B2,gold,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-464,4B3,ice,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-465,4B4,ink,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-466,4B5,iron,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-467,4B8,lead (the metal),substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-468,4B9,leather,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-469,4BB,metal,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-470,4C0,oil,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-471,4C3,paint,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-472,4C4,paper,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-473,4C9,stone,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-474,4CB,salt,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-475,4CC,sand,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-476,4CD,silk,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-477,4CE,silver (the metal),substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-478,4CF,soap,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-479,4D1,steam,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-480,4D2,steel,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-481,4D5,tin (the metal),substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-482,4D6,water,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-483,4D7,wax,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-484,4D8,wood (the substance),substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-485,4D9,wool,substances,29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-486,4DB,bitter,foodstuffs,30,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-487,4DC,bread,foodstuffs,30,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-488,4DD,butter,foodstuffs,30,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-489,4DE,cheese,foodstuffs,30,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-490,4E0,taste,foodstuffs,30,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-491,4E1,grain-powder,foodstuffs,30,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-492,4E2,food,foodstuffs,30,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-493,4E4,milk,foodstuffs,30,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-494,4EA,soup,foodstuffs,30,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-495,4ED,sugar,foodstuffs,30,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-496,4EE,sweet,foodstuffs,30,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-497,4F0,wine,foodstuffs,30,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-498,4F1,arch,forms of matter,31,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-499,4F4,branch,forms of matter,31,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-500,4F6,card,forms of matter,31,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-501,4F7,circle,forms of matter,31,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-502,4FE,curve,forms of matter,31,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-503,502,drop (of liquid),forms of matter,31,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-504,50B,hole,forms of matter,31,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-505,50C,jelly,forms of matter,31,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-506,50F,line,forms of matter,31,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-507,510,liquid,forms of matter,31,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-508,513,mark,forms of matter,31,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-509,514,material / substance,forms of matter,31,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-510,518,parallel,forms of matter,31,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-511,519,paste,forms of matter,31,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-512,51E,powder,forms of matter,31,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-513,520,ray,forms of matter,31,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-514,528,smoke,forms of matter,31,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-515,529,solid,forms of matter,31,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-516,52D,square,forms of matter,31,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-517,534,wave,forms of matter,31,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-518,538,level / even (on the same level),qualities of matter,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-519,539,smooth,qualities of matter,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-520,53B,straight / not bent,qualities of matter,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-521,53C,bent,qualities of matter,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-522,53E,clean,qualities of matter,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-523,540,open / not shut,qualities of matter,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-524,541,shut,qualities of matter,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-525,542,wet,qualities of matter,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-526,543,dry,qualities of matter,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-527,54A,elastic,qualities of matter,32,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-528,54B,strong,qualities of matter,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-529,54C,delicate,qualities of matter,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-530,54D,weight,qualities of matter,32,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-531,54E,of much weight,qualities of matter,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-532,54F,light / of little weight,qualities of matter,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-533,550,solid,qualities of matter,32,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-534,551,hollow,qualities of matter,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-535,553,loose,qualities of matter,32,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-536,554,tight,qualities of matter,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-537,556,thick,qualities of matter,32,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-538,55B,blow,matter-related actions,33,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-539,560,burn,matter-related actions,33,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-540,561,burst,matter-related actions,33,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-541,564,crush,matter-related actions,33,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-542,56C,fold,matter-related actions,33,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-543,578,pull,matter-related actions,33,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-544,579,push,matter-related actions,33,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-545,57D,shake,matter-related actions,33,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-546,589,wash,matter-related actions,33,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-547,58C,acid,misc. matter/energy terms,34,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-548,593,fire,misc. matter/energy terms,34,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-549,594,force,misc. matter/energy terms,34,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-550,598,power,misc. matter/energy terms,34,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-551,59B,a blow of force,misc. matter/energy terms,34,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-552,59D,mist,misc. matter/energy terms,34,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-553,5A3,see,light,35,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-554,5A4,light,light,35,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-555,5A5,colour,light,35,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-556,5A6,shade,light,35,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-557,5A9,bright,light,35,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-558,5AA,dark,light,35,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-559,5AB,black,light,35,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-560,5AC,grey,light,35,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-561,5AD,white,light,35,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-562,5AE,red,light,35,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-563,5AF,orange,light,35,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-564,5B0,yellow,light,35,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-565,5B1,green,light,35,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-566,5B2,blue,light,35,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-567,5B4,brown,light,35,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-568,5B5,beautiful,light,35,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-569,5BD,sound,sound,36,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-570,5BF,quiet / soft,sound,36,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-571,5C0,loud,sound,36,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-572,5C1,hear,sound,36,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-573,5C2,music,sound,36,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-574,5C4,whistle,sound,36,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-575,5C8,of little heat,heat,37,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-576,5C9,warm,heat,37,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-577,5CA,of very much heat,heat,37,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-578,5CB,cook,heat,37,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-579,5CC,cook,heat,37,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-580,5D7,attack,assorted abstract concepts,38,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-581,5D8,good,assorted abstract concepts,38,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-582,5D9,bad,assorted abstract concepts,38,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-583,5DB,kind / sort,assorted abstract concepts,38,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-584,5DD,probable,assorted abstract concepts,38,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-585,5E4,simple,assorted abstract concepts,38,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-586,5E5,complex,assorted abstract concepts,38,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-587,5E7,make,assorted abstract concepts,38,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-588,5EA,danger,assorted abstract concepts,38,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-589,5EC,hard,assorted abstract concepts,38,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-590,5ED,true,assorted abstract concepts,38,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-591,5F1,damage,assorted abstract concepts,38,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-592,605,special,assorted abstract concepts,38,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-593,608,automatic,assorted abstract concepts,38,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-594,610,detail,assorted abstract concepts,38,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-595,611,equal,assorted abstract concepts,38,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-596,617,fertile,assorted abstract concepts,38,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-597,618,harmony,assorted abstract concepts,38,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-598,61A,match,assorted abstract concepts,38,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-599,62A,right (a right to do/be...),assorted abstract concepts,38,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-600,62F,system,assorted abstract concepts,38,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-601,633,attempt,assorted abstract concepts,38,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
-602,63A,science,assorted abstract concepts,38,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
-603,63E,support,assorted abstract concepts,38,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
+0,001,about,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+1,002,over,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+2,003,across (at / to the other side of),adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+3,004,after (in the future of),adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+4,006,at,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+5,007,because of,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+6,008,before / in front of,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+7,009,before,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+8,00A,in back of,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+9,00B,between / among,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+10,00D,with,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+11,00F,other than,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+12,010,for (for the purpose of),adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+13,011,for (in exchange for),adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+14,012,from / out of,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+15,013,in,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+16,015,like,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+17,016,near,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+18,017,of,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+19,018,of,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+20,019,on,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+21,01B,than,adpositions,1,False,False,False,True,False,False,False,False,False,True,False,False,False,False,False,False,False
+22,01C,through,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+23,01D,to / at,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+24,01E,under,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+25,01F,with,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+26,020,with no...,adpositions,1,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+27,021,be,function words,2,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False
+28,023,become,function words,2,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False
+29,024,cause,function words,2,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False
+30,025,make,function words,2,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False
+31,026,do,function words,2,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False
+32,027,have,function words,2,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False
+33,028,is/are able to...,function words,2,False,True,False,False,False,False,False,False,False,False,True,False,False,True,False,False,False
+34,02A,this,function words,2,True,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False
+35,02B,that,function words,2,True,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False,False
+36,02C,and,function words,2,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False
+37,02D,but,function words,2,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False
+38,02E,if / on condition that,function words,2,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False
+39,02F,or,function words,2,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False
+40,030,that,function words,2,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False
+41,033,here (in/to this place),function words,2,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+42,034,how?,function words,2,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+43,036,not,function words,2,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+44,037,only,function words,2,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+45,038,there (at/to that place),function words,2,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+46,039,together,function words,2,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+47,03A,when?,function words,2,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+48,03B,where?,function words,2,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+49,03C,why?,function words,2,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+50,03D,any,function words,2,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+51,03E,every,function words,2,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+52,03F,person,people,3,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+53,040,baby,people,3,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+54,042,boy,people,3,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+55,043,girl,people,3,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+56,044,man,people,3,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+57,045,woman,people,3,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+58,046,family,people,3,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+59,047,father,people,3,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+60,048,mother,people,3,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+61,04C,son,people,3,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+62,04D,daughter,people,3,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+63,04E,brother,people,3,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+64,04F,sister,people,3,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+65,050,chief,people,3,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+66,05B,friend,people,3,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+67,061,society,groupings of people,5,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+68,062,committee,groupings of people,5,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+69,066,nation,groupings of people,5,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+70,067,public,groupings of people,5,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+71,06C,arm,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+72,06D,back,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+73,06F,blood,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+74,070,body,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+75,071,bone,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+76,072,brain,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+77,076,chest,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+78,077,chin,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+79,078,ear,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+80,079,egg,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+81,07A,eye,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+82,07B,face,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+83,07C,feather,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+84,07F,finger,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+85,081,foot,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+86,084,hair,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+87,085,hair,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+88,086,hand,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+89,087,head,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+90,088,heart,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+91,08B,horn (bone-like growth from animal's head),body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+92,08F,knee,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+93,090,leg,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+94,091,lip,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+95,094,meat,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+96,095,mouth,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+97,096,muscle,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+98,097,nail / finger nail,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+99,099,neck,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+100,09A,nerve,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+101,09B,nose,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+102,0A2,skin,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+103,0A4,stomach,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+104,0A6,tail,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+105,0A9,throat,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+106,0AA,thumb,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+107,0AB,toe,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+108,0AC,tongue (body-part),body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+109,0AD,tooth,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+110,0B0,blood vessel,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+111,0B2,wing (of bird),body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+112,0B3,wound,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+113,0B5,berry (small fruit),body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+114,0B7,flower,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+115,0B8,fruit,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+116,0B9,leaf,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+117,0BA,nut,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+118,0BC,root (of a plant),body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+119,0BD,seed,body parts and substances,6,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+120,0C0,dead,body terms,7,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+121,0C1,birth,body terms,7,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+122,0C3,healthy,body terms,7,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+123,0C4,disease,body terms,7,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+124,0C5,fat,body terms,7,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+125,0C6,sex,body terms,7,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+126,0C7,female,body terms,7,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+127,0C8,male,body terms,7,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+128,0CA,sense,body terms,7,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+129,0CB,pain,body terms,7,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+130,0CC,pleasure,body terms,7,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+131,0CD,tired,body terms,7,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+132,0CF,sleep,body terms,7,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+133,0D0,awake,body terms,7,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+134,0D2,bite,bodily actions,8,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+135,0D6,have sex (with),bodily actions,8,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False
+136,0D8,cry out,bodily actions,8,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+137,0D9,cry,bodily actions,8,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+138,0DC,drink,bodily actions,8,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+139,0E3,jump,bodily actions,8,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+140,0E4,kick,bodily actions,8,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+141,0E6,kiss,bodily actions,8,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+142,0E7,laugh,bodily actions,8,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+143,0EA,run,bodily actions,8,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+144,0ED,smile,bodily actions,8,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+145,0EE,sneeze,bodily actions,8,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+146,0F3,swim,bodily actions,8,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+147,0F4,taste,bodily actions,8,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+148,0F6,touch,bodily actions,8,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+149,0F8,walk,bodily actions,8,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+150,0FA,animal,animal species and types,9,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+151,0FB,ant,animal species and types,9,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+152,0FD,bee,animal species and types,9,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+153,0FE,bird,animal species and types,9,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+154,100,cat,animal species and types,9,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+155,103,cow,animal species and types,9,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+156,105,dog,animal species and types,9,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+157,108,fish,animal species and types,9,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+158,109,fly,animal species and types,9,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+159,10C,goat,animal species and types,9,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+160,10E,horse,animal species and types,9,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+161,10F,insect,animal species and types,9,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+162,115,monkey,animal species and types,9,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+163,118,pig,animal species and types,9,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+164,11B,sheep,animal species and types,9,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+165,11C,snake,animal species and types,9,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+166,125,worm,animal species and types,9,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+167,126,apple,plant species and types,10,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+168,12D,cork,plant species and types,10,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+169,12F,cotton,plant species and types,10,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+170,139,grass,plant species and types,10,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+171,146,orange,plant species and types,10,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+172,14D,potato,plant species and types,10,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+173,14E,rice,plant species and types,10,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+174,15B,garden,plant species and types,10,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+175,15C,grain,plant species and types,10,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+176,15E,plant,plant species and types,10,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+177,15F,tree,plant species and types,10,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+178,164,cloud,natural world,11,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+179,166,earth,natural world,11,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+180,169,field,natural world,11,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+181,16F,island,natural world,11,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+182,172,moon,natural world,11,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+183,173,mountain,natural world,11,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+184,176,rain,natural world,11,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+185,178,river,natural world,11,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+186,17A,sky,natural world,11,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+187,17B,snow,natural world,11,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+188,17C,star,natural world,11,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+189,17E,sun,natural world,11,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+190,180,thunder,natural world,11,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+191,186,weather,natural world,11,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+192,187,wind,natural world,11,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+193,18C,rod,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+194,18E,basket,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+195,18F,bed,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+196,190,bell,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+197,191,blade,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+198,193,board,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+199,195,bottle,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+200,198,box,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+201,199,brake,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+202,19A,brick,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+203,19C,brush,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+204,19F,button,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+205,1A4,chain,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+206,1A7,clock,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+207,1AA,comb,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+208,1AD,cord,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+209,1AE,cover,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+210,1AF,cup,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+211,1B0,curtain,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+212,1B5,drain,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+213,1BD,fork,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+214,1BE,frame,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+215,1C2,gun,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+216,1C3,hammer,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+217,1C6,hook,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+218,1C7,horn,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+219,1CA,key,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+220,1CB,knife,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+221,1D1,lock,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+222,1D2,machine,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+223,1D3,match (little fire-stick),tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+224,1D6,engine,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+225,1D7,nail,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+226,1D8,needle,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+227,1D9,net,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+228,1DA,oven,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+229,1DB,parcel,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+230,1E0,pen,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+231,1E1,pencil,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+232,1E2,cushion,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+233,1E3,pipe,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+234,1E4,plate,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+235,1E5,plough,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+236,1E6,pocket,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+237,1E7,stick,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+238,1E9,pot (deep round vessel),tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+239,1EB,pump,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+240,1EE,rail,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+241,1F3,bag,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+242,1F4,sail,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+243,1F6,scale,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+244,1F7,scissors,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+245,1F9,screw,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+246,1FA,sign,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+247,1FB,shelf,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+248,1FF,sponge,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+249,201,spoon,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+250,202,spring,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+251,209,table,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+252,213,tray,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+253,214,umbrella,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+254,217,wheel,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+255,218,wire,tools and implements,12,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+256,21C,coat,clothing,13,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+257,21D,collar,clothing,13,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+258,220,glove,clothing,13,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+259,226,trousers,clothing,13,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+260,227,shirt,clothing,13,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+261,229,shoe,clothing,13,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+262,22A,skirt / dress,clothing,13,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+263,22E,building,buildings and institutions,14,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+264,233,door,buildings and institutions,14,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+265,234,lift,buildings and institutions,14,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+266,236,floor,buildings and institutions,14,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+267,237,roof,buildings and institutions,14,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+268,23A,wall,buildings and institutions,14,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+269,23B,window,buildings and institutions,14,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+270,23C,church,buildings and institutions,14,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+271,23E,hospital,buildings and institutions,14,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+272,240,house,buildings and institutions,14,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+273,241,library,buildings and institutions,14,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+274,244,school,buildings and institutions,14,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+275,249,bridge,buildings and institutions,14,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+276,24A,farm,buildings and institutions,14,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+277,24C,market,buildings and institutions,14,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+278,24F,army,government and hierarchy,15,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+279,250,authority,government and hierarchy,15,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+280,253,control,government and hierarchy,15,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+281,255,crime,government and hierarchy,15,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+282,257,free,government and hierarchy,15,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+283,258,government,government and hierarchy,15,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+284,25C,law,government and hierarchy,15,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+285,25D,military,government and hierarchy,15,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+286,25E,nation,government and hierarchy,15,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+287,264,let,government and hierarchy,15,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False
+288,26C,tax,government and hierarchy,15,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+289,270,war,government and hierarchy,15,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+290,272,account,business and transactions,16,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+291,27A,company (a business organization),business and transactions,16,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+292,27C,credit,business and transactions,16,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+293,283,give,business and transactions,16,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False
+294,284,insurance,business and transactions,16,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+295,287,keep,business and transactions,16,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+296,28C,money,business and transactions,16,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+297,28D,offer,business and transactions,16,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+298,292,private,business and transactions,16,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+299,296,public,business and transactions,16,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+300,29B,reward,business and transactions,16,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+301,2A0,take,business and transactions,16,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+302,2A2,value,business and transactions,16,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+303,2AE,religion,religion and the supernatural,17,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+304,2B4,angry,mind and emotion,18,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+305,2B6,art,mind and emotion,18,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+306,2B7,attention,mind and emotion,18,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+307,2BD,care,mind and emotion,18,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+308,2C1,comfort,mind and emotion,18,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+309,2C9,doubt,mind and emotion,18,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+310,2CE,experience,mind and emotion,18,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+311,2D0,fear,mind and emotion,18,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+312,2D2,foolish,mind and emotion,18,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+313,2DA,guide / lead,mind and emotion,18,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+314,2DD,happy,mind and emotion,18,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+315,2DE,hate,mind and emotion,18,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+316,2DF,hope,mind and emotion,18,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+317,2E3,important,mind and emotion,18,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+318,2E8,interest,mind and emotion,18,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+319,2EB,judge,mind and emotion,18,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+320,2ED,knowledge,mind and emotion,18,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+321,2F2,love,mind and emotion,18,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+322,2F5,mind,mind and emotion,18,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+323,2F8,kind,mind and emotion,18,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+324,2FA,opinion,mind and emotion,18,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+325,2FC,peace,mind and emotion,18,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+326,2FF,design,mind and emotion,18,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+327,300,play,mind and emotion,18,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+328,301,act,mind and emotion,18,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+329,302,self-respect,mind and emotion,18,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+330,304,thought,mind and emotion,18,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+331,306,regret,mind and emotion,18,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+332,30C,look for,mind and emotion,18,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+333,30F,shame,mind and emotion,18,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+334,318,theory,mind and emotion,18,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+335,31C,desire,mind and emotion,18,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+336,31E,wise,mind and emotion,18,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+337,322,advertisement,communication,19,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+338,329,book,communication,19,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+339,32F,order,communication,19,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+340,336,talk about,communication,19,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+341,339,fact,communication,19,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+342,33A,fiction,communication,19,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+343,33D,history,communication,19,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+344,33E,be a sign of,communication,19,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False
+345,344,language,communication,19,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+346,345,letter,communication,19,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+347,347,list,communication,19,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+348,34A,map,communication,19,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+349,34D,motion picture,communication,19,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+350,34E,name,communication,19,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+351,351,noise,communication,19,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+352,353,page,communication,19,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+353,357,print,communication,19,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+354,35D,record,communication,19,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+355,360,secret,communication,19,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+356,367,sign,communication,19,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+357,36A,voice,communication,19,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+358,36D,word,communication,19,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+359,370,match,games,20,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+360,374,ball,games,20,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+361,375,stick,games,20,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+362,383,different,identity,21,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+363,385,change,identity,21,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+364,389,copy,identity,21,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+365,399,amount / number,quantity,23,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+366,39A,number,quantity,23,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+367,39C,measure,quantity,23,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+368,39D,rate,quantity,23,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+369,3A5,rest (of...),quantity,23,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+370,3A6,complete,quantity,23,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+371,3A7,all,quantity,23,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+372,3A9,a small number of,quantity,23,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+373,3B4,group,quantity,23,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+374,3BE,degree,degree,24,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+375,3C1,much / very,degree,24,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+376,3C4,little,degree,24,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+377,3CB,size,dimension/direction,25,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+378,3D2,distance,dimension/direction,25,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+379,3D3,far,dimension/direction,25,True,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+380,3D4,near,dimension/direction,25,True,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+381,3D5,present,dimension/direction,25,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+382,3DC,wide,dimension/direction,25,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+383,3DD,narrow,dimension/direction,25,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+384,3DF,thick / fat,dimension/direction,25,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+385,3E0,thin,dimension/direction,25,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+386,3E3,low / short,dimension/direction,25,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+387,3EB,angle,dimension/direction,25,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+388,3EC,position,dimension/direction,25,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+389,3F1,front,dimension/direction,25,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+390,3F2,back part of,dimension/direction,25,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+391,3F7,edge,dimension/direction,25,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+392,3FD,direction,dimension/direction,25,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+393,3FE,up,dimension/direction,25,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+394,3FF,down,dimension/direction,25,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+395,400,north,dimension/direction,25,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+396,401,south,dimension/direction,25,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+397,402,east,dimension/direction,25,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+398,403,west,dimension/direction,25,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+399,404,right(-hand),dimension/direction,25,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+400,405,left(-hand),dimension/direction,25,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+401,407,back,dimension/direction,25,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+402,416,base / station,motion,26,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+403,41A,come,motion,26,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False
+404,41E,go into,motion,26,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False
+405,420,fly (move through the air),motion,26,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+406,423,go,motion,26,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False
+407,427,come across,motion,26,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False
+408,433,roll,motion,26,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+409,435,slip,motion,26,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+410,43C,boat,vehicles,27,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+411,440,cart / carriage,vehicles,27,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+412,444,road,vehicles,27,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+413,446,ship,vehicles,27,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+414,447,street,vehicles,27,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+415,448,train,vehicles,27,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+416,44C,young,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+417,44D,old,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+418,44E,new,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+419,44F,old,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+420,456,rhythm,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+421,457,time,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+422,463,start,time and sequence,28,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+423,467,stop,time and sequence,28,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+424,46D,ever (at any time),time and sequence,28,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+425,46F,time,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+426,470,past,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+427,471,the present,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+428,472,future,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+429,474,still,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+430,475,yesterday,time and sequence,28,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+431,477,tomorrow,time and sequence,28,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+432,479,in the near past,time and sequence,28,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+433,47A,now / at this time,time and sequence,28,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+434,47B,in the near future,time and sequence,28,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+435,47C,in the far future,time and sequence,28,False,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+436,47E,on time,time and sequence,28,True,False,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+437,484,order,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+438,489,spring,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+439,48A,summer,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+440,48B,fall,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+441,48C,winter,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+442,48E,year,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+443,48F,month,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+444,490,week,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+445,491,day,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+446,493,day,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+447,494,night,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+448,495,morning,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+449,49A,middle of the night,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+450,49B,hour,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+451,49C,minute,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+452,49D,second,time and sequence,28,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+453,4A1,air,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+454,4A4,brass,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+455,4A6,chalk,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+456,4A7,chemical,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+457,4A9,cloth,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+458,4AA,coal,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+459,4AB,copper,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+460,4AC,earth,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+461,4AD,dust,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+462,4B1,glass,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+463,4B2,gold,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+464,4B3,ice,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+465,4B4,ink,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+466,4B5,iron,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+467,4B8,lead (the metal),substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+468,4B9,leather,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+469,4BB,metal,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+470,4C0,oil,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+471,4C3,paint,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+472,4C4,paper,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+473,4C9,stone,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+474,4CB,salt,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+475,4CC,sand,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+476,4CD,silk,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+477,4CE,silver (the metal),substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+478,4CF,soap,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+479,4D1,steam,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+480,4D2,steel,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+481,4D5,tin (the metal),substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+482,4D6,water,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+483,4D7,wax,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+484,4D8,wood (the substance),substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+485,4D9,wool,substances,29,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+486,4DB,bitter,foodstuffs,30,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+487,4DC,bread,foodstuffs,30,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+488,4DD,butter,foodstuffs,30,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+489,4DE,cheese,foodstuffs,30,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+490,4E0,taste,foodstuffs,30,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+491,4E1,grain-powder,foodstuffs,30,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+492,4E2,food,foodstuffs,30,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+493,4E4,milk,foodstuffs,30,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+494,4EA,soup,foodstuffs,30,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+495,4ED,sugar,foodstuffs,30,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+496,4EE,sweet,foodstuffs,30,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+497,4F0,wine,foodstuffs,30,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+498,4F1,arch,forms of matter,31,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+499,4F4,branch,forms of matter,31,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+500,4F6,card,forms of matter,31,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+501,4F7,circle,forms of matter,31,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+502,4FE,curve,forms of matter,31,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+503,502,drop (of liquid),forms of matter,31,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+504,50B,hole,forms of matter,31,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+505,50C,jelly,forms of matter,31,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+506,50F,line,forms of matter,31,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+507,510,liquid,forms of matter,31,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+508,513,mark,forms of matter,31,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+509,514,material / substance,forms of matter,31,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+510,518,parallel,forms of matter,31,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+511,519,paste,forms of matter,31,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+512,51E,powder,forms of matter,31,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+513,520,ray,forms of matter,31,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+514,528,smoke,forms of matter,31,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+515,529,solid,forms of matter,31,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+516,52D,square,forms of matter,31,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+517,534,wave,forms of matter,31,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+518,538,level / even (on the same level),qualities of matter,32,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+519,539,smooth,qualities of matter,32,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+520,53B,straight / not bent,qualities of matter,32,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+521,53C,bent,qualities of matter,32,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+522,53E,clean,qualities of matter,32,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+523,540,open / not shut,qualities of matter,32,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+524,541,shut,qualities of matter,32,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+525,542,wet,qualities of matter,32,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+526,543,dry,qualities of matter,32,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+527,54A,elastic,qualities of matter,32,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+528,54B,strong,qualities of matter,32,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+529,54C,delicate,qualities of matter,32,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+530,54D,weight,qualities of matter,32,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+531,54E,of much weight,qualities of matter,32,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+532,54F,light / of little weight,qualities of matter,32,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+533,550,solid,qualities of matter,32,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+534,551,hollow,qualities of matter,32,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+535,553,loose,qualities of matter,32,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+536,554,tight,qualities of matter,32,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+537,556,thick,qualities of matter,32,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+538,55B,blow,matter-related actions,33,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+539,560,burn,matter-related actions,33,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+540,561,burst,matter-related actions,33,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+541,564,crush,matter-related actions,33,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+542,56C,fold,matter-related actions,33,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+543,578,pull,matter-related actions,33,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+544,579,push,matter-related actions,33,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+545,57D,shake,matter-related actions,33,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+546,589,wash,matter-related actions,33,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+547,58C,acid,misc. matter/energy terms,34,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+548,593,fire,misc. matter/energy terms,34,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+549,594,force,misc. matter/energy terms,34,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+550,598,power,misc. matter/energy terms,34,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+551,59B,a blow of force,misc. matter/energy terms,34,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+552,59D,mist,misc. matter/energy terms,34,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+553,5A3,see,light,35,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False
+554,5A4,light,light,35,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+555,5A5,colour,light,35,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+556,5A6,shade,light,35,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+557,5A9,bright,light,35,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+558,5AA,dark,light,35,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+559,5AB,black,light,35,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+560,5AC,grey,light,35,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+561,5AD,white,light,35,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+562,5AE,red,light,35,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+563,5AF,orange,light,35,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+564,5B0,yellow,light,35,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+565,5B1,green,light,35,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+566,5B2,blue,light,35,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+567,5B4,brown,light,35,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+568,5B5,beautiful,light,35,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+569,5BD,sound,sound,36,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+570,5BF,quiet / soft,sound,36,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+571,5C0,loud,sound,36,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+572,5C1,hear,sound,36,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False
+573,5C2,music,sound,36,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+574,5C4,whistle,sound,36,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+575,5C8,of little heat,heat,37,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+576,5C9,warm,heat,37,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+577,5CA,of very much heat,heat,37,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+578,5CB,cook,heat,37,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+579,5CC,cook,heat,37,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+580,5D7,attack,assorted abstract concepts,38,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+581,5D8,good,assorted abstract concepts,38,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+582,5D9,bad,assorted abstract concepts,38,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+583,5DB,kind / sort,assorted abstract concepts,38,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+584,5DD,probable,assorted abstract concepts,38,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+585,5E4,simple,assorted abstract concepts,38,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+586,5E5,complex,assorted abstract concepts,38,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+587,5E7,make,assorted abstract concepts,38,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False
+588,5EA,danger,assorted abstract concepts,38,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+589,5EC,hard,assorted abstract concepts,38,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+590,5ED,true,assorted abstract concepts,38,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+591,5F1,damage,assorted abstract concepts,38,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+592,605,special,assorted abstract concepts,38,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+593,608,automatic,assorted abstract concepts,38,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+594,610,detail,assorted abstract concepts,38,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+595,611,equal,assorted abstract concepts,38,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+596,617,fertile,assorted abstract concepts,38,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+597,618,harmony,assorted abstract concepts,38,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+598,61A,match,assorted abstract concepts,38,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+599,62A,right (a right to do/be...),assorted abstract concepts,38,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+600,62F,system,assorted abstract concepts,38,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+601,633,attempt,assorted abstract concepts,38,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+602,63A,science,assorted abstract concepts,38,False,False,False,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+603,63E,support,assorted abstract concepts,38,False,False,False,False,False,False,False,False,False,False,False,False,False,True,True,False,False
