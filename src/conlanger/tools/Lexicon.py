@@ -41,6 +41,7 @@ class Word:
 
 
 class Lexicon:
+
     def __init__(
         self,
         syllable_structure: str,
@@ -49,19 +50,25 @@ class Lexicon:
         glides=None,
         nasals=None,
         word_list=None,
+        lexicon=None,
         style=None,
         probability=0.5,
         seed=None,
         max_syllables=3,
     ) -> None:
         random.seed(seed)
+        self._seed = seed
         self._phonemes = {"C": consonants, "V": vowels, "G": glides, "N": nasals}
         self._syllable_structure = self._parse_syllable_structure(syllable_structure)
         self._word_list = word_list if word_list else []
         self._style = style
         self._probability = probability
         self._max_syllables = max_syllables
-        self._lexicon = []
+        self._lexicon = (
+            lexicon
+            if lexicon
+            else [self.create_word(**word) for word in self._word_list]
+        )
 
     def _parse_syllable_structure(self, structure: str) -> SyllableStructure:
         try:
@@ -91,9 +98,20 @@ class Lexicon:
             **args,
         )
 
-    def create(self):
-        self._lexicon = [self.create_word(**word) for word in self._word_list]
-        return self
+    def __getitem__(self, subscript):
+        return Lexicon(
+            syllable_structure=self._syllable_structure.structure,
+            consonants=self._phonemes["C"],
+            vowels=self._phonemes["V"],
+            glides=self._phonemes["G"],
+            nasals=self._phonemes["N"],
+            word_list=self._word_list[subscript],
+            lexicon=self._lexicon[subscript],
+            style=self._style,
+            probability=self._probability,
+            seed=self._seed,
+            max_syllables=self._max_syllables,
+        )
 
     def __iter__(self):
         yield from self._lexicon
