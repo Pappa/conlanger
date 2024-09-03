@@ -15,6 +15,7 @@ class Phoneme:
 @dataclass
 class Syllable:
     phonemes: list[Phoneme]
+    stressed = False
 
     def __iter__(self):
         yield from self.phonemes
@@ -41,7 +42,6 @@ class Word:
 
 
 class Lexicon:
-
     def __init__(
         self,
         syllable_structure: str,
@@ -79,7 +79,7 @@ class Lexicon:
     def create_syllable(self) -> Syllable:
         phonemes = []
         for c in self._syllable_structure:
-            if not c.optional or (c.optional and random.random() < self._probability):
+            if not c.optional or (random.random() < self._probability):
                 phonemes.append(
                     Phoneme(
                         random.choice(self._phonemes[c.type]),
