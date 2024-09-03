@@ -4372,7 +4372,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>f → ∅ / else</rule>
 <rule>r̩ l̩ → {ri,ra} {li,la} / _{S,R} (which vowel crops up is unpredictable)</rule>
 <rule>r̩ l̩ → {ra,ar} {la,al} / _{s,CC,V,#} (the results are unpredictable)</rule>
-<rule>m̩ n̩ → am an / _{s,({m,j,w)V}</rule>
+<rule>m̩ n̩ → am an / _{s,({m,j,w})V}</rule>
 <rule>m̩ n̩ → em en / else</rule>
 <comment>; Stress change:</comment>
 <comment>; — Pronouns, articles, and conjunctions become unstressed.</comment>
