@@ -413,11 +413,11 @@
 <rule>uː iː → oː eː / ʕ_</rule>
 <rule>i → a / Cˤ_{q,ɣ,ʕ}</rule>
 <rule>i → a / {q,ɣ,ʕ}_Cˤ</rule>
-<rule>a → i / _C(C), when stressed</rule>
+<rule stressed="true">a → i / _C(C)</rule>
 <rule>u → o / _{ʕ,ɣ,x,r}</rule>
 <rule>u → o / {ʕ,ɣ,x,r}_</rule>
 <comment>; Epenthesis in medial CCC clusters, often so that the syllable break is between the second and third consonants</comment>
-<rule>{u,a,i} → ∅ / _%, when stressed (short only)</rule>
+<rule stressed="true">{u,a,i}[+short] → ∅ / _%</rule>
 <rule>uː iː → u i</rule>
 <rule>a → a / _C[+ dorsal]</rule>
 <rule>a → e / _(C)(C)i(ː)</rule>
@@ -4384,30 +4384,31 @@ Journal of American Linguistics, 40:102 – 116
 <rule>ɡʷ → b / #_N</rule>
 <rule>ɡʷ → b / C_V</rule>
 <rule>ɡʷ → ɡ</rule>
-<rule>p t k kʷ b d ɡ m n l r s → f θ x xʷ v ð ɣ M N L R h / V(#)_{R,V} (“We don’t know the exact values of lenited /m n l r/. We can guess that lenited m became a nasalized labial continuant of some sort, but beyond that, we don’t know.”)</rule>
+<comment>; (“We don’t know the exact values of lenited /m n l r/. We can guess that lenited m became a nasalized labial continuant of some sort, but beyond that, we don’t know.”)</comment>
+<rule>p t k kʷ b d ɡ m n l r s → f θ x xʷ v ð ɣ M N L R h / V(#)_{R,V}</rule>
 <rule>k → x / V_t</rule>
-<comment>; “[i]t is thought that the vowel needs to be unstressed, but this is not certain”</comment>
-<rule>m → n / V_#;</rule>
-<comment>; “[i]t is thought that the long vowel probably needed to be unstressed- again, this is uncertain”</comment>
-<rule>Vː → V / _N#;</rule>
+<comment>; “; [i]t is thought that the vowel needs to be unstressed, but this is not certain”</comment>
+<rule>m → n / V_#</rule>
+<comment>; “; [i]t is thought that the long vowel probably needed to be unstressed- again, this is uncertain”</comment>
+<rule>Vː → V / _N#</rule>
 <rule>p t k kʷ b d ɡ ∅ → b d ɡ ɡʷ mb nd ŋɡ n / n#_”V</rule>
 <rule>oː → uː / _(C…)#</rule>
 <rule>oːi → uː / _#</rule>
 <rule>oː → aː / else</rule>
+<rule>Vː → V / _H ;(includes diphthongs)</rule>
 <comment>; “The following three rules only apply if the vowel is unstressed”:</comment>
-<rule>Vː → V / _H (includes diphthongs)</rule>
-<rule>— e → i / _(C…)#</rule>
-<rule>— o → a / _{(C…),u}#</rule>
+<rule stressed="false">e → i / _(C…)#</rule>
+<rule stressed="false">o → a / _{(C…),u}#</rule>
+<rule stressed="false">{ai,oi} → iː / _#</rule>
 <comment>; “The following two rules apply if the vowel in question is stressed or follows the stressed syllable”; consonant clusters cannot be /nt nd/:</comment>
-<rule>— {ai,oi} → iː / _#</rule>
 <rule>— i u → e o / _C(…C){a(ː),e(ː),o(ː)}</rule>
 <rule>— e o → i u / _C(…C){H,j}</rule>
 <rule>C → Cʲ / _{F,j}</rule>
 <rule>C → Cʷ / _{B,w}</rule>
-<comment>; For the following: “The book says nothing about length in the input vowels, but I think they could be either short or long from the examples given.”</comment>
 <rule>Kʷ → K</rule>
-<rule>— n → ∅ / {i,o,u}_{p,t,k,s}</rule>
-<rule>— {a,e}n → eː / _{p t k s}</rule>
+<comment>; For the following: “The book says nothing about length in the input vowels, but I think they could be either short or long from the examples given.”</comment>
+<rule>n → ∅ / {i,o,u}_{p,t,k,s}</rule>
+<rule>{a,e}n → eː / _{p t k s}</rule>
 <rule>w → f / #_</rule>
 <rule>w → ∅ / {#,C}C_</rule>
 <rule>w → ∅ / {θ,x}_</rule>
@@ -4428,20 +4429,20 @@ Journal of American Linguistics, 40:102 – 116
 <rule>C(…C) → ∅ / _# ! /l r/ and clusters containing them;</rule>
 <rule>{au,eu,ou} → oː</rule>
 <rule>ei → eː</rule>
-<rule>oː → ua / _[anything], when stressed</rule>
+<rule stressed="true">oː → ua / _[anything]</rule>
 <comment>; “ai and oi remain, but are written as &lt;ae ai oe oi&gt; seemingly randomly”</comment>
-<rule>eː → ia / _{#,Cʲ} when stressed;</rule>
+<rule stressed="true">eː → ia / _{#,Cʲ}</rule>
 <comment>; The second and third rule below “may well have been for the most part optional”; every one of the three “only applies to unstressed vowels” and “remained as a phonologically conditioned rule”:</comment>
 <rule>j → ∅</rule>
 <rule>— Vː → V</rule>
 <rule>— a → e / _#</rule>
 <rule>— {e,o} → a / _[anything]</rule>
 <comment>; “[t]his remained as a phonologically conditioned rule in OIr”</comment>
-<rule>V → Vː / _#, when stressed;</rule>
+<rule stressed="true">V → Vː / _#</rule>
 <comment>; “this is a tad unclear, because in some instances it didn’t seem to apply”</comment>
 <rule>VOR → VːR;</rule>
 <comment>; “[t]hat’s a little unclear, so let me try and enumerate: in words of more than three syllables, every other vowel (only the even ones) dropped, if it’s unstressed. In some words, syncope didn’t apply because it would create an unwieldy consonant cluster: so PIE *komaktyom → OIr cumachte, not *cumchte”</comment>
-<rule>V → ∅ / #UU(_)U(U(_)U) / unstressed; this “remained as a phonologically conditioned rule in OIr”;</rule>
+<rule stressed="false">V → ∅ / #UU(_)U(U(_)U) ; this “remained as a phonologically conditioned rule in OIr”;</rule>
 </section>
 <section>
 <h2>17.5.2 Proto-Celtic to Middle Welsh</h2>
@@ -4452,7 +4453,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule sporadic="true">st → sː</rule>
 <rule>ai → ɛ</rule>
 <rule>s → ∅ / V_V</rule>
-<rule>V → ə / _(C)#, also in proclitics</rule>
+<rule>V → ə / _(C)# ; also in proclitics</rule>
 <rule>s → ∅ / x_</rule>
 <rule>{au,eu,ou} → ∅</rule>
 <rule>uː {oi,ɔː} → yː uː</rule>
@@ -4469,7 +4470,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>V → ∅ / _#</rule>
 <rule>mb nd ŋɡ → mː nː ŋː</rule>
 <rule>e → i / _N</rule>
-<rule>$ → h / V_ (what $ is is unclear)</rule>
+<rule>$ → h / V_ ; (what $ is is unclear)</rule>
 <rule>V → ∅ / _[+intertonic]</rule>
 <rule>pː tː kː → f θ x</rule>
 <rule>p t k → f θ x / {r,l}_</rule>
@@ -4477,7 +4478,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>xt → iθ</rule>
 <rule>ɣ → i / C_V</rule>
 <rule>ɛː → ui</rule>
-<rule>ɔː → au / when stressed</rule>
+<rule stressed="true">ɔː → au</rule>
 <rule>l → ɬ / _t</rule>
 <rule>w → ɡw / #_</rule>
 <rule>mp nt ŋk → m̥ n̥ ŋ̊</rule>
@@ -9420,7 +9421,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>j → ∅ / i_</rule>
 <rule>ɟ → j / V_V</rule>
 <rule>ɲ → ∅ / _#</rule>
-<rule>ubu aba → uː aː / when stressed</rule>
+<rule stressed="true">ubu aba → uː aː</rule>
 <rule sporadic="true">ib → ∅ / _i,</rule>
 <rule>b → w / a_u</rule>
 <rule>aɡu → o</rule>
@@ -9451,7 +9452,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>kʷ → b / else</rule>
 <rule>ʔ → ∅</rule>
 <rule>{c,tʃ} → ʃ</rule>
-<rule>s → tʃ (in certain cases? Not a lot of data available on this one)</rule>
+<rule sporadic="true">s → tʃ ; (in certain cases? Not a lot of data available on this one)</rule>
 <comment>; “under obscure conditions”</comment>
 <rule>l → {lʲ,n}</rule>
 <rule>n → nʲ</rule>
