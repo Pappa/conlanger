@@ -4413,8 +4413,8 @@ Journal of American Linguistics, 40:102 – 116
 <rule>w → ∅ / {#,C}C_</rule>
 <rule>w → ∅ / {θ,x}_</rule>
 <rule>w → ∅ / V_{V,#}</rule>
+<rule>w → v / _ // V_{V,#}</rule>
 <comment>; “The following changes. . .are, quoth the book, ‘somewhat approximative’”:</comment>
-<rule>w → v / else</rule>
 <rule>— {p,t} → ∅ / #s_r</rule>
 <comment>; “(although it says that occasionally st &gt; t / #_)”</comment>
 <rule>— {p,t} → ∅ / #s_</rule>
@@ -4655,8 +4655,8 @@ Journal of American Linguistics, 40:102 – 116
 <rule>a ɑ {ɛ,ɪ,ɤ} → ɑː ɔː ɜː / _ɹ{C,#}</rule>
 <rule>ɑʊ → ɑː / _P</rule>
 <rule sporadic="true">ɑʊ → ɑː / _N</rule>
-<comment>; “[A] large number of cases that were ɑː have become ɔː subsequently for non-phonetic reasons, like laundry”</comment>
 <rule>ɑʊ → ɔː / else</rule>
+<comment>; “[A] large number of cases that were ɑː have become ɔː subsequently for non-phonetic reasons, like laundry”</comment>
 <rule sporadic="true">a → ɑː</rule>
 <rule>a → æ / else</rule>
 <rule sporadic="true">əɪ əʊ → ɑi æʊ</rule>
