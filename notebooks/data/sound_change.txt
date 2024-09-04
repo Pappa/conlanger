@@ -246,7 +246,7 @@
 <cite>Pogostick Man, from Fallon, Paul D. (2009), “The Velar Ejective in Proto-Agaw”. In Selected Proceedings of the 39th Annual Conference on African Linguistics, Ojo, Akinloye and Lioba Moshi (Eds.), 10 – 22. Sommerville, MA: Cascadilla Proceedings Project. &lt;http://www.lingref.com&gt;, document #2182, citing Appleyard, David L. (2006), A comparative dictionary of the Agaw languages. (Cushitic Language studies, 24.) Cologne: Rüdiger Köppe Verlag.</cite>
 <comment>; NB: Does not include vowel developments.</comment>
 <rule>{x,ɢ}(ʷ) → ∅ / #_ / _#</rule>
-<rule>ɢ(ʷ) → x(ʷ) / else</rule>
+<rule>ɢ(ʷ) → x(ʷ) / _ // _#</rule>
 <rule>{ts,tʃ} z dz → ʃ d dʒ</rule>
 <rule>t → r / medially</rule>
 </section>
@@ -269,11 +269,11 @@
 <comment>; NB: Does not include vowel developments.</comment>
 <rule>{x,ɢ} → ∅</rule>
 <rule>{xʷ,ɢʷ} → ∅ / #_ / _#</rule>
-<rule>{xʷ,ɢʷ} → w / else</rule>
+<rule>{xʷ,ɢʷ} → w / _ // #_ / _#</rule>
 <rule>ts tʃ dz → sʼ tʃʼ z</rule>
 <rule>k → {k(ʼ),q}</rule>
 <rule>kʼ → {χʷ,qʷ} / #_</rule>
-<rule>kʼ → q / else</rule>
+<rule>kʼ → q / _ // #_</rule>
 <rule>ʔ → ∅</rule>
 </section>
 <section>
@@ -581,7 +581,7 @@
 <rule>— a → {a,ɛ} (not common)</rule>
 <rule>— i u → e a / _R{$,#} (in verbs)</rule>
 <rule>— i u → e o / _C{$,#} (in verbs)</rule>
-<rule>— i → eː oː / else</rule>
+<rule>— i → eː oː / _ // _{R,C}{$,#}</rule>
 <rule>— aw → aːw</rule>
 <rule>— aj → eː / _$</rule>
 <comment>; Unstressed-vowel correspondences:</comment>
@@ -615,7 +615,7 @@
 <rule>Vː → V</rule>
 <rule>ə → a / near gutturals</rule>
 <rule>ə → ɛ / #R_C or when breaking up what would otherwise be a three-consonant cluster; in the case of two schwas, only the first one is dropped</rule>
-<rule>ə → ∅ / else</rule>
+<rule>ə → ∅ / _ // #R_C or when breaking up what would otherwise be a three-consonant cluster; in the case of two schwas, only the first one is dropped</rule>
 <rule sporadic="true">w θ ð ɣ → v t d ɡ</rule>
 <rule>x ʕ → χ ʔ</rule>
 <rule>sˤ tˤ ħ q → s t χ k</rule>
@@ -802,7 +802,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>{we,wiː} → o / #_</rule>
 <rule>tsi → ∅ / $_OO “(before a prefix; the first obstruent of the follow[ing] cluster then becomes ʔ)</rule>
 <rule>aː → aa / W_ ! when _{C{C,ː},#}</rule>
-<rule>aː → a / else</rule>
+<rule>aː → a / _ // W_ ! when _{C{C,ː},#}</rule>
 <rule>oː → o</rule>
 <rule>a → i / ! at word boundaries</rule>
 <rule>e → a / _#</rule>
@@ -1145,7 +1145,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>tʃ → s / maybe ! _#?</rule>
 <rule>dʒ → j</rule>
 <rule>ɡ → ∅ / iV_</rule>
-<rule>ɡ → k / else</rule>
+<rule>ɡ → k / _ // iV_</rule>
 <rule>{ʃ,z} → s</rule>
 <rule>n → m / #_</rule>
 <rule>ŋ → m / #_{æ,ø,y}</rule>
@@ -1154,7 +1154,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>r → t / _{i,u}</rule>
 <rule>rʲ → {r,t}</rule>
 <rule>l(ʲ) → n / #_</rule>
-<rule>l lʲ → r s / else</rule>
+<rule>l lʲ → r s / _ // #_</rule>
 <rule>j → {j,∅}</rule>
 <rule>Uː → U</rule>
 </section>
@@ -1190,7 +1190,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>ŋ → {ŋ,∅}</rule>
 <rule>rʲ → r</rule>
 <rule>l(ʲ) → n / #_</rule>
-<rule>l(ʲ) → r / else</rule>
+<rule>l(ʲ) → r / _ // #_</rule>
 <rule>j → {j,∅}</rule>
 <comment>; Syllable pitches reverse, basically, for whatever reason</comment>
 <rule>Uː → U</rule>
@@ -1221,19 +1221,19 @@ Journal of American Linguistics, 40:102 – 116
 <rule>p → b</rule>
 <rule>tʰ → d / _#</rule>
 <rule>t(ʰ) d → tʃ dʒ / _i</rule>
-<rule>tʰ → t / else</rule>
+<rule>tʰ → t / _ // _i</rule>
 <rule>tʃ → dʒ / #_i</rule>
 <rule>tʃ → d / #</rule>
 <rule>tʃʰ → tʃ</rule>
 <rule>ɡ → h / ! {C,V}_h</rule>
 <rule>k → ɡ / ! #_</rule>
 <rule>kʰ → ɡ / {C,V}_h</rule>
-<rule>kʰ → k / else</rule>
+<rule>kʰ → k / _ // {C,V}_h</rule>
 <rule>z → s</rule>
 <rule>ʃ → tʃ / #_a</rule>
-<rule>ʃ → s / else</rule>
+<rule>ʃ → s / _ // #_a</rule>
 <rule>nʲ → dʒ / #_</rule>
-<rule>nʲ → {j,n} / else</rule>
+<rule>nʲ → {j,n} / _ // #_</rule>
 <rule>ŋ → ɡ / #_u</rule>
 <rule>ŋ → n / #_{a,o,e}</rule>
 <rule>ŋ → {∅,j} / #_</rule>
@@ -1336,7 +1336,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>s → ç / _Vç</rule>
 <rule>a → æ / ! _B</rule>
 <rule>f → w / _V</rule>
-<rule>f → p / else</rule>
+<rule>f → p / _ // _V</rule>
 <rule>ŋ → ɡ / syllable-final</rule>
 </section>
 <section>
@@ -1423,7 +1423,7 @@ Journal of American Linguistics, 40:102 – 116
 <comment>; Finals:</comment>
 <rule>{əkʰ,əɡɦj} → ɟ (I think Thompson implied this was just a bit of a kludge)</rule>
 <rule>l → ∅ / {i,e}_</rule>
-<rule>l → j / else</rule>
+<rule>l → j / _ // {i,e}_</rule>
 <comment>; Thompson seems to list some changes as affecting Modern Vietnamese but I was unsure of where to put them so they’ll go here:</comment>
 <rule>c ɲ → t n / ! E_ (apparently the precursor to Vietnamese short *a was treated as a short vowel here)</rule>
 <comment>; In the original those first vowels were underlined.</comment>
@@ -1803,7 +1803,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>w → ∅ / #_</rule>
 <rule>R → r</rule>
 <rule sporadic="true">h → ʔ / _#</rule>
-<rule>h → ∅ / else</rule>
+<rule>h → ∅ / _ // _#</rule>
 <comment>; A:</comment>
 <rule>{iw,uj} → i / _#</rule>
 <comment>; B:</comment>
@@ -2652,7 +2652,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>{p(ʷ),v}Vh → fV</rule>
 <rule>u → {e,i} / _Cu</rule>
 <rule>ə → a / in U#</rule>
-<rule>ə → e / else</rule>
+<rule>ə → e / _ // in U#</rule>
 </section>
 <section>
 <h2>10.3.11.3.2 Proto-Tanna to Lenakel</h2>
@@ -2768,7 +2768,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>a → ɜ / _wo</rule>
 <rule>f → ∅ / #_{C[-low],V[-low]}</rule>
 <rule>f → ɰ / #_aCo</rule>
-<rule>f → j / else</rule>
+<rule>f → j / _ // #_aCo</rule>
 <rule>∅ → ɰ / #_aC[-low]</rule>
 <rule>∅ → j / #_{aC[+low],V[-back],C[-back]}</rule>
 <rule>∅ → w / #_{C[+round],V[+round]}</rule>
@@ -3490,7 +3490,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>v → m / medial</rule>
 <rule>v → w / a_a (in eastern dialects)</rule>
 <rule>{t,ð} → n / _#</rule>
-<rule>ð → t / else</rule>
+<rule>ð → t / _ // _#</rule>
 <rule>∅ → t / #_s</rule>
 <rule>z → s / #_</rule>
 <rule>z → ð / medial</rule>
@@ -3520,7 +3520,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>ə → i / #_ / _#</rule>
 <rule>ə → u / u_</rule>
 <rule>ə → a / a_</rule>
-<rule>ə → ∅ / else</rule>
+<rule>ə → ∅ / _ // a_</rule>
 <rule>ɣ ʁ → k q / _#</rule>
 <comment>; Regressive MOA assimilation and progressive voicing assimilation in consonant clusters (at least, when C₂ is either /l/ or /l̥/) </comment>
 <rule>C₀VC₀ → C₀ː</rule>
@@ -3542,7 +3542,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>ə → a / a_</rule>
 <rule>Cː → C / except when CV_V in U₁U₂</rule>
 <rule>t → s / i_ </rule>
-<rule>ə → i / else</rule>
+<rule>ə → i / _ // i_ </rule>
 <rule>dʒ → tʃ → s / “in certain positions” (except for Thule Greenlandic, where dʒ → tʃ and stayed there, apparently)</rule>
 <rule>m n ŋ t {{ɣ,ʁ} → {k,q}} → p t k n ŋ / _#</rule>
 <rule>m n ŋ → v t ɣ / _C[-nasal]</rule>
@@ -3563,7 +3563,7 @@ Journal of American Linguistics, 40:102 – 116
 <cite>Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171</cite>
 <rule>ə → u / u_</rule>
 <rule>ə → a / a_</rule>
-<rule>ə → i / else</rule>
+<rule>ə → i / _ // a_</rule>
 <rule>ɣ ʁ → k q / _#</rule>
 <comment>; Regressive MOA assimilation and progressive voicing assimilation in consonant clusters, at least when C₂ is either /l/ or /l̥/ </comment>
 <rule>C₀VC₀ → Cː</rule>
@@ -3581,7 +3581,7 @@ Journal of American Linguistics, 40:102 – 116
 <cite>Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171</cite>
 <rule>ə → u / u_</rule>
 <rule>ə → a / a_</rule>
-<rule>ə → i / else</rule>
+<rule>ə → i / _ // a_</rule>
 <rule>v → u</rule>
 <rule>ɣ → u / “in some positions”</rule>
 <rule>p k q s → v ɣ ʁ z / V_V</rule>
@@ -4310,7 +4310,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>bʱ dʱ ɡ́ʱ → b d z</rule>
 <rule>ḱ ɡ́ → s z</rule>
 <rule>k(ʷ) ɡ(ʷ)(ʱ) → tʃ dʒ / _E</rule>
-<rule>k kʷ ɡ(ʷ)(ʱ) → x k ɡ / else</rule>
+<rule>k kʷ ɡ(ʷ)(ʱ) → x k ɡ / _ // _E</rule>
 <rule uncertain="true">rt → š</rule>
 <rule>s → {s,h}</rule>
 <rule>u̯ → v</rule>
@@ -4369,11 +4369,11 @@ Journal of American Linguistics, 40:102 – 116
 <rule>tː → sː</rule>
 <rule>p → f / {V,#}_</rule>
 <rule>f → x / _O</rule>
-<rule>f → ∅ / else</rule>
+<rule>f → ∅ / _ // _O</rule>
 <rule>r̩ l̩ → {ri,ra} {li,la} / _{S,R} (which vowel crops up is unpredictable)</rule>
 <rule>r̩ l̩ → {ra,ar} {la,al} / _{s,CC,V,#} (the results are unpredictable)</rule>
 <rule>m̩ n̩ → am an / _{s,({m,j,w})V}</rule>
-<rule>m̩ n̩ → em en / else</rule>
+<rule>m̩ n̩ → em en / _ // _{s,({m,j,w})V}</rule>
 <comment>; Stress change:</comment>
 <comment>; — Pronouns, articles, and conjunctions become unstressed.</comment>
 <comment>; — First syllables stress in all verbal imperatives.</comment>
@@ -4394,7 +4394,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>p t k kʷ b d ɡ ∅ → b d ɡ ɡʷ mb nd ŋɡ n / n#_”V</rule>
 <rule>oː → uː / _(C…)#</rule>
 <rule>oːi → uː / _#</rule>
-<rule>oː → aː / else</rule>
+<rule>oː → aː / _ // _#</rule>
 <rule>Vː → V / _H ;(includes diphthongs)</rule>
 <comment>; “The following three rules only apply if the vowel is unstressed”:</comment>
 <rule stressed="false">e → i / _(C…)#</rule>
@@ -4498,7 +4498,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ → b d ɡ́ ɡ ɡʷ</rule>
 <rule>ḱ ɡ́ → ts dz</rule>
 <rule>{kʷ,kw} {ɡʷ,ɡw} → tʃ dʒ (→ s~z z ?) / _E</rule>
-<rule>{kʷ,kw} {ɡʷ,ɡw} → k ɡ / else</rule>
+<rule>{kʷ,kw} {ɡʷ,ɡw} → k ɡ / _ // _E</rule>
 </section>
 <section>
 <h2>17.7 Proto-Indo-European to Common Germanic</h2>
@@ -4698,9 +4698,9 @@ Journal of American Linguistics, 40:102 – 116
 <rule>ʍ → w</rule>
 <rule>l → ɫ (the conditions of this are not elaborated upon)</rule>
 <rule>oʊ iː → ɔʊ ɪə / _ɫ</rule>
-<rule>oʊ iː → əʊ ɪi / else</rule>
+<rule>oʊ iː → əʊ ɪi / _ // _ɫ</rule>
 <rule>uː → ʊə → uː / _ɫ ! in Queensland and New South Wales</rule>
-<rule>uː → ʊʉ → ʉː / else</rule>
+<rule>uː → ʊʉ → ʉː / _ // _ɫ ! in Queensland and New South Wales</rule>
 <rule>ɫ → əɫ / ! if one of the above vowel changes after the formation of /ɫ/ apply</rule>
 <rule sporadic="true">ɪ → iː / _#</rule>
 <rule sporadic="true">ɪ → iː</rule>
@@ -4713,7 +4713,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule sporadic="true">ʊə → ʉːwə</rule>
 <rule>oə → oː</rule>
 <rule>j → ∅ / %{θ,s,z,l}_”V</rule>
-<rule>sj zj lj → ʃ ʒ j~ɫj / else</rule>
+<rule>sj zj lj → ʃ ʒ j~ɫj / _ // %{θ,s,z,l}_”V</rule>
 <rule sporadic="true">ɫj → ɫi</rule>
 <rule>tj dj → tʃ dʒ</rule>
 <rule>ɔː → ɔ / _ɹV[-stress]</rule>
@@ -5924,7 +5924,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>ъ → aː / _r</rule>
 <rule>ъl → ɔ(ː)ɫ / P_</rule>
 <rule>ъl → ɛɫ / K_</rule>
-<rule>ъl → ɫu / else</rule>
+<rule>ъl → ɫu / _ // K_</rule>
 <rule>ьl → ɫu / C[+dental]_</rule>
 <rule>ьl → ɛɫ / P_C[+dental -palatalized]</rule>
 <rule>ьl → il / P_</rule>
@@ -5967,14 +5967,14 @@ Journal of American Linguistics, 40:102 – 116
 <rule>ʃ ʒ tʃ dʒ ɕ ʑ → ʂ ʐ ʈʂ ɖʐ ts ʒ</rule>
 <rule>r̝ → ʂ / C[-voiced]_</rule>
 <rule>r̝ → ʂ / _C[+voiced]</rule>
-<rule>ŕ → ʐ / else</rule>
+<rule>ŕ → ʐ / _ // _C[+voiced]</rule>
 <rule>ɛ → ɔ / _ɫ (if the vowel was from a yer)</rule>
 <rule sporadic="true">{ɛ,a} → ɔ</rule>
 <rule sporadic="true">V → ɛ</rule>
 <rule>ɫ → w</rule>
 <rule>ɒ e → a ɛ</rule>
 <rule>o → ɔ / _N</rule>
-<rule>o → u / else</rule>
+<rule>o → u / _ // _N</rule>
 <rule sporadic="true">u → ɔ</rule>
 <rule>pʲ mʲ fʲ → p m f / _#</rule>
 <rule sporadic="true">{i,ɨ} → ∅ / _jV</rule>
@@ -7299,7 +7299,7 @@ Journal of American Linguistics, 40:102 – 116
 <cite>Pogostick Man, from Moore, Denny and Ana Vilacy Galucio (1994), “Reconstruction of Proto-Tupari Consonants and Vowels”. Report 8: Survey of California and Other Indian Languages: Proceeds of the Meeting of the Society for the Study of the Indigenous Languages of the Americas, July 2 – 4, 1993, and the Hokan-Penutian Workshop, July 3, 1993, 119 – 137.</cite>
 <rule>t → r / _”V</rule>
 <rule>t → l / _V</rule>
-<rule>t → ∅ / else</rule>
+<rule>t → ∅ / _ // _V</rule>
 <rule>k → ∅ / _#</rule>
 <rule>kʷ → ∅</rule>
 <rule>b → β / V_V</rule>
@@ -7310,7 +7310,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>ʔ → ∅</rule>
 <rule>r → l / V[+nas]_V[+nas]</rule>
 <rule>ð nŋʷ → c β / #_V[-nas]</rule>
-<rule>ð → {∅,c} / else</rule>
+<rule>ð → {∅,c} / _ // #_V[-nas]</rule>
 <rule>j ŋʷ m n → ɲ m {m,p} {∅,t} / _V[+nas]</rule>
 <rule>ⁿd ŋ → t {ɡ,k} / _V[-nas]</rule>
 <rule>u → o / _{p,b}i</rule>
@@ -7332,11 +7332,11 @@ Journal of American Linguistics, 40:102 – 116
 <rule>ʔ → ∅</rule>
 <rule>{ᵐb,ⁿd,ð} → t / _V[+nas]</rule>
 <rule>ð → s / _i</rule>
-<rule>ð → h / else</rule>
+<rule>ð → h / _ // _i</rule>
 <rule>ŋ ŋʷ → k m / _V[+nas]</rule>
 <rule>ŋʷ → kʷ / #_V[-nas]</rule>
 <rule>ɨ → i / #_{p,βe}</rule>
-<rule>ɨ → ∅ / else</rule>
+<rule>ɨ → ∅ / _ // #_{p,βe}</rule>
 <rule>{{a/e},{e/a}} {ı̃,ẽ} → a ẽ</rule>
 </section>
 <section>
@@ -7347,7 +7347,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>ɡʷ → ∅ / _o</rule>
 <rule>ɡʷ ŋɡ → β k / _V[-nas]</rule>
 <rule>{(n)dz,ts} → s / _i</rule>
-<rule>{(n)dz,ts} → t / else</rule>
+<rule>{(n)dz,ts} → t / _ // _i</rule>
 <rule>β ð → ∅ {s,h} / _i</rule>
 <rule>ð → h</rule>
 <rule>ᵐb ŋʷ → p β / #_V[-nas]</rule>
@@ -7404,7 +7404,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule monosyllable="true">∅ → i / j_#</rule>
 <rule monosyllable="false">j → i / _#</rule>
 <rule>b → ∅ / _#</rule>
-<rule>b → w / else</rule>
+<rule>b → w / _ // _#</rule>
 <rule>w → ∅ / k_w</rule>
 <rule>w → u / k_</rule>
 <rule>a → ∅ / _j#</rule>
@@ -7422,7 +7422,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>t → ts / _{i,ı̃}</rule>
 <rule>ts → {h,∅}</rule>
 <rule>b → ∅ / u_#</rule>
-<rule>b → w / else</rule>
+<rule>b → w / _ // u_#</rule>
 <rule>u → ∅ / k_w</rule>
 <rule>a → ə / _N#</rule>
 <rule sporadic="true">a → ə</rule>
@@ -7459,7 +7459,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>t → tʃ / _{i,ı̃}</rule>
 <rule>ts → {h,j,∅}</rule>
 <rule>b r → p t / _#</rule>
-<rule>b → w / else</rule>
+<rule>b → w / _ // _#</rule>
 <comment>; ẽ ı̃ õ lost nasalization sometimes, kept it in others</comment>
 <rule>ã → a / Cw_</rule>
 <rule>u → õ (? possibly backwards?)</rule>
@@ -7481,7 +7481,7 @@ Journal of American Linguistics, 40:102 – 116
 <cite>Pogostick Man, from Lemle, Miriam (1971), âInternal Classification of the Tupi-Guarani Linguistic Family”. In Tupi Studies I, from Summer Institute of Linguistics Publications in Linguistics and Related Fields Publication Number 29.</cite>
 <rule>p → {h,∅} / _{u,o}</rule>
 <rule>p → {k,∅} / _w</rule>
-<rule>p → h / else</rule>
+<rule>p → h / _ // _w</rule>
 <rule>t → {ts,tʃ} / _{i,ı̃}</rule>
 <rule>k → ∅ / _#</rule>
 <rule>ʔ ts → ∅ {s,ʃ}</rule>
@@ -7489,7 +7489,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>V{m,n} → V[+nas] / _#</rule>
 <rule>Vŋ → V[+nas]</rule>
 <rule>j → {j,i} / _#</rule>
-<rule>j → {ɲ,tʃ} / else</rule>
+<rule>j → {ɲ,tʃ} / _ // _#</rule>
 <rule>w → {ɡ,k} / {#,V}_</rule>
 <rule>{b,r} → ∅ / _#</rule>
 <rule>a → {∅,o,e} / _j#</rule>
@@ -7549,12 +7549,12 @@ Journal of American Linguistics, 40:102 – 116
 <rule>p k → k ∅ / _w</rule>
 <rule>t → ʃ / _{i,ı̃}</rule>
 <rule>k → {k,∅} / _#</rule>
-<rule>k → {k,ʃ} / else</rule>
+<rule>k → {k,ʃ} / _ // _#</rule>
 <rule>ts → {s,h}</rule>
 <rule sporadic="true">Vn → V[+nas] / _#</rule>
 <rule>Vŋ → V[+nas]</rule>
 <rule>j b → {j,i} ∅ / _#</rule>
-<rule>b → w / else</rule>
+<rule>b → w / _ // _#</rule>
 <rule>u → ∅ / k_w</rule>
 <rule>u → o / ! o(C…)_(C…)#</rule>
 <rule>aN iN uN → {aN,ã} ı̃ {uN,ũ} / _#</rule>
@@ -7991,7 +7991,7 @@ Journal of American Linguistics, 40:102 – 116
 <cite>Pogostick Man, from Dixon, R.M.W. (2004), “Proto-Arawá Phonology”. Anthropological Linguistics 46(1):1 – 83</cite>
 <rule>p → f</rule>
 <rule>pʰ → p / #_</rule>
-<rule>pʰ → ɸ / else</rule>
+<rule>pʰ → ɸ / _ // #_</rule>
 <rule>ɗ → t / #_</rule>
 <rule>dz → s / medially</rule>
 <rule>tsʰ → s</rule>
@@ -8042,7 +8042,7 @@ Journal of American Linguistics, 40:102 – 116
 <h2>22.6 Proto-Arawá to Sorowahá</h2>
 <cite>Pogostick Man, from Dixon, R.M.W. (2004), “Proto-Arawá Phonology”. Anthropological Linguistics 46(1):1 – 83</cite>
 <rule>e → ɨ / _#</rule>
-<rule>e → a / else</rule>
+<rule>e → a / _ // _#</rule>
 <rule>{p(ʰ),ɓ} → h</rule>
 <rule>ɗ → d / #_</rule>
 <rule>{tʰ,ɗ → t</rule>
@@ -8769,7 +8769,7 @@ Journal of American Linguistics, 40:102 – 116
 <cite>Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
 <comment>; NB: Here, 〈TS〉 represents a sound that Whimemsz says “is between” the TH and TS series POA-wise.</comment>
 <rule>TS K → TŠ TS / _E</rule>
-<rule>TS K → TH TŠ / else</rule>
+<rule>TS K → TH TŠ / _ // _E</rule>
 <rule>TŠ TŠʷ Q → TS TṢ K</rule>
 <rule>j w → ʒ v</rule>
 <rule>{n,ɲ} → ⁿdʒ / _E[-nas]</rule>
@@ -9446,10 +9446,10 @@ Journal of American Linguistics, 40:102 – 116
 <rule>t → ʃ / i_i</rule>
 <rule>t → s / ! “in cluster with š” (presumably [ʃ])</rule>
 <rule>tʲ → s / _u</rule>
-<rule>tʲ → tʃ / else</rule>
+<rule>tʲ → tʃ / _ // _u</rule>
 <rule>k → ɡ / a_a</rule>
 <rule>kʷ → ɾ / #_ek</rule>
-<rule>kʷ → b / else</rule>
+<rule>kʷ → b / _ // #_ek</rule>
 <rule>ʔ → ∅</rule>
 <rule>{c,tʃ} → ʃ</rule>
 <rule sporadic="true">s → tʃ ; (in certain cases? Not a lot of data available on this one)</rule>
@@ -9470,7 +9470,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>ẽ → a / tʲ_</rule>
 <rule>ẽ → i / h_</rule>
 <rule>ẽ → i / in U[+long -stress]</rule>
-<rule>ẽ → e / else</rule>
+<rule>ẽ → e / _ // in U[+long -stress]</rule>
 <comment>; “under special conditions”</comment>
 <rule>a → {i,e}</rule>
 </section>
@@ -9503,11 +9503,11 @@ Journal of American Linguistics, 40:102 – 116
 <rule>tʲ → tj</rule>
 <rule>k → tʃ / _Ek(ʷ)</rule>
 <rule>kʲ → k / _{a,ã}</rule>
-<rule>kʲ → kj / else</rule>
+<rule>kʲ → kj / _ // _{a,ã}</rule>
 <rule>kʷ → w / _eːj</rule>
 <rule>kʷ → w / _ek</rule>
 <rule>kʷ → ʍ / ku_ (medial)</rule>
-<rule>kʷ → kw / else</rule>
+<rule>kʷ → kw / _ // ku_ (medial)</rule>
 <rule>ts → tʃ / #_{a,õ}ʔ</rule>
 <rule>ts → tʃ / V[+high]_</rule>
 <rule>ts → ʃ / #_ẽ</rule>
@@ -9519,9 +9519,9 @@ Journal of American Linguistics, 40:102 – 116
 <rule>ʃ → s / _{ik,e,ı̃,ẽ}</rule>
 <rule monosyllable="true">ʃ → ts / _i</rule>
 <rule>lʲ → l / #_ in U[-long -stress]</rule>
-<rule>lʲ → lj / else</rule>
+<rule>lʲ → lj / _ // #_ in U[-long -stress]</rule>
 <rule sporadic="true">nʲ → j / _ã</rule>
-<rule>nʲ → nj / else</rule>
+<rule>nʲ → nj / _ // _ã</rule>
 <rule>h → ʔ / _ã</rule>
 <rule>ç → hj</rule>
 <rule>hʷ → ʍ</rule>
@@ -9585,7 +9585,7 @@ Journal of American Linguistics, 40:102 – 116
 <cite>CatDoom, from Callaghan, Catherine A. (1983), “Proto-Utian Derivational Verb Morphology”. Proceedings of the 1982 Conference on Far Western American Indian Languages, Occasional Papers on Linguistics Number 11; and Callaghan, Catherine A. (1988), “Proto-Utian Stems” in In Honor of Mary Haas</cite>
 <rule>tʲ ʂ → j ʃ</rule>
 <rule>kʷ → k / #_</rule>
-<rule>kʷ → w / else</rule>
+<rule>kʷ → w / _ // #_</rule>
 <rule>l → ɾ / V_V</rule>
 <rule>a → e / il_</rule>
 <rule>o → u / _(C…)i</rule>
@@ -9610,7 +9610,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>ʂ → s̪</rule>
 <rule>ʈ → {ʈ,ts,tʃ} / _{j,ɾ}</rule>
 <rule>kʷ → k / #_</rule>
-<rule>kʷ → {k,w} / else</rule>
+<rule>kʷ → {k,w} / _ // #_</rule>
 <rule>l → ɾ / V_V</rule>
 <rule>a → e / il_</rule>
 <rule>o → u / _(C…)i</rule>
@@ -9624,7 +9624,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>ʈ → {ʈ,tʃ} / {i,e,o}$_</rule>
 <rule>ʈ → {ʈ,tʃ} / _{j,ɾ}</rule>
 <rule>kʷ → k / #_</rule>
-<rule>kʷ → {k,w} / else</rule>
+<rule>kʷ → {k,w} / _ // #_</rule>
 <rule>l → ɾ / V_V</rule>
 <rule>a → e / il_</rule>
 <rule>i → e / _C(C)oC</rule>
@@ -9975,7 +9975,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>ts(ʼ) → θ(ʼ)</rule>
 <rule>l(ʲ) → w / _u</rule>
 <rule>l(ʲ) → w / u_</rule>
-<rule>l(ʲ) → j / else</rule>
+<rule>l(ʲ) → j / _ // u_</rule>
 <rule>s → ∅ / #_C</rule>
 <rule>s → ∅ / #_{wa,wi}</rule>
 <rule>w j → ɡ dʒ / _V</rule>
@@ -10134,7 +10134,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>u³ uⁱ → o³ əⁱ</rule>
 <rule>a³ → o³ / {{C[+ uvular],K}ʷ,w}_</rule>
 <rule>a³ → o³ / _{Cu,C[+ uvular]ʷ,w}</rule>
-<rule>a³ → e³ / else</rule>
+<rule>a³ → e³ / _ // _{Cu,C[+ uvular]ʷ,w}</rule>
 <rule>aⁱ → əⁱ</rule>
 <rule>{u³~ə³} → əⁱ</rule>
 <rule>{a³~ə³} → ə³</rule>
@@ -10344,13 +10344,13 @@ Journal of American Linguistics, 40:102 – 116
 <rule>? → ∅</rule>
 <rule>V⁵ → V² / in syllables with /ɦ/</rule>
 <rule>V⁵ → V⁴ / in syllables with a nasal or liquid</rule>
-<rule>V⁵ → V³ / else</rule>
+<rule>V⁵ → V³ / _ // in syllables with a nasal or liquid</rule>
 <rule>ɦ → h / S_V²</rule>
-<rule>ɦ → ∅ / else</rule>
+<rule>ɦ → ∅ / _ // S_V²</rule>
 <rule>Cʲ → C / {f,v}_</rule>
 <rule>w → o / Cʲ_?w</rule>
 <rule>i → ∅ / C(w)_a</rule>
-<rule>ia → e / else</rule>
+<rule>ia → e / _ // C(w)_a</rule>
 <rule>C → Cʲ / {K,C[+pharyngeal]}_{a,a(ch)}</rule>
 <rule>o → a / C_w ! C = {K,C[+pharyngeal]}</rule>
 <rule>ŋ → n / n_Cʲa(ta)</rule>
@@ -10358,7 +10358,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>k → j / {e,a,o}_</rule>
 <rule>k → w / V_</rule>
 <rule>{o,a} {a(ta),a(ch)} → e a / _ŋ</rule>
-<rule>{a(ta),a(ch)} → o / else</rule>
+<rule>{a(ta),a(ch)} → o / _ // _ŋ</rule>
 <rule>? → o / _ŋ</rule>
 <rule>{Aʲ,Fʲ}[+alveolar] →{A,F} / _?ʲ</rule>
 <rule>ʈ → ʈʂ / _r</rule>
@@ -10452,14 +10452,14 @@ Journal of American Linguistics, 40:102 – 116
 <rule>yeʔ → yɛʔ (→ {uɔʔ,yɔʔ} in southern speech?)</rule>
 <rule>ye jej → yɛ i</rule>
 <rule>jew → au / C̣(C?)_</rule>
-<rule>jew → iau / else</rule>
+<rule>jew → iau / _ // C̣(C?)_</rule>
 <rule sporadic="true">{jem,jen} → iɛn</rule>
 <rule>yen → uɛn / C̣_</rule>
 <rule>yen → yɛn</rule>
 <rule>ɔ → a / in two cases cited; extremely rare change</rule>
 <rule>wɔ → ɔ (occasionally → uɔ after a guttural?)</rule>
 <rule>wɔʔ → uɔʔ / C[+guttural]_</rule>
-<rule>wɔʔ → ɔʔ / else</rule>
+<rule>wɔʔ → ɔʔ / _ // C[+guttural]_</rule>
 <comment>; “[t]his final occurs exclusively after SR gutturals”</comment>
 <rule>ɔn → an;</rule>
 <rule>wɔn ja wa → uɔn ia ua</rule>
@@ -10474,7 +10474,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>am → an</rule>
 <rule>{jam,jan} → iɛn</rule>
 <rule>wan → an / C[+labiodental]_</rule>
-<rule>wan → uan / else</rule>
+<rule>wan → uan / _ // C[+labiodental]_</rule>
 <rule>aŋ jaŋ → uaŋ aŋ / C̣_</rule>
 <rule>waŋ → uaŋ</rule>
 <rule>əjʔ əw {əm,ən} → eʔ ɛu ɛn</rule>
@@ -10551,7 +10551,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>u o → v̩ u</rule>
 <rule>B → v̩ / {qʰ,(ŋ)q}_</rule>
 <rule>V% → mid tone / C_ru</rule>
-<rule>V% → high tone / else</rule>
+<rule>V% → high tone / _ // C_ru</rule>
 <rule>N → ∅ / _pV</rule>
 <rule>{r,s}pʰ {r,s}(N)p {r,s}b {r,s}mb → pʰ p b mb / _V (the paper implies similar developments occurred with stops at other POAs)</rule>
 <rule>{r,s}(N)k → k / _V</rule>
@@ -10892,7 +10892,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>m → w / _ã</rule>
 <rule>t → ts / _{i,ı̃}</rule>
 <rule>tʰ → ts / _i</rule>
-<rule>tʰ → n / else</rule>
+<rule>tʰ → n / _ // _i</rule>
 <rule>ã → ẽ</rule>
 <rule>e → i / r_ʔ</rule>
 <rule>r → ts / _i</rule>
@@ -10901,7 +10901,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>kʰ → r</rule>
 <rule>m → n</rule>
 <rule>p → ∅ / C_ ! s_</rule>
-<rule>p → kʷ / else</rule>
+<rule>p → kʷ / _ // C_ ! s_</rule>
 <comment>; (this is a bit of a guess; the paper proper has 〈hw〉 here)</comment>
 <rule uncertain="true">pʰ → ʍ</rule>
 <comment>; The paper is unclear about what happened to /u/.</comment>
@@ -11334,7 +11334,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>p → {p,b,m,w} / _C</rule>
 <rule>p → b / V_V (*)</rule>
 <rule>tʲ → ʃ / in ”U</rule>
-<rule>tʲ → ʒ / else</rule>
+<rule>tʲ → ʒ / _ // in ”U</rule>
 <rule>t → ∅ / _k, when medial</rule>
 <rule>”V[+nas] → Vn (*)</rule>
 <rule sporadic="true">∅ → ʔ / C_#</rule>
@@ -11346,7 +11346,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>ç x → x {ʃ,ʒ}</rule>
 <rule>p → {p,b,m,w}</rule>
 <rule>tʲ → ʃ / in ”U</rule>
-<rule>tʲ → ʒ / else</rule>
+<rule>tʲ → ʒ / _ // in ”U</rule>
 <rule>s → z / in U[-stress]</rule>
 <rule>s → z / V_V</rule>
 <rule>r → d / s_</rule>
@@ -12327,7 +12327,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>ðʲ sʲ tsʲ(ː) lʲ → ð s ts(ː) l</rule>
 <rule>nʲ → ni / #(C)i_V</rule>
 <rule>nʲ → in / V_V</rule>
-<rule>nʲ → n / else</rule>
+<rule>nʲ → n / _ // V_V</rule>
 <rule>n → ∅ / _tː</rule>
 <rule>w → ∅ / o_st (*)</rule>
 <rule>ð → t</rule>
@@ -12398,7 +12398,7 @@ Journal of American Linguistics, 40:102 – 116
 <rule>ɣ → j / C_e</rule>
 <rule>ɣ → ʋ / U_U</rule>
 <rule>ɣ → ʔ / VV₀_V₀ ! V₀ = U</rule>
-<rule>ɣ → ∅ / else</rule>
+<rule>ɣ → ∅ / _ // VV₀_V₀ ! V₀ = U</rule>
 <rule>h → ∅ / V[-stress](X)_V</rule>
 <rule>AO → {A,O,U}ː / unstressed</rule>
 <rule sporadic="true">e → i / A_,</rule>
@@ -12946,7 +12946,7 @@ Journal of American Linguistics, 40:102 – 116
 <h2>46.15 Proto-Japanese to Old Japanese Vowel Shift</h2>
 <cite>Pogostick Man, from Frellesvig, Bjarke and John Witman (2005), “The Japanese-Korean vowel correspondences”</cite>
 <rule>e o → je wo / _#</rule>
-<rule>e o → i u / else</rule>
+<rule>e o → i u / _ // _#</rule>
 <rule>{ɨ,ə} → o</rule>
 <rule>{u,ɨ}i {,a,i {ɨi,i{a,ə}} u{ɨ,a,ə} → wi e je wo</rule>
 </section>
