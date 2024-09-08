@@ -616,9 +616,8 @@
 <rule>{e(ː),ɛ} → ɛ</rule>
 <rule>Vː → V</rule>
 <rule>ə → a / near gutturals</rule>
-<rule>ə → ɛ / #R_C or when breaking up what would otherwise be a three-consonant cluster; in the case of two schwas, only the first one is dropped</rule>
-<rule>ə → ∅ / _ // #R_C or when breaking up what would otherwise be a three-consonant cluster; in the case of two schwas, only the first one is dropped</rule>
-<rule>ə → ∅ / _ // #R_C or when breaking up what would otherwise be a three-consonant cluster; in the case of two schwas, only the first one is dropped</rule>
+<rule>ə → ɛ / #R_C ; or when breaking up what would otherwise be a three-consonant cluster; in the case of two schwas, only the first one is dropped</rule>
+<rule>ə → ∅ / _ // #R_C ; or when breaking up what would otherwise be a three-consonant cluster; in the case of two schwas, only the first one is dropped</rule>
 <rule sporadic="true">w θ ð ɣ → v t d ɡ</rule>
 <rule>x ʕ → χ ʔ</rule>
 <rule>sˤ tˤ ħ q → s t χ k</rule>
@@ -10459,13 +10458,11 @@ Journal of American Linguistics, 40:102 – 116
 <rule>ŋ → ∅ / _u / _V</rule>
 <rule>w → u / _V</rule>
 <rule>v ʋ → f v</rule>
-<rule>z → {s,tsʼ} (the former “without exception” “in oblique tone words”)</rule>
-<comment>; “[i]n oblique tone syllables”</comment>
-<rule>ɖʐ →ʈʂ</rule>
-<comment>; “in píng-tone syllables”</comment>
-<rule>ɖʐ → ʈʂʼ</rule>
+<rule>z → {s,tsʼ} ; (the former “without exception” “in oblique tone words”)</rule>
+<rule>ɖʐ →ʈʂ ; “[i]n oblique tone syllables”</rule>
+<rule>ɖʐ → ʈʂʼ ; “in píng-tone syllables”</rule>
 <rule>ʐ → ʂ</rule>
-<rule>r → ʐ (Apparently there was some situation where this went to ∅, and then something happened with the output syllable being [ɚ])</rule>
+<rule>r → ʐ ; (Apparently there was some situation where this went to ∅, and then something happened with the output syllable being [ɚ])</rule>
 <rule>ʔ → ŋ / _V[-high]</rule>
 <rule>ʔ → ∅ / _{j,i,y}</rule>
 <rule>ʔ → ∅ / _u ; (not always? Perhaps some variation with [ɣ] here?)</rule>
@@ -10476,45 +10473,49 @@ Journal of American Linguistics, 40:102 – 116
 <comment>; Finals:</comment>
 <rule>uj → (ɣ)u</rule>
 <rule>m → n</rule>
-<rule>long-tail vowel thing → i (or [truncated vowel-thing] “where GH sibilant initial variants occur”)</rule>
-<rule>{long-tail vowel thingʔ,əʔ} → ɛʔ</rule>
-<rule sporadic="true">i → [long-tail vowel thing] / C̣_</rule>
+<rule>; long-tail vowel thing → i (or [truncated vowel-thing] “where GH sibilant initial variants occur”)</rule>
+<rule>; {long-tail vowel thingʔ,əʔ} → ɛʔ</rule>
+<rule sporadic="true">; i → [long-tail vowel thing] / C̣_</rule>
 <rule>iʔ iw → eʔ ew / C̣_ ; (the latter with variant iɛu?)</rule>
-<rule>iʔ → ieʔ (→ i[truncated vowel-thing]ʔ?)</rule>
-<rule>uʔ → oʔ (occasionally → uɛʔ?)</rule>
+<rule>iʔ → ieʔ ; (→ i[truncated vowel-thing]ʔ?)</rule>
+<rule>uʔ → oʔ</rule>
+<rule sporadic="true">oʔ → uɛʔ</rule>
 <rule>uj → u(ɛ)i / m_</rule>
 <rule>uj → uɛi / {P,C[+guttural],∅}_</rule>
 <rule>uj → ui / {C[+dental],C[+sibilant]}_</rule>
-<rule>ujʔ → uɛʔ (dialectally → uɔʔ?)</rule>
+<rule>ujʔ → uɛʔ</rule>
+<rule sporadic="true">uɛʔ → uɔʔ</rule>
 <rule>un → uɛn / ! {C[+dental],C[+sibilant]}_</rule>
 <rule>uɛn → ɛn / ʋ_</rule>
-<rule>uŋ → oŋ (in one source?)</rule>
+<rule>uŋ → oŋ ; (in one source?)</rule>
 <rule>juŋ → iuŋ / _{∅,x,ʋ,ʔ}</rule>
 <rule>juŋ → iuŋ / _ɡ[+píng tone]</rule>
-<rule>juŋ → uŋ (→ oŋ dialectally?)</rule>
+<rule>juŋ → uŋ</rule>
+<rule sporadic="true">uŋ → oŋ</rule>
 <rule>jujŋ ujŋ → iuŋ uŋ</rule>
-<rule>y → ɥ (→ y~u dialectally?) / C̣_</rule>
-<rule>yʔ → yɛʔ / {l,C[+dental +sibilant]}_ in “QYS -juət-type” finals, dialectally?</rule>
+<rule>y → ɥ / C̣_</rule>
+<rule sporadic="true">ɥ → [y u] / C̣_</rule>
+<rule>yʔ → yɛʔ / {l,C[+dental +sibilant]}_ ; in “QYS -juət-type” finals, dialectally?</rule>
 <comment>; “QYS -k-types”</comment>
-<rule>yʔ → oʔ (eventually → {ʊʔ,(i)uʔ?) / {l,C[+dental +sibilant]}_, in</rule>
-<rule>yʔ → yʔ(~yɛʔ?) / {∅,C[+guttural]}, in -juət-types</rule>
-<rule>yʔ → ioʔ (→ iʊʔ dialectally?) / {∅,C[+guttural]}_, in -k-types</rule>
-<rule>yʔ → {ɥʔ,yʔ,uʔ} / C̣, in -juət-types</rule>
-<rule>yʔ → oʔ (→ ʊʔ?) / C̣_, in -k-types</rule>
+<rule>yʔ → oʔ / {l,C[+dental +sibilant]}_ ; in “QYS -k-types”</rule>
+<rule>yʔ → yʔ / {∅,C[+guttural]} ; , in -juət-types</rule>
+<rule>yʔ → ioʔ / {∅,C[+guttural]}_ ; , in -k-types</rule>
+<rule>yʔ → {ɥʔ,yʔ,uʔ} / C̣ ; , in -juət-types</rule>
+<rule>yʔ → oʔ / C̣_ ; , in -k-types</rule>
 <rule>yjʔ → yʔ</rule>
 <rule>yn → un / C̣_ ; (may have stayed yn or → ɥn in at least one area?)</rule>
 <rule>je jeʔ yeʔ → ɛ ɛʔ uɛʔ / C̣_</rule>
 <rule>je jeʔ → iɛ iɛʔ</rule>
-<rule>yeʔ → yɛʔ (→ {uɔʔ,yɔʔ} in southern speech?)</rule>
+<rule>yeʔ → yɛʔ ; (→ {uɔʔ,yɔʔ} in southern speech?)</rule>
 <rule>ye jej → yɛ i</rule>
-<rule>jew → au / C̣(C?)_</rule>
-<rule>jew → iau / _ // C̣(C?)_</rule>
-<rule>jew → iau / _ // C̣(C?)_</rule>
+<rule>jew → au / C̣(C)_</rule>
+<rule>jew → iau / _ // C̣(C)_</rule>
+<rule>jew → iau / _ // C̣(C)_</rule>
 <rule sporadic="true">{jem,jen} → iɛn</rule>
 <rule>yen → uɛn / C̣_</rule>
 <rule>yen → yɛn</rule>
-<rule>ɔ → a / in two cases cited; extremely rare change</rule>
-<rule>wɔ → ɔ (occasionally → uɔ after a guttural?)</rule>
+<rule sporadic="true">ɔ → a</rule>
+<rule>wɔ → ɔ ; (occasionally → uɔ after a guttural?)</rule>
 <rule>wɔʔ → uɔʔ / C[+guttural]_</rule>
 <rule>wɔʔ → ɔʔ / _ // C[+guttural]_</rule>
 <rule>wɔʔ → ɔʔ / _ // C[+guttural]_</rule>
