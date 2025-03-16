@@ -17,6 +17,7 @@ dependencies = [
     "pandas",
     "scikit-learn",
     "tqdm",
+    "imbalanced-learn"
 ]
 
 [project.optional-dependencies]
