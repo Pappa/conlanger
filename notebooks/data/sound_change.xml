@@ -422,40 +422,37 @@
         <change>dʒ → j, occasionally ɟ or dʒ in educated speech</change>
         <change>θ ð ðˤ → t d dˤ</change>
         <change>q → ɡ</change>
-        <change>aː → eː / in Form VI ; (tafā‘ala) verbs, though these apparently coexist with forms having the original vowel as well, with semantic distinctions</change>
-        <comment>; Epenthesis (it seems i is preferred) breaking up final consonant clusters</comment>
-        <change>aː → æː / when not near emphatics</change>
+        <change>aː → eː /</change>
+        <change>aː → æː / _ // sˤ_, tˤ_, dˤ_, ðˤ_, _sˤ, _tˤ, _dˤ, _ðˤ</change>
         <change sporadic="true">V:[-long] → ∅ / #C_C</change>
     </section>
     <section index="6.2.2.1.9" name="Classical Arabic to Wādı̄ Hadhrami Arabic">
-        <cite>Pogostick Man, from Wikipedia Contributors (2013), “Hadhrami Arabic”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Hadhrami_Arabic&amp;oldid=580700095&gt;</cite>
+        <cite>Pogostick Man, from Wikipedia Contributors (2013), “Hadhrami Arabic”. Wikwhen not near emphaticsipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Hadhrami_Arabic&amp;oldid=580700095&gt;</cite>
         <change>dʒ → j, occasionally ɟ or dʒ in educated speech</change>
         <change>θ ð ðˤ → t d dˤ</change>
         <change>dˤ q → ðˤ ɡ</change>
-        <change>aː → eː / in Form VI ; (tafā‘ala) verbs, though these apparently coexist with forms having the original vowel as well, with semantic distinctions</change>
-        <comment>; Epenthesis (it seems i is preferred) breaking up final consonant clusters</comment>
-        <change>aː → æː / when not near emphatics</change>
+        <change>aː → eː /</change>
+        <change>aː → æː / _ // sˤ_, tˤ_, dˤ_, ðˤ_, _sˤ, _tˤ, _dˤ, _ðˤ</change>
         <change sporadic="true">V:[-long] → ∅ / #C_C</change>
     </section>
     <section index="6.2.2.1.10" name="Classical Arabic to Hassāniyya Arabic">
         <cite>Pogostick Man, from http://en.wikipedia.org/wiki/Hass%C4%81n%C4%ABya</cite>
         <comment>; NB: Words borrowed directly from CA/MSA seem to be immune to these changes. Also, unless otherwise noted, changes also apply to geminate consonants.</comment>
         <change>dˤ q → ðˤ ɡ</change>
-        <change>f θ → v z̪ (the article isn’t exactly clear on what this second phone is)</change>
-        <change>ʔ → {∅,j,w} / depending on the environment; again, the article is unclear</change>
-        <change>x → χ (conjectured based upon the following but not outright stated in the article)</change>
+        <change>f θ → v z̪</change>
+        <change>ʔ → {∅,j,w}</change>
+        <change>x → χ</change>
         <change>ɣː → ʁː → qː</change>
         <change>ɣ → {ʁ,q}</change>
-        <change>V:[-long] → ∅ / C_{C,#} ; (except for the feminine marker)</change>
-        <comment>; The conditioning on these next two changes is conjectured based upon the source:</comment>
+        <change>V:[-long] → ∅ / C_{C,#}</change>
         <change sporadic="true">aj aw → eː(ʲ) oː(ʷ)</change>
         <change>j w → i u / #_CV</change>
         <change>j w → iː uː / #_CC</change>
     </section>
     <section index="6.2.2.1.11" name="Classical Arabic to Iraqi Arabic">
         <cite>Pogostick Man, from http://en.wikipedia.org/wiki/Varieties_of_Arabic</cite>
-        <change>k q → tʃ {ɡ,q} (ɡ is more common)</change>
-        <change>ɡʲ → j / in southern regions</change>
+        <change>k q → tʃ {ɡ,q}</change>
+        <change sporadic="true">ɡʲ → j</change>
         <change>ʕ → ʔˤ</change>
         <change>aj aw → eː oː</change>
     </section>
@@ -481,18 +478,18 @@
         <change>C[+labial, +velar] → ʷ / _,u:[-long]</change>
         <change>{u,ə} → ∅ / ! C_C(C)#</change>
         <change>ə → a / near ħ ʕ</change>
-        <change>ə → ɐ / near emphatics</change>
-        <change>ə → ɪ / else</change>
-        <change>u → ʊ / short only</change>
-        <change>aː iː uː → ɑː eː oː / near emphatics</change>
-        <change>aː → æː / else</change>
+        <change>ə → ɐ / sˤ_, tˤ_, dˤ_, ðˤ_, _sˤ, _tˤ, _dˤ, _ðˤ</change>
+        <change>ə → ɪ / _ // sˤ_, tˤ_, dˤ_, ðˤ_, _sˤ, _tˤ, _dˤ, _ðˤ</change>
+        <change>u → ʊ / [-long]</change>
+        <change>aː iː uː → ɑː eː oː / sˤ_, tˤ_, dˤ_, ðˤ_, _sˤ, _tˤ, _dˤ, _ðˤ</change>
+        <change>aː → æː / _ // sˤ_, tˤ_, dˤ_, ðˤ_, _sˤ, _tˤ, _dˤ, _ðˤ</change>
         <change>C₁ˤC₂ → C₁C₂ˤ</change>
         <change>Cˤ → C / {#,V}_V</change>
         <change>q → {q,ɡ}</change>
-        <change sporadic="true">dʒ → {d,ɡ}</change>
+        <change>dʒ → {d,ɡ} / if s or z occur somewhere else in the word</change>
         <change>dʒ → ʒ / else</change>
-        <change sporadic="true">s → ʃ</change>
-        <change sporadic="true">z → ʒ</change>
+        <change>s → ʃ / if ʃ is somewhere in the stem after it</change>
+        <change>z → ʒ / if ʒ is somewhere in the stem after it</change>
     </section>
     <section index="6.2.2.1.15" name="Classical Arabic to Sa‘idi Arabic">
         <cite>Pogostick Man, from http://en.wikipedia.org/wiki/Sa%27idi_Arabic</cite>
@@ -506,7 +503,7 @@
     </section>
     <section index="6.2.2.1.17" name="Classical Arabic to Tunisian Arabic">
         <cite>Pogostick Man, from http://en.wikipedia.org/wiki/Tunisian_Arabic</cite>
-        <change sporadic="true">a → ɑ</change>
+        <change>a → ɑ / sˤ_, tˤ_, dˤ_, ðˤ_, _sˤ, _tˤ, _dˤ, _ðˤ</change>
         <change sporadic="true">a → ɛ</change>
         <change>dˤ q → ðˤ {ɡ,q}</change>
         <change>dʒ x ɣ → ʒ χ ʁ</change>
@@ -516,7 +513,6 @@
     </section>
     <section index="6.2.2.1.18" name="Proto-Semitic to Biblical Hebrew">
         <cite>Maknas, from http://www.adath-shalom.ca/history_of_hebrew.htm “and other sources”</cite>
-        <comment>; NB: ə could be realized as an ultrashort [a], [e], or [o] depending on its surroundings.</comment>
         <change>θ θˤ ð ɬ ɬˤ → ʃ ʃˤ z s sˤ</change>
         <change>x ɣ kˤ → ħ ʕ q</change>
         <change>aː → oː / ! _#</change>
@@ -529,7 +525,6 @@
         <change>i → eː oː / _ // _C{$,#}</change>
         <change>aw → aːw</change>
         <change>aj → eː / _$</change>
-        <comment>; Unstressed-vowel correspondences:</comment>
         <change>aj → ɛː / _#</change>
         <change>{o,u}(ː) → iː / _$%oː</change>
         <change>oː → uː</change>
@@ -549,12 +544,11 @@
         <change>aj aw → eː oː</change>
         <change>p b t d k ɡ → b v θ ð x ɣ / non-intial singletons</change>
         <change>ʕ → ∅ / _{$,#}</change>
-        <change>j → ∅ / E_ ; (not clear whether only short E or long also)</change>
-        <change>at → aː / _# ; (in feminine noun endings)</change>
+        <change>j → ∅ / E_</change>
+        <change>at → aː / _#</change>
     </section>
     <section index="6.2.2.1.19" name="Biblical Hebrew to Modern Israeli Hebrew">
         <cite>Maknas, from http://www.adath-shalom.ca/history_of_hebrew.htm “and other sources”</cite>
-        <comment>; NB: These aren’t all true sound changes per se, since Modern Israeli Hebrew was artificially revived and is an amalgamation of dialects.</comment>
         <change>{e(ː),ɛ} → ɛ</change>
         <change>Vː → V</change>
         <change>ə → a / near gutturals</change>
