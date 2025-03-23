@@ -408,7 +408,7 @@
         <change>∅ → e / CVCC_CVCV ; (applies across word boundaries)</change>
         <comment>; Resyllabification across word boundaries to prevent vowel-initial syllables</comment>
         <comment>; r gains emphatic status except when next to i, and even then it’s becoming more common in that environment</comment>
-        <change>a(ː) → ɑ(ː) / near emphatics</change>
+        <change>a(ː) → ɑ(ː) / sˤ_, tˤ_, dˤ_, ðˤ_, _sˤ, _tˤ, _dˤ, _ðˤ</change>
         <change>a(ː) → ɑ(ː) / if ɑ(ː) is elsewhere in the word</change>
         <change>a(ː) → æ(ː) / else (sometimes it seems more like ɛ(ː) to me)</change>
         <change>q → ʔ / except in several words, two of which are al-Qâhira and musîqâ</change>
