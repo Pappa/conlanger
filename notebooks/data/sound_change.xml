@@ -552,8 +552,8 @@
         <change>{e(ː),ɛ} → ɛ</change>
         <change>Vː → V</change>
         <change>ə → a / near gutturals</change>
-        <change>ə → ɛ / #R_C ; or when breaking up what would otherwise be a three-consonant cluster; in the case of two schwas, only the first one is dropped</change>
-        <change>ə → ∅ / _ // #R_C ; or when breaking up what would otherwise be a three-consonant cluster; in the case of two schwas, only the first one is dropped</change>
+        <change>ə → ɛ / #R_C</change>
+        <change>ə → ∅ / _ // #R_C</change>
         <change sporadic="true">w θ ð ɣ → v t d ɡ</change>
         <change>x ʕ → χ ʔ</change>
         <change>sˤ tˤ ħ q → s t χ k</change>
@@ -674,7 +674,7 @@
     </section>
     <section index="7.4" name="Proto-Algonquian to Blackfoot">
         <cite>Whimemsz, from Proulx, Paul (1989), “A Sketch of Blackfoot Historical Phonology”. International Journal of American Linguistics, 55:43 – 82</cite>
-        <change>{θ,tʃ,ʃ,r} → t / unless adjacent to another consonant</change>
+        <change>{θ,tʃ,ʃ,r} → t / _ // _,C</change>
         <change>∅ → x / _s // _C{C,#}</change>
         <change>j → s / ! C_</change>
         <change>h → ∅ / ! _C</change>
@@ -709,7 +709,7 @@
         <change>∅ → i / C_jV#</change>
         <change>a → o / _w</change>
         <change>eLwi → iː</change>
-        <change>i(ː)wi → iː / medially</change>
+        <change>i(ː)wi → iː / _ // _,#</change>
         <change>i(ː)wi → i / _#</change>
         <change>j → s</change>
         <change>w → j / _i</change>
@@ -721,15 +721,14 @@
         <change>ket → tː (→ sː?)</change>
         <change>ke(h) → tː ?</change>
         <change>{k(ʷ)es,keθ} → sː</change>
-        <change>e → ∅ / O_ in #U ; (not universal)</change>
-        <comment>; “(followed by truncation of following x)”</comment>
+        <change sporadic="true">e → ∅ / O_ in #U</change>
         <change>{me,ne} → ∅ / #_O</change>
         <change>{we,wiː} → o / #_</change>
-        <change>tsi → ∅ / $_OO “(before a prefix; the first obstruent of the follow[ing] cluster then becomes ʔ)</change>
-        <change>aː → aa / W_ // when _{C{C,ː},#}</change>
-        <change>aː → a / _ // W_ // when _{C{C,ː},#}</change>
+        <change>tsi → ∅ / $_OO</change>
+        <change>aː → aa / W_ // _{C{C,ː},#}</change>
+        <change>aː → a / _ // W_ // _{C{C,ː},#}</change>
         <change>oː → o</change>
-        <change>a → i / ! at word boundaries</change>
+        <change>a → i / _ // _,#</change>
         <change>e → a / _#</change>
         <change>{eː,iː} → i</change>
     </section>
@@ -743,10 +742,10 @@
         <change>ʃ tʃ → {ʃ,x} s</change>
         <change>w j → {v,o} {t,e}</change>
         <change>{kC,Ck} → ʔ</change>
-        <change>C[- nasal] → ∅ / near nasals</change>
-        <change>m → ∅ / near nasals</change>
-        <change>p → {t,∅} / near consonants</change>
-        <change>W → ∅ / near nasals or t</change>
+        <change>C:[-nasal] → ∅ / N_, _N</change>
+        <change>m → ∅ / N_, _N</change>
+        <change>p → {t,∅} / C_, _C</change>
+        <change>W → ∅ / t_, _t, N_, _N</change>
     </section>
     <section index="7.6" name="Proto-Algonquian to Northern East Cree">
         <cite>Pogostick Man, from http://home.kpn.nl/cvkolmes/ojibwe/CorrCrOj.pdf and Wikipedia contributors (2015), “Cree language”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Cree_language&amp;oldid=690521189&gt;</cite>
@@ -5697,19 +5696,13 @@
         <change>w → ∅ / {r,b}_</change>
         <change>d → ∅ / ɫ_ɲ</change>
         <change>d → ∅ / r_ts</change>
-        <comment>; “in arch. ‘jeno’”</comment>
         <change>d → ∅ / _n</change>
-        <comment>; “in ‘stręczyć’”</comment>
         <change>∅ → t / s_r</change>
         <change>st ʂʈʂ → z ʐ / _b</change>
-        <comment>; “in verbs in -nąć”</comment>
         <change>{b,p} → ∅ / _n</change>
         <change>v → ∅ / _stv</change>
-        <comment>; “czworo”</comment>
-        <change>t → ∅ / ʈʂ_v in</change>
-        <comment>; “słza”</comment>
-        <change>s → ∅ / _ɫza in</change>
-        <comment>; “Skrwa”</comment>
+        <change>t → ∅ / ʈʂ_v</change>
+        <change>s → ∅ / _ɫza</change>
         <change>trk → kr / in the name of the river</change>
         <change>zdʲ stʲ → {ʑ,ɕ} {s,ɕ} / _n</change>
         <change>dʲ → ∅ / r_n</change>
@@ -10437,8 +10430,7 @@
         <change>ns → ts / _k(ʷ)</change>
         <change>n → ∅ / _s</change>
         <change>”V(ː)(C)(C)Vː → V(C)”(C)CV:[-long] / _#</change>
-        <comment>; “unaccented syllables only”</comment>
-        <change>ara → aː</change>
+        <change sporadic="true">ara → aː</change>
         <change>jh → hj</change>
         <change>n → t / _k(ʷ)</change>
         <change>”V(C)(C)CaCV → V(C)”(C)CaCV / _#</change>
@@ -10449,10 +10441,8 @@
         <change>”V → ”Vː / _C(R)V</change>
         <change>hs → sh / C_</change>
         <change>hts → tsh / C_V</change>
-        <comment>; “even numbered syllables only”</comment>
-        <change>V → Vː / _”C:[-glottal](R)V{ː,H} in</change>
-        <comment>; “in the second syllable of a word”</comment>
-        <change>V → Vː / _KRV</change>
+        <change sporadic="true">V → Vː / _”C:[-glottal](R)V{ː,H}</change>
+        <change>V → Vː / #%_KRV</change>
         <change>V → V[+high tone] / _$”V</change>
         <change>a(ː) o(ː) õ(ː) → æ(ː) e(ː) ẽ(ː) / r_</change>
         <change>Vr → Vː / _C</change>
@@ -10463,7 +10453,6 @@
         <change>h → ∅ / _sn</change>
         <change>h → ∅ / _{k,t,ts,s}#</change>
         <change>k → h / _k</change>
-        <comment>; “Allophonic changes:”</comment>
         <change>õ(ː) → ũ(ː)</change>
         <change>ts → tʃ / _{(h)i,(h)j}</change>
         <change>s → ʃ / _{hi,hj}</change>
@@ -10497,7 +10486,6 @@
         <change>∅ → e / {t,k}_{r,n}</change>
         <change>∅ → e / {#,V}s_n</change>
         <change>∅ → e / t_w</change>
-        <comment>; “Dialectal changes include:”</comment>
         <change>∅ → e / {#,V}s_w</change>
         <change>r → l</change>
         <change>t → k / _j</change>
@@ -10505,7 +10493,6 @@
         <change>wə̃ → ũ / {h,s}_</change>
         <change>j → ∅ / ts_</change>
         <change>t → tʃ / _(h)j</change>
-        <comment>; “Allophonic changes:”</comment>
         <change>wh → f</change>
         <change>ts → tʃ / _{(h)i,(h)j}</change>
         <change>t tʃ k(ʷ) → d dʒ ɡ(ʷ) / _{V,R}</change>
@@ -10532,8 +10519,7 @@
         <change>ʔ → h / _C</change>
         <change>r → l</change>
         <change>”Vː[+falling tone] → ”V[-long -falling tone]</change>
-        <comment>; “In addition, a number of sound changes have applied to words only in the pre-pausal position. Most of these changes are characterized by the devoicing of one or more segments at the end of a word”</comment>
-        <change>Vː → V _”C(C)(C)V (“this change happens only in the Ontario dialect”)</change>
+        <change>Vː → V _”C(C)(C)V</change>
         <change>∅ → e / C_{n,l}V(H)#</change>
         <change>∅ → o / C_wV(H)#</change>
         <change>∅ → i / C_jV(H)#</change>
@@ -10544,7 +10530,6 @@
         <change>OV:[-long] → O̊V̊ / _#</change>
         <change>jV → ∅ / Ci_(H)#</change>
         <change>ʔ → h / _C#</change>
-        <comment>; “Allophonic changes:”</comment>
         <change>R → R̊ / _#</change>
         <change> ts → tʃ / _{(h)i,(h)j}</change>
         <change>t tʃ k(ʷ) → d dʒ ɡ(ʷ) / _{V,R}</change>
@@ -10556,16 +10541,7 @@
         <change>ts → s / ! _{i,j}</change>
         <change>n → ∅ / _s</change>
         <change>j → ∅ / _ts</change>
-        <comment>; “in even penultimate syllables”</comment>
         <change>V → Vː / _{t,k(ʷ),s,n,r,j,w}</change>
-        <comment>; “The inherited accent system is replaced by a new one, by which...</comment>
-        <comment>; — “the accent falls on the last nonfinal even short syllable of a word if this vowel is followed directly</comment>
-        <comment>; —— “by a single glottal consonant,</comment>
-        <comment>; —— “by /sn/ or /sw/,</comment>
-        <comment>; —— “by any two-consonant cluster that does not end in a resonant,</comment>
-        <comment>; —— “or by any three consonant cluster;</comment>
-        <comment>; — “failing that, the accent falls on the last non-final even short syllable that is followed by a non-final syllable such as that just described;</comment>
-        <comment>; — “failing that, a word has no accent.”</comment>
         <change>a → æ / _ra(ː)</change>
         <change>a → e / _ro(ː)</change>
         <change>ã → ẽ / _rõː</change>
@@ -10579,7 +10555,7 @@
         <change>r → ∅ / Vh_</change>
         <change>Vh → Vː / _{n,w,j}</change>
         <change>h → ∅ / V_V</change>
-        <change>r → j / C:[-glottal](h)_{o(ː),õ(ː)</change>
+        <change>r → j / C:[-glottal](h)_{o(ː),õ(ː)}</change>
         <change>r → h / s_</change>
         <change>r → j / i(ː)_V</change>
         <change>r → w / {o(ː),õ(ː)}_V</change>
@@ -10587,8 +10563,8 @@
         <change>o → oː / _{aː,æː}</change>
         <change>Vː → V / V_</change>
         <change>V₁”V₂ → ”V₁V₂</change>
-        <change>a(ː) → ẽ(ː) / adjacent to a nasal vowel</change>
-        <change>ẽ(ː) → e(ː) / _{e(ː),o(ː)</change>
+        <change>a(ː) → ẽ(ː) / V:[+nasal]_, _V:[+nasal]</change>
+        <change>ẽ(ː) → e(ː) / _{e(ː),o(ː)}</change>
         <change>ʔ → ∅ / _nk(ʷ)</change>
         <change>n → t / _k(ʷ)</change>
         <change>n → t / ʔ_#</change>
@@ -10603,7 +10579,6 @@
         <change>a(ː) → õ(ː) / V:[+nas]H_</change>
         <change>a(ː) → õ(ː) / V:[+nas]({ʔ,s})w_</change>
         <change>ẽ(ː) õ(ː) → ɛ̃(ː) ɔ̃(ː)</change>
-        <comment>; “Allophonic changes:”</comment>
         <change>∅ → h / k_n</change>
         <change>t k(ʷ) → d ɡ(ʷ) / _{V,R}</change>
         <change>s → ʃ / _j</change>
@@ -10615,10 +10590,9 @@
         <change>ths → tʃ</change>
         <change>j → ∅ / tʃ_</change>
         <change>t → ˀt</change>
-        <comment>; “penultimate syllables only”</comment>
-        <change>”V → ”Vː / _n in</change>
+        <change>”V → ”Vː / _n%#</change>
         <change>n → t / ! _{h,kʷ,V:[+nas]}</change>
-        <change>”V → ”Vː / _{k(ʷ),(ˀ)t}{s,R,H} ; (“penultimate syllables only”)</change>
+        <change>”V → ”Vː / _{k(ʷ),(ˀ)t}{s,R,H}%#</change>
         <change>”V → ”Vː / _RR</change>
         <change>{ẽ(ː),õ(ː)} → ə̃(ː)</change>
         <change>ts → θ</change>
@@ -10635,7 +10609,7 @@
         <change>w → ∅ / _jh</change>
         <change>n → t / _kʷ</change>
         <change>∅ → t / hs_r</change>
-        <comment>; r becomes a trill</comment>
+        <change>r → r[+trill]</change>
         <change>∅ → j / k_e(ː)</change>
         <change>e(ː) → ɛ(ː)</change>
         <comment>; “when both short and stressed”</comment>
@@ -10665,30 +10639,26 @@
         <change>s → ∅ / h_</change>
         <change>θ → r</change>
         <change>ʔ → ∅ / V_</change>
-        <comment>; Also, apparently /tʲ/ got picked up and added to the phonology somewhere along the line, but the circumstances are unclear</comment>
         <change>x → ç / _{i,u}</change>
     </section>
     <section index="37.2.1" name="Proto-Siouan to Catawba">
         <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-        <comment>; NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. Also, the changes of /p/ before a consonant are unclear, as described within the text. Changes appended with an asterisk are putative; there was a seeming lack of material for this language, so I’ve attempted to do some tracking work from the examples given in the text.</comment>
         <change>ç x → x ʃ</change>
         <change>p → {p,b,m,w} / _C</change>
         <change>p → b / V_V ; (*)</change>
-        <change>tʲ → ʃ / in ”U</change>
-        <change>tʲ → ʒ / _ // in ”U</change>
-        <change>tʲ → ʒ / _ // in ”U</change>
-        <change>t → ∅ / _k, when medial</change>
+        <change>tʲ → ʃ / ”U</change>
+        <change>tʲ → ʒ / _ // ”U</change>
+        <change>t → ∅ / _k / _ // _,#</change>
         <change>”V:[+nas] → Vn (*)</change>
         <change sporadic="true">∅ → ʔ / C_#</change>
     </section>
     <section index="37.2.2" name="Proto-Siouan to Dakota">
         <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-        <comment>; NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. Also, the changes of /p/ before a consonant are unclear, as described within the text.</comment>
         <change>ç x → x {ʃ,ʒ}</change>
         <change>p → {p,b,m,w}</change>
-        <change>tʲ → ʃ / in ”U</change>
-        <change>tʲ → ʒ / _ // in ”U</change>
-        <change>tʲ → ʒ / _ // in ”U</change>
+        <change>tʲ → ʃ / ”U</change>
+        <change>tʲ → ʒ / _ // ”U</change>
+        <change>tʲ → ʒ / _ // ”U</change>
         <change>s → z / in U:[-stress]</change>
         <change>s → z / V_V</change>
         <change>r → d / s_</change>
@@ -10704,19 +10674,16 @@
     </section>
     <section index="37.2.2.1" name="Dakota to Santee Dakota">
         <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-        <comment>; NB: Does not include developments in unstressed non-nasal vowels.</comment>
         <change>{pr,mt} → md</change>
         <change>kr → hd / #_</change>
-        <change>kr → ɡj / medial</change>
+        <change>kr → ɡj / _ // _,#</change>
     </section>
     <section index="37.2.2.2" name="Dakota to Teton Dakota">
         <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-        <comment>; NB: Does not include developments in unstressed non-nasal vowels.</comment>
         <change>{pr,mt} kr → bl ɡl</change>
     </section>
     <section index="37.2.2.3" name="Dakota to Yankton Dakota">
         <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-        <comment>; NB: Does not include developments in unstressed non-nasal vowels.</comment>
         <change>r → d / k_</change>
     </section>
     <section index="37.2.3" name="Proto-Siouan to Mandan">
@@ -10728,8 +10695,7 @@
         <change>w → m</change>
         <change>Lʲ → n / _V:[+nas]</change>
         <change>L → r / _V:[-nas]</change>
-        <comment>; “Phonemic vowel length was gained somehow.”</comment>
-        <change sporadic="true">ã → a / in ”U</change>
+        <change sporadic="true">ã → a / ”U</change>
         <change>tʲ → s / _ʔV</change>
         <change>CʔV₀ → CV₀ʔV₀</change>
         <change>tʲr → sV₀rV₀</change>
@@ -10749,7 +10715,7 @@
         <change>w → ∅ / _t</change>
         <change>t → tʃ / _”E</change>
         <change>t → dʒ / _E:[-stress]</change>
-        <change>tʲ → ʃ / in ”U</change>
+        <change>tʲ → ʃ / ”U</change>
         <change>tʲ s → ʒ z / in U:[-stress]</change>
         <change>k → ɡ / V:[+nas]_ // _#</change>
         <change>k → ɡ / _ʔ</change>
@@ -10775,7 +10741,7 @@
         <change>r → l / x_</change>
         <change>k → h / _m</change>
         <change>k → ∅ / #t_</change>
-        <change>tk → ɡ / when medial</change>
+        <change>tk → ɡ / _ // _,#</change>
         <change>x → ∅ / _k</change>
         <change>x → ∅ / k_”V</change>
     </section>
@@ -10810,7 +10776,6 @@
     </section>
     <section index="37.2.5.1" name="Proto-Crow-Hidatsa to Crow">
         <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-        <comment>; NB: Does not include developments in unstressed non-nasal vowels.</comment>
         <change>t → ʃ / _E</change>
         <change>t → s / _V</change>
         <change>k → ts / _i</change>
@@ -10822,7 +10787,6 @@
     </section>
     <section index="37.2.5.2" name="Proto-Crow-Hidatsa to Hidatsa">
         <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-        <comment>; NB: Does not include developments in unstressed non-nasal vowels.</comment>
         <change>n → r</change>
         <change>ʔ → ∅ / C_</change>
         <change>kr → kV₀rV₀ / #_</change>
@@ -10841,13 +10805,13 @@
         <change>p → {p,b,m,w} / _C</change>
         <change>w → ∅ / _t</change>
         <change>t tʲ s → d ʒ z / in U:[-stress]</change>
-        <change>tʲ → ʃ / in ”U</change>
+        <change>tʲ → ʃ / ”U</change>
         <change>k → ɡ / ”V_</change>
         <change>s → z / V_V</change>
         <change>L Lʲ → {ð,j} ʒ / _”V</change>
         <change>L → d / ”V_</change>
         <change sporadic="true">w → β</change>
-        <change sporadic="true">u → i / in ”U</change>
+        <change sporadic="true">u → i / ”U</change>
         <change>k → ∅ #t_ (in morphemes)</change>
         <change>tk → ɡ / when medial</change>
     </section>
