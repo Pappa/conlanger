@@ -1748,7 +1748,7 @@
         <change>∅ → ə / C_C</change>
         <change>h → ∅</change>
         <comment>; “(result of /e/ or /o/ unpredictable)”</comment>
-        <change>ə → {e,o} / stressed</change>
+        <change>ə → {e,o} / [+stress]</change>
         <change>p → w</change>
         <change sporadic="true">wa → o / #_</change>
         <change>V → ə / [-stress]</change>
@@ -5909,21 +5909,21 @@
         <change>V → ∅ / ”V%L_C(C)V(C)# ; (irregular)</change>
         <change>V → ∅ / ”V%s_t(C)V(C)# ; (irregular)</change>
         <change>u → w → ∅ / (“when in unstressed penult or between first and tonic syllables; irregular”)</change>
-        <change>iː → i / stressed</change>
+        <change>iː → i / [+stress]</change>
         <change>iː → i / _%”V</change>
-        <change>{i,eː} e → {e,ɛ} {ɛ,e} / stressed</change>
+        <change>{i,eː} e → {e,ɛ} {ɛ,e} / [+stress]</change>
         <change>{i,eː,e} → e / _%”V</change>
         <change>i → j / ”V_#</change>
-        <change>uː → u / stressed</change>
+        <change>uː → u / [+stress]</change>
         <change>uː → u / _%”V</change>
         <change>au → a / _%”u</change>
-        <change>{u,oː} o → o ɔ / stressed</change>
+        <change>{u,oː} o → o ɔ / [+stress]</change>
         <change>{u,o(ː)} → u / _%”V in East Catalan</change>
         <change>{u,o(ː)} → o / _%”V else</change>
         <change>u → w / ”ɛ_#</change>
         <change>aː → a</change>
         <change>oe → {e,ɛ}</change>
-        <change>ae au → e ɔ / stressed</change>
+        <change>ae au → e ɔ / [+stress]</change>
         <change>ae au → e o / _%”V</change>
         <change>o → u / _a</change>
         <change>o → u / _%”V ; (irregular)</change>
@@ -6006,7 +6006,7 @@
         <change>e → i / _{nk,ŋ} when stressed ; (irregular)</change>
         <change>aj → ej → ee → e (irregular)</change>
         <change>aj → ej / _ʃ when stressed ; (irregular)</change>
-        <change>ɛj ɔj → jɛj uei / i {u,ui} / stressed</change>
+        <change>ɛj ɔj → jɛj uei / i {u,ui} / [+stress]</change>
         <change>ɛ → e / ! _{rː,l,rC:[-labial],nr} or _ ? w#</change>
         <change>e → ɛ (in Eastern Catalan)</change>
     </section>
@@ -6195,17 +6195,17 @@
         <change>au → a / _%”u</change>
         <change>au → o</change>
         <change>e → iː / ”_%ɪː#</change>
-        <change>iː {i,eː} e → i e ɛ / stressed</change>
+        <change>iː {i,eː} e → i e ɛ / [+stress]</change>
         <change>iː {i,e(ː)} → i e / _%”V</change>
         <change>iː → ∅ / {k,s}_#</change>
         <change>{i(ː),e(ː),ae} → e / _#</change>
         <change>uː → u</change>
         <change>uiː → ui / _#</change>
-        <change>{u,oː} o → o ɔ / stressed</change>
+        <change>{u,oː} o → o ɔ / [+stress]</change>
         <change>{u,o(ː)} → o / _%”V</change>
         <change>{u(ː),o(ː)} → o → u / _#</change>
         <change>aː oe → a e</change>
-        <change>ae → ɛ / stressed</change>
+        <change>ae → ɛ / [+stress]</change>
         <change>ɛ ɔ → e o / _(”u)#</change>
         <change>{olt,okt} → ujt → ut</change>
         <change>aɫ → o</change>
@@ -9098,7 +9098,7 @@
     <section index="33.3.1.3" name="Buena Vista Yokuts to Tulamni">
         <cite>CatDoom, from Whistler, Kenneth W., and Golla, Victor (1986), “Proto-Yokuts Reconsidered”. International Journal of American Linguistics Vol. 52, No. 4 (Oct. 1986)</cite>
         <change>ɨ(ː) ə(ː) → i(ː) e(ː)</change>
-        <change>Vʔ → Vː / stressed</change>
+        <change>Vʔ → Vː / [+stress]</change>
     </section>
     <section index="33.3.2" name="Buena Vista Yokuts to Proto-Nim-Yokuts">
         <cite>CatDoom, from Whistler, Kenneth W., and Golla, Victor (1986), “Proto-Yokuts Reconsidered”. International Journal of American Linguistics Vol. 52, No. 4 (Oct. 1986)</cite>
@@ -10645,11 +10645,11 @@
         <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
         <change>ç x → x ʃ</change>
         <change>p → {p,b,m,w} / _C</change>
-        <change>p → b / V_V ; (*)</change>
+        <change>p → b / V_V</change>
         <change>tʲ → ʃ / ”U</change>
         <change>tʲ → ʒ / _ // ”U</change>
         <change>t → ∅ / _k / _ // _,#</change>
-        <change>”V:[+nas] → Vn (*)</change>
+        <change>”V:[+nas] → Vn</change>
         <change sporadic="true">∅ → ʔ / C_#</change>
     </section>
     <section index="37.2.2" name="Proto-Siouan to Dakota">
@@ -10812,7 +10812,7 @@
         <change>L → d / ”V_</change>
         <change sporadic="true">w → β</change>
         <change sporadic="true">u → i / ”U</change>
-        <change>k → ∅ #t_ (in morphemes)</change>
+        <change>k → ∅ #t_</change>
         <change>tk → ɡ / when medial</change>
     </section>
     <section index="37.2.6.1" name="Proto-Dhegiha to Kansa">
@@ -10821,11 +10821,11 @@
         <change>V:[+nas] → V:[-nas]n</change>
         <change>p → {p,b,m,w} / _C</change>
         <change>w → b / #_</change>
-        <change>r L(ʲ) → d j / #_ ; (*)</change>
-        <change>L → bl / #_e ; (*)</change>
+        <change>r L(ʲ) → d j / #_</change>
+        <change>L → bl / #_e</change>
         <change>V → V:[+nas] / N_</change>
         <change>N → S / V_V</change>
-        <change>ũ → aN / stressed</change>
+        <change>ũ → aN / [+stress]</change>
         <change>t → ts / _ʔ</change>
         <change>tʲr kr → ʃt l</change>
         <change>mn → bl / {C,V}_{C,V}</change>
@@ -10840,7 +10840,7 @@
         <change>L → θ / _”V</change>
         <change>d → n / ”V_</change>
         <change>Lʲ → {θ,n} / _V[+nas -stress]</change>
-        <change>ũ → ã / stressed</change>
+        <change>ũ → ã / [+stress]</change>
         <change>k → ∅ / _ʔ</change>
         <change>pr sr tʲr kr → bθ sn ʃn ɡθ</change>
         <change>mn → mV₀nV₀ / #_</change>
@@ -10875,12 +10875,12 @@
         <change>p → {p,b,m,w} / _C</change>
         <change>tʲ → ʃ</change>
         <change>L → d / #_</change>
-        <change>x → ʒ (*)</change>
-        <change>Lʲ → j / #_õ ; (*)</change>
-        <change>Lʲ → t / #_ã ; (*)</change>
-        <change>ã → õ (*)</change>
-        <change>ũ → ã / stressed ; (*)</change>
-        <change>m → ∅ / #_n (in morphemes) ; (*)</change>
+        <change>x → ʒ</change>
+        <change>Lʲ → j / #_õ</change>
+        <change>Lʲ → t / #_ã</change>
+        <change>ã → õ</change>
+        <change>ũ → ã / [+stress]</change>
+        <change>m → ∅ / #_n</change>
     </section>
     <section index="37.2.7" name="Proto-Siouan to Proto-Ohio-Valley">
         <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
@@ -10933,7 +10933,7 @@
         <change>L → l</change>
         <change>k → ᵑk / _ʔ</change>
         <change>ʔ → ∅ / C_</change>
-        <change>mn → mV₀nV₀ / #_ ; (in morphemes)</change>
+        <change>mn → mV₀nV₀ / #_</change>
         <change>sn → sV₀nV₀</change>
         <change>∅ → V / k_m</change>
         <change>s → ʃ / ”V_k</change>
@@ -11508,10 +11508,10 @@
         <cite>Tropylium, from Hakulinen, Lauri (1979), “Suomen kielen rakenne ja kehitys”. Otava; Häkkinen, Kaisa (2004), “Nykysuomen etymologinen sanakirja”. WSOY; Kallio, Petri (2007), “Kantasuomen konsonanttihistoriaa”. Mémoires de la Société Finno-Ougrienne 253. &lt;http://www.sgr.fi/sust/sust253/sust253_kallio.pdf&gt;; and from Janhunen, Juha (2007), “The primary laryngeal in Uralic and beyond”. Mémoires de la Société Finno-Ougrienne 253. &lt;http://www.sgr.fi/sust/sust253/sust253_janhunen.pdf&gt;</cite>
         <change>ŋ → k / _#, in latives</change>
         <change>ŋ → n / _# else</change>
-        <change>iw ow → y uː / _(C) ; (*)</change>
+        <change>iw ow → y uː / _(C)</change>
         <change>x → @ / _C</change>
         <change>m → n / _{t,tsʲ,#}</change>
-        <change>ɤ(ː?) ɑː æː → ɑ(ː?) oː eː / stressed</change>
+        <change>ɤ(ː?) ɑː æː → ɑ(ː?) oː eː / [+stress]</change>
         <change sporadic="true">a → æ / {a,e,ê,i,y}(X)(C)(C)_</change>
         <change>Aw → o / unstressed ; (possibly analogical)</change>
         <change sporadic="true">i → e / _C</change>
@@ -11539,7 +11539,7 @@
         <change>ŋ → w / {O,U}_</change>
         <change>ŋ → w / _C // _k</change>
         <change>ŋ → w / C_</change>
-        <change>uwa → oː (*)</change>
+        <change>uwa → oː</change>
         <change>Uwi ewi → oː øː</change>
         <change>i → ∅ / æw_</change>
         <change>wI → i</change>
@@ -11556,7 +11556,7 @@
         <change>nʲ → n / _ // V_V</change>
         <change>nʲ → n / _ // V_V</change>
         <change>n → ∅ / _tː</change>
-        <change>w → ∅ / o_st ; (*)</change>
+        <change>w → ∅ / o_st</change>
         <change>ð → t</change>
         <change>tʃ → ts / _k, in South Estonian</change>
         <change>tk → k / in Pre-Livonian</change>
@@ -11582,7 +11582,7 @@
         <change>βi → U / _#</change>
         <change>f → ʋ / #_</change>
         <change>ʋ → ∅ / #_{o,u,y}</change>
-        <change>j → ∅ / _i ; (*)</change>
+        <change>j → ∅ / _i</change>
         <change>∅ → ʋ / #_{yː,øː,oː}</change>
         <change>oi → o / [-stress]</change>
         <change>Vː → V / _i</change>
