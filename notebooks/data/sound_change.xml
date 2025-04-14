@@ -1758,8 +1758,7 @@
         <change>ə → * / _j</change>
         <change>j → * / C_i</change>
         <change>ə → * / _#</change>
-        <comment>;; “(sporadic)”</comment>
-        <change>ə → *</change>
+        <change sporadic="true">ə → *</change>
         <change>t → ð / _ // _,S</change>
         <change>s → t</change>
         <change>ʀ → r / _C:[+dental]</change>
@@ -1874,8 +1873,7 @@
         <change>i → iə / _ŋ#</change>
         <change>p → k / u_#</change>
         <change>u → o / _k#</change>
-        <comment>;; “(sporadically failed to occur)”</comment>
-        <change>u → o / _ŋ#</change>
+        <change sporadic="true">u → o / _ŋ#</change>
         <change>u → ɯ / _(C)# // _ʔ#</change>
         <comment>;; “(not in all forms)”</comment>
         <change>a → o / _#</change>
@@ -1902,8 +1900,7 @@
         <change>d → r / V_V</change>
         <change>dz → ɟ / V_V</change>
         <change>b d dz ɡ → p t c k / N_</change>
-        <comment>;; “(sporadic)”</comment>
-        <change>N → * / _S</change>
+        <change sporadic="true">N → * / _S</change>
         <change>h → * / V_V</change>
     </section>
     <section index="10.2.6.3" name="Proto-Malayic to Minangkabau">
@@ -2005,8 +2002,7 @@
         <change>s → h</change>
         <change>r → j</change>
         <change>o e i → ɔ ɛ ɪ / C_V[-high]</change>
-        <comment>;; oCV[+high] / ɪC (sporadic)</comment>
-        <change>V[-high] → * / {ɔ,ɛ,ɪ}C_</change>
+        <change sporadic="true">V[-high] → * / {ɔ,ɛ,ɪ}C_</change>
         <change sporadic="true">uCi → iC</change>
         <comment>;; V[+high] / {ʊ,ɛ}C_</comment>
         <change>u a → ʊ ɛ / _CV[+high]</change>
@@ -2380,16 +2376,11 @@
         <change>ai → i / _C</change>
         <change>ei → i</change>
         <change>ua → ou</change>
-        <comment>;; “sometimes”</comment>
-        <change>au → {u,o}</change>
-        <comment>;; “[tendency]”</comment>
-        <change>e → i / ḱ_</change>
-        <comment>;; “[tendency]”</comment>
-        <change>e → i / _ḱ</change>
-        <comment>;; “[tendency]”</comment>
-        <change>a → o / P_</change>
-        <comment>;; “[tendency]”</comment>
-        <change>a → o / _P</change>
+        <change sporadic="true">au → {u,o}</change>
+        <change sporadic="true">e → i / ḱ_</change>
+        <change sporadic="true">e → i / _ḱ</change>
+        <change sporadic="true">a → o / P_</change>
+        <change sporadic="true">a → o / _P</change>
     </section>
     <section index="10.3.11.2" name="Proto-Southern Vanuatu to Proto-Erromango">
         <cite>thetha, from Lynch, John (2001), The Linguistic History of Southern Vanuatu</cite>
@@ -2397,11 +2388,10 @@
         <change>v → p / #_</change>
         <change>v → f / C[+sibilant]%</change>
         <change>v → f / %C[+sibilant]</change>
-        <change>r → *L (some sort of lateral?) / occasionally</change>
+        <change sporadic="true">r → *L ;; (some sort of lateral?)</change>
         <change>s {c,*j} → h s</change>
         <change>o → a</change>
         <change sporadic="true">u i → o e</change>
-        <comment>;; “many word medial vowels lost”</comment>
         <change>a → i / _CV[+high]</change>
     </section>
     <section index="10.3.11.2.1" name="Proto-Erromango to Sye">
@@ -2414,9 +2404,8 @@
         <change>f → v / V_V</change>
         <change>k → ɣ</change>
         <change>ɣ → k / _i</change>
-        <comment>;; “often”</comment>
         <change>s → h</change>
-        <change>s → * / _C ;;  (occasionally blocked)</change>
+        <change sporadic="true">s → * / _C</change>
         <change>i → e / O[+labial]_</change>
         <change>i → e / _O[+labial]</change>
         <change>e → o / K_</change>
@@ -2450,7 +2439,6 @@
         <change>a → o / _{P,Cu}</change>
         <change>a → o / P_</change>
         <change>a → e / _Ci</change>
-        <comment>;; “vowels tend to lower near h”</comment>
         <change>a → ə / _Ca</change>
     </section>
     <section index="10.3.11.3.1" name="Proto-Tanna to Kwamera">
@@ -2458,9 +2446,7 @@
         <change>t → r</change>
         <change>b(ʷ) d → p(ʷ) t</change>
         <change>ɣ → *</change>
-        <comment>;; “irregularly”</comment>
-        <change>s → h</change>
-        <comment>;; /fʷ/ gained</comment>
+        <change sporadic="true">s → h</change>
         <change>{p(ʷ),v}Vh → fV</change>
         <change>u → {e,i} / _Cu</change>
         <change>ə → a / in U#</change>
@@ -2479,8 +2465,7 @@
         <change>r → l / _Vl</change>
         <change>c *j → s {z,s}</change>
         <change>z → t</change>
-        <comment>;; “irregularly”</comment>
-        <change>s → h</change>
+        <change sporadic="true">s → h</change>
         <change>{p(ʷ),v}Vh → fV</change>
     </section>
     <section index="10.3.11.3.3" name="Proto-Tanna to North Tanna">
@@ -2509,8 +2494,7 @@
         <change>ɣ → k</change>
         <change>r → l</change>
         <change>{c,*j} → s</change>
-        <comment>;; “irregularly”</comment>
-        <change>s → h</change>
+        <change sporadic="true">s → h</change>
         <change>{p(ʷ),v}Vh → fV</change>
         <change>u → {e,i} / _Cu</change>
         <change>ə → a / in U#</change>
@@ -2518,17 +2502,16 @@
     <section index="10.3.11.3.5" name="Proto-Tanna to Whitesands">
         <cite>thetha, from Lynch, John (2001), The Linguistic History of Southern Vanuatu</cite>
         <change>r → {l,i}</change>
-        <change>d → r / _ŋ ;;  (occasionally elsewhere as well)</change>
+        <change>d → r / _ŋ</change>
         <change>b(ʷ) d → p(ʷ) t</change>
         <change>kʷ → * / u_</change>
-        <comment>;; kʷ / {w,u}</comment>
         <change>kʷ → * / _u</change>
+        <change>kʷ / {w,u}</change>
         <change>ɣ → * / {#,E}_</change>
         <change>ɣ → * / _E</change>
         <change>ɣ → ŋ</change>
         <change>c *j → s {z,s}</change>
-        <comment>;; “often”</comment>
-        <change>s → h</change>
+        <change sporadic="true">s → h</change>
         <change>z → r</change>
     </section>
     <section index="10.3.12" name="Proto-Oceanic to Vera’a">
@@ -2537,10 +2520,9 @@
         <change>VV → V</change>
         <change>ndr *R → d r</change>
         <change>{c,*j} ɲ → s n</change>
-        <comment>;; “often”</comment>
-        <change>t → ʔ</change>
-        <change>β → f / #_ ;;  (usually)</change>
-        <change>β → f / else ;;  (rarely)</change>
+        <change sporadic="true">t → ʔ</change>
+        <change>β → f / #_</change>
+        <change sporadic="true">β → f</change>
         <change>bʷ ɡ → kpʷ k</change>
         <change>mʷ → ŋmʷ</change>
         <change>i(C)V[+high] → i(C)</change>
@@ -2550,8 +2532,7 @@
         <change>a(C)i a(C)u → {a,ɛ}(C) {ɔ,a,ɛ}(C)</change>
         <change>a(C){o,e} → a(C)</change>
         <change>oCa → ɔCɔ</change>
-        <comment>;; “sometimes”</comment>
-        <change>uCV[+high] → iC</change>
+        <change sporadic="true">uCV[+high] → iC</change>
         <change>uCV[-high] → uCʊ</change>
         <change>oa {ae,ea} → uɔ iɛ</change>
         <change>o e → ʊ ɪ</change>
@@ -2564,7 +2545,6 @@
     </section>
     <section index="10.4.1" name="Proto-Micronesian to Marshallese">
         <cite>Ketsuban, from Hale, Mark, Historical Linguistics: Theory and Method</cite>
-        <comment>;; NB: “. . .the precise contrast between *s and *S, and *t and *T is unknown, as is the precise phonetic nature of *c and *Z.” Blust (v.s.) rejected *T and *D; according to his reconstruction. . .*s and *S were /ç s/, respectively. The substitution of /ts/ for *T is inferred from the Wikipedia article but may be incorrect.</comment>
         <change>K → Kʷ / _{C:[+round],V:[+round]}</change>
         <change>V:[+high] → ɘ / _C:[-high]</change>
         <change>V → * / _#</change>
@@ -2582,24 +2562,22 @@
         <change>{i,u} {e,o} → ɨ ɜ</change>
         <change>p {t,ts} c → pʲ tʲ rʲ</change>
         <change>{ç,s} x → tᵚ *</change>
-        <comment>;; “The author does not elaborate on the complex development of vowels without an onset consonant, other than to say that a glide is inserted (*Saa &gt; tᵚaɰ), nor does he go into more detail than to say that l and n generally develop into lʲ and nʲ before Proto-Micronesian front vowels, and l, r, and n turn into lᶬ, rᶬ, and nᶬ before a and lʷ, rʷ, and nʷ before Proto-Micronesian round vowels, but the author does not elaborate.”</comment>
         <change>m ɲ → mʲ nʲ</change>
     </section>
     <section index="10.5" name="Proto-Austronesian to Proto-Ongan">
         <cite>Pogostick Man, from Blevins, Juliette (2007), “A Long Lost Sister of Proto-Austronesian? Proto-Ongan, Mother of Jarawa and Onge of the Andaman Islands”. Oceanic Linguistics 46(I):154 – 198</cite>
-        <comment>;; NB: Blevins floats the idea that Proto-Ongan was a sister of rather than a daughter of Proto-Austronesian, but for reasons of simplicity in editing this document it is placed here.</comment>
         <change>b → * / #_{u,i}</change>
         <change>q → * / #_V</change>
         <change>q → k</change>
-        <change>{qʷ,ku,qu} → kʷ ;; (note that PAn might have had *qʷ *kʷ → q {k,w} instead; may be a change from POn-PAn, if it existed)</change>
-        <change>{c,*C,s,*S} → c ;; (again, possibly a change from POn-PAn, if it existed)</change>
+        <change>{qʷ,ku,qu} → kʷ</change>
+        <change>{c,*C,s,*S} → c</change>
         <change>S → * / _#</change>
         <change>u a ə → {u,o} {a,e} e</change>
         <change>ɟ ɡ *N *R → {ɟ,j} {ɟ,ɡ} {l,j} {l,r}</change>
-        <change>z → c ;; (again, possibly evidence of a change from POn-PAn, if it existed)</change>
-        <change>h → {h,j,*} (Blevins has marked what apparently is *ɟ but I’m assuming it’s an error)</change>
+        <change>z → c</change>
+        <change>h → {h,j,*}</change>
         <change sporadic="true">e → ə / _N</change>
-        <change>{m,ɲ} n → {ɲ,*} {ŋ,*} / _# ;;  (first change marked “in progress?”)</change>
+        <change>{m,ɲ} n → {ɲ,*} {ŋ,*} / _#</change>
         <change>aj → e</change>
     </section>
     <section index="10.5.1" name="Proto-Ongan to Jarawa">
@@ -2636,29 +2614,24 @@
     </section>
     <section index="10.6.1" name="Proto-Paiwan to Northern Paiwan">
         <cite>Pogostick Man, from Chen, Chun-Mei (2006), A Comparative Study on Formosan Phonology: Paiwan and Budai Rukai 313 – 320</cite>
-        <comment>;; Something about final stress and preceding /ə/</comment>
         <change>c ɟ q ɭ → t d ʔ l</change>
     </section>
     <section index="10.6.2" name="Proto-Paiwan to Central Paiwan">
         <cite>Pogostick Man, from Chen, Chun-Mei (2006), A Comparative Study on Formosan Phonology: Paiwan and Budai Rukai 313 – 320</cite>
-        <comment>;; Something about final stress and preceding /ə/</comment>
         <change>w → v / _#</change>
     </section>
     <section index="10.6.3" name="Proto-Paiwan to Southern Paiwan">
         <cite>Pogostick Man, from Chen, Chun-Mei (2006), A Comparative Study on Formosan Phonology: Paiwan and Budai Rukai 313 – 320</cite>
-        <comment>;; Something about final stress and preceding /ə/</comment>
         <change>k r → ʔ ɣ</change>
     </section>
     <section index="10.7" name="Proto-Austronesian to Proto-Rukai">
         <cite>Pogostick Man, from Chen, Chun-Mei (2006), A Comparative Study on Formosan Phonology: Paiwan and Budai Rukai 313 – 320</cite>
         <change>{t₁,c} {d₁,z} d₃ → t d ɖ</change>
         <change>R l L → {r,ʔ} ɭ l</change>
-        <comment>;; Something about echo-vowel epenthesis and stress that isn’t really clear from skimming it</comment>
         <change>S₁ s d₂ *C → s θ ð ts</change>
     </section>
     <section index="10.7.1" name="Proto-Rukai to Budai Rukai">
         <cite>Pogostick Man, from Chen, Chun-Mei (2006), A Comparative Study on Formosan Phonology: Paiwan and Budai Rukai 313 – 320</cite>
-        <comment>;; Long vowels acquire a high-low contour, but it looks like this is more prosodic than anything</comment>
         <change>{v,ʔ} ð → * j</change>
     </section>
     <section index="10.8" name="Proto-Austronesian to Proto-Tsouic">
@@ -2669,8 +2642,8 @@
     </section>
     <section index="11.1" name="Proto-Northeast Caucasian to Proto-Avar-Andic">
         <cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&amp;oldid=351133322&gt;, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251</cite>
-        <comment>;; *b is “[p]rone to change to *m”</comment>
         <change>l → {l,r}</change>
+        <change sporadic="true">*b → *m</change>
     </section>
     <section index="11.1.1" name="Proto-Avar-Andic to Akhvakh">
         <cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&amp;oldid=351133322&gt;, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251</cite>
@@ -2701,7 +2674,7 @@
     </section>
     <section index="11.2" name="Proto-Northeast Caucasian to Dargi">
         <cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&amp;oldid=351133322&gt;, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251</cite>
-        <comment>;; *b is “[p]rone to change to *m”</comment>
+        <change sporadic="true">*b → *m</change>
         <change>{tsː,st} tsːʼ dz stː → ts z tsː s</change>
         <change>tʃ tʃː dʒ → {tsʼ,tʃʼ} ʒ ts</change>
         <change>tɬ tɬː tɬʼ tɬːʼ → k {xʲː,kː} kʰ {ɡ,q}(?)</change>
@@ -2710,7 +2683,6 @@
     </section>
     <section index="11.3" name="Proto-Northeast Caucasian to Khinalug">
         <cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&amp;oldid=351133322&gt;, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251</cite>
-        <comment>;; The development of *tsʼ is unclear; in the user page there’s a slash but it might be a typo for an apostrophe</comment>
         <change>b d → {b,v} z</change>
         <change>{tsː,st} {tsːʼ,dz} → ts tsʼ</change>
         <change>{tʃ(ː),dʒ} → tʃʼ</change>
@@ -2734,7 +2706,6 @@
     </section>
     <section index="11.5" name="Proto-Northeast Caucasian to Proto-Lezgic">
         <cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&amp;oldid=351133322&gt;, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251</cite>
-        <comment>;; NB: These changes here probably aren’t “proper” sound changes, whatever that’s supposed to mean, but there doesn’t seem to be any particular sound change or set of sound changes that defines this family, so I’ve elected to go with something that seems to nearly work and note the exceptions.</comment>
         <change>q ɢ → {x,q} ɣ</change>
     </section>
     <section index="11.5.1" name="Proto-Lezgic to Agul">
@@ -2814,9 +2785,9 @@
     </section>
     <section index="11.7" name="Proto-Northeast Caucasian to Proto-Tsezic">
         <cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&amp;oldid=351133322&gt;, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251</cite>
-        <comment>;; *b is “[p]rone to change to *m”</comment>
+        <change sporadic="true">*b → *m</change>
         <change>{ts,st} {tsːʼ,dz} → s ts</change>
-        <change>tʃ {tʃː,dʒ} → ʃ tʃ (the change of *tʃːʼ is conjectured for Bezhta, as the change is only listed in Tsez, but given the development of *tsːʼ I don’t find it unreasonable to put it here)</change>
+        <change>tʃ {tʃː,dʒ} → ʃ tʃ</change>
         <change>tɬ tɬːʼ → ɬ tɬ</change>
         <change>ɢ → q</change>
         <change>s xː → z x</change>
@@ -2824,8 +2795,6 @@
     </section>
     <section index="11.7.1" name="Proto-Tsezic to Bezhta">
         <cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&amp;oldid=351133322&gt;, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251</cite>
-        <comment>;; *ɬ may have remained ɬ</comment>
-        <comment>;; *r remained when intervocalic</comment>
     </section>
     <section index="11.7.2" name="Proto-Tsezic to Tsez">
         <cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&amp;oldid=351133322&gt;, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251</cite>
@@ -2844,16 +2813,16 @@
         <change>mˤ → m</change>
         <change>rʲ → r</change>
         <change>tʷː tʷʲ(ʼ) → d(w) tʷ(ʼ)</change>
-        <change>tsʲː → dzʲ (marked as dubious in the source)</change>
+        <change>tsʲː → dzʲ</change>
         <change>sʷʲ zʲ → sʲ z</change>
         <change>tsʷː tsʷʲ → tsʷ (tʃ)</change>
         <change>zʷʲ tsʷʲʼ dzʷʲ → dzʲ~zʲ tʃʼ dʒ~ʒ</change>
         <change>tʃ(ʼ) dʒ → tsʲ(ʼ) dzʲ</change>
         <change>ʃ(~ʃː) ʒ → sʲ sʲ</change>
         <change>tɕː → dzʲ(~tɕ)</change>
-        <change>ɕ(ː) ʑ → ʃ ʒ (the change of singleton *ɕ to ʃ is marked as dubious)</change>
+        <change>ɕ(ː) ʑ → ʃ ʒ</change>
         <change>tʃʷ(ʼ) tʃʷː dʒʷ → tʃ(ʼ) zʷ dzʷ~zʷ</change>
-        <change>ʃʷ ʃʷː ʒʷ → sʷ ʃ zʲ (this final change is marked as dubious)</change>
+        <change>ʃʷ ʃʷː ʒʷ → sʷ ʃ zʲ</change>
         <change>tɕʷ(ʼ) tɕʷː → tʃ(ʼ) dʒ~ʒ</change>
         <change>ɕʷ ɕʷː ʑʷ → ʃʷ ʃ ʒʷ</change>
         <change>tɬ tɬː tɬʼ dɮ → x ts {x,tsʼ} l</change>
@@ -2869,8 +2838,8 @@
         <change>ɮʷʲ → ʒ</change>
         <change>kʷː → ɡʷ</change>
         <change>kʷʲʼ → kʷʼ</change>
-        <change>xʷʲ ɣʷʲ → sʷ zʷ (*ɣʷʲ is marked as dubious)</change>
-        <change>q qː ɢ → (ħ) q ɣ (*ɢ is marked as *G in the document)</change>
+        <change>xʷʲ ɣʷʲ → sʷ zʷ</change>
+        <change>q qː ɢ → (ħ) q ɣ</change>
         <change>χ(ʲ) ʁ(ʲ) → ħ ʕ</change>
         <change>qʲː ɢʲ → q ɣʲ</change>
         <change>qʷ qʷː ɢʷ → ħʷ qʷ ɣʷ</change>
@@ -2878,7 +2847,7 @@
         <change>qʷʲ ɢʷʰ → ħ(ʷ) ɣ(ʷ)</change>
         <change>qʷʲʼ → ʕʷ (qʷʼ?)</change>
         <change>χʷʲ ʁʷʲ → ħ(ʷ) ʕ(ʷ)</change>
-        <change>qˤː qˤʼ → ʕ ħ (this latter is marked as dubious)</change>
+        <change>qˤː qˤʼ → ʕ ħ</change>
         <change>ʁʕ → ʕ</change>
         <change>qˤʲ qˤʲː qˤʲʼ → q ʔ ħ(?)</change>
         <change>χˤʲ ʁˤʲ → ħ ʕ</change>
@@ -2994,7 +2963,6 @@
     </section>
     <section index="12.2.1" name="Proto-Circassian to Adyghe">
         <cite>Pogostick Man, from Wikipedia contributors (2014), “Proto-Circassian language”. Wikipedia, the Free Encyclopedia, &lt;http://en.wikipedia.org/w/index.php?title=Proto-Circassian_language&amp;oldid=591849172&gt;; and Wikipedia contributors (2014), “Adyghe language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Adyghe_language&amp;oldid=593857358&gt;</cite>
-        <comment>;; — Consonant correspondences:</comment>
         <change>tsʲ → tɕ</change>
         <change>tsʷ → tsʲʷ</change>
         <change>tʃ tɕ → ʃ ʂ</change>
@@ -3052,7 +3020,6 @@
     </section>
     <section index="12.2.2" name="Proto-Circassian to Kabardian">
         <cite>Pogostick Man, from Wikipedia contributors (2014), “Proto-Circassian language”. Wikipedia, the Free Encyclopedia, &lt;http://en.wikipedia.org/w/index.php?title=Proto-Circassian_language&amp;oldid=591849172&gt;</cite>
-        <comment>;; — Consonant correspondences:</comment>
         <change>tsʲ(ː) tsʷ {tʃ,tɕ} → ɕ f ʃ</change>
         <change>kʲ → tʃ</change>
         <change>ʔ~qʼ → ʔʷ</change>
@@ -3115,8 +3082,7 @@
     </section>
     <section index="13.2" name="Proto-Chumash to Cruzeño">
         <cite>CatDoom, from Klar, Kathryn (1977), Topics in Historical Chumash Grammar. &lt;http://linguistics.berkeley.edu/~survey/documents/dissertations/klar-1977.pdf&gt;</cite>
-        <comment>;; “(‘in certain cases’)”</comment>
-        <change>k → tʃ</change>
+        <change sporadic="true">k → tʃ</change>
     </section>
     <section index="13.3" name="Proto-Chumash to Inseño">
         <cite>CatDoom, from Klar, Kathryn (1977), Topics in Historical Chumash Grammar. &lt;http://linguistics.berkeley.edu/~survey/documents/dissertations/klar-1977.pdf&gt;</cite>
@@ -3126,9 +3092,9 @@
     <section index="13.4" name="Proto-Chumash to Obispeño">
         <cite>CatDoom, from Klar, Kathryn (1977), Topics in Historical Chumash Grammar. &lt;http://linguistics.berkeley.edu/~survey/documents/dissertations/klar-1977.pdf&gt;</cite>
         <change>Sʼ → ʔ</change>
-        <change>q k → {q,k} {k(ʃ),tʲ} (allophonic)</change>
-        <change>{ˀm,ˀn} → {*,ʔ} (the former is more likely)</change>
-        <change>ˀw → w (may have remained glottalized)</change>
+        <change>q k → {q,k} {k(ʃ),tʲ}</change>
+        <change>{ˀm,ˀn} → {*,ʔ}</change>
+        <change>ˀw → w</change>
         <change>ˀj → *</change>
     </section>
     <section index="13.5" name="Proto-Chumash to Purisimeño">
@@ -3164,7 +3130,6 @@
         <change>nː → n̲(ː)</change>
         <change>nr̀ → n̲r̲</change>
         <change>l lː → {l,ɭ} ɭ(ː) / V_V</change>
-        <comment>;; Proto-Dravidian retained long vowels, possibly from the simplification of consonant clusters and/or deletion of intervocalic consonants with compensatory lengthening and/or the resulting vowels in hiatus merging</comment>
         <change>l → ɭ / V_#</change>
     </section>
     <section index="14.2" name="Proto-Elamo-Dravidian to Achaemanid Elamite">
@@ -3199,7 +3164,6 @@
         <change sporadic="true">{ɭ,ɽ} → *</change>
         <change>l ɭ → lːʉ ɭːʉ / _#(C)V:[-long]</change>
         <change>* → ʉ / {l,ɭ}_# if {M,Vː} previously in the lexeme</change>
-        <comment>;; “in most dialects”</comment>
         <change>r → ɾ</change>
         <change>ɽ → ɭ</change>
         <change>{ɾ,l,ɭ} → * / V_S</change>
@@ -3213,16 +3177,11 @@
         <change>tː nt → cː ɲc / {i,j}_</change>
         <change>ʈk → kː</change>
         <change>n tː → n̪ t̪ː </change>
-        <comment>;; “(sporadic and dialect development)”</comment>
-        <change>ɳ → n</change>
-        <comment>;; “(again, sporadic)”</comment>
-        <change>ɭ → l</change>
+        <change sporadic="true">ɳ → n</change>
+        <change sporadic="true">ɭ → l</change>
         <change>c → s / _{a,o,u,e}</change>
-        <comment>;; “(most dialects)”</comment>
         <change>cː → tʃː</change>
-        <comment>;; “There’s also only a few changes necessary to turn this into the British dialect (which didn’t merge retroflexes with alveolars):”</comment>
-        <comment>;; “(highly sporadic)”</comment>
-        <change>o e → u i / _C{u,i}</change>
+        <change sporadic="true">o e → u i / _C{u,i}</change>
         <change>i(ː) e(ː) → u(ː) o(ː) / _ɭ</change>
         <change>eCə oCə → Ceː Coː / #_</change>
     </section>
@@ -3243,20 +3202,18 @@
         <change>z → ð / medial</change>
         <change>l̥ → l</change>
         <change>m → w / #_</change>
-        <change>n → t / #_ ;;  (except, maybe, “in exclamations”)</change>
+        <change>n → t / #_</change>
         <change sporadic="true">dʒ → ð / i_</change>
         <change sporadic="true">dʒ → ð / u_a</change>
         <change>i →* / #_{z,dʒ}</change>
-        <comment>;; Deletion of medial vowels as per stress rules, “mostly affecting vowels before the accented syllable” </comment>
-        <change>ə → * / #_, “under certain conditions not yet discovered”</change>
+        <change>ə → * / #_</change>
         <change>nV₁nV₂ → nV₂nV₂</change>
     </section>
     <section index="15.2" name="Proto-Eskimo-Aleut to Proto-Eskimo">
         <cite>Pogostick Man, from Marsh, Gordon and Morris Swadesh (1951), “Kleinschmidt Centennial V: Eskimo Aleut Correspondences”, International Journal of American Linguistics, Vol. 17, No. 4 (Oct., 1951), pp. 209 – 216</cite>
         <change>ð z → t s</change>
         <change>ɣ ʁ → k q / #_</change>
-        <comment>;; “in certain positions”</comment>
-        <change>ə → * / t_</change>
+        <change sporadic="true">ə → * / t_</change>
     </section>
     <section index="15.2.1" name="Proto-Eskimo to Barrow Iñupiaq">
         <cite>Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171</cite>
@@ -3268,18 +3225,17 @@
         <change>ə → * / _ // a_</change>
         <change>ə → * / _ // a_</change>
         <change>ɣ ʁ → k q / _#</change>
-        <comment>;; Regressive MOA assimilation and progressive voicing assimilation in consonant clusters (at least, when C₂ is either /l/ or /l̥/) </comment>
         <change>C₀VC₀ → C₀ː</change>
         <change>m n ŋ → v t ɣ / _C:[-nasal]</change>
         <change>l̥ → t / _C</change>
         <change>v → p / _s</change>
         <change>v ʁ → p q / S_</change>
-        <change>v ɣ ʁ → p k q / _C ;;  (unless C = one of /l dʒ m n ŋ)</change>
+        <change>v ɣ ʁ → p k q / _C // _l, _dʒ, _m, _n, _ŋ</change>
         <change>{p,v} t {k,ɣ} → m n ŋ / _N</change>
         <change>v → * / u_i</change>
         <change>dʒ → ʁ / i_u</change>
-        <change>ədʒ → i / _{a,u} ;;  (except in #U)</change>
-        <change>adʒ → i / _a ;;  (except in #U?)</change>
+        <change>ədʒ → i / _{a,u} // #U</change>
+        <change>adʒ → i / _a // #U</change>
     </section>
     <section index="15.2.2" name="Proto-Eskimo to Greenlandic Iñupiaq">
         <cite>Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171</cite>
@@ -3288,20 +3244,20 @@
         <change>Cː → C / except when CV_V in U₁U₂</change>
         <change>t → s / i_ </change>
         <change>ə → i / _ // i_ </change>
-        <change>dʒ → tʃ → s / “in certain positions” ;;  (except for Thule Greenlandic, where dʒ → tʃ and stayed there, apparently)</change>
+        <change sporadic="true">dʒ → tʃ → s</change>
         <change>m n ŋ t {{ɣ,ʁ} → {k,q}} → p t k n ŋ / _#</change>
         <change>m n ŋ → v t ɣ / _C:[-nasal]</change>
         <change>l̥ → ʁ / _C</change>
         <change>v ʁ → p q / S_</change>
-        <change>v ɣ ʁ → p k q / _C ;;  (except where C = /l dʒ m n ŋ/)</change>
+        <change>v ɣ ʁ → p k q / _C // _l, _dʒ, _m, _n, _ŋ</change>
         <change>{p,v} t {k,ɣ} → m n ŋ / _N</change>
         <change>S₁S₂ → F₁F₂</change>
-        <change>Some metathesis in consonant clusters, the conditions of which are not elaborated upon; the given example cited within the text is lʁ → ʁl</change>
+        <change>lʁ → ʁl</change>
         <change>v → * / u_a</change>
         <change>iv → uj / _u</change>
         <change>dʒ → tʃ / i_{u,i}</change>
-        <change>ədʒ → i / _{a,u} ;;  (except in #U)</change>
-        <change>adʒ → i / _a ;;  (except in #U?)</change>
+        <change>ədʒ → i / _{a,u} // #U</change>
+        <change>adʒ → i / _a // #U</change>
     </section>
     <section index="15.2.3" name="Proto-Eskimo to Mackenzie Iñupiaq">
         <cite>Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171</cite>
@@ -3310,7 +3266,6 @@
         <change>ə → i / _ // a_</change>
         <change>ə → i / _ // a_</change>
         <change>ɣ ʁ → k q / _#</change>
-        <comment>;; Regressive MOA assimilation and progressive voicing assimilation in consonant clusters, at least when C₂ is either /l/ or /l̥/ </comment>
         <change>C₀VC₀ → Cː</change>
         <change>m n ŋ → v t ɣ / _C:[-nasal]</change>
         <change>l̥ → t / _C</change>
@@ -3318,8 +3273,8 @@
         <change>v ʁ → p q / S_</change>
         <change>{p,v} t {k,ɣ} → m n ŋ / _N</change>
         <change>v → * / u_i</change>
-        <change>ədʒ → i / _{a,u} ;;  (except in #U)</change>
-        <change>adʒ → i / _a ;;  (except in #U?)</change>
+        <change>ədʒ → i / _{a,u} // #U</change>
+        <change>adʒ → i / _a // #U</change>
     </section>
     <section index="15.2.4" name="Proto-Eskimo to Wales Iñupiaq">
         <cite>Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171</cite>
@@ -3328,9 +3283,8 @@
         <change>ə → i / _ // a_</change>
         <change>ə → i / _ // a_</change>
         <change>v → u</change>
-        <change>ɣ → u / “in some positions”</change>
+        <change sporadic="true">ɣ → u</change>
         <change>p k q s → v ɣ ʁ z / V_V</change>
-        <comment>;; Regressive MOA assimilation and progressive voicing assimilation in consonant clusters, at least where C₂ is either /l/ or /l̥/ </comment>
         <change>ɣ ʁ → k q / _#</change>
         <change>m n ŋ → v t ɣ / _C:[+nasal]</change>
         <change>l̥ → t / C_</change>
@@ -3342,8 +3296,8 @@
         <change>v → * / u_V</change>
         <change>v → * / V_u</change>
         <change>dʒ → ʁ / i_u</change>
-        <change>ədʒ → i / _{a,u} ;;  (except in #U)</change>
-        <change>adʒ → i / _a ;;  (except in #U?)</change>
+        <change>ədʒ → i / _{a,u} // #U</change>
+        <change>adʒ → i / _a // #U</change>
         <change>ɣ → * / V_u</change>
         <change>ɣ → * / u_V</change>
         <change>ɣ → u / {i,ə}_V</change>
@@ -3558,7 +3512,6 @@
         <change>sḱ → h / medial</change>
         <change>sp → f / medial</change>
         <change>st → ʃt / medial</change>
-        <comment>;; “[d]issimilation with following vowel”</comment>
         <change sporadic="true">s → θ</change>
         <change>s → h / V_V</change>
         <change>i̯ → ɟ / {a,e,i}_</change>
@@ -3569,10 +3522,8 @@
         <change>Vn → V:[+nasal] / _C?</change>
         <change sporadic="true">n → ɲ</change>
         <change>l r → l(ː) r(ː)</change>
-        <comment>;; Loss of laryngeals, with the possible exception of h₄, if it existed; h₃ and h₄ seem to have possibly fronted a following back vowel</comment>
         <change>{m̩,n̩} l̩ r̩ → e uj {ri,ir}</change>
         <change>eː iː oː uː → o i e {y,i}</change>
-        <comment>;; Gheg seems to have maintained or innovated vowel length whereas Tosk has not</comment>
         <change>a e i o → {a,e} (j)e {e,i} a</change>
         <change>ə → * / _#</change>
         <change>c ɟ → tʃ dʒ (for most speakers)</change>
@@ -3597,7 +3548,6 @@
         <change>sḱ → h / medial</change>
         <change>sp → f / medial</change>
         <change>st → ʃt / medial</change>
-        <comment>;; “[d]issimilation with following vowel”</comment>
         <change sporadic="true">s → θ</change>
         <change>s → h / V_V</change>
         <change>i̯ → ɟ / {a,e,i}_</change>
@@ -3609,7 +3559,6 @@
         <change sporadic="true">n → ɲ</change>
         <change>n → ɾ</change>
         <change>l r → {l,ɫ} {ɾ,r}</change>
-        <comment>;; Loss of laryngeals, with the possible exception of h₄, if it existed; h₃ and h₄ seem to have possibly fronted a following back vowel</comment>
         <change>{m̩,n̩} l̩ r̩ → e uj {ri,ir}</change>
         <change>eː iː oː uː → o i e {y,i}</change>
         <change>a e i o → {a,e} (j)e {e,i} a</change>
@@ -3627,11 +3576,10 @@
         <change>T h₂ → D h₃ / V:[-stress]_V:[-stress]</change>
         <change>T h₂ → D h₃ / ”Vː</change>
         <change>T h₂ → D h₃ / ”W</change>
-        <comment>;; “(allophonic)”</comment>
         <change>t → z / j</change>
-        <change>r → * / #_ ;;  (unclear)</change>
-        <change>j → * / #_e ;;  (not widely attested)</change>
-        <change>{{h₁,h₃}s,s{h₁,h₃}} → sː (contested)</change>
+        <change sporadic="true">r → * / #_</change>
+        <change sporadic="true">j → * / #_e</change>
+        <change sporadic="true">{{h₁,h₃}s,s{h₁,h₃}} → sː</change>
     </section>
     <section index="17.2.1" name="Common Anatolian to Hittite">
         <cite>Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)</cite>
@@ -3669,14 +3617,12 @@
         <change>V → Vː / in ”U:[+open]</change>
         <change>V → Vː / in #”U</change>
         <change>o(ː) → a(ː)</change>
-        <comment>;; “in Hieroglyphic Luwian, occasionally”</comment>
-        <change>{d,l} → r</change>
+        <change sporadic="true">{d,l} → r</change>
         <change>j → * / z_</change>
         <change>hh h → h * / ”Vː_u</change>
         <change>hh h → h * / u_”Vː</change>
         <change>h → * / _w // at word boundaries</change>
-        <comment>;; “medially, and sporadically”</comment>
-        <change>hh → * / _{w,m,n,r,l}</change>
+        <change sporadic="true">hh → * / _{w,m,n,r,l}</change>
         <change>D R → Dː Rː / ”e_ in U:[+open]</change>
         <change>{ɛ,e}ː æː → iː aː</change>
     </section>
@@ -3692,7 +3638,6 @@
         <change>{ɡ́,ɡ} → * / _i(ː)</change>
         <change>ɡ → * / V_V</change>
         <change>j → * / ts_</change>
-        <comment>;; “(in Milyan, this happened after the change of ḱ to s)”</comment>
         <change>s → z / _{R,j,w}</change>
         <change>s → h</change>
         <change>ḱ → s</change>
@@ -3706,7 +3651,6 @@
         <change>{ɛ,e}ː o æː → iː e aː</change>
         <change>Vː → V</change>
         <change>e → a / _U[+u,a]</change>
-        <comment>;; “[P]lus lots of syncope which he doesn’t elaborate on”</comment>
         <change>a → e / _U[+e,i]</change>
     </section>
     <section index="17.2.4" name="Common Anatolian to Lydian">
@@ -3721,7 +3665,6 @@
         <change>s → ʃ / _{i,e}</change>
         <change>s → ʃ / i_</change>
         <change>{h₂,h₃} → *</change>
-        <comment>;; “(that’s a Greek nu, I’m not sure what it’s supposed to represent)”</comment>
         <change>{m,n} → ʋ / _#</change>
         <change>l → ʎ / _{i,j}</change>
         <change>w (→ v?) → f / s_</change>
@@ -3732,10 +3675,8 @@
         <change>{e,a,o} → ē / _N in ”U:[+closed]</change>
         <change>{e,a,o} → ā / _N in ”U:[+open]</change>
         <change>{e,o} → a / in U:[-stress]</change>
-        <comment>;; “(leaves nasalization on the previous vowel)”</comment>
         <change>n → * / _P</change>
         <change>o(ː) eː æː → a(ː) iː aː</change>
-        <comment>;; “[P]lus lots of syncope which he doesn’t elaborate on”</comment>
         <change>Vː → V</change>
     </section>
     <section index="17.2.5" name="Common Anatolian to Palaic">
@@ -3761,7 +3702,6 @@
     </section>
     <section index="17.3.1" name="Proto-Indo-European to Artsakh Armenian">
         <cite>Mecislau &amp; Pogostick Man, the latter citing Wikipedia contributors (2013), “Armenian Language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Armenian_language&amp;oldid=582063933&gt;</cite>
-        <comment>;; NB: The changes in plosives are the most contentious; the Wikipedia article gives differences between the seven dialects in initial position for only the alveolar series by way of comparison, so take plosive changes with a huge grain of salt.</comment>
         <change>{e,i}ː {u,o}ː → i u</change>
         <change>{e,o}j ɛw → ɛj ow</change>
         <change>{e,o} → a (rare)</change>
@@ -3797,7 +3737,6 @@
     </section>
     <section index="17.3.2" name="Proto-Indo-European to Erevan Armenian">
         <cite>Mecislau &amp; Pogostick Man, the latter citing Wikipedia contributors (2013), “Armenian Language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Armenian_language&amp;oldid=582063933&gt;</cite>
-        <comment>;; NB: The changes in plosives are the most contentious; the Wikipedia article gives differences between the seven dialects in initial position for only the alveolar series by way of comparison, so take plosive changes with a huge grain of salt.</comment>
         <change>{e,i}ː {u,o}ː → i u</change>
         <change>{e,o}j ɛw → ɛj ow</change>
         <change>{e,o} → a (rare)</change>
@@ -3833,7 +3772,6 @@
     </section>
     <section index="17.3.3" name="Proto-Indo-European to Istanbul Armenian">
         <cite>Mecislau &amp; Pogostick Man, the latter citing Wikipedia contributors (2013), “Armenian Language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Armenian_language&amp;oldid=582063933&gt;</cite>
-        <comment>;; NB: The changes in plosives are the most contentious; the Wikipedia article gives differences between the seven dialects in initial position for only the alveolar series by way of comparison, so take plosive changes with a huge grain of salt.</comment>
         <change>{e,i}ː {u,o}ː → i u</change>
         <change>{e,o}j ɛw → ɛj ow</change>
         <change>{e,o} → a (rare)</change>
@@ -3869,7 +3807,6 @@
     </section>
     <section index="17.3.4" name="Proto-Indo-European to Kharpert Armenian">
         <cite>Mecislau &amp; Pogostick Man, the latter citing Wikipedia contributors (2013), “Armenian Language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Armenian_language&amp;oldid=582063933&gt;</cite>
-        <comment>;; NB: The changes in plosives are the most contentious; the Wikipedia article gives differences between the seven dialects in initial position for only the alveolar series by way of comparison, so take plosive changes with a huge grain of salt.</comment>
         <change>{e,i}ː {u,o}ː → i u</change>
         <change>{e,o}j ɛw → ɛj ow</change>
         <change>{e,o} → a (rare)</change>
@@ -3905,7 +3842,6 @@
     </section>
     <section index="17.3.5" name="Proto-Indo-European to Sebastia Armenian">
         <cite>Mecislau &amp; Pogostick Man, the latter citing Wikipedia contributors (2013), “Armenian Language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Armenian_language&amp;oldid=582063933&gt;</cite>
-        <comment>;; NB: The changes in plosives are the most contentious; the Wikipedia article gives differences between the seven dialects in initial position for only the alveolar series by way of comparison, so take plosive changes with a huge grain of salt.</comment>
         <change>{e,i}ː {u,o}ː → i u</change>
         <change>{e,o}j ɛw → ɛj ow</change>
         <change>{e,o} → a (rare)</change>
@@ -3940,7 +3876,6 @@
     </section>
     <section index="17.3.6" name="Proto-Indo-European to Southeast Armenian">
         <cite>Mecislau &amp; Pogostick Man, the latter citing Wikipedia contributors (2013), “Armenian Language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Armenian_language&amp;oldid=582063933&gt;</cite>
-        <comment>;; NB: The changes in plosives are the most contentious; the Wikipedia article gives differences between the seven dialects in initial position for only the alveolar series by way of comparison, so take plosive changes with a huge grain of salt.</comment>
         <change>{e,i}ː {u,o}ː → i u</change>
         <change>{e,o}j ɛw → ɛj ow</change>
         <change>{e,o} → a (rare)</change>
@@ -3978,7 +3913,6 @@
     </section>
     <section index="17.3.7" name="Proto-Indo-European to Southwest Armenian">
         <cite>Mecislau &amp; Pogostick Man, the latter citing Wikipedia contributors (2013), “Armenian Language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Armenian_language&amp;oldid=582063933&gt;</cite>
-        <comment>;; NB: The changes in plosives are the most contentious; the Wikipedia article gives differences between the seven dialects in initial position for only the alveolar series by way of comparison, so take plosive changes with a huge grain of salt.</comment>
         <change>{e,i}ː {u,o}ː → i u</change>
         <change>{e,o}j ɛw → ɛj ow</change>
         <change>{e,o} → a (rare)</change>
@@ -4017,7 +3951,6 @@
     </section>
     <section index="17.4.1" name="Proto-Indo-European to Avestan">
         <cite>Pogostick Man, Alex Fink, and Tropylium, the former two citing Wikipedia contributors (2013), “Proto-Indo-Iranian language”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Proto-Indo-Iranian_language&amp;oldid=543625693&gt;; and Alex Fink citing https://en.wikipedia.org/wiki/Avestan_phonology</cite>
-        <comment>;; NB: Tropylium wishes to note that his sound changes are subject to change.</comment>
         <change>bʱ dʱ ɡ́ʱ → b d z</change>
         <change>ḱ ɡ́ → s z</change>
         <change>k(ʷ) ɡ(ʷ)(ʱ) → tʃ dʒ / _E</change>
@@ -4038,7 +3971,6 @@
     </section>
     <section index="17.5" name="Proto-Indo-European to Proto-Celtic">
         <cite>dhokarena56, from Matasović (2009), Etymological Dictionary of Proto-Celtic (ed. Lubotsky).</cite>
-        <comment>;; “PIE Dialectal”</comment>
         <change>h₁e h₂e h₃e → e a o</change>
         <change>eh₁ eh₂ eh₃ → eː aː oː</change>
         <change>H → a / C_C // #_</change>
@@ -4046,12 +3978,10 @@
         <change>* → a / CR_HC</change>
         <change>H → * / V_C when pretonic</change>
         <change>H → a / #R_C</change>
-        <comment>;; Early Proto-Celtic</comment>
         <change>ḱ → K</change>
         <change>ɡʷ → b</change>
         <change>h → * / C_</change>
         <change>* → i / C{l,r}S</change>
-        <comment>;; “[t]he e was often restored by analogy”</comment>
         <change>e → a / _Ra // _Raː</change>
         <change>* → a / C_RC</change>
         <change sporadic="true">H → *</change>
@@ -4060,7 +3990,6 @@
         <change>oː → uː / in U#</change>
         <change>Vː → V / _RC</change>
         <change sporadic="true">C₁C₂ → xC₂</change>
-        <comment>;; Late Proto-Celtic</comment>
         <change>p → b / _{r,l}</change>
         <change>p → w / B_N</change>
         <change>p → f</change>
@@ -4070,11 +3999,8 @@
     </section>
     <section index="17.5.1" name="Proto-Indo-European to Old Irish">
         <cite>dhokarena56</cite>
-        <comment>;; “Laryngeal rules (the ones common to all branches except Anatolian)”</comment>
         <change>Kʷ → K</change>
-        <change>“The PIE rules for the voicing of s → z, as in [nizdos] for *nisdos, are assumed to apply”</change>
         <change>Cʱ → C</change>
-        <comment>;; Obstruent clusters assimilate in voicing to that of the final obstruent</comment>
         <change>eː → iː / _ // _{i,u}</change>
         <change>tː → sː</change>
         <change>p → f / {V,#}_</change>
@@ -4085,22 +4011,13 @@
         <change>m̩ n̩ → am an / _{s,({m,j,w})V}</change>
         <change>m̩ n̩ → em en / _ // _{s,({m,j,w})V}</change>
         <change>m̩ n̩ → em en / _ // _{s,({m,j,w})V}</change>
-        <comment>;; Stress change:</comment>
-        <comment>;; — Pronouns, articles, and conjunctions become unstressed.</comment>
-        <comment>;; — First syllables stress in all verbal imperatives.</comment>
-        <comment>;; — First syllables stress in all other parts of speech except preverbs and the exceptions noted above.</comment>
-        <comment>;; — Second syllables receive stress otherwise.</comment>
-        <comment>;; — “This, unlike the preceding rules, remained a morphologically conditioned rule in Old Irish.”</comment>
         <change>ɡʷ → b / #_V // _u(ː)</change>
         <change>ɡʷ → b / #_N</change>
         <change>ɡʷ → b / C_V</change>
         <change>ɡʷ → ɡ</change>
-        <comment>;; (“We don’t know the exact values of lenited /m n l r/. We can guess that lenited m became a nasalized labial continuant of some sort, but beyond that, we don’t know.”)</comment>
         <change>p t k kʷ b d ɡ m n l r s → f θ x xʷ v ð ɣ M N L R h / V(#)_{R,V}</change>
         <change>k → x / V_t</change>
-        <comment>;; “; [i]t is thought that the vowel needs to be unstressed, but this is not certain”</comment>
         <change>m → n / V_#</change>
-        <comment>;; “; [i]t is thought that the long vowel probably needed to be unstressed- again, this is uncertain”</comment>
         <change>Vː → V / _N#</change>
         <change>p t k kʷ b d ɡ * → b d ɡ ɡʷ mb nd ŋɡ n / n#_”V</change>
         <change>oː → uː / _(C…)#</change>
@@ -4108,7 +4025,6 @@
         <change>oː → aː / _ // _#</change>
         <change>oː → aː / _ // _#</change>
         <change>Vː → V / _H ;; (includes diphthongs)</change>
-        <comment>;; “The following three rules only apply if the vowel is unstressed”:</comment>
         <change stressed="false">e → i / _(C…)#</change>
         <change stressed="false">o → a / _{(C…),u}#</change>
         <change stressed="false">{ai,oi} → iː / _#</change>
@@ -4118,7 +4034,6 @@
         <change>C → Cʲ / _{F,j}</change>
         <change>C → Cʷ / _{B,w}</change>
         <change>Kʷ → K</change>
-        <comment>;; For the following: “The book says nothing about length in the input vowels, but I think they could be either short or long from the examples given.”</comment>
         <change>n → * / {i,o,u}_{p,t,k,s}</change>
         <change>{a,e}n → eː / _{p t k s}</change>
         <change>w → f / #_</change>
@@ -4127,9 +4042,7 @@
         <change>w → * / V_{V,#}</change>
         <change>w → v / _ // V_{V,#}</change>
         <change>w → v / _ // V_{V,#}</change>
-        <comment>;; “The following changes. . .are, quoth the book, ‘somewhat approximative’”:</comment>
         <change>{p,t} → * / #s_r</change>
-        <comment>;; “(although it says that occasionally st &gt; t / #_)”</comment>
         <change>{p,t} → * / #s_</change>
         <change>s → * / [anything]{l,r}_O</change>
         <comment>;; — “[A] sequence of two plosives becomes a geminate of the second one”</comment>
@@ -6245,7 +6158,7 @@
         <change>V → * / R_(C…)</change>
         <comment>;; — /i/ and /u/ remain when ”V_ (then u is subject to the changes listed above—u → y, &amp;c.)</comment>
         <comment>;; “Limousin and some others”</comment>
-        <change>a → o in most dialects except Gascon and Languedoc; final -as remained in</change>
+        <change>a → o</change>
         <change>e u → e o / _nt#</change>
         <comment>;; — -os remains “in the extreme east”</comment>
         <comment>;; — Final -i remains “as late as the 12th century” in some regions (Aude, Tarn, Aveyron, Corrèze, and some pockets of Haute-Garrone)</comment>
