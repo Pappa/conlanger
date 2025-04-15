@@ -1232,14 +1232,14 @@
         <change>f → w / _V</change>
         <change>f → p / _ // _V</change>
         <change>f → p / _ // _V</change>
-        <change>ŋ → ɡ / syllable-final</change>
+        <change>ŋ → ɡ / _$</change>
     </section>
     <section index="8.5.1.1" name="Proto-Kypchak to Kazakh">
         <cite>Pogostick Man, from Firespeaker.org wiki contributors (2014), “Turkic sound changes”. &lt;http://wiki.firespeaker.org/Turkic_sound_changes&gt;</cite>
         <comment>;; NB: Most likely incomplete; all changes listed are stated as being “[s]hared with Nogay and Karakalpak”.</comment>
         <change>tʃ → ʃ</change>
-        <change>j → dʒ / #_ ;;  (did not occur in Qara Nogay)</change>
-        <change>dʒ → ʒ (did not occur in Qara Nogay or Central Nogay)</change>
+        <change>j → dʒ / #_</change>
+        <change>dʒ → ʒ</change>
         <change>w → * / ɯ_</change>
     </section>
     <section index="8.5.1.2" name="Proto-Kypchak to Kyrgyz">
@@ -1248,25 +1248,25 @@
         <change sporadic="true">b → m / V_V</change>
         <change>{u,ɯ}w {i,y}w aw {æ,e}w → uː yː oː øː</change>
         <change>ɣ → * / V_V</change>
-        <change>æ Vh {ʕ,h} → ɑː Vː * (seems to have largely been confined to loanwords from Persian)</change>
+        <change sporadic="true">æ Vh {ʕ,h} → ɑː Vː *</change>
         <change>j → dʒ / #_</change>
         <change>x → q</change>
         <change>nj → jn</change>
         <change>* → U / #_{l,r}</change>
         <change>e → i / _ɡ</change>
-        <change>e → i / k_y ;;  (maybe they mean k_j?)</change>
+        <change>e → i / k_y</change>
     </section>
     <section index="8.5.2" name="Proto-Turkic to Sakha">
         <cite>Pogostick Man, from Firespeaker.org wiki contributors (2014), “Turkic sound changes”. &lt;http://wiki.firespeaker.org/Turkic_sound_changes&gt;</cite>
-        <change>{e,ɤ}ː → je (the second one is conjectured based on my admittedly sparse knowledge of Turkish; I can only guess that 〈ė〉 is some sort of back unrounded vowel)</change>
+        <change>{e,ɤ}ː → je</change>
         <change>o oɡ ø øɡ iɡ → wo ɥø oː øː iː</change>
         <change>a{ɡ̌(ɯ),b} {o{ɡ̌,b},aɡ̌u} u{ɡ̌,b} → ɰa wo uː</change>
-        <change>iɡ̌ → ɯː → iː (but original ɯː unaffected?)</change>
+        <change>iɡ̌ → ɯː → iː</change>
         <change>eɡ → {je,iː,ji}</change>
         <change>d s {ʃ,z} → t * s / V_V</change>
         <change>s → * / #_</change>
         <change>{z,ʃ} → h</change>
-        <change>j → s (possibly only initially?)</change>
+        <change>j → s</change>
     </section>
     <section index="9" name="Austroasiatic">
     </section>
@@ -1274,60 +1274,50 @@
     </section>
     <section index="9.1.1" name="Proto-Vietic to Muong Khen">
         <cite>Pogostick Man, from Thompson, Laurence C. (1976), “Proto-Viet-Muong Phonology”. Oceanic Linguistics Special Publications 13, Austroasiatic Studies II:1113 – 1203; Wikipedia contributors (2012). “Hanoi”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Hanoi&amp;oldid=509052974&gt;; Wikipedia contributors (2012), “Vietnamese Language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=Vietnamese_language&amp;id=509331797&gt;; Gage, William W. (1985), “Glottal Stops and Vietnamese Tonogenesis”. Oceanic Linguistics Special Publications 20:21 – 36; and Thompson, Laurence C. (1979?), “More on Viet-Muong Tonal Developments”</cite>
-        <comment>;; Tonogenesis</comment>
-        <comment>;; 1. “Constricted” (laryngealized?)</comment>
-        <comment>;; 2. Terminates in a glottal stop if no final stop</comment>
-        <comment>;; Presyllables don’t seem to have affected Muong much.</comment>
         <comment>;; Initials:</comment>
         <change>s → h</change>
         <change>cʰ → s</change>
-        <change>tʰ → h (Only seems to have occurred with first-register tones)</change>
-        <change>{kʰ,ɡʱ} → x (Presyllables don’t seem to have affected this much)</change>
-        <change>m n → b d (Only seems to have occurred with first-register tones)</change>
-        <change>{pj,bj} {tj,dj} {cj,ɟj} → b d j</change>
-        <change>ɓ ɗ → b d (Only seems to have occurred with first-register tones)</change>
+        <change sporadic="true">tʰ → h</change>
+        <change sporadic="true">{kʰ,ɡʱ} → x</change>
+        <change sporadic="true">m n → b d</change>
+        <change sporadic="true">{pj,bj} {tj,dj} {cj,ɟj} → b d j</change>
+        <change sporadic="true">ɓ ɗ → b d</change>
         <change>{n̥j,nj,ɲ̊j,ɲj} → ɲ j</change>
         <change>N:[-voice] W:[-voice] → N:[+voice] W:[+voice]</change>
         <change>(h)ə{p,b} → t / _l</change>
         <change>m → * / _l</change>
-        <comment>;; Miscellanea:</comment>
         <change>tɹ → tʰ</change>
-        <change>w → * / tʰV_k ;;  (conjectured)</change>
+        <change sporadic="true">w → * / tʰV_k</change>
     </section>
     <section index="9.1.2" name="Proto-Vietic to Middle Vietnamese">
         <cite>Pogostick Man, from Thompson, Laurence C. (1976), “Proto-Viet-Muong Phonology”. Oceanic Linguistics Special Publications 13, Austroasiatic Studies II:1113 – 1203; Wikipedia contributors (2012). “Hanoi”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Hanoi&amp;oldid=509052974&gt;; Wikipedia contributors (2012), “Vietnamese Language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=Vietnamese_language&amp;id=509331797&gt;; Gage, William W. (1985), “Glottal Stops and Vietnamese Tonogenesis”. Oceanic Linguistics Special Publications 20:21 – 36; and Thompson, Laurence C. (1979?), “More on Viet-Muong Tonal Developments”</cite>
         <comment>;; Initials:</comment>
-        <change>bʱ {tʰ,dʱ} {t*ʰ,d*ʱ} {kʰ,ɡʱ} → pʰ t tʰ kʰ (after *kʰ *ɡʱ, only first-register tones may occur)</change>
+        <change sporadic="true">bʱ {tʰ,dʱ} {t*ʰ,d*ʱ} {kʰ,ɡʱ} → pʰ t tʰ kʰ (after *kʰ *ɡʱ, only first-register tones may occur)</change>
         <change>(h)ə{p,b} (h)ə{t,d} (h)ə{c,ɟ} (h)ə{k,ɡ} → β dʲ ɟ ɡ</change>
         <change>{pj,bj} {tj,dj} {cj,ɟj} → {β,w} dʲ ɟ</change>
-        <change>ɓ ɗ → m n (For some reason it seems that only first-register tones can occur in this environment)</change>
-        <change>{n̥j,nj,ɲ̊j,ɲj} → ɲ (Thompson appears to me to have hedged a bit on the last one; based on other evidence in the paper I’m sticking this one as a palatal nasal)</change>
-        <change>tʃ → Ω (This is my own notation. I don’t have a clue what the intermediate form was; became something else in different dialects)</change>
+        <change sporadic="true">ɓ ɗ → m n</change>
+        <change sporadic="true">{n̥j,nj,ɲ̊j,ɲj} → ɲ</change>
+        <change sporadic="true">tʃ → Ω</change>
         <change>N:[-voice] W:[-voice] → N:[+voice] W:[+voice]</change>
         <change>((h)ə)p d → b t / _l</change>
-        <change>t → * / _ɹ ;;  (only first-register tones can occur in this environment)</change>
+        <change sporadic="true">t → * / _ɹ</change>
         <change>t*ʰ d ɡ → tʰ t k / _w</change>
         <change>s → t(ʰ?)</change>
         <comment>;; Finals:</comment>
-        <change>{əkʰ,əɡɦj} → ɟ (I think Thompson implied this was just a bit of a kludge)</change>
+        <change sporadic="true">{əkʰ,əɡɦj} → ɟ</change>
         <change>l → * / {i,e}_</change>
         <change>l → j / _ // {i,e}_</change>
         <change>l → j / _ // {i,e}_</change>
-        <comment>;; Thompson seems to list some changes as affecting Modern Vietnamese but I was unsure of where to put them so they’ll go here:</comment>
-        <change>c ɲ → t n / _ // E_ ;;  (apparently the precursor to Vietnamese short *a was treated as a short vowel here)</change>
-        <comment>;; In the original those first vowels were underlined.</comment>
+        <change>c ɲ → t n / _ // E_</change>
         <change>a ɔ → ɨə uə</change>
     </section>
     <section index="9.1.2.1" name="Middle Vietnamese to Hanoi Vietnamese">
         <cite>Pogostick Man, from Thompson, Laurence C. (1976), “Proto-Viet-Muong Phonology”. Oceanic Linguistics Special Publications 13, Austroasiatic Studies II:1113 – 1203; Wikipedia contributors (2012). “Hanoi”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Hanoi&amp;oldid=509052974&gt;; Wikipedia contributors (2012), “Vietnamese Language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=Vietnamese_language&amp;id=509331797&gt;; Gage, William W. (1985), “Glottal Stops and Vietnamese Tonogenesis”. Oceanic Linguistics Special Publications 20:21 – 36; and Thompson, Laurence C. (1979?), “More on Viet-Muong Tonal Developments”</cite>
-        <comment>;; Tonogenesis</comment>
-        <comment>;; 1. Tense when _S#; laryngealized elsewhere</comment>
-        <comment>;; 2. Laryngealized</comment>
         <comment>;; Initials:</comment>
         <change>pʰ → f</change>
-        <change>kʰ → x (only seems to have occurred with first-register tones)</change>
+        <change>kʰ → x</change>
         <change>{β,w} {dʲ,ɟ} → v z</change>
-        <change>ɹ → z (only seems to have occurred with first-register tones)</change>
+        <change>ɹ → z</change>
         <change>bl → z</change>
         <change>ml → mɲ → ɲ (Thompson seems to indicate that this may have become [l] as well; only seems to have occurred with second-register tones)</change>
         <comment>;; Vowels:</comment>
@@ -1339,12 +1329,9 @@
     </section>
     <section index="9.1.2.2" name="Middle Vietnamese to Saigon Vietnamese">
         <cite>Pogostick Man, from Thompson, Laurence C. (1976), “Proto-Viet-Muong Phonology”. Oceanic Linguistics Special Publications 13, Austroasiatic Studies II:1113 – 1203; Wikipedia contributors (2012). “Hanoi”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Hanoi&amp;oldid=509052974&gt;; Wikipedia contributors (2012), “Vietnamese Language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=Vietnamese_language&amp;id=509331797&gt;; Gage, William W. (1985), “Glottal Stops and Vietnamese Tonogenesis”. Oceanic Linguistics Special Publications 20:21 – 36; and Thompson, Laurence C. (1979?), “More on Viet-Muong Tonal Developments”</cite>
-        <comment>;; Tonogenesis</comment>
-        <comment>;; 1. Level when _S#; dipping otherwise</comment>
-        <comment>;; 2. Laryngealized</comment>
         <comment>;; Initials:</comment>
         <change>pʰ → f</change>
-        <change>kʰ → x (only seems to have occurred with first-register tones)</change>
+        <change>kʰ → x</change>
         <change>{β,w} → bj~vj~v</change>
         <change>{bl,tl} → ʈ</change>
         <change>dʲ ɟ → z j</change>
@@ -1358,13 +1345,11 @@
         <change>{c,ɲ} → * / else</change>
         <change>ə → * / {i,ɨ}_{p,m.w}</change>
         <change>ə → * / ɨ_j</change>
-        <comment>;; The contrast between short /a/ and short /ə/ is neutralized when _w{k,ŋ}</comment>
         <change>ə → * / u_{m,j}</change>
         <change>a → aː / _{w,j}</change>
         <change>ə(ː) ɛ → ɨ ɛə / _K</change>
-        <comment>;; Miscellanea:</comment>
         <change>ɛ → a / _C:[+palatal]</change>
-        <change>w → * / tV_wk ;;  (conjectured)</change>
+        <change>w → * / tV_wk</change>
     </section>
     <section index="10" name="Austronesian">
     </section>
@@ -1381,9 +1366,7 @@
         <change>R → r</change>
         <change>q → h / _#</change>
         <change>{q,h} → *</change>
-        <comment>;; A:</comment>
         <change>iw uj → {i,?} i / _#</change>
-        <comment>;; B:</comment>
         <change>aj aw → ej ow / _#</change>
         <change>aj aw → e ow / _#</change>
         <change>C[+voice] → C[-voice] / _#</change>
@@ -1394,33 +1377,30 @@
         <change>r → {r,h} → {*,h}</change>
         <change>h → {*,h}</change>
         <change>w → b / i_#</change>
-        <comment>;; “ə assimilated to the following vowel after the loss of *-r-”</comment>
         <change>ej ow → i u</change>
         <change>a → ə</change>
     </section>
     <section index="10.1.1.2" name="Proto-Bali-Sasak-Sumbawan to Sasak">
         <cite>TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic Linguistics 44(2):357 – 388</cite>
-        <change>h → q / _# ;;  ; (might’ve been a retention?)</change>
+        <change>h → q / _#</change>
         <change>h → *</change>
-        <comment>;; “*i and *u often become mid-vowels”</comment>
         <change>iw ow ej → i o e / _#</change>
-        <change>V(h) → V(q) / _# ;; (again, might’ve been a retention?)</change>
-        <change>a →ə / _# (Meno-mene and Mriak-mriku only)</change>
-        <change>d → r / medial ;;  (Meno-mene and Mriak-mriku only)</change>
-        <change>r → h / _# ;;  (Meno-mene and Mriak-mriku only)</change>
+        <change>V(h) → V(q) / _#</change>
+        <change sporadic="true">a →ə / _#</change>
+        <change sporadic="true">d → r / medial</change>
+        <change sporadic="true">r → h / _#</change>
     </section>
     <section index="10.1.1.3" name="Proto-Bali-Sasak-Sumbawan to Sumbawan">
         <cite>TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic Linguistics 44(2):357 – 388</cite>
-        <change>h → q / _# ;;  ; (might’ve been a retention?)</change>
+        <change>h → q / _#</change>
         <change>h → *</change>
         <change>w → * / i_#</change>
         <change>ej ow → e o / _#</change>
         <change sporadic="true">u i → o e</change>
-        <change>V(h) → V(q) / _# ;; (again, might’ve been a retention?)</change>
+        <change>V(h) → V(q) / _#</change>
         <change>S[+voice] → * / _N</change>
         <change>S[+voice] → * / N_</change>
-        <comment>;; “[C]ontraction of adjacent vowels” (not in Besar)</comment>
-        <change>u → i / _{s,t,r,n,l} ;;  (blocked in Pusu)</change>
+        <change>u → i / _{s,t,r,n,l}</change>
         <change sporadic="true">b → * / medial</change>
     </section>
     <section index="10.1.1.4" name="Polynesian">
@@ -1480,10 +1460,9 @@
     </section>
     <section index="10.1.2.4" name="Proto-Philippine to Ibanag">
         <cite>Pogostick Man, from Llamzon, Teodoro A. (1975), “Proto-Philippine Phonology”. Archipel 9(1):29 – 42; and from other changes and information from this document</cite>
-        <comment>;; Something happens to final voiceless stops but it isn’t clear in the paper</comment>
         <change>ə → a</change>
         <change>*D → r</change>
-        <change>*j → ɡ / possible exception in word-initial position?</change>
+        <change>*j → ɡ</change>
         <change>*Z → r</change>
         <change>z → r / V_V</change>
         <change>*R → ɡ</change>
@@ -1497,7 +1476,6 @@
         <cite>Pogostick Man, from Llamzon, Teodoro A. (1975), “Proto-Philippine Phonology”. Archipel 9(1):29 – 42; and from other changes and information from this document</cite>
         <change>ə → o</change>
         <change>*j → ɡ / _#</change>
-        <comment>;; *R seems to have had a few different reflexes, mainly one of /l ɡ j/; if /ɡ j/ occurred, /ɡ/ was more probable at word boundaries and /j/ was more probable medially</comment>
         <change>{z,*Z,*D,*j} → d</change>
         <change>{q,h} → *</change>
         <change>{s,c} → h</change>
@@ -1523,7 +1501,6 @@
         <change>e → i / _Ci</change>
         <change>e → u / uC_</change>
         <change>e → a / _C[-voice]#</change>
-        <comment>;; Contrastive stress lost</comment>
         <change>d → r / V_V</change>
     </section>
     <section index="10.1.2.7.1" name="Proto-Kalamian to Agutaynen">
@@ -1548,7 +1525,7 @@
         <change>t → s / _i</change>
         <change>s → t / _V // _E</change>
         <change>s → t / _#</change>
-        <change>s → c&amp; _ (the paper doesn’t explain what this represents)</change>
+        <change>s → c</change>
         <change>b → β / V_V</change>
         <change>β → w / V[+high]_a</change>
         <change>ɡ → h / V_V</change>
@@ -1569,10 +1546,8 @@
         <cite>Pogostick Man, from Llamzon, Teodoro A. (1975), “Proto-Philippine Phonology”. Archipel 9(1):29 – 42; and from other changes and information from this document</cite>
         <change>{*D,*Z} → d</change>
         <change>{z,*j} → d / V_V</change>
-        <comment>;; *R seems to have had a few different reflexes, mainly one of /l ɡ j/; if /ɡ j/ occurred, /ɡ/ was more probable at word boundaries and /j/ was more probable medially</comment>
         <change>*j → ɡ / _#</change>
         <change>c → s</change>
-        <comment>;; Something seems to have changed to əw finally but the paper may have an error here</comment>
         <change>{h,q} → *</change>
         <change>iw → uj</change>
     </section>
@@ -1604,7 +1579,6 @@
     </section>
     <section index="10.2" name="Proto-Austronesian to Proto-Batak">
         <cite>TinyMusic, from Adelaar, K.A. (1981), “Reconstruction of Proto-Batak Phonology”. In Blust, Robert (ed.), Historical Linguistics in Indonesia I:1 – 20.</cite>
-        <comment>;; TinyMusic notes that this particular set of sound changes is with respect to the reconstruction of Proto-Austronesian by Dyen (1965), and that he had some trouble with *j.</comment>
         <change>w → * / i_#</change>
         <change>{a,e} → o / _w#</change>
         <change>a → e / _j#</change>
@@ -1619,11 +1593,9 @@
         <change>w → * / #_</change>
         <change>R q → r h</change>
         <change>i iw u → ɔj ? ɔw / _#</change>
-        <comment>;; Nasal + stop clusters assimilate in POA</comment>
         <change>C₁C₂ → C₂</change>
         <change>C[+voice] → C[-voice] / _#</change>
         <change sporadic="true">l n → r l / #_</change>
-        <comment>;; “Sometimes a reduction of [the] penultimate vowel”</comment>
         <change sporadic="true">d j → r ɭ</change>
         <change sporadic="true">a → aː / _C#</change>
     </section>
@@ -1634,7 +1606,6 @@
         <change sporadic="true">V → * / VC_CV</change>
         <change>i u → e o / _C{C,#}</change>
         <change sporadic="true">i u → e o / CC#</change>
-        <comment>;; “(in some forms; environment and conditioning unclear)”</comment>
         <change>a → æ</change>
         <change>uj → {i,u}</change>
         <change>iw → u</change>
@@ -1666,9 +1637,7 @@
         <change sporadic="true">h → ʔ / _#</change>
         <change>h → * / _ // _#</change>
         <change>h → * / _ // _#</change>
-        <comment>;; A:</comment>
         <change>{iw,uj} → i / _#</change>
-        <comment>;; B:</comment>
         <change>aj aw → i u / _#</change>
         <change>aj aw → aj aw / _#</change>
         <change>C₁C₂ → C₂</change>
@@ -1686,9 +1655,7 @@
     <section index="10.2.4" name="Proto-Malayo-Polynesian to Proto-Malayo-Javanic">
         <cite>TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic Linguistics 44(2):357 – 388</cite>
         <change>j → l</change>
-        <comment>;; A:</comment>
         <change>q h → h *</change>
-        <comment>;; B:</comment>
         <change>aw aj → əw əj / _#</change>
         <change>aw aj → aw aj / _#</change>
     </section>
@@ -1700,12 +1667,9 @@
         <change>R → *</change>
         <change>h → * / #_</change>
         <change>h → {o,h,w} / V_V</change>
-        <comment>;; A:</comment>
         <change>iw uj → ju i / _#</change>
-        <comment>;; B:</comment>
         <change>əw əj → i u / _#</change>
         <change>aw aj → e ó / _#</change>
-        <comment>;; Nasal + stop clusters “become homorganic”</comment>
         <change>C₁C₂ → C₂</change>
         <change>HəS → (h)əNS</change>
     </section>
@@ -1713,13 +1677,11 @@
         <cite>TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic Linguistics 44(2):357 – 388</cite>
         <change>ɭ → lʔ / _#</change>
         <change>ɭ → l</change>
-        <comment>;; w j fortite when non-final</comment>
         <change>z → jʰ</change>
         <change>b → {w,*} / #_</change>
         <change>R → ʔ / _#</change>
         <change>R → r</change>
         <change>h → ʔ / V₀V₀</change>
-        <comment>;; “Aspiration of initial and intervocalic voiced stops and *z”</comment>
         <change>h → *</change>
         <change>{p,t,k} b d ɡ → ʔ p t k / _#</change>
         <change>ij uw → uj {uj,ój} / _#</change>
@@ -1732,9 +1694,7 @@
         <change>{l,j} z → r j</change>
         <change>w → {*,c} / #_</change>
         <change>R → {*,r,j}</change>
-        <comment>;; A:</comment>
         <change>iw uj → {ju,i} oj / _#</change>
-        <comment>;; B:</comment>
         <change>əw əj → o e / _#</change>
         <change>aw aj → o aj / _#</change>
     </section>
@@ -1744,10 +1704,8 @@
         <change>* → w / u_V</change>
         <change>* → j / i_V</change>
         <change>ə → * / #_</change>
-        <comment>;; “(for certain consonant combinations, which the paper doesn’t specify)”</comment>
         <change>* → ə / C_C</change>
         <change>h → *</change>
-        <comment>;; “(result of /e/ or /o/ unpredictable)”</comment>
         <change>ə → {e,o} / [+stress]</change>
         <change>p → w</change>
         <change sporadic="true">wa → o / #_</change>
@@ -1764,9 +1722,8 @@
         <change>ʀ → r / _C:[+dental]</change>
         <change>ʀ → s</change>
         <change>d → r</change>
-        <comment>;; “(only one example)”</comment>
         <change>ɖ → ɽ</change>
-        <change>ɲ → n (except possibly to n when #_)</change>
+        <change>ɲ → n</change>
         <change>n dz → l r</change>
         <change>rl → lː</change>
         <change>ɟ → k / _C#</change>
@@ -1788,22 +1745,17 @@
         <change>a → ə / _UU(U…)#</change>
         <change>ə → * / _V</change>
         <change>ə → * VC_CV</change>
-        <comment>;; Nasal assimilation to following stops in some words; in other words it results in a geminate stop</comment>
-        <comment>;; Postvocalic obstruents with different POAs become geminates of the second when “in reduplicated monosyllabic roots” and “in non-reduplicated bases which had undergone the change of schwa syncope in medial syllables”</comment>
         <change>C → Cː / ə_V</change>
         <change>ɟ(ː) → d(ː)</change>
-        <comment>;; “voiced stops with voiceless releases. . .treated as unit phonemes, not clusters)”</comment>
-        <change>bː dː dzː ɡː → bʱ dʱ dzʱ ɡʱ (Whimemsz says these become</change>
-        <change>ə → * / #_UU(U…)# “(i.e., in word-initial position in prepenultimate syllables)</change>
+        <change>bː dː dzː ɡː → bʱ dʱ dzʱ ɡʱ</change>
+        <change>ə → * / #_UU(U…)# ;; (i.e., in word-initial position in prepenultimate syllables)</change>
         <change>pː tː cː kː → p t c k</change>
         <change>c → s</change>
     </section>
     <section index="10.2.6.1" name="Proto-North Sarawak to Kiput">
         <cite>Whimemsz, from Blust, Robert (2002), “Kiput Historical Phonology”. Oceanic Linguistics 41(2):384 – 438</cite>
-        <comment>;; Stress reassignment to the final syllable</comment>
         <change>ʔ → * / V_V</change>
-        <comment>;; “(in some forms)”</comment>
-        <change>k → * / V_V</change>
+        <change sporadic="true">k → * / V_V</change>
         <change>ai au → ai̯ au̯ / _#</change>
         <change>ə → a / _ʔ#</change>
         <change>ai au → ɛː ɔː / _…#</change>
@@ -1812,37 +1764,29 @@
         <change sporadic="true">s → * / V_V</change>
         <change>V₀V₀ → V₀</change>
         <change>ə → * / _,V</change>
-        <comment>;; “(applies to diphthongal nuclei as well a[s] monophthongs)”</comment>
-        <change>V:[+stress] → Vː / _C# // V = ə and/or C = h</change>
-        <change>ʀ → {l,ɾ} / _ // _# ;;  (the latter is more common)</change>
+        <change>V:[+stress] → Vː / _C# // V = ə and/or C = h ;; “(applies to diphthongal nuclei as well a[s] monophthongs)”</change>
+        <change>ʀ → {l,ɾ} / _ // _#</change>
         <change sporadic="true">l → * / _ // _#</change>
-        <comment>;; “(also cases of (C)u → w /__V)”</comment>
         <change>u → əw / _V</change>
-        <comment>;; “(also cases of (C)i → j /__V)”</comment>
         <change>i → əj / _V</change>
         <change>w j → v ɟ</change>
         <change>iu̯ → ui̯</change>
         <change>s → * / _#</change>
-        <change sporadic="true">i u → ɛ ɔ / _C# ! _P</change>
-        <comment>;; “(in a handful of forms)”</comment>
-        <change>ʀ → ʔ / _#</change>
+        <change sporadic="true">i u → ɛ ɔ / _C# // _P</change>
+        <change sporadic="true">ʀ → ʔ / _#</change>
         <change>ʀ → ɾ</change>
-        <comment>;; “(blocked if there was an intervening nasal, and sometimes if there was an intervening voiceless stop or liquid)”</comment>
         <change>a → i / O:[+voice]…_(C)#</change>
         <change>i u → əi̯ əu̯ / _(ʔ)#</change>
-        <change>əi̯ əu̯ → ai̯ au̯ / _ // O:[+voice] earlier in the word</change>
+        <change>əi̯ əu̯ → ai̯ au̯ / _ // O:[+voice]([],0)_</change>
         <change>bʱ {dʱ,dzʱ} ɡʱ → f s k</change>
         <change>f → s</change>
         <change>v ɡ ɟ → f k c / V_V</change>
         <change>v ɟ → f c / #_</change>
-        <change>{i,ɛ} {u,ɔ} → iə̯ uə̯ / _{k,ŋ}# “(and also sporadically before final *t and *n and some other consonants)</change>
+        <change>{i,ɛ} {u,ɔ} → iə̯ uə̯ / _{k,ŋ}#</change>
         <change>k ŋ → ʔ * / Və̯_#</change>
-        <comment>;; “(free variants)”</comment>
         <change>ə → {ə,a} / _C#</change>
-        <comment>;; “Numerous different possible reflexes of NS:[+voice] clusters”</comment>
         <change>NS:[-voice] → Sː</change>
-        <comment>;; “(irregular)”</comment>
-        <change>(C)V → * / #_C…</change>
+        <change sporadic="true">(C)V → * / #_C…</change>
         <change>n → l / #_</change>
         <change>ə → * / #_</change>
         <change>{l,ɾ} → n / _#</change>
@@ -1896,8 +1840,7 @@
         <change>p → f / #_</change>
         <change>ə → * / #_</change>
         <change>p k → f ɣ / V_V // ”ə_V</change>
-        <comment>;; “(irregular)”</comment>
-        <change>d → r / V_V</change>
+        <change sporadic="true">d → r / V_V</change>
         <change>dz → ɟ / V_V</change>
         <change>b d dz ɡ → p t c k / N_</change>
         <change sporadic="true">N → * / _S</change>
@@ -4044,31 +3987,24 @@
         <change>w → v / _ // V_{V,#}</change>
         <change>{p,t} → * / #s_r</change>
         <change>{p,t} → * / #s_</change>
-        <change>s → * / [anything]{l,r}_O</change>
-        <comment>;; — “[A] sequence of two plosives becomes a geminate of the second one”</comment>
-        <change>hn hm → nː mː / [anything]_ ;;  (“[t]his change is a bit speculative”)</change>
-        <change>st zd → sː dː / [anything]_</change>
-        <change>{l,h}l {l,h}r l{p,s,n} r{p,s} ln → lː rː lː rː (lː?) / [anything]_</change>
+        <change>s → * / []{l,r}_O</change>
+        <change>hn hm → nː mː / []_</change>
+        <change>st zd → sː dː / []_</change>
+        <change>{l,h}l {l,h}r l{p,s,n} r{p,s} ln → lː rː lː rː (lː?) / []_</change>
         <change>Cː → C</change>
         <change sporadic="true">V → * / C_#</change>
-        <comment>;; “[t]his remained a phonologically conditioned rule in OIr”</comment>
-        <change>C(…C) → * / _# // /l r/ and clusters containing them</change>
+        <change>C(…C) → * / _# // /l r/ ;; and clusters containing them</change>
         <change>{au,eu,ou} → oː</change>
         <change>ei → eː</change>
-        <change>oː → ua / _[anything] // [+stress]</change>
-        <comment>;; “ai and oi remain, but are written as &lt;ae ai oe oi&gt; seemingly randomly”</comment>
+        <change>oː → ua / _[] // [+stress]</change>
         <change>eː → ia / _{#,Cʲ} // [+stress]</change>
-        <comment>;; The second and third rule below “may well have been for the most part optional”; every one of the three “only applies to unstressed vowels” and “remained as a phonologically conditioned rule”:</comment>
         <change>j → *</change>
         <change>Vː → V</change>
         <change>a → e / _#</change>
-        <change>{e,o} → a / _[anything]</change>
-        <comment>;; “[t]his remained as a phonologically conditioned rule in OIr”</comment>
+        <change>{e,o} → a / _[]</change>
         <change>V → Vː / _# // [+stress]</change>
-        <comment>;; “this is a tad unclear, because in some instances it didn’t seem to apply”</comment>
-        <change>VOR → VːR</change>
-        <comment>;; “[t]hat’s a little unclear, so let me try and enumerate: in words of more than three syllables, every other vowel (only the even ones) dropped, if it’s unstressed. In some words, syncope didn’t apply because it would create an unwieldy consonant cluster: so PIE *komaktyom → OIr cumachte, not *cumchte”</comment>
-        <change stressed="false">V → * / #UU(_)U(U(_)U) ;;  this “remained as a phonologically conditioned rule in OIr”</change>
+        <change sporadic="true">VOR → VːR</change>
+        <change>V[+stress] → * / #UU(_)U(U(_)U)</change>
     </section>
     <section index="17.5.2" name="Proto-Celtic to Middle Welsh">
         <cite>Dewrad &amp; Pogostick Man, the latter citing Willis (David), “Old and Middle Welsh”</cite>
@@ -4130,8 +4066,7 @@
         <change>bʱ dʱ ɡʱ → β ð ɣ</change>
         <change>b d ɡ → p t k</change>
         <change>p t k → f θ x</change>
-        <comment>;; “(Except initially or following IE stress)”</comment>
-        <change>f θ s x → β ð z ɣ</change>
+        <change>f θ s x → β ð z ɣ / #_, [+stress]</change>
         <change>{i,j} {u,w} → j w / V:[+short]C_</change>
         <change>{i,j} {u,w} → ij uw</change>
         <change>aː → oː</change>
@@ -4148,40 +4083,33 @@
         <change>u → ɔ / _{r,h} // [+stress]</change>
         <change>i → ɛ / _{r,h,ʍ} // [+stress]</change>
         <change>æː → eː // [+stress]</change>
-        <change stressed="false">ew → iw</change>
-        <change stressed="false">V[-long] → * / _# // V = u</change>
+        <change>ew → iw / [-stress]</change>
+        <change>V[-long, -stress] → * / _# // V = u</change>
         <change>V[-long] → * / U_C# // V = u</change>
         <change>aj → a / U_#</change>
         <change>iw → ju / [-stress]</change>
         <change>w → u̯ / V[-long]_{#,C}</change>
         <change>w → * / oː_j</change>
         <change>oːw æːj → ɔː ɛː / _V</change>
-        <comment>;; “after the loss of a final vowel or syllable”</comment>
         <change>j → i / C_#</change>
-        <comment>;; “after the loss of a vowel in final syllables”</comment>
         <change>ij → iː / _s</change>
-        <comment>;; “after the loss of a final vowel or syllable”</comment>
         <change>ij → i / _#</change>
         <change>Vw → u / _s</change>
         <change>iji → iː / U[-stress](C…)_</change>
-        <change>iji → iː / U[+long + closed]_ in the stem</change>
+        <change>iji → iː / U[+long +closed]_ ;; in the stem</change>
         <change>i → * / _ji</change>
         <change>m → β / C[-voice]_n // #_, _#</change>
         <change>m → ɸ / C:[+voice]_n // #_, _#</change>
         <change>nː → n / _C // _j</change>
         <change>β → b / {r,l}_</change>
         <change>ð → d / C:[+voice]_</change>
-        <comment>;; “The final -h [= /h/?] in unaccented particles was often assimilated to the initial consonant of the following word”</comment>
         <change>β ð ɣ → ɸ θ x / V_(s)#</change>
         <change>ɣ → ɡ / #_</change>
-        <comment>;; “In the forms of the strong verbs, medial z was supplanted by s through the levelling out of the s-forms…z was also supplanted by s in several weak verbs, which in some cases was due to the influence of the corresponding strong verbs”</comment>
         <change>ɣ → ɡ / C_V</change>
-        <comment>;; “remained when protected by a particle”</comment>
-        <change>z → s / _#, though “[t]his s was dropped when it came to stand after an original s through the loss of a vowel”, though it</change>
+        <change>z → s / _#</change>
         <change>s → * / V[-long]r_#</change>
-        <comment>;; “[t]he prep[osition]. us…before r in compounds”</comment>
-        <change>s → r / in</change>
-        <change>s → * / in “[t]he prep[osition]. us…in compounds before st”, though this seems to have been less common</change>
+        <change>s → r / ;; in “[t]he prep[osition]. us…before r in compounds”</change>
+        <change>s → * / ;; in “[t]he prep[osition]. us…in compounds before st”, though this seems to have been less common</change>
     </section>
     <section index="17.7.2" name="Common Germanic to West Germanic">
         <cite>Siride</cite>
@@ -4193,20 +4121,21 @@
     </section>
     <section index="17.7.2.1" name="West Germanic to Anglo-Frisian">
         <cite>Siride? &amp; Pogostick Man, the latter citing Wikipedia contributors (2014), “Anglo-Frisian languages”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Anglo-Frisian_languages&amp;oldid=602286013&gt;; Wikipedia contributors (2014), “Old Frisian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Old_Frisian&amp;oldid=559739599&gt;; and Wikipedia contributors (2014), “Old English phonology”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Old_English_phonology&amp;oldid=602537992&gt;</cite>
-        <change>a → ɑ̃ / _N ;;  (short only)</change>
+        <change>a → ɑ̃ / _[-long]N</change>
         <change>VN → Ṽː / _F</change>
-        <change>a → æː / short only, includes diphthongs // B or *ã in next syllable</change>
+        <change>a → æː / _[-long]</change>
         <change>k ɡ → tʃ j(?)</change>
-        <change>æː → aː “under to [sic] the influence of neighboring consonants”, but the article doesn’t elaborate</change>
+        <change>æː → aː</change>
         <change>æː → eː</change>
-        <change>æu → au (æ → a / _B in general?)</change>
-        <change>aː → æː / _ // _N or if nasalized</change>
+        <change>æu → au</change>
+        <change>æ → a / _B</change>
+        <change>aː → æː / _ // _N, _[+nasal]</change>
         <change>i o → e a / [-stress]</change>
         <change>ai au eu → {eː,aː} aː ia</change>
         <change>ia iu → jaː juː</change>
-        <change>a → æ / _ // _N or if nasalized, or if *B or *ã in next syllable</change>
+        <change>a → æ / _ // _N, _[+nasal]</change>
         <change>h → * / V_V</change>
-        <comment>;; θ resists change to d until the 14th Century</comment>
+        <change>θ → d</change>
         <change>{i,u} → * / -# // VC_</change>
     </section>
     <section index="17.7.2.1.1" name="Anglo-Frisian to Old English">
@@ -4229,8 +4158,7 @@
         <change>oɣ → ɔːw / _V</change>
         <change>{o(ː)ht,ɑːht} → ow</change>
         <change>ɑː y(ː) → ɔː e(ː)</change>
-        <comment>;; eːɑ eːo iːe become sounds of uncertain identity; Moore says they were probably diphthongs</comment>
-        <change>ɑ e o → ɑː ɛː oː / in U:[+open] // in #U with the following U containing /iː/ or ending in one of /m n r l/</change>
+        <change>ɑ e o → ɑː ɛː oː / U:[+open] // #U with the following U containing /iː/ or ending in one of /m n r l/</change>
         <change>Vː → V / in #U before a U with /iː/</change>
         <change sporadic="true">m → n → * / _#</change>
         <change>hn {wl,hl} hr → w l r</change>
@@ -4239,7 +4167,7 @@
     </section>
     <section index="17.7.2.1.3" name="Old English to Midlands Middle English">
         <cite>Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English Phonology and Midd le English Grammar for Courses in Chaucer, Middle English, and the History of the English Language; and Wikipedia contributors (2011), “Middle English phonology”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Middle_English_phonology&amp;oldid=456896605&gt;</cite>
-        <change>Vː → V / _C{ː,C} // _st{#,V} or when preceding a cluster which had triggered a vowel to become long in Old English; the book gives “Christ” vs. “Christmas” as an example</change>
+        <change>Vː → V / _C{ː,C} // _st{#,V}</change>
         <change>eɑ eːɑ eo eːo → ɑ ɛː e eː</change>
         <change>æj → aj → ej</change>
         <change>{æːj,e(ː)j} → ej</change>
@@ -4262,21 +4190,21 @@
         <cite>Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. &lt;http://wiki.firespeaker.org/English_sound_changes&gt;</cite>
         <change>ʊ → ɤ ! P_ and _l</change>
         <change>mb ŋɡ → m ŋ / _#</change>
-        <change>tj sj dj zj → tʃ ʃ dʒ ʒ / _ // _uː ;;  (perhaps only before stressed uː?)</change>
+        <change>tj sj dj zj → tʃ ʃ dʒ ʒ / _ // _uː</change>
         <change>a ɑ {ɛ,ɪ,ɤ} → ɑː ɔː ɜː / _ɹ{C,#}</change>
         <change>ɑʊ → ɑː / _P</change>
         <change sporadic="true">ɑʊ → ɑː / _N</change>
-        <change>ɑʊ → ɔː / _ // _N</change>
-        <comment>;; “[A] large number of cases that were ɑː have become ɔː subsequently for non-phonetic reasons, like laundry”</comment>
+        <change sporadic="true">ɑʊ → ɔː / _ // _N</change>
+        <change sporadic="true">ɑː → ɔː</change>
         <change sporadic="true">a → ɑː</change>
-        <change>a → æ / else</change>
+        <change sporadic="true">a → æ</change>
         <change sporadic="true">əɪ əʊ → ɑi æʊ</change>
         <change>əɪ əʊ → aɪ aʊ</change>
         <change>eː oː → eɪ oʊ / _ // _ɹ</change>
     </section>
     <section index="17.7.2.1.5" name="Early Modern English to American English">
         <cite>Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. &lt;http://wiki.firespeaker.org/English_sound_changes; and my Phonetic Description class&gt;</cite>
-        <change>æ → æː (e.g., NYC) or ɑː (e.g., Boston) / _{F:[-voice],N:[-voice]} ;;  (“words which change vary between dialects”)</change>
+        <change>æ → æː (e.g., NYC) or ɑː (e.g., Boston) / _{F:[-voice],N:[-voice]}</change>
         <change>ɒ → ɒː → ɔː / _F:[-voice]</change>
         <change>æː ɑː ɔː → æə~eə ɑ ɔ</change>
         <change sporadic="true">ʍ → w</change>
@@ -4284,40 +4212,36 @@
         <change sporadic="true">ɪ → i / _#</change>
         <change>{t,d} → ɾ / V_V:[-stress]</change>
         <change>i u e → ɪ ʊ ɛ / _ɹ</change>
-        <change>o ɔ → ɔ ɒ / _ɹ ;;  (most dialects have at least one if not both)</change>
+        <change>o ɔ → ɔ ɒ / _ɹ</change>
         <change>æ → ɛ / _ɹ</change>
-        <change>j → * / {θ,s,z,l,n,t,d}_ when in onset position</change>
-        <comment>;; “(partial)”</comment>
-        <change>ɒ → ɔ / _K</change>
-        <comment>;; “and others depending on dialect”</comment>
+        <change>j → * / {θ,s,z,l,n,t,d}_ ;; when in onset position</change>
+        <change sporadic="true">ɒ → ɔ / _K</change>
         <change>æ → ɛə / _{n,m}</change>
         <change>eə → eː</change>
         <change>iə → ɪ (ongoing)</change>
-        <change>w → * / C_ɹ for some C ;;  (toward(s), quart(er), sword)</change>
+        <change>w → * / C_ɹ</change>
         <change>t → * / f_n̩</change>
-        <comment>;; Stuff regarding syllabification (e.g., of /ɹ/) and hiatus</comment>
-        <comment>;; Loss of pretonic /ə/ in #U (ongoing)</comment>
     </section>
     <section index="17.7.2.1.6" name="Early Modern English to Australian English">
         <cite>Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. &lt;http://wiki.firespeaker.org/English_sound_changes&gt;; and my Phonetic Description class</cite>
-        <change>ɜːɹ ɑːɹ ɔːɹ eːɹ oːɹ iːɹ uːɹ → ɜː ɑː ɔː ɛə ɔə ɪə ʊə / syllable-finally</change>
+        <change>ɜːɹ ɑːɹ ɔːɹ eːɹ oːɹ iːɹ uːɹ → ɜː ɑː ɔː ɛə ɔə ɪə ʊə / _$</change>
         <change>ɑ → ɒ</change>
         <change>æ → æː → ɑː / _{F:[-voice],N:[-voice]}</change>
         <change>ɒ → ɒː → ɔː / _F:[-voice]</change>
         <change>ʍ → w</change>
-        <change>l → ɫ (the conditions of this are not elaborated upon)</change>
+        <change>l → ɫ</change>
         <change>oʊ iː → ɔʊ ɪə / _ɫ</change>
         <change>oʊ iː → əʊ ɪi / _ // _ɫ</change>
-        <change>uː → ʊə → uː / _ɫ // in Queensland and New South Wales</change>
-        <change>uː → ʊʉ → ʉː / _ // _ɫ // in Queensland and New South Wales</change>
-        <change>ɫ → əɫ / _ // if one of the above vowel changes after the formation of /ɫ/ apply</change>
+        <change sporadic="true">uː → ʊə → uː / _ɫ</change>
+        <change sporadic="true">uː → ʊʉ → ʉː / _ // _ɫ</change>
+        <change sporadic="true">ɫ → əɫ / __V</change>
         <change sporadic="true">ɪ → iː / _#</change>
         <change sporadic="true">ɪ → iː</change>
         <change>ɪ → ə / [-stress]</change>
         <change>ə → ɪ / _{k,ɡ,tʃ,dʒ,ʃ,ʒ,v}</change>
         <change>t d → ɾ / V_V:[-stress]</change>
         <change>ɔə → ɔː</change>
-        <change>ɛə ʊə → ɛː ɔː (ongoing)</change>
+        <change>ɛə ʊə → ɛː ɔː</change>
         <change>ʊə → oː / _ // {j,dʒ}_</change>
         <change sporadic="true">ʊə → ʉːwə</change>
         <change>oə → oː</change>
@@ -4329,12 +4253,12 @@
         <change>ɔː → ɔ / _ɹV:[-stress]</change>
         <change>ɔː → ɔ / _F:[-voice]</change>
         <change sporadic="true">ɔ → ɔː</change>
-        <change>æ → æː / _{n,m,ɡ,ɫ% // _n,m,ɡ,ɫ}%{j,w} or a form of a strong verb</change>
-        <change>æ → æː / _d ;;  (rare) // form of a strong verb</change>
+        <change>æ → æː / _{n,m,ɡ,ɫ% // _n,m,ɡ,ɫ}%{j,w}</change>
+        <change sporadic="true">æ → æː / _d</change>
     </section>
     <section index="17.7.2.1.7" name="Early Modern English to British English">
         <cite>Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. &lt;http://wiki.firespeaker.org/English_sound_changes&gt;</cite>
-        <change>ɜːɹ ɑːɹ ɔːɹ eːɹ oːɹ iːɹ uːɹ → ɜː ɑː ɔː ɛə ɔə ɪə ʊə / syllable-finally</change>
+        <change>ɜːɹ ɑːɹ ɔːɹ eːɹ oːɹ iːɹ uːɹ → ɜː ɑː ɔː ɛə ɔə ɪə ʊə / _$</change>
         <change>ɑ → ɒ</change>
         <change>æ → æː → ɑː / _{F:[-voice],N:[-voice]}</change>
         <change>ɒ → ɒː → ɔː / _F:[-voice]</change>
