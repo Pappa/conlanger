@@ -1806,8 +1806,6 @@
         <change>S → S:[-voice] / _#</change>
         <change>l → n / _#</change>
         <change>s → t / _VsVC</change>
-        <comment>;; Word-initial nasals assimilate to the POA of a following consonant</comment>
-        <comment>;; “(in reduplications)”</comment>
         <change>CV → * / _NCVC</change>
     </section>
     <section index="10.2.6.2.1" name="Proto-Kenyah to Òma Lóngh">
@@ -1819,17 +1817,14 @@
         <change>u → o / _k#</change>
         <change sporadic="true">u → o / _ŋ#</change>
         <change>u → ɯ / _(C)# // _ʔ#</change>
-        <comment>;; “(not in all forms)”</comment>
-        <change>a → o / _#</change>
-        <comment>;; “(but aʔ → əʔ in some forms)”</comment>
-        <change>ʔ → * / _#</change>
+        <change sporadic="true">a → o / _#</change>
+        <change>{aʔ,ʔ} → {əʔ,*} / _#</change>
         <change>k → ʔ / _#</change>
         <change>a → ɛ / {t,n}_#</change>
         <change>{p,t} n → c̚ ɲ / {i,ɛ}_#</change>
         <change>m → ɲ / i_#</change>
         <change>ai̯ au̯ → ɛ ɔ</change>
         <change>{ui̯,iu̯} → e</change>
-        <comment>;; “(iə is treated as close mid for this change)”</comment>
         <change>i u → e o / _CV[+close-mid](C)#</change>
         <change>i u → ɛ ɔ / _CV[+open-mid](C)#</change>
         <change>i u → e o / _Cɯ#</change>
@@ -1871,7 +1866,6 @@
     </section>
     <section index="10.3.1" name="Proto-Oceanic to Hawai’ian">
         <cite>Chris Zoller, from Trask, R.L. (1996), Historical Linguistics</cite>
-        <comment>;; NB: Zoller states that these changes are “[s]implified”.</comment>
         <change>{h,ʔ} → *</change>
         <change>{s,f} → h</change>
         <change>k t → ʔ k</change>
@@ -1890,7 +1884,6 @@
         <change sporadic="true">s → h → *</change>
         <change>r → ɡʟ</change>
         <change>”V[+high(er)] → * / _CV</change>
-        <comment>;; ”ə sometimes assimilates to a following vowel</comment>
         <change>”V → ə / _CV</change>
         <change sporadic="true">a → e / _CV[+mid]</change>
         <change sporadic="true">a → e / _Ci</change>
@@ -1901,7 +1894,6 @@
         <change>u(C)V[+high] u(C)e u(C)o u(C)a → {u,i}(C) u(C)ə e(C)ə {u,ɵ}(C)ə</change>
         <change>u → ʉ / _ // Cw_</change>
         <change sporadic="true">{e,i} → ɪ</change>
-        <comment>;; “[W]hen pretonic u was lost, its labialness was usually absorbed onto the previous consonant”</comment>
         <change>V₀V₀ → V₀</change>
     </section>
     <section index="10.3.3" name="Proto-Oceanic to Lemerig">
@@ -1910,10 +1902,8 @@
         <change>VV → V</change>
         <change>ndr *R → d r</change>
         <change>{c,*j} ɲ → s n</change>
-        <comment>;; “often”</comment>
         <change>t → ʔ</change>
         <change>b bʷ d ɡ → p kpʷ t k</change>
-        <comment>;; thetha says “intervening consonants sometimes optional in the [following] sound changes”:</comment>
         <change>mʷ → ŋmʷ</change>
         <change>iCV[-high] → aC</change>
         <change>eCV[+mid] → ɛC</change>
@@ -1925,8 +1915,7 @@
         <change>oCV[-high] → ɔC</change>
         <change>uCV[-high] → oC</change>
         <change>o e → ʊ ɪ</change>
-        <comment>;; “(only somoetimes?)”</comment>
-        <change>ia → ɪ</change>
+        <change sporadic="true">ia → ɪ</change>
         <change>V → * / #_C”V</change>
         <change>V → * / CVC_C”V</change>
         <change>CV₁C”V₂ → CV₂C”V₂</change>
@@ -1941,21 +1930,19 @@
         <change>p pʷ bʷ k ɡ → β w kpʷ ɣ k</change>
         <change>mʷ ɲ → ŋmʷ n</change>
         <change>{c,*j} → s</change>
-        <comment>;; “(often)”</comment>
         <change>s → h</change>
         <change>r → j</change>
         <change>o e i → ɔ ɛ ɪ / C_V[-high]</change>
         <change sporadic="true">V[-high] → * / {ɔ,ɛ,ɪ}C_</change>
         <change sporadic="true">uCi → iC</change>
-        <comment>;; V[+high] / {ʊ,ɛ}C_</comment>
         <change>u a → ʊ ɛ / _CV[+high]</change>
+        <change>V[+high] / {ʊ,ɛ}C_</change>
         <change>o e → ʊ ɪ</change>
-        <change>aCV[+high] → ɪ / when stressed unless primarily stressed</change>
+        <change>aCV[+high] → ɪ / [+sec.stress]</change>
         <change>(C)V₁C”V₂ → (C)V₂V₂</change>
         <change>V₁ → * / _”V₂</change>
         <change>V → * / (C)V_VC”V</change>
         <change>b β d → m p n / _{C,#}</change>
-        <comment>;; *u *o “sometimes offload their labialization onto the previous labial consonant” when they change to something else</comment>
         <change sporadic="true">kpʷ → k / _C</change>
     </section>
     <section index="10.3.5" name="Proto-Oceanic to Proto-New Caledonia">
@@ -2009,14 +1996,13 @@
     <section index="10.3.5.4" name="Proto-New Caledonia to Proto-Northern">
         <cite>thetha, from Ozanne-Rivierre, Françoise (1992), “The Proto-Oceanic Consonantal System and the Languages of New Caledonia”. Oceanic Linguistics 31(2):191 – 207; and Ozanne-Rivierre, Françoise (1995), “Structural Changes in the Languages of Northern New Caledonia”. Oceanic Linguistics 34(1):44 – 72</cite>
         <change>q qː k kː s sː → k kː c cː t̪ t̪ː</change>
-        <comment>;; Velars were in the process of palatalizing</comment>
         <change>Cː → Cʰ</change>
-        <change>C → * / _$(possessive suffix)#</change>
+        <change>C → * / _%#</change>
         <change>* → j / #_a</change>
     </section>
     <section index="10.3.5.4.1" name="Proto-Northern to Nixumwak-Nêlêmwa">
         <cite>thetha, from Ozanne-Rivierre, Françoise (1992), “The Proto-Oceanic Consonantal System and the Languages of New Caledonia”. Oceanic Linguistics 31(2):191 – 207; and Ozanne-Rivierre, Françoise (1995), “Structural Changes in the Languages of Northern New Caledonia”. Oceanic Linguistics 34(1):44 – 72</cite>
-        <change>V → * / _#, often</change>
+        <change>V → * / _#</change>
         <change>k → c / V_V</change>
         <change>k → c / _#</change>
         <change>t → k</change>
@@ -2030,19 +2016,17 @@
         <change>VnV → ṼlṼ</change>
         <change>ⁿS → N / _#</change>
         <change>SN → N[-voice]</change>
-        <change>pwʰ pʰ tʰ kʰ → fw f rʰ x / in Nelemwa</change>
+        <change sporadic="true">pwʰ pʰ tʰ kʰ → fw f rʰ x</change>
         <change>uCu → iCi</change>
-        <change>V[+mid] → a / near nasals?</change>
+        <change>V[+mid] → a / N_, _N</change>
         <change>u i → o e</change>
-        <comment>;; /ɨ ə/ gained</comment>
-        <change>”V → Vː (usually)</change>
+        <change sporadic="true">”V → Vː</change>
         <change>ŋ → n</change>
     </section>
     <section index="10.3.5.5" name="Proto-New Caledonia to Nyelâyu">
         <cite>thetha, from Ozanne-Rivierre, Françoise (1992), “The Proto-Oceanic Consonantal System and the Languages of New Caledonia”. Oceanic Linguistics 31(2):191 – 207; and Ozanne-Rivierre, Françoise (1995), “Structural Changes in the Languages of Northern New Caledonia”. Oceanic Linguistics 34(1):44 – 72</cite>
         <change>V → * / #(C)V(C)(C)_#</change>
-        <comment>;; “sometimes”</comment>
-        <change>C → * / _#</change>
+        <change sporadic="true">C → * / _#</change>
         <change>k → c</change>
         <change>k t s → j c t̪</change>
         <change>p pw t̪ ʈ c → v (v)w r l j / V_V</change>
@@ -2059,9 +2043,8 @@
         <change>VnV → ṼlṼ</change>
         <change>V → Ṽ / _N</change>
         <change>ⁿS → N / _Ṽ</change>
-        <comment>;; “often”</comment>
         <change>u → i</change>
-        <change>u i → o e (not always)</change>
+        <change sporadic="true">u i → o e</change>
         <change>ŋ → n</change>
     </section>
     <section index="10.3.5.6" name="Proto-New Caledonia to Pwaamei">
@@ -2101,10 +2084,8 @@
         <change>ⁿS → N / _#</change>
         <change>u i → o e / in monosyllables</change>
         <change>au ai → ɔ ɛ</change>
-        <comment>;; “sometimes”</comment>
-        <change>o → ɔ</change>
-        <comment>;; “in some words”</comment>
-        <change>a → {ɛ,e}</change>
+        <change sporadic="true">o → ɔ</change>
+        <change sporadic="true">a → {ɛ,e}</change>
         <change>ŋ → n</change>
     </section>
     <section index="10.3.5.8.1" name="Proto-Yunaga to Yunaga 1">
