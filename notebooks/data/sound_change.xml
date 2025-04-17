@@ -2153,14 +2153,13 @@
         <change>V → * / {”V,j}_</change>
         <change>p v m → t θ n / _{a,e,i}</change>
         <change>z → s</change>
-        <comment>;; An /o ɔ/ distinction is gained somehow</comment>
-        <change>* → h / #_V ;;  (“it isn’t clear if this happens unconditionally”)</change>
+        <change>* → h / #_V</change>
     </section>
     <section index="10.3.8" name="Proto-Oceanic to Tolomako">
         <cite>thetha, from Lynch, John (2005), “The Apicolabial Shift in Nese”. Oceanic Linguistics 44(2):389 – 403; and http://language.psy.auckland.ac.nz/austronesian/</cite>
         <change>C → * / _#</change>
         <change>q → *</change>
-        <change>*R → {*,r} (the former seems more common)</change>
+        <change>*R → {*,r}</change>
         <change>ɲ c *j → n s z</change>
         <change>m b → n̼ t̼ → n t / _{a,e,i}</change>
         <change>p(ʷ) k → v(ʷ) ɣ</change>
@@ -2172,13 +2171,12 @@
     </section>
     <section index="10.3.9" name="Proto-Oceanic to Proto-Utupua">
         <cite>Pogostick Man, from Ross, Malcolm, and Åshlid Næss (2007), “An Oceanic Origin for Äiwoo, the Language of the Reef Islands?”. Oceanic Linguistics 46(II):456 – 498</cite>
-        <change>p q → v * (in general, seems like there was something going on with conditioning in the case of *p?)</change>
-        <change>w → * (? Tanibili [w] may just be phonetically determined)</change>
-        <change>C → * / _# ;;  (except for *k?)</change>
+        <change>p q → v *</change>
+        <change>w → *</change>
+        <change>C → * / _#</change>
     </section>
     <section index="10.3.9.1" name="Proto-Utupua to Asuboa">
         <cite>Pogostick Man, from Ross, Malcolm, and Åshlid Næss (2007), “An Oceanic Origin for Äiwoo, the Language of the Reef Islands?”. Oceanic Linguistics 46(II):456 – 498</cite>
-        <comment>;; PU *p had occasional reflexes of p or *</comment>
         <change>p → w / _B</change>
         <change>pʷ mʷ → w m</change>
         <change>dr s l → {d,ɟ} {*,s} {n,*}</change>
@@ -2192,30 +2190,29 @@
     </section>
     <section index="10.3.9.2" name="Proto-Utupua to Nebao">
         <cite>Pogostick Man, from Ross, Malcolm, and Åshlid Næss (2007), “An Oceanic Origin for Äiwoo, the Language of the Reef Islands?”. Oceanic Linguistics 46(II):456 – 498</cite>
-        <comment>;; PU *p had occasional h or * reflexes</comment>
         <change>pʷ → vʷ</change>
-        <change>t k → r * / #_ ;;  (though *t seems to have occasionally survived?)</change>
+        <change>t k → r * / #_</change>
         <change>t → {r,t} / _B</change>
         <change>t → {r,t} / V_V</change>
         <change>r → {l,*} / _u</change>
         <change>r *R → l *</change>
-        <change>l → * (occasionally?)</change>
+        <change sporadic="true">l → *</change>
         <change>c ɲ → * n</change>
         <change>ŋ → n / _i</change>
     </section>
     <section index="10.3.9.3" name="Proto-Utupua to Tanibili">
         <cite>Pogostick Man, from Ross, Malcolm, and Åshlid Næss (2007), “An Oceanic Origin for Äiwoo, the Language of the Reef Islands?”. Oceanic Linguistics 46(II):456 – 498</cite>
-        <comment>;; PU *p seems to have remained; PU *w is listed as having both * and w as reflexes although the latter may just be an epenthetic glide between vowels of unlike rounding</comment>
         <change>{s,*R} → *</change>
         <change>p t {r,l} → * s j / _u</change>
         <change>pʷ bw → p b</change>
-        <change>t → {t,r,kʷ} / #_ ;;  (I’m not kidding. That’s what’s listed as the reflexes.)</change>
+        <change>t → {t,r,kʷ} / #_</change>
         <change>k → {k,*} / #_</change>
         <change>t k → {t,r,kʷ,*} * / V_V</change>
         <change>k → {*,j} / _#</change>
         <change>dr → ɟ / _i</change>
         <change>d c ɲ → ɟ {s,*} n</change>
-        <change>{r,l} → l (occasionally → *?)</change>
+        <change>{r,l} → l</change>
+        <change sporadic="true">l → *</change>
     </section>
     <section index="10.3.10" name="Proto-Oceanic to Proto-Vanikoro">
         <cite>Pogostick Man, from Ross, Malcolm, and Åshlid Næss (2007), “An Oceanic Origin for Äiwoo, the Language of the Reef Islands?”. Oceanic Linguistics 46(II):456 – 498</cite>
@@ -2233,7 +2230,7 @@
         <change>r → l / _ // _#</change>
         <change>pʷ bw mʷ → p b m</change>
         <change>c *R → * {l,*}</change>
-        <change>ŋ → {ŋ,ɡ} (ŋ remains when _i)</change>
+        <change>ŋ → {ŋ,ɡ} / _ // _i</change>
     </section>
     <section index="10.3.10.2" name="Proto-Vanikoro to Tanema">
         <cite>Pogostick Man, from Ross, Malcolm, and Åshlid Næss (2007), “An Oceanic Origin for Äiwoo, the Language of the Reef Islands?”. Oceanic Linguistics 46(II):456 – 498</cite>
@@ -2260,9 +2257,8 @@
         <cite>thetha, from Lynch, John (2001), The Linguistic History of Southern Vanuatu</cite>
         <change>m b → mʷ bʷ / _u</change>
         <change sporadic="true">p → b(ʷ)</change>
-        <change>p → vʷ / _u ;;  (a change thetha reconstructs in order to account for phenomena in later posts about this group of languages)</change>
+        <change>p → vʷ / _u</change>
         <change>p → v</change>
-        <comment>;; “(frequently)”</comment>
         <change>k *R → ɣ r</change>
         <change>*R → *</change>
         <change>dr → {d,r}</change>
@@ -2271,7 +2267,7 @@
         <change>n → ŋ / _V[-stress]q</change>
         <change>c → s</change>
         <change>t → c / _E</change>
-        <change>q (→ kw ?) → v (rare)</change>
+        <change sporadic="true">q → kw → v</change>
         <change>a → e / _(C)i</change>
         <change>a → ə / _Ca</change>
     </section>
@@ -2283,14 +2279,13 @@
         <change sporadic="true">k → * / V_V</change>
         <change>b(ʷ) ɡ → p(ʷ) k</change>
         <change sporadic="true">s → h</change>
-        <change>s → θ / _ // _i, occasionally</change>
+        <change sporadic="true">s → θ / _ // _i</change>
         <change>d {c,*j} → tʃ s</change>
         <change>{n,ŋ} → ɲ / _E</change>
         <change>w → v</change>
         <change>l → tʃ / _{o,E}</change>
         <change>q → *</change>
-        <change>V → * / _# ;;  (with very few exceptions)</change>
-        <comment>;; “a lot of word medial vowels get elided, sometimes even when they should be stressed”</comment>
+        <change>V → * / _#</change>
         <change>{r,h} → * / _#</change>
         <change>{i,o} → e</change>
         <change>u → o</change>
@@ -2312,7 +2307,7 @@
         <change>v → p / #_</change>
         <change>v → f / C[+sibilant]%</change>
         <change>v → f / %C[+sibilant]</change>
-        <change sporadic="true">r → *L ;; (some sort of lateral?)</change>
+        <change sporadic="true">r → *L</change>
         <change>s {c,*j} → h s</change>
         <change>o → a</change>
         <change sporadic="true">u i → o e</change>
@@ -3075,8 +3070,7 @@
     </section>
     <section index="14.3.1" name="Standard Tamil to Colloquial Tamil">
         <cite>schwatever, from Shiffman, Harold F. A Reference Grammar on Spoken Tamil</cite>
-        <comment>;; “(exception: never finally in monosyllables, never initially in multisyllabic words)”</comment>
-        <change>aj → eː</change>
+        <change>aj → eː / _ // #([],0)_# , #_([],0)%</change>
         <change>avu aji → aw aj</change>
         <change>i u → e o / _Ca</change>
         <change>{k,v} → * / V_V</change>
