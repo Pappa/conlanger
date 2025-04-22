@@ -9954,8 +9954,7 @@
     </section>
     <section index="37.1.2.2" name="Proto-Northern Iroquoian to Huron">
         <cite>cedh audmanh, from Julian, Charles (2010), "A History of the Iroquoian Languages", University of Manitoba, Winnipeg</cite>
-        <comment>;; "or when part of the affricate /ts/"</comment>
-        <change>s → ʃ / _ // _{n,t,k(ʷ),w}</change>
+        <change>s → ʃ / _ // _{n,t,k(ʷ),w}, t_</change>
         <change>ts → ʃ / _r</change>
         <change>ts → s / _ // _{i,j}</change>
         <change>n → * / t(h)_</change>
@@ -10006,17 +10005,16 @@
     </section>
     <section index="37.1.2.3" name="Proto-Northern Iroquoian to Onondaga">
         <cite>cedh audmanh, from Julian, Charles (2010), "A History of the Iroquoian Languages", University of Manitoba, Winnipeg</cite>
-        <comment>;; "or when part of the unit affricate /ts/"</comment>
-        <change>s → ʃ / _ // n_</change>
+        <change>s → ʃ / _ // n_, t_</change>
         <change>ts → hs / V_V // _i</change>
         <change>ts → s / _ // _{h,i,j}</change>
         <change>ns → ts / _k(ʷ)</change>
         <change>n → * / _s</change>
-        <change>V[+stress](ː)(C)(C)Vː → V(C)”(C)CV:[-long] / _#</change>
+        <change>V[+stress](ː)(C)(C)Vː → V:[-long](C)(C:[+stress])CV:[-long] / _#</change>
         <change sporadic="true">ara → aː</change>
         <change>jh → hj</change>
         <change>n → t / _k(ʷ)</change>
-        <change>V[+stress](C)(C)CaCV → V(C)”(C)CaCV / _#</change>
+        <change>V[+stress](C)(C)CaCV → V(C)(C:[+stress])CaCV / _#</change>
         <change>ʃ → s</change>
         <change>n → * / h_r</change>
         <change>h → * / w_j</change>
@@ -10094,12 +10092,9 @@
         <change>h → * / k_{s,ts}</change>
         <change>h → * / _{sk,st}</change>
         <change>h → * / {st,tst}_</change>
-        <comment>;; "in pre-pausal forms, see also below"</comment>
-        <change>h → * / ts_r !</change>
-        <comment>;; "in post-tonic syllables"</comment>
-        <change>{h,ʔ} → * / _R</change>
-        <comment>;; "in post-tonic syllables"</comment>
-        <change>ʔ → h / _C</change>
+        <change>h → * / ts_r</change>
+        <change>{h,ʔ} → * / %:[+stress]([],0)_R</change>
+        <change>ʔ → h / %:[+stress]([],0)_C</change>
         <change>r → l</change>
         <change>V[+stress]ː[+falling tone] → V[-long, +stress, -falling tone]</change>
         <change>Vː → V _C[+stress](C)(C)V</change>
