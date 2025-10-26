@@ -571,11 +571,7 @@ Frequent h-dropping</comment>
     <rule>Cː → C[-long]</rule>
     <rule>r → ʁ</rule>
   </section>
-  <section index="7" name="Algonquian">
-    <comment>Proto-Algonquian is believed to have had the following phonology, as provided for by the Wikipedia:</comment>
-    <comment>The phoneme denoted as /θ/ may well have been actually /ɬ/ instead. Also, some debate exists as to whether or not /r/ was originally an /l/.</comment>
-    <comment>(From Wikipedia contributors (2011), “Proto-Algonquian language”. Wikipedia, The Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Proto-Algonquian_language&gt;)</comment>
-  </section>
+  <section index="7" name="Algonquian" />
   <section index="7.1" name="Proto-Algonquian to Kennebec River Abenaki">
     <cite>Pogostick Man with acknowledgment to dhok, from Warne, Janet Leila (1973), “A Historical Phonology of Abenaki”. &lt;http://digitool.library.mcgill.ca/R/?func=dbin-jump-full&amp;object_id=46078&amp;local_base=GEN01-MCG02&gt;</cite>
     <rule>hl → sː</rule>
@@ -1285,13 +1281,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>j → s (possibly only initially?)</rule>
   </section>
   <section index="9" name="Austroasiatic"/>
-  <section index="9.1" name="Vietic">
-    <comment>Thompson reconstructs the following phonetic system for Proto-Viet-Muong:</comment>
-    <comment>Further, Thompson reconstructs Proto-Vietic as having had four tones, *A, *B, *C, and *D. In the development of Vietnamese, *B and *D merged.</comment>
-    <comment>Thompson lists a few occasional alterations between Muong Khen and Vietnamese, but I’m not sure exactly which two languages were being compared, so I’m shunting the alterations here.</comment>
-    <comment>The -e : *-əj correspondence was listed as being rarer than the others.</comment>
-    <comment>(From Thompson, Laurence C. (1976), “Proto-Viet-Muong Phonology”. Oceanic Linguistics Special Publications 13, Austroasiatic Studies II:1113 – 1203; Wikipedia contributors (2012). “Hanoi”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Hanoi&gt;; Wikipedia contributors (2012), “Vietnamese Language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=Vietnamese_language&amp;id=509331797&gt;; Gage, William W. (1985), “Glottal Stops and Vietnamese Tonogenesis”. Oceanic Linguistics Special Publications 20:21 – 36; and Thompson, Laurence C. (1979?), “More on Viet-Muong Tonal Developments”)</comment>
-  </section>
+  <section index="9.1" name="Vietic" />
   <section index="9.1.1" name="Proto-Vietic to Muong Khen">
     <cite>Pogostick Man, from Thompson, Laurence C. (1976), “Proto-Viet-Muong Phonology”. Oceanic Linguistics Special Publications 13, Austroasiatic Studies II:1113 – 1203; Wikipedia contributors (2012). “Hanoi”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Hanoi&gt;; Wikipedia contributors (2012), “Vietnamese Language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=Vietnamese_language&amp;id=509331797&gt;; Gage, William W. (1985), “Glottal Stops and Vietnamese Tonogenesis”. Oceanic Linguistics Special Publications 20:21 – 36; and Thompson, Laurence C. (1979?), “More on Viet-Muong Tonal Developments”</cite>
     <comment>Tonogenesis</comment>
@@ -1385,11 +1375,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <comment>Miscellanea:</comment>
     <rule>w → ∅ / tV_wk (conjectured)</rule>
   </section>
-  <section index="10" name="Austronesian">
-    <comment>Wikipedia gives the following reconstruction of Proto-Austronesian created by Robert Blust:</comment>
-    <comment>Points of this phonology are in great dispute; Blust himself states this.</comment>
-    <comment>(From Wikipedia contributors (2011), “Proto-Austronesian language”. Wikipedia, The Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Proto-Austronesian_language&gt;)</comment>
-  </section>
+  <section index="10" name="Austronesian" />
   <section index="10.1" name="Proto-Austronesian to Proto-Malayo-Polynesian">
     <cite>Pogostick Man, from Wikipedia contributors (2011), “Proto-Austronesian lanuage”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Proto-Austronesian_language&gt;</cite>
     <rule>e → a / _s</rule>
@@ -2643,12 +2629,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <cite>Pogostick Man, from Wikipedia contributors (2016), “Tsouic languages”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Tsouic_languages&gt;</cite>
     <rule>{*C,d} j *R → c z r</rule>
   </section>
-  <section index="11" name="Northeast Caucasian">
-    <comment>Proto-Northeast Caucasian is reconstructed as having had the following consonant inventory. Phonemes in parentheses or braces are so marked on User:Petusek’s page. Due to the inventory, the usual table format is modified.</comment>
-    <comment>My guess is that what I’ve transcribed here as length (it’s represented by doubled consonants in the source) is probably supposed to represent some sort of fortis-lenis distinction, given that in other places I think I’ve seen these doubled consonants in initial position, although I might be wrong, as I’m not very familiar with the morphology of the languages in question. Consonants such as *tsː are written 〈tts〉 in the source; unless it’s the actual fricative that is geminate, the stop is the doubled consonant.</comment>
-    <comment>The citation format for Nichols (2003) is modified from that found in Wikipedia contributors (2014), “Northeast Caucasian languages”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Northeast_Caucasian_languages&gt;, and is assumed to be the same article. The publication date for User:Petusek’s page is taken from the revision history at https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian.</comment>
-    <comment>(From User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&gt;, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251)</comment>
-  </section>
+  <section index="11" name="Northeast Caucasian" />
   <section index="11.1" name="Proto-Northeast Caucasian to Proto-Avar-Andic">
     <cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&gt;, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251</cite>
     <rule>l → {l,r}</rule>
@@ -2818,10 +2799,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>sː ʃ ʃː ɬ ɬː x → s ʒ ʃ l ɬ ɣ</rule>
     <rule>r → {r,l,∅}</rule>
   </section>
-  <section index="12" name="Northwest Caucasian">
-    <comment>Wikipedia contributors (2014) give the following reconstruction for Proto-Northwest Caucasian consonants; due to the size of the reconstructed inventory, the usual table format has been modified:</comment>
-    <comment>(From Wikipedia contributors (2014), “Proto-Northwest Caucasian language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Proto-Northwest_Caucasian_language&gt;, presumably citing Starostin, Sergei A. and Sergei L. Nikolayev (1994), A North Caucasian Etymological Dictionary)</comment>
-  </section>
+  <section index="12" name="Northwest Caucasian" />
   <section index="12.1" name="Proto-Northwest Caucasian to Proto-Abazgi">
     <cite>Pogostick Man, from Wikipedia contributors (2014), “Proto-Northwest Caucasian language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Proto-Northwest_Caucasian_language&gt;, presumably citing Starostin, Sergei A. and Sergei L. Nikolayev (1994), A North Caucasian Etymological Dictionary</cite>
     <rule>{pʷ,pʲ} {p(ʲ)ː,bˤ} bʷ pʷʲ bʷʲ → p b f tsʲ dzʲ</rule>
@@ -3092,11 +3070,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>qˤʲ → q(ˤ)</rule>
     <rule>qˤʲʷ {qˤʲʷː,qˤʲʷ} ʁˤʲʷ → χʷ qʷʼ w</rule>
   </section>
-  <section index="13" name="Chumashan">
-    <comment>Klar (1977) reconstructs the following phonemic inventory for Proto-Chumashan:</comment>
-    <comment>Ablaut and vowel harmony appear to have been productive in the proto-language; it is possible that consonant harmony affecting sibilants was also productive. *ɨ may have been a loan phoneme.</comment>
-    <comment>(CatDoom, from Klar, Kathryn (1977), Topics in Historical Chumash Grammar. &lt;http://linguistics.berkeley.edu/~survey/documents/dissertations/klar-1977.pdf&gt;)</comment>
-  </section>
+  <section index="13" name="Chumashan" />
   <section index="13.1" name="Proto-Chumash to Barbareño">
     <cite>CatDoom, from Klar, Kathryn (1977), Topics in Historical Chumash Grammar. &lt;http://linguistics.berkeley.edu/~survey/documents/dissertations/klar-1977.pdf&gt;</cite>
     <rule>R[- glottalized]VˀR → ˀRVR[- glottalized] / _$</rule>
@@ -3130,11 +3104,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>pʼ kʼ qʼ → p k q</rule>
     <rule>ˀm ˀn ˀl ˀj → m n l j</rule>
   </section>
-  <section index="14" name="Elamo-Dravidian">
-    <comment>McAlpin (1974) reconstructs Proto-Elamo-Dravidian as having the following phonemic inventory; the following table is slightly modified for reasons to be explained.</comment>
-    <comment>What here is denoted *s the author has *š for, but no other sibilant is readily identifiable in his paper. He makes mention of language written in cuneiform which may have influenced this convention. The phonemes *r̀ and *ŕ seem to have been contrastive rhotics. In *NS clusters, the nasal appears to have assimilated to the following stop.</comment>
-    <comment>(From McAlpin, David W. (1974), “Toward Proto-Elamo-Dravidian”. Language 50(1):89 – 101)</comment>
-  </section>
+  <section index="14" name="Elamo-Dravidian" />
   <section index="14.1" name="Proto-Elamo-Dravidian to Proto-Dravidian">
     <cite>Pogostick Man, from McAlpin, David W. (1974), “Toward Proto-Elamo-Dravidian”. Language 50(1):89 – 101</cite>
     <rule>w → v / #_{i,e}lV</rule>
@@ -3210,11 +3180,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>— i(ː) e(ː) → u(ː) o(ː) / _ɭ</rule>
     <rule>— eCə oCə → Ceː Coː / #_</rule>
   </section>
-  <section index="15" name="Eskimo-Aleut">
-    <comment>The following phonological reconstruction of Proto-Eskimo-Aleut is adapted from Wikipedia.</comment>
-    <comment>It is noted that *n and *nʲ may not have been distinct phonemes; the article cites Fortescue mentioning that Sirilenski Eskimo has instances of initial /j/ whereas others have /n/; that *c *sʲ may have been either fricatives (*s *sʲ) or affricates (*ts *tsʲ), the source being unclear; and that *ɬ may have actually arisen from *l + plosive combinations.</comment>
-    <comment>(From Wikipedia contributors (2013), “Proto-Eskimo–Aleut language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Proto-Eskimo%E2%80%93Aleut_language&gt;)</comment>
-  </section>
+  <section index="15" name="Eskimo-Aleut" />
   <section index="15.1" name="Proto-Eskimo-Aleut to Proto-Aleut">
     <cite>Pogostick Man, from Marsh, Gordon and Morris Swadesh (1951), “Kleinschmidt Centennial V: Eskimo Aleut Correspondences”, International Journal of American Linguistics, Vol. 17, No. 4 (Oct., 1951), pp. 209 – 216</cite>
     <rule>a → i / i_</rule>
@@ -3441,10 +3407,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>in → dʒ / _u (possibly only word-initially?)</rule>
   </section>
   <section index="16" name="Extended West Papuan"/>
-  <section index="16.1" name="Tabla-Sentani">
-    <comment>Proto-Tabla-Sentani is reconstructed by Gregerson and Hartzler (1987) as having had the following phonology:</comment>
-    <comment>(From Gregerson, Kenneth, and Margaret Hartzler (1987), “Towards a Reconstruction of Proto-Tabla-Sentani Phonology”. Oceanic Linguistics, Vol. 26, No. 1/2 (Summer – Winter, 1987), 1 – 29.)</comment>
-  </section>
+  <section index="16.1" name="Tabla-Sentani" />
   <section index="16.1.1" name="Proto-Tabla-Sentani to Nafri">
     <cite>Pogostick Man, from Gregerson, Kenneth, and Margaret Hartzler (1987), “Towards a Reconstruction of Proto-Tabla-Sentani Phonology”. Oceanic Linguistics, Vol. 26, No. 1/2 (Summer – Winter, 1987), 1 – 29.</cite>
     <rule>p k → b ɡ / V_V</rule>
@@ -3522,13 +3485,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <comment>Some vowel assimilations, mostly dealing with central vowels</comment>
     <rule>o → e (sporadic, highly unusual)</rule>
   </section>
-  <section index="17" name="Indo-European">
-    <comment>Wikipedia gives the following phonological reconstruction for Proto-Indo-European, reproduced here with some slight adjustments for presentation’s sake:</comment>
-    <comment>There is some debate as to whether the voiced and voiced aspirate stops were actually glottalized and plain voiced, respectively; the status of the palatovelars, plain velars, and labiovelars as possible plain velar, uvular, and labialized uvular consonants, or as to whether the labiovelars existed at all, are also subjects of much contention.</comment>
-    <comment>It is noted in the source that the nasals, approximants, and potentially laryngeals could also act as vowels; such allophones of /j w/ would then be [i u]. There is some debate over the presence of /a aː/ in the language, although the Wikipedia does mention that if Stang’s law holds, /aː/ at least must have been phonemic.</comment>
-    <comment>The accentual system was apparently a sort of free pitch accent, heavily related to ablaut and the vestiges of which may be best seen in Vedic Sanskrit, Ancient Greek, and Lithuanian and some West South Slavic tongues.</comment>
-    <comment>(From Wikipedia contributors (2011), “Pitch accent”. Wikipedia, The Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Pitch_accent&gt;; and Wikipedia contributors (2011), “Proto-Indo-European language”. Wikipedia, The Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Proto-Indo-European_language&gt;)</comment>
-  </section>
+  <section index="17" name="Indo-European" />
   <section index="17.1" name="Albanian"/>
   <section index="17.1.1" name="Proto-Indo-European to Gheg Albanian">
     <cite>Pogostick Man, from Wikipedia contributors (2013), “Albanian language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Albanian_language&gt;</cite>
@@ -5051,9 +5008,7 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <rule>θ ð → t d (not a complete change; apparently due to Latin)</rule>
     <rule>z → ∅ (seems to have been complete by the Sixth Century)</rule>
   </section>
-  <section index="17.8" name="Greek">
-    <comment>It is entirely possible that I utterly failed to interpret the source documents correctly. If so, please do not hesitate to correct me.</comment>
-  </section>
+  <section index="17.8" name="Greek" />
   <section index="17.8.1" name="Proto-Indo-European to Aeolian Greek">
     <cite>Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&gt;</cite>
     <rule>{Hx,m̩,n̩} → a</rule>
@@ -7061,11 +7016,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>aN iN uN → {aN,ã} ı̃ {uN,ũ} / _#</rule>
     <rule>ɨ̃ ẽ õ → ∅ {ẽ,e} {o,õ,u,ũ}</rule>
   </section>
-  <section index="19" name="Kartvelian">
-    <comment>Wikipedia presents the following phonemic inventory for Proto-Kartvelian.</comment>
-    <comment>The presence of *j is denoted in the article on the protolanguage proper as “dubious”; the page on the language family does not include it in its list of regular correspondences, nor does it list the long vowels or *h.</comment>
-    <comment>(From Wikipedia contributors (2013), “Kartvelian languages”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Kartvelian_languages&gt;; and Wikipedia contributors (2013), “Proto-Kartvelian language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Proto-Kartvelian_language&gt;)</comment>
-  </section>
+  <section index="19" name="Kartvelian" />
   <section index="19.1" name="Proto-Kartvelian to Georgian">
     <cite>Pogostick Man, from Wikipedia contributors (2013), “Kartvelian languages”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Kartvelian_languages&gt;</cite>
     <rule>q → x</rule>
@@ -7094,9 +7045,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ʐ → ʒ</rule>
     <rule>w → v</rule>
   </section>
-  <section index="20" name="Khoisan">
-    <comment>For the following section, all clicks change regardless of secondary articulation or associated articulations with the exception of when such is specifically noted.</comment>
-  </section>
+  <section index="20" name="Khoisan" />
   <section index="20.1" name="Khoe"/>
   <section index="20.1.1" name="Proto-Khoe to Ç̬Ana">
     <cite>Pogostick Man, from Rainer (1984), “Studying the linguistic and ethno-history of the Khoe-speaking (central Khoisan) peoples of Botswana, research in progress”. In Botswana Notes and Records 16:19 – 35.</cite>
@@ -7237,12 +7186,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ʔ → ∅ / _nQ</rule>
     <rule>ⁿQʰ {ǀʰ͜q,ǀʰ͜ɢ} Q͡q → ⁿQ(ʰ) ⁿǀʰ Q[+voiced]</rule>
   </section>
-  <section index="21" name="Lakes Plain">
-    <comment>Clouse (1993) reconstructs the following phonological inventory for Proto-Lakes Plain:</comment>
-    <comment>Additionally, *ɾ is of uncertain reconstruction and is most likely an allophone of *d.</comment>
-    <comment>For the following sound changes, a circumflexed vowel refers to an “extra-high” or “fricativized” vowel. There are a few cases where I may have either missed, misread, or put in an extraneous sound change to extra-high vowels; many of these were due to my perception of changes involving extra-high vowels being listed without a change creating them.</comment>
-    <comment>(From Clouse, Duane (1993), “Languages of the Western Lakes Plains”. IRIAN: Bulletin of Irian Jaya XXI:1 – 17)</comment>
-  </section>
+  <section index="21" name="Lakes Plain" />
   <section index="21.1" name="Proto-Lakes Plain to Proto-Far West">
     <cite>Pogostick Man, from Clouse, Duane (1993), “Languages of the Western Lakes Plains”. IRIAN: Bulletin of Irian Jaya XXI:1 – 17</cite>
     <rule>ɾ → ∅</rule>
@@ -7445,12 +7389,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>b d → b~ᵐb d~ⁿd</rule>
     <rule>ti di → s dz / _V</rule>
   </section>
-  <section index="22" name="Macro-Arawakan">
-    <comment>Dixon (2004) gives the following reconstruction for Proto-Arawá:</comment>
-    <comment>Dixon states “[i]t is likely that, as in modern languages, *o ranged over [u] and [o]”. Further, he notes that “*w could have been a voiced bilabial fricative [β], or a labial-velar semivowel [w] (or could have had both as allophones), and *j could have been a voiced alveolar affricate [dz], a voiced postalveolar affricate [dʒ], or a voiced palatal stop [ɟ]”.</comment>
-    <comment>Dixon also hypothesizes that there was an Arawán language that eventually died out after gaining substrate status; he has attempted to identify sound changes from Proto-Arawá to this hypothetical language. While most likely incomplete his findings are presented below along with those of the other languages.</comment>
-    <comment>(From Dixon, R.M.W. (2004), “Proto-Arawá Phonology”. Anthropological Linguistics 46(1):1 – 83)</comment>
-  </section>
+  <section index="22" name="Macro-Arawakan" />
   <section index="22.1" name="Proto-Arawá to Arawá">
     <cite>Pogostick Man, from Dixon, R.M.W. (2004), “Proto-Arawá Phonology”. Anthropological Linguistics 46(1):1 – 83</cite>
     <rule>p → f</rule>
@@ -7518,20 +7457,13 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ts(ʰ) → s</rule>
   </section>
   <section index="23" name="Macro-Chibchan"/>
-  <section index="23.1" name="Lenmichian">
-    <comment>The following inventory for Proto-Lenmichian is posited by Constenla (2005).</comment>
-    <comment>(From Wikipedia contributors (2015), “Macro-Chibchan languages”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Macro-Chibchan_languages&gt;, presumably citing Constenla UmaÃ±a, Adolfo (2005), “?‘Existe relación genealógica entre las lenguas misumalpas y las chibchenses?”. Estudios de LingÃ¼Ã­stica Chibcha 24:7 – 85)</comment>
-  </section>
+  <section index="23.1" name="Lenmichian" />
   <section index="23.1.1" name="Proto-Lenmichian to Proto-Chibchan">
     <cite>Pogostick Man, from Wikipedia contributors (2015), “Macro-Chibchan languages”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Macro-Chibchan_languages&gt;, presumably citing Constenla UmaÃ±a, Adolfo (2005), “?‘Existe relación genealógica entre las lenguas misumalpas y las chibchenses?”. Estudios de LingÃ¼Ã­stica Chibcha 24:7 – 85</cite>
     <rule>l → ɾ</rule>
     <rule>w → ∅</rule>
   </section>
-  <section index="23.1.1.1" name="Chibchan">
-    <comment>The following phonemic inventory is adapted from Wheeler (1972).</comment>
-    <comment>Information in this section may be missing or incomplete, as I found the source document using Google Books and several pages were not available in the preview.</comment>
-    <comment>(From Wheeler, Alva (1972), “Proto-Chibchan”. In Matteson, Esther, ed., Comparative Studies in Amerindian Languages 93 – 108)</comment>
-  </section>
+  <section index="23.1.1.1" name="Chibchan" />
   <section index="23.1.1.1.1" name="Proto-Chibchan to Arhuaco">
     <cite>Pogostick Man, from Wheeler, Alva (1972), “Proto-Chibchan”. In Matteson, Esther, ed., Comparative Studies in Amerindian Languages 93 – 108</cite>
     <rule>s → kh / _(V)k</rule>
@@ -7647,10 +7579,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>{ʔ,h} → ∅</rule>
     <rule>ts → s</rule>
   </section>
-  <section index="24" name="Macro-Pama-Nyungan">
-    <comment>Wikipedia gives the following reconstruction for the phonological inventory of Proto-Pama-Nyungan, citing Alpher (2004). The particulars of the presentation have been modified somewhat from that presented in the article.</comment>
-    <comment>(From Wikipedia contributors (2014), “Pama–Nyungan languages”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Pama%E2%80%93Nyungan_languages&gt;, presumably citing Alpher, Barry (2004), “Proto-Pama-Nyungan etyma”. In Bowern, Claire, and Harold Koch (eds.), Australian Languages: Classification and the Comparative Method)</comment>
-  </section>
+  <section index="24" name="Macro-Pama-Nyungan" />
   <section index="24.1" name="Paman">
     <cite>NB: These changes are most likely largely incomplete, especially for languages with fewer changes shown.</cite>
   </section>
@@ -7713,10 +7642,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>Vː → V[-long] / in #U</rule>
   </section>
   <section index="25" name="Macro-Panoan"/>
-  <section index="25.1" name="Tacanan">
-    <comment>Ritchie (1968) gives the following phonology for Proto-Tacanan. The alveolopalatal series is inferred from the notation and may be incorrect.</comment>
-    <comment>(From Key, Mary Ritchie (1968), Comparative Tacanan Phonology with Cavineña Phonology and Notes on Pano-Tacanan Relationship)</comment>
-  </section>
+  <section index="25.1" name="Tacanan" />
   <section index="25.1.1" name="Proto-Tacanan to Cavineña">
     <cite>Pogostick Man, from Key, Mary Ritchie (1968), Comparative Tacanan Phonology with Cavineña Phonology and Notes on Pano-Tacanan Relationship</cite>
     <rule>k → kʷ</rule>
@@ -7760,10 +7686,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>j → tʃ / V_V</rule>
     <rule>*ŕ → ∅</rule>
   </section>
-  <section index="26" name="Mande">
-    <comment>Dwyer (1987/1988) gives the following consonants for Proto-Mande.</comment>
-    <comment>(From Dwyer, David J. (1987/1988), “Towards Proto Mande Morphology”. Mandekan: Bulletin semestriel d’études linguistiques 14/15:139 – 152)</comment>
-  </section>
+  <section index="26" name="Mande" />
   <section index="26.1" name="Proto-Mande to Bobo">
     <cite>Pogostick Man, from Dwyer, David J. (1987/1988), “Towards Proto Mande Morphology”. Mandekan: Bulletin semestriel d’études linguistiques 14/15:139 – 152</cite>
     <rule>p → f</rule>
@@ -7877,10 +7800,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ŋ → j</rule>
     <rule>kp ɡb → k b</rule>
   </section>
-  <section index="27" name="Mayan">
-    <comment>Wikipedia gives the following for the Proto-Mayan phonology:</comment>
-    <comment>(From Wikipedia contributors (2013), “Mayan languages”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Mayan_languages&gt;)</comment>
-  </section>
+  <section index="27" name="Mayan" />
   <section index="27.1" name="Proto-Mayan to Ch’olan">
     <cite>Pogostick Man, from Wikipedia contributors (2013), “Proto-Mayan language”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Proto-Mayan_language&gt;</cite>
     <rule>q(ʼ) → k(ʼ)</rule>
@@ -8059,9 +7979,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>a → o / _w</rule>
     <rule>p → k / _C</rule>
   </section>
-  <section index="29" name="Na-Dene">
-    <comment>Note that the changes from Proto-Na-Dene and Proto-Athabaskan-Eyak deal only with obstruents.</comment>
-  </section>
+  <section index="29" name="Na-Dene" />
   <section index="29.1" name="Proto-Na-Dene to Proto-Athabaskan-Eyak">
     <cite>Pogostick Man, from Wikipedia contributors (2015), “Na-Dene languages”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Na-Dene_languages&gt;</cite>
     <rule>kʲ kʲʼ ɡʲ xʲ → ts tsʼ dz s</rule>
@@ -8077,12 +7995,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>Qʷ → Qʷ → Q ?</rule>
     <rule>χ(ʷ) → {χ,ʁ}</rule>
   </section>
-  <section index="29.1.1.1" name="Athabaskan">
-    <comment>Wikipedia gives the following reconstructions, adapted from Cook (1981), Krauss &amp; Golla (1981), Krauss &amp; Leer (1981), and Cook &amp; Rice (1981) for the consonants and from Leer (2005:284) for the vowels; the vowel phonemes in parentheses are reduced.</comment>
-    <comment>In addition, though it is not encountered in these changes, there is a phoneme that crops up in forms of the first-person singular pronoun which has various reflexes in many Athabaskan languages; Krauss (1976b) represents it as *$. Leer transcribed it as *šʸ in 2005:284 but in 2008 opted to use the *$ transcription.</comment>
-    <comment>The great majority of changes in this section are for the respective series of consonants, not for individual ones; therefore, changes specific to single consonants are marked so, and the reader should assume that unless explicitly stated, all of the following changes apply to the entire consonantal series. At the recommendation of Jan Strasser, the following conventions will be used to refer to the series; these are based on the abbreviations Whimemsz gave on the original Correspondence Library page, derived from the voiceless members of each series:</comment>
-    <comment>(From Whimemsz’s statements from the TCL thread and Wiki, and from Wikipedia contributors (2011), “Athabaskan languages”. Wikipedia, The Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Athabaskan_languages&gt;)</comment>
-  </section>
+  <section index="29.1.1.1" name="Athabaskan" />
   <section index="29.1.1.1.1" name="Proto-Athabaskan to Ahtna">
     <cite>Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
     <rule>{TŠ,TŠʷ} → TS</rule>
@@ -8469,13 +8382,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>x → ∅ / {s,ʃ}_</rule>
     <rule>$ → χ</rule>
   </section>
-  <section index="30" name="Niger-Congo">
-    <comment>Hedinger (1987) reconstructs the following consonant inventory for Pre-Proto-Bantu:</comment>
-    <comment>*’p *’c *’ɟ *’ɡ appear confined to C₁ position; *ŋ, to C₂ position.</comment>
-    <comment>Hedinger also considers the Manenguba languages (and possibly the Mbo languages in general) as sharing a common ancestor with Proto-Bantu instead of being descended from it, although the author seems to use the abbreviation “PM” to refer to Proto-Manenguba.</comment>
-    <comment>Due to the scarcity of available resources on Niger-Congo historical phonology, there will likely be many overlaps or contradictions in the available data, maybe more so than in other sections, even Indo-European. What is included in the Index is what is available.</comment>
-    <comment>(From Hedinger, Robert (1987), The Manenguba Languages (Bantu A.15, Mbo Cluster) of Cameroon)</comment>
-  </section>
+  <section index="30" name="Niger-Congo" />
   <section index="30.1" name="Proto-Potou-Akanic-Bantu to Proto-Bantu">
     <cite>Pogostick Man, from Stewart, John M. (2002), “The potential of proto-Potou-Akanic-Bantu as a pilot Proto-Niger-Congo, and the reconstructions updated”. JALL 23:197 – 224</cite>
     <comment>NB: For at least the first batch of sound changes herein, the sound changes applying to those consonants in #U will also apply in U2 under the following conditions, as reported by Stewart (2002): If V2 = V1 (vowel nasality does not necessarily have to be the same, however), changes affecting the vowels will also affect V2. If C is an approximant, changes involving a nasalized V1 will also affect C2 and V2.</comment>
@@ -8709,10 +8616,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>{k,ts} {ɡ,dz} → tʃ dʒ / _i</rule>
     <rule>V → [+ round] / w_</rule>
   </section>
-  <section index="31" name="Nyulnyulan">
-    <comment>The following phonemic inventory for Proto-Nyulnyulan is adapted from Bowern (2004).</comment>
-    <comment>(From Bowern, Claire Louise (2004), “Bardi Verb Morphology in Historical Perspective”)</comment>
-  </section>
+  <section index="31" name="Nyulnyulan" />
   <section index="31.1" name="Proto-Nyulnyulan to Bardi">
     <cite>Pogostick Man, from Bowern, Claire Louise (2004), “Bardi Verb Morphology in Historical Perspective”</cite>
     <rule>{w,j} → ∅ / #_</rule>
@@ -8733,14 +8637,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>V₀ → ∅ / V(C)(C)V₀(C)(C)_#</rule>
     <rule>V → Vː / [+ stress]</rule>
   </section>
-  <section index="32" name="Oto-Manguean">
-    <comment>Rensch (1977) reconstructs Proto-Oto-Manguean as having had the following phonemic inventory:</comment>
-    <comment>Vowels could have had one of four tones, the first of which is denoted as a high tone.</comment>
-    <comment>(From Rensch, Calvin R. (1977), “Classification of the Otomanguean Languages and the Position of Tlapanec”. Summer Institute of Linguistics Publications in Linguistics 55:53 – 108)</comment>
-  </section>
-  <section index="32.1" name="Chatino">
-    <comment>Unless otherwise noted specifically, for Chatino correspondences, assume vowels may be either long or short.</comment>
-  </section>
+  <section index="32" name="Oto-Manguean" />
+  <section index="32.1" name="Chatino" />
   <section index="32.1.1" name="Proto-Chatino to Papabuco Chatino">
     <cite>Pogostick Man, from Upson, B.W., and Robert E. Longacre (1965), “Proto-Chatino Phonology”. International Journal of American Linguistics 31(4):312 – 322</cite>
     <rule>t → ɾ / _{u,ẽ} when unstressed</rule>
@@ -8850,10 +8748,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>h → CVʔV / _# (or possibly in just any final syllable?)</rule>
   </section>
   <section index="33" name="Penutian"/>
-  <section index="33.1" name="Utian">
-    <comment>Callaghan (1983, 1988) reconstructs the following inventory for Proto-Utian:</comment>
-    <comment>(From Callaghan, Catherine A. (1983), “Proto-Utian Derivational Verb Morphology”. Proceedings of the 1982 Conference on Far Western American Indian Languages, Occasional Papers on Linguistics Number 11; and Callaghan, Catherine A. (1988), “Proto-Utian Stems” in In Honor of Mary Haas)</comment>
-  </section>
+  <section index="33.1" name="Utian" />
   <section index="33.1.1" name="Proto-Utian to Proto-Costanoan (Ohlone)">
     <cite>CatDoom, from Callaghan, Catherine A. (1983), “Proto-Utian Derivational Verb Morphology”. Proceedings of the 1982 Conference on Far Western American Indian Languages, Occasional Papers on Linguistics Number 11; and Callaghan, Catherine A. (1988), “Proto-Utian Stems” in In Honor of Mary Haas</cite>
     <rule>ʃ → h</rule>
@@ -8916,11 +8811,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>i → e / _C(C)oC</rule>
     <rule>o → u / _(C…)i</rule>
   </section>
-  <section index="33.2" name="Wintun">
-    <comment>Shepherd (2005) reconstructs the following inventory for Proto-Wintun:</comment>
-    <comment>Shepherd further notes that “PW vowel length before continuants appears to be non-distinctive in many instances”.</comment>
-    <comment>(From Shepherd, Alice (2005), “Proto-Wintun”. UC Publications in Linguistics. &lt;http://escholarship.org/uc/item/8dq1f3jj&gt;)</comment>
-  </section>
+  <section index="33.2" name="Wintun" />
   <section index="33.2.1" name="Proto-Wintuan to Nomlaki">
     <cite>Pogostick Man, from Shepherd, Alice (2005), “Proto-Wintun”. UC Publications in Linguistics. &lt;http://escholarship.org/uc/item/8dq1f3jj&gt;</cite>
     <rule>VrV → {Vː,M}</rule>
@@ -8946,11 +8837,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>tʃʰ → tʃ</rule>
     <rule>kʰ qʰ → k χ</rule>
   </section>
-  <section index="33.3" name="Yokutsan">
-    <comment>Whistler and Golla (1986) reconstruct the following phonological inventory for Proto-Yokuts:</comment>
-    <comment>It is further instructive to note some morphophonetic processes in Proto-Yokuts:</comment>
-    <comment>(From Whistler, Kenneth W., and Golla, Victor (1986), “Proto-Yokuts Reconsidered”. International Journal of American Linguistics Vol. 52, No. 4 (Oct. 1986))</comment>
-  </section>
+  <section index="33.3" name="Yokutsan" />
   <section index="33.3.1" name="Proto-Yokuts to General Yokuts">
     <cite>CatDoom, from Whistler, Kenneth W., and Golla, Victor (1986), “Proto-Yokuts Reconsidered”. International Journal of American Linguistics Vol. 52, No. 4 (Oct. 1986)</cite>
     <rule>iː ɨː uː → eː əː oː (this change sometimes did not occur)</rule>
@@ -9035,10 +8922,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>V → u / C”uC_</rule>
     <rule>V → o / C”oC_</rule>
   </section>
-  <section index="34" name="Quechumaran">
-    <comment>Orr and Longacre (1968) reconstruct Proto-Quechumaran as having the following inventory:</comment>
-    <comment>(From Orr, Carolyn, and Robert E. Longacre (1968), “Proto-Quechumaran”. Language 44(3):528 – 555)</comment>
-  </section>
+  <section index="34" name="Quechumaran" />
   <section index="34.1" name="Proto-Quechumaran to Ayachuco">
     <cite>Pogostick Man, from Orr, Carolyn, and Robert E. Longacre (1968), “Proto-Quechumaran”. Language 44(3):528 – 555</cite>
     <rule>pʼ tʼ tʃʼ kʼ qʼ → p t tʃ k q</rule>
@@ -9223,11 +9107,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ɲ → n / _i</rule>
     <rule>w → ∅ / #_i</rule>
   </section>
-  <section index="35" name="Salishan">
-    <comment>Kuipers (1981) gives the following reconstruction for the Proto-Salish phoneme inventory (converted into IPA):</comment>
-    <comment>For the following changes, the superscript numerals ¹, ², and ³ refer to low, mid, and high tones, respectively. Not all Salishan languages have all three tones; for most, there is no tone ² (mid). Vowel pairs in between curly braces 〈{ }〉 and with a tilde between are pairs which apparently existed in some sort of ablaut-like alternation.</comment>
-    <comment>(From Kuipers, Aert H. (1981), “On Reconstructing the Proto-Salish Sound System”. International Journal of American Linguistics 47(4):323 – 335; and Galloway, Brent (1982), “Proto-Central Salish Phonology and Sound Correspondences”. From the 17th International Conference on Salish and Neighboring Languages)</comment>
-  </section>
+  <section index="35" name="Salishan" />
   <section index="35.1" name="Central Salish"/>
   <section index="35.1.1" name="Proto-Central Salish to Comox">
     <cite>Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology and Sound Correspondences”. From the 17th International Conference on Salish and Neighboring Languages</cite>
@@ -10087,13 +9967,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>d → l / _# (some dialects)</rule>
     <rule>t → l / _# (further development in bLa-brang)</rule>
   </section>
-  <section index="37" name="Siouan-Iroquoian">
-    <comment>Based upon Julian and Chafe, Proto-Siouan-Iroquoian, if it existed, appears to have had the following phonetic inventory:</comment>
-    <comment>For this following section, the sound transcribed here as 〈r〉 may in actuality represent something akin to /ɹ/.</comment>
-    <comment>Siouan-Iroquoian, and for that matter the inclusion of Yuchian and Caddoan within the former and the latter, respectively, is far from universally accepted; their inclusion here is in large part due to the available sources giving correspondences for each. It was unknown whether Proto-Caddoan was the same as the Proto-Iroquois-Caddoan indicated in Cafe’s paper, so the Caddoan changes have been presented after the main Iroquoian changes.</comment>
-    <comment>Per KneeQuickie, Whimemsz wishes to “[n]ote that Siouan-Iroquoian is a proposed, rather than firmly-demonstrated, language grouping”.</comment>
-    <comment>(From Chafe, Wallace L. (1964), “Another Look at Siouan and Iroquoian”. American Anthropologist New Series, 66:852 – 862; Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg; and from cedh aumdmanh’s Iroquoian changes)</comment>
-  </section>
+  <section index="37" name="Siouan-Iroquoian" />
   <section index="37.1" name="Proto-Siouan-Iroquoian to Proto-Iroquoian">
     <cite>Pogostick Man, from Chafe, Wallace L. (1964), “Another Look at Siouan and Iroquoian”. American Anthropologist New Series, 66:852 – 862; and from cedh aumdmanh’s Iroquoian changes</cite>
     <rule>w → ∅ / _{o,õ,ı̃}</rule>
@@ -10466,7 +10340,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>n → t / _kʷ</rule>
     <rule>∅ → t / hs_r</rule>
     <rule>∅ → j / k_e(ː)</rule>
-    <comment>r becomes a trill</comment>
+    <comment>r → r[+ continuant]</comment>
     <rule>e(ː) → ɛ(ː)</rule>
     <rule>ə̃(ː) → ɨ̃(ː) / ! “when both short and stressed”</rule>
     <rule>a(ː) o(ː) → ɔ(ː) u(ː) / ! “when both short and unstressed”</rule>
@@ -10498,7 +10372,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   </section>
   <section index="37.2.1" name="Proto-Siouan to Catawba">
     <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-    <comment>NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. Also, the changes of /p/ before a consonant are unclear, as described within the text. Changes appended with an asterisk are putative; there was a seeming lack of material for this language, so I’ve attempted to do some tracking work from the examples given in the text.</comment>
     <rule>ç x → x ʃ</rule>
     <rule>p → {p,b,m,w} / _C</rule>
     <rule>p → b / V_V (*)</rule>
@@ -10506,16 +10379,15 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>tʲ → ʒ / else</rule>
     <rule>t → ∅ / _k, when medial</rule>
     <rule>”V[+nas] → Vn (*)</rule>
-    <rule>∅ → ʔ / C_# (only sometimes?) (*)</rule>
+    <rule sporadic="true">∅ → ʔ / C_#</rule>
   </section>
   <section index="37.2.2" name="Proto-Siouan to Dakota">
     <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-    <comment>NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. Also, the changes of /p/ before a consonant are unclear, as described within the text.</comment>
     <rule>ç x → x {ʃ,ʒ}</rule>
     <rule>p → {p,b,m,w}</rule>
     <rule>tʲ → ʃ / in ”U</rule>
     <rule>tʲ → ʒ / else</rule>
-    <rule>s → z / in U[-stress]</rule>
+    <rule>s → z / U[-stress]</rule>
     <rule>s → z / V_V</rule>
     <rule>r → d / s_</rule>
     <rule>tʲr → {st,ʃt}</rule>
@@ -10530,19 +10402,16 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   </section>
   <section index="37.2.2.1" name="Dakota to Santee Dakota">
     <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-    <comment>NB: Does not include developments in unstressed non-nasal vowels.</comment>
     <rule>{pr,mt} → md</rule>
     <rule>kr → hd / #_</rule>
     <rule>kr → ɡj / medial</rule>
   </section>
   <section index="37.2.2.2" name="Dakota to Teton Dakota">
     <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-    <comment>NB: Does not include developments in unstressed non-nasal vowels.</comment>
     <rule>{pr,mt} kr → bl ɡl</rule>
   </section>
   <section index="37.2.2.3" name="Dakota to Yankton Dakota">
     <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-    <comment>NB: Does not include developments in unstressed non-nasal vowels.</comment>
     <rule>r → d / k_</rule>
   </section>
   <section index="37.2.3" name="Proto-Siouan to Mandan">
@@ -10569,7 +10438,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   </section>
   <section index="37.2.4" name="Proto-Siouan to Proto-Čiwere-Winnebago">
     <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-    <comment>NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. Also, the changes of /p/ before a consonant are unclear, as described within the text.</comment>
     <rule>ç x → x {ʃ,ʒ}</rule>
     <rule>p → {p,b,m,w}</rule>
     <rule>w → ∅ / _t</rule>
@@ -10584,7 +10452,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   </section>
   <section index="37.2.4.1" name="Proto-Čiwere-Winnebago to Čiwere">
     <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-    <comment>NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. Also, the changes of /p/ before a consonant are unclear, as described within the text.</comment>
     <rule>p → {p,b,m,w} / _C</rule>
     <rule>p → w / V_V</rule>
     <rule>ɡ → ŋ</rule>
@@ -10607,7 +10474,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   </section>
   <section index="37.2.4.2" name="Proto-Čiwere-Winnebago to Winnebago">
     <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-    <comment>NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. Also, the changes of /p/ before a consonant are unclear, as described within the text.</comment>
     <rule>p → {p,b,m,w} / _C</rule>
     <rule>V → ∅ / _#</rule>
     <rule>p → b / V_V</rule>
@@ -10636,7 +10502,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   </section>
   <section index="37.2.5.1" name="Proto-Crow-Hidatsa to Crow">
     <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-    <comment>NB: Does not include developments in unstressed non-nasal vowels.</comment>
     <rule>t → ʃ / _E</rule>
     <rule>t → s / _V</rule>
     <rule>k → ts / _i</rule>
@@ -10648,7 +10513,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   </section>
   <section index="37.2.5.2" name="Proto-Crow-Hidatsa to Hidatsa">
     <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-    <comment>NB: Does not include developments in unstressed non-nasal vowels.</comment>
     <rule>n → r</rule>
     <rule>ʔ → ∅ / C_</rule>
     <rule>kr → kV₀rV₀ / #_</rule>
@@ -10663,7 +10527,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   </section>
   <section index="37.2.6" name="Proto-Siouan to Proto-Dhegiha">
     <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-    <comment>NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. Also, the changes of /p/ before a consonant are unclear, as described within the text.</comment>
     <rule>p → {p,b,m,w} / _C</rule>
     <rule>w → ∅ / _t</rule>
     <rule>t tʲ s → d ʒ z / in U[-stress]</rule>
@@ -10679,7 +10542,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   </section>
   <section index="37.2.6.1" name="Proto-Dhegiha to Kansa">
     <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-    <comment>NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. Also, the changes of /p/ before a consonant are unclear, as described within the text. Changes appended with an asterisk are putative; there was a seeming lack of material for this language, so I’ve attempted to do some tracking work from the examples given in the text.</comment>
     <rule>V[+nas] → V[-nas]n</rule>
     <rule>p → {p,b,m,w} / _C</rule>
     <rule>w → b / #_</rule>
@@ -10733,7 +10595,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   </section>
   <section index="37.2.6.4" name="Proto-Dhegiha to Quapaw">
     <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-    <comment>NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. Also, the changes of /p/ before a consonant are unclear, as described within the text. Changes appended with an asterisk are putative; there was a seeming lack of material for this language, so I’ve attempted to do some tracking work from the examples given in the text.</comment>
     <rule>p → {p,b,m,w} / _C</rule>
     <rule>tʲ → ʃ</rule>
     <rule>L → d / #_</rule>
@@ -10746,7 +10607,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   </section>
   <section index="37.2.7" name="Proto-Siouan to Proto-Ohio-Valley">
     <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-    <comment>NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. Also, the changes of /p/ before a consonant are unclear, as described within the text.</comment>
     <rule>p → {p,b,m,w} / _C</rule>
     <rule>tʲ Lʲ → tʃ j</rule>
     <rule>m → ∅ / {C,V}_n{C,V}</rule>
@@ -10754,7 +10614,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   </section>
   <section index="37.2.7.1" name="Proto-Ohio-Valley to Biloxi">
     <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-    <comment>NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. Also, the changes of /p/ before a consonant are unclear, as described within the text.</comment>
     <rule>p → {p,b,m,w} / _C</rule>
     <rule>p → w / V_V, apparently as a result of some dissimilation, as this appears to be an allophone of /p/ here, IIUC</rule>
     <rule sporadic="true">w → ∅ / #_</rule>
@@ -10771,7 +10630,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   </section>
   <section index="37.2.7.2" name="Proto-Ohio-Valley to Ofo">
     <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-    <comment>NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. Also, the changes of /p/ before a consonant are unclear, as described within the text.</comment>
     <rule>p → {p,b,m,w} / _C</rule>
     <rule>s {ç,x} → f s</rule>
     <rule sporadic="true">w → ∅ / #_</rule>
@@ -10790,7 +10648,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   </section>
   <section index="37.2.7.3" name="Proto-Ohio-Valley to Tutelo">
     <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-    <comment>NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. Also, the changes of /p/ before a consonant are unclear, as described within the text. Changes appended with an asterisk are putative; there was a seeming lack of material for this language, so I’ve attempted to do some tracking work from the examples given in the text.</comment>
     <rule>p → {p,b,m,w} / _C</rule>
     <rule>L → l</rule>
     <rule>k → ᵑk / _ʔ</rule>
@@ -11134,11 +10991,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>{uɨ̯,ua̯,ue̯} {ɨa̯,ɨe̯} ie̯ → o ə e</rule>
     <rule>əi → ai</rule>
   </section>
-  <section index="39" name="Tanoan">
-    <comment>Proto-Tanoan is reconstructed as having had the following consonantal phonology, at least for phones in initial position:</comment>
-    <comment>Only initials are reconstructed here. Vowels are believed to have had nasality and possibly length, though no correspondences are given here for sure. The affricates, as per Hale (1967), appear to have patterned as stops.</comment>
-    <comment>(From Hale, Kenneth (1967), “Toward a Reconstruction of Kiowa-Tanoan Phonology”. International Journal of American Linguistics, 33.2:112 – 120; and Wikipedia contributors (2012), “Tanoan languages”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Tanoan_languages&gt;)</comment>
-  </section>
+  <section index="39" name="Tanoan" />
   <section index="39.1" name="Proto-Tanoan to Jimez">
     <cite>Pogostick Man, from Wikipedia contributors (2012), “Tanoan languages”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Tanoan_languages&gt;, citing Hale, Kenneth (1967), “Toward a Reconstruction of Kiowa-Tanoan Phonology”. International Journal of American Linguistics, 33.2:112 – 120</cite>
     <rule>h → ∅</rule>
@@ -11173,10 +11026,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>dz → {j,dʒ}</rule>
     <rule>kʰ kʷʰ ɡʷ → x xʷ w</rule>
   </section>
-  <section index="40" name="Totozoquean">
-    <comment>The following inventory is from Brown, Beck, Kondrak, Watters, and Wichmann, with laryngeal modality on the vowels assumed to be distinctive (the authors consider it an option but do not explicitly propose it).</comment>
-    <comment>(From Brown, Cecil H., David Beck, Grzegorz Kondrak, James K. Watters, and SÃ¸ren Wichmann, “Linking proto-Totonacan and proto-Mixe-Zoquean”. &lt;http://www.ualberta.ca/~dbeck/TzEILNXI.pdf&gt;)</comment>
-  </section>
+  <section index="40" name="Totozoquean" />
   <section index="40.1" name="Proto-Totozoquean to Proto-Mixe-Zoquean">
     <cite>Pogostick Man, from Brown, Cecil H., David Beck, Grzegorz Kondrak, James K. Watters, and SÃ¸ren Wichmann, “Linking proto-Totonacan and proto-Mixe-Zoquean”. &lt;http://www.ualberta.ca/~dbeck/TzEILNXI.pdf&gt;</cite>
     <rule>l → j</rule>
@@ -11196,10 +11046,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>{ə,ɔ} {ə̰,ɔ̰} → a a̰</rule>
     <rule>{e,ɨ} {ḛ ɨ̰} → i ḭ</rule>
   </section>
-  <section index="41" name="Trans-New Guinea">
-    <comment>Pawley (2012) reconstructs the following inventory for Proto-Trans New Guinea. The use of the terms “apical” and “laminal” is his, but the table has been restructured somewhat.</comment>
-    <comment>(From Pawley, Andrew (2012). “How Reconstructible is Proto Trans New Guinea? Problems, Progress, Prospects”. In Languages &amp; Linguistics in Melanesia Special Issue I:89 – 164)</comment>
-  </section>
+  <section index="41" name="Trans-New Guinea" />
   <section index="41.1" name="Proto-Trans New Guinea to ApalÉ¨">
     <cite>Pogostick Man, from Pawley, Andrew (2012). “How Reconstructible is Proto Trans New Guinea? Problems, Progress, Prospects”. In Languages &amp; Linguistics in Melanesia Special Issue I:89 – 164</cite>
     <rule>t k ŋ → {l,t} {h,k} n / #_</rule>
@@ -11326,7 +11173,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <cite>Pogostick Man, from Pawley, Andrew (2012). “How Reconstructible is Proto Trans New Guinea? Problems, Progress, Prospects”. In Languages &amp; Linguistics in Melanesia Special Issue I:89 – 164</cite>
     <rule>t → {t,∅} / _#</rule>
     <rule>l → ɽ</rule>
-    <comment>Frequent insertion of “epenthetic vowels, often realized as very short [ɨ], but in some contexts as a copy of a neighboring full vowel. In some cases the epenthetic vowels appear to be, historically, reductions of full vowels”</comment>
   </section>
   <section index="41.7" name="Proto-Trans New Guinea to Kâte">
     <cite>Pogostick Man, from Pawley, Andrew (2012). “How Reconstructible is Proto Trans New Guinea? Problems, Progress, Prospects”. In Languages &amp; Linguistics in Melanesia Special Issue I:89 – 164</cite>
@@ -11364,12 +11210,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ᵑɡ → {ᵑɡ,ŋ} / V_V</rule>
     <rule>i → {i,e}</rule>
   </section>
-  <section index="42" name="Uralic">
-    <comment>The following reconstructed phonology for Proto-Uralic is adapted from the Wikipedia:</comment>
-    <comment>For the series of changes starting with Proto-Uralic to Pre-Finnic and ending with Proto-Finnic to Livonian and in several other of Tropylium’s contributions, the following alterations to the stand-in variable list apply.</comment>
-    <comment>Tropylium wishes to note that his sound changes are subject to change. (Note 2014/06/21: As per a Tumblr post of his, http://tropylium.tumblr.com/post/81916666722/index-diachronica-4-2, many of the compilations presented here are out of date or erroneous, and he still is updating his page on Finnic, http://www.frathwiki.com/Finnish.)</comment>
-    <comment>(From Wikipedia contributors (2011), “Proto-Uralic language”. Wikipedia, The Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Proto-Uralic_language&gt;; the TCL thread and KQ pages proper; and Tropylium.)</comment>
-  </section>
+  <section index="42" name="Uralic" />
   <section index="42.1" name="Proto-Uralic to Pre-Finnic">
     <cite>Tropylium, from Hakulinen, Lauri (1979), “Suomen kielen rakenne ja kehitys”. Otava; Häkkinen, Kaisa (2004), “Nykysuomen etymologinen sanakirja”. WSOY; Kallio, Petri (2007), “Kantasuomen konsonanttihistoriaa”. Mémoires de la Société Finno-Ougrienne 253. &lt;http://www.sgr.fi/sust/sust253/sust253_kallio.pdf&gt;; and from Janhunen, Juha (2007), “The primary laryngeal in Uralic and beyond”. Mémoires de la Société Finno-Ougrienne 253. &lt;http://www.sgr.fi/sust/sust253/sust253_janhunen.pdf&gt;</cite>
     <rule>ŋ → k / _#, in latives</rule>
@@ -11545,12 +11386,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>wo → ʊ / P_</rule>
     <rule>ɔ(ː) → o(ː)</rule>
   </section>
-  <section index="43" name="Uto-Aztecan">
-    <comment>The Wikipedia provides the following reconstruction for the phonology of Proto-Uto-Aztecan, which here is adapted with slight modifications as to the layout:</comment>
-    <comment>Quoth the Wiki, “*n and *ŋ may have actually been *l and *n, respectively.” It should be noted that there exists some discrepancy between this given reconstruction and in that set up for the studies deriving the reconstructions below. Radius Solis includes *h and *l as distinct phonemes as per the source he cited.</comment>
-    <comment>For the following Uto-Aztecan changes, Vu, Vs, and Vn refer to normal (“unaffecting”), “suspending”, and “nasalizing” vowels, respectively. According to Radius Solis, “Reconstructed PUA had three sets of vowels; this book calls them ‘suspending’, ‘unaltering’, and ‘nasalizing’. The nasalizing vowels likely were actually nasal, but it’s uncertain; their existence was deduced only by the sound changes that revolved around them. There’s few good guesses yet about the nature of the ‘suspending’ vowels, but their existence is likewise deducible from the sound changes that have been affected by them across a majority of the UA family - more changes than from the nasalizing series, occurring in all UA branches, enough to be pretty certain that it was a reality in PUA.”</comment>
-    <comment>(From Wikipedia contributors (2011), “Proto-Uto-Aztecan language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Proto-Uto-Aztecan_language&gt;; and from Radius Solis’ changes listed on KneeQuickie and in the TCL thread proper)</comment>
-  </section>
+  <section index="43" name="Uto-Aztecan" />
   <section index="43.1" name="Proto-Uto-Aztecan to Comanche">
     <cite>Radius Solis, from from Voegelin, Charles F., Florence M. Voegelin, &amp; Kenneth L. Hale (1962), “Typological and Comparative Grammar of Uto-Aztecan: I (Phonology)”. International Journal of American Linguistics 28: Memoir 17</cite>
     <rule>p t ts s → v r ∅ h</rule>
@@ -11825,9 +11661,7 @@ Souletin keeps initial ʃ- and tʃ- distinct; Labourdin only has ʃ-, and the re
     <rule>ɲj → n ∅ / ʔ_</rule>
     <rule sporadic="true">Vː → V</rule>
   </section>
-  <section index="46" name="Vowel Shifts">
-    <comment>A miscellaneous collection of vowel shifts.</comment>
-  </section>
+  <section index="46" name="Vowel Shifts" />
   <section index="46.1" name="7-to-5 Vowel Merger (Bantu)">
     <cite>Pogostick Man, from Schadeberg, Theo C. (1995), “Spirantization and the 7-to-5 Vowel Merger in Bantu”. In Sound Change, M. Dominicy and D. Demolin (Eds.), Amsterdam: John Benjamins, 1995.</cite>
     <rule>S → F / _{i,u}</rule>
@@ -11998,9 +11832,7 @@ Souletin keeps initial ʃ- and tʃ- distinct; Labourdin only has ʃ-, and the re
     <rule>z → d / _n</rule>
     <rule>æ/ɑː → æɪ</rule>
   </section>
-  <section index="47" name="Most-Wanted Sound Changes">
-    <comment>This section replicates the “Most wanted sound changes” article from Knee Quickie. It is presented mostly as it was found with the following modifications:</comment>
-  </section>
+  <section index="47" name="Most-Wanted Sound Changes" />
   <section index="47.1" name="List 1: Simple Consonant Changes">
     <rule>w → p (Navajo, some Polynesian languages)</rule>
     <rule>kʲ ɡʲ → k ɡ (Danish)</rule>
