@@ -945,13 +945,13 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>{ʔ,h}{ɬ,l} → hs</rule>
     <rule>{θ,l} → t / n_</rule>
     <rule>{θ,ʃ,tʃ,ç,x,ʔ} → h / _C</rule>
-    <rule>C[-nas] → h / _k</rule>
+    <rule>C[- nasal] → h / _k</rule>
     <rule>h → ʔ / _{s,ʃ}</rule>
     <rule>hs hʃ → sː ʃː / sporadic, usually {#,V[+front]}_</rule>
     <rule>C[-voiced] → C[+voiced] / N_</rule>
-    <rule>VNs VNʃ → V[+nas]z V[+nas]ʒ / not universal?</rule>
+    <rule>VNs VNʃ → V[+ nasal]z V[+ nasal]ʒ / not universal?</rule>
     <rule sporadic="true">S → ⁿS / #NV_</rule>
-    <rule>s ʃ → ⁿs ⁿʃ / U[-nas] (highly sporadic)</rule>
+    <rule>s ʃ → ⁿs ⁿʃ / U[- nasal] (highly sporadic)</rule>
     <rule>{h,ʔ} → ∅ / _m</rule>
   </section>
   <section index="7.14" name="Proto-Algonquian to Mi’kmaq">
@@ -4208,7 +4208,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
   <section index="17.7.2.1.1" name="Anglo-Frisian to Old English">
     <cite>Pogostick Man, from Wikipedia contributors (2011), “Phonological history of English”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Phonological_history_of_English&gt;</cite>
     <rule>ɑ̃ː → õː</rule>
-    <rule>V[+nas] → V[-nas]</rule>
+    <rule>V[+ nasal] → V[- nasal]</rule>
     <rule>{i,u} → ∅/ _# ! V[-long]C_#</rule>
     <rule>k ɣ ɡ → tʃ ʝ dʒ / “in certain complex circumstances”</rule>
   </section>
@@ -5315,12 +5315,12 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
   <section index="17.10.1.1" name="Proto-Indo-Aryan to Central Middle Indo-Aryan">
     <cite>Pogostick Man, from Shukla, Shaligram (1974), “Phonological change and dialect variation in Middle-Indo-Aryan”. In Anderson, J., and C. Jones (Eds.), Historical Linguistics II:391-401.</cite>
     <rule>C(C) → ∅ / C_#</rule>
-    <rule>VN VC[-nas] → V[+nas] Vː / _#</rule>
+    <rule>VN VC[- nasal] → V[+ nasal] Vː / _#</rule>
     <rule>a{i,j}(a) a{u,w}(a) → e o</rule>
     <rule>j w → dʒ b / V_V</rule>
     <rule>C → C[+voiced] / V_V</rule>
     <rule>{bʱ,dʱ,ɡʱ} {j,v} → h ∅ / V_V</rule>
-    <rule>Vm → Vv → V[+nas]v / _V</rule>
+    <rule>Vm → Vv → V[+ nasal]v / _V</rule>
     <rule>e o → i u / _#</rule>
     <rule>Vː → V[-long] / _#</rule>
     <rule>ah → o</rule>
@@ -5335,13 +5335,13 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
   <section index="17.10.1.2" name="Proto-Indo-Aryan to Eastern Middle Indo-Aryan">
     <cite>Pogostick Man, from Shukla, Shaligram (1974), “Phonological change and dialect variation in Middle-Indo-Aryan”. In Anderson, J., and C. Jones (Eds.), Historical Linguistics II:391-401.</cite>
     <rule>C(C) → ∅ / C_#</rule>
-    <rule>VN VC[-nas] → V[+nas] Vː / _#</rule>
+    <rule>VN VC[- nasal] → V[+ nasal] Vː / _#</rule>
     <rule>a{i,j}(a) a{u,w}(a) → e o</rule>
     <rule>j w → dʒ b / V_V</rule>
     <rule>C → C[+voiced] / V_V</rule>
     <rule>{bʱ,dʱ,ɡʱ} {j,v} → h ∅ / V_V</rule>
     <rule>b {d,dʒ,ɡ} → v j / V_V</rule>
-    <rule>Vm → Vv → V[+nas]v / _V</rule>
+    <rule>Vm → Vv → V[+ nasal]v / _V</rule>
     <rule>e o → i u / _#</rule>
     <rule>Vː → V[-long] / _#</rule>
     <rule>ah → e</rule>
@@ -5357,12 +5357,12 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
   <section index="17.10.1.3" name="Proto-Indo-Aryan to Northwestern Middle Indo-Aryan">
     <cite>Pogostick Man, from Shukla, Shaligram (1974), “Phonological change and dialect variation in Middle-Indo-Aryan”. In Anderson, J., and C. Jones (Eds.), Historical Linguistics II:391-401.</cite>
     <rule>C(C) → ∅ / C_#</rule>
-    <rule>VN VC[-nas] → V[+nas] Vː / _#</rule>
+    <rule>VN VC[- nasal] → V[+ nasal] Vː / _#</rule>
     <rule>a{i,j}(a) a{u,w}(a) → e o</rule>
     <rule>j w → dʒ b / V_V</rule>
     <rule>C → C[+voiced] / V_V</rule>
     <rule>{bʱ,dʱ,ɡʱ} {j,v} → h ∅ / V_V</rule>
-    <rule>Vm → Vv → V[+nas]v / _V</rule>
+    <rule>Vm → Vv → V[+ nasal]v / _V</rule>
     <rule>e o → i u / _#</rule>
     <rule>Vː → V[-long] / _#</rule>
     <rule>ah → o</rule>
@@ -5378,12 +5378,12 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
   <section index="17.10.1.4" name="Proto-Indo-Aryan to Western Middle Indo-Aryan">
     <cite>Pogostick Man, from Shukla, Shaligram (1974), “Phonological change and dialect variation in Middle-Indo-Aryan”. In Anderson, J., and C. Jones (Eds.), Historical Linguistics II:391-401.</cite>
     <rule>C(C) → ∅ / C_#</rule>
-    <rule>VN VC[-nas] → V[+nas] Vː / _#</rule>
+    <rule>VN VC[- nasal] → V[+ nasal] Vː / _#</rule>
     <rule>a{i,j}(a) a{u,w}(a) → e o</rule>
     <rule>j w → dʒ b / V_V</rule>
     <rule>C → C[+voiced] / V_V</rule>
     <rule>{bʱ,dʱ,ɡʱ} {j,v} → h ∅ / V_V</rule>
-    <rule>Vm → Vv → V[+nas]v / _V</rule>
+    <rule>Vm → Vv → V[+ nasal]v / _V</rule>
     <rule>e o → i u / _#</rule>
     <rule>Vː → V[-long] / _#</rule>
     <rule>ah → o</rule>
@@ -5742,8 +5742,8 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>r…r → r…∅</rule>
     <rule>{n,d}…r → r…r</rule>
     <rule>Vː → V / _C(C)# “(irregular: often before -m, -t, -nt, but never before ?s)”</rule>
-    <rule>V → {Vː,V[+nas]} / _n{f,s}</rule>
-    <rule>n → ∅ / V[+nas]_</rule>
+    <rule>V → {Vː,V[+ nasal]} / _n{f,s}</rule>
+    <rule>n → ∅ / V[+ nasal]_</rule>
     <rule>C₁C₂C₃C₄ → (C₃)C₄</rule>
     <rule>C₁C₂C₃ → C₁C₃</rule>
   </section>
@@ -5995,19 +5995,19 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>ai → e / _#</rule>
     <rule>ai iɛɪ → ɛ i</rule>
     <rule>ou ɛu u uɛi → u œ y yi</rule>
-    <rule>{ei,ɔi} → oi / C[-nas]</rule>
+    <rule>{ei,ɔi} → oi / C[- nasal]</rule>
     <rule>ɔ → u / _”V</rule>
     <rule>V[-high] → ə → ∅ / _V “(except that a is kept before o)”</rule>
     <rule>ɲ → in / _{C,#}</rule>
-    <comment>V{n,m} / V[+nas] / _{C,#}</comment>
+    <comment>V{n,m} / V[+ nasal] / _{C,#}</comment>
     <rule>ɛ̃ → ã</rule>
     <rule>{aı̃,eı̃} → ɛ̃</rule>
     <rule>ỹ → œ̃</rule>
     <rule>O[+voiced] → O[-voiced] / _#</rule>
     <rule>{t,s} → ∅ / _#</rule>
-    <rule>k → ∅ / V[+nas]_#</rule>
+    <rule>k → ∅ / V[+ nasal]_#</rule>
     <rule>{n,m} → ∅ / C_#</rule>
-    <rule>j → ∅ / {ʃ,ʒ}_V[-nas]</rule>
+    <rule>j → ∅ / {ʃ,ʒ}_V[- nasal]</rule>
     <rule>ʎ r → j ʁ</rule>
     <rule>oi → wɛ → wa</rule>
     <rule>oı̃ → wɛ̃</rule>
@@ -6073,16 +6073,16 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>o → u / _(”V)</rule>
     <rule>e → ∅ / el_#</rule>
     <rule>V → a / _{n,r}(C)V(C)# (irregular)</rule>
-    <rule>V → V[+nas] / _N$C when stressed</rule>
+    <rule>V → V[+ nasal] / _N$C when stressed</rule>
     <rule>ɔ̃ → õ</rule>
-    <rule>N → ∅ / V[+nas]_$C ! C = S</rule>
-    <rule>V → V[+nas] / _N$V</rule>
-    <rule>V → V[+nas] / #N_ (rare)</rule>
-    <rule>N → ∅ / V[+nas]_$V</rule>
+    <rule>N → ∅ / V[+ nasal]_$C ! C = S</rule>
+    <rule>V → V[+ nasal] / _N$V</rule>
+    <rule>V → V[+ nasal] / #N_ (rare)</rule>
+    <rule>N → ∅ / V[+ nasal]_$V</rule>
     <rule>{ã,ãe,õe} → ão / _#</rule>
-    <rule>V[+nas] → V[-nas] / [- stress]</rule>
-    <rule>V[+nas] → V[-nas] / in U#</rule>
-    <rule>V₀[+nas]V₀[-nas] → V₀[+nas]</rule>
+    <rule>V[+ nasal] → V[- nasal] / [- stress]</rule>
+    <rule>V[+ nasal] → V[- nasal] / in U#</rule>
+    <rule>V₀[+ nasal]V₀[- nasal] → V₀[+ nasal]</rule>
     <rule>ı̃ → iɲ</rule>
     <rule>e V → o ∅ / _? (irregular)</rule>
     <rule>e → o / _m”V (irregular)</rule>
@@ -6781,16 +6781,16 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>k → ∅ / _#</rule>
     <rule>kʷ → ∅</rule>
     <rule>b → β / V_V</rule>
-    <rule>ɡʷ → β / _V[-nas]</rule>
+    <rule>ɡʷ → β / _V[- nasal]</rule>
     <rule>ts (n)dz → t nd</rule>
     <rule>β → ∅ / _i</rule>
     <rule>h → ∅ / V_C</rule>
     <rule>ʔ → ∅</rule>
-    <rule>r → l / V[+nas]_V[+nas]</rule>
-    <rule>ð nŋʷ → c β / #_V[-nas]</rule>
+    <rule>r → l / V[+ nasal]_V[+ nasal]</rule>
+    <rule>ð nŋʷ → c β / #_V[- nasal]</rule>
     <rule>ð → {∅,c} / else</rule>
-    <rule>j ŋʷ m n → ɲ m {m,p} {∅,t} / _V[+nas]</rule>
-    <rule>ⁿd ŋ → t {ɡ,k} / _V[-nas]</rule>
+    <rule>j ŋʷ m n → ɲ m {m,p} {∅,t} / _V[+ nasal]</rule>
+    <rule>ⁿd ŋ → t {ɡ,k} / _V[- nasal]</rule>
     <rule>u → o / _{p,b}i</rule>
     <rule>ɨ → ∅ / ! #_{p,β}e</rule>
     <rule>{a/e} {e/a} {ı̃,ẽ} → e a ẽ</rule>
@@ -6801,17 +6801,17 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ɡ → k</rule>
     <rule>k → ɡ / in U[+stress]</rule>
     <rule>ɡʷ → k / _o</rule>
-    <rule>ɡʷ ŋɡ → kʷ k / _V[-nas]</rule>
-    <rule>ɡʷ → kʷ / #_V[+nas]</rule>
+    <rule>ɡʷ ŋɡ → kʷ k / _V[- nasal]</rule>
+    <rule>ɡʷ → kʷ / #_V[+ nasal]</rule>
     <rule>ts (n)dz → {s,ts} s</rule>
     <rule>β → ∅ / i_</rule>
     <rule>h → ∅ / V_C</rule>
     <rule>ʔ → ∅</rule>
-    <rule>{ᵐb,ⁿd,ð} → t / _V[+nas]</rule>
+    <rule>{ᵐb,ⁿd,ð} → t / _V[+ nasal]</rule>
     <rule>ð → s / _i</rule>
     <rule>ð → h / else</rule>
-    <rule>ŋ ŋʷ → k m / _V[+nas]</rule>
-    <rule>ŋʷ → kʷ / #_V[-nas]</rule>
+    <rule>ŋ ŋʷ → k m / _V[+ nasal]</rule>
+    <rule>ŋʷ → kʷ / #_V[- nasal]</rule>
     <rule>ɨ → i / #_{p,βe}</rule>
     <rule>ɨ → ∅ / else</rule>
     <rule>{{a/e},{e/a}} {ı̃,ẽ} → a ẽ</rule>
@@ -6821,15 +6821,15 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>t → r / _V</rule>
     <rule>kʷ ɡ → ∅ k</rule>
     <rule>ɡʷ → ∅ / _o</rule>
-    <rule>ɡʷ ŋɡ → β k / _V[-nas]</rule>
+    <rule>ɡʷ ŋɡ → β k / _V[- nasal]</rule>
     <rule>{(n)dz,ts} → s / _i</rule>
     <rule>{(n)dz,ts} → t / else</rule>
     <rule>β ð → ∅ {s,h} / _i</rule>
     <rule>ð → h</rule>
-    <rule>ᵐb ŋʷ → p β / #_V[-nas]</rule>
-    <rule>n → ∅ / ! #_V[-nas]</rule>
-    <rule>ŋ → k / #_V[+nas]</rule>
-    <rule>ŋʷ → m / V[+nas]_V[+nas]</rule>
+    <rule>ᵐb ŋʷ → p β / #_V[- nasal]</rule>
+    <rule>n → ∅ / ! #_V[- nasal]</rule>
+    <rule>ŋ → k / #_V[+ nasal]</rule>
+    <rule>ŋʷ → m / V[+ nasal]_V[+ nasal]</rule>
     <rule>u → o / _{p,b}i</rule>
     <rule>{a/e} → e</rule>
   </section>
@@ -6841,13 +6841,13 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>k → ɡ / in U[+stress]</rule>
     <rule>b → ∅ / V_V</rule>
     <rule>ɡʷ → ɡ / _o</rule>
-    <rule>bʷ → β / #_V[+nas]</rule>
+    <rule>bʷ → β / #_V[+ nasal]</rule>
     <rule>ts (n)dz → t nd</rule>
     <rule>h → ∅ / V_C</rule>
     <rule>ʔ → ∅</rule>
-    <rule>r ŋʷ → n β / V[+nas]_V[+nas]</rule>
+    <rule>r ŋʷ → n β / V[+ nasal]_V[+ nasal]</rule>
     <rule>ð → (n)d</rule>
-    <rule>ŋɡ → k / ! _V[-nas]</rule>
+    <rule>ŋɡ → k / ! _V[- nasal]</rule>
     <rule>u → ɨ / _{p,b}i</rule>
     <rule>{a/e} {e/a} {ı̃,ẽ} → a e ı̃</rule>
   </section>
@@ -6907,8 +6907,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ts → {tʃ,∅}</rule>
     <rule>{b,r} → ∅ / _#</rule>
     <rule>u → ∅ / k_w</rule>
-    <rule>V{m,n} → V[+nas] / _#</rule>
-    <rule>Vŋ → V[+nas]</rule>
+    <rule>V{m,n} → V[+ nasal] / _#</rule>
+    <rule>Vŋ → V[+ nasal]</rule>
   </section>
   <section index="18.4.5" name="Proto-Tupí-Guaraní to Guarayo">
     <cite>Pogostick Man, from Lemle, Miriam (1971), âInternal Classification of the Tupi-Guarani Linguistic Family”. In Tupi Studies I, from Summer Institute of Linguistics Publications in Linguistics and Related Fields Publication Number 29.</cite>
@@ -6916,7 +6916,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>t → tʃ / _{i,ı̃}</rule>
     <rule>{b,k} r → ∅ {r,∅} / _#</rule>
     <rule>ʔ ts → {ʔ,∅} {ts,tʃ}</rule>
-    <rule>{Vm,Vŋ} Vn → V[+nas] {Vr,V[+nas]} / _#</rule>
+    <rule>{Vm,Vŋ} Vn → V[+ nasal] {Vr,V[+ nasal]} / _#</rule>
     <rule>aN eN iN ɨN uN → ã ẽ ı̃ ɨ̃ ũ / _#</rule>
     <rule>õ → o</rule>
   </section>
@@ -6935,7 +6935,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <cite>Pogostick Man, from Lemle, Miriam (1971), âInternal Classification of the Tupi-Guarani Linguistic Family”. In Tupi Studies I, from Summer Institute of Linguistics Publications in Linguistics and Related Fields Publication Number 29.</cite>
     <rule>k → {ŋ,∅} / _#</rule>
     <rule>ts → {h,∅}</rule>
-    <rule sporadic="true">Vn → V[+nas]</rule>
+    <rule sporadic="true">Vn → V[+ nasal]</rule>
     <rule>∅ → ŋ / {#,V}_w</rule>
     <rule>b r → {b,∅} {r,t} / _#</rule>
     <rule>u → ∅ / k_w</rule>
@@ -6951,8 +6951,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>k → ∅ / _#</rule>
     <rule>ʔ ts → ∅ {s,ʃ}</rule>
     <rule>u → ∅ / k_w</rule>
-    <rule>V{m,n} → V[+nas] / _#</rule>
-    <rule>Vŋ → V[+nas]</rule>
+    <rule>V{m,n} → V[+ nasal] / _#</rule>
+    <rule>Vŋ → V[+ nasal]</rule>
     <rule>j → {j,i} / _#</rule>
     <rule>j → {ɲ,tʃ} / else</rule>
     <rule>w → {ɡ,k} / {#,V}_</rule>
@@ -7007,8 +7007,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>k → {k,∅} / _#</rule>
     <rule>k → {k,ʃ} / else</rule>
     <rule>ts → {s,h}</rule>
-    <rule sporadic="true">Vn → V[+nas] / _#</rule>
-    <rule>Vŋ → V[+nas]</rule>
+    <rule sporadic="true">Vn → V[+ nasal] / _#</rule>
+    <rule>Vŋ → V[+ nasal]</rule>
     <rule>j b → {j,i} ∅ / _#</rule>
     <rule>b → w / else</rule>
     <rule>u → ∅ / k_w</rule>
@@ -7146,7 +7146,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>u → ∅ / o_</rule>
     <rule>iaɔ → iu</rule>
     <rule>o → ∅ / a(C)_</rule>
-    <rule>Vn ŋ → V[+nas] ∅ / _#</rule>
+    <rule>Vn ŋ → V[+ nasal] ∅ / _#</rule>
     <rule>t d s → {c,tʃ} ɟ ʃ</rule>
     <rule>!! → ǁ</rule>
     <rule>ⁿQʰ Q͡ɢ → Qʰ Q</rule>
@@ -8016,7 +8016,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>{TŠ,TŠʷ} → TS</rule>
     <rule>K Q → TŠ K</rule>
     <rule>T → TŠ / _{i,e,u}, in the British Columbian dialect</rule>
-    <rule>{n,ɲ} → d / $_V[-nas] (→ dʒ in the British Columbian dialect)</rule>
+    <rule>{n,ɲ} → d / $_V[- nasal] (→ dʒ in the British Columbian dialect)</rule>
     <rule>ɑ → ə</rule>
     <rule>Vˀ → V[+high tone]</rule>
   </section>
@@ -8076,8 +8076,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>TS K → TH TŠ / else</rule>
     <rule>TŠ TŠʷ Q → TS TṢ K</rule>
     <rule>j w → ʒ v</rule>
-    <rule>{n,ɲ} → ⁿdʒ / _E[-nas]</rule>
-    <rule>{n,ɲ} → ⁿd / _V[-nas]</rule>
+    <rule>{n,ɲ} → ⁿdʒ / _E[- nasal]</rule>
+    <rule>{n,ɲ} → ⁿd / _V[- nasal]</rule>
     <rule>{i,e} → {i,ja} (this latter due to the loss of final consonants within the stem)</rule>
     <rule>a u {ɑ,ə} ʊ → {i,e} ju a o</rule>
     <rule>Vˀ → V[+low tone]</rule>
@@ -8087,7 +8087,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <cite>Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
     <rule>TS TŠ TŠʷ K Q → TH TS TṢ TŠ K</rule>
     <comment>Occasional palatalization in front of high vowels</comment>
-    <rule>n → (ⁿ)d / $_V[-nas]</rule>
+    <rule>n → (ⁿ)d / $_V[- nasal]</rule>
     <rule>j → ʒ / $_</rule>
     <rule>a ɑ ə ʊ → æ a {ə,ë} o</rule>
     <comment>Acquisition of vowel length, but how this occurs is not described</comment>
@@ -8302,7 +8302,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>TS TŠ TŠʷ Q → TH TS TṢ K</rule>
     <rule>S’ → S / _$</rule>
     <rule>Vˀ → V[+high tone]</rule>
-    <rule>Vɲ → V[+nas]</rule>
+    <rule>Vɲ → V[+ nasal]</rule>
     <rule>{n,ɲ} → ⁿd</rule>
     <rule>F[+voiced] → F[-voiced] / _$</rule>
     <rule>ʃ → h / in the “1sg subject prefix”</rule>
@@ -8322,7 +8322,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>K → TŠ / ! _$</rule>
     <rule>TS TŠ TŠʷ Q → TH TS TṢ K</rule>
     <rule>S’ → S / _$</rule>
-    <rule>Vɲ → V[+nas]</rule>
+    <rule>Vɲ → V[+ nasal]</rule>
     <rule>{n,ɲ} → ⁿd</rule>
     <rule>{A,F} → ∅ / _$; diphthongs sometimes lengthen in comparison</rule>
     <rule>ʃ → h / in the “1sg subject prefix”</rule>
@@ -8392,14 +8392,14 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>i ı̃ V[-round] → uɪ uɪ̃ V[+round] / Cʷ_</rule>
     <rule>ʋ̃ → ʋ / #R[-labial]_</rule>
     <rule>ʄ C → c R / #_</rule>
-    <rule>ɠʷ → w / #_V[-nas]</rule>
-    <rule>ɠʷ → w̃ / #_V[+nas]</rule>
-    <rule>V[+nas] → V[-nas] / #S[+voiced]_</rule>
+    <rule>ɠʷ → w / #_V[- nasal]</rule>
+    <rule>ɠʷ → w̃ / #_V[+ nasal]</rule>
+    <rule>V[+ nasal] → V[- nasal] / #S[+voiced]_</rule>
     <rule>ɪ̃ → ɛ̃ / #(C)V_C</rule>
     <rule>ɰ ɰ̃ → j j̃ / #C_</rule>
     <rule>ɪ ɪ̃ → i ı̃ / #(C)V[-high]C_</rule>
     <rule>ʋ̃ → m / #(C)V_</rule>
-    <rule>O[+nas -voiced] → O[-nas] / #(C)VC_</rule>
+    <rule>O[+nas -voiced] → O[- nasal] / #(C)VC_</rule>
   </section>
   <section index="30.1.1" name="Pre-Proto-Bantu to Proto-Bantu">
     <cite>Pogostick Man, from Hedinger, Robert (1987), The Manenguba Languages (Bantu A.15, Mbo Cluster) of Cameroon</cite>
@@ -8475,13 +8475,13 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   </section>
   <section index="30.2" name="Proto-Potou-Akanic-Bantu to Proto-Potou-Akanic">
     <cite>Pogostick Man, from Stewart, John M. (2002), “The potential of proto-Potou-Akanic-Bantu as a pilot Proto-Niger-Congo, and the reconstructions updated”. JALL 23:197 – 224</cite>
-    <rule>C → J[+nas] / #(C)V[+nas]_</rule>
+    <rule>C → J[+ nasal] / #(C)V[+ nasal]_</rule>
     <rule>ɰɰ̃ →l l̃ / #(C)V_</rule>
     <rule>C → J / #(C)V_</rule>
     <rule>ɪ(Cɪ) → e(Ci) / t_ ;; “vowel nasalizations are retained either way on each”</rule>
     <rule>ɟ ʄ j c ɠʷ → c ɟ ʄ t ɠ̥p</rule>
-    <rule>(N)V₁[+mid +nas](l̃) → CV[-nas]n</rule>
-    <rule>V[+nas](ʋ̃,l̃) → V[-nas](m,n) / #J[+voiced]_</rule>
+    <rule>(N)V₁[+mid +nas](l̃) → CV[- nasal]n</rule>
+    <rule>V[+ nasal](ʋ̃,l̃) → V[- nasal](m,n) / #J[+voiced]_</rule>
   </section>
   <section index="30.2.1" name="Proto-Potou-Akanic to Proto-Akanic">
     <cite>Pogostick Man, from Stewart, John M. (2002), “The potential of proto-Potou-Akanic-Bantu as a pilot Proto-Niger-Congo, and the reconstructions updated”. JALL 23:197 – 224</cite>
@@ -8492,22 +8492,22 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>h̃ hʷ → ɕ ɕʷ</rule>
     <rule>h → ɲı̃ / #_ã</rule>
     <rule>h → w / #_</rule>
-    <rule>t → c / #_V[-nas]</rule>
+    <rule>t → c / #_V[- nasal]</rule>
   </section>
   <section index="30.2.1.1" name="Proto-Akanic to Akan">
     <cite>Pogostick Man, from Stewart, John M. (2002), “The potential of proto-Potou-Akanic-Bantu as a pilot Proto-Niger-Congo, and the reconstructions updated”. JALL 23:197 – 224</cite>
     <rule>l l̃ → j j̃ / #_</rule>
     <rule>C[+dorsal] → Cʷ / _V[+round]</rule>
     <rule>V → V[-round] / #C[+dorsal]_C[-labial]</rule>
-    <rule>jV[+nas] → jV[-nas] / #_</rule>
-    <rule>f → j / #_V[-nas]</rule>
-    <rule>f → j̃ / #_V[+nas]</rule>
+    <rule>jV[+ nasal] → jV[- nasal] / #_</rule>
+    <rule>f → j / #_V[- nasal]</rule>
+    <rule>f → j̃ / #_V[+ nasal]</rule>
     <rule>{p,ʋ̃} c k͜p → f s p / #_</rule>
     <rule>n → ŋ / #(C)V_</rule>
     <rule>N → S</rule>
     <rule>V → ∅ / #(C)VC[-coronal]_</rule>
     <rule>ʋ l → w ɹ / #(C)V_</rule>
-    <rule>V[+high] → V[+nas] / #(C)_N</rule>
+    <rule>V[+high] → V[+ nasal] / #(C)_N</rule>
     <rule>i → ∅ / #C_a</rule>
     <rule>ı̃ → ∅ / #_ã</rule>
   </section>
@@ -10002,7 +10002,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>Vʔ → Vː[+low falling tone] / _C</rule>
     <rule>{Vh,Vʔ} → Vː / _#</rule>
     <rule>a(ː)wẽ(ː) → a(ː)ma(ː)</rule>
-    <rule>V[+nas] → aː[+high rising tone]</rule>
+    <rule>V[+ nasal] → aː[+high rising tone]</rule>
     <rule>∅ → Vː[+high rising tone] / C_# (“usually one of [/aː iː ʌ̃ː/ with this tone], the conditions are unclear”)</rule>
     <rule>iji → iː</rule>
     <rule>tsn → hst</rule>
@@ -10137,7 +10137,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>x → ∅</rule>
     <rule>k → ∅ / _#</rule>
     <rule>ẽ(ː) õ(ː) o(ː) → ɛ̃(ː) ɔ̃(ː) u(ː)</rule>
-    <rule>n → ⁿd / _{V[-nas],r}</rule>
+    <rule>n → ⁿd / _{V[- nasal],r}</rule>
     <rule>n → ŋ / _{j,w}</rule>
     <rule>ɛ̃(ː) → ã(ː) / w_</rule>
   </section>
@@ -10305,8 +10305,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>t → ∅ / k_#</rule>
     <rule>{ths,tts} → tsh</rule>
     <rule>a(ː) æ(ː) → õ(ː) ẽ(ː) / n_</rule>
-    <rule>a(ː) → õ(ː) / V[+nas]H_</rule>
-    <rule>a(ː) → õ(ː) / V[+nas]({ʔ,s})w_</rule>
+    <rule>a(ː) → õ(ː) / V[+ nasal]H_</rule>
+    <rule>a(ː) → õ(ː) / V[+ nasal]({ʔ,s})w_</rule>
     <rule>ẽ(ː) õ(ː) → ɛ̃(ː) ɔ̃(ː)</rule>
     <rule>∅ → h / k_n</rule>
     <comment>“Allophonic changes:”</comment>
@@ -10321,7 +10321,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>j → ∅ / tʃ_</rule>
     <rule>t → ˀt</rule>
     <rule>”V → ”Vː / _n in “penultimate syllables only”</rule>
-    <rule>n → t / ! _{h,kʷ,V[+nas]}</rule>
+    <rule>n → t / ! _{h,kʷ,V[+ nasal]}</rule>
     <rule>”V → ”Vː / _{k(ʷ),(ˀ)t}{s,R,H} (“penultimate syllables only”)</rule>
     <rule>”V → ”Vː / _RR</rule>
     <rule>{ẽ(ː),õ(ː)} → ə̃(ː)</rule>
@@ -10378,7 +10378,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>tʲ → ʃ / in ”U</rule>
     <rule>tʲ → ʒ / else</rule>
     <rule>t → ∅ / _k, when medial</rule>
-    <rule>”V[+nas] → Vn (*)</rule>
+    <rule>”V[+ nasal] → Vn (*)</rule>
     <rule sporadic="true">∅ → ʔ / C_#</rule>
   </section>
   <section index="37.2.2" name="Proto-Siouan to Dakota">
@@ -10421,8 +10421,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>t → ∅ / _s</rule>
     <rule>ç → x</rule>
     <rule>w → m</rule>
-    <rule>Lʲ → n / _V[+nas]</rule>
-    <rule>L → r / _V[-nas]</rule>
+    <rule>Lʲ → n / _V[+ nasal]</rule>
+    <rule>L → r / _V[- nasal]</rule>
     <rule sporadic="true">ã → a / in ”U</rule>
     <comment>“Phonemic vowel length was gained somehow.”</comment>
     <rule>tʲ → s / _ʔV</rule>
@@ -10445,7 +10445,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>t → dʒ / _E[-stress]</rule>
     <rule>tʲ → ʃ / in ”U</rule>
     <rule>tʲ s → ʒ z / in U[-stress]</rule>
-    <rule>k → ɡ / V[+nas]_ ! _#</rule>
+    <rule>k → ɡ / V[+ nasal]_ ! _#</rule>
     <rule>k → ɡ / _ʔ</rule>
     <rule>kr → kV₀rV₀</rule>
     <rule>m → ∅ / _n ! _n#</rule>
@@ -10458,8 +10458,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>k → ɡ / ”V_</rule>
     <rule sporadic="true">s z → θ ð</rule>
     <rule>L → l</rule>
-    <rule>Lʲ → n / _V[+nas]</rule>
-    <rule>Lʲ → r / _V[-nas]</rule>
+    <rule>Lʲ → n / _V[+ nasal]</rule>
+    <rule>Lʲ → r / _V[- nasal]</rule>
     <rule>t → tʃ / _ʔ</rule>
     <rule>pr → bl</rule>
     <rule>sr → {θl,ʃl}</rule>
@@ -10480,8 +10480,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>t → {tʃ,dʒ}</rule>
     <comment>Wolff says that “Winnebago preserved the intermediate stages of *k reflexes”</comment>
     <rule>L → r</rule>
-    <rule>Lʲ → n / _V[+nas]</rule>
-    <rule>Lʲ → r / _V[-nas]</rule>
+    <rule>Lʲ → n / _V[+ nasal]</rule>
+    <rule>Lʲ → r / _V[- nasal]</rule>
     <rule>tʲ → x / _ʔ</rule>
     <rule>pr {sr,xr} sn km → pV₀rV₀ ʃV₀rV₀ sV₀nV₀ kV₀wV₀</rule>
     <rule>mt → r</rule>
@@ -10542,12 +10542,12 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   </section>
   <section index="37.2.6.1" name="Proto-Dhegiha to Kansa">
     <cite>Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme</cite>
-    <rule>V[+nas] → V[-nas]n</rule>
+    <rule>V[+ nasal] → V[- nasal]n</rule>
     <rule>p → {p,b,m,w} / _C</rule>
     <rule>w → b / #_</rule>
     <rule>r L(ʲ) → d j / #_ (*)</rule>
     <rule>L → bl / #_e (*)</rule>
-    <rule>V → V[+nas] / N_</rule>
+    <rule>V → V[+ nasal] / N_</rule>
     <rule>N → S / V_V</rule>
     <rule>ũ → aN / stressed</rule>
     <rule>t → ts / _ʔ</rule>
@@ -11000,7 +11000,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>{tʰ,tsʰ} → ʃ</rule>
     <rule>s → c</rule>
     <rule>tsʼ → tʼ</rule>
-    <rule>d → n / _V[+nas]</rule>
+    <rule>d → n / _V[+ nasal]</rule>
     <rule>k(ʷ)ʰ kʷ(ʼ) ɡ ɡʷ → h ɡ k kʷ</rule>
   </section>
   <section index="39.2" name="Proto-Tanoan to Kiowa">
@@ -11015,8 +11015,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>b → m</rule>
     <rule>s → ɬ</rule>
     <rule>ts tsʰ tsʼ dz → tʃ s tʃʼ j</rule>
-    <rule>d → l / _V[-nas]</rule>
-    <rule>d → n / _V[+nas]</rule>
+    <rule>d → l / _V[- nasal]</rule>
+    <rule>d → n / _V[+ nasal]</rule>
     <rule>kʰ kʰʷ ɡ ɡʷ → x xʷ k w</rule>
   </section>
   <section index="39.4" name="Proto-Tanoan to Tewa">
@@ -11139,7 +11139,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   <section index="41.5.2.1" name="Proto-Kainantu to Auyana">
     <cite>Pogostick Man, from Haiman, John (1987), “Proto-Gorokan Syllable Structure”. Language and Linguistics in Melanesia 16(1 – 2):1 – 22 (Pogostick Man is not sure if it’s supposed to be 1985; the Web site says “1987, for 1985”); Ford, Kevin (1993), “A Preliminary Comparison of Kamano-Yagaria”. Language and Linguistics in Melanesia 24(2):191 – 202; and Lewis, M. Paul, Gary F. Simons, and Charles D. Fennig (eds.) (2014). “Gorokan”. Ethnologue: Languages of the World, Seventeenth edition. Dallas, Texas: SIL International. Online version: &lt;http://www.ethnologue.com/17/subgroups/gorokan/&gt;</cite>
     <rule>N → [+ same POA] / _C</rule>
-    <rule>N{w,d,r} nj → ŋk nt (not sure if *nj is supposed to be *ɲɟ)</rule>
+    <rule>N{w,d,r} nj → ŋk nt</rule>
     <rule>N → ∅ / _#</rule>
     <rule>r → ʔ / _{N,#}</rule>
     <rule>r → ∅ / _S[- voice]</rule>
