@@ -1,0 +1,806 @@
+index,name,rule_count
+6,Afro-Asiatic,0
+6.1,Proto-Afro-Asiatic to Proto-Omotic,11
+6.1.1,Proto-Omotic to North Omotic,18
+6.1.1.1,North Omotic to Bench,9
+6.1.1.2,North Omotic to Dizin,13
+6.1.1.3,North Omotic to Kafa,18
+6.1.1.4,North Omotic to Maale,13
+6.1.1.5,North Omotic to Shekkacho,22
+6.1.1.6,North Omotic to Wolaytta,11
+6.1.1.7,North Omotic to Yemsa,18
+6.1.1.8,North Omotic to Zayse-Zergulla,15
+6.1.2,South Omotic,0
+6.1.2.1,South Omotic to Aari,7
+6.1.2.2,South Omotic to Dime,7
+6.2,Proto-Afro-Asiatic to Proto-Erythrean,1
+6.2.1,Proto-Erythrean to Proto-Cushitic,3
+6.2.1.1,Agaw,0
+6.2.1.1.1,Proto-Agaw to Awngi,5
+6.2.1.1.2,Proto-Agaw to Blin,4
+6.2.1.1.3,Proto-Agaw to Kemantney,8
+6.2.1.1.4,Proto-Agaw to Xamtanga,8
+6.2.2,Proto-Erythrean to Proto-North Erythrean,5
+6.2.2.1,Proto-North Erythrean to Proto-Chadic,4
+6.2.2.1.1,Proto-North Erythrean to Proto-Boreafrasian,6
+6.2.2.1.2,Proto-Boreafrasian to Egypto-Berber,34
+6.2.2.1.3,Ancient Egyptian to Coptic,8
+6.2.2.1.4,Proto-Boreafrasian to Proto-Semitic,8
+6.2.2.1.5,Proto-Semitic to Classical Arabic,9
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,38
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,20
+6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,6
+6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,6
+6.2.2.1.10,Classical Arabic to Hassāniyya Arabic,10
+6.2.2.1.11,Classical Arabic to Iraqi Arabic,4
+6.2.2.1.12,Classical Arabic to Eastern Libyan Arabic,3
+6.2.2.1.13,Classical Arabic to Western Libyan Arabic,4
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,18
+6.2.2.1.15,Classical Arabic to Sa‘idi Arabic,1
+6.2.2.1.16,Classical Arabic to Sudanese Arabic,2
+6.2.2.1.17,Classical Arabic to Tunisian Arabic,7
+6.2.2.1.18,Proto-Semitic to Biblical Hebrew,33
+6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,13
+7,Algonquian,0
+7.1,Proto-Algonquian to Kennebec River Abenaki,24
+7.2,Proto-Algonquian to St. Francis Abenaki,24
+7.3,Proto-Algonquian to Proto-Arapaho-Atsina,18
+7.3.1,Proto-Arapaho-Atsina to Arapaho,16
+7.3.2,Proto-Arapaho-Atsina to Gros Ventre,10
+7.4,Proto-Algonquian to Blackfoot,57
+7.5,Proto-Algonquian to Cheyenne,12
+7.6,Proto-Algonquian to Northern East Cree,18
+7.7,Proto-Algonquian to Southern East Cree,19
+7.8,Proto-Algonquian to Plains Cree,17
+7.9,Proto-Algonquian to Swampy Cree,18
+7.10,Proto-Algonquian to Woods Cree,16
+7.11,Proto-Algonquian to Munsee Delaware,33
+7.12,Proto-Algonquian to Menominee,28
+7.13,Proto-Algonquian to Miami-Illinois,19
+7.14,Proto-Algonquian to Mi’kmaq,17
+7.15,Proto-Algonquian to Ojibwe,16
+7.16,Proto-Algonquian to Piscataway,4
+7.17,Proto-Algonquian to Shawnee,27
+8,Altaic,0
+8.1,Proto-Altaic to Proto-Japonic,29
+8.1.1,Early Middle Japanese to Modern Japanese,11
+8.2,Proto-Altaic to Proto-Korean,14
+8.3,Proto-Altaic to Proto-Mongolic,45
+8.4,Proto-Altaic to Proto-Tungusic,22
+8.5,Proto-Altaic to Proto-Turkic,28
+8.5.1,Proto-Turkic to Proto-Kypchak,24
+8.5.1.1,Proto-Kypchak to Kazakh,4
+8.5.1.2,Proto-Kypchak to Kyrgyz,11
+8.5.2,Proto-Turkic to Sakha,9
+9,Austroasiatic,0
+9.1,Vietic,0
+9.1.1,Proto-Vietic to Muong Khen,13
+9.1.2,Proto-Vietic to Middle Vietnamese,16
+9.1.2.1,Middle Vietnamese to Hanoi Vietnamese,10
+9.1.2.2,Middle Vietnamese to Saigon Vietnamese,18
+10,Austronesian,0
+10.1,Proto-Austronesian to Proto-Malayo-Polynesian,2
+10.1.1,Proto-Malayo-Polynesian to Proto-Bali-Sasak-Sumbawan,11
+10.1.1.1,Proto-Bali-Sasak-Sumbawan to Balinese,5
+10.1.1.2,Proto-Bali-Sasak-Sumbawan to Sasak,7
+10.1.1.3,Proto-Bali-Sasak-Sumbawan to Sumbawan,10
+10.1.1.4,Polynesian,0
+10.1.1.5,Proto-Polynesian to Luangiua,6
+10.1.2,Proto-Austronesian to Proto-Philippine,7
+10.1.2.1,Proto-Philippine to Bicol,8
+10.1.2.2,Proto-Philippine to Cebuano,9
+10.1.2.3,Proto-Philippine to Hiligaynon,8
+10.1.2.4,Proto-Philippine to Ibanag,11
+10.1.2.5,Proto-Philippine to Ifugao,7
+10.1.2.6,Proto-Philippine to Ilocano,7
+10.1.2.7,Proto-Philippine to Proto-Kalamian,8
+10.1.2.7.1,Proto-Kalamian to Agutaynen,9
+10.1.2.7.2,Proto-Kalamian to Karamiananen,14
+10.1.2.7.3,Proto-Kalamian to Kalamian Tagbanwa,7
+10.1.2.8,Proto-Philippine to Kankanay,6
+10.1.2.9,Proto-Philippine to Tagalog,8
+10.1.2.10,Proto-Philippine to Waray,12
+10.2,Proto-Austronesian to Proto-Batak,6
+10.2.1,Proto-Malayo-Polynesian to Proto-Chamic,10
+10.2.2,Proto-Malayo-Polynesian to Chamorro,25
+10.2.3,Proto-Malayo-Polynesian to Proto-Malayic,14
+10.2.3.1,Proto-Malayic to (Standard) Malay,4
+10.2.4,Proto-Malayo-Polynesian to Proto-Malayo-Javanic,4
+10.2.4.1,Proto-Malayo-Javanic to Javanese,11
+10.2.4.2,Proto-Malayo-Polynesian to Madurese,13
+10.2.4.3,Proto-Malayo-Javanic to Sundanese,6
+10.2.5,Proto-Malayo-Polynesian to Palauan,32
+10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,16
+10.2.6.1,Proto-North Sarawak to Kiput,39
+10.2.6.2,Proto-North Sarawak to Proto-Kenyah,11
+10.2.6.2.1,Proto-Kenyah to Òma Lóngh,30
+10.2.6.3,Proto-Malayic to Minangkabau,11
+10.3,Proto-Austronesian to Proto-Oceanic,6
+10.3.1,Proto-Oceanic to Hawai’ian,4
+10.3.2,Proto-Oceanic to Hiw,22
+10.3.3,Proto-Oceanic to Lemerig,21
+10.3.4,Proto-Oceanic to Mwotlap,21
+10.3.5,Proto-Oceanic to Proto-New Caledonia,7
+10.3.5.1,Proto-New Caledonia to Caaàc,12
+10.3.5.2,Proto-New Caledonia to Jawé,6
+10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,11
+10.3.5.4,Proto-New Caledonia to Proto-Northern,4
+10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,20
+10.3.5.5,Proto-New Caledonia to Nyelâyu,21
+10.3.5.6,Proto-New Caledonia to Pwaamei,9
+10.3.5.7,Proto-New Caledonia to Pwapwâ,8
+10.3.5.8,Proto-New Caledonia to Proto-Yunaga,15
+10.3.5.8.1,Proto-Yunaga to Yunaga 1,4
+10.3.5.8.2,Proto-Yunaga to Yunaga 2,2
+10.3.6,Proto-Oceanic to Proto-Reefs/Santa Cruz,5
+10.3.6.1,Proto-Reefs/Santa Cruz to Äiwoo,4
+10.3.6.2,Proto-Reefs/Santa Cruz to Nagu,5
+10.3.6.3,Proto-Reefs/Santa Cruz to Natügu,7
+10.3.7,Proto-Oceanic to Shark Bay,19
+10.3.8,Proto-Oceanic to Tolomako,11
+10.3.9,Proto-Oceanic to Proto-Utupua,3
+10.3.9.1,Proto-Utupua to Asuboa,10
+10.3.9.2,Proto-Utupua to Nebao,9
+10.3.9.3,Proto-Utupua to Tanibili,10
+10.3.10,Proto-Oceanic to Proto-Vanikoro,5
+10.3.10.1,Proto-Vanikoro to Buma,7
+10.3.10.2,Proto-Vanikoro to Tanema,7
+10.3.10.3,Proto-Vanikoro to Vano,8
+10.3.11,Proto-Oceanic to Proto-Southern Vanuatu,15
+10.3.11.1,Proto-Southern Vanuatu to Anejom,27
+10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,9
+10.3.11.2.1,Proto-Erromango to Sye,17
+10.3.11.2.2,Proto-Erromango to Ura,12
+10.3.11.3,Proto-Southern Vanuatu to Proto-Tanna,9
+10.3.11.3.1,Proto-Tanna to Kwamera,8
+10.3.11.3.2,Proto-Tanna to Lenakel,12
+10.3.11.3.3,Proto-Tanna to North Tanna,15
+10.3.11.3.4,Proto-Tanna to Southwest Tanna,10
+10.3.11.3.5,Proto-Tanna to Whitesands,11
+10.3.12,Proto-Oceanic to Vera’a,24
+10.4,Micronesian,0
+10.4.1,Proto-Micronesian to Marshallese,17
+10.5,Proto-Austronesian to Proto-Ongan,13
+10.5.1,Proto-Ongan to Jarawa,8
+10.5.2,Proto-Ongan to Onge,10
+10.6,Proto-Austronesian to Proto-Paiwan,5
+10.6.1,Proto-Paiwan to Northern Paiwan,1
+10.6.2,Proto-Paiwan to Central Paiwan,1
+10.6.3,Proto-Paiwan to Southern Paiwan,1
+10.7,Proto-Austronesian to Proto-Rukai,3
+10.7.1,Proto-Rukai to Budai Rukai,1
+10.8,Proto-Austronesian to Proto-Tsouic,1
+11,Northeast Caucasian,0
+11.1,Proto-Northeast Caucasian to Proto-Avar-Andic,1
+11.1.1,Proto-Avar-Andic to Akhvakh,6
+11.1.2,Proto-Avar-Andic to Andi,5
+11.1.3,Proto-Avar-Andic to Avar,7
+11.2,Proto-Northeast Caucasian to Dargi,5
+11.3,Proto-Northeast Caucasian to Khinalug,9
+11.4,Proto-Northeast Caucasian to Lak,8
+11.5,Proto-Northeast Caucasian to Proto-Lezgic,1
+11.5.1,Proto-Lezgic to Agul,7
+11.5.2,Proto-Lezgic to Archi,9
+11.5.3,Proto-Lezgic to Lezghi,7
+11.5.4,Proto-Lezgic to Rutul,8
+11.5.5,Proto-Lezgic to Tabassaran,7
+11.5.6,Proto-Lezgic to Udi,7
+11.6,Proto-Northeast Caucasian to Nakh,9
+11.7,Proto-Northeast Caucasian to Proto-Tsezic,6
+11.7.1,Proto-Tsezic to Bezhta,0
+11.7.2,Proto-Tsezic to Tsez,6
+12,Northwest Caucasian,0
+12.1,Proto-Northwest Caucasian to Proto-Abazgi,44
+12.1.1,Proto-Abazgi to Ashkharywa Abaza,5
+12.1.2,Proto-Abazgi to Tapanta Abaza,5
+12.1.3,Proto-Abazgi to Ahchypsy Abkhaz,5
+12.1.4,Proto-Abazgi to Bzyp Abkhaz,4
+12.1.5,Proto-Abazgi to Abzhywa Proper,5
+12.1.6,Proto-Abazgi to Tsabal Abzhywa,5
+12.1.7,Proto-Abazgi to Khaltsys Sadz,5
+12.1.8,Proto-Abazgi to Tswydzhy Sadz,5
+12.2,Proto-Northwest Caucasian to Proto-Circassian,41
+12.2.1,Proto-Circassian to Adyghe,11
+12.2.1.1,Adyghe to Abadzekh Adyghe,8
+12.2.1.2,Adyghe to Bzhedug Adyghe,7
+12.2.1.3,Adyghe to Shapsug Adyghe,6
+12.2.1.4,Adyghe to Temirgoy Adyghe,10
+12.2.2,Proto-Circassian to Kabardian,9
+12.3,Proto-Northwest Caucasian to Ubykh,40
+13,Chumashan,0
+13.1,Proto-Chumash to Barbareño,2
+13.2,Proto-Chumash to Cruzeño,1
+13.3,Proto-Chumash to Inseño,2
+13.4,Proto-Chumash to Obispeño,5
+13.5,Proto-Chumash to Purisimeño,2
+13.6,Proto-Chumash to Ventureño,3
+14,Elamo-Dravidian,0
+14.1,Proto-Elamo-Dravidian to Proto-Dravidian,19
+14.2,Proto-Elamo-Dravidian to Achaemanid Elamite,12
+14.3,Tamil,0
+14.3.1,Standard Tamil to Colloquial Tamil,32
+15,Eskimo-Aleut,0
+15.1,Proto-Eskimo-Aleut to Proto-Aleut,18
+15.2,Proto-Eskimo-Aleut to Proto-Eskimo,3
+15.2.1,Proto-Eskimo to Barrow Iñupiaq,18
+15.2.2,Proto-Eskimo to Greenlandic Iñupiaq,19
+15.2.3,Proto-Eskimo to Mackenzie Iñupiaq,13
+15.2.4,Proto-Eskimo to Wales Iñupiaq,22
+15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,23
+15.2.6,Proto-Eskimo to Nunivak Yup’ik,25
+15.2.7,Proto-Eskimo to Siberian Yup’ik,24
+15.2.8,Proto-Eskimo to Unaaliq Yup’ik,25
+16,Extended West Papuan,0
+16.1,Tabla-Sentani,0
+16.1.1,Proto-Tabla-Sentani to Nafri,13
+16.1.2,Proto-Tabla-Sentani to Central Sentani,14
+16.1.3,Proto-Tabla-Sentani to Eastern Sentani,14
+16.1.4,Proto-Tabla-Sentani to Western Sentani,13
+16.1.5,Proto-Tabla-Sentani to Tabla,6
+17,Indo-European,0
+17.1,Albanian,0
+17.1.1,Proto-Indo-European to Gheg Albanian,33
+17.1.2,Proto-Indo-European to Tosk Albanian,33
+17.2,Proto-Indo-European to Common Anatolian,14
+17.2.1,Common Anatolian to Hittite,16
+17.2.2,Common Anatolian to Luwian,23
+17.2.3,Common Anatolian to Lycian,24
+17.2.4,Common Anatolian to Lydian,23
+17.2.5,Common Anatolian to Palaic,16
+17.3,Armenian,0
+17.3.1,Proto-Indo-European to Artsakh Armenian,32
+17.3.2,Proto-Indo-European to Erevan Armenian,32
+17.3.3,Proto-Indo-European to Istanbul Armenian,32
+17.3.4,Proto-Indo-European to Kharpert Armenian,32
+17.3.5,Proto-Indo-European to Sebastia Armenian,31
+17.3.6,Proto-Indo-European to Southeast Armenian,34
+17.3.7,Proto-Indo-European to Southwest Armenian,33
+17.4,Avestan,0
+17.4.1,Proto-Indo-European to Avestan,16
+17.5,Proto-Indo-European to Proto-Celtic,25
+17.5.1,Proto-Indo-European to Old Irish,60
+17.5.2,Proto-Celtic to Middle Welsh,38
+17.6,Proto-Indo-European to Dacian,10
+17.7,Proto-Indo-European to Common Germanic,13
+17.7.1,Common Germanic to Gothic,31
+17.7.2,Common Germanic to West Germanic,5
+17.7.2.1,West Germanic to Anglo-Frisian,14
+17.7.2.1.1,Anglo-Frisian to Old English,4
+17.7.2.1.2,Old English to Kentish Middle English,17
+17.7.2.1.3,Old English to Midlands Middle English,18
+17.7.2.1.4,Midlands Middle English to Early Modern English,12
+17.7.2.1.5,Early Modern English to American English,17
+17.7.2.1.6,Early Modern English to Australian English,30
+17.7.2.1.7,Early Modern English to British English,7
+17.7.2.1.8,Old English to Northern Middle English,20
+17.7.2.1.9,Early Northern Middle English to Scots,25
+17.7.2.1.10,Old English to Scots,52
+17.7.2.1.11,Scots to Falkirk Scots,10
+17.7.2.1.12,Old English to Southern Middle English,20
+17.7.2.1.13,Middle English to Yola,6
+17.7.2.1.14,Anglo-Frisian to Old Frisian,4
+17.7.2.1.15,North Frisian Lenition,1
+17.7.2.2,West Germanic to Old Low Franconian,14
+17.7.2.2.1,Old Low Franconian to Middle Dutch,12
+17.7.2.2.2,Middle Dutch to Modern Dutch,5
+17.7.2.2.3,Modern Dutch to Polder Dutch Vowel Shift,2
+17.7.2.2.4,Belgian and Netherlandish Dutch Monophthongization,1
+17.7.2.3,Middle High German to Standard German,27
+17.7.2.4,High German Cosonant Shift and Umlaut,13
+17.7.2.5,West Germanic to Old Low German,13
+17.7.3,Common Germanic to Proto-Norse,19
+17.7.3.1,Proto-Norse to Old Norse,159
+17.7.3.1.1,Old Norse to Early Icelandic,52
+17.7.3.1.2,Old Norse to Orkney Norn,67
+17.7.3.1.3,Old Norse to Shetland Norn,57
+17.7.4,Common Germanic to Vandalic,9
+17.8,Greek,0
+17.8.1,Proto-Indo-European to Aeolian Greek,14
+17.8.2,Proto-Indo-European to Attic Greek,43
+17.8.3,Proto-Indo-European to Boeotian Greek,16
+17.8.4,Proto-Indo-European to Coan Greek,15
+17.8.5,Proto-Indo-European to Cretan Greek,14
+17.8.6,Proto-Indo-European to Doric Greek,17
+17.8.7,Proto-Indo-European to Elian Greek,15
+17.8.8,Proto-Indo-European to Ionic Greek,31
+17.8.9,Proto-Indo-European to Laconian Greek,15
+17.8.10,Proto-Indo-European to Mycenaean Greek,12
+17.9,Proto-Indo-European to Hittite,19
+17.10,Proto-Indo-European to Proto-Indo-Iranian,20
+17.10.1,Proto-Indo-Iranian to Proto-Indo-Aryan,25
+17.10.1.1,Proto-Indo-Aryan to Central Middle Indo-Aryan,17
+17.10.1.2,Proto-Indo-Aryan to Eastern Middle Indo-Aryan,19
+17.10.1.3,Proto-Indo-Aryan to Northwestern Middle Indo-Aryan,18
+17.10.1.4,Proto-Indo-Aryan to Western Middle Indo-Aryan,17
+17.10.1.5,Proto-Indo-Aryan to Vedic Sanskrit,10
+17.10.1.5.1,Vedic Sanskrit to Classical Sanskrit,4
+17.11,Proto-Indo-European to Proto-Slavic,28
+17.11.1,Proto-Slavic to Polish,140
+17.11.2,Proto-Slavic to Old Russian,12
+17.12,Proto-Indo-European to Proto-Italic,6
+17.12.1,Proto-Italic to Proto-Latino-Falsican,12
+17.12.1.1,Proto-Indo-European to Latin,101
+17.12.1.1.1,Classical Latin vs. Vulgar Latin,16
+17.12.1.1.2,Latin to Catalan,105
+17.12.1.1.3,Latin to French,125
+17.12.1.1.4,Vulgar Latin to Italian,23
+17.12.1.1.5,Latin to Portuguese,111
+17.12.1.1.6,Vulgar Latin to Old Provençal,219
+17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,7
+17.12.1.1.8,Latin to Romanian,78
+17.12.1.1.9,Latin to Sardinian,35
+17.12.1.1.10,Vulgar Latin to Spanish,87
+17.12.2,Proto-Italic to Proto-Sibellian,5
+17.12.2.1,Proto-Sibellian to Oscan,1
+17.12.2.2,Proto-Sibellian to Umbrian,1
+17.13,Proto-Indo-European to Proto-Tocharian,39
+17.13.1,Proto-Tocharian to Tocharian A,13
+17.13.2,Proto-Tocharian to Tocharian B,9
+18,Je-Tupı́-Carib,0
+18.1,Cariban,0
+18.1.1,Pre-Bakairi to Eastern Bakairi,3
+18.1.2,Pre-Bakairi to Western Bakairi,8
+18.2,Ofaié-Jê,0
+18.2.1,Proto-Ofaié-Jê to Proto-Jê,5
+18.2.2,Proto-Ofaié-Jê to Ofaié-Xavante,8
+18.3,Tuparí,0
+18.3.1,Proto-Tuparí to Makuráp,19
+18.3.2,Proto-Tuparí to Mekens,18
+18.3.3,Proto-Tuparí to Tuparí,14
+18.3.4,Proto-Tuparí to Wayoró,15
+18.4,Tupí-Guaraní,0
+18.4.1,Proto-Tupí-Guaraní to Akwára,12
+18.4.2,Proto-Tupí-Guaraní to Cocama,17
+18.4.3,Proto-Tupí-Guaraní to Guajajara,9
+18.4.4,Proto-Tupí-Guaraní to Guaraní,8
+18.4.5,Proto-Tupí-Guaraní to Guarayo,7
+18.4.6,Proto-Tupí-Guaraní to Kamayurá,7
+18.4.7,Proto-Tupí-Guaraní to Parintintín,8
+18.4.8,Proto-Tupí-Guaraní to Sirionó,17
+18.4.9,Proto-Tupí-Guaraní to Classical Tupi,3
+18.4.9.1,Tupian,0
+18.4.9.1.1,Proto-Monde to Gavião,2
+18.4.9.1.2,Proto-Monde to Proto-Cinta Larga-Suruí-Zoró,4
+18.4.9.1.3,Proto-Cinta Larga-Suruí-Zoró to Cinta Larga,3
+18.4.9.1.4,Proto-Cinta Larga-Suruí-Zoró to Suruí,3
+18.4.9.1.5,Proto-Cinta Larga-Suruí-Zoró to Zoró,4
+18.4.10,Proto-Tupí-Guaraní to Urubu,13
+19,Kartvelian,0
+19.1,Proto-Kartvelian to Georgian,6
+19.2,Proto-Kartvellian to Svan,6
+19.3,Proto-Kartvelian to Zan,7
+20,Khoisan,0
+20.1,Khoe,0
+20.1.1,Proto-Khoe to Ç̬Ana,7
+20.1.2,Proto-Khoe to ÇAni,6
+20.1.3,Proto-Khoe to Buga,6
+20.1.4,Proto-Khoe to Kxoe,6
+20.1.5,Proto-Khoe to Nama,7
+20.1.6,Proto-Khoe to Naro,3
+20.1.7,Proto-Khoe to !Ora,5
+20.1.8,Proto-Khoe to Teti,7
+20.1.9,Proto-Khoe to TsÊixa,7
+20.1.10,Proto-Khoe to Ç̬Ui,5
+20.2,Kx’a,0
+20.2.1,Proto-Kx’a to ÇHoan,10
+20.2.2,Proto-Kx’a to Northwestern !Xun,13
+20.2.3,Proto-Kx’a to Southeastern !Xun,14
+21,Lakes Plain,0
+21.1,Proto-Lakes Plain to Proto-Far West,6
+21.1.1,Proto-Far West to Awera,6
+21.1.2,Proto-Far West to Saponi,5
+21.1.3,Proto-Far West to Rasawa,4
+21.2,Proto-Lakes Plain to Proto-Tariku,1
+21.2.1,Proto-Tariku to Proto-Central Tariku,8
+21.2.1.1,Proto-Central Tariku to Edopi,8
+21.2.1.2,Proto-Central Tariku to Iau,6
+21.2.2,Proto-Tariku to Proto-East Tariku,4
+21.2.2.1,Proto-East Tariku to Biritai,7
+21.2.2.2,Proto-East Tariku to Doutai,6
+21.2.2.3,Proto-East Tariku to Eritai,6
+21.2.2.4,Proto-East Tariku to Kai,5
+21.2.2.5,Proto-East Tariku to Obokuitai,5
+21.2.2.6,Proto-East Tariku to Sikaritai,6
+21.2.2.7,Proto-East Tariku to Waritai,8
+21.2.3,Proto-Tariku to Proto-West Tariku,4
+21.2.3.1,Proto-West Tariku to Deirate,5
+21.2.3.2,Proto-West Tariku to Faia,4
+21.2.3.3,Proto-West Tariku to Fayu,5
+21.2.3.4,Proto-West Tariku to Kirikiri,5
+21.2.3.5,Proto-West Tariku to Sehudate,5
+21.2.3.6,Proto-West Tariku to Tause,5
+21.2.3.7,Proto-West Tariku to Weirate,5
+22,Macro-Arawakan,0
+22.1,Proto-Arawá to Arawá,6
+22.2,Proto-Arawá to Banawá-Jamamadi,7
+22.3,Proto-Arawá to Hypothetical Arawán Substrate,5
+22.4,Proto-Arawá to Jarawara,8
+22.5,Proto-Arawá to Kulína-Dení,6
+22.6,Proto-Arawá to Sorowahá,8
+22.7,Proto-Arawá to Paumarí,5
+23,Macro-Chibchan,0
+23.1,Lenmichian,0
+23.1.1,Proto-Lenmichian to Proto-Chibchan,2
+23.1.1.1,Chibchan,0
+23.1.1.1.1,Proto-Chibchan to Arhuaco,11
+23.1.1.1.2,Proto-Chibchan to Chibcha,19
+23.1.1.1.3,Proto-Chibchan to Kogi,10
+23.1.1.1.4,Proto-Chibchan to Marocacero,9
+23.1.1.1.5,Proto-Chibchan to Motilón,18
+23.1.1.1.6,Proto-Chibchan to Tunebo,15
+23.1.2,Proto-Lenmichian to Proto-Lencan,5
+23.1.3,Proto-Lenmichian to Proto-Misumalpan,4
+24,Macro-Pama-Nyungan,0
+24.1,Paman,0
+24.1.1,Proto-Paman to AritinÅitiÉ£,6
+24.1.2,Proto-Paman to AwÅtim,8
+24.1.3,Proto-Paman to LinÅitiÉ£,4
+24.1.4,Proto-Paman to Mbiywom,6
+24.1.5,Proto-Paman to Mpalican,3
+24.1.6,Proto-Paman to UraÃ°i,2
+24.1.7,Proto-Paman to Yinwum,8
+25,Macro-Panoan,0
+25.1,Tacanan,0
+25.1.1,Proto-Tacanan to Cavineña,4
+25.1.2,Proto-Tacanan to Chama,8
+25.1.3,Proto-Tacanan to Reyesano,8
+25.1.4,Proto-Tacanan to Tacana,11
+26,Mande,0
+26.1,Proto-Mande to Bobo,7
+26.2,Proto-Mande to Busa,5
+26.3,Proto-Mande to Dan,4
+26.4,Proto-Mande to Guro,5
+26.5,Proto-Mande to Kono-Vai,6
+26.6,Proto-Mande to Southwest Mande,6
+26.7,Proto-Mande to Mandekan,7
+26.8,Proto-Mande to Mano,5
+26.9,Proto-Mande to Mwa,5
+26.10,Proto-Mande to San,4
+26.11,Proto-Mande to Sembla,8
+26.12,Proto-Mande to Soninka,5
+26.13,Proto-Mande to Susu,7
+27,Mayan,0
+27.1,Proto-Mayan to Ch’olan,6
+27.2,Proto-Mayan to Chujean,4
+27.3,Proto-Mayan to Huastecan,5
+27.4,Proto-Mayan to Ixilean,5
+27.5,Proto-Mayan to Kaqchikel-Tz’utujil,6
+27.6,Proto-Mayan to Core K’iche’,3
+27.7,Proto-Mayan to Mamean,8
+27.8,Proto-Mayan to Q’anjob’alan,4
+27.9,Proto-Mayan to Tzeltalan,3
+27.10,Proto-Mayan to Yucatecan,5
+28,Muskogean,3
+28.1,Proto-Muskogean to Proto-Eastern Muskogean,3
+28.1.1,Proto-Eastern Muskogean to Alabama,4
+28.1.2,Proto-Eastern Muskogean to Creek,13
+28.1.3,Proto-Eastern Muskogean to Hitchiti,4
+28.1.4,Proto-Eastern Muskogean to Korasati,6
+28.1.5,Proto-Eastern Muskogean to Mikasuri,4
+28.1.6,Proto-Eastern Muskogean to Seminole,2
+28.2,Proto-Muskogean to Proto-Western Muskogean,11
+28.2.1,Proto-Western Muskogean to Chickasaw,3
+28.2.2,Proto-Western Muskogean to Choctaw,5
+29,Na-Dene,0
+29.1,Proto-Na-Dene to Proto-Athabaskan-Eyak,2
+29.1.1,Proto-Athabaskan-Eyak to Proto-Athabaskan,7
+29.1.1.1,Athabaskan,0
+29.1.1.1.1,Proto-Athabaskan to Ahtna,5
+29.1.1.1.2,Proto-Athabaskan to Babine,3
+29.1.1.1.3,Proto-Athabaskan to Beaver,7
+29.1.1.1.4,Proto-Athabaskan to Chilcotin,4
+29.1.1.1.5,Proto-Athabaskan to Chipewyan,5
+29.1.1.1.6,Proto-Athabaskan to Dakelh,3
+29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,9
+29.1.1.1.8,Proto-Athabaskan to Dena’ina,4
+29.1.1.1.9,Proto-Athabaskan to Dogrib,4
+29.1.1.1.10,Proto-Athabaskan to Easter Gwich’in,9
+29.1.1.1.11,Proto-Athabaskan to Han,5
+29.1.1.1.12,Proto-Athabaskan to Holikachuk,8
+29.1.1.1.13,Proto-Athabaskan to Hupa,6
+29.1.1.1.14,Proto-Athabaskan to Lower Koyukon,6
+29.1.1.1.15,Proto-Athabaskan to Upper Koyukon,7
+29.1.1.1.16,Proto-Athabaskan to Upper Kuskokwim Kolchan,3
+29.1.1.1.17,Proto-Athabaskan to Sarcee,4
+29.1.1.1.18,Proto-Athabaskan to Sekani,5
+29.1.1.1.19,Proto-Athabaskan to Proto-Southern Athabaskan,5
+29.1.1.1.20,Proto-Southern Athabaskan to Proto-Eastern Southern Athabaskan,2
+29.1.1.1.21,Proto-Eastern Southern Athabaskan to Kiowa Apache,8
+29.1.1.1.22,Proto-Eastern Southern Athabaskan to Jicarilla,8
+29.1.1.1.23,Proto-Eastern Southern Athabaskan to Lipan,8
+29.1.1.1.24,Proto-Southern Athabaskan to Proto-Western Southern Athabaskan,1
+29.1.1.1.25,Proto-Western Southern Athabaskan to Chiricahua,7
+29.1.1.1.26,Proto-Western Southern Athabaskan to Mescalero,8
+29.1.1.1.27,Proto-Western Southern Athabaskan to Navajo,7
+29.1.1.1.28,Proto-Western Southern Athabaskan to San Carlos,6
+29.1.1.1.29,Proto-Athabaskan to Bearlake Slavey-Hare,4
+29.1.1.1.30,Proto-Athabaskan to Hare Slavey-Hare,6
+29.1.1.1.31,Proto-Athabaskan to Mountain Slavey-Hare,4
+29.1.1.1.32,Proto-Athabaskan to Slavey Slavey-Hare,3
+29.1.1.1.33,Proto-Athabaskan to Tahltan-Kaska-Tagish,3
+29.1.1.1.34,Tahltan-Kaska-Tagish to Kaska,3
+29.1.1.1.35,Tahltan-Kaska-Tagish to Tagish,1
+29.1.1.1.36,Tahltan-Kaska-Tagish to Tahltan,1
+29.1.1.1.37,Proto-Athabaskan to Tanacross,10
+29.1.1.1.38,Proto-Athabaskan to Lower Tanana,5
+29.1.1.1.39,Proto-Athabaskan to Upper Tanana,11
+29.1.1.1.40,Proto-Athabaskan to Tsetsaut,4
+29.1.1.1.41,Proto-Athabaskan to Northern Tutchone,5
+29.1.1.1.42,Proto-Athabaskan to Southern Tutchone,7
+29.1.2,Proto-Athabaskan-Eyak to Eyak,6
+29.2,Proto-Na-Dene to Tlingit,13
+30,Niger-Congo,0
+30.1,Proto-Potou-Akanic-Bantu to Proto-Bantu,14
+30.1.1,Pre-Proto-Bantu to Proto-Bantu,3
+30.1.1.1,Proto-Bantu to Sebirwa,9
+30.1.1.2,Proto-Bantu to Tswana,8
+30.1.1.3,Sam,0
+30.1.1.3.1,Proto-Sam to Amu,2
+30.1.1.3.2,Proto-Sam to Bajuni,2
+30.1.1.3.3,Proto-Sam to Mwiini,3
+30.1.1.3.4,Proto-Sam to Siu-Pate,2
+30.1.1.3.5,Proto-Sam to Proto-Aweera,1
+30.1.1.3.6,Proto-Sam to Lower Pokomo,1
+30.1.2,Pre-Proto-Bantu to Proto-Manenguba,8
+30.2,Proto-Potou-Akanic-Bantu to Proto-Potou-Akanic,7
+30.2.1,Proto-Potou-Akanic to Proto-Akanic,8
+30.2.1.1,Proto-Akanic to Akan,14
+30.3,Volta-Congo,0
+30.3.1,Volta-Niger,0
+30.3.1.1,Gbe,0
+30.3.1.1.1,Proto-Gbe to Ajá,8
+30.3.1.1.2,Proto-Ajá to Hwe,1
+30.3.1.1.3,Proto-Gbe to Proto-Fon,5
+30.3.1.1.4,Proto-Gbe to Proto-Gen,8
+30.3.1.1.5,Proto-Gbe to Proto-Phla-Pherá,2
+30.3.1.1.6,Proto-Phla-Pherá to Alada,3
+30.3.1.1.7,Proto-Gbe to Proto-Vhe,6
+30.3.1.1.8,Proto-Vhe to Adángbe,4
+30.3.1.1.9,Proto-Vhe to Avéno,4
+30.3.1.1.10,Proto-Vhe to Awalan,5
+30.3.1.1.11,Proto-Vhe to Kpándo,5
+30.3.1.1.12,Proto-Vhe to Pecı́,3
+30.3.1.1.13,Proto-Vhe to TÉ̣wun,3
+30.3.1.1.14,Proto-Vhe to Wacı́,3
+31,Nyulnyulan,0
+31.1,Proto-Nyulnyulan to Bardi,17
+32,Oto-Manguean,0
+32.1,Chatino,0
+32.1.1,Proto-Chatino to Papabuco Chatino,29
+32.1.2,Proto-Chatino to Tataltepec Chatino,17
+32.1.3,Proto-Chatino to Yaitepec Chatino,28
+32.1.4,Proto-Chatino to Zenzontepec Chatino,3
+32.2,Proto-Oto-Manguean to Tlapanec,12
+33,Penutian,0
+33.1,Utian,0
+33.1.1,Proto-Utian to Proto-Costanoan (Ohlone),14
+33.1.1.1,Proto-Costanoan to Chochenyo,6
+33.1.1.2,Proto-Utian to Proto-Miwok,3
+33.1.1.2.1,Proto-Miwok to Proto-Western Miwok,3
+33.1.1.3,Proto-Costanoan to Mutsun,7
+33.1.1.4,Proto-Costanoan to Rumsen,11
+33.2,Wintun,0
+33.2.1,Proto-Wintuan to Nomlaki,3
+33.2.2,Proto-Wintuan to Patwin,3
+33.2.3,Proto-Wintuan to South Patwin,5
+33.2.4,Proto-Wintuan to Wintu,2
+33.3,Yokutsan,0
+33.3.1,Proto-Yokuts to General Yokuts,3
+33.3.1.1,General Yokuts to Buena Vista Yokuts,3
+33.3.1.2,Buena Vista Yokuts to Hometwoli,1
+33.3.1.3,Buena Vista Yokuts to Tulamni,2
+33.3.2,Buena Vista Yokuts to Proto-Nim-Yokuts,2
+33.3.2.1,Proto-Nim-Yokuts to Proto-Tule-Kaweah,2
+33.3.2.1.1,Proto-Tule-Kaweah to Wikchamni,1
+33.3.2.1.2,Proto-Tule-Kaweah to Yawdanchi,0
+33.3.2.2,Proto-Nim-Yokuts to Northern Yokuts,2
+33.3.2.2.1,Northern Yokuts to Gashowu,1
+33.3.2.2.2,Northern Yokuts to Kings Valley Yokuts,1
+33.3.2.2.3,Northern Yokuts to Valley Yokuts,0
+33.3.2.2.4,Valley Yokuts to Chukchansi,2
+33.3.2.2.5,Valley Yokuts to Tachi,1
+33.3.2.2.6,Valley Yokuts to Yawelmani,2
+33.3.3,Proto-Yokuts to Palewyami,10
+34,Quechumaran,0
+34.1,Proto-Quechumaran to Ayachuco,10
+34.2,Proto-Quechumaran to Bolivia,16
+34.3,Proto-Quechumaran to Cuzco,22
+34.4,Proto-Quechumaran to Huarás,13
+34.5,Proto-Quechumaran to Putamayo,12
+34.6,Proto-Quechumaran to Quito,21
+34.7,Proto-Quechumaran to Riobamba,25
+34.8,Proto-Quechumaran to Santiago,18
+34.9,Proto-Quechumaran to Tena,20
+35,Salishan,0
+35.1,Central Salish,0
+35.1.1,Proto-Central Salish to Comox,16
+35.1.2,Proto-Central Salish to Chilliwack Halkomelem,20
+35.1.3,Proto-Central Salish to Cowichan Halkomelem,13
+35.1.4,Proto-Central Salish to Musqueam Halkomelem,15
+35.1.5,Proto-Central Salish to Klallam,19
+35.1.6,Proto-Central Salish to Lushootseed,16
+35.1.7,Proto-Central Salish to Nooksack,22
+35.1.8,Proto-Central Salish to Lummi Northern Straits,22
+35.1.9,Proto-Central Salish to Saanich Northern Straits,20
+35.1.10,Proto-Central Salish to Songish Northern Straits,20
+35.1.11,Proto-Central Salish to Sooke Northern Straits,19
+35.1.12,Proto-Central Salish to Pentlatch,11
+35.1.13,Proto-Central Salish to Sechelt,13
+35.1.14,Proto-Central Salish to Sqamish,12
+35.1.15,Proto-Central Salish to Twana,15
+35.2,Interior Salish,0
+35.2.1,Proto-Interior Salish to Columbian and Okanagan Nasal-to-Vowel Shifts,1
+35.2.2,Proto-Interior Salish to Thompson Nasal-to-Vowel Shifts,2
+35.3,Shuswap to Eastern Shuswap Nasal-to-Vowel Shifts,4
+35.4,Shuswap to Spokane-Kalispel Shuswap Nasal-to-Vowel Shifts,2
+36,Sino-Tibetan,0
+36.1,Proto-Sino-Tibetan to Middle Chinese,12
+36.1.1,Late Middle Chinese to Old Mandarin,41
+36.1.1.1,Old Mandarin to Modern Pekingese,14
+36.2,Sin Sukchu to Guānhuà,76
+36.3,Tibeto-Burman,0
+36.3.1,Qiangic,0
+36.3.1.1,Proto-Naish to Laze,19
+36.3.1.2,Proto-Naish to Mosuo (Na),17
+36.3.1.3,Proto-Naish to Naxi,20
+36.3.2,rGyalrongic,0
+36.3.2.1,Proto-rGyalrongic to bTshan La,26
+36.3.2.1.1,Proto-rGyalrongic to Chos Kia,37
+36.3.2.1.2,Proto-rGyalrongic to Hanniu,9
+36.3.2.2,Proto-rGyalrongic to Japhug,8
+36.3.2.2.1,Proto-rGyalrongic to Kham To,24
+36.3.2.2.2,Proto-rGyalrongic to lCog Rtse,15
+36.3.2.2.3,Proto-rGyalrongic to Pati,6
+36.3.2.2.4,Proto-rGyalrongic to Suo Mo,21
+36.3.2.2.5,Proto-rGyalrongic to Trung,9
+36.3.2.2.6,Proto-rGyalrongic to Tsa Ku Nao,26
+36.3.2.2.7,Proto-rGyalrongic to Tzu Ta,28
+36.3.2.2.8,Proto-rGyalrongic to Wassu,19
+36.3.3,Tibetic,0
+36.3.3.1,Old Tibetan to Amdo dialects,9
+37,Siouan-Iroquoian,0
+37.1,Proto-Siouan-Iroquoian to Proto-Iroquoian,20
+37.1.1,Proto-Iroquoian to Cherokee,25
+37.1.2,Proto-Iroquoian to Proto-Northern Iroquoian,11
+37.1.2.1,Proto-Northern Iroquoian to Cayuga,30
+37.1.2.1.1,Cayuga to Upper Cayuga,4
+37.1.2.1.2,Cayuga to Lower Cayuga,6
+37.1.2.2,Proto-Northern Iroquoian to Huron,25
+37.1.2.2.1,Huron to Wyandot,20
+37.1.2.3,Proto-Northern Iroquoian to Onondaga,33
+37.1.2.4,Proto-Northern Iroquoian to Proto-Mohawk-Oneida,13
+37.1.2.4.1,Proto-Mohawk-Oneida to Mohawk,22
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,31
+37.1.2.5,Proto-Northern Iroquoian to Seneca,45
+37.1.2.6,Proto-Northern Iroquoian to Tuscarora,29
+37.1.2.6.1,Tuscarora to Western Tuscarora,4
+37.1.2.6.2,Tuscarora to Eastern Tuscarora,2
+37.2,Proto-Siouan-Iroquoian to Proto-Siouan,7
+37.2.1,Proto-Siouan to Catawba,8
+37.2.2,Proto-Siouan to Dakota,16
+37.2.2.1,Dakota to Santee Dakota,3
+37.2.2.2,Dakota to Teton Dakota,1
+37.2.2.3,Dakota to Yankton Dakota,1
+37.2.3,Proto-Siouan to Mandan,17
+37.2.4,Proto-Siouan to Proto-Čiwere-Winnebago,11
+37.2.4.1,Proto-Čiwere-Winnebago to Čiwere,19
+37.2.4.2,Proto-Čiwere-Winnebago to Winnebago,13
+37.2.5,Proto-Siouan to Proto-Crow-Hidatsa,6
+37.2.5.1,Proto-Crow-Hidatsa to Crow,8
+37.2.5.2,Proto-Crow-Hidatsa to Hidatsa,11
+37.2.6,Proto-Siouan to Proto-Dhegiha,12
+37.2.6.1,Proto-Dhegiha to Kansa,12
+37.2.6.2,Proto-Dhegiha to Omaha-Ponca,12
+37.2.6.3,Proto-Dhegiha to Osage,18
+37.2.6.4,Proto-Dhegiha to Quapaw,9
+37.2.7,Proto-Siouan to Proto-Ohio-Valley,4
+37.2.7.1,Proto-Ohio-Valley to Biloxi,13
+37.2.7.2,Proto-Ohio-Valley to Ofo,15
+37.2.7.3,Proto-Ohio-Valley to Tutelo,8
+38,Tai-Kadai,0
+38.1,Kam-Tai,0
+38.1.1,Tai,0
+38.1.1.1,Proto-Tai to Ahom,15
+38.1.1.2,Proto-Tai to Saek,12
+38.1.1.3,Proto-Tai to Central Tai,21
+38.1.1.3.1,Central Tai to Lungchow,35
+38.1.1.3.2,Central Tai to Nung,4
+38.1.1.3.3,Central Tai to Tay,7
+38.1.1.3.4,Central Tai to Tho,4
+38.1.1.3.5,Central Tai to T’ien-Pao,8
+38.1.1.4,Proto-Tai to North Tai,26
+38.1.1.4.1,North Tai to Dioi,6
+38.1.1.4.2,North Tai to Po-Ai,42
+38.1.1.4.3,North Tai to Wu-Ming,5
+38.1.1.5,Proto-Tai to Southwest Tai,20
+38.1.1.5.1,Southwest Tai to Lao,7
+38.1.1.5.2,Southwest Tai to Lü,14
+38.1.1.5.3,Southwest Tai to Shan,10
+38.1.1.5.4,Southwest Tai to Siamese,24
+38.1.1.5.5,Southwest Tai to Black Tai,5
+38.1.1.5.6,Southwest Tai to White Tai,9
+39,Tanoan,0
+39.1,Proto-Tanoan to Jimez,8
+39.2,Proto-Tanoan to Kiowa,4
+39.3,Proto-Tanoan to Taos,6
+39.4,Proto-Tanoan to Tewa,4
+40,Totozoquean,0
+40.1,Proto-Totozoquean to Proto-Mixe-Zoquean,6
+40.2,Proto-Totozoquean to Proto-Totonacan,7
+41,Trans-New Guinea,0
+41.1,Proto-Trans New Guinea to ApalÉ¨,4
+41.2,Proto-Trans New Guinea to Asmat,5
+41.3,Proto-Trans New Guinea to Binandere,6
+41.4,Proto-Trans New Guinea to Kaeti,4
+41.5,Kainantu-Goroka,0
+41.5.1,Gorokan,0
+41.5.1.1,Proto-Gorokan to Asaro,3
+41.5.1.2,Proto-Gorokan to North Fore,4
+41.5.1.3,Proto-Gorokan to South Fore,5
+41.5.1.4,Proto-Gorokan to Gende,1
+41.5.1.5,Proto-Gorokan to Gimi,2
+41.5.1.6,Proto-Gorokan to Hua,1
+41.5.1.7,Proto-Gorokan to Kamano,1
+41.5.1.8,Proto-Gorokan to Move,4
+41.5.1.9,Proto-Gorokan to Siane,3
+41.5.1.10,Proto-Gorokan to Yagaria,1
+41.5.2,Kainantu,0
+41.5.2.1,Proto-Kainantu to Auyana,5
+41.5.2.2,Proto-Kainantu to Awa,5
+41.5.2.3,Proto-Kainantu to Gadsup,6
+41.5.2.4,Proto-Kainantu to Usarufa,5
+41.6,Proto-Trans New Guinea to Kalam,2
+41.7,Proto-Trans New Guinea to Kâte,5
+41.8,Proto-Trans New Guinea to Kiwai,4
+41.9,Proto-Trans New Guinea to Selepet,6
+41.10,Proto-Trans New Guinea to Telefol,3
+41.11,Proto-Trans New Guinea to Middle Wahgi,3
+42,Uralic,0
+42.1,Proto-Uralic to Pre-Finnic,10
+42.1.1,Pre-Finnic to Proto-Finnic,47
+42.1.1.1,Proto-Finnic to Proto-Finnish,24
+42.1.1.1.1,Proto-Finnish to Standard Finnish,36
+42.1.1.1.2,Standard Finnish to Modern Standard Finnish,4
+42.1.2,Proto-Finnic to Livonian,36
+43,Uto-Aztecan,0
+43.1,Proto-Uto-Aztecan to Comanche,5
+43.2,Proto-Uto-Aztecan to Hopi,7
+43.3,Proto-Uto-Aztecan to Luiseño,12
+43.4,Proto-Uto-Aztecan to Nahuatl,9
+43.5,Numic,0
+43.5.1,Mono-Kawaiisu,0
+43.5.1.1,Proto-Mono-Kawaiisu to Kawaiisu,10
+43.5.1.2,Proto-Mono-Kawaiisu to Mono,7
+43.6,Proto-Uto-Aztecan to Tohono O’odham,16
+44,Vasconic,0
+44.1,Proto-Vasconic to Aquitanian,10
+44.2,Proto-Basque to Basque,104
+45,Yuman-Cochimı́,0
+45.1,Pai,0
+45.1.1,Proto-Pai to Chapai,11
+45.1.2,Proto-Pai to Paipai,8
+45.1.3,Proto-Pai to Tipai,8
+46,Vowel Shifts,0
+46.1,7-to-5 Vowel Merger (Bantu),2
+46.2,California Vowel Shift (English),8
+46.3,Belgian and Netherlandish Dutch Monophthongization,1
+46.4,Polder Dutch Vowel Shift,2
+46.5,Old English-to-Scots Vowel Shifts,15
+46.6,Great Ngamo Tone Shift,0
+46.7,Great Vowel Shift (English),4
+46.8,Greek Vowel Shift,7
+46.9,Kikuyu Tone Shift,0
+46.10,Late Proto-Finnic to Savonian Vowel Shift,7
+46.11,Middle Chinese to Cantonese Vowel Shift (“The Inner-Outer Flip”),14
+46.12,Northern Cities Vowel Shift (English),4
+46.13,Old Norse to Faroese Vowel Shift,11
+46.14,Pre-Slavic Vowel Changes,11
+46.15,Proto-Japanese to Old Japanese Vowel Shift,4
+46.16,Development of Proto-Lolo-Burmese -i(C)# and -u(C)# to Lahu,2
+46.17,Proto-Maidun to Nisenian Vowel Shift,1
+46.18,South African Chain Shift (English),1
+46.19,Southern [United States] Shift (English),12
+47,Most-Wanted Sound Changes,0
+47.1,List 1: Simple Consonant Changes,16
+47.2,List 2: Conditional or complex consonant changes,7
+47.3,List 3: Vowels,2

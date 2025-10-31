@@ -1,0 +1,18 @@
+@ 43.6 - Proto-Uto-Aztecan to Tohono O’odham
+# citation: Radius Solis, from from Voegelin, Charles F., Florence M. Voegelin, & Kenneth L. Hale (1962), “Typological and Comparative Grammar of Uto-Aztecan: I (Phonology)”. International Journal of American Linguistics 28: Memoir 17
+	p → w / {#,Vs}_
+	t → tʃ / _V[+high]
+	ts → s / _i
+	kʷ → b
+	h → ʔ / #_
+	s ŋ → h n
+	n → ɲ / _V[+high]
+	l → ɲ / #_ “(in doubt; initial *l occurs in too few cognates to be sure. Apparently PUA initial *l was rare and is of questionable certainty whether it existed at all.)”
+	l → ɭ
+	ɭ → ɖ / _a
+	w → ɡ
+	j → dʒ / _V[+high]
+	j → d / _V[+low]
+	V → ∅ / “when in the first syllable of a bisyllabic morpheme, if after a morpheme boundary in the word (all other first-syllable vowels have non-zero reflexes)”
+	i → ∅ / ts_#
+	l → i / {p,m,k(ʷ),w}_# “in all dialects, and varies by dialect after other consonants”

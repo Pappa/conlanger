@@ -1,0 +1,115 @@
+@ 17.12.1.1.5 - Latin to Portuguese
+# citation: Mecislau
+	# NB: Due to problems when the board migrated to a different system, a lot of the special characters were replaced with 〈?〉. In many cases these have been replaced with 〈∅〉 because it was likely that this was what was meant, but conditional 〈?〉 has either been left alone or attempted to have been filled in from context. In some cases, conditional 〈?〉 may have been used to mark stress or syllable boundaries. Take such changes with a grain of salt and use at your own risk. Further, Mecislau gives some dual-output changes, which distinguish between vulgar and “semi-learned” outcomes.
+	h → ∅
+	rs → sː
+	n → ∅ / _s
+	V₀V₀ → V₀ː
+	V → ∅ / ”V%L(C)(C)V(C)# (irregular)
+	V → ∅ / _L(C)(C)V(C)# (irregular)
+	V → ∅ ”V%s_t(C)V(C)# (irregular)
+	u → w / _V (between first and stressed syllables)
+	w → u / _”V
+	w → ∅ / _V
+	au → a / _%”u
+	au → o
+	e → iː / ”_%ɪː#
+	iː {i,eː} e → i e ɛ / stressed
+	iː {i,e(ː)} → i e / _%”V
+	iː → ∅ / {k,s}_#
+	{i(ː),e(ː),ae} → e / _#
+	uː → u
+	uiː → ui / _#
+	{u,oː} o → o ɔ / stressed
+	{u,o(ː)} → o / _%”V
+	{u(ː),o(ː)} → o → u / _#
+	aː oe → a e
+	ae → ɛ / stressed
+	ɛ ɔ → e o / _(”u)#
+	{olt,okt} → ujt → ut
+	aɫ → o
+	ɫ → w / V_Ca
+	o → u / _(”V)
+	e → ∅ / el_#
+	V → a / _{n,r}(C)V(C)# (irregular)
+	V → V[+ nasal] / _N$C when stressed
+	ɔ̃ → õ
+	N → ∅ / V[+ nasal]_$C ! C = S
+	V → V[+ nasal] / _N$V
+	V → V[+ nasal] / #N_ (rare)
+	N → ∅ / V[+ nasal]_$V
+	{ã,ãe,õe} → ão / _#
+	V[+ nasal] → V[- nasal] / [- stress]
+	V[+ nasal] → V[- nasal] / in U#
+	V₀[+ nasal]V₀[- nasal] → V₀[+ nasal]
+	ı̃ → iɲ
+	e V → o ∅ / _? (irregular)
+	e → o / _m”V (irregular)
+	V → ∅ / _”V (irregular)
+	e → ∅ / {l,n,r,s,k}_#
+	e → ∅ / ”{i,e}_#
+	e → i / _(C)(C)V(C)#
+	{e,i} → ∅ / {l,m,r}_ when between #U and U[+stress]
+	{e,i} → ∅ / k_t when between #U and U[+stress]
+	o → ∅ / _{r,l} when between #U and U[+tonic]
+	# “[I]f there are multiple vowels between the initial and tonic syllables, the vowel directly before the tonic is dropped”
+	k → ts → s / #_{i,e}
+	k → ɡ / #_{a,r} (rare)
+	ɡ → ɡʲ → dʲ → dʒ → ʒ / #_{i,e}
+	j → dʒ → ʒ / #_
+	pl → {ʃ,pr} / #_
+	l → r / b_
+	fl → {ʃ,fr} / #_
+	{fl,skl} → ʃ
+	nɡi → ɲ
+	s → ʃ / V_C[-voiced]V
+	s → ʒ / V_C[+voiced]V
+	kl → kʎ → tʃ → ʃ / #_
+	{kl,ɡl} → ʎ
+	ɡ → ∅ / #_l
+	kʷ → kw / #_”a
+	kʷ ɡʷ → k ɡ / #_{i,e,o}
+	kʷ → ɡ / V_{i,e}
+	kʷ → k / VC_{a,i,e}
+	kʷ → ɡw / V_a
+	ɡʷ → ɡw / #_
+	ɡʷ → ɡw / C_a
+	b → v / V_{V,r}
+	d → ∅ / V_V
+	ɡ → {∅,ʒ} / V_{i,e} (ɡ → ʒ is learned)
+	ɡ → j / V_r
+	pl bl p t → br {br,l} b d / V_V (bl → l is learned)
+	p t k → b d ɡ / V_r
+	p → ∅ / V_{t,s}V
+	k → j / V_tV
+	k → ∅ / Vn_tV
+	ks ɡn tj → ʃ ɲ {z,s} / V_V (tj → s is learned)
+	tj → s / C_V
+	dj → dʒ → ʒ / V_V
+	dj → dz → ts → s / r_V
+	ndj → nts → ns → ɲ / V_V
+	sj → jʒ / V_V
+	j → ∅ / i_ʒV
+	sːj (m)nj lj rj → jʃ ɲʎ jr / V_V
+	kj → ts → s / V_V
+	ɡj → {ʒ,j} / V_V (ɡj → j is learned)
+	pj {bj,vj} → jb jv / V_V
+	mj → jm (irregular)
+	C₀C₀ → C₀ / ! C = r
+	C → ∅ / C₁_C₂ ! C₂ = L
+	k → j / _s#
+	f → v / V_V (irregular)
+	s l → z ∅ / V_V
+	a → ∅ / ”ɔ_#
+	sk k → jʃ z / V_{i,e}
+	k → ɡ / V₁_V₂ ! V₂ = ɔ
+	j → {∅,ʒ} / V_V (j → ʒ is learned)
+	b → v / VL_V
+	m → ∅ / _n
+	{e,i} → ∅ / {L,N}_(C)(C)V(C)#
+	o → ∅ / _(C)(C)V(C)#
+	e → j / {a,o,u}_
+	a → e / _j when stressed
+	o → u / _ɲ when stressed
+	V₀V₀ → V₀ (irregular)
+	d → ∅ / V_V (in Portugal)

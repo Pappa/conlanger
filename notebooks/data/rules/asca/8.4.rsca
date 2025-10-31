@@ -1,0 +1,25 @@
+@ 8.4 - Proto-Altaic to Proto-Tungusic
+# citation: Pogostick Man, from Wikipedia contributors (2011), “Altaic languages”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Altaic_languages>, citing Sarostin, Sergei A., Anna V. Dybo, and Oleg A. Mudrak (2003), Etymological Dictionary of the Altaic Languages. Leiden: Brill Academic Publishers
+	# NB: Does not include clusters.
+	o → {o,u} / _CV
+	æ → i / {s,ʃ,x}_Ca
+	{u,ø,y} æ → {o,u} ia / _Ca
+	y → u / P_C{e,i}
+	æ ø → i {o,u} / _Ce
+	æ → i / {s,ʃ,x}_Ci
+	æ ø y → ia {o,u} i / _Ci
+	{u,æ} ø → {o,u} i / _Co
+	ø → i / {s,ʃ,x}_Cu
+	{u,æ,y} ø → {o,u} ia / _Cu
+	p → b / medially
+	pʰ → p
+	t → dʒ / #_{æ,ø,y}
+	t → d / #_
+	tʰ tʃʰ → t tʃ
+	k → {k,ɡ} / #_
+	k → ɡ
+	kʰ → x / #_
+	kʰ → {x,k}
+	z → s
+	rʲ lʲ → r l
+	U[-long +low pitch] U[+long -low pitch] → U[+long] U[-long]

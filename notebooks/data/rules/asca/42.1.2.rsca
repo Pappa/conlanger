@@ -1,0 +1,38 @@
+@ 42.1.2 - Proto-Finnic to Livonian
+# citation: Tropylium, from Hakulinen, Lauri (1979), “Suomen kielen rakenne ja kehitys”. Otava; Häkkinen, Kaisa (2004), “Nykysuomen etymologinen sanakirja”. WSOY; Kallio, Petri (2007), “Kantasuomen konsonanttihistoriaa”. Mémoires de la Société Finno-Ougrienne 253. <http://www.sgr.fi/sust/sust253/sust253_kallio.pdf>; and from Janhunen, Juha (2007), “The primary laryngeal in Uralic and beyond”. Mémoires de la Société Finno-Ougrienne 253. <http://www.sgr.fi/sust/sust253/sust253_janhunen.pdf>
+	t ts s(C) n l r → tʲ tsʲ sʲ(C) nʲ lʲ rʲ / _i
+	ts(ʲ) → s(ʲ) / ! n_
+	e → ɤ / _C(C){a,o,u}
+	æ → ɑ / [- stress]
+	h → ∅ / {#,C}_
+	Vn → Vː / _s
+	ɑ æ → æe / _(C…)i
+	V → ə / unstressed ! V = ɑ
+	ɑ → ə / VC(C)ɑC(C)_# when unstressed
+	Vh → Vːɦ / _C, except maybe ! _j and/or _ʋ
+	LV → VL / {#,V,O}_
+	p t(ʲ) s(ʲ) k → b d(ʲ) z(ʲ) ɡ / ! #_ or adjacent to C[-voice]
+	∅ → ʔ / (C)V_CV
+	ə → ∅ / _#
+	ə → ∅ / VC_CV
+	C → Cː / ʔ_V
+	dj lj rj ɡj → dʲ lːʲ rːʲ jɡ
+	ʋ → ∅ / {d,z}_
+	lʋ rʋ jʋ → lː rː jː
+	ʋ → ∅ / C_
+	VCːɑ → VːCɑ
+	Cː → C[- long] / ! in verbal forms when V_ə
+	ɑː au → ɔː ɔu (though sometimes ɑː develops, apparently at least partially due to metathesis?)
+	eː øː oː ɤ(ː) → iːe yːø uːo ɨ(ː)
+	ɦ → ʔ
+	sʲ tsʲ zʲ dzʲ → ʃʲ tʃʲ ʒʲ dʒʲ
+	æy ey → æu eu
+	y ø → i e / else
+	V → Vː / _RC(C)ɑ (includes diphthongs)
+	a → aː / VC_
+	e o → eː oː / _Cɑ
+	o → oː / _{RC#,i}
+	eː oː → je wo
+	w → ʋ / #_o
+	wo → ʊ / P_
+	ɔ(ː) → o(ː)

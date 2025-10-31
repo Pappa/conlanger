@@ -99,19 +99,22 @@ class Lexicon:
         )
 
     def __getitem__(self, subscript):
-        return Lexicon(
-            syllable_structure=self._syllable_structure.structure,
-            consonants=self._phonemes["C"],
-            vowels=self._phonemes["V"],
-            glides=self._phonemes["G"],
-            nasals=self._phonemes["N"],
-            word_list=self._word_list[subscript],
-            lexicon=self._lexicon[subscript],
-            style=self._style,
-            probability=self._probability,
-            seed=self._seed,
-            max_syllables=self._max_syllables,
-        )
+        if isinstance(subscript, slice):
+            return Lexicon(
+                syllable_structure=self._syllable_structure.structure,
+                consonants=self._phonemes["C"],
+                vowels=self._phonemes["V"],
+                glides=self._phonemes["G"],
+                nasals=self._phonemes["N"],
+                word_list=self._word_list[subscript],
+                lexicon=self._lexicon[subscript],
+                style=self._style,
+                probability=self._probability,
+                seed=self._seed,
+                max_syllables=self._max_syllables,
+            )
+        else:
+            return self._lexicon[subscript]
 
     def __iter__(self):
         yield from self._lexicon
