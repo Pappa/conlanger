@@ -1,35 +1,35 @@
 @ 14.3.1 - Standard Tamil to Colloquial Tamil
 # citation: schwatever, from Shiffman, Harold F. A Reference Grammar on Spoken Tamil
-	aj → eː “(exception: never finally in monosyllables, never initially in multisyllabic words)”
-	avu aji → aw aj
-	i u → e o / _Ca
-	{k,v} → ∅ / V_V
-	aː eː iː oː uː → a ɛ i o u / _#
-	am an {aːm,aːn} → õ æ̃ ã / _#
-	{om,on} {em,en} {oːm,oːn} {eːm,eːn} → ɔ̃ ɛ̃ õ ẽ
-	um → ũ / _#
-	∅ → ɨ / _N#
-	{ɭ,ɽ} → ∅ (sporadic, the latter very much so and contributing some compensatory lengthening)
-	l ɭ → lːʉ ɭːʉ / _#(C)V[-long]
-	∅ → ʉ / {l,ɭ}_# if {M,Vː} previously in the lexeme
-	r → ɾ “in most dialects”
-	ɽ → ɭ
-	{ɾ,l,ɭ} → ∅ / V_S
-	i u → ɨ ʉ / short only when unstressed ! in #U
-	ɨ ʉ → ∅ / ! _#
-	∅ → {ɨ,ʉ} / to break up clusters
-	n → ŋ / _{k,ɡ}
-	i(ː) e(ː) → u(ː) o(ː) / {m,v,p}_C̣
-	j → ∅ / V[-front]_#
-	j → jːi / E_#
-	tː nt → cː ɲc / {i,j}_
-	ʈk → kː
-	n tː → n̪ t̪ː
-	ɳ → n “(sporadic and dialect development)”
-	ɭ → l “(again, sporadic)”
-	c → s / _{a,o,u,e}
-	cː → tʃː “(most dialects)”
-	o e → u i / _C{u,i} “(highly sporadic)”
+	aj > eː “(exception: never finally in monosyllables, never initially in multisyllabic words)”
+	avu aji > aw aj
+	i u > e o / _Ca
+	{k,v} > ∅ / V_V
+	aː eː iː oː uː > a ɛ i o u / _#
+	am an {aːm,aːn} > õ æ̃ ã / _#
+	{om,on} {em,en} {oːm,oːn} {eːm,eːn} > ɔ̃ ɛ̃ õ ẽ
+	um > ũ / _#
+	∅ > ɨ / _N#
+	{ɭ,ɽ} > ∅ (sporadic, the latter very much so and contributing some compensatory lengthening)
+	l ɭ > lːʉ ɭːʉ / _#(C)V[-long]
+	∅ > ʉ / {l,ɭ}_# if {M,Vː} previously in the lexeme
+	r > ɾ “in most dialects”
+	ɽ > ɭ
+	{ɾ,l,ɭ} > ∅ / V_S
+	i u > ɨ ʉ / short only when unstressed ! in #U
+	ɨ ʉ > ∅ / ! _#
+	∅ > {ɨ,ʉ} / to break up clusters
+	n > ŋ / _{k,ɡ}
+	i(ː) e(ː) > u(ː) o(ː) / {m,v,p}_C̣
+	j > ∅ / V[-front]_#
+	j > jːi / E_#
+	tː nt > cː ɲc / {i,j}_
+	ʈk > kː
+	n tː > n̪ t̪ː
+	ɳ > n “(sporadic and dialect development)”
+	ɭ > l “(again, sporadic)”
+	c > s / _{a,o,u,e}
+	cː > tʃː “(most dialects)”
+	o e > u i / _C{u,i} “(highly sporadic)”
 	# “There’s also only a few changes necessary to turn this into the British dialect (which didn’t merge retroflexes with alveolars):”
-	— i(ː) e(ː) → u(ː) o(ː) / _ɭ
-	— eCə oCə → Ceː Coː / #_
+	— i(ː) e(ː) > u(ː) o(ː) / _ɭ
+	— eCə oCə > Ceː Coː / #_

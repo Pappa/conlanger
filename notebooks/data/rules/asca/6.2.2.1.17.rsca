@@ -1,9 +1,9 @@
 @ 6.2.2.1.17 - Classical Arabic to Tunisian Arabic
 # citation: Pogostick Man, from http://en.wikipedia.org/wiki/Tunisian_Arabic
-	a → ɑ / near emphatics
-	a → ɛ
-	dˤ q → ðˤ {ɡ,q}
-	dʒ x ɣ → ʒ χ ʁ
-	aj aw → {aj,eː,iː aw,oː,uː}
-	Vː → V[-long] / _# (except as below)
-	V(ː) → Vː / in accented or stressed monosyllables
+	a > ɑ / near emphatics
+	a > ɛ
+	dˤ q > ðˤ {ɡ,q}
+	dʒ x ɣ > ʒ χ ʁ
+	aj aw > {aj,eː,iː aw,oː,uː}
+	Vː > V[-long] / _# (except as below)
+	V(ː) > Vː / in accented or stressed monosyllables

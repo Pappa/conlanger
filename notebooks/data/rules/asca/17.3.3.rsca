@@ -1,35 +1,35 @@
 @ 17.3.3 - Proto-Indo-European to Istanbul Armenian
 # citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013), “Armenian Language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Armenian_language>
 	# NB: The changes in plosives are the most contentious; the Wikipedia article gives differences between the seven dialects in initial position for only the alveolar series by way of comparison, so take plosive changes with a huge grain of salt.
-	{e,i}ː {u,o}ː → i u
-	{e,o}j ɛw → ɛj ow
-	{e,o} → a (rare)
-	aː → a
-	e → ɛ
-	ɛ o → i u / _N
-	ej ia → e ɛa
-	{i,u} → ə / in some unstressed syllables
-	e oj ɛa → i u ɛ / when unstressed
-	t → tʰ / {aw,ow}_ ! #_
-	kʷ → tʃʰ / _{e,i}
-	t k(ʷ) → d ɡ / {N,L}_
-	p ḱ k(ʷ) → {w,v} s kʰ
-	ɡ́ → ts (?)
-	b d ɡ(ʷ) → p t k
-	ɡʷʱ → dʒ / #_{e,i}
-	bʱ ɡ́ʱ ɡ(ʷ)ʱ → b j k / #_
-	bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ → {w,v} d z ɡ ʒ
-	j → w / _o
-	j → ?
-	{sk,ks} kj → tsʰ tʃʰ (?)
-	{sr,rs} → rː
-	r → rː / _N
-	l → ɫ / {C,lV}_
-	l → ɫ / V_V
-	Ns sN → s N
-	N → w / S_S
-	VN → V[+nasal] → V → (?) / _#, in polysyllables
-	N → n / _#, in monosyllables
-	N̩ → n / _#
-	m̩ n̩ r̩ l̩ → am an ar aɫ
-	V → (?) / _(C)#
+	{e,i}ː {u,o}ː > i u
+	{e,o}j ɛw > ɛj ow
+	{e,o} > a (rare)
+	aː > a
+	e > ɛ
+	ɛ o > i u / _N
+	ej ia > e ɛa
+	{i,u} > ə / in some unstressed syllables
+	e oj ɛa > i u ɛ / when unstressed
+	t > tʰ / {aw,ow}_ ! #_
+	kʷ > tʃʰ / _{e,i}
+	t k(ʷ) > d ɡ / {N,L}_
+	p ḱ k(ʷ) > {w,v} s kʰ
+	ɡ́ > ts (?)
+	b d ɡ(ʷ) > p t k
+	ɡʷʱ > dʒ / #_{e,i}
+	bʱ ɡ́ʱ ɡ(ʷ)ʱ > b j k / #_
+	bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ > {w,v} d z ɡ ʒ
+	j > w / _o
+	j > ?
+	{sk,ks} kj > tsʰ tʃʰ (?)
+	{sr,rs} > rː
+	r > rː / _N
+	l > ɫ / {C,lV}_
+	l > ɫ / V_V
+	Ns sN > s N
+	N > w / S_S
+	VN > V[+nasal] > V > (?) / _#, in polysyllables
+	N > n / _#, in monosyllables
+	N̩ > n / _#
+	m̩ n̩ r̩ l̩ > am an ar aɫ
+	V > (?) / _(C)#

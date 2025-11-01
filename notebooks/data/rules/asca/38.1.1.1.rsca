@@ -1,17 +1,17 @@
 @ 38.1.1.1 - Proto-Tai to Ahom
 # citation: Pogostick Man, from Li, Fang Kuei (1977). “A Handbook of Comparative Tai”. Oceanic Linguistics Special Publications (15), i – 389
-	w → ∅ / m_
-	{f,v} {m,b} → pʰ b
-	pl b{l,r} → v pj
-	{l,r} → ∅ / {d,ɗ}_
-	d ɗ → t d
-	ŋ̊ → h
-	N[- voice] l̥ → N[+ voice] l
-	tʰ → ∅ / _r
-	ɣ → kʰ
-	ɡl → k(w)
-	x → ∅ / _r
-	r → l / K_
-	k → kʰ / _r
-	xʷ Kʷ → {kʰ,x} K(ʷ)
-	V → Vː / _%
+	w > ∅ / m_
+	{f,v} {m,b} > pʰ b
+	pl b{l,r} > v pj
+	{l,r} > ∅ / {d,ɗ}_
+	d ɗ > t d
+	ŋ̊ > h
+	N[- voice] l̥ > N[+ voice] l
+	tʰ > ∅ / _r
+	ɣ > kʰ
+	ɡl > k(w)
+	x > ∅ / _r
+	r > l / K_
+	k > kʰ / _r
+	xʷ Kʷ > {kʰ,x} K(ʷ)
+	V > Vː / _%

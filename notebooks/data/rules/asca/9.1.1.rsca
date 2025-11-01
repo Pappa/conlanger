@@ -5,17 +5,17 @@
 2. Terminates in a glottal stop if no final stop
 	# Presyllables don’t seem to have affected Muong much.
 	# Initials:
-	s → h
-	cʰ → s
-	tʰ → h (Only seems to have occurred with first-register tones)
-	{kʰ,ɡʱ} → x (Presyllables don’t seem to have affected this much)
-	m n → b d (Only seems to have occurred with first-register tones)
-	{pj,bj} {tj,dj} {cj,ɟj} → b d j
-	ɓ ɗ → b d (Only seems to have occurred with first-register tones)
-	{n̥j,nj,ɲ̊j,ɲj} → ɲ j
-	N[-voiced] W[-voiced] → N[+voiced] W[+voiced]
-	(h)ə{p,b} → t / _l
-	m → ∅ / _l
-	tɹ → tʰ
+	s > h
+	cʰ > s
+	tʰ > h (Only seems to have occurred with first-register tones)
+	{kʰ,ɡʱ} > x (Presyllables don’t seem to have affected this much)
+	m n > b d (Only seems to have occurred with first-register tones)
+	{pj,bj} {tj,dj} {cj,ɟj} > b d j
+	ɓ ɗ > b d (Only seems to have occurred with first-register tones)
+	{n̥j,nj,ɲ̊j,ɲj} > ɲ j
+	N[-voiced] W[-voiced] > N[+voiced] W[+voiced]
+	(h)ə{p,b} > t / _l
+	m > ∅ / _l
+	tɹ > tʰ
 	# Miscellanea:
-	w → ∅ / tʰV_k (conjectured)
+	w > ∅ / tʰV_k (conjectured)

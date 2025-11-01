@@ -1,38 +1,38 @@
 @ 42.1.1.1.1 - Proto-Finnish to Standard Finnish
 # citation: Tropylium, from Hakulinen, Lauri (1979), “Suomen kielen rakenne ja kehitys”. Otava; Häkkinen, Kaisa (2004), “Nykysuomen etymologinen sanakirja”. WSOY; Kallio, Petri (2007), “Kantasuomen konsonanttihistoriaa”. Mémoires de la Société Finno-Ougrienne 253. <http://www.sgr.fi/sust/sust253/sust253_kallio.pdf>; and from Janhunen, Juha (2007), “The primary laryngeal in Uralic and beyond”. Mémoires de la Société Finno-Ougrienne 253. <http://www.sgr.fi/sust/sust253/sust253_janhunen.pdf>
-	mb nd ŋɡ → mː nː ŋː
-	eː øː oː → ie yø uo
-	pˑ tˑ θˑ kˑ → p t θ k
-	j → i / C_, when initial in a suffix
-	Vh → hV / {j,v,n,r,l}_# (also some double-metathesis triggered by the condition of being m_ ?)
-	sn → ns
-	V → Vː / h_hC
-	V → Vː / _hC
-	{k,x} → ˟ / _#
-	t → ∅ / s_r
-	p → β → U / _R
-	t → z → U / _r{A,O}
-	t → z → @ / _r{i,e}
-	k → z → @ / _j
-	k → ɣ i / {i,e}_R{i,e}
-	k → ɣ → U / {A,O,U}_R ! R = j
-	β → ʋ
-	ʋ → ∅ / _UC
-	ið → j / ”V_V
-	lð rð → lː rː
-	ð → ∅ / ! ”V(X)_
-	ɣ → j / C_e
-	ɣ → ʋ / U_U
-	ɣ → ʔ / VV₀_V₀ ! V₀ = U
-	ɣ → ∅ / else
-	h → ∅ / V[-stress](X)_V
-	AO → {A,O,U}ː / [- stress]
-	e → i / A_, when unstressed
-	Ue → eː / [- stress]
-	VU → Vː / _#
-	iU OU → Uː Oː
-	æ → a / e(C…)_(C…)o
-	e → ø / #(C…)_y
-	i → y / #(C…)l_y
-	i → y / #(C…)_væ
-	θ(ː) ð → ts d
+	mb nd ŋɡ > mː nː ŋː
+	eː øː oː > ie yø uo
+	pˑ tˑ θˑ kˑ > p t θ k
+	j > i / C_, when initial in a suffix
+	Vh > hV / {j,v,n,r,l}_# (also some double-metathesis triggered by the condition of being m_ ?)
+	sn > ns
+	V > Vː / h_hC
+	V > Vː / _hC
+	{k,x} > ˟ / _#
+	t > ∅ / s_r
+	p > β > U / _R
+	t > z > U / _r{A,O}
+	t > z > @ / _r{i,e}
+	k > z > @ / _j
+	k > ɣ i / {i,e}_R{i,e}
+	k > ɣ > U / {A,O,U}_R ! R = j
+	β > ʋ
+	ʋ > ∅ / _UC
+	ið > j / ”V_V
+	lð rð > lː rː
+	ð > ∅ / ! ”V(X)_
+	ɣ > j / C_e
+	ɣ > ʋ / U_U
+	ɣ > ʔ / VV₀_V₀ ! V₀ = U
+	ɣ > ∅ / else
+	h > ∅ / V[-stress](X)_V
+	AO > {A,O,U}ː / [- stress]
+	e > i / A_, when unstressed
+	Ue > eː / [- stress]
+	VU > Vː / _#
+	iU OU > Uː Oː
+	æ > a / e(C…)_(C…)o
+	e > ø / #(C…)_y
+	i > y / #(C…)l_y
+	i > y / #(C…)_væ
+	θ(ː) ð > ts d

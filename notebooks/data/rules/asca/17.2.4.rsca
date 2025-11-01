@@ -1,26 +1,26 @@
 @ 17.2.4 - Common Anatolian to Lydian
 # citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
-	d → tʃ / _{i,u}
-	d → t / {#,N}_
-	p d D → f ð T
-	T → D / N_
-	Ḱ → K
-	Kʷ → K / _V[+round]
-	ʃ → s
-	s → ʃ / _{i,e}
-	s → ʃ / i_
-	{h₂,h₃} → ∅
-	{m,n} → ʋ / _# “(that’s a Greek nu, I’m not sure what it’s supposed to represent)”
-	l → ʎ / _{i,j}
-	w (→ v?) → f / s_
-	j → ∅ / C_
-	j u → ð w / #_
-	j → ð / V_V
-	e → i / j_
-	{e,a,o} → ē / _N in ”U[+closed]
-	{e,a,o} → ā / _N in ”U[+open]
-	{e,o} → a / in U[-stress]
-	n → ∅ / _P “(leaves nasalization on the previous vowel)”
-	o(ː) eː æː → a(ː) iː aː
-	Vː → V[-long]
+	d > tʃ / _{i,u}
+	d > t / {#,N}_
+	p d D > f ð T
+	T > D / N_
+	Ḱ > K
+	Kʷ > K / _V[+round]
+	ʃ > s
+	s > ʃ / _{i,e}
+	s > ʃ / i_
+	{h₂,h₃} > ∅
+	{m,n} > ʋ / _# “(that’s a Greek nu, I’m not sure what it’s supposed to represent)”
+	l > ʎ / _{i,j}
+	w (> v?) > f / s_
+	j > ∅ / C_
+	j u > ð w / #_
+	j > ð / V_V
+	e > i / j_
+	{e,a,o} > ē / _N in ”U[+closed]
+	{e,a,o} > ā / _N in ”U[+open]
+	{e,o} > a / in U[-stress]
+	n > ∅ / _P “(leaves nasalization on the previous vowel)”
+	o(ː) eː æː > a(ː) iː aː
+	Vː > V[-long]
 	# “[P]lus lots of syncope which he doesn’t elaborate on”

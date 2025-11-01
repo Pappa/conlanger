@@ -1,21 +1,21 @@
 @ 17.7.3 - Common Germanic to Proto-Norse
 # citation: Pogostick Man, from Theiling, Henrik, http://www.kunstsprachen.de/s17/rules.sch
-	wi → u / Ci_C
-	Eβu Eβo → juː joː
-	aβ{u,o} → au
-	β → ∅ / V_B
-	{æ,e}ː(w(a)) → aː
-	oː → a / _n%
-	z x → ʀ h
-	i → j / _V ! in #U
-	j → i / C_
-	n → ∅ / V{ː,V}_hV
-	Vn → Vː / _hV
-	(w)u(ː) i(ː) → (w)o(ː) e(ː) / _(C)(C)a ! CC = NC or one C = {ʀ,j}
-	iu → yː
-	{æ,e}ːuː {æ,e}ːiː → eu ai
-	w{o,u}ːwuː j{e,i}ːjiː → uː iː
-	w → ∅ / _w
-	j → ∅ / _i
-	o(u) {ɔ,ɑ,au,ai,æ} {ja,jE,æ(i),e(i),y} → u a i
-	Vː → V[- long] / ! #U, U#
+	wi > u / Ci_C
+	Eβu Eβo > juː joː
+	aβ{u,o} > au
+	β > ∅ / V_B
+	{æ,e}ː(w(a)) > aː
+	oː > a / _n%
+	z x > ʀ h
+	i > j / _V ! in #U
+	j > i / C_
+	n > ∅ / V{ː,V}_hV
+	Vn > Vː / _hV
+	(w)u(ː) i(ː) > (w)o(ː) e(ː) / _(C)(C)a ! CC = NC or one C = {ʀ,j}
+	iu > yː
+	{æ,e}ːuː {æ,e}ːiː > eu ai
+	w{o,u}ːwuː j{e,i}ːjiː > uː iː
+	w > ∅ / _w
+	j > ∅ / _i
+	o(u) {ɔ,ɑ,au,ai,æ} {ja,jE,æ(i),e(i),y} > u a i
+	Vː > V[- long] / ! #U, U#

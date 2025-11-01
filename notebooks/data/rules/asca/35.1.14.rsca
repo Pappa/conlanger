@@ -1,14 +1,14 @@
 @ 35.1.14 - Proto-Central Salish to Sqamish
 # citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology and Sound Correspondences”. From the 17th International Conference on Salish and Neighboring Languages
-	n → ∅ / mʔ_
-	lʲ → j
-	xʲ → ʃ
-	ʔR → Rʔ / V³_V
-	u¹ → {u¹,ə¹}
-	{u³~ə³} → ə³
-	{a³~ə³} → {a³,ə³}
-	{a³~i³} → i³
-	{a¹~i¹} → i¹
-	{i³~e³} → {ə³,i³}
-	{i³~ə¹} → i³
-	{i¹~ə¹} → {i¹,∅}
+	n > ∅ / mʔ_
+	lʲ > j
+	xʲ > ʃ
+	ʔR > Rʔ / V³_V
+	u¹ > {u¹,ə¹}
+	{u³~ə³} > ə³
+	{a³~ə³} > {a³,ə³}
+	{a³~i³} > i³
+	{a¹~i¹} > i¹
+	{i³~e³} > {ə³,i³}
+	{i³~ə¹} > i³
+	{i¹~ə¹} > {i¹,∅}

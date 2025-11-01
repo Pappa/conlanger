@@ -1,27 +1,27 @@
 @ 10.2.2 - Proto-Malayo-Polynesian to Chamorro
 # citation: Whimemsz, from Blust, Robert (2000), “Chamorro Historical Phonology”. Oceanic Linguistics 39(1):83 – 122
-	ə → u
-	ə → ∅ / VC_CV
-	V → ∅ / VC_CV
-	i u → e o / _C{C,#}
-	i u → e o / CC#
-	a → æ “(in some forms; environment and conditioning unclear)”
-	uj → {i,u}
-	iw → u
-	p c q → f s ʔ
-	k → ∅ / _#
-	k → h / ! _#
-	h → ∅
-	V₀V₀ → V₀
-	b dz → p ts
-	d → ∅ / _#
-	ɟ → ʔ
-	l → d / _{C,#}
-	ɾ → ɡ
-	O → O[-voiced] / _{C,#}
-	∅ → j / i_a
-	∅ → w / u_a
-	∅ → w / a_u
-	∅ → w / #_V
-	j w → dz ɡʷ
-	ɡʷ → ɡ / _V[+round]
+	ə > u
+	ə > ∅ / VC_CV
+	V > ∅ / VC_CV
+	i u > e o / _C{C,#}
+	i u > e o / CC#
+	a > æ “(in some forms; environment and conditioning unclear)”
+	uj > {i,u}
+	iw > u
+	p c q > f s ʔ
+	k > ∅ / _#
+	k > h / ! _#
+	h > ∅
+	V₀V₀ > V₀
+	b dz > p ts
+	d > ∅ / _#
+	ɟ > ʔ
+	l > d / _{C,#}
+	ɾ > ɡ
+	O > O[-voiced] / _{C,#}
+	∅ > j / i_a
+	∅ > w / u_a
+	∅ > w / a_u
+	∅ > w / #_V
+	j w > dz ɡʷ
+	ɡʷ > ɡ / _V[+round]

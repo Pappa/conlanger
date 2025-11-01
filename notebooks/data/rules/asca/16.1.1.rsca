@@ -1,15 +1,15 @@
 @ 16.1.1 - Proto-Tabla-Sentani to Nafri
 # citation: Pogostick Man, from Gregerson, Kenneth, and Margaret Hartzler (1987), “Towards a Reconstruction of Proto-Tabla-Sentani Phonology”. Oceanic Linguistics, Vol. 26, No. 1/2 (Summer – Winter, 1987), 1 – 29.
-	p k → b ɡ / V_V
-	p t → f {s,h} / #_
-	N → ŋ / _#
-	e → i / _(C)i
-	e → æ / {P,K}_
-	e → æ / _P
-	e → ə / _C{a,ə,u} (seems to have become a in a few instances)
-	ə → o / _(C)o
-	ə → e / _{C[+palatal],E}
-	ə → æ / ! _{B,K,H}
-	a → æ / _(C)e
-	a → æ / i(C)_
-	o → e (sporadic, highly unusual)
+	p k > b ɡ / V_V
+	p t > f {s,h} / #_
+	N > ŋ / _#
+	e > i / _(C)i
+	e > æ / {P,K}_
+	e > æ / _P
+	e > ə / _C{a,ə,u} (seems to have become a in a few instances)
+	ə > o / _(C)o
+	ə > e / _{C[+palatal],E}
+	ə > æ / ! _{B,K,H}
+	a > æ / _(C)e
+	a > æ / i(C)_
+	o > e (sporadic, highly unusual)

@@ -1,65 +1,65 @@
 @ 17.5.1 - Proto-Indo-European to Old Irish
 # citation: dhokarena56
-	Kʷ → K
-	“The PIE rules for the voicing of s → z, as in [nizdos] for *nisdos, are assumed to apply”
-	Cʱ → C
-	eː → iː / ! _{i,u}
-	tː → sː
-	p → f / {V,#}_
-	f → x / _O
-	f → ∅ / else
-	r̩ l̩ → {ri,ra} {li,la} / _{S,R} ;; (which vowel crops up is unpredictable)
-	r̩ l̩ → {ra,ar} {la,al} / _{s,CC,V,#} ;; (the results are unpredictable)
-	m̩ n̩ → am an / _{s,(m,j,w)V}
-	m̩ n̩ → em en / else
-	ɡʷ → b / #_V ! _u(ː)
-	ɡʷ → b / #_N
-	ɡʷ → b / C_V
-	ɡʷ → ɡ
-	p t k kʷ b d ɡ m n l r s → f θ x xʷ v ð ɣ M N L R h / V(#)_{R,V} ;; (“We don’t know the exact values of lenited /m n l r/. We can guess that lenited m became a nasalized labial continuant of some sort, but beyond that, we don’t know.”)
-	k → x / V_t
-	m → n / V[- stress]_#
-	Vː → V / _[- stress]N#
-	p t k kʷ b d ɡ ∅ → b d ɡ ɡʷ mb nd ŋɡ n / n#_”V
-	oː → uː / _(C…)#
-	oːi → uː / _#
-	oː → aː / else
-	Vː → V[-long] / _H
-	— e → i / _[- stress](C…)#
-	— o → a / _[- stress]{(C…),u}#
-	— {ai,oi} → iː / _[- stress]#
+	Kʷ > K
+	“The PIE rules for the voicing of s > z, as in [nizdos] for *nisdos, are assumed to apply”
+	Cʱ > C
+	eː > iː / ! _{i,u}
+	tː > sː
+	p > f / {V,#}_
+	f > x / _O
+	f > ∅ / else
+	r̩ l̩ > {ri,ra} {li,la} / _{S,R} ;; (which vowel crops up is unpredictable)
+	r̩ l̩ > {ra,ar} {la,al} / _{s,CC,V,#} ;; (the results are unpredictable)
+	m̩ n̩ > am an / _{s,(m,j,w)V}
+	m̩ n̩ > em en / else
+	ɡʷ > b / #_V ! _u(ː)
+	ɡʷ > b / #_N
+	ɡʷ > b / C_V
+	ɡʷ > ɡ
+	p t k kʷ b d ɡ m n l r s > f θ x xʷ v ð ɣ M N L R h / V(#)_{R,V} ;; (“We don’t know the exact values of lenited /m n l r/. We can guess that lenited m became a nasalized labial continuant of some sort, but beyond that, we don’t know.”)
+	k > x / V_t
+	m > n / V[- stress]_#
+	Vː > V / _[- stress]N#
+	p t k kʷ b d ɡ ∅ > b d ɡ ɡʷ mb nd ŋɡ n / n#_”V
+	oː > uː / _(C…)#
+	oːi > uː / _#
+	oː > aː / else
+	Vː > V[-long] / _H
+	— e > i / _[- stress](C…)#
+	— o > a / _[- stress]{(C…),u}#
+	— {ai,oi} > iː / _[- stress]#
 	# “The following two rules apply if the vowel in question is stressed or follows the stressed syllable”; consonant clusters cannot be /nt nd/:
-	— i u → e o / _C(…C){a(ː),e(ː),o(ː)}
-	— e o → i u / _C(…C){H,j}
-	C → Cʲ / _{F,j}
-	C → Cʷ / _{B,w}
-	Kʷ → K
-	— n → ∅ / {i,o,u}_{p,t,k,s}
-	— {a,e}n → eː / _{p t k s}
-	w → f / #_
-	w → ∅ / {#,C}C_
-	w → ∅ / {θ,x}_
-	w → ∅ / V_{V,#}
-	w → v / else
-	— {p,t} → ∅ / #s_r
-	— {p,t} → ∅ / #s_ ;; “(although it says that occasionally st > t / #_)”
-	— s → ∅ / []_{l,r}_O ;; [anything]{l,r}_O
-	— hn hm → nː mː / []_ ;; [anything]_ (“[t]his change is a bit speculative”)
+	— i u > e o / _C(…C){a(ː),e(ː),o(ː)}
+	— e o > i u / _C(…C){H,j}
+	C > Cʲ / _{F,j}
+	C > Cʷ / _{B,w}
+	Kʷ > K
+	— n > ∅ / {i,o,u}_{p,t,k,s}
+	— {a,e}n > eː / _{p t k s}
+	w > f / #_
+	w > ∅ / {#,C}C_
+	w > ∅ / {θ,x}_
+	w > ∅ / V_{V,#}
+	w > v / else
+	— {p,t} > ∅ / #s_r
+	— {p,t} > ∅ / #s_ ;; “(although it says that occasionally st > t / #_)”
+	— s > ∅ / []_{l,r}_O ;; [anything]{l,r}_O
+	— hn hm > nː mː / []_ ;; [anything]_ (“[t]his change is a bit speculative”)
 	# — “[A] sequence of two plosives becomes a geminate of the second one”
-	— st zd → sː dː / []_ ;; [anything]_
-	— {l,h}l {l,h}r l{p,s,n} r{p,s} ln → lː rː lː rː (lː?) / []_ ;; [anything]_
-	— Cː → C[-long]
-	V → ∅ / C_# when unstressed ! C = j
-	C(…C) → ∅ / _# ! /l r/ and clusters containing them; “[t]his remained a phonologically conditioned rule in OIr”
-	{au,eu,ou} → oː
-	ei → eː
-	oː → ua / _[+ stress][] ;; _[anything], when stressed
-	eː → ia / _[+ stress]{#,Cʲ}
-	j → ∅
+	— st zd > sː dː / []_ ;; [anything]_
+	— {l,h}l {l,h}r l{p,s,n} r{p,s} ln > lː rː lː rː (lː?) / []_ ;; [anything]_
+	— Cː > C[-long]
+	V > ∅ / C_# when unstressed ! C = j
+	C(…C) > ∅ / _# ! /l r/ and clusters containing them; “[t]his remained a phonologically conditioned rule in OIr”
+	{au,eu,ou} > oː
+	ei > eː
+	oː > ua / _[+ stress][] ;; _[anything], when stressed
+	eː > ia / _[+ stress]{#,Cʲ}
+	j > ∅
 	# The second and third rule below “may well have been for the most part optional”; every one of the three “only applies to unstressed vowels” and “remained as a phonologically conditioned rule”:
-	— Vː → V[-long]
-	— a → e / _#
-	— {e,o} → a / _[] ;; _[anything]
-	V → Vː / _[+ stress]#
-	VOR → VːR; “this is a tad unclear, because in some instances it didn’t seem to apply”
-	V → ∅ / #UU(_)U(U(_)U) / unstressed; this “remained as a phonologically conditioned rule in OIr”; “[t]hat’s a little unclear, so let me try and enumerate: in words of more than three syllables, every other vowel (only the even ones) dropped, if it’s unstressed. In some words, syncope didn’t apply because it would create an unwieldy consonant cluster: so PIE *komaktyom → OIr cumachte, not *cumchte”
+	— Vː > V[-long]
+	— a > e / _#
+	— {e,o} > a / _[] ;; _[anything]
+	V > Vː / _[+ stress]#
+	VOR > VːR; “this is a tad unclear, because in some instances it didn’t seem to apply”
+	V > ∅ / #UU(_)U(U(_)U) / unstressed; this “remained as a phonologically conditioned rule in OIr”; “[t]hat’s a little unclear, so let me try and enumerate: in words of more than three syllables, every other vowel (only the even ones) dropped, if it’s unstressed. In some words, syncope didn’t apply because it would create an unwieldy consonant cluster: so PIE *komaktyom > OIr cumachte, not *cumchte”

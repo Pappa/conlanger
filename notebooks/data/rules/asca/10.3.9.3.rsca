@@ -1,13 +1,13 @@
 @ 10.3.9.3 - Proto-Utupua to Tanibili
 # citation: Pogostick Man, from Ross, Malcolm, and Åshlid Næss (2007), “An Oceanic Origin for Äiwoo, the Language of the Reef Islands?”. Oceanic Linguistics 46(II):456 – 498
 	# PU *p seems to have remained; PU *w is listed as having both ∅ and w as reflexes although the latter may just be an epenthetic glide between vowels of unlike rounding
-	{s,*R} → ∅
-	p t {r,l} → ∅ s j / _u
-	pʷ bw → p b
-	t → {t,r,kʷ} / #_ (I’m not kidding. That’s what’s listed as the reflexes.)
-	k → {k,∅} / #_
-	t k → {t,r,kʷ,∅} ∅ / V_V
-	k → {∅,j} / _#
-	dr → ɟ / _i
-	d c ɲ → ɟ {s,∅} n
-	{r,l} → l (occasionally → ∅?)
+	{s,*R} > ∅
+	p t {r,l} > ∅ s j / _u
+	pʷ bw > p b
+	t > {t,r,kʷ} / #_ (I’m not kidding. That’s what’s listed as the reflexes.)
+	k > {k,∅} / #_
+	t k > {t,r,kʷ,∅} ∅ / V_V
+	k > {∅,j} / _#
+	dr > ɟ / _i
+	d c ɲ > ɟ {s,∅} n
+	{r,l} > l (occasionally > ∅?)

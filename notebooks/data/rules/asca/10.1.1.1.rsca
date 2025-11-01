@@ -1,8 +1,8 @@
 @ 10.1.1.1 - Proto-Bali-Sasak-Sumbawan to Balinese
 # citation: TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic Linguistics 44(2):357 – 388
-	r → {r,h} → {∅,h}
-	h → {∅,h}
-	w → b / i_#
-	ej ow → i u
+	r > {r,h} > {∅,h}
+	h > {∅,h}
+	w > b / i_#
+	ej ow > i u
 	# “ə assimilated to the following vowel after the loss of *-r-”
-	a → ə
+	a > ə

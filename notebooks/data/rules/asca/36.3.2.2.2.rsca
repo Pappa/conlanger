@@ -1,19 +1,19 @@
 @ 36.3.2.2.2 - Proto-rGyalrongic to lCog Rtse
 # citation: Pogostick Man, from Nagano, Yashuiki (1979), “A Historical Study of rGyarong Initials and Prefixes”. Linguistics of the Tibeto-Burman Area 4(2):44 – 68; and Nagano, Yashuiki (1979), “A Historical Study of rGyarong Rhymes”. Linguistics of the Tibeto-Burman Area 5(1):37 – 47
 	# Initials:
-	(N)p Nb sP çp çb pr br {p,b}j → (m)pʰ (m)p sp ʝb çp br pʰj pʰj
-	(N)t (N)d st sd KT çT tr dr çtr → (N)tʰ mt zd st kt çt(j) trh tr çtr
-	(P)ɡ sɡ çK Nɡ k sk rk (s)ɡj (ʔ)kj → (p)k sk çk mk kʰ zɡ Nɡ (s)kj (ʔ)kʰj
-	Nkj (s)ɡr Kç kr skr ɡr → mɡj (s)kr ɡçkr kʰr zɡr Nɡr
-	K → ʔ / _s
-	C[+ sibilant] → s / _w
-	N P K → m p k / _ç
-	l → ∅ / #ç_
-	ts (r)dz dzl dʒ NTS PTS Kts KTS sTS çTS → tsʰ (r)ts Ndz tsl ts ptç ktç kts sts {s,ç}ts
-	LTS → ldʒ
-	N → m / _{ŋ,ɲ}
-	*w → ʔ / something to do either with back vowels or prefixes
+	(N)p Nb sP çp çb pr br {p,b}j > (m)pʰ (m)p sp ʝb çp br pʰj pʰj
+	(N)t (N)d st sd KT çT tr dr çtr > (N)tʰ mt zd st kt çt(j) trh tr çtr
+	(P)ɡ sɡ çK Nɡ k sk rk (s)ɡj (ʔ)kj > (p)k sk çk mk kʰ zɡ Nɡ (s)kj (ʔ)kʰj
+	Nkj (s)ɡr Kç kr skr ɡr > mɡj (s)kr ɡçkr kʰr zɡr Nɡr
+	K > ʔ / _s
+	C[+ sibilant] > s / _w
+	N P K > m p k / _ç
+	l > ∅ / #ç_
+	ts (r)dz dzl dʒ NTS PTS Kts KTS sTS çTS > tsʰ (r)ts Ndz tsl ts ptç ktç kts sts {s,ç}ts
+	LTS > ldʒ
+	N > m / _{ŋ,ɲ}
+	*w > ʔ / something to do either with back vowels or prefixes
 	# Rhymes:
-	uŋ → ak
-	om → {o,a}m
-	ew iw → i jo
+	uŋ > ak
+	om > {o,a}m
+	ew iw > i jo

@@ -1,25 +1,25 @@
 @ 15.2.4 - Proto-Eskimo to Wales Iñupiaq
 # citation: Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171
-	ə → u / u_
-	ə → a / a_
-	ə → i / else
-	v → u
-	ɣ → u / “in some positions”
-	p k q s → v ɣ ʁ z / V_V
-	ɣ ʁ → k q / _#
+	ə > u / u_
+	ə > a / a_
+	ə > i / else
+	v > u
+	ɣ > u / “in some positions”
+	p k q s > v ɣ ʁ z / V_V
+	ɣ ʁ > k q / _#
 	# Regressive MOA assimilation and progressive voicing assimilation in consonant clusters, at least where C₂ is either /l/ or /l̥/
-	m n ŋ → v t ɣ / _C[+nasal]
-	l̥ → t / C_
-	v → p / _s
-	v ʁ → p q / S_
-	v ɣ ʁ → p k q / _C (except if C = /l dʒ m n ŋ/)
-	{p,v} t {k,ɣ} → m n ŋ / _N
-	v → u / V_V
-	v → ∅ / u_V
-	v → ∅ / V_u
-	dʒ → ʁ / i_u
-	ədʒ → i / _{a,u} (except in #U)
-	adʒ → i / _a (except in #U?)
-	ɣ → ∅ / V_u
-	ɣ → ∅ / u_V
-	ɣ → u / {i,ə}_V
+	m n ŋ > v t ɣ / _C[+nasal]
+	l̥ > t / C_
+	v > p / _s
+	v ʁ > p q / S_
+	v ɣ ʁ > p k q / _C (except if C = /l dʒ m n ŋ/)
+	{p,v} t {k,ɣ} > m n ŋ / _N
+	v > u / V_V
+	v > ∅ / u_V
+	v > ∅ / V_u
+	dʒ > ʁ / i_u
+	ədʒ > i / _{a,u} (except in #U)
+	adʒ > i / _a (except in #U?)
+	ɣ > ∅ / V_u
+	ɣ > ∅ / u_V
+	ɣ > u / {i,ə}_V

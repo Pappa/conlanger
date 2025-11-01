@@ -1,32 +1,32 @@
 @ 37.1.2.6 - Proto-Northern Iroquoian to Tuscarora
 # citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg
-	ts → tʃ / _{h,i,j}
-	ths → tʃ
-	j → ∅ / tʃ_
-	t → ˀt
-	”V → ”Vː / _n in “penultimate syllables only”
-	n → t / ! _{h,kʷ,V[+ nasal]}
-	”V → ”Vː / _{k(ʷ),(ˀ)t}{s,R,H} (“penultimate syllables only”)
-	”V → ”Vː / _RR
-	{ẽ(ː),õ(ː)} → ə̃(ː)
-	ts → θ
-	ˀt → tʔ / _ˀt
-	ˀt → ∅ / _t
-	ˀt → ʔ / _r
-	ˀt → ʔn / V_{V,w,j}
-	ˀt → n / {#,C}_{V,w,j}
-	ˀt → t
-	h → ∅ / _nh
-	h → ∅ / #_w
-	h → ∅ / k_{s,ts,tʃ}
-	h → ∅ / Vː_#
-	w → ∅ / _jh
-	n → t / _kʷ
-	∅ → t / hs_r
-	∅ → j / k_e(ː)
-	# r → r[+ continuant]
-	e(ː) → ɛ(ː)
-	ə̃(ː) → ɨ̃(ː) / ! “when both short and stressed”
-	a(ː) o(ː) → ɔ(ː) u(ː) / ! “when both short and unstressed”
-	t k(ʷ) → d ɡ(ʷ) / _{V,R}
-	n r w j → n̥ r̥ w̥ j̊ / _{#,O}
+	ts > tʃ / _{h,i,j}
+	ths > tʃ
+	j > ∅ / tʃ_
+	t > ˀt
+	”V > ”Vː / _n in “penultimate syllables only”
+	n > t / ! _{h,kʷ,V[+ nasal]}
+	”V > ”Vː / _{k(ʷ),(ˀ)t}{s,R,H} (“penultimate syllables only”)
+	”V > ”Vː / _RR
+	{ẽ(ː),õ(ː)} > ə̃(ː)
+	ts > θ
+	ˀt > tʔ / _ˀt
+	ˀt > ∅ / _t
+	ˀt > ʔ / _r
+	ˀt > ʔn / V_{V,w,j}
+	ˀt > n / {#,C}_{V,w,j}
+	ˀt > t
+	h > ∅ / _nh
+	h > ∅ / #_w
+	h > ∅ / k_{s,ts,tʃ}
+	h > ∅ / Vː_#
+	w > ∅ / _jh
+	n > t / _kʷ
+	∅ > t / hs_r
+	∅ > j / k_e(ː)
+	# r > r[+ continuant]
+	e(ː) > ɛ(ː)
+	ə̃(ː) > ɨ̃(ː) / ! “when both short and stressed”
+	a(ː) o(ː) > ɔ(ː) u(ː) / ! “when both short and unstressed”
+	t k(ʷ) > d ɡ(ʷ) / _{V,R}
+	n r w j > n̥ r̥ w̥ j̊ / _{#,O}

@@ -1,26 +1,26 @@
 @ 7.2 - Proto-Algonquian to St. Francis Abenaki
 # citation: Pogostick Man with acknowledgment to dhok, from Warne, Janet Leila (1973), “A Historical Phonology of Abenaki”. <http://digitool.library.mcgill.ca/R/?func=dbin-jump-full&object_id=46078&local_base=GEN01-MCG02>
-	nθ nl → sː {sː,hl}
-	ʔ → h / _l
-	N → ∅ / _RO
-	aː → a / _OO
-	aː → ɔ̃
-	V[- high - long] → ∅ / #C_OO
-	a → ∅ / #_OO
-	V → ∅ / _#
-	iw → o / _#
-	w → ∅ / _# ! k(ː)_
-	j → ∅ / _# ! p_
-	w → ∅ / C_ ! C = K
-	j → ∅ / C_
-	{R,h} → ∅ / V_V
-	θ → n / #_
-	θ → s / _k
-	θ → l
-	ʃ tʃ → s ts
-	nj → i / #_
-	{x,h}S → Sː
-	ʔs ʔts → sː tsː
-	sk → kː / ! _a
-	i → e / _R
-	oː eː iː → o a i
+	nθ nl > sː {sː,hl}
+	ʔ > h / _l
+	N > ∅ / _RO
+	aː > a / _OO
+	aː > ɔ̃
+	V[- high - long] > ∅ / #C_OO
+	a > ∅ / #_OO
+	V > ∅ / _#
+	iw > o / _#
+	w > ∅ / _# ! k(ː)_
+	j > ∅ / _# ! p_
+	w > ∅ / C_ ! C = K
+	j > ∅ / C_
+	{R,h} > ∅ / V_V
+	θ > n / #_
+	θ > s / _k
+	θ > l
+	ʃ tʃ > s ts
+	nj > i / #_
+	{x,h}S > Sː
+	ʔs ʔts > sː tsː
+	sk > kː / ! _a
+	i > e / _R
+	oː eː iː > o a i

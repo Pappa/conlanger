@@ -1,49 +1,49 @@
 @ 8.3 - Proto-Altaic to Proto-Mongolic
 # citation: Pogostick Man, from Wikipedia contributors (2011), “Altaic languages”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Altaic_languages>, citing Sarostin, Sergei A., Anna V. Dybo, and Oleg A. Mudrak (2003), Etymological Dictionary of the Altaic Languages. Leiden: Brill Academic Publishers
 	# NB: Does not include clusters.
-	a → {a,i} / _Ce
-	a → {a,e} / _Ci
-	a → {a,i,e} / _Co
-	a → {a,o,u} / _Cu
-	e o u æ ø y → {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i} / _Ca
-	a e i o u æ ø y → {a,i} {e,ja} {e,i} {ø,y,o} {o,u,y} {i,a,e} {e,ø} {ø,y,o,u} / _Ce
-	i → e / P_Ci
-	a e u æ ø y → {a,e} {e,i} {y,ø} {i,e} {i,e,ø} {ø,y,o,u} / _Ci
-	e → {y,ø} / P_Co
-	e → {y,ø} / C_Po
-	e → o / P_Cu
-	e → o / C_Pu
-	a e o i æ ø y → {a,i,e} {a,e} u {o,u} e {ø,y,o,u} {o,u} / _Co
-	a e {o,u} æ ø y → {a,o,u} {e,a} {o,u} {a,o,u} {e,i,u} {i,o,u,y,ø} / _Cu
-	b → h / medially, ! {r(ʲ),l(ʲ)}_ or _ɡ
-	pʰ → {h,j} / #_
-	pʰ → {b,h} / medially
-	pʰ → b / #_U[+high pitch]
-	p → h
-	p → b
-	tʰ → d / _#
-	t(ʰ) d → tʃ dʒ / _i
-	tʰ → t / else
-	tʃ → dʒ / #_i
-	tʃ → d / #
-	tʃʰ → tʃ
-	ɡ → h / ! {C,V}_h
-	k → ɡ / ! #_
-	kʰ → ɡ / {C,V}_h
-	kʰ → k / else
-	z → s
-	ʃ → tʃ / #_a
-	ʃ → s / else
-	nʲ → dʒ / #_
-	nʲ → {j,n} / else
-	ŋ → ɡ / #_u
-	ŋ → n / #_{a,o,e}
-	ŋ → {∅,j} / #_
-	ŋ → {m,n,ŋ,h}
-	rʲ → r
-	l → {n,l} / #_
-	lʲ → dʒ / #_i
-	lʲ → d / #_
-	lʲ → l
-	j → {j,h}
+	a > {a,i} / _Ce
+	a > {a,e} / _Ci
+	a > {a,i,e} / _Co
+	a > {a,o,u} / _Cu
+	e o u æ ø y > {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i} / _Ca
+	a e i o u æ ø y > {a,i} {e,ja} {e,i} {ø,y,o} {o,u,y} {i,a,e} {e,ø} {ø,y,o,u} / _Ce
+	i > e / P_Ci
+	a e u æ ø y > {a,e} {e,i} {y,ø} {i,e} {i,e,ø} {ø,y,o,u} / _Ci
+	e > {y,ø} / P_Co
+	e > {y,ø} / C_Po
+	e > o / P_Cu
+	e > o / C_Pu
+	a e o i æ ø y > {a,i,e} {a,e} u {o,u} e {ø,y,o,u} {o,u} / _Co
+	a e {o,u} æ ø y > {a,o,u} {e,a} {o,u} {a,o,u} {e,i,u} {i,o,u,y,ø} / _Cu
+	b > h / medially, ! {r(ʲ),l(ʲ)}_ or _ɡ
+	pʰ > {h,j} / #_
+	pʰ > {b,h} / medially
+	pʰ > b / #_U[+high pitch]
+	p > h
+	p > b
+	tʰ > d / _#
+	t(ʰ) d > tʃ dʒ / _i
+	tʰ > t / else
+	tʃ > dʒ / #_i
+	tʃ > d / #
+	tʃʰ > tʃ
+	ɡ > h / ! {C,V}_h
+	k > ɡ / ! #_
+	kʰ > ɡ / {C,V}_h
+	kʰ > k / else
+	z > s
+	ʃ > tʃ / #_a
+	ʃ > s / else
+	nʲ > dʒ / #_
+	nʲ > {j,n} / else
+	ŋ > ɡ / #_u
+	ŋ > n / #_{a,o,e}
+	ŋ > {∅,j} / #_
+	ŋ > {m,n,ŋ,h}
+	rʲ > r
+	l > {n,l} / #_
+	lʲ > dʒ / #_i
+	lʲ > d / #_
+	lʲ > l
+	j > {j,h}
 	# Loss of syllable pitch and length

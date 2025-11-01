@@ -1,42 +1,42 @@
 @ 17.13 - Proto-Indo-European to Proto-Tocharian
 # citation: Nortaneous, from http://www.utexas.edu/cola/centers/lrc/eieol/tokol-TC-X.html and https://azargoshnasp.net/history/Tocharian/positionoftocharian.pdf
-	Ḱ → K
-	Ch → C / _(V)Ch
-	d → ∅ / _N
-	dz → ∅ / B_
-	dz → ts
-	Kʷ → K / _{C,o,a} ! C = syllabic
-	Kʷ → ɕ / _e(ː)
-	Kʷy → ɕ
-	p {ts,k(ʷ)} m n l r y → pj sʲ ʂ mj ɲ lj rj wj / _{E(:),y}
-	{t,dʱ} → tʲ / _E(ː)
-	{t,dʱ} → ts / _y
-	D(ʱ) → T
-	n̩ → ə → ∅ / C_#
-	R H → uR ɨ / C_{C,#} when syllabic
-	R Hn̩ → ɛR ɨn / #_C
-	H → ɛ / _R, when R = syllabic
-	H → ∅ / V_V
-	h₂e → ə / _#
-	h₂e a → a ɨ
-	{eh₂,aH} aː → aː ɔ
-	h₃e o → o ɛ
-	{eh₃,oH} → oː
-	oː(s,y) oːn → u {u,õ}
+	Ḱ > K
+	Ch > C / _(V)Ch
+	d > ∅ / _N
+	dz > ∅ / B_
+	dz > ts
+	Kʷ > K / _{C,o,a} ! C = syllabic
+	Kʷ > ɕ / _e(ː)
+	Kʷy > ɕ
+	p {ts,k(ʷ)} m n l r y > pj sʲ ʂ mj ɲ lj rj wj / _{E(:),y}
+	{t,dʱ} > tʲ / _E(ː)
+	{t,dʱ} > ts / _y
+	D(ʱ) > T
+	n̩ > ə > ∅ / C_#
+	R H > uR ɨ / C_{C,#} when syllabic
+	R Hn̩ > ɛR ɨn / #_C
+	H > ɛ / _R, when R = syllabic
+	H > ∅ / V_V
+	h₂e > ə / _#
+	h₂e a > a ɨ
+	{eh₂,aH} aː > aː ɔ
+	h₃e o > o ɛ
+	{eh₃,oH} > oː
+	oː(s,y) oːn > u {u,õ}
 	# Something about *õ and umlaut
-	õ oː → o a
-	u → wə / #_
-	u → {ə,u}
-	uh₁ u{h₂,h₃} → uː → wə wɨ
-	i → ə / {P,K(ʷ),s}_
-	Ci → Cʲə
-	s → sʲ / _tʲ
-	ih₁ i{h₂,h₃} → jə jɨ
-	(h₁)e (h₁)eː → jə jɛː / #_
-	Ce Ceː → Cʲə Cʲɛ
-	eH → eː
-	ow aw ew → ɛu au əw
-	oy ay ey → ɛi ai əj
-	ɛ → o / _$B
-	ɛ → ə / _$ɨ
-	”ɨ ”ə ɨ[- stress] ə[- stress] → ɨ a a ə
+	õ oː > o a
+	u > wə / #_
+	u > {ə,u}
+	uh₁ u{h₂,h₃} > uː > wə wɨ
+	i > ə / {P,K(ʷ),s}_
+	Ci > Cʲə
+	s > sʲ / _tʲ
+	ih₁ i{h₂,h₃} > jə jɨ
+	(h₁)e (h₁)eː > jə jɛː / #_
+	Ce Ceː > Cʲə Cʲɛ
+	eH > eː
+	ow aw ew > ɛu au əw
+	oy ay ey > ɛi ai əj
+	ɛ > o / _$B
+	ɛ > ə / _$ɨ
+	”ɨ ”ə ɨ[- stress] ə[- stress] > ɨ a a ə

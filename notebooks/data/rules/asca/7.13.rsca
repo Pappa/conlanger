@@ -1,21 +1,21 @@
 @ 7.13 - Proto-Algonquian to Miami-Illinois
 # citation: Pogostick Man, from Costa, David J. (1991), “The Historical Phonology of Miami-Illinois Consonants”. International Journal of American Linguistics, 57:365 – 393
-	tʃ → t / in nominal suffixes
-	t → tʃ / in diminutives
-	s → ʃ / _i (not universal)
-	s → ʃ / _iV
-	{θ,l} → r → l / V_V
-	{θ,l} → r → n / #_ (and possibly in other places as well)
-	{θ,l} → r → l
-	mV[-long] → ∅ / #_{ʰC,s,ʃ} (allophonic, “optional”)
-	{ʔ,h}{ɬ,l} → hs
-	{θ,l} → t / n_
-	{θ,ʃ,tʃ,ç,x,ʔ} → h / _C
-	C[- nasal] → h / _k
-	h → ʔ / _{s,ʃ}
-	hs hʃ → sː ʃː / sporadic, usually {#,V[+front]}_
-	C[-voiced] → C[+voiced] / N_
-	VNs VNʃ → V[+ nasal]z V[+ nasal]ʒ / not universal?
-	S → ⁿS / #NV_
-	s ʃ → ⁿs ⁿʃ / U[- nasal] (highly sporadic)
-	{h,ʔ} → ∅ / _m
+	tʃ > t / in nominal suffixes
+	t > tʃ / in diminutives
+	s > ʃ / _i (not universal)
+	s > ʃ / _iV
+	{θ,l} > r > l / V_V
+	{θ,l} > r > n / #_ (and possibly in other places as well)
+	{θ,l} > r > l
+	mV[-long] > ∅ / #_{ʰC,s,ʃ} (allophonic, “optional”)
+	{ʔ,h}{ɬ,l} > hs
+	{θ,l} > t / n_
+	{θ,ʃ,tʃ,ç,x,ʔ} > h / _C
+	C[- nasal] > h / _k
+	h > ʔ / _{s,ʃ}
+	hs hʃ > sː ʃː / sporadic, usually {#,V[+front]}_
+	C[-voiced] > C[+voiced] / N_
+	VNs VNʃ > V[+ nasal]z V[+ nasal]ʒ / not universal?
+	S > ⁿS / #NV_
+	s ʃ > ⁿs ⁿʃ / U[- nasal] (highly sporadic)
+	{h,ʔ} > ∅ / _m

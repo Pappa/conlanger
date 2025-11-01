@@ -1,83 +1,83 @@
 @ 17.12.1.1.8 - Latin to Romanian
 # citation: pharazon, from Jensen, A Comparative Study of Romance, as well as other sources
-	h → ∅
-	V₀V₀ → V₀ː
-	n → ∅ / _{f,v,s}
-	r → s / _s
-	{m,n,s} → ∅ / _# in polysyllables
-	m s → n i / _#
-	u → ∅ / CC_V
-	V → ”V / ”VSr_
-	V → ”V / _(C…)”{i,e}V
+	h > ∅
+	V₀V₀ > V₀ː
+	n > ∅ / _{f,v,s}
+	r > s / _s
+	{m,n,s} > ∅ / _# in polysyllables
+	m s > n i / _#
+	u > ∅ / CC_V
+	V > ”V / ”VSr_
+	V > ”V / _(C…)”{i,e}V
 	# “Stressed vowels (note the difference from the French development)”:
-	— aː → a
-	— (a)e → ɛ
-	— eː,i,oe → e
-	— iː o(ː) u(ː) → i o u
+	— aː > a
+	— (a)e > ɛ
+	— eː,i,oe > e
+	— iː o(ː) u(ː) > i o u
 	# Word-initial vowels:
-	— aː → a
-	— {e(ː),i,ae,oe} → e
-	— iː → i
-	— {o(ː),u} → o
+	— aː > a
+	— {e(ː),i,ae,oe} > e
+	— iː > i
+	— {o(ː),u} > o
 	# Word-final vowels:
-	— aː → a
-	— {e(ː),i,ae,oe} → e / _#
-	— iː → i
-	— {o(ː),uː} → o
-	— u → o / ! V_
-	s → i / #(C…)V_#
-	k → ∅ / _s#
-	{s,t} → ∅ / _#
-	kʷ ɡʷ → p b / V_a
-	ɡ → m / _n
-	w → ∅ / {k,ɡ}_
-	k ɡ → tʃ dʒ / _E
-	ɛ → ie
-	t d s → ts dz ʃ / _i
-	o e → u i / _N
-	a → ɨ _N ! _{nː,mn}
-	i → ∅ / OL_e
-	e → a / i_(C…){a,e}#
-	i → ∅ / {ts,dz,S}_V
-	li → lj / _V
-	l → lj / _i
-	lː → ∅ / _i
-	”elːa → e”a / _#
-	{b,v} → ∅ / V_{V,t}
-	l → r / V_V
-	m → u / a_nV
-	b → u / V_{l,r}
-	p → ∅ / _s
-	c → p / _{s,t}
-	{sc,st} → ʃt / _F
-	s → ʃ / _kl
-	c → ∅ / n_t
-	kj ɡj → tʃ {j,∅} (ɡj → ∅ is rare)
-	Pj → ɥ
-	{sj,stj,sːj} → ʃ
-	j → s / t_
-	j → z / rd_
-	dj → ʒ / _”B
-	dj → z / V_V
-	{n,l} → ∅ / _j
-	ja → e / r_#
-	j → ∅ / r_
-	d → ∅ / _z
-	l → j / {k,ɡ}_
-	a → e / C[+palatal]_#
-	a o → ə u / ”U…_#
-	e → ə / ”U…P_(C…)V# ! V = i
-	u → ∅ / o_e
-	e → ə / ou_#
-	u → ∅ / ! {OL,”V}_#
-	a → a / #(C…)V…C[+palatal]_…”U
-	a o → ə u / #(C…)V…_…”U
-	e → i / #(C…)V…_n…”U
-	e → ə / #(C…)V…{t,d,n}_…”U
-	e → ə / P”_(C…)B
-	e → ∅ / P_a
-	e → ə / #{r,P}_…”U
-	o → u / #C…_…”U
-	a → ə #C(C…)_…”U
-	{t,d} → ∅ / n_#
-	Ci → Cʲ / _# ! R…R_#
+	— aː > a
+	— {e(ː),i,ae,oe} > e / _#
+	— iː > i
+	— {o(ː),uː} > o
+	— u > o / ! V_
+	s > i / #(C…)V_#
+	k > ∅ / _s#
+	{s,t} > ∅ / _#
+	kʷ ɡʷ > p b / V_a
+	ɡ > m / _n
+	w > ∅ / {k,ɡ}_
+	k ɡ > tʃ dʒ / _E
+	ɛ > ie
+	t d s > ts dz ʃ / _i
+	o e > u i / _N
+	a > ɨ _N ! _{nː,mn}
+	i > ∅ / OL_e
+	e > a / i_(C…){a,e}#
+	i > ∅ / {ts,dz,S}_V
+	li > lj / _V
+	l > lj / _i
+	lː > ∅ / _i
+	”elːa > e”a / _#
+	{b,v} > ∅ / V_{V,t}
+	l > r / V_V
+	m > u / a_nV
+	b > u / V_{l,r}
+	p > ∅ / _s
+	c > p / _{s,t}
+	{sc,st} > ʃt / _F
+	s > ʃ / _kl
+	c > ∅ / n_t
+	kj ɡj > tʃ {j,∅} (ɡj > ∅ is rare)
+	Pj > ɥ
+	{sj,stj,sːj} > ʃ
+	j > s / t_
+	j > z / rd_
+	dj > ʒ / _”B
+	dj > z / V_V
+	{n,l} > ∅ / _j
+	ja > e / r_#
+	j > ∅ / r_
+	d > ∅ / _z
+	l > j / {k,ɡ}_
+	a > e / C[+palatal]_#
+	a o > ə u / ”U…_#
+	e > ə / ”U…P_(C…)V# ! V = i
+	u > ∅ / o_e
+	e > ə / ou_#
+	u > ∅ / ! {OL,”V}_#
+	a > a / #(C…)V…C[+palatal]_…”U
+	a o > ə u / #(C…)V…_…”U
+	e > i / #(C…)V…_n…”U
+	e > ə / #(C…)V…{t,d,n}_…”U
+	e > ə / P”_(C…)B
+	e > ∅ / P_a
+	e > ə / #{r,P}_…”U
+	o > u / #C…_…”U
+	a > ə #C(C…)_…”U
+	{t,d} > ∅ / n_#
+	Ci > Cʲ / _# ! R…R_#

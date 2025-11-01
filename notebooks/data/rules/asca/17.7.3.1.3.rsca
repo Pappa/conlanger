@@ -1,61 +1,61 @@
 @ 17.7.3.1.3 - Old Norse to Shetland Norn
 # citation: Pogostick Man and Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from http://nornlanguage.x10.mx/index.php?shet_phon, citing Jakobsen, Jakob, An Etymological Dictionary of the Norn Language
-	p t k → b d ɡ / V_V (the second V at least can be a syllabic consonant)
-	b d → p t / N_
-	b → v / #_
-	lm → ml
-	∅ → b / m_l
-	nd ld (→ nː lː ?) → ɲ ʎ
-	dj → dʒ
-	ɡ(ː) → dʒ / _iV
-	k ɡ → c ɟ / _E
-	tr → rd
-	pː tː kː → b d {ɡ,ɣ} / V_V
-	tː → {tʲ,dʲ}
-	tj → tʃ / _#
-	tj → ʃ
-	ɡl → lɡ
-	f → v / #_
-	f → m / _n
-	f → p / _t
-	v → w / #_
-	n → ∅ / _m#
-	vl → lv
-	θ → {t,d}
-	ð → ∅ / _#
-	ð → d
-	s → ∅ / k_l
-	∅ → h / #_V
-	h → ∅ / _{V,w,j}
-	h → ∅ / _l
-	h → {∅,h,k} / _r
-	h → {∅,h,k,s} / _n
-	hv → {h,k,s}w
-	hj → ʃ
-	n l → ɲ ʎ / _C
-	nː → ɲ(d)
-	rn {lː,rl} → ɲ ʎ
-	ms → ŋ(k)s
+	p t k > b d ɡ / V_V (the second V at least can be a syllabic consonant)
+	b d > p t / N_
+	b > v / #_
+	lm > ml
+	∅ > b / m_l
+	nd ld (> nː lː ?) > ɲ ʎ
+	dj > dʒ
+	ɡ(ː) > dʒ / _iV
+	k ɡ > c ɟ / _E
+	tr > rd
+	pː tː kː > b d {ɡ,ɣ} / V_V
+	tː > {tʲ,dʲ}
+	tj > tʃ / _#
+	tj > ʃ
+	ɡl > lɡ
+	f > v / #_
+	f > m / _n
+	f > p / _t
+	v > w / #_
+	n > ∅ / _m#
+	vl > lv
+	θ > {t,d}
+	ð > ∅ / _#
+	ð > d
+	s > ∅ / k_l
+	∅ > h / #_V
+	h > ∅ / _{V,w,j}
+	h > ∅ / _l
+	h > {∅,h,k} / _r
+	h > {∅,h,k,s} / _n
+	hv > {h,k,s}w
+	hj > ʃ
+	n l > ɲ ʎ / _C
+	nː > ɲ(d)
+	rn {lː,rl} > ɲ ʎ
+	ms > ŋ(k)s
 	# r alternates with l
-	{u,o}(ː) a aː {ɒ,œ,y} e i(ː) → {o,ɔ}(i) æ(i) {ɔ,ɒ}(i) {o,ɔ}(i) {æ,e}  / _{Ḱ,Cʲ}
-	u → {o,ɒ} / _CC
-	uː → {u,o,ɒ,ø} (conditioning unclear; it seems the presence of a velar consonant may have helped to retain the quality of /u/)
-	oː → u
-	ɒ → ɛ / _Cː
-	ɒ → ø / _O[+ dental/alveolar]
-	{ɒ,ey} j{u,o,a}ː yː → o ø u / Ḱ_
-	j{u,o,a}ː → ø
-	a → ∅ / C[+ dental/alveolar]_u
-	a → {o,ɔ} / _{K,r} (! K = w ?)
-	aː → wo (dialectal)
-	aː → ɔ(u) / _{l,r}
-	au → {o,ɔ,ɒ} / j_
-	au → j{o,ɔ}
-	y → ə / _r(ː)
-	yː → ø / _O[+ dental/alveolar]
-	æ → e / ! _{Ḱ,Cʲ}
-	e → {o,ɒ} / _w
-	eː → {ɒ,ə} / w_
-	e eː → {æ,ɛ,e} {(j)ɛ,je}
-	ey → ø
+	{u,o}(ː) a aː {ɒ,œ,y} e i(ː) > {o,ɔ}(i) æ(i) {ɔ,ɒ}(i) {o,ɔ}(i) {æ,e}  / _{Ḱ,Cʲ}
+	u > {o,ɒ} / _CC
+	uː > {u,o,ɒ,ø} (conditioning unclear; it seems the presence of a velar consonant may have helped to retain the quality of /u/)
+	oː > u
+	ɒ > ɛ / _Cː
+	ɒ > ø / _O[+ dental/alveolar]
+	{ɒ,ey} j{u,o,a}ː yː > o ø u / Ḱ_
+	j{u,o,a}ː > ø
+	a > ∅ / C[+ dental/alveolar]_u
+	a > {o,ɔ} / _{K,r} (! K = w ?)
+	aː > wo (dialectal)
+	aː > ɔ(u) / _{l,r}
+	au > {o,ɔ,ɒ} / j_
+	au > j{o,ɔ}
+	y > ə / _r(ː)
+	yː > ø / _O[+ dental/alveolar]
+	æ > e / ! _{Ḱ,Cʲ}
+	e > {o,ɒ} / _w
+	eː > {ɒ,ə} / w_
+	e eː > {æ,ɛ,e} {(j)ɛ,je}
+	ey > ø
 	# Final short vowels drop
