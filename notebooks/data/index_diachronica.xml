@@ -212,7 +212,6 @@
   <section index="6.2.1.1" name="Agaw"/>
   <section index="6.2.1.1.1" name="Proto-Agaw to Awngi">
     <cite>Pogostick Man, from Fallon, Paul D. (2009), “The Velar Ejective in Proto-Agaw”. In Selected Proceedings of the 39th Annual Conference on African Linguistics, Ojo, Akinloye and Lioba Moshi (Eds.), 10 – 22. Sommerville, MA: Cascadilla Proceedings Project. &lt;http://www.lingref.com&gt;, document #2182, citing Appleyard, David L. (2006), A comparative dictionary of the Agaw languages. (Cushitic Language studies, 24.) Cologne: Rüdiger Köppe Verlag.</cite>
-    <comment>NB: Does not include vowel developments.</comment>
     <rule>{x,ɢ}(ʷ) &gt; ∅ / at word boundaries</rule>
     <rule>z dz ɡ &gt; ɡ {z,dz} ɡ(ʷ)</rule>
     <rule>{x,ɢ}(ʷ) &gt; ɣ(ʷ)</rule>
@@ -221,7 +220,6 @@
   </section>
   <section index="6.2.1.1.2" name="Proto-Agaw to Blin">
     <cite>Pogostick Man, from Fallon, Paul D. (2009), “The Velar Ejective in Proto-Agaw”. In Selected Proceedings of the 39th Annual Conference on African Linguistics, Ojo, Akinloye and Lioba Moshi (Eds.), 10 – 22. Sommerville, MA: Cascadilla Proceedings Project. &lt;http://www.lingref.com&gt;, document #2182, citing Appleyard, David L. (2006), A comparative dictionary of the Agaw languages. (Cushitic Language studies, 24.) Cologne: Rüdiger Köppe Verlag.</cite>
-    <comment>NB: Does not include vowel developments.</comment>
     <rule>{x,ɢ}(ʷ) &gt; ∅ / at word boundaries</rule>
     <rule>ɢ(ʷ) &gt; x(ʷ) / else</rule>
     <rule>{ts,tʃ} z dz &gt; ʃ d dʒ</rule>
@@ -229,7 +227,6 @@
   </section>
   <section index="6.2.1.1.3" name="Proto-Agaw to Kemantney">
     <cite>Pogostick Man, from Fallon, Paul D. (2009), “The Velar Ejective in Proto-Agaw”. In Selected Proceedings of the 39th Annual Conference on African Linguistics, Ojo, Akinloye and Lioba Moshi (Eds.), 10 – 22. Sommerville, MA: Cascadilla Proceedings Project. &lt;http://www.lingref.com&gt;, document #2182, citing Appleyard, David L. (2006), A comparative dictionary of the Agaw languages. (Cushitic Language studies, 24.) Cologne: Rüdiger Köppe Verlag.</cite>
-    <comment>NB: Does not include vowel developments.</comment>
     <rule>{x,ɢ}(ʷ) &gt; ∅ / at word boundaries</rule>
     <rule>x &gt; ∅</rule>
     <rule>xʷ ɢʷ &gt; w ɣʷ</rule>
@@ -241,7 +238,6 @@
   </section>
   <section index="6.2.1.1.4" name="Proto-Agaw to Xamtanga">
     <cite>Pogostick Man, from Fallon, Paul D. (2009), “The Velar Ejective in Proto-Agaw”. In Selected Proceedings of the 39th Annual Conference on African Linguistics, Ojo, Akinloye and Lioba Moshi (Eds.), 10 – 22. Sommerville, MA: Cascadilla Proceedings Project. &lt;http://www.lingref.com&gt;, document #2182, citing Appleyard, David L. (2006), A comparative dictionary of the Agaw languages. (Cushitic Language studies, 24.) Cologne: Rüdiger Köppe Verlag.</cite>
-    <comment>NB: Does not include vowel developments.</comment>
     <rule>{x,ɢ} &gt; ∅</rule>
     <rule>{xʷ,ɢʷ} &gt; ∅ / at word boundaries</rule>
     <rule>{xʷ,ɢʷ} &gt; w / else</rule>
