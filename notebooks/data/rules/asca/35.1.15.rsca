@@ -1,17 +1,3 @@
-@ 35.1.15 - Proto-Central Salish to Twana
-# citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology and Sound Correspondences”. From the 17th International Conference on Salish and Neighboring Languages
-	m n > b d
-	lʲ > l
-	s > {ʃ,s} / _xʷ
-	xʲ > ʃ
-	ʔR > ʔ{R,b} / V³_V
-	Rʔ > ʔR / V³_#
-	ʔ > ∅ / V¹R_#
-	ʔ > ∅ / V³R_C
-	u³ u¹ > o³ ə¹
-	{a³~ə³} > {ə³,a³}
-	{a³~i³} > a³
-	{a¹~i¹} > {i¹,ə¹}
-	{i³~e³} > {i³,ə³}
-	{i³~ə¹} > {i³,i¹}
-	{i¹~ə¹} > i¹
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

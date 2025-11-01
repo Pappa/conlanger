@@ -1,0 +1,161 @@
+; 17.7.3.1 - Proto-Norse to Old Norse
+; citation: Pogostick Man, from Theiling, Henrik, http://www.kunstsprachen.de/s17/rules.sch
+θ > f / _l
+i > ɪ / _NS[- voice] ! _NS(C){o,i,j}
+i > eː / _ʀ#
+b {w,v} d ð ɡ > p f t θ k / _#
+j > ∅ / #_
+EːBː Eːaː > joː jaː / {v,w}_
+BːB aː{o,a,æ,e} {æ,e}ː{æ,e}ː {æ,e}ːi iːEː > oː aː eː eː iː
+e > i / #(C)(C)(C)_(C)(C)(C){i,j}
+e > ja / ! {{h,k,ŋ}n,w,v,l,r}_, _{u,o,i}
+a(i) {e,w{æ,i}} {we,ei} (w)ɪ > ey ø y ʏ / w_ ! hw_
+a > ∅ / C(C)_{ʀ,s,t,θ}#
+VN > Ṽ / _# ! in #U
+u {o,ɒ} a au juː > y ø æ y yː / _(C)(C)(C)j
+a > ∅ / _{ʀ,s,t,θ}#
+oː > u / _#
+ʀ > r_n
+ʀ > r / C_n
+ʀn > nː
+w > ∅ / C_o
+a > ∅ / CC_U#
+a > u / %u / ! in #U
+waː naː > oː noː / %u in #U
+a(ː) ae > o(ː) ɒø / #(C)(C)(C)_(C)(C)(C)u
+a > ∅ / _U#
+{(j)u,we}ː {o,ɒ}ː aː au > yː øː æː æy
+u {o,ɒ} a > y ø æ / _(C)(C)(C)i
+{B,E} > ∅ / CC_{ʀ,s,t,θ}# ! B = ɒ
+u {o,ɒ} a au juː > y ø æ æy yː / _(C)(C)(C)i
+E > ∅ / _{ʀ,s,t,θ}
+u > o / _m#
+u > ∅ / _({ʀ,s,t,θ})#
+{B,E} > ∅ / CC_U# ! B = ɒ
+V > Vː / _l{P,w,k,#}
+{a,æ,e}ːhiː > æː
+ɒːh{u,a} aːh{u,a} > ɒː aː
+{B,E} > ∅ / _U# ! B = ɒ
+u > o / _m#
+Vː > V[- long] / ! in #U
+{u,we,wi} {o,ɒ} a au juː > y ø æ æy yː / _(C)(C)(C)i
+wa we wi > ɒː øː yː / #P_
+w > ∅ / #P_Vː
+e > jɒ / _(C)(C)(C)u ! {{h,k,ŋ}n,w,v,l,r}_
+e > ja / _(C)(C)(C)u ! {{h,k,ŋ}n,w,v,l,r}_
+au {ai,ey,ei} æ{y,i} øy Vː > o e æ ø V / #(C)(C)(C)_CC
+V[- long] > ∅ / #U_UU
+u {o,ɒ} a au juː > y ø æ æy yː / _(C)(C)(C)j
+u {o,ɒ} a au juː > y ø æ æy yː / #(C)(C)_ʀ
+b > ∅ / m_s
+d > ∅ / {l,m}_{b,ɡ,k,l,m,n,s}
+ð > ∅ / n_ ! ɡ_
+ð > ∅ / r_{m,l,ɡ,n}
+{f,β,p} > ∅ / r_n
+{f,β,p} > ∅ / l_{d,ɡ,n,ð,t}
+{ɡ,ɣ} > ∅ / l_{ð,t}
+{ɡ,ɣ} > ∅ / r_{d,n,t}
+k > ∅ / l_s
+k > ∅ / r_{m,s,t}
+k > ∅ / s_l,t
+l > ∅ / ŋ_s
+l > ∅ / r_{m,s}
+l > ∅ / s_t
+n > ∅ / f_{d,s,t}
+n > ∅ / l_b
+n > ∅ / m_{s,b}
+n > ∅ / ŋ_{s,w}
+n > ∅ / r_{s,t,w}
+n > ∅ / t_s
+r > ∅ / {ð,f}_{ɡ,ɣ}
+r > ∅ / k_{n,s}
+r > ∅ / m_m
+r > ∅ / t_{k,s}
+t > ∅ / {ɡ,ɣ}_s
+t > ∅ / p_{ɡ,ɣ,n}
+t > ∅ / r_k
+t > ∅ / s_{k,l,n,s}
+{s,z} > ∅ / {r,ʀ}_N
+{v,w} > ∅ / #_V[+ round]
+rː{r,ʀ} sʀ > rː sː
+l(ː)ʀ n(ː)ʀ > lː nː / ”Vː_ (or all V_ ?)
+{l(ː),n}{r,ʀ} > ∅ / V{ː,V}_
+nː lː rː sː > n l r s / C_
+{t,θ,d,ð} > ∅ / n_l
+{t,θ,d,ð} > ∅ / l_n
+lː nː > l n / C_#
+ai wi (w)V > eː weː (w)Vː / _h#
+ɒ > oː / n_h
+{æ,e}i ai au w{ɪ,i} wy wV iu Vː > eː aː oː weː woː wVː eː oː V
+ey > {jo,æ}ː / _ʀ
+i > eː / _#
+ðl(ː) ðn(ː) > lː nː
+ʏ ɪ > ø e
+V{θ,ð} > Vː / #(C)(C)(C)_{l,r}
+ai > aː / _r
+ai > aː / _h{C,V}
+æ > e
+lθ nθ > lː nː
+Ṽ > Vː / in #U (maybe only ı̃?)
+Ṽ > V[- nas]
+β ð ɣ > f θ k / _{p,t,k,s}
+β ð ɣ > b d ɡ / #_
+β ð ɣ > b d ɡ / {m,n,ŋ,l}_
+β ɣ > b ɡ / r_
+ɣ > ɡ / _{r,ʀ,θ,ð}
+β ɣ > f h / _%
+ɣ > ɡ / _{E,j}
+β ð ɣ > v θ h
+(Vː)θt > (V)tː
+Eː{u,o}ː Eːaː > joː jaː / {v,w}_
+θ > t / {p,t,k}_
+θː ðː > tː dː
+θ f > ð v / {V,C[+ voiced]}_{V,C[+ voiced]}
+h > ∅ / C_t
+ht > tː
+hw > ∅ / ! #_
+F[- voice] > ∅ / {s,f,x,h,t}_{p,t,k}
+nː > ð / _{r,ʀ}
+woː wøː jæː Vː > wo wøje V[- long] / _%
+NS[- voice] > S[- voice]ː
+{t(ː),ɡː}k > kː
+ts > sː / V_V
+uN yN iN VN > o øː eː Vː / _{s,f}
+Sː > S[- long] / U[- stress]_
+lθ nθ > lː nː
+p > f / _{t,k}
+t > θ / _{p,k}
+k > x / _{p,t}
+m > f / _{n,ŋ}
+n > θ / _{m,ŋ}
+ŋ > x / _{m,n}
+s > ts / {l,n}ː_
+∅ > t / s_r
+ɣ > ɡː / _j
+ʀ > r
+w > v / #_
+Sː > S[- long] / _{r}ː
+ɡ > ∅ / #_n
+r > ∅ / {p,t,k}_Vr
+rː lː > r l / {p,t,k,f,s}_
+o {æ,e} > u i / ! in #U
+o > u / V_
+a > e / _i
+ɪʊ > yː
+ø øː > e æː
+e(ː){B,i(ː)} > e(ː)u / {v,w}_
+eː{Bː,i(ː)} > joː / _C[+ alveolar]#
+eː{Bː,i(ː)} > juː
+∅ > j / {y,e}(ː)_a
+N(ː) k k(ː) N(ː)ɡ ɡ(ː) ɣ > ɲc(ː) c(ː) ɲɟ(ː) ɟ(ː) ʝ / _{i,j}
+j > ∅ / Ḱ_
+a > e / _{i,j,Ḱ}
+N(ː) k k(ː) N(ː)ɡ ɡ(ː) ɣ > ɲc(ː) c(ː) ɲɟ(ː) ɟ(ː) ɟ / _{i,j}
+f θ > v ð / #_
+f > v / _{p,t,k}
+j > ∅ / {c,ɟ}_
+j > ∅ / _eː
+au > ɒ / j_
+eː > e / Ḱ_
+eː j > e ∅ / Cw_
+k > h / #_{v,n}

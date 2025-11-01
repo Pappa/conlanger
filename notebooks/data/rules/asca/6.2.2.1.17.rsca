@@ -1,9 +1,3 @@
-@ 6.2.2.1.17 - Classical Arabic to Tunisian Arabic
-# citation: Pogostick Man, from http://en.wikipedia.org/wiki/Tunisian_Arabic
-	a > ɑ / near emphatics
-	a > ɛ
-	dˤ q > ðˤ {ɡ,q}
-	dʒ x ɣ > ʒ χ ʁ
-	aj aw > {aj,eː,iː aw,oː,uː}
-	Vː > V[-long] / _# (except as below)
-	V(ː) > Vː / in accented or stressed monosyllables
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

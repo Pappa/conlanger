@@ -1,16 +1,3 @@
-@ 37.2.4.2 - Proto-Čiwere-Winnebago to Winnebago
-# citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme
-	p > {p,b,m,w} / _C
-	V > ∅ / _#
-	p > b / V_V
-	t > {tʃ,dʒ}
-	# Wolff says that “Winnebago preserved the intermediate stages of *k reflexes”
-	L > r
-	Lʲ > n / _V[+ nasal]
-	Lʲ > r / _V[- nasal]
-	tʲ > x / _ʔ
-	pr {sr,xr} sn km > pV₀rV₀ ʃV₀rV₀ sV₀nV₀ kV₀wV₀
-	mt > r
-	tk > {tʃk,tʃɡ} / #_
-	t > ∅ / _k, when medial
-	xk > ɡ
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

@@ -1,20 +1,3 @@
-@ 6.2.2.1.14 - Classical Arabic to Moroccan Arabic
-# citation: Pogostick Man, from http://en.wikipedia.org/wiki/Moroccan_Arabic
-	t > t͜s / plain t only, distinguishable from the sequence ts
-	{a,i} > ə / short only; the change of short a blocked for some speakers before ħ ʕ
-	u > ə / short only, except near “a labial or velar consonant”
-	C[+labial/+velar] > ʷ / adjacent to short u
-	{u,ə} > ∅ / ! C_C(C)#
-	ə > a / near ħ ʕ
-	ə > ɐ / near emphatics
-	ə > ɪ / else
-	u > ʊ / short only
-	aː iː uː > ɑː eː oː / near emphatics
-	aː > æː / else
-	C₁ˤC₂ > C₁C₂ˤ
-	Cˤ > C / {#,V}_V
-	q > {q,ɡ}
-	dʒ > {d,ɡ} / if s or z occur somewhere else in the word
-	dʒ > ʒ / else
-	s > ʃ / if ʃ is somewhere in the stem after it
-	z > ʒ / if ʒ is somewhere in the stem after it
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

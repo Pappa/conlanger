@@ -1,27 +1,3 @@
-@ 17.10.1 - Proto-Indo-Iranian to Proto-Indo-Aryan
-# citation: Tropylium, from Kobayashi, Masato (2004), Historical Phonology of Old Indo-Aryan Consonants
-	ə > i
-	Sh₂ > S[+ aspirated]
-	h₂ > *H
-	VH > Vː / _{C,#}
-	R̊H > {u,i}R / _V
-	R̊H > {u,i}ːR / _C
-	ʃ ʒ > ʂ ʐ
-	n > ɳ / R(V)_
-	t d(ʱ) n > ʈ ɖ(ʱ) ɳ / C̣_ ! _r
-	s t d(ʱ) n > ʂ ʈ ɖ(ʱ) ɳ / _C̣
-	ls lt ld(ʱ) ln > ʂ ʈ ɖ(ʱ) ɳ / “disputed”
-	s > ʂ / _V{ʂ,ʈ,ɖ(ʱ)}
-	∅ > a / #_z
-	uʐ aʐ iʐ > uː əː iː
-	əː > oː / w_
-	əː > eː
-	tʃ dʒ(ʱ) > tɕ dʑ(ʱ) > ɕ ɟ(ʱ)
-	tst dzdʱ > tː dʱː
-	k > ∅ / #_t
-	p > ∅ / #_st
-	ɟʱ > ɦ
-	dʱ > ɦ / (unclear environment)
-	bʱ > ɦ (very rare)
-	Vm > Ṽ / _(#){s,ɕ}
-	n > ɲ / ɟ_
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

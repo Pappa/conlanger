@@ -1,24 +1,3 @@
-@ 35.1.7 - Proto-Central Salish to Nooksack
-# citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology and Sound Correspondences”. From the 17th International Conference on Salish and Neighboring Languages
-	n > ∅ / mʔ_
-	lʲ > l
-	s > {s,ʃ} / _xʷ
-	s > ʃ / #_{xʲ,w{i,a},qʷa}
-	xʲ > ʃ
-	∅ > V₀ / ”V₀³ʔ_
-	ʔR > {ʔS,R} / V³_V
-	ʔ > ∅ / VR_V³
-	ʔ > ∅ / V³R_{C,#}
-	ʔ > ∅ / V¹R_#
-	ʔ > ∅ / V¹_#
-	a¹ u³ u¹ i¹ > æ² o³ o¹ i²
-	ə¹ > æ² / a³C(C)_
-	ə¹ > æ² / _C(C)a³
-	ə¹ > æ² / in some other unspecified circumstances
-	{u³~ə³} > o³
-	{a³~ə³} > æ³
-	{a³~i³} > æ³
-	{a¹~i¹} > æ²
-	{i³~e³} > {i³.ə³}
-	{i³~ə¹} > i³
-	{i¹~ə¹} > {i²,ə¹}
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

@@ -1,36 +1,3 @@
-@ 17.1.2 - Proto-Indo-European to Tosk Albanian
-# citation: Pogostick Man, from Wikipedia contributors (2013), “Albanian language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Albanian_language>
-	d dʱ > ð / V_V
-	d dʱ > ð / r_
-	ḱ > s / _{u̯,u,i̯,i}
-	ḱ > k / _R
-	ḱ > {ts,tʃ} (“[a]rchaic relic”)
-	ḱ > θ
-	kʷ > s / _”E?
-	kʷ > c / _B?
-	kʷ > k / else?
-	ɡ́(ʱ) > d / %_C[+sibilant]
-	ɡʷ(ʱ) > {ɡ,z}
-	bʱ dʱ ɡ́(ʱ) > b d dh
-	s > ɟ / #_
-	s > ʃ / V{i̯,u̯,r,k}_V
-	sd > θ / medial
-	sḱ > h / medial
-	sp > f / medial
-	st > ʃt / medial
-	s > θ / sometimes, involving “[d]issimilation with following vowel”
-	s > h / V_V
-	i̯ > ɟ / {a,e,i}_
-	i̯ > j / _B
-	i̯ > ∅ / E_
-	i̯ > h / V_
-	u̯ > v
-	n > ∅ / V_C?
-	n > ɲ (sometimes?)
-	n > ɾ
-	l r > {l,ɫ} {ɾ,r}
-	{m̩,n̩} l̩ r̩ > e uj {ri,ir}
-	# Loss of laryngeals, with the possible exception of h₄, if it existed; h₃ and h₄ seem to have possibly fronted a following back vowel
-	eː iː oː uː > o i e {y,i}
-	a e i o > {a,e} (j)e {e,i} a
-	c ɟ > tʃ dʒ (much less widespread than in Gheg)
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

@@ -1,0 +1,21 @@
+; 10.4.1 - Proto-Micronesian to Marshallese
+; citation: Ketsuban, from Hale, Mark, Historical Linguistics: Theory and Method
+; NB: “. . .the precise contrast between *s and *S, and *t and *T is unknown, as is the precise phonetic nature of *c and *Z.” Blust (v.s.) rejected *T and *D; according to his reconstruction. . .*s and *S were /ç s/, respectively. The substitution of /ts/ for *T is inferred from the Wikipedia article but may be incorrect.
+K > Kʷ / _{C[+round],V[+round]}
+V[+high] > ɘ / _C[-high]
+V > ∅ / _#
+V[+mid] > ɘ / _C[+high] when stressed
+V > ∅ / ”VC_
+V > ∅ / “in CV reduplications”
+a > ɜ / _wo
+f > ∅ / #_{C[-low],V[-low]}
+f > ɰ / #_aCo
+f > j / else
+∅ > ɰ / #_aC[-low]
+∅ > j / #_{aC[+low],V[-back],C[-back]}
+∅ > w / #_{C[+round],V[+round]}
+{i,u} {e,o} > ɨ ɜ
+p {t,ts} c > pʲ tʲ rʲ
+{ç,s} x > tᵚ ∅
+m ɲ > mʲ nʲ
+; “The author does not elaborate on the complex development of vowels without an onset consonant, other than to say that a glide is inserted (*Saa > tᵚaɰ), nor does he go into more detail than to say that l and n generally develop into lʲ and nʲ before Proto-Micronesian front vowels, and l, r, and n turn into lᶬ, rᶬ, and nᶬ before a and lʷ, rʷ, and nʷ before Proto-Micronesian round vowels, but the author does not elaborate.”

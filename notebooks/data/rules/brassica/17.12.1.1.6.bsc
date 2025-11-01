@@ -1,0 +1,251 @@
+; 17.12.1.1.6 - Vulgar Latin to Old Provençal
+; citation: Pogostick Man, from Grandgent, Charles Hall (1905), An outline of the phonology and morphology of old Provençal, Revised Edition
+; NB: Use at your own peril. Trying to put a chronology to this is sort of like what I imagine undergoing a root canal would be like, as is figuring out the conditioning on a lot of these things because of the convention Grandgent uses. Nevertheless, I have triedâand probably largely failed. In any case the sections regarding the development of the vowels are placed first, because the source does that and other Romance changes posted here do similarly, and the grouping of the consonants is in large part informed by the surce. Also, I use % here to denote a syllable boundary because I didn’t want to have to open yet another window so I could throw a sigma into my document.
+; Stress shift: Secondary stress shifts to two syllables away from the penult. If the secondary tonic precedes the tonic, that vowel is considered stressed for the purpose of subsequent sound changes, and at some point the intervening vowel drops. Vowel changes assume the changes in Vulgar Latin as listed elsewhere in this thread.
+VN > Vː / _S (except for the prefixes con-, in-); I’m assuming this change happened in Vulgar Latin and then vowel length went to quality
+; STRESSED VOWELS
+— ɪ > e
+— ʊ > o (this change seems to have happened later, hence is listed separately)
+— ɔ > y / _{u,P,k,ɡ,i} (in northwestern dialects)
+— ɔ > ɥe / _{u,P,k,ɡ,i} (in western dialects, Limousin, and Auvergne)
+— ɔ > ɥo / _{u,P,k,ɡ,i} (in Languedoc)
+— ɔ > {ɥe,ɥo,ɔ} / _{u,P,k,ɡ,i} (in southern dialects)
+— a > a / _N (Rouergue, Limousin, Auvergne, Dauphiné)
+— a > a / _# in monosyllables and oxytones (Rouergue, Limousin, Auvergne, Dauphiné)
+— a > å (I have no idea what is going on here. Grandgent seems to distinguish an open and close /a/, and I have listed his open a as /å/, which seems to have been distinct from /ɔ/, but beyond this section it doesn’t really seem to matter very much)
+— å ɛ ɔ > a e o / _N (in Limousin and neighboring regions, the last two particularly in Limousin, Languedoc, and Gascon, though when _ɲ this change may have been blocked)
+— ɛ ɔ > jɛ wɔ (intermittent, “least common in the southwest”)
+— e > i / _V (and possibly V_?)
+— e > i / _(C…)i{C(C…)V,#}
+— ɛ > jɛ / _{u,i,ʎ,rʲ,ʃ,ʒ,j,tʃ,dʒ} (except in some northern and western dialects, or if this u ← l or if this i ← ð)
+— ju > jeu
+— o > y / _{tʃ,dʒ,it,id} (did not occur in Dauphiné)
+— o > y / _ɲ (in northern and western dialects)
+— o > y / _i# (in Bordeaux, Auvergne, and some of Languedoc)
+— ɔ > {ɔ,we} (in southwestern dialects)
+— u > y
+— o > u (during the literary period)
+; UNSTRESSED VOWELS
+— E > ∅ / _e
+— B > ∅ / _o
+— E > j (presumably in the vicinity of another vowel)
+— V > ∅ (though /a/ seemed to resist this)
+; INITIAL-SYLLABLE VOWELS
+— {a,œ,e,i} > e (here, 〈œ〉 denotes the reflex of the Latin vowel written this way, not a front rounded vowel)
+— u > o
+— au > a / _(C…)u
+— V > ∅ / _r (seemed to be an intermittent change)
+; — Lots and lots of analogical formations
+INTERTONIC VOWELS
+— V > ∅ (again, /a/ seemed to resist this change, which was itself generally blocked by analogy)
+; PENULT VOWELS
+— V > ∅ / “penult of paroxytones”, though /a/ often remained “as an indistinct e”, probably /ə/
+; — V often remained when {tʃ,dʒ,j}_, especially if CC_, or when {(k)s,sː,sj}_
+— V is retained when P_C[+dental]
+— CVK > CVj (intermittent if C was a resonant)
+— V > ∅ / lv_r (dialect-dependent)
+— e > i / _(C…)i(C…)#
+; FINAL VOWELS
+— (Again, /a/ seems to be a persistent exception to these)
+— V > ∅ / R_(C…)
+; — Grandgent remarks that /i/ was probably the last vowel to drop out
+— a > o in most dialects except Gascon and Languedoc; final -as remained in “Limousin and some others”
+; — /i/ and /u/ remain when ”V_ (then u is subject to the changes listed above—u > y, &c.)
+— e u > e o / _nt#
+; — -os remains “in the extreme east”
+— Final -i remains “as late as the 12th century” in some regions (Aude, Tarn, Aveyron, Corrèze, and some pockets of Haute-Garrone)
+— Epenthesis of /e/ in 2sg “of some verbs”
+— V > “indistinct e” (probably /ə/) if dropping it would create ugly consonant clusters:
+; —— C_L, P_C[+dental], C_tʃ, C_k, C_m, C_n where “originally separated by the vowel of the penult” (proparoxytones)
+—— Ḱ_r (paroxytones)
+—— Where the cluster would be unwieldy otherwise, apocope happened
+—— Final /(m)bj mnj pj mj/ “required a supporting vowel” (dialect-dependent)
+— V > e “in many late words”
+K > ∅ / _l (not always, but this was a general change)
+v > b / r_
+h > ∅
+d > ∅ / V_V (seems to have happened in the north and northeast at some point)
+b d ɡ > β ð ɣ / V_V
+βj > j (in forms of habeo and debeo)
+k ɡ > tʃ dʒ / _E
+tʃ > ts
+ɡ > ∅ / V_(VC…)”V
+j > ∅ / V_”E
+N > ∅ / _#, in polysyllables
+kʷ ɡʷ > k ɡ / _B
+rs > sː
+sː > s / Vː_
+p t k s > b d ɡ z / V_V (this b > v?)
+∅ > i / #_sC
+w > v > ∅ / _u (“restored by analogy in many words”)
+w > v > ∅ / _”o
+w > v > β
+β > w / V_C
+w > ∅ / C_B (when from earlier B?)
+k > ∅ / _s{C,#} (the latter in polysyllables only)
+{d,ɡ} > ∅ / _j
+; Loan phonemes:
+— Loaned /b/ did not lenite
+— Loaned /k/ did not palatalize
+— Loaned w > ɡw
+Original z (/ts/?) > dj > j
+; Greek /k/ shows up variously as /k ɡ/
+pʰ > f
+; Some reanalysis of initials as medials if a prefixed form was reanalyzed as a single morpheme
+(s)k ɡ > (s)tʃ dʒ / #_a (in the north and northeast)
+tʃ > ts > s / #_
+j > dʒ / #_ (but not in Béarn)
+f > h (in Béarn and Gascon)
+β > b (in Béarn, Gascon, and Languedoc)
+β > v (though sometimes > ɡw instead if analogy interfered)
+kʷ ɡʷ > kw ɡw (in western dialects)
+kʷ ɡʷ > k ɡ (else)
+∅ > k / #s_l
+i > e / #_sC
+b {d,dz,dʒ} z ʒ ɡ > p {t,ts,tʃ} s ʃ k / _(s)#
+tʃs > {ts,tʃ} (varies)
+j > i / _(s)#
+ð > ∅ / _#
+ð > t / _s#
+β > u / V_(s)#
+β > {∅,f} / C_(s)# (the latter is rare)
+n > ∅ / V_# (did not occur in extreme western areas, some northern areas, the southeast, and the east)
+n > ∅ / _s# (except for eastern and southeastern dialects)
+n > ∅ / r_(s)#?
+kː > tʃ / _a (in the east and northeast)
+lː > l (in the south)
+; rː~r stuff—not sure what was going on here, but it seems like this distinction lingered on into the literary period, but the two may have been in the process of merging
+mn > mpn > nː (dialectal)
+Cː > C
+ɡ > k / B_ (your guess is probably better than mine)
+ɡ > {k,j} / V_ (if /j/ resulted, it dropped after /i/; forms with k are “most persistent in the west” and more common overall)
+l > w / V_s
+ms ns > mps nts
+{p,b} > ∅ / R_s# (unless blocked by analogy)
+ts > s / _# (Provence, Limousin, some Languedoc and Gascon)
+β > ∅ / when pretonic and immediately adjacent to a back vowel
+β > b / V_V (in western and some central dialects)
+β > v (otherwise)
+tʃ > i / _C
+tʃ > i / C_
+tʃ > jdz > jz / V_V (in the south and northwest)
+tʃ > dz > z / V_V (otherwise)
+ð > i / C_
+ð > i / _C ! _s#
+ð > z (except in some northern and eastern dialects where > ∅)
+ɡ > j / _a (in the north and east; further > dʒ in the north)
+ɡ > ɡ / _{o,u/y}
+ɡ > j > dʒ / “[b]etween the last two vowels of a proparoxytone”, though it dropped early in some dialects
+dʒ > j
+l > u / _s# (in many dialects)
+s > r / _n (in a few dialects)
+j > dʒ / _”E (in the west)
+j > ∅ / _”E (else)
+j > i / _C
+j > dʒ / V_V (did not occur in the northeast and some northern dialects)
+β > u / _l
+{t,d}l {k,ɡ}l > lː ʎ
+∅ > b / m_l
+p j > b i / _l
+p k tʃ b ɡ β j > b ɡ i {b,u,u>y>i} ∅ {u,u>y>i} i / _r
+{t,d} > ð > i / _r
+ð > ∅ / au_
+∅ > d / z_r
+∅ > b / m_r
+∅ > t / s_r
+βw tw > wː dw > ɡʷ ɡʷ > ɡ ɡ
+{d,k}w > ɡʷ > ɡ
+(kʷ > ɡʷ > ɡ ?)
+{l,r}w {n,ŋk,ŋɡ}w > lɡʷ ŋɡʷ > lɡ ŋɡ
+pw > upw > up > ub
+w > ∅ / s_ ?
+βj > {udʒ,uj} (in northern dialects)
+β > u / _j (in western dialects)
+β > {b,v} / _j (in southern and eastern dialects)
+ktj klj > is ʎ
+{tʃ(ː),kʷ}j > ts
+dVɡ (n)dVɡ > dʒ(?) ndʒ
+l{tj,tʃj} ldʒ > lts ldz > uts udz > us uz
+lː{j,Vdʒ} lnj > ʎ ɲ
+lvj > lbj > ubj
+j > ∅ / n_# (in many dialects)
+nj > ɲ
+mbj > {mbj,mdʒ,ndʒ}
+mnj > ɲ (Limousin, as well as extreme eastern and southwest dialects)
+mnj > ndʒ (else)
+mj > {mj,ɲ}
+{ntʃj,ndj} > nts > ns
+{ndj,ndʒj} ndʒ > ɲ {ɲ,ndʒ}
+p > b / _rj
+ptj > ts > s
+pj > ptʃ > tʃ (except in western and some southern dialects)
+rtʃj > rts (> rs ?)
+rdj rVɡ > rdz rdʒ
+rdʒ > {rdʒ,rdz(> rz)}
+rtj > rts > rs
+rːVɡ rːj > rdʒ ir
+rtVɡ > {rdʒ,rts(> rs)}
+rtj > rts > rs
+v > {v,b} / r_j
+rj > rʲ > ir / V_V
+rj > rʲ > r / _#
+{sːj,stʃj,stj} > ʃ > is (except in the west or extreme east, where the outcome was some flavor of (i)(t)ʃ)
+sj > ʒ > (i)(d)ʒ (in some northeastern, northern, and western dialects)
+sj > ʒ > {r,z} (rare)
+sj > ʒ > iz (the usual outcome)
+tVɡ trj > dʒ ir
+tːj > ts > s
+tj > tʃ > dj > djʒ (?) > dz (in the north and west) or idz (in the south and east)—medial (i)dz became (i)z; i-less forms “prevail in the literary language” and seem to have become common if the dz follows the stress
+l > u / _{t,s} (Languedoc)
+l > u / _{d,s} (Rouergue)
+l > u / _{t,d,s} (else)
+ndt ndtʃ ntʃ nkt nf > n{d,t} {nts,ndz(> nz),ndʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,fː(> f)}
+nt nd > {∅,n} ∅ / _# (in some Languedoc and Gascon areas)
+nd > n / _# (in western areas and for some speakers of Limousin)
+d > t / n_#
+rtʃ rdtʃ > r(t)s {rdz(> rz),rts,rdʒ}
+rdɡ > r{ɡ,dʒ} / _a
+t > ∅ / rd_
+t > ∅ / r_m
+stʃ > s (in some northern and northeastern dialects)
+stʃ > (i)(t)ʃ (for western and extreme eastern regions)
+stʃ > is (otherwise)
+k > ∅ / s_b
+{p,t} > ∅ / s_m
+p > ∅ / s_t
+stɡ > s{ɡ,dʒ}
+bk > pts / _a
+b > {∅,u} / _rɡ
+b > ∅ / _s{t,k}
+b > {∅,b} / _t
+b > ∅ / _ts
+β > u / _k
+βtʃ > u{ts,dz} > u{s,z}
+βt βd > pt bd (in the west)
+βt βd > ut ud (else)
+ktʃ > (i)tʃ (in western and extreme eastern dialects)
+ktʃ > its > is (else)
+tʃ k > {i,s} {∅,k} / _m
+kt ɡd > it id (in the north, northeast, and southwest)
+{tʃ,k}t ɡd > tʃ dʒ (else)
+dtʃ > ts (in Auvergne and some western areas)
+dtʃ > dʒ (for some southeastern and southwestern speakers)
+dtʃ > dz > z (else)
+ɡ > ∅ / _m
+ɡn{d,t} > ŋn{d,t} > ɲ{d,t} > {(i)nd,ɲd,ndʒ} or t(ʃ)
+ɡn > ŋn > ɲ
+ksk > stʃ / _a (in the north and northeast)
+k > ∅ / _sk (else)
+ks > ʃ > s / _m
+ksː > is
+p > ∅ / _f
+pk > ptʃ / _a
+; The outcome of ps varied; some dialects preserved it, while others changed it to (i)ʃ (typical of the west), us (the east), or is
+pt > {ut,it} “in a few words”
+p > ∅ / _t “except in parts of Languedoc and Gascony”
+td > tː > t
+jd > {dʒ,id}
+; Some dialects dropped all final k, while others only dropped it when B_#, changing it to i when {a,E}_#
+{d,l} > ∅ / _#
+t > ∅ / _# ! “in the preterit of verbs”, though it tended to drop “in strong preterits”
+; The outcome of final nt was usually n, but in the extreme north and some areas of the south, the full cluster was kept as part of the ending -ant; further, “in some dialects the n fell after o, u”

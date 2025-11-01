@@ -1,16 +1,3 @@
-@ 17.7.2.5 - West Germanic to Old Low German
-# citation: Pogostick Man, from Wikipedia contributors (2014), “Old Saxon phonology”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Old_Saxon_phonology>; Wikipedia contributors (2014), “Old Saxon”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Old_Saxon>; and Wikipedia contributors (2014), “Germanic umlaut”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Germanic_umlaut>
-	ai au > eː oː
-	β > v
-	vː ɣː hː > bː ɡː xː (perhaps not strictly a sound change, but worth noting)
-	f θ s > v ð z / syllable-initially
-	v > f / _C ! _d
-	b d > p t / _C[-voice]
-	k > ts / _E (ɡ > dz here?)
-	n > ŋ / _{k,ɡ}
-	ɡ > k / ŋ_#
-	ɡ > ʝ / _E (singleton only)
-	ɡ > ɣ / _V (singleton only)
-	ɡ > x / _#
-	F[-voice] > F[+voice] / X[+voiced]_X[+voiced]?
-	# Umlaut applies; going by the orthography, only a > e / _(C…){i(ː),j} is often marked (and even then haphazardly), but based upon reflexes in the daughter languages it seems that the umlaut had to apply to the other back vowels too
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

@@ -1,0 +1,18 @@
+; 17.2.1 - Common Anatolian to Hittite
+; citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
+D T > T T[+lenis] / #_
+T D > T[+fortis] T[+lenis]
+h₂ h₃ > hh h
+Ḱ > K
+V > Vː / in ”U[+open]
+e o > eː oː / in ”U[+stress]
+o(ː) æː > a(ː) eː
+e > i / _{m,ŋ} when posttonic in U[+closed] or when pretonic
+e > a / _n in U[+open +posttonic]
+e > a / _{r,l}
+t > ts / _i ! s_
+d > s / #_{i,j}
+w > m / _u
+w > m / u_
+j > ∅ / V_V
+aj aw > ɛː uː / !_{s,n,r,l}

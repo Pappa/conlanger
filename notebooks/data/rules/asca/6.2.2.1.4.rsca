@@ -1,10 +1,3 @@
-@ 6.2.2.1.4 - Proto-Boreafrasian to Proto-Semitic
-# citation: Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)
-	q > ʕ
-	{i,u} > ə
-	tlʼ > ɬ / _C[+sibilant]
-	ɣ > ɡ / #_VCH
-	ɣ(w) > ɡ / #_Vx
-	kʼ(w) > k / #dlV_
-	w > ∅ / _C
-	ʔ > ʕ / #K_r#
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

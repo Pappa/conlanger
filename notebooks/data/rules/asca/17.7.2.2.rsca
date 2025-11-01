@@ -1,18 +1,3 @@
-@ 17.7.2.2 - West Germanic to Old Low Franconian
-# citation: Pogostick Man, from Wikipedia contributors (2014), “Old Dutch”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Old_Dutch>; and Wikipedia contributors (2014), “Germanic umlaut”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Germanic_umlaut>
-	eː oː > ie uo
-	ai au > eː oː
-	h > ∅ / #_C
-	jan > en / CC_#
-	j > ∅ / CC_
-	h > ∅ / V_V
-	xs > sː
-	# Final obstruents devoice
-	a > ɒ? (> o) / _ɫ
-	# Some vowel reduction seems to have occurred in unstressed syllables
-	ai u > ei ʏ / _(C…){i(ː),j} (short only; in the case of [ʏ] at least this was not yet phonemic)
-	a > ɛ / _(C…){i(ː),j} (conjectured based on date from the “Germanic umlaut” article)
-	uː > ʉw / _V (probably, in most areas)
-	uː > ʊw / _V (probably, in areas that did not undergo the above change, such as Limburg)
-	uː > ʉː (probably, in areas with uː > ʉw / _V)
-	ei ou > eː oː (except in southeastern dialects; *ei as a result of the umlaut of *ai was not affected)
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

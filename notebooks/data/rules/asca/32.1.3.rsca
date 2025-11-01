@@ -1,31 +1,3 @@
-@ 32.1.3 - Proto-Chatino to Yaitepec Chatino
-# citation: Pogostick Man, from Upson, B.W., and Robert E. Longacre (1965), “Proto-Chatino Phonology”. International Journal of American Linguistics 31(4):312 – 322
-	tʲ > tj
-	# Some consonant disharmony involving reflexes of *k, *kʷ
-	k > tʃ / _Ek(ʷ)
-	kʲ > k / _{a,ã}
-	kʲ > kj / else
-	kʷ > w / _eːj
-	kʷ > w / _ek
-	kʷ > ʍ / ku_ (medial)
-	kʷ > kw / else
-	ts > tʃ / #_{a,õ}ʔ
-	ts > tʃ / V[+high]_
-	ts > ʃ / #_ẽ
-	c > ts
-	tʃ > ts / a_
-	s > ʃ / V_V
-	s > ʃ / if /l/ is present in the same syllable
-	s > tʃ / #_a
-	ʃ > s / _{ik,e,ı̃,ẽ}
-	ʃ > ts / _i, in monosyllables
-	lʲ > l / #_ in U[-long -stress]
-	lʲ > lj / else
-	nʲ > j / _ã (with some exceptions?)
-	nʲ > nj / else
-	h > ʔ / _ã
-	ç > hj
-	hʷ > ʍ
-	ẽ > ı̃ / {t,h}_#
-	ẽ > ı̃ / _ʔ#
-	ẽ > ı̃ / ʔ_# “in one case”
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

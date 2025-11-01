@@ -1,21 +1,3 @@
-@ 37.2.3 - Proto-Siouan to Mandan
-# citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme
-	# NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/.
-	s > ʃ
-	t > ∅ / _s
-	ç > x
-	w > m
-	Lʲ > n / _V[+ nasal]
-	L > r / _V[- nasal]
-	ã > a / in ”U
-	# “Phonemic vowel length was gained somehow.”
-	tʲ > s / _ʔV
-	CʔV₀ > CV₀ʔV₀
-	tʲr > sV₀rV₀
-	r > ∅ / k_
-	mn > mV₀nV₀ / #_
-	mn > mV₀nV₀ / {C,V}_{C,V}
-	sn > {ʃV₀nV₀,sV₀rV₀}
-	km > kV₀pV₀
-	t > ∅ / _k, when medial
-	sk > ʃ / _”V
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

@@ -1,0 +1,42 @@
+; 6.2.2.1.6 - Classical Arabic to Cypriot Arabic
+; citation: Pogostick Man, from Borg, Alexander (1985), Cypriot Arabic
+S[+ voice] > S[- voice]
+q > k
+S > [+ voice] / {V,R}_V
+S > [+ voice] / V_R
+; {θ,ð} {f,v} {x,ɣ} voicing neutralized “in contact with other fricatives”
+S > F / _S
+f θ > p t / F_
+k x > c ç / _{j,E}
+{l,n}j > jː
+j > c / {O,r}
+j > ∅ / Ck_$
+nx > xː
+∅ > F / N_{O,r} ! m_f
+{ðˤ,dˤ} > ð
+tˤ sˤ > s t
+ʔ h > ∅ x
+∅ > i / #al$_z
+dʒ > z
+ɣ ħ > ʕ x
+w > v / _%
+wː > v
+j(ː) > ∅ / V_E
+uː iː > oː eː / _ʕ
+uː iː > oː eː / ʕ_
+i > a / Cˤ_{q,ɣ,ʕ}
+i > a / {q,ɣ,ʕ}_Cˤ
+a > i / _[+ stress]C(C)
+u > o / _{ʕ,ɣ,x,r}
+u > o / {ʕ,ɣ,x,r}_
+{u,a,i} > ∅ / _[+ stress, - long]%
+; Epenthesis in medial CCC clusters, often so that the syllable break is between the second and third consonants
+uː iː > u i
+a > a / _C[+ dorsal]
+a > e / _(C)(C)i(ː)
+aː > a / ! _#
+a > {u,o} / P_
+a > {u,o} / _P
+a > ∅ / _t, in the feminine ending
+aːʔ > e / E(C)(C)_#
+aː > a / {Cˤ,w}_#

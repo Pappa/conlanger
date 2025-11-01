@@ -1,14 +1,3 @@
-@ 36.3.2.1.2 - Proto-rGyalrongic to Hanniu
-# citation: Pogostick Man, from Nagano, Yashuiki (1979), “A Historical Study of rGyarong Initials and Prefixes”. Linguistics of the Tibeto-Burman Area 4(2):44 – 68; and Nagano, Yashuiki (1979), “A Historical Study of rGyarong Rhymes”. Linguistics of the Tibeto-Burman Area 5(1):37 – 47
-	# NB: These changes are likely very incomplete. The source did not have much to say about this language.
-	# Initials:
-	p k ts > p. k. tʃ.
-	NTS > mnj
-	m > mt.
-	C[+ sibilant]w > s
-	çl > rts
-	# Finals:
-	k > ∅ / {u,a}_
-	or > ro
-	an {at.is} > o ie
-	t > ∅ / i_
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

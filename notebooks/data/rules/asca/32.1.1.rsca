@@ -1,31 +1,3 @@
-@ 32.1.1 - Proto-Chatino to Papabuco Chatino
-# citation: Pogostick Man, from Upson, B.W., and Robert E. Longacre (1965), “Proto-Chatino Phonology”. International Journal of American Linguistics 31(4):312 – 322
-	t > ɾ / _{u,ẽ} when unstressed
-	t > ɾ / _”a
-	t > tʃ / _”{e,iʔ}
-	t > ʃ / i_i
-	t > s / ! “in cluster with š” (presumably [ʃ])
-	tʲ > s / _u
-	tʲ > tʃ / else
-	k > ɡ / a_a
-	kʷ > ɾ / #_ek
-	kʷ > b / else
-	ʔ > ∅ (?)
-	{c,tʃ} > ʃ
-	s > tʃ (in certain cases? Not a lot of data available on this one)
-	l > {lʲ,n} “under obscure conditions”
-	n > nʲ
-	nʲ > l / #_i
-	h > d / _a (…lolwut)
-	h > t / else (…again, lolwut)
-	j > nʲ “under obscure conditions (PC morphophonemics?)”
-	i > e / tʃ_
-	ı̃ > i
-	e > a / _{l,ʔn} when unstressed
-	e > i / {kʲ,nt}_ when stressed
-	e > i / in a few data sets “where obscure morphological developments (in the ultimate or penultimate syllable) have resulted in regressive assimilation of vowel quality”
-	ẽ > a / tʲ_
-	ẽ > i / h_
-	ẽ > i / in U[+long -stress]
-	ẽ > e / else
-	a > {i,e} “under special conditions”
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

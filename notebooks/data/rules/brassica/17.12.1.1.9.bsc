@@ -1,0 +1,37 @@
+; 17.12.1.1.9 - Latin to Sardinian
+; citation: qwed117, “mainly” from http://www.sardegnacultura.it/documenti/7_25_20060427093224.pdf
+Vː > V[- long]
+e > i / C_V
+i > j / V_V
+i > j / _V
+{b,v,w} > ∅ / V_V
+au ai > o e
+h > ∅ / {#,C}_
+m > ∅ / _#
+∅ > i / _s (“[m]ainly Logudorese”)
+nd {lː,ld} > ɳɖ ɖː / V_V
+t > k / s_l
+l > ∅ / rk_
+r > l / _C
+l > r / C_
+{i,j} > dʒ / Vr_V (“dialectal”)
+v > b / #_
+S[- voice] > S[+ voice] / V_”V
+kw ɡw > pː bː / #_ (“[o]nly Logudorese”)
+w > ∅ / #k_V
+k > ts / _i
+{p,k}s > sː
+o > u / _k (possibly restricted in occurrence)
+k > ∅ / _t ?
+l{i,j} > lː > {ts,dz,ldz,dʒ,lː} (“varies”)
+e > ∅ / u_#
+t > d / V_rV
+sk > sː
+{i,j} > ɡ / #_e
+d > ∅ / V_{i,j}
+n{i,j} t{i,j} > ndʒ ts / _V
+d > r / V_V (“[s]ome Campidanese”)
+b d ɡ > β ð ɣ / “except in Nuorese”
+ɡn > nː
+r > urː / #_e / Logudorese
+r > arː / #_(j)B / Logudorese

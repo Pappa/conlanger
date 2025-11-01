@@ -1,13 +1,3 @@
-@ 46.13 - Old Norse to Faroese Vowel Shift
-# citation: johanpeturdam
-	{a,æː} > ɛa / a
-	aː > ɔa / ɔ
-	e > eː / ɛ
-	eː > ɛa / a
-	{i,y} > iː / ɪ
-	{iː,yː} > ʊi / ʊ(i)
-	o > oː / ɔ
-	oː > {ɔu,ɛu,œu} / œ
-	u > uː / short: ʊ / unstressed: {o,ɔ}
-	uː > ʉu / ʏ
-	{œ,ɔ} > øː/œ
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

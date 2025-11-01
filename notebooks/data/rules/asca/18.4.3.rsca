@@ -1,11 +1,3 @@
-@ 18.4.3 - Proto-Tupí-Guaraní to Guajajara
-# citation: Pogostick Man, from Lemle, Miriam (1971), âInternal Classification of the Tupi-Guarani Linguistic Family”. In Tupi Studies I, from Summer Institute of Linguistics Publications in Linguistics and Related Fields Publication Number 29.
-	t > ts / _{i,ı̃}
-	ts > {h,∅}
-	b > ∅ / u_#
-	b > w / else
-	u > ∅ / k_w
-	a > ə / _N#
-	a > ə / if N in U#
-	o > u / ! o(C…)_(C…)#
-	ã ẽ ı̃ ɨ̃ {õ,ũ} > ə e i ɨ o
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

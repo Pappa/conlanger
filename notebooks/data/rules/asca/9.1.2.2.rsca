@@ -1,28 +1,3 @@
-@ 9.1.2.2 - Middle Vietnamese to Saigon Vietnamese
-# citation: Pogostick Man, from Thompson, Laurence C. (1976), “Proto-Viet-Muong Phonology”. Oceanic Linguistics Special Publications 13, Austroasiatic Studies II:1113 – 1203; Wikipedia contributors (2012). “Hanoi”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Hanoi>; Wikipedia contributors (2012), “Vietnamese Language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Special:Cite&page=Vietnamese_language&id=509331797>; Gage, William W. (1985), “Glottal Stops and Vietnamese Tonogenesis”. Oceanic Linguistics Special Publications 20:21 – 36; and Thompson, Laurence C. (1979?), “More on Viet-Muong Tonal Developments”
-	# Tonogenesis
-	# 1. Level when _S#; dipping otherwise
-2. Laryngealized
-	# Initials:
-	pʰ > f
-	kʰ > x (only seems to have occurred with first-register tones)
-	{β,w} > bj~vj~v
-	{bl,tl} > ʈ (?)
-	dʲ ɟ > z j
-	m > ∅ / _l
-	Ω cʰ > ʂ ʈʂ
-	ɹ > ʐ (sometimes?)
-	# Finals:
-	c ɲ t n > t n k ŋ / a_ (short /a/ only)
-	c ɲ > t n / {i,e}_
-	{c,ɲ} > ∅ / else
-	# Vowels:
-	ə > ∅ / {i,ɨ}_{p,m.w}
-	ə > ∅ / ɨ_j
-	ə > ∅ / u_{m,j}
-	# The contrast between short /a/ and short /ə/ is neutralized when _w{k,ŋ}
-	a > aː / _{w,j}
-	ə(ː) ɛ > ɨ ɛə / _K
-	ɛ > a / _C[+palatal]
-	# Miscellanea:
-	w > ∅ / tV_wk (conjectured)
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

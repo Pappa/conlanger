@@ -1,0 +1,136 @@
+; 17.12.1.1.3 - Latin to French
+; citation: pharazon
+; NB: The vowels here marked 〈ó〉 and 〈ò〉 seem to have had some sort of open-close distinction similar to /o ɔ/.
+; Vulgar Latin:
+— h > ∅
+— V₀V₀ > V₀ː
+— n > ∅ / _{f,v,s}
+— r > s / _s
+— {m,n} > ∅ / _# in polysyllables
+— m > n / _#
+— u > ∅ / CC_V
+— w > ɡu / “from Germanic loanwords”
+— V > ”V / ”VSr_
+— V > ”V / _C*”{i,e}V
+— {i,e} > j / _V
+; Stressed vowels:
+— aː > a
+— (a)e > è
+— {eː,i,oe} > é
+— iː oː > i ó
+— o > ò
+— u > ó / !_iː
+— uː > u
+; Initial vowels (first vowel of a word):
+— aː > a
+— {e(ː),i,ae,oe} > e
+— iː > i
+— {o(ː),u} > o
+; Final vowels:
+— aː > a
+— {e(ː),i,ae,oe} > e
+— iː oː > i o
+— u(ː) > o / except _V (?)
+k ɡ > tj dj / _E
+è > iɛ / in U[+open]
+è > iɛ / _C#
+è > ɛ / in U[+closed]
+ò > uo > uɛ / in U[+open] ! _N
+ò > ɔ / in U[+closed]
+dj > dʒ / r_
+d > ∅ / _j
+j > ∅ / V_”E
+j tj > dʒ ts / #_
+j > dʒ / V_V (rare)
+∅ > s / t_j
+t > s / s_j
+{ɡn,nj} > ɲ
+nk > ɲ / _t
+V > ∅ / in the unstressed penult
+V > ∅ / intertonic ! V = a
+a > ə / intertonic
+∅ > b / m_{r,l}
+∅ > d / {n,l,ɲ,z_r
+∅ > t / s_r
+k ɡ > t d / {n,r}_r
+n > r / {ɡ,p}_
+; “[T]wo obstruents in contact with different voicing assimilate to the voicing of the second”
+C > ∅ / C₁_C₂ ! C₂ = {r,l}
+t > s / _{n,m}
+{kl,ɡl,lj} > ʎ
+{p,b} {t,d} > v ð / V_{V,r}
+v > ∅ / V_B
+p > b / _l
+ð > ∅ / _r
+(t)s > (d)z / V_V
+k > js / V_sV
+k > j / _s#
+{k,ɡ} > ∅ / V_B
+{k,ɡ} > ∅ / B_a
+{k,ɡ} > j / _{a,C}
+kʷ > {v,u} / V_E
+kʷ > j{v,u} / V_a
+; “[N]ote that the [following] clusters are the only case where a consonant does not receive intervocalic treatment before /j/”:
+— (k)kj > ts
+— ɡ > ∅ / _j
+— pj > tʃ
+— {b,v}j > dʒ
+— m{ɲ,j} > ndʒ
+V”e > ”Vi
+V₀V₀ > V₀
+∅ > e / #_sC
+k ɡ > tʃ dʒ / _a
+t > ∅ / {ʃ,s}
+d > ∅ / _{z,ʒ}
+ɛ ɔ > iɛ uɛ / _{Cj,jC}
+∅ > j / {ʃ,ʒ,sj,zj}”{a,é}_ in U[+open]
+sːj zj rj > jsː jz jr
+j > ∅ / s_ (sː_?)
+ɛ > ɛa / _l{C,#}
+l > u / _{C,#}
+l > ∅ / {i,u}_
+{lːe,lːo} > u / {e,o}_# “[this is actually an analogical development, but it applies as regularly as a sound law]”
+(ɛ)au > ɔ
+é > ɛi / in U[+open]
+é > ɛ / in U[+closed]
+ó > ou > ɛu / in U[+open]
+ó > ɔ / _N
+ó > ou / in U[+closed]
+e > ə / #(C…)_(%…)” in U[+open]
+e > ɛ / #(C…)_(%…)” in U[+closed] or _V (?)
+o > {ou,ɔ} “(the outcome fluctuates, but ɔ is often the result of analogy rather than strict sound change; always ou before another vowel)”
+a > ə / #{tʃ,dʒ}_(%…)” in U[+open]
+a > ɛ / in U[+open] “(but a following ʎ creates a [closed] syllable)”
+kʷ ɡʷ > k ɡ
+C₀C₀ > C₀
+t > ∅ / V_#
+ɛ > i / _C(C…)i#
+V > ∅ / _# “(except in monosyllables or after another vowel)” ! V = a
+a > ə
+V > ə / _{CC,tʃ,dʒ} ! _{nt,nɡ,mp,rt,rd}
+s > ∅ / _C
+{p,b} > ∅ / _{t,d}
+v > ∅ / _C
+v > ∅ / C_
+ð > ∅
+uɛ > ɛu
+ai > e / _#
+ai iɛɪ > ɛ i
+ou ɛu u uɛi > u œ y yi
+{ei,ɔi} > oi / C[- nasal]
+ɔ > u / _”V
+V[-high] > ə > ∅ / _V “(except that a is kept before o)”
+ɲ > in / _{C,#}
+; V{n,m} / V[+ nasal] / _{C,#}
+ɛ̃ > ã
+{aı̃,eı̃} > ɛ̃
+ỹ > œ̃
+O[+voiced] > O[-voiced] / _#
+{t,s} > ∅ / _#
+k > ∅ / V[+ nasal]_#
+{n,m} > ∅ / C_#
+j > ∅ / {ʃ,ʒ}_V[- nasal]
+ʎ r > j ʁ
+oi > wɛ > wa
+oı̃ > wɛ̃
+; “([pharazon has] omitted the loss of ə in various contexts, since it often resurfaces)”

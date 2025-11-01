@@ -1,14 +1,3 @@
-@ 10.2.1 - Proto-Malayo-Polynesian to Proto-Chamic
-# citation: TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic Linguistics 44(2):357 – 388
-	z j > j d
-	wa > u / #_
-	w > ∅ / #_
-	R q > r h
-	i iw u > ɔj ? ɔw / _#
-	C₁C₂ > C₂
-	# Nasal + stop clusters assimilate in POA
-	C[+ voice] > C[- voice] / _#
-	l n > r l / #_
-	d j > r ɭ
-	# “Sometimes a reduction of [the] penultimate vowel”
-	a > aː / _C#
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

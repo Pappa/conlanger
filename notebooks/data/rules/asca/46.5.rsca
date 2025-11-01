@@ -1,18 +1,3 @@
-@ 46.5 - Old English-to-Scots Vowel Shifts
-# citation: Pogostick Man, from Wikipedia contributors (2014), “Phonological history of Scots”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Phonological_history_of_Scots>; and Wikipedia contributors (2014), “Scottish Vowel Length Rule”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Scottish_vowel_length_rule>
-	ai > ɛi > əi / when stem-final
-	uː > ʌu / when-stem final, in northern varieties
-	øː > wi / {k,ɡ}_ (in Mid Northern dialects)
-	øː > i (in northern dialects)
-	øː > (j){u,ʌ} / _{k,x} (outcome varies depending upon dialect)
-	a > i / _n (in northern varieties)
-	a > e / _n (otherwise)
-	a > {ɛ,e} / _rC
-	ai oi ui ei au ou iu ɛ(o)u > eː oe əi iː {ɑː,ɔː} ʌu ju j(ʌ)u
-	ɛː > ɛi (> əi?) / in some northern varieties
-	iː eː ɛː aː oː uː {øː,yː} > əi i {i,e} e o u ø
-	æ > ɛ / _C[+alveolar]
-	a ɔ u > {a,ɑ} ɔ ʌ
-	# Application of the Scottish vowel-length rule:
-	V > Vː / _{r,F[+voiced],$,#}
-	əi > aɪ / _{r,F[+voiced],$,#}
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

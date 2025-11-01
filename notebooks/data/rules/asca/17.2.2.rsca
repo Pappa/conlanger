@@ -1,25 +1,3 @@
-@ 17.2.2 - Common Anatolian to Luwian
-# citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
-	D T > T T[+lenis] / #_
-	T D > T[+fortis] T[+lenis]
-	h₂ h₃ > hh h
-	ḱː > z
-	kʷ > w
-	{ḱ,k} > j / _e(ː)
-	{ḱ,k} > ∅ / _i(ː)
-	k > ∅ / V_V
-	k > ∅ / _N
-	ɡ > dʒ
-	e > i / j_
-	e > a
-	V > Vː / in ”U[+open]
-	V > Vː / in #”U
-	o(ː) > a(ː)
-	{d,l} > r “in Hieroglyphic Luwian, occasionally”
-	j > ∅ / z_
-	hh h > h ∅ / ”Vː_u
-	hh h > h ∅ / u_”Vː
-	h > ∅ / _w ! at word boundaries
-	hh > ∅ / _{w,m,n,r,l} “medially, and sporadically”
-	D R > Dː Rː / ”e_ in U[+open]
-	{ɛ,e}ː æː > iː aː
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

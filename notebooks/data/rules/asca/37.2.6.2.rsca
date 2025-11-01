@@ -1,15 +1,3 @@
-@ 37.2.6.2 - Proto-Dhegiha to Omaha-Ponca
-# citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme
-	# NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/.
-	p > b / V_V
-	n > θ / _{ã,ẽ,õ}
-	w > m / #_
-	L > θ / _”V
-	d > n / ”V_
-	Lʲ > {θ,n} / _V[+nas -stress]
-	ũ > ã / stressed
-	k > ∅ / _ʔ
-	pr sr tʲr kr > bθ sn ʃn ɡθ
-	mn > mV₀nV₀ / #_
-	mn > bθ / {C,V}_{C,V}
-	mt > n
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

@@ -1,24 +1,3 @@
-@ 17.7.2.1.8 - Old English to Northern Middle English
-# citation: Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English Phonology and Midd le English Grammar for Courses in Chaucer, Middle English, and the History of the English Language; and Wikipedia contributors (2011), “Middle English phonology”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Middle_English_phonology>
-	Vː > V[-long] / _C{ː,C} ! _st{#,V} or when preceding a cluster which had triggered a vowel to become long in Old English; the book gives “Christ” vs. “Christmas” as an example
-	eɑ eːɑ eo eːo > ɑ ɛː e eː
-	æj > aj > ej
-	{æːj,e(ː)j} > ej
-	ɑɣ > ɑw
-	{eɑh,eɑç,eɑx,eɑʝ,eɑɣ} > ɑw
-	eːɑw iːw > ew ju
-	{ɑːw,ɑːɣ,oːw} > ɔːw
-	oɣ > ɔːw / _V
-	{ɑːht,o(ː)ht} > ow
-	# ɑː most likely became one of {eː,ɛː}
-	ɑ e o > ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/ or ending in one of /m n r l/
-	y(ː) > i(ː)
-	Vː > V[-long] / in #U before a U with /iː/
-	n > ∅ / _# when unstressed (not clear as to whether m > n beforehand in this position or not)
-	j tʃ > ɡ k
-	ʃ > s / in unstressed syllables
-	# ʍ became a sound spelled 〈qu〉
-	hn {wl,hl} hr > w l r
-	ɣ > ɡ / #_
-	ɣ > w / C_V
-	{e,ɑ,o} > ə > ∅ / _#, when unstressed (it appears this sound may also have gone to /ɪ/)
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

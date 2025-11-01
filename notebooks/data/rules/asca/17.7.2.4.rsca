@@ -1,15 +1,3 @@
-@ 17.7.2.4 - High German Cosonant Shift and Umlaut
-# citation: Pogostick Man, from <http://en.wikipedia.org/wiki/High_German_consonant_shift>; and Wikipedia contributors (2014), “Germanic umlaut”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Germanic_umlaut>
-	p t k > fː zː xː / V_V
-	p t k > f z x / _#
-	p t k > pf ts kx / #_
-	p t k > pf ts kx / {L,N}_
-	pː tː kː > pf ts kx
-	b d ɡ > p t k
-	ɣ > ɡ
-	β > b / V_V
-	β > b / _l
-	s > ʃ / #_{p,t}
-	sk > ʃ / #_
-	{θ,ð} > d
-	a u o > e y ø / _(C…){i(ː),j}
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩

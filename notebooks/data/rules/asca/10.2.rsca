@@ -1,9 +1,3 @@
-@ 10.2 - Proto-Austronesian to Proto-Batak
-# citation: TinyMusic, from Adelaar, K.A. (1981), “Reconstruction of Proto-Batak Phonology”. In Blust, Robert (ed.), Historical Linguistics in Indonesia I:1 – 20.
-	# TinyMusic notes that this particular set of sound changes is with respect to the reconstruction of Proto-Austronesian by Dyen (1965), and that he had some trouble with *j.
-	w > ∅ / i_#
-	{a,e} > o / _w#
-	a > e / _j#
-	{ts,ʈ} {ɟ͡ʝ,ɖ} {lʲ,ɲ} {ʔ,x,s,h} ʀ > t d n ∅ r (velar fricative is conjectured; changes > d “unsure”)
-	q > ∅ / #_ (sometimes; “represented by *h in PB”)
-	z > j (fricative changes to approximant)
+@ 47.3 - List 3: Vowels
+	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+	i u > s̩ f̩
