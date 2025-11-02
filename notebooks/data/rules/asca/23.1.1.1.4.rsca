@@ -1,3 +1,11 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 23.1.1.1.4 - Proto-Chibchan to Marocacero
+# citation: Pogostick Man, from Wheeler, Alva (1972), “Proto-Chibchan”. In Matteson, Esther, ed., Comparative Studies in Amerindian Languages 93 – 108
+	s > {ts,ʃ} / _i
+	s > {s,ts}
+	d(V)j s(V)j > lʲ dʒ
+	d > l
+	a > ∅ / _i
+	e > a
+	i > ə / oC_
+	i > ∅ / C”V(C)_
+	i > ∅ / _(C)”V

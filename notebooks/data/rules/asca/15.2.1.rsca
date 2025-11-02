@@ -1,3 +1,21 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 15.2.1 - Proto-Eskimo to Barrow Iñupiaq
+# citation: Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171
+	l̥ > l / medial
+	t > s / i_
+	ə > i / at word boundaries
+	ə > u / u_
+	ə > a / a_
+	ə > ∅ / else
+	ɣ ʁ > k q / _#
+	C₀VC₀ > C₀ː
+	# Regressive MOA assimilation and progressive voicing assimilation in consonant clusters (at least, when C₂ is either /l/ or /l̥/)
+	m n ŋ > v t ɣ / _C[-nasal]
+	l̥ > t / _C
+	v > p / _s
+	v ʁ > p q / S_
+	v ɣ ʁ > p k q / _C (unless C = one of /l dʒ m n ŋ)
+	{p,v} t {k,ɣ} > m n ŋ / _N
+	v > ∅ / u_i
+	dʒ > ʁ / i_u
+	ədʒ > i / _{a,u} (except in #U)
+	adʒ > i / _a (except in #U?)

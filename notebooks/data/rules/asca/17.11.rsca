@@ -1,3 +1,30 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 17.11 - Proto-Indo-European to Proto-Slavic
+# citation: Hwhatting
+	bʱ dʱ {ɡʱ,ɡ́ʱ} ɡʷʱ > b d ɡ ɡʷ
+	Kʷ ḱ ɡ́ > K s z
+	s > x / {i,u,r,k}_
+	k ɡ x > tʃ ʒ ʃ / _{e(ː)(i),i(ː)}
+	{a,o,ə} > e / j_
+	{a,o,ə} > o
+	i u > ь ъj
+	iː uː > i ɨ
+	u > ь / j_
+	e(ː)i > i
+	{ai,oi} > i / j_
+	{ai,oi} > æː
+	{aːi,oːi} > {æː,a} (the former seems to be more common)
+	{a(ː)u,o(ː)u} e(ː)u > u ju
+	e > ь / _jV
+	e > o / _wV
+	w > v
+	l̩ r̩ > {ьl,ъl} {ьr,ъr}
+	{m̩,n̩} > {ẽ,õ} / _C$
+	m̩ n̩ > {ьm,ъm} {ьn,ъn}
+	æː > a / “After palatal fricatives and affricates”
+	{e(ː),i(ː)} {a(ː),o(ː),u(ː)} > ẽ õ / _N$
+	oi o > i ъ / “Sometimes in final syllables”
+	{O,N} > ∅ / _$
+	k ɡ x > ts dz s / _{æː,i}
+	k ɡ x > ts dz s / “After some syllables with front vowels”
+	sj zj > ʃ ʒ
+	kj ɡj xj > tʃ ʒ ʃ

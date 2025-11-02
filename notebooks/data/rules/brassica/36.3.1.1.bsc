@@ -1,21 +1,21 @@
 ; 36.3.1.1 - Proto-Naish to Laze
 ; citation: Pogostick Man, from Jacques, Guillaume, and Alexis Michaud (2011), “Approaching the historical phonology of three highly eroded Sino-Tibetan languages: Naxi, Na and Laze”. Diachronica 28:4 (2011), 468 – 498
-a u i iN > e y ɯ i / T_%
-a > i / {ŋ,w}_%
-a > wɤ / {K,ŋ}w_%
-{a,i} > ɯ / R_%
-a > ie / ! K_%
-a aS > ɑ {ɑ,u}
-iN > æ / {P,C}r_%
-i > v̩ / m_%
-u o > v̩ u
-B > o / {qʰ,(N)q}_
-V% > low tone
-{Np,mb} > b / _V (the paper implies similar developments occurred at other POAs)
-{r,s}p(ʰ) {r,s}{Np,(m)b} > f v / _V (the paper implies similar developments occurred at other POAs)
-{r,s}k {r,s}Nk > f w / _V
-S{b,ɡ} Sk > v h / _V
-{r,s}l {r,s}n > l̥ N̥ / %_V
-n̥ > l̥ / %_V
-N̥V > hṼ
-l̥ > ɬ / %_V
+a u i iN / e y ɯ i / T_%
+a / i / {ŋ,w}_%
+a / wɤ / {K,ŋ}w_%
+{a,i} / ɯ / R_%
+a / ie / ! K_%
+a aS / ɑ {ɑ,u}
+iN / æ / {P,C}r_%
+i / v̩ / m_%
+u o / v̩ u
+B / o / {qʰ,(N)q}_
+V% / low tone
+{Np,mb} / b / _V (the paper implies similar developments occurred at other POAs)
+{r,s}p(ʰ) {r,s}{Np,(m)b} / f v / _V (the paper implies similar developments occurred at other POAs)
+{r,s}k {r,s}Nk / f w / _V
+S{b,ɡ} Sk / v h / _V
+{r,s}l {r,s}n / l̥ N̥ / %_V
+n̥ / l̥ / %_V
+N̥V / hṼ
+l̥ / ɬ / %_V

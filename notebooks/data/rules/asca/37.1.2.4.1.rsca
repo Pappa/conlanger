@@ -1,3 +1,26 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 37.1.2.4.1 - Proto-Mohawk-Oneida to Mohawk
+# citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg
+	V₀ > ∅ / ”VC(C)(C)V₀ʔ_C(C)(C)#
+	∅ > e / {tsh,s,n}_r
+	w > ∅ / _jh
+	h > ∅ / w_j
+	jh > hj
+	∅ > e / w_j
+	∅ > e / n_k(ʷ)
+	∅ > e / {t,k}_{r,n}
+	∅ > e / {#,V}s_n
+	∅ > e / t_w
+	∅ > e / {#,V}s_w
+	# “Dialectal changes include:”
+	— r > l
+	— t > k / _j
+	— k > t / _j
+	— wə̃ > ũ / {h,s}_
+	— j > ∅ / ts_
+	— t > tʃ / _(h)j
+	— wh > f
+	# “Allophonic changes:”
+	— ts > tʃ / _{(h)i,(h)j}
+	— t tʃ k(ʷ) > d dʒ ɡ(ʷ) / _{V,R}
+	— s > ʃ / _(h)j
+	— s > z / {#,V}_{V,R} ! R = j

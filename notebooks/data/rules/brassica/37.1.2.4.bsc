@@ -1,15 +1,15 @@
 ; 37.1.2.4 - Proto-Northern Iroquoian to Proto-Mohawk-Oneida
 ; citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg
-ẽ(ː) õ(ː) > ʌ̃(ː) ũ(ː)
-ts > hs / V_{t,k(ʷ)}
-ts > s / ! _{h,i,j}
-ns > ts / _{t,k(ʷ)}
-n > ∅ / _s
-”V > ”Vː[+falling tone] / _{ʔ,hR}
-ʔ > ∅ / ”Vː[+falling tone]_C
-h > ∅ / ”Vː[+falling tone]_R
-h > ∅ / _#
-h > ∅ / #_w
-Vː > V / _(C)(C)(C)#
-CʔV₀ > CV₀ʔV₀
-∅ > e / w_r (and “probably. . .in other environments”)
+ẽ(ː) õ(ː) / ʌ̃(ː) ũ(ː)
+ts / hs / V_{t,k(ʷ)}
+ts / s / ! _{h,i,j}
+ns / ts / _{t,k(ʷ)}
+n / ∅ / _s
+”V / ”Vː[+falling tone] / _{ʔ,hR}
+ʔ / ∅ / ”Vː[+falling tone]_C
+h / ∅ / ”Vː[+falling tone]_R
+h / ∅ / _#
+h / ∅ / #_w
+Vː / V / _(C)(C)(C)#
+CʔV₀ / CV₀ʔV₀
+∅ / e / w_r (and “probably. . .in other environments”)

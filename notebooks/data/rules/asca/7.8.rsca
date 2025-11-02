@@ -1,3 +1,19 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 7.8 - Proto-Algonquian to Plains Cree
+# citation: Pogostick Man, from http://home.kpn.nl/cvkolmes/ojibwe/CorrCrOj.pdf and Wikipedia contributors (2015), “Cree language”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Cree_language>
+	we > o
+	e > i (short only in southern dialects, both short and long in northern dialects)
+	ja > aː / C_
+	ʃjeː > seː
+	lwi > jo
+	wi > o / C_
+	{n,q,h} > ∅ / _s
+	q > h / _tʃ
+	N > h / _S
+	(t)ʃp > sp
+	{q,ʃ} > s / _t
+	θ > s / _k
+	l > h / _k
+	{n,q,h}ʃ {n,q,h}l > s {h,j,hj}
+	ʃ tʃ > s ts
+	θ > t
+	l > j

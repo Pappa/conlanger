@@ -1,7 +1,7 @@
 ; 6.2.2 - Proto-Erythrean to Proto-North Erythrean
 ; citation: Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)
-V{j,w} > Vː / C_C
-eː oː > i u
-{e,o} {i,u} > a ə
-$VC$ > $CV$ “(This last rule turned all VC roots into CV)”
-in > ŋ / #_C
+V{j,w} / Vː / C_C
+eː oː / i u
+{e,o} {i,u} / a ə
+$VC$ / $CV$ “(This last rule turned all VC roots into CV)”
+in / ŋ / #_C

@@ -1,3 +1,24 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 35.1.8 - Proto-Central Salish to Lummi Northern Straits
+# citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology and Sound Correspondences”. From the 17th International Conference on Salish and Neighboring Languages
+	p(’) m > tʃ(’) ŋ / ! _u
+	mʔ > ∅ / _n
+	ts > s
+	lʲ > l
+	s > ʃ / _xʷ
+	tʃ > s
+	tʃ’ > ts’ / medially
+	j > tʃ / _V
+	ʔ > ∅ / V³l_nV
+	ʔ > {∅,ʔ} / V³R_{C,#}
+	u³ u¹ > o³ ə¹
+	a³ > o³ / {{C[+ uvular],K}ʷ,w}_
+	a³ > o³ / _{Cu,C[+ uvular]ʷ,w}
+	a³ > e³ / else
+	a¹ > ə¹
+	{u³~ə³} > ə¹
+	{a³~ə³} > ə³
+	{a³~i³} > ə³
+	{a¹~i¹} > ə¹
+	{i³~e³} > ə³
+	{i³~ə¹} > ə¹
+	{i¹~ə¹} > ə¹

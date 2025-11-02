@@ -1,3 +1,17 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 10.2.4.2 - Proto-Malayo-Polynesian to Madurese
+# citation: TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic Linguistics 44(2):357 – 388
+	ɭ > lʔ / _#
+	ɭ > l
+	z > jʰ
+	# w j fortite when non-final
+	b > {w,∅} / #_
+	R > ʔ / _#
+	R > r
+	h > ʔ / V₀V₀
+	h > ∅
+	# “Aspiration of initial and intervocalic voiced stops and *z”
+	{p,t,k} b d ɡ > ʔ p t k / _#
+	ij uw > uj {uj,ój} / _#
+	V > Vː / ə(C…?)_
+	C[+ voice] > C[- voice] / _#
+	HəS > (h)əNS / #_

@@ -1,3 +1,10 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 26.11 - Proto-Mande to Sembla
+# citation: Pogostick Man, from Dwyer, David J. (1987/1988), “Towards Proto Mande Morphology”. Mandekan: Bulletin semestriel d’études linguistiques 14/15:139 – 152
+	p > f
+	f > d (yes, really)
+	tʼ {kʼ,ɡ,w} > {t,d} k
+	l > d
+	z > s
+	ɡb > b
+	j > dʒ
+	ŋ > ɲ

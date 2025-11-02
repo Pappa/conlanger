@@ -1,3 +1,23 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 37.1 - Proto-Siouan-Iroquoian to Proto-Iroquoian
+# citation: Pogostick Man, from Chafe, Wallace L. (1964), “Another Look at Siouan and Iroquoian”. American Anthropologist New Series, 66:852 – 862; and from cedh aumdmanh’s Iroquoian changes
+	w > ∅ / _{o,õ,ı̃}
+	m > w / _ã
+	t > ts / _{i,ı̃}
+	tʰ > ts / _i
+	tʰ > n / else
+	ã > ẽ
+	e > i / r_ʔ
+	r > ts / _i
+	ı̃ > i
+	k > ∅ / t_
+	kʰ > r
+	m > n
+	p > ∅ / C_ ! s_
+	p > kʷ / else
+	pʰ > ʍ (this is a bit of a guess; the paper proper has 〈hw〉 here)
+	ʃ θ > s t
+	# The paper is unclear about what happened to /u/.
+	x > ∅ / _k
+	x > h / _C ! C_C
+	x > k
+	ʔ > ∅ / C_

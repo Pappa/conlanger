@@ -1,3 +1,9 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 11.5.6 - Proto-Lezgic to Udi
+# citation: Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian>, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251
+	ts tsː tsʼ tsːʼ dz > {∅,s} tʃ {∅,tsʼ} {tsʼ,tʃʼ} z
+	t > ∅ / s_
+	tʃ tʃː tʃʼ tʃːʼ dʒ > {∅,ʃ} tʃ ∅ tʃʼ {dʒ,tʃ}
+	tɬ tɬː tɬʼ tɬːʼ dɮ > {∅,x} q {∅,qʼ} qʼ {ɣ,l}
+	kː > q
+	q qʼ qːʼ ɢ > ∅(?) ∅ qʼ ɣ
+	{ɬ(ː),xː} > x

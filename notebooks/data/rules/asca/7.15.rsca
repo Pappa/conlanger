@@ -1,3 +1,19 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 7.15 - Proto-Algonquian to Ojibwe
+# citation: Whimemsz, from his own work; http://home.kpn.nl/cvkolmes/ojibwe/corrCrOj.htm; Bloomfield, Leonard (1946), “Algonquian”; and “various asides and statements in dozens of different journal articles and conference papers dealing with Ojibwe or PA”
+	# NB: For this sound-change set, H is “either an */h/ or */ʔ/, but we don’t know which”.
+	we e > o i
+	w > ∅ / {t,r}_i
+	{θ,s,h,ʔ} > ∅ / _{p,t,tʃ,k}
+	θ > r
+	{ʔ,h}{s,r} > s
+	{ʔ,h} > ∅ / _ʃ
+	{n,r} > ∅ / _r
+	H > ∅ / _m
+	r > s / _k
+	{j,w}V[-long] > ∅ / C_# in disyllables with Vː or in tri(-plus-)syllables
+	{w,j}V[-long] > ∅ / Vː_# (Whimemsz is unsure if this change is across-the-board or not)
+	V[-long] > ∅ / V[-long]{w,j}_# (Whimemsz is unsure if this change is across-the-board or not)
+	jeː > iː / C_
+	ja > iː / C_C
+	j > ∅ / C_
+	r > n

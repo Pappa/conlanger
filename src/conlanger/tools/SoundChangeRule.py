@@ -33,7 +33,15 @@ class RuleComment(RulePartBase):
 class RuleChange(RulePartBase):
     prefixes = {"asca": "\t", "brassica": ""}
     def __init__(self, value: str, format: str = "asca"):
-        super().__init__(value, format)
+        super().__init__(self._format(value, format), format)
+
+    def _format(self, value: str, format: str):
+        if format == "asca":
+            return value.replace('&gt;', '>')
+        elif format == "brassica":
+            return value.replace('&gt;', '/').replace('>', '/')
+        else:
+            raise ValueError(f"Unsupported format: {format}")
 
 
 class SoundChangeRule:
@@ -46,7 +54,7 @@ class SoundChangeRule:
         elif part.tag == "comment":
             return RuleComment(part.text, format)
         elif part.tag == "rule":
-            return RuleChange(part.text.replace('&gt;', '>'), format)
+            return RuleChange(part.text, format)
         else:
             return RulePartBase(part.text, format)
 

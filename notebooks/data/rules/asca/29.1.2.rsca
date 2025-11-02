@@ -1,3 +1,8 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 29.1.2 - Proto-Athabaskan-Eyak to Eyak
+# citation: Pogostick Man, from Wikipedia contributors (2015), “Na-Dene languages”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Na-Dene_languages>
+	kʲ kʲʼ ɡʲ xʲ > ts tsʼ dz {s,ʃ}
+	Kʷ > K
+	qʷ qʷʼ ɢʷ > q qʼ ɢ
+	s > ∅ / _x
+	x > ∅ / ʃ_
+	$ > xʷ > {x,s}

@@ -1,3 +1,59 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 7.4 - Proto-Algonquian to Blackfoot
+# citation: Whimemsz, from Proulx, Paul (1989), “A Sketch of Blackfoot Historical Phonology”. International Journal of American Linguistics, 55:43 – 82
+	{θ,tʃ,ʃ,r} > t / unless adjacent to another consonant
+	∅ > x / _s ! _C{C,#}
+	j > s / ! C_
+	h > ∅ / ! _C
+	{ʃ,tʃ} > s / #_
+	{ʔθ,ʔr} > {ʔ,j,∅}
+	nr > s
+	h > x / _{p,k}
+	hkw > ʔk
+	nθ hs > sːt sː
+	m > ʔ / _p
+	nkw > ʔː
+	{n,s} > x / _t
+	ntʃ > ʔt
+	ns sk > {x,s} {x,sː}
+	θp tʃp ʃp > {x,sː} ʔp sːp
+	ʃ > x / _k
+	x > sː / {i,#e,ja,ke}_
+	x > sː / e(ː)_s
+	∅ > s / {i(ː),#e}_t
+	t > ts / _{i,e(ː),a}
+	∅ > s / k_i(ː)
+	sːː > sː
+	e > i / {#,k}_
+	{a,e,i} > o / _kʷ
+	∅ > j / {oːw,iːj}_i#
+	w > j / {r,k}_i#
+	∅ > i / r_w
+	w > ∅ / C_
+	{jiː,ja,ahi} {owaː,awa,awe} awi {iːwa,eːwa,aji,aje,ani} > i oː o(ji) iː / C_C
+	hi > ∅ / aː_
+	∅ > i / #_jC
+	∅ > i / C_jV#
+	a > o / _w
+	eLwi > iː
+	i(ː)wi > iː / medially
+	i(ː)wi > i / _#
+	j > s
+	w > j / _i
+	{iː,ij,j} > j / C_B
+	iji > iː
+	w > ∅ / {a,o}_iC
+	on > u / _iC
+	tem {k,p}en > mː nː
+	ket > tː (> sː?)
+	ke(h) > tː ?
+	{k(ʷ)es,keθ} > sː
+	e > ∅ / O_ in #U (not universal)
+	{me,ne} > ∅ / #_O “(followed by truncation of following x)”
+	{we,wiː} > o / #_
+	tsi > ∅ / $_OO “(before a prefix; the first obstruent of the follow[ing] cluster then becomes ʔ)
+	aː > aa / W_ ! when _{C{C,ː},#}
+	aː > a / else
+	oː > o
+	a > i / ! at word boundaries
+	e > a / _#
+	{eː,iː} > i

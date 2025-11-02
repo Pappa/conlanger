@@ -1,3 +1,30 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 7.12 - Proto-Algonquian to Menominee
+# citation: Whimemsz, from Hockett, C. F. (1981), “The Phonological History of Menominee”. Anthropological Linguistics 23(2): 51-87; and Miner, Kenneth L. (1979), “Theoretical Implications of the Great Menominee Vowel Shift”. Kansas Working Papers in Linguistics 4(1): 7-25.
+	we je > o i / _C
+	we > o / #_
+	θ > s / _O
+	θ > r
+	V[-long] > ∅ / _# “[does not apply in disyllabic words containing two short vowels]”
+	∅ > h / V[-long]_#
+	H > ∅ / _m
+	{s,r} > h / _O
+	w > ∅ / h_V
+	a > o / $am_w
+	V > Vː “when V is the second vowel of a word and follows a short-vowel syllable. Does not apply in glottal words”
+	e > i / Vː%_ ! _H
+	N > h / _{O,r}
+	e > i / #(C)_ ! _H
+	e > i / _{k,m} “when in the second syllable of glottal words”
+	{w,j} > ∅ / C_#
+	C > ∅ / C_#
+	wi(ː) > o(ː) / C_w
+	ʃ tʃ > s ts
+	Vː > V[-long] / CC(G)_C{V,#} “[i.e., when following a cluster but not followed by a cluster. Only applies ‘after the first long vowel of a nonglottal word, and everywhere in a glottal word’]”
+	V > Vː / _CC in even syllables
+	Vː > V[-long] / _C{V,#} in even syllables; “does not apply in the second syllable of a non-glottal word”
+	e(ː) i > æ(ː) e
+	iː oː oʔ > eː uː uʔ “[blocked when iː or a C+G sequence follows anywhere in the word, but does apply if æ(ː) intervenes before any following iː or C+G]”
+	{wiː,jiː,weː,jeː,wæː,jæː} {wi,ji,we,je,wæ,jæ} > iː i / C_
+	æ > e / in odd syllables ! _{w,j,H}
+	r > n
+	wa ja > uə̯ iə̯ / C_

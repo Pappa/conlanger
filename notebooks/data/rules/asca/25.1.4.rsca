@@ -1,3 +1,13 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 25.1.4 - Proto-Tacanan to Tacana
+# citation: Pogostick Man, from Key, Mary Ritchie (1968), Comparative Tacanan Phonology with Cavineña Phonology and Notes on Pano-Tacanan Relationship
+	k > kʷ / _a
+	k > kʷ / #_i
+	∅ > j / k_e
+	tɕ > dʑ
+	tʃ > ts / _E
+	ɕ > s
+	x > h / #_
+	x > {h,∅}
+	w > β / _E
+	j > tʃ / V_V
+	*ŕ > ∅

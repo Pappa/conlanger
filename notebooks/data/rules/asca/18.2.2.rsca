@@ -1,3 +1,10 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 18.2.2 - Proto-Ofaié-Jê to Ofaié-Xavante
+# citation: Pogostick Man, from Gudschinsky, Sarah C. (1971), “OfaiÃ©-Xavante, a JÃª Language”
+	m > w / _#
+	m > {w,p}
+	ɲV > jṼ
+	k(ʷ) > ʔ / _#
+	kʷ > k
+	ŋ > n / V_V
+	ŋ > j̃ / #_ (not sure if this nasalizes the following vowel or not)
+	ŋʷ hʷ > j̃ h

@@ -1,22 +1,22 @@
 ; 17.7.2.1.12 - Old English to Southern Middle English
 ; citation: Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English Phonology and Midd le English Grammar for Courses in Chaucer, Middle English, and the History of the English Language; and Wikipedia contributors (2011), “Middle English phonology”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Middle_English_phonology>
-Vː > V[-long] / _C{ː,C} ! _st{#,V} or when preceding a cluster which had triggered a vowel to become long in Old English; the book gives “Christ” vs. “Christmas” as an example
-eɑ eːɑ eo eːo > ɑ ɛː e eː
-æj > aj > ej
-{æːj,e(ː)j} > ej
-ɑɣ > ɑw
-{eɑh,eɑç,eɑx,eɑʝ,eɑɣ} > ɑw
-eːɑw iːw > ew ju
-{ɑːw,ɑːɣ,oːw} > ɔːw
-oɣ > ɔːw / _V
-{ɑːht,o(ː)ht} > ow
-ɑː > ɔː
-ɑ e o > ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/ or ending in one of /m n r l/
-y(ː) > i(ː)
-Vː > V[-long] / in #U before a U with /iː/
-m > n > ∅ / _# when unstressed
-hn {wl,hl} hr > w l r
-f θ s ɣ > v ð z ɡ / #_
-ɣ > w / C_V
-{e,ɑ,o} > ə / _#
-e > ∅ / if another /e/ one syllable previous
+Vː / V[-long] / _C{ː,C} ! _st{#,V} or when preceding a cluster which had triggered a vowel to become long in Old English; the book gives “Christ” vs. “Christmas” as an example
+eɑ eːɑ eo eːo / ɑ ɛː e eː
+æj / aj / ej
+{æːj,e(ː)j} / ej
+ɑɣ / ɑw
+{eɑh,eɑç,eɑx,eɑʝ,eɑɣ} / ɑw
+eːɑw iːw / ew ju
+{ɑːw,ɑːɣ,oːw} / ɔːw
+oɣ / ɔːw / _V
+{ɑːht,o(ː)ht} / ow
+ɑː / ɔː
+ɑ e o / ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/ or ending in one of /m n r l/
+y(ː) / i(ː)
+Vː / V[-long] / in #U before a U with /iː/
+m / n / ∅ / _# when unstressed
+hn {wl,hl} hr / w l r
+f θ s ɣ / v ð z ɡ / #_
+ɣ / w / C_V
+{e,ɑ,o} / ə / _#
+e / ∅ / if another /e/ one syllable previous

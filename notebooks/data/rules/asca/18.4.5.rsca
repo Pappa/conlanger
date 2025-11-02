@@ -1,3 +1,9 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 18.4.5 - Proto-Tupí-Guaraní to Guarayo
+# citation: Pogostick Man, from Lemle, Miriam (1971), âInternal Classification of the Tupi-Guarani Linguistic Family”. In Tupi Studies I, from Summer Institute of Linguistics Publications in Linguistics and Related Fields Publication Number 29.
+	m p > ŋ k / _w
+	t > tʃ / _{i,ı̃}
+	{b,k} r > ∅ {r,∅} / _#
+	ʔ ts > {ʔ,∅} {ts,tʃ}
+	{Vm,Vŋ} Vn > V[+ nasal] {Vr,V[+ nasal]} / _#
+	aN eN iN ɨN uN > ã ẽ ı̃ ɨ̃ ũ / _#
+	õ > o

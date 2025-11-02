@@ -1,3 +1,24 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 6.1.1.5 - North Omotic to Shekkacho
+# citation: Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)
+	b > w / V_V
+	pʼ > p / V_
+	pʼ > b
+	z > j / {#,V}_
+	z > dʒː / Vj_
+	zː > dʒː
+	s > ʃ / ! V_
+	tsʼ > tʃʼ
+	x₁ > k
+	x₂ > ∅ / V_V
+	ʒ > ʃ / #_
+	{s₃,ts,ʒ} > s / _$#
+	ts > ʃ / V_
+	s₃ > ʃ / #_
+	s₃ > s / V_$#
+	s₂ > ʃ
+	s₂ > {s,tʃː} / V_
+	h₁ > {h,∅} / #_
+	h₂ > w / #_
+	l > d / #_VC
+	l > n / #_Vb
+	dʼ > tʼ

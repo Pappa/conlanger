@@ -1,3 +1,14 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 43.3 - Proto-Uto-Aztecan to Luiseño
+# citation: Radius Solis, from from Voegelin, Charles F., Florence M. Voegelin, & Kenneth L. Hale (1962), “Typological and Comparative Grammar of Uto-Aztecan: I (Phonology)”. International Journal of American Linguistics 28: Memoir 17
+	p > v / {Vn,ɨ}_ (the latter “sometimes”)
+	p > v / “other conditions not known”
+	t > l / medially
+	ts > tʃ
+	k > q / #_V[+low]
+	k > q / an_
+	k > x / a_
+	ʔ > ∅ / #_
+	s > ʃ
+	l > n / medially
+	o ɨ > e o
+	V > ∅ / “in some final syllables (conditions are unknown and it varies by dialect)”

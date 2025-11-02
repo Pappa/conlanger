@@ -1,3 +1,11 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 10.3.5.6 - Proto-New Caledonia to Pwaamei
+# citation: thetha, from Ozanne-Rivierre, Françoise (1992), “The Proto-Oceanic Consonantal System and the Languages of New Caledonia”. Oceanic Linguistics 31(2):191 – 207; and Ozanne-Rivierre, Françoise (1995), “Structural Changes in the Languages of Northern New Caledonia”. Oceanic Linguistics 34(1):44 – 72
+	V > ∅ / _#
+	q k t s > k j c t
+	pː pwː tː ʈ kː cː > f hʷ tʰ lʰ h s
+	ʈ > l / V_V
+	k c > ∅ {j,∅} / V_V
+	Cː > Cʰ
+	jʰ j > s z
+	s > h / _i
+	bw mw > ɡ ŋ

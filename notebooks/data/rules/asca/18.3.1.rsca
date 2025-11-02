@@ -1,3 +1,21 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 18.3.1 - Proto-Tuparí to Makuráp
+# citation: Pogostick Man, from Moore, Denny and Ana Vilacy Galucio (1994), “Reconstruction of Proto-Tupari Consonants and Vowels”. Report 8: Survey of California and Other Indian Languages: Proceeds of the Meeting of the Society for the Study of the Indigenous Languages of the Americas, July 2 – 4, 1993, and the Hokan-Penutian Workshop, July 3, 1993, 119 – 137.
+	t > r / _”V
+	t > l / _V
+	t > ∅ / else
+	k > ∅ / _#
+	kʷ > ∅
+	b > β / V_V
+	ɡʷ > β / _V[- nasal]
+	ts (n)dz > t nd
+	β > ∅ / _i
+	h > ∅ / V_C
+	ʔ > ∅
+	r > l / V[+ nasal]_V[+ nasal]
+	ð nŋʷ > c β / #_V[- nasal]
+	ð > {∅,c} / else
+	j ŋʷ m n > ɲ m {m,p} {∅,t} / _V[+ nasal]
+	ⁿd ŋ > t {ɡ,k} / _V[- nasal]
+	u > o / _{p,b}i
+	ɨ > ∅ / ! #_{p,β}e
+	{a/e} {e/a} {ı̃,ẽ} > e a ẽ

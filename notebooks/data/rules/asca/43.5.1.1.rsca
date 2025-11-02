@@ -1,3 +1,12 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 43.5.1.1 - Proto-Mono-Kawaiisu to Kawaiisu
+# citation: Pogostick Man, from Klein, Sheldon (1959), “Comparative Mono-Kawaiisu”. International Journal of American Linguistics 25(4):233 – 238
+	hkʷ hʔ (h)S Sː > w ʔ S[+ voiced] S[- voiced - long] / V_V
+	ts > z / V_V
+	hts > z / V_i
+	h > ∅ / V_tsV
+	h > ∅ / _{n,s,ʔ}
+	p > b / m_
+	jː > j
+	a > o / P_
+	uV Vː > uː Vː
+	k > ∅ / V_wV

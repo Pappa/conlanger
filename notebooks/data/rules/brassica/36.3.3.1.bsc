@@ -1,12 +1,12 @@
 ; 36.3.3.1 - Old Tibetan to Amdo dialects
 ; citation: Pogostick Man, from Jacques, Guillaume (2004), “Phonologie et Morphologie du Japhug (rGyalrong)”. Université Paris-Diderot – Paris VII <tel-00138568>. <https://tel.archives-ouvertes.fr/file/index/docid/138568/filename/these-japhug.pdf>
 ; NB: This source is in French and looks to at least sometimes use a transcription that isn’t IPA.
-{d,ɡ,s,l,r} > {h,r} / #_
-ʃ > x / #_ (some dialects, never when following preinitials)
-k(ʰ){r,j} ɡ{r,j} > tɕ(ʰ) dʑ
-pʰ b > h w
-i > ə / _#
-sr > ʂ / #_
-s > either i or a diphthong ending in i? / _#
-d > l / _# (some dialects)
-t > l / _# (further development in bLa-brang)
+{d,ɡ,s,l,r} / {h,r} / #_
+ʃ / x / #_ (some dialects, never when following preinitials)
+k(ʰ){r,j} ɡ{r,j} / tɕ(ʰ) dʑ
+pʰ b / h w
+i / ə / _#
+sr / ʂ / #_
+s / either i or a diphthong ending in i? / _#
+d / l / _# (some dialects)
+t / l / _# (further development in bLa-brang)

@@ -1,10 +1,10 @@
 ; 18.1.2 - Pre-Bakairi to Western Bakairi
 ; citation: Pogostick Man, from Meira, Sérgio (2005), “Reconstructing Pre-Bakairi Segmental Phonology”. Anthropological Linguistics 47(3):261 – 291
-V[- stress]NV > ṼṼ
-z > h / V_a
-z > ∅ / V_V
-C[+ fricative - voiced] > ∅ / ʔ_
-ɨ > ə / P_
-ɨ > i
-ʒ > ∅
-ɾ > ∅ / V_V, where at least one of the vowels is nasalized
+V[- stress]NV / ṼṼ
+z / h / V_a
+z / ∅ / V_V
+C[+ fricative - voiced] / ∅ / ʔ_
+ɨ / ə / P_
+ɨ / i
+ʒ / ∅
+ɾ / ∅ / V_V, where at least one of the vowels is nasalized

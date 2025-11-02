@@ -1,3 +1,56 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 37.1.2.5 - Proto-Northern Iroquoian to Seneca
+# citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg
+	ts > s / ! _{i,j}
+	n > ∅ / _s
+	j > ∅ / _ts
+	V > Vː / _{t,k(ʷ),s,n,r,j,w} “in even penultimate syllables”
+	# “The inherited accent system is replaced by a new one, by which...
+— “the accent falls on the last nonfinal even short syllable of a word if this vowel is followed directly
+—— “by a single glottal consonant,
+—— “by /sn/ or /sw/,
+—— “by any two-consonant cluster that does not end in a resonant,
+—— “or by any three consonant cluster;
+— “failing that, the accent falls on the last non-final even short syllable that is followed by a non-final syllable such as that just described;
+— “failing that, a word has no accent.”
+	a > æ / _ra(ː)
+	a > e / _ro(ː)
+	ã > ẽ / _rõː
+	a(ː) > æ(ː) / r_
+	h > ∅ / _{tk,nh,sC,C#}
+	h > ∅ / #_w
+	h > ∅ / w_j
+	hw > ∅ / õ_
+	w > ∅ / _{r,j}
+	r > n / _(h)j
+	r > ∅ / Vh_
+	Vh > Vː / _{n,w,j}
+	h > ∅ / V_V
+	r > j / C[-glottal](h)_{o(ː),õ(ː)
+	r > h / s_
+	r > j / i(ː)_V
+	r > w / {o(ː),õ(ː)}_V
+	r > ∅
+	o > oː / _{aː,æː}
+	Vː > V / V_
+	V₁”V₂ > ”V₁V₂
+	a(ː) > ẽ(ː) / adjacent to a nasal vowel
+	ẽ(ː) > e(ː) / _{e(ː),o(ː)
+	ʔ > ∅ / _nk(ʷ)
+	n > t / _k(ʷ)
+	n > t / ʔ_#
+	R > ∅ / _h
+	C > ∅ / s_#
+	C[-glottal] > ∅ / _s#
+	k > ∅ / _hts
+	t > h / _{n,t}
+	t > ∅ / k_#
+	{ths,tts} > tsh
+	a(ː) æ(ː) > õ(ː) ẽ(ː) / n_
+	a(ː) > õ(ː) / V[+ nasal]H_
+	a(ː) > õ(ː) / V[+ nasal]({ʔ,s})w_
+	ẽ(ː) õ(ː) > ɛ̃(ː) ɔ̃(ː)
+	∅ > h / k_n
+	# “Allophonic changes:”
+	— t k(ʷ) > d ɡ(ʷ) / _{V,R}
+	— s > ʃ / _j
+	— a e o > ə ɪ ʊ / C_{C,i[-long]}

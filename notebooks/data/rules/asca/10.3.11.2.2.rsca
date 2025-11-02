@@ -1,3 +1,14 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 10.3.11.2.2 - Proto-Erromango to Ura
+# citation: thetha, from Lynch, John (2001), The Linguistic History of Southern Vanuatu
+	h > ∅
+	*L > l
+	nr > d
+	b d ɡ > m n ŋ / _C
+	b d ɡ > p t k / _#
+	p > b / V_V
+	u > e / ɣ_# (? this change is a bit unclear)
+	ɣ > ∅ / _#
+	k > ∅ (perhaps doesn’t always happen but happens often)
+	{s,t} > h / _{n,l,r}
+	t > r / ! at word boundaries
+	ə > i

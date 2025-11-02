@@ -1,3 +1,27 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 6.2.2.1.7 - Classical Arabic to Egyptian Arabic
+# citation: Pogostick Man, from Brustad, Kristen, Mahmoud Al-Batal, and Abbas Al-Tonsi (2010), Alif Baa: Introduction to Letters and Sounds, 3rd. Ed.; http://en.wikipedia.org/wiki/Egyptian_Arabic; At-Tonsi, Abbas, Heba Salem, and Nevenka Korica Sullivan (2013), Umm al-Dunya: Advanced Egyptian Colloquial Arabic; and from correspondence with my own Arabic professor, who is a native speaker of this dialect
+	θ ð > t d / “usually in numbers or cases where a short vowel has been deleted and it’s in contact with another stop, e.g. CA/MSA kaˈθiːr > EA ktiːr”
+	θ ð > s z
+	ðˤ > zˤ, occasionally tˤ
+	dˤ > zˤ (seems to be a sporadic change only affecting a few words, e.g. CA/MSA ˈdˤaːbitˤ > EA ˈzˤaːbitˤ)
+	dʒ > ɡ
+	i u > e o / only when short, ! _#
+	u > {o,u} / short only, _#
+	aj aw > eː oː / in U[+closed]
+	Vː > V / C_C{ː,C}V
+	V > Vː / C_CV in U[-stress]
+	V > Vː / _# + suffix
+	{i,u} > ∅ / VC_CV when unstressed (short only)
+	# Some other short-vowel deletions
+	∅ > e / CVCC_CVCV (applies across word boundaries)
+	# Resyllabification across word boundaries to prevent vowel-initial syllables
+r gains emphatic status except when next to i, and even then it’s becoming more common in that environment
+	a(ː) > ɑ(ː) / near emphatics
+	a(ː) > ɑ(ː) / if ɑ(ː) is elsewhere in the word
+	a(ː) > æ(ː) / else (sometimes it seems more like ɛ(ː) to me)
+	q > ʔ / except in several words, two of which are al-Qâhira and musîqâ
+	# Two consecutive consonants assimilate to the voicing of the second (obstruents only?)
+	{{s,z}(ˤ),ʒ}ʃ > ʃː
+	ʕ > {ʕ̞,ħ} / _h
+	# Final short vowel loss
+	h > ∅ / in coda

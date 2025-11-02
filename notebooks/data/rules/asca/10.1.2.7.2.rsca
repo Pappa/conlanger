@@ -1,3 +1,16 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 10.1.2.7.2 - Proto-Kalamian to Karamiananen
+# citation: Pogostick Man, from Himes, Ronald (2006), “The Kalamian Microgroup of Philippine Languages”. Paper presented at Tenth International Conference on Austronesian Linguistics. 17Â­ – 20 January 2006. Puerto Princesa City, Palawan, Philippines. <http://www.sil.org/asia/philippines/ical/papers.html>
+	{t,k} q > ʔ k / _C
+	s > ʔ / _C
+	k > ∅ / _{V,#}
+	q > k
+	aɪ ai > ɪɪ ii (not sure if there’s a long vowel or hiatus here)
+	t > s / _i
+	s > t / _V ! _E
+	s > t / _#
+	s > c& _ (the paper doesn’t explain what this represents)
+	b > β / V_V
+	β > w / V[+ high]_a
+	ɡ > h / V_V
+	∅ > ʔ / #_
+	∅ > ʔ / V_#

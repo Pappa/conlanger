@@ -1,22 +1,22 @@
 ; 34.9 - Proto-Quechumaran to Tena
 ; citation: Pogostick Man, from Orr, Carolyn, and Robert E. Longacre (1968), “Proto-Quechumaran”. Language 44(3):528 – 555
-q(h) > k
-pʼ tʼ kʼ qʼ > p t k q
-p > b / m_
-t(ʰ) > d / n_
-tʰ > t
-k > ɡ / n_
-k > ɡ / _{L,j}
-h > ∅ / ts_
-tʃ > ʃ / _C
-tʃh > ʃ
-tʃʼ > tʃ
-ʈʂ > ʃ / _K
-ʈʂ > tʃ / _V
-ʈʂʼ > tʃ
-ɸ(ʼ,ʰ) > p
-ʂ > ʃ
-h > ∅ / #_
-χ > k / #_
-ɲ > n / _i
-w > ∅ / #_i
+q(h) / k
+pʼ tʼ kʼ qʼ / p t k q
+p / b / m_
+t(ʰ) / d / n_
+tʰ / t
+k / ɡ / n_
+k / ɡ / _{L,j}
+h / ∅ / ts_
+tʃ / ʃ / _C
+tʃh / ʃ
+tʃʼ / tʃ
+ʈʂ / ʃ / _K
+ʈʂ / tʃ / _V
+ʈʂʼ / tʃ
+ɸ(ʼ,ʰ) / p
+ʂ / ʃ
+h / ∅ / #_
+χ / k / #_
+ɲ / n / _i
+w / ∅ / #_i

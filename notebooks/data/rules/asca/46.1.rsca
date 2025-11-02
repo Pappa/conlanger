@@ -1,3 +1,4 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 46.1 - 7-to-5 Vowel Merger (Bantu)
+# citation: Pogostick Man, from Schadeberg, Theo C. (1995), “Spirantization and the 7-to-5 Vowel Merger in Bantu”. In Sound Change, M. Dominicy and D. Demolin (Eds.), Amsterdam: John Benjamins, 1995.
+	S > F / _{i,u}
+	ɪ ʊ > i u

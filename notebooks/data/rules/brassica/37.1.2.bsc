@@ -1,13 +1,13 @@
 ; 37.1.2 - Proto-Iroquoian to Proto-Northern Iroquoian
 ; citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg
-o(ː) u(ː) > a(ː) o(ː)
-iji(ː) > hi(ː) / {k,s}_ “(possibly after all non-glottal obstruents)”
-i > e / ! _hCC (“short only”)
-∅ > i(ː) / #_(C)(C)CVC(C)(C)#
-V > ”V / “in antepenultimate syllables, if the vowel of the penultimate syllable was short */a/ followed by a single non-glottal consonant”
-V > ”V / “in penultimate syllables not preceded by an accented antepenult”
-Vː > V[-long] / ! in U#
-”V > ”Vː / “in open penultimate syllables followed by a non-glottal consonant”
-h > ∅ / #_s
-n > ∅ / _ti
-t > ∅ / n_V
+o(ː) u(ː) / a(ː) o(ː)
+iji(ː) / hi(ː) / {k,s}_ “(possibly after all non-glottal obstruents)”
+i / e / ! _hCC (“short only”)
+∅ / i(ː) / #_(C)(C)CVC(C)(C)#
+V / ”V / “in antepenultimate syllables, if the vowel of the penultimate syllable was short */a/ followed by a single non-glottal consonant”
+V / ”V / “in penultimate syllables not preceded by an accented antepenult”
+Vː / V[-long] / ! in U#
+”V / ”Vː / “in open penultimate syllables followed by a non-glottal consonant”
+h / ∅ / #_s
+n / ∅ / _ti
+t / ∅ / n_V

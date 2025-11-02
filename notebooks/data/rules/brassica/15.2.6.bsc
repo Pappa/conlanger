@@ -1,28 +1,28 @@
 ; 15.2.6 - Proto-Eskimo to Nunivak Yup’ik
 ; citation: Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171
-Cː > C
-C > Cː / _V(…V) except in #U
-S > ∅ / #_F
-s > ts / in certain situations?
-C[+voice] > C[-voice] / adjacent to {S,s,l̥}
-ɣ ʁ > x χ / _#
-ə > a / _#
-ə > ∅
-i > ∅ / #C[+dental]_C[+dental]V
-a > ∅ / C[+velar]_C[+velar]
+Cː / C
+C / Cː / _V(…V) except in #U
+S / ∅ / #_F
+s / ts / in certain situations?
+C[+voice] / C[-voice] / adjacent to {S,s,l̥}
+ɣ ʁ / x χ / _#
+ə / a / _#
+ə / ∅
+i / ∅ / #C[+dental]_C[+dental]V
+a / ∅ / C[+velar]_C[+velar]
 ; Regressive MOA and voicing assimilation in consonant clusters, at least when C₂ is either /l/ or /l̥/
-v ʁ > f χ / S_
-F[+voice] > F[-voice] / adjacent to {S,ts}
-F[+voice] > S / l̥_
-t > s / _{k,q}
-i a u > ii aa uu / C_ in U[+open -initial -final] such that U[+open]_
-ə > i / {u,a}_ (though aə seems to have become i in some circumstances)
-v > ∅ / u[+short]_V[+short]
-v > ∅ / V[+short]_u[+short]
-u > ∅ / #_vV
-iv > j / #_u
-s > dʒ / {i,u}_V
-dʒ > ∅ / i_i
-ə > ∅ / _dʒ{a,u} except in #U
-a > ∅ / _dʒa (except in #U?)
-in > dʒ / _u (possibly only word-initially?)
+v ʁ / f χ / S_
+F[+voice] / F[-voice] / adjacent to {S,ts}
+F[+voice] / S / l̥_
+t / s / _{k,q}
+i a u / ii aa uu / C_ in U[+open -initial -final] such that U[+open]_
+ə / i / {u,a}_ (though aə seems to have become i in some circumstances)
+v / ∅ / u[+short]_V[+short]
+v / ∅ / V[+short]_u[+short]
+u / ∅ / #_vV
+iv / j / #_u
+s / dʒ / {i,u}_V
+dʒ / ∅ / i_i
+ə / ∅ / _dʒ{a,u} except in #U
+a / ∅ / _dʒa (except in #U?)
+in / dʒ / _u (possibly only word-initially?)

@@ -1,3 +1,6 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 46.15 - Proto-Japanese to Old Japanese Vowel Shift
+# citation: Pogostick Man, from Frellesvig, Bjarke and John Witman (2005), “The Japanese-Korean vowel correspondences”
+	e o > je wo / _#
+	e o > i u / else
+	{ɨ,ə} > o
+	{u,ɨ}i {,a,i {ɨi,i{a,ə}} u{ɨ,a,ə} > wi e je wo

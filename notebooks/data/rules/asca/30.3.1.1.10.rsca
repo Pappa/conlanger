@@ -1,3 +1,7 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 30.3.1.1.10 - Proto-Vhe to Awalan
+# citation: Pogostick Man, from Capo, Hounkpati B.C. (1991), A Comparative Phonology of Gbe
+	a > e / _{i,j}
+	{o,ɔ} ə > u i / _i
+	t d > tʃ dʒ / _{u,i}
+	s {k,ts} {ɡ,dz} > ʃ tʃ dʒ / _i
+	χ ʁ > ʃ {ʒ,j} / _{u,i,j}

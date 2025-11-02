@@ -1,10 +1,10 @@
 ; 18.4.6 - Proto-Tupí-Guaraní to Kamayurá
 ; citation: Pogostick Man, from Lemle, Miriam (1971), âInternal Classification of the Tupi-Guarani Linguistic Family”. In Tupi Studies I, from Summer Institute of Linguistics Publications in Linguistics and Related Fields Publication Number 29.
-p > h / _{o,u,w}
-t > tʃ / _{i,ı̃}
-ts > {h,j,∅}
-b r > p t / _#
-b > w / else
-ã > a / Cw_
+p / h / _{o,u,w}
+t / tʃ / _{i,ı̃}
+ts / {h,j,∅}
+b r / p t / _#
+b / w / else
+ã / a / Cw_
 ; ẽ ı̃ õ lost nasalization sometimes, kept it in others
-u > õ (? possibly backwards?)
+u / õ (? possibly backwards?)

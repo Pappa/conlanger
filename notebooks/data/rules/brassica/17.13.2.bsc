@@ -1,13 +1,13 @@
 ; 17.13.2 - Proto-Tocharian to Tocharian B
 ; citation: Nortaneous, from http://www.utexas.edu/cola/centers/lrc/eieol/tokol-TC-X.html and https://azargoshnasp.net/history/Tocharian/positionoftocharian.pdf
-{a,ɛ}u əw > au u
-{a,ɛ}i əj > ai i
-ɔ ɛ > o e
-w > ∅ / _j
+{a,ɛ}u əw / au u
+{a,ɛ}i əj / ai i
+ɔ ɛ / o e
+w / ∅ / _j
 ; Kʷ “usually but not always retained”
-C[+ coronal]w > Cː
-mn > nm / V_V
-s > ∅ / n_#
-∅ > t / {N,L}_S
-ə > ∅ / _%, when unstressed
+C[+ coronal]w / Cː
+mn / nm / V_V
+s / ∅ / n_#
+∅ / t / {N,L}_S
+ə / ∅ / _%, when unstressed
 ; “[E]penthesis [of /ə/] to break up ‘difficult’ consonant clusters (mostly in the coda?)”

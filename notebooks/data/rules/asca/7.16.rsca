@@ -1,3 +1,8 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 7.16 - Proto-Algonquian to Piscataway
+# citation: Pogostick Man, from Mackie, Lisa (2006), “Fragments of Piscataway: A Preliminary Description”
+	# NB: This is very incomplete, partially because it seems that the only source we have on Piscataway is a single document in rather poor condition.
+	# *#we- retained
+	{θ,ʃ} > ɬ (conjectured based on 〈z〉 in the Piscataway source and on the lack of voicing in the original reconstructed sounds)
+	k > x
+	e > o / unclear conditioning
+	ʔ > h / _C

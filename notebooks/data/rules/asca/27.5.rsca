@@ -1,3 +1,9 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 27.5 - Proto-Mayan to Kaqchikel-Tz’utujil
+# citation: Pogostick Man, from Wikipedia contributors (2013), “Proto-Mayan language”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Proto-Mayan_language>
+	ŋ > x
+	h > j / _#
+	CVʔVC > CVʔC
+	ɓ w > ʔ j / VCV_#
+	tʲ(ʼ) > tʃ(ʼ)
+	Vː > V[-long]
+	# “Kaqchikel retains a centralized lax schwa-like vowel as a reflex of Proto-Mayan [a]”

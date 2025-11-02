@@ -1,3 +1,42 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 12.3 - Proto-Northwest Caucasian to Ubykh
+# citation: Pogostick Man, from Wikipedia contributors (2014), “Proto-Northwest Caucasian language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Proto-Northwest_Caucasian_language>, presumably citing Starostin, Sergei A. and Sergei L. Nikolayev (1994), A North Caucasian Etymological Dictionary
+	pʲ(ː) bʲ > t(ː) d
+	pʲʼ > tʷʼ
+	{pʷ,bʷ} > f
+	pʲː > tʷ~dʷ
+	pʷʲ bʷʲ > tʷ dʷ
+	pʷʲʼ pˤ pˤː pˤʼ bˤ > tʷʼ vˤ bˤ pˤʼ bˤ
+	t(ʷ)ː tʷʲʼ > t(ʷ) tʷʼ
+	{r,l} lʲ > d r / #_
+	l lʲ > ∅~j l~ɣʲ
+	r rʲ > r~ʁ ɮ
+	ts(ʲ)ː tsʷː dzʲ > ts tsʷ dz
+	z(ʲ) zʷ > dz(ʲ)~z(ʲ) dzʷ~zʷ
+	sʷʲ zʷʲ tsʷʲʼ dzʷʲ > tʃʷ ʒʷ tʃʲʼ dʒʲ
+	tʃ(ʼ) dʒ > ts(ʼ) dz
+	ʃ(~ʃː) ʒ > s z
+	ɕː tɕː > ɕ tɕ
+	ʃʷ(ː) ʒʷ tʃʷ(ʼ) dʒ > ʃ ʒ tʃ(ʼ) dʒ
+	tɕʷ(ː) tɕʷʼ > tɕ tɕʼ
+	ɕʷ ɕʷː ʑʷ > ʃʷ sʷ ʒʷ
+	tɬ tɬː tɬʼ dɮ > ɕ (sʲ) tsʲʼ ɮ
+	ɬ(ː) > sʲ
+	tɬʲ tɬʲʼ dɮʲ > ɕ tɬʼ ɕ ʁ(~zʲ)
+	ɬʲ(~ɬʲʼː) > ɬ
+	ɮ > ʑ
+	tɬʼ > tsʲʼ
+	{ɮʲ,lʲ} > ɮ
+	tɬʷ(ː) tɬʷʼ dɮʷ > tsʷ ts(ʷ)ʼ w
+	ɬʷ ɬʷː > sʷ s(ʷ)
+	tɬʷʲ tɬʷʲː tɬʷʲʼ dɮʷʲ > f dʑ tsʼ dʒ
+	ɬʷʲ(~ɬʷː) ɮʷʲ > ʃʷ ʒʷ
+	k kʼ ɡ x ɣ > kʲ kʲʼ ɡʲ ɕ ɣ~ʁ
+	xʲ ɣʲ > sʲ zʲ
+	kʷː xʷ > ɡʷ x
+	kʲʷː xʲʷ ɣʲʷ(?) > ɡʲ kʲʼ xʲ ʁʲ
+	ɣ > ʁ
+	qʲː(ʼ) ɢʲ χʲ > qʲ(ʼ) ʁʲ xʲ
+	qʷː ɢʷ > qʷ ʁʷ
+	qʲʷ qʲʷː qʲʷʼ ɢʲʷ χʲʷ ʁʲʷ > xʲ qʲ qʲʼ ʁʲ χʲ ʁʲ
+	qˤʲ > q(ˤ)
+	qˤʲʷ {qˤʲʷː,qˤʲʷ} ʁˤʲʷ > χʷ qʷʼ w

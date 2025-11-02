@@ -1,9 +1,9 @@
 ; 10.1.2.6 - Proto-Philippine to Ilocano
 ; citation: Pogostick Man, from Llamzon, Teodoro A. (1975), “Proto-Philippine Phonology”. Archipel 9(1):29 – 42; and from other changes and information from this document
-*D > d
-{z,*Z,*j} > d / V_V
-*j > ɡ
-R > {ɡ,r} / _#
-R > r
-{q,h} > ∅
-iw > uj
+*D / d
+{z,*Z,*j} / d / V_V
+*j / ɡ
+R / {ɡ,r} / _#
+R / r
+{q,h} / ∅
+iw / uj

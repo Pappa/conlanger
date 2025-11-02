@@ -1,3 +1,9 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 10.3.10.2 - Proto-Vanikoro to Tanema
+# citation: Pogostick Man, from Ross, Malcolm, and Åshlid Næss (2007), “An Oceanic Origin for Äiwoo, the Language of the Reef Islands?”. Oceanic Linguistics 46(II):456 – 498
+	p > v / _#
+	pʷ w > b ∅
+	t > {∅,t} / #_
+	t > s / _u
+	r > l / ! _#
+	c *R > ∅ {l,∅}
+	s > {s,d,c}

@@ -3,7 +3,8 @@
   <section index="6.1" name="Proto-Afro-Asiatic to Proto-Omotic">
     <cite>Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)</cite>
     <rule>dz ʃ tʃ &gt; ʒ s₁ s₂</rule>
-    <rule>dʒ &gt; tʃ &gt; ʃ</rule>
+    <rule>dʒ &gt; tʃ</rule>
+    <rule>tʃ &gt; ʃ</rule>
     <rule>t &gt; ∅ / _s#</rule>
     <rule>ɬ &gt; l</rule>
     <rule>f &gt; p</rule>
@@ -281,7 +282,8 @@
     <rule>f &gt; p / #_V{Z,C[-voice],r}</rule>
     <rule>pʼ &gt; p</rule>
     <rule>p &gt; b / #dlV_</rule>
-    <rule>xw &gt; ɣw &gt; ħ</rule>
+    <rule>xw &gt; ɣw</rule>
+    <rule>ɣw &gt; ħ</rule>
     <rule>k &gt; ɡ / _{w,j}</rule>
     <rule>CVʕ &gt; ħʔ / ! C = ɡw</rule>
     <rule>ɡwVq &gt; ʕ</rule>
@@ -334,11 +336,13 @@
     <cite>Khavaragh</cite>
     <rule>p &gt; f</rule>
     <rule>θˤ kˤ &gt; ðˤ q</rule>
-    <rule>ɡ &gt; ɡʲ &gt; dʒ</rule>
+    <rule>ɡ &gt; ɡʲ</rule>
+    <rule>ɡʲ &gt; dʒ</rule>
     <rule>s &gt; {ʃ,h} / in “anaphora and certain derivational prefixes. . .[t]his is common to many other Semitic languages as well”</rule>
     <rule>ʃ &gt; s</rule>
     <rule>ɬ &gt; ʃ</rule>
-    <rule>ɬˤ &gt; dɬˤ &gt; dˤ</rule>
+    <rule>ɬˤ &gt; dɬˤ</rule>
+    <rule>dɬˤ &gt; dˤ</rule>
     <rule>m &gt; n / “in certain contexts, notably in the nunation”</rule>
     <rule>V{j,w}V &gt; aː / some sequences</rule>
   </section>
@@ -387,10 +391,10 @@
   </section>
   <section index="6.2.2.1.7" name="Classical Arabic to Egyptian Arabic">
     <cite>Pogostick Man, from Brustad, Kristen, Mahmoud Al-Batal, and Abbas Al-Tonsi (2010), Alif Baa: Introduction to Letters and Sounds, 3rd. Ed.; http://en.wikipedia.org/wiki/Egyptian_Arabic; At-Tonsi, Abbas, Heba Salem, and Nevenka Korica Sullivan (2013), Umm al-Dunya: Advanced Egyptian Colloquial Arabic; and from correspondence with my own Arabic professor, who is a native speaker of this dialect</cite>
-    <rule>θ ð &gt; t d / “usually in numbers or cases where a short vowel has been deleted and it’s in contact with another stop, e.g. CA/MSA kaˈθiːr &gt; EA ktiːr”</rule>
+    <rule sporadic="true">θ ð &gt; t d</rule>
     <rule>θ ð &gt; s z</rule>
-    <rule>ðˤ &gt; zˤ, occasionally tˤ</rule>
-    <rule>dˤ &gt; zˤ (seems to be a sporadic change only affecting a few words, e.g. CA/MSA ˈdˤaːbitˤ &gt; EA ˈzˤaːbitˤ)</rule>
+    <rule>ðˤ &gt; zˤ</rule>
+    <rule sporadic="true">dˤ &gt; zˤ</rule>
     <rule>dʒ &gt; ɡ</rule>
     <rule>i u &gt; e o / only when short, ! _#</rule>
     <rule>u &gt; {o,u} / short only, _#</rule>
@@ -440,13 +444,14 @@ r gains emphatic status except when next to i, and even then it’s becoming mor
     <rule>f θ &gt; v z̪ (the article isn’t exactly clear on what this second phone is)</rule>
     <rule>ʔ &gt; {∅,j,w} / depending on the environment; again, the article is unclear</rule>
     <rule>x &gt; χ (conjectured based upon the following but not outright stated in the article)</rule>
-    <rule>ɣː &gt; ʁː &gt; qː</rule>
+    <rule>ɣː &gt; ʁː</rule>
+    <rule>ʁː &gt; qː</rule>
     <rule>ɣ &gt; {ʁ,q}</rule>
     <rule>V[-long] &gt; ∅ / C_{C,#} (except for the feminine marker)</rule>
     <rule>aj aw &gt; eː(ʲ) oː(ʷ) (sometimes, the article is unclear)</rule>
     <comment>The conditioning on these next two changes is conjectured based upon the source:</comment>
-    <rule>— j w &gt; i u / #_CV</rule>
-    <rule>— j w &gt; iː uː / #_CC</rule>
+    <rule>j w &gt; i u / #_CV</rule>
+    <rule>j w &gt; iː uː / #_CC</rule>
   </section>
   <section index="6.2.2.1.11" name="Classical Arabic to Iraqi Arabic">
     <cite>Pogostick Man, from http://en.wikipedia.org/wiki/Varieties_of_Arabic</cite>
@@ -517,34 +522,34 @@ r gains emphatic status except when next to i, and even then it’s becoming mor
     <comment>Some mergers involving j and w
 Frequent h-dropping</comment>
     <comment>Stressed-vowel correspondences:</comment>
-    <rule>— aː &gt; oː / ! _#</rule>
-    <rule>— i iː u uː &gt; eə iːə oə uːə / _R</rule>
-    <rule>— iː &gt; eː / _#</rule>
-    <rule>— a &gt; aː / _$</rule>
-    <rule>— a &gt; {a,ɛ} (not common)</rule>
-    <rule>— i u &gt; e a / _R{$,#} (in verbs)</rule>
-    <rule>— i u &gt; e o / _C{$,#} (in verbs)</rule>
-    <rule>— i &gt; eː oː / else</rule>
-    <rule>— aw &gt; aːw</rule>
-    <rule>— aj &gt; eː / _$</rule>
-    <rule>— aj &gt; ɛː / _#</rule>
+    <rule>aː &gt; oː / ! _#</rule>
+    <rule>i iː u uː &gt; eə iːə oə uːə / _R</rule>
+    <rule>iː &gt; eː / _#</rule>
+    <rule>a &gt; aː / _$</rule>
+    <rule>a &gt; {a,ɛ} (not common)</rule>
+    <rule>i u &gt; e a / _R{$,#} (in verbs)</rule>
+    <rule>i u &gt; e o / _C{$,#} (in verbs)</rule>
+    <rule>i &gt; eː oː / else</rule>
+    <rule>aw &gt; aːw</rule>
+    <rule>aj &gt; eː / _$</rule>
+    <rule>aj &gt; ɛː / _#</rule>
     <comment>Unstressed-vowel correspondences:</comment>
-    <rule>— {o,u}(ː) &gt; iː / _$%oː</rule>
-    <rule>— oː &gt; uː</rule>
-    <rule>— a &gt; ∅ / _#</rule>
-    <rule>— a &gt; _$%%(…)”</rule>
-    <rule>— a &gt; ə / _R if ə in an adjacent syllable</rule>
-    <rule>— a &gt; ə / R_ if ə in an adjacent syllable</rule>
-    <rule>— i &gt; ə / _R if a frontal allophone of ə in an adjacent syllable</rule>
-    <rule>— i &gt; ə / R_ if a frontal allophone of ə in an adjacent syllable</rule>
-    <rule>— u &gt; ə / _R if a backed allophone of ə in an adjacent syllable</rule>
-    <rule>— u &gt; ə / R_ if a backed allophone of ə in an adjacent syllable</rule>
-    <rule>— i &gt; a / _R</rule>
-    <rule>— i &gt; a / R_</rule>
-    <rule>— a i &gt; aː eː / _%”</rule>
-    <rule>— u &gt; ɔ / _C{$,#}</rule>
-    <rule>— u &gt; ∅ / ! _Cː</rule>
-    <rule>— aj aw &gt; eː oː</rule>
+    <rule>{o,u}(ː) &gt; iː / _$%oː</rule>
+    <rule>oː &gt; uː</rule>
+    <rule>a &gt; ∅ / _#</rule>
+    <rule>a &gt; _$%%(…)”</rule>
+    <rule>a &gt; ə / _R if ə in an adjacent syllable</rule>
+    <rule>a &gt; ə / R_ if ə in an adjacent syllable</rule>
+    <rule>i &gt; ə / _R if a frontal allophone of ə in an adjacent syllable</rule>
+    <rule>i &gt; ə / R_ if a frontal allophone of ə in an adjacent syllable</rule>
+    <rule>u &gt; ə / _R if a backed allophone of ə in an adjacent syllable</rule>
+    <rule>u &gt; ə / R_ if a backed allophone of ə in an adjacent syllable</rule>
+    <rule>i &gt; a / _R</rule>
+    <rule>i &gt; a / R_</rule>
+    <rule>a i &gt; aː eː / _%”</rule>
+    <rule>u &gt; ɔ / _C{$,#}</rule>
+    <rule>u &gt; ∅ / ! _Cː</rule>
+    <rule>aj aw &gt; eː oː</rule>
     <rule>p b t d k ɡ &gt; b v θ ð x ɣ / non-intial singletons</rule>
     <rule>ʕ &gt; ∅ / _{$,#}</rule>
     <rule>j &gt; ∅ / E_ (not clear whether only short E or long also)</rule>
@@ -863,14 +868,16 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <cite>Pogostick Man, from Goddard, Ives (1982), “The Historical Phonology of Munsee”. International Journal of American Linguistics, 48:16 – 48</cite>
     <rule>tʃ &gt; t / in nouns</rule>
     <rule>t s &gt; tʃ ʃ / in diminutives</rule>
-    <rule>{θ,l} &gt; r &gt; l</rule>
+    <rule>{θ,l} &gt; r</rule>
+    <rule>r &gt; l</rule>
     <rule>{θ,ʃ} &gt; {r,l}</rule>
     <rule>w &gt; ∅ / m_C</rule>
     <rule>w &gt; ∅ / {p,m}_#</rule>
     <rule>w &gt; ∅ / ! {k,p,m}_</rule>
     <rule>Cʷ &gt; C / _ə{(C){p,kʷ},m,w}</rule>
     <rule>kw pw mw &gt; kʷ pʷ mʷ</rule>
-    <rule>we &gt; wə &gt; oː / ! adjacent to {p,m,k}</rule>
+    <rule>we &gt; wə</rule>
+    <rule>wə &gt; oː / ! adjacent to {p,m,k}</rule>
     <rule>j &gt; ∅ / C_</rule>
     <rule>ʔ &gt; h / _C ! C = l, or when reduplicated</rule>
     <rule>h &gt; ∅ / _{s,x}</rule>
@@ -934,9 +941,12 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>t &gt; tʃ / in diminutives</rule>
     <rule>s &gt; ʃ / _i (not universal)</rule>
     <rule>s &gt; ʃ / _iV</rule>
-    <rule>{θ,l} &gt; r &gt; l / V_V</rule>
-    <rule>{θ,l} &gt; r &gt; n / #_ (and possibly in other places as well)</rule>
-    <rule>{θ,l} &gt; r &gt; l</rule>
+    <rule>{θ,l} &gt; r / V_V</rule>
+    <rule>r &gt; l / V_V</rule>
+    <rule>{θ,l} &gt; r / #_</rule>
+    <rule>r &gt; n / #_</rule>
+    <rule>{θ,l} &gt; r</rule>
+    <rule>r &gt; l</rule>
     <rule>mV[-long] &gt; ∅ / #_{ʰC,s,ʃ} (allophonic, “optional”)</rule>
     <rule>{ʔ,h}{ɬ,l} &gt; hs</rule>
     <rule>{θ,l} &gt; t / n_</rule>
@@ -1210,7 +1220,8 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>{ʒ,dʒ} &gt; j / #_ (marked as to Pre-Proto-Turkic)</rule>
     <rule>{d,n} &gt; j / #_ (?) (marked as to Pre-Proto-Turkic)</rule>
     <rule>{N,l,r,ʃ,z} &gt; ∅ / #_</rule>
-    <rule>p &gt; ɸ &gt; h / #_</rule>
+    <rule>p &gt; ɸ / #_</rule>
+    <rule>ɸ &gt; h / #_</rule>
     <rule>d ɡ &gt; t k (may have been part of a more sweeping merger; Firespeaker calls it “lenis-fortis”)</rule>
     <rule>{d,n}ʲ sʲ &gt; j ʃ / #_</rule>
     <rule>rʲ &gt; z</rule>
@@ -1226,12 +1237,13 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>V &gt; V[- round] / U_</rule>
     <rule>b &gt; v / V_</rule>
     <rule>v &gt; w</rule>
-    <rule>ɡm rɡ &gt; mɡ ɡr (this second one is listed as &gt; rɡ but it might be a typo)</rule>
+    <rule>ɡm rɡ &gt; mɡ ɡr</rule>
     <rule>rd &gt; dr (possibly sporadic and/or confined to Kazakh)</rule>
     <rule>ɣ &gt; w / {a,u,i,o}_</rule>
     <rule>{e,æ}b ub &gt; ew uw</rule>
     <rule>{d,ɡ} &gt; j / ø_</rule>
-    <rule>d &gt; ð &gt; j / V_</rule>
+    <rule>d &gt; ð / V_</rule>
+    <rule>ð &gt; j / V_</rule>
     <rule>ɡ &gt; w / V_</rule>
     <rule>ew (&gt; øj) &gt; yj</rule>
     <rule>æ &gt; e</rule>
@@ -1269,7 +1281,8 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>{e,ɤ}ː &gt; je (the second one is conjectured based on my admittedly sparse knowledge of Turkish; I can only guess that 〈ė〉 is some sort of back unrounded vowel)</rule>
     <rule>o oɡ ø øɡ iɡ &gt; wo ɥø oː øː iː</rule>
     <rule>a{ɡ̌(ɯ),b} {o{ɡ̌,b},aɡ̌u} u{ɡ̌,b} &gt; ɰa wo uː</rule>
-    <rule>iɡ̌ &gt; ɯː &gt; iː (but original ɯː unaffected?)</rule>
+    <rule>iɡ̌ &gt; ɯː</rule>
+    <rule>ɯː &gt; iː</rule>
     <rule>eɡ &gt; {je,iː,ji}</rule>
     <rule>d s {ʃ,z} &gt; t ∅ s / V_V</rule>
     <rule>s &gt; ∅ / #_</rule>
@@ -1321,7 +1334,6 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>c ɲ &gt; t n / ! E_ (apparently the precursor to Vietnamese short *a was treated as a short vowel here)</rule>
     <comment>Thompson seems to list some changes as affecting Modern Vietnamese but I was unsure of where to put them so they’ll go here:</comment>
     <rule>a ɔ &gt; ɨə uə</rule>
-    <comment>In the original those first vowels were underlined.</comment>
   </section>
   <section index="9.1.2.1" name="Middle Vietnamese to Hanoi Vietnamese">
     <cite>Pogostick Man, from Thompson, Laurence C. (1976), “Proto-Viet-Muong Phonology”. Oceanic Linguistics Special Publications 13, Austroasiatic Studies II:1113 – 1203; Wikipedia contributors (2012). “Hanoi”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Hanoi&gt;; Wikipedia contributors (2012), “Vietnamese Language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=Vietnamese_language&amp;id=509331797&gt;; Gage, William W. (1985), “Glottal Stops and Vietnamese Tonogenesis”. Oceanic Linguistics Special Publications 20:21 – 36; and Thompson, Laurence C. (1979?), “More on Viet-Muong Tonal Developments”</cite>
@@ -1334,7 +1346,8 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>{β,w} {dʲ,ɟ} &gt; v z</rule>
     <rule>ɹ &gt; z (only seems to have occurred with first-register tones)</rule>
     <rule>bl &gt; z</rule>
-    <rule>ml &gt; mɲ &gt; ɲ (Thompson seems to indicate that this may have become [l] as well; only seems to have occurred with second-register tones)</rule>
+    <rule>ml &gt; mɲ</rule>
+    <rule>mɲ &gt; ɲ</rule>
     <rule>Ω cʰ &gt; s tɕ</rule>
     <comment>Vowels:</comment>
     <rule>ɨ &gt; i / _(ə)w</rule>
@@ -1386,16 +1399,15 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>q &gt; h / _#</rule>
     <rule>{q,h} &gt; ∅</rule>
     <rule>iw uj &gt; {i,?} i / _#</rule>
-    <comment>A:</comment>
-    <rule>— aj aw &gt; ej ow / _#</rule>
-    <comment>B:</comment>
-    <rule>— aj aw &gt; e ow / _#</rule>
+    <rule>aj aw &gt; ej ow / _#</rule>
+    <rule>aj aw &gt; e ow / _#</rule>
     <rule>C[+ voice] &gt; C[- voice] / _#</rule>
     <rule>HəS &gt; (h)ə(N)S / #_</rule>
   </section>
   <section index="10.1.1.1" name="Proto-Bali-Sasak-Sumbawan to Balinese">
     <cite>TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic Linguistics 44(2):357 – 388</cite>
-    <rule>r &gt; {r,h} &gt; {∅,h}</rule>
+    <rule>r &gt; {r,h}</rule>
+    <rule>{r,h} &gt; {∅,h}</rule>
     <rule>h &gt; {∅,h}</rule>
     <rule>w &gt; b / i_#</rule>
     <rule>ej ow &gt; i u</rule>
@@ -1611,7 +1623,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>w &gt; ∅ / i_#</rule>
     <rule>{a,e} &gt; o / _w#</rule>
     <rule>a &gt; e / _j#</rule>
-    <rule>{ts,ʈ} {ɟ͡ʝ,ɖ} {lʲ,ɲ} {ʔ,x,s,h} ʀ &gt; t d n ∅ r (velar fricative is conjectured; changes &gt; d “unsure”)</rule>
+    <rule>{ts,ʈ} {ɟ͡ʝ,ɖ} {lʲ,ɲ} {ʔ,x,s,h} ʀ &gt; t d n ∅ r</rule>
     <rule>q &gt; ∅ / #_ (sometimes; “represented by *h in PB”)</rule>
     <rule>z &gt; j (fricative changes to approximant)</rule>
   </section>
@@ -1668,10 +1680,8 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule sporadic="true">h &gt; ʔ / _#</rule>
     <rule>h &gt; ∅ / else</rule>
     <rule>{iw,uj} &gt; i / _#</rule>
-    <comment>A:</comment>
-    <rule>— aj aw &gt; i u / _#</rule>
-    <comment>B:</comment>
-    <rule>— aj aw &gt; aj aw / _#</rule>
+    <rule>aj aw &gt; i u / _#</rule>
+    <rule>aj aw &gt; aj aw / _#</rule>
     <rule>C₁C₂ &gt; C₂</rule>
     <rule>C[+ A POA]C[+ B POA] &gt; C[+ B POA]C[+ B POA]</rule>
     <rule>C[+ voice] &gt; C[- voice] / _#</rule>
@@ -1688,10 +1698,8 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <cite>TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic Linguistics 44(2):357 – 388</cite>
     <rule>j &gt; l</rule>
     <rule>q h &gt; h ∅</rule>
-    <comment>A:</comment>
-    <rule>— aw aj &gt; əw əj / _#</rule>
-    <comment>B:</comment>
-    <rule>— aw aj &gt; aw aj / _#</rule>
+    <rule>aw aj &gt; əw əj / _#</rule>
+    <rule>aw aj &gt; aw aj / _#</rule>
   </section>
   <section index="10.2.4.1" name="Proto-Malayo-Javanic to Javanese">
     <cite>TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic Linguistics 44(2):357 – 388</cite>
@@ -1702,10 +1710,8 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>h &gt; ∅ / #_</rule>
     <rule>h &gt; {o,h,w} / V_V</rule>
     <rule>iw uj &gt; ju i / _#</rule>
-    <comment>A:</comment>
-    <rule>— əw əj &gt; i u / _#</rule>
-    <comment>B:</comment>
-    <rule>— aw aj &gt; e ó / _#</rule>
+    <rule>əw əj &gt; i u / _#</rule>
+    <rule>aw aj &gt; e ó / _#</rule>
     <rule>C₁C₂ &gt; C₂</rule>
     <comment>Nasal + stop clusters “become homorganic”</comment>
     <rule>HəS &gt; (h)əNS</rule>
@@ -1734,10 +1740,8 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>w &gt; {∅,c} / #_</rule>
     <rule>R &gt; {∅,r,j}</rule>
     <rule>iw uj &gt; {ju,i} oj / _#</rule>
-    <comment>A:</comment>
-    <rule>— əw əj &gt; o e / _#</rule>
-    <comment>B:</comment>
-    <rule>— aw aj &gt; o aj / _#</rule>
+    <rule>əw əj &gt; o e / _#</rule>
+    <rule>aw aj &gt; o aj / _#</rule>
   </section>
   <section index="10.2.5" name="Proto-Malayo-Polynesian to Palauan">
     <cite>Whimemsz, from Blust, Robert (2009), “Palauan Historical Phonology: Whence the Intrusive Velar Nasal?”. Oceanic Linguistics 48(2):307 – 336</cite>
@@ -1811,8 +1815,8 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>V[+stress] &gt; Vː / _C# ! V = ə and/or C = h “(applies to diphthongal nuclei as well a[s] monophthongs)”</rule>
     <rule>ʀ &gt; {l,ɾ} / ! _# (the latter is more common)</rule>
     <rule>l &gt; ∅ / ! _# (irregular)</rule>
-    <rule>u &gt; əw / _V “(also cases of (C)u &gt; w /__V)”</rule>
-    <rule>i &gt; əj / _V “(also cases of (C)i &gt; j /__V)”</rule>
+    <rule>u &gt; əw / _V</rule>
+    <rule>i &gt; əj / _V</rule>
     <rule>w j &gt; v ɟ</rule>
     <rule>iu̯ &gt; ui̯</rule>
     <rule>s &gt; ∅ / _#</rule>
@@ -1835,7 +1839,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>n &gt; l / #_</rule>
     <rule>ə &gt; ∅ / #_</rule>
     <rule>{l,ɾ} &gt; n / _#</rule>
-    <rule>dz &gt; d / #_ (though sometimes &gt; {s,ɟ})</rule>
+    <rule>dz &gt; d / #_</rule>
     <rule>{s,c} &gt; t / _V{s,c}V</rule>
     <rule>b d &gt; p t / _#</rule>
   </section>
@@ -1861,10 +1865,10 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>i &gt; iə / _ŋ#</rule>
     <rule>p &gt; k / u_#</rule>
     <rule>u &gt; o / _k#</rule>
-    <rule>u &gt; o / _ŋ# “(sporadically failed to occur)”</rule>
+    <rule sporadic="true">u &gt; o / _ŋ#</rule>
     <rule>u &gt; ɯ / _(C)# ! _ʔ#</rule>
-    <rule>a &gt; o / _# “(not in all forms)”</rule>
-    <rule>ʔ &gt; ∅ / _# “(but aʔ &gt; əʔ in some forms)”</rule>
+    <rule sporadic="true">a &gt; o / _#</rule>
+    <rule>ʔ &gt; ∅ / _#</rule>
     <rule>k &gt; ʔ / _#</rule>
     <rule>a &gt; ɛ / {t,n}_#</rule>
     <rule>{p,t} n &gt; c̚ ɲ / {i,ɛ}_#</rule>
@@ -1894,13 +1898,13 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>a &gt; o / _(C…)#</rule>
     <rule sporadic="true">u i &gt; o e</rule>
     <comment>Chronologically-ordered changes:</comment>
-    <rule>— ə &gt; a / _(C…)# (eventually spread to everywhere)</rule>
-    <rule>— m p &gt; n t / {u,i}_</rule>
-    <rule>— a u &gt; e uj / _{t,s}#</rule>
-    <rule>— a &gt; o / _p#</rule>
-    <rule>— u i &gt; uə iə / _{k,ŋ,h,l,r}#</rule>
-    <rule>— {p,t,k} s &gt; ʔ h / _#</rule>
-    <rule>— {l,r} &gt; ∅ / _# (retained across morpheme boundaries)</rule>
+    <rule>ə &gt; a / _(C…)# (eventually spread to everywhere)</rule>
+    <rule>m p &gt; n t / {u,i}_</rule>
+    <rule>a u &gt; e uj / _{t,s}#</rule>
+    <rule>a &gt; o / _p#</rule>
+    <rule>u i &gt; uə iə / _{k,ŋ,h,l,r}#</rule>
+    <rule>{p,t,k} s &gt; ʔ h / _#</rule>
+    <rule>{l,r} &gt; ∅ / _# (retained across morpheme boundaries)</rule>
   </section>
   <section index="10.3" name="Proto-Austronesian to Proto-Oceanic">
     <cite>Pogostick Man, from Wikipedia contributors (2011), “Proto-Austronesian language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Proto-Austronesian_language&gt;</cite>
@@ -1956,15 +1960,15 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>b bʷ d ɡ &gt; p kpʷ t k</rule>
     <rule>mʷ &gt; ŋmʷ</rule>
     <comment>thetha says “intervening consonants sometimes optional in the [following] sound changes”:</comment>
-    <rule>— iCV[- high] &gt; aC</rule>
-    <rule>— eCV[+ mid] &gt; ɛC</rule>
-    <rule>— eCV[+ low] &gt; aC</rule>
-    <rule>— aCV[+ high] &gt; {ɛ,œ}C</rule>
-    <rule>— aCa &gt; {ɘ,a}C</rule>
-    <rule>— oCV[+ high] &gt; øC</rule>
+    <rule>iCV[- high] &gt; aC</rule>
+    <rule>eCV[+ mid] &gt; ɛC</rule>
+    <rule>eCV[+ low] &gt; aC</rule>
+    <rule>aCV[+ high] &gt; {ɛ,œ}C</rule>
+    <rule>aCa &gt; {ɘ,a}C</rule>
+    <rule>oCV[+ high] &gt; øC</rule>
     <rule sporadic="true">— oCo &gt; œC</rule>
-    <rule>— oCV[- high] &gt; ɔC</rule>
-    <rule>— uCV[- high] &gt; oC</rule>
+    <rule>oCV[- high] &gt; ɔC</rule>
+    <rule>uCV[- high] &gt; oC</rule>
     <rule>o e &gt; ʊ ɪ</rule>
     <rule>ia &gt; ɪ “(only somoetimes?)”</rule>
     <rule>V &gt; ∅ / #_C”V</rule>
@@ -2217,7 +2221,8 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>q &gt; ∅</rule>
     <rule>*R &gt; {∅,r} (the former seems more common)</rule>
     <rule>ɲ c *j &gt; n s z</rule>
-    <rule>m b &gt; n̼ t̼ &gt; n t / _{a,e,i}</rule>
+    <rule>m b &gt; n̼ t̼ / _{a,e,i}</rule>
+    <rule>n̼ t̼ &gt; n t / _{a,e,i}</rule>
     <rule>p(ʷ) k &gt; v(ʷ) ɣ</rule>
     <rule>mʷ b(ʷ) vʷ &gt; m p b</rule>
     <rule>d ɡ &gt; r k</rule>
@@ -2270,7 +2275,8 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>k &gt; {∅,j} / _#</rule>
     <rule>dr &gt; ɟ / _i</rule>
     <rule>d c ɲ &gt; ɟ {s,∅} n</rule>
-    <rule>{r,l} &gt; l (occasionally &gt; ∅?)</rule>
+    <rule>{r,l} &gt; l</rule>
+    <rule sporadic="true">l &gt; ∅?</rule>
   </section>
   <section index="10.3.10" name="Proto-Oceanic to Proto-Vanikoro">
     <cite>Pogostick Man, from Ross, Malcolm, and Åshlid Næss (2007), “An Oceanic Origin for Äiwoo, the Language of the Reef Islands?”. Oceanic Linguistics 46(II):456 – 498</cite>
@@ -2550,23 +2556,23 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>b &gt; ∅ / #_{u,i}</rule>
     <rule>q &gt; ∅ / #_V</rule>
     <rule>q &gt; k</rule>
-    <rule>{qʷ,ku,qu} &gt; kʷ (note that PAn might have had *qʷ *kʷ &gt; q {k,w} instead; may be a change from POn-PAn, if it existed)</rule>
-    <rule>{c,*C,s,*S} &gt; c (again, possibly a change from POn-PAn, if it existed)</rule>
+    <rule>{qʷ,ku,qu} &gt; kʷ</rule>
+    <rule>{c,*C,s,*S} &gt; c</rule>
     <rule>S &gt; ∅ / _#</rule>
     <rule>u a ə &gt; {u,o} {a,e} e</rule>
     <rule>ɟ ɡ *N *R &gt; {ɟ,j} {ɟ,ɡ} {l,j} {l,r}</rule>
-    <rule>z &gt; c (again, possibly evidence of a change from POn-PAn, if it existed)</rule>
-    <rule>h &gt; {h,j,∅} (Blevins has marked what apparently is *ɟ but I’m assuming it’s an error)</rule>
-    <rule>e &gt; ə / _N when unstressed ! Ḱ_ (?; included here based on a comment earlier in the paper, but not listed on the correspondence list)</rule>
-    <rule>{m,ɲ} n &gt; {ɲ,∅} {ŋ,∅} / _# (first change marked “in progress?”)</rule>
+    <rule>z &gt; c</rule>
+    <rule>h &gt; {h,j,∅}</rule>
+    <rule>e &gt; ə / _N[- stress] ! Ḱ_</rule>
+    <rule>{m,ɲ} n &gt; {ɲ,∅} {ŋ,∅} / _#</rule>
     <rule>aj &gt; e</rule>
   </section>
   <section index="10.5.1" name="Proto-Ongan to Jarawa">
     <cite>Pogostick Man, from Blevins, Juliette (2007), “A Long Lost Sister of Proto-Austronesian? Proto-Ongan, Mother of Jarawa and Onge of the Andaman Islands”. Oceanic Linguistics 46(I):154 – 198</cite>
-    <rule>e &gt; ə / _N, when unstressed (?)</rule>
+    <rule>e &gt; ə / _N[- stress]</rule>
     <rule>n &gt; ŋ / _# (?)</rule>
     <rule>k(ʷ) &gt; h(ʷ)</rule>
-    <rule>∅ &gt; a / h#_ (that’s not a typo; this happens across the word boundary)</rule>
+    <rule>∅ &gt; a / h#_</rule>
     <rule>ɡ &gt; j</rule>
     <rule>e &gt; {e,ə,o} / _V</rule>
     <rule>e &gt; ∅ / _# (?)</rule>
@@ -2714,7 +2720,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>tʃ(ː) dʒ &gt; ʃ tʃ</rule>
     <rule>tɬ tɬː tɬʼ tɬːʼ dɮ &gt; ɬ ɬ(ː) kʼ tɬʼ tɬː</rule>
     <rule>kː ɡ &gt; x {kː,ɡ}</rule>
-    <rule>ɣ &gt; q (more likely, *ɢ &gt; q instead of &gt; ɣ)</rule>
+    <rule>ɣ &gt; q</rule>
     <rule>q qːʼ &gt; x q(ː)ʼ</rule>
     <rule>sː xː &gt; {sː,h} x</rule>
   </section>
@@ -3173,8 +3179,8 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>cː &gt; tʃː “(most dialects)”</rule>
     <rule>o e &gt; u i / _C{u,i} “(highly sporadic)”</rule>
     <comment>“There’s also only a few changes necessary to turn this into the British dialect (which didn’t merge retroflexes with alveolars):”</comment>
-    <rule>— i(ː) e(ː) &gt; u(ː) o(ː) / _ɭ</rule>
-    <rule>— eCə oCə &gt; Ceː Coː / #_</rule>
+    <rule>i(ː) e(ː) &gt; u(ː) o(ː) / _ɭ</rule>
+    <rule>eCə oCə &gt; Ceː Coː / #_</rule>
   </section>
   <section index="15" name="Eskimo-Aleut" />
   <section index="15.1" name="Proto-Eskimo-Aleut to Proto-Aleut">
@@ -3234,8 +3240,10 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>Cː &gt; C / except when CV_V in U₁U₂</rule>
     <rule>t &gt; s / i_</rule>
     <rule>ə &gt; i / else</rule>
-    <rule>dʒ &gt; tʃ &gt; s / “in certain positions” (except for Thule Greenlandic, where dʒ &gt; tʃ and stayed there, apparently)</rule>
-    <rule>m n ŋ t {{ɣ,ʁ} &gt; {k,q}} &gt; p t k n ŋ / _#</rule>
+    <rule>dʒ &gt; tʃ</rule>
+    <rule>tʃ &gt; s</rule>
+    <rule>m n ŋ t {ɣ,ʁ} &gt; {k,q} / _#</rule>
+    <rule>{k,q} &gt; p t k n ŋ / _#</rule>
     <rule>m n ŋ &gt; v t ɣ / _C[-nasal]</rule>
     <rule>l̥ &gt; ʁ / _C</rule>
     <rule>v ʁ &gt; p q / S_</rule>
@@ -3351,7 +3359,8 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <cite>Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171</cite>
     <rule>Cː &gt; C</rule>
     <rule>S &gt; ∅ / #_F</rule>
-    <rule>s &gt; ts &gt; tʃ / in some dialects?</rule>
+    <rule>s &gt; ts</rule>
+    <rule sporadic="true">ts &gt; tʃ</rule>
     <rule>C[+voice] &gt; C[-voice] / next to {S,s,l̥}</rule>
     <rule>ɣ ʁ &gt; k q / _#</rule>
     <rule>ə &gt; a /</rule>
@@ -3691,7 +3700,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>hhy &gt; “something like /ʒ/”</rule>
     <rule>h &gt; ∅ / ”Vː_u</rule>
     <rule>h &gt; ∅ / u_”Vː</rule>
-    <rule>w &gt; j / “in *díwots &gt; Tiyaz ‘sun-god’; conditioning unknown”</rule>
+    <rule>w &gt; j</rule>
     <rule>ɛː &gt; iː</rule>
   </section>
   <section index="17.3" name="Armenian"/>
@@ -3725,8 +3734,9 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>l &gt; ɫ / V_V</rule>
     <rule>Ns sN &gt; s N</rule>
     <rule>N &gt; w / S_S</rule>
-    <rule>VN &gt; V[+nasal] &gt; V &gt; (?) / _#, in polysyllables</rule>
-    <rule>N &gt; n / _#, in monosyllables</rule>
+    <rule>VN &gt; V[+nasal] / _# ; in polysyllables</rule>
+    <rule>V[+nasal] &gt; V / _# ; in polysyllables</rule>
+    <rule>N &gt; n / _# ; in monosyllables</rule>
     <rule>N̩ &gt; n / _#</rule>
     <rule>m̩ n̩ r̩ l̩ &gt; am an ar aɫ</rule>
     <rule>V &gt; (?) / _(C)#</rule>
@@ -3761,8 +3771,9 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>l &gt; ɫ / V_V</rule>
     <rule>Ns sN &gt; s N</rule>
     <rule>N &gt; w / S_S</rule>
-    <rule>VN &gt; V[+nasal] &gt; V &gt; (?) / _#, in polysyllables</rule>
-    <rule>N &gt; n / _#, in monosyllables</rule>
+    <rule>VN &gt; V[+nasal] / _# ; in polysyllables</rule>
+    <rule>V[+nasal] &gt; V / _# ; in polysyllables</rule>
+    <rule>N &gt; n / _# ; in monosyllables</rule>
     <rule>N̩ &gt; n / _#</rule>
     <rule>m̩ n̩ r̩ l̩ &gt; am an ar aɫ</rule>
     <rule>V &gt; (?) / _(C)#</rule>
@@ -3797,8 +3808,9 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>l &gt; ɫ / V_V</rule>
     <rule>Ns sN &gt; s N</rule>
     <rule>N &gt; w / S_S</rule>
-    <rule>VN &gt; V[+nasal] &gt; V &gt; (?) / _#, in polysyllables</rule>
-    <rule>N &gt; n / _#, in monosyllables</rule>
+    <rule>VN &gt; V[+nasal] / _# ; in polysyllables</rule>
+    <rule>V[+nasal] &gt; V / _# ; in polysyllables</rule>
+    <rule>N &gt; n / _# ; in monosyllables</rule>
     <rule>N̩ &gt; n / _#</rule>
     <rule>m̩ n̩ r̩ l̩ &gt; am an ar aɫ</rule>
     <rule>V &gt; (?) / _(C)#</rule>
@@ -3833,8 +3845,9 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>l &gt; ɫ / V_V</rule>
     <rule>Ns sN &gt; s N</rule>
     <rule>N &gt; w / S_S</rule>
-    <rule>VN &gt; V[+nasal] &gt; V &gt; (?) / _#, in polysyllables</rule>
-    <rule>N &gt; n / _#, in monosyllables</rule>
+    <rule>VN &gt; V[+nasal] / _# ; in polysyllables</rule>
+    <rule>V[+nasal] &gt; V / _# ; in polysyllables</rule>
+    <rule>N &gt; n / _# ; in monosyllables</rule>
     <rule>N̩ &gt; n / _#</rule>
     <rule>m̩ n̩ r̩ l̩ &gt; am an ar aɫ</rule>
     <rule>V &gt; (?) / _(C)#</rule>
@@ -3868,8 +3881,9 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>l &gt; ɫ / V_V</rule>
     <rule>Ns sN &gt; s N</rule>
     <rule>N &gt; w / S_S</rule>
-    <rule>VN &gt; V[+nasal] &gt; V &gt; (?) / _#, in polysyllables</rule>
-    <rule>N &gt; n / _#, in monosyllables</rule>
+    <rule>VN &gt; V[+nasal] / _# ; in polysyllables</rule>
+    <rule>V[+nasal] &gt; V / _# ; in polysyllables</rule>
+    <rule>N &gt; n / _# ; in monosyllables</rule>
     <rule>N̩ &gt; n / _#</rule>
     <rule>m̩ n̩ r̩ l̩ &gt; am an ar aɫ</rule>
     <rule>V &gt; (?) / _(C)#</rule>
@@ -3906,8 +3920,9 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>l &gt; ɫ / V_V</rule>
     <rule>Ns sN &gt; s N</rule>
     <rule>N &gt; w / S_S</rule>
-    <rule>VN &gt; V[+nasal] &gt; V &gt; (?) / _#, in polysyllables</rule>
-    <rule>N &gt; n / _#, in monosyllables</rule>
+    <rule>VN &gt; V[+nasal] / _# ; in polysyllables</rule>
+    <rule>V[+nasal] &gt; V / _# ; in polysyllables</rule>
+    <rule>N &gt; n / _# ; in monosyllables</rule>
     <rule>N̩ &gt; n / _#</rule>
     <rule>m̩ n̩ r̩ l̩ &gt; am an ar aɫ</rule>
     <rule>V &gt; (?) / _(C)#</rule>
@@ -3943,8 +3958,9 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>l &gt; ɫ / V_V</rule>
     <rule>Ns sN &gt; s N</rule>
     <rule>N &gt; w / S_S</rule>
-    <rule>VN &gt; V[+nasal] &gt; V &gt; (?) / _#, in polysyllables</rule>
-    <rule>N &gt; n / _#, in monosyllables</rule>
+    <rule>VN &gt; V[+nasal] / _# ; in polysyllables</rule>
+    <rule>V[+nasal] &gt; V / _# ; in polysyllables</rule>
+    <rule>N &gt; n / _# ; in monosyllables</rule>
     <rule>N̩ &gt; n / _#</rule>
     <rule>m̩ n̩ r̩ l̩ &gt; am an ar aɫ</rule>
     <rule>V &gt; (?) / _(C)#</rule>
@@ -3971,31 +3987,31 @@ Postvocalic obstruents with different POAs become geminates of the second when �
   </section>
   <section index="17.5" name="Proto-Indo-European to Proto-Celtic">
     <cite>dhokarena56, from Matasović (2009), Etymological Dictionary of Proto-Celtic (ed. Lubotsky).</cite>
-    <rule>— h₁e h₂e h₃e &gt; e a o</rule>
-    <rule>— eh₁ eh₂ eh₃ &gt; eː aː oː</rule>
-    <rule>— H &gt; a / C_C ! #_</rule>
-    <rule>— SS &gt; sː</rule>
-    <rule>— ∅ &gt; a / CR_HC</rule>
-    <rule>— H &gt; ∅ / V_C when pretonic</rule>
-    <rule>— H &gt; a / #R_C</rule>
-    <rule>— Ḱ &gt; K</rule>
-    <rule>— ɡʷ &gt; b</rule>
-    <rule>— h &gt; ∅ / C_</rule>
-    <rule>— ∅ &gt; i / C{l,r}S</rule>
-    <rule>— e &gt; a / _Ra[- long]</rule>
-    <rule>— ∅ &gt; a / C_RC</rule>
-    <rule>— H &gt; ∅ / “if not in a syllabic position”</rule>
-    <rule>— p…kʷ &gt; kʷ…kʷ</rule>
-    <rule>— eː &gt; iː</rule>
-    <rule>— oː &gt; uː / in U#</rule>
-    <rule>— Vː &gt; V[-long] / _RC</rule>
-    <rule>— C₁C₂ &gt; xC₂ / if C₂ was a plosive or s</rule>
-    <rule>— p &gt; b / _{r,l}</rule>
-    <rule>— p &gt; w / B_N</rule>
-    <rule>— p &gt; f</rule>
-    <rule>— oː ej &gt; aː eː</rule>
-    <rule>— e &gt; o / _w</rule>
-    <rule>— u &gt; o / _wO</rule>
+    <rule>h₁e h₂e h₃e &gt; e a o</rule>
+    <rule>eh₁ eh₂ eh₃ &gt; eː aː oː</rule>
+    <rule>H &gt; a / C_C ! #_</rule>
+    <rule>SS &gt; sː</rule>
+    <rule>∅ &gt; a / CR_HC</rule>
+    <rule>H &gt; ∅ / V_C when pretonic</rule>
+    <rule>H &gt; a / #R_C</rule>
+    <rule>Ḱ &gt; K</rule>
+    <rule>ɡʷ &gt; b</rule>
+    <rule>h &gt; ∅ / C_</rule>
+    <rule>∅ &gt; i / C{l,r}S</rule>
+    <rule>e &gt; a / _Ra[- long]</rule>
+    <rule>∅ &gt; a / C_RC</rule>
+    <rule>H &gt; ∅ / “if not in a syllabic position”</rule>
+    <rule>p…kʷ &gt; kʷ…kʷ</rule>
+    <rule>eː &gt; iː</rule>
+    <rule>oː &gt; uː / in U#</rule>
+    <rule>Vː &gt; V[-long] / _RC</rule>
+    <rule>C₁C₂ &gt; xC₂ / if C₂ was a plosive or s</rule>
+    <rule>p &gt; b / _{r,l}</rule>
+    <rule>p &gt; w / B_N</rule>
+    <rule>p &gt; f</rule>
+    <rule>oː ej &gt; aː eː</rule>
+    <rule>e &gt; o / _w</rule>
+    <rule>u &gt; o / _wO</rule>
   </section>
   <section index="17.5.1" name="Proto-Indo-European to Old Irish">
     <cite>dhokarena56</cite>
@@ -4024,30 +4040,31 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>oːi &gt; uː / _#</rule>
     <rule>oː &gt; aː / else</rule>
     <rule>Vː &gt; V[-long] / _H</rule>
-    <rule>— e &gt; i / _[- stress](C…)#</rule>
-    <rule>— o &gt; a / _[- stress]{(C…),u}#</rule>
-    <rule>— {ai,oi} &gt; iː / _[- stress]#</rule>
+    <rule>e &gt; i / _[- stress](C…)#</rule>
+    <rule>o &gt; a / _[- stress]{(C…),u}#</rule>
+    <rule>{ai,oi} &gt; iː / _[- stress]#</rule>
     <comment>“The following two rules apply if the vowel in question is stressed or follows the stressed syllable”; consonant clusters cannot be /nt nd/:</comment>
-    <rule>— i u &gt; e o / _C(…C){a(ː),e(ː),o(ː)}</rule>
-    <rule>— e o &gt; i u / _C(…C){H,j}</rule>
+    <rule>i u &gt; e o / _C(…C){a(ː),e(ː),o(ː)}</rule>
+    <rule>e o &gt; i u / _C(…C){H,j}</rule>
     <rule>C &gt; Cʲ / _{F,j}</rule>
     <rule>C &gt; Cʷ / _{B,w}</rule>
     <rule>Kʷ &gt; K</rule>
-    <rule>— n &gt; ∅ / {i,o,u}_{p,t,k,s}</rule>
-    <rule>— {a,e}n &gt; eː / _{p t k s}</rule>
+    <rule>n &gt; ∅ / {i,o,u}_{p,t,k,s}</rule>
+    <rule>{a,e}n &gt; eː / _{p t k s}</rule>
     <rule>w &gt; f / #_</rule>
     <rule>w &gt; ∅ / {#,C}C_</rule>
     <rule>w &gt; ∅ / {θ,x}_</rule>
     <rule>w &gt; ∅ / V_{V,#}</rule>
     <rule>w &gt; v / else</rule>
-    <rule>— {p,t} &gt; ∅ / #s_r</rule>
-    <rule>— {p,t} &gt; ∅ / #s_ ;; “(although it says that occasionally st &gt; t / #_)”</rule>
-    <rule>— s &gt; ∅ / []_{l,r}_O ;; [anything]{l,r}_O</rule>
-    <rule>— hn hm &gt; nː mː / []_ ;; [anything]_ (“[t]his change is a bit speculative”)</rule>
+    <rule>{p,t} &gt; ∅ / #s_r</rule>
+    <rule>{p,t} &gt; ∅ / #s_ ;; “(although it says that occasionally st</rule>
+    <rule>∅ / #s_ ;; “(although it says that occasionally st &gt; t / #_)”</rule>
+    <rule>s &gt; ∅ / []_{l,r}_O ;; [anything]{l,r}_O</rule>
+    <rule>hn hm &gt; nː mː / []_ ;; [anything]_ (“[t]his change is a bit speculative”)</rule>
     <comment>— “[A] sequence of two plosives becomes a geminate of the second one”</comment>
-    <rule>— st zd &gt; sː dː / []_ ;; [anything]_</rule>
-    <rule>— {l,h}l {l,h}r l{p,s,n} r{p,s} ln &gt; lː rː lː rː (lː?) / []_ ;; [anything]_</rule>
-    <rule>— Cː &gt; C[-long]</rule>
+    <rule>st zd &gt; sː dː / []_ ;; [anything]_</rule>
+    <rule>{l,h}l {l,h}r l{p,s,n} r{p,s} ln &gt; lː rː lː rː (lː?) / []_ ;; [anything]_</rule>
+    <rule>Cː &gt; C[-long]</rule>
     <rule>V &gt; ∅ / C_# when unstressed ! C = j</rule>
     <rule>C(…C) &gt; ∅ / _# ! /l r/ and clusters containing them; “[t]his remained a phonologically conditioned rule in OIr”</rule>
     <rule>{au,eu,ou} &gt; oː</rule>
@@ -4056,12 +4073,12 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>eː &gt; ia / _[+ stress]{#,Cʲ}</rule>
     <rule>j &gt; ∅</rule>
     <comment>The second and third rule below “may well have been for the most part optional”; every one of the three “only applies to unstressed vowels” and “remained as a phonologically conditioned rule”:</comment>
-    <rule>— Vː &gt; V[-long]</rule>
-    <rule>— a &gt; e / _#</rule>
-    <rule>— {e,o} &gt; a / _[] ;; _[anything]</rule>
+    <rule>Vː &gt; V[-long]</rule>
+    <rule>a &gt; e / _#</rule>
+    <rule>{e,o} &gt; a / _[] ;; _[anything]</rule>
     <rule>V &gt; Vː / _[+ stress]#</rule>
-    <rule>VOR &gt; VːR; “this is a tad unclear, because in some instances it didn’t seem to apply”</rule>
-    <rule>V &gt; ∅ / #UU(_)U(U(_)U) / unstressed; this “remained as a phonologically conditioned rule in OIr”; “[t]hat’s a little unclear, so let me try and enumerate: in words of more than three syllables, every other vowel (only the even ones) dropped, if it’s unstressed. In some words, syncope didn’t apply because it would create an unwieldy consonant cluster: so PIE *komaktyom &gt; OIr cumachte, not *cumchte”</rule>
+    <rule>VOR &gt; VːR</rule>
+    <rule>V &gt; ∅ / #UU(_)U(U(_)U)</rule>
   </section>
   <section index="17.5.2" name="Proto-Celtic to Middle Welsh">
     <cite>Dewrad &amp; Pogostick Man, the latter citing Willis (David), “Old and Middle Welsh”</cite>
@@ -4137,16 +4154,16 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <cite>Pogostick Man, from Wright, Joseph (1910). Grammar of the Gothic Language, 2nd Ed.; and Wikipedia contributors (2014). “Gothic language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Gothic_language&gt;</cite>
     <comment>NB: Wright seems to regard Germanic labiovelars as sequences of velar + w if I’m reading this right; additionally, it looks like some of what Wright considers diphthongs may have been long monophthongs.</comment>
     <comment>Stressed vowels:</comment>
-    <rule>— o e &gt; u i</rule>
-    <rule>— u &gt; ɔ / _{r,h} (unless this r “arose from older s by assimilation”)</rule>
-    <rule>— i &gt; ɛ / _{r,h,ʍ}</rule>
-    <rule>— æː &gt; eː</rule>
-    <rule>— ew &gt; iw</rule>
+    <rule>o e &gt; u i</rule>
+    <rule>u &gt; ɔ / _{r,h} (unless this r “arose from older s by assimilation”)</rule>
+    <rule>i &gt; ɛ / _{r,h,ʍ}</rule>
+    <rule>æː &gt; eː</rule>
+    <rule>ew &gt; iw</rule>
     <comment>Unstressed vowels:</comment>
-    <rule>— V[- long] &gt; ∅ / _# ! V = u</rule>
-    <rule>— V[- long] &gt; ∅ / U_C# ! V = u</rule>
+    <rule>V[- long] &gt; ∅ / _# ! V = u</rule>
+    <rule>V[- long] &gt; ∅ / U_C# ! V = u</rule>
     <comment>— Inherited “long final vowels…became shortened in polysyllabic words, when the vowels in question originally had the ‘broken’ accent, but remained unshortened when they originally had the ‘slurred’ accent”</comment>
-    <rule>— aj &gt; a / U_#</rule>
+    <rule>aj &gt; a / U_#</rule>
     <comment>— “Originally long diphthongs became shortened in final syllables”</comment>
     <rule>iw &gt; ju / [- stress]</rule>
     <rule>w &gt; u̯ / V[- long]_{#,C}</rule>
@@ -4191,7 +4208,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>k ɡ &gt; tʃ j(?)</rule>
     <rule>æː &gt; aː “under to [sic] the influence of neighboring consonants”, but the article doesn’t elaborate</rule>
     <rule>æː &gt; eː</rule>
-    <rule>æu &gt; au (æ &gt; a / _B in general?)</rule>
+    <rule>æu &gt; au</rule>
     <rule>aː &gt; æː / ! _N or if nasalized</rule>
     <rule>i o &gt; e a / [- stress]</rule>
     <rule>ai au eu &gt; {eː,aː} aː ia</rule>
@@ -4212,7 +4229,8 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <cite>Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English Phonology and Midd le English Grammar for Courses in Chaucer, Middle English, and the History of the English Language; and Wikipedia contributors (2011), “Middle English phonology”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Middle_English_phonology&gt;</cite>
     <rule>Vː &gt; V[-long] / _C{ː,C} ! _st{#,V} or when preceding a cluster which had triggered a vowel to become long in Old English; the book gives “Christ” vs. “Christmas” as an example</rule>
     <rule>eɑ eːɑ eo eːo &gt; ɑ ɛː e eː</rule>
-    <rule>æj &gt; aj &gt; ej</rule>
+    <rule>æj &gt; aj</rule>
+    <rule>aj &gt; ej</rule>
     <rule>{æːj,e(ː)j} &gt; ej</rule>
     <rule>ɑɣ &gt; ɑw</rule>
     <rule>{eɑh,eɑç,eɑx,eɑʝ,eɑɣ} &gt; ɑw</rule>
@@ -4224,7 +4242,8 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>ɑ e o &gt; ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/ or ending in one of /m n r l/</rule>
     <comment>eːɑ eːo iːe become sounds of uncertain identity; Moore says they were probably diphthongs</comment>
     <rule>Vː &gt; V[-long] / in #U before a U with /iː/</rule>
-    <rule>m &gt; n &gt; ∅ / _# when unstressed</rule>
+    <rule>m &gt; n / _[- stress]#</rule>
+    <rule>n &gt; ∅ / _[- stress]#</rule>
     <rule>hn {wl,hl} hr &gt; w l r</rule>
     <rule>ɣ &gt; ɡ / #_</rule>
     <rule>ɣ &gt; w / C_V</rule>
@@ -4233,7 +4252,8 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <cite>Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English Phonology and Midd le English Grammar for Courses in Chaucer, Middle English, and the History of the English Language; and Wikipedia contributors (2011), “Middle English phonology”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Middle_English_phonology&gt;</cite>
     <rule>Vː &gt; V[-long] / _C{ː,C} ! _st{#,V} or when preceding a cluster which had triggered a vowel to become long in Old English; the book gives “Christ” vs. “Christmas” as an example</rule>
     <rule>eɑ eːɑ eo eːo &gt; ɑ ɛː e eː</rule>
-    <rule>æj &gt; aj &gt; ej</rule>
+    <rule>æj &gt; aj</rule>
+    <rule>aj &gt; ej</rule>
     <rule>{æːj,e(ː)j} &gt; ej</rule>
     <rule>ɑɣ &gt; ɑw</rule>
     <rule>{eɑh,eɑç,eɑx,eɑʝ,eɑɣ} &gt; ɑw</rule>
@@ -4244,11 +4264,13 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>ɑː y(ː) &gt; ɔː i(ː)</rule>
     <rule>ɑ e o &gt; ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/ or ending in one of /m n r l/</rule>
     <rule>Vː &gt; V[-long] / in #U before a U with /iː/</rule>
-    <rule>m &gt; n &gt; ∅ / _# when unstressed</rule>
+    <rule>m &gt; n / _[- stress]#</rule>
+    <rule>n &gt; ∅ / _[- stress]#</rule>
     <rule>hn {wl,hl} hr &gt; w l r</rule>
     <rule>ɣ &gt; ɡ / #_</rule>
     <rule>ɣ &gt; w / C_V</rule>
-    <rule>{e,ɑ,o} &gt; ə &gt; ∅ / _#</rule>
+    <rule>{e,ɑ,o} &gt; ə / _#</rule>
+    <rule>ə &gt; ∅ / _#</rule>
   </section>
   <section index="17.7.2.1.4" name="Midlands Middle English to Early Modern English">
     <cite>Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. &lt;http://wiki.firespeaker.org/English_sound_changes&gt;</cite>
@@ -4269,7 +4291,8 @@ Postvocalic obstruents with different POAs become geminates of the second when �
   <section index="17.7.2.1.5" name="Early Modern English to American English">
     <cite>Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. &lt;http://wiki.firespeaker.org/English_sound_changes; and my Phonetic Description class&gt;</cite>
     <rule>æ &gt; æː (e.g., NYC) or ɑː (e.g., Boston) / _{F[-voiced],N[-voiced]} (“words which change vary between dialects”)</rule>
-    <rule>ɒ &gt; ɒː &gt; ɔː / _F[-voiced]</rule>
+    <rule>ɒ &gt; ɒː / _F[-voiced]</rule>
+    <rule>ɒː &gt; ɔː / _F[-voiced]</rule>
     <rule>æː ɑː ɔː &gt; æə~eə ɑ ɔ</rule>
     <rule>ʍ &gt; w (regional)</rule>
     <rule>l &gt; ɫ / “in some conditions”</rule>
@@ -4292,14 +4315,18 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <cite>Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. &lt;http://wiki.firespeaker.org/English_sound_changes&gt;; and my Phonetic Description class</cite>
     <rule>ɜːɹ ɑːɹ ɔːɹ eːɹ oːɹ iːɹ uːɹ &gt; ɜː ɑː ɔː ɛə ɔə ɪə ʊə / syllable-finally</rule>
     <rule>ɑ &gt; ɒ</rule>
-    <rule>æ &gt; æː &gt; ɑː / _{F[-voiced],N[-voiced]}</rule>
-    <rule>ɒ &gt; ɒː &gt; ɔː / _F[-voiced]</rule>
+    <rule>æ &gt; æː / _{F[-voiced],N[-voiced]}</rule>
+    <rule>æː &gt; ɑː / _{F[-voiced],N[-voiced]}</rule>
+    <rule>ɒ &gt; ɒː / _F[-voiced]</rule>
+    <rule>ɒː &gt; ɔː / _F[-voiced]</rule>
     <rule>ʍ &gt; w</rule>
-    <rule>l &gt; ɫ (the conditions of this are not elaborated upon)</rule>
+    <rule>l &gt; ɫ</rule>
     <rule>oʊ iː &gt; ɔʊ ɪə / _ɫ</rule>
     <rule>oʊ iː &gt; əʊ ɪi / else</rule>
-    <rule>uː &gt; ʊə &gt; uː / _ɫ ! in Queensland and New South Wales</rule>
-    <rule>uː &gt; ʊʉ &gt; ʉː / else</rule>
+    <rule>uː &gt; ʊə / _ɫ</rule>
+    <rule>ʊə &gt; uː / _ɫ</rule>
+    <rule>uː &gt; ʊʉ</rule>
+    <rule>ʊʉ &gt; ʉː / else</rule>
     <rule>ɫ &gt; əɫ / ! if one of the above vowel changes after the formation of /ɫ/ apply</rule>
     <rule>ɪ &gt; iː / _# when unstressed</rule>
     <rule>ɪ &gt; iː / “unstressed foot-finally if the next syllable is stressed and begins with /k ɡ tʃ dʒ ʃ ʒ/”</rule>
@@ -4325,8 +4352,10 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <cite>Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. &lt;http://wiki.firespeaker.org/English_sound_changes&gt;</cite>
     <rule>ɜːɹ ɑːɹ ɔːɹ eːɹ oːɹ iːɹ uːɹ &gt; ɜː ɑː ɔː ɛə ɔə ɪə ʊə / syllable-finally</rule>
     <rule>ɑ &gt; ɒ</rule>
-    <rule>æ &gt; æː &gt; ɑː / _{F[-voiced],N[-voiced]}</rule>
-    <rule>ɒ &gt; ɒː &gt; ɔː / _F[-voiced]</rule>
+    <rule>æ &gt; æː / _{F[-voiced],N[-voiced]}</rule>
+    <rule>æː &gt; ɑː / _{F[-voiced],N[-voiced]}</rule>
+    <rule>ɒ &gt; ɒː / _F[-voiced]</rule>
+    <rule>ɒː &gt; ɔː / _F[-voiced]</rule>
     <rule>ʍ &gt; w</rule>
     <rule>l &gt; ɫ / “in coda”</rule>
     <rule>oʊ &gt; əʊ</rule>
@@ -4336,7 +4365,8 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <cite>Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English Phonology and Midd le English Grammar for Courses in Chaucer, Middle English, and the History of the English Language; and Wikipedia contributors (2011), “Middle English phonology”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Middle_English_phonology&gt;</cite>
     <rule>Vː &gt; V[-long] / _C{ː,C} ! _st{#,V} or when preceding a cluster which had triggered a vowel to become long in Old English; the book gives “Christ” vs. “Christmas” as an example</rule>
     <rule>eɑ eːɑ eo eːo &gt; ɑ ɛː e eː</rule>
-    <rule>æj &gt; aj &gt; ej</rule>
+    <rule>æj &gt; aj</rule>
+    <rule>aj &gt; ej</rule>
     <rule>{æːj,e(ː)j} &gt; ej</rule>
     <rule>ɑɣ &gt; ɑw</rule>
     <rule>{eɑh,eɑç,eɑx,eɑʝ,eɑɣ} &gt; ɑw</rule>
@@ -4348,14 +4378,15 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <rule>ɑ e o &gt; ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/ or ending in one of /m n r l/</rule>
     <rule>y(ː) &gt; i(ː)</rule>
     <rule>Vː &gt; V[-long] / in #U before a U with /iː/</rule>
-    <rule>n &gt; ∅ / _# when unstressed (not clear as to whether m &gt; n beforehand in this position or not)</rule>
+    <rule>n &gt; ∅ / _[- stress]#</rule>
     <rule>j tʃ &gt; ɡ k</rule>
     <rule>ʃ &gt; s / in unstressed syllables</rule>
     <comment>ʍ became a sound spelled 〈qu〉</comment>
     <rule>hn {wl,hl} hr &gt; w l r</rule>
     <rule>ɣ &gt; ɡ / #_</rule>
     <rule>ɣ &gt; w / C_V</rule>
-    <rule>{e,ɑ,o} &gt; ə &gt; ∅ / _#, when unstressed (it appears this sound may also have gone to /ɪ/)</rule>
+    <rule>{e,ɑ,o} &gt; ə / _[- stress]#</rule>
+    <rule>ə &gt; ∅ / _[- stress]#</rule>
   </section>
   <section index="17.7.2.1.9" name="Early Northern Middle English to Scots">
     <cite>Pogostick Man, from Wikipedia contributors (2014), “Phonological history of Scots”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Phonological_history_of_Scots&gt;; and Wikipedia contributors (2014), “Scottish Vowel Length Rule”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Scottish_vowel_length_rule&gt;</cite>
@@ -4370,24 +4401,26 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <rule>ʍ &gt; xw (some speakers seem to have resisted this)</rule>
     <rule>oɡ &gt; ʌu</rule>
     <comment>ul became some sort of diphthong or vowel (possibly one of uː, uw, ʌw), but the article isn’t very clear</comment>
-    <rule>ol al &gt; ou ɑː &gt; ʌu {ɑ,ɔ}</rule>
+    <rule>ol al &gt; ou ɑː</rule>
+    <rule>ou ɑː &gt; ʌu {ɑ,ɔ}</rule>
     <comment>Vowel shift:</comment>
-    <rule>— ai &gt; ɛi &gt; əi / when stem-final</rule>
-    <rule>— uː &gt; ʌu / when-stem final, in northern varieties</rule>
-    <rule>— øː &gt; wi / {k,ɡ}_ (in Mid Northern dialects)</rule>
-    <rule>— øː &gt; i (in northern dialects)</rule>
-    <rule>— øː &gt; (j){u,ʌ} / _{k,x} (outcome varies depending upon dialect)</rule>
-    <rule>— a &gt; i / _n (in northern varieties)</rule>
-    <rule>— a &gt; e / _n (otherwise)</rule>
-    <rule>— a &gt; {ɛ,e} / _rC</rule>
-    <rule>— ai oi ui ei au ou iu ɛ(o)u &gt; eː oe əi iː {ɑː,ɔː} ʌu ju j(ʌ)u</rule>
-    <rule>— ɛː &gt; ɛi (&gt; əi?) / in some northern varieties</rule>
-    <rule>— iː eː ɛː aː oː uː {øː,yː} &gt; əi i {i,e} e o u ø</rule>
-    <rule>— æ &gt; ɛ / _C[+alveolar]</rule>
-    <rule>— a ɔ u &gt; {a,ɑ} ɔ ʌ</rule>
+    <rule>ai &gt; ɛi ; / when stem-final</rule>
+    <rule>ɛi &gt; əi ; / when stem-final</rule>
+    <rule>uː &gt; ʌu ; / when-stem final, in northern varieties</rule>
+    <rule>øː &gt; wi / {k,ɡ}_ ; (in Mid Northern dialects)</rule>
+    <rule>øː &gt; i ; (in northern dialects)</rule>
+    <rule>øː &gt; (j){u,ʌ} / _{k,x} ; (outcome varies depending upon dialect)</rule>
+    <rule>a &gt; i / _n ; (in northern varieties)</rule>
+    <rule>a &gt; e / _n ; (otherwise)</rule>
+    <rule>a &gt; {ɛ,e} / _rC</rule>
+    <rule>ai oi ui ei au ou iu ɛ(o)u &gt; eː oe əi iː {ɑː,ɔː} ʌu ju j(ʌ)u</rule>
+    <rule>ɛː &gt; ɛi (&gt; əi?) / in some northern varieties</rule>
+    <rule>iː eː ɛː aː oː uː {øː,yː} &gt; əi i {i,e} e o u ø</rule>
+    <rule>æ &gt; ɛ / _C[+alveolar]</rule>
+    <rule>a ɔ u &gt; {a,ɑ} ɔ ʌ</rule>
     <comment>Application of the Scottish vowel-length rule:</comment>
-    <rule>— V &gt; Vː / _{r,F[+voiced],$,#}</rule>
-    <rule>— əi &gt; aɪ / _{r,F[+voiced],$,#} (pursuant to the above)</rule>
+    <rule>V &gt; Vː / _{r,F[+voiced],$,#}</rule>
+    <rule>əi &gt; aɪ / _{r,F[+voiced],$,#} (pursuant to the above)</rule>
   </section>
   <section index="17.7.2.1.10" name="Old English to Scots">
     <cite>Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from personal research</cite>
@@ -4400,13 +4433,16 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <rule>øː &gt; eː “(not a thorough change)”</rule>
     <rule>ø &gt; ɪ</rule>
     <rule>æː(ɑ) eː(o) &gt; ɛ iː</rule>
-    <rule>ɛ &gt; ɜi &gt; i / _{m,ɲ}</rule>
+    <rule>ɛ &gt; ɜi</rule>
+    <rule>ɜi &gt; i / _{m,ɲ}</rule>
     <rule>ai &gt; aː</rule>
     <rule>e &gt; ɛ / _nt</rule>
     <rule>{y,i} &gt; ɪ</rule>
     <rule>ɪ &gt; ɜ / _{K,r}</rule>
     <rule>e(o) &gt; ɛ</rule>
-    <rule>u &gt; ʊ &gt; ɵ &gt; ʌ</rule>
+    <rule>u &gt; ʊ</rule>
+    <rule>ʊ &gt; ɵ</rule>
+    <rule>ɵ &gt; ʌ</rule>
     <rule>uː &gt; u</rule>
     <rule>o &gt; ʌ / P_r</rule>
     <rule>æ &gt; ɑ / _{x,l}</rule>
@@ -4462,7 +4498,8 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <cite>Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English Phonology and Midd le English Grammar for Courses in Chaucer, Middle English, and the History of the English Language; and Wikipedia contributors (2011), “Middle English phonology”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Middle_English_phonology&gt;</cite>
     <rule>Vː &gt; V[-long] / _C{ː,C} ! _st{#,V} or when preceding a cluster which had triggered a vowel to become long in Old English; the book gives “Christ” vs. “Christmas” as an example</rule>
     <rule>eɑ eːɑ eo eːo &gt; ɑ ɛː e eː</rule>
-    <rule>æj &gt; aj &gt; ej</rule>
+    <rule>æj &gt; aj</rule>
+    <rule>aj &gt; ej</rule>
     <rule>{æːj,e(ː)j} &gt; ej</rule>
     <rule>ɑɣ &gt; ɑw</rule>
     <rule>{eɑh,eɑç,eɑx,eɑʝ,eɑɣ} &gt; ɑw</rule>
@@ -4474,7 +4511,8 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <rule>ɑ e o &gt; ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/ or ending in one of /m n r l/</rule>
     <rule>y(ː) &gt; i(ː)</rule>
     <rule>Vː &gt; V[-long] / in #U before a U with /iː/</rule>
-    <rule>m &gt; n &gt; ∅ / _# when unstressed</rule>
+    <rule>m &gt; n / _[- stress]#</rule>
+    <rule>n &gt; ∅ / _[- stress]#</rule>
     <rule>hn {wl,hl} hr &gt; w l r</rule>
     <rule>f θ s ɣ &gt; v ð z ɡ / #_</rule>
     <rule>ɣ &gt; w / C_V</rule>
@@ -4487,7 +4525,7 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <rule>t d &gt; θ ð (conditioning unclear)</rule>
     <rule>∅ &gt; ɛ / uː_d</rule>
     <rule>F &gt; F[+ voice] / #_ ! F = ʍ</rule>
-    <rule>ʍ &gt; f (at least one instance of &gt; w, before a high front vowel)</rule>
+    <rule>ʍ &gt; f</rule>
     <rule>U &gt; U[+ stress] / #U_ (often)</rule>
   </section>
   <section index="17.7.2.1.14" name="Anglo-Frisian to Old Frisian">
@@ -4499,7 +4537,8 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
   </section>
   <section index="17.7.2.1.15" name="North Frisian Lenition">
     <cite>TzirTzi, from Goblirsch, Kurt Gustav (2002), “The North Frisian lenition and Danish linguistic hegemony”. In Carr, Gerald F., and Irmengard Raugh (2002), New Insights in Germanic Linguistics III:46 – 65</cite>
-    <rule>p t k &gt; b d ɡ &gt; v r ɣ / Vː_{V,#}</rule>
+    <rule>p t k &gt; b d ɡ / Vː_{V,#}</rule>
+    <rule>b d ɡ &gt; v r ɣ / Vː_{V,#}</rule>
     <comment>Vowel length neutralized (to long vowels?)</comment>
   </section>
   <section index="17.7.2.2" name="West Germanic to Old Low Franconian">
@@ -4514,12 +4553,12 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <comment>Final obstruents devoice</comment>
     <rule>a &gt; ɒ? (&gt; o) / _ɫ</rule>
     <comment>Some vowel reduction seems to have occurred in unstressed syllables</comment>
-    <rule>ai u &gt; ei ʏ / _(C…){i(ː),j} (short only; in the case of [ʏ] at least this was not yet phonemic)</rule>
-    <rule>a &gt; ɛ / _(C…){i(ː),j} (conjectured based on date from the “Germanic umlaut” article)</rule>
-    <rule>uː &gt; ʉw / _V (probably, in most areas)</rule>
-    <rule>uː &gt; ʊw / _V (probably, in areas that did not undergo the above change, such as Limburg)</rule>
-    <rule>uː &gt; ʉː (probably, in areas with uː &gt; ʉw / _V)</rule>
-    <rule>ei ou &gt; eː oː (except in southeastern dialects; *ei as a result of the umlaut of *ai was not affected)</rule>
+    <rule>ai u &gt; ei ʏ / _(C…){i(ː),j} ; (short only; in the case of [ʏ] at least this was not yet phonemic)</rule>
+    <rule>a &gt; ɛ / _(C…){i(ː),j} ; (conjectured based on date from the “Germanic umlaut” article)</rule>
+    <rule>uː &gt; ʉw / _V ; (probably, in most areas)</rule>
+    <rule>uː &gt; ʊw / _V ;(probably, in areas that did not undergo the above change, such as Limburg)</rule>
+    <rule>uː &gt; ʉː / _V)</rule>
+    <rule>ei ou &gt; eː oː ; (except in southeastern dialects; *ei as a result of the umlaut of *ai was not affected)</rule>
   </section>
   <section index="17.7.2.2.1" name="Old Low Franconian to Middle Dutch">
     <cite>Pogostick Man, from Wikipedia contributors (2014), “Middle Dutch”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Middle_Dutch&gt;; and Wikipedia contributors (2014), “Hieronymous Bosch”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Hieronymus_Bosch&gt;</cite>
@@ -4529,13 +4568,13 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <rule>iw &gt; yw (dialectal)</rule>
     <rule>{ie,ia,io} uo &gt; iə uə</rule>
     <comment>Umlaut phonemicizes, but only for umlauts of non-dipthongal short vowels (except in extreme eastern dialects); [ʏ] becomes a phoneme</comment>
-    <rule>f θ s &gt; v ð z / syllable-initially (h &gt; ɦ?)</rule>
+    <rule>f θ s &gt; v ð z ; syllable-initially</rule>
     <rule>V &gt; ə / if short and unstressed</rule>
     <rule>f &gt; {x,ç} / _t (the former seems to have occurred in northern dialects, the latter in southern ones)</rule>
     <rule>θ ð &gt; t d</rule>
     <rule>{uː,uw} u &gt; ɔw o (except in the southeast)</rule>
     <rule>{ol,al} {ar,er} or &gt; ɔu aːr oːr / _C[+dental]</rule>
-    <rule>V[-long +stress] &gt; Vː / in open syllables (ʏ &gt; {œː,øː} here but this is not phonemically important; there seem to have been qualitative differences between original long vowels and long vowels resulting from this change—lengthened iː seems to have become eː, but lengthened aː merged with original aː); does not affect original long vowels or vowels in diphthongs</rule>
+    <rule>V[-long +stress] &gt; Vː</rule>
   </section>
   <section index="17.7.2.2.2" name="Middle Dutch to Modern Dutch">
     <cite>Pogostick Man, from Wikipedia contributors (2014), “Dutch Phonology”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Dutch_phonology&gt;; and Wikipedia contributors (2014), “Hard and soft G in Dutch”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Hard_and_soft_G_in_Dutch&gt;</cite>
@@ -4545,8 +4584,8 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <rule>iː yː &gt; ɛi œy</rule>
     <rule>uː &gt; ʌu (? conjectured based on the above diphthongization and on developments in Polder Dutch vowels)</rule>
     <comment>Hard-vs.-soft-G phenomena:</comment>
-    <rule>— x ɣ &gt; {x,χ} {ɣ,x,χ} / in northern dialects</rule>
-    <rule>— x ɣ &gt; ç ʝ / in southern dialects (the articles use velar phonemes here but describes them as “front velar”; based on the description and on representations in other articles, the palatal phonemes are used here)</rule>
+    <rule>x ɣ &gt; {x,χ} {ɣ,x,χ} / in northern dialects</rule>
+    <rule>x ɣ &gt; ç ʝ / in southern dialects (the articles use velar phonemes here but describes them as “front velar”; based on the description and on representations in other articles, the palatal phonemes are used here)</rule>
   </section>
   <section index="17.7.2.2.3" name="Modern Dutch to Polder Dutch Vowel Shift">
     <cite>Pogostick Man, from Wikipedia contributors (2014), “Dutch Phonology”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Dutch_phonology&gt;</cite>
@@ -4611,11 +4650,12 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <rule>f θ s &gt; v ð z / syllable-initially</rule>
     <rule>v &gt; f / _C ! _d</rule>
     <rule>b d &gt; p t / _C[-voice]</rule>
-    <rule>k &gt; ts / _E (ɡ &gt; dz here?)</rule>
+    <rule>k &gt; ts / _E</rule>
+    <rule sporadic="true">ɡ &gt; dz / _E</rule>
     <rule>n &gt; ŋ / _{k,ɡ}</rule>
     <rule>ɡ &gt; k / ŋ_#</rule>
-    <rule>ɡ &gt; ʝ / _E (singleton only)</rule>
-    <rule>ɡ &gt; ɣ / _V (singleton only)</rule>
+    <rule>ɡ &gt; ʝ / _E ; (singleton only)</rule>
+    <rule>ɡ &gt; ɣ / _V ; (singleton only)</rule>
     <rule>ɡ &gt; x / _#</rule>
     <rule>F[-voice] &gt; F[+voice] / X[+voiced]_X[+voiced]?</rule>
     <comment>Umlaut applies; going by the orthography, only a &gt; e / _(C…){i(ː),j} is often marked (and even then haphazardly), but based upon reflexes in the daughter languages it seems that the umlaut had to apply to the other back vowels too</comment>
@@ -5053,7 +5093,9 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>ɛː &gt; eː</rule>
     <rule>ɑj &gt; ɛː</rule>
     <rule>h &gt; ∅</rule>
-    <rule>oj &gt; øj &gt; yj (&gt; yː sometimes)</rule>
+    <rule>oj &gt; øj</rule>
+    <rule>øj &gt; yj</rule>
+    <rule sporadic="true">yj &gt; yː</rule>
     <rule>e o &gt; ɛ ɔ</rule>
     <rule>pʰ tʰ kʰ &gt; f θ x</rule>
     <comment>Pitch-accent lost</comment>
@@ -5198,7 +5240,9 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>ɛː &gt; eː</rule>
     <rule>ɑj &gt; ɛː</rule>
     <rule>h &gt; ∅</rule>
-    <rule>oj &gt; øj &gt; yj (&gt; yː sometimes)</rule>
+    <rule>oj &gt; øj</rule>
+    <rule>øj &gt; yj</rule>
+    <rule sporadic="true">yj &gt; yː</rule>
     <rule>e o &gt; ɛ ɔ</rule>
   </section>
   <section index="17.8.9" name="Proto-Indo-European to Laconian Greek">
@@ -5252,10 +5296,10 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>m̩ n̩ r̩ l̩ &gt; am an ar al</rule>
     <rule>w &gt; m / u_</rule>
     <comment>“Changes I’m less sure of”</comment>
-    <rule>— r &gt; ∅ / #_</rule>
-    <rule>— r &gt; ∅ / _# “sometimes??”</rule>
-    <rule>— e(ː) &gt; a(ː) / _R “sometimes??”</rule>
-    <rule>— e(ː) &gt; a(ː) / “when unstressed?”</rule>
+    <rule>r &gt; ∅ / #_</rule>
+    <rule>r &gt; ∅ / _# “sometimes??”</rule>
+    <rule>e(ː) &gt; a(ː) / _R “sometimes??”</rule>
+    <rule>e(ː) &gt; a(ː) / “when unstressed?”</rule>
   </section>
   <section index="17.10" name="Proto-Indo-European to Proto-Indo-Iranian">
     <cite>Tropylium, from Kobayashi, Masato (2004), Historical Phonology of Old Indo-Aryan Consonants</cite>
@@ -5269,7 +5313,7 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>Kʷ &gt; K</rule>
     <rule>s &gt; ʃ / {u,i,l,r,K,Ḱ}</rule>
     <rule>Ḱ &gt; TŠ</rule>
-    <rule>Bʱ₁P₂ &gt; B₁Bʱ₂ / “includes s ʃ &gt; zʱ ʒʱ”</rule>
+    <rule>Bʱ₁P₂ &gt; B₁Bʱ₂</rule>
     <rule>BʱBʱ &gt; BBʱ</rule>
     <rule>ptʃ &gt; pʃ</rule>
     <rule>ttʃ ddʒʱ &gt; t.ʃ d.ʒʱ</rule>
@@ -5298,7 +5342,8 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>uʐ aʐ iʐ &gt; uː əː iː</rule>
     <rule>əː &gt; oː / w_</rule>
     <rule>əː &gt; eː</rule>
-    <rule>tʃ dʒ(ʱ) &gt; tɕ dʑ(ʱ) &gt; ɕ ɟ(ʱ)</rule>
+    <rule>tʃ dʒ(ʱ) &gt; tɕ dʑ(ʱ)</rule>
+    <rule>tɕ dʑ(ʱ) &gt; ɕ ɟ(ʱ)</rule>
     <rule>tst dzdʱ &gt; tː dʱː</rule>
     <rule>k &gt; ∅ / #_t</rule>
     <rule>p &gt; ∅ / #_st</rule>
@@ -5316,7 +5361,8 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>j w &gt; dʒ b / V_V</rule>
     <rule>C &gt; C[+voiced] / V_V</rule>
     <rule>{bʱ,dʱ,ɡʱ} {j,v} &gt; h ∅ / V_V</rule>
-    <rule>Vm &gt; Vv &gt; V[+ nasal]v / _V</rule>
+    <rule>Vm &gt; Vv / _V</rule>
+    <rule>Vv &gt; V[+ nasal]v / _V</rule>
     <rule>e o &gt; i u / _#</rule>
     <rule>Vː &gt; V[-long] / _#</rule>
     <rule>ah &gt; o</rule>
@@ -5337,7 +5383,8 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>C &gt; C[+voiced] / V_V</rule>
     <rule>{bʱ,dʱ,ɡʱ} {j,v} &gt; h ∅ / V_V</rule>
     <rule>b {d,dʒ,ɡ} &gt; v j / V_V</rule>
-    <rule>Vm &gt; Vv &gt; V[+ nasal]v / _V</rule>
+    <rule>Vm &gt; Vv / _V</rule>
+    <rule>Vv &gt; V[+ nasal]v / _V</rule>
     <rule>e o &gt; i u / _#</rule>
     <rule>Vː &gt; V[-long] / _#</rule>
     <rule>ah &gt; e</rule>
@@ -5358,7 +5405,8 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>j w &gt; dʒ b / V_V</rule>
     <rule>C &gt; C[+voiced] / V_V</rule>
     <rule>{bʱ,dʱ,ɡʱ} {j,v} &gt; h ∅ / V_V</rule>
-    <rule>Vm &gt; Vv &gt; V[+ nasal]v / _V</rule>
+    <rule>Vm &gt; Vv / _V</rule>
+    <rule>Vv &gt; V[+ nasal]v / _V</rule>
     <rule>e o &gt; i u / _#</rule>
     <rule>Vː &gt; V[-long] / _#</rule>
     <rule>ah &gt; o</rule>
@@ -5378,8 +5426,9 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>a{i,j}(a) a{u,w}(a) &gt; e o</rule>
     <rule>j w &gt; dʒ b / V_V</rule>
     <rule>C &gt; C[+voiced] / V_V</rule>
-    <rule>{bʱ,dʱ,ɡʱ} {j,v} &gt; h ∅ / V_V</rule>
-    <rule>Vm &gt; Vv &gt; V[+ nasal]v / _V</rule>
+    <rule>{bʱ,dʱ,ɡʱ} {j,v} &gt; h ∅ / V_V</rule>  
+    <rule>Vm &gt; Vv / _V</rule>   
+    <rule>Vv &gt; V[+ nasal]v / _V</rule>
     <rule>e o &gt; i u / _#</rule>
     <rule>Vː &gt; V[-long] / _#</rule>
     <rule>ah &gt; o</rule>
@@ -5456,8 +5505,8 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>ɛ ɛ̃ ɛː &gt; ɔ ɔ̃ a / _C[-palatalized +dental] (also sporadically before plain non-dentals)</rule>
     <rule>ɛː &gt; ɛ</rule>
     <comment>Havlik’s law:</comment>
-    <rule>— {ь,ъ} &gt; e / iambic counting from U# or a syllable not containing a yer</rule>
-    <rule>— {ь,ъ} &gt; ∅] / in even syllables counting iambic from U# or a syllable not containing a yer</rule>
+    <rule>{ь,ъ} &gt; e / iambic counting from U# or a syllable not containing a yer</rule>
+    <rule>{ь,ъ} &gt; ∅] / in even syllables counting iambic from U# or a syllable not containing a yer</rule>
     <comment>— “[H]owever: in the vicinity of *j the development of yers did not comply with the aforementioned law”</comment>
     <rule>ъ &gt; aː / _r</rule>
     <rule>ъl &gt; ɔ(ː)ɫ / P_</rule>
@@ -5468,7 +5517,9 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>ьl &gt; il / P_</rule>
     <rule>ьl &gt; ɔ(ː)ɫ</rule>
     <rule>ь &gt; aː / r_C[+dental -palatalized]</rule>
-    <rule>ьr &gt; i(ː)ʐ &gt; {ɛ(ː)r,ɛ(ː)ʐ} &gt; {ɛr,ɛʐ}</rule>
+    <rule>ьr &gt; i(ː)ʐ</rule>
+    <rule>i(ː)ʐ &gt; {ɛ(ː)r,ɛ(ː)ʐ}</rule>
+    <rule>{ɛ(ː)r,ɛ(ː)ʐ} &gt; {ɛr,ɛʐ}</rule>
     <rule>{ɛ̃,ɔ̃} &gt; ã</rule>
     <rule>a ɛ i ɔ u ɨ ã &gt; aː ɛː iː ɔː uː ɨː ãː / _{C/U}[+voiced][lost yer] (i.e., a voiced consonant or a cluster with one)</rule>
     <rule>ajɛ &gt; ɛː in adjectives, aː in verbs</rule>
@@ -5493,7 +5544,8 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>tʲ dʲ sʲ zʲ nʲ rʲ l lʲ &gt; tɕ dʒ ɕ ʑ ȵ r ɫ l (this last probably not before /i/)</rule>
     <rule>iː uː ɨː &gt; i u ɨ</rule>
     <rule>ã &gt; ɛ̃ / short only</rule>
-    <rule>ãː &gt; ã &gt; ɔ̃</rule>
+    <rule>ãː &gt; ã</rule>
+    <rule>ã &gt; ɔ̃</rule>
     <rule>aː ɔː ɛː &gt; ɒ o e</rule>
     <rule>Vː &gt; V in certain frequently-used words</rule>
     <comment>Sporadic (de)nasalization of vowels; “there were certain environments which favoured nasality changes: in the vicinity of nasal consonants. . .and before sibilants”</comment>
@@ -5579,14 +5631,17 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>slʲ &gt; ∅ / _s</rule>
     <rule>pv &gt; f</rule>
     <rule>ʈʂ &gt; ʂ / _p</rule>
-    <rule>stʲkl &gt; ɕtɕkl &gt; {ɕ,s}kɫ &gt; ʂkɫ</rule>
+    <rule>stʲkl &gt; ɕtɕkl</rule>
+    <rule>ɕtɕkl &gt; {ɕ,s}kɫ</rule>
+    <rule>{ɕ,s}kɫ &gt; ʂkɫ</rule>
     <rule>dz ts &gt; d͜z t͜s</rule>
     <rule>C[+sibilant]P &gt; C[+alveolopalatal] / _C[+coronal]</rule>
     <rule>C[+sibilant]P &gt; C[+dental]</rule>
     <rule>w &gt; ∅ / C_#</rule>
     <rule sporadic="true">w &gt; ∅ / C_C</rule>
     <comment>“Oscillations between dental and alveo[lo]palatals” / _C</comment>
-    <rule>n &gt; s &gt; ɕ / k_ɛ̃ where the vowel was from Proto-Slavic</rule>
+    <rule>n &gt; s</rule>
+    <rule>s &gt; ɕ / k_ɛ̃ where the vowel was from Proto-Slavic</rule>
     <rule>n &gt; s / k_Vn</rule>
     <rule>d &gt; ɡ / _n</rule>
     <rule>ʈʂ &gt; t / _r</rule>
@@ -5619,7 +5674,8 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>p &gt; {p,kʷ}</rule>
     <rule>ḱ ǵ &gt; k ɡ</rule>
     <rule>ǵʰ gʷʰ &gt; ɡʰ xʷ</rule>
-    <rule>bʰ dʰ gʰ &gt; pʰ tʰ dʰ &gt; ɸ θ x</rule>
+    <rule>bʰ dʰ gʰ &gt; pʰ tʰ dʰ</rule>
+    <rule>pʰ tʰ dʰ &gt; ɸ θ x</rule>
     <rule>s &gt; z / medial (I’m assuming between vowels or when *s voiced in PIE)</rule>
     <rule>eu &gt; ou</rule>
   </section>
@@ -5646,28 +5702,37 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>o &gt; u / _{mb,mk,ɫ}</rule>
     <rule>o &gt; e / w_{r,s,t}</rule>
     <rule>oː &gt; uː / _r</rule>
-    <rule>aj &gt; ai &gt; eː (in rustic dialects)</rule>
-    <rule>aj &gt; ai &gt; ae</rule>
-    <rule>oj &gt; oi &gt; oe &gt; uː</rule>
+    <rule>aj &gt; ai</rule>
+    <rule>ai &gt; eː (in rustic dialects)</rule>
+    <rule>aj &gt; ai</rule>
+    <rule>ai &gt; ae</rule>
+    <rule>oj &gt; oi</rule>
+    <rule>oi &gt; oe</rule>
+    <rule>oe &gt; uː</rule>
     <rule>aw &gt; oː (in rustic dialects)</rule>
     <rule>aw &gt; au</rule>
-    <rule>{ew,ow} &gt; ou &gt; uː</rule>
+    <rule>{ew,ow} &gt; ou</rule>
+    <rule>ou &gt; uː</rule>
     <rule>V &gt; i / %(C)(C)_% when unstressed</rule>
     <rule>V &gt; o / %(C)(C)V_% when unstressed</rule>
     <rule>V &gt; e / %(C)(C)_%r when unstressed (with some exceptions)</rule>
     <rule>V &gt; {i,u} / %(C)(C)_%P when unstressed</rule>
     <rule>a o &gt; e u / %(C)(C)_C(C)% when unstressed</rule>
-    <rule>a &gt; e &gt; i / %(C)(C)_ŋ when unstressed</rule>
-    <rule>a &gt; e &gt; u / %(C)(C)_ɫ when unstressed</rule>
+    <rule>a &gt; e / %(C)(C)_ŋ when unstressed</rule>
+    <rule>e &gt; i / %(C)(C)_ŋ when unstressed</rule>
+    <rule>a &gt; e / %(C)(C)_ŋ when unstressed</rule>
     <rule>e &gt; u / %(C)(C)_ɫ when unstressed</rule>
-    <rule>ai &gt; ei &gt; iː / %(C)(C)_ when unstressed</rule>
+    <rule>e &gt; u / %(C)(C)_ɫ when unstressed</rule>
+    <rule>ai &gt; ei</rule>
+    <rule>ei &gt; iː / %(C)(C)_ when unstressed</rule>
     <rule>ei oi ou &gt; iː eː uː / %(C)(C)_ when unstressed</rule>
     <rule>{i,o} &gt; e / _#</rule>
     <rule sporadic="true">{i,e} &gt; ∅ / _#</rule>
     <rule>a &gt; e / _C(C)#</rule>
     <rule>e &gt; i / _{s,t}#</rule>
     <rule>o &gt; u / _C(C)# ! {u,w}_</rule>
-    <rule>{ai,ei,oi} &gt; ei &gt; iː / _(C)(C)#</rule>
+    <rule>{ai,ei,oi} &gt; ei / _(C)(C)#</rule>
+    <rule>ei &gt; iː / _(C)(C)#</rule>
     <rule>Vː &gt; V[-long] / _{m,(n)t,l,r}#</rule>
     <rule>Vː &gt; V[-long] / _#</rule>
     <rule>j &gt; i / C_</rule>
@@ -5703,9 +5768,12 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>ɡʷ &gt; v</rule>
     <rule>ɡʷʱ &gt; f / _r</rule>
     <rule>ɡʷʱ &gt; v / V_V</rule>
-    <rule>s &gt; z &gt; r / V_V</rule>
-    <rule>s &gt; θ &gt; f / #_r</rule>
-    <rule>s &gt; θ &gt; b / _r</rule>
+    <rule>s &gt; z / V_V</rule>
+    <rule>z &gt; r / V_V</rule>
+    <rule>s &gt; θ / #_r</rule>
+    <rule>θ &gt; f / #_r</rule>
+    <rule>s &gt; θ / _r</rule>
+    <rule>θ &gt; b / _r</rule>
     <rule>s &gt; z / _C[+voiced]</rule>
     <rule>V &gt; Vː / _zC[+voiced]</rule>
     <rule>z &gt; ∅ / _C[+voiced]</rule>
@@ -5724,16 +5792,20 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>mː &gt; n / {W,Vː}_</rule>
     <rule>{d,n,r} &gt; l / _l</rule>
     <rule>n &gt; r / _r</rule>
-    <rule>s &gt; z &gt; l / l_</rule>
-    <rule>s &gt; z &gt; r / r_</rule>
+    <rule>s &gt; z / l_</rule>
+    <rule>z &gt; l / l_</rule>
+    <rule>s &gt; z / r_</rule>
+    <rule>z &gt; r / r_</rule>
     <rule>n &gt; l / l_</rule>
     <rule>V &gt; Vː / _{t,d}t</rule>
-    <rule>{t,d}t &gt; tst &gt; sː</rule>
+    <rule>{t,d}t &gt; tst</rule>
+    <rule>tst &gt; sː</rule>
     <rule>∅ &gt; t / sː_r</rule>
     <rule>∅ &gt; p / m_{s,t,l}</rule>
     <rule>sː &gt; s / _#</rule>
     <rule>sː &gt; s / {W,Vː}_</rule>
-    <rule>l &gt; r &gt; _Vl</rule>
+    <rule>l &gt; r</rule>
+    <rule>r &gt; _Vl</rule>
     <rule>l &gt; r / lV_ “(in suffixes with l if root already has l)”</rule>
     <rule>r…r &gt; r…∅</rule>
     <rule>{n,d}…r &gt; r…r</rule>
@@ -5760,7 +5832,6 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>ɛ ɔ &gt; e o / when unstressed</rule>
     <rule>j &gt; ʝ / #_V</rule>
     <rule>j &gt; ʝː / V_V</rule>
-    <rule>“In contrast, Romanian exhibits u, uː &gt; u (and ultimately also ɔ, oː &gt; o); and Sardinian and African Latin underwent a straight merger of the vowels by length without considering quality (e, eː &gt; e; i, iː &gt; i; u, uː &gt; u; etc.)”</rule>
   </section>
   <section index="17.12.1.1.2" name="Latin to Catalan">
     <cite>Mecislau</cite>
@@ -5771,7 +5842,8 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>V &gt; ∅ / ”V%C_L(C)V(C)# (irregular)</rule>
     <rule>V &gt; ∅ / ”V%L_C(C)V(C)# (irregular)</rule>
     <rule>V &gt; ∅ / ”V%s_t(C)V(C)# (irregular)</rule>
-    <rule>u &gt; w &gt; ∅ / (“when in unstressed penult or between first and tonic syllables; irregular”)</rule>
+    <rule sporadic="true">u &gt; w</rule>
+    <rule sporadic="true">w &gt; ∅</rule>
     <rule>iː &gt; i / stressed</rule>
     <rule>iː &gt; i / _%”V</rule>
     <rule>{i,eː} e &gt; {e,ɛ} {ɛ,e} / stressed</rule>
@@ -5792,11 +5864,13 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>o &gt; u / _%”V (irregular)</rule>
     <rule>VV &gt; Vː (“For outcomes of word-final vowels, see down below”)</rule>
     <rule>ndj &gt; ɲ</rule>
-    <rule>dj &gt; dʒ &gt; ʒ</rule>
+    <rule>dj &gt; dʒ</rule>
+    <rule>dʒ &gt; ʒ</rule>
     <rule>∅ &gt; e / #_sC</rule>
     <rule>l &gt; ∅ / {o,u}_CV</rule>
     <rule>l &gt; w / V_CV (“although l was usually restored later”)</rule>
-    <rule>mn &gt; nː &gt; ɲ</rule>
+    <rule>mn &gt; nː</rule>
+    <rule>nː &gt; ɲ</rule>
     <rule>p b t d k ɡ &gt; β {β,w} ∅ {j,w} ɣ {j,∅,ɡ} / V_rV</rule>
     <rule>ŋ &gt; ɲ / _{i,e}</rule>
     <rule>p b &gt; b w / V_lV (the latter is irregular)</rule>
@@ -5825,12 +5899,13 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>f &gt; v / V_V (irregular)</rule>
     <rule>s &gt; z / ”V%V_V</rule>
     <rule>s &gt; ∅ / V_V%”V</rule>
-    <rule>k ɡ &gt; ∅ {∅,ʒ} / V_{i,e} (ɡ &gt; ʒ is learned)</rule>
+    <rule>k ɡ &gt; ∅ {∅,ʒ} / V_{i,e}</rule>
     <rule>ɡ &gt; ∅ / V_V%”V</rule>
     <rule>k j &gt; ɡ ʒ / V_V</rule>
     <comment>“These next two changes are awkward - Basically, when the final vowel drops off down below, the newly-final d should become w; BUT d should also have become z and disappeared before the final vowels drop off, leaving a dilem[m]a... I’m not certain how this should be [interpreted]”</comment>
-    <rule>— d &gt; z &gt; ∅ / V_V</rule>
-    <rule>— d &gt; w / _V#</rule>
+    <rule>d &gt; z / V_V</rule>
+    <rule>z &gt; ∅ / V_V</rule>
+    <rule>d &gt; w / _V#</rule>
     <rule>iː &gt; ∅ / _#</rule>
     <rule>{i,e(ː),ae} &gt; ∅ / _(C)#</rule>
     <rule>{u(ː),o(ː)} &gt; ∅ / _#</rule>
@@ -5841,9 +5916,11 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>{b,v} &gt; w / V_#</rule>
     <rule>d &gt; t / _#</rule>
     <rule>l &gt; ʎ / #_</rule>
-    <rule>k &gt; ts &gt; s / #_{i,e}</rule>
+    <rule>k &gt; ts / #_{i,e}</rule>
+    <rule>ts &gt; s / #_{i,e}</rule>
     <rule>ɡ &gt; ʒ / #_{i,e}</rule>
-    <rule>j &gt; dʒ &gt; ʒ / #_</rule>
+    <rule>j &gt; dʒ / #_</rule>
+    <rule>dʒ &gt; ʒ / #_</rule>
     <rule>kʷ ɡʷ &gt; k ɡ / #_{i,e}</rule>
     <rule>kʷ &gt; k / C_V</rule>
     <rule>kʷ &gt; ɡ / V_{i,e}</rule>
@@ -5853,8 +5930,10 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>ɡʷ &gt; ɡw / #_a</rule>
     <rule>ɡʷ &gt; ɡ / C_{i,e}</rule>
     <rule>ɡʷ &gt; ɡw / C_a</rule>
-    <rule>b &gt; m &gt; ∅ / Vm_V</rule>
-    <rule>n &gt; r &gt; br / m_</rule>
+    <rule>b &gt; m / Vm_V</rule>
+    <rule>m &gt; ∅ / Vm_V</rule>
+    <rule>n &gt; r</rule>
+    <rule>r &gt; br / m_</rule>
     <rule>k &gt; w / V_rV</rule>
     <rule>{b,v} &gt; w / V_tV</rule>
     <rule>ɡ &gt; ∅ / V_dV</rule>
@@ -5866,8 +5945,10 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>e &gt; ɛ / _v</rule>
     <rule>o &gt; u / _{ɲ,nk,ŋ} when stressed</rule>
     <rule>e &gt; i / _{nk,ŋ} when stressed (irregular)</rule>
-    <rule>aj &gt; ej &gt; ee &gt; e (irregular)</rule>
-    <rule>aj &gt; ej / _ʃ when stressed (irregular)</rule>
+    <rule>aj &gt; ej</rule>
+    <rule>ej &gt; ee</rule>
+    <rule sporadic="true">ee &gt; e</rule>
+    <rule sporadic="true">aj &gt; ej / _ʃ when stressed</rule>
     <rule>ɛj ɔj &gt; jɛj uei / i {u,ui} / stressed</rule>
     <rule>ɛ &gt; e / ! _{rː,l,rC[-labial],nr} or _ ? w#</rule>
     <rule>e &gt; ɛ (in Eastern Catalan)</rule>
@@ -5876,40 +5957,41 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <cite>pharazon</cite>
     <comment>NB: The vowels here marked 〈ó〉 and 〈ò〉 seem to have had some sort of open-close distinction similar to /o ɔ/.</comment>
     <comment>Vulgar Latin:</comment>
-    <rule>— h &gt; ∅</rule>
-    <rule>— V₀V₀ &gt; V₀ː</rule>
-    <rule>— n &gt; ∅ / _{f,v,s}</rule>
-    <rule>— r &gt; s / _s</rule>
-    <rule>— {m,n} &gt; ∅ / _# in polysyllables</rule>
-    <rule>— m &gt; n / _#</rule>
-    <rule>— u &gt; ∅ / CC_V</rule>
-    <rule>— w &gt; ɡu / “from Germanic loanwords”</rule>
-    <rule>— V &gt; ”V / ”VSr_</rule>
-    <rule>— V &gt; ”V / _C*”{i,e}V</rule>
-    <rule>— {i,e} &gt; j / _V</rule>
+    <rule>h &gt; ∅</rule>
+    <rule>V₀V₀ &gt; V₀ː</rule>
+    <rule>n &gt; ∅ / _{f,v,s}</rule>
+    <rule>r &gt; s / _s</rule>
+    <rule>{m,n} &gt; ∅ / _# in polysyllables</rule>
+    <rule>m &gt; n / _#</rule>
+    <rule>u &gt; ∅ / CC_V</rule>
+    <rule>w &gt; ɡu / “from Germanic loanwords”</rule>
+    <rule>V &gt; ”V / ”VSr_</rule>
+    <rule>V &gt; ”V / _C*”{i,e}V</rule>
+    <rule>{i,e} &gt; j / _V</rule>
     <comment>Stressed vowels:</comment>
-    <rule>— aː &gt; a</rule>
-    <rule>— (a)e &gt; è</rule>
-    <rule>— {eː,i,oe} &gt; é</rule>
-    <rule>— iː oː &gt; i ó</rule>
-    <rule>— o &gt; ò</rule>
-    <rule>— u &gt; ó / !_iː</rule>
-    <rule>— uː &gt; u</rule>
+    <rule>aː &gt; a</rule>
+    <rule>(a)e &gt; è</rule>
+    <rule>{eː,i,oe} &gt; é</rule>
+    <rule>iː oː &gt; i ó</rule>
+    <rule>o &gt; ò</rule>
+    <rule>u &gt; ó / !_iː</rule>
+    <rule>uː &gt; u</rule>
     <comment>Initial vowels (first vowel of a word):</comment>
-    <rule>— aː &gt; a</rule>
-    <rule>— {e(ː),i,ae,oe} &gt; e</rule>
-    <rule>— iː &gt; i</rule>
-    <rule>— {o(ː),u} &gt; o</rule>
+    <rule>aː &gt; a</rule>
+    <rule>{e(ː),i,ae,oe} &gt; e</rule>
+    <rule>iː &gt; i</rule>
+    <rule>{o(ː),u} &gt; o</rule>
     <comment>Final vowels:</comment>
-    <rule>— aː &gt; a</rule>
-    <rule>— {e(ː),i,ae,oe} &gt; e</rule>
-    <rule>— iː oː &gt; i o</rule>
-    <rule>— u(ː) &gt; o / except _V (?)</rule>
+    <rule>aː &gt; a</rule>
+    <rule>{e(ː),i,ae,oe} &gt; e</rule>
+    <rule>iː oː &gt; i o</rule>
+    <rule>u(ː) &gt; o / except _V (?)</rule>
     <rule>k ɡ &gt; tj dj / _E</rule>
     <rule>è &gt; iɛ / in U[+open]</rule>
     <rule>è &gt; iɛ / _C#</rule>
     <rule>è &gt; ɛ / in U[+closed]</rule>
-    <rule>ò &gt; uo &gt; uɛ / in U[+open] ! _N</rule>
+    <rule>ò &gt; uo</rule>
+    <rule>uo &gt; uɛ / in U[+open] ! _N</rule>
     <rule>ò &gt; ɔ / in U[+closed]</rule>
     <rule>dj &gt; dʒ / r_</rule>
     <rule>d &gt; ∅ / _j</rule>
@@ -5945,11 +6027,11 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>kʷ &gt; {v,u} / V_E</rule>
     <rule>kʷ &gt; j{v,u} / V_a</rule>
     <comment>“[N]ote that the [following] clusters are the only case where a consonant does not receive intervocalic treatment before /j/”:</comment>
-    <rule>— (k)kj &gt; ts</rule>
-    <rule>— ɡ &gt; ∅ / _j</rule>
-    <rule>— pj &gt; tʃ</rule>
-    <rule>— {b,v}j &gt; dʒ</rule>
-    <rule>— m{ɲ,j} &gt; ndʒ</rule>
+    <rule>(k)kj &gt; ts</rule>
+    <rule>ɡ &gt; ∅ / _j</rule>
+    <rule>pj &gt; tʃ</rule>
+    <rule>{b,v}j &gt; dʒ</rule>
+    <rule>m{ɲ,j} &gt; ndʒ</rule>
     <rule>V”e &gt; ”Vi</rule>
     <rule>V₀V₀ &gt; V₀</rule>
     <rule>∅ &gt; e / #_sC</rule>
@@ -5967,7 +6049,8 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>(ɛ)au &gt; ɔ</rule>
     <rule>é &gt; ɛi / in U[+open]</rule>
     <rule>é &gt; ɛ / in U[+closed]</rule>
-    <rule>ó &gt; ou &gt; ɛu / in U[+open]</rule>
+    <rule>ó &gt; ou</rule>
+    <rule>ou &gt; ɛu / in U[+open]</rule>
     <rule>ó &gt; ɔ / _N</rule>
     <rule>ó &gt; ou / in U[+closed]</rule>
     <rule>e &gt; ə / #(C…)_(%…)” in U[+open]</rule>
@@ -5993,7 +6076,8 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>ou ɛu u uɛi &gt; u œ y yi</rule>
     <rule>{ei,ɔi} &gt; oi / C[- nasal]</rule>
     <rule>ɔ &gt; u / _”V</rule>
-    <rule>V[-high] &gt; ə &gt; ∅ / _V “(except that a is kept before o)”</rule>
+    <rule>V[-high] &gt; ə</rule>
+    <rule>ə &gt; ∅ / _V “(except that a is kept before o)”</rule>
     <rule>ɲ &gt; in / _{C,#}</rule>
     <comment>V{n,m} / V[+ nasal] / _{C,#}</comment>
     <rule>ɛ̃ &gt; ã</rule>
@@ -6005,7 +6089,8 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>{n,m} &gt; ∅ / C_#</rule>
     <rule>j &gt; ∅ / {ʃ,ʒ}_V[- nasal]</rule>
     <rule>ʎ r &gt; j ʁ</rule>
-    <rule>oi &gt; wɛ &gt; wa</rule>
+    <rule>oi &gt; wɛ</rule>
+    <rule>wɛ &gt; wa</rule>
     <rule>oı̃ &gt; wɛ̃</rule>
     <comment>“([pharazon has] omitted the loss of ə in various contexts, since it often resurfaces)”</comment>
   </section>
@@ -6059,11 +6144,13 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>uiː &gt; ui / _#</rule>
     <rule>{u,oː} o &gt; o ɔ / stressed</rule>
     <rule>{u,o(ː)} &gt; o / _%”V</rule>
-    <rule>{u(ː),o(ː)} &gt; o &gt; u / _#</rule>
+    <rule>{u(ː),o(ː)} &gt; o / _#</rule>
+    <rule>o &gt; u / _#</rule>
     <rule>aː oe &gt; a e</rule>
     <rule>ae &gt; ɛ / stressed</rule>
     <rule>ɛ ɔ &gt; e o / _(”u)#</rule>
-    <rule>{olt,okt} &gt; ujt &gt; ut</rule>
+    <rule>{olt,okt} &gt; ujt</rule>
+    <rule>ujt &gt; ut</rule>
     <rule>aɫ &gt; o</rule>
     <rule>ɫ &gt; w / V_Ca</rule>
     <rule>o &gt; u / _(”V)</rule>
@@ -6090,10 +6177,15 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>{e,i} &gt; ∅ / k_t when between #U and U[+stress]</rule>
     <rule>o &gt; ∅ / _{r,l} when between #U and U[+tonic]</rule>
     <comment>“[I]f there are multiple vowels between the initial and tonic syllables, the vowel directly before the tonic is dropped”</comment>
-    <rule>k &gt; ts &gt; s / #_{i,e}</rule>
+    <rule>k &gt; ts / #_{i,e}</rule>
+    <rule>ts &gt; s / #_{i,e}</rule>
     <rule>k &gt; ɡ / #_{a,r} (rare)</rule>
-    <rule>ɡ &gt; ɡʲ &gt; dʲ &gt; dʒ &gt; ʒ / #_{i,e}</rule>
-    <rule>j &gt; dʒ &gt; ʒ / #_</rule>
+    <rule>ɡ &gt; ɡʲ / #_{i,e}</rule>
+    <rule>ɡʲ &gt; dʲ / #_{i,e}</rule>
+    <rule>dʲ &gt; dʒ / #_{i,e}</rule>
+    <rule>dʒ &gt; ʒ / #_{i,e}</rule>
+    <rule>j &gt; dʒ / #_</rule>
+    <rule>dʒ &gt; ʒ / #_</rule>
     <rule>pl &gt; {ʃ,pr} / #_</rule>
     <rule>l &gt; r / b_</rule>
     <rule>fl &gt; {ʃ,fr} / #_</rule>
@@ -6101,7 +6193,9 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>nɡi &gt; ɲ</rule>
     <rule>s &gt; ʃ / V_C[-voiced]V</rule>
     <rule>s &gt; ʒ / V_C[+voiced]V</rule>
-    <rule>kl &gt; kʎ &gt; tʃ &gt; ʃ / #_</rule>
+    <rule>kl &gt; kʎ / #_</rule>
+    <rule>kʎ &gt; tʃ / #_</rule>
+    <rule>tʃ &gt; ʃ / #_</rule>
     <rule>{kl,ɡl} &gt; ʎ</rule>
     <rule>ɡ &gt; ∅ / #_l</rule>
     <rule>kʷ &gt; kw / #_”a</rule>
@@ -6113,23 +6207,29 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>ɡʷ &gt; ɡw / C_a</rule>
     <rule>b &gt; v / V_{V,r}</rule>
     <rule>d &gt; ∅ / V_V</rule>
-    <rule>ɡ &gt; {∅,ʒ} / V_{i,e} (ɡ &gt; ʒ is learned)</rule>
+    <rule>ɡ &gt; {∅,ʒ} / V_{i,e}</rule>
     <rule>ɡ &gt; j / V_r</rule>
-    <rule>pl bl p t &gt; br {br,l} b d / V_V (bl &gt; l is learned)</rule>
+    <rule>pl bl p t &gt; br {br,l} b d / V_V</rule>
     <rule>p t k &gt; b d ɡ / V_r</rule>
     <rule>p &gt; ∅ / V_{t,s}V</rule>
     <rule>k &gt; j / V_tV</rule>
     <rule>k &gt; ∅ / Vn_tV</rule>
-    <rule>ks ɡn tj &gt; ʃ ɲ {z,s} / V_V (tj &gt; s is learned)</rule>
+    <rule>ks ɡn tj &gt; ʃ ɲ {z,s} / V_V</rule>
     <rule>tj &gt; s / C_V</rule>
-    <rule>dj &gt; dʒ &gt; ʒ / V_V</rule>
-    <rule>dj &gt; dz &gt; ts &gt; s / r_V</rule>
-    <rule>ndj &gt; nts &gt; ns &gt; ɲ / V_V</rule>
+    <rule>dj &gt; dʒ</rule>
+    <rule>dʒ &gt; ʒ / V_V</rule>
+    <rule>dj &gt; dz</rule>
+    <rule>dz &gt; ts</rule>
+    <rule>ts &gt; s / r_V</rule>
+    <rule>ndj &gt; nts</rule>
+    <rule>nts &gt; ns</rule>
+    <rule>ns &gt; ɲ / V_V</rule>
     <rule>sj &gt; jʒ / V_V</rule>
     <rule>j &gt; ∅ / i_ʒV</rule>
     <rule>sːj (m)nj lj rj &gt; jʃ ɲʎ jr / V_V</rule>
-    <rule>kj &gt; ts &gt; s / V_V</rule>
-    <rule>ɡj &gt; {ʒ,j} / V_V (ɡj &gt; j is learned)</rule>
+    <rule>kj &gt; ts</rule>
+    <rule>ts &gt; s / V_V</rule>
+    <rule>ɡj &gt; {ʒ,j} / V_V</rule>
     <rule>pj {bj,vj} &gt; jb jv / V_V</rule>
     <rule>mj &gt; jm (irregular)</rule>
     <rule>C₀C₀ &gt; C₀ / ! C = r</rule>
@@ -6140,7 +6240,7 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>a &gt; ∅ / ”ɔ_#</rule>
     <rule>sk k &gt; jʃ z / V_{i,e}</rule>
     <rule>k &gt; ɡ / V₁_V₂ ! V₂ = ɔ</rule>
-    <rule>j &gt; {∅,ʒ} / V_V (j &gt; ʒ is learned)</rule>
+    <rule>j &gt; {∅,ʒ} / V_V</rule>
     <rule>b &gt; v / VL_V</rule>
     <rule>m &gt; ∅ / _n</rule>
     <rule>{e,i} &gt; ∅ / {L,N}_(C)(C)V(C)#</rule>
@@ -6157,63 +6257,63 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <comment>Stress shift: Secondary stress shifts to two syllables away from the penult. If the secondary tonic precedes the tonic, that vowel is considered stressed for the purpose of subsequent sound changes, and at some point the intervening vowel drops. Vowel changes assume the changes in Vulgar Latin as listed elsewhere in this thread.</comment>
     <rule>VN &gt; Vː / _S (except for the prefixes con-, in-); I’m assuming this change happened in Vulgar Latin and then vowel length went to quality</rule>
     <comment>STRESSED VOWELS</comment>
-    <rule>— ɪ &gt; e</rule>
-    <rule>— ʊ &gt; o (this change seems to have happened later, hence is listed separately)</rule>
-    <rule>— ɔ &gt; y / _{u,P,k,ɡ,i} (in northwestern dialects)</rule>
-    <rule>— ɔ &gt; ɥe / _{u,P,k,ɡ,i} (in western dialects, Limousin, and Auvergne)</rule>
-    <rule>— ɔ &gt; ɥo / _{u,P,k,ɡ,i} (in Languedoc)</rule>
-    <rule>— ɔ &gt; {ɥe,ɥo,ɔ} / _{u,P,k,ɡ,i} (in southern dialects)</rule>
-    <rule>— a &gt; a / _N (Rouergue, Limousin, Auvergne, Dauphiné)</rule>
-    <rule>— a &gt; a / _# in monosyllables and oxytones (Rouergue, Limousin, Auvergne, Dauphiné)</rule>
-    <rule>— a &gt; å (I have no idea what is going on here. Grandgent seems to distinguish an open and close /a/, and I have listed his open a as /å/, which seems to have been distinct from /ɔ/, but beyond this section it doesn’t really seem to matter very much)</rule>
-    <rule>— å ɛ ɔ &gt; a e o / _N (in Limousin and neighboring regions, the last two particularly in Limousin, Languedoc, and Gascon, though when _ɲ this change may have been blocked)</rule>
-    <rule>— ɛ ɔ &gt; jɛ wɔ (intermittent, “least common in the southwest”)</rule>
-    <rule>— e &gt; i / _V (and possibly V_?)</rule>
-    <rule>— e &gt; i / _(C…)i{C(C…)V,#}</rule>
-    <rule>— ɛ &gt; jɛ / _{u,i,ʎ,rʲ,ʃ,ʒ,j,tʃ,dʒ} (except in some northern and western dialects, or if this u ← l or if this i ← ð)</rule>
-    <rule>— ju &gt; jeu</rule>
-    <rule>— o &gt; y / _{tʃ,dʒ,it,id} (did not occur in Dauphiné)</rule>
-    <rule>— o &gt; y / _ɲ (in northern and western dialects)</rule>
-    <rule>— o &gt; y / _i# (in Bordeaux, Auvergne, and some of Languedoc)</rule>
-    <rule>— ɔ &gt; {ɔ,we} (in southwestern dialects)</rule>
-    <rule>— u &gt; y</rule>
-    <rule>— o &gt; u (during the literary period)</rule>
+    <rule>ɪ &gt; e</rule>
+    <rule>ʊ &gt; o (this change seems to have happened later, hence is listed separately)</rule>
+    <rule>ɔ &gt; y / _{u,P,k,ɡ,i} (in northwestern dialects)</rule>
+    <rule>ɔ &gt; ɥe / _{u,P,k,ɡ,i} (in western dialects, Limousin, and Auvergne)</rule>
+    <rule>ɔ &gt; ɥo / _{u,P,k,ɡ,i} (in Languedoc)</rule>
+    <rule>ɔ &gt; {ɥe,ɥo,ɔ} / _{u,P,k,ɡ,i} (in southern dialects)</rule>
+    <rule>a &gt; a / _N (Rouergue, Limousin, Auvergne, Dauphiné)</rule>
+    <rule>a &gt; a / _# in monosyllables and oxytones (Rouergue, Limousin, Auvergne, Dauphiné)</rule>
+    <rule>a &gt; å (I have no idea what is going on here. Grandgent seems to distinguish an open and close /a/, and I have listed his open a as /å/, which seems to have been distinct from /ɔ/, but beyond this section it doesn’t really seem to matter very much)</rule>
+    <rule>å ɛ ɔ &gt; a e o / _N (in Limousin and neighboring regions, the last two particularly in Limousin, Languedoc, and Gascon, though when _ɲ this change may have been blocked)</rule>
+    <rule>ɛ ɔ &gt; jɛ wɔ (intermittent, “least common in the southwest”)</rule>
+    <rule>e &gt; i / _V (and possibly V_?)</rule>
+    <rule>e &gt; i / _(C…)i{C(C…)V,#}</rule>
+    <rule>ɛ &gt; jɛ / _{u,i,ʎ,rʲ,ʃ,ʒ,j,tʃ,dʒ} (except in some northern and western dialects, or if this u ← l or if this i ← ð)</rule>
+    <rule>ju &gt; jeu</rule>
+    <rule>o &gt; y / _{tʃ,dʒ,it,id} (did not occur in Dauphiné)</rule>
+    <rule>o &gt; y / _ɲ (in northern and western dialects)</rule>
+    <rule>o &gt; y / _i# (in Bordeaux, Auvergne, and some of Languedoc)</rule>
+    <rule>ɔ &gt; {ɔ,we} (in southwestern dialects)</rule>
+    <rule>u &gt; y</rule>
+    <rule>o &gt; u (during the literary period)</rule>
     <comment>UNSTRESSED VOWELS</comment>
-    <rule>— E &gt; ∅ / _e</rule>
-    <rule>— B &gt; ∅ / _o</rule>
-    <rule>— E &gt; j (presumably in the vicinity of another vowel)</rule>
-    <rule>— V &gt; ∅ (though /a/ seemed to resist this)</rule>
+    <rule>E &gt; ∅ / _e</rule>
+    <rule>B &gt; ∅ / _o</rule>
+    <rule>E &gt; j (presumably in the vicinity of another vowel)</rule>
+    <rule>V &gt; ∅ (though /a/ seemed to resist this)</rule>
     <comment>INITIAL-SYLLABLE VOWELS</comment>
-    <rule>— {a,œ,e,i} &gt; e (here, 〈œ〉 denotes the reflex of the Latin vowel written this way, not a front rounded vowel)</rule>
-    <rule>— u &gt; o</rule>
-    <rule>— au &gt; a / _(C…)u</rule>
-    <rule>— V &gt; ∅ / _r (seemed to be an intermittent change)</rule>
+    <rule>{a,œ,e,i} &gt; e (here, 〈œ〉 denotes the reflex of the Latin vowel written this way, not a front rounded vowel)</rule>
+    <rule>u &gt; o</rule>
+    <rule>au &gt; a / _(C…)u</rule>
+    <rule>V &gt; ∅ / _r (seemed to be an intermittent change)</rule>
     <comment>— Lots and lots of analogical formations
 INTERTONIC VOWELS</comment>
-    <rule>— V &gt; ∅ (again, /a/ seemed to resist this change, which was itself generally blocked by analogy)</rule>
+    <rule>V &gt; ∅ (again, /a/ seemed to resist this change, which was itself generally blocked by analogy)</rule>
     <comment>PENULT VOWELS</comment>
-    <rule>— V &gt; ∅ / “penult of paroxytones”, though /a/ often remained “as an indistinct e”, probably /ə/</rule>
+    <rule>V &gt; ∅ / “penult of paroxytones”, though /a/ often remained “as an indistinct e”, probably /ə/</rule>
     <comment>— V often remained when {tʃ,dʒ,j}_, especially if CC_, or when {(k)s,sː,sj}_
 — V is retained when P_C[+dental]</comment>
-    <rule>— CVK &gt; CVj (intermittent if C was a resonant)</rule>
-    <rule>— V &gt; ∅ / lv_r (dialect-dependent)</rule>
-    <rule>— e &gt; i / _(C…)i(C…)#</rule>
+    <rule>CVK &gt; CVj (intermittent if C was a resonant)</rule>
+    <rule>V &gt; ∅ / lv_r (dialect-dependent)</rule>
+    <rule>e &gt; i / _(C…)i(C…)#</rule>
     <comment>FINAL VOWELS
 — (Again, /a/ seems to be a persistent exception to these)</comment>
-    <rule>— V &gt; ∅ / R_(C…)</rule>
+    <rule>V &gt; ∅ / R_(C…)</rule>
     <comment>— Grandgent remarks that /i/ was probably the last vowel to drop out</comment>
-    <rule>— a &gt; o in most dialects except Gascon and Languedoc; final -as remained in “Limousin and some others”</rule>
+    <rule>a &gt; o in most dialects except Gascon and Languedoc; final -as remained in “Limousin and some others”</rule>
     <comment>— /i/ and /u/ remain when ”V_ (then u is subject to the changes listed above—u &gt; y, &amp;c.)</comment>
-    <rule>— e u &gt; e o / _nt#</rule>
+    <rule>e u &gt; e o / _nt#</rule>
     <comment>— -os remains “in the extreme east”
 — Final -i remains “as late as the 12th century” in some regions (Aude, Tarn, Aveyron, Corrèze, and some pockets of Haute-Garrone)
 — Epenthesis of /e/ in 2sg “of some verbs”</comment>
-    <rule>— V &gt; “indistinct e” (probably /ə/) if dropping it would create ugly consonant clusters:</rule>
+    <rule>V &gt; “indistinct e” (probably /ə/) if dropping it would create ugly consonant clusters:</rule>
     <comment>—— C_L, P_C[+dental], C_tʃ, C_k, C_m, C_n where “originally separated by the vowel of the penult” (proparoxytones)
 —— Ḱ_r (paroxytones)
 —— Where the cluster would be unwieldy otherwise, apocope happened
 —— Final /(m)bj mnj pj mj/ “required a supporting vowel” (dialect-dependent)</comment>
-    <rule>— V &gt; e “in many late words”</rule>
+    <rule>V &gt; e “in many late words”</rule>
     <rule>K &gt; ∅ / _l (not always, but this was a general change)</rule>
     <rule sporadic="true">v &gt; b / r_</rule>
     <rule>h &gt; ∅</rule>
@@ -6228,11 +6328,15 @@ INTERTONIC VOWELS</comment>
     <rule>kʷ ɡʷ &gt; k ɡ / _B</rule>
     <rule>rs &gt; sː</rule>
     <rule>sː &gt; s / Vː_</rule>
-    <rule>p t k s &gt; b d ɡ z / V_V (this b &gt; v?)</rule>
+    <rule>p t k s &gt; b d ɡ z / V_V</rule>
     <rule>∅ &gt; i / #_sC</rule>
-    <rule>w &gt; v &gt; ∅ / _u (“restored by analogy in many words”)</rule>
-    <rule>w &gt; v &gt; ∅ / _”o</rule>
-    <rule>w &gt; v &gt; β</rule>
+    <rule>w &gt; v / _u</rule>
+    <rule>v &gt; ∅ / _u</rule>
+    <rule>w &gt; v / _”o</rule>
+    <rule>v &gt; ∅ / _”o</rule>
+    <rule>w &gt; v / _V</rule>
+    <rule>v &gt; β / _V</rule>
+    <rule>v &gt; β</rule>
     <rule>β &gt; w / V_C</rule>
     <rule>w &gt; ∅ / C_B (when from earlier B?)</rule>
     <rule>k &gt; ∅ / _s{C,#} (the latter in polysyllables only)</rule>
@@ -6240,17 +6344,19 @@ INTERTONIC VOWELS</comment>
     <comment>Loan phonemes:
 — Loaned /b/ did not lenite
 — Loaned /k/ did not palatalize</comment>
-    <rule>— Loaned w &gt; ɡw</rule>
-    <rule>Original z (/ts/?) &gt; dj &gt; j</rule>
+    <rule>Loaned w &gt; ɡw</rule>
+    <rule>Original z (/ts/?) &gt; dj</rule>
+    <rule>dj &gt; j</rule>
     <comment>Greek /k/ shows up variously as /k ɡ/</comment>
     <rule>pʰ &gt; f</rule>
     <comment>Some reanalysis of initials as medials if a prefixed form was reanalyzed as a single morpheme</comment>
     <rule>(s)k ɡ &gt; (s)tʃ dʒ / #_a (in the north and northeast)</rule>
-    <rule>tʃ &gt; ts &gt; s / #_</rule>
+    <rule>tʃ &gt; ts / #_</rule>
+    <rule>ts &gt; s / #_</rule>
     <rule>j &gt; dʒ / #_ (but not in Béarn)</rule>
     <rule>f &gt; h (in Béarn and Gascon)</rule>
     <rule>β &gt; b (in Béarn, Gascon, and Languedoc)</rule>
-    <rule>β &gt; v (though sometimes &gt; ɡw instead if analogy interfered)</rule>
+    <rule>β &gt; v</rule>
     <rule>kʷ ɡʷ &gt; kw ɡw (in western dialects)</rule>
     <rule>kʷ ɡʷ &gt; k ɡ (else)</rule>
     <rule>∅ &gt; k / #s_l</rule>
@@ -6268,7 +6374,8 @@ INTERTONIC VOWELS</comment>
     <rule>kː &gt; tʃ / _a (in the east and northeast)</rule>
     <rule>lː &gt; l (in the south)</rule>
     <comment>rː~r stuff—not sure what was going on here, but it seems like this distinction lingered on into the literary period, but the two may have been in the process of merging</comment>
-    <rule>mn &gt; mpn &gt; nː (dialectal)</rule>
+    <rule>mn &gt; mpn</rule>
+    <rule>mpn &gt; nː (dialectal)</rule>
     <rule>Cː &gt; C</rule>
     <rule>ɡ &gt; k / B_ (your guess is probably better than mine)</rule>
     <rule>ɡ &gt; {k,j} / V_ (if /j/ resulted, it dropped after /i/; forms with k are “most persistent in the west” and more common overall)</rule>
@@ -6281,14 +6388,17 @@ INTERTONIC VOWELS</comment>
     <rule>β &gt; v (otherwise)</rule>
     <rule>tʃ &gt; i / _C</rule>
     <rule>tʃ &gt; i / C_</rule>
-    <rule>tʃ &gt; jdz &gt; jz / V_V (in the south and northwest)</rule>
-    <rule>tʃ &gt; dz &gt; z / V_V (otherwise)</rule>
+    <rule>tʃ &gt; jdz / V_V</rule>
+    <rule>jdz &gt; jz / V_V</rule>
+    <rule>tʃ &gt; dz / V_V</rule>
+    <rule>dz &gt; z / V_V</rule>
     <rule>ð &gt; i / C_</rule>
     <rule>ð &gt; i / _C ! _s#</rule>
-    <rule>ð &gt; z (except in some northern and eastern dialects where &gt; ∅)</rule>
-    <rule>ɡ &gt; j / _a (in the north and east; further &gt; dʒ in the north)</rule>
+    <rule>ð &gt; z</rule>
+    <rule>ɡ &gt; j / _a</rule>
     <rule>ɡ &gt; ɡ / _{o,u/y}</rule>
-    <rule>ɡ &gt; j &gt; dʒ / “[b]etween the last two vowels of a proparoxytone”, though it dropped early in some dialects</rule>
+    <rule>ɡ &gt; j</rule>
+    <rule>j &gt; dʒ</rule>
     <rule>dʒ &gt; j</rule>
     <rule>l &gt; u / _s# (in many dialects)</rule>
     <rule>s &gt; r / _n (in a few dialects)</rule>
@@ -6301,16 +6411,24 @@ INTERTONIC VOWELS</comment>
     <rule>∅ &gt; b / m_l</rule>
     <rule>p j &gt; b i / _l</rule>
     <rule>p k tʃ b ɡ β j &gt; b ɡ i {b,u,u&gt;y&gt;i} ∅ {u,u&gt;y&gt;i} i / _r</rule>
-    <rule>{t,d} &gt; ð &gt; i / _r</rule>
+    <rule>{t,d} &gt; ð / _r</rule>
+    <rule>ð &gt; i / _r</rule>
     <rule>ð &gt; ∅ / au_</rule>
     <rule>∅ &gt; d / z_r</rule>
     <rule>∅ &gt; b / m_r</rule>
     <rule>∅ &gt; t / s_r</rule>
-    <rule>βw tw &gt; wː dw &gt; ɡʷ ɡʷ &gt; ɡ ɡ</rule>
-    <rule>{d,k}w &gt; ɡʷ &gt; ɡ</rule>
-    <rule>(kʷ &gt; ɡʷ &gt; ɡ ?)</rule>
-    <rule>{l,r}w {n,ŋk,ŋɡ}w &gt; lɡʷ ŋɡʷ &gt; lɡ ŋɡ</rule>
-    <rule>pw &gt; upw &gt; up &gt; ub</rule>
+    <rule>βw tw &gt; wː dw</rule>
+    <rule>wː dw &gt; ɡʷ ɡʷ</rule>
+    <rule>ɡʷ ɡʷ &gt; ɡ ɡ</rule>
+    <rule>{d,k}w &gt; ɡʷ</rule>
+    <rule>ɡʷ &gt; ɡ</rule>
+    <rule>(kʷ &gt; ɡʷ</rule>
+    <rule>ɡʷ &gt; ɡ ?)</rule>
+    <rule>{l,r}w {n,ŋk,ŋɡ}w &gt; lɡʷ ŋɡʷ</rule>
+    <rule>lɡʷ ŋɡʷ &gt; lɡ ŋɡ</rule>
+    <rule>pw &gt; upw</rule>
+    <rule>upw &gt; up</rule>
+    <rule>up &gt; ub</rule>
     <rule>w &gt; ∅ / s_ ?</rule>
     <rule>βj &gt; {udʒ,uj} (in northern dialects)</rule>
     <rule>β &gt; u / _j (in western dialects)</rule>
@@ -6318,37 +6436,55 @@ INTERTONIC VOWELS</comment>
     <rule>ktj klj &gt; is ʎ</rule>
     <rule>{tʃ(ː),kʷ}j &gt; ts</rule>
     <rule>dVɡ (n)dVɡ &gt; dʒ(?) ndʒ</rule>
-    <rule>l{tj,tʃj} ldʒ &gt; lts ldz &gt; uts udz &gt; us uz</rule>
+    <rule>l{tj,tʃj} ldʒ &gt; lts ldz</rule>
+    <rule>lts ldz &gt; uts udz</rule>
+    <rule>uts udz &gt; us uz</rule>
     <rule>lː{j,Vdʒ} lnj &gt; ʎ ɲ</rule>
-    <rule>lvj &gt; lbj &gt; ubj</rule>
+    <rule>lvj &gt; lbj</rule>
+    <rule>lbj &gt; ubj</rule>
     <rule>j &gt; ∅ / n_# (in many dialects)</rule>
     <rule>nj &gt; ɲ</rule>
     <rule>mbj &gt; {mbj,mdʒ,ndʒ}</rule>
     <rule>mnj &gt; ɲ (Limousin, as well as extreme eastern and southwest dialects)</rule>
     <rule>mnj &gt; ndʒ (else)</rule>
     <rule>mj &gt; {mj,ɲ}</rule>
-    <rule>{ntʃj,ndj} &gt; nts &gt; ns</rule>
+    <rule>{ntʃj,ndj} &gt; nts</rule>
+    <rule>nts &gt; ns</rule>
     <rule>{ndj,ndʒj} ndʒ &gt; ɲ {ɲ,ndʒ}</rule>
     <rule>p &gt; b / _rj</rule>
-    <rule>ptj &gt; ts &gt; s</rule>
-    <rule>pj &gt; ptʃ &gt; tʃ (except in western and some southern dialects)</rule>
+    <rule>ptj &gt; ts</rule>
+    <rule>ts &gt; s</rule>
+    <rule>pj &gt; ptʃ</rule>
+    <rule>ptʃ &gt; tʃ (except in western and some southern dialects)</rule>
     <rule>rtʃj &gt; rts (&gt; rs ?)</rule>
     <rule>rdj rVɡ &gt; rdz rdʒ</rule>
     <rule>rdʒ &gt; {rdʒ,rdz(&gt; rz)}</rule>
-    <rule>rtj &gt; rts &gt; rs</rule>
+    <rule>rtj &gt; rts</rule>
+    <rule>rts &gt; rs</rule>
     <rule>rːVɡ rːj &gt; rdʒ ir</rule>
     <rule>rtVɡ &gt; {rdʒ,rts(&gt; rs)}</rule>
-    <rule>rtj &gt; rts &gt; rs</rule>
+    <rule>rtj &gt; rts</rule>
+    <rule>rts &gt; rs</rule>
     <rule>v &gt; {v,b} / r_j</rule>
-    <rule>rj &gt; rʲ &gt; ir / V_V</rule>
-    <rule>rj &gt; rʲ &gt; r / _#</rule>
-    <rule>{sːj,stʃj,stj} &gt; ʃ &gt; is (except in the west or extreme east, where the outcome was some flavor of (i)(t)ʃ)</rule>
-    <rule>sj &gt; ʒ &gt; (i)(d)ʒ (in some northeastern, northern, and western dialects)</rule>
-    <rule>sj &gt; ʒ &gt; {r,z} (rare)</rule>
-    <rule>sj &gt; ʒ &gt; iz (the usual outcome)</rule>
+    <rule>rj &gt; rʲ / V_V</rule>
+    <rule>rʲ &gt; ir / V_V</rule>
+    <rule>rj &gt; rʲ / #_</rule>
+    <rule>rʲ &gt; r / _#</rule>
+    <rule>{sːj,stʃj,stj} &gt; ʃ</rule>
+    <rule>ʃ &gt; is</rule>
+    <rule>sj &gt; ʒ</rule>
+    <rule>ʒ &gt; (i)(d)ʒ</rule>
+    <rule>sj &gt; ʒ</rule>
+    <rule>ʒ &gt; {r,z} (rare)</rule>
+    <rule>sj &gt; ʒ</rule>
+    <rule>ʒ &gt; iz (the usual outcome)</rule>
     <rule>tVɡ trj &gt; dʒ ir</rule>
-    <rule>tːj &gt; ts &gt; s</rule>
-    <rule>tj &gt; tʃ &gt; dj &gt; djʒ (?) &gt; dz (in the north and west) or idz (in the south and east)—medial (i)dz became (i)z; i-less forms “prevail in the literary language” and seem to have become common if the dz follows the stress</rule>
+    <rule>tːj &gt; ts</rule>
+    <rule>ts &gt; s</rule>
+    <rule>tj &gt; tʃ</rule>
+    <rule>tʃ &gt; dj</rule>
+    <rule>dj &gt; djʒ (?)</rule>
+    <rule>djʒ (?) &gt; dz (in the north and west) or idz (in the south and east)—medial (i)dz became (i)z; i-less forms “prevail in the literary language” and seem to have become common if the dz follows the stress</rule>
     <rule>l &gt; u / _{t,s} (Languedoc)</rule>
     <rule>l &gt; u / _{d,s} (Rouergue)</rule>
     <rule>l &gt; u / _{t,d,s} (else)</rule>
@@ -6373,30 +6509,38 @@ INTERTONIC VOWELS</comment>
     <rule>b &gt; {∅,b} / _t</rule>
     <rule>b &gt; ∅ / _ts</rule>
     <rule>β &gt; u / _k</rule>
-    <rule>βtʃ &gt; u{ts,dz} &gt; u{s,z}</rule>
+    <rule>βtʃ &gt; u{ts,dz}</rule>
+    <rule>u{ts,dz} &gt; u{s,z}</rule>
     <rule>βt βd &gt; pt bd (in the west)</rule>
     <rule>βt βd &gt; ut ud (else)</rule>
     <rule>ktʃ &gt; (i)tʃ (in western and extreme eastern dialects)</rule>
-    <rule>ktʃ &gt; its &gt; is (else)</rule>
+    <rule>ktʃ &gt; its</rule>
+    <rule>its &gt; is (else)</rule>
     <rule>tʃ k &gt; {i,s} {∅,k} / _m</rule>
     <rule>kt ɡd &gt; it id (in the north, northeast, and southwest)</rule>
     <rule>{tʃ,k}t ɡd &gt; tʃ dʒ (else)</rule>
     <rule>dtʃ &gt; ts (in Auvergne and some western areas)</rule>
     <rule>dtʃ &gt; dʒ (for some southeastern and southwestern speakers)</rule>
-    <rule>dtʃ &gt; dz &gt; z (else)</rule>
+    <rule>dtʃ &gt; dz</rule>
+    <rule>dz &gt; z (else)</rule>
     <rule>ɡ &gt; ∅ / _m</rule>
-    <rule>ɡn{d,t} &gt; ŋn{d,t} &gt; ɲ{d,t} &gt; {(i)nd,ɲd,ndʒ} or t(ʃ)</rule>
-    <rule>ɡn &gt; ŋn &gt; ɲ</rule>
+    <rule>ɡn{d,t} &gt; ŋn{d,t}</rule>
+    <rule>ŋn{d,t} &gt; ɲ{d,t}</rule>
+    <rule>ɲ{d,t} &gt; {(i)nd,ɲd,ndʒ} or t(ʃ)</rule>
+    <rule>ɡn &gt; ŋn</rule>
+    <rule>ŋn &gt; ɲ</rule>
     <rule>ksk &gt; stʃ / _a (in the north and northeast)</rule>
     <rule>k &gt; ∅ / _sk (else)</rule>
-    <rule>ks &gt; ʃ &gt; s / _m</rule>
+    <rule>ks &gt; ʃ _m</rule>
+    <rule>ʃ &gt; s / _m</rule>
     <rule>ksː &gt; is</rule>
     <rule>p &gt; ∅ / _f</rule>
     <rule>pk &gt; ptʃ / _a</rule>
     <comment>The outcome of ps varied; some dialects preserved it, while others changed it to (i)ʃ (typical of the west), us (the east), or is</comment>
     <rule>pt &gt; {ut,it} “in a few words”</rule>
     <rule>p &gt; ∅ / _t “except in parts of Languedoc and Gascony”</rule>
-    <rule>td &gt; tː &gt; t</rule>
+    <rule>td &gt; tː</rule>
+    <rule>tː &gt; t</rule>
     <rule>jd &gt; {dʒ,id}</rule>
     <comment>Some dialects dropped all final k, while others only dropped it when B_#, changing it to i when {a,E}_#</comment>
     <rule>{d,l} &gt; ∅ / _#</rule>
@@ -6429,21 +6573,21 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>V &gt; ”V / ”VSr_</rule>
     <rule>V &gt; ”V / _(C…)”{i,e}V</rule>
     <comment>“Stressed vowels (note the difference from the French development)”:</comment>
-    <rule>— aː &gt; a</rule>
-    <rule>— (a)e &gt; ɛ</rule>
-    <rule>— eː,i,oe &gt; e</rule>
-    <rule>— iː o(ː) u(ː) &gt; i o u</rule>
+    <rule>aː &gt; a</rule>
+    <rule>(a)e &gt; ɛ</rule>
+    <rule>eː,i,oe &gt; e</rule>
+    <rule>iː o(ː) u(ː) &gt; i o u</rule>
     <comment>Word-initial vowels:</comment>
-    <rule>— aː &gt; a</rule>
-    <rule>— {e(ː),i,ae,oe} &gt; e</rule>
-    <rule>— iː &gt; i</rule>
-    <rule>— {o(ː),u} &gt; o</rule>
+    <rule>aː &gt; a</rule>
+    <rule>{e(ː),i,ae,oe} &gt; e</rule>
+    <rule>iː &gt; i</rule>
+    <rule>{o(ː),u} &gt; o</rule>
     <comment>Word-final vowels:</comment>
-    <rule>— aː &gt; a</rule>
-    <rule>— {e(ː),i,ae,oe} &gt; e / _#</rule>
-    <rule>— iː &gt; i</rule>
-    <rule>— {o(ː),uː} &gt; o</rule>
-    <rule>— u &gt; o / ! V_</rule>
+    <rule>aː &gt; a</rule>
+    <rule>{e(ː),i,ae,oe} &gt; e / _#</rule>
+    <rule>iː &gt; i</rule>
+    <rule>{o(ː),uː} &gt; o</rule>
+    <rule>u &gt; o / ! V_</rule>
     <rule>s &gt; i / #(C…)V_#</rule>
     <rule>k &gt; ∅ / _s#</rule>
     <rule>{s,t} &gt; ∅ / _#</rule>
@@ -6471,7 +6615,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>{sc,st} &gt; ʃt / _F</rule>
     <rule>s &gt; ʃ / _kl</rule>
     <rule>c &gt; ∅ / n_t</rule>
-    <rule>kj ɡj &gt; tʃ {j,∅} (ɡj &gt; ∅ is rare)</rule>
+    <rule>kj ɡj &gt; tʃ {j,∅} (ɡj</rule>
+    <rule>tʃ {j,∅} (ɡj &gt; ∅ is rare)</rule>
     <rule>Pj &gt; ɥ</rule>
     <rule>{sj,stj,sːj} &gt; ʃ</rule>
     <rule>j &gt; s / t_</rule>
@@ -6526,7 +6671,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>{p,k}s &gt; sː</rule>
     <rule>o &gt; u / _k (possibly restricted in occurrence)</rule>
     <rule>k &gt; ∅ / _t ?</rule>
-    <rule>l{i,j} &gt; lː &gt; {ts,dz,ldz,dʒ,lː} (“varies”)</rule>
+    <rule>l{i,j} &gt; lː</rule>
+    <rule>lː &gt; {ts,dz,ldz,dʒ,lː} (“varies”)</rule>
     <rule>e &gt; ∅ / u_#</rule>
     <rule>t &gt; d / V_rV</rule>
     <rule>sk &gt; sː</rule>
@@ -6543,22 +6689,24 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <cite>? and Serafı́n, the former citing Penny, Ralph (2002), A History of the Spanish Language, 2nd Ed. Cambridge University Press; and Lipski, John (1994), Latin American Spanish. Longman Pub Group.</cite>
     <rule>b &gt; β / V_V</rule>
     <rule>{tj,kj} {tːj,kːj,ptj,ktj,skj} &gt; ts tːs</rule>
-    <rule>k ɡ &gt; tʃ dʒ &gt; ts dz / _{j,i,e,ɛ}</rule>
+    <rule>k ɡ &gt; tʃ dʒ / _{j,i,e,ɛ}</rule>
+    <rule>tʃ dʒ &gt; ts dz / _{j,i,e,ɛ}</rule>
     <rule>{t,k} &gt; ∅ / _#</rule>
     <rule>V &gt; ∅ / C_{r,l} when unstressed and not at a word boundary</rule>
     <rule>V &gt; ∅ / {r,l}_C when unstressed and not at a word boundary</rule>
     <rule sporadic="true">V &gt; ∅ / C_s when unstressed and not at a word boundary</rule>
     <rule sporadic="true">V &gt; ∅ / s_C when unstressed and not at a word boundary</rule>
-    <rule>{k,ɡ} &gt; x &gt; j / _{t,s,n,l}</rule>
+    <rule>{k,ɡ} &gt; x / _{t,s,n,l}</rule>
+    <rule>x &gt; j / _{t,s,n,l}</rule>
     <rule>pt {ɾs,ps} &gt; tː sː</rule>
     <rule>ns &gt; s (with a few exceptions)</rule>
     <rule>mb mn &gt; mː nː</rule>
     <rule>{jl,lj} {jn,nj} {jɡ,ɡj} &gt; ʎ ɲ ʝː</rule>
     <rule sporadic="true">bj &gt; ʝː</rule>
     <rule>Raising of e {ɛ,a} ɔ o &gt; i e o u; near j, in particular environments:</rule>
-    <rule>— e &gt; i / _Cj ! C = p</rule>
-    <rule>— ɛ ɔ u &gt; e o u / _(C)j</rule>
-    <rule>— a &gt; e / _j</rule>
+    <rule>e &gt; i / _Cj ! C = p</rule>
+    <rule>ɛ ɔ u &gt; e o u / _(C)j</rule>
+    <rule>a &gt; e / _j</rule>
     <rule sporadic="true">oj &gt; we</rule>
     <rule>ɛ ɔ &gt; je we</rule>
     <rule>”je.o ”je.a &gt; {”i.o,”jo} ”i.a</rule>
@@ -6584,25 +6732,26 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <comment>/ʝ/ “gains a fortified [dʒ] allophone” by analogy with the voiced-stop/voiced-fricative allophony in Spanish
 “Complex resolution of many consonant clusters created with the previous loss of unstressed vowels”:</comment>
     <comment>“With deletion or assimilation or both”:</comment>
-    <rule>— t &gt; ∅ / _m</rule>
+    <rule>t &gt; ∅ / _m</rule>
     <rule sporadic="true">— d &gt; ∅ / _n</rule>
     <rule sporadic="true">— mn &gt; ɲ</rule>
-    <rule>— tst dzd &gt; ts dz</rule>
-    <rule>— Vdz &gt; ∅ / {nts,ndz,rdz_</rule>
-    <rule>— ndzVɡ &gt; nɡ</rule>
-    <rule>— mpVt skVp spVt stVk &gt; nt sp st sk</rule>
+    <rule>tst dzd &gt; ts dz</rule>
+    <rule>Vdz &gt; ∅ / {nts,ndz,rdz_</rule>
+    <rule>ndzVɡ &gt; nɡ</rule>
+    <rule>mpVt skVp spVt stVk &gt; nt sp st sk</rule>
     <comment>“With dissimilation”:</comment>
-    <rule>— n &gt; {l,ɾ} / _m</rule>
-    <rule>— n &gt; {ɾ,l} / nɡ_</rule>
-    <rule>— n &gt; ɾ / nd_</rule>
+    <rule>n &gt; {l,ɾ} / _m</rule>
+    <rule>n &gt; {ɾ,l} / nɡ_</rule>
+    <rule>n &gt; ɾ / nd_</rule>
     <comment>“With metathesis”:</comment>
-    <rule>— dn dl &gt; nd ld</rule>
+    <rule>dn dl &gt; nd ld</rule>
     <rule sporadic="true">— ml nɾ &gt; lm ɾn</rule>
-    <rule>— βɣ &gt; wɣ &gt; ɣw</rule>
+    <rule>βɣ &gt; wɣ</rule>
+    <rule>wɣ &gt; ɣw</rule>
     <comment>“With epenthesis”:</comment>
-    <rule>— ∅ &gt; b / m_ɾ</rule>
-    <rule>— mn ml &gt; mbɾ mbl</rule>
-    <rule>— ∅ &gt; d / n_ɾ</rule>
+    <rule>∅ &gt; b / m_ɾ</rule>
+    <rule>mn ml &gt; mbɾ mbl</rule>
+    <rule>∅ &gt; d / n_ɾ</rule>
     <rule>t &gt; ∅ / _#</rule>
     <rule>/b/ [b], /β/ [b~β] &gt; /b/ [b~β]</rule>
     <rule>b &gt; u / _C</rule>
@@ -6611,7 +6760,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>z̪ z ʒ &gt; s̪ s ʃ</rule>
     <rule>ʃ &gt; {x,χ}</rule>
     <comment>“None of the following sound changes is universal to all dialects. If the same sound appears twice or more with an apparent contradiction, this accounts for different dialects. In all cases there are dialects that conserve the original sound at the beginning of the 21st century, with the exception of the old phonemic [s̪ - s] distinction (though kept in another way today, as [θ - s] in many parts of Spain).”</comment>
-    <rule>h &gt; ∅ “(just a reminder: from the f &gt; h change above)”</rule>
+    <rule>h &gt; ∅</rule>
     <rule>x &gt; h</rule>
     <rule>/dɾ/ [ðɾ] &gt; ɾ / V_V</rule>
     <rule>ʎ &gt; /ʝ/ (“merged with”)</rule>
@@ -6669,7 +6818,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>{t,dʱ} &gt; tʲ / _E(ː)</rule>
     <rule>{t,dʱ} &gt; ts / _y</rule>
     <rule>D(ʱ) &gt; T</rule>
-    <rule>n̩ &gt; ə &gt; ∅ / C_#</rule>
+    <rule>n̩ &gt; ə / C_#</rule>
+    <rule>ə &gt; ∅ / C_#</rule>
     <rule>R H &gt; uR ɨ / C_{C,#} when syllabic</rule>
     <rule>R Hn̩ &gt; ɛR ɨn / #_C</rule>
     <rule>H &gt; ɛ / _R, when R = syllabic</rule>
@@ -6684,7 +6834,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>õ oː &gt; o a</rule>
     <rule>u &gt; wə / #_</rule>
     <rule>u &gt; {ə,u}</rule>
-    <rule>uh₁ u{h₂,h₃} &gt; uː &gt; wə wɨ</rule>
+    <rule>uh₁ u{h₂,h₃} &gt; uː</rule>
+    <rule>uː &gt; wə wɨ</rule>
     <rule>i &gt; ə / {P,K(ʷ),s}_</rule>
     <rule>Ci &gt; Cʲə</rule>
     <rule>s &gt; sʲ / _tʲ</rule>
@@ -7284,7 +7435,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>b C &gt; ∅ d / _#</rule>
     <rule>diV &gt; dz</rule>
     <rule>iC uC &gt; î û / _{C,#}</rule>
-    <rule>∅ &gt; dz &gt; î_V</rule>
+    <rule>∅ &gt; dz</rule>
+    <rule>dz &gt; î_V</rule>
     <rule>iC &gt; iC~i / _{C,#} (not sure how this plays in with the change mentioned earlier about extra-high vowels; I must have misread something)</rule>
   </section>
   <section index="21.2.2.4" name="Proto-East Tariku to Kai">
@@ -7988,7 +8140,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>{s,dz} &gt; {s,z}</rule>
     <rule>k kʼ kʷ kʷʼ ɡ ɡʷ &gt; kʲ kʲʼ tʂ tʂʼ ɡʲ ɖʐ</rule>
     <rule>x xʷ &gt; {xʲ,j} {ʂ,ʐ}</rule>
-    <rule>Qʷ &gt; Qʷ &gt; Q ?</rule>
+    <rule>Qʷ &gt; Qʷ</rule>
+    <rule>Qʷ &gt; Q ?</rule>
     <rule>χ(ʷ) &gt; {χ,ʁ}</rule>
   </section>
   <section index="29.1.1.1" name="Athabaskan" />
@@ -8127,7 +8280,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <comment>Stem-final/suffixal consonant clusters lost in Minchumina-Bearpaw Upper Koyukon</comment>
     <rule>K &gt; TŠ</rule>
     <rule>C’ &gt; C / _$</rule>
-    <rule>Vˀ &gt; V[+low tone] &gt; V[-tone]</rule>
+    <rule>Vˀ &gt; V[+low tone]</rule>
+    <rule>V[+low tone] &gt; V[-tone]</rule>
     <rule sporadic="true">w &gt; m / _Vn</rule>
     <rule>w &gt; b</rule>
   </section>
@@ -8359,7 +8513,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>qʷ qʷʼ ɢʷ &gt; q qʼ ɢ</rule>
     <rule>s &gt; ∅ / _x</rule>
     <rule>x &gt; ∅ / ʃ_</rule>
-    <rule>$ &gt; xʷ &gt; {x,s}</rule>
+    <rule>$ &gt; xʷ</rule>
+    <rule>xʷ &gt; {x,s}</rule>
   </section>
   <section index="29.2" name="Proto-Na-Dene to Tlingit">
     <cite>Pogostick Man, from Wikipedia contributors (2015), “Na-Dene languages”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Na-Dene_languages&gt;</cite>
@@ -8406,7 +8561,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   <section index="30.1.1.1" name="Proto-Bantu to Sebirwa">
     <cite>Pogostick Man, from Chebanne, A. (2000), “The Sebirwa language: a synchronic and diachronic account”. Pula: Botswana Journal of African Studies 14(2)</cite>
     <rule>i u VS &gt; j w A / _V[+high +ATR]</rule>
-    <rule>S &gt; Sʰ &gt; Aʰ</rule>
+    <rule>S &gt; Sʰ</rule>
+    <rule>Sʰ &gt; Aʰ</rule>
     <rule>V[+high +ATR] &gt; V[+high -ATR]</rule>
     <rule>NC &gt; C[-voiced] / #_ (in nouns)</rule>
     <rule>NC &gt; N[+same POA]C / #_ (in verbs)</rule>
@@ -9440,7 +9596,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>Cl- &gt; T(ʑ)-</rule>
     <rule>Kw &gt; Kʷ- / _a-</rule>
     <rule>Kwə- &gt; Kʷɨ-</rule>
-    <rule>w &gt; r &gt; ∅ / P_-</rule>
+    <rule>w &gt; r / P_-</rule>
+    <rule>r &gt; ∅ / P_-</rule>
   </section>
   <section index="36.1.1" name="Late Middle Chinese to Old Mandarin">
     <cite>Ran, from Hsueh, F.S. (1975), Phonology of Old Mandarin</cite>
@@ -9532,27 +9689,29 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>i &gt; [long-tail vowel thing] / C̣_ (“sometimes”, in “variant readings”); when following /ʂ ʐ/, sometimes yields [ʂi], other times [s truncated vowel-thing]</rule>
     <rule>iʔ iw &gt; eʔ ew / C̣_ (the latter with variant iɛu?)</rule>
     <rule>iʔ &gt; ieʔ (&gt; i[truncated vowel-thing]ʔ?)</rule>
-    <rule>uʔ &gt; oʔ (occasionally &gt; uɛʔ?)</rule>
+    <rule>uʔ &gt; oʔ (occasionally</rule>
+    <rule>oʔ (occasionally &gt; uɛʔ?)</rule>
     <rule>uj &gt; u(ɛ)i / m_</rule>
     <rule>uj &gt; uɛi / {P,C[+guttural],∅}_</rule>
     <rule>uj &gt; ui / {C[+dental],C[+sibilant]}_</rule>
-    <rule>ujʔ &gt; uɛʔ (dialectally &gt; uɔʔ?)</rule>
+    <rule>ujʔ &gt; uɛʔ</rule>
     <rule>un &gt; uɛn / ! {C[+dental],C[+sibilant]}_</rule>
     <rule>uɛn &gt; ɛn / ʋ_</rule>
     <rule>uŋ &gt; oŋ (in one source?)</rule>
     <rule>juŋ &gt; iuŋ / _{∅,x,ʋ,ʔ}</rule>
     <rule>juŋ &gt; iuŋ / _ɡ[+píng tone]</rule>
-    <rule>juŋ &gt; uŋ (&gt; oŋ dialectally?)</rule>
+    <rule>juŋ &gt; uŋ</rule>
     <rule>jujŋ ujŋ &gt; iuŋ uŋ</rule>
     <rule>y &gt; ɥ (&gt; y~u dialectally?) / C̣_</rule>
     <rule>yʔ &gt; yɛʔ / {l,C[+dental +sibilant]}_ in “QYS -juət-type” finals, dialectally?</rule>
-    <rule>yʔ &gt; oʔ (eventually &gt; {ʊʔ,(i)uʔ?) / {l,C[+dental +sibilant]}_, in “QYS -k-types”</rule>
+    <rule>yʔ &gt; oʔ</rule>
     <rule>yʔ &gt; yʔ(~yɛʔ?) / {∅,C[+guttural]}, in -juət-types</rule>
     <rule>yʔ &gt; ioʔ (&gt; iʊʔ dialectally?) / {∅,C[+guttural]}_, in -k-types</rule>
     <rule>yʔ &gt; {ɥʔ,yʔ,uʔ} / C̣, in -juət-types</rule>
     <rule>yʔ &gt; oʔ (&gt; ʊʔ?) / C̣_, in -k-types</rule>
     <rule>yjʔ &gt; yʔ</rule>
-    <rule>yn &gt; un / C̣_ (may have stayed yn or &gt; ɥn in at least one area?)</rule>
+    <rule>yn &gt; un / C̣_ (may have stayed yn or</rule>
+    <rule>un / C̣_ (may have stayed yn or &gt; ɥn in at least one area?)</rule>
     <rule>je jeʔ yeʔ &gt; ɛ ɛʔ uɛʔ / C̣_</rule>
     <rule>je jeʔ &gt; iɛ iɛʔ</rule>
     <rule>yeʔ &gt; yɛʔ (&gt; {uɔʔ,yɔʔ} in southern speech?)</rule>
@@ -9563,7 +9722,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>yen &gt; uɛn / C̣_</rule>
     <rule>yen &gt; yɛn</rule>
     <rule>ɔ &gt; a / in two cases cited; extremely rare change</rule>
-    <rule>wɔ &gt; ɔ (occasionally &gt; uɔ after a guttural?)</rule>
+    <rule>wɔ &gt; ɔ (occasionally</rule>
+    <rule>ɔ (occasionally &gt; uɔ after a guttural?)</rule>
     <rule>wɔʔ &gt; uɔʔ / C[+guttural]_</rule>
     <rule>wɔʔ &gt; ɔʔ / else</rule>
     <rule>ɔn &gt; an; “[t]his final occurs exclusively after SR gutturals”</rule>
@@ -9654,9 +9814,12 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>{r,s}pʰ {r,s}(N)p {r,s}b {r,s}mb &gt; pʰ p b mb / _V (the paper implies similar developments occurred with stops at other POAs)</rule>
     <rule>{r,s}(N)k &gt; k / _V</rule>
     <rule>Sb Sk Sɡ &gt; b ? ɡ / _V</rule>
-    <rule>n̥ &gt; l̥ &gt; h / %_V</rule>
+    <rule>n̥ &gt; l̥ / %_V</rule>
+    <rule>l̥ &gt; h / %_V</rule>
     <rule>{r,s} &gt; ∅ / %_V</rule>
-    <rule>{r,s}N &gt; N̥ &gt; hṼ &gt; hV</rule>
+    <rule>{r,s}N &gt; N̥</rule>
+    <rule>N̥ &gt; hṼ</rule>
+    <rule>hṼ &gt; hV</rule>
   </section>
   <section index="36.3.2" name="rGyalrongic"/>
   <section index="36.3.2.1" name="Proto-rGyalrongic to bTshan La">
@@ -9826,7 +9989,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>{p,b} Np pr {s,r}P çb Nb &gt; p mp mbr sp ʃp p.s</rule>
     <rule>Nt tr d KT çT &gt; mt. tʂ t kt ʃt</rule>
     <rule>kr rk {rK,Pɡ} ɡ Pɡ sɡ &gt; k.r rk. pk k sk</rule>
-    <rule>ɡj &gt; cç ? (might be &gt; tsç?)</rule>
+    <rule>ɡj &gt; cç</rule>
     <rule>ʔkj &gt; ktʃ.</rule>
     <rule>ç &gt; zɡ / _r</rule>
     <rule>ɡ &gt; ∅ / #_r</rule>
@@ -10204,18 +10367,18 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>∅ &gt; e / t_w</rule>
     <rule>∅ &gt; e / {#,V}s_w</rule>
     <comment>“Dialectal changes include:”</comment>
-    <rule>— r &gt; l</rule>
-    <rule>— t &gt; k / _j</rule>
-    <rule>— k &gt; t / _j</rule>
-    <rule>— wə̃ &gt; ũ / {h,s}_</rule>
-    <rule>— j &gt; ∅ / ts_</rule>
-    <rule>— t &gt; tʃ / _(h)j</rule>
-    <rule>— wh &gt; f</rule>
+    <rule>r &gt; l</rule>
+    <rule>t &gt; k / _j</rule>
+    <rule>k &gt; t / _j</rule>
+    <rule>wə̃ &gt; ũ / {h,s}_</rule>
+    <rule>j &gt; ∅ / ts_</rule>
+    <rule>t &gt; tʃ / _(h)j</rule>
+    <rule>wh &gt; f</rule>
     <comment>“Allophonic changes:”</comment>
-    <rule>— ts &gt; tʃ / _{(h)i,(h)j}</rule>
-    <rule>— t tʃ k(ʷ) &gt; d dʒ ɡ(ʷ) / _{V,R}</rule>
-    <rule>— s &gt; ʃ / _(h)j</rule>
-    <rule>— s &gt; z / {#,V}_{V,R} ! R = j</rule>
+    <rule>ts &gt; tʃ / _{(h)i,(h)j}</rule>
+    <rule>t tʃ k(ʷ) &gt; d dʒ ɡ(ʷ) / _{V,R}</rule>
+    <rule>s &gt; ʃ / _(h)j</rule>
+    <rule>s &gt; z / {#,V}_{V,R} ! R = j</rule>
   </section>
   <section index="37.1.2.4.2" name="Proto-Mohawk-Oneida to Oneida">
     <cite>cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg</cite>
@@ -10236,17 +10399,17 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>”Vː[+falling tone] &gt; ”V[-long -falling tone]</rule>
     <rule>Vː &gt; V[-long] _”C(C)(C)V (“this change happens only in the Ontario dialect”)</rule>
     <comment>“In addition, a number of sound changes have applied to words only in the pre-pausal position. Most of these changes are characterized by the devoicing of one or more segments at the end of a word”</comment>
-    <rule>— ∅ &gt; e / C_{n,l}V(H)#</rule>
-    <rule>— ∅ &gt; o / C_wV(H)#</rule>
-    <rule>— ∅ &gt; i / C_jV(H)#</rule>
-    <rule>— Vː[+falling tone]C(C)V(H) &gt; V̊ː[+falling tone]C̊(C̊)V̊(H̊) / _#</rule>
-    <rule>— CVː[+falling tone] &gt; C̊V̊ː[+falling tone] / _#</rule>
-    <rule>— CVʔ &gt; C̊V̊ʔ̊ / _#</rule>
-    <rule>— V[-long] &gt; V̊ / R_#</rule>
-    <rule>— OV[-long] &gt; O̊V̊ / _#</rule>
-    <rule>— jV &gt; ∅ / Ci_(H)#</rule>
-    <rule>— ʔ &gt; h / _C#</rule>
-    <rule>— R &gt; R̊ / _#</rule>
+    <rule>∅ &gt; e / C_{n,l}V(H)#</rule>
+    <rule>∅ &gt; o / C_wV(H)#</rule>
+    <rule>∅ &gt; i / C_jV(H)#</rule>
+    <rule>Vː[+falling tone]C(C)V(H) &gt; V̊ː[+falling tone]C̊(C̊)V̊(H̊) / _#</rule>
+    <rule>CVː[+falling tone] &gt; C̊V̊ː[+falling tone] / _#</rule>
+    <rule>CVʔ &gt; C̊V̊ʔ̊ / _#</rule>
+    <rule>V[-long] &gt; V̊ / R_#</rule>
+    <rule>OV[-long] &gt; O̊V̊ / _#</rule>
+    <rule>jV &gt; ∅ / Ci_(H)#</rule>
+    <rule>ʔ &gt; h / _C#</rule>
+    <rule>R &gt; R̊ / _#</rule>
     <comment>“Allophonic changes:”</comment>
     <rule>ts &gt; tʃ / _{(h)i,(h)j}</rule>
     <rule>t tʃ k(ʷ) &gt; d dʒ ɡ(ʷ) / _{V,R}</rule>
@@ -10306,9 +10469,9 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ẽ(ː) õ(ː) &gt; ɛ̃(ː) ɔ̃(ː)</rule>
     <rule>∅ &gt; h / k_n</rule>
     <comment>“Allophonic changes:”</comment>
-    <rule>— t k(ʷ) &gt; d ɡ(ʷ) / _{V,R}</rule>
-    <rule>— s &gt; ʃ / _j</rule>
-    <rule>— a e o &gt; ə ɪ ʊ / C_{C,i[-long]}</rule>
+    <rule>t k(ʷ) &gt; d ɡ(ʷ) / _{V,R}</rule>
+    <rule>s &gt; ʃ / _j</rule>
+    <rule>a e o &gt; ə ɪ ʊ / C_{C,i[-long]}</rule>
   </section>
   <section index="37.1.2.6" name="Proto-Northern Iroquoian to Tuscarora">
     <cite>cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg</cite>
@@ -10810,9 +10973,11 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>u̯o i̯o &gt; u o</rule>
     <rule>ɨ̯a &gt; ɨa̯~ɨə̯</rule>
     <rule>{u̯ɔ,u̯a} &gt; ua~uə</rule>
-    <rule>uo &gt; uu &gt; u / _%</rule>
+    <rule>uo &gt; uu / _%</rule>
+    <rule>uu &gt; u / _%</rule>
     <rule>ɨ̯ɔ &gt; ɨa~ɨə</rule>
-    <rule>uɨ̯ ua̯ &gt; ɨə uɔ̯ &gt; ɨː ɔː</rule>
+    <rule>uɨ̯ ua̯ &gt; ɨə uɔ̯</rule>
+    <rule>ɨə uɔ̯ &gt; ɨː ɔː</rule>
     <rule>ɛi ei &gt; ai əi</rule>
   </section>
   <section index="38.1.1.4.1" name="North Tai to Dioi">
@@ -11225,7 +11390,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>V &gt; Vː / _#</rule>
     <rule>ê ô &gt; e o / _(X)Ci</rule>
     <rule>ê &gt; y / _(X)CA</rule>
-    <rule>ô &gt; ɯ &gt; i / _(X)CA</rule>
+    <rule>ô &gt; ɯ</rule>
+    <rule>ɯ &gt; i / _(X)CA</rule>
     <rule>ej &gt; i / [- stress]</rule>
     <rule>æ &gt; e / _j, unstressed</rule>
     <rule>ɑ &gt; e / ”{o,u}(X)C_j</rule>
@@ -11250,7 +11416,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>i &gt; ∅ / Aj_#</rule>
     <rule>i &gt; ∅ / {o,u}j_</rule>
     <rule>j &gt; ∅ / C_i{C,#}</rule>
-    <rule>yje &gt; øː &gt; jø (?)</rule>
+    <rule>yje &gt; øː</rule>
+    <rule>øː &gt; jø (?)</rule>
     <rule>uw ij &gt; ow ej / _C</rule>
     <rule>tʃ tsʲ &gt; ʃ sʲ / #_</rule>
     <rule>ðʲ sʲ tsʲ(ː) lʲ &gt; ð s ts(ː) l</rule>
@@ -11265,7 +11432,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>tʃ tʃː &gt; t tʃ</rule>
     <rule>t &gt; ts / _i ! following a coronal obstruent or “before a derivational suffix”</rule>
     <rule>tj &gt; ts / ! following a coronal obstruent or “before a derivational suffix”</rule>
-    <rule>ʃ &gt; ʂ &gt; x</rule>
+    <rule>ʃ &gt; ʂ</rule>
+    <rule>ʂ &gt; x</rule>
     <rule>s &gt; x / _l</rule>
     <rule>n &gt; ∅ / _{s,ts}</rule>
     <rule>w &gt; ʋ</rule>
@@ -11309,12 +11477,17 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule sporadic="true">V &gt; Vː / _hC</rule>
     <rule>{k,x} &gt; ˟ / _#</rule>
     <rule>t &gt; ∅ / s_r</rule>
-    <rule>p &gt; β &gt; U / _R</rule>
-    <rule>t &gt; z &gt; U / _r{A,O}</rule>
-    <rule>t &gt; z &gt; @ / _r{i,e}</rule>
-    <rule>k &gt; z &gt; @ / _j</rule>
+    <rule>p &gt; β</rule>
+    <rule>β &gt; U / _R</rule>
+    <rule>t &gt; z</rule>
+    <rule>z &gt; U / _r{A,O}</rule>
+    <rule>t &gt; z</rule>
+    <rule>z &gt; @ / _r{i,e}</rule>
+    <rule>k &gt; z</rule>
+    <rule>z &gt; @ / _j</rule>
     <rule>k &gt; ɣ i / {i,e}_R{i,e}</rule>
-    <rule>k &gt; ɣ &gt; U / {A,O,U}_R ! R = j</rule>
+    <rule>k &gt; ɣ</rule>
+    <rule>ɣ &gt; U / {A,O,U}_R ! R = j</rule>
     <rule>β &gt; ʋ</rule>
     <rule>ʋ &gt; ∅ / _UC</rule>
     <rule>ið &gt; j / ”V_V</rule>
@@ -11482,7 +11655,9 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ś &gt; s</rule>
     <rule>s &gt; ʃ / i_#</rule>
     <comment>ts may become ʃs or sː? The written forms are 〈xs〉 and 〈ss〉</comment>
-    <rule>S[+ fortis] &gt; S[- voice]ː (specifically, the source lists t[+ fortis] k[+ fortis] &gt; t(ː) k(ː), both of the tokens with optional length suffixes and *aTa &gt; 〈atta〉, so I’m extrapolating)</rule>
+    <rule>S[+ fortis] &gt; S[- voice]ː (specifically, the source lists t[+ fortis] k[+ fortis]</rule>
+    <rule>S[- voice]ː (specifically, the source lists t[+ fortis] k[+ fortis] &gt; t(ː) k(ː), both of the tokens with optional length suffixes and *aTa</rule>
+    <rule>t(ː) k(ː), both of the tokens with optional length suffixes and *aTa &gt; 〈atta〉, so I’m extrapolating)</rule>
     <rule>n[+ fortis] &gt; n(ː) / V_V</rule>
     <rule>n[- fortis] n[+ fortis] &gt; {n,r}(?) n</rule>
     <rule>N &gt; [+ same POA] / _S</rule>
@@ -11501,7 +11676,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <comment>lenis &gt; voiced fricative (&gt; approximant, at least by the 12th Century?) / unstressed</comment>
     <comment>lenis (voiced) &gt; fricative / {l,r,s̺,s̻,V}_{l,r,s̺,s̻,V}</comment>
     <comment>— At least one reconstruction seems to indicate *s and *ś, which may have been an affricate and /s/. Pretty reliably, *-s tends to turn into -ts̺, and *-ś &gt; -ts̻, probably after the below-mentioned affrication. Beyond that, it’s messy. *-tso seems to have become -tʃo/-tʃu, though.</comment>
-    <rule>Sʰ &gt; F &gt; h (&gt; ∅) / #_</rule>
+    <rule>Sʰ &gt; F</rule>
+    <rule>F &gt; h (&gt; ∅) / #_</rule>
     <rule>S &gt; S[+ voiced] / #_</rule>
     <comment>“[T]wo similar vocalic segments” usually contract, though some dialects (especially Biscayan) seem not to exhibit this</comment>
     <rule>Vn &gt; Ṽ / _# (seems to have been reverted in most dialects, except for Souletin)</rule>
@@ -11511,7 +11687,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>n &gt;m / u_V</rule>
     <rule>n &gt; ɲ / {i,ɪ}_V</rule>
     <rule>n &gt; h̃ / V_V</rule>
-    <rule>nb &gt; mː &gt; m</rule>
+    <rule>nb &gt; mː</rule>
+    <rule>mː &gt; m</rule>
     <rule>N &gt; [+ same POA] / _C</rule>
     <rule>b &gt; m / _VN</rule>
     <rule>{ɾ,r} &gt; ∅ / #_</rule>
@@ -11519,9 +11696,11 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ɾ &gt; r / _C</rule>
     <rule>r &gt; ɾ / _#</rule>
     <rule>C &gt; ∅ / r_</rule>
-    <rule>Cr &gt; Cɾ &gt; CVɾ (perhaps not a sound change per se, just a historical tendency)</rule>
+    <rule>Cr &gt; Cɾ</rule>
+    <rule>Cɾ &gt; CVɾ (perhaps not a sound change per se, just a historical tendency)</rule>
     <rule>ɾ &gt; ∅ / V_V (Souletin)</rule>
-    <rule>*L (fortis) &gt; l (or *lh &gt; lː, which then lost gemination?)</rule>
+    <rule>*L (fortis) &gt; l (or *lh</rule>
+    <rule>l (or *lh &gt; lː, which then lost gemination?)</rule>
     <rule>ð &gt; some sort of tap distinct from ɾ (Biscayan, Guipuscoan, High Navarrese)</rule>
     <rule>b &gt; ∅ / #_B (a few exceptions, mostly before _u)</rule>
     <rule>F[+ voiced] &gt; ∅ / V_V (sometimes, usually involving “compound surnames”?)</rule>
@@ -11568,19 +11747,29 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>d ð &gt; ɟ ʝ / {ʎ,ɲ}_ (Guipuscoan, High Navarrese)</rule>
     <rule>{ɡ,ɣ} &gt; {ɟ,ʝ} / {E,j}_</rule>
     <rule>ɡ &gt; dʒ / {E,j}_ (“in some Biscayan areas”)</rule>
-    <rule>j &gt; ʝ &gt; j (northern High Navarrese, most Labourd, some Biscayan)</rule>
-    <rule>j &gt; ʝ &gt; ʒ (Souletin, sporadic in northwestern Biscayan)</rule>
+    <rule>j &gt; ʝ</rule>
+    <rule>ʝ &gt; j (northern High Navarrese, most Labourd, some Biscayan)</rule>
+    <rule>j &gt; ʝ</rule>
+    <rule>ʝ &gt; ʒ (Souletin, sporadic in northwestern Biscayan)</rule>
     <rule>j &gt; ʝ (some Biscayan and Navarrese)</rule>
-    <rule>j &gt; ʝ &gt; ɟ (typical of Low Navarrese)</rule>
-    <rule>j &gt; ʝ &gt; ʒ &gt; dʒ (northwestern Biscayan)</rule>
-    <rule>j &gt; ʝ &gt; ʒ &gt; ʃ (Aescoan, Salazarese, Roncalese, most southern High Navarrese)</rule>
-    <rule>j &gt; ʝ &gt; ʒ &gt; ʃ &gt; x (Guipuscoan, northwestern High Navarrese, eastern Biscayan)</rule>
+    <rule>j &gt; ʝ</rule>
+    <rule>ʝ &gt; ɟ (typical of Low Navarrese)</rule>
+    <rule>j &gt; ʝ</rule>
+    <rule>ʝ &gt; ʒ</rule>
+    <rule>ʒ &gt; dʒ (northwestern Biscayan)</rule>
+    <rule>j &gt; ʝ</rule>
+    <rule>ʝ &gt; ʒ</rule>
+    <rule>ʒ &gt; ʃ (Aescoan, Salazarese, Roncalese, most southern High Navarrese)</rule>
+    <rule>j &gt; ʝ</rule>
+    <rule>ʝ &gt; ʒ</rule>
+    <rule>ʒ &gt; ʃ</rule>
+    <rule>ʃ &gt; x (Guipuscoan, northwestern High Navarrese, eastern Biscayan)</rule>
     <rule>j &gt; χ (probably through intermediates like above, Wikipedia doesn’t go into particulars of how and where)</rule>
     <rule>ʎ ɲ &gt; jl jn (“common in Low Navarrese, Labourdin, and is even regular in the High Navarrese of Sakana”)</rule>
     <comment>Vowel syncope:</comment>
-    <rule>— V &gt; ∅ / S_{ɾ,l} (more common in Roncalese and Salazarese, but also in Navarrese and Aescoan?)</rule>
-    <rule>— V &gt; ∅ / C[+ sibilant]_ɾ (Roncalese and Salazarese)</rule>
-    <rule>— V &gt; ∅ / {O,ɾ,r}_O (Roncalese, Salazarese, Navarrese, Aescoan)</rule>
+    <rule>V &gt; ∅ / S_{ɾ,l} (more common in Roncalese and Salazarese, but also in Navarrese and Aescoan?)</rule>
+    <rule>V &gt; ∅ / C[+ sibilant]_ɾ (Roncalese and Salazarese)</rule>
+    <rule>V &gt; ∅ / {O,ɾ,r}_O (Roncalese, Salazarese, Navarrese, Aescoan)</rule>
     <rule>n[+ fortis] &gt; n</rule>
     <comment>Something about final devoicing of stops and initial stops losing voicing as a result of vowel deletion</comment>
     <rule>e &gt; ∅ / #Ur_</rule>
@@ -11594,7 +11783,8 @@ Some vowel metathesis only when vowels are matched in height</comment>
     <comment>Something about diphthongs occurring where intervocalic /n/ was lost</comment>
     <rule>VɪC &gt; VCʲ</rule>
     <comment>Glide dissimilation if the homorganic vowel was in the following syllable, but usually the glide just deleted</comment>
-    <rule>aɪ &gt; eɪ &gt; e (rare)</rule>
+    <rule>aɪ &gt; eɪ</rule>
+    <rule>eɪ &gt; e (rare)</rule>
     <rule>aʊ &gt; aɪ / !_{ɾ,r,s̺,s̻} (Souletin, Roncalese)</rule>
     <rule>eʊ &gt; {e,eɡu}</rule>
     <rule>eɪ &gt; e / #_</rule>
@@ -11685,7 +11875,8 @@ Souletin keeps initial ʃ- and tʃ- distinct; Labourdin only has ʃ-, and the re
   </section>
   <section index="46.5" name="Old English-to-Scots Vowel Shifts">
     <cite>Pogostick Man, from Wikipedia contributors (2014), “Phonological history of Scots”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Phonological_history_of_Scots&gt;; and Wikipedia contributors (2014), “Scottish Vowel Length Rule”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Scottish_vowel_length_rule&gt;</cite>
-    <rule>ai &gt; ɛi &gt; əi / when stem-final</rule>
+    <rule>ai &gt; ɛi</rule>
+    <rule>ɛi &gt; əi / when stem-final</rule>
     <rule>uː &gt; ʌu / when-stem final, in northern varieties</rule>
     <rule>øː &gt; wi / {k,ɡ}_ (in Mid Northern dialects)</rule>
     <rule>øː &gt; i (in northern dialects)</rule>
@@ -11708,10 +11899,14 @@ Souletin keeps initial ʃ- and tʃ- distinct; Labourdin only has ʃ-, and the re
   </section>
   <section index="46.7" name="Great Vowel Shift (English)">
     <cite>Jaaaaaa and Ran, citing http://www.peak.org/~jeremy/dictionary/chapters/history.php</cite>
-    <rule>iː uː &gt; əj əw &gt; ɑj ɑw</rule>
+    <rule>iː uː &gt; əj əw</rule>
+    <rule>əj əw &gt; ɑj ɑw</rule>
     <rule>eː oː &gt; iː uː</rule>
-    <rule>ɛː &gt; eː &gt; iː</rule>
-    <rule>aː ɔː &gt; ɛː oː &gt; eː ow &gt; ej (əw)</rule>
+    <rule>ɛː &gt; eː</rule>
+    <rule>eː &gt; iː</rule>
+    <rule>aː ɔː &gt; ɛː oː</rule>
+    <rule>ɛː oː &gt; eː ow</rule>
+    <rule>eː ow &gt; ej (əw)</rule>
   </section>
   <section index="46.8" name="Greek Vowel Shift">
     <cite>Chris Zoller, from Trask, R.L. (1996), Historical Linguistics</cite>
@@ -11752,7 +11947,8 @@ Souletin keeps initial ʃ- and tʃ- distinct; Labourdin only has ʃ-, and the re
     <rule>ə &gt; a / _{i,u}</rule>
     <rule>iəu &gt; au</rule>
     <rule>a &gt; aː / _{i,u}</rule>
-    <rule>a &gt; ə &gt; ∅ / i_u</rule>
+    <rule>a &gt; ə</rule>
+    <rule>ə &gt; ∅ / i_u</rule>
     <comment>Other relevant changes occurring at the same time:</comment>
     <rule>ə &gt; ∅ / W_</rule>
     <rule>W &gt; ∅ / C_</rule>
@@ -11785,12 +11981,14 @@ Souletin keeps initial ʃ- and tʃ- distinct; Labourdin only has ʃ-, and the re
     <rule>en an &gt; ẽ ã</rule>
     <rule>ej &gt; i</rule>
     <rule>ew &gt; ju</rule>
-    <rule>i &gt; ı̆ [ə?] &gt; {e,a} (strong)/∅ (weak) “in modern languages”</rule>
+    <rule>i &gt; ı̆ [ə?]</rule>
+    <rule>ı̆ [ə?] &gt; {e,a} (strong)/∅ (weak) “in modern languages”</rule>
     <rule>iː &gt; i</rule>
     <rule>a aː &gt; o a</rule>
     <rule>aj &gt; {æ₂,i₂} “(reduced)”</rule>
     <rule>aw &gt; u</rule>
-    <rule>u &gt; ŭ [ɤ?] &gt; {e,o,ɤ,a} (strong)/∅ (weak) “in modern languages”</rule>
+    <rule>u &gt; ŭ [ɤ?]</rule>
+    <rule>ŭ [ɤ?] &gt; {e,o,ɤ,a} (strong)/∅ (weak) “in modern languages”</rule>
     <rule>uː &gt; ɨ</rule>
   </section>
   <section index="46.15" name="Proto-Japanese to Old Japanese Vowel Shift">
@@ -11844,7 +12042,8 @@ Souletin keeps initial ʃ- and tʃ- distinct; Labourdin only has ʃ-, and the re
     <rule>ʕ &gt; ŋ (allegedly in European Hebrew, both Sephardic and Ashkenazi, but possibly not a sound change so much as a substitution) (https://en.wikipedia.org/wiki/Hebrew_language#Varieties_of_ayin, http://sites.google.com/site/londonsephardiminhag/pronunciation, http://www.forward.com/articles/105938/)</rule>
     <rule>f &gt; p (? claimed to have occurred independently in Proto-Semitic and Proto-Omotic, and to a limited extent in Egyptian (but this may be related to the Semitic change); note that the Wikipedia article is cited to a single source and that source is admittedly theoretical, and acknowledges on page 77 another reconstruction that doesn’t believe Proto-Afro-Asiatic had /f/ at all) (Page 77 of http://is.gd/WNyXdn, https://en.wikipedia.org/wiki/Proto-Afro-Asiatic_language)</rule>
     <rule>tš &gt; t (general Baltic-Finnic; may not be unconditional but was certainly the most common outcome)</rule>
-    <rule>r &gt; ɡʟ &gt; ɣ (Hiw) (http://is.gd/jCDLO1)</rule>
+    <rule>r &gt; ɡʟ</rule>
+    <rule>ɡʟ &gt; ɣ (Hiw) (http://is.gd/jCDLO1)</rule>
     <rule>mb nd &gt; ʙ dr (Nias)</rule>
   </section>
   <section index="47.2" name="List 2: Conditional or complex consonant changes">

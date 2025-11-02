@@ -1,3 +1,32 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 8.1 - Proto-Altaic to Proto-Japonic
+# citation: Pogostick Man, from Wikipedia contributors (2011), “Altaic languages”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Altaic_languages>, citing Sarostin, Sergei A., Anna V. Dybo, and Oleg A. Mudrak (2003), Etymological Dictionary of the Altaic Languages. Leiden: Brill Academic Publishers
+	# NB: Does not include clusters.
+	a > ə / _Ce
+	a > i / _Ci
+	a > u / _Cu
+	V > a / _Ca
+	u > a / P_Ce
+	{a,e,o,æ} i u y ø > ə i ua {u,ə} {ə,u} / _Ce
+	{a,æ,e,ø,i,y} o > i u / _Ci
+	e i {o,u} æ ø y > {ə,a} {i,ə} ə a {ə,u} {u,ə} / _Co
+	V > u / _Cu
+	pʰ tʰ kʰ > p t k
+	b > p / #_
+	b > w / ! _{a,ə,Vj}
+	tʃʰ > t
+	tʃ dʒ > t d / #_
+	tʃ > s / maybe ! _#?
+	dʒ > j
+	ɡ > ∅ / iV_
+	ɡ > k / else
+	{ʃ,z} > s
+	n > m / #_
+	ŋ > m / #_{æ,ø,y}
+	ŋ > {∅,n} #_ else
+	N > {m,n}
+	r > t / _{i,u}
+	rʲ > {r,t}
+	l(ʲ) > n / #_
+	l lʲ > r s / else
+	j > {j,∅}
+	U[+long] > U[-long]

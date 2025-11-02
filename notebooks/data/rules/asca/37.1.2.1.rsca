@@ -1,3 +1,34 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 37.1.2.1 - Proto-Northern Iroquoian to Cayuga
+# citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg
+	∅ > a / w_j
+	”V(C)(C)CaCV > V(C)”(C)CaCV / _#
+	h > ∅ / _nh
+	ʔ > ∅ / _nk(ʷ)
+	n > t / _k(ʷ)
+	ts > hs / V_ ! _{h,i,j,r}
+	ts > s / ! _{h,i,j,r}
+	ns > ts / _k(ʷ)
+	V > Vː / _C[-glottal] “in even-numbered syllables when accented or immediately before the accent”
+	# “[A]ccented short vowels in odd-numbered penults lose their accent”
+“[W]ords with no accent acquire a new accent on the vowel of the last non-final even syllable of the word”
+	Vʔ > ʔV / “in odd-numbered unaccented non-final syllables;” ! {ʔ,h}_
+	j > ∅ / ts_
+	h > ∅ / s_w
+	r > n / _(h)j
+	r > w / {o(ː),õ(ː)}_{a(ː),e(ː),ẽ(ː),i(ː)}
+	r > j / {e(ː),ẽ(ː),i(ː)}_{a(ː),o(ː),õ(ː)}
+	r > ∅ / VH_
+	r > ∅ / _H
+	r > ∅ / w_
+	r > ∅ / V_V
+	V₁”V₂ ”V₁ːV₂ > ”V₁V₂ ”V₁[-long]V₂
+	e(ː) > ẽ / _ẽ(ː)
+	o(ː) > õ / _õ(ː)
+	”V₀V₀ > V₀ː[-accent]
+	R > ∅ / ʔ_#
+	C > ∅ / {s,k}_#
+	Ch > ∅ / _s#
+	h > ∅ / Vː_#
+	t > h / _t
+	ths > tsh
+	∅ > h / {t,k}_n

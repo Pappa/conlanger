@@ -1,3 +1,8 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 41.3 - Proto-Trans New Guinea to Binandere
+# citation: Pogostick Man, from Pawley, Andrew (2012). “How Reconstructible is Proto Trans New Guinea? Problems, Progress, Prospects”. In Languages & Linguistics in Melanesia Special Issue I:89 – 164
+	t > j / #_i
+	ŋ ᵑɡ > ∅ ɡ / #_
+	nj > s / #_ (?)
+	t > {r,s} / V_i
+	ᵐb ⁿd ᵑɡ nj > {p,ᵐb} {ⁿd,z} k z / V_V
+	a > {a,o}

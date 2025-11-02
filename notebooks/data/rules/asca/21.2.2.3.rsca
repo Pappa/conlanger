@@ -1,3 +1,8 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 21.2.2.3 - Proto-East Tariku to Eritai
+# citation: Pogostick Man, from Clouse, Duane (1993), “Languages of the Western Lakes Plains”. IRIAN: Bulletin of Irian Jaya XXI:1 – 17
+	p > p~h
+	b C > ∅ d / _#
+	diV > dz
+	iC uC > î û / _{C,#}
+	∅ > dz > î_V
+	iC > iC~i / _{C,#} (not sure how this plays in with the change mentioned earlier about extra-high vowels; I must have misread something)

@@ -1,3 +1,8 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 29.1.1.1.4 - Proto-Athabaskan to Chilcotin
+# citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
+	# TS series desibilantizes
+	V > {Vˀ,V[+RTR]}
+	{TŠ,TŠʷ} K > TS TŠ
+	# The Q series incompletely moves to the K series, the latter being more common
+	e {ɑ,ə} > i {e,ɪ}
+	Vˀ > V[+high tone]

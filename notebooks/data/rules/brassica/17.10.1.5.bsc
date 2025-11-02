@@ -1,12 +1,12 @@
 ; 17.10.1.5 - Proto-Indo-Aryan to Vedic Sanskrit
 ; citation: Tropylium, from Kobayashi, Masato (2004), Historical Phonology of Old Indo-Aryan Consonants
-{s,ʂ} > h / _#C[- voice]
-{s,ʂ} > r / _#C[+ voice]
-l > r
-ɖ(ʱ) > ɭ(ʱ)
-sɕ ɕʂ > ɕː ʂː
-sː ʂː ɕː > t.s t.ʂ t.C
-t.ʂ t.ɕ > kʂ cʰː
-cʰː > cʰ / C_
-bzʱ > ps
-{pʂ,cʂ,ɟʐʱ,ɡʐʱ} > kʂ
+{s,ʂ} / h / _#C[- voice]
+{s,ʂ} / r / _#C[+ voice]
+l / r
+ɖ(ʱ) / ɭ(ʱ)
+sɕ ɕʂ / ɕː ʂː
+sː ʂː ɕː / t.s t.ʂ t.C
+t.ʂ t.ɕ / kʂ cʰː
+cʰː / cʰ / C_
+bzʱ / ps
+{pʂ,cʂ,ɟʐʱ,ɡʐʱ} / kʂ

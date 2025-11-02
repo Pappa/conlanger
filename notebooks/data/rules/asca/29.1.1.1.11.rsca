@@ -1,3 +1,10 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 29.1.1.1.11 - Proto-Athabaskan to Han
+# citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
+	TS TŠ TŠʷ K Q > TH TS TṢ TŠ K
+	# Occasional palatalization in front of high vowels
+	n > (ⁿ)d / $_V[- nasal]
+	j > ʒ / $_
+	a ɑ ə ʊ > æ a {ə,ë} o
+	# Acquisition of vowel length, but how this occurs is not described
+	Vˀ > V[+low tone]
+	# Majority of stem-final consonants lost; the only stem-finals permitted in comtemporary Han are /t k w j r n h ʔ/, with the addition of /l/ in Dawson Han

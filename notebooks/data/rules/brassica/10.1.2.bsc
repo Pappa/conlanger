@@ -1,9 +1,9 @@
 ; 10.1.2 - Proto-Austronesian to Proto-Philippine
 ; citation: Pogostick Man, from Llamzon, Teodoro A. (1975), “Proto-Philippine Phonology”. Archipel 9(1):29 – 42; and from other changes and information from this document
-*T > t
-{*D,*Z,z} > d / #_
-*D > d / _#
-*R > ɡ / #_
-*R > {l,ɡ} / _#
-ɲ > n
-c > s
+*T / t
+{*D,*Z,z} / d / #_
+*D / d / _#
+*R / ɡ / #_
+*R / {l,ɡ} / _#
+ɲ / n
+c / s

@@ -1,3 +1,14 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 10.1.2.4 - Proto-Philippine to Ibanag
+# citation: Pogostick Man, from Llamzon, Teodoro A. (1975), “Proto-Philippine Phonology”. Archipel 9(1):29 – 42; and from other changes and information from this document
+	ə > a
+	# Something happens to final voiceless stops but it isn’t clear in the paper
+	*D > r
+	*j > ɡ / possible exception in word-initial position?
+	*Z > r
+	z > r / V_V
+	*R > ɡ
+	r > d / #_ (?)
+	{s,c} > t
+	{q,h} > ∅
+	uj > i
+	iw > uj

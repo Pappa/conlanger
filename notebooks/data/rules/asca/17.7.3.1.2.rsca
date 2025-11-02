@@ -1,3 +1,69 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 17.7.3.1.2 - Old Norse to Orkney Norn
+# citation: Pogostick Man and Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from http://nornlanguage.x10.mx/index.php?ork_phon, citing Marwick, Hugh, “Orkney Norn”
+	ny > in
+	f > m / _n
+	n > ∅ / m_
+	p(ː) t(ː) k(ː) > b(ː) d(ː) ɡ(ː) / {V,R}_{V,R}
+	{t,d}j > tʃ
+	d > ∅ / n_#
+	b d ɡ > p t k / #_
+	k > s / _n
+	ɡ > k / _#
+	ɡn ɡl > nj lj
+	k ɡ > c ɟ / _{E,j}
+	f > ∅ / _{l,b,v,n,#}
+	f > ∅ / Vː_V
+	fd > dː
+	h > ∅ / _{l,n,r}
+	hw hj > {w,ʍ} ʃ
+	h > x / _i
+	θ > h / #_B
+	θ > ð / V_V
+	θ > t
+	ð > θ / _#
+	ð > ∅ /{a,E}_
+	ð > d / ! V_V
+	sk > {sk,ʃ,ks}
+	s > ∅ / {t,k,r}_l
+	s > ʃ / _Vr ?
+	ɣ > ∅
+	l > ∅ / V_V
+	l > ∅ / _{m,s,k}
+	l > ∅ / _# ?
+	lm > ml
+	lː > ʎ
+	v > w
+	u a e eː > ʌ ɑ ɪ ɛ / _Cː
+	u > ø / _l(ː)
+	u > ʌ / _C{ː,CC}
+	uː > øː / _CC
+	o a > ø ɛ / _(C)(C)i
+	o > ø / _Cr
+	oː > øː / _(C)(C)#
+	oː > u(ː)
+	joː > {u,o,ø} (looks like being in the ultima or the penult may have had something to do with it, but it isn’t clear to me)
+	ɒ > ɔ / _C(ː)C
+	ɒ > ʌ / _r(ː)
+	ɒ > {ɛ,e} / _CːV (V can be a syllabic consonant)
+	ɒ > ɪ / _rC
+	au > (ɔ)u
+	a aː > ɛ øː / _r
+	a > ɔ / _{l,nd}C
+	ja > i
+	æ > eː / _{ð,r}
+	æ > ɛː
+	œ > ɛː / _CC
+	œ > ø / _l
+	œ > iː / _N
+	œ > eː
+	yː > ø / _j
+	yː > i
+	y > {ɪ,i}
+	e iː > ɛ i(ː)
+	ey > eː / _F
+	ey > ɛ / _r
+	ey > ai
+	ei > eː / _C(ː,V)# (V can be a syllabic consonant)
+	e > a / _i
+	i > ɪ / _CC
+	V[- long] > ∅ / _#

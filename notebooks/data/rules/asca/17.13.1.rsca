@@ -1,3 +1,16 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 17.13.1 - Proto-Tocharian to Tocharian A
+# citation: Nortaneous, from http://www.utexas.edu/cola/centers/lrc/eieol/tokol-TC-X.html and https://azargoshnasp.net/history/Tocharian/positionoftocharian.pdf
+	s > ʂ / _t
+	k > p / _{s,ʂ}
+	Cʲj > Cʲː
+	n > j / V_sV ! E_
+	V > j / V_nʲtʲ ! V = E
+	j > ∅ / w_
+	{a,ɛ}i əj > e i
+	{a,ɛ}u əw > o u
+	{ɔ,ɛ} > a
+	V > [+ round] / Kʷ_
+	{kʷ,kw} > k
+	ə > ∅ / _%
+	V > ∅ / _#
+	# “[E]penthesis [of /ə/] to break up ‘difficult’ consonant clusters (mostly in the coda?)”

@@ -1,18 +1,18 @@
 ; 17.2.5 - Common Anatolian to Palaic
 ; citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
-D T > T T[+lenis] / #_
-T D > T[+fortis] T[+lenis]
-h₂ h₃ > hh h
-Ḱ > K
-V > Vː / ”U[+open]
-e > i / pretonic
-e > a / posttonic in U[+open]
-o(ː) > a(ː)
-a e > aː eː / in ”U[+closed]
-æː > eː
-ɡʷ > hʷ / medially
-hhy > “something like /ʒ/”
-h > ∅ / ”Vː_u
-h > ∅ / u_”Vː
-w > j / “in *díwots > Tiyaz ‘sun-god’; conditioning unknown”
-ɛː > iː
+D T / T T[+lenis] / #_
+T D / T[+fortis] T[+lenis]
+h₂ h₃ / hh h
+Ḱ / K
+V / Vː / ”U[+open]
+e / i / pretonic
+e / a / posttonic in U[+open]
+o(ː) / a(ː)
+a e / aː eː / in ”U[+closed]
+æː / eː
+ɡʷ / hʷ / medially
+hhy / “something like /ʒ/”
+h / ∅ / ”Vː_u
+h / ∅ / u_”Vː
+w / j / “in *díwots / Tiyaz ‘sun-god’; conditioning unknown”
+ɛː / iː

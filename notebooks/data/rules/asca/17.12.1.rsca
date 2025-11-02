@@ -1,3 +1,15 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 17.12.1 - Proto-Italic to Proto-Latino-Falsican
+# citation: Pogostick Man, from http://gillesquentel.org/docs/PIE_to_Italic_C.pdf and http://gillesquentel.org/docs/PIE_to_Italic_V.pdf
+	# NB: This is likely incomplete.
+	x > h
+	ɡʷ > w
+	ɡʰ > f / #_
+	ɡʰ > {d,h,ɡ}
+	{ɸ,θ} > f / #_
+	ɸ θ > b {d,b} / V_V
+	z > r
+	xʷ > f
+	xʷ > {w,ɡʷ}
+	l̥ r̥ > ol {or,er} / _#
+	m̥ n̥ > em en
+	e > {e,i}

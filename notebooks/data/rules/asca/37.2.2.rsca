@@ -1,3 +1,18 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 37.2.2 - Proto-Siouan to Dakota
+# citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme
+	ç x > x {ʃ,ʒ}
+	p > {p,b,m,w}
+	tʲ > ʃ / in ”U
+	tʲ > ʒ / else
+	s > z / U[-stress]
+	s > z / V_V
+	r > d / s_
+	tʲr > {st,ʃt}
+	r > d / x_
+	mn > mV₀nV₀ / #_
+	km > kV₀mV₀
+	w > p / _t
+	t > ∅ / _k, when medial
+	hk >tʃ
+	k > ∅ / _x”V
+	x > ʔ / ”Vk_

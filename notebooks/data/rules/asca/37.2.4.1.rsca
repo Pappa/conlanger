@@ -1,3 +1,21 @@
-@ 47.3 - List 3: Vowels
-	y > u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
-	i u > s̩ f̩
+@ 37.2.4.1 - Proto-Čiwere-Winnebago to Čiwere
+# citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme
+	p > {p,b,m,w} / _C
+	p > w / V_V
+	ɡ > ŋ
+	k > ɡ / ”V_
+	s z > θ ð
+	L > l
+	Lʲ > n / _V[+ nasal]
+	Lʲ > r / _V[- nasal]
+	t > tʃ / _ʔ
+	pr > bl
+	sr > {θl,ʃl}
+	tʲr > ʃV₀rV₀
+	kr > ɡl
+	r > l / x_
+	k > h / _m
+	k > ∅ / #t_
+	tk > ɡ / when medial
+	x > ∅ / _k
+	x > ∅ / k_”V

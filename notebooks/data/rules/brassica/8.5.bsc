@@ -1,34 +1,34 @@
 ; 8.5 - Proto-Altaic to Proto-Turkic
 ; citation: Pogostick Man, from Wikipedia contributors (2011), “Altaic languages”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Altaic_languages>, citing Sarostin, Sergei A., Anna V. Dybo, and Oleg A. Mudrak (2003), Etymological Dictionary of the Altaic Languages. Leiden: Brill Academic Publishers
 ; NB: Does not include clusters.
-a ø > {a,ʌ} a / P_Ca
-a e i u æ ø y > a {a,ʌ,e} {ɯ,i} {u,o} {ia,ja,ɛ} {ia,ja} ɯ / _Ca
-y > i / {r(ʲ),l(ʲ)}_e
-e > ja / #_C{e,i}
-ø > ʌ / P_Ce
-i > e / {r(ʲ),l(ʲ)}_e
-a {e,i} o u æ ø y > {ɛ,a} ɛ {ø,o} {y,u} {ia,ja,ɛ} {ia,ja} {y,ø} / _Ci
-æ > a / P_Co
-æ > ʌ / P_Cu
-a e i æ ø y > {o,ja,aj} {ʌ,ɜ} ɯ {ia,ja} {o,u} {u,o} / _Co
-e i æ ø y > {ɛ,a,ʌ} {ɯ,i} {e,a} {u,o} ɯ / _Cu
-{pʰ,ŋ} > {∅,j} / #_
-pʰ > p
-tʰ > d / #_(V){lʲ,r(ʲ)}
-tʰ > t
-{t,tʃ} > d / #_
-k > ɡ / _(V)r
-kʰ > k
-ʃ > tʃ / #_a
-ʃ > s
-m n(ʲ) > b j / #_
+a ø / {a,ʌ} a / P_Ca
+a e i u æ ø y / a {a,ʌ,e} {ɯ,i} {u,o} {ia,ja,ɛ} {ia,ja} ɯ / _Ca
+y / i / {r(ʲ),l(ʲ)}_e
+e / ja / #_C{e,i}
+ø / ʌ / P_Ce
+i / e / {r(ʲ),l(ʲ)}_e
+a {e,i} o u æ ø y / {ɛ,a} ɛ {ø,o} {y,u} {ia,ja,ɛ} {ia,ja} {y,ø} / _Ci
+æ / a / P_Co
+æ / ʌ / P_Cu
+a e i æ ø y / {o,ja,aj} {ʌ,ɜ} ɯ {ia,ja} {o,u} {u,o} / _Co
+e i æ ø y / {ɛ,a,ʌ} {ɯ,i} {e,a} {u,o} ɯ / _Cu
+{pʰ,ŋ} / {∅,j} / #_
+pʰ / p
+tʰ / d / #_(V){lʲ,r(ʲ)}
+tʰ / t
+{t,tʃ} / d / #_
+k / ɡ / _(V)r
+kʰ / k
+ʃ / tʃ / #_a
+ʃ / s
+m n(ʲ) / b j / #_
 ; Loss of syllable pitch
 ; The wiki at Firespeaker.org gives the following alternate list of sound changes from Proto-Altaic to (Pre-)Proto-Turkic.
 ; Pogostick Man, from Firespeaker.org wiki contributors (2014), “Turkic sound changes”. <http://wiki.firespeaker.org/Turkic_sound_changes>
-{ʒ,dʒ} > j / #_ (marked as to Pre-Proto-Turkic)
-{d,n} > j / #_ (?) (marked as to Pre-Proto-Turkic)
-{N,l,r,ʃ,z} > ∅ / #_
-p > ɸ > h / #_
-d ɡ > t k (may have been part of a more sweeping merger; Firespeaker calls it “lenis-fortis”)
-{d,n}ʲ sʲ > j ʃ / #_
-rʲ > z
+{ʒ,dʒ} / j / #_ (marked as to Pre-Proto-Turkic)
+{d,n} / j / #_ (?) (marked as to Pre-Proto-Turkic)
+{N,l,r,ʃ,z} / ∅ / #_
+p / ɸ / h / #_
+d ɡ / t k (may have been part of a more sweeping merger; Firespeaker calls it “lenis-fortis”)
+{d,n}ʲ sʲ / j ʃ / #_
+rʲ / z
