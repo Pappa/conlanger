@@ -2,8 +2,10 @@
 # citation: Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. <http://wiki.firespeaker.org/English_sound_changes>
 	ɜːɹ ɑːɹ ɔːɹ eːɹ oːɹ iːɹ uːɹ > ɜː ɑː ɔː ɛə ɔə ɪə ʊə / syllable-finally
 	ɑ > ɒ
-	æ > æː > ɑː / _{F[-voiced],N[-voiced]}
-	ɒ > ɒː > ɔː / _F[-voiced]
+	æ > æː / _{F[-voiced],N[-voiced]}
+	æː > ɑː / _{F[-voiced],N[-voiced]}
+	ɒ > ɒː / _F[-voiced]
+	ɒː > ɔː / _F[-voiced]
 	ʍ > w
 	l > ɫ / “in coda”
 	oʊ > əʊ

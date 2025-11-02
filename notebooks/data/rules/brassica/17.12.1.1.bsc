@@ -5,28 +5,37 @@ e / o / _ɫ
 o / u / _{mb,mk,ɫ}
 o / e / w_{r,s,t}
 oː / uː / _r
-aj / ai / eː (in rustic dialects)
-aj / ai / ae
-oj / oi / oe / uː
+aj / ai
+ai / eː (in rustic dialects)
+aj / ai
+ai / ae
+oj / oi
+oi / oe
+oe / uː
 aw / oː (in rustic dialects)
 aw / au
-{ew,ow} / ou / uː
+{ew,ow} / ou
+ou / uː
 V / i / %(C)(C)_% when unstressed
 V / o / %(C)(C)V_% when unstressed
 V / e / %(C)(C)_%r when unstressed (with some exceptions)
 V / {i,u} / %(C)(C)_%P when unstressed
 a o / e u / %(C)(C)_C(C)% when unstressed
-a / e / i / %(C)(C)_ŋ when unstressed
-a / e / u / %(C)(C)_ɫ when unstressed
+a / e / %(C)(C)_ŋ when unstressed
+e / i / %(C)(C)_ŋ when unstressed
+a / e / %(C)(C)_ŋ when unstressed
 e / u / %(C)(C)_ɫ when unstressed
-ai / ei / iː / %(C)(C)_ when unstressed
+e / u / %(C)(C)_ɫ when unstressed
+ai / ei
+ei / iː / %(C)(C)_ when unstressed
 ei oi ou / iː eː uː / %(C)(C)_ when unstressed
 {i,o} / e / _#
 {i,e} / ∅ / _#
 a / e / _C(C)#
 e / i / _{s,t}#
 o / u / _C(C)# ! {u,w}_
-{ai,ei,oi} / ei / iː / _(C)(C)#
+{ai,ei,oi} / ei / _(C)(C)#
+ei / iː / _(C)(C)#
 Vː / V[-long] / _{m,(n)t,l,r}#
 Vː / V[-long] / _#
 j / i / C_
@@ -62,9 +71,12 @@ w / ∅ / ɡV_{l,r}
 ɡʷ / v
 ɡʷʱ / f / _r
 ɡʷʱ / v / V_V
-s / z / r / V_V
-s / θ / f / #_r
-s / θ / b / _r
+s / z / V_V
+z / r / V_V
+s / θ / #_r
+θ / f / #_r
+s / θ / _r
+θ / b / _r
 s / z / _C[+voiced]
 V / Vː / _zC[+voiced]
 z / ∅ / _C[+voiced]
@@ -83,16 +95,20 @@ S / f / _f
 mː / n / {W,Vː}_
 {d,n,r} / l / _l
 n / r / _r
-s / z / l / l_
-s / z / r / r_
+s / z / l_
+z / l / l_
+s / z / r_
+z / r / r_
 n / l / l_
 V / Vː / _{t,d}t
-{t,d}t / tst / sː
+{t,d}t / tst
+tst / sː
 ∅ / t / sː_r
 ∅ / p / m_{s,t,l}
 sː / s / _#
 sː / s / {W,Vː}_
-l / r / _Vl
+l / r
+r / _Vl
 l / r / lV_ “(in suffixes with l if root already has l)”
 r…r / r…∅
 {n,d}…r / r…r

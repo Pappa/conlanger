@@ -12,7 +12,8 @@
 	{t,dʱ} > tʲ / _E(ː)
 	{t,dʱ} > ts / _y
 	D(ʱ) > T
-	n̩ > ə > ∅ / C_#
+	n̩ > ə / C_#
+	ə > ∅ / C_#
 	R H > uR ɨ / C_{C,#} when syllabic
 	R Hn̩ > ɛR ɨn / #_C
 	H > ɛ / _R, when R = syllabic
@@ -27,7 +28,8 @@
 	õ oː > o a
 	u > wə / #_
 	u > {ə,u}
-	uh₁ u{h₂,h₃} > uː > wə wɨ
+	uh₁ u{h₂,h₃} > uː
+	uː > wə wɨ
 	i > ə / {P,K(ʷ),s}_
 	Ci > Cʲə
 	s > sʲ / _tʲ

@@ -2,22 +2,24 @@
 ; citation: ? and Serafı́n, the former citing Penny, Ralph (2002), A History of the Spanish Language, 2nd Ed. Cambridge University Press; and Lipski, John (1994), Latin American Spanish. Longman Pub Group.
 b / β / V_V
 {tj,kj} {tːj,kːj,ptj,ktj,skj} / ts tːs
-k ɡ / tʃ dʒ / ts dz / _{j,i,e,ɛ}
+k ɡ / tʃ dʒ / _{j,i,e,ɛ}
+tʃ dʒ / ts dz / _{j,i,e,ɛ}
 {t,k} / ∅ / _#
 V / ∅ / C_{r,l} when unstressed and not at a word boundary
 V / ∅ / {r,l}_C when unstressed and not at a word boundary
 V / ∅ / C_s when unstressed and not at a word boundary
 V / ∅ / s_C when unstressed and not at a word boundary
-{k,ɡ} / x / j / _{t,s,n,l}
+{k,ɡ} / x / _{t,s,n,l}
+x / j / _{t,s,n,l}
 pt {ɾs,ps} / tː sː
 ns / s (with a few exceptions)
 mb mn / mː nː
 {jl,lj} {jn,nj} {jɡ,ɡj} / ʎ ɲ ʝː
 bj / ʝː
 Raising of e {ɛ,a} ɔ o / i e o u; near j, in particular environments:
-— e / i / _Cj ! C = p
-— ɛ ɔ u / e o u / _(C)j
-— a / e / _j
+e / i / _Cj ! C = p
+ɛ ɔ u / e o u / _(C)j
+a / e / _j
 oj / we
 ɛ ɔ / je we
 ”je.o ”je.a / {”i.o,”jo} ”i.a
@@ -43,25 +45,26 @@ d ɡ / ð ɣ / V_V
 ; /ʝ/ “gains a fortified [dʒ] allophone” by analogy with the voiced-stop/voiced-fricative allophony in Spanish
 “Complex resolution of many consonant clusters created with the previous loss of unstressed vowels”:
 ; “With deletion or assimilation or both”:
-— t / ∅ / _m
+t / ∅ / _m
 — d / ∅ / _n
 — mn / ɲ
-— tst dzd / ts dz
-— Vdz / ∅ / {nts,ndz,rdz_
-— ndzVɡ / nɡ
-— mpVt skVp spVt stVk / nt sp st sk
+tst dzd / ts dz
+Vdz / ∅ / {nts,ndz,rdz_
+ndzVɡ / nɡ
+mpVt skVp spVt stVk / nt sp st sk
 ; “With dissimilation”:
-— n / {l,ɾ} / _m
-— n / {ɾ,l} / nɡ_
-— n / ɾ / nd_
+n / {l,ɾ} / _m
+n / {ɾ,l} / nɡ_
+n / ɾ / nd_
 ; “With metathesis”:
-— dn dl / nd ld
+dn dl / nd ld
 — ml nɾ / lm ɾn
-— βɣ / wɣ / ɣw
+βɣ / wɣ
+wɣ / ɣw
 ; “With epenthesis”:
-— ∅ / b / m_ɾ
-— mn ml / mbɾ mbl
-— ∅ / d / n_ɾ
+∅ / b / m_ɾ
+mn ml / mbɾ mbl
+∅ / d / n_ɾ
 t / ∅ / _#
 /b/ [b], /β/ [b~β] / /b/ [b~β]
 b / u / _C
@@ -70,7 +73,7 @@ ts dz / s̪ z̪
 z̪ z ʒ / s̪ s ʃ
 ʃ / {x,χ}
 ; “None of the following sound changes is universal to all dialects. If the same sound appears twice or more with an apparent contradiction, this accounts for different dialects. In all cases there are dialects that conserve the original sound at the beginning of the 21st century, with the exception of the old phonemic [s̪ - s] distinction (though kept in another way today, as [θ - s] in many parts of Spain).”
-h / ∅ “(just a reminder: from the f / h change above)”
+h / ∅
 x / h
 /dɾ/ [ðɾ] / ɾ / V_V
 ʎ / /ʝ/ (“merged with”)

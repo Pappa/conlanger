@@ -7,7 +7,8 @@
 	# lenis > voiced fricative (> approximant, at least by the 12th Century?) / unstressed
 	# lenis (voiced) > fricative / {l,r,s̺,s̻,V}_{l,r,s̺,s̻,V}
 	# — At least one reconstruction seems to indicate *s and *ś, which may have been an affricate and /s/. Pretty reliably, *-s tends to turn into -ts̺, and *-ś > -ts̻, probably after the below-mentioned affrication. Beyond that, it’s messy. *-tso seems to have become -tʃo/-tʃu, though.
-	Sʰ > F > h (> ∅) / #_
+	Sʰ > F
+	F > h (> ∅) / #_
 	S > S[+ voiced] / #_
 	# “[T]wo similar vocalic segments” usually contract, though some dialects (especially Biscayan) seem not to exhibit this
 	Vn > Ṽ / _# (seems to have been reverted in most dialects, except for Souletin)
@@ -17,7 +18,8 @@
 	n >m / u_V
 	n > ɲ / {i,ɪ}_V
 	n > h̃ / V_V
-	nb > mː > m
+	nb > mː
+	mː > m
 	N > [+ same POA] / _C
 	b > m / _VN
 	{ɾ,r} > ∅ / #_
@@ -25,9 +27,11 @@
 	ɾ > r / _C
 	r > ɾ / _#
 	C > ∅ / r_
-	Cr > Cɾ > CVɾ (perhaps not a sound change per se, just a historical tendency)
+	Cr > Cɾ
+	Cɾ > CVɾ (perhaps not a sound change per se, just a historical tendency)
 	ɾ > ∅ / V_V (Souletin)
-	*L (fortis) > l (or *lh > lː, which then lost gemination?)
+	*L (fortis) > l (or *lh
+	l (or *lh > lː, which then lost gemination?)
 	ð > some sort of tap distinct from ɾ (Biscayan, Guipuscoan, High Navarrese)
 	b > ∅ / #_B (a few exceptions, mostly before _u)
 	F[+ voiced] > ∅ / V_V (sometimes, usually involving “compound surnames”?)
@@ -74,19 +78,29 @@
 	d ð > ɟ ʝ / {ʎ,ɲ}_ (Guipuscoan, High Navarrese)
 	{ɡ,ɣ} > {ɟ,ʝ} / {E,j}_
 	ɡ > dʒ / {E,j}_ (“in some Biscayan areas”)
-	j > ʝ > j (northern High Navarrese, most Labourd, some Biscayan)
-	j > ʝ > ʒ (Souletin, sporadic in northwestern Biscayan)
+	j > ʝ
+	ʝ > j (northern High Navarrese, most Labourd, some Biscayan)
+	j > ʝ
+	ʝ > ʒ (Souletin, sporadic in northwestern Biscayan)
 	j > ʝ (some Biscayan and Navarrese)
-	j > ʝ > ɟ (typical of Low Navarrese)
-	j > ʝ > ʒ > dʒ (northwestern Biscayan)
-	j > ʝ > ʒ > ʃ (Aescoan, Salazarese, Roncalese, most southern High Navarrese)
-	j > ʝ > ʒ > ʃ > x (Guipuscoan, northwestern High Navarrese, eastern Biscayan)
+	j > ʝ
+	ʝ > ɟ (typical of Low Navarrese)
+	j > ʝ
+	ʝ > ʒ
+	ʒ > dʒ (northwestern Biscayan)
+	j > ʝ
+	ʝ > ʒ
+	ʒ > ʃ (Aescoan, Salazarese, Roncalese, most southern High Navarrese)
+	j > ʝ
+	ʝ > ʒ
+	ʒ > ʃ
+	ʃ > x (Guipuscoan, northwestern High Navarrese, eastern Biscayan)
 	j > χ (probably through intermediates like above, Wikipedia doesn’t go into particulars of how and where)
 	ʎ ɲ > jl jn (“common in Low Navarrese, Labourdin, and is even regular in the High Navarrese of Sakana”)
 	# Vowel syncope:
-	— V > ∅ / S_{ɾ,l} (more common in Roncalese and Salazarese, but also in Navarrese and Aescoan?)
-	— V > ∅ / C[+ sibilant]_ɾ (Roncalese and Salazarese)
-	— V > ∅ / {O,ɾ,r}_O (Roncalese, Salazarese, Navarrese, Aescoan)
+	V > ∅ / S_{ɾ,l} (more common in Roncalese and Salazarese, but also in Navarrese and Aescoan?)
+	V > ∅ / C[+ sibilant]_ɾ (Roncalese and Salazarese)
+	V > ∅ / {O,ɾ,r}_O (Roncalese, Salazarese, Navarrese, Aescoan)
 	n[+ fortis] > n
 	# Something about final devoicing of stops and initial stops losing voicing as a result of vowel deletion
 	e > ∅ / #Ur_
@@ -100,7 +114,8 @@ Some vowel metathesis only when vowels are matched in height
 	# Something about diphthongs occurring where intervocalic /n/ was lost
 	VɪC > VCʲ
 	# Glide dissimilation if the homorganic vowel was in the following syllable, but usually the glide just deleted
-	aɪ > eɪ > e (rare)
+	aɪ > eɪ
+	eɪ > e (rare)
 	aʊ > aɪ / !_{ɾ,r,s̺,s̻} (Souletin, Roncalese)
 	eʊ > {e,eɡu}
 	eɪ > e / #_

@@ -2,40 +2,41 @@
 # citation: pharazon
 	# NB: The vowels here marked 〈ó〉 and 〈ò〉 seem to have had some sort of open-close distinction similar to /o ɔ/.
 	# Vulgar Latin:
-	— h > ∅
-	— V₀V₀ > V₀ː
-	— n > ∅ / _{f,v,s}
-	— r > s / _s
-	— {m,n} > ∅ / _# in polysyllables
-	— m > n / _#
-	— u > ∅ / CC_V
-	— w > ɡu / “from Germanic loanwords”
-	— V > ”V / ”VSr_
-	— V > ”V / _C*”{i,e}V
-	— {i,e} > j / _V
+	h > ∅
+	V₀V₀ > V₀ː
+	n > ∅ / _{f,v,s}
+	r > s / _s
+	{m,n} > ∅ / _# in polysyllables
+	m > n / _#
+	u > ∅ / CC_V
+	w > ɡu / “from Germanic loanwords”
+	V > ”V / ”VSr_
+	V > ”V / _C*”{i,e}V
+	{i,e} > j / _V
 	# Stressed vowels:
-	— aː > a
-	— (a)e > è
-	— {eː,i,oe} > é
-	— iː oː > i ó
-	— o > ò
-	— u > ó / !_iː
-	— uː > u
+	aː > a
+	(a)e > è
+	{eː,i,oe} > é
+	iː oː > i ó
+	o > ò
+	u > ó / !_iː
+	uː > u
 	# Initial vowels (first vowel of a word):
-	— aː > a
-	— {e(ː),i,ae,oe} > e
-	— iː > i
-	— {o(ː),u} > o
+	aː > a
+	{e(ː),i,ae,oe} > e
+	iː > i
+	{o(ː),u} > o
 	# Final vowels:
-	— aː > a
-	— {e(ː),i,ae,oe} > e
-	— iː oː > i o
-	— u(ː) > o / except _V (?)
+	aː > a
+	{e(ː),i,ae,oe} > e
+	iː oː > i o
+	u(ː) > o / except _V (?)
 	k ɡ > tj dj / _E
 	è > iɛ / in U[+open]
 	è > iɛ / _C#
 	è > ɛ / in U[+closed]
-	ò > uo > uɛ / in U[+open] ! _N
+	ò > uo
+	uo > uɛ / in U[+open] ! _N
 	ò > ɔ / in U[+closed]
 	dj > dʒ / r_
 	d > ∅ / _j
@@ -71,11 +72,11 @@
 	kʷ > {v,u} / V_E
 	kʷ > j{v,u} / V_a
 	# “[N]ote that the [following] clusters are the only case where a consonant does not receive intervocalic treatment before /j/”:
-	— (k)kj > ts
-	— ɡ > ∅ / _j
-	— pj > tʃ
-	— {b,v}j > dʒ
-	— m{ɲ,j} > ndʒ
+	(k)kj > ts
+	ɡ > ∅ / _j
+	pj > tʃ
+	{b,v}j > dʒ
+	m{ɲ,j} > ndʒ
 	V”e > ”Vi
 	V₀V₀ > V₀
 	∅ > e / #_sC
@@ -93,7 +94,8 @@
 	(ɛ)au > ɔ
 	é > ɛi / in U[+open]
 	é > ɛ / in U[+closed]
-	ó > ou > ɛu / in U[+open]
+	ó > ou
+	ou > ɛu / in U[+open]
 	ó > ɔ / _N
 	ó > ou / in U[+closed]
 	e > ə / #(C…)_(%…)” in U[+open]
@@ -119,7 +121,8 @@
 	ou ɛu u uɛi > u œ y yi
 	{ei,ɔi} > oi / C[- nasal]
 	ɔ > u / _”V
-	V[-high] > ə > ∅ / _V “(except that a is kept before o)”
+	V[-high] > ə
+	ə > ∅ / _V “(except that a is kept before o)”
 	ɲ > in / _{C,#}
 	# V{n,m} / V[+ nasal] / _{C,#}
 	ɛ̃ > ã
@@ -131,6 +134,7 @@
 	{n,m} > ∅ / C_#
 	j > ∅ / {ʃ,ʒ}_V[- nasal]
 	ʎ r > j ʁ
-	oi > wɛ > wa
+	oi > wɛ
+	wɛ > wa
 	oı̃ > wɛ̃
 	# “([pharazon has] omitted the loss of ə in various contexts, since it often resurfaces)”

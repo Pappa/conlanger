@@ -1,6 +1,6 @@
 index,name,rule_count
 6,Afro-Asiatic,0
-6.1,Proto-Afro-Asiatic to Proto-Omotic,11
+6.1,Proto-Afro-Asiatic to Proto-Omotic,12
 6.1.1,Proto-Omotic to North Omotic,18
 6.1.1.1,North Omotic to Bench,9
 6.1.1.2,North Omotic to Dizin,13
@@ -23,15 +23,15 @@ index,name,rule_count
 6.2.2,Proto-Erythrean to Proto-North Erythrean,5
 6.2.2.1,Proto-North Erythrean to Proto-Chadic,4
 6.2.2.1.1,Proto-North Erythrean to Proto-Boreafrasian,6
-6.2.2.1.2,Proto-Boreafrasian to Egypto-Berber,34
+6.2.2.1.2,Proto-Boreafrasian to Egypto-Berber,35
 6.2.2.1.3,Ancient Egyptian to Coptic,8
 6.2.2.1.4,Proto-Boreafrasian to Proto-Semitic,8
-6.2.2.1.5,Proto-Semitic to Classical Arabic,9
+6.2.2.1.5,Proto-Semitic to Classical Arabic,11
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,38
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,20
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,6
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,6
-6.2.2.1.10,Classical Arabic to Hassāniyya Arabic,10
+6.2.2.1.10,Classical Arabic to Hassāniyya Arabic,11
 6.2.2.1.11,Classical Arabic to Iraqi Arabic,4
 6.2.2.1.12,Classical Arabic to Eastern Libyan Arabic,3
 6.2.2.1.13,Classical Arabic to Western Libyan Arabic,4
@@ -54,9 +54,9 @@ index,name,rule_count
 7.8,Proto-Algonquian to Plains Cree,17
 7.9,Proto-Algonquian to Swampy Cree,18
 7.10,Proto-Algonquian to Woods Cree,16
-7.11,Proto-Algonquian to Munsee Delaware,33
+7.11,Proto-Algonquian to Munsee Delaware,35
 7.12,Proto-Algonquian to Menominee,28
-7.13,Proto-Algonquian to Miami-Illinois,19
+7.13,Proto-Algonquian to Miami-Illinois,22
 7.14,Proto-Algonquian to Mi’kmaq,17
 7.15,Proto-Algonquian to Ojibwe,16
 7.16,Proto-Algonquian to Piscataway,4
@@ -67,21 +67,21 @@ index,name,rule_count
 8.2,Proto-Altaic to Proto-Korean,14
 8.3,Proto-Altaic to Proto-Mongolic,45
 8.4,Proto-Altaic to Proto-Tungusic,22
-8.5,Proto-Altaic to Proto-Turkic,28
-8.5.1,Proto-Turkic to Proto-Kypchak,24
+8.5,Proto-Altaic to Proto-Turkic,29
+8.5.1,Proto-Turkic to Proto-Kypchak,25
 8.5.1.1,Proto-Kypchak to Kazakh,4
 8.5.1.2,Proto-Kypchak to Kyrgyz,11
-8.5.2,Proto-Turkic to Sakha,9
+8.5.2,Proto-Turkic to Sakha,10
 9,Austroasiatic,0
 9.1,Vietic,0
 9.1.1,Proto-Vietic to Muong Khen,13
 9.1.2,Proto-Vietic to Middle Vietnamese,16
-9.1.2.1,Middle Vietnamese to Hanoi Vietnamese,10
+9.1.2.1,Middle Vietnamese to Hanoi Vietnamese,11
 9.1.2.2,Middle Vietnamese to Saigon Vietnamese,18
 10,Austronesian,0
 10.1,Proto-Austronesian to Proto-Malayo-Polynesian,2
 10.1.1,Proto-Malayo-Polynesian to Proto-Bali-Sasak-Sumbawan,11
-10.1.1.1,Proto-Bali-Sasak-Sumbawan to Balinese,5
+10.1.1.1,Proto-Bali-Sasak-Sumbawan to Balinese,6
 10.1.1.2,Proto-Bali-Sasak-Sumbawan to Sasak,7
 10.1.1.3,Proto-Bali-Sasak-Sumbawan to Sumbawan,10
 10.1.1.4,Polynesian,0
@@ -137,11 +137,11 @@ index,name,rule_count
 10.3.6.2,Proto-Reefs/Santa Cruz to Nagu,5
 10.3.6.3,Proto-Reefs/Santa Cruz to Natügu,7
 10.3.7,Proto-Oceanic to Shark Bay,19
-10.3.8,Proto-Oceanic to Tolomako,11
+10.3.8,Proto-Oceanic to Tolomako,12
 10.3.9,Proto-Oceanic to Proto-Utupua,3
 10.3.9.1,Proto-Utupua to Asuboa,10
 10.3.9.2,Proto-Utupua to Nebao,9
-10.3.9.3,Proto-Utupua to Tanibili,10
+10.3.9.3,Proto-Utupua to Tanibili,11
 10.3.10,Proto-Oceanic to Proto-Vanikoro,5
 10.3.10.1,Proto-Vanikoro to Buma,7
 10.3.10.2,Proto-Vanikoro to Tanema,7
@@ -223,12 +223,12 @@ index,name,rule_count
 15.1,Proto-Eskimo-Aleut to Proto-Aleut,18
 15.2,Proto-Eskimo-Aleut to Proto-Eskimo,3
 15.2.1,Proto-Eskimo to Barrow Iñupiaq,18
-15.2.2,Proto-Eskimo to Greenlandic Iñupiaq,19
+15.2.2,Proto-Eskimo to Greenlandic Iñupiaq,21
 15.2.3,Proto-Eskimo to Mackenzie Iñupiaq,13
 15.2.4,Proto-Eskimo to Wales Iñupiaq,22
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,23
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,25
-15.2.7,Proto-Eskimo to Siberian Yup’ik,24
+15.2.7,Proto-Eskimo to Siberian Yup’ik,25
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,25
 16,Extended West Papuan,0
 16.1,Tabla-Sentani,0
@@ -248,17 +248,17 @@ index,name,rule_count
 17.2.4,Common Anatolian to Lydian,23
 17.2.5,Common Anatolian to Palaic,16
 17.3,Armenian,0
-17.3.1,Proto-Indo-European to Artsakh Armenian,32
-17.3.2,Proto-Indo-European to Erevan Armenian,32
-17.3.3,Proto-Indo-European to Istanbul Armenian,32
-17.3.4,Proto-Indo-European to Kharpert Armenian,32
-17.3.5,Proto-Indo-European to Sebastia Armenian,31
-17.3.6,Proto-Indo-European to Southeast Armenian,34
-17.3.7,Proto-Indo-European to Southwest Armenian,33
+17.3.1,Proto-Indo-European to Artsakh Armenian,33
+17.3.2,Proto-Indo-European to Erevan Armenian,33
+17.3.3,Proto-Indo-European to Istanbul Armenian,33
+17.3.4,Proto-Indo-European to Kharpert Armenian,33
+17.3.5,Proto-Indo-European to Sebastia Armenian,32
+17.3.6,Proto-Indo-European to Southeast Armenian,35
+17.3.7,Proto-Indo-European to Southwest Armenian,34
 17.4,Avestan,0
 17.4.1,Proto-Indo-European to Avestan,16
 17.5,Proto-Indo-European to Proto-Celtic,25
-17.5.1,Proto-Indo-European to Old Irish,60
+17.5.1,Proto-Indo-European to Old Irish,61
 17.5.2,Proto-Celtic to Middle Welsh,38
 17.6,Proto-Indo-European to Dacian,10
 17.7,Proto-Indo-European to Common Germanic,13
@@ -266,20 +266,20 @@ index,name,rule_count
 17.7.2,Common Germanic to West Germanic,5
 17.7.2.1,West Germanic to Anglo-Frisian,14
 17.7.2.1.1,Anglo-Frisian to Old English,4
-17.7.2.1.2,Old English to Kentish Middle English,17
-17.7.2.1.3,Old English to Midlands Middle English,18
+17.7.2.1.2,Old English to Kentish Middle English,19
+17.7.2.1.3,Old English to Midlands Middle English,21
 17.7.2.1.4,Midlands Middle English to Early Modern English,12
-17.7.2.1.5,Early Modern English to American English,17
-17.7.2.1.6,Early Modern English to Australian English,30
-17.7.2.1.7,Early Modern English to British English,7
-17.7.2.1.8,Old English to Northern Middle English,20
-17.7.2.1.9,Early Northern Middle English to Scots,25
-17.7.2.1.10,Old English to Scots,52
+17.7.2.1.5,Early Modern English to American English,18
+17.7.2.1.6,Early Modern English to Australian English,34
+17.7.2.1.7,Early Modern English to British English,9
+17.7.2.1.8,Old English to Northern Middle English,22
+17.7.2.1.9,Early Northern Middle English to Scots,27
+17.7.2.1.10,Old English to Scots,55
 17.7.2.1.11,Scots to Falkirk Scots,10
-17.7.2.1.12,Old English to Southern Middle English,20
+17.7.2.1.12,Old English to Southern Middle English,22
 17.7.2.1.13,Middle English to Yola,6
 17.7.2.1.14,Anglo-Frisian to Old Frisian,4
-17.7.2.1.15,North Frisian Lenition,1
+17.7.2.1.15,North Frisian Lenition,2
 17.7.2.2,West Germanic to Old Low Franconian,14
 17.7.2.2.1,Old Low Franconian to Middle Dutch,12
 17.7.2.2.2,Middle Dutch to Modern Dutch,5
@@ -287,7 +287,7 @@ index,name,rule_count
 17.7.2.2.4,Belgian and Netherlandish Dutch Monophthongization,1
 17.7.2.3,Middle High German to Standard German,27
 17.7.2.4,High German Cosonant Shift and Umlaut,13
-17.7.2.5,West Germanic to Old Low German,13
+17.7.2.5,West Germanic to Old Low German,14
 17.7.3,Common Germanic to Proto-Norse,19
 17.7.3.1,Proto-Norse to Old Norse,159
 17.7.3.1.1,Old Norse to Early Icelandic,52
@@ -296,44 +296,44 @@ index,name,rule_count
 17.7.4,Common Germanic to Vandalic,9
 17.8,Greek,0
 17.8.1,Proto-Indo-European to Aeolian Greek,14
-17.8.2,Proto-Indo-European to Attic Greek,43
+17.8.2,Proto-Indo-European to Attic Greek,45
 17.8.3,Proto-Indo-European to Boeotian Greek,16
 17.8.4,Proto-Indo-European to Coan Greek,15
 17.8.5,Proto-Indo-European to Cretan Greek,14
 17.8.6,Proto-Indo-European to Doric Greek,17
 17.8.7,Proto-Indo-European to Elian Greek,15
-17.8.8,Proto-Indo-European to Ionic Greek,31
+17.8.8,Proto-Indo-European to Ionic Greek,33
 17.8.9,Proto-Indo-European to Laconian Greek,15
 17.8.10,Proto-Indo-European to Mycenaean Greek,12
 17.9,Proto-Indo-European to Hittite,19
 17.10,Proto-Indo-European to Proto-Indo-Iranian,20
-17.10.1,Proto-Indo-Iranian to Proto-Indo-Aryan,25
-17.10.1.1,Proto-Indo-Aryan to Central Middle Indo-Aryan,17
-17.10.1.2,Proto-Indo-Aryan to Eastern Middle Indo-Aryan,19
-17.10.1.3,Proto-Indo-Aryan to Northwestern Middle Indo-Aryan,18
-17.10.1.4,Proto-Indo-Aryan to Western Middle Indo-Aryan,17
+17.10.1,Proto-Indo-Iranian to Proto-Indo-Aryan,26
+17.10.1.1,Proto-Indo-Aryan to Central Middle Indo-Aryan,18
+17.10.1.2,Proto-Indo-Aryan to Eastern Middle Indo-Aryan,20
+17.10.1.3,Proto-Indo-Aryan to Northwestern Middle Indo-Aryan,19
+17.10.1.4,Proto-Indo-Aryan to Western Middle Indo-Aryan,18
 17.10.1.5,Proto-Indo-Aryan to Vedic Sanskrit,10
 17.10.1.5.1,Vedic Sanskrit to Classical Sanskrit,4
 17.11,Proto-Indo-European to Proto-Slavic,28
-17.11.1,Proto-Slavic to Polish,140
+17.11.1,Proto-Slavic to Polish,146
 17.11.2,Proto-Slavic to Old Russian,12
-17.12,Proto-Indo-European to Proto-Italic,6
+17.12,Proto-Indo-European to Proto-Italic,7
 17.12.1,Proto-Italic to Proto-Latino-Falsican,12
-17.12.1.1,Proto-Indo-European to Latin,101
-17.12.1.1.1,Classical Latin vs. Vulgar Latin,16
-17.12.1.1.2,Latin to Catalan,105
-17.12.1.1.3,Latin to French,125
+17.12.1.1,Proto-Indo-European to Latin,117
+17.12.1.1.1,Classical Latin vs. Vulgar Latin,15
+17.12.1.1.2,Latin to Catalan,115
+17.12.1.1.3,Latin to French,129
 17.12.1.1.4,Vulgar Latin to Italian,23
-17.12.1.1.5,Latin to Portuguese,111
-17.12.1.1.6,Vulgar Latin to Old Provençal,219
+17.12.1.1.5,Latin to Portuguese,126
+17.12.1.1.6,Vulgar Latin to Old Provençal,263
 17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,7
-17.12.1.1.8,Latin to Romanian,78
-17.12.1.1.9,Latin to Sardinian,35
-17.12.1.1.10,Vulgar Latin to Spanish,87
+17.12.1.1.8,Latin to Romanian,79
+17.12.1.1.9,Latin to Sardinian,36
+17.12.1.1.10,Vulgar Latin to Spanish,90
 17.12.2,Proto-Italic to Proto-Sibellian,5
 17.12.2.1,Proto-Sibellian to Oscan,1
 17.12.2.2,Proto-Sibellian to Umbrian,1
-17.13,Proto-Indo-European to Proto-Tocharian,39
+17.13,Proto-Indo-European to Proto-Tocharian,41
 17.13.1,Proto-Tocharian to Tocharian A,13
 17.13.2,Proto-Tocharian to Tocharian B,9
 18,Je-Tupı́-Carib,0
@@ -397,7 +397,7 @@ index,name,rule_count
 21.2.2,Proto-Tariku to Proto-East Tariku,4
 21.2.2.1,Proto-East Tariku to Biritai,7
 21.2.2.2,Proto-East Tariku to Doutai,6
-21.2.2.3,Proto-East Tariku to Eritai,6
+21.2.2.3,Proto-East Tariku to Eritai,7
 21.2.2.4,Proto-East Tariku to Kai,5
 21.2.2.5,Proto-East Tariku to Obokuitai,5
 21.2.2.6,Proto-East Tariku to Sikaritai,6
@@ -483,7 +483,7 @@ index,name,rule_count
 28.2.2,Proto-Western Muskogean to Choctaw,5
 29,Na-Dene,0
 29.1,Proto-Na-Dene to Proto-Athabaskan-Eyak,2
-29.1.1,Proto-Athabaskan-Eyak to Proto-Athabaskan,7
+29.1.1,Proto-Athabaskan-Eyak to Proto-Athabaskan,8
 29.1.1.1,Athabaskan,0
 29.1.1.1.1,Proto-Athabaskan to Ahtna,5
 29.1.1.1.2,Proto-Athabaskan to Babine,3
@@ -499,7 +499,7 @@ index,name,rule_count
 29.1.1.1.12,Proto-Athabaskan to Holikachuk,8
 29.1.1.1.13,Proto-Athabaskan to Hupa,6
 29.1.1.1.14,Proto-Athabaskan to Lower Koyukon,6
-29.1.1.1.15,Proto-Athabaskan to Upper Koyukon,7
+29.1.1.1.15,Proto-Athabaskan to Upper Koyukon,8
 29.1.1.1.16,Proto-Athabaskan to Upper Kuskokwim Kolchan,3
 29.1.1.1.17,Proto-Athabaskan to Sarcee,4
 29.1.1.1.18,Proto-Athabaskan to Sekani,5
@@ -527,12 +527,12 @@ index,name,rule_count
 29.1.1.1.40,Proto-Athabaskan to Tsetsaut,4
 29.1.1.1.41,Proto-Athabaskan to Northern Tutchone,5
 29.1.1.1.42,Proto-Athabaskan to Southern Tutchone,7
-29.1.2,Proto-Athabaskan-Eyak to Eyak,6
+29.1.2,Proto-Athabaskan-Eyak to Eyak,7
 29.2,Proto-Na-Dene to Tlingit,13
 30,Niger-Congo,0
 30.1,Proto-Potou-Akanic-Bantu to Proto-Bantu,14
 30.1.1,Pre-Proto-Bantu to Proto-Bantu,3
-30.1.1.1,Proto-Bantu to Sebirwa,9
+30.1.1.1,Proto-Bantu to Sebirwa,10
 30.1.1.2,Proto-Bantu to Tswana,8
 30.1.1.3,Sam,0
 30.1.1.3.1,Proto-Sam to Amu,2
@@ -634,15 +634,15 @@ index,name,rule_count
 35.3,Shuswap to Eastern Shuswap Nasal-to-Vowel Shifts,4
 35.4,Shuswap to Spokane-Kalispel Shuswap Nasal-to-Vowel Shifts,2
 36,Sino-Tibetan,0
-36.1,Proto-Sino-Tibetan to Middle Chinese,12
+36.1,Proto-Sino-Tibetan to Middle Chinese,13
 36.1.1,Late Middle Chinese to Old Mandarin,41
 36.1.1.1,Old Mandarin to Modern Pekingese,14
-36.2,Sin Sukchu to Guānhuà,76
+36.2,Sin Sukchu to Guānhuà,79
 36.3,Tibeto-Burman,0
 36.3.1,Qiangic,0
 36.3.1.1,Proto-Naish to Laze,19
 36.3.1.2,Proto-Naish to Mosuo (Na),17
-36.3.1.3,Proto-Naish to Naxi,20
+36.3.1.3,Proto-Naish to Naxi,23
 36.3.2,rGyalrongic,0
 36.3.2.1,Proto-rGyalrongic to bTshan La,26
 36.3.2.1.1,Proto-rGyalrongic to Chos Kia,37
@@ -708,7 +708,7 @@ index,name,rule_count
 38.1.1.3.3,Central Tai to Tay,7
 38.1.1.3.4,Central Tai to Tho,4
 38.1.1.3.5,Central Tai to T’ien-Pao,8
-38.1.1.4,Proto-Tai to North Tai,26
+38.1.1.4,Proto-Tai to North Tai,28
 38.1.1.4.1,North Tai to Dioi,6
 38.1.1.4.2,North Tai to Po-Ai,42
 38.1.1.4.3,North Tai to Wu-Ming,5
@@ -757,9 +757,9 @@ index,name,rule_count
 41.11,Proto-Trans New Guinea to Middle Wahgi,3
 42,Uralic,0
 42.1,Proto-Uralic to Pre-Finnic,10
-42.1.1,Pre-Finnic to Proto-Finnic,47
+42.1.1,Pre-Finnic to Proto-Finnic,50
 42.1.1.1,Proto-Finnic to Proto-Finnish,24
-42.1.1.1.1,Proto-Finnish to Standard Finnish,36
+42.1.1.1.1,Proto-Finnish to Standard Finnish,41
 42.1.1.1.2,Standard Finnish to Modern Standard Finnish,4
 42.1.2,Proto-Finnic to Livonian,36
 43,Uto-Aztecan,0
@@ -773,8 +773,8 @@ index,name,rule_count
 43.5.1.2,Proto-Mono-Kawaiisu to Mono,7
 43.6,Proto-Uto-Aztecan to Tohono O’odham,16
 44,Vasconic,0
-44.1,Proto-Vasconic to Aquitanian,10
-44.2,Proto-Basque to Basque,104
+44.1,Proto-Vasconic to Aquitanian,12
+44.2,Proto-Basque to Basque,119
 45,Yuman-Cochimı́,0
 45.1,Pai,0
 45.1.1,Proto-Pai to Chapai,11
@@ -785,22 +785,22 @@ index,name,rule_count
 46.2,California Vowel Shift (English),8
 46.3,Belgian and Netherlandish Dutch Monophthongization,1
 46.4,Polder Dutch Vowel Shift,2
-46.5,Old English-to-Scots Vowel Shifts,15
+46.5,Old English-to-Scots Vowel Shifts,16
 46.6,Great Ngamo Tone Shift,0
-46.7,Great Vowel Shift (English),4
+46.7,Great Vowel Shift (English),8
 46.8,Greek Vowel Shift,7
 46.9,Kikuyu Tone Shift,0
 46.10,Late Proto-Finnic to Savonian Vowel Shift,7
-46.11,Middle Chinese to Cantonese Vowel Shift (“The Inner-Outer Flip”),14
+46.11,Middle Chinese to Cantonese Vowel Shift (“The Inner-Outer Flip”),15
 46.12,Northern Cities Vowel Shift (English),4
 46.13,Old Norse to Faroese Vowel Shift,11
-46.14,Pre-Slavic Vowel Changes,11
+46.14,Pre-Slavic Vowel Changes,13
 46.15,Proto-Japanese to Old Japanese Vowel Shift,4
 46.16,Development of Proto-Lolo-Burmese -i(C)# and -u(C)# to Lahu,2
 46.17,Proto-Maidun to Nisenian Vowel Shift,1
 46.18,South African Chain Shift (English),1
 46.19,Southern [United States] Shift (English),12
 47,Most-Wanted Sound Changes,0
-47.1,List 1: Simple Consonant Changes,16
+47.1,List 1: Simple Consonant Changes,17
 47.2,List 2: Conditional or complex consonant changes,7
 47.3,List 3: Vowels,2

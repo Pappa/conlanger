@@ -10,21 +10,21 @@
 	V > ”V / ”VSr_
 	V > ”V / _(C…)”{i,e}V
 	# “Stressed vowels (note the difference from the French development)”:
-	— aː > a
-	— (a)e > ɛ
-	— eː,i,oe > e
-	— iː o(ː) u(ː) > i o u
+	aː > a
+	(a)e > ɛ
+	eː,i,oe > e
+	iː o(ː) u(ː) > i o u
 	# Word-initial vowels:
-	— aː > a
-	— {e(ː),i,ae,oe} > e
-	— iː > i
-	— {o(ː),u} > o
+	aː > a
+	{e(ː),i,ae,oe} > e
+	iː > i
+	{o(ː),u} > o
 	# Word-final vowels:
-	— aː > a
-	— {e(ː),i,ae,oe} > e / _#
-	— iː > i
-	— {o(ː),uː} > o
-	— u > o / ! V_
+	aː > a
+	{e(ː),i,ae,oe} > e / _#
+	iː > i
+	{o(ː),uː} > o
+	u > o / ! V_
 	s > i / #(C…)V_#
 	k > ∅ / _s#
 	{s,t} > ∅ / _#
@@ -52,7 +52,8 @@
 	{sc,st} > ʃt / _F
 	s > ʃ / _kl
 	c > ∅ / n_t
-	kj ɡj > tʃ {j,∅} (ɡj > ∅ is rare)
+	kj ɡj > tʃ {j,∅} (ɡj
+	tʃ {j,∅} (ɡj > ∅ is rare)
 	Pj > ɥ
 	{sj,stj,sːj} > ʃ
 	j > s / t_

@@ -7,7 +7,8 @@
 	V > ∅ / ”V%C_L(C)V(C)# (irregular)
 	V > ∅ / ”V%L_C(C)V(C)# (irregular)
 	V > ∅ / ”V%s_t(C)V(C)# (irregular)
-	u > w > ∅ / (“when in unstressed penult or between first and tonic syllables; irregular”)
+	u > w
+	w > ∅
 	iː > i / stressed
 	iː > i / _%”V
 	{i,eː} e > {e,ɛ} {ɛ,e} / stressed
@@ -28,11 +29,13 @@
 	o > u / _%”V (irregular)
 	VV > Vː (“For outcomes of word-final vowels, see down below”)
 	ndj > ɲ
-	dj > dʒ > ʒ
+	dj > dʒ
+	dʒ > ʒ
 	∅ > e / #_sC
 	l > ∅ / {o,u}_CV
 	l > w / V_CV (“although l was usually restored later”)
-	mn > nː > ɲ
+	mn > nː
+	nː > ɲ
 	p b t d k ɡ > β {β,w} ∅ {j,w} ɣ {j,∅,ɡ} / V_rV
 	ŋ > ɲ / _{i,e}
 	p b > b w / V_lV (the latter is irregular)
@@ -61,12 +64,13 @@
 	f > v / V_V (irregular)
 	s > z / ”V%V_V
 	s > ∅ / V_V%”V
-	k ɡ > ∅ {∅,ʒ} / V_{i,e} (ɡ > ʒ is learned)
+	k ɡ > ∅ {∅,ʒ} / V_{i,e}
 	ɡ > ∅ / V_V%”V
 	k j > ɡ ʒ / V_V
 	# “These next two changes are awkward - Basically, when the final vowel drops off down below, the newly-final d should become w; BUT d should also have become z and disappeared before the final vowels drop off, leaving a dilem[m]a... I’m not certain how this should be [interpreted]”
-	— d > z > ∅ / V_V
-	— d > w / _V#
+	d > z / V_V
+	z > ∅ / V_V
+	d > w / _V#
 	iː > ∅ / _#
 	{i,e(ː),ae} > ∅ / _(C)#
 	{u(ː),o(ː)} > ∅ / _#
@@ -77,9 +81,11 @@
 	{b,v} > w / V_#
 	d > t / _#
 	l > ʎ / #_
-	k > ts > s / #_{i,e}
+	k > ts / #_{i,e}
+	ts > s / #_{i,e}
 	ɡ > ʒ / #_{i,e}
-	j > dʒ > ʒ / #_
+	j > dʒ / #_
+	dʒ > ʒ / #_
 	kʷ ɡʷ > k ɡ / #_{i,e}
 	kʷ > k / C_V
 	kʷ > ɡ / V_{i,e}
@@ -89,8 +95,10 @@
 	ɡʷ > ɡw / #_a
 	ɡʷ > ɡ / C_{i,e}
 	ɡʷ > ɡw / C_a
-	b > m > ∅ / Vm_V
-	n > r > br / m_
+	b > m / Vm_V
+	m > ∅ / Vm_V
+	n > r
+	r > br / m_
 	k > w / V_rV
 	{b,v} > w / V_tV
 	ɡ > ∅ / V_dV
@@ -102,8 +110,10 @@
 	e > ɛ / _v
 	o > u / _{ɲ,nk,ŋ} when stressed
 	e > i / _{nk,ŋ} when stressed (irregular)
-	aj > ej > ee > e (irregular)
-	aj > ej / _ʃ when stressed (irregular)
+	aj > ej
+	ej > ee
+	ee > e
+	aj > ej / _ʃ when stressed
 	ɛj ɔj > jɛj uei / i {u,ui} / stressed
 	ɛ > e / ! _{rː,l,rC[-labial],nr} or _ ? w#
 	e > ɛ (in Eastern Catalan)

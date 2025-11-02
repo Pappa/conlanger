@@ -17,17 +17,17 @@ r / l
 ”Vː[+falling tone] / ”V[-long -falling tone]
 Vː / V[-long] _”C(C)(C)V (“this change happens only in the Ontario dialect”)
 ; “In addition, a number of sound changes have applied to words only in the pre-pausal position. Most of these changes are characterized by the devoicing of one or more segments at the end of a word”
-— ∅ / e / C_{n,l}V(H)#
-— ∅ / o / C_wV(H)#
-— ∅ / i / C_jV(H)#
-— Vː[+falling tone]C(C)V(H) / V̊ː[+falling tone]C̊(C̊)V̊(H̊) / _#
-— CVː[+falling tone] / C̊V̊ː[+falling tone] / _#
-— CVʔ / C̊V̊ʔ̊ / _#
-— V[-long] / V̊ / R_#
-— OV[-long] / O̊V̊ / _#
-— jV / ∅ / Ci_(H)#
-— ʔ / h / _C#
-— R / R̊ / _#
+∅ / e / C_{n,l}V(H)#
+∅ / o / C_wV(H)#
+∅ / i / C_jV(H)#
+Vː[+falling tone]C(C)V(H) / V̊ː[+falling tone]C̊(C̊)V̊(H̊) / _#
+CVː[+falling tone] / C̊V̊ː[+falling tone] / _#
+CVʔ / C̊V̊ʔ̊ / _#
+V[-long] / V̊ / R_#
+OV[-long] / O̊V̊ / _#
+jV / ∅ / Ci_(H)#
+ʔ / h / _C#
+R / R̊ / _#
 ; “Allophonic changes:”
 ts / tʃ / _{(h)i,(h)j}
 t tʃ k(ʷ) / d dʒ ɡ(ʷ) / _{V,R}

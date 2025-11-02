@@ -2,14 +2,18 @@
 # citation: Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. <http://wiki.firespeaker.org/English_sound_changes>; and my Phonetic Description class
 	ɜːɹ ɑːɹ ɔːɹ eːɹ oːɹ iːɹ uːɹ > ɜː ɑː ɔː ɛə ɔə ɪə ʊə / syllable-finally
 	ɑ > ɒ
-	æ > æː > ɑː / _{F[-voiced],N[-voiced]}
-	ɒ > ɒː > ɔː / _F[-voiced]
+	æ > æː / _{F[-voiced],N[-voiced]}
+	æː > ɑː / _{F[-voiced],N[-voiced]}
+	ɒ > ɒː / _F[-voiced]
+	ɒː > ɔː / _F[-voiced]
 	ʍ > w
-	l > ɫ (the conditions of this are not elaborated upon)
+	l > ɫ
 	oʊ iː > ɔʊ ɪə / _ɫ
 	oʊ iː > əʊ ɪi / else
-	uː > ʊə > uː / _ɫ ! in Queensland and New South Wales
-	uː > ʊʉ > ʉː / else
+	uː > ʊə / _ɫ
+	ʊə > uː / _ɫ
+	uː > ʊʉ
+	ʊʉ > ʉː / else
 	ɫ > əɫ / ! if one of the above vowel changes after the formation of /ɫ/ apply
 	ɪ > iː / _# when unstressed
 	ɪ > iː / “unstressed foot-finally if the next syllable is stressed and begins with /k ɡ tʃ dʒ ʃ ʒ/”

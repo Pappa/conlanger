@@ -2,14 +2,16 @@
 # citation: Pogostick Man, from Goddard, Ives (1982), “The Historical Phonology of Munsee”. International Journal of American Linguistics, 48:16 – 48
 	tʃ > t / in nouns
 	t s > tʃ ʃ / in diminutives
-	{θ,l} > r > l
+	{θ,l} > r
+	r > l
 	{θ,ʃ} > {r,l}
 	w > ∅ / m_C
 	w > ∅ / {p,m}_#
 	w > ∅ / ! {k,p,m}_
 	Cʷ > C / _ə{(C){p,kʷ},m,w}
 	kw pw mw > kʷ pʷ mʷ
-	we > wə > oː / ! adjacent to {p,m,k}
+	we > wə
+	wə > oː / ! adjacent to {p,m,k}
 	j > ∅ / C_
 	ʔ > h / _C ! C = l, or when reduplicated
 	h > ∅ / _{s,x}
