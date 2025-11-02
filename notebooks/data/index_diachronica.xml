@@ -213,7 +213,7 @@
   <section index="6.2.1.1" name="Agaw"/>
   <section index="6.2.1.1.1" name="Proto-Agaw to Awngi">
     <cite>Pogostick Man, from Fallon, Paul D. (2009), “The Velar Ejective in Proto-Agaw”. In Selected Proceedings of the 39th Annual Conference on African Linguistics, Ojo, Akinloye and Lioba Moshi (Eds.), 10 – 22. Sommerville, MA: Cascadilla Proceedings Project. &lt;http://www.lingref.com&gt;, document #2182, citing Appleyard, David L. (2006), A comparative dictionary of the Agaw languages. (Cushitic Language studies, 24.) Cologne: Rüdiger Köppe Verlag.</cite>
-    <rule>{x,ɢ}(ʷ) &gt; ∅ / at word boundaries</rule>
+    <rule>{x,ɢ}(ʷ) &gt; ∅ / #,_</rule>
     <rule>z dz ɡ &gt; ɡ {z,dz} ɡ(ʷ)</rule>
     <rule>{x,ɢ}(ʷ) &gt; ɣ(ʷ)</rule>
     <rule>kʼ kʷʼ &gt; {ɣ,q} ɣʷ</rule>
@@ -221,14 +221,14 @@
   </section>
   <section index="6.2.1.1.2" name="Proto-Agaw to Blin">
     <cite>Pogostick Man, from Fallon, Paul D. (2009), “The Velar Ejective in Proto-Agaw”. In Selected Proceedings of the 39th Annual Conference on African Linguistics, Ojo, Akinloye and Lioba Moshi (Eds.), 10 – 22. Sommerville, MA: Cascadilla Proceedings Project. &lt;http://www.lingref.com&gt;, document #2182, citing Appleyard, David L. (2006), A comparative dictionary of the Agaw languages. (Cushitic Language studies, 24.) Cologne: Rüdiger Köppe Verlag.</cite>
-    <rule>{x,ɢ}(ʷ) &gt; ∅ / at word boundaries</rule>
-    <rule>ɢ(ʷ) &gt; x(ʷ) / else</rule>
+    <rule>{x,ɢ}(ʷ) &gt; ∅ / #,_</rule>
+    <rule>ɢ(ʷ) &gt; x(ʷ) / _ ! #,_</rule>
     <rule>{ts,tʃ} z dz &gt; ʃ d dʒ</rule>
     <rule>t &gt; r / medially</rule>
   </section>
   <section index="6.2.1.1.3" name="Proto-Agaw to Kemantney">
     <cite>Pogostick Man, from Fallon, Paul D. (2009), “The Velar Ejective in Proto-Agaw”. In Selected Proceedings of the 39th Annual Conference on African Linguistics, Ojo, Akinloye and Lioba Moshi (Eds.), 10 – 22. Sommerville, MA: Cascadilla Proceedings Project. &lt;http://www.lingref.com&gt;, document #2182, citing Appleyard, David L. (2006), A comparative dictionary of the Agaw languages. (Cushitic Language studies, 24.) Cologne: Rüdiger Köppe Verlag.</cite>
-    <rule>{x,ɢ}(ʷ) &gt; ∅ / at word boundaries</rule>
+    <rule>{x,ɢ}(ʷ) &gt; ∅ / #,_</rule>
     <rule>x &gt; ∅</rule>
     <rule>xʷ ɢʷ &gt; w ɣʷ</rule>
     <rule>{ts,tʃ} dz &gt; ʃ dʒ</rule>
@@ -240,12 +240,12 @@
   <section index="6.2.1.1.4" name="Proto-Agaw to Xamtanga">
     <cite>Pogostick Man, from Fallon, Paul D. (2009), “The Velar Ejective in Proto-Agaw”. In Selected Proceedings of the 39th Annual Conference on African Linguistics, Ojo, Akinloye and Lioba Moshi (Eds.), 10 – 22. Sommerville, MA: Cascadilla Proceedings Project. &lt;http://www.lingref.com&gt;, document #2182, citing Appleyard, David L. (2006), A comparative dictionary of the Agaw languages. (Cushitic Language studies, 24.) Cologne: Rüdiger Köppe Verlag.</cite>
     <rule>{x,ɢ} &gt; ∅</rule>
-    <rule>{xʷ,ɢʷ} &gt; ∅ / at word boundaries</rule>
-    <rule>{xʷ,ɢʷ} &gt; w / else</rule>
+    <rule>{xʷ,ɢʷ} &gt; ∅ / #,_</rule>
+    <rule>{xʷ,ɢʷ} &gt; w / _ ! #,_</rule>
     <rule>ts tʃ dz &gt; sʼ tʃʼ z</rule>
     <rule>k &gt; {k(ʼ),q}</rule>
     <rule>kʼ &gt; {χʷ,qʷ} / #_</rule>
-    <rule>kʼ &gt; q / else</rule>
+    <rule>kʼ &gt; q / _ ! #_</rule>
     <rule>ʔ &gt; ∅</rule>
   </section>
   <section index="6.2.2" name="Proto-Erythrean to Proto-North Erythrean">
@@ -482,15 +482,15 @@ r gains emphatic status except when next to i, and even then it’s becoming mor
     <rule>{u,ə} &gt; ∅ / ! C_C(C)#</rule>
     <rule>ə &gt; a / near ħ ʕ</rule>
     <rule>ə &gt; ɐ / near emphatics</rule>
-    <rule>ə &gt; ɪ / else</rule>
+    <rule>ə &gt; ɪ / _ ! near emphatics</rule>
     <rule>u &gt; ʊ / short only</rule>
     <rule>aː iː uː &gt; ɑː eː oː / near emphatics</rule>
-    <rule>aː &gt; æː / else</rule>
+    <rule>aː &gt; æː / _ ! near emphatics</rule>
     <rule>C₁ˤC₂ &gt; C₁C₂ˤ</rule>
     <rule>Cˤ &gt; C / {#,V}_V</rule>
     <rule>q &gt; {q,ɡ}</rule>
     <rule>dʒ &gt; {d,ɡ} / if s or z occur somewhere else in the word</rule>
-    <rule>dʒ &gt; ʒ / else</rule>
+    <rule>dʒ &gt; ʒ / _ ! if s or z occur somewhere else in the word</rule>
     <rule>s &gt; ʃ / if ʃ is somewhere in the stem after it</rule>
     <rule>z &gt; ʒ / if ʒ is somewhere in the stem after it</rule>
   </section>
@@ -529,7 +529,7 @@ Frequent h-dropping</comment>
     <rule>a &gt; {a,ɛ} (not common)</rule>
     <rule>i u &gt; e a / _R{$,#} (in verbs)</rule>
     <rule>i u &gt; e o / _C{$,#} (in verbs)</rule>
-    <rule>i &gt; eː oː / else</rule>
+    <rule>i &gt; eː oː / _ ! _C{$,#} (in verbs)</rule>
     <rule>aw &gt; aːw</rule>
     <rule>aj &gt; eː / _$</rule>
     <rule>aj &gt; ɛː / _#</rule>
@@ -561,8 +561,8 @@ Frequent h-dropping</comment>
     <rule>{e(ː),ɛ} &gt; ɛ</rule>
     <rule>Vː &gt; V[-long]</rule>
     <rule>ə &gt; a / near gutturals</rule>
-    <rule>ə &gt; ɛ / #R_C or when breaking up what would otherwise be a three-consonant cluster; in the case of two schwas, only the first one is dropped</rule>
-    <rule>ə &gt; ∅ / else</rule>
+    <rule>ə &gt; ɛ / #R_C</rule>
+    <rule>ə &gt; ∅ / _ ! #R_C</rule>
     <rule sporadic="true">w θ ð ɣ &gt; v t d ɡ</rule>
     <rule>x ʕ &gt; χ ʔ</rule>
     <rule>sˤ tˤ ħ q &gt; s t χ k</rule>
@@ -740,9 +740,9 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>{we,wiː} &gt; o / #_</rule>
     <rule>tsi &gt; ∅ / $_OO “(before a prefix; the first obstruent of the follow[ing] cluster then becomes ʔ)</rule>
     <rule>aː &gt; aa / W_ ! when _{C{C,ː},#}</rule>
-    <rule>aː &gt; a / else</rule>
+    <rule>aː &gt; a / _ ! W_ ! when _{C{C,ː},#}</rule>
     <rule>oː &gt; o</rule>
-    <rule>a &gt; i / ! at word boundaries</rule>
+    <rule>a &gt; i / ! #,_</rule>
     <rule>e &gt; a / _#</rule>
     <rule>{eː,iː} &gt; i</rule>
   </section>
@@ -1066,7 +1066,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>tʃ &gt; s / maybe ! _#?</rule>
     <rule>dʒ &gt; j</rule>
     <rule>ɡ &gt; ∅ / iV_</rule>
-    <rule>ɡ &gt; k / else</rule>
+    <rule>ɡ &gt; k / _ ! iV_</rule>
     <rule>{ʃ,z} &gt; s</rule>
     <rule>n &gt; m / #_</rule>
     <rule>ŋ &gt; m / #_{æ,ø,y}</rule>
@@ -1075,7 +1075,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>r &gt; t / _{i,u}</rule>
     <rule>rʲ &gt; {r,t}</rule>
     <rule>l(ʲ) &gt; n / #_</rule>
-    <rule>l lʲ &gt; r s / else</rule>
+    <rule>l lʲ &gt; r s / _ ! #_</rule>
     <rule>j &gt; {j,∅}</rule>
     <rule>U[+long] &gt; U[-long]</rule>
   </section>
@@ -1109,7 +1109,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ŋ &gt; {ŋ,∅}</rule>
     <rule>rʲ &gt; r</rule>
     <rule>l(ʲ) &gt; n / #_</rule>
-    <rule>l(ʲ) &gt; r / else</rule>
+    <rule>l(ʲ) &gt; r / _ ! #_</rule>
     <rule>j &gt; {j,∅}</rule>
     <rule>U[+long] &gt; U[-long]</rule>
     <comment>Syllable pitches reverse, basically, for whatever reason</comment>
@@ -1139,19 +1139,19 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>p &gt; b</rule>
     <rule>tʰ &gt; d / _#</rule>
     <rule>t(ʰ) d &gt; tʃ dʒ / _i</rule>
-    <rule>tʰ &gt; t / else</rule>
+    <rule>tʰ &gt; t / _ ! _i</rule>
     <rule>tʃ &gt; dʒ / #_i</rule>
     <rule>tʃ &gt; d / #</rule>
     <rule>tʃʰ &gt; tʃ</rule>
     <rule>ɡ &gt; h / ! {C,V}_h</rule>
     <rule>k &gt; ɡ / ! #_</rule>
     <rule>kʰ &gt; ɡ / {C,V}_h</rule>
-    <rule>kʰ &gt; k / else</rule>
+    <rule>kʰ &gt; k / _ ! {C,V}_h</rule>
     <rule>z &gt; s</rule>
     <rule>ʃ &gt; tʃ / #_a</rule>
-    <rule>ʃ &gt; s / else</rule>
+    <rule>ʃ &gt; s / _ ! #_a</rule>
     <rule>nʲ &gt; dʒ / #_</rule>
-    <rule>nʲ &gt; {j,n} / else</rule>
+    <rule>nʲ &gt; {j,n} / _ ! #_</rule>
     <rule>ŋ &gt; ɡ / #_u</rule>
     <rule>ŋ &gt; n / #_{a,o,e}</rule>
     <rule>ŋ &gt; {∅,j} / #_</rule>
@@ -1251,7 +1251,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>s &gt; ç / _Vç</rule>
     <rule>a &gt; æ / ! _B</rule>
     <rule>f &gt; w / _V</rule>
-    <rule>f &gt; p / else</rule>
+    <rule>f &gt; p / _ ! _V</rule>
     <rule>ŋ &gt; ɡ / syllable-final</rule>
   </section>
   <section index="8.5.1.1" name="Proto-Kypchak to Kazakh">
@@ -1330,7 +1330,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>{əkʰ,əɡɦj} &gt; ɟ (I think Thompson implied this was just a bit of a kludge)</rule>
     <comment>Finals:</comment>
     <rule>l &gt; ∅ / {i,e}_</rule>
-    <rule>l &gt; j / else</rule>
+    <rule>l &gt; j / _ ! {i,e}_</rule>
     <rule>c ɲ &gt; t n / ! E_ (apparently the precursor to Vietnamese short *a was treated as a short vowel here)</rule>
     <comment>Thompson seems to list some changes as affecting Modern Vietnamese but I was unsure of where to put them so they’ll go here:</comment>
     <rule>a ɔ &gt; ɨə uə</rule>
@@ -1372,7 +1372,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <comment>Finals:</comment>
     <rule>c ɲ t n &gt; t n k ŋ / a_ (short /a/ only)</rule>
     <rule>c ɲ &gt; t n / {i,e}_</rule>
-    <rule>{c,ɲ} &gt; ∅ / else</rule>
+    <rule>{c,ɲ} &gt; ∅ / _ ! {i,e}_</rule>
     <comment>Vowels:</comment>
     <rule>ə &gt; ∅ / {i,ɨ}_{p,m.w}</rule>
     <rule>ə &gt; ∅ / ɨ_j</rule>
@@ -1513,7 +1513,6 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ə &gt; o</rule>
     <rule>*j &gt; ɡ / _#</rule>
     <rule>{z,*Z,*D,*j} &gt; d</rule>
-    <comment>*R seems to have had a few different reflexes, mainly one of /l ɡ j/; if /ɡ j/ occurred, /ɡ/ was more probable at word boundaries and /j/ was more probable medially</comment>
     <rule>{q,h} &gt; ∅</rule>
     <rule>{s,c} &gt; h</rule>
     <rule>∅ &gt; j / _iw#</rule>
@@ -1585,7 +1584,6 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>{*D,*Z} &gt; d</rule>
     <rule>{z,*j} &gt; d / V_V</rule>
     <rule>*j &gt; ɡ / _#</rule>
-    <comment>*R seems to have had a few different reflexes, mainly one of /l ɡ j/; if /ɡ j/ occurred, /ɡ/ was more probable at word boundaries and /j/ was more probable medially</comment>
     <rule>c &gt; s</rule>
     <rule>{h,q} &gt; ∅</rule>
     <comment>Something seems to have changed to əw finally but the paper may have an error here</comment>
@@ -1678,7 +1676,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>w &gt; ∅ / #_</rule>
     <rule>R &gt; r</rule>
     <rule sporadic="true">h &gt; ʔ / _#</rule>
-    <rule>h &gt; ∅ / else</rule>
+    <rule>h &gt; ∅ / _ ! _#</rule>
     <rule>{iw,uj} &gt; i / _#</rule>
     <rule>aj aw &gt; i u / _#</rule>
     <rule>aj aw &gt; aj aw / _#</rule>
@@ -2060,7 +2058,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
   </section>
   <section index="10.3.5.4.1" name="Proto-Northern to Nixumwak-Nêlêmwa">
     <cite>thetha, from Ozanne-Rivierre, Françoise (1992), “The Proto-Oceanic Consonantal System and the Languages of New Caledonia”. Oceanic Linguistics 31(2):191 – 207; and Ozanne-Rivierre, Françoise (1995), “Structural Changes in the Languages of Northern New Caledonia”. Oceanic Linguistics 34(1):44 – 72</cite>
-    <rule>V &gt; ∅ / _#, often</rule>
+    <rule>V &gt; ∅ / _#</rule>
     <rule>k &gt; c / V_V</rule>
     <rule>k &gt; c / _#</rule>
     <rule>t &gt; k</rule>
@@ -2343,15 +2341,14 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule sporadic="true">k &gt; ∅ / V_V</rule>
     <rule>b(ʷ) ɡ &gt; p(ʷ) k</rule>
     <rule>s &gt; h / “rarely”</rule>
-    <rule>s &gt; θ / ! _i, occasionally</rule>
+    <rule sporadic="true">s &gt; θ / ! _i</rule>
     <rule>d {c,*j} &gt; tʃ s</rule>
     <rule>{n,ŋ} &gt; ɲ / _E</rule>
     <rule>w &gt; v</rule>
     <rule>l &gt; tʃ / _{o,E}</rule>
     <rule>q &gt; ∅</rule>
-    <rule>V &gt; ∅ / _# (with very few exceptions)</rule>
+    <rule>V &gt; ∅ / _#</rule>
     <rule>{r,h} &gt; ∅ / _#</rule>
-    <comment>“a lot of word medial vowels get elided, sometimes even when they should be stressed”</comment>
     <rule>{i,o} &gt; e</rule>
     <rule>u &gt; o</rule>
     <rule>i &gt; o / {u,w}_</rule>
@@ -2411,7 +2408,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>ɣ &gt; ∅ / _#</rule>
     <rule>k &gt; ∅ (perhaps doesn’t always happen but happens often)</rule>
     <rule>{s,t} &gt; h / _{n,l,r}</rule>
-    <rule>t &gt; r / ! at word boundaries</rule>
+    <rule>t &gt; r / ! #,_</rule>
     <rule>ə &gt; i</rule>
   </section>
   <section index="10.3.11.3" name="Proto-Southern Vanuatu to Proto-Tanna">
@@ -2437,7 +2434,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <comment>/fʷ/ gained</comment>
     <rule>u &gt; {e,i} / _Cu</rule>
     <rule>ə &gt; a / in U#</rule>
-    <rule>ə &gt; e / else</rule>
+    <rule>ə &gt; e / _ ! in U#</rule>
   </section>
   <section index="10.3.11.3.2" name="Proto-Tanna to Lenakel">
     <cite>thetha, from Lynch, John (2001), The Linguistic History of Southern Vanuatu</cite>
@@ -2540,7 +2537,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>a &gt; ɜ / _wo</rule>
     <rule>f &gt; ∅ / #_{C[-low],V[-low]}</rule>
     <rule>f &gt; ɰ / #_aCo</rule>
-    <rule>f &gt; j / else</rule>
+    <rule>f &gt; j / _ ! #_aCo</rule>
     <rule>∅ &gt; ɰ / #_aC[-low]</rule>
     <rule>∅ &gt; j / #_{aC[+low],V[-back],C[-back]}</rule>
     <rule>∅ &gt; w / #_{C[+round],V[+round]}</rule>
@@ -3191,7 +3188,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>v &gt; m / medial</rule>
     <rule>v &gt; w / a_a (in eastern dialects)</rule>
     <rule>{t,ð} &gt; n / _#</rule>
-    <rule>ð &gt; t / else</rule>
+    <rule>ð &gt; t / _ ! _#</rule>
     <rule>∅ &gt; t / #_s</rule>
     <rule>z &gt; s / #_</rule>
     <rule>z &gt; ð / medial</rule>
@@ -3215,10 +3212,10 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <cite>Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171</cite>
     <rule>l̥ &gt; l / medial</rule>
     <rule>t &gt; s / i_</rule>
-    <rule>ə &gt; i / at word boundaries</rule>
+    <rule>ə &gt; i / #,_</rule>
     <rule>ə &gt; u / u_</rule>
     <rule>ə &gt; a / a_</rule>
-    <rule>ə &gt; ∅ / else</rule>
+    <rule>ə &gt; ∅ / _ ! a_</rule>
     <rule>ɣ ʁ &gt; k q / _#</rule>
     <rule>C₀VC₀ &gt; C₀ː</rule>
     <comment>Regressive MOA assimilation and progressive voicing assimilation in consonant clusters (at least, when C₂ is either /l/ or /l̥/)</comment>
@@ -3239,7 +3236,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>ə &gt; a / a_</rule>
     <rule>Cː &gt; C / except when CV_V in U₁U₂</rule>
     <rule>t &gt; s / i_</rule>
-    <rule>ə &gt; i / else</rule>
+    <rule>ə &gt; i / _ ! i_</rule>
     <rule>dʒ &gt; tʃ</rule>
     <rule>tʃ &gt; s</rule>
     <rule>m n ŋ t {ɣ,ʁ} &gt; {k,q} / _#</rule>
@@ -3261,7 +3258,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <cite>Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171</cite>
     <rule>ə &gt; u / u_</rule>
     <rule>ə &gt; a / a_</rule>
-    <rule>ə &gt; i / else</rule>
+    <rule>ə &gt; i / _ ! a_</rule>
     <rule>ɣ ʁ &gt; k q / _#</rule>
     <rule>C₀VC₀ &gt; Cː</rule>
     <comment>Regressive MOA assimilation and progressive voicing assimilation in consonant clusters, at least when C₂ is either /l/ or /l̥/</comment>
@@ -3278,7 +3275,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <cite>Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171</cite>
     <rule>ə &gt; u / u_</rule>
     <rule>ə &gt; a / a_</rule>
-    <rule>ə &gt; i / else</rule>
+    <rule>ə &gt; i / _ ! a_</rule>
     <rule>v &gt; u</rule>
     <rule>ɣ &gt; u / “in some positions”</rule>
     <rule>p k q s &gt; v ɣ ʁ z / V_V</rule>
@@ -3483,12 +3480,12 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <cite>Pogostick Man, from Gregerson, Kenneth, and Margaret Hartzler (1987), “Towards a Reconstruction of Proto-Tabla-Sentani Phonology”. Oceanic Linguistics, Vol. 26, No. 1/2 (Summer – Winter, 1987), 1 – 29.</cite>
     <rule>d &gt; r / medially</rule>
     <rule>N &gt; ŋ / _#</rule>
-    <rule>i &gt; ∅ / V_ (with a few exceptions)</rule>
+    <rule>i &gt; ∅ / V_</rule>
     <comment>Some allophony triggered where p~ɸ, and probably some others</comment>
-    <rule>e &gt; ə / unstressed (possibly only in disyllables?)</rule>
+    <rule>e &gt; ə / [- stress]</rule>
     <rule>oi &gt; oe</rule>
     <comment>Some vowel assimilations, mostly dealing with central vowels</comment>
-    <rule>o &gt; e (sporadic, highly unusual)</rule>
+    <rule sporadic="true">o &gt; e</rule>
   </section>
   <section index="17" name="Indo-European" />
   <section index="17.1" name="Albanian"/>
@@ -3624,7 +3621,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>j &gt; ∅ / z_</rule>
     <rule>hh h &gt; h ∅ / ”Vː_u</rule>
     <rule>hh h &gt; h ∅ / u_”Vː</rule>
-    <rule>h &gt; ∅ / _w ! at word boundaries</rule>
+    <rule>h &gt; ∅ / _w ! #,_</rule>
     <rule>hh &gt; ∅ / _{w,m,n,r,l} “medially, and sporadically”</rule>
     <rule>D R &gt; Dː Rː / ”e_ in U[+open]</rule>
     <rule>{ɛ,e}ː æː &gt; iː aː</rule>
@@ -3971,7 +3968,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>bʱ dʱ ɡ́ʱ &gt; b d z</rule>
     <rule>ḱ ɡ́ &gt; s z</rule>
     <rule>k(ʷ) ɡ(ʷ)(ʱ) &gt; tʃ dʒ / _E</rule>
-    <rule>k kʷ ɡ(ʷ)(ʱ) &gt; x k ɡ / else</rule>
+    <rule>k kʷ ɡ(ʷ)(ʱ) &gt; x k ɡ / _ ! _E</rule>
     <rule>rt &gt; š</rule>
     <rule>s &gt; {s,h}</rule>
     <rule>u̯ &gt; v</rule>
@@ -4022,11 +4019,11 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>tː &gt; sː</rule>
     <rule>p &gt; f / {V,#}_</rule>
     <rule>f &gt; x / _O</rule>
-    <rule>f &gt; ∅ / else</rule>
+    <rule>f &gt; ∅ / _ ! _O</rule>
     <rule>r̩ l̩ &gt; {ri,ra} {li,la} / _{S,R} ;; (which vowel crops up is unpredictable)</rule>
     <rule>r̩ l̩ &gt; {ra,ar} {la,al} / _{s,CC,V,#} ;; (the results are unpredictable)</rule>
     <rule>m̩ n̩ &gt; am an / _{s,(m,j,w)V}</rule>
-    <rule>m̩ n̩ &gt; em en / else</rule>
+    <rule>m̩ n̩ &gt; em en / _ ! _{s,(m,j,w)V}</rule>
     <rule>ɡʷ &gt; b / #_V ! _u(ː)</rule>
     <rule>ɡʷ &gt; b / #_N</rule>
     <rule>ɡʷ &gt; b / C_V</rule>
@@ -4038,7 +4035,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>p t k kʷ b d ɡ ∅ &gt; b d ɡ ɡʷ mb nd ŋɡ n / n#_”V</rule>
     <rule>oː &gt; uː / _(C…)#</rule>
     <rule>oːi &gt; uː / _#</rule>
-    <rule>oː &gt; aː / else</rule>
+    <rule>oː &gt; aː / _ ! _#</rule>
     <rule>Vː &gt; V[-long] / _H</rule>
     <rule>e &gt; i / _[- stress](C…)#</rule>
     <rule>o &gt; a / _[- stress]{(C…),u}#</rule>
@@ -4055,7 +4052,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>w &gt; ∅ / {#,C}C_</rule>
     <rule>w &gt; ∅ / {θ,x}_</rule>
     <rule>w &gt; ∅ / V_{V,#}</rule>
-    <rule>w &gt; v / else</rule>
+    <rule>w &gt; v / _ ! V_{V,#}</rule>
     <rule>{p,t} &gt; ∅ / #s_r</rule>
     <rule>{p,t} &gt; ∅ / #s_ ;; “(although it says that occasionally st</rule>
     <rule>∅ / #s_ ;; “(although it says that occasionally st &gt; t / #_)”</rule>
@@ -4132,7 +4129,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ &gt; b d ɡ́ ɡ ɡʷ</rule>
     <rule>ḱ ɡ́ &gt; ts dz</rule>
     <rule>{kʷ,kw} {ɡʷ,ɡw} &gt; tʃ dʒ (&gt; s~z z ?) / _E</rule>
-    <rule>{kʷ,kw} {ɡʷ,ɡw} &gt; k ɡ / else</rule>
+    <rule>{kʷ,kw} {ɡʷ,ɡw} &gt; k ɡ / _ ! _E</rule>
   </section>
   <section index="17.7" name="Proto-Indo-European to Common Germanic">
     <cite>Siride</cite>
@@ -4280,12 +4277,12 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>a ɑ {ɛ,ɪ,ɤ} &gt; ɑː ɔː ɜː / _ɹ{C,#}</rule>
     <rule>ɑʊ &gt; ɑː / _P</rule>
     <rule sporadic="true">ɑʊ &gt; ɑː / _N</rule>
-    <rule>ɑʊ &gt; ɔː / else</rule>
+    <rule>ɑʊ &gt; ɔː / _ ! _N</rule>
     <comment>“[A] large number of cases that were ɑː have become ɔː subsequently for non-phonetic reasons, like laundry”</comment>
-    <rule>a &gt; ɑː / “in a few words, like ‘father’”</rule>
-    <rule>a &gt; æ / else</rule>
-    <rule>əɪ əʊ &gt; ɑi æʊ / “in some parts of South-Eastern England”</rule>
-    <rule>əɪ əʊ &gt; aɪ aʊ / “in most of Britain”</rule>
+    <rule sporadic="true">a &gt; ɑː</rule>
+    <rule>a &gt; æ</rule>
+    <rule sporadic="true">əɪ əʊ &gt; ɑi æʊ</rule>
+    <rule>əɪ əʊ &gt; aɪ aʊ</rule>
     <rule>eː oː &gt; eɪ oʊ / ! _ɹ</rule>
   </section>
   <section index="17.7.2.1.5" name="Early Modern English to American English">
@@ -4322,7 +4319,7 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <rule>ʍ &gt; w</rule>
     <rule>l &gt; ɫ</rule>
     <rule>oʊ iː &gt; ɔʊ ɪə / _ɫ</rule>
-    <rule>oʊ iː &gt; əʊ ɪi / else</rule>
+    <rule>oʊ iː &gt; əʊ ɪi / _ ! _ɫ</rule>
     <rule>uː &gt; ʊə / _ɫ</rule>
     <rule>ʊə &gt; uː / _ɫ</rule>
     <rule>uː &gt; ʊʉ</rule>
@@ -5033,7 +5030,6 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
   </section>
   <section index="17.7.4" name="Common Germanic to Vandalic">
     <cite>Jaceb Kilpatrick &amp; Pogostick Man, from Wikipedia contributors (2015), “Vandalic language”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Vandalic_language&gt;</cite>
-    <comment>NB: This is likely incomplete.</comment>
     <rule>h &gt; ∅ / #_</rule>
     <rule>eː &gt; i / [- stress]</rule>
     <rule>e &gt; i / ! {w,r,h}_</rule>
@@ -5511,7 +5507,7 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>ъ &gt; aː / _r</rule>
     <rule>ъl &gt; ɔ(ː)ɫ / P_</rule>
     <rule>ъl &gt; ɛɫ / K_</rule>
-    <rule>ъl &gt; ɫu / else</rule>
+    <rule>ъl &gt; ɫu / _ ! K_</rule>
     <rule>ьl &gt; ɫu / C[+dental]_</rule>
     <rule>ьl &gt; ɛɫ / P_C[+dental -palatalized]</rule>
     <rule>ьl &gt; il / P_</rule>
@@ -5556,14 +5552,14 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>ʃ ʒ tʃ dʒ ɕ ʑ &gt; ʂ ʐ ʈʂ ɖʐ ts ʒ</rule>
     <rule>r̝ &gt; ʂ / C[-voiced]_</rule>
     <rule>r̝ &gt; ʂ / _C[+voiced]</rule>
-    <rule>ŕ &gt; ʐ / else</rule>
+    <rule>ŕ &gt; ʐ / _ ! _C[+voiced]</rule>
     <rule>ɛ &gt; ɔ / _ɫ (if the vowel was from a yer)</rule>
     <rule sporadic="true">{ɛ,a} &gt; ɔ</rule>
     <rule>V &gt; ɛ (sporadic, analogical)</rule>
     <rule>ɫ &gt; w</rule>
     <rule>ɒ e &gt; a ɛ</rule>
     <rule>o &gt; ɔ / _N</rule>
-    <rule>o &gt; u / else</rule>
+    <rule>o &gt; u / _ ! _N</rule>
     <rule sporadic="true">u &gt; ɔ</rule>
     <rule>pʲ mʲ fʲ &gt; p m f / _#</rule>
     <rule>{i,ɨ} &gt; ∅ / _jV when unstressed</rule>
@@ -5599,17 +5595,17 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>v r̝ &gt; f r̥ / C[-voiced]_</rule>
     <rule>v r̝ &gt; f r̥ / _{C[-voiced],#}</rule>
     <rule>r̝̊ r̝ &gt; ʂ ʐ</rule>
-    <rule>Lv &gt; L[-voiced]f / O[-voiced]_ “for many speakers”</rule>
+    <rule sporadic="true">Lv &gt; L[-voiced]f / O[-voiced]_</rule>
     <rule>v &gt; ∅ / x_o</rule>
     <rule>{xv,pv} &gt; f</rule>
     <rule>plv &gt; pf</rule>
     <rule>p &gt; ∅ / #_p</rule>
     <rule>ʈʂs &gt; ts</rule>
     <rule>{z,s,ʂ} &gt; ∅ / _sC</rule>
-    <rule>x &gt; ∅ / _r “in the word ‘robak’”</rule>
+    <rule sporadic="true">x &gt; ∅ / _r</rule>
     <rule>r̝ &gt; r / {ɕ,ʑ}_</rule>
     <rule>ʐr &gt; ʑr</rule>
-    <rule>ɕr̝ ʑr̝ &gt; ʂr ʐr / “‘szron’ and ‘żreć’”, respectively</rule>
+    <rule>ɕr̝ ʑr̝ &gt; ʂr ʐr</rule>
     <rule>t &gt; ∅ / s_{ɫ,w}</rule>
     <rule>ʈʂ &gt; t / _r̝</rule>
     <rule>ɕ &gt; ∅ / tr̝_tɕ</rule>
@@ -5617,14 +5613,14 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>w &gt; ∅ / {r,b}_</rule>
     <rule>d &gt; ∅ / ɫ_ɲ</rule>
     <rule>d &gt; ∅ / r_ts</rule>
-    <rule>d &gt; ∅ / _n “in arch. ‘jeno’”</rule>
-    <rule>∅ &gt; t / s_r “in ‘stręczyć’”</rule>
+    <rule>d &gt; ∅ / _n</rule>
+    <rule>∅ &gt; t / s_r</rule>
     <rule>st ʂʈʂ &gt; z ʐ / _b</rule>
-    <rule>{b,p} &gt; ∅ / _n “in verbs in -nąć”</rule>
+    <rule>{b,p} &gt; ∅ / _n</rule>
     <rule>v &gt; ∅ / _stv</rule>
-    <rule>t &gt; ∅ / ʈʂ_v in “czworo”</rule>
-    <rule>s &gt; ∅ / _ɫza in “słza”</rule>
-    <rule>trk &gt; kr / in the name of the river “Skrwa”</rule>
+    <rule>t &gt; ∅ / ʈʂ_v</rule>
+    <rule>s &gt; ∅ / _ɫza</rule>
+    <rule>trk &gt; kr</rule>
     <rule>zdʲ stʲ &gt; {ʑ,ɕ} {s,ɕ} / _n</rule>
     <rule>dʲ &gt; ∅ / r_n</rule>
     <rule>stʲ &gt; ɕ / _l</rule>
@@ -5641,7 +5637,7 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule sporadic="true">w &gt; ∅ / C_C</rule>
     <comment>“Oscillations between dental and alveo[lo]palatals” / _C</comment>
     <rule>n &gt; s</rule>
-    <rule>s &gt; ɕ / k_ɛ̃ where the vowel was from Proto-Slavic</rule>
+    <rule sporadic="true">s &gt; ɕ / k_ɛ̃</rule>
     <rule>n &gt; s / k_Vn</rule>
     <rule>d &gt; ɡ / _n</rule>
     <rule>ʈʂ &gt; t / _r</rule>
@@ -5670,7 +5666,6 @@ Epenthetic d ɡ appears in some circumstances</comment>
   </section>
   <section index="17.12" name="Proto-Indo-European to Proto-Italic">
     <cite>Pogostick Man, from http://gillesquentel.org/docs/PIE_to_Italic_C.pdf and http://gillesquentel.org/docs/PIE_to_Italic_V.pdf</cite>
-    <comment>NB: This is likely incomplete.</comment>
     <rule>p &gt; {p,kʷ}</rule>
     <rule>ḱ ǵ &gt; k ɡ</rule>
     <rule>ǵʰ gʷʰ &gt; ɡʰ xʷ</rule>
@@ -5681,7 +5676,6 @@ Epenthetic d ɡ appears in some circumstances</comment>
   </section>
   <section index="17.12.1" name="Proto-Italic to Proto-Latino-Falsican">
     <cite>Pogostick Man, from http://gillesquentel.org/docs/PIE_to_Italic_C.pdf and http://gillesquentel.org/docs/PIE_to_Italic_V.pdf</cite>
-    <comment>NB: This is likely incomplete.</comment>
     <rule>x &gt; h</rule>
     <rule>ɡʷ &gt; w</rule>
     <rule>ɡʰ &gt; f / #_</rule>
@@ -5844,25 +5838,25 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>V &gt; ∅ / ”V%s_t(C)V(C)# (irregular)</rule>
     <rule sporadic="true">u &gt; w</rule>
     <rule sporadic="true">w &gt; ∅</rule>
-    <rule>iː &gt; i / stressed</rule>
+    <rule>iː &gt; i / [+ stress]</rule>
     <rule>iː &gt; i / _%”V</rule>
-    <rule>{i,eː} e &gt; {e,ɛ} {ɛ,e} / stressed</rule>
+    <rule>{i,eː} e &gt; {e,ɛ} {ɛ,e} / [+ stress]</rule>
     <rule>{i,eː,e} &gt; e / _%”V</rule>
     <rule>i &gt; j / ”V_#</rule>
-    <rule>uː &gt; u / stressed</rule>
+    <rule>uː &gt; u / [+ stress]</rule>
     <rule>uː &gt; u / _%”V</rule>
     <rule>au &gt; a / _%”u</rule>
-    <rule>{u,oː} o &gt; o ɔ / stressed</rule>
+    <rule>{u,oː} o &gt; o ɔ / [+ stress]</rule>
     <rule>{u,o(ː)} &gt; u / _%”V in East Catalan</rule>
     <rule>{u,o(ː)} &gt; o / _%”V else</rule>
     <rule>u &gt; w / ”ɛ_#</rule>
     <rule>aː &gt; a</rule>
     <rule>oe &gt; {e,ɛ}</rule>
-    <rule>ae au &gt; e ɔ / stressed</rule>
+    <rule>ae au &gt; e ɔ / [+ stress]</rule>
     <rule>ae au &gt; e o / _%”V</rule>
     <rule>o &gt; u / _a</rule>
-    <rule>o &gt; u / _%”V (irregular)</rule>
-    <rule>VV &gt; Vː (“For outcomes of word-final vowels, see down below”)</rule>
+    <rule sporadic="true">o &gt; u / _%”V</rule>
+    <rule>VV &gt; Vː</rule>
     <rule>ndj &gt; ɲ</rule>
     <rule>dj &gt; dʒ</rule>
     <rule>dʒ &gt; ʒ</rule>
@@ -5943,13 +5937,13 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>{a,o} &gt; ∅ / #_ (rare)</rule>
     <rule>ɔ &gt; o / _N$C</rule>
     <rule>e &gt; ɛ / _v</rule>
-    <rule>o &gt; u / _{ɲ,nk,ŋ} when stressed</rule>
-    <rule>e &gt; i / _{nk,ŋ} when stressed (irregular)</rule>
+    <rule>o &gt; u / _[+ stress]{ɲ,nk,ŋ}</rule>
+    <rule sporadic="true">e &gt; i / _[+ stress]{nk,ŋ}</rule>
     <rule sporadic="true">aj &gt; ej</rule>
     <rule sporadic="true">ej &gt; ee</rule>
     <rule sporadic="true">ee &gt; e</rule>
-    <rule sporadic="true">aj &gt; ej / _ʃ when stressed</rule>
-    <rule>ɛj ɔj &gt; jɛj uei / i {u,ui} / stressed</rule>
+    <rule sporadic="true">aj &gt; ej / _[+ stress]ʃ</rule>
+    <rule>ɛj ɔj &gt; jɛj uei / i {u,ui} / [+ stress]</rule>
     <rule>ɛ &gt; e / ! _{rː,l,rC[-labial],nr} or _ ? w#</rule>
     <rule>e &gt; ɛ (in Eastern Catalan)</rule>
   </section>
@@ -6103,7 +6097,7 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>k ɡ &gt; tʃ dʒ / _E</rule>
     <rule>kVl &gt; kːj / [- stress]</rule>
     <rule>kt &gt; tː</rule>
-    <rule>ɛ &gt; jɛ / unstressed ! _{dʒ,ʎ,ɲ}</rule>
+    <rule>ɛ &gt; jɛ/ [- stress] ! _{dʒ,ʎ,ɲ}</rule>
     <rule>ɡ &gt; ∅ / a_V</rule>
     <rule>j &gt; dʒ / #_</rule>
     <rule>j &gt; dʒ / V_V</rule>
@@ -6136,18 +6130,18 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>au &gt; a / _%”u</rule>
     <rule>au &gt; o</rule>
     <rule>e &gt; iː / ”_%ɪː#</rule>
-    <rule>iː {i,eː} e &gt; i e ɛ / stressed</rule>
+    <rule>iː {i,eː} e &gt; i e ɛ / [+ stress]</rule>
     <rule>iː {i,e(ː)} &gt; i e / _%”V</rule>
     <rule>iː &gt; ∅ / {k,s}_#</rule>
     <rule>{i(ː),e(ː),ae} &gt; e / _#</rule>
     <rule>uː &gt; u</rule>
     <rule>uiː &gt; ui / _#</rule>
-    <rule>{u,oː} o &gt; o ɔ / stressed</rule>
+    <rule>{u,oː} o &gt; o ɔ / [+ stress]</rule>
     <rule>{u,o(ː)} &gt; o / _%”V</rule>
     <rule>{u(ː),o(ː)} &gt; o / _#</rule>
     <rule>o &gt; u / _#</rule>
     <rule>aː oe &gt; a e</rule>
-    <rule>ae &gt; ɛ / stressed</rule>
+    <rule>ae &gt; ɛ / [+ stress]</rule>
     <rule>ɛ ɔ &gt; e o / _(”u)#</rule>
     <rule>{olt,okt} &gt; ujt</rule>
     <rule>ujt &gt; ut</rule>
@@ -6156,7 +6150,7 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>o &gt; u / _(”V)</rule>
     <rule>e &gt; ∅ / el_#</rule>
     <rule>V &gt; a / _{n,r}(C)V(C)# (irregular)</rule>
-    <rule>V &gt; V[+ nasal] / _N$C when stressed</rule>
+    <rule>V &gt; V[+ nasal] / _[+ stress]N$C</rule>
     <rule>ɔ̃ &gt; õ</rule>
     <rule>N &gt; ∅ / V[+ nasal]_$C ! C = S</rule>
     <rule>V &gt; V[+ nasal] / _N$V</rule>
@@ -6685,14 +6679,14 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>k ɡ &gt; tʃ dʒ / _{j,i,e,ɛ}</rule>
     <rule>tʃ dʒ &gt; ts dz / _{j,i,e,ɛ}</rule>
     <rule>{t,k} &gt; ∅ / _#</rule>
-    <rule>V &gt; ∅ / C_{r,l} when unstressed and not at a word boundary</rule>
-    <rule>V &gt; ∅ / {r,l}_C when unstressed and not at a word boundary</rule>
-    <rule sporadic="true">V &gt; ∅ / C_s when unstressed and not at a word boundary</rule>
-    <rule sporadic="true">V &gt; ∅ / s_C when unstressed and not at a word boundary</rule>
+    <rule>V &gt; ∅ / C_[- stress]{r,l} ! #,_</rule>
+    <rule>V &gt; ∅ / {r,l}_[- stress]C ! #,_</rule>
+    <rule sporadic="true">V &gt; ∅ / C_[- stress]s ! #,_</rule>
+    <rule sporadic="true">V &gt; ∅ / s_[- stress]C ! #,_</rule>
     <rule>{k,ɡ} &gt; x / _{t,s,n,l}</rule>
     <rule>x &gt; j / _{t,s,n,l}</rule>
     <rule>pt {ɾs,ps} &gt; tː sː</rule>
-    <rule>ns &gt; s (with a few exceptions)</rule>
+    <rule>ns &gt; s</rule>
     <rule>mb mn &gt; mː nː</rule>
     <rule>{jl,lj} {jn,nj} {jɡ,ɡj} &gt; ʎ ɲ ʝː</rule>
     <rule sporadic="true">bj &gt; ʝː</rule>
@@ -6707,7 +6701,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>f &gt; h / ! _{ue,L}</rule>
     <rule>ɾj pj &gt; jɾ jp / V_</rule>
     <rule>ʎ &gt; ʒ</rule>
-    <rule>ʝ &gt; {∅,ʒ} (the latter is rare)</rule>
+    <rule sporadic="true">ʝ &gt; ʒ</rule>
+    <rule>ʝ &gt; ∅</rule>
     <rule>ʝː &gt; ∅ / E_</rule>
     <rule>d &gt; {∅,ð} / V_V</rule>
     <rule>ɡ &gt; {∅,ɣ} / V_V</rule>
@@ -6716,20 +6711,17 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>nː lː ɾɾ &gt; ɲ ʎ r</rule>
     <rule>kl pl &gt; ʎ {ʎ,tʃ}</rule>
     <rule sporadic="true">fl &gt; ʎ</rule>
-    <rule>V &gt; ∅ / unstressed ! V = a</rule>
+    <rule>V &gt; ∅/ [- stress] ! V = a</rule>
     <rule>sj &gt; js / V_</rule>
     <rule>i u &gt; e o / _(C)#</rule>
     <rule>Vɾ &gt; ɾV / C_#</rule>
     <rule>e &gt; ∅ / V{d,s,n,l,ɾ}_#</rule>
     <rule>d ɡ &gt; ð ɣ / V_V</rule>
-    <comment>/ʝ/ “gains a fortified [dʒ] allophone” by analogy with the voiced-stop/voiced-fricative allophony in Spanish
-“Complex resolution of many consonant clusters created with the previous loss of unstressed vowels”:</comment>
-    <comment>“With deletion or assimilation or both”:</comment>
     <rule>t &gt; ∅ / _m</rule>
     <rule sporadic="true">— d &gt; ∅ / _n</rule>
     <rule sporadic="true">— mn &gt; ɲ</rule>
     <rule>tst dzd &gt; ts dz</rule>
-    <rule>Vdz &gt; ∅ / {nts,ndz,rdz_</rule>
+    <rule>Vdz &gt; ∅ / {nts,ndz,rdz}_</rule>
     <rule>ndzVɡ &gt; nɡ</rule>
     <rule>mpVt skVp spVt stVk &gt; nt sp st sk</rule>
     <comment>“With dissimilation”:</comment>
@@ -6752,7 +6744,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ts dz &gt; s̪ z̪</rule>
     <rule>z̪ z ʒ &gt; s̪ s ʃ</rule>
     <rule>ʃ &gt; {x,χ}</rule>
-    <comment>“None of the following sound changes is universal to all dialects. If the same sound appears twice or more with an apparent contradiction, this accounts for different dialects. In all cases there are dialects that conserve the original sound at the beginning of the 21st century, with the exception of the old phonemic [s̪ - s] distinction (though kept in another way today, as [θ - s] in many parts of Spain).”</comment>
     <rule>h &gt; ∅</rule>
     <rule>x &gt; h</rule>
     <rule>/dɾ/ [ðɾ] &gt; ɾ / V_V</rule>
@@ -6780,7 +6771,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   </section>
   <section index="17.12.2" name="Proto-Italic to Proto-Sibellian">
     <cite>Pogostick Man, from http://gillesquentel.org/docs/PIE_to_Italic_C.pdf and http://gillesquentel.org/docs/PIE_to_Italic_V.pdf</cite>
-    <comment>NB: This is likely incomplete.</comment>
     <rule>t &gt; f</rule>
     <rule>ḱ ɡ́ kʷ ɡʷ &gt; k ɡ p b</rule>
     <rule>{ɡ́ʰ,x} {ɸ,θ,ɡʷʰ} &gt; h f</rule>
@@ -6789,12 +6779,10 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   </section>
   <section index="17.12.2.1" name="Proto-Sibellian to Oscan">
     <cite>Pogostick Man, from http://gillesquentel.org/docs/PIE_to_Italic_C.pdf and http://gillesquentel.org/docs/PIE_to_Italic_V.pdf</cite>
-    <comment>NB: This is likely incomplete.</comment>
     <rule>z &gt; r</rule>
   </section>
   <section index="17.12.2.2" name="Proto-Sibellian to Umbrian">
     <cite>Pogostick Man, from http://gillesquentel.org/docs/PIE_to_Italic_C.pdf and http://gillesquentel.org/docs/PIE_to_Italic_V.pdf</cite>
-    <comment>NB: This is likely incomplete.</comment>
     <rule>d &gt; rs / V_V</rule>
   </section>
   <section index="17.13" name="Proto-Indo-European to Proto-Tocharian">
@@ -6823,7 +6811,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>h₃e o &gt; o ɛ</rule>
     <rule>{eh₃,oH} &gt; oː</rule>
     <rule>oː(s,y) oːn &gt; u {u,õ}</rule>
-    <comment>Something about *õ and umlaut</comment>
     <rule>õ oː &gt; o a</rule>
     <rule>u &gt; wə / #_</rule>
     <rule>u &gt; {ə,u}</rule>
@@ -6857,7 +6844,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>{kʷ,kw} &gt; k</rule>
     <rule>ə &gt; ∅ / _%</rule>
     <rule>V &gt; ∅ / _#</rule>
-    <comment>“[E]penthesis [of /ə/] to break up ‘difficult’ consonant clusters (mostly in the coda?)”</comment>
   </section>
   <section index="17.13.2" name="Proto-Tocharian to Tocharian B">
     <cite>Nortaneous, from http://www.utexas.edu/cola/centers/lrc/eieol/tokol-TC-X.html and https://azargoshnasp.net/history/Tocharian/positionoftocharian.pdf</cite>
@@ -6871,7 +6857,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>s &gt; ∅ / n_#</rule>
     <rule>∅ &gt; t / {N,L}_S</rule>
     <rule>ə &gt; ∅ / _%, when unstressed</rule>
-    <comment>“[E]penthesis [of /ə/] to break up ‘difficult’ consonant clusters (mostly in the coda?)”</comment>
   </section>
   <section index="18" name="Je-Tupı́-Carib"/>
   <section index="18.1" name="Cariban"/>
@@ -6899,7 +6884,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>VS &gt; r / C_V</rule>
     <rule>c &gt; {c,z}</rule>
     <rule>ŋʷ {kʷ,hʷ} &gt; m p</rule>
-    <rule>ə &gt; ∅ / C_CV (not sure if this happened all the time or not)</rule>
+    <rule sporadic="true">ə &gt; ∅ / C_CV</rule>
   </section>
   <section index="18.2.2" name="Proto-Ofaié-Jê to Ofaié-Xavante">
     <cite>Pogostick Man, from Gudschinsky, Sarah C. (1971), “OfaiÃ©-Xavante, a JÃª Language”</cite>
@@ -6909,7 +6894,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>k(ʷ) &gt; ʔ / _#</rule>
     <rule>kʷ &gt; k</rule>
     <rule>ŋ &gt; n / V_V</rule>
-    <rule>ŋ &gt; j̃ / #_ (not sure if this nasalizes the following vowel or not)</rule>
+    <rule>ŋ &gt; j̃ / #_</rule>
     <rule>ŋʷ hʷ &gt; j̃ h</rule>
   </section>
   <section index="18.3" name="Tuparí"/>
@@ -6917,7 +6902,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <cite>Pogostick Man, from Moore, Denny and Ana Vilacy Galucio (1994), “Reconstruction of Proto-Tupari Consonants and Vowels”. Report 8: Survey of California and Other Indian Languages: Proceeds of the Meeting of the Society for the Study of the Indigenous Languages of the Americas, July 2 – 4, 1993, and the Hokan-Penutian Workshop, July 3, 1993, 119 – 137.</cite>
     <rule>t &gt; r / _”V</rule>
     <rule>t &gt; l / _V</rule>
-    <rule>t &gt; ∅ / else</rule>
+    <rule>t &gt; ∅ / _ ! _V</rule>
     <rule>k &gt; ∅ / _#</rule>
     <rule>kʷ &gt; ∅</rule>
     <rule>b &gt; β / V_V</rule>
@@ -6928,7 +6913,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ʔ &gt; ∅</rule>
     <rule>r &gt; l / V[+ nasal]_V[+ nasal]</rule>
     <rule>ð nŋʷ &gt; c β / #_V[- nasal]</rule>
-    <rule>ð &gt; {∅,c} / else</rule>
+    <rule>ð &gt; {∅,c} / _ ! #_V[- nasal]</rule>
     <rule>j ŋʷ m n &gt; ɲ m {m,p} {∅,t} / _V[+ nasal]</rule>
     <rule>ⁿd ŋ &gt; t {ɡ,k} / _V[- nasal]</rule>
     <rule>u &gt; o / _{p,b}i</rule>
@@ -6949,11 +6934,11 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ʔ &gt; ∅</rule>
     <rule>{ᵐb,ⁿd,ð} &gt; t / _V[+ nasal]</rule>
     <rule>ð &gt; s / _i</rule>
-    <rule>ð &gt; h / else</rule>
+    <rule>ð &gt; h / _ ! _i</rule>
     <rule>ŋ ŋʷ &gt; k m / _V[+ nasal]</rule>
     <rule>ŋʷ &gt; kʷ / #_V[- nasal]</rule>
     <rule>ɨ &gt; i / #_{p,βe}</rule>
-    <rule>ɨ &gt; ∅ / else</rule>
+    <rule>ɨ &gt; ∅ / _ ! #_{p,βe}</rule>
     <rule>{{a/e},{e/a}} {ı̃,ẽ} &gt; a ẽ</rule>
   </section>
   <section index="18.3.3" name="Proto-Tuparí to Tuparí">
@@ -6963,7 +6948,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ɡʷ &gt; ∅ / _o</rule>
     <rule>ɡʷ ŋɡ &gt; β k / _V[- nasal]</rule>
     <rule>{(n)dz,ts} &gt; s / _i</rule>
-    <rule>{(n)dz,ts} &gt; t / else</rule>
+    <rule>{(n)dz,ts} &gt; t / _ ! _i</rule>
     <rule>β ð &gt; ∅ {s,h} / _i</rule>
     <rule>ð &gt; h</rule>
     <rule>ᵐb ŋʷ &gt; p β / #_V[- nasal]</rule>
@@ -7015,7 +7000,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>∅ &gt; i / j_#, in monosyllables</rule>
     <rule>j &gt; i / _#, in polysyllables</rule>
     <rule>b &gt; ∅ / _#</rule>
-    <rule>b &gt; w / else</rule>
+    <rule>b &gt; w / _ ! _#</rule>
     <rule>w &gt; ∅ / k_w</rule>
     <rule>w &gt; u / k_</rule>
     <rule>a &gt; ∅ / _j#</rule>
@@ -7032,7 +7017,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>t &gt; ts / _{i,ı̃}</rule>
     <rule>ts &gt; {h,∅}</rule>
     <rule>b &gt; ∅ / u_#</rule>
-    <rule>b &gt; w / else</rule>
+    <rule>b &gt; w / _ ! u_#</rule>
     <rule>u &gt; ∅ / k_w</rule>
     <rule>a &gt; ə / _N#</rule>
     <rule>a &gt; ə / if N in U#</rule>
@@ -7066,7 +7051,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>t &gt; tʃ / _{i,ı̃}</rule>
     <rule>ts &gt; {h,j,∅}</rule>
     <rule>b r &gt; p t / _#</rule>
-    <rule>b &gt; w / else</rule>
+    <rule>b &gt; w / _ ! _#</rule>
     <rule>ã &gt; a / Cw_</rule>
     <comment>ẽ ı̃ õ lost nasalization sometimes, kept it in others</comment>
     <rule>u &gt; õ (? possibly backwards?)</rule>
@@ -7086,7 +7071,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <cite>Pogostick Man, from Lemle, Miriam (1971), âInternal Classification of the Tupi-Guarani Linguistic Family”. In Tupi Studies I, from Summer Institute of Linguistics Publications in Linguistics and Related Fields Publication Number 29.</cite>
     <rule>p &gt; {h,∅} / _{u,o}</rule>
     <rule>p &gt; {k,∅} / _w</rule>
-    <rule>p &gt; h / else</rule>
+    <rule>p &gt; h / _ ! _w</rule>
     <rule>t &gt; {ts,tʃ} / _{i,ı̃}</rule>
     <rule>k &gt; ∅ / _#</rule>
     <rule>ʔ ts &gt; ∅ {s,ʃ}</rule>
@@ -7094,7 +7079,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>V{m,n} &gt; V[+ nasal] / _#</rule>
     <rule>Vŋ &gt; V[+ nasal]</rule>
     <rule>j &gt; {j,i} / _#</rule>
-    <rule>j &gt; {ɲ,tʃ} / else</rule>
+    <rule>j &gt; {ɲ,tʃ} / _ ! _#</rule>
     <rule>w &gt; {ɡ,k} / {#,V}_</rule>
     <rule>{b,r} &gt; ∅ / _#</rule>
     <rule>a &gt; {∅,o,e} / _j#</rule>
@@ -7130,14 +7115,14 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   <section index="18.4.9.1.4" name="Proto-Cinta Larga-Suruí-Zoró to Suruí">
     <cite>Pogostick Man, from Anonby, Stan, and David J. Holbrook (2013), “A report and comparative-historical look at the Cinta Larga, Suruí, Gavião and Zoró languages”. Working Papers of the Linguistics Circle of the University of Victoria 23:14 – 31</cite>
     <rule>h &gt; ∅ / V_</rule>
-    <rule>ᵑɡ &gt; ɡ / #_ (possibly all prenasalized consonants?)</rule>
+    <rule>ᵑɡ &gt; ɡ / #_</rule>
     <rule>b &gt; m / #_</rule>
   </section>
   <section index="18.4.9.1.5" name="Proto-Cinta Larga-Suruí-Zoró to Zoró">
     <cite>Pogostick Man, from Anonby, Stan, and David J. Holbrook (2013), “A report and comparative-historical look at the Cinta Larga, Suruí, Gavião and Zoró languages”. Working Papers of the Linguistics Circle of the University of Victoria 23:14 – 31</cite>
     <rule>h &gt; ∅ / V_</rule>
     <rule>∅ &gt; ʔ / V_#</rule>
-    <rule>ᵑɡ &gt; ɡ / #_ (possibly all prenasalized consonants?)</rule>
+    <rule>ᵑɡ &gt; ɡ / #_</rule>
     <rule sporadic="true">ʃ &gt; tʃ</rule>
   </section>
   <section index="18.4.10" name="Proto-Tupí-Guaraní to Urubu">
@@ -7145,12 +7130,12 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>p k &gt; k ∅ / _w</rule>
     <rule>t &gt; ʃ / _{i,ı̃}</rule>
     <rule>k &gt; {k,∅} / _#</rule>
-    <rule>k &gt; {k,ʃ} / else</rule>
+    <rule>k &gt; {k,ʃ} / _ ! _#</rule>
     <rule>ts &gt; {s,h}</rule>
     <rule sporadic="true">Vn &gt; V[+ nasal] / _#</rule>
     <rule>Vŋ &gt; V[+ nasal]</rule>
     <rule>j b &gt; {j,i} ∅ / _#</rule>
-    <rule>b &gt; w / else</rule>
+    <rule>b &gt; w / _ ! _#</rule>
     <rule>u &gt; ∅ / k_w</rule>
     <rule>u &gt; o / ! o(C…)_(C…)#</rule>
     <rule>aN iN uN &gt; {aN,ã} ı̃ {uN,ũ} / _#</rule>
@@ -7534,7 +7519,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <cite>Pogostick Man, from Dixon, R.M.W. (2004), “Proto-Arawá Phonology”. Anthropological Linguistics 46(1):1 – 83</cite>
     <rule>p &gt; f</rule>
     <rule>pʰ &gt; p / #_</rule>
-    <rule>pʰ &gt; ɸ / else</rule>
+    <rule>pʰ &gt; ɸ / _ ! #_</rule>
     <rule>ɗ &gt; t / #_</rule>
     <rule>dz &gt; s / medially</rule>
     <rule>tsʰ &gt; s</rule>
@@ -7580,7 +7565,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   <section index="22.6" name="Proto-Arawá to Sorowahá">
     <cite>Pogostick Man, from Dixon, R.M.W. (2004), “Proto-Arawá Phonology”. Anthropological Linguistics 46(1):1 – 83</cite>
     <rule>e &gt; ɨ / _#</rule>
-    <rule>e &gt; a / else</rule>
+    <rule>e &gt; a / _ ! _#</rule>
     <rule>{p(ʰ),ɓ} &gt; h</rule>
     <rule>ɗ &gt; d / #_</rule>
     <rule>{tʰ,ɗ &gt; t</rule>
@@ -8214,7 +8199,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <cite>Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
     <comment>NB: Here, 〈TS〉 represents a sound that Whimemsz says “is between” the TH and TS series POA-wise.</comment>
     <rule>TS K &gt; TŠ TS / _E</rule>
-    <rule>TS K &gt; TH TŠ / else</rule>
+    <rule>TS K &gt; TH TŠ / _ ! _E</rule>
     <rule>TŠ TŠʷ Q &gt; TS TṢ K</rule>
     <rule>j w &gt; ʒ v</rule>
     <rule>{n,ɲ} &gt; ⁿdʒ / _E[- nasal]</rule>
@@ -8791,10 +8776,10 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>t &gt; ʃ / i_i</rule>
     <rule>t &gt; s / ! “in cluster with š” (presumably [ʃ])</rule>
     <rule>tʲ &gt; s / _u</rule>
-    <rule>tʲ &gt; tʃ / else</rule>
+    <rule>tʲ &gt; tʃ / _ ! _u</rule>
     <rule>k &gt; ɡ / a_a</rule>
     <rule>kʷ &gt; ɾ / #_ek</rule>
-    <rule>kʷ &gt; b / else</rule>
+    <rule>kʷ &gt; b / _ ! #_ek</rule>
     <rule>ʔ &gt; ∅ (?)</rule>
     <rule>{c,tʃ} &gt; ʃ</rule>
     <rule>s &gt; tʃ (in certain cases? Not a lot of data available on this one)</rule>
@@ -8812,7 +8797,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ẽ &gt; a / tʲ_</rule>
     <rule>ẽ &gt; i / h_</rule>
     <rule>ẽ &gt; i / in U[+long -stress]</rule>
-    <rule>ẽ &gt; e / else</rule>
+    <rule>ẽ &gt; e / _ ! in U[+long -stress]</rule>
     <rule>a &gt; {i,e} “under special conditions”</rule>
   </section>
   <section index="32.1.2" name="Proto-Chatino to Tataltepec Chatino">
@@ -8841,11 +8826,11 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <comment>Some consonant disharmony involving reflexes of *k, *kʷ</comment>
     <rule>k &gt; tʃ / _Ek(ʷ)</rule>
     <rule>kʲ &gt; k / _{a,ã}</rule>
-    <rule>kʲ &gt; kj / else</rule>
+    <rule>kʲ &gt; kj / _ ! _{a,ã}</rule>
     <rule>kʷ &gt; w / _eːj</rule>
     <rule>kʷ &gt; w / _ek</rule>
     <rule>kʷ &gt; ʍ / ku_ (medial)</rule>
-    <rule>kʷ &gt; kw / else</rule>
+    <rule>kʷ &gt; kw / _ ! ku_ (medial)</rule>
     <rule>ts &gt; tʃ / #_{a,õ}ʔ</rule>
     <rule>ts &gt; tʃ / V[+high]_</rule>
     <rule>ts &gt; ʃ / #_ẽ</rule>
@@ -8857,9 +8842,9 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ʃ &gt; s / _{ik,e,ı̃,ẽ}</rule>
     <rule>ʃ &gt; ts / _i, in monosyllables</rule>
     <rule>lʲ &gt; l / #_ in U[-long -stress]</rule>
-    <rule>lʲ &gt; lj / else</rule>
-    <rule>nʲ &gt; j / _ã (with some exceptions?)</rule>
-    <rule>nʲ &gt; nj / else</rule>
+    <rule>lʲ &gt; lj / _ ! #_ in U[-long -stress]</rule>
+    <rule>nʲ &gt; j / _ã</rule>
+    <rule>nʲ &gt; nj / _ ! _ã</rule>
     <rule>h &gt; ʔ / _ã</rule>
     <rule>ç &gt; hj</rule>
     <rule>hʷ &gt; ʍ</rule>
@@ -8914,7 +8899,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <cite>CatDoom, from Callaghan, Catherine A. (1983), “Proto-Utian Derivational Verb Morphology”. Proceedings of the 1982 Conference on Far Western American Indian Languages, Occasional Papers on Linguistics Number 11; and Callaghan, Catherine A. (1988), “Proto-Utian Stems” in In Honor of Mary Haas</cite>
     <rule>tʲ ʂ &gt; j ʃ</rule>
     <rule>kʷ &gt; k / #_</rule>
-    <rule>kʷ &gt; w / else</rule>
+    <rule>kʷ &gt; w / _ ! #_</rule>
     <rule>l &gt; ɾ / V_V</rule>
     <rule>a &gt; e / il_</rule>
     <rule>o &gt; u / _(C…)i</rule>
@@ -8936,7 +8921,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ʂ &gt; s̪</rule>
     <rule>ʈ &gt; {ʈ,ts,tʃ} / _{j,ɾ}</rule>
     <rule>kʷ &gt; k / #_</rule>
-    <rule>kʷ &gt; {k,w} / else</rule>
+    <rule>kʷ &gt; {k,w} / _ ! #_</rule>
     <rule>l &gt; ɾ / V_V</rule>
     <rule>a &gt; e / il_</rule>
     <rule>o &gt; u / _(C…)i</rule>
@@ -8949,7 +8934,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ʈ &gt; {ʈ,tʃ} / {i,e,o}$_</rule>
     <rule>ʈ &gt; {ʈ,tʃ} / _{j,ɾ}</rule>
     <rule>kʷ &gt; k / #_</rule>
-    <rule>kʷ &gt; {k,w} / else</rule>
+    <rule>kʷ &gt; {k,w} / _ ! #_</rule>
     <rule>l &gt; ɾ / V_V</rule>
     <rule>a &gt; e / il_</rule>
     <rule>i &gt; e / _C(C)oC</rule>
@@ -9001,7 +8986,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   <section index="33.3.1.3" name="Buena Vista Yokuts to Tulamni">
     <cite>CatDoom, from Whistler, Kenneth W., and Golla, Victor (1986), “Proto-Yokuts Reconsidered”. International Journal of American Linguistics Vol. 52, No. 4 (Oct. 1986)</cite>
     <rule>ɨ(ː) ə(ː) &gt; i(ː) e(ː)</rule>
-    <rule>Vʔ &gt; Vː / stressed</rule>
+    <rule>Vʔ &gt; Vː / [+ stress]</rule>
   </section>
   <section index="33.3.2" name="Buena Vista Yokuts to Proto-Nim-Yokuts">
     <cite>CatDoom, from Whistler, Kenneth W., and Golla, Victor (1986), “Proto-Yokuts Reconsidered”. International Journal of American Linguistics Vol. 52, No. 4 (Oct. 1986)</cite>
@@ -9258,7 +9243,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ts(ʼ) &gt; θ(ʼ)</rule>
     <rule>l(ʲ) &gt; w / _u</rule>
     <rule>l(ʲ) &gt; w / u_</rule>
-    <rule>l(ʲ) &gt; j / else</rule>
+    <rule>l(ʲ) &gt; j / _ ! u_</rule>
     <rule>s &gt; ∅ / #_C</rule>
     <rule>s &gt; ∅ / #_{wa,wi}</rule>
     <rule>w j &gt; ɡ dʒ / _V</rule>
@@ -9410,7 +9395,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>u³ u¹ &gt; o³ ə¹</rule>
     <rule>a³ &gt; o³ / {{C[+ uvular],K}ʷ,w}_</rule>
     <rule>a³ &gt; o³ / _{Cu,C[+ uvular]ʷ,w}</rule>
-    <rule>a³ &gt; e³ / else</rule>
+    <rule>a³ &gt; e³ / _ ! _{Cu,C[+ uvular]ʷ,w}</rule>
     <rule>a¹ &gt; ə¹</rule>
     <rule>{u³~ə³} &gt; ə¹</rule>
     <rule>{a³~ə³} &gt; ə³</rule>
@@ -9604,13 +9589,13 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>? &gt; ∅</rule>
     <rule>V⁵ &gt; V² / in syllables with /ɦ/</rule>
     <rule>V⁵ &gt; V⁴ / in syllables with a nasal or liquid</rule>
-    <rule>V⁵ &gt; V³ / else</rule>
+    <rule>V⁵ &gt; V³ / _ ! in syllables with a nasal or liquid</rule>
     <rule>ɦ &gt; h / S_V²</rule>
-    <rule>ɦ &gt; ∅ / else</rule>
+    <rule>ɦ &gt; ∅ / _ ! S_V²</rule>
     <rule>Cʲ &gt; C / {f,v}_</rule>
     <rule>w &gt; o / Cʲ_?w</rule>
     <rule>i &gt; ∅ / C(w)_a</rule>
-    <rule>ia &gt; e / else</rule>
+    <rule>ia &gt; e / _ ! C(w)_a</rule>
     <rule>C &gt; Cʲ / {K,C[+pharyngeal]}_{a,a(ch)}</rule>
     <rule>o &gt; a / C_w ! C = {K,C[+pharyngeal]}</rule>
     <rule>ŋ &gt; n / n_Cʲa(ta)</rule>
@@ -9618,7 +9603,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>k &gt; j / {e,a,o}_</rule>
     <rule>k &gt; w / V_</rule>
     <rule>{o,a} {a(ta),a(ch)} &gt; e a / _ŋ</rule>
-    <rule>{a(ta),a(ch)} &gt; o / else</rule>
+    <rule>{a(ta),a(ch)} &gt; o / _ ! _ŋ</rule>
     <rule>? &gt; o / _ŋ</rule>
     <rule>{Aʲ,Fʲ}[+alveolar] &gt;{A,F} / _?ʲ</rule>
     <rule>ʈ &gt; ʈʂ / _r</rule>
@@ -9707,14 +9692,14 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>yeʔ &gt; yɛʔ</rule>
     <rule>ye jej &gt; yɛ i</rule>
     <rule>jew &gt; au / C̣(C?)_</rule>
-    <rule>jew &gt; iau / else</rule>
+    <rule>jew &gt; iau / _ ! C̣(C?)_</rule>
     <rule sporadic="true">{jem,jen} &gt; iɛn</rule>
     <rule>yen &gt; uɛn / C̣_</rule>
     <rule>yen &gt; yɛn</rule>
     <rule sporadic="true">ɔ &gt; a</rule>
     <rule>wɔ &gt; ɔ</rule>
     <rule>wɔʔ &gt; uɔʔ / C[+guttural]_</rule>
-    <rule>wɔʔ &gt; ɔʔ / else</rule>
+    <rule>wɔʔ &gt; ɔʔ / _ ! C[+guttural]_</rule>
     <rule>ɔn &gt; an; “[t]his final occurs exclusively after SR gutturals”</rule>
     <rule>wɔn ja wa &gt; uɔn ia ua</rule>
     <rule>aʔ &gt; ɔʔ / C[+guttural]_</rule>
@@ -9728,7 +9713,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>am &gt; an</rule>
     <rule>{jam,jan} &gt; iɛn</rule>
     <rule>wan &gt; an / C[+labiodental]_</rule>
-    <rule>wan &gt; uan / else</rule>
+    <rule>wan &gt; uan / _ ! C[+labiodental]_</rule>
     <rule>aŋ jaŋ &gt; uaŋ aŋ / C̣_</rule>
     <rule>waŋ &gt; uaŋ</rule>
     <rule>əjʔ əw {əm,ən} &gt; eʔ ɛu ɛn</rule>
@@ -9798,7 +9783,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>u o &gt; v̩ u</rule>
     <rule>B &gt; v̩ / {qʰ,(ŋ)q}_</rule>
     <rule>V% &gt; mid tone / C_ru</rule>
-    <rule>V% &gt; high tone / else</rule>
+    <rule>V% &gt; high tone / _ ! C_ru</rule>
     <rule>N &gt; ∅ / _pV</rule>
     <rule>{r,s}pʰ {r,s}(N)p {r,s}b {r,s}mb &gt; pʰ p b mb / _V (the paper implies similar developments occurred with stops at other POAs)</rule>
     <rule>{r,s}(N)k &gt; k / _V</rule>
@@ -10122,7 +10107,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>m &gt; w / _ã</rule>
     <rule>t &gt; ts / _{i,ı̃}</rule>
     <rule>tʰ &gt; ts / _i</rule>
-    <rule>tʰ &gt; n / else</rule>
+    <rule>tʰ &gt; n / _ ! _i</rule>
     <rule>ã &gt; ẽ</rule>
     <rule>e &gt; i / r_ʔ</rule>
     <rule>r &gt; ts / _i</rule>
@@ -10131,7 +10116,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>kʰ &gt; r</rule>
     <rule>m &gt; n</rule>
     <rule>p &gt; ∅ / C_ ! s_</rule>
-    <rule>p &gt; kʷ / else</rule>
+    <rule>p &gt; kʷ / _ ! C_ ! s_</rule>
     <rule>pʰ &gt; ʍ (this is a bit of a guess; the paper proper has 〈hw〉 here)</rule>
     <rule>ʃ θ &gt; s t</rule>
     <comment>The paper is unclear about what happened to /u/.</comment>
@@ -10524,7 +10509,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>p &gt; {p,b,m,w} / _C</rule>
     <rule>p &gt; b / V_V (*)</rule>
     <rule>tʲ &gt; ʃ / in ”U</rule>
-    <rule>tʲ &gt; ʒ / else</rule>
+    <rule>tʲ &gt; ʒ / _ ! in ”U</rule>
     <rule>t &gt; ∅ / _k, when medial</rule>
     <rule>”V[+ nasal] &gt; Vn (*)</rule>
     <rule sporadic="true">∅ &gt; ʔ / C_#</rule>
@@ -10534,7 +10519,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ç x &gt; x {ʃ,ʒ}</rule>
     <rule>p &gt; {p,b,m,w}</rule>
     <rule>tʲ &gt; ʃ / in ”U</rule>
-    <rule>tʲ &gt; ʒ / else</rule>
+    <rule>tʲ &gt; ʒ / _ ! in ”U</rule>
     <rule>s &gt; z / U[-stress]</rule>
     <rule>s &gt; z / V_V</rule>
     <rule>r &gt; d / s_</rule>
@@ -10653,7 +10638,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>t &gt; ʃ / _E</rule>
     <rule>t &gt; s / _V</rule>
     <rule>k &gt; ts / _i</rule>
-    <rule>n &gt; r / ! at word boundaries</rule>
+    <rule>n &gt; r / ! #,_</rule>
     <rule>t &gt; ʃ / _ʔ</rule>
     <rule>ʔ &gt; ∅ / _C</rule>
     <rule>sk &gt; tsk / _”V</rule>
@@ -10697,7 +10682,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>L &gt; bl / #_e (*)</rule>
     <rule>V &gt; V[+ nasal] / N_</rule>
     <rule>N &gt; S / V_V</rule>
-    <rule>ũ &gt; aN / stressed</rule>
+    <rule>ũ &gt; aN / [+ stress]</rule>
     <rule>t &gt; ts / _ʔ</rule>
     <rule>tʲr kr &gt; ʃt l</rule>
     <rule>mn &gt; bl / {C,V}_{C,V}</rule>
@@ -10712,7 +10697,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>L &gt; θ / _”V</rule>
     <rule>d &gt; n / ”V_</rule>
     <rule>Lʲ &gt; {θ,n} / _V[+nas -stress]</rule>
-    <rule>ũ &gt; ã / stressed</rule>
+    <rule>ũ &gt; ã / [+ stress]</rule>
     <rule>k &gt; ∅ / _ʔ</rule>
     <rule>pr sr tʲr kr &gt; bθ sn ʃn ɡθ</rule>
     <rule>mn &gt; mV₀nV₀ / #_</rule>
@@ -11368,10 +11353,10 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>iw ow &gt; y uː / _(C) (*)</rule>
     <rule>x &gt; @ / _C</rule>
     <rule>m &gt; n / _{t,tsʲ,#}</rule>
-    <rule>ɤ(ː?) ɑː æː &gt; ɑ(ː?) oː eː / stressed</rule>
-    <rule>a &gt; æ / {a,e,ê,i,y}(X)(C)(C)_, when unstressed</rule>
-    <rule>Aw &gt; o / unstressed (possibly analogical)</rule>
-    <rule>i &gt; e / _C, when unstressed</rule>
+    <rule>ɤ(ː?) ɑː æː &gt; ɑ(ː?) oː eː / [+ stress]</rule>
+    <rule>a &gt; æ / {a,e,ê,i,y}(X)(C)(C)_[- stress]</rule>
+    <rule>Aw &gt; o / [- stress]</rule>
+    <rule>i &gt; e / _[- stress]C</rule>
     <rule>iw &gt; u / [- stress]</rule>
   </section>
   <section index="42.1.1" name="Pre-Finnic to Proto-Finnic">
@@ -11382,7 +11367,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ô &gt; ɯ / _(X)CA</rule>
     <rule>ɯ &gt; i / _(X)CA</rule>
     <rule>ej &gt; i / [- stress]</rule>
-    <rule>æ &gt; e / _j, unstressed</rule>
+    <rule>æ &gt; e / _[- stress]j</rule>
     <rule>ɑ &gt; e / ”{o,u}(X)C_j</rule>
     <rule>ɑ &gt; o / ”{a,e,i}(X)C_j</rule>
     <rule>ixi uxu &gt; øː oː</rule>
@@ -11412,7 +11397,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ðʲ sʲ tsʲ(ː) lʲ &gt; ð s ts(ː) l</rule>
     <rule>nʲ &gt; ni / #(C)i_V</rule>
     <rule>nʲ &gt; in / V_V</rule>
-    <rule>nʲ &gt; n / else</rule>
+    <rule>nʲ &gt; n / _ ! V_V</rule>
     <rule>n &gt; ∅ / _tː</rule>
     <rule>w &gt; ∅ / o_st (*)</rule>
     <rule>ð &gt; t</rule>
@@ -11485,10 +11470,10 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ɣ &gt; j / C_e</rule>
     <rule>ɣ &gt; ʋ / U_U</rule>
     <rule>ɣ &gt; ʔ / VV₀_V₀ ! V₀ = U</rule>
-    <rule>ɣ &gt; ∅ / else</rule>
+    <rule>ɣ &gt; ∅ / _ ! VV₀_V₀ ! V₀ = U</rule>
     <rule>h &gt; ∅ / V[-stress](X)_V</rule>
     <rule>AO &gt; {A,O,U}ː / [- stress]</rule>
-    <rule>e &gt; i / A_, when unstressed</rule>
+    <rule>e &gt; i / A_[- stress]</rule>
     <rule>Ue &gt; eː / [- stress]</rule>
     <rule>VU &gt; Vː / _#</rule>
     <rule>iU OU &gt; Uː Oː</rule>
@@ -11501,7 +11486,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   <section index="42.1.1.1.2" name="Standard Finnish to Modern Standard Finnish">
     <cite>Tropylium, from Hakulinen, Lauri (1979), “Suomen kielen rakenne ja kehitys”. Otava; Häkkinen, Kaisa (2004), “Nykysuomen etymologinen sanakirja”. WSOY; Kallio, Petri (2007), “Kantasuomen konsonanttihistoriaa”. Mémoires de la Société Finno-Ougrienne 253. &lt;http://www.sgr.fi/sust/sust253/sust253_kallio.pdf&gt;; and from Janhunen, Juha (2007), “The primary laryngeal in Uralic and beyond”. Mémoires de la Société Finno-Ougrienne 253. &lt;http://www.sgr.fi/sust/sust253/sust253_janhunen.pdf&gt;</cite>
     <rule>n &gt; ∅ / _#</rule>
-    <rule>d &gt; ∅ / _r “in inherited vocabulary”</rule>
+    <rule sporadic="true">d &gt; ∅ / _r</rule>
     <rule>Va &gt; Vː / [- stress]</rule>
     <rule>ie yɤ uo &gt; iː yː uː / _A</rule>
   </section>
@@ -11514,7 +11499,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>h &gt; ∅ / {#,C}_</rule>
     <rule>Vn &gt; Vː / _s</rule>
     <rule>ɑ æ &gt; æe / _(C…)i</rule>
-    <rule>V &gt; ə / unstressed ! V = ɑ</rule>
+    <rule>V &gt; ə / [- stress] ! V = ɑ</rule>
     <rule>ɑ &gt; ə / VC(C)ɑC(C)_# when unstressed</rule>
     <rule>Vh &gt; Vːɦ / _C, except maybe ! _j and/or _ʋ</rule>
     <rule>LV &gt; VL / {#,V,O}_</rule>
@@ -11980,7 +11965,7 @@ Souletin keeps initial ʃ- and tʃ- distinct; Labourdin only has ʃ-, and the re
   <section index="46.15" name="Proto-Japanese to Old Japanese Vowel Shift">
     <cite>Pogostick Man, from Frellesvig, Bjarke and John Witman (2005), “The Japanese-Korean vowel correspondences”</cite>
     <rule>e o &gt; je wo / _#</rule>
-    <rule>e o &gt; i u / else</rule>
+    <rule>e o &gt; i u / _ ! _#</rule>
     <rule>{ɨ,ə} &gt; o</rule>
     <rule>{u,ɨ}i {,a,i {ɨi,i{a,ə}} u{ɨ,a,ə} &gt; wi e je wo</rule>
   </section>
