@@ -5,27 +5,27 @@ h / ∅
 rs / sː
 n / ∅ / _s
 V₀V₀ / V₀ː
-V / ∅ / ”V%L(C)(C)V(C)# (irregular)
-V / ∅ / _L(C)(C)V(C)# (irregular)
-V / ∅ ”V%s_t(C)V(C)# (irregular)
+V / ∅ / ”V%L(C)(C)V(C)#
+V / ∅ / _L(C)(C)V(C)#
+V / ∅ ”V%s_t(C)V(C)#
 u / w / _V (between first and stressed syllables)
 w / u / _”V
 w / ∅ / _V
 au / a / _%”u
 au / o
 e / iː / ”_%ɪː#
-iː {i,eː} e / i e ɛ / stressed
+iː {i,eː} e / i e ɛ / [+ stress]
 iː {i,e(ː)} / i e / _%”V
 iː / ∅ / {k,s}_#
 {i(ː),e(ː),ae} / e / _#
 uː / u
 uiː / ui / _#
-{u,oː} o / o ɔ / stressed
+{u,oː} o / o ɔ / [+ stress]
 {u,o(ː)} / o / _%”V
 {u(ː),o(ː)} / o / _#
 o / u / _#
 aː oe / a e
-ae / ɛ / stressed
+ae / ɛ / [+ stress]
 ɛ ɔ / e o / _(”u)#
 {olt,okt} / ujt
 ujt / ut
@@ -33,8 +33,8 @@ aɫ / o
 ɫ / w / V_Ca
 o / u / _(”V)
 e / ∅ / el_#
-V / a / _{n,r}(C)V(C)# (irregular)
-V / V[+ nasal] / _N$C when stressed
+V / a / _{n,r}(C)V(C)#
+V / V[+ nasal] / _[+ stress]N$C
 ɔ̃ / õ
 N / ∅ / V[+ nasal]_$C ! C = S
 V / V[+ nasal] / _N$V
@@ -45,9 +45,9 @@ V[+ nasal] / V[- nasal] / [- stress]
 V[+ nasal] / V[- nasal] / in U#
 V₀[+ nasal]V₀[- nasal] / V₀[+ nasal]
 ı̃ / iɲ
-e V / o ∅ / _? (irregular)
-e / o / _m”V (irregular)
-V / ∅ / _”V (irregular)
+e V / o ∅ / _?
+e / o / _m”V
+V / ∅ / _”V
 e / ∅ / {l,n,r,s,k}_#
 e / ∅ / ”{i,e}_#
 e / i / _(C)(C)V(C)#
@@ -94,26 +94,26 @@ k / j / V_tV
 k / ∅ / Vn_tV
 ks ɡn tj / ʃ ɲ {z,s} / V_V
 tj / s / C_V
-dj / dʒ
+dj / dʒ / V_V
 dʒ / ʒ / V_V
-dj / dz
-dz / ts
+dj / dz / r_V
+dz / ts / r_V
 ts / s / r_V
-ndj / nts
-nts / ns
+ndj / nts / V_V
+nts / ns / V_V
 ns / ɲ / V_V
 sj / jʒ / V_V
 j / ∅ / i_ʒV
 sːj (m)nj lj rj / jʃ ɲʎ jr / V_V
-kj / ts
+kj / ts / V_V
 ts / s / V_V
 ɡj / {ʒ,j} / V_V
 pj {bj,vj} / jb jv / V_V
-mj / jm (irregular)
+mj / jm
 C₀C₀ / C₀ / ! C = r
 C / ∅ / C₁_C₂ ! C₂ = L
 k / j / _s#
-f / v / V_V (irregular)
+f / v / V_V
 s l / z ∅ / V_V
 a / ∅ / ”ɔ_#
 sk k / jʃ z / V_{i,e}
@@ -126,5 +126,5 @@ o / ∅ / _(C)(C)V(C)#
 e / j / {a,o,u}_
 a / e / _j when stressed
 o / u / _ɲ when stressed
-V₀V₀ / V₀ (irregular)
+V₀V₀ / V₀
 d / ∅ / V_V (in Portugal)

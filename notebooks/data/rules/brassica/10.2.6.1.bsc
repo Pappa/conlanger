@@ -2,7 +2,7 @@
 ; citation: Whimemsz, from Blust, Robert (2002), “Kiput Historical Phonology”. Oceanic Linguistics 41(2):384 – 438
 ; Stress reassignment to the final syllable
 ʔ / ∅ / V_V
-k / ∅ / V_V “(in some forms)”
+k / ∅ / V_V
 ai au / ai̯ au̯ / _#
 ə / a / _ʔ#
 ai au / ɛː ɔː / _…#
@@ -12,15 +12,15 @@ s / ∅ / V_V
 V₀V₀ / V₀
 ə / ∅ / adjacent to a vowel
 V[+stress] / Vː / _C# ! V = ə and/or C = h “(applies to diphthongal nuclei as well a[s] monophthongs)”
-ʀ / {l,ɾ} / ! _# (the latter is more common)
-l / ∅ / ! _# (irregular)
+ʀ / {l,ɾ} / ! _#
+l / ∅ / ! _#
 u / əw / _V
 i / əj / _V
 w j / v ɟ
 iu̯ / ui̯
 s / ∅ / _#
 i u / ɛ ɔ / _C# ! _P
-ʀ / ʔ / _# “(in a handful of forms)”
+ʀ / ʔ / _#
 ʀ / ɾ
 a / i / O[+voiced]…_(C)# “(blocked if there was an intervening nasal, and sometimes if there was an intervening voiceless stop or liquid)”
 i u / əi̯ əu̯ / _(ʔ)#
@@ -29,12 +29,12 @@ bʱ {dʱ,dzʱ} ɡʱ / f s k
 f / s
 v ɡ ɟ / f k c / V_V
 v ɟ / f c / #_
-{i,ɛ} {u,ɔ} / iə̯ uə̯ / _{k,ŋ}# “(and also sporadically before final *t and *n and some other consonants)
+{i,ɛ} {u,ɔ} / iə̯ uə̯ / _{k,ŋ}#
 k ŋ / ʔ ∅ / Və̯_#
-ə / {ə,a} / _C# “(free variants)”
+ə / {ə,a} / _C#
 NS[-voice] / Sː
 ; “Numerous different possible reflexes of NS[+voice] clusters”
-(C)V / ∅ / #_C… “(irregular)”
+(C)V / ∅ / #_C…
 n / l / #_
 ə / ∅ / #_
 {l,ɾ} / n / _#

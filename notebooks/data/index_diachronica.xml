@@ -1749,9 +1749,9 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ə &gt; ∅ / #_</rule>
     <rule>∅ &gt; ə / C_C “(for certain consonant combinations, which the paper doesn’t specify)”</rule>
     <rule>h &gt; ∅</rule>
-    <rule>ə &gt; {e,o} / stressed; “(result of /e/ or /o/ unpredictable)”</rule>
+    <rule>ə &gt; {e,o} / [+ stress]</rule>
     <rule>p &gt; w</rule>
-    <rule>wa &gt; o / #_ when unstressed</rule>
+    <rule>wa &gt; o / #_[- stress]</rule>
     <rule>V &gt; ə / [- stress]</rule>
     <rule>{aw,əw} &gt; o / _#</rule>
     <rule>wə &gt; u / #_</rule>
@@ -1759,20 +1759,20 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ə &gt; ∅ / _j</rule>
     <rule>j &gt; ∅ / C_i</rule>
     <rule>ə &gt; ∅ / _#</rule>
-    <rule>ə &gt; ∅ “(sporadic)”</rule>
+    <rule sporadic="true">ə &gt; ∅</rule>
     <rule>t &gt; ð / ! adjacent to S</rule>
     <rule>s &gt; t</rule>
     <rule>ʀ &gt; r / _C[+dental]</rule>
     <rule>ʀ &gt; s</rule>
     <rule>d &gt; r</rule>
-    <rule>ɖ &gt; ɽ “(only one example)”</rule>
-    <rule>ɲ &gt; n (except possibly to n when #_)</rule>
+    <rule sporadic="true">ɖ &gt; ɽ</rule>
+    <rule>ɲ &gt; n</rule>
     <rule>n dz &gt; l r</rule>
     <rule>rl &gt; lː</rule>
     <rule>ɟ &gt; k / _C#</rule>
     <rule>ɟ &gt; s</rule>
     <rule>ŋ &gt; ∅ / C_#</rule>
-    <rule>t &gt; {s,ð} / “unpredictably, to eliminate sV(C)t and tV(C)s sequences”</rule>
+    <rule>t &gt; {s,ð}</rule>
     <rule>∅ &gt; ŋ / #_V</rule>
     <rule>q &gt; χ (&gt; ʕ)</rule>
   </section>
@@ -1788,12 +1788,10 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>a &gt; ə / _UU(U…)#</rule>
     <rule>ə &gt; ∅ / _V</rule>
     <rule>ə &gt; ∅ VC_CV</rule>
-    <comment>Nasal assimilation to following stops in some words; in other words it results in a geminate stop
-Postvocalic obstruents with different POAs become geminates of the second when “in reduplicated monosyllabic roots” and “in non-reduplicated bases which had undergone the change of schwa syncope in medial syllables”</comment>
     <rule>C &gt; Cː / ə_V (?)</rule>
     <rule>ɟ(ː) &gt; d(ː)</rule>
-    <rule>bː dː dzː ɡː &gt; bʱ dʱ dzʱ ɡʱ (Whimemsz says these become “voiced stops with voiceless releases. . .treated as unit phonemes, not clusters)”</rule>
-    <rule>ə &gt; ∅ / #_UU(U…)# “(i.e., in word-initial position in prepenultimate syllables)</rule>
+    <rule>bː dː dzː ɡː &gt; bʱ dʱ dzʱ ɡʱ</rule>
+    <rule>ə &gt; ∅ / #_UU(U…)#</rule>
     <rule>pː tː cː kː &gt; p t c k</rule>
     <rule>c &gt; s</rule>
   </section>
@@ -1801,7 +1799,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <cite>Whimemsz, from Blust, Robert (2002), “Kiput Historical Phonology”. Oceanic Linguistics 41(2):384 – 438</cite>
     <comment>Stress reassignment to the final syllable</comment>
     <rule>ʔ &gt; ∅ / V_V</rule>
-    <rule>k &gt; ∅ / V_V “(in some forms)”</rule>
+    <rule sporadic="true">k &gt; ∅ / V_V</rule>
     <rule>ai au &gt; ai̯ au̯ / _#</rule>
     <rule>ə &gt; a / _ʔ#</rule>
     <rule>ai au &gt; ɛː ɔː / _…#</rule>
@@ -1811,7 +1809,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>V₀V₀ &gt; V₀</rule>
     <rule>ə &gt; ∅ / adjacent to a vowel</rule>
     <rule>V[+stress] &gt; Vː / _C# ! V = ə and/or C = h “(applies to diphthongal nuclei as well a[s] monophthongs)”</rule>
-    <rule>ʀ &gt; {l,ɾ} / ! _# (the latter is more common)</rule>
+    <rule>ʀ &gt; {l,ɾ} / ! _#</rule>
     <rule sporadic="true">l &gt; ∅ / ! _#</rule>
     <rule>u &gt; əw / _V</rule>
     <rule>i &gt; əj / _V</rule>
@@ -1819,7 +1817,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>iu̯ &gt; ui̯</rule>
     <rule>s &gt; ∅ / _#</rule>
     <rule sporadic="true">i u &gt; ɛ ɔ / _C# ! _P</rule>
-    <rule>ʀ &gt; ʔ / _# “(in a handful of forms)”</rule>
+    <rule sporadic="true">ʀ &gt; ʔ / _#</rule>
     <rule>ʀ &gt; ɾ</rule>
     <rule>a &gt; i / O[+voiced]…_(C)# “(blocked if there was an intervening nasal, and sometimes if there was an intervening voiceless stop or liquid)”</rule>
     <rule>i u &gt; əi̯ əu̯ / _(ʔ)#</rule>
@@ -1828,12 +1826,12 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>f &gt; s</rule>
     <rule>v ɡ ɟ &gt; f k c / V_V</rule>
     <rule>v ɟ &gt; f c / #_</rule>
-    <rule>{i,ɛ} {u,ɔ} &gt; iə̯ uə̯ / _{k,ŋ}# “(and also sporadically before final *t and *n and some other consonants)</rule>
+    <rule>{i,ɛ} {u,ɔ} &gt; iə̯ uə̯ / _{k,ŋ}#</rule>
     <rule>k ŋ &gt; ʔ ∅ / Və̯_#</rule>
-    <rule>ə &gt; {ə,a} / _C# “(free variants)”</rule>
+    <rule>ə &gt; {ə,a} / _C#</rule>
     <rule>NS[-voice] &gt; Sː</rule>
     <comment>“Numerous different possible reflexes of NS[+voice] clusters”</comment>
-    <rule>(C)V &gt; ∅ / #_C… “(irregular)”</rule>
+    <rule sporadic="true">(C)V &gt; ∅ / #_C…</rule>
     <rule>n &gt; l / #_</rule>
     <rule>ə &gt; ∅ / #_</rule>
     <rule>{l,ɾ} &gt; n / _#</rule>
@@ -1853,7 +1851,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>S &gt; S[-voice] / _#</rule>
     <rule>l &gt; n / _#</rule>
     <rule>s &gt; t / _VsVC</rule>
-    <rule>CV &gt; ∅ / _NCVC “(in reduplications)”</rule>
+    <rule>CV &gt; ∅ / _NCVC</rule>
     <comment>Word-initial nasals assimilate to the POA of a following consonant</comment>
   </section>
   <section index="10.2.6.2.1" name="Proto-Kenyah to Òma Lóngh">
@@ -1873,7 +1871,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>m &gt; ɲ / i_#</rule>
     <rule>ai̯ au̯ &gt; ɛ ɔ</rule>
     <rule>{ui̯,iu̯} &gt; e</rule>
-    <rule>i u &gt; e o / _CV[+close-mid](C)# “(iə is treated as close mid for this change)”</rule>
+    <rule>i u &gt; e o / _CV[+close-mid](C)#</rule>
     <rule>i u &gt; ɛ ɔ / _CV[+open-mid](C)#</rule>
     <rule>i u &gt; e o / _Cɯ#</rule>
     <rule>ŋ &gt; ŋ̊ / _#</rule>
@@ -1883,26 +1881,26 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>p &gt; f / #_</rule>
     <rule>ə &gt; ∅ / #_</rule>
     <rule>p k &gt; f ɣ / V_V ! ”ə_V</rule>
-    <rule>d &gt; r / V_V “(irregular)”</rule>
+    <rule sporadic="true">d &gt; r / V_V</rule>
     <rule>dz &gt; ɟ / V_V</rule>
     <rule>b d dz ɡ &gt; p t c k / N_</rule>
-    <rule>N &gt; ∅ / _S “(sporadic)”</rule>
+    <rule sporadic="true">N &gt; ∅ / _S</rule>
     <rule>h &gt; ∅ / V_V</rule>
   </section>
   <section index="10.2.6.3" name="Proto-Malayic to Minangkabau">
     <cite>TinyMusic, from Tryon, Darrell (1995), Comparative Austronesian Dictionary</cite>
     <rule>n &gt; ɲ / “in the environment of i”</rule>
-    <rule>h &gt; ∅ / ! _# (some exceptions)</rule>
+    <rule>h &gt; ∅ / ! _#</rule>
     <rule>a &gt; o / _(C…)#</rule>
     <rule sporadic="true">u i &gt; o e</rule>
     <comment>Chronologically-ordered changes:</comment>
-    <rule>ə &gt; a / _(C…)# (eventually spread to everywhere)</rule>
+    <rule>ə &gt; a / _(C…)#</rule>
     <rule>m p &gt; n t / {u,i}_</rule>
     <rule>a u &gt; e uj / _{t,s}#</rule>
     <rule>a &gt; o / _p#</rule>
     <rule>u i &gt; uə iə / _{k,ŋ,h,l,r}#</rule>
     <rule>{p,t,k} s &gt; ʔ h / _#</rule>
-    <rule>{l,r} &gt; ∅ / _# (retained across morpheme boundaries)</rule>
+    <rule>{l,r} &gt; ∅ / _#</rule>
   </section>
   <section index="10.3" name="Proto-Austronesian to Proto-Oceanic">
     <cite>Pogostick Man, from Wikipedia contributors (2011), “Proto-Austronesian language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Proto-Austronesian_language&gt;</cite>
@@ -1915,7 +1913,6 @@ Postvocalic obstruents with different POAs become geminates of the second when �
   </section>
   <section index="10.3.1" name="Proto-Oceanic to Hawai’ian">
     <cite>Chris Zoller, from Trask, R.L. (1996), Historical Linguistics</cite>
-    <comment>NB: Zoller states that these changes are “[s]implified”.</comment>
     <rule>{h,ʔ} &gt; ∅</rule>
     <rule>{s,f} &gt; h</rule>
     <rule>k t &gt; ʔ k</rule>
@@ -1935,7 +1932,6 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>r &gt; ɡʟ</rule>
     <rule>”V[+ high(er)] &gt; ∅ / _CV</rule>
     <rule>”V &gt; ə / _CV</rule>
-    <comment>”ə sometimes assimilates to a following vowel</comment>
     <rule sporadic="true">a &gt; e / _CV[+ mid]</rule>
     <rule sporadic="true">a &gt; e / _Ci</rule>
     <rule>a(C)V[+ high] a(C)V[+ mid] aCa &gt; ɔ(C) a(C) {ɔ,a}(C)ə</rule>
@@ -1954,7 +1950,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>VV &gt; V</rule>
     <rule>ndr *R &gt; d r</rule>
     <rule>{c,*j} ɲ &gt; s n</rule>
-    <rule>t &gt; ʔ “often”</rule>
+    <rule sporadic="true">t &gt; ʔ</rule>
     <rule>b bʷ d ɡ &gt; p kpʷ t k</rule>
     <rule>mʷ &gt; ŋmʷ</rule>
     <comment>thetha says “intervening consonants sometimes optional in the [following] sound changes”:</comment>
@@ -1983,14 +1979,14 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>p pʷ bʷ k ɡ &gt; β w kpʷ ɣ k</rule>
     <rule>mʷ ɲ &gt; ŋmʷ n</rule>
     <rule>{c,*j} &gt; s</rule>
-    <rule>s &gt; h “(often)”</rule>
+    <rule sporadic="true">s &gt; h</rule>
     <rule>r &gt; j</rule>
     <rule>o e i &gt; ɔ ɛ ɪ / C_V[- high]</rule>
     <rule>V[- high] &gt; ∅ / {ɔ,ɛ,ɪ}C_</rule>
-    <comment>oCV[+ high] / ɪC (sporadic)</comment>
+    <rule sporadic="true">oCV[+ high] / ɪC</rule>
     <rule sporadic="true">uCi &gt; iC</rule>
     <rule>u a &gt; ʊ ɛ / _CV[+ high]</rule>
-    <comment>V[+ high] / {ʊ,ɛ}C_</comment>
+    <rule>V[+ high] / {ʊ,ɛ}C_</rule>
     <rule>o e &gt; ʊ ɪ</rule>
     <rule>aCV[+ high] &gt; ɪ / when stressed unless primarily stressed</rule>
     <rule>(C)V₁C”V₂ &gt; (C)V₂V₂</rule>
@@ -1998,7 +1994,6 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>V &gt; ∅ / (C)V_VC”V</rule>
     <rule>b β d &gt; m p n / _{C,#}</rule>
     <rule sporadic="true">kpʷ &gt; k / _C</rule>
-    <comment>*u *o “sometimes offload their labialization onto the previous labial consonant” when they change to something else</comment>
   </section>
   <section index="10.3.5" name="Proto-Oceanic to Proto-New Caledonia">
     <cite>thetha, from Ozanne-Rivierre, Françoise (1992), “The Proto-Oceanic Consonantal System and the Languages of New Caledonia”. Oceanic Linguistics 31(2):191 – 207; and Ozanne-Rivierre, Françoise (1995), “Structural Changes in the Languages of Northern New Caledonia”. Oceanic Linguistics 34(1):44 – 72</cite>
@@ -2022,8 +2017,8 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>t c &gt; l j / V_V</rule>
     <rule>VnV &gt; ṼlṼ</rule>
     <rule>ⁿS &gt; N / _#</rule>
-    <rule>u &gt; i (typical)</rule>
-    <rule>u i &gt; o e (not always)</rule>
+    <rule sporadic="true">u &gt; i</rule>
+    <rule sporadic="true">u i &gt; o e</rule>
   </section>
   <section index="10.3.5.2" name="Proto-New Caledonia to Jawé">
     <cite>thetha, from Ozanne-Rivierre, Françoise (1992), “The Proto-Oceanic Consonantal System and the Languages of New Caledonia”. Oceanic Linguistics 31(2):191 – 207; and Ozanne-Rivierre, Françoise (1995), “Structural Changes in the Languages of Northern New Caledonia”. Oceanic Linguistics 34(1):44 – 72</cite>
@@ -2076,14 +2071,14 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>uCu &gt; iCi</rule>
     <rule>V[+ mid] &gt; a / near nasals?</rule>
     <rule>u i &gt; o e / “in monosyllabic forms almost always”</rule>
-    <rule>”V &gt; Vː (usually)</rule>
+    <rule sporadic="true">”V &gt; Vː</rule>
     <comment>/ɨ ə/ gained</comment>
     <rule>ŋ &gt; n</rule>
   </section>
   <section index="10.3.5.5" name="Proto-New Caledonia to Nyelâyu">
     <cite>thetha, from Ozanne-Rivierre, Françoise (1992), “The Proto-Oceanic Consonantal System and the Languages of New Caledonia”. Oceanic Linguistics 31(2):191 – 207; and Ozanne-Rivierre, Françoise (1995), “Structural Changes in the Languages of Northern New Caledonia”. Oceanic Linguistics 34(1):44 – 72</cite>
     <rule>V &gt; ∅ / #(C)V(C)(C)_#</rule>
-    <rule>C &gt; ∅ / _# “sometimes”</rule>
+    <rule sporadic="true">C &gt; ∅ / _#</rule>
     <rule>k &gt; c</rule>
     <rule>k t s &gt; j c t̪</rule>
     <rule>p pw t̪ ʈ c &gt; v (v)w r l j / V_V</rule>
@@ -2094,14 +2089,14 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>pː pwː tː qː cː &gt; pʰ pwʰ tʰ h cʰ</rule>
     <rule>q &gt; ∅</rule>
     <rule>jʰ j &gt; h ∅ / _i</rule>
-    <rule>w &gt; ɣ (sporadic, conditioning unknown)</rule>
+    <rule sporadic="true">w &gt; ɣ</rule>
     <rule>ⁿS &gt; N / _#</rule>
     <rule>SN &gt; N[- voice]</rule>
     <rule>VnV &gt; ṼlṼ</rule>
     <rule>V &gt; Ṽ / _N</rule>
     <rule>ⁿS &gt; N / _Ṽ</rule>
-    <rule>u &gt; i “often”</rule>
-    <rule>u i &gt; o e (not always)</rule>
+    <rule sporadic="true">u &gt; i</rule>
+    <rule sporadic="true">u i &gt; o e</rule>
     <rule>ŋ &gt; n</rule>
   </section>
   <section index="10.3.5.6" name="Proto-New Caledonia to Pwaamei">
@@ -2141,7 +2136,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>ⁿS &gt; N / _#</rule>
     <rule>u i &gt; o e / in monosyllables</rule>
     <rule>au ai &gt; ɔ ɛ</rule>
-    <rule>o &gt; ɔ “sometimes”</rule>
+    <rule sporadic="true">o &gt; ɔ</rule>
     <rule>a &gt; {ɛ,e} “in some words”</rule>
     <rule>ŋ &gt; n</rule>
   </section>
@@ -2225,7 +2220,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>mʷ b(ʷ) vʷ &gt; m p b</rule>
     <rule>d ɡ &gt; r k</rule>
     <rule>{z,dr} &gt; ts</rule>
-    <rule>u &gt; i (“sporadic”)</rule>
+    <rule sporadic="true">u &gt; i</rule>
     <rule>a &gt; e (rare?)</rule>
   </section>
   <section index="10.3.9" name="Proto-Oceanic to Proto-Utupua">
@@ -2357,7 +2352,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>ai &gt; i / _C</rule>
     <rule>ei &gt; i</rule>
     <rule>ua &gt; ou</rule>
-    <rule>au &gt; {u,o} “sometimes”</rule>
+    <rule sporadic="true">au &gt; {u,o}</rule>
     <rule>e &gt; i / Ḱ_ “[tendency]”</rule>
     <rule>e &gt; i / _Ḱ “[tendency]”</rule>
     <rule>a &gt; o / P_ “[tendency]”</rule>
@@ -2386,7 +2381,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>f &gt; v / V_V</rule>
     <rule>k &gt; ɣ</rule>
     <rule>ɣ &gt; k / _i</rule>
-    <rule>s &gt; h “often”</rule>
+    <rule sporadic="true">s &gt; h</rule>
     <rule>s &gt; ∅ / _C (occasionally blocked)</rule>
     <rule>i &gt; e / O[+ labial]_</rule>
     <rule>i &gt; e / _O[+ labial]</rule>
@@ -2429,7 +2424,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>t &gt; r</rule>
     <rule>b(ʷ) d &gt; p(ʷ) t</rule>
     <rule>ɣ &gt; ∅</rule>
-    <rule>s &gt; h “irregularly”</rule>
+    <rule sporadic="true">s &gt; h</rule>
     <rule>{p(ʷ),v}Vh &gt; fV</rule>
     <comment>/fʷ/ gained</comment>
     <rule>u &gt; {e,i} / _Cu</rule>
@@ -2448,7 +2443,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>r &gt; l / _Vl</rule>
     <rule>c *j &gt; s {z,s}</rule>
     <rule>z &gt; t</rule>
-    <rule>s &gt; h “irregularly”</rule>
+    <rule sporadic="true">s &gt; h</rule>
     <rule>{p(ʷ),v}Vh &gt; fV</rule>
   </section>
   <section index="10.3.11.3.3" name="Proto-Tanna to North Tanna">
@@ -2458,13 +2453,13 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>kʷ &gt; ∅ / _a (rare)</rule>
     <rule>kʷ &gt; {w,u}</rule>
     <rule>v &gt; ∅ / _i</rule>
-    <rule>v &gt; {w,u} (“sporadically”)</rule>
+    <rule sporadic="true">v &gt; {w,u}</rule>
     <rule>ɣ &gt; ∅ / #_</rule>
     <rule>ɣ &gt; ∅ / _E</rule>
     <rule>ɣ &gt; ŋ</rule>
     <rule>r &gt; l / _{o,E}</rule>
     <rule>r &gt; i</rule>
-    <rule>d &gt; t (often)</rule>
+    <rule sporadic="true">d &gt; t</rule>
     <rule>d &gt; k / _ŋ</rule>
     <rule>z &gt; r</rule>
     <rule>{s,c} &gt; {h,s}</rule>
@@ -2477,7 +2472,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>ɣ &gt; k</rule>
     <rule>r &gt; l</rule>
     <rule>{c,*j} &gt; s</rule>
-    <rule>s &gt; h “irregularly”</rule>
+    <rule sporadic="true">s &gt; h</rule>
     <rule>{p(ʷ),v}Vh &gt; fV</rule>
     <rule>u &gt; {e,i} / _Cu</rule>
     <rule>ə &gt; a / in U#</rule>
@@ -2494,7 +2489,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>ɣ &gt; ∅ / _E</rule>
     <rule>ɣ &gt; ŋ</rule>
     <rule>c *j &gt; s {z,s}</rule>
-    <rule>s &gt; h “often”</rule>
+    <rule sporadic="true">s &gt; h</rule>
     <rule>z &gt; r</rule>
   </section>
   <section index="10.3.12" name="Proto-Oceanic to Vera’a">
@@ -2503,9 +2498,9 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>VV &gt; V</rule>
     <rule>ndr *R &gt; d r</rule>
     <rule>{c,*j} ɲ &gt; s n</rule>
-    <rule>t &gt; ʔ “often”</rule>
-    <rule>β &gt; f / #_ (usually)</rule>
-    <rule>β &gt; f / else (rarely)</rule>
+    <rule sporadic="true">t &gt; ʔ</rule>
+    <rule sporadic="true">β &gt; f / #_</rule>
+    <rule sporadic="true">β &gt; f / _ ! #_</rule>
     <rule>bʷ ɡ &gt; kpʷ k</rule>
     <rule>mʷ &gt; ŋmʷ</rule>
     <rule>i(C)V[+ high] &gt; i(C)</rule>
@@ -2515,7 +2510,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>a(C)i a(C)u &gt; {a,ɛ}(C) {ɔ,a,ɛ}(C)</rule>
     <rule>a(C){o,e} &gt; a(C)</rule>
     <rule>oCa &gt; ɔCɔ</rule>
-    <rule>uCV[+ high] &gt; iC “sometimes”</rule>
+    <rule sporadic="true">uCV[+ high] &gt; iC</rule>
     <rule>uCV[- high] &gt; uCʊ</rule>
     <rule>oa {ae,ea} &gt; uɔ iɛ</rule>
     <rule>o e &gt; ʊ ɪ</rule>
@@ -2527,7 +2522,6 @@ Postvocalic obstruents with different POAs become geminates of the second when �
   <section index="10.4" name="Micronesian"/>
   <section index="10.4.1" name="Proto-Micronesian to Marshallese">
     <cite>Ketsuban, from Hale, Mark, Historical Linguistics: Theory and Method</cite>
-    <comment>NB: “. . .the precise contrast between *s and *S, and *t and *T is unknown, as is the precise phonetic nature of *c and *Z.” Blust (v.s.) rejected *T and *D; according to his reconstruction. . .*s and *S were /ç s/, respectively. The substitution of /ts/ for *T is inferred from the Wikipedia article but may be incorrect.</comment>
     <rule>K &gt; Kʷ / _{C[+round],V[+round]}</rule>
     <rule>V[+high] &gt; ɘ / _C[-high]</rule>
     <rule>V &gt; ∅ / _#</rule>
@@ -2545,11 +2539,9 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>p {t,ts} c &gt; pʲ tʲ rʲ</rule>
     <rule>{ç,s} x &gt; tᵚ ∅</rule>
     <rule>m ɲ &gt; mʲ nʲ</rule>
-    <comment>“The author does not elaborate on the complex development of vowels without an onset consonant, other than to say that a glide is inserted (*Saa &gt; tᵚaɰ), nor does he go into more detail than to say that l and n generally develop into lʲ and nʲ before Proto-Micronesian front vowels, and l, r, and n turn into lᶬ, rᶬ, and nᶬ before a and lʷ, rʷ, and nʷ before Proto-Micronesian round vowels, but the author does not elaborate.”</comment>
   </section>
   <section index="10.5" name="Proto-Austronesian to Proto-Ongan">
     <cite>Pogostick Man, from Blevins, Juliette (2007), “A Long Lost Sister of Proto-Austronesian? Proto-Ongan, Mother of Jarawa and Onge of the Andaman Islands”. Oceanic Linguistics 46(I):154 – 198</cite>
-    <comment>NB: Blevins floats the idea that Proto-Ongan was a sister of rather than a daughter of Proto-Austronesian, but for reasons of simplicity in editing this document it is placed here.</comment>
     <rule>b &gt; ∅ / #_{u,i}</rule>
     <rule>q &gt; ∅ / #_V</rule>
     <rule>q &gt; k</rule>
@@ -2566,19 +2558,18 @@ Postvocalic obstruents with different POAs become geminates of the second when �
   </section>
   <section index="10.5.1" name="Proto-Ongan to Jarawa">
     <cite>Pogostick Man, from Blevins, Juliette (2007), “A Long Lost Sister of Proto-Austronesian? Proto-Ongan, Mother of Jarawa and Onge of the Andaman Islands”. Oceanic Linguistics 46(I):154 – 198</cite>
-    <rule>e &gt; ə / _N[- stress]</rule>
+    <rule>e &gt; ə / _[- stress]N</rule>
     <rule>n &gt; ŋ / _# (?)</rule>
     <rule>k(ʷ) &gt; h(ʷ)</rule>
     <rule>∅ &gt; a / h#_</rule>
     <rule>ɡ &gt; j</rule>
     <rule>e &gt; {e,ə,o} / _V</rule>
     <rule>e &gt; ∅ / _# (?)</rule>
-    <rule>p &gt; b / #_ (change seems to be ongoing)</rule>
-    <comment>/a e/ reduce when unstressed (change seems to be ongoing?)</comment>
+    <rule>p &gt; b / #_</rule>
   </section>
   <section index="10.5.2" name="Proto-Ongan to Onge">
     <cite>Pogostick Man, from Blevins, Juliette (2007), “A Long Lost Sister of Proto-Austronesian? Proto-Ongan, Mother of Jarawa and Onge of the Andaman Islands”. Oceanic Linguistics 46(I):154 – 198</cite>
-    <rule>e &gt; ə / _N, when unstressed (?)</rule>
+    <rule>e &gt; ə / _[- stress]N</rule>
     <rule>n &gt; ŋ / _# (?)</rule>
     <rule>d &gt; r / V_{V,#}</rule>
     <rule>{w,r} &gt; ∅ / {a,e}_#</rule>
@@ -2600,29 +2591,24 @@ Postvocalic obstruents with different POAs become geminates of the second when �
   <section index="10.6.1" name="Proto-Paiwan to Northern Paiwan">
     <cite>Pogostick Man, from Chen, Chun-Mei (2006), A Comparative Study on Formosan Phonology: Paiwan and Budai Rukai 313 – 320</cite>
     <rule>c ɟ q ɭ &gt; t d ʔ l</rule>
-    <comment>Something about final stress and preceding /ə/</comment>
   </section>
   <section index="10.6.2" name="Proto-Paiwan to Central Paiwan">
     <cite>Pogostick Man, from Chen, Chun-Mei (2006), A Comparative Study on Formosan Phonology: Paiwan and Budai Rukai 313 – 320</cite>
     <rule>w &gt; v / _#</rule>
-    <comment>Something about final stress and preceding /ə/</comment>
   </section>
   <section index="10.6.3" name="Proto-Paiwan to Southern Paiwan">
     <cite>Pogostick Man, from Chen, Chun-Mei (2006), A Comparative Study on Formosan Phonology: Paiwan and Budai Rukai 313 – 320</cite>
     <rule>k r &gt; ʔ ɣ</rule>
-    <comment>Something about final stress and preceding /ə/</comment>
   </section>
   <section index="10.7" name="Proto-Austronesian to Proto-Rukai">
     <cite>Pogostick Man, from Chen, Chun-Mei (2006), A Comparative Study on Formosan Phonology: Paiwan and Budai Rukai 313 – 320</cite>
     <rule>{t₁,c} {d₁,z} d₃ &gt; t d ɖ</rule>
     <rule>R l L &gt; {r,ʔ} ɭ l</rule>
     <rule>S₁ s d₂ *C &gt; s θ ð ts (not sure what *C stands for here)</rule>
-    <comment>Something about echo-vowel epenthesis and stress that isn’t really clear from skimming it</comment>
   </section>
   <section index="10.7.1" name="Proto-Rukai to Budai Rukai">
     <cite>Pogostick Man, from Chen, Chun-Mei (2006), A Comparative Study on Formosan Phonology: Paiwan and Budai Rukai 313 – 320</cite>
     <rule>{v,ʔ} ð &gt; ∅ j</rule>
-    <comment>Long vowels acquire a high-low contour, but it looks like this is more prosodic than anything</comment>
   </section>
   <section index="10.8" name="Proto-Austronesian to Proto-Tsouic">
     <cite>Pogostick Man, from Wikipedia contributors (2016), “Tsouic languages”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Tsouic_languages&gt;</cite>
@@ -2632,7 +2618,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
   <section index="11.1" name="Proto-Northeast Caucasian to Proto-Avar-Andic">
     <cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&gt;, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251</cite>
     <rule>l &gt; {l,r}</rule>
-    <comment>*b is “[p]rone to change to *m”</comment>
+    <rule sporadic="true">*b &gt; *m</rule>
   </section>
   <section index="11.1.1" name="Proto-Avar-Andic to Akhvakh">
     <cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&gt;, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251</cite>
@@ -2641,7 +2627,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>{ts,st} &gt; tʃ</rule>
     <rule>tɬː dɮ &gt; tɬ(ː) tɬː</rule>
     <rule>kː ɢ &gt; xʲ {qːʼ,ɣ}</rule>
-    <rule>{l,r} &gt; ∅ (sometimes, only from original *l)</rule>
+    <rule sporadic="true">{l,r} &gt; ∅</rule>
   </section>
   <section index="11.1.2" name="Proto-Avar-Andic to Andi">
     <cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&gt;, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251</cite>
@@ -2657,13 +2643,13 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>st(ː) &gt; ts</rule>
     <rule>tʃ tʃː tʃːʼ dʒ &gt; ts(?) tʃ tʃ(ː)ʼ tsʼ</rule>
     <rule>tɬ tɬʼ tɬː tɬːʼ &gt; ɬ tʼ tɬ tɬ(ː)ʼ</rule>
-    <rule>q qːʼ ɢ &gt; x {q(ː)ʼ,ɡh} qʼ (not sure if that last 〈gh〉 should be ɣ)</rule>
+    <rule>q qːʼ ɢ &gt; x {q(ː)ʼ,ɡh} qʼ</rule>
     <rule>s sː ɬː x xː &gt; {s,ʃ} x ɬ {x,h} x</rule>
     <rule>m &gt; {m,n}</rule>
   </section>
   <section index="11.2" name="Proto-Northeast Caucasian to Dargi">
     <cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&gt;, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251</cite>
-    <comment>*b is “[p]rone to change to *m”</comment>
+    <rule sporadic="true">*b &gt; *m</rule>
     <rule>{tsː,st} tsːʼ dz stː &gt; ts z tsː s</rule>
     <rule>tʃ tʃː dʒ &gt; {tsʼ,tʃʼ} ʒ ts</rule>
     <rule>tɬ tɬː tɬʼ tɬːʼ &gt; k {xʲː,kː} kʰ {ɡ,q}(?)</rule>
@@ -2673,7 +2659,6 @@ Postvocalic obstruents with different POAs become geminates of the second when �
   <section index="11.3" name="Proto-Northeast Caucasian to Khinalug">
     <cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&gt;, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251</cite>
     <rule>b d &gt; {b,v} z</rule>
-    <comment>The development of *tsʼ is unclear; in the user page there’s a slash but it might be a typo for an apostrophe</comment>
     <rule>{tsː,st} {tsːʼ,dz} &gt; ts tsʼ</rule>
     <rule>{tʃ(ː),dʒ} &gt; tʃʼ</rule>
     <rule>tɬ tɬː tɬʼ tɬːʼ dɮ &gt; k {k,xʲ} {kʼ,ɡ} {kʼ,kː} kʼ</rule>
@@ -2685,7 +2670,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
   </section>
   <section index="11.4" name="Proto-Northeast Caucasian to Lak">
     <cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&gt;, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251</cite>
-    <rule>b d &gt; {pː,b} {tː,d} (but *b is “[p]rone to change to *m”)</rule>
+    <rule>b d &gt; {pː,b} {tː,d}</rule>
     <rule>{tsː,stː} dz st &gt; sː {tsː,z} ts</rule>
     <rule>tʃ tʃː dʒ &gt; {ts,tʃ} {tsʼ,tʃʼ} tʃ(ː)ʼ</rule>
     <rule>tɬ tɬː tɬ(ː)ʼ dɮ &gt; xʲ xː kʼ {kː,l}</rule>
@@ -2727,7 +2712,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>{ts,st} tsː tsːʼ dz &gt; {ʃ,tʃ} tʃ(ʼ) {tʃː,dʒ}</rule>
     <rule>tɬ tɬː tɬʼ tɬːʼ dɮ &gt; xʲ {ɣʲ,ɡ} qʼ k(ʼ) {kː,ɣʲ}</rule>
     <rule>kː ɡ &gt; ɣ kː</rule>
-    <rule>ɣ &gt; {qː,ɣ} (again, probably a difference in the development of *ɢ than this strict sound change)</rule>
+    <rule>ɣ &gt; {qː,ɣ}</rule>
     <rule>qːʼ &gt; q(ʼ)</rule>
     <rule>ʃː ɬ ɬː x xː &gt; ɣʲ j ʃ ɣ x</rule>
   </section>
@@ -2776,9 +2761,9 @@ Postvocalic obstruents with different POAs become geminates of the second when �
   </section>
   <section index="11.7" name="Proto-Northeast Caucasian to Proto-Tsezic">
     <cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&gt;, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251</cite>
-    <comment>*b is “[p]rone to change to *m”</comment>
+    <rule sporadic="true">*b &gt; *m</rule>
     <rule>{ts,st} {tsːʼ,dz} &gt; s ts</rule>
-    <rule>tʃ {tʃː,dʒ} &gt; ʃ tʃ (the change of *tʃːʼ is conjectured for Bezhta, as the change is only listed in Tsez, but given the development of *tsːʼ I don’t find it unreasonable to put it here)</rule>
+    <rule>tʃ {tʃː,dʒ} &gt; ʃ tʃ</rule>
     <rule>tɬ tɬːʼ &gt; ɬ tɬ</rule>
     <rule>ɢ &gt; q</rule>
     <rule>s xː &gt; z x</rule>
@@ -2786,8 +2771,6 @@ Postvocalic obstruents with different POAs become geminates of the second when �
   </section>
   <section index="11.7.1" name="Proto-Tsezic to Bezhta">
     <cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&gt;, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251</cite>
-    <comment>*ɬ may have remained ɬ
-*r remained when intervocalic</comment>
   </section>
   <section index="11.7.2" name="Proto-Tsezic to Tsez">
     <cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&gt;, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251</cite>
@@ -2805,16 +2788,16 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>mˤ &gt; m</rule>
     <rule>rʲ &gt; r</rule>
     <rule>tʷː tʷʲ(ʼ) &gt; d(w) tʷ(ʼ)</rule>
-    <rule>tsʲː &gt; dzʲ (marked as dubious in the source)</rule>
+    <rule sporadic="true">tsʲː &gt; dzʲ</rule>
     <rule>sʷʲ zʲ &gt; sʲ z</rule>
     <rule>tsʷː tsʷʲ &gt; tsʷ (tʃ)</rule>
     <rule>zʷʲ tsʷʲʼ dzʷʲ &gt; dzʲ~zʲ tʃʼ dʒ~ʒ</rule>
     <rule>tʃ(ʼ) dʒ &gt; tsʲ(ʼ) dzʲ</rule>
     <rule>ʃ(~ʃː) ʒ &gt; sʲ sʲ</rule>
     <rule>tɕː &gt; dzʲ(~tɕ)</rule>
-    <rule>ɕ(ː) ʑ &gt; ʃ ʒ (the change of singleton *ɕ to ʃ is marked as dubious)</rule>
+    <rule>ɕ(ː) ʑ &gt; ʃ ʒ</rule>
     <rule>tʃʷ(ʼ) tʃʷː dʒʷ &gt; tʃ(ʼ) zʷ dzʷ~zʷ</rule>
-    <rule>ʃʷ ʃʷː ʒʷ &gt; sʷ ʃ zʲ (this final change is marked as dubious)</rule>
+    <rule>ʃʷ ʃʷː ʒʷ &gt; sʷ ʃ zʲ</rule>
     <rule>tɕʷ(ʼ) tɕʷː &gt; tʃ(ʼ) dʒ~ʒ</rule>
     <rule>ɕʷ ɕʷː ʑʷ &gt; ʃʷ ʃ ʒʷ</rule>
     <rule>tɬ tɬː tɬʼ dɮ &gt; x ts {x,tsʼ} l</rule>
@@ -2830,8 +2813,8 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>ɮʷʲ &gt; ʒ</rule>
     <rule>kʷː &gt; ɡʷ</rule>
     <rule>kʷʲʼ &gt; kʷʼ</rule>
-    <rule>xʷʲ ɣʷʲ &gt; sʷ zʷ (*ɣʷʲ is marked as dubious)</rule>
-    <rule>q qː ɢ &gt; (ħ) q ɣ (*ɢ is marked as *G in the document)</rule>
+    <rule>xʷʲ ɣʷʲ &gt; sʷ zʷ</rule>
+    <rule>q qː ɢ &gt; (ħ) q ɣ</rule>
     <rule>χ(ʲ) ʁ(ʲ) &gt; ħ ʕ</rule>
     <rule>qʲː ɢʲ &gt; q ɣʲ</rule>
     <rule>qʷ qʷː ɢʷ &gt; ħʷ qʷ ɣʷ</rule>
@@ -2839,7 +2822,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>qʷʲ ɢʷʰ &gt; ħ(ʷ) ɣ(ʷ)</rule>
     <rule>qʷʲʼ &gt; ʕʷ (qʷʼ?)</rule>
     <rule>χʷʲ ʁʷʲ &gt; ħ(ʷ) ʕ(ʷ)</rule>
-    <rule>qˤː qˤʼ &gt; ʕ ħ (this latter is marked as dubious)</rule>
+    <rule>qˤː qˤʼ &gt; ʕ ħ</rule>
     <rule>ʁʕ &gt; ʕ</rule>
     <rule>qˤʲ qˤʲː qˤʲʼ &gt; q ʔ ħ(?)</rule>
     <rule>χˤʲ ʁˤʲ &gt; ħ ʕ</rule>
@@ -2850,7 +2833,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <cite>Nortaneous, from Chirikba, Viacheslav A. (2003), “Abkhaz”. Languages of the World/Materials 119.</cite>
     <rule>tʃʷ(ʼ) tɕ(ʼ) dʒʷ dʑ &gt; f(ʼ) ts(ʼ) v dz</rule>
     <rule>ɕ ʑ &gt; s z</rule>
-    <rule>”Vʕ ʕ”V &gt; ”aa a”a (but stays /ʕ/ sometimes?)</rule>
+    <rule>”Vʕ ʕ”V &gt; ”aa a”a</rule>
     <rule>ʕʷ &gt; ɥ</rule>
     <rule>tʷ(ʼ) dʷ &gt; {tʷ(ʼ),p(ʼ)} {dʷ,b}</rule>
   </section>
@@ -2923,7 +2906,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>ts tsː dz &gt; {s,c} tsː dz~z</rule>
     <rule>tsʲ tsʲː tsʲʼ dzʲ &gt; (s) tsː tsʼ dz~z</rule>
     <rule>sʲ zʲ &gt; s z</rule>
-    <rule>tsʷ lʲ {qʲʷ,qˤʷ} &gt; sʷ d qʷ / #_ (data not given for non-initial forms)</rule>
+    <rule>tsʷ lʲ {qʲʷ,qˤʷ} &gt; sʷ d qʷ / #_</rule>
     <rule>tsʲʷ tsʲʷ dzʲʷ &gt; tsʲ tsʲʼ dzʲ</rule>
     <rule>sʲʷ zʲʷ &gt; sʲ zʲ</rule>
     <rule>tʃ tʃʼ dʒ dʑ &gt; s tsʲʼ(?) dz~z dʑ~ʑ</rule>
@@ -2955,8 +2938,6 @@ Postvocalic obstruents with different POAs become geminates of the second when �
   </section>
   <section index="12.2.1" name="Proto-Circassian to Adyghe">
     <cite>Pogostick Man, from Wikipedia contributors (2014), “Proto-Circassian language”. Wikipedia, the Free Encyclopedia, &lt;http://en.wikipedia.org/w/index.php?title=Proto-Circassian_language&gt;; and Wikipedia contributors (2014), “Adyghe language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Adyghe_language&gt;</cite>
-    <comment>— Stress changes:</comment>
-    <comment>— Consonant correspondences:</comment>
     <rule>tsʲ &gt; tɕ</rule>
     <rule>tsʷ &gt; tsʲʷ</rule>
     <rule>tʃ tɕ &gt; ʃ ʂ</rule>
@@ -3014,8 +2995,6 @@ Postvocalic obstruents with different POAs become geminates of the second when �
   </section>
   <section index="12.2.2" name="Proto-Circassian to Kabardian">
     <cite>Pogostick Man, from Wikipedia contributors (2014), “Proto-Circassian language”. Wikipedia, the Free Encyclopedia, &lt;http://en.wikipedia.org/w/index.php?title=Proto-Circassian_language&gt;</cite>
-    <comment>— Stress changes:</comment>
-    <comment>— Consonant correspondences:</comment>
     <rule>tsʲ(ː) tsʷ {tʃ,tɕ} &gt; ɕ f ʃ</rule>
     <rule>kʲ &gt; tʃ</rule>
     <rule>ʔ~qʼ &gt; ʔʷ</rule>
@@ -3088,8 +3067,8 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <cite>CatDoom, from Klar, Kathryn (1977), Topics in Historical Chumash Grammar. &lt;http://linguistics.berkeley.edu/~survey/documents/dissertations/klar-1977.pdf&gt;</cite>
     <rule>Sʼ &gt; ʔ</rule>
     <rule>q k &gt; {q,k} {k(ʃ),tʲ} (allophonic)</rule>
-    <rule>{ˀm,ˀn} &gt; {∅,ʔ} (the former is more likely)</rule>
-    <rule>ˀw &gt; w (may have remained glottalized)</rule>
+    <rule>{ˀm,ˀn} &gt; {∅,ʔ}</rule>
+    <rule sporadic="true">ˀw &gt; w</rule>
     <rule>ˀj &gt; ∅</rule>
   </section>
   <section index="13.5" name="Proto-Chumash to Purisimeño">
@@ -3108,7 +3087,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <cite>Pogostick Man, from McAlpin, David W. (1974), “Toward Proto-Elamo-Dravidian”. Language 50(1):89 – 101</cite>
     <rule>w &gt; v / #_{i,e}lV</rule>
     <rule>w &gt; v / V_</rule>
-    <rule>k ʃk &gt; k* kː / V_V (the asterisk-marked k is what McAlpin terms “weak k”, which tends to drop out in morphology)</rule>
+    <rule>k ʃk &gt; k* kː / V_V</rule>
     <rule>t &gt; ∅ / #_VrC</rule>
     <rule>t &gt; {t,ʈ} / V_V</rule>
     <rule>rt &gt; ʈ / V_V</rule>
@@ -3125,13 +3104,12 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>nr̀ &gt; n̲r̲</rule>
     <rule>l lː &gt; {l,ɭ} ɭ(ː) / V_V</rule>
     <rule>l &gt; ɭ / V_#</rule>
-    <comment>Proto-Dravidian retained long vowels, possibly from the simplification of consonant clusters and/or deletion of intervocalic consonants with compensatory lengthening and/or the resulting vowels in hiatus merging</comment>
   </section>
   <section index="14.2" name="Proto-Elamo-Dravidian to Achaemanid Elamite">
     <cite>Pogostick Man, from McAlpin, David W. (1974), “Toward Proto-Elamo-Dravidian”. Language 50(1):89 – 101</cite>
     <rule>{i,e,u} &gt; ∅ / #_{t,n}a</rule>
     <rule>e &gt; {e,i} / #C_C</rule>
-    <rule>w &gt; ú / V_ (McAlpin uses the accented-vowel notation due to some apparent height-contrast neutralizations before /a/)</rule>
+    <rule>w &gt; ú / V_</rule>
     <rule>k ŋk ŋkː &gt; ∅ k kː / V_V</rule>
     <rule>mp &gt; p(ː) / V_V</rule>
     <rule>c &gt; s / #_{a,u}</rule>
@@ -3154,15 +3132,15 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>{om,on} {em,en} {oːm,oːn} {eːm,eːn} &gt; ɔ̃ ɛ̃ õ ẽ</rule>
     <rule>um &gt; ũ / _#</rule>
     <rule>∅ &gt; ɨ / _N#</rule>
-    <rule>{ɭ,ɽ} &gt; ∅ (sporadic, the latter very much so and contributing some compensatory lengthening)</rule>
+    <rule sporadic="true">{ɭ,ɽ} &gt; ∅</rule>
     <rule>l ɭ &gt; lːʉ ɭːʉ / _#(C)V[-long]</rule>
     <rule>∅ &gt; ʉ / {l,ɭ}_# if {M,Vː} previously in the lexeme</rule>
     <rule>r &gt; ɾ “in most dialects”</rule>
     <rule>ɽ &gt; ɭ</rule>
     <rule>{ɾ,l,ɭ} &gt; ∅ / V_S</rule>
-    <rule>i u &gt; ɨ ʉ / short only when unstressed ! in #U</rule>
+    <rule>i u &gt; ɨ ʉ / [- long, - stress] ! #U</rule>
     <rule>ɨ ʉ &gt; ∅ / ! _#</rule>
-    <rule>∅ &gt; {ɨ,ʉ} / to break up clusters</rule>
+    <rule>∅ &gt; {ɨ,ʉ}</rule>
     <rule>n &gt; ŋ / _{k,ɡ}</rule>
     <rule>i(ː) e(ː) &gt; u(ː) o(ː) / {m,v,p}_C̣</rule>
     <rule>j &gt; ∅ / V[-front]_#</rule>
@@ -3170,12 +3148,11 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>tː nt &gt; cː ɲc / {i,j}_</rule>
     <rule>ʈk &gt; kː</rule>
     <rule>n tː &gt; n̪ t̪ː</rule>
-    <rule>ɳ &gt; n “(sporadic and dialect development)”</rule>
-    <rule>ɭ &gt; l “(again, sporadic)”</rule>
+    <rule sporadic="true">ɳ &gt; n</rule>
+    <rule sporadic="true">ɭ &gt; l</rule>
     <rule>c &gt; s / _{a,o,u,e}</rule>
-    <rule>cː &gt; tʃː “(most dialects)”</rule>
-    <rule>o e &gt; u i / _C{u,i} “(highly sporadic)”</rule>
-    <comment>“There’s also only a few changes necessary to turn this into the British dialect (which didn’t merge retroflexes with alveolars):”</comment>
+    <rule sporadic="true">cː &gt; tʃː</rule>
+    <rule sporadic="true">o e &gt; u i / _C{u,i}</rule>
     <rule>i(ː) e(ː) &gt; u(ː) o(ː) / _ɭ</rule>
     <rule>eCə oCə &gt; Ceː Coː / #_</rule>
   </section>
@@ -3186,7 +3163,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>u &gt; a / a_</rule>
     <rule>p &gt; h / #_</rule>
     <rule>v &gt; m / medial</rule>
-    <rule>v &gt; w / a_a (in eastern dialects)</rule>
+    <rule sporadic="true">v &gt; w / a_a</rule>
     <rule>{t,ð} &gt; n / _#</rule>
     <rule>ð &gt; t / _ ! _#</rule>
     <rule>∅ &gt; t / #_s</rule>
@@ -3194,19 +3171,18 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>z &gt; ð / medial</rule>
     <rule>l̥ &gt; l</rule>
     <rule>m &gt; w / #_</rule>
-    <rule>n &gt; t / #_ (except, maybe, “in exclamations”)</rule>
-    <rule>dʒ &gt; ð / i_ (in eastern and central dialects)</rule>
-    <rule>dʒ &gt; ð / u_a (in eastern dialects)</rule>
+    <rule>n &gt; t / #_</rule>
+    <rule sporadic="true">dʒ &gt; ð / i_</rule>
+    <rule sporadic="true">dʒ &gt; ð / u_a</rule>
     <rule>i &gt;∅ / #_{z,dʒ}</rule>
-    <rule>ə &gt; ∅ / #_, “under certain conditions not yet discovered”</rule>
-    <comment>Deletion of medial vowels as per stress rules, “mostly affecting vowels before the accented syllable”</comment>
+    <rule sporadic="true">ə &gt; ∅ / #_</rule>
     <rule>nV₁nV₂ &gt; nV₂nV₂</rule>
   </section>
   <section index="15.2" name="Proto-Eskimo-Aleut to Proto-Eskimo">
     <cite>Pogostick Man, from Marsh, Gordon and Morris Swadesh (1951), “Kleinschmidt Centennial V: Eskimo Aleut Correspondences”, International Journal of American Linguistics, Vol. 17, No. 4 (Oct., 1951), pp. 209 – 216</cite>
     <rule>ð z &gt; t s</rule>
     <rule>ɣ ʁ &gt; k q / #_</rule>
-    <rule>ə &gt; ∅ / t_, “in certain positions”</rule>
+    <rule sporadic="true">ə &gt; ∅ / t_</rule>
   </section>
   <section index="15.2.1" name="Proto-Eskimo to Barrow Iñupiaq">
     <cite>Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171</cite>
@@ -3218,7 +3194,6 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>ə &gt; ∅ / _ ! a_</rule>
     <rule>ɣ ʁ &gt; k q / _#</rule>
     <rule>C₀VC₀ &gt; C₀ː</rule>
-    <comment>Regressive MOA assimilation and progressive voicing assimilation in consonant clusters (at least, when C₂ is either /l/ or /l̥/)</comment>
     <rule>m n ŋ &gt; v t ɣ / _C[-nasal]</rule>
     <rule>l̥ &gt; t / _C</rule>
     <rule>v &gt; p / _s</rule>
@@ -3227,8 +3202,8 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>{p,v} t {k,ɣ} &gt; m n ŋ / _N</rule>
     <rule>v &gt; ∅ / u_i</rule>
     <rule>dʒ &gt; ʁ / i_u</rule>
-    <rule>ədʒ &gt; i / _{a,u} (except in #U)</rule>
-    <rule>adʒ &gt; i / _a (except in #U?)</rule>
+    <rule>ədʒ &gt; i / _{a,u} ! #U</rule>
+    <rule>adʒ &gt; i / _a ! #U</rule>
   </section>
   <section index="15.2.2" name="Proto-Eskimo to Greenlandic Iñupiaq">
     <cite>Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171</cite>
@@ -3247,12 +3222,11 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>v ɣ ʁ &gt; p k q / _C (except where C = /l dʒ m n ŋ/)</rule>
     <rule>{p,v} t {k,ɣ} &gt; m n ŋ / _N</rule>
     <rule>S₁S₂ &gt; F₁F₂</rule>
-    <rule>Some metathesis in consonant clusters, the conditions of which are not elaborated upon; the given example cited within the text is lʁ &gt; ʁl</rule>
     <rule>v &gt; ∅ / u_a</rule>
     <rule>iv &gt; uj / _u</rule>
     <rule>dʒ &gt; tʃ / i_{u,i}</rule>
-    <rule>ədʒ &gt; i / _{a,u} (except in #U)</rule>
-    <rule>adʒ &gt; i / _a (except in #U?)</rule>
+    <rule>ədʒ &gt; i / _{a,u} ! #U</rule>
+    <rule>adʒ &gt; i / _a ! #U</rule>
   </section>
   <section index="15.2.3" name="Proto-Eskimo to Mackenzie Iñupiaq">
     <cite>Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171</cite>
@@ -3261,15 +3235,14 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>ə &gt; i / _ ! a_</rule>
     <rule>ɣ ʁ &gt; k q / _#</rule>
     <rule>C₀VC₀ &gt; Cː</rule>
-    <comment>Regressive MOA assimilation and progressive voicing assimilation in consonant clusters, at least when C₂ is either /l/ or /l̥/</comment>
     <rule>m n ŋ &gt; v t ɣ / _C[-nasal]</rule>
     <rule>l̥ &gt; t / _C</rule>
     <rule>v &gt; p / _s</rule>
     <rule>v ʁ &gt; p q / S_</rule>
     <rule>{p,v} t {k,ɣ} &gt; m n ŋ / _N</rule>
     <rule>v &gt; ∅ / u_i</rule>
-    <rule>ədʒ &gt; i / _{a,u} (except in #U)</rule>
-    <rule>adʒ &gt; i / _a (except in #U?)</rule>
+    <rule>ədʒ &gt; i / _{a,u} ! #U</rule>
+    <rule>adʒ &gt; i / _a ! #U</rule>
   </section>
   <section index="15.2.4" name="Proto-Eskimo to Wales Iñupiaq">
     <cite>Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171</cite>
@@ -3280,7 +3253,6 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>ɣ &gt; u / “in some positions”</rule>
     <rule>p k q s &gt; v ɣ ʁ z / V_V</rule>
     <rule>ɣ ʁ &gt; k q / _#</rule>
-    <comment>Regressive MOA assimilation and progressive voicing assimilation in consonant clusters, at least where C₂ is either /l/ or /l̥/</comment>
     <rule>m n ŋ &gt; v t ɣ / _C[+nasal]</rule>
     <rule>l̥ &gt; t / C_</rule>
     <rule>v &gt; p / _s</rule>
@@ -3291,8 +3263,8 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>v &gt; ∅ / u_V</rule>
     <rule>v &gt; ∅ / V_u</rule>
     <rule>dʒ &gt; ʁ / i_u</rule>
-    <rule>ədʒ &gt; i / _{a,u} (except in #U)</rule>
-    <rule>adʒ &gt; i / _a (except in #U?)</rule>
+    <rule>ədʒ &gt; i / _{a,u} ! #U</rule>
+    <rule>adʒ &gt; i / _a ! #U</rule>
     <rule>ɣ &gt; ∅ / V_u</rule>
     <rule>ɣ &gt; ∅ / u_V</rule>
     <rule>ɣ &gt; u / {i,ə}_V</rule>
@@ -3300,9 +3272,9 @@ Postvocalic obstruents with different POAs become geminates of the second when �
   <section index="15.2.5" name="Proto-Eskimo to Kuskokwim Yup’ik">
     <cite>Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171</cite>
     <rule>Cː &gt; C</rule>
-    <rule>C &gt; Cː / _V(…V) except in #U</rule>
+    <rule>C &gt; Cː / _V(…V) ! #U</rule>
     <rule>S &gt; ∅ / #_F</rule>
-    <rule>s &gt; ts / in certain situations?</rule>
+    <rule sporadic="true">s &gt; ts</rule>
     <rule>C[+voice] &gt; C[-voice] / adjacent to {S,s,l̥}</rule>
     <rule>ɣ ʁ &gt; k q / _#</rule>
     <rule>ə &gt; a / _#</rule>
@@ -3319,14 +3291,14 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>iv &gt; j / #_u</rule>
     <rule>s &gt; dʒ / {i,u}_V</rule>
     <rule>dʒ &gt; ∅ / i_i</rule>
-    <rule>ə &gt; ∅ / _dʒ{a,u}, except in #U</rule>
-    <rule>a &gt; ∅ / _dʒa, except in #U</rule>
-    <rule>in &gt; dʒ / _u (possibly only word-initially?)</rule>
+    <rule>ə &gt; ∅ / _dʒ{a,u} ! #U</rule>
+    <rule>a &gt; ∅ / _dʒa ! #U</rule>
+    <rule>in &gt; dʒ / _u</rule>
   </section>
   <section index="15.2.6" name="Proto-Eskimo to Nunivak Yup’ik">
     <cite>Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171</cite>
     <rule>Cː &gt; C</rule>
-    <rule>C &gt; Cː / _V(…V) except in #U</rule>
+    <rule>C &gt; Cː / _V(…V) ! #U</rule>
     <rule>S &gt; ∅ / #_F</rule>
     <rule>s &gt; ts / in certain situations?</rule>
     <rule>C[+voice] &gt; C[-voice] / adjacent to {S,s,l̥}</rule>
@@ -3348,8 +3320,8 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>iv &gt; j / #_u</rule>
     <rule>s &gt; dʒ / {i,u}_V</rule>
     <rule>dʒ &gt; ∅ / i_i</rule>
-    <rule>ə &gt; ∅ / _dʒ{a,u} except in #U</rule>
-    <rule>a &gt; ∅ / _dʒa (except in #U?)</rule>
+    <rule>ə &gt; ∅ / _dʒ{a,u} ! #U</rule>
+    <rule>a &gt; ∅ / _dʒa ! #U</rule>
     <rule>in &gt; dʒ / _u (possibly only word-initially?)</rule>
   </section>
   <section index="15.2.7" name="Proto-Eskimo to Siberian Yup’ik">
@@ -3376,8 +3348,8 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>iv &gt; j / #_u</rule>
     <rule>s &gt; dʒ / {i,u}_V</rule>
     <rule>dʒ &gt; ∅ / i_i</rule>
-    <rule>ə &gt; ∅ / _dʒ{a,u} except in #U</rule>
-    <rule>a &gt; ∅ / _dʒa (except in #U?)</rule>
+    <rule>ə &gt; ∅ / _dʒ{a,u} ! #U</rule>
+    <rule>a &gt; ∅ / _dʒa ! #U</rule>
     <rule>in &gt; dʒ / _u (possibly only word-initially?)</rule>
   </section>
   <section index="15.2.8" name="Proto-Eskimo to Unaaliq Yup’ik">
@@ -3403,8 +3375,8 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>u &gt; ∅ / #_vV</rule>
     <rule>iv &gt; j / #_u</rule>
     <rule>dʒ &gt; ∅ / i_i</rule>
-    <rule>ə &gt; ∅ / _dʒ{a,u} except in #U</rule>
-    <rule>a &gt; ∅ / _dʒa (except in #U?)</rule>
+    <rule>ə &gt; ∅ / _dʒ{a,u} ! #U</rule>
+    <rule>a &gt; ∅ / _dʒa ! #U</rule>
     <rule>s &gt; dʒ / {i,u}_V</rule>
     <rule>in &gt; dʒ / _u (possibly only word-initially?)</rule>
   </section>
@@ -3418,13 +3390,13 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>e &gt; i / _(C)i</rule>
     <rule>e &gt; æ / {P,K}_</rule>
     <rule>e &gt; æ / _P</rule>
-    <rule>e &gt; ə / _C{a,ə,u} (seems to have become a in a few instances)</rule>
+    <rule>e &gt; ə / _C{a,ə,u}</rule>
     <rule>ə &gt; o / _(C)o</rule>
     <rule>ə &gt; e / _{C[+palatal],E}</rule>
     <rule>ə &gt; æ / ! _{B,K,H}</rule>
     <rule>a &gt; æ / _(C)e</rule>
     <rule>a &gt; æ / i(C)_</rule>
-    <rule>o &gt; e (sporadic, highly unusual)</rule>
+    <rule sporadic="true">o &gt; e</rule>
   </section>
   <section index="16.1.2" name="Proto-Tabla-Sentani to Central Sentani">
     <cite>Pogostick Man, from Gregerson, Kenneth, and Margaret Hartzler (1987), “Towards a Reconstruction of Proto-Tabla-Sentani Phonology”. Oceanic Linguistics, Vol. 26, No. 1/2 (Summer – Winter, 1987), 1 – 29.</cite>
@@ -3441,7 +3413,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>ə &gt; æ / ! _{B,K,H}</rule>
     <rule>a &gt; æ / _(C)e</rule>
     <rule>a &gt; æ / i(C)_</rule>
-    <rule>o &gt; e (sporadic, highly unusual)</rule>
+    <rule sporadic="true">o &gt; e</rule>
   </section>
   <section index="16.1.3" name="Proto-Tabla-Sentani to Eastern Sentani">
     <cite>Pogostick Man, from Gregerson, Kenneth, and Margaret Hartzler (1987), “Towards a Reconstruction of Proto-Tabla-Sentani Phonology”. Oceanic Linguistics, Vol. 26, No. 1/2 (Summer – Winter, 1987), 1 – 29.</cite>
@@ -3458,7 +3430,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>ə &gt; æ / ! _{B,K,H}</rule>
     <rule>a &gt; æ / _(C)e</rule>
     <rule>a &gt; æ / i(C)_</rule>
-    <rule>o &gt; e (sporadic, highly unusual)</rule>
+    <rule sporadic="true">o &gt; e</rule>
   </section>
   <section index="16.1.4" name="Proto-Tabla-Sentani to Western Sentani">
     <cite>Pogostick Man, from Gregerson, Kenneth, and Margaret Hartzler (1987), “Towards a Reconstruction of Proto-Tabla-Sentani Phonology”. Oceanic Linguistics, Vol. 26, No. 1/2 (Summer – Winter, 1987), 1 – 29.</cite>
@@ -3474,7 +3446,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>ə &gt; æ / ! _{B,K,H}</rule>
     <rule>a &gt; æ / _(C)e</rule>
     <rule>a &gt; æ / i(C)_</rule>
-    <rule>o &gt; e (sporadic, highly unusual)</rule>
+    <rule sporadic="true">o &gt; e</rule>
   </section>
   <section index="16.1.5" name="Proto-Tabla-Sentani to Tabla">
     <cite>Pogostick Man, from Gregerson, Kenneth, and Margaret Hartzler (1987), “Towards a Reconstruction of Proto-Tabla-Sentani Phonology”. Oceanic Linguistics, Vol. 26, No. 1/2 (Summer – Winter, 1987), 1 – 29.</cite>
@@ -3577,7 +3549,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>T h₂ &gt; D h₃ / ”Vː</rule>
     <rule>T h₂ &gt; D h₃ / ”W</rule>
     <rule>t &gt; z / j “(allophonic)”</rule>
-    <rule>r &gt; ∅ / #_ (unclear)</rule>
+    <rule sporadic="true">r &gt; ∅ / #_</rule>
     <rule>j &gt; ∅ / #_e (not widely attested)</rule>
     <rule>{{h₁,h₃}s,s{h₁,h₃}} &gt; sː (contested)</rule>
   </section>
@@ -4013,22 +3985,21 @@ Postvocalic obstruents with different POAs become geminates of the second when �
   <section index="17.5.1" name="Proto-Indo-European to Old Irish">
     <cite>dhokarena56</cite>
     <rule>Kʷ &gt; K</rule>
-    <rule>“The PIE rules for the voicing of s &gt; z, as in [nizdos] for *nisdos, are assumed to apply”</rule>
     <rule>Cʱ &gt; C</rule>
     <rule>eː &gt; iː / ! _{i,u}</rule>
     <rule>tː &gt; sː</rule>
     <rule>p &gt; f / {V,#}_</rule>
     <rule>f &gt; x / _O</rule>
     <rule>f &gt; ∅ / _ ! _O</rule>
-    <rule>r̩ l̩ &gt; {ri,ra} {li,la} / _{S,R} ;; (which vowel crops up is unpredictable)</rule>
-    <rule>r̩ l̩ &gt; {ra,ar} {la,al} / _{s,CC,V,#} ;; (the results are unpredictable)</rule>
+    <rule>r̩ l̩ &gt; {ri,ra} {li,la} / _{S,R}</rule>
+    <rule>r̩ l̩ &gt; {ra,ar} {la,al} / _{s,CC,V,#}</rule>
     <rule>m̩ n̩ &gt; am an / _{s,(m,j,w)V}</rule>
     <rule>m̩ n̩ &gt; em en / _ ! _{s,(m,j,w)V}</rule>
     <rule>ɡʷ &gt; b / #_V ! _u(ː)</rule>
     <rule>ɡʷ &gt; b / #_N</rule>
     <rule>ɡʷ &gt; b / C_V</rule>
     <rule>ɡʷ &gt; ɡ</rule>
-    <rule>p t k kʷ b d ɡ m n l r s &gt; f θ x xʷ v ð ɣ M N L R h / V(#)_{R,V} ;; (“We don’t know the exact values of lenited /m n l r/. We can guess that lenited m became a nasalized labial continuant of some sort, but beyond that, we don’t know.”)</rule>
+    <rule>p t k kʷ b d ɡ m n l r s &gt; f θ x xʷ v ð ɣ M N L R h / V(#)_{R,V}</rule>
     <rule>k &gt; x / V_t</rule>
     <rule>m &gt; n / V[- stress]_#</rule>
     <rule>Vː &gt; V / _[- stress]N#</rule>
@@ -4287,26 +4258,25 @@ Postvocalic obstruents with different POAs become geminates of the second when �
   </section>
   <section index="17.7.2.1.5" name="Early Modern English to American English">
     <cite>Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. &lt;http://wiki.firespeaker.org/English_sound_changes; and my Phonetic Description class&gt;</cite>
-    <rule>æ &gt; æː (e.g., NYC) or ɑː (e.g., Boston) / _{F[-voiced],N[-voiced]} (“words which change vary between dialects”)</rule>
+    <rule sporadic="true">æ &gt; æː / _{F[-voiced],N[-voiced]}</rule>
+    <rule sporadic="true">æ &gt; ː  / _{F[-voiced],N[-voiced]}</rule>
     <rule>ɒ &gt; ɒː / _F[-voiced]</rule>
     <rule>ɒː &gt; ɔː / _F[-voiced]</rule>
     <rule>æː ɑː ɔː &gt; æə~eə ɑ ɔ</rule>
-    <rule>ʍ &gt; w (regional)</rule>
-    <rule>l &gt; ɫ / “in some conditions”</rule>
-    <rule>ɪ &gt; i / _# when unstressed</rule>
+    <rule sporadic="true">ʍ &gt; w</rule>
+    <rule sporadic="true">l &gt; ɫ</rule>
+    <rule>ɪ &gt; i / _[- stress]#</rule>
     <rule>{t,d} &gt; ɾ / V_V[-stress]</rule>
     <rule>i u e &gt; ɪ ʊ ɛ / _ɹ</rule>
-    <rule>o ɔ &gt; ɔ ɒ / _ɹ (most dialects have at least one if not both)</rule>
+    <rule>o ɔ &gt; ɔ ɒ / _ɹ</rule>
     <rule>æ &gt; ɛ / _ɹ</rule>
-    <rule>j &gt; ∅ / {θ,s,z,l,n,t,d}_ when in onset position</rule>
-    <rule>ɒ &gt; ɔ / _K “(partial)”</rule>
-    <rule>æ &gt; ɛə / _{n,m} “and others depending on dialect”</rule>
+    <rule>j &gt; ∅ / {θ,s,z,l,n,t,d}_</rule>
+    <rule sporadic="true">ɒ &gt; ɔ / _K</rule>
+    <rule>æ &gt; ɛə / _{n,m}</rule>
     <rule>eə &gt; eː</rule>
-    <rule>iə &gt; ɪ (ongoing)</rule>
-    <rule>w &gt; ∅ / C_ɹ for some C (toward(s), quart(er), sword)</rule>
+    <rule>iə &gt; ɪ</rule>
+    <rule>w &gt; ∅ / C_ɹ</rule>
     <rule>t &gt; ∅ / f_n̩</rule>
-    <comment>Stuff regarding syllabification (e.g., of /ɹ/) and hiatus
-Loss of pretonic /ə/ in #U (ongoing)</comment>
   </section>
   <section index="17.7.2.1.6" name="Early Modern English to Australian English">
     <cite>Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. &lt;http://wiki.firespeaker.org/English_sound_changes&gt;; and my Phonetic Description class</cite>
@@ -4331,7 +4301,7 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <rule>ə &gt; ɪ / _{k,ɡ,tʃ,dʒ,ʃ,ʒ,v}</rule>
     <rule>t d &gt; ɾ / V_V[-stress]</rule>
     <rule>ɔə &gt; ɔː</rule>
-    <rule>ɛə ʊə &gt; ɛː ɔː (ongoing)</rule>
+    <rule>ɛə ʊə &gt; ɛː ɔː</rule>
     <rule>ʊə &gt; oː / ! {j,dʒ}_</rule>
     <rule>ʊə &gt; ʉːwə / “almost always otherwise, but see [above vowel changes after /ɫ/ is formed]”</rule>
     <rule>oə &gt; oː</rule>
@@ -4404,8 +4374,8 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <rule>ai &gt; ɛi ; / when stem-final</rule>
     <rule>ɛi &gt; əi ; / when stem-final</rule>
     <rule>uː &gt; ʌu ; / when-stem final, in northern varieties</rule>
-    <rule>øː &gt; wi / {k,ɡ}_ ; (in Mid Northern dialects)</rule>
-    <rule>øː &gt; i ; (in northern dialects)</rule>
+    <rule sporadic="true">øː &gt; wi / {k,ɡ}_</rule>
+    <rule sporadic="true">øː &gt; i</rule>
     <rule>øː &gt; (j){u,ʌ} / _{k,x} ; (outcome varies depending upon dialect)</rule>
     <rule>a &gt; i / _n ; (in northern varieties)</rule>
     <rule>a &gt; e / _n ; (otherwise)</rule>
@@ -4483,8 +4453,8 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <rule>pVn tVn kVn &gt; ʔm̩ ʔn̩ ʔŋ̩ / _#</rule>
     <rule>V &gt; Ṽː / _nC “(works across word boundaries)”</rule>
     <rule>n &gt; ∅ / V_C (in words of more than one syllable)</rule>
-    <rule>k &gt; ç / V_# ! _C “(sometimes)”; “(except when phonemic)”</rule>
-    <rule>ɡ &gt; ʝ / V_# ! _C “(most times)”</rule>
+    <rule sporadic="true">k &gt; ç / V_# ! _C</rule>
+    <rule sporadic="true">ɡ &gt; ʝ / V_# ! _C</rule>
     <rule>p b &gt; ɸ β / {#,V}_ ! _C</rule>
     <rule>V &gt; Ṽ / N_</rule>
     <rule>n &gt; ∅ / V_V# “in some disyllabic words”</rule>
@@ -4519,11 +4489,11 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
   <section index="17.7.2.1.13" name="Middle English to Yola">
     <cite>Pogostick Man and Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, the former from Wikipedia contributors (2016), “Forth and Bargy dialect”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Forth_and_Bargy_dialect&gt;; and the latter from personal research</cite>
     <rule>C &gt; ∅ / C_%</rule>
-    <rule>t d &gt; θ ð (conditioning unclear)</rule>
+    <rule sporadic="true">t d &gt; θ ð</rule>
     <rule>∅ &gt; ɛ / uː_d</rule>
     <rule>F &gt; F[+ voice] / #_ ! F = ʍ</rule>
     <rule>ʍ &gt; f</rule>
-    <rule>U &gt; U[+ stress] / #U_ (often)</rule>
+    <rule sporadic="true">U &gt; U[+ stress] / #U_</rule>
   </section>
   <section index="17.7.2.1.14" name="Anglo-Frisian to Old Frisian">
     <cite>Pogostick Man, from Wikipedia contributors (2011), “Old Frisian”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Old_Frisian&gt;</cite>
@@ -4536,7 +4506,6 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <cite>TzirTzi, from Goblirsch, Kurt Gustav (2002), “The North Frisian lenition and Danish linguistic hegemony”. In Carr, Gerald F., and Irmengard Raugh (2002), New Insights in Germanic Linguistics III:46 – 65</cite>
     <rule>p t k &gt; b d ɡ / Vː_{V,#}</rule>
     <rule>b d ɡ &gt; v r ɣ / Vː_{V,#}</rule>
-    <comment>Vowel length neutralized (to long vowels?)</comment>
   </section>
   <section index="17.7.2.2" name="West Germanic to Old Low Franconian">
     <cite>Pogostick Man, from Wikipedia contributors (2014), “Old Dutch”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Old_Dutch&gt;; and Wikipedia contributors (2014), “Germanic umlaut”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Germanic_umlaut&gt;</cite>
@@ -4550,26 +4519,25 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <comment>Final obstruents devoice</comment>
     <rule>a &gt; ɒ? (&gt; o) / _ɫ</rule>
     <comment>Some vowel reduction seems to have occurred in unstressed syllables</comment>
-    <rule>ai u &gt; ei ʏ / _(C…){i(ː),j} ; (short only; in the case of [ʏ] at least this was not yet phonemic)</rule>
-    <rule>a &gt; ɛ / _(C…){i(ː),j} ; (conjectured based on date from the “Germanic umlaut” article)</rule>
-    <rule>uː &gt; ʉw / _V ; (probably, in most areas)</rule>
-    <rule>uː &gt; ʊw / _V ;(probably, in areas that did not undergo the above change, such as Limburg)</rule>
+    <rule>ai u &gt; ei ʏ / _[- long](C…){i(ː),j}</rule>
+    <rule>a &gt; ɛ / _(C…){i(ː),j}</rule>
+    <rule sporadic="true">uː &gt; ʉw / _V</rule>
+    <rule sporadic="true">uː &gt; ʊw / _V</rule>
     <rule>uː &gt; ʉː / _V)</rule>
-    <rule>ei ou &gt; eː oː ; (except in southeastern dialects; *ei as a result of the umlaut of *ai was not affected)</rule>
+    <rule>ei ou &gt; eː oː</rule>
   </section>
   <section index="17.7.2.2.1" name="Old Low Franconian to Middle Dutch">
     <cite>Pogostick Man, from Wikipedia contributors (2014), “Middle Dutch”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Middle_Dutch&gt;; and Wikipedia contributors (2014), “Hieronymous Bosch”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Hieronymus_Bosch&gt;</cite>
     <rule>uː &gt; yː</rule>
-    <rule>iu &gt; ju / #_ (in some northern dialects)</rule>
-    <rule>iu &gt; {yː,io} (outcome varies depending upon dialect; the former seems more typical)</rule>
-    <rule>iw &gt; yw (dialectal)</rule>
+    <rule sporadic="true">iu &gt; ju / #_</rule>
+    <rule>iu &gt; {yː,io}</rule>
+    <rule sporadic="true">iw &gt; yw</rule>
     <rule>{ie,ia,io} uo &gt; iə uə</rule>
-    <comment>Umlaut phonemicizes, but only for umlauts of non-dipthongal short vowels (except in extreme eastern dialects); [ʏ] becomes a phoneme</comment>
     <rule>f θ s &gt; v ð z ; syllable-initially</rule>
-    <rule>V &gt; ə / if short and unstressed</rule>
-    <rule>f &gt; {x,ç} / _t (the former seems to have occurred in northern dialects, the latter in southern ones)</rule>
+    <rule>V &gt; ə / [- long, -stress]</rule>
+    <rule>f &gt; {x,ç} / _t</rule>
     <rule>θ ð &gt; t d</rule>
-    <rule>{uː,uw} u &gt; ɔw o (except in the southeast)</rule>
+    <rule sporadic="true">{uː,uw} u &gt; ɔw o</rule>
     <rule>{ol,al} {ar,er} or &gt; ɔu aːr oːr / _C[+dental]</rule>
     <rule>V[-long +stress] &gt; Vː</rule>
   </section>
@@ -4577,12 +4545,11 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <cite>Pogostick Man, from Wikipedia contributors (2014), “Dutch Phonology”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Dutch_phonology&gt;; and Wikipedia contributors (2014), “Hard and soft G in Dutch”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Hard_and_soft_G_in_Dutch&gt;</cite>
     <comment>NB: This is likely highly incomplete, but the source materials did not have much to say.</comment>
     <rule>l &gt; u / o_{t,d}#</rule>
-    <comment>The change of /f/ to a velar fricative is often reverted by analogy</comment>
     <rule>iː yː &gt; ɛi œy</rule>
-    <rule>uː &gt; ʌu (? conjectured based on the above diphthongization and on developments in Polder Dutch vowels)</rule>
+    <rule>uː &gt; ʌu</rule>
     <comment>Hard-vs.-soft-G phenomena:</comment>
-    <rule>x ɣ &gt; {x,χ} {ɣ,x,χ} / in northern dialects</rule>
-    <rule>x ɣ &gt; ç ʝ / in southern dialects (the articles use velar phonemes here but describes them as “front velar”; based on the description and on representations in other articles, the palatal phonemes are used here)</rule>
+    <rule sporadic="true">x ɣ &gt; {x,χ} {ɣ,x,χ}</rule>
+    <rule sporadic="true">x ɣ &gt; ç ʝ</rule>
   </section>
   <section index="17.7.2.2.3" name="Modern Dutch to Polder Dutch Vowel Shift">
     <cite>Pogostick Man, from Wikipedia contributors (2014), “Dutch Phonology”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Dutch_phonology&gt;</cite>
@@ -4600,7 +4567,7 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <rule>t &gt; {ts,k} / _w</rule>
     <rule>x &gt; k / _s</rule>
     <rule>{h,j} &gt; ∅ / V_V</rule>
-    <rule>w j &gt; b ɡ / {l,r}_ (occasionally otherwise)</rule>
+    <rule>w j &gt; b ɡ / {l,r}_</rule>
     <rule>w &gt; ∅ / {ou,øy,yː}_</rule>
     <rule>w &gt; v</rule>
     <rule sporadic="true">aː &gt; oː / _{N,C[+ dental],P,h}</rule>
@@ -4609,7 +4576,7 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <rule sporadic="true">e(ː) i &gt; ø(ː) y / _{P,l,ʃ}</rule>
     <rule sporadic="true">e(ː) i &gt; ø(ː) y / {P,l,ʃ}_</rule>
     <rule>y(ː) yə ø(ː) øy &gt; i(ː) iə e(ː) ei (intermittent)</rule>
-    <rule>uː yː iː &gt; ou øy ei, except in certain unstressed endings and monosyllables, _C{C,V,#} (“especially before /xt/”), and Low German borrowings</rule>
+    <rule>uː yː iː &gt; ou øy ei</rule>
     <rule>uə yə iə &gt; uː yː iː</rule>
     <rule>ou øy ei &gt; au oy ai</rule>
     <rule>u y &gt; o ø / _N (with some occasional exceptions)</rule>
@@ -5015,7 +4982,7 @@ Loss of pretonic /ə/ in #U (ongoing)</comment>
     <rule>j{u,o,a}ː &gt; ø</rule>
     <rule>a &gt; ∅ / C[+ dental/alveolar]_u</rule>
     <rule>a &gt; {o,ɔ} / _{K,r} (! K = w ?)</rule>
-    <rule>aː &gt; wo (dialectal)</rule>
+    <rule sporadic="true">aː &gt; wo</rule>
     <rule>aː &gt; ɔ(u) / _{l,r}</rule>
     <rule>au &gt; {o,ɔ,ɒ} / j_</rule>
     <rule>au &gt; j{o,ɔ}</rule>
@@ -5182,7 +5149,7 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>n &gt; ∅ / _s</rule>
     <rule>tʃ &gt; t / #_</rule>
     <rule>tʃ &gt; tː / medial</rule>
-    <rule>h &gt; ∅ (in those “dialects of the western fringe of Asia Minor and the near-by islands”)</rule>
+    <rule sporadic="true">h &gt; ∅</rule>
     <comment>Vowel contraction (on which the author does not elaborate much)</comment>
   </section>
   <section index="17.8.7" name="Proto-Indo-European to Elian Greek">
@@ -5530,7 +5497,7 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>iji ɨjɨ &gt; i ɨ</rule>
     <rule>ɔvi &gt; ∅</rule>
     <rule>O[+voice] &gt; O[-voice] / _# (unless followed by some type of voiced consonant, be it any type of consonant or just an obstruent—this differs by location)</rule>
-    <rule>ɔ &gt; ɔː / _{r,l} (sporadic, perhaps analogical)</rule>
+    <rule sporadic="true">ɔ &gt; ɔː / _{r,l}</rule>
     <rule>∅ &gt; h / _ъ</rule>
     <comment>Mobile stress &gt; initial stress &gt; penultimate stress (in most areas)</comment>
     <rule sporadic="true">V &gt; ∅ / [- stress]</rule>
@@ -5555,7 +5522,7 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>ŕ &gt; ʐ / _ ! _C[+voiced]</rule>
     <rule>ɛ &gt; ɔ / _ɫ (if the vowel was from a yer)</rule>
     <rule sporadic="true">{ɛ,a} &gt; ɔ</rule>
-    <rule>V &gt; ɛ (sporadic, analogical)</rule>
+    <rule sporadic="true">V &gt; ɛ</rule>
     <rule>ɫ &gt; w</rule>
     <rule>ɒ e &gt; a ɛ</rule>
     <rule>o &gt; ɔ / _N</rule>
@@ -5565,23 +5532,19 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>{i,ɨ} &gt; ∅ / _jV when unstressed</rule>
     <rule>ɛ̃ &gt; ɛ / _{#,l,ɫ}</rule>
     <rule>ɔ̃ &gt; ɔ / _{l,ɫ}</rule>
-    <rule>ɔ̃ &gt; ɔ / _# (in some regions or dialects)</rule>
+    <rule sporadic="true">ɔ̃ &gt; ɔ / _#</rule>
     <rule>ɛ̃ ɔ̃ &gt; ɛ̃N ɔ̃N / _{S,A}</rule>
     <rule>ɛ̃ ɔ̃ &gt; ɛɰ̃ ɔɰ̃ / _F[-palatal]</rule>
-    <rule>ɔ̃ &gt; ɔɰ̃ / _# (in standard registers/pronunciations)</rule>
+    <rule>ɔ̃ &gt; ɔɰ̃ / _#</rule>
     <rule>ɛ̃ ɔ̃ &gt; ɛj̃ ɔj̃ / _F[+palatal]</rule>
     <rule>ȵ &gt; j̃ / _F</rule>
-    <rule>n &gt; ŋ / _S[+velar] (regional)</rule>
-    <rule sporadic="true">Cʲ &gt; C / _C[+dental] with developments of yers in ablaut environments</rule>
-    <rule sporadic="true">Cʲ &gt; C in select words due to prestige influence of Czech in the Middle Ages</rule>
-    <rule sporadic="true">Cʲ &gt; C in select words otherwise, possibly by analogy</rule>
+    <rule sporadic="true">n &gt; ŋ / _S[+velar]</rule>
+    <rule sporadic="true">Cʲ &gt; C / _C[+dental]</rule>
+    <rule sporadic="true">Cʲ &gt; C</rule>
+    <rule sporadic="true">Cʲ &gt; C</rule>
     <rule sporadic="true">t &gt; r / tV_</rule>
     <rule sporadic="true">n &gt; m / {b,p}{l,r,ʐ}V_</rule>
-    <rule sporadic="true">j &gt; ∅ / _ɛ “in participial and deverbal forms originally with alveolopalatal consonants in the onsets of two consecutive syllables”</rule>
-    <comment>Oscillations involving:
-— Dentals and postalveolars
-— Postalveolars and alveolopalatals
-— Voicing</comment>
+    <rule sporadic="true">j &gt; ∅ / _ɛ</rule>
     <rule>OR &gt; RO / V_C</rule>
     <rule>RO &gt; OR / C_V</rule>
     <rule>vC &gt; Cv / _V</rule>
@@ -5591,7 +5554,6 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>zʐ &gt; ʐɖʐ</rule>
     <rule>ʑ z &gt; dʑ dz / _v</rule>
     <rule>∅ &gt; d / r_z</rule>
-    <comment>Regressive voicing/devoicing of obstruents in consonantal clusters</comment>
     <rule>v r̝ &gt; f r̥ / C[-voiced]_</rule>
     <rule>v r̝ &gt; f r̥ / _{C[-voiced],#}</rule>
     <rule>r̝̊ r̝ &gt; ʂ ʐ</rule>
@@ -5635,15 +5597,12 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>C[+sibilant]P &gt; C[+dental]</rule>
     <rule>w &gt; ∅ / C_#</rule>
     <rule sporadic="true">w &gt; ∅ / C_C</rule>
-    <comment>“Oscillations between dental and alveo[lo]palatals” / _C</comment>
     <rule>n &gt; s</rule>
     <rule sporadic="true">s &gt; ɕ / k_ɛ̃</rule>
     <rule>n &gt; s / k_Vn</rule>
     <rule>d &gt; ɡ / _n</rule>
     <rule>ʈʂ &gt; t / _r</rule>
     <rule>ɕ &gt; ∅ / t_ɕtɕ</rule>
-    <comment>“Insertion of epenthetic vowels” in some situations, typically one of /ɛ u/, the latter written as either 〈u〉 or 〈ó〉
-Epenthetic d ɡ appears in some circumstances</comment>
     <rule>Pʲ &gt; P / _C</rule>
     <rule>rʲ &gt; r / _{s,t͜s,l,w,n,ɲ}</rule>
     <rule>tʲ dʲ &gt; t d / _{l,n,ɲ,r,ʐ}</rule>
@@ -5697,13 +5656,13 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>o &gt; e / w_{r,s,t}</rule>
     <rule>oː &gt; uː / _r</rule>
     <rule>aj &gt; ai</rule>
-    <rule>ai &gt; eː (in rustic dialects)</rule>
+    <rule sporadic="true">ai &gt; eː</rule>
     <rule>aj &gt; ai</rule>
     <rule>ai &gt; ae</rule>
     <rule>oj &gt; oi</rule>
     <rule>oi &gt; oe</rule>
     <rule>oe &gt; uː</rule>
-    <rule>aw &gt; oː (in rustic dialects)</rule>
+    <rule sporadic="true">aw &gt; oː</rule>
     <rule>aw &gt; au</rule>
     <rule>{ew,ow} &gt; ou</rule>
     <rule>ou &gt; uː</rule>
@@ -5737,7 +5696,7 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>m̩ n̩ &gt; em en</rule>
     <rule>n̩ː &gt; n</rule>
     <rule>l̩ l̩ː r̩ r̩ː &gt; ol l or r</rule>
-    <rule>bʱ &gt; h / #_ (in rustic dialects)</rule>
+    <rule sporadic="true">bʱ &gt; h / #_</rule>
     <rule>{bʱ,dʱ,ɡʷʱ} &gt; f / #_</rule>
     <rule>h &gt; ∅ / b_</rule>
     <rule>t &gt; k / _l</rule>
@@ -6253,10 +6212,10 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <comment>STRESSED VOWELS</comment>
     <rule>ɪ &gt; e</rule>
     <rule>ʊ &gt; o (this change seems to have happened later, hence is listed separately)</rule>
-    <rule>ɔ &gt; y / _{u,P,k,ɡ,i} (in northwestern dialects)</rule>
-    <rule>ɔ &gt; ɥe / _{u,P,k,ɡ,i} (in western dialects, Limousin, and Auvergne)</rule>
+    <rule sporadic="true">ɔ &gt; y / _{u,P,k,ɡ,i}</rule>
+    <rule sporadic="true">ɔ &gt; ɥe / _{u,P,k,ɡ,i}</rule>
     <rule>ɔ &gt; ɥo / _{u,P,k,ɡ,i} (in Languedoc)</rule>
-    <rule>ɔ &gt; {ɥe,ɥo,ɔ} / _{u,P,k,ɡ,i} (in southern dialects)</rule>
+    <rule sporadic="true">ɔ &gt; {ɥe,ɥo,ɔ} / _{u,P,k,ɡ,i}</rule>
     <rule>a &gt; a / _N (Rouergue, Limousin, Auvergne, Dauphiné)</rule>
     <rule>a &gt; a / _# in monosyllables and oxytones (Rouergue, Limousin, Auvergne, Dauphiné)</rule>
     <rule>a &gt; å (I have no idea what is going on here. Grandgent seems to distinguish an open and close /a/, and I have listed his open a as /å/, which seems to have been distinct from /ɔ/, but beyond this section it doesn’t really seem to matter very much)</rule>
@@ -6264,12 +6223,12 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>ɛ ɔ &gt; jɛ wɔ (intermittent, “least common in the southwest”)</rule>
     <rule>e &gt; i / _V (and possibly V_?)</rule>
     <rule>e &gt; i / _(C…)i{C(C…)V,#}</rule>
-    <rule>ɛ &gt; jɛ / _{u,i,ʎ,rʲ,ʃ,ʒ,j,tʃ,dʒ} (except in some northern and western dialects, or if this u ← l or if this i ← ð)</rule>
+    <rule sporadic="true">ɛ &gt; jɛ / _{u,i,ʎ,rʲ,ʃ,ʒ,j,tʃ,dʒ}</rule>
     <rule>ju &gt; jeu</rule>
     <rule>o &gt; y / _{tʃ,dʒ,it,id} (did not occur in Dauphiné)</rule>
-    <rule>o &gt; y / _ɲ (in northern and western dialects)</rule>
+    <rule sporadic="true">o &gt; y / _ɲ</rule>
     <rule>o &gt; y / _i# (in Bordeaux, Auvergne, and some of Languedoc)</rule>
-    <rule>ɔ &gt; {ɔ,we} (in southwestern dialects)</rule>
+    <rule sporadic="true">ɔ &gt; {ɔ,we}</rule>
     <rule>u &gt; y</rule>
     <rule>o &gt; u (during the literary period)</rule>
     <comment>UNSTRESSED VOWELS</comment>
@@ -6345,7 +6304,7 @@ INTERTONIC VOWELS</comment>
     <rule>f &gt; h (in Béarn and Gascon)</rule>
     <rule>β &gt; b (in Béarn, Gascon, and Languedoc)</rule>
     <rule>β &gt; v</rule>
-    <rule>kʷ ɡʷ &gt; kw ɡw (in western dialects)</rule>
+    <rule sporadic="true">kʷ ɡʷ &gt; kw ɡw</rule>
     <rule>kʷ ɡʷ &gt; k ɡ (else)</rule>
     <rule>∅ &gt; k / #s_l</rule>
     <rule>i &gt; e / #_sC</rule>
@@ -6363,7 +6322,7 @@ INTERTONIC VOWELS</comment>
     <rule>lː &gt; l (in the south)</rule>
     <comment>rː~r stuff—not sure what was going on here, but it seems like this distinction lingered on into the literary period, but the two may have been in the process of merging</comment>
     <rule>mn &gt; mpn</rule>
-    <rule>mpn &gt; nː (dialectal)</rule>
+    <rule sporadic="true">mpn &gt; nː</rule>
     <rule>Cː &gt; C</rule>
     <rule>ɡ &gt; k / B_ (your guess is probably better than mine)</rule>
     <rule>ɡ &gt; {k,j} / V_ (if /j/ resulted, it dropped after /i/; forms with k are “most persistent in the west” and more common overall)</rule>
@@ -6372,7 +6331,7 @@ INTERTONIC VOWELS</comment>
     <rule>{p,b} &gt; ∅ / R_s# (unless blocked by analogy)</rule>
     <rule>ts &gt; s / _# (Provence, Limousin, some Languedoc and Gascon)</rule>
     <rule>β &gt; ∅ / when pretonic and immediately adjacent to a back vowel</rule>
-    <rule>β &gt; b / V_V (in western and some central dialects)</rule>
+    <rule sporadic="true">β &gt; b / V_V</rule>
     <rule>β &gt; v (otherwise)</rule>
     <rule>tʃ &gt; i / _C</rule>
     <rule>tʃ &gt; i / C_</rule>
@@ -6388,8 +6347,8 @@ INTERTONIC VOWELS</comment>
     <rule>ɡ &gt; j</rule>
     <rule>j &gt; dʒ</rule>
     <rule>dʒ &gt; j</rule>
-    <rule>l &gt; u / _s# (in many dialects)</rule>
-    <rule>s &gt; r / _n (in a few dialects)</rule>
+    <rule sporadic="true">l &gt; u / _s#</rule>
+    <rule sporadic="true">s &gt; r / _n</rule>
     <rule>j &gt; dʒ / _”E (in the west)</rule>
     <rule>j &gt; ∅ / _”E (else)</rule>
     <rule>j &gt; i / _C</rule>
@@ -6418,9 +6377,9 @@ INTERTONIC VOWELS</comment>
     <rule>upw &gt; up</rule>
     <rule>up &gt; ub</rule>
     <rule>w &gt; ∅ / s_ ?</rule>
-    <rule>βj &gt; {udʒ,uj} (in northern dialects)</rule>
-    <rule>β &gt; u / _j (in western dialects)</rule>
-    <rule>β &gt; {b,v} / _j (in southern and eastern dialects)</rule>
+    <rule sporadic="true">βj &gt; {udʒ,uj}</rule>
+    <rule sporadic="true">β &gt; u / _j</rule>
+    <rule sporadic="true">β &gt; {b,v} / _j</rule>
     <rule>ktj klj &gt; is ʎ</rule>
     <rule>{tʃ(ː),kʷ}j &gt; ts</rule>
     <rule>dVɡ (n)dVɡ &gt; dʒ(?) ndʒ</rule>
@@ -6430,7 +6389,7 @@ INTERTONIC VOWELS</comment>
     <rule>lː{j,Vdʒ} lnj &gt; ʎ ɲ</rule>
     <rule>lvj &gt; lbj</rule>
     <rule>lbj &gt; ubj</rule>
-    <rule>j &gt; ∅ / n_# (in many dialects)</rule>
+    <rule sporadic="true">j &gt; ∅ / n_#</rule>
     <rule>nj &gt; ɲ</rule>
     <rule>mbj &gt; {mbj,mdʒ,ndʒ}</rule>
     <rule>mnj &gt; ɲ (Limousin, as well as extreme eastern and southwest dialects)</rule>
@@ -6443,7 +6402,7 @@ INTERTONIC VOWELS</comment>
     <rule>ptj &gt; ts</rule>
     <rule>ts &gt; s</rule>
     <rule>pj &gt; ptʃ</rule>
-    <rule>ptʃ &gt; tʃ (except in western and some southern dialects)</rule>
+    <rule sporadic="true">ptʃ &gt; tʃ</rule>
     <rule>rtʃj &gt; rts (&gt; rs ?)</rule>
     <rule>rdj rVɡ &gt; rdz rdʒ</rule>
     <rule>rdʒ &gt; {rdʒ,rdz(&gt; rz)}</rule>
@@ -6484,7 +6443,7 @@ INTERTONIC VOWELS</comment>
     <rule>rdɡ &gt; r{ɡ,dʒ} / _a</rule>
     <rule>t &gt; ∅ / rd_</rule>
     <rule sporadic="true">t &gt; ∅ / r_m</rule>
-    <rule>stʃ &gt; s (in some northern and northeastern dialects)</rule>
+    <rule sporadic="true">stʃ &gt; s</rule>
     <rule>stʃ &gt; (i)(t)ʃ (for western and extreme eastern regions)</rule>
     <rule>stʃ &gt; is (otherwise)</rule>
     <rule sporadic="true">k &gt; ∅ / s_b</rule>
@@ -6501,7 +6460,7 @@ INTERTONIC VOWELS</comment>
     <rule>u{ts,dz} &gt; u{s,z}</rule>
     <rule>βt βd &gt; pt bd (in the west)</rule>
     <rule>βt βd &gt; ut ud (else)</rule>
-    <rule>ktʃ &gt; (i)tʃ (in western and extreme eastern dialects)</rule>
+    <rule sporadic="true">ktʃ &gt; (i)tʃ</rule>
     <rule>ktʃ &gt; its</rule>
     <rule>its &gt; is (else)</rule>
     <rule>tʃ k &gt; {i,s} {∅,k} / _m</rule>
@@ -6643,23 +6602,23 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>au ai &gt; o e</rule>
     <rule>h &gt; ∅ / {#,C}_</rule>
     <rule>m &gt; ∅ / _#</rule>
-    <rule>∅ &gt; i / _s (“[m]ainly Logudorese”)</rule>
+    <rule>∅ &gt; i / _s (“mainly Logudorese”)</rule>
     <rule>nd {lː,ld} &gt; ɳɖ ɖː / V_V</rule>
     <rule sporadic="true">t &gt; k / s_l</rule>
     <rule sporadic="true">l &gt; ∅ / rk_</rule>
     <rule sporadic="true">r &gt; l / _C</rule>
     <rule sporadic="true">l &gt; r / C_</rule>
-    <rule>{i,j} &gt; dʒ / Vr_V (“dialectal”)</rule>
+    <rule sporadic="true">{i,j} &gt; dʒ / Vr_V</rule>
     <rule>v &gt; b / #_</rule>
     <rule>S[- voice] &gt; S[+ voice] / V_”V</rule>
-    <rule>kw ɡw &gt; pː bː / #_ (“[o]nly Logudorese”)</rule>
+    <rule>kw ɡw &gt; pː bː / #_ (“only Logudorese”)</rule>
     <rule>w &gt; ∅ / #k_V</rule>
     <rule>k &gt; ts / _i</rule>
     <rule>{p,k}s &gt; sː</rule>
     <rule>o &gt; u / _k (possibly restricted in occurrence)</rule>
     <rule>k &gt; ∅ / _t ?</rule>
     <rule>l{i,j} &gt; lː</rule>
-    <rule>lː &gt; {ts,dz,ldz,dʒ,lː} (“varies”)</rule>
+    <rule sporadic="true">lː &gt; {ts,dz,ldz,dʒ,lː}</rule>
     <rule>e &gt; ∅ / u_#</rule>
     <rule>t &gt; d / V_rV</rule>
     <rule>sk &gt; sː</rule>
@@ -6753,7 +6712,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ʒ &gt; ʃ</rule>
     <rule>{s̪,s} &gt; /s/ [s̪] “(merged as)”</rule>
     <rule>{s̪,s} &gt; h / _$</rule>
-    <rule>{s̪,s} &gt; h “(in all environments)”</rule>
+    <rule>{s̪,s} &gt; h / _ ! _$</rule>
     <rule>s̪ &gt; θ</rule>
     <rule>{s̪,s} &gt; θ [θ] “(merged as)”</rule>
     <rule>h &gt; ∅ / _d</rule>
@@ -7291,7 +7250,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>n &gt; ∅ / _#</rule>
     <rule>ts(ʼ) s &gt; tʃ(ʼ) ʃ</rule>
     <rule>!! ʘ &gt; ǁ ǀ</rule>
-    <rule>ǂ &gt; !! (dialectal)</rule>
+    <rule sporadic="true">ǂ &gt; !!</rule>
   </section>
   <section index="20.2.3" name="Proto-Kx’a to Southeastern !Xun">
     <cite>Pogostick Man, from Heine, Bernd and Henry Honken (2010), “The Kx’a family: A New Khoisan Genealogy”</cite>
@@ -7599,7 +7558,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>j &gt; {j,∅}</rule>
     <rule>e &gt; a</rule>
     <rule>i &gt; ∅ / a_</rule>
-    <rule>ia &gt; ə (“unspecified”)</rule>
+    <rule sporadic="true">ia &gt; ə</rule>
     <rule>i &gt; ∅ / C”V(C)_</rule>
     <rule>i &gt; ∅ / _(C)”V</rule>
   </section>
@@ -9036,7 +8995,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   <section index="33.3.2.2.6" name="Valley Yokuts to Yawelmani">
     <cite>CatDoom, from Whistler, Kenneth W., and Golla, Victor (1986), “Proto-Yokuts Reconsidered”. International Journal of American Linguistics Vol. 52, No. 4 (Oct. 1986)</cite>
     <rule>ʃ &gt; s</rule>
-    <rule>tʃ tʃʰ tʃʼ &gt; ts tsʰ tsʼ (except in “lexicalized diminutives”, where these go to ʈʂ ʈʂʰ ʈʂʼ)</rule>
+    <rule sporadic="true">tʃ tʃʰ tʃʼ &gt; ts tsʰ tsʼ</rule>
   </section>
   <section index="33.3.3" name="Proto-Yokuts to Palewyami">
     <cite>CatDoom, from Whistler, Kenneth W., and Golla, Victor (1986), “Proto-Yokuts Reconsidered”. International Journal of American Linguistics Vol. 52, No. 4 (Oct. 1986)</cite>
@@ -9611,7 +9570,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>{p,t} &gt; ∅ / V_</rule>
     <rule>o &gt; a / Cʲ_w</rule>
     <rule>∅ &gt; w / C_o# ! C = {K,C[+pharyngeal]}</rule>
-    <rule>w &gt; ∅ / C̣Cʲ_?w (“optional”)</rule>
+    <rule sporadic="true">w &gt; ∅ / C̣Cʲ_?w</rule>
     <rule>w &gt; ∅ / w?_</rule>
     <rule>? &gt; a / Cw_Cʲ</rule>
     <rule>{o,e} &gt; ? / _Cʲ</rule>
@@ -10159,7 +10118,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <cite>cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg</cite>
     <rule>o(ː) u(ː) &gt; a(ː) o(ː)</rule>
     <rule>iji(ː) &gt; hi(ː) / {k,s}_ “(possibly after all non-glottal obstruents)”</rule>
-    <rule>i &gt; e / ! _hCC (“short only”)</rule>
+    <rule>i &gt; e / _[- long] ! _hCC</rule>
     <rule>∅ &gt; i(ː) / #_(C)(C)CVC(C)(C)#</rule>
     <rule>V &gt; ”V / “in antepenultimate syllables, if the vowel of the penultimate syllable was short */a/ followed by a single non-glottal consonant”</rule>
     <rule>V &gt; ”V / “in penultimate syllables not preceded by an accented antepenult”</rule>
@@ -10490,7 +10449,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   <section index="37.1.2.6.2" name="Tuscarora to Eastern Tuscarora">
     <cite>cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg</cite>
     <rule>r &gt; ∅ / st_</rule>
-    <rule>ə̃(ː) a(ː) o(ː) &gt; ɨ̃(ː) ɔ(ː) u(ː) (“in all positions”)</rule>
+    <rule>ə̃(ː) a(ː) o(ː) &gt; ɨ̃(ː) ɔ(ː) u(ː)</rule>
   </section>
   <section index="37.2" name="Proto-Siouan-Iroquoian to Proto-Siouan">
     <cite>Pogostick Man, from Chafe, Wallace L. (1964), “Another Look at Siouan and Iroquoian”. American Anthropologist New Series, 66:852 – 862; and from cedh aumdmanh’s Iroquoian changes</cite>
@@ -11849,8 +11808,8 @@ Souletin keeps initial ʃ- and tʃ- distinct; Labourdin only has ʃ-, and the re
     <rule>ai &gt; ɛi</rule>
     <rule>ɛi &gt; əi / when stem-final</rule>
     <rule>uː &gt; ʌu / when-stem final, in northern varieties</rule>
-    <rule>øː &gt; wi / {k,ɡ}_ (in Mid Northern dialects)</rule>
-    <rule>øː &gt; i (in northern dialects)</rule>
+    <rule sporadic="true">øː &gt; wi / {k,ɡ}_</rule>
+    <rule sporadic="true">øː &gt; i</rule>
     <rule>øː &gt; (j){u,ʌ} / _{k,x} (outcome varies depending upon dialect)</rule>
     <rule>a &gt; i / _n (in northern varieties)</rule>
     <rule>a &gt; e / _n (otherwise)</rule>

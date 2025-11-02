@@ -119,7 +119,7 @@ index,name,rule_count
 10.3.1,Proto-Oceanic to Hawai’ian,4
 10.3.2,Proto-Oceanic to Hiw,22
 10.3.3,Proto-Oceanic to Lemerig,21
-10.3.4,Proto-Oceanic to Mwotlap,21
+10.3.4,Proto-Oceanic to Mwotlap,23
 10.3.5,Proto-Oceanic to Proto-New Caledonia,7
 10.3.5.1,Proto-New Caledonia to Caaàc,12
 10.3.5.2,Proto-New Caledonia to Jawé,6
@@ -171,11 +171,11 @@ index,name,rule_count
 10.7.1,Proto-Rukai to Budai Rukai,1
 10.8,Proto-Austronesian to Proto-Tsouic,1
 11,Northeast Caucasian,0
-11.1,Proto-Northeast Caucasian to Proto-Avar-Andic,1
+11.1,Proto-Northeast Caucasian to Proto-Avar-Andic,2
 11.1.1,Proto-Avar-Andic to Akhvakh,6
 11.1.2,Proto-Avar-Andic to Andi,5
 11.1.3,Proto-Avar-Andic to Avar,7
-11.2,Proto-Northeast Caucasian to Dargi,5
+11.2,Proto-Northeast Caucasian to Dargi,6
 11.3,Proto-Northeast Caucasian to Khinalug,9
 11.4,Proto-Northeast Caucasian to Lak,8
 11.5,Proto-Northeast Caucasian to Proto-Lezgic,1
@@ -186,7 +186,7 @@ index,name,rule_count
 11.5.5,Proto-Lezgic to Tabassaran,7
 11.5.6,Proto-Lezgic to Udi,7
 11.6,Proto-Northeast Caucasian to Nakh,9
-11.7,Proto-Northeast Caucasian to Proto-Tsezic,6
+11.7,Proto-Northeast Caucasian to Proto-Tsezic,7
 11.7.1,Proto-Tsezic to Bezhta,0
 11.7.2,Proto-Tsezic to Tsez,6
 12,Northwest Caucasian,0
@@ -223,7 +223,7 @@ index,name,rule_count
 15.1,Proto-Eskimo-Aleut to Proto-Aleut,18
 15.2,Proto-Eskimo-Aleut to Proto-Eskimo,3
 15.2.1,Proto-Eskimo to Barrow Iñupiaq,18
-15.2.2,Proto-Eskimo to Greenlandic Iñupiaq,21
+15.2.2,Proto-Eskimo to Greenlandic Iñupiaq,20
 15.2.3,Proto-Eskimo to Mackenzie Iñupiaq,13
 15.2.4,Proto-Eskimo to Wales Iñupiaq,22
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,23
@@ -258,7 +258,7 @@ index,name,rule_count
 17.4,Avestan,0
 17.4.1,Proto-Indo-European to Avestan,16
 17.5,Proto-Indo-European to Proto-Celtic,25
-17.5.1,Proto-Indo-European to Old Irish,61
+17.5.1,Proto-Indo-European to Old Irish,60
 17.5.2,Proto-Celtic to Middle Welsh,38
 17.6,Proto-Indo-European to Dacian,10
 17.7,Proto-Indo-European to Common Germanic,13
@@ -269,7 +269,7 @@ index,name,rule_count
 17.7.2.1.2,Old English to Kentish Middle English,19
 17.7.2.1.3,Old English to Midlands Middle English,21
 17.7.2.1.4,Midlands Middle English to Early Modern English,12
-17.7.2.1.5,Early Modern English to American English,18
+17.7.2.1.5,Early Modern English to American English,19
 17.7.2.1.6,Early Modern English to Australian English,34
 17.7.2.1.7,Early Modern English to British English,9
 17.7.2.1.8,Old English to Northern Middle English,22
@@ -325,11 +325,11 @@ index,name,rule_count
 17.12.1.1.3,Latin to French,129
 17.12.1.1.4,Vulgar Latin to Italian,23
 17.12.1.1.5,Latin to Portuguese,126
-17.12.1.1.6,Vulgar Latin to Old Provençal,263
+17.12.1.1.6,Vulgar Latin to Old Provençal,262
 17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,7
-17.12.1.1.8,Latin to Romanian,79
+17.12.1.1.8,Latin to Romanian,78
 17.12.1.1.9,Latin to Sardinian,36
-17.12.1.1.10,Vulgar Latin to Spanish,90
+17.12.1.1.10,Vulgar Latin to Spanish,91
 17.12.2,Proto-Italic to Proto-Sibellian,5
 17.12.2.1,Proto-Sibellian to Oscan,1
 17.12.2.2,Proto-Sibellian to Umbrian,1
@@ -397,7 +397,7 @@ index,name,rule_count
 21.2.2,Proto-Tariku to Proto-East Tariku,4
 21.2.2.1,Proto-East Tariku to Biritai,7
 21.2.2.2,Proto-East Tariku to Doutai,6
-21.2.2.3,Proto-East Tariku to Eritai,7
+21.2.2.3,Proto-East Tariku to Eritai,6
 21.2.2.4,Proto-East Tariku to Kai,5
 21.2.2.5,Proto-East Tariku to Obokuitai,5
 21.2.2.6,Proto-East Tariku to Sikaritai,6
@@ -637,7 +637,7 @@ index,name,rule_count
 36.1,Proto-Sino-Tibetan to Middle Chinese,13
 36.1.1,Late Middle Chinese to Old Mandarin,41
 36.1.1.1,Old Mandarin to Modern Pekingese,14
-36.2,Sin Sukchu to Guānhuà,79
+36.2,Sin Sukchu to Guānhuà,76
 36.3,Tibeto-Burman,0
 36.3.1,Qiangic,0
 36.3.1.1,Proto-Naish to Laze,19
@@ -773,8 +773,8 @@ index,name,rule_count
 43.5.1.2,Proto-Mono-Kawaiisu to Mono,7
 43.6,Proto-Uto-Aztecan to Tohono O’odham,16
 44,Vasconic,0
-44.1,Proto-Vasconic to Aquitanian,12
-44.2,Proto-Basque to Basque,119
+44.1,Proto-Vasconic to Aquitanian,10
+44.2,Proto-Basque to Basque,118
 45,Yuman-Cochimı́,0
 45.1,Pai,0
 45.1.1,Proto-Pai to Chapai,11

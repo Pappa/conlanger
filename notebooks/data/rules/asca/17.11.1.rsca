@@ -18,7 +18,7 @@
 	ъ > aː / _r
 	ъl > ɔ(ː)ɫ / P_
 	ъl > ɛɫ / K_
-	ъl > ɫu / else
+	ъl > ɫu / _ ! K_
 	ьl > ɫu / C[+dental]_
 	ьl > ɛɫ / P_C[+dental -palatalized]
 	ьl > il / P_
@@ -41,7 +41,7 @@
 	iji ɨjɨ > i ɨ
 	ɔvi > ∅
 	O[+voice] > O[-voice] / _# (unless followed by some type of voiced consonant, be it any type of consonant or just an obstruent—this differs by location)
-	ɔ > ɔː / _{r,l} (sporadic, perhaps analogical)
+	ɔ > ɔː / _{r,l}
 	∅ > h / _ъ
 	# Mobile stress > initial stress > penultimate stress (in most areas)
 	V > ∅ / [- stress]
@@ -63,36 +63,32 @@
 	ʃ ʒ tʃ dʒ ɕ ʑ > ʂ ʐ ʈʂ ɖʐ ts ʒ
 	r̝ > ʂ / C[-voiced]_
 	r̝ > ʂ / _C[+voiced]
-	ŕ > ʐ / else
+	ŕ > ʐ / _ ! _C[+voiced]
 	ɛ > ɔ / _ɫ (if the vowel was from a yer)
 	{ɛ,a} > ɔ
-	V > ɛ (sporadic, analogical)
+	V > ɛ
 	ɫ > w
 	ɒ e > a ɛ
 	o > ɔ / _N
-	o > u / else
+	o > u / _ ! _N
 	u > ɔ
 	pʲ mʲ fʲ > p m f / _#
 	{i,ɨ} > ∅ / _jV when unstressed
 	ɛ̃ > ɛ / _{#,l,ɫ}
 	ɔ̃ > ɔ / _{l,ɫ}
-	ɔ̃ > ɔ / _# (in some regions or dialects)
+	ɔ̃ > ɔ / _#
 	ɛ̃ ɔ̃ > ɛ̃N ɔ̃N / _{S,A}
 	ɛ̃ ɔ̃ > ɛɰ̃ ɔɰ̃ / _F[-palatal]
-	ɔ̃ > ɔɰ̃ / _# (in standard registers/pronunciations)
+	ɔ̃ > ɔɰ̃ / _#
 	ɛ̃ ɔ̃ > ɛj̃ ɔj̃ / _F[+palatal]
 	ȵ > j̃ / _F
-	n > ŋ / _S[+velar] (regional)
-	Cʲ > C / _C[+dental] with developments of yers in ablaut environments
-	Cʲ > C in select words due to prestige influence of Czech in the Middle Ages
-	Cʲ > C in select words otherwise, possibly by analogy
+	n > ŋ / _S[+velar]
+	Cʲ > C / _C[+dental]
+	Cʲ > C
+	Cʲ > C
 	t > r / tV_
 	n > m / {b,p}{l,r,ʐ}V_
-	j > ∅ / _ɛ “in participial and deverbal forms originally with alveolopalatal consonants in the onsets of two consecutive syllables”
-	# Oscillations involving:
-— Dentals and postalveolars
-— Postalveolars and alveolopalatals
-— Voicing
+	j > ∅ / _ɛ
 	OR > RO / V_C
 	RO > OR / C_V
 	vC > Cv / _V
@@ -102,21 +98,20 @@
 	zʐ > ʐɖʐ
 	ʑ z > dʑ dz / _v
 	∅ > d / r_z
-	# Regressive voicing/devoicing of obstruents in consonantal clusters
 	v r̝ > f r̥ / C[-voiced]_
 	v r̝ > f r̥ / _{C[-voiced],#}
 	r̝̊ r̝ > ʂ ʐ
-	Lv > L[-voiced]f / O[-voiced]_ “for many speakers”
+	Lv > L[-voiced]f / O[-voiced]_
 	v > ∅ / x_o
 	{xv,pv} > f
 	plv > pf
 	p > ∅ / #_p
 	ʈʂs > ts
 	{z,s,ʂ} > ∅ / _sC
-	x > ∅ / _r “in the word ‘robak’”
+	x > ∅ / _r
 	r̝ > r / {ɕ,ʑ}_
 	ʐr > ʑr
-	ɕr̝ ʑr̝ > ʂr ʐr / “‘szron’ and ‘żreć’”, respectively
+	ɕr̝ ʑr̝ > ʂr ʐr
 	t > ∅ / s_{ɫ,w}
 	ʈʂ > t / _r̝
 	ɕ > ∅ / tr̝_tɕ
@@ -124,14 +119,14 @@
 	w > ∅ / {r,b}_
 	d > ∅ / ɫ_ɲ
 	d > ∅ / r_ts
-	d > ∅ / _n “in arch. ‘jeno’”
-	∅ > t / s_r “in ‘stręczyć’”
+	d > ∅ / _n
+	∅ > t / s_r
 	st ʂʈʂ > z ʐ / _b
-	{b,p} > ∅ / _n “in verbs in -nąć”
+	{b,p} > ∅ / _n
 	v > ∅ / _stv
-	t > ∅ / ʈʂ_v in “czworo”
-	s > ∅ / _ɫza in “słza”
-	trk > kr / in the name of the river “Skrwa”
+	t > ∅ / ʈʂ_v
+	s > ∅ / _ɫza
+	trk > kr
 	zdʲ stʲ > {ʑ,ɕ} {s,ɕ} / _n
 	dʲ > ∅ / r_n
 	stʲ > ɕ / _l
@@ -146,15 +141,12 @@
 	C[+sibilant]P > C[+dental]
 	w > ∅ / C_#
 	w > ∅ / C_C
-	# “Oscillations between dental and alveo[lo]palatals” / _C
 	n > s
-	s > ɕ / k_ɛ̃ where the vowel was from Proto-Slavic
+	s > ɕ / k_ɛ̃
 	n > s / k_Vn
 	d > ɡ / _n
 	ʈʂ > t / _r
 	ɕ > ∅ / t_ɕtɕ
-	# “Insertion of epenthetic vowels” in some situations, typically one of /ɛ u/, the latter written as either 〈u〉 or 〈ó〉
-Epenthetic d ɡ appears in some circumstances
 	Pʲ > P / _C
 	rʲ > r / _{s,t͜s,l,w,n,ɲ}
 	tʲ dʲ > t d / _{l,n,ɲ,r,ʐ}

@@ -4,30 +4,30 @@
 	h > ∅
 	n > ∅ / _s
 	{m,n,t} > ∅ / _#
-	V > ∅ / ”V%C_L(C)V(C)# (irregular)
-	V > ∅ / ”V%L_C(C)V(C)# (irregular)
-	V > ∅ / ”V%s_t(C)V(C)# (irregular)
+	V > ∅ / ”V%C_L(C)V(C)#
+	V > ∅ / ”V%L_C(C)V(C)#
+	V > ∅ / ”V%s_t(C)V(C)#
 	u > w
 	w > ∅
-	iː > i / stressed
+	iː > i / [+ stress]
 	iː > i / _%”V
-	{i,eː} e > {e,ɛ} {ɛ,e} / stressed
+	{i,eː} e > {e,ɛ} {ɛ,e} / [+ stress]
 	{i,eː,e} > e / _%”V
 	i > j / ”V_#
-	uː > u / stressed
+	uː > u / [+ stress]
 	uː > u / _%”V
 	au > a / _%”u
-	{u,oː} o > o ɔ / stressed
+	{u,oː} o > o ɔ / [+ stress]
 	{u,o(ː)} > u / _%”V in East Catalan
 	{u,o(ː)} > o / _%”V else
 	u > w / ”ɛ_#
 	aː > a
 	oe > {e,ɛ}
-	ae au > e ɔ / stressed
+	ae au > e ɔ / [+ stress]
 	ae au > e o / _%”V
 	o > u / _a
-	o > u / _%”V (irregular)
-	VV > Vː (“For outcomes of word-final vowels, see down below”)
+	o > u / _%”V
+	VV > Vː
 	ndj > ɲ
 	dj > dʒ
 	dʒ > ʒ
@@ -53,7 +53,7 @@
 	lj rj kj ɡj > ʎ jr ts ʒ / V_V
 	{bj,vj} > wʒ / _%”V
 	b > v / V̈%_j
-	ja > je / #_ (irregular)
+	ja > je / #_
 	V > ∅ / _%”V (rare)
 	∅ > {e,o} / CL_#
 	∅ > {e,o} / rː_#
@@ -61,7 +61,7 @@
 	V > ∅ / ”V%_(C)(C)V(C)# (“irregular; e is kept before n”)
 	b > v / V_V
 	p t > b d / V_V
-	f > v / V_V (irregular)
+	f > v / V_V
 	s > z / ”V%V_V
 	s > ∅ / V_V%”V
 	k ɡ > ∅ {∅,ʒ} / V_{i,e}
@@ -97,7 +97,7 @@
 	ɡʷ > ɡw / C_a
 	b > m / Vm_V
 	m > ∅ / Vm_V
-	n > r
+	n > r / m_
 	r > br / m_
 	k > w / V_rV
 	{b,v} > w / V_tV
@@ -108,12 +108,12 @@
 	{a,o} > ∅ / #_ (rare)
 	ɔ > o / _N$C
 	e > ɛ / _v
-	o > u / _{ɲ,nk,ŋ} when stressed
-	e > i / _{nk,ŋ} when stressed (irregular)
+	o > u / _[+ stress]{ɲ,nk,ŋ}
+	e > i / _[+ stress]{nk,ŋ}
 	aj > ej
 	ej > ee
 	ee > e
-	aj > ej / _ʃ when stressed
-	ɛj ɔj > jɛj uei / i {u,ui} / stressed
+	aj > ej / _[+ stress]ʃ
+	ɛj ɔj > jɛj uei / i {u,ui} / [+ stress]
 	ɛ > e / ! _{rː,l,rC[-labial],nr} or _ ? w#
 	e > ɛ (in Eastern Catalan)

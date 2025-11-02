@@ -10,16 +10,16 @@
 	V > Vː / _hC
 	{k,x} > ˟ / _#
 	t > ∅ / s_r
-	p > β
+	p > β / _R
 	β > U / _R
-	t > z
+	t > z / _r{A,O}
 	z > U / _r{A,O}
-	t > z
+	t > z / _r{i,e}
 	z > @ / _r{i,e}
-	k > z
+	k > z / _j
 	z > @ / _j
 	k > ɣ i / {i,e}_R{i,e}
-	k > ɣ
+	k > ɣ / {A,O,U}_R ! R = j
 	ɣ > U / {A,O,U}_R ! R = j
 	β > ʋ
 	ʋ > ∅ / _UC
@@ -29,10 +29,10 @@
 	ɣ > j / C_e
 	ɣ > ʋ / U_U
 	ɣ > ʔ / VV₀_V₀ ! V₀ = U
-	ɣ > ∅ / else
+	ɣ > ∅ / _ ! VV₀_V₀ ! V₀ = U
 	h > ∅ / V[-stress](X)_V
 	AO > {A,O,U}ː / [- stress]
-	e > i / A_, when unstressed
+	e > i / A_[- stress]
 	Ue > eː / [- stress]
 	VU > Vː / _#
 	iU OU > Uː Oː

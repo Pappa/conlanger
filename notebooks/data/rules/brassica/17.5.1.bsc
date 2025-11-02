@@ -1,29 +1,28 @@
 ; 17.5.1 - Proto-Indo-European to Old Irish
 ; citation: dhokarena56
 Kʷ / K
-“The PIE rules for the voicing of s / z, as in [nizdos] for *nisdos, are assumed to apply”
 Cʱ / C
 eː / iː / ! _{i,u}
 tː / sː
 p / f / {V,#}_
 f / x / _O
-f / ∅ / else
-r̩ l̩ / {ri,ra} {li,la} / _{S,R} ;; (which vowel crops up is unpredictable)
-r̩ l̩ / {ra,ar} {la,al} / _{s,CC,V,#} ;; (the results are unpredictable)
+f / ∅ / _ ! _O
+r̩ l̩ / {ri,ra} {li,la} / _{S,R}
+r̩ l̩ / {ra,ar} {la,al} / _{s,CC,V,#}
 m̩ n̩ / am an / _{s,(m,j,w)V}
-m̩ n̩ / em en / else
+m̩ n̩ / em en / _ ! _{s,(m,j,w)V}
 ɡʷ / b / #_V ! _u(ː)
 ɡʷ / b / #_N
 ɡʷ / b / C_V
 ɡʷ / ɡ
-p t k kʷ b d ɡ m n l r s / f θ x xʷ v ð ɣ M N L R h / V(#)_{R,V} ;; (“We don’t know the exact values of lenited /m n l r/. We can guess that lenited m became a nasalized labial continuant of some sort, but beyond that, we don’t know.”)
+p t k kʷ b d ɡ m n l r s / f θ x xʷ v ð ɣ M N L R h / V(#)_{R,V}
 k / x / V_t
 m / n / V[- stress]_#
 Vː / V / _[- stress]N#
 p t k kʷ b d ɡ ∅ / b d ɡ ɡʷ mb nd ŋɡ n / n#_”V
 oː / uː / _(C…)#
 oːi / uː / _#
-oː / aː / else
+oː / aː / _ ! _#
 Vː / V[-long] / _H
 e / i / _[- stress](C…)#
 o / a / _[- stress]{(C…),u}#
@@ -40,7 +39,7 @@ w / f / #_
 w / ∅ / {#,C}C_
 w / ∅ / {θ,x}_
 w / ∅ / V_{V,#}
-w / v / else
+w / v / _ ! V_{V,#}
 {p,t} / ∅ / #s_r
 {p,t} / ∅ / #s_ ;; “(although it says that occasionally st
 ∅ / #s_ ;; “(although it says that occasionally st / t / #_)”

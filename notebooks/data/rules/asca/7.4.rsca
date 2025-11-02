@@ -52,8 +52,8 @@
 	{we,wiː} > o / #_
 	tsi > ∅ / $_OO “(before a prefix; the first obstruent of the follow[ing] cluster then becomes ʔ)
 	aː > aa / W_ ! when _{C{C,ː},#}
-	aː > a / else
+	aː > a / _ ! W_ ! when _{C{C,ː},#}
 	oː > o
-	a > i / ! at word boundaries
+	a > i / ! #,_
 	e > a / _#
 	{eː,iː} > i

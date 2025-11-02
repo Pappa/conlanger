@@ -6,10 +6,10 @@
 	a ɑ {ɛ,ɪ,ɤ} > ɑː ɔː ɜː / _ɹ{C,#}
 	ɑʊ > ɑː / _P
 	ɑʊ > ɑː / _N
-	ɑʊ > ɔː / else
+	ɑʊ > ɔː / _ ! _N
 	# “[A] large number of cases that were ɑː have become ɔː subsequently for non-phonetic reasons, like laundry”
-	a > ɑː / “in a few words, like ‘father’”
-	a > æ / else
-	əɪ əʊ > ɑi æʊ / “in some parts of South-Eastern England”
-	əɪ əʊ > aɪ aʊ / “in most of Britain”
+	a > ɑː
+	a > æ
+	əɪ əʊ > ɑi æʊ
+	əɪ əʊ > aɪ aʊ
 	eː oː > eɪ oʊ / ! _ɹ

@@ -94,7 +94,7 @@ l / ∅ / {i,u}_
 (ɛ)au / ɔ
 é / ɛi / in U[+open]
 é / ɛ / in U[+closed]
-ó / ou
+ó / ou / in U[+open]
 ou / ɛu / in U[+open]
 ó / ɔ / _N
 ó / ou / in U[+closed]
@@ -121,8 +121,8 @@ ai iɛɪ / ɛ i
 ou ɛu u uɛi / u œ y yi
 {ei,ɔi} / oi / C[- nasal]
 ɔ / u / _”V
-V[-high] / ə
-ə / ∅ / _V “(except that a is kept before o)”
+V[-high] / ə / _V
+ə / ∅ / _V ; “(except that a is kept before o)”
 ɲ / in / _{C,#}
 ; V{n,m} / V[+ nasal] / _{C,#}
 ɛ̃ / ã

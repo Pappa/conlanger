@@ -7,14 +7,14 @@ C[+labial/+velar] / ʷ / adjacent to short u
 {u,ə} / ∅ / ! C_C(C)#
 ə / a / near ħ ʕ
 ə / ɐ / near emphatics
-ə / ɪ / else
+ə / ɪ / _ ! near emphatics
 u / ʊ / short only
 aː iː uː / ɑː eː oː / near emphatics
-aː / æː / else
+aː / æː / _ ! near emphatics
 C₁ˤC₂ / C₁C₂ˤ
 Cˤ / C / {#,V}_V
 q / {q,ɡ}
 dʒ / {d,ɡ} / if s or z occur somewhere else in the word
-dʒ / ʒ / else
+dʒ / ʒ / _ ! if s or z occur somewhere else in the word
 s / ʃ / if ʃ is somewhere in the stem after it
 z / ʒ / if ʒ is somewhere in the stem after it
