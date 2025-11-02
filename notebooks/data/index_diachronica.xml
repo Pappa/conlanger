@@ -4387,7 +4387,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>a ɔ u &gt; {a,ɑ} ɔ ʌ</rule>
     <comment>Application of the Scottish vowel-length rule:</comment>
     <rule>V &gt; Vː / _{r,F[+voiced],$,#}</rule>
-    <rule>əi &gt; aɪ / _{r,F[+voiced],$,#} (pursuant to the above)</rule>
+    <rule>əi &gt; aɪ / _{r,F[+voiced],$,#}</rule>
   </section>
   <section index="17.7.2.1.10" name="Old English to Scots">
     <cite>Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from personal research</cite>
@@ -4397,7 +4397,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>oː &gt; ju / {n,x}_</rule>
     <rule>oː &gt; iu / _K</rule>
     <rule>oː &gt; ø</rule>
-    <rule>øː &gt; eː “(not a thorough change)”</rule>
+    <rule sporadic="true">øː &gt; eː</rule>
     <rule>ø &gt; ɪ</rule>
     <rule>æː(ɑ) eː(o) &gt; ɛ iː</rule>
     <rule>ɛ &gt; ɜi</rule>
@@ -4425,10 +4425,10 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>d~ð &gt; ð / V_V</rule>
     <rule>t &gt; ∅ / p_</rule>
     <rule>dʒ &gt; tʃ / _#</rule>
-    <rule>{f,v} &gt; ∅ / {l,r,V}_ (sometimes blocked)</rule>
+    <rule sporadic="true">{f,v} &gt; ∅ / {l,r,V}_</rule>
     <rule>ð &gt; ∅ / {l,r,V}_C</rule>
     <rule>θ &gt; h / _ɪ</rule>
-    <rule>θ &gt; f / {V,r}_# (sometimes blocked)</rule>
+    <rule sporadic="true">θ &gt; f / {V,r}_#</rule>
     <rule>θ &gt; ∅</rule>
     <rule>V &gt; Vː / _{r,F[+ voice],V,#}</rule>
     <rule>m &gt; n / _f</rule>
@@ -4459,7 +4459,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>V &gt; Ṽ / N_</rule>
     <rule>n &gt; ∅ / V_V# “in some disyllabic words”</rule>
     <rule>l &gt; ʟ</rule>
-    <rule>ʟ &gt; ʊ / {a,ɛ}_, typically ! _V</rule>
+    <rule>ʟ &gt; ʊ / {a,ɛ}_ ! _V</rule>
   </section>
   <section index="17.7.2.1.12" name="Old English to Southern Middle English">
     <cite>Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English Phonology and Midd le English Grammar for Courses in Chaucer, Middle English, and the History of the English Language; and Wikipedia contributors (2011), “Middle English phonology”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Middle_English_phonology&gt;</cite>
