@@ -1812,7 +1812,7 @@ Postvocalic obstruents with different POAs become geminates of the second when �
     <rule>ə &gt; ∅ / adjacent to a vowel</rule>
     <rule>V[+stress] &gt; Vː / _C# ! V = ə and/or C = h “(applies to diphthongal nuclei as well a[s] monophthongs)”</rule>
     <rule>ʀ &gt; {l,ɾ} / ! _# (the latter is more common)</rule>
-    <rule>l &gt; ∅ / ! _# (irregular)</rule>
+    <rule sporadic="true">l &gt; ∅ / ! _#</rule>
     <rule>u &gt; əw / _V</rule>
     <rule>i &gt; əj / _V</rule>
     <rule>w j &gt; v ɟ</rule>
@@ -5833,9 +5833,9 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>h &gt; ∅</rule>
     <rule>n &gt; ∅ / _s</rule>
     <rule>{m,n,t} &gt; ∅ / _#</rule>
-    <rule>V &gt; ∅ / ”V%C_L(C)V(C)# (irregular)</rule>
-    <rule>V &gt; ∅ / ”V%L_C(C)V(C)# (irregular)</rule>
-    <rule>V &gt; ∅ / ”V%s_t(C)V(C)# (irregular)</rule>
+    <rule sporadic="true">V &gt; ∅ / ”V%C_L(C)V(C)#</rule>
+    <rule sporadic="true">V &gt; ∅ / ”V%L_C(C)V(C)#</rule>
+    <rule sporadic="true">V &gt; ∅ / ”V%s_t(C)V(C)#</rule>
     <rule sporadic="true">u &gt; w</rule>
     <rule sporadic="true">w &gt; ∅</rule>
     <rule>iː &gt; i / [+ stress]</rule>
@@ -5882,7 +5882,7 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>lj rj kj ɡj &gt; ʎ jr ts ʒ / V_V</rule>
     <rule>{bj,vj} &gt; wʒ / _%”V</rule>
     <rule>b &gt; v / V̈%_j</rule>
-    <rule>ja &gt; je / #_ (irregular)</rule>
+    <rule sporadic="true">ja &gt; je / #_</rule>
     <rule>V &gt; ∅ / _%”V (rare)</rule>
     <rule>∅ &gt; {e,o} / CL_#</rule>
     <rule>∅ &gt; {e,o} / rː_#</rule>
@@ -5890,7 +5890,7 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>V &gt; ∅ / ”V%_(C)(C)V(C)# (“irregular; e is kept before n”)</rule>
     <rule>b &gt; v / V_V</rule>
     <rule>p t &gt; b d / V_V</rule>
-    <rule>f &gt; v / V_V (irregular)</rule>
+    <rule sporadic="true">f &gt; v / V_V</rule>
     <rule>s &gt; z / ”V%V_V</rule>
     <rule>s &gt; ∅ / V_V%”V</rule>
     <rule>k ɡ &gt; ∅ {∅,ʒ} / V_{i,e}</rule>
@@ -6121,9 +6121,9 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>rs &gt; sː</rule>
     <rule>n &gt; ∅ / _s</rule>
     <rule>V₀V₀ &gt; V₀ː</rule>
-    <rule>V &gt; ∅ / ”V%L(C)(C)V(C)# (irregular)</rule>
-    <rule>V &gt; ∅ / _L(C)(C)V(C)# (irregular)</rule>
-    <rule>V &gt; ∅ ”V%s_t(C)V(C)# (irregular)</rule>
+    <rule sporadic="true">V &gt; ∅ / ”V%L(C)(C)V(C)#</rule>
+    <rule sporadic="true">V &gt; ∅ / _L(C)(C)V(C)#</rule>
+    <rule sporadic="true">V &gt; ∅ ”V%s_t(C)V(C)#</rule>
     <rule>u &gt; w / _V (between first and stressed syllables)</rule>
     <rule>w &gt; u / _”V</rule>
     <rule>w &gt; ∅ / _V</rule>
@@ -6149,7 +6149,7 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>ɫ &gt; w / V_Ca</rule>
     <rule>o &gt; u / _(”V)</rule>
     <rule>e &gt; ∅ / el_#</rule>
-    <rule>V &gt; a / _{n,r}(C)V(C)# (irregular)</rule>
+    <rule sporadic="true">V &gt; a / _{n,r}(C)V(C)#</rule>
     <rule>V &gt; V[+ nasal] / _[+ stress]N$C</rule>
     <rule>ɔ̃ &gt; õ</rule>
     <rule>N &gt; ∅ / V[+ nasal]_$C ! C = S</rule>
@@ -6161,9 +6161,9 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>V[+ nasal] &gt; V[- nasal] / in U#</rule>
     <rule>V₀[+ nasal]V₀[- nasal] &gt; V₀[+ nasal]</rule>
     <rule>ı̃ &gt; iɲ</rule>
-    <rule>e V &gt; o ∅ / _? (irregular)</rule>
-    <rule>e &gt; o / _m”V (irregular)</rule>
-    <rule>V &gt; ∅ / _”V (irregular)</rule>
+    <rule sporadic="true">e V &gt; o ∅ / _?</rule>
+    <rule sporadic="true">e &gt; o / _m”V</rule>
+    <rule sporadic="true">V &gt; ∅ / _”V</rule>
     <rule>e &gt; ∅ / {l,n,r,s,k}_#</rule>
     <rule>e &gt; ∅ / ”{i,e}_#</rule>
     <rule>e &gt; i / _(C)(C)V(C)#</rule>
@@ -6225,11 +6225,11 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>ts &gt; s / V_V</rule>
     <rule>ɡj &gt; {ʒ,j} / V_V</rule>
     <rule>pj {bj,vj} &gt; jb jv / V_V</rule>
-    <rule>mj &gt; jm (irregular)</rule>
+    <rule sporadic="true">mj &gt; jm</rule>
     <rule>C₀C₀ &gt; C₀ / ! C = r</rule>
     <rule>C &gt; ∅ / C₁_C₂ ! C₂ = L</rule>
     <rule>k &gt; j / _s#</rule>
-    <rule>f &gt; v / V_V (irregular)</rule>
+    <rule sporadic="true">f &gt; v / V_V</rule>
     <rule>s l &gt; z ∅ / V_V</rule>
     <rule>a &gt; ∅ / ”ɔ_#</rule>
     <rule>sk k &gt; jʃ z / V_{i,e}</rule>
@@ -6242,7 +6242,7 @@ Epenthetic d ɡ appears in some circumstances</comment>
     <rule>e &gt; j / {a,o,u}_</rule>
     <rule>a &gt; e / _j when stressed</rule>
     <rule>o &gt; u / _ɲ when stressed</rule>
-    <rule>V₀V₀ &gt; V₀ (irregular)</rule>
+    <rule sporadic="true">V₀V₀ &gt; V₀</rule>
     <rule>d &gt; ∅ / V_V (in Portugal)</rule>
   </section>
   <section index="17.12.1.1.6" name="Vulgar Latin to Old Provençal">
