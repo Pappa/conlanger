@@ -4376,7 +4376,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>uː &gt; ʌu ; / when-stem final, in northern varieties</rule>
     <rule sporadic="true">øː &gt; wi / {k,ɡ}_</rule>
     <rule sporadic="true">øː &gt; i</rule>
-    <rule>øː &gt; (j){u,ʌ} / _{k,x} ; (outcome varies depending upon dialect)</rule>
+    <rule>øː &gt; (j){u,ʌ} / _{k,x}</rule>
     <rule>a &gt; i / _n ; (in northern varieties)</rule>
     <rule>a &gt; e / _n ; (otherwise)</rule>
     <rule>a &gt; {ɛ,e} / _rC</rule>
@@ -11473,13 +11473,13 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ʋ &gt; ∅ / C_</rule>
     <rule>VCːɑ &gt; VːCɑ</rule>
     <rule>Cː &gt; C[- long] / ! in verbal forms when V_ə</rule>
-    <rule>ɑː au &gt; ɔː ɔu (though sometimes ɑː develops, apparently at least partially due to metathesis?)</rule>
+    <rule>ɑː au &gt; ɔː ɔu</rule>
     <rule>eː øː oː ɤ(ː) &gt; iːe yːø uːo ɨ(ː)</rule>
     <rule>ɦ &gt; ʔ</rule>
     <rule>sʲ tsʲ zʲ dzʲ &gt; ʃʲ tʃʲ ʒʲ dʒʲ</rule>
     <rule>æy ey &gt; æu eu</rule>
     <rule>y ø &gt; i e / else</rule>
-    <rule>V &gt; Vː / _RC(C)ɑ (includes diphthongs)</rule>
+    <rule>V &gt; Vː / _RC(C)ɑ</rule>
     <rule>a &gt; aː / VC_</rule>
     <rule>e o &gt; eː oː / _Cɑ</rule>
     <rule>o &gt; oː / _{RC#,i}</rule>
@@ -11509,8 +11509,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   </section>
   <section index="43.3" name="Proto-Uto-Aztecan to Luiseño">
     <cite>Radius Solis, from from Voegelin, Charles F., Florence M. Voegelin, &amp; Kenneth L. Hale (1962), “Typological and Comparative Grammar of Uto-Aztecan: I (Phonology)”. International Journal of American Linguistics 28: Memoir 17</cite>
-    <rule>p &gt; v / {Vn,ɨ}_ (the latter “sometimes”)</rule>
-    <rule>p &gt; v / “other conditions not known”</rule>
+    <rule>p &gt; v / {Vn,ɨ}_</rule>
+    <rule sporadic="true">p &gt; v</rule>
     <rule>t &gt; l / medially</rule>
     <rule>ts &gt; tʃ</rule>
     <rule>k &gt; q / #_V[+low]</rule>
@@ -11611,10 +11611,10 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>F &gt; h (&gt; ∅) / #_</rule>
     <rule>S &gt; S[+ voiced] / #_</rule>
     <comment>“[T]wo similar vocalic segments” usually contract, though some dialects (especially Biscayan) seem not to exhibit this</comment>
-    <rule>Vn &gt; Ṽ / _# (seems to have been reverted in most dialects, except for Souletin)</rule>
-    <rule>Vn &gt; Ṽ / _V (?)</rule>
-    <rule>V &gt; Ṽ / _N (Souletin, perhaps in other dialects?)</rule>
-    <rule>d &gt; l / #_ (except verbs)</rule>
+    <rule sporadic="true">Vn &gt; Ṽ / _#</rule>
+    <rule>Vn &gt; Ṽ / _V</rule>
+    <rule sporadic="true">V &gt; Ṽ / _N</rule>
+    <rule sporadic="true">d &gt; l / #_</rule>
     <rule>n &gt;m / u_V</rule>
     <rule>n &gt; ɲ / {i,ɪ}_V</rule>
     <rule>n &gt; h̃ / V_V</rule>
@@ -11629,115 +11629,109 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>C &gt; ∅ / r_</rule>
     <rule>Cr &gt; Cɾ</rule>
     <rule>Cɾ &gt; CVɾ</rule>
-    <rule>ɾ &gt; ∅ / V_V (Souletin)</rule>
+    <rule sporadic="true">ɾ &gt; ∅ / V_V</rule>
     <rule>*L (fortis) &gt; l</rule>
     <rule>ð &gt; some sort of tap distinct from ɾ (Biscayan, Guipuscoan, High Navarrese)</rule>
-    <rule>b &gt; ∅ / #_B (a few exceptions, mostly before _u)</rule>
-    <rule>F[+ voiced] &gt; ∅ / V_V (sometimes, usually involving “compound surnames”?)</rule>
+    <rule sporadic="true">b &gt; ∅ / #_B</rule>
+    <rule sporadic="true">F[+ voiced] &gt; ∅ / V_V</rule>
     <rule>S[+ voice] &gt; S[- voice] / F[+ sibilant]_</rule>
-    <rule>Ṽ &gt; Vɲ / _V (not Souletin)</rule>
-    <rule>Ṽ &gt; Vn or a diphthong (not Souletin)</rule>
-    <rule>h̃ &gt; h (not Souletin)</rule>
-    <rule>u ũ &gt; y ỹ / _r(p(ʰ),β,k(ʰ),ɣ,l,s̺,s̻,ʃ,h) (Souletin)</rule>
-    <rule>u ũ &gt; y ỹ / _{s̻,ts̺,ts̻} (but not _s̺) (Souletin)</rule>
-    <rule>õ &gt; ũ (Souletin)</rule>
+    <rule sporadic="true">Ṽ &gt; Vɲ / _V</rule>
+    <rule sporadic="true">Ṽ &gt; Vn</rule>
+    <rule sporadic="true">h̃ &gt; h</rule>
+    <rule sporadic="true">u ũ &gt; y ỹ / _r(p(ʰ),β,k(ʰ),ɣ,l,s̺,s̻,ʃ,h)</rule>
+    <rule sporadic="true">u ũ &gt; y ỹ / _{s̻,ts̺,ts̻} (but not _s̺)</rule>
+    <rule sporadic="true">õ &gt; ũ</rule>
     <rule sporadic="true">∅ &gt; a / #_{ra,ro}</rule>
     <rule>∅ &gt; e / #_r</rule>
     <rule>∅ &gt; e / #_{s̺,s̻}C</rule>
-    <rule>i &gt; u / _(C…)u (Roncalese)</rule>
-    <rule>i &gt; y / _(C…)y (Souletin)</rule>
-    <rule>e &gt; o / _(C…)o (eastern dialects, Bermeo Biscayan)</rule>
-    <rule>e &gt; o / o(C…)_ (eastern dialects)</rule>
-    <rule>a o e &gt; ɛ u i / {i,u}(C…)_ (this [ɛ] is tentatively marked as such; Egurtzegi transcribes it as /e/ but says it’s not as close as /e/)</rule>
-    <rule>o &gt; u / _n{C,#} (Souletin; some raising occurred elsewhere)</rule>
-    <rule>a &gt; e / _$a (Biscayan, Alavese, some Guipuscoan)</rule>
-    <rule>o e &gt; u i / _$a (raising of *o is less common)</rule>
+    <rule sporadic="true">i &gt; u / _(C…)u</rule>
+    <rule sporadic="true">i &gt; y / _(C…)y</rule>
+    <rule sporadic="true">e &gt; o / _(C…)o</rule>
+    <rule sporadic="true">e &gt; o / o(C…)_</rule>
+    <rule sporadic="true">a o e &gt; ɛ u i / {i,u}(C…)_</rule>
+    <rule sporadic="true">o &gt; u / _n{C,#}</rule>
+    <rule sporadic="true">a &gt; e / _$a</rule>
+    <rule sporadic="true">o e &gt; u i / _$a</rule>
     <rule sporadic="true">e &gt; i / _{n,C[+ sibilant]}</rule>
-    <rule>e &gt; a / {V,C}_r (“mainly in the western dialects”)</rule>
+    <rule sporadic="true">e &gt; a / {V,C}_r</rule>
     <rule>u i &gt; o e / _r{C,#}</rule>
     <rule>∅ &gt; j / V_{N,s̺,s̻}S</rule>
-    <rule>∅ &gt; j / u_V (eastern dialects)</rule>
+    <rule sporadic="true">∅ &gt; j / u_V</rule>
     <rule>{w,y} &gt; ∅ / _ja</rule>
-    <rule>∅ &gt; m / o$_V (Orozko Biscayan)</rule>
-    <rule>∅ &gt; V / Vk_# (Zeberio Biscayan)</rule>
-    <rule>e &gt; ∅ / #_ (Navarrese, rare)</rule>
-    <rule>e &gt; j / #_V (at least a few times?)</rule>
+    <rule sporadic="true">∅ &gt; m / o$_V</rule>
+    <rule sporadic="true">∅ &gt; V / Vk_#</rule>
+    <rule sporadic="true">e &gt; ∅ / #_</rule>
+    <rule sporadic="true">e &gt; j / #_V</rule>
     <rule>a &gt; ∅ / _V</rule>
     <rule>V &gt; ∅ / Vj_</rule>
-    <rule>h &gt; ∅ (western dialects)</rule>
+    <rule sporadic="true">h &gt; ∅</rule>
     <rule>{w,β}h &gt; f</rule>
     <rule>h…h &gt; ∅…h</rule>
     <rule>*-ɾ &gt; -h stuff in compounds</rule>
     <rule>l n &gt;ʎ ɲ / E_</rule>
-    <rule>{ɾ,r} &gt; ʎ / {i,j}_ (eastern dialects)</rule>
-    <rule>s̻ ts̻ &gt; ʃ tʃ / {E,j}_ (mostly Biscayan)</rule>
-    <rule>t &gt; c / {E,j}_ (“some areas”)</rule>
-    <rule>t &gt; tʃ / {E,j}_ (partially spread amongst Biscayan and Guipuscoan)</rule>
-    <rule>d ð &gt; ɟ ʝ / {E,j}_ ? (“some dialects”)</rule>
-    <rule>d ð &gt; ɟ ʝ / {ʎ,ɲ}_ (Guipuscoan, High Navarrese)</rule>
-    <rule>{ɡ,ɣ} &gt; {ɟ,ʝ} / {E,j}_</rule>
-    <rule>ɡ &gt; dʒ / {E,j}_ (“in some Biscayan areas”)</rule>
+    <rule sporadic="true">{ɾ,r} &gt; ʎ / {i,j}_</rule>
+    <rule sporadic="true">s̻ ts̻ &gt; ʃ tʃ / {E,j}_</rule>
+    <rule sporadic="true">t &gt; c / {E,j}_</rule>
+    <rule sporadic="true">t &gt; tʃ / {E,j}_</rule>
+    <rule sporadic="true">d ð &gt; ɟ ʝ / {E,j}_</rule>
+    <rule sporadic="true">d ð &gt; ɟ ʝ / {ʎ,ɲ}_</rule>
+    <rule sporadic="true">{ɡ,ɣ} &gt; {ɟ,ʝ} / {E,j}_</rule>
+    <rule sporadic="true">ɡ &gt; dʒ / {E,j}_</rule>
     <rule>j &gt; ʝ</rule>
-    <rule>ʝ &gt; j (northern High Navarrese, most Labourd, some Biscayan)</rule>
+    <rule sporadic="true">ʝ &gt; j</rule>
     <rule>j &gt; ʝ</rule>
-    <rule>ʝ &gt; ʒ (Souletin, sporadic in northwestern Biscayan)</rule>
-    <rule>j &gt; ʝ (some Biscayan and Navarrese)</rule>
+    <rule sporadic="true">ʝ &gt; ʒ</rule>
+    <rule sporadic="true">j &gt; ʝ</rule>
     <rule>j &gt; ʝ</rule>
-    <rule>ʝ &gt; ɟ (typical of Low Navarrese)</rule>
-    <rule>j &gt; ʝ</rule>
-    <rule>ʝ &gt; ʒ</rule>
-    <rule>ʒ &gt; dʒ (northwestern Biscayan)</rule>
+    <rule sporadic="true">ʝ &gt; ɟ</rule>
     <rule>j &gt; ʝ</rule>
     <rule>ʝ &gt; ʒ</rule>
-    <rule>ʒ &gt; ʃ (Aescoan, Salazarese, Roncalese, most southern High Navarrese)</rule>
+    <rule sporadic="true">ʒ &gt; dʒ</rule>
+    <rule>j &gt; ʝ</rule>
+    <rule>ʝ &gt; ʒ</rule>
+    <rule sporadic="true">ʒ &gt; ʃ</rule>
     <rule>j &gt; ʝ</rule>
     <rule>ʝ &gt; ʒ</rule>
     <rule>ʒ &gt; ʃ</rule>
-    <rule>ʃ &gt; x (Guipuscoan, northwestern High Navarrese, eastern Biscayan)</rule>
-    <rule>j &gt; χ (probably through intermediates like above, Wikipedia doesn’t go into particulars of how and where)</rule>
-    <rule>ʎ ɲ &gt; jl jn (“common in Low Navarrese, Labourdin, and is even regular in the High Navarrese of Sakana”)</rule>
+    <rule sporadic="true">ʃ &gt; x</rule>
+    <rule sporadic="true">j &gt; χ</rule>
+    <rule sporadic="true">ʎ ɲ &gt; jl jn</rule>
     <comment>Vowel syncope:</comment>
-    <rule>V &gt; ∅ / S_{ɾ,l} (more common in Roncalese and Salazarese, but also in Navarrese and Aescoan?)</rule>
-    <rule>V &gt; ∅ / C[+ sibilant]_ɾ (Roncalese and Salazarese)</rule>
-    <rule>V &gt; ∅ / {O,ɾ,r}_O (Roncalese, Salazarese, Navarrese, Aescoan)</rule>
+    <rule sporadic="true">V &gt; ∅ / S_{ɾ,l}</rule>
+    <rule sporadic="true">V &gt; ∅ / C[+ sibilant]_ɾ</rule>
+    <rule sporadic="true">V &gt; ∅ / {O,ɾ,r}_O</rule>
     <rule>n[+ fortis] &gt; n</rule>
     <comment>Something about final devoicing of stops and initial stops losing voicing as a result of vowel deletion</comment>
     <rule>e &gt; ∅ / #Ur_</rule>
-    <rule>a &gt; ∅ / V_# (Guipuscoan; happens because of reanalysis of the definite article)</rule>
+    <rule sporadic="true">a &gt; ∅ / V_#</rule>
     <rule>V &gt; ∅ / _#, in trisyllables</rule>
     <rule>i &gt; ∅ / _#, in disyllables</rule>
     <rule>u {o,e} &gt; ∅ a / _#, in disyllables (eastern dialects)</rule>
-    <comment>“-a or -e from the definite article” is dropped Markina Biscayan and Getxo Biscayan
-Some vowel metathesis only when vowels are matched in height</comment>
-    <rule>hu hi &gt; ʊ ɪ / {o,e}_ (also happened with /a/ sometimes, but usually such sequences just dropped one vowel)</rule>
+    <rule>hu hi &gt; ʊ ɪ / {o,e}_</rule>
     <comment>Something about diphthongs occurring where intervocalic /n/ was lost</comment>
     <rule>VɪC &gt; VCʲ</rule>
     <comment>Glide dissimilation if the homorganic vowel was in the following syllable, but usually the glide just deleted</comment>
     <rule>aɪ &gt; eɪ</rule>
     <rule>eɪ &gt; e (rare)</rule>
-    <rule>aʊ &gt; aɪ / !_{ɾ,r,s̺,s̻} (Souletin, Roncalese)</rule>
+    <rule sporadic="true">aʊ &gt; aɪ / !_{ɾ,r,s̺,s̻}</rule>
     <rule>eʊ &gt; {e,eɡu}</rule>
     <rule>eɪ &gt; e / #_</rule>
-    <rule>oɪ &gt; uɪ (rare)</rule>
+    <rule sporadic="true">oɪ &gt; uɪ</rule>
     <rule>eð (&gt; e ?) &gt; j / #_V</rule>
     <rule>e &gt; j / #_a</rule>
     <rule>e &gt; ∅ / #_e</rule>
-    <rule>ʊa &gt; o “especially after a velar stop”</rule>
+    <rule>ʊa &gt; o</rule>
     <rule>ʊe &gt; e</rule>
-    <rule>C[- voice] &gt; C[+ voice] / {l,N}_ (not Roncalese or Souletin)</rule>
-    <comment>Some speakers (Labourd and Low Navarrese?) have ʀ for r, and a few have ɢ̆ for ɾ
-l gets a velar(ized?) articulation in Souletin (possibly only in the coda?)
-Souletin preserves something involving historical aspiration in pretonic position, apparently
-Souletin keeps initial ʃ- and tʃ- distinct; Labourdin only has ʃ-, and the rest apparently only have tʃ-?</comment>
+    <rule sporadic="true">C[- voice] &gt; C[+ voice] / {l,N}_</rule>
     <rule>C[+ sibilant] &gt; C[+ affricate] / _#</rule>
-    <rule>s̻ ts̺ &gt; s̺ ts̻ (Biscayan, partially in Guipuscoan, Donostia, San Sebastián, though these latter two may be varieties of Guipuscoan)</rule>
+    <rule sporadic="true">s̻ ts̺ &gt; s̺ ts̻</rule>
     <rule sporadic="true">s̻ &gt; s̺ / _{C,#}</rule>
     <comment>From the Wikipedia article on Biscayan: “Convergence of sibilants: z, x and s &gt; x, s and tz, tx and ts &gt; tz.” I’m not sure what this means. 〈s z〉 are apparently s̻ s̺, and 〈x〉 is ʃ.</comment>
-    <rule>its̺ &gt; tʃ / _# (Biscayan)</rule>
+    <rule sporadic="true">its̺ &gt; tʃ / _#</rule>
     <rule>oa ea &gt; u(e) i(e) / _#</rule>
     <comment>Beterri Guipuscoan has VjV# where Biscayan has VɲV# and regular Basque has VV#</comment>
-    <rule>s̺ &gt; tʃ / #_ (Guipuscoan)</rule>
-    <rule>s̺ &gt; ʃ̺ “for most French Basque speakers (Trask 1997:84), due to French influence” according to Campbell</rule>
+    <rule sporadic="true">s̺ &gt; tʃ / #_</rule>
+    <rule sporadic="true">s̺ &gt; ʃ̺</rule>
   </section>
   <section index="45" name="Yuman-Cochimı́"/>
   <section index="45.1" name="Pai"/>
@@ -11810,12 +11804,13 @@ Souletin keeps initial ʃ- and tʃ- distinct; Labourdin only has ʃ-, and the re
     <rule>uː &gt; ʌu / when-stem final, in northern varieties</rule>
     <rule sporadic="true">øː &gt; wi / {k,ɡ}_</rule>
     <rule sporadic="true">øː &gt; i</rule>
-    <rule>øː &gt; (j){u,ʌ} / _{k,x} (outcome varies depending upon dialect)</rule>
+    <rule>øː &gt; (j){u,ʌ} / _{k,x}</rule>
     <rule>a &gt; i / _n (in northern varieties)</rule>
     <rule>a &gt; e / _n (otherwise)</rule>
     <rule>a &gt; {ɛ,e} / _rC</rule>
     <rule>ai oi ui ei au ou iu ɛ(o)u &gt; eː oe əi iː {ɑː,ɔː} ʌu ju j(ʌ)u</rule>
-    <rule>ɛː &gt; ɛi (&gt; əi?) / in some northern varieties</rule>
+    <rule >ɛː &gt; ɛi</rule>
+    <rule sporadic="true">ɛi &gt; əi</rule>
     <rule>iː eː ɛː aː oː uː {øː,yː} &gt; əi i {i,e} e o u ø</rule>
     <rule>æ &gt; ɛ / _C[+alveolar]</rule>
     <rule>a ɔ u &gt; {a,ɑ} ɔ ʌ</rule>
@@ -11958,33 +11953,33 @@ Souletin keeps initial ʃ- and tʃ- distinct; Labourdin only has ʃ-, and the re
   </section>
   <section index="47" name="Most-Wanted Sound Changes" />
   <section index="47.1" name="List 1: Simple Consonant Changes">
-    <rule>w &gt; p (Navajo, some Polynesian languages)</rule>
-    <rule>kʲ ɡʲ &gt; k ɡ (Danish)</rule>
-    <rule>ś &gt; k (Possibly unconditional; some Samoyedic langs)</rule>
-    <rule>pʲ &gt; kʲ (some Romanian dialects, Tsakonian)</rule>
-    <rule>ts &gt; t (unconditional; some Samoyedic langs)</rule>
-    <rule>t &gt; k (general Polynesian)</rule>
-    <rule>n &gt; ŋ (Samoan, but only in colloquial speech)</rule>
-    <rule>j &gt; p (some Polynesian languages, such as Levei and Drehet) (https://en.wikipedia.org/wiki/Proto-Austronesian_language)</rule>
-    <rule>b &gt; #c, -nc- (Sundanese)</rule>
-    <rule>ŋ &gt; {x,h} (various Mayan languages)</rule>
-    <rule>h &gt; ŋ (Nyole)</rule>
-    <rule>ʕ &gt; ŋ (allegedly in European Hebrew, both Sephardic and Ashkenazi, but possibly not a sound change so much as a substitution) (https://en.wikipedia.org/wiki/Hebrew_language#Varieties_of_ayin, http://sites.google.com/site/londonsephardiminhag/pronunciation, http://www.forward.com/articles/105938/)</rule>
-    <rule>f &gt; p (? claimed to have occurred independently in Proto-Semitic and Proto-Omotic, and to a limited extent in Egyptian (but this may be related to the Semitic change); note that the Wikipedia article is cited to a single source and that source is admittedly theoretical, and acknowledges on page 77 another reconstruction that doesn’t believe Proto-Afro-Asiatic had /f/ at all) (Page 77 of http://is.gd/WNyXdn, https://en.wikipedia.org/wiki/Proto-Afro-Asiatic_language)</rule>
-    <rule>tš &gt; t (general Baltic-Finnic; may not be unconditional but was certainly the most common outcome)</rule>
+    <rule>w &gt; p</rule>
+    <rule>kʲ ɡʲ &gt; k ɡ</rule>
+    <rule>ś &gt; k</rule>
+    <rule>pʲ &gt; kʲ</rule>
+    <rule>ts &gt; t</rule>
+    <rule>t &gt; k</rule>
+    <rule>n &gt; ŋ</rule>
+    <rule>j &gt; p</rule>
+    <rule>b &gt; #c</rule>
+    <rule>ŋ &gt; {x,h}</rule>
+    <rule>h &gt; ŋ</rule>
+    <rule>ʕ &gt; ŋ</rule>
+    <rule>f &gt; p</rule>
+    <rule>tš &gt; t</rule>
     <rule>r &gt; ɡʟ</rule>
-    <rule>ɡʟ &gt; ɣ (Hiw) (http://is.gd/jCDLO1)</rule>
-    <rule>mb nd &gt; ʙ dr (Nias)</rule>
+    <rule>ɡʟ &gt; ɣ</rule>
+    <rule>mb nd &gt; ʙ dr</rule>
   </section>
   <section index="47.2" name="List 2: Conditional or complex consonant changes">
     <cite>Western and Eastern Armenian often have swapped voicing in stop consonants: e.g. vardapet vs. vartabed. This is a result of changes related to aspiration.</cite>
-    <rule>w &gt; f ;; (Common Celtic; I’m not sure of the conditions)</rule>
-    <rule>m &gt; n / _i ;; (Tsakonian)</rule>
-    <rule>{t,k} &gt; ∅ / V_V ;; (Marathi) probably with voiced stops as intermediates, since they also became silent</rule>
-    <rule>p &gt; w / V_V ;; (Marathi)</rule>
-    <rule>b d ɡ &gt; bː dː ɡː / V_V ;; (some dialects of Italian; there may be more to it than this, since words like “repubblica” are in standard Italian and not just dialects)</rule>
-    <rule>t &gt; k / _s̩ ;; (Ōgami) (NB: The article doesn’t have an underscore indicating whether this occurs before or after the /s̩/, but the linked page indicates where this change occurred) (http://amritas.com/101023.htm#10192359)</rule>
-    <rule>n &gt; i / _s ;; and sometimes other fricatives (Montana Salish)</rule>
+    <rule>w &gt; f</rule>
+    <rule>m &gt; n / _i</rule>
+    <rule>{t,k} &gt; ∅ / V_V</rule>
+    <rule>p &gt; w / V_V</rule>
+    <rule>b d ɡ &gt; bː dː ɡː / V_V</rule>
+    <rule>t &gt; k / _s̩</rule>
+    <rule>n &gt; i / _s</rule>
   </section>
   <section index="47.3" name="List 3: Vowels">
     <rule sporadic="true">y &gt; u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)</rule>
