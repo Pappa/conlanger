@@ -526,7 +526,7 @@ Frequent h-dropping</comment>
     <rule>i iː u uː &gt; eə iːə oə uːə / _R</rule>
     <rule>iː &gt; eː / _#</rule>
     <rule>a &gt; aː / _$</rule>
-    <rule>a &gt; {a,ɛ} (not common)</rule>
+    <rule sporadic="true">a &gt; {a,ɛ}</rule>
     <rule>i u &gt; e a / _R{$,#} (in verbs)</rule>
     <rule>i u &gt; e o / _C{$,#} (in verbs)</rule>
     <rule>i &gt; eː oː / _ ! _C{$,#} (in verbs)</rule>
@@ -2324,7 +2324,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>n &gt; ŋ / _V[- stress]q</rule>
     <rule>c &gt; s</rule>
     <rule>t &gt; c / _E</rule>
-    <rule>q (&gt; kw ?) &gt; v (rare)</rule>
+    <rule sporadic="true">q (&gt; kw ?) &gt; v</rule>
     <rule>a &gt; e / _(C)i</rule>
     <rule>a &gt; ə / _Ca</rule>
   </section>
@@ -2450,7 +2450,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <cite>thetha, from Lynch, John (2001), The Linguistic History of Southern Vanuatu</cite>
     <rule>kʷ &gt; p / _#</rule>
     <rule>kʷ &gt; ∅ / _u</rule>
-    <rule>kʷ &gt; ∅ / _a (rare)</rule>
+    <rule sporadic="true">kʷ &gt; ∅ / _a</rule>
     <rule>kʷ &gt; {w,u}</rule>
     <rule>v &gt; ∅ / _i</rule>
     <rule sporadic="true">v &gt; {w,u}</rule>
@@ -3678,7 +3678,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <comment>NB: The changes in plosives are the most contentious; the Wikipedia article gives differences between the seven dialects in initial position for only the alveolar series by way of comparison, so take plosive changes with a huge grain of salt.</comment>
     <rule>{e,i}ː {u,o}ː &gt; i u</rule>
     <rule>{e,o}j ɛw &gt; ɛj ow</rule>
-    <rule>{e,o} &gt; a (rare)</rule>
+    <rule sporadic="true">{e,o} &gt; a</rule>
     <rule>aː &gt; a</rule>
     <rule>e &gt; ɛ</rule>
     <rule>ɛ o &gt; i u / _N</rule>
@@ -3715,7 +3715,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <comment>NB: The changes in plosives are the most contentious; the Wikipedia article gives differences between the seven dialects in initial position for only the alveolar series by way of comparison, so take plosive changes with a huge grain of salt.</comment>
     <rule>{e,i}ː {u,o}ː &gt; i u</rule>
     <rule>{e,o}j ɛw &gt; ɛj ow</rule>
-    <rule>{e,o} &gt; a (rare)</rule>
+    <rule sporadic="true">{e,o} &gt; a</rule>
     <rule>aː &gt; a</rule>
     <rule>e &gt; ɛ</rule>
     <rule>ɛ o &gt; i u / _N</rule>
@@ -3752,7 +3752,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <comment>NB: The changes in plosives are the most contentious; the Wikipedia article gives differences between the seven dialects in initial position for only the alveolar series by way of comparison, so take plosive changes with a huge grain of salt.</comment>
     <rule>{e,i}ː {u,o}ː &gt; i u</rule>
     <rule>{e,o}j ɛw &gt; ɛj ow</rule>
-    <rule>{e,o} &gt; a (rare)</rule>
+    <rule sporadic="true">{e,o} &gt; a</rule>
     <rule>aː &gt; a</rule>
     <rule>e &gt; ɛ</rule>
     <rule>ɛ o &gt; i u / _N</rule>
@@ -3789,7 +3789,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <comment>NB: The changes in plosives are the most contentious; the Wikipedia article gives differences between the seven dialects in initial position for only the alveolar series by way of comparison, so take plosive changes with a huge grain of salt.</comment>
     <rule>{e,i}ː {u,o}ː &gt; i u</rule>
     <rule>{e,o}j ɛw &gt; ɛj ow</rule>
-    <rule>{e,o} &gt; a (rare)</rule>
+    <rule sporadic="true">{e,o} &gt; a</rule>
     <rule>aː &gt; a</rule>
     <rule>e &gt; ɛ</rule>
     <rule>ɛ o &gt; i u / _N</rule>
@@ -3826,7 +3826,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <comment>NB: The changes in plosives are the most contentious; the Wikipedia article gives differences between the seven dialects in initial position for only the alveolar series by way of comparison, so take plosive changes with a huge grain of salt.</comment>
     <rule>{e,i}ː {u,o}ː &gt; i u</rule>
     <rule>{e,o}j ɛw &gt; ɛj ow</rule>
-    <rule>{e,o} &gt; a (rare)</rule>
+    <rule sporadic="true">{e,o} &gt; a</rule>
     <rule>aː &gt; a</rule>
     <rule>e &gt; ɛ</rule>
     <rule>ɛ o &gt; i u / _N</rule>
@@ -3862,7 +3862,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <comment>NB: The changes in plosives are the most contentious; the Wikipedia article gives differences between the seven dialects in initial position for only the alveolar series by way of comparison, so take plosive changes with a huge grain of salt.</comment>
     <rule>{e,i}ː {u,o}ː &gt; i u</rule>
     <rule>{e,o}j ɛw &gt; ɛj ow</rule>
-    <rule>{e,o} &gt; a (rare)</rule>
+    <rule sporadic="true">{e,o} &gt; a</rule>
     <rule>aː &gt; a</rule>
     <rule>e &gt; ɛ</rule>
     <rule>ɛ o &gt; i u / _N</rule>
@@ -3901,7 +3901,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <comment>NB: The changes in plosives are the most contentious; the Wikipedia article gives differences between the seven dialects in initial position for only the alveolar series by way of comparison, so take plosive changes with a huge grain of salt.</comment>
     <rule>{e,i}ː {u,o}ː &gt; i u</rule>
     <rule>{e,o}j ɛw &gt; ɛj ow</rule>
-    <rule>{e,o} &gt; a (rare)</rule>
+    <rule sporadic="true">{e,o} &gt; a</rule>
     <rule>aː &gt; a</rule>
     <rule>e &gt; ɛ</rule>
     <rule>ɛ o &gt; i u / _N</rule>
@@ -5731,7 +5731,7 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>V &gt; Vː / _zC[+voiced]</rule>
     <rule>z &gt; ∅ / _C[+voiced]</rule>
     <rule>p…kʷ &gt; kʷ…kʷ</rule>
-    <rule>V₁…V₂ &gt; V₂…V₂ (rare)</rule>
+    <rule sporadic="true">V₁…V₂ &gt; V₂…V₂</rule>
     <rule>V &gt; Vː / _S[+voiced]{S[-voiced],F[-voiced]}; “(i, e, and o sometimes bypass this)”</rule>
     <rule>S[+voiced] &gt; S[-voiced] / _{S[-voiced],F[-voiced]}</rule>
     <rule>S[-voiced] &gt; S[+voiced] / _N</rule>
@@ -5842,7 +5842,7 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>{bj,vj} &gt; wʒ / _%”V</rule>
     <rule>b &gt; v / V̈%_j</rule>
     <rule sporadic="true">ja &gt; je / #_</rule>
-    <rule>V &gt; ∅ / _%”V (rare)</rule>
+    <rule sporadic="true">V &gt; ∅ / _%”V</rule>
     <rule>∅ &gt; {e,o} / CL_#</rule>
     <rule>∅ &gt; {e,o} / rː_#</rule>
     <rule>a &gt; e / “in the penult”</rule>
@@ -5893,7 +5893,7 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>lː nː &gt; ʎ ɲ</rule>
     <rule>ʎ &gt; l / ”i_</rule>
     <rule>C &gt; ∅ / C₁_C₂ ! C₂ = L</rule>
-    <rule>{a,o} &gt; ∅ / #_ (rare)</rule>
+    <rule sporadic="true">{a,o} &gt; ∅ / #_</rule>
     <rule>ɔ &gt; o / _N$C</rule>
     <rule>e &gt; ɛ / _v</rule>
     <rule>o &gt; u / _[+ stress]{ɲ,nk,ŋ}</rule>
@@ -5950,7 +5950,7 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>d &gt; ∅ / _j</rule>
     <rule>j &gt; ∅ / V_”E</rule>
     <rule>j tj &gt; dʒ ts / #_</rule>
-    <rule>j &gt; dʒ / V_V (rare)</rule>
+    <rule sporadic="true">j &gt; dʒ / V_V</rule>
     <rule>∅ &gt; s / t_j</rule>
     <rule>t &gt; s / s_j</rule>
     <rule>{ɡn,nj} &gt; ɲ</rule>
@@ -6113,7 +6113,7 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>ɔ̃ &gt; õ</rule>
     <rule>N &gt; ∅ / V[+ nasal]_$C ! C = S</rule>
     <rule>V &gt; V[+ nasal] / _N$V</rule>
-    <rule>V &gt; V[+ nasal] / #N_ (rare)</rule>
+    <rule sporadic="true">V &gt; V[+ nasal] / #N_</rule>
     <rule>N &gt; ∅ / V[+ nasal]_$V</rule>
     <rule>{ã,ãe,õe} &gt; ão / _#</rule>
     <rule>V[+ nasal] &gt; V[- nasal] / [- stress]</rule>
@@ -6132,7 +6132,7 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <comment>“[I]f there are multiple vowels between the initial and tonic syllables, the vowel directly before the tonic is dropped”</comment>
     <rule>k &gt; ts / #_{i,e}</rule>
     <rule>ts &gt; s / #_{i,e}</rule>
-    <rule>k &gt; ɡ / #_{a,r} (rare)</rule>
+    <rule sporadic="true">k &gt; ɡ / #_{a,r}</rule>
     <rule>ɡ &gt; ɡʲ / #_{i,e}</rule>
     <rule>ɡʲ &gt; dʲ / #_{i,e}</rule>
     <rule>dʲ &gt; dʒ / #_{i,e}</rule>
@@ -6422,7 +6422,7 @@ INTERTONIC VOWELS</comment>
     <rule>sj &gt; ʒ</rule>
     <rule>ʒ &gt; (i)(d)ʒ</rule>
     <rule>sj &gt; ʒ</rule>
-    <rule>ʒ &gt; {r,z} (rare)</rule>
+    <rule sporadic="true">ʒ &gt; {r,z}</rule>
     <rule>sj &gt; ʒ</rule>
     <rule>ʒ &gt; iz (the usual outcome)</rule>
     <rule>tVɡ trj &gt; dʒ ir</rule>
@@ -11712,7 +11712,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>VɪC &gt; VCʲ</rule>
     <comment>Glide dissimilation if the homorganic vowel was in the following syllable, but usually the glide just deleted</comment>
     <rule>aɪ &gt; eɪ</rule>
-    <rule>eɪ &gt; e (rare)</rule>
+    <rule sporadic="true">eɪ &gt; e</rule>
     <rule sporadic="true">aʊ &gt; aɪ / !_{ɾ,r,s̺,s̻}</rule>
     <rule>eʊ &gt; {e,eɡu}</rule>
     <rule>eɪ &gt; e / #_</rule>
