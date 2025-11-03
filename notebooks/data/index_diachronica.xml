@@ -405,8 +405,6 @@
     <rule>{i,u} &gt; ∅ / VC_CV when unstressed (short only)</rule>
     <comment>Some other short-vowel deletions</comment>
     <rule>∅ &gt; e / CVCC_CVCV (applies across word boundaries)</rule>
-    <comment>Resyllabification across word boundaries to prevent vowel-initial syllables
-r gains emphatic status except when next to i, and even then it’s becoming more common in that environment</comment>
     <rule>a(ː) &gt; ɑ(ː) / near emphatics</rule>
     <rule>a(ː) &gt; ɑ(ː) / if ɑ(ː) is elsewhere in the word</rule>
     <rule>a(ː) &gt; æ(ː) / else (sometimes it seems more like ɛ(ː) to me)</rule>
@@ -519,8 +517,6 @@ r gains emphatic status except when next to i, and even then it’s becoming mor
     <comment>NB: ə could be realized as an ultrashort [a], [e], or [o] depending on its surroundings.</comment>
     <rule>θ θˤ ð ɬ ɬˤ &gt; ʃ ʃˤ z s sˤ</rule>
     <rule>x ɣ kˤ &gt; ħ ʕ q</rule>
-    <comment>Some mergers involving j and w
-Frequent h-dropping</comment>
     <comment>Stressed-vowel correspondences:</comment>
     <rule>aː &gt; oː / ! _#</rule>
     <rule>i iː u uː &gt; eə iːə oə uːə / _R</rule>
@@ -877,7 +873,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>Cʷ &gt; C / _ə{(C){p,kʷ},m,w}</rule>
     <rule>kw pw mw &gt; kʷ pʷ mʷ</rule>
     <rule>we &gt; wə</rule>
-    <rule>wə &gt; oː / ! adjacent to {p,m,k}</rule>
+    <rule>wə &gt; oː / ! _,{p,m,k}</rule>
     <rule>j &gt; ∅ / C_</rule>
     <rule>ʔ &gt; h / _C ! C = l, or when reduplicated</rule>
     <rule>h &gt; ∅ / _{s,x}</rule>
@@ -1294,8 +1290,6 @@ Journal of American Linguistics, 40:102 – 116</cite>
   <section index="9.1.1" name="Proto-Vietic to Muong Khen">
     <cite>Pogostick Man, from Thompson, Laurence C. (1976), “Proto-Viet-Muong Phonology”. Oceanic Linguistics Special Publications 13, Austroasiatic Studies II:1113 – 1203; Wikipedia contributors (2012). “Hanoi”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Hanoi&gt;; Wikipedia contributors (2012), “Vietnamese Language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=Vietnamese_language&amp;id=509331797&gt;; Gage, William W. (1985), “Glottal Stops and Vietnamese Tonogenesis”. Oceanic Linguistics Special Publications 20:21 – 36; and Thompson, Laurence C. (1979?), “More on Viet-Muong Tonal Developments”</cite>
     <comment>Tonogenesis</comment>
-    <comment>1. “Constricted” (laryngealized?)
-2. Terminates in a glottal stop if no final stop</comment>
     <comment>Presyllables don’t seem to have affected Muong much.</comment>
     <comment>Initials:</comment>
     <rule>s &gt; h</rule>
@@ -1338,8 +1332,6 @@ Journal of American Linguistics, 40:102 – 116</cite>
   <section index="9.1.2.1" name="Middle Vietnamese to Hanoi Vietnamese">
     <cite>Pogostick Man, from Thompson, Laurence C. (1976), “Proto-Viet-Muong Phonology”. Oceanic Linguistics Special Publications 13, Austroasiatic Studies II:1113 – 1203; Wikipedia contributors (2012). “Hanoi”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Hanoi&gt;; Wikipedia contributors (2012), “Vietnamese Language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=Vietnamese_language&amp;id=509331797&gt;; Gage, William W. (1985), “Glottal Stops and Vietnamese Tonogenesis”. Oceanic Linguistics Special Publications 20:21 – 36; and Thompson, Laurence C. (1979?), “More on Viet-Muong Tonal Developments”</cite>
     <comment>Tonogenesis</comment>
-    <comment>1. Tense when _S#; laryngealized elsewhere
-2. Laryngealized</comment>
     <comment>Initials:</comment>
     <rule>pʰ &gt; f</rule>
     <rule>kʰ &gt; x (only seems to have occurred with first-register tones)</rule>
@@ -1358,17 +1350,15 @@ Journal of American Linguistics, 40:102 – 116</cite>
   <section index="9.1.2.2" name="Middle Vietnamese to Saigon Vietnamese">
     <cite>Pogostick Man, from Thompson, Laurence C. (1976), “Proto-Viet-Muong Phonology”. Oceanic Linguistics Special Publications 13, Austroasiatic Studies II:1113 – 1203; Wikipedia contributors (2012). “Hanoi”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Hanoi&gt;; Wikipedia contributors (2012), “Vietnamese Language”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=Vietnamese_language&amp;id=509331797&gt;; Gage, William W. (1985), “Glottal Stops and Vietnamese Tonogenesis”. Oceanic Linguistics Special Publications 20:21 – 36; and Thompson, Laurence C. (1979?), “More on Viet-Muong Tonal Developments”</cite>
     <comment>Tonogenesis</comment>
-    <comment>1. Level when _S#; dipping otherwise
-2. Laryngealized</comment>
     <comment>Initials:</comment>
     <rule>pʰ &gt; f</rule>
     <rule>kʰ &gt; x (only seems to have occurred with first-register tones)</rule>
     <rule>{β,w} &gt; bj~vj~v</rule>
-    <rule>{bl,tl} &gt; ʈ (?)</rule>
+    <rule sporadic="true">{bl,tl} &gt; ʈ</rule>
     <rule>dʲ ɟ &gt; z j</rule>
     <rule>m &gt; ∅ / _l</rule>
     <rule>Ω cʰ &gt; ʂ ʈʂ</rule>
-    <rule>ɹ &gt; ʐ (sometimes?)</rule>
+    <rule sporadic="true">ɹ &gt; ʐ</rule>
     <comment>Finals:</comment>
     <rule>c ɲ t n &gt; t n k ŋ / a_ (short /a/ only)</rule>
     <rule>c ɲ &gt; t n / {i,e}_</rule>
@@ -1502,7 +1492,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>*Z &gt; r</rule>
     <rule>z &gt; r / V_V</rule>
     <rule>*R &gt; ɡ</rule>
-    <rule>r &gt; d / #_ (?)</rule>
+    <rule sporadic="true">r &gt; d / #_</rule>
     <rule>{s,c} &gt; t</rule>
     <rule>{q,h} &gt; ∅</rule>
     <rule>uj &gt; i</rule>
@@ -1633,11 +1623,9 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>R q &gt; r h</rule>
     <rule>i iw u &gt; ɔj ? ɔw / _#</rule>
     <rule>C₁C₂ &gt; C₂</rule>
-    <comment>Nasal + stop clusters assimilate in POA</comment>
     <rule>C[+ voice] &gt; C[- voice] / _#</rule>
     <rule sporadic="true">l n &gt; r l / #_</rule>
     <rule sporadic="true">d j &gt; r ɭ</rule>
-    <comment>“Sometimes a reduction of [the] penultimate vowel”</comment>
     <rule sporadic="true">a &gt; aː / _C#</rule>
   </section>
   <section index="10.2.2" name="Proto-Malayo-Polynesian to Chamorro">
@@ -1647,7 +1635,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule sporadic="true">V &gt; ∅ / VC_CV</rule>
     <rule>i u &gt; e o / _C{C,#}</rule>
     <rule sporadic="true">i u &gt; e o / CC#</rule>
-    <rule>a &gt; æ “(in some forms; environment and conditioning unclear)”</rule>
+    <rule sporadic="true">a &gt; æ</rule>
     <rule>uj &gt; {i,u}</rule>
     <rule>iw &gt; u</rule>
     <rule>p c q &gt; f s ʔ</rule>
@@ -1689,7 +1677,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <cite>TinyMusic, from Tryon, Darrell (1995), Comparative Austronesian Dictionary</cite>
     <rule>V &gt; ə / _(C…)UU#</rule>
     <rule>ə &gt; a / _(C…)#</rule>
-    <rule>n &gt; ɲ / “in the environment of i (sporadic)”</rule>
+    <rule sporadic="true">n &gt; ɲ / _,i</rule>
     <rule sporadic="true">h &gt; ∅ / ! _#</rule>
   </section>
   <section index="10.2.4" name="Proto-Malayo-Polynesian to Proto-Malayo-Javanic">
@@ -1702,7 +1690,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
   <section index="10.2.4.1" name="Proto-Malayo-Javanic to Javanese">
     <cite>TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic Linguistics 44(2):357 – 388</cite>
     <rule>{l,d} z &gt; r d</rule>
-    <rule>b &gt; w / ! adjacent to another consonant</rule>
+    <rule>b &gt; w / ! _,C</rule>
     <rule>ə &gt; u / _h#</rule>
     <rule>R &gt; ∅</rule>
     <rule>h &gt; ∅ / #_</rule>
@@ -1711,7 +1699,6 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>əw əj &gt; i u / _#</rule>
     <rule>aw aj &gt; e ó / _#</rule>
     <rule>C₁C₂ &gt; C₂</rule>
-    <comment>Nasal + stop clusters “become homorganic”</comment>
     <rule>HəS &gt; (h)əNS</rule>
   </section>
   <section index="10.2.4.2" name="Proto-Malayo-Polynesian to Madurese">
@@ -1725,7 +1712,6 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>R &gt; r</rule>
     <rule>h &gt; ʔ / V₀V₀</rule>
     <rule>h &gt; ∅</rule>
-    <comment>“Aspiration of initial and intervocalic voiced stops and *z”</comment>
     <rule>{p,t,k} b d ɡ &gt; ʔ p t k / _#</rule>
     <rule>ij uw &gt; uj {uj,ój} / _#</rule>
     <rule>V &gt; Vː / ə(C…?)_</rule>
@@ -1747,7 +1733,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>∅ &gt; w / u_V</rule>
     <rule>∅ &gt; j / i_V</rule>
     <rule>ə &gt; ∅ / #_</rule>
-    <rule>∅ &gt; ə / C_C “(for certain consonant combinations, which the paper doesn’t specify)”</rule>
+    <rule sporadic="true">∅ &gt; ə / C_C</rule>
     <rule>h &gt; ∅</rule>
     <rule>ə &gt; {e,o} / [+ stress]</rule>
     <rule>p &gt; w</rule>
@@ -1760,7 +1746,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>j &gt; ∅ / C_i</rule>
     <rule>ə &gt; ∅ / _#</rule>
     <rule sporadic="true">ə &gt; ∅</rule>
-    <rule>t &gt; ð / ! adjacent to S</rule>
+    <rule>t &gt; ð / ! _,S</rule>
     <rule>s &gt; t</rule>
     <rule>ʀ &gt; r / _C[+dental]</rule>
     <rule>ʀ &gt; s</rule>
@@ -1784,11 +1770,11 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>h &gt; ∅ / _#</rule>
     <rule>h &gt; ʔ / V₀_V₀</rule>
     <rule>h &gt; ʔ / a_{i,u}</rule>
-    <rule>ə &gt; ∅ / adjacent to a vowel</rule>
+    <rule>ə &gt; ∅ / _,V</rule>
     <rule>a &gt; ə / _UU(U…)#</rule>
     <rule>ə &gt; ∅ / _V</rule>
     <rule>ə &gt; ∅ VC_CV</rule>
-    <rule>C &gt; Cː / ə_V (?)</rule>
+    <rule sporadic="true">C &gt; Cː / ə_V</rule>
     <rule>ɟ(ː) &gt; d(ː)</rule>
     <rule>bː dː dzː ɡː &gt; bʱ dʱ dzʱ ɡʱ</rule>
     <rule>ə &gt; ∅ / #_UU(U…)#</rule>
@@ -1807,7 +1793,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>∅ &gt; h / a_#</rule>
     <rule sporadic="true">s &gt; ∅ / V_V</rule>
     <rule>V₀V₀ &gt; V₀</rule>
-    <rule>ə &gt; ∅ / adjacent to a vowel</rule>
+    <rule>ə &gt; ∅ / _,V</rule>
     <rule>V[+stress] &gt; Vː / _C# ! V = ə and/or C = h “(applies to diphthongal nuclei as well a[s] monophthongs)”</rule>
     <rule>ʀ &gt; {l,ɾ} / ! _#</rule>
     <rule sporadic="true">l &gt; ∅ / ! _#</rule>
@@ -2559,18 +2545,18 @@ Journal of American Linguistics, 40:102 – 116</cite>
   <section index="10.5.1" name="Proto-Ongan to Jarawa">
     <cite>Pogostick Man, from Blevins, Juliette (2007), “A Long Lost Sister of Proto-Austronesian? Proto-Ongan, Mother of Jarawa and Onge of the Andaman Islands”. Oceanic Linguistics 46(I):154 – 198</cite>
     <rule>e &gt; ə / _[- stress]N</rule>
-    <rule>n &gt; ŋ / _# (?)</rule>
+    <rule sporadic="true">n &gt; ŋ / _#</rule>
     <rule>k(ʷ) &gt; h(ʷ)</rule>
     <rule>∅ &gt; a / h#_</rule>
     <rule>ɡ &gt; j</rule>
     <rule>e &gt; {e,ə,o} / _V</rule>
-    <rule>e &gt; ∅ / _# (?)</rule>
+    <rule sporadic="true">e &gt; ∅ / _#</rule>
     <rule>p &gt; b / #_</rule>
   </section>
   <section index="10.5.2" name="Proto-Ongan to Onge">
     <cite>Pogostick Man, from Blevins, Juliette (2007), “A Long Lost Sister of Proto-Austronesian? Proto-Ongan, Mother of Jarawa and Onge of the Andaman Islands”. Oceanic Linguistics 46(I):154 – 198</cite>
     <rule>e &gt; ə / _[- stress]N</rule>
-    <rule>n &gt; ŋ / _# (?)</rule>
+    <rule sporadic="true">n &gt; ŋ / _#</rule>
     <rule>d &gt; r / V_{V,#}</rule>
     <rule>{w,r} &gt; ∅ / {a,e}_#</rule>
     <rule>∅ &gt; e / C_#</rule>
@@ -3118,7 +3104,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ŕ &gt; rː / V_V</rule>
     <rule>nr̀ &gt; nr</rule>
     <rule>l &gt; n / V_#</rule>
-    <rule>v &gt; m / #_V (?)</rule>
+    <rule sporadic="true">v &gt; m / #_V</rule>
   </section>
   <section index="14.3" name="Tamil"/>
   <section index="14.3.1" name="Standard Tamil to Colloquial Tamil">
@@ -3489,7 +3475,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>i̯ &gt; h / V_</rule>
     <rule>u̯ &gt; v</rule>
     <rule>Vn &gt; V[+nasal] / _C?</rule>
-    <rule>n &gt; ɲ (sometimes?)</rule>
+    <rule sporadic="true">n &gt; ɲ</rule>
     <rule>l r &gt; l(ː) r(ː)</rule>
     <rule>{m̩,n̩} l̩ r̩ &gt; e uj {ri,ir}</rule>
     <comment>Loss of laryngeals, with the possible exception of h₄, if it existed; h₃ and h₄ seem to have possibly fronted a following back vowel</comment>
@@ -3527,7 +3513,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>i̯ &gt; h / V_</rule>
     <rule>u̯ &gt; v</rule>
     <rule>n &gt; ∅ / V_C?</rule>
-    <rule>n &gt; ɲ (sometimes?)</rule>
+    <rule sporadic="true">n &gt; ɲ</rule>
     <rule>n &gt; ɾ</rule>
     <rule>l r &gt; {l,ɫ} {ɾ,r}</rule>
     <rule>{m̩,n̩} l̩ r̩ &gt; e uj {ri,ir}</rule>
@@ -3684,19 +3670,19 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ɛ o &gt; i u / _N</rule>
     <rule>ej ia &gt; e ɛa</rule>
     <rule>{i,u} &gt; ə / in some unstressed syllables</rule>
-    <rule>e oj ɛa &gt; i u ɛ / when unstressed</rule>
-    <rule>p t &gt; h tʰ / #_ (?)</rule>
+    <rule>e oj ɛa &gt; i u ɛ / [- stress]</rule>
+    <rule sporadic="true">p t &gt; h tʰ / #_</rule>
     <rule>t &gt; tʰ / {aw,ow}_</rule>
     <rule>kʷ &gt; tʃʰ / _{e,i}</rule>
     <rule>t k(ʷ) &gt; d ɡ / {N,L}_</rule>
     <rule>p ḱ k(ʷ) &gt; {w,v} s kʰ</rule>
-    <rule>ɡ́ &gt; ts (?)</rule>
+    <rule sporadic="true">ɡ́ &gt; ts</rule>
     <rule>b d ɡ(ʷ) &gt; p t k</rule>
     <rule>bʱ dʱ ɡ́ʱ ɡʷʱ &gt; p t j k / #_</rule>
     <rule>bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ &gt; {w,v} d z ɡ ʒ</rule>
     <rule>j &gt; w / _o</rule>
     <rule>j &gt; ?</rule>
-    <rule>{sk,ks} kj &gt; tsʰ tʃʰ (?)</rule>
+    <rule sporadic="true">{sk,ks} kj &gt; tsʰ tʃʰ</rule>
     <rule>{sr,rs} &gt; rː</rule>
     <rule>r &gt; rː / _N</rule>
     <rule>l &gt; ɫ / {C,lV}_</rule>
@@ -3721,19 +3707,19 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ɛ o &gt; i u / _N</rule>
     <rule>ej ia &gt; e ɛa</rule>
     <rule>{i,u} &gt; ə / in some unstressed syllables</rule>
-    <rule>e oj ɛa &gt; i u ɛ / when unstressed</rule>
-    <rule>p t &gt; h tʰ / #_ (?)</rule>
+    <rule>e oj ɛa &gt; i u ɛ / [- stress]</rule>
+    <rule sporadic="true">p t &gt; h tʰ / #_</rule>
     <rule>t &gt; tʰ / {aw,ow}_</rule>
     <rule>kʷ &gt; tʃʰ / _{e,i}</rule>
     <rule>t k(ʷ) &gt; d ɡ / {N,L}_</rule>
     <rule>p ḱ k(ʷ) &gt; {w,v} s kʰ</rule>
-    <rule>ɡ́ &gt; ts (?)</rule>
+    <rule sporadic="true">ɡ́ &gt; ts</rule>
     <rule>b d ɡ(ʷ) &gt; p t k</rule>
     <rule>ɡʷʱ &gt; ɡʱ / #_</rule>
     <rule>bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ &gt; {w,v} d z ɡ ʒ</rule>
     <rule>j &gt; w / _o</rule>
     <rule>j &gt; ?</rule>
-    <rule>{sk,ks} kj &gt; tsʰ tʃʰ (?)</rule>
+    <rule sporadic="true">{sk,ks} kj &gt; tsʰ tʃʰ</rule>
     <rule>{sr,rs} &gt; rː</rule>
     <rule>r &gt; rː / _N</rule>
     <rule>l &gt; ɫ / {C,lV}_</rule>
@@ -3758,19 +3744,19 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ɛ o &gt; i u / _N</rule>
     <rule>ej ia &gt; e ɛa</rule>
     <rule>{i,u} &gt; ə / in some unstressed syllables</rule>
-    <rule>e oj ɛa &gt; i u ɛ / when unstressed</rule>
+    <rule>e oj ɛa &gt; i u ɛ / [- stress]</rule>
     <rule>t &gt; tʰ / {aw,ow}_ ! #_</rule>
     <rule>kʷ &gt; tʃʰ / _{e,i}</rule>
     <rule>t k(ʷ) &gt; d ɡ / {N,L}_</rule>
     <rule>p ḱ k(ʷ) &gt; {w,v} s kʰ</rule>
-    <rule>ɡ́ &gt; ts (?)</rule>
+    <rule sporadic="true">ɡ́ &gt; ts</rule>
     <rule>b d ɡ(ʷ) &gt; p t k</rule>
     <rule>ɡʷʱ &gt; dʒ / #_{e,i}</rule>
     <rule>bʱ ɡ́ʱ ɡ(ʷ)ʱ &gt; b j k / #_</rule>
     <rule>bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ &gt; {w,v} d z ɡ ʒ</rule>
     <rule>j &gt; w / _o</rule>
     <rule>j &gt; ?</rule>
-    <rule>{sk,ks} kj &gt; tsʰ tʃʰ (?)</rule>
+    <rule sporadic="true">{sk,ks} kj &gt; tsʰ tʃʰ</rule>
     <rule>{sr,rs} &gt; rː</rule>
     <rule>r &gt; rː / _N</rule>
     <rule>l &gt; ɫ / {C,lV}_</rule>
@@ -3795,19 +3781,19 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ɛ o &gt; i u / _N</rule>
     <rule>ej ia &gt; e ɛa</rule>
     <rule>{i,u} &gt; ə / in some unstressed syllables</rule>
-    <rule>e oj ɛa &gt; i u ɛ / when unstressed</rule>
-    <rule>p t &gt; h tʰ / #_ (?)</rule>
+    <rule>e oj ɛa &gt; i u ɛ / [- stress]</rule>
+    <rule sporadic="true">p t &gt; h tʰ / #_</rule>
     <rule>t &gt; tʰ / {aw,ow}_</rule>
     <rule>kʷ &gt; tʃʰ / _{e,i}</rule>
     <rule>t k(ʷ) &gt; d ɡ / {N,L}_</rule>
     <rule>p ḱ k(ʷ) &gt; {w,v} s kʰ</rule>
-    <rule>ɡ́ &gt; ts (?)</rule>
+    <rule sporadic="true">ɡ́ &gt; ts</rule>
     <rule>b d ɡ(ʷ) &gt; p t k</rule>
     <rule>bʱ dʱ ɡ́ʱ ɡ(ʷ)ʱ &gt; p t j k / #_</rule>
     <rule>bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ &gt; {w,v} d z ɡ ʒ</rule>
     <rule>j &gt; w / _o</rule>
     <rule>j &gt; ?</rule>
-    <rule>{sk,ks} kj &gt; tsʰ tʃʰ (?)</rule>
+    <rule sporadic="true">{sk,ks} kj &gt; tsʰ tʃʰ</rule>
     <rule>{sr,rs} &gt; rː</rule>
     <rule>r &gt; rː / _N</rule>
     <rule>l &gt; ɫ / {C,lV}_</rule>
@@ -3832,18 +3818,18 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ɛ o &gt; i u / _N</rule>
     <rule>ej ia &gt; e ɛa</rule>
     <rule>{i,u} &gt; ə / in some unstressed syllables</rule>
-    <rule>e oj ɛa &gt; i u ɛ / when unstressed</rule>
-    <rule>p t &gt; h tʰ / #_ (?)</rule>
+    <rule>e oj ɛa &gt; i u ɛ / [- stress]</rule>
+    <rule sporadic="true">p t &gt; h tʰ / #_</rule>
     <rule>t &gt; tʰ / {aw,ow}_</rule>
     <rule>kʷ &gt; tʃʰ / _{e,i}</rule>
     <rule>t k(ʷ) &gt; d ɡ / {N,L}_</rule>
     <rule>p ḱ k(ʷ) &gt; {w,v} s kʰ</rule>
-    <rule>ɡ́ &gt; ts (?)</rule>
+    <rule sporadic="true">ɡ́ &gt; ts</rule>
     <rule>b d ɡ(ʷ) &gt; p t k</rule>
     <rule>bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ &gt; {w,v} d z ɡ ʒ / ! _#</rule>
     <rule>j &gt; w / _o</rule>
     <rule>j &gt; ?</rule>
-    <rule>{sk,ks} kj &gt; tsʰ tʃʰ (?)</rule>
+    <rule sporadic="true">{sk,ks} kj &gt; tsʰ tʃʰ</rule>
     <rule>{sr,rs} &gt; rː</rule>
     <rule>r &gt; rː / _N</rule>
     <rule>l &gt; ɫ / {C,lV}_</rule>
@@ -3868,13 +3854,13 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ɛ o &gt; i u / _N</rule>
     <rule>ej ia &gt; e ɛa</rule>
     <rule>{i,u} &gt; ə / in some unstressed syllables</rule>
-    <rule>e oj ɛa &gt; i u ɛ / when unstressed</rule>
-    <rule>p t &gt; h tʰ / #_ (?)</rule>
+    <rule>e oj ɛa &gt; i u ɛ / [- stress]</rule>
+    <rule sporadic="true">p t &gt; h tʰ / #_</rule>
     <rule>t &gt; tʰ / {aw,ow}_</rule>
     <rule>kʷ &gt; tʃʰ / _{e,i}</rule>
     <rule>t k(ʷ) &gt; d ɡ / {N,L}_</rule>
     <rule>p ḱ k(ʷ) &gt; {w,v} s kʰ</rule>
-    <rule>ɡ́ &gt; ts (?)</rule>
+    <rule sporadic="true">ɡ́ &gt; ts</rule>
     <rule>b d ɡ(ʷ) &gt; p t k</rule>
     <rule>ɡʷʱ &gt; dʒ / #_{e,i}</rule>
     <rule>bʱ ɡ́ʱ ɡʷʱ &gt; b j ɡ / #_</rule>
@@ -3882,7 +3868,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ &gt; {w,v} d z ɡ ʒ</rule>
     <rule>j &gt; w / _o</rule>
     <rule>j &gt; ?</rule>
-    <rule>{sk,ks} kj &gt; tsʰ tʃʰ (?)</rule>
+    <rule sporadic="true">{sk,ks} kj &gt; tsʰ tʃʰ</rule>
     <rule>{sr,rs} &gt; rː</rule>
     <rule>r &gt; rː / _N</rule>
     <rule>l &gt; ɫ / {C,lV}_</rule>
@@ -3907,20 +3893,20 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ɛ o &gt; i u / _N</rule>
     <rule>ej ia &gt; e ɛa</rule>
     <rule>{i,u} &gt; ə / in some unstressed syllables</rule>
-    <rule>e oj ɛa &gt; i u ɛ / when unstressed</rule>
-    <rule>p t &gt; h tʰ / #_ (?)</rule>
+    <rule>e oj ɛa &gt; i u ɛ / [- stress]</rule>
+    <rule sporadic="true">p t &gt; h tʰ / #_</rule>
     <rule>t &gt; tʰ / {aw,ow}_</rule>
     <rule>kʷ &gt; tʃʰ / _{e,i}</rule>
     <rule>t k(ʷ) &gt; d ɡ / {N,L}_</rule>
     <rule>p ḱ k(ʷ) &gt; {w,v} s kʰ</rule>
-    <rule>ɡ́ &gt; ts (?)</rule>
+    <rule sporadic="true">ɡ́ &gt; ts</rule>
     <rule>b d ɡ(ʷ) &gt; p t k</rule>
     <rule>ɡʷʱ &gt; dʒ / #_{e,i}</rule>
     <rule>bʱ ɡ́ʱ ɡʷʱ &gt; b j ɡ / #_</rule>
     <rule>bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ &gt; {w,v} d z ɡ ʒ</rule>
     <rule>j &gt; w / _o</rule>
     <rule>j &gt; ?</rule>
-    <rule>{sk,ks} kj &gt; tsʰ tʃʰ (?)</rule>
+    <rule sporadic="true">{sk,ks} kj &gt; tsʰ tʃʰ</rule>
     <rule>{sr,rs} &gt; rː</rule>
     <rule>r &gt; rː / _N</rule>
     <rule>l &gt; ɫ / {C,lV}_</rule>
@@ -4025,8 +4011,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>w &gt; ∅ / V_{V,#}</rule>
     <rule>w &gt; v / _ ! V_{V,#}</rule>
     <rule>{p,t} &gt; ∅ / #s_r</rule>
-    <rule>{p,t} &gt; ∅ / #s_ ;; “(although it says that occasionally st</rule>
-    <rule>∅ / #s_ ;; “(although it says that occasionally st &gt; t / #_)”</rule>
+    <rule>{p,t} &gt; ∅ / #s_</rule>
     <rule>s &gt; ∅ / []_{l,r}_O ;; [anything]{l,r}_O</rule>
     <rule>hn hm &gt; nː mː / []_ ;; [anything]_ (“[t]his change is a bit speculative”)</rule>
     <comment>— “[A] sequence of two plosives becomes a geminate of the second one”</comment>
@@ -4053,7 +4038,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>kʷ &gt; p</rule>
     <rule>Vː &gt; V / _#</rule>
     <rule>ei &gt; eː</rule>
-    <rule>st &gt; sː (with some exceptions)</rule>
+    <rule sporadic="true">st &gt; sː</rule>
     <rule>ai &gt; ɛ</rule>
     <rule>s &gt; ∅ / V_V</rule>
     <rule>V &gt; ə / _(C)#, also in proclitics</rule>
@@ -4073,7 +4058,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>V &gt; ∅ / _#</rule>
     <rule>mb nd ŋɡ &gt; mː nː ŋː</rule>
     <rule>e &gt; i / _N</rule>
-    <rule>$ &gt; h / V_ (what $ is is unclear)</rule>
+    <rule>$ &gt; h / V_</rule>
     <rule>V &gt; ∅ / _[+intertonic]</rule>
     <rule>pː tː kː &gt; f θ x</rule>
     <rule>p t k &gt; f θ x / {r,l}_</rule>
@@ -4081,7 +4066,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>xt &gt; iθ</rule>
     <rule>ɣ &gt; i / C_V</rule>
     <rule>ɛː &gt; ui</rule>
-    <rule>ɔː &gt; au / when stressed</rule>
+    <rule>ɔː &gt; au / [+ stress]</rule>
     <rule>l &gt; ɬ / _t</rule>
     <rule>w &gt; ɡw / #_</rule>
     <rule>mp nt ŋk &gt; m̥ n̥ ŋ̊</rule>
@@ -4096,7 +4081,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>e &gt; ja / in closed syllables, when stressed</rule>
     <rule>eː &gt; aː</rule>
     <rule>oi wo wj ow &gt; ai wa vi aw</rule>
-    <rule>ei &gt; {ei,i} (“PIE *ei evolution is not well reconstructed yet”)</rule>
+    <rule>ei &gt; {ei,i}</rule>
     <rule>bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ &gt; b d ɡ́ ɡ ɡʷ</rule>
     <rule>ḱ ɡ́ &gt; ts dz</rule>
     <rule>{kʷ,kw} {ɡʷ,ɡw} &gt; tʃ dʒ (&gt; s~z z ?) / _E</rule>
@@ -4115,7 +4100,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>eː &gt; æː</rule>
     <rule>o &gt; a</rule>
     <rule>ei oi &gt; iː ai</rule>
-    <rule>eːi {oːi,aːi} &gt; eː oː (?)</rule>
+    <rule sporadic="true">eːi {oːi,aːi} &gt; eː oː</rule>
     <rule>eu ou &gt; iu au</rule>
   </section>
   <section index="17.7.1" name="Common Germanic to Gothic">
@@ -4170,7 +4155,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
   </section>
   <section index="17.7.2.1" name="West Germanic to Anglo-Frisian">
     <cite>Siride? &amp; Pogostick Man, the latter citing Wikipedia contributors (2014), “Anglo-Frisian languages”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Anglo-Frisian_languages&gt;; Wikipedia contributors (2014), “Old Frisian”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Old_Frisian&gt;; and Wikipedia contributors (2014), “Old English phonology”. Wikipedia, the Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Old_English_phonology&gt;</cite>
-    <rule>a &gt; ɑ̃ / _N (short only)</rule>
+    <rule>a &gt; ɑ̃ / _[- long]N</rule>
     <rule>VN &gt; Ṽː / _F</rule>
     <rule>a &gt; æː / short only, includes diphthongs ! B or *ã in next syllable</rule>
     <rule>k ɡ &gt; tʃ j(?)</rule>
@@ -4191,7 +4176,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ɑ̃ː &gt; õː</rule>
     <rule>V[+ nasal] &gt; V[- nasal]</rule>
     <rule>{i,u} &gt; ∅/ _# ! V[-long]C_#</rule>
-    <rule>k ɣ ɡ &gt; tʃ ʝ dʒ / “in certain complex circumstances”</rule>
+    <rule sporadic="true">k ɣ ɡ &gt; tʃ ʝ dʒ</rule>
   </section>
   <section index="17.7.2.1.2" name="Old English to Kentish Middle English">
     <cite>Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English Phonology and Midd le English Grammar for Courses in Chaucer, Middle English, and the History of the English Language; and Wikipedia contributors (2011), “Middle English phonology”. Wikipedia, the Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Middle_English_phonology&gt;</cite>
@@ -4244,12 +4229,11 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <cite>Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. &lt;http://wiki.firespeaker.org/English_sound_changes&gt;</cite>
     <rule>ʊ &gt; ɤ ! P_ and _l</rule>
     <rule>mb ŋɡ &gt; m ŋ / _#</rule>
-    <rule>tj sj dj zj &gt; tʃ ʃ dʒ ʒ / ! _uː (perhaps only before stressed uː?)</rule>
+    <rule>tj sj dj zj &gt; tʃ ʃ dʒ ʒ / ! _uː</rule>
     <rule>a ɑ {ɛ,ɪ,ɤ} &gt; ɑː ɔː ɜː / _ɹ{C,#}</rule>
     <rule>ɑʊ &gt; ɑː / _P</rule>
     <rule sporadic="true">ɑʊ &gt; ɑː / _N</rule>
     <rule>ɑʊ &gt; ɔː / _ ! _N</rule>
-    <comment>“[A] large number of cases that were ɑː have become ɔː subsequently for non-phonetic reasons, like laundry”</comment>
     <rule sporadic="true">a &gt; ɑː</rule>
     <rule>a &gt; æ</rule>
     <rule sporadic="true">əɪ əʊ &gt; ɑi æʊ</rule>
@@ -4341,7 +4325,6 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>{ɑːw,ɑːɣ,oːw} &gt; ɔːw</rule>
     <rule>oɣ &gt; ɔːw / _V</rule>
     <rule>{ɑːht,o(ː)ht} &gt; ow</rule>
-    <comment>ɑː most likely became one of {eː,ɛː}</comment>
     <rule>ɑ e o &gt; ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/ or ending in one of /m n r l/</rule>
     <rule>y(ː) &gt; i(ː)</rule>
     <rule>Vː &gt; V[-long] / in #U before a U with /iː/</rule>
@@ -4362,10 +4345,10 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>d &gt; ∅ / n_</rule>
     <rule>d &gt; ∅ / l_#</rule>
     <rule>s &gt; ʃ / _E (E_ also?)</rule>
-    <rule>f &gt; ∅ “in certain contexts”</rule>
+    <rule sporadic="true">f &gt; ∅</rule>
     <comment>/k ɡ/ remain unpalatalized when E_</comment>
     <rule>{ɸ,x} &gt; ∅ / _# (seems to be sporadic)</rule>
-    <rule>ʍ &gt; xw (some speakers seem to have resisted this)</rule>
+    <rule sporadic="true">ʍ &gt; xw</rule>
     <rule>oɡ &gt; ʌu</rule>
     <comment>ul became some sort of diphthong or vowel (possibly one of uː, uw, ʌw), but the article isn’t very clear</comment>
     <rule>ol al &gt; ou ɑː</rule>
@@ -5045,8 +5028,6 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>tʃ &gt; t / #_</rule>
     <rule>tʃ &gt; tː / medial</rule>
     <rule>w &gt; ∅</rule>
-    <comment>Vowel contraction (on which the author does not elaborate much)
-Some “metathesis of quality as well as of quantity” with regards to vowels</comment>
     <rule>u(ː)(j) &gt; y(ː)(j)</rule>
     <rule>æː &gt; ɛː (includes diphthongs)</rule>
     <rule>ej ow &gt; eː oː</rule>
@@ -5197,7 +5178,7 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>ej ow &gt; eː oː happened “in the various Ionic dialects at various dates”</rule>
     <comment>Some “metathesis of quality as well as of quantity” with regards to vowels; did not occur to the same degree as it did in Attic</comment>
     <rule>u(ː)(j) &gt; y(ː)(j)</rule>
-    <rule>oː &gt; uː (?)</rule>
+    <rule sporadic="true">oː &gt; uː</rule>
     <rule>j &gt; ∅ / Vː_</rule>
     <rule>eː &gt; iː / _V</rule>
     <rule>ɛː &gt; eː</rule>
@@ -5782,7 +5763,7 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>m &gt; ∅ / _#</rule>
     <rule>h &gt; ∅</rule>
     <rule>w &gt; β</rule>
-    <rule>ɛ ɔ &gt; e o / when unstressed</rule>
+    <rule>ɛ ɔ &gt; e o / [- stress]</rule>
     <rule>j &gt; ʝ / #_V</rule>
     <rule>j &gt; ʝː / V_V</rule>
   </section>
@@ -5938,7 +5919,7 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>aː &gt; a</rule>
     <rule>{e(ː),i,ae,oe} &gt; e</rule>
     <rule>iː oː &gt; i o</rule>
-    <rule>u(ː) &gt; o / except _V (?)</rule>
+    <rule sporadic="true">u(ː) &gt; o / except _V</rule>
     <rule>k ɡ &gt; tj dj / _E</rule>
     <rule>è &gt; iɛ / in U[+open]</rule>
     <rule>è &gt; iɛ / _C#</rule>
@@ -6007,7 +5988,7 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>ó &gt; ɔ / _N</rule>
     <rule>ó &gt; ou / in U[+closed]</rule>
     <rule>e &gt; ə / #(C…)_(%…)” in U[+open]</rule>
-    <rule>e &gt; ɛ / #(C…)_(%…)” in U[+closed] or _V (?)</rule>
+    <rule sporadic="true">e &gt; ɛ / #(C…)_(%…)” in U[+closed] or _V</rule>
     <rule>o &gt; {ou,ɔ} “(the outcome fluctuates, but ɔ is often the result of analogy rather than strict sound change; always ou before another vowel)”</rule>
     <rule>a &gt; ə / #{tʃ,dʒ}_(%…)” in U[+open]</rule>
     <rule>a &gt; ɛ / in U[+open] “(but a following ʎ creates a [closed] syllable)”</rule>
@@ -6241,18 +6222,12 @@ Some “metathesis of quality as well as of quantity” with regards to vowels</
     <rule>u &gt; o</rule>
     <rule>au &gt; a / _(C…)u</rule>
     <rule>V &gt; ∅ / _r (seemed to be an intermittent change)</rule>
-    <comment>— Lots and lots of analogical formations
-INTERTONIC VOWELS</comment>
     <rule>V &gt; ∅ (again, /a/ seemed to resist this change, which was itself generally blocked by analogy)</rule>
     <comment>PENULT VOWELS</comment>
     <rule>V &gt; ∅ / “penult of paroxytones”, though /a/ often remained “as an indistinct e”, probably /ə/</rule>
-    <comment>— V often remained when {tʃ,dʒ,j}_, especially if CC_, or when {(k)s,sː,sj}_
-— V is retained when P_C[+dental]</comment>
     <rule>CVK &gt; CVj (intermittent if C was a resonant)</rule>
     <rule>V &gt; ∅ / lv_r (dialect-dependent)</rule>
     <rule>e &gt; i / _(C…)i(C…)#</rule>
-    <comment>FINAL VOWELS
-— (Again, /a/ seems to be a persistent exception to these)</comment>
     <rule>V &gt; ∅ / R_(C…)</rule>
     <comment>— Grandgent remarks that /i/ was probably the last vowel to drop out</comment>
     <rule>a &gt; o in most dialects except Gascon and Languedoc; final -as remained in “Limousin and some others”</rule>
@@ -6502,8 +6477,6 @@ INTERTONIC VOWELS</comment>
     <rule>uː &gt; y (&gt; i in most descendants, with the exception of Engadine)</rule>
     <rule>a V &gt; e (= /ə/?) ∅ / in final syllables (though Friulian preserves the ending -is)</rule>
     <rule>k ɡ &gt; tʃ dʒ / _a (note the similarity with some varieties of Old Provençal)</rule>
-    <comment>/pl fl kl/ preserved
-Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>C[+ voiced] &gt; ∅ / V_V (only for obstruents?)</rule>
     <rule>C[- voiced] &gt; C[+ voiced] / V_V</rule>
     <comment>Final /s/ preserved</comment>
@@ -7238,7 +7211,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   <section index="20.2.2" name="Proto-Kx’a to Northwestern !Xun">
     <cite>Pogostick Man, from Heine, Bernd and Henry Honken (2010), “The Kx’a family: A New Khoisan Genealogy”</cite>
     <rule>a &gt; ∅ / #_m</rule>
-    <rule>ui &gt; o (?)</rule>
+    <rule sporadic="true">ui &gt; o</rule>
     <rule>i &gt; ∅ / V_</rule>
     <rule sporadic="true">a &gt; ∅ / _e</rule>
     <rule>u &gt; ∅ / _o</rule>
@@ -7255,7 +7228,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   <section index="20.2.3" name="Proto-Kx’a to Southeastern !Xun">
     <cite>Pogostick Man, from Heine, Bernd and Henry Honken (2010), “The Kx’a family: A New Khoisan Genealogy”</cite>
     <rule>a &gt; ∅ / #_m</rule>
-    <rule>ui &gt; o (?)</rule>
+    <rule sporadic="true">ui &gt; o</rule>
     <rule>i &gt; ∅ / V_</rule>
     <rule>ɛ ɔ &gt; i u</rule>
     <rule>u &gt; ∅ / _o</rule>
@@ -7316,7 +7289,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ti &gt; s~ti / _V</rule>
     <rule>d &gt; ɾ~d / V_V</rule>
     <rule>iC uC &gt; î û / _{C,#}</rule>
-    <rule>a &gt; e (?)</rule>
+    <rule sporadic="true">a &gt; e</rule>
     <rule>e o &gt; ɛ ɔ</rule>
   </section>
   <section index="21.2.1.1" name="Proto-Central Tariku to Edopi">
@@ -7344,7 +7317,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <cite>Pogostick Man, from Clouse, Duane (1993), “Languages of the Western Lakes Plains”. IRIAN: Bulletin of Irian Jaya XXI:1 – 17</cite>
     <rule>ti &gt; s~ti / _V</rule>
     <rule>ɾ &gt; ɾ~∅ / V_V</rule>
-    <rule>a &gt; e (?)</rule>
+    <rule sporadic="true">a &gt; e</rule>
     <rule>e &gt; ɛ</rule>
   </section>
   <section index="21.2.2.1" name="Proto-East Tariku to Biritai">
@@ -7518,7 +7491,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ɓ &gt; p / medially</rule>
     <rule>ɗ &gt; t</rule>
     <rule>ɡ &gt; w</rule>
-    <rule>tʃ &gt; ʃ (?)</rule>
+    <rule sporadic="true">tʃ &gt; ʃ</rule>
     <rule>ʔ &gt; ∅ / #_</rule>
   </section>
   <section index="22.6" name="Proto-Arawá to Sorowahá">
@@ -7673,7 +7646,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>i[-long]C &gt; Cj / #_ ! _i</rule>
     <rule>u[-long]C &gt; Cw / #_</rule>
     <rule>a[-long]C &gt; Ca / #_ (! _a?)</rule>
-    <rule>u i &gt; w j / a_ when this a is a result of metathesis (?)</rule>
+    <rule sporadic="true">u i &gt; w j / a_ when this a is a result of metathesis</rule>
     <rule>Vː &gt; V[-long] / in #U</rule>
   </section>
   <section index="24.1.2" name="Proto-Paman to AwÅtim">
@@ -7700,7 +7673,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>i[-long]C &gt; Cj / #_ ! _i</rule>
     <rule>u[-long]C &gt; Cw / #_</rule>
     <rule>a[-long]C &gt; Ca / #_ (! _a?)</rule>
-    <rule>u i &gt; w j / a_ when this a is a result of metathesis (?)</rule>
+    <rule sporadic="true">u i &gt; w j / a_ when this a is a result of metathesis</rule>
     <rule>Vː &gt; V[-long] / in #U</rule>
   </section>
   <section index="24.1.5" name="Proto-Paman to Mpalican">
@@ -8739,7 +8712,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>k &gt; ɡ / a_a</rule>
     <rule>kʷ &gt; ɾ / #_ek</rule>
     <rule>kʷ &gt; b / _ ! #_ek</rule>
-    <rule>ʔ &gt; ∅ (?)</rule>
+    <rule sporadic="true">ʔ &gt; ∅</rule>
     <rule>{c,tʃ} &gt; ʃ</rule>
     <rule>s &gt; tʃ (in certain cases? Not a lot of data available on this one)</rule>
     <rule>l &gt; {lʲ,n} “under obscure conditions”</rule>
@@ -8918,7 +8891,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>tʃ tʃʰ tʃʼ &gt; t tʰ tʼ</rule>
     <rule>k(ʰ) kʼ q(ʰ) qʼ &gt; tʃ(ʰ) tʃʼ k(ʰ) kʼ</rule>
     <rule>x &gt; s</rule>
-    <rule>χ &gt; ∅ (?)</rule>
+    <rule sporadic="true">χ &gt; ∅</rule>
   </section>
   <section index="33.2.4" name="Proto-Wintuan to Wintu">
     <cite>Pogostick Man, from Shepherd, Alice (2005), “Proto-Wintun”. UC Publications in Linguistics. &lt;http://escholarship.org/uc/item/8dq1f3jj&gt;</cite>
@@ -9050,7 +9023,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ph &gt; p / #_VA</rule>
     <rule>ph &gt; p / #_aC[+sibilant]</rule>
     <rule>pʼ &gt; p/ #_C[+sibilant]</rule>
-    <rule>ph &gt; p / a_ (?)</rule>
+    <rule sporadic="true">ph &gt; p / a_</rule>
     <rule>ph &gt; pʰ</rule>
     <rule>kh &gt; k / r_</rule>
     <rule>kh &gt; k / #_a</rule>
@@ -9156,7 +9129,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>pʼ tʼ tʃʼ kʼ qʼ &gt; p t tʃ k q</rule>
     <rule>h &gt; ∅ / {p,t,k}_</rule>
     <rule>{k,q} &gt; h / _{C,#}</rule>
-    <rule>k &gt; c / j_ (?)</rule>
+    <rule sporadic="true">k &gt; c / j_</rule>
     <rule>ts(h) &gt; tʃ</rule>
     <rule>tʃ &gt; ʃ / _q</rule>
     <rule>ʈʂ &gt; ʃ / _K</rule>
@@ -10110,8 +10083,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>nh &gt; hn</rule>
     <rule>ẽ(ː) õ(ː) &gt; o(ː) ʌ̃(ː)</rule>
     <rule>r &gt; l</rule>
-    <comment>“Some additional changes seem to have taken place in one or more Cherokee dialects, affecting consonant clusters whose reconstructed identity is in most cases uncertain. Example correspondences include /hs ~ lh ~ thl/ (probably &lt; */hsɹ/) or /ts ~ tl ~ thl/ (maybe &lt; */tsɹ/?)”
-“[A] synchronic allophonic rule:”</comment>
     <rule>t ts k kʷ &gt; d dz ɡ ɡʷ / _V</rule>
   </section>
   <section index="37.1.2" name="Proto-Iroquoian to Proto-Northern Iroquoian">
@@ -10139,8 +10110,6 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ts &gt; s / ! _{h,i,j,r}</rule>
     <rule>ns &gt; ts / _k(ʷ)</rule>
     <rule>V &gt; Vː / _C[-glottal] “in even-numbered syllables when accented or immediately before the accent”</rule>
-    <comment>“[A]ccented short vowels in odd-numbered penults lose their accent”
-“[W]ords with no accent acquire a new accent on the vowel of the last non-final even syllable of the word”</comment>
     <rule>Vʔ &gt; ʔV / “in odd-numbered unaccented non-final syllables;” ! {ʔ,h}_</rule>
     <rule>j &gt; ∅ / ts_</rule>
     <rule>h &gt; ∅ / s_w</rule>
@@ -11150,7 +11119,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   </section>
   <section index="41.2" name="Proto-Trans New Guinea to Asmat">
     <cite>Pogostick Man, from Pawley, Andrew (2012). “How Reconstructible is Proto Trans New Guinea? Problems, Progress, Prospects”. In Languages &amp; Linguistics in Melanesia Special Issue I:89 – 164</cite>
-    <rule>p &gt; f / #_ (?)</rule>
+    <rule sporadic="true">p &gt; f / #_</rule>
     <rule>t &gt; s / #_i</rule>
     <rule>k s &gt; ∅ {t,s} / #_</rule>
     <rule>ᵐb ᵑɡ &gt; p k / V_V</rule>
@@ -11160,7 +11129,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <cite>Pogostick Man, from Pawley, Andrew (2012). “How Reconstructible is Proto Trans New Guinea? Problems, Progress, Prospects”. In Languages &amp; Linguistics in Melanesia Special Issue I:89 – 164</cite>
     <rule>t &gt; j / #_i</rule>
     <rule>ŋ ᵑɡ &gt; ∅ ɡ / #_</rule>
-    <rule>nj &gt; s / #_ (?)</rule>
+    <rule sporadic="true">nj &gt; s / #_</rule>
     <rule>t &gt; {r,s} / V_i</rule>
     <rule>ᵐb ⁿd ᵑɡ nj &gt; {p,ᵐb} {ⁿd,z} k z / V_V</rule>
     <rule>a &gt; {a,o}</rule>
@@ -11280,14 +11249,14 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <cite>Pogostick Man, from Pawley, Andrew (2012). “How Reconstructible is Proto Trans New Guinea? Problems, Progress, Prospects”. In Languages &amp; Linguistics in Melanesia Special Issue I:89 – 164</cite>
     <rule>t k ᵐb &gt; {s,t} {ɡ,∅} {b,p} / #_</rule>
     <rule>t ᵐb ⁿd {k,ᵑɡ} nj &gt; {r,t} p {d,t} ɡ r / V_V</rule>
-    <rule>s &gt; {s,t} / #_ (?)</rule>
+    <rule sporadic="true">s &gt; {s,t} / #_</rule>
     <rule>u i &gt; {u,o} {i,e}</rule>
   </section>
   <section index="41.9" name="Proto-Trans New Guinea to Selepet">
     <cite>Pogostick Man, from Pawley, Andrew (2012). “How Reconstructible is Proto Trans New Guinea? Problems, Progress, Prospects”. In Languages &amp; Linguistics in Melanesia Special Issue I:89 – 164</cite>
     <rule>ᵐb ⁿd s &gt; b {s,t} {t,s} / #_</rule>
     <rule>t ᵐb nj s &gt; r {b,p} ⁿd {s,d} / V_V</rule>
-    <rule>t &gt; t / _# (?)</rule>
+    <rule sporadic="true">t &gt; t / _#</rule>
     <rule>ŋ &gt; {m,ŋ} / _#</rule>
     <rule>ᵑɡ &gt; ɡ</rule>
     <rule>u o a e &gt; {u,ɔ} {o,ɔ} {a,ɔ} {e,o}</rule>
@@ -11295,7 +11264,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
   <section index="41.10" name="Proto-Trans New Guinea to Telefol">
     <cite>Pogostick Man, from Pawley, Andrew (2012). “How Reconstructible is Proto Trans New Guinea? Problems, Progress, Prospects”. In Languages &amp; Linguistics in Melanesia Special Issue I:89 – 164</cite>
     <rule>{p,ᵐb} &gt; f / #_</rule>
-    <rule>s &gt; s / #_ (?)</rule>
+    <rule sporadic="true">s &gt; s / #_</rule>
     <rule>ᵐb ⁿd ᵑɡ &gt; b n k / V_V</rule>
   </section>
   <section index="41.11" name="Proto-Trans New Guinea to Middle Wahgi">
@@ -11350,7 +11319,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>i &gt; ∅ / {o,u}j_</rule>
     <rule>j &gt; ∅ / C_i{C,#}</rule>
     <rule>yje &gt; øː</rule>
-    <rule>øː &gt; jø (?)</rule>
+    <rule sporadic="true">øː &gt; jø</rule>
     <rule>uw ij &gt; ow ej / _C</rule>
     <rule>tʃ tsʲ &gt; ʃ sʲ / #_</rule>
     <rule>ðʲ sʲ tsʲ(ː) lʲ &gt; ð s ts(ː) l</rule>
@@ -11361,7 +11330,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>w &gt; ∅ / o_st (*)</rule>
     <rule>ð &gt; t</rule>
     <rule>tʃ &gt; ts / _k, in South Estonian</rule>
-    <rule>tk &gt; k / in Pre-Livonian (?)</rule>
+    <rule sporadic="true">tk &gt; k / in Pre-Livonian</rule>
     <rule>tʃ tʃː &gt; t tʃ</rule>
     <rule>t &gt; ts / _i ! following a coronal obstruent or “before a derivational suffix”</rule>
     <rule>tj &gt; ts / ! following a coronal obstruent or “before a derivational suffix”</rule>
@@ -11595,7 +11564,7 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>r[+ fortis] &gt; ɾ / _#</rule>
     <rule>r[+ fortis] &gt; r</rule>
     <comment>Fortis *L is of uncertain outcome, being written as 〈l〉 or 〈ll〉</comment>
-    <rule>ɡ &gt; k / #_ (sometimes?)</rule>
+    <rule sporadic="true">ɡ &gt; k / #_</rule>
     <comment>There seem to have been a few (variant?) forms which possibly show height assimilation in vowels</comment>
   </section>
   <section index="44.2" name="Proto-Basque to Basque">
