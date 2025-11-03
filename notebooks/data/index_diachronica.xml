@@ -11805,8 +11805,8 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule sporadic="true">øː &gt; wi / {k,ɡ}_</rule>
     <rule sporadic="true">øː &gt; i</rule>
     <rule>øː &gt; (j){u,ʌ} / _{k,x}</rule>
-    <rule>a &gt; i / _n (in northern varieties)</rule>
-    <rule>a &gt; e / _n (otherwise)</rule>
+    <rule sporadic="true">a &gt; i / _n</rule>
+    <rule sporadic="true">a &gt; e / _n</rule>
     <rule>a &gt; {ɛ,e} / _rC</rule>
     <rule>ai oi ui ei au ou iu ɛ(o)u &gt; eː oe əi iː {ɑː,ɔː} ʌu ju j(ʌ)u</rule>
     <rule >ɛː &gt; ɛi</rule>
@@ -11907,13 +11907,13 @@ Germanic loaned /w/ preserved—i.e., it did not become /ɡw/</comment>
     <rule>ej &gt; i</rule>
     <rule>ew &gt; ju</rule>
     <rule>i &gt; ı̆ [ə?]</rule>
-    <rule>ı̆ [ə?] &gt; {e,a} (strong)/∅ (weak) “in modern languages”</rule>
+    <rule>ı̆ [ə?] &gt; {e,a}</rule>
     <rule>iː &gt; i</rule>
     <rule>a aː &gt; o a</rule>
     <rule>aj &gt; {æ₂,i₂} “(reduced)”</rule>
     <rule>aw &gt; u</rule>
     <rule>u &gt; ŭ [ɤ?]</rule>
-    <rule>ŭ [ɤ?] &gt; {e,o,ɤ,a} (strong)/∅ (weak) “in modern languages”</rule>
+    <rule>ŭ [ɤ?] &gt; {e,o,ɤ,a}</rule>
     <rule>uː &gt; ɨ</rule>
   </section>
   <section index="46.15" name="Proto-Japanese to Old Japanese Vowel Shift">
