@@ -2,8 +2,8 @@
 # citation: Pogostick Man, from Wikipedia contributors (2014), “Dutch Phonology”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Dutch_phonology>; and Wikipedia contributors (2014), “Hard and soft G in Dutch”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Hard_and_soft_G_in_Dutch>
 	# NB: This is likely highly incomplete, but the source materials did not have much to say.
 	l > u / o_{t,d}#
-	iː yː > ɛi œy
-	uː > ʌu
+	i:[+ long] y:[+ long] > ɛi œy
+	u:[+ long] > ʌu
 	# Hard-vs.-soft-G phenomena:
 	x ɣ > {x,χ} {ɣ,x,χ}
 	x ɣ > ç ʝ

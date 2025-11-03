@@ -9,17 +9,17 @@
 ; — At least one reconstruction seems to indicate *s and *ś, which may have been an affricate and /s/. Pretty reliably, *-s tends to turn into -ts̺, and *-ś > -ts̻, probably after the below-mentioned affrication. Beyond that, it’s messy. *-tso seems to have become -tʃo/-tʃu, though.
 Sʰ / F / #_
 F / h (/ ∅) / #_
-S / S[+ voiced] / #_
+S / S:[+ voiced] / #_
 ; “[T]wo similar vocalic segments” usually contract, though some dialects (especially Biscayan) seem not to exhibit this
-Vn / Ṽ / _# (seems to have been reverted in most dialects, except for Souletin)
-Vn / Ṽ / _V (?)
-V / Ṽ / _N (Souletin, perhaps in other dialects?)
-d / l / #_ (except verbs)
+Vn / Ṽ / _#
+Vn / Ṽ / _V
+V / Ṽ / _N
+d / l / #_
 n /m / u_V
 n / ɲ / {i,ɪ}_V
 n / h̃ / V_V
-nb / mː
-mː / m
+nb / m:[+ long]
+m:[+ long] / m
 N / [+ same POA] / _C
 b / m / _VN
 {ɾ,r} / ∅ / #_
@@ -29,112 +29,106 @@ r / ɾ / _#
 C / ∅ / r_
 Cr / Cɾ
 Cɾ / CVɾ
-ɾ / ∅ / V_V (Souletin)
+ɾ / ∅ / V_V
 *L (fortis) / l
 ð / some sort of tap distinct from ɾ (Biscayan, Guipuscoan, High Navarrese)
-b / ∅ / #_B (a few exceptions, mostly before _u)
-F[+ voiced] / ∅ / V_V (sometimes, usually involving “compound surnames”?)
-S[+ voice] / S[- voice] / F[+ sibilant]_
-Ṽ / Vɲ / _V (not Souletin)
-Ṽ / Vn or a diphthong (not Souletin)
-h̃ / h (not Souletin)
-u ũ / y ỹ / _r(p(ʰ),β,k(ʰ),ɣ,l,s̺,s̻,ʃ,h) (Souletin)
-u ũ / y ỹ / _{s̻,ts̺,ts̻} (but not _s̺) (Souletin)
-õ / ũ (Souletin)
+b / ∅ / #_B
+F:[+ voiced] / ∅ / V_V
+S:[+ voice] / S:[- voice] / F:[+ sibilant]_
+Ṽ / Vɲ / _V
+Ṽ / Vn
+h̃ / h
+u ũ / y ỹ / _r(p(ʰ),β,k(ʰ),ɣ,l,s̺,s̻,ʃ,h)
+u ũ / y ỹ / _{s̻,ts̺,ts̻} (but not _s̺)
+õ / ũ
 ∅ / a / #_{ra,ro}
 ∅ / e / #_r
 ∅ / e / #_{s̺,s̻}C
-i / u / _(C…)u (Roncalese)
-i / y / _(C…)y (Souletin)
-e / o / _(C…)o (eastern dialects, Bermeo Biscayan)
-e / o / o(C…)_ (eastern dialects)
-a o e / ɛ u i / {i,u}(C…)_ (this [ɛ] is tentatively marked as such; Egurtzegi transcribes it as /e/ but says it’s not as close as /e/)
-o / u / _n{C,#} (Souletin; some raising occurred elsewhere)
-a / e / _$a (Biscayan, Alavese, some Guipuscoan)
-o e / u i / _$a (raising of *o is less common)
-e / i / _{n,C[+ sibilant]}
-e / a / {V,C}_r (“mainly in the western dialects”)
+i / u / _(C…)u
+i / y / _(C…)y
+e / o / _(C…)o
+e / o / o(C…)_
+a o e / ɛ u i / {i,u}(C…)_
+o / u / _n{C,#}
+a / e / _$a
+o e / u i / _$a
+e / i / _{n,C:[+ sibilant]}
+e / a / {V,C}_r
 u i / o e / _r{C,#}
 ∅ / j / V_{N,s̺,s̻}S
-∅ / j / u_V (eastern dialects)
+∅ / j / u_V
 {w,y} / ∅ / _ja
-∅ / m / o$_V (Orozko Biscayan)
-∅ / V / Vk_# (Zeberio Biscayan)
-e / ∅ / #_ (Navarrese, rare)
-e / j / #_V (at least a few times?)
+∅ / m / o$_V
+∅ / V / Vk_#
+e / ∅ / #_
+e / j / #_V
 a / ∅ / _V
 V / ∅ / Vj_
-h / ∅ (western dialects)
+h / ∅
 {w,β}h / f
 h…h / ∅…h
 *-ɾ / -h stuff in compounds
 l n /ʎ ɲ / E_
-{ɾ,r} / ʎ / {i,j}_ (eastern dialects)
-s̻ ts̻ / ʃ tʃ / {E,j}_ (mostly Biscayan)
-t / c / {E,j}_ (“some areas”)
-t / tʃ / {E,j}_ (partially spread amongst Biscayan and Guipuscoan)
-d ð / ɟ ʝ / {E,j}_ ? (“some dialects”)
-d ð / ɟ ʝ / {ʎ,ɲ}_ (Guipuscoan, High Navarrese)
+{ɾ,r} / ʎ / {i,j}_
+s̻ ts̻ / ʃ tʃ / {E,j}_
+t / c / {E,j}_
+t / tʃ / {E,j}_
+d ð / ɟ ʝ / {E,j}_
+d ð / ɟ ʝ / {ʎ,ɲ}_
 {ɡ,ɣ} / {ɟ,ʝ} / {E,j}_
-ɡ / dʒ / {E,j}_ (“in some Biscayan areas”)
+ɡ / dʒ / {E,j}_
 j / ʝ
-ʝ / j (northern High Navarrese, most Labourd, some Biscayan)
-j / ʝ
-ʝ / ʒ (Souletin, sporadic in northwestern Biscayan)
-j / ʝ (some Biscayan and Navarrese)
-j / ʝ
-ʝ / ɟ (typical of Low Navarrese)
+ʝ / j
 j / ʝ
 ʝ / ʒ
-ʒ / dʒ (northwestern Biscayan)
+j / ʝ
+j / ʝ
+ʝ / ɟ
 j / ʝ
 ʝ / ʒ
-ʒ / ʃ (Aescoan, Salazarese, Roncalese, most southern High Navarrese)
+ʒ / dʒ
 j / ʝ
 ʝ / ʒ
 ʒ / ʃ
-ʃ / x (Guipuscoan, northwestern High Navarrese, eastern Biscayan)
-j / χ (probably through intermediates like above, Wikipedia doesn’t go into particulars of how and where)
-ʎ ɲ / jl jn (“common in Low Navarrese, Labourdin, and is even regular in the High Navarrese of Sakana”)
+j / ʝ
+ʝ / ʒ
+ʒ / ʃ
+ʃ / x
+j / χ
+ʎ ɲ / jl jn
 ; Vowel syncope:
-V / ∅ / S_{ɾ,l} (more common in Roncalese and Salazarese, but also in Navarrese and Aescoan?)
-V / ∅ / C[+ sibilant]_ɾ (Roncalese and Salazarese)
-V / ∅ / {O,ɾ,r}_O (Roncalese, Salazarese, Navarrese, Aescoan)
-n[+ fortis] / n
+V / ∅ / S_{ɾ,l}
+V / ∅ / C:[+ sibilant]_ɾ
+V / ∅ / {O,ɾ,r}_O
+n:[+ fortis] / n
 ; Something about final devoicing of stops and initial stops losing voicing as a result of vowel deletion
 e / ∅ / #Ur_
-a / ∅ / V_# (Guipuscoan; happens because of reanalysis of the definite article)
+a / ∅ / V_#
 V / ∅ / _#, in trisyllables
 i / ∅ / _#, in disyllables
 u {o,e} / ∅ a / _#, in disyllables (eastern dialects)
-; “-a or -e from the definite article” is dropped Markina Biscayan and Getxo Biscayan
-Some vowel metathesis only when vowels are matched in height
-hu hi / ʊ ɪ / {o,e}_ (also happened with /a/ sometimes, but usually such sequences just dropped one vowel)
+hu hi / ʊ ɪ / {o,e}_
 ; Something about diphthongs occurring where intervocalic /n/ was lost
 VɪC / VCʲ
 ; Glide dissimilation if the homorganic vowel was in the following syllable, but usually the glide just deleted
 aɪ / eɪ
-eɪ / e (rare)
-aʊ / aɪ / !_{ɾ,r,s̺,s̻} (Souletin, Roncalese)
+eɪ / e
+aʊ / aɪ / !_{ɾ,r,s̺,s̻}
 eʊ / {e,eɡu}
 eɪ / e / #_
-oɪ / uɪ (rare)
+oɪ / uɪ
 eð (/ e ?) / j / #_V
 e / j / #_a
 e / ∅ / #_e
-ʊa / o “especially after a velar stop”
+ʊa / o
 ʊe / e
-C[- voice] / C[+ voice] / {l,N}_ (not Roncalese or Souletin)
-; Some speakers (Labourd and Low Navarrese?) have ʀ for r, and a few have ɢ̆ for ɾ
-l gets a velar(ized?) articulation in Souletin (possibly only in the coda?)
-Souletin preserves something involving historical aspiration in pretonic position, apparently
-Souletin keeps initial ʃ- and tʃ- distinct; Labourdin only has ʃ-, and the rest apparently only have tʃ-?
-C[+ sibilant] / C[+ affricate] / _#
-s̻ ts̺ / s̺ ts̻ (Biscayan, partially in Guipuscoan, Donostia, San Sebastián, though these latter two may be varieties of Guipuscoan)
+C:[- voice] / C:[+ voice] / {l,N}_
+C:[+ sibilant] / C:[+ affricate] / _#
+s̻ ts̺ / s̺ ts̻
 s̻ / s̺ / _{C,#}
 ; From the Wikipedia article on Biscayan: “Convergence of sibilants: z, x and s > x, s and tz, tx and ts > tz.” I’m not sure what this means. 〈s z〉 are apparently s̻ s̺, and 〈x〉 is ʃ.
-its̺ / tʃ / _# (Biscayan)
+its̺ / tʃ / _#
 oa ea / u(e) i(e) / _#
 ; Beterri Guipuscoan has VjV# where Biscayan has VɲV# and regular Basque has VV#
-s̺ / tʃ / #_ (Guipuscoan)
-s̺ / ʃ̺ “for most French Basque speakers (Trask 1997:84), due to French influence” according to Campbell
+s̺ / tʃ / #_
+s̺ / ʃ̺

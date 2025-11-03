@@ -1,10 +1,10 @@
 @ 11.4 - Proto-Northeast Caucasian to Lak
 # citation: Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian>, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251
-	b d > {pː,b} {tː,d}
-	{tsː,stː} dz st > sː {tsː,z} ts
-	tʃ tʃː dʒ > {ts,tʃ} {tsʼ,tʃʼ} tʃ(ː)ʼ
-	tɬ tɬː tɬ(ː)ʼ dɮ > xʲ xː kʼ {kː,l}
-	ɡ > kː
-	qʼ qʼː ɡ > {qʼ,j} qʼ {qː,ɣ}
-	ʃ ɬ ɬː > s {xʲ,ʃ} xː
+	b d > {p:[+ long],b} {t:[+ long],d}
+	{ts:[+ long],st:[+ long]} dz st > s:[+ long] {ts:[+ long],z} ts
+	tʃ tʃ:[+ long] dʒ > {ts,tʃ} {tsʼ,tʃʼ} tʃ(ː)ʼ
+	tɬ tɬ:[+ long] tɬ(ː)ʼ dɮ > xʲ x:[+ long] kʼ {k:[+ long],l}
+	ɡ > k:[+ long]
+	qʼ qʼ:[+ long] ɡ > {qʼ,j} qʼ {q:[+ long],ɣ}
+	ʃ ɬ ɬ:[+ long] > s {xʲ,ʃ} x:[+ long]
 	m l > {m,n} {l,∅}

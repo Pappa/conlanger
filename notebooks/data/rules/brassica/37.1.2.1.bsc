@@ -8,9 +8,7 @@ n / t / _k(ʷ)
 ts / hs / V_ ! _{h,i,j,r}
 ts / s / ! _{h,i,j,r}
 ns / ts / _k(ʷ)
-V / Vː / _C[-glottal] “in even-numbered syllables when accented or immediately before the accent”
-; “[A]ccented short vowels in odd-numbered penults lose their accent”
-“[W]ords with no accent acquire a new accent on the vowel of the last non-final even syllable of the word”
+V / V:[+ long] / _C:[-glottal] “in even-numbered syllables when accented or immediately before the accent”
 Vʔ / ʔV / “in odd-numbered unaccented non-final syllables;” ! {ʔ,h}_
 j / ∅ / ts_
 h / ∅ / s_w
@@ -21,14 +19,14 @@ r / ∅ / VH_
 r / ∅ / _H
 r / ∅ / w_
 r / ∅ / V_V
-V₁”V₂ ”V₁ːV₂ / ”V₁V₂ ”V₁[-long]V₂
+V₁”V₂ ”V₁ːV₂ / ”V₁V₂ ”V₁:[-long]V₂
 e(ː) / ẽ / _ẽ(ː)
 o(ː) / õ / _õ(ː)
-”V₀V₀ / V₀ː[-accent]
+”V₀V₀ / V₀ː:[-accent]
 R / ∅ / ʔ_#
 C / ∅ / {s,k}_#
 Ch / ∅ / _s#
-h / ∅ / Vː_#
+h / ∅ / V:[+ long]_#
 t / h / _t
 ths / tsh
 ∅ / h / {t,k}_n

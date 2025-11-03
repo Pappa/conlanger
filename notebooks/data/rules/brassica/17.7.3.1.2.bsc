@@ -12,8 +12,8 @@ k / s / _n
 ɡn ɡl / nj lj
 k ɡ / c ɟ / _{E,j}
 f / ∅ / _{l,b,v,n,#}
-f / ∅ / Vː_V
-fd / dː
+f / ∅ / V:[+ long]_V
+fd / d:[+ long]
 h / ∅ / _{l,n,r}
 hw hj / {w,ʍ} ʃ
 h / x / _i
@@ -31,39 +31,39 @@ l / ∅ / V_V
 l / ∅ / _{m,s,k}
 l / ∅ / _# ?
 lm / ml
-lː / ʎ
+l:[+ long] / ʎ
 v / w
-u a e eː / ʌ ɑ ɪ ɛ / _Cː
+u a e e:[+ long] / ʌ ɑ ɪ ɛ / _C:[+ long]
 u / ø / _l(ː)
 u / ʌ / _C{ː,CC}
-uː / øː / _CC
+u:[+ long] / ø:[+ long] / _CC
 o a / ø ɛ / _(C)(C)i
 o / ø / _Cr
-oː / øː / _(C)(C)#
-oː / u(ː)
-joː / {u,o,ø} (looks like being in the ultima or the penult may have had something to do with it, but it isn’t clear to me)
+o:[+ long] / ø:[+ long] / _(C)(C)#
+o:[+ long] / u(ː)
+jo:[+ long] / {u,o,ø} (looks like being in the ultima or the penult may have had something to do with it, but it isn’t clear to me)
 ɒ / ɔ / _C(ː)C
 ɒ / ʌ / _r(ː)
-ɒ / {ɛ,e} / _CːV (V can be a syllabic consonant)
+ɒ / {ɛ,e} / _C:[+ long]V (V can be a syllabic consonant)
 ɒ / ɪ / _rC
 au / (ɔ)u
-a aː / ɛ øː / _r
+a a:[+ long] / ɛ ø:[+ long] / _r
 a / ɔ / _{l,nd}C
 ja / i
-æ / eː / _{ð,r}
-æ / ɛː
-œ / ɛː / _CC
+æ / e:[+ long] / _{ð,r}
+æ / ɛ:[+ long]
+œ / ɛ:[+ long] / _CC
 œ / ø / _l
-œ / iː / _N
-œ / eː
-yː / ø / _j
-yː / i
+œ / i:[+ long] / _N
+œ / e:[+ long]
+y:[+ long] / ø / _j
+y:[+ long] / i
 y / {ɪ,i}
-e iː / ɛ i(ː)
-ey / eː / _F
+e i:[+ long] / ɛ i(ː)
+ey / e:[+ long] / _F
 ey / ɛ / _r
 ey / ai
-ei / eː / _C(ː,V)# (V can be a syllabic consonant)
+ei / e:[+ long] / _C(ː,V)# (V can be a syllabic consonant)
 e / a / _i
 i / ɪ / _CC
-V[- long] / ∅ / _#
+V:[- long] / ∅ / _#

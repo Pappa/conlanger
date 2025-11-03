@@ -3,14 +3,14 @@
 	k kʷ > ts k / _i
 	w > ∅ / h_i
 	w > ∅ / t(h)_
-	{wV,jV} > Vː[+low falling tone]
+	{wV,jV} > V:[+ long, +low falling tone]
 	V > ∅ / C_hC
-	Vʔ > Vː[+low falling tone] / _C
-	{Vh,Vʔ} > Vː / _#
+	Vʔ > V:[+ long, +low falling tone] / _C
+	{Vh,Vʔ} > V:[+ long] / _#
 	a(ː)wẽ(ː) > a(ː)ma(ː)
-	V[+ nasal] > aː[+high rising tone]
-	∅ > Vː[+high rising tone] / C_# (“usually one of [/aː iː ʌ̃ː/ with this tone], the conditions are unclear”)
-	iji > iː
+	V:[+ nasal] > a:[+ long]:[+high rising tone]
+	∅ > V:[+ long, +high rising tone] / C_# (“usually one of [/a:[+ long] i:[+ long] ʌ̃ː/ with this tone], the conditions are unclear”)
+	iji > i:[+ long]
 	tsn > hst
 	n > h / _st
 	{n,r} > ∅ / _j
@@ -24,6 +24,4 @@
 	nh > hn
 	ẽ(ː) õ(ː) > o(ː) ʌ̃(ː)
 	r > l
-	# “Some additional changes seem to have taken place in one or more Cherokee dialects, affecting consonant clusters whose reconstructed identity is in most cases uncertain. Example correspondences include /hs ~ lh ~ thl/ (probably < */hsɹ/) or /ts ~ tl ~ thl/ (maybe < */tsɹ/?)”
-“[A] synchronic allophonic rule:”
 	t ts k kʷ > d dz ɡ ɡʷ / _V

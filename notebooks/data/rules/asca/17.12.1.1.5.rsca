@@ -2,7 +2,7 @@
 # citation: Mecislau
 	# NB: Due to problems when the board migrated to a different system, a lot of the special characters were replaced with 〈?〉. In many cases these have been replaced with 〈∅〉 because it was likely that this was what was meant, but conditional 〈?〉 has either been left alone or attempted to have been filled in from context. In some cases, conditional 〈?〉 may have been used to mark stress or syllable boundaries. Take such changes with a grain of salt and use at your own risk. Further, Mecislau gives some dual-output changes, which distinguish between vulgar and “semi-learned” outcomes.
 	h > ∅
-	rs > sː
+	rs > s:[+ long]
 	n > ∅ / _s
 	V₀V₀ > V₀ː
 	V > ∅ / ”V%L(C)(C)V(C)#
@@ -13,18 +13,18 @@
 	w > ∅ / _V
 	au > a / _%”u
 	au > o
-	e > iː / ”_%ɪː#
-	iː {i,eː} e > i e ɛ / [+ stress]
-	iː {i,e(ː)} > i e / _%”V
-	iː > ∅ / {k,s}_#
+	e > i:[+ long] / ”_%ɪ:[+ long]#
+	i:[+ long] {i,e:[+ long]} e > i e ɛ / [+ stress]
+	i:[+ long] {i,e(ː)} > i e / _%”V
+	i:[+ long] > ∅ / {k,s}_#
 	{i(ː),e(ː),ae} > e / _#
-	uː > u
-	uiː > ui / _#
-	{u,oː} o > o ɔ / [+ stress]
+	u:[+ long] > u
+	ui:[+ long] > ui / _#
+	{u,o:[+ long]} o > o ɔ / [+ stress]
 	{u,o(ː)} > o / _%”V
 	{u(ː),o(ː)} > o / _#
 	o > u / _#
-	aː oe > a e
+	a:[+ long] oe > a e
 	ae > ɛ / [+ stress]
 	ɛ ɔ > e o / _(”u)#
 	{olt,okt} > ujt
@@ -34,16 +34,16 @@
 	o > u / _(”V)
 	e > ∅ / el_#
 	V > a / _{n,r}(C)V(C)#
-	V > V[+ nasal] / _[+ stress]N$C
+	V > V:[+ nasal] / _:[+ stress]N$C
 	ɔ̃ > õ
-	N > ∅ / V[+ nasal]_$C ! C = S
-	V > V[+ nasal] / _N$V
-	V > V[+ nasal] / #N_ (rare)
-	N > ∅ / V[+ nasal]_$V
+	N > ∅ / V:[+ nasal]_$C ! C = S
+	V > V:[+ nasal] / _N$V
+	V > V:[+ nasal] / #N_
+	N > ∅ / V:[+ nasal]_$V
 	{ã,ãe,õe} > ão / _#
-	V[+ nasal] > V[- nasal] / [- stress]
-	V[+ nasal] > V[- nasal] / in U#
-	V₀[+ nasal]V₀[- nasal] > V₀[+ nasal]
+	V:[+ nasal] > V:[- nasal] / [- stress]
+	V:[+ nasal] > V:[- nasal] / in U#
+	V₀:[+ nasal]V₀:[- nasal] > V₀:[+ nasal]
 	ı̃ > iɲ
 	e V > o ∅ / _?
 	e > o / _m”V
@@ -51,13 +51,13 @@
 	e > ∅ / {l,n,r,s,k}_#
 	e > ∅ / ”{i,e}_#
 	e > i / _(C)(C)V(C)#
-	{e,i} > ∅ / {l,m,r}_ when between #U and U[+stress]
-	{e,i} > ∅ / k_t when between #U and U[+stress]
-	o > ∅ / _{r,l} when between #U and U[+tonic]
+	{e,i} > ∅ / {l,m,r}_ when between #U and U:[+stress]
+	{e,i} > ∅ / k_t when between #U and U:[+stress]
+	o > ∅ / _{r,l} when between #U and U:[+tonic]
 	# “[I]f there are multiple vowels between the initial and tonic syllables, the vowel directly before the tonic is dropped”
 	k > ts / #_{i,e}
 	ts > s / #_{i,e}
-	k > ɡ / #_{a,r} (rare)
+	k > ɡ / #_{a,r}
 	ɡ > ɡʲ / #_{i,e}
 	ɡʲ > dʲ / #_{i,e}
 	dʲ > dʒ / #_{i,e}
@@ -69,8 +69,8 @@
 	fl > {ʃ,fr} / #_
 	{fl,skl} > ʃ
 	nɡi > ɲ
-	s > ʃ / V_C[-voiced]V
-	s > ʒ / V_C[+voiced]V
+	s > ʃ / V_C:[-voiced]V
+	s > ʒ / V_C:[+voiced]V
 	kl > kʎ / #_
 	kʎ > tʃ / #_
 	tʃ > ʃ / #_
@@ -104,7 +104,7 @@
 	ns > ɲ / V_V
 	sj > jʒ / V_V
 	j > ∅ / i_ʒV
-	sːj (m)nj lj rj > jʃ ɲʎ jr / V_V
+	s:[+ long]j (m)nj lj rj > jʃ ɲʎ jr / V_V
 	kj > ts / V_V
 	ts > s / V_V
 	ɡj > {ʒ,j} / V_V

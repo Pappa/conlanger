@@ -14,35 +14,35 @@ V / ”V / ”VSr_
 V / ”V / _C*”{i,e}V
 {i,e} / j / _V
 ; Stressed vowels:
-aː / a
+a:[+ long] / a
 (a)e / è
-{eː,i,oe} / é
-iː oː / i ó
+{e:[+ long],i,oe} / é
+i:[+ long] o:[+ long] / i ó
 o / ò
-u / ó / !_iː
-uː / u
+u / ó / !_i:[+ long]
+u:[+ long] / u
 ; Initial vowels (first vowel of a word):
-aː / a
+a:[+ long] / a
 {e(ː),i,ae,oe} / e
-iː / i
+i:[+ long] / i
 {o(ː),u} / o
 ; Final vowels:
-aː / a
+a:[+ long] / a
 {e(ː),i,ae,oe} / e
-iː oː / i o
-u(ː) / o / except _V (?)
+i:[+ long] o:[+ long] / i o
+u(ː) / o / except _V
 k ɡ / tj dj / _E
-è / iɛ / in U[+open]
+è / iɛ / in U:[+open]
 è / iɛ / _C#
-è / ɛ / in U[+closed]
+è / ɛ / in U:[+closed]
 ò / uo
-uo / uɛ / in U[+open] ! _N
-ò / ɔ / in U[+closed]
+uo / uɛ / in U:[+open] ! _N
+ò / ɔ / in U:[+closed]
 dj / dʒ / r_
 d / ∅ / _j
 j / ∅ / V_”E
 j tj / dʒ ts / #_
-j / dʒ / V_V (rare)
+j / dʒ / V_V
 ∅ / s / t_j
 t / s / s_j
 {ɡn,nj} / ɲ
@@ -84,25 +84,25 @@ k ɡ / tʃ dʒ / _a
 t / ∅ / {ʃ,s}
 d / ∅ / _{z,ʒ}
 ɛ ɔ / iɛ uɛ / _{Cj,jC}
-∅ / j / {ʃ,ʒ,sj,zj}”{a,é}_ in U[+open]
-sːj zj rj / jsː jz jr
-j / ∅ / s_ (sː_?)
+∅ / j / {ʃ,ʒ,sj,zj}”{a,é}_ in U:[+open]
+s:[+ long]j zj rj / js:[+ long] jz jr
+j / ∅ / s_ (s:[+ long]_?)
 ɛ / ɛa / _l{C,#}
 l / u / _{C,#}
 l / ∅ / {i,u}_
-{lːe,lːo} / u / {e,o}_# “[this is actually an analogical development, but it applies as regularly as a sound law]”
+{l:[+ long]e,l:[+ long]o} / u / {e,o}_# “[this is actually an analogical development, but it applies as regularly as a sound law]”
 (ɛ)au / ɔ
-é / ɛi / in U[+open]
-é / ɛ / in U[+closed]
-ó / ou / in U[+open]
-ou / ɛu / in U[+open]
+é / ɛi / in U:[+open]
+é / ɛ / in U:[+closed]
+ó / ou / in U:[+open]
+ou / ɛu / in U:[+open]
 ó / ɔ / _N
-ó / ou / in U[+closed]
-e / ə / #(C…)_(%…)” in U[+open]
-e / ɛ / #(C…)_(%…)” in U[+closed] or _V (?)
+ó / ou / in U:[+closed]
+e / ə / #(C…)_(%…)” in U:[+open]
+e / ɛ / #(C…)_(%…)” in U:[+closed] or _V
 o / {ou,ɔ} “(the outcome fluctuates, but ɔ is often the result of analogy rather than strict sound change; always ou before another vowel)”
-a / ə / #{tʃ,dʒ}_(%…)” in U[+open]
-a / ɛ / in U[+open] “(but a following ʎ creates a [closed] syllable)”
+a / ə / #{tʃ,dʒ}_(%…)” in U:[+open]
+a / ɛ / in U:[+open] “(but a following ʎ creates a [closed] syllable)”
 kʷ ɡʷ / k ɡ
 C₀C₀ / C₀
 t / ∅ / V_#
@@ -119,20 +119,20 @@ uɛ / ɛu
 ai / e / _#
 ai iɛɪ / ɛ i
 ou ɛu u uɛi / u œ y yi
-{ei,ɔi} / oi / C[- nasal]
+{ei,ɔi} / oi / C:[- nasal]
 ɔ / u / _”V
-V[-high] / ə / _V
+V:[-high] / ə / _V
 ə / ∅ / _V ; “(except that a is kept before o)”
 ɲ / in / _{C,#}
-; V{n,m} / V[+ nasal] / _{C,#}
+; V{n,m} / V:[+ nasal] / _{C,#}
 ɛ̃ / ã
 {aı̃,eı̃} / ɛ̃
 ỹ / œ̃
-O[+voiced] / O[-voiced] / _#
+O:[+voiced] / O:[-voiced] / _#
 {t,s} / ∅ / _#
-k / ∅ / V[+ nasal]_#
+k / ∅ / V:[+ nasal]_#
 {n,m} / ∅ / C_#
-j / ∅ / {ʃ,ʒ}_V[- nasal]
+j / ∅ / {ʃ,ʒ}_V:[- nasal]
 ʎ r / j ʁ
 oi / wɛ
 wɛ / wa

@@ -1,6 +1,6 @@
 ; 17.12.1.1.9 - Latin to Sardinian
 ; citation: qwed117, “mainly” from http://www.sardegnacultura.it/documenti/7_25_20060427093224.pdf
-Vː / V[- long]
+V:[+ long] / V:[- long]
 e / i / C_V
 i / j / V_V
 i / j / _V
@@ -9,30 +9,30 @@ au ai / o e
 h / ∅ / {#,C}_
 m / ∅ / _#
 ∅ / i / _s (“mainly Logudorese”)
-nd {lː,ld} / ɳɖ ɖː / V_V
+nd {l:[+ long],ld} / ɳɖ ɖ:[+ long] / V_V
 t / k / s_l
 l / ∅ / rk_
 r / l / _C
 l / r / C_
 {i,j} / dʒ / Vr_V
 v / b / #_
-S[- voice] / S[+ voice] / V_”V
-kw ɡw / pː bː / #_ (“only Logudorese”)
+S:[- voice] / S:[+ voice] / V_”V
+kw ɡw / p:[+ long] b:[+ long] / #_ (“only Logudorese”)
 w / ∅ / #k_V
 k / ts / _i
-{p,k}s / sː
+{p,k}s / s:[+ long]
 o / u / _k (possibly restricted in occurrence)
 k / ∅ / _t ?
-l{i,j} / lː
-lː / {ts,dz,ldz,dʒ,lː}
+l{i,j} / l:[+ long]
+l:[+ long] / {ts,dz,ldz,dʒ,l:[+ long]}
 e / ∅ / u_#
 t / d / V_rV
-sk / sː
+sk / s:[+ long]
 {i,j} / ɡ / #_e
 d / ∅ / V_{i,j}
 n{i,j} t{i,j} / ndʒ ts / _V
 d / r / V_V (“[s]ome Campidanese”)
 b d ɡ / β ð ɣ / “except in Nuorese”
-ɡn / nː
-r / urː / #_e / Logudorese
-r / arː / #_(j)B / Logudorese
+ɡn / n:[+ long]
+r / ur:[+ long] / #_e / Logudorese
+r / ar:[+ long] / #_(j)B / Logudorese

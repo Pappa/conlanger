@@ -1,16 +1,16 @@
 @ 6.2.2.1.14 - Classical Arabic to Moroccan Arabic
 # citation: Pogostick Man, from http://en.wikipedia.org/wiki/Moroccan_Arabic
-	t > t͜s / plain t only, distinguishable from the sequence ts
-	{a,i} > ə / short only; the change of short a blocked for some speakers before ħ ʕ
-	u > ə / short only, except near “a labial or velar consonant”
-	C[+labial/+velar] > ʷ / adjacent to short u
+	t > t͜s
+	{a,i} > ə / [- long]
+	u > ə / [- long]
+	C:[+labial/+velar] > ʷ / adjacent to short u
 	{u,ə} > ∅ / ! C_C(C)#
 	ə > a / near ħ ʕ
 	ə > ɐ / near emphatics
 	ə > ɪ / _ ! near emphatics
 	u > ʊ / short only
-	aː iː uː > ɑː eː oː / near emphatics
-	aː > æː / _ ! near emphatics
+	a:[+ long] i:[+ long] u:[+ long] > ɑ:[+ long] e:[+ long] o:[+ long] / near emphatics
+	a:[+ long] > æ:[+ long] / _ ! near emphatics
 	C₁ˤC₂ > C₁C₂ˤ
 	Cˤ > C / {#,V}_V
 	q > {q,ɡ}

@@ -1,12 +1,12 @@
 @ 43.5.1.1 - Proto-Mono-Kawaiisu to Kawaiisu
 # citation: Pogostick Man, from Klein, Sheldon (1959), “Comparative Mono-Kawaiisu”. International Journal of American Linguistics 25(4):233 – 238
-	hkʷ hʔ (h)S Sː > w ʔ S[+ voiced] S[- voiced - long] / V_V
+	hkʷ hʔ (h)S S:[+ long] > w ʔ S:[+ voiced] S:[- voiced - long] / V_V
 	ts > z / V_V
 	hts > z / V_i
 	h > ∅ / V_tsV
 	h > ∅ / _{n,s,ʔ}
 	p > b / m_
-	jː > j
+	j:[+ long] > j
 	a > o / P_
-	uV Vː > uː Vː
+	uV V:[+ long] > u:[+ long] V:[+ long]
 	k > ∅ / V_wV

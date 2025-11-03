@@ -1,18 +1,18 @@
 @ 17.2.5 - Common Anatolian to Palaic
 # citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
-	D T > T T[+lenis] / #_
-	T D > T[+fortis] T[+lenis]
+	D T > T T:[+lenis] / #_
+	T D > T:[+fortis] T:[+lenis]
 	h₂ h₃ > hh h
 	Ḱ > K
-	V > Vː / ”U[+open]
+	V > V:[+ long] / ”U:[+open]
 	e > i / pretonic
-	e > a / posttonic in U[+open]
+	e > a / posttonic in U:[+open]
 	o(ː) > a(ː)
-	a e > aː eː / in ”U[+closed]
-	æː > eː
+	a e > a:[+ long] e:[+ long] / in ”U:[+closed]
+	æ:[+ long] > e:[+ long]
 	ɡʷ > hʷ / medially
 	hhy > “something like /ʒ/”
-	h > ∅ / ”Vː_u
-	h > ∅ / u_”Vː
+	h > ∅ / ”V:[+ long]_u
+	h > ∅ / u_”V:[+ long]
 	w > j
-	ɛː > iː
+	ɛ:[+ long] > i:[+ long]

@@ -9,33 +9,33 @@
 	V > ∅ / ”V%s_t(C)V(C)#
 	u > w
 	w > ∅
-	iː > i / [+ stress]
-	iː > i / _%”V
-	{i,eː} e > {e,ɛ} {ɛ,e} / [+ stress]
-	{i,eː,e} > e / _%”V
+	i:[+ long] > i / [+ stress]
+	i:[+ long] > i / _%”V
+	{i,e:[+ long]} e > {e,ɛ} {ɛ,e} / [+ stress]
+	{i,e:[+ long],e} > e / _%”V
 	i > j / ”V_#
-	uː > u / [+ stress]
-	uː > u / _%”V
+	u:[+ long] > u / [+ stress]
+	u:[+ long] > u / _%”V
 	au > a / _%”u
-	{u,oː} o > o ɔ / [+ stress]
+	{u,o:[+ long]} o > o ɔ / [+ stress]
 	{u,o(ː)} > u / _%”V in East Catalan
 	{u,o(ː)} > o / _%”V else
 	u > w / ”ɛ_#
-	aː > a
+	a:[+ long] > a
 	oe > {e,ɛ}
 	ae au > e ɔ / [+ stress]
 	ae au > e o / _%”V
 	o > u / _a
 	o > u / _%”V
-	VV > Vː
+	VV > V:[+ long]
 	ndj > ɲ
 	dj > dʒ
 	dʒ > ʒ
 	∅ > e / #_sC
 	l > ∅ / {o,u}_CV
 	l > w / V_CV (“although l was usually restored later”)
-	mn > nː
-	nː > ɲ
+	mn > n:[+ long]
+	n:[+ long] > ɲ
 	p b t d k ɡ > β {β,w} ∅ {j,w} ɣ {j,∅,ɡ} / V_rV
 	ŋ > ɲ / _{i,e}
 	p b > b w / V_lV (the latter is irregular)
@@ -54,9 +54,9 @@
 	{bj,vj} > wʒ / _%”V
 	b > v / V̈%_j
 	ja > je / #_
-	V > ∅ / _%”V (rare)
+	V > ∅ / _%”V
 	∅ > {e,o} / CL_#
-	∅ > {e,o} / rː_#
+	∅ > {e,o} / r:[+ long]_#
 	a > e / “in the penult”
 	V > ∅ / ”V%_(C)(C)V(C)# (“irregular; e is kept before n”)
 	b > v / V_V
@@ -71,7 +71,7 @@
 	d > z / V_V
 	z > ∅ / V_V
 	d > w / _V#
-	iː > ∅ / _#
+	i:[+ long] > ∅ / _#
 	{i,e(ː),ae} > ∅ / _(C)#
 	{u(ː),o(ː)} > ∅ / _#
 	V > ∅ / “between first and tonic syllables; except when C_CC, _n”; “if there are multiple vowels between the initial and tonic syllables, the vowel directly before the tonic is usually dropped” ! V = a
@@ -102,18 +102,18 @@
 	k > w / V_rV
 	{b,v} > w / V_tV
 	ɡ > ∅ / V_dV
-	lː nː > ʎ ɲ
+	l:[+ long] n:[+ long] > ʎ ɲ
 	ʎ > l / ”i_
 	C > ∅ / C₁_C₂ ! C₂ = L
-	{a,o} > ∅ / #_ (rare)
+	{a,o} > ∅ / #_
 	ɔ > o / _N$C
 	e > ɛ / _v
-	o > u / _[+ stress]{ɲ,nk,ŋ}
-	e > i / _[+ stress]{nk,ŋ}
+	o > u / _:[+ stress]{ɲ,nk,ŋ}
+	e > i / _:[+ stress]{nk,ŋ}
 	aj > ej
 	ej > ee
 	ee > e
-	aj > ej / _[+ stress]ʃ
+	aj > ej / _:[+ stress]ʃ
 	ɛj ɔj > jɛj uei / i {u,ui} / [+ stress]
-	ɛ > e / ! _{rː,l,rC[-labial],nr} or _ ? w#
+	ɛ > e / ! _{r:[+ long],l,rC:[-labial],nr} or _ ? w#
 	e > ɛ (in Eastern Catalan)

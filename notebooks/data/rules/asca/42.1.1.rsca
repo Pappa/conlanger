@@ -1,19 +1,19 @@
 @ 42.1.1 - Pre-Finnic to Proto-Finnic
 # citation: Tropylium, from Hakulinen, Lauri (1979), “Suomen kielen rakenne ja kehitys”. Otava; Häkkinen, Kaisa (2004), “Nykysuomen etymologinen sanakirja”. WSOY; Kallio, Petri (2007), “Kantasuomen konsonanttihistoriaa”. Mémoires de la Société Finno-Ougrienne 253. <http://www.sgr.fi/sust/sust253/sust253_kallio.pdf>; and from Janhunen, Juha (2007), “The primary laryngeal in Uralic and beyond”. Mémoires de la Société Finno-Ougrienne 253. <http://www.sgr.fi/sust/sust253/sust253_janhunen.pdf>
-	V > Vː / _#
+	V > V:[+ long] / _#
 	ê ô > e o / _(X)Ci
 	ê > y / _(X)CA
 	ô > ɯ / _(X)CA
 	ɯ > i / _(X)CA
 	ej > i / [- stress]
-	æ > e / _[- stress]j
+	æ > e / _:[- stress]j
 	ɑ > e / ”{o,u}(X)C_j
 	ɑ > o / ”{a,e,i}(X)C_j
-	ixi uxu > øː oː
+	ixi uxu > ø:[+ long] o:[+ long]
 	xi > @ / else
 	x > w / {U,O}_C
 	x > j / {I,E}_C
-	UŋA eŋi > Oː øː
+	UŋA eŋi > O:[+ long] ø:[+ long]
 	ŋi > @ / V_
 	ŋ > n / _t
 	ŋ > j / _Cʲ
@@ -21,28 +21,28 @@
 	ŋ > w / {O,U}_
 	ŋ > w / _C ! _k
 	ŋ > w / C_
-	uwa > oː (*)
-	Uwi ewi > oː øː
+	uwa > o:[+ long] (*)
+	Uwi ewi > o:[+ long] ø:[+ long]
 	i > ∅ / æw_
 	wI > i
 	ji > O / {i,e,y}
 	i > ∅ / Aj_#
 	i > ∅ / {o,u}j_
 	j > ∅ / C_i{C,#}
-	yje > øː
-	øː > jø (?)
+	yje > ø:[+ long]
+	ø:[+ long] > jø
 	uw ij > ow ej / _C
 	tʃ tsʲ > ʃ sʲ / #_
 	ðʲ sʲ tsʲ(ː) lʲ > ð s ts(ː) l
 	nʲ > ni / #(C)i_V
 	nʲ > in / V_V
 	nʲ > n / _ ! V_V
-	n > ∅ / _tː
+	n > ∅ / _t:[+ long]
 	w > ∅ / o_st (*)
 	ð > t
 	tʃ > ts / _k, in South Estonian
-	tk > k / in Pre-Livonian (?)
-	tʃ tʃː > t tʃ
+	tk > k / in Pre-Livonian
+	tʃ tʃ:[+ long] > t tʃ
 	t > ts / _i ! following a coronal obstruent or “before a derivational suffix”
 	tj > ts / ! following a coronal obstruent or “before a derivational suffix”
 	ʃ > ʂ

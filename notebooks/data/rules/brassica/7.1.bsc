@@ -1,12 +1,12 @@
 ; 7.1 - Proto-Algonquian to Kennebec River Abenaki
 ; citation: Pogostick Man with acknowledgment to dhok, from Warne, Janet Leila (1973), “A Historical Phonology of Abenaki”. <http://digitool.library.mcgill.ca/R/?func=dbin-jump-full&object_id=46078&local_base=GEN01-MCG02>
-hl / sː
+hl / s:[+ long]
 ʔ / h / _l
 l / n / #_
 l / r
-nr / rː
+nr / r:[+ long]
 N / ∅ / _O
-aː / a / _OO
+a:[+ long] / a / _OO
 a / e / #C_OO
 a / ∅ / #_OO
 V / ∅ / _#
@@ -20,7 +20,7 @@ i / ∅ / #w_
 θ / s / _k
 θ / r
 ʃ tʃ / s ts
-{x,h}S / Sː
-sk / kː / ! _a
-ʔs ʔts / sː tsː
-oː aː eː iː / o ɔ̃ a i
+{x,h}S / S:[+ long]
+sk / k:[+ long] / ! _a
+ʔs ʔts / s:[+ long] ts:[+ long]
+o:[+ long] a:[+ long] e:[+ long] i:[+ long] / o ɔ̃ a i

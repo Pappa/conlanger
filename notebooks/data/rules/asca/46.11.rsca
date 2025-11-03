@@ -4,15 +4,15 @@
 	a > ɔ / _{ŋ,k}
 	uə yə > ɔ œ / _{n,t}
 	ə > ∅ / i_{ŋ,k}
-	∅ > ə / C[+ labiovelar]_i
+	∅ > ə / C:[+ labiovelar]_i
 	∅ > ə / _u
-	V > Vː / _#
+	V > V:[+ long] / _#
 	# The actual vowel shift:
 	ə > a
-	a > {aː,ə}
+	a > {a:[+ long],ə}
 	ə > a / _{i,u}
 	iəu > au
-	a > aː / _{i,u}
+	a > a:[+ long] / _{i,u}
 	a > ə / i_u
 	ə > ∅ / i_u
 	# Other relevant changes occurring at the same time:

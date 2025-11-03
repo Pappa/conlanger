@@ -5,13 +5,13 @@
 k / ∅ / V_V
 ai au / ai̯ au̯ / _#
 ə / a / _ʔ#
-ai au / ɛː ɔː / _…#
+ai au / ɛ:[+ long] ɔ:[+ long] / _…#
 i u / əi̯ əu̯ / _#
 ∅ / h / a_#
 s / ∅ / V_V
 V₀V₀ / V₀
-ə / ∅ / adjacent to a vowel
-V[+stress] / Vː / _C# ! V = ə and/or C = h “(applies to diphthongal nuclei as well a[s] monophthongs)”
+ə / ∅ / _,V
+V:[+stress] / V:[+ long] / _C# ! V = ə and/or C = h “(applies to diphthongal nuclei as well a[s] monophthongs)”
 ʀ / {l,ɾ} / ! _#
 l / ∅ / ! _#
 u / əw / _V
@@ -22,9 +22,9 @@ s / ∅ / _#
 i u / ɛ ɔ / _C# ! _P
 ʀ / ʔ / _#
 ʀ / ɾ
-a / i / O[+voiced]…_(C)# “(blocked if there was an intervening nasal, and sometimes if there was an intervening voiceless stop or liquid)”
+a / i / O:[+voiced]…_(C)# “(blocked if there was an intervening nasal, and sometimes if there was an intervening voiceless stop or liquid)”
 i u / əi̯ əu̯ / _(ʔ)#
-əi̯ əu̯ / ai̯ au̯ / ! O[+voiced] earlier in the word
+əi̯ əu̯ / ai̯ au̯ / ! O:[+voiced] earlier in the word
 bʱ {dʱ,dzʱ} ɡʱ / f s k
 f / s
 v ɡ ɟ / f k c / V_V
@@ -32,8 +32,8 @@ v ɟ / f c / #_
 {i,ɛ} {u,ɔ} / iə̯ uə̯ / _{k,ŋ}#
 k ŋ / ʔ ∅ / Və̯_#
 ə / {ə,a} / _C#
-NS[-voice] / Sː
-; “Numerous different possible reflexes of NS[+voice] clusters”
+NS:[-voice] / S:[+ long]
+; “Numerous different possible reflexes of NS:[+voice] clusters”
 (C)V / ∅ / #_C…
 n / l / #_
 ə / ∅ / #_

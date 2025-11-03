@@ -1,10 +1,10 @@
 @ 30.2.1 - Proto-Potou-Akanic to Proto-Akanic
 # citation: Pogostick Man, from Stewart, John M. (2002), “The potential of proto-Potou-Akanic-Bantu as a pilot Proto-Niger-Congo, and the reconstructions updated”. JALL 23:197 – 224
-	V[+high +ATR](C(V[+high -ATR])) > #(C)V[-high +ATR](CV[+high +ATR]) / #J[+dorsal -voiced]_
+	V:[+high +ATR](C(V:[+high -ATR])) > #(C)V:[-high +ATR](CV:[+high +ATR]) / #J:[+dorsal -voiced]_
 	ɛ > ia / #(C)_
-	R[-voiced] R[+voiced] W > Z[-voiced] O[-voiced] F / #_
+	R:[-voiced] R:[+voiced] W > Z:[-voiced] O:[-voiced] F / #_
 	ɰ ɰ̃ w̃ > h h̃ h̃ʷ / #_
 	h̃ hʷ > ɕ ɕʷ
 	h > ɲı̃ / #_ã
 	h > w / #_
-	t > c / #_V[- nasal]
+	t > c / #_V:[- nasal]

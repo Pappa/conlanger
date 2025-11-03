@@ -1,6 +1,6 @@
 ; 35.3 - Shuswap to Eastern Shuswap Nasal-to-Vowel Shifts
 ; citation: Pogostick Man, from Kinkade, Dale M. “Shifts of Nasals to Vowels in Interior Salish”
-em emˀ / u uʔ / w_ in U[- stressed]
-em emˀ / a aʔ / in U[- stressed] ! {p(’),m(ˀ)}_
-en enˀ / i iʔ / {ts(’),s,j(ˀ)}_ in U[- stressed]
-en enˀ / a ʔ / in U[- stressed] ! {t(’),lʲ,{n,l}(ˀ)}_
+em emˀ / u uʔ / w_ in U:[- stressed]
+em emˀ / a aʔ / in U:[- stressed] ! {p(’),m(ˀ)}_
+en enˀ / i iʔ / {ts(’),s,j(ˀ)}_ in U:[- stressed]
+en enˀ / a ʔ / in U:[- stressed] ! {t(’),lʲ,{n,l}(ˀ)}_

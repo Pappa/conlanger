@@ -1,18 +1,18 @@
 ; 17.7.2.2 - West Germanic to Old Low Franconian
 ; citation: Pogostick Man, from Wikipedia contributors (2014), “Old Dutch”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Old_Dutch>; and Wikipedia contributors (2014), “Germanic umlaut”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Germanic_umlaut>
-eː oː / ie uo
-ai au / eː oː
+e:[+ long] o:[+ long] / ie uo
+ai au / e:[+ long] o:[+ long]
 h / ∅ / #_C
 jan / en / CC_#
 j / ∅ / CC_
 h / ∅ / V_V
-xs / sː
+xs / s:[+ long]
 ; Final obstruents devoice
 a / ɒ? (/ o) / _ɫ
 ; Some vowel reduction seems to have occurred in unstressed syllables
-ai u / ei ʏ / _[- long](C…){i(ː),j}
+ai u / ei ʏ / _:[- long](C…){i(ː),j}
 a / ɛ / _(C…){i(ː),j}
-uː / ʉw / _V
-uː / ʊw / _V
-uː / ʉː / _V)
-ei ou / eː oː
+u:[+ long] / ʉw / _V
+u:[+ long] / ʊw / _V
+u:[+ long] / ʉ:[+ long] / _V)
+ei ou / e:[+ long] o:[+ long]

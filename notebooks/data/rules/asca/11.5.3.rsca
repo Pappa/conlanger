@@ -1,9 +1,9 @@
 @ 11.5.3 - Proto-Lezgic to Lezghi
 # citation: Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian>, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251
-	b d > {pː,b} {tː,d}
-	{ts,st} tsː tsːʼ dz > {ʃ,tʃ} tʃ(ʼ) {tʃː,dʒ}
-	tɬ tɬː tɬʼ tɬːʼ dɮ > xʲ {ɣʲ,ɡ} qʼ k(ʼ) {kː,ɣʲ}
-	kː ɡ > ɣ kː
-	ɣ > {qː,ɣ}
-	qːʼ > q(ʼ)
-	ʃː ɬ ɬː x xː > ɣʲ j ʃ ɣ x
+	b d > {p:[+ long],b} {t:[+ long],d}
+	{ts,st} ts:[+ long] ts:[+ long]ʼ dz > {ʃ,tʃ} tʃ(ʼ) {tʃ:[+ long],dʒ}
+	tɬ tɬ:[+ long] tɬʼ tɬ:[+ long]ʼ dɮ > xʲ {ɣʲ,ɡ} qʼ k(ʼ) {k:[+ long],ɣʲ}
+	k:[+ long] ɡ > ɣ k:[+ long]
+	ɣ > {q:[+ long],ɣ}
+	q:[+ long]ʼ > q(ʼ)
+	ʃ:[+ long] ɬ ɬ:[+ long] x x:[+ long] > ɣʲ j ʃ ɣ x

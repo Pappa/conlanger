@@ -1,21 +1,21 @@
 @ 17.12.1.1.10 - Vulgar Latin to Spanish
 # citation: ? and Serafı́n, the former citing Penny, Ralph (2002), A History of the Spanish Language, 2nd Ed. Cambridge University Press; and Lipski, John (1994), Latin American Spanish. Longman Pub Group.
 	b > β / V_V
-	{tj,kj} {tːj,kːj,ptj,ktj,skj} > ts tːs
+	{tj,kj} {t:[+ long]j,k:[+ long]j,ptj,ktj,skj} > ts t:[+ long]s
 	k ɡ > tʃ dʒ / _{j,i,e,ɛ}
 	tʃ dʒ > ts dz / _{j,i,e,ɛ}
 	{t,k} > ∅ / _#
-	V > ∅ / C_[- stress]{r,l} ! #,_
-	V > ∅ / {r,l}_[- stress]C ! #,_
-	V > ∅ / C_[- stress]s ! #,_
-	V > ∅ / s_[- stress]C ! #,_
+	V > ∅ / C_:[- stress]{r,l} ! #,_
+	V > ∅ / {r,l}_:[- stress]C ! #,_
+	V > ∅ / C_:[- stress]s ! #,_
+	V > ∅ / s_:[- stress]C ! #,_
 	{k,ɡ} > x / _{t,s,n,l}
 	x > j / _{t,s,n,l}
-	pt {ɾs,ps} > tː sː
+	pt {ɾs,ps} > t:[+ long] s:[+ long]
 	ns > s
-	mb mn > mː nː
-	{jl,lj} {jn,nj} {jɡ,ɡj} > ʎ ɲ ʝː
-	bj > ʝː
+	mb mn > m:[+ long] n:[+ long]
+	{jl,lj} {jn,nj} {jɡ,ɡj} > ʎ ɲ ʝ:[+ long]
+	bj > ʝ:[+ long]
 	Raising of e {ɛ,a} ɔ o > i e o u; near j, in particular environments:
 	e > i / _Cj ! C = p
 	ɛ ɔ u > e o u / _(C)j
@@ -29,12 +29,12 @@
 	ʎ > ʒ
 	ʝ > ʒ
 	ʝ > ∅
-	ʝː > ∅ / E_
+	ʝ:[+ long] > ∅ / E_
 	d > {∅,ð} / V_V
 	ɡ > {∅,ɣ} / V_V
 	p t k s ts > b d ɡ z dz / V_V
-	pː tː kː sː tːs ʝː > p t k s ts ʝ
-	nː lː ɾɾ > ɲ ʎ r
+	p:[+ long] t:[+ long] k:[+ long] s:[+ long] t:[+ long]s ʝ:[+ long] > p t k s ts ʝ
+	n:[+ long] l:[+ long] ɾɾ > ɲ ʎ r
 	kl pl > ʎ {ʎ,tʃ}
 	fl > ʎ
 	V > ∅/ [- stress] ! V = a
@@ -93,4 +93,4 @@
 	l > ɾ / _$
 	ɾ > l / _$
 	s > ɾ / _θ
-	kθ > θː
+	kθ > θ:[+ long]

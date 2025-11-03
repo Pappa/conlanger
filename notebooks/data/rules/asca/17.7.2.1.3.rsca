@@ -1,21 +1,21 @@
 @ 17.7.2.1.3 - Old English to Midlands Middle English
 # citation: Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English Phonology and Midd le English Grammar for Courses in Chaucer, Middle English, and the History of the English Language; and Wikipedia contributors (2011), “Middle English phonology”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Middle_English_phonology>
-	Vː > V[-long] / _C{ː,C} ! _st{#,V} or when preceding a cluster which had triggered a vowel to become long in Old English; the book gives “Christ” vs. “Christmas” as an example
-	eɑ eːɑ eo eːo > ɑ ɛː e eː
+	V:[+ long] > V:[-long] / _C{ː,C} ! _st{#,V} or when preceding a cluster which had triggered a vowel to become long in Old English; the book gives “Christ” vs. “Christmas” as an example
+	eɑ e:[+ long]ɑ eo e:[+ long]o > ɑ ɛ:[+ long] e e:[+ long]
 	æj > aj
 	aj > ej
-	{æːj,e(ː)j} > ej
+	{æ:[+ long]j,e(ː)j} > ej
 	ɑɣ > ɑw
 	{eɑh,eɑç,eɑx,eɑʝ,eɑɣ} > ɑw
-	eːɑw iːw > ew ju
-	{ɑːw,ɑːɣ,oːw} > ɔːw
-	oɣ > ɔːw / _V
-	{ɑːht,o(ː)ht} > ow
-	ɑː y(ː) > ɔː i(ː)
-	ɑ e o > ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/ or ending in one of /m n r l/
-	Vː > V[-long] / in #U before a U with /iː/
-	m > n / _[- stress]#
-	n > ∅ / _[- stress]#
+	e:[+ long]ɑw i:[+ long]w > ew ju
+	{ɑ:[+ long]w,ɑ:[+ long]ɣ,o:[+ long]w} > ɔ:[+ long]w
+	oɣ > ɔ:[+ long]w / _V
+	{ɑ:[+ long]ht,o(ː)ht} > ow
+	ɑ:[+ long] y(ː) > ɔ:[+ long] i(ː)
+	ɑ e o > ɑ:[+ long] ɛ:[+ long] o:[+ long] / in U:[+open] ! in #U with the following U containing /i:[+ long]/ or ending in one of /m n r l/
+	V:[+ long] > V:[-long] / in #U before a U with /i:[+ long]/
+	m > n / _:[- stress]#
+	n > ∅ / _:[- stress]#
 	hn {wl,hl} hr > w l r
 	ɣ > ɡ / #_
 	ɣ > w / C_V

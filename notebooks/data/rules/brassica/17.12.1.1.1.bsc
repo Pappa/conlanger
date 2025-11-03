@@ -2,16 +2,16 @@
 ; “The following relate to the changes of vowels as found in the evolution to the written medieval languages of Iberia, Gallia and Italia (Anglo-Norman, Old Spanish, etc.). The Latin of Africa, Sardinia and the easternmost parts of the Empire exhibited different mergers.”
 {e,i} / j / C_V when unstressed
 {e,ai} / ɛ
-{i,eː,oi} / e
-iː / i
+{i,e:[+ long],oi} / e
+i:[+ long] / i
 o / ɔ
-{u,oː} / o
-uː / u
-aː / a
+{u,o:[+ long]} / o
+u:[+ long] / u
+a:[+ long] / a
 m / n / _# “(in certain common monosyllabic words, as well as some common compounds of them)”
 m / ∅ / _#
 h / ∅
 w / β
-ɛ ɔ / e o / when unstressed
+ɛ ɔ / e o / [- stress]
 j / ʝ / #_V
-j / ʝː / V_V
+j / ʝ:[+ long] / V_V

@@ -5,34 +5,34 @@
 	e > ɤ / _C(C){a,o,u}
 	æ > ɑ / [- stress]
 	h > ∅ / {#,C}_
-	Vn > Vː / _s
+	Vn > V:[+ long] / _s
 	ɑ æ > æe / _(C…)i
 	V > ə / [- stress] ! V = ɑ
-	ɑ > ə / VC(C)ɑC(C)_# when unstressed
-	Vh > Vːɦ / _C, except maybe ! _j and/or _ʋ
+	ɑ > ə / VC(C)ɑC(C)_[- stress]#
+	Vh > V:[+ long]ɦ / _C ! _j,_ʋ
 	LV > VL / {#,V,O}_
-	p t(ʲ) s(ʲ) k > b d(ʲ) z(ʲ) ɡ / ! #_ or adjacent to C[-voice]
+	p t(ʲ) s(ʲ) k > b d(ʲ) z(ʲ) ɡ / ! #_, _C:[-voice], C:[-voice]_
 	∅ > ʔ / (C)V_CV
 	ə > ∅ / _#
 	ə > ∅ / VC_CV
-	C > Cː / ʔ_V
-	dj lj rj ɡj > dʲ lːʲ rːʲ jɡ
+	C > C:[+ long] / ʔ_V
+	dj lj rj ɡj > dʲ l:[+ long]ʲ r:[+ long]ʲ jɡ
 	ʋ > ∅ / {d,z}_
-	lʋ rʋ jʋ > lː rː jː
+	lʋ rʋ jʋ > l:[+ long] r:[+ long] j:[+ long]
 	ʋ > ∅ / C_
-	VCːɑ > VːCɑ
-	Cː > C[- long] / ! in verbal forms when V_ə
-	ɑː au > ɔː ɔu (though sometimes ɑː develops, apparently at least partially due to metathesis?)
-	eː øː oː ɤ(ː) > iːe yːø uːo ɨ(ː)
+	VC:[+ long]ɑ > V:[+ long]Cɑ
+	C:[+ long] > C:[- long] / ! in verbal forms when V_ə
+	ɑ:[+ long] au > ɔ:[+ long] ɔu
+	e:[+ long] ø:[+ long] o:[+ long] ɤ(ː) > i:[+ long]e y:[+ long]ø u:[+ long]o ɨ(ː)
 	ɦ > ʔ
 	sʲ tsʲ zʲ dzʲ > ʃʲ tʃʲ ʒʲ dʒʲ
 	æy ey > æu eu
 	y ø > i e / else
-	V > Vː / _RC(C)ɑ (includes diphthongs)
-	a > aː / VC_
-	e o > eː oː / _Cɑ
-	o > oː / _{RC#,i}
-	eː oː > je wo
+	V > V:[+ long] / _RC(C)ɑ
+	a > a:[+ long] / VC_
+	e o > e:[+ long] o:[+ long] / _Cɑ
+	o > o:[+ long] / _{RC#,i}
+	e:[+ long] o:[+ long] > je wo
 	w > ʋ / #_o
 	wo > ʊ / P_
 	ɔ(ː) > o(ː)

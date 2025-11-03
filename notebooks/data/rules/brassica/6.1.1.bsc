@@ -2,7 +2,7 @@
 ; citation: Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)
 u o / i e
 e / i / #N_C
-e / i / #l_{P,C[+voiced]}
+e / i / #l_{P,C:[+voiced]}
 e / i / #b_
 e / i / p_r
 e / i / #{s,ʃ,tsʼ}_{k(w),ʔ}
@@ -12,9 +12,9 @@ e o / i u / #{k(ʼ),x}_{t(ʼ),tsʼ}
 e o / i u / #(ʔ)_C$
 e o / i u / #P_{tsʼ,tʃʼ}
 a / o / #{z,dʒ}_P
-e(ː) / i(ː) / #C[+sibilant]_{d,n,r}
+e(ː) / i(ː) / #C:[+sibilant]_{d,n,r}
 Cw / C
-Vː / V / #K[-voice]_C
-u / uː / #S[+voice]_P[-voice]
-Vː / V / #C_C$ + $(V)C$ suffix
-N / ∅ / V_{C[+sibilant],p}
+V:[+ long] / V / #K:[-voice]_C
+u / u:[+ long] / #S:[+voice]_P:[-voice]
+V:[+ long] / V / #C_C$ + $(V)C$ suffix
+N / ∅ / V_{C:[+sibilant],p}

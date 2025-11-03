@@ -10,20 +10,20 @@ u / ∅ / CC_V
 V / ”V / ”VSr_
 V / ”V / _(C…)”{i,e}V
 ; “Stressed vowels (note the difference from the French development)”:
-aː / a
+a:[+ long] / a
 (a)e / ɛ
-eː,i,oe / e
-iː o(ː) u(ː) / i o u
+e:[+ long],i,oe / e
+i:[+ long] o(ː) u(ː) / i o u
 ; Word-initial vowels:
-aː / a
+a:[+ long] / a
 {e(ː),i,ae,oe} / e
-iː / i
+i:[+ long] / i
 {o(ː),u} / o
 ; Word-final vowels:
-aː / a
+a:[+ long] / a
 {e(ː),i,ae,oe} / e / _#
-iː / i
-{o(ː),uː} / o
+i:[+ long] / i
+{o(ː),u:[+ long]} / o
 u / o / ! V_
 s / i / #(C…)V_#
 k / ∅ / _s#
@@ -35,14 +35,14 @@ k ɡ / tʃ dʒ / _E
 ɛ / ie
 t d s / ts dz ʃ / _i
 o e / u i / _N
-a / ɨ _N ! _{nː,mn}
+a / ɨ _N ! _{n:[+ long],mn}
 i / ∅ / OL_e
 e / a / i_(C…){a,e}#
 i / ∅ / {ts,dz,S}_V
 li / lj / _V
 l / lj / _i
-lː / ∅ / _i
-”elːa / e”a / _#
+l:[+ long] / ∅ / _i
+”el:[+ long]a / e”a / _#
 {b,v} / ∅ / V_{V,t}
 l / r / V_V
 m / u / a_nV
@@ -54,7 +54,7 @@ s / ʃ / _kl
 c / ∅ / n_t
 kj ɡj / tʃ {j,∅}
 Pj / ɥ
-{sj,stj,sːj} / ʃ
+{sj,stj,s:[+ long]j} / ʃ
 j / s / t_
 j / z / rd_
 dj / ʒ / _”B
@@ -64,13 +64,13 @@ ja / e / r_#
 j / ∅ / r_
 d / ∅ / _z
 l / j / {k,ɡ}_
-a / e / C[+palatal]_#
+a / e / C:[+palatal]_#
 a o / ə u / ”U…_#
 e / ə / ”U…P_(C…)V# ! V = i
 u / ∅ / o_e
 e / ə / ou_#
 u / ∅ / ! {OL,”V}_#
-a / a / #(C…)V…C[+palatal]_…”U
+a / a / #(C…)V…C:[+palatal]_…”U
 a o / ə u / #(C…)V…_…”U
 e / i / #(C…)V…_n…”U
 e / ə / #(C…)V…{t,d,n}_…”U

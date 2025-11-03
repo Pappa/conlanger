@@ -1,8 +1,8 @@
 @ 17.2.3 - Common Anatolian to Lycian
 # citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
 	D > T / #_
-	D > F[+voice]
-	N{F[+voice],T} > nD
+	D > F:[+voice]
+	N{F:[+voice],T} > nD
 	d > k / _w
 	kʷ > t / _E
 	kʷ > k / _E, in Milyan
@@ -20,8 +20,8 @@
 	w > b / C_
 	ɡ > dʒ
 	e > i / j_
-	{ɛ,e}ː o æː > iː e aː
-	Vː > V[-long]
-	e > a / _U[+u,a]
-	a > e / _U[+e,i]
+	{ɛ,e}ː o æ:[+ long] > i:[+ long] e a:[+ long]
+	V:[+ long] > V:[-long]
+	e > a / _U:[+u,a]
+	a > e / _U:[+e,i]
 	# “[P]lus lots of syncope which he doesn’t elaborate on”

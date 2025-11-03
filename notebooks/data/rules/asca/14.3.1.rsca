@@ -1,17 +1,17 @@
 @ 14.3.1 - Standard Tamil to Colloquial Tamil
 # citation: schwatever, from Shiffman, Harold F. A Reference Grammar on Spoken Tamil
-	aj > eː “(exception: never finally in monosyllables, never initially in multisyllabic words)”
+	aj > e:[+ long] “(exception: never finally in monosyllables, never initially in multisyllabic words)”
 	avu aji > aw aj
 	i u > e o / _Ca
 	{k,v} > ∅ / V_V
-	aː eː iː oː uː > a ɛ i o u / _#
-	am an {aːm,aːn} > õ æ̃ ã / _#
-	{om,on} {em,en} {oːm,oːn} {eːm,eːn} > ɔ̃ ɛ̃ õ ẽ
+	a:[+ long] e:[+ long] i:[+ long] o:[+ long] u:[+ long] > a ɛ i o u / _#
+	am an {a:[+ long]m,a:[+ long]n} > õ æ̃ ã / _#
+	{om,on} {em,en} {o:[+ long]m,o:[+ long]n} {e:[+ long]m,e:[+ long]n} > ɔ̃ ɛ̃ õ ẽ
 	um > ũ / _#
 	∅ > ɨ / _N#
 	{ɭ,ɽ} > ∅
-	l ɭ > lːʉ ɭːʉ / _#(C)V[-long]
-	∅ > ʉ / {l,ɭ}_# if {M,Vː} previously in the lexeme
+	l ɭ > l:[+ long]ʉ ɭ:[+ long]ʉ / _#(C)V:[-long]
+	∅ > ʉ / {l,ɭ}_# if {M,V:[+ long]} previously in the lexeme
 	r > ɾ “in most dialects”
 	ɽ > ɭ
 	{ɾ,l,ɭ} > ∅ / V_S
@@ -20,15 +20,15 @@
 	∅ > {ɨ,ʉ}
 	n > ŋ / _{k,ɡ}
 	i(ː) e(ː) > u(ː) o(ː) / {m,v,p}_C̣
-	j > ∅ / V[-front]_#
-	j > jːi / E_#
-	tː nt > cː ɲc / {i,j}_
-	ʈk > kː
-	n tː > n̪ t̪ː
+	j > ∅ / V:[-front]_#
+	j > j:[+ long]i / E_#
+	t:[+ long] nt > c:[+ long] ɲc / {i,j}_
+	ʈk > k:[+ long]
+	n t:[+ long] > n̪ t̪ː
 	ɳ > n
 	ɭ > l
 	c > s / _{a,o,u,e}
-	cː > tʃː
+	c:[+ long] > tʃ:[+ long]
 	o e > u i / _C{u,i}
 	i(ː) e(ː) > u(ː) o(ː) / _ɭ
-	eCə oCə > Ceː Coː / #_
+	eCə oCə > Ce:[+ long] Co:[+ long] / #_

@@ -18,8 +18,8 @@
 	w > o / Cʲ_?w
 	i > ∅ / C(w)_a
 	ia > e / _ ! C(w)_a
-	C > Cʲ / {K,C[+pharyngeal]}_{a,a(ch)}
-	o > a / C_w ! C = {K,C[+pharyngeal]}
+	C > Cʲ / {K,C:[+pharyngeal]}_{a,a(ch)}
+	o > a / C_w ! C = {K,C:[+pharyngeal]}
 	ŋ > n / n_Cʲa(ta)
 	ŋ > ∅ / #_ ! #_o(w)
 	k > j / {e,a,o}_
@@ -27,12 +27,12 @@
 	{o,a} {a(ta),a(ch)} > e a / _ŋ
 	{a(ta),a(ch)} > o / _ ! _ŋ
 	? > o / _ŋ
-	{Aʲ,Fʲ}[+alveolar] >{A,F} / _?ʲ
+	{Aʲ,Fʲ}:[+alveolar] >{A,F} / _?ʲ
 	ʈ > ʈʂ / _r
 	C > Cʲ / ?ʲ{p,t}_
 	{p,t} > ∅ / V_
 	o > a / Cʲ_w
-	∅ > w / C_o# ! C = {K,C[+pharyngeal]}
+	∅ > w / C_o# ! C = {K,C:[+pharyngeal]}
 	w > ∅ / C̣Cʲ_?w
 	w > ∅ / w?_
 	? > a / Cw_Cʲ

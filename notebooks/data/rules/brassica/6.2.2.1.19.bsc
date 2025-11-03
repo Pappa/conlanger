@@ -2,7 +2,7 @@
 ; citation: Maknas, from http://www.adath-shalom.ca/history_of_hebrew.htm “and other sources”
 ; NB: These aren’t all true sound changes per se, since Modern Israeli Hebrew was artificially revived and is an amalgamation of dialects.
 {e(ː),ɛ} / ɛ
-Vː / V[-long]
+V:[+ long] / V:[-long]
 ə / a / near gutturals
 ə / ɛ / #R_C
 ə / ∅ / _ ! #R_C
@@ -10,7 +10,7 @@ w θ ð ɣ / v t d ɡ
 x ʕ / χ ʔ
 sˤ tˤ ħ q / s t χ k
 h / ∅ / _#
-ʔ / ∅ / ! in onset of U[+stress] (colloquial)
+ʔ / ∅ / ! in onset of U:[+stress] (colloquial)
 h / ∅ (colloquial)
-Cː / C[-long]
+C:[+ long] / C:[-long]
 r / ʁ

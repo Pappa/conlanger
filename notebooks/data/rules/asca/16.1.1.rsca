@@ -8,7 +8,7 @@
 	e > æ / _P
 	e > ə / _C{a,ə,u}
 	ə > o / _(C)o
-	ə > e / _{C[+palatal],E}
+	ə > e / _{C:[+palatal],E}
 	ə > æ / ! _{B,K,H}
 	a > æ / _(C)e
 	a > æ / i(C)_

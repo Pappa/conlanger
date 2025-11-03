@@ -6,24 +6,24 @@ t / {ts,k} / _w
 x / k / _s
 {h,j} / ∅ / V_V
 w j / b ɡ / {l,r}_
-w / ∅ / {ou,øy,yː}_
+w / ∅ / {ou,øy,y:[+ long]}_
 w / v
-aː / oː / _{N,C[+ dental],P,h}
-aː / oː / {N,C[+ dental],P,h}_
-e(ː) i / ø(ː) y / _C[+ affricate]
+a:[+ long] / o:[+ long] / _{N,C:[+ dental],P,h}
+a:[+ long] / o:[+ long] / {N,C:[+ dental],P,h}_
+e(ː) i / ø(ː) y / _C:[+ affricate]
 e(ː) i / ø(ː) y / _{P,l,ʃ}
 e(ː) i / ø(ː) y / {P,l,ʃ}_
 y(ː) yə ø(ː) øy / i(ː) iə e(ː) ei (intermittent)
-uː yː iː / ou øy ei
-uə yə iə / uː yː iː
+u:[+ long] y:[+ long] i:[+ long] / ou øy ei
+uə yə iə / u:[+ long] y:[+ long] i:[+ long]
 ou øy ei / au oy ai
 u y / o ø / _N (with some occasional exceptions)
-aːw / au
-Vː / V[- long] / _CC (some exceptions; the change was more common around _xt and _rC)
-Vː / V[- long] / _%Cə{r,l,n}# (some exceptions)
-V / Vː / _%, when stressed (except for /ə/?)
-V / Vː / _r{t,d,s,ts} (except /ə/)
-V / Vː / in some monosyllables ending in alveolar resonants or vowels
-V / Vː / by analogy in some cases
+a:[+ long]w / au
+V:[+ long] / V:[- long] / _CC (some exceptions; the change was more common around _xt and _rC)
+V:[+ long] / V:[- long] / _%Cə{r,l,n}# (some exceptions)
+V / V:[+ long] / _%, when stressed (except for /ə/?)
+V / V:[+ long] / _r{t,d,s,ts} (except /ə/)
+V / V:[+ long] / in some monosyllables ending in alveolar resonants or vowels
+V / V:[+ long] / by analogy in some cases
 ə / ∅ / unstressed, but not in every case
 ∅ / ə / M_r% (I don’t know what Mr. Ciupak means by 〈M〉)

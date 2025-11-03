@@ -4,51 +4,51 @@
 	n > ŋ / _{k,ɡ}
 	t > ð / V_# “in some verbal endings”
 	∅ > u / C_r#
-	waː > wo
-	ɒ ɒː > ø aː
-	øː > æ
-	u o a ø y e i > uː oː aː øi yː ei iː / _{ɲc,ɲɟ,ŋk,ŋɡ}
+	wa:[+ long] > wo
+	ɒ ɒ:[+ long] > ø a:[+ long]
+	ø:[+ long] > æ
+	u o a ø y e i > u:[+ long] o:[+ long] a:[+ long] øi y:[+ long] ei i:[+ long] / _{ɲc,ɲɟ,ŋk,ŋɡ}
 	ɡ ɟ > ɣ j / V_V
 	ɡ > ɣ / V_#
 	hj > ç
-	u o a øː eː y i > ʏɪ oi ai øi ei yː iː / _j
-	aː > ai / _j
+	u o a ø:[+ long] e:[+ long] y i > ʏɪ oi ai øi ei y:[+ long] i:[+ long] / _j
+	a:[+ long] > ai / _j
 	e > ei / _{ɣ,j}
-	O > ∅ / {F[- same POA],r,l}_O
-	S > ∅ / N[+ same POA]_S
+	O > ∅ / {F:[- same POA],r,l}_O
+	S > ∅ / N:[+ same POA]_S
 	{l(ː),rl} > ɬ / v_#
-	N > N[- voice] / O_#
-	{l(ː),rl} C > ɬ C[- voice] / _{S[- voice],s}
-	r > r̥ / S[- voice] / _#
-	{l(ː),rl} C > ɬ C[- voice] / S_ ! Sː_
-	{l(ː),rl} rː > dɬ r̥ / _#
-	S[- voice]ː S[+ voice]ː > ʰS S[- voice]ː
-	S[- voice] > ʰS / _{l,ɬ,m,n}
-	S[- voice] > Sʰ / #v_V
-	S[+ voice] > S[- voice]
-	p t k > f θ x / _{S,F[- voice]}
+	N > N:[- voice] / O_#
+	{l(ː),rl} C > ɬ C:[- voice] / _{S:[- voice],s}
+	r > r̥ / S:[- voice] / _#
+	{l(ː),rl} C > ɬ C:[- voice] / S_ ! S:[+ long]_
+	{l(ː),rl} r:[+ long] > dɬ r̥ / _#
+	S:[- voice]ː S:[+ voice]ː > ʰS S:[- voice]ː
+	S:[- voice] > ʰS / _{l,ɬ,m,n}
+	S:[- voice] > Sʰ / #v_V
+	S:[+ voice] > S:[- voice]
+	p t k > f θ x / _{S,F:[- voice]}
 	b d {ɡ,ɣ} > p t k / _S
-	F > S[- voice] / _{l,N}
-	u oː aː ʏɪ {y,i} {y,i}ː æː eː ey > ʏ ou au ai y ɪ i je ei
+	F > S:[- voice] / _{l,N}
+	u o:[+ long] a:[+ long] ʏɪ {y,i} {y,i}ː æ:[+ long] e:[+ long] ey > ʏ ou au ai y ɪ i je ei
 	w > v
-	V > Vː / _(C)#, in monosyllables
-	V > Vː / ! _CCV, in polysyllables
-	{n̥n,nn̥ > tn̥ / V_
-	nː > tn̥ / V_#
-	nː > tn / V_
+	V > V:[+ long] / _(C)#, in monosyllables
+	V > V:[+ long] / ! _CCV, in polysyllables
+	{n̥n,nn̥} > tn̥ / V_
+	n:[+ long] > tn̥ / V_#
+	n:[+ long] > tn / V_
 	nn̥,n̥n > n̥
-	nː > n
-	{r̥n,r̥n̥,rn̥ > tn̥
+	n:[+ long] > n
+	{r̥n,r̥n̥,rn̥} > tn̥
 	rn > tn̥ / _#
 	r > t / _n
 	{r,r̥,l}ɬ > tɬ
-	{ɬl,ɬː > tɬ
+	{ɬl,ɬ:[+ long]} > tɬ
 	r̥l > tɬ
-	{lː,rl} > tɬ / _#
-	{lː,rl} > tl
+	{l:[+ long],rl} > tɬ / _#
+	{l:[+ long],rl} > tl
 	h > k / #_{v,w}
 	hl > ɬ / #_
 	hr hn > r̥ n̥ / #_
 	v > ∅ / {u,o,a}ː_
 	n̥ > m̥ / p_#
-	Cː > C[- long]
+	C:[+ long] > C:[- long]

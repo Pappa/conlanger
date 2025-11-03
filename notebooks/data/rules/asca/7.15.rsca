@@ -10,10 +10,10 @@
 	{n,r} > ∅ / _r
 	H > ∅ / _m
 	r > s / _k
-	{j,w}V[-long] > ∅ / C_# in disyllables with Vː or in tri(-plus-)syllables
-	{w,j}V[-long] > ∅ / Vː_# (Whimemsz is unsure if this change is across-the-board or not)
-	V[-long] > ∅ / V[-long]{w,j}_# (Whimemsz is unsure if this change is across-the-board or not)
-	jeː > iː / C_
-	ja > iː / C_C
+	{j,w}V:[-long] > ∅ / C_# in disyllables with V:[+ long] or in tri(-plus-)syllables
+	{w,j}V:[-long] > ∅ / V:[+ long]_# (Whimemsz is unsure if this change is across-the-board or not)
+	V:[-long] > ∅ / V:[-long]{w,j}_# (Whimemsz is unsure if this change is across-the-board or not)
+	je:[+ long] > i:[+ long] / C_
+	ja > i:[+ long] / C_C
 	j > ∅ / C_
 	r > n

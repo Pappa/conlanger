@@ -5,13 +5,13 @@
 	b > v / #_
 	lm > ml
 	∅ > b / m_l
-	nd ld (> nː lː ?) > ɲ ʎ
+	nd ld (> n:[+ long] l:[+ long] ?) > ɲ ʎ
 	dj > dʒ
 	ɡ(ː) > dʒ / _iV
 	k ɡ > c ɟ / _E
 	tr > rd
-	pː tː kː > b d {ɡ,ɣ} / V_V
-	tː > {tʲ,dʲ}
+	p:[+ long] t:[+ long] k:[+ long] > b d {ɡ,ɣ} / V_V
+	t:[+ long] > {tʲ,dʲ}
 	tj > tʃ / _#
 	tj > ʃ
 	ɡl > lɡ
@@ -33,29 +33,29 @@
 	hv > {h,k,s}w
 	hj > ʃ
 	n l > ɲ ʎ / _C
-	nː > ɲ(d)
-	rn {lː,rl} > ɲ ʎ
+	n:[+ long] > ɲ(d)
+	rn {l:[+ long],rl} > ɲ ʎ
 	ms > ŋ(k)s
 	# r alternates with l
-	{u,o}(ː) a aː {ɒ,œ,y} e i(ː) > {o,ɔ}(i) æ(i) {ɔ,ɒ}(i) {o,ɔ}(i) {æ,e}  / _{Ḱ,Cʲ}
+	{u,o}(ː) a a:[+ long] {ɒ,œ,y} e i(ː) > {o,ɔ}(i) æ(i) {ɔ,ɒ}(i) {o,ɔ}(i) {æ,e}  / _{Ḱ,Cʲ}
 	u > {o,ɒ} / _CC
-	uː > {u,o,ɒ,ø} (conditioning unclear; it seems the presence of a velar consonant may have helped to retain the quality of /u/)
-	oː > u
-	ɒ > ɛ / _Cː
-	ɒ > ø / _O[+ dental/alveolar]
-	{ɒ,ey} j{u,o,a}ː yː > o ø u / Ḱ_
+	u:[+ long] > {u,o,ɒ,ø}
+	o:[+ long] > u
+	ɒ > ɛ / _C:[+ long]
+	ɒ > ø / _O:[+ dental/alveolar]
+	{ɒ,ey} j{u,o,a}ː y:[+ long] > o ø u / Ḱ_
 	j{u,o,a}ː > ø
-	a > ∅ / C[+ dental/alveolar]_u
+	a > ∅ / C:[+ dental/alveolar]_u
 	a > {o,ɔ} / _{K,r} (! K = w ?)
-	aː > wo
-	aː > ɔ(u) / _{l,r}
+	a:[+ long] > wo
+	a:[+ long] > ɔ(u) / _{l,r}
 	au > {o,ɔ,ɒ} / j_
 	au > j{o,ɔ}
 	y > ə / _r(ː)
-	yː > ø / _O[+ dental/alveolar]
+	y:[+ long] > ø / _O:[+ dental/alveolar]
 	æ > e / ! _{Ḱ,Cʲ}
 	e > {o,ɒ} / _w
-	eː > {ɒ,ə} / w_
-	e eː > {æ,ɛ,e} {(j)ɛ,je}
+	e:[+ long] > {ɒ,ə} / w_
+	e e:[+ long] > {æ,ɛ,e} {(j)ɛ,je}
 	ey > ø
 	# Final short vowels drop

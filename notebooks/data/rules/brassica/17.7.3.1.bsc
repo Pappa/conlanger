@@ -1,52 +1,52 @@
 ; 17.7.3.1 - Proto-Norse to Old Norse
 ; citation: Pogostick Man, from Theiling, Henrik, http://www.kunstsprachen.de/s17/rules.sch
 θ / f / _l
-i / ɪ / _NS[- voice] ! _NS(C){o,i,j}
-i / eː / _ʀ#
+i / ɪ / _NS:[- voice] ! _NS(C){o,i,j}
+i / e:[+ long] / _ʀ#
 b {w,v} d ð ɡ / p f t θ k / _#
 j / ∅ / #_
-EːBː Eːaː / joː jaː / {v,w}_
-BːB aː{o,a,æ,e} {æ,e}ː{æ,e}ː {æ,e}ːi iːEː / oː aː eː eː iː
+E:[+ long]B:[+ long] E:[+ long]a:[+ long] / jo:[+ long] ja:[+ long] / {v,w}_
+B:[+ long]B a:[+ long]{o,a,æ,e} {æ,e}ː{æ,e}ː {æ,e}ːi i:[+ long]E:[+ long] / o:[+ long] a:[+ long] e:[+ long] e:[+ long] i:[+ long]
 e / i / #(C)(C)(C)_(C)(C)(C){i,j}
 e / ja / ! {{h,k,ŋ}n,w,v,l,r}_, _{u,o,i}
 a(i) {e,w{æ,i}} {we,ei} (w)ɪ / ey ø y ʏ / w_ ! hw_
 a / ∅ / C(C)_{ʀ,s,t,θ}#
 VN / Ṽ / _# ! in #U
-u {o,ɒ} a au juː / y ø æ y yː / _(C)(C)(C)j
+u {o,ɒ} a au ju:[+ long] / y ø æ y y:[+ long] / _(C)(C)(C)j
 a / ∅ / _{ʀ,s,t,θ}#
-oː / u / _#
+o:[+ long] / u / _#
 ʀ / r_n
 ʀ / r / C_n
-ʀn / nː
+ʀn / n:[+ long]
 w / ∅ / C_o
 a / ∅ / CC_U#
 a / u / %u / ! in #U
-waː naː / oː noː / %u in #U
+wa:[+ long] na:[+ long] / o:[+ long] no:[+ long] / %u in #U
 a(ː) ae / o(ː) ɒø / #(C)(C)(C)_(C)(C)(C)u
 a / ∅ / _U#
-{(j)u,we}ː {o,ɒ}ː aː au / yː øː æː æy
+{(j)u,we}ː {o,ɒ}ː a:[+ long] au / y:[+ long] ø:[+ long] æ:[+ long] æy
 u {o,ɒ} a / y ø æ / _(C)(C)(C)i
 {B,E} / ∅ / CC_{ʀ,s,t,θ}# ! B = ɒ
-u {o,ɒ} a au juː / y ø æ æy yː / _(C)(C)(C)i
+u {o,ɒ} a au ju:[+ long] / y ø æ æy y:[+ long] / _(C)(C)(C)i
 E / ∅ / _{ʀ,s,t,θ}
 u / o / _m#
 u / ∅ / _({ʀ,s,t,θ})#
 {B,E} / ∅ / CC_U# ! B = ɒ
-V / Vː / _l{P,w,k,#}
-{a,æ,e}ːhiː / æː
-ɒːh{u,a} aːh{u,a} / ɒː aː
+V / V:[+ long] / _l{P,w,k,#}
+{a,æ,e}ːhi:[+ long] / æ:[+ long]
+ɒ:[+ long]h{u,a} a:[+ long]h{u,a} / ɒ:[+ long] a:[+ long]
 {B,E} / ∅ / _U# ! B = ɒ
 u / o / _m#
-Vː / V[- long] / ! in #U
-{u,we,wi} {o,ɒ} a au juː / y ø æ æy yː / _(C)(C)(C)i
-wa we wi / ɒː øː yː / #P_
-w / ∅ / #P_Vː
+V:[+ long] / V:[- long] / ! in #U
+{u,we,wi} {o,ɒ} a au ju:[+ long] / y ø æ æy y:[+ long] / _(C)(C)(C)i
+wa we wi / ɒ:[+ long] ø:[+ long] y:[+ long] / #P_
+w / ∅ / #P_V:[+ long]
 e / jɒ / _(C)(C)(C)u ! {{h,k,ŋ}n,w,v,l,r}_
 e / ja / _(C)(C)(C)u ! {{h,k,ŋ}n,w,v,l,r}_
-au {ai,ey,ei} æ{y,i} øy Vː / o e æ ø V / #(C)(C)(C)_CC
-V[- long] / ∅ / #U_UU
-u {o,ɒ} a au juː / y ø æ æy yː / _(C)(C)(C)j
-u {o,ɒ} a au juː / y ø æ æy yː / #(C)(C)_ʀ
+au {ai,ey,ei} æ{y,i} øy V:[+ long] / o e æ ø V / #(C)(C)(C)_CC
+V:[- long] / ∅ / #U_UU
+u {o,ɒ} a au ju:[+ long] / y ø æ æy y:[+ long] / _(C)(C)(C)j
+u {o,ɒ} a au ju:[+ long] / y ø æ æy y:[+ long] / #(C)(C)_ʀ
 b / ∅ / m_s
 d / ∅ / {l,m}_{b,ɡ,k,l,m,n,s}
 ð / ∅ / n_ ! ɡ_
@@ -76,28 +76,28 @@ t / ∅ / p_{ɡ,ɣ,n}
 t / ∅ / r_k
 t / ∅ / s_{k,l,n,s}
 {s,z} / ∅ / {r,ʀ}_N
-{v,w} / ∅ / #_V[+ round]
-rː{r,ʀ} sʀ / rː sː
-l(ː)ʀ n(ː)ʀ / lː nː / ”Vː_ (or all V_ ?)
+{v,w} / ∅ / #_V:[+ round]
+r:[+ long]{r,ʀ} sʀ / r:[+ long] s:[+ long]
+l(ː)ʀ n(ː)ʀ / l:[+ long] n:[+ long] / ”V:[+ long]_ (or all V_ ?)
 {l(ː),n}{r,ʀ} / ∅ / V{ː,V}_
-nː lː rː sː / n l r s / C_
+n:[+ long] l:[+ long] r:[+ long] s:[+ long] / n l r s / C_
 {t,θ,d,ð} / ∅ / n_l
 {t,θ,d,ð} / ∅ / l_n
-lː nː / l n / C_#
-ai wi (w)V / eː weː (w)Vː / _h#
-ɒ / oː / n_h
-{æ,e}i ai au w{ɪ,i} wy wV iu Vː / eː aː oː weː woː wVː eː oː V
+l:[+ long] n:[+ long] / l n / C_#
+ai wi (w)V / e:[+ long] we:[+ long] (w)V:[+ long] / _h#
+ɒ / o:[+ long] / n_h
+{æ,e}i ai au w{ɪ,i} wy wV iu V:[+ long] / e:[+ long] a:[+ long] o:[+ long] we:[+ long] wo:[+ long] wV:[+ long] e:[+ long] o:[+ long] V
 ey / {jo,æ}ː / _ʀ
-i / eː / _#
-ðl(ː) ðn(ː) / lː nː
+i / e:[+ long] / _#
+ðl(ː) ðn(ː) / l:[+ long] n:[+ long]
 ʏ ɪ / ø e
-V{θ,ð} / Vː / #(C)(C)(C)_{l,r}
-ai / aː / _r
-ai / aː / _h{C,V}
+V{θ,ð} / V:[+ long] / #(C)(C)(C)_{l,r}
+ai / a:[+ long] / _r
+ai / a:[+ long] / _h{C,V}
 æ / e
-lθ nθ / lː nː
-Ṽ / Vː / in #U (maybe only ı̃?)
-Ṽ / V[- nas]
+lθ nθ / l:[+ long] n:[+ long]
+Ṽ / V:[+ long] / in #U (maybe only ı̃?)
+Ṽ / V:[- nas]
 β ð ɣ / f θ k / _{p,t,k,s}
 β ð ɣ / b d ɡ / #_
 β ð ɣ / b d ɡ / {m,n,ŋ,l}_
@@ -106,23 +106,23 @@ lθ nθ / lː nː
 β ɣ / f h / _%
 ɣ / ɡ / _{E,j}
 β ð ɣ / v θ h
-(Vː)θt / (V)tː
-Eː{u,o}ː Eːaː / joː jaː / {v,w}_
+(V:[+ long])θt / (V)t:[+ long]
+E:[+ long]{u,o}ː E:[+ long]a:[+ long] / jo:[+ long] ja:[+ long] / {v,w}_
 θ / t / {p,t,k}_
-θː ðː / tː dː
-θ f / ð v / {V,C[+ voiced]}_{V,C[+ voiced]}
+θ:[+ long] ð:[+ long] / t:[+ long] d:[+ long]
+θ f / ð v / {V,C:[+ voiced]}_{V,C:[+ voiced]}
 h / ∅ / C_t
-ht / tː
+ht / t:[+ long]
 hw / ∅ / ! #_
-F[- voice] / ∅ / {s,f,x,h,t}_{p,t,k}
-nː / ð / _{r,ʀ}
-woː wøː jæː Vː / wo wøje V[- long] / _%
-NS[- voice] / S[- voice]ː
-{t(ː),ɡː}k / kː
-ts / sː / V_V
-uN yN iN VN / o øː eː Vː / _{s,f}
-Sː / S[- long] / U[- stress]_
-lθ nθ / lː nː
+F:[- voice] / ∅ / {s,f,x,h,t}_{p,t,k}
+n:[+ long] / ð / _{r,ʀ}
+wo:[+ long] wø:[+ long] jæ:[+ long] V:[+ long] / wo wøje V:[- long] / _%
+NS:[- voice] / S:[- voice]ː
+{t(ː),ɡ:[+ long]}k / k:[+ long]
+ts / s:[+ long] / V_V
+uN yN iN VN / o ø:[+ long] e:[+ long] V:[+ long] / _{s,f}
+S:[+ long] / S:[- long] / U:[- stress]_
+lθ nθ / l:[+ long] n:[+ long]
 p / f / _{t,k}
 t / θ / _{p,k}
 k / x / _{p,t}
@@ -131,21 +131,21 @@ n / θ / _{m,ŋ}
 ŋ / x / _{m,n}
 s / ts / {l,n}ː_
 ∅ / t / s_r
-ɣ / ɡː / _j
+ɣ / ɡ:[+ long] / _j
 ʀ / r
 w / v / #_
-Sː / S[- long] / _{r}ː
+S:[+ long] / S:[- long] / _{r}ː
 ɡ / ∅ / #_n
 r / ∅ / {p,t,k}_Vr
-rː lː / r l / {p,t,k,f,s}_
+r:[+ long] l:[+ long] / r l / {p,t,k,f,s}_
 o {æ,e} / u i / ! in #U
 o / u / V_
 a / e / _i
-ɪʊ / yː
-ø øː / e æː
+ɪʊ / y:[+ long]
+ø ø:[+ long] / e æ:[+ long]
 e(ː){B,i(ː)} / e(ː)u / {v,w}_
-eː{Bː,i(ː)} / joː / _C[+ alveolar]#
-eː{Bː,i(ː)} / juː
+e:[+ long]{B:[+ long],i(ː)} / jo:[+ long] / _C:[+ alveolar]#
+e:[+ long]{B:[+ long],i(ː)} / ju:[+ long]
 ∅ / j / {y,e}(ː)_a
 N(ː) k k(ː) N(ː)ɡ ɡ(ː) ɣ / ɲc(ː) c(ː) ɲɟ(ː) ɟ(ː) ʝ / _{i,j}
 j / ∅ / Ḱ_
@@ -154,8 +154,8 @@ N(ː) k k(ː) N(ː)ɡ ɡ(ː) ɣ / ɲc(ː) c(ː) ɲɟ(ː) ɟ(ː) ɟ / _{i,j}
 f θ / v ð / #_
 f / v / _{p,t,k}
 j / ∅ / {c,ɟ}_
-j / ∅ / _eː
+j / ∅ / _e:[+ long]
 au / ɒ / j_
-eː / e / Ḱ_
-eː j / e ∅ / Cw_
+e:[+ long] / e / Ḱ_
+e:[+ long] j / e ∅ / Cw_
 k / h / #_{v,n}

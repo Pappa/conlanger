@@ -1,9 +1,9 @@
 @ 17.2.2 - Common Anatolian to Luwian
 # citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
-	D T > T T[+lenis] / #_
-	T D > T[+fortis] T[+lenis]
+	D T > T T:[+lenis] / #_
+	T D > T:[+fortis] T:[+lenis]
 	h₂ h₃ > hh h
-	ḱː > z
+	ḱ:[+ long] > z
 	kʷ > w
 	{ḱ,k} > j / _e(ː)
 	{ḱ,k} > ∅ / _i(ː)
@@ -12,14 +12,14 @@
 	ɡ > dʒ
 	e > i / j_
 	e > a
-	V > Vː / in ”U[+open]
-	V > Vː / in #”U
+	V > V:[+ long] / in ”U:[+open]
+	V > V:[+ long] / in #”U
 	o(ː) > a(ː)
 	{d,l} > r “in Hieroglyphic Luwian, occasionally”
 	j > ∅ / z_
-	hh h > h ∅ / ”Vː_u
-	hh h > h ∅ / u_”Vː
+	hh h > h ∅ / ”V:[+ long]_u
+	hh h > h ∅ / u_”V:[+ long]
 	h > ∅ / _w ! #,_
 	hh > ∅ / _{w,m,n,r,l} “medially, and sporadically”
-	D R > Dː Rː / ”e_ in U[+open]
-	{ɛ,e}ː æː > iː aː
+	D R > D:[+ long] R:[+ long] / ”e_ in U:[+open]
+	{ɛ,e}ː æ:[+ long] > i:[+ long] a:[+ long]

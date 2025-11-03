@@ -5,23 +5,21 @@
 ðˤ / zˤ
 dˤ / zˤ
 dʒ / ɡ
-i u / e o / only when short, ! _#
-u / {o,u} / short only, _#
-aj aw / eː oː / in U[+closed]
-Vː / V / C_C{ː,C}V
-V / Vː / C_CV in U[-stress]
-V / Vː / _# + suffix
-{i,u} / ∅ / VC_CV when unstressed (short only)
+i u / e o / [- long] ! _#
+u / {o,u} / _:[- long]#
+aj aw / e:[+ long] o:[+ long] / in U:[+closed]
+V:[+ long] / V / C_C{ː,C}V
+V / V:[+ long] / C_CV in U:[-stress]
+V / V:[+ long] / _# + suffix
+{i,u} / ∅ / VC_:[- long, -stress]CV
 ; Some other short-vowel deletions
 ∅ / e / CVCC_CVCV (applies across word boundaries)
-; Resyllabification across word boundaries to prevent vowel-initial syllables
-r gains emphatic status except when next to i, and even then it’s becoming more common in that environment
 a(ː) / ɑ(ː) / near emphatics
 a(ː) / ɑ(ː) / if ɑ(ː) is elsewhere in the word
 a(ː) / æ(ː) / else (sometimes it seems more like ɛ(ː) to me)
-q / ʔ / except in several words, two of which are al-Qâhira and musîqâ
+q / ʔ
 ; Two consecutive consonants assimilate to the voicing of the second (obstruents only?)
-{{s,z}(ˤ),ʒ}ʃ / ʃː
+{{s,z}(ˤ),ʒ}ʃ / ʃ:[+ long]
 ʕ / {ʕ̞,ħ} / _h
 ; Final short vowel loss
 h / ∅ / in coda

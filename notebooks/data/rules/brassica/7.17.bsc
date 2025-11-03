@@ -8,23 +8,23 @@ N / ∅ / _O
 {h,s,tʃ,θ} / ʔ / _O
 r / ʃ / _O
 e / i / #(C)_ “(but remains e in a few cases?)”
-iː / i / _j
+i:[+ long] / i / _j
 j / ∅ / C_i(ː)
 je / i / C_
-j / ∅ / {tʃ,ʃ}_eː
-j / ∅ / {tʃ,ʃ,w}_aː
+j / ∅ / {tʃ,ʃ}_e:[+ long]
+j / ∅ / {tʃ,ʃ,w}_a:[+ long]
 w / ∅ / t_i
 wa / o / #_
-V[-long] / ∅ / _{ʃp,ʃk}
-V[-long] / ∅ / C_ʔC
-V[-long] / ∅ / _hV
-Vː / V[-long] / _#
-Vː / V[-long] / _{ʔC,ʃp,ʃk,hV}
+V:[-long] / ∅ / _{ʃp,ʃk}
+V:[-long] / ∅ / C_ʔC
+V:[-long] / ∅ / _hV
+V:[+ long] / V:[-long] / _#
+V:[+ long] / V:[-long] / _{ʔC,ʃp,ʃk,hV}
 ʔ / ∅ / C{v,l,s}_C
 ʔ / ∅ / _CC
 ∅ / ʔ / C{v,d}_{ʃp,ʃk,hV}
 ∅ / h / #_V
 s / θ
 r / l
-∅ / i / #C_jVː “(for some speakers)”
+∅ / i / #C_jV:[+ long] “(for some speakers)”
 ʃ / s “(for many speakers)”

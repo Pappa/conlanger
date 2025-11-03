@@ -4,11 +4,11 @@
 	∅ > w / u_V
 	∅ > j / i_V
 	ə > ∅ / #_
-	∅ > ə / C_C “(for certain consonant combinations, which the paper doesn’t specify)”
+	∅ > ə / C_C
 	h > ∅
 	ə > {e,o} / [+ stress]
 	p > w
-	wa > o / #_[- stress]
+	wa > o / #_:[- stress]
 	V > ə / [- stress]
 	{aw,əw} > o / _#
 	wə > u / #_
@@ -17,15 +17,15 @@
 	j > ∅ / C_i
 	ə > ∅ / _#
 	ə > ∅
-	t > ð / ! adjacent to S
+	t > ð / ! _,S
 	s > t
-	ʀ > r / _C[+dental]
+	ʀ > r / _C:[+dental]
 	ʀ > s
 	d > r
 	ɖ > ɽ
 	ɲ > n
 	n dz > l r
-	rl > lː
+	rl > l:[+ long]
 	ɟ > k / _C#
 	ɟ > s
 	ŋ > ∅ / C_#
