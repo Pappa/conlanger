@@ -2,16 +2,16 @@
 # citation: dhokarena56
 	Kʷ > K
 	Cʱ > C
-	e:[+ long] > i:[+ long] / ! _{i,u}
+	e:[+ long] > i:[+ long] / | _{i,u}
 	t:[+ long] > s:[+ long]
 	p > f / {V,#}_
 	f > x / _O
-	f > ∅ / _ ! _O
+	f > ∅ / _ | _O
 	r̩ l̩ > {ri,ra} {li,la} / _{S,R}
 	r̩ l̩ > {ra,ar} {la,al} / _{s,CC,V,#}
 	m̩ n̩ > am an / _{s,(m,j,w)V}
-	m̩ n̩ > em en / _ ! _{s,(m,j,w)V}
-	ɡʷ > b / #_V ! _u(ː)
+	m̩ n̩ > em en / _ | _{s,(m,j,w)V}
+	ɡʷ > b / #_V | _u(ː)
 	ɡʷ > b / #_N
 	ɡʷ > b / C_V
 	ɡʷ > ɡ
@@ -22,7 +22,7 @@
 	p t k kʷ b d ɡ ∅ > b d ɡ ɡʷ mb nd ŋɡ n / n#_”V
 	o:[+ long] > u:[+ long] / _(C…)#
 	o:[+ long]i > u:[+ long] / _#
-	o:[+ long] > a:[+ long] / _ ! _#
+	o:[+ long] > a:[+ long] / _ | _#
 	V:[+ long] > V:[-long] / _H
 	e > i / _:[- stress](C…)#
 	o > a / _:[- stress]{(C…),u}#
@@ -39,7 +39,7 @@
 	w > ∅ / {#,C}C_
 	w > ∅ / {θ,x}_
 	w > ∅ / V_{V,#}
-	w > v / _ ! V_{V,#}
+	w > v / _ | V_{V,#}
 	{p,t} > ∅ / #s_r
 	{p,t} > ∅ / #s_
 	s > ∅ / []_{l,r}_O ;; [anything]{l,r}_O
@@ -48,8 +48,8 @@
 	st zd > s:[+ long] d:[+ long] / []_ ;; [anything]_
 	{l,h}l {l,h}r l{p,s,n} r{p,s} ln > l:[+ long] r:[+ long] l:[+ long] r:[+ long] (l:[+ long]?) / []_ ;; [anything]_
 	C:[+ long] > C:[-long]
-	V > ∅ / C_# when unstressed ! C = j
-	C(…C) > ∅ / _# ! /l r/ and clusters containing them; “[t]his remained a phonologically conditioned rule in OIr”
+	V > ∅ / C_# when unstressed | C = j
+	C(…C) > ∅ / _# | /l r/ and clusters containing them; “[t]his remained a phonologically conditioned rule in OIr”
 	{au,eu,ou} > o:[+ long]
 	ei > e:[+ long]
 	o:[+ long] > ua / _:[+ stress][] ;; _[anything], when stressed

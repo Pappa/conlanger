@@ -8,8 +8,8 @@
 	æ:[+ long] > e:[+ long]
 	ew > iw
 	# Unstressed vowels:
-	V:[- long] > ∅ / _# ! V = u
-	V:[- long] > ∅ / U_C# ! V = u
+	V:[- long] > ∅ / _# | V = u
+	V:[- long] > ∅ / U_C# | V = u
 	# — Inherited “long final vowels…became shortened in polysyllabic words, when the vowels in question originally had the ‘broken’ accent, but remained unshortened when they originally had the ‘slurred’ accent”
 	aj > a / U_#
 	# — “Originally long diphthongs became shortened in final syllables”
@@ -25,11 +25,11 @@
 	iji > i:[+ long] / U:[- stress](C…)_
 	iji > i:[+ long] / U:[+ long + closed]_ in the stem
 	i > ∅ / _ji
-	m > β / C:[- voiced]_n, when medial
-	m > ɸ / C:[+ voiced]_n, when medial
-	n:[+ long] > n / _C ! _j
+	m > β / C:[- voice]_n, when medial
+	m > ɸ / C:[+ voice]_n, when medial
+	n:[+ long] > n / _C | _j
 	β > b / {r,l}_
-	ð > d / C:[+ voiced]_
+	ð > d / C:[+ voice]_
 	β ð ɣ > ɸ θ x / V_(s)#
 	# “The final -h [= /h/?] in unaccented particles was often assimilated to the initial consonant of the following word”
 	ɣ > ɡ / #_

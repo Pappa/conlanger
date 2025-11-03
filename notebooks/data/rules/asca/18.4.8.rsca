@@ -2,7 +2,7 @@
 # citation: Pogostick Man, from Lemle, Miriam (1971), âInternal Classification of the Tupi-Guarani Linguistic Family”. In Tupi Studies I, from Summer Institute of Linguistics Publications in Linguistics and Related Fields Publication Number 29.
 	p > {h,∅} / _{u,o}
 	p > {k,∅} / _w
-	p > h / _ ! _w
+	p > h / _ | _w
 	t > {ts,tʃ} / _{i,ı̃}
 	k > ∅ / _#
 	ʔ ts > ∅ {s,ʃ}
@@ -10,7 +10,7 @@
 	V{m,n} > V:[+ nasal] / _#
 	Vŋ > V:[+ nasal]
 	j > {j,i} / _#
-	j > {ɲ,tʃ} / _ ! _#
+	j > {ɲ,tʃ} / _ | _#
 	w > {ɡ,k} / {#,V}_
 	{b,r} > ∅ / _#
 	a > {∅,o,e} / _j#

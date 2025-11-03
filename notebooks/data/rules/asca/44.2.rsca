@@ -9,7 +9,7 @@
 	# — At least one reconstruction seems to indicate *s and *ś, which may have been an affricate and /s/. Pretty reliably, *-s tends to turn into -ts̺, and *-ś > -ts̻, probably after the below-mentioned affrication. Beyond that, it’s messy. *-tso seems to have become -tʃo/-tʃu, though.
 	Sʰ > F / #_
 	F > h (> ∅) / #_
-	S > S:[+ voiced] / #_
+	S > S:[+ voice] / #_
 	# “[T]wo similar vocalic segments” usually contract, though some dialects (especially Biscayan) seem not to exhibit this
 	Vn > Ṽ / _#
 	Vn > Ṽ / _V
@@ -33,7 +33,7 @@
 	*L (fortis) > l
 	ð > some sort of tap distinct from ɾ (Biscayan, Guipuscoan, High Navarrese)
 	b > ∅ / #_B
-	F:[+ voiced] > ∅ / V_V
+	F:[+ voice] > ∅ / V_V
 	S:[+ voice] > S:[- voice] / F:[+ sibilant]_
 	Ṽ > Vɲ / _V
 	Ṽ > Vn
@@ -113,7 +113,7 @@
 	# Glide dissimilation if the homorganic vowel was in the following syllable, but usually the glide just deleted
 	aɪ > eɪ
 	eɪ > e
-	aʊ > aɪ / !_{ɾ,r,s̺,s̻}
+	aʊ > aɪ / |_{ɾ,r,s̺,s̻}
 	eʊ > {e,eɡu}
 	eɪ > e / #_
 	oɪ > uɪ

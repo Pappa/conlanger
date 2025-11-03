@@ -1,6 +1,6 @@
 @ 35.1.8 - Proto-Central Salish to Lummi Northern Straits
 # citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology and Sound Correspondences”. From the 17th International Conference on Salish and Neighboring Languages
-	p(’) m > tʃ(’) ŋ / ! _u
+	p(’) m > tʃ(’) ŋ / | _u
 	mʔ > ∅ / _n
 	ts > s
 	lʲ > l
@@ -13,7 +13,7 @@
 	u³ u¹ > o³ ə¹
 	a³ > o³ / {{C:[+ uvular],K}ʷ,w}_
 	a³ > o³ / _{Cu,C:[+ uvular]ʷ,w}
-	a³ > e³ / _ ! _{Cu,C:[+ uvular]ʷ,w}
+	a³ > e³ / _ | _{Cu,C:[+ uvular]ʷ,w}
 	a¹ > ə¹
 	{u³~ə³} > ə¹
 	{a³~ə³} > ə³

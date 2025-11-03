@@ -7,13 +7,13 @@
 	{θ,ʃ} > {r,l}
 	w > ∅ / m_C
 	w > ∅ / {p,m}_#
-	w > ∅ / ! {k,p,m}_
+	w > ∅ / | {k,p,m}_
 	Cʷ > C / _ə{(C){p,kʷ},m,w}
 	kw pw mw > kʷ pʷ mʷ
 	we > wə
-	wə > o:[+ long] / ! _,{p,m,k}
+	wə > o:[+ long] / | _,{p,m,k}
 	j > ∅ / C_
-	ʔ > h / _C ! C = l, or when reduplicated
+	ʔ > h / _C | C = l, or when reduplicated
 	h > ∅ / _{s,x}
 	{nθ,nl} > hl
 	k > ∅ / h_ (sometimes restored via analogy, e.g., in verbs)
@@ -21,11 +21,11 @@
 	{tʃ,ç} > h / _k
 	i o > i:[+ long] o:[+ long]
 	V:[+ long] > V:[-long] / _hC
-	V > ∅ / _# ! some monosyllables and analogical developments, in the latter of which long vowels were shortened
+	V > ∅ / _# | some monosyllables and analogical developments, in the latter of which long vowels were shortened
 	{a,ə} > ∅ / _{x,h} “in the odd-numbered of any sequence of one or more short-vowel open syllables”; such vowels are considered “weak”
 	ə:[+weak] > ∅ / #_C
-	ə:[+weak] > ∅ / _C:[+voiced]
-	a:[+weak] ə:[+weak] > ə ∅ / a_Z:[+voiced]
+	ə:[+weak] > ∅ / _C:[+ voice]
+	a:[+weak] ə:[+weak] > ə ∅ / a_Z:[+ voice]
 	# NC sequences assimilate the nasal to the POA of the following consonant, which is then voiced
 	# Synchronic alterations:
 	ə > o / _h{p,kʷ,w,m}

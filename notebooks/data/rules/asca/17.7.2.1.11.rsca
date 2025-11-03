@@ -3,10 +3,10 @@
 	pVn tVn kVn > ʔm̩ ʔn̩ ʔŋ̩ / _#
 	V > Ṽ:[+ long] / _nC “(works across word boundaries)”
 	n > ∅ / V_C (in words of more than one syllable)
-	k > ç / V_# ! _C
-	ɡ > ʝ / V_# ! _C
-	p b > ɸ β / {#,V}_ ! _C
+	k > ç / V_# | _C
+	ɡ > ʝ / V_# | _C
+	p b > ɸ β / {#,V}_ | _C
 	V > Ṽ / N_
 	n > ∅ / V_V# “in some disyllabic words”
 	l > ʟ
-	ʟ > ʊ / {a,ɛ}_ ! _V
+	ʟ > ʊ / {a,ɛ}_ | _V

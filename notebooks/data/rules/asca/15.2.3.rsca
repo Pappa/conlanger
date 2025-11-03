@@ -2,7 +2,7 @@
 # citation: Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171
 	ə > u / u_
 	ə > a / a_
-	ə > i / _ ! a_
+	ə > i / _ | a_
 	ɣ ʁ > k q / _#
 	C₀VC₀ > C:[+ long]
 	m n ŋ > v t ɣ / _C:[-nasal]
@@ -11,5 +11,5 @@
 	v ʁ > p q / S_
 	{p,v} t {k,ɣ} > m n ŋ / _N
 	v > ∅ / u_i
-	ədʒ > i / _{a,u} ! #U
-	adʒ > i / _a ! #U
+	ədʒ > i / _{a,u} | #U
+	adʒ > i / _a | #U

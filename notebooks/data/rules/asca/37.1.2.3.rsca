@@ -1,8 +1,8 @@
 @ 37.1.2.3 - Proto-Northern Iroquoian to Onondaga
 # citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg
-	s > ʃ / ! n_ “or when part of the unit affricate /ts/”
-	ts > hs / V_V ! _i
-	ts > s / ! _{h,i,j}
+	s > ʃ / | n_ “or when part of the unit affricate /ts/”
+	ts > hs / V_V | _i
+	ts > s / | _{h,i,j}
 	ns > ts / _k(ʷ)
 	n > ∅ / _s
 	”V(ː)(C)(C)V:[+ long] > V:[-long](C)”(C)CV:[-long] / _#

@@ -13,13 +13,13 @@
     <rule>a &gt; o / #Cw_{(d)l,s₃}</rule>
     <rule>w &gt; ∅ / #C_V ! _i(ː)</rule>
     <rule>ʃ &gt; s₂ / {i,j}_</rule>
-    <rule>VNC &gt; V:[+ long]C:[+voiced]</rule>
+    <rule>VNC &gt; V:[+ long]C:[+ voice]</rule>
   </section>
   <section index="6.1.1" name="Proto-Omotic to North Omotic">
     <cite>Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)</cite>
     <rule>u o &gt; i e</rule>
     <rule>e &gt; i / #N_C</rule>
-    <rule>e &gt; i / #l_{P,C:[+voiced]}</rule>
+    <rule>e &gt; i / #l_{P,C:[+ voice]}</rule>
     <rule>e &gt; i / #b_</rule>
     <rule>e &gt; i / p_r</rule>
     <rule>e &gt; i / #{s,ʃ,tsʼ}_{k(w),ʔ}</rule>
@@ -883,8 +883,8 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>V &gt; ∅ / _# ! some monosyllables and analogical developments, in the latter of which long vowels were shortened</rule>
     <rule>{a,ə} &gt; ∅ / _{x,h} “in the odd-numbered of any sequence of one or more short-vowel open syllables”; such vowels are considered “weak”</rule>
     <rule>ə:[+weak] &gt; ∅ / #_C</rule>
-    <rule sporadic="true">ə:[+weak] &gt; ∅ / _C:[+voiced]</rule>
-    <rule>a:[+weak] ə:[+weak] &gt; ə ∅ / a_Z:[+voiced]</rule>
+    <rule sporadic="true">ə:[+weak] &gt; ∅ / _C:[+ voice]</rule>
+    <rule>a:[+weak] ə:[+weak] &gt; ə ∅ / a_Z:[+ voice]</rule>
     <comment>NC sequences assimilate the nasal to the POA of the following consonant, which is then voiced</comment>
     <comment>Synchronic alterations:</comment>
     <rule>ə &gt; o / _h{p,kʷ,w,m}</rule>
@@ -947,7 +947,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>C:[- nasal] &gt; h / _k</rule>
     <rule>h &gt; ʔ / _{s,ʃ}</rule>
     <rule>hs hʃ &gt; s:[+ long] ʃ:[+ long] / sporadic, usually {#,V:[+front]}_</rule>
-    <rule>C:[-voiced] &gt; C:[+voiced] / N_</rule>
+    <rule>C:[- voice] &gt; C:[+ voice] / N_</rule>
     <rule>VNs VNʃ &gt; V:[+ nasal]z V:[+ nasal]ʒ / not universal?</rule>
     <rule sporadic="true">S &gt; ⁿS / #NV_</rule>
     <rule>s ʃ &gt; ⁿs ⁿʃ / U:[- nasal] (highly sporadic)</rule>
@@ -1297,7 +1297,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>{pj,bj} {tj,dj} {cj,ɟj} &gt; b d j</rule>
     <rule>ɓ ɗ &gt; b d (Only seems to have occurred with first-register tones)</rule>
     <rule>{n̥j,nj,ɲ̊j,ɲj} &gt; ɲ j</rule>
-    <rule>N:[-voiced] W:[-voiced] &gt; N:[+voiced] W:[+voiced]</rule>
+    <rule>N:[- voice] W:[- voice] &gt; N:[+ voice] W:[+ voice]</rule>
     <rule>(h)ə{p,b} &gt; t / _l</rule>
     <rule>m &gt; ∅ / _l</rule>
     <rule>tɹ &gt; tʰ</rule>
@@ -1313,7 +1313,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ɓ ɗ &gt; m n (For some reason it seems that only first-register tones can occur in this environment)</rule>
     <rule>{n̥j,nj,ɲ̊j,ɲj} &gt; ɲ (Thompson appears to me to have hedged a bit on the last one; based on other evidence in the paper I’m sticking this one as a palatal nasal)</rule>
     <rule>tʃ &gt; Ω (This is my own notation. I don’t have a clue what the intermediate form was; became something else in different dialects)</rule>
-    <rule>N:[-voiced] W:[-voiced] &gt; N:[+voiced] W:[+voiced]</rule>
+    <rule>N:[- voice] W:[- voice] &gt; N:[+ voice] W:[+ voice]</rule>
     <rule>((h)ə)p d &gt; b t / _l</rule>
     <rule>t &gt; ∅ / _ɹ (only first-register tones can occur in this environment)</rule>
     <rule>t*ʰ d ɡ &gt; tʰ t k / _w</rule>
@@ -1645,7 +1645,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ɟ &gt; ʔ</rule>
     <rule>l &gt; d / _{C,#}</rule>
     <rule>ɾ &gt; ɡ</rule>
-    <rule>O &gt; O:[-voiced] / _{C,#}</rule>
+    <rule>O &gt; O:[- voice] / _{C,#}</rule>
     <rule>∅ &gt; j / i_a</rule>
     <rule>∅ &gt; w / u_a</rule>
     <rule>∅ &gt; w / a_u</rule>
@@ -1802,9 +1802,9 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule sporadic="true">i u &gt; ɛ ɔ / _C# ! _P</rule>
     <rule sporadic="true">ʀ &gt; ʔ / _#</rule>
     <rule>ʀ &gt; ɾ</rule>
-    <rule>a &gt; i / O:[+voiced]…_(C)# “(blocked if there was an intervening nasal, and sometimes if there was an intervening voiceless stop or liquid)”</rule>
+    <rule>a &gt; i / O:[+ voice]…_(C)# “(blocked if there was an intervening nasal, and sometimes if there was an intervening voiceless stop or liquid)”</rule>
     <rule>i u &gt; əi̯ əu̯ / _(ʔ)#</rule>
-    <rule>əi̯ əu̯ &gt; ai̯ au̯ / ! O:[+voiced] earlier in the word</rule>
+    <rule>əi̯ əu̯ &gt; ai̯ au̯ / ! O:[+ voice] earlier in the word</rule>
     <rule>bʱ {dʱ,dzʱ} ɡʱ &gt; f s k</rule>
     <rule>f &gt; s</rule>
     <rule>v ɡ ɟ &gt; f k c / V_V</rule>
@@ -4127,11 +4127,11 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>iji &gt; i:[+ long] / U:[- stress](C…)_</rule>
     <rule>iji &gt; i:[+ long] / U:[+ long + closed]_ in the stem</rule>
     <rule>i &gt; ∅ / _ji</rule>
-    <rule>m &gt; β / C:[- voiced]_n, when medial</rule>
-    <rule>m &gt; ɸ / C:[+ voiced]_n, when medial</rule>
+    <rule>m &gt; β / C:[- voice]_n, when medial</rule>
+    <rule>m &gt; ɸ / C:[+ voice]_n, when medial</rule>
     <rule>n:[+ long] &gt; n / _C ! _j</rule>
     <rule>β &gt; b / {r,l}_</rule>
-    <rule>ð &gt; d / C:[+ voiced]_</rule>
+    <rule>ð &gt; d / C:[+ voice]_</rule>
     <rule>β ð ɣ &gt; ɸ θ x / V_(s)#</rule>
     <comment>“The final -h [= /h/?] in unaccented particles was often assimilated to the initial consonant of the following word”</comment>
     <rule>ɣ &gt; ɡ / #_</rule>
@@ -4239,10 +4239,10 @@ Journal of American Linguistics, 40:102 – 116</cite>
   </section>
   <section index="17.7.2.1.5" name="Early Modern English to American English">
     <cite>Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. &lt;http://wiki.firespeaker.org/English_sound_changes; and my Phonetic Description class&gt;</cite>
-    <rule sporadic="true">æ &gt; æ:[+ long] / _{F:[-voiced],N:[-voiced]}</rule>
-    <rule sporadic="true">æ &gt; ː  / _{F:[-voiced],N:[-voiced]}</rule>
-    <rule>ɒ &gt; ɒ:[+ long] / _F:[-voiced]</rule>
-    <rule>ɒ:[+ long] &gt; ɔ:[+ long] / _F:[-voiced]</rule>
+    <rule sporadic="true">æ &gt; æ:[+ long] / _{F:[- voice],N:[- voice]}</rule>
+    <rule sporadic="true">æ &gt; ː  / _{F:[- voice],N:[- voice]}</rule>
+    <rule>ɒ &gt; ɒ:[+ long] / _F:[- voice]</rule>
+    <rule>ɒ:[+ long] &gt; ɔ:[+ long] / _F:[- voice]</rule>
     <rule>æ:[+ long] ɑ:[+ long] ɔ:[+ long] &gt; æə~eə ɑ ɔ</rule>
     <rule sporadic="true">ʍ &gt; w</rule>
     <rule sporadic="true">l &gt; ɫ</rule>
@@ -4263,10 +4263,10 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <cite>Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. &lt;http://wiki.firespeaker.org/English_sound_changes&gt;; and my Phonetic Description class</cite>
     <rule>ɜ:[+ long]ɹ ɑ:[+ long]ɹ ɔ:[+ long]ɹ e:[+ long]ɹ o:[+ long]ɹ i:[+ long]ɹ u:[+ long]ɹ &gt; ɜ:[+ long] ɑ:[+ long] ɔ:[+ long] ɛə ɔə ɪə ʊə / syllable-finally</rule>
     <rule>ɑ &gt; ɒ</rule>
-    <rule>æ &gt; æ:[+ long] / _{F:[-voiced],N:[-voiced]}</rule>
-    <rule>æ:[+ long] &gt; ɑ:[+ long] / _{F:[-voiced],N:[-voiced]}</rule>
-    <rule>ɒ &gt; ɒ:[+ long] / _F:[-voiced]</rule>
-    <rule>ɒ:[+ long] &gt; ɔ:[+ long] / _F:[-voiced]</rule>
+    <rule>æ &gt; æ:[+ long] / _{F:[- voice],N:[- voice]}</rule>
+    <rule>æ:[+ long] &gt; ɑ:[+ long] / _{F:[- voice],N:[- voice]}</rule>
+    <rule>ɒ &gt; ɒ:[+ long] / _F:[- voice]</rule>
+    <rule>ɒ:[+ long] &gt; ɔ:[+ long] / _F:[- voice]</rule>
     <rule>ʍ &gt; w</rule>
     <rule>l &gt; ɫ</rule>
     <rule>oʊ i:[+ long] &gt; ɔʊ ɪə / _ɫ</rule>
@@ -4291,7 +4291,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ɫj &gt; ɫi / “after any segment after which coda-/ɫ/ is forbidden, e.g. failure [fæiɫiɐ]”</rule>
     <rule>tj dj &gt; tʃ dʒ</rule>
     <rule>ɔ:[+ long] &gt; ɔ / _ɹV:[-stress]</rule>
-    <rule>ɔ:[+ long] &gt; ɔ / _F:[-voiced]</rule>
+    <rule>ɔ:[+ long] &gt; ɔ / _F:[- voice]</rule>
     <rule>ɔ &gt; ɔ:[+ long] / “in ‘gone’ and some derivatives”</rule>
     <rule>æ &gt; æ:[+ long] / _{n,m,ɡ,ɫ% ! _n,m,ɡ,ɫ}%{j,w} or a form of a strong verb</rule>
     <rule>æ &gt; æ:[+ long] / _d (rare) ! form of a strong verb</rule>
@@ -4300,10 +4300,10 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <cite>Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. &lt;http://wiki.firespeaker.org/English_sound_changes&gt;</cite>
     <rule>ɜ:[+ long]ɹ ɑ:[+ long]ɹ ɔ:[+ long]ɹ e:[+ long]ɹ o:[+ long]ɹ i:[+ long]ɹ u:[+ long]ɹ &gt; ɜ:[+ long] ɑ:[+ long] ɔ:[+ long] ɛə ɔə ɪə ʊə / syllable-finally</rule>
     <rule>ɑ &gt; ɒ</rule>
-    <rule>æ &gt; æ:[+ long] / _{F:[-voiced],N:[-voiced]}</rule>
-    <rule>æ:[+ long] &gt; ɑ:[+ long] / _{F:[-voiced],N:[-voiced]}</rule>
-    <rule>ɒ &gt; ɒ:[+ long] / _F:[-voiced]</rule>
-    <rule>ɒ:[+ long] &gt; ɔ:[+ long] / _F:[-voiced]</rule>
+    <rule>æ &gt; æ:[+ long] / _{F:[- voice],N:[- voice]}</rule>
+    <rule>æ:[+ long] &gt; ɑ:[+ long] / _{F:[- voice],N:[- voice]}</rule>
+    <rule>ɒ &gt; ɒ:[+ long] / _F:[- voice]</rule>
+    <rule>ɒ:[+ long] &gt; ɔ:[+ long] / _F:[- voice]</rule>
     <rule>ʍ &gt; w</rule>
     <rule>l &gt; ɫ / “in coda”</rule>
     <rule>oʊ &gt; əʊ</rule>
@@ -4366,8 +4366,8 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>æ &gt; ɛ / _C:[+alveolar]</rule>
     <rule>a ɔ u &gt; {a,ɑ} ɔ ʌ</rule>
     <comment>Application of the Scottish vowel-length rule:</comment>
-    <rule>V &gt; V:[+ long] / _{r,F:[+voiced],$,#}</rule>
-    <rule>əi &gt; aɪ / _{r,F:[+voiced],$,#}</rule>
+    <rule>V &gt; V:[+ long] / _{r,F:[+ voice],$,#}</rule>
+    <rule>əi &gt; aɪ / _{r,F:[+ voice],$,#}</rule>
   </section>
   <section index="17.7.2.1.10" name="Old English to Scots">
     <cite>Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from personal research</cite>
@@ -4601,7 +4601,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ɡ &gt; ʝ / _E ; (singleton only)</rule>
     <rule>ɡ &gt; ɣ / _V ; (singleton only)</rule>
     <rule>ɡ &gt; x / _#</rule>
-    <rule>F:[-voice] &gt; F:[+voice] / X:[+voiced]_X:[+voiced]?</rule>
+    <rule>F:[-voice] &gt; F:[+voice] / X:[+ voice]_X:[+ voice]?</rule>
     <comment>Umlaut applies; going by the orthography, only a &gt; e / _(C…){i(ː),j} is often marked (and even then haphazardly), but based upon reflexes in the daughter languages it seems that the umlaut had to apply to the other back vowels too</comment>
   </section>
   <section index="17.7.3" name="Common Germanic to Proto-Norse">
@@ -4738,7 +4738,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>E:[+ long]{u,o}ː E:[+ long]a:[+ long] &gt; jo:[+ long] ja:[+ long] / {v,w}_</rule>
     <rule>θ &gt; t / {p,t,k}_</rule>
     <rule>θ:[+ long] ð:[+ long] &gt; t:[+ long] d:[+ long]</rule>
-    <rule>θ f &gt; ð v / {V,C:[+ voiced]}_{V,C:[+ voiced]}</rule>
+    <rule>θ f &gt; ð v / {V,C:[+ voice]}_{V,C:[+ voice]}</rule>
     <rule>h &gt; ∅ / C_t</rule>
     <rule>ht &gt; t:[+ long]</rule>
     <rule>hw &gt; ∅ / ! #_</rule>
@@ -5300,7 +5300,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>VN VC:[- nasal] &gt; V:[+ nasal] V:[+ long] / _#</rule>
     <rule>a{i,j}(a) a{u,w}(a) &gt; e o</rule>
     <rule>j w &gt; dʒ b / V_V</rule>
-    <rule>C &gt; C:[+voiced] / V_V</rule>
+    <rule>C &gt; C:[+ voice] / V_V</rule>
     <rule>{bʱ,dʱ,ɡʱ} {j,v} &gt; h ∅ / V_V</rule>
     <rule>Vm &gt; Vv / _V</rule>
     <rule>Vv &gt; V:[+ nasal]v / _V</rule>
@@ -5321,7 +5321,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>VN VC:[- nasal] &gt; V:[+ nasal] V:[+ long] / _#</rule>
     <rule>a{i,j}(a) a{u,w}(a) &gt; e o</rule>
     <rule>j w &gt; dʒ b / V_V</rule>
-    <rule>C &gt; C:[+voiced] / V_V</rule>
+    <rule>C &gt; C:[+ voice] / V_V</rule>
     <rule>{bʱ,dʱ,ɡʱ} {j,v} &gt; h ∅ / V_V</rule>
     <rule>b {d,dʒ,ɡ} &gt; v j / V_V</rule>
     <rule>Vm &gt; Vv / _V</rule>
@@ -5344,7 +5344,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>VN VC:[- nasal] &gt; V:[+ nasal] V:[+ long] / _#</rule>
     <rule>a{i,j}(a) a{u,w}(a) &gt; e o</rule>
     <rule>j w &gt; dʒ b / V_V</rule>
-    <rule>C &gt; C:[+voiced] / V_V</rule>
+    <rule>C &gt; C:[+ voice] / V_V</rule>
     <rule>{bʱ,dʱ,ɡʱ} {j,v} &gt; h ∅ / V_V</rule>
     <rule>Vm &gt; Vv / _V</rule>
     <rule>Vv &gt; V:[+ nasal]v / _V</rule>
@@ -5366,7 +5366,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>VN VC:[- nasal] &gt; V:[+ nasal] V:[+ long] / _#</rule>
     <rule>a{i,j}(a) a{u,w}(a) &gt; e o</rule>
     <rule>j w &gt; dʒ b / V_V</rule>
-    <rule>C &gt; C:[+voiced] / V_V</rule>
+    <rule>C &gt; C:[+ voice] / V_V</rule>
     <rule>{bʱ,dʱ,ɡʱ} {j,v} &gt; h ∅ / V_V</rule>  
     <rule>Vm &gt; Vv / _V</rule>   
     <rule>Vv &gt; V:[+ nasal]v / _V</rule>
@@ -5462,7 +5462,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>i(ː)ʐ &gt; {ɛ(ː)r,ɛ(ː)ʐ}</rule>
     <rule>{ɛ(ː)r,ɛ(ː)ʐ} &gt; {ɛr,ɛʐ}</rule>
     <rule>{ɛ̃,ɔ̃} &gt; ã</rule>
-    <rule>a ɛ i ɔ u ɨ ã &gt; a:[+ long] ɛ:[+ long] i:[+ long] ɔ:[+ long] u:[+ long] ɨ:[+ long] ã:[+ long] / _{C/U}:[+voiced][lost yer] (i.e., a voiced consonant or a cluster with one)</rule>
+    <rule>a ɛ i ɔ u ɨ ã &gt; a:[+ long] ɛ:[+ long] i:[+ long] ɔ:[+ long] u:[+ long] ɨ:[+ long] ã:[+ long] / _{C/U}:[+ voice][lost yer] (i.e., a voiced consonant or a cluster with one)</rule>
     <rule>ajɛ &gt; ɛ:[+ long] in adjectives, a:[+ long] in verbs</rule>
     <rule>{aja,ɔja} {ɔjɛ,ɨjɛ} ɨjɛ &gt; a:[+ long] ɛ:[+ long] i:[+ long]</rule>
     <rule>{ɛ(ː)jɛ,ьjɛ,ɔjɛ,ujɛ,ɨjɛ} &gt; ɛ:[+ long]</rule>
@@ -5495,9 +5495,9 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>kɨ ɡɨ &gt; kʲi ɡʲi</rule>
     <rule>ʃi ʒi tʃi dʒi ɕi ʑi &gt; ʂɨ ʐɨ ʈʂɨ ɖʐɨ tsɨ ʒɨ</rule>
     <rule>ʃ ʒ tʃ dʒ ɕ ʑ &gt; ʂ ʐ ʈʂ ɖʐ ts ʒ</rule>
-    <rule>r̝ &gt; ʂ / C:[-voiced]_</rule>
-    <rule>r̝ &gt; ʂ / _C:[+voiced]</rule>
-    <rule>ŕ &gt; ʐ / _ ! _C:[+voiced]</rule>
+    <rule>r̝ &gt; ʂ / C:[- voice]_</rule>
+    <rule>r̝ &gt; ʂ / _C:[+ voice]</rule>
+    <rule>ŕ &gt; ʐ / _ ! _C:[+ voice]</rule>
     <rule>ɛ &gt; ɔ / _ɫ (if the vowel was from a yer)</rule>
     <rule sporadic="true">{ɛ,a} &gt; ɔ</rule>
     <rule sporadic="true">V &gt; ɛ</rule>
@@ -5532,10 +5532,10 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>zʐ &gt; ʐɖʐ</rule>
     <rule>ʑ z &gt; dʑ dz / _v</rule>
     <rule>∅ &gt; d / r_z</rule>
-    <rule>v r̝ &gt; f r̥ / C:[-voiced]_</rule>
-    <rule>v r̝ &gt; f r̥ / _{C:[-voiced],#}</rule>
+    <rule>v r̝ &gt; f r̥ / C:[- voice]_</rule>
+    <rule>v r̝ &gt; f r̥ / _{C:[- voice],#}</rule>
     <rule>r̝̊ r̝ &gt; ʂ ʐ</rule>
-    <rule sporadic="true">Lv &gt; L:[-voiced]f / O:[-voiced]_</rule>
+    <rule sporadic="true">Lv &gt; L:[- voice]f / O:[- voice]_</rule>
     <rule>v &gt; ∅ / x_o</rule>
     <rule>{xv,pv} &gt; f</rule>
     <rule>plv &gt; pf</rule>
@@ -5705,14 +5705,14 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>θ &gt; f / #_r</rule>
     <rule>s &gt; θ / _r</rule>
     <rule>θ &gt; b / _r</rule>
-    <rule>s &gt; z / _C:[+voiced]</rule>
-    <rule>V &gt; V:[+ long] / _zC:[+voiced]</rule>
-    <rule>z &gt; ∅ / _C:[+voiced]</rule>
+    <rule>s &gt; z / _C:[+ voice]</rule>
+    <rule>V &gt; V:[+ long] / _zC:[+ voice]</rule>
+    <rule>z &gt; ∅ / _C:[+ voice]</rule>
     <rule>p…kʷ &gt; kʷ…kʷ</rule>
     <rule sporadic="true">V₁…V₂ &gt; V₂…V₂</rule>
-    <rule>V &gt; V:[+ long] / _S:[+voiced]{S:[-voiced],F:[-voiced]}; “(i, e, and o sometimes bypass this)”</rule>
-    <rule>S:[+voiced] &gt; S:[-voiced] / _{S:[-voiced],F:[-voiced]}</rule>
-    <rule>S:[-voiced] &gt; S:[+voiced] / _N</rule>
+    <rule>V &gt; V:[+ long] / _S:[+ voice]{S:[- voice],F:[- voice]}; “(i, e, and o sometimes bypass this)”</rule>
+    <rule>S:[+ voice] &gt; S:[- voice] / _{S:[- voice],F:[- voice]}</rule>
+    <rule>S:[- voice] &gt; S:[+ voice] / _N</rule>
     <rule>s &gt; z / _{N,l,r}</rule>
     <rule>V &gt; V:[+ long] / _z{l,r}</rule>
     <rule>z &gt; ∅ / _{l,r}</rule>
@@ -6014,7 +6014,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ɛ̃ &gt; ã</rule>
     <rule>{aı̃,eı̃} &gt; ɛ̃</rule>
     <rule>ỹ &gt; œ̃</rule>
-    <rule>O:[+voiced] &gt; O:[-voiced] / _#</rule>
+    <rule>O:[+ voice] &gt; O:[- voice] / _#</rule>
     <rule>{t,s} &gt; ∅ / _#</rule>
     <rule>k &gt; ∅ / V:[+ nasal]_#</rule>
     <rule>{n,m} &gt; ∅ / C_#</rule>
@@ -6122,8 +6122,8 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>fl &gt; {ʃ,fr} / #_</rule>
     <rule>{fl,skl} &gt; ʃ</rule>
     <rule>nɡi &gt; ɲ</rule>
-    <rule>s &gt; ʃ / V_C:[-voiced]V</rule>
-    <rule>s &gt; ʒ / V_C:[+voiced]V</rule>
+    <rule>s &gt; ʃ / V_C:[- voice]V</rule>
+    <rule>s &gt; ʒ / V_C:[+ voice]V</rule>
     <rule>kl &gt; kʎ / #_</rule>
     <rule>kʎ &gt; tʃ / #_</rule>
     <rule>tʃ &gt; ʃ / #_</rule>
@@ -6474,8 +6474,8 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>u:[+ long] &gt; y (&gt; i in most descendants, with the exception of Engadine)</rule>
     <rule>a V &gt; e (= /ə/?) ∅ / in final syllables (though Friulian preserves the ending -is)</rule>
     <rule>k ɡ &gt; tʃ dʒ / _a (note the similarity with some varieties of Old Provençal)</rule>
-    <rule>C:[+ voiced] &gt; ∅ / V_V (only for obstruents?)</rule>
-    <rule>C:[- voiced] &gt; C:[+ voiced] / V_V</rule>
+    <rule>C:[+ voice] &gt; ∅ / V_V (only for obstruents?)</rule>
+    <rule>C:[- voice] &gt; C:[+ voice] / V_V</rule>
     <comment>Final /s/ preserved</comment>
   </section>
   <section index="17.12.1.1.8" name="Latin to Romanian">
@@ -6792,7 +6792,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
   <section index="18.1.1" name="Pre-Bakairi to Eastern Bakairi">
     <cite>Pogostick Man, from Meira, Sérgio (2005), “Reconstructing Pre-Bakairi Segmental Phonology”. Anthropological Linguistics 47(3):261 – 291</cite>
     <rule>VNV &gt; ṼṼ / ! _(C)#</rule>
-    <rule>ʔ &gt; ∅ / _C:[+ fricative - voiced]</rule>
+    <rule>ʔ &gt; ∅ / _C:[+ fricative - voice]</rule>
     <rule>ɾ &gt; ∅ / V_V, when neither vowel is stressed</rule>
   </section>
   <section index="18.1.2" name="Pre-Bakairi to Western Bakairi">
@@ -6800,7 +6800,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>V:[- stress]NV &gt; ṼṼ</rule>
     <rule>z &gt; h / V_a</rule>
     <rule>z &gt; ∅ / V_V</rule>
-    <rule>C:[+ fricative - voiced] &gt; ∅ / ʔ_</rule>
+    <rule>C:[+ fricative - voice] &gt; ∅ / ʔ_</rule>
     <rule>ɨ &gt; ə / P_</rule>
     <rule>ɨ &gt; i</rule>
     <rule>ʒ &gt; ∅</rule>
@@ -7238,7 +7238,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ts(ʼ) s &gt; tʃ(ʼ) ʃ</rule>
     <rule>!! ʘ &gt; ǁ ǀ</rule>
     <rule>ʔ &gt; ∅ / _nQ</rule>
-    <rule>ⁿQʰ {ǀʰ͜q,ǀʰ͜ɢ} Q͡q &gt; ⁿQ(ʰ) ⁿǀʰ Q:[+voiced]</rule>
+    <rule>ⁿQʰ {ǀʰ͜q,ǀʰ͜ɢ} Q͡q &gt; ⁿQ(ʰ) ⁿǀʰ Q:[+ voice]</rule>
   </section>
   <section index="21" name="Lakes Plain" />
   <section index="21.1" name="Proto-Lakes Plain to Proto-Far West">
@@ -8105,7 +8105,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>K &gt; {K,TŠ}</rule>
     <rule>w &gt; v (&gt; w in Shageluk dialect)</rule>
     <rule>ɲ &gt; ŋ</rule>
-    <rule>R F &gt; R:[-voiced] F:[-voiced] / _# in suffixes</rule>
+    <rule>R F &gt; R:[- voice] F:[- voice] / _# in suffixes</rule>
     <rule>e u a {ɑ,ʊ} &gt; a i u ə</rule>
     <rule>C’ &gt; C / _$</rule>
     <rule>Vˀ &gt; V:[-glottalized]</rule>
@@ -8360,7 +8360,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>Vˀ &gt; V:[+high tone]</rule>
     <rule>Vɲ &gt; V:[+ nasal]</rule>
     <rule>{n,ɲ} &gt; ⁿd</rule>
-    <rule>F:[+voiced] &gt; F:[-voiced] / _$</rule>
+    <rule>F:[+ voice] &gt; F:[- voice] / _$</rule>
     <rule>ʃ &gt; h / in the “1sg subject prefix”</rule>
     <rule>ɬ &gt; h / in the grammatical classifier</rule>
     <rule>ɑ ə ʊ &gt; {æ̆,ă} æ̆ ŏ</rule>
@@ -8451,12 +8451,12 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ʄ C &gt; c R / #_</rule>
     <rule>ɠʷ &gt; w / #_V:[- nasal]</rule>
     <rule>ɠʷ &gt; w̃ / #_V:[+ nasal]</rule>
-    <rule>V:[+ nasal] &gt; V:[- nasal] / #S:[+voiced]_</rule>
+    <rule>V:[+ nasal] &gt; V:[- nasal] / #S:[+ voice]_</rule>
     <rule>ɪ̃ &gt; ɛ̃ / #(C)V_C</rule>
     <rule>ɰ ɰ̃ &gt; j j̃ / #C_</rule>
     <rule>ɪ ɪ̃ &gt; i ı̃ / #(C)V:[-high]C_</rule>
     <rule>ʋ̃ &gt; m / #(C)V_</rule>
-    <rule>O:[+nas -voiced] &gt; O:[- nasal] / #(C)VC_</rule>
+    <rule>O:[+nas - voice] &gt; O:[- nasal] / #(C)VC_</rule>
   </section>
   <section index="30.1.1" name="Pre-Proto-Bantu to Proto-Bantu">
     <cite>Pogostick Man, from Hedinger, Robert (1987), The Manenguba Languages (Bantu A.15, Mbo Cluster) of Cameroon</cite>
@@ -8470,7 +8470,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>S &gt; Sʰ</rule>
     <rule>Sʰ &gt; Aʰ</rule>
     <rule>V:[+high +ATR] &gt; V:[+high -ATR]</rule>
-    <rule sporadic="true">NC &gt; C:[-voiced] / #_</rule>
+    <rule sporadic="true">NC &gt; C:[- voice] / #_</rule>
     <rule sporadic="true">NC &gt; N:[+same POA]C / #_</rule>
     <rule>t d l &gt; {ʈ,tʲ} {ɖ,dʲ} {ɭ,lʲ,ʎ} (The paper is a bit unclear as to which is meant, as the transcription and the textual aspects of the paper seem to disagree here)</rule>
     <rule>p t d c ɟ k ɡ &gt; ɸ ɹ {d,l} tʰ ∅ h {∅,ɡ}</rule>
@@ -8539,13 +8539,13 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>ɪ(Cɪ) &gt; e(Ci) / t_ ;; “vowel nasalizations are retained either way on each”</rule>
     <rule>ɟ ʄ j c ɠʷ &gt; c ɟ ʄ t ɠ̥p</rule>
     <rule>(N)V₁:[+mid +nas](l̃) &gt; CV:[- nasal]n</rule>
-    <rule>V:[+ nasal](ʋ̃,l̃) &gt; V:[- nasal](m,n) / #J:[+voiced]_</rule>
+    <rule>V:[+ nasal](ʋ̃,l̃) &gt; V:[- nasal](m,n) / #J:[+ voice]_</rule>
   </section>
   <section index="30.2.1" name="Proto-Potou-Akanic to Proto-Akanic">
     <cite>Pogostick Man, from Stewart, John M. (2002), “The potential of proto-Potou-Akanic-Bantu as a pilot Proto-Niger-Congo, and the reconstructions updated”. JALL 23:197 – 224</cite>
-    <rule>V:[+high +ATR](C(V:[+high -ATR])) &gt; #(C)V:[-high +ATR](CV:[+high +ATR]) / #J:[+dorsal -voiced]_</rule>
+    <rule>V:[+high +ATR](C(V:[+high -ATR])) &gt; #(C)V:[-high +ATR](CV:[+high +ATR]) / #J:[+dorsal - voice]_</rule>
     <rule>ɛ &gt; ia / #(C)_</rule>
-    <rule>R:[-voiced] R:[+voiced] W &gt; Z:[-voiced] O:[-voiced] F / #_</rule>
+    <rule>R:[- voice] R:[+ voice] W &gt; Z:[- voice] O:[- voice] F / #_</rule>
     <rule>ɰ ɰ̃ w̃ &gt; h h̃ h̃ʷ / #_</rule>
     <rule>h̃ hʷ &gt; ɕ ɕʷ</rule>
     <rule>h &gt; ɲı̃ / #_ã</rule>
@@ -10139,11 +10139,11 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <cite>cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg</cite>
     <rule>ts &gt; t / _(h)r</rule>
     <rule>t &gt; k / _j</rule>
-    <rule>V &gt; V:[-voiced] / _h “(odd syllables only)”</rule>
+    <rule>V &gt; V:[- voice] / _h “(odd syllables only)”</rule>
     <rule>tʔ tsʔ kʔ kʷʔ &gt; tʼ tsʼ kʼ kʷʼ</rule>
     <comment>“Allophonic changes:”</comment>
     <rule>s &gt; ʃ / _{r,j}</rule>
-    <rule>t k kʷ &gt; d ɡ ɡʷ / _{V,R} ! _V:[-voiced]</rule>
+    <rule>t k kʷ &gt; d ɡ ɡʷ / _{V,R} ! _V:[- voice]</rule>
   </section>
   <section index="37.1.2.2" name="Proto-Northern Iroquoian to Huron">
     <cite>cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg</cite>
@@ -11502,7 +11502,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
   <section index="43.5.1" name="Mono-Kawaiisu"/>
   <section index="43.5.1.1" name="Proto-Mono-Kawaiisu to Kawaiisu">
     <cite>Pogostick Man, from Klein, Sheldon (1959), “Comparative Mono-Kawaiisu”. International Journal of American Linguistics 25(4):233 – 238</cite>
-    <rule>hkʷ hʔ (h)S S:[+ long] &gt; w ʔ S:[+ voiced] S:[- voiced - long] / V_V</rule>
+    <rule>hkʷ hʔ (h)S S:[+ long] &gt; w ʔ S:[+ voice] S:[- voice - long] / V_V</rule>
     <rule>ts &gt; z / V_V</rule>
     <rule>hts &gt; z / V_i</rule>
     <rule>h &gt; ∅ / V_tsV</rule>
@@ -11573,7 +11573,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <comment>— At least one reconstruction seems to indicate *s and *ś, which may have been an affricate and /s/. Pretty reliably, *-s tends to turn into -ts̺, and *-ś &gt; -ts̻, probably after the below-mentioned affrication. Beyond that, it’s messy. *-tso seems to have become -tʃo/-tʃu, though.</comment>
     <rule>Sʰ &gt; F / #_</rule>
     <rule>F &gt; h (&gt; ∅) / #_</rule>
-    <rule>S &gt; S:[+ voiced] / #_</rule>
+    <rule>S &gt; S:[+ voice] / #_</rule>
     <comment>“[T]wo similar vocalic segments” usually contract, though some dialects (especially Biscayan) seem not to exhibit this</comment>
     <rule sporadic="true">Vn &gt; Ṽ / _#</rule>
     <rule>Vn &gt; Ṽ / _V</rule>
@@ -11597,7 +11597,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>*L (fortis) &gt; l</rule>
     <rule>ð &gt; some sort of tap distinct from ɾ (Biscayan, Guipuscoan, High Navarrese)</rule>
     <rule sporadic="true">b &gt; ∅ / #_B</rule>
-    <rule sporadic="true">F:[+ voiced] &gt; ∅ / V_V</rule>
+    <rule sporadic="true">F:[+ voice] &gt; ∅ / V_V</rule>
     <rule>S:[+ voice] &gt; S:[- voice] / F:[+ sibilant]_</rule>
     <rule sporadic="true">Ṽ &gt; Vɲ / _V</rule>
     <rule sporadic="true">Ṽ &gt; Vn</rule>
@@ -11779,8 +11779,8 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <rule>æ &gt; ɛ / _C:[+alveolar]</rule>
     <rule>a ɔ u &gt; {a,ɑ} ɔ ʌ</rule>
     <comment>Application of the Scottish vowel-length rule:</comment>
-    <rule>V &gt; V:[+ long] / _{r,F:[+voiced],$,#}</rule>
-    <rule>əi &gt; aɪ / _{r,F:[+voiced],$,#}</rule>
+    <rule>V &gt; V:[+ long] / _{r,F:[+ voice],$,#}</rule>
+    <rule>əi &gt; aɪ / _{r,F:[+ voice],$,#}</rule>
   </section>
   <section index="46.6" name="Great Ngamo Tone Shift">
     <cite>Pogostick Man, from Schuh, Russel (2005), “The Great Ngamo Tone Shift”</cite>
@@ -11904,7 +11904,7 @@ Journal of American Linguistics, 40:102 – 116</cite>
     <cite>Pogostick Man, from Wikipedia contributors (2012), “Southern American English”.</cite>
     <rule>ɛ &gt; ɪ / _N</rule>
     <rule>aɪ &gt; a:[+ long] / _#</rule>
-    <rule>aɪ &gt; a:[+ long] / _C:[+ voiced]</rule>
+    <rule>aɪ &gt; a:[+ long] / _C:[+ voice]</rule>
     <rule>aɪ &gt; ɑe:[+ long] / else (only for some speakers)</rule>
     <rule>aɪ &gt; a:[+ long] / else (only for some speakers)</rule>
     <rule>æ ɛ ɪ &gt; æj(ə) ɛj(ə) ɪj(ə)</rule>

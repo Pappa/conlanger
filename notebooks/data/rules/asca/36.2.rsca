@@ -31,7 +31,7 @@
 	uj > uɛi / {P,C:[+guttural],∅}_
 	uj > ui / {C:[+dental],C:[+sibilant]}_
 	ujʔ > uɛʔ
-	un > uɛn / ! {C:[+dental],C:[+sibilant]}_
+	un > uɛn / | {C:[+dental],C:[+sibilant]}_
 	uɛn > ɛn / ʋ_
 	uŋ > oŋ (in one source?)
 	juŋ > iuŋ / _{∅,x,ʋ,ʔ}
@@ -52,14 +52,14 @@
 	yeʔ > yɛʔ
 	ye jej > yɛ i
 	jew > au / C̣(C?)_
-	jew > iau / _ ! C̣(C?)_
+	jew > iau / _ | C̣(C?)_
 	{jem,jen} > iɛn
 	yen > uɛn / C̣_
 	yen > yɛn
 	ɔ > a
 	wɔ > ɔ
 	wɔʔ > uɔʔ / C:[+guttural]_
-	wɔʔ > ɔʔ / _ ! C:[+guttural]_
+	wɔʔ > ɔʔ / _ | C:[+guttural]_
 	ɔn > an; “[t]his final occurs exclusively after SR gutturals”
 	wɔn ja wa > uɔn ia ua
 	aʔ > ɔʔ / C:[+guttural]_
@@ -73,7 +73,7 @@
 	am > an
 	{jam,jan} > iɛn
 	wan > an / C:[+labiodental]_
-	wan > uan / _ ! C:[+labiodental]_
+	wan > uan / _ | C:[+labiodental]_
 	aŋ jaŋ > uaŋ aŋ / C̣_
 	waŋ > uaŋ
 	əjʔ əw {əm,ən} > eʔ ɛu ɛn

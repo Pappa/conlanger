@@ -11,9 +11,9 @@
 	w > ∅ / h_V
 	a > o / $am_w
 	V > V:[+ long] “when V is the second vowel of a word and follows a short-vowel syllable. Does not apply in glottal words”
-	e > i / V:[+ long]%_ ! _H
+	e > i / V:[+ long]%_ | _H
 	N > h / _{O,r}
-	e > i / #(C)_ ! _H
+	e > i / #(C)_ | _H
 	e > i / _{k,m} “when in the second syllable of glottal words”
 	{w,j} > ∅ / C_#
 	C > ∅ / C_#
@@ -25,6 +25,6 @@
 	e(ː) i > æ(ː) e
 	i:[+ long] o:[+ long] oʔ > e:[+ long] u:[+ long] uʔ “[blocked when i:[+ long] or a C+G sequence follows anywhere in the word, but does apply if æ(ː) intervenes before any following i:[+ long] or C+G]”
 	{wi:[+ long],ji:[+ long],we:[+ long],je:[+ long],wæ:[+ long],jæ:[+ long]} {wi,ji,we,je,wæ,jæ} > i:[+ long] i / C_
-	æ > e / in odd syllables ! _{w,j,H}
+	æ > e / in odd syllables | _{w,j,H}
 	r > n
 	wa ja > uə̯ iə̯ / C_

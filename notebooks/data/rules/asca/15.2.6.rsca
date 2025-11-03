@@ -1,7 +1,7 @@
 @ 15.2.6 - Proto-Eskimo to Nunivak Yup’ik
 # citation: Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171
 	C:[+ long] > C
-	C > C:[+ long] / _V(…V) ! #U
+	C > C:[+ long] / _V(…V) | #U
 	S > ∅ / #_F
 	s > ts / in certain situations?
 	C:[+voice] > C:[-voice] / adjacent to {S,s,l̥}
@@ -23,6 +23,6 @@
 	iv > j / #_u
 	s > dʒ / {i,u}_V
 	dʒ > ∅ / i_i
-	ə > ∅ / _dʒ{a,u} ! #U
-	a > ∅ / _dʒa ! #U
+	ə > ∅ / _dʒ{a,u} | #U
+	a > ∅ / _dʒa | #U
 	in > dʒ / _u (possibly only word-initially?)

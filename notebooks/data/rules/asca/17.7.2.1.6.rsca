@@ -2,19 +2,19 @@
 # citation: Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. <http://wiki.firespeaker.org/English_sound_changes>; and my Phonetic Description class
 	ɜ:[+ long]ɹ ɑ:[+ long]ɹ ɔ:[+ long]ɹ e:[+ long]ɹ o:[+ long]ɹ i:[+ long]ɹ u:[+ long]ɹ > ɜ:[+ long] ɑ:[+ long] ɔ:[+ long] ɛə ɔə ɪə ʊə / syllable-finally
 	ɑ > ɒ
-	æ > æ:[+ long] / _{F:[-voiced],N:[-voiced]}
-	æ:[+ long] > ɑ:[+ long] / _{F:[-voiced],N:[-voiced]}
-	ɒ > ɒ:[+ long] / _F:[-voiced]
-	ɒ:[+ long] > ɔ:[+ long] / _F:[-voiced]
+	æ > æ:[+ long] / _{F:[- voice],N:[- voice]}
+	æ:[+ long] > ɑ:[+ long] / _{F:[- voice],N:[- voice]}
+	ɒ > ɒ:[+ long] / _F:[- voice]
+	ɒ:[+ long] > ɔ:[+ long] / _F:[- voice]
 	ʍ > w
 	l > ɫ
 	oʊ i:[+ long] > ɔʊ ɪə / _ɫ
-	oʊ i:[+ long] > əʊ ɪi / _ ! _ɫ
+	oʊ i:[+ long] > əʊ ɪi / _ | _ɫ
 	u:[+ long] > ʊə / _ɫ
 	ʊə > u:[+ long] / _ɫ
 	u:[+ long] > ʊʉ
 	ʊʉ > ʉ:[+ long] / else
-	ɫ > əɫ / ! if one of the above vowel changes after the formation of /ɫ/ apply
+	ɫ > əɫ / | if one of the above vowel changes after the formation of /ɫ/ apply
 	ɪ > i:[+ long] / _# when unstressed
 	ɪ > i:[+ long] / “unstressed foot-finally if the next syllable is stressed and begins with /k ɡ tʃ dʒ ʃ ʒ/”
 	ɪ > ə / [- stress]
@@ -22,7 +22,7 @@
 	t d > ɾ / V_V:[-stress]
 	ɔə > ɔ:[+ long]
 	ɛə ʊə > ɛ:[+ long] ɔ:[+ long]
-	ʊə > o:[+ long] / ! {j,dʒ}_
+	ʊə > o:[+ long] / | {j,dʒ}_
 	ʊə > ʉ:[+ long]wə / “almost always otherwise, but see [above vowel changes after /ɫ/ is formed]”
 	oə > o:[+ long]
 	j > ∅ / %{θ,s,z,l}_”V
@@ -30,7 +30,7 @@
 	ɫj > ɫi / “after any segment after which coda-/ɫ/ is forbidden, e.g. failure [fæiɫiɐ]”
 	tj dj > tʃ dʒ
 	ɔ:[+ long] > ɔ / _ɹV:[-stress]
-	ɔ:[+ long] > ɔ / _F:[-voiced]
+	ɔ:[+ long] > ɔ / _F:[- voice]
 	ɔ > ɔ:[+ long] / “in ‘gone’ and some derivatives”
-	æ > æ:[+ long] / _{n,m,ɡ,ɫ% ! _n,m,ɡ,ɫ}%{j,w} or a form of a strong verb
-	æ > æ:[+ long] / _d (rare) ! form of a strong verb
+	æ > æ:[+ long] / _{n,m,ɡ,ɫ% | _n,m,ɡ,ɫ}%{j,w} or a form of a strong verb
+	æ > æ:[+ long] / _d (rare) | form of a strong verb

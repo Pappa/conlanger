@@ -36,7 +36,7 @@
 	V > a / _{n,r}(C)V(C)#
 	V > V:[+ nasal] / _:[+ stress]N$C
 	ɔ̃ > õ
-	N > ∅ / V:[+ nasal]_$C ! C = S
+	N > ∅ / V:[+ nasal]_$C | C = S
 	V > V:[+ nasal] / _N$V
 	V > V:[+ nasal] / #N_
 	N > ∅ / V:[+ nasal]_$V
@@ -69,8 +69,8 @@
 	fl > {ʃ,fr} / #_
 	{fl,skl} > ʃ
 	nɡi > ɲ
-	s > ʃ / V_C:[-voiced]V
-	s > ʒ / V_C:[+voiced]V
+	s > ʃ / V_C:[- voice]V
+	s > ʒ / V_C:[+ voice]V
 	kl > kʎ / #_
 	kʎ > tʃ / #_
 	tʃ > ʃ / #_
@@ -110,14 +110,14 @@
 	ɡj > {ʒ,j} / V_V
 	pj {bj,vj} > jb jv / V_V
 	mj > jm
-	C₀C₀ > C₀ / ! C = r
-	C > ∅ / C₁_C₂ ! C₂ = L
+	C₀C₀ > C₀ / | C = r
+	C > ∅ / C₁_C₂ | C₂ = L
 	k > j / _s#
 	f > v / V_V
 	s l > z ∅ / V_V
 	a > ∅ / ”ɔ_#
 	sk k > jʃ z / V_{i,e}
-	k > ɡ / V₁_V₂ ! V₂ = ɔ
+	k > ɡ / V₁_V₂ | V₂ = ɔ
 	j > {∅,ʒ} / V_V
 	b > v / VL_V
 	m > ∅ / _n

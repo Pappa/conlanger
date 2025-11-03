@@ -5,12 +5,12 @@
 	V:[+ long] > V:[-long]
 	ə > a / near gutturals
 	ə > ɛ / #R_C
-	ə > ∅ / _ ! #R_C
+	ə > ∅ / _ | #R_C
 	w θ ð ɣ > v t d ɡ
 	x ʕ > χ ʔ
 	sˤ tˤ ħ q > s t χ k
 	h > ∅ / _#
-	ʔ > ∅ / ! in onset of U:[+stress] (colloquial)
+	ʔ > ∅ / | in onset of U:[+stress] (colloquial)
 	h > ∅ (colloquial)
 	C:[+ long] > C:[-long]
 	r > ʁ

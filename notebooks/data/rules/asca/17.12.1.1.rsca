@@ -33,7 +33,7 @@
 	{i,e} > ∅ / _#
 	a > e / _C(C)#
 	e > i / _{s,t}#
-	o > u / _C(C)# ! {u,w}_
+	o > u / _C(C)# | {u,w}_
 	{ai,ei,oi} > ei / _(C)(C)#
 	ei > i:[+ long] / _(C)(C)#
 	V:[+ long] > V:[-long] / _{m,(n)t,l,r}#
@@ -77,14 +77,14 @@
 	θ > f / #_r
 	s > θ / _r
 	θ > b / _r
-	s > z / _C:[+voiced]
-	V > V:[+ long] / _zC:[+voiced]
-	z > ∅ / _C:[+voiced]
+	s > z / _C:[+ voice]
+	V > V:[+ long] / _zC:[+ voice]
+	z > ∅ / _C:[+ voice]
 	p…kʷ > kʷ…kʷ
 	V₁…V₂ > V₂…V₂
-	V > V:[+ long] / _S:[+voiced]{S:[-voiced],F:[-voiced]}; “(i, e, and o sometimes bypass this)”
-	S:[+voiced] > S:[-voiced] / _{S:[-voiced],F:[-voiced]}
-	S:[-voiced] > S:[+voiced] / _N
+	V > V:[+ long] / _S:[+ voice]{S:[- voice],F:[- voice]}; “(i, e, and o sometimes bypass this)”
+	S:[+ voice] > S:[- voice] / _{S:[- voice],F:[- voice]}
+	S:[- voice] > S:[+ voice] / _N
 	s > z / _{N,l,r}
 	V > V:[+ long] / _z{l,r}
 	z > ∅ / _{l,r}

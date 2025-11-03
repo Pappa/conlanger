@@ -24,7 +24,7 @@
 	{e(ː),i,ae,oe} > e / _#
 	i:[+ long] > i
 	{o(ː),u:[+ long]} > o
-	u > o / ! V_
+	u > o / | V_
 	s > i / #(C…)V_#
 	k > ∅ / _s#
 	{s,t} > ∅ / _#
@@ -35,7 +35,7 @@
 	ɛ > ie
 	t d s > ts dz ʃ / _i
 	o e > u i / _N
-	a > ɨ _N ! _{n:[+ long],mn}
+	a > ɨ _N | _{n:[+ long],mn}
 	i > ∅ / OL_e
 	e > a / i_(C…){a,e}#
 	i > ∅ / {ts,dz,S}_V
@@ -66,10 +66,10 @@
 	l > j / {k,ɡ}_
 	a > e / C:[+palatal]_#
 	a o > ə u / ”U…_#
-	e > ə / ”U…P_(C…)V# ! V = i
+	e > ə / ”U…P_(C…)V# | V = i
 	u > ∅ / o_e
 	e > ə / ou_#
-	u > ∅ / ! {OL,”V}_#
+	u > ∅ / | {OL,”V}_#
 	a > a / #(C…)V…C:[+palatal]_…”U
 	a o > ə u / #(C…)V…_…”U
 	e > i / #(C…)V…_n…”U
@@ -80,4 +80,4 @@
 	o > u / #C…_…”U
 	a > ə #C(C…)_…”U
 	{t,d} > ∅ / n_#
-	Ci > Cʲ / _# ! R…R_#
+	Ci > Cʲ / _# | R…R_#

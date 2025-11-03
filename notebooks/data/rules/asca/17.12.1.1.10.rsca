@@ -5,10 +5,10 @@
 	k ɡ > tʃ dʒ / _{j,i,e,ɛ}
 	tʃ dʒ > ts dz / _{j,i,e,ɛ}
 	{t,k} > ∅ / _#
-	V > ∅ / C_:[- stress]{r,l} ! #,_
-	V > ∅ / {r,l}_:[- stress]C ! #,_
-	V > ∅ / C_:[- stress]s ! #,_
-	V > ∅ / s_:[- stress]C ! #,_
+	V > ∅ / C_:[- stress]{r,l} | #,_
+	V > ∅ / {r,l}_:[- stress]C | #,_
+	V > ∅ / C_:[- stress]s | #,_
+	V > ∅ / s_:[- stress]C | #,_
 	{k,ɡ} > x / _{t,s,n,l}
 	x > j / _{t,s,n,l}
 	pt {ɾs,ps} > t:[+ long] s:[+ long]
@@ -17,14 +17,14 @@
 	{jl,lj} {jn,nj} {jɡ,ɡj} > ʎ ɲ ʝ:[+ long]
 	bj > ʝ:[+ long]
 	Raising of e {ɛ,a} ɔ o > i e o u; near j, in particular environments:
-	e > i / _Cj ! C = p
+	e > i / _Cj | C = p
 	ɛ ɔ u > e o u / _(C)j
 	a > e / _j
 	oj > we
 	ɛ ɔ > je we
 	”je.o ”je.a > {”i.o,”jo} ”i.a
 	jt js > tʃ ʃ
-	f > h / ! _{ue,L}
+	f > h / | _{ue,L}
 	ɾj pj > jɾ jp / V_
 	ʎ > ʒ
 	ʝ > ʒ
@@ -37,7 +37,7 @@
 	n:[+ long] l:[+ long] ɾɾ > ɲ ʎ r
 	kl pl > ʎ {ʎ,tʃ}
 	fl > ʎ
-	V > ∅/ [- stress] ! V = a
+	V > ∅/ [- stress] | V = a
 	sj > js / V_
 	i u > e o / _(C)#
 	Vɾ > ɾV / C_#
@@ -79,7 +79,7 @@
 	ʒ > ʃ
 	{s̪,s} > /s/ [s̪] “(merged as)”
 	{s̪,s} > h / _$
-	{s̪,s} > h / _ ! _$
+	{s̪,s} > h / _ | _$
 	s̪ > θ
 	{s̪,s} > θ [θ] “(merged as)”
 	h > ∅ / _d

@@ -7,7 +7,7 @@
 	ɔl ɔr ɛl ɛr > lɔ rɔ lɛ rɛ / T_T
 	ɔr ɔl > ra la / #_T “in syllables with long vowels”
 	ɔr ɔl > rɔ lɔ / #_T
-	C > Cʲ / _E ! /j ɕ ʑ
+	C > Cʲ / _E | /j ɕ ʑ
 	j > lʲ / {p,b,m,v}_
 	ɛ ɛ̃ ɛ:[+ long] > ɔ ɔ̃ a / _C:[-palatalized +dental] (also sporadically before plain non-dentals)
 	ɛ:[+ long] > ɛ
@@ -18,7 +18,7 @@
 	ъ > a:[+ long] / _r
 	ъl > ɔ(ː)ɫ / P_
 	ъl > ɛɫ / K_
-	ъl > ɫu / _ ! K_
+	ъl > ɫu / _ | K_
 	ьl > ɫu / C:[+dental]_
 	ьl > ɛɫ / P_C:[+dental -palatalized]
 	ьl > il / P_
@@ -28,7 +28,7 @@
 	i(ː)ʐ > {ɛ(ː)r,ɛ(ː)ʐ}
 	{ɛ(ː)r,ɛ(ː)ʐ} > {ɛr,ɛʐ}
 	{ɛ̃,ɔ̃} > ã
-	a ɛ i ɔ u ɨ ã > a:[+ long] ɛ:[+ long] i:[+ long] ɔ:[+ long] u:[+ long] ɨ:[+ long] ã:[+ long] / _{C/U}:[+voiced][lost yer] (i.e., a voiced consonant or a cluster with one)
+	a ɛ i ɔ u ɨ ã > a:[+ long] ɛ:[+ long] i:[+ long] ɔ:[+ long] u:[+ long] ɨ:[+ long] ã:[+ long] / _{C/U}:[+ voice][lost yer] (i.e., a voiced consonant or a cluster with one)
 	ajɛ > ɛ:[+ long] in adjectives, a:[+ long] in verbs
 	{aja,ɔja} {ɔjɛ,ɨjɛ} ɨjɛ > a:[+ long] ɛ:[+ long] i:[+ long]
 	{ɛ(ː)jɛ,ьjɛ,ɔjɛ,ujɛ,ɨjɛ} > ɛ:[+ long]
@@ -61,16 +61,16 @@
 	kɨ ɡɨ > kʲi ɡʲi
 	ʃi ʒi tʃi dʒi ɕi ʑi > ʂɨ ʐɨ ʈʂɨ ɖʐɨ tsɨ ʒɨ
 	ʃ ʒ tʃ dʒ ɕ ʑ > ʂ ʐ ʈʂ ɖʐ ts ʒ
-	r̝ > ʂ / C:[-voiced]_
-	r̝ > ʂ / _C:[+voiced]
-	ŕ > ʐ / _ ! _C:[+voiced]
+	r̝ > ʂ / C:[- voice]_
+	r̝ > ʂ / _C:[+ voice]
+	ŕ > ʐ / _ | _C:[+ voice]
 	ɛ > ɔ / _ɫ (if the vowel was from a yer)
 	{ɛ,a} > ɔ
 	V > ɛ
 	ɫ > w
 	ɒ e > a ɛ
 	o > ɔ / _N
-	o > u / _ ! _N
+	o > u / _ | _N
 	u > ɔ
 	pʲ mʲ fʲ > p m f / _#
 	{i,ɨ} > ∅ / _jV when unstressed
@@ -98,10 +98,10 @@
 	zʐ > ʐɖʐ
 	ʑ z > dʑ dz / _v
 	∅ > d / r_z
-	v r̝ > f r̥ / C:[-voiced]_
-	v r̝ > f r̥ / _{C:[-voiced],#}
+	v r̝ > f r̥ / C:[- voice]_
+	v r̝ > f r̥ / _{C:[- voice],#}
 	r̝̊ r̝ > ʂ ʐ
-	Lv > L:[-voiced]f / O:[-voiced]_
+	Lv > L:[- voice]f / O:[- voice]_
 	v > ∅ / x_o
 	{xv,pv} > f
 	plv > pf

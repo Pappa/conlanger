@@ -37,7 +37,7 @@ class RuleChange(RulePartBase):
 
     def _format(self, value: str, format: str):
         if format == "asca":
-            return value.replace('&gt;', '>')
+            return value.replace('&gt;', '>').replace('!', '|')
         elif format == "brassica":
             return value.replace('&gt;', '/').replace('>', '/')
         else:

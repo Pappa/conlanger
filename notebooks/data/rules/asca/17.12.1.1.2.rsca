@@ -74,7 +74,7 @@
 	i:[+ long] > ∅ / _#
 	{i,e(ː),ae} > ∅ / _(C)#
 	{u(ː),o(ː)} > ∅ / _#
-	V > ∅ / “between first and tonic syllables; except when C_CC, _n”; “if there are multiple vowels between the initial and tonic syllables, the vowel directly before the tonic is usually dropped” ! V = a
+	V > ∅ / “between first and tonic syllables; except when C_CC, _n”; “if there are multiple vowels between the initial and tonic syllables, the vowel directly before the tonic is usually dropped” | V = a
 	w > ∅ / u_#
 	j ɡj ts z n > tʃ i w s ∅ / _#
 	t > ∅ / V_sV
@@ -104,7 +104,7 @@
 	ɡ > ∅ / V_dV
 	l:[+ long] n:[+ long] > ʎ ɲ
 	ʎ > l / ”i_
-	C > ∅ / C₁_C₂ ! C₂ = L
+	C > ∅ / C₁_C₂ | C₂ = L
 	{a,o} > ∅ / #_
 	ɔ > o / _N$C
 	e > ɛ / _v
@@ -115,5 +115,5 @@
 	ee > e
 	aj > ej / _:[+ stress]ʃ
 	ɛj ɔj > jɛj uei / i {u,ui} / [+ stress]
-	ɛ > e / ! _{r:[+ long],l,rC:[-labial],nr} or _ ? w#
+	ɛ > e / | _{r:[+ long],l,rC:[-labial],nr} or _ ? w#
 	e > ɛ (in Eastern Catalan)

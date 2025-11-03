@@ -29,5 +29,5 @@
 	æ > ɛ / _C:[+alveolar]
 	a ɔ u > {a,ɑ} ɔ ʌ
 	# Application of the Scottish vowel-length rule:
-	V > V:[+ long] / _{r,F:[+voiced],$,#}
-	əi > aɪ / _{r,F:[+voiced],$,#}
+	V > V:[+ long] / _{r,F:[+ voice],$,#}
+	əi > aɪ / _{r,F:[+ voice],$,#}

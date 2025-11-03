@@ -5,11 +5,11 @@
 	h > ∅ / _nh
 	ʔ > ∅ / _nk(ʷ)
 	n > t / _k(ʷ)
-	ts > hs / V_ ! _{h,i,j,r}
-	ts > s / ! _{h,i,j,r}
+	ts > hs / V_ | _{h,i,j,r}
+	ts > s / | _{h,i,j,r}
 	ns > ts / _k(ʷ)
 	V > V:[+ long] / _C:[-glottal] “in even-numbered syllables when accented or immediately before the accent”
-	Vʔ > ʔV / “in odd-numbered unaccented non-final syllables;” ! {ʔ,h}_
+	Vʔ > ʔV / “in odd-numbered unaccented non-final syllables;” | {ʔ,h}_
 	j > ∅ / ts_
 	h > ∅ / s_w
 	r > n / _(h)j

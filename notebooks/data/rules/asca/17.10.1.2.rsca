@@ -4,7 +4,7 @@
 	VN VC:[- nasal] > V:[+ nasal] V:[+ long] / _#
 	a{i,j}(a) a{u,w}(a) > e o
 	j w > dʒ b / V_V
-	C > C:[+voiced] / V_V
+	C > C:[+ voice] / V_V
 	{bʱ,dʱ,ɡʱ} {j,v} > h ∅ / V_V
 	b {d,dʒ,ɡ} > v j / V_V
 	Vm > Vv / _V
@@ -18,5 +18,5 @@
 	r > l
 	v > ∅ / {t,d}_
 	C₁C₂ > C₂C₂ / V_V
-	Cn > CC / V_V ! C = dʒ
+	Cn > CC / V_V | C = dʒ
 	dʒɲ > ɲ:[+ long] / V_V
