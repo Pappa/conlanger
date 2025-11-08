@@ -10,10 +10,10 @@
 	w > v
 	a:[+ long] > o:[+ long] / _{N,C:[+ dental],P,h}
 	a:[+ long] > o:[+ long] / {N,C:[+ dental],P,h}_
-	e(ː) i > ø(ː) y / _C:[+ affricate]
-	e(ː) i > ø(ː) y / _{P,l,ʃ}
-	e(ː) i > ø(ː) y / {P,l,ʃ}_
-	y(ː) yə ø(ː) øy > i(ː) iə e(ː) ei (intermittent)
+	{ e, e:[+ long] } i > ø(ː) y / _C:[+ affricate]
+	{ e, e:[+ long] } i > ø(ː) y / _{P,l,ʃ}
+	{ e, e:[+ long] } i > ø(ː) y / {P,l,ʃ}_
+	{ y, y:[+ long] } yə ø(ː) øy > { i, i:[+ long] } iə { e, e:[+ long] } ei (intermittent)
 	u:[+ long] y:[+ long] i:[+ long] > ou øy ei
 	uə yə iə > u:[+ long] y:[+ long] i:[+ long]
 	ou øy ei > au oy ai

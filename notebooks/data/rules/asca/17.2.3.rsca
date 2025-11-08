@@ -6,8 +6,8 @@
 	d > k / _w
 	kʷ > t / _E
 	kʷ > k / _E, in Milyan
-	{ɡ́,ɡ} > j / _e(ː)
-	{ɡ́,ɡ} > ∅ / _i(ː)
+	{ɡ́,ɡ} > j / _{ e, e:[+ long] }
+	{ɡ́,ɡ} > ∅ / _{ i, i:[+ long] }
 	ɡ > ∅ / V_V
 	j > ∅ / ts_
 	s > z / _{R,j,w}
@@ -21,7 +21,7 @@
 	ɡ > dʒ
 	e > i / j_
 	{ɛ,e}ː o æ:[+ long] > i:[+ long] e a:[+ long]
-	V:[+ long] > V:[-long]
+	V:[+ long] > V:[- long]
 	e > a / _U:[+u,a]
 	a > e / _U:[+e,i]
 	# “[P]lus lots of syncope which he doesn’t elaborate on”

@@ -15,7 +15,7 @@
 	Vn > Ṽ / _V
 	V > Ṽ / _N
 	d > l / #_
-	n >m / u_V
+	
 	n > ɲ / {i,ɪ}_V
 	n > h̃ / V_V
 	nb > m:[+ long]
@@ -68,7 +68,7 @@
 	{w,β}h > f
 	h…h > ∅…h
 	*-ɾ > -h stuff in compounds
-	l n >ʎ ɲ / E_
+	
 	{ɾ,r} > ʎ / {i,j}_
 	s̻ ts̻ > ʃ tʃ / {E,j}_
 	t > c / {E,j}_
@@ -113,7 +113,7 @@
 	# Glide dissimilation if the homorganic vowel was in the following syllable, but usually the glide just deleted
 	aɪ > eɪ
 	eɪ > e
-	aʊ > aɪ / |_{ɾ,r,s̺,s̻}
+	aʊ > aɪ / !_{ɾ,r,s̺,s̻}
 	eʊ > {e,eɡu}
 	eɪ > e / #_
 	oɪ > uɪ

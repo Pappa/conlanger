@@ -4,17 +4,17 @@
 Journal of American Linguistics, 40:102 – 116
 	hʔ > ʔh
 	({C,#}V)ʔ > ({C,#}V:[+ long])∅ / _C
-	i(ː) > u(ː) / o(ː)(C:[-dental])(C:[-dental])_
-	∅ > ʔ / CV:[-long]_#
+	{ i, i:[+ long] } > { u, u:[+ long] } / { o, o:[+ long] }(C:[-dental])(C:[-dental])_
+	∅ > ʔ / CV:[- long]_#
 	ʃ m > x w / _B
 	ʃ m > x w / B_#
-	ʃ m > x b / o(ː)_e(ː)
+	ʃ m > x b / { o, o:[+ long] }_{ e, e:[+ long] }
 	ʃ k m > s tʃ b / _{E,j}
 	ʃ k m > s tʃ b / E_#
-	(V:[-long])N > ∅ / _#
+	(V:[- long])N > ∅ / _#
 	∅ > h / #_V
 	e:[+ long] > ei / j_
-	o(ː) > e(ː) / Cj_
+	{ o, o:[+ long] } > { e, e:[+ long] } / Cj_
 	n > ∅ / _j
 	j > ∅ / C_
 	h > ∅ / _#

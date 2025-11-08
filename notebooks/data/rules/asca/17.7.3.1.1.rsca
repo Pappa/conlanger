@@ -16,12 +16,12 @@
 	e > ei / _{ɣ,j}
 	O > ∅ / {F:[- same POA],r,l}_O
 	S > ∅ / N:[+ same POA]_S
-	{l(ː),rl} > ɬ / v_#
+	{{ l, l:[+ long] },rl} > ɬ / v_#
 	N > N:[- voice] / O_#
-	{l(ː),rl} C > ɬ C:[- voice] / _{S:[- voice],s}
+	{{ l, l:[+ long] },rl} C > ɬ C:[- voice] / _{S:[- voice],s}
 	r > r̥ / S:[- voice] / _#
-	{l(ː),rl} C > ɬ C:[- voice] / S_ | S:[+ long]_
-	{l(ː),rl} r:[+ long] > dɬ r̥ / _#
+	{{ l, l:[+ long] },rl} C > ɬ C:[- voice] / S_ // S:[+ long]_
+	{{ l, l:[+ long] },rl} r:[+ long] > dɬ r̥ / _#
 	S:[- voice]ː S:[+ voice]ː > ʰS S:[- voice]ː
 	S:[- voice] > ʰS / _{l,ɬ,m,n}
 	S:[- voice] > Sʰ / #v_V
@@ -32,7 +32,7 @@
 	u o:[+ long] a:[+ long] ʏɪ {y,i} {y,i}ː æ:[+ long] e:[+ long] ey > ʏ ou au ai y ɪ i je ei
 	w > v
 	V > V:[+ long] / _(C)#, in monosyllables
-	V > V:[+ long] / | _CCV, in polysyllables
+	V > V:[+ long] / ! _CCV, in polysyllables
 	{n̥n,nn̥} > tn̥ / V_
 	n:[+ long] > tn̥ / V_#
 	n:[+ long] > tn / V_

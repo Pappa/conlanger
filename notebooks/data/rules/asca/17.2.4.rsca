@@ -21,6 +21,6 @@
 	{e,a,o} > ā / _N in ”U:[+open]
 	{e,o} > a / in U:[-stress]
 	n > ∅ / _P “(leaves nasalization on the previous vowel)”
-	o(ː) e:[+ long] æ:[+ long] > a(ː) i:[+ long] a:[+ long]
-	V:[+ long] > V:[-long]
+	{ o, o:[+ long] } e:[+ long] æ:[+ long] > { a, a:[+ long] } i:[+ long] a:[+ long]
+	V:[+ long] > V:[- long]
 	# “[P]lus lots of syncope which he doesn’t elaborate on”

@@ -10,12 +10,12 @@
 	h > ∅ / k_{s,ts}
 	h > ∅ / _{sk,st}
 	h > ∅ / {st,tst}_
-	h > ∅ / ts_r | “in pre-pausal forms, see also below”
+	h > ∅ / ts_r // “in pre-pausal forms, see also below”
 	{h,ʔ} > ∅ / _R “in post-tonic syllables”
 	ʔ > h / _C “in post-tonic syllables”
 	r > l
-	”V:[+ long, +falling tone] > ”V:[-long -falling tone]
-	V:[+ long] > V:[-long] _”C(C)(C)V (“this change happens only in the Ontario dialect”)
+	”V:[+ long, +falling tone] > ”V:[- long -falling tone]
+	V:[+ long] > V:[- long] _”C(C)(C)V (“this change happens only in the Ontario dialect”)
 	# “In addition, a number of sound changes have applied to words only in the pre-pausal position. Most of these changes are characterized by the devoicing of one or more segments at the end of a word”
 	∅ > e / C_{n,l}V(H)#
 	∅ > o / C_wV(H)#
@@ -23,8 +23,8 @@
 	V:[+ long, +falling tone]C(C)V(H) > V̊ː:[+falling tone]C̊(C̊)V̊(H̊) / _#
 	CV:[+ long, +falling tone] > C̊V̊ː:[+falling tone] / _#
 	CVʔ > C̊V̊ʔ̊ / _#
-	V:[-long] > V̊ / R_#
-	OV:[-long] > O̊V̊ / _#
+	V:[- long] > V̊ / R_#
+	OV:[- long] > O̊V̊ / _#
 	jV > ∅ / Ci_(H)#
 	ʔ > h / _C#
 	R > R̊ / _#

@@ -1,13 +1,13 @@
 @ 12.2 - Proto-Northwest Caucasian to Proto-Circassian
 # citation: Pogostick Man, from Wikipedia contributors (2014), “Proto-Northwest Caucasian language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Proto-Northwest_Caucasian_language>, presumably citing Starostin, Sergei A. and Sergei L. Nikolayev (1994), A North Caucasian Etymological Dictionary
 	f > xʷ
-	pʲ(ː) pʲʼ bʲ > t(ː) tʼ d
+	pʲ(ː) pʲʼ bʲ > { t, t:[+ long] } tʼ d
 	pʷ pʷʲ pʷʲʼ bʷ bʷʲ > p tʷ tʷʼ b d
-	pˤ(ː) pˤ bˤ > p(ː) pʼ b
+	pˤ(ː) pˤ bˤ > { p, p:[+ long] } pʼ b
 	mˤ > m
 	r l > t:[+ long] tħ / #_
 	l > ɮ
-	tʷ(ː) tʷʼ dʷ > t(ː) tʼ d
+	tʷ(ː) tʷʼ dʷ > { t, t:[+ long] } tʼ d
 	tʷʲ tʷʲʼ > ts tsʼ
 	ts ts:[+ long] dz > {s,c} ts:[+ long] dz~z
 	tsʲ tsʲ:[+ long] tsʲʼ dzʲ > (s) ts:[+ long] tsʼ dz~z
@@ -34,7 +34,7 @@
 	ɡʲʷ xʲʷ ɣʲʷ(?) > ɡʷ xʷ ʁʷ
 	ɢ > ʁ
 	qʲʼ ʁʲ > ʔ ʁ
-	qʷ > qʷ:[+ long] / |_
+	qʷ > qʷ:[+ long] / !_
 	qʷʼ ɢʷ > qʷ:[+ long] ʁʷ
 	qʲʷ:[+ long] qʲʷ ɢʲʷ,ʁʲʷ} χʲʷ > qʷ:[+ long] ʔʷ ʁʷ χʷ
 	{qˤ:[+ long],qˤʼ} χˤ ʁˤ > q:[+ long] χ ʁ

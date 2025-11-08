@@ -7,8 +7,8 @@
 	n > t / _h
 	h > ∅ / {t,ts,s,k}_
 	Vh > V:[+ long] / _R
-	∅ > w / {o(ː),õ(ː)}_V
-	∅ > j / {e(ː),ẽ(ː),i(ː)}_V
+	∅ > w / {{ o, o:[+ long] },õ(ː)}_V
+	∅ > j / {{ e, e:[+ long] },ẽ(ː),{ i, i:[+ long] }}_V
 	x > ∅ / _{i,j}
 	x > e / #_r
 	w j > m ɲ / between two vowels of unlike nasality
@@ -16,7 +16,7 @@
 	x > j / _V
 	x > ∅
 	k > ∅ / _#
-	ẽ(ː) õ(ː) o(ː) > ɛ̃(ː) ɔ̃(ː) u(ː)
+	ẽ(ː) õ(ː) { o, o:[+ long] } > ɛ̃(ː) ɔ̃(ː) { u, u:[+ long] }
 	n > ⁿd / _{V:[- nasal],r}
 	n > ŋ / _{j,w}
 	ɛ̃(ː) > ã(ː) / w_

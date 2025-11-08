@@ -15,14 +15,14 @@
 	au > o
 	e > i:[+ long] / ”_%ɪ:[+ long]#
 	i:[+ long] {i,e:[+ long]} e > i e ɛ / [+ stress]
-	i:[+ long] {i,e(ː)} > i e / _%”V
+	i:[+ long] {i,{ e, e:[+ long] }} > i e / _%”V
 	i:[+ long] > ∅ / {k,s}_#
-	{i(ː),e(ː),ae} > e / _#
+	{{ i, i:[+ long] },{ e, e:[+ long] },ae} > e / _#
 	u:[+ long] > u
 	ui:[+ long] > ui / _#
 	{u,o:[+ long]} o > o ɔ / [+ stress]
-	{u,o(ː)} > o / _%”V
-	{u(ː),o(ː)} > o / _#
+	{u,{ o, o:[+ long] }} > o / _%”V
+	{{ u, u:[+ long] },{ o, o:[+ long] }} > o / _#
 	o > u / _#
 	a:[+ long] oe > a e
 	ae > ɛ / [+ stress]
@@ -36,7 +36,7 @@
 	V > a / _{n,r}(C)V(C)#
 	V > V:[+ nasal] / _:[+ stress]N$C
 	ɔ̃ > õ
-	N > ∅ / V:[+ nasal]_$C | C = S
+	N > ∅ / V:[+ nasal]_$C // C = S
 	V > V:[+ nasal] / _N$V
 	V > V:[+ nasal] / #N_
 	N > ∅ / V:[+ nasal]_$V
@@ -110,14 +110,14 @@
 	ɡj > {ʒ,j} / V_V
 	pj {bj,vj} > jb jv / V_V
 	mj > jm
-	C₀C₀ > C₀ / | C = r
-	C > ∅ / C₁_C₂ | C₂ = L
+	C₀C₀ > C₀ / ! C = r
+	C > ∅ / C₁_C₂ // C₂ = L
 	k > j / _s#
 	f > v / V_V
 	s l > z ∅ / V_V
 	a > ∅ / ”ɔ_#
 	sk k > jʃ z / V_{i,e}
-	k > ɡ / V₁_V₂ | V₂ = ɔ
+	k > ɡ / V₁_V₂ // V₂ = ɔ
 	j > {∅,ʒ} / V_V
 	b > v / VL_V
 	m > ∅ / _n

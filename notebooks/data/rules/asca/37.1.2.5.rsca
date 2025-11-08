@@ -1,6 +1,6 @@
 @ 37.1.2.5 - Proto-Northern Iroquoian to Seneca
 # citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg
-	ts > s / | _{i,j}
+	ts > s / ! _{i,j}
 	n > ∅ / _s
 	j > ∅ / _ts
 	V > V:[+ long] / _{t,k(ʷ),s,n,r,j,w} “in even penultimate syllables”
@@ -12,10 +12,10 @@
 —— “or by any three consonant cluster;
 — “failing that, the accent falls on the last non-final even short syllable that is followed by a non-final syllable such as that just described;
 — “failing that, a word has no accent.”
-	a > æ / _ra(ː)
-	a > e / _ro(ː)
+	a > æ / _r{ a, a:[+ long] }
+	a > e / _r{ o, o:[+ long] }
 	ã > ẽ / _rõ:[+ long]
-	a(ː) > æ(ː) / r_
+	{ a, a:[+ long] } > æ(ː) / r_
 	h > ∅ / _{tk,nh,sC,C#}
 	h > ∅ / #_w
 	h > ∅ / w_j
@@ -25,16 +25,16 @@
 	r > ∅ / Vh_
 	Vh > V:[+ long] / _{n,w,j}
 	h > ∅ / V_V
-	r > j / C:[-glottal](h)_{o(ː),õ(ː)
+	r > j / C:[-glottal](h)_{{ o, o:[+ long] },õ(ː)
 	r > h / s_
-	r > j / i(ː)_V
-	r > w / {o(ː),õ(ː)}_V
+	r > j / { i, i:[+ long] }_V
+	r > w / {{ o, o:[+ long] },õ(ː)}_V
 	r > ∅
 	o > o:[+ long] / _{a:[+ long],æ:[+ long]}
 	V:[+ long] > V / V_
 	V₁”V₂ > ”V₁V₂
-	a(ː) > ẽ(ː) / adjacent to a nasal vowel
-	ẽ(ː) > e(ː) / _{e(ː),o(ː)
+	{ a, a:[+ long] } > ẽ(ː) / adjacent to a nasal vowel
+	ẽ(ː) > { e, e:[+ long] } / _{{ e, e:[+ long] },{ o, o:[+ long] }
 	ʔ > ∅ / _nk(ʷ)
 	n > t / _k(ʷ)
 	n > t / ʔ_#
@@ -45,12 +45,12 @@
 	t > h / _{n,t}
 	t > ∅ / k_#
 	{ths,tts} > tsh
-	a(ː) æ(ː) > õ(ː) ẽ(ː) / n_
-	a(ː) > õ(ː) / V:[+ nasal]H_
-	a(ː) > õ(ː) / V:[+ nasal]({ʔ,s})w_
+	{ a, a:[+ long] } æ(ː) > õ(ː) ẽ(ː) / n_
+	{ a, a:[+ long] } > õ(ː) / V:[+ nasal]H_
+	{ a, a:[+ long] } > õ(ː) / V:[+ nasal]({ʔ,s})w_
 	ẽ(ː) õ(ː) > ɛ̃(ː) ɔ̃(ː)
 	∅ > h / k_n
 	# “Allophonic changes:”
 	t k(ʷ) > d ɡ(ʷ) / _{V,R}
 	s > ʃ / _j
-	a e o > ə ɪ ʊ / C_{C,i:[-long]}
+	a e o > ə ɪ ʊ / C_{C,i:[- long]}

@@ -3,7 +3,7 @@
 	ny > in
 	f > m / _n
 	n > ∅ / m_
-	p(ː) t(ː) k(ː) > b(ː) d(ː) ɡ(ː) / {V,R}_{V,R}
+	{ p, p:[+ long] } { t, t:[+ long] } { k, k:[+ long] } > { b, b:[+ long] } { d, d:[+ long] } ɡ(ː) / {V,R}_{V,R}
 	{t,d}j > tʃ
 	d > ∅ / n_#
 	b d ɡ > p t k / #_
@@ -22,7 +22,7 @@
 	θ > t
 	ð > θ / _#
 	ð > ∅ /{a,E}_
-	ð > d / | V_V
+	ð > d / ! V_V
 	sk > {sk,ʃ,ks}
 	s > ∅ / {t,k,r}_l
 	s > ʃ / _Vr ?
@@ -34,16 +34,16 @@
 	l:[+ long] > ʎ
 	v > w
 	u a e e:[+ long] > ʌ ɑ ɪ ɛ / _C:[+ long]
-	u > ø / _l(ː)
+	u > ø / _{ l, l:[+ long] }
 	u > ʌ / _C{ː,CC}
 	u:[+ long] > ø:[+ long] / _CC
 	o a > ø ɛ / _(C)(C)i
 	o > ø / _Cr
 	o:[+ long] > ø:[+ long] / _(C)(C)#
-	o:[+ long] > u(ː)
+	o:[+ long] > { u, u:[+ long] }
 	jo:[+ long] > {u,o,ø} (looks like being in the ultima or the penult may have had something to do with it, but it isn’t clear to me)
 	ɒ > ɔ / _C(ː)C
-	ɒ > ʌ / _r(ː)
+	ɒ > ʌ / _{ r, r:[+ long] }
 	ɒ > {ɛ,e} / _C:[+ long]V (V can be a syllabic consonant)
 	ɒ > ɪ / _rC
 	au > (ɔ)u
@@ -59,7 +59,7 @@
 	y:[+ long] > ø / _j
 	y:[+ long] > i
 	y > {ɪ,i}
-	e i:[+ long] > ɛ i(ː)
+	e i:[+ long] > ɛ { i, i:[+ long] }
 	ey > e:[+ long] / _F
 	ey > ɛ / _r
 	ey > ai

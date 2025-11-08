@@ -1,9 +1,9 @@
 @ 46.8 - Greek Vowel Shift
 # citation: Chris Zoller, from Trask, R.L. (1996), Historical Linguistics
-	u(ː) > y(ː)
+	{ u, u:[+ long] } > { y, y:[+ long] }
 	o:[+ long] > u:[+ long]
 	e:[+ long] ɛ:[+ long] > i:[+ long] e:[+ long]
 	ai ɔi > ɛ y:[+ long]
 	e:[+ long] > i:[+ long]
-	y(ː) ɔ:[+ long] > i(ː) ɔ
+	{ y, y:[+ long] } ɔ:[+ long] > { i, i:[+ long] } ɔ
 	ɛu au > ɛv av

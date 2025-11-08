@@ -9,9 +9,9 @@
 	a > ∅ / #_OO
 	V > ∅ / _#
 	iw > o / _#
-	w > ∅ / _# | k(ː)_
-	j > ∅ / _# | p_
-	w > ∅ / C_ | C = K
+	w > ∅ / _# // { k, k:[+ long] }_
+	j > ∅ / _# // p_
+	w > ∅ / C_ // C = K
 	j > ∅ / C_
 	{R,h} > ∅ / V_V
 	θ > n / #_
@@ -21,6 +21,6 @@
 	nj > i / #_
 	{x,h}S > S:[+ long]
 	ʔs ʔts > s:[+ long] ts:[+ long]
-	sk > k:[+ long] / | _a
+	sk > k:[+ long] / ! _a
 	i > e / _R
 	o:[+ long] e:[+ long] i:[+ long] > o a i

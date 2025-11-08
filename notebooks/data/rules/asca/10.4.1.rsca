@@ -9,7 +9,7 @@
 	a > ɜ / _wo
 	f > ∅ / #_{C:[-low],V:[-low]}
 	f > ɰ / #_aCo
-	f > j / _ | #_aCo
+	f > j / _ // #_aCo
 	∅ > ɰ / #_aC:[-low]
 	∅ > j / #_{aC:[+low],V:[-back],C:[-back]}
 	∅ > w / #_{C:[+round],V:[+round]}

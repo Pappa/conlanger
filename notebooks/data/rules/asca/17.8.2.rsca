@@ -18,7 +18,7 @@
 	tʃ > t / #_
 	tʃ > t:[+ long] / medial
 	w > ∅
-	u(ː)(j) > y(ː)(j)
+	{ u, u:[+ long] }(j) > { y, y:[+ long] }(j)
 	æ:[+ long] > ɛ:[+ long] (includes diphthongs)
 	ej ow > e:[+ long] o:[+ long]
 	e:[+ long] > i:[+ long] / _C
@@ -35,8 +35,8 @@
 	# Pitch-accent lost
 	b d ɡ > v ð ɣ / V_V
 	dz > z
-	V:[+ long] > V:[-long]
-	C:[+ long] > C:[-long]
+	V:[+ long] > V:[- long]
+	C:[+ long] > C:[- long]
 	ɑu ɛu eu > ɑv ɛv ev
 	ɔ > ∅ / in the suffixes -ios and -ion
 	n > ∅ / _#

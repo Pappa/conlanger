@@ -10,16 +10,16 @@
 	um > ũ / _#
 	∅ > ɨ / _N#
 	{ɭ,ɽ} > ∅
-	l ɭ > l:[+ long]ʉ ɭ:[+ long]ʉ / _#(C)V:[-long]
+	l ɭ > l:[+ long]ʉ ɭ:[+ long]ʉ / _#(C)V:[- long]
 	∅ > ʉ / {l,ɭ}_# if {M,V:[+ long]} previously in the lexeme
 	r > ɾ “in most dialects”
 	ɽ > ɭ
 	{ɾ,l,ɭ} > ∅ / V_S
-	i u > ɨ ʉ / [- long, - stress] | #U
-	ɨ ʉ > ∅ / | _#
+	i u > ɨ ʉ / [- long, - stress] // #U
+	ɨ ʉ > ∅ / ! _#
 	∅ > {ɨ,ʉ}
 	n > ŋ / _{k,ɡ}
-	i(ː) e(ː) > u(ː) o(ː) / {m,v,p}_C̣
+	{ i, i:[+ long] } { e, e:[+ long] } > { u, u:[+ long] } { o, o:[+ long] } / {m,v,p}_C̣
 	j > ∅ / V:[-front]_#
 	j > j:[+ long]i / E_#
 	t:[+ long] nt > c:[+ long] ɲc / {i,j}_
@@ -30,5 +30,5 @@
 	c > s / _{a,o,u,e}
 	c:[+ long] > tʃ:[+ long]
 	o e > u i / _C{u,i}
-	i(ː) e(ː) > u(ː) o(ː) / _ɭ
+	{ i, i:[+ long] } { e, e:[+ long] } > { u, u:[+ long] } { o, o:[+ long] } / _ɭ
 	eCə oCə > Ce:[+ long] Co:[+ long] / #_

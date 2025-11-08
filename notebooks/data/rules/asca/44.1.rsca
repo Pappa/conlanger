@@ -1,11 +1,11 @@
 @ 44.1 - Proto-Vasconic to Aquitanian
 # citation: Pogostick Man, from Egurtzegi, Ander (2013), “Phonetics and Phonology”, in Basque and Proto-Basque. <https://www.academia.edu/3570162/2013a_-_Basque_and_Proto-Basque_Phonetics_and_Phonology>; Owstrowski, Manfred, “History of the Basque Language”. <http://hisp462.tamu.edu/Classes/603/Lects/BasqueHist.pdf>; Wikipedia contributors (2014), “Aquitanian langauge”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Aquitanian_language>; Wikipedia contributors (2014), ”Basque language”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Basque_language>; and Wikipedia contributors (2014), “Vasconic languages”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Vasconic_languages>
-	ś > {s(ː),ʃ} / _#
+	ś > {{ s, s:[+ long] },ʃ} / _#
 	ś > s
 	s > ʃ / i_#
 	# ts may become ʃs or s:[+ long]? The written forms are 〈xs〉 and 〈ss〉
 	S:[+ fortis] > S:[- voice]ː
-	n:[+ fortis] > n(ː) / V_V
+	n:[+ fortis] > { n, n:[+ long] } / V_V
 	n:[- fortis] n:[+ fortis] > {n,r}(?) n
 	N > [+ same POA] / _S
 	r:[+ fortis] > ɾ / _#

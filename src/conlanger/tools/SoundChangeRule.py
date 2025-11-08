@@ -32,21 +32,41 @@ class RuleComment(RulePartBase):
 
 class RuleChange(RulePartBase):
     prefixes = {"asca": "\t", "brassica": ""}
-    def __init__(self, value: str, format: str = "asca"):
-        super().__init__(self._format(value, format), format)
+    def __init__(self, rule: Element, format: str = "asca"):
+        super().__init__(self._format(rule, format), format)
 
-    def _format(self, value: str, format: str):
+    def _format(self, rule: Element, format: str):
         if format == "asca":
-            return value.replace('&gt;', '>').replace('!', '|')
+            result = ""
+            for child in rule:
+                if child.tag == "input":
+                    result += child.text
+                elif child.tag == "output":
+                    result += " > " + child.text
+                elif child.tag == "env":
+                    result += " / " + child.text
+                elif child.tag == "exception":
+                    result += " // " + child.text
+            return result
         elif format == "brassica":
-            return value.replace('&gt;', '/').replace('>', '/')
+            result = ""
+            for child in rule:
+                if child.tag == "input":
+                    result += child.text
+                elif child.tag == "output":
+                    result += " / " + child.text
+                elif child.tag == "env":
+                    result += " / " + child.text
+                elif child.tag == "exception":
+                    result += " // " + child.text
+            return result
         else:
             raise ValueError(f"Unsupported format: {format}")
-
+    
 
 class SoundChangeRule:
     def __init__(self, input: Element, format: str = "asca"):
-        self._parts = [RuleTitle(input, format), *[self._add_part(child, format) for child in input]]
+        self._parts = [RuleTitle(input, format), *[self._add_part(child, format) for child in input if child.attrib.get("skip") != "true"]]
 
     def _add_part(self, part: Element, format):
         if part.tag == "cite":
@@ -54,7 +74,7 @@ class SoundChangeRule:
         elif part.tag == "comment":
             return RuleComment(part.text, format)
         elif part.tag == "rule":
-            return RuleChange(part.text, format)
+            return RuleChange(part, format)
         else:
             return RulePartBase(part.text, format)
 

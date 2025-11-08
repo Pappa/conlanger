@@ -10,7 +10,7 @@
 	Vm > Vv / _V
 	Vv > V:[+ nasal]v / _V
 	e o > i u / _#
-	V:[+ long] > V:[-long] / _#
+	V:[+ long] > V:[- long] / _#
 	ah > e
 	ɽ > i
 	kʂ > hk
@@ -18,5 +18,5 @@
 	r > l
 	v > ∅ / {t,d}_
 	C₁C₂ > C₂C₂ / V_V
-	Cn > CC / V_V | C = dʒ
+	Cn > CC / V_V // C = dʒ
 	dʒɲ > ɲ:[+ long] / V_V

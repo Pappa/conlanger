@@ -19,17 +19,17 @@
 	k > z / _j
 	z > @ / _j
 	k > ɣ i / {i,e}_R{i,e}
-	k > ɣ / {A,O,U}_R | R = j
-	ɣ > U / {A,O,U}_R | R = j
+	k > ɣ / {A,O,U}_R // R = j
+	ɣ > U / {A,O,U}_R // R = j
 	β > ʋ
 	ʋ > ∅ / _UC
 	ið > j / ”V_V
 	lð rð > l:[+ long] r:[+ long]
-	ð > ∅ / | ”V(X)_
+	ð > ∅ / ! ”V(X)_
 	ɣ > j / C_e
 	ɣ > ʋ / U_U
-	ɣ > ʔ / VV₀_V₀ | V₀ = U
-	ɣ > ∅ / _ | VV₀_V₀ | V₀ = U
+	ɣ > ʔ / VV₀_V₀ // V₀ = U
+	ɣ > ∅ / _ ! VV₀_V₀ // V₀ = U
 	h > ∅ / V:[-stress](X)_V
 	AO > {A,O,U}ː / [- stress]
 	e > i / A_:[- stress]

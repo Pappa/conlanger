@@ -1,8 +1,8 @@
 @ 37.1.2.2 - Proto-Northern Iroquoian to Huron
 # citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg
-	s > ʃ / | _{n,t,k(ʷ),w} “or when part of the affricate /ts/”
+	s > ʃ / ! _{n,t,k(ʷ),w} “or when part of the affricate /ts/”
 	ts > ʃ / _r
-	ts > s / | _{i,j}
+	ts > s / ! _{i,j}
 	n > ∅ / t(h)_
 	n > ∅ / _s
 	n > ∅ / _i “(in pronominal prefixes only)”

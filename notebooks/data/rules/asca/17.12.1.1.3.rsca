@@ -19,24 +19,24 @@
 	{e:[+ long],i,oe} > é
 	i:[+ long] o:[+ long] > i ó
 	o > ò
-	u > ó / |_i:[+ long]
+	u > ó / !_i:[+ long]
 	u:[+ long] > u
 	# Initial vowels (first vowel of a word):
 	a:[+ long] > a
-	{e(ː),i,ae,oe} > e
+	{{ e, e:[+ long] },i,ae,oe} > e
 	i:[+ long] > i
-	{o(ː),u} > o
+	{{ o, o:[+ long] },u} > o
 	# Final vowels:
 	a:[+ long] > a
-	{e(ː),i,ae,oe} > e
+	{{ e, e:[+ long] },i,ae,oe} > e
 	i:[+ long] o:[+ long] > i o
-	u(ː) > o / except _V
+	{ u, u:[+ long] } > o / except _V
 	k ɡ > tj dj / _E
 	è > iɛ / in U:[+open]
 	è > iɛ / _C#
 	è > ɛ / in U:[+closed]
 	ò > uo
-	uo > uɛ / in U:[+open] | _N
+	uo > uɛ / in U:[+open] // _N
 	ò > ɔ / in U:[+closed]
 	dj > dʒ / r_
 	d > ∅ / _j
@@ -48,7 +48,7 @@
 	{ɡn,nj} > ɲ
 	nk > ɲ / _t
 	V > ∅ / in the unstressed penult
-	V > ∅ / intertonic | V = a
+	V > ∅ / intertonic // V = a
 	a > ə / intertonic
 	∅ > b / m_{r,l}
 	∅ > d / {n,l,ɲ,z_r
@@ -56,7 +56,7 @@
 	k ɡ > t d / {n,r}_r
 	n > r / {ɡ,p}_
 	# “[T]wo obstruents in contact with different voicing assimilate to the voicing of the second”
-	C > ∅ / C₁_C₂ | C₂ = {r,l}
+	C > ∅ / C₁_C₂ // C₂ = {r,l}
 	t > s / _{n,m}
 	{kl,ɡl,lj} > ʎ
 	{p,b} {t,d} > v ð / V_{V,r}
@@ -107,9 +107,9 @@
 	C₀C₀ > C₀
 	t > ∅ / V_#
 	ɛ > i / _C(C…)i#
-	V > ∅ / _# “(except in monosyllables or after another vowel)” | V = a
+	V > ∅ / _# “(except in monosyllables or after another vowel)” // V = a
 	a > ə
-	V > ə / _{CC,tʃ,dʒ} | _{nt,nɡ,mp,rt,rd}
+	V > ə / _{CC,tʃ,dʒ} // _{nt,nɡ,mp,rt,rd}
 	s > ∅ / _C
 	{p,b} > ∅ / _{t,d}
 	v > ∅ / _C

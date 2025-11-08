@@ -33,11 +33,11 @@
 	{i,e} > ∅ / _#
 	a > e / _C(C)#
 	e > i / _{s,t}#
-	o > u / _C(C)# | {u,w}_
+	o > u / _C(C)# // {u,w}_
 	{ai,ei,oi} > ei / _(C)(C)#
 	ei > i:[+ long] / _(C)(C)#
-	V:[+ long] > V:[-long] / _{m,(n)t,l,r}#
-	V:[+ long] > V:[-long] / _#
+	V:[+ long] > V:[- long] / _{m,(n)t,l,r}#
+	V:[+ long] > V:[- long] / _#
 	j > i / C_
 	w > u / t_
 	e > o / _w

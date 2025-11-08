@@ -5,7 +5,7 @@
 	e > ∅ / C:[+coronal]_%
 	p:[+ long] t:[+ long] ts:[+ long] k:[+ long] > pˑ tˑ tsˑ kˑ
 	p t ts s k > b d s z ɡ
-	b d ɡ > β ð ɣ / | N_
+	b d ɡ > β ð ɣ / ! N_
 	ɣ > j~ʋ
 	βi > U / _#
 	f > ʋ / #_
@@ -13,14 +13,14 @@
 	j > ∅ / _i (*)
 	∅ > ʋ / #_{y:[+ long],ø:[+ long],o:[+ long]}
 	oi > o / [- stress]
-	V:[+ long] > V:[-long] / _i
+	V:[+ long] > V:[- long] / _i
 	{kt,pt} {kts,pts} > t:[+ long] t:[+ long]s
 	xk > k:[+ long] (even across word boundaries)
-	(t(ː))sn kx(tx) rn ln > s:[+ long] x:[+ long] r:[+ long] l:[+ long]
+	({ t, t:[+ long] })sn kx(tx) rn ln > s:[+ long] x:[+ long] r:[+ long] l:[+ long]
 	{p,t,k}({p,t,k})n {p,t,k}({p,t,k})m > n:[+ long] m:[+ long]
 	{p,t,k} > ∅ / _st
 	{ks,nts} nt > s t / _#
 	ts tsˑ ts:[+ long] > s θˑ θ:[+ long]
-	{z,x(ː)} > h
+	{z,{ x, x:[+ long] }} > h
 	e > @ / h_ (suffixal)
 	{p,k} > h / _t

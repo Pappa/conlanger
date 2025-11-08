@@ -3,17 +3,17 @@
 	bʱ dʱ {ɡʱ,ɡ́ʱ} ɡʷʱ > b d ɡ ɡʷ
 	Kʷ ḱ ɡ́ > K s z
 	s > x / {i,u,r,k}_
-	k ɡ x > tʃ ʒ ʃ / _{e(ː)(i),i(ː)}
+	k ɡ x > tʃ ʒ ʃ / _{{ e, e:[+ long] }(i),{ i, i:[+ long] }}
 	{a,o,ə} > e / j_
 	{a,o,ə} > o
 	i u > ь ъj
 	i:[+ long] u:[+ long] > i ɨ
 	u > ь / j_
-	e(ː)i > i
+	{ e, e:[+ long] }i > i
 	{ai,oi} > i / j_
 	{ai,oi} > æ:[+ long]
 	{a:[+ long]i,o:[+ long]i} > {æ:[+ long],a} (the former seems to be more common)
-	{a(ː)u,o(ː)u} e(ː)u > u ju
+	{{ a, a:[+ long] }u,{ o, o:[+ long] }u} { e, e:[+ long] }u > u ju
 	e > ь / _jV
 	e > o / _wV
 	w > v
@@ -21,7 +21,7 @@
 	{m̩,n̩} > {ẽ,õ} / _C$
 	m̩ n̩ > {ьm,ъm} {ьn,ъn}
 	æ:[+ long] > a / “After palatal fricatives and affricates”
-	{e(ː),i(ː)} {a(ː),o(ː),u(ː)} > ẽ õ / _N$
+	{{ e, e:[+ long] },{ i, i:[+ long] }} {{ a, a:[+ long] },{ o, o:[+ long] },{ u, u:[+ long] }} > ẽ õ / _N$
 	oi o > i ъ / “Sometimes in final syllables”
 	{O,N} > ∅ / _$
 	k ɡ x > ts dz s / _{æ:[+ long],i}

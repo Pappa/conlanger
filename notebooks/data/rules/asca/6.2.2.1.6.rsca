@@ -12,7 +12,7 @@
 	j > c / {O,r}
 	j > ∅ / Ck_$
 	nx > x:[+ long]
-	∅ > F / N_{O,r} | m_f
+	∅ > F / N_{O,r} // m_f
 	{ðˤ,dˤ} > ð
 	tˤ sˤ > s t
 	ʔ h > ∅ x
@@ -21,7 +21,7 @@
 	ɣ ħ > ʕ x
 	w > v / _%
 	w:[+ long] > v
-	j(ː) > ∅ / V_E
+	{ j, j:[+ long] } > ∅ / V_E
 	u:[+ long] i:[+ long] > o:[+ long] e:[+ long] / _ʕ
 	u:[+ long] i:[+ long] > o:[+ long] e:[+ long] / ʕ_
 	i > a / Cˤ_{q,ɣ,ʕ}
@@ -33,8 +33,8 @@
 	# Epenthesis in medial CCC clusters, often so that the syllable break is between the second and third consonants
 	u:[+ long] i:[+ long] > u i
 	a > a / _C:[+ dorsal]
-	a > e / _(C)(C)i(ː)
-	a:[+ long] > a / | _#
+	a > e / _(C)(C){ i, i:[+ long] }
+	a:[+ long] > a / ! _#
 	a > {u,o} / P_
 	a > {u,o} / _P
 	a > ∅ / _t, in the feminine ending
