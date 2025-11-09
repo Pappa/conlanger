@@ -1,5 +1,11 @@
 @ 17.7.2.3 - Middle High German to Standard German
-# citation: Paweł Ciupak, from Behr, Hans-Joahim, Ingrid Bennewitz, et al. (2004). Die Bamberg (BA)-Braunschweiger (BS) Grammatik des Alt- und Mittelhochdeutschen im Internet. <https://www.tu-braunschweig.de/Medien-DB/germanistik/babs260304.pdf>; Kundert, Ursula (2009). Einführung in das Mittelhochdeutsche. <http://www.germsem.uni-kiel.de/mediaevistik/materialien/Kundert_Mhdreader_090330.pdf>; and Anonymous (2009). Mittelhochdeutsche Kurzgrammatik. <https://www.uni-frankfurt.de/47053276/Kurzgrammatik-HA_09_2009.pdf>
+# citation: Paweł Ciupak, from Behr, Hans-Joahim, Ingrid Bennewitz, et al. (2004). Die Bamberg
+# 			(BA)-Braunschweiger (BS) Grammatik des Alt- und Mittelhochdeutschen im Internet.
+# 			<https://www.tu-braunschweig.de/Medien-DB/germanistik/babs260304.pdf>; Kundert,
+# 			Ursula (2009). Einführung in das Mittelhochdeutsche.
+# 			<http://www.germsem.uni-kiel.de/mediaevistik/materialien/Kundert_Mhdreader_090330.pdf>;
+# 			and Anonymous (2009). Mittelhochdeutsche Kurzgrammatik.
+# 			<https://www.uni-frankfurt.de/47053276/Kurzgrammatik-HA_09_2009.pdf>
 	s > ʃ / #_{l,m,n,w,p,t}
 	s > ʃ / r_
 	t > {ts,k} / _w

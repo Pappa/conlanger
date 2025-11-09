@@ -1,5 +1,8 @@
 @ 17.8.6 - Proto-Indo-European to Doric Greek
-# citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects>
+# citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound Changes”.
+# 			The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors (2013),
+# 			“Ancient Greek dialects”. Wikipedia, the Free Encyclopedia.
+# 			<https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects>
 	{Hx,m̩,n̩} > a
 	bʱ dʱ ɡʱ > pʰ tʰ kʰ
 	s > h / #_
@@ -12,7 +15,8 @@
 	kʷ kʰʷ ɡʷ > k kʰ ɡ / u_
 	ts > s
 	h > ∅
-	Vns > V(ː)s (Tucker says that “[i]n a few Doric dialects the lengthening did not occur”)
+	Vns > V(ː)s (Tucker says that “[i]n a few Doric dialects the lengthening did not
+				occur”)
 	n > ∅ / _s
 	tʃ > t / #_
 	tʃ > t:[+ long] / medial

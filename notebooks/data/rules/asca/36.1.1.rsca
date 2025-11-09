@@ -1,6 +1,15 @@
 @ 36.1.1 - Late Middle Chinese to Old Mandarin
 # citation: Ran, from Hsueh, F.S. (1975), Phonology of Old Mandarin
-	# NB: Ran says, “The author uses V1, V2, V3, V4, Vn, Vch, and Vta to represent Late Middle Chinese vowels. I am going to very tentatively assign the values of o, a, ia, e,?, a(ch) and a(ta) to these vowels [emphasis added]. These should be taken as orthographical convenience rather than actual speculation.” It should be noted that the vowel represented by <?> could be palatalized. Ran adds, “I am also going to number tones according to their traditional order, i.e. F1, F2, F3, F4, F5. Since tones change rapidly, it is impossible to accurately reconstruct their values; we can only know how many there were, and agree on an order to renumerate them. Middle Chinese starts out with no F2.” For the purposes of this list of sound changes, tones are superscript numbers following vowel markers.
+	# NB: Ran says, “The author uses V1, V2, V3, V4, Vn, Vch, and Vta to represent Late
+	# 			Middle Chinese vowels. I am going to very tentatively assign the values of o, a, ia,
+	# 			e,?, a(ch) and a(ta) to these vowels [emphasis added]. These should be taken as
+	# 			orthographical convenience rather than actual speculation.” It should be noted that the
+	# 			vowel represented by <?> could be palatalized. Ran adds, “I am also going to
+	# 			number tones according to their traditional order, i.e. F1, F2, F3, F4, F5. Since tones
+	# 			change rapidly, it is impossible to accurately reconstruct their values; we can only
+	# 			know how many there were, and agree on an order to renumerate them. Middle Chinese
+	# 			starts out with no F2.” For the purposes of this list of sound changes, tones are
+	# 			superscript numbers following vowel markers.
 	∅ > w / P_V
 	xɦ > ∅ / _j(w){?,ia,a(ta)}
 	Cʲ > C {Ạ,F̣}_

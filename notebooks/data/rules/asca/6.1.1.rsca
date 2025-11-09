@@ -1,5 +1,6 @@
 @ 6.1.1 - Proto-Omotic to North Omotic
-# citation: Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)
+# citation: Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
+# 			(Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)
 	u o > i e
 	e > i / #N_C
 	e > i / #l_{P,C:[+ voice]}
@@ -12,9 +13,9 @@
 	e o > i u / #(ʔ)_C$
 	e o > i u / #P_{tsʼ,tʃʼ}
 	a > o / #{z,dʒ}_P
-	{ e, e:[+ long] } > { i, i:[+ long] } / #C:[+sibilant]_{d,n,r}
+;;	{ e, e:[+ long] } > { i, i:[+ long] } / #C:[+sibilant]_{d,n,r}
 	Cw > C
 	V:[+ long] > V / #K:[-voice]_C
 	u > u:[+ long] / #S:[+voice]_P:[-voice]
 	V:[+ long] > V / #C_C$ + $(V)C$ suffix
-	N > ∅ / V_{C:[+sibilant],p}
+;;	N > ∅ / V_{C:[+sibilant],p}

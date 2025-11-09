@@ -1,5 +1,8 @@
 @ 36.3.2.1 - Proto-rGyalrongic to bTshan La
-# citation: Pogostick Man, from Nagano, Yashuiki (1979), “A Historical Study of rGyarong Initials and Prefixes”. Linguistics of the Tibeto-Burman Area 4(2):44 – 68; and Nagano, Yashuiki (1979), “A Historical Study of rGyarong Rhymes”. Linguistics of the Tibeto-Burman Area 5(1):37 – 47
+# citation: Pogostick Man, from Nagano, Yashuiki (1979), “A Historical Study of rGyarong Initials
+# 			and Prefixes”. Linguistics of the Tibeto-Burman Area 4(2):44 – 68; and Nagano, Yashuiki
+# 			(1979), “A Historical Study of rGyarong Rhymes”. Linguistics of the Tibeto-Burman Area
+# 			5(1):37 – 47
 	# Initials:
 	p b çp çb sP rP Np Nb pr {br,pj} bj > pʰ p ʝb çp sp rpʰ mpʰ mb br pʰj pj
 	P > p / l_
@@ -9,7 +12,7 @@
 	çr Nç > dr mkʰj
 	K > ʔ / _s
 	K > k / _ç
-	C:[+ sibilant] > s / _w
+;;	C:[+ sibilant] > s / _w
 	Pç > mʃ
 	TS > dʒ / l_
 	NTS PTS KTS sTS çTS > {Ndz,mts} kts(ʰ) ptsʰ sts {sts,rj}

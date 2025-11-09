@@ -1,5 +1,6 @@
 @ 37.1.2.1 - Proto-Northern Iroquoian to Cayuga
-# citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg
+# citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”,
+# 			University of Manitoba, Winnipeg
 	∅ > a / w_j
 	”V(C)(C)CaCV > V(C)”(C)CaCV / _#
 	h > ∅ / _nh
@@ -8,13 +9,16 @@
 	ts > hs / V_ // _{h,i,j,r}
 	ts > s / ! _{h,i,j,r}
 	ns > ts / _k(ʷ)
-	V > V:[+ long] / _C:[-glottal] “in even-numbered syllables when accented or immediately before the accent”
+	V > V:[+ long] / _C:[-glottal] “in even-numbered syllables when accented or immediately before the
+				accent”
 	Vʔ > ʔV / “in odd-numbered unaccented non-final syllables;” // {ʔ,h}_
 	j > ∅ / ts_
 	h > ∅ / s_w
 	r > n / _(h)j
-	r > w / {{ o, o:[+ long] },õ(ː)}_{{ a, a:[+ long] },{ e, e:[+ long] },ẽ(ː),{ i, i:[+ long] }}
-	r > j / {{ e, e:[+ long] },ẽ(ː),{ i, i:[+ long] }}_{{ a, a:[+ long] },{ o, o:[+ long] },õ(ː)}
+	r > w / {{ o, o:[+ long] },õ(ː)}_{{ a, a:[+ long] },{ e, e:[+ long] },ẽ(ː),{ i, i:[+ long]
+				}}
+	r > j / {{ e, e:[+ long] },ẽ(ː),{ i, i:[+ long] }}_{{ a, a:[+ long] },{ o, o:[+ long]
+				},õ(ː)}
 	r > ∅ / VH_
 	r > ∅ / _H
 	r > ∅ / w_

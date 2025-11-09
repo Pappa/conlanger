@@ -1,5 +1,8 @@
 @ 17.7.2.2.1 - Old Low Franconian to Middle Dutch
-# citation: Pogostick Man, from Wikipedia contributors (2014), “Middle Dutch”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Middle_Dutch>; and Wikipedia contributors (2014), “Hieronymous Bosch”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Hieronymus_Bosch>
+# citation: Pogostick Man, from Wikipedia contributors (2014), “Middle Dutch”. Wikipedia, the Free
+# 			Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Middle_Dutch>; and
+# 			Wikipedia contributors (2014), “Hieronymous Bosch”. Wikipedia, the Free Encyclopedia.
+# 			<https://en.wikipedia.org/w/index.php?title=Hieronymus_Bosch>
 	u:[+ long] > y:[+ long]
 	iu > ju / #_
 	iu > {y:[+ long],io}

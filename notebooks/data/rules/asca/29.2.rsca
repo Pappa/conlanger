@@ -1,6 +1,8 @@
 @ 29.2 - Proto-Na-Dene to Tlingit
-# citation: Pogostick Man, from Wikipedia contributors (2015), “Na-Dene languages”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Na-Dene_languages>
-	# NB: Where a colon appears, forms to the left are the typical forms and forms to the right are “l-assimilated”.
+# citation: Pogostick Man, from Wikipedia contributors (2015), “Na-Dene languages”. Wikipedia, the
+# 			Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Na-Dene_languages>
+	# NB: Where a colon appears, forms to the left are the typical forms and forms to the
+	# 			right are “l-assimilated”.
 	s > s : ɬ
 	ts > ts : tɬ
 	tsʼ > {sʼ,tsʼ} : {ɬ,tɬʼ}

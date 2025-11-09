@@ -1,5 +1,7 @@
 @ 15.2.6 - Proto-Eskimo to Nunivak Yup’ik
-# citation: Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171
+# citation: Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic
+# 			Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp.
+# 			166–171
 	C:[+ long] > C
 	C > C:[+ long] / _V(…V) // #U
 	S > ∅ / #_F
@@ -10,7 +12,8 @@
 	ə > ∅
 	i > ∅ / #C:[+dental]_C:[+dental]V
 	a > ∅ / C:[+velar]_C:[+velar]
-	# Regressive MOA and voicing assimilation in consonant clusters, at least when C₂ is either /l/ or /l̥/
+	# Regressive MOA and voicing assimilation in consonant clusters, at least when C₂ is
+	# 			either /l/ or /l̥/
 	v ʁ > f χ / S_
 	F:[+voice] > F:[-voice] / adjacent to {S,ts}
 	F:[+voice] > S / l̥_

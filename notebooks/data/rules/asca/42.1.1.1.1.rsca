@@ -1,10 +1,16 @@
 @ 42.1.1.1.1 - Proto-Finnish to Standard Finnish
-# citation: Tropylium, from Hakulinen, Lauri (1979), “Suomen kielen rakenne ja kehitys”. Otava; Häkkinen, Kaisa (2004), “Nykysuomen etymologinen sanakirja”. WSOY; Kallio, Petri (2007), “Kantasuomen konsonanttihistoriaa”. Mémoires de la Société Finno-Ougrienne 253. <http://www.sgr.fi/sust/sust253/sust253_kallio.pdf>; and from Janhunen, Juha (2007), “The primary laryngeal in Uralic and beyond”. Mémoires de la Société Finno-Ougrienne 253. <http://www.sgr.fi/sust/sust253/sust253_janhunen.pdf>
+# citation: Tropylium, from Hakulinen, Lauri (1979), “Suomen kielen rakenne ja kehitys”. Otava;
+# 			Häkkinen, Kaisa (2004), “Nykysuomen etymologinen sanakirja”. WSOY; Kallio, Petri (2007),
+# 			“Kantasuomen konsonanttihistoriaa”. Mémoires de la Société Finno-Ougrienne 253.
+# 			<http://www.sgr.fi/sust/sust253/sust253_kallio.pdf>; and from Janhunen, Juha
+# 			(2007), “The primary laryngeal in Uralic and beyond”. Mémoires de la Société
+# 			Finno-Ougrienne 253. <http://www.sgr.fi/sust/sust253/sust253_janhunen.pdf>
 	mb nd ŋɡ > m:[+ long] n:[+ long] ŋ:[+ long]
 	e:[+ long] ø:[+ long] o:[+ long] > ie yø uo
 	pˑ tˑ θˑ kˑ > p t θ k
 	j > i / C_, when initial in a suffix
-	Vh > hV / {j,v,n,r,l}_# (also some double-metathesis triggered by the condition of being m_ ?)
+	Vh > hV / {j,v,n,r,l}_# (also some double-metathesis triggered by the condition of being m_
+				?)
 	sn > ns
 	V > V:[+ long] / h_hC
 	V > V:[+ long] / _hC

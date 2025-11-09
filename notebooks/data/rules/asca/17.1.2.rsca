@@ -1,5 +1,6 @@
 @ 17.1.2 - Proto-Indo-European to Tosk Albanian
-# citation: Pogostick Man, from Wikipedia contributors (2013), “Albanian language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Albanian_language>
+# citation: Pogostick Man, from Wikipedia contributors (2013), “Albanian language”. Wikipedia, the
+# 			Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Albanian_language>
 	d dʱ > ð / V_V
 	d dʱ > ð / r_
 	ḱ > s / _{u̯,u,i̯,i}
@@ -30,7 +31,8 @@
 	n > ɾ
 	l r > {l,ɫ} {ɾ,r}
 	{m̩,n̩} l̩ r̩ > e uj {ri,ir}
-	# Loss of laryngeals, with the possible exception of h₄, if it existed; h₃ and h₄ seem to have possibly fronted a following back vowel
+	# Loss of laryngeals, with the possible exception of h₄, if it existed; h₃ and h₄
+	# 			seem to have possibly fronted a following back vowel
 	e:[+ long] i:[+ long] o:[+ long] u:[+ long] > o i e {y,i}
 	a e i o > {a,e} (j)e {e,i} a
 	c ɟ > tʃ dʒ (much less widespread than in Gheg)

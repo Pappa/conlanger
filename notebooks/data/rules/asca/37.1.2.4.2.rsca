@@ -1,5 +1,6 @@
 @ 37.1.2.4.2 - Proto-Mohawk-Oneida to Oneida
-# citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg
+# citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”,
+# 			University of Manitoba, Winnipeg
 	”V:[+ long, -falling tone]CV > V:[+ long]”CV
 	”V > ”V:[+ long] / _ʔ
 	ʔ > ∅ / ”V:[+ long]_
@@ -16,7 +17,9 @@
 	r > l
 	”V:[+ long, +falling tone] > ”V:[- long -falling tone]
 	V:[+ long] > V:[- long] _”C(C)(C)V (“this change happens only in the Ontario dialect”)
-	# “In addition, a number of sound changes have applied to words only in the pre-pausal position. Most of these changes are characterized by the devoicing of one or more segments at the end of a word”
+	# “In addition, a number of sound changes have applied to words only in the
+	# 			pre-pausal position. Most of these changes are characterized by the devoicing of one or
+	# 			more segments at the end of a word”
 	∅ > e / C_{n,l}V(H)#
 	∅ > o / C_wV(H)#
 	∅ > i / C_jV(H)#

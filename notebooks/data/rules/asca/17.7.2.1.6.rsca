@@ -1,6 +1,9 @@
 @ 17.7.2.1.6 - Early Modern English to Australian English
-# citation: Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. <http://wiki.firespeaker.org/English_sound_changes>; and my Phonetic Description class
-	ɜ:[+ long]ɹ ɑ:[+ long]ɹ ɔ:[+ long]ɹ e:[+ long]ɹ o:[+ long]ɹ i:[+ long]ɹ u:[+ long]ɹ > ɜ:[+ long] ɑ:[+ long] ɔ:[+ long] ɛə ɔə ɪə ʊə / syllable-finally
+# citation: Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”.
+# 			FireSpeakerWiki. <http://wiki.firespeaker.org/English_sound_changes>; and my
+# 			Phonetic Description class
+	ɜ:[+ long]ɹ ɑ:[+ long]ɹ ɔ:[+ long]ɹ e:[+ long]ɹ o:[+ long]ɹ i:[+ long]ɹ u:[+
+				long]ɹ > ɜ:[+ long] ɑ:[+ long] ɔ:[+ long] ɛə ɔə ɪə ʊə / syllable-finally
 	ɑ > ɒ
 	æ > æ:[+ long] / _{F:[- voice],N:[- voice]}
 	æ:[+ long] > ɑ:[+ long] / _{F:[- voice],N:[- voice]}
@@ -16,7 +19,8 @@
 	ʊʉ > ʉ:[+ long] / else
 	ɫ > əɫ / ! if one of the above vowel changes after the formation of /ɫ/ apply
 	ɪ > i:[+ long] / _# when unstressed
-	ɪ > i:[+ long] / “unstressed foot-finally if the next syllable is stressed and begins with /k ɡ tʃ dʒ ʃ ʒ/”
+	ɪ > i:[+ long] / “unstressed foot-finally if the next syllable is stressed and begins with /k ɡ tʃ
+				dʒ ʃ ʒ/”
 	ɪ > ə / [- stress]
 	ə > ɪ / _{k,ɡ,tʃ,dʒ,ʃ,ʒ,v}
 	t d > ɾ / V_V:[-stress]

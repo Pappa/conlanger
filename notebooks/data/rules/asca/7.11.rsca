@@ -1,5 +1,6 @@
 @ 7.11 - Proto-Algonquian to Munsee Delaware
-# citation: Pogostick Man, from Goddard, Ives (1982), “The Historical Phonology of Munsee”. International Journal of American Linguistics, 48:16 – 48
+# citation: Pogostick Man, from Goddard, Ives (1982), “The Historical Phonology of Munsee”.
+# 			International Journal of American Linguistics, 48:16 – 48
 	tʃ > t / in nouns
 	t s > tʃ ʃ / in diminutives
 	{θ,l} > r
@@ -21,12 +22,15 @@
 	{tʃ,ç} > h / _k
 	i o > i:[+ long] o:[+ long]
 	V:[+ long] > V:[- long] / _hC
-	V > ∅ / _# // some monosyllables and analogical developments, in the latter of which long vowels were shortened
-	{a,ə} > ∅ / _{x,h} “in the odd-numbered of any sequence of one or more short-vowel open syllables”; such vowels are considered “weak”
+	V > ∅ / _# // some monosyllables and analogical developments, in the latter of which long
+				vowels were shortened
+	{a,ə} > ∅ / _{x,h} “in the odd-numbered of any sequence of one or more short-vowel open
+				syllables”; such vowels are considered “weak”
 	ə:[+weak] > ∅ / #_C
 	ə:[+weak] > ∅ / _C:[+ voice]
 	a:[+weak] ə:[+weak] > ə ∅ / a_Z:[+ voice]
-	# NC sequences assimilate the nasal to the POA of the following consonant, which is then voiced
+	# NC sequences assimilate the nasal to the POA of the following consonant, which is
+	# 			then voiced
 	# Synchronic alterations:
 	ə > o / _h{p,kʷ,w,m}
 	ə > i / _hC

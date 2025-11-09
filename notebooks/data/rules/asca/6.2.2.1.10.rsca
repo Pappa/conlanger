@@ -1,6 +1,7 @@
 @ 6.2.2.1.10 - Classical Arabic to Hassāniyya Arabic
 # citation: Pogostick Man, from http://en.wikipedia.org/wiki/Hass%C4%81n%C4%ABya
-	# NB: Words borrowed directly from CA/MSA seem to be immune to these changes. Also, unless otherwise noted, changes also apply to geminate consonants.
+	# NB: Words borrowed directly from CA/MSA seem to be immune to these changes. Also,
+	# 			unless otherwise noted, changes also apply to geminate consonants.
 	dˤ q > ðˤ ɡ
 	f θ > v z̪
 	ʔ > {∅,j,w}

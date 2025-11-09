@@ -1,5 +1,7 @@
 @ 17.10.1.4 - Proto-Indo-Aryan to Western Middle Indo-Aryan
-# citation: Pogostick Man, from Shukla, Shaligram (1974), “Phonological change and dialect variation in Middle-Indo-Aryan”. In Anderson, J., and C. Jones (Eds.), Historical Linguistics II:391-401.
+# citation: Pogostick Man, from Shukla, Shaligram (1974), “Phonological change and dialect
+# 			variation in Middle-Indo-Aryan”. In Anderson, J., and C. Jones (Eds.), Historical
+# 			Linguistics II:391-401.
 	C(C) > ∅ / C_#
 	VN VC:[- nasal] > V:[+ nasal] V:[+ long] / _#
 	a{i,j}(a) a{u,w}(a) > e o

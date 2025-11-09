@@ -1,6 +1,12 @@
 @ 17.12.1.1.5 - Latin to Portuguese
 # citation: Mecislau
-	# NB: Due to problems when the board migrated to a different system, a lot of the special characters were replaced with 〈?〉. In many cases these have been replaced with 〈∅〉 because it was likely that this was what was meant, but conditional 〈?〉 has either been left alone or attempted to have been filled in from context. In some cases, conditional 〈?〉 may have been used to mark stress or syllable boundaries. Take such changes with a grain of salt and use at your own risk. Further, Mecislau gives some dual-output changes, which distinguish between vulgar and “semi-learned” outcomes.
+	# NB: Due to problems when the board migrated to a different system, a lot of the
+	# 			special characters were replaced with 〈?〉. In many cases these have been replaced with
+	# 			〈∅〉 because it was likely that this was what was meant, but conditional 〈?〉 has either
+	# 			been left alone or attempted to have been filled in from context. In some cases,
+	# 			conditional 〈?〉 may have been used to mark stress or syllable boundaries. Take such
+	# 			changes with a grain of salt and use at your own risk. Further, Mecislau gives some
+	# 			dual-output changes, which distinguish between vulgar and “semi-learned” outcomes.
 	h > ∅
 	rs > s:[+ long]
 	n > ∅ / _s
@@ -54,7 +60,8 @@
 	{e,i} > ∅ / {l,m,r}_ when between #U and U:[+stress]
 	{e,i} > ∅ / k_t when between #U and U:[+stress]
 	o > ∅ / _{r,l} when between #U and U:[+tonic]
-	# “[I]f there are multiple vowels between the initial and tonic syllables, the vowel directly before the tonic is dropped”
+	# “[I]f there are multiple vowels between the initial and tonic syllables, the vowel
+	# 			directly before the tonic is dropped”
 	k > ts / #_{i,e}
 	ts > s / #_{i,e}
 	k > ɡ / #_{a,r}

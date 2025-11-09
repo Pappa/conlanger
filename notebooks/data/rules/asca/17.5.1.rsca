@@ -27,7 +27,8 @@
 	e > i / _:[- stress](C…)#
 	o > a / _:[- stress]{(C…),u}#
 	{ai,oi} > i:[+ long] / _:[- stress]#
-	# “The following two rules apply if the vowel in question is stressed or follows the stressed syllable”; consonant clusters cannot be /nt nd/:
+	# “The following two rules apply if the vowel in question is stressed or follows the
+	# 			stressed syllable”; consonant clusters cannot be /nt nd/:
 	i u > e o / _C(…C){{ a, a:[+ long] },{ e, e:[+ long] },{ o, o:[+ long] }}
 	e o > i u / _C(…C){H,j}
 	C > Cʲ / _{F,j}
@@ -49,13 +50,16 @@
 	{l,h}l {l,h}r l{p,s,n} r{p,s} ln > l:[+ long] r:[+ long] l:[+ long] r:[+ long] (l:[+ long]?) / []_ ;; [anything]_
 	C:[+ long] > C:[- long]
 	V > ∅ / C_# when unstressed // C = j
-	C(…C) > ∅ / _# // /l r/ and clusters containing them; “[t]his remained a phonologically conditioned rule in OIr”
+	C(…C) > ∅ / _# // /l r/ and clusters containing them; “[t]his remained a phonologically
+				conditioned rule in OIr”
 	{au,eu,ou} > o:[+ long]
 	ei > e:[+ long]
 	o:[+ long] > ua / _:[+ stress][] ;; _[anything], when stressed
 	e:[+ long] > ia / _:[+ stress]{#,Cʲ}
 	j > ∅
-	# The second and third rule below “may well have been for the most part optional”; every one of the three “only applies to unstressed vowels” and “remained as a phonologically conditioned rule”:
+	# The second and third rule below “may well have been for the most part optional”;
+	# 			every one of the three “only applies to unstressed vowels” and “remained as a
+	# 			phonologically conditioned rule”:
 	V:[+ long] > V:[- long]
 	a > e / _#
 	{e,o} > a / _[] ;; _[anything]

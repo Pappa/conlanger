@@ -30,7 +30,8 @@
 	u > o / _{ʕ,ɣ,x,r}
 	u > o / {ʕ,ɣ,x,r}_
 	{u,a,i} > ∅ / _:[+ stress, - long]%
-	# Epenthesis in medial CCC clusters, often so that the syllable break is between the second and third consonants
+	# Epenthesis in medial CCC clusters, often so that the syllable break is between the
+	# 			second and third consonants
 	u:[+ long] i:[+ long] > u i
 	a > a / _C:[+ dorsal]
 	a > e / _(C)(C){ i, i:[+ long] }

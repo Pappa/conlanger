@@ -1,6 +1,11 @@
 @ 17.12.1.1.2 - Latin to Catalan
 # citation: Mecislau
-	# NB: Due to problems when the board migrated to a different system, a lot of the special characters were replaced with 〈?〉. In many cases these have been replaced with 〈∅〉 because it was likely that this was what was meant, but conditional 〈?〉 has either been left alone or attempted to have been filled in from context. In some cases, conditional 〈?〉 may have been used to mark stress or syllable boundaries. Take such changes with a grain of salt and use at your own risk.
+	# NB: Due to problems when the board migrated to a different system, a lot of the
+	# 			special characters were replaced with 〈?〉. In many cases these have been replaced with
+	# 			〈∅〉 because it was likely that this was what was meant, but conditional 〈?〉 has either
+	# 			been left alone or attempted to have been filled in from context. In some cases,
+	# 			conditional 〈?〉 may have been used to mark stress or syllable boundaries. Take such
+	# 			changes with a grain of salt and use at your own risk.
 	h > ∅
 	n > ∅ / _s
 	{m,n,t} > ∅ / _#
@@ -67,14 +72,19 @@
 	k ɡ > ∅ {∅,ʒ} / V_{i,e}
 	ɡ > ∅ / V_V%”V
 	k j > ɡ ʒ / V_V
-	# “These next two changes are awkward - Basically, when the final vowel drops off down below, the newly-final d should become w; BUT d should also have become z and disappeared before the final vowels drop off, leaving a dilem[m]a... I’m not certain how this should be [interpreted]”
+	# “These next two changes are awkward - Basically, when the final vowel drops off
+	# 			down below, the newly-final d should become w; BUT d should also have become z and
+	# 			disappeared before the final vowels drop off, leaving a dilem[m]a... I’m not certain how
+	# 			this should be [interpreted]”
 	d > z / V_V
 	z > ∅ / V_V
 	d > w / _V#
 	i:[+ long] > ∅ / _#
 	{i,{ e, e:[+ long] },ae} > ∅ / _(C)#
 	{{ u, u:[+ long] },{ o, o:[+ long] }} > ∅ / _#
-	V > ∅ / “between first and tonic syllables; except when C_CC, _n”; “if there are multiple vowels between the initial and tonic syllables, the vowel directly before the tonic is usually dropped” // V = a
+	V > ∅ / “between first and tonic syllables; except when C_CC, _n”; “if there are multiple
+				vowels between the initial and tonic syllables, the vowel directly before the tonic
+				is usually dropped” // V = a
 	w > ∅ / u_#
 	j ɡj ts z n > tʃ i w s ∅ / _#
 	t > ∅ / V_sV

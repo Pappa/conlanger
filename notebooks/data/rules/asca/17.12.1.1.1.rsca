@@ -1,5 +1,8 @@
 @ 17.12.1.1.1 - Classical Latin vs. Vulgar Latin
-	# “The following relate to the changes of vowels as found in the evolution to the written medieval languages of Iberia, Gallia and Italia (Anglo-Norman, Old Spanish, etc.). The Latin of Africa, Sardinia and the easternmost parts of the Empire exhibited different mergers.”
+	# “The following relate to the changes of vowels as found in the evolution to the
+	# 			written medieval languages of Iberia, Gallia and Italia (Anglo-Norman, Old Spanish,
+	# 			etc.). The Latin of Africa, Sardinia and the easternmost parts of the Empire exhibited
+	# 			different mergers.”
 	{e,i} > j / C_V when unstressed
 	{e,ai} > ɛ
 	{i,e:[+ long],oi} > e
@@ -8,7 +11,8 @@
 	{u,o:[+ long]} > o
 	u:[+ long] > u
 	a:[+ long] > a
-	m > n / _# “(in certain common monosyllabic words, as well as some common compounds of them)”
+	m > n / _# “(in certain common monosyllabic words, as well as some common compounds of
+				them)”
 	m > ∅ / _#
 	h > ∅
 	w > β

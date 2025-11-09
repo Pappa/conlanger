@@ -1,6 +1,11 @@
 @ 17.7.2.1.3 - Old English to Midlands Middle English
-# citation: Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English Phonology and Midd le English Grammar for Courses in Chaucer, Middle English, and the History of the English Language; and Wikipedia contributors (2011), “Middle English phonology”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Middle_English_phonology>
-	V:[+ long] > V:[- long] / _C{ː,C} // _st{#,V} or when preceding a cluster which had triggered a vowel to become long in Old English; the book gives “Christ” vs. “Christmas” as an example
+# citation: Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English Phonology and
+# 			Midd le English Grammar for Courses in Chaucer, Middle English, and the History of the
+# 			English Language; and Wikipedia contributors (2011), “Middle English phonology”.
+# 			Wikipedia, the Free Encyclopedia.
+# 			<http://en.wikipedia.org/w/index.php?title=Middle_English_phonology>
+	V:[+ long] > V:[- long] / _C{ː,C} // _st{#,V} or when preceding a cluster which had triggered a vowel to become
+				long in Old English; the book gives “Christ” vs. “Christmas” as an example
 	eɑ e:[+ long]ɑ eo e:[+ long]o > ɑ ɛ:[+ long] e e:[+ long]
 	æj > aj
 	aj > ej
@@ -12,7 +17,8 @@
 	oɣ > ɔ:[+ long]w / _V
 	{ɑ:[+ long]ht,{ o, o:[+ long] }ht} > ow
 	ɑ:[+ long] { y, y:[+ long] } > ɔ:[+ long] { i, i:[+ long] }
-	ɑ e o > ɑ:[+ long] ɛ:[+ long] o:[+ long] / in U:[+open] // in #U with the following U containing /i:[+ long]/ or ending in one of /m n r l/
+	ɑ e o > ɑ:[+ long] ɛ:[+ long] o:[+ long] / in U:[+open] // in #U with the following U containing /i:[+ long]/ or ending in one of /m n r
+				l/
 	V:[+ long] > V:[- long] / in #U before a U with /i:[+ long]/
 	m > n / _:[- stress]#
 	n > ∅ / _:[- stress]#

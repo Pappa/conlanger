@@ -1,0 +1,7 @@
+@into
+    K > [+cons, -fr, +bk, +hi, -lo]
+    h₁, h₂, h₃ > h, x, ɣʷ
+    
+@from
+    [+cons, -fr, +bk, +hi, -lo] => K
+    h, x, ɣʷ => h₁, h₂, h₃

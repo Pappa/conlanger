@@ -1,5 +1,8 @@
 @ 17.8.8 - Proto-Indo-European to Ionic Greek
-# citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects>
+# citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound Changes”.
+# 			The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors (2013),
+# 			“Ancient Greek dialects”. Wikipedia, the Free Encyclopedia.
+# 			<https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects>
 	{Hx,m̩,n̩} > a
 	bʱ dʱ ɡʱ > pʰ tʰ kʰ
 	s > h / #_
@@ -23,7 +26,8 @@
 	# Vowel contraction (on which the author does not elaborate much)
 	æ:[+ long] > ɛ:[+ long]
 	ej ow > e:[+ long] o:[+ long] happened “in the various Ionic dialects at various dates”
-	# Some “metathesis of quality as well as of quantity” with regards to vowels; did not occur to the same degree as it did in Attic
+	# Some “metathesis of quality as well as of quantity” with regards to vowels; did not
+	# 			occur to the same degree as it did in Attic
 	{ u, u:[+ long] }(j) > { y, y:[+ long] }(j)
 	o:[+ long] > u:[+ long]
 	j > ∅ / V:[+ long]_

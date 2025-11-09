@@ -1,10 +1,17 @@
 @ 17.7.2.1 - West Germanic to Anglo-Frisian
-# citation: Siride? & Pogostick Man, the latter citing Wikipedia contributors (2014), “Anglo-Frisian languages”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Anglo-Frisian_languages>; Wikipedia contributors (2014), “Old Frisian”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Old_Frisian>; and Wikipedia contributors (2014), “Old English phonology”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Old_English_phonology>
+# citation: Siride? & Pogostick Man, the latter citing Wikipedia contributors (2014),
+# 			“Anglo-Frisian languages”. Wikipedia, the Free Encyclopedia.
+# 			<https://en.wikipedia.org/w/index.php?title=Anglo-Frisian_languages>; Wikipedia
+# 			contributors (2014), “Old Frisian”. Wikipedia, the Free Encyclopedia.
+# 			<https://en.wikipedia.org/w/index.php?title=Old_Frisian>; and Wikipedia
+# 			contributors (2014), “Old English phonology”. Wikipedia, the Free Encyclopedia.
+# 			<https://en.wikipedia.org/w/index.php?title=Old_English_phonology>
 	a > ɑ̃ / _:[- long]N
 	VN > Ṽ:[+ long] / _F
 	a > æ:[+ long] / short only, includes diphthongs // B or *ã in next syllable
 	k ɡ > tʃ j(?)
-	æ:[+ long] > a:[+ long] “under to [sic] the influence of neighboring consonants”, but the article doesn’t elaborate
+	æ:[+ long] > a:[+ long] “under to [sic] the influence of neighboring consonants”, but the
+				article doesn’t elaborate
 	æ:[+ long] > e:[+ long]
 	æu > au
 	a:[+ long] > æ:[+ long] / ! _N or if nasalized

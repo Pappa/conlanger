@@ -1,5 +1,6 @@
 @ 7.4 - Proto-Algonquian to Blackfoot
-# citation: Whimemsz, from Proulx, Paul (1989), “A Sketch of Blackfoot Historical Phonology”. International Journal of American Linguistics, 55:43 – 82
+# citation: Whimemsz, from Proulx, Paul (1989), “A Sketch of Blackfoot Historical Phonology”.
+# 			International Journal of American Linguistics, 55:43 – 82
 	{θ,tʃ,ʃ,r} > t / unless adjacent to another consonant
 	∅ > x / _s // _C{C,#}
 	j > s / ! C_
@@ -29,7 +30,8 @@
 	w > j / {r,k}_i#
 	∅ > i / r_w
 	w > ∅ / C_
-	{ji:[+ long],ja,ahi} {owa:[+ long],awa,awe} awi {i:[+ long]wa,e:[+ long]wa,aji,aje,ani} > i o:[+ long] o(ji) i:[+ long] / C_C
+	{ji:[+ long],ja,ahi} {owa:[+ long],awa,awe} awi {i:[+ long]wa,e:[+
+				long]wa,aji,aje,ani} > i o:[+ long] o(ji) i:[+ long] / C_C
 	hi > ∅ / a:[+ long]_
 	∅ > i / #_jC
 	∅ > i / C_jV#
@@ -50,7 +52,8 @@
 	e > ∅ / O_ in #U (not universal)
 	{me,ne} > ∅ / #_O “(followed by truncation of following x)”
 	{we,wi:[+ long]} > o / #_
-	tsi > ∅ / $_OO “(before a prefix; the first obstruent of the follow[ing] cluster then becomes ʔ)
+	tsi > ∅ / $_OO “(before a prefix; the first obstruent of the follow[ing] cluster then becomes
+				ʔ)
 	a:[+ long] > aa / W_ // when _{C{C,ː},#}
 	a:[+ long] > a / _ ! W_ // when _{C{C,ː},#}
 	o:[+ long] > o

@@ -1,6 +1,10 @@
 @ 17.8.4 - Proto-Indo-European to Coan Greek
-# citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects>
-	# NB: This assumes that the adjective “Coan” refers to the “Ceos” Tucker mentions in the source.
+# citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound Changes”.
+# 			The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors (2013),
+# 			“Ancient Greek dialects”. Wikipedia, the Free Encyclopedia.
+# 			<https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects>
+	# NB: This assumes that the adjective “Coan” refers to the “Ceos” Tucker mentions in
+	# 			the source.
 	{Hx,m̩,n̩} > a
 	bʱ dʱ ɡʱ > pʰ tʰ kʰ
 	s > h / #_

@@ -1,6 +1,12 @@
 @ 30.1 - Proto-Potou-Akanic-Bantu to Proto-Bantu
-# citation: Pogostick Man, from Stewart, John M. (2002), “The potential of proto-Potou-Akanic-Bantu as a pilot Proto-Niger-Congo, and the reconstructions updated”. JALL 23:197 – 224
-	# NB: For at least the first batch of sound changes herein, the sound changes applying to those consonants in #U will also apply in U2 under the following conditions, as reported by Stewart (2002): If V2 = V1 (vowel nasality does not necessarily have to be the same, however), changes affecting the vowels will also affect V2. If C is an approximant, changes involving a nasalized V1 will also affect C2 and V2.
+# citation: Pogostick Man, from Stewart, John M. (2002), “The potential of
+# 			proto-Potou-Akanic-Bantu as a pilot Proto-Niger-Congo, and the reconstructions updated”.
+# 			JALL 23:197 – 224
+	# NB: For at least the first batch of sound changes herein, the sound changes
+	# 			applying to those consonants in #U will also apply in U2 under the following conditions,
+	# 			as reported by Stewart (2002): If V2 = V1 (vowel nasality does not necessarily have to
+	# 			be the same, however), changes affecting the vowels will also affect V2. If C is an
+	# 			approximant, changes involving a nasalized V1 will also affect C2 and V2.
 	ʋ̃ > l̃ / #_
 	u ũ > i ı̃ / #R:[-labial]_
 	ʋ̃ ɪ̃ > ũ ı̃ / #N:[-labial]_

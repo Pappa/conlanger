@@ -1,6 +1,10 @@
 @ 17.11.1 - Proto-Slavic to Polish
-# citation: Xiądz Faust, in http://pittmirg.ovh.org/inne/psc.pdf http://pittmirg.ovh.org/inne/psc.pdf, mainly citing Klemensewicz et al. (1955), “Gramatyka historyczna języka polskiego”, and Dubisz and Długosz-Kurczabowa (2003?), “Gramatyka historyczna języka polskiego”
-	# NB: The original document heavily uses Slavistic notation as opposed to IPA; I’ve done the best I could in figuring this stuff out but be warned of possible errors.
+# citation: Xiądz Faust, in http://pittmirg.ovh.org/inne/psc.pdf
+# 			http://pittmirg.ovh.org/inne/psc.pdf, mainly citing Klemensewicz et al. (1955),
+# 			“Gramatyka historyczna języka polskiego”, and Dubisz and Długosz-Kurczabowa (2003?),
+# 			“Gramatyka historyczna języka polskiego”
+	# NB: The original document heavily uses Slavistic notation as opposed to IPA; I’ve
+	# 			done the best I could in figuring this stuff out but be warned of possible errors.
 	sk x > ɕtɕ ɕ / _E
 	x > ɕ / E_
 	ɛl > lɔ / T_T “in certain cases (mostly after a PSl. palato-alveolar”)
@@ -14,7 +18,8 @@
 	# Havlik’s law:
 	{ь,ъ} > e / iambic counting from U# or a syllable not containing a yer
 	{ь,ъ} > ∅] / in even syllables counting iambic from U# or a syllable not containing a yer
-	# — “[H]owever: in the vicinity of *j the development of yers did not comply with the aforementioned law”
+	# — “[H]owever: in the vicinity of *j the development of yers did not comply with the
+	# 			aforementioned law”
 	ъ > a:[+ long] / _r
 	ъl > ɔ(ː)ɫ / P_
 	ъl > ɛɫ / K_
@@ -40,12 +45,15 @@
 	{aja,ɛja,ьja,ɔja} > a:[+ long]
 	iji ɨjɨ > i ɨ
 	ɔvi > ∅
-	O:[+voice] > O:[-voice] / _# (unless followed by some type of voiced consonant, be it any type of consonant or just an obstruent—this differs by location)
+	O:[+voice] > O:[-voice] / _# (unless followed by some type of voiced consonant, be it any type of consonant
+				or just an obstruent—this differs by location)
 	ɔ > ɔ:[+ long] / _{r,l}
 	∅ > h / _ъ
 	# Mobile stress > initial stress > penultimate stress (in most areas)
 	V > ∅ / [- stress]
-	i > ∅ / _# “in the infinite and imperative desinences. . .some verbs have never been affected due to a potential ‘difficult’ cluster that would result, instead they got an analogical final -j extension”
+	i > ∅ / _# “in the infinite and imperative desinences. . .some verbs have never been
+				affected due to a potential ‘difficult’ cluster that would result, instead they got
+				an analogical final -j extension”
 	tsi ʐi > tɕ ʐ / V_
 	i u > u i / {lʲ,j}_
 	tʲ dʲ sʲ zʲ nʲ rʲ l lʲ > tɕ dʒ ɕ ʑ ȵ r ɫ l (this last probably not before /i/)
@@ -55,7 +63,8 @@
 	ã > ɔ̃
 	a:[+ long] ɔ:[+ long] ɛ:[+ long] > ɒ o e
 	V:[+ long] > V in certain frequently-used words
-	# Sporadic (de)nasalization of vowels; “there were certain environments which favoured nasality changes: in the vicinity of nasal consonants. . .and before sibilants”
+	# Sporadic (de)nasalization of vowels; “there were certain environments which
+	# 			favoured nasality changes: in the vicinity of nasal consonants. . .and before sibilants”
 	{i,ɨ} > ɛ / _C:[+rhotic]
 	k ɡ > kʲ ɡʲ / _ɛ where the vowel is from a yer or a borrowing
 	kɨ ɡɨ > kʲi ɡʲi
@@ -137,8 +146,8 @@
 	ɕtɕkl > {ɕ,s}kɫ
 	{ɕ,s}kɫ > ʂkɫ
 	dz ts > d͜z t͜s
-	C:[+sibilant]P > C:[+alveolopalatal] / _C:[+coronal]
-	C:[+sibilant]P > C:[+dental]
+;;	C:[+sibilant]P > C:[+alveolopalatal] / _C:[+coronal]
+;;	C:[+sibilant]P > C:[+dental]
 	w > ∅ / C_#
 	w > ∅ / C_C
 	n > s

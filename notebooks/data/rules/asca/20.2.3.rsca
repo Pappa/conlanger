@@ -1,5 +1,6 @@
 @ 20.2.3 - Proto-Kx’a to Southeastern !Xun
-# citation: Pogostick Man, from Heine, Bernd and Henry Honken (2010), “The Kx’a family: A New Khoisan Genealogy”
+# citation: Pogostick Man, from Heine, Bernd and Henry Honken (2010), “The Kx’a family: A New
+# 			Khoisan Genealogy”
 	a > ∅ / #_m
 	ui > o
 	i > ∅ / V_
@@ -8,7 +9,8 @@
 	o > ∅ / _u
 	o > a / _Ca
 	a > ∅ / _(C)o
-	# “Some weird stuff with vowel pharyngealization/glottalization; some of the pharyngealized proto-vowels stayed that way, others glottalized”
+	# “Some weird stuff with vowel pharyngealization/glottalization; some of the
+	# 			pharyngealized proto-vowels stayed that way, others glottalized”
 	ʕm > {b,ɓ}
 	n > ∅ / _#
 	ts(ʼ) s > tʃ(ʼ) ʃ

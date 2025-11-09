@@ -1,5 +1,6 @@
 @ 10.2.6.1 - Proto-North Sarawak to Kiput
-# citation: Whimemsz, from Blust, Robert (2002), “Kiput Historical Phonology”. Oceanic Linguistics 41(2):384 – 438
+# citation: Whimemsz, from Blust, Robert (2002), “Kiput Historical Phonology”. Oceanic Linguistics
+# 			41(2):384 – 438
 	# Stress reassignment to the final syllable
 	ʔ > ∅ / V_V
 	k > ∅ / V_V
@@ -11,7 +12,8 @@
 	s > ∅ / V_V
 	V₀V₀ > V₀
 	ə > ∅ / _,V
-	V:[+stress] > V:[+ long] / _C# // V = ə and/or C = h “(applies to diphthongal nuclei as well a[s] monophthongs)”
+	V:[+stress] > V:[+ long] / _C# // V = ə and/or C = h “(applies to diphthongal nuclei as well a[s]
+				monophthongs)”
 	ʀ > {l,ɾ} / ! _#
 	l > ∅ / ! _#
 	u > əw / _V
@@ -22,7 +24,8 @@
 	i u > ɛ ɔ / _C# // _P
 	ʀ > ʔ / _#
 	ʀ > ɾ
-	a > i / O:[+ voice]…_(C)# “(blocked if there was an intervening nasal, and sometimes if there was an intervening voiceless stop or liquid)”
+	a > i / O:[+ voice]…_(C)# “(blocked if there was an intervening nasal, and sometimes if
+				there was an intervening voiceless stop or liquid)”
 	i u > əi̯ əu̯ / _(ʔ)#
 	əi̯ əu̯ > ai̯ au̯ / ! O:[+ voice] earlier in the word
 	bʱ {dʱ,dzʱ} ɡʱ > f s k

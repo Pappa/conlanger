@@ -1,5 +1,6 @@
 @ 17.7.3.1.2 - Old Norse to Orkney Norn
-# citation: Pogostick Man and Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from http://nornlanguage.x10.mx/index.php?ork_phon, citing Marwick, Hugh, “Orkney Norn”
+# citation: Pogostick Man and Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from
+# 			http://nornlanguage.x10.mx/index.php?ork_phon, citing Marwick, Hugh, “Orkney Norn”
 	ny > in
 	f > m / _n
 	n > ∅ / m_
@@ -41,7 +42,8 @@
 	o > ø / _Cr
 	o:[+ long] > ø:[+ long] / _(C)(C)#
 	o:[+ long] > { u, u:[+ long] }
-	jo:[+ long] > {u,o,ø} (looks like being in the ultima or the penult may have had something to do with it, but it isn’t clear to me)
+	jo:[+ long] > {u,o,ø} (looks like being in the ultima or the penult may have had something to
+				do with it, but it isn’t clear to me)
 	ɒ > ɔ / _C(ː)C
 	ɒ > ʌ / _{ r, r:[+ long] }
 	ɒ > {ɛ,e} / _C:[+ long]V (V can be a syllabic consonant)
