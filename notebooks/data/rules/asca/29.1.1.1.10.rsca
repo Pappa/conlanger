@@ -3,9 +3,9 @@
 # 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
 	# NB: Here, 〈TS〉 represents a sound that Whimemsz says “is between” the TH and TS
 	# 			series POA-wise.
-	TS K > TŠ TS / _E
-	TS K > TH TŠ / _ // _E
-	TŠ TŠʷ Q > TS TṢ K
+	TS [+ cons, - fr, + bk, + hi, - lo] > TŠ TS / _E
+	TS [+ cons, - fr, + bk, + hi, - lo] > TH TŠ / _ // _E
+	TŠ TŠʷ Q > TS TṢ [+ cons, - fr, + bk, + hi, - lo]
 	j w > ʒ v
 	{n,ɲ} > ⁿdʒ / _E:[- nasal]
 	{n,ɲ} > ⁿd / _V:[- nasal]

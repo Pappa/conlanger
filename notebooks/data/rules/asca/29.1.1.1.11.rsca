@@ -1,7 +1,7 @@
 @ 29.1.1.1.11 - Proto-Athabaskan to Han
 # citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
 # 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
-	TS TŠ TŠʷ K Q > TH TS TṢ TŠ K
+	TS TŠ TŠʷ [+ cons, - fr, + bk, + hi, - lo] Q > TH TS TṢ TŠ [+ cons, - fr, + bk, + hi, - lo]
 	# Occasional palatalization in front of high vowels
 	n > (ⁿ)d / $_V:[- nasal]
 	j > ʒ / $_

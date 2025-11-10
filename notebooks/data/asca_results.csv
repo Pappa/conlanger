@@ -1,38 +1,11 @@
 rule,returncode,error
 6.1.rsca,0,
-6.1.1.rsca,-1,"Syntax Error: Unknown grouping 'K'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel
-    |     V:[+ long] > V / #K:[-voice]_C
-    |                       ^
-    @ Rule 2, Line 15"
-6.1.1.1.rsca,-1,"Syntax Error: Segment does not have prerequisite properties to have this diacritic. Must be [-voice]
-    |     dʼ > tʼ
-    |     ^^
-    @ Rule 2, Line 9"
-6.1.1.2.rsca,-1,"Syntax Error: Unknown character ₁ at '1:3:1'.
-    |     x₁ > k
-    |      ^
-    @ Rule 2, Line 4"
-6.1.1.3.rsca,-1,"Syntax Error: Unknown character ₂ at '1:6:1'.
-    |     x₂ > k / #_
-    |      ^
-    @ Rule 2, Line 7"
-6.1.1.4.rsca,-1,"Syntax Error: Unknown character ₁ at '1:4:1'.
-    |     x₁ > k
-    |      ^
-    @ Rule 2, Line 5"
-6.1.1.5.rsca,-1,"Syntax Error: Could not get value of IPA 'ǃ'.
-    |     s > ʃ / ! V_
-    |             ^
-    @ Rule 2, Line 7"
-6.1.1.6.rsca,-1,"Syntax Error: Unknown character ₂ at '1:3:1'.
-    |     x₂ > ∅ / V_V
-    |      ^
-    @ Rule 2, Line 4"
-6.1.1.7.rsca,-1,"Syntax Error: Unknown character ₁ at '1:4:1'.
-    |     x₁ > k
-    |      ^
-    @ Rule 2, Line 5"
-6.1.1.8.rsca,-1,"Syntax Error: Unknown character ₂ at '1:5:1'.
-    |     x₂ > h / #_
-    |      ^
-    @ Rule 2, Line 6"
+6.1.1.rsca,1,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '('     |     e o > i u / #{k(ʼ),x}_{t(ʼ),tsʼ}     |                    ^     @ Rule 2, Line 9"
+6.1.1.1.rsca,1,"Syntax Error: Segment does not have prerequisite properties to have this diacritic. Must be [-voice]     |     dʼ > tʼ     |     ^^     @ Rule 2, Line 6"
+6.1.1.2.rsca,1,"Syntax Error: Segment does not have prerequisite properties to have this diacritic. Must be [-voice]     |     dʼ > tʼ     |     ^^     @ Rule 5, Line 1"
+6.1.1.3.rsca,1,"Syntax Error: Unknown character ₂ at '1:6:1'.     |     x₂ > k / #_     |      ^     @ Rule 2, Line 7"
+6.1.1.4.rsca,1,"Syntax Error: Unknown character ₁ at '1:4:1'.     |     x₁ > k     |      ^     @ Rule 2, Line 5"
+6.1.1.5.rsca,1,"Syntax Error: Unknown character ₂ at '1:9:1'.     |     x₂ > ∅ / V_V     |      ^     @ Rule 2, Line 10"
+6.1.1.6.rsca,1,"Syntax Error: Segment does not have prerequisite properties to have this diacritic. Must be [-voice]     |     dʼ > tʼ / #_     |     ^^     @ Rule 3, Line 3"
+6.1.1.7.rsca,1,"Syntax Error: Unknown character ₂ at '1:6:1'.     |     x₂ > ∅ / V_V     |      ^     @ Rule 2, Line 7"
+6.1.1.8.rsca,1,"Syntax Error: Unknown character ₂ at '1:7:1'.     |     x₂ > ɡ / n_     |      ^     @ Rule 2, Line 8"

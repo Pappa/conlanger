@@ -48,9 +48,16 @@ class RuleComment(RulePartBase):
 
 class RuleChange(RulePartBase):
     prefixes = {"asca": "\t", "brassica": ""}
+    aliases = {
+        "K:[": "[+ cons, - fr, + bk, + hi, - lo, ",
+        "K": "[+ cons, - fr, + bk, + hi, - lo]",
+        "h₁": "h",
+        "h₂": "x",
+        "h₃": "ɣʷ",
+    }
     def __init__(self, rule: Element, format: str = "asca"):
         if rule.attrib.get("skip") == "true":
-            self.prefixes = {"asca": ";;\t", "brassica": ";;\t"}
+            self.prefixes = {"asca": "#\t", "brassica": ";;\t"}
         super().__init__(self._format(rule, format), format)
 
     def _format(self, rule: Element, format: str):
@@ -65,7 +72,6 @@ class RuleChange(RulePartBase):
                     result += " / " + child.text
                 elif child.tag == "exception":
                     result += " // " + child.text
-            return result
         elif format == "brassica":
             for child in rule:
                 if child.tag == "input":
@@ -76,9 +82,15 @@ class RuleChange(RulePartBase):
                     result += " / " + child.text
                 elif child.tag == "exception":
                     result += " // " + child.text
-            return result
         else:
             raise ValueError(f"Unsupported format: {format}")
+
+        return self._apply_aliases(result)
+
+    def _apply_aliases(self, rule: str):
+        for alias, replacement in self.aliases.items():
+            rule = rule.replace(alias, replacement)
+        return rule
     
 
 class SoundChangeRule:

@@ -13,9 +13,9 @@
 	e o > i u / #(ʔ)_C$
 	e o > i u / #P_{tsʼ,tʃʼ}
 	a > o / #{z,dʒ}_P
-;;	{ e, e:[+ long] } > { i, i:[+ long] } / #C:[+sibilant]_{d,n,r}
+#	{ e, e:[+ long] } > { i, i:[+ long] } / #C:[+sibilant]_{d,n,r}
 	Cw > C
-	V:[+ long] > V / #K:[-voice]_C
+	V:[+ long] > V / #[+ cons, - fr, + bk, + hi, - lo, -voice]_C
 	u > u:[+ long] / #S:[+voice]_P:[-voice]
-	V:[+ long] > V / #C_C$ + $(V)C$ suffix
-;;	N > ∅ / V_{C:[+sibilant],p}
+	V:[+ long] > V / #C_C$
+#	N > ∅ / V_{C:[+sibilant],p}

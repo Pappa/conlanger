@@ -22,8 +22,8 @@
 	# 			aforementioned law”
 	ъ > a:[+ long] / _r
 	ъl > ɔ(ː)ɫ / P_
-	ъl > ɛɫ / K_
-	ъl > ɫu / _ // K_
+	ъl > ɛɫ / [+ cons, - fr, + bk, + hi, - lo]_
+	ъl > ɫu / _ // [+ cons, - fr, + bk, + hi, - lo]_
 	ьl > ɫu / C:[+dental]_
 	ьl > ɛɫ / P_C:[+dental -palatalized]
 	ьl > il / P_
@@ -146,8 +146,8 @@
 	ɕtɕkl > {ɕ,s}kɫ
 	{ɕ,s}kɫ > ʂkɫ
 	dz ts > d͜z t͜s
-;;	C:[+sibilant]P > C:[+alveolopalatal] / _C:[+coronal]
-;;	C:[+sibilant]P > C:[+dental]
+#	C:[+sibilant]P > C:[+alveolopalatal] / _C:[+coronal]
+#	C:[+sibilant]P > C:[+dental]
 	w > ∅ / C_#
 	w > ∅ / C_C
 	n > s

@@ -2,7 +2,7 @@
 # citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
 # 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
 	TS {TŠ,TŠʷ} > TH TS
-	K > TŠ
-	Q > K
+	[+ cons, - fr, + bk, + hi, - lo] > TŠ
+	Q > [+ cons, - fr, + bk, + hi, - lo]
 	{ɑ,ə,ʊ} > {a,o}
 	Vˀ > V:[+high tone]

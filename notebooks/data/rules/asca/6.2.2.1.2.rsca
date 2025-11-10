@@ -17,7 +17,7 @@
 	k(w) > tʃ / #_Vt
 	ɡ(w) > dʒ / #_Vd
 	xV > k / _h
-	Kʷ > K
+	[+ cons, - fr, + bk, + hi, - lo]ʷ > [+ cons, - fr, + bk, + hi, - lo]
 	q > ∅ / _i
 	q > i / #_V{Z,C:[+dental]}
 	ʕ > i / #_VR
@@ -25,7 +25,7 @@
 	ʔ > ʕ / _V{n,r,ɡ}
 	{h,ħ,q} > ʕ / C:[+voice]_V
 	q > ʔ / _C:[+dental]
-	{h,ħ} > ʔ / KV_
+	{h,ħ} > ʔ / [+ cons, - fr, + bk, + hi, - lo]V_
 	q > ʔ / h_
 	qh > ʕħ
 	ɣ > ʕ / ħ_

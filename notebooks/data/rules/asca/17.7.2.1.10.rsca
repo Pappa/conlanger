@@ -6,7 +6,7 @@
 	æ:[+ long] > ɛ:[+ long]
 	ɑ > a / ! _{l,r}
 	o:[+ long] > ju / {n,x}_
-	o:[+ long] > iu / _K
+	o:[+ long] > iu / _[+ cons, - fr, + bk, + hi, - lo]
 	o:[+ long] > ø
 	ø:[+ long] > e:[+ long]
 	ø > ɪ
@@ -16,7 +16,7 @@
 	ai > a:[+ long]
 	e > ɛ / _nt
 	{y,i} > ɪ
-	ɪ > ɜ / _{K,r}
+	ɪ > ɜ / _{[+ cons, - fr, + bk, + hi, - lo],r}
 	e(o) > ɛ
 	u > ʊ
 	ʊ > ɵ

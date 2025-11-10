@@ -19,7 +19,7 @@
 	hs > sh / C_
 	hts > tsh / C_V
 	V > V:[+ long] / _”C:[-glottal](R)V{ː,H} in “even numbered syllables only”
-	V > V:[+ long] / _KRV “in the second syllable of a word”
+	V > V:[+ long] / _[+ cons, - fr, + bk, + hi, - lo]RV “in the second syllable of a word”
 	V > V:[+high tone] / _$”V
 	{ a, a:[+ long] } { o, o:[+ long] } õ(ː) > æ(ː) { e, e:[+ long] } ẽ(ː) / r_
 	Vr > V:[+ long] / _C

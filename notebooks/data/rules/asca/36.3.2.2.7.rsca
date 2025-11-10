@@ -8,15 +8,15 @@
 	P t > pdz tʃ / r_
 	Np Nb Nt Nɡ Nç > sts mp mtʰ mk ntsʰdz
 	p > b / _r
-	{d,KT} st > tʃ zdʒ
+	{d,[+ cons, - fr, + bk, + hi, - lo]T} st > tʃ zdʒ
 	dr çdr > ʈ ʂʈdz
-	çK > ʂk
+	ç[+ cons, - fr, + bk, + hi, - lo] > ʂk
 	k rk kr kj Nkj ɡr > kʰdz nɡ kʰr tʃh dʒ nkʰr
 	ɡ > ∅ / _r
 	Pç > b.ç
 	çl > sɬ
-;;	C:[+ sibilant]w ç > swdz sdz
-	NTS KTS lTS > mʈʂ {kts,ʈʂʰ} bɖʐ
+#	C:[+ sibilant]w ç > swdz sdz
+	NTS [+ cons, - fr, + bk, + hi, - lo]TS lTS > mʈʂ {kts,ʈʂʰ} bɖʐ
 	ts dz rdz dʒ > {ʈʂ,ʒ} tsj rtsʰ ʈʂ
 	∅ > j / rN_
 	ç > ʂ / _m

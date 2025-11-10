@@ -17,7 +17,8 @@ dependencies = [
     "pandas",
     "scikit-learn",
     "tqdm",
-    "imbalanced-learn"
+    "imbalanced-learn",
+    "strip-ansi"
 ]
 
 [project.optional-dependencies]

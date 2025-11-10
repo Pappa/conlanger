@@ -1,0 +1,5 @@
+@into
+    K > [+cons, -fr, +bk, +hi, -lo]
+    
+@from
+    [+cons, -fr, +bk, +hi, -lo] => K

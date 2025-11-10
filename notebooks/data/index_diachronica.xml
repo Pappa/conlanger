@@ -142,7 +142,7 @@
 		<rule>
 			<input>V:[+ long]</input>
 			<output>V</output>
-			<env>#C_C$ + $(V)C$ suffix</env>
+			<env>#C_C$</env>
 		</rule>
 		<rule skip="true">
 			<input>N</input>

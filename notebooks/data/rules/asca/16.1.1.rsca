@@ -6,12 +6,12 @@
 	p t > f {s,h} / #_
 	N > ŋ / _#
 	e > i / _(C)i
-	e > æ / {P,K}_
+	e > æ / {P,[+ cons, - fr, + bk, + hi, - lo]}_
 	e > æ / _P
 	e > ə / _C{a,ə,u}
 	ə > o / _(C)o
 	ə > e / _{C:[+palatal],E}
-	ə > æ / ! _{B,K,H}
+	ə > æ / ! _{B,[+ cons, - fr, + bk, + hi, - lo],H}
 	a > æ / _(C)e
 	a > æ / i(C)_
 	o > e

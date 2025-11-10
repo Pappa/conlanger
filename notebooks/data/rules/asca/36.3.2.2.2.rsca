@@ -5,14 +5,14 @@
 # 			5(1):37 – 47
 	# Initials:
 	(N)p Nb sP çp çb pr br {p,b}j > (m)pʰ (m)p sp ʝb çp br pʰj pʰj
-	(N)t (N)d st sd KT çT tr dr çtr > (N)tʰ mt zd st kt çt(j) trh tr çtr
-	(P)ɡ sɡ çK Nɡ k sk rk (s)ɡj (ʔ)kj > (p)k sk çk mk kʰ zɡ Nɡ (s)kj (ʔ)kʰj
-	Nkj (s)ɡr Kç kr skr ɡr > mɡj (s)kr ɡçkr kʰr zɡr Nɡr
-	K > ʔ / _s
-;;	C:[+ sibilant] > s / _w
-	N P K > m p k / _ç
+	(N)t (N)d st sd [+ cons, - fr, + bk, + hi, - lo]T çT tr dr çtr > (N)tʰ mt zd st kt çt(j) trh tr çtr
+	(P)ɡ sɡ ç[+ cons, - fr, + bk, + hi, - lo] Nɡ k sk rk (s)ɡj (ʔ)kj > (p)k sk çk mk kʰ zɡ Nɡ (s)kj (ʔ)kʰj
+	Nkj (s)ɡr [+ cons, - fr, + bk, + hi, - lo]ç kr skr ɡr > mɡj (s)kr ɡçkr kʰr zɡr Nɡr
+	[+ cons, - fr, + bk, + hi, - lo] > ʔ / _s
+#	C:[+ sibilant] > s / _w
+	N P [+ cons, - fr, + bk, + hi, - lo] > m p k / _ç
 	l > ∅ / #ç_
-	ts (r)dz dzl dʒ NTS PTS Kts KTS sTS çTS > tsʰ (r)ts Ndz tsl ts ptç ktç kts sts {s,ç}ts
+	ts (r)dz dzl dʒ NTS PTS [+ cons, - fr, + bk, + hi, - lo]ts [+ cons, - fr, + bk, + hi, - lo]TS sTS çTS > tsʰ (r)ts Ndz tsl ts ptç ktç kts sts {s,ç}ts
 	LTS > ldʒ
 	N > m / _{ŋ,ɲ}
 	*w > ʔ / something to do either with back vowels or prefixes

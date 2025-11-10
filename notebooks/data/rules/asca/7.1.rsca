@@ -16,7 +16,7 @@
 	iw > o / _#
 	w > ∅ / _# // { k, k:[+ long] }_
 	j > ∅ / _# // P_
-	w > ∅ / C_ // C = K
+	w > ∅ / C_ // C = [+ cons, - fr, + bk, + hi, - lo]
 	j > ∅ / _C
 	i > ∅ / #w_
 	θ > n / #_

@@ -155,7 +155,7 @@
 	ʊa > o
 	ʊe > e
 	C:[- voice] > C:[+ voice] / {l,N}_
-;;	C:[+ sibilant] > C:[+ affricate] / _#
+#	C:[+ sibilant] > C:[+ affricate] / _#
 	s̻ ts̺ > s̺ ts̻
 	s̻ > s̺ / _{C,#}
 	# From the Wikipedia article on Biscayan: “Convergence of sibilants: z, x and s >
