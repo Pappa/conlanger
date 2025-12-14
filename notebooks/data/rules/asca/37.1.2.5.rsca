@@ -1,9 +1,9 @@
 @ 37.1.2.5 - Proto-Northern Iroquoian to Seneca
 # citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”,
 # 			University of Manitoba, Winnipeg
-	ts > s / ! _{i,j}
+	t͡s > s / ! _{i,j}
 	n > ∅ / _s
-	j > ∅ / _ts
+	j > ∅ / _t͡s
 	V > V:[+ long] / _{t,k(ʷ),s,n,r,j,w} “in even penultimate syllables”
 	# “The inherited accent system is replaced by a new one, by which...
 	# 			— “the accent falls on the last nonfinal even short syllable of a word if this vowel is
@@ -47,7 +47,7 @@
 	k > ∅ / _hts
 	t > h / _{n,t}
 	t > ∅ / k_#
-	{ths,tts} > tsh
+	{ths,tts} > t͡sh
 	{ a, a:[+ long] } æ(ː) > õ(ː) ẽ(ː) / n_
 	{ a, a:[+ long] } > õ(ː) / V:[+ nasal]H_
 	{ a, a:[+ long] } > õ(ː) / V:[+ nasal]({ʔ,s})w_

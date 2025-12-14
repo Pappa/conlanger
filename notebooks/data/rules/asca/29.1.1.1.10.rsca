@@ -1,13 +1,13 @@
 @ 29.1.1.1.10 - Proto-Athabaskan to Easter Gwich’in
 # citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
 # 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
-	# NB: Here, 〈TS〉 represents a sound that Whimemsz says “is between” the TH and TS
+	# NB: Here, 〈t͡s〉 represents a sound that Whimemsz says “is between” the TH and t͡s
 	# 			series POA-wise.
-	TS [+ cons, - fr, + bk, + hi, - lo] > TŠ TS / _E
-	TS [+ cons, - fr, + bk, + hi, - lo] > TH TŠ / _ // _E
-	TŠ TŠʷ Q > TS TṢ [+ cons, - fr, + bk, + hi, - lo]
+	t͡s [+ cons, - fr, + bk, + hi, - lo] > TŠ t͡s / _E
+	t͡s [+ cons, - fr, + bk, + hi, - lo] > TH TŠ / _ // _E
+	TŠ TŠʷ Q > t͡s TṢ [+ cons, - fr, + bk, + hi, - lo]
 	j w > ʒ v
-	{n,ɲ} > ⁿdʒ / _E:[- nasal]
+	{n,ɲ} > ⁿd͡ʒ / _E:[- nasal]
 	{n,ɲ} > ⁿd / _V:[- nasal]
 	{i,e} > {i,ja} (this latter due to the loss of final consonants within the stem)
 	a u {ɑ,ə} ʊ > {i,e} ju a o

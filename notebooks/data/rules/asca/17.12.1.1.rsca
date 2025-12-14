@@ -102,8 +102,8 @@
 	z > r / r_
 	n > l / l_
 	V > V:[+ long] / _{t,d}t
-	{t,d}t > tst
-	tst > s:[+ long]
+	{t,d}t > t͡st
+	t͡st > s:[+ long]
 	∅ > t / s:[+ long]_r
 	∅ > p / m_{s,t,l}
 	s:[+ long] > s / _#

@@ -1,16 +1,16 @@
 @ 37.1.2.6 - Proto-Northern Iroquoian to Tuscarora
 # citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”,
 # 			University of Manitoba, Winnipeg
-	ts > tʃ / _{h,i,j}
-	ths > tʃ
-	j > ∅ / tʃ_
+	t͡s > t͡ʃ / _{h,i,j}
+	ths > t͡ʃ
+	j > ∅ / t͡ʃ_
 	t > ˀt
 	”V > ”V:[+ long] / _n in “penultimate syllables only”
 	n > t / ! _{h,kʷ,V:[+ nasal]}
 	”V > ”V:[+ long] / _{k(ʷ),(ˀ)t}{s,R,H} (“penultimate syllables only”)
 	”V > ”V:[+ long] / _RR
 	{ẽ(ː),õ(ː)} > ə̃(ː)
-	ts > θ
+	t͡s > θ
 	ˀt > tʔ / _ˀt
 	ˀt > ∅ / _t
 	ˀt > ʔ / _r
@@ -19,7 +19,7 @@
 	ˀt > t
 	h > ∅ / _nh
 	h > ∅ / #_w
-	h > ∅ / k_{s,ts,tʃ}
+	h > ∅ / k_{s,t͡s,t͡ʃ}
 	h > ∅ / V:[+ long]_#
 	w > ∅ / _jh
 	n > t / _kʷ

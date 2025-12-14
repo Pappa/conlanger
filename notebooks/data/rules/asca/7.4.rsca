@@ -1,11 +1,11 @@
 @ 7.4 - Proto-Algonquian to Blackfoot
 # citation: Whimemsz, from Proulx, Paul (1989), “A Sketch of Blackfoot Historical Phonology”.
 # 			International Journal of American Linguistics, 55:43 – 82
-	{θ,tʃ,ʃ,r} > t / unless adjacent to another consonant
+	{θ,t͡ʃ,ʃ,r} > t / unless adjacent to another consonant
 	∅ > x / _s // _C{C,#}
 	j > s / ! C_
 	h > ∅ / ! _C
-	{ʃ,tʃ} > s / #_
+	{ʃ,t͡ʃ} > s / #_
 	{ʔθ,ʔr} > {ʔ,j,∅}
 	nr > s
 	h > x / _{p,k}
@@ -16,12 +16,12 @@
 	{n,s} > x / _t
 	ntʃ > ʔt
 	ns sk > {x,s} {x,s:[+ long]}
-	θp tʃp ʃp > {x,s:[+ long]} ʔp s:[+ long]p
+	θp t͡ʃp ʃp > {x,s:[+ long]} ʔp s:[+ long]p
 	ʃ > x / _k
 	x > s:[+ long] / {i,#e,ja,ke}_
 	x > s:[+ long] / { e, e:[+ long] }_s
 	∅ > s / {{ i, i:[+ long] },#e}_t
-	t > ts / _{i,{ e, e:[+ long] },a}
+	t > t͡s / _{i,{ e, e:[+ long] },a}
 	∅ > s / k_{ i, i:[+ long] }
 	s:[+ long]ː > s:[+ long]
 	e > i / {#,k}_
@@ -52,7 +52,7 @@
 	e > ∅ / O_ in #U (not universal)
 	{me,ne} > ∅ / #_O “(followed by truncation of following x)”
 	{we,wi:[+ long]} > o / #_
-	tsi > ∅ / $_OO “(before a prefix; the first obstruent of the follow[ing] cluster then becomes
+	t͡si > ∅ / $_OO “(before a prefix; the first obstruent of the follow[ing] cluster then becomes
 				ʔ)
 	a:[+ long] > aa / W_ // when _{C{C,ː},#}
 	a:[+ long] > a / _ ! W_ // when _{C{C,ː},#}

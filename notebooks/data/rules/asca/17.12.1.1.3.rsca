@@ -39,11 +39,11 @@
 	ò > uo
 	uo > uɛ / in U:[+open] // _N
 	ò > ɔ / in U:[+closed]
-	dj > dʒ / r_
+	dj > d͡ʒ / r_
 	d > ∅ / _j
 	j > ∅ / V_”E
-	j tj > dʒ ts / #_
-	j > dʒ / V_V
+	j tj > d͡ʒ t͡s / #_
+	j > d͡ʒ / V_V
 	∅ > s / t_j
 	t > s / s_j
 	{ɡn,nj} > ɲ
@@ -75,15 +75,15 @@
 	kʷ > j{v,u} / V_a
 	# “[N]ote that the [following] clusters are the only case where a consonant does not
 	# 			receive intervocalic treatment before /j/”:
-	(k)kj > ts
+	(k)kj > t͡s
 	ɡ > ∅ / _j
-	pj > tʃ
-	{b,v}j > dʒ
-	m{ɲ,j} > ndʒ
+	pj > t͡ʃ
+	{b,v}j > d͡ʒ
+	m{ɲ,j} > nd͡ʒ
 	V”e > ”Vi
 	V₀V₀ > V₀
 	∅ > e / #_sC
-	k ɡ > tʃ dʒ / _a
+	k ɡ > t͡ʃ d͡ʒ / _a
 	t > ∅ / {ʃ,s}
 	d > ∅ / _{z,ʒ}
 	ɛ ɔ > iɛ uɛ / _{Cj,jC}
@@ -106,7 +106,7 @@
 	e > ɛ / #(C…)_(%…)” in U:[+closed] or _V
 	o > {ou,ɔ} “(the outcome fluctuates, but ɔ is often the result of analogy rather
 				than strict sound change; always ou before another vowel)”
-	a > ə / #{tʃ,dʒ}_(%…)” in U:[+open]
+	a > ə / #{t͡ʃ,d͡ʒ}_(%…)” in U:[+open]
 	a > ɛ / in U:[+open] “(but a following ʎ creates a [closed] syllable)”
 	kʷ ɡʷ > k ɡ
 	C₀C₀ > C₀
@@ -114,7 +114,7 @@
 	ɛ > i / _C(C…)i#
 	V > ∅ / _# “(except in monosyllables or after another vowel)” // V = a
 	a > ə
-	V > ə / _{CC,tʃ,dʒ} // _{nt,nɡ,mp,rt,rd}
+	V > ə / _{CC,t͡ʃ,d͡ʒ} // _{nt,nɡ,mp,rt,rd}
 	s > ∅ / _C
 	{p,b} > ∅ / _{t,d}
 	v > ∅ / _C

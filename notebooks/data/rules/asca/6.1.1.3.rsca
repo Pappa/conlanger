@@ -3,17 +3,17 @@
 # 			(Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)
 	b > w / _$#
 	p > f / V_
-	z z:[+ long] > j dʒ:[+ long]
+	z z:[+ long] > j d͡ʒ:[+ long]
 	s > ʃ / !V_
-	tsʼ > tʃʼ
+	t͡sʼ > t͡ʃʼ
 	x₁ > k
 	x₂ > k / #_
 	x₂ > ∅ / V_V
 #	{s₃,ʒ} > ʃ / #_
-	{ts,ʒ} > tʃ / V_
+	{t͡s,ʒ} > t͡ʃ / V_
 #	s₃ > ʃ / V_V
 #	s₃ > s / V_$#
-	tsʼ > tʃʼ
+	t͡sʼ > t͡ʃʼ
 	ɲ > n
 	x > w / #_
 	l > d / #_VC

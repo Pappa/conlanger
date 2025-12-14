@@ -3,9 +3,9 @@
 # 			Language, 2nd Ed. Cambridge University Press; and Lipski, John (1994), Latin American
 # 			Spanish. Longman Pub Group.
 	b > β / V_V
-	{tj,kj} {t:[+ long]j,k:[+ long]j,ptj,ktj,skj} > ts t:[+ long]s
-	k ɡ > tʃ dʒ / _{j,i,e,ɛ}
-	tʃ dʒ > ts dz / _{j,i,e,ɛ}
+	{tj,kj} {t:[+ long]j,k:[+ long]j,ptj,ktj,skj} > t͡s t:[+ long]s
+	k ɡ > t͡ʃ d͡ʒ / _{j,i,e,ɛ}
+	t͡ʃ d͡ʒ > t͡s dz / _{j,i,e,ɛ}
 	{t,k} > ∅ / _#
 	V > ∅ / C_:[- stress]{r,l} // #,_
 	V > ∅ / {r,l}_:[- stress]C // #,_
@@ -25,7 +25,7 @@
 	oj > we
 	ɛ ɔ > je we
 	”je.o ”je.a > {”i.o,”jo} ”i.a
-	jt js > tʃ ʃ
+	jt js > t͡ʃ ʃ
 	f > h / ! _{ue,L}
 	ɾj pj > jɾ jp / V_
 	ʎ > ʒ
@@ -34,10 +34,10 @@
 	ʝ:[+ long] > ∅ / E_
 	d > {∅,ð} / V_V
 	ɡ > {∅,ɣ} / V_V
-	p t k s ts > b d ɡ z dz / V_V
-	p:[+ long] t:[+ long] k:[+ long] s:[+ long] t:[+ long]s ʝ:[+ long] > p t k s ts ʝ
+	p t k s t͡s > b d ɡ z dz / V_V
+	p:[+ long] t:[+ long] k:[+ long] s:[+ long] t:[+ long]s ʝ:[+ long] > p t k s t͡s ʝ
 	n:[+ long] l:[+ long] ɾɾ > ɲ ʎ r
-	kl pl > ʎ {ʎ,tʃ}
+	kl pl > ʎ {ʎ,t͡ʃ}
 	fl > ʎ
 	V > ∅/ [- stress] ! V = a
 	sj > js / V_
@@ -48,7 +48,7 @@
 	t > ∅ / _m
 	— d > ∅ / _n
 	— mn > ɲ
-	tst dzd > ts dz
+	t͡st dzd > t͡s dz
 	Vdz > ∅ / {nts,ndz,rdz}_
 	ndzVɡ > nɡ
 	mpVt skVp spVt stVk > nt sp st sk
@@ -69,7 +69,7 @@
 	/b/ [b], /β/ [b~β] > /b/ [b~β]
 	b > u / _C
 	l > u / _C
-	ts dz > s̪ z̪
+	t͡s dz > s̪ z̪
 	z̪ z ʒ > s̪ s ʃ
 	ʃ > {x,χ}
 	h > ∅
@@ -77,7 +77,7 @@
 	/dɾ/ [ðɾ] > ɾ / V_V
 	ʎ > /ʝ/ (“merged with”)
 	ʎ > j
-	/ʝ/ [ʝ~dʒ] > [ʒ~dʒ]
+	/ʝ/ [ʝ~d͡ʒ] > [ʒ~d͡ʒ]
 	ʒ > ʃ
 	{s̪,s} > /s/ [s̪] “(merged as)”
 	{s̪,s} > h / _$
@@ -90,7 +90,7 @@
 	n > ŋ / _#
 	b ɡ > β ɣ / {l,ɾ}_
 	d > ð / ɾ_
-	tɾ > {tɾ̥,tʃ,tʂ}
+	tɾ > {tɾ̥,t͡ʃ,tʂ}
 	r > {ʐ,χ}
 	l > ɾ / _$
 	ɾ > l / _$

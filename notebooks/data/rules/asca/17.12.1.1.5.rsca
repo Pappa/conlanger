@@ -62,15 +62,15 @@
 	o > ∅ / _{r,l} when between #U and U:[+tonic]
 	# “[I]f there are multiple vowels between the initial and tonic syllables, the vowel
 	# 			directly before the tonic is dropped”
-	k > ts / #_{i,e}
-	ts > s / #_{i,e}
+	k > t͡s / #_{i,e}
+	t͡s > s / #_{i,e}
 	k > ɡ / #_{a,r}
 	ɡ > ɡʲ / #_{i,e}
 	ɡʲ > dʲ / #_{i,e}
-	dʲ > dʒ / #_{i,e}
-	dʒ > ʒ / #_{i,e}
-	j > dʒ / #_
-	dʒ > ʒ / #_
+	dʲ > d͡ʒ / #_{i,e}
+	d͡ʒ > ʒ / #_{i,e}
+	j > d͡ʒ / #_
+	d͡ʒ > ʒ / #_
 	pl > {ʃ,pr} / #_
 	l > r / b_
 	fl > {ʃ,fr} / #_
@@ -79,8 +79,8 @@
 	s > ʃ / V_C:[- voice]V
 	s > ʒ / V_C:[+ voice]V
 	kl > kʎ / #_
-	kʎ > tʃ / #_
-	tʃ > ʃ / #_
+	kʎ > t͡ʃ / #_
+	t͡ʃ > ʃ / #_
 	{kl,ɡl} > ʎ
 	ɡ > ∅ / #_l
 	kʷ > kw / #_”a
@@ -101,19 +101,19 @@
 	k > ∅ / Vn_tV
 	ks ɡn tj > ʃ ɲ {z,s} / V_V
 	tj > s / C_V
-	dj > dʒ / V_V
-	dʒ > ʒ / V_V
+	dj > d͡ʒ / V_V
+	d͡ʒ > ʒ / V_V
 	dj > dz / r_V
-	dz > ts / r_V
-	ts > s / r_V
+	dz > t͡s / r_V
+	t͡s > s / r_V
 	ndj > nts / V_V
 	nts > ns / V_V
 	ns > ɲ / V_V
 	sj > jʒ / V_V
 	j > ∅ / i_ʒV
 	s:[+ long]j (m)nj lj rj > jʃ ɲʎ jr / V_V
-	kj > ts / V_V
-	ts > s / V_V
+	kj > t͡s / V_V
+	t͡s > s / V_V
 	ɡj > {ʒ,j} / V_V
 	pj {bj,vj} > jb jv / V_V
 	mj > jm

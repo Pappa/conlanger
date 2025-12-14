@@ -33,9 +33,9 @@
 	# 			unstressed
 	# lenis (voiced) > fricative / {l,r,s̺,s̻,V}_{l,r,s̺,s̻,V}
 	# — At least one reconstruction seems to indicate *s and *ś, which may have been an
-	# 			affricate and /s/. Pretty reliably, *-s tends to turn into -ts̺, and *-ś > -ts̻,
-	# 			probably after the below-mentioned affrication. Beyond that, it’s messy. *-tso seems to
-	# 			have become -tʃo/-tʃu, though.
+	# 			affricate and /s/. Pretty reliably, *-s tends to turn into -t͡s̺, and *-ś > -t͡s̻,
+	# 			probably after the below-mentioned affrication. Beyond that, it’s messy. *-t͡so seems to
+	# 			have become -t͡ʃo/-t͡ʃu, though.
 	Sʰ > F / #_
 	F > h (> ∅) / #_
 	S > S:[+ voice] / #_
@@ -69,7 +69,7 @@
 	Ṽ > Vn
 	h̃ > h
 	u ũ > y ỹ / _r(p(ʰ),β,k(ʰ),ɣ,l,s̺,s̻,ʃ,h)
-	u ũ > y ỹ / _{s̻,ts̺,ts̻} (but not _s̺)
+	u ũ > y ỹ / _{s̻,t͡s̺,t͡s̻} (but not _s̺)
 	õ > ũ
 	∅ > a / #_{ra,ro}
 	∅ > e / #_r
@@ -100,13 +100,13 @@
 	*-ɾ > -h stuff in compounds
 	
 	{ɾ,r} > ʎ / {i,j}_
-	s̻ ts̻ > ʃ tʃ / {E,j}_
+	s̻ t͡s̻ > ʃ t͡ʃ / {E,j}_
 	t > c / {E,j}_
-	t > tʃ / {E,j}_
+	t > t͡ʃ / {E,j}_
 	d ð > ɟ ʝ / {E,j}_
 	d ð > ɟ ʝ / {ʎ,ɲ}_
 	{ɡ,ɣ} > {ɟ,ʝ} / {E,j}_
-	ɡ > dʒ / {E,j}_
+	ɡ > d͡ʒ / {E,j}_
 	j > ʝ
 	ʝ > j
 	j > ʝ
@@ -116,7 +116,7 @@
 	ʝ > ɟ
 	j > ʝ
 	ʝ > ʒ
-	ʒ > dʒ
+	ʒ > d͡ʒ
 	j > ʝ
 	ʝ > ʒ
 	ʒ > ʃ
@@ -156,13 +156,13 @@
 	ʊe > e
 	C:[- voice] > C:[+ voice] / {l,N}_
 #	C:[+ sibilant] > C:[+ affricate] / _#
-	s̻ ts̺ > s̺ ts̻
+	s̻ t͡s̺ > s̺ t͡s̻
 	s̻ > s̺ / _{C,#}
 	# From the Wikipedia article on Biscayan: “Convergence of sibilants: z, x and s >
-	# 			x, s and tz, tx and ts > tz.” I’m not sure what this means. 〈s z〉 are apparently s̻
+	# 			x, s and tz, tx and t͡s > tz.” I’m not sure what this means. 〈s z〉 are apparently s̻
 	# 			s̺, and 〈x〉 is ʃ.
-	its̺ > tʃ / _#
+	its̺ > t͡ʃ / _#
 	oa ea > u(e) i(e) / _#
 	# Beterri Guipuscoan has VjV# where Biscayan has VɲV# and regular Basque has VV#
-	s̺ > tʃ / #_
+	s̺ > t͡ʃ / #_
 	s̺ > ʃ̺

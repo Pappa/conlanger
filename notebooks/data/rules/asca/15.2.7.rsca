@@ -4,15 +4,15 @@
 # 			166–171
 	C:[+ long] > C
 	S > ∅ / #_F
-	s > ts
-	ts > tʃ
+	s > t͡s
+	t͡s > t͡ʃ
 	C:[+voice] > C:[-voice] / next to {S,s,l̥}
 	ɣ ʁ > k q / _#
 	ə > a /
 	ə > ∅ / #_
 	i > ∅ / #C:[+dental]_C:[+dental]V
 	a > ∅ / C:[+velar]_C:[+velar]
-	F:[+voice] > F:[-voice] / adjacent to {S,ts}
+	F:[+voice] > F:[-voice] / adjacent to {S,t͡s}
 	F:[+voice] > S / l̥_
 	
 	t > s / _{k,q}
@@ -22,8 +22,8 @@
 	v > ∅ / V:[+short]_u:[+short]
 	u > ∅ / #_vV
 	iv > j / #_u
-	s > dʒ / {i,u}_V
-	dʒ > ∅ / i_i
-	ə > ∅ / _dʒ{a,u} // #U
-	a > ∅ / _dʒa // #U
-	in > dʒ / _u (possibly only word-initially?)
+	s > d͡ʒ / {i,u}_V
+	d͡ʒ > ∅ / i_i
+	ə > ∅ / _d͡ʒ{a,u} // #U
+	a > ∅ / _d͡ʒa // #U
+	in > d͡ʒ / _u (possibly only word-initially?)

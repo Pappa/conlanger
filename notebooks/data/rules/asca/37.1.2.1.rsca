@@ -6,13 +6,13 @@
 	h > ∅ / _nh
 	ʔ > ∅ / _nk(ʷ)
 	n > t / _k(ʷ)
-	ts > hs / V_ // _{h,i,j,r}
-	ts > s / ! _{h,i,j,r}
-	ns > ts / _k(ʷ)
+	t͡s > hs / V_ // _{h,i,j,r}
+	t͡s > s / ! _{h,i,j,r}
+	ns > t͡s / _k(ʷ)
 	V > V:[+ long] / _C:[-glottal] “in even-numbered syllables when accented or immediately before the
 				accent”
 	Vʔ > ʔV / “in odd-numbered unaccented non-final syllables;” // {ʔ,h}_
-	j > ∅ / ts_
+	j > ∅ / t͡s_
 	h > ∅ / s_w
 	r > n / _(h)j
 	r > w / {{ o, o:[+ long] },õ(ː)}_{{ a, a:[+ long] },{ e, e:[+ long] },ẽ(ː),{ i, i:[+ long]
@@ -32,5 +32,5 @@
 	Ch > ∅ / _s#
 	h > ∅ / V:[+ long]_#
 	t > h / _t
-	ths > tsh
+	ths > t͡sh
 	∅ > h / {t,k}_n

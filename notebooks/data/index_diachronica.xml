@@ -4,15 +4,15 @@
 		<cite>Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
 			(Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)</cite>
 		<rule skip="true">
-			<input>dz ʃ tʃ</input>
+			<input>dz ʃ t͡ʃ</input>
 			<output>ʒ s₁ s₂</output>
 		</rule>
 		<rule>
-			<input>dʒ</input>
-			<output>tʃ</output>
+			<input>d͡ʒ</input>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>ʃ</output>
 		</rule>
 		<rule>
@@ -88,7 +88,7 @@
 		<rule>
 			<input>e</input>
 			<output>i</output>
-			<env>#{s,ʃ,tsʼ}_{k(w),ʔ}</env>
+			<env>#{s,ʃ,t͡sʼ}_{k(w),ʔ}</env>
 		</rule>
 		<rule>
 			<input>e o</input>
@@ -103,7 +103,7 @@
 		<rule>
 			<input>e o</input>
 			<output>i u</output>
-			<env>#{k(ʼ),x}_{t(ʼ),tsʼ}</env>
+			<env>#{k(ʼ),x}_{t(ʼ),t͡sʼ}</env>
 		</rule>
 		<rule>
 			<input>e o</input>
@@ -113,12 +113,12 @@
 		<rule>
 			<input>e o</input>
 			<output>i u</output>
-			<env>#P_{tsʼ,tʃʼ}</env>
+			<env>#P_{t͡sʼ,t͡ʃʼ}</env>
 		</rule>
 		<rule>
 			<input>a</input>
 			<output>o</output>
-			<env>#{z,dʒ}_P</env>
+			<env>#{z,d͡ʒ}_P</env>
 		</rule>
 		<rule skip="true">
 			<input>{ e, e:[+ long] }</input>
@@ -168,8 +168,8 @@
 			<env>V_V</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
-			<output>ts</output>
+			<input>t͡ʃ</input>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>sx</input>
@@ -207,7 +207,7 @@
 			<env>Vj_</env>
 		</rule>
 		<rule>
-			<input>tsʼ</input>
+			<input>t͡sʼ</input>
 			<output>ʒ</output>
 			<env>V_</env>
 		</rule>
@@ -227,16 +227,16 @@
 		</rule>
 		<rule>
 			<input>ʒ</input>
-			<output>{tʃ,ts}</output>
+			<output>{t͡ʃ,t͡s}</output>
 		</rule>
 		<rule>
-			<input>ts</input>
-			<output>tʃ</output>
+			<input>t͡s</input>
+			<output>t͡ʃ</output>
 			<env>_i</env>
 		</rule>
 		<rule>
 			<input>sx</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule skip="true">
 			<input>s₁</input>
@@ -270,7 +270,7 @@
 		</rule>
 		<rule>
 			<input>z z:[+ long]</input>
-			<output>j dʒ:[+ long]</output>
+			<output>j d͡ʒ:[+ long]</output>
 		</rule>
 		<rule>
 			<input>s</input>
@@ -278,8 +278,8 @@
 			<env>!V_</env>
 		</rule>
 		<rule>
-			<input>tsʼ</input>
-			<output>tʃʼ</output>
+			<input>t͡sʼ</input>
+			<output>t͡ʃʼ</output>
 		</rule>
 		<rule>
 			<input>x₁</input>
@@ -301,8 +301,8 @@
 			<env>#_</env>
 		</rule>
 		<rule>
-			<input>{ts,ʒ}</input>
-			<output>tʃ</output>
+			<input>{t͡s,ʒ}</input>
+			<output>t͡ʃ</output>
 			<env>V_</env>
 		</rule>
 		<rule skip="true">
@@ -316,8 +316,8 @@
 			<env>V_$#</env>
 		</rule>
 		<rule>
-			<input>tsʼ</input>
-			<output>tʃʼ</output>
+			<input>t͡sʼ</input>
+			<output>t͡ʃʼ</output>
 		</rule>
 		<rule>
 			<input>ɲ</input>
@@ -363,7 +363,7 @@
 		</rule>
 		<rule>
 			<input>z</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>Vj_</env>
 		</rule>
 		<rule>
@@ -381,8 +381,8 @@
 			<env>V_V</env>
 		</rule>
 		<rule>
-			<input>ts ts:[+ long]</input>
-			<output>s ts</output>
+			<input>t͡s t͡s:[+ long]</input>
+			<output>s t͡s</output>
 			<env>V_</env>
 		</rule>
 		<rule>
@@ -390,12 +390,12 @@
 			<output>ʃ</output>
 		</rule>
 		<rule>
-			<input>tsʼ</input>
-			<output>tʃʼ</output>
+			<input>t͡sʼ</input>
+			<output>t͡ʃʼ</output>
 			<env>#_</env>
 		</rule>
 		<rule>
-			<input>tsʼ</input>
+			<input>t͡sʼ</input>
 			<output>s</output>
 			<env>V_</env>
 		</rule>
@@ -433,12 +433,12 @@
 		</rule>
 		<rule>
 			<input>z</input>
-			<output>dʒ:[+ long]</output>
+			<output>d͡ʒ:[+ long]</output>
 			<env>Vj_</env>
 		</rule>
 		<rule>
 			<input>z:[+ long]</input>
-			<output>dʒ:[+ long]</output>
+			<output>d͡ʒ:[+ long]</output>
 		</rule>
 		<rule>
 			<input>s</input>
@@ -446,8 +446,8 @@
 			<env>! V_</env>
 		</rule>
 		<rule>
-			<input>tsʼ</input>
-			<output>tʃʼ</output>
+			<input>t͡sʼ</input>
+			<output>t͡ʃʼ</output>
 		</rule>
 		<rule>
 			<input>x₁</input>
@@ -464,12 +464,12 @@
 			<env>#_</env>
 		</rule>
 		<rule skip="true">
-			<input>{s₃,ts,ʒ}</input>
+			<input>{s₃,t͡s,ʒ}</input>
 			<output>s</output>
 			<env>_$#</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>ʃ</output>
 			<env>V_</env>
 		</rule>
@@ -489,7 +489,7 @@
 		</rule>
 		<rule skip="true">
 			<input>s₂</input>
-			<output>{s,tʃ:[+ long]}</output>
+			<output>{s,t͡ʃ:[+ long]}</output>
 			<env>V_</env>
 		</rule>
 		<rule skip="true">
@@ -613,11 +613,11 @@
 			<env>#</env>
 		</rule>
 		<rule>
-			<input>tʃ ʒ</input>
+			<input>t͡ʃ ʒ</input>
 			<output>ʔj s</output>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 			<env>#_</env>
 		</rule>
@@ -626,8 +626,8 @@
 			<output>ʃ</output>
 		</rule>
 		<rule>
-			<input>tʃʼ</input>
-			<output>tʃ</output>
+			<input>t͡ʃʼ</input>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>ɲ</input>
@@ -672,11 +672,11 @@
 		</rule>
 		<rule>
 			<input>z</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>Vj_</env>
 		</rule>
 		<rule>
-			<input>tsʼ</input>
+			<input>t͡sʼ</input>
 			<output>sʼ</output>
 		</rule>
 		<rule>
@@ -704,8 +704,8 @@
 			<env>V_#</env>
 		</rule>
 		<rule>
-			<input>ts:[+ long]</input>
-			<output>ts</output>
+			<input>t͡s:[+ long]</input>
+			<output>t͡s</output>
 			<env>V_</env>
 		</rule>
 		<rule skip="true">
@@ -714,12 +714,12 @@
 		</rule>
 		<rule skip="true">
 			<input>s₂</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>V_</env>
 		</rule>
 		<rule>
-			<input>tsʼ</input>
-			<output>{tʃʼ,s}</output>
+			<input>t͡sʼ</input>
+			<output>{t͡ʃʼ,s}</output>
 		</rule>
 		<rule>
 			<input>ɲ</input>
@@ -753,12 +753,12 @@
 			<output>q</output>
 		</rule>
 		<rule>
-			<input>tʃ</input>
-			<output>ts</output>
+			<input>t͡ʃ</input>
+			<output>t͡s</output>
 		</rule>
 		<rule skip="true">
 			<input>s₁ s₂ s₃</input>
-			<output>ʃ z tʃ</output>
+			<output>ʃ z t͡ʃ</output>
 		</rule>
 		<rule skip="true">
 			<input>h₁</input>
@@ -783,11 +783,11 @@
 			<env>#_</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
-			<output>ts</output>
+			<input>t͡ʃ</input>
+			<output>t͡s</output>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>ʃ</output>
 			<env>_i</env>
 		</rule>
@@ -797,7 +797,7 @@
 		</rule>
 		<rule skip="true">
 			<input>s₂ s₃</input>
-			<output>tʃ:[+ long] tʃ</output>
+			<output>t͡ʃ:[+ long] t͡ʃ</output>
 			<env>V_</env>
 		</rule>
 	</section>
@@ -805,8 +805,8 @@
 		<cite>Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
 			(Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)</cite>
 		<rule>
-			<input>tʃ dʒ</input>
-			<output>ts dz</output>
+			<input>t͡ʃ d͡ʒ</input>
+			<output>t͡s dz</output>
 		</rule>
 	</section>
 	<section index="6.2.1" name="Proto-Erythrean to Proto-Cushitic">
@@ -877,8 +877,8 @@
 			<exception>#,_</exception>
 		</rule>
 		<rule>
-			<input>{ts,tʃ} z dz</input>
-			<output>ʃ d dʒ</output>
+			<input>{t͡s,t͡ʃ} z dz</input>
+			<output>ʃ d d͡ʒ</output>
 		</rule>
 		<rule>
 			<input>t</input>
@@ -907,8 +907,8 @@
 			<output>w ɣʷ</output>
 		</rule>
 		<rule>
-			<input>{ts,tʃ} dz</input>
-			<output>ʃ dʒ</output>
+			<input>{t͡s,t͡ʃ} dz</input>
+			<output>ʃ d͡ʒ</output>
 		</rule>
 		<rule>
 			<input>t</input>
@@ -952,8 +952,8 @@
 			<exception>#,_</exception>
 		</rule>
 		<rule>
-			<input>ts tʃ dz</input>
-			<output>sʼ tʃʼ z</output>
+			<input>t͡s t͡ʃ dz</input>
+			<output>sʼ t͡ʃʼ z</output>
 		</rule>
 		<rule>
 			<input>k</input>
@@ -1013,13 +1013,13 @@
 			<output>h ʔ</output>
 		</rule>
 		<rule>
-			<input>ts dz {t,ts}ʼ tʃʼ</input>
+			<input>t͡s dz {t,t͡s}ʼ t͡ʃʼ</input>
 			<output>s z sʼ ʃʼ</output>
 		</rule>
 		<rule>
 			<input>ŋ</input>
 			<output>∅</output>
-			<env>V_{ts,q}</env>
+			<env>V_{t͡s,q}</env>
 		</rule>
 	</section>
 	<section index="6.2.2.1.1" name="Proto-North Erythrean to Proto-Boreafrasian">
@@ -1078,8 +1078,8 @@
 			<env>#_VC</env>
 		</rule>
 		<rule>
-			<input>{ʃ,ts,z} dz tʃ {tʼ,tʃʼ} dʒ</input>
-			<output>s z ts tsʼ dʒ</output>
+			<input>{ʃ,t͡s,z} dz t͡ʃ {tʼ,t͡ʃʼ} d͡ʒ</input>
+			<output>s z t͡s t͡sʼ d͡ʒ</output>
 		</rule>
 		<rule>
 			<input>f</input>
@@ -1119,12 +1119,12 @@
 		</rule>
 		<rule>
 			<input>k(w)</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>#_Vt</env>
 		</rule>
 		<rule>
 			<input>ɡ(w)</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>#_Vd</env>
 		</rule>
 		<rule>
@@ -1327,7 +1327,7 @@
 		</rule>
 		<rule>
 			<input>ɡʲ</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 		</rule>
 		<rule sporadic="true">
 			<input>s</input>
@@ -1436,7 +1436,7 @@
 			<env>#al$_z</env>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>z</output>
 		</rule>
 		<rule>
@@ -1567,7 +1567,7 @@
 			<output>zˤ</output>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>ɡ</output>
 		</rule>
 		<rule>
@@ -1653,8 +1653,8 @@
 		<cite>Pogostick Man, from Wikipedia Contributors (2013), “Hadhrami Arabic”. Wikipedia, the
 			Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Hadhrami_Arabic&gt;</cite>
 		<rule>
-			<input>dʒ</input>
-			<output>j, occasionally ɟ or dʒ in educated speech</output>
+			<input>d͡ʒ</input>
+			<output>j, occasionally ɟ or d͡ʒ in educated speech</output>
 		</rule>
 		<rule>
 			<input>θ ð ðˤ</input>
@@ -1686,8 +1686,8 @@
 		<cite>Pogostick Man, from Wikipedia Contributors (2013), “Hadhrami Arabic”. Wikipedia, the
 			Free Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Hadhrami_Arabic&gt;</cite>
 		<rule>
-			<input>dʒ</input>
-			<output>j, occasionally ɟ or dʒ in educated speech</output>
+			<input>d͡ʒ</input>
+			<output>j, occasionally ɟ or d͡ʒ in educated speech</output>
 		</rule>
 		<rule>
 			<input>θ ð ðˤ</input>
@@ -1771,7 +1771,7 @@
 		<cite>Pogostick Man, from http://en.wikipedia.org/wiki/Varieties_of_Arabic</cite>
 		<rule>
 			<input>k q</input>
-			<output>tʃ {ɡ,q}</output>
+			<output>t͡ʃ {ɡ,q}</output>
 		</rule>
 		<rule sporadic="true">
 			<input>ɡʲ</input>
@@ -1789,7 +1789,7 @@
 	<section index="6.2.2.1.12" name="Classical Arabic to Eastern Libyan Arabic">
 		<cite>Pogostick Man, from http://en.wikipedia.org/wiki/Libyan_Arabic</cite>
 		<rule>
-			<input>dˤ dʒ q</input>
+			<input>dˤ d͡ʒ q</input>
 			<output>ðˤ ʒ ɡ</output>
 		</rule>
 		<rule>
@@ -1805,7 +1805,7 @@
 	<section index="6.2.2.1.13" name="Classical Arabic to Western Libyan Arabic">
 		<cite>Pogostick Man, from http://en.wikipedia.org/wiki/Libyan_Arabic</cite>
 		<rule>
-			<input>q dʒ</input>
+			<input>q d͡ʒ</input>
 			<output>ɡ ʒ</output>
 		</rule>
 		<rule>
@@ -1894,12 +1894,12 @@
 			<output>{q,ɡ}</output>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>{d,ɡ}</output>
 			<env>if s or z occur somewhere else in the word</env>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>ʒ</output>
 			<env>_</env>
 			<exception>if s or z occur somewhere else in the word</exception>
@@ -1925,7 +1925,7 @@
 	<section index="6.2.2.1.16" name="Classical Arabic to Sudanese Arabic">
 		<cite>Pogostick Man, from http://en.wikipedia.org/wiki/Sudanese_Arabic</cite>
 		<rule>
-			<input>dʒ q</input>
+			<input>d͡ʒ q</input>
 			<output>ɡʲ ɢ</output>
 		</rule>
 		<rule>
@@ -1949,7 +1949,7 @@
 			<output>ðˤ {ɡ,q}</output>
 		</rule>
 		<rule>
-			<input>dʒ x ɣ</input>
+			<input>d͡ʒ x ɣ</input>
 			<output>ʒ χ ʁ</output>
 		</rule>
 		<rule>
@@ -2295,8 +2295,8 @@
 			<output>r</output>
 		</rule>
 		<rule>
-			<input>ʃ tʃ</input>
-			<output>s ts</output>
+			<input>ʃ t͡ʃ</input>
+			<output>s t͡s</output>
 		</rule>
 		<rule>
 			<input>{x,h}S</input>
@@ -2308,8 +2308,8 @@
 			<env>! _a</env>
 		</rule>
 		<rule>
-			<input>ʔs ʔts</input>
-			<output>s:[+ long] ts:[+ long]</output>
+			<input>ʔs ʔt͡s</input>
+			<output>s:[+ long] t͡s:[+ long]</output>
 		</rule>
 		<rule>
 			<input>o:[+ long] a:[+ long] e:[+ long] i:[+ long]</input>
@@ -2407,8 +2407,8 @@
 			<output>l</output>
 		</rule>
 		<rule>
-			<input>ʃ tʃ</input>
-			<output>s ts</output>
+			<input>ʃ t͡ʃ</input>
+			<output>s t͡s</output>
 		</rule>
 		<rule>
 			<input>nj</input>
@@ -2420,8 +2420,8 @@
 			<output>S:[+ long]</output>
 		</rule>
 		<rule>
-			<input>ʔs ʔts</input>
-			<output>s:[+ long] ts:[+ long]</output>
+			<input>ʔs ʔt͡s</input>
+			<output>s:[+ long] t͡s:[+ long]</output>
 		</rule>
 		<rule>
 			<input>sk</input>
@@ -2476,7 +2476,7 @@
 			<env>_C</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>ʃ</output>
 			<env>_p</env>
 		</rule>
@@ -2515,7 +2515,7 @@
 			<env>C_</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>θ</output>
 		</rule>
 		<rule>
@@ -2568,12 +2568,12 @@
 		</rule>
 		<rule>
 			<input>ʃ k m</input>
-			<output>s tʃ b</output>
+			<output>s t͡ʃ b</output>
 			<env>_{E,j}</env>
 		</rule>
 		<rule>
 			<input>ʃ k m</input>
-			<output>s tʃ b</output>
+			<output>s t͡ʃ b</output>
 			<env>E_#</env>
 		</rule>
 		<rule>
@@ -2642,12 +2642,12 @@
 		</rule>
 		<rule>
 			<input>ʃ θ m k</input>
-			<output>θ t b tʃ</output>
+			<output>θ t b t͡ʃ</output>
 			<env>_{ e, e:[+ long] }</env>
 		</rule>
 		<rule>
 			<input>ʃ {θ,t} m k</input>
-			<output>s ts tʲ bʲ</output>
+			<output>s t͡s tʲ bʲ</output>
 			<env>_{{ i, i:[+ long] },j,#}</env>
 		</rule>
 		<rule>
@@ -2670,7 +2670,7 @@
 		<cite>Whimemsz, from Proulx, Paul (1989), “A Sketch of Blackfoot Historical Phonology”.
 			International Journal of American Linguistics, 55:43 – 82</cite>
 		<rule>
-			<input>{θ,tʃ,ʃ,r}</input>
+			<input>{θ,t͡ʃ,ʃ,r}</input>
 			<output>t</output>
 			<env>unless adjacent to another consonant</env>
 		</rule>
@@ -2691,7 +2691,7 @@
 			<env>! _C</env>
 		</rule>
 		<rule>
-			<input>{ʃ,tʃ}</input>
+			<input>{ʃ,t͡ʃ}</input>
 			<output>s</output>
 			<env>#_</env>
 		</rule>
@@ -2739,7 +2739,7 @@
 			<output>{x,s} {x,s:[+ long]}</output>
 		</rule>
 		<rule>
-			<input>θp tʃp ʃp</input>
+			<input>θp t͡ʃp ʃp</input>
 			<output>{x,s:[+ long]} ʔp s:[+ long]p</output>
 		</rule>
 		<rule>
@@ -2764,7 +2764,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_{i,{ e, e:[+ long] },a}</env>
 		</rule>
 		<rule>
@@ -2906,7 +2906,7 @@
 			<env>#_</env>
 		</rule>
 		<rule>
-			<input>tsi</input>
+			<input>t͡si</input>
 			<output>∅</output>
 			<env>$_OO “(before a prefix; the first obstruent of the follow[ing] cluster then becomes
 				ʔ)</env>
@@ -2965,7 +2965,7 @@
 			<output>h</output>
 		</rule>
 		<rule>
-			<input>ʃ tʃ</input>
+			<input>ʃ t͡ʃ</input>
 			<output>{ʃ,x} s</output>
 		</rule>
 		<rule>
@@ -3035,7 +3035,7 @@
 		<rule>
 			<input>q</input>
 			<output>h</output>
-			<env>_tʃ</env>
+			<env>_t͡ʃ</env>
 		</rule>
 		<rule>
 			<input>N</input>
@@ -3067,7 +3067,7 @@
 		</rule>
 		<rule>
 			<input>k</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -3122,7 +3122,7 @@
 		<rule>
 			<input>q</input>
 			<output>h</output>
-			<env>_tʃ</env>
+			<env>_t͡ʃ</env>
 		</rule>
 		<rule>
 			<input>N</input>
@@ -3159,12 +3159,12 @@
 		</rule>
 		<rule>
 			<input>k</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_i</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
-			<output>ts</output>
+			<input>t͡ʃ</input>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>θ</input>
@@ -3213,7 +3213,7 @@
 		<rule>
 			<input>q</input>
 			<output>h</output>
-			<env>_tʃ</env>
+			<env>_t͡ʃ</env>
 		</rule>
 		<rule>
 			<input>N</input>
@@ -3244,8 +3244,8 @@
 			<output>s {h,j,hj}</output>
 		</rule>
 		<rule>
-			<input>ʃ tʃ</input>
-			<output>s ts</output>
+			<input>ʃ t͡ʃ</input>
+			<output>s t͡s</output>
 		</rule>
 		<rule>
 			<input>θ</input>
@@ -3294,7 +3294,7 @@
 		<rule>
 			<input>q</input>
 			<output>h</output>
-			<env>_tʃ</env>
+			<env>_t͡ʃ</env>
 		</rule>
 		<rule>
 			<input>N</input>
@@ -3330,8 +3330,8 @@
 			<env>in West Swampy Cree (remains /ʃ/ in East Swampy Cree)</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
-			<output>ts</output>
+			<input>t͡ʃ</input>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>θ</input>
@@ -3376,7 +3376,7 @@
 		<rule>
 			<input>q</input>
 			<output>h</output>
-			<env>_tʃ</env>
+			<env>_t͡ʃ</env>
 		</rule>
 		<rule>
 			<input>N</input>
@@ -3407,8 +3407,8 @@
 			<output>s {h,j,hj}</output>
 		</rule>
 		<rule>
-			<input>ʃ tʃ</input>
-			<output>s ts</output>
+			<input>ʃ t͡ʃ</input>
+			<output>s t͡s</output>
 		</rule>
 		<rule>
 			<input>θ</input>
@@ -3423,13 +3423,13 @@
 		<cite>Pogostick Man, from Goddard, Ives (1982), “The Historical Phonology of Munsee”.
 			International Journal of American Linguistics, 48:16 – 48</cite>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>t</output>
 			<env>in nouns</env>
 		</rule>
 		<rule>
 			<input>t s</input>
-			<output>tʃ ʃ</output>
+			<output>t͡ʃ ʃ</output>
 			<env>in diminutives</env>
 		</rule>
 		<rule>
@@ -3508,7 +3508,7 @@
 			<env>_{p,k}</env>
 		</rule>
 		<rule>
-			<input>{tʃ,ç}</input>
+			<input>{t͡ʃ,ç}</input>
 			<output>h</output>
 			<env>_k</env>
 		</rule>
@@ -3695,8 +3695,8 @@
 			<env>C_w</env>
 		</rule>
 		<rule>
-			<input>ʃ tʃ</input>
-			<output>s ts</output>
+			<input>ʃ t͡ʃ</input>
+			<output>s t͡s</output>
 		</rule>
 		<rule>
 			<input>V:[+ long]</input>
@@ -3752,13 +3752,13 @@
 		<cite>Pogostick Man, from Costa, David J. (1991), “The Historical Phonology of
 			Miami-Illinois Consonants”. International Journal of American Linguistics, 57:365 – 393</cite>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>t</output>
 			<env>in nominal suffixes</env>
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>in diminutives</env>
 		</rule>
 		<rule>
@@ -3814,7 +3814,7 @@
 			<env>n_</env>
 		</rule>
 		<rule>
-			<input>{θ,ʃ,tʃ,ç,x,ʔ}</input>
+			<input>{θ,ʃ,t͡ʃ,ç,x,ʔ}</input>
 			<output>h</output>
 			<env>_C</env>
 		</rule>
@@ -3866,7 +3866,7 @@
 			Etymologies”, and the latter citing Hewson, John (1973), “Proto-Algonkian Reflexes in
 			Micmac”</cite>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>ʃ</output>
 			<env>! C_</env>
 		</rule>
@@ -3959,7 +3959,7 @@
 		<rule>
 			<input>{θ,s,h,ʔ}</input>
 			<output>∅</output>
-			<env>_{p,t,tʃ,k}</env>
+			<env>_{p,t,t͡ʃ,k}</env>
 		</rule>
 		<rule>
 			<input>θ</input>
@@ -4075,7 +4075,7 @@
 			<env>_O</env>
 		</rule>
 		<rule>
-			<input>{h,s,tʃ,θ}</input>
+			<input>{h,s,t͡ʃ,θ}</input>
 			<output>ʔ</output>
 			<env>_O</env>
 		</rule>
@@ -4107,12 +4107,12 @@
 		<rule>
 			<input>j</input>
 			<output>∅</output>
-			<env>{tʃ,ʃ}_e:[+ long]</env>
+			<env>{t͡ʃ,ʃ}_e:[+ long]</env>
 		</rule>
 		<rule>
 			<input>j</input>
 			<output>∅</output>
-			<env>{tʃ,ʃ,w}_a:[+ long]</env>
+			<env>{t͡ʃ,ʃ,w}_a:[+ long]</env>
 		</rule>
 		<rule>
 			<input>w</input>
@@ -4265,22 +4265,22 @@
 			<env>! _{a,ə,Vj}</env>
 		</rule>
 		<rule>
-			<input>tʃʰ</input>
+			<input>t͡ʃʰ</input>
 			<output>t</output>
 		</rule>
 		<rule>
-			<input>tʃ dʒ</input>
+			<input>t͡ʃ d͡ʒ</input>
 			<output>t d</output>
 			<env>#_</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>s</output>
 			<env>maybe</env>
 			<exception>_#?</exception>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>j</output>
 		</rule>
 		<rule>
@@ -4401,7 +4401,7 @@
 		</rule>
 		<comment>“Affrication of /ti di/ probably happened very early. Denasalization of the
 			prenasalized stops happened relatively later. Final /m/ merged with /n/ at some point,
-			and [dʒ] (from */dj/) and [ʒ] (&lt; */zj/) also merged.”</comment>
+			and [d͡ʒ] (from */dj/) and [ʒ] (&lt; */zj/) also merged.”</comment>
 	</section>
 	<section index="8.2" name="Proto-Altaic to Proto-Korean">
 		<cite>Pogostick Man, from Wikipedia contributors (2011), “Altaic languages”. Wikipedia, the
@@ -4428,8 +4428,8 @@
 			<output>t</output>
 		</rule>
 		<rule>
-			<input>{tʃʰ,dʒ}</input>
-			<output>tʃ</output>
+			<input>{t͡ʃʰ,d͡ʒ}</input>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>ɡ</input>
@@ -4586,7 +4586,7 @@
 		</rule>
 		<rule>
 			<input>t(ʰ) d</input>
-			<output>tʃ dʒ</output>
+			<output>t͡ʃ d͡ʒ</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -4596,18 +4596,18 @@
 			<exception>_i</exception>
 		</rule>
 		<rule>
-			<input>tʃ</input>
-			<output>dʒ</output>
+			<input>t͡ʃ</input>
+			<output>d͡ʒ</output>
 			<env>#_i</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>d</output>
 			<env>#</env>
 		</rule>
 		<rule>
-			<input>tʃʰ</input>
-			<output>tʃ</output>
+			<input>t͡ʃʰ</input>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>ɡ</input>
@@ -4636,7 +4636,7 @@
 		</rule>
 		<rule>
 			<input>ʃ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>#_a</env>
 		</rule>
 		<rule>
@@ -4647,7 +4647,7 @@
 		</rule>
 		<rule>
 			<input>nʲ</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>#_</env>
 		</rule>
 		<rule>
@@ -4686,7 +4686,7 @@
 		</rule>
 		<rule>
 			<input>lʲ</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>#_i</env>
 		</rule>
 		<rule>
@@ -4771,7 +4771,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>#_{æ,ø,y}</env>
 		</rule>
 		<rule>
@@ -4780,8 +4780,8 @@
 			<env>#_</env>
 		</rule>
 		<rule>
-			<input>tʰ tʃʰ</input>
-			<output>t tʃ</output>
+			<input>tʰ t͡ʃʰ</input>
+			<output>t t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>k</input>
@@ -4894,7 +4894,7 @@
 			<output>t</output>
 		</rule>
 		<rule>
-			<input>{t,tʃ}</input>
+			<input>{t,t͡ʃ}</input>
 			<output>d</output>
 			<env>#_</env>
 		</rule>
@@ -4909,7 +4909,7 @@
 		</rule>
 		<rule>
 			<input>ʃ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>#_a</env>
 		</rule>
 		<rule>
@@ -4927,7 +4927,7 @@
 		<comment>Pogostick Man, from Firespeaker.org wiki contributors (2014), “Turkic sound
 			changes”. &lt;http://wiki.firespeaker.org/Turkic_sound_changes&gt;</comment>
 		<rule>
-			<input>{ʒ,dʒ}</input>
+			<input>{ʒ,d͡ʒ}</input>
 			<output>j</output>
 			<env>#_ (marked as to Pre-Proto-Turkic)</env>
 		</rule>
@@ -5056,7 +5056,7 @@
 		</rule>
 		<rule>
 			<input>s</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_Vtʃ</env>
 		</rule>
 		<rule>
@@ -5092,16 +5092,16 @@
 		<comment>NB: Most likely incomplete; all changes listed are stated as being “[s]hared with
 			Nogay and Karakalpak”.</comment>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>ʃ</output>
 		</rule>
 		<rule>
 			<input>j</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>#_ (did not occur in Qara Nogay)</env>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>ʒ (did not occur in Qara Nogay or Central Nogay)</output>
 		</rule>
 		<rule>
@@ -5139,7 +5139,7 @@
 		</rule>
 		<rule>
 			<input>j</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>#_</env>
 		</rule>
 		<rule>
@@ -5319,7 +5319,7 @@
 				evidence in the paper I’m sticking this one as a palatal nasal)</output>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>Ω (This is my own notation. I don’t have a clue what the intermediate form was;
 				became something else in different dialects)</output>
 		</rule>
@@ -5549,7 +5549,7 @@
 			<env>_s</env>
 		</rule>
 		<rule>
-			<input>s ts lʲ</input>
+			<input>s t͡s lʲ</input>
 			<output>h t n</output>
 		</rule>
 	</section>
@@ -6396,7 +6396,7 @@
 			<env>_j#</env>
 		</rule>
 		<rule>
-			<input>{ts,ʈ} {ɟ͡ʝ,ɖ} {lʲ,ɲ} {ʔ,x,s,h} ʀ</input>
+			<input>{t͡s,ʈ} {ɟ͡ʝ,ɖ} {lʲ,ɲ} {ʔ,x,s,h} ʀ</input>
 			<output>t d n ∅ r</output>
 		</rule>
 		<rule>
@@ -6522,7 +6522,7 @@
 		</rule>
 		<rule>
 			<input>b dz</input>
-			<output>p ts</output>
+			<output>p t͡s</output>
 		</rule>
 		<rule>
 			<input>d</input>
@@ -7545,7 +7545,7 @@
 			<output>p</output>
 		</rule>
 		<rule>
-			<input>{nts,ns,nz,nɡʲ} {ts,z,ɡʲ}</input>
+			<input>{nts,ns,nz,nɡʲ} {t͡s,z,ɡʲ}</input>
 			<output>ɡʲ s</output>
 		</rule>
 		<rule>
@@ -8631,7 +8631,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_V:[+ high]</env>
 		</rule>
 		<rule>
@@ -8730,7 +8730,7 @@
 		</rule>
 		<rule>
 			<input>{z,dr}</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule sporadic="true">
 			<input>u</input>
@@ -9161,7 +9161,7 @@
 		</rule>
 		<rule>
 			<input>d {c,*j}</input>
-			<output>tʃ s</output>
+			<output>t͡ʃ s</output>
 		</rule>
 		<rule>
 			<input>{n,ŋ}</input>
@@ -9174,7 +9174,7 @@
 		</rule>
 		<rule>
 			<input>l</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_{o,E}</env>
 		</rule>
 		<rule>
@@ -9926,7 +9926,7 @@
 			<output>ɨ ɜ</output>
 		</rule>
 		<rule>
-			<input>p {t,ts} c</input>
+			<input>p {t,t͡s} c</input>
 			<output>pʲ tʲ rʲ</output>
 		</rule>
 		<rule>
@@ -10113,7 +10113,7 @@
 		</rule>
 		<rule>
 			<input>S₁ s c</input>
-			<output>s t ts</output>
+			<output>s t t͡s</output>
 		</rule>
 		<rule>
 			<input>V:[+ long]</input>
@@ -10158,7 +10158,7 @@
 		</rule>
 		<rule>
 			<input>S₁ s d₂ *C</input>
-			<output>s θ ð ts (not sure what *C stands for here)</output>
+			<output>s θ ð t͡s (not sure what *C stands for here)</output>
 		</rule>
 	</section>
 	<section index="10.7.1" name="Proto-Rukai to Budai Rukai">
@@ -10169,9 +10169,9 @@
 			<output>∅ j</output>
 		</rule>
 	</section>
-	<section index="10.8" name="Proto-Austronesian to Proto-Tsouic">
-		<cite>Pogostick Man, from Wikipedia contributors (2016), “Tsouic languages”. Wikipedia, the
-			Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Tsouic_languages&gt;</cite>
+	<section index="10.8" name="Proto-Austronesian to Proto-t͡souic">
+		<cite>Pogostick Man, from Wikipedia contributors (2016), “t͡souic languages”. Wikipedia, the
+			Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=t͡souic_languages&gt;</cite>
 		<rule>
 			<input>{*C,d} j *R</input>
 			<output>c z r</output>
@@ -10208,12 +10208,12 @@
 			<output>h</output>
 		</rule>
 		<rule>
-			<input>dz dʒ</input>
-			<output>{ts:[+ long]ʼ,z} {ts:[+ long]ʼ,dʒ}</output>
+			<input>dz d͡ʒ</input>
+			<output>{t͡s:[+ long]ʼ,z} {t͡s:[+ long]ʼ,d͡ʒ}</output>
 		</rule>
 		<rule>
-			<input>{ts,st}</input>
-			<output>tʃ</output>
+			<input>{t͡s,st}</input>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>tɬ:[+ long] dɮ</input>
@@ -10237,19 +10237,19 @@
 			East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 –
 			251</cite>
 		<rule>
-			<input>{ts,st} dz</input>
-			<output>s {ts:[+ long]ʼ,z}</output>
+			<input>{t͡s,st} dz</input>
+			<output>s {t͡s:[+ long]ʼ,z}</output>
 		</rule>
 		<rule>
 			<input>st:[+ long]</input>
 			<output>s:[+ long]</output>
 		</rule>
 		<rule>
-			<input>dʒ</input>
-			<output>{tʃ:[+ long]ʼ,dʒ}</output>
+			<input>d͡ʒ</input>
+			<output>{t͡ʃ:[+ long]ʼ,d͡ʒ}</output>
 		</rule>
 		<rule>
-			<input>tɬ tɬ(ː) tɬ(ː)(ʼ) dʒ</input>
+			<input>tɬ tɬ(ː) tɬ(ː)(ʼ) d͡ʒ</input>
 			<output>ɬ tɬ(ː) tɬ(ː)(ʼ) tɬ:[+ long]</output>
 		</rule>
 		<rule>
@@ -10266,16 +10266,16 @@
 			East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 –
 			251</cite>
 		<rule>
-			<input>ts ts:[+ long] tsʼ ts:[+ long]ʼ dz</input>
-			<output>sh ts tʃʼ t{ s, s:[+ long] }ʼ tsʼ</output>
+			<input>t͡s t͡s:[+ long] t͡sʼ t͡s:[+ long]ʼ dz</input>
+			<output>sh t͡s t͡ʃʼ t{ s, s:[+ long] }ʼ t͡sʼ</output>
 		</rule>
 		<rule>
 			<input>s{ t, t:[+ long] }</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
-			<input>tʃ tʃ:[+ long] tʃ:[+ long]ʼ dʒ</input>
-			<output>ts(?) tʃ tʃ(ː)ʼ tsʼ</output>
+			<input>t͡ʃ t͡ʃ:[+ long] t͡ʃ:[+ long]ʼ d͡ʒ</input>
+			<output>t͡s(?) t͡ʃ t͡ʃ(ː)ʼ t͡sʼ</output>
 		</rule>
 		<rule>
 			<input>tɬ tɬʼ tɬ:[+ long] tɬ:[+ long]ʼ</input>
@@ -10307,12 +10307,12 @@
 			<output>*m</output>
 		</rule>
 		<rule>
-			<input>{ts:[+ long],st} ts:[+ long]ʼ dz st:[+ long]</input>
-			<output>ts z ts:[+ long] s</output>
+			<input>{t͡s:[+ long],st} t͡s:[+ long]ʼ dz st:[+ long]</input>
+			<output>t͡s z t͡s:[+ long] s</output>
 		</rule>
 		<rule>
-			<input>tʃ tʃ:[+ long] dʒ</input>
-			<output>{tsʼ,tʃʼ} ʒ ts</output>
+			<input>t͡ʃ t͡ʃ:[+ long] d͡ʒ</input>
+			<output>{t͡sʼ,t͡ʃʼ} ʒ t͡s</output>
 		</rule>
 		<rule>
 			<input>tɬ tɬ:[+ long] tɬʼ tɬ:[+ long]ʼ</input>
@@ -10340,12 +10340,12 @@
 			<output>{b,v} z</output>
 		</rule>
 		<rule>
-			<input>{ts:[+ long],st} {ts:[+ long]ʼ,dz}</input>
-			<output>ts tsʼ</output>
+			<input>{t͡s:[+ long],st} {t͡s:[+ long]ʼ,dz}</input>
+			<output>t͡s t͡sʼ</output>
 		</rule>
 		<rule>
-			<input>{tʃ(ː),dʒ}</input>
-			<output>tʃʼ</output>
+			<input>{t͡ʃ(ː),d͡ʒ}</input>
+			<output>t͡ʃʼ</output>
 		</rule>
 		<rule>
 			<input>tɬ tɬ:[+ long] tɬʼ tɬ:[+ long]ʼ dɮ</input>
@@ -10386,12 +10386,12 @@
 			<output>{p:[+ long],b} {t:[+ long],d}</output>
 		</rule>
 		<rule>
-			<input>{ts:[+ long],st:[+ long]} dz st</input>
-			<output>s:[+ long] {ts:[+ long],z} ts</output>
+			<input>{t͡s:[+ long],st:[+ long]} dz st</input>
+			<output>s:[+ long] {t͡s:[+ long],z} t͡s</output>
 		</rule>
 		<rule>
-			<input>tʃ tʃ:[+ long] dʒ</input>
-			<output>{ts,tʃ} {tsʼ,tʃʼ} tʃ(ː)ʼ</output>
+			<input>t͡ʃ t͡ʃ:[+ long] d͡ʒ</input>
+			<output>{t͡s,t͡ʃ} {t͡sʼ,t͡ʃʼ} t͡ʃ(ː)ʼ</output>
 		</rule>
 		<rule>
 			<input>tɬ tɬ:[+ long] tɬ(ː)ʼ dɮ</input>
@@ -10444,12 +10444,12 @@
 			<output>{b,w} {d,z}</output>
 		</rule>
 		<rule>
-			<input>{ts,st} ts:[+ long] ts:[+ long]ʼ st:[+ long] dz</input>
-			<output>{s,ts} {ts,tʃ} t:[+ long] s z</output>
+			<input>{t͡s,st} t͡s:[+ long] t͡s:[+ long]ʼ st:[+ long] dz</input>
+			<output>{s,t͡s} {t͡s,t͡ʃ} t:[+ long] s z</output>
 		</rule>
 		<rule>
-			<input>tʃ:[+ long]ʼ</input>
-			<output>tʃ:[+ long]</output>
+			<input>t͡ʃ:[+ long]ʼ</input>
+			<output>t͡ʃ:[+ long]</output>
 		</rule>
 		<rule>
 			<input>tɬ tɬ:[+ long] tɬʼ tɬ:[+ long]ʼ dɮ</input>
@@ -10486,12 +10486,12 @@
 			<output>{d,t:[+ long]}</output>
 		</rule>
 		<rule>
-			<input>{ts,st} ts:[+ long] ts:[+ long]ʼ st:[+ long] dz</input>
-			<output>s {s,ʃ} tsʼ s:[+ long] ts</output>
+			<input>{t͡s,st} t͡s:[+ long] t͡s:[+ long]ʼ st:[+ long] dz</input>
+			<output>s {s,ʃ} t͡sʼ s:[+ long] t͡s</output>
 		</rule>
 		<rule>
-			<input>tʃ(ː) dʒ</input>
-			<output>ʃ tʃ</output>
+			<input>t͡ʃ(ː) d͡ʒ</input>
+			<output>ʃ t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>tɬ tɬ:[+ long] tɬʼ tɬ:[+ long]ʼ dɮ</input>
@@ -10527,8 +10527,8 @@
 			<output>{p:[+ long],b} {t:[+ long],d}</output>
 		</rule>
 		<rule>
-			<input>{ts,st} ts:[+ long] ts:[+ long]ʼ dz</input>
-			<output>{ʃ,tʃ} tʃ(ʼ) {tʃ:[+ long],dʒ}</output>
+			<input>{t͡s,st} t͡s:[+ long] t͡s:[+ long]ʼ dz</input>
+			<output>{ʃ,t͡ʃ} t͡ʃ(ʼ) {t͡ʃ:[+ long],d͡ʒ}</output>
 		</rule>
 		<rule>
 			<input>tɬ tɬ:[+ long] tɬʼ tɬ:[+ long]ʼ dɮ</input>
@@ -10564,12 +10564,12 @@
 			<output>{b,w} {d,z}</output>
 		</rule>
 		<rule>
-			<input>{ts,st} ts:[+ long]ʼ dz</input>
-			<output>{s,ts} {d,t} z</output>
+			<input>{t͡s,st} t͡s:[+ long]ʼ dz</input>
+			<output>{s,t͡s} {d,t} z</output>
 		</rule>
 		<rule>
-			<input>tʃ tʃ:[+ long] tʃ:[+ long]ʼ</input>
-			<output>{ʃ,tʃ} ʃ tʃ</output>
+			<input>t͡ʃ t͡ʃ:[+ long] t͡ʃ:[+ long]ʼ</input>
+			<output>{ʃ,t͡ʃ} ʃ t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>tɬ:[+ long] tɬʼ tɬ:[+ long]ʼ dɮ</input>
@@ -10605,12 +10605,12 @@
 			<output>{b,w} {d,z}</output>
 		</rule>
 		<rule>
-			<input>{ts,st} ts:[+ long] ts:[+ long]ʼ</input>
-			<output>{s,ts} {ts,tʃ} ts:[+ long]</output>
+			<input>{t͡s,st} t͡s:[+ long] t͡s:[+ long]ʼ</input>
+			<output>{s,t͡s} {t͡s,t͡ʃ} t͡s:[+ long]</output>
 		</rule>
 		<rule>
-			<input>tʃ tʃ:[+ long] tʃ:[+ long]ʼ</input>
-			<output>{ʃ,tʃ} {tʃ,dʒ} {tʃ:[+ long],tʃʼ}(?)</output>
+			<input>t͡ʃ t͡ʃ:[+ long] t͡ʃ:[+ long]ʼ</input>
+			<output>{ʃ,t͡ʃ} {t͡ʃ,d͡ʒ} {t͡ʃ:[+ long],t͡ʃʼ}(?)</output>
 		</rule>
 		<rule>
 			<input>tɬ tɬ:[+ long] tɬʼ tɬ:[+ long]ʼ dɮ</input>
@@ -10638,8 +10638,8 @@
 			East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 –
 			251</cite>
 		<rule>
-			<input>ts ts:[+ long] tsʼ ts:[+ long]ʼ dz</input>
-			<output>{∅,s} tʃ {∅,tsʼ} {tsʼ,tʃʼ} z</output>
+			<input>t͡s t͡s:[+ long] t͡sʼ t͡s:[+ long]ʼ dz</input>
+			<output>{∅,s} t͡ʃ {∅,t͡sʼ} {t͡sʼ,t͡ʃʼ} z</output>
 		</rule>
 		<rule>
 			<input>t</input>
@@ -10647,8 +10647,8 @@
 			<env>s_</env>
 		</rule>
 		<rule>
-			<input>tʃ tʃ:[+ long] tʃʼ tʃ:[+ long]ʼ dʒ</input>
-			<output>{∅,ʃ} tʃ ∅ tʃʼ {dʒ,tʃ}</output>
+			<input>t͡ʃ t͡ʃ:[+ long] t͡ʃʼ t͡ʃ:[+ long]ʼ d͡ʒ</input>
+			<output>{∅,ʃ} t͡ʃ ∅ t͡ʃʼ {d͡ʒ,t͡ʃ}</output>
 		</rule>
 		<rule>
 			<input>tɬ tɬ:[+ long] tɬʼ tɬ:[+ long]ʼ dɮ</input>
@@ -10680,16 +10680,16 @@
 			<output>st(ʼ) st</output>
 		</rule>
 		<rule>
-			<input>ts:[+ long] tʃ:[+ long]</input>
-			<output>ts tʃ</output>
+			<input>t͡s:[+ long] t͡ʃ:[+ long]</input>
+			<output>t͡s t͡ʃ</output>
 			<env>#_</env>
 		</rule>
 		<rule>
-			<input>ts:[+ long]ʼ</input>
-			<output>ts:[+ long]</output>
+			<input>t͡s:[+ long]ʼ</input>
+			<output>t͡s:[+ long]</output>
 		</rule>
 		<rule>
-			<input>{ts:[+ long],tʃ:[+ long],dz,dʒ}</input>
+			<input>{t͡s:[+ long],t͡ʃ:[+ long],dz,d͡ʒ}</input>
 			<output>t:[+ long]</output>
 			<env>_#</env>
 		</rule>
@@ -10716,7 +10716,7 @@
 			<env>#_</env>
 		</rule>
 	</section>
-	<section index="11.7" name="Proto-Northeast Caucasian to Proto-Tsezic">
+	<section index="11.7" name="Proto-Northeast Caucasian to Proto-t͡sezic">
 		<cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”.
 			Wikipedia, the Free Encyclopedia.
 			&lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&gt;,
@@ -10729,12 +10729,12 @@
 			<output>*m</output>
 		</rule>
 		<rule>
-			<input>{ts,st} {ts:[+ long]ʼ,dz}</input>
-			<output>s ts</output>
+			<input>{t͡s,st} {t͡s:[+ long]ʼ,dz}</input>
+			<output>s t͡s</output>
 		</rule>
 		<rule>
-			<input>tʃ {tʃ:[+ long],dʒ}</input>
-			<output>ʃ tʃ</output>
+			<input>t͡ʃ {t͡ʃ:[+ long],d͡ʒ}</input>
+			<output>ʃ t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>tɬ tɬ:[+ long]ʼ</input>
@@ -10753,7 +10753,7 @@
 			<output>{l,r}</output>
 		</rule>
 	</section>
-	<section index="11.7.1" name="Proto-Tsezic to Bezhta">
+	<section index="11.7.1" name="Proto-t͡sezic to Bezhta">
 		<cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”.
 			Wikipedia, the Free Encyclopedia.
 			&lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&gt;,
@@ -10762,7 +10762,7 @@
 			East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 –
 			251</cite>
 	</section>
-	<section index="11.7.2" name="Proto-Tsezic to Tsez">
+	<section index="11.7.2" name="Proto-t͡sezic to t͡sez">
 		<cite>Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”.
 			Wikipedia, the Free Encyclopedia.
 			&lt;https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian&gt;,
@@ -10771,12 +10771,12 @@
 			East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 –
 			251</cite>
 		<rule>
-			<input>ts:[+ long] tɬ:[+ long]</input>
+			<input>t͡s:[+ long] tɬ:[+ long]</input>
 			<output>z l</output>
 			<env>V_V</env>
 		</rule>
 		<rule>
-			<input>ts:[+ long] tɬ:[+ long]</input>
+			<input>t͡s:[+ long] tɬ:[+ long]</input>
 			<output>s ɬ</output>
 		</rule>
 		<rule>
@@ -10805,7 +10805,7 @@
 			Etymological Dictionary</cite>
 		<rule>
 			<input>{pʷ,pʲ} {p(ʲ)ː,bˤ} bʷ pʷʲ bʷʲ</input>
-			<output>p b f tsʲ dzʲ</output>
+			<output>p b f t͡sʲ dzʲ</output>
 		</rule>
 		<rule>
 			<input>mˤ</input>
@@ -10820,7 +10820,7 @@
 			<output>d(w) tʷ(ʼ)</output>
 		</rule>
 		<rule sporadic="true">
-			<input>tsʲ:[+ long]</input>
+			<input>t͡sʲ:[+ long]</input>
 			<output>dzʲ</output>
 		</rule>
 		<rule>
@@ -10828,16 +10828,16 @@
 			<output>sʲ z</output>
 		</rule>
 		<rule>
-			<input>tsʷ:[+ long] tsʷʲ</input>
-			<output>tsʷ (tʃ)</output>
+			<input>t͡sʷ:[+ long] t͡sʷʲ</input>
+			<output>t͡sʷ (t͡ʃ)</output>
 		</rule>
 		<rule>
-			<input>zʷʲ tsʷʲʼ dzʷʲ</input>
-			<output>dzʲ~zʲ tʃʼ dʒ~ʒ</output>
+			<input>zʷʲ t͡sʷʲʼ dzʷʲ</input>
+			<output>dzʲ~zʲ t͡ʃʼ d͡ʒ~ʒ</output>
 		</rule>
 		<rule>
-			<input>tʃ(ʼ) dʒ</input>
-			<output>tsʲ(ʼ) dzʲ</output>
+			<input>t͡ʃ(ʼ) d͡ʒ</input>
+			<output>t͡sʲ(ʼ) dzʲ</output>
 		</rule>
 		<rule>
 			<input>ʃ(~ʃ:[+ long]) ʒ</input>
@@ -10852,8 +10852,8 @@
 			<output>ʃ ʒ</output>
 		</rule>
 		<rule>
-			<input>tʃʷ(ʼ) tʃʷ:[+ long] dʒʷ</input>
-			<output>tʃ(ʼ) zʷ dzʷ~zʷ</output>
+			<input>t͡ʃʷ(ʼ) t͡ʃʷ:[+ long] d͡ʒʷ</input>
+			<output>t͡ʃ(ʼ) zʷ dzʷ~zʷ</output>
 		</rule>
 		<rule>
 			<input>ʃʷ ʃʷ:[+ long] ʒʷ</input>
@@ -10861,7 +10861,7 @@
 		</rule>
 		<rule>
 			<input>tɕʷ(ʼ) tɕʷ:[+ long]</input>
-			<output>tʃ(ʼ) dʒ~ʒ</output>
+			<output>t͡ʃ(ʼ) d͡ʒ~ʒ</output>
 		</rule>
 		<rule>
 			<input>ɕʷ ɕʷ:[+ long] ʑʷ</input>
@@ -10869,7 +10869,7 @@
 		</rule>
 		<rule>
 			<input>tɬ tɬ:[+ long] tɬʼ dɮ</input>
-			<output>x ts {x,tsʼ} l</output>
+			<output>x t͡s {x,t͡sʼ} l</output>
 		</rule>
 		<rule>
 			<input>ɬ:[+ long]</input>
@@ -10894,7 +10894,7 @@
 		</rule>
 		<rule>
 			<input>tɬʷ(ː) tɬʼ dɮʷ</input>
-			<output>tsʷ tsʼ(ʷ) l</output>
+			<output>t͡sʷ t͡sʼ(ʷ) l</output>
 		</rule>
 		<rule>
 			<input>ɬʷ(ː)</input>
@@ -10902,7 +10902,7 @@
 		</rule>
 		<rule>
 			<input>tɬʷʲ tɬʷʲ:[+ long] tɬʷʲʼ dɮʷʲ</input>
-			<output>tʃʷ ʒʷ tʃʷʼ dʒʷ</output>
+			<output>t͡ʃʷ ʒʷ t͡ʃʷʼ d͡ʒʷ</output>
 		</rule>
 		<rule>
 			<input>ɬʷʲ(~ɬʷ:[+ long])</input>
@@ -10985,8 +10985,8 @@
 		<cite>Nortaneous, from Chirikba, Viacheslav A. (2003), “Abkhaz”. Languages of the
 			World/Materials 119.</cite>
 		<rule>
-			<input>tʃʷ(ʼ) tɕ(ʼ) dʒʷ dʑ</input>
-			<output>f(ʼ) ts(ʼ) v dz</output>
+			<input>t͡ʃʷ(ʼ) tɕ(ʼ) d͡ʒʷ dʑ</input>
+			<output>f(ʼ) t͡s(ʼ) v dz</output>
 		</rule>
 		<rule>
 			<input>ɕ ʑ</input>
@@ -11009,12 +11009,12 @@
 		<cite>Nortaneous, from Chirikba, Viacheslav A. (2003), “Abkhaz”. Languages of the
 			World/Materials 119.</cite>
 		<rule>
-			<input>{tʃʷ(ʼ),tɕ} {dʒʷ,dʑ}</input>
-			<output>ts(ʼ) dz</output>
+			<input>{t͡ʃʷ(ʼ),tɕ} {d͡ʒʷ,dʑ}</input>
+			<output>t͡s(ʼ) dz</output>
 		</rule>
 		<rule>
 			<input>tɕʷ(ʼ) dʑʷ</input>
-			<output>{tɕ(ʷ)(ʼ),tʃʷ(ʼ)} {dʑ(ʷ),dʒʷ}</output>
+			<output>{tɕ(ʷ)(ʼ),t͡ʃʷ(ʼ)} {dʑ(ʷ),d͡ʒʷ}</output>
 		</rule>
 		<rule>
 			<input>ɕ ʑ</input>
@@ -11026,15 +11026,15 @@
 		</rule>
 		<rule>
 			<input>{tʷ(ʼ),dʷ}</input>
-			<output>{tɕ(ʷ)(ʼ),tʃ(ʷ)(ʼ)} {dʒ(ʷ),dʑ(ʷ)}</output>
+			<output>{tɕ(ʷ)(ʼ),t͡ʃ(ʷ)(ʼ)} {d͡ʒ(ʷ),dʑ(ʷ)}</output>
 		</rule>
 	</section>
 	<section index="12.1.3" name="Proto-Abazgi to Ahchypsy Abkhaz">
 		<cite>Nortaneous, from Chirikba, Viacheslav A. (2003), “Abkhaz”. Languages of the
 			World/Materials 119.</cite>
 		<rule>
-			<input>tʃʷ tʃʷʼ dʒʷ tɕ(ʼ) dʑ</input>
-			<output>f pʼ ts(ʼ) v dz</output>
+			<input>t͡ʃʷ t͡ʃʷʼ d͡ʒʷ tɕ(ʼ) dʑ</input>
+			<output>f pʼ t͡s(ʼ) v dz</output>
 		</rule>
 		<rule>
 			<input>ɕ ʑ</input>
@@ -11057,7 +11057,7 @@
 		<cite>Nortaneous, from Chirikba, Viacheslav A. (2003), “Abkhaz”. Languages of the
 			World/Materials 119.</cite>
 		<rule>
-			<input>tʃʷ tʃʷʼ dʒʷ</input>
+			<input>t͡ʃʷ t͡ʃʷʼ d͡ʒʷ</input>
 			<output>pʼ f v</output>
 		</rule>
 		<rule>
@@ -11077,8 +11077,8 @@
 		<cite>Nortaneous, from Chirikba, Viacheslav A. (2003), “Abkhaz”. Languages of the
 			World/Materials 119.</cite>
 		<rule>
-			<input>tʃʷ(ʼ) tɕ(ʼ) tɕʷ(ʼ) dʒʷ dʑ dʑʷ</input>
-			<output>f(ʼ) ts(ʼ) tɕʷ(ʼ) v dz dʑ</output>
+			<input>t͡ʃʷ(ʼ) tɕ(ʼ) tɕʷ(ʼ) d͡ʒʷ dʑ dʑʷ</input>
+			<output>f(ʼ) t͡s(ʼ) tɕʷ(ʼ) v dz dʑ</output>
 		</rule>
 		<rule>
 			<input>ɕ ɕʷ ʑ ʑʷ</input>
@@ -11097,12 +11097,12 @@
 			<output>χ χʷ</output>
 		</rule>
 	</section>
-	<section index="12.1.6" name="Proto-Abazgi to Tsabal Abzhywa">
+	<section index="12.1.6" name="Proto-Abazgi to t͡sabal Abzhywa">
 		<cite>Nortaneous, from Chirikba, Viacheslav A. (2003), “Abkhaz”. Languages of the
 			World/Materials 119.</cite>
 		<rule>
-			<input>tʃʷ tʃʷʼ tɕ(ʼ) tɕʷ(ʼ) dʒʷ dʑ dʑʷ</input>
-			<output>f pʼ ts(ʼ) tɕʷ(ʼ) v dz dʑ</output>
+			<input>t͡ʃʷ t͡ʃʷʼ tɕ(ʼ) tɕʷ(ʼ) d͡ʒʷ dʑ dʑʷ</input>
+			<output>f pʼ t͡s(ʼ) tɕʷ(ʼ) v dz dʑ</output>
 		</rule>
 		<rule>
 			<input>ɕ ɕʷ ʑ ʑʷ</input>
@@ -11125,8 +11125,8 @@
 		<cite>Nortaneous, from Chirikba, Viacheslav A. (2003), “Abkhaz”. Languages of the
 			World/Materials 119.</cite>
 		<rule>
-			<input>tʃʷ(ʼ) tɕ(ʼ) tɕʷ(ʼ) dʒʷ dʑ dʑʷ</input>
-			<output>f(ʼ) ts(ʼ) tɕʷ(ʼ) v dz dʑʷ</output>
+			<input>t͡ʃʷ(ʼ) tɕ(ʼ) tɕʷ(ʼ) d͡ʒʷ dʑ dʑʷ</input>
+			<output>f(ʼ) t͡s(ʼ) tɕʷ(ʼ) v dz dʑʷ</output>
 		</rule>
 		<rule>
 			<input>ɕ ɕʷ ʑ ʑʷ</input>
@@ -11145,12 +11145,12 @@
 			<output>χ χʷ</output>
 		</rule>
 	</section>
-	<section index="12.1.8" name="Proto-Abazgi to Tswydzhy Sadz">
+	<section index="12.1.8" name="Proto-Abazgi to t͡swydzhy Sadz">
 		<cite>Nortaneous, from Chirikba, Viacheslav A. (2003), “Abkhaz”. Languages of the
 			World/Materials 119.</cite>
 		<rule>
-			<input>tʃʷ(ʼ) tɕ(ʼ) tɕʷ(ʼ) dʒʷ dʑ dʑʷ</input>
-			<output>f(ʼ) ts(ʼ) tɕʷ(ʼ) v dz dʑʷ</output>
+			<input>t͡ʃʷ(ʼ) tɕ(ʼ) tɕʷ(ʼ) d͡ʒʷ dʑ dʑʷ</input>
+			<output>f(ʼ) t͡s(ʼ) tɕʷ(ʼ) v dz dʑʷ</output>
 		</rule>
 		<rule>
 			<input>ɕ ʑ</input>
@@ -11210,36 +11210,36 @@
 		</rule>
 		<rule>
 			<input>tʷʲ tʷʲʼ</input>
-			<output>ts tsʼ</output>
+			<output>t͡s t͡sʼ</output>
 		</rule>
 		<rule>
-			<input>ts ts:[+ long] dz</input>
-			<output>{s,c} ts:[+ long] dz~z</output>
+			<input>t͡s t͡s:[+ long] dz</input>
+			<output>{s,c} t͡s:[+ long] dz~z</output>
 		</rule>
 		<rule>
-			<input>tsʲ tsʲ:[+ long] tsʲʼ dzʲ</input>
-			<output>(s) ts:[+ long] tsʼ dz~z</output>
+			<input>t͡sʲ t͡sʲ:[+ long] t͡sʲʼ dzʲ</input>
+			<output>(s) t͡s:[+ long] t͡sʼ dz~z</output>
 		</rule>
 		<rule>
 			<input>sʲ zʲ</input>
 			<output>s z</output>
 		</rule>
 		<rule>
-			<input>tsʷ lʲ {qʲʷ,qˤʷ}</input>
+			<input>t͡sʷ lʲ {qʲʷ,qˤʷ}</input>
 			<output>sʷ d qʷ</output>
 			<env>#_</env>
 		</rule>
 		<rule>
-			<input>tsʲʷ tsʲʷ dzʲʷ</input>
-			<output>tsʲ tsʲʼ dzʲ</output>
+			<input>t͡sʲʷ t͡sʲʷ dzʲʷ</input>
+			<output>t͡sʲ t͡sʲʼ dzʲ</output>
 		</rule>
 		<rule>
 			<input>sʲʷ zʲʷ</input>
 			<output>sʲ zʲ</output>
 		</rule>
 		<rule>
-			<input>tʃ tʃʼ dʒ dʑ</input>
-			<output>s tsʲʼ(?) dz~z dʑ~ʑ</output>
+			<input>t͡ʃ t͡ʃʼ d͡ʒ dʑ</input>
+			<output>s t͡sʲʼ(?) dz~z dʑ~ʑ</output>
 		</rule>
 		<rule>
 			<input>ʃ(~ʃ:[+ long])</input>
@@ -11250,7 +11250,7 @@
 			<output>ʃ(ː) ʒ</output>
 		</rule>
 		<rule>
-			<input>tʃʷ(ː) tʃʷʼ dʒʷ</input>
+			<input>t͡ʃʷ(ː) t͡ʃʷʼ d͡ʒʷ</input>
 			<output>tɕ(ː) tɕʼ dʑ~ʑ</output>
 		</rule>
 		<rule>
@@ -11259,7 +11259,7 @@
 		</rule>
 		<rule>
 			<input>tcʷ(ː) tɕʷʼ</input>
-			<output>tʃ(ː) tʃʼ</output>
+			<output>t͡ʃ(ː) t͡ʃʼ</output>
 		</rule>
 		<rule>
 			<input>ɕʷ ɕʷ ʑʷ</input>
@@ -11275,7 +11275,7 @@
 		</rule>
 		<rule>
 			<input>tɬʷ(ː) tɬʷʼ dɮʷ</input>
-			<output>tʃ(ː) tʃʼ ħ</output>
+			<output>t͡ʃ(ː) t͡ʃʼ ħ</output>
 		</rule>
 		<rule>
 			<input>ɬʷ ɬʷ:[+ long]</input>
@@ -11350,15 +11350,15 @@
 			Wikipedia contributors (2014), “Adyghe language”. Wikipedia, the Free Encyclopedia.
 			&lt;http://en.wikipedia.org/w/index.php?title=Adyghe_language&gt;</cite>
 		<rule>
-			<input>tsʲ</input>
+			<input>t͡sʲ</input>
 			<output>tɕ</output>
 		</rule>
 		<rule>
-			<input>tsʷ</input>
-			<output>tsʲʷ</output>
+			<input>t͡sʷ</input>
+			<output>t͡sʲʷ</output>
 		</rule>
 		<rule>
-			<input>tʃ tɕ</input>
+			<input>t͡ʃ tɕ</input>
 			<output>ʃ ʂ</output>
 		</rule>
 		<rule>
@@ -11374,7 +11374,7 @@
 			<output>dʑ ʑʷ</output>
 		</rule>
 		<rule>
-			<input>tsʲʼ</input>
+			<input>t͡sʲʼ</input>
 			<output>ɕʼ~ʃʼ</output>
 		</rule>
 		<rule>
@@ -11401,29 +11401,29 @@
 			Wikipedia contributors (2014), “Adyghe language”. Wikipedia, the Free Encyclopedia.
 			&lt;http://en.wikipedia.org/w/index.php?title=Adyghe_language&gt;</cite>
 		<rule>
-			<input>tsʲ(ː)</input>
+			<input>t͡sʲ(ː)</input>
 			<output>tɕ</output>
 		</rule>
 		<rule>
-			<input>tsʷ</input>
-			<output>tʃʷ</output>
+			<input>t͡sʷ</input>
+			<output>t͡ʃʷ</output>
 		</rule>
 		<rule>
-			<input>p:[+ long] t:[+ long] ts:[+ long] tsʷ ʃ:[+ long] tʃ:[+ long] tɕ:[+ long] kʲ:[+
+			<input>p:[+ long] t:[+ long] t͡s:[+ long] t͡sʷ ʃ:[+ long] t͡ʃ:[+ long] tɕ:[+ long] kʲ:[+
 				long] kʷ:[+ long] q:[+ long]~qχ qʷ:[+ long]~qχʷ</input>
-			<output>p t ts tʃʷ ʃ ɕ tɕ tʃ kʷ q:[+ long] qʷ</output>
+			<output>p t t͡s t͡ʃʷ ʃ ɕ tɕ t͡ʃ kʷ q:[+ long] qʷ</output>
 		</rule>
 		<rule>
-			<input>tʃʼ tɬʼ</input>
+			<input>t͡ʃʼ tɬʼ</input>
 			<output>ʔaj~ʔ ɬʼ</output>
 		</rule>
 		<rule>
-			<input>tʃʷʼ~ʃʷʼ</input>
+			<input>t͡ʃʷʼ~ʃʷʼ</input>
 			<output>ɕʷʼ~ʃʷʼ</output>
 		</rule>
 		<rule>
 			<input>kʲʼ</input>
-			<output>tʃʼ</output>
+			<output>t͡ʃʼ</output>
 		</rule>
 		<rule>
 			<input>ʂ:[+ long] ʃ:[+ long]</input>
@@ -11431,7 +11431,7 @@
 		</rule>
 		<rule>
 			<input>sʼ ʃʼ~ɕʼ</input>
-			<output>tsʼ ʃʼ</output>
+			<output>t͡sʼ ʃʼ</output>
 		</rule>
 	</section>
 	<section index="12.2.1.2" name="Adyghe to Bzhedug Adyghe">
@@ -11441,23 +11441,23 @@
 			Wikipedia contributors (2014), “Adyghe language”. Wikipedia, the Free Encyclopedia.
 			&lt;http://en.wikipedia.org/w/index.php?title=Adyghe_language&gt;</cite>
 		<rule>
-			<input>tsʲ tsʲ:[+ long]</input>
+			<input>t͡sʲ t͡sʲ:[+ long]</input>
 			<output>tɕ tɕ:[+ long]</output>
 		</rule>
 		<rule>
 			<input>kʲ(ː) kʲʼ ɡʲ</input>
-			<output>tʃ(ː) tʃʼ dʑ</output>
+			<output>t͡ʃ(ː) t͡ʃʼ dʑ</output>
 		</rule>
 		<rule>
-			<input>tsʷ:[+ long]</input>
-			<output>tsʲʷ:[+ long]</output>
+			<input>t͡sʷ:[+ long]</input>
+			<output>t͡sʲʷ:[+ long]</output>
 		</rule>
 		<rule>
 			<input>q:[+ long]~χ qʷ:[+ long]~qχʷ</input>
 			<output>q:[+ long] qʷ:[+ long]</output>
 		</rule>
 		<rule>
-			<input>tsʷʼ~ʃʷʼ</input>
+			<input>t͡sʷʼ~ʃʷʼ</input>
 			<output>ɕʷʼ~ʃʷʼ</output>
 		</rule>
 		<rule>
@@ -11466,7 +11466,7 @@
 		</rule>
 		<rule>
 			<input>sʼ ʃʼ~ɕʼ</input>
-			<output>tsʼ ʃʼ</output>
+			<output>t͡sʼ ʃʼ</output>
 		</rule>
 	</section>
 	<section index="12.2.1.3" name="Adyghe to Shapsug Adyghe">
@@ -11476,17 +11476,17 @@
 			Wikipedia contributors (2014), “Adyghe language”. Wikipedia, the Free Encyclopedia.
 			&lt;http://en.wikipedia.org/w/index.php?title=Adyghe_language&gt;</cite>
 		<rule>
-			<input>tsʲ(ː) tsʷ tʃ tɕ</input>
-			<output>tɕ tʃʷ ʃ ʂ</output>
+			<input>t͡sʲ(ː) t͡sʷ t͡ʃ tɕ</input>
+			<output>tɕ t͡ʃʷ ʃ ʂ</output>
 		</rule>
 		<rule>
-			<input>p:[+ long] t:[+ long] ts:[+ long] tsʷ:[+ long] ʃ:[+ long] ts:[+ long] tc:[+ long]
+			<input>p:[+ long] t:[+ long] t͡s:[+ long] t͡sʷ:[+ long] ʃ:[+ long] t͡s:[+ long] tc:[+ long]
 				kʲ:[+ long] kʷ:[+ long] q:[+ long]~qχ qʷ:[+ long]~qχʷ</input>
-			<output>p t ts tʃʷ ʃ tʃ tɕ kʲ kʷ χ~q χʷ~qʷ</output>
+			<output>p t t͡s t͡ʃʷ ʃ t͡ʃ tɕ kʲ kʷ χ~q χʷ~qʷ</output>
 		</rule>
 		<rule>
-			<input>p(ʷ)ʼ t(ʷ)ʼ tsʼ tsʷʼ~ʃʷʼ</input>
-			<output>pˤ tˤ tsˤ ʂʷ</output>
+			<input>p(ʷ)ʼ t(ʷ)ʼ t͡sʼ t͡sʷʼ~ʃʷʼ</input>
+			<output>pˤ tˤ t͡sˤ ʂʷ</output>
 		</rule>
 		<rule>
 			<input>tɬʼ</input>
@@ -11508,12 +11508,12 @@
 			Wikipedia contributors (2014), “Adyghe language”. Wikipedia, the Free Encyclopedia.
 			&lt;http://en.wikipedia.org/w/index.php?title=Adyghe_language&gt;</cite>
 		<rule>
-			<input>tsʲ(ː) tsʷ</input>
-			<output>tɕ tsʲʷ</output>
+			<input>t͡sʲ(ː) t͡sʷ</input>
+			<output>tɕ t͡sʲʷ</output>
 		</rule>
 		<rule>
 			<input>kʲ(ː) kʲʼ kʷ:[+ long] ɡʲ</input>
-			<output>tʃ tʃʼ kʷ dʑ</output>
+			<output>t͡ʃ t͡ʃʼ kʷ dʑ</output>
 		</rule>
 		<rule>
 			<input>q qʷ</input>
@@ -11521,15 +11521,15 @@
 			<env>! #_</env>
 		</rule>
 		<rule>
-			<input>p:[+ long] t:[+ long] ts:[+ long] tsʷ:[+ long] ʃ:[+ long] tʃ:[+ long] tɕ:[+ long]</input>
-			<output>p t ts tsʷʲ ʃ tʃ tɕ</output>
+			<input>p:[+ long] t:[+ long] t͡s:[+ long] t͡sʷ:[+ long] ʃ:[+ long] t͡ʃ:[+ long] tɕ:[+ long]</input>
+			<output>p t t͡s t͡sʷʲ ʃ t͡ʃ tɕ</output>
 		</rule>
 		<rule>
 			<input>q:[+ long]~qχ qʷ:[+ long]~qχʷ</input>
 			<output>q:[+ long] qʷ:[+ long]</output>
 		</rule>
 		<rule>
-			<input>tsʲʼ tsʷʼ~ʃʷʼ</input>
+			<input>t͡sʲʼ t͡sʷʼ~ʃʷʼ</input>
 			<output>ɕʼ~ʃʼ ɕʷʼ~ʃʷʼ</output>
 		</rule>
 		<rule>
@@ -11546,7 +11546,7 @@
 		</rule>
 		<rule>
 			<input>sʼ ʃʼ~ɕʼ</input>
-			<output>tsʼ ʃʼ</output>
+			<output>t͡sʼ ʃʼ</output>
 		</rule>
 	</section>
 	<section index="12.2.2" name="Proto-Circassian to Kabardian">
@@ -11554,29 +11554,29 @@
 			Wikipedia, the Free Encyclopedia,
 			&lt;http://en.wikipedia.org/w/index.php?title=Proto-Circassian_language&gt;</cite>
 		<rule>
-			<input>tsʲ(ː) tsʷ {tʃ,tɕ}</input>
+			<input>t͡sʲ(ː) t͡sʷ {t͡ʃ,tɕ}</input>
 			<output>ɕ f ʃ</output>
 		</rule>
 		<rule>
 			<input>kʲ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>ʔ~qʼ</input>
 			<output>ʔʷ</output>
 		</rule>
 		<rule>
-			<input>p:[+ long] t:[+ long] ts:[+ long] tsʷ:[+ long] ʃ:[+ long] {tʃ:[+ long],tɕ:[+
+			<input>p:[+ long] t:[+ long] t͡s:[+ long] t͡sʷ:[+ long] ʃ:[+ long] {t͡ʃ:[+ long],tɕ:[+
 				long]} kʷ:[+ long] q:[+ long]~qχ qʷ:[+ long]~qχʷ</input>
-			<output>b d dz v ɕ ʒ dʒ ɡʷ qʼ~qχ qʷʼ~qχʷ</output>
+			<output>b d dz v ɕ ʒ d͡ʒ ɡʷ qʼ~qχ qʷʼ~qχʷ</output>
 		</rule>
 		<rule>
 			<input>dɮ dzʲ dzʷ dʑ ɡʲ</input>
-			<output>ʒ ʑ {v,w} ʒ dʒ</output>
+			<output>ʒ ʑ {v,w} ʒ d͡ʒ</output>
 		</rule>
 		<rule>
-			<input>tsʲʼ tʃʷʼ~ʃʷʼ tʃʼ tɕʼ tɬʼ kʲʼ</input>
-			<output>ɕʼ fʼ ɕʼ {ɕʼ,cçʼ} ɬʼ tʃʼ</output>
+			<input>t͡sʲʼ t͡ʃʷʼ~ʃʷʼ t͡ʃʼ tɕʼ tɬʼ kʲʼ</input>
+			<output>ɕʼ fʼ ɕʼ {ɕʼ,cçʼ} ɬʼ t͡ʃʼ</output>
 		</rule>
 		<rule>
 			<input>sʷ zʷ {ʃ,ʂ} {ʑ,ʐ,ɣʲ} ʑ χʲ</input>
@@ -11588,7 +11588,7 @@
 		</rule>
 		<rule>
 			<input>sʼ(?) ʃʼ~ɕʼ</input>
-			<output>tsʼ ɕʼ</output>
+			<output>t͡sʼ ɕʼ</output>
 		</rule>
 	</section>
 	<section index="12.3" name="Proto-Northwest Caucasian to Ubykh">
@@ -11639,20 +11639,20 @@
 			<output>r~ʁ ɮ</output>
 		</rule>
 		<rule>
-			<input>ts(ʲ)ː tsʷ:[+ long] dzʲ</input>
-			<output>ts tsʷ dz</output>
+			<input>t͡s(ʲ)ː t͡sʷ:[+ long] dzʲ</input>
+			<output>t͡s t͡sʷ dz</output>
 		</rule>
 		<rule>
 			<input>z(ʲ) zʷ</input>
 			<output>dz(ʲ)~z(ʲ) dzʷ~zʷ</output>
 		</rule>
 		<rule>
-			<input>sʷʲ zʷʲ tsʷʲʼ dzʷʲ</input>
-			<output>tʃʷ ʒʷ tʃʲʼ dʒʲ</output>
+			<input>sʷʲ zʷʲ t͡sʷʲʼ dzʷʲ</input>
+			<output>t͡ʃʷ ʒʷ t͡ʃʲʼ d͡ʒʲ</output>
 		</rule>
 		<rule>
-			<input>tʃ(ʼ) dʒ</input>
-			<output>ts(ʼ) dz</output>
+			<input>t͡ʃ(ʼ) d͡ʒ</input>
+			<output>t͡s(ʼ) dz</output>
 		</rule>
 		<rule>
 			<input>ʃ(~ʃ:[+ long]) ʒ</input>
@@ -11663,8 +11663,8 @@
 			<output>ɕ tɕ</output>
 		</rule>
 		<rule>
-			<input>ʃʷ(ː) ʒʷ tʃʷ(ʼ) dʒ</input>
-			<output>ʃ ʒ tʃ(ʼ) dʒ</output>
+			<input>ʃʷ(ː) ʒʷ t͡ʃʷ(ʼ) d͡ʒ</input>
+			<output>ʃ ʒ t͡ʃ(ʼ) d͡ʒ</output>
 		</rule>
 		<rule>
 			<input>tɕʷ(ː) tɕʷʼ</input>
@@ -11676,7 +11676,7 @@
 		</rule>
 		<rule>
 			<input>tɬ tɬ:[+ long] tɬʼ dɮ</input>
-			<output>ɕ (sʲ) tsʲʼ ɮ</output>
+			<output>ɕ (sʲ) t͡sʲʼ ɮ</output>
 		</rule>
 		<rule>
 			<input>ɬ(ː)</input>
@@ -11696,7 +11696,7 @@
 		</rule>
 		<rule>
 			<input>tɬʼ</input>
-			<output>tsʲʼ</output>
+			<output>t͡sʲʼ</output>
 		</rule>
 		<rule>
 			<input>{ɮʲ,lʲ}</input>
@@ -11704,7 +11704,7 @@
 		</rule>
 		<rule>
 			<input>tɬʷ(ː) tɬʷʼ dɮʷ</input>
-			<output>tsʷ ts(ʷ)ʼ w</output>
+			<output>t͡sʷ t͡s(ʷ)ʼ w</output>
 		</rule>
 		<rule>
 			<input>ɬʷ ɬʷ:[+ long]</input>
@@ -11712,7 +11712,7 @@
 		</rule>
 		<rule>
 			<input>tɬʷʲ tɬʷʲ:[+ long] tɬʷʲʼ dɮʷʲ</input>
-			<output>f dʑ tsʼ dʒ</output>
+			<output>f dʑ t͡sʼ d͡ʒ</output>
 		</rule>
 		<rule>
 			<input>ɬʷʲ(~ɬʷ:[+ long]) ɮʷʲ</input>
@@ -11779,7 +11779,7 @@
 			&lt;http://linguistics.berkeley.edu/~survey/documents/dissertations/klar-1977.pdf&gt;</cite>
 		<rule>
 			<input>k</input>
-			<output>tʃ “(‘in certain cases’)”</output>
+			<output>t͡ʃ “(‘in certain cases’)”</output>
 		</rule>
 	</section>
 	<section index="13.3" name="Proto-Chumash to Inseño">
@@ -12143,7 +12143,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>c:[+ long]</input>
-			<output>tʃ:[+ long]</output>
+			<output>t͡ʃ:[+ long]</output>
 		</rule>
 		<rule sporadic="true">
 			<input>o e</input>
@@ -12232,16 +12232,16 @@
 			<env>#_</env>
 		</rule>
 		<rule sporadic="true">
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>ð</output>
 			<env>i_</env>
 		</rule>
 		<rule sporadic="true">
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>ð</output>
 			<env>u_a</env>
 		</rule>
-		<rule>i &gt;∅ / #_{z,dʒ}</rule>
+		<rule>i &gt;∅ / #_{z,d͡ʒ}</rule>
 		<rule sporadic="true">
 			<input>ə</input>
 			<output>∅</output>
@@ -12338,7 +12338,7 @@
 		<rule>
 			<input>v ɣ ʁ</input>
 			<output>p k q</output>
-			<env>_C (unless C = one of /l dʒ m n ŋ)</env>
+			<env>_C (unless C = one of /l d͡ʒ m n ŋ)</env>
 		</rule>
 		<rule>
 			<input>{p,v} t {k,ɣ}</input>
@@ -12351,18 +12351,18 @@
 			<env>u_i</env>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>ʁ</output>
 			<env>i_u</env>
 		</rule>
 		<rule>
-			<input>ədʒ</input>
+			<input>əd͡ʒ</input>
 			<output>i</output>
 			<env>_{a,u}</env>
 			<exception>#U</exception>
 		</rule>
 		<rule>
-			<input>adʒ</input>
+			<input>ad͡ʒ</input>
 			<output>i</output>
 			<env>_a</env>
 			<exception>#U</exception>
@@ -12399,11 +12399,11 @@
 			<exception>i_</exception>
 		</rule>
 		<rule>
-			<input>dʒ</input>
-			<output>tʃ</output>
+			<input>d͡ʒ</input>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>s</output>
 		</rule>
 		<rule>
@@ -12434,7 +12434,7 @@
 		<rule>
 			<input>v ɣ ʁ</input>
 			<output>p k q</output>
-			<env>_C (except where C = /l dʒ m n ŋ/)</env>
+			<env>_C (except where C = /l d͡ʒ m n ŋ/)</env>
 		</rule>
 		<rule>
 			<input>{p,v} t {k,ɣ}</input>
@@ -12456,18 +12456,18 @@
 			<env>_u</env>
 		</rule>
 		<rule>
-			<input>dʒ</input>
-			<output>tʃ</output>
+			<input>d͡ʒ</input>
+			<output>t͡ʃ</output>
 			<env>i_{u,i}</env>
 		</rule>
 		<rule>
-			<input>ədʒ</input>
+			<input>əd͡ʒ</input>
 			<output>i</output>
 			<env>_{a,u}</env>
 			<exception>#U</exception>
 		</rule>
 		<rule>
-			<input>adʒ</input>
+			<input>ad͡ʒ</input>
 			<output>i</output>
 			<env>_a</env>
 			<exception>#U</exception>
@@ -12533,13 +12533,13 @@
 			<env>u_i</env>
 		</rule>
 		<rule>
-			<input>ədʒ</input>
+			<input>əd͡ʒ</input>
 			<output>i</output>
 			<env>_{a,u}</env>
 			<exception>#U</exception>
 		</rule>
 		<rule>
-			<input>adʒ</input>
+			<input>ad͡ʒ</input>
 			<output>i</output>
 			<env>_a</env>
 			<exception>#U</exception>
@@ -12607,7 +12607,7 @@
 		<rule>
 			<input>v ɣ ʁ</input>
 			<output>p k q</output>
-			<env>_C (except if C = /l dʒ m n ŋ/)</env>
+			<env>_C (except if C = /l d͡ʒ m n ŋ/)</env>
 		</rule>
 		<rule>
 			<input>{p,v} t {k,ɣ}</input>
@@ -12630,18 +12630,18 @@
 			<env>V_u</env>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>ʁ</output>
 			<env>i_u</env>
 		</rule>
 		<rule>
-			<input>ədʒ</input>
+			<input>əd͡ʒ</input>
 			<output>i</output>
 			<env>_{a,u}</env>
 			<exception>#U</exception>
 		</rule>
 		<rule>
-			<input>adʒ</input>
+			<input>ad͡ʒ</input>
 			<output>i</output>
 			<env>_a</env>
 			<exception>#U</exception>
@@ -12683,7 +12683,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>s</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>C:[+voice]</input>
@@ -12712,7 +12712,7 @@
 		<rule>
 			<input>F:[+voice]</input>
 			<output>F:[-voice]</output>
-			<env>adjacent to {S,ts}</env>
+			<env>adjacent to {S,t͡s}</env>
 		</rule>
 		<rule>
 			<input>F:[+voice]</input>
@@ -12756,29 +12756,29 @@
 		</rule>
 		<rule>
 			<input>s</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>{i,u}_V</env>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>∅</output>
 			<env>i_i</env>
 		</rule>
 		<rule>
 			<input>ə</input>
 			<output>∅</output>
-			<env>_dʒ{a,u}</env>
+			<env>_d͡ʒ{a,u}</env>
 			<exception>#U</exception>
 		</rule>
 		<rule>
 			<input>a</input>
 			<output>∅</output>
-			<env>_dʒa</env>
+			<env>_d͡ʒa</env>
 			<exception>#U</exception>
 		</rule>
 		<rule>
 			<input>in</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>_u</env>
 		</rule>
 	</section>
@@ -12803,7 +12803,7 @@
 		</rule>
 		<rule>
 			<input>s</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>in certain situations?</env>
 		</rule>
 		<rule>
@@ -12845,7 +12845,7 @@
 		<rule>
 			<input>F:[+voice]</input>
 			<output>F:[-voice]</output>
-			<env>adjacent to {S,ts}</env>
+			<env>adjacent to {S,t͡s}</env>
 		</rule>
 		<rule>
 			<input>F:[+voice]</input>
@@ -12889,29 +12889,29 @@
 		</rule>
 		<rule>
 			<input>s</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>{i,u}_V</env>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>∅</output>
 			<env>i_i</env>
 		</rule>
 		<rule>
 			<input>ə</input>
 			<output>∅</output>
-			<env>_dʒ{a,u}</env>
+			<env>_d͡ʒ{a,u}</env>
 			<exception>#U</exception>
 		</rule>
 		<rule>
 			<input>a</input>
 			<output>∅</output>
-			<env>_dʒa</env>
+			<env>_d͡ʒa</env>
 			<exception>#U</exception>
 		</rule>
 		<rule>
 			<input>in</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>_u (possibly only word-initially?)</env>
 		</rule>
 	</section>
@@ -12930,11 +12930,11 @@
 		</rule>
 		<rule>
 			<input>s</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule sporadic="true">
-			<input>ts</input>
-			<output>tʃ</output>
+			<input>t͡s</input>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>C:[+voice]</input>
@@ -12968,7 +12968,7 @@
 		<rule>
 			<input>F:[+voice]</input>
 			<output>F:[-voice]</output>
-			<env>adjacent to {S,ts}</env>
+			<env>adjacent to {S,t͡s}</env>
 		</rule>
 		<rule>
 			<input>F:[+voice]</input>
@@ -13014,29 +13014,29 @@
 		</rule>
 		<rule>
 			<input>s</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>{i,u}_V</env>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>∅</output>
 			<env>i_i</env>
 		</rule>
 		<rule>
 			<input>ə</input>
 			<output>∅</output>
-			<env>_dʒ{a,u}</env>
+			<env>_d͡ʒ{a,u}</env>
 			<exception>#U</exception>
 		</rule>
 		<rule>
 			<input>a</input>
 			<output>∅</output>
-			<env>_dʒa</env>
+			<env>_d͡ʒa</env>
 			<exception>#U</exception>
 		</rule>
 		<rule>
 			<input>in</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>_u (possibly only word-initially?)</env>
 		</rule>
 	</section>
@@ -13060,7 +13060,7 @@
 		</rule>
 		<rule>
 			<input>s</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>in certain situations?</env>
 		</rule>
 		<rule>
@@ -13101,7 +13101,7 @@
 		<rule>
 			<input>F:[+voice]</input>
 			<output>F:[-voice]</output>
-			<env>adjacent to {S,ts}</env>
+			<env>adjacent to {S,t͡s}</env>
 		</rule>
 		<rule>
 			<input>F:[+voice]</input>
@@ -13144,30 +13144,30 @@
 			<env>#_u</env>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>∅</output>
 			<env>i_i</env>
 		</rule>
 		<rule>
 			<input>ə</input>
 			<output>∅</output>
-			<env>_dʒ{a,u}</env>
+			<env>_d͡ʒ{a,u}</env>
 			<exception>#U</exception>
 		</rule>
 		<rule>
 			<input>a</input>
 			<output>∅</output>
-			<env>_dʒa</env>
+			<env>_d͡ʒa</env>
 			<exception>#U</exception>
 		</rule>
 		<rule>
 			<input>s</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>{i,u}_V</env>
 		</rule>
 		<rule>
 			<input>in</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>_u (possibly only word-initially?)</env>
 		</rule>
 	</section>
@@ -13521,7 +13521,7 @@
 		</rule>
 		<rule>
 			<input>ḱ</input>
-			<output>{ts,tʃ} (“[a]rchaic relic”)</output>
+			<output>{t͡s,t͡ʃ} (“[a]rchaic relic”)</output>
 		</rule>
 		<rule>
 			<input>ḱ</input>
@@ -13654,7 +13654,7 @@
 		</rule>
 		<rule>
 			<input>c ɟ</input>
-			<output>tʃ dʒ (for most speakers)</output>
+			<output>t͡ʃ d͡ʒ (for most speakers)</output>
 		</rule>
 	</section>
 	<section index="17.1.2" name="Proto-Indo-European to Tosk Albanian">
@@ -13682,7 +13682,7 @@
 		</rule>
 		<rule>
 			<input>ḱ</input>
-			<output>{ts,tʃ} (“[a]rchaic relic”)</output>
+			<output>{t͡s,t͡ʃ} (“[a]rchaic relic”)</output>
 		</rule>
 		<rule>
 			<input>ḱ</input>
@@ -13813,7 +13813,7 @@
 		</rule>
 		<rule>
 			<input>c ɟ</input>
-			<output>tʃ dʒ (much less widespread than in Gheg)</output>
+			<output>t͡ʃ d͡ʒ (much less widespread than in Gheg)</output>
 		</rule>
 	</section>
 	<section index="17.2" name="Proto-Indo-European to Common Anatolian">
@@ -13935,7 +13935,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_i</env>
 			<exception>s_</exception>
 		</rule>
@@ -14010,7 +14010,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>ɡ</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 		</rule>
 		<rule>
 			<input>e</input>
@@ -14123,7 +14123,7 @@
 		<rule>
 			<input>j</input>
 			<output>∅</output>
-			<env>ts_</env>
+			<env>t͡s_</env>
 		</rule>
 		<rule>
 			<input>s</input>
@@ -14165,7 +14165,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>ɡ</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 		</rule>
 		<rule>
 			<input>e</input>
@@ -14196,7 +14196,7 @@
 		<cite>Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)</cite>
 		<rule>
 			<input>d</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_{i,u}</env>
 		</rule>
 		<rule>
@@ -14439,7 +14439,7 @@
 		</rule>
 		<rule>
 			<input>kʷ</input>
-			<output>tʃʰ</output>
+			<output>t͡ʃʰ</output>
 			<env>_{e,i}</env>
 		</rule>
 		<rule>
@@ -14453,7 +14453,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>ɡ́</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>b d ɡ(ʷ)</input>
@@ -14479,7 +14479,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>{sk,ks} kj</input>
-			<output>tsʰ tʃʰ</output>
+			<output>t͡sʰ t͡ʃʰ</output>
 		</rule>
 		<rule>
 			<input>{sr,rs}</input>
@@ -14597,7 +14597,7 @@
 		</rule>
 		<rule>
 			<input>kʷ</input>
-			<output>tʃʰ</output>
+			<output>t͡ʃʰ</output>
 			<env>_{e,i}</env>
 		</rule>
 		<rule>
@@ -14611,7 +14611,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>ɡ́</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>b d ɡ(ʷ)</input>
@@ -14637,7 +14637,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>{sk,ks} kj</input>
-			<output>tsʰ tʃʰ</output>
+			<output>t͡sʰ t͡ʃʰ</output>
 		</rule>
 		<rule>
 			<input>{sr,rs}</input>
@@ -14751,7 +14751,7 @@
 		</rule>
 		<rule>
 			<input>kʷ</input>
-			<output>tʃʰ</output>
+			<output>t͡ʃʰ</output>
 			<env>_{e,i}</env>
 		</rule>
 		<rule>
@@ -14765,7 +14765,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>ɡ́</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>b d ɡ(ʷ)</input>
@@ -14773,7 +14773,7 @@
 		</rule>
 		<rule>
 			<input>ɡʷʱ</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>#_{e,i}</env>
 		</rule>
 		<rule>
@@ -14796,7 +14796,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>{sk,ks} kj</input>
-			<output>tsʰ tʃʰ</output>
+			<output>t͡sʰ t͡ʃʰ</output>
 		</rule>
 		<rule>
 			<input>{sr,rs}</input>
@@ -14914,7 +14914,7 @@
 		</rule>
 		<rule>
 			<input>kʷ</input>
-			<output>tʃʰ</output>
+			<output>t͡ʃʰ</output>
 			<env>_{e,i}</env>
 		</rule>
 		<rule>
@@ -14928,7 +14928,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>ɡ́</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>b d ɡ(ʷ)</input>
@@ -14954,7 +14954,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>{sk,ks} kj</input>
-			<output>tsʰ tʃʰ</output>
+			<output>t͡sʰ t͡ʃʰ</output>
 		</rule>
 		<rule>
 			<input>{sr,rs}</input>
@@ -15072,7 +15072,7 @@
 		</rule>
 		<rule>
 			<input>kʷ</input>
-			<output>tʃʰ</output>
+			<output>t͡ʃʰ</output>
 			<env>_{e,i}</env>
 		</rule>
 		<rule>
@@ -15086,7 +15086,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>ɡ́</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>b d ɡ(ʷ)</input>
@@ -15108,7 +15108,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>{sk,ks} kj</input>
-			<output>tsʰ tʃʰ</output>
+			<output>t͡sʰ t͡ʃʰ</output>
 		</rule>
 		<rule>
 			<input>{sr,rs}</input>
@@ -15226,7 +15226,7 @@
 		</rule>
 		<rule>
 			<input>kʷ</input>
-			<output>tʃʰ</output>
+			<output>t͡ʃʰ</output>
 			<env>_{e,i}</env>
 		</rule>
 		<rule>
@@ -15240,7 +15240,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>ɡ́</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>b d ɡ(ʷ)</input>
@@ -15248,7 +15248,7 @@
 		</rule>
 		<rule>
 			<input>ɡʷʱ</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>#_{e,i}</env>
 		</rule>
 		<rule>
@@ -15276,7 +15276,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>{sk,ks} kj</input>
-			<output>tsʰ tʃʰ</output>
+			<output>t͡sʰ t͡ʃʰ</output>
 		</rule>
 		<rule>
 			<input>{sr,rs}</input>
@@ -15394,7 +15394,7 @@
 		</rule>
 		<rule>
 			<input>kʷ</input>
-			<output>tʃʰ</output>
+			<output>t͡ʃʰ</output>
 			<env>_{e,i}</env>
 		</rule>
 		<rule>
@@ -15408,7 +15408,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>ɡ́</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>b d ɡ(ʷ)</input>
@@ -15416,7 +15416,7 @@
 		</rule>
 		<rule>
 			<input>ɡʷʱ</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>#_{e,i}</env>
 		</rule>
 		<rule>
@@ -15439,7 +15439,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>{sk,ks} kj</input>
-			<output>tsʰ tʃʰ</output>
+			<output>t͡sʰ t͡ʃʰ</output>
 		</rule>
 		<rule>
 			<input>{sr,rs}</input>
@@ -15515,7 +15515,7 @@
 		</rule>
 		<rule>
 			<input>k(ʷ) ɡ(ʷ)(ʱ)</input>
-			<output>tʃ dʒ</output>
+			<output>t͡ʃ d͡ʒ</output>
 			<env>_E</env>
 		</rule>
 		<rule>
@@ -16213,11 +16213,11 @@
 		</rule>
 		<rule>
 			<input>ḱ ɡ́</input>
-			<output>ts dz</output>
+			<output>t͡s dz</output>
 		</rule>
 		<rule>
 			<input>{kʷ,kw} {ɡʷ,ɡw}</input>
-			<output>tʃ dʒ (&gt; s~z z ?)</output>
+			<output>t͡ʃ d͡ʒ (&gt; s~z z ?)</output>
 			<env>_E</env>
 		</rule>
 		<rule>
@@ -16516,7 +16516,7 @@
 		</rule>
 		<rule>
 			<input>k ɡ</input>
-			<output>tʃ j(?)</output>
+			<output>t͡ʃ j(?)</output>
 		</rule>
 		<rule>
 			<input>æ:[+ long]</input>
@@ -16585,7 +16585,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>k ɣ ɡ</input>
-			<output>tʃ ʝ dʒ</output>
+			<output>t͡ʃ ʝ d͡ʒ</output>
 		</rule>
 	</section>
 	<section index="17.7.2.1.2" name="Old English to Kentish Middle English">
@@ -16804,7 +16804,7 @@
 		</rule>
 		<rule>
 			<input>tj sj dj zj</input>
-			<output>tʃ ʃ dʒ ʒ</output>
+			<output>t͡ʃ ʃ d͡ʒ ʒ</output>
 			<env>! _u:[+ long]</env>
 		</rule>
 		<rule>
@@ -17030,8 +17030,8 @@
 		<rule>
 			<input>ɪ</input>
 			<output>i:[+ long]</output>
-			<env>“unstressed foot-finally if the next syllable is stressed and begins with /k ɡ tʃ
-				dʒ ʃ ʒ/”</env>
+			<env>“unstressed foot-finally if the next syllable is stressed and begins with /k ɡ t͡ʃ
+				d͡ʒ ʃ ʒ/”</env>
 		</rule>
 		<rule>
 			<input>ɪ</input>
@@ -17041,7 +17041,7 @@
 		<rule>
 			<input>ə</input>
 			<output>ɪ</output>
-			<env>_{k,ɡ,tʃ,dʒ,ʃ,ʒ,v}</env>
+			<env>_{k,ɡ,t͡ʃ,d͡ʒ,ʃ,ʒ,v}</env>
 		</rule>
 		<rule>
 			<input>t d</input>
@@ -17059,7 +17059,7 @@
 		<rule>
 			<input>ʊə</input>
 			<output>o:[+ long]</output>
-			<env>! {j,dʒ}_</env>
+			<env>! {j,d͡ʒ}_</env>
 		</rule>
 		<rule>
 			<input>ʊə</input>
@@ -17087,7 +17087,7 @@
 		</rule>
 		<rule>
 			<input>tj dj</input>
-			<output>tʃ dʒ</output>
+			<output>t͡ʃ d͡ʒ</output>
 		</rule>
 		<rule>
 			<input>ɔ:[+ long]</input>
@@ -17241,7 +17241,7 @@
 			<env>_:[- stress]#</env>
 		</rule>
 		<rule>
-			<input>j tʃ</input>
+			<input>j t͡ʃ</input>
 			<output>ɡ k</output>
 		</rule>
 		<rule>
@@ -17565,8 +17565,8 @@
 			<env>p_</env>
 		</rule>
 		<rule>
-			<input>dʒ</input>
-			<output>tʃ</output>
+			<input>d͡ʒ</input>
+			<output>t͡ʃ</output>
 			<env>_#</env>
 		</rule>
 		<rule sporadic="true">
@@ -17883,7 +17883,7 @@
 			Encyclopedia. &lt;http://en.wikipedia.org/w/index.php?title=Old_Frisian&gt;</cite>
 		<rule>
 			<input>k ɡ</input>
-			<output>tʃ j</output>
+			<output>t͡ʃ j</output>
 			<env>_E</env>
 		</rule>
 		<rule>
@@ -18119,7 +18119,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>{ts,k}</output>
+			<output>{t͡s,k}</output>
 			<env>_w</env>
 		</rule>
 		<rule>
@@ -18214,7 +18214,7 @@
 		<rule>
 			<input>V</input>
 			<output>V:[+ long]</output>
-			<env>_r{t,d,s,ts} (except /ə/)</env>
+			<env>_r{t,d,s,t͡s} (except /ə/)</env>
 		</rule>
 		<rule>
 			<input>V</input>
@@ -18253,17 +18253,17 @@
 		</rule>
 		<rule>
 			<input>p t k</input>
-			<output>pf ts kx</output>
+			<output>pf t͡s kx</output>
 			<env>#_</env>
 		</rule>
 		<rule>
 			<input>p t k</input>
-			<output>pf ts kx</output>
+			<output>pf t͡s kx</output>
 			<env>{L,N}_</env>
 		</rule>
 		<rule>
 			<input>p:[+ long] t:[+ long] k:[+ long]</input>
-			<output>pf ts kx</output>
+			<output>pf t͡s kx</output>
 		</rule>
 		<rule>
 			<input>b d ɡ</input>
@@ -18342,7 +18342,7 @@
 		</rule>
 		<rule>
 			<input>k</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_E</env>
 		</rule>
 		<rule sporadic="true">
@@ -19065,7 +19065,7 @@
 			<output>k:[+ long]</output>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s:[+ long]</output>
 			<env>V_V</env>
 		</rule>
@@ -19115,7 +19115,7 @@
 		</rule>
 		<rule>
 			<input>s</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>{l,n}ː_</env>
 		</rule>
 		<rule>
@@ -19532,7 +19532,7 @@
 		</rule>
 		<rule>
 			<input>{t,d}j</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule sporadic="true">
 			<input>d</input>
@@ -19860,11 +19860,11 @@
 		</rule>
 		<rule>
 			<input>dj</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 		</rule>
 		<rule>
 			<input>ɡ(ː)</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>_iV</env>
 		</rule>
 		<rule>
@@ -19887,7 +19887,7 @@
 		</rule>
 		<rule>
 			<input>tj</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_#</env>
 		</rule>
 		<rule>
@@ -20130,7 +20130,7 @@
 		</rule>
 		<rule>
 			<input>tj</input>
-			<output>tsj</output>
+			<output>t͡sj</output>
 		</rule>
 		<rule>
 			<input>θ ð</input>
@@ -20167,7 +20167,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -20195,7 +20195,7 @@
 			<env>u_</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 		</rule>
 		<rule>
@@ -20237,7 +20237,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -20265,7 +20265,7 @@
 			<env>u_</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 		</rule>
 		<rule>
@@ -20286,12 +20286,12 @@
 			<env>_s</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>t</output>
 			<env>#_</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>t:[+ long]</output>
 			<env>medial</env>
 		</rule>
@@ -20443,7 +20443,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -20471,7 +20471,7 @@
 			<env>u_</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 		</rule>
 		<rule>
@@ -20523,7 +20523,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -20551,7 +20551,7 @@
 			<env>u_</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 		</rule>
 		<rule>
@@ -20597,7 +20597,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -20625,7 +20625,7 @@
 			<env>u_</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 		</rule>
 		<rule>
@@ -20667,7 +20667,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -20695,7 +20695,7 @@
 			<env>u_</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 		</rule>
 		<rule>
@@ -20713,12 +20713,12 @@
 			<env>_s</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>t</output>
 			<env>#_</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>t:[+ long]</output>
 			<env>medial</env>
 		</rule>
@@ -20753,7 +20753,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -20781,7 +20781,7 @@
 			<env>u_</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 		</rule>
 		<rule>
@@ -20827,7 +20827,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -20855,7 +20855,7 @@
 			<env>u_</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 		</rule>
 		<rule>
@@ -20876,12 +20876,12 @@
 			<env>_s</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>s</output>
 			<env>#_</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>s:[+ long]</output>
 			<env>medial</env>
 		</rule>
@@ -20980,7 +20980,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -21008,7 +21008,7 @@
 			<env>u_</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 		</rule>
 		<rule>
@@ -21054,7 +21054,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -21082,7 +21082,7 @@
 			<env>u_</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 		</rule>
 		<rule>
@@ -21106,7 +21106,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_{i,e}</env>
 		</rule>
 		<rule>
@@ -21245,7 +21245,7 @@
 			<output>pʃ</output>
 		</rule>
 		<rule>
-			<input>ttʃ ddʒʱ</input>
+			<input>ttʃ dd͡ʒʱ</input>
 			<output>t.ʃ d.ʒʱ</output>
 		</rule>
 		<rule>
@@ -21259,7 +21259,7 @@
 			<env>_ʒdʱ</env>
 		</rule>
 		<rule>
-			<input>tʃʃ</input>
+			<input>t͡ʃʃ</input>
 			<output>ʃ:[+ long]</output>
 		</rule>
 		<rule>
@@ -21356,7 +21356,7 @@
 			<output>e:[+ long]</output>
 		</rule>
 		<rule>
-			<input>tʃ dʒ(ʱ)</input>
+			<input>t͡ʃ d͡ʒ(ʱ)</input>
 			<output>tɕ dʑ(ʱ)</output>
 		</rule>
 		<rule>
@@ -21364,7 +21364,7 @@
 			<output>ɕ ɟ(ʱ)</output>
 		</rule>
 		<rule>
-			<input>tst dzdʱ</input>
+			<input>t͡st dzdʱ</input>
 			<output>t:[+ long] dʱ:[+ long]</output>
 		</rule>
 		<rule>
@@ -21421,7 +21421,7 @@
 		</rule>
 		<rule>
 			<input>j w</input>
-			<output>dʒ b</output>
+			<output>d͡ʒ b</output>
 			<env>V_V</env>
 		</rule>
 		<rule>
@@ -21485,10 +21485,10 @@
 			<input>Cn</input>
 			<output>CC</output>
 			<env>V_V</env>
-			<exception>C = dʒ</exception>
+			<exception>C = d͡ʒ</exception>
 		</rule>
 		<rule>
-			<input>dʒɲ</input>
+			<input>d͡ʒɲ</input>
 			<output>ɳ:[+ long]</output>
 			<env>V_V</env>
 		</rule>
@@ -21513,7 +21513,7 @@
 		</rule>
 		<rule>
 			<input>j w</input>
-			<output>dʒ b</output>
+			<output>d͡ʒ b</output>
 			<env>V_V</env>
 		</rule>
 		<rule>
@@ -21527,7 +21527,7 @@
 			<env>V_V</env>
 		</rule>
 		<rule>
-			<input>b {d,dʒ,ɡ}</input>
+			<input>b {d,d͡ʒ,ɡ}</input>
 			<output>v j</output>
 			<env>V_V</env>
 		</rule>
@@ -21585,10 +21585,10 @@
 			<input>Cn</input>
 			<output>CC</output>
 			<env>V_V</env>
-			<exception>C = dʒ</exception>
+			<exception>C = d͡ʒ</exception>
 		</rule>
 		<rule>
-			<input>dʒɲ</input>
+			<input>d͡ʒɲ</input>
 			<output>ɲ:[+ long]</output>
 			<env>V_V</env>
 		</rule>
@@ -21613,7 +21613,7 @@
 		</rule>
 		<rule>
 			<input>j w</input>
-			<output>dʒ b</output>
+			<output>d͡ʒ b</output>
 			<env>V_V</env>
 		</rule>
 		<rule>
@@ -21656,7 +21656,7 @@
 		</rule>
 		<rule>
 			<input>kʂ</input>
-			<output>tʃ:[+ long]</output>
+			<output>t͡ʃ:[+ long]</output>
 		</rule>
 		<rule>
 			<input>{ʂ,ç}</input>
@@ -21680,10 +21680,10 @@
 			<input>Cn</input>
 			<output>CC</output>
 			<env>V_V</env>
-			<exception>C = dʒ</exception>
+			<exception>C = d͡ʒ</exception>
 		</rule>
 		<rule>
-			<input>dʒɲ</input>
+			<input>d͡ʒɲ</input>
 			<output>ɳ:[+ long]</output>
 			<env>V_V</env>
 		</rule>
@@ -21708,7 +21708,7 @@
 		</rule>
 		<rule>
 			<input>j w</input>
-			<output>dʒ b</output>
+			<output>d͡ʒ b</output>
 			<env>V_V</env>
 		</rule>
 		<rule>
@@ -21751,7 +21751,7 @@
 		</rule>
 		<rule>
 			<input>kʂ</input>
-			<output>tʃ:[+ long]</output>
+			<output>t͡ʃ:[+ long]</output>
 		</rule>
 		<rule>
 			<input>{ʂ,ç}</input>
@@ -21770,10 +21770,10 @@
 			<input>Cn</input>
 			<output>CC</output>
 			<env>V_V</env>
-			<exception>C = dʒ</exception>
+			<exception>C = d͡ʒ</exception>
 		</rule>
 		<rule>
-			<input>dʒɲ</input>
+			<input>d͡ʒɲ</input>
 			<output>ɳ:[+ long]</output>
 			<env>V_V</env>
 		</rule>
@@ -21863,7 +21863,7 @@
 		</rule>
 		<rule>
 			<input>k ɡ x</input>
-			<output>tʃ ʒ ʃ</output>
+			<output>t͡ʃ ʒ ʃ</output>
 			<env>_{{ e, e:[+ long] }(i),{ i, i:[+ long] }}</env>
 		</rule>
 		<rule>
@@ -21959,12 +21959,12 @@
 		</rule>
 		<rule>
 			<input>k ɡ x</input>
-			<output>ts dz s</output>
+			<output>t͡s dz s</output>
 			<env>_{æ:[+ long],i}</env>
 		</rule>
 		<rule>
 			<input>k ɡ x</input>
-			<output>ts dz s</output>
+			<output>t͡s dz s</output>
 			<env>“After some syllables with front vowels”</env>
 		</rule>
 		<rule>
@@ -21973,7 +21973,7 @@
 		</rule>
 		<rule>
 			<input>kj ɡj xj</input>
-			<output>tʃ ʒ ʃ</output>
+			<output>t͡ʃ ʒ ʃ</output>
 		</rule>
 	</section>
 	<section index="17.11.1" name="Proto-Slavic to Polish">
@@ -22189,7 +22189,7 @@
 				an analogical final -j extension”</env>
 		</rule>
 		<rule>
-			<input>tsi ʐi</input>
+			<input>t͡si ʐi</input>
 			<output>tɕ ʐ</output>
 			<env>V_</env>
 		</rule>
@@ -22200,7 +22200,7 @@
 		</rule>
 		<rule>
 			<input>tʲ dʲ sʲ zʲ nʲ rʲ l lʲ</input>
-			<output>tɕ dʒ ɕ ʑ ȵ r ɫ l (this last probably not before /i/)</output>
+			<output>tɕ d͡ʒ ɕ ʑ ȵ r ɫ l (this last probably not before /i/)</output>
 		</rule>
 		<rule>
 			<input>i:[+ long] u:[+ long] ɨ:[+ long]</input>
@@ -22244,12 +22244,12 @@
 			<output>kʲi ɡʲi</output>
 		</rule>
 		<rule>
-			<input>ʃi ʒi tʃi dʒi ɕi ʑi</input>
-			<output>ʂɨ ʐɨ ʈʂɨ ɖʐɨ tsɨ ʒɨ</output>
+			<input>ʃi ʒi t͡ʃi d͡ʒi ɕi ʑi</input>
+			<output>ʂɨ ʐɨ ʈʂɨ ɖʐɨ t͡sɨ ʒɨ</output>
 		</rule>
 		<rule>
-			<input>ʃ ʒ tʃ dʒ ɕ ʑ</input>
-			<output>ʂ ʐ ʈʂ ɖʐ ts ʒ</output>
+			<input>ʃ ʒ t͡ʃ d͡ʒ ɕ ʑ</input>
+			<output>ʂ ʐ ʈʂ ɖʐ t͡s ʒ</output>
 		</rule>
 		<rule>
 			<input>r̝</input>
@@ -22407,7 +22407,7 @@
 			<env>_C</env>
 		</rule>
 		<rule>
-			<input>tɕts ʑr̝</input>
+			<input>tɕt͡s ʑr̝</input>
 			<output>jts jr̝</output>
 		</rule>
 		<rule>
@@ -22468,7 +22468,7 @@
 		</rule>
 		<rule>
 			<input>ʈʂs</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>{z,s,ʂ}</input>
@@ -22526,7 +22526,7 @@
 		<rule>
 			<input>d</input>
 			<output>∅</output>
-			<env>r_ts</env>
+			<env>r_t͡s</env>
 		</rule>
 		<rule>
 			<input>d</input>
@@ -22609,7 +22609,7 @@
 			<output>ʂkɫ</output>
 		</rule>
 		<rule>
-			<input>dz ts</input>
+			<input>dz t͡s</input>
 			<output>d͜z t͜s</output>
 		</rule>
 		<rule skip="true">
@@ -22699,7 +22699,7 @@
 		</rule>
 		<rule>
 			<input>tj dj</input>
-			<output>tʃ, ʒ</output>
+			<output>t͡ʃ, ʒ</output>
 		</rule>
 		<rule>
 			<input>kt ɡd</input>
@@ -23317,10 +23317,10 @@
 		</rule>
 		<rule>
 			<input>{t,d}t</input>
-			<output>tst</output>
+			<output>t͡st</output>
 		</rule>
 		<rule>
-			<input>tst</input>
+			<input>t͡st</input>
 			<output>s:[+ long]</output>
 		</rule>
 		<rule>
@@ -23604,10 +23604,10 @@
 		</rule>
 		<rule>
 			<input>dj</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>ʒ</output>
 		</rule>
 		<rule>
@@ -23704,7 +23704,7 @@
 		</rule>
 		<rule>
 			<input>lj rj kj ɡj</input>
-			<output>ʎ jr ts ʒ</output>
+			<output>ʎ jr t͡s ʒ</output>
 			<env>V_V</env>
 		</rule>
 		<rule>
@@ -23835,8 +23835,8 @@
 			<env>u_#</env>
 		</rule>
 		<rule>
-			<input>j ɡj ts z n</input>
-			<output>tʃ i w s ∅</output>
+			<input>j ɡj t͡s z n</input>
+			<output>t͡ʃ i w s ∅</output>
 			<env>_#</env>
 		</rule>
 		<rule>
@@ -23861,11 +23861,11 @@
 		</rule>
 		<rule>
 			<input>k</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>#_{i,e}</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 			<env>#_{i,e}</env>
 		</rule>
@@ -23876,11 +23876,11 @@
 		</rule>
 		<rule>
 			<input>j</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>#_</env>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>ʒ</output>
 			<env>#_</env>
 		</rule>
@@ -24196,7 +24196,7 @@
 		</rule>
 		<rule>
 			<input>dj</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>r_</env>
 		</rule>
 		<rule>
@@ -24211,12 +24211,12 @@
 		</rule>
 		<rule>
 			<input>j tj</input>
-			<output>dʒ ts</output>
+			<output>d͡ʒ t͡s</output>
 			<env>#_</env>
 		</rule>
 		<rule sporadic="true">
 			<input>j</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>V_V</env>
 		</rule>
 		<rule>
@@ -24360,7 +24360,7 @@
 			receive intervocalic treatment before /j/”:</comment>
 		<rule>
 			<input>(k)kj</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>ɡ</input>
@@ -24369,15 +24369,15 @@
 		</rule>
 		<rule>
 			<input>pj</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>{b,v}j</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 		</rule>
 		<rule>
 			<input>m{ɲ,j}</input>
-			<output>ndʒ</output>
+			<output>nd͡ʒ</output>
 		</rule>
 		<rule>
 			<input>V”e</input>
@@ -24394,7 +24394,7 @@
 		</rule>
 		<rule>
 			<input>k ɡ</input>
-			<output>tʃ dʒ</output>
+			<output>t͡ʃ d͡ʒ</output>
 			<env>_a</env>
 		</rule>
 		<rule>
@@ -24499,7 +24499,7 @@
 		<rule>
 			<input>a</input>
 			<output>ə</output>
-			<env>#{tʃ,dʒ}_(%…)” in U:[+open]</env>
+			<env>#{t͡ʃ,d͡ʒ}_(%…)” in U:[+open]</env>
 		</rule>
 		<rule>
 			<input>a</input>
@@ -24537,7 +24537,7 @@
 		<rule>
 			<input>V</input>
 			<output>ə</output>
-			<env>_{CC,tʃ,dʒ}</env>
+			<env>_{CC,t͡ʃ,d͡ʒ}</env>
 			<exception>_{nt,nɡ,mp,rt,rd}</exception>
 		</rule>
 		<rule>
@@ -24672,7 +24672,7 @@
 		</rule>
 		<rule>
 			<input>tVk</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>[- stress]</env>
 		</rule>
 		<rule sporadic="true">
@@ -24686,7 +24686,7 @@
 		</rule>
 		<rule>
 			<input>k ɡ</input>
-			<output>tʃ dʒ</output>
+			<output>t͡ʃ d͡ʒ</output>
 			<env>_E</env>
 		</rule>
 		<rule>
@@ -24700,7 +24700,7 @@
 		</rule>
 		<rule>
 			<input>ɛ</input>
-			<output>jɛ/ [- stress] ! _{dʒ,ʎ,ɲ}</output>
+			<output>jɛ/ [- stress] ! _{d͡ʒ,ʎ,ɲ}</output>
 		</rule>
 		<rule>
 			<input>ɡ</input>
@@ -24709,23 +24709,23 @@
 		</rule>
 		<rule>
 			<input>j</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>#_</env>
 		</rule>
 		<rule>
 			<input>j</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>V_V</env>
 		</rule>
 		<rule>
 			<input>{dj,ɡj} lj {nj,ɡn}</input>
-			<output>dʒ ʎ ɲ</output>
+			<output>d͡ʒ ʎ ɲ</output>
 		</rule>
 		<rule>
 			<input>ɔ</input>
 			<output>uo</output>
 			<env>stressed</env>
-			<exception>j_ or _{dʒ,L}</exception>
+			<exception>j_ or _{d͡ʒ,L}</exception>
 		</rule>
 		<rule>
 			<input>b</input>
@@ -24744,7 +24744,7 @@
 		</rule>
 		<rule>
 			<input>sj</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 		</rule>
 		<rule>
 			<input>{t,d,k,m,n,s}</input>
@@ -24772,7 +24772,7 @@
 		</rule>
 		<rule>
 			<input>tj ks w</input>
-			<output>ts s:[+ long] ɡw</output>
+			<output>t͡s s:[+ long] ɡw</output>
 		</rule>
 	</section>
 	<section index="17.12.1.1.5" name="Latin to Portuguese">
@@ -25041,11 +25041,11 @@
 			directly before the tonic is dropped”</comment>
 		<rule>
 			<input>k</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>#_{i,e}</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 			<env>#_{i,e}</env>
 		</rule>
@@ -25066,21 +25066,21 @@
 		</rule>
 		<rule>
 			<input>dʲ</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>#_{i,e}</env>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>ʒ</output>
 			<env>#_{i,e}</env>
 		</rule>
 		<rule>
 			<input>j</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>#_</env>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>ʒ</output>
 			<env>#_</env>
 		</rule>
@@ -25124,11 +25124,11 @@
 		</rule>
 		<rule>
 			<input>kʎ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>#_</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>ʃ</output>
 			<env>#_</env>
 		</rule>
@@ -25233,11 +25233,11 @@
 		</rule>
 		<rule>
 			<input>dj</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>V_V</env>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>ʒ</output>
 			<env>V_V</env>
 		</rule>
@@ -25248,11 +25248,11 @@
 		</rule>
 		<rule>
 			<input>dz</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>r_V</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 			<env>r_V</env>
 		</rule>
@@ -25288,11 +25288,11 @@
 		</rule>
 		<rule>
 			<input>kj</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>V_V</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 			<env>V_V</env>
 		</rule>
@@ -25492,7 +25492,7 @@
 		<rule sporadic="true">
 			<input>ɛ</input>
 			<output>jɛ</output>
-			<env>_{u,i,ʎ,rʲ,ʃ,ʒ,j,tʃ,dʒ}</env>
+			<env>_{u,i,ʎ,rʲ,ʃ,ʒ,j,t͡ʃ,d͡ʒ}</env>
 		</rule>
 		<rule>
 			<input>ju</input>
@@ -25501,7 +25501,7 @@
 		<rule>
 			<input>o</input>
 			<output>y</output>
-			<env>_{tʃ,dʒ,it,id} (did not occur in Dauphiné)</env>
+			<env>_{t͡ʃ,d͡ʒ,it,id} (did not occur in Dauphiné)</env>
 		</rule>
 		<rule sporadic="true">
 			<input>o</input>
@@ -25617,7 +25617,7 @@
 			<output>“indistinct e” (probably /ə/) if dropping it would create ugly consonant
 				clusters:</output>
 		</rule>
-		<comment>—— C_L, P_C:[+dental], C_tʃ, C_k, C_m, C_n where “originally separated by the vowel
+		<comment>—— C_L, P_C:[+dental], C_t͡ʃ, C_k, C_m, C_n where “originally separated by the vowel
 			of the penult” (proparoxytones)
 			—— Ḱ_r (paroxytones)
 			—— Where the cluster would be unwieldy otherwise, apocope happened
@@ -25656,12 +25656,12 @@
 		</rule>
 		<rule>
 			<input>k ɡ</input>
-			<output>tʃ dʒ</output>
+			<output>t͡ʃ d͡ʒ</output>
 			<env>_E</env>
 		</rule>
 		<rule sporadic="true">
-			<input>tʃ</input>
-			<output>ts</output>
+			<input>t͡ʃ</input>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>ɡ</input>
@@ -25768,22 +25768,22 @@
 		</rule>
 		<rule sporadic="true">
 			<input>(s)k ɡ</input>
-			<output>(s)tʃ dʒ</output>
+			<output>(s)t͡ʃ d͡ʒ</output>
 			<env>#_a</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
-			<output>ts</output>
+			<input>t͡ʃ</input>
+			<output>t͡s</output>
 			<env>#_</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 			<env>#_</env>
 		</rule>
 		<rule>
 			<input>j</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>#_ (but not in Béarn)</env>
 		</rule>
 		<rule>
@@ -25817,13 +25817,13 @@
 			<env>#_sC</env>
 		</rule>
 		<rule>
-			<input>b {d,dz,dʒ} z ʒ ɡ</input>
-			<output>p {t,ts,tʃ} s ʃ k</output>
+			<input>b {d,dz,d͡ʒ} z ʒ ɡ</input>
+			<output>p {t,t͡s,t͡ʃ} s ʃ k</output>
 			<env>_(s)#</env>
 		</rule>
 		<rule>
-			<input>tʃs</input>
-			<output>{ts,tʃ} (varies)</output>
+			<input>t͡ʃs</input>
+			<output>{t͡s,t͡ʃ} (varies)</output>
 		</rule>
 		<rule>
 			<input>j</input>
@@ -25868,7 +25868,7 @@
 		</rule>
 		<rule>
 			<input>k:[+ long]</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_a (in the east and northeast)</env>
 		</rule>
 		<rule>
@@ -25916,7 +25916,7 @@
 			<env>R_s# (unless blocked by analogy)</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 			<env>_# (Provence, Limousin, some Languedoc and Gascon)</env>
 		</rule>
@@ -25935,17 +25935,17 @@
 			<output>v (otherwise)</output>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>i</output>
 			<env>_C</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>i</output>
 			<env>C_</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>jdz</output>
 			<env>V_V</env>
 		</rule>
@@ -25955,7 +25955,7 @@
 			<env>V_V</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>dz</output>
 			<env>V_V</env>
 		</rule>
@@ -25995,10 +25995,10 @@
 		</rule>
 		<rule>
 			<input>j</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>j</output>
 		</rule>
 		<rule sporadic="true">
@@ -26013,7 +26013,7 @@
 		</rule>
 		<rule>
 			<input>j</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>_”E (in the west)</env>
 		</rule>
 		<rule>
@@ -26028,7 +26028,7 @@
 		</rule>
 		<rule>
 			<input>j</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>V_V (did not occur in the northeast and some northern dialects)</env>
 		</rule>
 		<rule>
@@ -26051,7 +26051,7 @@
 			<env>_l</env>
 		</rule>
 		<rule>
-			<input>p k tʃ b ɡ β j</input>
+			<input>p k t͡ʃ b ɡ β j</input>
 			<output>b ɡ i {b,u,u&gt;y&gt;i} ∅ {u,u&gt;y&gt;i} i</output>
 			<env>_r</env>
 		</rule>
@@ -26140,7 +26140,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>βj</input>
-			<output>{udʒ,uj}</output>
+			<output>{ud͡ʒ,uj}</output>
 		</rule>
 		<rule sporadic="true">
 			<input>β</input>
@@ -26157,15 +26157,15 @@
 			<output>is ʎ</output>
 		</rule>
 		<rule>
-			<input>{tʃ(ː),kʷ}j</input>
-			<output>ts</output>
+			<input>{t͡ʃ(ː),kʷ}j</input>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>dVɡ (n)dVɡ</input>
-			<output>dʒ(?) ndʒ</output>
+			<output>d͡ʒ(?) nd͡ʒ</output>
 		</rule>
 		<rule>
-			<input>l{tj,tʃj} ldʒ</input>
+			<input>l{tj,t͡ʃj} ld͡ʒ</input>
 			<output>lts ldz</output>
 		</rule>
 		<rule>
@@ -26177,7 +26177,7 @@
 			<output>us uz</output>
 		</rule>
 		<rule>
-			<input>l:[+ long]{j,Vdʒ} lnj</input>
+			<input>l:[+ long]{j,Vd͡ʒ} lnj</input>
 			<output>ʎ ɲ</output>
 		</rule>
 		<rule>
@@ -26199,7 +26199,7 @@
 		</rule>
 		<rule>
 			<input>mbj</input>
-			<output>{mbj,mdʒ,ndʒ}</output>
+			<output>{mbj,md͡ʒ,nd͡ʒ}</output>
 		</rule>
 		<rule>
 			<input>mnj</input>
@@ -26207,7 +26207,7 @@
 		</rule>
 		<rule>
 			<input>mnj</input>
-			<output>ndʒ (else)</output>
+			<output>nd͡ʒ (else)</output>
 		</rule>
 		<rule>
 			<input>mj</input>
@@ -26222,8 +26222,8 @@
 			<output>ns</output>
 		</rule>
 		<rule>
-			<input>{ndj,ndʒj} ndʒ</input>
-			<output>ɲ {ɲ,ndʒ}</output>
+			<input>{ndj,nd͡ʒj} nd͡ʒ</input>
+			<output>ɲ {ɲ,nd͡ʒ}</output>
 		</rule>
 		<rule>
 			<input>p</input>
@@ -26232,10 +26232,10 @@
 		</rule>
 		<rule>
 			<input>ptj</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 		</rule>
 		<rule>
@@ -26244,7 +26244,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>ptʃ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>rtʃj</input>
@@ -26252,11 +26252,11 @@
 		</rule>
 		<rule>
 			<input>rdj rVɡ</input>
-			<output>rdz rdʒ</output>
+			<output>rdz rd͡ʒ</output>
 		</rule>
 		<rule>
-			<input>rdʒ</input>
-			<output>{rdʒ,rdz(&gt; rz)}</output>
+			<input>rd͡ʒ</input>
+			<output>{rd͡ʒ,rdz(&gt; rz)}</output>
 		</rule>
 		<rule>
 			<input>rtj</input>
@@ -26268,11 +26268,11 @@
 		</rule>
 		<rule>
 			<input>r:[+ long]Vɡ r:[+ long]j</input>
-			<output>rdʒ ir</output>
+			<output>rd͡ʒ ir</output>
 		</rule>
 		<rule>
 			<input>rtVɡ</input>
-			<output>{rdʒ,rts(&gt; rs)}</output>
+			<output>{rd͡ʒ,rts(&gt; rs)}</output>
 		</rule>
 		<rule>
 			<input>rtj</input>
@@ -26341,22 +26341,22 @@
 		</rule>
 		<rule>
 			<input>tVɡ trj</input>
-			<output>dʒ ir</output>
+			<output>d͡ʒ ir</output>
 		</rule>
 		<rule>
 			<input>t:[+ long]j</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 		</rule>
 		<rule>
 			<input>tj</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>dj</output>
 		</rule>
 		<rule>
@@ -26384,7 +26384,7 @@
 		</rule>
 		<rule>
 			<input>ndt ndtʃ ntʃ nkt nf</input>
-			<output>n{d,t} {nts,ndz(&gt; nz),ndʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,f:[+ long](&gt; f)}</output>
+			<output>n{d,t} {nts,ndz(&gt; nz),nd͡ʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,f:[+ long](&gt; f)}</output>
 		</rule>
 		<rule>
 			<input>nt nd</input>
@@ -26403,11 +26403,11 @@
 		</rule>
 		<rule>
 			<input>rtʃ rdtʃ</input>
-			<output>r(t)s {rdz(&gt; rz),rts,rdʒ}</output>
+			<output>r(t)s {rdz(&gt; rz),rts,rd͡ʒ}</output>
 		</rule>
 		<rule>
 			<input>rdɡ</input>
-			<output>r{ɡ,dʒ}</output>
+			<output>r{ɡ,d͡ʒ}</output>
 			<env>_a</env>
 		</rule>
 		<rule>
@@ -26449,7 +26449,7 @@
 		</rule>
 		<rule>
 			<input>stɡ</input>
-			<output>s{ɡ,dʒ}</output>
+			<output>s{ɡ,d͡ʒ}</output>
 		</rule>
 		<rule>
 			<input>bk</input>
@@ -26474,7 +26474,7 @@
 		<rule>
 			<input>b</input>
 			<output>∅</output>
-			<env>_ts</env>
+			<env>_t͡s</env>
 		</rule>
 		<rule>
 			<input>β</input>
@@ -26482,11 +26482,11 @@
 			<env>_k</env>
 		</rule>
 		<rule>
-			<input>βtʃ</input>
-			<output>u{ts,dz}</output>
+			<input>βt͡ʃ</input>
+			<output>u{t͡s,dz}</output>
 		</rule>
 		<rule>
-			<input>u{ts,dz}</input>
+			<input>u{t͡s,dz}</input>
 			<output>u{s,z}</output>
 		</rule>
 		<rule>
@@ -26499,7 +26499,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>ktʃ</input>
-			<output>(i)tʃ</output>
+			<output>(i)t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>ktʃ</input>
@@ -26510,7 +26510,7 @@
 			<output>is (else)</output>
 		</rule>
 		<rule>
-			<input>tʃ k</input>
+			<input>t͡ʃ k</input>
 			<output>{i,s} {∅,k}</output>
 			<env>_m</env>
 		</rule>
@@ -26519,16 +26519,16 @@
 			<output>it id (in the north, northeast, and southwest)</output>
 		</rule>
 		<rule>
-			<input>{tʃ,k}t ɡd</input>
-			<output>tʃ dʒ (else)</output>
+			<input>{t͡ʃ,k}t ɡd</input>
+			<output>t͡ʃ d͡ʒ (else)</output>
 		</rule>
 		<rule>
 			<input>dtʃ</input>
-			<output>ts (in Auvergne and some western areas)</output>
+			<output>t͡s (in Auvergne and some western areas)</output>
 		</rule>
 		<rule>
 			<input>dtʃ</input>
-			<output>dʒ (for some southeastern and southwestern speakers)</output>
+			<output>d͡ʒ (for some southeastern and southwestern speakers)</output>
 		</rule>
 		<rule>
 			<input>dtʃ</input>
@@ -26553,7 +26553,7 @@
 		</rule>
 		<rule>
 			<input>ɲ{d,t}</input>
-			<output>{(i)nd,ɲd,ndʒ} or t(ʃ)</output>
+			<output>{(i)nd,ɲd,nd͡ʒ} or t(ʃ)</output>
 		</rule>
 		<rule>
 			<input>ɡn</input>
@@ -26617,7 +26617,7 @@
 		</rule>
 		<rule>
 			<input>jd</input>
-			<output>{dʒ,id}</output>
+			<output>{d͡ʒ,id}</output>
 		</rule>
 		<comment>Some dialects dropped all final k, while others only dropped it when B_#, changing
 			it to i when {a,E}_#</comment>
@@ -26662,7 +26662,7 @@
 		</rule>
 		<rule>
 			<input>k ɡ</input>
-			<output>tʃ dʒ</output>
+			<output>t͡ʃ d͡ʒ</output>
 			<env>_a (note the similarity with some varieties of Old Provençal)</env>
 		</rule>
 		<rule>
@@ -26811,7 +26811,7 @@
 		</rule>
 		<rule>
 			<input>k ɡ</input>
-			<output>tʃ dʒ</output>
+			<output>t͡ʃ d͡ʒ</output>
 			<env>_E</env>
 		</rule>
 		<rule>
@@ -26820,7 +26820,7 @@
 		</rule>
 		<rule>
 			<input>t d s</input>
-			<output>ts dz ʃ</output>
+			<output>t͡s dz ʃ</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -26845,7 +26845,7 @@
 		<rule>
 			<input>i</input>
 			<output>∅</output>
-			<env>{ts,dz,S}_V</env>
+			<env>{t͡s,dz,S}_V</env>
 		</rule>
 		<rule>
 			<input>li</input>
@@ -26914,7 +26914,7 @@
 		</rule>
 		<rule>
 			<input>kj ɡj</input>
-			<output>tʃ {j,∅}</output>
+			<output>t͡ʃ {j,∅}</output>
 		</rule>
 		<rule>
 			<input>Pj</input>
@@ -27128,7 +27128,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>{i,j}</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>Vr_V</env>
 		</rule>
 		<rule>
@@ -27153,7 +27153,7 @@
 		</rule>
 		<rule>
 			<input>k</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -27176,7 +27176,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>l:[+ long]</input>
-			<output>{ts,dz,ldz,dʒ,l:[+ long]}</output>
+			<output>{t͡s,dz,ldz,d͡ʒ,l:[+ long]}</output>
 		</rule>
 		<rule>
 			<input>e</input>
@@ -27204,7 +27204,7 @@
 		</rule>
 		<rule>
 			<input>n{i,j} t{i,j}</input>
-			<output>ndʒ ts</output>
+			<output>nd͡ʒ t͡s</output>
 			<env>_V</env>
 		</rule>
 		<rule>
@@ -27243,16 +27243,16 @@
 		</rule>
 		<rule>
 			<input>{tj,kj} {t:[+ long]j,k:[+ long]j,ptj,ktj,skj}</input>
-			<output>ts t:[+ long]s</output>
+			<output>t͡s t:[+ long]s</output>
 		</rule>
 		<rule>
 			<input>k ɡ</input>
-			<output>tʃ dʒ</output>
+			<output>t͡ʃ d͡ʒ</output>
 			<env>_{j,i,e,ɛ}</env>
 		</rule>
 		<rule>
-			<input>tʃ dʒ</input>
-			<output>ts dz</output>
+			<input>t͡ʃ d͡ʒ</input>
+			<output>t͡s dz</output>
 			<env>_{j,i,e,ɛ}</env>
 		</rule>
 		<rule>
@@ -27348,7 +27348,7 @@
 		</rule>
 		<rule>
 			<input>jt js</input>
-			<output>tʃ ʃ</output>
+			<output>t͡ʃ ʃ</output>
 		</rule>
 		<rule>
 			<input>f</input>
@@ -27388,13 +27388,13 @@
 			<env>V_V</env>
 		</rule>
 		<rule>
-			<input>p t k s ts</input>
+			<input>p t k s t͡s</input>
 			<output>b d ɡ z dz</output>
 			<env>V_V</env>
 		</rule>
 		<rule>
 			<input>p:[+ long] t:[+ long] k:[+ long] s:[+ long] t:[+ long]s ʝ:[+ long]</input>
-			<output>p t k s ts ʝ</output>
+			<output>p t k s t͡s ʝ</output>
 		</rule>
 		<rule>
 			<input>n:[+ long] l:[+ long] ɾɾ</input>
@@ -27402,7 +27402,7 @@
 		</rule>
 		<rule>
 			<input>kl pl</input>
-			<output>ʎ {ʎ,tʃ}</output>
+			<output>ʎ {ʎ,t͡ʃ}</output>
 		</rule>
 		<rule sporadic="true">
 			<input>fl</input>
@@ -27452,8 +27452,8 @@
 			<output>ɲ</output>
 		</rule>
 		<rule>
-			<input>tst dzd</input>
-			<output>ts dz</output>
+			<input>t͡st dzd</input>
+			<output>t͡s dz</output>
 		</rule>
 		<rule>
 			<input>Vdz</input>
@@ -27536,7 +27536,7 @@
 			<env>_C</env>
 		</rule>
 		<rule>
-			<input>ts dz</input>
+			<input>t͡s dz</input>
 			<output>s̪ z̪</output>
 		</rule>
 		<rule>
@@ -27569,8 +27569,8 @@
 			<output>j</output>
 		</rule>
 		<rule>
-			<input>/ʝ/ [ʝ~dʒ]</input>
-			<output>[ʒ~dʒ]</output>
+			<input>/ʝ/ [ʝ~d͡ʒ]</input>
+			<output>[ʒ~d͡ʒ]</output>
 		</rule>
 		<rule>
 			<input>ʒ</input>
@@ -27631,7 +27631,7 @@
 		</rule>
 		<rule>
 			<input>tɾ</input>
-			<output>{tɾ̥,tʃ,tʂ}</output>
+			<output>{tɾ̥,t͡ʃ,tʂ}</output>
 		</rule>
 		<rule>
 			<input>r</input>
@@ -27723,7 +27723,7 @@
 		</rule>
 		<rule>
 			<input>dz</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>Kʷ</input>
@@ -27741,7 +27741,7 @@
 			<output>ɕ</output>
 		</rule>
 		<rule>
-			<input>p {ts,k(ʷ)} m n l r y</input>
+			<input>p {t͡s,k(ʷ)} m n l r y</input>
 			<output>pj sʲ ʂ mj ɲ lj rj wj</output>
 			<env>_{E(:),y}</env>
 		</rule>
@@ -27752,7 +27752,7 @@
 		</rule>
 		<rule>
 			<input>{t,dʱ}</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_y</env>
 		</rule>
 		<rule>
@@ -28172,7 +28172,7 @@
 			<env>_V:[- nasal]</env>
 		</rule>
 		<rule>
-			<input>ts (n)dz</input>
+			<input>t͡s (n)dz</input>
 			<output>t nd</output>
 		</rule>
 		<rule>
@@ -28266,8 +28266,8 @@
 			<env>#_V:[+ nasal]</env>
 		</rule>
 		<rule>
-			<input>ts (n)dz</input>
-			<output>{s,ts} s</output>
+			<input>t͡s (n)dz</input>
+			<output>{s,t͡s} s</output>
 		</rule>
 		<rule>
 			<input>β</input>
@@ -28351,12 +28351,12 @@
 			<env>_V:[- nasal]</env>
 		</rule>
 		<rule>
-			<input>{(n)dz,ts}</input>
+			<input>{(n)dz,t͡s}</input>
 			<output>s</output>
 			<env>_i</env>
 		</rule>
 		<rule>
-			<input>{(n)dz,ts}</input>
+			<input>{(n)dz,t͡s}</input>
 			<output>t</output>
 			<env>_</env>
 			<exception>_i</exception>
@@ -28442,7 +28442,7 @@
 			<env>#_V:[+ nasal]</env>
 		</rule>
 		<rule>
-			<input>ts (n)dz</input>
+			<input>t͡s (n)dz</input>
 			<output>t nd</output>
 		</rule>
 		<rule>
@@ -28490,7 +28490,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_{i,ı̃}</env>
 		</rule>
 		<rule>
@@ -28503,7 +28503,7 @@
 			<output>w</output>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>{h,∅}</output>
 		</rule>
 		<rule>
@@ -28551,12 +28551,12 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_{i,ı̃}</env>
 		</rule>
 		<rule>
-			<input>ʔ ts ŋ</input>
-			<output>∅ {ts,tʃ} n</output>
+			<input>ʔ t͡s ŋ</input>
+			<output>∅ {t͡s,t͡ʃ} n</output>
 		</rule>
 		<rule>
 			<input>∅</input>
@@ -28633,11 +28633,11 @@
 			Publications in Linguistics and Related Fields Publication Number 29.</cite>
 		<rule>
 			<input>t</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_{i,ı̃}</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>{h,∅}</output>
 		</rule>
 		<rule>
@@ -28687,7 +28687,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_{i,ı̃}</env>
 		</rule>
 		<rule>
@@ -28695,8 +28695,8 @@
 			<output>∅</output>
 		</rule>
 		<rule>
-			<input>ts</input>
-			<output>{tʃ,∅}</output>
+			<input>t͡s</input>
+			<output>{t͡ʃ,∅}</output>
 		</rule>
 		<rule>
 			<input>{b,r}</input>
@@ -28729,7 +28729,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_{i,ı̃}</env>
 		</rule>
 		<rule>
@@ -28738,8 +28738,8 @@
 			<env>_#</env>
 		</rule>
 		<rule>
-			<input>ʔ ts</input>
-			<output>{ʔ,∅} {ts,tʃ}</output>
+			<input>ʔ t͡s</input>
+			<output>{ʔ,∅} {t͡s,t͡ʃ}</output>
 		</rule>
 		<rule>
 			<input>{Vm,Vŋ} Vn</input>
@@ -28767,11 +28767,11 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_{i,ı̃}</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>{h,j,∅}</output>
 		</rule>
 		<rule>
@@ -28806,7 +28806,7 @@
 			<env>_#</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>{h,∅}</output>
 		</rule>
 		<rule sporadic="true">
@@ -28860,7 +28860,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>{ts,tʃ}</output>
+			<output>{t͡s,t͡ʃ}</output>
 			<env>_{i,ı̃}</env>
 		</rule>
 		<rule>
@@ -28869,7 +28869,7 @@
 			<env>_#</env>
 		</rule>
 		<rule>
-			<input>ʔ ts</input>
+			<input>ʔ t͡s</input>
 			<output>∅ {s,ʃ}</output>
 		</rule>
 		<rule>
@@ -28893,7 +28893,7 @@
 		</rule>
 		<rule>
 			<input>j</input>
-			<output>{ɲ,tʃ}</output>
+			<output>{ɲ,t͡ʃ}</output>
 			<env>_</env>
 			<exception>_#</exception>
 		</rule>
@@ -28932,11 +28932,11 @@
 			Publications in Linguistics and Related Fields Publication Number 29.</cite>
 		<rule>
 			<input>t</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_{i,ı̃}</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>{s,ʃ}</output>
 		</rule>
 		<rule sporadic="true">
@@ -28981,7 +28981,7 @@
 			<env>#_</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>ʃ</output>
 		</rule>
 	</section>
@@ -29044,7 +29044,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>ʃ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 		</rule>
 	</section>
 	<section index="18.4.10" name="Proto-Tupí-Guaraní to Urubu">
@@ -29073,7 +29073,7 @@
 			<exception>_#</exception>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>{s,h}</output>
 		</rule>
 		<rule sporadic="true">
@@ -29131,7 +29131,7 @@
 		</rule>
 		<rule>
 			<input>ʈʂ {ʈʂʼ,tɬʼ}</input>
-			<output>ts tsʼ</output>
+			<output>t͡s t͡sʼ</output>
 		</rule>
 		<rule>
 			<input>ɖʐ</input>
@@ -29152,23 +29152,23 @@
 			&lt;http://en.wikipedia.org/w/index.php?title=Kartvelian_languages&gt;</cite>
 		<rule>
 			<input>k kʼ</input>
-			<output>{k,tʃ} {kʼ,tʃʼ}</output>
+			<output>{k,t͡ʃ} {kʼ,t͡ʃʼ}</output>
 		</rule>
 		<rule>
 			<input>ɡ</input>
-			<output>{ɡ,dʒ}</output>
+			<output>{ɡ,d͡ʒ}</output>
 		</rule>
 		<rule>
 			<input>ɬ ʃ ʂ</input>
 			<output>l {sɡ,ʃɡ} ʃ</output>
 		</rule>
 		<rule>
-			<input>tʃ ʈʂ tɬʼ tʃʼ ʈʂʼ</input>
-			<output>{tʃk,ʃɡ} tʃ h {ʃkʼ,tʃʼkʼ} tʃʼ</output>
+			<input>t͡ʃ ʈʂ tɬʼ t͡ʃʼ ʈʂʼ</input>
+			<output>{t͡ʃk,ʃɡ} t͡ʃ h {ʃkʼ,t͡ʃʼkʼ} t͡ʃʼ</output>
 		</rule>
 		<rule>
-			<input>dz dʒ ɖʐ</input>
-			<output>{dz,z} {dʒɡ,sɡ} {dʒ,ʒ}</output>
+			<input>dz d͡ʒ ɖʐ</input>
+			<output>{dz,z} {d͡ʒɡ,sɡ} {d͡ʒ,ʒ}</output>
 		</rule>
 		<rule>
 			<input>ʐ</input>
@@ -29192,12 +29192,12 @@
 			<output>∅ {sk,ʃk} ʃ</output>
 		</rule>
 		<rule>
-			<input>tʃ ʈʂ {tɬʼ,ʈʂʼ} tʃʼʼ</input>
-			<output>tʃk tʃ tʃʼ {tsʼkʼ,tʃʼkʼ}</output>
+			<input>t͡ʃ ʈʂ {tɬʼ,ʈʂʼ} t͡ʃʼʼ</input>
+			<output>t͡ʃk t͡ʃ t͡ʃʼ {t͡sʼkʼ,t͡ʃʼkʼ}</output>
 		</rule>
 		<rule>
-			<input>dʒ ɖʐ</input>
-			<output>{dʒɡ,dzɡ} dʒ</output>
+			<input>d͡ʒ ɖʐ</input>
+			<output>{d͡ʒɡ,dzɡ} d͡ʒ</output>
 		</rule>
 		<rule>
 			<input>ʐ</input>
@@ -29235,8 +29235,8 @@
 			<output>ŋ</output>
 		</rule>
 		<rule>
-			<input>ts</input>
-			<output>{ts~tsʰ,ts,s}</output>
+			<input>t͡s</input>
+			<output>{t͡s~t͡sʰ,t͡s,s}</output>
 		</rule>
 		<rule>
 			<input>h</input>
@@ -29261,8 +29261,8 @@
 			<output>!x~x</output>
 		</rule>
 		<rule>
-			<input>ts</input>
-			<output>{ts,s}</output>
+			<input>t͡s</input>
+			<output>{t͡s,s}</output>
 		</rule>
 		<rule>
 			<input>h</input>
@@ -29295,8 +29295,8 @@
 			<output>ŋɡj~!̃</output>
 		</rule>
 		<rule>
-			<input>ts</input>
-			<output>{ts~tsʰ,ts,s}</output>
+			<input>t͡s</input>
+			<output>{t͡s~t͡sʰ,t͡s,s}</output>
 		</rule>
 		<rule>
 			<input>h</input>
@@ -29320,8 +29320,8 @@
 			<output>x ŋɡj~!̃</output>
 		</rule>
 		<rule>
-			<input>ts dz</input>
-			<output>{ç,tç} dʒ</output>
+			<input>t͡s dz</input>
+			<output>{ç,tç} d͡ʒ</output>
 		</rule>
 		<rule>
 			<input>kʰ</input>
@@ -29361,8 +29361,8 @@
 			<output>ǁ</output>
 		</rule>
 		<rule>
-			<input>ts dz kxʼ</input>
-			<output>{ts,s} d ∅</output>
+			<input>t͡s dz kxʼ</input>
+			<output>{t͡s,s} d ∅</output>
 		</rule>
 	</section>
 	<section index="20.1.6" name="Proto-Khoe to Naro">
@@ -29374,8 +29374,8 @@
 			<output>ǂ̃</output>
 		</rule>
 		<rule>
-			<input>ts dz</input>
-			<output>{ts~tsʰ,ts,s} dz~ts</output>
+			<input>t͡s dz</input>
+			<output>{t͡s~t͡sʰ,t͡s,s} dz~t͡s</output>
 		</rule>
 		<rule>
 			<input>kʰ</input>
@@ -29403,8 +29403,8 @@
 			<output>{ǁˀ,ǁ}</output>
 		</rule>
 		<rule>
-			<input>ts</input>
-			<output>{ts,s}</output>
+			<input>t͡s</input>
+			<output>{t͡s,s}</output>
 		</rule>
 	</section>
 	<section index="20.1.8" name="Proto-Khoe to Teti">
@@ -29428,8 +29428,8 @@
 			<output>{ǁˀ,∅} ǁˀ</output>
 		</rule>
 		<rule>
-			<input>ts dz kxʼ</input>
-			<output>{ts~tsʰ,ts,s} z kʼ</output>
+			<input>t͡s dz kxʼ</input>
+			<output>{t͡s~t͡sʰ,t͡s,s} z kʼ</output>
 		</rule>
 		<rule>
 			<input>h</input>
@@ -29441,7 +29441,7 @@
 			<output>h~ʔj</output>
 		</rule>
 	</section>
-	<section index="20.1.9" name="Proto-Khoe to TsÊixa">
+	<section index="20.1.9" name="Proto-Khoe to t͡sÊixa">
 		<cite>Pogostick Man, from Rainer (1984), “Studying the linguistic and ethno-history of the
 			Khoe-speaking (central Khoisan) peoples of Botswana, research in progress”. In Botswana
 			Notes and Records 16:19 – 35.</cite>
@@ -29462,8 +29462,8 @@
 			<output>ǁˀ</output>
 		</rule>
 		<rule>
-			<input>ts dz kxʼ</input>
-			<output>{ts~tsʰ,ts,s} z kʼ</output>
+			<input>t͡s dz kxʼ</input>
+			<output>{t͡s~t͡sʰ,t͡s,s} z kʼ</output>
 		</rule>
 		<rule>
 			<input>h</input>
@@ -29488,8 +29488,8 @@
 			<output>!̃(n) !x~x</output>
 		</rule>
 		<rule>
-			<input>ts</input>
-			<output>{ts~tsɦ,s}</output>
+			<input>t͡s</input>
+			<output>{t͡s~t͡sɦ,s}</output>
 		</rule>
 		<rule>
 			<input>h</input>
@@ -29542,7 +29542,7 @@
 		</rule>
 		<rule>
 			<input>t d s</input>
-			<output>{c,tʃ} ɟ ʃ</output>
+			<output>{c,t͡ʃ} ɟ ʃ</output>
 		</rule>
 		<rule>
 			<input>!!</input>
@@ -29608,8 +29608,8 @@
 			<env>_#</env>
 		</rule>
 		<rule>
-			<input>ts(ʼ) s</input>
-			<output>tʃ(ʼ) ʃ</output>
+			<input>t͡s(ʼ) s</input>
+			<output>t͡ʃ(ʼ) ʃ</output>
 		</rule>
 		<rule>
 			<input>!! ʘ</input>
@@ -29673,8 +29673,8 @@
 			<env>_#</env>
 		</rule>
 		<rule>
-			<input>ts(ʼ) s</input>
-			<output>tʃ(ʼ) ʃ</output>
+			<input>t͡s(ʼ) s</input>
+			<output>t͡ʃ(ʼ) ʃ</output>
 		</rule>
 		<rule>
 			<input>!! ʘ</input>
@@ -30419,7 +30419,7 @@
 			<env>medially</env>
 		</rule>
 		<rule>
-			<input>tsʰ</input>
+			<input>t͡sʰ</input>
 			<output>s</output>
 		</rule>
 	</section>
@@ -30449,7 +30449,7 @@
 			<output>k w</output>
 		</rule>
 		<rule>
-			<input>{ts(ʰ),tʃ} dz</input>
+			<input>{t͡s(ʰ),t͡ʃ} dz</input>
 			<output>s ɟ</output>
 		</rule>
 		<rule>
@@ -30514,7 +30514,7 @@
 			<output>ɟ</output>
 		</rule>
 		<rule>
-			<input>{ts(ʰ),tʃ}</input>
+			<input>{t͡s(ʰ),t͡ʃ}</input>
 			<output>s</output>
 		</rule>
 		<rule>
@@ -30544,7 +30544,7 @@
 			<output>w</output>
 		</rule>
 		<rule sporadic="true">
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>ʃ</output>
 		</rule>
 		<rule>
@@ -30585,7 +30585,7 @@
 			<output>k</output>
 		</rule>
 		<rule>
-			<input>ts(ʰ)</input>
+			<input>t͡s(ʰ)</input>
 			<output>s</output>
 		</rule>
 		<rule>
@@ -30618,7 +30618,7 @@
 			<env>medial</env>
 		</rule>
 		<rule>
-			<input>ts(ʰ)</input>
+			<input>t͡s(ʰ)</input>
 			<output>s</output>
 		</rule>
 	</section>
@@ -30654,7 +30654,7 @@
 			<env>_(V)j</env>
 		</rule>
 		<rule>
-			<input>ts h</input>
+			<input>t͡s h</input>
 			<output>s ∅</output>
 		</rule>
 		<rule>
@@ -30719,7 +30719,7 @@
 			<env>V_V</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>{s,z}</output>
 		</rule>
 		<rule>
@@ -30800,7 +30800,7 @@
 		</rule>
 		<rule>
 			<input>s</input>
-			<output>{ʃ,tʃ}</output>
+			<output>{ʃ,t͡ʃ}</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -30814,7 +30814,7 @@
 		</rule>
 		<rule>
 			<input>s h</input>
-			<output>{s,tʃ} {h,∅}</output>
+			<output>{s,t͡ʃ} {h,∅}</output>
 		</rule>
 		<rule>
 			<input>j</input>
@@ -30845,16 +30845,16 @@
 			Comparative Studies in Amerindian Languages 93 – 108</cite>
 		<rule>
 			<input>s</input>
-			<output>{ts,ʃ}</output>
+			<output>{t͡s,ʃ}</output>
 			<env>_i</env>
 		</rule>
 		<rule>
 			<input>s</input>
-			<output>{s,ts}</output>
+			<output>{s,t͡s}</output>
 		</rule>
 		<rule>
 			<input>d(V)j s(V)j</input>
-			<output>lʲ dʒ</output>
+			<output>lʲ d͡ʒ</output>
 		</rule>
 		<rule>
 			<input>d</input>
@@ -30894,11 +30894,11 @@
 		</rule>
 		<rule>
 			<input>s</input>
-			<output>{s,x,tʃ~ʃ}</output>
+			<output>{s,x,t͡ʃ~ʃ}</output>
 		</rule>
 		<rule>
 			<input>s</input>
-			<output>{ʃ,tʃ}</output>
+			<output>{ʃ,t͡ʃ}</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -30997,8 +30997,8 @@
 			<env>_(V)C</env>
 		</rule>
 		<rule>
-			<input>ts tʃ</input>
-			<output>tʃ s</output>
+			<input>t͡s t͡ʃ</input>
+			<output>t͡ʃ s</output>
 		</rule>
 		<rule>
 			<input>m n h j</input>
@@ -31064,8 +31064,8 @@
 			<output>∅</output>
 		</rule>
 		<rule>
-			<input>{s,ts}</input>
-			<output>tsʼ</output>
+			<input>{s,t͡s}</input>
+			<output>t͡sʼ</output>
 		</rule>
 		<rule>
 			<input>o a</input>
@@ -31092,7 +31092,7 @@
 			<output>∅</output>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 		</rule>
 	</section>
@@ -31365,7 +31365,7 @@
 			<output>k kʷ</output>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>s</output>
 			<env>_i</env>
 		</rule>
@@ -31399,13 +31399,13 @@
 			<output>ᵐb ⁿdz</output>
 		</rule>
 		<rule>
-			<input>ts</input>
-			<output>tʃ</output>
+			<input>t͡s</input>
+			<output>t͡ʃ</output>
 			<env>#_</env>
 		</rule>
 		<rule>
-			<input>tʃ ɕ</input>
-			<output>ts ʃ</output>
+			<input>t͡ʃ ɕ</input>
+			<output>t͡s ʃ</output>
 		</rule>
 		<rule>
 			<input>ɕ x</input>
@@ -31422,7 +31422,7 @@
 		</rule>
 		<rule>
 			<input>j</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>V_V</env>
 		</rule>
 	</section>
@@ -31449,8 +31449,8 @@
 			<output>dʑ</output>
 		</rule>
 		<rule>
-			<input>tʃ</input>
-			<output>ts</output>
+			<input>t͡ʃ</input>
+			<output>t͡s</output>
 			<env>_E</env>
 		</rule>
 		<rule>
@@ -31473,7 +31473,7 @@
 		</rule>
 		<rule>
 			<input>j</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>V_V</env>
 		</rule>
 		<rule>
@@ -31667,7 +31667,7 @@
 		</rule>
 		<rule>
 			<input>w j</input>
-			<output>k dʒ</output>
+			<output>k d͡ʒ</output>
 		</rule>
 	</section>
 	<section index="26.8" name="Proto-Mande to Mano">
@@ -31767,7 +31767,7 @@
 		</rule>
 		<rule>
 			<input>j</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 		</rule>
 		<rule>
 			<input>ŋ</input>
@@ -31917,7 +31917,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>CVʔVC</input>
@@ -31928,7 +31928,7 @@
 			<output>{t,j}</output>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>ʈʂ</output>
 		</rule>
 	</section>
@@ -31956,7 +31956,7 @@
 		</rule>
 		<rule>
 			<input>tʲ(ʼ)</input>
-			<output>tʃ(ʼ)</output>
+			<output>t͡ʃ(ʼ)</output>
 		</rule>
 		<rule>
 			<input>V:[+ long]</input>
@@ -31979,7 +31979,7 @@
 		</rule>
 		<rule>
 			<input>tʲ(ʼ)</input>
-			<output>tʃ(ʼ)</output>
+			<output>t͡ʃ(ʼ)</output>
 		</rule>
 	</section>
 	<section index="27.7" name="Proto-Mayan to Mamean">
@@ -31992,7 +31992,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>CVʔVC</input>
@@ -32003,7 +32003,7 @@
 			<output>{t,j}</output>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>ʈʂ</output>
 		</rule>
 		<rule>
@@ -32012,11 +32012,11 @@
 		</rule>
 		<rule>
 			<input>tʲ(ʼ)</input>
-			<output>ts(ʼ)</output>
+			<output>t͡s(ʼ)</output>
 		</rule>
 		<rule>
-			<input>r t tʃ ʃ</input>
-			<output>t tʃ ʈʂ ʂ</output>
+			<input>r t t͡ʃ ʃ</input>
+			<output>t t͡ʃ ʈʂ ʂ</output>
 		</rule>
 	</section>
 	<section index="27.8" name="Proto-Mayan to Q’anjob’alan">
@@ -32075,12 +32075,12 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_#</env>
 		</rule>
 		<rule>
 			<input>tʲ(ʼ)</input>
-			<output>tʃ(ʼ)</output>
+			<output>t͡ʃ(ʼ)</output>
 		</rule>
 		<comment>“[V]owel length and [h] and [ʔ]” have converted into a tone distinction</comment>
 	</section>
@@ -32146,7 +32146,7 @@
 			States 246 – 298</cite>
 		<rule>
 			<input>ʃ</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>kV</input>
@@ -32158,7 +32158,7 @@
 			<output>∅</output>
 		</rule>
 		<rule>
-			<input>ts x</input>
+			<input>t͡s x</input>
 			<output>s h</output>
 			<env>_C</env>
 		</rule>
@@ -32179,7 +32179,7 @@
 		</rule>
 		<rule>
 			<input>ʃ</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>kʷ</input>
@@ -32219,7 +32219,7 @@
 			<output>ŋ</output>
 			<env>_k</env>
 		</rule>
-		<comment>ts and t alternate before k</comment>
+		<comment>t͡s and t alternate before k</comment>
 		<rule>
 			<input>kl</input>
 			<output>k:[+ long]</output>
@@ -32235,7 +32235,7 @@
 			States 246 – 298</cite>
 		<rule>
 			<input>ʃ</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>V</input>
@@ -32258,7 +32258,7 @@
 			States 246 – 298</cite>
 		<rule>
 			<input>ʃ</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>VkV</input>
@@ -32270,7 +32270,7 @@
 			<output>∅</output>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 			<env>_C</env>
 		</rule>
@@ -32298,14 +32298,14 @@
 			<env>V₀_V₀</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>s</output>
 			<env>_C</env>
 			<exception>_k</exception>
 		</rule>
 		<rule>
 			<input>ʃ x</input>
-			<output>ts h</output>
+			<output>t͡s h</output>
 		</rule>
 	</section>
 	<section index="28.1.6" name="Proto-Eastern Muskogean to Seminole">
@@ -32314,7 +32314,7 @@
 			States 246 – 298</cite>
 		<rule>
 			<input>ʃ x</input>
-			<output>ts h</output>
+			<output>t͡s h</output>
 		</rule>
 		<rule>
 			<input>tl</input>
@@ -32326,8 +32326,8 @@
 			Heather Kay, and Janine Scancarelli, eds., Native Languages of the Southeastern United
 			States 246 – 298</cite>
 		<rule>
-			<input>ts tʃ</input>
-			<output>s ts</output>
+			<input>t͡s t͡ʃ</input>
+			<output>s t͡s</output>
 		</rule>
 		<rule>
 			<input>θ</input>
@@ -32427,7 +32427,7 @@
 			Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Na-Dene_languages&gt;</cite>
 		<rule>
 			<input>kʲ kʲʼ ɡʲ xʲ</input>
-			<output>ts tsʼ dz s</output>
+			<output>t͡s t͡sʼ dz s</output>
 		</rule>
 		<rule>
 			<input>{s,ʃ}</input>
@@ -32477,7 +32477,7 @@
 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
 		<rule>
 			<input>{TŠ,TŠʷ}</input>
-			<output>TS</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>K</input>
@@ -32502,7 +32502,7 @@
 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
 		<rule>
 			<input>{TŠ,TŠʷ}</input>
-			<output>TS</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>u ɑ ʊ</input>
@@ -32517,12 +32517,12 @@
 		<cite>Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
 		<rule>
-			<input>TS</input>
+			<input>t͡s</input>
 			<output>TH (most often back to 3, however)</output>
 		</rule>
 		<rule>
 			<input>{TŠ,TŠʷ}</input>
-			<output>TS</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>K Q</input>
@@ -32536,7 +32536,7 @@
 		<rule>
 			<input>{n,ɲ}</input>
 			<output>d</output>
-			<env>$_V:[- nasal] (&gt; dʒ in the British Columbian dialect)</env>
+			<env>$_V:[- nasal] (&gt; d͡ʒ in the British Columbian dialect)</env>
 		</rule>
 		<rule>
 			<input>ɑ</input>
@@ -32550,14 +32550,14 @@
 	<section index="29.1.1.1.4" name="Proto-Athabaskan to Chilcotin">
 		<cite>Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
-		<comment>TS series desibilantizes</comment>
+		<comment>t͡s series desibilantizes</comment>
 		<rule>
 			<input>V</input>
 			<output>{Vˀ,V:[+RTR]}</output>
 		</rule>
 		<rule>
 			<input>{TŠ,TŠʷ} K</input>
-			<output>TS TŠ</output>
+			<output>t͡s TŠ</output>
 		</rule>
 		<comment>The Q series incompletely moves to the K series, the latter being more common</comment>
 		<rule>
@@ -32573,8 +32573,8 @@
 		<cite>Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
 		<rule>
-			<input>TS {TŠ,TŠʷ} K Q</input>
-			<output>TH TS TŠ K</output>
+			<input>t͡s {TŠ,TŠʷ} K Q</input>
+			<output>TH t͡s TŠ K</output>
 		</rule>
 		<rule>
 			<input>t</input>
@@ -32599,7 +32599,7 @@
 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
 		<rule>
 			<input>{TŠ,TŠʷ} K Q</input>
-			<output>TS TŠ K</output>
+			<output>t͡s TŠ K</output>
 		</rule>
 		<rule>
 			<input>u {ɑ,ʊ}</input>
@@ -32614,12 +32614,12 @@
 		<cite>Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
 		<rule>
-			<input>TS TŠ</input>
-			<output>TH TS</output>
+			<input>t͡s TŠ</input>
+			<output>TH t͡s</output>
 		</rule>
 		<rule>
 			<input>TŠʷ</input>
-			<output>TṢ (&gt; TS in Kuskokwim dialect)</output>
+			<output>TṢ (&gt; t͡s in Kuskokwim dialect)</output>
 		</rule>
 		<rule>
 			<input>K</input>
@@ -32657,7 +32657,7 @@
 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
 		<rule>
 			<input>{TŠ,TŠʷ}</input>
-			<output>TŠ (&gt; TS in Upper Inlet dialect)</output>
+			<output>TŠ (&gt; t͡s in Upper Inlet dialect)</output>
 		</rule>
 		<rule>
 			<input>e a u {ə,ʊ}</input>
@@ -32686,32 +32686,32 @@
 		</rule>
 		<rule>
 			<input>{TŠ,TŠʷ} K Q</input>
-			<output>TS TŠ K</output>
+			<output>t͡s TŠ K</output>
 		</rule>
 		<rule>
-			<input>ts tsʰ tsʼ s z</input>
+			<input>t͡s t͡sʰ t͡sʼ s z</input>
 			<output>kʷ kʷʰ kʷʼ ʍ w</output>
 		</rule>
 	</section>
 	<section index="29.1.1.1.10" name="Proto-Athabaskan to Easter Gwich’in">
 		<cite>Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
-		<comment>NB: Here, 〈TS〉 represents a sound that Whimemsz says “is between” the TH and TS
+		<comment>NB: Here, 〈t͡s〉 represents a sound that Whimemsz says “is between” the TH and t͡s
 			series POA-wise.</comment>
 		<rule>
-			<input>TS K</input>
-			<output>TŠ TS</output>
+			<input>t͡s K</input>
+			<output>TŠ t͡s</output>
 			<env>_E</env>
 		</rule>
 		<rule>
-			<input>TS K</input>
+			<input>t͡s K</input>
 			<output>TH TŠ</output>
 			<env>_</env>
 			<exception>_E</exception>
 		</rule>
 		<rule>
 			<input>TŠ TŠʷ Q</input>
-			<output>TS TṢ K</output>
+			<output>t͡s TṢ K</output>
 		</rule>
 		<rule>
 			<input>j w</input>
@@ -32719,7 +32719,7 @@
 		</rule>
 		<rule>
 			<input>{n,ɲ}</input>
-			<output>ⁿdʒ</output>
+			<output>ⁿd͡ʒ</output>
 			<env>_E:[- nasal]</env>
 		</rule>
 		<rule>
@@ -32746,8 +32746,8 @@
 		<cite>Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
 		<rule>
-			<input>TS TŠ TŠʷ K Q</input>
-			<output>TH TS TṢ TŠ K</output>
+			<input>t͡s TŠ TŠʷ K Q</input>
+			<output>TH t͡s TṢ TŠ K</output>
 		</rule>
 		<comment>Occasional palatalization in front of high vowels</comment>
 		<rule>
@@ -32776,7 +32776,7 @@
 		<cite>Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
 		<rule>
-			<input>TS</input>
+			<input>t͡s</input>
 			<output>TH</output>
 		</rule>
 		<rule>
@@ -32789,8 +32789,8 @@
 			<output>e a ɔ o ŭ</output>
 		</rule>
 		<rule>
-			<input>TS {TŠ,TŠʷ}</input>
-			<output>TŁ TS</output>
+			<input>t͡s {TŠ,TŠʷ}</input>
+			<output>TŁ t͡s</output>
 		</rule>
 		<rule>
 			<input>C’</input>
@@ -32850,8 +32850,8 @@
 			<output>a o ŏ ŭ</output>
 		</rule>
 		<rule>
-			<input>TS {TŠ,TŠʷ}</input>
-			<output>TŁ TS</output>
+			<input>t͡s {TŠ,TŠʷ}</input>
+			<output>TŁ t͡s</output>
 		</rule>
 		<rule>
 			<input>C’</input>
@@ -32880,8 +32880,8 @@
 			<output>a o ŏ ŭ</output>
 		</rule>
 		<rule>
-			<input>TS {TŠ,TŠʷ}</input>
-			<output>TŁ TS</output>
+			<input>t͡s {TŠ,TŠʷ}</input>
+			<output>TŁ t͡s</output>
 		</rule>
 		<comment>Stem-final/suffixal consonant clusters lost in Minchumina-Bearpaw Upper Koyukon</comment>
 		<rule>
@@ -32916,7 +32916,7 @@
 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
 		<rule>
 			<input>TŠ TŠʷ K Q</input>
-			<output>TS TṢ TŠ K</output>
+			<output>t͡s TṢ TŠ K</output>
 		</rule>
 		<rule>
 			<input>e a {ɑ,ʊ}</input>
@@ -32932,7 +32932,7 @@
 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
 		<rule>
 			<input>{TŠ,TŠʷ} K Q</input>
-			<output>TS TŠ K</output>
+			<output>t͡s TŠ K</output>
 		</rule>
 		<rule>
 			<input>ɑ́ ə́ ʊ́</input>
@@ -32951,12 +32951,12 @@
 		<cite>Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
 		<rule>
-			<input>TS</input>
-			<output>TH (&gt; TS again in some areas)</output>
+			<input>t͡s</input>
+			<output>TH (&gt; t͡s again in some areas)</output>
 		</rule>
 		<rule>
 			<input>{TŠ,TŠʷ} K Q</input>
-			<output>TS TŠ Q</output>
+			<output>t͡s TŠ Q</output>
 		</rule>
 		<rule>
 			<input>T</input>
@@ -32978,7 +32978,7 @@
 			American Anthropologist 40:75 – 87</cite>
 		<rule>
 			<input>K</input>
-			<output>TS</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>m</input>
@@ -33028,7 +33028,7 @@
 		</rule>
 		<rule>
 			<input>k</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_E</env>
 		</rule>
 		<rule>
@@ -33227,7 +33227,7 @@
 		</rule>
 		<rule>
 			<input>z(ʔ) ʒ(ʔ) ɮ(ʔ)</input>
-			<output>dz dʒ dɮ</output>
+			<output>dz d͡ʒ dɮ</output>
 			<env>_#</env>
 		</rule>
 	</section>
@@ -33314,10 +33314,10 @@
 		</rule>
 		<rule>
 			<input>{TŠ,TŠʷ} K Q</input>
-			<output>TS TŠ K</output>
+			<output>t͡s TŠ K</output>
 		</rule>
 		<rule>
-			<input>ts tsʰ tsʼ s z</input>
+			<input>t͡s t͡sʰ t͡sʼ s z</input>
 			<output>kʷ kʷʰ kʷʼ ʍ w</output>
 		</rule>
 	</section>
@@ -33325,12 +33325,12 @@
 		<cite>Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
 		<rule>
-			<input>tɬʰ tʃ(ʷ)ʰ kʰ</input>
+			<input>tɬʰ t͡ʃ(ʷ)ʰ kʰ</input>
 			<output>ɬ s ʃ</output>
 		</rule>
 		<rule>
 			<input>{TŠ,TŠʷ} K</input>
-			<output>TS TŠ (with exceptions)</output>
+			<output>t͡s TŠ (with exceptions)</output>
 		</rule>
 		<rule>
 			<input>Q</input>
@@ -33346,7 +33346,7 @@
 			<output>l</output>
 		</rule>
 		<rule>
-			<input>ts tsʰ tsʼ {s,z}</input>
+			<input>t͡s t͡sʰ t͡sʼ {s,z}</input>
 			<output>{kʷ,p} f wˀ w</output>
 		</rule>
 	</section>
@@ -33364,10 +33364,10 @@
 		</rule>
 		<rule>
 			<input>{TŠ,TŠʷ} K Q</input>
-			<output>TS TŠ K</output>
+			<output>t͡s TŠ K</output>
 		</rule>
 		<rule>
-			<input>ts tsʰ tsʼ s z</input>
+			<input>t͡s t͡sʰ t͡sʼ s z</input>
 			<output>p pʰ pʼ f v</output>
 		</rule>
 	</section>
@@ -33385,7 +33385,7 @@
 		</rule>
 		<rule>
 			<input>{TŠ,TŠʷ} K Q</input>
-			<output>TS TŠ K</output>
+			<output>t͡s TŠ K</output>
 		</rule>
 	</section>
 	<section index="29.1.1.1.33" name="Proto-Athabaskan to Tahltan-Kaska-Tagish">
@@ -33413,8 +33413,8 @@
 			<output>V:[+high tone]</output>
 		</rule>
 		<rule>
-			<input>TS {TŠ,TŠʷ}</input>
-			<output>TH TS</output>
+			<input>t͡s {TŠ,TŠʷ}</input>
+			<output>TH t͡s</output>
 		</rule>
 		<rule>
 			<input>K</input>
@@ -33425,8 +33425,8 @@
 		<cite>Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
 		<rule>
-			<input>{TŠ,TŠʷ} TS</input>
-			<output>TS TSʲ</output>
+			<input>{TŠ,TŠʷ} t͡s</input>
+			<output>t͡s t͡sʲ</output>
 		</rule>
 	</section>
 	<section index="29.1.1.1.36" name="Tahltan-Kaska-Tagish to Tahltan">
@@ -33446,8 +33446,8 @@
 			<env>! _$</env>
 		</rule>
 		<rule>
-			<input>TS TŠ TŠʷ Q</input>
-			<output>TH TS TṢ K</output>
+			<input>t͡s TŠ TŠʷ Q</input>
+			<output>TH t͡s TṢ K</output>
 		</rule>
 		<rule>
 			<input>S’</input>
@@ -33495,8 +33495,8 @@
 			<env>! _$</env>
 		</rule>
 		<rule>
-			<input>TS TŠ TŠᵚ Q</input>
-			<output>TH TS TṢ K</output>
+			<input>t͡s TŠ TŠᵚ Q</input>
+			<output>TH t͡s TṢ K</output>
 		</rule>
 		<rule>
 			<input>S’</input>
@@ -33522,8 +33522,8 @@
 			<env>! _$</env>
 		</rule>
 		<rule>
-			<input>TS TŠ TŠʷ Q</input>
-			<output>TH TS TṢ K</output>
+			<input>t͡s TŠ TŠʷ Q</input>
+			<output>TH t͡s TṢ K</output>
 		</rule>
 		<rule>
 			<input>S’</input>
@@ -33566,12 +33566,12 @@
 			<output>V:[+low tone] (&gt; V:[-tone] in “young speakers by 1980”)</output>
 		</rule>
 	</section>
-	<section index="29.1.1.1.40" name="Proto-Athabaskan to Tsetsaut">
+	<section index="29.1.1.1.40" name="Proto-Athabaskan to t͡setsaut">
 		<cite>Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
 		<rule>
 			<input>TŠ</input>
-			<output>TS</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>K Q</input>
@@ -33591,8 +33591,8 @@
 		<cite>Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
 		<rule>
-			<input>TS {TŠ,TŠʷ}</input>
-			<output>TH TS</output>
+			<input>t͡s {TŠ,TŠʷ}</input>
+			<output>TH t͡s</output>
 		</rule>
 		<rule>
 			<input>K</input>
@@ -33615,8 +33615,8 @@
 		<cite>Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85</cite>
 		<rule>
-			<input>TS {TŠ,TŠʷ}</input>
-			<output>TH TS</output>
+			<input>t͡s {TŠ,TŠʷ}</input>
+			<output>TH t͡s</output>
 		</rule>
 		<rule>
 			<input>K</input>
@@ -33648,7 +33648,7 @@
 			Free Encyclopedia. &lt;https://en.wikipedia.org/w/index.php?title=Na-Dene_languages&gt;</cite>
 		<rule>
 			<input>kʲ kʲʼ ɡʲ xʲ</input>
-			<output>ts tsʼ dz {s,ʃ}</output>
+			<output>t͡s t͡sʼ dz {s,ʃ}</output>
 		</rule>
 		<rule>
 			<input>Kʷ</input>
@@ -33687,24 +33687,24 @@
 			<output>s : ɬ</output>
 		</rule>
 		<rule>
-			<input>ts</input>
-			<output>ts : tɬ</output>
+			<input>t͡s</input>
+			<output>t͡s : tɬ</output>
 		</rule>
 		<rule>
-			<input>tsʼ</input>
-			<output>{sʼ,tsʼ} : {ɬ,tɬʼ}</output>
+			<input>t͡sʼ</input>
+			<output>{sʼ,t͡sʼ} : {ɬ,tɬʼ}</output>
 		</rule>
 		<rule>
 			<input>ʃ</input>
 			<output>{ʃ,s} : ɬ</output>
 		</rule>
 		<rule>
-			<input>tʃ</input>
-			<output>{tʃ,ts} : tɬ</output>
+			<input>t͡ʃ</input>
+			<output>{t͡ʃ,t͡s} : tɬ</output>
 		</rule>
 		<rule>
-			<input>tʃʼ</input>
-			<output>{sʼ,tʃʼ} : tɬʼ</output>
+			<input>t͡ʃʼ</input>
+			<output>{sʼ,t͡ʃʼ} : tɬʼ</output>
 		</rule>
 		<rule>
 			<input>kʲ kʲʼ</input>
@@ -33886,36 +33886,36 @@
 			<env>n_</env>
 		</rule>
 	</section>
-	<section index="30.1.1.2" name="Proto-Bantu to Tswana">
+	<section index="30.1.1.2" name="Proto-Bantu to t͡swana">
 		<cite>Whimemsz, from Creissels, Dennis (1999), “Remarks on the Sound Corresponences between
-			Proto-Bantu and Tswana (S.31), with Particular Attention to Problems Involving *j (or
+			Proto-Bantu and t͡swana (S.31), with Particular Attention to Problems Involving *j (or
 			*y), *j̬ and Sequences *NC”. Bantu Historical Linguistics: Theoretical and Empirical
 			Perspectives, ed. Jean-Marie Hombert and Larry M. Hyman</cite>
 		<rule>
-			<input>{p,t,tʃ,k} {mp,nt,ɲtʃ,nk} {(m)b,(n)d,(ɲ)dʒ,(n)ɡ} {m,n}</input>
-			<output>s tsʰ ts ɲ</output>
+			<input>{p,t,t͡ʃ,k} {mp,nt,ɲt͡ʃ,nk} {(m)b,(n)d,(ɲ)d͡ʒ,(n)ɡ} {m,n}</input>
+			<output>s t͡sʰ t͡s ɲ</output>
 			<env>_iV</env>
 		</rule>
 		<rule>
-			<input>{tʃ,k} {ntʃ,nk,r} {ɲdʒ,nɡ} mp mb p b {d,l} m n</input>
-			<output>s tsʰ ts tʃʰ(w) tʃ(w) ʃ(w) dʒ(w) dʒ ŋw ɲ</output>
+			<input>{t͡ʃ,k} {ntʃ,nk,r} {ɲd͡ʒ,nɡ} mp mb p b {d,l} m n</input>
+			<output>s t͡sʰ t͡s t͡ʃʰ(w) t͡ʃ(w) ʃ(w) d͡ʒ(w) d͡ʒ ŋw ɲ</output>
 			<env>_{ɪ,e}V</env>
 		</rule>
 		<rule>
-			<input>{p,t,tʃ,k} {mp,nt,ɲtʃ,nk} {(m)b,(n)d,(ɲ)dʒ,(n)ɡ} {m,n,ɲ}</input>
-			<output>sw tsʰw tsw ɲw</output>
+			<input>{p,t,t͡ʃ,k} {mp,nt,ɲt͡ʃ,nk} {(m)b,(n)d,(ɲ)d͡ʒ,(n)ɡ} {m,n,ɲ}</input>
+			<output>sw t͡sʰw t͡sw ɲw</output>
 			<env>_iV</env>
 		</rule>
 		<rule>
 			<input>mp mb p b m</input>
-			<output>tʃʰ(w) tʃ(w) ʃ(w) dʒ(w) ŋw</output>
+			<output>t͡ʃʰ(w) t͡ʃ(w) ʃ(w) d͡ʒ(w) ŋw</output>
 			<env>_{ʊ,o}V</env>
 		</rule>
 		<comment>“In these cases, the initial vowel of the sequence drops following the consonant
 			change”; Whimemsz doesn’t specify if all V₁V₂ sequences drop the V₁</comment>
 		<rule>
-			<input>{tʃ,k} {ɲtʃ,nk} {ndʒ,nɡ}</input>
-			<output>s tsʰ ts</output>
+			<input>{t͡ʃ,k} {ɲt͡ʃ,nk} {nd͡ʒ,nɡ}</input>
+			<output>s t͡sʰ t͡s</output>
 			<env>_{i,ɪ,e}</env>
 		</rule>
 		<rule>
@@ -33924,11 +33924,11 @@
 			<env>_u</env>
 		</rule>
 		<rule>
-			<input>mp nt ɲtʃ nk mp nd ɲdʒ nɡ</input>
+			<input>mp nt ɲt͡ʃ nk mp nd ɲd͡ʒ nɡ</input>
 			<output>pʰ tʰ tɬʰ qʰ p t tɬ k</output>
 		</rule>
 		<rule>
-			<input>p t tʃ k {dʒ,ɡ} ɲ</input>
+			<input>p t t͡ʃ k {d͡ʒ,ɡ} ɲ</input>
 			<output>h r tɬʰ χ ∅ n</output>
 		</rule>
 	</section>
@@ -34246,19 +34246,19 @@
 		<cite>Pogostick Man, from Capo, Hounkpati B.C. (1991), A Comparative Phonology of Gbe</cite>
 		<rule>
 			<input>t d</input>
-			<output>tʃ dʒ</output>
+			<output>t͡ʃ d͡ʒ</output>
 			<env>_{u,i}</env>
 		</rule>
 	</section>
 	<section index="30.3.1.1.3" name="Proto-Gbe to Proto-Fon">
 		<cite>Pogostick Man, from Capo, Hounkpati B.C. (1991), A Comparative Phonology of Gbe</cite>
 		<rule>
-			<input>{ts,tʰ} {dz,dʱ}</input>
+			<input>{t͡s,tʰ} {dz,dʱ}</input>
 			<output>s z</output>
 		</rule>
 		<rule>
 			<input>{t,k}j {d,ɡ}j</input>
-			<output>tʃ dʒ</output>
+			<output>t͡ʃ d͡ʒ</output>
 		</rule>
 		<rule>
 			<input>hʷ</input>
@@ -34280,12 +34280,12 @@
 			<output>p</output>
 		</rule>
 		<rule>
-			<input>ts dz</input>
+			<input>t͡s dz</input>
 			<output>s z</output>
 		</rule>
 		<rule>
 			<input>{t,k}j {d,ɡ}j</input>
-			<output>tʃ dʒ</output>
+			<output>t͡ʃ d͡ʒ</output>
 		</rule>
 		<rule>
 			<input>tʰ dʱ</input>
@@ -34312,7 +34312,7 @@
 	<section index="30.3.1.1.5" name="Proto-Gbe to Proto-Phla-Pherá">
 		<cite>Pogostick Man, from Capo, Hounkpati B.C. (1991), A Comparative Phonology of Gbe</cite>
 		<rule>
-			<input>{ts,tʰ} {dz,dʱ}</input>
+			<input>{t͡s,tʰ} {dz,dʱ}</input>
 			<output>s z</output>
 		</rule>
 		<rule>
@@ -34381,12 +34381,12 @@
 			<exception>C = N</exception>
 		</rule>
 		<rule>
-			<input>ts dz</input>
+			<input>t͡s dz</input>
 			<output>s z</output>
 		</rule>
 		<rule>
 			<input>k ɡ</input>
-			<output>tʃ dʒ</output>
+			<output>t͡ʃ d͡ʒ</output>
 			<env>_i</env>
 		</rule>
 	</section>
@@ -34399,17 +34399,17 @@
 		</rule>
 		<rule>
 			<input>t d</input>
-			<output>tʃ dʒ</output>
+			<output>t͡ʃ d͡ʒ</output>
 			<env>_{u,i}</env>
 		</rule>
 		<rule>
 			<input>k ɡ s</input>
-			<output>ts dz ʃ</output>
+			<output>t͡s dz ʃ</output>
 			<env>_i</env>
 		</rule>
 		<rule>
 			<input>t d</input>
-			<output>ts dz</output>
+			<output>t͡s dz</output>
 			<env>_j</env>
 		</rule>
 	</section>
@@ -34427,12 +34427,12 @@
 		</rule>
 		<rule>
 			<input>t d</input>
-			<output>tʃ dʒ</output>
+			<output>t͡ʃ d͡ʒ</output>
 			<env>_{u,i}</env>
 		</rule>
 		<rule>
-			<input>s {k,ts} {ɡ,dz}</input>
-			<output>ʃ tʃ dʒ</output>
+			<input>s {k,t͡s} {ɡ,dz}</input>
+			<output>ʃ t͡ʃ d͡ʒ</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -34449,18 +34449,18 @@
 		</rule>
 		<rule>
 			<input>{t,k} {d,ɡ}</input>
-			<output>ts dz</output>
+			<output>t͡s dz</output>
 			<env>_i</env>
 		</rule>
 		<rule>
 			<input>t d</input>
-			<output>tʃ dʒ</output>
+			<output>t͡ʃ d͡ʒ</output>
 			<env>_j</env>
 		</rule>
 		<rule>
 			<input>j</input>
 			<output>∅</output>
-			<env>{ts,dz}_</env>
+			<env>{t͡s,dz}_</env>
 		</rule>
 		<rule>
 			<input>V</input>
@@ -34475,8 +34475,8 @@
 			<output>ɛ ɛ̃</output>
 		</rule>
 		<rule>
-			<input>{k,ts} {ɡ,dz}</input>
-			<output>tʃ dʒ</output>
+			<input>{k,t͡s} {ɡ,dz}</input>
+			<output>t͡ʃ d͡ʒ</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -34499,7 +34499,7 @@
 		</rule>
 		<rule>
 			<input>k ɡ</input>
-			<output>tʃ dʒ</output>
+			<output>t͡ʃ d͡ʒ</output>
 			<env>_i</env>
 		</rule>
 	</section>
@@ -34511,8 +34511,8 @@
 			<env>_{i,j}</env>
 		</rule>
 		<rule>
-			<input>{k,ts} {ɡ,dz}</input>
-			<output>tʃ dʒ</output>
+			<input>{k,t͡s} {ɡ,dz}</input>
+			<output>t͡ʃ d͡ʒ</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -34626,7 +34626,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_”{e,iʔ}</env>
 		</rule>
 		<rule>
@@ -34646,7 +34646,7 @@
 		</rule>
 		<rule>
 			<input>tʲ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_</env>
 			<exception>_u</exception>
 		</rule>
@@ -34671,12 +34671,12 @@
 			<output>∅</output>
 		</rule>
 		<rule>
-			<input>{c,tʃ}</input>
+			<input>{c,t͡ʃ}</input>
 			<output>ʃ</output>
 		</rule>
 		<rule>
 			<input>s</input>
-			<output>tʃ (in certain cases? Not a lot of data available on this one)</output>
+			<output>t͡ʃ (in certain cases? Not a lot of data available on this one)</output>
 		</rule>
 		<rule>
 			<input>l</input>
@@ -34708,7 +34708,7 @@
 		<rule>
 			<input>i</input>
 			<output>e</output>
-			<env>tʃ_</env>
+			<env>t͡ʃ_</env>
 		</rule>
 		<rule>
 			<input>ı̃</input>
@@ -34766,12 +34766,12 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>#_iç</env>
 		</rule>
 		<rule>
 			<input>tʲ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_i:[- long -stress]</env>
 		</rule>
 		<rule>
@@ -34785,11 +34785,11 @@
 		</rule>
 		<rule>
 			<input>c</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>i_</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>c</output>
 		</rule>
 		<rule>
@@ -34850,7 +34850,7 @@
 		<comment>Some consonant disharmony involving reflexes of *k, *kʷ</comment>
 		<rule>
 			<input>k</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_Ek(ʷ)</env>
 		</rule>
 		<rule>
@@ -34886,27 +34886,27 @@
 			<exception>ku_ (medial)</exception>
 		</rule>
 		<rule>
-			<input>ts</input>
-			<output>tʃ</output>
+			<input>t͡s</input>
+			<output>t͡ʃ</output>
 			<env>#_{a,õ}ʔ</env>
 		</rule>
 		<rule>
-			<input>ts</input>
-			<output>tʃ</output>
+			<input>t͡s</input>
+			<output>t͡ʃ</output>
 			<env>V:[+high]_</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>ʃ</output>
 			<env>#_ẽ</env>
 		</rule>
 		<rule>
 			<input>c</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
-			<input>tʃ</input>
-			<output>ts</output>
+			<input>t͡ʃ</input>
+			<output>t͡s</output>
 			<env>a_</env>
 		</rule>
 		<rule>
@@ -34921,7 +34921,7 @@
 		</rule>
 		<rule>
 			<input>s</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>#_a</env>
 		</rule>
 		<rule>
@@ -34931,7 +34931,7 @@
 		</rule>
 		<rule>
 			<input>ʃ</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_i, in monosyllables</env>
 		</rule>
 		<rule>
@@ -34991,7 +34991,7 @@
 		<comment>NB: This set is likely very incomplete.</comment>
 		<rule>
 			<input>kʲ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>e</input>
@@ -35023,7 +35023,7 @@
 		</rule>
 		<rule>
 			<input>Yt Ynt Ys</input>
-			<output>tʃ dʒ ʃ</output>
+			<output>t͡ʃ d͡ʒ ʃ</output>
 		</rule>
 		<rule>
 			<input>{ns,nt} nkʷ nj nw</input>
@@ -35118,7 +35118,7 @@
 			<env>! _$ or o_</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>ʂ</output>
 			<env>_#</env>
 		</rule>
@@ -35189,12 +35189,12 @@
 		</rule>
 		<rule>
 			<input>ʈ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_e</env>
 		</rule>
 		<rule>
 			<input>ʈ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>e_</env>
 		</rule>
 	</section>
@@ -35209,7 +35209,7 @@
 		</rule>
 		<rule>
 			<input>ʈ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>{a:[+ long],o:[+ long]}_</env>
 		</rule>
 		<rule>
@@ -35228,7 +35228,7 @@
 		</rule>
 		<rule>
 			<input>ʈ</input>
-			<output>{ʈ,ts,tʃ}</output>
+			<output>{ʈ,t͡s,t͡ʃ}</output>
 			<env>_{j,ɾ}</env>
 		</rule>
 		<rule>
@@ -35265,7 +35265,7 @@
 			(1988), “Proto-Utian Stems” in In Honor of Mary Haas</cite>
 		<rule>
 			<input>tʲ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>h</input>
@@ -35273,17 +35273,17 @@
 		</rule>
 		<rule>
 			<input>ʈ</input>
-			<output>{ʈ,tʃ}</output>
+			<output>{ʈ,t͡ʃ}</output>
 			<env>{a:[+ long],o:[+ long]}_</env>
 		</rule>
 		<rule>
 			<input>ʈ</input>
-			<output>{ʈ,tʃ}</output>
+			<output>{ʈ,t͡ʃ}</output>
 			<env>{i,e,o}$_</env>
 		</rule>
 		<rule>
 			<input>ʈ</input>
-			<output>{ʈ,tʃ}</output>
+			<output>{ʈ,t͡ʃ}</output>
 			<env>_{j,ɾ}</env>
 		</rule>
 		<rule>
@@ -35332,20 +35332,20 @@
 			<env>_#</env>
 		</rule>
 		<rule>
-			<input>tʃʰ kʰ qʰ {x,χ}</input>
-			<output>tʃ k(ʰ) {kʰ,qʰ,χ} kʰ</output>
+			<input>t͡ʃʰ kʰ qʰ {x,χ}</input>
+			<output>t͡ʃ k(ʰ) {kʰ,qʰ,χ} kʰ</output>
 		</rule>
 	</section>
 	<section index="33.2.2" name="Proto-Wintuan to Patwin">
 		<cite>Pogostick Man, from Shepherd, Alice (2005), “Proto-Wintun”. UC Publications in
 			Linguistics. &lt;http://escholarship.org/uc/item/8dq1f3jj&gt;</cite>
 		<rule>
-			<input>tʃ tʃʰ tʃʼ</input>
+			<input>t͡ʃ t͡ʃʰ t͡ʃʼ</input>
 			<output>t tʰ tʼ</output>
 		</rule>
 		<rule>
 			<input>k(ʰ) kʼ q(ʰ) qʼ</input>
-			<output>tʃ(h) tʃʼ kʰ kʼ</output>
+			<output>t͡ʃ(h) t͡ʃʼ kʰ kʼ</output>
 		</rule>
 		<rule>
 			<input>x χ</input>
@@ -35360,12 +35360,12 @@
 			<output>{r,j}</output>
 		</rule>
 		<rule>
-			<input>tʃ tʃʰ tʃʼ</input>
+			<input>t͡ʃ t͡ʃʰ t͡ʃʼ</input>
 			<output>t tʰ tʼ</output>
 		</rule>
 		<rule>
 			<input>k(ʰ) kʼ q(ʰ) qʼ</input>
-			<output>tʃ(ʰ) tʃʼ k(ʰ) kʼ</output>
+			<output>t͡ʃ(ʰ) t͡ʃʼ k(ʰ) kʼ</output>
 		</rule>
 		<rule>
 			<input>x</input>
@@ -35380,8 +35380,8 @@
 		<cite>Pogostick Man, from Shepherd, Alice (2005), “Proto-Wintun”. UC Publications in
 			Linguistics. &lt;http://escholarship.org/uc/item/8dq1f3jj&gt;</cite>
 		<rule>
-			<input>tʃʰ</input>
-			<output>tʃ</output>
+			<input>t͡ʃʰ</input>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>kʰ qʰ</input>
@@ -35411,7 +35411,7 @@
 			Reconsidered”. International Journal of American Linguistics Vol. 52, No. 4 (Oct. 1986)</cite>
 		<rule>
 			<input>t tʰ tʼ</input>
-			<output>ts tsʰ tsʼ</output>
+			<output>t͡s t͡sʰ t͡sʼ</output>
 			<env>#_ “(in some words, conditioning factors unclear)”</env>
 		</rule>
 		<rule>
@@ -35455,8 +35455,8 @@
 			<output>ʃ</output>
 		</rule>
 		<rule>
-			<input>ts tsʰ tsʼ</input>
-			<output>tʃ tʃʰ tʃʼ</output>
+			<input>t͡s t͡sʰ t͡sʼ</input>
+			<output>t͡ʃ t͡ʃʰ t͡ʃʼ</output>
 		</rule>
 	</section>
 	<section index="33.3.2.1" name="Proto-Nim-Yokuts to Proto-Tule-Kaweah">
@@ -35464,7 +35464,7 @@
 			Reconsidered”. International Journal of American Linguistics Vol. 52, No. 4 (Oct. 1986)</cite>
 		<rule>
 			<input>t tʰ tʼ</input>
-			<output>tʃ tʃʰ tʃʼ</output>
+			<output>t͡ʃ t͡ʃʰ t͡ʃʼ</output>
 			<env>#_ “(in some words, conditioning factors unclear)”</env>
 		</rule>
 		<rule>
@@ -35526,11 +35526,11 @@
 		<comment>/s ʃ ʂ/ may be a single alternating phoneme</comment>
 		<rule>
 			<input>ʈ ʈʰ ʈʼ</input>
-			<output>tʃ tʃʰ tʃʼ</output>
+			<output>t͡ʃ t͡ʃʰ t͡ʃʼ</output>
 		</rule>
 		<rule>
-			<input>tʃ tʃʰ tʃʼ</input>
-			<output>ts tsʰ tsʼ</output>
+			<input>t͡ʃ t͡ʃʰ t͡ʃʼ</input>
+			<output>t͡s t͡sʰ t͡sʼ</output>
 		</rule>
 	</section>
 	<section index="33.3.2.2.5" name="Valley Yokuts to Tachi">
@@ -35549,8 +35549,8 @@
 			<output>s</output>
 		</rule>
 		<rule sporadic="true">
-			<input>tʃ tʃʰ tʃʼ</input>
-			<output>ts tsʰ tsʼ</output>
+			<input>t͡ʃ t͡ʃʰ t͡ʃʼ</input>
+			<output>t͡s t͡sʰ t͡sʼ</output>
 		</rule>
 	</section>
 	<section index="33.3.3" name="Proto-Yokuts to Palewyami">
@@ -35563,12 +35563,12 @@
 		</rule>
 		<rule>
 			<input>t tʰ tʼ</input>
-			<output>ts tsʰ tsʼ</output>
+			<output>t͡s t͡sʰ t͡sʼ</output>
 			<env>#_ “(in some words; conditioning factors unclear)”</env>
 		</rule>
 		<rule>
-			<input>ts tsʰ tsʼ</input>
-			<output>tʃ tʃʰ tʃʼ</output>
+			<input>t͡s t͡sʰ t͡sʼ</input>
+			<output>t͡ʃ t͡ʃʰ t͡ʃʼ</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -35611,8 +35611,8 @@
 		<cite>Pogostick Man, from Orr, Carolyn, and Robert E. Longacre (1968), “Proto-Quechumaran”.
 			Language 44(3):528 – 555</cite>
 		<rule>
-			<input>pʼ tʼ tʃʼ kʼ qʼ</input>
-			<output>p t tʃ k q</output>
+			<input>pʼ tʼ t͡ʃʼ kʼ qʼ</input>
+			<output>p t t͡ʃ k q</output>
 		</rule>
 		<rule>
 			<input>h</input>
@@ -35629,8 +35629,8 @@
 			<env>n_</env>
 		</rule>
 		<rule>
-			<input>ts(h) tʃh</input>
-			<output>tʃ s</output>
+			<input>t͡s(h) t͡ʃh</input>
+			<output>t͡ʃ s</output>
 		</rule>
 		<rule>
 			<input>ʈʂ</input>
@@ -35639,12 +35639,12 @@
 		</rule>
 		<rule>
 			<input>ʈʂ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_V</env>
 		</rule>
 		<rule>
 			<input>ʈʂʼ</input>
-			<output>tʃʼ</output>
+			<output>t͡ʃʼ</output>
 		</rule>
 		<rule>
 			<input>ɸ(ʼ,ʰ)</input>
@@ -35673,17 +35673,17 @@
 			<env>_{C,#}</env>
 		</rule>
 		<rule>
-			<input>ts {tsh,tʃh}</input>
-			<output>tʃ tʃʰ</output>
+			<input>t͡s {t͡sh,t͡ʃh}</input>
+			<output>t͡ʃ t͡ʃʰ</output>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>ʃ</output>
 			<env>_q</env>
 		</rule>
 		<rule>
-			<input>tʃʼ</input>
-			<output>tʃ</output>
+			<input>t͡ʃʼ</input>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>ʈʂ</input>
@@ -35692,12 +35692,12 @@
 		</rule>
 		<rule>
 			<input>ʈʂ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_V</env>
 		</rule>
 		<rule>
 			<input>ʈʂʼ</input>
-			<output>tʃʼ</output>
+			<output>t͡ʃʼ</output>
 		</rule>
 		<rule>
 			<input>ɸ(ʼ) ɸh</input>
@@ -35789,22 +35789,22 @@
 			<output>kʰ qʰ</output>
 		</rule>
 		<rule>
-			<input>ts tsh</input>
-			<output>tʃ tʃʰ</output>
+			<input>t͡s t͡sh</input>
+			<output>t͡ʃ t͡ʃʰ</output>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>s</output>
 			<env>_q</env>
 		</rule>
 		<rule>
-			<input>tʃh</input>
+			<input>t͡ʃh</input>
 			<output>s</output>
 			<env>_E</env>
 		</rule>
 		<rule>
-			<input>{tʃh,tʃʼ}</input>
-			<output>tʃ</output>
+			<input>{t͡ʃh,t͡ʃʼ}</input>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>ʈʂ</input>
@@ -35813,17 +35813,17 @@
 		</rule>
 		<rule>
 			<input>ʈʂ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_V</env>
 		</rule>
 		<rule>
 			<input>ʈʂʼ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>n_</env>
 		</rule>
 		<rule>
 			<input>ʈʂʼ</input>
-			<output>tʃʼ</output>
+			<output>t͡ʃʼ</output>
 		</rule>
 		<rule>
 			<input>ɸ(ʼ) ɸh</input>
@@ -35843,8 +35843,8 @@
 		<cite>Pogostick Man, from Orr, Carolyn, and Robert E. Longacre (1968), “Proto-Quechumaran”.
 			Language 44(3):528 – 555</cite>
 		<rule>
-			<input>pʼ tʼ tʃʼ kʼ qʼ</input>
-			<output>p t ts k q</output>
+			<input>pʼ tʼ t͡ʃʼ kʼ qʼ</input>
+			<output>p t t͡s k q</output>
 		</rule>
 		<rule>
 			<input>h</input>
@@ -35860,12 +35860,12 @@
 			<output>q͡χ</output>
 		</rule>
 		<rule>
-			<input>ts(h) tʃ</input>
-			<output>tʃ ts</output>
+			<input>t͡s(h) t͡ʃ</input>
+			<output>t͡ʃ t͡s</output>
 		</rule>
 		<rule>
-			<input>tʃ</input>
-			<output>ts</output>
+			<input>t͡ʃ</input>
+			<output>t͡s</output>
 			<env>_q</env>
 		</rule>
 		<rule>
@@ -35875,7 +35875,7 @@
 		</rule>
 		<rule>
 			<input>ʈʂ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_V</env>
 		</rule>
 		<rule>
@@ -35935,15 +35935,15 @@
 		<rule>
 			<input>h</input>
 			<output>∅</output>
-			<env>ts_</env>
+			<env>t͡s_</env>
 		</rule>
 		<rule>
-			<input>tʃʼ</input>
-			<output>tʃ</output>
+			<input>t͡ʃʼ</input>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>ʈʂ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_V</env>
 		</rule>
 		<rule>
@@ -36012,27 +36012,27 @@
 			<env>j_</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>dz</output>
 			<env>! #_</env>
 		</rule>
 		<rule>
 			<input>h</input>
 			<output>∅</output>
-			<env>ts_</env>
+			<env>t͡s_</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>ʃ</output>
 			<env>_q</env>
 		</rule>
 		<rule>
-			<input>tʃh</input>
+			<input>t͡ʃh</input>
 			<output>ʃ</output>
 		</rule>
 		<rule>
-			<input>tʃʼ</input>
-			<output>tʃ</output>
+			<input>t͡ʃʼ</input>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>ʈʂ</input>
@@ -36041,7 +36041,7 @@
 		</rule>
 		<rule>
 			<input>ʈʂ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_V</env>
 		</rule>
 		<rule>
@@ -36073,7 +36073,7 @@
 			<input>qh</input>
 			<output>kʰ</output>
 			<env>_i</env>
-			<exception>_i{ʃ,tʃ}</exception>
+			<exception>_i{ʃ,t͡ʃ}</exception>
 		</rule>
 		<rule>
 			<input>qh</input>
@@ -36118,22 +36118,22 @@
 			<output>k</output>
 		</rule>
 		<rule>
-			<input>k ts</input>
+			<input>k t͡s</input>
 			<output>ɡ dz</output>
 			<env>n_</env>
 		</rule>
 		<rule>
 			<input>h</input>
 			<output>∅</output>
-			<env>ts_</env>
+			<env>t͡s_</env>
 		</rule>
 		<rule>
-			<input>tʃh</input>
+			<input>t͡ʃh</input>
 			<output>ʃ</output>
 		</rule>
 		<rule>
-			<input>tʃʼ</input>
-			<output>tʃ</output>
+			<input>t͡ʃʼ</input>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>ʈʂ</input>
@@ -36142,12 +36142,12 @@
 		</rule>
 		<rule>
 			<input>ʈʂ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_V</env>
 		</rule>
 		<rule>
 			<input>ʈʂʼ</input>
-			<output>ts</output>
+			<output>t͡s</output>
 		</rule>
 		<rule>
 			<input>ɸ</input>
@@ -36187,8 +36187,8 @@
 		<cite>Pogostick Man, from Orr, Carolyn, and Robert E. Longacre (1968), “Proto-Quechumaran”.
 			Language 44(3):528 – 555</cite>
 		<rule>
-			<input>pʼ tʼ tʃʼ kʼ qʼ</input>
-			<output>p t tʃ k q</output>
+			<input>pʼ tʼ t͡ʃʼ kʼ qʼ</input>
+			<output>p t t͡ʃ k q</output>
 		</rule>
 		<rule>
 			<input>h</input>
@@ -36206,11 +36206,11 @@
 			<env>j_</env>
 		</rule>
 		<rule>
-			<input>ts(h)</input>
-			<output>tʃ</output>
+			<input>t͡s(h)</input>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>ʃ</output>
 			<env>_q</env>
 		</rule>
@@ -36221,7 +36221,7 @@
 		</rule>
 		<rule>
 			<input>ʈʂ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_V</env>
 		</rule>
 		<rule>
@@ -36312,20 +36312,20 @@
 		<rule>
 			<input>h</input>
 			<output>∅</output>
-			<env>ts_</env>
+			<env>t͡s_</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>ʃ</output>
 			<env>_C</env>
 		</rule>
 		<rule>
-			<input>tʃh</input>
+			<input>t͡ʃh</input>
 			<output>ʃ</output>
 		</rule>
 		<rule>
-			<input>tʃʼ</input>
-			<output>tʃ</output>
+			<input>t͡ʃʼ</input>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>ʈʂ</input>
@@ -36334,12 +36334,12 @@
 		</rule>
 		<rule>
 			<input>ʈʂ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_V</env>
 		</rule>
 		<rule>
 			<input>ʈʂʼ</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>ɸ(ʼ,ʰ)</input>
@@ -36377,7 +36377,7 @@
 			Correspondences”. From the 17th International Conference on Salish and Neighboring
 			Languages</cite>
 		<rule>
-			<input>ts(ʼ)</input>
+			<input>t͡s(ʼ)</input>
 			<output>θ(ʼ)</output>
 		</rule>
 		<rule>
@@ -36408,7 +36408,7 @@
 		</rule>
 		<rule>
 			<input>w j</input>
-			<output>ɡ dʒ</output>
+			<output>ɡ d͡ʒ</output>
 			<env>_V</env>
 		</rule>
 		<rule>
@@ -36463,8 +36463,8 @@
 			<env>m_</env>
 		</rule>
 		<rule>
-			<input>ts(ʼ) tʃ(ʼ)</input>
-			<output>θ(ʼ) ts(ʼ)</output>
+			<input>t͡s(ʼ) t͡ʃ(ʼ)</input>
+			<output>θ(ʼ) t͡s(ʼ)</output>
 		</rule>
 		<rule>
 			<input>lʲ</input>
@@ -36548,8 +36548,8 @@
 			Correspondences”. From the 17th International Conference on Salish and Neighboring
 			Languages</cite>
 		<rule>
-			<input>ts(ʼ) tʃ(ʼ)</input>
-			<output>θ(ʼ) ts(ʼ)</output>
+			<input>t͡s(ʼ) t͡ʃ(ʼ)</input>
+			<output>θ(ʼ) t͡s(ʼ)</output>
 		</rule>
 		<rule>
 			<input>s</input>
@@ -36613,8 +36613,8 @@
 			<env>m_</env>
 		</rule>
 		<rule>
-			<input>ts(ʼ) tʃ(ʼ)</input>
-			<output>θ(ʼ) ts(ʼ)</output>
+			<input>t͡s(ʼ) t͡ʃ(ʼ)</input>
+			<output>θ(ʼ) t͡s(ʼ)</output>
 		</rule>
 		<rule>
 			<input>lʲ</input>
@@ -36682,7 +36682,7 @@
 		</rule>
 		<rule>
 			<input>p(ʼ) m</input>
-			<output>ts(ʼ) ŋ</output>
+			<output>t͡s(ʼ) ŋ</output>
 			<env>! _u</env>
 		</rule>
 		<rule>
@@ -36694,17 +36694,17 @@
 			<output>{s,ʃ} (the latter mainly from borrowings?)</output>
 		</rule>
 		<rule>
-			<input>tʃ</input>
-			<output>ts</output>
+			<input>t͡ʃ</input>
+			<output>t͡s</output>
 		</rule>
 		<rule>
-			<input>tʃʼ</input>
-			<output>tsʼ</output>
+			<input>t͡ʃʼ</input>
+			<output>t͡sʼ</output>
 			<env>medially</env>
 		</rule>
 		<rule>
 			<input>w j</input>
-			<output>kʷ tʃ</output>
+			<output>kʷ t͡ʃ</output>
 			<env>_V</env>
 		</rule>
 		<rule>
@@ -36943,7 +36943,7 @@
 			Languages</cite>
 		<rule>
 			<input>p(’) m</input>
-			<output>tʃ(’) ŋ</output>
+			<output>t͡ʃ(’) ŋ</output>
 			<env>! _u</env>
 		</rule>
 		<rule>
@@ -36952,7 +36952,7 @@
 			<env>_n</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 		</rule>
 		<rule>
@@ -36965,17 +36965,17 @@
 			<env>_xʷ</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>s</output>
 		</rule>
 		<rule>
-			<input>tʃ’</input>
-			<output>ts’</output>
+			<input>t͡ʃ’</input>
+			<output>t͡s’</output>
 			<env>medially</env>
 		</rule>
 		<rule>
 			<input>j</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_V</env>
 		</rule>
 		<rule>
@@ -37047,7 +37047,7 @@
 			Languages</cite>
 		<rule>
 			<input>p(’) m</input>
-			<output>tʃ(’) ŋ</output>
+			<output>t͡ʃ(’) ŋ</output>
 			<env>! _u</env>
 		</rule>
 		<rule>
@@ -37055,7 +37055,7 @@
 			<output>nʔ</output>
 		</rule>
 		<rule>
-			<input>ts ts’</input>
+			<input>t͡s t͡s’</input>
 			<output>{θ,s} θ’</output>
 		</rule>
 		<rule>
@@ -37072,17 +37072,17 @@
 			<output>s</output>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>s</output>
 		</rule>
 		<rule>
-			<input>tʃ’</input>
+			<input>t͡ʃ’</input>
 			<output>θ’</output>
 			<env>medially</env>
 		</rule>
 		<rule>
 			<input>j w</input>
-			<output>tʃ kʷ</output>
+			<output>t͡ʃ kʷ</output>
 			<env>_V</env>
 		</rule>
 		<rule>
@@ -37139,7 +37139,7 @@
 			Languages</cite>
 		<rule>
 			<input>p(’) m</input>
-			<output>tʃ(’) ŋ</output>
+			<output>t͡ʃ(’) ŋ</output>
 			<env>! _u</env>
 		</rule>
 		<rule>
@@ -37147,7 +37147,7 @@
 			<output>nʔ</output>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 		</rule>
 		<rule>
@@ -37164,13 +37164,13 @@
 			<output>{s,ʃ} (the latter mainly from borrowings?)</output>
 		</rule>
 		<rule>
-			<input>tʃ’</input>
-			<output>ts’</output>
+			<input>t͡ʃ’</input>
+			<output>t͡s’</output>
 			<env>medially</env>
 		</rule>
 		<rule>
 			<input>j w</input>
-			<output>tʃ kʷ</output>
+			<output>t͡ʃ kʷ</output>
 			<env>_V</env>
 		</rule>
 		<rule>
@@ -37231,7 +37231,7 @@
 			Languages</cite>
 		<rule>
 			<input>p(’) m</input>
-			<output>tʃ(’) ŋ</output>
+			<output>t͡ʃ(’) ŋ</output>
 			<env>! _u</env>
 		</rule>
 		<rule>
@@ -37239,7 +37239,7 @@
 			<output>nʔ</output>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 		</rule>
 		<rule>
@@ -37251,17 +37251,17 @@
 			<output>{s,ʃ} (the latter mainly from borrowings?)</output>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>s</output>
 		</rule>
 		<rule>
-			<input>tʃ’</input>
-			<output>ts’</output>
+			<input>t͡ʃ’</input>
+			<output>t͡s’</output>
 			<env>medially</env>
 		</rule>
 		<rule>
 			<input>j w</input>
-			<output>tʃ kʷ</output>
+			<output>t͡ʃ kʷ</output>
 			<env>_V</env>
 		</rule>
 		<rule>
@@ -37315,8 +37315,8 @@
 			Correspondences”. From the 17th International Conference on Salish and Neighboring
 			Languages</cite>
 		<rule>
-			<input>ts ts’</input>
-			<output>s ts’</output>
+			<input>t͡s t͡s’</input>
+			<output>s t͡s’</output>
 		</rule>
 		<rule>
 			<input>lʲ</input>
@@ -37585,7 +37585,7 @@
 		<rule>
 			<input>en enˀ</input>
 			<output>i iʔ</output>
-			<env>{ts(’),s,j(ˀ)}_ in U:[- stressed]</env>
+			<env>{t͡s(’),s,j(ˀ)}_ in U:[- stressed]</env>
 		</rule>
 		<rule>
 			<input>en enˀ</input>
@@ -37968,7 +37968,7 @@
 		<comment>Initials:</comment>
 		<rule>
 			<input>b d dz ɡ</input>
-			<output>{p,pʼ} {t,tʼ} {ts,tsʼ} {k,kʼ}</output>
+			<output>{p,pʼ} {t,tʼ} {t͡s,t͡sʼ} {k,kʼ}</output>
 		</rule>
 		<rule>
 			<input>ŋ</input>
@@ -37991,7 +37991,7 @@
 		</rule>
 		<rule>
 			<input>z</input>
-			<output>{s,tsʼ} (the former “without exception” “in oblique tone words”)</output>
+			<output>{s,t͡sʼ} (the former “without exception” “in oblique tone words”)</output>
 		</rule>
 		<rule>ɖʐ &gt;ʈʂ / “[i]n oblique tone syllables”</rule>
 		<rule>
@@ -38643,7 +38643,7 @@
 		</rule>
 		<rule>
 			<input>(ʔ)kj (s)ɡj Nkj</input>
-			<output>(k)tç (s)kj Ndʒ</output>
+			<output>(k)tç (s)kj Nd͡ʒ</output>
 		</rule>
 		<rule>
 			<input>çr Nç</input>
@@ -38669,17 +38669,17 @@
 			<output>mʃ</output>
 		</rule>
 		<rule>
-			<input>TS</input>
-			<output>dʒ</output>
+			<input>t͡s</input>
+			<output>d͡ʒ</output>
 			<env>l_</env>
 		</rule>
 		<rule>
-			<input>NTS PTS KTS sTS çTS</input>
+			<input>NTS PTS KTS sTS çt͡s</input>
 			<output>{Ndz,mts} kts(ʰ) ptsʰ sts {sts,rj}</output>
 		</rule>
 		<rule>
-			<input>(r)ts (r)dz</input>
-			<output>(r)tsʰ (r)ts</output>
+			<input>(r)t͡s (r)dz</input>
+			<output>(r)t͡sʰ (r)t͡s</output>
 		</rule>
 		<rule>
 			<input>∅</input>
@@ -38789,7 +38789,7 @@
 		</rule>
 		<rule>
 			<input>kj Nkj ʔkj ɡj sɡj</input>
-			<output>kj. nj ɡ.tsʰ kj skj.</output>
+			<output>kj. nj ɡ.t͡sʰ kj skj.</output>
 		</rule>
 		<rule>
 			<input>kr (s)ɡr</input>
@@ -38815,15 +38815,15 @@
 		</rule>
 		<rule>
 			<input>Kts</input>
-			<output>ɡ.tsʰ.</output>
+			<output>ɡ.t͡sʰ.</output>
 		</rule>
 		<rule>
 			<input>lTS</input>
 			<output>l.dz</output>
 		</rule>
 		<rule>
-			<input>ts (r)dz dʒ PTS KTS sTS çTS</input>
-			<output>{tsʰ,s} (r)ts tsʰ ɡ.ts s.{ts,pj} {s.ts,br}</output>
+			<input>t͡s (r)dz d͡ʒ PTS KTS sTS çt͡s</input>
+			<output>{t͡sʰ,s} (r)t͡s t͡sʰ ɡ.t͡s s.{t͡s,pj} {s.t͡s,br}</output>
 		</rule>
 		<rule>
 			<input>rm rn</input>
@@ -38925,8 +38925,8 @@
 			about this language.</comment>
 		<comment>Initials:</comment>
 		<rule>
-			<input>p k ts</input>
-			<output>p. k. tʃ.</output>
+			<input>p k t͡s</input>
+			<output>p. k. t͡ʃ.</output>
 		</rule>
 		<rule>
 			<input>NTS</input>
@@ -39040,7 +39040,7 @@
 		</rule>
 		<rule>
 			<input>Nkj ɡj sɡj</input>
-			<output>mj ts stʃj</output>
+			<output>mj t͡s stʃj</output>
 		</rule>
 		<rule>
 			<input>sɡr</input>
@@ -39051,8 +39051,8 @@
 			<output>s ʂ ʃ mʃ ʃl</output>
 		</rule>
 		<rule>
-			<input>ts {dz,KTS} NTS rdz dzl dʒ</input>
-			<output>s ts {dz,mtʃ.} rts tsl tʃ.</output>
+			<input>t͡s {dz,KTS} NTS rdz dzl d͡ʒ</input>
+			<output>s t͡s {dz,mtʃ.} rts t͡sl t͡ʃ.</output>
 		</rule>
 		<rule>
 			<input>ç</input>
@@ -39166,12 +39166,12 @@
 			<env>#ç_</env>
 		</rule>
 		<rule>
-			<input>ts (r)dz dzl dʒ NTS PTS Kts KTS sTS çTS</input>
-			<output>tsʰ (r)ts Ndz tsl ts ptç ktç kts sts {s,ç}ts</output>
+			<input>t͡s (r)dz dzl d͡ʒ NTS PTS Kts KTS sTS çt͡s</input>
+			<output>t͡sʰ (r)t͡s Ndz t͡sl t͡s ptç ktç kts sts {s,ç}t͡s</output>
 		</rule>
 		<rule>
 			<input>LTS</input>
-			<output>ldʒ</output>
+			<output>ld͡ʒ</output>
 		</rule>
 		<rule>
 			<input>N</input>
@@ -39210,8 +39210,8 @@
 			<output>l</output>
 		</rule>
 		<rule>
-			<input>ts dʒ NTS</input>
-			<output>{s,tʃ.} tʃ. m</output>
+			<input>t͡s d͡ʒ NTS</input>
+			<output>{s,t͡ʃ.} t͡ʃ. m</output>
 		</rule>
 		<rule>
 			<input>s</input>
@@ -39283,8 +39283,8 @@
 			<output>lɖʐ rts. {mdzr,mtʃ} nt. sts</output>
 		</rule>
 		<rule>
-			<input>ts dʒ</input>
-			<output>tʃ. tʃ</output>
+			<input>t͡s d͡ʒ</input>
+			<output>t͡ʃ. t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>ŋ</input>
@@ -39356,8 +39356,8 @@
 			<output>s</output>
 		</rule>
 		<rule>
-			<input>dʒ</input>
-			<output>tsh</output>
+			<input>d͡ʒ</input>
+			<output>t͡sh</output>
 		</rule>
 		<comment>Rhymes:</comment>
 		<rule>
@@ -39383,7 +39383,7 @@
 			<output>u</output>
 		</rule>
 	</section>
-	<section index="36.3.2.2.6" name="Proto-rGyalrongic to Tsa Ku Nao">
+	<section index="36.3.2.2.6" name="Proto-rGyalrongic to t͡sa Ku Nao">
 		<cite>Pogostick Man, from Nagano, Yashuiki (1979), “A Historical Study of rGyarong Initials
 			and Prefixes”. Linguistics of the Tibeto-Burman Area 4(2):44 – 68; and Nagano, Yashuiki
 			(1979), “A Historical Study of rGyarong Rhymes”. Linguistics of the Tibeto-Burman Area
@@ -39417,11 +39417,11 @@
 		</rule>
 		<rule>
 			<input>kj</input>
-			<output>tʃ.</output>
+			<output>t͡ʃ.</output>
 		</rule>
 		<rule>
 			<input>z</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>r_</env>
 		</rule>
 		<rule skip="true">
@@ -39433,8 +39433,8 @@
 			<output>(b)ɕ np.j ʂl</output>
 		</rule>
 		<rule>
-			<input>ts dz NTS KTS sTS</input>
-			<output>tʃ ts {ts,m} ɡts sp</output>
+			<input>t͡s dz NTS KTS sTS</input>
+			<output>t͡ʃ t͡s {t͡s,m} ɡt͡s sp</output>
 		</rule>
 		<rule>
 			<input>s</input>
@@ -39516,7 +39516,7 @@
 		</rule>
 		<rule>
 			<input>P t</input>
-			<output>pdz tʃ</output>
+			<output>pdz t͡ʃ</output>
 			<env>r_</env>
 		</rule>
 		<rule>
@@ -39530,7 +39530,7 @@
 		</rule>
 		<rule>
 			<input>{d,KT} st</input>
-			<output>tʃ zdʒ</output>
+			<output>t͡ʃ zd͡ʒ</output>
 		</rule>
 		<rule>
 			<input>dr çdr</input>
@@ -39542,7 +39542,7 @@
 		</rule>
 		<rule>
 			<input>k rk kr kj Nkj ɡr</input>
-			<output>kʰdz nɡ kʰr tʃh dʒ nkʰr</output>
+			<output>kʰdz nɡ kʰr t͡ʃh d͡ʒ nkʰr</output>
 		</rule>
 		<rule>
 			<input>ɡ</input>
@@ -39566,8 +39566,8 @@
 			<output>mʈʂ {kts,ʈʂʰ} bɖʐ</output>
 		</rule>
 		<rule>
-			<input>ts dz rdz dʒ</input>
-			<output>{ʈʂ,ʒ} tsj rtsʰ ʈʂ</output>
+			<input>t͡s dz rdz d͡ʒ</input>
+			<output>{ʈʂ,ʒ} t͡sj rtsʰ ʈʂ</output>
 		</rule>
 		<rule>
 			<input>∅</input>
@@ -39651,7 +39651,7 @@
 		</rule>
 		<rule>
 			<input>k kr kj ɡ</input>
-			<output>k. k.r ts. ɡ</output>
+			<output>k. k.r t͡s. ɡ</output>
 		</rule>
 		<rule>
 			<input>ɡ ç</input>
@@ -39663,8 +39663,8 @@
 			<output>ʃ ʃn</output>
 		</rule>
 		<rule>
-			<input>ts dzl NTS</input>
-			<output>{tʃ.,j} tsl m</output>
+			<input>t͡s dzl NTS</input>
+			<output>{t͡ʃ.,j} t͡sl m</output>
 		</rule>
 		<rule>
 			<input>s</input>
@@ -39790,12 +39790,12 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_{i,ı̃}</env>
 		</rule>
 		<rule>
 			<input>tʰ</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -39815,7 +39815,7 @@
 		</rule>
 		<rule>
 			<input>r</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -39881,7 +39881,7 @@
 			University of Manitoba, Winnipeg</cite>
 		<rule>
 			<input>k kʷ</input>
-			<output>ts k</output>
+			<output>t͡s k</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -39932,7 +39932,7 @@
 			<output>i:[+ long]</output>
 		</rule>
 		<rule>
-			<input>tsn</input>
+			<input>t͡sn</input>
 			<output>hst</output>
 		</rule>
 		<rule>
@@ -39958,7 +39958,7 @@
 		<rule>
 			<input>j</input>
 			<output>∅</output>
-			<env>ts_</env>
+			<env>t͡s_</env>
 		</rule>
 		<rule>
 			<input>∅</input>
@@ -39971,13 +39971,13 @@
 			<env>#h_V</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 			<env>h_</env>
 		</rule>
 		<rule>
 			<input>ks</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_V</env>
 		</rule>
 		<rule>
@@ -39993,7 +39993,7 @@
 			<output>l</output>
 		</rule>
 		<rule>
-			<input>t ts k kʷ</input>
+			<input>t t͡s k kʷ</input>
 			<output>d dz ɡ ɡʷ</output>
 			<env>_V</env>
 		</rule>
@@ -40087,19 +40087,19 @@
 			<env>_k(ʷ)</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>hs</output>
 			<env>V_</env>
 			<exception>_{h,i,j,r}</exception>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 			<env>! _{h,i,j,r}</env>
 		</rule>
 		<rule>
 			<input>ns</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_k(ʷ)</env>
 		</rule>
 		<rule>
@@ -40117,7 +40117,7 @@
 		<rule>
 			<input>j</input>
 			<output>∅</output>
-			<env>ts_</env>
+			<env>t͡s_</env>
 		</rule>
 		<rule>
 			<input>h</input>
@@ -40206,7 +40206,7 @@
 		</rule>
 		<rule>
 			<input>ths</input>
-			<output>tsh</output>
+			<output>t͡sh</output>
 		</rule>
 		<rule>
 			<input>∅</input>
@@ -40223,7 +40223,7 @@
 			<env>h_r</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 			<env>_(h)r</env>
 		</rule>
@@ -40243,7 +40243,7 @@
 		<cite>cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”,
 			University of Manitoba, Winnipeg</cite>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>t</output>
 			<env>_(h)r</env>
 		</rule>
@@ -40258,8 +40258,8 @@
 			<env>_h “(odd syllables only)”</env>
 		</rule>
 		<rule>
-			<input>tʔ tsʔ kʔ kʷʔ</input>
-			<output>tʼ tsʼ kʼ kʷʼ</output>
+			<input>tʔ t͡sʔ kʔ kʷʔ</input>
+			<output>tʼ t͡sʼ kʼ kʷʼ</output>
 		</rule>
 		<comment>“Allophonic changes:”</comment>
 		<rule>
@@ -40280,15 +40280,15 @@
 		<rule>
 			<input>s</input>
 			<output>ʃ</output>
-			<env>! _{n,t,k(ʷ),w} “or when part of the affricate /ts/”</env>
+			<env>! _{n,t,k(ʷ),w} “or when part of the affricate /t͡s/”</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>ʃ</output>
 			<env>_r</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 			<env>! _{i,j}</env>
 		</rule>
@@ -40325,7 +40325,7 @@
 		<rule>
 			<input>k</input>
 			<output>h</output>
-			<env>_{t,ts,s,ʃ}</env>
+			<env>_{t,t͡s,s,ʃ}</env>
 		</rule>
 		<rule>
 			<input>k</input>
@@ -40350,7 +40350,7 @@
 		<rule>
 			<input>j</input>
 			<output>∅</output>
-			<env>ts_</env>
+			<env>t͡s_</env>
 		</rule>
 		<rule>
 			<input>j</input>
@@ -40434,7 +40434,7 @@
 		<rule>
 			<input>h</input>
 			<output>∅</output>
-			<env>{t,ts,s,k}_</env>
+			<env>{t,t͡s,s,k}_</env>
 		</rule>
 		<rule>
 			<input>Vh</input>
@@ -40511,22 +40511,22 @@
 		<rule>
 			<input>s</input>
 			<output>ʃ</output>
-			<env>! n_ “or when part of the unit affricate /ts/”</env>
+			<env>! n_ “or when part of the unit affricate /t͡s/”</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>hs</output>
 			<env>V_V</env>
 			<exception>_i</exception>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 			<env>! _{h,i,j}</env>
 		</rule>
 		<rule>
 			<input>ns</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_k(ʷ)</env>
 		</rule>
 		<rule>
@@ -40589,7 +40589,7 @@
 		</rule>
 		<rule>
 			<input>hts</input>
-			<output>tsh</output>
+			<output>t͡sh</output>
 			<env>C_V</env>
 		</rule>
 		<rule>
@@ -40644,7 +40644,7 @@
 		<rule>
 			<input>h</input>
 			<output>∅</output>
-			<env>_{k,t,ts,s}#</env>
+			<env>_{k,t,t͡s,s}#</env>
 		</rule>
 		<rule>
 			<input>k</input>
@@ -40657,8 +40657,8 @@
 		</rule>
 		<comment>“Allophonic changes:”</comment>
 		<rule>
-			<input>ts</input>
-			<output>tʃ</output>
+			<input>t͡s</input>
+			<output>t͡ʃ</output>
 			<env>_{(h)i,(h)j}</env>
 		</rule>
 		<rule>
@@ -40667,8 +40667,8 @@
 			<env>_{hi,hj}</env>
 		</rule>
 		<rule>
-			<input>t tʃ k(ʷ)</input>
-			<output>d dʒ ɡ(ʷ)</output>
+			<input>t t͡ʃ k(ʷ)</input>
+			<output>d d͡ʒ ɡ(ʷ)</output>
 			<env>_{V,R}</env>
 		</rule>
 	</section>
@@ -40680,18 +40680,18 @@
 			<output>ʌ̃(ː) ũ(ː)</output>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>hs</output>
 			<env>V_{t,k(ʷ)}</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 			<env>! _{h,i,j}</env>
 		</rule>
 		<rule>
 			<input>ns</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_{t,k(ʷ)}</env>
 		</rule>
 		<rule>
@@ -40750,7 +40750,7 @@
 		<rule>
 			<input>∅</input>
 			<output>e</output>
-			<env>{tsh,s,n}_r</env>
+			<env>{t͡sh,s,n}_r</env>
 		</rule>
 		<rule>
 			<input>w</input>
@@ -40819,11 +40819,11 @@
 		<rule>
 			<input>j</input>
 			<output>∅</output>
-			<env>ts_</env>
+			<env>t͡s_</env>
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_(h)j</env>
 		</rule>
 		<rule>
@@ -40832,13 +40832,13 @@
 		</rule>
 		<comment>“Allophonic changes:”</comment>
 		<rule>
-			<input>ts</input>
-			<output>tʃ</output>
+			<input>t͡s</input>
+			<output>t͡ʃ</output>
 			<env>_{(h)i,(h)j}</env>
 		</rule>
 		<rule>
-			<input>t tʃ k(ʷ)</input>
-			<output>d dʒ ɡ(ʷ)</output>
+			<input>t t͡ʃ k(ʷ)</input>
+			<output>d d͡ʒ ɡ(ʷ)</output>
 			<env>_{V,R}</env>
 		</rule>
 		<rule>
@@ -40877,7 +40877,7 @@
 		</rule>
 		<rule>
 			<input>ths</input>
-			<output>tsh</output>
+			<output>t͡sh</output>
 		</rule>
 		<rule>
 			<input>hs</input>
@@ -40892,7 +40892,7 @@
 		<rule>
 			<input>h</input>
 			<output>∅</output>
-			<env>k_{s,ts}</env>
+			<env>k_{s,t͡s}</env>
 		</rule>
 		<rule>
 			<input>h</input>
@@ -40902,12 +40902,12 @@
 		<rule>
 			<input>h</input>
 			<output>∅</output>
-			<env>{st,tst}_</env>
+			<env>{st,t͡st}_</env>
 		</rule>
 		<rule>
 			<input>h</input>
 			<output>∅</output>
-			<env>ts_r</env>
+			<env>t͡s_r</env>
 			<exception>“in pre-pausal forms, see also below”</exception>
 		</rule>
 		<rule>
@@ -40992,13 +40992,13 @@
 		</rule>
 		<comment>“Allophonic changes:”</comment>
 		<rule>
-			<input>ts</input>
-			<output>tʃ</output>
+			<input>t͡s</input>
+			<output>t͡ʃ</output>
 			<env>_{(h)i,(h)j}</env>
 		</rule>
 		<rule>
-			<input>t tʃ k(ʷ)</input>
-			<output>d dʒ ɡ(ʷ)</output>
+			<input>t t͡ʃ k(ʷ)</input>
+			<output>d d͡ʒ ɡ(ʷ)</output>
 			<env>_{V,R}</env>
 		</rule>
 		<rule>
@@ -41016,7 +41016,7 @@
 		<cite>cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”,
 			University of Manitoba, Winnipeg</cite>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 			<env>! _{i,j}</env>
 		</rule>
@@ -41028,7 +41028,7 @@
 		<rule>
 			<input>j</input>
 			<output>∅</output>
-			<env>_ts</env>
+			<env>_t͡s</env>
 		</rule>
 		<rule>
 			<input>V</input>
@@ -41205,7 +41205,7 @@
 		</rule>
 		<rule>
 			<input>{ths,tts}</input>
-			<output>tsh</output>
+			<output>t͡sh</output>
 		</rule>
 		<rule>
 			<input>{ a, a:[+ long] } æ(ː)</input>
@@ -41252,18 +41252,18 @@
 		<cite>cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”,
 			University of Manitoba, Winnipeg</cite>
 		<rule>
-			<input>ts</input>
-			<output>tʃ</output>
+			<input>t͡s</input>
+			<output>t͡ʃ</output>
 			<env>_{h,i,j}</env>
 		</rule>
 		<rule>
 			<input>ths</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>j</input>
 			<output>∅</output>
-			<env>tʃ_</env>
+			<env>t͡ʃ_</env>
 		</rule>
 		<rule>
 			<input>t</input>
@@ -41294,7 +41294,7 @@
 			<output>ə̃(ː)</output>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>θ</output>
 		</rule>
 		<rule>
@@ -41339,7 +41339,7 @@
 		<rule>
 			<input>h</input>
 			<output>∅</output>
-			<env>k_{s,ts,tʃ}</env>
+			<env>k_{s,t͡s,t͡ʃ}</env>
 		</rule>
 		<rule>
 			<input>h</input>
@@ -41582,7 +41582,7 @@
 			<output>∅</output>
 			<env>_k, when medial</env>
 		</rule>
-		<rule>hk &gt;tʃ</rule>
+		<rule>hk &gt;t͡ʃ</rule>
 		<rule>
 			<input>k</input>
 			<output>∅</output>
@@ -41752,12 +41752,12 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_”E</env>
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>_E:[-stress]</env>
 		</rule>
 		<rule>
@@ -41838,7 +41838,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_ʔ</env>
 		</rule>
 		<rule>
@@ -41912,7 +41912,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>{tʃ,dʒ}</output>
+			<output>{t͡ʃ,d͡ʒ}</output>
 		</rule>
 		<comment>Wolff says that “Winnebago preserved the intermediate stages of *k reflexes”</comment>
 		<rule>
@@ -41944,7 +41944,7 @@
 		</rule>
 		<rule>
 			<input>tk</input>
-			<output>{tʃk,tʃɡ}</output>
+			<output>{t͡ʃk,t͡ʃɡ}</output>
 			<env>#_</env>
 		</rule>
 		<rule>
@@ -41968,7 +41968,7 @@
 			either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/.</comment>
 		<rule>
 			<input>s ç {tʲ,x}</input>
-			<output>ts x ʃ</output>
+			<output>t͡s x ʃ</output>
 		</rule>
 		<rule>
 			<input>m</input>
@@ -42012,7 +42012,7 @@
 		</rule>
 		<rule>
 			<input>k</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -42032,7 +42032,7 @@
 		</rule>
 		<rule>
 			<input>sk</input>
-			<output>tsk</output>
+			<output>t͡sk</output>
 			<env>_”V</env>
 		</rule>
 		<rule>
@@ -42074,7 +42074,7 @@
 		</rule>
 		<rule>
 			<input>sn</input>
-			<output>tsV₀rV₀</output>
+			<output>t͡sV₀rV₀</output>
 		</rule>
 		<rule>
 			<input>km</input>
@@ -42082,12 +42082,12 @@
 		</rule>
 		<rule>
 			<input>sk</input>
-			<output>tsuk</output>
+			<output>t͡suk</output>
 			<env>_”u</env>
 		</rule>
 		<rule>
 			<input>sk kx</input>
-			<output>tsk hk</output>
+			<output>t͡sk hk</output>
 			<env>_”V</env>
 		</rule>
 		<rule>
@@ -42215,7 +42215,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_ʔ</env>
 		</rule>
 		<rule>
@@ -42316,7 +42316,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_E</env>
 		</rule>
 		<rule>
@@ -42349,7 +42349,7 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_ʔ</env>
 		</rule>
 		<rule>
@@ -42460,7 +42460,7 @@
 		</rule>
 		<rule>
 			<input>tʲ Lʲ</input>
-			<output>tʃ j</output>
+			<output>t͡ʃ j</output>
 		</rule>
 		<rule>
 			<input>m</input>
@@ -42572,7 +42572,7 @@
 		</rule>
 		<rule>
 			<input>L j</input>
-			<output>t tʃ</output>
+			<output>t t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>ã</input>
@@ -42865,7 +42865,7 @@
 		</rule>
 		<rule>
 			<input>kl kr</input>
-			<output>{kj,tʃ} kʰj</output>
+			<output>{kj,t͡ʃ} kʰj</output>
 		</rule>
 		<rule>
 			<input>{l,r}</input>
@@ -42916,8 +42916,8 @@
 			<output>pʰj</output>
 		</rule>
 		<rule>
-			<input>{r,s,z} tʃʰ dʒ</input>
-			<output>ɬ ʃ tʃ</output>
+			<input>{r,s,z} t͡ʃʰ d͡ʒ</input>
+			<output>ɬ ʃ t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>ɲ</input>
@@ -43071,8 +43071,8 @@
 			<output>pʰj</output>
 		</rule>
 		<rule>
-			<input>tʃ tʃʰ dʒ</input>
-			<output>ʃ tsʰ {ʃ,tʃ}</output>
+			<input>t͡ʃ t͡ʃʰ d͡ʒ</input>
+			<output>ʃ t͡sʰ {ʃ,t͡ʃ}</output>
 		</rule>
 	</section>
 	<section index="38.1.1.3.3" name="Central Tai to Tay">
@@ -43091,8 +43091,8 @@
 			<output>{x,tʰ}</output>
 		</rule>
 		<rule>
-			<input>tʃ dʒ</input>
-			<output>{x,t} tʃ</output>
+			<input>t͡ʃ d͡ʒ</input>
+			<output>{x,t} t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>(ʔ)j</input>
@@ -43120,8 +43120,8 @@
 			<output>{r,s}</output>
 		</rule>
 		<rule>
-			<input>dʒ</input>
-			<output>tʃ</output>
+			<input>d͡ʒ</input>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>(ʔ)j</input>
@@ -43148,8 +43148,8 @@
 			<output>t</output>
 		</rule>
 		<rule>
-			<input>dʒ</input>
-			<output>tʃ</output>
+			<input>d͡ʒ</input>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>ɣ</input>
@@ -43170,11 +43170,11 @@
 			Linguistics Special Publications (15), i – 389</cite>
 		<rule>
 			<input>{kʰ,ɡ}{l,r}</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>k{l,r}</input>
-			<output>{kj,tʃ}</output>
+			<output>{kj,t͡ʃ}</output>
 		</rule>
 		<rule>
 			<input>l</input>
@@ -43221,7 +43221,7 @@
 			<output>v</output>
 		</rule>
 		<rule>
-			<input>{tʃ(ʰ),dʒ}</input>
+			<input>{t͡ʃ(ʰ),d͡ʒ}</input>
 			<output>ʃ</output>
 		</rule>
 		<rule>
@@ -43296,7 +43296,7 @@
 			Linguistics Special Publications (15), i – 389</cite>
 		<rule>
 			<input>k</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_E</env>
 		</rule>
 		<rule>
@@ -43317,7 +43317,7 @@
 		</rule>
 		<rule>
 			<input>TŠ</input>
-			<output>TS</output>
+			<output>t͡s</output>
 		</rule>
 	</section>
 	<section index="38.1.1.4.2" name="North Tai to Po-Ai">
@@ -43325,7 +43325,7 @@
 			Linguistics Special Publications (15), i – 389</cite>
 		<rule>
 			<input>k</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_E</env>
 		</rule>
 		<rule>
@@ -43641,7 +43641,7 @@
 			<output>h</output>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>s</output>
 		</rule>
 		<rule>
@@ -43678,7 +43678,7 @@
 			<output>h</output>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>s</output>
 		</rule>
 		<rule>
@@ -43737,11 +43737,11 @@
 			<output>h</output>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>sʲ</output>
 		</rule>
 		<rule>
-			<input>dʒ</input>
+			<input>d͡ʒ</input>
 			<output>s</output>
 		</rule>
 		<rule>
@@ -43887,7 +43887,7 @@
 		</rule>
 		<rule>
 			<input>ɡ ɡl</input>
-			<output>k tʃ</output>
+			<output>k t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>xʷ ɣʷ</input>
@@ -43911,7 +43911,7 @@
 		</rule>
 		<rule>
 			<input>{kʰ,ɣ} ɡ ɡ{l,r}</input>
-			<output>x k tʃ</output>
+			<output>x k t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>kʷʰ ɣʷ</input>
@@ -43951,11 +43951,11 @@
 			<output>ɸ ɱ</output>
 		</rule>
 		<rule>
-			<input>ts dz</input>
+			<input>t͡s dz</input>
 			<output>s z</output>
 		</rule>
 		<rule>
-			<input>{tʰ,tsʰ}</input>
+			<input>{tʰ,t͡sʰ}</input>
 			<output>ʃ</output>
 		</rule>
 		<rule>
@@ -43963,7 +43963,7 @@
 			<output>c</output>
 		</rule>
 		<rule>
-			<input>tsʼ</input>
+			<input>t͡sʼ</input>
 			<output>tʼ</output>
 		</rule>
 		<rule>
@@ -43986,7 +43986,7 @@
 			<output>∅</output>
 		</rule>
 		<rule>
-			<input>ts tsʰ tsʼ dz</input>
+			<input>t͡s t͡sʰ t͡sʼ dz</input>
 			<output>t tʰ tʼ d</output>
 		</rule>
 		<rule>
@@ -44012,8 +44012,8 @@
 			<output>ɬ</output>
 		</rule>
 		<rule>
-			<input>ts tsʰ tsʼ dz</input>
-			<output>tʃ s tʃʼ j</output>
+			<input>t͡s t͡sʰ t͡sʼ dz</input>
+			<output>t͡ʃ s t͡ʃʼ j</output>
 		</rule>
 		<rule>
 			<input>d</input>
@@ -44036,7 +44036,7 @@
 			citing Hale, Kenneth (1967), “Toward a Reconstruction of Kiowa-Tanoan Phonology”.
 			International Journal of American Linguistics, 33.2:112 – 120</cite>
 		<rule>
-			<input>pʰ tʰ tsʰ</input>
+			<input>pʰ tʰ t͡sʰ</input>
 			<output>f θ s</output>
 		</rule>
 		<rule>
@@ -44045,7 +44045,7 @@
 		</rule>
 		<rule>
 			<input>dz</input>
-			<output>{j,dʒ}</output>
+			<output>{j,d͡ʒ}</output>
 		</rule>
 		<rule>
 			<input>kʰ kʷʰ ɡʷ</input>
@@ -44066,8 +44066,8 @@
 			<output>ʔ</output>
 		</rule>
 		<rule>
-			<input>nʲ tʲ tʃ kʲ</input>
-			<output>n t s ts k</output>
+			<input>nʲ tʲ t͡ʃ kʲ</input>
+			<output>n t s t͡s k</output>
 		</rule>
 		<rule>
 			<input>x {ɬ,tɬ}</input>
@@ -44092,7 +44092,7 @@
 		</rule>
 		<rule>
 			<input>nʲ tʲ kʲ k</input>
-			<output>l tʃ k q</output>
+			<output>l t͡ʃ k q</output>
 		</rule>
 		<rule>
 			<input>h</input>
@@ -44753,7 +44753,7 @@
 		<rule>
 			<input>m</input>
 			<output>n</output>
-			<env>_{t,tsʲ,#}</env>
+			<env>_{t,t͡sʲ,#}</env>
 		</rule>
 		<rule>
 			<input>ɤ(ː?) ɑ:[+ long] æ:[+ long]</input>
@@ -44943,12 +44943,12 @@
 			<env>_C</env>
 		</rule>
 		<rule>
-			<input>tʃ tsʲ</input>
+			<input>t͡ʃ t͡sʲ</input>
 			<output>ʃ sʲ</output>
 			<env>#_</env>
 		</rule>
 		<rule>
-			<input>ðʲ sʲ tsʲ(ː) lʲ</input>
+			<input>ðʲ sʲ t͡sʲ(ː) lʲ</input>
 			<output>ð s t{ s, s:[+ long] } l</output>
 		</rule>
 		<rule>
@@ -44982,8 +44982,8 @@
 			<output>t</output>
 		</rule>
 		<rule>
-			<input>tʃ</input>
-			<output>ts</output>
+			<input>t͡ʃ</input>
+			<output>t͡s</output>
 			<env>_k, in South Estonian</env>
 		</rule>
 		<rule sporadic="true">
@@ -44992,18 +44992,18 @@
 			<env>in Pre-Livonian</env>
 		</rule>
 		<rule>
-			<input>tʃ tʃ:[+ long]</input>
-			<output>t tʃ</output>
+			<input>t͡ʃ t͡ʃ:[+ long]</input>
+			<output>t t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>_i</env>
 			<exception>following a coronal obstruent or “before a derivational suffix”</exception>
 		</rule>
 		<rule>
 			<input>tj</input>
-			<output>ts</output>
+			<output>t͡s</output>
 			<env>! following a coronal obstruent or “before a derivational suffix”</env>
 		</rule>
 		<rule>
@@ -45022,7 +45022,7 @@
 		<rule>
 			<input>n</input>
 			<output>∅</output>
-			<env>_{s,ts}</env>
+			<env>_{s,t͡s}</env>
 		</rule>
 		<rule>
 			<input>w</input>
@@ -45052,11 +45052,11 @@
 			<env>C:[+coronal]_%</env>
 		</rule>
 		<rule>
-			<input>p:[+ long] t:[+ long] ts:[+ long] k:[+ long]</input>
-			<output>pˑ tˑ tsˑ kˑ</output>
+			<input>p:[+ long] t:[+ long] t͡s:[+ long] k:[+ long]</input>
+			<output>pˑ tˑ t͡sˑ kˑ</output>
 		</rule>
 		<rule>
-			<input>p t ts s k</input>
+			<input>p t t͡s s k</input>
 			<output>b d s z ɡ</output>
 		</rule>
 		<rule>
@@ -45130,7 +45130,7 @@
 			<env>_#</env>
 		</rule>
 		<rule>
-			<input>ts tsˑ ts:[+ long]</input>
+			<input>t͡s t͡sˑ t͡s:[+ long]</input>
 			<output>s θˑ θ:[+ long]</output>
 		</rule>
 		<rule>
@@ -45355,7 +45355,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>θ(ː) ð</input>
-			<output>ts d</output>
+			<output>t͡s d</output>
 		</rule>
 	</section>
 	<section index="42.1.1.1.2" name="Standard Finnish to Modern Standard Finnish">
@@ -45394,12 +45394,12 @@
 			(2007), “The primary laryngeal in Uralic and beyond”. Mémoires de la Société
 			Finno-Ougrienne 253. &lt;http://www.sgr.fi/sust/sust253/sust253_janhunen.pdf&gt;</cite>
 		<rule>
-			<input>t ts s(C) n l r</input>
-			<output>tʲ tsʲ sʲ(C) nʲ lʲ rʲ</output>
+			<input>t t͡s s(C) n l r</input>
+			<output>tʲ t͡sʲ sʲ(C) nʲ lʲ rʲ</output>
 			<env>_i</env>
 		</rule>
 		<rule>
-			<input>ts(ʲ)</input>
+			<input>t͡s(ʲ)</input>
 			<output>s(ʲ)</output>
 			<env>! n_</env>
 		</rule>
@@ -45515,8 +45515,8 @@
 			<output>ʔ</output>
 		</rule>
 		<rule>
-			<input>sʲ tsʲ zʲ dzʲ</input>
-			<output>ʃʲ tʃʲ ʒʲ dʒʲ</output>
+			<input>sʲ t͡sʲ zʲ dzʲ</input>
+			<output>ʃʲ t͡ʃʲ ʒʲ d͡ʒʲ</output>
 		</rule>
 		<rule>
 			<input>æy ey</input>
@@ -45572,7 +45572,7 @@
 			Hale (1962), “Typological and Comparative Grammar of Uto-Aztecan: I (Phonology)”.
 			International Journal of American Linguistics 28: Memoir 17</cite>
 		<rule>
-			<input>p t ts s</input>
+			<input>p t t͡s s</input>
 			<output>v r ∅ h</output>
 		</rule>
 		<rule>
@@ -45654,8 +45654,8 @@
 			<env>medially</env>
 		</rule>
 		<rule>
-			<input>ts</input>
-			<output>tʃ</output>
+			<input>t͡s</input>
+			<output>t͡ʃ</output>
 		</rule>
 		<rule>
 			<input>k</input>
@@ -45711,8 +45711,8 @@
 			<env>{#,Vs}_</env>
 		</rule>
 		<rule>
-			<input>s ts</input>
-			<output>ʃ tʃ</output>
+			<input>s t͡s</input>
+			<output>ʃ t͡ʃ</output>
 			<env>_i</env>
 		</rule>
 		<rule>
@@ -45755,7 +45755,7 @@
 			<env>V_V</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>z</output>
 			<env>V_V</env>
 		</rule>
@@ -45767,7 +45767,7 @@
 		<rule>
 			<input>h</input>
 			<output>∅</output>
-			<env>V_tsV</env>
+			<env>V_t͡sV</env>
 		</rule>
 		<rule>
 			<input>h</input>
@@ -45847,11 +45847,11 @@
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_V:[+high]</env>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>s</output>
 			<env>_i</env>
 		</rule>
@@ -45894,7 +45894,7 @@
 		</rule>
 		<rule>
 			<input>j</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>_V:[+high]</env>
 		</rule>
 		<rule>
@@ -45911,7 +45911,7 @@
 		<rule>
 			<input>i</input>
 			<output>∅</output>
-			<env>ts_#</env>
+			<env>t͡s_#</env>
 		</rule>
 		<rule>
 			<input>l</input>
@@ -45955,7 +45955,7 @@
 			<output>ʃ</output>
 			<env>i_#</env>
 		</rule>
-		<comment>ts may become ʃs or s:[+ long]? The written forms are 〈xs〉 and 〈ss〉</comment>
+		<comment>t͡s may become ʃs or s:[+ long]? The written forms are 〈xs〉 and 〈ss〉</comment>
 		<rule>
 			<input>S:[+ fortis]</input>
 			<output>S:[- voice]ː</output>
@@ -46027,9 +46027,9 @@
 			unstressed</comment>
 		<comment>lenis (voiced) &gt; fricative / {l,r,s̺,s̻,V}_{l,r,s̺,s̻,V}</comment>
 		<comment>— At least one reconstruction seems to indicate *s and *ś, which may have been an
-			affricate and /s/. Pretty reliably, *-s tends to turn into -ts̺, and *-ś &gt; -ts̻,
-			probably after the below-mentioned affrication. Beyond that, it’s messy. *-tso seems to
-			have become -tʃo/-tʃu, though.</comment>
+			affricate and /s/. Pretty reliably, *-s tends to turn into -t͡s̺, and *-ś &gt; -t͡s̻,
+			probably after the below-mentioned affrication. Beyond that, it’s messy. *-t͡so seems to
+			have become -t͡ʃo/-t͡ʃu, though.</comment>
 		<rule>
 			<input>Sʰ</input>
 			<output>F</output>
@@ -46178,7 +46178,7 @@
 		<rule sporadic="true">
 			<input>u ũ</input>
 			<output>y ỹ</output>
-			<env>_{s̻,ts̺,ts̻} (but not _s̺)</env>
+			<env>_{s̻,t͡s̺,t͡s̻} (but not _s̺)</env>
 		</rule>
 		<rule sporadic="true">
 			<input>õ</input>
@@ -46322,8 +46322,8 @@
 			<env>{i,j}_</env>
 		</rule>
 		<rule sporadic="true">
-			<input>s̻ ts̻</input>
-			<output>ʃ tʃ</output>
+			<input>s̻ t͡s̻</input>
+			<output>ʃ t͡ʃ</output>
 			<env>{E,j}_</env>
 		</rule>
 		<rule sporadic="true">
@@ -46333,7 +46333,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>t</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>{E,j}_</env>
 		</rule>
 		<rule sporadic="true">
@@ -46353,7 +46353,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>ɡ</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 			<env>{E,j}_</env>
 		</rule>
 		<rule>
@@ -46394,7 +46394,7 @@
 		</rule>
 		<rule sporadic="true">
 			<input>ʒ</input>
-			<output>dʒ</output>
+			<output>d͡ʒ</output>
 		</rule>
 		<rule>
 			<input>j</input>
@@ -46551,8 +46551,8 @@
 			<env>_#</env>
 		</rule>
 		<rule sporadic="true">
-			<input>s̻ ts̺</input>
-			<output>s̺ ts̻</output>
+			<input>s̻ t͡s̺</input>
+			<output>s̺ t͡s̻</output>
 		</rule>
 		<rule sporadic="true">
 			<input>s̻</input>
@@ -46560,11 +46560,11 @@
 			<env>_{C,#}</env>
 		</rule>
 		<comment>From the Wikipedia article on Biscayan: “Convergence of sibilants: z, x and s &gt;
-			x, s and tz, tx and ts &gt; tz.” I’m not sure what this means. 〈s z〉 are apparently s̻
+			x, s and tz, tx and t͡s &gt; tz.” I’m not sure what this means. 〈s z〉 are apparently s̻
 			s̺, and 〈x〉 is ʃ.</comment>
 		<rule sporadic="true">
 			<input>its̺</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>_#</env>
 		</rule>
 		<rule>
@@ -46575,7 +46575,7 @@
 		<comment>Beterri Guipuscoan has VjV# where Biscayan has VɲV# and regular Basque has VV#</comment>
 		<rule sporadic="true">
 			<input>s̺</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>#_</env>
 		</rule>
 		<rule sporadic="true">
@@ -46589,22 +46589,22 @@
 		<cite>Pogostick Man, from Wares, Alan C. (1954?), “Three Pai Dialects of Lower California”.
 			Summer Institute of Linguistics Bartholomew Collection of Unpublished Materials</cite>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>ʃ</output>
 			<env>_{w,i}</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>∅</output>
 			<env>_xʷ</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>s</output>
 		</rule>
 		<rule>
 			<input>t</input>
-			<output>tʃ</output>
+			<output>t͡ʃ</output>
 			<env>! n_</env>
 		</rule>
 		<rule>
@@ -46649,7 +46649,7 @@
 		<rule>
 			<input>xʷ</input>
 			<output>w</output>
-			<env>tʃ_</env>
+			<env>t͡ʃ_</env>
 		</rule>
 		<rule>
 			<input>kʷ xʷ</input>
@@ -46708,7 +46708,7 @@
 			<env>n_</env>
 		</rule>
 		<rule>
-			<input>tʃ</input>
+			<input>t͡ʃ</input>
 			<output>∅</output>
 			<env>_xʷ</env>
 		</rule>
@@ -47338,7 +47338,7 @@
 			<output>kʲ</output>
 		</rule>
 		<rule>
-			<input>ts</input>
+			<input>t͡s</input>
 			<output>t</output>
 		</rule>
 		<rule>
@@ -47431,9 +47431,9 @@
 	<section index="47.3" name="List 3: Vowels">
 		<rule sporadic="true">
 			<input>y</input>
-			<output>u ;; (some mainland Greek dialects, and Tsakonian; this particular sound change
+			<output>u ;; (some mainland Greek dialects, and t͡sakonian; this particular sound change
 				has been said in some places to be impossible)
-				(https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)</output>
+				(https://en.wikipedia.org/wiki/t͡sakonian_language#Consonants)</output>
 		</rule>
 		<rule>
 			<input>i u</input>

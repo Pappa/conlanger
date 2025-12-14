@@ -1,11 +1,11 @@
 rule,returncode,error
 6.1.rsca,0,
-6.1.1.rsca,1,"Syntax Error: Expected ',', but received 'ʒ'     |     a > o / #{z,dʒ}_P     |                  ^     @ Rule 2, Line 12"
-6.1.1.1.rsca,1,"Syntax Error: Segment does not have prerequisite properties to have this diacritic. Must be [-voice]     |     dʼ > tʼ     |     ^^     @ Rule 2, Line 6"
+6.1.1.rsca,1,"Syntax Error: Expected ',', but received '('     |     e o > i u / #{k(ʼ),x}_{t(ʼ),t͡sʼ}     |                    ^     @ Rule 2, Line 9"
+6.1.1.1.rsca,1,"Syntax Error: Expected ',', but received 'x'     |     {ʔ,hx} > ∅     |         ^     @ Rule 2, Line 3"
 6.1.1.2.rsca,1,"Syntax Error: Segment does not have prerequisite properties to have this diacritic. Must be [-voice]     |     dʼ > tʼ     |     ^^     @ Rule 5, Line 1"
-6.1.1.3.rsca,1,"Syntax Error: Expected ',', but received 's'     |     {ts,ʒ} > tʃ / V_     |       ^     @ Rule 3, Line 1"
-6.1.1.4.rsca,1,"Syntax Error: Unknown character ₁ at '1:4:1'.     |     x₁ > k     |      ^     @ Rule 2, Line 5"
+6.1.1.3.rsca,1,"Syntax Error: Segment does not have prerequisite properties to have this diacritic. Must be [-voice]     |     dʼ > tʼ     |     ^^     @ Rule 4, Line 6"
+6.1.1.4.rsca,1,"Syntax Error: Unknown character ₂ at '1:6:1'.     |     x₂ > ɡ / V_V     |      ^     @ Rule 2, Line 7"
 6.1.1.5.rsca,1,"Syntax Error: Segment does not have prerequisite properties to have this diacritic. Must be [-voice]     |     dʼ > tʼ     |     ^^     @ Rule 4, Line 3"
-6.1.1.6.rsca,1,"Syntax Error: Unknown character ₁ at '1:2:1'.     |     x₁ > k     |      ^     @ Rule 2, Line 3"
-6.1.1.7.rsca,1,"Syntax Error: Unknown character ₁ at '1:4:1'.     |     x₁ > k     |      ^     @ Rule 2, Line 5"
-6.1.1.8.rsca,1,"Syntax Error: Expected ',', but received 'ʃ'     |     tsʼ > {tʃʼ,s}     |             ^     @ Rule 3, Line 1"
+6.1.1.6.rsca,1,"Syntax Error: Segment does not have prerequisite properties to have this diacritic. Must be [-voice]     |     dʼ > tʼ / #_     |     ^^     @ Rule 3, Line 3"
+6.1.1.7.rsca,1,"Syntax Error: Unknown character ₂ at '1:5:1'.     |     x₂ > k / #_     |      ^     @ Rule 2, Line 6"
+6.1.1.8.rsca,1,"Syntax Error: Unknown character ₁ at '1:4:1'.     |     x₁ > k     |      ^     @ Rule 2, Line 5"

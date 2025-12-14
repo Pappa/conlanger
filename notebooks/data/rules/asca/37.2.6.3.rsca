@@ -8,14 +8,14 @@
 	# NB: Does not include developments in unstressed non-nasal vowels. L was apparently
 	# 			either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/.
 	p > {p,b,m,w} / _C
-	t > ts / _E
+	t > t͡s / _E
 	s > θ
 	{ç,x} > z
 	n > ð / _{ã,ẽ,õ}
 	w > b / #_
 	Lʲ > ð / _V:[+nas -stress]
 	ʔ > ∅ / p_
-	t > ts / _ʔ
+	t > t͡s / _ʔ
 	pr sr tʲr kr > bð sts ʃd ɡð
 	r > ð / x_
 	m > ∅ / #_n

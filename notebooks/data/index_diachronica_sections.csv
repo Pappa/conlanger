@@ -169,7 +169,7 @@ index,name,rule_count
 10.6.3,Proto-Paiwan to Southern Paiwan,1
 10.7,Proto-Austronesian to Proto-Rukai,3
 10.7.1,Proto-Rukai to Budai Rukai,1
-10.8,Proto-Austronesian to Proto-Tsouic,1
+10.8,Proto-Austronesian to Proto-t͡souic,1
 11,Northeast Caucasian,0
 11.1,Proto-Northeast Caucasian to Proto-Avar-Andic,2
 11.1.1,Proto-Avar-Andic to Akhvakh,6
@@ -186,9 +186,9 @@ index,name,rule_count
 11.5.5,Proto-Lezgic to Tabassaran,7
 11.5.6,Proto-Lezgic to Udi,7
 11.6,Proto-Northeast Caucasian to Nakh,9
-11.7,Proto-Northeast Caucasian to Proto-Tsezic,7
-11.7.1,Proto-Tsezic to Bezhta,0
-11.7.2,Proto-Tsezic to Tsez,6
+11.7,Proto-Northeast Caucasian to Proto-t͡sezic,7
+11.7.1,Proto-t͡sezic to Bezhta,0
+11.7.2,Proto-t͡sezic to t͡sez,6
 12,Northwest Caucasian,0
 12.1,Proto-Northwest Caucasian to Proto-Abazgi,44
 12.1.1,Proto-Abazgi to Ashkharywa Abaza,5
@@ -196,9 +196,9 @@ index,name,rule_count
 12.1.3,Proto-Abazgi to Ahchypsy Abkhaz,5
 12.1.4,Proto-Abazgi to Bzyp Abkhaz,4
 12.1.5,Proto-Abazgi to Abzhywa Proper,5
-12.1.6,Proto-Abazgi to Tsabal Abzhywa,5
+12.1.6,Proto-Abazgi to t͡sabal Abzhywa,5
 12.1.7,Proto-Abazgi to Khaltsys Sadz,5
-12.1.8,Proto-Abazgi to Tswydzhy Sadz,5
+12.1.8,Proto-Abazgi to t͡swydzhy Sadz,5
 12.2,Proto-Northwest Caucasian to Proto-Circassian,41
 12.2.1,Proto-Circassian to Adyghe,11
 12.2.1.1,Adyghe to Abadzekh Adyghe,8
@@ -379,7 +379,7 @@ index,name,rule_count
 20.1.6,Proto-Khoe to Naro,3
 20.1.7,Proto-Khoe to !Ora,5
 20.1.8,Proto-Khoe to Teti,7
-20.1.9,Proto-Khoe to TsÊixa,7
+20.1.9,Proto-Khoe to t͡sÊixa,7
 20.1.10,Proto-Khoe to Ç̬Ui,5
 20.2,Kx’a,0
 20.2.1,Proto-Kx’a to ÇHoan,10
@@ -524,7 +524,7 @@ index,name,rule_count
 29.1.1.1.37,Proto-Athabaskan to Tanacross,10
 29.1.1.1.38,Proto-Athabaskan to Lower Tanana,5
 29.1.1.1.39,Proto-Athabaskan to Upper Tanana,11
-29.1.1.1.40,Proto-Athabaskan to Tsetsaut,4
+29.1.1.1.40,Proto-Athabaskan to t͡setsaut,4
 29.1.1.1.41,Proto-Athabaskan to Northern Tutchone,5
 29.1.1.1.42,Proto-Athabaskan to Southern Tutchone,7
 29.1.2,Proto-Athabaskan-Eyak to Eyak,7
@@ -533,7 +533,7 @@ index,name,rule_count
 30.1,Proto-Potou-Akanic-Bantu to Proto-Bantu,14
 30.1.1,Pre-Proto-Bantu to Proto-Bantu,3
 30.1.1.1,Proto-Bantu to Sebirwa,10
-30.1.1.2,Proto-Bantu to Tswana,8
+30.1.1.2,Proto-Bantu to t͡swana,8
 30.1.1.3,Sam,0
 30.1.1.3.1,Proto-Sam to Amu,2
 30.1.1.3.2,Proto-Sam to Bajuni,2
@@ -653,7 +653,7 @@ index,name,rule_count
 36.3.2.2.3,Proto-rGyalrongic to Pati,6
 36.3.2.2.4,Proto-rGyalrongic to Suo Mo,21
 36.3.2.2.5,Proto-rGyalrongic to Trung,9
-36.3.2.2.6,Proto-rGyalrongic to Tsa Ku Nao,26
+36.3.2.2.6,Proto-rGyalrongic to t͡sa Ku Nao,26
 36.3.2.2.7,Proto-rGyalrongic to Tzu Ta,28
 36.3.2.2.8,Proto-rGyalrongic to Wassu,19
 36.3.3,Tibetic,0
