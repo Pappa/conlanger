@@ -20,7 +20,7 @@
 	{e:[+ long],i,oe} > é
 	i:[+ long] o:[+ long] > i ó
 	o > ò
-	u > ó / !_i:[+ long]
+	u > ó // _i:[+ long]
 	u:[+ long] > u
 	# Initial vowels (first vowel of a word):
 	a:[+ long] > a

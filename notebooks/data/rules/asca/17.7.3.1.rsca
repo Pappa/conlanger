@@ -8,7 +8,7 @@
 	E:[+ long]B:[+ long] E:[+ long]a:[+ long] > jo:[+ long] ja:[+ long] / {v,w}_
 	B:[+ long]B a:[+ long]{o,a,æ,e} {æ,e}ː{æ,e}ː {æ,e}ːi i:[+ long]E:[+ long] > o:[+ long] a:[+ long] e:[+ long] e:[+ long] i:[+ long]
 	e > i / #(C)(C)(C)_(C)(C)(C){i,j}
-	e > ja / ! {{h,k,ŋ}n,w,v,l,r}_, _{u,o,i}
+	e > ja // {{h,k,ŋ}n,w,v,l,r}_, _{u,o,i}
 	a(i) {e,w{æ,i}} {we,ei} (w)ɪ > ey ø y ʏ / w_ // hw_
 	a > ∅ / C(C)_{ʀ,s,t,θ}#
 	VN > Ṽ / _# // in #U
@@ -20,7 +20,7 @@
 	ʀn > n:[+ long]
 	w > ∅ / C_o
 	a > ∅ / CC_U#
-	a > u / %u / ! in #U
+	a > u / %u // in #U
 	wa:[+ long] na:[+ long] > o:[+ long] no:[+ long] / %u in #U
 	{ a, a:[+ long] } ae > { o, o:[+ long] } ɒø / #(C)(C)(C)_(C)(C)(C)u
 	a > ∅ / _U#
@@ -37,7 +37,7 @@
 	ɒ:[+ long]h{u,a} a:[+ long]h{u,a} > ɒ:[+ long] a:[+ long]
 	{B,E} > ∅ / _U# // B = ɒ
 	u > o / _m#
-	V:[+ long] > V:[- long] / ! in #U
+	V:[+ long] > V:[- long] // in #U
 	{u,we,wi} {o,ɒ} a au ju:[+ long] > y ø æ æy y:[+ long] / _(C)(C)(C)i
 	wa we wi > ɒ:[+ long] ø:[+ long] y:[+ long] / #P_
 	w > ∅ / #P_V:[+ long]
@@ -114,7 +114,7 @@
 	θ f > ð v / {V,C:[+ voice]}_{V,C:[+ voice]}
 	h > ∅ / C_t
 	ht > t:[+ long]
-	hw > ∅ / ! #_
+	hw > ∅ // #_
 	F:[- voice] > ∅ / {s,f,x,h,t}_{p,t,k}
 	n:[+ long] > ð / _{r,ʀ}
 	wo:[+ long] wø:[+ long] jæ:[+ long] V:[+ long] > wo wøje V:[- long] / _%
@@ -139,7 +139,7 @@
 	ɡ > ∅ / #_n
 	r > ∅ / {p,t,k}_Vr
 	r:[+ long] l:[+ long] > r l / {p,t,k,f,s}_
-	o {æ,e} > u i / ! in #U
+	o {æ,e} > u i // in #U
 	o > u / V_
 	a > e / _i
 	ɪʊ > y:[+ long]

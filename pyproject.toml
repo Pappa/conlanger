@@ -18,7 +18,6 @@ dependencies = [
     "scikit-learn",
     "tqdm",
     "imbalanced-learn",
-    "strip-ansi"
 ]
 
 [project.optional-dependencies]
@@ -45,3 +44,9 @@ omit = ["src/conlanger/models/*"]
 fail_under = 95
 skip_empty = true
 exclude_also = ["def display_rows\\("]
+
+[dependency-groups]
+dev = [
+    "lxml>=6.0.2",
+    "strip-ansi>=0.1.1",
+]

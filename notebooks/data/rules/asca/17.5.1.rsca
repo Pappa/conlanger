@@ -2,7 +2,7 @@
 # citation: dhokarena56
 	[+ cons, - fr, + bk, + hi, - lo]ʷ > [+ cons, - fr, + bk, + hi, - lo]
 	Cʱ > C
-	e:[+ long] > i:[+ long] / ! _{i,u}
+	e:[+ long] > i:[+ long] // _{i,u}
 	t:[+ long] > s:[+ long]
 	p > f / {V,#}_
 	f > x / _O

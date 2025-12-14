@@ -88,7 +88,7 @@
 		<rule>
 			<input>e</input>
 			<output>i</output>
-			<env>#{s,ʃ,t͡sʼ}_{k(w),ʔ}</env>
+			<env>#{s,ʃ,t͡sʼ}_{k,kʷ,ʔ}</env>
 		</rule>
 		<rule>
 			<input>e o</input>
@@ -103,7 +103,7 @@
 		<rule>
 			<input>e o</input>
 			<output>i u</output>
-			<env>#{k(ʼ),x}_{t(ʼ),t͡sʼ}</env>
+			<env>{k, kʼ, x}_{t, tʼ, t͡sʼ}</env>
 		</rule>
 		<rule>
 			<input>e o</input>
@@ -176,7 +176,7 @@
 			<output>ʃ</output>
 		</rule>
 		<rule>
-			<input>{ʔ,hx}</input>
+			<input>{ʔ,h}</input>
 			<output>∅</output>
 		</rule>
 		<rule>
@@ -189,7 +189,7 @@
 			<output>n</output>
 			<env>#_VN</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>dʼ</input>
 			<output>tʼ</output>
 		</rule>
@@ -197,7 +197,7 @@
 	<section index="6.1.1.2" name="North Omotic to Dizin">
 		<cite>Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
 			(Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)</cite>
-		<rule>
+		<rule skip="true">
 			<input>pʼ</input>
 			<output>b</output>
 		</rule>
@@ -206,12 +206,12 @@
 			<output>d</output>
 			<env>Vj_</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>t͡sʼ</input>
 			<output>ʒ</output>
 			<env>V_</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>x₁</input>
 			<output>k</output>
 		</rule>
@@ -250,7 +250,7 @@
 			<input>{h₁,h₂}</input>
 			<output>h</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>dʼ</input>
 			<output>tʼ</output>
 		</rule>
@@ -275,22 +275,22 @@
 		<rule>
 			<input>s</input>
 			<output>ʃ</output>
-			<env>!V_</env>
+			<exception>V_</exception>
 		</rule>
 		<rule>
 			<input>t͡sʼ</input>
 			<output>t͡ʃʼ</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>x₁</input>
 			<output>k</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>x₂</input>
 			<output>k</output>
 			<env>#_</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>x₂</input>
 			<output>∅</output>
 			<env>V_V</env>
@@ -323,7 +323,7 @@
 			<input>ɲ</input>
 			<output>n</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>h₂</input>
 			<output>w</output>
 			<env>#_</env>
@@ -338,7 +338,7 @@
 			<output>n</output>
 			<env>#_Vb</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>dʼ</input>
 			<output>tʼ</output>
 		</rule>
@@ -366,16 +366,16 @@
 			<output>t͡s</output>
 			<env>Vj_</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>x₁</input>
 			<output>k</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>x₂</input>
 			<output>h</output>
 			<env>#_</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>x₂</input>
 			<output>ɡ</output>
 			<env>V_V</env>
@@ -403,7 +403,7 @@
 			<input>ɲ</input>
 			<output>n</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>h₂</input>
 			<output>w</output>
 			<env>#_</env>
@@ -443,17 +443,17 @@
 		<rule>
 			<input>s</input>
 			<output>ʃ</output>
-			<env>! V_</env>
+			<exception>V_</exception>
 		</rule>
 		<rule>
 			<input>t͡sʼ</input>
 			<output>t͡ʃʼ</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>x₁</input>
 			<output>k</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>x₂</input>
 			<output>∅</output>
 			<env>V_V</env>
@@ -512,7 +512,7 @@
 			<output>n</output>
 			<env>#_Vb</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>dʼ</input>
 			<output>tʼ</output>
 		</rule>
@@ -529,11 +529,11 @@
 			<input>p</input>
 			<output>f</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>x₁</input>
 			<output>k</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>x₂</input>
 			<output>∅</output>
 			<env>V_V</env>
@@ -566,7 +566,7 @@
 			<output>n</output>
 			<env>#_VN</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>dʼ</input>
 			<output>tʼ</output>
 			<env>#_</env>
@@ -593,21 +593,21 @@
 			<output>d</output>
 			<env>V_</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>x₁</input>
 			<output>k</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>x₂</input>
 			<output>k</output>
 			<env>#_</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>x₂</input>
 			<output>∅</output>
 			<env>V_V</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>kʼ</input>
 			<output>k</output>
 			<env>#</env>
@@ -625,7 +625,7 @@
 			<input>sx</input>
 			<output>ʃ</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>t͡ʃʼ</input>
 			<output>t͡ʃ</output>
 		</rule>
@@ -633,12 +633,12 @@
 			<input>ɲ</input>
 			<output>n</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>h₁</input>
 			<output>{h,∅}</output>
 			<env>#_</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>h₂</input>
 			<output>w</output>
 			<env>#_</env>
@@ -648,7 +648,7 @@
 			<output>n</output>
 			<env>#_VC</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>dʼ</input>
 			<output>t</output>
 		</rule>
@@ -666,7 +666,7 @@
 			<output>w</output>
 			<env>V_V</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>pʼ</input>
 			<output>ʔp</output>
 		</rule>
@@ -679,21 +679,21 @@
 			<input>t͡sʼ</input>
 			<output>sʼ</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>x₁</input>
 			<output>k</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>x₂</input>
 			<output>h</output>
 			<env>#_</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>x₂</input>
 			<output>∅</output>
 			<env>V_V</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>x₂</input>
 			<output>ɡ</output>
 			<env>n_</env>
@@ -957,7 +957,7 @@
 		</rule>
 		<rule>
 			<input>k</input>
-			<output>{k(ʼ),q}</output>
+			<output>{k, kʼ, q}</output>
 		</rule>
 		<rule>
 			<input>kʼ</input>
@@ -1111,7 +1111,7 @@
 		<rule>
 			<input>CVʕ</input>
 			<output>ħʔ</output>
-			<env>! C = ɡw</env>
+			<exception>C = ɡw</exception>
 		</rule>
 		<rule>
 			<input>ɡwVq</input>
@@ -1516,7 +1516,7 @@
 		<rule>
 			<input>a:[+ long]</input>
 			<output>a</output>
-			<env>! _#</env>
+			<exception>_#</exception>
 		</rule>
 		<rule>
 			<input>a</input>
@@ -1846,7 +1846,7 @@
 		<rule>
 			<input>{u,ə}</input>
 			<output>∅</output>
-			<env>! C_C(C)#</env>
+			<exception>C_C(C)#</exception>
 		</rule>
 		<rule>
 			<input>ə</input>
@@ -1981,7 +1981,7 @@
 		<rule>
 			<input>a:[+ long]</input>
 			<output>o:[+ long]</output>
-			<env>! _#</env>
+			<exception>_#</exception>
 		</rule>
 		<rule>
 			<input>i i:[+ long] u u:[+ long]</input>
@@ -2104,7 +2104,7 @@
 		<rule>
 			<input>u</input>
 			<output>∅</output>
-			<env>! _C:[+ long]</env>
+			<exception>_C:[+ long]</exception>
 		</rule>
 		<rule>
 			<input>aj aw</input>
@@ -2179,7 +2179,7 @@
 		<rule>
 			<input>ʔ</input>
 			<output>∅</output>
-			<env>! in onset of U:[+stress] (colloquial)</env>
+			<exception>in onset of U:[+stress] (colloquial)</exception>
 		</rule>
 		<rule>
 			<input>h</input>
@@ -2305,7 +2305,7 @@
 		<rule>
 			<input>sk</input>
 			<output>k:[+ long]</output>
-			<env>! _a</env>
+			<exception>_a</exception>
 		</rule>
 		<rule>
 			<input>ʔs ʔt͡s</input>
@@ -2426,7 +2426,7 @@
 		<rule>
 			<input>sk</input>
 			<output>k:[+ long]</output>
-			<env>! _a</env>
+			<exception>_a</exception>
 		</rule>
 		<rule>
 			<input>i</input>
@@ -2683,12 +2683,12 @@
 		<rule>
 			<input>j</input>
 			<output>s</output>
-			<env>! C_</env>
+			<exception>C_</exception>
 		</rule>
 		<rule>
 			<input>h</input>
 			<output>∅</output>
-			<env>! _C</env>
+			<exception>_C</exception>
 		</rule>
 		<rule>
 			<input>{ʃ,t͡ʃ}</input>
@@ -2930,7 +2930,7 @@
 		<rule>
 			<input>a</input>
 			<output>i</output>
-			<env>! #,_</env>
+			<exception>#,_</exception>
 		</rule>
 		<rule>
 			<input>e</input>
@@ -3457,7 +3457,7 @@
 		<rule>
 			<input>w</input>
 			<output>∅</output>
-			<env>! {k,p,m}_</env>
+			<exception>{k,p,m}_</exception>
 		</rule>
 		<rule>
 			<input>Cʷ</input>
@@ -3475,7 +3475,7 @@
 		<rule>
 			<input>wə</input>
 			<output>o:[+ long]</output>
-			<env>! _,{p,m,k}</env>
+			<exception>_,{p,m,k}</exception>
 		</rule>
 		<rule>
 			<input>j</input>
@@ -3868,7 +3868,7 @@
 		<rule>
 			<input>t͡ʃ</input>
 			<output>ʃ</output>
-			<env>! C_</env>
+			<exception>C_</exception>
 		</rule>
 		<rule>
 			<input>n{θ,l} h{θ,ʃ}</input>
@@ -4262,7 +4262,7 @@
 		<rule>
 			<input>b</input>
 			<output>w</output>
-			<env>! _{a,ə,Vj}</env>
+			<exception>_{a,ə,Vj}</exception>
 		</rule>
 		<rule>
 			<input>t͡ʃʰ</input>
@@ -4369,7 +4369,7 @@
 		<rule>
 			<input>w</input>
 			<output>∅</output>
-			<env>! _{a,o}</env>
+			<exception>_{a,o}</exception>
 		</rule>
 		<rule>
 			<input>au iu uu eu ou</input>
@@ -4393,7 +4393,7 @@
 		<rule>
 			<input>ɸ</input>
 			<output>h</output>
-			<env>! _u</env>
+			<exception>_u</exception>
 		</rule>
 		<rule>
 			<input>ɔ:[+ long]</input>
@@ -4612,12 +4612,12 @@
 		<rule>
 			<input>ɡ</input>
 			<output>h</output>
-			<env>! {C,V}_h</env>
+			<exception>{C,V}_h</exception>
 		</rule>
 		<rule>
 			<input>k</input>
 			<output>ɡ</output>
-			<env>! #_</env>
+			<exception>#_</exception>
 		</rule>
 		<rule>
 			<input>kʰ</input>
@@ -5067,7 +5067,7 @@
 		<rule>
 			<input>a</input>
 			<output>æ</output>
-			<env>! _B</env>
+			<exception>_B</exception>
 		</rule>
 		<rule>
 			<input>f</input>
@@ -6510,7 +6510,7 @@
 		<rule>
 			<input>k</input>
 			<output>h</output>
-			<env>! _#</env>
+			<exception>_#</exception>
 		</rule>
 		<rule>
 			<input>h</input>
@@ -6667,7 +6667,7 @@
 		<rule sporadic="true">
 			<input>h</input>
 			<output>∅</output>
-			<env>! _#</env>
+			<exception>_#</exception>
 		</rule>
 	</section>
 	<section index="10.2.4" name="Proto-Malayo-Polynesian to Proto-Malayo-Javanic">
@@ -6702,7 +6702,7 @@
 		<rule>
 			<input>b</input>
 			<output>w</output>
-			<env>! _,C</env>
+			<exception>_,C</exception>
 		</rule>
 		<rule>
 			<input>ə</input>
@@ -6931,7 +6931,7 @@
 		<rule>
 			<input>t</input>
 			<output>ð</output>
-			<env>! _,S</env>
+			<exception>_,S</exception>
 		</rule>
 		<rule>
 			<input>s</input>
@@ -7136,12 +7136,12 @@
 		<rule>
 			<input>ʀ</input>
 			<output>{l,ɾ}</output>
-			<env>! _#</env>
+			<exception>_#</exception>
 		</rule>
 		<rule sporadic="true">
 			<input>l</input>
 			<output>∅</output>
-			<env>! _#</env>
+			<exception>_#</exception>
 		</rule>
 		<rule>
 			<input>u</input>
@@ -7195,7 +7195,7 @@
 		<rule>
 			<input>əi̯ əu̯</input>
 			<output>ai̯ au̯</output>
-			<env>! O:[+ voice] earlier in the word</env>
+			<exception>O:[+ voice] earlier in the word</exception>
 		</rule>
 		<rule>
 			<input>bʱ {dʱ,dzʱ} ɡʱ</input>
@@ -7488,7 +7488,7 @@
 		<rule>
 			<input>h</input>
 			<output>∅</output>
-			<env>! _#</env>
+			<exception>_#</exception>
 		</rule>
 		<rule>
 			<input>a</input>
@@ -7674,7 +7674,7 @@
 		<rule>
 			<input>u</input>
 			<output>ʉ</output>
-			<env>! Cw_</env>
+			<exception>Cw_</exception>
 		</rule>
 		<rule sporadic="true">
 			<input>{e,i}</input>
@@ -8960,7 +8960,7 @@
 		<rule>
 			<input>r</input>
 			<output>l</output>
-			<env>! _#</env>
+			<exception>_#</exception>
 		</rule>
 		<rule>
 			<input>pʷ bw mʷ</input>
@@ -9000,7 +9000,7 @@
 		<rule>
 			<input>r</input>
 			<output>l</output>
-			<env>! _#</env>
+			<exception>_#</exception>
 		</rule>
 		<rule>
 			<input>c *R</input>
@@ -9040,7 +9040,7 @@
 		<rule>
 			<input>r</input>
 			<output>l</output>
-			<env>! _{u,#}</env>
+			<exception>_{u,#}</exception>
 		</rule>
 		<rule>
 			<input>s</input>
@@ -9157,7 +9157,7 @@
 		<rule sporadic="true">
 			<input>s</input>
 			<output>θ</output>
-			<env>! _i</env>
+			<exception>_i</exception>
 		</rule>
 		<rule>
 			<input>d {c,*j}</input>
@@ -9431,7 +9431,7 @@
 		<rule>
 			<input>t</input>
 			<output>r</output>
-			<env>! #,_</env>
+			<exception>#,_</exception>
 		</rule>
 		<rule>
 			<input>ə</input>
@@ -10532,7 +10532,7 @@
 		</rule>
 		<rule>
 			<input>tɬ tɬ:[+ long] tɬʼ tɬ:[+ long]ʼ dɮ</input>
-			<output>xʲ {ɣʲ,ɡ} qʼ k(ʼ) {k:[+ long],ɣʲ}</output>
+			<output>xʲ {ɣʲ,ɡ} qʼ {k, kʼ} {k:[+ long],ɣʲ}</output>
 		</rule>
 		<rule>
 			<input>k:[+ long] ɡ</input>
@@ -10544,7 +10544,7 @@
 		</rule>
 		<rule>
 			<input>q:[+ long]ʼ</input>
-			<output>q(ʼ)</output>
+			<output>{q, qʼ}</output>
 		</rule>
 		<rule>
 			<input>ʃ:[+ long] ɬ ɬ:[+ long] x x:[+ long]</input>
@@ -10573,7 +10573,7 @@
 		</rule>
 		<rule>
 			<input>tɬ:[+ long] tɬʼ tɬ:[+ long]ʼ dɮ</input>
-			<output>xʲ qʼ q(ʼ) {w,xʲ,j}</output>
+			<output>xʲ qʼ {q, qʼ} {w,xʲ,j}</output>
 		</rule>
 		<rule>
 			<input>k:[+ long]</input>
@@ -10581,7 +10581,7 @@
 		</rule>
 		<rule>
 			<input>q:[+ long]ʼ</input>
-			<output>q(ʼ)</output>
+			<output>{q, qʼ}</output>
 		</rule>
 		<rule>
 			<input>s:[+ long] ɬ(ː) x:[+ long]</input>
@@ -10677,7 +10677,7 @@
 			251</cite>
 		<rule>
 			<input>st st:[+ long]</input>
-			<output>st(ʼ) st</output>
+			<output>{st, stʼ} st</output>
 		</rule>
 		<rule>
 			<input>t͡s:[+ long] t͡ʃ:[+ long]</input>
@@ -10860,7 +10860,7 @@
 			<output>sʷ ʃ zʲ</output>
 		</rule>
 		<rule>
-			<input>tɕʷ(ʼ) tɕʷ:[+ long]</input>
+			<input>{ tɕʷ, tɕʷʼ }tɕʷ:[+ long]</input>
 			<output>t͡ʃ(ʼ) d͡ʒ~ʒ</output>
 		</rule>
 		<rule>
@@ -10986,7 +10986,7 @@
 			World/Materials 119.</cite>
 		<rule>
 			<input>t͡ʃʷ(ʼ) tɕ(ʼ) d͡ʒʷ dʑ</input>
-			<output>f(ʼ) t͡s(ʼ) v dz</output>
+			<output>{f, fʼ} {t͡s, t͡sʼ} v dz</output>
 		</rule>
 		<rule>
 			<input>ɕ ʑ</input>
@@ -11001,19 +11001,19 @@
 			<output>ɥ</output>
 		</rule>
 		<rule>
-			<input>tʷ(ʼ) dʷ</input>
-			<output>{tʷ(ʼ),p(ʼ)} {dʷ,b}</output>
+			<input>{tʷ, tʷʼ} dʷ</input>
+			<output>{tʷ, tʷʼ, p, pʼ} {dʷ,b}</output>
 		</rule>
 	</section>
 	<section index="12.1.2" name="Proto-Abazgi to Tapanta Abaza">
 		<cite>Nortaneous, from Chirikba, Viacheslav A. (2003), “Abkhaz”. Languages of the
 			World/Materials 119.</cite>
 		<rule>
-			<input>{t͡ʃʷ(ʼ),tɕ} {d͡ʒʷ,dʑ}</input>
-			<output>t͡s(ʼ) dz</output>
+			<input>{t͡ʃʷ, t͡ʃʷʼ,tɕ} {d͡ʒʷ,dʑ}</input>
+			<output>{t͡s, t͡sʼ} dz</output>
 		</rule>
 		<rule>
-			<input>tɕʷ(ʼ) dʑʷ</input>
+			<input>{ tɕʷ, tɕʷʼ }dʑʷ</input>
 			<output>{tɕ(ʷ)(ʼ),t͡ʃʷ(ʼ)} {dʑ(ʷ),d͡ʒʷ}</output>
 		</rule>
 		<rule>
@@ -11316,7 +11316,7 @@
 		<rule>
 			<input>qʷ</input>
 			<output>qʷ:[+ long]</output>
-			<env>!_</env>
+			<exception>_</exception>
 		</rule>
 		<rule>
 			<input>qʷʼ ɢʷ</input>
@@ -11518,7 +11518,7 @@
 		<rule>
 			<input>q qʷ</input>
 			<output>q:[+ long] qʷ:[+ long]</output>
-			<env>! #_</env>
+			<exception>#_</exception>
 		</rule>
 		<rule>
 			<input>p:[+ long] t:[+ long] t͡s:[+ long] t͡sʷ:[+ long] ʃ:[+ long] t͡ʃ:[+ long] tɕ:[+ long]</input>
@@ -12089,7 +12089,7 @@
 		<rule>
 			<input>ɨ ʉ</input>
 			<output>∅</output>
-			<env>! _#</env>
+			<exception>_#</exception>
 		</rule>
 		<rule>
 			<input>∅</input>
@@ -13225,7 +13225,7 @@
 		<rule>
 			<input>ə</input>
 			<output>æ</output>
-			<env>! _{B,K,H}</env>
+			<exception>_{B,K,H}</exception>
 		</rule>
 		<rule>
 			<input>a</input>
@@ -13299,7 +13299,7 @@
 		<rule>
 			<input>ə</input>
 			<output>æ</output>
-			<env>! _{B,K,H}</env>
+			<exception>_{B,K,H}</exception>
 		</rule>
 		<rule>
 			<input>a</input>
@@ -13373,7 +13373,7 @@
 		<rule>
 			<input>ə</input>
 			<output>æ</output>
-			<env>! _{B,K,H}</env>
+			<exception>_{B,K,H}</exception>
 		</rule>
 		<rule>
 			<input>a</input>
@@ -13442,7 +13442,7 @@
 		<rule>
 			<input>ə</input>
 			<output>æ</output>
-			<env>! _{B,K,H}</env>
+			<exception>_{B,K,H}</exception>
 		</rule>
 		<rule>
 			<input>a</input>
@@ -13962,7 +13962,7 @@
 		<rule>
 			<input>aj aw</input>
 			<output>ɛ:[+ long] u:[+ long]</output>
-			<env>!_{s,n,r,l}</env>
+			<exception>_{s,n,r,l}</exception>
 		</rule>
 	</section>
 	<section index="17.2.2" name="Common Anatolian to Luwian">
@@ -15095,7 +15095,7 @@
 		<rule>
 			<input>bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ</input>
 			<output>{w,v} d z ɡ ʒ</output>
-			<env>! _#</env>
+			<exception>_#</exception>
 		</rule>
 		<rule>
 			<input>j</input>
@@ -15572,7 +15572,7 @@
 			<env>a_ra</env>
 		</rule>
 		<rule>
-			<input>hx</input>
+			<input>h</input>
 			<output>∅</output>
 		</rule>
 	</section>
@@ -15710,7 +15710,7 @@
 		<rule>
 			<input>e:[+ long]</input>
 			<output>i:[+ long]</output>
-			<env>! _{i,u}</env>
+			<exception>_{i,u}</exception>
 		</rule>
 		<rule>
 			<input>t:[+ long]</input>
@@ -16534,7 +16534,7 @@
 		<rule>
 			<input>a:[+ long]</input>
 			<output>æ:[+ long]</output>
-			<env>! _N or if nasalized</env>
+			<exception>_N or if nasalized</exception>
 		</rule>
 		<rule>
 			<input>i o</input>
@@ -16552,7 +16552,7 @@
 		<rule>
 			<input>a</input>
 			<output>æ</output>
-			<env>! _N or if nasalized, or if *B or *ã in next syllable</env>
+			<exception>_N or if nasalized, or if *B or *ã in next syllable</exception>
 		</rule>
 		<rule>
 			<input>h</input>
@@ -16805,7 +16805,7 @@
 		<rule>
 			<input>tj sj dj zj</input>
 			<output>t͡ʃ ʃ d͡ʒ ʒ</output>
-			<env>! _u:[+ long]</env>
+			<exception>_u:[+ long]</exception>
 		</rule>
 		<rule>
 			<input>a ɑ {ɛ,ɪ,ɤ}</input>
@@ -16847,7 +16847,7 @@
 		<rule>
 			<input>e:[+ long] o:[+ long]</input>
 			<output>eɪ oʊ</output>
-			<env>! _ɹ</env>
+			<exception>_ɹ</exception>
 		</rule>
 	</section>
 	<section index="17.7.2.1.5" name="Early Modern English to American English">
@@ -17020,7 +17020,7 @@
 		<rule>
 			<input>ɫ</input>
 			<output>əɫ</output>
-			<env>! if one of the above vowel changes after the formation of /ɫ/ apply</env>
+			<exception>if one of the above vowel changes after the formation of /ɫ/ apply</exception>
 		</rule>
 		<rule>
 			<input>ɪ</input>
@@ -17059,7 +17059,7 @@
 		<rule>
 			<input>ʊə</input>
 			<output>o:[+ long]</output>
-			<env>! {j,d͡ʒ}_</env>
+			<exception>{j,d͡ʒ}_</exception>
 		</rule>
 		<rule>
 			<input>ʊə</input>
@@ -17427,7 +17427,7 @@
 		<rule sporadic="true">
 			<input>ɑ</input>
 			<output>a</output>
-			<env>! _{l,r}</env>
+			<exception>_{l,r}</exception>
 		</rule>
 		<rule>
 			<input>o:[+ long]</input>
@@ -17523,7 +17523,7 @@
 		<rule>
 			<input>ɑ:[+ long]</input>
 			<output>e</output>
-			<env>! _{ŋ,n}</env>
+			<exception>_{ŋ,n}</exception>
 		</rule>
 		<rule sporadic="true">
 			<input>ʌ</input>
@@ -18473,7 +18473,7 @@
 		<rule>
 			<input>V:[+ long]</input>
 			<output>V:[- long]</output>
-			<env>! #U, U#</env>
+			<exception>#U, U#</exception>
 		</rule>
 	</section>
 	<section index="17.7.3.1" name="Proto-Norse to Old Norse">
@@ -18521,7 +18521,7 @@
 		<rule>
 			<input>e</input>
 			<output>ja</output>
-			<env>! {{h,k,ŋ}n,w,v,l,r}_, _{u,o,i}</env>
+			<exception>{{h,k,ŋ}n,w,v,l,r}_, _{u,o,i}</exception>
 		</rule>
 		<rule>
 			<input>a(i) {e,w{æ,i}} {we,ei} (w)ɪ</input>
@@ -18581,7 +18581,7 @@
 		<rule>
 			<input>a</input>
 			<output>u / %u</output>
-			<env>! in #U</env>
+			<exception>in #U</exception>
 		</rule>
 		<rule>
 			<input>wa:[+ long] na:[+ long]</input>
@@ -18666,7 +18666,7 @@
 		<rule>
 			<input>V:[+ long]</input>
 			<output>V:[- long]</output>
-			<env>! in #U</env>
+			<exception>in #U</exception>
 		</rule>
 		<rule>
 			<input>{u,we,wi} {o,ɒ} a au ju:[+ long]</input>
@@ -19039,7 +19039,7 @@
 		<rule>
 			<input>hw</input>
 			<output>∅</output>
-			<env>! #_</env>
+			<exception>#_</exception>
 		</rule>
 		<rule>
 			<input>F:[- voice]</input>
@@ -19160,7 +19160,7 @@
 		<rule>
 			<input>o {æ,e}</input>
 			<output>u i</output>
-			<env>! in #U</env>
+			<exception>in #U</exception>
 		</rule>
 		<rule>
 			<input>o</input>
@@ -19418,7 +19418,7 @@
 		<rule>
 			<input>V</input>
 			<output>V:[+ long]</output>
-			<env>! _CCV, in polysyllables</env>
+			<exception>_CCV, in polysyllables</exception>
 		</rule>
 		<rule>
 			<input>{n̥n,nn̥}</input>
@@ -19617,7 +19617,7 @@
 		<rule>
 			<input>ð</input>
 			<output>d</output>
-			<env>! V_V</env>
+			<exception>V_V</exception>
 		</rule>
 		<rule>
 			<input>sk</input>
@@ -20074,7 +20074,7 @@
 		<rule>
 			<input>æ</input>
 			<output>e</output>
-			<env>! _{Ḱ,Cʲ}</env>
+			<exception>_{Ḱ,Cʲ}</exception>
 		</rule>
 		<rule>
 			<input>e</input>
@@ -20113,7 +20113,7 @@
 		<rule>
 			<input>e</input>
 			<output>i</output>
-			<env>! {w,r,h}_</env>
+			<exception>{w,r,h}_</exception>
 		</rule>
 		<rule>
 			<input>o:[+ long]</input>
@@ -20148,7 +20148,7 @@
 			“Ancient Greek dialects”. Wikipedia, the Free Encyclopedia.
 			&lt;https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&gt;</cite>
 		<rule>
-			<input>{Hx,m̩,n̩}</input>
+			<input>{H,m̩,n̩}</input>
 			<output>a</output>
 		</rule>
 		<rule>
@@ -20218,7 +20218,7 @@
 			“Ancient Greek dialects”. Wikipedia, the Free Encyclopedia.
 			&lt;https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&gt;</cite>
 		<rule>
-			<input>{Hx,m̩,n̩}</input>
+			<input>{H,m̩,n̩}</input>
 			<output>a</output>
 		</rule>
 		<rule>
@@ -20424,7 +20424,7 @@
 			“Ancient Greek dialects”. Wikipedia, the Free Encyclopedia.
 			&lt;https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&gt;</cite>
 		<rule>
-			<input>{Hx,m̩,n̩}</input>
+			<input>{H,m̩,n̩}</input>
 			<output>a</output>
 		</rule>
 		<rule>
@@ -20504,7 +20504,7 @@
 		<comment>NB: This assumes that the adjective “Coan” refers to the “Ceos” Tucker mentions in
 			the source.</comment>
 		<rule>
-			<input>{Hx,m̩,n̩}</input>
+			<input>{H,m̩,n̩}</input>
 			<output>a</output>
 		</rule>
 		<rule>
@@ -20578,7 +20578,7 @@
 			“Ancient Greek dialects”. Wikipedia, the Free Encyclopedia.
 			&lt;https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&gt;</cite>
 		<rule>
-			<input>{Hx,m̩,n̩}</input>
+			<input>{H,m̩,n̩}</input>
 			<output>a</output>
 		</rule>
 		<rule>
@@ -20648,7 +20648,7 @@
 			“Ancient Greek dialects”. Wikipedia, the Free Encyclopedia.
 			&lt;https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&gt;</cite>
 		<rule>
-			<input>{Hx,m̩,n̩}</input>
+			<input>{H,m̩,n̩}</input>
 			<output>a</output>
 		</rule>
 		<rule>
@@ -20734,7 +20734,7 @@
 			“Ancient Greek dialects”. Wikipedia, the Free Encyclopedia.
 			&lt;https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&gt;</cite>
 		<rule>
-			<input>{Hx,m̩,n̩}</input>
+			<input>{H,m̩,n̩}</input>
 			<output>a</output>
 		</rule>
 		<rule>
@@ -20808,7 +20808,7 @@
 			“Ancient Greek dialects”. Wikipedia, the Free Encyclopedia.
 			&lt;https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&gt;</cite>
 		<rule>
-			<input>{Hx,m̩,n̩}</input>
+			<input>{H,m̩,n̩}</input>
 			<output>a</output>
 		</rule>
 		<rule>
@@ -20961,7 +20961,7 @@
 			“Ancient Greek dialects”. Wikipedia, the Free Encyclopedia.
 			&lt;https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&gt;</cite>
 		<rule>
-			<input>{Hx,m̩,n̩}</input>
+			<input>{H,m̩,n̩}</input>
 			<output>a</output>
 		</rule>
 		<rule>
@@ -21035,7 +21035,7 @@
 			“Ancient Greek dialects”. Wikipedia, the Free Encyclopedia.
 			&lt;https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&gt;</cite>
 		<rule>
-			<input>{Hx,m̩,n̩}</input>
+			<input>{H,m̩,n̩}</input>
 			<output>a</output>
 		</rule>
 		<rule>
@@ -21839,7 +21839,7 @@
 		<rule>
 			<input>au a:[+ long]u ai a:[+ long]i</input>
 			<output>au o:[+ long] ai e:[+ long]</output>
-			<env>! _V</env>
+			<exception>_V</exception>
 		</rule>
 		<rule>
 			<input>w</input>
@@ -24029,7 +24029,7 @@
 		<rule>
 			<input>ɛ</input>
 			<output>e</output>
-			<env>! _{r:[+ long],l,rC:[-labial],nr} or _ ? w#</env>
+			<exception>_{r:[+ long],l,rC:[-labial],nr} or _ ? w#</exception>
 		</rule>
 		<rule>
 			<input>e</input>
@@ -24118,7 +24118,7 @@
 		<rule>
 			<input>u</input>
 			<output>ó</output>
-			<env>!_i:[+ long]</env>
+			<exception>_i:[+ long]</exception>
 		</rule>
 		<rule>
 			<input>u:[+ long]</input>
@@ -25313,7 +25313,7 @@
 		<rule>
 			<input>C₀C₀</input>
 			<output>C₀</output>
-			<env>! C = r</env>
+			<exception>C = r</exception>
 		</rule>
 		<rule>
 			<input>C</input>
@@ -26777,7 +26777,7 @@
 		<rule>
 			<input>u</input>
 			<output>o</output>
-			<env>! V_</env>
+			<exception>V_</exception>
 		</rule>
 		<rule>
 			<input>s</input>
@@ -26998,7 +26998,7 @@
 		<rule>
 			<input>u</input>
 			<output>∅</output>
-			<env>! {OL,”V}_#</env>
+			<exception>{OL,”V}_#</exception>
 		</rule>
 		<rule>
 			<input>a</input>
@@ -27353,7 +27353,7 @@
 		<rule>
 			<input>f</input>
 			<output>h</output>
-			<env>! _{ue,L}</env>
+			<exception>_{ue,L}</exception>
 		</rule>
 		<rule>
 			<input>ɾj pj</input>
@@ -28009,7 +28009,7 @@
 		<rule>
 			<input>VNV</input>
 			<output>ṼṼ</output>
-			<env>! _(C)#</env>
+			<exception>_(C)#</exception>
 		</rule>
 		<rule>
 			<input>ʔ</input>
@@ -28223,7 +28223,7 @@
 		<rule>
 			<input>ɨ</input>
 			<output>∅</output>
-			<env>! #_{p,β}e</env>
+			<exception>#_{p,β}e</exception>
 		</rule>
 		<rule>
 			<input>{a/e} {e/a} {ı̃,ẽ}</input>
@@ -28378,7 +28378,7 @@
 		<rule>
 			<input>n</input>
 			<output>∅</output>
-			<env>! #_V:[- nasal]</env>
+			<exception>#_V:[- nasal]</exception>
 		</rule>
 		<rule>
 			<input>ŋ</input>
@@ -28466,7 +28466,7 @@
 		<rule>
 			<input>ŋɡ</input>
 			<output>k</output>
-			<env>! _V:[- nasal]</env>
+			<exception>_V:[- nasal]</exception>
 		</rule>
 		<rule>
 			<input>u</input>
@@ -28514,7 +28514,7 @@
 		<rule>
 			<input>o</input>
 			<output>a</output>
-			<env>! o(C…)_(C…)#</env>
+			<exception>o(C…)_(C…)#</exception>
 		</rule>
 		<rule>
 			<input>u</input>
@@ -28524,7 +28524,7 @@
 		<rule>
 			<input>a</input>
 			<output>o</output>
-			<env>! Cw_</env>
+			<exception>Cw_</exception>
 		</rule>
 		<rule>
 			<input>ã</input>
@@ -28607,7 +28607,7 @@
 		<rule>
 			<input>o</input>
 			<output>u(a)</output>
-			<env>! o(C…)_(C…)#</env>
+			<exception>o(C…)_(C…)#</exception>
 		</rule>
 		<rule>
 			<input>ã {ẽ,ı̃} ɨ̃</input>
@@ -28669,7 +28669,7 @@
 		<rule>
 			<input>o</input>
 			<output>u</output>
-			<env>! o(C…)_(C…)#</env>
+			<exception>o(C…)_(C…)#</exception>
 		</rule>
 		<rule>
 			<input>ã ẽ ı̃ ɨ̃ {õ,ũ}</input>
@@ -29104,7 +29104,7 @@
 		<rule>
 			<input>u</input>
 			<output>o</output>
-			<env>! o(C…)_(C…)#</env>
+			<exception>o(C…)_(C…)#</exception>
 		</rule>
 		<rule>
 			<input>aN iN uN</input>
@@ -30016,7 +30016,7 @@
 		<rule>
 			<input>ɾ</input>
 			<output>∅</output>
-			<env>! _C</env>
+			<exception>_C</exception>
 		</rule>
 	</section>
 	<section index="21.2.2.3" name="Proto-East Tariku to Eritai">
@@ -30164,7 +30164,7 @@
 		<rule>
 			<input>ɾ</input>
 			<output>∅</output>
-			<env>! C_</env>
+			<exception>C_</exception>
 		</rule>
 		<rule>
 			<input>k</input>
@@ -31358,7 +31358,7 @@
 		<rule>
 			<input>ɗ</input>
 			<output>{ʔ,∅}</output>
-			<env>! #_</env>
+			<exception>#_</exception>
 		</rule>
 		<rule>
 			<input>t k</input>
@@ -31836,8 +31836,8 @@
 			the Free Encyclopedia.
 			&lt;https://en.wikipedia.org/w/index.php?title=Proto-Mayan_language&gt;</cite>
 		<rule>
-			<input>q(ʼ)</input>
-			<output>k(ʼ)</output>
+			<input>{q, q[+stress]}</input>
+			<output>{k, k[+stress]}</output>
 		</rule>
 		<rule>
 			<input>ŋ</input>
@@ -31895,8 +31895,8 @@
 			<env>_{o,u}</env>
 		</rule>
 		<rule>
-			<input>q(ʼ)</input>
-			<output>k(ʼ)</output>
+			<input>{q, q[+stress]}</input>
+			<output>{k, k[+stress]}</output>
 		</rule>
 		<rule>
 			<input>ŋ</input>
@@ -32024,8 +32024,8 @@
 			the Free Encyclopedia.
 			&lt;https://en.wikipedia.org/w/index.php?title=Proto-Mayan_language&gt;</cite>
 		<rule>
-			<input>q(ʼ)</input>
-			<output>k(ʼ)</output>
+			<input>{q, q[+stress]}</input>
+			<output>{k, k[+stress]}</output>
 		</rule>
 		<rule>
 			<input>ŋ</input>
@@ -32045,8 +32045,8 @@
 			the Free Encyclopedia.
 			&lt;https://en.wikipedia.org/w/index.php?title=Proto-Mayan_language&gt;</cite>
 		<rule>
-			<input>q(ʼ)</input>
-			<output>k(ʼ)</output>
+			<input>{q, q[+stress]}</input>
+			<output>{k, k[+stress]}</output>
 		</rule>
 		<rule>
 			<input>ŋ</input>
@@ -32062,8 +32062,8 @@
 			the Free Encyclopedia.
 			&lt;https://en.wikipedia.org/w/index.php?title=Proto-Mayan_language&gt;</cite>
 		<rule>
-			<input>q(ʼ)</input>
-			<output>k(ʼ)</output>
+			<input>{q, q[+stress]}</input>
+			<output>{k, k[+stress]}</output>
 		</rule>
 		<rule>
 			<input>ŋ</input>
@@ -33443,7 +33443,7 @@
 		<rule>
 			<input>K</input>
 			<output>TŠ</output>
-			<env>! _$</env>
+			<exception>_$</exception>
 		</rule>
 		<rule>
 			<input>t͡s TŠ TŠʷ Q</input>
@@ -33492,7 +33492,7 @@
 		<rule>
 			<input>K</input>
 			<output>TŠ</output>
-			<env>! _$</env>
+			<exception>_$</exception>
 		</rule>
 		<rule>
 			<input>t͡s TŠ TŠᵚ Q</input>
@@ -33519,7 +33519,7 @@
 		<rule>
 			<input>K</input>
 			<output>TŠ</output>
-			<env>! _$</env>
+			<exception>_$</exception>
 		</rule>
 		<rule>
 			<input>t͡s TŠ TŠʷ Q</input>
@@ -34637,7 +34637,7 @@
 		<rule>
 			<input>t</input>
 			<output>s</output>
-			<env>! “in cluster with š” (presumably [ʃ])</env>
+			<exception>“in cluster with š” (presumably [ʃ])</exception>
 		</rule>
 		<rule>
 			<input>tʲ</input>
@@ -35115,7 +35115,7 @@
 		<rule>
 			<input>l</input>
 			<output>ɾ</output>
-			<env>! _$ or o_</env>
+			<exception>_$ or o_</exception>
 		</rule>
 		<rule>
 			<input>t͡ʃ</input>
@@ -35125,7 +35125,7 @@
 		<rule>
 			<input>o</input>
 			<output>a</output>
-			<env>! o(C…)_ or _(C…){o,i}</env>
+			<exception>o(C…)_ or _(C…){o,i}</exception>
 		</rule>
 		<rule>
 			<input>ɨ</input>
@@ -36014,7 +36014,7 @@
 		<rule>
 			<input>t͡s</input>
 			<output>dz</output>
-			<env>! #_</env>
+			<exception>#_</exception>
 		</rule>
 		<rule>
 			<input>h</input>
@@ -36175,7 +36175,7 @@
 		<rule>
 			<input>ɲ</input>
 			<output>n</output>
-			<env>! h_i</env>
+			<exception>h_i</exception>
 		</rule>
 		<rule>
 			<input>ʎ</input>
@@ -36231,7 +36231,7 @@
 		<rule>
 			<input>ʃ</input>
 			<output>s</output>
-			<env>! i_i or _S</env>
+			<exception>i_i or _S</exception>
 		</rule>
 		<rule>
 			<input>ʂ</input>
@@ -36683,7 +36683,7 @@
 		<rule>
 			<input>p(ʼ) m</input>
 			<output>t͡s(ʼ) ŋ</output>
-			<env>! _u</env>
+			<exception>_u</exception>
 		</rule>
 		<rule>
 			<input>l(ʲ)</input>
@@ -36944,7 +36944,7 @@
 		<rule>
 			<input>p(’) m</input>
 			<output>t͡ʃ(’) ŋ</output>
-			<env>! _u</env>
+			<exception>_u</exception>
 		</rule>
 		<rule>
 			<input>mʔ</input>
@@ -37048,7 +37048,7 @@
 		<rule>
 			<input>p(’) m</input>
 			<output>t͡ʃ(’) ŋ</output>
-			<env>! _u</env>
+			<exception>_u</exception>
 		</rule>
 		<rule>
 			<input>mʔn</input>
@@ -37102,7 +37102,7 @@
 		<rule>
 			<input>a³</input>
 			<output>e³</output>
-			<env>! {{C:[+ uvular],K}ʷ,w}_ or when _{Cu,C:[+ uvular]ʷ,w}</env>
+			<exception>{{C:[+ uvular],K}ʷ,w}_ or when _{Cu,C:[+ uvular]ʷ,w}</exception>
 		</rule>
 		<rule>
 			<input>a¹</input>
@@ -37140,7 +37140,7 @@
 		<rule>
 			<input>p(’) m</input>
 			<output>t͡ʃ(’) ŋ</output>
-			<env>! _u</env>
+			<exception>_u</exception>
 		</rule>
 		<rule>
 			<input>mʔn</input>
@@ -37232,7 +37232,7 @@
 		<rule>
 			<input>p(’) m</input>
 			<output>t͡ʃ(’) ŋ</output>
-			<env>! _u</env>
+			<exception>_u</exception>
 		</rule>
 		<rule>
 			<input>mʔn</input>
@@ -38097,7 +38097,7 @@
 		<rule>
 			<input>un</input>
 			<output>uɛn</output>
-			<env>! {C:[+dental],C:[+sibilant]}_</env>
+			<exception>{C:[+dental],C:[+sibilant]}_</exception>
 		</rule>
 		<rule>
 			<input>uɛn</input>
@@ -38345,7 +38345,7 @@
 		<rule>
 			<input>a</input>
 			<output>ie</output>
-			<env>! K_%</env>
+			<exception>K_%</exception>
 		</rule>
 		<rule>
 			<input>a aS</input>
@@ -38431,7 +38431,7 @@
 		<rule>
 			<input>a</input>
 			<output>i</output>
-			<env>! K_%</env>
+			<exception>K_%</exception>
 		</rule>
 		<rule>
 			<input>iN</input>
@@ -38527,7 +38527,7 @@
 		<rule>
 			<input>a</input>
 			<output>e</output>
-			<env>! K_%</env>
+			<exception>K_%</exception>
 		</rule>
 		<rule>
 			<input>a aS</input>
@@ -40035,7 +40035,7 @@
 		<rule>
 			<input>V:[+ long]</input>
 			<output>V:[- long]</output>
-			<env>! in U#</env>
+			<exception>in U#</exception>
 		</rule>
 		<rule>
 			<input>”V</input>
@@ -40095,7 +40095,7 @@
 		<rule>
 			<input>t͡s</input>
 			<output>s</output>
-			<env>! _{h,i,j,r}</env>
+			<exception>_{h,i,j,r}</exception>
 		</rule>
 		<rule>
 			<input>ns</input>
@@ -40280,7 +40280,7 @@
 		<rule>
 			<input>s</input>
 			<output>ʃ</output>
-			<env>! _{n,t,k(ʷ),w} “or when part of the affricate /t͡s/”</env>
+			<exception>_{n,t,k(ʷ),w} “or when part of the affricate /t͡s/”</exception>
 		</rule>
 		<rule>
 			<input>t͡s</input>
@@ -40290,7 +40290,7 @@
 		<rule>
 			<input>t͡s</input>
 			<output>s</output>
-			<env>! _{i,j}</env>
+			<exception>_{i,j}</exception>
 		</rule>
 		<rule>
 			<input>n</input>
@@ -40511,7 +40511,7 @@
 		<rule>
 			<input>s</input>
 			<output>ʃ</output>
-			<env>! n_ “or when part of the unit affricate /t͡s/”</env>
+			<exception>n_ “or when part of the unit affricate /t͡s/”</exception>
 		</rule>
 		<rule>
 			<input>t͡s</input>
@@ -40522,7 +40522,7 @@
 		<rule>
 			<input>t͡s</input>
 			<output>s</output>
-			<env>! _{h,i,j}</env>
+			<exception>_{h,i,j}</exception>
 		</rule>
 		<rule>
 			<input>ns</input>
@@ -40687,7 +40687,7 @@
 		<rule>
 			<input>t͡s</input>
 			<output>s</output>
-			<env>! _{h,i,j}</env>
+			<exception>_{h,i,j}</exception>
 		</rule>
 		<rule>
 			<input>ns</input>
@@ -41018,7 +41018,7 @@
 		<rule>
 			<input>t͡s</input>
 			<output>s</output>
-			<env>! _{i,j}</env>
+			<exception>_{i,j}</exception>
 		</rule>
 		<rule>
 			<input>n</input>
@@ -41277,7 +41277,7 @@
 		<rule>
 			<input>n</input>
 			<output>t</output>
-			<env>! _{h,kʷ,V:[+ nasal]}</env>
+			<exception>_{h,kʷ,V:[+ nasal]}</exception>
 		</rule>
 		<rule>
 			<input>”V</input>
@@ -41374,12 +41374,12 @@
 		<rule>
 			<input>ə̃(ː)</input>
 			<output>ɨ̃(ː)</output>
-			<env>! “when both short and stressed”</env>
+			<exception>“when both short and stressed”</exception>
 		</rule>
 		<rule>
 			<input>{ a, a:[+ long] } { o, o:[+ long] }</input>
 			<output>ɔ(ː) { u, u:[+ long] }</output>
-			<env>! “when both short and unstressed”</env>
+			<exception>“when both short and unstressed”</exception>
 		</rule>
 		<rule>
 			<input>t k(ʷ)</input>
@@ -42018,7 +42018,7 @@
 		<rule>
 			<input>n</input>
 			<output>r</output>
-			<env>! #,_</env>
+			<exception>#,_</exception>
 		</rule>
 		<rule>
 			<input>t</input>
@@ -42807,7 +42807,7 @@
 		<rule>
 			<input>ɓ ɗ</input>
 			<output>b d</output>
-			<env>! _{l,r}</env>
+			<exception>_{l,r}</exception>
 		</rule>
 		<rule>
 			<input>{l,r}</input>
@@ -43546,7 +43546,7 @@
 		<rule>
 			<input>m</input>
 			<output>w</output>
-			<env>! _w</env>
+			<exception>_w</exception>
 		</rule>
 		<rule>
 			<input>w</input>
@@ -44097,7 +44097,7 @@
 		<rule>
 			<input>h</input>
 			<output>∅</output>
-			<env>! #_</env>
+			<exception>#_</exception>
 		</rule>
 		<rule>
 			<input>j</input>
@@ -45004,7 +45004,7 @@
 		<rule>
 			<input>tj</input>
 			<output>t͡s</output>
-			<env>! following a coronal obstruent or “before a derivational suffix”</env>
+			<exception>following a coronal obstruent or “before a derivational suffix”</exception>
 		</rule>
 		<rule>
 			<input>ʃ</input>
@@ -45062,7 +45062,7 @@
 		<rule>
 			<input>b d ɡ</input>
 			<output>β ð ɣ</output>
-			<env>! N_</env>
+			<exception>N_</exception>
 		</rule>
 		<rule>
 			<input>ɣ</input>
@@ -45280,7 +45280,7 @@
 		<rule>
 			<input>ð</input>
 			<output>∅</output>
-			<env>! ”V(X)_</env>
+			<exception>”V(X)_</exception>
 		</rule>
 		<rule>
 			<input>ɣ</input>
@@ -45401,7 +45401,7 @@
 		<rule>
 			<input>t͡s(ʲ)</input>
 			<output>s(ʲ)</output>
-			<env>! n_</env>
+			<exception>n_</exception>
 		</rule>
 		<rule>
 			<input>e</input>
@@ -45453,7 +45453,7 @@
 		<rule>
 			<input>p t(ʲ) s(ʲ) k</input>
 			<output>b d(ʲ) z(ʲ) ɡ</output>
-			<env>! #_, _C:[-voice], C:[-voice]_</env>
+			<exception>#_, _C:[-voice], C:[-voice]_</exception>
 		</rule>
 		<rule>
 			<input>∅</input>
@@ -45500,7 +45500,7 @@
 		<rule>
 			<input>C:[+ long]</input>
 			<output>C:[- long]</output>
-			<env>! in verbal forms when V_ə</env>
+			<exception>in verbal forms when V_ə</exception>
 		</rule>
 		<rule>
 			<input>ɑ:[+ long] au</input>
@@ -46502,7 +46502,7 @@
 		<rule sporadic="true">
 			<input>aʊ</input>
 			<output>aɪ</output>
-			<env>!_{ɾ,r,s̺,s̻}</env>
+			<exception>_{ɾ,r,s̺,s̻}</exception>
 		</rule>
 		<rule>
 			<input>eʊ</input>
@@ -46605,7 +46605,7 @@
 		<rule>
 			<input>t</input>
 			<output>t͡ʃ</output>
-			<env>! n_</env>
+			<exception>n_</exception>
 		</rule>
 		<rule>
 			<input>kʷ</input>

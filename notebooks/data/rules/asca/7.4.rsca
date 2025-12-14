@@ -3,8 +3,8 @@
 # 			International Journal of American Linguistics, 55:43 – 82
 	{θ,t͡ʃ,ʃ,r} > t / unless adjacent to another consonant
 	∅ > x / _s // _C{C,#}
-	j > s / ! C_
-	h > ∅ / ! _C
+	j > s // C_
+	h > ∅ // _C
 	{ʃ,t͡ʃ} > s / #_
 	{ʔθ,ʔr} > {ʔ,j,∅}
 	nr > s
@@ -57,6 +57,6 @@
 	a:[+ long] > aa / W_ // when _{C{C,ː},#}
 	a:[+ long] > a / _ ! W_ // when _{C{C,ː},#}
 	o:[+ long] > o
-	a > i / ! #,_
+	a > i // #,_
 	e > a / _#
 	{e:[+ long],i:[+ long]} > i

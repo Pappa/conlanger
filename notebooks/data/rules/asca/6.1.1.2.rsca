@@ -1,10 +1,10 @@
 @ 6.1.1.2 - North Omotic to Dizin
 # citation: Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
 # 			(Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)
-	pʼ > b
+#	pʼ > b
 	z > d / Vj_
-	t͡sʼ > ʒ / V_
-	x₁ > k
+#	t͡sʼ > ʒ / V_
+#	x₁ > k
 #	x₂ > k / _#
 #	x₂ > ∅ / V_V
 	ʒ > {t͡ʃ,t͡s}
@@ -13,4 +13,4 @@
 #	s₁ > ʃ
 	ʔ > ∅
 #	{h,x} > h
-	dʼ > tʼ
+#	dʼ > tʼ

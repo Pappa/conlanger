@@ -6,7 +6,7 @@
 # 			(2007), “The primary laryngeal in Uralic and beyond”. Mémoires de la Société
 # 			Finno-Ougrienne 253. <http://www.sgr.fi/sust/sust253/sust253_janhunen.pdf>
 	t t͡s s(C) n l r > tʲ t͡sʲ sʲ(C) nʲ lʲ rʲ / _i
-	t͡s(ʲ) > s(ʲ) / ! n_
+	t͡s(ʲ) > s(ʲ) // n_
 	e > ɤ / _C(C){a,o,u}
 	æ > ɑ / [- stress]
 	h > ∅ / {#,C}_
@@ -16,7 +16,7 @@
 	ɑ > ə / VC(C)ɑC(C)_[- stress]#
 	Vh > V:[+ long]ɦ / _C // _j,_ʋ
 	LV > VL / {#,V,O}_
-	p t(ʲ) s(ʲ) k > b d(ʲ) z(ʲ) ɡ / ! #_, _C:[-voice], C:[-voice]_
+	p t(ʲ) s(ʲ) k > b d(ʲ) z(ʲ) ɡ // #_, _C:[-voice], C:[-voice]_
 	∅ > ʔ / (C)V_CV
 	ə > ∅ / _#
 	ə > ∅ / VC_CV
@@ -26,7 +26,7 @@
 	lʋ rʋ jʋ > l:[+ long] r:[+ long] j:[+ long]
 	ʋ > ∅ / C_
 	VC:[+ long]ɑ > V:[+ long]Cɑ
-	C:[+ long] > C:[- long] / ! in verbal forms when V_ə
+	C:[+ long] > C:[- long] // in verbal forms when V_ə
 	ɑ:[+ long] au > ɔ:[+ long] ɔu
 	e:[+ long] ø:[+ long] o:[+ long] ɤ(ː) > i:[+ long]e y:[+ long]ø u:[+ long]o ɨ(ː)
 	ɦ > ʔ

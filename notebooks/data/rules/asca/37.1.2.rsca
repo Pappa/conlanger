@@ -8,7 +8,7 @@
 	V > ”V / “in antepenultimate syllables, if the vowel of the penultimate syllable was short
 				*/a/ followed by a single non-glottal consonant”
 	V > ”V / “in penultimate syllables not preceded by an accented antepenult”
-	V:[+ long] > V:[- long] / ! in U#
+	V:[+ long] > V:[- long] // in U#
 	”V > ”V:[+ long] / “in open penultimate syllables followed by a non-glottal consonant”
 	h > ∅ / #_s
 	n > ∅ / _ti

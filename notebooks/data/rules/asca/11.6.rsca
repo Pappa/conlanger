@@ -6,7 +6,7 @@
 # 			Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian,
 # 			East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 –
 # 			251
-	st st:[+ long] > st(ʼ) st
+	st st:[+ long] > {st, stʼ} st
 	t͡s:[+ long] t͡ʃ:[+ long] > t͡s t͡ʃ / #_
 	t͡s:[+ long]ʼ > t͡s:[+ long]
 	{t͡s:[+ long],t͡ʃ:[+ long],dz,d͡ʒ} > t:[+ long] / _#

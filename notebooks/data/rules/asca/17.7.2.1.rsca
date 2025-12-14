@@ -14,11 +14,11 @@
 				article doesn’t elaborate
 	æ:[+ long] > e:[+ long]
 	æu > au
-	a:[+ long] > æ:[+ long] / ! _N or if nasalized
+	a:[+ long] > æ:[+ long] // _N or if nasalized
 	i o > e a / [- stress]
 	ai au eu > {e:[+ long],a:[+ long]} a:[+ long] ia
 	ia iu > ja:[+ long] ju:[+ long]
-	a > æ / ! _N or if nasalized, or if *B or *ã in next syllable
+	a > æ // _N or if nasalized, or if *B or *ã in next syllable
 	h > ∅ / V_V
 	{i,u} > ∅ / -# // VC_
 	# θ resists change to d until the 14th Century
