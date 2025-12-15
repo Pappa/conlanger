@@ -11,7 +11,7 @@
 	[+ cons, - fr, + bk, + hi, - lo]ʷ > [+ cons, - fr, + bk, + hi, - lo]
 	s > ʃ / {u,i,l,r,[+ cons, - fr, + bk, + hi, - lo],Ḱ}
 	Ḱ > TŠ
-	Bʱ₁P₂ > B₁Bʱ₂
+#	Bʱ₁P₂ > B₁Bʱ₂
 	BʱBʱ > BBʱ
 	ptʃ > pʃ
 	ttʃ dd͡ʒʱ > t.ʃ d.ʒʱ
@@ -20,4 +20,4 @@
 	t͡ʃʃ > ʃ:[+ long]
 	k ɡ ɡʱ > c ɟ ɟʱ / _e,i,j
 	o > a:[+ long] / _CV, “does not affect o₂ < eɣʷ”
-	{e,o,o₂,N̊} > a
+#	{e,o,o₂,N̊} > a

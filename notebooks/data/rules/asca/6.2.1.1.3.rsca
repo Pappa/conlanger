@@ -5,11 +5,11 @@
 # 			<http://www.lingref.com>, document #2182, citing Appleyard, David L. (2006), A
 # 			comparative dictionary of the Agaw languages. (Cushitic Language studies, 24.) Cologne:
 # 			Rüdiger Köppe Verlag.
-	{x,ɢ}(ʷ) > ∅ / #,_
+	{x,ɢ,xʷ,ɢʷ} > ∅ / _,#
 	x > ∅
 	xʷ ɢʷ > w ɣʷ
 	{t͡s,t͡ʃ} dz > ʃ d͡ʒ
-	t > j / medially
+	t > j / _ // _,#
 	kʼ > χʷ / #_
 	kʷʼ > χʷ
 	ʔ > ∅

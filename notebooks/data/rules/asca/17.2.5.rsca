@@ -2,7 +2,7 @@
 # citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
 	D T > T T:[+lenis] / #_
 	T D > T:[+fortis] T:[+lenis]
-	x ɣʷ > hh h
+#	x ɣʷ > hh h
 	Ḱ > [+ cons, - fr, + bk, + hi, - lo]
 	V > V:[+ long] / ”U:[+open]
 	e > i / pretonic
@@ -10,7 +10,7 @@
 	{ o, o:[+ long] } > { a, a:[+ long] }
 	a e > a:[+ long] e:[+ long] / in ”U:[+closed]
 	æ:[+ long] > e:[+ long]
-	ɡʷ > hʷ / medially
+	ɡʷ > hʷ / _ // _,#
 	hhy > “something like /ʒ/”
 	h > ∅ / ”V:[+ long]_u
 	h > ∅ / u_”V:[+ long]

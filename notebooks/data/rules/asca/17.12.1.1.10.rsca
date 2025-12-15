@@ -7,10 +7,10 @@
 	k ɡ > t͡ʃ d͡ʒ / _{j,i,e,ɛ}
 	t͡ʃ d͡ʒ > t͡s dz / _{j,i,e,ɛ}
 	{t,k} > ∅ / _#
-	V > ∅ / C_:[- stress]{r,l} // #,_
-	V > ∅ / {r,l}_:[- stress]C // #,_
-	V > ∅ / C_:[- stress]s // #,_
-	V > ∅ / s_:[- stress]C // #,_
+	V > ∅ / C_:[- stress]{r,l} // _,#
+	V > ∅ / {r,l}_:[- stress]C // _,#
+	V > ∅ / C_:[- stress]s // _,#
+	V > ∅ / s_:[- stress]C // _,#
 	{k,ɡ} > x / _{t,s,n,l}
 	x > j / _{t,s,n,l}
 	pt {ɾs,ps} > t:[+ long] s:[+ long]

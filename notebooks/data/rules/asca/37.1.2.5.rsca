@@ -35,7 +35,7 @@
 	r > ∅
 	o > o:[+ long] / _{a:[+ long],æ:[+ long]}
 	V:[+ long] > V / V_
-	V₁”V₂ > ”V₁V₂
+#	V₁”V₂ > ”V₁V₂
 	{ a, a:[+ long] } > ẽ(ː) / adjacent to a nasal vowel
 	ẽ(ː) > { e, e:[+ long] } / _{{ e, e:[+ long] },{ o, o:[+ long] }
 	ʔ > ∅ / _nk(ʷ)

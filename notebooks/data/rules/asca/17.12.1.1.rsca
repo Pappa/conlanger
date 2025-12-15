@@ -116,5 +116,5 @@
 	V:[+ long] > V / _C(C)# “(irregular: often before -m, -t, -nt, but never before ?s)”
 	V > {V:[+ long],V:[+ nasal]} / _n{f,s}
 	n > ∅ / V:[+ nasal]_
-	C₁C₂C₃C₄ > (C₃)C₄
-	C₁C₂C₃ > C₁C₃
+#	C₁C₂C₃C₄ > (C₃)C₄
+#	C₁C₂C₃ > C₁C₃
