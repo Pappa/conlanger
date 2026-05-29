@@ -13,7 +13,7 @@
 	ɔr ɔl > rɔ lɔ / #_T
 	C > Cʲ / _E // /j ɕ ʑ
 	j > lʲ / {p,b,m,v}_
-	ɛ ɛ̃ ɛ:[+ long] > ɔ ɔ̃ a / _C:[-palatalized +dental] (also sporadically before plain non-dentals)
+#	ɛ ɛ̃ ɛ:[+ long] > ɔ ɔ̃ a / _C:[-palatalized +dental] (also sporadically before plain non-dentals)
 	ɛ:[+ long] > ɛ
 	# Havlik’s law:
 	{ь,ъ} > e / iambic counting from U# or a syllable not containing a yer
@@ -24,11 +24,11 @@
 	ъl > ɔ(ː)ɫ / P_
 	ъl > ɛɫ / [+ cons, - fr, + bk, + hi, - lo]_
 	ъl > ɫu / _ // [+ cons, - fr, + bk, + hi, - lo]_
-	ьl > ɫu / C:[+dental]_
-	ьl > ɛɫ / P_C:[+dental -palatalized]
+#	ьl > ɫu / C:[+dental]_
+#	ьl > ɛɫ / P_C:[+dental -palatalized]
 	ьl > il / P_
 	ьl > ɔ(ː)ɫ
-	ь > a:[+ long] / r_C:[+dental -palatalized]
+#	ь > a:[+ long] / r_C:[+dental -palatalized]
 	ьr > { i, i:[+ long] }ʐ
 	{ i, i:[+ long] }ʐ > {ɛ(ː)r,ɛ(ː)ʐ}
 	{ɛ(ː)r,ɛ(ː)ʐ} > {ɛr,ɛʐ}
@@ -58,15 +58,13 @@
 	i u > u i / {lʲ,j}_
 	tʲ dʲ sʲ zʲ nʲ rʲ l lʲ > tɕ d͡ʒ ɕ ʑ ȵ r ɫ l (this last probably not before /i/)
 	i:[+ long] u:[+ long] ɨ:[+ long] > i u ɨ
-	ã > ɛ̃ / short only
+	ã > ɛ̃ / _:[- long]
 	ã:[+ long] > ã
 	ã > ɔ̃
 	a:[+ long] ɔ:[+ long] ɛ:[+ long] > ɒ o e
 	V:[+ long] > V in certain frequently-used words
-	# Sporadic (de)nasalization of vowels; “there were certain environments which
-	# 			favoured nasality changes: in the vicinity of nasal consonants. . .and before sibilants”
 	{i,ɨ} > ɛ / _C:[+rhotic]
-	k ɡ > kʲ ɡʲ / _ɛ where the vowel is from a yer or a borrowing
+	k ɡ > kʲ ɡʲ / _ɛ
 	kɨ ɡɨ > kʲi ɡʲi
 	ʃi ʒi t͡ʃi d͡ʒi ɕi ʑi > ʂɨ ʐɨ ʈʂɨ ɖʐɨ t͡sɨ ʒɨ
 	ʃ ʒ t͡ʃ d͡ʒ ɕ ʑ > ʂ ʐ ʈʂ ɖʐ t͡s ʒ
@@ -87,12 +85,12 @@
 	ɔ̃ > ɔ / _{l,ɫ}
 	ɔ̃ > ɔ / _#
 	ɛ̃ ɔ̃ > ɛ̃N ɔ̃N / _{S,A}
-	ɛ̃ ɔ̃ > ɛɰ̃ ɔɰ̃ / _F:[-palatal]
+#	ɛ̃ ɔ̃ > ɛɰ̃ ɔɰ̃ / _F:[-palatal]
 	ɔ̃ > ɔɰ̃ / _#
-	ɛ̃ ɔ̃ > ɛj̃ ɔj̃ / _F:[+palatal]
+#	ɛ̃ ɔ̃ > ɛj̃ ɔj̃ / _F:[+palatal]
 	ȵ > j̃ / _F
 	n > ŋ / _S:[+velar]
-	Cʲ > C / _C:[+dental]
+#	Cʲ > C / _C:[+dental]
 	Cʲ > C
 	Cʲ > C
 	t > r / tV_

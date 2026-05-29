@@ -44,17 +44,17 @@
 	u:[+ long] > {u,o,ɒ,ø}
 	o:[+ long] > u
 	ɒ > ɛ / _C:[+ long]
-	ɒ > ø / _O:[+ dental/alveolar]
+#	ɒ > ø / _O:[+ dental/alveolar]
 	{ɒ,ey} j{u,o,a}ː y:[+ long] > o ø u / Ḱ_
 	j{u,o,a}ː > ø
-	a > ∅ / C:[+ dental/alveolar]_u
+#	a > ∅ / C:[+ dental/alveolar]_u
 	a > {o,ɔ} / _{[+ cons, - fr, + bk, + hi, - lo],r} (! [+ cons, - fr, + bk, + hi, - lo] = w ?)
 	a:[+ long] > wo
 	a:[+ long] > ɔ(u) / _{l,r}
 	au > {o,ɔ,ɒ} / j_
 	au > j{o,ɔ}
 	y > ə / _{ r, r:[+ long] }
-	y:[+ long] > ø / _O:[+ dental/alveolar]
+#	y:[+ long] > ø / _O:[+ dental/alveolar]
 	æ > e // _{Ḱ,Cʲ}
 	e > {o,ɒ} / _w
 	e:[+ long] > {ɒ,ə} / w_

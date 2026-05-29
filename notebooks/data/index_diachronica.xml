@@ -1044,7 +1044,7 @@
 			<input>{ɲ,ŋʷ}</input>
 			<output>n</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>V</input>
 			<output>∅</output>
 			<env>_#</env>
@@ -1090,7 +1090,7 @@
 			<input>pʼ</input>
 			<output>p</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>p</input>
 			<output>b</output>
 			<env>#dlV_</env>
@@ -1117,12 +1117,12 @@
 			<input>ɡwVq</input>
 			<output>ʕ</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>k(w)</input>
 			<output>t͡ʃ</output>
 			<env>#_Vt</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>ɡ(w)</input>
 			<output>d͡ʒ</output>
 			<env>#_Vd</env>
@@ -1132,7 +1132,7 @@
 			<output>k</output>
 			<env>_h</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>Kʷ</input>
 			<output>K</output>
 		</rule>
@@ -1141,12 +1141,12 @@
 			<output>∅</output>
 			<env>_i</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>q</input>
 			<output>i</output>
 			<env>#_V{Z,C:[+dental]}</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>ʕ</input>
 			<output>i</output>
 			<env>#_VR</env>
@@ -1166,7 +1166,7 @@
 			<output>ʕ</output>
 			<env>C:[+voice]_V</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>q</input>
 			<output>ʔ</output>
 			<env>_C:[+dental]</env>
@@ -1190,12 +1190,12 @@
 			<output>ʕ</output>
 			<env>ħ_</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>tlʼ</input>
 			<output>dl</output>
 			<env>#_Vħr</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>O:[+lateral]</input>
 			<output>O:[+palatal]</output>
 		</rule>
@@ -1280,7 +1280,7 @@
 			<input>{i,u}</input>
 			<output>ə</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>tlʼ</input>
 			<output>ɬ</output>
 			<env>_C:[+sibilant]</env>
@@ -1867,7 +1867,7 @@
 		<rule>
 			<input>u</input>
 			<output>ʊ</output>
-			<env>short only</env>
+			<env>_:[- long]</env>
 		</rule>
 		<rule>
 			<input>a:[+ long] i:[+ long] u:[+ long]</input>
@@ -2541,7 +2541,7 @@
 			<output>({C,#}V:[+ long])∅</output>
 			<env>_C</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>{ i, i:[+ long] }</input>
 			<output>{ u, u:[+ long] }</output>
 			<env>{ o, o:[+ long] }(C:[-dental])(C:[-dental])_</env>
@@ -3074,7 +3074,7 @@
 		<rule>
 			<input>a</input>
 			<output>i</output>
-			<env>in some unaccented syllables (short only)</env>
+			<env>_:[- long, - stress]</env>
 		</rule>
 		<rule>
 			<input>θ</input>
@@ -3095,7 +3095,8 @@
 		</rule>
 		<rule>
 			<input>e</input>
-			<output>i (short only)</output>
+			<output>i</output>
+			<env>_:[- long]</env>
 		</rule>
 		<rule>
 			<input>ja</input>
@@ -3184,9 +3185,9 @@
 			<input>we</input>
 			<output>o</output>
 		</rule>
-		<rule>
+		<rule sporadic="true">
 			<input>e</input>
-			<output>i (short only in southern dialects, both short and long in northern dialects)</output>
+			<output>i</output>
 		</rule>
 		<rule>
 			<input>ja</input>
@@ -3267,7 +3268,8 @@
 		</rule>
 		<rule>
 			<input>e</input>
-			<output>i (short only)</output>
+			<output>i</output>
+			<env>_:[- long]</env>
 		</rule>
 		<rule>
 			<input>ja</input>
@@ -5285,7 +5287,7 @@
 		<rule>
 			<input>w</input>
 			<output>∅</output>
-			<env>tʰV_k (conjectured)</env>
+			<env>tʰV_k</env>
 		</rule>
 	</section>
 	<section index="9.1.2" name="Proto-Vietic to Middle Vietnamese">
@@ -5313,18 +5315,15 @@
 		</rule>
 		<rule>
 			<input>ɓ ɗ</input>
-			<output>m n (For some reason it seems that only first-register tones can occur in this
-				environment)</output>
+			<output>m n</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>{n̥j,nj,ɲ̊j,ɲj}</input>
-			<output>ɲ (Thompson appears to me to have hedged a bit on the last one; based on other
-				evidence in the paper I’m sticking this one as a palatal nasal)</output>
+			<output>ɲ</output>
 		</rule>
 		<rule>
 			<input>t͡ʃ</input>
-			<output>Ω (This is my own notation. I don’t have a clue what the intermediate form was;
-				became something else in different dialects)</output>
+			<output>Ω</output>
 		</rule>
 		<rule>
 			<input>N:[- voice] W:[- voice]</input>
@@ -5338,7 +5337,7 @@
 		<rule>
 			<input>t</input>
 			<output>∅</output>
-			<env>_ɹ (only first-register tones can occur in this environment)</env>
+			<env>_ɹ</env>
 		</rule>
 		<rule>
 			<input>t*ʰ d ɡ</input>
@@ -5351,7 +5350,7 @@
 		</rule>
 		<rule>
 			<input>{əkʰ,əɡɦj}</input>
-			<output>ɟ (I think Thompson implied this was just a bit of a kludge)</output>
+			<output>ɟ</output>
 		</rule>
 		<comment>Finals:</comment>
 		<rule>
@@ -5368,11 +5367,8 @@
 		<rule>
 			<input>c ɲ</input>
 			<output>t n</output>
-			<env>! E_ (apparently the precursor to Vietnamese short *a was treated as a short vowel
-				here)</env>
+			<env>! E_</env>
 		</rule>
-		<comment>Thompson seems to list some changes as affecting Modern Vietnamese but I was unsure
-			of where to put them so they’ll go here:</comment>
 		<rule>
 			<input>a ɔ</input>
 			<output>ɨə uə</output>
@@ -5396,7 +5392,7 @@
 		</rule>
 		<rule>
 			<input>kʰ</input>
-			<output>x (only seems to have occurred with first-register tones)</output>
+			<output>x</output>
 		</rule>
 		<rule>
 			<input>{β,w} {dʲ,ɟ}</input>
@@ -5404,7 +5400,7 @@
 		</rule>
 		<rule>
 			<input>ɹ</input>
-			<output>z (only seems to have occurred with first-register tones)</output>
+			<output>z</output>
 		</rule>
 		<rule>
 			<input>bl</input>
@@ -5428,7 +5424,7 @@
 			<output>i</output>
 			<env>_(ə)w</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>ɛ</input>
 			<output>a</output>
 			<env>_C:[+palatal]</env>
@@ -5437,7 +5433,7 @@
 		<rule>
 			<input>w</input>
 			<output>∅</output>
-			<env>tV_wk (conjectured)</env>
+			<env>tV_wk</env>
 		</rule>
 	</section>
 	<section index="9.1.2.2" name="Middle Vietnamese to Saigon Vietnamese">
@@ -5458,7 +5454,7 @@
 		</rule>
 		<rule>
 			<input>kʰ</input>
-			<output>x (only seems to have occurred with first-register tones)</output>
+			<output>x</output>
 		</rule>
 		<rule>
 			<input>{β,w}</input>
@@ -5529,7 +5525,7 @@
 			<output>ɨ ɛə</output>
 			<env>_K</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>ɛ</input>
 			<output>a</output>
 			<env>_C:[+palatal]</env>
@@ -5538,7 +5534,7 @@
 		<rule>
 			<input>w</input>
 			<output>∅</output>
-			<env>tV_wk (conjectured)</env>
+			<env>tV_wk</env>
 		</rule>
 	</section>
 	<section index="10" name="Austronesian" />
@@ -6940,7 +6936,7 @@
 			<input>s</input>
 			<output>t</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>ʀ</input>
 			<output>r</output>
 			<env>_C:[+dental]</env>
@@ -9266,12 +9262,12 @@
 			<output>p</output>
 			<env>#_</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>v</input>
 			<output>f</output>
 			<env>C:[+ sibilant]%</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>v</input>
 			<output>f</output>
 			<env>%C:[+ sibilant]</env>
@@ -12707,7 +12703,7 @@
 			<input>ə</input>
 			<output>∅</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>i</input>
 			<output>∅</output>
 			<env>#C:[+dental]_C:[+dental]V</env>
@@ -12828,7 +12824,7 @@
 			<input>ə</input>
 			<output>∅</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>i</input>
 			<output>∅</output>
 			<env>#C:[+dental]_C:[+dental]V</env>
@@ -12958,7 +12954,7 @@
 			<output>∅</output>
 			<env>#_</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>i</input>
 			<output>∅</output>
 			<env>#C:[+dental]_C:[+dental]V</env>
@@ -13086,7 +13082,7 @@
 			<output>∅</output>
 			<env>#_</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>i</input>
 			<output>∅</output>
 			<env>#C:[+dental]_C:[+dental]V</env>
@@ -13220,7 +13216,7 @@
 			<output>o</output>
 			<env>_(C)o</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>ə</input>
 			<output>e</output>
 			<env>_{C:[+palatal],E}</env>
@@ -13295,7 +13291,7 @@
 			<output>o</output>
 			<env>_(C)o</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>ə</input>
 			<output>e</output>
 			<env>_{C:[+palatal],E}</env>
@@ -13370,7 +13366,7 @@
 			<output>o</output>
 			<env>_(C)o</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>ə</input>
 			<output>e</output>
 			<env>_{C:[+palatal],E}</env>
@@ -13439,7 +13435,7 @@
 			<output>o</output>
 			<env>_(C)o</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>ə</input>
 			<output>e</output>
 			<env>_{C:[+palatal],E}</env>
@@ -13548,7 +13544,7 @@
 			<output>k</output>
 			<env>else?</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>ɡ́(ʱ)</input>
 			<output>d</output>
 			<env>%_C:[+sibilant]</env>
@@ -13709,7 +13705,7 @@
 			<output>k</output>
 			<env>else?</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>ɡ́(ʱ)</input>
 			<output>d</output>
 			<env>%_C:[+sibilant]</env>
@@ -14149,7 +14145,7 @@
 			<output>ɡ</output>
 			<env>_B</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>h₂</input>
 			<output>k</output>
 			<env>E_E (probably a palatal stop)</env>
@@ -16518,7 +16514,7 @@
 		<rule>
 			<input>a</input>
 			<output>æ:[+ long]</output>
-			<env>short only, includes diphthongs</env>
+			<env>_:[- long]</env>
 			<exception>B or *ã in next syllable</exception>
 		</rule>
 		<rule>
@@ -16527,8 +16523,7 @@
 		</rule>
 		<rule>
 			<input>æ:[+ long]</input>
-			<output>a:[+ long] “under to [sic] the influence of neighboring consonants”, but the
-				article doesn’t elaborate</output>
+			<output>a:[+ long]</output>
 		</rule>
 		<rule>
 			<input>æ:[+ long]</input>
@@ -18045,7 +18040,7 @@
 			<input>{u:[+ long],uw} u</input>
 			<output>ɔw o</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>{ol,al} {ar,er} or</input>
 			<output>ɔu a:[+ long]r o:[+ long]r</output>
 			<env>_C:[+dental]</env>
@@ -18153,12 +18148,12 @@
 			<input>w</input>
 			<output>v</output>
 		</rule>
-		<rule sporadic="true">
+		<rule sporadic="true" skip="true">
 			<input>a:[+ long]</input>
 			<output>o:[+ long]</output>
 			<env>_{N,C:[+ dental],P,h}</env>
 		</rule>
-		<rule sporadic="true">
+		<rule sporadic="true" skip="true">
 			<input>a:[+ long]</input>
 			<output>o:[+ long]</output>
 			<env>{N,C:[+ dental],P,h}_</env>
@@ -20026,7 +20021,7 @@
 			<output>ɛ</output>
 			<env>_C:[+ long]</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>ɒ</input>
 			<output>ø</output>
 			<env>_O:[+ dental/alveolar]</env>
@@ -20040,7 +20035,7 @@
 			<input>j{u,o,a}ː</input>
 			<output>ø</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>a</input>
 			<output>∅</output>
 			<env>C:[+ dental/alveolar]_u</env>
@@ -20073,7 +20068,7 @@
 			<output>ə</output>
 			<env>_{ r, r:[+ long] }</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>y:[+ long]</input>
 			<output>ø</output>
 			<env>_O:[+ dental/alveolar]</env>
@@ -21943,7 +21938,7 @@
 			<input>m̩ n̩</input>
 			<output>{ьm,ъm} {ьn,ъn}</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>æ:[+ long]</input>
 			<output>a</output>
 			<env>“After palatal fricatives and affricates”</env>
@@ -22031,7 +22026,7 @@
 			<output>lʲ</output>
 			<env>{p,b,m,v}_</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>ɛ ɛ̃ ɛ:[+ long]</input>
 			<output>ɔ ɔ̃ a</output>
 			<env>_C:[-palatalized +dental] (also sporadically before plain non-dentals)</env>
@@ -22074,12 +22069,12 @@
 			<env>_</env>
 			<exception>K_</exception>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>ьl</input>
 			<output>ɫu</output>
 			<env>C:[+dental]_</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>ьl</input>
 			<output>ɛɫ</output>
 			<env>P_C:[+dental -palatalized]</env>
@@ -22093,7 +22088,7 @@
 			<input>ьl</input>
 			<output>ɔ(ː)ɫ</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>ь</input>
 			<output>a:[+ long]</output>
 			<env>r_C:[+dental -palatalized]</env>
@@ -22216,7 +22211,7 @@
 		<rule>
 			<input>ã</input>
 			<output>ɛ̃</output>
-			<env>short only</env>
+			<env>_:[- long]</env>
 		</rule>
 		<rule>
 			<input>ã:[+ long]</input>
@@ -22234,17 +22229,15 @@
 			<input>V:[+ long]</input>
 			<output>V in certain frequently-used words</output>
 		</rule>
-		<comment>Sporadic (de)nasalization of vowels; “there were certain environments which
-			favoured nasality changes: in the vicinity of nasal consonants. . .and before sibilants”</comment>
 		<rule>
 			<input>{i,ɨ}</input>
 			<output>ɛ</output>
 			<env>_C:[+rhotic]</env>
 		</rule>
-		<rule>
+		<rule sporadic="true">
 			<input>k ɡ</input>
 			<output>kʲ ɡʲ</output>
-			<env>_ɛ where the vowel is from a yer or a borrowing</env>
+			<env>_ɛ</env>
 		</rule>
 		<rule>
 			<input>kɨ ɡɨ</input>
@@ -22340,7 +22333,7 @@
 			<output>ɛ̃N ɔ̃N</output>
 			<env>_{S,A}</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>ɛ̃ ɔ̃</input>
 			<output>ɛɰ̃ ɔɰ̃</output>
 			<env>_F:[-palatal]</env>
@@ -22350,7 +22343,7 @@
 			<output>ɔɰ̃</output>
 			<env>_#</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>ɛ̃ ɔ̃</input>
 			<output>ɛj̃ ɔj̃</output>
 			<env>_F:[+palatal]</env>
@@ -22365,7 +22358,7 @@
 			<output>ŋ</output>
 			<env>_S:[+velar]</env>
 		</rule>
-		<rule sporadic="true">
+		<rule sporadic="true" skip="true">
 			<input>Cʲ</input>
 			<output>C</output>
 			<env>_C:[+dental]</env>
@@ -26976,7 +26969,7 @@
 			<output>j</output>
 			<env>{k,ɡ}_</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>a</input>
 			<output>e</output>
 			<env>C:[+palatal]_#</env>
@@ -27007,7 +27000,7 @@
 			<output>∅</output>
 			<exception>{OL,”V}_#</exception>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>a</input>
 			<output>a</output>
 			<env>#(C…)V…C:[+palatal]_…”U</env>
@@ -31300,12 +31293,12 @@
 		<cite>Pogostick Man, from Hale, Kenneth (1964), “Classification of Northern Paman Languages,
 			Cape York Peninsula, Australia: A Research Report”. Oceanic Linguistics Vol. 3, No. 2,
 			248 – 265</cite>
-		<rule>
+		<rule skip="true">
 			<input>a</input>
 			<output>i</output>
 			<env>#C:[+palatal]V:[- long]C_</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>i</input>
 			<output>e</output>
 			<env>#(C)aC:[-palatal]_</env>
@@ -35589,12 +35582,12 @@
 			<input>ɨ(ː)</input>
 			<output>{ i, i:[+ long] }</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>{u,a}</input>
 			<output>e</output>
 			<env>_CVC#, when stressed (short only)</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>i</input>
 			<output>e</output>
 			<env>_CVC#, when stressed (! _H, short only)</env>
@@ -35765,12 +35758,12 @@
 			<output>p</output>
 			<env>#_VA</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>ph</input>
 			<output>p</output>
 			<env>#_aC:[+sibilant]</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>pʼ</input>
 			<output>p/ #_C:[+sibilant]</output>
 		</rule>
@@ -38051,11 +38044,6 @@
 			<output>i</output>
 		</rule>
 		<rule>
-			<input>There seems to ahve been some stuff going on with palatalized [ŋ]</input>
-			<output>{ɲ,n} but it seems highly dialectal and I’m not entirely sure just what exactly
-				was going on here</output>
-		</rule>
-		<rule>
 			<input>w</input>
 			<output>{v,u}</output>
 		</rule>
@@ -38068,15 +38056,15 @@
 			<input>m</input>
 			<output>n</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>long-tail vowel thing</input>
 			<output>i (or [truncated vowel-thing] “where GH sibilant initial variants occur”)</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>{long-tail vowel thingʔ,əʔ}</input>
 			<output>ɛʔ</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>i</input>
 			<output>[long-tail vowel thing]</output>
 			<env>C̣_</env>
@@ -38104,7 +38092,7 @@
 			<output>uɛi</output>
 			<env>{P,C:[+guttural],∅}_</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>uj</input>
 			<output>ui</output>
 			<env>{C:[+dental],C:[+sibilant]}_</env>
@@ -38113,7 +38101,7 @@
 			<input>ujʔ</input>
 			<output>uɛʔ</output>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>un</input>
 			<output>uɛn</output>
 			<exception>{C:[+dental],C:[+sibilant]}_</exception>
@@ -38150,7 +38138,7 @@
 			<output>ɥ (&gt; y~u dialectally?)</output>
 			<env>C̣_</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>yʔ</input>
 			<output>yɛʔ</output>
 			<env>{l,C:[+dental +sibilant]}_ in “QYS -juət-type” finals, dialectally?</env>
@@ -46174,7 +46162,7 @@
 			<output>∅</output>
 			<env>V_V</env>
 		</rule>
-		<rule>
+		<rule skip="true">
 			<input>S:[+ voice]</input>
 			<output>S:[- voice]</output>
 			<env>F:[+ sibilant]_</env>
@@ -46261,7 +46249,7 @@
 			<output>u i</output>
 			<env>_$a</env>
 		</rule>
-		<rule sporadic="true">
+		<rule sporadic="true" skip="true">
 			<input>e</input>
 			<output>i</output>
 			<env>_{n,C:[+ sibilant]}</env>
@@ -46460,7 +46448,7 @@
 			<output>∅</output>
 			<env>S_{ɾ,l}</env>
 		</rule>
-		<rule sporadic="true">
+		<rule sporadic="true" skip="true">
 			<input>V</input>
 			<output>∅</output>
 			<env>C:[+ sibilant]_ɾ</env>
@@ -46581,9 +46569,6 @@
 			<output>s̺</output>
 			<env>_{C,#}</env>
 		</rule>
-		<comment>From the Wikipedia article on Biscayan: “Convergence of sibilants: z, x and s &gt;
-			x, s and tz, tx and t͡s &gt; tz.” I’m not sure what this means. 〈s z〉 are apparently s̻
-			s̺, and 〈x〉 is ʃ.</comment>
 		<rule sporadic="true">
 			<input>its̺</input>
 			<output>t͡ʃ</output>
@@ -46594,7 +46579,6 @@
 			<output>u(e) i(e)</output>
 			<env>_#</env>
 		</rule>
-		<comment>Beterri Guipuscoan has VjV# where Biscayan has VɲV# and regular Basque has VV#</comment>
 		<rule sporadic="true">
 			<input>s̺</input>
 			<output>t͡ʃ</output>

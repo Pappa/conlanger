@@ -64,7 +64,7 @@
 	ð > some sort of tap distinct from ɾ (Biscayan, Guipuscoan, High Navarrese)
 	b > ∅ / #_B
 	F:[+ voice] > ∅ / V_V
-	S:[+ voice] > S:[- voice] / F:[+ sibilant]_
+#	S:[+ voice] > S:[- voice] / F:[+ sibilant]_
 	Ṽ > Vɲ / _V
 	Ṽ > Vn
 	h̃ > h
@@ -82,7 +82,7 @@
 	o > u / _n{C,#}
 	a > e / _$a
 	o e > u i / _$a
-	e > i / _{n,C:[+ sibilant]}
+#	e > i / _{n,C:[+ sibilant]}
 	e > a / {V,C}_r
 	u i > o e / _r{C,#}
 	∅ > j / V_{N,s̺,s̻}S
@@ -128,7 +128,7 @@
 	ʎ ɲ > jl jn
 	# Vowel syncope:
 	V > ∅ / S_{ɾ,l}
-	V > ∅ / C:[+ sibilant]_ɾ
+#	V > ∅ / C:[+ sibilant]_ɾ
 	V > ∅ / {O,ɾ,r}_O
 	n:[+ fortis] > n
 	# Something about final devoicing of stops and initial stops losing voicing as a
@@ -158,11 +158,7 @@
 #	C:[+ sibilant] > C:[+ affricate] / _#
 	s̻ t͡s̺ > s̺ t͡s̻
 	s̻ > s̺ / _{C,#}
-	# From the Wikipedia article on Biscayan: “Convergence of sibilants: z, x and s >
-	# 			x, s and tz, tx and t͡s > tz.” I’m not sure what this means. 〈s z〉 are apparently s̻
-	# 			s̺, and 〈x〉 is ʃ.
 	its̺ > t͡ʃ / _#
 	oa ea > u(e) i(e) / _#
-	# Beterri Guipuscoan has VjV# where Biscayan has VɲV# and regular Basque has VV#
 	s̺ > t͡ʃ / #_
 	s̺ > ʃ̺

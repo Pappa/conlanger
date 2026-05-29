@@ -11,7 +11,7 @@
 	# Tonogenesis
 	# Initials:
 	pʰ > f
-	kʰ > x (only seems to have occurred with first-register tones)
+	kʰ > x
 	{β,w} > bj~vj~v
 	{bl,tl} > ʈ
 	dʲ ɟ > z j
@@ -29,6 +29,6 @@
 	# The contrast between short /a/ and short /ə/ is neutralized when _w{k,ŋ}
 	a > a:[+ long] / _{w,j}
 	ə(ː) ɛ > ɨ ɛə / _[+ cons, - fr, + bk, + hi, - lo]
-	ɛ > a / _C:[+palatal]
+#	ɛ > a / _C:[+palatal]
 	# Miscellanea:
-	w > ∅ / tV_wk (conjectured)
+	w > ∅ / tV_wk
