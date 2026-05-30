@@ -1,4 +1,7 @@
 from xml.etree.ElementTree import Element
+from lxml import etree
+import xml.etree.ElementTree as ET
+
 
 class RulePartBase:
     prefixes = {"asca": "# ", "brassica": "; "}
@@ -110,25 +113,18 @@ class SoundChangeRule:
     def __str__(self):
         return "\n".join([str(part) for part in self._parts])
 
+    @property
+    def title(self):
+        return self._parts[0].value
 
-
-
-class DebugRuleTitle(RulePartBase):
-    prefixes = {"asca": "@ ", "brassica": "; "}
-    def __init__(self, el: Element, index: int, format: str = "asca"):
-        title = el.attrib["index"] + " - " + str(index)
-        super().__init__(title, format)
-
-class DebugRule:
-    def __init__(self, el: Element, part: Element, index: int, format: str = "asca"):
-        self._parts = [DebugRuleTitle(el, index, format), RuleChange(part, format)]
-        self.title = self._parts[0].value
-
-    def __str__(self):
-        return "\n".join([str(part) for part in self._parts])
         
 class DebugRules:
-    prefixes = {"asca": "@ ", "brassica": "; "}
     def __init__(self, input: Element, format: str = "asca"):
+        parts = [p for p in input if p.tag == "rule"]
         rule_parts = [p for p in input if p.tag == "rule"]
-        self.rules = [DebugRule(input, part, index, format) for index, part in enumerate(rule_parts)]
+        self.rules = [self._create_rule(input, part, index, format) for index, part in enumerate(rule_parts)]
+
+    def _create_rule(self, input: Element, part: Element, index: int, format: str):
+        el = Element("section", attrib={"index": input.attrib["index"], "name": str(index)})
+        el.append(ET.fromstring(etree.tostring(part)))
+        return SoundChangeRule(el, format)

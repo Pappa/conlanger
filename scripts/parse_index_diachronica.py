@@ -52,9 +52,13 @@ def extract_text_with_subs(el) -> str:
 
     walk(el)
     text = "".join(parts)
-    text = re.sub(r"\s+", " ", text).strip()
+    text = strip_whitespace(text)
     return text
 
+
+def strip_whitespace(text: str) -> str:
+    text = re.sub(r"[\n|\r]", " ", text)
+    return re.sub(r"\s+", " ", text).strip()
 
 def expand_optional_length(token: str) -> str:
     def repl_optional(m: re.Match) -> str:
