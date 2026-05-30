@@ -1,15 +1,14 @@
 @ 37.1.2.2.1 - Huron to Wyandot
-# citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”,
-# 			University of Manitoba, Winnipeg
-	V:[+ long] > ”V / in U#; “this change may have been present in Huron already”
+# citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg
+	V:[+long] > ”V / in U#; “this change may have been present in Huron already”
 	t > k / _j
 	xʷ > w
 	{ʔ,h} > ∅ / _nh
 	n > t / _h
-	h > ∅ / {t,t͡s,s,k}_
-	Vh > V:[+ long] / _R
-	∅ > w / {{ o, o:[+ long] },õ(ː)}_V
-	∅ > j / {{ e, e:[+ long] },ẽ(ː),{ i, i:[+ long] }}_V
+	h > ∅ / {t,ts,s,k}_
+	Vh > V:[+long] / _R
+	∅ > w / {{ o, o:[+long] }{ ,õ, ,õ:[+long] }}_V
+	∅ > j / {{ e, e:[+long] }{ ,ẽ, ,ẽ:[+long] }{ ,i, ,i:[+long] }}_V
 	x > ∅ / _{i,j}
 	x > e / #_r
 	w j > m ɲ / between two vowels of unlike nasality
@@ -17,7 +16,7 @@
 	x > j / _V
 	x > ∅
 	k > ∅ / _#
-	ẽ(ː) õ(ː) { o, o:[+ long] } > ɛ̃(ː) ɔ̃(ː) { u, u:[+ long] }
-	n > ⁿd / _{V:[- nasal],r}
+	{ ẽ, ẽ:[+long] } { õ, õ:[+long] } { o, o:[+long] } > { ɛ̃, ɛ̃:[+long] } { ɔ̃, ɔ̃:[+long] } { u, u:[+long] }
+	n > ⁿd / _{V:[-nas],r}
 	n > ŋ / _{j,w}
-	ɛ̃(ː) > ã(ː) / w_
+	{ ɛ̃, ɛ̃:[+long] } > { ã, ã:[+long] } / w_

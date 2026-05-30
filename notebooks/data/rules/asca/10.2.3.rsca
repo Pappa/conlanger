@@ -1,17 +1,16 @@
 @ 10.2.3 - Proto-Malayo-Polynesian to Proto-Malayic
-# citation: TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic Linguistics
-# 			44(2):357 – 388
+# citation: TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic Linguistics 44(2):357 – 388 A: B:
 	j > t / _#
 	j > d
 	z > j
 	w > ∅ / #_
 	R > r
-	h > ʔ / _#
-	h > ∅ / _ // _#
+	h > ʔ / _# (sometimes)
+	h > ∅ / else
 	{iw,uj} > i / _#
-	aj aw > i u / _#
-	aj aw > aj aw / _#
-#	C₁C₂ > C₂
-	C:[+ A POA]C:[+ B POA] > C:[+ B POA]C:[+ B POA]
-	C:[+ voice] > C:[- voice] / _#
+	— aj aw > i u / _#
+	— aj aw > aj aw / _#
+	C₁C₂ > C₂
+	C:[+A POA]C:[+B POA] > C:[+B POA]C:[+B POA]
+	C:[+voice] > C:[-voice] / _#
 	H > {∅,h} / _əNS / #_

@@ -1,7 +1,6 @@
 @ 46.15 - Proto-Japanese to Old Japanese Vowel Shift
-# citation: Pogostick Man, from Frellesvig, Bjarke and John Witman (2005), “The Japanese-Korean
-# 			vowel correspondences”
+# citation: Pogostick Man, from Frellesvig, Bjarke and John Witman (2005), “The Japanese-Korean vowel correspondences”
 	e o > je wo / _#
-	e o > i u / _ // _#
+	e o > i u / else
 	{ɨ,ə} > o
 	{u,ɨ}i {,a,i {ɨi,i{a,ə}} u{ɨ,a,ə} > wi e je wo

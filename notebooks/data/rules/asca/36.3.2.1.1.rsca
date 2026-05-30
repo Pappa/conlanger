@@ -1,9 +1,5 @@
 @ 36.3.2.1.1 - Proto-rGyalrongic to Chos Kia
-# citation: Pogostick Man, from Nagano, Yashuiki (1979), “A Historical Study of rGyarong Initials
-# 			and Prefixes”. Linguistics of the Tibeto-Burman Area 4(2):44 – 68; and Nagano, Yashuiki
-# 			(1979), “A Historical Study of rGyarong Rhymes”. Linguistics of the Tibeto-Burman Area
-# 			5(1):37 – 47
-	# Initials:
+# citation: Pogostick Man, from Nagano, Yashuiki (1979), “A Historical Study of rGyarong Initials and Prefixes”. Linguistics of the Tibeto-Burman Area 4(2):44 – 68; and Nagano, Yashuiki (1979), “A Historical Study of rGyarong Rhymes”. Linguistics of the Tibeto-Burman Area 5(1):37 – 47 Initials: Rhymes:
 	b > m / _j
 	p çp (ç)b rP Np Nb pr {br,pj} > p. ç.w (ç)p rp. kj m.p n.br p.j
 	P > p / l_
@@ -12,15 +8,15 @@
 	ç[+ cons, - fr, + bk, + hi, - lo] > ç.k
 	N > ∅ / _ɡ
 	sk r[+ cons, - fr, + bk, + hi, - lo] > j sɡ
-	kj Nkj ʔkj ɡj sɡj > kj. nj ɡ.t͡sʰ kj skj.
+	kj Nkj ʔkj ɡj sɡj > kj. nj ɡ.tsʰ kj skj.
 	kr (s)ɡr > n.br (s)kr
-#	C:[+ sibilant] > s / _w
+	C:[+sibilant] > s / _w
 	[+ cons, - fr, + bk, + hi, - lo] > ɡ. / _ç
 	Nç > n.pj.
 	çl > sj
-	[+ cons, - fr, + bk, + hi, - lo]ts > ɡ.t͡sʰ.
+	[+ cons, - fr, + bk, + hi, - lo]ts > ɡ.tsʰ.
 	lTS > l.dz
-	t͡s (r)dz d͡ʒ PTS [+ cons, - fr, + bk, + hi, - lo]TS sTS çt͡s > {t͡sʰ,s} (r)t͡s t͡sʰ ɡ.t͡s s.{t͡s,pj} {s.t͡s,br}
+	ts (r)dz dʒ PTS [+ cons, - fr, + bk, + hi, - lo]TS sTS çTS > {tsʰ,s} (r)ts tsʰ ɡ.ts s.{ts,pj} {s.ts,br}
 	rm rn > mj rw
 	çm çnj > ç.n
 	N > m. / _ŋ
@@ -28,7 +24,6 @@
 	w > ∅ / ŋ_
 	rnj > r.mj
 	j > ∅ / n_
-	# Rhymes:
 	ut uk > ud oɡ
 	s > ∅ / u_
 	uj > ui

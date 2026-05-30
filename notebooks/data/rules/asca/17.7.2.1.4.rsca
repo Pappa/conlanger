@@ -1,15 +1,14 @@
 @ 17.7.2.1.4 - Midlands Middle English to Early Modern English
-# citation: Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”.
-# 			FireSpeakerWiki. <http://wiki.firespeaker.org/English_sound_changes>
+# citation: Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. <http://wiki.firespeaker.org/English_sound_changes> “[A] large number of cases that were ɑː have become ɔː subsequently for non-phonetic reasons, like laundry”
 	ʊ > ɤ ! P_ and _l
 	mb ŋɡ > m ŋ / _#
-	tj sj dj zj > t͡ʃ ʃ d͡ʒ ʒ // _u:[+ long]
-	a ɑ {ɛ,ɪ,ɤ} > ɑ:[+ long] ɔ:[+ long] ɜ:[+ long] / _ɹ{C,#}
-	ɑʊ > ɑ:[+ long] / _P
-	ɑʊ > ɑ:[+ long] / _N
-	ɑʊ > ɔ:[+ long] / _ // _N
-	a > ɑ:[+ long]
-	a > æ
-	əɪ əʊ > ɑi æʊ
-	əɪ əʊ > aɪ aʊ
-	e:[+ long] o:[+ long] > eɪ oʊ // _ɹ
+	tj sj dj zj > tʃ ʃ dʒ ʒ / ! _u:[+long] (perhaps only before stressed u:[+long]?)
+	a ɑ {ɛ,ɪ,ɤ} > ɑ:[+long] ɔ:[+long] ɜ:[+long] / _ɹ{C,#}
+	ɑʊ > ɑ:[+long] / _P
+	ɑʊ > ɑ:[+long] / _N (sometimes)
+	ɑʊ > ɔ:[+long] / else
+	a > ɑ:[+long] / “in a few words, like ‘father’”
+	a > æ / else
+	əɪ əʊ > ɑi æʊ / “in some parts of South-Eastern England”
+	əɪ əʊ > aɪ aʊ / “in most of Britain”
+	e:[+long] o:[+long] > eɪ oʊ / ! _ɹ

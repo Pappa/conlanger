@@ -1,9 +1,8 @@
 @ 6.2.2.1.1 - Proto-North Erythrean to Proto-Boreafrasian
-# citation: Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
-# 			(Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)
+# citation: Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)
 	sʼ > s
 	h > ħ / #_Vs
-	z > d
-	{ɲ,ŋʷ} > n
-#	V > ∅ / _#
+	z > d / “when another sibilant is in the word nearby” and (word-finally?) when “noun-stem final”
+	{ɲ,ŋw} > n
+	V > ∅ / _# “in nominals”
 	ŋ > ∅ / #_CV

@@ -1,18 +1,16 @@
 @ 16.1.3 - Proto-Tabla-Sentani to Eastern Sentani
-# citation: Pogostick Man, from Gregerson, Kenneth, and Margaret Hartzler (1987), “Towards a
-# 			Reconstruction of Proto-Tabla-Sentani Phonology”. Oceanic Linguistics, Vol. 26, No. 1/2
-# 			(Summer – Winter, 1987), 1 – 29.
+# citation: Pogostick Man, from Gregerson, Kenneth, and Margaret Hartzler (1987), “Towards a Reconstruction of Proto-Tabla-Sentani Phonology”. Oceanic Linguistics, Vol. 26, No. 1/2 (Summer – Winter, 1987), 1 – 29.
 	p k > b ɡ / V_V
 	p t > f {s,h} / #_
-	d > l / _ // _,#
+	d > l / medially
 	N > m / _#
 	e > i / _(C)i
 	e > æ / {P,[+ cons, - fr, + bk, + hi, - lo]}_
 	e > æ / _P
 	e > ə / _C{a,ə,u} (seems to have become a in a few instances)
 	ə > o / _(C)o
-#	ə > e / _{C:[+palatal],E}
-	ə > æ // _{B,[+ cons, - fr, + bk, + hi, - lo],H}
+	ə > e / _{C:[+palatal],E}
+	ə > æ / ! _{B,[+ cons, - fr, + bk, + hi, - lo],H}
 	a > æ / _(C)e
 	a > æ / i(C)_
-	o > e
+	o > e (sporadic, highly unusual)

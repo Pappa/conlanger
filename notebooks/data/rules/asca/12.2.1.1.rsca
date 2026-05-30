@@ -1,15 +1,10 @@
 @ 12.2.1.1 - Adyghe to Abadzekh Adyghe
-# citation: Pogostick Man, from Wikipedia contributors (2014), “Proto-Circassian language”.
-# 			Wikipedia, the Free Encyclopedia,
-# 			<http://en.wikipedia.org/w/index.php?title=Proto-Circassian_language>; and
-# 			Wikipedia contributors (2014), “Adyghe language”. Wikipedia, the Free Encyclopedia.
-# 			<http://en.wikipedia.org/w/index.php?title=Adyghe_language>
-	t͡sʲ(ː) > tɕ
-	t͡sʷ > t͡ʃʷ
-	p:[+ long] t:[+ long] t͡s:[+ long] t͡sʷ ʃ:[+ long] t͡ʃ:[+ long] tɕ:[+ long] kʲ:[+
-				long] kʷ:[+ long] q:[+ long]~qχ qʷ:[+ long]~qχʷ > p t t͡s t͡ʃʷ ʃ ɕ tɕ t͡ʃ kʷ q:[+ long] qʷ
-	t͡ʃʼ tɬʼ > ʔaj~ʔ ɬʼ
-	t͡ʃʷʼ~ʃʷʼ > ɕʷʼ~ʃʷʼ
-	kʲʼ > t͡ʃʼ
-	ʂ:[+ long] ʃ:[+ long] > ʂ ʃ
-	sʼ ʃʼ~ɕʼ > t͡sʼ ʃʼ
+# citation: Pogostick Man, from Wikipedia contributors (2014), “Proto-Circassian language”. Wikipedia, the Free Encyclopedia, <http://en.wikipedia.org/w/index.php?title=Proto-Circassian_language>; and Wikipedia contributors (2014), “Adyghe language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Adyghe_language>
+	{ tsʲ, tsʲ:[+long] } > tɕ
+	tsʷ > tʃʷ
+	p:[+long] t:[+long] ts:[+long] tsʷ ʃ:[+long] tʃ:[+long] tɕ:[+long] kʲ:[+long] kʷ:[+long] q:[+long]~qχ qʷ:[+long]~qχʷ > p t ts tʃʷ ʃ ɕ tɕ tʃ kʷ q:[+long] qʷ
+	tʃʼ tɬʼ > ʔaj~ʔ ɬʼ
+	tʃʷʼ~ʃʷʼ > ɕʷʼ~ʃʷʼ
+	kʲʼ > tʃʼ
+	ʂ:[+long] ʃ:[+long] > ʂ ʃ
+	sʼ ʃʼ~ɕʼ > tsʼ ʃʼ

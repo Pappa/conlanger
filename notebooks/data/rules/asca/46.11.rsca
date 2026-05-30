@@ -1,20 +1,17 @@
 @ 46.11 - Middle Chinese to Cantonese Vowel Shift (“The Inner-Outer Flip”)
-# citation: LoneWolf, from Newman, J. (1983). Cahiers de Linguistique Asie Orentale XII.1:65 – 79.
-	# Relevant changes occurring before the shift:
+# citation: LoneWolf, from Newman, J. (1983). Cahiers de Linguistique Asie Orentale XII.1:65 – 79. Relevant changes occurring before the shift: The actual vowel shift: Other relevant changes occurring at the same time: (Apparently, /i u/ either were or became glides in the appropriate positions)
 	a > ɔ / _{ŋ,k}
 	uə yə > ɔ œ / _{n,t}
 	ə > ∅ / i_{ŋ,k}
-	∅ > ə / C:[+ labiovelar]_i
+	∅ > ə / C:[+labiovelar]_i
 	∅ > ə / _u
-	V > V:[+ long] / _#
-	# The actual vowel shift:
+	V > V:[+long] / _#
 	ə > a
-	a > {a:[+ long],ə}
+	a > {a:[+long],ə} “(the environments for these respective changes are somewhat unclear)”
 	ə > a / _{i,u}
 	iəu > au
-	a > a:[+ long] / _{i,u}
+	a > a:[+long] / _{i,u}
 	a > ə / i_u
 	ə > ∅ / i_u
-	# Other relevant changes occurring at the same time:
 	ə > ∅ / W_
 	W > ∅ / C_

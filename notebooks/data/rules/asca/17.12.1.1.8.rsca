@@ -1,7 +1,7 @@
 @ 17.12.1.1.8 - Latin to Romanian
-# citation: pharazon, from Jensen, A Comparative Study of Romance, as well as other sources
+# citation: pharazon, from Jensen, A Comparative Study of Romance, as well as other sources “Stressed vowels (note the difference from the French development)”: Word-initial vowels: Word-final vowels:
 	h > ∅
-	V₀V₀ > V₀ː
+	V₀V₀ > V₀:[+long]
 	n > ∅ / _{f,v,s}
 	r > s / _s
 	{m,n,s} > ∅ / _# in polysyllables
@@ -9,40 +9,37 @@
 	u > ∅ / CC_V
 	V > ”V / ”VSr_
 	V > ”V / _(C…)”{i,e}V
-	# “Stressed vowels (note the difference from the French development)”:
-	a:[+ long] > a
-	(a)e > ɛ
-	e:[+ long],i,oe > e
-	i:[+ long] { o, o:[+ long] } { u, u:[+ long] } > i o u
-	# Word-initial vowels:
-	a:[+ long] > a
-	{{ e, e:[+ long] },i,ae,oe} > e
-	i:[+ long] > i
-	{{ o, o:[+ long] },u} > o
-	# Word-final vowels:
-	a:[+ long] > a
-	{{ e, e:[+ long] },i,ae,oe} > e / _#
-	i:[+ long] > i
-	{{ o, o:[+ long] },u:[+ long]} > o
-	u > o // V_
+	— a:[+long] > a
+	— (a)e > ɛ
+	— e:[+long],i,oe > e
+	— i:[+long] { o, o:[+long] } { u, u:[+long] } > i o u
+	— a:[+long] > a
+	— {{ e, e:[+long] },i,ae,oe} > e
+	— i:[+long] > i
+	— {{ o, o:[+long] },u} > o
+	— a:[+long] > a
+	— {{ e, e:[+long] },i,ae,oe} > e / _#
+	— i:[+long] > i
+	— {{ o, o:[+long] },u:[+long]} > o
+	— u > o / ! V_
 	s > i / #(C…)V_#
 	k > ∅ / _s#
 	{s,t} > ∅ / _#
 	kʷ ɡʷ > p b / V_a
 	ɡ > m / _n
 	w > ∅ / {k,ɡ}_
-	k ɡ > t͡ʃ d͡ʒ / _E
+	k ɡ > tʃ dʒ / _E
 	ɛ > ie
-	t d s > t͡s dz ʃ / _i
+	t d s > ts dz ʃ / _i
 	o e > u i / _N
-	a > ɨ _N ! _{n:[+ long],mn}
+	a > ɨ _N ! _{n:[+long],mn}
 	i > ∅ / OL_e
 	e > a / i_(C…){a,e}#
-	i > ∅ / {t͡s,dz,S}_V
+	i > ∅ / {ts,dz,S}_V
 	li > lj / _V
 	l > lj / _i
-	l:[+ long] > ∅ / _i
-	”el:[+ long]a > e”a / _#
+	l:[+long] > ∅ / _i
+	”el:[+long]a > e”a / _#
 	{b,v} > ∅ / V_{V,t}
 	l > r / V_V
 	m > u / a_nV
@@ -52,9 +49,10 @@
 	{sc,st} > ʃt / _F
 	s > ʃ / _kl
 	c > ∅ / n_t
-	kj ɡj > t͡ʃ {j,∅}
+	kj ɡj > tʃ {j,∅} (ɡj
+	tʃ {j,∅} (ɡj > ∅ is rare)
 	Pj > ɥ
-	{sj,stj,s:[+ long]j} > ʃ
+	{sj,stj,s:[+long]j} > ʃ
 	j > s / t_
 	j > z / rd_
 	dj > ʒ / _”B
@@ -64,13 +62,13 @@
 	j > ∅ / r_
 	d > ∅ / _z
 	l > j / {k,ɡ}_
-#	a > e / C:[+palatal]_#
+	a > e / C:[+palatal]_#
 	a o > ə u / ”U…_#
-	e > ə / ”U…P_(C…)V# // V = i
+	e > ə / ”U…P_(C…)V# ! V = i
 	u > ∅ / o_e
 	e > ə / ou_#
-	u > ∅ // {OL,”V}_#
-#	a > a / #(C…)V…C:[+palatal]_…”U
+	u > ∅ / ! {OL,”V}_#
+	a > a / #(C…)V…C:[+palatal]_…”U
 	a o > ə u / #(C…)V…_…”U
 	e > i / #(C…)V…_n…”U
 	e > ə / #(C…)V…{t,d,n}_…”U
@@ -80,4 +78,4 @@
 	o > u / #C…_…”U
 	a > ə #C(C…)_…”U
 	{t,d} > ∅ / n_#
-	Ci > Cʲ / _# // R…R_#
+	Ci > Cʲ / _# ! R…R_#

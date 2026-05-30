@@ -1,36 +1,32 @@
 @ 37.1.2.1 - Proto-Northern Iroquoian to Cayuga
-# citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”,
-# 			University of Manitoba, Winnipeg
+# citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg “[A]ccented short vowels in odd-numbered penults lose their accent” “[W]ords with no accent acquire a new accent on the vowel of the last non-final even syllable of the word”
 	∅ > a / w_j
 	”V(C)(C)CaCV > V(C)”(C)CaCV / _#
 	h > ∅ / _nh
 	ʔ > ∅ / _nk(ʷ)
 	n > t / _k(ʷ)
-	t͡s > hs / V_ // _{h,i,j,r}
-	t͡s > s // _{h,i,j,r}
-	ns > t͡s / _k(ʷ)
-	V > V:[+ long] / _C:[-glottal] “in even-numbered syllables when accented or immediately before the
-				accent”
-	Vʔ > ʔV / “in odd-numbered unaccented non-final syllables;” // {ʔ,h}_
-	j > ∅ / t͡s_
+	ts > hs / V_ ! _{h,i,j,r}
+	ts > s / ! _{h,i,j,r}
+	ns > ts / _k(ʷ)
+	V > V:[+long] / _C:[-glottal] “in even-numbered syllables when accented or immediately before the accent”
+	Vʔ > ʔV / “in odd-numbered unaccented non-final syllables;” ! {ʔ,h}_
+	j > ∅ / ts_
 	h > ∅ / s_w
 	r > n / _(h)j
-	r > w / {{ o, o:[+ long] },õ(ː)}_{{ a, a:[+ long] },{ e, e:[+ long] },ẽ(ː),{ i, i:[+ long]
-				}}
-	r > j / {{ e, e:[+ long] },ẽ(ː),{ i, i:[+ long] }}_{{ a, a:[+ long] },{ o, o:[+ long]
-				},õ(ː)}
+	r > w / {{ o, o:[+long] }{ ,õ, ,õ:[+long] }}_{{ a, a:[+long] }{ ,e, ,e:[+long] }{ ,ẽ, ,ẽ:[+long] }{ ,i, ,i:[+long] }}
+	r > j / {{ e, e:[+long] }{ ,ẽ, ,ẽ:[+long] }{ ,i, ,i:[+long] }}_{{ a, a:[+long] }{ ,o, ,o:[+long] }{ ,õ, ,õ:[+long] }}
 	r > ∅ / VH_
 	r > ∅ / _H
 	r > ∅ / w_
 	r > ∅ / V_V
-#	V₁”V₂ ”V₁ːV₂ > ”V₁V₂ ”V₁:[- long]V₂
-	{ e, e:[+ long] } > ẽ / _ẽ(ː)
-	{ o, o:[+ long] } > õ / _õ(ː)
-	”V₀V₀ > V₀ː:[-accent]
+	V₁”V₂ ”V₁:[+long]V₂ > ”V₁V₂ ”V₁:[-long]V₂
+	{ e, e:[+long] } > ẽ / _{ ẽ, ẽ:[+long] }
+	{ o, o:[+long] } > õ / _{ õ, õ:[+long] }
+	”V₀V₀ > V₀:[+long]:[-accent]
 	R > ∅ / ʔ_#
 	C > ∅ / {s,k}_#
 	Ch > ∅ / _s#
-	h > ∅ / V:[+ long]_#
+	h > ∅ / V:[+long]_#
 	t > h / _t
-	ths > t͡sh
+	ths > tsh
 	∅ > h / {t,k}_n

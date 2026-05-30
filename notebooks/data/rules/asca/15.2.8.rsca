@@ -1,19 +1,17 @@
 @ 15.2.8 - Proto-Eskimo to Unaaliq Yup’ik
-# citation: Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic
-# 			Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp.
-# 			166–171
-	C:[+ long] > C
-	C > C:[+ long] / _V(…V), after #U
+# citation: Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171
+	C:[+long] > C
+	C > C:[+long] / _V(…V), after #U
 	S > ∅ / #_F
-	s > t͡s / in certain situations?
+	s > ts / in certain situations?
 	C:[+voice] > C:[-voice] / next to {S,s,l̥}
 	ɣ ʁ > k q / _#
 	ə > a / _#
 	ə > ∅ / #_
-#	i > ∅ / #C:[+dental]_C:[+dental]V
+	i > ∅ / #C:[+dental]_C:[+dental]V
 	a > ∅ / C:[+velar]_C:[+velar]
 	v > ft / _s
-	F:[+voice] > F:[-voice] / adjacent to {S,t͡s}
+	F:[+voice] > F:[-voice] / adjacent to {S,ts}
 	F:[+voice] > S / l̥_
 	t > s / _{k,q}
 	i a u > ii aa uu / C_ in U:[+open -initial -final] such that U:[+open]_
@@ -22,8 +20,8 @@
 	v > ∅ / V:[+short]_u:[+short]
 	u > ∅ / #_vV
 	iv > j / #_u
-	d͡ʒ > ∅ / i_i
-	ə > ∅ / _d͡ʒ{a,u} // #U
-	a > ∅ / _d͡ʒa // #U
-	s > d͡ʒ / {i,u}_V
-	in > d͡ʒ / _u (possibly only word-initially?)
+	dʒ > ∅ / i_i
+	ə > ∅ / _dʒ{a,u} except in #U
+	a > ∅ / _dʒa (except in #U?)
+	s > dʒ / {i,u}_V
+	in > dʒ / _u (possibly only word-initially?)

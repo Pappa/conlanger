@@ -1,13 +1,10 @@
 @ 39.1 - Proto-Tanoan to Jimez
-# citation: Pogostick Man, from Wikipedia contributors (2012), “Tanoan languages”. Wikipedia, the
-# 			Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Tanoan_languages>,
-# 			citing Hale, Kenneth (1967), “Toward a Reconstruction of Kiowa-Tanoan Phonology”.
-# 			International Journal of American Linguistics, 33.2:112 – 120
+# citation: Pogostick Man, from Wikipedia contributors (2012), “Tanoan languages”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Tanoan_languages>, citing Hale, Kenneth (1967), “Toward a Reconstruction of Kiowa-Tanoan Phonology”. International Journal of American Linguistics, 33.2:112 – 120
 	h > ∅
 	p b > ɸ ɱ
-	t͡s dz > s z
-	{tʰ,t͡sʰ} > ʃ
+	ts dz > s z
+	{tʰ,tsʰ} > ʃ
 	s > c
-	t͡sʼ > tʼ
-	d > n / _V:[+ nasal]
+	tsʼ > tʼ
+	d > n / _V:[+nas]
 	k(ʷ)ʰ kʷ(ʼ) ɡ ɡʷ > h ɡ k kʷ

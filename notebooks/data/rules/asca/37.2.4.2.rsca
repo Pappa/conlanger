@@ -1,21 +1,15 @@
 @ 37.2.4.2 - Proto-Čiwere-Winnebago to Winnebago
-# citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal
-# 			of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II”
-# 			International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950),
-# 			“Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178;
-# 			and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic
-# 			transcription scheme
+# citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. Also, the changes of /p/ before a consonant are unclear, as described within the text. Wolff says that “Winnebago preserved the intermediate stages of *k reflexes”
 	p > {p,b,m,w} / _C
 	V > ∅ / _#
 	p > b / V_V
-	t > {t͡ʃ,d͡ʒ}
-	# Wolff says that “Winnebago preserved the intermediate stages of *k reflexes”
+	t > {tʃ,dʒ}
 	L > r
-	Lʲ > n / _V:[+ nasal]
-	Lʲ > r / _V:[- nasal]
+	Lʲ > n / _V:[+nas]
+	Lʲ > r / _V:[-nas]
 	tʲ > x / _ʔ
 	pr {sr,xr} sn km > pV₀rV₀ ʃV₀rV₀ sV₀nV₀ kV₀wV₀
 	mt > r
-	tk > {t͡ʃk,t͡ʃɡ} / #_
+	tk > {tʃk,tʃɡ} / #_
 	t > ∅ / _k, when medial
 	xk > ɡ

@@ -1,15 +1,10 @@
 @ 6.2.1.1.3 - Proto-Agaw to Kemantney
-# citation: Pogostick Man, from Fallon, Paul D. (2009), “The Velar Ejective in Proto-Agaw”. In
-# 			Selected Proceedings of the 39th Annual Conference on African Linguistics, Ojo, Akinloye
-# 			and Lioba Moshi (Eds.), 10 – 22. Sommerville, MA: Cascadilla Proceedings Project.
-# 			<http://www.lingref.com>, document #2182, citing Appleyard, David L. (2006), A
-# 			comparative dictionary of the Agaw languages. (Cushitic Language studies, 24.) Cologne:
-# 			Rüdiger Köppe Verlag.
-	{x,ɢ,xʷ,ɢʷ} > ∅ / _,#
+# citation: Pogostick Man, from Fallon, Paul D. (2009), “The Velar Ejective in Proto-Agaw”. In Selected Proceedings of the 39th Annual Conference on African Linguistics, Ojo, Akinloye and Lioba Moshi (Eds.), 10 – 22. Sommerville, MA: Cascadilla Proceedings Project. <http://www.lingref.com>, document #2182, citing Appleyard, David L. (2006), A comparative dictionary of the Agaw languages. (Cushitic Language studies, 24.) Cologne: Rüdiger Köppe Verlag. NB: Does not include vowel developments.
+	{x,ɢ}(ʷ) > ∅ / at word boundaries
 	x > ∅
 	xʷ ɢʷ > w ɣʷ
-	{t͡s,t͡ʃ} dz > ʃ d͡ʒ
-	t > j / _ // _,#
+	{ts,tʃ} dz > ʃ dʒ
+	t > j / medially
 	kʼ > χʷ / #_
 	kʷʼ > χʷ
 	ʔ > ∅

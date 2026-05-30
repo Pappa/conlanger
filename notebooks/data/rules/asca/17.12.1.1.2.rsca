@@ -1,46 +1,40 @@
 @ 17.12.1.1.2 - Latin to Catalan
-# citation: Mecislau
-	# NB: Due to problems when the board migrated to a different system, a lot of the
-	# 			special characters were replaced with 〈?〉. In many cases these have been replaced with
-	# 			〈∅〉 because it was likely that this was what was meant, but conditional 〈?〉 has either
-	# 			been left alone or attempted to have been filled in from context. In some cases,
-	# 			conditional 〈?〉 may have been used to mark stress or syllable boundaries. Take such
-	# 			changes with a grain of salt and use at your own risk.
+# citation: Mecislau NB: Due to problems when the board migrated to a different system, a lot of the special characters were replaced with 〈?〉. In many cases these have been replaced with 〈∅〉 because it was likely that this was what was meant, but conditional 〈?〉 has either been left alone or attempted to have been filled in from context. In some cases, conditional 〈?〉 may have been used to mark stress or syllable boundaries. Take such changes with a grain of salt and use at your own risk. “These next two changes are awkward - Basically, when the final vowel drops off down below, the newly-final d should become w; BUT d should also have become z and disappeared before the final vowels drop off, leaving a dilem[m]a... I’m not certain how this should be [interpreted]”
 	h > ∅
 	n > ∅ / _s
 	{m,n,t} > ∅ / _#
-	V > ∅ / ”V%C_L(C)V(C)#
-	V > ∅ / ”V%L_C(C)V(C)#
-	V > ∅ / ”V%s_t(C)V(C)#
-	u > w
-	w > ∅
-	i:[+ long] > i / [+ stress]
-	i:[+ long] > i / _%”V
-	{i,e:[+ long]} e > {e,ɛ} {ɛ,e} / [+ stress]
-	{i,e:[+ long],e} > e / _%”V
+	V > ∅ / ”V%C_L(C)V(C)# (irregular)
+	V > ∅ / ”V%L_C(C)V(C)# (irregular)
+	V > ∅ / ”V%s_t(C)V(C)# (irregular)
+	u > w / (“when in unstressed penult or between first and tonic syllables; irregular”)
+	w > ∅ / (“when in unstressed penult or between first and tonic syllables; irregular”)
+	i:[+long] > i / stressed
+	i:[+long] > i / _%”V
+	{i,e:[+long]} e > {e,ɛ} {ɛ,e} / stressed
+	{i,e:[+long],e} > e / _%”V
 	i > j / ”V_#
-	u:[+ long] > u / [+ stress]
-	u:[+ long] > u / _%”V
+	u:[+long] > u / stressed
+	u:[+long] > u / _%”V
 	au > a / _%”u
-	{u,o:[+ long]} o > o ɔ / [+ stress]
-	{u,{ o, o:[+ long] }} > u / _%”V in East Catalan
-	{u,{ o, o:[+ long] }} > o / _%”V else
+	{u,o:[+long]} o > o ɔ / stressed
+	{{ u,o, u,o:[+long] }} > u / _%”V in East Catalan
+	{{ u,o, u,o:[+long] }} > o / _%”V else
 	u > w / ”ɛ_#
-	a:[+ long] > a
+	a:[+long] > a
 	oe > {e,ɛ}
-	ae au > e ɔ / [+ stress]
+	ae au > e ɔ / stressed
 	ae au > e o / _%”V
 	o > u / _a
-	o > u / _%”V
-	VV > V:[+ long]
+	o > u / _%”V (irregular)
+	VV > V:[+long] (“For outcomes of word-final vowels, see down below”)
 	ndj > ɲ
-	dj > d͡ʒ
-	d͡ʒ > ʒ
+	dj > dʒ
+	dʒ > ʒ
 	∅ > e / #_sC
 	l > ∅ / {o,u}_CV
 	l > w / V_CV (“although l was usually restored later”)
-	mn > n:[+ long]
-	n:[+ long] > ɲ
+	mn > n:[+long]
+	n:[+long] > ɲ
 	p b t d k ɡ > β {β,w} ∅ {j,w} ɣ {j,∅,ɡ} / V_rV
 	ŋ > ɲ / _{i,e}
 	p b > b w / V_lV (the latter is irregular)
@@ -55,47 +49,41 @@
 	tj > s / C_
 	sj ssj jn > js jʃ ɲ / V_V
 	mnj > {mni,ɲ} / V_V
-	lj rj kj ɡj > ʎ jr t͡s ʒ / V_V
+	lj rj kj ɡj > ʎ jr ts ʒ / V_V
 	{bj,vj} > wʒ / _%”V
 	b > v / V̈%_j
-	ja > je / #_
-	V > ∅ / _%”V
+	ja > je / #_ (irregular)
+	V > ∅ / _%”V (rare)
 	∅ > {e,o} / CL_#
-	∅ > {e,o} / r:[+ long]_#
+	∅ > {e,o} / r:[+long]_#
 	a > e / “in the penult”
 	V > ∅ / ”V%_(C)(C)V(C)# (“irregular; e is kept before n”)
 	b > v / V_V
 	p t > b d / V_V
-	f > v / V_V
+	f > v / V_V (irregular)
 	s > z / ”V%V_V
 	s > ∅ / V_V%”V
-	k ɡ > ∅ {∅,ʒ} / V_{i,e}
+	k ɡ > ∅ {∅,ʒ} / V_{i,e} (ɡ → ʒ is learned)
 	ɡ > ∅ / V_V%”V
 	k j > ɡ ʒ / V_V
-	# “These next two changes are awkward - Basically, when the final vowel drops off
-	# 			down below, the newly-final d should become w; BUT d should also have become z and
-	# 			disappeared before the final vowels drop off, leaving a dilem[m]a... I’m not certain how
-	# 			this should be [interpreted]”
-	d > z / V_V
+	— d > z / V_V
 	z > ∅ / V_V
-	d > w / _V#
-	i:[+ long] > ∅ / _#
-	{i,{ e, e:[+ long] },ae} > ∅ / _(C)#
-	{{ u, u:[+ long] },{ o, o:[+ long] }} > ∅ / _#
-	V > ∅ / “between first and tonic syllables; except when C_CC, _n”; “if there are multiple
-				vowels between the initial and tonic syllables, the vowel directly before the tonic
-				is usually dropped” // V = a
+	— d > w / _V#
+	i:[+long] > ∅ / _#
+	{{ i,e, i,e:[+long] },ae} > ∅ / _(C)#
+	{{ u, u:[+long] }{ ,o, ,o:[+long] }} > ∅ / _#
+	V > ∅ / “between first and tonic syllables; except when C_CC, _n”; “if there are multiple vowels between the initial and tonic syllables, the vowel directly before the tonic is usually dropped” ! V = a
 	w > ∅ / u_#
-	j ɡj t͡s z n > t͡ʃ i w s ∅ / _#
+	j ɡj ts z n > tʃ i w s ∅ / _#
 	t > ∅ / V_sV
 	{b,v} > w / V_#
 	d > t / _#
 	l > ʎ / #_
-	k > t͡s / #_{i,e}
-	t͡s > s / #_{i,e}
+	k > ts / #_{i,e}
+	ts > s / #_{i,e}
 	ɡ > ʒ / #_{i,e}
-	j > d͡ʒ / #_
-	d͡ʒ > ʒ / #_
+	j > dʒ / #_
+	dʒ > ʒ / #_
 	kʷ ɡʷ > k ɡ / #_{i,e}
 	kʷ > k / C_V
 	kʷ > ɡ / V_{i,e}
@@ -112,18 +100,18 @@
 	k > w / V_rV
 	{b,v} > w / V_tV
 	ɡ > ∅ / V_dV
-	l:[+ long] n:[+ long] > ʎ ɲ
+	l:[+long] n:[+long] > ʎ ɲ
 	ʎ > l / ”i_
-	C > ∅ / C₁_C₂ // C₂ = L
-	{a,o} > ∅ / #_
+	C > ∅ / C₁_C₂ ! C₂ = L
+	{a,o} > ∅ / #_ (rare)
 	ɔ > o / _N$C
 	e > ɛ / _v
-	o > u / _:[+ stress]{ɲ,nk,ŋ}
-	e > i / _:[+ stress]{nk,ŋ}
+	o > u / _{ɲ,nk,ŋ} when stressed
+	e > i / _{nk,ŋ} when stressed (irregular)
 	aj > ej
 	ej > ee
-	ee > e
-	aj > ej / _:[+ stress]ʃ
-	ɛj ɔj > jɛj uei / i {u,ui} / [+ stress]
-	ɛ > e // _{r:[+ long],l,rC:[-labial],nr} or _ ? w#
+	ee > e (irregular)
+	aj > ej / _ʃ when stressed (irregular)
+	ɛj ɔj > jɛj uei / i {u,ui} / stressed
+	ɛ > e / ! _{r:[+long],l,rC:[-labial],nr} or _ ? w#
 	e > ɛ (in Eastern Catalan)

@@ -1,22 +1,20 @@
 @ 15.2.1 - Proto-Eskimo to Barrow Iñupiaq
-# citation: Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic
-# 			Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp.
-# 			166–171
+# citation: Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171 Regressive MOA assimilation and progressive voicing assimilation in consonant clusters (at least, when C₂ is either /l/ or /l̥/)
 	l̥ > l / medial
 	t > s / i_
-	ə > i / _,#
+	ə > i / at word boundaries
 	ə > u / u_
 	ə > a / a_
-	ə > ∅ / _ // a_
+	ə > ∅ / else
 	ɣ ʁ > k q / _#
-	C₀VC₀ > C₀ː
+	C₀VC₀ > C₀:[+long]
 	m n ŋ > v t ɣ / _C:[-nasal]
 	l̥ > t / _C
 	v > p / _s
 	v ʁ > p q / S_
-	v ɣ ʁ > p k q / _C (unless C = one of /l d͡ʒ m n ŋ)
+	v ɣ ʁ > p k q / _C (unless C = one of /l dʒ m n ŋ)
 	{p,v} t {k,ɣ} > m n ŋ / _N
 	v > ∅ / u_i
-	d͡ʒ > ʁ / i_u
-	əd͡ʒ > i / _{a,u} // #U
-	ad͡ʒ > i / _a // #U
+	dʒ > ʁ / i_u
+	ədʒ > i / _{a,u} (except in #U)
+	adʒ > i / _a (except in #U?)

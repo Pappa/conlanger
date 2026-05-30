@@ -1,10 +1,8 @@
 @ 18.4.7 - Proto-Tupí-Guaraní to Parintintín
-# citation: Pogostick Man, from Lemle, Miriam (1971), âInternal Classification of the
-# 			Tupi-Guarani Linguistic Family”. In Tupi Studies I, from Summer Institute of Linguistics
-# 			Publications in Linguistics and Related Fields Publication Number 29.
+# citation: Pogostick Man, from Lemle, Miriam (1971), âInternal Classification of the Tupi-Guarani Linguistic Family”. In Tupi Studies I, from Summer Institute of Linguistics Publications in Linguistics and Related Fields Publication Number 29.
 	k > {ŋ,∅} / _#
-	t͡s > {h,∅}
-	Vn > V:[+ nasal]
+	ts > {h,∅}
+	Vn > V:[+nas] (sometimes)
 	∅ > ŋ / {#,V}_w
 	b r > {b,∅} {r,t} / _#
 	u > ∅ / k_w

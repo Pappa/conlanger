@@ -1,13 +1,12 @@
 @ 10.2.1 - Proto-Malayo-Polynesian to Proto-Chamic
-# citation: TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic Linguistics
-# 			44(2):357 – 388
+# citation: TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic Linguistics 44(2):357 – 388 Nasal + stop clusters assimilate in POA “Sometimes a reduction of [the] penultimate vowel”
 	z j > j d
 	wa > u / #_
 	w > ∅ / #_
 	R q > r h
 	i iw u > ɔj ? ɔw / _#
-#	C₁C₂ > C₂
-	C:[+ voice] > C:[- voice] / _#
-	l n > r l / #_
-	d j > r ɭ
-	a > a:[+ long] / _C#
+	C₁C₂ > C₂
+	C:[+voice] > C:[-voice] / _#
+	l n > r l / #_ (sporadic)
+	d j > r ɭ (sporadic)
+	a > a:[+long] / _C# (sometimes)

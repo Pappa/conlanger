@@ -1,9 +1,8 @@
 @ 22.1 - Proto-Arawá to Arawá
-# citation: Pogostick Man, from Dixon, R.M.W. (2004), “Proto-Arawá Phonology”. Anthropological
-# 			Linguistics 46(1):1 – 83
+# citation: Pogostick Man, from Dixon, R.M.W. (2004), “Proto-Arawá Phonology”. Anthropological Linguistics 46(1):1 – 83
 	p > f
 	pʰ > p / #_
-	pʰ > ɸ / _ // #_
+	pʰ > ɸ / else
 	ɗ > t / #_
-	dz > s / _ // _,#
-	t͡sʰ > s
+	dz > s / medially
+	tsʰ > s

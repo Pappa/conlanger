@@ -1,29 +1,27 @@
 @ 32.1.3 - Proto-Chatino to Yaitepec Chatino
-# citation: Pogostick Man, from Upson, B.W., and Robert E. Longacre (1965), “Proto-Chatino
-# 			Phonology”. International Journal of American Linguistics 31(4):312 – 322
+# citation: Pogostick Man, from Upson, B.W., and Robert E. Longacre (1965), “Proto-Chatino Phonology”. International Journal of American Linguistics 31(4):312 – 322 Some consonant disharmony involving reflexes of *k, *kʷ
 	tʲ > tj
-	# Some consonant disharmony involving reflexes of *k, *kʷ
-	k > t͡ʃ / _Ek(ʷ)
+	k > tʃ / _Ek(ʷ)
 	kʲ > k / _{a,ã}
-	kʲ > kj / _ // _{a,ã}
-	kʷ > w / _e:[+ long]j
+	kʲ > kj / else
+	kʷ > w / _e:[+long]j
 	kʷ > w / _ek
 	kʷ > ʍ / ku_ (medial)
-	kʷ > kw / _ // ku_ (medial)
-	t͡s > t͡ʃ / #_{a,õ}ʔ
-	t͡s > t͡ʃ / V:[+high]_
-	t͡s > ʃ / #_ẽ
-	c > t͡s
-	t͡ʃ > t͡s / a_
+	kʷ > kw / else
+	ts > tʃ / #_{a,õ}ʔ
+	ts > tʃ / V:[+high]_
+	ts > ʃ / #_ẽ
+	c > ts
+	tʃ > ts / a_
 	s > ʃ / V_V
 	s > ʃ / if /l/ is present in the same syllable
-	s > t͡ʃ / #_a
+	s > tʃ / #_a
 	ʃ > s / _{ik,e,ı̃,ẽ}
-	ʃ > t͡s / _i, in monosyllables
-	lʲ > l / #_ in U:[- long -stress]
-	lʲ > lj / _ // #_ in U:[- long -stress]
-	nʲ > j / _ã
-	nʲ > nj / _ // _ã
+	ʃ > ts / _i, in monosyllables
+	lʲ > l / #_ in U:[-long -stress]
+	lʲ > lj / else
+	nʲ > j / _ã (with some exceptions?)
+	nʲ > nj / else
 	h > ʔ / _ã
 	ç > hj
 	hʷ > ʍ

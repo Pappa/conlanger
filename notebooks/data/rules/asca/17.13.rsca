@@ -1,17 +1,16 @@
 @ 17.13 - Proto-Indo-European to Proto-Tocharian
-# citation: Nortaneous, from http://www.utexas.edu/cola/centers/lrc/eieol/tokol-TC-X.html and
-# 			https://azargoshnasp.net/history/Tocharian/positionoftocharian.pdf
+# citation: Nortaneous, from http://www.utexas.edu/cola/centers/lrc/eieol/tokol-TC-X.html and https://azargoshnasp.net/history/Tocharian/positionoftocharian.pdf Something about *õ and umlaut
 	Ḱ > [+ cons, - fr, + bk, + hi, - lo]
 	Ch > C / _(V)Ch
 	d > ∅ / _N
 	dz > ∅ / B_
-	dz > t͡s
-	[+ cons, - fr, + bk, + hi, - lo]ʷ > [+ cons, - fr, + bk, + hi, - lo] / _{C,o,a} // C = syllabic
-	[+ cons, - fr, + bk, + hi, - lo]ʷ > ɕ / _{ e, e:[+ long] }
+	dz > ts
+	[+ cons, - fr, + bk, + hi, - lo]ʷ > [+ cons, - fr, + bk, + hi, - lo] / _{C,o,a} ! C = syllabic
+	[+ cons, - fr, + bk, + hi, - lo]ʷ > ɕ / _{ e, e:[+long] }
 	[+ cons, - fr, + bk, + hi, - lo]ʷy > ɕ
-	p {t͡s,k(ʷ)} m n l r y > pj sʲ ʂ mj ɲ lj rj wj / _{E(:),y}
-	{t,dʱ} > tʲ / _E(ː)
-	{t,dʱ} > t͡s / _y
+	p {ts,k(ʷ)} m n l r y > pj sʲ ʂ mj ɲ lj rj wj / _{E(:),y}
+	{t,dʱ} > tʲ / _{ E, E:[+long] }
+	{t,dʱ} > ts / _y
 	D(ʱ) > T
 	n̩ > ə / C_#
 	ə > ∅ / C_#
@@ -20,25 +19,25 @@
 	H > ɛ / _R, when R = syllabic
 	H > ∅ / V_V
 	xe > ə / _#
-#	xe a > a ɨ
-#	{ex,aH} a:[+ long] > a:[+ long] ɔ
+	xe a > a ɨ
+	{ex,aH} a:[+long] > a:[+long] ɔ
 	ɣʷe o > o ɛ
-	{eɣʷ,oH} > o:[+ long]
-	o:[+ long](s,y) o:[+ long]n > u {u,õ}
-	õ o:[+ long] > o a
+	{eɣʷ,oH} > o:[+long]
+	o:[+long](s,y) o:[+long]n > u {u,õ}
+	õ o:[+long] > o a
 	u > wə / #_
 	u > {ə,u}
-#	uh u{x,ɣʷ} > u:[+ long]
-	u:[+ long] > wə wɨ
+	uh u{x,ɣʷ} > u:[+long]
+	u:[+long] > wə wɨ
 	i > ə / {P,[+ cons, - fr, + bk, + hi, - lo](ʷ),s}_
 	Ci > Cʲə
 	s > sʲ / _tʲ
-#	ih i{x,ɣʷ} > jə jɨ
-	(h)e (h)e:[+ long] > jə jɛ:[+ long] / #_
-	Ce Ce:[+ long] > Cʲə Cʲɛ
-	eH > e:[+ long]
+	ih i{x,ɣʷ} > jə jɨ
+	(h)e (h)e:[+long] > jə jɛ:[+long] / #_
+	Ce Ce:[+long] > Cʲə Cʲɛ
+	eH > e:[+long]
 	ow aw ew > ɛu au əw
 	oy ay ey > ɛi ai əj
 	ɛ > o / _$B
 	ɛ > ə / _$ɨ
-	”ɨ ”ə ɨ:[- stress] ə:[- stress] > ɨ a a ə
+	”ɨ ”ə ɨ:[-stress] ə:[-stress] > ɨ a a ə

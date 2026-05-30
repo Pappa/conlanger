@@ -1,10 +1,7 @@
 @ 27.10 - Proto-Mayan to Yucatecan
-# citation: Pogostick Man, from Wikipedia contributors (2013), “Proto-Mayan language”. Wikipedia,
-# 			the Free Encyclopedia.
-# 			<https://en.wikipedia.org/w/index.php?title=Proto-Mayan_language>
-	{q, q[+stress]} > {k, k[+stress]}
+# citation: Pogostick Man, from Wikipedia contributors (2013), “Proto-Mayan language”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Proto-Mayan_language> “[V]owel length and [h] and [ʔ]” have converted into a tone distinction
+	q(ʼ) > k(ʼ)
 	ŋ > n
-	a:[+ long] > ɨ
-	t > t͡ʃ / _#
-	tʲ(ʼ) > t͡ʃ(ʼ)
-	# “[V]owel length and [h] and [ʔ]” have converted into a tone distinction
+	a:[+long] > ɨ
+	t > tʃ / _#
+	tʲ(ʼ) > tʃ(ʼ)

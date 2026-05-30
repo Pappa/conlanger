@@ -1,19 +1,16 @@
 @ 17.7.2.1.10 - Old English to Scots
-# citation: Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from personal research
-	# NB: This is an alternate listing of sound changes from Old English to Scots
-	# 			presented by a native speaker, which leads into a listing of sound changes to the
-	# 			Falkirk dialect.
-	æ:[+ long] > ɛ:[+ long]
-	ɑ > a // _{l,r}
-	o:[+ long] > ju / {n,x}_
-	o:[+ long] > iu / _[+ cons, - fr, + bk, + hi, - lo]
-	o:[+ long] > ø
-	ø:[+ long] > e:[+ long]
+# citation: Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from personal research NB: This is an alternate listing of sound changes from Old English to Scots presented by a native speaker, which leads into a listing of sound changes to the Falkirk dialect.
+	æ:[+long] > ɛ:[+long]
+	ɑ > a / ! _{l,r} (sporadic)
+	o:[+long] > ju / {n,x}_
+	o:[+long] > iu / _[+ cons, - fr, + bk, + hi, - lo]
+	o:[+long] > ø
+	ø:[+long] > e:[+long] “(not a thorough change)”
 	ø > ɪ
-	æ:[+ long](ɑ) e:[+ long](o) > ɛ i:[+ long]
-	ɛ > ɜi
+	æ:[+long](ɑ) e:[+long](o) > ɛ i:[+long]
+	ɛ > ɜi / _{m,ɲ}
 	ɜi > i / _{m,ɲ}
-	ai > a:[+ long]
+	ai > a:[+long]
 	e > ɛ / _nt
 	{y,i} > ɪ
 	ɪ > ɜ / _{[+ cons, - fr, + bk, + hi, - lo],r}
@@ -21,31 +18,31 @@
 	u > ʊ
 	ʊ > ɵ
 	ɵ > ʌ
-	u:[+ long] > u
+	u:[+long] > u
 	o > ʌ / P_r
 	æ > ɑ / _{x,l}
 	æ(ɑ) > e
 	ɔ{ɡ,j} > ʌu
-	ɑ:[+ long] > e // _{ŋ,n}
-	ʌ > ɪi
+	ɑ:[+long] > e / ! _{ŋ,n}
+	ʌ > ɪi (sporadic)
 	a > ɪ / “unstressed and/or final”
-	N > ∅ / _C // _%C
+	N > ∅ / _C ! _%C
 	xw > ʍ
-	S:[+ voice] > S:[- voice] / _#
+	S:[+voice] > S:[-voice] / _#
 	d~ð > d / V_u
 	d~ð > ð / V_V
 	t > ∅ / p_
-	d͡ʒ > t͡ʃ / _#
-	{f,v} > ∅ / {l,r,V}_
+	dʒ > tʃ / _#
+	{f,v} > ∅ / {l,r,V}_ (sometimes blocked)
 	ð > ∅ / {l,r,V}_C
 	θ > h / _ɪ
-	θ > f / {V,r}_#
+	θ > f / {V,r}_# (sometimes blocked)
 	θ > ∅
-	V > V:[+ long] / _{r,F:[+ voice],V,#}
+	V > V:[+long] / _{r,F:[+voice],V,#}
 	m > n / _f
 	e > ɛ / “unstressed”
 	∅ > ə̆ / _{n,r}
-	k > ∅ / n_t
+	k > ∅ / n_t (sporadic)
 	m > ∅ / _n
 	l > ∅ / u_
 	l > u / {ɔ,ɑ}_

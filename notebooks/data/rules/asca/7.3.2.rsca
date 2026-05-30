@@ -1,14 +1,12 @@
 @ 7.3.2 - Proto-Arapaho-Atsina to Gros Ventre
-# citation: Whimemsz, from Goddard, Ives
-# 			(1974), “An Outline of the Historical Phonology of Arapaho and Atsina”. International
-# 			Journal of American Linguistics, 40:102 – 116
+# citation: Whimemsz, from Goddard, Ives (1974), “An Outline of the Historical Phonology of Arapaho and Atsina”. International Journal of American Linguistics, 40:102 – 116
 	hʔ > ʔh
-	({C,#}V:[- long])ʔ > ({C,#}V:[+ long, +falling tone])∅ / _C
+	({C,#}V:[-long])ʔ > ({C,#}V:[+long]:[+falling tone])∅ / _C
 	j > ∅ / {ʃ,θ}
-	i > u / { o, o:[+ long] }_
-	ʃ θ m > θ t w / _{ o, o:[+ long] }
-	ʃ θ m k > θ t b t͡ʃ / _{ e, e:[+ long] }
-	ʃ {θ,t} m k > s t͡s tʲ bʲ / _{{ i, i:[+ long] },j,#}
-	(V:[- long])N > ∅ / _#
+	i > u / { o, o:[+long] }_
+	ʃ θ m > θ t w / _{ o, o:[+long] }
+	ʃ θ m k > θ t b tʃ / _{ e, e:[+long] }
+	ʃ {θ,t} m k > s ts tʲ bʲ / _{{ i, i:[+long] },j,#}
+	(V:[-long])N > ∅ / _#
 	∅ > ʔ / #_V
 	n > ∅ / _j

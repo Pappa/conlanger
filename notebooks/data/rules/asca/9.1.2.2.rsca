@@ -1,34 +1,20 @@
 @ 9.1.2.2 - Middle Vietnamese to Saigon Vietnamese
-# citation: Pogostick Man, from Thompson, Laurence C. (1976), “Proto-Viet-Muong Phonology”.
-# 			Oceanic Linguistics Special Publications 13, Austroasiatic Studies II:1113 – 1203;
-# 			Wikipedia contributors (2012). “Hanoi”. Wikipedia, the Free Encyclopedia.
-# 			<http://en.wikipedia.org/w/index.php?title=Hanoi>; Wikipedia contributors (2012),
-# 			“Vietnamese Language”. Wikipedia, the Free Encyclopedia.
-# 			<http://en.wikipedia.org/w/index.php?title=Special:Cite&page=Vietnamese_language&id=509331797>;
-# 			Gage, William W. (1985), “Glottal Stops and Vietnamese Tonogenesis”. Oceanic Linguistics
-# 			Special Publications 20:21 – 36; and Thompson, Laurence C. (1979?), “More on Viet-Muong
-# 			Tonal Developments”
-	# Tonogenesis
-	# Initials:
+# citation: Pogostick Man, from Thompson, Laurence C. (1976), “Proto-Viet-Muong Phonology”. Oceanic Linguistics Special Publications 13, Austroasiatic Studies II:1113 – 1203; Wikipedia contributors (2012). “Hanoi”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Hanoi>; Wikipedia contributors (2012), “Vietnamese Language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Special:Cite&page=Vietnamese_language&id=509331797>; Gage, William W. (1985), “Glottal Stops and Vietnamese Tonogenesis”. Oceanic Linguistics Special Publications 20:21 – 36; and Thompson, Laurence C. (1979?), “More on Viet-Muong Tonal Developments” Tonogenesis 1. Level when _S#; dipping otherwise 2. Laryngealized Initials: Finals: Vowels: The contrast between short /a/ and short /ə/ is neutralized when _w{k,ŋ} Miscellanea:
 	pʰ > f
-	kʰ > x
+	kʰ > x (only seems to have occurred with first-register tones)
 	{β,w} > bj~vj~v
-	{bl,tl} > ʈ
+	{bl,tl} > ʈ (?)
 	dʲ ɟ > z j
 	m > ∅ / _l
 	Ω cʰ > ʂ ʈʂ
-	ɹ > ʐ
-	# Finals:
+	ɹ > ʐ (sometimes?)
 	c ɲ t n > t n k ŋ / a_ (short /a/ only)
 	c ɲ > t n / {i,e}_
-	{c,ɲ} > ∅ / _ // {i,e}_
-	# Vowels:
+	{c,ɲ} > ∅ / else
 	ə > ∅ / {i,ɨ}_{p,m.w}
 	ə > ∅ / ɨ_j
 	ə > ∅ / u_{m,j}
-	# The contrast between short /a/ and short /ə/ is neutralized when _w{k,ŋ}
-	a > a:[+ long] / _{w,j}
-	ə(ː) ɛ > ɨ ɛə / _[+ cons, - fr, + bk, + hi, - lo]
-#	ɛ > a / _C:[+palatal]
-	# Miscellanea:
-	w > ∅ / tV_wk
+	a > a:[+long] / _{w,j}
+	{ ə, ə:[+long] } ɛ > ɨ ɛə / _[+ cons, - fr, + bk, + hi, - lo]
+	ɛ > a / _C:[+palatal]
+	w > ∅ / tV_wk (conjectured)

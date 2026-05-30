@@ -1,14 +1,13 @@
 @ 10.2.4.1 - Proto-Malayo-Javanic to Javanese
-# citation: TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic Linguistics
-# 			44(2):357 – 388
+# citation: TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic Linguistics 44(2):357 – 388 A: B: Nasal + stop clusters “become homorganic”
 	{l,d} z > r d
-	b > w // _,C
+	b > w / ! adjacent to another consonant
 	ə > u / _h#
 	R > ∅
 	h > ∅ / #_
 	h > {o,h,w} / V_V
 	iw uj > ju i / _#
-	əw əj > i u / _#
-	aw aj > e ó / _#
-#	C₁C₂ > C₂
+	— əw əj > i u / _#
+	— aw aj > e ó / _#
+	C₁C₂ > C₂
 	HəS > (h)əNS

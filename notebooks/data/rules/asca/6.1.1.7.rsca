@@ -1,21 +1,20 @@
 @ 6.1.1.7 - North Omotic to Yemsa
-# citation: Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
-# 			(Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)
+# citation: Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)
 	b > w / V_V
 	p > f
 	pʼ > b
 	z > d / V_
-#	x₁ > k
-#	x₂ > k / #_
-#	x₂ > ∅ / V_V
-#	kʼ > k / #
-	t͡ʃ ʒ > ʔj s
-	t͡s > s / #_
-	sx > ʃ
-#	t͡ʃʼ > t͡ʃ
+	x₁ > k
+	x₂ > k / #_
+	x₂ > ∅ / V_V
+	kʼ > k / #
+	tʃ ʒ > ʔj s
+	ts > s / #_
+	sₓ > ʃ
+	tʃʼ > tʃ
 	ɲ > n
-#	h > {h,∅} / #_
-#	x > w / #_
+	h > {h,∅} / #_
+	x > w / #_
 	l > n / #_VC
-#	dʼ > t
-	r > l:[+ long] / V_
+	dʼ > t
+	r > {r,l:[+long]} / V_

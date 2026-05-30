@@ -1,22 +1,21 @@
 @ 10.2.6.2.1 - Proto-Kenyah to Òma Lóngh
-# citation: Whimemsz, from Blust, Robert (2007), “Òma Lóngh Historical Phonology”. Oceanic
-# 			Linguistics 46(1):1 – 53
+# citation: Whimemsz, from Blust, Robert (2007), “Òma Lóngh Historical Phonology”. Oceanic Linguistics 46(1):1 – 53
 	bʱ dʱ dzʱ ɡʱ > p t c k
 	i > e / _k#
 	i > iə / _ŋ#
 	p > k / u_#
 	u > o / _k#
-	u > o / _ŋ#
-	u > ɯ / _(C)# // _ʔ#
-	a > o / _#
-	ʔ > ∅ / _#
+	u > o / _ŋ# “(sporadically failed to occur)”
+	u > ɯ / _(C)# ! _ʔ#
+	a > o / _# “(not in all forms)”
+	ʔ > ∅ / _# “(but aʔ → əʔ in some forms)”
 	k > ʔ / _#
 	a > ɛ / {t,n}_#
 	{p,t} n > c̚ ɲ / {i,ɛ}_#
 	m > ɲ / i_#
 	ai̯ au̯ > ɛ ɔ
 	{ui̯,iu̯} > e
-	i u > e o / _CV:[+close-mid](C)#
+	i u > e o / _CV:[+close-mid](C)# “(iə is treated as close mid for this change)”
 	i u > ɛ ɔ / _CV:[+open-mid](C)#
 	i u > e o / _Cɯ#
 	ŋ > ŋ̊ / _#
@@ -25,9 +24,9 @@
 	j w > z v
 	p > f / #_
 	ə > ∅ / #_
-	p k > f ɣ / V_V // ”ə_V
-	d > r / V_V
+	p k > f ɣ / V_V ! ”ə_V
+	d > r / V_V “(irregular)”
 	dz > ɟ / V_V
 	b d dz ɡ > p t c k / N_
-	N > ∅ / _S
+	N > ∅ / _S “(sporadic)”
 	h > ∅ / V_V

@@ -1,15 +1,10 @@
 @ 37.2.2 - Proto-Siouan to Dakota
-# citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal
-# 			of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II”
-# 			International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950),
-# 			“Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178;
-# 			and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic
-# 			transcription scheme
+# citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. Also, the changes of /p/ before a consonant are unclear, as described within the text.
 	ç x > x {ʃ,ʒ}
 	p > {p,b,m,w}
 	tʲ > ʃ / in ”U
-	tʲ > ʒ / _ // in ”U
-	s > z / U:[-stress]
+	tʲ > ʒ / else
+	s > z / in U:[-stress]
 	s > z / V_V
 	r > d / s_
 	tʲr > {st,ʃt}
@@ -18,6 +13,6 @@
 	km > kV₀mV₀
 	w > p / _t
 	t > ∅ / _k, when medial
-	
+	hk > tʃ
 	k > ∅ / _x”V
 	x > ʔ / ”Vk_

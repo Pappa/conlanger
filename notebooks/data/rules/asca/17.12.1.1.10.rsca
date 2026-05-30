@@ -1,98 +1,93 @@
 @ 17.12.1.1.10 - Vulgar Latin to Spanish
-# citation: ? and Serafı́n, the former citing Penny, Ralph (2002), A History of the Spanish
-# 			Language, 2nd Ed. Cambridge University Press; and Lipski, John (1994), Latin American
-# 			Spanish. Longman Pub Group.
+# citation: ? and Serafı́n, the former citing Penny, Ralph (2002), A History of the Spanish Language, 2nd Ed. Cambridge University Press; and Lipski, John (1994), Latin American Spanish. Longman Pub Group. /ʝ/ “gains a fortified [dʒ] allophone” by analogy with the voiced-stop/voiced-fricative allophony in Spanish “Complex resolution of many consonant clusters created with the previous loss of unstressed vowels”: “With deletion or assimilation or both”: “With dissimilation”: “With metathesis”: “With epenthesis”: “None of the following sound changes is universal to all dialects. If the same sound appears twice or more with an apparent contradiction, this accounts for different dialects. In all cases there are dialects that conserve the original sound at the beginning of the 21st century, with the exception of the old phonemic [s̪ - s] distinction (though kept in another way today, as [θ - s] in many parts of Spain).”
 	b > β / V_V
-	{tj,kj} {t:[+ long]j,k:[+ long]j,ptj,ktj,skj} > t͡s t:[+ long]s
-	k ɡ > t͡ʃ d͡ʒ / _{j,i,e,ɛ}
-	t͡ʃ d͡ʒ > t͡s dz / _{j,i,e,ɛ}
+	{tj,kj} {t:[+long]j,k:[+long]j,ptj,ktj,skj} > ts t:[+long]s
+	k ɡ > tʃ dʒ / _{j,i,e,ɛ}
+	tʃ dʒ > ts dz / _{j,i,e,ɛ}
 	{t,k} > ∅ / _#
-	V > ∅ / C_:[- stress]{r,l} // _,#
-	V > ∅ / {r,l}_:[- stress]C // _,#
-	V > ∅ / C_:[- stress]s // _,#
-	V > ∅ / s_:[- stress]C // _,#
+	V > ∅ / C_{r,l} when unstressed and not at a word boundary
+	V > ∅ / {r,l}_C when unstressed and not at a word boundary
+	V > ∅ / C_s when unstressed and not at a word boundary (sporadic)
+	V > ∅ / s_C when unstressed and not at a word boundary (sporadic)
 	{k,ɡ} > x / _{t,s,n,l}
 	x > j / _{t,s,n,l}
-	pt {ɾs,ps} > t:[+ long] s:[+ long]
-	ns > s
-	mb mn > m:[+ long] n:[+ long]
-	{jl,lj} {jn,nj} {jɡ,ɡj} > ʎ ɲ ʝ:[+ long]
-	bj > ʝ:[+ long]
+	pt {ɾs,ps} > t:[+long] s:[+long]
+	ns > s (with a few exceptions)
+	mb mn > m:[+long] n:[+long]
+	{jl,lj} {jn,nj} {jɡ,ɡj} > ʎ ɲ ʝ:[+long]
+	bj > ʝ:[+long] (sporadic)
 	Raising of e {ɛ,a} ɔ o > i e o u; near j, in particular environments:
-	e > i / _Cj // C = p
-	ɛ ɔ u > e o u / _(C)j
-	a > e / _j
-	oj > we
+	— e > i / _Cj ! C = p
+	— ɛ ɔ u > e o u / _(C)j
+	— a > e / _j
+	oj > we (sporadic)
 	ɛ ɔ > je we
 	”je.o ”je.a > {”i.o,”jo} ”i.a
-	jt js > t͡ʃ ʃ
-	f > h // _{ue,L}
+	jt js > tʃ ʃ
+	f > h / ! _{ue,L}
 	ɾj pj > jɾ jp / V_
 	ʎ > ʒ
-	ʝ > ʒ
-	ʝ > ∅
-	ʝ:[+ long] > ∅ / E_
+	ʝ > {∅,ʒ} (the latter is rare)
+	ʝ:[+long] > ∅ / E_
 	d > {∅,ð} / V_V
 	ɡ > {∅,ɣ} / V_V
-	p t k s t͡s > b d ɡ z dz / V_V
-	p:[+ long] t:[+ long] k:[+ long] s:[+ long] t:[+ long]s ʝ:[+ long] > p t k s t͡s ʝ
-	n:[+ long] l:[+ long] ɾɾ > ɲ ʎ r
-	kl pl > ʎ {ʎ,t͡ʃ}
-	fl > ʎ
-	V > ∅/ [- stress] ! V = a
+	p t k s ts > b d ɡ z dz / V_V
+	p:[+long] t:[+long] k:[+long] s:[+long] t:[+long]s ʝ:[+long] > p t k s ts ʝ
+	n:[+long] l:[+long] ɾɾ > ɲ ʎ r
+	kl pl > ʎ {ʎ,tʃ}
+	fl > ʎ (sporadic)
+	V > ∅ / unstressed ! V = a
 	sj > js / V_
 	i u > e o / _(C)#
 	Vɾ > ɾV / C_#
 	e > ∅ / V{d,s,n,l,ɾ}_#
 	d ɡ > ð ɣ / V_V
-	t > ∅ / _m
-	— d > ∅ / _n
-	— mn > ɲ
-	t͡st dzd > t͡s dz
-	Vdz > ∅ / {nts,ndz,rdz}_
-	ndzVɡ > nɡ
-	mpVt skVp spVt stVk > nt sp st sk
-	# “With dissimilation”:
-	n > {l,ɾ} / _m
-	n > {ɾ,l} / nɡ_
-	n > ɾ / nd_
-	# “With metathesis”:
-	dn dl > nd ld
-	— ml nɾ > lm ɾn
-	βɣ > wɣ
+	— t > ∅ / _m
+	— d > ∅ / _n (sometimes)
+	— mn > ɲ (sometimes)
+	— tst dzd > ts dz
+	— Vdz > ∅ / {nts,ndz,rdz_
+	— ndzVɡ > nɡ
+	— mpVt skVp spVt stVk > nt sp st sk
+	— n > {l,ɾ} / _m
+	— n > {ɾ,l} / nɡ_
+	— n > ɾ / nd_
+	— dn dl > nd ld
+	— ml nɾ > lm ɾn (sometimes)
+	— βɣ > wɣ
 	wɣ > ɣw
-	# “With epenthesis”:
-	∅ > b / m_ɾ
-	mn ml > mbɾ mbl
-	∅ > d / n_ɾ
+	— ∅ > b / m_ɾ
+	— mn ml > mbɾ mbl
+	— ∅ > d / n_ɾ
 	t > ∅ / _#
 	/b/ [b], /β/ [b~β] > /b/ [b~β]
 	b > u / _C
-	l > u / _C
-	t͡s dz > s̪ z̪
+	l > u / _C (sometimes)
+	ts dz > s̪ z̪
 	z̪ z ʒ > s̪ s ʃ
 	ʃ > {x,χ}
-	h > ∅
+	h > ∅ “(just a reminder: from the f
+	∅ “(just a reminder: from the f > h change above)”
 	x > h
 	/dɾ/ [ðɾ] > ɾ / V_V
 	ʎ > /ʝ/ (“merged with”)
 	ʎ > j
-	/ʝ/ [ʝ~d͡ʒ] > [ʒ~d͡ʒ]
+	/ʝ/ [ʝ~dʒ] > :[ʒ~dʒ]
 	ʒ > ʃ
 	{s̪,s} > /s/ [s̪] “(merged as)”
 	{s̪,s} > h / _$
-	{s̪,s} > h / _ // _$
+	{s̪,s} > h “(in all environments)”
 	s̪ > θ
-	{s̪,s} > θ [θ] “(merged as)”
+	{s̪,s} > θ:[θ] “(merged as)”
 	h > ∅ / _d
 	h > ∅ / _tʰ
 	h > ∅ / _$
 	n > ŋ / _#
 	b ɡ > β ɣ / {l,ɾ}_
 	d > ð / ɾ_
-	tɾ > {tɾ̥,t͡ʃ,tʂ}
+	tɾ > {tɾ̥,tʃ,tʂ}
 	r > {ʐ,χ}
 	l > ɾ / _$
 	ɾ > l / _$
 	s > ɾ / _θ
-	kθ > θ:[+ long]
+	kθ > θ:[+long]

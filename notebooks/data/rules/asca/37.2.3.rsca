@@ -1,20 +1,12 @@
 @ 37.2.3 - Proto-Siouan to Mandan
-# citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal
-# 			of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II”
-# 			International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950),
-# 			“Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178;
-# 			and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic
-# 			transcription scheme
-	# NB: Does not include developments in unstressed non-nasal vowels. L was apparently
-	# 			either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/.
+# citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. “Phonemic vowel length was gained somehow.”
 	s > ʃ
 	t > ∅ / _s
 	ç > x
 	w > m
-	Lʲ > n / _V:[+ nasal]
-	L > r / _V:[- nasal]
-	ã > a / in ”U
-	# “Phonemic vowel length was gained somehow.”
+	Lʲ > n / _V:[+nas]
+	L > r / _V:[-nas]
+	ã > a / in ”U (sporadic)
 	tʲ > s / _ʔV
 	CʔV₀ > CV₀ʔV₀
 	tʲr > sV₀rV₀

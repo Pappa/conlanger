@@ -1,6 +1,5 @@
 @ 34.6 - Proto-Quechumaran to Quito
-# citation: Pogostick Man, from Orr, Carolyn, and Robert E. Longacre (1968), “Proto-Quechumaran”.
-# 			Language 44(3):528 – 555
+# citation: Pogostick Man, from Orr, Carolyn, and Robert E. Longacre (1968), “Proto-Quechumaran”. Language 44(3):528 – 555
 	q > h / {r,s}_
 	pʼ kʼ qʼ > p k q
 	p > b / m_
@@ -11,13 +10,13 @@
 	k > ɡ / n_
 	k > ɡ / _{L,j}
 	kʼ > h / j_
-	t͡s > dz // #_
-	h > ∅ / t͡s_
-	t͡ʃ > ʃ / _q
-	t͡ʃh > ʃ
-	t͡ʃʼ > t͡ʃ
+	ts > dz / ! #_
+	h > ∅ / ts_
+	tʃ > ʃ / _q
+	tʃh > ʃ
+	tʃʼ > tʃ
 	ʈʂ > ʃ / _[+ cons, - fr, + bk, + hi, - lo]
-	ʈʂ > t͡ʃ / _V
+	ʈʂ > tʃ / _V
 	ɸ > p / r_
 	{ɸʼ,ɸh} > ɸ
 	ʂ > ʃ

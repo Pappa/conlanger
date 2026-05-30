@@ -1,22 +1,21 @@
 @ 17.12.1.1 - Proto-Indo-European to Latin
-# citation: Mecislau, from Ramat, Anna Giacrole and Paolo Ramat, The Indo-European Languages, and
-# 			other sources
+# citation: Mecislau, from Ramat, Anna Giacrole and Paolo Ramat, The Indo-European Languages, and other sources
 	e o > i u / _ŋ
 	e > o / _ɫ
 	o > u / _{mb,mk,ɫ}
 	o > e / w_{r,s,t}
-	o:[+ long] > u:[+ long] / _r
+	o:[+long] > u:[+long] / _r
 	aj > ai
-	ai > e:[+ long]
+	ai > e:[+long] (in rustic dialects)
 	aj > ai
 	ai > ae
 	oj > oi
 	oi > oe
-	oe > u:[+ long]
-	aw > o:[+ long]
+	oe > u:[+long]
+	aw > o:[+long] (in rustic dialects)
 	aw > au
 	{ew,ow} > ou
-	ou > u:[+ long]
+	ou > u:[+long]
 	V > i / %(C)(C)_% when unstressed
 	V > o / %(C)(C)V_% when unstressed
 	V > e / %(C)(C)_%r when unstressed (with some exceptions)
@@ -24,43 +23,43 @@
 	a o > e u / %(C)(C)_C(C)% when unstressed
 	a > e / %(C)(C)_ŋ when unstressed
 	e > i / %(C)(C)_ŋ when unstressed
-	a > e / %(C)(C)_ŋ when unstressed
+	a > e / %(C)(C)_ɫ when unstressed
 	e > u / %(C)(C)_ɫ when unstressed
 	e > u / %(C)(C)_ɫ when unstressed
-	ai > ei
-	ei > i:[+ long] / %(C)(C)_ when unstressed
-	ei oi ou > i:[+ long] e:[+ long] u:[+ long] / %(C)(C)_ when unstressed
+	ai > ei / %(C)(C)_ when unstressed
+	ei > i:[+long] / %(C)(C)_ when unstressed
+	ei oi ou > i:[+long] e:[+long] u:[+long] / %(C)(C)_ when unstressed
 	{i,o} > e / _#
-	{i,e} > ∅ / _#
+	{i,e} > ∅ / _# (sometimes)
 	a > e / _C(C)#
 	e > i / _{s,t}#
-	o > u / _C(C)# // {u,w}_
+	o > u / _C(C)# ! {u,w}_
 	{ai,ei,oi} > ei / _(C)(C)#
-	ei > i:[+ long] / _(C)(C)#
-	V:[+ long] > V:[- long] / _{m,(n)t,l,r}#
-	V:[+ long] > V:[- long] / _#
+	ei > i:[+long] / _(C)(C)#
+	V:[+long] > V:[-long] / _{m,(n)t,l,r}#
+	V:[+long] > V:[-long] / _#
 	j > i / C_
 	w > u / t_
 	e > o / _w
 	e > o / w_
 	w > ∅ / s_o
 	m̩ n̩ > em en
-	n̩ː > n
-	l̩ l̩ː r̩ r̩ː > ol l or r
-	bʱ > h / #_
+	n̩:[+long] > n
+	l̩ l̩:[+long] r̩ r̩:[+long] > ol l or r
+	bʱ > h / #_ (in rustic dialects)
 	{bʱ,dʱ,ɡʷʱ} > f / #_
 	h > ∅ / b_
 	t > k / _l
 	t > ∅ / C_#
 	t > d / V_
 	dw > b
-	d > ∅ / V:[+ long]_#
+	d > ∅ / V:[+long]_#
 	d > ∅ / C_
 	d > l “in many dialects”
 	dʱ > b / rV_
 	dʱ > b / _Vr
 	dʱ > b / _l
-	dʱ > b / u:[+ long]_
+	dʱ > b / u:[+long]_
 	dʱ > d
 	ḱ ɡ́ > k ɡ
 	ɡʱ > ɡ / ŋ_
@@ -78,22 +77,22 @@
 	θ > f / #_r
 	s > θ / _r
 	θ > b / _r
-	s > z / _C:[+ voice]
-	V > V:[+ long] / _zC:[+ voice]
-	z > ∅ / _C:[+ voice]
+	s > z / _C:[+voice]
+	V > V:[+long] / _zC:[+voice]
+	z > ∅ / _C:[+voice]
 	p…kʷ > kʷ…kʷ
-	V₁…V₂ > V₂…V₂
-	V > V:[+ long] / _S:[+ voice]{S:[- voice],F:[- voice]}; “(i, e, and o sometimes bypass this)”
-	S:[+ voice] > S:[- voice] / _{S:[- voice],F:[- voice]}
-	S:[- voice] > S:[+ voice] / _N
+	V₁…V₂ > V₂…V₂ (rare)
+	V > V:[+long] / _S:[+voice]{S:[-voice],F:[-voice]}; “(i, e, and o sometimes bypass this)”
+	S:[+voice] > S:[-voice] / _{S:[-voice],F:[-voice]}
+	S:[-voice] > S:[+voice] / _N
 	s > z / _{N,l,r}
-	V > V:[+ long] / _z{l,r}
+	V > V:[+long] / _z{l,r}
 	z > ∅ / _{l,r}
 	S > f / _f
 	{t,d} > s / _s
 	{p,b} {t,d} > m n / _{m,n}
 	{k,ɡ} > ŋ / _n
-	m:[+ long] > n / {W,V:[+ long]}_
+	m:[+long] > n / {W,V:[+long]}_
 	{d,n,r} > l / _l
 	n > r / _r
 	s > z / l_
@@ -101,20 +100,20 @@
 	s > z / r_
 	z > r / r_
 	n > l / l_
-	V > V:[+ long] / _{t,d}t
-	{t,d}t > t͡st
-	t͡st > s:[+ long]
-	∅ > t / s:[+ long]_r
+	V > V:[+long] / _{t,d}t
+	{t,d}t > tst
+	tst > s:[+long]
+	∅ > t / s:[+long]_r
 	∅ > p / m_{s,t,l}
-	s:[+ long] > s / _#
-	s:[+ long] > s / {W,V:[+ long]}_
+	s:[+long] > s / _#
+	s:[+long] > s / {W,V:[+long]}_
 	l > r
 	r > _Vl
 	l > r / lV_ “(in suffixes with l if root already has l)”
 	r…r > r…∅
 	{n,d}…r > r…r
-	V:[+ long] > V / _C(C)# “(irregular: often before -m, -t, -nt, but never before ?s)”
-	V > {V:[+ long],V:[+ nasal]} / _n{f,s}
-	n > ∅ / V:[+ nasal]_
-#	C₁C₂C₃C₄ > (C₃)C₄
-#	C₁C₂C₃ > C₁C₃
+	V:[+long] > V / _C(C)# “(irregular: often before -m, -t, -nt, but never before ?s)”
+	V > {V:[+long],V:[+nas]} / _n{f,s}
+	n > ∅ / V:[+nas]_
+	C₁C₂C₃C₄ > (C₃)C₄
+	C₁C₂C₃ > C₁C₃

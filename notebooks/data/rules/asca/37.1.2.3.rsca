@@ -1,37 +1,35 @@
 @ 37.1.2.3 - Proto-Northern Iroquoian to Onondaga
-# citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”,
-# 			University of Manitoba, Winnipeg
-	s > ʃ // n_ “or when part of the unit affricate /t͡s/”
-	t͡s > hs / V_V // _i
-	t͡s > s // _{h,i,j}
-	ns > t͡s / _k(ʷ)
+# citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg “Allophonic changes:”
+	s > ʃ / ! n_ “or when part of the unit affricate /ts/”
+	ts > hs / V_V ! _i
+	ts > s / ! _{h,i,j}
+	ns > ts / _k(ʷ)
 	n > ∅ / _s
-	”V(ː)(C)(C)V:[+ long] > V:[- long](C)”(C)CV:[- long] / _#
-	ara > a:[+ long] / “unaccented syllables only”
+	{ ”V, ”V:[+long] }(C)(C)V:[+long] > V:[-long](C)”(C)CV:[-long] / _#
+	ara > a:[+long] / “unaccented syllables only”
 	jh > hj
 	n > t / _k(ʷ)
 	”V(C)(C)CaCV > V(C)”(C)CaCV / _#
 	ʃ > s
 	n > ∅ / h_r
 	h > ∅ / w_j
-	Vw > V:[+ long] / _{r,j}
-	”V > ”V:[+ long] / _C(R)V
+	Vw > V:[+long] / _{r,j}
+	”V > ”V:[+long] / _C(R)V
 	hs > sh / C_
-	hts > t͡sh / C_V
-	V > V:[+ long] / _”C:[-glottal](R)V{ː,H} in “even numbered syllables only”
-	V > V:[+ long] / _[+ cons, - fr, + bk, + hi, - lo]RV “in the second syllable of a word”
+	hts > tsh / C_V
+	V > V:[+long] / _”C:[-glottal](R)V{:[+long],H} in “even numbered syllables only”
+	V > V:[+long] / _[+ cons, - fr, + bk, + hi, - lo]RV “in the second syllable of a word”
 	V > V:[+high tone] / _$”V
-	{ a, a:[+ long] } { o, o:[+ long] } õ(ː) > æ(ː) { e, e:[+ long] } ẽ(ː) / r_
-	Vr > V:[+ long] / _C
-	rV > V:[+ long] / C_
-	r > j / {{ e, e:[+ long] },ẽ(ː),{ i, i:[+ long] }}_V
-	r > w / {{ o, o:[+ long] },õ(ː)}_V
+	{ a, a:[+long] } { o, o:[+long] } { õ, õ:[+long] } > { æ, æ:[+long] } { e, e:[+long] } { ẽ, ẽ:[+long] } / r_
+	Vr > V:[+long] / _C
+	rV > V:[+long] / C_
+	r > j / {{ e, e:[+long] }{ ,ẽ, ,ẽ:[+long] }{ ,i, ,i:[+long] }}_V
+	r > w / {{ o, o:[+long] }{ ,õ, ,õ:[+long] }}_V
 	r > ∅
 	h > ∅ / _sn
-	h > ∅ / _{k,t,t͡s,s}#
+	h > ∅ / _{k,t,ts,s}#
 	k > h / _k
-	õ(ː) > ũ(ː)
-	# “Allophonic changes:”
-	t͡s > t͡ʃ / _{(h)i,(h)j}
+	{ õ, õ:[+long] } > { ũ, ũ:[+long] }
+	ts > tʃ / _{(h)i,(h)j}
 	s > ʃ / _{hi,hj}
-	t t͡ʃ k(ʷ) > d d͡ʒ ɡ(ʷ) / _{V,R}
+	t tʃ k(ʷ) > d dʒ ɡ(ʷ) / _{V,R}

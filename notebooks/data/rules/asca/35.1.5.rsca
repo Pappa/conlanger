@@ -1,23 +1,21 @@
 @ 35.1.5 - Proto-Central Salish to Klallam
-# citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology and Sound
-# 			Correspondences”. From the 17th International Conference on Salish and Neighboring
-# 			Languages
+# citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology and Sound Correspondences”. From the 17th International Conference on Salish and Neighboring Languages
 	mʔn > nʔ
-	p(ʼ) m > t͡s(ʼ) ŋ // _u
+	p(ʼ) m > ts(ʼ) ŋ / ! _u
 	l(ʲ) > j
 	xʲ > {s,ʃ} (the latter mainly from borrowings?)
-	t͡ʃ > t͡s
-	t͡ʃʼ > t͡sʼ / _ // _,#
-	w j > kʷ t͡ʃ / _V
-	V₀³ʔ(V₀) > V₀³ʔV₀
-	u¹ > ə¹
-	a³ > u³ / {Cʷ:[+uvular],[+ cons, - fr, + bk, + hi, - lo]ʷ,w}
-	a³ > u³ / _{Cu,Cʷ:[+uvular],w}
-	a¹ > ə¹
-	{u³~ə³} > ə³
-	{a³~ə³} > ə³
-	{a³~i³} > ə³
-	{a¹~i¹} > ə¹
-	{i³~ə³} > ə³
-	{i³~ə¹} > ə¹
-	{i¹~ə¹} > ə¹
+	tʃ > ts
+	tʃʼ > tsʼ / medially
+	w j > kʷ tʃ / _V
+	V₀3ʔ(V₀) > V₀3ʔV₀
+	u1 > ə1
+	a3 > u3 / {Cʷ:[+uvular],[+ cons, - fr, + bk, + hi, - lo]ʷ,w}
+	a3 > u3 / _{Cu,Cʷ:[+uvular],w}
+	a1 > ə1
+	{u3~ə3} > ə3
+	{a3~ə3} > ə3
+	{a3~i3} > ə3
+	{a1~i1} > ə1
+	{i3~ə3} > ə3
+	{i3~ə1} > ə1
+	{i1~ə1} > ə1

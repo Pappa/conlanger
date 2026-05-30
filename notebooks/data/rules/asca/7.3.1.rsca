@@ -1,20 +1,18 @@
 @ 7.3.1 - Proto-Arapaho-Atsina to Arapaho
-# citation: Whimemsz, from Goddard, Ives
-# 			(1974), “An Outline of the Historical Phonology of Arapaho and Atsina”. International
-# 			Journal of American Linguistics, 40:102 – 116
+# citation: Whimemsz, from Goddard, Ives (1974), “An Outline of the Historical Phonology of Arapaho and Atsina”. International Journal of American Linguistics, 40:102 – 116
 	hʔ > ʔh
-	({C,#}V)ʔ > ({C,#}V:[+ long])∅ / _C
-#	{ i, i:[+ long] } > { u, u:[+ long] } / { o, o:[+ long] }(C:[-dental])(C:[-dental])_
-	∅ > ʔ / CV:[- long]_#
+	({C,#}V)ʔ > ({C,#}V:[+long])∅ / _C
+	{ i, i:[+long] } > { u, u:[+long] } / { o, o:[+long] }(C:[-dental])(C:[-dental])_
+	∅ > ʔ / CV:[-long]_#
 	ʃ m > x w / _B
 	ʃ m > x w / B_#
-	ʃ m > x b / { o, o:[+ long] }_{ e, e:[+ long] }
-	ʃ k m > s t͡ʃ b / _{E,j}
-	ʃ k m > s t͡ʃ b / E_#
-	(V:[- long])N > ∅ / _#
+	ʃ m > x b / { o, o:[+long] }{ _e, _e:[+long] }
+	ʃ k m > s tʃ b / _{E,j}
+	ʃ k m > s tʃ b / E_#
+	(V:[-long])N > ∅ / _#
 	∅ > h / #_V
-	e:[+ long] > ei / j_
-	{ o, o:[+ long] } > { e, e:[+ long] } / Cj_
+	e:[+long] > ei / j_
+	{ o, o:[+long] } > { e, e:[+long] } / Cj_ (sporadic)
 	n > ∅ / _j
 	j > ∅ / C_
 	h > ∅ / _#

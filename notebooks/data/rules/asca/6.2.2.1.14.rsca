@@ -1,20 +1,20 @@
 @ 6.2.2.1.14 - Classical Arabic to Moroccan Arabic
 # citation: Pogostick Man, from http://en.wikipedia.org/wiki/Moroccan_Arabic
-	t > t͜s
-	{a,i} > ə / [- long]
-	u > ə / [- long]
+	t > t͜s / plain t only, distinguishable from the sequence ts
+	{a,i} > ə / short only; the change of short a blocked for some speakers before ħ ʕ
+	u > ə / short only // near “a labial or velar consonant”
 	C:[+labial/+velar] > ʷ / adjacent to short u
-	{u,ə} > ∅ // C_C(C)#
+	{u,ə} > ∅ / ! C_C(C)#
 	ə > a / near ħ ʕ
 	ə > ɐ / near emphatics
-	ə > ɪ / _ // near emphatics
-	u > ʊ / _:[- long]
-	a:[+ long] i:[+ long] u:[+ long] > ɑ:[+ long] e:[+ long] o:[+ long] / near emphatics
-	a:[+ long] > æ:[+ long] / _ // near emphatics
-#	C₁ˤC₂ > C₁C₂ˤ
+	ə > ɪ / else
+	u > ʊ / short only
+	a:[+long] i:[+long] u:[+long] > ɑ:[+long] e:[+long] o:[+long] / near emphatics
+	a:[+long] > æ:[+long] / else
+	C₁ˤC₂ > C₁C₂ˤ
 	Cˤ > C / {#,V}_V
 	q > {q,ɡ}
-	d͡ʒ > {d,ɡ} / if s or z occur somewhere else in the word
-	d͡ʒ > ʒ / _ // if s or z occur somewhere else in the word
+	dʒ > {d,ɡ} / if s or z occur somewhere else in the word
+	dʒ > ʒ / else
 	s > ʃ / if ʃ is somewhere in the stem after it
 	z > ʒ / if ʒ is somewhere in the stem after it

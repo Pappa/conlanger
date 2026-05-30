@@ -1,25 +1,25 @@
 @ 17.12.1.1.4 - Vulgar Latin to Italian
-# citation: Dewrad, from Boyd-Bownam, P. From Latin to Romance in Sound Charts
+# citation: Dewrad, from Boyd-Bownam, P. From Latin to Romance in Sound Charts NB: Dewrad says, “It should be noted that due to my source they are not in any sort of chronological order, nor do they indicate some of the more sporadic changes.”
 	r > ∅ / a_ju#
-	tVk > d͡ʒ / [- stress]
-	au > u / #_
+	tVk > dʒ / unstressed
+	au > u / #_ (sporadically, e.g. audire → udire)
 	au > o
-	k ɡ > t͡ʃ d͡ʒ / _E
-	kVl > k:[+ long]j / [- stress]
-	kt > t:[+ long]
-	ɛ > jɛ/ [- stress] ! _{d͡ʒ,ʎ,ɲ}
+	k ɡ > tʃ dʒ / _E
+	kVl > k:[+long]j / unstressed
+	kt > t:[+long]
+	ɛ > jɛ / unstressed ! _{dʒ,ʎ,ɲ}
 	ɡ > ∅ / a_V
-	j > d͡ʒ / #_
-	j > d͡ʒ / V_V
-	{dj,ɡj} lj {nj,ɡn} > d͡ʒ ʎ ɲ
-	ɔ > uo / stressed // j_ or _{d͡ʒ,L}
+	j > dʒ / #_
+	j > dʒ / V_V
+	{dj,ɡj} lj {nj,ɡn} > dʒ ʎ ɲ
+	ɔ > uo / stressed ! j_ or _{dʒ,L}
 	b > v / V_
 	l > j / #C_
-	C > C:[+ long] / V_jV
-	sj > d͡ʒ
+	C > C:[+long] / V_jV
+	sj > dʒ
 	{t,d,k,m,n,s} > ∅ / _#
 	r > ∅ / _# (in polysyllables only)
-	ta:[+ long]te > ”ta / _#
+	ta:[+long]te > ”ta / _#
 	t k > d ɡ / V_r
-	{skj,stj,s:[+ long]j > ʃ
-	tj ks w > t͡s s:[+ long] ɡw
+	{skj,stj,s:[+long]j > ʃ
+	tj ks w > ts s:[+long] ɡw

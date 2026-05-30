@@ -1,6 +1,6 @@
 @ 17.2.4 - Common Anatolian to Lydian
-# citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
-	d > t͡ʃ / _{i,u}
+# citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead) “[P]lus lots of syncope which he doesn’t elaborate on”
+	d > tʃ / _{i,u}
 	d > t / {#,N}_
 	p d D > f ð T
 	T > D / N_
@@ -9,10 +9,11 @@
 	ʃ > s
 	s > ʃ / _{i,e}
 	s > ʃ / i_
-#	{x,ɣʷ} > ∅
+	{x,ɣʷ} > ∅
 	{m,n} > ʋ / _# “(that’s a Greek nu, I’m not sure what it’s supposed to represent)”
 	l > ʎ / _{i,j}
-	w (> v?) > f / s_
+	w ( > v?) / s_
+	v?) > f / s_
 	j > ∅ / C_
 	j u > ð w / #_
 	j > ð / V_V
@@ -21,6 +22,5 @@
 	{e,a,o} > ā / _N in ”U:[+open]
 	{e,o} > a / in U:[-stress]
 	n > ∅ / _P “(leaves nasalization on the previous vowel)”
-	{ o, o:[+ long] } e:[+ long] æ:[+ long] > { a, a:[+ long] } i:[+ long] a:[+ long]
-	V:[+ long] > V:[- long]
-	# “[P]lus lots of syncope which he doesn’t elaborate on”
+	{ o, o:[+long] } e:[+long] æ:[+long] > { a, a:[+long] } i:[+long] a:[+long]
+	V:[+long] > V:[-long]

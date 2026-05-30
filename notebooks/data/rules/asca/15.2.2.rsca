@@ -1,24 +1,23 @@
 @ 15.2.2 - Proto-Eskimo to Greenlandic Iñupiaq
-# citation: Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic
-# 			Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp.
-# 			166–171
+# citation: Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171
 	ə > u / u_
 	ə > a / a_
-	C:[+ long] > C / except when CV_V in U₁U₂
+	C:[+long] > C / except when CV_V in U₁U₂
 	t > s / i_
-	ə > i / _ // i_
-	d͡ʒ > t͡ʃ
-	t͡ʃ > s
-	m n ŋ t {ɣ,ʁ} > {k,q} / _#
-	{k,q} > p t k n ŋ / _#
+	ə > i / else
+	dʒ > tʃ / “in certain positions” (except for Thule Greenlandic, where dʒ → tʃ and stayed there, apparently)
+	tʃ > s / “in certain positions” (except for Thule Greenlandic, where dʒ → tʃ and stayed there, apparently)
+	m n ŋ t {{ɣ,ʁ} > {k,q}} / _#
+	{k,q}} > p t k n ŋ / _#
 	m n ŋ > v t ɣ / _C:[-nasal]
 	l̥ > ʁ / _C
 	v ʁ > p q / S_
-	v ɣ ʁ > p k q / _C (except where C = /l d͡ʒ m n ŋ/)
+	v ɣ ʁ > p k q / _C (except where C = /l dʒ m n ŋ/)
 	{p,v} t {k,ɣ} > m n ŋ / _N
-#	S₁S₂ > F₁F₂
+	S₁S₂ > F₁F₂
+	Some metathesis in consonant clusters, the conditions of which are not elaborated upon; the given example cited within the text is lʁ > ʁl
 	v > ∅ / u_a
 	iv > uj / _u
-	d͡ʒ > t͡ʃ / i_{u,i}
-	əd͡ʒ > i / _{a,u} // #U
-	ad͡ʒ > i / _a // #U
+	dʒ > tʃ / i_{u,i}
+	ədʒ > i / _{a,u} (except in #U)
+	adʒ > i / _a (except in #U?)

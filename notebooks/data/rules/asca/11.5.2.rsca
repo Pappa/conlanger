@@ -1,17 +1,13 @@
 @ 11.5.2 - Proto-Lezgic to Archi
-# citation: Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”.
-# 			Wikipedia, the Free Encyclopedia.
-# 			<https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian>,
-# 			apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant
-# 			Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian,
-# 			East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 –
-# 			251
+# citation: Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian>, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251
 	d > r / _#
-	d > {d,t:[+ long]}
-	{t͡s,st} t͡s:[+ long] t͡s:[+ long]ʼ st:[+ long] dz > s {s,ʃ} t͡sʼ s:[+ long] t͡s
-	t͡ʃ(ː) d͡ʒ > ʃ t͡ʃ
-	tɬ tɬ:[+ long] tɬʼ tɬ:[+ long]ʼ dɮ > ɬ ɬ(ː) kʼ tɬʼ tɬ:[+ long]
-	k:[+ long] ɡ > x {k:[+ long],ɡ}
-	ɣ > q
-	q q:[+ long]ʼ > x { q, q:[+ long] }ʼ
-	s:[+ long] x:[+ long] > {s:[+ long],h} x
+	d > {d,t:[+long]}
+	{ts,st} ts:[+long] ts:[+long]ʼ st:[+long] dz > s {s,ʃ} tsʼ s:[+long] ts
+	{ tʃ, tʃ:[+long] } dʒ > ʃ tʃ
+	tɬ tɬ:[+long] tɬʼ tɬ:[+long]ʼ dɮ > ɬ { ɬ, ɬ:[+long] } kʼ tɬʼ tɬ:[+long]
+	k:[+long] ɡ > x {k:[+long],ɡ}
+	ɣ > q (more likely, *ɢ
+	q (more likely, *ɢ > q instead of
+	q instead of > ɣ)
+	q q:[+long]ʼ > x { q, q:[+long] }ʼ
+	s:[+long] x:[+long] > {s:[+long],h} x

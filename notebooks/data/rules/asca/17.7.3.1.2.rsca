@@ -1,20 +1,19 @@
 @ 17.7.3.1.2 - Old Norse to Orkney Norn
-# citation: Pogostick Man and Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from
-# 			http://nornlanguage.x10.mx/index.php?ork_phon, citing Marwick, Hugh, “Orkney Norn”
+# citation: Pogostick Man and Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from http://nornlanguage.x10.mx/index.php?ork_phon, citing Marwick, Hugh, “Orkney Norn” NB: For the most part, these changes are not in chronological order and are often tendencies more than strict sound-change laws.
 	ny > in
 	f > m / _n
 	n > ∅ / m_
-	{ p, p:[+ long] } { t, t:[+ long] } { k, k:[+ long] } > { b, b:[+ long] } { d, d:[+ long] } ɡ(ː) / {V,R}_{V,R}
-	{t,d}j > t͡ʃ
-	d > ∅ / n_#
+	{ p, p:[+long] } { t, t:[+long] } { k, k:[+long] } > { b, b:[+long] } { d, d:[+long] } { ɡ, ɡ:[+long] } / {V,R}_{V,R}
+	{t,d}j > tʃ
+	d > ∅ / n_# (sometimes)
 	b d ɡ > p t k / #_
 	k > s / _n
-	ɡ > k / _#
+	ɡ > k / _# (sporadic)
 	ɡn ɡl > nj lj
 	k ɡ > c ɟ / _{E,j}
 	f > ∅ / _{l,b,v,n,#}
-	f > ∅ / V:[+ long]_V
-	fd > d:[+ long]
+	f > ∅ / V:[+long]_V
+	fd > d:[+long]
 	h > ∅ / _{l,n,r}
 	hw hj > {w,ʍ} ʃ
 	h > x / _i
@@ -23,7 +22,7 @@
 	θ > t
 	ð > θ / _#
 	ð > ∅ /{a,E}_
-	ð > d // V_V
+	ð > d / ! V_V
 	sk > {sk,ʃ,ks}
 	s > ∅ / {t,k,r}_l
 	s > ʃ / _Vr ?
@@ -31,41 +30,40 @@
 	l > ∅ / V_V
 	l > ∅ / _{m,s,k}
 	l > ∅ / _# ?
-	lm > ml
-	l:[+ long] > ʎ
+	lm > ml (sporadic)
+	l:[+long] > ʎ
 	v > w
-	u a e e:[+ long] > ʌ ɑ ɪ ɛ / _C:[+ long]
-	u > ø / _{ l, l:[+ long] }
-	u > ʌ / _C{ː,CC}
-	u:[+ long] > ø:[+ long] / _CC
+	u a e e:[+long] > ʌ ɑ ɪ ɛ / _C:[+long]
+	u > ø / _{ l, l:[+long] }
+	u > ʌ / _C{:[+long],CC}
+	u:[+long] > ø:[+long] / _CC
 	o a > ø ɛ / _(C)(C)i
 	o > ø / _Cr
-	o:[+ long] > ø:[+ long] / _(C)(C)#
-	o:[+ long] > { u, u:[+ long] }
-	jo:[+ long] > {u,o,ø} (looks like being in the ultima or the penult may have had something to
-				do with it, but it isn’t clear to me)
-	ɒ > ɔ / _C(ː)C
-	ɒ > ʌ / _{ r, r:[+ long] }
-	ɒ > {ɛ,e} / _C:[+ long]V (V can be a syllabic consonant)
+	o:[+long] > ø:[+long] / _(C)(C)#
+	o:[+long] > { u, u:[+long] }
+	jo:[+long] > {u,o,ø} (looks like being in the ultima or the penult may have had something to do with it, but it isn’t clear to me)
+	ɒ > ɔ / _{ C, C:[+long] }}C
+	ɒ > ʌ / _{ r, r:[+long] }
+	ɒ > {ɛ,e} / _C:[+long]V (V can be a syllabic consonant)
 	ɒ > ɪ / _rC
 	au > (ɔ)u
-	a a:[+ long] > ɛ ø:[+ long] / _r
+	a a:[+long] > ɛ ø:[+long] / _r
 	a > ɔ / _{l,nd}C
 	ja > i
-	æ > e:[+ long] / _{ð,r}
-	æ > ɛ:[+ long]
-	œ > ɛ:[+ long] / _CC
+	æ > e:[+long] / _{ð,r}
+	æ > ɛ:[+long]
+	œ > ɛ:[+long] / _CC
 	œ > ø / _l
-	œ > i:[+ long] / _N
-	œ > e:[+ long]
-	y:[+ long] > ø / _j
-	y:[+ long] > i
+	œ > i:[+long] / _N
+	œ > e:[+long]
+	y:[+long] > ø / _j
+	y:[+long] > i
 	y > {ɪ,i}
-	e i:[+ long] > ɛ { i, i:[+ long] }
-	ey > e:[+ long] / _F
+	e i:[+long] > ɛ { i, i:[+long] }
+	ey > e:[+long] / _F
 	ey > ɛ / _r
 	ey > ai
-	ei > e:[+ long] / _C(ː,V)# (V can be a syllabic consonant)
+	ei > e:[+long] / _C(:[+long],V)# (V can be a syllabic consonant)
 	e > a / _i
 	i > ɪ / _CC
-	V:[- long] > ∅ / _#
+	V:[-long] > ∅ / _#

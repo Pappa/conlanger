@@ -1,24 +1,20 @@
 @ 36.3.2.2.4 - Proto-rGyalrongic to Suo Mo
-# citation: Pogostick Man, from Nagano, Yashuiki (1979), “A Historical Study of rGyarong Initials
-# 			and Prefixes”. Linguistics of the Tibeto-Burman Area 4(2):44 – 68; and Nagano, Yashuiki
-# 			(1979), “A Historical Study of rGyarong Rhymes”. Linguistics of the Tibeto-Burman Area
-# 			5(1):37 – 47
-	# Initials:
+# citation: Pogostick Man, from Nagano, Yashuiki (1979), “A Historical Study of rGyarong Initials and Prefixes”. Linguistics of the Tibeto-Burman Area 4(2):44 – 68; and Nagano, Yashuiki (1979), “A Historical Study of rGyarong Rhymes”. Linguistics of the Tibeto-Burman Area 5(1):37 – 47 Initials: Rhymes:
 	{p,b} Np pr {s,r}P çb Nb > p mp mbr sp ʃp p.s
 	Nt tr d [+ cons, - fr, + bk, + hi, - lo]T çT > mt. tʂ t kt ʃt
 	kr rk {r[+ cons, - fr, + bk, + hi, - lo],Pɡ} ɡ Pɡ sɡ > k.r rk. pk k sk
-	ɡj > cç
+	ɡj > cç ? (might be
+	cç ? (might be > tsç?)
 	ʔkj > ktʃ.
 	ç > zɡ / _r
 	ɡ > ∅ / #_r
 	rs > sr
-#	C:[+ sibilant] > s / _#
+	C:[+sibilant] > s / _#
 	lts rts NTS PTS STS > lɖʐ rts. {mdzr,mtʃ} nt. sts
-	t͡s d͡ʒ > t͡ʃ. t͡ʃ
+	ts dʒ > tʃ. tʃ
 	ŋ > ȵ
 	nj > ɲ / #(r)_
 	j > dz / #_
-	# Rhymes:
 	u > o / _p
 	a > o / _r
 	es er > or ər

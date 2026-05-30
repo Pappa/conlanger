@@ -1,26 +1,19 @@
 @ 46.5 - Old English-to-Scots Vowel Shifts
-# citation: Pogostick Man, from Wikipedia contributors (2014), “Phonological history of Scots”.
-# 			Wikipedia, the Free Encyclopedia.
-# 			<https://en.wikipedia.org/w/index.php?title=Phonological_history_of_Scots>; and
-# 			Wikipedia contributors (2014), “Scottish Vowel Length Rule”. Wikipedia, the Free
-# 			Encyclopedia.
-# 			<https://en.wikipedia.org/w/index.php?title=Scottish_vowel_length_rule>
-	ai > ɛi
+# citation: Pogostick Man, from Wikipedia contributors (2014), “Phonological history of Scots”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Phonological_history_of_Scots>; and Wikipedia contributors (2014), “Scottish Vowel Length Rule”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Scottish_vowel_length_rule> Application of the Scottish vowel-length rule:
+	ai > ɛi / when stem-final
 	ɛi > əi / when stem-final
-	u:[+ long] > ʌu / when-stem final, in northern varieties
-	ø:[+ long] > wi / {k,ɡ}_
-	ø:[+ long] > i
-	ø:[+ long] > (j){u,ʌ} / _{k,x}
-	a > i / _n
-	a > e / _n
+	u:[+long] > ʌu / when-stem final, in northern varieties
+	ø:[+long] > wi / {k,ɡ}_ (in Mid Northern dialects)
+	ø:[+long] > i (in northern dialects)
+	ø:[+long] > (j){u,ʌ} / _{k,x} (outcome varies depending upon dialect)
+	a > i / _n (in northern varieties)
+	a > e / _n (otherwise)
 	a > {ɛ,e} / _rC
-	ai oi ui ei au ou iu ɛ(o)u > e:[+ long] oe əi i:[+ long] {ɑ:[+ long],ɔ:[+ long]} ʌu ju j(ʌ)u
-	ɛ:[+ long] > ɛi
-	ɛi > əi
-	i:[+ long] e:[+ long] ɛ:[+ long] a:[+ long] o:[+ long] u:[+ long] {ø:[+
-				long],y:[+ long]} > əi i {i,e} e o u ø
+	ai oi ui ei au ou iu ɛ(o)u > e:[+long] oe əi i:[+long] {ɑ:[+long],ɔ:[+long]} ʌu ju j(ʌ)u
+	ɛ:[+long] > ɛi ( / in some northern varieties
+	ɛi ( > əi?) / in some northern varieties
+	i:[+long] e:[+long] ɛ:[+long] a:[+long] o:[+long] u:[+long] {ø:[+long],y:[+long]} > əi i {i,e} e o u ø
 	æ > ɛ / _C:[+alveolar]
 	a ɔ u > {a,ɑ} ɔ ʌ
-	# Application of the Scottish vowel-length rule:
-	V > V:[+ long] / _{r,F:[+ voice],$,#}
-	əi > aɪ / _{r,F:[+ voice],$,#}
+	— V > V:[+long] / _{r,F:[+voice],$,#}
+	— əi > aɪ / _{r,F:[+voice],$,#} (pursuant to the above)

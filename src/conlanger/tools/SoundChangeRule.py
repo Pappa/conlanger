@@ -109,3 +109,26 @@ class SoundChangeRule:
 
     def __str__(self):
         return "\n".join([str(part) for part in self._parts])
+
+
+
+
+class DebugRuleTitle(RulePartBase):
+    prefixes = {"asca": "@ ", "brassica": "; "}
+    def __init__(self, el: Element, index: int, format: str = "asca"):
+        title = el.attrib["index"] + " - " + str(index)
+        super().__init__(title, format)
+
+class DebugRule:
+    def __init__(self, el: Element, part: Element, index: int, format: str = "asca"):
+        self._parts = [DebugRuleTitle(el, index, format), RuleChange(part, format)]
+        self.title = self._parts[0].value
+
+    def __str__(self):
+        return "\n".join([str(part) for part in self._parts])
+        
+class DebugRules:
+    prefixes = {"asca": "@ ", "brassica": "; "}
+    def __init__(self, input: Element, format: str = "asca"):
+        rule_parts = [p for p in input if p.tag == "rule"]
+        self.rules = [DebugRule(input, part, index, format) for index, part in enumerate(rule_parts)]

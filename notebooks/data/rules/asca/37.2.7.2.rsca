@@ -1,15 +1,10 @@
 @ 37.2.7.2 - Proto-Ohio-Valley to Ofo
-# citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal
-# 			of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II”
-# 			International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950),
-# 			“Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178;
-# 			and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic
-# 			transcription scheme
+# citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. Also, the changes of /p/ before a consonant are unclear, as described within the text.
 	p > {p,b,m,w} / _C
 	s {ç,x} > f s
-	w > ∅ / #_
+	w > ∅ / #_ (sporadic)
 	m > w / #_
-	L j > t t͡ʃ
+	L j > t tʃ
 	ã > {an,õ}
 	ʔ > ∅ / C_
 	sr kr > ft kV₀lV₀

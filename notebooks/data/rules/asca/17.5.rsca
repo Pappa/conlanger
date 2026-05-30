@@ -1,28 +1,27 @@
 @ 17.5 - Proto-Indo-European to Proto-Celtic
-# citation: dhokarena56, from Matasović (2009), Etymological Dictionary of Proto-Celtic (ed.
-# 			Lubotsky).
-#	he xe ɣʷe > e a o
-#	eh ex eɣʷ > e:[+ long] a:[+ long] o:[+ long]
-	H > a / C_C // #_
-	SS > s:[+ long]
-	∅ > a / CR_HC
-	H > ∅ / V_C when pretonic
-	H > a / #R_C
-	Ḱ > [+ cons, - fr, + bk, + hi, - lo]
-	ɡʷ > b
-	h > ∅ / C_
-	∅ > i / C{l,r}S
-	e > a / _Ra:[- long]
-	∅ > a / C_RC
-	H > ∅ / “if not in a syllabic position”
-	p…kʷ > kʷ…kʷ
-	e:[+ long] > i:[+ long]
-	o:[+ long] > u:[+ long] / in U#
-	V:[+ long] > V:[- long] / _RC
-	C₁C₂ > xC₂ / if C₂ was a plosive or s
-	p > b / _{r,l}
-	p > w / B_N
-	p > f
-	o:[+ long] ej > a:[+ long] e:[+ long]
-	e > o / _w
-	u > o / _wO
+# citation: dhokarena56, from Matasović (2009), Etymological Dictionary of Proto-Celtic (ed. Lubotsky). “PIE Dialectal” Early Proto-Celtic Late Proto-Celtic
+	— he xe ɣʷe > e a o
+	— eh ex eɣʷ > e:[+long] a:[+long] o:[+long]
+	— H > a / C_C ! #_
+	— SS > s:[+long]
+	— ∅ > a / CR_HC
+	— H > ∅ / V_C when pretonic
+	— H > a / #R_C
+	— Ḱ > [+ cons, - fr, + bk, + hi, - lo]
+	— ɡʷ > b
+	— h > ∅ / C_
+	— ∅ > i / C{l,r}S
+	— e > a / _Ra (short a only), though “:[t]he e was often restored by analogy”
+	— ∅ > a / C_RC
+	— H > ∅ / “if not in a syllabic position”
+	— p…kʷ > kʷ…kʷ
+	— e:[+long] > i:[+long]
+	— o:[+long] > u:[+long] / in U#
+	— V:[+long] > V:[-long] / _RC
+	— C₁C₂ > xC₂ / if C₂ was a plosive or s
+	— p > b / _{r,l}
+	— p > w / B_N
+	— p > f
+	— o:[+long] ej > a:[+long] e:[+long]
+	— e > o / _w
+	— u > o / _wO

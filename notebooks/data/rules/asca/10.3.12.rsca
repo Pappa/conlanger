@@ -1,27 +1,26 @@
 @ 10.3.12 - Proto-Oceanic to Vera’a
-# citation: thetha, from François, Alexander (2005), “Unraveling the history of the vowels of
-# 			seventeen north Vanuatu languages”
+# citation: thetha, from François, Alexander (2005), “Unraveling the history of the vowels of seventeen north Vanuatu languages”
 	p pʷ k q > β w ɣ ∅
 	VV > V
 	ndr *R > d r
 	{c,*j} ɲ > s n
-	t > ʔ
-	β > f / #_
-	β > f / _ // #_
+	t > ʔ “often”
+	β > f / #_ (usually)
+	β > f / else (rarely)
 	bʷ ɡ > kpʷ k
 	mʷ > ŋmʷ
-	i(C)V:[+ high] > i(C)
-	i(C)V:[- high] > i(C)ɪ
-	e(C)V:[- low] > e(C)
-	e(C)V:[+ low] > ɛCɛ
+	i(C)V:[+high] > i(C)
+	i(C)V:[-high] > i(C)ɪ
+	e(C)V:[-low] > e(C)
+	e(C)V:[+low] > ɛCɛ
 	a(C)i a(C)u > {a,ɛ}(C) {ɔ,a,ɛ}(C)
 	a(C){o,e} > a(C)
 	oCa > ɔCɔ
-	uCV:[+ high] > iC
-	uCV:[- high] > uCʊ
+	uCV:[+high] > iC “sometimes”
+	uCV:[-high] > uCʊ
 	oa {ae,ea} > uɔ iɛ
 	o e > ʊ ɪ
 	V > ∅ / #_C”V
 	V > ∅ / CVC_C”V
-#	CV₁C”V₂ > CV₂C”V₂
+	CV₁C”V₂ > CV₂C”V₂
 	b d > m n / _{C,#}

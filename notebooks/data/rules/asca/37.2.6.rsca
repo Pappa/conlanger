@@ -1,10 +1,5 @@
 @ 37.2.6 - Proto-Siouan to Proto-Dhegiha
-# citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal
-# 			of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II”
-# 			International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950),
-# 			“Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178;
-# 			and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic
-# 			transcription scheme
+# citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. Also, the changes of /p/ before a consonant are unclear, as described within the text.
 	p > {p,b,m,w} / _C
 	w > ∅ / _t
 	t tʲ s > d ʒ z / in U:[-stress]
@@ -13,7 +8,7 @@
 	s > z / V_V
 	L Lʲ > {ð,j} ʒ / _”V
 	L > d / ”V_
-	w > β
-	u > i / in ”U
+	w > β (sporadic, allophonic)
+	u > i / in ”U (sporadic)
 	k > ∅ #t_ (in morphemes)
 	tk > ɡ / when medial

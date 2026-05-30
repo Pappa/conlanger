@@ -1,6 +1,4 @@
 @ 17.7.2.1.15 - North Frisian Lenition
-# citation: TzirTzi, from Goblirsch, Kurt Gustav (2002), “The North Frisian lenition and Danish
-# 			linguistic hegemony”. In Carr, Gerald F., and Irmengard Raugh (2002), New Insights in
-# 			Germanic Linguistics III:46 – 65
-	p t k > b d ɡ / V:[+ long]_{V,#}
-	b d ɡ > v r ɣ / V:[+ long]_{V,#}
+# citation: TzirTzi, from Goblirsch, Kurt Gustav (2002), “The North Frisian lenition and Danish linguistic hegemony”. In Carr, Gerald F., and Irmengard Raugh (2002), New Insights in Germanic Linguistics III:46 – 65 Vowel length neutralized (to long vowels?)
+	p t k > b d ɡ / V:[+long]_{V,#}
+	b d ɡ > v r ɣ / V:[+long]_{V,#}

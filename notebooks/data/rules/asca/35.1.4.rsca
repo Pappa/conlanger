@@ -1,19 +1,17 @@
 @ 35.1.4 - Proto-Central Salish to Musqueam Halkomelem
-# citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology and Sound
-# 			Correspondences”. From the 17th International Conference on Salish and Neighboring
-# 			Languages
+# citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology and Sound Correspondences”. From the 17th International Conference on Salish and Neighboring Languages
 	ʔn > ∅ / m_
-	t͡s(ʼ) t͡ʃ(ʼ) > θ(ʼ) t͡s(ʼ)
+	ts(ʼ) tʃ(ʼ) > θ(ʼ) ts(ʼ)
 	lʲ > l
-	V³h > V³ː / _C
-	V³ʔ > V³{ː,ʔ} / _O
-	V₀³ʔV₀ > {V³ː,V₀³ʔV₀}
-	V³ʔR > {V³ʔR,V³ːRʔ} / _V
-	u³ {u¹,a¹} a³ i¹ > a³ ə¹ ɛ³ {i¹,ə¹}
-	{u³~ə³} > ə³
-	{a³~ə³} > {ɛ³,ə³}
-	{a³~i³} > {a³,ɛ³}
-	{a¹~i¹} > {ə¹,ɛ¹}
-	{i³~e³} > {ə³,i³}
-	{i³~ə¹} > ə¹
-	{i¹~ə¹} > ə¹
+	V3h > V3:[+long] / _C
+	V3ʔ > V3{:[+long],ʔ} / _O
+	V₀3ʔV₀ > {V3:[+long],V₀3ʔV₀}
+	V3ʔR > {V3ʔR,V3:[+long]Rʔ} / _V
+	u3 {u1,a1} a3 i1 > a3 ə1 ɛ3 {i1,ə1}
+	{u3~ə3} > ə3
+	{a3~ə3} > {ɛ3,ə3}
+	{a3~i3} > {a3,ɛ3}
+	{a1~i1} > {ə1,ɛ1}
+	{i3~e3} > {ə3,i3}
+	{i3~ə1} > ə1
+	{i1~ə1} > ə1

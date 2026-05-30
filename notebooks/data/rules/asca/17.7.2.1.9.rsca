@@ -1,40 +1,30 @@
 @ 17.7.2.1.9 - Early Northern Middle English to Scots
-# citation: Pogostick Man, from Wikipedia contributors (2014), “Phonological history of Scots”.
-# 			Wikipedia, the Free Encyclopedia.
-# 			<https://en.wikipedia.org/w/index.php?title=Phonological_history_of_Scots>; and
-# 			Wikipedia contributors (2014), “Scottish Vowel Length Rule”. Wikipedia, the Free
-# 			Encyclopedia.
-# 			<https://en.wikipedia.org/w/index.php?title=Scottish_vowel_length_rule>
+# citation: Pogostick Man, from Wikipedia contributors (2014), “Phonological history of Scots”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Phonological_history_of_Scots>; and Wikipedia contributors (2014), “Scottish Vowel Length Rule”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Scottish_vowel_length_rule> /k ɡ/ remain unpalatalized when E_ ul became some sort of diphthong or vowel (possibly one of uː, uw, ʌw), but the article isn’t very clear Vowel shift: Application of the Scottish vowel-length rule:
 	b > ∅ / m_l
 	t > ∅ / {p,k}_# (“except in some inflected forms” for *kt)
 	d > ∅ / n_
 	d > ∅ / l_#
 	s > ʃ / _E (E_ also?)
-	f > ∅
-	# /k ɡ/ remain unpalatalized when E_
+	f > ∅ “in certain contexts”
 	{ɸ,x} > ∅ / _# (seems to be sporadic)
-	ʍ > xw
+	ʍ > xw (some speakers seem to have resisted this)
 	oɡ > ʌu
-	# ul became some sort of diphthong or vowel (possibly one of u:[+ long], uw, ʌw), but
-	# 			the article isn’t very clear
-	ol al > ou ɑ:[+ long]
-	ou ɑ:[+ long] > ʌu {ɑ,ɔ}
-	# Vowel shift:
-	ai > ɛi ; / when stem-final
-	ɛi > əi ; / when stem-final
-	u:[+ long] > ʌu ; / when-stem final, in northern varieties
-	ø:[+ long] > wi / {k,ɡ}_
-	ø:[+ long] > i
-	ø:[+ long] > (j){u,ʌ} / _{k,x}
-	a > i / _n ; (in northern varieties)
-	a > e / _n ; (otherwise)
-	a > {ɛ,e} / _rC
-	ai oi ui ei au ou iu ɛ(o)u > e:[+ long] oe əi i:[+ long] {ɑ:[+ long],ɔ:[+ long]} ʌu ju j(ʌ)u
-	ɛ:[+ long] > ɛi (> əi?) / in some northern varieties
-	i:[+ long] e:[+ long] ɛ:[+ long] a:[+ long] o:[+ long] u:[+ long] {ø:[+
-				long],y:[+ long]} > əi i {i,e} e o u ø
-	æ > ɛ / _C:[+alveolar]
-	a ɔ u > {a,ɑ} ɔ ʌ
-	# Application of the Scottish vowel-length rule:
-	V > V:[+ long] / _{r,F:[+ voice],$,#}
-	əi > aɪ / _{r,F:[+ voice],$,#}
+	ol al > ou ɑ:[+long]
+	ou ɑ:[+long] > ʌu {ɑ,ɔ}
+	— ai > ɛi / when stem-final
+	ɛi > əi / when stem-final
+	— u:[+long] > ʌu / when-stem final, in northern varieties
+	— ø:[+long] > wi / {k,ɡ}_ (in Mid Northern dialects)
+	— ø:[+long] > i (in northern dialects)
+	— ø:[+long] > (j){u,ʌ} / _{k,x} (outcome varies depending upon dialect)
+	— a > i / _n (in northern varieties)
+	— a > e / _n (otherwise)
+	— a > {ɛ,e} / _rC
+	— ai oi ui ei au ou iu ɛ(o)u > e:[+long] oe əi i:[+long] {ɑ:[+long],ɔ:[+long]} ʌu ju j(ʌ)u
+	— ɛ:[+long] > ɛi ( / in some northern varieties
+	ɛi ( > əi?) / in some northern varieties
+	— i:[+long] e:[+long] ɛ:[+long] a:[+long] o:[+long] u:[+long] {ø:[+long],y:[+long]} > əi i {i,e} e o u ø
+	— æ > ɛ / _C:[+alveolar]
+	— a ɔ u > {a,ɑ} ɔ ʌ
+	— V > V:[+long] / _{r,F:[+voice],$,#}
+	— əi > aɪ / _{r,F:[+voice],$,#} (pursuant to the above)

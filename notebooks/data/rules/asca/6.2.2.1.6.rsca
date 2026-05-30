@@ -1,43 +1,40 @@
 @ 6.2.2.1.6 - Classical Arabic to Cypriot Arabic
-# citation: Pogostick Man, from Borg, Alexander (1985), Cypriot Arabic
-	S:[+ voice] > S:[- voice]
+# citation: Pogostick Man, from Borg, Alexander (1985), Cypriot Arabic NB: Changes may not be in chronological order. {θ,ð} {f,v} {x,ɣ} voicing neutralized “in contact with other fricatives” Epenthesis in medial CCC clusters, often so that the syllable break is between the second and third consonants
+	S:[+voice] > S:[-voice]
 	q > k
-	S > [+ voice] / {V,R}_V
-	S > [+ voice] / V_R
-	# {θ,ð} {f,v} {x,ɣ} voicing neutralized “in contact with other fricatives”
+	S > :[+voice] / {V,R}_V
+	S > :[+voice] / V_R
 	S > F / _S
 	f θ > p t / F_
 	k x > c ç / _{j,E}
-	{l,n}j > j:[+ long]
+	{l,n}j > j:[+long]
 	j > c / {O,r}
 	j > ∅ / Ck_$
-	nx > x:[+ long]
-	∅ > F / N_{O,r} // m_f
+	nx > x:[+long]
+	∅ > F / N_{O,r} ! m_f
 	{ðˤ,dˤ} > ð
 	tˤ sˤ > s t
 	ʔ h > ∅ x
 	∅ > i / #al$_z
-	d͡ʒ > z
+	dʒ > z
 	ɣ ħ > ʕ x
 	w > v / _%
-	w:[+ long] > v
-	{ j, j:[+ long] } > ∅ / V_E
-	u:[+ long] i:[+ long] > o:[+ long] e:[+ long] / _ʕ
-	u:[+ long] i:[+ long] > o:[+ long] e:[+ long] / ʕ_
+	w:[+long] > v
+	{ j, j:[+long] } > ∅ / V_E
+	u:[+long] i:[+long] > o:[+long] e:[+long] / _ʕ
+	u:[+long] i:[+long] > o:[+long] e:[+long] / ʕ_
 	i > a / Cˤ_{q,ɣ,ʕ}
 	i > a / {q,ɣ,ʕ}_Cˤ
-	a > i / _:[+ stress]C(C)
+	a > i / _C(C), when stressed
 	u > o / _{ʕ,ɣ,x,r}
 	u > o / {ʕ,ɣ,x,r}_
-	{u,a,i} > ∅ / _:[+ stress, - long]%
-	# Epenthesis in medial CCC clusters, often so that the syllable break is between the
-	# 			second and third consonants
-	u:[+ long] i:[+ long] > u i
-	a > a / _C:[+ dorsal]
-	a > e / _(C)(C){ i, i:[+ long] }
-	a:[+ long] > a // _#
+	{u,a,i} > ∅ / _%, when stressed (short only)
+	u:[+long] i:[+long] > u i
+	a > a / _C:[+dorsal]
+	a > e / _(C)(C){ i, i:[+long] }
+	a:[+long] > a / ! _#
 	a > {u,o} / P_
 	a > {u,o} / _P
 	a > ∅ / _t, in the feminine ending
-	a:[+ long]ʔ > e / E(C)(C)_#
-	a:[+ long] > a / {Cˤ,w}_#
+	a:[+long]ʔ > e / E(C)(C)_#
+	a:[+long] > a / {Cˤ,w}_#

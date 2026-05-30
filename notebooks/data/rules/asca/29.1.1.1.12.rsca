@@ -1,11 +1,11 @@
 @ 29.1.1.1.12 - Proto-Athabaskan to Holikachuk
-# citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
-# 			Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
-	t͡s > TH
+# citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
+	TS > TH
 	e > a / in prefixes
 	i e a u {ɑ,ʊ} > e a ɔ o ŭ
-	t͡s {TŠ,TŠʷ} > TŁ t͡s
+	TS {TŠ,TŠʷ} > TŁ TS
 	C’ > C / _$
 	Vˀ > V:[+low tone]
-	w (> b?) > m
+	w ( > b?)
+	b?) > m
 	ə > ∅ / {R,F}_#

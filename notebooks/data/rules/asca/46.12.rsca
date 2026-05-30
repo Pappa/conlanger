@@ -1,8 +1,5 @@
 @ 46.12 - Northern Cities Vowel Shift (English)
-# citation: Pogostick Man, from Wikipedia contributors (2013), “Northern Cities Vowel Shift”.
-# 			Wikipedia, the Free Encyclopedia.
-# 			<https://en.wikipedia.org/w/index.php?title=Northern_Cities_Vowel_Shift>
-	# æ raises and diphthongizes, typically becoming one of {ɛə eə ɪə}
+# citation: Pogostick Man, from Wikipedia contributors (2013), “Northern Cities Vowel Shift”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Northern_Cities_Vowel_Shift> æ raises and diphthongizes, typically becoming one of {ɛə eə ɪə}
 	ɑ ɔ > a ɑ
 	ɛ > ɐ
 	ʌ > ɔ

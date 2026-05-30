@@ -1,13 +1,16 @@
 @ 46.13 - Old Norse to Faroese Vowel Shift
-# citation: johanpeturdam
-	{a,æ:[+ long]} > ɛa / a
-	a:[+ long] > ɔa / ɔ
-	e > e:[+ long] / ɛ
-	e:[+ long] > ɛa / a
-	{i,y} > i:[+ long] / ɪ
-	{i:[+ long],y:[+ long]} > ʊi / ʊ(i)
-	o > o:[+ long] / ɔ
-	o:[+ long] > {ɔu,ɛu,œu} / œ
-	u > u:[+ long] / short: ʊ / unstressed: {o,ɔ}
-	u:[+ long] > ʉu / ʏ
-	{œ,ɔ} > ø:[+ long]/œ
+# citation: johanpeturdam NB: “The reflexes of the vowels are given in the order of their reflex when stressed/long, and unstressed/short”
+	{a,æ:[+long]} > ɛa / a
+	a:[+long] > ɔa “(except NE of the Faroes / ɔ
+	ɔa “(except NE of the Faroes > a:[+long])” / ɔ
+	e > e:[+long] / ɛ
+	e:[+long] > ɛa “(except Suðuroy / a “(except Suðuroy → ɛ)”
+	ɛa “(except Suðuroy > e:[+long])” / a “(except Suðuroy → ɛ)”
+	{i,y} > i:[+long] / ɪ
+	{i:[+long],y:[+long]} > ʊi / ʊ(i)
+	o > o:[+long] / ɔ
+	o:[+long] > {ɔu,ɛu,œu} / œ “(except Suðuroy → ɔ)”
+	u > u:[+long] / short: ʊ / unstressed: {o,ɔ}
+	u:[+long] > ʉu / ʏ
+	{œ,ɔ} > ø:[+long]/œ “(except Suðuroy
+	ø:[+long]/œ “(except Suðuroy > ʏ)”

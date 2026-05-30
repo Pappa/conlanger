@@ -1,43 +1,38 @@
 @ 42.1.2 - Proto-Finnic to Livonian
-# citation: Tropylium, from Hakulinen, Lauri (1979), “Suomen kielen rakenne ja kehitys”. Otava;
-# 			Häkkinen, Kaisa (2004), “Nykysuomen etymologinen sanakirja”. WSOY; Kallio, Petri (2007),
-# 			“Kantasuomen konsonanttihistoriaa”. Mémoires de la Société Finno-Ougrienne 253.
-# 			<http://www.sgr.fi/sust/sust253/sust253_kallio.pdf>; and from Janhunen, Juha
-# 			(2007), “The primary laryngeal in Uralic and beyond”. Mémoires de la Société
-# 			Finno-Ougrienne 253. <http://www.sgr.fi/sust/sust253/sust253_janhunen.pdf>
-	t t͡s s(C) n l r > tʲ t͡sʲ sʲ(C) nʲ lʲ rʲ / _i
-	t͡s(ʲ) > s(ʲ) // n_
+# citation: Tropylium, from Hakulinen, Lauri (1979), “Suomen kielen rakenne ja kehitys”. Otava; Häkkinen, Kaisa (2004), “Nykysuomen etymologinen sanakirja”. WSOY; Kallio, Petri (2007), “Kantasuomen konsonanttihistoriaa”. Mémoires de la Société Finno-Ougrienne 253. <http://www.sgr.fi/sust/sust253/sust253_kallio.pdf>; and from Janhunen, Juha (2007), “The primary laryngeal in Uralic and beyond”. Mémoires de la Société Finno-Ougrienne 253. <http://www.sgr.fi/sust/sust253/sust253_janhunen.pdf>
+	t ts s(C) n l r > tʲ tsʲ sʲ(C) nʲ lʲ rʲ / _i
+	ts(ʲ) > s(ʲ) / ! n_
 	e > ɤ / _C(C){a,o,u}
-	æ > ɑ / [- stress]
+	æ > ɑ / unstressed
 	h > ∅ / {#,C}_
-	Vn > V:[+ long] / _s
+	Vn > V:[+long] / _s
 	ɑ æ > æe / _(C…)i
-	V > ə / [- stress] // V = ɑ
-	ɑ > ə / VC(C)ɑC(C)_[- stress]#
-	Vh > V:[+ long]ɦ / _C // _j,_ʋ
+	V > ə / unstressed ! V = ɑ
+	ɑ > ə / VC(C)ɑC(C)_# when unstressed
+	Vh > V:[+long]ɦ / _C // maybe ! _j and/or _ʋ
 	LV > VL / {#,V,O}_
-	p t(ʲ) s(ʲ) k > b d(ʲ) z(ʲ) ɡ // #_, _C:[-voice], C:[-voice]_
+	p t(ʲ) s(ʲ) k > b d(ʲ) z(ʲ) ɡ / ! #_ or adjacent to C:[-voice]
 	∅ > ʔ / (C)V_CV
 	ə > ∅ / _#
 	ə > ∅ / VC_CV
-	C > C:[+ long] / ʔ_V
-	dj lj rj ɡj > dʲ l:[+ long]ʲ r:[+ long]ʲ jɡ
+	C > C:[+long] / ʔ_V
+	dj lj rj ɡj > dʲ l:[+long]ʲ r:[+long]ʲ jɡ
 	ʋ > ∅ / {d,z}_
-	lʋ rʋ jʋ > l:[+ long] r:[+ long] j:[+ long]
+	lʋ rʋ jʋ > l:[+long] r:[+long] j:[+long]
 	ʋ > ∅ / C_
-	VC:[+ long]ɑ > V:[+ long]Cɑ
-	C:[+ long] > C:[- long] // in verbal forms when V_ə
-	ɑ:[+ long] au > ɔ:[+ long] ɔu
-	e:[+ long] ø:[+ long] o:[+ long] ɤ(ː) > i:[+ long]e y:[+ long]ø u:[+ long]o ɨ(ː)
+	VC:[+long]ɑ > V:[+long]Cɑ
+	C:[+long] > C:[-long] / ! in verbal forms when V_ə
+	ɑ:[+long] au > ɔ:[+long] ɔu (though sometimes ɑ:[+long] develops, apparently at least partially due to metathesis?)
+	e:[+long] ø:[+long] o:[+long] { ɤ, ɤ:[+long] } > i:[+long]e y:[+long]ø u:[+long]o { ɨ, ɨ:[+long] }
 	ɦ > ʔ
-	sʲ t͡sʲ zʲ dzʲ > ʃʲ t͡ʃʲ ʒʲ d͡ʒʲ
+	sʲ tsʲ zʲ dzʲ > ʃʲ tʃʲ ʒʲ dʒʲ
 	æy ey > æu eu
 	y ø > i e / else
-	V > V:[+ long] / _RC(C)ɑ
-	a > a:[+ long] / VC_
-	e o > e:[+ long] o:[+ long] / _Cɑ
-	o > o:[+ long] / _{RC#,i}
-	e:[+ long] o:[+ long] > je wo
+	V > V:[+long] / _RC(C)ɑ (includes diphthongs)
+	a > a:[+long] / VC_
+	e o > e:[+long] o:[+long] / _Cɑ
+	o > o:[+long] / _{RC#,i}
+	e:[+long] o:[+long] > je wo
 	w > ʋ / #_o
 	wo > ʊ / P_
-	ɔ(ː) > { o, o:[+ long] }
+	{ ɔ, ɔ:[+long] } > { o, o:[+long] }

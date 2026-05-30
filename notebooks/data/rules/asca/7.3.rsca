@@ -1,15 +1,13 @@
 @ 7.3 - Proto-Algonquian to Proto-Arapaho-Atsina
-# citation: Whimemsz, from Goddard, Ives
-# 			(1974), “An Outline of the Historical Phonology of Arapaho and Atsina”. International
-# 			Journal of American Linguistics, 40:102 – 116
+# citation: Whimemsz, from Goddard, Ives (1974), “An Outline of the Historical Phonology of Arapaho and Atsina”. International Journal of American Linguistics, 40:102 – 116
 	(W)V > ∅ / _#
 	we > o
-	{ o, o:[+ long] } > { i, i:[+ long] }
-	W > ∅ / C_{ i, i:[+ long] }
+	{ o, o:[+long] } > { i, i:[+long] }
+	W > ∅ / { C_i, C_i:[+long] }
 	e > i / #_
 	θ > ʃ / C_
 	θ h {s,m,n,r} > ʃ ∅ ʔ / _C
-	t͡ʃ > ʃ / _p
+	tʃ > ʃ / _p
 	W > j / C_
 	W > n / {#,V}_
 	p k > k ∅
@@ -17,6 +15,6 @@
 	s > h / {V,C}_
 	r > n / {#,V}_
 	r > h / C_
-	t͡ʃ > θ
-	V:[+ long] > V:[- long] / _CC
-	{ a, a:[+ long] } > { o, o:[+ long] }
+	tʃ > θ
+	V:[+long] > V:[-long] / _CC
+	{ a, a:[+long] } > { o, o:[+long] }

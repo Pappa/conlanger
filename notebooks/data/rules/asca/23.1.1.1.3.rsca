@@ -1,13 +1,12 @@
 @ 23.1.1.1.3 - Proto-Chibchan to Kogi
-# citation: Pogostick Man, from Wheeler, Alva (1972), “Proto-Chibchan”. In Matteson, Esther, ed.,
-# 			Comparative Studies in Amerindian Languages 93 – 108
+# citation: Pogostick Man, from Wheeler, Alva (1972), “Proto-Chibchan”. In Matteson, Esther, ed., Comparative Studies in Amerindian Languages 93 – 108
 	s > ∅ / #_
-	s > {ʃ,t͡ʃ} / _i
+	s > {ʃ,tʃ} / _i
 	s > h / _Vn
 	nVs dVs > n(V(s)) ʒ(Vʒ)
-	s h > {s,t͡ʃ} {h,∅}
+	s h > {s,tʃ} {h,∅}
 	j > i / C(V)_
 	n j > {n,∅} {j,∅}
 	e > a
-	i > ∅ / a_
+	i > ∅ / a_ (sometimes)
 	u > w / _a

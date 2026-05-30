@@ -1,15 +1,13 @@
 @ 7.9 - Proto-Algonquian to Swampy Cree
-# citation: Pogostick Man, from http://home.kpn.nl/cvkolmes/ojibwe/CorrCrOj.pdf and Wikipedia
-# 			contributors (2015), “Cree language”. Wikipedia, the Free Encyclopedia.
-# 			<https://en.wikipedia.org/w/index.php?title=Cree_language>
+# citation: Pogostick Man, from http://home.kpn.nl/cvkolmes/ojibwe/CorrCrOj.pdf and Wikipedia contributors (2015), “Cree language”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Cree_language>
 	we > o
-	e > i / _:[- long]
-	ja > a:[+ long] / C_
-	ʃje:[+ long] > ʃe:[+ long]
+	e > i (short only)
+	ja > a:[+long] / C_
+	ʃje:[+long] > ʃe:[+long]
 	lwi > jo
 	wi > o / C_
 	{n,q,h} > ∅ / _s
-	q > h / _t͡ʃ
+	q > h / _tʃ
 	N > h / _S
 	(t)ʃp > sp
 	{q,ʃ} > s / _t
@@ -17,6 +15,6 @@
 	l > h / _k
 	{n,q,h}ʃ {n,q,h}l > ʃ l
 	ʃ > s / in West Swampy Cree (remains /ʃ/ in East Swampy Cree)
-	t͡ʃ > t͡s
+	tʃ > ts
 	θ > t
 	l > n

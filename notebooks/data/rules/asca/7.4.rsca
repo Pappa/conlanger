@@ -1,62 +1,60 @@
 @ 7.4 - Proto-Algonquian to Blackfoot
-# citation: Whimemsz, from Proulx, Paul (1989), “A Sketch of Blackfoot Historical Phonology”.
-# 			International Journal of American Linguistics, 55:43 – 82
-	{θ,t͡ʃ,ʃ,r} > t / unless adjacent to another consonant
-	∅ > x / _s // _C{C,#}
-	j > s // C_
-	h > ∅ // _C
-	{ʃ,t͡ʃ} > s / #_
+# citation: Whimemsz, from Proulx, Paul (1989), “A Sketch of Blackfoot Historical Phonology”. International Journal of American Linguistics, 55:43 – 82
+	{θ,tʃ,ʃ,r} > t / unless adjacent to another consonant
+	∅ > x / _s ! _C{C,#}
+	j > s / ! C_
+	h > ∅ / ! _C
+	{ʃ,tʃ} > s / #_
 	{ʔθ,ʔr} > {ʔ,j,∅}
 	nr > s
 	h > x / _{p,k}
 	hkw > ʔk
-	nθ hs > s:[+ long]t s:[+ long]
+	nθ hs > s:[+long]t s:[+long]
 	m > ʔ / _p
-	nkw > ʔ:[+ long]
+	nkw > ʔ:[+long]
 	{n,s} > x / _t
 	ntʃ > ʔt
-	ns sk > {x,s} {x,s:[+ long]}
-	θp t͡ʃp ʃp > {x,s:[+ long]} ʔp s:[+ long]p
+	ns sk > {x,s} {x,s:[+long]}
+	θp tʃp ʃp > {x,s:[+long]} ʔp s:[+long]p
 	ʃ > x / _k
-	x > s:[+ long] / {i,#e,ja,ke}_
-	x > s:[+ long] / { e, e:[+ long] }_s
-	∅ > s / {{ i, i:[+ long] },#e}_t
-	t > t͡s / _{i,{ e, e:[+ long] },a}
-	∅ > s / k_{ i, i:[+ long] }
-	s:[+ long]ː > s:[+ long]
+	x > s:[+long] / {i,#e,ja,ke}_
+	x > s:[+long] / { e, e:[+long] }_s
+	∅ > s / {{ i, i:[+long] },#e}_t
+	t > ts / _{{ i,e, i,e:[+long] },a}
+	∅ > s / { k_i, k_i:[+long] }
+	s:[+long]:[+long] > s:[+long]
 	e > i / {#,k}_
 	{a,e,i} > o / _kʷ
-	∅ > j / {o:[+ long]w,i:[+ long]j}_i#
+	∅ > j / {o:[+long]w,i:[+long]j}_i#
 	w > j / {r,k}_i#
 	∅ > i / r_w
 	w > ∅ / C_
-	{ji:[+ long],ja,ahi} {owa:[+ long],awa,awe} awi {i:[+ long]wa,e:[+
-				long]wa,aji,aje,ani} > i o:[+ long] o(ji) i:[+ long] / C_C
-	hi > ∅ / a:[+ long]_
+	{ji:[+long],ja,ahi} {owa:[+long],awa,awe} awi {i:[+long]wa,e:[+long]wa,aji,aje,ani} > i o:[+long] o(ji) i:[+long] / C_C
+	hi > ∅ / a:[+long]_
 	∅ > i / #_jC
 	∅ > i / C_jV#
 	a > o / _w
-	eLwi > i:[+ long]
-	{ i, i:[+ long] }wi > i:[+ long] / _ // _,#
-	{ i, i:[+ long] }wi > i / _#
+	eLwi > i:[+long]
+	{ i, i:[+long] }wi > i:[+long] / medially
+	{ i, i:[+long] }wi > i / _#
 	j > s
 	w > j / _i
-	{i:[+ long],ij,j} > j / C_B
-	iji > i:[+ long]
+	{i:[+long],ij,j} > j / C_B
+	iji > i:[+long]
 	w > ∅ / {a,o}_iC
 	on > u / _iC
-	tem {k,p}en > m:[+ long] n:[+ long]
-	ket > t:[+ long] (> s:[+ long]?)
-	ke(h) > t:[+ long] ?
-	{k(ʷ)es,keθ} > s:[+ long]
+	tem {k,p}en > m:[+long] n:[+long]
+	ket > t:[+long] (
+	t:[+long] ( > s:[+long]?)
+	ke(h) > t:[+long] ?
+	{k(ʷ)es,keθ} > s:[+long]
 	e > ∅ / O_ in #U (not universal)
 	{me,ne} > ∅ / #_O “(followed by truncation of following x)”
-	{we,wi:[+ long]} > o / #_
-	t͡si > ∅ / $_OO “(before a prefix; the first obstruent of the follow[ing] cluster then becomes
-				ʔ)
-	a:[+ long] > aa / W_ // when _{C{C,ː},#}
-	a:[+ long] > a / _ ! W_ // when _{C{C,ː},#}
-	o:[+ long] > o
-	a > i // _,#
+	{we,wi:[+long]} > o / #_
+	tsi > ∅ / $_OO “(before a prefix; the first obstruent of the follow:[ing] cluster then becomes ʔ)
+	a:[+long] > aa / W_ ! when _{C{C,:[+long]},#}
+	a:[+long] > a / else
+	o:[+long] > o
+	a > i / ! at word boundaries
 	e > a / _#
-	{e:[+ long],i:[+ long]} > i
+	{e:[+long],i:[+long]} > i

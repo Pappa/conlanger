@@ -1,32 +1,29 @@
 @ 7.17 - Proto-Algonquian to Shawnee
-# citation: Whimemsz, from bin Muzaffar, Towhid, Computer Simulation of Shawnee Historical
-# 			Phonology, plus “other corrections based on a few other papers plus my limited knowledge
-# 			of comparative Algonquian”
+# citation: Whimemsz, from bin Muzaffar, Towhid, Computer Simulation of Shawnee Historical Phonology, plus “other corrections based on a few other papers plus my limited knowledge of comparative Algonquian” θ r / ! _O
 	we > o
-	# θ r / ! _O
 	r > s / H_
 	r > ∅ / n_
 	N > ∅ / _O
-	{h,s,t͡ʃ,θ} > ʔ / _O
+	{h,s,tʃ,θ} > ʔ / _O
 	r > ʃ / _O
 	e > i / #(C)_ “(but remains e in a few cases?)”
-	i:[+ long] > i / _j
-	j > ∅ / C_{ i, i:[+ long] }
+	i:[+long] > i / _j
+	j > ∅ / { C_i, C_i:[+long] }
 	je > i / C_
-	j > ∅ / {t͡ʃ,ʃ}_e:[+ long]
-	j > ∅ / {t͡ʃ,ʃ,w}_a:[+ long]
+	j > ∅ / {tʃ,ʃ}_e:[+long]
+	j > ∅ / {tʃ,ʃ,w}_a:[+long]
 	w > ∅ / t_i
 	wa > o / #_
-	V:[- long] > ∅ / _{ʃp,ʃk}
-	V:[- long] > ∅ / C_ʔC
-	V:[- long] > ∅ / _hV
-	V:[+ long] > V:[- long] / _#
-	V:[+ long] > V:[- long] / _{ʔC,ʃp,ʃk,hV}
+	V:[-long] > ∅ / _{ʃp,ʃk}
+	V:[-long] > ∅ / C_ʔC
+	V:[-long] > ∅ / _hV
+	V:[+long] > V:[-long] / _#
+	V:[+long] > V:[-long] / _{ʔC,ʃp,ʃk,hV}
 	ʔ > ∅ / C{v,l,s}_C
 	ʔ > ∅ / _CC
 	∅ > ʔ / C{v,d}_{ʃp,ʃk,hV}
 	∅ > h / #_V
 	s > θ
 	r > l
-	∅ > i / #C_jV:[+ long] “(for some speakers)”
+	∅ > i / #C_jV:[+long] “(for some speakers)”
 	ʃ > s “(for many speakers)”

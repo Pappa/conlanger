@@ -1,8 +1,7 @@
 @ 37.1.2.4.1 - Proto-Mohawk-Oneida to Mohawk
-# citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”,
-# 			University of Manitoba, Winnipeg
+# citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg “Dialectal changes include:” “Allophonic changes:”
 	V₀ > ∅ / ”VC(C)(C)V₀ʔ_C(C)(C)#
-	∅ > e / {t͡sh,s,n}_r
+	∅ > e / {tsh,s,n}_r
 	w > ∅ / _jh
 	h > ∅ / w_j
 	jh > hj
@@ -12,16 +11,14 @@
 	∅ > e / {#,V}s_n
 	∅ > e / t_w
 	∅ > e / {#,V}s_w
-	# “Dialectal changes include:”
-	r > l
-	t > k / _j
-	k > t / _j
-	wə̃ > ũ / {h,s}_
-	j > ∅ / t͡s_
-	t > t͡ʃ / _(h)j
-	wh > f
-	# “Allophonic changes:”
-	t͡s > t͡ʃ / _{(h)i,(h)j}
-	t t͡ʃ k(ʷ) > d d͡ʒ ɡ(ʷ) / _{V,R}
-	s > ʃ / _(h)j
-	s > z / {#,V}_{V,R} // R = j
+	— r > l
+	— t > k / _j
+	— k > t / _j
+	— wə̃ > ũ / {h,s}_
+	— j > ∅ / ts_
+	— t > tʃ / _(h)j
+	— wh > f
+	— ts > tʃ / _{(h)i,(h)j}
+	— t tʃ k(ʷ) > d dʒ ɡ(ʷ) / _{V,R}
+	— s > ʃ / _(h)j
+	— s > z / {#,V}_{V,R} ! R = j

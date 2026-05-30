@@ -1,26 +1,23 @@
 @ 10.3.4 - Proto-Oceanic to Mwotlap
-# citation: thetha, from François, Alexander (2005), “Unraveling the history of the vowels of
-# 			seventeen north Vanuatu languages”
+# citation: thetha, from François, Alexander (2005), “Unraveling the history of the vowels of seventeen north Vanuatu languages” oCV[+ high] / ɪC (sporadic) V[+ high] / {ʊ,ɛ}C_ *u *o “sometimes offload their labialization onto the previous labial consonant” when they change to something else
 	q > ∅
 	V₀V₀ > V₀
 	ndr > d
 	R > r
-	d > r
+	d > r (sporadic)
 	p pʷ bʷ k ɡ > β w kpʷ ɣ k
 	mʷ ɲ > ŋmʷ n
 	{c,*j} > s
-	s > h
+	s > h “(often)”
 	r > j
-	o e i > ɔ ɛ ɪ / C_V:[- high]
-	V:[- high] > ∅ / {ɔ,ɛ,ɪ}C_
-	
-	uCi > iC
-	u a > ʊ ɛ / _CV:[+ high]
-	
+	o e i > ɔ ɛ ɪ / C_V:[-high]
+	V:[-high] > ∅ / {ɔ,ɛ,ɪ}C_
+	uCi > iC (sporadic)
+	u a > ʊ ɛ / _CV:[+high]
 	o e > ʊ ɪ
-	aCV:[+ high] > ɪ / when stressed unless primarily stressed
-#	(C)V₁C”V₂ > (C)V₂V₂
+	aCV:[+high] > ɪ / when stressed unless primarily stressed
+	(C)V₁C”V₂ > (C)V₂V₂
 	V₁ > ∅ / _”V₂
 	V > ∅ / (C)V_VC”V
 	b β d > m p n / _{C,#}
-	kpʷ > k / _C
+	kpʷ > k / _C (sporadic)

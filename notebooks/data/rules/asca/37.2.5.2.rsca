@@ -1,18 +1,13 @@
 @ 37.2.5.2 - Proto-Crow-Hidatsa to Hidatsa
-# citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal
-# 			of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II”
-# 			International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950),
-# 			“Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178;
-# 			and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic
-# 			transcription scheme
+# citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme NB: Does not include developments in unstressed non-nasal vowels.
 	n > r
 	ʔ > ∅ / C_
 	kr > kV₀rV₀ / #_
 	r > ∅ / {C,V}k_{C,V}
 	mn > w / {C,V}_{C,V}
-	sn > t͡sV₀rV₀
+	sn > tsV₀rV₀
 	km > hp
-	sk > t͡suk / _”u
-	sk kx > t͡sk hk / _”V
+	sk > tsuk / _”u
+	sk kx > tsk hk / _”V
 	sk > hts / ”V_
 	∅ > V / x_k
