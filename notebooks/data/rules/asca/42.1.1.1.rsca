@@ -3,9 +3,9 @@
 	j w > i U / V_{C,#}
 	i > ∅ / {VC,ks}_ at the ends of a suffix
 	e > ∅ / C:[+coronal]_%
-	p:[+long] t:[+long] ts:[+long] k:[+long] > pˑ tˑ tsˑ kˑ
-	p t ts s k > b d s z ɡ
-	b d ɡ > β ð ɣ / ! N_
+	p:[+long] t:[+long] t͡s:[+long] k:[+long] > pˑ tˑ t͡sˑ kˑ
+	p t t͡s s k > b d s z ɡ
+	b d ɡ > β ð ɣ // N_
 	ɣ > j~ʋ
 	βi > U / _#
 	f > ʋ / #_
@@ -14,13 +14,13 @@
 	∅ > ʋ / #_{y:[+long],ø:[+long],o:[+long]}
 	oi > o / unstressed
 	V:[+long] > V:[-long] / _i
-	{kt,pt} {kts,pts} > t:[+long] t:[+long]s
+	{kt,pt} {kt͡s,pt͡s} > t:[+long] t:[+long]s
 	xk > k:[+long] (even across word boundaries)
 	({ t, t:[+long] })sn kx(tx) rn ln > s:[+long] x:[+long] r:[+long] l:[+long]
 	{p,t,k}({p,t,k})n {p,t,k}({p,t,k})m > n:[+long] m:[+long]
 	{p,t,k} > ∅ / _st
-	{ks,nts} nt > s t / _#
-	ts tsˑ ts:[+long] > s θˑ θ:[+long]
+	{ks,nt͡s} nt > s t / _#
+	t͡s t͡sˑ t͡s:[+long] > s θˑ θ:[+long]
 	{{ z,x, z,x:[+long] }} > h
 	e > @ / h_ (suffixal)
 	{p,k} > h / _t

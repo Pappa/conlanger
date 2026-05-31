@@ -4,7 +4,7 @@
 	a > i / ŋ_%
 	a > ɯ / {R,w}_%
 	a > wa / {[+ cons, - fr, + bk, + hi, - lo],ŋ}w_%
-	a > e / ! [+ cons, - fr, + bk, + hi, - lo]_%
+	a > e // [+ cons, - fr, + bk, + hi, - lo]_%
 	a aS > ɑ {ɑ,o} / _%
 	iN > ɚ / {P,C}r_%
 	i > ɯ / {R,kr}_%
@@ -14,7 +14,7 @@
 	V% > mid tone / C_ru
 	V% > high tone / else
 	N > ∅ / _pV
-	{r,s}pʰ {r,s}(N)p {r,s}b {r,s}mb > pʰ p b mb / _V (the paper implies similar developments occurred with stops at other POAs)
+	{r,s}pʰ {r,s}(N)p {r,s}b {r,s}mb > pʰ p b mb / _V (the paper implies similar development͡s occurred with stops at other POAs)
 	{r,s}(N)k > k / _V
 	Sb Sk Sɡ > b ? ɡ / _V
 	n̥ > l̥ / %_V

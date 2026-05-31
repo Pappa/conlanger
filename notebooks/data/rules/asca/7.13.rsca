@@ -1,7 +1,7 @@
 @ 7.13 - Proto-Algonquian to Miami-Illinois
 # citation: Pogostick Man, from Costa, David J. (1991), “The Historical Phonology of Miami-Illinois Consonants”. International Journal of American Linguistics, 57:365 – 393
-	tʃ > t / in nominal suffixes
-	t > tʃ / in diminutives
+	t͡ʃ > t / in nominal suffixes
+	t > t͡ʃ / in diminutives
 	s > ʃ / _i (not universal)
 	s > ʃ / _iV
 	{θ,l} > r / V_V
@@ -13,7 +13,7 @@
 	mV:[-long] > ∅ / #_{ʰC,s,ʃ} (allophonic, “optional”)
 	{ʔ,h}{ɬ,l} > hs
 	{θ,l} > t / n_
-	{θ,ʃ,tʃ,ç,x,ʔ} > h / _C
+	{θ,ʃ,t͡ʃ,ç,x,ʔ} > h / _C
 	C:[-nas] > h / _k
 	h > ʔ / _{s,ʃ}
 	hs hʃ > s:[+long] ʃ:[+long] / sporadic, usually {#,V:[+front]}_

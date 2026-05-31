@@ -19,16 +19,16 @@
 	k > z / _j
 	z > @ / _j
 	k > ɣ i / {i,e}_R{i,e}
-	k > ɣ / {A,O,U}_R ! R = j
-	ɣ > U / {A,O,U}_R ! R = j
+	k > ɣ / {A,O,U}_R // R = j
+	ɣ > U / {A,O,U}_R // R = j
 	β > ʋ
 	ʋ > ∅ / _UC
 	ið > j / ”V_V
 	lð rð > l:[+long] r:[+long]
-	ð > ∅ / ! ”V(X)_
+	ð > ∅ // ”V(X)_
 	ɣ > j / C_e
 	ɣ > ʋ / U_U
-	ɣ > ʔ / VV₀_V₀ ! V₀ = U
+	ɣ > ʔ / VV_V // V = U
 	ɣ > ∅ / else
 	h > ∅ / V:[-stress](X)_V
 	AO > {A,O,U}:[+long] / unstressed
@@ -40,4 +40,4 @@
 	e > ø / #(C…)_y
 	i > y / #(C…)l_y
 	i > y / #(C…)_væ
-	{ θ, θ:[+long] } ð > ts d (this latter does have some highly sporadic exceptions; additionally, in some dialects these may become {{ t, t:[+long] },h~t} and {r,∅}, respectively)
+	{ θ, θ:[+long] } ð > t͡s d (this latter does have some highly sporadic exceptions; additionally, in some dialect͡s these may become {{ t, t:[+long] },h~t} and {r,∅}, respectively)

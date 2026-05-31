@@ -1,14 +1,14 @@
 @ 17.10.1 - Proto-Indo-Iranian to Proto-Indo-Aryan
 # citation: Tropylium, from Kobayashi, Masato (2004), Historical Phonology of Old Indo-Aryan Consonants
 	ə > i
-	Sx > S:[+aspirated]
-	x > *H
+	Sh > S:[+aspirated]
+	h > *H
 	VH > V:[+long] / _{C,#}
 	R̊H > {u,i}R / _V (sporadic)
 	R̊H > {u,i}:[+long]R / _C
 	ʃ ʒ > ʂ ʐ
 	n > ɳ / R(V)_
-	t d(ʱ) n > ʈ ɖ(ʱ) ɳ / C̣_ ! _r
+	t d(ʱ) n > ʈ ɖ(ʱ) ɳ / C̣_ // _r
 	s t d(ʱ) n > ʂ ʈ ɖ(ʱ) ɳ / _C̣
 	ls lt ld(ʱ) ln > ʂ ʈ ɖ(ʱ) ɳ / “disputed”
 	s > ʂ / _V{ʂ,ʈ,ɖ(ʱ)}
@@ -16,9 +16,9 @@
 	uʐ aʐ iʐ > u:[+long] ə:[+long] i:[+long]
 	ə:[+long] > o:[+long] / w_
 	ə:[+long] > e:[+long]
-	tʃ dʒ(ʱ) > tɕ dʑ(ʱ)
-	tɕ dʑ(ʱ) > ɕ ɟ(ʱ)
-	tst dzdʱ > t:[+long] dʱ:[+long]
+	t͡ʃ d͡ʒ(ʱ) > t͡ɕ d͡ʑ(ʱ)
+	t͡ɕ d͡ʑ(ʱ) > ɕ ɟ(ʱ)
+	t͡st d͡zdʱ > t:[+long] dʱ:[+long]
 	k > ∅ / #_t
 	p > ∅ / #_st
 	ɟʱ > ɦ

@@ -6,20 +6,21 @@
 	o > e / w_{r,s,t}
 	o:[+long] > u:[+long] / _r
 	aj > ai
-	ai > e:[+long] (in rustic dialects)
+	ai > e:[+long] (in rustic dialect͡s)
 	aj > ai
 	ai > ae
 	oj > oi
 	oi > oe
 	oe > u:[+long]
-	aw > o:[+long] (in rustic dialects)
+	aw > o:[+long] (in rustic dialect͡s)
 	aw > au
 	{ew,ow} > ou
 	ou > u:[+long]
 	V > i / %(C)(C)_% when unstressed
 	V > o / %(C)(C)V_% when unstressed
 	V > e / %(C)(C)_%r when unstressed (with some exceptions)
-	V > {i,u} / %(C)(C)_%P when unstressed
+	V > i / %(C)(C)_%P when unstressed
+	V > u / %(C)(C)_%P when unstressed
 	a o > e u / %(C)(C)_C(C)% when unstressed
 	a > e / %(C)(C)_ŋ when unstressed
 	e > i / %(C)(C)_ŋ when unstressed
@@ -33,7 +34,7 @@
 	{i,e} > ∅ / _# (sometimes)
 	a > e / _C(C)#
 	e > i / _{s,t}#
-	o > u / _C(C)# ! {u,w}_
+	o > u / _C(C)# ,w}_ // {u
 	{ai,ei,oi} > ei / _(C)(C)#
 	ei > i:[+long] / _(C)(C)#
 	V:[+long] > V:[-long] / _{m,(n)t,l,r}#
@@ -46,7 +47,7 @@
 	m̩ n̩ > em en
 	n̩:[+long] > n
 	l̩ l̩:[+long] r̩ r̩:[+long] > ol l or r
-	bʱ > h / #_ (in rustic dialects)
+	bʱ > h / #_ (in rustic dialect͡s)
 	{bʱ,dʱ,ɡʷʱ} > f / #_
 	h > ∅ / b_
 	t > k / _l
@@ -55,7 +56,7 @@
 	dw > b
 	d > ∅ / V:[+long]_#
 	d > ∅ / C_
-	d > l “in many dialects”
+	d > l “in many dialect͡s”
 	dʱ > b / rV_
 	dʱ > b / _Vr
 	dʱ > b / _l
@@ -81,7 +82,7 @@
 	V > V:[+long] / _zC:[+voice]
 	z > ∅ / _C:[+voice]
 	p…kʷ > kʷ…kʷ
-	V₁…V₂ > V₂…V₂ (rare)
+	V…V > V…V (rare)
 	V > V:[+long] / _S:[+voice]{S:[-voice],F:[-voice]}; “(i, e, and o sometimes bypass this)”
 	S:[+voice] > S:[-voice] / _{S:[-voice],F:[-voice]}
 	S:[-voice] > S:[+voice] / _N
@@ -101,8 +102,8 @@
 	z > r / r_
 	n > l / l_
 	V > V:[+long] / _{t,d}t
-	{t,d}t > tst
-	tst > s:[+long]
+	{t,d}t > t͡st
+	t͡st > s:[+long]
 	∅ > t / s:[+long]_r
 	∅ > p / m_{s,t,l}
 	s:[+long] > s / _#
@@ -113,7 +114,8 @@
 	r…r > r…∅
 	{n,d}…r > r…r
 	V:[+long] > V / _C(C)# “(irregular: often before -m, -t, -nt, but never before ?s)”
-	V > {V:[+long],V:[+nas]} / _n{f,s}
+	V > V:[+long] / _n{f,s}
+	V > V:[+nas] / _n{f,s}
 	n > ∅ / V:[+nas]_
-	C₁C₂C₃C₄ > (C₃)C₄
-	C₁C₂C₃ > C₁C₃
+	CCCC > (C)C
+	CCC > CC

@@ -2,11 +2,13 @@
 # citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology and Sound Correspondences”. From the 17th International Conference on Salish and Neighboring Languages
 	n > ∅ / mʔ_
 	lʲ > l
-	s > {s,ʃ} / _xʷ
+	s > s / _xʷ
+	s > ʃ / _xʷ
 	s > ʃ / #_{xʲ,w{i,a},qʷa}
 	xʲ > ʃ
-	∅ > V₀ / ”V₀3ʔ_
-	ʔR > {ʔS,R} / V3_V
+	∅ > V / ”V3ʔ_
+	ʔR > ʔS / V3_V
+	ʔR > R / V3_V
 	ʔ > ∅ / VR_V3
 	ʔ > ∅ / V3R_{C,#}
 	ʔ > ∅ / V1R_#

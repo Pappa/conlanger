@@ -1,24 +1,24 @@
 @ 17.8.2 - Proto-Indo-European to Attic Greek
 # citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects> Vowel contraction (on which the author does not elaborate much) Some “metathesis of quality as well as of quantity” with regards to vowels Pitch-accent lost
-	{Hₓ,m̩,n̩} > a
+	{H,m̩,n̩} > a
 	bʱ dʱ ɡʱ > pʰ tʰ kʰ
 	s > h / #_
 	s > h / V_V
-	t > ts / _i
+	t > t͡s / _i
 	j > h
 	kʷ kʰʷ ɡʷ > t tʰ d / _E
 	kʷ kʰʷ ɡʷ > p pʰ b / _{a,o,C}
 	kʷ kʰʷ ɡʷ > k kʰ ɡ / _u
 	kʷ kʰʷ ɡʷ > k kʰ ɡ / u_
-	ts > s
+	t͡s > s
 	h > ∅
 	ɑ:[+long] > æ:[+long]
 	Vns > V:[+long]s
 	n > ∅ / _s
-	tʃ > t / #_
-	tʃ > t:[+long] / medial
+	t͡ʃ > t / #_
+	t͡ʃ > t:[+long] / medial
 	w > ∅
-	{ u, u:[+long] }(j) > { y, y:[+long] }(j)
+	{ u, u:[+long] }ʲ > { y, y:[+long] }ʲ
 	æ:[+long] > ɛ:[+long] (includes diphthongs)
 	ej ow > e:[+long] o:[+long]
 	e:[+long] > i:[+long] / _C
@@ -33,7 +33,7 @@
 	e o > ɛ ɔ
 	pʰ tʰ kʰ > f θ x
 	b d ɡ > v ð ɣ / V_V
-	dz > z
+	d͡z > z
 	V:[+long] > V:[-long]
 	C:[+long] > C:[-long]
 	ɑu ɛu eu > ɑv ɛv ev

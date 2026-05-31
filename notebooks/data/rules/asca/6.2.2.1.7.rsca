@@ -5,13 +5,14 @@
 	ðˤ > zˤ, occasionally tˤ
 	dˤ > zˤ (seems to be a sporadic change only affecting a few words, e.g. CA/MSA ˈdˤa:[+long]bitˤ
 	zˤ (seems to be a sporadic change only affecting a few words, e.g. CA/MSA ˈdˤa:[+long]bitˤ > EA ˈzˤa:[+long]bitˤ)
-	dʒ > ɡ
-	i u > e o / only when short, ! _#
-	u > {o,u} / short only, _#
+	d͡ʒ > ɡ
+	i u > e o / only when short, // _#
+	u > o / short only, _#
+	u > u / short only, _#
 	aj aw > e:[+long] o:[+long] / in U:[+closed]
 	V:[+long] > V / C_C{:[+long],C}V
 	V > V:[+long] / C_CV in U:[-stress]
-	V > V:[+long] / _# + suffix
+	V > V:[+long] / _#
 	{i,u} > ∅ / VC_CV when unstressed (short only)
 	∅ > e / CVCC_CVCV (applies across word boundaries)
 	{ a, a:[+long] } > { ɑ, ɑ:[+long] } / near emphatics
@@ -19,5 +20,6 @@
 	{ a, a:[+long] } > { æ, æ:[+long] } / else (sometimes it seems more like { ɛ, ɛ:[+long] } to me)
 	q > ʔ / except in several words, two of which are al-Qâhira and musîqâ
 	{{s,z}(ˤ),ʒ}ʃ > ʃ:[+long]
-	ʕ > {ʕ̞,ħ} / _h
+	ʕ > ʕ̞ / _h
+	ʕ > ħ / _h
 	h > ∅ / in coda

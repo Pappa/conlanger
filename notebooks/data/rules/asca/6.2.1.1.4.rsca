@@ -3,8 +3,10 @@
 	{x,ɢ} > ∅
 	{xʷ,ɢʷ} > ∅ / at word boundaries
 	{xʷ,ɢʷ} > w / else
-	ts tʃ dz > sʼ tʃʼ z
-	k > {k(ʼ),q}
-	kʼ > {χʷ,qʷ} / #_
+	t͡s t͡ʃ d͡z > sʼ t͡ʃʼ z
+	k > kʼ
+	k > q
+	kʼ > χʷ / #_
+	kʼ > qʷ / #_
 	kʼ > q / else
 	ʔ > ∅

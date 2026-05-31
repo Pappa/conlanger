@@ -7,15 +7,15 @@
 	{æ,e}:[+long](w(a)) > a:[+long]
 	o:[+long] > a / _n%
 	z x > ʀ h
-	i > j / _V ! in #U
+	i > j / _V // in #U
 	j > i / C_
 	n > ∅ / V{:[+long],V}_hV
 	Vn > V:[+long] / _hV
-	(w){ u, u:[+long] } { i, i:[+long] } > (w){ o, o:[+long] } { e, e:[+long] } / _(C)(C)a ! CC = NC or one C = {ʀ,j}
+	{ ʷu, ʷu:[+long] } { i, i:[+long] } > { ʷo, ʷo:[+long] } { e, e:[+long] } / _(C)(C)a ,j} // CC = NC or one C = {ʀ
 	iu > y:[+long]
 	{æ,e}:[+long]u:[+long] {æ,e}:[+long]i:[+long] > eu ai
 	w{o,u}:[+long]wu:[+long] j{e,i}:[+long]ji:[+long] > u:[+long] i:[+long]
 	w > ∅ / _w
 	j > ∅ / _i
 	o(u) {ɔ,ɑ,au,ai,æ} {ja,jE,æ(i),e(i),y} > u a i
-	V:[+long] > V:[-long] / ! #U, U#
+	V:[+long] > V:[-long] / , U# // #U

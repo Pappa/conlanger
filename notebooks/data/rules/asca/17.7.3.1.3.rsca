@@ -7,13 +7,14 @@
 	∅ > b / m_l
 	nd ld ( > n:[+long] l:[+long] ?)
 	n:[+long] l:[+long] ?) > ɲ ʎ
-	dj > dʒ
-	{ ɡ, ɡ:[+long] } > dʒ / _iV
+	dj > d͡ʒ
+	{ ɡ, ɡ:[+long] } > d͡ʒ / _iV
 	k ɡ > c ɟ / _E
 	tr > rd
 	p:[+long] t:[+long] k:[+long] > b d {ɡ,ɣ} / V_V
-	t:[+long] > {tʲ,dʲ}
-	tj > tʃ / _#
+	t:[+long] > tʲ
+	t:[+long] > dʲ
+	tj > t͡ʃ / _#
 	tj > ʃ
 	ɡl > lɡ
 	f > v / #_ (sporadic?)
@@ -22,15 +23,21 @@
 	v > w / #_
 	n > ∅ / _m#
 	vl > lv
-	θ > {t,d}
+	θ > t
+	θ > d
 	ð > ∅ / _#
 	ð > d
 	s > ∅ / k_l
 	∅ > h / #_V
 	h > ∅ / _{V,w,j} (sporadic)
 	h > ∅ / _l
-	h > {∅,h,k} / _r
-	h > {∅,h,k,s} / _n
+	h > ∅ / _r
+	h > h / _r
+	h > k / _r
+	h > ∅ / _n
+	h > h / _n
+	h > k / _n
+	h > s / _n
 	hv > {h,k,s}w
 	hj > ʃ
 	n l > ɲ ʎ / _C
@@ -38,7 +45,8 @@
 	rn {l:[+long],rl} > ɲ ʎ
 	ms > ŋ(k)s
 	{u,o}(:[+long]) a a:[+long] {ɒ,œ,y} e { i, i:[+long] } > {o,ɔ}(i) æ(i) {ɔ,ɒ}(i) {o,ɔ}(i) {æ,e} / _{Ḱ,Cʲ}
-	u > {o,ɒ} / _CC
+	u > o / _CC
+	u > ɒ / _CC
 	u:[+long] > {u,o,ɒ,ø} (conditioning unclear; it seems the presence of a velar consonant may have helped to retain the quality of /u/)
 	o:[+long] > u
 	ɒ > ɛ / _C:[+long]
@@ -46,15 +54,20 @@
 	{ɒ,ey} j{u,o,a}:[+long] y:[+long] > o ø u / Ḱ_
 	j{u,o,a}:[+long] > ø
 	a > ∅ / C:[+dental/alveolar]_u
-	a > {o,ɔ} / _{[+ cons, - fr, + bk, + hi, - lo],r} (! [+ cons, - fr, + bk, + hi, - lo] = w ?)
+	a > o / _{[+ cons, - fr, + bk, + hi, - lo],r} ( // [+ cons, - fr, + bk, + hi, - lo] = w ?)
+	a > ɔ / _{[+ cons, - fr, + bk, + hi, - lo],r} ( // [+ cons, - fr, + bk, + hi, - lo] = w ?)
 	a:[+long] > wo (dialectal)
 	a:[+long] > ɔ(u) / _{l,r}
-	au > {o,ɔ,ɒ} / j_
+	au > o / j_
+	au > ɔ / j_
+	au > ɒ / j_
 	au > j{o,ɔ}
 	y > ə / _{ r, r:[+long] }
 	y:[+long] > ø / _O:[+dental/alveolar]
-	æ > e / ! _{Ḱ,Cʲ}
-	e > {o,ɒ} / _w
-	e:[+long] > {ɒ,ə} / w_
-	e e:[+long] > {æ,ɛ,e} {(j)ɛ,je}
+	æ > e / ,Cʲ} // _{Ḱ
+	e > o / _w
+	e > ɒ / _w
+	e:[+long] > ɒ / w_
+	e:[+long] > ə / w_
+	e e:[+long] > {æ,ɛ,e} {ʲɛ,je}
 	ey > ø

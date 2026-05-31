@@ -2,15 +2,15 @@
 # citation: Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171
 	C:[+long] > C
 	S > ∅ / #_F
-	s > ts / in some dialects?
-	ts > tʃ / in some dialects?
+	s > t͡s / in some dialect͡s?
+	t͡s > t͡ʃ / in some dialect͡s?
 	C:[+voice] > C:[-voice] / next to {S,s,l̥}
 	ɣ ʁ > k q / _#
 	ə > a /
 	ə > ∅ / #_
 	i > ∅ / #C:[+dental]_C:[+dental]V
 	a > ∅ / C:[+velar]_C:[+velar]
-	F:[+voice] > F:[-voice] / adjacent to {S,ts}
+	F:[+voice] > F:[-voice] / adjacent to {S,t͡s}
 	F:[+voice] > S / l̥_
 	∅ > n / #_iN (This one is sort of a guess, given a singular example in the text that isn’t really commented upon)
 	t > s / _{k,q}
@@ -20,8 +20,8 @@
 	v > ∅ / V:[+short]_u:[+short]
 	u > ∅ / #_vV
 	iv > j / #_u
-	s > dʒ / {i,u}_V
-	dʒ > ∅ / i_i
-	ə > ∅ / _dʒ{a,u} except in #U
-	a > ∅ / _dʒa (except in #U?)
-	in > dʒ / _u (possibly only word-initially?)
+	s > d͡ʒ / {i,u}_V
+	d͡ʒ > ∅ / i_i
+	ə > ∅ / _d͡ʒ{a,u} except in #U
+	a > ∅ / _d͡ʒa (except in #U?)
+	in > d͡ʒ / _u (possibly only word-initially?)

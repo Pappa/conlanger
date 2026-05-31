@@ -3,14 +3,14 @@
 	Ḱ > [+ cons, - fr, + bk, + hi, - lo]
 	Ch > C / _(V)Ch
 	d > ∅ / _N
-	dz > ∅ / B_
-	dz > ts
-	[+ cons, - fr, + bk, + hi, - lo]ʷ > [+ cons, - fr, + bk, + hi, - lo] / _{C,o,a} ! C = syllabic
+	d͡z > ∅ / B_
+	d͡z > t͡s
+	[+ cons, - fr, + bk, + hi, - lo]ʷ > [+ cons, - fr, + bk, + hi, - lo] / _{C,o,a} // C = syllabic
 	[+ cons, - fr, + bk, + hi, - lo]ʷ > ɕ / _{ e, e:[+long] }
 	[+ cons, - fr, + bk, + hi, - lo]ʷy > ɕ
-	p {ts,k(ʷ)} m n l r y > pj sʲ ʂ mj ɲ lj rj wj / _{E(:),y}
+	p {t͡s,kʷ} m n l r y > pj sʲ ʂ mj ɲ lj rj wj / _{E(:),y}
 	{t,dʱ} > tʲ / _{ E, E:[+long] }
-	{t,dʱ} > ts / _y
+	{t,dʱ} > t͡s / _y
 	D(ʱ) > T
 	n̩ > ə / C_#
 	ə > ∅ / C_#
@@ -18,21 +18,22 @@
 	R Hn̩ > ɛR ɨn / #_C
 	H > ɛ / _R, when R = syllabic
 	H > ∅ / V_V
-	xe > ə / _#
-	xe a > a ɨ
-	{ex,aH} a:[+long] > a:[+long] ɔ
-	ɣʷe o > o ɛ
-	{eɣʷ,oH} > o:[+long]
+	he > ə / _#
+	he a > a ɨ
+	{eh,aH} a:[+long] > a:[+long] ɔ
+	he o > o ɛ
+	{eh,oH} > o:[+long]
 	o:[+long](s,y) o:[+long]n > u {u,õ}
 	õ o:[+long] > o a
 	u > wə / #_
-	u > {ə,u}
-	uh u{x,ɣʷ} > u:[+long]
+	u > ə
+	u > u
+	uh u{h,h} > u:[+long]
 	u:[+long] > wə wɨ
-	i > ə / {P,[+ cons, - fr, + bk, + hi, - lo](ʷ),s}_
+	i > ə / {P,[+ cons, - fr, + bk, + hi, - lo]ʷ,s}_
 	Ci > Cʲə
 	s > sʲ / _tʲ
-	ih i{x,ɣʷ} > jə jɨ
+	ih i{h,h} > jə jɨ
 	(h)e (h)e:[+long] > jə jɛ:[+long] / #_
 	Ce Ce:[+long] > Cʲə Cʲɛ
 	eH > e:[+long]

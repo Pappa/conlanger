@@ -1,8 +1,11 @@
 @ 10.2.4.3 - Proto-Malayo-Javanic to Sundanese
 # citation: TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic Linguistics 44(2):357 – 388 A: B:
 	{l,j} z > r j
-	w > {∅,c} / #_
-	R > {∅,r,j}
+	w > ∅ / #_
+	w > c / #_
+	R > ∅
+	R > r
+	R > j
 	iw uj > {ju,i} oj / _#
 	— əw əj > o e / _#
 	— aw aj > o aj / _#

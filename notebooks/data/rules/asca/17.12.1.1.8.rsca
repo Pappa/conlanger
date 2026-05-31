@@ -1,7 +1,7 @@
 @ 17.12.1.1.8 - Latin to Romanian
 # citation: pharazon, from Jensen, A Comparative Study of Romance, as well as other sources “Stressed vowels (note the difference from the French development)”: Word-initial vowels: Word-final vowels:
 	h > ∅
-	V₀V₀ > V₀:[+long]
+	VV > V:[+long]
 	n > ∅ / _{f,v,s}
 	r > s / _s
 	{m,n,s} > ∅ / _# in polysyllables
@@ -21,21 +21,21 @@
 	— {{ e, e:[+long] },i,ae,oe} > e / _#
 	— i:[+long] > i
 	— {{ o, o:[+long] },u:[+long]} > o
-	— u > o / ! V_
+	— u > o // V_
 	s > i / #(C…)V_#
 	k > ∅ / _s#
 	{s,t} > ∅ / _#
 	kʷ ɡʷ > p b / V_a
 	ɡ > m / _n
 	w > ∅ / {k,ɡ}_
-	k ɡ > tʃ dʒ / _E
+	k ɡ > t͡ʃ d͡ʒ / _E
 	ɛ > ie
-	t d s > ts dz ʃ / _i
+	t d s > t͡s d͡z ʃ / _i
 	o e > u i / _N
 	a > ɨ _N ! _{n:[+long],mn}
 	i > ∅ / OL_e
 	e > a / i_(C…){a,e}#
-	i > ∅ / {ts,dz,S}_V
+	i > ∅ / {t͡s,d͡z,S}_V
 	li > lj / _V
 	l > lj / _i
 	l:[+long] > ∅ / _i
@@ -49,8 +49,8 @@
 	{sc,st} > ʃt / _F
 	s > ʃ / _kl
 	c > ∅ / n_t
-	kj ɡj > tʃ {j,∅} (ɡj
-	tʃ {j,∅} (ɡj > ∅ is rare)
+	kj ɡj > t͡ʃ {j,∅} (ɡj
+	t͡ʃ {j,∅} (ɡj > ∅ is rare)
 	Pj > ɥ
 	{sj,stj,s:[+long]j} > ʃ
 	j > s / t_
@@ -64,10 +64,10 @@
 	l > j / {k,ɡ}_
 	a > e / C:[+palatal]_#
 	a o > ə u / ”U…_#
-	e > ə / ”U…P_(C…)V# ! V = i
+	e > ə / ”U…P_(C…)V# // V = i
 	u > ∅ / o_e
 	e > ə / ou_#
-	u > ∅ / ! {OL,”V}_#
+	u > ∅ / ,”V}_# // {OL
 	a > a / #(C…)V…C:[+palatal]_…”U
 	a o > ə u / #(C…)V…_…”U
 	e > i / #(C…)V…_n…”U
@@ -78,4 +78,4 @@
 	o > u / #C…_…”U
 	a > ə #C(C…)_…”U
 	{t,d} > ∅ / n_#
-	Ci > Cʲ / _# ! R…R_#
+	Ci > Cʲ / _# // R…R_#

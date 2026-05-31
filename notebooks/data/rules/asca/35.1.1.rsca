@@ -1,12 +1,12 @@
 @ 35.1.1 - Proto-Central Salish to Comox
 # citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology and Sound Correspondences”. From the 17th International Conference on Salish and Neighboring Languages
-	ts(ʼ) > θ(ʼ)
-	l(ʲ) > w / _u
-	l(ʲ) > w / u_
-	l(ʲ) > j / else
+	t͡sʼ > θʼ
+	lʲ > w / _u
+	lʲ > w / u_
+	lʲ > j / else
 	s > ∅ / #_C
 	s > ∅ / #_{wa,wi}
-	w j > ɡ dʒ / _V
+	w j > ɡ d͡ʒ / _V
 	V3ʔ > { V3, V3:[+long] }ʔ / _#
 	ʔ > ∅ V3_RV
 	ʔ > ∅ V3R_V

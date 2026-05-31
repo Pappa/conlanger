@@ -1,10 +1,13 @@
 @ 37.2.7.3 - Proto-Ohio-Valley to Tutelo
 # citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. Also, the changes of /p/ before a consonant are unclear, as described within the text. Changes appended with an asterisk are putative; there was a seeming lack of material for this language, so I’ve attempted to do some tracking work from the examples given in the text.
-	p > {p,b,m,w} / _C
+	p > p / _C
+	p > b / _C
+	p > m / _C
+	p > w / _C
 	L > l
 	k > ᵑk / _ʔ
 	ʔ > ∅ / C_
-	mn > mV₀nV₀ / #_ (in morphemes)
-	sn > sV₀nV₀
+	mn > mVnV / #_ (in morphemes)
+	sn > sVnV
 	∅ > V / k_m
 	s > ʃ / ”V_k

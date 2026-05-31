@@ -4,21 +4,23 @@
 	pʼ > p / V_
 	pʼ > b
 	z > j / {#,V}_
-	z > dʒ:[+long] / Vj_
-	z:[+long] > dʒ:[+long]
-	s > ʃ / ! V_
-	tsʼ > tʃʼ
-	x₁ > k
-	x₂ > ∅ / V_V
+	z > d͡ʒ:[+long] / Vj_
+	z:[+long] > d͡ʒ:[+long]
+	s > ʃ // V_
+	t͡sʼ > t͡ʃʼ
+	x > k
+	x > ∅ / V_V
 	ʒ > ʃ / #_
-	{s₃,ts,ʒ} > s / _$#
-	ts > ʃ / V_
-	s₃ > ʃ / #_
-	s₃ > s / V_$#
-	s₂ > ʃ
-	s₂ > {s,tʃ:[+long]} / V_
-	h > {h,∅} / #_
-	x > w / #_
+	{s,t͡s,ʒ} > s / _$#
+	t͡s > ʃ / V_
+	s > ʃ / #_
+	s > s / V_$#
+	s > ʃ
+	s > s / V_
+	s > t͡ʃ:[+long] / V_
+	h > h / #_
+	h > ∅ / #_
+	h > w / #_
 	l > d / #_VC
 	l > n / #_Vb
-	dʼ > tʼ
+	tʼ > tʼ

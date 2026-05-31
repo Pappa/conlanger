@@ -1,7 +1,7 @@
 @ 31.1 - Proto-Nyulnyulan to Bardi
 # citation: Pogostick Man, from Bowern, Claire Louise (2004), “Bardi Verb Morphology in Historical Perspective” Some vowel deletions, the conditioning of which the author does not elaborate upon
 	{w,j} > ∅ / #_
-	{w,j} > ∅ / V₀_V₀
+	{w,j} > ∅ / V_V
 	awu > o
 	aji > i:[+long] / when unstressed
 	i{w,j} > ∅ / _a, when unstressed
@@ -15,5 +15,5 @@
 	b > w / a_u
 	aɡu > o
 	{ i, i:[+long] }b ik > iw ij / _a
-	V₀ > ∅ / V(C)(C)V₀(C)(C)_# (with some exceptions)
+	V > ∅ / V(C)(C)V(C)(C)_# (with some exceptions)
 	V > V:[+long] / when stressed ?

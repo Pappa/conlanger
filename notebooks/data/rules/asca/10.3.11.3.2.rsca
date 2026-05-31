@@ -1,9 +1,11 @@
 @ 10.3.11.3.2 - Proto-Tanna to Lenakel
 # citation: thetha, from Lynch, John (2001), The Linguistic History of Southern Vanuatu
-	r > {l,i}
+	r > l
+	r > i
 	t > r
-	b(ʷ) d > p(ʷ) t
-	kʷ > {w,u}
+	bʷ d > pʷ t
+	kʷ > w
+	kʷ > u
 	ɣ > ∅ / E_
 	ɣ > ∅ / _E
 	ɣ > k
@@ -11,4 +13,4 @@
 	c *j > s {z,s}
 	z > t
 	s > h “irregularly”
-	{p(ʷ),v}Vh > fV
+	{pʷ,v}Vh > fV

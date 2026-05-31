@@ -16,4 +16,5 @@
 	e > o / _[+ cons, - fr, + bk, + hi, - lo]
 	a > o / {w,m,ŋ}_
 	a > e / _#
-	ə > {o,e}
+	ə > o
+	ə > e

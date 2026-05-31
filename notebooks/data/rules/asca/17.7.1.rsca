@@ -5,8 +5,8 @@
 	— i > ɛ / _{r,h,ʍ}
 	— æ:[+long] > e:[+long]
 	— ew > iw
-	— V:[-long] > ∅ / _# ! V = u
-	— V:[-long] > ∅ / U_C# ! V = u
+	— V:[-long] > ∅ / _# // V = u
+	— V:[-long] > ∅ / U_C# // V = u
 	— aj > a / U_#
 	iw > ju / [-stress]
 	w > u̯ / V:[-long]_{#,C}
@@ -17,11 +17,11 @@
 	ij > i / _# “after the loss of a final vowel or syllable”
 	Vw > u / _s (to wit, the vowel is deleted and the *w syllabifies)
 	iji > i:[+long] / U:[-stress](C…)_
-	iji > i:[+long] / U:[+long +closed]_ in the stem
+	iji > i:[+long] / U:[+ long
 	i > ∅ / _ji
 	m > β / C:[-voice]_n, when medial
 	m > ɸ / C:[+voice]_n, when medial
-	n:[+long] > n / _C ! _j
+	n:[+long] > n / _C // _j
 	β > b / {r,l}_
 	ð > d / C:[+voice]_
 	β ð ɣ > ɸ θ x / V_(s)#

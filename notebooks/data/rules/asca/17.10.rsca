@@ -1,22 +1,22 @@
 @ 17.10 - Proto-Indo-European to Proto-Indo-Iranian
 # citation: Tropylium, from Kobayashi, Masato (2004), Historical Phonology of Old Indo-Aryan Consonants
-	e > a / _{x,ɣʷ}
-	e > a / {x,ɣʷ}_
-	p > b / _ɣʷ
+	e > a / _{h,h}
+	e > a / {h,h}_
+	p > b / _h
 	H > ə / “syllabic”
 	ə > ∅ / #_
-	{h,ɣʷ} > *H
+	{h,h} > *H
 	*H > ∅ / S_
 	[+ cons, - fr, + bk, + hi, - lo]ʷ > [+ cons, - fr, + bk, + hi, - lo]
 	s > ʃ / {u,i,l,r,[+ cons, - fr, + bk, + hi, - lo],Ḱ}
 	Ḱ > TŠ
-	Bʱ₁P₂ > B₁Bʱ₂ / “includes s ʃ > zʱ ʒʱ”
+	BʱP > BBʱ / “includes s ʃ > zʱ ʒʱ”
 	BʱBʱ > BBʱ
-	ptʃ > pʃ
-	ttʃ ddʒʱ > t.ʃ d.ʒʱ
+	pt͡ʃ > pʃ
+	tt͡ʃ dd͡ʒʱ > t.ʃ d.ʒʱ
 	t > ∅ / _ʃt
 	d > ∅ / _ʒdʱ
-	tʃʃ > ʃ:[+long]
+	t͡ʃʃ > ʃ:[+long]
 	k ɡ ɡʱ > c ɟ ɟʱ / _e,i,j
-	o > a:[+long] / _CV, “does not affect o₂ < eɣʷ”
-	{e,o,o₂,N̊} > a
+	o > a:[+long] / _CV, “does not affect o < eh”
+	{e,o,o,N̊} > a

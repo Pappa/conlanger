@@ -1,13 +1,16 @@
 @ 37.2.4 - Proto-Siouan to Proto-Čiwere-Winnebago
 # citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International Journal of American Linguistics 16(2):61 – 66; Wolff, Hans (1950), “Comparative Siouan II” International Journal of American Linguistics 16(3):113 – 121; Wolff, Hans (1950), “Comparative Siouan III”. International Journal of American Linguistics 16(4):168 – 178; and cedh audmanh’s changes above, which assisted me in deciphering the vintage phonetic transcription scheme NB: Does not include developments in unstressed non-nasal vowels. L was apparently either /ɹ/ or /l/; Lʲ (Lʸ in the text) was apparently /j/, or maybe /ʎ/. Also, the changes of /p/ before a consonant are unclear, as described within the text.
 	ç x > x {ʃ,ʒ}
-	p > {p,b,m,w}
+	p > p
+	p > b
+	p > m
+	p > w
 	w > ∅ / _t
-	t > tʃ / _”E
-	t > dʒ / _E:[-stress]
+	t > t͡ʃ / _”E
+	t > d͡ʒ / _E:[-stress]
 	tʲ > ʃ / in ”U
 	tʲ s > ʒ z / in U:[-stress]
-	k > ɡ / V:[+nas]_ ! _#
+	k > ɡ / V:[+nas]_ // _#
 	k > ɡ / _ʔ
-	kr > kV₀rV₀
-	m > ∅ / _n ! _n#
+	kr > kVrV
+	m > ∅ / _n // _n#

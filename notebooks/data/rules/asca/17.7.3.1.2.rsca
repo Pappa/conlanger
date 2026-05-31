@@ -4,7 +4,7 @@
 	f > m / _n
 	n > ∅ / m_
 	{ p, p:[+long] } { t, t:[+long] } { k, k:[+long] } > { b, b:[+long] } { d, d:[+long] } { ɡ, ɡ:[+long] } / {V,R}_{V,R}
-	{t,d}j > tʃ
+	{t,d}j > t͡ʃ
 	d > ∅ / n_# (sometimes)
 	b d ɡ > p t k / #_
 	k > s / _n
@@ -22,8 +22,10 @@
 	θ > t
 	ð > θ / _#
 	ð > ∅ /{a,E}_
-	ð > d / ! V_V
-	sk > {sk,ʃ,ks}
+	ð > d // V_V
+	sk > sk
+	sk > ʃ
+	sk > ks
 	s > ∅ / {t,k,r}_l
 	s > ʃ / _Vr ?
 	ɣ > ∅
@@ -40,11 +42,13 @@
 	o a > ø ɛ / _(C)(C)i
 	o > ø / _Cr
 	o:[+long] > ø:[+long] / _(C)(C)#
-	o:[+long] > { u, u:[+long] }
+	o:[+long] > u
+	o:[+long] > u:[+long]
 	jo:[+long] > {u,o,ø} (looks like being in the ultima or the penult may have had something to do with it, but it isn’t clear to me)
 	ɒ > ɔ / _{ C, C:[+long] }}C
 	ɒ > ʌ / _{ r, r:[+long] }
-	ɒ > {ɛ,e} / _C:[+long]V (V can be a syllabic consonant)
+	ɒ > ɛ / _C:[+long]V (V can be a syllabic consonant)
+	ɒ > e / _C:[+long]V (V can be a syllabic consonant)
 	ɒ > ɪ / _rC
 	au > (ɔ)u
 	a a:[+long] > ɛ ø:[+long] / _r
@@ -58,7 +62,8 @@
 	œ > e:[+long]
 	y:[+long] > ø / _j
 	y:[+long] > i
-	y > {ɪ,i}
+	y > ɪ
+	y > i
 	e i:[+long] > ɛ { i, i:[+long] }
 	ey > e:[+long] / _F
 	ey > ɛ / _r

@@ -1,8 +1,8 @@
 @ 18.4.2 - Proto-Tupí-Guaraní to Cocama
 # citation: Pogostick Man, from Lemle, Miriam (1971), âInternal Classification of the Tupi-Guarani Linguistic Family”. In Tupi Studies I, from Summer Institute of Linguistics Publications in Linguistics and Related Fields Publication Number 29.
 	p > k / _w
-	t > tʃ / _{i,ı̃}
-	ʔ ts ŋ > ∅ {ts,tʃ} n
+	t > t͡ʃ / _{i,ı̃}
+	ʔ t͡s ŋ > ∅ {t͡s,t͡ʃ} n
 	∅ > i / j_#, in monosyllables
 	j > i / _#, in polysyllables
 	b > ∅ / _#
@@ -12,8 +12,8 @@
 	a > ∅ / _j#
 	eN > y / _#
 	e > ɨ / {k,j}_
-	o > u(a) / ! o(C…)_(C…)#
+	o > u(a) // o(C…)_(C…)#
 	ã {ẽ,ı̃} ɨ̃ > a i ∅
 	u > ũ (? possibly backwards?)
 	iʔ uʔ > j w / C_V
-	V₀ʔV₀ > V₀:[+long]
+	VʔV > V:[+long]

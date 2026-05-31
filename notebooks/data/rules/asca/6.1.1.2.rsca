@@ -2,14 +2,15 @@
 # citation: Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)
 	pʼ > b
 	z > d / Vj_
-	tsʼ > ʒ / V_
-	x₁ > k
-	x₂ > k / _#
-	x₂ > ∅ / V_V
-	ʒ > {tʃ,ts}
-	ts > tʃ / _i
-	sₓ > tʃ
-	s₁ > ʃ
+	t͡sʼ > ʒ / V_
+	x > k
+	x > k / _#
+	x > ∅ / V_V
+	ʒ > t͡ʃ
+	ʒ > t͡s
+	t͡s > t͡ʃ / _i
+	s > t͡ʃ
+	s > ʃ
 	ʔ > ∅
-	{h,x} > h
-	dʼ > tʼ
+	{h,h} > h
+	tʼ > tʼ

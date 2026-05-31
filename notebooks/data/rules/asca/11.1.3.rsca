@@ -1,9 +1,10 @@
 @ 11.1.3 - Proto-Avar-Andic to Avar
 # citation: Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian>, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251
-	ts ts:[+long] tsʼ ts:[+long]ʼ dz > sh ts tʃʼ { ts, ts:[+long] }ʼ tsʼ
-	{ st, st:[+long] } > ts
-	tʃ tʃ:[+long] tʃ:[+long]ʼ dʒ > ts(?) tʃ { tʃ, tʃ:[+long] }ʼ tsʼ
-	tɬ tɬʼ tɬ:[+long] tɬ:[+long]ʼ > ɬ tʼ tɬ { tɬ, tɬ:[+long] }ʼ
+	t͡s t͡s:[+long] t͡sʼ t͡s:[+long]ʼ d͡z > sh t͡s t͡ʃʼ { t͡s, t͡s:[+long] }ʼ t͡sʼ
+	{ st, st:[+long] } > t͡s
+	t͡ʃ t͡ʃ:[+long] t͡ʃ:[+long]ʼ d͡ʒ > t͡s(?) t͡ʃ { t͡ʃ, t͡ʃ:[+long] }ʼ t͡sʼ
+	t͡ɬ t͡ɬʼ t͡ɬ:[+long] t͡ɬ:[+long]ʼ > ɬ tʼ t͡ɬ { t͡ɬ, t͡ɬ:[+long] }ʼ
 	q q:[+long]ʼ ɢ > x {{ q, q:[+long] }ʼ,ɡh} qʼ (not sure if that last 〈gh〉 should be ɣ)
 	s s:[+long] ɬ:[+long] x x:[+long] > {s,ʃ} x ɬ {x,h} x
-	m > {m,n}
+	m > m
+	m > n

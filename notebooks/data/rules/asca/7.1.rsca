@@ -11,16 +11,16 @@
 	a > ∅ / #_OO
 	V > ∅ / _#
 	iw > o / _#
-	w > ∅ / _# ! { k, k:[+long] }_
-	j > ∅ / _# ! P_
-	w > ∅ / C_ ! C = [+ cons, - fr, + bk, + hi, - lo]
+	w > ∅ / _# , k:[+long] }_ // { k
+	j > ∅ / _# // P_
+	w > ∅ / C_ // C = [+ cons, - fr, + bk, + hi, - lo]
 	j > ∅ / _C
 	i > ∅ / #w_
 	θ > n / #_
 	θ > s / _k
 	θ > r
-	ʃ tʃ > s ts
+	ʃ t͡ʃ > s t͡s
 	{x,h}S > S:[+long]
-	sk > k:[+long] / ! _a
-	ʔs ʔts > s:[+long] ts:[+long]
+	sk > k:[+long] // _a
+	ʔs ʔt͡s > s:[+long] t͡s:[+long]
 	o:[+long] a:[+long] e:[+long] i:[+long] > o ɔ̃ a i

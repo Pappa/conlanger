@@ -1,6 +1,7 @@
 @ 10.1.1 - Proto-Malayo-Polynesian to Proto-Bali-Sasak-Sumbawan
 # citation: TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic Linguistics 44(2):357 – 388 A: B:
-	j > {d,t} / #_
+	j > d / #_
+	j > t / #_
 	j z > d j
 	w > ∅ / #_
 	R > r

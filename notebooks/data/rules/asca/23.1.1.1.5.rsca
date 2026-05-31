@@ -1,8 +1,11 @@
 @ 23.1.1.1.5 - Proto-Chibchan to Motilón
 # citation: Pogostick Man, from Wheeler, Alva (1972), “Proto-Chibchan”. In Matteson, Esther, ed., Comparative Studies in Amerindian Languages 93 – 108
 	ɡ > ∅
-	s > {s,x,tʃ~ʃ}
-	s > {ʃ,tʃ} / _i
+	s > s
+	s > x
+	s > t͡ʃ~ʃ
+	s > ʃ / _i
+	s > t͡ʃ / _i
 	s > x / i_
 	h > ∅
 	{w,m} > b

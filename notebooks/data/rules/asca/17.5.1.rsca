@@ -3,16 +3,16 @@
 	[+ cons, - fr, + bk, + hi, - lo]ʷ > [+ cons, - fr, + bk, + hi, - lo]
 	“The PIE rules for the voicing of s > z, as in:[nizdos] for *nisdos, are assumed to apply”
 	Cʱ > C
-	e:[+long] > i:[+long] / ! _{i,u}
+	e:[+long] > i:[+long] / ,u} // _{i
 	t:[+long] > s:[+long]
 	p > f / {V,#}_
 	f > x / _O
 	f > ∅ / else
 	r̩ l̩ > {ri,ra} {li,la} / _{S,R} (which vowel crops up is unpredictable)
-	r̩ l̩ > {ra,ar} {la,al} / _{s,CC,V,#} (the results are unpredictable)
+	r̩ l̩ > {ra,ar} {la,al} / _{s,CC,V,#} (the result͡s are unpredictable)
 	m̩ n̩ > am an / _{s,({m,j,w)V}
 	m̩ n̩ > em en / else
-	ɡʷ > b / #_V ! _{ u, u:[+long] }}
+	ɡʷ > b / #_V , _u:[+long] } // { _u
 	ɡʷ > b / #_N
 	ɡʷ > b / C_V
 	ɡʷ > ɡ
@@ -47,8 +47,8 @@
 	— st zd > s:[+long] d:[+long] / [anything]_
 	— {l,h}l {l,h}r l{p,s,n} r{p,s} ln > l:[+long] r:[+long] l:[+long] r:[+long] (l:[+long]?) / [anything]_
 	— C:[+long] > C:[-long]
-	V > ∅ / C_# when unstressed ! C = j
-	C(…C) > ∅ / _# ! /l r/ and clusters containing them; “:[t]his remained a phonologically conditioned rule in OIr”
+	V > ∅ / C_# when unstressed // C = j
+	C(…C) > ∅ / _# // /l r/ and clusters containing them; “:[t]his remained a phonologically conditioned rule in OIr”
 	{au,eu,ou} > o:[+long]
 	ei > e:[+long]
 	o:[+long] > ua / _:[anything], when stressed

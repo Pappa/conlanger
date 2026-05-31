@@ -1,15 +1,16 @@
 @ 35.1.11 - Proto-Central Salish to Sooke Northern Straits
 # citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology and Sound Correspondences”. From the 17th International Conference on Salish and Neighboring Languages
-	p(’) m > tʃ(’) ŋ / ! _u
+	p(’) m > t͡ʃ(’) ŋ // _u
 	mʔn > nʔ
-	ts > s
-	l(ʲ) > j
+	t͡s > s
+	lʲ > j
 	xʲ > {s,ʃ} (the latter mainly from borrowings?)
-	tʃ > s
-	tʃ’ > ts’ / medially
-	j w > tʃ kʷ / _V
+	t͡ʃ > s
+	t͡ʃ’ > t͡s’ / medially
+	j w > t͡ʃ kʷ / _V
 	u3 u1 > a3 ə1
-	a3 > {a3,o3} / {{C:[+uvular],[+ cons, - fr, + bk, + hi, - lo]}ʷ,w}_
+	a3 > a3 / {{C:[+uvular],[+ cons, - fr, + bk, + hi, - lo]}ʷ,w}_
+	a3 > o3 / {{C:[+uvular],[+ cons, - fr, + bk, + hi, - lo]}ʷ,w}_
 	a3 > e3
 	a1 > ə1
 	{u3~ə3} > ə3

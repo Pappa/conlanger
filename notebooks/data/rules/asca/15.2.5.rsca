@@ -3,13 +3,13 @@
 	C:[+long] > C
 	C > C:[+long] / _V(…V) except in #U
 	S > ∅ / #_F
-	s > ts / in certain situations?
+	s > t͡s / in certain situations?
 	C:[+voice] > C:[-voice] / adjacent to {S,s,l̥}
 	ɣ ʁ > k q / _#
 	ə > a / _#
 	ə > ∅
 	i > ∅ / #C:[+dental]_C:[+dental]V
-	F:[+voice] > F:[-voice] / adjacent to {S,ts}
+	F:[+voice] > F:[-voice] / adjacent to {S,t͡s}
 	F:[+voice] > S:[+same POA] / l̥_
 	t > s / _{k,q}
 	i a u > ii aa uu / C_ in U:[+open -initial -final] such that U:[+open]_
@@ -18,8 +18,8 @@
 	v > ∅ / V:[+short]_u:[+short]
 	u > ∅ / #_vV
 	iv > j / #_u
-	s > dʒ / {i,u}_V
-	dʒ > ∅ / i_i
-	ə > ∅ / _dʒ{a,u} // in #U
-	a > ∅ / _dʒa // in #U
-	in > dʒ / _u (possibly only word-initially?)
+	s > d͡ʒ / {i,u}_V
+	d͡ʒ > ∅ / i_i
+	ə > ∅ / _d͡ʒ{a,u} // in #U
+	a > ∅ / _d͡ʒa // in #U
+	in > d͡ʒ / _u (possibly only word-initially?)

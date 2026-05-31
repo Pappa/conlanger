@@ -21,15 +21,16 @@
 	{{ u,o, u,o:[+long] }} > o / _%”V else
 	u > w / ”ɛ_#
 	a:[+long] > a
-	oe > {e,ɛ}
+	oe > e
+	oe > ɛ
 	ae au > e ɔ / stressed
 	ae au > e o / _%”V
 	o > u / _a
 	o > u / _%”V (irregular)
 	VV > V:[+long] (“For outcomes of word-final vowels, see down below”)
 	ndj > ɲ
-	dj > dʒ
-	dʒ > ʒ
+	dj > d͡ʒ
+	d͡ʒ > ʒ
 	∅ > e / #_sC
 	l > ∅ / {o,u}_CV
 	l > w / V_CV (“although l was usually restored later”)
@@ -48,14 +49,17 @@
 	stj > ʃ
 	tj > s / C_
 	sj ssj jn > js jʃ ɲ / V_V
-	mnj > {mni,ɲ} / V_V
-	lj rj kj ɡj > ʎ jr ts ʒ / V_V
+	mnj > mni / V_V
+	mnj > ɲ / V_V
+	lj rj kj ɡj > ʎ jr t͡s ʒ / V_V
 	{bj,vj} > wʒ / _%”V
 	b > v / V̈%_j
 	ja > je / #_ (irregular)
 	V > ∅ / _%”V (rare)
-	∅ > {e,o} / CL_#
-	∅ > {e,o} / r:[+long]_#
+	∅ > e / CL_#
+	∅ > o / CL_#
+	∅ > e / r:[+long]_#
+	∅ > o / r:[+long]_#
 	a > e / “in the penult”
 	V > ∅ / ”V%_(C)(C)V(C)# (“irregular; e is kept before n”)
 	b > v / V_V
@@ -72,18 +76,18 @@
 	i:[+long] > ∅ / _#
 	{{ i,e, i,e:[+long] },ae} > ∅ / _(C)#
 	{{ u, u:[+long] }{ ,o, ,o:[+long] }} > ∅ / _#
-	V > ∅ / “between first and tonic syllables; except when C_CC, _n”; “if there are multiple vowels between the initial and tonic syllables, the vowel directly before the tonic is usually dropped” ! V = a
+	V > ∅ / “between first and tonic syllables; except when C_CC, _n”; “if there are multiple vowels between the initial and tonic syllables, the vowel directly before the tonic is usually dropped” // V = a
 	w > ∅ / u_#
-	j ɡj ts z n > tʃ i w s ∅ / _#
+	j ɡj t͡s z n > t͡ʃ i w s ∅ / _#
 	t > ∅ / V_sV
 	{b,v} > w / V_#
 	d > t / _#
 	l > ʎ / #_
-	k > ts / #_{i,e}
-	ts > s / #_{i,e}
+	k > t͡s / #_{i,e}
+	t͡s > s / #_{i,e}
 	ɡ > ʒ / #_{i,e}
-	j > dʒ / #_
-	dʒ > ʒ / #_
+	j > d͡ʒ / #_
+	d͡ʒ > ʒ / #_
 	kʷ ɡʷ > k ɡ / #_{i,e}
 	kʷ > k / C_V
 	kʷ > ɡ / V_{i,e}
@@ -102,7 +106,7 @@
 	ɡ > ∅ / V_dV
 	l:[+long] n:[+long] > ʎ ɲ
 	ʎ > l / ”i_
-	C > ∅ / C₁_C₂ ! C₂ = L
+	C > ∅ / C_C // C = L
 	{a,o} > ∅ / #_ (rare)
 	ɔ > o / _N$C
 	e > ɛ / _v
@@ -113,5 +117,5 @@
 	ee > e (irregular)
 	aj > ej / _ʃ when stressed (irregular)
 	ɛj ɔj > jɛj uei / i {u,ui} / stressed
-	ɛ > e / ! _{r:[+long],l,rC:[-labial],nr} or _ ? w#
+	ɛ > e / ,l,rC:[-labial],nr} or _ ? w# // _{r:[+long]
 	e > ɛ (in Eastern Catalan)

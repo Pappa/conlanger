@@ -1,9 +1,10 @@
 @ 6.1.2.2 - South Omotic to Dime
 # citation: Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)
 	p > f
-	z > {d,z} / V_
-	kʼ > ɡʼ / #_
-	tʃ > ts
-	ts > ʃ / _i
-	s₁ > ʃ
-	s₂ s₃ > tʃ:[+long] tʃ / V_
+	z > d / V_
+	z > z / V_
+	kʼ > kʼ / #_
+	t͡ʃ > t͡s
+	t͡s > ʃ / _i
+	s > ʃ
+	s s > t͡ʃ:[+long] t͡ʃ / V_

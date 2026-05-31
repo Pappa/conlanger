@@ -1,6 +1,6 @@
 @ 37.1.1 - Proto-Iroquoian to Cherokee
 # citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg “Some additional changes seem to have taken place in one or more Cherokee dialects, affecting consonant clusters whose reconstructed identity is in most cases uncertain. Example correspondences include /hs ~ lh ~ thl/ (probably < */hsɹ/) or /ts ~ tl ~ thl/ (maybe < */tsɹ/?)” “[A] synchronic allophonic rule:”
-	k kʷ > ts k / _i
+	k kʷ > t͡s k / _i
 	w > ∅ / h_i
 	w > ∅ / t(h)_
 	{wV,jV} > V:[+long]:[+low falling tone]
@@ -11,17 +11,17 @@
 	V:[+nas] > a:[+long]:[+high rising tone]
 	∅ > V:[+long]:[+high rising tone] / C_# (“usually one of:[/a:[+long] i:[+long] ʌ̃:[+long]/ with this tone], the conditions are unclear”)
 	iji > i:[+long]
-	tsn > hst
+	t͡sn > hst
 	n > h / _st
 	{n,r} > ∅ / _j
 	t > ∅ / _{k,n}
 	t > ∅ / n_
-	j > ∅ / ts_
+	j > ∅ / t͡s_
 	∅ > i / C_R
 	s > ∅ / #h_V
-	ts > s / h_
-	ks > ts / _V
+	t͡s > s / h_
+	ks > t͡s / _V
 	nh > hn
 	{ ẽ, ẽ:[+long] } { õ, õ:[+long] } > { o, o:[+long] } { ʌ̃, ʌ̃:[+long] }
 	r > l
-	t ts k kʷ > d dz ɡ ɡʷ / _V
+	t t͡s k kʷ > d d͡z ɡ ɡʷ / _V

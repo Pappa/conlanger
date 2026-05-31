@@ -1,15 +1,15 @@
 @ 29.2 - Proto-Na-Dene to Tlingit
 # citation: Pogostick Man, from Wikipedia contributors (2015), “Na-Dene languages”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Na-Dene_languages> NB: Where a colon appears, forms to the left are the typical forms and forms to the right are “l-assimilated”. Somethings going on with the velars and uvulars; apparently, both the rounded and unrounded consonants have reflexes that may or may not be rounded
 	s > s : ɬ
-	ts > ts : tɬ
-	tsʼ > {sʼ,tsʼ} : {ɬ,tɬʼ}
+	t͡s > t͡s : t͡ɬ
+	t͡sʼ > {sʼ,t͡sʼ} : {ɬ,t͡ɬʼ}
 	ʃ > {ʃ,s} : ɬ
-	tʃ > {tʃ,ts} : tɬ
-	tʃʼ > {sʼ,tʃʼ} : tɬʼ
+	t͡ʃ > {t͡ʃ,t͡s} : t͡ɬ
+	t͡ʃʼ > {sʼ,t͡ʃʼ} : t͡ɬʼ
 	kʲ kʲʼ > {k,ʃ} kʼ
 	xʲ > x
-	k(ʷ)ʼ > {x,k}(ʷ)ʼ
-	x(ʷ) > x
-	qʼ qʷʼ > χ(ʷ)ʼ {χʼ,q(ʷ)ʼ}
+	kʷʼ > {x,k}ʷʼ
+	xʷ > x
+	qʼ qʷʼ > χʷʼ {χʼ,qʷʼ}
 	x > ∅ / {s,ʃ}_
 	$ > χ

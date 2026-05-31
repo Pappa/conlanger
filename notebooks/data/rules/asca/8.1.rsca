@@ -11,21 +11,24 @@
 	V > u / _Cu
 	pʰ tʰ kʰ > p t k
 	b > p / #_
-	b > w / ! _{a,ə,Vj}
-	tʃʰ > t
-	tʃ dʒ > t d / #_
-	tʃ > s / maybe ! _#?
-	dʒ > j
+	b > w / ,ə,Vj} // _{a
+	t͡ʃʰ > t
+	t͡ʃ d͡ʒ > t d / #_
+	t͡ʃ > s / maybe // _#?
+	d͡ʒ > j
 	ɡ > ∅ / iV_
 	ɡ > k / else
 	{ʃ,z} > s
 	n > m / #_
 	ŋ > m / #_{æ,ø,y}
 	ŋ > {∅,n} #_ else
-	N > {m,n}
+	N > m
+	N > n
 	r > t / _{i,u}
-	rʲ > {r,t}
-	l(ʲ) > n / #_
+	rʲ > r
+	rʲ > t
+	lʲ > n / #_
 	l lʲ > r s / else
-	j > {j,∅}
+	j > j
+	j > ∅
 	U:[+long] > U:[-long]

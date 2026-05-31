@@ -3,7 +3,7 @@
 	h > ∅
 	rs > s:[+long]
 	n > ∅ / _s
-	V₀V₀ > V₀:[+long]
+	VV > V:[+long]
 	V > ∅ / ”V%L(C)(C)V(C)# (irregular)
 	V > ∅ / _L(C)(C)V(C)# (irregular)
 	V > ∅ ”V%s_t(C)V(C)# (irregular)
@@ -35,14 +35,14 @@
 	V > a / _{n,r}(C)V(C)# (irregular)
 	V > V:[+nas] / _N$C when stressed
 	ɔ̃ > õ
-	N > ∅ / V:[+nas]_$C ! C = S
+	N > ∅ / V:[+nas]_$C // C = S
 	V > V:[+nas] / _N$V
 	V > V:[+nas] / #N_ (rare)
 	N > ∅ / V:[+nas]_$V
 	{ã,ãe,õe} > ão / _#
 	V:[+nas] > V:[-nas] / unstressed
 	V:[+nas] > V:[-nas] / in U#
-	V₀:[+nas]V₀:[-nas] > V₀:[+nas]
+	V:[+nas]V:[-nas] > V:[+nas]
 	ı̃ > iɲ
 	e V > o ∅ / _? (irregular)
 	e > o / _m”V (irregular)
@@ -53,25 +53,27 @@
 	{e,i} > ∅ / {l,m,r}_ when between #U and U:[+stress]
 	{e,i} > ∅ / k_t when between #U and U:[+stress]
 	o > ∅ / _{r,l} when between #U and U:[+tonic]
-	k > ts / #_{i,e}
-	ts > s / #_{i,e}
+	k > t͡s / #_{i,e}
+	t͡s > s / #_{i,e}
 	k > ɡ / #_{a,r} (rare)
 	ɡ > ɡʲ / #_{i,e}
 	ɡʲ > dʲ / #_{i,e}
-	dʲ > dʒ / #_{i,e}
-	dʒ > ʒ / #_{i,e}
-	j > dʒ / #_
-	dʒ > ʒ / #_
-	pl > {ʃ,pr} / #_
+	dʲ > d͡ʒ / #_{i,e}
+	d͡ʒ > ʒ / #_{i,e}
+	j > d͡ʒ / #_
+	d͡ʒ > ʒ / #_
+	pl > ʃ / #_
+	pl > pr / #_
 	l > r / b_
-	fl > {ʃ,fr} / #_
+	fl > ʃ / #_
+	fl > fr / #_
 	{fl,skl} > ʃ
 	nɡi > ɲ
 	s > ʃ / V_C:[-voice]V
 	s > ʒ / V_C:[+voice]V
 	kl > kʎ / #_
-	kʎ > tʃ / #_
-	tʃ > ʃ / #_
+	kʎ > t͡ʃ / #_
+	t͡ʃ > ʃ / #_
 	{kl,ɡl} > ʎ
 	ɡ > ∅ / #_l
 	kʷ > kw / #_”a
@@ -83,7 +85,8 @@
 	ɡʷ > ɡw / C_a
 	b > v / V_{V,r}
 	d > ∅ / V_V
-	ɡ > {∅,ʒ} / V_{i,e} (ɡ → ʒ is learned)
+	ɡ > ∅ / V_{i,e} (ɡ → ʒ is learned)
+	ɡ > ʒ / V_{i,e} (ɡ → ʒ is learned)
 	ɡ > j / V_r
 	pl bl p t > br {br,l} b d / V_V (bl → l is learned)
 	p t k > b d ɡ / V_r
@@ -92,31 +95,33 @@
 	k > ∅ / Vn_tV
 	ks ɡn tj > ʃ ɲ {z,s} / V_V (tj → s is learned)
 	tj > s / C_V
-	dj > dʒ / V_V
-	dʒ > ʒ / V_V
-	dj > dz / r_V
-	dz > ts / r_V
-	ts > s / r_V
-	ndj > nts / V_V
-	nts > ns / V_V
+	dj > d͡ʒ / V_V
+	d͡ʒ > ʒ / V_V
+	dj > d͡z / r_V
+	d͡z > t͡s / r_V
+	t͡s > s / r_V
+	ndj > nt͡s / V_V
+	nt͡s > ns / V_V
 	ns > ɲ / V_V
 	sj > jʒ / V_V
 	j > ∅ / i_ʒV
 	s:[+long]j (m)nj lj rj > jʃ ɲʎ jr / V_V
-	kj > ts / V_V
-	ts > s / V_V
-	ɡj > {ʒ,j} / V_V (ɡj → j is learned)
+	kj > t͡s / V_V
+	t͡s > s / V_V
+	ɡj > ʒ / V_V (ɡj → j is learned)
+	ɡj > j / V_V (ɡj → j is learned)
 	pj {bj,vj} > jb jv / V_V
 	mj > jm (irregular)
-	C₀C₀ > C₀ / ! C = r
-	C > ∅ / C₁_C₂ ! C₂ = L
+	CC > C // C = r
+	C > ∅ / C_C // C = L
 	k > j / _s#
 	f > v / V_V (irregular)
 	s l > z ∅ / V_V
 	a > ∅ / ”ɔ_#
 	sk k > jʃ z / V_{i,e}
-	k > ɡ / V₁_V₂ ! V₂ = ɔ
-	j > {∅,ʒ} / V_V (j → ʒ is learned)
+	k > ɡ / V_V // V = ɔ
+	j > ∅ / V_V (j → ʒ is learned)
+	j > ʒ / V_V (j → ʒ is learned)
 	b > v / VL_V
 	m > ∅ / _n
 	{e,i} > ∅ / {L,N}_(C)(C)V(C)#
@@ -124,5 +129,5 @@
 	e > j / {a,o,u}_
 	a > e / _j when stressed
 	o > u / _ɲ when stressed
-	V₀V₀ > V₀ (irregular)
+	VV > V (irregular)
 	d > ∅ / V_V (in Portugal)

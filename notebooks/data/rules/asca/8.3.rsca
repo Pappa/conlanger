@@ -1,47 +1,64 @@
 @ 8.3 - Proto-Altaic to Proto-Mongolic
 # citation: Pogostick Man, from Wikipedia contributors (2011), “Altaic languages”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Altaic_languages>, citing Sarostin, Sergei A., Anna V. Dybo, and Oleg A. Mudrak (2003), Etymological Dictionary of the Altaic Languages. Leiden: Brill Academic Publishers NB: Does not include clusters. Loss of syllable pitch and length
-	a > {a,i} / _Ce
-	a > {a,e} / _Ci
-	a > {a,i,e} / _Co
-	a > {a,o,u} / _Cu
+	a > a / _Ce
+	a > i / _Ce
+	a > a / _Ci
+	a > e / _Ci
+	a > a / _Co
+	a > i / _Co
+	a > e / _Co
+	a > a / _Cu
+	a > o / _Cu
+	a > u / _Cu
 	e o u æ ø y > {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i} / _Ca
 	a e i o u æ ø y > {a,i} {e,ja} {e,i} {ø,y,o} {o,u,y} {i,a,e} {e,ø} {ø,y,o,u} / _Ce
 	i > e / P_Ci
 	a e u æ ø y > {a,e} {e,i} {y,ø} {i,e} {i,e,ø} {ø,y,o,u} / _Ci
-	e > {y,ø} / P_Co
-	e > {y,ø} / C_Po
+	e > y / P_Co
+	e > ø / P_Co
+	e > y / C_Po
+	e > ø / C_Po
 	e > o / P_Cu
 	e > o / C_Pu
 	a e o i æ ø y > {a,i,e} {a,e} u {o,u} e {ø,y,o,u} {o,u} / _Co
 	a e {o,u} æ ø y > {a,o,u} {e,a} {o,u} {a,o,u} {e,i,u} {i,o,u,y,ø} / _Cu
-	b > h / medially, ! {r(ʲ),l(ʲ)}_ or _ɡ
-	pʰ > {h,j} / #_
-	pʰ > {b,h} / medially
+	b > h / medially, ,lʲ}_ or _ɡ // {rʲ
+	pʰ > h / #_
+	pʰ > j / #_
+	pʰ > b / medially
+	pʰ > h / medially
 	pʰ > b / #_U:[+high pitch]
 	p > h (sporadic)
 	p > b
 	tʰ > d / _#
-	t(ʰ) d > tʃ dʒ / _i
+	t(ʰ) d > t͡ʃ d͡ʒ / _i
 	tʰ > t / else
-	tʃ > dʒ / #_i
-	tʃ > d / #
-	tʃʰ > tʃ
-	ɡ > h / ! {C,V}_h
-	k > ɡ / ! #_
+	t͡ʃ > d͡ʒ / #_i
+	t͡ʃ > d / #
+	t͡ʃʰ > t͡ʃ
+	ɡ > h / ,V}_h // {C
+	k > ɡ // #_
 	kʰ > ɡ / {C,V}_h
 	kʰ > k / else
 	z > s
-	ʃ > tʃ / #_a
+	ʃ > t͡ʃ / #_a
 	ʃ > s / else
-	nʲ > dʒ / #_
-	nʲ > {j,n} / else
+	nʲ > d͡ʒ / #_
+	nʲ > j / else
+	nʲ > n / else
 	ŋ > ɡ / #_u
 	ŋ > n / #_{a,o,e}
-	ŋ > {∅,j} / #_
-	ŋ > {m,n,ŋ,h}
+	ŋ > ∅ / #_
+	ŋ > j / #_
+	ŋ > m
+	ŋ > n
+	ŋ > ŋ
+	ŋ > h
 	rʲ > r
-	l > {n,l} / #_
-	lʲ > dʒ / #_i
+	l > n / #_
+	l > l / #_
+	lʲ > d͡ʒ / #_i
 	lʲ > d / #_
 	lʲ > l
-	j > {j,h}
+	j > j
+	j > h

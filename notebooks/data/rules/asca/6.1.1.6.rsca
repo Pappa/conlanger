@@ -2,12 +2,12 @@
 # citation: Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)
 	b > w / V_V
 	p > f
-	x₁ > k
-	x₂ > ∅ / V_V
-	x₂ s₃ > k ʃ / V_$#
-	s > s₃ / V_(V)
-	s₁ > ʃ
-	s₂ > s / V_
+	x > k
+	x > ∅ / V_V
+	x s > k ʃ / V_$#
+	s > s / V_(V)
+	s > ʃ
+	s > s / V_
 	ɲ > n
 	l > n / #_VN
-	dʼ > tʼ / #_
+	tʼ > tʼ / #_

@@ -1,10 +1,10 @@
 @ 30.1.1.2 - Proto-Bantu to Tswana
 # citation: Whimemsz, from Creissels, Dennis (1999), “Remarks on the Sound Corresponences between Proto-Bantu and Tswana (S.31), with Particular Attention to Problems Involving *j (or *y), *j̬ and Sequences *NC”. Bantu Historical Linguistics: Theoretical and Empirical Perspectives, ed. Jean-Marie Hombert and Larry M. Hyman “In these cases, the initial vowel of the sequence drops following the consonant change”; Whimemsz doesn’t specify if all V₁V₂ sequences drop the V₁
-	{p,t,tʃ,k} {mp,nt,ɲtʃ,nk} {(m)b,(n)d,(ɲ)dʒ,(n)ɡ} {m,n} > s tsʰ ts ɲ / _iV
-	{tʃ,k} {ntʃ,nk,r} {ɲdʒ,nɡ} mp mb p b {d,l} m n > s tsʰ ts tʃʰ(w) tʃ(w) ʃ(w) dʒ(w) dʒ ŋw ɲ / _{ɪ,e}V
-	{p,t,tʃ,k} {mp,nt,ɲtʃ,nk} {(m)b,(n)d,(ɲ)dʒ,(n)ɡ} {m,n,ɲ} > sw tsʰw tsw ɲw / _iV
-	mp mb p b m > tʃʰ(w) tʃ(w) ʃ(w) dʒ(w) ŋw / _{ʊ,o}V
-	{tʃ,k} {ɲtʃ,nk} {ndʒ,nɡ} > s tsʰ ts / _{i,ɪ,e}
+	{p,t,t͡ʃ,k} {mp,nt,ɲt͡ʃ,nk} {(m)b,(n)d,(ɲ)d͡ʒ,(n)ɡ} {m,n} > s t͡sʰ t͡s ɲ / _iV
+	{t͡ʃ,k} {nt͡ʃ,nk,r} {ɲd͡ʒ,nɡ} mp mb p b {d,l} m n > s t͡sʰ t͡s t͡ʃʰʷ t͡ʃʷ ʃʷ d͡ʒʷ d͡ʒ ŋw ɲ / _{ɪ,e}V
+	{p,t,t͡ʃ,k} {mp,nt,ɲt͡ʃ,nk} {(m)b,(n)d,(ɲ)d͡ʒ,(n)ɡ} {m,n,ɲ} > sw t͡sʰw t͡sw ɲw / _iV
+	mp mb p b m > t͡ʃʰʷ t͡ʃʷ ʃʷ d͡ʒʷ ŋw / _{ʊ,o}V
+	{t͡ʃ,k} {ɲt͡ʃ,nk} {nd͡ʒ,nɡ} > s t͡sʰ t͡s / _{i,ɪ,e}
 	nk k > kʰ h / _u
-	mp nt ɲtʃ nk mp nd ɲdʒ nɡ > pʰ tʰ tɬʰ qʰ p t tɬ k
-	p t tʃ k {dʒ,ɡ} ɲ > h r tɬʰ χ ∅ n
+	mp nt ɲt͡ʃ nk mp nd ɲd͡ʒ nɡ > pʰ tʰ t͡ɬʰ qʰ p t t͡ɬ k
+	p t t͡ʃ k {d͡ʒ,ɡ} ɲ > h r t͡ɬʰ χ ∅ n

@@ -3,14 +3,14 @@
 	∅ > a / w_j
 	”V(C)(C)CaCV > V(C)”(C)CaCV / _#
 	h > ∅ / _nh
-	ʔ > ∅ / _nk(ʷ)
-	n > t / _k(ʷ)
-	ts > hs / V_ ! _{h,i,j,r}
-	ts > s / ! _{h,i,j,r}
-	ns > ts / _k(ʷ)
+	ʔ > ∅ / _nkʷ
+	n > t / _kʷ
+	t͡s > hs / V_ ,i,j,r} // _{h
+	t͡s > s / ,i,j,r} // _{h
+	ns > t͡s / _kʷ
 	V > V:[+long] / _C:[-glottal] “in even-numbered syllables when accented or immediately before the accent”
-	Vʔ > ʔV / “in odd-numbered unaccented non-final syllables;” ! {ʔ,h}_
-	j > ∅ / ts_
+	Vʔ > ʔV / “in odd-numbered unaccented non-final syllables;” ,h}_ // {ʔ
+	j > ∅ / t͡s_
 	h > ∅ / s_w
 	r > n / _(h)j
 	r > w / {{ o, o:[+long] }{ ,õ, ,õ:[+long] }}_{{ a, a:[+long] }{ ,e, ,e:[+long] }{ ,ẽ, ,ẽ:[+long] }{ ,i, ,i:[+long] }}
@@ -19,14 +19,14 @@
 	r > ∅ / _H
 	r > ∅ / w_
 	r > ∅ / V_V
-	V₁”V₂ ”V₁:[+long]V₂ > ”V₁V₂ ”V₁:[-long]V₂
+	V”V ”V:[+long]V > ”VV ”V:[-long]V
 	{ e, e:[+long] } > ẽ / _{ ẽ, ẽ:[+long] }
 	{ o, o:[+long] } > õ / _{ õ, õ:[+long] }
-	”V₀V₀ > V₀:[+long]:[-accent]
+	”VV > V:[+long]:[-accent]
 	R > ∅ / ʔ_#
 	C > ∅ / {s,k}_#
 	Ch > ∅ / _s#
 	h > ∅ / V:[+long]_#
 	t > h / _t
-	ths > tsh
+	ths > t͡sh
 	∅ > h / {t,k}_n

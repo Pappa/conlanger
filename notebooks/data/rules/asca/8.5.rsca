@@ -2,10 +2,10 @@
 # citation: Pogostick Man, from Wikipedia contributors (2011), “Altaic languages”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Altaic_languages>, citing Sarostin, Sergei A., Anna V. Dybo, and Oleg A. Mudrak (2003), Etymological Dictionary of the Altaic Languages. Leiden: Brill Academic Publishers NB: Does not include clusters. Loss of syllable pitch The wiki at Firespeaker.org gives the following alternate list of sound changes from Proto-Altaic to (Pre-)Proto-Turkic. Pogostick Man, from Firespeaker.org wiki contributors (2014), “Turkic sound changes”. <http://wiki.firespeaker.org/Turkic_sound_changes>
 	a ø > {a,ʌ} a / P_Ca
 	a e i u æ ø y > a {a,ʌ,e} {ɯ,i} {u,o} {ia,ja,ɛ} {ia,ja} ɯ / _Ca
-	y > i / {r(ʲ),l(ʲ)}_e
+	y > i / {rʲ,lʲ}_e
 	e > ja / #_C{e,i}
 	ø > ʌ / P_Ce
-	i > e / {r(ʲ),l(ʲ)}_e
+	i > e / {rʲ,lʲ}_e
 	a {e,i} o u æ ø y > {ɛ,a} ɛ {ø,o} {y,u} {ia,ja,ɛ} {ia,ja} {y,ø} / _Ci
 	æ > a / P_Co
 	æ > ʌ / P_Cu
@@ -13,15 +13,15 @@
 	e i æ ø y > {ɛ,a,ʌ} {ɯ,i} {e,a} {u,o} ɯ / _Cu
 	{pʰ,ŋ} > {∅,j} / #_
 	pʰ > p
-	tʰ > d / #_(V){lʲ,r(ʲ)}
+	tʰ > d / #_(V){lʲ,rʲ}
 	tʰ > t
-	{t,tʃ} > d / #_
+	{t,t͡ʃ} > d / #_
 	k > ɡ / _(V)r
 	kʰ > k
-	ʃ > tʃ / #_a
+	ʃ > t͡ʃ / #_a
 	ʃ > s
-	m n(ʲ) > b j / #_
-	{ʒ,dʒ} > j / #_ (marked as to Pre-Proto-Turkic)
+	m nʲ > b j / #_
+	{ʒ,d͡ʒ} > j / #_ (marked as to Pre-Proto-Turkic)
 	{d,n} > j / #_ (?) (marked as to Pre-Proto-Turkic)
 	{N,l,r,ʃ,z} > ∅ / #_
 	p > ɸ / #_

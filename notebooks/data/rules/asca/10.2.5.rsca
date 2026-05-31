@@ -6,7 +6,8 @@
 	ə > ∅ / #_
 	∅ > ə / C_C “(for certain consonant combinations, which the paper doesn’t specify)”
 	h > ∅
-	ə > {e,o} / stressed; “(result of /e/ or /o/ unpredictable)”
+	ə > e / stressed; “(result of /e/ or /o/ unpredictable)”
+	ə > o / stressed; “(result of /e/ or /o/ unpredictable)”
 	p > w
 	wa > o / #_ when unstressed
 	V > ə / unstressed
@@ -17,19 +18,20 @@
 	j > ∅ / C_i
 	ə > ∅ / _#
 	ə > ∅ “(sporadic)”
-	t > ð / ! adjacent to S
+	t > ð // adjacent to S
 	s > t
 	ʀ > r / _C:[+dental]
 	ʀ > s
 	d > r
 	ɖ > ɽ “(only one example)”
 	ɲ > n (except possibly to n when #_)
-	n dz > l r
+	n d͡z > l r
 	rl > l:[+long]
 	ɟ > k / _C#
 	ɟ > s
 	ŋ > ∅ / C_#
-	t > {s,ð} / “unpredictably, to eliminate sV(C)t and tV(C)s sequences”
+	t > s / “unpredictably, to eliminate sV(C)t and tV(C)s sequences”
+	t > ð / “unpredictably, to eliminate sV(C)t and tV(C)s sequences”
 	∅ > ŋ / #_V
 	q > χ (
 	χ ( > ʕ)

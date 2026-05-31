@@ -2,8 +2,11 @@
 # citation: Pogostick Man, from Ross, Malcolm, and Åshlid Næss (2007), “An Oceanic Origin for Äiwoo, the Language of the Reef Islands?”. Oceanic Linguistics 46(II):456 – 498
 	p > v / _#
 	pʷ w > b ∅
-	t > {∅,t} / #_
+	t > ∅ / #_
+	t > t / #_
 	t > s / _u
-	r > l / ! _#
+	r > l // _#
 	c *R > ∅ {l,∅}
-	s > {s,d,c}
+	s > s
+	s > d
+	s > c

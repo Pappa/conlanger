@@ -3,19 +3,21 @@
 	ḱ ɡ́ ɡ́ʱ > k ɡ ɡʱ
 	bʱ dʱ ɡʱ > p t k
 	kʷ ɡʷ ɡʷʱ > ku ɡu ku
-	t > ts / _{i,e}
+	t > t͡s / _{i,e}
 	m > ∅ / _#
-	{ e, e:[+long] } > { a, a:[+long] } / _x
-	{ e, e:[+long] } > { a, a:[+long] } / x_
-	{ e, e:[+long] } > { o, o:[+long] } / _ɣʷ
-	{ e, e:[+long] } > { o, o:[+long] } / ɣʷ_
-	ɣʷ > ∅ / _o “(according to [+ cons, - fr, + bk, + hi, - lo]ortlandt)”
-	x > x (or some sort of dorsal or laryngeal fricative?)
+	{ e, e:[+long] } > { a, a:[+long] } / _h
+	{ e, e:[+long] } > { a, a:[+long] } / h_
+	{ e, e:[+long] } > { o, o:[+long] } / _h
+	{ e, e:[+long] } > { o, o:[+long] } / h_
+	h > ∅ / _o “(according to [+ cons, - fr, + bk, + hi, - lo]ortlandt)”
+	h > x (or some sort of dorsal or laryngeal fricative?)
 	{ o, o:[+long] } > { a, a:[+long] }
 	{u:[+long],eu,au} > u
 	m̩ n̩ r̩ l̩ > am an ar al
 	w > m / u_
 	— r > ∅ / #_
 	— r > ∅ / _# “sometimes??”
-	— { e, e:[+long] } > { a, a:[+long] } / _R “sometimes??”
-	— { e, e:[+long] } > { a, a:[+long] } / “when unstressed?”
+	— { e, e:[+long] } > a / _R “sometimes??”
+	— { e, e:[+long] } > a:[+long] / _R “sometimes??”
+	— { e, e:[+long] } > a / “when unstressed?”
+	— { e, e:[+long] } > a:[+long] / “when unstressed?”
