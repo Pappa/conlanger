@@ -1,35 +1,35 @@
 @ 37.1.2.3 - Proto-Northern Iroquoian to Onondaga
 # citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg “Allophonic changes:”
-	s > ʃ // n_ “or when part of the unit affricate /t͡s/”
+	s > ʃ // n_ or when part of the unit affricate /t͡s/
 	t͡s > hs / V_V // _i
 	t͡s > s / ,i,j} // _{h
 	ns > t͡s / _kʷ
 	n > ∅ / _s
 	{ ”V, ”V:[+long] }(C)(C)V:[+long] > V:[-long](C)”(C)CV:[-long] / _#
-	ara > a:[+long] / “unaccented syllables only”
-	jh > hj
+	ara > a:[+long] / unaccented syllables only
+	jh > hʲ
 	n > t / _kʷ
 	”V(C)(C)CaCV > V(C)”(C)CaCV / _#
 	ʃ > s
 	n > ∅ / h_r
 	h > ∅ / w_j
-	Vw > V:[+long] / _{r,j}
-	”V > ”V:[+long] / _C(R)V
+	Vw > V:[+long] / :{ _r, _j }:
+	”V > ”V:[+long] / _C()V
 	hs > sh / C_
 	ht͡s > t͡sh / C_V
-	V > V:[+long] / _”C:[-glottal](R)V{:[+long],H} in “even numbered syllables only”
-	V > V:[+long] / _[+ cons, - fr, + bk, + hi, - lo]RV “in the second syllable of a word”
-	V > V:[+high tone] / _$”V
-	{ a, a:[+long] } { o, o:[+long] } { õ, õ:[+long] } > { æ, æ:[+long] } { e, e:[+long] } { ẽ, ẽ:[+long] } / r_
+	V > V:[+long] / _C:[-glottal]()V{:[+long],} in even numbered syllables only
+	V > V:[+long] / _[+ cons, - fr, + bk, + hi, - lo]RV in the second syllable of a word
+	V > V:[+high tone] / _$V
+	{ {, a,, a:[+long], }, {, o,, o:[+long], }, {, õ,, õ:[+long], } } > { {, æ,, æ:[+long], }, {, e,, e:[+long], }, {, ẽ,, ẽ:[+long], } } / r_
 	Vr > V:[+long] / _C
 	rV > V:[+long] / C_
 	r > j / {{ e, e:[+long] }{ ,ẽ, ,ẽ:[+long] }{ ,i, ,i:[+long] }}_V
 	r > w / {{ o, o:[+long] }{ ,õ, ,õ:[+long] }}_V
 	r > ∅
 	h > ∅ / _sn
-	h > ∅ / _{k,t,t͡s,s}#
+	h > ∅ / :{ _k#, _t#, _t͡s#, _s# }:
 	k > h / _k
 	{ õ, õ:[+long] } > { ũ, ũ:[+long] }
-	t͡s > t͡ʃ / _{(h)i,(h)j}
-	s > ʃ / _{hi,hj}
-	t t͡ʃ kʷ > d d͡ʒ ɡʷ / _{V,R}
+	t͡s > t͡ʃ / :{ _hi, _i, _hj, _j }:
+	s > ʃ / :{ _hi, _hʲ }:
+	{ t, t͡ʃ, kʷ } > { d, d͡ʒ, ɡʷ } / :{ _V }:

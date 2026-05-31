@@ -1,21 +1,20 @@
 @ 17.7.3.1.3 - Old Norse to Shetland Norn
 # citation: Pogostick Man and Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from http://nornlanguage.x10.mx/index.php?shet_phon, citing Jakobsen, Jakob, An Etymological Dictionary of the Norn Language NB: For the most part, these changes are not in chronological order and are often tendencies more than strict sound-change laws. Further, I’m assuming that 〈ä〉 is /æ/ and that 〈o̧〉 and 〈ȯ〉 are /ɒ/, and since I’m not sure what the conditions are for (apparent) reflexes with long vowels, I’m ignoring the vowel length in the Shetland Norn reflexes. r alternates with l Final short vowels drop
-	p t k > b d ɡ / V_V (the second V at least can be a syllabic consonant)
-	b d > p t / N_
+	{ p, t, k } > { b, d, ɡ } / V_V (the second V at least can be a syllabic consonant)
+	{ b, d } > { p, t } / N_
 	b > v / #_ (sporadic?)
 	lm > ml
 	∅ > b / m_l
-	nd ld ( > n:[+long] l:[+long] ?)
+	{ nd, ld, ( } > { n:[+long], l:[+long], ?) }
 	n:[+long] l:[+long] ?) > ɲ ʎ
-	dj > d͡ʒ
+	dʲ > d͡ʒ
 	{ ɡ, ɡ:[+long] } > d͡ʒ / _iV
-	k ɡ > c ɟ / _E
+	{ k, ɡ } > { c, ɟ } / _E
 	tr > rd
-	p:[+long] t:[+long] k:[+long] > b d {ɡ,ɣ} / V_V
-	t:[+long] > tʲ
-	t:[+long] > dʲ
-	tj > t͡ʃ / _#
-	tj > ʃ
+	{ p:[+long], t:[+long], k:[+long] } > { b, d, {ɡ,ɣ} } / V_V
+	t:[+long] > tʲ, dʲ
+	tʲ > t͡ʃ / _#
+	tʲ > ʃ
 	ɡl > lɡ
 	f > v / #_ (sporadic?)
 	f > m / _n
@@ -23,51 +22,39 @@
 	v > w / #_
 	n > ∅ / _m#
 	vl > lv
-	θ > t
-	θ > d
+	θ > t, d
 	ð > ∅ / _#
 	ð > d
 	s > ∅ / k_l
 	∅ > h / #_V
-	h > ∅ / _{V,w,j} (sporadic)
+	h > ∅ / :{ _V(sporadic), _w(sporadic), _j(sporadic) }:
 	h > ∅ / _l
-	h > ∅ / _r
-	h > h / _r
-	h > k / _r
-	h > ∅ / _n
-	h > h / _n
-	h > k / _n
-	h > s / _n
+	h > ∅, h, k / _r
+	h > ∅, h, k, s / _n
 	hv > {h,k,s}w
-	hj > ʃ
-	n l > ɲ ʎ / _C
+	hʲ > ʃ
+	{ n, l } > { ɲ, ʎ } / _C
 	n:[+long] > ɲ(d)
-	rn {l:[+long],rl} > ɲ ʎ
+	{ rn, {l:[+long],rl} } > { ɲ, ʎ }
 	ms > ŋ(k)s
-	{u,o}(:[+long]) a a:[+long] {ɒ,œ,y} e { i, i:[+long] } > {o,ɔ}(i) æ(i) {ɔ,ɒ}(i) {o,ɔ}(i) {æ,e} / _{Ḱ,Cʲ}
-	u > o / _CC
-	u > ɒ / _CC
+	{u,o}(:[+long]) a a:[+long] {ɒ,œ,y} e { i, i:[+long] } > {o,ɔ}(i) æ(i) {ɔ,ɒ}(i) {o,ɔ}(i) {æ,e} / :{ _Ḱ, _Cʲ }:
+	u > o, ɒ / _CC
 	u:[+long] > {u,o,ɒ,ø} (conditioning unclear; it seems the presence of a velar consonant may have helped to retain the quality of /u/)
 	o:[+long] > u
 	ɒ > ɛ / _C:[+long]
 	ɒ > ø / _O:[+dental/alveolar]
-	{ɒ,ey} j{u,o,a}:[+long] y:[+long] > o ø u / Ḱ_
+	{ {ɒ,ey}, j{u,o,a}:[+long], y:[+long] } > { o, ø, u } / Ḱ_
 	j{u,o,a}:[+long] > ø
 	a > ∅ / C:[+dental/alveolar]_u
-	a > o / _{[+ cons, - fr, + bk, + hi, - lo],r} ( // [+ cons, - fr, + bk, + hi, - lo] = w ?)
-	a > ɔ / _{[+ cons, - fr, + bk, + hi, - lo],r} ( // [+ cons, - fr, + bk, + hi, - lo] = w ?)
+	a > o, ɔ / :{ _[+ cons, - fr, + bk, + hi, - lo](, _r( }: // [+ cons, - fr, + bk, + hi, - lo] = w ?)
 	a:[+long] > wo (dialectal)
-	a:[+long] > ɔ(u) / _{l,r}
-	au > o / j_
-	au > ɔ / j_
-	au > ɒ / j_
+	a:[+long] > ɔ(u) / :{ _l, _r }:
+	au > o, ɔ, ɒ / j_
 	au > j{o,ɔ}
 	y > ə / _{ r, r:[+long] }
 	y:[+long] > ø / _O:[+dental/alveolar]
 	æ > e / ,Cʲ} // _{Ḱ
-	e > o / _w
-	e > ɒ / _w
-	e:[+long] > ɒ / w_
-	e:[+long] > ə / w_
-	e e:[+long] > {æ,ɛ,e} {ʲɛ,je}
+	e > o, ɒ / _w
+	e:[+long] > ɒ, ə / w_
+	{ e, e:[+long] } > { {æ,ɛ,e}, {ʲɛ,je} }
 	ey > ø

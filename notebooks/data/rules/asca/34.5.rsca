@@ -1,11 +1,11 @@
 @ 34.5 - Proto-Quechumaran to Putamayo
 # citation: Pogostick Man, from Orr, Carolyn, and Robert E. Longacre (1968), “Proto-Quechumaran”. Language 44(3):528 – 555
-	pʼ tʼ kʼ qʼ > p t k q
+	{ pʼ, tʼ, kʼ, qʼ } > { p, t, k, q }
 	p > b / m_
 	t(ʰ) > d / n_
 	tʰ > t
 	k > ɡ / n_
-	k > ɡ / _{L,j}
+	k > ɡ / :{ _L, _j }:
 	h > ∅ / t͡s_
 	t͡ʃʼ > t͡ʃ
 	ʈʂ > t͡ʃ / _V

@@ -3,13 +3,12 @@
 	ɲ̊ > j
 	N:[-voice] > N:[+voice]
 	w > ∅ / m_
-	pr b{l,r} vr > v bj d
-	{l,r} > ∅ / {n,ɗ}_
-	d ɗ > t d
-	t > p / _r
-	t > t / _r
+	{ pr, b{l,r}, vr } > { v, bʲ, d }
+	{l,r} > ∅ / :{ n_, ɗ_ }:
+	{ d, ɗ } > { t, d }
+	t > p, t / _r
 	l > ∅ / tʰ_
-	d > t / _{l,r}
+	d > t / :{ _l, _r }:
 	{ɡ,x} > kʰ
 	k > t / _l
 	V > V:[+long] / _%

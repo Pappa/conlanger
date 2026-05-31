@@ -1,15 +1,13 @@
 @ 14.2 - Proto-Elamo-Dravidian to Achaemanid Elamite
 # citation: Pogostick Man, from McAlpin, David W. (1974), “Toward Proto-Elamo-Dravidian”. Language 50(1):89 – 101
-	{i,e,u} > ∅ / #_{t,n}a
-	e > e / #C_C
-	e > i / #C_C
+	{i,e,u} > ∅ / :{ #_ta, #_na }:
+	e > e, i / #C_C
 	w > ú / V_ (McAlpin uses the accented-vowel notation due to some apparent height-contrast neutralizations before /a/)
-	k ŋk ŋk:[+long] > ∅ k k:[+long] / V_V
-	mp > p / V_V
-	mp > p:[+long] / V_V
-	c > s / #_{a,u}
+	{ k, ŋk, ŋk:[+long] } > { ∅, k, k:[+long] } / V_V
+	mp > p, p:[+long] / V_V
+	c > s / :{ #_a, #_u }:
 	ɲc > ns / V_V
-	r̀ > r / V_{V,C}
+	r̀ > r / :{ V_V, V_C }:
 	ŕ > r:[+long] / V_V
 	nr̀ > nr
 	l > n / V_#

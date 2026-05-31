@@ -3,26 +3,25 @@
 	ə > u
 	ə > ∅ / VC_CV
 	V > ∅ / VC_CV (sporadic)
-	i u > e o / _C{C,#}
-	i u > e o / CC# (sporadic)
+	{ i, u } > { e, o } / _C{C,#}
+	{ i, u } > { e, o } / CC# (sporadic)
 	a > æ “(in some forms; environment and conditioning unclear)”
-	uj > i
-	uj > u
+	uj > i, u
 	iw > u
-	p c q > f s ʔ
+	{ p, c, q } > { f, s, ʔ }
 	k > ∅ / _# (sporadic)
 	k > h // _#
 	h > ∅
 	VV > V
-	b d͡z > p t͡s
+	{ b, d͡z } > { p, t͡s }
 	d > ∅ / _#
 	ɟ > ʔ
-	l > d / _{C,#}
+	l > d / :{ _C, _# }:
 	ɾ > ɡ
-	O > O:[-voice] / _{C,#}
+	O > O:[-voice] / :{ _C, _# }:
 	∅ > j / i_a
 	∅ > w / u_a
 	∅ > w / a_u
 	∅ > w / #_V
-	j w > d͡z ɡʷ
+	{ j, w } > { d͡z, ɡʷ }
 	ɡʷ > ɡ / _V:[+round]

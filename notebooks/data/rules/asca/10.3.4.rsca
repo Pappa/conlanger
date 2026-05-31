@@ -5,19 +5,19 @@
 	ndr > d
 	R > r
 	d > r (sporadic)
-	p pʷ bʷ k ɡ > β w kpʷ ɣ k
-	mʷ ɲ > ŋmʷ n
+	{ p, pʷ, bʷ, k, ɡ } > { β, w, kpʷ, ɣ, k }
+	{ mʷ, ɲ } > { ŋmʷ, n }
 	{c,*j} > s
 	s > h “(often)”
 	r > j
-	o e i > ɔ ɛ ɪ / C_V:[-high]
+	{ o, e, i } > { ɔ, ɛ, ɪ } / C_V:[-high]
 	V:[-high] > ∅ / {ɔ,ɛ,ɪ}C_
 	uCi > iC (sporadic)
-	u a > ʊ ɛ / _CV:[+high]
-	o e > ʊ ɪ
-	aCV:[+high] > ɪ / when stressed unless primarily stressed
+	{ u, a } > { ʊ, ɛ } / _CV:[+high]
+	{ o, e } > { ʊ, ɪ }
+	aCV:[+high] > ɪ / unless primarily stressed
 	(C)VC”V > (C)VV
-	V > ∅ / _”V
-	V > ∅ / (C)V_VC”V
-	b β d > m p n / _{C,#}
+	V > ∅ / _V
+	V > ∅ / { CV, V }_VCV
+	{ b, β, d } > { m, p, n } / :{ _C, _# }:
 	kpʷ > k / _C (sporadic)

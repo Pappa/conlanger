@@ -3,100 +3,96 @@
 	h > ∅
 	n > ∅ / _s
 	{m,n,t} > ∅ / _#
-	V > ∅ / ”V%C_L(C)V(C)# (irregular)
-	V > ∅ / ”V%L_C(C)V(C)# (irregular)
-	V > ∅ / ”V%s_t(C)V(C)# (irregular)
-	u > w / (“when in unstressed penult or between first and tonic syllables; irregular”)
-	w > ∅ / (“when in unstressed penult or between first and tonic syllables; irregular”)
+	V > ∅ / V%C_L{ CV, V }{ C#, # } (irregular)
+	V > ∅ / V%L_C{ CV, V }{ C#, # } (irregular)
+	V > ∅ / V%s_t{ CV, V }{ C#, # } (irregular)
+	u > w / (when in unstressed penult or between first and tonic syllables; irregular)
+	w > ∅ / (when in unstressed penult or between first and tonic syllables; irregular)
 	i:[+long] > i / stressed
-	i:[+long] > i / _%”V
-	{i,e:[+long]} e > {e,ɛ} {ɛ,e} / stressed
-	{i,e:[+long],e} > e / _%”V
-	i > j / ”V_#
+	i:[+long] > i / _%V
+	{ {i,e:[+long]}, e } > { {e,ɛ}, {ɛ,e} } / stressed
+	{i,e:[+long],e} > e / _%V
+	i > j / V_#
 	u:[+long] > u / stressed
-	u:[+long] > u / _%”V
-	au > a / _%”u
-	{u,o:[+long]} o > o ɔ / stressed
-	{{ u,o, u,o:[+long] }} > u / _%”V in East Catalan
-	{{ u,o, u,o:[+long] }} > o / _%”V else
-	u > w / ”ɛ_#
+	u:[+long] > u / _%V
+	au > a / _%u
+	{ {u,o:[+long]}, o } > { o, ɔ } / stressed
+	{{ u,o, u,o:[+long] }} > u / _%V in East Catalan
+	{{ u,o, u,o:[+long] }} > o / _%V
+	u > w / ɛ_#
 	a:[+long] > a
-	oe > e
-	oe > ɛ
-	ae au > e ɔ / stressed
-	ae au > e o / _%”V
+	oe > e, ɛ
+	{ ae, au } > { e, ɔ } / stressed
+	{ ae, au } > { e, o } / _%V
 	o > u / _a
-	o > u / _%”V (irregular)
+	o > u / _%V (irregular)
 	VV > V:[+long] (“For outcomes of word-final vowels, see down below”)
-	ndj > ɲ
-	dj > d͡ʒ
+	ndʲ > ɲ
+	dʲ > d͡ʒ
 	d͡ʒ > ʒ
 	∅ > e / #_sC
-	l > ∅ / {o,u}_CV
-	l > w / V_CV (“although l was usually restored later”)
+	l > ∅ / :{ o_CV, u_CV }:
+	l > w / V_CV (although l was usually restored later)
 	mn > n:[+long]
 	n:[+long] > ɲ
-	p b t d k ɡ > β {β,w} ∅ {j,w} ɣ {j,∅,ɡ} / V_rV
-	ŋ > ɲ / _{i,e}
-	p b > b w / V_lV (the latter is irregular)
+	{ p, b, t, d, k, ɡ } > { β, {β,w}, ∅, {j,w}, ɣ, {j,∅,ɡ} } / V_rV
+	ŋ > ɲ / :{ _i, _e }:
+	{ p, b } > { b, w } / V_lV (the latter is irregular)
 	{kl,ɡl} > ʎ / V_V (the latter is irregular)
-	sk > ʃ / V_{i,e}
-	p k > ∅ j / V_tV
+	sk > ʃ / :{ V_i, V_e }:
+	{ p, k } > { ∅, j } / V_tV
 	k > ∅ / Vn_tV
 	ks > ʃ / V_V
 	k > j / _s#
-	ɡn tj > ɲ ∅ / V_V
-	stj > ʃ
-	tj > s / C_
-	sj ssj jn > js jʃ ɲ / V_V
-	mnj > mni / V_V
-	mnj > ɲ / V_V
-	lj rj kj ɡj > ʎ jr t͡s ʒ / V_V
-	{bj,vj} > wʒ / _%”V
+	{ ɡn, tʲ } > { ɲ, ∅ } / V_V
+	stʲ > ʃ
+	tʲ > s / C_
+	{ sʲ, ssʲ, jn } > { js, jʃ, ɲ } / V_V
+	mnʲ > mni, ɲ / V_V
+	{ lʲ, rʲ, kʲ, ɡʲ } > { ʎ, jr, t͡s, ʒ } / V_V
+	{bʲ,vʲ} > wʒ / _%V
 	b > v / V̈%_j
 	ja > je / #_ (irregular)
-	V > ∅ / _%”V (rare)
-	∅ > e / CL_#
-	∅ > o / CL_#
-	∅ > e / r:[+long]_#
-	∅ > o / r:[+long]_#
-	a > e / “in the penult”
-	V > ∅ / ”V%_(C)(C)V(C)# (“irregular; e is kept before n”)
+	V > ∅ / _%V (rare)
+	∅ > e, o / CL_#
+	∅ > e, o / r:[+long]_#
+	a > e / in the penult
+	V > ∅ / V%_(C){ CV, V }{ C#, # } (irregular; e is kept before n)
 	b > v / V_V
-	p t > b d / V_V
+	{ p, t } > { b, d } / V_V
 	f > v / V_V (irregular)
-	s > z / ”V%V_V
-	s > ∅ / V_V%”V
-	k ɡ > ∅ {∅,ʒ} / V_{i,e} (ɡ → ʒ is learned)
-	ɡ > ∅ / V_V%”V
-	k j > ɡ ʒ / V_V
+	s > z / V%V_V
+	s > ∅ / V_V%V
+	{ k, ɡ } > { ∅, {∅,ʒ} } / :{ V_i(ɡ → ʒ is learned), V_e(ɡ → ʒ is learned) }:
+	ɡ > ∅ / V_V%V
+	{ k, j } > { ɡ, ʒ } / V_V
 	— d > z / V_V
 	z > ∅ / V_V
 	— d > w / _V#
 	i:[+long] > ∅ / _#
-	{{ i,e, i,e:[+long] },ae} > ∅ / _(C)#
+	{{ i,e, i,e:[+long] },ae} > ∅ / :{ _C#, _# }:
 	{{ u, u:[+long] }{ ,o, ,o:[+long] }} > ∅ / _#
-	V > ∅ / “between first and tonic syllables; except when C_CC, _n”; “if there are multiple vowels between the initial and tonic syllables, the vowel directly before the tonic is usually dropped” // V = a
+	V > ∅ / between first and tonic syllables; except when C_CC, _n; if there are multiple vowels between the initial and tonic syllables, the vowel directly before the tonic is usually dropped // V = a
 	w > ∅ / u_#
-	j ɡj t͡s z n > t͡ʃ i w s ∅ / _#
+	{ j, ɡʲ, t͡s, z, n } > { t͡ʃ, i, w, s, ∅ } / _#
 	t > ∅ / V_sV
 	{b,v} > w / V_#
 	d > t / _#
 	l > ʎ / #_
-	k > t͡s / #_{i,e}
-	t͡s > s / #_{i,e}
-	ɡ > ʒ / #_{i,e}
+	k > t͡s / :{ #_i, #_e }:
+	t͡s > s / :{ #_i, #_e }:
+	ɡ > ʒ / :{ #_i, #_e }:
 	j > d͡ʒ / #_
 	d͡ʒ > ʒ / #_
-	kʷ ɡʷ > k ɡ / #_{i,e}
+	{ kʷ, ɡʷ } > { k, ɡ } / :{ #_i, #_e }:
 	kʷ > k / C_V
-	kʷ > ɡ / V_{i,e}
-	kʷ > k / #_a%”V
-	kʷ > ɡw / V_a
-	kʷ > kw / #_”a
-	ɡʷ > ɡw / #_a
-	ɡʷ > ɡ / C_{i,e}
-	ɡʷ > ɡw / C_a
+	kʷ > ɡ / :{ V_i, V_e }:
+	kʷ > k / #_a%V
+	kʷ > ɡʷ / V_a
+	kʷ > kʷ / #_a
+	ɡʷ > ɡʷ / #_a
+	ɡʷ > ɡ / :{ C_i, C_e }:
+	ɡʷ > ɡʷ / C_a
 	b > m / Vm_V
 	m > ∅ / Vm_V
 	n > r / m_
@@ -104,18 +100,18 @@
 	k > w / V_rV
 	{b,v} > w / V_tV
 	ɡ > ∅ / V_dV
-	l:[+long] n:[+long] > ʎ ɲ
-	ʎ > l / ”i_
+	{ l:[+long], n:[+long] } > { ʎ, ɲ }
+	ʎ > l / i_
 	C > ∅ / C_C // C = L
 	{a,o} > ∅ / #_ (rare)
 	ɔ > o / _N$C
 	e > ɛ / _v
-	o > u / _{ɲ,nk,ŋ} when stressed
-	e > i / _{nk,ŋ} when stressed (irregular)
+	o > u / :{ _ɲwhen stressed, _nkwhen stressed, _ŋwhen stressed }:
+	e > i / :{ _nkwhen stressed (irregular), _ŋwhen stressed (irregular) }:
 	aj > ej
 	ej > ee
 	ee > e (irregular)
-	aj > ej / _ʃ when stressed (irregular)
-	ɛj ɔj > jɛj uei / i {u,ui} / stressed
+	aj > ej / _ʃ (irregular)
+	{ ɛj, ɔj } > { jɛj, uei } / i {u,ui} / stressed
 	ɛ > e / ,l,rC:[-labial],nr} or _ ? w# // _{r:[+long]
 	e > ɛ (in Eastern Catalan)

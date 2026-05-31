@@ -4,23 +4,23 @@
 	h > ħ / _Vz
 	l > ∅ / #{d,tʼ}_VC
 	ɬ > s / #_VC
-	{ʃ,t͡s,z} d͡z t͡ʃ {tʼ,t͡ʃʼ} d͡ʒ > s z t͡s t͡sʼ d͡ʒ
-	f > p / #_V{Z,C:[-voice],r}
+	{ {ʃ,t͡s,z}, d͡z, t͡ʃ, {tʼ,t͡ʃʼ}, d͡ʒ } > { s, z, t͡s, t͡sʼ, d͡ʒ }
+	f > p / #_V{,C:[-voice],r}
 	pʼ > p
 	p > b / #dlV_
-	xw > ɣw
-	ɣw > ħ
-	k > ɡ / _{w,j}
-	CVʕ > ħʔ // C = ɡw
+	xʷ > ɣʷ
+	ɣʷ > ħ
+	k > ɡ / :{ _w, _j }:
+	CVʕ > ħʔ // C = ɡʷ
 	ɡwVq > ʕ
 	kʷ > t͡ʃ / #_Vt
 	ɡʷ > d͡ʒ / #_Vd
 	xV > k / _h
 	[+ cons, - fr, + bk, + hi, - lo]ʷ > [+ cons, - fr, + bk, + hi, - lo]
 	q > ∅ / _i
-	q > i / #_V{Z,C:[+dental]}
+	q > i / #_V{,C:[+dental]}
 	ʕ > i / #_VR
-	qu > w / _{f,s} (sporadic)
+	qu > w / :{ _f(sporadic), _s(sporadic) }:
 	ʔ > ʕ / _V{n,r,ɡ}
 	{h,ħ,q} > ʕ / C:[+voice]_V
 	q > ʔ / _C:[+dental]
@@ -30,8 +30,8 @@
 	ɣ > ʕ / ħ_
 	tlʼ > dl / #_Vħr
 	O:[+lateral] > O:[+palatal]
-	r > l / #_V(V)O:[+labial]
-	r > ʔ / C_{t,w,j}# ,m,n,r,w,ʃ,x} // C = {ɡ
+	r > l / #_V{ VO, O }:[+labial]
+	r > ʔ / :{ C_t# ,m,n,r,w,ʃ,x}, C_w# ,m,n,r,w,ʃ,x}, C_j# ,m,n,r,w,ʃ,x} }: // C = {ɡ
 	l > j / #_iC ?
 	l > r / #nV_C
 	l > n

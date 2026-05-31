@@ -1,6 +1,6 @@
 @ 29.1.1.1.40 - Proto-Athabaskan to Tsetsaut
 # citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85 NB: Whimemsz indicates that the following are to be taken with a grain of salt, as not all of the correspondences are clear due to a lack of detailed sources. Series TŠʷ apparently moved its POA to the labiodental or bilabial position
 	TŠ > TS
-	[+ cons, - fr, + bk, + hi, - lo] Q > TŠ [+ cons, - fr, + bk, + hi, - lo]
+	{ [+ cons, - fr, + bk, + hi, - lo], Q } > { TŠ, [+ cons, - fr, + bk, + hi, - lo] }
 	C > ∅ / _$ in many cases
 	ʊ > o

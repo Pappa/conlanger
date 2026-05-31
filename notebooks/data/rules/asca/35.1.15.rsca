@@ -1,15 +1,14 @@
 @ 35.1.15 - Proto-Central Salish to Twana
 # citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology and Sound Correspondences”. From the 17th International Conference on Salish and Neighboring Languages
-	m n > b d
+	{ m, n } > { b, d }
 	lʲ > l
-	s > ʃ / _xʷ
-	s > s / _xʷ
+	s > ʃ, s / _xʷ
 	xʲ > ʃ
 	ʔR > ʔ{R,b} / V3_V
 	Rʔ > ʔR / V3_#
 	ʔ > ∅ / V1R_#
 	ʔ > ∅ / V3R_C
-	u3 u1 > o3 ə1
+	{ u3, u1 } > { o3, ə1 }
 	{a3~ə3} > {ə3,a3}
 	{a3~i3} > a3
 	{a1~i1} > {i1,ə1}

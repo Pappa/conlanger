@@ -1,10 +1,10 @@
 @ 25.1.3 - Proto-Tacanan to Reyesano
 # citation: Pogostick Man, from Key, Mary Ritchie (1968), Comparative Tacanan Phonology with Cavineña Phonology and Notes on Pano-Tacanan Relationship
 	k > kʷ
-	b d > ᵐb ⁿd͡z
+	{ b, d } > { ᵐb, ⁿd͡z }
 	t͡s > t͡ʃ / #_
-	t͡ʃ ɕ > t͡s ʃ
-	ɕ x > ð h
+	{ t͡ʃ, ɕ } > { t͡s, ʃ }
+	{ ɕ, x } > { ð, h }
 	w > β / _E ?
 	*ŕ > ∅
 	j > t͡ʃ / V_V

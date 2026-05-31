@@ -3,159 +3,159 @@
 	θ > f / _l
 	i > ɪ / _NS:[-voice] ,i,j} // _NS(C){o
 	i > e:[+long] / _ʀ#
-	b {w,v} d ð ɡ > p f t θ k / _#
+	{ b, {w,v}, d, ð, ɡ } > { p, f, t, θ, k } / _#
 	j > ∅ / #_
-	E:[+long]B:[+long] E:[+long]a:[+long] > jo:[+long] ja:[+long] / {v,w}_
-	B:[+long]B a:[+long]{o,a,æ,e} {æ,e}:[+long]{æ,e}:[+long] {æ,e}:[+long]i i:[+long]E:[+long] > o:[+long] a:[+long] e:[+long] e:[+long] i:[+long]
-	e > i / #(C)(C)(C)_(C)(C)(C){i,j}
-	e > ja / ,k,ŋ}n,w,v,l,r}_, _{u,o,i} // {{h
-	a(i) {e,w{æ,i}} {we,ei} ʷɪ > ey ø y ʏ / w_ // hw_
-	a > ∅ / C(C)_{ʀ,s,t,θ}#
-	VN > Ṽ / _# // in #U
-	u {o,ɒ} a au ju:[+long] > y ø æ y y:[+long] / _(C)(C)(C)j
-	a > ∅ / _{ʀ,s,t,θ}#
+	{ E:[+long]B:[+long], E:[+long]a:[+long] } > { jo:[+long], ja:[+long] } / :{ v_, w_ }:
+	{ B:[+long]B, a:[+long]{o,a,æ,e}, {æ,e}:[+long]{æ,e}:[+long], {æ,e}:[+long]i, i:[+long]E:[+long] } > { o:[+long], a:[+long], e:[+long], e:[+long], i:[+long] }
+	e > i / #(C)(C){ C_, _ }(C)(C)(C){i,j}
+	e > ja / :{ ,k,ŋ}n,w,v,l,r}_,_u, ,k,ŋ}n,w,v,l,r}_,_o, ,k,ŋ}n,w,v,l,r}_,_i }: // {{h
+	a(i) {e,w{æ,i}} { weʷ, eiʷ }ɪ > ey ø y ʏ / w_ // hw_
+	a > ∅ / :{ C(C)_ʀ#, C(C)_s#, C(C)_t#, C(C)_θ# }:
+	VN > Ṽ / _# // in #
+	{ u, {o,ɒ}, a, au, ju:[+long] } > { y, ø, æ, y, y:[+long] } / _(C)(C){ Cj, j }
+	a > ∅ / :{ _ʀ#, _s#, _t#, _θ# }:
 	o:[+long] > u / _#
 	ʀ > r_n
 	ʀ > r / C_n
 	ʀn > n:[+long]
 	w > ∅ / C_o
 	a > ∅ / CC_U#
-	a > u / %u / // in #U
-	wa:[+long] na:[+long] > o:[+long] no:[+long] / %u in #U
-	{ a, a:[+long] } ae > { o, o:[+long] } ɒø / #(C)(C)(C)_(C)(C)(C)u
+	a > u / %u / // in #
+	{ wa:[+long], na:[+long] } > { o:[+long], no:[+long] } / %u in #
+	{ {, a,, a:[+long], }, ae } > { {, o,, o:[+long], }, ɒø } / #(C)(C){ C_, _ }(C)(C){ Cu, u }
 	a > ∅ / _U#
-	{ʲu,we}:[+long] {o,ɒ}:[+long] a:[+long] au > y:[+long] ø:[+long] æ:[+long] æy
-	u {o,ɒ} a > y ø æ / _(C)(C)(C)i
-	{B,E} > ∅ / CC_{ʀ,s,t,θ}# // B = ɒ
-	u {o,ɒ} a au ju:[+long] > y ø æ æy y:[+long] / _(C)(C)(C)i
-	E > ∅ / _{ʀ,s,t,θ}
+	{ {ʲu,we}:[+long], {o,ɒ}:[+long], a:[+long], au } > { y:[+long], ø:[+long], æ:[+long], æy }
+	{ u, {o,ɒ}, a } > { y, ø, æ } / _(C)(C){ Ci, i }
+	{B,E} > ∅ / :{ CC_ʀ#, CC_s#, CC_t#, CC_θ# }: // B = ɒ
+	{ u, {o,ɒ}, a, au, ju:[+long] } > { y, ø, æ, æy, y:[+long] } / _(C)(C){ Ci, i }
+	E > ∅ / :{ _ʀ, _s, _t, _θ }:
 	u > o / _m#
 	u > ∅ / _({ʀ,s,t,θ})#
 	{B,E} > ∅ / CC_U# // B = ɒ
 	V > V:[+long] / _l{P,w,k,#}
 	{a,æ,e}:[+long]hi:[+long] > æ:[+long]
-	ɒ:[+long]h{u,a} a:[+long]h{u,a} > ɒ:[+long] a:[+long]
+	{ ɒ:[+long]h{u,a}, a:[+long]h{u,a} } > { ɒ:[+long], a:[+long] }
 	{B,E} > ∅ / _U# // B = ɒ
 	u > o / _m#
-	V:[+long] > V:[-long] // in #U
-	{u,we,wi} {o,ɒ} a au ju:[+long] > y ø æ æy y:[+long] / _(C)(C)(C)i
-	wa we wi > ɒ:[+long] ø:[+long] y:[+long] / #P_
+	V:[+long] > V:[-long] // in #
+	{ {u,we,wi}, {o,ɒ}, a, au, ju:[+long] } > { y, ø, æ, æy, y:[+long] } / _(C)(C){ Ci, i }
+	{ wa, we, wi } > { ɒ:[+long], ø:[+long], y:[+long] } / #P_
 	w > ∅ / #P_V:[+long]
-	e > jɒ / _(C)(C)(C)u ,k,ŋ}n,w,v,l,r}_ // {{h
-	e > ja / _(C)(C)(C)u ,k,ŋ}n,w,v,l,r}_ // {{h
-	au {ai,ey,ei} æ{y,i} øy V:[+long] > o e æ ø V / #(C)(C)(C)_CC
+	e > jɒ / _(C)(C){ Cu, u } ,k,ŋ}n,w,v,l,r}_ // {{h
+	e > ja / _(C)(C){ Cu, u } ,k,ŋ}n,w,v,l,r}_ // {{h
+	{ au, {ai,ey,ei}, æ{y,i}, øy, V:[+long] } > { o, e, æ, ø, V } / #(C)(C){ C_, _ }CC
 	V:[-long] > ∅ / #U_UU
-	u {o,ɒ} a au ju:[+long] > y ø æ æy y:[+long] / _(C)(C)(C)j
-	u {o,ɒ} a au ju:[+long] > y ø æ æy y:[+long] / #(C)(C)_ʀ
+	{ u, {o,ɒ}, a, au, ju:[+long] } > { y, ø, æ, æy, y:[+long] } / _(C)(C){ Cj, j }
+	{ u, {o,ɒ}, a, au, ju:[+long] } > { y, ø, æ, æy, y:[+long] } / #(C){ C_, _ }ʀ
 	b > ∅ / m_s
-	d > ∅ / {l,m}_{b,ɡ,k,l,m,n,s}
+	d > ∅ / :{ {l,m}_b, {l,m}_ɡ, {l,m}_k, {l,m}_l, {l,m}_m, {l,m}_n, {l,m}_s }:
 	ð > ∅ / n_ // ɡ_
-	ð > ∅ / r_{m,l,ɡ,n}
+	ð > ∅ / :{ r_m, r_l, r_ɡ, r_n }:
 	{f,β,p} > ∅ / r_n
-	{f,β,p} > ∅ / l_{d,ɡ,n,ð,t}
-	{ɡ,ɣ} > ∅ / l_{ð,t}
-	{ɡ,ɣ} > ∅ / r_{d,n,t}
+	{f,β,p} > ∅ / :{ l_d, l_ɡ, l_n, l_ð, l_t }:
+	{ɡ,ɣ} > ∅ / :{ l_ð, l_t }:
+	{ɡ,ɣ} > ∅ / :{ r_d, r_n, r_t }:
 	k > ∅ / l_s
-	k > ∅ / r_{m,s,t}
+	k > ∅ / :{ r_m, r_s, r_t }:
 	k > ∅ / s_l,t
 	l > ∅ / ŋ_s
-	l > ∅ / r_{m,s}
+	l > ∅ / :{ r_m, r_s }:
 	l > ∅ / s_t
-	n > ∅ / f_{d,s,t}
+	n > ∅ / :{ f_d, f_s, f_t }:
 	n > ∅ / l_b
-	n > ∅ / m_{s,b}
-	n > ∅ / ŋ_{s,w}
-	n > ∅ / r_{s,t,w}
+	n > ∅ / :{ m_s, m_b }:
+	n > ∅ / :{ ŋ_s, ŋ_w }:
+	n > ∅ / :{ r_s, r_t, r_w }:
 	n > ∅ / t_s
-	r > ∅ / {ð,f}_{ɡ,ɣ}
-	r > ∅ / k_{n,s}
+	r > ∅ / :{ {ð,f}_ɡ, {ð,f}_ɣ }:
+	r > ∅ / :{ k_n, k_s }:
 	r > ∅ / m_m
-	r > ∅ / t_{k,s}
-	t > ∅ / {ɡ,ɣ}_s
-	t > ∅ / p_{ɡ,ɣ,n}
+	r > ∅ / :{ t_k, t_s }:
+	t > ∅ / :{ ɡ_s, ɣ_s }:
+	t > ∅ / :{ p_ɡ, p_ɣ, p_n }:
 	t > ∅ / r_k
-	t > ∅ / s_{k,l,n,s}
-	{s,z} > ∅ / {r,ʀ}_N
+	t > ∅ / :{ s_k, s_l, s_n, s_s }:
+	{s,z} > ∅ / :{ r_N, ʀ_N }:
 	{v,w} > ∅ / #_V:[+round]
-	r:[+long]{r,ʀ} sʀ > r:[+long] s:[+long]
-	{ l, l:[+long] }ʀ { n, n:[+long] }ʀ > l:[+long] n:[+long] / ”V:[+long]_ (or all V_ ?)
+	{ r:[+long]{r,ʀ}, sʀ } > { r:[+long], s:[+long] }
+	{ l, l:[+long] }ʀ { n, n:[+long] }ʀ > l:[+long] n:[+long] / V:[+long]_ (or all V_ ?)
 	{{ l, l:[+long] },n}{r,ʀ} > ∅ / V{:[+long],V}_
-	n:[+long] l:[+long] r:[+long] s:[+long] > n l r s / C_
+	{ n:[+long], l:[+long], r:[+long], s:[+long] } > { n, l, r, s } / C_
 	{t,θ,d,ð} > ∅ / n_l
 	{t,θ,d,ð} > ∅ / l_n
-	l:[+long] n:[+long] > l n / C_#
-	ai wi ʷV > e:[+long] we:[+long] ʷV:[+long] / _h#
+	{ l:[+long], n:[+long] } > { l, n } / C_#
+	{ ai, wi, ʷV } > { e:[+long], we:[+long], ʷV:[+long] } / _h#
 	ɒ > o:[+long] / n_h
 	{æ,e}i ai au w{ɪ,i} wy wV iu V:[+long] > e:[+long] a:[+long] o:[+long] we:[+long] wo:[+long] wV:[+long] e:[+long] o:[+long] V
 	ey > {jo,æ}:[+long] / _ʀ
 	i > e:[+long] / _#
 	{ ðl, ðl:[+long] } { ðn, ðn:[+long] } > l:[+long] n:[+long]
-	ʏ ɪ > ø e
-	V{θ,ð} > V:[+long] / #(C)(C)(C)_{l,r}
+	{ ʏ, ɪ } > { ø, e }
+	V{θ,ð} > V:[+long] / :{ #(C)(C)(C)_l, #(C)(C)(C)_r }:
 	ai > a:[+long] / _r
 	ai > a:[+long] / _h{C,V}
 	æ > e
-	lθ nθ > l:[+long] n:[+long]
-	Ṽ > V:[+long] / in #U (maybe only ı̃?)
+	{ lθ, nθ } > { l:[+long], n:[+long] }
+	Ṽ > V:[+long] / in # (maybe only ı̃?)
 	Ṽ > V:[-nas]
-	β ð ɣ > f θ k / _{p,t,k,s}
-	β ð ɣ > b d ɡ / #_
-	β ð ɣ > b d ɡ / {m,n,ŋ,l}_
-	β ɣ > b ɡ / r_
-	ɣ > ɡ / _{r,ʀ,θ,ð}
-	β ɣ > f h / _%
-	ɣ > ɡ / _{E,j}
-	β ð ɣ > v θ h
+	{ β, ð, ɣ } > { f, θ, k } / :{ _p, _t, _k, _s }:
+	{ β, ð, ɣ } > { b, d, ɡ } / #_
+	{ β, ð, ɣ } > { b, d, ɡ } / :{ m_, n_, ŋ_, l_ }:
+	{ β, ɣ } > { b, ɡ } / r_
+	ɣ > ɡ / :{ _r, _ʀ, _θ, _ð }:
+	{ β, ɣ } > { f, h } / _%
+	ɣ > ɡ / :{ _j }:
+	{ β, ð, ɣ } > { v, θ, h }
 	(V:[+long])θt > (V)t:[+long]
-	E:[+long]{u,o}:[+long] E:[+long]a:[+long] > jo:[+long] ja:[+long] / {v,w}_
-	θ > t / {p,t,k}_
-	θ:[+long] ð:[+long] > t:[+long] d:[+long]
-	θ f > ð v / {V,C:[+voice]}_{V,C:[+voice]}
+	{ E:[+long]{u,o}:[+long], E:[+long]a:[+long] } > { jo:[+long], ja:[+long] } / :{ v_, w_ }:
+	θ > t / :{ p_, t_, k_ }:
+	{ θ:[+long], ð:[+long] } > { t:[+long], d:[+long] }
+	{ θ, f } > { ð, v } / :{ {V,C:[+voice]}_V, {V,C:[+voice]}_C:[+voice] }:
 	h > ∅ / C_t
 	ht > t:[+long]
-	hw > ∅ // #_
-	F:[-voice] > ∅ / {s,f,x,h,t}_{p,t,k}
-	n:[+long] > ð / _{r,ʀ}
+	hʷ > ∅ // #_
+	F:[-voice] > ∅ / :{ {s,f,x,h,t}_p, {s,f,x,h,t}_t, {s,f,x,h,t}_k }:
+	n:[+long] > ð / :{ _r, _ʀ }:
 	wo:[+long] wø:[+long] jæ:[+long] V:[+long] > wo wøje V:[-long] / _%
 	NS:[-voice] > S:[-voice]:[+long]
 	{{ t, t:[+long] },ɡ:[+long]}k > k:[+long]
 	t͡s > s:[+long] / V_V
-	uN yN iN VN > o ø:[+long] e:[+long] V:[+long] / _{s,f}
-	S:[+long] > S:[-long] / U:[-stress]_
-	lθ nθ > l:[+long] n:[+long]
-	p > f / _{t,k}
-	t > θ / _{p,k}
-	k > x / _{p,t}
-	m > f / _{n,ŋ}
-	n > θ / _{m,ŋ}
-	ŋ > x / _{m,n}
+	{ uN, yN, iN, VN } > { o, ø:[+long], e:[+long], V:[+long] } / :{ _s, _f }:
+	S:[+long] > S:[-long] / :[-stress]_
+	{ lθ, nθ } > { l:[+long], n:[+long] }
+	p > f / :{ _t, _k }:
+	t > θ / :{ _p, _k }:
+	k > x / :{ _p, _t }:
+	m > f / :{ _n, _ŋ }:
+	n > θ / :{ _m, _ŋ }:
+	ŋ > x / :{ _m, _n }:
 	s > t͡s / {l,n}:[+long]_
 	∅ > t / s_r
 	ɣ > ɡ:[+long] / _j
 	ʀ > r
 	w > v / #_
-	S:[+long] > S:[-long] / _{r}:[+long]
+	S:[+long] > S:[-long] / :{ _r:[+long] }:
 	ɡ > ∅ / #_n
-	r > ∅ / {p,t,k}_Vr
-	r:[+long] l:[+long] > r l / {p,t,k,f,s}_
-	o {æ,e} > u i // in #U
+	r > ∅ / :{ p_Vr, t_Vr, k_Vr }:
+	{ r:[+long], l:[+long] } > { r, l } / :{ p_, t_, k_, f_, s_ }:
+	{ o, {æ,e} } > { u, i } // in #
 	o > u / V_
 	a > e / _i
 	ɪʊ > y:[+long]
-	ø ø:[+long] > e æ:[+long]
-	{ e, e:[+long] }{{ B,i, B,i:[+long] }} > { e, e:[+long] }u / {v,w}_
+	{ ø, ø:[+long] } > { e, æ:[+long] }
+	{ e, e:[+long] }{{ B,i, B,i:[+long] }} > { e, e:[+long] }u / :{ v_, w_ }:
 	e:[+long]{{ B:[+long],i, B:[+long],i:[+long] }} > jo:[+long] / _C:[+alveolar]#
 	e:[+long]{{ B:[+long],i, B:[+long],i:[+long] }} > ju:[+long]
 	∅ > j / {y,e}(:[+long])_a
-	{ N, N:[+long] } k { k, k:[+long] } { N, N:[+long] }ɡ { ɡ, ɡ:[+long] } ɣ > { ɲc, ɲc:[+long] } { c, c:[+long] } { ɲɟ, ɲɟ:[+long] } { ɟ, ɟ:[+long] } ʝ / _{i,j}
+	{ N, N:[+long] } k { k, k:[+long] } { N, N:[+long] }ɡ { ɡ, ɡ:[+long] } ɣ > { ɲc, ɲc:[+long] } { c, c:[+long] } { ɲɟ, ɲɟ:[+long] } { ɟ, ɟ:[+long] } ʝ / :{ _i, _j }:
 	j > ∅ / Ḱ_
-	a > e / _{i,j,Ḱ}
-	{ N, N:[+long] } k { k, k:[+long] } { N, N:[+long] }ɡ { ɡ, ɡ:[+long] } ɣ > { ɲc, ɲc:[+long] } { c, c:[+long] } { ɲɟ, ɲɟ:[+long] } { ɟ, ɟ:[+long] } ɟ / _{i,j}
-	f θ > v ð / #_
-	f > v / _{p,t,k}
-	j > ∅ / {c,ɟ}_
+	a > e / :{ _i, _j, _Ḱ }:
+	{ N, N:[+long] } k { k, k:[+long] } { N, N:[+long] }ɡ { ɡ, ɡ:[+long] } ɣ > { ɲc, ɲc:[+long] } { c, c:[+long] } { ɲɟ, ɲɟ:[+long] } { ɟ, ɟ:[+long] } ɟ / :{ _i, _j }:
+	{ f, θ } > { v, ð } / #_
+	f > v / :{ _p, _t, _k }:
+	j > ∅ / :{ c_, ɟ_ }:
 	j > ∅ / _e:[+long]
 	au > ɒ / j_
 	e:[+long] > e / Ḱ_
-	e:[+long] j > e ∅ / Cw_
-	k > h / #_{v,n}
+	{ e:[+long], j } > { e, ∅ } / Cw_
+	k > h / :{ #_v, #_n }:

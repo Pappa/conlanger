@@ -2,32 +2,32 @@
 # citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg “In addition, a number of sound changes have applied to words only in the pre-pausal position. Most of these changes are characterized by the devoicing of one or more segments at the end of a word” “Allophonic changes:”
 	”V:[+long]:[-falling tone]CV > V:[+long]”CV
 	”V > ”V:[+long] / _ʔ
-	ʔ > ∅ / ”V:[+long]_
+	ʔ > ∅ / V:[+long]_
 	∅ > i / {V,t}n_kʷV
 	ths > t͡sh
-	hs > sh / _{n,w}
+	hs > sh / :{ _n, _w }:
 	h > ∅ / _Ch
-	h > ∅ / k_{s,t͡s}
-	h > ∅ / _{sk,st}
-	h > ∅ / {st,t͡st}_
-	h > ∅ / t͡s_r , see also below” // “in pre-pausal forms
-	{h,ʔ} > ∅ / _R “in post-tonic syllables”
-	ʔ > h / _C “in post-tonic syllables”
+	h > ∅ / :{ k_s, k_t͡s }:
+	h > ∅ / :{ _sk, _st }:
+	h > ∅ / :{ st_, t͡st_ }:
+	h > ∅ / t͡s_r , see also below // in pre-pausal forms
+	{h,ʔ} > ∅ / _R in post-tonic syllables
+	ʔ > h / _C in post-tonic syllables
 	r > l
 	”V:[+long]:[+falling tone] > ”V:[-long -falling tone]
 	V:[+long] > V:[-long] _”C(C)(C)V (“this change happens only in the Ontario dialect”)
-	— ∅ > e / C_{n,l}V(H)#
-	— ∅ > o / C_wV(H)#
-	— ∅ > i / C_jV(H)#
+	— ∅ > e / :{ C_nV()#, C_lV()# }:
+	— ∅ > o / C_wV()#
+	— ∅ > i / C_jV()#
 	— V:[+long]:[+falling tone]C(C)V(H) > V̊:[+long]:[+falling tone]C̊(C̊)V̊(H̊) / _#
 	— CV:[+long]:[+falling tone] > C̊V̊:[+long]:[+falling tone] / _#
 	— CVʔ > C̊V̊ʔ̊ / _#
 	— V:[-long] > V̊ / R_#
 	— OV:[-long] > O̊V̊ / _#
-	— jV > ∅ / Ci_(H)#
+	— jV > ∅ / Ci_()#
 	— ʔ > h / _C#
 	— R > R̊ / _#
-	t͡s > t͡ʃ / _{(h)i,(h)j}
-	t t͡ʃ kʷ > d d͡ʒ ɡʷ / _{V,R}
-	s > ʃ / _(h)j
-	s > z / {#,V}_{V,R}
+	t͡s > t͡ʃ / :{ _hi, _i, _hj, _j }:
+	{ t, t͡ʃ, kʷ } > { d, d͡ʒ, ɡʷ } / :{ _V }:
+	s > ʃ / :{ _hj, _j }:
+	s > z / :{ {#,V}_V }:

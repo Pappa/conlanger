@@ -4,5 +4,5 @@
 	i:[-long]C > Cj / #_ // _i
 	u:[-long]C > Cw / #_
 	a:[-long]C > Ca / #_ ( // _a?)
-	u i > w j / a_ when this a is a result of metathesis (?)
-	V:[+long] > V:[-long] / in #U
+	{ u, i } > { w, j } / a_ when this a is a result of metathesis (?)
+	V:[+long] > V:[-long] / in #

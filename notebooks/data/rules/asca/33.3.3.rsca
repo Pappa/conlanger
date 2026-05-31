@@ -1,12 +1,12 @@
 @ 33.3.3 - Proto-Yokuts to Palewyami
 # citation: CatDoom, from Whistler, Kenneth W., and Golla, Victor (1986), “Proto-Yokuts Reconsidered”. International Journal of American Linguistics Vol. 52, No. 4 (Oct. 1986)
 	s > ʃ / _i
-	t tʰ tʼ > t͡s t͡sʰ t͡sʼ / #_ “(in some words; conditioning factors unclear)”
-	t͡s t͡sʰ t͡sʼ > t͡ʃ t͡ʃʰ t͡ʃʼ / _i
+	{ t, tʰ, tʼ } > { t͡s, t͡sʰ, t͡sʼ } / #_ (in some words; conditioning factors unclear)
+	{ t͡s, t͡sʰ, t͡sʼ } > { t͡ʃ, t͡ʃʰ, t͡ʃʼ } / _i
 	{ ɨ, ɨ:[+long] } > { i, i:[+long] }
-	{u,a} > e / _CVC#, when stressed (short only)
-	i > e / _CVC#, when stressed (, short only) // _H
-	V > e / C”VC_
-	V > i / C”iC_
-	V > u / C”uC_
-	V > o / C”oC_
+	{u,a} > e / _CVC#, ()
+	i > e / _CVC#, (, ) // _H
+	V > e / CVC_
+	V > i / CiC_
+	V > u / CuC_
+	V > o / CoC_

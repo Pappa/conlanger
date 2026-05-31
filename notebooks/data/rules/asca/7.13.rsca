@@ -10,15 +10,15 @@
 	r > n / #_ (and possibly in other places as well)
 	{θ,l} > r
 	r > l
-	mV:[-long] > ∅ / #_{ʰC,s,ʃ} (allophonic, “optional”)
+	mV:[-long] > ∅ / :{ #_ʰC(allophonic, “optional”), #_s(allophonic, “optional”), #_ʃ(allophonic, “optional”) }:
 	{ʔ,h}{ɬ,l} > hs
 	{θ,l} > t / n_
 	{θ,ʃ,t͡ʃ,ç,x,ʔ} > h / _C
 	C:[-nas] > h / _k
-	h > ʔ / _{s,ʃ}
-	hs hʃ > s:[+long] ʃ:[+long] / sporadic, usually {#,V:[+front]}_
+	h > ʔ / :{ _s, _ʃ }:
+	{ hs, hʃ } > { s:[+long], ʃ:[+long] } / sporadic, usually {#,V:[+front]}_
 	C:[-voice] > C:[+voice] / N_
-	VNs VNʃ > V:[+nas]z V:[+nas]ʒ / not universal?
+	{ VNs, VNʃ } > { V:[+nas]z, V:[+nas]ʒ } / not universal?
 	S > ⁿS / #NV_ (sporadic)
-	s ʃ > ⁿs ⁿʃ / U:[-nas] (highly sporadic)
+	{ s, ʃ } > { ⁿs, ⁿʃ } / :[-nas] (highly sporadic)
 	{h,ʔ} > ∅ / _m

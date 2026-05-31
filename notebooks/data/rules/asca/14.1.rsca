@@ -1,23 +1,21 @@
 @ 14.1 - Proto-Elamo-Dravidian to Proto-Dravidian
 # citation: Pogostick Man, from McAlpin, David W. (1974), “Toward Proto-Elamo-Dravidian”. Language 50(1):89 – 101 Proto-Dravidian retained long vowels, possibly from the simplification of consonant clusters and/or deletion of intervocalic consonants with compensatory lengthening and/or the resulting vowels in hiatus merging
-	w > v / #_{i,e}lV
+	w > v / :{ #_ilV, #_elV }:
 	w > v / V_
-	k ʃk > k* k:[+long] / V_V (the asterisk-marked k is what McAlpin terms “weak k”, which tends to drop out in morphology)
+	{ k, ʃk } > { k*, k:[+long] } / V_V (the asterisk-marked k is what McAlpin terms weak k, which tends to drop out in morphology)
 	t > ∅ / #_VrC
-	t > t / V_V
-	t > ʈ / V_V
+	t > t, ʈ / V_V
 	rt > ʈ / V_V
 	p > v / V_V
 	s > t / #_VLV
-	s > j / V_{V,#}
-	s > ∅ / #V_{r̀,l}
+	s > j / :{ V_V, V_# }:
+	s > ∅ / :{ #V_r̀, #V_l }:
 	s > ∅ / C_V
 	s > ∅ / V_C
 	r̀ > r̲
 	ŕ > r / V_V
 	n n:[+long] rn > {n̲,r} { n̲, n̲:[+long] } ɳ / V_V
-	n:[+long] > n̲
-	n:[+long] > n̲:[+long]
+	n:[+long] > n̲, n̲:[+long]
 	nr̀ > n̲r̲
 	l l:[+long] > {l,ɭ} { ɭ, ɭ:[+long] } / V_V
 	l > ɭ / V_#

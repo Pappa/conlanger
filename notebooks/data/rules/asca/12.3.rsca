@@ -1,25 +1,25 @@
 @ 12.3 - Proto-Northwest Caucasian to Ubykh
 # citation: Pogostick Man, from Wikipedia contributors (2014), “Proto-Northwest Caucasian language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Proto-Northwest_Caucasian_language>, presumably citing Starostin, Sergei A. and Sergei L. Nikolayev (1994), A North Caucasian Etymological Dictionary
-	{ pʲ, pʲ:[+long] } bʲ > { t, t:[+long] } d
+	{ {, pʲ,, pʲ:[+long], }, bʲ } > { {, t,, t:[+long], }, d }
 	pʲʼ > tʷʼ
 	{pʷ,bʷ} > f
 	pʲ:[+long] > tʷ~dʷ
-	pʷʲ bʷʲ > tʷ dʷ
-	pʷʲʼ pˤ pˤ:[+long] pˤʼ bˤ > tʷʼ vˤ bˤ pˤʼ bˤ
-	tʷ:[+long] tʷʲʼ > tʷ tʷʼ
-	{r,l} lʲ > d r / #_
-	l lʲ > ∅~j l~ɣʲ
-	r rʲ > r~ʁ ɮ
-	t͡sʲ:[+long] t͡sʷ:[+long] d͡zʲ > t͡s t͡sʷ d͡z
-	zʲ zʷ > d͡zʲ~zʲ d͡zʷ~zʷ
-	sʷʲ zʷʲ t͡sʷʲʼ d͡zʷʲ > t͡ʃʷ ʒʷ t͡ʃʲʼ d͡ʒʲ
-	t͡ʃʼ d͡ʒ > t͡sʼ d͡z
-	ʃ(~ʃ:[+long]) ʒ > s z
-	ɕ:[+long] t͡ɕ:[+long] > ɕ t͡ɕ
+	{ pʷʲ, bʷʲ } > { tʷ, dʷ }
+	{ pʷʲʼ, pˤ, pˤ:[+long], pˤʼ, bˤ } > { tʷʼ, vˤ, bˤ, pˤʼ, bˤ }
+	{ tʷ:[+long], tʷʲʼ } > { tʷ, tʷʼ }
+	{ {r,l}, lʲ } > { d, r } / #_
+	{ l, lʲ } > { ∅~j, l~ɣʲ }
+	{ r, rʲ } > { r~ʁ, ɮ }
+	{ t͡sʲ:[+long], t͡sʷ:[+long], d͡zʲ } > { t͡s, t͡sʷ, d͡z }
+	{ zʲ, zʷ } > { d͡zʲ~zʲ, d͡zʷ~zʷ }
+	{ sʷʲ, zʷʲ, t͡sʷʲʼ, d͡zʷʲ } > { t͡ʃʷ, ʒʷ, t͡ʃʲʼ, d͡ʒʲ }
+	{ t͡ʃʼ, d͡ʒ } > { t͡sʼ, d͡z }
+	{ ʃ(~ʃ:[+long]), ʒ } > { s, z }
+	{ ɕ:[+long], t͡ɕ:[+long] } > { ɕ, t͡ɕ }
 	{ ʃʷ, ʃʷ:[+long] } ʒʷ t͡ʃʷʼ d͡ʒ > ʃ ʒ t͡ʃʼ d͡ʒ
 	{ t͡ɕʷ, t͡ɕʷ:[+long] } t͡ɕʷʼ > t͡ɕ t͡ɕʼ
-	ɕʷ ɕʷ:[+long] ʑʷ > ʃʷ sʷ ʒʷ
-	t͡ɬ t͡ɬ:[+long] t͡ɬʼ d͡ɮ > ɕ (sʲ) t͡sʲʼ ɮ
+	{ ɕʷ, ɕʷ:[+long], ʑʷ } > { ʃʷ, sʷ, ʒʷ }
+	{ t͡ɬ, t͡ɬ:[+long], t͡ɬʼ, d͡ɮ } > { ɕ, (sʲ), t͡sʲʼ, ɮ }
 	{ ɬ, ɬ:[+long] } > sʲ
 	t͡ɬʲ t͡ɬʲʼ d͡ɮʲ > ɕ t͡ɬʼ ɕ ʁ(~zʲ)
 	ɬʲ(~ɬʲʼ:[+long]) > ɬ
@@ -27,16 +27,16 @@
 	t͡ɬʼ > t͡sʲʼ
 	{ɮʲ,lʲ} > ɮ
 	{ t͡ɬʷ, t͡ɬʷ:[+long] } t͡ɬʷʼ d͡ɮʷ > t͡sʷ t͡sʷʼ w
-	ɬʷ ɬʷ:[+long] > sʷ sʷ
-	t͡ɬʷʲ t͡ɬʷʲ:[+long] t͡ɬʷʲʼ d͡ɮʷʲ > f d͡ʑ t͡sʼ d͡ʒ
-	ɬʷʲ(~ɬʷ:[+long]) ɮʷʲ > ʃʷ ʒʷ
-	k kʼ ɡ x ɣ > kʲ kʲʼ ɡʲ ɕ ɣ~ʁ
-	xʲ ɣʲ > sʲ zʲ
-	kʷ:[+long] xʷ > ɡʷ x
+	{ ɬʷ, ɬʷ:[+long] } > { sʷ, sʷ }
+	{ t͡ɬʷʲ, t͡ɬʷʲ:[+long], t͡ɬʷʲʼ, d͡ɮʷʲ } > { f, d͡ʑ, t͡sʼ, d͡ʒ }
+	{ ɬʷʲ(~ɬʷ:[+long]), ɮʷʲ } > { ʃʷ, ʒʷ }
+	{ k, kʼ, ɡ, x, ɣ } > { kʲ, kʲʼ, ɡʲ, ɕ, ɣ~ʁ }
+	{ xʲ, ɣʲ } > { sʲ, zʲ }
+	{ kʷ:[+long], xʷ } > { ɡʷ, x }
 	kʲʷ:[+long] xʲʷ ɣʲʷ(?) > ɡʲ kʲʼ xʲ ʁʲ
 	ɣ > ʁ
-	qʲ:[+long]ʼ ɢʲ χʲ > qʲʼ ʁʲ xʲ
-	qʷ:[+long] ɢʷ > qʷ ʁʷ
-	qʲʷ qʲʷ:[+long] qʲʷʼ ɢʲʷ χʲʷ ʁʲʷ > xʲ qʲ qʲʼ ʁʲ χʲ ʁʲ
+	{ qʲ:[+long]ʼ, ɢʲ, χʲ } > { qʲʼ, ʁʲ, xʲ }
+	{ qʷ:[+long], ɢʷ } > { qʷ, ʁʷ }
+	{ qʲʷ, qʲʷ:[+long], qʲʷʼ, ɢʲʷ, χʲʷ, ʁʲʷ } > { xʲ, qʲ, qʲʼ, ʁʲ, χʲ, ʁʲ }
 	qˤʲ > q(ˤ)
-	qˤʲʷ {qˤʲʷ:[+long],qˤʲʷ} ʁˤʲʷ > χʷ qʷʼ w
+	{ qˤʲʷ, {qˤʲʷ:[+long],qˤʲʷ}, ʁˤʲʷ } > { χʷ, qʷʼ, w }

@@ -4,9 +4,9 @@
 	{s,ʂ} > r / _#C:[+voice]
 	l > r
 	ɖ(ʱ) > ɭ(ʱ)
-	sɕ ɕʂ > ɕ:[+long] ʂ:[+long]
-	s:[+long] ʂ:[+long] ɕ:[+long] > t.s t.ʂ t.C
-	t.ʂ t.ɕ > kʂ cʰ:[+long]
+	{ sɕ, ɕʂ } > { ɕ:[+long], ʂ:[+long] }
+	{ s:[+long], ʂ:[+long], ɕ:[+long] } > { t.s, t.ʂ, t.C }
+	{ t.ʂ, t.ɕ } > { kʂ, cʰ:[+long] }
 	cʰ:[+long] > cʰ / C_
 	bzʱ > ps
 	{pʂ,cʂ,ɟʐʱ,ɡʐʱ} > kʂ

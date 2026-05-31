@@ -13,9 +13,9 @@
 	ɨə̯~ɨa̯ > ɨ:[+long] / _%
 	ɨə̯~ɨa̯ > ɨ / _C%
 	i̯o > o
-	e > o / _{m,p}%
+	e > o / :{ _m%, _p% }:
 	e > ɛ / _C%
-	ɛ iɛ > e:[+long] ı̆
+	{ ɛ, iɛ } > { e:[+long], ı̆ }
 	i̯e > i
 	o > ɔ
 	Cʷə > Cɔ
@@ -31,14 +31,14 @@
 	ɨ̯a~ɨə > ɨ:[+long]
 	ue̯ > u / _C%
 	ue̯ > u:[+long]
-	ɨo̯ ɨa̯ ie̯ ɨe̯ > u:[+long] a:[+long] e:[+long] i:[+long]
-	ɨ a > ɨ:[+long] a:[+long] / _i
+	{ ɨo̯, ɨa̯, ie̯, ɨe̯ } > { u:[+long], a:[+long], e:[+long], i:[+long] }
+	{ ɨ, a } > { ɨ:[+long], a:[+long] } / _i
 	{əi,ɛi,ei} > ai
 	ɨ̯ai > ɨ:[+long]i
-	u̯əi ɔi > ʷi:[+long] o:[+long]i
-	ə > a / _{u,ɨ}
+	{ u̯əi, ɔi } > { ʷi:[+long], o:[+long]i }
+	ə > a / :{ _u, _ɨ }:
 	{ɛi,ei} > ɨ:[+long]
 	{ou,oɨ} > o:[+long]
-	ɛ e i > e:[+long] a i:[+long] / _u
+	{ ɛ, e, i } > { e:[+long], a, i:[+long] } / _u
 	i̯əu > u:[+long]
-	uəi uai iau > i:[+long] o:[+long]i e:[+long]u
+	{ uəi, uai, iau } > { i:[+long], o:[+long]i, e:[+long]u }

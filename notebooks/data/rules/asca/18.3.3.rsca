@@ -1,16 +1,16 @@
 @ 18.3.3 - Proto-Tuparí to Tuparí
 # citation: Pogostick Man, from Moore, Denny and Ana Vilacy Galucio (1994), “Reconstruction of Proto-Tupari Consonants and Vowels”. Report 8: Survey of California and Other Indian Languages: Proceeds of the Meeting of the Society for the Study of the Indigenous Languages of the Americas, July 2 – 4, 1993, and the Hokan-Penutian Workshop, July 3, 1993, 119 – 137.
 	t > r / _V
-	kʷ ɡ > ∅ k
+	{ kʷ, ɡ } > { ∅, k }
 	ɡʷ > ∅ / _o
-	ɡʷ ŋɡ > β k / _V:[-nas]
+	{ ɡʷ, ŋɡ } > { β, k } / _V:[-nas]
 	{(n)d͡z,t͡s} > s / _i
-	{(n)d͡z,t͡s} > t / else
-	β ð > ∅ {s,h} / _i
+	{(n)d͡z,t͡s} > t
+	{ β, ð } > { ∅, {s,h} } / _i
 	ð > h
-	ᵐb ŋʷ > p β / #_V:[-nas]
+	{ ᵐb, ŋʷ } > { p, β } / #_V:[-nas]
 	n > ∅ // #_V:[-nas]
 	ŋ > k / #_V:[+nas]
 	ŋʷ > m / V:[+nas]_V:[+nas]
-	u > o / _{p,b}i
+	u > o / :{ _pi, _bi }:
 	{a/e} > e

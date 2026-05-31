@@ -1,7 +1,7 @@
 @ 30.3.1.1.10 - Proto-Vhe to Awalan
 # citation: Pogostick Man, from Capo, Hounkpati B.C. (1991), A Comparative Phonology of Gbe
-	a > e / _{i,j}
-	{o,ɔ} ə > u i / _i
-	t d > t͡ʃ d͡ʒ / _{u,i}
-	s {k,t͡s} {ɡ,d͡z} > ʃ t͡ʃ d͡ʒ / _i
-	χ ʁ > ʃ {ʒ,j} / _{u,i,j}
+	a > e / :{ _i, _j }:
+	{ {o,ɔ}, ə } > { u, i } / _i
+	{ t, d } > { t͡ʃ, d͡ʒ } / :{ _u, _i }:
+	{ s, {k,t͡s}, {ɡ,d͡z} } > { ʃ, t͡ʃ, d͡ʒ } / _i
+	{ χ, ʁ } > { ʃ, {ʒ,j} } / :{ _u, _i, _j }:

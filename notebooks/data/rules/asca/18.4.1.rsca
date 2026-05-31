@@ -1,16 +1,14 @@
 @ 18.4.1 - Proto-Tupí-Guaraní to Akwára
 # citation: Pogostick Man, from Lemle, Miriam (1971), âInternal Classification of the Tupi-Guarani Linguistic Family”. In Tupi Studies I, from Summer Institute of Linguistics Publications in Linguistics and Related Fields Publication Number 29.
 	p > k / _w
-	t > t͡ʃ / _{i,ı̃}
-	k b r > {ŋ,∅} {w,m} {n,r,t} / _#
+	t > t͡ʃ / :{ _i, _ı̃ }:
+	{ k, b, r } > { {ŋ,∅}, {w,m}, {n,r,t} } / _#
 	b > w
-	t͡s > h
-	t͡s > ∅
-	a > ɨ / _N#
-	a > o / _N#
+	t͡s > h, ∅
+	a > ɨ, o / _N#
 	o > a // o(C…)_(C…)#
 	u > ∅ / k_w
 	a > o // Cw_
 	ã > a / Cw_
 	ã > õ
-	{ẽ,ı̃} ɨ̃ {u,ũ,õ} > i ɨ o
+	{ {ẽ,ı̃}, ɨ̃, {u,ũ,õ} } > { i, ɨ, o }

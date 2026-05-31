@@ -5,7 +5,7 @@
 	s > t͡s / in some dialect͡s?
 	t͡s > t͡ʃ / in some dialect͡s?
 	C:[+voice] > C:[-voice] / next to {S,s,l̥}
-	ɣ ʁ > k q / _#
+	{ ɣ, ʁ } > { k, q } / _#
 	ə > a /
 	ə > ∅ / #_
 	i > ∅ / #C:[+dental]_C:[+dental]V
@@ -13,15 +13,15 @@
 	F:[+voice] > F:[-voice] / adjacent to {S,t͡s}
 	F:[+voice] > S / l̥_
 	∅ > n / #_iN (This one is sort of a guess, given a singular example in the text that isn’t really commented upon)
-	t > s / _{k,q}
+	t > s / :{ _k, _q }:
 	u > a / a_
-	ə > i / {u,a}_
+	ə > i / :{ u_, a_ }:
 	v > ∅ / u:[+short]_V:[+short]
 	v > ∅ / V:[+short]_u:[+short]
 	u > ∅ / #_vV
 	iv > j / #_u
-	s > d͡ʒ / {i,u}_V
+	s > d͡ʒ / :{ i_V, u_V }:
 	d͡ʒ > ∅ / i_i
-	ə > ∅ / _d͡ʒ{a,u} except in #U
-	a > ∅ / _d͡ʒa (except in #U?)
+	ə > ∅ / _d͡ʒ{a,u} except in #
+	a > ∅ / _d͡ʒa (except in #?)
 	in > d͡ʒ / _u (possibly only word-initially?)

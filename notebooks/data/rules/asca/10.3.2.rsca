@@ -1,12 +1,12 @@
 @ 10.3.2 - Proto-Oceanic to Hiw
 # citation: thetha, from François, Alexander (2005), “Unraveling the history of the vowels of seventeen north Vanuatu languages”, and François, Alexander (2010), “Phonotactics and the prestopped velar lateral of Hiw” ”ə sometimes assimilates to a following vowel “[W]hen pretonic u was lost, its labialness was usually absorbed onto the previous consonant”
-	p pʷ {c,*j} k q > β βʷ s ɣ ∅
-	β b m > βʷ bʷ mʷ / typically near *u
-	dr *r > d r
+	{ p, pʷ, {c,*j}, k, q } > { β, βʷ, s, ɣ, ∅ }
+	{ β, b, m } > { βʷ, bʷ, mʷ } / typically
+	{ dr, *r } > { d, r }
 	C > ∅ / _#
 	ɲ > n
-	b d ɡ > p t k
-	βʷ bʷ mʷ > w kʷ ŋʷ
+	{ b, d, ɡ } > { p, t, k }
+	{ βʷ, bʷ, mʷ } > { w, kʷ, ŋʷ }
 	l > j
 	s > h
 	h > ∅ (sporadic)
@@ -15,11 +15,11 @@
 	”V > ə / _CV
 	a > e / _CV:[+mid] (sporadic)
 	a > e / _Ci (sporadic)
-	a(C)V:[+high] a(C)V:[+mid] aCa > ɔ(C) a(C) {ɔ,a}(C)ə
-	e(C){V:[-low]} e(C)a > e(C) e(C)ə
-	i(C)V:[+high] i(C)V:[+mid] i(C)a > i(C) i(C)ə {e,i}(C)ə
-	o(C)V:[+high] o(C)V:[+mid] o(C)a > ɵ(C) o(C) ɔ(C)ə
-	u(C)V:[+high] u(C)e u(C)o u(C)a > {u,i}(C) u(C)ə e(C)ə {u,ɵ}(C)ə
+	{ a(C)V:[+high], a(C)V:[+mid], aCa } > { ɔ(C), a(C), {ɔ,a}(C)ə }
+	{ e(C){V:[-low]}, e(C)a } > { e(C), e(C)ə }
+	{ i(C)V:[+high], i(C)V:[+mid], i(C)a } > { i(C), i(C)ə, {e,i}(C)ə }
+	{ o(C)V:[+high], o(C)V:[+mid], o(C)a } > { ɵ(C), o(C), ɔ(C)ə }
+	{ u(C)V:[+high], u(C)e, u(C)o, u(C)a } > { {u,i}(C), u(C)ə, e(C)ə, {u,ɵ}(C)ə }
 	u > ʉ // Cw_
 	{e,i} > ɪ (sporadic)
 	VV > V

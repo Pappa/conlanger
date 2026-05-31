@@ -1,14 +1,14 @@
 @ 43.3 - Proto-Uto-Aztecan to Luiseño
 # citation: Radius Solis, from from Voegelin, Charles F., Florence M. Voegelin, & Kenneth L. Hale (1962), “Typological and Comparative Grammar of Uto-Aztecan: I (Phonology)”. International Journal of American Linguistics 28: Memoir 17 “[I]solated other instances of k → q occur with uncertain conditions”
-	p > v / {V,ɨ}_ (the latter “sometimes”)
-	p > v / “other conditions not known”
-	t > l / medially
+	p > v / :{ V_ (the latter “sometimes”), ɨ_ (the latter “sometimes”) }:
+	p > v / other conditions not known
+	t > l
 	t͡s > t͡ʃ
 	k > q / #_V:[+low]
 	k > q / a_
 	k > x / a_
 	ʔ > ∅ / #_
 	s > ʃ
-	l > n / medially
-	o ɨ > e o
-	V > ∅ / “in some final syllables (conditions are unknown and it varies by dialect)”
+	l > n
+	{ o, ɨ } > { e, o }
+	V > ∅ / in some final syllables (conditions are unknown and it varies by dialect)

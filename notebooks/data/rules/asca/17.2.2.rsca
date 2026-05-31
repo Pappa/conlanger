@@ -1,8 +1,8 @@
 @ 17.2.2 - Common Anatolian to Luwian
 # citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
-	D T > T T:[+lenis] / #_
-	T D > T:[+fortis] T:[+lenis]
-	h h > hh h
+	{ D, T } > { T, T:[+lenis] } / #_
+	{ T, D } > { T:[+fortis], T:[+lenis] }
+	{ h, h } > { hh, h }
 	ḱ:[+long] > z
 	kʷ > w
 	{ḱ,k} > j / _{ e, e:[+long] }
@@ -12,14 +12,14 @@
 	ɡ > d͡ʒ (sporadic)
 	e > i / j_
 	e > a
-	V > V:[+long] / in ”U:[+open]
-	V > V:[+long] / in #”U
+	V > V:[+long] / in :[+open]
+	V > V:[+long] / in #
 	{ o, o:[+long] } > { a, a:[+long] }
 	{d,l} > r “in Hieroglyphic Luwian, occasionally”
 	j > ∅ / z_
-	hh h > h ∅ / ”V:[+long]_u
-	hh h > h ∅ / u_”V:[+long]
-	h > ∅ / _w // at word boundaries
-	hh > ∅ / _{w,m,n,r,l} “medially, and sporadically”
-	D R > D:[+long] R:[+long] / ”e_ in U:[+open]
-	{ɛ,e}:[+long] æ:[+long] > i:[+long] a:[+long]
+	{ hh, h } > { h, ∅ } / V:[+long]_u
+	{ hh, h } > { h, ∅ } / u_V:[+long]
+	h > ∅ / _w
+	hh > ∅ / :{ _w“medially, and sporadically”, _m“medially, and sporadically”, _n“medially, and sporadically”, _r“medially, and sporadically”, _l“medially, and sporadically” }:
+	{ D, R } > { D:[+long], R:[+long] } / e_ in :[+open]
+	{ {ɛ,e}:[+long], æ:[+long] } > { i:[+long], a:[+long] }

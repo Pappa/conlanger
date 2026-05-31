@@ -1,9 +1,9 @@
 @ 10.3.10.1 - Proto-Vanikoro to Buma
 # citation: Pogostick Man, from Ross, Malcolm, and Åshlid Næss (2007), “An Oceanic Origin for Äiwoo, the Language of the Reef Islands?”. Oceanic Linguistics 46(II):456 – 498
-	p t > ∅ {s,k} / _u
+	{ p, t } > { ∅, {s,k} } / _u
 	p > ∅ / _#
 	k > ∅ / #_
 	r > l // _#
-	pʷ bw mʷ > p b m
-	c *R > ∅ {l,∅}
+	{ pʷ, bʷ, mʷ } > { p, b, m }
+	{ c, *R } > { ∅, {l,∅} }
 	ŋ > {ŋ,ɡ} (ŋ remains when _i)

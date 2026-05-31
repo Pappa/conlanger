@@ -1,6 +1,6 @@
 @ 30.3.1.1.9 - Proto-Vhe to Avéno
 # citation: Pogostick Man, from Capo, Hounkpati B.C. (1991), A Comparative Phonology of Gbe
-	ə > e / _{i,j}
-	t d > t͡ʃ d͡ʒ / _{u,i}
-	k ɡ s > t͡s d͡z ʃ / _i
-	t d > t͡s d͡z / _j
+	ə > e / :{ _i, _j }:
+	{ t, d } > { t͡ʃ, d͡ʒ } / :{ _u, _i }:
+	{ k, ɡ, s } > { t͡s, d͡z, ʃ } / _i
+	{ t, d } > { t͡s, d͡z } / _j

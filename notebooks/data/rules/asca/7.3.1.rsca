@@ -4,11 +4,11 @@
 	({C,#}V)ʔ > ({C,#}V:[+long])∅ / _C
 	{ i, i:[+long] } > { u, u:[+long] } / { o, o:[+long] }(C:[-dental])(C:[-dental])_
 	∅ > ʔ / CV:[-long]_#
-	ʃ m > x w / _B
-	ʃ m > x w / B_#
-	ʃ m > x b / { o, o:[+long] }{ _e, _e:[+long] }
-	ʃ k m > s t͡ʃ b / _{E,j}
-	ʃ k m > s t͡ʃ b / E_#
+	{ ʃ, m } > { x, w } / _B
+	{ ʃ, m } > { x, w } / B_#
+	{ ʃ, m } > { x, b } / { o, o:[+long] }{ _e, _e:[+long] }
+	{ ʃ, k, m } > { s, t͡ʃ, b } / :{ _j }:
+	{ ʃ, k, m } > { s, t͡ʃ, b } / E_#
 	(V:[-long])N > ∅ / _#
 	∅ > h / #_V
 	e:[+long] > ei / j_

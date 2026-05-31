@@ -3,11 +3,11 @@
 	n > r
 	ʔ > ∅ / C_
 	kr > kVrV / #_
-	r > ∅ / {C,V}k_{C,V}
-	mn > w / {C,V}_{C,V}
+	r > ∅ / :{ {C,V}k_C, {C,V}k_V }:
+	mn > w / :{ {C,V}_C, {C,V}_V }:
 	sn > t͡sVrV
 	km > hp
-	sk > t͡suk / _”u
-	sk kx > t͡sk hk / _”V
-	sk > ht͡s / ”V_
+	sk > t͡suk / _u
+	{ sk, kx } > { t͡sk, hk } / _V
+	sk > ht͡s / V_
 	∅ > V / x_k

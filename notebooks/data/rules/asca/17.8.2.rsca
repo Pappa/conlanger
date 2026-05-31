@@ -1,15 +1,15 @@
 @ 17.8.2 - Proto-Indo-European to Attic Greek
 # citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects> Vowel contraction (on which the author does not elaborate much) Some “metathesis of quality as well as of quantity” with regards to vowels Pitch-accent lost
 	{H,m̩,n̩} > a
-	bʱ dʱ ɡʱ > pʰ tʰ kʰ
+	{ bʱ, dʱ, ɡʱ } > { pʰ, tʰ, kʰ }
 	s > h / #_
 	s > h / V_V
 	t > t͡s / _i
 	j > h
-	kʷ kʰʷ ɡʷ > t tʰ d / _E
-	kʷ kʰʷ ɡʷ > p pʰ b / _{a,o,C}
-	kʷ kʰʷ ɡʷ > k kʰ ɡ / _u
-	kʷ kʰʷ ɡʷ > k kʰ ɡ / u_
+	{ kʷ, kʰʷ, ɡʷ } > { t, tʰ, d } / _E
+	{ kʷ, kʰʷ, ɡʷ } > { p, pʰ, b } / :{ _a, _o, _C }:
+	{ kʷ, kʰʷ, ɡʷ } > { k, kʰ, ɡ } / _u
+	{ kʷ, kʰʷ, ɡʷ } > { k, kʰ, ɡ } / u_
 	t͡s > s
 	h > ∅
 	ɑ:[+long] > æ:[+long]
@@ -18,9 +18,9 @@
 	t͡ʃ > t / #_
 	t͡ʃ > t:[+long] / medial
 	w > ∅
-	{ u, u:[+long] }ʲ > { y, y:[+long] }ʲ
+	{ uʲ, u:[+long]ʲ } > { yʲ, y:[+long]ʲ }
 	æ:[+long] > ɛ:[+long] (includes diphthongs)
-	ej ow > e:[+long] o:[+long]
+	{ ej, ow } > { e:[+long], o:[+long] }
 	e:[+long] > i:[+long] / _C
 	j > ∅ / V:[+long]_
 	e:[+long] > i:[+long] / _V
@@ -29,19 +29,19 @@
 	h > ∅
 	oj > øj
 	øj > yj (
-	yj ( > y:[+long] sometimes)
-	e o > ɛ ɔ
-	pʰ tʰ kʰ > f θ x
-	b d ɡ > v ð ɣ / V_V
+	{ yj, ( } > { y:[+long], sometimes) }
+	{ e, o } > { ɛ, ɔ }
+	{ pʰ, tʰ, kʰ } > { f, θ, x }
+	{ b, d, ɡ } > { v, ð, ɣ } / V_V
 	d͡z > z
 	V:[+long] > V:[-long]
 	C:[+long] > C:[-long]
-	ɑu ɛu eu > ɑv ɛv ev
+	{ ɑu, ɛu, eu } > { ɑv, ɛv, ev }
 	ɔ > ∅ / in the suffixes -ios and -ion
 	n > ∅ / _#
 	e > i
-	p t k > b d ɡ / N_
+	{ p, t, k } > { b, d, ɡ } / N_
 	y > i
-	ɡ x > j ç / _{ɛ,i}
-	p k > f x / _t
+	{ ɡ, x } > { j, ç } / :{ _ɛ, _i }:
+	{ p, k } > { f, x } / _t
 	”{i,e}V > j”V

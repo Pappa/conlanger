@@ -1,10 +1,10 @@
 @ 42.1.1.1.1 - Proto-Finnish to Standard Finnish
 # citation: Tropylium, from Hakulinen, Lauri (1979), “Suomen kielen rakenne ja kehitys”. Otava; Häkkinen, Kaisa (2004), “Nykysuomen etymologinen sanakirja”. WSOY; Kallio, Petri (2007), “Kantasuomen konsonanttihistoriaa”. Mémoires de la Société Finno-Ougrienne 253. <http://www.sgr.fi/sust/sust253/sust253_kallio.pdf>; and from Janhunen, Juha (2007), “The primary laryngeal in Uralic and beyond”. Mémoires de la Société Finno-Ougrienne 253. <http://www.sgr.fi/sust/sust253/sust253_janhunen.pdf>
-	mb nd ŋɡ > m:[+long] n:[+long] ŋ:[+long]
-	e:[+long] ø:[+long] o:[+long] > ie yø uo
-	pˑ tˑ θˑ kˑ > p t θ k
+	{ mb, nd, ŋɡ } > { m:[+long], n:[+long], ŋ:[+long] }
+	{ e:[+long], ø:[+long], o:[+long] } > { ie, yø, uo }
+	{ pˑ, tˑ, θˑ, kˑ } > { p, t, θ, k }
 	j > i / C_, when initial in a suffix
-	Vh > hV / {j,v,n,r,l}_# (also some double-metathesis triggered by the condition of being m_ ?)
+	Vh > hV / :{ j_# (also some double-metathesis triggered by the condition of being m_ ?), v_# (also some double-metathesis triggered by the condition of being m_ ?), n_# (also some double-metathesis triggered by the condition of being m_ ?), r_# (also some double-metathesis triggered by the condition of being m_ ?), l_# (also some double-metathesis triggered by the condition of being m_ ?) }:
 	sn > ns
 	V > V:[+long] / h_hC
 	V > V:[+long] / _hC (sporadic)
@@ -18,24 +18,24 @@
 	z > @ / _r{i,e}
 	k > z / _j
 	z > @ / _j
-	k > ɣ i / {i,e}_R{i,e}
-	k > ɣ / {A,O,U}_R // R = j
-	ɣ > U / {A,O,U}_R // R = j
+	k > ɣ i / :{ i_R{i,e}, e_R{i,e} }:
+	k > ɣ / :{ A_R, O_R }: // = j
+	ɣ > U / :{ A_R, O_R }: // = j
 	β > ʋ
 	ʋ > ∅ / _UC
-	ið > j / ”V_V
-	lð rð > l:[+long] r:[+long]
-	ð > ∅ // ”V(X)_
+	ið > j / V_V
+	{ lð, rð } > { l:[+long], r:[+long] }
+	ð > ∅ // V{ X_, _ }
 	ɣ > j / C_e
 	ɣ > ʋ / U_U
-	ɣ > ʔ / VV_V // V = U
-	ɣ > ∅ / else
-	h > ∅ / V:[-stress](X)_V
+	ɣ > ʔ / VV_V // V =
+	ɣ > ∅
+	h > ∅ / V:[-stress]{ X_, _ }V
 	AO > {A,O,U}:[+long] / unstressed
 	e > i / A_, when unstressed
 	Ue > e:[+long] / unstressed
 	VU > V:[+long] / _#
-	iU OU > U:[+long] O:[+long]
+	{ iU, OU } > { U:[+long], O:[+long] }
 	æ > a / e(C…)_(C…)o
 	e > ø / #(C…)_y
 	i > y / #(C…)l_y

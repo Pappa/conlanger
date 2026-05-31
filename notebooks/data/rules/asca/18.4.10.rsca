@@ -1,18 +1,15 @@
 @ 18.4.10 - Proto-Tupí-Guaraní to Urubu
 # citation: Pogostick Man, from Lemle, Miriam (1971), âInternal Classification of the Tupi-Guarani Linguistic Family”. In Tupi Studies I, from Summer Institute of Linguistics Publications in Linguistics and Related Fields Publication Number 29.
-	p k > k ∅ / _w
-	t > ʃ / _{i,ı̃}
-	k > k / _#
-	k > ∅ / _#
-	k > k / else
-	k > ʃ / else
-	t͡s > s
-	t͡s > h
-	Vn > V:[+nas] / _# (sometimes)
+	{ p, k } > { k, ∅ } / _w
+	t > ʃ / :{ _i, _ı̃ }:
+	k > k, ∅ / _#
+	k > k, ʃ
+	t͡s > s, h
+	Vn > V:[+nas] / _# (
 	Vŋ > V:[+nas]
-	j b > {j,i} ∅ / _#
-	b > w / else
+	{ j, b } > { {j,i}, ∅ } / _#
+	b > w
 	u > ∅ / k_w
 	u > o // o(C…)_(C…)#
-	aN iN uN > {aN,ã} ı̃ {uN,ũ} / _#
-	ɨ̃ ẽ õ > ∅ {ẽ,e} {o,õ,u,ũ}
+	{ aN, iN, uN } > { {aN,ã}, ı̃, {uN,ũ} } / _#
+	{ ɨ̃, ẽ, õ } > { ∅, {ẽ,e}, {o,õ,u,ũ} }

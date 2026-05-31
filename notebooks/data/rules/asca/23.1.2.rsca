@@ -1,7 +1,7 @@
 @ 23.1.2 - Proto-Lenmichian to Proto-Lencan
 # citation: Pogostick Man, from Wikipedia contributors (2015), “Macro-Chibchan languages”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Macro-Chibchan_languages>, presumably citing Constenla UmaÃ±a, Adolfo (2005), “?‘Existe relación genealógica entre las lenguas misumalpas y las chibchenses?”. Estudios de LingÃ¼Ã­stica Chibcha 24:7 – 85
-	b d > m n / _V:[+nasal] (I’m inferring this from the statement that “:[t]here are also a series…of nasal vowels”)
-	b d > p l
+	{ b, d } > { m, n } / _V:[+nasal] (I’m inferring this from the statement that :[t]here are also a series…of nasal vowels)
+	{ b, d } > { p, l }
 	{ʔ,h} > ∅
 	{s,t͡s} > t͡sʼ
-	o a > {u,o} {a,e}
+	{ o, a } > { {u,o}, {a,e} }

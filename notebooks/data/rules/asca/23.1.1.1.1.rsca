@@ -1,14 +1,13 @@
 @ 23.1.1.1.1 - Proto-Chibchan to Arhuaco
 # citation: Pogostick Man, from Wheeler, Alva (1972), “Proto-Chibchan”. In Matteson, Esther, ed., Comparative Studies in Amerindian Languages 93 – 108
-	s > kh / _(V)k
-	s d > z r / _(V)j
-	t͡s h > s ∅
+	s > kh / :{ _Vk, _k }:
+	{ s, d } > { z, r } / :{ _Vj, _j }:
+	{ t͡s, h } > { s, ∅ }
 	∅ > u / w_V
 	j > ∅ / i_V
-	j > j
-	j > ∅
+	j > j, ∅
 	e > a
 	i > ∅ / a_
 	ia > ə (“unspecified”)
-	i > ∅ / C”V(C)_
-	i > ∅ / _(C)”V
+	i > ∅ / CV{ C_, _ }
+	i > ∅ / :{ _C”V, _”V }:

@@ -1,10 +1,10 @@
 @ 35.1.12 - Proto-Central Salish to Pentlatch
 # citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology and Sound Correspondences”. From the 17th International Conference on Salish and Neighboring Languages
-	t͡s t͡s’ > s t͡s’
+	{ t͡s, t͡s’ } > { s, t͡s’ }
 	lʲ > l
 	xʲ > ʃ
 	ʔ > ∅ / V3_O
-	ʔ > ∅ / V3R_{V,#}
+	ʔ > ∅ / :{ V3R_V, V3R_# }:
 	i1 > ə1
 	{a3~ə3} > ə3
 	{a1~i1} > {i1,ə1}

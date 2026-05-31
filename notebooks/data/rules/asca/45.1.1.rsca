@@ -1,6 +1,6 @@
 @ 45.1.1 - Proto-Pai to Chapai
 # citation: Pogostick Man, from Wares, Alan C. (1954?), “Three Pai Dialects of Lower California”. Summer Institute of Linguistics Bartholomew Collection of Unpublished Materials Stress lost?
-	t͡ʃ > ʃ / _{w,i}
+	t͡ʃ > ʃ / :{ _w, _i }:
 	t͡ʃ > ∅ / _xʷ
 	t͡ʃ > s
 	t > t͡ʃ // n_
@@ -8,6 +8,6 @@
 	b > p
 	o > u
 	s > ʂ
-	ʔ > ∅ / _{ɲ,j}
+	ʔ > ∅ / :{ _ɲ, _j }:
 	{w,j} > ∅ / a_
 	V:[+long] > V ?

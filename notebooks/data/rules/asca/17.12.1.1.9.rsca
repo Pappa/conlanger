@@ -5,19 +5,19 @@
 	i > j / V_V
 	i > j / _V
 	{b,v,w} > ∅ / V_V
-	au ai > o e
-	h > ∅ / {#,C}_
+	{ au, ai } > { o, e }
+	h > ∅ / :{ #_, C_ }:
 	m > ∅ / _#
-	∅ > i / _s (“:[m]ainly Logudorese”)
-	nd {l:[+long],ld} > ɳɖ ɖ:[+long] / V_V
+	∅ > i / _s (:[m]ainly Logudorese)
+	{ nd, {l:[+long],ld} } > { ɳɖ, ɖ:[+long] } / V_V
 	t > k / s_l (sporadic)
 	l > ∅ / rk_ (sporadic)
 	r > l / _C (sporadic)
 	l > r / C_ (sporadic)
-	{i,j} > d͡ʒ / Vr_V (“dialectal”)
+	{i,j} > d͡ʒ / Vr_V (dialectal)
 	v > b / #_
-	S:[-voice] > S:[+voice] / V_”V
-	kw ɡw > p:[+long] b:[+long] / #_ (“:[o]nly Logudorese”)
+	S:[-voice] > S:[+voice] / V_V
+	{ kʷ, ɡʷ } > { p:[+long], b:[+long] } / #_ (:[o]nly Logudorese)
 	w > ∅ / #k_V
 	k > t͡s / _i
 	{p,k}s > s:[+long]
@@ -29,10 +29,10 @@
 	t > d / V_rV
 	sk > s:[+long]
 	{i,j} > ɡ / #_e
-	d > ∅ / V_{i,j}
-	n{i,j} t{i,j} > nd͡ʒ t͡s / _V
-	d > r / V_V (“:[s]ome Campidanese”)
-	b d ɡ > β ð ɣ / “except in Nuorese”
+	d > ∅ / :{ V_i, V_j }:
+	{ n{i,j}, t{i,j} } > { nd͡ʒ, t͡s } / _V
+	d > r / V_V (:[s]ome Campidanese)
+	{ b, d, ɡ } > { β, ð, ɣ } / except in Nuorese
 	ɡn > n:[+long]
 	r > ur:[+long] / #_e / Logudorese
 	r > ar:[+long] / #_ʲB / Logudorese

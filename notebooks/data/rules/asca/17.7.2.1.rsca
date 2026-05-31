@@ -1,17 +1,17 @@
 @ 17.7.2.1 - West Germanic to Anglo-Frisian
 # citation: Siride? & Pogostick Man, the latter citing Wikipedia contributors (2014), “Anglo-Frisian languages”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Anglo-Frisian_languages>; Wikipedia contributors (2014), “Old Frisian”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Old_Frisian>; and Wikipedia contributors (2014), “Old English phonology”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Old_English_phonology> θ resists change to d until the 14th Century
-	a > ɑ̃ / _N (short only)
+	a > ɑ̃ / _N ()
 	VN > Ṽ:[+long] / _F
-	a > æ:[+long] / short only, includes diphthongs // B or *ã in next syllable
-	k ɡ > t͡ʃ j(?)
+	a > æ:[+long] / , includes diphthongs // B or *ã in next syllable
+	{ k, ɡ } > { t͡ʃ, j(?) }
 	æ:[+long] > a:[+long] “under to:[sic] the influence of neighboring consonant͡s”, but the article doesn’t elaborate
 	æ:[+long] > e:[+long]
 	æu > au (æ / _B in general?)
 	au (æ > a / _B in general?)
 	a:[+long] > æ:[+long] // _N or if nasalized
-	i o > e a / unstressed
-	ai au eu > {e:[+long],a:[+long]} a:[+long] ia
-	ia iu > ja:[+long] ju:[+long]
+	{ i, o } > { e, a } / unstressed
+	{ ai, au, eu } > { {e:[+long],a:[+long]}, a:[+long], ia }
+	{ ia, iu } > { ja:[+long], ju:[+long] }
 	a > æ / , or if *B or *ã in next syllable // _N or if nasalized
 	h > ∅ / V_V
 	{i,u} > ∅ / -# // VC_

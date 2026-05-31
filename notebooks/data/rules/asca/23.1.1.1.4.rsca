@@ -1,13 +1,11 @@
 @ 23.1.1.1.4 - Proto-Chibchan to Marocacero
 # citation: Pogostick Man, from Wheeler, Alva (1972), “Proto-Chibchan”. In Matteson, Esther, ed., Comparative Studies in Amerindian Languages 93 – 108
-	s > t͡s / _i
-	s > ʃ / _i
-	s > s
-	s > t͡s
-	d(V)j s(V)j > lʲ d͡ʒ
+	s > t͡s, ʃ / _i
+	s > s, t͡s
+	{ d(V)j, s(V)j } > { lʲ, d͡ʒ }
 	d > l
 	a > ∅ / _i
 	e > a
 	i > ə / oC_
-	i > ∅ / C”V(C)_
-	i > ∅ / _(C)”V
+	i > ∅ / CV{ C_, _ }
+	i > ∅ / :{ _C”V, _”V }:

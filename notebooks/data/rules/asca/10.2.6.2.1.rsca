@@ -1,32 +1,32 @@
 @ 10.2.6.2.1 - Proto-Kenyah to Òma Lóngh
 # citation: Whimemsz, from Blust, Robert (2007), “Òma Lóngh Historical Phonology”. Oceanic Linguistics 46(1):1 – 53
-	bʱ dʱ d͡zʱ ɡʱ > p t c k
+	{ bʱ, dʱ, d͡zʱ, ɡʱ } > { p, t, c, k }
 	i > e / _k#
 	i > iə / _ŋ#
 	p > k / u_#
 	u > o / _k#
-	u > o / _ŋ# “(sporadically failed to occur)”
-	u > ɯ / _(C)# // _ʔ#
-	a > o / _# “(not in all forms)”
-	ʔ > ∅ / _# “(but aʔ → əʔ in some forms)”
+	u > o / _ŋ# (sporadically failed to occur)
+	u > ɯ / :{ _C#, _# }: // _ʔ#
+	a > o / _# (not in all forms)
+	ʔ > ∅ / _# (but aʔ → əʔ in some forms)
 	k > ʔ / _#
-	a > ɛ / {t,n}_#
-	{p,t} n > c̚ ɲ / {i,ɛ}_#
+	a > ɛ / :{ t_#, n_# }:
+	{ {p,t}, n } > { c̚, ɲ } / :{ i_#, ɛ_# }:
 	m > ɲ / i_#
-	ai̯ au̯ > ɛ ɔ
+	{ ai̯, au̯ } > { ɛ, ɔ }
 	{ui̯,iu̯} > e
-	i u > e o / _CV:[+close-mid](C)# “(iə is treated as close mid for this change)”
-	i u > ɛ ɔ / _CV:[+open-mid](C)#
-	i u > e o / _Cɯ#
+	{ i, u } > { e, o } / _CV:[+close-mid]{ C#, # } (iə is treated as close mid for this change)
+	{ i, u } > { ɛ, ɔ } / _CV:[+open-mid]{ C#, # }
+	{ i, u } > { e, o } / _Cɯ#
 	ŋ > ŋ̊ / _#
-	{p,t} {m,n} > k ŋ / ɯ_#
-	i u > əj əw / _V(C)#
-	j w > z v
+	{ {p,t}, {m,n} } > { k, ŋ } / ɯ_#
+	{ i, u } > { əj, əw } / _V{ C#, # }
+	{ j, w } > { z, v }
 	p > f / #_
 	ə > ∅ / #_
-	p k > f ɣ / V_V // ”ə_V
-	d > r / V_V “(irregular)”
+	{ p, k } > { f, ɣ } / V_V // ə_V
+	d > r / V_V (irregular)
 	d͡z > ɟ / V_V
-	b d d͡z ɡ > p t c k / N_
-	N > ∅ / _S “(sporadic)”
+	{ b, d, d͡z, ɡ } > { p, t, c, k } / N_
+	N > ∅ / _S (sporadic)
 	h > ∅ / V_V

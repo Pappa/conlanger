@@ -1,37 +1,37 @@
 @ 17.7.3.1.1 - Old Norse to Early Icelandic
 # citation: Pogostick Man, from Theiling, Henrik, http://www.kunstsprachen.de/s17/rules.sch
 	k > ç / _#
-	n > ŋ / _{k,ɡ}
-	t > ð / V_# “in some verbal endings”
+	n > ŋ / :{ _k, _ɡ }:
+	t > ð / V_# in some verbal endings
 	∅ > u / C_r#
 	wa:[+long] > wo
-	ɒ ɒ:[+long] > ø a:[+long]
+	{ ɒ, ɒ:[+long] } > { ø, a:[+long] }
 	ø:[+long] > æ
-	u o a ø y e i > u:[+long] o:[+long] a:[+long] øi y:[+long] ei i:[+long] / _{ɲc,ɲɟ,ŋk,ŋɡ}
-	ɡ ɟ > ɣ j / V_V
+	{ u, o, a, ø, y, e, i } > { u:[+long], o:[+long], a:[+long], øi, y:[+long], ei, i:[+long] } / :{ _ɲc, _ɲɟ, _ŋk, _ŋɡ }:
+	{ ɡ, ɟ } > { ɣ, j } / V_V
 	ɡ > ɣ / V_#
-	hj > ç
-	u o a ø:[+long] e:[+long] y i > ʏɪ oi ai øi ei y:[+long] i:[+long] / _j
+	hʲ > ç
+	{ u, o, a, ø:[+long], e:[+long], y, i } > { ʏɪ, oi, ai, øi, ei, y:[+long], i:[+long] } / _j
 	a:[+long] > ai / _j
-	e > ei / _{ɣ,j}
-	O > ∅ / {F:[-same POA],r,l}_O
+	e > ei / :{ _ɣ, _j }:
+	O > ∅ / :{ F:[-same POA]_O, r_O, l_O }:
 	S > ∅ / N:[+same POA]_S
 	{{ l, l:[+long] },rl} > ɬ / v_#
 	N > N:[-voice] / O_#
-	{{ l, l:[+long] },rl} C > ɬ C:[-voice] / _{S:[-voice],s}
+	{{ l, l:[+long] },rl} C > ɬ C:[-voice] / :{ _S:[-voice], _s }:
 	r > r̥ / S:[-voice] / _#
 	{{ l, l:[+long] },rl} C > ɬ C:[-voice] / S_ // S:[+long]_
 	{{ l, l:[+long] },rl} r:[+long] > dɬ r̥ / _#
-	S:[-voice]:[+long] S:[+voice]:[+long] > ʰS S:[-voice]:[+long]
-	S:[-voice] > ʰS / _{l,ɬ,m,n}
+	{ S:[-voice]:[+long], S:[+voice]:[+long] } > { ʰS, S:[-voice]:[+long] }
+	S:[-voice] > ʰS / :{ _l, _ɬ, _m, _n }:
 	S:[-voice] > Sʰ / #v_V
 	S:[+voice] > S:[-voice]
-	p t k > f θ x / _{S,F:[-voice]}
-	b d {ɡ,ɣ} > p t k / _S
-	F > S:[-voice] / _{l,N}
-	u o:[+long] a:[+long] ʏɪ {y,i} {y,i}:[+long] æ:[+long] e:[+long] ey > ʏ ou au ai y ɪ i je ei
+	{ p, t, k } > { f, θ, x } / :{ _S, _F:[-voice] }:
+	{ b, d, {ɡ,ɣ} } > { p, t, k } / _S
+	F > S:[-voice] / :{ _l, _N }:
+	{ u, o:[+long], a:[+long], ʏɪ, {y,i}, {y,i}:[+long], æ:[+long], e:[+long], ey } > { ʏ, ou, au, ai, y, ɪ, i, je, ei }
 	w > v
-	V > V:[+long] / _(C)#, in monosyllables
+	V > V:[+long] / _{ C#, # }, in monosyllables
 	V > V:[+long] / , in polysyllables // _CCV
 	{n̥n,nn̥ > tn̥ / V_
 	n:[+long] > tn̥ / V_#
@@ -46,9 +46,9 @@
 	r̥l > t͡ɬ
 	{l:[+long],rl} > t͡ɬ / _#
 	{l:[+long],rl} > tl
-	h > k / #_{v,w}
+	h > k / :{ #_v, #_w }:
 	hl > ɬ / #_
-	hr hn > r̥ n̥ / #_
+	{ hr, hn } > { r̥, n̥ } / #_
 	v > ∅ / {u,o,a}:[+long]_
 	n̥ > m̥ / p_#
 	C:[+long] > C:[-long]

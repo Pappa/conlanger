@@ -3,30 +3,30 @@
 	t͡s > s / ,j} // _{i
 	n > ∅ / _s
 	j > ∅ / _t͡s
-	V > V:[+long] / _{t,kʷ,s,n,r,j,w} “in even penultimate syllables”
+	V > V:[+long] / :{ _t“in even penultimate syllables”, _kʷ“in even penultimate syllables”, _s“in even penultimate syllables”, _n“in even penultimate syllables”, _r“in even penultimate syllables”, _j“in even penultimate syllables”, _w“in even penultimate syllables” }:
 	a > æ / _{ ra, ra:[+long] }
 	a > e / _{ ro, ro:[+long] }
 	ã > ẽ / _rõ:[+long]
 	{ a, a:[+long] } > { æ, æ:[+long] } / r_
-	h > ∅ / _{tk,nh,sC,C#}
+	h > ∅ / :{ _tk, _nh, _sC, _C# }:
 	h > ∅ / #_w
 	h > ∅ / w_j
-	hw > ∅ / õ_
-	w > ∅ / _{r,j}
-	r > n / _(h)j
+	hʷ > ∅ / õ_
+	w > ∅ / :{ _r, _j }:
+	r > n / :{ _hj, _j }:
 	r > ∅ / Vh_
-	Vh > V:[+long] / _{n,w,j}
+	Vh > V:[+long] / :{ _n, _w, _j }:
 	h > ∅ / V_V
-	r > j / C:[-glottal](h)_{{ o, o:[+long] }{ ,õ, ,õ:[+long] }
+	r > j / :{ C:[-glottal](h)_{ o{ ,õ, ,õ:[+long] }, C:[-glottal](h)_o:[+long]{ ,õ, ,õ:[+long] } }:
 	r > h / s_
-	r > j / { i, i:[+long] }_V
+	r > j / :{ i_V, i:[+long]_V }:
 	r > w / {{ o, o:[+long] }{ ,õ, ,õ:[+long] }}_V
 	r > ∅
-	o > o:[+long] / _{a:[+long],æ:[+long]}
+	o > o:[+long] / :{ _a:[+long], _æ:[+long] }:
 	V:[+long] > V / V_
 	V”V > ”VV
 	{ a, a:[+long] } > { ẽ, ẽ:[+long] } / adjacent to a nasal vowel
-	{ ẽ, ẽ:[+long] } > { e, e:[+long] } / _{{ e, e:[+long] }{ ,o, ,o:[+long] }
+	{ ẽ, ẽ:[+long] } > { e, e:[+long] } / :{ _{ e{ ,o, ,o:[+long] }, _e:[+long]{ ,o, ,o:[+long] } }:
 	ʔ > ∅ / _nkʷ
 	n > t / _kʷ
 	n > t / ʔ_#
@@ -34,14 +34,14 @@
 	C > ∅ / s_#
 	C:[-glottal] > ∅ / _s#
 	k > ∅ / _ht͡s
-	t > h / _{n,t}
+	t > h / :{ _n, _t }:
 	t > ∅ / k_#
 	{ths,tt͡s} > t͡sh
-	{ a, a:[+long] } { æ, æ:[+long] } > { õ, õ:[+long] } { ẽ, ẽ:[+long] } / n_
+	{ {, a,, a:[+long], }, {, æ,, æ:[+long], } } > { {, õ,, õ:[+long], }, {, ẽ,, ẽ:[+long], } } / n_
 	{ a, a:[+long] } > { õ, õ:[+long] } / V:[+nas]H_
 	{ a, a:[+long] } > { õ, õ:[+long] } / V:[+nas]({ʔ,s})w_
-	{ ẽ, ẽ:[+long] } { õ, õ:[+long] } > { ɛ̃, ɛ̃:[+long] } { ɔ̃, ɔ̃:[+long] }
+	{ {, ẽ,, ẽ:[+long], }, {, õ,, õ:[+long], } } > { {, ɛ̃,, ɛ̃:[+long], }, {, ɔ̃,, ɔ̃:[+long], } }
 	∅ > h / k_n
-	— t kʷ > d ɡʷ / _{V,R}
+	— t kʷ > d ɡʷ / :{ _V }:
 	— s > ʃ / _j
-	— a e o > ə ɪ ʊ / C_{C,i:[-long]}
+	— a e o > ə ɪ ʊ / :{ C_C, C_i:[-long] }:

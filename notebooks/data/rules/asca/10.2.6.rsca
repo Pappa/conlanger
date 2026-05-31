@@ -5,14 +5,14 @@
 	{ʔ,h} > ∅ / V:[+high]_V
 	h > ∅ / _#
 	h > ʔ / V_V
-	h > ʔ / a_{i,u}
+	h > ʔ / :{ a_i, a_u }:
 	ə > ∅ / adjacent to a vowel
-	a > ə / _UU(U…)#
+	a > ə / _UU{ …#, # }
 	ə > ∅ / _V
 	ə > ∅ VC_CV
 	C > C:[+long] / ə_V (?)
 	{ ɟ, ɟ:[+long] } > { d, d:[+long] }
 	b:[+long] d:[+long] d͡z:[+long] ɡ:[+long] > bʱ dʱ d͡zʱ ɡʱ (Whimemsz says these become “voiced stops with voiceless releases. . .treated as unit phonemes, not clusters)”
-	ə > ∅ / #_UU(U…)# “(i.e., in word-initial position in prepenultimate syllables)
-	p:[+long] t:[+long] c:[+long] k:[+long] > p t c k
+	ə > ∅ / #_UU{ …#, # } (i.e., in word-initial position in prepenultimate syllables)
+	{ p:[+long], t:[+long], c:[+long], k:[+long] } > { p, t, c, k }
 	c > s

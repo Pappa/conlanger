@@ -1,27 +1,27 @@
 @ 37.1.2.2 - Proto-Northern Iroquoian to Huron
 # citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg “Some known changes in dialects other than pre-Wyandot:”
-	s > ʃ / ,t,kʷ,w} “or when part of the affricate /t͡s/” // _{n
+	s > ʃ / ,t,kʷ,w} or when part of the affricate /t͡s/ // _{n
 	t͡s > ʃ / _r
 	t͡s > s / ,j} // _{i
-	n > ∅ / t(h)_
+	n > ∅ / t{ h_, _ }
 	n > ∅ / _s
-	n > ∅ / _i “(in pronominal prefixes only)”
+	n > ∅ / _i (in pronominal prefixes only)
 	k > i / #_n
 	k > ∅ / _n
-	n hn sC > t th Ch / s_
-	k > h / _{t,t͡s,s,ʃ}
-	k > x / {#,R,ʔ,V}_{V,ʔ,R,#}
+	{ n, hn, sC } > { t, th, Ch } / s_
+	k > h / :{ _t, _t͡s, _s, _ʃ }:
+	k > x / :{ {#,,ʔ,V}_V, {#,,ʔ,V}_ʔ, {#,,ʔ,V}_# }:
 	kʷ > xʷ / V_V
-	t > k / _(h)w
+	t > k / :{ _hw, _w }:
 	t > ∅ / _kʷ
 	j > ∅ / t͡s_
 	j > ∅ / #_V
-	j > ∅ / V_{V,#}
+	j > ∅ / :{ V_V, V_# }:
 	{r,w} > ∅ / _j
 	w > ∅ / #_
-	w > ∅ / _{r,#}
+	w > ∅ / :{ _r, _# }:
 	h > ∅ / #_w
-	∅ > k / s_(h)w
+	∅ > k / :{ s_hw, s_w }:
 	∅ > a / CC_ʔ
 	r > h / ʃ_
 	t > k / _r

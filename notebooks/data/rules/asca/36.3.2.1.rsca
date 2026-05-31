@@ -1,28 +1,28 @@
 @ 36.3.2.1 - Proto-rGyalrongic to bTshan La
 # citation: Pogostick Man, from Nagano, Yashuiki (1979), “A Historical Study of rGyarong Initials and Prefixes”. Linguistics of the Tibeto-Burman Area 4(2):44 – 68; and Nagano, Yashuiki (1979), “A Historical Study of rGyarong Rhymes”. Linguistics of the Tibeto-Burman Area 5(1):37 – 47 Initials: Rhymes:
-	p b çp çb sP rP Np Nb pr {br,pj} bj > pʰ p ʝb çp sp rpʰ mpʰ mb br pʰj pj
+	{ p, b, çp, çb, sP, rP, Np, Nb, pr, {br,pʲ}, bʲ } > { pʰ, p, ʝb, çp, sp, rpʰ, mpʰ, mb, br, pʰj, pʲ }
 	P > p / l_
-	t d Nt Nd st sd çT tr (ç)dr [+ cons, - fr, + bk, + hi, - lo]T > tʰ t Ntʰ md zd st çtj trh (ç)tr kt
-	k sk kr ɡ Pɡ sɡ Nɡ (s)ɡr ç[+ cons, - fr, + bk, + hi, - lo] r[+ cons, - fr, + bk, + hi, - lo] [+ cons, - fr, + bk, + hi, - lo]ç > kʰ zɡw dr Nɡ pk sk mk (s)kr çk rɡj ɡçkr
-	(ʔ)kj (s)ɡj Nkj > (k)tç (s)kj Nd͡ʒ
-	çr Nç > dr mkʰj
+	{ t, d, Nt, Nd, st, sd, çT, tr, (ç)dr, [+ cons, - fr, + bk, + hi, - lo]T } > { tʰ, t, Ntʰ, md, zd, st, çtʲ, trh, (ç)tr, kt }
+	{ k, sk, kr, ɡ, Pɡ, sɡ, Nɡ, (s)ɡr, ç[+ cons, - fr, + bk, + hi, - lo], r[+ cons, - fr, + bk, + hi, - lo], [+ cons, - fr, + bk, + hi, - lo]ç } > { kʰ, zɡʷ, dr, Nɡ, pk, sk, mk, (s)kr, çk, rɡʲ, ɡçkr }
+	{ (ʔ)kʲ, (s)ɡʲ, Nkʲ } > { (k)tç, (s)kʲ, Nd͡ʒ }
+	{ çr, Nç } > { dr, mkʰj }
 	[+ cons, - fr, + bk, + hi, - lo] > ʔ / _s
 	[+ cons, - fr, + bk, + hi, - lo] > k / _ç
 	C:[+strident] > s / _w
 	Pç > mʃ
 	TS > d͡ʒ / l_
-	NTS PTS [+ cons, - fr, + bk, + hi, - lo]TS sTS çTS > {Nd͡z,mt͡s} kt͡s(ʰ) pt͡sʰ st͡s {st͡s,rj}
-	(r)t͡s (r)d͡z > (r)t͡sʰ (r)t͡s
+	{ NTS, PTS, [+ cons, - fr, + bk, + hi, - lo]TS, sTS, çTS } > { {Nd͡z,mt͡s}, kt͡s(ʰ), pt͡sʰ, st͡s, {st͡s,rʲ} }
+	{ (r)t͡s, (r)d͡z } > { (r)t͡sʰ, (r)t͡s }
 	∅ > j / çm_
-	N > m / _{ŋ.nj}
-	rnj > rɲ ?
+	N > m / :{ _ŋ.nʲ }:
+	rnʲ > rɲ ?
 	w > ʔ / something to do with either back vowels or prefixes
 	n > ∅ / a_
 	ŋ > ∅ / i_
 	u > a / _k
-	u > i / _{r,s}
+	u > i / :{ _r, _s }:
 	o > e / _s
 	a > e / _m
 	aj > i
-	ew iw > im ju
+	{ ew, iw } > { im, ju }
 	i > e / _s

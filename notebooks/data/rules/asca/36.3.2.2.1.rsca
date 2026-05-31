@@ -1,27 +1,25 @@
 @ 36.3.2.2.1 - Proto-rGyalrongic to Kham To
 # citation: Pogostick Man, from Nagano, Yashuiki (1979), “A Historical Study of rGyarong Initials and Prefixes”. Linguistics of the Tibeto-Burman Area 4(2):44 – 68; and Nagano, Yashuiki (1979), “A Historical Study of rGyarong Rhymes”. Linguistics of the Tibeto-Burman Area 5(1):37 – 47 Initials: Rhymes:
-	p b pr br çp > p.j p br pj ʃb
+	{ p, b, pr, br, çp } > { p.j, p, br, pʲ, ʃb }
 	d(r) > t
 	çT > ʃt
 	r > s / _k
-	k (N)ɡ > k. (m)k
-	Nkj ɡj sɡj > mj t͡s st͡ʃj
+	{ k, (N)ɡ } > { k., (m)k }
+	{ Nkʲ, ɡʲ, sɡʲ } > { mʲ, t͡s, st͡ʃʲ }
 	sɡr > skr
-	C:[+strident]w ç Pç Nç çl > s ʂ ʃ mʃ ʃl
-	t͡s {d͡z,[+ cons, - fr, + bk, + hi, - lo]TS} NTS rd͡z d͡zl d͡ʒ > s t͡s {d͡z,mt͡ʃ.} rt͡s t͡sl t͡ʃ.
+	{ C:[+strident]w, ç, Pç, Nç, çl } > { s, ʂ, ʃ, mʃ, ʃl }
+	{ t͡s, {d͡z,[+ cons, - fr, + bk, + hi, - lo]TS}, NTS, rd͡z, d͡zl, d͡ʒ } > { s, t͡s, {d͡z,mt͡ʃ.}, rt͡s, t͡sl, t͡ʃ. }
 	ç > ʃ / _N
-	ŋʷ N{ŋ,nj} > ȵ mɳ
+	{ ŋʷ, N{ŋ,nʲ} } > { ȵ, mɳ }
 	j > ∅ / {ʃ,r}n_
 	u > o / _k
 	uj > os
 	op > u
-	at > at
-	at > ɛ
-	at > ed
+	at > at, ɛ, ed
 	an > ia
-	ŋ > ɳ / {o,a}_
+	ŋ > ɳ / :{ o_, a_ }:
 	aj > oi
-	e > i / _{s,#}
+	e > i / :{ _s, _# }:
 	et > o
 	ej > ai
 	i > o / _m

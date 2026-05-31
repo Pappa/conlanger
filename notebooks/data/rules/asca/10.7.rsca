@@ -1,5 +1,5 @@
 @ 10.7 - Proto-Austronesian to Proto-Rukai
 # citation: Pogostick Man, from Chen, Chun-Mei (2006), A Comparative Study on Formosan Phonology: Paiwan and Budai Rukai 313 – 320 Something about echo-vowel epenthesis and stress that isn’t really clear from skimming it
-	{t,c} {d,z} d > t d ɖ
-	R l L > {r,ʔ} ɭ l
+	{ {t,c}, {d,z}, d } > { t, d, ɖ }
+	{ R, l, L } > { {r,ʔ}, ɭ, l }
 	S s d *C > s θ ð t͡s (not sure what *C stands for here)

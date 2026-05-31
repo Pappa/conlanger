@@ -1,22 +1,20 @@
 @ 6.2.2.1.14 - Classical Arabic to Moroccan Arabic
 # citation: Pogostick Man, from http://en.wikipedia.org/wiki/Moroccan_Arabic
 	t > t͜s / plain t only, distinguishable from the sequence t͡s
-	{a,i} > ə / short only; the change of short a blocked for some speakers before ħ ʕ
-	u > ə / short only // near “a labial or velar consonant”
+	{a,i} > ə / ; the change of short a blocked for some speakers before ħ ʕ
+	u > ə
 	C:[+labial/+velar] > ʷ / adjacent to short u
-	{u,ə} > ∅ // C_C(C)#
-	ə > a / near ħ ʕ
-	ə > ɐ / near emphatics
-	ə > ɪ / else
-	u > ʊ / short only
-	a:[+long] i:[+long] u:[+long] > ɑ:[+long] e:[+long] o:[+long] / near emphatics
-	a:[+long] > æ:[+long] / else
-	CˤC > CCˤ
-	Cˤ > C / {#,V}_V
-	q > q
-	q > ɡ
-	d͡ʒ > d / if s or z occur somewhere else in the word
-	d͡ʒ > ɡ / if s or z occur somewhere else in the word
-	d͡ʒ > ʒ / else
+	{u,ə} > ∅ // C_C{ C#, # }
+	ə > a
+	ə > ɐ
+	ə > ɪ
+	u > ʊ
+	{ a:[+long], i:[+long], u:[+long] } > { ɑ:[+long], e:[+long], o:[+long] }
+	a:[+long] > æ:[+long]
+	C:[+phargyn]C > CCˤ
+	C:[+phargyn] > C / :{ #_V, V_V }:
+	q > q, ɡ
+	d͡ʒ > d, ɡ / if s or z occur somewhere in the word
+	d͡ʒ > ʒ
 	s > ʃ / if ʃ is somewhere in the stem after it
 	z > ʒ / if ʒ is somewhere in the stem after it

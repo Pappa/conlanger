@@ -3,12 +3,12 @@
 	h > ∅
 	*L > l
 	nr > d
-	b d ɡ > m n ŋ / _C
-	b d ɡ > p t k / _#
+	{ b, d, ɡ } > { m, n, ŋ } / _C
+	{ b, d, ɡ } > { p, t, k } / _#
 	p > b / V_V
 	u > e / ɣ_# (? this change is a bit unclear)
 	ɣ > ∅ / _#
 	k > ∅ (perhaps doesn’t always happen but happens often)
-	{s,t} > h / _{n,l,r}
-	t > r // at word boundaries
+	{s,t} > h / :{ _n, _l, _r }:
+	t > r
 	ə > i

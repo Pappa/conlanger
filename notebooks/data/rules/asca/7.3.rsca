@@ -6,14 +6,14 @@
 	W > ∅ / { C_i, C_i:[+long] }
 	e > i / #_
 	θ > ʃ / C_
-	θ h {s,m,n,r} > ʃ ∅ ʔ / _C
+	{ θ, h, {s,m,n,r} } > { ʃ, ∅, ʔ } / _C
 	t͡ʃ > ʃ / _p
 	W > j / C_
-	W > n / {#,V}_
-	p k > k ∅
+	W > n / :{ #_, V_ }:
+	{ p, k } > { k, ∅ }
 	s > n / #_
-	s > h / {V,C}_
-	r > n / {#,V}_
+	s > h / :{ V_, C_ }:
+	r > n / :{ #_, V_ }:
 	r > h / C_
 	t͡ʃ > θ
 	V:[+long] > V:[-long] / _CC

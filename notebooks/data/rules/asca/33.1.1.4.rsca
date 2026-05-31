@@ -1,19 +1,13 @@
 @ 33.1.1.4 - Proto-Costanoan to Rumsen
 # citation: CatDoom, from Callaghan, Catherine A. (1983), “Proto-Utian Derivational Verb Morphology”. Proceedings of the 1982 Conference on Far Western American Indian Languages, Occasional Papers on Linguistics Number 11; and Callaghan, Catherine A. (1988), “Proto-Utian Stems” in In Honor of Mary Haas
 	tʲ > t͡ʃ
-	h > h
-	h > x
-	h > ʔ
-	ʈ > ʈ / {a:[+long],o:[+long]}_
-	ʈ > t͡ʃ / {a:[+long],o:[+long]}_
-	ʈ > ʈ / {i,e,o}$_
-	ʈ > t͡ʃ / {i,e,o}$_
-	ʈ > ʈ / _{j,ɾ}
-	ʈ > t͡ʃ / _{j,ɾ}
+	h > h, x, ʔ
+	ʈ > ʈ, t͡ʃ / :{ a:[+long]_, o:[+long]_ }:
+	ʈ > ʈ, t͡ʃ / {i,e,o}$_
+	ʈ > ʈ, t͡ʃ / :{ _j, _ɾ }:
 	kʷ > k / #_
-	kʷ > k / else
-	kʷ > w / else
+	kʷ > k, w
 	l > ɾ / V_V
 	a > e / il_
-	i > e / _C(C)oC
+	i > e / _C{ Co, o }C
 	o > u / _(C…)i

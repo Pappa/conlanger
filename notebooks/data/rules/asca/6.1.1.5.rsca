@@ -3,7 +3,7 @@
 	b > w / V_V
 	pʼ > p / V_
 	pʼ > b
-	z > j / {#,V}_
+	z > j / :{ #_, V_ }:
 	z > d͡ʒ:[+long] / Vj_
 	z:[+long] > d͡ʒ:[+long]
 	s > ʃ // V_
@@ -16,10 +16,8 @@
 	s > ʃ / #_
 	s > s / V_$#
 	s > ʃ
-	s > s / V_
-	s > t͡ʃ:[+long] / V_
-	h > h / #_
-	h > ∅ / #_
+	s > s, t͡ʃ:[+long] / V_
+	h > h, ∅ / #_
 	h > w / #_
 	l > d / #_VC
 	l > n / #_Vb

@@ -5,58 +5,58 @@
 	Cʱ > C
 	e:[+long] > i:[+long] / ,u} // _{i
 	t:[+long] > s:[+long]
-	p > f / {V,#}_
+	p > f / :{ V_, #_ }:
 	f > x / _O
-	f > ∅ / else
-	r̩ l̩ > {ri,ra} {li,la} / _{S,R} (which vowel crops up is unpredictable)
-	r̩ l̩ > {ra,ar} {la,al} / _{s,CC,V,#} (the result͡s are unpredictable)
-	m̩ n̩ > am an / _{s,({m,j,w)V}
-	m̩ n̩ > em en / else
+	f > ∅
+	{ r̩, l̩ } > { {ri,ra}, {li,la} } / :{ _S(which vowel crops up is unpredictable) }:
+	{ r̩, l̩ } > { {ra,ar}, {la,al} } / :{ _s(the result͡s are unpredictable), _CC(the result͡s are unpredictable), _V(the result͡s are unpredictable), _#(the result͡s are unpredictable) }:
+	{ m̩, n̩ } > { am, an } / :{ _s, _({m, _j, _w)V }:
+	{ m̩, n̩ } > { em, en }
 	ɡʷ > b / #_V , _u:[+long] } // { _u
 	ɡʷ > b / #_N
 	ɡʷ > b / C_V
 	ɡʷ > ɡ
-	p t k kʷ b d ɡ m n l r s > f θ x xʷ v ð ɣ M N L R h / V(#)_{R,V} (“We don’t know the exact values of lenited /m n l r/. We can guess that lenited m became a nasalized labial continuant of some sort, but beyond that, we don’t know.”)
+	{ p, t, k, kʷ, b, d, ɡ, m, n, l, r, s } > { f, θ, x, xʷ, v, ð, ɣ, M, N, L, R, h } / :{ V(#)_V(“We don’t know the exact values of lenited /m n l r/. We can guess that lenited m became a nasalized labial continuant of some sort, but beyond that, we don’t know.”) }:
 	k > x / V_t
-	m > n / V_#; “:[i]t is thought that the vowel needs to be unstressed, but this is not certain”
-	V:[+long] > V / _N#; “:[i]t is thought that the long vowel probably needed to be unstressed- again, this is uncertain”
-	p t k kʷ b d ɡ ∅ > b d ɡ ɡʷ mb nd ŋɡ n / n#_”V
+	m > n / V_#; :[i]t is
+	V:[+long] > V / _N#; :[i]t is
+	{ p, t, k, kʷ, b, d, ɡ, ∅ } > { b, d, ɡ, ɡʷ, mb, nd, ŋɡ, n } / n#_V
 	o:[+long] > u:[+long] / _(C…)#
 	o:[+long]i > u:[+long] / _#
-	o:[+long] > a:[+long] / else
+	o:[+long] > a:[+long]
 	V:[+long] > V:[-long] / _H (includes diphthongs)
 	— e > i / _(C…)#
-	— o > a / _{(C…),u}#
+	— o > a / :{ _(C…)#, _u# }:
 	— {ai,oi} > i:[+long] / _#
 	— i u > e o / _C(…C){{ a, a:[+long] }{ ,e, ,e:[+long] }{ ,o, ,o:[+long] }}
-	— e o > i u / _C(…C){H,j}
-	C > Cʲ / _{F,j}
-	C > Cʷ / _{B,w}
+	— e o > i u / _C(…C){,j}
+	C > Cʲ / :{ _F, _j }:
+	C > Cʷ / :{ _B, _w }:
 	[+ cons, - fr, + bk, + hi, - lo]ʷ > [+ cons, - fr, + bk, + hi, - lo]
-	— n > ∅ / {i,o,u}_{p,t,k,s}
-	— {a,e}n > e:[+long] / _{p t k s}
+	— n > ∅ / :{ {i,o,u}_p, {i,o,u}_t, {i,o,u}_k, {i,o,u}_s }:
+	— {a,e}n > e:[+long] / :{ _p t k s }:
 	w > f / #_
 	w > ∅ / {#,C}C_
-	w > ∅ / {θ,x}_
-	w > ∅ / V_{V,#}
-	w > v / else
+	w > ∅ / :{ θ_, x_ }:
+	w > ∅ / :{ V_V, V_# }:
+	w > v
 	— {p,t} > ∅ / #s_r
-	— {p,t} > ∅ / #s_ “(although it says that occasionally st > t / #_)”
+	— {p,t} > ∅ / #s_ (although it says that occasionally st > t / #_)
 	— s > ∅ / [anything]{l,r}_O
-	— hn hm > n:[+long] m:[+long] / [anything]_ (“:[t]his change is a bit speculative”)
+	— hn hm > n:[+long] m:[+long] / [anything]_ (:[t]his change is a bit speculative)
 	— st zd > s:[+long] d:[+long] / [anything]_
 	— {l,h}l {l,h}r l{p,s,n} r{p,s} ln > l:[+long] r:[+long] l:[+long] r:[+long] (l:[+long]?) / [anything]_
 	— C:[+long] > C:[-long]
 	V > ∅ / C_# when unstressed // C = j
-	C(…C) > ∅ / _# // /l r/ and clusters containing them; “:[t]his remained a phonologically conditioned rule in OIr”
+	C(…C) > ∅ / _# // /l r/ and clusters containing them; :[t]his remained a phonologically conditioned rule in OIr
 	{au,eu,ou} > o:[+long]
 	ei > e:[+long]
-	o:[+long] > ua / _:[anything], when stressed
-	e:[+long] > ia / _{#,Cʲ} when stressed; “ai and oi remain, but are written as <ae ai oe oi> seemingly randomly”
+	o:[+long] > ua / _:[anything],
+	e:[+long] > ia / :{ _#when stressed; “ai and oi remain, but are written as <ae ai oe oi> seemingly randomly”, _Cʲwhen stressed; “ai and oi remain, but are written as <ae ai oe oi> seemingly randomly” }:
 	j > ∅
 	— V:[+long] > V:[-long]
 	— a > e / _#
 	— {e,o} > a / _:[anything]
-	V > V:[+long] / _#, when stressed; “:[t]his remained as a phonologically conditioned rule in OIr”
+	V > V:[+long] / _#, ; :[t]his remained as a phonologically conditioned rule in OIr
 	VOR > V:[+long]R; “this is a tad unclear, because in some instances it didn’t seem to apply”
-	V > ∅ / #UU(_)U(U(_)U) / unstressed; this “remained as a phonologically conditioned rule in OIr”; “:[t]hat’s a little unclear, so let me try and enumerate: in words of more than three syllables, every other vowel (only the even ones) dropped, if it’s unstressed. In some words, syncope didn’t apply because it would create an unwieldy consonant cluster: so PIE *komaktyom → OIr cumachte, not *cumchte”
+	V > ∅ / #UU(_)((_)) / unstressed; this remained as a phonologically conditioned rule in OIr; :[t]hat’s a little unclear, so let me try and enumerate: in words of more than three syllables, every other vowel (only the even ones) dropped, if it’s unstressed. In some words, syncope didn’t apply because it would create an unwieldy consonant cluster: so PIE *komaktyom → OIr cumachte, not *cumchte

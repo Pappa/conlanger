@@ -6,5 +6,5 @@
 	n > l / #_Vk
 	n > l / mV_C
 	n > l / CV_m
-	r > l / #(C)_c(C)# ?
+	r > l / #{ C_, _ }c{ C#, # } ?
 	r > l / #o_#

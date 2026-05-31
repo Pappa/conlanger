@@ -1,7 +1,7 @@
 @ 7.6 - Proto-Algonquian to Northern East Cree
 # citation: Pogostick Man, from http://home.kpn.nl/cvkolmes/ojibwe/CorrCrOj.pdf and Wikipedia contributors (2015), “Cree language”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Cree_language>
 	we > o
-	e e:[+long] > i a:[+long]
+	{ e, e:[+long] } > { i, a:[+long] }
 	ja > a:[+long] / C_
 	ʃje:[+long] > se:[+long]
 	lwi > jo
@@ -13,8 +13,8 @@
 	{q,ʃ} > s / _t
 	θ > s / _k
 	l > h / _k
-	{n,q,h}ʃ {n,q,h}l > s {h,j,hj}
+	{ {n,q,h}ʃ, {n,q,h}l } > { s, {h,j,hʲ} }
 	k > t͡ʃ / _i
-	a > i / in some unaccented syllables (short only)
+	a > i / in some unaccented syllables ()
 	θ > t
 	l > j

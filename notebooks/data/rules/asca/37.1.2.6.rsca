@@ -1,32 +1,31 @@
 @ 37.1.2.6 - Proto-Northern Iroquoian to Tuscarora
 # citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg r becomes a trill
-	t͡s > t͡ʃ / _{h,i,j}
+	t͡s > t͡ʃ / :{ _h, _i, _j }:
 	ths > t͡ʃ
 	j > ∅ / t͡ʃ_
 	t > ˀt
-	”V > ”V:[+long] / _n in “penultimate syllables only”
+	”V > ”V:[+long] / _n in penultimate syllables only
 	n > t / ,kʷ,V:[+nas]} // _{h
-	”V > ”V:[+long] / _{kʷ,(ˀ)t}{s,R,H} (“penultimate syllables only”)
+	”V > ”V:[+long] / :{ _kʷ{s,,} (“penultimate syllables only”), _ˀt{s,,} (“penultimate syllables only”), _t{s,,} (“penultimate syllables only”) }:
 	”V > ”V:[+long] / _RR
-	{{ ẽ, ẽ:[+long] }{ ,õ, ,õ:[+long] }} > ə̃
-	{{ ẽ, ẽ:[+long] }{ ,õ, ,õ:[+long] }} > ə̃:[+long]
+	{{ ẽ, ẽ:[+long] }{ ,õ, ,õ:[+long] }} > ə̃, ə̃:[+long]
 	t͡s > θ
 	ˀt > tʔ / _ˀt
 	ˀt > ∅ / _t
 	ˀt > ʔ / _r
-	ˀt > ʔn / V_{V,w,j}
-	ˀt > n / {#,C}_{V,w,j}
+	ˀt > ʔn / :{ V_V, V_w, V_j }:
+	ˀt > n / :{ {#,C}_V, {#,C}_w, {#,C}_j }:
 	ˀt > t
 	h > ∅ / _nh
 	h > ∅ / #_w
-	h > ∅ / k_{s,t͡s,t͡ʃ}
+	h > ∅ / :{ k_s, k_t͡s, k_t͡ʃ }:
 	h > ∅ / V:[+long]_#
 	w > ∅ / _jh
 	n > t / _kʷ
 	∅ > t / hs_r
 	∅ > j / { k_e, k_e:[+long] }
 	{ e, e:[+long] } > { ɛ, ɛ:[+long] }
-	{ ə̃, ə̃:[+long] } > { ɨ̃, ɨ̃:[+long] } // “when both short and stressed”
-	{ a, a:[+long] } { o, o:[+long] } > { ɔ, ɔ:[+long] } { u, u:[+long] } // “when both short and unstressed”
-	t kʷ > d ɡʷ / _{V,R}
-	n r w j > n̥ r̥ w̥ j̊ / _{#,O}
+	{ ə̃, ə̃:[+long] } > { ɨ̃, ɨ̃:[+long] } // when both short and stressed
+	{ {, a,, a:[+long], }, {, o,, o:[+long], } } > { {, ɔ,, ɔ:[+long], }, {, u,, u:[+long], } } // when both short and unstressed
+	{ t, kʷ } > { d, ɡʷ } / :{ _V }:
+	{ n, r, w, j } > { n̥, r̥, w̥, j̊ } / :{ _#, _O }:

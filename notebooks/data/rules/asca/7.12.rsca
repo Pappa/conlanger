@@ -1,10 +1,10 @@
 @ 7.12 - Proto-Algonquian to Menominee
 # citation: Whimemsz, from Hockett, C. F. (1981), “The Phonological History of Menominee”. Anthropological Linguistics 23(2): 51-87; and Miner, Kenneth L. (1979), “Theoretical Implications of the Great Menominee Vowel Shift”. Kansas Working Papers in Linguistics 4(1): 7-25.
-	we je > o i / _C
+	{ we, je } > { o, i } / _C
 	we > o / #_
 	θ > s / _O
 	θ > r
-	V:[-long] > ∅ / _# “:[does not apply in disyllabic words containing two short vowels]”
+	V:[-long] > ∅ / _# :[does not apply in disyllabic words containing two short vowels]
 	∅ > h / V:[-long]_#
 	H > ∅ / _m
 	{s,r} > h / _O
@@ -12,19 +12,19 @@
 	a > o / $am_w
 	V > V:[+long] “when V is the second vowel of a word and follows a short-vowel syllable. Does not apply in glottal words”
 	e > i / V:[+long]%_ // _H
-	N > h / _{O,r}
-	e > i / #(C)_ // _H
-	e > i / _{k,m} “when in the second syllable of glottal words”
+	N > h / :{ _O, _r }:
+	e > i / #{ C_, _ } // _H
+	e > i / :{ _k“when in the second syllable of glottal words”, _m“when in the second syllable of glottal words” }:
 	{w,j} > ∅ / C_#
 	C > ∅ / C_#
 	{ wi, wi:[+long] } > { o, o:[+long] } / C_w
-	ʃ t͡ʃ > s t͡s
-	V:[+long] > V:[-long] / CC(G)_C{V,#} “:[i.e., when following a cluster but not followed by a cluster. Only applies ‘after the first long vowel of a nonglottal word, and everywhere in a glottal word’]”
+	{ ʃ, t͡ʃ } > { s, t͡s }
+	V:[+long] > V:[-long] / CC{ G_, _ }C{V,#} :[i.e., when following a cluster but not followed by a cluster. Only applies ‘after the first long vowel of a nonglottal word, and everywhere in a glottal word’]
 	V > V:[+long] / _CC in even syllables
-	V:[+long] > V:[-long] / _C{V,#} in even syllables; “does not apply in the second syllable of a non-glottal word”
-	{ e, e:[+long] } i > { æ, æ:[+long] } e
+	V:[+long] > V:[-long] / _C{V,#} in even syllables; does not apply in the second syllable of a non-glottal word
+	{ {, e,, e:[+long], }, i } > { {, æ,, æ:[+long], }, e }
 	i:[+long] o:[+long] oʔ > e:[+long] u:[+long] uʔ “:[blocked when i:[+long] or a C+G sequence follows anywhere in the word, but does apply if { æ, æ:[+long] } intervenes before any following i:[+long] or C+G]”
-	{wi:[+long],ji:[+long],we:[+long],je:[+long],wæ:[+long],jæ:[+long]} {wi,ji,we,je,wæ,jæ} > i:[+long] i / C_
-	æ > e / in odd syllables ,j,H} // _{w
+	{ {wi:[+long],ji:[+long],we:[+long],je:[+long],wæ:[+long],jæ:[+long]}, {wi,ji,we,je,wæ,jæ} } > { i:[+long], i } / C_
+	æ > e / in odd syllables ,j,} // _{w
 	r > n
-	wa ja > uə̯ iə̯ / C_
+	{ wa, ja } > { uə̯, iə̯ } / C_

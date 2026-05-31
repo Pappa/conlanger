@@ -1,19 +1,19 @@
 @ 36.3.1.2 - Proto-Naish to Mosuo (Na)
 # citation: Pogostick Man, from Jacques, Guillaume, and Alexis Michaud (2011), “Approaching the historical phonology of three highly eroded Sino-Tibetan languages: Naxi, Na and Laze”. Diachronica 28:4 (2011), 468 – 498
-	a > e / {R,T}_%
+	a > e / :{ T_% }:
 	a > wɤ / {[+ cons, - fr, + bk, + hi, - lo],ŋ}w_%
 	a > i // [+ cons, - fr, + bk, + hi, - lo]_%
 	iN > æ / {P,C}r_
-	{iN,u} i > i ɯ / T_
-	i > ɯ / {R,[+ cons, - fr, + bk, + hi, - lo]r}_
+	{ {iN,u}, i } > { i, ɯ } / T_
+	i > ɯ / :{ [+ cons, - fr, + bk, + hi, - lo]r_ }:
 	i > v̩ / m_
-	u o > v̩ u
-	B > ɔ / {qʰ,(N)q}_
+	{ u, o } > { v̩, u }
+	B > ɔ / :{ qʰ_, (N)q_ }:
 	V% > high rising
 	{Np,mb} > b / _V
 	{r,s}pʰ {r,s}{(N)p,(m)b} > pʰ p b / _V (the paper implies similar development͡s occurred with stops at other POAs)
-	{r,s}k {r,s}Nk > k ʁ / _V
-	S{b,ɡ} Sk > ∅ h
+	{ {r,s}k, {r,s}Nk } > { k, ʁ } / _V
+	{ S{b,ɡ}, Sk } > { ∅, h }
 	n̥ > l̥ / %_V
 	N̥V > hṼ
 	l̥ > ɬ / %_V

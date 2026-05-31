@@ -127,4 +127,4 @@ class DebugRules:
     def _create_rule(self, input: Element, part: Element, index: int, format: str):
         el = Element("section", attrib={"index": input.attrib["index"], "name": str(index)})
         el.append(ET.fromstring(etree.tostring(part)))
-        return SoundChangeRule(el, format)
+        return index, SoundChangeRule(el, format)

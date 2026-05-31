@@ -1,35 +1,34 @@
 @ 14.3.1 - Standard Tamil to Colloquial Tamil
 # citation: schwatever, from Shiffman, Harold F. A Reference Grammar on Spoken Tamil “There’s also only a few changes necessary to turn this into the British dialect (which didn’t merge retroflexes with alveolars):”
 	aj > e:[+long] “(exception: never finally in monosyllables, never initially in multisyllabic words)”
-	avu aji > aw aj
-	i u > e o / _Ca
+	{ avu, aji } > { aw, aj }
+	{ i, u } > { e, o } / _Ca
 	{k,v} > ∅ / V_V
-	a:[+long] e:[+long] i:[+long] o:[+long] u:[+long] > a ɛ i o u / _#
-	am an {a:[+long]m,a:[+long]n} > õ æ̃ ã / _#
-	{om,on} {em,en} {o:[+long]m,o:[+long]n} {e:[+long]m,e:[+long]n} > ɔ̃ ɛ̃ õ ẽ
+	{ a:[+long], e:[+long], i:[+long], o:[+long], u:[+long] } > { a, ɛ, i, o, u } / _#
+	{ am, an, {a:[+long]m,a:[+long]n} } > { õ, æ̃, ã } / _#
+	{ {om,on}, {em,en}, {o:[+long]m,o:[+long]n}, {e:[+long]m,e:[+long]n} } > { ɔ̃, ɛ̃, õ, ẽ }
 	um > ũ / _#
 	∅ > ɨ / _N#
 	{ɭ,ɽ} > ∅ (sporadic, the latter very much so and contributing some compensatory lengthening)
-	l ɭ > l:[+long]ʉ ɭ:[+long]ʉ / _#(C)V:[-long]
-	∅ > ʉ / {l,ɭ}_# if {M,V:[+long]} previously in the lexeme
+	{ l, ɭ } > { l:[+long]ʉ, ɭ:[+long]ʉ } / _#{ CV, V }:[-long]
+	∅ > ʉ / :{ l_# if {M,V:[+long]} previously in the lexeme, ɭ_# if {M,V:[+long]} previously in the lexeme }:
 	r > ɾ “in most dialect͡s”
 	ɽ > ɭ
 	{ɾ,l,ɭ} > ∅ / V_S
-	i u > ɨ ʉ / short only when unstressed // in #U
+	{ i, u } > { ɨ, ʉ } / when unstressed // in #
 	ɨ ʉ > ∅ // _#
-	∅ > ɨ / to break up clusters
-	∅ > ʉ / to break up clusters
-	n > ŋ / _{k,ɡ}
-	{ i, i:[+long] } { e, e:[+long] } > { u, u:[+long] } { o, o:[+long] } / {m,v,p}_C̣
+	∅ > ɨ, ʉ / to break up clusters
+	n > ŋ / :{ _k, _ɡ }:
+	{ {, i,, i:[+long], }, {, e,, e:[+long], } } > { {, u,, u:[+long], }, {, o,, o:[+long], } } / :{ m_C̣, v_C̣, p_C̣ }:
 	j > ∅ / V:[-front]_#
 	j > j:[+long]i / E_#
-	t:[+long] nt > c:[+long] ɲc / {i,j}_
+	{ t:[+long], nt } > { c:[+long], ɲc } / :{ i_, j_ }:
 	ʈk > k:[+long]
-	n t:[+long] > n̪ t̪:[+long]
+	{ n, t:[+long] } > { n̪, t̪:[+long] }
 	ɳ > n “(sporadic and dialect development)”
 	ɭ > l “(again, sporadic)”
-	c > s / _{a,o,u,e}
+	c > s / :{ _a, _o, _u, _e }:
 	c:[+long] > t͡ʃ:[+long] “(most dialect͡s)”
-	o e > u i / _C{u,i} “(highly sporadic)”
+	{ o, e } > { u, i } / _C{u,i} (highly sporadic)
 	— { i, i:[+long] } { e, e:[+long] } > { u, u:[+long] } { o, o:[+long] } / _ɭ
 	— eCə oCə > Ce:[+long] Co:[+long] / #_

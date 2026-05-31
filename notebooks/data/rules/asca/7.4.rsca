@@ -7,54 +7,54 @@
 	{ʃ,t͡ʃ} > s / #_
 	{ʔθ,ʔr} > {ʔ,j,∅}
 	nr > s
-	h > x / _{p,k}
-	hkw > ʔk
-	nθ hs > s:[+long]t s:[+long]
+	h > x / :{ _p, _k }:
+	hkʷ > ʔk
+	{ nθ, hs } > { s:[+long]t, s:[+long] }
 	m > ʔ / _p
-	nkw > ʔ:[+long]
+	nkʷ > ʔ:[+long]
 	{n,s} > x / _t
 	nt͡ʃ > ʔt
-	ns sk > {x,s} {x,s:[+long]}
-	θp t͡ʃp ʃp > {x,s:[+long]} ʔp s:[+long]p
+	{ ns, sk } > { {x,s}, {x,s:[+long]} }
+	{ θp, t͡ʃp, ʃp } > { {x,s:[+long]}, ʔp, s:[+long]p }
 	ʃ > x / _k
-	x > s:[+long] / {i,#e,ja,ke}_
-	x > s:[+long] / { e, e:[+long] }_s
+	x > s:[+long] / :{ i_, #e_, ja_, ke_ }:
+	x > s:[+long] / :{ e_s, e:[+long]_s }:
 	∅ > s / {{ i, i:[+long] },#e}_t
-	t > t͡s / _{{ i,e, i,e:[+long] },a}
+	t > t͡s / :{ _{ i,a}, _e,a}, _i,a}, _e:[+long],a} }:
 	∅ > s / { k_i, k_i:[+long] }
 	s:[+long]:[+long] > s:[+long]
-	e > i / {#,k}_
+	e > i / :{ #_, k_ }:
 	{a,e,i} > o / _kʷ
-	∅ > j / {o:[+long]w,i:[+long]j}_i#
-	w > j / {r,k}_i#
+	∅ > j / :{ o:[+long]w_i#, i:[+long]j_i# }:
+	w > j / :{ r_i#, k_i# }:
 	∅ > i / r_w
 	w > ∅ / C_
-	{ji:[+long],ja,ahi} {owa:[+long],awa,awe} awi {i:[+long]wa,e:[+long]wa,aji,aje,ani} > i o:[+long] o(ji) i:[+long] / C_C
+	{ {ji:[+long],ja,ahi}, {owa:[+long],awa,awe}, awi, {i:[+long]wa,e:[+long]wa,aji,aje,ani} } > { i, o:[+long], o(ji), i:[+long] } / C_C
 	hi > ∅ / a:[+long]_
 	∅ > i / #_jC
 	∅ > i / C_jV#
 	a > o / _w
 	eLwi > i:[+long]
-	{ i, i:[+long] }wi > i:[+long] / medially
+	{ i, i:[+long] }wi > i:[+long]
 	{ i, i:[+long] }wi > i / _#
 	j > s
 	w > j / _i
 	{i:[+long],ij,j} > j / C_B
 	iji > i:[+long]
-	w > ∅ / {a,o}_iC
+	w > ∅ / :{ a_iC, o_iC }:
 	on > u / _iC
-	tem {k,p}en > m:[+long] n:[+long]
+	{ tem, {k,p}en } > { m:[+long], n:[+long] }
 	ket > t:[+long] (
 	t:[+long] ( > s:[+long]?)
 	ke(h) > t:[+long] ?
 	{kʷes,keθ} > s:[+long]
-	e > ∅ / O_ in #U (not universal)
-	{me,ne} > ∅ / #_O “(followed by truncation of following x)”
+	e > ∅ / O_ in # (not universal)
+	{me,ne} > ∅ / #_O (followed by truncation of following x)
 	{we,wi:[+long]} > o / #_
-	t͡si > ∅ / $_OO “(before a prefix; the first obstruent of the follow:[ing] cluster then becomes ʔ)
+	t͡si > ∅ / $_OO (before a prefix; the first obstruent of the follow:[ing] cluster then becomes ʔ)
 	a:[+long] > aa / W_ ,:[+long]},#} // when _{C{C
-	a:[+long] > a / else
+	a:[+long] > a
 	o:[+long] > o
-	a > i // at word boundaries
+	a > i
 	e > a / _#
 	{e:[+long],i:[+long]} > i

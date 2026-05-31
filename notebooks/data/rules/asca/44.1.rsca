@@ -6,10 +6,9 @@
 	S:[+fortis] > S:[-voice]:[+long] (specifically, the source list͡s t:[+fortis] k:[+fortis]
 	S:[-voice]:[+long] (specifically, the source list͡s t:[+fortis] k:[+fortis] > { t, t:[+long] } { k, k:[+long] }, both of the tokens with optional length suffixes and *aTa
 	{ t, t:[+long] } { k, k:[+long] }, both of the tokens with optional length suffixes and *aTa > 〈atta〉, so I’m extrapolating)
-	n:[+fortis] > n / V_V
-	n:[+fortis] > n:[+long] / V_V
-	n:[-fortis] n:[+fortis] > {n,r}(?) n
+	n:[+fortis] > n, n:[+long] / V_V
+	{ n:[-fortis], n:[+fortis] } > { {n,r}(?), n }
 	N > :[+same POA] / _S
 	r:[+fortis] > ɾ / _#
 	r:[+fortis] > r
-	ɡ > k / #_ (sometimes?)
+	ɡ > k / #_ (

@@ -1,19 +1,18 @@
 @ 10.2.5 - Proto-Malayo-Polynesian to Palauan
 # citation: Whimemsz, from Blust, Robert (2009), “Palauan Historical Phonology: Whence the Intrusive Velar Nasal?”. Oceanic Linguistics 48(2):307 – 336
-	aj aw uj > e o i
+	{ aj, aw, uj } > { e, o, i }
 	∅ > w / u_V
 	∅ > j / i_V
 	ə > ∅ / #_
-	∅ > ə / C_C “(for certain consonant combinations, which the paper doesn’t specify)”
+	∅ > ə / C_C (for certain consonant combinations, which the paper doesn’t specify)
 	h > ∅
-	ə > e / stressed; “(result of /e/ or /o/ unpredictable)”
-	ə > o / stressed; “(result of /e/ or /o/ unpredictable)”
+	ə > e, o / stressed; (result of /e/ or /o/ unpredictable)
 	p > w
 	wa > o / #_ when unstressed
 	V > ə / unstressed
 	{aw,əw} > o / _#
 	wə > u / #_
-	j l > r j
+	{ j, l } > { r, j }
 	ə > ∅ / _j
 	j > ∅ / C_i
 	ə > ∅ / _#
@@ -25,13 +24,12 @@
 	d > r
 	ɖ > ɽ “(only one example)”
 	ɲ > n (except possibly to n when #_)
-	n d͡z > l r
+	{ n, d͡z } > { l, r }
 	rl > l:[+long]
 	ɟ > k / _C#
 	ɟ > s
 	ŋ > ∅ / C_#
-	t > s / “unpredictably, to eliminate sV(C)t and tV(C)s sequences”
-	t > ð / “unpredictably, to eliminate sV(C)t and tV(C)s sequences”
+	t > s, ð / unpredictably, to eliminate sV{ Ct, t } and tV{ Cs, s } sequences
 	∅ > ŋ / #_V
 	q > χ (
 	χ ( > ʕ)

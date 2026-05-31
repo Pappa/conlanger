@@ -1,5 +1,5 @@
 @ 33.3.1.1 - General Yokuts to Buena Vista Yokuts
 # citation: CatDoom, from Whistler, Kenneth W., and Golla, Victor (1986), “Proto-Yokuts Reconsidered”. International Journal of American Linguistics Vol. 52, No. 4 (Oct. 1986)
-	t tʰ tʼ > t͡s t͡sʰ t͡sʼ / #_ “(in some words, conditioning factors unclear)”
-	V:[+high] > a / V:[+high]C_(C)#
+	{ t, tʰ, tʼ } > { t͡s, t͡sʰ, t͡sʼ } / #_ (in some words, conditioning factors unclear)
+	V:[+high] > a / :{ V:[+high]C_C#, V:[+high]C_# }:
 	tʰ > s / #_u

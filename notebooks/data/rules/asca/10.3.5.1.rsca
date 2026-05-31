@@ -1,13 +1,13 @@
 @ 10.3.5.1 - Proto-New Caledonia to Caaàc
 # citation: thetha, from Ozanne-Rivierre, Françoise (1992), “The Proto-Oceanic Consonantal System and the Languages of New Caledonia”. Oceanic Linguistics 31(2):191 – 207; and Ozanne-Rivierre, Françoise (1995), “Structural Changes in the Languages of Northern New Caledonia”. Oceanic Linguistics 34(1):44 – 72
-	p:[+long] pw:[+long] t:[+long] ʈ:[+long] q:[+long] k:[+long] > pʰ pwʰ cʰ tʰ h jʰ
-	q {k,t} {s,ʈ} > k c t
-	k > ∅ / _{o,a}
+	{ p:[+long], pʷ:[+long], t:[+long], ʈ:[+long], q:[+long], k:[+long] } > { pʰ, pwʰ, cʰ, tʰ, h, jʰ }
+	{ q, {k,t}, {s,ʈ} } > { k, c, t }
+	k > ∅ / :{ _o, _a }:
 	N > ∅ / _#
-	V > ∅ / #(C)V(C)(C)_#
+	V > ∅ / #{ CV, V }(C){ C_, _ }#
 	jʰ > h / _i
-	{p,pw,k} > ∅ / V_V
-	t c > l j / V_V
+	{p,pʷ,k} > ∅ / V_V
+	{ t, c } > { l, j } / V_V
 	VnV > ṼlṼ
 	ⁿS > N / _#
 	u > i (typical)

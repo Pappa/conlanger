@@ -1,15 +1,15 @@
 @ 17.8.4 - Proto-Indo-European to Coan Greek
 # citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects> NB: This assumes that the adjective “Coan” refers to the “Ceos” Tucker mentions in the source.
 	{H,m̩,n̩} > a
-	bʱ dʱ ɡʱ > pʰ tʰ kʰ
+	{ bʱ, dʱ, ɡʱ } > { pʰ, tʰ, kʰ }
 	s > h / #_
 	s > h / V_V
 	t > t͡s / _i
 	j > h
-	kʷ kʰʷ ɡʷ > t tʰ d / _E
-	kʷ kʰʷ ɡʷ > p pʰ b / _{a,o,C}
-	kʷ kʰʷ ɡʷ > k kʰ ɡ / _u
-	kʷ kʰʷ ɡʷ > k kʰ ɡ / u_
+	{ kʷ, kʰʷ, ɡʷ } > { t, tʰ, d } / _E
+	{ kʷ, kʰʷ, ɡʷ } > { p, pʰ, b } / :{ _a, _o, _C }:
+	{ kʷ, kʰʷ, ɡʷ } > { k, kʰ, ɡ } / _u
+	{ kʷ, kʰʷ, ɡʷ } > { k, kʰ, ɡ } / u_
 	t͡s > s
 	h > ∅
 	Vns > V:[+long]s

@@ -10,17 +10,17 @@
 	{ɡ́,ɡ} > ∅ / _{ i, i:[+long] }
 	ɡ > ∅ / V_V
 	j > ∅ / t͡s_
-	s > z / _{R,j,w} “(in Milyan, this happened after the change of ḱ to s)”
+	s > z / :{ _j“(in Milyan, this happened after the change of ḱ to s)”, _w“(in Milyan, this happened after the change of ḱ to s)” }:
 	s > h
 	ḱ > s
 	h > ɡ / _B
 	h > k / E_E (probably a palatal stop)
 	h > q / _E (possibly plain velar stop)
-	h > x / else (possibly a uvular stop)
+	h > x / (possibly a uvular stop)
 	w > b / C_
 	ɡ > d͡ʒ (sporadic)
 	e > i / j_
-	{ɛ,e}:[+long] o æ:[+long] > i:[+long] e a:[+long]
+	{ {ɛ,e}:[+long], o, æ:[+long] } > { i:[+long], e, a:[+long] }
 	V:[+long] > V:[-long]
 	e > a / _U:[+u, a]
 	a > e / _U:[+e, i]

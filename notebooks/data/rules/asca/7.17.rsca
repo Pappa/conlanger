@@ -6,24 +6,24 @@
 	N > ∅ / _O
 	{h,s,t͡ʃ,θ} > ʔ / _O
 	r > ʃ / _O
-	e > i / #(C)_ “(but remains e in a few cases?)”
+	e > i / #{ C_, _ } (but remains e in a few cases?)
 	i:[+long] > i / _j
 	j > ∅ / { C_i, C_i:[+long] }
 	je > i / C_
-	j > ∅ / {t͡ʃ,ʃ}_e:[+long]
-	j > ∅ / {t͡ʃ,ʃ,w}_a:[+long]
+	j > ∅ / :{ t͡ʃ_e:[+long], ʃ_e:[+long] }:
+	j > ∅ / :{ t͡ʃ_a:[+long], ʃ_a:[+long], w_a:[+long] }:
 	w > ∅ / t_i
 	wa > o / #_
-	V:[-long] > ∅ / _{ʃp,ʃk}
+	V:[-long] > ∅ / :{ _ʃp, _ʃk }:
 	V:[-long] > ∅ / C_ʔC
 	V:[-long] > ∅ / _hV
 	V:[+long] > V:[-long] / _#
-	V:[+long] > V:[-long] / _{ʔC,ʃp,ʃk,hV}
+	V:[+long] > V:[-long] / :{ _ʔC, _ʃp, _ʃk, _hV }:
 	ʔ > ∅ / C{v,l,s}_C
 	ʔ > ∅ / _CC
-	∅ > ʔ / C{v,d}_{ʃp,ʃk,hV}
+	∅ > ʔ / :{ C{v,d}_ʃp, C{v,d}_ʃk, C{v,d}_hV }:
 	∅ > h / #_V
 	s > θ
 	r > l
-	∅ > i / #C_jV:[+long] “(for some speakers)”
+	∅ > i / #C_jV:[+long] (for some speakers)
 	ʃ > s “(for many speakers)”

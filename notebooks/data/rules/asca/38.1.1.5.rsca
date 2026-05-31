@@ -4,13 +4,13 @@
 	v > f
 	m > w // _w
 	w > ∅ / m_
-	l > ∅ / {p,k(ʰ),ŋ}_
+	l > ∅ / :{ p_, k(ʰ)_, ŋ_ }:
 	pr > t
 	v > b / _r
 	{l,r} > ∅ / t,ɗ_
-	tʰl tʰr > tʰ r̥
-	d > ∅ / _{l,r}
-	z r > s r̥
+	{ tʰl, tʰr } > { tʰ, r̥ }
+	d > ∅ / :{ _l, _r }:
+	{ z, r } > { s, r̥ }
 	xr > h
 	x > kʰ
 	ɡʷ > kʷʰ
@@ -18,5 +18,5 @@
 	ɨə > ɨ:[+long]
 	iə > ı̆ / _C% (not in all languages)
 	ɨ̯a > a:[+long]
-	ɛi ei > ai i:[+long]
+	{ ɛi, ei } > { ai, i:[+long] }
 	o > ɔ:[+long] / _i

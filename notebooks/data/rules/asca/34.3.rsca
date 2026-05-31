@@ -1,7 +1,7 @@
 @ 34.3 - Proto-Quechumaran to Cuzco
 # citation: Pogostick Man, from Orr, Carolyn, and Robert E. Longacre (1968), “Proto-Quechumaran”. Language 44(3):528 – 555
 	h > ∅ / nq_
-	h > ∅ / #q_{i,u}
+	h > ∅ / :{ #q_i, #q_u }:
 	ph > p / #_VA
 	ph > p / #_aC:[+strident]
 	pʼ > p/ #_C:[+strident]
@@ -9,9 +9,9 @@
 	ph > pʰ
 	kh > k / r_
 	kh > k / #_a
-	kh > k / #_ “in a word with two back vowels”
-	kh qh > kʰ qʰ
-	t͡s t͡sh > t͡ʃ t͡ʃʰ
+	kh > k / #_ in a word with two back vowels
+	{ kh, qh } > { kʰ, qʰ }
+	{ t͡s, t͡sh } > { t͡ʃ, t͡ʃʰ }
 	t͡ʃ > s / _q
 	t͡ʃh > s / _E
 	{t͡ʃh,t͡ʃʼ} > t͡ʃ
@@ -19,6 +19,6 @@
 	ʈʂ > t͡ʃ / _V
 	ʈʂʼ > t͡ʃ / n_
 	ʈʂʼ > t͡ʃʼ
-	ɸʼ ɸh > pʼ pʰ
-	ʃ ʂ > s h
+	{ ɸʼ, ɸh } > { pʼ, pʰ }
+	{ ʃ, ʂ } > { s, h }
 	χ > qʰ / #_

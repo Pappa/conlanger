@@ -1,23 +1,21 @@
 @ 17.9 - Proto-Indo-European to Hittite
 # citation: Goatface “Changes I’m less sure of”
-	ḱ ɡ́ ɡ́ʱ > k ɡ ɡʱ
-	bʱ dʱ ɡʱ > p t k
-	kʷ ɡʷ ɡʷʱ > ku ɡu ku
-	t > t͡s / _{i,e}
+	{ ḱ, ɡ́, ɡ́ʱ } > { k, ɡ, ɡʱ }
+	{ bʱ, dʱ, ɡʱ } > { p, t, k }
+	{ kʷ, ɡʷ, ɡʷʱ } > { ku, ɡu, ku }
+	t > t͡s / :{ _i, _e }:
 	m > ∅ / _#
 	{ e, e:[+long] } > { a, a:[+long] } / _h
 	{ e, e:[+long] } > { a, a:[+long] } / h_
 	{ e, e:[+long] } > { o, o:[+long] } / _h
 	{ e, e:[+long] } > { o, o:[+long] } / h_
-	h > ∅ / _o “(according to [+ cons, - fr, + bk, + hi, - lo]ortlandt)”
+	h > ∅ / _o (according to [+ cons, - fr, + bk, + hi, - lo]ortlandt)
 	h > x (or some sort of dorsal or laryngeal fricative?)
 	{ o, o:[+long] } > { a, a:[+long] }
 	{u:[+long],eu,au} > u
-	m̩ n̩ r̩ l̩ > am an ar al
+	{ m̩, n̩, r̩, l̩ } > { am, an, ar, al }
 	w > m / u_
 	— r > ∅ / #_
-	— r > ∅ / _# “sometimes??”
-	— { e, e:[+long] } > a / _R “sometimes??”
-	— { e, e:[+long] } > a:[+long] / _R “sometimes??”
-	— { e, e:[+long] } > a / “when unstressed?”
-	— { e, e:[+long] } > a:[+long] / “when unstressed?”
+	— r > ∅ / _#
+	— { e, e:[+long] } > a, a:[+long] / _R
+	— { e, e:[+long] } > a, a:[+long] / when unstressed?

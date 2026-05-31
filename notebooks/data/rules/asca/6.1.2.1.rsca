@@ -1,10 +1,9 @@
 @ 6.1.2.1 - South Omotic to Aari
 # citation: Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)
-	pʼ > {b,p}ʼ
-	z > d / V_
-	z > z / V_
+	pʼ > pʼ, pʼ
+	z > d, z / V_
 	{x,x} > ɡ
 	kʼ > q
 	t͡ʃ > t͡s
-	s s s > ʃ z t͡ʃ
+	{ s, s, s } > { ʃ, z, t͡ʃ }
 	h > ∅

@@ -1,7 +1,7 @@
 @ 17.7.2.2 - West Germanic to Old Low Franconian
 # citation: Pogostick Man, from Wikipedia contributors (2014), “Old Dutch”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Old_Dutch>; and Wikipedia contributors (2014), “Germanic umlaut”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Germanic_umlaut> Final obstruents devoice Some vowel reduction seems to have occurred in unstressed syllables
-	e:[+long] o:[+long] > ie uo
-	ai au > e:[+long] o:[+long]
+	{ e:[+long], o:[+long] } > { ie, uo }
+	{ ai, au } > { e:[+long], o:[+long] }
 	h > ∅ / #_C
 	jan > en / CC_#
 	j > ∅ / CC_
@@ -9,8 +9,8 @@
 	xs > s:[+long]
 	a > ɒ? ( / _ɫ
 	ɒ? ( > o) / _ɫ
-	ai u > ei ʏ / _(C…){{ i, i:[+long] },j} (short only; in the case of:[ʏ] at least this was not yet phonemic)
-	a > ɛ / _(C…){{ i, i:[+long] },j} (conjectured based on date from the “Germanic umlaut” article)
+	{ ai, u } > { ei, ʏ } / _(C…){{ i, i:[+long] },j} (; in the case of:[ʏ] at least this was not yet phonemic)
+	a > ɛ / _(C…){{ i, i:[+long] },j} (
 	u:[+long] > ʉw / _V (probably, in most areas)
 	u:[+long] > ʊw / _V (probably, in areas that did not undergo the above change, such as Limburg)
 	u:[+long] > ʉ:[+long] (probably, in areas with u:[+long] / _V)

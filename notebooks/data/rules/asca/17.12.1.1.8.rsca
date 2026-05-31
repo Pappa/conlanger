@@ -2,13 +2,13 @@
 # citation: pharazon, from Jensen, A Comparative Study of Romance, as well as other sources “Stressed vowels (note the difference from the French development)”: Word-initial vowels: Word-final vowels:
 	h > ∅
 	VV > V:[+long]
-	n > ∅ / _{f,v,s}
+	n > ∅ / :{ _f, _v, _s }:
 	r > s / _s
 	{m,n,s} > ∅ / _# in polysyllables
-	m s > n i / _#
+	{ m, s } > { n, i } / _#
 	u > ∅ / CC_V
-	V > ”V / ”VSr_
-	V > ”V / _(C…)”{i,e}V
+	V > ”V / VSr_
+	V > ”V / _(C…){i,e}V
 	— a:[+long] > a
 	— (a)e > ɛ
 	— e:[+long],i,oe > e
@@ -25,57 +25,57 @@
 	s > i / #(C…)V_#
 	k > ∅ / _s#
 	{s,t} > ∅ / _#
-	kʷ ɡʷ > p b / V_a
+	{ kʷ, ɡʷ } > { p, b } / V_a
 	ɡ > m / _n
-	w > ∅ / {k,ɡ}_
-	k ɡ > t͡ʃ d͡ʒ / _E
+	w > ∅ / :{ k_, ɡ_ }:
+	{ k, ɡ } > { t͡ʃ, d͡ʒ } / _E
 	ɛ > ie
-	t d s > t͡s d͡z ʃ / _i
-	o e > u i / _N
+	{ t, d, s } > { t͡s, d͡z, ʃ } / _i
+	{ o, e } > { u, i } / _N
 	a > ɨ _N ! _{n:[+long],mn}
 	i > ∅ / OL_e
 	e > a / i_(C…){a,e}#
-	i > ∅ / {t͡s,d͡z,S}_V
-	li > lj / _V
-	l > lj / _i
+	i > ∅ / :{ t͡s_V, d͡z_V, S_V }:
+	li > lʲ / _V
+	l > lʲ / _i
 	l:[+long] > ∅ / _i
 	”el:[+long]a > e”a / _#
-	{b,v} > ∅ / V_{V,t}
+	{b,v} > ∅ / :{ V_V, V_t }:
 	l > r / V_V
 	m > u / a_nV
-	b > u / V_{l,r}
+	b > u / :{ V_l, V_r }:
 	p > ∅ / _s
-	c > p / _{s,t}
+	c > p / :{ _s, _t }:
 	{sc,st} > ʃt / _F
 	s > ʃ / _kl
 	c > ∅ / n_t
-	kj ɡj > t͡ʃ {j,∅} (ɡj
-	t͡ʃ {j,∅} (ɡj > ∅ is rare)
+	kʲ ɡʲ > t͡ʃ {j,∅} (ɡʲ
+	{ t͡ʃ, {j,∅}, (ɡʲ } > { ∅, is, rare) }
 	Pj > ɥ
-	{sj,stj,s:[+long]j} > ʃ
+	{sʲ,stʲ,s:[+long]j} > ʃ
 	j > s / t_
 	j > z / rd_
-	dj > ʒ / _”B
-	dj > z / V_V
+	dʲ > ʒ / _B
+	dʲ > z / V_V
 	{n,l} > ∅ / _j
 	ja > e / r_#
 	j > ∅ / r_
 	d > ∅ / _z
-	l > j / {k,ɡ}_
+	l > j / :{ k_, ɡ_ }:
 	a > e / C:[+palatal]_#
-	a o > ə u / ”U…_#
-	e > ə / ”U…P_(C…)V# // V = i
+	{ a, o } > { ə, u } / …_#
+	e > ə / …P_(C…)V# // V = i
 	u > ∅ / o_e
 	e > ə / ou_#
-	u > ∅ / ,”V}_# // {OL
-	a > a / #(C…)V…C:[+palatal]_…”U
-	a o > ə u / #(C…)V…_…”U
-	e > i / #(C…)V…_n…”U
-	e > ə / #(C…)V…{t,d,n}_…”U
-	e > ə / P”_(C…)B
+	u > ∅ / ,V}_# // {OL
+	a > a / #(C…)V…C:[+palatal]_…
+	{ a, o } > { ə, u } / #(C…)V…_…
+	e > i / #(C…)V…_n…
+	e > ə / #(C…)V…{t,d,n}_…
+	e > ə / P_(C…)B
 	e > ∅ / P_a
-	e > ə / #{r,P}_…”U
-	o > u / #C…_…”U
+	e > ə / #{r,P}_…
+	o > u / #C…_…
 	a > ə #C(C…)_…”U
 	{t,d} > ∅ / n_#
-	Ci > Cʲ / _# // R…R_#
+	Ci > Cʲ / _# // …R_#

@@ -1,13 +1,13 @@
 @ 17.11 - Proto-Indo-European to Proto-Slavic
 # citation: Hwhatting NB: “Not in chronological order”
-	bʱ dʱ {ɡʱ,ɡ́ʱ} ɡʷʱ > b d ɡ ɡʷ
-	[+ cons, - fr, + bk, + hi, - lo]ʷ ḱ ɡ́ > [+ cons, - fr, + bk, + hi, - lo] s z
-	s > x / {i,u,r,k}_
-	k ɡ x > t͡ʃ ʒ ʃ / _{{ e, e:[+long] }(i){ ,i, ,i:[+long] }}
+	{ bʱ, dʱ, {ɡʱ,ɡ́ʱ}, ɡʷʱ } > { b, d, ɡ, ɡʷ }
+	{ [+ cons, - fr, + bk, + hi, - lo]ʷ, ḱ, ɡ́ } > { [+ cons, - fr, + bk, + hi, - lo], s, z }
+	s > x / :{ i_, u_, r_, k_ }:
+	{ k, ɡ, x } > { t͡ʃ, ʒ, ʃ } / :{ _{ e(i){ ,i, ,i:[+long] }}, _e:[+long](i){ ,i, ,i:[+long] }} }:
 	{a,o,ə} > e / j_
 	{a,o,ə} > o
-	i u > ь ъj
-	i:[+long] u:[+long] > i ɨ
+	{ i, u } > { ь, ъj }
+	{ i:[+long], u:[+long] } > { i, ɨ }
 	u > ь / j_
 	{ e, e:[+long] }i > i
 	{ai,oi} > i / j_
@@ -17,14 +17,14 @@
 	e > ь / _jV
 	e > o / _wV
 	w > v
-	l̩ r̩ > {ьl,ъl} {ьr,ъr}
+	{ l̩, r̩ } > { {ьl,ъl}, {ьr,ъr} }
 	{m̩,n̩} > {ẽ,õ} / _C$
-	m̩ n̩ > {ьm,ъm} {ьn,ъn}
-	æ:[+long] > a / “After palatal fricatives and affricates”
+	{ m̩, n̩ } > { {ьm,ъm}, {ьn,ъn} }
+	æ:[+long] > a / After palatal fricatives and affricates
 	{{ e, e:[+long] }{ ,i, ,i:[+long] }} {{ a, a:[+long] }{ ,o, ,o:[+long] }{ ,u, ,u:[+long] }} > ẽ õ / _N$
-	oi o > i ъ / “Sometimes in final syllables”
+	{ oi, o } > { i, ъ }
 	{O,N} > ∅ / _$
-	k ɡ x > t͡s d͡z s / _{æ:[+long],i}
-	k ɡ x > t͡s d͡z s / “After some syllables with front vowels”
-	sj zj > ʃ ʒ
-	kj ɡj xj > t͡ʃ ʒ ʃ
+	{ k, ɡ, x } > { t͡s, d͡z, s } / :{ _æ:[+long], _i }:
+	{ k, ɡ, x } > { t͡s, d͡z, s } / After some syllables with front vowels
+	{ sʲ, zʲ } > { ʃ, ʒ }
+	{ kʲ, ɡʲ, xʲ } > { t͡ʃ, ʒ, ʃ }

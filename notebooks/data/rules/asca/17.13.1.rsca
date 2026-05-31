@@ -1,15 +1,15 @@
 @ 17.13.1 - Proto-Tocharian to Tocharian A
 # citation: Nortaneous, from http://www.utexas.edu/cola/centers/lrc/eieol/tokol-TC-X.html and https://azargoshnasp.net/history/Tocharian/positionoftocharian.pdf “[E]penthesis [of /ə/] to break up ‘difficult’ consonant clusters (mostly in the coda?)”
 	s > ʂ / _t
-	k > p / _{s,ʂ}
+	k > p / :{ _s, _ʂ }:
 	Cʲj > Cʲ:[+long]
 	n > j / V_sV // E_
-	V > j / V_nʲtʲ // V = E
+	V > j / V_nʲtʲ // V =
 	j > ∅ / w_
-	{a,ɛ}i əj > e i
-	{a,ɛ}u əw > o u
+	{ {a,ɛ}i, əj } > { e, i }
+	{ {a,ɛ}u, əw } > { o, u }
 	{ɔ,ɛ} > a
 	V > :[+round] / [+ cons, - fr, + bk, + hi, - lo]ʷ_
-	{kʷ,kw} > k
+	{kʷ,kʷ} > k
 	ə > ∅ / _%
 	V > ∅ / _#
