@@ -13,7 +13,7 @@
 	h > ∅ / w_j
 	hʷ > ∅ / õ_
 	w > ∅ / :{ _r, _j }:
-	r > n / :{ _hj, _j }:
+	r > n / _(h)j
 	r > ∅ / Vh_
 	Vh > V:[+long] / :{ _n, _w, _j }:
 	h > ∅ / V_V
@@ -30,7 +30,7 @@
 	ʔ > ∅ / _nkʷ
 	n > t / _kʷ
 	n > t / ʔ_#
-	R > ∅ / _h
+	S > ∅ / _h
 	C > ∅ / s_#
 	C:[-glottal] > ∅ / _s#
 	k > ∅ / _ht͡s
@@ -38,10 +38,10 @@
 	t > ∅ / k_#
 	{ths,tt͡s} > t͡sh
 	{ {, a,, a:[+long], }, {, æ,, æ:[+long], } } > { {, õ,, õ:[+long], }, {, ẽ,, ẽ:[+long], } } / n_
-	{ a, a:[+long] } > { õ, õ:[+long] } / V:[+nas]H_
+	{ a, a:[+long] } > { õ, õ:[+long] } / V:[+nas]:[+laryngeal]_
 	{ a, a:[+long] } > { õ, õ:[+long] } / V:[+nas]({ʔ,s})w_
 	{ {, ẽ,, ẽ:[+long], }, {, õ,, õ:[+long], } } > { {, ɛ̃,, ɛ̃:[+long], }, {, ɔ̃,, ɔ̃:[+long], } }
 	∅ > h / k_n
-	— t kʷ > d ɡʷ / :{ _V }:
+	— t kʷ > d ɡʷ / :{ _V, _S }:
 	— s > ʃ / _j
 	— a e o > ə ɪ ʊ / :{ C_C, C_i:[-long] }:

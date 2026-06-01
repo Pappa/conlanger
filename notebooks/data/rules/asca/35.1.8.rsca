@@ -9,7 +9,8 @@
 	t͡ʃ’ > t͡s’
 	j > t͡ʃ / _V
 	ʔ > ∅ / V3l_nV
-	ʔ > ∅, ʔ / :{ V3R_C, V3R_# }:
+	ʔ > ∅ / :{ V3S_C, V3S_# }:
+	ʔ > ʔ / :{ V3S_C, V3S_# }:
 	{ u3, u1 } > { o3, ə1 }
 	a3 > o3 / { {C:[+uvular]ʷ, [+ cons, - fr, + bk, + hi, - lo]ʷ },w}_
 	a3 > o3 / :{ _Cu, _C:[+uvular]ʷ, _w }:

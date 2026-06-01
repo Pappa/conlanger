@@ -1,5 +1,5 @@
 @ 17.7.3.1.3 - Old Norse to Shetland Norn
-# citation: Pogostick Man and Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from http://nornlanguage.x10.mx/index.php?shet_phon, citing Jakobsen, Jakob, An Etymological Dictionary of the Norn Language NB: For the most part, these changes are not in chronological order and are often tendencies more than strict sound-change laws. Further, I’m assuming that 〈ä〉 is /æ/ and that 〈o̧〉 and 〈ȯ〉 are /ɒ/, and since I’m not sure what the conditions are for (apparent) reflexes with long vowels, I’m ignoring the vowel length in the Shetland Norn reflexes. r alternates with l Final short vowels drop
+# citation: Pogostick Man and Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill NB: For the most part, these changes are not in chronological order and are often tendencies more than strict sound-change laws. Further, I’m assuming that 〈ä〉 is /æ/ and that 〈o̧〉 and 〈ȯ〉 are /ɒ/, and since I’m not sure what the conditions are for (apparent) reflexes with long vowels, I’m ignoring the vowel length in the Shetland Norn reflexes. r alternates with l Final short vowels drop
 	{ p, t, k } > { b, d, ɡ } / V_V (the second V at least can be a syllabic consonant)
 	{ b, d } > { p, t } / N_
 	b > v / #_ (sporadic?)
@@ -9,7 +9,7 @@
 	n:[+long] l:[+long] ?) > ɲ ʎ
 	dʲ > d͡ʒ
 	{ ɡ, ɡ:[+long] } > d͡ʒ / _iV
-	{ k, ɡ } > { c, ɟ } / _E
+	{ k, ɡ } > { c, ɟ } / _:[+front]
 	tr > rd
 	{ p:[+long], t:[+long], k:[+long] } > { b, d, {ɡ,ɣ} } / V_V
 	t:[+long] > tʲ, dʲ
@@ -29,8 +29,13 @@
 	∅ > h / #_V
 	h > ∅ / :{ _V(sporadic), _w(sporadic), _j(sporadic) }:
 	h > ∅ / _l
-	h > ∅, h, k / _r
-	h > ∅, h, k, s / _n
+	h > ∅ / _r
+	h > h / _r
+	h > k / _r
+	h > ∅ / _n
+	h > h / _n
+	h > k / _n
+	h > s / _n
 	hv > {h,k,s}w
 	hʲ > ʃ
 	{ n, l } > { ɲ, ʎ } / _C

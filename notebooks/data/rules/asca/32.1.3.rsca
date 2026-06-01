@@ -1,7 +1,7 @@
 @ 32.1.3 - Proto-Chatino to Yaitepec Chatino
 # citation: Pogostick Man, from Upson, B.W., and Robert E. Longacre (1965), “Proto-Chatino Phonology”. International Journal of American Linguistics 31(4):312 – 322 Some consonant disharmony involving reflexes of *k, *kʷ
 	tʲ > tʲ
-	k > t͡ʃ / _Ekʷ
+	k > t͡ʃ / _:[+front]kʷ
 	kʲ > k / :{ _a, _ã }:
 	kʲ > kʲ
 	kʷ > w / _e:[+long]j
@@ -18,7 +18,7 @@
 	s > t͡ʃ / #_a
 	ʃ > s / :{ _ik, _e, _ı̃, _ẽ }:
 	ʃ > t͡s / _i, in monosyllables
-	lʲ > l / #_ in :[-long -stress]
+	lʲ > l / #_ in %:[-long -stress]
 	lʲ > lʲ
 	nʲ > j / _ã (with some exceptions?)
 	nʲ > nʲ

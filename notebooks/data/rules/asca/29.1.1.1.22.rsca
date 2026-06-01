@@ -1,10 +1,13 @@
 @ 29.1.1.1.22 - Proto-Eastern Southern Athabaskan to Jicarilla
 # citation: Pogostick Man, from Hoijer, Harry (1938), “The Southern Athapaskan Languages”. American Anthropologist 40:75 – 87 x ɣ / h ∅ / _#
 	d > ʔ / _#
-	{ xʲ, xʔ, j, ɣʔ } > { h, ʔ, ∅, ʔ } / E_#
+	xʲ > h / [+front]_#
+	xʔ > ʔ / [+front]_#
+	j > ∅ / [+front]_#
+	ɣʔ > ʔ / [+front]_#
 	{ xʲ, xʔ, j, ɡʔ } > { ih, iʔ, i, iʔ } / _#
 	{ xʲʔ, jʔ } > { h, ʔ } / _#
 	n > ⁿd
 	xʲ > s
-	j > ɣ / _E
+	j > ɣ / _:[+front]
 	{ Vnʔ, VnC } > { V:[+nas], V:[+nas]C } / _#

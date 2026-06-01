@@ -1,12 +1,18 @@
 @ 10.3.9.1 - Proto-Utupua to Asuboa
 # citation: Pogostick Man, from Ross, Malcolm, and Åshlid Næss (2007), “An Oceanic Origin for Äiwoo, the Language of the Reef Islands?”. Oceanic Linguistics 46(II):456 – 498 PU *p had occasional reflexes of p or ∅
-	p > w / _B
+	p > w / _:[+back]
 	{ pʷ, mʷ } > { w, m }
 	{ dr, s, l } > { {d,ɟ}, {∅,s}, {n,∅} }
-	{ c, ɲ } > { ∅, {ɲ,j} }
+	c > ∅
+	ɲ > {ɲ,j}
 	{ t, r, l } > { {j,s}, {j,∅}, j } / _u
 	t > s / _i
-	k > k, ∅ / #_
-	k > ∅, s / _#
-	r > l, n, ∅
-	*R > l, ∅
+	k > k / #_
+	k > ∅ / #_
+	k > ∅ / _#
+	k > s / _#
+	r > l
+	r > n
+	r > ∅
+	*S > l
+	*S > ∅

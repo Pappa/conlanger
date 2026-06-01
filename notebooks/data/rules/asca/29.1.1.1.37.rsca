@@ -1,7 +1,7 @@
 @ 29.1.1.1.37 - Proto-Athabaskan to Tanacross
 # citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85 Acquisition of phonemic length in some unreduced vowels, though exactly how is not explored
-	[+ cons, - fr, + bk, + hi, - lo] > TŠ // _$
-	{ TS, TŠ, TŠʷ, Q } > { TH, TS, TṢ, [+ cons, - fr, + bk, + hi, - lo] }
+	[+ cons, - fr, + bk, + hi, - lo] > P:[-voice]Š // _$
+	P:[-voice]S P:[-voice]Š P:[-voice]Šʷ:[+click] > P:[-voice]:[+laryngeal] P:[-voice]S P:[-voice]Ṣ [+ cons, - fr, + bk, + hi, - lo]
 	S’ > S / _$
 	Vˀ > V:[+high tone]
 	Vɲ > V:[+nas]

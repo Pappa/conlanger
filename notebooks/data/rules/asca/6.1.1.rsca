@@ -7,9 +7,9 @@
 	e > i / p_r
 	e > i / :{ #{s,ʃ,t͡sʼ}_kʷ, #{s,ʃ,t͡sʼ}_ʔ }:
 	{ e, o } > { i, u } / #C_P
-	{ e, o } > { i, u } / #{ ʔ_, _ }C
+	{ e, o } > { i, u } / #(ʔ)_C
 	{ e, o } > { i, u } / :{ #{kʼ,x}_tʼ, #{kʼ,x}_t͡sʼ }:
-	{ e, o } > { i, u } / #{ ʔ_, _ }C$
+	{ e, o } > { i, u } / #(ʔ)_C$
 	{ e, o } > { i, u } / :{ #P_t͡sʼ, #P_t͡ʃʼ }:
 	a > o / #{z,d͡ʒ}_P
 	{ e, e:[+long] } > { i, i:[+long] } / :{ #C:[+strident]_d, #C:[+strident]_n, #C:[+strident]_r }:

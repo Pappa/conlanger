@@ -2,7 +2,7 @@
 # citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian Languages”, University of Manitoba, Winnipeg “Some additional changes seem to have taken place in one or more Cherokee dialects, affecting consonant clusters whose reconstructed identity is in most cases uncertain. Example correspondences include /hs ~ lh ~ thl/ (probably < */hsɹ/) or /ts ~ tl ~ thl/ (maybe < */tsɹ/?)” “[A] synchronic allophonic rule:”
 	{ k, kʷ } > { t͡s, k } / _i
 	w > ∅ / h_i
-	w > ∅ / t{ h_, _ }
+	w > ∅ / t(h)_
 	{wV,jV} > V:[+long]:[+low falling tone]
 	V > ∅ / C_hC
 	Vʔ > V:[+long]:[+low falling tone] / _C
@@ -17,7 +17,7 @@
 	t > ∅ / :{ _k, _n }:
 	t > ∅ / n_
 	j > ∅ / t͡s_
-	∅ > i / C_R
+	∅ > i / C_S
 	s > ∅ / #h_V
 	t͡s > s / h_
 	ks > t͡s / _V

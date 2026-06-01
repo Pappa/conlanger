@@ -3,10 +3,10 @@
 	{ ç, x } > { x, {ʃ,ʒ} }
 	p > p, b, m, w
 	w > ∅ / _t
-	t > t͡ʃ / _
-	t > d͡ʒ / _E:[-stress]
-	tʲ > ʃ / in
-	{ tʲ, s } > { ʒ, z } / in :[-stress]
+	t > t͡ʃ / _:[+front]
+	t > d͡ʒ / _:[+front]:[-stress]
+	tʲ > ʃ / in %
+	{ tʲ, s } > { ʒ, z } / in %:[-stress]
 	k > ɡ / V:[+nas]_ // _#
 	k > ɡ / _ʔ
 	kr > kVrV

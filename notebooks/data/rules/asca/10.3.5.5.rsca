@@ -1,6 +1,6 @@
 @ 10.3.5.5 - Proto-New Caledonia to Nyelâyu
 # citation: thetha, from Ozanne-Rivierre, Françoise (1992), “The Proto-Oceanic Consonantal System and the Languages of New Caledonia”. Oceanic Linguistics 31(2):191 – 207; and Ozanne-Rivierre, Françoise (1995), “Structural Changes in the Languages of Northern New Caledonia”. Oceanic Linguistics 34(1):44 – 72
-	V > ∅ / #{ CV, V }(C){ C_, _ }#
+	V > ∅ / #(C)V(C)(C)_#
 	C > ∅ / _#
 	k > c
 	{ k, t, s } > { j, c, t̪ }
@@ -11,7 +11,8 @@
 	ɴq > ŋk
 	{ p:[+long], pʷ:[+long], t:[+long], q:[+long], c:[+long] } > { pʰ, pwʰ, tʰ, h, cʰ }
 	q > ∅
-	{ jʰ, j } > { h, ∅ } / _i
+	jʰ > h / _i
+	j > ∅ / _i
 	w > ɣ (sporadic, conditioning unknown)
 	ⁿS > N / _#
 	SN > N:[-voice]

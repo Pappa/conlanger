@@ -2,7 +2,8 @@
 # citation: thetha, from Guy, Jacques (1978), “Proto-North New Hebridean Reconstructions” An /o ɔ/ distinction is gained somehow
 	C > ∅ / _#
 	q > ∅
-	*R > ∅, r
+	*S > ∅
+	*S > r
 	{ ɲ, c, *j } > { n, s, z }
 	{ p, pʷ, k } > { v, vʷ, ɣ }
 	{ b, bʷ, ɡ } > { p, pʷ, k }
@@ -11,9 +12,14 @@
 	t > t͡s / _V:[+high]
 	”a > i / _CV:[-high]
 	”a > e / _CV:[+high]
-	{ p, ŋ } > { f, ∅ } / V_V
-	{ ɣ, s, d } > { ∅, {j, dr} } / _#
-	{ ɣ, s, d } > { ∅, {j, dr} } / before a post-tonic vowel
+	p > f / V_V
+	ŋ > ∅ / V_V
+	ɣ > ∅ / _#
+	s > {j / _#
+	d > dr} / _#
+	ɣ > ∅ / before a post-tonic vowel
+	s > {j / before a post-tonic vowel
+	d > dr} / before a post-tonic vowel
 	V > e / C_# // C = j
 	V > ∅ / :{ ”V_, j_ }:
 	{ p, v, m } > { t, θ, n } / :{ _a, _e, _i }:

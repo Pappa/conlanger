@@ -5,7 +5,7 @@
 	l > ∅ / #{d,tʼ}_VC
 	ɬ > s / #_VC
 	{ {ʃ,t͡s,z}, d͡z, t͡ʃ, {tʼ,t͡ʃʼ}, d͡ʒ } > { s, z, t͡s, t͡sʼ, d͡ʒ }
-	f > p / #_V{,C:[-voice],r}
+	f > p / #_V{[+continuant],C:[-voice],r}
 	pʼ > p
 	p > b / #dlV_
 	xʷ > ɣʷ
@@ -18,8 +18,8 @@
 	xV > k / _h
 	[+ cons, - fr, + bk, + hi, - lo]ʷ > [+ cons, - fr, + bk, + hi, - lo]
 	q > ∅ / _i
-	q > i / #_V{,C:[+dental]}
-	ʕ > i / #_VR
+	q > i / #_V{[+continuant],C:[+dental]}
+	ʕ > i / #_VS
 	qu > w / :{ _f(sporadic), _s(sporadic) }:
 	ʔ > ʕ / _V{n,r,ɡ}
 	{h,ħ,q} > ʕ / C:[+voice]_V
@@ -30,7 +30,7 @@
 	ɣ > ʕ / ħ_
 	tlʼ > dl / #_Vħr
 	O:[+lateral] > O:[+palatal]
-	r > l / #_V{ VO, O }:[+labial]
+	r > l / #_V(V)O:[+labial]
 	r > ʔ / :{ C_t# ,m,n,r,w,ʃ,x}, C_w# ,m,n,r,w,ʃ,x}, C_j# ,m,n,r,w,ʃ,x} }: // C = {ɡ
 	l > j / #_iC ?
 	l > r / #nV_C

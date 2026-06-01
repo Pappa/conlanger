@@ -1,5 +1,5 @@
 @ 42.1.1.1.1 - Proto-Finnish to Standard Finnish
-# citation: Tropylium, from Hakulinen, Lauri (1979), “Suomen kielen rakenne ja kehitys”. Otava; Häkkinen, Kaisa (2004), “Nykysuomen etymologinen sanakirja”. WSOY; Kallio, Petri (2007), “Kantasuomen konsonanttihistoriaa”. Mémoires de la Société Finno-Ougrienne 253. <http://www.sgr.fi/sust/sust253/sust253_kallio.pdf>; and from Janhunen, Juha (2007), “The primary laryngeal in Uralic and beyond”. Mémoires de la Société Finno-Ougrienne 253. <http://www.sgr.fi/sust/sust253/sust253_janhunen.pdf>
+# citation: Tropylium, from Hakulinen, Lauri (1979), “Suomen kielen rakenne ja kehitys”. Otava; Häkkinen, Kaisa (2004), “Nykysuomen etymologinen sanakirja”. WSOY; Kallio, Petri (2007), “Kantasuomen konsonanttihistoriaa”. Mémoires de la Société Finno-Ougrienne 253.
 	{ mb, nd, ŋɡ } > { m:[+long], n:[+long], ŋ:[+long] }
 	{ e:[+long], ø:[+long], o:[+long] } > { ie, yø, uo }
 	{ pˑ, tˑ, θˑ, kˑ } > { p, t, θ, k }
@@ -10,32 +10,32 @@
 	V > V:[+long] / _hC (sporadic)
 	{k,x} > ˟ / _#
 	t > ∅ / s_r
-	p > β / _R
-	β > U / _R
-	t > z / _r{A,O}
-	z > U / _r{A,O}
+	p > β / _S
+	β > % / _S
+	t > z / _r{[+affricate],O}
+	z > % / _r{[+affricate],O}
 	t > z / _r{i,e}
 	z > @ / _r{i,e}
 	k > z / _j
 	z > @ / _j
-	k > ɣ i / :{ i_R{i,e}, e_R{i,e} }:
-	k > ɣ / :{ A_R, O_R }: // = j
-	ɣ > U / :{ A_R, O_R }: // = j
+	k > ɣ i / :{ i_S{i,e}, e_S{i,e} }:
+	k > ɣ / :{ [+affricate]_S, O_S, %_S }: // S = j
+	ɣ > % / :{ [+affricate]_S, O_S, %_S }: // S = j
 	β > ʋ
-	ʋ > ∅ / _UC
+	ʋ > ∅ / _%C
 	ið > j / V_V
 	{ lð, rð } > { l:[+long], r:[+long] }
-	ð > ∅ // V{ X_, _ }
+	ð > ∅ // V(X)_
 	ɣ > j / C_e
-	ɣ > ʋ / U_U
-	ɣ > ʔ / VV_V // V =
+	ɣ > ʋ / %_%
+	ɣ > ʔ / VV_V // V = %
 	ɣ > ∅
-	h > ∅ / V:[-stress]{ X_, _ }V
-	AO > {A,O,U}:[+long] / unstressed
-	e > i / A_, when unstressed
-	Ue > e:[+long] / unstressed
-	VU > V:[+long] / _#
-	{ iU, OU } > { U:[+long], O:[+long] }
+	h > ∅ / V:[-stress](X)_V
+	[+affricate]O > {[+affricate],O,%}:[+long] / unstressed
+	e > i / [+affricate]_, when unstressed
+	%e > e:[+long] / unstressed
+	V% > V:[+long] / _#
+	{ i%, O% } > { %:[+long], O:[+long] }
 	æ > a / e(C…)_(C…)o
 	e > ø / #(C…)_y
 	i > y / #(C…)l_y

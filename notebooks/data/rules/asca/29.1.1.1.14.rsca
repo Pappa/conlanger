@@ -1,9 +1,9 @@
 @ 29.1.1.1.14 - Proto-Athabaskan to Lower Koyukon
 # citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
 	{ e, a, ɑ, ʊ } > { a, o, ŏ, ŭ }
-	{ TS, {TŠ,TŠʷ} } > { TŁ, TS }
+	{ P:[-voice]S, {P:[-voice]Š,P:[-voice]Šʷ} } > { P:[-voice]Ł, P:[-voice]S }
 	C’ > C / _$
 	Vˀ > V:[+low tone]
 	w ( > b?)
 	b?) > m
-	ə > ∅ / :{ F_# }:
+	ə > ∅ / :{ S_#, F_# }:

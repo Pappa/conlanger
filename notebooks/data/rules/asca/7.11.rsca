@@ -25,7 +25,8 @@
 	{a,ə} > ∅ / :{ _x“in the odd-numbered of any sequence of one or more short-vowel open syllables”; such vowels are considered “weak”, _h“in the odd-numbered of any sequence of one or more short-vowel open syllables”; such vowels are considered “weak” }:
 	ə:[+weak] > ∅ / #_C
 	ə:[+weak] > ∅ / _C:[+voice] (sporadic)
-	{ a:[+weak], ə:[+weak] } > { ə, ∅ } / a_Z:[+voice]
+	a:[+weak] > ə / a_:[+continuant]:[+voice]
+	ə:[+weak] > ∅ / a_:[+continuant]:[+voice]
 	ə > o / _h{p,kʷ,w,m}
 	ə > i / _hC
 	ə > o / _x{p,kʷ,V:[+round]}

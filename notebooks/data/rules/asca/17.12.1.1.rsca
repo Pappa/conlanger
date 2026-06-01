@@ -16,27 +16,27 @@
 	aw > au
 	{ew,ow} > ou
 	ou > u:[+long]
-	V > i / %(C){ C_, _ }% when unstressed
-	V > o / %(C){ CV, V }_% when unstressed
-	V > e / %(C){ C_, _ }%r when unstressed (with some exceptions)
-	V > i, u / %(C){ C_, _ }%P when unstressed
-	{ a, o } > { e, u } / %(C){ C_, _ }C{ C%, % } when unstressed
-	a > e / %(C){ C_, _ }ŋ when unstressed
-	e > i / %(C){ C_, _ }ŋ when unstressed
-	a > e / %(C){ C_, _ }ɫ when unstressed
-	e > u / %(C){ C_, _ }ɫ when unstressed
-	e > u / %(C){ C_, _ }ɫ when unstressed
-	ai > ei / %(C){ C_, _ } when unstressed
-	ei > i:[+long] / %(C){ C_, _ } when unstressed
-	{ ei, oi, ou } > { i:[+long], e:[+long], u:[+long] } / %(C){ C_, _ } when unstressed
+	V > i / %(C)(C)_% when unstressed
+	V > o / %(C)(C)V_% when unstressed
+	V > e / %(C)(C)_%r when unstressed (with some exceptions)
+	V > i, u / %(C)(C)_%P when unstressed
+	{ a, o } > { e, u } / %(C)(C)_C(C)% when unstressed
+	a > e / %(C)(C)_ŋ when unstressed
+	e > i / %(C)(C)_ŋ when unstressed
+	a > e / %(C)(C)_ɫ when unstressed
+	e > u / %(C)(C)_ɫ when unstressed
+	e > u / %(C)(C)_ɫ when unstressed
+	ai > ei / %(C)(C)_ when unstressed
+	ei > i:[+long] / %(C)(C)_ when unstressed
+	{ ei, oi, ou } > { i:[+long], e:[+long], u:[+long] } / %(C)(C)_ when unstressed
 	{i,o} > e / _#
 	{i,e} > ∅ / _# (
-	a > e / _C{ C#, # }
+	a > e / _C(C)#
 	e > i / :{ _s#, _t# }:
-	o > u / _C{ C#, # } ,w}_ // {u
-	{ai,ei,oi} > ei / _(C){ C#, # }
-	ei > i:[+long] / _(C){ C#, # }
-	V:[+long] > V:[-long] / :{ _m#, _nt#, _t#, _l#, _r# }:
+	o > u / _C(C)# ,w}_ // {u
+	{ai,ei,oi} > ei / _(C)(C)#
+	ei > i:[+long] / _(C)(C)#
+	V:[+long] > V:[-long] / :{ _m#, _(n)t#, _l#, _r# }:
 	V:[+long] > V:[-long] / _#
 	j > i / C_
 	w > u / t_
@@ -92,7 +92,7 @@
 	{t,d} > s / _s
 	{ {p,b}, {t,d} } > { m, n } / :{ _m, _n }:
 	{k,ɡ} > ŋ / _n
-	m:[+long] > n / :{ W_, V:[+long]_ }:
+	m:[+long] > n / :{ [+approximant]_, V:[+long]_ }:
 	{d,n,r} > l / _l
 	n > r / _r
 	s > z / l_
@@ -106,13 +106,13 @@
 	∅ > t / s:[+long]_r
 	∅ > p / :{ m_s, m_t, m_l }:
 	s:[+long] > s / _#
-	s:[+long] > s / :{ W_, V:[+long]_ }:
+	s:[+long] > s / :{ [+approximant]_, V:[+long]_ }:
 	l > r
 	r > _Vl
 	l > r / lV_ (in suffixes with l if root already has l)
 	r…r > r…∅
 	{n,d}…r > r…r
-	V:[+long] > V / _C{ C#, # } (irregular: often before -m, -t, -nt, but never before ?s)
+	V:[+long] > V / _C(C)# (irregular: often before -m, -t, -nt, but never before ?s)
 	V > V:[+long], V:[+nas] / _n{f,s}
 	n > ∅ / V:[+nas]_
 	CCCC > (C)C

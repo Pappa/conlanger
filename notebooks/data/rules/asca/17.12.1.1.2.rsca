@@ -3,9 +3,9 @@
 	h > ∅
 	n > ∅ / _s
 	{m,n,t} > ∅ / _#
-	V > ∅ / V%C_L{ CV, V }{ C#, # } (irregular)
-	V > ∅ / V%L_C{ CV, V }{ C#, # } (irregular)
-	V > ∅ / V%s_t{ CV, V }{ C#, # } (irregular)
+	V > ∅ / V%C_L(C)V(C)# (irregular)
+	V > ∅ / V%L_C(C)V(C)# (irregular)
+	V > ∅ / V%s_t(C)V(C)# (irregular)
 	u > w / (when in unstressed penult or between first and tonic syllables; irregular)
 	w > ∅ / (when in unstressed penult or between first and tonic syllables; irregular)
 	i:[+long] > i / stressed
@@ -17,7 +17,7 @@
 	u:[+long] > u / _%V
 	au > a / _%u
 	{ {u,o:[+long]}, o } > { o, ɔ } / stressed
-	{{ u,o, u,o:[+long] }} > u / _%V in East Catalan
+	{{ u,o, u,o:[+long] }} > u / _%V in:[+front]ast Catalan
 	{{ u,o, u,o:[+long] }} > o / _%V
 	u > w / ɛ_#
 	a:[+long] > a
@@ -35,16 +35,23 @@
 	l > w / V_CV (although l was usually restored later)
 	mn > n:[+long]
 	n:[+long] > ɲ
-	{ p, b, t, d, k, ɡ } > { β, {β,w}, ∅, {j,w}, ɣ, {j,∅,ɡ} } / V_rV
+	p > β / V_rV
+	b > {β,w} / V_rV
+	t > ∅ / V_rV
+	d > {j,w} / V_rV
+	k > ɣ / V_rV
+	ɡ > {j,∅,ɡ} / V_rV
 	ŋ > ɲ / :{ _i, _e }:
 	{ p, b } > { b, w } / V_lV (the latter is irregular)
 	{kl,ɡl} > ʎ / V_V (the latter is irregular)
 	sk > ʃ / :{ V_i, V_e }:
-	{ p, k } > { ∅, j } / V_tV
+	p > ∅ / V_tV
+	k > j / V_tV
 	k > ∅ / Vn_tV
 	ks > ʃ / V_V
 	k > j / _s#
-	{ ɡn, tʲ } > { ɲ, ∅ } / V_V
+	ɡn > ɲ / V_V
+	tʲ > ∅ / V_V
 	stʲ > ʃ
 	tʲ > s / C_
 	{ sʲ, ssʲ, jn } > { js, jʃ, ɲ } / V_V
@@ -57,24 +64,29 @@
 	∅ > e, o / CL_#
 	∅ > e, o / r:[+long]_#
 	a > e / in the penult
-	V > ∅ / V%_(C){ CV, V }{ C#, # } (irregular; e is kept before n)
+	V > ∅ / V%_(C)(C)V(C)# (irregular; e is kept before n)
 	b > v / V_V
 	{ p, t } > { b, d } / V_V
 	f > v / V_V (irregular)
 	s > z / V%V_V
 	s > ∅ / V_V%V
-	{ k, ɡ } > { ∅, {∅,ʒ} } / :{ V_i(ɡ → ʒ is learned), V_e(ɡ → ʒ is learned) }:
+	k > ∅ / :{ V_i(ɡ → ʒ is learned), V_e(ɡ → ʒ is learned) }:
+	ɡ > {∅,ʒ} / :{ V_i(ɡ → ʒ is learned), V_e(ɡ → ʒ is learned) }:
 	ɡ > ∅ / V_V%V
 	{ k, j } > { ɡ, ʒ } / V_V
 	— d > z / V_V
 	z > ∅ / V_V
 	— d > w / _V#
 	i:[+long] > ∅ / _#
-	{{ i,e, i,e:[+long] },ae} > ∅ / :{ _C#, _# }:
+	{{ i,e, i,e:[+long] },ae} > ∅ / _(C)#
 	{{ u, u:[+long] }{ ,o, ,o:[+long] }} > ∅ / _#
 	V > ∅ / between first and tonic syllables; except when C_CC, _n; if there are multiple vowels between the initial and tonic syllables, the vowel directly before the tonic is usually dropped // V = a
 	w > ∅ / u_#
-	{ j, ɡʲ, t͡s, z, n } > { t͡ʃ, i, w, s, ∅ } / _#
+	j > t͡ʃ / _#
+	ɡʲ > i / _#
+	t͡s > w / _#
+	z > s / _#
+	n > ∅ / _#
 	t > ∅ / V_sV
 	{b,v} > w / V_#
 	d > t / _#
@@ -114,4 +126,4 @@
 	aj > ej / _ʃ (irregular)
 	{ ɛj, ɔj } > { jɛj, uei } / i {u,ui} / stressed
 	ɛ > e / ,l,rC:[-labial],nr} or _ ? w# // _{r:[+long]
-	e > ɛ (in Eastern Catalan)
+	e > ɛ (in:[+front]astern Catalan)

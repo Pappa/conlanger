@@ -1,11 +1,12 @@
 @ 10.1.2.2 - Proto-Philippine to Cebuano
 # citation: Pogostick Man, from Llamzon, Teodoro A. (1975), “Proto-Philippine Phonology”. Archipel 9(1):29 – 42; and from other changes and information from this document
 	ə > u
-	{ *D, d } > { l, r } / V_V
+	{ *P:[+voice], d } > { l, r } / V_V
 	*j > d / #_
-	{ {*j,*Z}, z } > { l, r } / V_V
-	{ h, *j } > { ∅, d } / _#
-	*R > ɡ
+	{ {*j,*:[+continuant]}, z } > { l, r } / V_V
+	h > ∅ / _#
+	*j > d / _#
+	*S > ɡ
 	q > ∅
 	h > ∅ / _#
 	iw > uj

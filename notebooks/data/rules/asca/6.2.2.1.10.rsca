@@ -1,8 +1,10 @@
 @ 6.2.2.1.10 - Classical Arabic to Hassāniyya Arabic
-# citation: Pogostick Man, from http://en.wikipedia.org/wiki/Hass%C4%81n%C4%ABya NB: Words borrowed directly from CA/MSA seem to be immune to these changes. Also, unless otherwise noted, changes also apply to geminate consonants. The conditioning on these next two changes is conjectured based upon the source:
+# citation: Pogostick Man NB: Words borrowed directly from CA/MSA seem to be immune to these changes. Also, unless otherwise noted, changes also apply to geminate consonants. The conditioning on these next two changes is conjectured based upon the source:
 	{ dˤ, q } > { ðˤ, ɡ }
 	f θ > v z̪ (the article isn’t exactly clear on what this second phone is)
-	ʔ > ∅, j, w
+	ʔ > ∅
+	ʔ > j
+	ʔ > w
 	x > χ (conjectured based upon the following but not outright stated in the article)
 	ɣ:[+long] > ʁ:[+long]
 	ʁ:[+long] > q:[+long]

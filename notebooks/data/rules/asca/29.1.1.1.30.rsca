@@ -1,8 +1,8 @@
 @ 29.1.1.1.30 - Proto-Athabaskan to Hare Slavey-Hare
 # citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
 	{ t͡ɬʰ, t͡ʃʷʰ, kʰ } > { ɬ, s, ʃ }
-	{TŠ,TŠʷ} [+ cons, - fr, + bk, + hi, - lo] > TS TŠ (with exceptions)
-	Q > [+ cons, - fr, + bk, + hi, - lo]
+	{P:[-voice]Š,P:[-voice]Šʷ} [+ cons, - fr, + bk, + hi, - lo] > P:[-voice]S P:[-voice]Š (with exceptions)
+	[+click] > [+ cons, - fr, + bk, + hi, - lo]
 	∅ > j / _e
 	ɬ > l
 	{ t͡s, t͡sʰ, t͡sʼ, {s,z} } > { {kʷ,p}, f, wˀ, w }

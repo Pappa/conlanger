@@ -1,13 +1,13 @@
 @ 6.2.2.1.18 - Proto-Semitic to Biblical Hebrew
-# citation: Maknas, from http://www.adath-shalom.ca/history_of_hebrew.htm “and other sources” NB: ə could be realized as an ultrashort [a], [e], or [o] depending on its surroundings. Some mergers involving j and w Frequent h-dropping Stressed-vowel correspondences: Unstressed-vowel correspondences:
+# citation: Maknas NB: ə could be realized as an ultrashort [a], [e], or [o] depending on its surroundings. Some mergers involving j and w Frequent h-dropping Stressed-vowel correspondences: Unstressed-vowel correspondences:
 	{ θ, θˤ, ð, ɬ, ɬˤ } > { ʃ, ʃˤ, z, s, sˤ }
 	{ x, ɣ, kˤ } > { ħ, ʕ, q }
 	— a:[+long] > o:[+long] // _#
-	— i i:[+long] u u:[+long] > eə i:[+long]ə oə u:[+long]ə / _R
+	— i i:[+long] u u:[+long] > eə i:[+long]ə oə u:[+long]ə / _S
 	— i:[+long] > e:[+long] / _#
 	— a > a:[+long] / _$
 	— a > {a,ɛ} (not common)
-	— i u > e a / _R{$,#} (
+	— i u > e a / _S{$,#} (
 	— i u > e o / _C{$,#} (
 	{ —, i } > { e:[+long], o:[+long] }
 	— aw > a:[+long]w
@@ -17,19 +17,19 @@
 	— o:[+long] > u:[+long]
 	— a > ∅ / _#
 	— a > _$%%(…)”
-	— a > ə / _R if ə in an adjacent syllable
-	— a > ə / R_ if ə in an adjacent syllable
-	— i > ə / _R if a frontal allophone of ə in an adjacent syllable
-	— i > ə / R_ if a frontal allophone of ə in an adjacent syllable
-	— u > ə / _R if a backed allophone of ə in an adjacent syllable
-	— u > ə / R_ if a backed allophone of ə in an adjacent syllable
-	— i > a / _R
-	— i > a / R_
+	— a > ə / _S if ə in an adjacent syllable
+	— a > ə / S_ if ə in an adjacent syllable
+	— i > ə / _S if a frontal allophone of ə in an adjacent syllable
+	— i > ə / S_ if a frontal allophone of ə in an adjacent syllable
+	— u > ə / _S if a backed allophone of ə in an adjacent syllable
+	— u > ə / S_ if a backed allophone of ə in an adjacent syllable
+	— i > a / _S
+	— i > a / S_
 	— a i > a:[+long] e:[+long] / _%
 	— u > ɔ / _C{$,#}
 	— u > ∅ // _C:[+long]
 	— aj aw > e:[+long] o:[+long]
 	{ p, b, t, d, k, ɡ } > { b, v, θ, ð, x, ɣ } / non-intial singletons
 	ʕ > ∅ / :{ _$, _# }:
-	j > ∅ / E_ (not clear whether only short or long also)
+	j > ∅ / [+front]_ (not clear whether only short:[+front] or long also)
 	at > a:[+long] / _# (in feminine noun endings)

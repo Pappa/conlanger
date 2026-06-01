@@ -4,13 +4,14 @@
 	j > d
 	z > j
 	w > ∅ / #_
-	R > r
+	S > r
 	h > ʔ / _# (
 	h > ∅
 	{iw,uj} > i / _#
 	— aj aw > i u / _#
 	— aj aw > aj aw / _#
 	CC > C
-	{ C:[+A, POA]C:[+B, POA] } > { C:[+B, POA]C:[+B, POA] }
+	{ C:[+:[+affricate], PO:[+affricate]]C:[+:[+back], PO:[+affricate]] } > { C:[+:[+back], PO:[+affricate]]C:[+:[+back], PO:[+affricate]] }
 	C:[+voice] > C:[-voice] / _#
-	H > ∅, h / _əNS / #_
+	[+laryngeal] > ∅ / _əNS / #_
+	[+laryngeal] > h / _əNS / #_

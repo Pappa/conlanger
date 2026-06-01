@@ -5,11 +5,11 @@
 	t͡s > s / ,i,j} // _{h
 	ns > t͡s / :{ _t, _kʷ }:
 	n > ∅ / _s
-	”V > ”V:[+long]:[+falling tone] / :{ _ʔ, _hR }:
+	”V > ”V:[+long]:[+falling tone] / :{ _ʔ, _hS }:
 	ʔ > ∅ / V:[+long]:[+falling tone]_C
-	h > ∅ / V:[+long]:[+falling tone]_R
+	h > ∅ / V:[+long]:[+falling tone]_S
 	h > ∅ / _#
 	h > ∅ / #_w
-	V:[+long] > V / _(C)(C){ C#, # }
+	V:[+long] > V / _(C)(C)(C)#
 	CʔV > CVʔV
 	∅ > e / w_r (and probably. . .in other environment͡s)

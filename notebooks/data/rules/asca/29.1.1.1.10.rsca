@@ -1,10 +1,10 @@
 @ 29.1.1.1.10 - Proto-Athabaskan to Easter Gwich’in
 # citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85 NB: Here, 〈TS〉 represents a sound that Whimemsz says “is between” the TH and TS series POA-wise. “An ‘extensive reduction’ of stem-final consonants; however, reflexes of final *-ɲ and *-n after PA *a and *e are kept distinct”
-	{ TS, [+ cons, - fr, + bk, + hi, - lo] } > { TŠ, TS } / _E
-	{ TS, [+ cons, - fr, + bk, + hi, - lo] } > { TH, TŠ }
-	{ TŠ, TŠʷ, Q } > { TS, TṢ, [+ cons, - fr, + bk, + hi, - lo] }
+	{ P:[-voice]S, [+ cons, - fr, + bk, + hi, - lo] } > { P:[-voice]Š, P:[-voice]S } / _:[+front]
+	{ P:[-voice]S, [+ cons, - fr, + bk, + hi, - lo] } > { P:[-voice]:[+laryngeal], P:[-voice]Š }
+	P:[-voice]Š P:[-voice]Šʷ:[+click] > P:[-voice]S P:[-voice]Ṣ [+ cons, - fr, + bk, + hi, - lo]
 	{ j, w } > { ʒ, v }
-	{n,ɲ} > ⁿd͡ʒ / _E:[-nas]
+	{n,ɲ} > ⁿd͡ʒ / _:[+front]:[-nas]
 	{n,ɲ} > ⁿd / _V:[-nas]
 	{i,e} > {i,ja} (this latter due to the loss of final consonant͡s within the stem)
 	{ a, u, {ɑ,ə}, ʊ } > { {i,e}, ju, a, o }

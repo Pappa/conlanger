@@ -3,13 +3,13 @@
 	{ p, k } > { b, ɡ } / V_V
 	{ p, t } > { f, {s,h} } / #_
 	N > ŋ / _#
-	e > i / :{ _Ci, _i }:
+	e > i / _(C)i
 	e > æ / :{ P_, [+ cons, - fr, + bk, + hi, - lo]_ }:
 	e > æ / _P
 	e > ə / _C{a,ə,u} (seems to have become a in a few instances)
-	ə > o / :{ _Co, _o }:
-	ə > e / :{ _C:[+palatal] }:
-	ə > æ / ,[+ cons, - fr, + bk, + hi, - lo],} // _{B
-	a > æ / :{ _Ce, _e }:
-	a > æ / i{ C_, _ }
+	ə > o / _(C)o
+	ə > e / :{ _C:[+palatal], _:[+front] }:
+	ə > æ / ,[+ cons, - fr, + bk, + hi, - lo],:[+laryngeal]} // _{[+back]
+	a > æ / _(C)e
+	a > æ / i(C)_
 	o > e (sporadic, highly unusual)

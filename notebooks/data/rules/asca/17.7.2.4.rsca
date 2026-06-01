@@ -1,5 +1,5 @@
 @ 17.7.2.4 - High German Cosonant Shift and Umlaut
-# citation: Pogostick Man, from <http://en.wikipedia.org/wiki/High_German_consonant_shift>; and Wikipedia contributors (2014), “Germanic umlaut”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Germanic_umlaut>
+# citation: Pogostick Man, from
 	{ p, t, k } > { f:[+long], z:[+long], x:[+long] } / V_V
 	{ p, t, k } > { f, z, x } / _#
 	{ p, t, k } > { pf, t͡s, kx } / #_

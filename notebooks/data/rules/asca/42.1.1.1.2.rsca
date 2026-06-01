@@ -1,6 +1,6 @@
 @ 42.1.1.1.2 - Standard Finnish to Modern Standard Finnish
-# citation: Tropylium, from Hakulinen, Lauri (1979), “Suomen kielen rakenne ja kehitys”. Otava; Häkkinen, Kaisa (2004), “Nykysuomen etymologinen sanakirja”. WSOY; Kallio, Petri (2007), “Kantasuomen konsonanttihistoriaa”. Mémoires de la Société Finno-Ougrienne 253. <http://www.sgr.fi/sust/sust253/sust253_kallio.pdf>; and from Janhunen, Juha (2007), “The primary laryngeal in Uralic and beyond”. Mémoires de la Société Finno-Ougrienne 253. <http://www.sgr.fi/sust/sust253/sust253_janhunen.pdf>
+# citation: Tropylium, from Hakulinen, Lauri (1979), “Suomen kielen rakenne ja kehitys”. Otava; Häkkinen, Kaisa (2004), “Nykysuomen etymologinen sanakirja”. WSOY; Kallio, Petri (2007), “Kantasuomen konsonanttihistoriaa”. Mémoires de la Société Finno-Ougrienne 253.
 	n > ∅ / _#
 	d > ∅ / _r in inherited vocabulary
 	Va > V:[+long] / unstressed
-	{ ie, yɤ, uo } > { i:[+long], y:[+long], u:[+long] } / _A
+	{ ie, yɤ, uo } > { i:[+long], y:[+long], u:[+long] } / _:[+affricate]

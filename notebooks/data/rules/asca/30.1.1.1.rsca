@@ -1,12 +1,18 @@
 @ 30.1.1.1 - Proto-Bantu to Sebirwa
 # citation: Pogostick Man, from Chebanne, A. (2000), “The Sebirwa language: a synchronic and diachronic account”. Pula: Botswana Journal of African Studies 14(2)
-	{ i, u, VS } > { j, w, A } / _V:[+high +ATR]
+	i u VS > j w:[+affricate] / _V:[+high +:[+affricate]P:[-voice]S]
 	S > Sʰ
-	Sʰ > Aʰ
-	{ V:[+high, +ATR] } > { V:[+high, -ATR] }
+	Sʰ > :[+affricate]ʰ
+	{ V:[+high, +:[+affricate]P:[-voice]S] } > { V:[+high, -:[+affricate]P:[-voice]S] }
 	NC > C:[-voice] / #_ (in nouns)
-	NC > N:[+same POA]C / #_ (
-	t d l > {ʈ,tʲ} {ɖ,dʲ} {ɭ,lʲ,ʎ} (The paper is a bit unclear as to which is meant, as the transcription and the textual aspect͡s of the paper seem to disagree here)
-	{ p, t, d, c, ɟ, k, ɡ } > { ɸ, ɹ, {d,l}, tʰ, ∅, h, {∅,ɡ} }
+	NC > N:[+same PO:[+affricate]]C / #_ (
+	t d l > {ʈ,tʲ} {ɖ,dʲ} {ɭ,lʲ,ʎ} (P:[-voice]he paper is a bit unclear as to which is meant, as the transcription and the textual aspect͡s of the paper seem to disagree here)
+	p > ɸ
+	t > ɹ
+	d > {d,l}
+	c > tʰ
+	ɟ > ∅
+	k > h
+	ɡ > {∅,ɡ}
 	∅ > ɡ / #n_V (
 	l > d / n_

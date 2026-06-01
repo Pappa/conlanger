@@ -1,5 +1,5 @@
 @ 17.7.2.2 - West Germanic to Old Low Franconian
-# citation: Pogostick Man, from Wikipedia contributors (2014), “Old Dutch”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Old_Dutch>; and Wikipedia contributors (2014), “Germanic umlaut”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Germanic_umlaut> Final obstruents devoice Some vowel reduction seems to have occurred in unstressed syllables
+# citation: Pogostick Man, from Wikipedia contributors (2014), “Old Dutch”. Wikipedia, the Free Encyclopedia. Final obstruents devoice Some vowel reduction seems to have occurred in unstressed syllables
 	{ e:[+long], o:[+long] } > { ie, uo }
 	{ ai, au } > { e:[+long], o:[+long] }
 	h > ∅ / #_C

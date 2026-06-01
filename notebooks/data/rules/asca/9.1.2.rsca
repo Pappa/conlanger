@@ -1,18 +1,18 @@
 @ 9.1.2 - Proto-Vietic to Middle Vietnamese
-# citation: Pogostick Man, from Thompson, Laurence C. (1976), “Proto-Viet-Muong Phonology”. Oceanic Linguistics Special Publications 13, Austroasiatic Studies II:1113 – 1203; Wikipedia contributors (2012). “Hanoi”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Hanoi>; Wikipedia contributors (2012), “Vietnamese Language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Special:Cite&page=Vietnamese_language&id=509331797>; Gage, William W. (1985), “Glottal Stops and Vietnamese Tonogenesis”. Oceanic Linguistics Special Publications 20:21 – 36; and Thompson, Laurence C. (1979?), “More on Viet-Muong Tonal Developments” Initials: Finals: Thompson seems to list some changes as affecting Modern Vietnamese but I was unsure of where to put them so they’ll go here: In the original those first vowels were underlined.
+# citation: Pogostick Man, from Thompson, Laurence C. (1976), “Proto-Viet-Muong Phonology”. Oceanic Linguistics Special Publications 13, Austroasiatic Studies II:1113 – 1203; Wikipedia contributors (2012). “Hanoi”. Wikipedia, the Free Encyclopedia. Initials: Finals: Thompson seems to list some changes as affecting Modern Vietnamese but I was unsure of where to put them so they’ll go here: In the original those first vowels were underlined.
 	bʱ {tʰ,dʱ} {t*ʰ,d*ʱ} {kʰ,ɡʱ} > pʰ t tʰ kʰ (after *kʰ *ɡʱ, only first-register tones may occur)
 	{ (h)ə{p,b}, (h)ə{t,d}, (h)ə{c,ɟ}, (h)ə{k,ɡ} } > { β, dʲ, ɟ, ɡ }
 	{ {pʲ,bʲ}, {tʲ,dʲ}, {cʲ,ɟʲ} } > { {β,w}, dʲ, ɟ }
 	ɓ ɗ > m n (For some reason it seems that only first-register tones can occur in this environment)
-	{n̥j,nʲ,ɲ̊j,ɲʲ} > ɲ (Thompson appears to me to have hedged a bit on the last one; based on other evidence in the paper I’m sticking this one as a palatal nasal)
-	t͡ʃ > Ω (This is my own notation. I don’t have a clue what the intermediate form was; became something else in different dialect͡s)
-	{ N:[-voice], W:[-voice] } > { N:[+voice], W:[+voice] }
+	{n̥j,nʲ,ɲ̊j,ɲʲ} > ɲ (P:[-voice]hompson appears to me to have hedged a bit on the last one; based on other evidence in the paper I’m sticking this one as a palatal nasal)
+	t͡ʃ > Ω (P:[-voice]his is my own notation. I don’t have a clue what the intermediate form was; became something else in different dialect͡s)
+	N:[-voice]:[+approximant]:[-voice] > N:[+voice]:[+approximant]:[+voice]
 	{ ((h)ə)p, d } > { b, t } / _l
 	t > ∅ / _ɹ (only first-register tones can occur in this environment)
 	{ t*ʰ, d, ɡ } > { tʰ, t, k } / _w
 	s > t(ʰ?)
-	{əkʰ,əɡɦj} > ɟ (I think Thompson implied this was just a bit of a kludge)
+	{əkʰ,əɡɦj} > ɟ (I think P:[-voice]hompson implied this was just a bit of a kludge)
 	l > ∅ / :{ i_, e_ }:
 	l > j
-	{ c, ɲ } > { t, n } // E_ (apparently the precursor to Vietnamese short *a was treated as a short vowel here)
+	{ c, ɲ } > { t, n } // :[+front]_ (apparently the precursor to Vietnamese short *a was treated as a short vowel here)
 	{ a, ɔ } > { ɨə, uə }

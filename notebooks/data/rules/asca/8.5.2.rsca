@@ -1,12 +1,14 @@
 @ 8.5.2 - Proto-Turkic to Sakha
-# citation: Pogostick Man, from Firespeaker.org wiki contributors (2014), “Turkic sound changes”. <http://wiki.firespeaker.org/Turkic_sound_changes>
-	{e,ɤ}:[+long] > je (the second one is conjectured based on my admittedly sparse knowledge of Turkish; I can only guess that 〈ė〉 is some sort of back unrounded vowel)
+# citation: Pogostick Man, from Firespeaker.org wiki contributors (2014), “Turkic sound changes”.
+	{e,ɤ}:[+long] > je (the second one is conjectured based on my admittedly sparse knowledge of P:[-voice]urkish; I can only guess that 〈ė〉 is some sort of back unrounded vowel)
 	{ o, oɡ, ø, øɡ, iɡ } > { wo, ɥø, o:[+long], ø:[+long], i:[+long] }
 	{ a{ɡ̌(ɯ),b}, {o{ɡ̌,b},aɡ̌u}, u{ɡ̌,b} } > { ɰa, wo, u:[+long] }
 	iɡ̌ > ɯ:[+long]
 	ɯ:[+long] > i:[+long] (but original ɯ:[+long] unaffected?)
 	eɡ > je, i:[+long], ji
-	{ d, s, {ʃ,z} } > { t, ∅, s } / V_V
+	d > t / V_V
+	s > ∅ / V_V
+	{ʃ,z} > s / V_V
 	s > ∅ / #_
 	{z,ʃ} > h
 	j > s (possibly only initially?)

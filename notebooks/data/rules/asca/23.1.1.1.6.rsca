@@ -1,17 +1,18 @@
 @ 23.1.1.1.6 - Proto-Chibchan to Tunebo
 # citation: Pogostick Man, from Wheeler, Alva (1972), “Proto-Chibchan”. In Matteson, Esther, ed., Comparative Studies in Amerindian Languages 93 – 108
-	{ ɡ, ɡʷ } > { ∅, b }
+	ɡ > ∅
+	ɡʷ > b
 	{ {d(V)s,n(V)j}, n(V)s } > { r, {VsV,r} }
 	d(V)j > r(V)
 	d > r
-	s > h / :{ _VC, _C }:
+	s > h / _(V)C
 	{ t͡s, t͡ʃ } > { t͡ʃ, s }
 	{ m, n, h, j } > { b, {n,r,∅}, {h,∅}, {j,∅} }
 	e > a
 	ai > e / if the *a is not stressed
 	a > ∅ / _u
 	i > a / _Ca
-	{a,i} > ∅ / CV{ C_, _ }
-	i > ∅ / :{ _C”V, _”V }:
+	{a,i} > ∅ / CV(C)_
+	i > ∅ / _(C)V
 	e > ∅ / u_C
 	e > i / conditioning undetermined

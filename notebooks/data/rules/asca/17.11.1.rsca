@@ -1,17 +1,17 @@
 @ 17.11.1 - Proto-Slavic to Polish
 # citation: Xiądz Faust, in http://pittmirg.ovh.org/inne/psc.pdf http://pittmirg.ovh.org/inne/psc.pdf, mainly citing Klemensewicz et al. (1955), “Gramatyka historyczna języka polskiego”, and Dubisz and Długosz-Kurczabowa (2003?), “Gramatyka historyczna języka polskiego” NB: The original document heavily uses Slavistic notation as opposed to IPA; I’ve done the best I could in figuring this stuff out but be warned of possible errors. Havlik’s law: — “[H]owever: in the vicinity of *j the development of yers did not comply with the aforementioned law” Mobile stress → initial stress → penultimate stress (in most areas) Sporadic (de)nasalization of vowels; “there were certain environments which favoured nasality changes: in the vicinity of nasal consonants. . .and before sibilants” “The following sections are structured according to respective sound change types without much chronology, as the sound changes tend to sporadic, irregular or inconsistent or to be trends spreading over considerable time spans.” Oscillations involving: — Dentals and postalveolars — Postalveolars and alveolopalatals — Voicing Regressive voicing/devoicing of obstruents in consonantal clusters “Oscillations between dental and alveo[lo]palatals” / _C “Insertion of epenthetic vowels” in some situations, typically one of /ɛ u/, the latter written as either 〈u〉 or 〈ó〉 Epenthetic d ɡ appears in some circumstances
-	{ sk, x } > { ɕt͡ɕ, ɕ } / _E
-	x > ɕ / E_
-	ɛl > lɔ / T_T in certain cases (mostly after a PSl. palato-alveolar)
-	{ ɔl, ɔr, ɛl, ɛr } > { lɔ, rɔ, lɛ, rɛ } / T_T
-	{ ɔr, ɔl } > { ra, la } / #_T in syllables with long vowels
-	{ ɔr, ɔl } > { rɔ, lɔ } / #_T
-	C > Cʲ / _E // /j ɕ ʑ
+	{ sk, x } > { ɕt͡ɕ, ɕ } / _:[+front]
+	x > ɕ / [+front]_
+	ɛl > lɔ / P:[-voice]_P:[-voice] in certain cases (mostly after a PSl. palato-alveolar)
+	{ ɔl, ɔr, ɛl, ɛr } > { lɔ, rɔ, lɛ, rɛ } / P:[-voice]_P:[-voice]
+	{ ɔr, ɔl } > { ra, la } / #_P:[-voice] in syllables with long vowels
+	{ ɔr, ɔl } > { rɔ, lɔ } / #_P:[-voice]
+	C > Cʲ / _:[+front] // /j ɕ ʑ
 	j > lʲ / :{ p_ (sporadic), b_ (sporadic), m_ (sporadic), v_ (sporadic) }:
 	{ ɛ, ɛ̃, ɛ:[+long] } > { ɔ, ɔ̃, a } / _C:[-palatalized +dental] (also sporadically before plain non-dentals)
 	ɛ:[+long] > ɛ
-	— {ь,ъ} > e / iambic counting from # or a syllable not containing a yer
-	— {ь,ъ} > ∅] / in even syllables counting iambic from # or a syllable not containing a yer
+	— {ь,ъ} > e / iambic counting from %# or a syllable not containing a yer
+	— {ь,ъ} > ∅] / in even syllables counting iambic from %# or a syllable not containing a yer
 	ъ > a:[+long] / _r
 	ъl > { ɔ, ɔ:[+long] }ɫ / P_
 	ъl > ɛɫ / [+ cons, - fr, + bk, + hi, - lo]_
@@ -25,13 +25,13 @@
 	{ i, i:[+long] }ʐ > {{ ɛ, ɛ:[+long] }{ r,ɛ, r,ɛ:[+long] }ʐ}
 	{{ ɛ, ɛ:[+long] }{ r,ɛ, r,ɛ:[+long] }ʐ} > ɛr, ɛʐ
 	{ɛ̃,ɔ̃} > ã
-	{ a, ɛ, i, ɔ, u, ɨ, ã } > { a:[+long], ɛ:[+long], i:[+long], ɔ:[+long], u:[+long], ɨ:[+long], ã:[+long] } / :{ _C/[+voice]:[lost yer] (i.e., a voiced consonant or a cluster with one) }:
+	{ a, ɛ, i, ɔ, u, ɨ, ã } > { a:[+long], ɛ:[+long], i:[+long], ɔ:[+long], u:[+long], ɨ:[+long], ã:[+long] } / :{ _C/%[+voice]:[lost yer] (i.e., a voiced consonant or a cluster with one) }:
 	ajɛ > ɛ:[+long] in adjectives, a:[+long] in verbs
 	{ {aja,ɔja}, {ɔjɛ,ɨjɛ}, ɨjɛ } > { a:[+long], ɛ:[+long], i:[+long] }
 	{{ ɛ, ɛ:[+long] }jɛ,ьjɛ,ɔjɛ,ujɛ,ɨjɛ} > ɛ:[+long]
 	{ɔjɔ̃,ɔ̃jɔ̃,ьjɔ̃} > ɔ̃:[+long]
 	{ ьjь, ъjь } > { i, ɨ }
-	jь > i / utterance-initially (cf. English utterance-initial glottal stops before vowels)
+	jь > i / utterance-initially (cf.:[+front]nglish utterance-initial glottal stops before vowels)
 	{ ь, ъ } > { i, ɨ } / _j
 	ji > i / #_
 	{aja,ɛja,ьja,ɔja} > a:[+long]
@@ -72,20 +72,20 @@
 	ɛ̃ > ɛ / :{ _#, _l, _ɫ }:
 	ɔ̃ > ɔ / :{ _l, _ɫ }:
 	ɔ̃ > ɔ / _# (in some regions or dialect͡s)
-	{ ɛ̃, ɔ̃ } > { ɛ̃N, ɔ̃N } / :{ _S, _A }:
+	{ ɛ̃, ɔ̃ } > { ɛ̃N, ɔ̃N } / :{ _S, _:[+affricate] }:
 	{ ɛ̃, ɔ̃ } > { ɛɰ̃, ɔɰ̃ } / _F:[-palatal]
 	ɔ̃ > ɔɰ̃ / _# (in standard registers/pronunciations)
 	{ ɛ̃, ɔ̃ } > { ɛj̃, ɔj̃ } / _F:[+palatal]
 	ȵ > j̃ / _F
 	n > ŋ / _S:[+velar] (regional)
 	Cʲ > C / _C:[+dental] with development͡s of yers in ablaut environment͡s
-	Cʲ > C in select words due to prestige influence of Czech in the Middle Ages
+	Cʲ > C in select words due to prestige influence of Czech in the Middle:[+affricate]ges
 	Cʲ > C in select words otherwise, possibly by analogy
 	t > r / tV_
 	n > m / {b,p}{l,r,ʐ}V_
 	j > ∅ / _ɛ in participial and deverbal forms originally with alveolopalatal consonant͡s in the onset͡s of two consecutive syllables
-	OR > RO / V_C
-	RO > OR / C_V
+	OS > SO / V_C
+	SO > OS / C_V
 	vC > Cv / _V
 	Cv > vC / _C
 	{ t͡ɕt͡s, ʑr̝ } > { jt͡s, jr̝ }

@@ -1,12 +1,12 @@
 @ 8.5.1 - Proto-Turkic to Proto-Kypchak
-# citation: Pogostick Man, from Firespeaker.org wiki contributors (2014), “Turkic sound changes”. <http://wiki.firespeaker.org/Turkic_sound_changes>
-	V:[-long] > ∅ (shared with Old Turkic)
-	h > ∅ (shared with Old Turkic)
+# citation: Pogostick Man, from Firespeaker.org wiki contributors (2014), “Turkic sound changes”.
+	V:[-long] > ∅ (shared with Old P:[-voice]urkic)
+	h > ∅ (shared with Old P:[-voice]urkic)
 	nʲ > j
 	b…n > m…n
 	{ d, ɣ } > { t, x } / _#
 	d > t / #_ (kind of, something about evidence from borrowings)
-	V > V:[-round] / U_
+	V > V:[-round] / %_
 	b > v / V_
 	v > w
 	ɡm rɡ > mɡ ɡr (this second one is listed as
@@ -23,7 +23,7 @@
 	æ > e
 	s > t͡ʃ / _Vt͡ʃ
 	s > ç / _Vç
-	a > æ // _B
+	a > æ // _:[+back]
 	f > w / _V
 	f > p
 	ŋ > ɡ / syllable-final

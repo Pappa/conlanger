@@ -5,7 +5,7 @@
 	{ t͡s, t͡sʰ, t͡sʼ } > { t͡ʃ, t͡ʃʰ, t͡ʃʼ } / _i
 	{ ɨ, ɨ:[+long] } > { i, i:[+long] }
 	{u,a} > e / _CVC#, ()
-	i > e / _CVC#, (, ) // _H
+	i > e / _CVC#, (, ) // _:[+laryngeal]
 	V > e / CVC_
 	V > i / CiC_
 	V > u / CuC_

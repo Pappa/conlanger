@@ -5,17 +5,20 @@
 	V > ∅ / s_j (
 	s > h / V_V
 	t͡s > s, z
-	w > w, ∅
+	w > w
+	w > ∅
 	j > ∅
-	n > n, ∅
+	n > n
+	n > ∅
 	a > ∅ / _i, when unstressed
 	a > i / _Ci
 	a > ∅ / _u
 	u > o / _Ca
 	u > ∅ / _a
-	i > u / :{ _Cu, _u }:
-	i > a / :{ _Ca, _a }:
-	i > e / :{ _Ce, _e }:
-	{ a, {e,i} } > { i, ∅ } / CV{ C_, _ }
-	i > ∅ / :{ _C”V, _”V }:
+	i > u / _(C)u
+	i > a / _(C)a
+	i > e / _(C)e
+	a > i / CV(C)_
+	{e,i} > ∅ / CV(C)_
+	i > ∅ / _(C)V
 	a > ∅ / _V

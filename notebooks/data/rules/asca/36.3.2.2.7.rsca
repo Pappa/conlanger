@@ -4,7 +4,7 @@
 	{ P, t } > { pd͡z, t͡ʃ } / r_
 	{ Np, Nb, Nt, Nɡ, Nç } > { st͡s, mp, mtʰ, mk, nt͡sʰd͡z }
 	p > b / _r
-	{ {d,[+ cons, - fr, + bk, + hi, - lo]T}, st } > { t͡ʃ, zd͡ʒ }
+	{ {d,[+ cons, - fr, + bk, + hi, - lo]P:[-voice]}, st } > { t͡ʃ, zd͡ʒ }
 	{ dr, çdr } > { ʈ, ʂʈd͡z }
 	ç[+ cons, - fr, + bk, + hi, - lo] > ʂk
 	{ k, rk, kr, kʲ, Nkʲ, ɡr } > { kʰd͡z, nɡ, kʰr, t͡ʃh, d͡ʒ, nkʰr }
@@ -12,7 +12,7 @@
 	Pç > b.ç
 	çl > sɬ
 	{ C:[+strident]w, ç } > { swd͡z, sd͡z }
-	{ NTS, [+ cons, - fr, + bk, + hi, - lo]TS, lTS } > { mʈʂ, {kt͡s,ʈʂʰ}, bɖʐ }
+	{ NP:[-voice]S, [+ cons, - fr, + bk, + hi, - lo]P:[-voice]S, lP:[-voice]S } > { mʈʂ, {kt͡s,ʈʂʰ}, bɖʐ }
 	{ t͡s, d͡z, rd͡z, d͡ʒ } > { {ʈʂ,ʒ}, t͡sʲ, rt͡sʰ, ʈʂ }
 	∅ > j / rN_
 	ç > ʂ / _m

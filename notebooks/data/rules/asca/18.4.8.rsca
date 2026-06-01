@@ -1,11 +1,14 @@
 @ 18.4.8 - Proto-Tupí-Guaraní to Sirionó
 # citation: Pogostick Man, from Lemle, Miriam (1971), âInternal Classification of the Tupi-Guarani Linguistic Family”. In Tupi Studies I, from Summer Institute of Linguistics Publications in Linguistics and Related Fields Publication Number 29.
-	p > h, ∅ / :{ _u, _o }:
-	p > k, ∅ / _w
+	p > h / :{ _u, _o }:
+	p > ∅ / :{ _u, _o }:
+	p > k / _w
+	p > ∅ / _w
 	p > h
 	t > t͡s, t͡ʃ / :{ _i, _ı̃ }:
 	k > ∅ / _#
-	{ ʔ, t͡s } > { ∅, {s,ʃ} }
+	ʔ > ∅
+	t͡s > {s,ʃ}
 	u > ∅ / k_w
 	V{m,n} > V:[+nas] / _#
 	Vŋ > V:[+nas]
@@ -13,7 +16,9 @@
 	j > ɲ, t͡ʃ
 	w > ɡ, k / :{ #_, V_ }:
 	{b,r} > ∅ / _#
-	a > ∅, o, e / _j#
+	a > ∅ / _j#
+	a > o / _j#
+	a > e / _j#
 	{ o, u } > { {u,o}, {u,o,i} }
 	{ aN, eN, iN, ɨN, uN } > { ã, ẽ, ı̃, {ɨ̃,ĩ}, õ } / _#
 	{ {ɨ̃,õ}, ũ } > { {õ,ẽ}, õ }

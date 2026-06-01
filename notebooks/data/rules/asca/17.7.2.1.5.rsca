@@ -1,6 +1,6 @@
 @ 17.7.2.1.5 - Early Modern English to American English
-# citation: Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. <http://wiki.firespeaker.org/English_sound_changes; and my Phonetic Description class> Stuff regarding syllabification (e.g., of /ɹ/) and hiatus Loss of pretonic /ə/ in #U (ongoing)
-	æ > æ:[+long] (e.g., NYC) or ɑ:[+long] (e.g., Boston) / :{ _F:[-voice](“words which change vary between dialect͡s”), _N:[-voice](“words which change vary between dialect͡s”) }:
+# citation: Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound changes”. FireSpeakerWiki. Stuff regarding syllabification (e.g., of /ɹ/) and hiatus Loss of pretonic /ə/ in #U (ongoing)
+	æ > æ:[+long] (e.g., NYC) or ɑ:[+long] (e.g.,:[+back]oston) / :{ _F:[-voice](“words which change vary between dialect͡s”), _N:[-voice](“words which change vary between dialect͡s”) }:
 	ɒ > ɒ:[+long] / _F:[-voice]
 	ɒ:[+long] > ɔ:[+long] / _F:[-voice]
 	{ æ:[+long], ɑ:[+long], ɔ:[+long] } > { æə~eə, ɑ, ɔ }
@@ -16,5 +16,5 @@
 	æ > ɛə / :{ _n“and others depending on dialect”, _m“and others depending on dialect” }:
 	eə > e:[+long]
 	iə > ɪ (ongoing)
-	w > ∅ / C_ɹ for some C (toward{ s,, , } quart(er), sword)
+	w > ∅ / C_ɹ for some C (toward(s), quart(er), sword)
 	t > ∅ / f_n̩

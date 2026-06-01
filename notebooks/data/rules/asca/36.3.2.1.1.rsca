@@ -3,7 +3,7 @@
 	b > m / _j
 	{ p, çp, (ç)b, rP, Np, Nb, pr, {br,pʲ} } > { p., ç.w, (ç)p, rp., kʲ, m.p, n.br, p.j }
 	P > p / l_
-	{ t, st, tr, d, sd, (ç)dr, Nt, çT, [+ cons, - fr, + bk, + hi, - lo]T } > { t., s.d, tr., t, s.t, (ç.)tr, m.t., n.dr, ɡ.t }
+	{ t, st, tr, d, sd, (ç)dr, Nt, çP:[-voice], [+ cons, - fr, + bk, + hi, - lo]P:[-voice] } > { t., s.d, tr., t, s.t, (ç.)tr, m.t., n.dr, ɡ.t }
 	r > ∅ / _t
 	ç[+ cons, - fr, + bk, + hi, - lo] > ç.k
 	N > ∅ / _ɡ
@@ -15,8 +15,8 @@
 	Nç > n.pʲ.
 	çl > sʲ
 	[+ cons, - fr, + bk, + hi, - lo]t͡s > ɡ.t͡sʰ.
-	lTS > l.d͡z
-	t͡s (r)d͡z d͡ʒ PTS [+ cons, - fr, + bk, + hi, - lo]TS sTS çTS > {t͡sʰ,s} (r)t͡s t͡sʰ ɡ.t͡s s.{t͡s,pʲ} {s.t͡s,br}
+	lP:[-voice]S > l.d͡z
+	t͡s (r)d͡z d͡ʒ PP:[-voice]S [+ cons, - fr, + bk, + hi, - lo]P:[-voice]S sP:[-voice]S çP:[-voice]S > {t͡sʰ,s} (r)t͡s t͡sʰ ɡ.t͡s s.{t͡s,pʲ} {s.t͡s,br}
 	{ rm, rn } > { mʲ, rʷ }
 	çm çnʲ > ç.n
 	N > m. / _ŋ

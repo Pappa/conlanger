@@ -1,12 +1,12 @@
 @ 7.17 - Proto-Algonquian to Shawnee
 # citation: Whimemsz, from bin Muzaffar, Towhid, Computer Simulation of Shawnee Historical Phonology, plus “other corrections based on a few other papers plus my limited knowledge of comparative Algonquian” θ r / ! _O
 	we > o
-	r > s / H_
+	r > s / [+laryngeal]_
 	r > ∅ / n_
 	N > ∅ / _O
 	{h,s,t͡ʃ,θ} > ʔ / _O
 	r > ʃ / _O
-	e > i / #{ C_, _ } (but remains e in a few cases?)
+	e > i / #(C)_ (but remains e in a few cases?)
 	i:[+long] > i / _j
 	j > ∅ / { C_i, C_i:[+long] }
 	je > i / C_

@@ -13,5 +13,5 @@
 	a > a:[+long] / :{ _i, _u }:
 	a > ə / i_u
 	ə > ∅ / i_u
-	ə > ∅ / W_
-	W > ∅ / C_
+	ə > ∅ / [+approximant]_
+	[+approximant] > ∅ / C_

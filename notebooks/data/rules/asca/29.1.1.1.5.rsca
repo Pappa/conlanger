@@ -1,7 +1,7 @@
 @ 29.1.1.1.5 - Proto-Athabaskan to Chipewyan
 # citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
-	{ TS, {TŠ,TŠʷ}, [+ cons, - fr, + bk, + hi, - lo], Q } > { TH, TS, TŠ, [+ cons, - fr, + bk, + hi, - lo] }
+	P:[-voice]S {P:[-voice]Š,P:[-voice]Šʷ} [+ cons, - fr, + bk, + hi, - lo, +click] > P:[-voice]:[+laryngeal] P:[-voice]S P:[-voice]Š [+ cons, - fr, + bk, + hi, - lo]
 	t > k (not for all speakers)
-	{A,O’} > F / _$
+	{[+affricate],O’} > F / _$
 	{ ɑ, ʊ } > { a, o }
 	Vˀ > V:[+high tone]

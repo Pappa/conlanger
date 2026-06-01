@@ -16,9 +16,9 @@
 	{ mb, mn } > { m:[+long], n:[+long] }
 	{ {jl,lʲ}, {jn,nʲ}, {jɡ,ɡʲ} } > { ʎ, ɲ, ʝ:[+long] }
 	bʲ > ʝ:[+long] (sporadic)
-	Raising of e {ɛ,a} ɔ o > i e o u; near j, in particular environment͡s:
+	Saising of e {ɛ,a} ɔ o > i e o u; near j, in particular environment͡s:
 	— e > i / _Cj // C = p
-	— ɛ ɔ u > e o u / :{ _Cj, _j }:
+	— ɛ ɔ u > e o u / _(C)j
 	— a > e / _j
 	oj > we (sporadic)
 	{ ɛ, ɔ } > { je, we }
@@ -28,9 +28,11 @@
 	{ ɾʲ, pʲ } > { jɾ, jp } / V_
 	ʎ > ʒ
 	ʝ > {∅,ʒ} (the latter is rare)
-	ʝ:[+long] > ∅ / E_
-	d > ∅, ð / V_V
-	ɡ > ∅, ɣ / V_V
+	ʝ:[+long] > ∅ / [+front]_
+	d > ∅ / V_V
+	d > ð / V_V
+	ɡ > ∅ / V_V
+	ɡ > ɣ / V_V
 	{ p, t, k, s, t͡s } > { b, d, ɡ, z, d͡z } / V_V
 	{ p:[+long], t:[+long], k:[+long], s:[+long], t:[+long]s, ʝ:[+long] } > { p, t, k, s, t͡s, ʝ }
 	{ n:[+long], l:[+long], ɾɾ } > { ɲ, ʎ, r }
@@ -38,7 +40,7 @@
 	fl > ʎ (sporadic)
 	V > ∅ / unstressed // V = a
 	sʲ > js / V_
-	{ i, u } > { e, o } / :{ _C#, _# }:
+	{ i, u } > { e, o } / _(C)#
 	Vɾ > ɾV / C_#
 	e > ∅ / V{d,s,n,l,ɾ}_#
 	{ d, ɡ } > { ð, ɣ } / V_V

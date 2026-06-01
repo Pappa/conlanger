@@ -1,8 +1,8 @@
 @ 29.1.1.1.18 - Proto-Athabaskan to Sekani
 # citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
-	TS > TH (
-	TH ( > TS again in some areas)
-	{ {TŠ,TŠʷ}, [+ cons, - fr, + bk, + hi, - lo], Q } > { TS, TŠ, Q }
-	T > TŠ / :{ _i, _e, _u }: // in Ware Sekani
+	P:[-voice]S > P:[-voice]:[+laryngeal] (
+	P:[-voice]:[+laryngeal] ( > P:[-voice]S again in some areas)
+	{ {P:[-voice]Š,P:[-voice]Šʷ}, [+ cons, - fr, + bk, + hi, - lo, +click] } > { P:[-voice]S, P:[-voice]Š:[+click] }
+	P:[-voice] > P:[-voice]Š / :{ _i, _e, _u }: // in:[+approximant]are Sekani
 	ʊ > o
 	Vˀ > V:[+high tone]

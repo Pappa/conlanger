@@ -1,11 +1,11 @@
 @ 29.1.1.1.39 - Proto-Athabaskan to Upper Tanana
 # citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85 Acquisition of phonemic length in some unreduced vowels, but this is not explored
-	[+ cons, - fr, + bk, + hi, - lo] > TŠ // _$
-	{ TS, TŠ, TŠʷ, Q } > { TH, TS, TṢ, [+ cons, - fr, + bk, + hi, - lo] }
+	[+ cons, - fr, + bk, + hi, - lo] > P:[-voice]Š // _$
+	P:[-voice]S P:[-voice]Š P:[-voice]Šʷ:[+click] > P:[-voice]:[+laryngeal] P:[-voice]S P:[-voice]Ṣ [+ cons, - fr, + bk, + hi, - lo]
 	S’ > S / _$
 	Vɲ > V:[+nas]
 	{n,ɲ} > ⁿd
-	{A,F} > ∅ / _$; diphthongs
+	{[+affricate],F} > ∅ / _$; diphthongs
 	ʃ > h / in the 1sg subject prefix
 	ɬ > h / in the grammatical classifier
 	{ {a,ɑ}, e, i, u, ʊ } > { e(a), {i,ea}, ju, {a,ɨ}, o }

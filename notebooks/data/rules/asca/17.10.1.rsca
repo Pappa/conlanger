@@ -2,12 +2,12 @@
 # citation: Tropylium, from Kobayashi, Masato (2004), Historical Phonology of Old Indo-Aryan Consonants
 	ə > i
 	Sh > S:[+aspirated]
-	h > *H
-	VH > V:[+long] / :{ _C, _# }:
-	R̊H > {u,i}R / _V (sporadic)
-	R̊H > {u,i}:[+long]R / _C
+	h > *:[+laryngeal]
+	V:[+laryngeal] > V:[+long] / :{ _C, _# }:
+	S̊:[+laryngeal] > {u,i}S / _V (sporadic)
+	S̊:[+laryngeal] > {u,i}:[+long]S / _C
 	{ ʃ, ʒ } > { ʂ, ʐ }
-	n > ɳ / { V_, _ }
+	n > ɳ / S(V)_
 	{ t, d(ʱ), n } > { ʈ, ɖ(ʱ), ɳ } / C̣_ // _r
 	{ s, t, d(ʱ), n } > { ʂ, ʈ, ɖ(ʱ), ɳ } / _C̣
 	{ ls, lt, ld(ʱ), ln } > { ʂ, ʈ, ɖ(ʱ), ɳ } / disputed

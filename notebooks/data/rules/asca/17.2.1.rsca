@@ -1,14 +1,14 @@
 @ 17.2.1 - Common Anatolian to Hittite
-# citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
-	{ D, T } > { T, T:[+lenis] } / #_
-	{ T, D } > { T:[+fortis], T:[+lenis] }
+# citation: Alces
+	{ P:[+voice], P:[-voice] } > { P:[-voice], P:[-voice]:[+lenis] } / #_
+	{ P:[-voice], P:[+voice] } > { P:[-voice]:[+fortis], P:[-voice]:[+lenis] }
 	{ h, h } > { hh, h }
 	Ḱ > [+ cons, - fr, + bk, + hi, - lo]
-	V > V:[+long] / in :[+open]
-	{ e, o } > { e:[+long], o:[+long] } / in :[+stress]
+	V > V:[+long] / in %:[+open]
+	{ e, o } > { e:[+long], o:[+long] } / in %:[+stress]
 	{ {, o,, o:[+long], }, æ:[+long] } > { {, a,, a:[+long], }, e:[+long] }
-	e > i / :{ _mwhen posttonic in :[+closed] or when pretonic, _ŋwhen posttonic in :[+closed] or when pretonic }:
-	e > a / _n in :[+open +posttonic]
+	e > i / :{ _mwhen posttonic in %:[+closed] or when pretonic, _ŋwhen posttonic in %:[+closed] or when pretonic }:
+	e > a / _n in %:[+open +posttonic]
 	e > a / :{ _r(sporadic), _l(sporadic) }:
 	t > t͡s / _i // s_
 	d > s / :{ #_i, #_j }:

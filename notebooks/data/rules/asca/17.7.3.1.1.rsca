@@ -14,8 +14,8 @@
 	{ u, o, a, ø:[+long], e:[+long], y, i } > { ʏɪ, oi, ai, øi, ei, y:[+long], i:[+long] } / _j
 	a:[+long] > ai / _j
 	e > ei / :{ _ɣ, _j }:
-	O > ∅ / :{ F:[-same POA]_O, r_O, l_O }:
-	S > ∅ / N:[+same POA]_S
+	O > ∅ / :{ F:[-same PO:[+affricate]]_O, r_O, l_O }:
+	S > ∅ / N:[+same PO:[+affricate]]_S
 	{{ l, l:[+long] },rl} > ɬ / v_#
 	N > N:[-voice] / O_#
 	{{ l, l:[+long] },rl} C > ɬ C:[-voice] / :{ _S:[-voice], _s }:
@@ -31,7 +31,7 @@
 	F > S:[-voice] / :{ _l, _N }:
 	{ u, o:[+long], a:[+long], ʏɪ, {y,i}, {y,i}:[+long], æ:[+long], e:[+long], ey } > { ʏ, ou, au, ai, y, ɪ, i, je, ei }
 	w > v
-	V > V:[+long] / _{ C#, # }, in monosyllables
+	V > V:[+long] / _(C)#, in monosyllables
 	V > V:[+long] / , in polysyllables // _CCV
 	{n̥n,nn̥ > tn̥ / V_
 	n:[+long] > tn̥ / V_#

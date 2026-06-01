@@ -14,11 +14,11 @@
 	n > ∅ / h_r
 	h > ∅ / w_j
 	Vw > V:[+long] / :{ _r, _j }:
-	”V > ”V:[+long] / _C()V
+	”V > ”V:[+long] / _C(S)V
 	hs > sh / C_
 	ht͡s > t͡sh / C_V
-	V > V:[+long] / _C:[-glottal]()V{:[+long],} in even numbered syllables only
-	V > V:[+long] / _[+ cons, - fr, + bk, + hi, - lo]RV in the second syllable of a word
+	V > V:[+long] / _C:[-glottal](S)V{:[+long],:[+laryngeal]} in even numbered syllables only
+	V > V:[+long] / _[+ cons, - fr, + bk, + hi, - lo]SV in the second syllable of a word
 	V > V:[+high tone] / _$V
 	{ {, a,, a:[+long], }, {, o,, o:[+long], }, {, õ,, õ:[+long], } } > { {, æ,, æ:[+long], }, {, e,, e:[+long], }, {, ẽ,, ẽ:[+long], } } / r_
 	Vr > V:[+long] / _C
@@ -30,6 +30,6 @@
 	h > ∅ / :{ _k#, _t#, _t͡s#, _s# }:
 	k > h / _k
 	{ õ, õ:[+long] } > { ũ, ũ:[+long] }
-	t͡s > t͡ʃ / :{ _hi, _i, _hj, _j }:
+	t͡s > t͡ʃ / :{ _(h)i, _(h)j }:
 	s > ʃ / :{ _hi, _hʲ }:
-	{ t, t͡ʃ, kʷ } > { d, d͡ʒ, ɡʷ } / :{ _V }:
+	{ t, t͡ʃ, kʷ } > { d, d͡ʒ, ɡʷ } / :{ _V, _S }:

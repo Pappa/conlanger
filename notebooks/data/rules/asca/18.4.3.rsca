@@ -1,11 +1,12 @@
 @ 18.4.3 - Proto-Tupí-Guaraní to Guajajara
 # citation: Pogostick Man, from Lemle, Miriam (1971), âInternal Classification of the Tupi-Guarani Linguistic Family”. In Tupi Studies I, from Summer Institute of Linguistics Publications in Linguistics and Related Fields Publication Number 29.
 	t > t͡s / :{ _i, _ı̃ }:
-	t͡s > h, ∅
+	t͡s > h
+	t͡s > ∅
 	b > ∅ / u_#
 	b > w
 	u > ∅ / k_w
 	a > ə / _N#
-	a > ə / if N in #
+	a > ə / if N in %#
 	o > u // o(C…)_(C…)#
 	{ ã, ẽ, ı̃, ɨ̃, {õ,ũ} } > { ə, e, i, ɨ, o }

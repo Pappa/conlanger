@@ -2,8 +2,10 @@
 # citation: Pogostick Man, from McAlpin, David W. (1974), “Toward Proto-Elamo-Dravidian”. Language 50(1):89 – 101
 	{i,e,u} > ∅ / :{ #_ta, #_na }:
 	e > e, i / #C_C
-	w > ú / V_ (McAlpin uses the accented-vowel notation due to some apparent height-contrast neutralizations before /a/)
-	{ k, ŋk, ŋk:[+long] } > { ∅, k, k:[+long] } / V_V
+	w > ú / V_ (Mc:[+affricate]lpin uses the accented-vowel notation due to some apparent height-contrast neutralizations before /a/)
+	k > ∅ / V_V
+	ŋk > k / V_V
+	ŋk:[+long] > k:[+long] / V_V
 	mp > p, p:[+long] / V_V
 	c > s / :{ #_a, #_u }:
 	ɲc > ns / V_V

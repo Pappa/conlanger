@@ -1,8 +1,8 @@
 @ 46.13 - Old Norse to Faroese Vowel Shift
 # citation: johanpeturdam NB: “The reflexes of the vowels are given in the order of their reflex when stressed/long, and unstressed/short”
 	{a,æ:[+long]} > ɛa / a
-	a:[+long] > ɔa “(except NE of the Faroes / ɔ
-	ɔa “(except NE of the Faroes > a:[+long])” / ɔ
+	a:[+long] > ɔa “(except N:[+front] of the Faroes / ɔ
+	ɔa “(except N:[+front] of the Faroes > a:[+long])” / ɔ
 	e > e:[+long] / ɛ
 	e:[+long] > ɛa “(except Suðuroy / a (except Suðuroy → ɛ)
 	ɛa “(except Suðuroy > e:[+long])” / a (except Suðuroy → ɛ)

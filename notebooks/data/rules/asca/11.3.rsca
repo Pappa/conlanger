@@ -1,5 +1,5 @@
 @ 11.3 - Proto-Northeast Caucasian to Khinalug
-# citation: Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=User:Petusek/Drafts/Northeast_Caucasian>, apparently citing Nichols, Johanna (2003), “The Nakh-Daghestanian Consonant Correspondences”, in Tuite, Kevin, and Dee Ann Holisky, Current Trends in Caucasian, East European, and Inner Asian Linguistics: Papers in Honor of Howard I. Aronson 207 – 251 The development of *tsʼ is unclear; in the user page there’s a slash but it might be a typo for an apostrophe
+# citation: Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast Caucasian”. Wikipedia, the Free Encyclopedia. The development of *tsʼ is unclear; in the user page there’s a slash but it might be a typo for an apostrophe
 	{ b, d } > { {b,v}, z }
 	{ {t͡s:[+long],st}, {t͡s:[+long]ʼ,d͡z} } > { t͡s, t͡sʼ }
 	{{ t͡ʃ, t͡ʃ:[+long] },d͡ʒ} > t͡ʃʼ
@@ -8,4 +8,5 @@
 	{q:[+long]ʼ,ɢ} > qʼ
 	s:[+long] { ɬ, ɬ:[+long] } x:[+long] > h xʲ x
 	r > n / _C
-	r > r, ∅
+	r > r
+	r > ∅

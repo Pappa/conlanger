@@ -5,7 +5,10 @@
 	{ p:[+long], pʷ:[+long], t̪:[+long], t:[+long], k:[+long], c:[+long] } > { pʰ, xʷ, t̪ʰ, tʰ, x, s }
 	{ t̪(ʰ), t(ʰ) } > { cʰ, tʰ }
 	C:[+long] > Cʰ
-	{ p, pʷ, t, {k,c} } > { {v,∅}, w, l, ∅ } / V_V
+	p > {v,∅} / V_V
+	pʷ > w / V_V
+	t > l / V_V
+	{k,c} > ∅ / V_V
 	j > z
 	bʷ mʷ > ɡʷ ŋʷ ( / _V:[+rounded])
 	ɡʷ ŋʷ ( > ɡ ŋ / _V:[+rounded])

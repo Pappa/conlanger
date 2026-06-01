@@ -12,9 +12,10 @@ from xml.sax.saxutils import escape as xml_escape
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "notebooks" / "data"
 HTML_PATH = DATA_DIR / "index_diachronica.html"
-OUTPUT_PATH = DATA_DIR / "output.xml"
+OUTPUT_PATH = DATA_DIR / "index_diachronica_ai.xml"
 SERIES_MAP_PATH = DATA_DIR / "series_mapping.yaml"
 UNMAPPED_SERIES_REPORT = DATA_DIR / "unmapped_series.csv"
+ENV_TEXT_MAP_PATH = DATA_DIR / "env_text_mapping.yaml"
 
 # Basic subscript mapping for digits and common letters
 SUBSCRIPT_MAP = str.maketrans({
@@ -23,6 +24,21 @@ SUBSCRIPT_MAP = str.maketrans({
     "a": "ₐ", "e": "ₑ", "h": "ₕ", "i": "ᵢ", "j": "ⱼ", "k": "ₖ",
     "l": "ₗ", "m": "ₘ", "n": "ₙ", "o": "ₒ", "p": "ₚ", "r": "ᵣ",
     "s": "ₛ", "t": "ₜ", "u": "ᵤ", "v": "ᵥ", "x": "ₓ"
+})
+
+GROUPING_MAP = str.maketrans({
+    "R": "S",
+    "E": "[+ front]",
+    "B": "[+ back]",
+    "H": "[+ laryngeal]",
+    "W": "[+ approximant]",
+    "J": "[+ approximant]",
+    "U": "%",
+    "Z": "[+ continuant]",
+    "T": "P:[-voice]",
+    "D": "P:[+voice]",
+    "Q": "[+ click]",
+    "A": "[+ affricate]",
 })
 
 def esc_text(s: str) -> str:
@@ -79,7 +95,7 @@ def normalize_parenthetic_diacritics(text: str) -> str:
 
 
 def add_affricate_ties(text: str) -> str:
-    # Ensure common affricates are tied (ASCA requires tie/caret)
+    # Ensure common digraphs are tied (ASCA requires tie/caret)
     replacements = [
         (r"(?<![\^͡])tʃ", "t͡ʃ"),
         (r"(?<![\^͡])dʒ", "d͡ʒ"),
@@ -89,6 +105,7 @@ def add_affricate_ties(text: str) -> str:
         (r"(?<![\^͡])dɮ", "d͡ɮ"),
         (r"(?<![\^͡])tɕ", "t͡ɕ"),
         (r"(?<![\^͡])dʑ", "d͡ʑ"),
+        # (r"(?<![\^͡])ʔj", "ʔ͡j"),
     ]
     out = text
     for pat, rep in replacements:
@@ -204,6 +221,8 @@ def expand_optional_length(token: str) -> str:
 
 def normalize_features(text: str) -> str:
     text = expand_optional_length(text)
+    # Map grouping abbreviations to ASCA groupings
+    text = text.translate(GROUPING_MAP)
     # Map 'sibilant' -> 'strident' (ASCA uses 'strident' feature)
     text = text.replace("sibilant", "strident")
     text = re.sub(r"\[\s*\+\s*voiced\s*\]", "[+ voice]", text)
@@ -244,6 +263,33 @@ def load_series_map(path: Path) -> Dict[str, Dict[str, str]]:
     try:
         data = json.loads(raw)
         return data or {}
+    except Exception:
+        return {}
+
+def load_env_text_map(path: Path) -> Dict[str, str]:
+    """
+    Load environment textual phrase mappings -> env fragments.
+    Supports YAML/JSON; keys are case-insensitive phrases; values are env replacements.
+    Example: "at word boundaries": "#_, _#"
+    """
+    if not path.exists():
+        return {}
+    raw = path.read_text(encoding="utf-8", errors="ignore")
+    # Try YAML
+    try:
+        import yaml  # type: ignore
+        data = yaml.safe_load(raw)
+        if not data:
+            return {}
+        return {str(k).strip().lower(): str(v).strip() for k, v in data.items()}
+    except Exception:
+        pass
+    # Try JSON
+    try:
+        data = json.loads(raw)
+        if not data:
+            return {}
+        return {str(k).strip().lower(): str(v).strip() for k, v in data.items()}
     except Exception:
         return {}
 
@@ -307,6 +353,18 @@ def normalize_env_fragment(env: str) -> str:
     Transform patterns like '{ _i, _i:[+long] }' -> '_{ i, i:[+long] }'.
     """
     s = env
+    # Map known textual descriptions to concrete environments
+    if not hasattr(normalize_env_fragment, "_env_text_map"):
+        setattr(normalize_env_fragment, "_env_text_map", load_env_text_map(ENV_TEXT_MAP_PATH))
+    env_text_map: Dict[str, str] = getattr(normalize_env_fragment, "_env_text_map")
+    cleaned = s.strip().strip('"').replace("“", "").replace("”", "").strip().lower()
+    if cleaned in env_text_map:
+        repl = env_text_map[cleaned]
+        # If replacement contains ',', emit as environment set
+        if "," in repl:
+            alts = [strip_whitespace(x) for x in repl.split(",") if strip_whitespace(x)]
+            return ":{ " + ", ".join(alts) + " }:"
+        return repl
     # If already an environment set, leave as is
     if s.strip().startswith(":{") and s.strip().endswith("}:"):
         return s.strip()
@@ -335,17 +393,9 @@ def normalize_env_fragment(env: str) -> str:
     s = re.sub(r"\bVCH\b", "VC h", s)
     # If a brace-set appears immediately after '_' or immediately before '_',
     # promote it to an environment set :{ alt1, alt2 }:
-    def expand_paren_token(tok: str) -> List[str]:
-        # Expand a simple single optional like (d)l -> ['dl', 'l']; else keep as-is
-        m = re.match(r"^\(\s*([^\s{}()])\s*\)([^\s{}()]+)$", tok)
-        if m:
-            return [m.group(1) + m.group(2), m.group(2)]
-        return [tok]
     def build_env_set(pre: str, core_items: List[str], post: str) -> str:
-        alts: List[str] = []
-        for it in core_items:
-            for expanded in expand_paren_token(it):
-                alts.append(strip_whitespace(f"{pre}_{expanded}{post}"))
+        # Do NOT expand optional parentheses; ASCA supports (X) directly
+        alts: List[str] = [strip_whitespace(f"{pre}_{it}{post}") for it in core_items]
         return ":{ " + ", ".join(alts) + " }:"
     # Case A: _{...}suffix
     m_right = re.match(r"^(.*)_\{\s*([^}]*)\s*\}(.*)$", s)
@@ -360,16 +410,7 @@ def normalize_env_fragment(env: str) -> str:
         items = [x.strip() for x in items_str.split(",") if x.strip()]
         alts = [strip_whitespace(f"{it}_{post}") for it in items]
         return ":{ " + ", ".join(alts) + " }:"
-    # Case C: prefix_(optional)X pattern without braces → env set with two alts
-    m_opt_right = re.match(r"^(.*)_\(\s*([^\s{}()])\s*\)([^\s{}()]+)$", s)
-    if m_opt_right:
-        pre, opt, rest = m_opt_right.groups()
-        return ":{ " + ", ".join([
-            strip_whitespace(f"{pre}_{opt}{rest}"),
-            strip_whitespace(f"{pre}_{rest}")
-        ]) + " }:"
-    # Fallthrough: transform optionals like (d)l in-place
-    s = transform_optionals_in_env(s)
+    # Do not expand optional parentheses like (d)l; leave them intact per ASCA
     s = strip_textual_env(s)
     s = re.sub(r"__+", "_", s)
     return s.strip()
@@ -482,15 +523,31 @@ def parse_section(sec_el) -> Tuple[str, str, str]:
             in_parts = [p for p in inp_n.split() if p]
             out_parts = [p for p in out_n.split() if p]
             if len(in_parts) > 1 and len(in_parts) == len(out_parts) and not m_in_set and not m_out_set:
-                in_braced = "{ " + ", ".join(in_parts) + " }"
-                out_braced = "{ " + ", ".join(out_parts) + " }"
-                xml_lines.append(format_rule_xml(i, in_braced, out_braced, env, exception))
+                # If any insertion/deletion operator is present, fall back to pairwise rules
+                if any(tok in ("∅", "*") for tok in in_parts + out_parts):
+                    for a, b in zip(in_parts, out_parts):
+                        # Enforce ASCA rule: insertion/deletion sides must ONLY contain the operator
+                        if b in ("∅", "*"):
+                            xml_lines.append(format_rule_xml(i, a, b, env, exception))
+                        elif a in ("∅", "*"):
+                            xml_lines.append(format_rule_xml(i, a, b, env, exception))
+                        else:
+                            xml_lines.append(format_rule_xml(i, a, b, env, exception))
+                else:
+                    in_braced = "{ " + ", ".join(in_parts) + " }"
+                    out_braced = "{ " + ", ".join(out_parts) + " }"
+                    xml_lines.append(format_rule_xml(i, in_braced, out_braced, env, exception))
                 continue
             # Case 2: single input mapping to a set output → keep one rule but drop braces to a list
             if m_out_set and not m_in_set:
                 outs = [strip_whitespace(x) for x in m_out_set.group(1).split(",") if strip_whitespace(x)]
-                out_list = ", ".join(outs)
-                xml_lines.append(format_rule_xml(i, inp_n, out_list, env, exception))
+                # If deletion/insertion operator appears with others, split into separate rules
+                if any(o in ("∅", "*") for o in outs) and len(outs) > 1:
+                    for o in outs:
+                        xml_lines.append(format_rule_xml(i, inp_n, o, env, exception))
+                else:
+                    out_list = ", ".join(outs)
+                    xml_lines.append(format_rule_xml(i, inp_n, out_list, env, exception))
                 continue
             # Default: emit as-is
             xml_lines.append(format_rule_xml(i, inp_n, out_n, env, exception))

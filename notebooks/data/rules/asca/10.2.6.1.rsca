@@ -13,23 +13,24 @@
 	V:[+stress] > V:[+long] / _C# // V = ə and/or C = h (applies to diphthongal nuclei as well a:[s] monophthongs)
 	ʀ > l, ɾ // _# (the latter is more common)
 	l > ∅ // _# (irregular)
-	u > əw / _V (also cases of { Cu, u } → w /_V)
-	i > əj / _V (also cases of { Ci, i } → j /_V)
+	u > əw / _V (also cases of (C)u → w /_V)
+	i > əj / _V (also cases of (C)i → j /_V)
 	{ w, j } > { v, ɟ }
 	iu̯ > ui̯
 	s > ∅ / _#
 	{ i, u } > { ɛ, ɔ } / _C# // _P (sporadic)
 	ʀ > ʔ / _# (in a handful of forms)
 	ʀ > ɾ
-	a > i / O:[+voice]…_{ C#, # } (blocked if there was an intervening nasal, and
-	{ i, u } > { əi̯, əu̯ } / :{ _ʔ#, _# }:
+	a > i / O:[+voice]…_(C)# (blocked if there was an intervening nasal, and
+	{ i, u } > { əi̯, əu̯ } / _(ʔ)#
 	{ əi̯, əu̯ } > { ai̯, au̯ } // O:[+voice] earlier in the word
 	{ bʱ, {dʱ,d͡zʱ}, ɡʱ } > { f, s, k }
 	f > s
 	{ v, ɡ, ɟ } > { f, k, c } / V_V
 	{ v, ɟ } > { f, c } / #_
 	{ {i,ɛ}, {u,ɔ} } > { iə̯, uə̯ } / :{ _k# “(and also sporadically before final *t and *n and some other consonant͡s), _ŋ# “(and also sporadically before final *t and *n and some other consonant͡s) }:
-	{ k, ŋ } > { ʔ, ∅ } / Və̯_#
+	k > ʔ / Və̯_#
+	ŋ > ∅ / Və̯_#
 	ə > ə, a / _C# (free variant͡s)
 	NS:[-voice] > S:[+long]
 	(C)V > ∅ / #_C… (irregular)

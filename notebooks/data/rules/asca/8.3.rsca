@@ -1,5 +1,5 @@
 @ 8.3 - Proto-Altaic to Proto-Mongolic
-# citation: Pogostick Man, from Wikipedia contributors (2011), “Altaic languages”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Altaic_languages>, citing Sarostin, Sergei A., Anna V. Dybo, and Oleg A. Mudrak (2003), Etymological Dictionary of the Altaic Languages. Leiden: Brill Academic Publishers NB: Does not include clusters. Loss of syllable pitch and length
+# citation: Pogostick Man, from Wikipedia contributors (2011), “Altaic languages”. Wikipedia, the Free Encyclopedia. NB: Does not include clusters. Loss of syllable pitch and length
 	a > a, i / _Ce
 	a > a, e / _Ci
 	a > a, i, e / _Co
@@ -17,7 +17,7 @@
 	b > h / , ,lʲ}_ or _ɡ // {rʲ
 	pʰ > h, j / #_
 	pʰ > b, h
-	pʰ > b / #_U:[+high pitch]
+	pʰ > b / #_%:[+high pitch]
 	p > h (sporadic)
 	p > b
 	tʰ > d / _#
@@ -37,7 +37,8 @@
 	nʲ > j, n
 	ŋ > ɡ / #_u
 	ŋ > n / :{ #_a, #_o, #_e }:
-	ŋ > ∅, j / #_
+	ŋ > ∅ / #_
+	ŋ > j / #_
 	ŋ > m, n, ŋ, h
 	rʲ > r
 	l > n, l / #_

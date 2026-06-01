@@ -1,0 +1,12 @@
+# Map textual environment descriptions to ASCA environments.
+# Keys are phrases (case-insensitive); values are environment fragments.
+# If a value contains commas, it will be emitted as an environment set :{ alt1, alt2 }:
+#
+# Examples:
+# - "at word boundaries": "#_, _#"  -> :{ #_, _# }:
+# - "in coda": "_C$"
+#
+"at word boundaries": "#_, _#"
+# "medially": ""           # leave empty (no-op) unless you decide a concrete mapping
+# "else": ""               # no-op; typically handled by lack of env
+# "in coda": "_C$"

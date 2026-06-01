@@ -1,8 +1,11 @@
 @ 10.3.3 - Proto-Oceanic to Lemerig
 # citation: thetha, from François, Alexander (2005), “Unraveling the history of the vowels of seventeen north Vanuatu languages” thetha says “intervening consonants sometimes optional in the [following] sound changes”:
-	{ p, pʷ, k, q } > { β, w, ɣ, ∅ }
+	p > β
+	pʷ > w
+	k > ɣ
+	q > ∅
 	VV > V
-	{ ndr, *R } > { d, r }
+	{ ndr, *S } > { d, r }
 	{ {c,*j}, ɲ } > { s, n }
 	t > ʔ “often”
 	{ b, bʷ, d, ɡ } > { p, kpʷ, t, k }

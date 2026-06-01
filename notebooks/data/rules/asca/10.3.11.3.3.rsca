@@ -7,9 +7,9 @@
 	v > ∅ / _i
 	v > {w,u} (“sporadically”)
 	ɣ > ∅ / #_
-	ɣ > ∅ / _E
+	ɣ > ∅ / _:[+front]
 	ɣ > ŋ
-	r > l / :{ _o }:
+	r > l / :{ _o, _:[+front] }:
 	r > i
 	d > t (often)
 	d > k / _ŋ

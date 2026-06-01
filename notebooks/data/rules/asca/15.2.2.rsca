@@ -2,11 +2,11 @@
 # citation: Pogostick Man, from Swadesh, Morris (1952), “Unaaliq and Proto Eskimo IV: Diachronic Notes”, International Journal of American Linguistics, Vol. 18, No. 3 (Jul., 1952), pp. 166–171
 	ə > u / u_
 	ə > a / a_
-	C:[+long] > C / except when CV_V in UU
+	C:[+long] > C / except when CV_V in %%
 	t > s / i_
 	ə > i
-	d͡ʒ > t͡ʃ / in certain positions (except for Thule Greenlandic, where d͡ʒ → t͡ʃ and stayed there, apparently)
-	t͡ʃ > s / in certain positions (except for Thule Greenlandic, where d͡ʒ → t͡ʃ and stayed there, apparently)
+	d͡ʒ > t͡ʃ / in certain positions (except for P:[-voice]hule Greenlandic, where d͡ʒ → t͡ʃ and stayed there, apparently)
+	t͡ʃ > s / in certain positions (except for P:[-voice]hule Greenlandic, where d͡ʒ → t͡ʃ and stayed there, apparently)
 	m n ŋ t {{ɣ,ʁ} > {k,q}} / _#
 	{k,q}} > p t k n ŋ / _#
 	{ m, n, ŋ } > { v, t, ɣ } / _C:[-nasal]
@@ -19,5 +19,5 @@
 	v > ∅ / u_a
 	iv > uj / _u
 	d͡ʒ > t͡ʃ / :{ i_u, i_i }:
-	əd͡ʒ > i / :{ _a(except in #), _u(except in #) }:
-	ad͡ʒ > i / _a (except in #?)
+	əd͡ʒ > i / :{ _a(except in #%), _u(except in #%) }:
+	ad͡ʒ > i / _a (except in #%?)

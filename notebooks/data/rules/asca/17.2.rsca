@@ -1,15 +1,15 @@
 @ 17.2 - Proto-Indo-European to Common Anatolian
-# citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
+# citation: Alces
 	eh > æ:[+long] / tautosyllabic
 	{ ei, eu } > { ɛ:[+long], u:[+long] }
-	Dʱ > D
-	H > R / VR_V
+	P:[+voice]ʱ > P:[+voice]
+	[+laryngeal] > S / VS_V
 	h > ∅
 	h > ∅
-	{ T, h } > { D, h } / _#
-	{ T, h } > { D, h } / V:[-stress]_V:[-stress]
-	{ T, h } > { D, h } / V:[+long]
-	{ T, h } > { D, h } / W
+	{ P:[-voice], h } > { P:[+voice], h } / _#
+	{ P:[-voice], h } > { P:[+voice], h } / V:[-stress]_V:[-stress]
+	{ P:[-voice], h } > { P:[+voice], h } / V:[+long]
+	{ P:[-voice], h } > { P:[+voice], h } / :[+approximant]
 	t > z / j (allophonic)
 	r > ∅ / #_ (unclear)
 	j > ∅ / #_e (not widely attested)

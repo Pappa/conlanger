@@ -1,12 +1,12 @@
 @ 10.1.2.7.2 - Proto-Kalamian to Karamiananen
-# citation: Pogostick Man, from Himes, Ronald (2006), “The Kalamian Microgroup of Philippine Languages”. Paper presented at Tenth International Conference on Austronesian Linguistics. 17Â­ – 20 January 2006. Puerto Princesa City, Palawan, Philippines. <http://www.sil.org/asia/philippines/ical/papers.html>
+# citation: Pogostick Man, from Himes, Ronald (2006), “The Kalamian Microgroup of Philippine Languages”. Paper presented at Tenth International Conference on Austronesian Linguistics. 17Â­ – 20 January 2006. Puerto Princesa City, Palawan, Philippines.
 	{ {t,k}, q } > { ʔ, k } / _C
 	s > ʔ / _C
 	k > ∅ / :{ _V, _# }:
 	q > k
 	aɪ ai > ɪɪ ii (not sure if there’s a long vowel or hiatus here)
 	t > s / _i
-	s > t / _V // _E
+	s > t / _V // _:[+front]
 	s > t / _#
 	s > c& _ (the paper doesn’t explain what this represent͡s)
 	b > β / V_V

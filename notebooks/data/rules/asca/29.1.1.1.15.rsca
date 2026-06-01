@@ -1,8 +1,8 @@
 @ 29.1.1.1.15 - Proto-Athabaskan to Upper Koyukon
 # citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85 Stem-final/suffixal consonant clusters lost in Minchumina-Bearpaw Upper Koyukon
 	{ e, a, ɑ, ʊ } > { a, o, ŏ, ŭ }
-	{ TS, {TŠ,TŠʷ} } > { TŁ, TS }
-	[+ cons, - fr, + bk, + hi, - lo] > TŠ
+	{ P:[-voice]S, {P:[-voice]Š,P:[-voice]Šʷ} } > { P:[-voice]Ł, P:[-voice]S }
+	[+ cons, - fr, + bk, + hi, - lo] > P:[-voice]Š
 	C’ > C / _$
 	Vˀ > V:[+low tone]
 	V:[+low tone] > V:[-tone]

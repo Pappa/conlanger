@@ -6,8 +6,8 @@
 	t > ˀt
 	”V > ”V:[+long] / _n in penultimate syllables only
 	n > t / ,kʷ,V:[+nas]} // _{h
-	”V > ”V:[+long] / :{ _kʷ{s,,} (“penultimate syllables only”), _ˀt{s,,} (“penultimate syllables only”), _t{s,,} (“penultimate syllables only”) }:
-	”V > ”V:[+long] / _RR
+	”V > ”V:[+long] / :{ _kʷ{s,S,:[+laryngeal]} (“penultimate syllables only”), _(ˀ)t{s,S,:[+laryngeal]} (“penultimate syllables only”) }:
+	”V > ”V:[+long] / _SS
 	{{ ẽ, ẽ:[+long] }{ ,õ, ,õ:[+long] }} > ə̃, ə̃:[+long]
 	t͡s > θ
 	ˀt > tʔ / _ˀt
@@ -27,5 +27,5 @@
 	{ e, e:[+long] } > { ɛ, ɛ:[+long] }
 	{ ə̃, ə̃:[+long] } > { ɨ̃, ɨ̃:[+long] } // when both short and stressed
 	{ {, a,, a:[+long], }, {, o,, o:[+long], } } > { {, ɔ,, ɔ:[+long], }, {, u,, u:[+long], } } // when both short and unstressed
-	{ t, kʷ } > { d, ɡʷ } / :{ _V }:
+	{ t, kʷ } > { d, ɡʷ } / :{ _V, _S }:
 	{ n, r, w, j } > { n̥, r̥, w̥, j̊ } / :{ _#, _O }:

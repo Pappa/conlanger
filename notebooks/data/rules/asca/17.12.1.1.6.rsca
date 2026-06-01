@@ -4,11 +4,11 @@
 	— ɪ > e
 	— ʊ > o (this change seems to have happened later, hence is listed separately)
 	— ɔ > y / :{ _u(in northwestern dialect͡s), _P(in northwestern dialect͡s), _k(in northwestern dialect͡s), _ɡ(in northwestern dialect͡s), _i(in northwestern dialect͡s) }:
-	— ɔ > ɥe / :{ _u(in western dialect͡s, Limousin, and Auvergne), _P(in western dialect͡s, Limousin, and Auvergne), _k(in western dialect͡s, Limousin, and Auvergne), _ɡ(in western dialect͡s, Limousin, and Auvergne), _i(in western dialect͡s, Limousin, and Auvergne) }:
+	— ɔ > ɥe / :{ _u(in western dialect͡s, Limousin, and:[+affricate]uvergne), _P(in western dialect͡s, Limousin, and:[+affricate]uvergne), _k(in western dialect͡s, Limousin, and:[+affricate]uvergne), _ɡ(in western dialect͡s, Limousin, and:[+affricate]uvergne), _i(in western dialect͡s, Limousin, and:[+affricate]uvergne) }:
 	— ɔ > ɥo / :{ _u(in Languedoc), _P(in Languedoc), _k(in Languedoc), _ɡ(in Languedoc), _i(in Languedoc) }:
 	— ɔ > ɥe, ɥo, ɔ / :{ _u(in southern dialect͡s), _P(in southern dialect͡s), _k(in southern dialect͡s), _ɡ(in southern dialect͡s), _i(in southern dialect͡s) }:
-	— a > a / _N (Rouergue, Limousin, Auvergne, Dauphiné)
-	— a > a / _# in monosyllables and oxytones (Rouergue, Limousin, Auvergne, Dauphiné)
+	— a > a / _N (Souergue, Limousin,:[+affricate]uvergne, P:[+voice]auphiné)
+	— a > a / _# in monosyllables and oxytones (Souergue, Limousin,:[+affricate]uvergne, P:[+voice]auphiné)
 	— a > å (I have no idea what is going on here. Grandgent seems to distinguish an open and close /a/, and I have listed his open a as /å/, which seems to have been distinct from /ɔ/, but beyond this section it doesn’t really seem to matter very much)
 	— å ɛ ɔ > a e o / _N (in Limousin and neighboring regions, the last two particularly in Limousin, Languedoc, and Gascon,
 	— ɛ ɔ > jɛ wɔ (intermittent, “least common in the southwest”)
@@ -16,15 +16,15 @@
 	— e > i / _(C…)i{C(C…)V,#}
 	— ɛ > jɛ / :{ _u(except in some northern and western dialect͡s, or if this u ← l or if this i ← ð), _i(except in some northern and western dialect͡s, or if this u ← l or if this i ← ð), _ʎ(except in some northern and western dialect͡s, or if this u ← l or if this i ← ð), _rʲ(except in some northern and western dialect͡s, or if this u ← l or if this i ← ð), _ʃ(except in some northern and western dialect͡s, or if this u ← l or if this i ← ð), _ʒ(except in some northern and western dialect͡s, or if this u ← l or if this i ← ð), _j(except in some northern and western dialect͡s, or if this u ← l or if this i ← ð), _t͡ʃ(except in some northern and western dialect͡s, or if this u ← l or if this i ← ð), _d͡ʒ(except in some northern and western dialect͡s, or if this u ← l or if this i ← ð) }:
 	— ju > jeu
-	— o > y / :{ _t͡ʃ(did not occur in Dauphiné), _d͡ʒ(did not occur in Dauphiné), _it(did not occur in Dauphiné), _id(did not occur in Dauphiné) }:
+	— o > y / :{ _t͡ʃ, _d͡ʒ, _it, _id }:
 	— o > y / _ɲ (in northern and western dialect͡s)
-	— o > y / _i# (in Bordeaux, Auvergne, and some of Languedoc)
+	— o > y / _i# (in:[+back]ordeaux,:[+affricate]uvergne, and some of Languedoc)
 	— ɔ > {ɔ,we} (in southwestern dialect͡s)
 	— u > y
 	— o > u (during the literary period)
-	— E > ∅ / _e
-	— B > ∅ / _o
-	— E > j (presumably in the vicinity of another vowel)
+	—:[+front] > ∅ / _e
+	—:[+back] > ∅ / _o
+	—:[+front] > j (presumably in the vicinity of another vowel)
 	— V > ∅ (though /a/ seemed to resist this)
 	— {a,œ,e,i} > e (here, 〈œ〉 denotes the reflex of the Latin vowel written this way, not a front rounded vowel)
 	— u > o
@@ -35,7 +35,7 @@
 	— CV[+ cons, - fr, + bk, + hi, - lo] > CVj (intermittent if C was a resonant)
 	— V > ∅ / lv_r (dialect-dependent)
 	— e > i / _(C…)i(C…)#
-	— V > ∅ / R_(C…)
+	— V > ∅ / S_(C…)
 	— a > o in most dialect͡s except Gascon and Languedoc; final -as remained in “Limousin and some others”
 	— e u > e o / _nt#
 	— V > “indistinct e” (probably /ə/) if dropping it would create ugly consonant clusters:
@@ -46,12 +46,12 @@
 	d > ∅ / V_V (seems to have happened in the north and northeast at some point)
 	{ b, d, ɡ } > { β, ð, ɣ } / V_V
 	βʲ > j (in forms of habeo and debeo)
-	{ k, ɡ } > { t͡ʃ, d͡ʒ } / _E
+	{ k, ɡ } > { t͡ʃ, d͡ʒ } / _:[+front]
 	t͡ʃ > t͡s (sometimes)
 	ɡ > ∅ / V_(VC…)V
-	j > ∅ / V_
+	j > ∅ / V_:[+front]
 	N > ∅ / _#, in polysyllables
-	{ kʷ, ɡʷ } > { k, ɡ } / _B
+	{ kʷ, ɡʷ } > { k, ɡ } / _:[+back]
 	rs > s:[+long]
 	s:[+long] > s / V:[+long]_
 	{ p, t, k, s } > { b, d, ɡ, z } / V_V (this b → v?)
@@ -63,7 +63,7 @@
 	w > v
 	v > β
 	β > w / V_C
-	w > ∅ / C_B (when from earlier B?)
+	w > ∅ / C_:[+back] (when from earlier:[+back]?)
 	k > ∅ / _s{C,#} (the latter in polysyllables only)
 	{d,ɡ} > ∅ / _j
 	— Loaned w > ɡʷ
@@ -73,35 +73,36 @@
 	{ (s)k, ɡ } > { (s)t͡ʃ, d͡ʒ } / #_a (in the north and northeast)
 	t͡ʃ > t͡s / #_
 	t͡s > s / #_
-	j > d͡ʒ / #_ (but not in Béarn)
-	f > h (in Béarn and Gascon)
-	β > b (in Béarn, Gascon, and Languedoc)
+	j > d͡ʒ / #_ (but not in:[+back]éarn)
+	f > h (in:[+back]éarn and Gascon)
+	β > b (in:[+back]éarn, Gascon, and Languedoc)
 	β > v (though sometimes
 	v (though sometimes > ɡʷ instead if analogy interfered)
 	kʷ ɡʷ > kʷ ɡʷ (in western dialect͡s)
 	kʷ ɡʷ > k ɡ (else)
 	∅ > k / #s_l
 	i > e / #_sC
-	{ b, {d,d͡z,d͡ʒ}, z, ʒ, ɡ } > { p, {t,t͡s,t͡ʃ}, s, ʃ, k } / :{ _s#, _# }:
+	{ b, {d,d͡z,d͡ʒ}, z, ʒ, ɡ } > { p, {t,t͡s,t͡ʃ}, s, ʃ, k } / _(s)#
 	t͡ʃs > {t͡s,t͡ʃ} (varies)
-	j > i / :{ _s#, _# }:
+	j > i / _(s)#
 	ð > ∅ / _#
 	ð > t / _s#
-	β > u / :{ V_s#, V_# }:
-	β > ∅, f / C_{ s#, # } (the latter is rare)
-	n > ∅ / V_# (did not occur in extreme western areas, some northern areas, the southeast, and the east)
+	β > u / V_(s)#
+	β > ∅ / C_(s)# (the latter is rare)
+	β > f / C_(s)# (the latter is rare)
+	n > ∅ / V_#
 	n > ∅ / _s# (except for eastern and southeastern dialect͡s)
-	n > ∅ / :{ r_s#?, r_#? }:
+	n > ∅ / r_(s)#?
 	k:[+long] > t͡ʃ / _a (in the east and northeast)
 	l:[+long] > l (in the south)
 	mn > mpn
 	mpn > n:[+long] (dialectal)
 	C:[+long] > C
-	ɡ > k / B_ (your guess is probably better than mine)
+	ɡ > k / [+back]_ (your guess is probably better than mine)
 	ɡ > k, j / V_ (if /j/ resulted, it dropped after /i/; forms with k are most persistent in the west and more common overall)
 	l > w / V_s
 	ms ns > mps nt͡s (sporadic?)
-	{p,b} > ∅ / R_s# (unless blocked by analogy)
+	{p,b} > ∅ / S_s# (unless blocked by analogy)
 	t͡s > s / _# (Provence, Limousin, some Languedoc and Gascon)
 	β > ∅ / when pretonic and immediately adjacent to a back vowel
 	β > b / V_V (in western and some central dialect͡s)
@@ -123,10 +124,10 @@
 	d͡ʒ > j
 	l > u / _s# (in many dialect͡s)
 	s > r / _n (in a few dialect͡s)
-	j > d͡ʒ / _ (in the west)
-	j > ∅ / _ ()
+	j > d͡ʒ / _:[+front] (in the west)
+	j > ∅ / _:[+front] ()
 	j > i / _C
-	j > d͡ʒ / V_V (did not occur in the northeast and some northern dialect͡s)
+	j > d͡ʒ / V_V
 	β > u / _l
 	{ {t,d}l, {k,ɡ}l } > { l:[+long], ʎ }
 	∅ > b / m_l
@@ -214,12 +215,13 @@
 	dʲ > djʒ (?)
 	djʒ (?) > d͡z (in the north and west) or id͡z (in the south and east)—medial (i)d͡z became (i)z; i-less forms “prevail in the literary language” and seem to have become common if the d͡z follows the stress
 	l > u / :{ _t(Languedoc), _s(Languedoc) }:
-	l > u / :{ _d(Rouergue), _s(Rouergue) }:
+	l > u / :{ _d(Souergue), _s(Souergue) }:
 	l > u / :{ _t(else), _d(else), _s(else) }:
 	ndt ndt͡ʃ nt͡ʃ nkt nf > n{d,t} {nt͡s,nd͡z(
 	n{d,t} {nt͡s,nd͡z( > nz),nd͡ʒ} n(t)s {ɲ,(i)nt,nt͡ʃ} {nf,f:[+long](
 	nz),nd͡ʒ} n(t)s {ɲ,(i)nt,nt͡ʃ} {nf,f:[+long]( > f)}
-	{ nt, nd } > { {∅,n}, ∅ } / _# (in some Languedoc and Gascon areas)
+	nt > {∅,n} / _# (in some Languedoc and Gascon areas)
+	nd > ∅ / _# (in some Languedoc and Gascon areas)
 	nd > n / _# (in western areas and for some speakers of Limousin)
 	d > t / n_#
 	{ rt͡ʃ, rdt͡ʃ } > { r(t)s, {rd͡z( }
@@ -235,9 +237,11 @@
 	p > ∅ / s_t
 	stɡ > s{ɡ,d͡ʒ}
 	bk > pt͡s / _a
-	b > ∅, u / _rɡ
+	b > ∅ / _rɡ
+	b > u / _rɡ
 	b > ∅ / _s{t,k}
-	b > ∅, b / _t
+	b > ∅ / _t
+	b > b / _t
 	b > ∅ / _t͡s
 	β > u / _k
 	βt͡ʃ > u{t͡s,d͡z}
@@ -250,7 +254,7 @@
 	{ t͡ʃ, k } > { {i,s}, {∅,k} } / _m
 	kt ɡd > it id (in the north, northeast, and southwest)
 	{t͡ʃ,k}t ɡd > t͡ʃ d͡ʒ (else)
-	dt͡ʃ > t͡s (in Auvergne and some western areas)
+	dt͡ʃ > t͡s (in:[+affricate]uvergne and some western areas)
 	dt͡ʃ > d͡ʒ (for some southeastern and southwestern speakers)
 	dt͡ʃ > d͡z
 	d͡z > z (else)

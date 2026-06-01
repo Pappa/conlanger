@@ -4,10 +4,10 @@
 	{ p:[+long], pʷ:[+long], t:[+long], t̪:[+long], k:[+long], c:[+long] } > { f, hʷ, t̪ʰ, tʰ, h, jʰ }
 	t̪ > l / V_V
 	C:[+long] > Cʰ
-	{ t, tʰ } > { c, h } / _E
+	{ t, tʰ } > { c, h } / _:[+front]
 	{ t̪, t̪ʰ } > { t, tʰ }
 	jʰ > h / _i
 	{ bʷ, mʷ } > { ɡ, ŋ }
-	{ n, n̥ } > { ɲ, ɲ̊ } / _E
+	{ n, n̥ } > { ɲ, ɲ̊ } / _:[+front]
 	ONV > SʰṼ / Pije and Fwai
 	f > ɸ / Pije and Fwai

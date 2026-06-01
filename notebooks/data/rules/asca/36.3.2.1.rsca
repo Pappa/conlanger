@@ -2,7 +2,7 @@
 # citation: Pogostick Man, from Nagano, Yashuiki (1979), “A Historical Study of rGyarong Initials and Prefixes”. Linguistics of the Tibeto-Burman Area 4(2):44 – 68; and Nagano, Yashuiki (1979), “A Historical Study of rGyarong Rhymes”. Linguistics of the Tibeto-Burman Area 5(1):37 – 47 Initials: Rhymes:
 	{ p, b, çp, çb, sP, rP, Np, Nb, pr, {br,pʲ}, bʲ } > { pʰ, p, ʝb, çp, sp, rpʰ, mpʰ, mb, br, pʰj, pʲ }
 	P > p / l_
-	{ t, d, Nt, Nd, st, sd, çT, tr, (ç)dr, [+ cons, - fr, + bk, + hi, - lo]T } > { tʰ, t, Ntʰ, md, zd, st, çtʲ, trh, (ç)tr, kt }
+	{ t, d, Nt, Nd, st, sd, çP:[-voice], tr, (ç)dr, [+ cons, - fr, + bk, + hi, - lo]P:[-voice] } > { tʰ, t, Ntʰ, md, zd, st, çtʲ, trh, (ç)tr, kt }
 	{ k, sk, kr, ɡ, Pɡ, sɡ, Nɡ, (s)ɡr, ç[+ cons, - fr, + bk, + hi, - lo], r[+ cons, - fr, + bk, + hi, - lo], [+ cons, - fr, + bk, + hi, - lo]ç } > { kʰ, zɡʷ, dr, Nɡ, pk, sk, mk, (s)kr, çk, rɡʲ, ɡçkr }
 	{ (ʔ)kʲ, (s)ɡʲ, Nkʲ } > { (k)tç, (s)kʲ, Nd͡ʒ }
 	{ çr, Nç } > { dr, mkʰj }
@@ -10,8 +10,8 @@
 	[+ cons, - fr, + bk, + hi, - lo] > k / _ç
 	C:[+strident] > s / _w
 	Pç > mʃ
-	TS > d͡ʒ / l_
-	{ NTS, PTS, [+ cons, - fr, + bk, + hi, - lo]TS, sTS, çTS } > { {Nd͡z,mt͡s}, kt͡s(ʰ), pt͡sʰ, st͡s, {st͡s,rʲ} }
+	P:[-voice]S > d͡ʒ / l_
+	{ NP:[-voice]S, PP:[-voice]S, [+ cons, - fr, + bk, + hi, - lo]P:[-voice]S, sP:[-voice]S, çP:[-voice]S } > { {Nd͡z,mt͡s}, kt͡s(ʰ), pt͡sʰ, st͡s, {st͡s,rʲ} }
 	{ (r)t͡s, (r)d͡z } > { (r)t͡sʰ, (r)t͡s }
 	∅ > j / çm_
 	N > m / :{ _ŋ.nʲ }:

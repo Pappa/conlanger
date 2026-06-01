@@ -1,13 +1,13 @@
 @ 17.1.2 - Proto-Indo-European to Tosk Albanian
-# citation: Pogostick Man, from Wikipedia contributors (2013), “Albanian language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Albanian_language> Loss of laryngeals, with the possible exception of h₄, if it existed; h₃ and h₄ seem to have possibly fronted a following back vowel
+# citation: Pogostick Man, from Wikipedia contributors (2013), “Albanian language”. Wikipedia, the Free Encyclopedia. Loss of laryngeals, with the possible exception of h₄, if it existed; h₃ and h₄ seem to have possibly fronted a following back vowel
 	d dʱ > ð / V_V
 	d dʱ > ð / r_
 	ḱ > s / :{ _u̯, _u, _i̯, _i }:
-	ḱ > k / _R
+	ḱ > k / _S
 	ḱ > {t͡s,t͡ʃ} (“:[a]rchaic relic”)
 	ḱ > θ
-	kʷ > s / _?
-	kʷ > c / _B?
+	kʷ > s / _:[+front]?
+	kʷ > c / _:[+back]?
 	kʷ > k / ?
 	ɡ́(ʱ) > d / %_C:[+strident]
 	ɡʷ(ʱ) > ɡ, z
@@ -21,8 +21,8 @@
 	s > θ
 	s > h / V_V
 	i̯ > ɟ / :{ a_, e_, i_ }:
-	i̯ > j / _B
-	i̯ > ∅ / E_
+	i̯ > j / _:[+back]
+	i̯ > ∅ / [+front]_
 	i̯ > h / V_
 	u̯ > v
 	n > ∅ / V_C?

@@ -2,9 +2,10 @@
 # citation: Pogostick Man, from Llamzon, Teodoro A. (1975), “Proto-Philippine Phonology”. Archipel 9(1):29 – 42; and from other changes and information from this document
 	ə > i
 	u > o / _#
-	{ {*D,*j}, {d,z} } > { l, r } / V_V
+	{ {*P:[+voice],*j}, {d,z} } > { l, r } / V_V
 	*j > d / #_
-	{ h, *j } > { ∅, d } / _#
-	*R > ɡ
+	h > ∅ / _#
+	*j > d / _#
+	*S > ɡ
 	q > ∅ (not sure what happens word-finally to it)
 	{ uj, iw } > { oj, uj } / _#

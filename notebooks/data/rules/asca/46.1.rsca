@@ -1,4 +1,4 @@
 @ 46.1 - 7-to-5 Vowel Merger (Bantu)
 # citation: Pogostick Man, from Schadeberg, Theo C. (1995), “Spirantization and the 7-to-5 Vowel Merger in Bantu”. In Sound Change, M. Dominicy and D. Demolin (Eds.), Amsterdam: John Benjamins, 1995.
-	S > F / :{ _i(Do not necessarily have to be fricatives at the same POA; in some cases, the phones go to null or to /l/), _u(Do not necessarily have to be fricatives at the same POA; in some cases, the phones go to null or to /l/) }:
+	S > F / :{ _i(P:[+voice]o not necessarily have to be fricatives at the same PO:[+affricate]; in some cases, the phones go to null or to /l/), _u(P:[+voice]o not necessarily have to be fricatives at the same PO:[+affricate]; in some cases, the phones go to null or to /l/) }:
 	{ ɪ, ʊ } > { i, u }

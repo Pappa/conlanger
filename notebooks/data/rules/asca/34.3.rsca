@@ -2,7 +2,7 @@
 # citation: Pogostick Man, from Orr, Carolyn, and Robert E. Longacre (1968), “Proto-Quechumaran”. Language 44(3):528 – 555
 	h > ∅ / nq_
 	h > ∅ / :{ #q_i, #q_u }:
-	ph > p / #_VA
+	ph > p / #_V:[+affricate]
 	ph > p / #_aC:[+strident]
 	pʼ > p/ #_C:[+strident]
 	ph > p / a_ (?)
@@ -13,7 +13,7 @@
 	{ kh, qh } > { kʰ, qʰ }
 	{ t͡s, t͡sh } > { t͡ʃ, t͡ʃʰ }
 	t͡ʃ > s / _q
-	t͡ʃh > s / _E
+	t͡ʃh > s / _:[+front]
 	{t͡ʃh,t͡ʃʼ} > t͡ʃ
 	ʈʂ > s / _[+ cons, - fr, + bk, + hi, - lo]
 	ʈʂ > t͡ʃ / _V

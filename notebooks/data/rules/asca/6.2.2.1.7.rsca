@@ -1,23 +1,23 @@
 @ 6.2.2.1.7 - Classical Arabic to Egyptian Arabic
-# citation: Pogostick Man, from Brustad, Kristen, Mahmoud Al-Batal, and Abbas Al-Tonsi (2010), Alif Baa: Introduction to Letters and Sounds, 3rd. Ed.; http://en.wikipedia.org/wiki/Egyptian_Arabic; At-Tonsi, Abbas, Heba Salem, and Nevenka Korica Sullivan (2013), Umm al-Dunya: Advanced Egyptian Colloquial Arabic; and from correspondence with my own Arabic professor, who is a native speaker of this dialect Some other short-vowel deletions Resyllabification across word boundaries to prevent vowel-initial syllables r gains emphatic status except when next to i, and even then it’s becoming more common in that environment Two consecutive consonants assimilate to the voicing of the second (obstruents only?) Final short vowel loss
-	{ θ, ð } > { t, d } / usually in numbers or cases where a short vowel has been deleted and it’s in contact with another stop, e.g. CA/MSA kaˈθi:[+long]r → EA kti:[+long]r
+# citation: Pogostick Man, from Brustad, Kristen, Mahmoud Al-Batal, and Abbas Al-Tonsi (2010), Alif Baa: Introduction to Letters and Sounds, 3rd. Ed. Some other short-vowel deletions Resyllabification across word boundaries to prevent vowel-initial syllables r gains emphatic status except when next to i, and even then it’s becoming more common in that environment Two consecutive consonants assimilate to the voicing of the second (obstruents only?) Final short vowel loss
+	{ θ, ð } > { t, d } / usually in numbers or cases where a short vowel has been deleted and it’s in contact with another stop, e.g. C:[+affricate]/MS:[+affricate] kaˈθi:[+long]r →:[+front]:[+affricate] kti:[+long]r
 	{ θ, ð } > { s, z }
 	ðˤ > zˤ, occasionally tˤ
-	dˤ > zˤ (seems to be a sporadic change only affecting a few words, e.g. CA/MSA ˈdˤa:[+long]bitˤ
-	zˤ (seems to be a sporadic change only affecting a few words, e.g. CA/MSA ˈdˤa:[+long]bitˤ > EA ˈzˤa:[+long]bitˤ)
+	dˤ > zˤ (seems to be a sporadic change only affecting a few words, e.g. C:[+affricate]/MS:[+affricate] ˈdˤa:[+long]bitˤ
+	zˤ (seems to be a sporadic change only affecting a few words, e.g. C:[+affricate]/MS:[+affricate] ˈdˤa:[+long]bitˤ > :[+front]:[+affricate] ˈzˤa:[+long]bitˤ)
 	d͡ʒ > ɡ
 	{ i, u } > { e, o } / , // _#
 	u > o, u / , _#
-	{ aj, aw } > { e:[+long], o:[+long] } / in :[+closed]
+	{ aj, aw } > { e:[+long], o:[+long] } / in %:[+closed]
 	V:[+long] > V / C_C{:[+long],C}V
-	V > V:[+long] / C_CV in :[-stress]
+	V > V:[+long] / C_CV in %:[-stress]
 	V > V:[+long] / _#
 	{i,u} > ∅ / VC_CV when unstressed ()
 	∅ > e / CVCC_CVCV (applies across word boundaries)
 	{ a, a:[+long] } > { ɑ, ɑ:[+long] }
 	{ a, a:[+long] } > { ɑ, ɑ:[+long] }
 	{ a, a:[+long] } > { æ, æ:[+long] } / (
-	q > ʔ / except in several words, two of which are al-Qâhira and musîqâ
+	q > ʔ / except in several words, two of which are al-:[+click]âhira and musîqâ
 	{{s,z}(ˤ),ʒ}ʃ > ʃ:[+long]
 	ʕ > ʕ̞, ħ / _h
 	h > ∅

@@ -3,15 +3,15 @@
 	e > a / :{ _h, _h }:
 	e > a / :{ h_, h_ }:
 	p > b / _h
-	H > ə / syllabic
+	[+laryngeal] > ə / syllabic
 	ə > ∅ / #_
-	{h,h} > *H
-	*H > ∅ / S_
+	{h,h} > *:[+laryngeal]
+	*:[+laryngeal] > ∅ / S_
 	[+ cons, - fr, + bk, + hi, - lo]ʷ > [+ cons, - fr, + bk, + hi, - lo]
 	s > ʃ / {u,i,l,r,[+ cons, - fr, + bk, + hi, - lo],Ḱ}
-	Ḱ > TŠ
-	BʱP > BBʱ / includes s ʃ > zʱ ʒʱ
-	BʱBʱ > BBʱ
+	Ḱ > P:[-voice]Š
+	[+back]ʱP > :[+back]:[+back]ʱ / includes s ʃ > zʱ ʒʱ
+	[+back]ʱ:[+back]ʱ > :[+back]:[+back]ʱ
 	pt͡ʃ > pʃ
 	{ tt͡ʃ, dd͡ʒʱ } > { t.ʃ, d.ʒʱ }
 	t > ∅ / _ʃt

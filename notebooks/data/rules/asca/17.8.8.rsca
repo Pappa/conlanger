@@ -1,12 +1,12 @@
 @ 17.8.8 - Proto-Indo-European to Ionic Greek
-# citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects> Vowel contraction (on which the author does not elaborate much) Some “metathesis of quality as well as of quantity” with regards to vowels; did not occur to the same degree as it did in Attic
-	{H,m̩,n̩} > a
+# citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. Vowel contraction (on which the author does not elaborate much) Some “metathesis of quality as well as of quantity” with regards to vowels; did not occur to the same degree as it did in Attic
+	{[+laryngeal],m̩,n̩} > a
 	{ bʱ, dʱ, ɡʱ } > { pʰ, tʰ, kʰ }
 	s > h / #_
 	s > h / V_V
 	t > t͡s / _i
 	j > h
-	{ kʷ, kʰʷ, ɡʷ } > { t, tʰ, d } / _E
+	{ kʷ, kʰʷ, ɡʷ } > { t, tʰ, d } / _:[+front]
 	{ kʷ, kʰʷ, ɡʷ } > { p, pʰ, b } / :{ _a, _o, _C }:
 	{ kʷ, kʰʷ, ɡʷ } > { k, kʰ, ɡ } / _u
 	{ kʷ, kʰʷ, ɡʷ } > { k, kʰ, ɡ } / u_
@@ -19,7 +19,7 @@
 	t͡ʃ > s:[+long] / medial
 	VCw > V:[+long]C
 	w > ∅
-	h > ∅ (in Eastern Ionic)
+	h > ∅ (in:[+front]astern Ionic)
 	æ:[+long] > ɛ:[+long]
 	ej ow > e:[+long] o:[+long] happened “in the various Ionic dialect͡s at various dates”
 	{ uʲ, u:[+long]ʲ } > { yʲ, y:[+long]ʲ }

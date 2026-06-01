@@ -1,5 +1,5 @@
 @ 8.1 - Proto-Altaic to Proto-Japonic
-# citation: Pogostick Man, from Wikipedia contributors (2011), “Altaic languages”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Altaic_languages>, citing Sarostin, Sergei A., Anna V. Dybo, and Oleg A. Mudrak (2003), Etymological Dictionary of the Altaic Languages. Leiden: Brill Academic Publishers NB: Does not include clusters.
+# citation: Pogostick Man, from Wikipedia contributors (2011), “Altaic languages”. Wikipedia, the Free Encyclopedia. NB: Does not include clusters.
 	a > ə / _Ce
 	a > i / _Ci
 	a > u / _Cu
@@ -27,5 +27,6 @@
 	rʲ > r, t
 	lʲ > n / #_
 	{ l, lʲ } > { r, s }
-	j > j, ∅
-	U:[+long] > U:[-long]
+	j > j
+	j > ∅
+	%:[+long] > %:[-long]

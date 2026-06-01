@@ -1,7 +1,8 @@
 @ 25.1.2 - Proto-Tacanan to Chama
 # citation: Pogostick Man, from Key, Mary Ritchie (1968), Comparative Tacanan Phonology with Cavineña Phonology and Notes on Pano-Tacanan Relationship
 	{ b, d } > { ɓ, ɗ }
-	ɗ > ʔ, ∅ // #_
+	ɗ > ʔ // #_
+	ɗ > ∅ // #_
 	{ t, k } > { k, kʷ }
 	t͡ʃ > s / _i
 	t͡ɕ > ʃ

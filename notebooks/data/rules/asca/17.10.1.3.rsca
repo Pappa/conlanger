@@ -5,7 +5,8 @@
 	{ a{i,j}(a), a{u,w}(a) } > { e, o }
 	{ j, w } > { d͡ʒ, b } / V_V
 	C > C:[+voice] / V_V
-	{ {bʱ,dʱ,ɡʱ}, {j,v} } > { h, ∅ } / V_V
+	{bʱ,dʱ,ɡʱ} > h / V_V
+	{j,v} > ∅ / V_V
 	Vm > Vv / _V
 	Vv > V:[+nas]v / _V
 	{ e, o } > { i, u } / _#

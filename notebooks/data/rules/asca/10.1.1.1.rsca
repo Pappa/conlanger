@@ -2,7 +2,8 @@
 # citation: TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic Linguistics 44(2):357 – 388 “ə assimilated to the following vowel after the loss of *-r-”
 	r > r, h
 	{r,h} > {∅,h}
-	h > ∅, h
+	h > ∅
+	h > h
 	w > b / i_#
 	{ ej, ow } > { i, u }
 	a > ə

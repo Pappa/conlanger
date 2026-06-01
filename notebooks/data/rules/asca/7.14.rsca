@@ -1,9 +1,11 @@
 @ 7.14 - Proto-Algonquian to Mi’kmaq
 # citation: Pogostick Man with acknowledgment to dhok and Alex Fink, the former citing Audrey Marie (1986), The Fundamentals of Micmac Historical Morphology, citing Hewson, John (1973), “Proto-Algonkian Reflexes in Micmac”, and Hewson, John (1983), “Some Micmac Etymologies”, and the latter citing Hewson, John (1973), “Proto-Algonkian Reflexes in Micmac”
 	t͡ʃ > ʃ // C_
-	{ n{θ,l}, h{θ,ʃ} } > { ∅, s }
+	n{θ,l} > ∅
+	h{θ,ʃ} > s
 	{ʔ,h,N} > ∅ / _C
-	{ ʔ{θ,ʃ}, ʔl } > { s, ∅ }
+	ʔ{θ,ʃ} > s
+	ʔl > ∅
 	x > ∅ / :{ _p, _k }:
 	ʃ > s
 	θ > l

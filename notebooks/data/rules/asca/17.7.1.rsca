@@ -1,13 +1,13 @@
 @ 17.7.1 - Common Germanic to Gothic
-# citation: Pogostick Man, from Wright, Joseph (1910). Grammar of the Gothic Language, 2nd Ed.; and Wikipedia contributors (2014). “Gothic language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Gothic_language> NB: Wright seems to regard Germanic labiovelars as sequences of velar + w if I’m reading this right; additionally, it looks like some of what Wright considers diphthongs may have been long monophthongs. Stressed vowels: Unstressed vowels: — Inherited “long final vowels…became shortened in polysyllabic words, when the vowels in question originally had the ‘broken’ accent, but remained unshortened when they originally had the ‘slurred’ accent” — “Originally long diphthongs became shortened in final syllables” “In a few instances medial -w- (or -ww- the origin of which is uncertain) after short vowels became -ggw- in Gothic…”; similarly, medial *-j(j)- became -ddj- in uncertain conditions “The final -h [= /h/?] in unaccented particles was often assimilated to the initial consonant of the following word” “In the forms of the strong verbs, medial z was supplanted by s through the levelling out of the s-forms…z was also supplanted by s in several weak verbs, which in some cases was due to the influence of the corresponding strong verbs”
+# citation: Pogostick Man, from Wright, Joseph (1910). Grammar of the Gothic Language, 2nd Ed.; and Wikipedia contributors (2014). “Gothic language”. Wikipedia, the Free Encyclopedia. NB: Wright seems to regard Germanic labiovelars as sequences of velar + w if I’m reading this right; additionally, it looks like some of what Wright considers diphthongs may have been long monophthongs. Stressed vowels: Unstressed vowels: — Inherited “long final vowels…became shortened in polysyllabic words, when the vowels in question originally had the ‘broken’ accent, but remained unshortened when they originally had the ‘slurred’ accent” — “Originally long diphthongs became shortened in final syllables” “In a few instances medial -w- (or -ww- the origin of which is uncertain) after short vowels became -ggw- in Gothic…”; similarly, medial *-j(j)- became -ddj- in uncertain conditions “The final -h [= /h/?] in unaccented particles was often assimilated to the initial consonant of the following word” “In the forms of the strong verbs, medial z was supplanted by s through the levelling out of the s-forms…z was also supplanted by s in several weak verbs, which in some cases was due to the influence of the corresponding strong verbs”
 	— o e > u i
 	— u > ɔ / :{ _r(unless this r “arose from older s by assimilation”), _h(unless this r “arose from older s by assimilation”) }:
 	— i > ɛ / :{ _r, _h, _ʍ }:
 	— æ:[+long] > e:[+long]
 	— ew > iw
 	— V:[-long] > ∅ / _# // V = u
-	— V:[-long] > ∅ / U_C# // V = u
-	— aj > a / U_#
+	— V:[-long] > ∅ / %_C# // V = u
+	— aj > a / %_#
 	iw > ju / [-stress]
 	w > u̯ / :{ V:[-long]_#, V:[-long]_C }:
 	w > ∅ / o:[+long]_j
@@ -16,15 +16,15 @@
 	ij > i:[+long] / _s after the loss of a vowel in final syllables
 	ij > i / _# after the loss of a final vowel or syllable
 	Vw > u / _s (to wit, the vowel is deleted and the *w syllabifies)
-	iji > i:[+long] / :[-stress](C…)_
-	iji > i:[+long] / :[+ long
+	iji > i:[+long] / %:[-stress](C…)_
+	iji > i:[+long] / %:[+ long
 	i > ∅ / _ji
 	m > β / C:[-voice]_n, when medial
 	m > ɸ / C:[+voice]_n, when medial
 	n:[+long] > n / _C // _j
 	β > b / :{ r_, l_ }:
 	ð > d / C:[+voice]_
-	{ β, ð, ɣ } > { ɸ, θ, x } / :{ V_s#, V_# }:
+	{ β, ð, ɣ } > { ɸ, θ, x } / V_(s)#
 	ɣ > ɡ / #_
 	ɣ > ɡ / C_V
 	z > s / _#,

@@ -1,10 +1,10 @@
 @ 6.2.2.1.14 - Classical Arabic to Moroccan Arabic
-# citation: Pogostick Man, from http://en.wikipedia.org/wiki/Moroccan_Arabic
+# citation: Pogostick Man
 	t > t͜s / plain t only, distinguishable from the sequence t͡s
 	{a,i} > ə / ; the change of short a blocked for some speakers before ħ ʕ
 	u > ə
 	C:[+labial/+velar] > ʷ / adjacent to short u
-	{u,ə} > ∅ // C_C{ C#, # }
+	{u,ə} > ∅ // C_C(C)#
 	ə > a
 	ə > ɐ
 	ə > ɪ

@@ -2,12 +2,12 @@
 # citation: Pogostick Man, from Llamzon, Teodoro A. (1975), “Proto-Philippine Phonology”. Archipel 9(1):29 – 42; and from other changes and information from this document
 	h > ∅ / _#
 	ə > u
-	*T > t
-	{*D,*Z} > r / V_V
-	{*D,*Z,z} > d
+	*P:[-voice] > t
+	{*P:[+voice],*:[+continuant]} > r / V_V
+	{*P:[+voice],*:[+continuant],z} > d
 	*j > r / V_V
 	*j > d
-	*R > ɡ
+	*S > ɡ
 	r > l / _#
 	*c > s
 	q > ∅

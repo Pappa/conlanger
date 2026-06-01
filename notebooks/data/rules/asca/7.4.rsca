@@ -1,6 +1,6 @@
 @ 7.4 - Proto-Algonquian to Blackfoot
 # citation: Whimemsz, from Proulx, Paul (1989), “A Sketch of Blackfoot Historical Phonology”. International Journal of American Linguistics, 55:43 – 82
-	{θ,t͡ʃ,ʃ,r} > t / unless adjacent to another consonant
+	{θ,t͡ʃ,ʃ,r} > t / , _C // C_
 	∅ > x / _s ,#} // _C{C
 	j > s // C_
 	h > ∅ // _C
@@ -39,7 +39,7 @@
 	{ i, i:[+long] }wi > i / _#
 	j > s
 	w > j / _i
-	{i:[+long],ij,j} > j / C_B
+	{i:[+long],ij,j} > j / C_:[+back]
 	iji > i:[+long]
 	w > ∅ / :{ a_iC, o_iC }:
 	on > u / _iC
@@ -48,11 +48,11 @@
 	t:[+long] ( > s:[+long]?)
 	ke(h) > t:[+long] ?
 	{kʷes,keθ} > s:[+long]
-	e > ∅ / O_ in # (not universal)
+	e > ∅ / O_ in #% (not universal)
 	{me,ne} > ∅ / #_O (followed by truncation of following x)
 	{we,wi:[+long]} > o / #_
 	t͡si > ∅ / $_OO (before a prefix; the first obstruent of the follow:[ing] cluster then becomes ʔ)
-	a:[+long] > aa / W_ ,:[+long]},#} // when _{C{C
+	a:[+long] > aa / [+approximant]_ ,:[+long]},#} // when _{C{C
 	a:[+long] > a
 	o:[+long] > o
 	a > i

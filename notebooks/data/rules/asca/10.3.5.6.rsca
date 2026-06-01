@@ -4,7 +4,8 @@
 	{ q, k, t, s } > { k, j, c, t }
 	{ p:[+long], pʷ:[+long], t:[+long], ʈ, k:[+long], c:[+long] } > { f, hʷ, tʰ, lʰ, h, s }
 	ʈ > l / V_V
-	{ k, c } > { ∅, {j,∅} } / V_V
+	k > ∅ / V_V
+	c > {j,∅} / V_V
 	C:[+long] > Cʰ
 	{ jʰ, j } > { s, z }
 	s > h / _i

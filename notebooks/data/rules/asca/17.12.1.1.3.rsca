@@ -26,16 +26,16 @@
 	— {{ e, e:[+long] },i,ae,oe} > e
 	— i:[+long] o:[+long] > i o
 	— { u, u:[+long] } > o / except _V (?)
-	{ k, ɡ } > { tʲ, dʲ } / _E
-	è > iɛ / in :[+open]
+	{ k, ɡ } > { tʲ, dʲ } / _:[+front]
+	è > iɛ / in %:[+open]
 	è > iɛ / _C#
-	è > ɛ / in :[+closed]
-	ò > uo / in :[+open] // _N
-	uo > uɛ / in :[+open] // _N
-	ò > ɔ / in :[+closed]
+	è > ɛ / in %:[+closed]
+	ò > uo / in %:[+open] // _N
+	uo > uɛ / in %:[+open] // _N
+	ò > ɔ / in %:[+closed]
 	dʲ > d͡ʒ / r_
 	d > ∅ / _j
-	j > ∅ / V_
+	j > ∅ / V_:[+front]
 	{ j, tʲ } > { d͡ʒ, t͡s } / #_
 	j > d͡ʒ / V_V (rare)
 	∅ > s / t_j
@@ -54,16 +54,16 @@
 	t > s / :{ _n, _m }:
 	{kl,ɡl,lʲ} > ʎ
 	{ {p,b}, {t,d} } > { v, ð } / :{ V_V, V_r }:
-	v > ∅ / V_B
+	v > ∅ / V_:[+back]
 	p > b / _l
 	ð > ∅ / _r
 	(t)s > (d)z / V_V
 	k > js / V_sV
 	k > j / _s#
-	{k,ɡ} > ∅ / V_B
-	{k,ɡ} > ∅ / B_a
+	{k,ɡ} > ∅ / V_:[+back]
+	{k,ɡ} > ∅ / [+back]_a
 	{k,ɡ} > j / :{ _a, _C }:
-	kʷ > v, u / V_E
+	kʷ > v, u / V_:[+front]
 	kʷ > j{v,u} / V_a
 	— (k)kʲ > t͡s
 	— ɡ > ∅ / _j
@@ -77,7 +77,7 @@
 	t > ∅ / {ʃ,s}
 	d > ∅ / :{ _z, _ʒ }:
 	{ ɛ, ɔ } > { iɛ, uɛ } / :{ _Cj, _jC }:
-	∅ > j / {ʃ,ʒ,sʲ,zʲ}{a,é}_ in :[+open]
+	∅ > j / {ʃ,ʒ,sʲ,zʲ}{a,é}_ in %:[+open]
 	{ s:[+long]j, zʲ, rʲ } > { js:[+long], jz, jr }
 	j > ∅ / s_ (s:[+long]_?)
 	ɛ > ɛa / _l{C,#}
@@ -85,17 +85,17 @@
 	l > ∅ / :{ i_, u_ }:
 	{l:[+long]e,l:[+long]o} > u / :{ e_# “:[this is actually an analogical development, but it applies as regularly as a sound law]”, o_# “:[this is actually an analogical development, but it applies as regularly as a sound law]” }:
 	(ɛ)au > ɔ
-	é > ɛi / in :[+open]
-	é > ɛ / in :[+closed]
-	ó > ou / in :[+open]
-	ou > ɛu / in :[+open]
+	é > ɛi / in %:[+open]
+	é > ɛ / in %:[+closed]
+	ó > ou / in %:[+open]
+	ou > ɛu / in %:[+open]
 	ó > ɔ / _N
-	ó > ou / in :[+closed]
-	e > ə / #(C…)_(%…) in :[+open]
-	e > ɛ / #(C…)_(%…) in :[+closed] or _V (?)
+	ó > ou / in %:[+closed]
+	e > ə / #(C…)_(%…) in %:[+open]
+	e > ɛ / #(C…)_(%…) in %:[+closed] or _V (?)
 	o > {ou,ɔ} “(the outcome fluctuates, but ɔ is often the result of analogy rather than strict sound change; always ou before another vowel)”
-	a > ə / #{t͡ʃ,d͡ʒ}_(%…) in :[+open]
-	a > ɛ / in :[+open] (but a following ʎ creates a:[closed] syllable)
+	a > ə / #{t͡ʃ,d͡ʒ}_(%…) in %:[+open]
+	a > ɛ / in %:[+open] (but a following ʎ creates a:[closed] syllable)
 	{ kʷ, ɡʷ } > { k, ɡ }
 	CC > C
 	t > ∅ / V_#
