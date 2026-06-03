@@ -55,6 +55,6 @@
 	a:[+long] > aa / [+approximant]_ ,:[+long]},#} // when _{C{C
 	a:[+long] > a
 	o:[+long] > o
-	a > i
+	a > i // :{ #_, _# }:
 	e > a / _#
 	{e:[+long],i:[+long]} > i

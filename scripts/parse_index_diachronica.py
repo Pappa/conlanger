@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Set
 import json
+import yaml
 
 from lxml import html, etree  # type: ignore
 from xml.sax.saxutils import escape as xml_escape
@@ -12,7 +13,7 @@ from xml.sax.saxutils import escape as xml_escape
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "notebooks" / "data"
 HTML_PATH = DATA_DIR / "index_diachronica.html"
-OUTPUT_PATH = DATA_DIR / "index_diachronica_ai.xml"
+OUTPUT_PATH = DATA_DIR / "index_diachronica_ai.yml"
 SERIES_MAP_PATH = DATA_DIR / "series_mapping.yaml"
 UNMAPPED_SERIES_REPORT = DATA_DIR / "unmapped_series.csv"
 ENV_TEXT_MAP_PATH = DATA_DIR / "env_text_mapping.yaml"
@@ -254,7 +255,6 @@ def load_series_map(path: Path) -> Dict[str, Dict[str, str]]:
     raw = path.read_text(encoding="utf-8", errors="ignore")
     # Try YAML
     try:
-        import yaml  # type: ignore
         data = yaml.safe_load(raw)
         return data or {}
     except Exception:
@@ -277,7 +277,6 @@ def load_env_text_map(path: Path) -> Dict[str, str]:
     raw = path.read_text(encoding="utf-8", errors="ignore")
     # Try YAML
     try:
-        import yaml  # type: ignore
         data = yaml.safe_load(raw)
         if not data:
             return {}
@@ -439,19 +438,19 @@ def split_chain_mappings(mapping_text: str) -> List[Tuple[str, str]]:
     return [(parts[i], parts[i + 1]) for i in range(len(parts) - 1)]
 
 
-def format_rule_xml(idx: int, input_str: str, output_str: str, env: Optional[str], exception: Optional[str], indent: str = "\t\t") -> str:
-    lines = [f'{indent}<rule index="{idx}">']
-    lines.append(f'{indent}\t<input>{esc_text(input_str)}</input>')
-    lines.append(f'{indent}\t<output>{esc_text(output_str)}</output>')
+def build_rule_obj(input_str: str, output_str: str, env: Optional[str], exception: Optional[str]) -> Dict[str, str]:
+    obj: Dict[str, str] = {
+        "input": input_str,
+        "output": output_str,
+    }
     if env:
-        lines.append(f'{indent}\t<env>{esc_text(env)}</env>')
+        obj["env"] = env
     if exception:
-        lines.append(f'{indent}\t<exception>{esc_text(exception)}</exception>')
-    lines.append(f'{indent}</rule>')
-    return "\n".join(lines)
+        obj["exception"] = exception
+    return obj
 
 
-def parse_section(sec_el) -> Tuple[str, str, str]:
+def parse_section(sec_el) -> Tuple[str, str, Dict[str, object]]:
     h2 = sec_el.xpath("./h2")
     if not h2:
         return "", "", ""
@@ -473,12 +472,13 @@ def parse_section(sec_el) -> Tuple[str, str, str]:
 
     rule_ps = sec_el.xpath("./p[contains(@class,'rule')]")
 
-    if not cite_combined and not rule_ps:
-        return idx, name, f'\t<section index="{esc_attr(idx)}" name="{esc_attr(name)}" />'
-
-    xml_lines: List[str] = [f'\t<section index="{esc_attr(idx)}" name="{esc_attr(name)}">']
+    section_obj: Dict[str, object] = {
+        "section": name,
+        "index": idx,
+    }
     if cite_combined:
-        xml_lines.append(f"\t\t<cite>{esc_text(cite_combined)}</cite>")
+        section_obj["citation"] = cite_combined
+    rules_list: List[Dict[str, str]] = []
 
     # Load per-section series map once per section
     series_map_all = load_series_map(SERIES_MAP_PATH)
@@ -528,15 +528,15 @@ def parse_section(sec_el) -> Tuple[str, str, str]:
                     for a, b in zip(in_parts, out_parts):
                         # Enforce ASCA rule: insertion/deletion sides must ONLY contain the operator
                         if b in ("∅", "*"):
-                            xml_lines.append(format_rule_xml(i, a, b, env, exception))
+                            rules_list.append(build_rule_obj(a, b, env, exception))
                         elif a in ("∅", "*"):
-                            xml_lines.append(format_rule_xml(i, a, b, env, exception))
+                            rules_list.append(build_rule_obj(a, b, env, exception))
                         else:
-                            xml_lines.append(format_rule_xml(i, a, b, env, exception))
+                            rules_list.append(build_rule_obj(a, b, env, exception))
                 else:
                     in_braced = "{ " + ", ".join(in_parts) + " }"
                     out_braced = "{ " + ", ".join(out_parts) + " }"
-                    xml_lines.append(format_rule_xml(i, in_braced, out_braced, env, exception))
+                    rules_list.append(build_rule_obj(in_braced, out_braced, env, exception))
                 continue
             # Case 2: single input mapping to a set output → keep one rule but drop braces to a list
             if m_out_set and not m_in_set:
@@ -544,34 +544,32 @@ def parse_section(sec_el) -> Tuple[str, str, str]:
                 # If deletion/insertion operator appears with others, split into separate rules
                 if any(o in ("∅", "*") for o in outs) and len(outs) > 1:
                     for o in outs:
-                        xml_lines.append(format_rule_xml(i, inp_n, o, env, exception))
+                        rules_list.append(build_rule_obj(inp_n, o, env, exception))
                 else:
                     out_list = ", ".join(outs)
-                    xml_lines.append(format_rule_xml(i, inp_n, out_list, env, exception))
+                    rules_list.append(build_rule_obj(inp_n, out_list, env, exception))
                 continue
             # Default: emit as-is
-            xml_lines.append(format_rule_xml(i, inp_n, out_n, env, exception))
+            rules_list.append(build_rule_obj(inp_n, out_n, env, exception))
 
-    # Escape attributes in opening tag — rebuild header with escaped attrs
-    xml_lines[0] = f'\t<section index="{esc_attr(idx)}" name="{esc_attr(name)}">'
-    xml_lines.append("\t</section>")
+    if rules_list:
+        section_obj["rules"] = rules_list
     # Emit unmapped series report per section (append to a file once after the whole doc)
     if unmapped_series:
         UNMAPPED_BUFFER.append((idx, sorted(unmapped_series)))
-    return idx, name, "\n".join(xml_lines)
+    return idx, name, section_obj
 
 
-def build_document(root) -> str:
+def build_document(root) -> Dict[str, object]:
     # reset report buffer
     global UNMAPPED_BUFFER
     UNMAPPED_BUFFER = []
     sections = root.xpath("//section[contains(@class,'showtarget')]")
-    xml_lines: List[str] = ["<document>"]
+    doc_sections: List[Dict[str, object]] = []
     for sec in sections:
-        _idx, _name, body = parse_section(sec)
-        if body:
-            xml_lines.append(body)
-    xml_lines.append("</document>")
+        _idx, _name, sec_obj = parse_section(sec)
+        if sec_obj:
+            doc_sections.append(sec_obj)
     # write unmapped report if any
     if UNMAPPED_BUFFER:
         try:
@@ -581,7 +579,7 @@ def build_document(root) -> str:
                     f.write(f"{sec_idx},{' '.join(tokens)}\n")
         except Exception:
             pass
-    return "\n".join(xml_lines) + "\n"
+    return {"sections": doc_sections}
 
 
 def main() -> int:
@@ -593,17 +591,10 @@ def main() -> int:
         root = html.document_fromstring(html_text)
     except Exception:
         root = html.fromstring(html_text)
-    xml_text = build_document(root)
-    # Validate XML is well-formed
-    try:
-        etree.fromstring(xml_text.encode("utf-8"))
-    except etree.XMLSyntaxError as e:
-        print("ERROR: Generated XML is not well-formed:", file=sys.stderr)
-        print(str(e), file=sys.stderr)
-        # Write the file for inspection, but exit with failure
-        OUTPUT_PATH.write_text(xml_text, encoding="utf-8")
-        return 2
-    OUTPUT_PATH.write_text(xml_text, encoding="utf-8")
+    data_obj = build_document(root)
+    # Dump YAML (PyYAML is assumed to be available)
+    dumped = yaml.dump(data_obj, allow_unicode=True, sort_keys=False, default_flow_style=False, width=1024)
+    OUTPUT_PATH.write_text(dumped, encoding="utf-8")
     print(f"Wrote {OUTPUT_PATH.relative_to(ROOT)}")
     return 0
 

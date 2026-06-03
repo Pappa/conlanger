@@ -21,7 +21,7 @@
 	h > ∅ / V:[+long]_u
 	hh > h / u_V:[+long]
 	h > ∅ / u_V:[+long]
-	h > ∅ / _w
+	h > ∅ / _w // :{ #_, _# }:
 	hh > ∅ / :{ _w“medially, and sporadically”, _m“medially, and sporadically”, _n“medially, and sporadically”, _r“medially, and sporadically”, _l“medially, and sporadically” }:
 	{ P:[+voice], S } > { P:[+voice]:[+long], S:[+long] } / e_ in %:[+open]
 	{ {ɛ,e}:[+long], æ:[+long] } > { i:[+long], a:[+long] }

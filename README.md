@@ -57,7 +57,7 @@ change rules to the lexicon. I'm hoping this will result in a set of proto-langu
 
 I am compiling all sound change rules from the [Searchable Index Diachronica](https://chridd.nfshost.com/diachronica/all) into [Brassica](https://github.com/bradrn/brassica) format. This is painfully slow going, and I've needed to simplify some of the rules. The result won't be an accurate representation of all of the Index Diachronica rules in Brassica format, but I think it will be close enough to generate plausible sequences of rules (again using a GAN) that can be used for the proto-language root word generation mentioned above, and for furter evolution later.
 
-- WIP sound change rules: [index_diachronica.xml](.notebooks/data/index_diachronica.xml)
+- WIP sound change rules: [index_diachronica.yml](.notebooks/data/index_diachronica.yml)
 
 ## Next steps
 

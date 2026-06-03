@@ -82,3 +82,29 @@ def test_Lexicon_create_word(
     word = lex.create_word()
 
     assert str(word) == expected
+
+
+def test_Lexicon():
+    lex = Lexicon(
+        syllable_structure="(C)V(C)",
+        consonants=["k", "l", "p"],
+        vowels=["i", "ə"],
+        seed=0,
+        max_syllables=3,
+        word_list=[{"meaning": "word", "topic": "topic", "v": True, "n": False, "adj": False, "adv": False}],
+    )
+
+    assert str(lex) == "əplək"
+    assert isinstance(lex[:2], Lexicon)
+    assert len(lex) == 1
+    assert str(lex[0]) == "əplək"
+
+    for word in lex:
+        assert str(word) == "əplək"
+
+    for syllable, expected in zip(word.syllables, ("əp", "lək")):
+        assert str(syllable) == expected
+        assert len(syllable) == len(expected)
+
+        for i, char in enumerate(syllable):
+            assert str(char) == expected[i]

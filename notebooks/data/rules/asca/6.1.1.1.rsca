@@ -1,11 +1,11 @@
 @ 6.1.1.1 - North Omotic to Bench
 # citation: Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)
 	x > k
-	x > k / #_
-	x > ∅ / V_V
-	s > ʃ / V_V
+	χ > k / #_
+	χ > ∅ / V_V
+	ʃ > ʃ / V_V
 	t͡ʃ > t͡s
-	s > ʃ
+	{ s, ʃ } > ʃ
 	{ʔ,h} > ∅
 	l > d / #_VC
 	l > n / #_VN

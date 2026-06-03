@@ -1,6 +1,6 @@
 @ 6.1 - Proto-Afro-Asiatic to Proto-Omotic
 # citation: Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)
-	{ d͡z, ʃ, t͡ʃ } > { ʒ, s, s }
+	{ d͡z, ʃ, t͡ʃ } > { ʒ, s, z }
 	d͡ʒ > t͡ʃ
 	t͡ʃ > ʃ
 	t > ∅ / _s#
@@ -8,7 +8,7 @@
 	f > p
 	{ a, a:[+long] } > { e, e:[+long] } / :{ _ʕ$, _q$ }:
 	{ q, ʕ } > { ʔ, h }
-	a > o / :{ #Cw_(d)l, #Cw_s }:
+	a > o / :{ #Cw_(d)l, #Cw_ʃ }:
 	w > ∅ / #C_V // _{ i, i:[+long] }
-	ʃ > s / :{ i_, j_ }:
+	ʃ > z / :{ i_, j_ }:
 	VNC > V:[+long]C:[+voice]

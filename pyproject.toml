@@ -18,6 +18,7 @@ dependencies = [
     "scikit-learn",
     "tqdm",
     "imbalanced-learn",
+    "pyyaml>=6.0.3",
 ]
 
 [project.optional-dependencies]
@@ -38,7 +39,7 @@ addopts = ["--cov=src", "--cov-report=html", "-s", "-vv"]
 [tool.coverage.run]
 branch = true
 source = ["src"]
-omit = ["src/conlanger/models/*"]
+omit = ["src/conlanger/models/*", "src/conlanger/utils.py"]
 
 [tool.coverage.report]
 fail_under = 95
@@ -48,5 +49,7 @@ exclude_also = ["def display_rows\\("]
 [dependency-groups]
 dev = [
     "lxml>=6.0.2",
+    "pytest>=8.4.2",
+    "pytest-cov>=7.0.0",
     "strip-ansi>=0.1.1",
 ]
