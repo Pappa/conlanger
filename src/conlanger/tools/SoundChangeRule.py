@@ -43,6 +43,7 @@ class RuleComment(RulePartBase):
 
 
 class RuleChange(RulePartBase):
+    rule: dict[str, str]
     prefixes = {"asca": "\t", "brassica": ""}
     separator = {
         "asca": {
@@ -63,27 +64,31 @@ class RuleChange(RulePartBase):
         "h₂": "x",
         "h₃": "ɣʷ",
     }
-    def __init__(self, rule: dict, format: str = "asca"):
+    def __init__(self, rule: dict[str, str], format: str = "asca"):
+        try:
+            self.input = rule["input"]
+        except KeyError:
+            raise ValueError("input is required")
+        try:
+            self.output = rule["output"]
+        except KeyError:
+            raise ValueError("output is required")
+            
+        self.env = rule.get("env", None)
+        self.exception = rule.get("exception", None)
+
         if rule.get("skip", False):
             self.prefixes = {"asca": "#\t", "brassica": ";;\t"}
-        super().__init__(self._format(rule, format), format)
+        super().__init__(self._format(format), format)
 
-    def _format(self, rule: dict, format: str):
+    def _format(self, format: str):
         separator = self.separator.get(format, {})
-        result = ""
-        
-        if "input" in rule:
-            result += rule["input"]
-        else:
-            raise ValueError("input is required")
-        if "output" in rule:
-            result += separator["output"] + rule["output"]
-        else:
-            raise ValueError("output is required")
-        if "env" in rule:
-            result += separator["env"] + rule["env"]
-        if "exception" in rule:
-            result += separator["exception"] + rule["exception"]
+
+        result = self.input + separator["output"] + self.output
+        if self.env:
+            result += separator["env"] + self.env
+        if self.exception:
+            result += separator["exception"] + self.exception
 
         return self._apply_aliases(result)
 

@@ -1,17 +1,39 @@
+from pathlib import Path
+
+import pandas as pd
 import pytest
+from lxml import html
 
 from conlanger.tools.IndexDiachronicaParser import (
     ARROW,
     extract_rule_parts,
+    parse_index_diachronica_html,
+    parse_rule_element,
+    split_env_exception,
     split_input_output,
     split_output_rest,
-    split_env_exception,
     split_post_arrow,
-    parse_rule_element,
-    parse_index_diachronica_html,
 )
-from lxml import html
-from pathlib import Path
+
+_SAMPLED_RULES_CSV = (
+    Path(__file__).resolve().parent / "fixtures" / "sampled_html_rules_100.csv"
+)
+
+
+def _load_sampled_html_rules() -> list[tuple]:
+    df = pd.read_csv(_SAMPLED_RULES_CSV, dtype=str, keep_default_na=False)
+    cases: list[tuple] = []
+    for row in df.itertuples(index=False):
+        if row.expect_none == "True":
+            expected = None
+        else:
+            expected = {"input": row.input, "output": row.output}
+            if row.env:
+                expected["env"] = row.env
+            if row.exception:
+                expected["exception"] = row.exception
+        cases.append((row.id, row.raw, expected))
+    return cases
 
 
 @pytest.mark.parametrize(
@@ -208,3 +230,17 @@ def test_first_p_is_citation_rest_comments(tmp_path: Path):
     assert len(sec["rules"]) == 2
     assert sec["rules"][0]["input"] == "x₁"
     assert sec["rules"][0]["output"] == "k"
+
+
+_SAMPLED_HTML_RULE_CASES = _load_sampled_html_rules()
+
+
+@pytest.mark.parametrize(
+    ("case_id", "raw", "expected"),
+    _SAMPLED_HTML_RULE_CASES,
+    ids=[case_id for case_id, _, _ in _SAMPLED_HTML_RULE_CASES],
+)
+def test_extract_rule_parts_sampled_html_rules(case_id, raw, expected):
+    assert extract_rule_parts(raw) == expected, case_id
+
+

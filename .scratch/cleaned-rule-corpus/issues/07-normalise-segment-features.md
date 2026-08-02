@@ -1,4 +1,4 @@
-Type: task
+Type: grilling
 Blocked by: 01, 03
 
 # Normalise segment feature matrices for appliers
@@ -12,4 +12,4 @@ How should Index Diachronica feature notation in corpus rule strings (e.g. `[+vo
 - Primary ASCA reference: [Segment Features](https://github.com/Girv98/asca-rust/blob/master/doc/doc.md#segment-features), [Using Distinctive Features](https://github.com/Girv98/asca-rust/blob/master/doc/doc.md#using-distinctive-features), [Feature Shorthands](https://github.com/Girv98/asca-rust/blob/master/doc/doc.md#feature-shorthands).
 - Known HTML→ASCA mismatches already seen: `voiced`→`voice`, `sibilant`→`strident`; spacing/`[+ voice]` variants; colon attachment `C:[+voice]` vs `C[+voice]`.
 - Related to but distinct from [Resolve abbreviations unsupported by ASCA and Brassica](06-resolve-applier-unsupported-abbreviations.md) (class/series tokens vs feature matrices).
-- Skills: `/research` for ASCA/Brassica feature surfaces; grilling if neutral-vs-ASCA-shaped storage is the decision.
+- Skills: `/research` for ASCA/Brassica feature surfaces; `/grill-with-docs` (or grilling + domain-modeling) for synonym policy, when normalisation runs, and neutral-vs-ASCA-shaped storage.

@@ -1,5 +1,5 @@
-Type: task
-Blocked by: 01, 03
+Type: grilling
+Blocked by: 01, 03, 04
 
 # Resolve abbreviations unsupported by ASCA and Brassica
 
@@ -9,7 +9,7 @@ Which Index Diachronica abbreviations (class letters, series indices, other shor
 
 ## Notes
 
-- Skills: `/research` for ASCA/Brassica support surfaces; then apply expansions into abbreviation tables / skipped reasons as appropriate.
-- Abbreviation tables are string→string, hierarchical (global + section); this task fills gaps where a key has no valid expansion for a target applier.
-- Honor fidelity policy from [Historical fidelity vs valid-but-inaccurate fallback](04-historical-fidelity-vs-validity.md) once resolved.
+- Skills: `/research` for ASCA/Brassica support surfaces; `/grill-with-docs` (or grilling + domain-modeling) for which expansions / `skipped` treatments to adopt.
+- Abbreviation tables are string→string, hierarchical (global + section); this ticket decides the gap-fill policy — a later task can populate tables once the policy is locked.
+- Honor fidelity policy from [Historical fidelity vs valid-but-inaccurate fallback](04-historical-fidelity-vs-validity.md).
 - Evidence inputs: `notebooks/data/sound_change_abbreviations.txt`, `notebooks/data/index_diachronica_original.html`, findings from [What counts as a valid ASCA rule string?](01-valid-asca-rule-string.md).

@@ -23,10 +23,9 @@ A cleaned, applier-neutral YAML **rule corpus** adopted as the working source of
 
 - Exact prose-environment mapping approach (investigative spike; may graduate after schema + validity work)
 - Adoption criteria for when cleaned YAML *replaces* HTML as SoT
-- How abbreviation tables are authored and maintained at scale
+- How abbreviation tables are authored and maintained at scale (policy for unsupported keys lives on [Resolve abbreviations unsupported by ASCA and Brassica](issues/06-resolve-applier-unsupported-abbreviations.md); this fog is authorship/maintenance at scale)
 - Brassica compiler details (out of near-term path, but in-principle per ADR-0001)
 - Edge-split policy when one HTML line must become multiple corpus rules (deferred; interim: optional `skipped` reason with empty input/output)
-- Whether cleaned corpus stores feature matrices in a neutral form vs ASCA-canonicalised form (see [Normalise segment feature matrices for appliers](issues/07-normalise-segment-features.md))
 
 ## Out of scope
 
