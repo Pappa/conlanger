@@ -22,6 +22,8 @@ _SAMPLED_RULES_CSV = (
 
 def _load_sampled_html_rules() -> list[tuple]:
     df = pd.read_csv(_SAMPLED_RULES_CSV, dtype=str, keep_default_na=False)
+    if "kind" in df.columns:
+        df = df[df["kind"].isin(["", "html_extract"])]
     cases: list[tuple] = []
     for row in df.itertuples(index=False):
         if row.expect_none == "True":

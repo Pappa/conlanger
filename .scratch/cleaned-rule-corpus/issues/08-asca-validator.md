@@ -1,4 +1,5 @@
 Type: task
+Status: resolved
 Blocked by: 01
 
 # Create an ASCA validator for SoundChangeRule
@@ -29,3 +30,23 @@ Implement an ASCA validator that takes a `SoundChangeRule` instance, returns `Tr
    - Extend the schema as needed so each new row carries the guessed ASCA fields (recommended: `asca_input`, `asca_output`, `asca_env`, `asca_exception`, plus a `kind` or similar discriminator such as `html_extract` vs `asca_guess` so parser tests and validator tests can filter). Empty optional ASCA env/exception cells mean “omit that part”.
    - Keep `id` / `source` / `raw` pointing at the HTML line for auditability.
 4. Validator unit tests should load the `asca_guess` rows (via pandas) and assert validate-success (or documented expected failure) against `SoundChangeRule` built from those guessed fields.
+
+## Answer
+
+**Gist:** `validate_asca(SoundChangeRule) -> True` lives in `src/conlanger/tools/asca_validator.py`; invalid rules raise `ASCAValidationError` with ASCA’s Syntax/Runtime Error text. Validation drives installed **asca 0.10.2** via `asca run` on a probe wordlist (hybrid Tier 1–4; same path as inventory). Fixture: 500 `asca_guess` rows (seed **20260802**) appended to `tests/fixtures/sound_change_rules.csv` — **370** validate ok, **130** documented expected failures (`asca_expect_ok=False`).
+
+**API:**
+```python
+from conlanger.tools.asca_validator import validate_asca, ASCAValidationError
+validate_asca(sound_change_rule)  # True or raises
+```
+
+**Artifacts:**
+- Validator: [`src/conlanger/tools/asca_validator.py`](../../../src/conlanger/tools/asca_validator.py)
+- Tests: [`tests/conlanger/tools/test_asca_validator.py`](../../../tests/conlanger/tools/test_asca_validator.py)
+- Fixture + seed note: [`tests/fixtures/sound_change_rules.csv`](../../../tests/fixtures/sound_change_rules.csv), [`tests/fixtures/sound_change_rules.asca_guess_seed.txt`](../../../tests/fixtures/sound_change_rules.asca_guess_seed.txt)
+- Regenerator: [`scripts/sample_asca_guess_fixtures.py`](../../../scripts/sample_asca_guess_fixtures.py) (`--replace-guesses`, seed `20260802`)
+
+**Guess heuristics (for fixtures):** strip ID prose; `0`→`∅`; bare `ː`→`:[+long]`; syllabic mark→`:[+syll]`; feature aliases (`voiced`→`voice`); subscripts→ASCII; unwrap I/O optionals; space-parallel I/O→commas; ensure env `_`. Remaining failures are mostly unknown ID groupings/features, nested/prose junk, and Tier-4 delete-only-segment cases.
+
+**Note:** A thin Rust `ParsedRules::try_from` helper was attempted but blocked by crates.io network in this environment; CLI `asca run` is the shipped check (still surfaces ASCA error enums in messages).

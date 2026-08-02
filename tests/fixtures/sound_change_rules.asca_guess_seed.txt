@@ -1,0 +1,6 @@
+seed=20260802
+n=500
+html=index_diachronica_original.html
+asca_guess_ok=370
+asca_guess_total=500
+asca=0.10.2

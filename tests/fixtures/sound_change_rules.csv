@@ -1,101 +1,601 @@
-id,source,raw,input,output,env,exception,expect_none
-index_diachronica_original.html:6251,index_diachronica_original.html:6251,"r → ∅ / {ð,f}_{ɡ,ɣ}",r,∅,"{ð,f}_{ɡ,ɣ}",,False
-index_diachronica_original.html:14213,index_diachronica_original.html:14213,oɪ → uɪ (rare),oɪ,uɪ (rare),,,False
-index_diachronica_original.html:1530,index_diachronica_original.html:1530,"— {o,u}(ː) → iː / _$%oː","— {o,u}(ː)",iː,_$%oː,,False
-index_diachronica_original.html:5671,index_diachronica_original.html:5671,iji → iː / U[+ long + closed]_ in the stem,iji,iː,U[+ long + closed]_ in the stem,,False
-index_diachronica_original.html:5946,index_diachronica_original.html:5946,dʒ → tʃ / _#,dʒ,tʃ,_#,,False
-index_diachronica_original.html:7729,index_diachronica_original.html:7729,a → e / _j when stressed,a,e,_j when stressed,,False
-index_diachronica_original.html:12552,index_diachronica_original.html:12552,CʔV₀ → CV₀ʔV₀,CʔV₀,CV₀ʔV₀,,,False
-index_diachronica_original.html:6828,index_diachronica_original.html:6828,"s → ʃ / {u,i,l,r,K,Ḱ}",s,ʃ,"{u,i,l,r,K,Ḱ}",,False
-index_diachronica_original.html:7567,index_diachronica_original.html:7567,uɛ → ɛu,uɛ,ɛu,,,False
-index_diachronica_original.html:3448,index_diachronica_original.html:3448,t → s / _i,t,s,_i,,False
-index_diachronica_original.html:7834,index_diachronica_original.html:7834,β → v (though sometimes → ɡw instead if analogy interfered),β,v (though sometimes → ɡw instead if analogy interfered),,,False
-index_diachronica_original.html:5522,index_diachronica_original.html:5522,k → x / V_t,k,x,V_t,,False
-index_diachronica_original.html:8596,index_diachronica_original.html:8596,"aN eN iN ɨN uN → ã ẽ ı̃ {ɨ̃,ĩ} õ / _#",aN eN iN ɨN uN,"ã ẽ ı̃ {ɨ̃,ĩ} õ",_#,,False
-index_diachronica_original.html:3334,index_diachronica_original.html:3334,SN → N[- voice],SN,N[- voice],,,False
-index_diachronica_original.html:6059,index_diachronica_original.html:6059,"{ie,ia,io} uo → iə uə","{ie,ia,io} uo",iə uə,,,False
-index_diachronica_original.html:12959,index_diachronica_original.html:12959,ũ → ã / stressed,ũ,ã,stressed,,False
-index_diachronica_original.html:10633,index_diachronica_original.html:10633,"hʷ → {w,ʁʷ}",hʷ,"{w,ʁʷ}",,,False
-index_diachronica_original.html:1944,index_diachronica_original.html:1944,a → o / $am_w,a,o,$am_w,,False
-index_diachronica_original.html:5312,index_diachronica_original.html:5312,"{sk,ks} kj → tsʰ tʃʰ (?)","{sk,ks} kj",tsʰ tʃʰ (?),,,False
-index_diachronica_original.html:12525,index_diachronica_original.html:12525,rV → Vː / C_,rV,Vː,C_,,False
-index_diachronica_original.html:10000,index_diachronica_original.html:10000,ɑ → ə,ɑ,ə,,,False
-index_diachronica_original.html:3242,index_diachronica_original.html:3242,q qː k kː s sː → k kː c cː t̪ t̪ː,q qː k kː s sː,k kː c cː t̪ t̪ː,,,False
-index_diachronica_original.html:11680,index_diachronica_original.html:11680,{i3~ə1} → i3,{i3~ə1},i3,,,False
-index_diachronica_original.html:6557,index_diachronica_original.html:6557,"{Hₓ,m̩,n̩} → a","{Hₓ,m̩,n̩}",a,,,False
-index_diachronica_original.html:4658,index_diachronica_original.html:4658,v ɣ ʁ → p k q / _C (except where C = /l dʒ m n ŋ/),v ɣ ʁ,p k q,_C (except where C = /l dʒ m n ŋ/),,False
-index_diachronica_original.html:6750,index_diachronica_original.html:6750,j → ∅ / Vː_,j,∅,Vː_,,False
-index_diachronica_original.html:2042,index_diachronica_original.html:2042,we → o,we,o,,,False
-index_diachronica_original.html:14059,index_diachronica_original.html:14059,w → ɡ,w,ɡ,,,False
-index_diachronica_original.html:8652,index_diachronica_original.html:8652,"ts → {s,h}",ts,"{s,h}",,,False
-index_diachronica_original.html:4266,index_diachronica_original.html:4266,"{qˤː,qˤʼ} χˤ ʁˤ → qː χ ʁ","{qˤː,qˤʼ} χˤ ʁˤ",qː χ ʁ,,,False
-index_diachronica_original.html:4500,index_diachronica_original.html:4500,rt → ʈ / V_V,rt,ʈ,V_V,,False
-index_diachronica_original.html:6524,index_diachronica_original.html:6524,"aː → ɔ(u) / _{l,r}",aː,ɔ(u),"_{l,r}",,False
-index_diachronica_original.html:14424,index_diachronica_original.html:14424,o → oː / ɔ,o,oː,ɔ,,False
-index_diachronica_original.html:11968,index_diachronica_original.html:11968,N → ∅ / _pV,N,∅,_pV,,False
-index_diachronica_original.html:1793,index_diachronica_original.html:1793,wi → o / C_,wi,o,C_,,False
-index_diachronica_original.html:11296,index_diachronica_original.html:11296,qh → k,qh,k,,,False
-index_diachronica_original.html:7538,index_diachronica_original.html:7538,sːj zj rj → jsː jz jr,sːj zj rj,jsː jz jr,,,False
-index_diachronica_original.html:7935,index_diachronica_original.html:7935,"l → u / _{t,d,s} (else)",l,u,"_{t,d,s} (else)",,False
-index_diachronica_original.html:4507,index_diachronica_original.html:4507,r̀ → r̲,r̀,r̲,,,False
-index_diachronica_original.html:14216,index_diachronica_original.html:14216,e → ∅ / #_e,e,∅,#_e,,False
-index_diachronica_original.html:2618,index_diachronica_original.html:2618,ə → u,ə,u,,,False
-index_diachronica_original.html:6565,index_diachronica_original.html:6565,kʷ kʰʷ ɡʷ → k kʰ ɡ / _u,kʷ kʰʷ ɡʷ,k kʰ ɡ,_u,,False
-index_diachronica_original.html:2902,index_diachronica_original.html:2902,C[+ voice] → C[- voice] / _#,C[+ voice],C[- voice],_#,,False
-index_diachronica_original.html:8708,index_diachronica_original.html:8708,ɛ ɑ → ɑ ɔ,ɛ ɑ,ɑ ɔ,,,False
-index_diachronica_original.html:4663,index_diachronica_original.html:4663,iv → uj / _u,iv,uj,_u,,False
-index_diachronica_original.html:3746,index_diachronica_original.html:3746,"b d → m n / _{C,#}",b d,m n,"_{C,#}",,False
-index_diachronica_original.html:8538,index_diachronica_original.html:8538,"{b,r} → ∅ / _#","{b,r}",∅,_#,,False
-index_diachronica_original.html:4463,index_diachronica_original.html:4463,ˀj → ∅,ˀj,∅,,,False
-index_diachronica_original.html:3558,index_diachronica_original.html:3558,"l → tʃ / _{o,E}",l,tʃ,"_{o,E}",,False
-index_diachronica_original.html:6218,index_diachronica_original.html:6218,"ɒːh{u,a} aːh{u,a} → ɒː aː","ɒːh{u,a} aːh{u,a}",ɒː aː,,,False
-index_diachronica_original.html:14329,index_diachronica_original.html:14329,a → e / _n (otherwise),a,e,_n (otherwise),,False
-index_diachronica_original.html:10258,index_diachronica_original.html:10258,"C → {h,ʔ} / _#",C,"{h,ʔ}",_#,,False
-index_diachronica_original.html:7419,index_diachronica_original.html:7419,l → ʎ / #_,l,ʎ,#_,,False
-index_diachronica_original.html:11400,index_diachronica_original.html:11400,ʔ → ∅ V3_RV,ʔ,∅ V3_RV,,,False
-index_diachronica_original.html:10238,index_diachronica_original.html:10238,xʲ(ʔ) j(ʔ) → h ʔ / _#,xʲ(ʔ) j(ʔ),h ʔ,_#,,False
-index_diachronica_original.html:7008,index_diachronica_original.html:7008,k ɡ x → ts dz s / “After some syllables with front vowels”,k ɡ x,ts dz s,“After some syllables with front vowels”,,False
-index_diachronica_original.html:5982,index_diachronica_original.html:5982,"ʟ → ʊ / {a,ɛ}_, typically ! _V",ʟ,ʊ,"{a,ɛ}_, typically",_V,False
-index_diachronica_original.html:12521,index_diachronica_original.html:12521,V → Vː / _KRV “in the second syllable of a word”,V,Vː,_KRV “in the second syllable of a word”,,False
-index_diachronica_original.html:10870,index_diachronica_original.html:10870,e → i / l_ when unstressed,e,i,l_ when unstressed,,False
-index_diachronica_original.html:2276,index_diachronica_original.html:2276,"{d,n}ʲ sʲ → j ʃ / #_","{d,n}ʲ sʲ",j ʃ,#_,,False
-index_diachronica_original.html:8494,index_diachronica_original.html:8494,ã → õ,ã,õ,,,False
-index_diachronica_original.html:8546,index_diachronica_original.html:8546,m p → ŋ k / _w,m p,ŋ k,_w,,False
-index_diachronica_original.html:13111,index_diachronica_original.html:13111,"{l,r} → ∅ / n,ɗ_","{l,r}",∅,"n,ɗ_",,False
-index_diachronica_original.html:4326,index_diachronica_original.html:4326,p(ʷ)ʼ t(ʷ)ʼ tsʼ tsʷʼ~ʃʷʼ → pˤ tˤ tsˤ ʂʷ,p(ʷ)ʼ t(ʷ)ʼ tsʼ tsʷʼ~ʃʷʼ,pˤ tˤ tsˤ ʂʷ,,,False
-index_diachronica_original.html:2926,index_diachronica_original.html:2926,"ə → {e,o} / stressed; “(result of /e/ or /o/ unpredictable)”",ə,"{e,o}",stressed; “(result of /e/ or /o/ unpredictable)”,,False
-index_diachronica_original.html:2572,index_diachronica_original.html:2572,"V(h) → V(q) / _# (again, might’ve been a retention?)",V(h),V(q),"_# (again, might’ve been a retention?)",,False
-index_diachronica_original.html:12978,index_diachronica_original.html:12978,t → ts / _ʔ,t,ts,_ʔ,,False
-index_diachronica_original.html:14137,index_diachronica_original.html:14137,"F[+ voiced] → ∅ / V_V (sometimes, usually involving “compound surnames”?)",F[+ voiced],∅,"V_V (sometimes, usually involving “compound surnames”?)",,False
-index_diachronica_original.html:6466,index_diachronica_original.html:6466,ey → ai,ey,ai,,,False
-index_diachronica_original.html:8574,index_diachronica_original.html:8574,u → ∅ / k_w,u,∅,k_w,,False
-index_diachronica_original.html:5086,index_diachronica_original.html:5086,V → Vː / in #”U,V,Vː,in #”U,,False
-index_diachronica_original.html:13150,index_diachronica_original.html:13150,i̯e → i,i̯e,i,,,False
-index_diachronica_original.html:13146,index_diachronica_original.html:13146,uo ɨ̯u → u(ː) u / _C%,uo ɨ̯u,u(ː) u,_C%,,False
-index_diachronica_original.html:9661,index_diachronica_original.html:9661,p → f,p,f,,,False
-index_diachronica_original.html:7072,index_diachronica_original.html:7072,ʃ ʒ tʃ dʒ ɕ ʑ → ʂ ʐ ʈʂ ɖʐ ts ʒ,ʃ ʒ tʃ dʒ ɕ ʑ,ʂ ʐ ʈʂ ɖʐ ts ʒ,,,False
-index_diachronica_original.html:7515,index_diachronica_original.html:7515,ð → ∅ / _r,ð,∅,_r,,False
-index_diachronica_original.html:7836,index_diachronica_original.html:7836,kʷ ɡʷ → k ɡ (else),kʷ ɡʷ,k ɡ (else),,,False
-index_diachronica_original.html:8268,index_diachronica_original.html:8268,"{eh₂,aH} aː → aː ɔ","{eh₂,aH} aː",aː ɔ,,,False
-index_diachronica_original.html:4262,index_diachronica_original.html:4262,qʲʼ ʁʲ → ʔ ʁ,qʲʼ ʁʲ,ʔ ʁ,,,False
-index_diachronica_original.html:1860,index_diachronica_original.html:1860,"{n,q,h} → ∅ / _s","{n,q,h}",∅,_s,,False
-index_diachronica_original.html:10020,index_diachronica_original.html:10020,Vˀ → V[+high tone],Vˀ,V[+high tone],,,False
-index_diachronica_original.html:7009,index_diachronica_original.html:7009,sj zj → ʃ ʒ,sj zj,ʃ ʒ,,,False
-index_diachronica_original.html:1663,index_diachronica_original.html:1663,"s → h / {V,C}_",s,h,"{V,C}_",,False
-index_diachronica_original.html:2687,index_diachronica_original.html:2687,e → u / uC_,e,u,uC_,,False
-index_diachronica_original.html:5606,index_diachronica_original.html:5606,ɔː → au / when stressed,ɔː,au,when stressed,,False
-index_diachronica_original.html:1731,index_diachronica_original.html:1731,"t → ts / _{i,e(ː),a}",t,ts,"_{i,e(ː),a}",,False
-index_diachronica_original.html:4545,index_diachronica_original.html:4545,um → ũ / _#,um,ũ,_#,,False
-index_diachronica_original.html:11465,index_diachronica_original.html:11465,"{i3~e3} → {ə3,i3}",{i3~e3},"{ə3,i3}",,,False
-index_diachronica_original.html:13768,index_diachronica_original.html:13768,"a → æ / {a,e,ê,i,y}(X)(C)(C)_, when unstressed",a,æ,"{a,e,ê,i,y}(X)(C)(C)_, when unstressed",,False
-index_diachronica_original.html:3102,index_diachronica_original.html:3102,k t → ʔ k,k t,ʔ k,,,False
-index_diachronica_original.html:4689,index_diachronica_original.html:4689,ə → u / u_,ə,u,u_,,False
-index_diachronica_original.html:10316,index_diachronica_original.html:10316,TS TŠ TŠʷ Q → TH TS TṢ K,TS TŠ TŠʷ Q,TH TS TṢ K,,,False
-index_diachronica_original.html:5950,index_diachronica_original.html:5950,"θ → f / {V,r}_# (sometimes blocked)",θ,f,"{V,r}_# (sometimes blocked)",,False
-index_diachronica_original.html:2254,index_diachronica_original.html:2254,æ → a / P_Co,æ,a,P_Co,,False
-index_diachronica_original.html:11178,index_diachronica_original.html:11178,q → χ,q,χ,,,False
-index_diachronica_original.html:4239,index_diachronica_original.html:4239,tsʲ tsʲː tsʲʼ dzʲ → (s) tsː tsʼ dz~z,tsʲ tsʲː tsʲʼ dzʲ,(s) tsː tsʼ dz~z,,,False
-index_diachronica_original.html:12576,index_diachronica_original.html:12576,— wh → f,— wh,f,,,False
-index_diachronica_original.html:12742,index_diachronica_original.html:12742,ç x → x ʃ,ç x,x ʃ,,,False
-index_diachronica_original.html:9725,index_diachronica_original.html:9725,ŋ → n,ŋ,n,,,False
-index_diachronica_original.html:994,index_diachronica_original.html:994,x₂ → k / #_,x₂,k,#_,,False
+id,source,raw,input,output,env,exception,expect_none,kind,asca_input,asca_output,asca_env,asca_exception,asca_expect_ok
+e1e33459,index_diachronica_original.html:6251,"r → ∅ / {ð,f}_{ɡ,ɣ}",r,∅,"{ð,f}_{ɡ,ɣ}",,False,html_extract,,,,,
+effec0b5,index_diachronica_original.html:14213,oɪ → uɪ (rare),oɪ,uɪ (rare),,,False,html_extract,,,,,
+2ef656de,index_diachronica_original.html:1530,"— {o,u}(ː) → iː / _$%oː","— {o,u}(ː)",iː,_$%oː,,False,html_extract,,,,,
+9eabee5d,index_diachronica_original.html:5671,iji → iː / U[+ long + closed]_ in the stem,iji,iː,U[+ long + closed]_ in the stem,,False,html_extract,,,,,
+4335174c,index_diachronica_original.html:5946,dʒ → tʃ / _#,dʒ,tʃ,_#,,False,html_extract,,,,,
+4f873820,index_diachronica_original.html:7729,a → e / _j when stressed,a,e,_j when stressed,,False,html_extract,,,,,
+f778eaad,index_diachronica_original.html:12552,CʔV₀ → CV₀ʔV₀,CʔV₀,CV₀ʔV₀,,,False,html_extract,,,,,
+6e65b414,index_diachronica_original.html:6828,"s → ʃ / {u,i,l,r,K,Ḱ}",s,ʃ,"{u,i,l,r,K,Ḱ}",,False,html_extract,,,,,
+b0107518,index_diachronica_original.html:7567,uɛ → ɛu,uɛ,ɛu,,,False,html_extract,,,,,
+e789f20d,index_diachronica_original.html:3448,t → s / _i,t,s,_i,,False,html_extract,,,,,
+796fcde6,index_diachronica_original.html:7834,β → v (though sometimes → ɡw instead if analogy interfered),β,v (though sometimes → ɡw instead if analogy interfered),,,False,html_extract,,,,,
+c8dc88f3,index_diachronica_original.html:5522,k → x / V_t,k,x,V_t,,False,html_extract,,,,,
+6ed56bf0,index_diachronica_original.html:8596,"aN eN iN ɨN uN → ã ẽ ı̃ {ɨ̃,ĩ} õ / _#",aN eN iN ɨN uN,"ã ẽ ı̃ {ɨ̃,ĩ} õ",_#,,False,html_extract,,,,,
+63f9e7f4,index_diachronica_original.html:3334,SN → N[- voice],SN,N[- voice],,,False,html_extract,,,,,
+98e8fdc9,index_diachronica_original.html:6059,"{ie,ia,io} uo → iə uə","{ie,ia,io} uo",iə uə,,,False,html_extract,,,,,
+816a2d85,index_diachronica_original.html:12959,ũ → ã / stressed,ũ,ã,stressed,,False,html_extract,,,,,
+597fe6c5,index_diachronica_original.html:10633,"hʷ → {w,ʁʷ}",hʷ,"{w,ʁʷ}",,,False,html_extract,,,,,
+95390854,index_diachronica_original.html:1944,a → o / $am_w,a,o,$am_w,,False,html_extract,,,,,
+16c121f4,index_diachronica_original.html:5312,"{sk,ks} kj → tsʰ tʃʰ (?)","{sk,ks} kj",tsʰ tʃʰ (?),,,False,html_extract,,,,,
+a932f88c,index_diachronica_original.html:12525,rV → Vː / C_,rV,Vː,C_,,False,html_extract,,,,,
+f8cd1a6f,index_diachronica_original.html:10000,ɑ → ə,ɑ,ə,,,False,html_extract,,,,,
+13920722,index_diachronica_original.html:3242,q qː k kː s sː → k kː c cː t̪ t̪ː,q qː k kː s sː,k kː c cː t̪ t̪ː,,,False,html_extract,,,,,
+eb8276ee,index_diachronica_original.html:11680,{i3~ə1} → i3,{i3~ə1},i3,,,False,html_extract,,,,,
+c1bd1697,index_diachronica_original.html:6557,"{Hₓ,m̩,n̩} → a","{Hₓ,m̩,n̩}",a,,,False,html_extract,,,,,
+4e0b2695,index_diachronica_original.html:4658,v ɣ ʁ → p k q / _C (except where C = /l dʒ m n ŋ/),v ɣ ʁ,p k q,_C (except where C = /l dʒ m n ŋ/),,False,html_extract,,,,,
+9b6beb9a,index_diachronica_original.html:6750,j → ∅ / Vː_,j,∅,Vː_,,False,html_extract,,,,,
+47402767,index_diachronica_original.html:2042,we → o,we,o,,,False,html_extract,,,,,
+c779a5a6,index_diachronica_original.html:14059,w → ɡ,w,ɡ,,,False,html_extract,,,,,
+af3711dd,index_diachronica_original.html:8652,"ts → {s,h}",ts,"{s,h}",,,False,html_extract,,,,,
+9819b204,index_diachronica_original.html:4266,"{qˤː,qˤʼ} χˤ ʁˤ → qː χ ʁ","{qˤː,qˤʼ} χˤ ʁˤ",qː χ ʁ,,,False,html_extract,,,,,
+ebf748c8,index_diachronica_original.html:4500,rt → ʈ / V_V,rt,ʈ,V_V,,False,html_extract,,,,,
+5645ccc6,index_diachronica_original.html:6524,"aː → ɔ(u) / _{l,r}",aː,ɔ(u),"_{l,r}",,False,html_extract,,,,,
+74951720,index_diachronica_original.html:14424,o → oː / ɔ,o,oː,ɔ,,False,html_extract,,,,,
+4fae5afa,index_diachronica_original.html:11968,N → ∅ / _pV,N,∅,_pV,,False,html_extract,,,,,
+4a2c5375,index_diachronica_original.html:1793,wi → o / C_,wi,o,C_,,False,html_extract,,,,,
+65372311,index_diachronica_original.html:11296,qh → k,qh,k,,,False,html_extract,,,,,
+78448e88,index_diachronica_original.html:7538,sːj zj rj → jsː jz jr,sːj zj rj,jsː jz jr,,,False,html_extract,,,,,
+03b6bb03,index_diachronica_original.html:7935,"l → u / _{t,d,s} (else)",l,u,"_{t,d,s} (else)",,False,html_extract,,,,,
+bfdfc672,index_diachronica_original.html:4507,r̀ → r̲,r̀,r̲,,,False,html_extract,,,,,
+60959378,index_diachronica_original.html:14216,e → ∅ / #_e,e,∅,#_e,,False,html_extract,,,,,
+b13c5294,index_diachronica_original.html:2618,ə → u,ə,u,,,False,html_extract,,,,,
+0cd001b0,index_diachronica_original.html:6565,kʷ kʰʷ ɡʷ → k kʰ ɡ / _u,kʷ kʰʷ ɡʷ,k kʰ ɡ,_u,,False,html_extract,,,,,
+9f237660,index_diachronica_original.html:2902,C[+ voice] → C[- voice] / _#,C[+ voice],C[- voice],_#,,False,html_extract,,,,,
+06ee3448,index_diachronica_original.html:8708,ɛ ɑ → ɑ ɔ,ɛ ɑ,ɑ ɔ,,,False,html_extract,,,,,
+06d633a3,index_diachronica_original.html:4663,iv → uj / _u,iv,uj,_u,,False,html_extract,,,,,
+e81d442f,index_diachronica_original.html:3746,"b d → m n / _{C,#}",b d,m n,"_{C,#}",,False,html_extract,,,,,
+0b6a956d,index_diachronica_original.html:8538,"{b,r} → ∅ / _#","{b,r}",∅,_#,,False,html_extract,,,,,
+f2f6e890,index_diachronica_original.html:4463,ˀj → ∅,ˀj,∅,,,False,html_extract,,,,,
+e3a82d94,index_diachronica_original.html:3558,"l → tʃ / _{o,E}",l,tʃ,"_{o,E}",,False,html_extract,,,,,
+590e3f9a,index_diachronica_original.html:6218,"ɒːh{u,a} aːh{u,a} → ɒː aː","ɒːh{u,a} aːh{u,a}",ɒː aː,,,False,html_extract,,,,,
+947d8af2,index_diachronica_original.html:14329,a → e / _n (otherwise),a,e,_n (otherwise),,False,html_extract,,,,,
+581f04f0,index_diachronica_original.html:10258,"C → {h,ʔ} / _#",C,"{h,ʔ}",_#,,False,html_extract,,,,,
+5ecb2b23,index_diachronica_original.html:7419,l → ʎ / #_,l,ʎ,#_,,False,html_extract,,,,,
+7111acbf,index_diachronica_original.html:11400,ʔ → ∅ V3_RV,ʔ,∅ V3_RV,,,False,html_extract,,,,,
+dac21d02,index_diachronica_original.html:10238,xʲ(ʔ) j(ʔ) → h ʔ / _#,xʲ(ʔ) j(ʔ),h ʔ,_#,,False,html_extract,,,,,
+e972b7e2,index_diachronica_original.html:7008,k ɡ x → ts dz s / “After some syllables with front vowels”,k ɡ x,ts dz s,“After some syllables with front vowels”,,False,html_extract,,,,,
+0dd50d9d,index_diachronica_original.html:5982,"ʟ → ʊ / {a,ɛ}_, typically ! _V",ʟ,ʊ,"{a,ɛ}_, typically",_V,False,html_extract,,,,,
+2ae076af,index_diachronica_original.html:12521,V → Vː / _KRV “in the second syllable of a word”,V,Vː,_KRV “in the second syllable of a word”,,False,html_extract,,,,,
+4258ad41,index_diachronica_original.html:10870,e → i / l_ when unstressed,e,i,l_ when unstressed,,False,html_extract,,,,,
+f8336b5d,index_diachronica_original.html:2276,"{d,n}ʲ sʲ → j ʃ / #_","{d,n}ʲ sʲ",j ʃ,#_,,False,html_extract,,,,,
+025daa9b,index_diachronica_original.html:8494,ã → õ,ã,õ,,,False,html_extract,,,,,
+3d1faae8,index_diachronica_original.html:8546,m p → ŋ k / _w,m p,ŋ k,_w,,False,html_extract,,,,,
+ba8ad8c2,index_diachronica_original.html:13111,"{l,r} → ∅ / n,ɗ_","{l,r}",∅,"n,ɗ_",,False,html_extract,,,,,
+e58e1f19,index_diachronica_original.html:4326,p(ʷ)ʼ t(ʷ)ʼ tsʼ tsʷʼ~ʃʷʼ → pˤ tˤ tsˤ ʂʷ,p(ʷ)ʼ t(ʷ)ʼ tsʼ tsʷʼ~ʃʷʼ,pˤ tˤ tsˤ ʂʷ,,,False,html_extract,,,,,
+920d2545,index_diachronica_original.html:2926,"ə → {e,o} / stressed; “(result of /e/ or /o/ unpredictable)”",ə,"{e,o}",stressed; “(result of /e/ or /o/ unpredictable)”,,False,html_extract,,,,,
+01121562,index_diachronica_original.html:2572,"V(h) → V(q) / _# (again, might’ve been a retention?)",V(h),V(q),"_# (again, might’ve been a retention?)",,False,html_extract,,,,,
+c6e3b975,index_diachronica_original.html:12978,t → ts / _ʔ,t,ts,_ʔ,,False,html_extract,,,,,
+ae3e03d9,index_diachronica_original.html:14137,"F[+ voiced] → ∅ / V_V (sometimes, usually involving “compound surnames”?)",F[+ voiced],∅,"V_V (sometimes, usually involving “compound surnames”?)",,False,html_extract,,,,,
+5dbf5dd4,index_diachronica_original.html:6466,ey → ai,ey,ai,,,False,html_extract,,,,,
+abdfb3b8,index_diachronica_original.html:8574,u → ∅ / k_w,u,∅,k_w,,False,html_extract,,,,,
+0a77f668,index_diachronica_original.html:5086,V → Vː / in #”U,V,Vː,in #”U,,False,html_extract,,,,,
+0ca21d56,index_diachronica_original.html:13150,i̯e → i,i̯e,i,,,False,html_extract,,,,,
+3fcb4e2e,index_diachronica_original.html:13146,uo ɨ̯u → u(ː) u / _C%,uo ɨ̯u,u(ː) u,_C%,,False,html_extract,,,,,
+8cfe9ba4,index_diachronica_original.html:9661,p → f,p,f,,,False,html_extract,,,,,
+c79e6f81,index_diachronica_original.html:7072,ʃ ʒ tʃ dʒ ɕ ʑ → ʂ ʐ ʈʂ ɖʐ ts ʒ,ʃ ʒ tʃ dʒ ɕ ʑ,ʂ ʐ ʈʂ ɖʐ ts ʒ,,,False,html_extract,,,,,
+b79c50c5,index_diachronica_original.html:7515,ð → ∅ / _r,ð,∅,_r,,False,html_extract,,,,,
+18ebcae2,index_diachronica_original.html:7836,kʷ ɡʷ → k ɡ (else),kʷ ɡʷ,k ɡ (else),,,False,html_extract,,,,,
+f76578be,index_diachronica_original.html:8268,"{eh₂,aH} aː → aː ɔ","{eh₂,aH} aː",aː ɔ,,,False,html_extract,,,,,
+f979ef59,index_diachronica_original.html:4262,qʲʼ ʁʲ → ʔ ʁ,qʲʼ ʁʲ,ʔ ʁ,,,False,html_extract,,,,,
+100cf091,index_diachronica_original.html:1860,"{n,q,h} → ∅ / _s","{n,q,h}",∅,_s,,False,html_extract,,,,,
+b283ffa7,index_diachronica_original.html:10020,Vˀ → V[+high tone],Vˀ,V[+high tone],,,False,html_extract,,,,,
+e3a74cd8,index_diachronica_original.html:7009,sj zj → ʃ ʒ,sj zj,ʃ ʒ,,,False,html_extract,,,,,
+353f0611,index_diachronica_original.html:1663,"s → h / {V,C}_",s,h,"{V,C}_",,False,html_extract,,,,,
+3514f08e,index_diachronica_original.html:2687,e → u / uC_,e,u,uC_,,False,html_extract,,,,,
+0077e728,index_diachronica_original.html:5606,ɔː → au / when stressed,ɔː,au,when stressed,,False,html_extract,,,,,
+c5fa2171,index_diachronica_original.html:1731,"t → ts / _{i,e(ː),a}",t,ts,"_{i,e(ː),a}",,False,html_extract,,,,,
+8590c8e7,index_diachronica_original.html:4545,um → ũ / _#,um,ũ,_#,,False,html_extract,,,,,
+3fd28a26,index_diachronica_original.html:11465,"{i3~e3} → {ə3,i3}",{i3~e3},"{ə3,i3}",,,False,html_extract,,,,,
+6af306cf,index_diachronica_original.html:13768,"a → æ / {a,e,ê,i,y}(X)(C)(C)_, when unstressed",a,æ,"{a,e,ê,i,y}(X)(C)(C)_, when unstressed",,False,html_extract,,,,,
+5ffa7307,index_diachronica_original.html:3102,k t → ʔ k,k t,ʔ k,,,False,html_extract,,,,,
+f6b62663,index_diachronica_original.html:4689,ə → u / u_,ə,u,u_,,False,html_extract,,,,,
+24482357,index_diachronica_original.html:10316,TS TŠ TŠʷ Q → TH TS TṢ K,TS TŠ TŠʷ Q,TH TS TṢ K,,,False,html_extract,,,,,
+5feda6e9,index_diachronica_original.html:5950,"θ → f / {V,r}_# (sometimes blocked)",θ,f,"{V,r}_# (sometimes blocked)",,False,html_extract,,,,,
+5ad060d2,index_diachronica_original.html:2254,æ → a / P_Co,æ,a,P_Co,,False,html_extract,,,,,
+231034db,index_diachronica_original.html:11178,q → χ,q,χ,,,False,html_extract,,,,,
+be741bae,index_diachronica_original.html:4239,tsʲ tsʲː tsʲʼ dzʲ → (s) tsː tsʼ dz~z,tsʲ tsʲː tsʲʼ dzʲ,(s) tsː tsʼ dz~z,,,False,html_extract,,,,,
+64124bcd,index_diachronica_original.html:12576,— wh → f,— wh,f,,,False,html_extract,,,,,
+cc127c1a,index_diachronica_original.html:12742,ç x → x ʃ,ç x,x ʃ,,,False,html_extract,,,,,
+e71a2977,index_diachronica_original.html:9725,ŋ → n,ŋ,n,,,False,html_extract,,,,,
+00253fd5,index_diachronica_original.html:994,x₂ → k / #_,x₂,k,#_,,False,html_extract,,,,,
+e1e33459,index_diachronica_original.html:6251,"r → ∅ / {ð,f}_{ɡ,ɣ}",r,∅,"{ð,f}_{ɡ,ɣ}",,False,asca_guess,r,∅,"{ð,f}_{ɡ,ɣ}",,True
+effec0b5,index_diachronica_original.html:14213,oɪ → uɪ (rare),oɪ,uɪ (rare),,,False,asca_guess,oɪ,uɪ,,,True
+2ef656de,index_diachronica_original.html:1530,"— {o,u}(ː) → iː / _$%oː","— {o,u}(ː)",iː,_$%oː,,False,asca_guess,"{o,u}",i:[+long],_$%o:[+long],,True
+9eabee5d,index_diachronica_original.html:5671,iji → iː / U[+ long + closed]_ in the stem,iji,iː,U[+ long + closed]_ in the stem,,False,asca_guess,iji,i:[+long],"U[+long, +closed]_",,False
+4335174c,index_diachronica_original.html:5946,dʒ → tʃ / _#,dʒ,tʃ,_#,,False,asca_guess,dʒ,tʃ,_#,,True
+4f873820,index_diachronica_original.html:7729,a → e / _j when stressed,a,e,_j when stressed,,False,asca_guess,a,e,_j,,True
+f778eaad,index_diachronica_original.html:12552,CʔV₀ → CV₀ʔV₀,CʔV₀,CV₀ʔV₀,,,False,asca_guess,CʔV0,CV0ʔV0,,,True
+6e65b414,index_diachronica_original.html:6828,"s → ʃ / {u,i,l,r,K,Ḱ}",s,ʃ,"{u,i,l,r,K,Ḱ}",,False,asca_guess,s,ʃ,"{u,i,l,r,K,Ḱ}_",,False
+b0107518,index_diachronica_original.html:7567,uɛ → ɛu,uɛ,ɛu,,,False,asca_guess,uɛ,ɛu,,,True
+e789f20d,index_diachronica_original.html:3448,t → s / _i,t,s,_i,,False,asca_guess,t,s,_i,,True
+796fcde6,index_diachronica_original.html:7834,β → v (though sometimes → ɡw instead if analogy interfered),β,v (though sometimes → ɡw instead if analogy interfered),,,False,asca_guess,β,v,,,True
+c8dc88f3,index_diachronica_original.html:5522,k → x / V_t,k,x,V_t,,False,asca_guess,k,x,V_t,,True
+6ed56bf0,index_diachronica_original.html:8596,"aN eN iN ɨN uN → ã ẽ ı̃ {ɨ̃,ĩ} õ / _#",aN eN iN ɨN uN,"ã ẽ ı̃ {ɨ̃,ĩ} õ",_#,,False,asca_guess,aN eN,"ã ẽ ı̃ {ɨ̃,ĩ} õ",_#,,False
+63f9e7f4,index_diachronica_original.html:3334,SN → N[- voice],SN,N[- voice],,,False,asca_guess,SN,N[-voice],,,True
+98e8fdc9,index_diachronica_original.html:6059,"{ie,ia,io} uo → iə uə","{ie,ia,io} uo",iə uə,,,False,asca_guess,"{ie,ia,io} uo",iə uə,,,True
+816a2d85,index_diachronica_original.html:12959,ũ → ã / stressed,ũ,ã,stressed,,False,asca_guess,ũ,ã,stressed_,,False
+597fe6c5,index_diachronica_original.html:10633,"hʷ → {w,ʁʷ}",hʷ,"{w,ʁʷ}",,,False,asca_guess,hʷ,"{w,ʁʷ}",,,True
+95390854,index_diachronica_original.html:1944,a → o / $am_w,a,o,$am_w,,False,asca_guess,a,o,$am_w,,True
+16c121f4,index_diachronica_original.html:5312,"{sk,ks} kj → tsʰ tʃʰ (?)","{sk,ks} kj",tsʰ tʃʰ (?),,,False,asca_guess,"{sk,ks} kj",tsʰ tʃʰ,,,True
+a932f88c,index_diachronica_original.html:12525,rV → Vː / C_,rV,Vː,C_,,False,asca_guess,rV,V:[+long],C_,,True
+f8cd1a6f,index_diachronica_original.html:10000,ɑ → ə,ɑ,ə,,,False,asca_guess,ɑ,ə,,,True
+13920722,index_diachronica_original.html:3242,q qː k kː s sː → k kː c cː t̪ t̪ː,q qː k kː s sː,k kː c cː t̪ t̪ː,,,False,asca_guess,"q, q:[+long], k, k:[+long], s, s:[+long]","k, k:[+long], c, c:[+long], t̪, t̪:[+long]",,,True
+eb8276ee,index_diachronica_original.html:11680,{i3~ə1} → i3,{i3~ə1},i3,,,False,asca_guess,{i3~ə1},i3,,,False
+c1bd1697,index_diachronica_original.html:6557,"{Hₓ,m̩,n̩} → a","{Hₓ,m̩,n̩}",a,,,False,asca_guess,"{Hx,m:[+syll],n:[+syll]}",a,,,False
+4e0b2695,index_diachronica_original.html:4658,v ɣ ʁ → p k q / _C (except where C = /l dʒ m n ŋ/),v ɣ ʁ,p k q,_C (except where C = /l dʒ m n ŋ/),,False,asca_guess,"v, ɣ, ʁ","p, k, q",_C,,True
+9b6beb9a,index_diachronica_original.html:6750,j → ∅ / Vː_,j,∅,Vː_,,False,asca_guess,j,∅,V:[+long]_,,True
+47402767,index_diachronica_original.html:2042,we → o,we,o,,,False,asca_guess,we,o,,,True
+c779a5a6,index_diachronica_original.html:14059,w → ɡ,w,ɡ,,,False,asca_guess,w,ɡ,,,True
+af3711dd,index_diachronica_original.html:8652,"ts → {s,h}",ts,"{s,h}",,,False,asca_guess,ts,"{s,h}",,,True
+9819b204,index_diachronica_original.html:4266,"{qˤː,qˤʼ} χˤ ʁˤ → qː χ ʁ","{qˤː,qˤʼ} χˤ ʁˤ",qː χ ʁ,,,False,asca_guess,"{qˤ:[+long],qˤʼ} χˤ ʁˤ",q:[+long] χ ʁ,,,True
+ebf748c8,index_diachronica_original.html:4500,rt → ʈ / V_V,rt,ʈ,V_V,,False,asca_guess,rt,ʈ,V_V,,True
+5645ccc6,index_diachronica_original.html:6524,"aː → ɔ(u) / _{l,r}",aː,ɔ(u),"_{l,r}",,False,asca_guess,a:[+long],ɔ,"_{l,r}",,True
+74951720,index_diachronica_original.html:14424,o → oː / ɔ,o,oː,ɔ,,False,asca_guess,o,o:[+long],ɔ_,,True
+4fae5afa,index_diachronica_original.html:11968,N → ∅ / _pV,N,∅,_pV,,False,asca_guess,N,∅,_pV,,True
+4a2c5375,index_diachronica_original.html:1793,wi → o / C_,wi,o,C_,,False,asca_guess,wi,o,C_,,True
+65372311,index_diachronica_original.html:11296,qh → k,qh,k,,,False,asca_guess,qh,k,,,True
+78448e88,index_diachronica_original.html:7538,sːj zj rj → jsː jz jr,sːj zj rj,jsː jz jr,,,False,asca_guess,"s:[+long]j, zj, rj","js:[+long], jz, jr",,,True
+03b6bb03,index_diachronica_original.html:7935,"l → u / _{t,d,s} (else)",l,u,"_{t,d,s} (else)",,False,asca_guess,l,u,"_{t,d,s}",,True
+bfdfc672,index_diachronica_original.html:4507,r̀ → r̲,r̀,r̲,,,False,asca_guess,r̀,r̲,,,False
+60959378,index_diachronica_original.html:14216,e → ∅ / #_e,e,∅,#_e,,False,asca_guess,e,∅,#_e,,True
+b13c5294,index_diachronica_original.html:2618,ə → u,ə,u,,,False,asca_guess,ə,u,,,True
+0cd001b0,index_diachronica_original.html:6565,kʷ kʰʷ ɡʷ → k kʰ ɡ / _u,kʷ kʰʷ ɡʷ,k kʰ ɡ,_u,,False,asca_guess,"kʷ, kʰʷ, ɡʷ","k, kʰ, ɡ",_u,,True
+9f237660,index_diachronica_original.html:2902,C[+ voice] → C[- voice] / _#,C[+ voice],C[- voice],_#,,False,asca_guess,C[+voice],C[-voice],_#,,True
+06ee3448,index_diachronica_original.html:8708,ɛ ɑ → ɑ ɔ,ɛ ɑ,ɑ ɔ,,,False,asca_guess,"ɛ, ɑ","ɑ, ɔ",,,True
+06d633a3,index_diachronica_original.html:4663,iv → uj / _u,iv,uj,_u,,False,asca_guess,iv,uj,_u,,True
+e81d442f,index_diachronica_original.html:3746,"b d → m n / _{C,#}",b d,m n,"_{C,#}",,False,asca_guess,"b, d","m, n","_{C,#}",,True
+0b6a956d,index_diachronica_original.html:8538,"{b,r} → ∅ / _#","{b,r}",∅,_#,,False,asca_guess,"{b,r}",∅,_#,,True
+f2f6e890,index_diachronica_original.html:4463,ˀj → ∅,ˀj,∅,,,False,asca_guess,ˀj,∅,,,False
+e3a82d94,index_diachronica_original.html:3558,"l → tʃ / _{o,E}",l,tʃ,"_{o,E}",,False,asca_guess,l,tʃ,"_{o,E}",,False
+590e3f9a,index_diachronica_original.html:6218,"ɒːh{u,a} aːh{u,a} → ɒː aː","ɒːh{u,a} aːh{u,a}",ɒː aː,,,False,asca_guess,"ɒ:[+long]h{u,a} a:[+long]h{u,a}",ɒ:[+long] a:[+long],,,True
+947d8af2,index_diachronica_original.html:14329,a → e / _n (otherwise),a,e,_n (otherwise),,False,asca_guess,a,e,_n,,True
+581f04f0,index_diachronica_original.html:10258,"C → {h,ʔ} / _#",C,"{h,ʔ}",_#,,False,asca_guess,C,"{h,ʔ}",_#,,True
+5ecb2b23,index_diachronica_original.html:7419,l → ʎ / #_,l,ʎ,#_,,False,asca_guess,l,ʎ,#_,,True
+7111acbf,index_diachronica_original.html:11400,ʔ → ∅ V3_RV,ʔ,∅ V3_RV,,,False,asca_guess,ʔ,∅ V3_RV,,,False
+dac21d02,index_diachronica_original.html:10238,xʲ(ʔ) j(ʔ) → h ʔ / _#,xʲ(ʔ) j(ʔ),h ʔ,_#,,False,asca_guess,"xʲʔ, j","h, ʔ",_#,,True
+e972b7e2,index_diachronica_original.html:7008,k ɡ x → ts dz s / “After some syllables with front vowels”,k ɡ x,ts dz s,“After some syllables with front vowels”,,False,asca_guess,"k, ɡ, x","ts, dz, s",,,True
+0dd50d9d,index_diachronica_original.html:5982,"ʟ → ʊ / {a,ɛ}_, typically ! _V",ʟ,ʊ,"{a,ɛ}_, typically",_V,False,asca_guess,ʟ,ʊ,"{a,ɛ}_,",_V,False
+2ae076af,index_diachronica_original.html:12521,V → Vː / _KRV “in the second syllable of a word”,V,Vː,_KRV “in the second syllable of a word”,,False,asca_guess,V,V:[+long],_KRV,,False
+4258ad41,index_diachronica_original.html:10870,e → i / l_ when unstressed,e,i,l_ when unstressed,,False,asca_guess,e,i,l_,,True
+f8336b5d,index_diachronica_original.html:2276,"{d,n}ʲ sʲ → j ʃ / #_","{d,n}ʲ sʲ",j ʃ,#_,,False,asca_guess,"{dʲ,nʲ} sʲ",j ʃ,#_,,True
+025daa9b,index_diachronica_original.html:8494,ã → õ,ã,õ,,,False,asca_guess,ã,õ,,,False
+3d1faae8,index_diachronica_original.html:8546,m p → ŋ k / _w,m p,ŋ k,_w,,False,asca_guess,"m, p","ŋ, k",_w,,True
+ba8ad8c2,index_diachronica_original.html:13111,"{l,r} → ∅ / n,ɗ_","{l,r}",∅,"n,ɗ_",,False,asca_guess,"{l,r}",∅,"n,ɗ_",,False
+e58e1f19,index_diachronica_original.html:4326,p(ʷ)ʼ t(ʷ)ʼ tsʼ tsʷʼ~ʃʷʼ → pˤ tˤ tsˤ ʂʷ,p(ʷ)ʼ t(ʷ)ʼ tsʼ tsʷʼ~ʃʷʼ,pˤ tˤ tsˤ ʂʷ,,,False,asca_guess,"pʷʼ, tʷʼ, tsʼ, tsʷʼ~ʃʷʼ","pˤ, tˤ, tsˤ, ʂʷ",,,False
+920d2545,index_diachronica_original.html:2926,"ə → {e,o} / stressed; “(result of /e/ or /o/ unpredictable)”",ə,"{e,o}",stressed; “(result of /e/ or /o/ unpredictable)”,,False,asca_guess,ə,"{e,o}",stressed_,,True
+01121562,index_diachronica_original.html:2572,"V(h) → V(q) / _# (again, might’ve been a retention?)",V(h),V(q),"_# (again, might’ve been a retention?)",,False,asca_guess,V,V,_#,,True
+c6e3b975,index_diachronica_original.html:12978,t → ts / _ʔ,t,ts,_ʔ,,False,asca_guess,t,ts,_ʔ,,True
+ae3e03d9,index_diachronica_original.html:14137,"F[+ voiced] → ∅ / V_V (sometimes, usually involving “compound surnames”?)",F[+ voiced],∅,"V_V (sometimes, usually involving “compound surnames”?)",,False,asca_guess,F[+voice],∅,V_V,,True
+5dbf5dd4,index_diachronica_original.html:6466,ey → ai,ey,ai,,,False,asca_guess,ey,ai,,,True
+abdfb3b8,index_diachronica_original.html:8574,u → ∅ / k_w,u,∅,k_w,,False,asca_guess,u,∅,k_w,,True
+0a77f668,index_diachronica_original.html:5086,V → Vː / in #”U,V,Vː,in #”U,,False,asca_guess,V,V:[+long],_in #,,True
+0ca21d56,index_diachronica_original.html:13150,i̯e → i,i̯e,i,,,False,asca_guess,i̯e,i,,,True
+3fcb4e2e,index_diachronica_original.html:13146,uo ɨ̯u → u(ː) u / _C%,uo ɨ̯u,u(ː) u,_C%,,False,asca_guess,"uo, ɨ̯u","u:[+long], u",_C%,,True
+8cfe9ba4,index_diachronica_original.html:9661,p → f,p,f,,,False,asca_guess,p,f,,,True
+c79e6f81,index_diachronica_original.html:7072,ʃ ʒ tʃ dʒ ɕ ʑ → ʂ ʐ ʈʂ ɖʐ ts ʒ,ʃ ʒ tʃ dʒ ɕ ʑ,ʂ ʐ ʈʂ ɖʐ ts ʒ,,,False,asca_guess,"ʃ, ʒ, tʃ, dʒ, ɕ, ʑ","ʂ, ʐ, ʈʂ, ɖʐ, ts, ʒ",,,True
+b79c50c5,index_diachronica_original.html:7515,ð → ∅ / _r,ð,∅,_r,,False,asca_guess,ð,∅,_r,,True
+18ebcae2,index_diachronica_original.html:7836,kʷ ɡʷ → k ɡ (else),kʷ ɡʷ,k ɡ (else),,,False,asca_guess,"kʷ, ɡʷ","k, ɡ",,,True
+f76578be,index_diachronica_original.html:8268,"{eh₂,aH} aː → aː ɔ","{eh₂,aH} aː",aː ɔ,,,False,asca_guess,"{eh2,aH} a:[+long]",a:[+long] ɔ,,,False
+f979ef59,index_diachronica_original.html:4262,qʲʼ ʁʲ → ʔ ʁ,qʲʼ ʁʲ,ʔ ʁ,,,False,asca_guess,"qʲʼ, ʁʲ","ʔ, ʁ",,,True
+100cf091,index_diachronica_original.html:1860,"{n,q,h} → ∅ / _s","{n,q,h}",∅,_s,,False,asca_guess,"{n,q,h}",∅,_s,,True
+b283ffa7,index_diachronica_original.html:10020,Vˀ → V[+high tone],Vˀ,V[+high tone],,,False,asca_guess,Vˀ,V[+high],,,False
+e3a74cd8,index_diachronica_original.html:7009,sj zj → ʃ ʒ,sj zj,ʃ ʒ,,,False,asca_guess,"sj, zj","ʃ, ʒ",,,True
+353f0611,index_diachronica_original.html:1663,"s → h / {V,C}_",s,h,"{V,C}_",,False,asca_guess,s,h,"{V,C}_",,True
+3514f08e,index_diachronica_original.html:2687,e → u / uC_,e,u,uC_,,False,asca_guess,e,u,uC_,,True
+0077e728,index_diachronica_original.html:5606,ɔː → au / when stressed,ɔː,au,when stressed,,False,asca_guess,ɔ:[+long],au,when stressed_,,True
+c5fa2171,index_diachronica_original.html:1731,"t → ts / _{i,e(ː),a}",t,ts,"_{i,e(ː),a}",,False,asca_guess,t,ts,"_{i,e(:[+long]),a}",,False
+8590c8e7,index_diachronica_original.html:4545,um → ũ / _#,um,ũ,_#,,False,asca_guess,um,ũ,_#,,False
+3fd28a26,index_diachronica_original.html:11465,"{i3~e3} → {ə3,i3}",{i3~e3},"{ə3,i3}",,,False,asca_guess,{i3~e3},"{ə3,i3}",,,False
+6af306cf,index_diachronica_original.html:13768,"a → æ / {a,e,ê,i,y}(X)(C)(C)_, when unstressed",a,æ,"{a,e,ê,i,y}(X)(C)(C)_, when unstressed",,False,asca_guess,a,æ,"{a,e,ê,i,y}(X)(C)(C)_,",,False
+5ffa7307,index_diachronica_original.html:3102,k t → ʔ k,k t,ʔ k,,,False,asca_guess,"k, t","ʔ, k",,,True
+f6b62663,index_diachronica_original.html:4689,ə → u / u_,ə,u,u_,,False,asca_guess,ə,u,u_,,True
+24482357,index_diachronica_original.html:10316,TS TŠ TŠʷ Q → TH TS TṢ K,TS TŠ TŠʷ Q,TH TS TṢ K,,,False,asca_guess,"TS, TŠ, TŠʷ, Q","TH, TS, TṢ, K",,,False
+5feda6e9,index_diachronica_original.html:5950,"θ → f / {V,r}_# (sometimes blocked)",θ,f,"{V,r}_# (sometimes blocked)",,False,asca_guess,θ,f,"{V,r}_#",,True
+5ad060d2,index_diachronica_original.html:2254,æ → a / P_Co,æ,a,P_Co,,False,asca_guess,æ,a,P_Co,,True
+231034db,index_diachronica_original.html:11178,q → χ,q,χ,,,False,asca_guess,q,χ,,,True
+be741bae,index_diachronica_original.html:4239,tsʲ tsʲː tsʲʼ dzʲ → (s) tsː tsʼ dz~z,tsʲ tsʲː tsʲʼ dzʲ,(s) tsː tsʼ dz~z,,,False,asca_guess,"tsʲ, tsʲ:[+long], tsʲʼ, dzʲ","s, ts:[+long], tsʼ, dz~z",,,False
+64124bcd,index_diachronica_original.html:12576,— wh → f,— wh,f,,,False,asca_guess,wh,f,,,True
+cc127c1a,index_diachronica_original.html:12742,ç x → x ʃ,ç x,x ʃ,,,False,asca_guess,"ç, x","x, ʃ",,,True
+e71a2977,index_diachronica_original.html:9725,ŋ → n,ŋ,n,,,False,asca_guess,ŋ,n,,,True
+00253fd5,index_diachronica_original.html:994,x₂ → k / #_,x₂,k,#_,,False,asca_guess,x2,k,#_,,True
+c8191e55,index_diachronica_original.html:12412,r → ∅ / w_,r,∅,w_,,False,asca_guess,r,∅,w_,,True
+2416914b,index_diachronica_original.html:12530,"h → ∅ / _{k,t,ts,s}#",h,∅,"_{k,t,ts,s}#",,False,asca_guess,h,∅,"_{k,t,ts,s}#",,True
+8ad2cb2e,index_diachronica_original.html:11743,l → ∅ / s_-,l,∅,s_-,,False,asca_guess,l,∅,s_-,,False
+aa59f0f4,index_diachronica_original.html:8271,"oː(s,y) oːn → u {u,õ}","oː(s,y) oːn","u {u,õ}",,,False,asca_guess,"o:[+long]s,y o:[+long]n","u {u,õ}",,,False
+3154679c,index_diachronica_original.html:10935,kʷ → w / else,kʷ,w,else,,False,asca_guess,kʷ,w,else_,,True
+b2869230,index_diachronica_original.html:2871,"{l,d} z → r d","{l,d} z",r d,,,False,asca_guess,"{l,d} z",r d,,,True
+4418b1aa,index_diachronica_original.html:2720,∅ → ʔ / #_,∅,ʔ,#_,,False,asca_guess,∅,ʔ,#_,,True
+38fc355f,index_diachronica_original.html:5091,hh h → h ∅ / u_”Vː,hh h,h ∅,u_”Vː,,False,asca_guess,"hh, h","h, ∅",u_,,True
+cfd51b8d,index_diachronica_original.html:7529,"— m{ɲ,j} → ndʒ","— m{ɲ,j}",ndʒ,,,False,asca_guess,"m{ɲ,j}",ndʒ,,,True
+86f34fa3,index_diachronica_original.html:13800,"ji → O / {i,e,y}",ji,O,"{i,e,y}",,False,asca_guess,ji,O,"{i,e,y}_",,True
+22ad8d6c,index_diachronica_original.html:8854,ts(ʼ) s → tʃ(ʼ) ʃ,ts(ʼ) s,tʃ(ʼ) ʃ,,,False,asca_guess,"tsʼ, s","tʃʼ, ʃ",,,True
+48faa577,index_diachronica_original.html:6045,"ai u → ei ʏ / _(C…){i(ː),j} (short only; in the case of [ʏ] at least this was not yet phonemic)",ai u,ei ʏ,"_(C…){i(ː),j} (short only; in the case of [ʏ] at least this was not yet phonemic)",,False,asca_guess,"ai, u","ei, ʏ","_(C…){i(:[+long]),j}",,False
+aaccbe36,index_diachronica_original.html:8402,k → ∅ / _#,k,∅,_#,,False,asca_guess,k,∅,_#,,True
+68965aa2,index_diachronica_original.html:8097,m → ∅ / _#,m,∅,_#,,False,asca_guess,m,∅,_#,,True
+21548c5a,index_diachronica_original.html:7160,d → ɡ / _n,d,ɡ,_n,,False,asca_guess,d,ɡ,_n,,True
+6b258ff7,index_diachronica_original.html:12804,tʲ → s / _ʔV,tʲ,s,_ʔV,,False,asca_guess,tʲ,s,_ʔV,,True
+af93eca5,index_diachronica_original.html:3533,k *R → ɣ r “(frequently)”,k *R,ɣ r “(frequently)”,,,False,asca_guess,"k, *R","ɣ, r",,,False
+57279941,index_diachronica_original.html:12019,r → ∅ / _t,r,∅,_t,,False,asca_guess,r,∅,_t,,True
+bf4fc555,index_diachronica_original.html:1287,l → j / #_iC ?,l,j,#_iC ?,,False,asca_guess,l,j,#_iC ?,,True
+e17296b1,index_diachronica_original.html:4640,v → ∅ / u_i,v,∅,u_i,,False,asca_guess,v,∅,u_i,,True
+6aa5804e,index_diachronica_original.html:3729,β → f / else (rarely),β,f,else (rarely),,False,asca_guess,β,f,else_,,True
+515fca10,index_diachronica_original.html:8075,a → a / #(C…)V…C[+palatal]_…”U,a,a,#(C…)V…C[+palatal]_…”U,,False,asca_guess,a,a,#(C…)V…C[+palatal]_…,,False
+502814bb,index_diachronica_original.html:6479,lm → ml,lm,ml,,,False,asca_guess,lm,ml,,,True
+c6f3cc8d,index_diachronica_original.html:5729,æj → aj → ej,æj,aj → ej,,,False,asca_guess,æj,aj → ej,,,False
+18d4a5ff,index_diachronica_original.html:12868,"pr {sr,xr} sn km → pV₀rV₀ ʃV₀rV₀ sV₀nV₀ kV₀wV₀","pr {sr,xr} sn km",pV₀rV₀ ʃV₀rV₀ sV₀nV₀ kV₀wV₀,,,False,asca_guess,"pr {sr,xr} sn km",pV0rV0 ʃV0rV0 sV0nV0 kV0wV0,,,True
+02bf97d0,index_diachronica_original.html:8901,"CV → ∅ / _# (possibly only when CV_#, possibly sporadic)",CV,∅,"_# (possibly only when CV_#, possibly sporadic)",,False,asca_guess,CV,∅,_#,,False
+229755b1,index_diachronica_original.html:11642,"ʔ → ∅ / V3R_{V,#}",ʔ,∅,"V3R_{V,#}",,False,asca_guess,ʔ,∅,"V3R_{V,#}",,False
+436e9e9a,index_diachronica_original.html:6634,kʷ kʰʷ ɡʷ → k kʰ ɡ / u_,kʷ kʰʷ ɡʷ,k kʰ ɡ,u_,,False,asca_guess,"kʷ, kʰʷ, ɡʷ","k, kʰ, ɡ",u_,,True
+8da2aae8,index_diachronica_original.html:8057,"kj ɡj → tʃ {j,∅} (ɡj → ∅ is rare)",kj ɡj,"tʃ {j,∅} (ɡj → ∅ is rare)",,,False,asca_guess,kj ɡj,"tʃ {j,∅}",,,False
+bde19d8c,index_diachronica_original.html:6665,"{Hₓ,m̩,n̩} → a","{Hₓ,m̩,n̩}",a,,,False,asca_guess,"{Hx,m:[+syll],n:[+syll]}",a,,,False
+a3f75ee1,index_diachronica_original.html:5406,"{e,o} → a (rare)","{e,o}",a (rare),,,False,asca_guess,"{e,o}",a,,,True
+e82710d2,index_diachronica_original.html:4705,v → ∅ / V_u,v,∅,V_u,,False,asca_guess,v,∅,V_u,,True
+4e9e5b96,index_diachronica_original.html:5901,— a → i / _n (in northern varieties),— a,i,_n (in northern varieties),,False,asca_guess,a,i,_n,,True
+e6875115,index_diachronica_original.html:10858,h → ʔ / _ã,h,ʔ,_ã,,False,asca_guess,h,ʔ,_ã,,False
+e257b073,index_diachronica_original.html:5899,— øː → i (in northern dialects),— øː,i (in northern dialects),,,False,asca_guess,ø:[+long],i,,,True
+5e041034,index_diachronica_original.html:8211,h → ∅ / _d,h,∅,_d,,False,asca_guess,h,∅,_d,,True
+f4256b7a,index_diachronica_original.html:13140,ɡl → kj,ɡl,kj,,,False,asca_guess,ɡl,kj,,,True
+cdbb17a5,index_diachronica_original.html:2815,h → ∅,h,∅,,,False,asca_guess,h,∅,,,True
+7f5c9504,index_diachronica_original.html:7302,s → z → r / r_,s,z → r,r_,,False,asca_guess,s,z → r,r_,,False
+4fad7188,index_diachronica_original.html:1662,s → n / #_,s,n,#_,,False,asca_guess,s,n,#_,,True
+2c958ccc,index_diachronica_original.html:11696,{a3~i3} → a3,{a3~i3},a3,,,False,asca_guess,{a3~i3},a3,,,False
+04b6caff,index_diachronica_original.html:14169,h → ∅ (western dialects),h,∅ (western dialects),,,False,asca_guess,h,∅,,,True
+7c40d33b,index_diachronica_original.html:5947,"{f,v} → ∅ / {l,r,V}_ (sometimes blocked)","{f,v}",∅,"{l,r,V}_ (sometimes blocked)",,False,asca_guess,"{f,v}",∅,"{l,r,V}_",,True
+bfe97686,index_diachronica_original.html:4525,ɲc → ns / V_V,ɲc,ns,V_V,,False,asca_guess,ɲc,ns,V_V,,True
+1fd2b9e3,index_diachronica_original.html:8453,n → ∅ / ! #_V[-nas],n,∅,,#_V[-nas],False,asca_guess,n,∅,,#_V[-nas],True
+f58b6845,index_diachronica_original.html:6820,"e → a / _{h₂,h₃}",e,a,"_{h₂,h₃}",,False,asca_guess,e,a,"_{h2,h3}",,True
+c270c4b1,index_diachronica_original.html:8712,"dʒ ɖʐ → {dʒɡ,dzɡ} dʒ",dʒ ɖʐ,"{dʒɡ,dzɡ} dʒ",,,False,asca_guess,dʒ ɖʐ,"{dʒɡ,dzɡ} dʒ",,,True
+9fb3386e,index_diachronica_original.html:1557,ə → a / near gutturals,ə,a,near gutturals,,False,asca_guess,ə,a,near gutturals_,,True
+b8752672,index_diachronica_original.html:7897,β → u / _j (in western dialects),β,u,_j (in western dialects),,False,asca_guess,β,u,_j,,True
+10a1aa8b,index_diachronica_original.html:13196,(ʔ)j → ʒ,(ʔ)j,ʒ,,,False,asca_guess,ʔj,ʒ,,,True
+87fd3e2b,index_diachronica_original.html:10405,"ʃ → {ʃ,s} : ɬ",ʃ,"{ʃ,s} : ɬ",,,False,asca_guess,ʃ,"{ʃ,s} : ɬ",,,False
+29711d8d,index_diachronica_original.html:8052,p → ∅ / _s,p,∅,_s,,False,asca_guess,p,∅,_s,,True
+5ccef357,index_diachronica_original.html:11633,{i1~ə1} → ə1,{i1~ə1},ə1,,,False,asca_guess,{i1~ə1},ə1,,,False
+bcd59c8c,index_diachronica_original.html:6296,ht → tː,ht,tː,,,False,asca_guess,ht,t:[+long],,,True
+6d73b5bb,index_diachronica_original.html:4563,ɳ → n “(sporadic and dialect development)”,ɳ,n “(sporadic and dialect development)”,,,False,asca_guess,ɳ,n,,,True
+089ff502,index_diachronica_original.html:13043,∅ → V / k_m,∅,V,k_m,,False,asca_guess,∅,V,k_m,,True
+d947fab7,index_diachronica_original.html:11255,t(ʰ) → d / n_,t(ʰ),d,n_,,False,asca_guess,t,d,n_,,True
+515cc528,index_diachronica_original.html:5925,"ɛ → ɜi → i / _{m,ɲ}",ɛ,ɜi → i,"_{m,ɲ}",,False,asca_guess,ɛ,ɜi → i,"_{m,ɲ}",,False
+0388f11a,index_diachronica_original.html:8808,ǁxʼ → ǁˀ,ǁxʼ,ǁˀ,,,False,asca_guess,ǁxʼ,ǁˀ,,,False
+6798f1d3,index_diachronica_original.html:5202,"{sr,rs} → rː","{sr,rs}",rː,,,False,asca_guess,"{sr,rs}",r:[+long],,,True
+dc08721d,index_diachronica_original.html:13817,t → ts / _i ! following a coronal obstruent or “before a derivational suffix”,t,ts,_i,following a coronal obstruent or “before a derivational suffix”,False,asca_guess,t,ts,_i,following a coronal obstruent or_,True
+a4a8e487,index_diachronica_original.html:6505,"h → {∅,h,k,s} / _n",h,"{∅,h,k,s}",_n,,False,asca_guess,h,"{∅,h,k,s}",_n,,False
+3291d7f6,index_diachronica_original.html:10579,jV[+nas] → jV[-nas] / #_,jV[+nas],jV[-nas],#_,,False,asca_guess,jV[+nas],jV[-nas],#_,,True
+4f2b46ae,index_diachronica_original.html:4680,v ʁ → p q / S_,v ʁ,p q,S_,,False,asca_guess,"v, ʁ","p, q",S_,,True
+a0bce6f8,index_diachronica_original.html:2796,l n → r l / #_ (sporadic),l n,r l,#_ (sporadic),,False,asca_guess,"l, n","r, l",#_,,True
+aac6f5d7,index_diachronica_original.html:13413,bl br → p pʰ,bl br,p pʰ,,,False,asca_guess,"bl, br","p, pʰ",,,True
+13af0d7d,index_diachronica_original.html:10513,ntç tç → (n̪)t̪ʰ t̪,ntç tç,(n̪)t̪ʰ t̪,,,False,asca_guess,"ntç, tç","n̪t̪ʰ, t̪",,,True
+777598e2,index_diachronica_original.html:2949,"t → {s,ð} / “unpredictably, to eliminate sV(C)t and tV(C)s sequences”",t,"{s,ð}","“unpredictably, to eliminate sV(C)t and tV(C)s sequences”",,False,asca_guess,t,"{s,ð}",,,False
+85fb2843,index_diachronica_original.html:2847,C[+ voice] → C[- voice] / _#,C[+ voice],C[- voice],_#,,False,asca_guess,C[+voice],C[-voice],_#,,True
+f4f25490,index_diachronica_original.html:12126,LTS → ldʒ,LTS,ldʒ,,,False,asca_guess,LTS,ldʒ,,,False
+ebfa7454,index_diachronica_original.html:4861,a → æ / i(C)_,a,æ,i(C)_,,False,asca_guess,a,æ,i(C)_,,True
+7ce109e7,index_diachronica_original.html:7076,ɛ → ɔ / _ɫ (if the vowel was from a yer),ɛ,ɔ,_ɫ (if the vowel was from a yer),,False,asca_guess,ɛ,ɔ,_ɫ,,True
+a1e43e57,index_diachronica_original.html:12591,"hs → sh / _{n,w}",hs,sh,"_{n,w}",,False,asca_guess,hs,sh,"_{n,w}",,True
+a523deba,index_diachronica_original.html:1774,"p t k → {hp,∅} ht {hk,∅}",p t k,"{hp,∅} ht {hk,∅}",,,False,asca_guess,p t k,"{hp,∅} ht {hk,∅}",,,False
+2b6704ee,index_diachronica_original.html:3396,C → ∅ / _#,C,∅,_#,,False,asca_guess,C,∅,_#,,True
+7041c1ca,index_diachronica_original.html:13691,"k ᵐb ⁿd → {k,h} b {s,t} / #_",k ᵐb ⁿd,"{k,h} b {s,t}",#_,,False,asca_guess,k ᵐb ⁿd,"{k,h} b {s,t}",#_,,True
+94d05093,index_diachronica_original.html:2889,ɭ → lʔ / _#,ɭ,lʔ,_#,,False,asca_guess,ɭ,lʔ,_#,,True
+d3c1181b,index_diachronica_original.html:6614,n → ∅ / _#,n,∅,_#,,False,asca_guess,n,∅,_#,,True
+14a6c643,index_diachronica_original.html:5554,— st zd → sː dː / [anything]_,— st zd,sː dː,[anything]_,,False,asca_guess,"st, zd","s:[+long], d:[+long]",[anything]_,,False
+e51789dc,index_diachronica_original.html:3850,"R l L → {r,ʔ} ɭ l",R l L,"{r,ʔ} ɭ l",,,False,asca_guess,R l L,"{r,ʔ} ɭ l",,,False
+8d321b88,index_diachronica_original.html:13815,tk → k / in Pre-Livonian (?),tk,k,in Pre-Livonian (?),,False,asca_guess,tk,k,in Pre-Livonian_,,True
+4a6526be,index_diachronica_original.html:14362,ɛu au → ɛv av,ɛu au,ɛv av,,,False,asca_guess,"ɛu, au","ɛv, av",,,True
+7aa3f370,index_diachronica_original.html:10829,ɛ → i / n_#,ɛ,i,n_#,,False,asca_guess,ɛ,i,n_#,,True
+6b4ab8d0,index_diachronica_original.html:9359,e → a,e,a,,,False,asca_guess,e,a,,,True
+d4e1c9ba,index_diachronica_original.html:12463,j → ∅ / ts_,j,∅,ts_,,False,asca_guess,j,∅,ts_,,True
+41ccc533,index_diachronica_original.html:6382,nː → tn / V_,nː,tn,V_,,False,asca_guess,n:[+long],tn,V_,,True
+21f2ab29,index_diachronica_original.html:14056,l → ɲ / #_ “(in doubt; initial *l occurs in too few cognates to be sure. Apparently PUA initial *l was rare and is of questionable certainty whether it existed at all.)”,l,ɲ,#_ “(in doubt; initial *l occurs in too few cognates to be sure. Apparently PUA initial *l was rare and is of questionable certainty whether it existed at all.)”,,False,asca_guess,l,ɲ,#_,,True
+59d964ea,index_diachronica_original.html:12329,r → ts / _i,r,ts,_i,,False,asca_guess,r,ts,_i,,True
+499e965b,index_diachronica_original.html:9089,b d → m n / #_a,b d,m n,#_a,,False,asca_guess,"b, d","m, n",#_a,,True
+e8cc1f34,index_diachronica_original.html:8500,p → k / _w,p,k,_w,,False,asca_guess,p,k,_w,,True
+772c1baf,index_diachronica_original.html:14392,V → Vː / _#,V,Vː,_#,,False,asca_guess,V,V:[+long],_#,,True
+47372dbd,index_diachronica_original.html:8066,j → ∅ / r_,j,∅,r_,,False,asca_guess,j,∅,r_,,True
+4bb32943,index_diachronica_original.html:12356,"∅ → Vː[+high rising tone] / C_# (“usually one of [/aː iː ʌ̃ː/ with this tone], the conditions are unclear”)",∅,Vː[+high rising tone],"C_# (“usually one of [/aː iː ʌ̃ː/ with this tone], the conditions are unclear”)",,False,asca_guess,∅,V:[+long][+highrisingtone],C_#,,False
+5f45fefd,index_diachronica_original.html:5992,"{eɑh,eɑç,eɑx,eɑʝ,eɑɣ} → ɑw","{eɑh,eɑç,eɑx,eɑʝ,eɑɣ}",ɑw,,,False,asca_guess,"{eɑh,eɑç,eɑx,eɑʝ,eɑɣ}",ɑw,,,True
+053400a1,index_diachronica_original.html:9088,b d k → b~β ɾ~l~∅ k~x~ɡ~ɣ / V_V,b d k,b~β ɾ~l~∅ k~x~ɡ~ɣ,V_V,,False,asca_guess,"b, d, k","b~β, ɾ~l~∅, k~x~ɡ~ɣ",V_V,,False
+959c74bd,index_diachronica_original.html:5380,b d ɡ(ʷ) → p t k,b d ɡ(ʷ),p t k,,,False,asca_guess,"b, d, ɡ","p, t, k",,,True
+70de8738,index_diachronica_original.html:6917,C(C) → ∅ / C_#,C(C),∅,C_#,,False,asca_guess,C,∅,C_#,,True
+2db173c5,index_diachronica_original.html:3068,h → ∅ / V_V,h,∅,V_V,,False,asca_guess,h,∅,V_V,,True
+284be5ac,index_diachronica_original.html:4291,dzʲ dzʷ → dʑ ʑʷ,dzʲ dzʷ,dʑ ʑʷ,,,False,asca_guess,"dzʲ, dzʷ","dʑ, ʑʷ",,,True
+2b87c0b4,index_diachronica_original.html:3050,"{p,t} n → c̚ ɲ / {i,ɛ}_#","{p,t} n",c̚ ɲ,"{i,ɛ}_#",,False,asca_guess,"{p,t} n",c̚ ɲ,"{i,ɛ}_#",,False
+0402c6d8,index_diachronica_original.html:6638,n → ∅ / _s,n,∅,_s,,False,asca_guess,n,∅,_s,,True
+0737eac4,index_diachronica_original.html:14334,æ → ɛ / _C[+alveolar],æ,ɛ,_C[+alveolar],,False,asca_guess,æ,ɛ,_C[+alveolar],,False
+f2a382ab,index_diachronica_original.html:10740,aji → iː / when unstressed,aji,iː,when unstressed,,False,asca_guess,aji,i:[+long],when unstressed_,,True
+dbd78c0f,index_diachronica_original.html:10803,"e → i / {kʲ,nt}_ when stressed",e,i,"{kʲ,nt}_ when stressed",,False,asca_guess,e,i,"{kʲ,nt}_",,True
+01173c2e,index_diachronica_original.html:11307,tʃh → ʃ,tʃh,ʃ,,,False,asca_guess,tʃh,ʃ,,,True
+b11b29bc,index_diachronica_original.html:6012,t d → θ ð (conditioning unclear),t d,θ ð (conditioning unclear),,,False,asca_guess,"t, d","θ, ð",,,True
+441f0eb2,index_diachronica_original.html:8358,ə → ∅ / C_CV (not sure if this happened all the time or not),ə,∅,C_CV (not sure if this happened all the time or not),,False,asca_guess,ə,∅,C_CV,,True
+ba020c80,index_diachronica_original.html:6041,xs → sː,xs,sː,,,False,asca_guess,xs,s:[+long],,,True
+2fdc2e7c,index_diachronica_original.html:7571,"{ei,ɔi} → oi / C[-nas]","{ei,ɔi}",oi,C[-nas],,False,asca_guess,"{ei,ɔi}",oi,C[-nas]_,,True
+7888bdee,index_diachronica_original.html:13379,xʷ ɣʷ → kʷ ɡʷ,xʷ ɣʷ,kʷ ɡʷ,,,False,asca_guess,"xʷ, ɣʷ","kʷ, ɡʷ",,,True
+a2fab375,index_diachronica_original.html:2985,∅ → h / a_#,∅,h,a_#,,False,asca_guess,∅,h,a_#,,True
+fd9c13c1,index_diachronica_original.html:12961,pr sr tʲr kr → bθ sn ʃn ɡθ,pr sr tʲr kr,bθ sn ʃn ɡθ,,,False,asca_guess,"pr, sr, tʲr, kr","bθ, sn, ʃn, ɡθ",,,True
+53be895b,index_diachronica_original.html:7476,— aː → a,— aː,a,,,False,asca_guess,a:[+long],a,,,True
+cfd52f38,index_diachronica_original.html:6503,h → ∅ / _l,h,∅,_l,,False,asca_guess,h,∅,_l,,True
+8ff1848a,index_diachronica_original.html:10556,ɪ(Cɪ) → e(Ci) / t_; “vowel nasalizations are retained either way on each”,ɪ(Cɪ),e(Ci),t_; “vowel nasalizations are retained either way on each”,,False,asca_guess,ɪ,e,t_,,True
+215f94db,index_diachronica_original.html:9427,Vː → ə / in #U,Vː,ə,in #U,,False,asca_guess,V:[+long],ə,in #U_,,False
+e70e38fb,index_diachronica_original.html:6802,e(ː) → a(ː) / h₂_,e(ː),a(ː),h₂_,,False,asca_guess,e,a,h2_,,True
+34cf2a70,index_diachronica_original.html:6976,au aːu ai aːi → au oː ai eː / ! _V,au aːu ai aːi,au oː ai eː,,_V,False,asca_guess,"au, a:[+long]u, ai, a:[+long]i","au, o:[+long], ai, e:[+long]",,_V,True
+b3557a54,index_diachronica_original.html:11150,V → i / C”iC_,V,i,C”iC_,,False,asca_guess,V,i,C_,,True
+316feeb1,index_diachronica_original.html:3233,jʰ → h / _i,jʰ,h,_i,,False,asca_guess,jʰ,h,_i,,False
+eef172e9,index_diachronica_original.html:1321,"s → {ʃ,h} / in “anaphora and certain derivational prefixes. . .[t]his is common to many other Semitic languages as well”",s,"{ʃ,h}",in “anaphora and certain derivational prefixes. . .[t]his is common to many other Semitic languages as well”,,False,asca_guess,s,"{ʃ,h}",in_,,True
+4a722dbf,index_diachronica_original.html:6533,ey → ø,ey,ø,,,False,asca_guess,ey,ø,,,True
+43bc5b38,index_diachronica_original.html:12642,hw → ∅ / õ_,hw,∅,õ_,,False,asca_guess,hw,∅,õ_,,False
+1fb7ea31,index_diachronica_original.html:11848,"un → uɛn / ! {C[+dental],C[+sibilant]}_",un,uɛn,,"{C[+dental],C[+sibilant]}_",False,asca_guess,un,uɛn,,"{C[+dental],C[+sibilant]}_",False
+0fefbed0,index_diachronica_original.html:6724,"{Hₓ,m̩,n̩} → a","{Hₓ,m̩,n̩}",a,,,False,asca_guess,"{Hx,m:[+syll],n:[+syll]}",a,,,False
+2cfc3741,index_diachronica_original.html:2813,k → ∅ / _# (sporadic),k,∅,_# (sporadic),,False,asca_guess,k,∅,_#,,True
+c97f1bd8,index_diachronica_original.html:6188,j → ∅ / #_,j,∅,#_,,False,asca_guess,j,∅,#_,,True
+1a306f0d,index_diachronica_original.html:5428,"l → ɫ / {C,lV}_",l,ɫ,"{C,lV}_",,False,asca_guess,l,ɫ,"{C,lV}_",,True
+98cc2e29,index_diachronica_original.html:10456,ʋ̃ → m / #(C)V_,ʋ̃,m,#(C)V_,,False,asca_guess,ʋ̃,m,#(C)V_,,True
+d5fcbada,index_diachronica_original.html:13023,"r → {d,n}",r,"{d,n}",,,False,asca_guess,r,"{d,n}",,,True
+e46c699e,index_diachronica_original.html:7422,j → dʒ → ʒ / #_,j,dʒ → ʒ,#_,,False,asca_guess,j,dʒ → ʒ,#_,,False
+c1202ceb,index_diachronica_original.html:10270,ɬ → l,ɬ,l,,,False,asca_guess,ɬ,l,,,True
+adf34fb7,index_diachronica_original.html:2255,æ → ʌ / P_Cu,æ,ʌ,P_Cu,,False,asca_guess,æ,ʌ,P_Cu,,True
+d08c4e1e,index_diachronica_original.html:4142,qʲː ɢʲ → q ɣʲ,qʲː ɢʲ,q ɣʲ,,,False,asca_guess,"qʲ:[+long], ɢʲ","q, ɣʲ",,,True
+c1aede2b,index_diachronica_original.html:2179,e → o / P_Cu,e,o,P_Cu,,False,asca_guess,e,o,P_Cu,,True
+edb45895,index_diachronica_original.html:6186,i → eː / _ʀ#,i,eː,_ʀ#,,False,asca_guess,i,e:[+long],_ʀ#,,True
+5515b87f,index_diachronica_original.html:7693,ɡʷ → ɡw / C_a,ɡʷ,ɡw,C_a,,False,asca_guess,ɡʷ,ɡw,C_a,,True
+bd4932fd,index_diachronica_original.html:3916,"s sː ɬː x xː → {s,ʃ} x ɬ {x,h} x",s sː ɬː x xː,"{s,ʃ} x ɬ {x,h} x",,,False,asca_guess,s s:[+long] ɬ:[+long] x x:[+long],"{s,ʃ} x ɬ {x,h} x",,,True
+f2d4e0f1,index_diachronica_original.html:11105,ŋ → n,ŋ,n,,,False,asca_guess,ŋ,n,,,True
+5265ef8a,index_diachronica_original.html:13026,k → ∅ / ”Vs_,k,∅,”Vs_,,False,asca_guess,k,∅,,,True
+cd12cb00,index_diachronica_original.html:6587,ɑː → æː,ɑː,æː,,,False,asca_guess,ɑ:[+long],æ:[+long],,,True
+a33e1727,index_diachronica_original.html:13353,o → u / _N,o,u,_N,,False,asca_guess,o,u,_N,,True
+6df55693,index_diachronica_original.html:1336,S → [+ voice] / V_R,S,[+ voice],V_R,,False,asca_guess,S,[+voice],V_R,,False
+c610f9b1,index_diachronica_original.html:4289,ʔ(ʷ)~qʼ(ʷ) → ʔ(ʷ),ʔ(ʷ)~qʼ(ʷ),ʔ(ʷ),,,False,asca_guess,ʔʷ~qʼ,ʔ,,,False
+db8ef840,index_diachronica_original.html:6717,Vns → Vːs,Vns,Vːs,,,False,asca_guess,Vns,V:[+long]s,,,True
+c9b337d2,index_diachronica_original.html:7506,"k ɡ → t d / {n,r}_r",k ɡ,t d,"{n,r}_r",,False,asca_guess,"k, ɡ","t, d","{n,r}_r",,True
+173dad58,index_diachronica_original.html:4197,q qʷ → χ χʷ,q qʷ,χ χʷ,,,False,asca_guess,"q, qʷ","χ, χʷ",,,True
+8d60411a,index_diachronica_original.html:9507,t k → k kʷ,t k,k kʷ,,,False,asca_guess,"t, k","k, kʷ",,,True
+bc303813,index_diachronica_original.html:8238,z → r,z,r,,,False,asca_guess,z,r,,,True
+2d269a7e,index_diachronica_original.html:2193,tʃ → d / #,tʃ,d,#,,False,asca_guess,tʃ,d,#,,False
+b3ec8e26,index_diachronica_original.html:2911,"iw uj → {ju,i} oj / _#",iw uj,"{ju,i} oj",_#,,False,asca_guess,iw uj,"{ju,i} oj",_#,,True
+21cccb7c,index_diachronica_original.html:2290,v → w,v,w,,,False,asca_guess,v,w,,,True
+d938a0bf,index_diachronica_original.html:11884,"awʔ → ɔʔ (“Trigault gives a variant in -ɛʔ, which becomes general in the later GH varieties”)",awʔ,"ɔʔ (“Trigault gives a variant in -ɛʔ, which becomes general in the later GH varieties”)",,,False,asca_guess,awʔ,ɔʔ,,,True
+8fef9a22,index_diachronica_original.html:8875,"ⁿQʰ {ǀʰ͜q,ǀʰ͜ɢ} Q͡q → ⁿQ(ʰ) ⁿǀʰ Q[+voiced]","ⁿQʰ {ǀʰ͜q,ǀʰ͜ɢ} Q͡q",ⁿQ(ʰ) ⁿǀʰ Q[+voiced],,,False,asca_guess,"ⁿQʰ {ǀʰ͜q,ǀʰ͜ɢ} Q͡q",ⁿQʰ ⁿǀʰ Q[+voice],,,False
+5926e233,index_diachronica_original.html:13230,uo → ɔː,uo,ɔː,,,False,asca_guess,uo,ɔ:[+long],,,True
+8d21769a,index_diachronica_original.html:10673,"t d → tʃ dʒ / _{u,i}",t d,tʃ dʒ,"_{u,i}",,False,asca_guess,"t, d","tʃ, dʒ","_{u,i}",,True
+fbfbe3db,index_diachronica_original.html:12823,t → dʒ / _E[-stress],t,dʒ,_E[-stress],,False,asca_guess,t,dʒ,_E[-stress],,False
+756f9725,index_diachronica_original.html:14439,iː → i,iː,i,,,False,asca_guess,i:[+long],i,,,True
+703b4948,index_diachronica_original.html:13987,t → l / medially,t,l,medially,,False,asca_guess,t,l,medially_,,True
+9dbecb88,index_diachronica_original.html:2116,"{ʃ,z} → s","{ʃ,z}",s,,,False,asca_guess,"{ʃ,z}",s,,,True
+d3d777d5,index_diachronica_original.html:7858,"{p,b} → ∅ / R_s# (unless blocked by analogy)","{p,b}",∅,R_s# (unless blocked by analogy),,False,asca_guess,"{p,b}",∅,R_s#,,False
+a28fb32d,index_diachronica_original.html:7533,k ɡ → tʃ dʒ / _a,k ɡ,tʃ dʒ,_a,,False,asca_guess,"k, ɡ","tʃ, dʒ",_a,,True
+c1b1a493,index_diachronica_original.html:6098,x → k / _s,x,k,_s,,False,asca_guess,x,k,_s,,True
+071ed892,index_diachronica_original.html:9324,i → ∅ / C”V(C)_,i,∅,C”V(C)_,,False,asca_guess,i,∅,C_,,True
+e702341b,index_diachronica_original.html:2114,ɡ → ∅ / iV_,ɡ,∅,iV_,,False,asca_guess,ɡ,∅,iV_,,True
+98ee4fbf,index_diachronica_original.html:3702,ə → a / in U#,ə,a,in U#,,False,asca_guess,ə,a,_in U#,,False
+dfdf94b0,index_diachronica_original.html:5047,j → ∅ / #_e (not widely attested),j,∅,#_e (not widely attested),,False,asca_guess,j,∅,#_e,,True
+56d52ab5,index_diachronica_original.html:5891,ʍ → xw (some speakers seem to have resisted this),ʍ,xw (some speakers seem to have resisted this),,,False,asca_guess,ʍ,xw,,,True
+33ec23c2,index_diachronica_original.html:13965,p t ts s → v r ∅ h,p t ts s,v r ∅ h,,,False,asca_guess,"p, t, ts, s","v, r, ∅, h",,,True
+1c4d7a91,index_diachronica_original.html:10933,tʲ ʂ → j ʃ,tʲ ʂ,j ʃ,,,False,asca_guess,"tʲ, ʂ","j, ʃ",,,True
+3c68ab91,index_diachronica_original.html:2415,((h)ə)p d → b t / _l,((h)ə)p d,b t,_l,,False,asca_guess,"həp, d","b, t",_l,,True
+56c2215e,index_diachronica_original.html:10241,xʲ → s,xʲ,s,,,False,asca_guess,xʲ,s,,,True
+6f88599a,index_diachronica_original.html:7047,jь → i / utterance-initially (cf. English utterance-initial glottal stops before vowels),jь,i,utterance-initially (cf. English utterance-initial glottal stops before vowels),,False,asca_guess,jь,i,utterance-initially_,,False
+b0554cc0,index_diachronica_original.html:8030,s → i / #(C…)V_#,s,i,#(C…)V_#,,False,asca_guess,s,i,#(C…)V_#,,False
+61a6fe00,index_diachronica_original.html:7708,sj → jʒ / V_V,sj,jʒ,V_V,,False,asca_guess,sj,jʒ,V_V,,True
+5dbaf916,index_diachronica_original.html:5431,N → w / S_S,N,w,S_S,,False,asca_guess,N,w,S_S,,True
+88f2824a,index_diachronica_original.html:3150,— oCo → œC (sporadic),— oCo,œC (sporadic),,,False,asca_guess,oCo,œC,,,True
+5cadf3de,index_diachronica_original.html:2488,w → ∅ / tV_wk (conjectured),w,∅,tV_wk (conjectured),,False,asca_guess,w,∅,tV_wk,,True
+5eada4be,index_diachronica_original.html:7503,"∅ → b / m_{r,l}",∅,b,"m_{r,l}",,False,asca_guess,∅,b,"m_{r,l}",,True
+59a96a86,index_diachronica_original.html:3715,ɣ → ŋ,ɣ,ŋ,,,False,asca_guess,ɣ,ŋ,,,True
+dbc35c2b,index_diachronica_original.html:11867,ye jej → yɛ i,ye jej,yɛ i,,,False,asca_guess,"ye, jej","yɛ, i",,,True
+c46dc4e6,index_diachronica_original.html:6332,j → ∅ / Ḱ_,j,∅,Ḱ_,,False,asca_guess,j,∅,Ḱ_,,False
+0e6d4533,index_diachronica_original.html:8140,mb mn → mː nː,mb mn,mː nː,,,False,asca_guess,"mb, mn","m:[+long], n:[+long]",,,True
+4d6443a1,index_diachronica_original.html:6879,Vm → Vv → V[+nas]v / _V,Vm,Vv → V[+nas]v,_V,,False,asca_guess,Vm,Vv → V[+nas]v,_V,,False
+e64a9e3d,index_diachronica_original.html:11225,ʈʂ → s / _K,ʈʂ,s,_K,,False,asca_guess,ʈʂ,s,_K,,True
+91df01ee,index_diachronica_original.html:7156,w → ∅ / C_C (sporadic),w,∅,C_C (sporadic),,False,asca_guess,w,∅,C_C,,True
+55257b85,index_diachronica_original.html:2066,s → θ,s,θ,,,False,asca_guess,s,θ,,,True
+91028c4b,index_diachronica_original.html:5348,"{sk,ks} kj → tsʰ tʃʰ (?)","{sk,ks} kj",tsʰ tʃʰ (?),,,False,asca_guess,"{sk,ks} kj",tsʰ tʃʰ,,,True
+99f6c9b8,index_diachronica_original.html:2059,V[-long] → ∅ / _hV,V[-long],∅,_hV,,False,asca_guess,V[-long],∅,_hV,,True
+8d78187e,index_diachronica_original.html:6964,sɕ ɕʂ → ɕː ʂː,sɕ ɕʂ,ɕː ʂː,,,False,asca_guess,"sɕ, ɕʂ","ɕ:[+long], ʂ:[+long]",,,True
+a9211336,index_diachronica_original.html:6185,"i → ɪ / _NS[- voice] ! _NS(C){o,i,j}",i,ɪ,_NS[- voice],"_NS(C){o,i,j}",False,asca_guess,i,ɪ,_NS[-voice],"_NS(C){o,i,j}",True
+3cbe6e00,index_diachronica_original.html:7695,d → ∅ / V_V,d,∅,V_V,,False,asca_guess,d,∅,V_V,,True
+b0a0c781,index_diachronica_original.html:14166,e → j / #_V (at least a few times?),e,j,#_V (at least a few times?),,False,asca_guess,e,j,#_V,,True
+459165b0,index_diachronica_original.html:6287,β ɣ → f h / _%,β ɣ,f h,_%,,False,asca_guess,"β, ɣ","f, h",_%,,True
+550fc6b0,index_diachronica_original.html:6864,ɟʱ → ɦ,ɟʱ,ɦ,,,False,asca_guess,ɟʱ,ɦ,,,True
+f09b4566,index_diachronica_original.html:7075,ŕ → ʐ / else,ŕ,ʐ,else,,False,asca_guess,ŕ,ʐ,else_,,False
+3e2987ec,index_diachronica_original.html:12545,n → ∅ / _s,n,∅,_s,,False,asca_guess,n,∅,_s,,True
+fab125d1,index_diachronica_original.html:9539,*ŕ → ∅,*ŕ,∅,,,False,asca_guess,*ŕ,∅,,,False
+c70ca545,index_diachronica_original.html:14381,li ni ri si → lʲi nʲi rʲi sʲi,li ni ri si,lʲi nʲi rʲi sʲi,,,False,asca_guess,"li, ni, ri, si","lʲi, nʲi, rʲi, sʲi",,,True
+1c469154,index_diachronica_original.html:1345,"∅ → F / N_{O,r} ! m_f",∅,F,"N_{O,r}",m_f,False,asca_guess,∅,F,"N_{O,r}",m_f,False
+72fd255a,index_diachronica_original.html:6442,o → ø / _Cr,o,ø,_Cr,,False,asca_guess,o,ø,_Cr,,True
+c627426d,index_diachronica_original.html:7808,"N → ∅ / _#, in polysyllables",N,∅,"_#, in polysyllables",,False,asca_guess,N,∅,"_#,",,False
+b9dca53e,index_diachronica_original.html:13985,"p → v / {Vₙ,ɨ}_ (the latter “sometimes”)",p,v,"{Vₙ,ɨ}_ (the latter “sometimes”)",,False,asca_guess,p,v,"{Vₙ,ɨ}_",,False
+4ed25f04,index_diachronica_original.html:6804,e(ː) → o(ː) / h₃_,e(ː),o(ː),h₃_,,False,asca_guess,e,o,h3_,,True
+77f5fe1b,index_diachronica_original.html:1284,O[+lateral] → O[+palatal],O[+lateral],O[+palatal],,,False,asca_guess,O[+lateral],O[+palatal],,,False
+245c0194,index_diachronica_original.html:7919,rtj → rts → rs,rtj,rts → rs,,,False,asca_guess,rtj,rts → rs,,,False
+32a355d7,index_diachronica_original.html:2045,r → ∅ / n_,r,∅,n_,,False,asca_guess,r,∅,n_,,True
+0b0f2877,index_diachronica_original.html:11534,{i3~e3} → {i3.ə3},{i3~e3},{i3.ə3},,,False,asca_guess,{i3~e3},{i3.ə3},,,False
+fe2cf015,index_diachronica_original.html:3430,a → e (rare?),a,e (rare?),,,False,asca_guess,a,e,,,True
+61ad4e77,index_diachronica_original.html:11339,"j → ∅ / i_{a,u}",j,∅,"i_{a,u}",,False,asca_guess,j,∅,"i_{a,u}",,True
+8fb9c315,index_diachronica_original.html:9415,Vː → V[-long] / in #U,Vː,V[-long],in #U,,False,asca_guess,V:[+long],V[-long],in #U_,,False
+5aeae618,index_diachronica_original.html:5247,N̩ → n / _#,N̩,n,_#,,False,asca_guess,N:[+syll],n,_#,,True
+c391e39b,index_diachronica_original.html:1135,"{s₁,s₃} → ʃ","{s₁,s₃}",ʃ,,,False,asca_guess,"{s1,s3}",ʃ,,,False
+d99d21b8,index_diachronica_original.html:3796,n → ŋ / _# (?),n,ŋ,_# (?),,False,asca_guess,n,ŋ,_#,,True
+36f6a8b7,index_diachronica_original.html:2744,iw → uj,iw,uj,,,False,asca_guess,iw,uj,,,True
+d42f0652,index_diachronica_original.html:11516,lʲ → l,lʲ,l,,,False,asca_guess,lʲ,l,,,True
+f562886c,index_diachronica_original.html:9818,l → j / a_i,l,j,a_i,,False,asca_guess,l,j,a_i,,True
+6df12fda,index_diachronica_original.html:6942,j w → dʒ b / V_V,j w,dʒ b,V_V,,False,asca_guess,"j, w","dʒ, b",V_V,,True
+0113d7e2,index_diachronica_original.html:11195,tʃʼ → tʃ,tʃʼ,tʃ,,,False,asca_guess,tʃʼ,tʃ,,,True
+f2b19de8,index_diachronica_original.html:5592,V → ɨ / _(C…)j(C…)#,V,ɨ,_(C…)j(C…)#,,False,asca_guess,V,ɨ,_(C…)j(C…)#,,False
+c332344f,index_diachronica_original.html:4755,"F[+voice] → F[-voice] / adjacent to {S,ts}",F[+voice],F[-voice],"adjacent to {S,ts}",,False,asca_guess,F[+voice],F[-voice],"adjacent to {S,ts}_",,True
+ba8f215d,index_diachronica_original.html:11190,qh → h / _r,qh,h,_r,,False,asca_guess,qh,h,_r,,True
+f13d8811,index_diachronica_original.html:11886,jawʔ wawʔ → iɔʔ uɔʔ,jawʔ wawʔ,iɔʔ uɔʔ,,,False,asca_guess,"jawʔ, wawʔ","iɔʔ, uɔʔ",,,True
+be1b4bb5,index_diachronica_original.html:4319,sʼ ʃʼ~ɕʼ → tsʼ ʃʼ,sʼ ʃʼ~ɕʼ,tsʼ ʃʼ,,,False,asca_guess,"sʼ, ʃʼ~ɕʼ","tsʼ, ʃʼ",,,False
+93d5b206,index_diachronica_original.html:6110,uə yə iə → uː yː iː,uə yə iə,uː yː iː,,,False,asca_guess,"uə, yə, iə","u:[+long], y:[+long], i:[+long]",,,True
+43771f61,index_diachronica_original.html:4813,F[+voice] → S / l̥_,F[+voice],S,l̥_,,False,asca_guess,F[+voice],S,l̥_,,True
+2fac92c5,index_diachronica_original.html:3354,ð → l,ð,l,,,False,asca_guess,ð,l,,,True
+029a7e84,index_diachronica_original.html:5212,V → (?) / _(C)#,V,(?),_(C)#,,False,asca_guess,V,∅,_(C)#,,False
+f999b4c1,index_diachronica_original.html:3567,u → e / _θ,u,e,_θ,,False,asca_guess,u,e,_θ,,True
+7c5fcb7b,index_diachronica_original.html:3959,"q ɢ → {x,q} ɣ",q ɢ,"{x,q} ɣ",,,False,asca_guess,q ɢ,"{x,q} ɣ",,,True
+b5662acd,index_diachronica_original.html:3437,C → ∅ / _# (except for *k?),C,∅,_# (except for *k?),,False,asca_guess,C,∅,_#,,True
+088d73e8,index_diachronica_original.html:5080,k → ∅ / V_V,k,∅,V_V,,False,asca_guess,k,∅,V_V,,True
+2b9bc371,index_diachronica_original.html:14175,"{ɾ,r} → ʎ / {i,j}_ (eastern dialects)","{ɾ,r}",ʎ,"{i,j}_ (eastern dialects)",,False,asca_guess,"{ɾ,r}",ʎ,"{i,j}_",,True
+29a99db7,index_diachronica_original.html:9646,kpʼ → ɡb,kpʼ,ɡb,,,False,asca_guess,kpʼ,ɡb,,,True
+889d70c0,index_diachronica_original.html:12028,çl → sj,çl,sj,,,False,asca_guess,çl,sj,,,True
+0270117e,index_diachronica_original.html:3500,"c *R → ∅ {l,∅}",c *R,"∅ {l,∅}",,,False,asca_guess,c *R,"∅ {l,∅}",,,False
+805907f9,index_diachronica_original.html:12509,ara → aː / “unaccented syllables only”,ara,aː,“unaccented syllables only”,,False,asca_guess,ara,a:[+long],,,True
+b5c1db0e,index_diachronica_original.html:9469,∅ → w / #uː(C)_a,∅,w,#uː(C)_a,,False,asca_guess,∅,w,#u:[+long](C)_a,,True
+00eb1130,index_diachronica_original.html:10151,ʊ → o,ʊ,o,,,False,asca_guess,ʊ,o,,,True
+80eb26f9,index_diachronica_original.html:1162,ts → ʃ / _i,ts,ʃ,_i,,False,asca_guess,ts,ʃ,_i,,True
+f46bb8ce,index_diachronica_original.html:1660,"W → n / {#,V}_",W,n,"{#,V}_",,False,asca_guess,W,n,"{#,V}_",,False
+b667777a,index_diachronica_original.html:1016,ʔ → ∅,ʔ,∅,,,False,asca_guess,ʔ,∅,,,True
+a63dd3ab,index_diachronica_original.html:9611,z → s,z,s,,,False,asca_guess,z,s,,,True
+0d4f61b5,index_diachronica_original.html:4716,Cː → C,Cː,C,,,False,asca_guess,C:[+long],C,,,True
+01a64dbd,index_diachronica_original.html:4124,tɕʷ(ʼ) tɕʷː → tʃ(ʼ) dʒ~ʒ,tɕʷ(ʼ) tɕʷː,tʃ(ʼ) dʒ~ʒ,,,False,asca_guess,"tɕʷʼ, tɕʷ:[+long]","tʃʼ, dʒ~ʒ",,,False
+f8687bc7,index_diachronica_original.html:5451,u̯ → v,u̯,v,,,False,asca_guess,u̯,v,,,True
+fa7a4cf2,index_diachronica_original.html:3123,"a(C)V[+ high] a(C)V[+ mid] aCa → ɔ(C) a(C) {ɔ,a}(C)ə",a(C)V[+ high] a(C)V[+ mid] aCa,"ɔ(C) a(C) {ɔ,a}(C)ə",,,False,asca_guess,aCV[+high] aCV[+mid] aCa,"ɔC aC {ɔ,a}Cə",,,False
+36d02dd5,index_diachronica_original.html:8217,"tɾ → {tɾ̥,tʃ,tʂ}",tɾ,"{tɾ̥,tʃ,tʂ}",,,False,asca_guess,tɾ,"{tɾ̥,tʃ,tʂ}",,,True
+5f7ec6fc,index_diachronica_original.html:10407,"tʃʼ → {sʼ,tʃʼ} : tɬʼ",tʃʼ,"{sʼ,tʃʼ} : tɬʼ",,,False,asca_guess,tʃʼ,"{sʼ,tʃʼ} : tɬʼ",,,False
+26027b42,index_diachronica_original.html:6263,"{l(ː),n}{r,ʀ} → ∅ / V{ː,V}_","{l(ː),n}{r,ʀ}",∅,"V{ː,V}_",,False,asca_guess,"{l:[+long],n}{r,ʀ}",∅,"V{:[+long],V}_",,False
+b3a02609,index_diachronica_original.html:7761,— o → u (during the literary period),— o,u (during the literary period),,,False,asca_guess,o,u,,,True
+8de712f3,index_diachronica_original.html:5923,ø → ɪ,ø,ɪ,,,False,asca_guess,ø,ɪ,,,True
+31527fec,index_diachronica_original.html:9508,tʃ → s / _i,tʃ,s,_i,,False,asca_guess,tʃ,s,_i,,True
+3be4790e,index_diachronica_original.html:3826,Vː → V[- long],Vː,V[- long],,,False,asca_guess,V:[+long],V[-long],,,True
+e3373bd6,index_diachronica_original.html:3422,"*R → {∅,r} (the former seems more common)",*R,"{∅,r} (the former seems more common)",,,False,asca_guess,*R,"{∅,r}",,,False
+ed3a2537,index_diachronica_original.html:10483,"{tʃ,k} {ntʃ,nk,r} {ɲdʒ,nɡ} mp mb p b {d,l} m n → s tsʰ ts tʃʰ(w) tʃ(w) ʃ(w) dʒ(w) dʒ ŋw ɲ / _{ɪ,e}V","{tʃ,k} {ntʃ,nk,r} {ɲdʒ,nɡ} mp mb p b {d,l} m n",s tsʰ ts tʃʰ(w) tʃ(w) ʃ(w) dʒ(w) dʒ ŋw ɲ,"_{ɪ,e}V",,False,asca_guess,"{tʃ,k} {ntʃ,nk,r} {ɲdʒ,nɡ} mp mb p b {d,l} m n",s tsʰ ts tʃʰw tʃw ʃw dʒw dʒ ŋw ɲ,"_{ɪ,e}V",,True
+b8b0478b,index_diachronica_original.html:4872,"e → æ / {P,K}_",e,æ,"{P,K}_",,False,asca_guess,e,æ,"{P,K}_",,True
+13115482,index_diachronica_original.html:2174,"a e i o u æ ø y → {a,i} {e,ja} {e,i} {ø,y,o} {o,u,y} {i,a,e} {e,ø} {ø,y,o,u} / _Ce",a e i o u æ ø y,"{a,i} {e,ja} {e,i} {ø,y,o} {o,u,y} {i,a,e} {e,ø} {ø,y,o,u}",_Ce,,False,asca_guess,a e i o u æ ø y,"{a,i} {e,ja} {e,i} {ø,y,o} {o,u,y} {i,a,e} {e,ø} {ø,y,o,u}",_Ce,,True
+887943f1,index_diachronica_original.html:7191,"p → {p,kʷ}",p,"{p,kʷ}",,,False,asca_guess,p,"{p,kʷ}",,,True
+c90ffdac,index_diachronica_original.html:8160,nː lː ɾɾ → ɲ ʎ r,nː lː ɾɾ,ɲ ʎ r,,,False,asca_guess,"n:[+long], l:[+long], ɾɾ","ɲ, ʎ, r",,,True
+8dd0bf2a,index_diachronica_original.html:3738,oCa → ɔCɔ,oCa,ɔCɔ,,,False,asca_guess,oCa,ɔCɔ,,,True
+c684d0c5,index_diachronica_original.html:5928,"{y,i} → ɪ","{y,i}",ɪ,,,False,asca_guess,"{y,i}",ɪ,,,True
+c08bcaf8,index_diachronica_original.html:12151,"{p,b} Np pr {s,r}P çb Nb → p mp mbr sp ʃp p.s","{p,b} Np pr {s,r}P çb Nb",p mp mbr sp ʃp p.s,,,False,asca_guess,"{p,b} Np pr {s,r}P çb Nb",p mp mbr sp ʃp p.s,,,False
+71473d2a,index_diachronica_original.html:3635,"o e → {u,ə} i",o e,"{u,ə} i",,,False,asca_guess,o e,"{u,ə} i",,,True
+87289885,index_diachronica_original.html:12690,ts → θ,ts,θ,,,False,asca_guess,ts,θ,,,True
+3ee5fe0b,index_diachronica_original.html:10102,q ʀ → x w,q ʀ,x w,,,False,asca_guess,"q, ʀ","x, w",,,True
+9940bde6,index_diachronica_original.html:8541,Vŋ → V[+nas],Vŋ,V[+nas],,,False,asca_guess,Vŋ,V[+nas],,,True
+15b1860f,index_diachronica_original.html:13130,ɛi ei → ai iː,ɛi ei,ai iː,,,False,asca_guess,"ɛi, ei","ai, i:[+long]",,,True
+37523b3d,index_diachronica_original.html:4373,pʲ(ː) bʲ → t(ː) d,pʲ(ː) bʲ,t(ː) d,,,False,asca_guess,"pʲ:[+long], bʲ","t:[+long], d",,,True
+d8d7e488,index_diachronica_original.html:11991,C[+ sibilant] → s / _w,C[+ sibilant],s,_w,,False,asca_guess,C[+sibilant],s,_w,,False
+cf61fd82,index_diachronica_original.html:5340,"kʷ → tʃʰ / _{e,i}",kʷ,tʃʰ,"_{e,i}",,False,asca_guess,kʷ,tʃʰ,"_{e,i}",,True
+5676db87,index_diachronica_original.html:4133,ɬʷ(ː) → ʃ,ɬʷ(ː),ʃ,,,False,asca_guess,ɬʷ,ʃ,,,True
+ade0d0ee,index_diachronica_original.html:6695,Vns → V(ː)s (Tucker says that “[i]n a few Doric dialects the lengthening did not occur”),Vns,V(ː)s (Tucker says that “[i]n a few Doric dialects the lengthening did not occur”),,,False,asca_guess,Vns,V:[+long]s,,,True
+5bc1fc10,index_diachronica_original.html:5076,ḱː → z,ḱː,z,,,False,asca_guess,ḱ:[+long],z,,,False
+5543251f,index_diachronica_original.html:1844,θ → s / _k,θ,s,_k,,False,asca_guess,θ,s,_k,,True
+fe8e2416,index_diachronica_original.html:5396,N̩ → n / _#,N̩,n,_#,,False,asca_guess,N:[+syll],n,_#,,True
+88bee165,index_diachronica_original.html:5458,hw → ŋʷh / a_a,hw,ŋʷh,a_a,,False,asca_guess,hw,ŋʷh,a_a,,True
+24645989,index_diachronica_original.html:5121,Vː → V[-long],Vː,V[-long],,,False,asca_guess,V:[+long],V[-long],,,True
+07e0ceb3,index_diachronica_original.html:4998,d dʱ → ð / r_,d dʱ,ð,r_,,False,asca_guess,d dʱ,ð,r_,,True
+8ea549ce,index_diachronica_original.html:14158,"u i → o e / _r{C,#}",u i,o e,"_r{C,#}",,False,asca_guess,"u, i","o, e","_r{C,#}",,True
+5a988829,index_diachronica_original.html:5470,— ∅ → a / CR_HC,— ∅,a,CR_HC,,False,asca_guess,∅,a,CR_HC,,False
+356a26f9,index_diachronica_original.html:6568,h → ∅,h,∅,,,False,asca_guess,h,∅,,,True
+8671d1ec,index_diachronica_original.html:14142,"u ũ → y ỹ / _r(p(ʰ),β,k(ʰ),ɣ,l,s̺,s̻,ʃ,h) (Souletin)",u ũ,y ỹ,"_r(p(ʰ),β,k(ʰ),ɣ,l,s̺,s̻,ʃ,h) (Souletin)",,False,asca_guess,"u, ũ","y, ỹ","_r(p(ʰ),β,k(ʰ),ɣ,l,s̺,s̻,ʃ,h)",,False
+e46e11fe,index_diachronica_original.html:8900,∅ → echo vowel / C_CV,∅,echo vowel,C_CV,,False,asca_guess,∅,echo vowel,C_CV,,True
+762effbe,index_diachronica_original.html:6136,sk → ʃ / #_,sk,ʃ,#_,,False,asca_guess,sk,ʃ,#_,,True
+5ca8ec98,index_diachronica_original.html:11660,{a3~ə3} → ə3,{a3~ə3},ə3,,,False,asca_guess,{a3~ə3},ə3,,,False
+c5c46692,index_diachronica_original.html:1029,x₂ → k / #_,x₂,k,#_,,False,asca_guess,x2,k,#_,,True
+ddc5bfd2,index_diachronica_original.html:9917,ɬh → ɬː,ɬh,ɬː,,,False,asca_guess,ɬh,ɬ:[+long],,,True
+ac2a4723,index_diachronica_original.html:4604,z → ð / medial,z,ð,medial,,False,asca_guess,z,ð,medial_,,True
+6e609caa,index_diachronica_original.html:9413,a[-long]C → Ca / #_ (! _a?),a[-long]C,Ca,#_ (,_a?),False,asca_guess,a[-long]C,Ca,#_ (,_a?),False
+4e46b7be,index_diachronica_original.html:1094,s₁ → ʃ,s₁,ʃ,,,False,asca_guess,s1,ʃ,,,False
+a1eeac35,index_diachronica_original.html:6174,"{æ,e}ːuː {æ,e}ːiː → eu ai","{æ,e}ːuː {æ,e}ːiː",eu ai,,,False,asca_guess,"{æ,e}:[+long]u:[+long] {æ,e}:[+long]i:[+long]",eu ai,,,True
+9fbd3571,index_diachronica_original.html:6413,ɡn ɡl → nj lj,ɡn ɡl,nj lj,,,False,asca_guess,"ɡn, ɡl","nj, lj",,,True
+08047a2a,index_diachronica_original.html:3306,Cː → Cʰ,Cː,Cʰ,,,False,asca_guess,C:[+long],Cʰ,,,False
+b0aad932,index_diachronica_original.html:10250,"{x,ɣ}ʔ → ɡ","{x,ɣ}ʔ",ɡ,,,False,asca_guess,"{x,ɣ}ʔ",ɡ,,,True
+ea26e808,index_diachronica_original.html:7894,pw → upw → up → ub,pw,upw → up → ub,,,False,asca_guess,pw,upw → up → ub,,,False
+f8777d77,index_diachronica_original.html:13356,əi → ai,əi,ai,,,False,asca_guess,əi,ai,,,True
+8df1691b,index_diachronica_original.html:6029,"p t k → b d ɡ → v r ɣ / Vː_{V,#}",p t k,b d ɡ → v r ɣ,"Vː_{V,#}",,False,asca_guess,p t k,b d ɡ → v r ɣ,"V:[+long]_{V,#}",,False
+ae71f1db,index_diachronica_original.html:11615,p(’) m → tʃ(’) ŋ / ! _u,p(’) m,tʃ(’) ŋ,,_u,False,asca_guess,"p’, m","tʃ’, ŋ",,_u,False
+68d4bedb,index_diachronica_original.html:8693,w → v,w,v,,,False,asca_guess,w,v,,,True
+3910b553,index_diachronica_original.html:7162,ɕ → ∅ / t_ɕtɕ,ɕ,∅,t_ɕtɕ,,False,asca_guess,ɕ,∅,t_ɕtɕ,,True
+bc027a80,index_diachronica_original.html:4257,k kʼ ɡ → kʲ kʲʼ ɡʲ,k kʼ ɡ,kʲ kʲʼ ɡʲ,,,False,asca_guess,"k, kʼ, ɡ","kʲ, kʲʼ, ɡʲ",,,True
+2ea59447,index_diachronica_original.html:5473,— Ḱ → K,— Ḱ,K,,,False,asca_guess,Ḱ,K,,,False
+ff28a440,index_diachronica_original.html:12598,ʔ → h / _C “in post-tonic syllables”,ʔ,h,_C “in post-tonic syllables”,,False,asca_guess,ʔ,h,_C,,True
+d9b9103f,index_diachronica_original.html:5398,V → (?) / _(C)#,V,(?),_(C)#,,False,asca_guess,V,∅,_(C)#,,False
+2480b1eb,index_diachronica_original.html:6740,tʃ → sː / medial,tʃ,sː,medial,,False,asca_guess,tʃ,s:[+long],medial_,,True
+648c90ab,index_diachronica_original.html:6467,"ei → eː / _C(ː,V)# (V can be a syllabic consonant)",ei,eː,"_C(ː,V)# (V can be a syllabic consonant)",,False,asca_guess,ei,e:[+long],"_C(:[+long],V)#",,False
+48053277,index_diachronica_original.html:10796,nʲ → l / #_i,nʲ,l,#_i,,False,asca_guess,nʲ,l,#_i,,True
+38e23e6a,index_diachronica_original.html:5318,N → w / S_S,N,w,S_S,,False,asca_guess,N,w,S_S,,True
+3800d4c7,index_diachronica_original.html:5347,j → ?,j,?,,,False,asca_guess,j,?,,,True
+341332b7,index_diachronica_original.html:14058,ɭ → ɖ / _a,ɭ,ɖ,_a,,False,asca_guess,ɭ,ɖ,_a,,True
+77734149,index_diachronica_original.html:6656,ts → s,ts,s,,,False,asca_guess,ts,s,,,True
+e8ff4f0c,index_diachronica_original.html:8424,k → ɡ / in U[+stress],k,ɡ,in U[+stress],,False,asca_guess,k,ɡ,in U[+stress]_,,False
+cb6ba218,index_diachronica_original.html:11456,V3h → V3ː / _C,V3h,V3ː,_C,,False,asca_guess,V3h,V3:[+long],_C,,False
+9e472bbf,index_diachronica_original.html:6392,"{lː,rl} → tl","{lː,rl}",tl,,,False,asca_guess,"{l:[+long],rl}",tl,,,True
+c3592a27,index_diachronica_original.html:6609,dz → z,dz,z,,,False,asca_guess,dz,z,,,True
+7a45c699,index_diachronica_original.html:12671,ẽ(ː) õ(ː) → ɛ̃(ː) ɔ̃(ː),ẽ(ː) õ(ː),ɛ̃(ː) ɔ̃(ː),,,False,asca_guess,"ẽ:[+long], õ","ɛ̃:[+long], ɔ̃",,,False
+1bb635f9,index_diachronica_original.html:4136,ɮʷʲ → ʒ,ɮʷʲ,ʒ,,,False,asca_guess,ɮʷʲ,ʒ,,,True
+aa1ef6d2,index_diachronica_original.html:6212,"E → ∅ / _{ʀ,s,t,θ}",E,∅,"_{ʀ,s,t,θ}",,False,asca_guess,E,∅,"_{ʀ,s,t,θ}",,False
+a0868d70,index_diachronica_original.html:10249,xʲʔ jʔ → h ʔ / _#,xʲʔ jʔ,h ʔ,_#,,False,asca_guess,"xʲʔ, jʔ","h, ʔ",_#,,True
+3d7ce2cd,index_diachronica_original.html:5390,"l → ɫ / {C,lV}_",l,ɫ,"{C,lV}_",,False,asca_guess,l,ɫ,"{C,lV}_",,True
+e9181867,index_diachronica_original.html:4260,ɡʲʷ xʲʷ ɣʲʷ(?) → ɡʷ xʷ ʁʷ,ɡʲʷ xʲʷ ɣʲʷ(?),ɡʷ xʷ ʁʷ,,,False,asca_guess,"ɡʲʷ, xʲʷ, ɣʲʷ","ɡʷ, xʷ, ʁʷ",,,True
+81616388,index_diachronica_original.html:3992,"ɣ → {qː,ɣ} (again, probably a difference in the development of *ɢ than this strict sound change)",ɣ,"{qː,ɣ} (again, probably a difference in the development of *ɢ than this strict sound change)",,,False,asca_guess,ɣ,"{q:[+long],ɣ}",,,True
+14865227,index_diachronica_original.html:6405,f → m / _n,f,m,_n,,False,asca_guess,f,m,_n,,True
+01ff6165,index_diachronica_original.html:7998,C[+ voiced] → ∅ / V_V (only for obstruents?),C[+ voiced],∅,V_V (only for obstruents?),,False,asca_guess,C[+voice],∅,V_V,,True
+1d3090fb,index_diachronica_original.html:13301,"i → {i,oi} / _%",i,"{i,oi}",_%,,False,asca_guess,i,"{i,oi}",_%,,True
+d3b88b66,index_diachronica_original.html:1675,hʔ → ʔh,hʔ,ʔh,,,False,asca_guess,hʔ,ʔh,,,True
+7677ef9c,index_diachronica_original.html:10378,K → TŠ (although /xʲ/ remained as such in a few dialects),K,TŠ (although /xʲ/ remained as such in a few dialects),,,False,asca_guess,K,TŠ,,,False
+ab858601,index_diachronica_original.html:6955,dʒɲ → ɳː / V_V,dʒɲ,ɳː,V_V,,False,asca_guess,dʒɲ,ɳ:[+long],V_V,,True
+ca719e13,index_diachronica_original.html:8660,"ɨ̃ ẽ õ → ∅ {ẽ,e} {o,õ,u,ũ}",ɨ̃ ẽ õ,"∅ {ẽ,e} {o,õ,u,ũ}",,,False,asca_guess,ɨ̃ ẽ õ,"∅ {ẽ,e} {o,õ,u,ũ}",,,False
+adbc7d35,index_diachronica_original.html:13806,tʃ tsʲ → ʃ sʲ / #_,tʃ tsʲ,ʃ sʲ,#_,,False,asca_guess,"tʃ, tsʲ","ʃ, sʲ",#_,,True
+e01038ca,index_diachronica_original.html:4961,ḱ → k / _R,ḱ,k,_R,,False,asca_guess,ḱ,k,_R,,False
+449a10c0,index_diachronica_original.html:9534,ɕ → s,ɕ,s,,,False,asca_guess,ɕ,s,,,True
+a3001b45,index_diachronica_original.html:11229,ɸ(ʼ) ɸh → p(ʼ) pʰ,ɸ(ʼ) ɸh,p(ʼ) pʰ,,,False,asca_guess,"ɸʼ, ɸh","pʼ, pʰ",,,True
+b038773d,index_diachronica_original.html:11521,"ʔR → {ʔS,R} / V3_V",ʔR,"{ʔS,R}",V3_V,,False,asca_guess,ʔR,"{ʔS,R}",V3_V,,False
+5961200b,index_diachronica_original.html:1657,"θ h {s,m,n,r} → ʃ ∅ ʔ / _C","θ h {s,m,n,r}",ʃ ∅ ʔ,_C,,False,asca_guess,"θ h {s,m,n,r}",ʃ ∅ ʔ,_C,,False
+72fdc86f,index_diachronica_original.html:1048,z → ts / Vj_,z,ts,Vj_,,False,asca_guess,z,ts,Vj_,,True
+ad4ca5b5,index_diachronica_original.html:5737,ɑː y(ː) → ɔː e(ː),ɑː y(ː),ɔː e(ː),,,False,asca_guess,"ɑ:[+long], y","ɔ:[+long], e",,,True
+8932290c,index_diachronica_original.html:4410,qʲʷ qʲʷː qʲʷʼ ɢʲʷ χʲʷ ʁʲʷ → xʲ qʲ qʲʼ ʁʲ χʲ ʁʲ,qʲʷ qʲʷː qʲʷʼ ɢʲʷ χʲʷ ʁʲʷ,xʲ qʲ qʲʼ ʁʲ χʲ ʁʲ,,,False,asca_guess,"qʲʷ, qʲʷ:[+long], qʲʷʼ, ɢʲʷ, χʲʷ, ʁʲʷ","xʲ, qʲ, qʲʼ, ʁʲ, χʲ, ʁʲ",,,True
+50532917,index_diachronica_original.html:12003,u → a / _k,u,a,_k,,False,asca_guess,u,a,_k,,True
+fa4da926,index_diachronica_original.html:13056,k → ᵑk / _ʔ,k,ᵑk,_ʔ,,False,asca_guess,k,ᵑk,_ʔ,,True
+9ecb38a5,index_diachronica_original.html:1104,p → f,p,f,,,False,asca_guess,p,f,,,True
+47c0a38f,index_diachronica_original.html:12111,"{ŋ,j} → ∅ / i_","{ŋ,j}",∅,i_,,False,asca_guess,"{ŋ,j}",∅,i_,,True
+05f88c53,index_diachronica_original.html:2115,ɡ → k / else,ɡ,k,else,,False,asca_guess,ɡ,k,else_,,True
+a3db86b8,index_diachronica_original.html:4868,"p b t → f p {s,h} / #_",p b t,"f p {s,h}",#_,,False,asca_guess,p b t,"f p {s,h}",#_,,True
+ec7e50f9,index_diachronica_original.html:7025,ɛː → ɛ,ɛː,ɛ,,,False,asca_guess,ɛ:[+long],ɛ,,,True
+33459378,index_diachronica_original.html:11148,"i → e / _CVC#, when stressed (! _H, short only)",i,e,"_CVC#, when stressed (","_H, short only)",False,asca_guess,i,e,"_CVC#,","_H, short",False
+c15bd491,index_diachronica_original.html:10191,j → ɣ / _E,j,ɣ,_E,,False,asca_guess,j,ɣ,_E,,False
+eef530d9,index_diachronica_original.html:10128,w → b,w,b,,,False,asca_guess,w,b,,,True
+0cd82de7,index_diachronica_original.html:8120,d → r / V_V (“[s]ome Campidanese”),d,r,V_V (“[s]ome Campidanese”),,False,asca_guess,d,r,V_V,,True
+43ba5ccf,index_diachronica_original.html:11440,"V₀3ʔ(V₀) → {V₀3ː,V₀3ʔV₀}",V₀3ʔ(V₀),"{V₀3ː,V₀3ʔV₀}",,,False,asca_guess,V03ʔ,"{V03:[+long],V03ʔV0}",,,False
+d951ec77,index_diachronica_original.html:11779,? → o / _ŋ,?,o,_ŋ,,False,asca_guess,?,o,_ŋ,,True
+0d476c9f,index_diachronica_original.html:2992,u → əw / _V “(also cases of (C)u → w /__V)”,u,əw,_V “(also cases of (C)u → w /__V)”,,False,asca_guess,u,əw,_V,,True
+bd86df98,index_diachronica_original.html:4555,"∅ → {ɨ,ʉ} / to break up clusters",∅,"{ɨ,ʉ}",to break up clusters,,False,asca_guess,∅,"{ɨ,ʉ}",to break up clusters_,,True
+ee1af7a6,index_diachronica_original.html:12923,k → ɡ / ”V_,k,ɡ,”V_,,False,asca_guess,k,ɡ,,,True
+3a07fdd0,index_diachronica_original.html:4222,”Vʕ ʕ”V → ”aa a”a,”Vʕ ʕ”V,”aa a”a,,,False,asca_guess,∅,∅,,,False
+218e3923,index_diachronica_original.html:3327,pː pwː t̪ː tː ʈː cː kː → pʰ pwʰ t̪ʰ tʰ ʈʰ jʰ h,pː pwː t̪ː tː ʈː cː kː,pʰ pwʰ t̪ʰ tʰ ʈʰ jʰ h,,,False,asca_guess,"p:[+long], pw:[+long], t̪:[+long], t:[+long], ʈ:[+long], c:[+long], k:[+long]","pʰ, pwʰ, t̪ʰ, tʰ, ʈʰ, jʰ, h",,,False
+0e555699,index_diachronica_original.html:8062,dj → ʒ / _”B,dj,ʒ,_”B,,False,asca_guess,dj,ʒ,_,,True
+b5f43f7c,index_diachronica_original.html:10608,ʁ → j / _i,ʁ,j,_i,,False,asca_guess,ʁ,j,_i,,True
+7470a197,index_diachronica_original.html:1969,s → ʃ / _i (not universal),s,ʃ,_i (not universal),,False,asca_guess,s,ʃ,_i,,True
+34008078,index_diachronica_original.html:1871,l → n,l,n,,,False,asca_guess,l,n,,,True
+04cc64d8,index_diachronica_original.html:1917,ə[+weak] → ∅ / #_C,ə[+weak],∅,#_C,,False,asca_guess,ə[+weak],∅,#_C,,False
+55048c13,index_diachronica_original.html:13047,kx → sk / ”V_,kx,sk,”V_,,False,asca_guess,kx,sk,,,True
+226c8228,index_diachronica_original.html:1666,tʃ → θ,tʃ,θ,,,False,asca_guess,tʃ,θ,,,True
+0b7fc3df,index_diachronica_original.html:5060,"e → i / _{m,ŋ} when posttonic in U[+closed] or when pretonic",e,i,"_{m,ŋ} when posttonic in U[+closed] or when pretonic",,False,asca_guess,e,i,"_{m,ŋ}",,True
+0323ab02,index_diachronica_original.html:13215,"l → ∅ / p(ʰ),b_E",l,∅,"p(ʰ),b_E",,False,asca_guess,l,∅,"p(ʰ),b_E",,False
+7be439cd,index_diachronica_original.html:3616,*L → l,*L,l,,,False,asca_guess,*L,l,,,False
+4cd55722,index_diachronica_original.html:12970,"p → {p,b,m,w} / _C",p,"{p,b,m,w}",_C,,False,asca_guess,p,"{p,b,m,w}",_C,,True
+6f68b903,index_diachronica_original.html:6714,kʷ kʰʷ ɡʷ → k kʰ ɡ / u_,kʷ kʰʷ ɡʷ,k kʰ ɡ,u_,,False,asca_guess,"kʷ, kʰʷ, ɡʷ","k, kʰ, ɡ",u_,,True
+022d58c3,index_diachronica_original.html:9910,xʷɬ → ɬː,xʷɬ,ɬː,,,False,asca_guess,xʷɬ,ɬ:[+long],,,True
+b71bb642,index_diachronica_original.html:3286,q → ∅,q,∅,,,False,asca_guess,q,∅,,,True
+5f107cfe,index_diachronica_original.html:8523,b → ∅ / u_#,b,∅,u_#,,False,asca_guess,b,∅,u_#,,True
+41b5bddc,index_diachronica_original.html:7582,"{n,m} → ∅ / C_#","{n,m}",∅,C_#,,False,asca_guess,"{n,m}",∅,C_#,,True
+d59509a5,index_diachronica_original.html:5870,Vː → V[-long] / in #U before a U with /iː/,Vː,V[-long],in #U before a U with /iː/,,False,asca_guess,V:[+long],V[-long],in #U_,,False
+71a00bd1,index_diachronica_original.html:1311,kʼ(w) → k / #dlV_,kʼ(w),k,#dlV_,,False,asca_guess,kʼ,k,#dlV_,,True
+f21f1135,index_diachronica_original.html:12061,m → mt.,m,mt.,,,False,asca_guess,m,mt.,,,False
+0b958916,index_diachronica_original.html:4396,ɮ → ʑ,ɮ,ʑ,,,False,asca_guess,ɮ,ʑ,,,True
+9b3658e7,index_diachronica_original.html:1819,(t)ʃp → sp,(t)ʃp,sp,,,False,asca_guess,tʃp,sp,,,True
+a20b60ee,index_diachronica_original.html:4871,e → i / _(C)i,e,i,_(C)i,,False,asca_guess,e,i,_(C)i,,True
+af4d61ea,index_diachronica_original.html:10615,"t d → tʃ dʒ / _{u,i}",t d,tʃ dʒ,"_{u,i}",,False,asca_guess,"t, d","tʃ, dʒ","_{u,i}",,True
+e53a093c,index_diachronica_original.html:3785,"ɟ ɡ *N *R → {ɟ,j} {ɟ,ɡ} {l,j} {l,r}",ɟ ɡ *N *R,"{ɟ,j} {ɟ,ɡ} {l,j} {l,r}",,,False,asca_guess,ɟ ɡ *N *R,"{ɟ,j} {ɟ,ɡ} {l,j} {l,r}",,,False
+d2005d26,index_diachronica_original.html:4256,ɬʲʷ(~ɬʷː) ɮʲʷ → x(ʷ) ɣʲ,ɬʲʷ(~ɬʷː) ɮʲʷ,x(ʷ) ɣʲ,,,False,asca_guess,"ɬʲʷ~ɬʷ:[+long], ɮʲʷ","xʷ, ɣʲ",,,False
+25345fa2,index_diachronica_original.html:14351,aː ɔː → ɛː oː → eː ow → ej (əw),aː ɔː,ɛː oː → eː ow → ej (əw),,,False,asca_guess,a:[+long] ɔ:[+long],ɛ:[+long] o:[+long] → e:[+long] ow → ej,,,False
+d51e3b3c,index_diachronica_original.html:11466,{i3~ə1} → ə1,{i3~ə1},ə1,,,False,asca_guess,{i3~ə1},ə1,,,False
+bb0409e7,index_diachronica_original.html:11844,uj → u(ɛ)i / m_,uj,u(ɛ)i,m_,,False,asca_guess,uj,uɛi,m_,,True
+1eb9f6ba,index_diachronica_original.html:14394,ə → a,ə,a,,,False,asca_guess,ə,a,,,True
+ae96214f,index_diachronica_original.html:10411,"k(ʷ)ʼ → {x,k}(ʷ)ʼ",k(ʷ)ʼ,"{x,k}(ʷ)ʼ",,,False,asca_guess,kʷʼ,"{x,k}ʷʼ",,,False
+43b85a46,index_diachronica_original.html:13908,Vn → Vː / _s,Vn,Vː,_s,,False,asca_guess,Vn,V:[+long],_s,,True
+c959b74f,index_diachronica_original.html:1546,p b t d k ɡ → b v θ ð x ɣ / non-intial singletons,p b t d k ɡ,b v θ ð x ɣ,non-intial singletons,,False,asca_guess,"p, b, t, d, k, ɡ","b, v, θ, ð, x, ɣ",non-intial singletons_,,True
+37c2071c,index_diachronica_original.html:10499,ntç tç → (n̪)t̪ʰ t̪,ntç tç,(n̪)t̪ʰ t̪,,,False,asca_guess,"ntç, tç","n̪t̪ʰ, t̪",,,True
+9d0cb802,index_diachronica_original.html:8836,"t d s → {c,tʃ} ɟ ʃ",t d s,"{c,tʃ} ɟ ʃ",,,False,asca_guess,t d s,"{c,tʃ} ɟ ʃ",,,True
+2c57a24f,index_diachronica_original.html:3222,jʰ → h / _i,jʰ,h,_i,,False,asca_guess,jʰ,h,_i,,False
+a95c46ca,index_diachronica_original.html:12294,s → either i or a diphthong ending in i? / _#,s,either i or a diphthong ending in i?,_#,,False,asca_guess,s,either i or a diphthong ending,_#,,True
+3edef0e2,index_diachronica_original.html:10577,C[+dorsal] → Cʷ / _V[+round],C[+dorsal],Cʷ,_V[+round],,False,asca_guess,C[+dorsal],Cʷ,_V[+round],,False
+13f3d1d7,index_diachronica_original.html:3490,"{s,*R} → r / _#","{s,*R}",r,_#,,False,asca_guess,"{s,*R}",r,_#,,False
+6da1b43a,index_diachronica_original.html:2416,t → ∅ / _ɹ (only first-register tones can occur in this environment),t,∅,_ɹ (only first-register tones can occur in this environment),,False,asca_guess,t,∅,_ɹ,,True
+781d4dfd,index_diachronica_original.html:2482,"ə → ∅ / u_{m,j}",ə,∅,"u_{m,j}",,False,asca_guess,ə,∅,"u_{m,j}",,True
+0b0ae826,index_diachronica_original.html:1719,hkw → ʔk,hkw,ʔk,,,False,asca_guess,hkw,ʔk,,,True
+2b06e1ef,index_diachronica_original.html:9240,w → ∅,w,∅,,,False,asca_guess,w,∅,,,True
+a835a5c6,index_diachronica_original.html:5760,ɑ e o → ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/ or ending in one of /m n r l/,ɑ e o,ɑː ɛː oː,in U[+open],in #U with the following U containing /iː/ or ending in one of /m n r l/,False,asca_guess,"ɑ, e, o","ɑ:[+long], ɛ:[+long], o:[+long]",in U[+open]_,in #U with the following U containing /i:[+long]/ or ending_,False
