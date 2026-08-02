@@ -16,7 +16,7 @@ from conlanger.tools.IndexDiachronicaParser import (
 )
 
 _SAMPLED_RULES_CSV = (
-    Path(__file__).resolve().parent / "fixtures" / "sampled_html_rules_100.csv"
+    Path(__file__).resolve().parents[2] / "fixtures" / "sound_change_rules.csv"
 )
 
 
