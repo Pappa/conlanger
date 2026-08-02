@@ -1,6 +1,6 @@
 # Index Diachronica HTML is current source of truth; cleaned YAML is the planned successor
 
-For ingestion today, **`index_diachronica.html` is the ultimate source of truth**. Hand-edited XML/YAML samples guide structure and regressions only; when they disagree with the HTML (or with post-compile applier checks), the HTML and the compilers win.
+For ingestion today, **`index_diachronica_original.html` is the ultimate source of truth**. Hand-edited XML/YAML samples guide structure and regressions only; when they disagree with the HTML (or with post-compile applier checks), the HTML and the compilers win.
 
 A **new cleaned YAML rule corpus** is the intended long-term source of truth (aligned with ADR-0002). Planning that migration — including schema and cleanup spikes — is deferred to a `/wayfinder` effort, not decided in detail here.
 

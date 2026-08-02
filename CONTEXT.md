@@ -17,7 +17,7 @@ An alternate sound-change applier the package should remain able to target in pr
 _Avoid_: hard-wiring Brassica-only assumptions into the shared corpus format without an explicit decision
 
 **Index Diachronica**:
-The curated HTML corpus of attested sound-change rules being ingested into this project (`index_diachronica.html` and derived artifacts).
+The curated HTML corpus of attested sound-change rules being ingested into this project (`index_diachronica_original.html` and derived artifacts).
 _Avoid_: “the HTML file”, “diachronica dump” as glossary terms
 
 **Rule corpus**:
@@ -36,16 +36,36 @@ _Avoid_: “XML well-formedness” as a stand-in for applier correctness
 A subscript marker on a segment in Index Diachronica (e.g. `x₂`) identifying which member of a correspondence series is meant.
 _Avoid_: “subscript decoration”, treating `x₂` as identical to `x`
 
-**Series map**:
-A per-section table from series indices to concrete segments used when compiling or completing rules.
-_Avoid_: global one-size alphabet substitution without section scope
+**Abbreviation**:
+A notational shorthand in Index Diachronica — a class letter (`C`, `V`), boundary/null mark (`#`, `∅`), or series-indexed token (`s₁`) — whose expansion is defined for compile.
+_Avoid_: “alias”, “mapping”, “grouping” as the glossary term for these Index symbols
+
+**Abbreviation table**:
+A hierarchical lookup (global defaults plus section overrides along section `index` ancestry; more specific wins) that expands abbreviations when compiling or completing rules. Series-index rows are one kind of entry in this table.
+_Avoid_: “mapping”, “series map”, “alias table”; global one-size alphabet substitution without section scope
 
 **Corpus rule**:
-One structured entry in the rule corpus, normally corresponding to a single Index Diachronica rule line (including internal sets/alternations when needed).
-_Avoid_: treating every surface alternation as a separate authored rule by default
+One structured entry in the rule corpus, normally corresponding to a single Index Diachronica rule line (including internal sets/alternations when needed). It always carries input, output, raw, and source; environment and exception are optional (absent environment = any; absent exception = none). Edge cases not yet representable may be recorded with empty input/output and a skip reason instead of splitting.
+_Avoid_: treating every surface alternation as a separate authored rule by default; inventing split marks before that policy is decided
+
+**Skipped**:
+An optional reason on a corpus rule that could not yet be represented as a compilable structured entry; when set, input and output are empty and the rule is held out of normal compile until revisited.
+_Avoid_: deleting the HTML line from the corpus; silent drop without provenance
+
+**Feature matrix**:
+A distinctive-feature bundle written in brackets on a segment or alone in a rule string (e.g. `[+voice]`, `C:[+strident]`). Index Diachronica forms may need normalisation before an applier accepts them.
+_Avoid_: listing individual ASCA feature names or shorthands in this glossary; “features” when meaning phoneme-inventory dimensions
+
+**Raw**:
+The original Index Diachronica rule-line string preserved on a corpus rule for audit and fidelity checks.
+_Avoid_: treating the cleaned `input`/`output`/`env`/`exception` fields as the only recoverable form of the HTML line
+
+**Source**:
+Provenance of a corpus rule as `file:line` pointing at the Index Diachronica HTML location of its raw string (e.g. `index_diachronica_original.html:1288`).
+_Avoid_: section index alone as sufficient provenance; opaque “from HTML” notes without a locatable line
 
 **Index Diachronica HTML**:
-The current ultimate source artifact for attested rules (`notebooks/data/index_diachronica.html`).
+The current ultimate source artifact for attested rules (`notebooks/data/index_diachronica_original.html`).
 _Avoid_: treating hand-cleaned XML/YAML samples as overriding the HTML
 
 **Cleaned rule corpus**:
