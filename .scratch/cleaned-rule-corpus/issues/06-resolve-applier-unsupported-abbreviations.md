@@ -1,4 +1,5 @@
 Type: grilling
+Status: claimed
 Blocked by: 01, 03, 04
 
 # Resolve abbreviations unsupported by ASCA and Brassica
