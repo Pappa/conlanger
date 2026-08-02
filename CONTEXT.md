@@ -45,12 +45,20 @@ A hierarchical lookup (global defaults plus section overrides along section `ind
 _Avoid_: “mapping”, “series map”, “alias table”; global one-size alphabet substitution without section scope
 
 **Corpus rule**:
-One structured entry in the rule corpus, normally corresponding to a single Index Diachronica rule line (including internal sets/alternations when needed). It always carries input, output, raw, and source; environment and exception are optional (absent environment = any; absent exception = none). Edge cases not yet representable may be recorded with empty input/output and a skip reason instead of splitting.
+One structured entry in the rule corpus, normally corresponding to a single Index Diachronica rule line (including internal sets/alternations when needed). It always carries input, output, raw, and source; environment and exception are optional (absent environment = any; absent exception = none). Optional rule status may hold a rule out or flag it for extra validation; edge cases not yet representable use empty input/output with `status: skipped` instead of splitting.
 _Avoid_: treating every surface alternation as a separate authored rule by default; inventing split marks before that policy is decided
 
+**Rule status**:
+Optional lifecycle marker on a corpus rule: `needs-validation` or `skipped` (omit means ok). Full reason and description live in a temporary validation report, not on the YAML rule.
+_Avoid_: `skipped` as a reason-string field on the rule; embedding validator diagnostics in the cleaned corpus SoT
+
 **Skipped**:
-An optional reason on a corpus rule that could not yet be represented as a compilable structured entry; when set, input and output are empty and the rule is held out of normal compile until revisited.
-_Avoid_: deleting the HTML line from the corpus; silent drop without provenance
+A rule-status value meaning the rule is held out of normal compile (empty input/output) pending investigation or an owner-approved permanent deferral.
+_Avoid_: deleting the HTML line from the corpus; silent drop without provenance; using “skipped” for rules that still compile
+
+**Validation report**:
+A temporary CSV of per-rule validation state (status, reason, description, and related detail) produced for analysis (e.g. with pandas); not the long-term source of truth.
+_Avoid_: treating the report as the cleaned rule corpus; requiring the CSV to interpret an omitted (ok) status
 
 **Feature matrix**:
 A distinctive-feature bundle written in brackets on a segment or alone in a rule string (e.g. `[+voice]`, `C:[+strident]`). Index Diachronica forms may need normalisation before an applier accepts them.

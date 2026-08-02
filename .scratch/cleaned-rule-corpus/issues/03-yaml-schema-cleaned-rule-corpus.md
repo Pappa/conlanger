@@ -34,15 +34,15 @@ sections:
 
 | Field | Required | Notes |
 |-------|----------|--------|
-| `input` | yes | Index Diachronica–shaped string; `""` when `skipped` |
+| `input` | yes | Index Diachronica–shaped string; `""` when `status: skipped` |
 | `output` | yes | same |
 | `raw` | yes | original HTML rule-line text; multi-line via `\|` literal block |
 | `source` | yes | `index_diachronica_original.html:<line>` — first line of the span |
 | `env` | no | absent = any environment |
 | `exception` | no | absent = no exceptions |
-| `skipped` | no | reason string; deferral for unrepresentable edge cases (empty I/O) |
+| `status` | no | `needs-validation` \| `skipped`; omit = `ok`. **Amended by** [Historical fidelity vs valid-but-inaccurate fallback](04-historical-fidelity-vs-validity.md) (replaces earlier `skipped` reason string). Reasons/`description` live in a temporary validation CSV, not on the rule. |
 
-Field values stay **opaque Index Diachronica–shaped strings** (sets, series indices, feature matrices inline) — not an ASCA AST and not deep YAML structure. Compilers + abbreviation tables own applier targeting. Series indices are retained in strings; resolution uses hierarchical **abbreviation tables**. Feature-matrix synonym policy is deferred to ticket 07. Edge *splits* (one HTML line → multiple corpus rules) deferred; interim is `skipped`.
+Field values stay **opaque Index Diachronica–shaped strings** (sets, series indices, feature matrices inline) — not an ASCA AST and not deep YAML structure. Compilers + abbreviation tables own applier targeting. Series indices are retained in strings; resolution uses hierarchical **abbreviation tables**. Feature-matrix synonym policy is deferred to ticket 07. Edge *splits* (one HTML line → multiple corpus rules) deferred; interim is `status: skipped`.
 
 ### Ingest note
 
@@ -50,4 +50,4 @@ Parse `index_diachronica_original.html` with **lxml** (non-strict HTML).
 
 ### Glossary locked this ticket
 
-**Abbreviation**, **Abbreviation table**, **Raw**, **Source**, **Skipped**, **Feature matrix** — see `CONTEXT.md`.
+**Abbreviation**, **Abbreviation table**, **Raw**, **Source**, **Feature matrix** — see `CONTEXT.md`. (**Skipped** / **Rule status** / **Validation report** refined in ticket 04.)
