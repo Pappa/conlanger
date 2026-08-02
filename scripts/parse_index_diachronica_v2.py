@@ -12,7 +12,10 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from conlanger.tools.IndexDiachronicaParser import parse_index_diachronica_html  # noqa: E402
+from conlanger.tools.IndexDiachronicaParser import (  # noqa: E402
+    IndexDiachronicaParser,
+    load_group_mappings,
+)
 
 DEFAULT_HTML = ROOT / "notebooks" / "data" / "index_diachronica_original.html"
 DEFAULT_OUT = ROOT / "notebooks" / "data" / "index_diachronica_parsed.yml"
@@ -28,7 +31,8 @@ def main() -> int:
         print(f"ERROR: HTML not found at {args.html}", file=sys.stderr)
         return 1
 
-    doc = parse_index_diachronica_html(args.html)
+    parser = IndexDiachronicaParser(load_group_mappings())
+    doc = parser.parse(args.html)
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(
         yaml.safe_dump(doc, allow_unicode=True, sort_keys=False),

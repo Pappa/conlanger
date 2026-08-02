@@ -12,9 +12,12 @@ other non-``schg`` paragraphs → ``comments``.
 from __future__ import annotations
 
 import re
+from collections.abc import Sequence
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+import pandas as pd
 from lxml import html
 
 ARROW = "→"
@@ -55,6 +58,19 @@ SUBSCRIPT_MAP = str.maketrans(
         "x": "ₓ",
     }
 )
+
+DEFAULT_GROUP_MAPPINGS_CSV = (
+    Path(__file__).resolve().parents[1] / "data" / "group_mappings.csv"
+)
+
+GroupMappingTuple = tuple[str, str] | tuple[str, str, str]
+
+
+@dataclass(frozen=True)
+class GroupMapping:
+    grouping: str
+    mapping: str
+    comment: str = ""
 
 
 def to_subscript(text: str) -> str:
@@ -190,87 +206,157 @@ def parse_section_heading(h2_text: str) -> tuple[str, str]:
     return m.group(1).strip(), m.group(2).strip()
 
 
+def load_group_mappings(path: Path | None = None) -> list[GroupMapping]:
+    """Load Index→ASCA group letter mappings from CSV."""
+    csv_path = DEFAULT_GROUP_MAPPINGS_CSV if path is None else Path(path)
+    df = pd.read_csv(csv_path, dtype=str, keep_default_na=False)
+    missing = {"grouping", "mapping"} - set(df.columns)
+    if missing:
+        raise ValueError(
+            f"group mappings CSV missing required columns: {sorted(missing)}"
+        )
+    has_comment = "comment" in df.columns
+    out: list[GroupMapping] = []
+    for row in df.itertuples(index=False):
+        out.append(
+            GroupMapping(
+                grouping=row.grouping,
+                mapping=row.mapping,
+                comment=row.comment if has_comment else "",
+            )
+        )
+    return out
+
+
+def _coerce_group_mapping(item: GroupMapping | GroupMappingTuple) -> GroupMapping:
+    if isinstance(item, GroupMapping):
+        return item
+    if isinstance(item, tuple):
+        if len(item) == 2:
+            return GroupMapping(item[0], item[1])
+        if len(item) == 3:
+            return GroupMapping(item[0], item[1], item[2])
+    raise TypeError(
+        "group_mappings items must be GroupMapping or 2-/3-tuples "
+        f"(grouping, mapping[, comment]); got {item!r}"
+    )
+
+
+class IndexDiachronicaParser:
+    """Parse Index Diachronica HTML, optionally remapping group letters."""
+
+    def __init__(
+        self,
+        group_mappings: Sequence[GroupMapping | GroupMappingTuple] | None = None,
+    ) -> None:
+        self._group_mappings = (
+            [_coerce_group_mapping(item) for item in group_mappings]
+            if group_mappings
+            else []
+        )
+        self._abbreviations = {
+            m.grouping: m.mapping for m in self._group_mappings
+        }
+        self._trans = (
+            str.maketrans(self._abbreviations) if self._abbreviations else None
+        )
+
+    def abbreviations(self) -> dict[str, str]:
+        return dict(self._abbreviations)
+
+    def apply_group_mappings(self, text: str) -> str:
+        if self._trans is None:
+            return text
+        return text.translate(self._trans)
+
+    def parse_rule_element(self, el, *, source_file: str) -> dict[str, Any]:
+        raw = extract_text_with_subs(el)
+        line = getattr(el, "sourceline", None) or 0
+        source = f"{source_file}:{line}"
+        parts = extract_rule_parts(self.apply_group_mappings(raw))
+        if parts is None:
+            return {
+                "input": "",
+                "output": "",
+                "raw": raw,
+                "source": source,
+                "skipped": f"missing separator {ARROW!r}",
+            }
+        return {
+            **parts,
+            "raw": raw,
+            "source": source,
+        }
+
+    def parse(
+        self,
+        html_path: Path,
+        *,
+        source_file: str | None = None,
+    ) -> dict[str, Any]:
+        """Parse HTML into ``{abbreviations, sections: [...]}``."""
+        source_file = source_file or html_path.name
+        parser = html.HTMLParser(encoding="utf-8")
+        doc = html.parse(str(html_path), parser=parser)
+        root = doc.getroot()
+        sections_out: list[dict[str, Any]] = []
+
+        for sec in root.xpath("//section[@id]"):
+            h2s = sec.xpath("./h2")
+            if not h2s:
+                continue
+            h2_text = strip_whitespace("".join(h2s[0].itertext()))
+            index, name = parse_section_heading(h2_text)
+            if not name:
+                continue
+
+            # First <p> after <h2> is citation (whole line). Other non-schg → comments.
+            rules: list[dict[str, Any]] = []
+            citation: str | None = None
+            comments: list[dict[str, Any]] = []
+            saw_first_p = False
+
+            for p in sec.xpath("./p"):
+                cls = p.get("class") or ""
+                if "schg" in cls:
+                    saw_first_p = True  # citation slot consumed even if first p was a rule
+                    rules.append(self.parse_rule_element(p, source_file=source_file))
+                    continue
+
+                note = note_from_element(p, source_file=source_file)
+                if not note["raw"]:
+                    continue
+
+                if not saw_first_p:
+                    citation = note["raw"]
+                    saw_first_p = True
+                else:
+                    comments.append(note)
+
+            section_obj: dict[str, Any] = {
+                "section": name,
+                "index": index,
+            }
+            if citation is not None:
+                section_obj["citation"] = citation
+            if comments:
+                section_obj["comments"] = comments
+            if rules:
+                section_obj["rules"] = rules
+            sections_out.append(section_obj)
+
+        return {
+            "abbreviations": self.abbreviations(),
+            "sections": sections_out,
+        }
+
+
 def parse_rule_element(
     el,
     *,
     source_file: str,
+    group_mappings: Sequence[GroupMapping | GroupMappingTuple] | None = None,
 ) -> dict[str, Any]:
-    raw = extract_text_with_subs(el)
-    line = getattr(el, "sourceline", None) or 0
-    source = f"{source_file}:{line}"
-    parts = extract_rule_parts(raw)
-    if parts is None:
-        return {
-            "input": "",
-            "output": "",
-            "raw": raw,
-            "source": source,
-            "skipped": f"missing separator {ARROW!r}",
-        }
-    return {
-        **parts,
-        "raw": raw,
-        "source": source,
-    }
-
-
-def parse_index_diachronica_html(
-    html_path: Path,
-    *,
-    source_file: str | None = None,
-) -> dict[str, Any]:
-    """Parse HTML into ``{abbreviations: {}, sections: [...]}``."""
-    source_file = source_file or html_path.name
-    parser = html.HTMLParser(encoding="utf-8")
-    doc = html.parse(str(html_path), parser=parser)
-    root = doc.getroot()
-    sections_out: list[dict[str, Any]] = []
-
-    for sec in root.xpath("//section[@id]"):
-        h2s = sec.xpath("./h2")
-        if not h2s:
-            continue
-        h2_text = strip_whitespace("".join(h2s[0].itertext()))
-        index, name = parse_section_heading(h2_text)
-        if not name:
-            continue
-
-        # First <p> after <h2> is citation (whole line). Other non-schg → comments.
-        rules: list[dict[str, Any]] = []
-        citation: str | None = None
-        comments: list[dict[str, Any]] = []
-        saw_first_p = False
-
-        for p in sec.xpath("./p"):
-            cls = p.get("class") or ""
-            if "schg" in cls:
-                saw_first_p = True  # citation slot consumed even if first p was a rule
-                rules.append(parse_rule_element(p, source_file=source_file))
-                continue
-
-            note = note_from_element(p, source_file=source_file)
-            if not note["raw"]:
-                continue
-
-            if not saw_first_p:
-                citation = note["raw"]
-                saw_first_p = True
-            else:
-                comments.append(note)
-
-        section_obj: dict[str, Any] = {
-            "section": name,
-            "index": index,
-        }
-        if citation is not None:
-            section_obj["citation"] = citation
-        if comments:
-            section_obj["comments"] = comments
-        if rules:
-            section_obj["rules"] = rules
-        sections_out.append(section_obj)
-
-    return {
-        "abbreviations": {},
-        "sections": sections_out,
-    }
+    return IndexDiachronicaParser(group_mappings).parse_rule_element(
+        el, source_file=source_file
+    )

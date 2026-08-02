@@ -6,8 +6,11 @@ from lxml import html
 
 from conlanger.tools.IndexDiachronicaParser import (
     ARROW,
+    DEFAULT_GROUP_MAPPINGS_CSV,
+    GroupMapping,
+    IndexDiachronicaParser,
     extract_rule_parts,
-    parse_index_diachronica_html,
+    load_group_mappings,
     parse_rule_element,
     split_env_exception,
     split_input_output,
@@ -222,7 +225,7 @@ def test_first_p_is_citation_rest_comments(tmp_path: Path):
 """,
         encoding="utf-8",
     )
-    doc = parse_index_diachronica_html(html_path, source_file="sample.html")
+    doc = IndexDiachronicaParser().parse(html_path, source_file="sample.html")
     sec = doc["sections"][0]
     assert sec["citation"] == "Mecislau, from Ehret (1995), Title"
     assert [c["raw"] for c in sec["comments"]] == [
@@ -244,5 +247,59 @@ _SAMPLED_HTML_RULE_CASES = _load_sampled_html_rules()
 )
 def test_extract_rule_parts_sampled_html_rules(case_id, raw, expected):
     assert extract_rule_parts(raw) == expected, case_id
+
+
+def test_load_group_mappings_default_csv():
+    assert DEFAULT_GROUP_MAPPINGS_CSV.is_file()
+    mappings = load_group_mappings()
+    abbrev = {m.grouping: m.mapping for m in mappings}
+    assert abbrev["S"] == "P"
+    assert abbrev["A"] == "[+delrel]"
+    assert abbrev["H"] == "[-place]"
+    assert all(isinstance(m, GroupMapping) for m in mappings)
+
+
+def test_parser_abbreviations_and_raw_preserved(tmp_path: Path):
+    html_path = tmp_path / "mapped.html"
+    html_path.write_text(
+        """<!doctype html>
+<html><head><meta charset="utf-8"></head><body>
+<section id="Mapped">
+<h2>1.0 Test Section</h2>
+<p class="schg">S → a / V_V</p>
+</section>
+</body></html>
+""",
+        encoding="utf-8",
+    )
+    mappings = load_group_mappings()
+    doc = IndexDiachronicaParser(mappings).parse(
+        html_path, source_file="mapped.html"
+    )
+    assert doc["abbreviations"]["S"] == "P"
+    rule = doc["sections"][0]["rules"][0]
+    assert rule["input"] == "P"
+    assert "S" in rule["raw"]
+    assert rule["env"] == "V_V"
+
+
+def test_parser_without_mappings_unchanged(tmp_path: Path):
+    html_path = tmp_path / "unmapped.html"
+    html_path.write_text(
+        """<!doctype html>
+<html><head><meta charset="utf-8"></head><body>
+<section id="Unmapped">
+<h2>1.0 Test Section</h2>
+<p class="schg">S → a / V_V</p>
+</section>
+</body></html>
+""",
+        encoding="utf-8",
+    )
+    doc = IndexDiachronicaParser().parse(html_path, source_file="unmapped.html")
+    assert doc["abbreviations"] == {}
+    rule = doc["sections"][0]["rules"][0]
+    assert rule["input"] == "S"
+    assert IndexDiachronicaParser().abbreviations() == {}
 
 

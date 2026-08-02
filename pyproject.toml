@@ -33,6 +33,9 @@ version = { attr = "conlanger.__VERSION__" }
 where = ["src"]
 exclude = ["tests", "notebooks"]
 
+[tool.setuptools.package-data]
+conlanger = ["data/*.csv"]
+
 [tool.pytest.ini_options]
 testpaths = "tests"
 addopts = ["--cov=src", "--cov-report=html", "-s", "-vv"]

@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from conlanger.tools.IndexDiachronicaParser import (  # noqa: E402
-    parse_index_diachronica_html,
+    IndexDiachronicaParser,
 )
 from conlanger.tools.SoundChangeRule import SoundChangeRule  # noqa: E402
 from conlanger.tools.asca_validator import (  # noqa: E402
@@ -237,7 +237,7 @@ def load_existing(path: Path) -> list[dict[str, str]]:
 
 
 def collect_schg_rules(html_path: Path) -> list[dict]:
-    doc = parse_index_diachronica_html(html_path)
+    doc = IndexDiachronicaParser().parse(html_path)
     rules: list[dict] = []
     for section in doc["sections"]:
         for rule in section.get("rules", []):
