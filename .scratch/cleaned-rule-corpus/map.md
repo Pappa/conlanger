@@ -20,6 +20,7 @@ A cleaned, applier-neutral YAML **rule corpus** adopted as the working source of
 - [Inventory which current rules compile and which fail](issues/02-inventory-valid-vs-invalid-rules.md) — Provisional AI YAML: 9721 rules → 5554 ok / 4167 fail under `asca 0.9.3`; CSV + summary in [inventory/](inventory/).
 - [Create an ASCA validator for SoundChangeRule](issues/08-asca-validator.md) — `validate_asca` via asca **0.10.2** `run` (raises `ASCAValidationError`); 500 `asca_guess` fixture rows (seed 20260802; 370 ok / 130 expected fail).
 - [Historical fidelity vs valid-but-inaccurate fallback](issues/04-historical-fidelity-vs-validity.md) — SoT-faithful class-first ladder (format → tokens → comments → normalisation); no meaning-changing rewrites (CSV reason `valid-but-inaccurate` + `status: skipped`); optional corpus `status` (`needs-validation`\|`skipped`, omit=`ok`); full state in temporary validation CSV; owner gates permanent skip/swap; agent may clear `needs-validation` on clean re-validate. ADR: [0010](../../docs/adr/0010-historical-fidelity-class-first-status.md).
+- [Correction workflow for invalid rules](issues/05-correction-workflow-invalid-rules.md) — Transforms in `IndexDiachronicaParser` with full YAML regen + git-diff safety; per–sound-change `validate_asca` via section `SoundChangeRule` (temp feedback now, app runtime later from YAML SoT); cluster top failures; external one-off override schema deferred; fixtures on status transitions.
 
 ## Not yet specified
 
@@ -28,6 +29,7 @@ A cleaned, applier-neutral YAML **rule corpus** adopted as the working source of
 - How abbreviation tables are authored and maintained at scale (policy for unsupported keys lives on [Resolve abbreviations unsupported by ASCA and Brassica](issues/06-resolve-applier-unsupported-abbreviations.md); this fog is authorship/maintenance at scale)
 - Brassica compiler details (out of near-term path, but in-principle per ADR-0001)
 - Edge-split policy when one HTML line must become multiple corpus rules (deferred; interim: `status: skipped` with empty input/output)
+- External one-off rule override file schema (status / translations keyed for edge cases; workflow assumes it exists)
 
 ## Out of scope
 
