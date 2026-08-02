@@ -1,4 +1,4 @@
-Type: research
+Type: spike
 Status: resolved
 
 # What counts as a valid ASCA rule string?
