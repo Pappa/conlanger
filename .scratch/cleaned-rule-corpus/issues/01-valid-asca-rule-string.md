@@ -16,8 +16,12 @@ From asca-rust primary docs, what makes a rule string valid for input/output/env
 
 ## Answer
 
-**Gist:** An ASCA rule is `input ARROW output [/ env] [PIPE exception]` with non-empty I/O (use `*`/`∅` alone for insert/delete, `&` alone for metathesis); env needs one `_` focus (joined `___` OK, spaced `_ _` not); `#` is env-peripheral only. Validate by compiling a one-rule `.rsca` via `asca run words.wsca -r rule.rsca` (no dedicated validate command). Context7 has no asca index — findings are from asca-rust docs + crate source.
+**Gist:** An ASCA rule is `input ARROW output [/ env] [PIPE exception]` with non-empty I/O (use `*`/`∅` alone for insert/delete, `&`/`@` metathesis); env needs one `_` focus (joined `___` OK, spaced `_ _` not; underline-in-structure OK in 0.10+); `#` is env-peripheral only. Prefer parse-only validation via `ParsedRules::try_from` (or lexer+parser); `asca run` / `asca trace` also work but mix in word/runtime errors. Context7 has no asca index — findings are from asca-rust docs + crate source.
 
-**Findings:** [../research/asca-rule-validity.md](../research/asca-rule-validity.md)
+**Findings:** [../research/asca-rule-validity.md](../research/asca-rule-validity.md) (refreshed for **asca 0.10.2**, including §5 internal parse/validation pipeline for Python).
 
-**Context pointer (for parent wayfinder / later tickets):** Use that file’s per-field checklists + §5 ID failure patterns when inventoring/fixing Index Diachronica–derived rules. Do not treat this ticket’s answer as a Decisions-so-far update — parent owns `map.md`.
+**Context pointer (for parent wayfinder / later tickets):** Use that file’s per-field checklists, §5 pipeline tiers, and §6 ID failure patterns when inventoring/fixing Index Diachronica–derived rules and when implementing [Create an ASCA validator for SoundChangeRule](08-asca-validator.md).
+
+## Comments
+
+- Research file updated from local install **asca 0.10.2** (was documented against 0.9.3). Includes internal lexer→parser→split_into_subrules→runtime map and 0.9.3→0.10.x changelog notes relevant to validity.

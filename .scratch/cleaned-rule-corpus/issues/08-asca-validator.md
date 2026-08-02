@@ -5,17 +5,27 @@ Blocked by: 01
 
 ## Question
 
-Implement an ASCA validator that takes a `SoundChangeRule` instance, returns `True` when the rule is valid for ASCA, and raises an error with an appropriate message when it is not. Validity criteria come from [What counts as a valid ASCA rule string?](01-valid-asca-rule-string.md) findings: [../research/asca-rule-validity.md](../research/asca-rule-validity.md).
+Implement an ASCA validator that takes a `SoundChangeRule` instance, returns `True` when the rule is valid for ASCA, and raises an error with an appropriate message when it is not. Validity criteria come from [What counts as a valid ASCA rule string?](01-valid-asca-rule-string.md) findings: [../research/asca-rule-validity.md](../research/asca-rule-validity.md) (pinned to **asca 0.10.2**; follow §5 internal pipeline for Python).
 
 ## Notes
 
 - Wayfinder role: AFK task that makes post-compile ASCA checking concrete so [Correction workflow for invalid rules](05-correction-workflow-invalid-rules.md) can decide workflow against a real validator (does not deliver the cleaned corpus itself).
 - Aligns with ADR-0003 (validate after applier compile): this is the ASCA-side check, not an HTML→YAML ingest gate.
-- Spec source of truth for accept/reject behaviour: `.scratch/cleaned-rule-corpus/research/asca-rule-validity.md` (whole-rule form, per-field checklists, operators, ID failure patterns, CLI validation approach in §4).
+- Spec source of truth for accept/reject behaviour: `.scratch/cleaned-rule-corpus/research/asca-rule-validity.md` — whole-rule form, per-field checklists, operators, ID failure patterns, CLI/`ParsedRules::try_from` validation (§4), and the lexer→parser→split_into_subrules→runtime map for a Python implementation (§5).
 - API contract (required):
   - **Input:** an instance of `SoundChangeRule` (`src/conlanger/tools/SoundChangeRule.py`).
   - **Valid:** return `True`.
-  - **Invalid:** raise an error whose message explains the failure appropriately (surface ASCA/syntax reason when available).
-- Prefer driving validation via the installed `asca` CLI / compile path described in the research file (no dedicated `asca validate` subcommand) rather than re-implementing the full grammar by hand — unless a thin pre-check is clearly cheaper and still faithful to that spec.
-- AFK-capable once claimed; add unit tests covering valid and invalid cases drawn from the research checklists / known Index Diachronica failure patterns.
+  - **Invalid:** raise an error whose message explains the failure appropriately (surface ASCA/syntax reason when available; prefer names mappable to `RuleSyntaxError` / `RuleRuntimeError`).
+- Prefer driving validation via asca’s parse path (`ParsedRules::try_from` / CLI as documented in the research file) or a faithful Tier 1–3 port — not a docs-only ad-hoc grammar. Optional Tier 4 via apply-on-dummy-words.
+- Target installed CLI/crate: **asca 0.10.2**.
+- AFK-capable once claimed; add unit tests covering valid and invalid cases drawn from the research checklists, known Index Diachronica failure patterns, and the fixture below.
 
+## Fixture work (required before / with validator tests)
+
+1. Randomly sample **500** `p.schg` rules from `notebooks/data/index_diachronica_original.html` (record the RNG seed in the ticket Answer or a short note beside the fixture).
+2. For each sampled rule, **guess** the correct **ASCA** field forms (what should go into `SoundChangeRule` / `RuleChange` so the emitted rule string is ASCA-valid under 0.10.2 — e.g. `∅`/`*` for delete/insert, ASCA feature names, ` > `-ready segments, env with `_`, `|`/`//` exception content without prose).
+3. **Append one CSV row per sample** to [`tests/fixtures/sound_change_rules.csv`](../../../tests/fixtures/sound_change_rules.csv).
+   - Preserve existing columns and existing rows (HTML-extract expectations already in the file).
+   - Extend the schema as needed so each new row carries the guessed ASCA fields (recommended: `asca_input`, `asca_output`, `asca_env`, `asca_exception`, plus a `kind` or similar discriminator such as `html_extract` vs `asca_guess` so parser tests and validator tests can filter). Empty optional ASCA env/exception cells mean “omit that part”.
+   - Keep `id` / `source` / `raw` pointing at the HTML line for auditability.
+4. Validator unit tests should load the `asca_guess` rows (via pandas) and assert validate-success (or documented expected failure) against `SoundChangeRule` built from those guessed fields.
