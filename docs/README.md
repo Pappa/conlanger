@@ -55,9 +55,10 @@ change rules to the lexicon. I'm hoping this will result in a set of proto-langu
 
 ## Sound change rules
 
-I am compiling all sound change rules from the [Searchable Index Diachronica](https://chridd.nfshost.com/diachronica/all) into [Brassica](https://github.com/bradrn/brassica) format. This is painfully slow going, and I've needed to simplify some of the rules. The result won't be an accurate representation of all of the Index Diachronica rules in Brassica format, but I think it will be close enough to generate plausible sequences of rules (again using a GAN) that can be used for the proto-language root word generation mentioned above, and for furter evolution later.
+I am compiling all sound change rules from the [Searchable Index Diachronica](https://chridd.nfshost.com/diachronica/all) into [Brassica](https://github.com/bradrn/brassica) or [ASCA](https://github.com/Girv98/asca-rust) format. This is painfully slow going, and I've needed to simplify some of the rules. The result won't be an accurate representation of all of the Index Diachronica rules in Brassica format, but I think it will be close enough to generate plausible sequences of rules (again using a GAN) that can be used for the proto-language root word generation mentioned above, and for furter evolution later.
 
 - WIP sound change rules: [index_diachronica.yml](.notebooks/data/index_diachronica.yml)
+- Wayback Machine archive of [Index Diachronica](https://web.archive.org/web/20260722074750/https://chridd.nfshost.com/diachronica/all)
 
 ## Next steps
 
@@ -73,3 +74,8 @@ I am compiling all sound change rules from the [Searchable Index Diachronica](ht
   - I think this may require a set of "canned" English sentences that are annotated in some way, so that the grammar rules at the current historical period can be applied
 - Generate HTML/PDF language grammar document
 - Generate sample audio wav files
+
+## Future Work
+
+- **Generate plausible sound-change sequences** — Train a model (GAN, or a next-in-sequence / sequence model) on the Index Diachronica–derived rule corpus to propose ordered sequences of sound changes for proto-root shaping and later historical evolution. Selection/curation of attested rules remains available; generative sequences are additive future capability.
+  - Ticket: [`.scratch/sound-change-sequences/issues/01-generative-sound-change-sequences.md`](../.scratch/sound-change-sequences/issues/01-generative-sound-change-sequences.md)

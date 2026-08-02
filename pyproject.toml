@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "conlanger"
 dynamic = ["version"]
 requires-python = ">= 3.12"
+readme = "docs/README.md"
 
 dependencies = [
     # "cldfbench_wals @ git+https://github.com/cldf-datasets/wals.git@v2020#egg=cldfbench_wals",
