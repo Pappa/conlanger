@@ -9,7 +9,7 @@ Design and implement a model that proposes **plausible ordered sequences of soun
 
 ## Notes
 
-- Documented under **Future Work** in `docs/README.md`; not locked as near-term architecture (no ADR yet).
+- Documented under **Future Work** in `docs/CONLANGER.md`; not locked as near-term architecture (no ADR yet).
 - Must consume the applier-neutral **rule corpus** (ADR-0002) and emit **sound-change sequences** (see `CONTEXT.md`).
 - Curated/selected attested sequences remain a supported path; this ticket is the generative path.
 - Model family is intentionally open: GAN vs next-in-sequence to be chosen during the work.
@@ -17,4 +17,4 @@ Design and implement a model that proposes **plausible ordered sequences of soun
 
 ## Comments
 
-> *Captured during grill-with-docs from `docs/README.md` (Sound change rules / Future Work).*
+> *Captured during grill-with-docs from `docs/CONLANGER.md` (Sound change rules / Future Work).*

@@ -2,6 +2,12 @@
 
 Automatic and assisted conlang tooling: phoneme inventories, morphology/grammar parameters, and diachronic sound-change pipelines.
 
+## Documentation
+
+- [Project overview](docs/CONLANGER.md)
+- [System map](docs/SYSTEM.md)
+- [Architectural decisions](docs/adr/)
+
 ## Language
 
 **Sound-change applier**:

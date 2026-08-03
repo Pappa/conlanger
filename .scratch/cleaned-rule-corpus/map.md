@@ -33,7 +33,7 @@ A cleaned, applier-neutral YAML **rule corpus** adopted as the working source of
 
 ## Out of scope
 
-- Generative sound-change *sequences* model — see Future Work in `docs/README.md` and [Generative sound-change sequences (GAN or next-in-sequence)](../sound-change-sequences/issues/01-generative-sound-change-sequences.md)
+- Generative sound-change *sequences* model — see [Generative sound-change sequences (GAN or next-in-sequence)](../sound-change-sequences/issues/01-generative-sound-change-sequences.md)
 - Bundle ~100 preset inventories — [Bundle ~100 pre-generated phoneme inventories](../phoneme-inventories/issues/01-bundle-100-pregenerated-inventories.md)
 - Automate PHOIBLE/WALS prep — [Automate PHOIBLE and WALS data preparation pipeline](../data-processing-pipeline/issues/01-automate-phoible-wals-prep.md)
 - Full Brassica adoption / shipping a Brassica compiler

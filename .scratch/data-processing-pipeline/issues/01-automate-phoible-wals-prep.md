@@ -15,4 +15,4 @@ Replace the temporary manual notebook data-preparation flow (`prepare_phoible_da
 
 ## Comments
 
-> *Captured during grill-with-docs from `docs/README.md` (Data Preparation section).*
+> *Captured during grill-with-docs from `docs/CONLANGER.md` (Data Preparation section).*

@@ -15,4 +15,4 @@ Curate and ship approximately **100 pre-generated phoneme inventories** with the
 
 ## Comments
 
-> *Captured during grill-with-docs from `docs/README.md` (Language phoneme inventory generation).*
+> *Captured during grill-with-docs from `docs/CONLANGER.md` (Language phoneme inventory generation).*

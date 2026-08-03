@@ -4,7 +4,7 @@ An experiment in automatic Conlang creation.
 
 I am a novice Conlanger, currently enjoying the view from the peak of Mount Stupid, so this may go nowhere useful. I'm mostly hoping it goes somewhere dumb and ridiculous.
 
-![Peak of Mount Stupid](./docs/dunning-kruger.png)
+![Peak of Mount Stupid](./dunning-kruger.png)
 
 ## Data Preperation
 
@@ -12,17 +12,17 @@ Language [phoneme data](https://raw.githubusercontent.com/phoible/dev/v2.0/data/
 
 Data on morphology and grammar from [WALS](https://wals.info/) was prepared in a similar way.
 
-- Phoible data preperation notebook: [prepare_phoible_data.ipynb](./notebooks/prepare_phoible_data.ipynb)
-- WALS data preperation notebook: [prepare_wals_data.ipynb](./notebooks/prepare_wals_data.ipynb)
-- Language phoneme data npz file: [language_phonemes.npz](./notebooks/data/language_phonemes.npz)
-- WALS data npz file: [language_parameters.npz](./notebooks/data/language_parameters.npz)
+- Phoible data preperation notebook: [prepare_phoible_data.ipynb](../notebooks/prepare_phoible_data.ipynb)
+- WALS data preperation notebook: [prepare_wals_data.ipynb](../notebooks/prepare_wals_data.ipynb)
+- Language phoneme data npz file: [language_phonemes.npz](../notebooks/data/language_phonemes.npz)
+- WALS data npz file: [language_parameters.npz](../notebooks/data/language_parameters.npz)
 
 
 ## Language prediction
 
 Before using a [GAN](https://en.wikipedia.org/wiki/Generative_adversarial_network) (generative adversarial network) to generate new language phoneme inventories, I wanted to check that it was possible to predict languages by their phonemes.
 
-- Language prediction notebook: [predict_languages.ipynb](./notebooks/predict_languages.ipynb)
+- Language prediction notebook: [predict_languages.ipynb](../notebooks/predict_languages.ipynb)
 
 Overall the accuracy is very poor, but the number of classes is very high relative to the number of training samples (approx 80%). The model tends to just pick languages with the most samples in the training data. However, it does perform better than random chance and better than just picking one of the 5 most common languages in the training set.
 
@@ -32,7 +32,7 @@ Here's where the fun begins. I've previously [experimented building GANs](https:
 
 For phoneme inventory generation, I barely bothered tuning the GAN architecture that I used for Rothko paintings. It needed a few tweaks to prevent it overfitting and memorising samples. I removed some layers from the generator, reduced the number of epochs and increased the learning rate. Essentially, I just needed to make it a bit worse at generating fakes. This makes a lot of sense considering the difference in complexity between these simple pixilated phoneme inventory images and the far more complex Miro and Rothko paintings.
 
-- Phoneme inventory generation notebook: [phoneme_gan.ipynb](./notebooks/phoneme_gan.ipynb)
+- Phoneme inventory generation notebook: [phoneme_gan.ipynb](../notebooks/phoneme_gan.ipynb)
 
 ## Morphology and grammar rule generation
 
@@ -40,7 +40,7 @@ Morphology and grammar rules were generated in a similar way, though it took a l
 This is probably because of the way the each value is represented in the data, as an ordinal number rather than binary. The results aren't 
 ideal as some important values can be missing from the generated data. I might need to try a different approach.
 
-- Morphology and grammar rule generation notebook: [wals_parameters_gan.ipynb](./notebooks/wals_parameters_gan.ipynb)
+- Morphology and grammar rule generation notebook: [wals_parameters_gan.ipynb](../notebooks/wals_parameters_gan.ipynb)
 
 ## Lexicon generation
 
@@ -50,14 +50,13 @@ a basic syllable structure and phoneme inventory, and generates a lexicon. The i
 GAN and supplied to the lexicon builder. The lexicon builder produces a lot of unrealistic words, but my plan is to apply a series of sound 
 change rules to the lexicon. I'm hoping this will result in a set of proto-language root words that seem naturalistic.
 
-- Word list creation notebook: [word_list.ipynb](.notebooks/word_list.ipynb)
-- Lexicon generation notebook: [generate_lexicon.ipynb](.notebooks/generate_lexicon.ipynb)
+- Word list creation notebook: [word_list.ipynb](../notebooks/word_list.ipynb)
+- Lexicon generation notebook: [generate_lexicon.ipynb](../notebooks/generate_lexicon.ipynb)
 
 ## Sound change rules
 
-I am compiling all sound change rules from the [Searchable Index Diachronica](https://chridd.nfshost.com/diachronica/all) into [Brassica](https://github.com/bradrn/brassica) or [ASCA](https://github.com/Girv98/asca-rust) format. This is painfully slow going, and I've needed to simplify some of the rules. The result won't be an accurate representation of all of the Index Diachronica rules in Brassica format, but I think it will be close enough to generate plausible sequences of rules (again using a GAN) that can be used for the proto-language root word generation mentioned above, and for furter evolution later.
+I am compiling all sound change rules from the [Searchable Index Diachronica](https://chridd.nfshost.com/diachronica/all) into [Brassica](https://github.com/bradrn/brassica) or [ASCA](https://github.com/Girv98/asca-rust) format. This is painfully slow going, and I've needed to simplify some of the rules. The result won't be an accurate representation of all of the Index Diachronica rules in Asca/Brassica format, but I think it will be close enough to generate plausible sequences of rules (again using a GAN) that can be used for the proto-language root word generation mentioned above, and for furter evolution later.
 
-- WIP sound change rules: [index_diachronica.yml](.notebooks/data/index_diachronica.yml)
 - Wayback Machine archive of [Index Diachronica](https://web.archive.org/web/20260722074750/https://chridd.nfshost.com/diachronica/all)
 
 ## Next steps
@@ -66,6 +65,7 @@ I am compiling all sound change rules from the [Searchable Index Diachronica](ht
 - Generate root words using the phoneme inventory
 - Determine basic grammar
 - Create proto-language lexicon
+- Generate plausible sound-change sequences
 - Apply selection of sound change rules
   - Update phonology, phonotactics, grammar and lexicon after each iteration
   - Is it possible to determine and update language morphology here?
@@ -74,8 +74,3 @@ I am compiling all sound change rules from the [Searchable Index Diachronica](ht
   - I think this may require a set of "canned" English sentences that are annotated in some way, so that the grammar rules at the current historical period can be applied
 - Generate HTML/PDF language grammar document
 - Generate sample audio wav files
-
-## Future Work
-
-- **Generate plausible sound-change sequences** — Train a model (GAN, or a next-in-sequence / sequence model) on the Index Diachronica–derived rule corpus to propose ordered sequences of sound changes for proto-root shaping and later historical evolution. Selection/curation of attested rules remains available; generative sequences are additive future capability.
-  - Ticket: [`.scratch/sound-change-sequences/issues/01-generative-sound-change-sequences.md`](../.scratch/sound-change-sequences/issues/01-generative-sound-change-sequences.md)
