@@ -21,7 +21,9 @@ from conlanger.tools.parsers import (
     strip_leading_index_list_marker,
     expand_chained_rule_parts,
     apply_sporadic_qualifier,
+    apply_trailing_glosses,
     field_has_uncertainty_qualifier,
+    strip_trailing_gloss_from_field,
     strip_uncertainty_qualifier_from_field,
     split_output_rest,
     split_post_arrow,
@@ -283,6 +285,74 @@ def test_parse_rule_element_strips_sporadic_env_gloss():
     rules = parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["env"] == "_{f,s}"
     assert rules[0]["sporadic"] is True
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        (
+            "p (some Polynesian languages, such as Levei and Drehet)",
+            "p",
+        ),
+        (
+            "f (Common Celtic; I'm not sure of the conditions)",
+            "f",
+        ),
+        (
+            "s̩ f̩ (Ōgami) (http://amritas.com/101023.htm#10192359)",
+            "s̩ f̩",
+        ),
+        (
+            'ɔa "(except NV:[+front] of the Faroes > a:[+long])"',
+            "ɔa",
+        ),
+        ("_{f,s}", "_{f,s}"),
+        ("_# (except as below)", "_#"),
+        ("tʃ {ɡ,q} (ɡ is more common)", "tʃ {ɡ,q}"),
+        (
+            "depending on the environment; again, the article is unclear",
+            "depending on the environment",
+        ),
+        ("k(ʼ)", "k(ʼ)"),
+        ("(?)", "(?)"),
+        ("C(…C)", "C(…C)"),
+    ],
+)
+def test_strip_trailing_gloss_from_field(text, expected):
+    assert strip_trailing_gloss_from_field(text) == expected
+
+
+def test_apply_trailing_glosses():
+    assert apply_trailing_glosses(
+        {"input": "j", "output": "p (some Polynesian languages, such as Levei and Drehet)"}
+    ) == {"input": "j", "output": "p"}
+
+
+def test_apply_trailing_glosses_keeps_field_when_strip_would_empty():
+    assert apply_trailing_glosses(
+        {"input": "hhy", "output": '"something like /ʒ/"'}
+    ) == {"input": "hhy", "output": '"something like /ʒ/"'}
+
+
+def test_parse_rule_element_strips_trailing_glosses():
+    el = html.fragment_fromstring(
+        '<p class="schg">w → f (Common Celtic; I’m not sure of the conditions)</p>',
+        create_parent=False,
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["input"] == "w"
+    assert rules[0]["output"] == "f"
+    assert "Celtic" in rules[0]["raw"]
+
+
+def test_parse_rule_element_strips_env_trailing_glosses():
+    el = html.fragment_fromstring(
+        '<p class="schg">t → k / _s̩ (Ōgami) (http://example.com)</p>',
+        create_parent=False,
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["env"] == "_s̩"
+    assert "Ōgami" in rules[0]["raw"]
 
 
 def test_extract_rule_parts_with_symbol_normalization():

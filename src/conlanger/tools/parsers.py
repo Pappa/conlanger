@@ -152,6 +152,128 @@ def apply_sporadic_qualifier(parts: dict[str, str]) -> dict[str, Any]:
     return result
 
 
+_GLOSS_KEYWORD_RE = re.compile(
+    r"\b(?:"
+    r"except|only|not|unclear|unsure|depending|marked|conjectured|article|"
+    r"dialect|languages|Celtic|Polynesian|similarity|impossible|universal|"
+    r"common|below|above|short only|long only|inland|coastal|typical|"
+    r"across-the-board|across the board|not sure|not certain|not universal|"
+    r"not common|not a complete|may have|did not occur|Whimemsz"
+    r")\b",
+    re.I,
+)
+_URL_RE = re.compile(r"https?://|www\.", re.I)
+_TRAILING_QUOTED_GLOSS_RE = re.compile(r'\s*["\u201c]([^"\u201d]+)["\u201d]\s*$')
+_TRAILING_PAREN_RE = re.compile(r"\(([^()]*)\)\s*$")
+_PHONOLOGICAL_PAREN_INNER_RE = re.compile(
+    r"^(?:"
+    r"\?"
+    r"|\u02d0"
+    r"|…|\.\.\."
+    r"|C…C"
+    r"|[\u0250-\u02AFa-zA-Z:\+\-\[\],_#\$%0-9ʷʼ\"]+"
+    r")$"
+)
+
+
+def paren_inner_is_gloss(inner: str) -> bool:
+    """Return True when parenthetical content is an Index prose gloss, not phonology."""
+    text = inner.strip()
+    if not text:
+        return True
+    if _URL_RE.search(text):
+        return True
+    if ";" in text:
+        return True
+    if "→" in text or re.search(r"\s>\s", text):
+        return True
+    if text.startswith(("NB:", "NB ", "Note:", "note ")):
+        return True
+    if _GLOSS_KEYWORD_RE.search(text):
+        return True
+    if "…" in text or "..." in text:
+        if re.fullmatch(r"[A-Z#_\[\].…]+", text):
+            return False
+    if "," in text and re.search(r"[a-z]{3,}", text):
+        return True
+    if " " in text and re.search(r"[a-z]{3,}", text):
+        return True
+    if re.fullmatch(r"[A-Z][a-zA-Z\u00C0-\u024F\-]+", text):
+        return True
+    if " " not in text and re.fullmatch(
+        r"[\u0041-\u024F\u1E00-\u1EFF]+", text
+    ) and not re.search(r"[\u0250-\u02AF:\+\-\[\]]", text):
+        return True
+    if _PHONOLOGICAL_PAREN_INNER_RE.fullmatch(text):
+        return False
+    return False
+
+
+def strip_trailing_quoted_gloss_from_field(text: str) -> str:
+    """Remove trailing curly- or straight-quoted prose glosses."""
+    if not text:
+        return text
+    while True:
+        match = _TRAILING_QUOTED_GLOSS_RE.search(text)
+        if not match:
+            break
+        inner = match.group(1)
+        if paren_inner_is_gloss(inner) or re.search(r"[a-z]{3,}", inner):
+            text = text[: match.start()].rstrip()
+            continue
+        break
+    return text
+
+
+def strip_trailing_paren_glosses_from_field(text: str) -> str:
+    """Remove trailing ``(… )`` prose glosses from one rule field."""
+    if not text:
+        return text
+    while True:
+        match = _TRAILING_PAREN_RE.search(text)
+        if not match or not paren_inner_is_gloss(match.group(1)):
+            break
+        text = text[: match.start()].rstrip()
+    return text
+
+
+def strip_semicolon_prose_from_field(text: str) -> str:
+    """Remove trailing ``; …`` English prose (ASCA treats ``;`` as malformed comment)."""
+    if not text or "; " not in text:
+        return text
+    idx = text.find("; ")
+    tail = text[idx + 2 :]
+    if re.match(r'[a-z"\u201c(]', tail) and re.search(r"[a-z]{3,}", tail):
+        if not re.match(r"[_#\[\{]", tail.lstrip()):
+            return text[:idx].rstrip()
+    return text
+
+
+def strip_trailing_gloss_from_field(text: str) -> str:
+    """Strip Index trailing glosses (parens, quotes, semicolon prose) from one field."""
+    if not text:
+        return text
+    text = strip_trailing_quoted_gloss_from_field(text)
+    text = strip_trailing_paren_glosses_from_field(text)
+    text = strip_semicolon_prose_from_field(text)
+    return text.strip()
+
+
+def apply_trailing_glosses(parts: dict[str, str]) -> dict[str, str]:
+    """Remove trailing bracket/quote glosses from rule fields; ``raw`` unchanged upstream."""
+    cleaned: dict[str, str] = {}
+    for key in ("input", "output", "env", "exception"):
+        if key not in parts:
+            continue
+        original = parts[key]
+        value = strip_trailing_gloss_from_field(original)
+        if key in ("input", "output") and not value:
+            value = original
+        if key in ("input", "output") or value:
+            cleaned[key] = value
+    return cleaned
+
+
 # Index Diachronica stress mark (Key to Abbreviations: ” = Stress).
 _INDEX_STRESS = "\u201d"
 
@@ -428,6 +550,7 @@ class IndexDiachronicaParser:
         parts = apply_sporadic_qualifier(parts)
         sporadic = parts.pop("sporadic", False)
         sporadic_flag = {"sporadic": True} if sporadic else {}
+        parts = apply_trailing_glosses(parts)
         return [
             {**entry, "raw": raw, "source": source, **sporadic_flag}
             for entry in expand_chained_rule_parts(parts)
