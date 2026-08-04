@@ -4,28 +4,28 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9316** (one per corpus rule)
-- OK: **6204** (66.6%)
-- Fail: **3112** (33.4%)
-- Sections all OK: **118 / 714** (16.5%)
+- OK: **6237** (66.9%)
+- Fail: **3079** (33.1%)
+- Sections all OK: **120 / 714** (16.8%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 1154 | `syntax_other` |
+| 1155 | `syntax_other` |
 | 997 | `unknown_character` |
-| 385 | `expected_underscore` |
+| 357 | `expected_underscore` |
 | 248 | `unknown_feature` |
 | 85 | `unknown_grouping` |
 | 56 | `prose_or_expected_arrow` |
 | 33 | `panic_other` |
-| 29 | `expected_number` |
+| 30 | `expected_number` |
 | 28 | `nested_brackets` |
 | 25 | `diacritic_prereq` |
-| 22 | `stuff_after_word_bound` |
 | 20 | `runtime_delete_only_segment` |
+| 17 | `stuff_after_word_bound` |
 | 16 | `runtime_other` |
-| 12 | `malformed_comment` |
+| 10 | `malformed_comment` |
 | 2 | `other` |
 
 ## Common Errors

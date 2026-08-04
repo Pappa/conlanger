@@ -1611,7 +1611,7 @@ sections:
     source: index_diachronica_original.html:1358
   - input: a
     output: i
-    env: _C(C), when stressed
+    env: _C(C) when stressed
     raw: a → i / _C(C), when stressed
     source: index_diachronica_original.html:1359
   - input: u
@@ -1626,7 +1626,7 @@ sections:
     source: index_diachronica_original.html:1361
   - input: '{u,a,i}'
     output: ∅
-    env: _$, when stressed
+    env: _$ when stressed
     raw: '{u,a,i} → ∅ / _%, when stressed (short only)'
     source: index_diachronica_original.html:1362
   - input: uː iː
@@ -7307,7 +7307,7 @@ sections:
     source: index_diachronica_original.html:2927
   - input: wa
     output: o
-    env: '#_ when unstressed'
+    env: '#_'
     raw: 'wa → o / #_ when unstressed'
     source: index_diachronica_original.html:2928
   - input: V
@@ -8333,7 +8333,7 @@ sections:
     source: index_diachronica_original.html:3178
   - input: aCV[+ high]
     output: ɪ
-    env: when stressed unless primarily stressed
+    env: _ when stressed unless primarily stressed
     raw: aCV[+ high] → ɪ / when stressed unless primarily stressed
     source: index_diachronica_original.html:3179
   - input: (C)V₁CV:[+stress]₂
@@ -10597,7 +10597,7 @@ sections:
   rules:
   - input: e
     output: ə
-    env: _N, when unstressed (?)
+    env: _N when unstressed (?)
     raw: e → ə / _N, when unstressed (?)
     source: index_diachronica_original.html:3795
   - input: n
@@ -10641,7 +10641,7 @@ sections:
   rules:
   - input: e
     output: ə
-    env: _N, when unstressed (?)
+    env: _N when unstressed (?)
     raw: e → ə / _N, when unstressed (?)
     source: index_diachronica_original.html:3808
   - input: n
@@ -12790,7 +12790,7 @@ sections:
     source: index_diachronica_original.html:4552
   - input: i u
     output: ɨ ʉ
-    env: short only when unstressed
+    env: _ when unstressed
     exception: 'in #U'
     raw: 'i u → ɨ ʉ / short only when unstressed ! in #U'
     source: index_diachronica_original.html:4553
@@ -15241,7 +15241,7 @@ sections:
     source: index_diachronica_original.html:5188
   - input: e oj ɛa
     output: i u ɛ
-    env: when unstressed
+    env: _ when unstressed
     raw: e oj ɛa → i u ɛ / when unstressed
     source: index_diachronica_original.html:5189
   - input: p t
@@ -15397,7 +15397,7 @@ sections:
     source: index_diachronica_original.html:5225
   - input: e oj ɛa
     output: i u ɛ
-    env: when unstressed
+    env: _ when unstressed
     raw: e oj ɛa → i u ɛ / when unstressed
     source: index_diachronica_original.html:5226
   - input: p t
@@ -15553,7 +15553,7 @@ sections:
     source: index_diachronica_original.html:5262
   - input: e oj ɛa
     output: i u ɛ
-    env: when unstressed
+    env: _ when unstressed
     raw: e oj ɛa → i u ɛ / when unstressed
     source: index_diachronica_original.html:5263
   - input: t
@@ -15710,7 +15710,7 @@ sections:
     source: index_diachronica_original.html:5299
   - input: e oj ɛa
     output: i u ɛ
-    env: when unstressed
+    env: _ when unstressed
     raw: e oj ɛa → i u ɛ / when unstressed
     source: index_diachronica_original.html:5300
   - input: p t
@@ -15866,7 +15866,7 @@ sections:
     source: index_diachronica_original.html:5336
   - input: e oj ɛa
     output: i u ɛ
-    env: when unstressed
+    env: _ when unstressed
     raw: e oj ɛa → i u ɛ / when unstressed
     source: index_diachronica_original.html:5337
   - input: p t
@@ -16018,7 +16018,7 @@ sections:
     source: index_diachronica_original.html:5372
   - input: e oj ɛa
     output: i u ɛ
-    env: when unstressed
+    env: _ when unstressed
     raw: e oj ɛa → i u ɛ / when unstressed
     source: index_diachronica_original.html:5373
   - input: p t
@@ -16184,7 +16184,7 @@ sections:
     source: index_diachronica_original.html:5411
   - input: e oj ɛa
     output: i u ɛ
-    env: when unstressed
+    env: _ when unstressed
     raw: e oj ɛa → i u ɛ / when unstressed
     source: index_diachronica_original.html:5412
   - input: p t
@@ -16775,7 +16775,7 @@ sections:
     source: index_diachronica_original.html:5556
   - input: V
     output: ∅
-    env: C_# when unstressed
+    env: C_#
     exception: C = j
     raw: V → ∅ / C_# when unstressed ! C = j
     source: index_diachronica_original.html:5557
@@ -16796,12 +16796,12 @@ sections:
     source: index_diachronica_original.html:5560
   - input: oː
     output: ua
-    env: _[anything], when stressed
+    env: _[anything] when stressed
     raw: oː → ua / _[anything], when stressed
     source: index_diachronica_original.html:5561
   - input: eː
     output: ia
-    env: _{#,Cʲ} when stressed;
+    env: _{#,Cʲ}
     raw: eː → ia / _{#,Cʲ} when stressed; “ai and oi remain, but are written as <ae
       ai oe oi> seemingly randomly”
     source: index_diachronica_original.html:5562
@@ -16825,7 +16825,7 @@ sections:
     source: index_diachronica_original.html:5567
   - input: V
     output: Vː
-    env: _#, when stressed;
+    env: _#
     raw: V → Vː / _#, when stressed; “[t]his remained as a phonologically conditioned
       rule in OIr”
     source: index_diachronica_original.html:5568
@@ -16995,7 +16995,7 @@ sections:
     source: index_diachronica_original.html:5605
   - input: ɔː
     output: au
-    env: when stressed
+    env: _ when stressed
     raw: ɔː → au / when stressed
     source: index_diachronica_original.html:5606
   - input: l
@@ -17038,12 +17038,12 @@ sections:
     source: index_diachronica_original.html:5617
   - input: e
     output: je
-    env: in open syllables, when stressed
+    env: _ when stressed
     raw: e → je / in open syllables, when stressed
     source: index_diachronica_original.html:5618
   - input: e
     output: ja
-    env: in closed syllables, when stressed
+    env: _ when stressed
     raw: e → ja / in closed syllables, when stressed
     source: index_diachronica_original.html:5619
   - input: eː
@@ -17535,7 +17535,7 @@ sections:
     source: index_diachronica_original.html:5740
   - input: m
     output: n > ∅
-    env: _# when unstressed
+    env: _#
     raw: m → n → ∅ / _# when unstressed
     source: index_diachronica_original.html:5741
   - input: hn {wl,hl} hr
@@ -17628,7 +17628,7 @@ sections:
     source: index_diachronica_original.html:5761
   - input: m
     output: n > ∅
-    env: _# when unstressed
+    env: _#
     raw: m → n → ∅ / _# when unstressed
     source: index_diachronica_original.html:5762
   - input: hn {wl,hl} hr
@@ -17751,7 +17751,7 @@ sections:
     source: index_diachronica_original.html:5792
   - input: ɪ
     output: i
-    env: _# when unstressed
+    env: _#
     raw: ɪ → i / _# when unstressed
     source: index_diachronica_original.html:5793
   - input: '{t,d}'
@@ -17868,7 +17868,7 @@ sections:
     source: index_diachronica_original.html:5821
   - input: ɪ
     output: iː
-    env: _# when unstressed
+    env: _#
     raw: ɪ → iː / _# when unstressed
     source: index_diachronica_original.html:5822
   - input: ɪ
@@ -18078,7 +18078,7 @@ sections:
     source: index_diachronica_original.html:5870
   - input: n
     output: ∅
-    env: _# when unstressed
+    env: _#
     raw: n → ∅ / _# when unstressed (not clear as to whether m → n beforehand in this
       position or not)
     source: index_diachronica_original.html:5871
@@ -18107,7 +18107,7 @@ sections:
     source: index_diachronica_original.html:5877
   - input: '{e,ɑ,o}'
     output: ə > ∅
-    env: _#, when unstressed
+    env: _#
     raw: '{e,ɑ,o} → ə → ∅ / _#, when unstressed (it appears this sound may also have
       gone to /ɪ/)'
     source: index_diachronica_original.html:5878
@@ -18652,7 +18652,7 @@ sections:
     source: index_diachronica_original.html:6000
   - input: m
     output: n > ∅
-    env: _# when unstressed
+    env: _#
     raw: m → n → ∅ / _# when unstressed
     source: index_diachronica_original.html:6001
   - input: hn {wl,hl} hr
@@ -19086,7 +19086,7 @@ sections:
     source: index_diachronica_original.html:6115
   - input: V
     output: Vː
-    env: _$, when stressed
+    env: _$ when stressed
     raw: V → Vː / _%, when stressed (except for /ə/?)
     source: index_diachronica_original.html:6116
   - input: V
@@ -24368,7 +24368,7 @@ sections:
     source: index_diachronica_original.html:7334
   - input: ɛ ɔ
     output: e o
-    env: when unstressed
+    env: _ when unstressed
     raw: ɛ ɔ → e o / when unstressed
     source: index_diachronica_original.html:7335
   - input: j
@@ -28914,7 +28914,7 @@ sections:
     source: index_diachronica_original.html:8319
   - input: ə
     output: ∅
-    env: _$, when unstressed
+    env: _$ when unstressed
     raw: ə → ∅ / _%, when unstressed
     source: index_diachronica_original.html:8320
 - section: Je-Tupı́-Carib
@@ -31845,7 +31845,7 @@ sections:
     source: index_diachronica_original.html:9287
   - input: a
     output: ∅
-    env: _i, when unstressed
+    env: _i when unstressed
     raw: a → ∅ / _i, when unstressed
     source: index_diachronica_original.html:9288
   - input: a
@@ -36045,12 +36045,12 @@ sections:
     source: index_diachronica_original.html:10739
   - input: aji
     output: iː
-    env: when unstressed
+    env: _ when unstressed
     raw: aji → iː / when unstressed
     source: index_diachronica_original.html:10740
   - input: i{w,j}
     output: ∅
-    env: _a, when unstressed
+    env: _a when unstressed
     raw: i{w,j} → ∅ / _a, when unstressed
     source: index_diachronica_original.html:10741
   - input: i
@@ -36080,12 +36080,12 @@ sections:
     source: index_diachronica_original.html:10746
   - input: ubu aba
     output: uː aː
-    env: when stressed
+    env: _ when stressed
     raw: ubu aba → uː aː / when stressed
     source: index_diachronica_original.html:10747
   - input: ib
     output: ∅
-    env: _i, when unstressed
+    env: _i when unstressed
     raw: ib → ∅ / _i, when unstressed
     source: index_diachronica_original.html:10748
   - input: b
@@ -36109,7 +36109,7 @@ sections:
     source: index_diachronica_original.html:10752
   - input: V
     output: Vː
-    env: when stressed ?
+    env: _ when stressed ?
     raw: V → Vː / when stressed ?
     source: index_diachronica_original.html:10754
 - section: Oto-Manguean
@@ -36995,7 +36995,7 @@ sections:
   rules:
   - input: ∅
     output: h
-    env: V(ː)_, when stressed
+    env: V(ː)_ when stressed
     raw: ∅ → h / V(ː)_, when stressed (only sometimes, “particularly before consonants”)
     source: index_diachronica_original.html:11071
     sporadic: true
@@ -37175,12 +37175,12 @@ sections:
     source: index_diachronica_original.html:11146
   - input: '{u,a}'
     output: e
-    env: _CVC#, when stressed
+    env: _CVC#
     raw: '{u,a} → e / _CVC#, when stressed (short only)'
     source: index_diachronica_original.html:11147
   - input: i
     output: e
-    env: _CVC#, when stressed (
+    env: _CVC#
     exception: _H, short only)
     raw: i → e / _CVC#, when stressed (! _H, short only)
     source: index_diachronica_original.html:11148
@@ -46785,7 +46785,7 @@ sections:
     source: index_diachronica_original.html:13767
   - input: a
     output: æ
-    env: '{a,e,ê,i,y}(X)(C)(C)_, when unstressed'
+    env: '{a,e,ê,i,y}(X)(C)(C)_ when unstressed'
     raw: a → æ / {a,e,ê,i,y}(X)(C)(C)_, when unstressed
     source: index_diachronica_original.html:13768
   - input: Aw
@@ -46795,7 +46795,7 @@ sections:
     source: index_diachronica_original.html:13769
   - input: i
     output: e
-    env: _C, when unstressed
+    env: _C when unstressed
     raw: i → e / _C, when unstressed
     source: index_diachronica_original.html:13770
   - input: iw
@@ -47310,7 +47310,7 @@ sections:
     source: index_diachronica_original.html:13881
   - input: e
     output: i
-    env: A_, when unstressed
+    env: A_ when unstressed
     raw: e → i / A_, when unstressed
     source: index_diachronica_original.html:13882
   - input: Ue
@@ -47434,7 +47434,7 @@ sections:
     source: index_diachronica_original.html:13910
   - input: ɑ
     output: ə
-    env: VC(C)ɑC(C)_# when unstressed
+    env: VC(C)ɑC(C)_#
     raw: ɑ → ə / VC(C)ɑC(C)_# when unstressed
     source: index_diachronica_original.html:13911
   - input: Vh

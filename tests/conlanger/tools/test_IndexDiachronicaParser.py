@@ -1,4 +1,5 @@
 from pathlib import Path
+import shutil
 
 import pandas as pd
 import pytest
@@ -21,8 +22,10 @@ from conlanger.tools.parsers import (
     strip_leading_index_list_marker,
     expand_chained_rule_parts,
     apply_sporadic_qualifier,
+    apply_stress_conditions,
     apply_trailing_glosses,
     field_has_uncertainty_qualifier,
+    normalize_stress_conditions,
     strip_trailing_gloss_from_field,
     strip_uncertainty_qualifier_from_field,
     split_output_rest,
@@ -353,6 +356,71 @@ def test_parse_rule_element_strips_env_trailing_glosses():
     rules = parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["env"] == "_s̩"
     assert "Ōgami" in rules[0]["raw"]
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("_C(C), when stressed", "_C(C) when stressed"),
+        ("_$, when stressed", "_$ when stressed"),
+        ("_N, when unstressed (?)", "_N when unstressed (?)"),
+        ("when unstressed", "_ when unstressed"),
+        ("when stressed unless primarily stressed", "_ when stressed unless primarily stressed"),
+        ("_# when unstressed", "_#"),
+        ("_#, when unstressed", "_#"),
+        ("C_# when unstressed", "C_#"),
+        ("in open syllables, when stressed", "_ when stressed"),
+        ("short only when unstressed", "_ when unstressed"),
+        ("_j when stressed", "_j when stressed"),
+        ("l_ when unstressed", "l_ when unstressed"),
+        ("_#", "_#"),
+    ],
+)
+def test_normalize_stress_conditions(text, expected):
+    assert normalize_stress_conditions(text) == expected
+
+
+def test_apply_stress_conditions():
+    assert apply_stress_conditions(
+        {"input": "a", "output": "e", "env": "_C(C), when stressed"}
+    ) == {"input": "a", "output": "e", "env": "_C(C) when stressed"}
+
+
+def test_parse_rule_element_normalizes_stress_conditions():
+    el = html.fragment_fromstring(
+        '<p class="schg">a → i / _C(C), when stressed</p>',
+        create_parent=False,
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["env"] == "_C(C) when stressed"
+    assert ", when stressed" in rules[0]["raw"]
+
+
+@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
+def test_parse_rule_element_stress_conditions_validate_asca():
+    from conlanger.tools.asca_validator import validate_asca
+    from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
+    from pathlib import Path
+
+    cases = [
+        '<p class="schg">a → i / _C(C), when stressed</p>',
+        '<p class="schg">{u,a,i} → ∅ / _%, when stressed (short only)</p>',
+        '<p class="schg">e oj ɛa → i u ɛ / when unstressed</p>',
+        '<p class="schg">e → i / l_ when unstressed</p>',
+    ]
+    probe = Path("tests/fixtures/asca_probe_words.wsca")
+    for html_snippet in cases:
+        el = html.fragment_fromstring(html_snippet, create_parent=False)
+        rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+        section = {
+            "index": "47.1",
+            "section": "Stress conditions",
+            "rules": rules,
+        }
+        validate_asca(
+            PhonologicalRuleSet(section).to_sound_change_ruleset(),
+            probe_words=probe,
+        )
 
 
 def test_extract_rule_parts_with_symbol_normalization():

@@ -274,6 +274,52 @@ def apply_trailing_glosses(parts: dict[str, str]) -> dict[str, str]:
     return cleaned
 
 
+_STRESS_CONDITION_RE = re.compile(r"when (?:un)?stressed\b", re.I)
+_COMMA_BEFORE_STRESS_RE = re.compile(
+    r",\s*(?=when (?:un)?stressed\b)",
+    re.I,
+)
+_TRAILING_STRESS_AFTER_HASH_RE = re.compile(
+    r"\s+when (?:un)?stressed\b.*$",
+    re.I,
+)
+_PROSE_BEFORE_STRESS_RE = re.compile(
+    r"^.*?(when (?:un)?stressed\b.*)$",
+    re.I,
+)
+
+
+def normalize_stress_conditions(text: str) -> str:
+    """Normalize Index ``when stressed`` / ``when unstressed`` env prose for ASCA.
+
+    ASCA accepts trailing `` when stressed`` after a focused env (``_C(C) when
+    stressed``) but rejects a comma before the phrase (``_N, when stressed``).
+    Word-boundary envs (``_# when unstressed``) cannot carry trailing prose.
+    Env-only conditions (``when unstressed``) need a focus ``_``.
+    """
+    if not text or not _STRESS_CONDITION_RE.search(text):
+        return text
+    text = _COMMA_BEFORE_STRESS_RE.sub(" ", text)
+    if "#" in text:
+        text = _TRAILING_STRESS_AFTER_HASH_RE.sub("", text).rstrip()
+    elif re.match(r"when (?:un)?stressed\b", text, re.I):
+        text = f"_ {text}"
+    elif "_" not in text:
+        match = _PROSE_BEFORE_STRESS_RE.match(text)
+        if match:
+            text = f"_ {match.group(1)}"
+    return text.strip()
+
+
+def apply_stress_conditions(parts: dict[str, str]) -> dict[str, str]:
+    """Normalize ``when stressed`` / ``when unstressed`` in env and exception fields."""
+    result = dict(parts)
+    for key in ("env", "exception"):
+        if key in result:
+            result[key] = normalize_stress_conditions(result[key])
+    return result
+
+
 # Index Diachronica stress mark (Key to Abbreviations: ” = Stress).
 _INDEX_STRESS = "\u201d"
 
@@ -551,6 +597,7 @@ class IndexDiachronicaParser:
         sporadic = parts.pop("sporadic", False)
         sporadic_flag = {"sporadic": True} if sporadic else {}
         parts = apply_trailing_glosses(parts)
+        parts = apply_stress_conditions(parts)
         return [
             {**entry, "raw": raw, "source": source, **sporadic_flag}
             for entry in expand_chained_rule_parts(parts)
