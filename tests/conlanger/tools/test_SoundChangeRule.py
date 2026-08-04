@@ -9,6 +9,7 @@ from conlanger.tools.rules import (
     RuleCitation,
     RuleComment,
     SoundChangeRuleSet,
+    normalize_asca_ejective_marks,
     normalize_asca_length_marks,
 )
 
@@ -108,6 +109,32 @@ def test_normalize_asca_length_marks(text, expected):
     assert normalize_asca_length_marks(text) == expected
 
 
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("ts:[+long]ʼ", "ts:[+long,+cg]"),
+        ("tʃ:[+long]ʼ > tʃ:[+long]", "tʃ:[+long,+cg] > tʃ:[+long]"),
+        ("dʒ > {tʃ:[+long]ʼ,dʒ}", "dʒ > {tʃ:[+long,+cg],dʒ}"),
+        ("{ts:[+long]ʼ,z}", "{ts:[+long,+cg],z}"),
+        ("{t,ts}ʼ", "{t:[+cg],ts:[+cg]}"),
+        ("dʼ > tʼ", "d:[+cg] > t:[+cg]"),
+        ("tʃʼ > tsʼ", "tʃ:[+cg] > ts:[+cg]"),
+        ("ts ts:[+long] tsʼ", "ts ts:[+long] ts:[+cg]"),
+        ("a", "a"),
+        ("", ""),
+    ],
+)
+def test_normalize_asca_ejective_marks(text, expected):
+    assert normalize_asca_ejective_marks(text) == expected
+
+
+def test_rule_change_compiles_ejective_at_instantiation():
+    part = RuleChange({"input": "tʃ:[+long]ʼ", "output": "tʃ:[+long]"}, "asca")
+    assert part.value == "tʃ:[+long,+cg] > tʃ:[+long]"
+    assert "ʼ" not in part.value
+    assert part.input == "tʃ:[+long]ʼ"
+
+
 def test_rule_change_compiles_length_at_instantiation():
     part = RuleChange({"input": "a(ː)", "output": "e(ː)"}, "asca")
     assert part.value == "a:[+long] > e:[+long]"
@@ -163,6 +190,23 @@ def test_sound_change_ruleset_validates_expanded_chain_fixtures():
         "rules": [
             {"input": "dʒ", "output": "tʃ"},
             {"input": "tʃ", "output": "ʃ"},
+        ],
+    }
+    probe = Path("tests/fixtures/asca_probe_words.wsca")
+    validate_asca(SoundChangeRuleSet(section, "asca"), probe_words=probe)
+
+
+@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
+def test_sound_change_ruleset_validates_ejective_marker_fixtures():
+    from conlanger.tools.asca_validator import validate_asca
+
+    section = {
+        "index": "11.5.1",
+        "section": "Proto-Lezgic to Agul",
+        "rules": [
+            {"input": "tʃ:[+long]ʼ", "output": "tʃ:[+long]"},
+            {"input": "dʒ", "output": "{tʃ:[+long]ʼ,dʒ}"},
+            {"input": "dʼ", "output": "tʼ"},
         ],
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")
