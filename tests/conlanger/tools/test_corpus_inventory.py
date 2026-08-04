@@ -12,6 +12,7 @@ from conlanger.tools.corpus_inventory import (
     parse_unknown_token_error,
     reason_for_failure,
     summarize_inventory,
+    top_error_tokens,
     validate_corpus_rule,
     write_validation_csv,
 )
@@ -230,29 +231,6 @@ def test_validate_corpus_rule_unknown_token_fields(_mock_validate):
     assert row.suggested == "voice"
 
 
-def test_iter_validation_rows():
-    doc = {
-        "sections": [
-            {
-                "index": "1.0",
-                "section": "A",
-                "rules": [
-                    {
-                        "input": "",
-                        "output": "",
-                        "raw": "x",
-                        "source": "s:1",
-                        "skipped": "missing separator '→'",
-                    }
-                ],
-            }
-        ]
-    }
-    rows = list(iter_validation_rows(doc, probe_words=None))
-    assert len(rows) == 1
-    assert rows[0].section_name == "A"
-
-
 def test_write_validation_csv(tmp_path: Path):
     rows = [
         ValidationRow(
@@ -288,6 +266,153 @@ def test_write_validation_csv(tmp_path: Path):
     assert parsed[0]["section_index"] == "1.0"
     assert parsed[1]["error_token"] == "voiced"
     assert parsed[1]["suggested"] == "voice"
+    assert list(parsed[0].keys())[-1] == "description"
+
+
+def test_iter_validation_rows():
+    doc = {
+        "sections": [
+            {
+                "index": "1.0",
+                "section": "A",
+                "rules": [
+                    {
+                        "input": "",
+                        "output": "",
+                        "raw": "x",
+                        "source": "s:1",
+                        "skipped": "missing separator '→'",
+                    }
+                ],
+            }
+        ]
+    }
+    rows = list(iter_validation_rows(doc, probe_words=None))
+    assert len(rows) == 1
+    assert rows[0].section_name == "A"
+
+
+def test_top_error_tokens():
+    rows = [
+        ValidationRow(
+            "1",
+            "A",
+            0,
+            "s:1",
+            False,
+            "unknown_character",
+            "asca-unrepresentable",
+            "→",
+            "",
+            "err",
+        ),
+        ValidationRow(
+            "1",
+            "A",
+            1,
+            "s:2",
+            False,
+            "unknown_character",
+            "asca-unrepresentable",
+            "→",
+            "",
+            "err",
+        ),
+        ValidationRow(
+            "1",
+            "A",
+            2,
+            "s:3",
+            False,
+            "unknown_character",
+            "asca-unrepresentable",
+            "ː",
+            "",
+            "err",
+        ),
+        ValidationRow(
+            "1",
+            "A",
+            3,
+            "s:4",
+            False,
+            "unknown_feature",
+            "asca-unrepresentable",
+            "voiced",
+            "voice",
+            "err",
+        ),
+        ValidationRow(
+            "1",
+            "A",
+            4,
+            "s:5",
+            False,
+            "unknown_feature",
+            "asca-unrepresentable",
+            "voiced",
+            "voice",
+            "err",
+        ),
+        ValidationRow(
+            "1",
+            "A",
+            5,
+            "s:6",
+            False,
+            "unknown_feature",
+            "asca-unrepresentable",
+            "sibilant",
+            "sonorant",
+            "err",
+        ),
+    ]
+    assert top_error_tokens(rows, "unknown_character") == [("→", 2), ("ː", 1)]
+    assert top_error_tokens(rows, "unknown_feature") == [("voiced", 2), ("sibilant", 1)]
+    assert top_error_tokens(rows, "unknown_grouping") == []
+
+
+def test_summarize_inventory_common_errors():
+    rows = [
+        ValidationRow(
+            "1",
+            "A",
+            0,
+            "s:1",
+            False,
+            "unknown_character",
+            "asca-unrepresentable",
+            "→",
+            "",
+            "err",
+        ),
+        ValidationRow(
+            "1",
+            "A",
+            1,
+            "s:2",
+            False,
+            "unknown_feature",
+            "asca-unrepresentable",
+            "voiced",
+            "voice",
+            "err",
+        ),
+    ]
+    text = summarize_inventory(
+        rows,
+        source_yaml="out.yml",
+        probe_words="probe.wsca",
+    )
+    assert "## Common Errors" in text
+    assert "### unknown_character" in text
+    assert "| 1 | `→` |" in text
+    assert "### unknown_feature" in text
+    assert "| 1 | `voiced` |" in text
+    assert "### unknown_grouping" in text
+    assert "| — | _(none)_ |" in text
+    assert text.index("## Failure classes") < text.index("## Common Errors")
+    assert text.index("## Common Errors") < text.index("## Notes")
 
 
 def test_summarize_inventory():
@@ -328,6 +453,7 @@ def test_summarize_inventory():
     assert "OK: **1** (33.3%)" in text
     assert "Fail: **2** (66.7%)" in text
     assert "| 2 | `syntax_other` |" in text
+    assert "## Common Errors" in text
 
 
 def test_summarize_inventory_empty():
@@ -338,3 +464,5 @@ def test_summarize_inventory_empty():
     )
     assert "Rows: **0**" in text
     assert "OK: **0** (0.0%)" in text
+    assert "### unknown_character" in text
+    assert "| — | _(none)_ |" in text

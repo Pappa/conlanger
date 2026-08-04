@@ -2,13 +2,14 @@
 
 from __future__ import annotations
 
-import csv
 import re
 from collections import Counter
 from collections.abc import Iterator
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
+
+import pandas as pd
 
 from conlanger.tools.asca_validator import ASCAValidationError, validate_asca
 from conlanger.tools.rules import RuleChange, SoundChangeRuleSet
@@ -57,6 +58,88 @@ _UNKNOWN_TOKEN_RE = re.compile(
     re.IGNORECASE,
 )
 _DID_YOU_MEAN_RE = re.compile(r"Did you mean ([^?]+)\?", re.IGNORECASE)
+
+COMMON_ERROR_CLASSES = (
+    "unknown_character",
+    "unknown_feature",
+    "unknown_grouping",
+)
+
+VALIDATION_CSV_COLUMNS = [
+    "section_index",
+    "section_name",
+    "rule_idx",
+    "source",
+    "ok",
+    "failure_class",
+    "reason",
+    "error_token",
+    "suggested",
+    "description",
+]
+
+
+def validation_rows_to_dataframe(rows: list[ValidationRow]) -> pd.DataFrame:
+    """Return validation rows as a DataFrame with a stable column order."""
+    if not rows:
+        return pd.DataFrame(columns=VALIDATION_CSV_COLUMNS)
+    return pd.DataFrame([row.as_csv_dict() for row in rows], columns=VALIDATION_CSV_COLUMNS)
+
+
+def top_error_tokens(
+    rows: list[ValidationRow],
+    failure_class: str,
+    *,
+    limit: int = 5,
+) -> list[tuple[str, int]]:
+    """Return the most frequent ``error_token`` values for a failure class."""
+    return top_error_tokens_from_dataframe(
+        validation_rows_to_dataframe(rows),
+        failure_class,
+        limit=limit,
+    )
+
+
+def top_error_tokens_from_dataframe(
+    df: pd.DataFrame,
+    failure_class: str,
+    *,
+    limit: int = 5,
+) -> list[tuple[str, int]]:
+    """Return the most frequent ``error_token`` values for a failure class."""
+    if df.empty:
+        return []
+    tokens = df.loc[
+        (df["failure_class"] == failure_class) & (df["error_token"].astype(str) != ""),
+        "error_token",
+    ]
+    if tokens.empty:
+        return []
+    counts = tokens.value_counts().head(limit)
+    return [(str(token), int(count)) for token, count in counts.items()]
+
+
+def format_common_errors_section(rows: list[ValidationRow]) -> list[str]:
+    """Markdown lines for top ``error_token`` counts per unknown-token failure class."""
+    df = validation_rows_to_dataframe(rows)
+    lines = ["", "## Common Errors", ""]
+    for failure_class in COMMON_ERROR_CLASSES:
+        lines.extend(
+            [
+                f"### {failure_class}",
+                "",
+                "| count | error_token |",
+                "|------:|-------------|",
+            ]
+        )
+        top = top_error_tokens_from_dataframe(df, failure_class)
+        if top:
+            for token, count in top:
+                lines.append(f"| {count} | `{token}` |")
+        else:
+            lines.append("| — | _(none)_ |")
+        lines.append("")
+    return lines
 
 
 def parse_unknown_token_error(error: str) -> tuple[str, str]:
@@ -264,23 +347,7 @@ def iter_validation_rows(
 
 def write_validation_csv(rows: list[ValidationRow], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    fieldnames = [
-        "section_index",
-        "section_name",
-        "rule_idx",
-        "source",
-        "ok",
-        "failure_class",
-        "reason",
-        "error_token",
-        "suggested",
-        "description",
-    ]
-    with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
-        writer.writeheader()
-        for row in rows:
-            writer.writerow(row.as_csv_dict())
+    validation_rows_to_dataframe(rows).to_csv(path, index=False)
 
 
 def summarize_inventory(
@@ -317,9 +384,9 @@ def summarize_inventory(
     ]
     for failure_class, count in class_counts.most_common():
         lines.append(f"| {count} | `{failure_class}` |")
+    lines.extend(format_common_errors_section(rows))
     lines.extend(
         [
-            "",
             "## Notes",
             "",
             "- Inventory runs per corpus rule via `SoundChangeRuleSet` + `validate_asca`.",
