@@ -8,6 +8,22 @@ from conlanger.tools.parsers import load_group_mappings
 _GROUPING_PREC = r"(?:^|(?<=[\{\[\s/,>_A-Z#$%|!\(-]))"
 _GROUPING_FOLLOW = r"(?=[:,\[\]\{\}\s/>_#$%|!\)-]|$|[A-Z])"
 
+# Index length marks → ASCA [+long] feature (compile-time, ASCA only).
+_IPA_SEGMENT = r"[a-zA-Z\u0250-\u02AF\u1D00-\u1DBF\u0300-\u036F]+"
+_OPT_LENGTH_RE = re.compile(rf"({_IPA_SEGMENT}|[A-Z])\(ː\)")
+_GROUPING_LENGTH_RE = re.compile(r"([A-Z])ː")
+_SEGMENT_LENGTH_RE = re.compile(rf"({_IPA_SEGMENT})ː")
+
+
+def normalize_asca_length_marks(text: str) -> str:
+    """Map Index ``ː`` / ``(ː)`` length notation to ASCA ``:[+long]``."""
+    if not text or ("ː" not in text and "(ː)" not in text):
+        return text
+    text = _OPT_LENGTH_RE.sub(r"\1:[+long]", text)
+    text = _GROUPING_LENGTH_RE.sub(r"\1:[+long]", text)
+    text = _SEGMENT_LENGTH_RE.sub(r"\1:[+long]", text)
+    return text
+
 
 @lru_cache(maxsize=1)
 def asca_group_mappings_dict() -> dict[str, str]:
@@ -121,9 +137,10 @@ class RuleChange(RulePartBase):
 
         if rule.get("skip", False):
             self.prefixes = {"asca": "#\t", "brassica": ";;\t"}
-        super().__init__(self._format(format), format)
+        # Compile applier-specific rule text once at construction (stored in ``value``).
+        super().__init__(self._compile_rule_text(format), format)
 
-    def _format(self, format: str):
+    def _compile_rule_text(self, format: str) -> str:
         separator = self.separator.get(format, {})
 
         result = self.input + separator["output"] + self.output
@@ -132,8 +149,14 @@ class RuleChange(RulePartBase):
         if self.exception:
             result += separator["exception"] + self.exception
 
-        result = self._apply_asca_group_mappings(result, format)
+        if format == "asca":
+            result = self._apply_asca_group_mappings(result, format)
+            result = normalize_asca_length_marks(result)
         return self._apply_aliases(result)
+
+    def _format(self, format: str):
+        """Backward-compatible alias for ``_compile_rule_text``."""
+        return self._compile_rule_text(format)
 
     def _apply_asca_group_mappings(self, rule: str, format: str) -> str:
         if format != "asca":

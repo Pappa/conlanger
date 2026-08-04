@@ -1,5 +1,16 @@
+import shutil
+from pathlib import Path
+
 import pytest
-from conlanger.tools.rules import SoundChangeRuleSet, DebugRules, RuleCitation, RuleComment
+
+from conlanger.tools.rules import (
+    DebugRules,
+    RuleChange,
+    RuleCitation,
+    RuleComment,
+    SoundChangeRuleSet,
+    normalize_asca_length_marks,
+)
 
 @pytest.mark.parametrize(
     "section, format, expected",
@@ -78,3 +89,59 @@ def test_format_not_supported():
         RuleCitation("citation text", "invalid")
     with pytest.raises(ValueError):
         RuleComment("comment text", "invalid")
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("aː", "a:[+long]"),
+        ("Vː", "V:[+long]"),
+        ("e(ː)", "e:[+long]"),
+        ("tsː", "ts:[+long]"),
+        ("_{i,e(ː),a}", "_{i,e:[+long],a}"),
+        ("VNC > VːC[+voiced]", "VNC > V:[+long]C[+voiced]"),
+        ("a", "a"),
+        ("", ""),
+    ],
+)
+def test_normalize_asca_length_marks(text, expected):
+    assert normalize_asca_length_marks(text) == expected
+
+
+def test_rule_change_compiles_length_at_instantiation():
+    part = RuleChange({"input": "a(ː)", "output": "e(ː)"}, "asca")
+    assert part.value == "a:[+long] > e:[+long]"
+    assert "ː" not in part.value
+    assert part.input == "a(ː)"
+
+
+def test_rule_change_skips_length_for_brassica():
+    part = RuleChange({"input": "aː", "output": "eː"}, "brassica")
+    assert part.value == "aː / eː"
+
+
+def test_sound_change_ruleset_compiles_length_at_instantiation():
+    section = {
+        "index": "6.1",
+        "section": "Test",
+        "rules": [{"input": "Vː", "output": "V", "env": "#C_C"}],
+    }
+    ruleset = SoundChangeRuleSet(section, "asca")
+    rule_part = ruleset._parts[-1]
+    assert rule_part.value == "V:[+long] > V / #C_C"
+
+
+@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
+def test_sound_change_ruleset_validates_length_marker_fixtures():
+    from conlanger.tools.asca_validator import validate_asca
+
+    section = {
+        "index": "6.1",
+        "section": "Proto-Afro-Asiatic to Proto-Omotic",
+        "rules": [
+            {"input": "a(ː)", "output": "e(ː)", "env": "_{ʕ,q}$"},
+            {"input": "Vː", "output": "V", "env": "#C:[-front,+back,+hi,-lo][-voice]_C"},
+        ],
+    }
+    probe = Path("tests/fixtures/asca_probe_words.wsca")
+    validate_asca(SoundChangeRuleSet(section, "asca"), probe_words=probe)
