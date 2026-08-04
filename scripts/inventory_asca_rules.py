@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import csv
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -25,7 +26,6 @@ from conlanger.tools.rules import RuleChange  # noqa: E402
 DEFAULT_YAML = ROOT / "notebooks/data/index_diachronica_ai.yml"
 DEFAULT_WORDS = ROOT / "notebooks/data/words/asca/weirdness_0.5.wsca"
 DEFAULT_OUT = ROOT / ".scratch/cleaned-rule-corpus/inventory/asca-rule-inventory.csv"
-ASCA_BIN = Path.home() / ".cargo/bin/asca"
 
 ERROR_CLASS_PATTERNS = [
     ("nested_brackets", re.compile(r"nested brackets", re.I)),
@@ -143,9 +143,10 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=0, help="optional cap for smoke tests")
     args = ap.parse_args()
 
-    if not ASCA_BIN.exists():
-        print(f"ERROR: asca not found at {ASCA_BIN}", file=sys.stderr)
+    if shutil.which("asca") is None:
+        print("ERROR: asca not found on PATH", file=sys.stderr)
         return 1
+    asca_bin = shutil.which("asca")
     if not args.yaml.exists():
         print(f"ERROR: yaml not found at {args.yaml}", file=sys.stderr)
         return 1
@@ -156,7 +157,7 @@ def main() -> int:
     doc = yaml.safe_load(args.yaml.read_text(encoding="utf-8"))
     jobs = []
     precomputed = []
-    for item in iter_jobs(doc, str(args.words), str(ASCA_BIN)):
+    for item in iter_jobs(doc, str(args.words), asca_bin):
         if isinstance(item, dict) and item.get("_precomputed"):
             item.pop("_precomputed")
             precomputed.append(item)

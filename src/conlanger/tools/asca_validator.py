@@ -1,6 +1,6 @@
-"""Validate ``SoundChangeRuleSet`` instances against ASCA (pinned to 0.10.2).
+"""Validate ``SoundChangeRuleSet`` instances against ASCA (0.10.x).
 
-Drives the installed ``asca`` CLI (``run`` on a probe wordlist) so syntax and
+Drives the ``asca`` CLI on ``PATH`` (``run`` on a probe wordlist) so syntax and
 apply-time structural checks (Tier 1–4 in
 ``.scratch/cleaned-rule-corpus/research/asca-rule-validity.md`` §5) stay aligned
 with ``ParsedRules`` / ``Rule::split_into_subrules`` rather than a docs-only
@@ -11,13 +11,12 @@ from __future__ import annotations
 
 import os
 import re
+import shutil
 import subprocess
 import tempfile
 from pathlib import Path
 
 from conlanger.tools.rules import RuleChange, SoundChangeRuleSet
-
-DEFAULT_ASCA_BIN = Path.home() / ".cargo" / "bin" / "asca"
 
 # Minimal probe lexicon for ``asca run`` (Tier 4 boundary). Override with ASCA_PROBE_WORDS.
 _DEFAULT_PROBE_WORDS = "a\nba\nkata\nsami\nntu\n"
@@ -31,11 +30,6 @@ class ASCAValidationError(ValueError):
     def __init__(self, message: str, *, returncode: int | None = None):
         super().__init__(message)
         self.returncode = returncode
-
-
-def _asca_bin() -> Path:
-    override = os.environ.get("ASCA_BIN")
-    return Path(override) if override else DEFAULT_ASCA_BIN
 
 
 def _active_rule_changes(rule: SoundChangeRuleSet) -> list[RuleChange]:
@@ -59,7 +53,6 @@ def _clean_asca_stderr(stderr: str) -> str:
 def validate_asca(
     rule: SoundChangeRuleSet,
     *,
-    asca_bin: Path | None = None,
     probe_words: Path | None = None,
     timeout: float = 15.0,
 ) -> bool:
@@ -68,16 +61,18 @@ def validate_asca(
     Writes the rendered ``SoundChangeRuleSet`` to a temporary ``.rsca`` and runs
     ``asca run <probe_words> --rules <file>``. Non-zero exit or ASCA
     Syntax/Runtime Error text on stderr becomes ``ASCAValidationError``.
-    """
-    bin_path = asca_bin or _asca_bin()
-    if not bin_path.is_file():
-        raise ASCAValidationError(
-            f"asca binary not found at {bin_path} (need asca 0.10.2; set ASCA_BIN)"
-        )
 
+    Requires ``asca`` 0.10.x to be installed and available on ``PATH``.
+    """
     if not _active_rule_changes(rule):
         raise ASCAValidationError(
             "SoundChangeRuleSet has no active RuleChange lines to validate"
+        )
+
+    asca = shutil.which("asca")
+    if asca is None:
+        raise ASCAValidationError(
+            "asca binary not found on PATH (install asca 0.10.x and ensure it is on PATH)"
         )
 
     body = str(rule)
@@ -107,7 +102,7 @@ def validate_asca(
 
         try:
             proc = subprocess.run(  # noqa: PLW1510
-                [str(bin_path), "run", str(words_path), "--rules", str(rsca)],
+                [asca, "run", str(words_path), "--rules", str(rsca)],
                 capture_output=True,
                 text=True,
                 timeout=timeout,

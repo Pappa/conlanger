@@ -6,6 +6,7 @@ Uses ticket-11 extract-only ingest (``IndexDiachronicaParser``) and ``validate_a
 
 import argparse
 import logging
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -30,12 +31,13 @@ DEFAULT_INVENTORY_DIR = ROOT / ".scratch" / "cleaned-rule-corpus" / "inventory"
 DEFAULT_PROBE = ROOT / "tests" / "fixtures" / "asca_probe_words.wsca"
 
 
-def _asca_version(asca_bin: Path | None) -> str:
-    if asca_bin is None or not asca_bin.is_file():
-        return "0.10.2 (binary not found)"
+def _asca_version() -> str:
+    asca = shutil.which("asca")
+    if asca is None:
+        return "not found on PATH"
     try:
         proc = subprocess.run(  # noqa: PLW1510
-            [str(asca_bin), "--version"],
+            [asca, "--version"],
             capture_output=True,
             text=True,
             timeout=5,
@@ -44,7 +46,7 @@ def _asca_version(asca_bin: Path | None) -> str:
             return proc.stdout.strip()
     except (OSError, subprocess.TimeoutExpired):
         pass
-    return "0.10.2"
+    return "0.10.x"
 
 
 def main() -> int:
@@ -95,20 +97,15 @@ def main() -> int:
         print(f"ERROR: probe wordlist not found at {args.probe_words}", file=sys.stderr)
         return 1
 
-    from conlanger.tools.asca_validator import _asca_bin
-
-    asca_bin = _asca_bin()
-    if not asca_bin.is_file():
+    if shutil.which("asca") is None:
         print(
-            f"ERROR: asca binary not found at {asca_bin} "
-            "(need asca 0.10.2; set ASCA_BIN or use --skip-validation)",
+            "ERROR: asca binary not found on PATH "
+            "(install asca 0.10.x and ensure it is on PATH, or use --skip-validation)",
             file=sys.stderr,
         )
         return 1
 
-    rows = list(
-        iter_validation_rows(doc, probe_words=args.probe_words, asca_bin=asca_bin)
-    )
+    rows = list(iter_validation_rows(doc, probe_words=args.probe_words))
     if args.limit:
         rows = rows[: args.limit]
 
@@ -120,7 +117,7 @@ def main() -> int:
         rows,
         source_yaml=str(args.yaml_out.relative_to(ROOT)),
         probe_words=str(args.probe_words.relative_to(ROOT)),
-        asca_version=_asca_version(asca_bin),
+        asca_version=_asca_version(),
     )
     summary_path.parent.mkdir(parents=True, exist_ok=True)
     summary_path.write_text(summary, encoding="utf-8")

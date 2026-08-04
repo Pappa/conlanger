@@ -104,7 +104,6 @@ def test_validate_corpus_rule_skipped_parse_diagnostic():
         },
         0,
         probe_words=None,
-        asca_bin=None,
     )
     assert row.ok is False
     assert row.failure_class == "missing_arrow"
@@ -117,7 +116,6 @@ def test_validate_corpus_rule_format_error():
         {"output": "b", "raw": "→ b", "source": "sample.html:2"},
         1,
         probe_words=None,
-        asca_bin=None,
     )
     assert row.ok is False
     assert row.failure_class == "format_error"
@@ -135,7 +133,6 @@ def test_validate_corpus_rule_held_out_comment():
         },
         2,
         probe_words=None,
-        asca_bin=None,
     )
     assert row.ok is True
     assert row.description == "held-out (commented rule)"
@@ -148,7 +145,6 @@ def test_validate_corpus_rule_ok(_mock_validate):
         {"input": "a", "output": "b", "raw": "a → b", "source": "sample.html:4"},
         0,
         probe_words=Path("/probe.wsca"),
-        asca_bin=Path("/asca"),
     )
     assert row.ok is True
     assert row.failure_class == ""
@@ -164,7 +160,6 @@ def test_validate_corpus_rule_asca_failure(_mock_validate):
         {"input": "a", "output": "b", "env": "bad", "raw": "a → b", "source": "s:5"},
         0,
         probe_words=None,
-        asca_bin=None,
     )
     assert row.ok is False
     assert row.failure_class == "expected_underscore"
@@ -189,7 +184,7 @@ def test_iter_validation_rows():
             }
         ]
     }
-    rows = list(iter_validation_rows(doc, probe_words=None, asca_bin=None))
+    rows = list(iter_validation_rows(doc, probe_words=None))
     assert len(rows) == 1
     assert rows[0].section_name == "A"
 
@@ -243,7 +238,7 @@ def test_summarize_inventory():
         rows,
         source_yaml="out.yml",
         probe_words="probe.wsca",
-        asca_version="0.10.2",
+        asca_version="0.10.x",
     )
     assert "Rows: **3**" in text
     assert "OK: **1** (33.3%)" in text

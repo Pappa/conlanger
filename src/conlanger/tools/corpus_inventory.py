@@ -135,7 +135,6 @@ def validate_corpus_rule(
     rule_idx: int,
     *,
     probe_words: Path | None,
-    asca_bin: Path | None,
 ) -> ValidationRow:
     section_index = str(section.get("index", ""))
     section_name = str(section.get("section", ""))
@@ -188,7 +187,6 @@ def validate_corpus_rule(
         validate_asca(
             SoundChangeRuleSet(mini),
             probe_words=probe_words,
-            asca_bin=asca_bin,
         )
     except ASCAValidationError as exc:
         err = str(exc)
@@ -220,7 +218,6 @@ def iter_validation_rows(
     doc: dict[str, Any],
     *,
     probe_words: Path | None,
-    asca_bin: Path | None,
 ) -> Iterator[ValidationRow]:
     for section in doc.get("sections") or []:
         rules = section.get("rules") or []
@@ -230,7 +227,6 @@ def iter_validation_rows(
                 rule,
                 rule_idx,
                 probe_words=probe_words,
-                asca_bin=asca_bin,
             )
 
 
@@ -258,7 +254,7 @@ def summarize_inventory(
     *,
     source_yaml: str,
     probe_words: str,
-    asca_version: str = "0.10.2",
+    asca_version: str = "0.10.x",
 ) -> str:
     total = len(rows)
     ok_n = sum(1 for row in rows if row.ok)
