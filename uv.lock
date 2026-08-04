@@ -218,6 +218,7 @@ dev = [
     { name = "lxml" },
     { name = "pytest" },
     { name = "pytest-cov" },
+    { name = "pytest-mock" },
     { name = "ruff" },
     { name = "strip-ansi" },
 ]
@@ -246,6 +247,7 @@ dev = [
     { name = "lxml", specifier = ">=6.0.2" },
     { name = "pytest", specifier = ">=8.4.2" },
     { name = "pytest-cov", specifier = ">=7.0.0" },
+    { name = "pytest-mock", specifier = ">=3.15.1" },
     { name = "ruff", specifier = ">=0.16.1" },
     { name = "strip-ansi", specifier = ">=0.1.1" },
 ]
