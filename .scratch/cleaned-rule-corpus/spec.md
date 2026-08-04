@@ -4,7 +4,7 @@ Status: ready-for-agent
 
 Applier-neutral YAML successor to Index Diachronica HTML as the authoritative **rule corpus**, with **corpus rules** that **compile** to valid ASCA under **historical fidelity** constraints and a scalable **class-first** correction workflow.
 
-Glossary: `CONTEXT.md`. Architectural context: ADRs 0001–0006, 0010. Prior decisions: `.scratch/cleaned-rule-corpus/map.md`, resolved tickets 01–09, and open task [10-rule-derived-probe-synthesis](issues/10-rule-derived-probe-synthesis.md).
+Glossary: `CONTEXT.md`. Architectural context: ADRs 0001–0006, 0010. Prior decisions: `.scratch/cleaned-rule-corpus/map.md`, resolved tickets 01–09, implementation tickets [11–13](issues/). Ticket [10](issues/10-rule-derived-probe-synthesis.md) (rule-derived candidate generation) — **wontfix**; use ASCA directly via `validate_asca`.
 
 ## Problem Statement
 

@@ -1,7 +1,12 @@
 Type: task
+Status: wontfix
 Blocked by: 08
 
 # Rule-derived probe synthesis for compile validation
+
+## Answer
+
+**Wontfix.** Use ASCA directly for **compile validation** via existing `validate_asca` (`asca run` + baseline wordlist). Rule-derived candidate word generation (formerly "probe synthesis") is redundant with a parse/apply gate for error clustering — ~98% of provisional inventory failures are Tier 1–2 syntax, catchable without per-rule word synthesis. See tickets [11](11-minimal-extract-only-ingest.md) → [12](12-full-corpus-validation-inventory.md) → cluster-driven [13+](13-correction-pass-template.md).
 
 ## Question
 

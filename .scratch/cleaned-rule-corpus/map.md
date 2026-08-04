@@ -24,6 +24,16 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - [Resolve abbreviations unsupported by ASCA and Brassica](issues/06-resolve-applier-unsupported-abbreviations.md) — **PhonologicalRuleSet** + **class letter** mappings; **symbol** ingest norm; cluster-driven deferrals.
 - [Spike: ASCA feature-matrix expansions for Index class letters](issues/09-spike-asca-class-letter-feature-matrices.md) — `group_mappings.csv` validated. [research/asca-class-letter-mappings.md](research/asca-class-letter-mappings.md).
 
+## Implementation plan (tickets 11+)
+
+Phased delivery — not vertical slices upfront:
+
+1. **[Minimal extract-only ingest](issues/11-minimal-extract-only-ingest.md)** — four rule parts + **Symbol** normalization only; no class letters, features, or compile transforms.
+2. **[Full-corpus validation inventory](issues/12-full-corpus-validation-inventory.md)** — every **corpus rule** through `validate_asca` (ASCA 0.10.2); validation report CSV + clustered failure-class summary.
+3. **[Correction passes](issues/13-correction-pass-template.md)** — cluster-driven iterations (parsing fixes and/or feature additions); re-run inventory after each pass until adoption criteria met.
+
+**Compile validation:** use ASCA directly (`validate_asca` / `asca run` + baseline wordlist). Rule-derived candidate generation ([ticket 10](issues/10-rule-derived-probe-synthesis.md)) — **wontfix**.
+
 ## Not yet specified
 
 - **Whitespace tokenisation for ASCA** — inter-segment spacing (deferred from ticket 07)
@@ -35,7 +45,6 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - Brassica compiler (ADR-0001)
 - Edge-split policy (ADR-0005; interim **skipped**)
 - External one-off rule override schema
-- **Tier 1–3 word-independent ASCA gate** (Rust `ParsedRules::try_from` wrapper) — deferred; probe synthesis (ticket 10) addresses Tier 4 first
 
 ## Out of scope
 
