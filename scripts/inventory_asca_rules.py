@@ -23,8 +23,8 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from conlanger.tools.rules import RuleChange  # noqa: E402
 
-DEFAULT_YAML = ROOT / "notebooks/data/index_diachronica_ai.yml"
-DEFAULT_WORDS = ROOT / "notebooks/data/words/asca/weirdness_0.5.wsca"
+DEFAULT_YAML = ROOT / "legacy/data/index_diachronica_ai.yml"
+DEFAULT_WORDS = ROOT / "data/generated/lexicon/asca/weirdness0.5.wsca"
 DEFAULT_OUT = ROOT / ".scratch/cleaned-rule-corpus/inventory/asca-rule-inventory.csv"
 
 ERROR_CLASS_PATTERNS = [
