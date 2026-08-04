@@ -7,12 +7,14 @@ Phase 2: optional ``/ env`` then optional ``! exception``
 second `` / `` are edge-case fallbacks.
 Phase 3: first ``<p>`` after ``<h2>`` → section ``citation`` (whole text, cleanup later);
 other non-``schg`` paragraphs → ``comments``.
+Phase 4: **Symbol** normalization on corpus fields only (``#``, ``$``, ``%``, ``∅``,
+Index stress ``”`` → ASCA-canonical); ``raw`` unchanged. Class-letter expansion is
+deferred to compile time (``PhonologicalRuleSet`` + ``group_mappings.csv``).
 """
 
 from __future__ import annotations
 
 import re
-from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -62,6 +64,12 @@ SUBSCRIPT_MAP = str.maketrans(
 DEFAULT_GROUP_MAPPINGS_CSV = (
     Path(__file__).resolve().parents[1] / "data" / "asca" / "group_mappings.csv"
 )
+
+# Protect Index stem ``$`` while remapping syllable-boundary ``%`` → ASCA ``$``.
+_STEM_BOUNDARY_PLACEHOLDER = "\ue000"
+INDEX_PROSE_OPEN = "\u201c"
+INDEX_PROSE_CLOSE = "\u201d"
+ASCA_PRIMARY_STRESS = "'"
 
 GroupMappingTuple = tuple[str, str] | tuple[str, str, str]
 
@@ -169,6 +177,54 @@ def split_post_arrow(post_arrow: str) -> tuple[str, str | None, str | None]:
     return out, env, exception
 
 
+def _index_stress_close_positions(text: str) -> set[int]:
+    """Indices of ``”`` that close Index editorial ``“…“`` spans (not stress)."""
+    prose_closes: set[int] = set()
+    i = 0
+    while i < len(text):
+        if text[i] == INDEX_PROSE_OPEN:
+            j = text.find(INDEX_PROSE_CLOSE, i + 1)
+            if j != -1:
+                prose_closes.add(j)
+                i = j + 1
+                continue
+        i += 1
+    return prose_closes
+
+
+def normalize_symbols(text: str) -> str:
+    """Map Index **Symbol** marks to ASCA-canonical form in corpus fields.
+
+    Index ``%`` (syllable boundary) → ASCA ``$``; Index ``$`` (stem boundary) is
+    preserved. Index stress ``”`` → ASCA primary stress ``'`` (editorial ``“…”``
+    spans are left unchanged). ``#`` and ``∅`` are already shared and pass through.
+    """
+    if not text:
+        return text
+    text = text.replace("$", _STEM_BOUNDARY_PLACEHOLDER)
+    text = text.replace("%", "$")
+    text = text.replace(_STEM_BOUNDARY_PLACEHOLDER, "$")
+    if INDEX_PROSE_CLOSE not in text:
+        return text
+    prose_closes = _index_stress_close_positions(text)
+    chars: list[str] = []
+    for idx, ch in enumerate(text):
+        if ch == INDEX_PROSE_CLOSE and idx not in prose_closes:
+            chars.append(ASCA_PRIMARY_STRESS)
+        else:
+            chars.append(ch)
+    return "".join(chars)
+
+
+def normalize_corpus_fields(parts: dict[str, str]) -> dict[str, str]:
+    """Apply symbol normalization to parsed rule parts."""
+    return {
+        key: normalize_symbols(value)
+        for key, value in parts.items()
+        if key in {"input", "output", "env", "exception"}
+    }
+
+
 def extract_rule_parts(raw: str) -> dict[str, str] | None:
     """Split a raw rule string into input, output, and optional env/exception.
 
@@ -243,37 +299,17 @@ def _coerce_group_mapping(item: GroupMapping | GroupMappingTuple) -> GroupMappin
 
 
 class IndexDiachronicaParser:
-    """Parse Index Diachronica HTML, optionally remapping group letters."""
-
-    def __init__(
-        self,
-        group_mappings: Sequence[GroupMapping | GroupMappingTuple] | None = None,
-    ) -> None:
-        self._group_mappings = (
-            [_coerce_group_mapping(item) for item in group_mappings]
-            if group_mappings
-            else []
-        )
-        self._abbreviations = {
-            m.grouping: m.mapping for m in self._group_mappings
-        }
-        self._trans = (
-            str.maketrans(self._abbreviations) if self._abbreviations else None
-        )
+    """Parse Index Diachronica HTML into applier-neutral cleaned-corpus YAML."""
 
     def abbreviations(self) -> dict[str, str]:
-        return dict(self._abbreviations)
-
-    def apply_group_mappings(self, text: str) -> str:
-        if self._trans is None:
-            return text
-        return text.translate(self._trans)
+        """Global abbreviation table for the cleaned corpus (empty at ingest)."""
+        return {}
 
     def parse_rule_element(self, el, *, source_file: str) -> dict[str, Any]:
         raw = extract_text_with_subs(el)
         line = getattr(el, "sourceline", None) or 0
         source = f"{source_file}:{line}"
-        parts = extract_rule_parts(self.apply_group_mappings(raw))
+        parts = extract_rule_parts(raw)
         if parts is None:
             return {
                 "input": "",
@@ -283,7 +319,7 @@ class IndexDiachronicaParser:
                 "skipped": f"missing separator {ARROW!r}",
             }
         return {
-            **parts,
+            **normalize_corpus_fields(parts),
             "raw": raw,
             "source": source,
         }
@@ -351,12 +387,5 @@ class IndexDiachronicaParser:
         }
 
 
-def parse_rule_element(
-    el,
-    *,
-    source_file: str,
-    group_mappings: Sequence[GroupMapping | GroupMappingTuple] | None = None,
-) -> dict[str, Any]:
-    return IndexDiachronicaParser(group_mappings).parse_rule_element(
-        el, source_file=source_file
-    )
+def parse_rule_element(el, *, source_file: str) -> dict[str, Any]:
+    return IndexDiachronicaParser().parse_rule_element(el, source_file=source_file)

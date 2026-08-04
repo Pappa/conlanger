@@ -14,7 +14,6 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from conlanger.tools.IndexDiachronicaParser import (  # noqa: E402
     IndexDiachronicaParser,
-    load_group_mappings,
 )
 
 DEFAULT_HTML = ROOT / "notebooks" / "data" / "index_diachronica_original.html"
@@ -31,7 +30,7 @@ def main() -> int:
         print(f"ERROR: HTML not found at {args.html}", file=sys.stderr)
         return 1
 
-    parser = IndexDiachronicaParser(load_group_mappings())
+    parser = IndexDiachronicaParser()
     doc = parser.parse(args.html)
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(

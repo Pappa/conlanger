@@ -13,6 +13,8 @@ from conlanger.tools.IndexDiachronicaParser import (
     extract_rule_parts,
     extract_text_with_subs,
     load_group_mappings,
+    normalize_corpus_fields,
+    normalize_symbols,
     parse_rule_element,
     parse_section_heading,
     split_env_exception,
@@ -165,7 +167,27 @@ def test_load_group_mappings_without_comment_column(tmp_path: Path):
     assert mappings == [GroupMapping("S", "P", "")]
 
 
-def test_parser_tuple_group_mappings(tmp_path: Path):
+def test_normalize_symbols():
+    assert normalize_symbols("#_") == "#_"
+    assert normalize_symbols("∅") == "∅"
+    assert normalize_symbols("_$%oː") == "_$$oː"
+    assert normalize_symbols("$am_w") == "$am_w"
+    assert normalize_symbols('in #”U') == "in #'U"
+    assert normalize_symbols('s “(for many speakers)”') == 's “(for many speakers)”'
+    assert normalize_symbols("") == ""
+
+
+def test_normalize_corpus_fields():
+    parts = {"input": "a", "output": "b", "env": "_%", "exception": "in #”U"}
+    assert normalize_corpus_fields(parts) == {
+        "input": "a",
+        "output": "b",
+        "env": "_$",
+        "exception": "in #'U",
+    }
+
+
+def test_parser_preserves_class_letters(tmp_path: Path):
     html_path = tmp_path / "mapped.html"
     _write_index_diachronica_html(
         html_path,
@@ -174,8 +196,9 @@ def test_parser_tuple_group_mappings(tmp_path: Path):
 <h2>1.0 Test Section</h2>
 <p class="schg">S → a</p>""",
     )
-    doc = IndexDiachronicaParser([("S", "P")]).parse(html_path)
-    assert doc["sections"][0]["rules"][0]["input"] == "P"
+    doc = IndexDiachronicaParser().parse(html_path)
+    assert doc["abbreviations"] == {}
+    assert doc["sections"][0]["rules"][0]["input"] == "S"
 
 
 def test_parser_skips_section_without_h2(tmp_path: Path):
@@ -399,7 +422,7 @@ def test_load_group_mappings_default_csv():
     assert all(isinstance(m, GroupMapping) for m in mappings)
 
 
-def test_parser_abbreviations_and_raw_preserved(tmp_path: Path):
+def test_parser_normalizes_symbols_and_preserves_raw(tmp_path: Path):
     html_path = tmp_path / "mapped.html"
     _write_index_diachronica_html(
         html_path,
@@ -407,20 +430,18 @@ def test_parser_abbreviations_and_raw_preserved(tmp_path: Path):
         charset=True,
         section_body="""\
 <h2>1.0 Test Section</h2>
-<p class="schg">S → a / V_V</p>""",
+<p class="schg">a → b / _$%oː</p>""",
     )
-    mappings = load_group_mappings()
-    doc = IndexDiachronicaParser(mappings).parse(
-        html_path, source_file="mapped.html"
-    )
-    assert doc["abbreviations"]["S"] == "P"
+    doc = IndexDiachronicaParser().parse(html_path, source_file="mapped.html")
+    assert doc["abbreviations"] == {}
     rule = doc["sections"][0]["rules"][0]
-    assert rule["input"] == "P"
-    assert "S" in rule["raw"]
-    assert rule["env"] == "V_V"
+    assert rule["input"] == "a"
+    assert rule["output"] == "b"
+    assert rule["env"] == "_$$oː"
+    assert rule["raw"] == "a → b / _$%oː"
 
 
-def test_parser_without_mappings_unchanged(tmp_path: Path):
+def test_parser_class_letters_unchanged(tmp_path: Path):
     html_path = tmp_path / "unmapped.html"
     _write_index_diachronica_html(
         html_path,
@@ -434,6 +455,7 @@ def test_parser_without_mappings_unchanged(tmp_path: Path):
     assert doc["abbreviations"] == {}
     rule = doc["sections"][0]["rules"][0]
     assert rule["input"] == "S"
+    assert rule["env"] == "V_V"
     assert IndexDiachronicaParser().abbreviations() == {}
 
 
