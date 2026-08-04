@@ -52,6 +52,21 @@ REASON_VOCABULARY = (
     "other",
 )
 
+_UNKNOWN_TOKEN_RE = re.compile(
+    r"Unknown (?:feature|grouping|character) '([^']+)'",
+    re.IGNORECASE,
+)
+_DID_YOU_MEAN_RE = re.compile(r"Did you mean ([^?]+)\?", re.IGNORECASE)
+
+
+def parse_unknown_token_error(error: str) -> tuple[str, str]:
+    """Extract unknown token and ASCA suggestion from a validation error string."""
+    token_match = _UNKNOWN_TOKEN_RE.search(error)
+    error_token = token_match.group(1) if token_match else ""
+    suggest_match = _DID_YOU_MEAN_RE.search(error)
+    suggested = suggest_match.group(1).strip() if suggest_match else ""
+    return error_token, suggested
+
 
 def classify_error(error: str) -> str:
     if not error:
@@ -105,6 +120,8 @@ class ValidationRow:
     failure_class: str
     reason: str
     description: str
+    error_token: str
+    suggested: str
 
     def as_csv_dict(self) -> dict[str, str | int | bool]:
         return {
@@ -116,6 +133,8 @@ class ValidationRow:
             "failure_class": self.failure_class,
             "reason": self.reason,
             "description": self.description,
+            "error_token": self.error_token,
+            "suggested": self.suggested,
         }
 
 
@@ -143,6 +162,7 @@ def validate_corpus_rule(
     if rule.get("skipped"):
         err = str(rule["skipped"])
         failure_class = "missing_arrow"
+        error_token, suggested = parse_unknown_token_error(err)
         return ValidationRow(
             section_index=section_index,
             section_name=section_name,
@@ -152,6 +172,8 @@ def validate_corpus_rule(
             failure_class=failure_class,
             reason=reason_for_failure(failure_class, err),
             description=err,
+            error_token=error_token,
+            suggested=suggested,
         )
 
     try:
@@ -159,6 +181,7 @@ def validate_corpus_rule(
     except (KeyError, ValueError) as exc:
         err = f"format_error: {exc}"
         failure_class = "format_error"
+        error_token, suggested = parse_unknown_token_error(err)
         return ValidationRow(
             section_index=section_index,
             section_name=section_name,
@@ -168,6 +191,8 @@ def validate_corpus_rule(
             failure_class=failure_class,
             reason=reason_for_failure(failure_class, err),
             description=err,
+            error_token=error_token,
+            suggested=suggested,
         )
 
     if rule.get("skip"):
@@ -180,6 +205,8 @@ def validate_corpus_rule(
             failure_class="",
             reason="",
             description="held-out (commented rule)",
+            error_token="",
+            suggested="",
         )
 
     mini = _mini_section(section, rule, rule_idx)
@@ -191,6 +218,7 @@ def validate_corpus_rule(
     except ASCAValidationError as exc:
         err = str(exc)
         failure_class = classify_error(err)
+        error_token, suggested = parse_unknown_token_error(err)
         return ValidationRow(
             section_index=section_index,
             section_name=section_name,
@@ -200,6 +228,8 @@ def validate_corpus_rule(
             failure_class=failure_class,
             reason=reason_for_failure(failure_class, err),
             description=err,
+            error_token=error_token,
+            suggested=suggested,
         )
 
     return ValidationRow(
@@ -211,6 +241,8 @@ def validate_corpus_rule(
         failure_class="",
         reason="",
         description="",
+        error_token="",
+        suggested="",
     )
 
 
@@ -241,6 +273,8 @@ def write_validation_csv(rows: list[ValidationRow], path: Path) -> None:
         "failure_class",
         "reason",
         "description",
+        "error_token",
+        "suggested",
     ]
     with path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)

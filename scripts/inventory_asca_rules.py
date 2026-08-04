@@ -21,6 +21,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
+from conlanger.tools.corpus_inventory import parse_unknown_token_error  # noqa: E402
 from conlanger.tools.rules import RuleChange  # noqa: E402
 
 DEFAULT_YAML = ROOT / "legacy/data/index_diachronica_ai.yml"
@@ -78,6 +79,7 @@ def check_one(args: tuple) -> dict:
             err = (proc.stderr or "").strip().replace("\n", " ")
             # strip ANSI
             err = re.sub(r"\x1b\[[0-9;]*m", "", err)
+            error_token, suggested = parse_unknown_token_error(err)
             return {
                 "section_index": section_index,
                 "section_name": section_name,
@@ -87,6 +89,8 @@ def check_one(args: tuple) -> dict:
                 "returncode": proc.returncode,
                 "error": err,
                 "error_class": classify_error(err),
+                "error_token": error_token,
+                "suggested": suggested,
             }
         except subprocess.TimeoutExpired:
             return {
@@ -98,6 +102,8 @@ def check_one(args: tuple) -> dict:
                 "returncode": 124,
                 "error": "timeout",
                 "error_class": "timeout",
+                "error_token": "",
+                "suggested": "",
             }
 
 
@@ -112,6 +118,8 @@ def iter_jobs(doc: dict, words: str, asca_bin: str):
             try:
                 syntax = format_syntax(rule)
             except Exception as exc:  # noqa: BLE001 — record format failures
+                err = f"format_error: {exc}"
+                error_token, suggested = parse_unknown_token_error(err)
                 yield {
                     "section_index": section_index,
                     "section_name": section_name,
@@ -119,8 +127,10 @@ def iter_jobs(doc: dict, words: str, asca_bin: str):
                     "syntax": "",
                     "ok": False,
                     "returncode": -1,
-                    "error": f"format_error: {exc}",
+                    "error": err,
                     "error_class": "format_error",
+                    "error_token": error_token,
+                    "suggested": suggested,
                     "_precomputed": True,
                 }
                 continue
@@ -177,6 +187,8 @@ def main() -> int:
         "returncode",
         "error",
         "error_class",
+        "error_token",
+        "suggested",
     ]
 
     rows = list(precomputed)

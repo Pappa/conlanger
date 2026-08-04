@@ -9,6 +9,7 @@ from conlanger.tools.corpus_inventory import (
     ValidationRow,
     classify_error,
     iter_validation_rows,
+    parse_unknown_token_error,
     reason_for_failure,
     summarize_inventory,
     validate_corpus_rule,
@@ -47,6 +48,39 @@ def test_classify_error(error, expected):
 
 
 @pytest.mark.parametrize(
+    ("error", "expected_token", "expected_suggested"),
+    [
+        ("", "", ""),
+        (
+            "Syntax Error: Unknown character '₁' | dz ʃ tʃ > ʒ s₁ s₂",
+            "₁",
+            "",
+        ),
+        (
+            "Syntax Error: Unknown grouping 'Z'. Known groupings are (C)onsonant",
+            "Z",
+            "",
+        ),
+        (
+            "Syntax Error: Unknown feature 'voiced'. Did you mean voice? | e > i",
+            "voiced",
+            "voice",
+        ),
+        (
+            "Syntax Error: Expected '_'",
+            "",
+            "",
+        ),
+    ],
+)
+def test_parse_unknown_token_error(error, expected_token, expected_suggested):
+    assert parse_unknown_token_error(error) == (
+        expected_token,
+        expected_suggested,
+    )
+
+
+@pytest.mark.parametrize(
     ("failure_class", "expected_reason"),
     [
         ("malformed_comment", "trailing-comment"),
@@ -79,6 +113,8 @@ def test_validation_row_as_csv_dict():
         failure_class="syntax_other",
         reason="broken-syntax",
         description="Syntax Error: …",
+        error_token="",
+        suggested="",
     )
     assert row.as_csv_dict() == {
         "section_index": "1.0",
@@ -89,6 +125,8 @@ def test_validation_row_as_csv_dict():
         "failure_class": "syntax_other",
         "reason": "broken-syntax",
         "description": "Syntax Error: …",
+        "error_token": "",
+        "suggested": "",
     }
 
 
@@ -164,6 +202,32 @@ def test_validate_corpus_rule_asca_failure(_mock_validate):
     assert row.ok is False
     assert row.failure_class == "expected_underscore"
     assert row.reason == "asca-unrepresentable"
+    assert row.error_token == ""
+    assert row.suggested == ""
+
+
+@patch(
+    "conlanger.tools.corpus_inventory.validate_asca",
+    side_effect=ASCAValidationError(
+        "Syntax Error: Unknown feature 'voiced'. Did you mean voice? | e > i"
+    ),
+)
+def test_validate_corpus_rule_unknown_token_fields(_mock_validate):
+    row = validate_corpus_rule(
+        _SECTION,
+        {
+            "input": "e",
+            "output": "i",
+            "env": "#l_{P,C[+voiced]}",
+            "raw": "e → i",
+            "source": "s:6",
+        },
+        0,
+        probe_words=None,
+    )
+    assert row.failure_class == "unknown_feature"
+    assert row.error_token == "voiced"
+    assert row.suggested == "voice"
 
 
 def test_iter_validation_rows():
@@ -200,7 +264,21 @@ def test_write_validation_csv(tmp_path: Path):
             failure_class="",
             reason="",
             description="",
-        )
+            error_token="",
+            suggested="",
+        ),
+        ValidationRow(
+            section_index="1.0",
+            section_name="A",
+            rule_idx=1,
+            source="s:2",
+            ok=False,
+            failure_class="unknown_feature",
+            reason="asca-unrepresentable",
+            description="Syntax Error: Unknown feature 'voiced'. Did you mean voice?",
+            error_token="voiced",
+            suggested="voice",
+        ),
     ]
     out = tmp_path / "nested" / "inventory.csv"
     write_validation_csv(rows, out)
@@ -208,11 +286,13 @@ def test_write_validation_csv(tmp_path: Path):
         parsed = list(csv.DictReader(handle))
     assert parsed[0]["ok"] == "True"
     assert parsed[0]["section_index"] == "1.0"
+    assert parsed[1]["error_token"] == "voiced"
+    assert parsed[1]["suggested"] == "voice"
 
 
 def test_summarize_inventory():
     rows = [
-        ValidationRow("1", "A", 0, "s:1", True, "", "", ""),
+        ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", ""),
         ValidationRow(
             "1",
             "A",
@@ -222,6 +302,8 @@ def test_summarize_inventory():
             "syntax_other",
             "broken-syntax",
             "err",
+            "",
+            "",
         ),
         ValidationRow(
             "1",
@@ -232,6 +314,8 @@ def test_summarize_inventory():
             "syntax_other",
             "broken-syntax",
             "err",
+            "",
+            "",
         ),
     ]
     text = summarize_inventory(
