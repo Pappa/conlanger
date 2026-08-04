@@ -225,6 +225,42 @@ def strip_trailing_quoted_gloss_from_field(text: str) -> str:
     return text
 
 
+_EMBEDDED_QUOTED_GLOSS_RE = re.compile(
+    r'[\s,]*[\u201c"]([^\u201d"]{3,})[\u201d"][\s,]*'
+)
+_UNCLOSED_QUOTED_GLOSS_RE = re.compile(
+    r'[\s,]*[\u201c"]([^\u201d"]{3,})\s*$'
+)
+_ORPHAN_CLOSING_QUOTE_END_RE = re.compile(r'[\s,]*[\u201c\u201d"]\s*$')
+_ORPHAN_CLOSING_QUOTE_MID_RE = re.compile(r'[\s,]+[\u201d"]+(?=\s|$)')
+
+
+def _quoted_inner_is_gloss(inner: str) -> bool:
+    return bool(re.search(r"[a-z]{3,}", inner)) or paren_inner_is_gloss(inner)
+
+
+def strip_embedded_quoted_gloss_from_field(text: str) -> str:
+    """Remove embedded ``"…"`` / ``"…"`` Index prose glosses from one field."""
+    if not text:
+        return text
+    while True:
+        updated = _EMBEDDED_QUOTED_GLOSS_RE.sub(
+            lambda match: (
+                "" if _quoted_inner_is_gloss(match.group(1)) else match.group(0)
+            ),
+            text,
+        )
+        if updated == text:
+            break
+        text = updated
+    match = _UNCLOSED_QUOTED_GLOSS_RE.search(text)
+    if match and _quoted_inner_is_gloss(match.group(1)):
+        text = text[: match.start()].rstrip()
+    text = _ORPHAN_CLOSING_QUOTE_MID_RE.sub("", text)
+    text = _ORPHAN_CLOSING_QUOTE_END_RE.sub("", text)
+    return text
+
+
 def strip_trailing_paren_glosses_from_field(text: str) -> str:
     """Remove trailing ``(… )`` prose glosses from one rule field."""
     if not text:
@@ -253,6 +289,7 @@ def strip_trailing_gloss_from_field(text: str) -> str:
     """Strip Index trailing glosses (parens, quotes, semicolon prose) from one field."""
     if not text:
         return text
+    text = strip_embedded_quoted_gloss_from_field(text)
     text = strip_trailing_quoted_gloss_from_field(text)
     text = strip_trailing_paren_glosses_from_field(text)
     text = strip_semicolon_prose_from_field(text)

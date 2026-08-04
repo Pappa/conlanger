@@ -14,23 +14,61 @@ _LABIAL = "\u02b7"
 _ASCA_NATIVE_GROUPINGS = frozenset("COSPFLNGV")
 
 # Index length marks → ASCA [+long] feature (compile-time, ASCA only).
-_IPA_SEGMENT = r"[a-zA-Z\u0250-\u02AF\u1D00-\u1DBF\u0300-\u036F]+"
-_OPT_LENGTH_RE = re.compile(rf"({_IPA_SEGMENT}|[A-Z])\(ː\)")
-_GROUPING_LENGTH_RE = re.compile(r"([A-Z])ː")
-_SEGMENT_LENGTH_RE = re.compile(rf"({_IPA_SEGMENT})ː")
+_LENGTH = "\u02d0"
+_IPA_MODIFIER = r"[\u02B0-\u02B8\u02BC\u02D1\u02E4\u0300-\u036F]"
+_IPA_SEGMENT = (
+    r"[a-zA-Z\u00C0-\u024F\u0250-\u02AF\u1D00-\u1DBF]+"
+    rf"(?:{_IPA_MODIFIER})*"
+)
+_OPT_LENGTH_COMMA_RE = re.compile(
+    rf"({_IPA_SEGMENT}|[A-Z])\({_LENGTH},([^)]+)\)"
+)
+_OPT_LENGTH_RE = re.compile(rf"({_IPA_SEGMENT}|[A-Z])\({_LENGTH}\)")
+_SET_OPT_LENGTH_RE = re.compile(rf"\}}\({_LENGTH}\)")
+_GROUPING_LENGTH_RE = re.compile(r"([A-Z])" + re.escape(_LENGTH))
+_SEGMENT_LENGTH_RE = re.compile(rf"({_IPA_SEGMENT}){re.escape(_LENGTH)}")
+_SET_SUFFIX_LENGTH_RE = re.compile(r"\}" + re.escape(_LENGTH))
+_DOUBLE_LENGTH_RE = re.compile(r":\[\+long\]" + re.escape(_LENGTH))
+_BARE_SET_LENGTH_RE = re.compile(
+    rf"(^|,)\s*{re.escape(_LENGTH)}(?=,|$)"
+)
+
+
+def _expand_bare_length_in_sets(text: str) -> str:
+    if _LENGTH not in text:
+        return text
+
+    def repl(match: re.Match[str]) -> str:
+        inner = _BARE_SET_LENGTH_RE.sub(r"\1V:[+long]", match.group(1))
+        return "{" + inner + "}"
+
+    return re.sub(r"\{([^}]*)\}", repl, text)
 
 
 def normalize_asca_length_marks(text: str) -> str:
     """Map Index ``ː`` / ``(ː)`` length notation to ASCA ``:[+long]``."""
-    if not text or ("ː" not in text and "(ː)" not in text):
+    if not text or (_LENGTH not in text and f"({_LENGTH})" not in text):
         return text
+    text = _OPT_LENGTH_COMMA_RE.sub(r"{\1:[+long],\1\2}", text)
+    text = _SET_OPT_LENGTH_RE.sub("}:[+long]", text)
     text = _OPT_LENGTH_RE.sub(r"\1:[+long]", text)
     text = _GROUPING_LENGTH_RE.sub(r"\1:[+long]", text)
     text = _SEGMENT_LENGTH_RE.sub(r"\1:[+long]", text)
+    text = _SET_SUFFIX_LENGTH_RE.sub("}:[+long]", text)
+    text = _expand_bare_length_in_sets(text)
+    text = _DOUBLE_LENGTH_RE.sub(":[+long]", text)
     return text
 
 
 _EJECTIVE = "\u02bc"
+_TYPO_APOSTROPHE_RE = re.compile(rf"({_IPA_SEGMENT}|[A-Z])(\u2019)")
+
+
+def normalize_typographic_apostrophes(text: str) -> str:
+    """Map Index typographic apostrophe (U+2019) to ejective ``ʼ`` (U+02BC)."""
+    if not text or "\u2019" not in text:
+        return text
+    return _TYPO_APOSTROPHE_RE.sub(rf"\1{_EJECTIVE}", text)
 _POST_MATRIX_EJECTIVE_RE = re.compile(
     rf"({_IPA_SEGMENT}):\[([^\]]+)\]{re.escape(_EJECTIVE)}"
 )
@@ -275,6 +313,7 @@ class RuleChange(RulePartBase):
         if format == "asca":
             result = self._apply_asca_group_mappings(result, format)
             result = normalize_asca_length_marks(result)
+            result = normalize_typographic_apostrophes(result)
             result = normalize_asca_ejective_marks(result)
         return self._apply_aliases(result)
 

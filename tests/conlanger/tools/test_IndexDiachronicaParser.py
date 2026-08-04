@@ -316,6 +316,16 @@ def test_parse_rule_element_strips_sporadic_env_gloss():
             "depending on the environment; again, the article is unclear",
             "depending on the environment",
         ),
+        (
+            "“when another sibilant is in the word nearby” and (word-finally?) when",
+            "and (word-finally?) when",
+        ),
+        (
+            "{a,ə} / _{x,h} “in the odd-numbered of any sequence of one or more short-vowel open syllables”",
+            "{a,ə} / _{x,h}",
+        ),
+        ("_# when unstressed", "_# when unstressed"),
+        ("z > d / $_OO “", "z > d / $_OO"),
         ("k(ʼ)", "k(ʼ)"),
         ("(?)", "(?)"),
         ("C(…C)", "C(…C)"),
@@ -356,6 +366,16 @@ def test_parse_rule_element_strips_env_trailing_glosses():
     rules = parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["env"] == "_s̩"
     assert "Ōgami" in rules[0]["raw"]
+
+
+def test_parse_rule_element_strips_embedded_quoted_env_gloss():
+    el = html.fragment_fromstring(
+        '<p class="schg">z → d / “when another sibilant is in the word nearby” and (word-finally?) when</p>',
+        create_parent=False,
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["env"] == "and (word-finally?) when"
+    assert "sibilant" in rules[0]["raw"]
 
 
 @pytest.mark.parametrize(

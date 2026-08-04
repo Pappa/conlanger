@@ -11,6 +11,7 @@ from conlanger.tools.rules import (
     SoundChangeRuleSet,
     normalize_asca_ejective_marks,
     normalize_asca_length_marks,
+    normalize_typographic_apostrophes,
 )
 
 @pytest.mark.parametrize(
@@ -101,12 +102,33 @@ def test_format_not_supported():
         ("tsː", "ts:[+long]"),
         ("_{i,e(ː),a}", "_{i,e:[+long],a}"),
         ("VNC > VːC[+voiced]", "VNC > V:[+long]C[+voiced]"),
+        ("tʷː", "tʷ:[+long]"),
+        ("æː", "æ:[+long]"),
+        ("{e,ɤ}ː", "{e,ɤ}:[+long]"),
+        ("C_C{ː,C}V", "C_C{V:[+long],C}V"),
+        ("e(ː,j)", "{e:[+long],ej}"),
+        ("{o,u}(ː)", "{o,u}:[+long]"),
+        ("s:[+long]ː", "s:[+long]"),
+        ("aj aw > e(ː,j) o(ː,w)", "aj aw > {e:[+long],ej} {o:[+long],ow}"),
         ("a", "a"),
         ("", ""),
     ],
 )
 def test_normalize_asca_length_marks(text, expected):
     assert normalize_asca_length_marks(text) == expected
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("{O:[+delrel],O\u2019}", "{O:[+delrel],O\u02bc}"),
+        ("C\u2019 > C", "C\u02bc > C"),
+        ("a", "a"),
+        ("", ""),
+    ],
+)
+def test_normalize_typographic_apostrophes(text, expected):
+    assert normalize_typographic_apostrophes(text) == expected
 
 
 @pytest.mark.parametrize(
@@ -133,6 +155,12 @@ def test_rule_change_compiles_ejective_at_instantiation():
     assert part.value == "tʃ:[+long,+cg] > tʃ:[+long]"
     assert "ʼ" not in part.value
     assert part.input == "tʃ:[+long]ʼ"
+
+
+def test_rule_change_compiles_typographic_apostrophe_ejective():
+    part = RuleChange({"input": "{O:[+delrel],O\u2019}", "output": "F", "env": "_$"}, "asca")
+    assert part.value == "{O:[+delrel],O:[+cg]} > F / _$"
+    assert "\u2019" not in part.value
 
 
 def test_rule_change_compiles_length_at_instantiation():

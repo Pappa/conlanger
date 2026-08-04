@@ -1149,7 +1149,7 @@ sections:
     source: index_diachronica_original.html:1247
   - input: z
     output: d
-    env: “when another sibilant is in the word nearby” and (word-finally?) when
+    env: and (word-finally?) when
     raw: z → d / “when another sibilant is in the word nearby” and (word-finally?)
       when “noun-stem final”
     source: index_diachronica_original.html:1248
@@ -2231,7 +2231,7 @@ sections:
     raw: — a → ∅ / _#
     source: index_diachronica_original.html:1532
   - input: a
-    output: _$$$(…)”
+    output: _$$$(…)
     raw: — a → _$%%(…)”
     source: index_diachronica_original.html:1533
   - input: a
@@ -2276,7 +2276,7 @@ sections:
     source: index_diachronica_original.html:1541
   - input: a i
     output: aː eː
-    env: _$”
+    env: _$
     raw: — a i → aː eː / _%”
     source: index_diachronica_original.html:1542
   - input: u
@@ -3109,7 +3109,7 @@ sections:
     source: index_diachronica_original.html:1760
   - input: tsi
     output: ∅
-    env: $_OO “
+    env: $_OO
     raw: tsi → ∅ / $_OO “(before a prefix; the first obstruent of the follow[ing]
       cluster then becomes ʔ)
     source: index_diachronica_original.html:1761
@@ -3742,8 +3742,7 @@ sections:
     source: index_diachronica_original.html:1915
   - input: '{a,ə}'
     output: ∅
-    env: _{x,h} “in the odd-numbered of any sequence of one or more short-vowel open
-      syllables”
+    env: _{x,h}
     raw: '{a,ə} → ∅ / _{x,h} “in the odd-numbered of any sequence of one or more short-vowel
       open syllables”; such vowels are considered “weak”'
     source: index_diachronica_original.html:1916
@@ -7052,7 +7051,6 @@ sections:
     source: index_diachronica_original.html:2854
   - input: n
     output: ɲ
-    env: “in the environment of i
     raw: n → ɲ / “in the environment of i (sporadic)”
     source: index_diachronica_original.html:2855
     sporadic: true
@@ -7345,7 +7343,7 @@ sections:
     raw: ə → ∅ / _#
     source: index_diachronica_original.html:2935
   - input: ə
-    output: ∅ “
+    output: ∅
     raw: ə → ∅ “(sporadic)”
     source: index_diachronica_original.html:2936
     sporadic: true
@@ -7490,7 +7488,7 @@ sections:
     source: index_diachronica_original.html:2970
   - input: ə
     output: ∅
-    env: '#_UU(U…)# “'
+    env: '#_UU(U…)#'
     raw: 'ə → ∅ / #_UU(U…)# “(i.e., in word-initial position in prepenultimate syllables)'
     source: index_diachronica_original.html:2971
   - input: pː tː cː kː
@@ -7654,7 +7652,7 @@ sections:
     source: index_diachronica_original.html:3006
   - input: '{i,ɛ} {u,ɔ}'
     output: iə̯ uə̯
-    env: _{k,ŋ}# “
+    env: _{k,ŋ}#
     raw: '{i,ɛ} {u,ɔ} → iə̯ uə̯ / _{k,ŋ}# “(and also sporadically before final *t
       and *n and some other consonants)'
     source: index_diachronica_original.html:3007
@@ -7918,7 +7916,7 @@ sections:
     source: index_diachronica_original.html:3066
   - input: N
     output: ∅
-    env: _S “
+    env: _S
     raw: N → ∅ / _S “(sporadic)”
     source: index_diachronica_original.html:3067
     sporadic: true
@@ -12843,7 +12841,7 @@ sections:
     source: index_diachronica_original.html:4563
     sporadic: true
   - input: ɭ
-    output: l “(again,
+    output: l
     raw: ɭ → l “(again, sporadic)”
     source: index_diachronica_original.html:4564
     sporadic: true
@@ -12858,7 +12856,7 @@ sections:
     source: index_diachronica_original.html:4566
   - input: o e
     output: u i
-    env: _C{u,i} “(highly
+    env: _C{u,i}
     raw: o e → u i / _C{u,i} “(highly sporadic)”
     source: index_diachronica_original.html:4567
     sporadic: true
@@ -12977,7 +12975,7 @@ sections:
     source: index_diachronica_original.html:4610
   - input: ə
     output: ∅
-    env: '#_,'
+    env: '#_'
     raw: 'ə → ∅ / #_, “under certain conditions not yet discovered”'
     source: index_diachronica_original.html:4611
   - input: nV₁nV₂
@@ -13001,7 +12999,7 @@ sections:
     source: index_diachronica_original.html:4619
   - input: ə
     output: ∅
-    env: t_,
+    env: t_
     raw: ə → ∅ / t_, “in certain positions”
     source: index_diachronica_original.html:4620
 - section: Proto-Eskimo to Barrow Iñupiaq
@@ -13135,8 +13133,12 @@ sections:
     raw: ə → i / else
     source: index_diachronica_original.html:4652
   - input: dʒ
-    output: tʃ > s
-    env: “in certain positions”
+    output: tʃ
+    raw: dʒ → tʃ → s / “in certain positions” (except for Thule Greenlandic, where
+      dʒ → tʃ and stayed there, apparently)
+    source: index_diachronica_original.html:4653
+  - input: tʃ
+    output: s
     raw: dʒ → tʃ → s / “in certain positions” (except for Thule Greenlandic, where
       dʒ → tʃ and stayed there, apparently)
     source: index_diachronica_original.html:4653
@@ -16543,7 +16545,7 @@ sections:
     raw: Kʷ → K
     source: index_diachronica_original.html:5498
   - input: “The PIE rules for the voicing of s
-    output: z, as in [nizdos] for *nisdos, are assumed to apply”
+    output: z, as in [nizdos] for *nisdos, are assumed to apply
     raw: “The PIE rules for the voicing of s → z, as in [nizdos] for *nisdos, are
       assumed to apply”
     source: index_diachronica_original.html:5499
@@ -16745,8 +16747,8 @@ sections:
     source: index_diachronica_original.html:5549
   - input: '{p,t}'
     output: ∅
-    env: '#s_ “(although it says that occasionally st > t'
-    exception: '#_)”'
+    env: '#s_'
+    exception: '#_)'
     raw: '— {p,t} → ∅ / #s_ “(although it says that occasionally st > t / #_)”'
     source: index_diachronica_original.html:5550
   - input: s
@@ -17302,8 +17304,7 @@ sections:
     source: index_diachronica_original.html:5681
   - input: z
     output: s
-    env: _#, though “[t]his s was dropped when it came to stand after an original
-      s through the loss of a vowel”, though it
+    env: _#, thoughthough it
     raw: z → s / _#, though “[t]his s was dropped when it came to stand after an original
       s through the loss of a vowel”, though it “remained when protected by a particle”
     source: index_diachronica_original.html:5683
@@ -17319,8 +17320,7 @@ sections:
     source: index_diachronica_original.html:5685
   - input: s
     output: ∅
-    env: in “[t]he prep[osition]. us…in compounds before st”, though this seems to
-      have been less common
+    env: inthough this seems to have been less common
     raw: s → ∅ / in “[t]he prep[osition]. us…in compounds before st”, though this
       seems to have been less common
     source: index_diachronica_original.html:5686
@@ -17386,8 +17386,7 @@ sections:
     raw: k ɡ → tʃ j(?)
     source: index_diachronica_original.html:5703
   - input: æː
-    output: aː “under to [sic] the influence of neighboring consonants”, but the article
-      doesn’t elaborate
+    output: aːbut the article doesn’t elaborate
     raw: æː → aː “under to [sic] the influence of neighboring consonants”, but the
       article doesn’t elaborate
     source: index_diachronica_original.html:5704
@@ -18536,7 +18535,7 @@ sections:
   - input: k
     output: ç
     env: V_#
-    exception: _C “(sometimes)”;
+    exception: _C;
     raw: k → ç / V_# ! _C “(sometimes)”; “(except when phonemic)”
     source: index_diachronica_original.html:5976
     sporadic: true
@@ -19051,8 +19050,8 @@ sections:
     source: index_diachronica_original.html:6108
   - input: uː yː iː
     output: ou øy ei
-    exception: in certain unstressed endings and monosyllables, _C{C,V,#} (“especially
-      before /xt/”), and Low German borrowings
+    exception: in certain unstressed endings and monosyllables, _C{C,V,#} (), and
+      Low German borrowings
     raw: uː yː iː → ou øy ei, except in certain unstressed endings and monosyllables,
       _C{C,V,#} (“especially before /xt/”), and Low German borrowings
     source: index_diachronica_original.html:6109
@@ -22193,7 +22192,7 @@ sections:
     source: index_diachronica_original.html:6837
   - input: o
     output: aː
-    env: _CV,
+    env: _CV
     raw: o → aː / _CV, “does not affect o₂ < eh₃”
     source: index_diachronica_original.html:6838
   - input: '{e,o,o₂,N̊}'
@@ -22934,7 +22933,7 @@ sections:
     source: index_diachronica_original.html:7017
   - input: ɛl
     output: lɔ
-    env: T_T “in certain cases
+    env: T_T)
     raw: ɛl → lɔ / T_T “in certain cases (mostly after a PSl. palato-alveolar”)
     source: index_diachronica_original.html:7018
   - input: ɔl ɔr ɛl ɛr
@@ -23436,7 +23435,7 @@ sections:
     source: index_diachronica_original.html:7128
   - input: ɕr̝ ʑr̝
     output: ʂr ʐr
-    env: “‘szron’ and ‘żreć’”, respectively
+    env: respectively
     raw: ɕr̝ ʑr̝ → ʂr ʐr / “‘szron’ and ‘żreć’”, respectively
     source: index_diachronica_original.html:7129
   - input: t
@@ -24756,7 +24755,7 @@ sections:
     source: index_diachronica_original.html:7412
   - input: V
     output: ∅
-    env: “between first and tonic syllables
+    env: ;
     exception: V = a
     raw: V → ∅ / “between first and tonic syllables; except when C_CC, _n”; “if there
       are multiple vowels between the initial and tonic syllables, the vowel directly
@@ -26482,8 +26481,7 @@ sections:
     source: index_diachronica_original.html:7774
   - input: V
     output: ∅
-    env: “penult of paroxytones”, though /a/ often remained “as an indistinct e”,
-      probably /ə/
+    env: though /a/ often remainedprobably /ə/
     raw: — V → ∅ / “penult of paroxytones”, though /a/ often remained “as an indistinct
       e”, probably /ə/
     source: index_diachronica_original.html:7776
@@ -26518,8 +26516,7 @@ sections:
     raw: — e u → e o / _nt#
     source: index_diachronica_original.html:7788
   - input: V
-    output: '“indistinct e” (probably /ə/) if dropping it would create ugly consonant
-      clusters:'
+    output: '(probably /ə/) if dropping it would create ugly consonant clusters:'
     raw: '— V → “indistinct e” (probably /ə/) if dropping it would create ugly consonant
       clusters:'
     source: index_diachronica_original.html:7792
@@ -26868,8 +26865,7 @@ sections:
     source: index_diachronica_original.html:7871
   - input: ɡ
     output: j > dʒ
-    env: “[b]etween the last two vowels of a proparoxytone”, though it dropped early
-      in some dialects
+    env: though it dropped early in some dialects
     raw: ɡ → j → dʒ / “[b]etween the last two vowels of a proparoxytone”, though it
       dropped early in some dialects
     source: index_diachronica_original.html:7872
@@ -27498,7 +27494,7 @@ sections:
   - input: t
     output: ∅
     env: _#
-    exception: “in the preterit of verbs”, though it tended to drop
+    exception: though it tended to drop
     raw: t → ∅ / _# ! “in the preterit of verbs”, though it tended to drop “in strong
       preterits”
     source: index_diachronica_original.html:7984
@@ -28013,7 +28009,7 @@ sections:
     sporadic: true
   - input: '{i,j}'
     output: dʒ
-    env: Vr_V (“dialectal”)
+    env: Vr_V
     raw: '{i,j} → dʒ / Vr_V (“dialectal”)'
     source: index_diachronica_original.html:8104
   - input: v
@@ -28060,7 +28056,7 @@ sections:
     raw: l{i,j} → lː → {ts,dz,ldz,dʒ,lː} (“varies”)
     source: index_diachronica_original.html:8113
   - input: lː
-    output: '{ts,dz,ldz,dʒ,lː} (“varies”)'
+    output: '{ts,dz,ldz,dʒ,lː}'
     raw: l{i,j} → lː → {ts,dz,ldz,dʒ,lː} (“varies”)
     source: index_diachronica_original.html:8113
   - input: e
@@ -31788,7 +31784,7 @@ sections:
     raw: i → ∅ / a_
     source: index_diachronica_original.html:9272
   - input: ia
-    output: ə (“unspecified”)
+    output: ə
     raw: ia → ə (“unspecified”)
     source: index_diachronica_original.html:9273
   - input: i
@@ -36155,7 +36151,6 @@ sections:
     source: index_diachronica_original.html:10784
   - input: t
     output: s
-    exception: “in cluster with š”
     raw: t → s / ! “in cluster with š” (presumably [ʃ])
     source: index_diachronica_original.html:10785
   - input: tʲ
@@ -36578,7 +36573,7 @@ sections:
     source: index_diachronica_original.html:10887
   - input: h
     output: ʃ
-    env: _C[-voice]
+    env: _C[-voice] (?)
     raw: h → ʃ / _C[-voice] (? “both h and š occur before nasals, so it is possible
       that š has a separate source in Proto Otomanguean”)
     source: index_diachronica_original.html:10888
@@ -39503,7 +39498,7 @@ sections:
     source: index_diachronica_original.html:11785
   - input: w
     output: ∅
-    env: C̣Cʲ_?w (“optional”)
+    env: C̣Cʲ_?w
     raw: w → ∅ / C̣Cʲ_?w (“optional”)
     source: index_diachronica_original.html:11786
   - input: w
@@ -39739,7 +39734,7 @@ sections:
     source: index_diachronica_original.html:11839
   - input: i
     output: '[long-tail vowel thing]'
-    env: C̣_ (“sometimes”, in “variant readings”)
+    env: C̣_ (in)
     raw: i → [long-tail vowel thing] / C̣_ (“sometimes”, in “variant readings”); when
       following /ʂ ʐ/, sometimes yields [ʂi], other times [s truncated vowel-thing]
     source: index_diachronica_original.html:11840
@@ -39815,7 +39810,7 @@ sections:
     source: index_diachronica_original.html:11855
   - input: yʔ
     output: yɛʔ
-    env: '{l,C[+dental +sibilant]}_ in “QYS -juət-type” finals, dialectally?'
+    env: '{l,C[+dental +sibilant]}_ infinals, dialectally?'
     raw: yʔ → yɛʔ / {l,C[+dental +sibilant]}_ in “QYS -juət-type” finals, dialectally?
     source: index_diachronica_original.html:11856
   - input: yʔ
@@ -48713,8 +48708,7 @@ sections:
     raw: 's̺ → tʃ / #_ (Guipuscoan)'
     source: index_diachronica_original.html:14231
   - input: s̺
-    output: ʃ̺ “for most French Basque speakers (Trask 1997:84), due to French influence”
-      according to Campbell
+    output: ʃ̺according to Campbell
     raw: s̺ → ʃ̺ “for most French Basque speakers (Trask 1997:84), due to French influence”
       according to Campbell
     source: index_diachronica_original.html:14232
@@ -49515,7 +49509,7 @@ sections:
     raw: ɔ → ɑɒ (for some speakers)
     source: index_diachronica_original.html:14483
   - input: ɑɹ
-    output: ɒɹ (“often”)
+    output: ɒɹ
     raw: ɑɹ → ɒɹ (“often”)
     source: index_diachronica_original.html:14484
   - input: z
