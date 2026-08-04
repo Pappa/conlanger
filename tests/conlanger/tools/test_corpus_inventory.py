@@ -11,9 +11,12 @@ from conlanger.tools.corpus_inventory import (
     iter_validation_rows,
     parse_unknown_token_error,
     reason_for_failure,
+    section_all_ok_stats,
+    section_all_ok_stats_from_dataframe,
     summarize_inventory,
     top_error_tokens,
     validate_corpus_rule,
+    validation_rows_to_dataframe,
     write_validation_csv,
 )
 
@@ -372,6 +375,32 @@ def test_top_error_tokens():
     assert top_error_tokens(rows, "unknown_grouping") == []
 
 
+def test_section_all_ok_stats():
+    rows = [
+        ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", ""),
+        ValidationRow("1", "A", 1, "s:2", True, "", "", "", "", ""),
+        ValidationRow("2", "B", 0, "s:3", True, "", "", "", "", ""),
+        ValidationRow("2", "B", 1, "s:4", False, "syntax_other", "broken-syntax", "", "", ""),
+        ValidationRow("3", "C", 0, "s:5", False, "syntax_other", "broken-syntax", "", "", ""),
+    ]
+    assert section_all_ok_stats(rows) == (1, 3, 100.0 / 3)
+
+
+def test_section_all_ok_stats_empty():
+    assert section_all_ok_stats([]) == (0, 0, 0.0)
+
+
+def test_section_all_ok_stats_from_dataframe():
+    rows = [
+        ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", ""),
+        ValidationRow("1", "A", 1, "s:2", True, "", "", "", "", ""),
+        ValidationRow("2", "B", 0, "s:3", True, "", "", "", "", ""),
+        ValidationRow("2", "B", 1, "s:4", False, "syntax_other", "broken-syntax", "", "", ""),
+    ]
+    df = validation_rows_to_dataframe(rows)
+    assert section_all_ok_stats_from_dataframe(df) == (1, 2, 50.0)
+
+
 def test_summarize_inventory_common_errors():
     rows = [
         ValidationRow(
@@ -452,6 +481,7 @@ def test_summarize_inventory():
     assert "Rows: **3**" in text
     assert "OK: **1** (33.3%)" in text
     assert "Fail: **2** (66.7%)" in text
+    assert "Sections all OK: **0 / 1** (0.0%)" in text
     assert "| 2 | `syntax_other` |" in text
     assert "## Common Errors" in text
 
@@ -464,5 +494,6 @@ def test_summarize_inventory_empty():
     )
     assert "Rows: **0**" in text
     assert "OK: **0** (0.0%)" in text
+    assert "Sections all OK: **0 / 0** (0.0%)" in text
     assert "### unknown_character" in text
     assert "| — | _(none)_ |" in text

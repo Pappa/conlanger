@@ -6,6 +6,7 @@
 - Rows: **9316** (one per corpus rule)
 - OK: **6204** (66.6%)
 - Fail: **3112** (33.4%)
+- Sections all OK: **118 / 714** (16.5%)
 
 ## Failure classes
 

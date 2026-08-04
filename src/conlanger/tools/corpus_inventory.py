@@ -351,6 +351,29 @@ def write_validation_csv(rows: list[ValidationRow], path: Path) -> None:
     validation_rows_to_dataframe(rows).to_csv(path, index=False)
 
 
+def section_all_ok_stats(rows: list[ValidationRow]) -> tuple[int, int, float]:
+    """Return count of sections with every rule ok, total sections, and percentage."""
+    by_section: dict[tuple[str, str], list[bool]] = {}
+    for row in rows:
+        key = (row.section_index, row.section_name)
+        by_section.setdefault(key, []).append(row.ok)
+    total_sections = len(by_section)
+    sections_all_ok = sum(1 for oks in by_section.values() if oks and all(oks))
+    pct = (100.0 * sections_all_ok / total_sections) if total_sections else 0.0
+    return sections_all_ok, total_sections, pct
+
+
+def section_all_ok_stats_from_dataframe(df: pd.DataFrame) -> tuple[int, int, float]:
+    """Return section all-ok stats from an inventory CSV dataframe."""
+    if df.empty:
+        return 0, 0, 0.0
+    grouped = df.groupby(["section_index", "section_name"], sort=False)["ok"]
+    total_sections = grouped.ngroups
+    sections_all_ok = int(grouped.all().sum())
+    pct = (100.0 * sections_all_ok / total_sections) if total_sections else 0.0
+    return sections_all_ok, total_sections, pct
+
+
 def summarize_inventory(
     rows: list[ValidationRow],
     *,
@@ -363,6 +386,7 @@ def summarize_inventory(
     fail_n = total - ok_n
     ok_pct = (100.0 * ok_n / total) if total else 0.0
     fail_pct = (100.0 * fail_n / total) if total else 0.0
+    sections_all_ok, section_total, section_ok_pct = section_all_ok_stats(rows)
 
     class_counts = Counter(
         row.failure_class for row in rows if not row.ok and row.failure_class
@@ -377,6 +401,7 @@ def summarize_inventory(
         f"- Rows: **{total}** (one per corpus rule)",
         f"- OK: **{ok_n}** ({ok_pct:.1f}%)",
         f"- Fail: **{fail_n}** ({fail_pct:.1f}%)",
+        f"- Sections all OK: **{sections_all_ok} / {section_total}** ({section_ok_pct:.1f}%)",
         "",
         "## Failure classes",
         "",
