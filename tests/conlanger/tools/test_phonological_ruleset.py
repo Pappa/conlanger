@@ -44,6 +44,49 @@ def test_apply_asca_group_mappings_to_string(text, expected):
     assert apply_asca_group_mappings_to_string(text, _SAMPLE_MAPPINGS) == expected
 
 
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        (
+            "Kʷ > K",
+            "C:[-front,+back,+hi,-lo,+round] > C:[-front,+back,+hi,-lo]",
+        ),
+        (
+            "Kʷ > K / _V[+round]",
+            "C:[-front,+back,+hi,-lo,+round] > C:[-front,+back,+hi,-lo] / _V[+round]",
+        ),
+        (
+            "Kʷy > ɕ",
+            "C:[-front,+back,+hi,-lo,+round]y > ɕ",
+        ),
+        (
+            "i > ə / {P,K(ʷ),s}_",
+            "i > ə / {C:[+labial],C:[-front,+back,+hi,-lo,+round],"
+            "C:[-front,+back,+hi,-lo],s}_",
+        ),
+        (
+            "Cʷ > C",
+            "C:[+round] > C",
+        ),
+        (
+            "Kr > k",
+            "Kr > k",
+        ),
+        (
+            "rK > k",
+            "rK > k",
+        ),
+        (
+            "Kw > k",
+            "Kw > k",
+        ),
+    ],
+)
+def test_apply_asca_group_mappings_labialized_class_letters(text, expected):
+    mappings = asca_group_mappings_dict()
+    assert apply_asca_group_mappings_to_string(text, mappings) == expected
+
+
 def test_sound_change_ruleset_applies_group_mappings_for_asca():
     section = {
         "index": "1.0",
@@ -101,6 +144,34 @@ def test_asca_group_mappings_dict_loads_package_csv():
     mappings = asca_group_mappings_dict()
     assert mappings["R"] == "[+son,-syll]"
     assert mappings["Z"] == "[+cont]"
+
+
+@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
+def test_phonological_ruleset_validates_labialized_class_letter_fixtures():
+    section = {
+        "index": "17.10",
+        "section": "PIE labiovelars",
+        "rules": [
+            {
+                "input": "Kʷ",
+                "output": "K",
+                "env": "",
+                "raw": "Kʷ → K",
+                "source": "index_diachronica.html:334",
+            },
+            {
+                "input": "i",
+                "output": "ə",
+                "env": "{P,K(ʷ),s}_",
+                "raw": "i → ə / {P,K(ʷ),s}_",
+                "source": "index_diachronica.html:7340",
+            },
+        ],
+    }
+    probe = Path("tests/fixtures/asca_probe_words.wsca")
+    from conlanger.tools.asca_validator import validate_asca
+
+    validate_asca(PhonologicalRuleSet(section).to_sound_change_ruleset(), probe_words=probe)
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
