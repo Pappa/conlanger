@@ -25,8 +25,8 @@ from conlanger.tools.corpus_inventory import (
 from conlanger.tools.corpus_io import write_cleaned_corpus
 from conlanger.tools.parsers import IndexDiachronicaParser
 
-DEFAULT_HTML = ROOT / "notebooks" / "data" / "index_diachronica_original.html"
-DEFAULT_YAML = ROOT / "notebooks" / "data" / "index_diachronica_parsed.yml"
+DEFAULT_HTML = ROOT / "data" / "diachronica" / "index_diachronica_original.html"
+DEFAULT_YAML = ROOT / "data" / "diachronica" / "index_diachronica_parsed.yml"
 DEFAULT_INVENTORY_DIR = ROOT / ".scratch" / "cleaned-rule-corpus" / "inventory"
 DEFAULT_PROBE = ROOT / "tests" / "fixtures" / "asca_probe_words.wsca"
 

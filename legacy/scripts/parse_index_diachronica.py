@@ -11,7 +11,7 @@ from xml.sax.saxutils import escape as xml_escape
 
 # Project root (…/conlanger)
 ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT / "notebooks" / "data"
+DATA_DIR = ROOT / "data"
 HTML_PATH = DATA_DIR / "index_diachronica.html"
 OUTPUT_PATH = DATA_DIR / "index_diachronica_ai.yml"
 SERIES_MAP_PATH = DATA_DIR / "series_mapping.yaml"
