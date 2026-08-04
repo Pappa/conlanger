@@ -1,5 +1,32 @@
 from typing import ClassVar
 
+import re
+from functools import lru_cache
+
+from conlanger.tools.parsers import load_group_mappings
+
+_GROUPING_PREC = r"(?:^|(?<=[\{\[\s/,>_A-Z#$%|!\(-]))"
+_GROUPING_FOLLOW = r"(?=[:,\[\]\{\}\s/>_#$%|!\)-]|$|[A-Z])"
+
+
+@lru_cache(maxsize=1)
+def asca_group_mappings_dict() -> dict[str, str]:
+    """Load Index→ASCA class-letter mappings from package CSV."""
+    return {row.grouping: row.mapping for row in load_group_mappings()}
+
+
+def apply_asca_group_mappings_to_string(
+    text: str,
+    mappings: dict[str, str],
+) -> str:
+    """Expand Index class letters to ASCA tokens in one rule-string field."""
+    if not text or not mappings:
+        return text
+    keys = sorted(mappings.keys(), key=len, reverse=True)
+    alt = "|".join(re.escape(key) for key in keys)
+    regex = re.compile(rf"{_GROUPING_PREC}(?:{alt}){_GROUPING_FOLLOW}")
+    return regex.sub(lambda match: mappings[match.group(0)], text)
+
 
 class RulePartBase:
     prefixes: ClassVar[dict[str, str]] = {"asca": "# ", "brassica": "; "}
@@ -67,14 +94,18 @@ class RuleChange(RulePartBase):
         },
     }
     aliases: ClassVar[dict[str, str]] = {
-        "K:[": "[+ cons, - fr, + bk, + hi, - lo, ",
-        "K": "[+ cons, - fr, + bk, + hi, - lo]",
         "h₁": "h",
         "h₂": "x",
         "h₃": "ɣʷ",
     }
 
-    def __init__(self, rule: dict[str, str], format: str = "asca"):
+    def __init__(
+        self,
+        rule: dict[str, str],
+        format: str = "asca",
+        *,
+        group_mappings: dict[str, str] | None = None,
+    ):
         try:
             self.input = rule["input"]
         except KeyError:
@@ -86,6 +117,7 @@ class RuleChange(RulePartBase):
 
         self.env = rule.get("env", None)
         self.exception = rule.get("exception", None)
+        self._group_mappings = group_mappings
 
         if rule.get("skip", False):
             self.prefixes = {"asca": "#\t", "brassica": ";;\t"}
@@ -100,7 +132,18 @@ class RuleChange(RulePartBase):
         if self.exception:
             result += separator["exception"] + self.exception
 
+        result = self._apply_asca_group_mappings(result, format)
         return self._apply_aliases(result)
+
+    def _apply_asca_group_mappings(self, rule: str, format: str) -> str:
+        if format != "asca":
+            return rule
+        mappings = (
+            self._group_mappings
+            if self._group_mappings is not None
+            else asca_group_mappings_dict()
+        )
+        return apply_asca_group_mappings_to_string(rule, mappings)
 
     def _apply_aliases(self, rule: str):
         for alias, replacement in self.aliases.items():
@@ -109,7 +152,13 @@ class RuleChange(RulePartBase):
 
 
 class SoundChangeRuleSet:
-    def __init__(self, section: dict, format: str = "asca"):
+    def __init__(
+        self,
+        section: dict,
+        format: str = "asca",
+        *,
+        group_mappings: dict[str, str] | None = None,
+    ):
         self._parts = [RuleTitle(section, format)]
         if section.get("citation"):
             self._parts.append(RuleCitation(section["citation"], format))
@@ -117,7 +166,9 @@ class SoundChangeRuleSet:
             self._parts.append(RuleComment(section["comment"], format))
         if section.get("rules"):
             for rule in section["rules"]:
-                self._parts.append(RuleChange(rule, format))
+                self._parts.append(
+                    RuleChange(rule, format, group_mappings=group_mappings)
+                )
 
     def __str__(self):
         return "\n".join([str(part) for part in self._parts])

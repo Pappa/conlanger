@@ -4,13 +4,12 @@ from unittest.mock import patch
 
 import pytest
 
-from conlanger.tools.phonological_ruleset import (
-    PhonologicalRuleSet,
-    apply_group_mappings_to_string,
-    compile_corpus_rule,
-    group_mappings_dict,
+from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
+from conlanger.tools.rules import (
+    SoundChangeRuleSet,
+    apply_asca_group_mappings_to_string,
+    asca_group_mappings_dict,
 )
-from conlanger.tools.rules import SoundChangeRuleSet
 
 _SAMPLE_MAPPINGS = {
     "R": "[+son,-syll]",
@@ -41,28 +40,11 @@ _SAMPLE_MAPPINGS = {
         ("", ""),
     ],
 )
-def test_apply_group_mappings_to_string(text, expected):
-    assert (
-        apply_group_mappings_to_string(text, _SAMPLE_MAPPINGS) == expected
-    )
+def test_apply_asca_group_mappings_to_string(text, expected):
+    assert apply_asca_group_mappings_to_string(text, _SAMPLE_MAPPINGS) == expected
 
 
-def test_compile_corpus_rule_preserves_raw_and_source():
-    rule = {
-        "input": "S",
-        "output": "[+ voice]",
-        "env": "{V,R}_V",
-        "raw": "S → [+ voice] / {V,R}_V",
-        "source": "sample.html:10",
-    }
-    compiled = compile_corpus_rule(rule, _SAMPLE_MAPPINGS)
-    assert compiled["input"] == "P"
-    assert compiled["env"] == "{V,[+son,-syll]}_V"
-    assert compiled["raw"] == rule["raw"]
-    assert compiled["source"] == rule["source"]
-
-
-def test_phonological_ruleset_compiled_section():
+def test_sound_change_ruleset_applies_group_mappings_for_asca():
     section = {
         "index": "1.0",
         "section": "Test",
@@ -76,13 +58,47 @@ def test_phonological_ruleset_compiled_section():
             }
         ],
     }
-    prs = PhonologicalRuleSet(section, group_mappings=_SAMPLE_MAPPINGS)
-    compiled = prs.compiled_section()
-    assert compiled["rules"][0]["env"] == "#_V{[+cont],C[-voice],r}"
+    rendered = str(
+        SoundChangeRuleSet(section, "asca", group_mappings=_SAMPLE_MAPPINGS)
+    )
+    assert "[+cont]" in rendered
+    assert "\tf > p / #_V{[+cont],C[-voice],r}" in rendered
 
 
-def test_group_mappings_dict_loads_package_csv():
-    mappings = group_mappings_dict()
+def test_sound_change_ruleset_skips_group_mappings_for_brassica():
+    section = {
+        "index": "1.0",
+        "section": "Test",
+        "rules": [{"input": "S", "output": "P", "env": "{V,R}_V"}],
+    }
+    rendered = str(
+        SoundChangeRuleSet(section, "brassica", group_mappings=_SAMPLE_MAPPINGS)
+    )
+    assert rendered.endswith("S / P / {V,R}_V")
+
+
+def test_phonological_ruleset_does_not_mutate_corpus_rules():
+    section = {
+        "index": "1.0",
+        "section": "Test",
+        "rules": [
+            {
+                "input": "f",
+                "output": "p",
+                "env": "#_V{Z,C[-voice],r}",
+                "raw": "f → p / #_V{Z,C[-voice],r}",
+                "source": "sample.html:1",
+            }
+        ],
+    }
+    prs = PhonologicalRuleSet(section)
+    assert prs.section["rules"][0]["env"] == "#_V{Z,C[-voice],r}"
+    rendered = str(prs.to_sound_change_ruleset(group_mappings=_SAMPLE_MAPPINGS))
+    assert "[+cont]" in rendered
+
+
+def test_asca_group_mappings_dict_loads_package_csv():
+    mappings = asca_group_mappings_dict()
     assert mappings["R"] == "[+son,-syll]"
     assert mappings["Z"] == "[+cont]"
 
@@ -112,8 +128,7 @@ def test_phonological_ruleset_validates_known_unknown_grouping_fixtures():
     probe = Path("tests/fixtures/asca_probe_words.wsca")
     from conlanger.tools.asca_validator import validate_asca
 
-    prs = PhonologicalRuleSet(section)
-    validate_asca(prs.to_sound_change_ruleset(), probe_words=probe)
+    validate_asca(PhonologicalRuleSet(section).to_sound_change_ruleset(), probe_words=probe)
 
 
 @patch("conlanger.tools.corpus_inventory.validate_asca", return_value=True)
