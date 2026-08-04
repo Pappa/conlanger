@@ -112,9 +112,9 @@ def test_validation_row_as_csv_dict():
         ok=False,
         failure_class="syntax_other",
         reason="broken-syntax",
-        description="Syntax Error: …",
         error_token="",
         suggested="",
+        description="Syntax Error: …",
     )
     assert row.as_csv_dict() == {
         "section_index": "1.0",
@@ -124,9 +124,9 @@ def test_validation_row_as_csv_dict():
         "ok": False,
         "failure_class": "syntax_other",
         "reason": "broken-syntax",
-        "description": "Syntax Error: …",
         "error_token": "",
         "suggested": "",
+        "description": "Syntax Error: …",
     }
 
 
@@ -263,9 +263,9 @@ def test_write_validation_csv(tmp_path: Path):
             ok=True,
             failure_class="",
             reason="",
-            description="",
             error_token="",
             suggested="",
+            description="",
         ),
         ValidationRow(
             section_index="1.0",
@@ -275,9 +275,9 @@ def test_write_validation_csv(tmp_path: Path):
             ok=False,
             failure_class="unknown_feature",
             reason="asca-unrepresentable",
-            description="Syntax Error: Unknown feature 'voiced'. Did you mean voice?",
             error_token="voiced",
             suggested="voice",
+            description="Syntax Error: Unknown feature 'voiced'. Did you mean voice?",
         ),
     ]
     out = tmp_path / "nested" / "inventory.csv"
@@ -301,9 +301,9 @@ def test_summarize_inventory():
             False,
             "syntax_other",
             "broken-syntax",
+            "",
+            "",
             "err",
-            "",
-            "",
         ),
         ValidationRow(
             "1",
@@ -313,9 +313,9 @@ def test_summarize_inventory():
             False,
             "syntax_other",
             "broken-syntax",
+            "",
+            "",
             "err",
-            "",
-            "",
         ),
     ]
     text = summarize_inventory(

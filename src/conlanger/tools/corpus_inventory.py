@@ -119,9 +119,9 @@ class ValidationRow:
     ok: bool
     failure_class: str
     reason: str
-    description: str
     error_token: str
     suggested: str
+    description: str
 
     def as_csv_dict(self) -> dict[str, str | int | bool]:
         return {
@@ -132,9 +132,9 @@ class ValidationRow:
             "ok": self.ok,
             "failure_class": self.failure_class,
             "reason": self.reason,
-            "description": self.description,
             "error_token": self.error_token,
             "suggested": self.suggested,
+            "description": self.description,
         }
 
 
@@ -171,9 +171,9 @@ def validate_corpus_rule(
             ok=False,
             failure_class=failure_class,
             reason=reason_for_failure(failure_class, err),
-            description=err,
             error_token=error_token,
             suggested=suggested,
+            description=err,
         )
 
     try:
@@ -190,9 +190,9 @@ def validate_corpus_rule(
             ok=False,
             failure_class=failure_class,
             reason=reason_for_failure(failure_class, err),
-            description=err,
             error_token=error_token,
             suggested=suggested,
+            description=err,
         )
 
     if rule.get("skip"):
@@ -204,9 +204,9 @@ def validate_corpus_rule(
             ok=True,
             failure_class="",
             reason="",
-            description="held-out (commented rule)",
             error_token="",
             suggested="",
+            description="held-out (commented rule)",
         )
 
     mini = _mini_section(section, rule, rule_idx)
@@ -227,9 +227,9 @@ def validate_corpus_rule(
             ok=False,
             failure_class=failure_class,
             reason=reason_for_failure(failure_class, err),
-            description=err,
             error_token=error_token,
             suggested=suggested,
+            description=err,
         )
 
     return ValidationRow(
@@ -240,9 +240,9 @@ def validate_corpus_rule(
         ok=True,
         failure_class="",
         reason="",
-        description="",
         error_token="",
         suggested="",
+        description="",
     )
 
 
@@ -272,9 +272,9 @@ def write_validation_csv(rows: list[ValidationRow], path: Path) -> None:
         "ok",
         "failure_class",
         "reason",
-        "description",
         "error_token",
         "suggested",
+        "description",
     ]
     with path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
