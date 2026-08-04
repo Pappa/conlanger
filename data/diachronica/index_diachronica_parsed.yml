@@ -1268,9 +1268,10 @@ sections:
     source: index_diachronica_original.html:1274
   - input: qu
     output: w
-    env: _{f,s} (sporadic)
+    env: _{f,s}
     raw: qu → w / _{f,s} (sporadic)
     source: index_diachronica_original.html:1275
+    sporadic: true
   - input: ʔ
     output: ʕ
     env: _V{n,r,ɡ}
@@ -1711,17 +1712,11 @@ sections:
     raw: ðˤ → zˤ, occasionally tˤ
     source: index_diachronica_original.html:1379
   - input: dˤ
-    output: zˤ (seems to be a sporadic change only affecting a few words, e.g. CA/MSA
-      ˈdˤaːbitˤ
+    output: zˤ
     raw: dˤ → zˤ (seems to be a sporadic change only affecting a few words, e.g. CA/MSA
       ˈdˤaːbitˤ → EA ˈzˤaːbitˤ)
     source: index_diachronica_original.html:1380
-  - input: zˤ (seems to be a sporadic change only affecting a few words, e.g. CA/MSA
-      ˈdˤaːbitˤ
-    output: EA ˈzˤaːbitˤ)
-    raw: dˤ → zˤ (seems to be a sporadic change only affecting a few words, e.g. CA/MSA
-      ˈdˤaːbitˤ → EA ˈzˤaːbitˤ)
-    source: index_diachronica_original.html:1380
+    sporadic: true
   - input: dʒ
     output: ɡ
     raw: dʒ → ɡ
@@ -1782,6 +1777,7 @@ sections:
     env: else (sometimes it seems more like ɛ(ː) to me)
     raw: a(ː) → æ(ː) / else (sometimes it seems more like ɛ(ː) to me)
     source: index_diachronica_original.html:1395
+    sporadic: true
   - input: q
     output: ʔ
     exception: in several words, two of which are al-Qâhira and musîqâ
@@ -1872,9 +1868,10 @@ sections:
     source: index_diachronica_original.html:1421
   - input: V[-long]
     output: ∅
-    env: '#C_C (sporadic?)'
+    env: '#C_C'
     raw: 'V[-long] → ∅ / #C_C (sporadic?)'
     source: index_diachronica_original.html:1423
+    sporadic: true
 - section: Classical Arabic to Hassāniyya Arabic
   index: 6.2.2.1.10
   citation: Pogostick Man, from http://en.wikipedia.org/wiki/Hass%C4%81n%C4%ABya
@@ -1923,9 +1920,10 @@ sections:
     raw: V[-long] → ∅ / C_{C,#} (except for the feminine marker)
     source: index_diachronica_original.html:1435
   - input: aj aw
-    output: eː(ʲ) oː(ʷ) (sometimes, the article is unclear)
+    output: eː(ʲ) oː(ʷ)
     raw: aj aw → eː(ʲ) oː(ʷ) (sometimes, the article is unclear)
     source: index_diachronica_original.html:1436
+    sporadic: true
   - input: j w
     output: i u
     env: '#_CV'
@@ -2122,9 +2120,10 @@ sections:
     raw: a → ɑ / near emphatics
     source: index_diachronica_original.html:1501
   - input: a
-    output: ɛ (sometimes)
+    output: ɛ
     raw: a → ɛ (sometimes)
     source: index_diachronica_original.html:1502
+    sporadic: true
   - input: dˤ q
     output: ðˤ {ɡ,q}
     raw: dˤ q → ðˤ {ɡ,q}
@@ -2355,9 +2354,10 @@ sections:
     raw: ə → ∅ / else
     source: index_diachronica_original.html:1559
   - input: w θ ð ɣ
-    output: v t d ɡ (sometimes)
+    output: v t d ɡ
     raw: w θ ð ɣ → v t d ɡ (sometimes)
     source: index_diachronica_original.html:1560
+    sporadic: true
   - input: x ʕ
     output: χ ʔ
     raw: x ʕ → χ ʔ
@@ -2592,9 +2592,10 @@ sections:
     source: index_diachronica_original.html:1633
   - input: '{R,h}'
     output: ∅
-    env: V_V (sporadic?)
+    env: V_V
     raw: '{R,h} → ∅ / V_V (sporadic?)'
     source: index_diachronica_original.html:1634
+    sporadic: true
   - input: θ
     output: n
     env: '#_'
@@ -2798,9 +2799,10 @@ sections:
     source: index_diachronica_original.html:1686
   - input: o(ː)
     output: e(ː)
-    env: Cj_ (sporadic)
+    env: Cj_
     raw: o(ː) → e(ː) / Cj_ (sporadic)
     source: index_diachronica_original.html:1687
+    sporadic: true
   - input: n
     output: ∅
     env: _j
@@ -3715,9 +3717,10 @@ sections:
     source: index_diachronica_original.html:1909
   - input: k
     output: ∅
-    env: h_ (sometimes restored via analogy, e.g., in verbs)
+    env: h_
     raw: k → ∅ / h_ (sometimes restored via analogy, e.g., in verbs)
     source: index_diachronica_original.html:1910
+    sporadic: true
   - input: θ ʃ x
     output: x s h
     env: _{p,k}
@@ -3759,9 +3762,10 @@ sections:
     source: index_diachronica_original.html:1917
   - input: ə[+weak]
     output: ∅
-    env: _C[+voiced] (sporadic)
+    env: _C[+voiced]
     raw: ə[+weak] → ∅ / _C[+voiced] (sporadic)
     source: index_diachronica_original.html:1918
+    sporadic: true
   - input: a[+weak] ə[+weak]
     output: ə ∅
     env: a_Z[+voiced]
@@ -3809,9 +3813,10 @@ sections:
     source: index_diachronica_original.html:1929
   - input: V[+high]
     output: ə
-    env: _w (sporadic)
+    env: _w
     raw: V[+high] → ə / _w (sporadic)
     source: index_diachronica_original.html:1930
+    sporadic: true
 - section: Proto-Algonquian to Menominee
   index: '7.12'
   citation: 'Whimemsz, from Hockett, C. F. (1981), “The Phonological History of Menominee”.
@@ -4042,9 +4047,10 @@ sections:
     source: index_diachronica_original.html:1979
   - input: hs hʃ
     output: sː ʃː
-    env: sporadic, usually {#,V[+front]}_
+    env: '{#,V[+front]}_'
     raw: hs hʃ → sː ʃː / sporadic, usually {#,V[+front]}_
     source: index_diachronica_original.html:1980
+    sporadic: true
   - input: C[-voiced]
     output: C[+voiced]
     env: N_
@@ -4057,14 +4063,16 @@ sections:
     source: index_diachronica_original.html:1982
   - input: S
     output: ⁿS
-    env: '#NV_ (sporadic)'
+    env: '#NV_'
     raw: 'S → ⁿS / #NV_ (sporadic)'
     source: index_diachronica_original.html:1983
+    sporadic: true
   - input: s ʃ
     output: ⁿs ⁿʃ
-    env: U[-nas] (highly sporadic)
+    env: U[-nas]
     raw: s ʃ → ⁿs ⁿʃ / U[-nas] (highly sporadic)
     source: index_diachronica_original.html:1984
+    sporadic: true
   - input: '{h,ʔ}'
     output: ∅
     env: _m
@@ -4818,9 +4826,10 @@ sections:
     raw: 'pʰ → b / #_U[+high pitch]'
     source: index_diachronica_original.html:2186
   - input: p
-    output: h (sporadic)
+    output: h
     raw: p → h (sporadic)
     source: index_diachronica_original.html:2187
+    sporadic: true
   - input: p
     output: b
     raw: p → b
@@ -5265,9 +5274,10 @@ sections:
     raw: ɡm rɡ → mɡ ɡr (this second one is listed as → rɡ but it might be a typo)
     source: index_diachronica_original.html:2291
   - input: rd
-    output: dr (possibly sporadic and/or confined to Kazakh)
+    output: dr
     raw: rd → dr (possibly sporadic and/or confined to Kazakh)
     source: index_diachronica_original.html:2292
+    sporadic: true
   - input: ɣ
     output: w
     env: '{a,u,i,o}_'
@@ -5368,14 +5378,16 @@ sections:
   rules:
   - input: j
     output: ∅
-    env: _l (sporadic?)
+    env: _l
     raw: j → ∅ / _l (sporadic?)
     source: index_diachronica_original.html:2319
+    sporadic: true
   - input: b
     output: m
-    env: V_V (sporadic?)
+    env: V_V
     raw: b → m / V_V (sporadic?)
     source: index_diachronica_original.html:2320
+    sporadic: true
   - input: '{u,ɯ}w {i,y}w aw {æ,e}w'
     output: uː yː oː øː
     raw: '{u,ɯ}w {i,y}w aw {æ,e}w → uː yː oː øː'
@@ -5801,9 +5813,10 @@ sections:
     raw: Ω cʰ → ʂ ʈʂ
     source: index_diachronica_original.html:2473
   - input: ɹ
-    output: ʐ (sometimes?)
+    output: ʐ
     raw: ɹ → ʐ (sometimes?)
     source: index_diachronica_original.html:2474
+    sporadic: true
   - input: c ɲ t n
     output: t n k ŋ
     env: a_ (short /a/ only)
@@ -6044,9 +6057,9 @@ sections:
     source: index_diachronica_original.html:2570
   - input: u i
     output: o e
-    env: sometimes
     raw: u i → o e / sometimes
     source: index_diachronica_original.html:2571
+    sporadic: true
   - input: V(h)
     output: V(q)
     env: _# (again, might’ve been a retention?)
@@ -6069,9 +6082,10 @@ sections:
     source: index_diachronica_original.html:2575
   - input: b
     output: ∅
-    env: medial (sporadic)
+    env: medial
     raw: b → ∅ / medial (sporadic)
     source: index_diachronica_original.html:2577
+    sporadic: true
 - section: Polynesian
   index: 10.1.1.4
 - section: Proto-Polynesian to Luangiua
@@ -6788,9 +6802,10 @@ sections:
     source: index_diachronica_original.html:2781
   - input: q
     output: ∅
-    env: '#_ (sometimes; “represented by *h in PB”)'
+    env: '#_'
     raw: 'q → ∅ / #_ (sometimes; “represented by *h in PB”)'
     source: index_diachronica_original.html:2782
+    sporadic: true
   - input: z
     output: j (fricative changes to approximant)
     raw: z → j (fricative changes to approximant)
@@ -6839,18 +6854,21 @@ sections:
     source: index_diachronica_original.html:2795
   - input: l n
     output: r l
-    env: '#_ (sporadic)'
+    env: '#_'
     raw: 'l n → r l / #_ (sporadic)'
     source: index_diachronica_original.html:2796
+    sporadic: true
   - input: d j
-    output: r ɭ (sporadic)
+    output: r ɭ
     raw: d j → r ɭ (sporadic)
     source: index_diachronica_original.html:2797
+    sporadic: true
   - input: a
     output: aː
-    env: _C# (sometimes)
+    env: _C#
     raw: a → aː / _C# (sometimes)
     source: index_diachronica_original.html:2799
+    sporadic: true
 - section: Proto-Malayo-Polynesian to Chamorro
   index: 10.2.2
   citation: Whimemsz, from Blust, Robert (2000), “Chamorro Historical Phonology”.
@@ -6867,9 +6885,10 @@ sections:
     source: index_diachronica_original.html:2805
   - input: V
     output: ∅
-    env: VC_CV (sporadic)
+    env: VC_CV
     raw: V → ∅ / VC_CV (sporadic)
     source: index_diachronica_original.html:2806
+    sporadic: true
   - input: i u
     output: e o
     env: _C{C,#}
@@ -6877,9 +6896,10 @@ sections:
     source: index_diachronica_original.html:2807
   - input: i u
     output: e o
-    env: CC# (sporadic)
+    env: CC#
     raw: i u → e o / CC# (sporadic)
     source: index_diachronica_original.html:2808
+    sporadic: true
   - input: a
     output: æ “(in some forms; environment and conditioning unclear)”
     raw: a → æ “(in some forms; environment and conditioning unclear)”
@@ -6898,9 +6918,10 @@ sections:
     source: index_diachronica_original.html:2812
   - input: k
     output: ∅
-    env: _# (sporadic)
+    env: _#
     raw: k → ∅ / _# (sporadic)
     source: index_diachronica_original.html:2813
+    sporadic: true
   - input: k
     output: h
     exception: _#
@@ -7004,9 +7025,10 @@ sections:
     source: index_diachronica_original.html:2837
   - input: h
     output: ʔ
-    env: _# (sometimes)
+    env: _#
     raw: h → ʔ / _# (sometimes)
     source: index_diachronica_original.html:2838
+    sporadic: true
   - input: h
     output: ∅
     env: else
@@ -7062,14 +7084,16 @@ sections:
     source: index_diachronica_original.html:2854
   - input: n
     output: ɲ
-    env: “in the environment of i (sporadic)”
+    env: “in the environment of i
     raw: n → ɲ / “in the environment of i (sporadic)”
     source: index_diachronica_original.html:2855
+    sporadic: true
   - input: h
     output: ∅
-    exception: _# (sporadic)
+    exception: _#
     raw: h → ∅ / ! _# (sporadic)
     source: index_diachronica_original.html:2856
+    sporadic: true
 - section: Proto-Malayo-Polynesian to Proto-Malayo-Javanic
   index: 10.2.4
   citation: TinyMusic, from Adelaar, Alexander (2005), “Malayo-Sumbawan”. Oceanic
@@ -7353,9 +7377,10 @@ sections:
     raw: ə → ∅ / _#
     source: index_diachronica_original.html:2935
   - input: ə
-    output: ∅ “(sporadic)”
+    output: ∅ “
     raw: ə → ∅ “(sporadic)”
     source: index_diachronica_original.html:2936
+    sporadic: true
   - input: t
     output: ð
     exception: adjacent to S
@@ -7557,9 +7582,10 @@ sections:
     source: index_diachronica_original.html:2985
   - input: s
     output: ∅
-    env: V_V (sporadic)
+    env: V_V
     raw: s → ∅ / V_V (sporadic)
     source: index_diachronica_original.html:2986
+    sporadic: true
   - input: V₀V₀
     output: V₀
     raw: V₀V₀ → V₀
@@ -7612,9 +7638,10 @@ sections:
   - input: i u
     output: ɛ ɔ
     env: _C#
-    exception: _P (sporadic)
+    exception: _P
     raw: i u → ɛ ɔ / _C# ! _P (sporadic)
     source: index_diachronica_original.html:2997
+    sporadic: true
   - input: ʀ
     output: ʔ
     env: _# “(in a handful of forms)”
@@ -7631,6 +7658,7 @@ sections:
     raw: a → i / O[+voiced]…_(C)# “(blocked if there was an intervening nasal, and
       sometimes if there was an intervening voiceless stop or liquid)”
     source: index_diachronica_original.html:3000
+    sporadic: true
   - input: i u
     output: əi̯ əu̯
     env: _(ʔ)#
@@ -7661,10 +7689,11 @@ sections:
     source: index_diachronica_original.html:3006
   - input: '{i,ɛ} {u,ɔ}'
     output: iə̯ uə̯
-    env: _{k,ŋ}# “(and also sporadically before final *t and *n and some other consonants)
+    env: _{k,ŋ}# “
     raw: '{i,ɛ} {u,ɔ} → iə̯ uə̯ / _{k,ŋ}# “(and also sporadically before final *t
       and *n and some other consonants)'
     source: index_diachronica_original.html:3007
+    sporadic: true
   - input: k ŋ
     output: ʔ ∅
     env: Və̯_#
@@ -7701,9 +7730,10 @@ sections:
     source: index_diachronica_original.html:3015
   - input: dz
     output: d
-    env: '#_ (though sometimes > {s,ɟ})'
+    env: '#_'
     raw: 'dz → d / #_ (though sometimes → {s,ɟ})'
     source: index_diachronica_original.html:3016
+    sporadic: true
   - input: '{s,c}'
     output: t
     env: _V{s,c}V
@@ -7724,9 +7754,10 @@ sections:
   rules:
   - input: d
     output: l
-    env: '#_ (sporadic)'
+    env: '#_'
     raw: 'd → l / #_ (sporadic)'
     source: index_diachronica_original.html:3023
+    sporadic: true
   - input: ʀ
     output: h
     env: V_V(C)#
@@ -7810,6 +7841,7 @@ sections:
     env: _ŋ# “(sporadically failed to occur)”
     raw: u → o / _ŋ# “(sporadically failed to occur)”
     source: index_diachronica_original.html:3044
+    sporadic: true
   - input: u
     output: ɯ
     env: _(C)#
@@ -7921,9 +7953,10 @@ sections:
     source: index_diachronica_original.html:3066
   - input: N
     output: ∅
-    env: _S “(sporadic)”
+    env: _S “
     raw: N → ∅ / _S “(sporadic)”
     source: index_diachronica_original.html:3067
+    sporadic: true
   - input: h
     output: ∅
     env: V_V
@@ -7952,9 +7985,10 @@ sections:
     raw: a → o / _(C…)#
     source: index_diachronica_original.html:3075
   - input: u i
-    output: o e (sporadic)
+    output: o e
     raw: u i → o e (sporadic)
     source: index_diachronica_original.html:3076
+    sporadic: true
   - input: ə
     output: a
     env: _(C…)# (eventually spread to everywhere)
@@ -8093,10 +8127,12 @@ sections:
     output: h
     raw: s → h → ∅ (sporadic)
     source: index_diachronica_original.html:3116
+    sporadic: true
   - input: h
-    output: ∅ (sporadic)
+    output: ∅
     raw: s → h → ∅ (sporadic)
     source: index_diachronica_original.html:3116
+    sporadic: true
   - input: r
     output: ɡʟ
     raw: r → ɡʟ
@@ -8113,14 +8149,16 @@ sections:
     source: index_diachronica_original.html:3119
   - input: a
     output: e
-    env: _CV[+ mid] (sporadic)
+    env: _CV[+ mid]
     raw: a → e / _CV[+ mid] (sporadic)
     source: index_diachronica_original.html:3121
+    sporadic: true
   - input: a
     output: e
-    env: _Ci (sporadic)
+    env: _Ci
     raw: a → e / _Ci (sporadic)
     source: index_diachronica_original.html:3122
+    sporadic: true
   - input: a(C)V[+ high] a(C)V[+ mid] aCa
     output: ɔ(C) a(C) {ɔ,a}(C)ə
     raw: a(C)V[+ high] a(C)V[+ mid] aCa → ɔ(C) a(C) {ɔ,a}(C)ə
@@ -8147,9 +8185,10 @@ sections:
     raw: u → ʉ / ! Cw_
     source: index_diachronica_original.html:3128
   - input: '{e,i}'
-    output: ɪ (sporadic)
+    output: ɪ
     raw: '{e,i} → ɪ (sporadic)'
     source: index_diachronica_original.html:3129
+    sporadic: true
   - input: V₀V₀
     output: V₀
     raw: V₀V₀ → V₀
@@ -8216,9 +8255,10 @@ sections:
     raw: — oCV[+ high] → øC
     source: index_diachronica_original.html:3149
   - input: oCo
-    output: œC (sporadic)
+    output: œC
     raw: — oCo → œC (sporadic)
     source: index_diachronica_original.html:3150
+    sporadic: true
   - input: oCV[- high]
     output: ɔC
     raw: — oCV[- high] → ɔC
@@ -8279,9 +8319,10 @@ sections:
     raw: R → r
     source: index_diachronica_original.html:3165
   - input: d
-    output: r (sporadic)
+    output: r
     raw: d → r (sporadic)
     source: index_diachronica_original.html:3166
+    sporadic: true
   - input: p pʷ bʷ k ɡ
     output: β w kpʷ ɣ k
     raw: p pʷ bʷ k ɡ → β w kpʷ ɣ k
@@ -8313,9 +8354,10 @@ sections:
     raw: V[- high] → ∅ / {ɔ,ɛ,ɪ}C_
     source: index_diachronica_original.html:3173
   - input: uCi
-    output: iC (sporadic)
+    output: iC
     raw: uCi → iC (sporadic)
     source: index_diachronica_original.html:3175
+    sporadic: true
   - input: u a
     output: ʊ ɛ
     env: _CV[+ high]
@@ -8351,9 +8393,10 @@ sections:
     source: index_diachronica_original.html:3183
   - input: kpʷ
     output: k
-    env: _C (sporadic)
+    env: _C
     raw: kpʷ → k / _C (sporadic)
     source: index_diachronica_original.html:3184
+    sporadic: true
 - section: Proto-Oceanic to Proto-New Caledonia
   index: 10.3.5
   citation: thetha, from Ozanne-Rivierre, Françoise (1992), “The Proto-Oceanic Consonantal
@@ -8684,9 +8727,10 @@ sections:
     source: index_diachronica_original.html:3276
   - input: C
     output: ∅
-    env: _# “sometimes”
+    env: _#
     raw: C → ∅ / _# “sometimes”
     source: index_diachronica_original.html:3277
+    sporadic: true
   - input: k
     output: c
     raw: k → c
@@ -8706,9 +8750,10 @@ sections:
     raw: t̪ ʈ → r l / _#
     source: index_diachronica_original.html:3281
   - input: pw
-    output: w (sporadic)
+    output: w
     raw: pw → w (sporadic)
     source: index_diachronica_original.html:3282
+    sporadic: true
   - input: '{t̪,ʈ}'
     output: t
     raw: '{t̪,ʈ} → t'
@@ -8731,9 +8776,10 @@ sections:
     raw: jʰ j → h ∅ / _i
     source: index_diachronica_original.html:3287
   - input: w
-    output: ɣ (sporadic, conditioning unknown)
+    output: ɣ
     raw: w → ɣ (sporadic, conditioning unknown)
     source: index_diachronica_original.html:3288
+    sporadic: true
   - input: ⁿS
     output: N
     env: _#
@@ -8778,9 +8824,10 @@ sections:
   rules:
   - input: V
     output: ∅
-    env: _# (sporadic?)
+    env: _#
     raw: V → ∅ / _# (sporadic?)
     source: index_diachronica_original.html:3301
+    sporadic: true
   - input: q k t s
     output: k j c t
     raw: q k t s → k j c t
@@ -8825,9 +8872,10 @@ sections:
   rules:
   - input: V
     output: ∅
-    env: _# (sporadic?)
+    env: _#
     raw: V → ∅ / _# (sporadic?)
     source: index_diachronica_original.html:3314
+    sporadic: true
   - input: q k {ʈ,s}
     output: k c t̪
     raw: q k {ʈ,s} → k c t̪
@@ -8920,9 +8968,10 @@ sections:
     raw: au ai → ɔ ɛ
     source: index_diachronica_original.html:3337
   - input: o
-    output: ɔ “sometimes”
+    output: ɔ
     raw: o → ɔ “sometimes”
     source: index_diachronica_original.html:3338
+    sporadic: true
   - input: a
     output: '{ɛ,e} “in some words”'
     raw: a → {ɛ,e} “in some words”
@@ -9234,9 +9283,10 @@ sections:
     raw: '{z,dr} → ts'
     source: index_diachronica_original.html:3428
   - input: u
-    output: i (“sporadic”)
+    output: i
     raw: u → i (“sporadic”)
     source: index_diachronica_original.html:3429
+    sporadic: true
   - input: a
     output: e (rare?)
     raw: a → e (rare?)
@@ -9586,9 +9636,10 @@ sections:
     raw: m b → mʷ bʷ / _u
     source: index_diachronica_original.html:3529
   - input: p
-    output: b(ʷ) (sporadic)
+    output: b(ʷ)
     raw: p → b(ʷ) (sporadic)
     source: index_diachronica_original.html:3530
+    sporadic: true
   - input: p
     output: vʷ
     env: _u (a change thetha reconstructs in order to account for phenomena in later
@@ -9678,9 +9729,10 @@ sections:
     source: index_diachronica_original.html:3550
   - input: k
     output: ∅
-    env: V_V (sporadic?)
+    env: V_V
     raw: k → ∅ / V_V (sporadic?)
     source: index_diachronica_original.html:3551
+    sporadic: true
   - input: b(ʷ) ɡ
     output: p(ʷ) k
     raw: b(ʷ) ɡ → p(ʷ) k
@@ -9764,9 +9816,10 @@ sections:
     raw: ua → ou
     source: index_diachronica_original.html:3570
   - input: au
-    output: '{u,o} “sometimes”'
+    output: '{u,o}'
     raw: au → {u,o} “sometimes”
     source: index_diachronica_original.html:3571
+    sporadic: true
   - input: e
     output: i
     env: Ḱ_ “[tendency]”
@@ -9827,9 +9880,10 @@ sections:
     raw: o → a
     source: index_diachronica_original.html:3586
   - input: u i
-    output: o e (sporadic)
+    output: o e
     raw: u i → o e (sporadic)
     source: index_diachronica_original.html:3587
+    sporadic: true
   - input: a
     output: i
     env: _CV[+ high]
@@ -10151,9 +10205,10 @@ sections:
     raw: v → ∅ / _i
     source: index_diachronica_original.html:3678
   - input: v
-    output: '{w,u} (“sporadically”)'
+    output: '{w,u}'
     raw: v → {w,u} (“sporadically”)
     source: index_diachronica_original.html:3679
+    sporadic: true
   - input: ɣ
     output: ∅
     env: '#_'
@@ -10369,9 +10424,10 @@ sections:
     raw: oCa → ɔCɔ
     source: index_diachronica_original.html:3738
   - input: uCV[+ high]
-    output: iC “sometimes”
+    output: iC
     raw: uCV[+ high] → iC “sometimes”
     source: index_diachronica_original.html:3739
+    sporadic: true
   - input: uCV[- high]
     output: uCʊ
     raw: uCV[- high] → uCʊ
@@ -10859,9 +10915,10 @@ sections:
     raw: kː ɢ → xʲ {qːʼ,ɣ}
     source: index_diachronica_original.html:3896
   - input: '{l,r}'
-    output: ∅ (sometimes, only from original *l)
+    output: ∅
     raw: '{l,r} → ∅ (sometimes, only from original *l)'
     source: index_diachronica_original.html:3897
+    sporadic: true
 - section: Proto-Avar-Andic to Andi
   index: 11.1.2
   citation: 'Pogostick Man, from User:Petusek (2010), “User:Petusek/Drafts/Northeast
@@ -11643,9 +11700,10 @@ sections:
     raw: ɕ ʑ → s z
     source: index_diachronica_original.html:4159
   - input: V:[+stress]ʕ ʕV:[+stress]
-    output: aa:[+stress] aa:[+stress] (but stays /ʕ/ sometimes?)
+    output: aa:[+stress] aa:[+stress]
     raw: ”Vʕ ʕ”V → ”aa a”a (but stays /ʕ/ sometimes?)
     source: index_diachronica_original.html:4160
+    sporadic: true
   - input: ʕʷ
     output: ɥ
     raw: ʕʷ → ɥ
@@ -12769,11 +12827,11 @@ sections:
     raw: ∅ → ɨ / _N#
     source: index_diachronica_original.html:4546
   - input: '{ɭ,ɽ}'
-    output: ∅ (sporadic, the latter very much so and contributing some compensatory
-      lengthening)
+    output: ∅
     raw: '{ɭ,ɽ} → ∅ (sporadic, the latter very much so and contributing some compensatory
       lengthening)'
     source: index_diachronica_original.html:4547
+    sporadic: true
   - input: l ɭ
     output: lːʉ ɭːʉ
     env: _#(C)V[-long]
@@ -12850,10 +12908,12 @@ sections:
     output: n “(sporadic and dialect development)”
     raw: ɳ → n “(sporadic and dialect development)”
     source: index_diachronica_original.html:4563
+    sporadic: true
   - input: ɭ
-    output: l “(again, sporadic)”
+    output: l “(again,
     raw: ɭ → l “(again, sporadic)”
     source: index_diachronica_original.html:4564
+    sporadic: true
   - input: c
     output: s
     env: _{a,o,u,e}
@@ -12865,9 +12925,10 @@ sections:
     source: index_diachronica_original.html:4566
   - input: o e
     output: u i
-    env: _C{u,i} “(highly sporadic)”
+    env: _C{u,i} “(highly
     raw: o e → u i / _C{u,i} “(highly sporadic)”
     source: index_diachronica_original.html:4567
+    sporadic: true
   - input: i(ː) e(ː)
     output: u(ː) o(ː)
     env: _ɭ
@@ -13998,9 +14059,10 @@ sections:
     raw: a → æ / i(C)_
     source: index_diachronica_original.html:4861
   - input: o
-    output: e (sporadic, highly unusual)
+    output: e
     raw: o → e (sporadic, highly unusual)
     source: index_diachronica_original.html:4862
+    sporadic: true
 - section: Proto-Tabla-Sentani to Central Sentani
   index: 16.1.2
   citation: Pogostick Man, from Gregerson, Kenneth, and Margaret Hartzler (1987),
@@ -14073,9 +14135,10 @@ sections:
     raw: a → æ / i(C)_
     source: index_diachronica_original.html:4879
   - input: o
-    output: e (sporadic, highly unusual)
+    output: e
     raw: o → e (sporadic, highly unusual)
     source: index_diachronica_original.html:4880
+    sporadic: true
 - section: Proto-Tabla-Sentani to Eastern Sentani
   index: 16.1.3
   citation: Pogostick Man, from Gregerson, Kenneth, and Margaret Hartzler (1987),
@@ -14148,9 +14211,10 @@ sections:
     raw: a → æ / i(C)_
     source: index_diachronica_original.html:4897
   - input: o
-    output: e (sporadic, highly unusual)
+    output: e
     raw: o → e (sporadic, highly unusual)
     source: index_diachronica_original.html:4898
+    sporadic: true
 - section: Proto-Tabla-Sentani to Western Sentani
   index: 16.1.4
   citation: Pogostick Man, from Gregerson, Kenneth, and Margaret Hartzler (1987),
@@ -14218,9 +14282,10 @@ sections:
     raw: a → æ / i(C)_
     source: index_diachronica_original.html:4914
   - input: o
-    output: e (sporadic, highly unusual)
+    output: e
     raw: o → e (sporadic, highly unusual)
     source: index_diachronica_original.html:4915
+    sporadic: true
 - section: Proto-Tabla-Sentani to Tabla
   index: 16.1.5
   citation: Pogostick Man, from Gregerson, Kenneth, and Margaret Hartzler (1987),
@@ -14257,9 +14322,10 @@ sections:
     raw: oi → oe
     source: index_diachronica_original.html:4925
   - input: o
-    output: e (sporadic, highly unusual)
+    output: e
     raw: o → e (sporadic, highly unusual)
     source: index_diachronica_original.html:4927
+    sporadic: true
 - section: Indo-European
   index: '17'
   citation: 'Wikipedia gives the following phonological reconstruction for Proto-Indo-European,
@@ -14391,6 +14457,7 @@ sections:
     env: sometimes, involving “[d]issimilation with following vowel”
     raw: s → θ / sometimes, involving “[d]issimilation with following vowel”
     source: index_diachronica_original.html:4976
+    sporadic: true
   - input: s
     output: h
     env: V_V
@@ -14426,9 +14493,10 @@ sections:
     raw: Vn → V[+nasal] / _C?
     source: index_diachronica_original.html:4983
   - input: n
-    output: ɲ (sometimes?)
+    output: ɲ
     raw: n → ɲ (sometimes?)
     source: index_diachronica_original.html:4984
+    sporadic: true
   - input: l r
     output: l(ː) r(ː)
     raw: l r → l(ː) r(ː)
@@ -14554,6 +14622,7 @@ sections:
     env: sometimes, involving “[d]issimilation with following vowel”
     raw: s → θ / sometimes, involving “[d]issimilation with following vowel”
     source: index_diachronica_original.html:5015
+    sporadic: true
   - input: s
     output: h
     env: V_V
@@ -14589,9 +14658,10 @@ sections:
     raw: n → ∅ / V_C?
     source: index_diachronica_original.html:5022
   - input: n
-    output: ɲ (sometimes?)
+    output: ɲ
     raw: n → ɲ (sometimes?)
     source: index_diachronica_original.html:5023
+    sporadic: true
   - input: n
     output: ɾ
     raw: n → ɾ
@@ -14733,9 +14803,10 @@ sections:
     source: index_diachronica_original.html:5061
   - input: e
     output: a
-    env: _{r,l} (sporadic)
+    env: _{r,l}
     raw: e → a / _{r,l} (sporadic)
     source: index_diachronica_original.html:5062
+    sporadic: true
   - input: t
     output: ts
     env: _i
@@ -14813,9 +14884,10 @@ sections:
     raw: k → ∅ / _N
     source: index_diachronica_original.html:5081
   - input: ɡ
-    output: dʒ (sporadic)
+    output: dʒ
     raw: ɡ → dʒ (sporadic)
     source: index_diachronica_original.html:5082
+    sporadic: true
   - input: e
     output: i
     env: j_
@@ -14866,9 +14938,10 @@ sections:
     source: index_diachronica_original.html:5092
   - input: hh
     output: ∅
-    env: _{w,m,n,r,l} “medially, and sporadically”
+    env: _{w,m,n,r,l}
     raw: hh → ∅ / _{w,m,n,r,l} “medially, and sporadically”
     source: index_diachronica_original.html:5093
+    sporadic: true
   - input: D R
     output: Dː Rː
     env: ”e_ in U[+open]
@@ -14972,9 +15045,10 @@ sections:
     raw: w → b / C_
     source: index_diachronica_original.html:5117
   - input: ɡ
-    output: dʒ (sporadic)
+    output: dʒ
     raw: ɡ → dʒ (sporadic)
     source: index_diachronica_original.html:5118
+    sporadic: true
   - input: e
     output: i
     env: j_
@@ -17698,9 +17772,10 @@ sections:
     source: index_diachronica_original.html:5775
   - input: ɑʊ
     output: ɑː
-    env: _N (sometimes)
+    env: _N
     raw: ɑʊ → ɑː / _N (sometimes)
     source: index_diachronica_original.html:5776
+    sporadic: true
   - input: ɑʊ
     output: ɔː
     env: else
@@ -18182,9 +18257,10 @@ sections:
     source: index_diachronica_original.html:5888
   - input: '{ɸ,x}'
     output: ∅
-    env: _# (seems to be sporadic)
+    env: _#
     raw: '{ɸ,x} → ∅ / _# (seems to be sporadic)'
     source: index_diachronica_original.html:5890
+    sporadic: true
   - input: ʍ
     output: xw (some speakers seem to have resisted this)
     raw: ʍ → xw (some speakers seem to have resisted this)
@@ -18287,9 +18363,10 @@ sections:
     source: index_diachronica_original.html:5917
   - input: ɑ
     output: a
-    exception: _{l,r} (sporadic)
+    exception: _{l,r}
     raw: ɑ → a / ! _{l,r} (sporadic)
     source: index_diachronica_original.html:5918
+    sporadic: true
   - input: oː
     output: ju
     env: '{n,x}_'
@@ -18383,9 +18460,10 @@ sections:
     raw: ɑː → e / ! _{ŋ,n}
     source: index_diachronica_original.html:5937
   - input: ʌ
-    output: ɪi (sporadic)
+    output: ɪi
     raw: ʌ → ɪi (sporadic)
     source: index_diachronica_original.html:5938
+    sporadic: true
   - input: a
     output: ɪ
     env: “unstressed and/or final”
@@ -18428,9 +18506,10 @@ sections:
     source: index_diachronica_original.html:5946
   - input: '{f,v}'
     output: ∅
-    env: '{l,r,V}_ (sometimes blocked)'
+    env: '{l,r,V}_'
     raw: '{f,v} → ∅ / {l,r,V}_ (sometimes blocked)'
     source: index_diachronica_original.html:5947
+    sporadic: true
   - input: ð
     output: ∅
     env: '{l,r,V}_C'
@@ -18443,9 +18522,10 @@ sections:
     source: index_diachronica_original.html:5949
   - input: θ
     output: f
-    env: '{V,r}_# (sometimes blocked)'
+    env: '{V,r}_#'
     raw: θ → f / {V,r}_# (sometimes blocked)
     source: index_diachronica_original.html:5950
+    sporadic: true
   - input: θ
     output: ∅
     raw: θ → ∅
@@ -18472,9 +18552,10 @@ sections:
     source: index_diachronica_original.html:5955
   - input: k
     output: ∅
-    env: n_t (sporadic)
+    env: n_t
     raw: k → ∅ / n_t (sporadic)
     source: index_diachronica_original.html:5956
+    sporadic: true
   - input: m
     output: ∅
     env: _n
@@ -18558,6 +18639,7 @@ sections:
     exception: _C “(sometimes)”; “(except when phonemic)”
     raw: k → ç / V_# ! _C “(sometimes)”; “(except when phonemic)”
     source: index_diachronica_original.html:5976
+    sporadic: true
   - input: ɡ
     output: ʝ
     env: V_#
@@ -19050,14 +19132,16 @@ sections:
     source: index_diachronica_original.html:6102
   - input: aː
     output: oː
-    env: _{N,C[+ dental],P,h} (sporadic?)
+    env: _{N,C[+ dental],P,h}
     raw: aː → oː / _{N,C[+ dental],P,h} (sporadic?)
     source: index_diachronica_original.html:6103
+    sporadic: true
   - input: aː
     output: oː
-    env: '{N,C[+ dental],P,h}_ (sporadic?)'
+    env: '{N,C[+ dental],P,h}_'
     raw: aː → oː / {N,C[+ dental],P,h}_ (sporadic?)
     source: index_diachronica_original.html:6104
+    sporadic: true
   - input: e(ː) i
     output: ø(ː) y
     env: _C[+ affricate]
@@ -19065,14 +19149,16 @@ sections:
     source: index_diachronica_original.html:6105
   - input: e(ː) i
     output: ø(ː) y
-    env: _{P,l,ʃ} (sporadic?)
+    env: _{P,l,ʃ}
     raw: e(ː) i → ø(ː) y / _{P,l,ʃ} (sporadic?)
     source: index_diachronica_original.html:6106
+    sporadic: true
   - input: e(ː) i
     output: ø(ː) y
-    env: '{P,l,ʃ}_ (sporadic?)'
+    env: '{P,l,ʃ}_'
     raw: e(ː) i → ø(ː) y / {P,l,ʃ}_ (sporadic?)
     source: index_diachronica_original.html:6107
+    sporadic: true
   - input: y(ː) yə ø(ː) øy
     output: i(ː) iə e(ː) ei (intermittent)
     raw: y(ː) yə ø(ː) øy → i(ː) iə e(ː) ei (intermittent)
@@ -20447,9 +20533,10 @@ sections:
     source: index_diachronica_original.html:6408
   - input: d
     output: ∅
-    env: n_# (sometimes)
+    env: n_#
     raw: d → ∅ / n_# (sometimes)
     source: index_diachronica_original.html:6409
+    sporadic: true
   - input: b d ɡ
     output: p t k
     env: '#_'
@@ -20462,9 +20549,10 @@ sections:
     source: index_diachronica_original.html:6411
   - input: ɡ
     output: k
-    env: _# (sporadic)
+    env: _#
     raw: ɡ → k / _# (sporadic)
     source: index_diachronica_original.html:6412
+    sporadic: true
   - input: ɡn ɡl
     output: nj lj
     raw: ɡn ɡl → nj lj
@@ -20564,9 +20652,10 @@ sections:
     raw: l → ∅ / _# ?
     source: index_diachronica_original.html:6433
   - input: lm
-    output: ml (sporadic)
+    output: ml
     raw: lm → ml (sporadic)
     source: index_diachronica_original.html:6434
+    sporadic: true
   - input: lː
     output: ʎ
     raw: lː → ʎ
@@ -20766,9 +20855,10 @@ sections:
     source: index_diachronica_original.html:6477
   - input: b
     output: v
-    env: '#_ (sporadic?)'
+    env: '#_'
     raw: 'b → v / #_ (sporadic?)'
     source: index_diachronica_original.html:6478
+    sporadic: true
   - input: lm
     output: ml
     raw: lm → ml
@@ -20828,9 +20918,10 @@ sections:
     source: index_diachronica_original.html:6490
   - input: f
     output: v
-    env: '#_ (sporadic?)'
+    env: '#_'
     raw: 'f → v / #_ (sporadic?)'
     source: index_diachronica_original.html:6491
+    sporadic: true
   - input: f
     output: m
     env: _n
@@ -20880,9 +20971,10 @@ sections:
     source: index_diachronica_original.html:6501
   - input: h
     output: ∅
-    env: _{V,w,j} (sporadic)
+    env: _{V,w,j}
     raw: h → ∅ / _{V,w,j} (sporadic)
     source: index_diachronica_original.html:6502
+    sporadic: true
   - input: h
     output: ∅
     env: _l
@@ -21283,10 +21375,12 @@ sections:
     output: øj
     raw: oj → øj → yj (→ yː sometimes)
     source: index_diachronica_original.html:6604
+    sporadic: true
   - input: øj
-    output: yj (> yː sometimes)
+    output: yj
     raw: oj → øj → yj (→ yː sometimes)
     source: index_diachronica_original.html:6604
+    sporadic: true
   - input: e o
     output: ɛ ɔ
     raw: e o → ɛ ɔ
@@ -21888,10 +21982,12 @@ sections:
     output: øj
     raw: oj → øj → yj (→ yː sometimes)
     source: index_diachronica_original.html:6755
+    sporadic: true
   - input: øj
-    output: yj (> yː sometimes)
+    output: yj
     raw: oj → øj → yj (→ yː sometimes)
     source: index_diachronica_original.html:6755
+    sporadic: true
   - input: e o
     output: ɛ ɔ
     raw: e o → ɛ ɔ
@@ -22113,14 +22209,16 @@ sections:
     source: index_diachronica_original.html:6812
   - input: r
     output: ∅
-    env: _# “sometimes??”
+    env: _#
     raw: — r → ∅ / _# “sometimes??”
     source: index_diachronica_original.html:6813
+    sporadic: true
   - input: e(ː)
     output: a(ː)
-    env: _R “sometimes??”
+    env: _R
     raw: — e(ː) → a(ː) / _R “sometimes??”
     source: index_diachronica_original.html:6814
+    sporadic: true
   - input: e(ː)
     output: a(ː)
     env: “when unstressed?”
@@ -22247,9 +22345,10 @@ sections:
     source: index_diachronica_original.html:6847
   - input: R̊H
     output: '{u,i}R'
-    env: _V (sporadic)
+    env: _V
     raw: R̊H → {u,i}R / _V (sporadic)
     source: index_diachronica_original.html:6848
+    sporadic: true
   - input: R̊H
     output: '{u,i}ːR'
     env: _C
@@ -22886,9 +22985,9 @@ sections:
     source: index_diachronica_original.html:7004
   - input: oi o
     output: i ъ
-    env: “Sometimes in final syllables”
     raw: oi o → i ъ / “Sometimes in final syllables”
     source: index_diachronica_original.html:7005
+    sporadic: true
   - input: '{O,N}'
     output: ∅
     env: _$
@@ -22986,15 +23085,17 @@ sections:
     source: index_diachronica_original.html:7022
   - input: j
     output: lʲ
-    env: '{p,b,m,v}_ (sporadic)'
+    env: '{p,b,m,v}_'
     raw: j → lʲ / {p,b,m,v}_ (sporadic)
     source: index_diachronica_original.html:7023
+    sporadic: true
   - input: ɛ ɛ̃ ɛː
     output: ɔ ɔ̃ a
-    env: _C[-palatalized +dental] (also sporadically before plain non-dentals)
+    env: _C[-palatalized +dental]
     raw: ɛ ɛ̃ ɛː → ɔ ɔ̃ a / _C[-palatalized +dental] (also sporadically before plain
       non-dentals)
     source: index_diachronica_original.html:7024
+    sporadic: true
   - input: ɛː
     output: ɛ
     raw: ɛː → ɛ
@@ -23134,9 +23235,10 @@ sections:
     source: index_diachronica_original.html:7053
   - input: ɔ
     output: ɔː
-    env: _{r,l} (sporadic, perhaps analogical)
+    env: _{r,l}
     raw: ɔ → ɔː / _{r,l} (sporadic, perhaps analogical)
     source: index_diachronica_original.html:7054
+    sporadic: true
   - input: ∅
     output: h
     env: _ъ
@@ -23144,9 +23246,10 @@ sections:
     source: index_diachronica_original.html:7055
   - input: V
     output: ∅
-    env: unstressed (sporadic)
+    env: unstressed
     raw: V → ∅ / unstressed (sporadic)
     source: index_diachronica_original.html:7057
+    sporadic: true
   - input: i
     output: ∅
     env: _# “in the infinite and imperative desinences. . .some verbs have never been
@@ -23163,9 +23266,10 @@ sections:
     source: index_diachronica_original.html:7059
   - input: i u
     output: u i
-    env: '{lʲ,j}_ (sporadic)'
+    env: '{lʲ,j}_'
     raw: i u → u i / {lʲ,j}_ (sporadic)
     source: index_diachronica_original.html:7060
+    sporadic: true
   - input: tʲ dʲ sʲ zʲ nʲ rʲ l lʲ
     output: tɕ dʒ ɕ ʑ ȵ r ɫ l (this last probably not before /i/)
     raw: tʲ dʲ sʲ zʲ nʲ rʲ l lʲ → tɕ dʒ ɕ ʑ ȵ r ɫ l (this last probably not before
@@ -23239,13 +23343,15 @@ sections:
     raw: ɛ → ɔ / _ɫ (if the vowel was from a yer)
     source: index_diachronica_original.html:7076
   - input: '{ɛ,a}'
-    output: ɔ (sporadic)
+    output: ɔ
     raw: '{ɛ,a} → ɔ (sporadic)'
     source: index_diachronica_original.html:7077
+    sporadic: true
   - input: V
-    output: ɛ (sporadic, analogical)
+    output: ɛ
     raw: V → ɛ (sporadic, analogical)
     source: index_diachronica_original.html:7078
+    sporadic: true
   - input: ɫ
     output: w
     raw: ɫ → w
@@ -23265,9 +23371,10 @@ sections:
     raw: o → u / else
     source: index_diachronica_original.html:7082
   - input: u
-    output: ɔ (rare, sporadic)
+    output: ɔ
     raw: u → ɔ (rare, sporadic)
     source: index_diachronica_original.html:7083
+    sporadic: true
   - input: pʲ mʲ fʲ
     output: p m f
     env: _#
@@ -23597,9 +23704,10 @@ sections:
     source: index_diachronica_original.html:7155
   - input: w
     output: ∅
-    env: C_C (sporadic)
+    env: C_C
     raw: w → ∅ / C_C (sporadic)
     source: index_diachronica_original.html:7156
+    sporadic: true
   - input: n
     output: s > ɕ
     env: k_ɛ̃ where the vowel was from Proto-Slavic
@@ -23642,9 +23750,10 @@ sections:
     source: index_diachronica_original.html:7167
   - input: ɕ ʑ
     output: s z
-    env: _C (sometimes)
+    env: _C
     raw: ɕ ʑ → s z / _C (sometimes)
     source: index_diachronica_original.html:7168
+    sporadic: true
 - section: Proto-Slavic to Old Russian
   index: 17.11.2
   citation: Hwhatting
@@ -23685,9 +23794,10 @@ sections:
     source: index_diachronica_original.html:7180
   - input: je
     output: o
-    env: V_ (sporadic)
+    env: V_
     raw: je → o / V_ (sporadic)
     source: index_diachronica_original.html:7181
+    sporadic: true
   - input: j
     output: ∅
     env: '#_u'
@@ -23695,9 +23805,10 @@ sections:
     source: index_diachronica_original.html:7182
   - input: j
     output: ∅
-    env: V_u (sporadic)
+    env: V_u
     raw: j → ∅ / V_u (sporadic)
     source: index_diachronica_original.html:7183
+    sporadic: true
   - input: jь
     output: i
     raw: jь → i
@@ -23935,9 +24046,10 @@ sections:
     source: index_diachronica_original.html:7239
   - input: '{i,e}'
     output: ∅
-    env: _# (sometimes)
+    env: _#
     raw: '{i,e} → ∅ / _# (sometimes)'
     source: index_diachronica_original.html:7240
+    sporadic: true
   - input: a
     output: e
     env: _C(C)#
@@ -24170,6 +24282,7 @@ sections:
     raw: V → Vː / _S[+voiced]{S[-voiced],F[-voiced]}; “(i, e, and o sometimes bypass
       this)”
     source: index_diachronica_original.html:7288
+    sporadic: true
   - input: S[+voiced]
     output: S[-voiced]
     env: _{S[-voiced],F[-voiced]}
@@ -25632,9 +25745,10 @@ sections:
     source: index_diachronica_original.html:7594
   - input: au
     output: u
-    env: '#_ (sporadically, e.g. audire > udire)'
+    env: '#_'
     raw: 'au → u / #_ (sporadically, e.g. audire → udire)'
     source: index_diachronica_original.html:7595
+    sporadic: true
   - input: au
     output: o
     raw: au → o
@@ -26579,9 +26693,10 @@ sections:
     source: index_diachronica_original.html:7798
   - input: v
     output: b
-    env: r_ (sporadic)
+    env: r_
     raw: v → b / r_ (sporadic)
     source: index_diachronica_original.html:7799
+    sporadic: true
   - input: h
     output: ∅
     raw: h → ∅
@@ -26606,9 +26721,10 @@ sections:
     raw: k ɡ → tʃ dʒ / _E
     source: index_diachronica_original.html:7804
   - input: tʃ
-    output: ts (sometimes)
+    output: ts
     raw: tʃ → ts (sometimes)
     source: index_diachronica_original.html:7805
+    sporadic: true
   - input: ɡ
     output: ∅
     env: V_(VC…)V:[+stress]
@@ -26726,13 +26842,10 @@ sections:
     raw: β → b (in Béarn, Gascon, and Languedoc)
     source: index_diachronica_original.html:7833
   - input: β
-    output: v (though sometimes
+    output: v
     raw: β → v (though sometimes → ɡw instead if analogy interfered)
     source: index_diachronica_original.html:7834
-  - input: v (though sometimes
-    output: ɡw instead if analogy interfered)
-    raw: β → v (though sometimes → ɡw instead if analogy interfered)
-    source: index_diachronica_original.html:7834
+    sporadic: true
   - input: kʷ ɡʷ
     output: kw ɡw (in western dialects)
     raw: kʷ ɡʷ → kw ɡw (in western dialects)
@@ -26841,9 +26954,10 @@ sections:
     raw: l → w / V_s
     source: index_diachronica_original.html:7856
   - input: ms ns
-    output: mps nts (sporadic?)
+    output: mps nts
     raw: ms ns → mps nts (sporadic?)
     source: index_diachronica_original.html:7857
+    sporadic: true
   - input: '{p,b}'
     output: ∅
     env: R_s# (unless blocked by analogy)
@@ -27343,9 +27457,10 @@ sections:
     source: index_diachronica_original.html:7942
   - input: t
     output: ∅
-    env: r_m (sometimes)
+    env: r_m
     raw: t → ∅ / r_m (sometimes)
     source: index_diachronica_original.html:7943
+    sporadic: true
   - input: stʃ
     output: s (in some northern and northeastern dialects)
     raw: stʃ → s (in some northern and northeastern dialects)
@@ -27360,14 +27475,16 @@ sections:
     source: index_diachronica_original.html:7946
   - input: k
     output: ∅
-    env: s_b (sporadic?)
+    env: s_b
     raw: k → ∅ / s_b (sporadic?)
     source: index_diachronica_original.html:7947
+    sporadic: true
   - input: '{p,t}'
     output: ∅
-    env: s_m (sporadic?)
+    env: s_m
     raw: '{p,t} → ∅ / s_m (sporadic?)'
     source: index_diachronica_original.html:7948
+    sporadic: true
   - input: p
     output: ∅
     env: s_t
@@ -28042,24 +28159,28 @@ sections:
     source: index_diachronica_original.html:8099
   - input: t
     output: k
-    env: s_l (sporadic)
+    env: s_l
     raw: t → k / s_l (sporadic)
     source: index_diachronica_original.html:8100
+    sporadic: true
   - input: l
     output: ∅
-    env: rk_ (sporadic)
+    env: rk_
     raw: l → ∅ / rk_ (sporadic)
     source: index_diachronica_original.html:8101
+    sporadic: true
   - input: r
     output: l
-    env: _C (sporadic)
+    env: _C
     raw: r → l / _C (sporadic)
     source: index_diachronica_original.html:8102
+    sporadic: true
   - input: l
     output: r
-    env: C_ (sporadic)
+    env: C_
     raw: l → r / C_ (sporadic)
     source: index_diachronica_original.html:8103
+    sporadic: true
   - input: '{i,j}'
     output: dʒ
     env: Vr_V (“dialectal”)
@@ -28224,14 +28345,16 @@ sections:
     source: index_diachronica_original.html:8134
   - input: V
     output: ∅
-    env: C_s when unstressed and not at a word boundary (sporadic)
+    env: C_s when unstressed and not at a word boundary
     raw: V → ∅ / C_s when unstressed and not at a word boundary (sporadic)
     source: index_diachronica_original.html:8135
+    sporadic: true
   - input: V
     output: ∅
-    env: s_C when unstressed and not at a word boundary (sporadic)
+    env: s_C when unstressed and not at a word boundary
     raw: V → ∅ / s_C when unstressed and not at a word boundary (sporadic)
     source: index_diachronica_original.html:8136
+    sporadic: true
   - input: '{k,ɡ}'
     output: x > j
     env: _{t,s,n,l}
@@ -28254,9 +28377,10 @@ sections:
     raw: '{jl,lj} {jn,nj} {jɡ,ɡj} → ʎ ɲ ʝː'
     source: index_diachronica_original.html:8141
   - input: bj
-    output: ʝː (sporadic)
+    output: ʝː
     raw: bj → ʝː (sporadic)
     source: index_diachronica_original.html:8142
+    sporadic: true
   - input: Raising of e {ɛ,a} ɔ o
     output: 'i e o u; near j, in particular environments:'
     raw: 'Raising of e {ɛ,a} ɔ o → i e o u; near j, in particular environments:'
@@ -28278,9 +28402,10 @@ sections:
     raw: — a → e / _j
     source: index_diachronica_original.html:8146
   - input: oj
-    output: we (sporadic)
+    output: we
     raw: oj → we (sporadic)
     source: index_diachronica_original.html:8147
+    sporadic: true
   - input: ɛ ɔ
     output: je we
     raw: ɛ ɔ → je we
@@ -28344,9 +28469,10 @@ sections:
     raw: kl pl → ʎ {ʎ,tʃ}
     source: index_diachronica_original.html:8161
   - input: fl
-    output: ʎ (sporadic)
+    output: ʎ
     raw: fl → ʎ (sporadic)
     source: index_diachronica_original.html:8162
+    sporadic: true
   - input: V
     output: ∅
     env: unstressed
@@ -28385,13 +28511,15 @@ sections:
     source: index_diachronica_original.html:8172
   - input: d
     output: ∅
-    env: _n (sometimes)
+    env: _n
     raw: — d → ∅ / _n (sometimes)
     source: index_diachronica_original.html:8173
+    sporadic: true
   - input: mn
-    output: ɲ (sometimes)
+    output: ɲ
     raw: — mn → ɲ (sometimes)
     source: index_diachronica_original.html:8174
+    sporadic: true
   - input: tst dzd
     output: ts dz
     raw: — tst dzd → ts dz
@@ -28429,9 +28557,10 @@ sections:
     raw: — dn dl → nd ld
     source: index_diachronica_original.html:8184
   - input: ml nɾ
-    output: lm ɾn (sometimes)
+    output: lm ɾn
     raw: — ml nɾ → lm ɾn (sometimes)
     source: index_diachronica_original.html:8185
+    sporadic: true
   - input: βɣ
     output: wɣ
     raw: — βɣ → wɣ → ɣw
@@ -28470,9 +28599,10 @@ sections:
     source: index_diachronica_original.html:8193
   - input: l
     output: u
-    env: _C (sometimes)
+    env: _C
     raw: l → u / _C (sometimes)
     source: index_diachronica_original.html:8194
+    sporadic: true
   - input: ts dz
     output: s̪ z̪
     raw: ts dz → s̪ z̪
@@ -29811,9 +29941,10 @@ sections:
     raw: ts → {h,∅}
     source: index_diachronica_original.html:8570
   - input: Vn
-    output: V[+nas] (sometimes)
+    output: V[+nas]
     raw: Vn → V[+nas] (sometimes)
     source: index_diachronica_original.html:8571
+    sporadic: true
   - input: ∅
     output: ŋ
     env: '{#,V}_w'
@@ -29944,9 +30075,10 @@ sections:
     source: index_diachronica_original.html:8603
   - input: i
     output: ı̃
-    env: ʔ_# (sporadic)
+    env: ʔ_#
     raw: i → ı̃ / ʔ_# (sporadic)
     source: index_diachronica_original.html:8604
+    sporadic: true
 - section: Tupian
   index: 18.4.9.1
 - section: Proto-Monde to Gavião
@@ -29963,9 +30095,10 @@ sections:
     source: index_diachronica_original.html:8612
   - input: h
     output: ∅
-    env: V_ (sporadic, likely an areal feature)
+    env: V_
     raw: h → ∅ / V_ (sporadic, likely an areal feature)
     source: index_diachronica_original.html:8613
+    sporadic: true
 - section: Proto-Monde to Proto-Cinta Larga-Suruí-Zoró
   index: 18.4.9.1.2
   citation: Pogostick Man, from Anonby, Stan, and David J. Holbrook (2013), “A report
@@ -30057,9 +30190,10 @@ sections:
     raw: 'ᵑɡ → ɡ / #_ (possibly all prenasalized consonants?)'
     source: index_diachronica_original.html:8642
   - input: ʃ
-    output: tʃ (sporadic, areal feature from Gavião influence)
+    output: tʃ
     raw: ʃ → tʃ (sporadic, areal feature from Gavião influence)
     source: index_diachronica_original.html:8643
+    sporadic: true
 - section: Proto-Tupí-Guaraní to Urubu
   index: 18.4.10
   citation: "Pogostick Man, from Lemle, Miriam (1971), â\x80\x9CInternal Classification\
@@ -30093,9 +30227,10 @@ sections:
     source: index_diachronica_original.html:8652
   - input: Vn
     output: V[+nas]
-    env: _# (sometimes)
+    env: _#
     raw: Vn → V[+nas] / _# (sometimes)
     source: index_diachronica_original.html:8653
+    sporadic: true
   - input: Vŋ
     output: V[+nas]
     raw: Vŋ → V[+nas]
@@ -30557,9 +30692,10 @@ sections:
     source: index_diachronica_original.html:8829
   - input: a
     output: ∅
-    env: _e (sporadic)
+    env: _e
     raw: a → ∅ / _e (sporadic)
     source: index_diachronica_original.html:8830
+    sporadic: true
   - input: o
     output: ∅
     env: u_
@@ -30621,9 +30757,10 @@ sections:
     source: index_diachronica_original.html:8845
   - input: a
     output: ∅
-    env: _e (sporadic)
+    env: _e
     raw: a → ∅ / _e (sporadic)
     source: index_diachronica_original.html:8846
+    sporadic: true
   - input: u
     output: ∅
     env: _o
@@ -30782,9 +30919,10 @@ sections:
     source: index_diachronica_original.html:8900
   - input: CV
     output: ∅
-    env: _# (possibly only when CV_#, possibly sporadic)
+    env: _#
     raw: CV → ∅ / _# (possibly only when CV_#, possibly sporadic)
     source: index_diachronica_original.html:8901
+    sporadic: true
   - input: e o
     output: ɛ ɔ (?)
     raw: e o → ɛ ɔ (?)
@@ -31856,9 +31994,10 @@ sections:
     source: index_diachronica_original.html:9281
   - input: V
     output: ∅
-    env: s_j (sometimes)
+    env: s_j
     raw: V → ∅ / s_j (sometimes)
     source: index_diachronica_original.html:9282
+    sporadic: true
   - input: s
     output: h
     env: V_V
@@ -31978,9 +32117,10 @@ sections:
     source: index_diachronica_original.html:9310
   - input: i
     output: ∅
-    env: a_ (sometimes)
+    env: a_
     raw: i → ∅ / a_ (sometimes)
     source: index_diachronica_original.html:9311
+    sporadic: true
   - input: u
     output: w
     env: _a
@@ -32078,9 +32218,10 @@ sections:
     source: index_diachronica_original.html:9338
   - input: i
     output: ∅
-    env: a_ (usually; sometimes the diphthong is retained or > aj)
+    env: a_
     raw: i → ∅ / a_ (usually; sometimes the diphthong is retained or → aj)
     source: index_diachronica_original.html:9339
+    sporadic: true
   - input: a
     output: i
     env: iC_
@@ -33653,9 +33794,10 @@ sections:
     source: index_diachronica_original.html:9901
   - input: i
     output: ∅
-    env: '#(C)V(C)(C)V(C)(C)_# (sporadic in the case of other vowels)'
+    env: '#(C)V(C)(C)V(C)(C)_#'
     raw: 'i → ∅ / #(C)V(C)(C)V(C)(C)_# (sporadic in the case of other vowels)'
     source: index_diachronica_original.html:9902
+    sporadic: true
   - input: tl st
     output: lː tː
     raw: tl st → lː tː
@@ -34257,9 +34399,10 @@ sections:
     source: index_diachronica_original.html:10126
   - input: w
     output: m
-    env: _Vn (sporadic)
+    env: _Vn
     raw: w → m / _Vn (sporadic)
     source: index_diachronica_original.html:10127
+    sporadic: true
   - input: w
     output: b
     raw: w → b
@@ -34931,6 +35074,7 @@ sections:
     env: _$; diphthongs sometimes lengthen in comparison
     raw: '{A,F} → ∅ / _$; diphthongs sometimes lengthen in comparison'
     source: index_diachronica_original.html:10345
+    sporadic: true
   - input: ʃ
     output: h
     env: in the “1sg subject prefix”
@@ -36993,9 +37137,10 @@ sections:
     1986)
   rules:
   - input: iː ɨː uː
-    output: eː əː oː (this change sometimes did not occur)
+    output: eː əː oː
     raw: iː ɨː uː → eː əː oː (this change sometimes did not occur)
     source: index_diachronica_original.html:11057
+    sporadic: true
   - input: eː əː
     output: e ə (as a result of ablaut)
     raw: eː əː → e ə (as a result of ablaut)
@@ -37034,9 +37179,10 @@ sections:
   rules:
   - input: ∅
     output: h
-    env: V(ː)_, when stressed (only sometimes, “particularly before consonants”)
+    env: V(ː)_, when stressed
     raw: ∅ → h / V(ː)_, when stressed (only sometimes, “particularly before consonants”)
     source: index_diachronica_original.html:11071
+    sporadic: true
 - section: Buena Vista Yokuts to Tulamni
   index: 33.3.1.3
   citation: CatDoom, from Whistler, Kenneth W., and Golla, Victor (1986), “Proto-Yokuts
@@ -37093,6 +37239,7 @@ sections:
     raw: ʂ → s “(sometimes remains allophonically in word-initial position before
       back vowels, but not consistently)”
     source: index_diachronica_original.html:11094
+    sporadic: true
 - section: Proto-Tule-Kaweah to Yawdanchi
   index: 33.3.2.1.2
   citation: CatDoom, from Whistler, Kenneth W., and Golla, Victor (1986), “Proto-Yokuts
@@ -39296,9 +39443,10 @@ sections:
     source: index_diachronica_original.html:11727
   - input: n nˀ
     output: i iʔ
-    env: _{i,ʃ} (sporadic)
+    env: _{i,ʃ}
     raw: n nˀ → i iʔ / _{i,ʃ} (sporadic)
     source: index_diachronica_original.html:11728
+    sporadic: true
 - section: Sino-Tibetan
   index: '36'
 - section: Proto-Sino-Tibetan to Middle Chinese
@@ -39786,6 +39934,7 @@ sections:
     raw: i → [long-tail vowel thing] / C̣_ (“sometimes”, in “variant readings”); when
       following /ʂ ʐ/, sometimes yields [ʂi], other times [s truncated vowel-thing]
     source: index_diachronica_original.html:11840
+    sporadic: true
   - input: iʔ iw
     output: eʔ ew
     env: C̣_ (the latter with variant iɛu?)
@@ -39935,6 +40084,7 @@ sections:
     exception: ʐ_) (only in one variety?)
     raw: '{jem,jen} → iɛn / sometimes after C̣_ (but ! ʐ_) (only in one variety?)'
     source: index_diachronica_original.html:11870
+    sporadic: true
   - input: yen
     output: uɛn
     env: C̣_
@@ -43383,6 +43533,7 @@ sections:
     env: C_# (only sometimes?) (*)
     raw: ∅ → ʔ / C_# (only sometimes?) (*)
     source: index_diachronica_original.html:12749
+    sporadic: true
 - section: Proto-Siouan to Dakota
   index: 37.2.2
   citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International
@@ -43577,9 +43728,10 @@ sections:
     source: index_diachronica_original.html:12801
   - input: ã
     output: a
-    env: in U:[+stress] (sporadic)
+    env: in U:[+stress]
     raw: ã → a / in ”U (sporadic)
     source: index_diachronica_original.html:12802
+    sporadic: true
   - input: tʲ
     output: s
     env: _ʔV
@@ -43730,9 +43882,10 @@ sections:
     raw: k → ɡ / ”V_
     source: index_diachronica_original.html:12838
   - input: s z
-    output: θ ð (sporadic)
+    output: θ ð
     raw: s z → θ ð (sporadic)
     source: index_diachronica_original.html:12839
+    sporadic: true
   - input: L
     output: l
     raw: L → l
@@ -44088,14 +44241,16 @@ sections:
     raw: L → d / ”V_
     source: index_diachronica_original.html:12926
   - input: w
-    output: β (sporadic, allophonic)
+    output: β
     raw: w → β (sporadic, allophonic)
     source: index_diachronica_original.html:12927
+    sporadic: true
   - input: u
     output: i
-    env: in U:[+stress] (sporadic)
+    env: in U:[+stress]
     raw: u → i / in ”U (sporadic)
     source: index_diachronica_original.html:12928
+    sporadic: true
   - input: k
     output: '∅ #t_ (in morphemes)'
     raw: 'k → ∅ #t_ (in morphemes)'
@@ -44280,9 +44435,10 @@ sections:
     raw: s → θ
     source: index_diachronica_original.html:12972
   - input: '{ç,x}'
-    output: z (sporadic)
+    output: z
     raw: '{ç,x} → z (sporadic)'
     source: index_diachronica_original.html:12973
+    sporadic: true
   - input: n
     output: ð
     env: _{ã,ẽ,õ}
@@ -44473,9 +44629,10 @@ sections:
     source: index_diachronica_original.html:13017
   - input: w
     output: ∅
-    env: '#_ (sporadic)'
+    env: '#_'
     raw: 'w → ∅ / #_ (sporadic)'
     source: index_diachronica_original.html:13018
+    sporadic: true
   - input: m
     output: w
     env: '#_'
@@ -44486,9 +44643,10 @@ sections:
     raw: L → d
     source: index_diachronica_original.html:13020
   - input: ã
-    output: an (sporadic)
+    output: an
     raw: ã → an (sporadic)
     source: index_diachronica_original.html:13021
+    sporadic: true
   - input: ʔ
     output: ∅
     env: C_
@@ -44549,9 +44707,10 @@ sections:
     source: index_diachronica_original.html:13035
   - input: w
     output: ∅
-    env: '#_ (sporadic)'
+    env: '#_'
     raw: 'w → ∅ / #_ (sporadic)'
     source: index_diachronica_original.html:13036
+    sporadic: true
   - input: m
     output: w
     env: '#_'
@@ -47271,9 +47430,10 @@ sections:
     source: index_diachronica_original.html:13861
   - input: V
     output: Vː
-    env: _hC (sporadic)
+    env: _hC
     raw: V → Vː / _hC (sporadic)
     source: index_diachronica_original.html:13862
+    sporadic: true
   - input: '{k,x}'
     output: ˟
     env: _#
@@ -47414,6 +47574,7 @@ sections:
     raw: θ(ː) ð → ts d (this latter does have some highly sporadic exceptions; additionally,
       in some dialects these may become {t(ː),h~t} and {r,∅}, respectively)
     source: index_diachronica_original.html:13890
+    sporadic: true
 - section: Standard Finnish to Modern Standard Finnish
   index: 42.1.1.1.2
   citation: Tropylium, from Hakulinen, Lauri (1979), “Suomen kielen rakenne ja kehitys”.
@@ -47562,11 +47723,11 @@ sections:
     raw: Cː → C[- long] / ! in verbal forms when V_ə
     source: index_diachronica_original.html:13924
   - input: ɑː au
-    output: ɔː ɔu (though sometimes ɑː develops, apparently at least partially due
-      to metathesis?)
+    output: ɔː ɔu
     raw: ɑː au → ɔː ɔu (though sometimes ɑː develops, apparently at least partially
       due to metathesis?)
     source: index_diachronica_original.html:13925
+    sporadic: true
   - input: eː øː oː ɤ(ː)
     output: iːe yːø uːo ɨ(ː)
     raw: eː øː oː ɤ(ː) → iːe yːø uːo ɨ(ː)
@@ -47733,9 +47894,10 @@ sections:
   rules:
   - input: p
     output: v
-    env: '{Vₙ,ɨ}_ (the latter “sometimes”)'
+    env: '{Vₙ,ɨ}_'
     raw: p → v / {Vₙ,ɨ}_ (the latter “sometimes”)
     source: index_diachronica_original.html:13985
+    sporadic: true
   - input: p
     output: v
     env: “other conditions not known”
@@ -48125,9 +48287,10 @@ sections:
     source: index_diachronica_original.html:14099
   - input: ɡ
     output: k
-    env: '#_ (sometimes?)'
+    env: '#_'
     raw: 'ɡ → k / #_ (sometimes?)'
     source: index_diachronica_original.html:14101
+    sporadic: true
 - section: Proto-Basque to Basque
   index: '44.2'
   citation: Pogostick Man, from Egurtzegi, Ander (2013), ”Phonetics and Phonology”,
@@ -48346,9 +48509,10 @@ sections:
     source: index_diachronica_original.html:14136
   - input: F[+ voiced]
     output: ∅
-    env: V_V (sometimes, usually involving “compound surnames”?)
+    env: V_V
     raw: F[+ voiced] → ∅ / V_V (sometimes, usually involving “compound surnames”?)
     source: index_diachronica_original.html:14137
+    sporadic: true
   - input: S[+ voice]
     output: S[- voice]
     env: F[+ sibilant]_
@@ -48383,9 +48547,10 @@ sections:
     source: index_diachronica_original.html:14144
   - input: ∅
     output: a
-    env: '#_{ra,ro} (sporadic)'
+    env: '#_{ra,ro}'
     raw: '∅ → a / #_{ra,ro} (sporadic)'
     source: index_diachronica_original.html:14145
+    sporadic: true
   - input: ∅
     output: e
     env: '#_r'
@@ -48440,9 +48605,10 @@ sections:
     source: index_diachronica_original.html:14155
   - input: e
     output: i
-    env: _{n,C[+ sibilant]} (sporadic)
+    env: _{n,C[+ sibilant]}
     raw: e → i / _{n,C[+ sibilant]} (sporadic)
     source: index_diachronica_original.html:14156
+    sporadic: true
   - input: e
     output: a
     env: '{V,C}_r (“mainly in the western dialects”)'
@@ -48571,10 +48737,12 @@ sections:
     output: ʝ
     raw: j → ʝ → ʒ (Souletin, sporadic in northwestern Biscayan)
     source: index_diachronica_original.html:14184
+    sporadic: true
   - input: ʝ
-    output: ʒ (Souletin, sporadic in northwestern Biscayan)
+    output: ʒ
     raw: j → ʝ → ʒ (Souletin, sporadic in northwestern Biscayan)
     source: index_diachronica_original.html:14184
+    sporadic: true
   - input: j
     output: ʝ (some Biscayan and Navarrese)
     raw: j → ʝ (some Biscayan and Navarrese)
@@ -48687,11 +48855,11 @@ sections:
     source: index_diachronica_original.html:14202
   - input: hu hi
     output: ʊ ɪ
-    env: '{o,e}_ (also happened with /a/ sometimes, but usually such sequences just
-      dropped one vowel)'
+    env: '{o,e}_'
     raw: hu hi → ʊ ɪ / {o,e}_ (also happened with /a/ sometimes, but usually such
       sequences just dropped one vowel)
     source: index_diachronica_original.html:14205
+    sporadic: true
   - input: VɪC
     output: VCʲ
     raw: VɪC → VCʲ
@@ -48763,9 +48931,10 @@ sections:
     source: index_diachronica_original.html:14225
   - input: s̻
     output: s̺
-    env: _{C,#} (sometimes)
+    env: _{C,#}
     raw: s̻ → s̺ / _{C,#} (sometimes)
     source: index_diachronica_original.html:14226
+    sporadic: true
   - input: its̺
     output: tʃ
     env: _# (Biscayan)
@@ -48937,9 +49106,10 @@ sections:
     raw: ɲj → n ∅ / ʔ_
     source: index_diachronica_original.html:14282
   - input: Vː
-    output: V (sporadic? conditioned?)
+    output: V
     raw: Vː → V (sporadic? conditioned?)
     source: index_diachronica_original.html:14283
+    sporadic: true
 - section: Vowel Shifts
   index: '46'
   citation: A miscellaneous collection of vowel shifts.
@@ -49744,6 +49914,7 @@ sections:
     env: _s and sometimes other fricatives (Montana Salish)
     raw: n → i / _s and sometimes other fricatives (Montana Salish)
     source: index_diachronica_original.html:14534
+    sporadic: true
 - section: 'List 3: Vowels'
   index: '47.3'
   rules:

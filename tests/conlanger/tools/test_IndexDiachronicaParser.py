@@ -20,6 +20,9 @@ from conlanger.tools.parsers import (
     split_input_output,
     strip_leading_index_list_marker,
     expand_chained_rule_parts,
+    apply_sporadic_qualifier,
+    field_has_uncertainty_qualifier,
+    strip_uncertainty_qualifier_from_field,
     split_output_rest,
     split_post_arrow,
 )
@@ -231,6 +234,55 @@ def test_expand_chained_rule_parts_keeps_env_chain():
 def test_expand_chained_rule_parts_keeps_single_step():
     parts = {"input": "a", "output": "e", "env": "_#"}
     assert expand_chained_rule_parts(parts) == [parts]
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("h (sporadic)", "h"),
+        ("_{f,s} (sporadic)", "_{f,s}"),
+        ("sporadic, usually {#,V[+front]}_", "{#,V[+front]}_"),
+        ("sometimes", ""),
+        ('∅ "(sporadic)"', "∅"),
+        ("ɛ (sometimes)", "ɛ"),
+        ("_# (sporadic?)", "_#"),
+        ("a", "a"),
+    ],
+)
+def test_strip_uncertainty_qualifier_from_field(text, expected):
+    assert strip_uncertainty_qualifier_from_field(text) == expected
+
+
+def test_apply_sporadic_qualifier():
+    assert apply_sporadic_qualifier(
+        {"input": "p", "output": "h (sporadic)"}
+    ) == {"input": "p", "output": "h", "sporadic": True}
+
+
+def test_apply_sporadic_qualifier_unchanged_when_no_marker():
+    parts = {"input": "a", "output": "e", "env": "_#"}
+    assert apply_sporadic_qualifier(parts) == parts
+
+
+def test_parse_rule_element_marks_sporadic_and_strips_gloss():
+    el = html.fragment_fromstring(
+        '<p class="schg">p → h (sporadic)</p>', create_parent=False
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert len(rules) == 1
+    assert rules[0]["input"] == "p"
+    assert rules[0]["output"] == "h"
+    assert rules[0]["sporadic"] is True
+    assert rules[0]["raw"] == "p → h (sporadic)"
+
+
+def test_parse_rule_element_strips_sporadic_env_gloss():
+    el = html.fragment_fromstring(
+        '<p class="schg">qu → w / _{f,s} (sporadic)</p>', create_parent=False
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["env"] == "_{f,s}"
+    assert rules[0]["sporadic"] is True
 
 
 def test_extract_rule_parts_with_symbol_normalization():

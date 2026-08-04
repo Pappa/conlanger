@@ -11,8 +11,10 @@ Phase 4: **Symbol** normalization on corpus fields only (``#``, ``$``, ``%``, ``
 Index stress ``”`` → ``:[+stress]``; ``raw`` unchanged). Leading em dash list-item
 markers (``— ``) are stripped from the rule line before field split. Remaining
 Index rule arrows (``→``) in field values become ASCA ``>``. Chained rules without
-``env``/``exception`` expand into sequential single-step rules. Class-letter
-expansion is deferred to compile time (``PhonologicalRuleSet`` + ``group_mappings.csv``).
+``env``/``exception`` expand into sequential single-step rules. Uncertainty glosses
+(``sporadic``, ``sometimes``, …) are stripped from field values and recorded as
+``sporadic: true``. Class-letter expansion is deferred to compile time
+(``PhonologicalRuleSet`` + ``group_mappings.csv``).
 """
 
 from __future__ import annotations
@@ -87,6 +89,67 @@ def normalize_rule_arrows(text: str) -> str:
     if not text or ARROW not in text:
         return text
     return text.replace(ARROW, ">")
+
+
+_UNCERTAINTY_WORD_RE = re.compile(r"\b(?:sporadic(?:ally)?|sometimes)\b", re.I)
+_LONE_UNCERTAINTY_RE = re.compile(r"^(?:sporadic(?:ally)?|sometimes)\??\.?$", re.I)
+_ENV_UNCERTAINTY_PREFIX_RE = re.compile(
+    r"^sporadic(?:ally)?(?:,\s*usually)?\s*,?\s*",
+    re.I,
+)
+_TRAILING_PAREN_WITH_UNCERTAINTY_RE = re.compile(
+    r"\s*\([^)]*(?:sporadic(?:ally)?|sometimes)[^)]*\)\s*$",
+    re.I,
+)
+_TRAILING_QUOTED_WITH_UNCERTAINTY_RE = re.compile(
+    r'\s*(?:[("\u201c][^"\u201d)]*(?:sporadic(?:ally)?|sometimes)[^"\u201d)]*[)\u201d"]|"[^"]*(?:sporadic(?:ally)?|sometimes)[^"]*")\s*$',
+    re.I,
+)
+_TRAILING_BARE_UNCERTAINTY_RE = re.compile(
+    r"\s*(?:\()?[\s\u201c\"']*(?:sporadic(?:ally)?|sometimes)\??[\s\u201d\"')]*\)?\s*$",
+    re.I,
+)
+
+
+def field_has_uncertainty_qualifier(text: str) -> bool:
+    """Return whether ``text`` mentions sporadic / sometimes uncertainty."""
+    return bool(text and _UNCERTAINTY_WORD_RE.search(text))
+
+
+def strip_uncertainty_qualifier_from_field(text: str) -> str:
+    """Remove sporadic / sometimes glosses from one rule field value."""
+    if not text:
+        return text
+    text = text.strip()
+    if _LONE_UNCERTAINTY_RE.match(text):
+        return ""
+    text = _ENV_UNCERTAINTY_PREFIX_RE.sub("", text).strip()
+    if field_has_uncertainty_qualifier(text):
+        text = _TRAILING_PAREN_WITH_UNCERTAINTY_RE.sub("", text).strip()
+    if field_has_uncertainty_qualifier(text):
+        text = _TRAILING_QUOTED_WITH_UNCERTAINTY_RE.sub("", text).strip()
+    if field_has_uncertainty_qualifier(text):
+        text = _TRAILING_BARE_UNCERTAINTY_RE.sub("", text).strip()
+    return text.strip()
+
+
+def apply_sporadic_qualifier(parts: dict[str, str]) -> dict[str, Any]:
+    """Strip uncertainty glosses from rule fields; set ``sporadic: true`` when found."""
+    sporadic = False
+    cleaned: dict[str, str] = {}
+    for key in ("input", "output", "env", "exception"):
+        if key not in parts:
+            continue
+        value = parts[key]
+        if field_has_uncertainty_qualifier(value):
+            sporadic = True
+        value = strip_uncertainty_qualifier_from_field(value)
+        if key in ("input", "output") or value:
+            cleaned[key] = value
+    result: dict[str, Any] = cleaned
+    if sporadic:
+        result["sporadic"] = True
+    return result
 
 
 # Index Diachronica stress mark (Key to Abbreviations: ” = Stress).
@@ -350,7 +413,8 @@ class IndexDiachronicaParser:
         raw = extract_text_with_subs(el)
         line = getattr(el, "sourceline", None) or 0
         source = f"{source_file}:{line}"
-        parts = extract_rule_parts(normalize_symbols(raw))
+        normalized = normalize_symbols(raw)
+        parts = extract_rule_parts(normalized)
         if parts is None:
             return [
                 {
@@ -361,8 +425,11 @@ class IndexDiachronicaParser:
                     "skipped": f"missing separator {ARROW!r}",
                 }
             ]
+        parts = apply_sporadic_qualifier(parts)
+        sporadic = parts.pop("sporadic", False)
+        sporadic_flag = {"sporadic": True} if sporadic else {}
         return [
-            {**entry, "raw": raw, "source": source}
+            {**entry, "raw": raw, "source": source, **sporadic_flag}
             for entry in expand_chained_rule_parts(parts)
         ]
 

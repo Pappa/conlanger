@@ -40,6 +40,7 @@ sections:
 | `source` | yes | `index_diachronica_original.html:<line>` — first line of the span |
 | `env` | no | **Environment** — absent = any |
 | `exception` | no | **Exception** — absent = none |
+| `sporadic` | no | **Uncertainty** — rule application is sporadic or optional; gloss stripped from fields |
 | `status` | no | **Rule status** — see ticket 04; reasons in **validation report** |
 
 Field values are opaque Index-shaped strings — not an ASCA AST. See **Corpus rule**, **Applier-neutral**, **Series index** in `CONTEXT.md`. Abbreviation / feature policy: tickets 06, 07.
