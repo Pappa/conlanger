@@ -30,4 +30,4 @@ None — can start immediately.
 - [ ] Only **Symbol** normalization runs on corpus fields; `raw` preserves Index form byte-for-byte
 - [ ] Ingest-time class-letter `maketrans` / `group_mappings` application removed from the parser path
 - [ ] `tests/conlanger/tools/test_IndexDiachronicaParser.py` passes for `html_extract` fixture rows (field splitting and provenance)
-- [ ] Regenerated YAML is git-diffable from `datadiachronica/index_diachronica_original.html`
+- [ ] Regenerated YAML is git-diffable from `data/diachronica/index_diachronica_original.html`

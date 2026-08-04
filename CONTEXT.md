@@ -51,7 +51,7 @@ The curated HTML corpus of attested sound-change rules being ingested into this 
 _Avoid_: “the HTML file”, “diachronica dump” as glossary terms
 
 **Index Diachronica HTML**:
-The current ultimate source artifact for attested rules (`datadiachronica/index_diachronica_original.html`).
+The current ultimate source artifact for attested rules (`data/diachronica/index_diachronica_original.html`).
 _Avoid_: treating hand-cleaned XML/YAML samples as overriding the HTML
 
 ### Sound-change structure

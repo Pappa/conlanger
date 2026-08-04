@@ -1,6 +1,6 @@
 # Cleaned rule corpus — ASCA validation inventory
 
-- Source YAML: `datadiachronica/index_diachronica_parsed.yml`
+- Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9201** (one per corpus rule)

@@ -26,7 +26,7 @@ from conlanger.tools.asca_validator import (  # noqa: E402
     validate_asca,
 )
 
-DEFAULT_HTML = ROOT / "datadiachronica/index_diachronica_original.html"
+DEFAULT_HTML = ROOT / "data/diachronica/index_diachronica_original.html"
 DEFAULT_CSV = ROOT / "tests/fixtures/sound_change_rules.csv"
 DEFAULT_SEED = 20260802
 DEFAULT_N = 500
