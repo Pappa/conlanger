@@ -121,7 +121,7 @@ A runtime container for one sound-change section: its corpus rules, abbreviation
 _Avoid_: `SoundChangeRuleSet` as the name for this container; assuming mappings are baked into the corpus YAML
 
 **Abbreviation table**:
-Runtime mapping from Index shorthand to applier strings, loaded from package CSV (e.g. `src/conlanger/data/asca/group_mappings.csv`) and passed into a `PhonologicalRuleSet`. Apply known rows; unmapped tokens stay in the rule string. Section-specific overrides are deferred — handle high-volume failures via validation clusters and hand-authored rows.
+Runtime mapping from Index shorthand to applier strings, loaded from package CSV (e.g. `data/asca/group_mappings.csv`) and passed into a `PhonologicalRuleSet`. Apply known rows; unmapped tokens stay in the rule string. Section-specific overrides are deferred — handle high-volume failures via validation clusters and hand-authored rows.
 _Avoid_: “mapping”, “series map”, “alias table”; global one-size alphabet substitution without section scope; assuming structured per-section abbreviation tables exist in the HTML
 
 **Compile validation**:

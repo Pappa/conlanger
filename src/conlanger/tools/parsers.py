@@ -62,7 +62,7 @@ SUBSCRIPT_MAP = str.maketrans(
 )
 
 DEFAULT_GROUP_MAPPINGS_CSV = (
-    Path(__file__).resolve().parents[1] / "data" / "asca" / "group_mappings.csv"
+    Path(__file__).resolve().parents[2] / "data" / "asca" / "group_mappings.csv"
 )
 
 # Protect Index stem ``$`` while remapping syllable-boundary ``%`` → ASCA ``$``.

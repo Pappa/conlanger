@@ -1,7 +1,7 @@
 # ASCA feature-matrix expansions for Index class letters
 
 Spike for [09-spike-asca-class-letter-feature-matrices](../issues/09-spike-asca-class-letter-feature-matrices.md).  
-Primary sources: **ASCA 0.10.2** ([`doc/doc.md`](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md), [`CHANGELOG.md`](https://github.com/Girv98/asca-rust/blob/0.10.2/CHANGELOG.md)), Index Diachronica Key to Abbreviations ([`data/diachronica/sound_change_abbreviations.txt`](../../../data/diachronica/sound_change_abbreviations.txt), [HTML §5](../../../src/conlanger/datadiachronica/index_diachronica_original.html#Abbreviations)), current [`src/conlanger/data/group_mappings.csv`](../../../src/conlanger/data/group_mappings.csv), and [`asca-rule-validity.md`](./asca-rule-validity.md).
+Primary sources: **ASCA 0.10.2** ([`doc/doc.md`](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md), [`CHANGELOG.md`](https://github.com/Girv98/asca-rust/blob/0.10.2/CHANGELOG.md)), Index Diachronica Key to Abbreviations ([`data/diachronica/sound_change_abbreviations.txt`](../../../data/diachronica/sound_change_abbreviations.txt), [HTML §5](../../../src/conlanger/datadiachronica/index_diachronica_original.html#Abbreviations)), current [`data/asca/group_mappings.csv`](../../../data/asca/group_mappings.csv), and [`asca-rule-validity.md`](./asca-rule-validity.md).
 
 **Runtime constraint:** `IndexDiachronicaParser.apply_group_mappings` uses `str.maketrans` (single-character keys → replacement strings). Expansions must be valid ASCA tokens once substituted; nested Index letters inside a replacement (e.g. `{S,G}`) are **not** re-translated in the same pass (verified locally).
 

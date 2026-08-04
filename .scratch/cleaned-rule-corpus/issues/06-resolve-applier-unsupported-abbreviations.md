@@ -21,7 +21,7 @@ Domain terms: **Class letter**, **Symbol**, **Meta-notation**, **PhonologicalRul
 ### Decisions
 
 - **No validation-first filtering** — apply mappings, throw at ASCA, fix top **failure classes** each cycle ([Correction workflow](05-correction-workflow-invalid-rules.md)).
-- **Class letters** at compile/runtime: **PhonologicalRuleSet** loads `src/conlanger/data/asca/group_mappings.csv`, passes mappings to the transformer; unmapped tokens stay as-is. Retire ingest `str.maketrans`.
+- **Class letters** at compile/runtime: **PhonologicalRuleSet** loads `data/asca/group_mappings.csv`, passes mappings to the transformer; unmapped tokens stay as-is. Retire ingest `str.maketrans`.
 - **Symbols** at HTML→YAML ingest (distinct from class letters; see ticket 07 for **Feature matrix**).
 - HTML provides a **global Key to Abbreviations** only — section-local prose (Athabaskan `TŠ`, etc.): **failure class** clusters; hand-add rows when warranted; no prose-extraction spike.
 - **Deferred (cluster-driven):** **series indices**, **meta-notation**, section-local tokens.
