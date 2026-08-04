@@ -23,7 +23,7 @@ Implement an ASCA validator that takes a `SoundChangeRuleSet` instance, returns 
 
 ## Fixture work (required before / with validator tests)
 
-1. Randomly sample **500** `p.schg` rules from `notebooks/data/index_diachronica_original.html` (record the RNG seed in the ticket Answer or a short note beside the fixture).
+1. Randomly sample **500** `p.schg` rules from `datadiachronica/index_diachronica_original.html` (record the RNG seed in the ticket Answer or a short note beside the fixture).
 2. For each sampled rule, **guess** the correct **ASCA** field forms (what should go into `SoundChangeRuleSet` / `RuleChange` so the emitted rule string is ASCA-valid under 0.10.2 — e.g. `∅`/`*` for delete/insert, ASCA feature names, ` > `-ready segments, env with `_`, `|`/`//` exception content without prose).
 3. **Append one CSV row per sample** to [`tests/fixtures/sound_change_rules.csv`](../../../tests/fixtures/sound_change_rules.csv).
    - Preserve existing columns and existing rows (HTML-extract expectations already in the file).
