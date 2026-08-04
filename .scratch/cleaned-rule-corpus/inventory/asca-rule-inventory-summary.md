@@ -11,18 +11,18 @@
 
 | count | failure_class |
 |------:|---------------|
-| 1470 | `unknown_character` |
-| 1239 | `syntax_other` |
+| 1438 | `syntax_other` |
+| 1260 | `unknown_character` |
 | 359 | `expected_underscore` |
-| 242 | `unknown_feature` |
-| 109 | `unknown_grouping` |
-| 83 | `prose_or_expected_arrow` |
+| 247 | `unknown_feature` |
+| 110 | `unknown_grouping` |
+| 84 | `prose_or_expected_arrow` |
 | 57 | `stuff_after_word_bound` |
-| 46 | `malformed_comment` |
-| 31 | `diacritic_prereq` |
+| 47 | `malformed_comment` |
+| 32 | `diacritic_prereq` |
 | 30 | `expected_number` |
+| 28 | `nested_brackets` |
 | 26 | `panic_other` |
-| 26 | `nested_brackets` |
 | 15 | `runtime_other` |
 | 10 | `runtime_delete_only_segment` |
 | 2 | `other` |
@@ -33,17 +33,17 @@
 
 | count | error_token |
 |------:|-------------|
-| 254 | `“` |
-| 239 | `ː` |
-| 223 | `→` |
+| 260 | `“` |
+| 240 | `ː` |
 | 51 | `₁` |
 | 49 | `’` |
+| 49 | `₀` |
 
 ### unknown_feature
 
 | count | error_token |
 |------:|-------------|
-| 51 | `voiced` |
+| 54 | `voiced` |
 | 22 | `sibilant` |
 | 18 | `dental` |
 | 14 | `open` |

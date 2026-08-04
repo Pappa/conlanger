@@ -206,6 +206,13 @@ def test_extract_rule_parts_strips_leading_list_marker():
     }
 
 
+def test_extract_rule_parts_normalizes_chain_arrows():
+    assert extract_rule_parts("dʒ → tʃ → ʃ") == {
+        "input": "dʒ",
+        "output": "tʃ > ʃ",
+    }
+
+
 def test_extract_rule_parts_with_symbol_normalization():
     raw = "a → b / _$%oː"
     assert extract_rule_parts(normalize_symbols(raw)) == {

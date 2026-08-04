@@ -115,6 +115,12 @@ def test_rule_change_compiles_length_at_instantiation():
     assert part.input == "a(ː)"
 
 
+def test_rule_change_compiles_chain_arrows_in_output():
+    part = RuleChange({"input": "dʒ", "output": "tʃ > ʃ"}, "asca")
+    assert part.value == "dʒ > tʃ > ʃ"
+    assert "→" not in part.value
+
+
 def test_rule_change_skips_length_for_brassica():
     part = RuleChange({"input": "aː", "output": "eː"}, "brassica")
     assert part.value == "aː / eː"

@@ -9,7 +9,8 @@ Phase 3: first ``<p>`` after ``<h2>`` → section ``citation`` (whole text, clea
 other non-``schg`` paragraphs → ``comments``.
 Phase 4: **Symbol** normalization on corpus fields only (``#``, ``$``, ``%``, ``∅``,
 Index stress ``”`` → ``:[+stress]``; ``raw`` unchanged). Leading em dash list-item
-markers (``— ``) are stripped from the rule line before field split. Class-letter
+markers (``— ``) are stripped from the rule line before field split. Remaining
+Index rule arrows (``→``) in field values become ASCA ``>``. Class-letter
 expansion is deferred to compile time (``PhonologicalRuleSet`` + ``group_mappings.csv``).
 """
 
@@ -78,6 +79,13 @@ def strip_leading_index_list_marker(text: str) -> str:
     if not text:
         return text
     return _LEADING_INDEX_LIST_MARKER_RE.sub("", text, count=1)
+
+
+def normalize_rule_arrows(text: str) -> str:
+    """Map Index rule arrow ``→`` to ASCA ``>`` in one field value."""
+    if not text or ARROW not in text:
+        return text
+    return text.replace(ARROW, ">")
 
 
 # Index Diachronica stress mark (Key to Abbreviations: ” = Stress).
@@ -267,7 +275,7 @@ def extract_rule_parts(raw: str) -> dict[str, str] | None:
         parts["env"] = env
     if exception is not None:
         parts["exception"] = exception
-    return parts
+    return {key: normalize_rule_arrows(value) for key, value in parts.items()}
 
 
 def note_from_element(el, *, source_file: str) -> dict[str, Any]:

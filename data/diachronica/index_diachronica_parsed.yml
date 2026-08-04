@@ -90,7 +90,7 @@ sections:
     raw: dz ʃ tʃ → ʒ s₁ s₂
     source: index_diachronica_original.html:956
   - input: dʒ
-    output: tʃ → ʃ
+    output: tʃ > ʃ
     raw: dʒ → tʃ → ʃ
     source: index_diachronica_original.html:957
   - input: t
@@ -1207,7 +1207,7 @@ sections:
     raw: 'p → b / #dlV_'
     source: index_diachronica_original.html:1263
   - input: xw
-    output: ɣw → ħ
+    output: ɣw > ħ
     raw: xw → ɣw → ħ
     source: index_diachronica_original.html:1264
   - input: k
@@ -1435,7 +1435,7 @@ sections:
     raw: θˤ kˤ → ðˤ q
     source: index_diachronica_original.html:1319
   - input: ɡ
-    output: ɡʲ → dʒ
+    output: ɡʲ > dʒ
     raw: ɡ → ɡʲ → dʒ
     source: index_diachronica_original.html:1320
   - input: s
@@ -1454,7 +1454,7 @@ sections:
     raw: ɬ → ʃ
     source: index_diachronica_original.html:1323
   - input: ɬˤ
-    output: dɬˤ → dˤ
+    output: dɬˤ > dˤ
     raw: ɬˤ → dɬˤ → dˤ
     source: index_diachronica_original.html:1324
   - input: m
@@ -1682,7 +1682,7 @@ sections:
   - input: θ ð
     output: t d
     env: “usually in numbers or cases where a short vowel has been deleted and it’s
-      in contact with another stop, e.g. CA/MSA kaˈθiːr → EA ktiːr”
+      in contact with another stop, e.g. CA/MSA kaˈθiːr > EA ktiːr”
     raw: θ ð → t d / “usually in numbers or cases where a short vowel has been deleted
       and it’s in contact with another stop, e.g. CA/MSA kaˈθiːr → EA ktiːr”
     source: index_diachronica_original.html:1377
@@ -1696,7 +1696,7 @@ sections:
     source: index_diachronica_original.html:1379
   - input: dˤ
     output: zˤ (seems to be a sporadic change only affecting a few words, e.g. CA/MSA
-      ˈdˤaːbitˤ → EA ˈzˤaːbitˤ)
+      ˈdˤaːbitˤ > EA ˈzˤaːbitˤ)
     raw: dˤ → zˤ (seems to be a sporadic change only affecting a few words, e.g. CA/MSA
       ˈdˤaːbitˤ → EA ˈzˤaːbitˤ)
     source: index_diachronica_original.html:1380
@@ -1884,7 +1884,7 @@ sections:
       article)
     source: index_diachronica_original.html:1432
   - input: ɣː
-    output: ʁː → qː
+    output: ʁː > qː
     raw: ɣː → ʁː → qː
     source: index_diachronica_original.html:1433
   - input: ɣ
@@ -3060,7 +3060,7 @@ sections:
     raw: tem {k,p}en → mː nː
     source: index_diachronica_original.html:1754
   - input: ket
-    output: tː (→ sː?)
+    output: tː (> sː?)
     raw: ket → tː (→ sː?)
     source: index_diachronica_original.html:1755
   - input: ke(h)
@@ -3627,7 +3627,7 @@ sections:
     raw: t s → tʃ ʃ / in diminutives
     source: index_diachronica_original.html:1897
   - input: '{θ,l}'
-    output: r → l
+    output: r > l
     raw: '{θ,l} → r → l'
     source: index_diachronica_original.html:1898
   - input: '{θ,ʃ}'
@@ -3659,7 +3659,7 @@ sections:
     raw: kw pw mw → kʷ pʷ mʷ
     source: index_diachronica_original.html:1904
   - input: we
-    output: wə → oː
+    output: wə > oː
     exception: adjacent to {p,m,k}
     raw: we → wə → oː / ! adjacent to {p,m,k}
     source: index_diachronica_original.html:1905
@@ -3964,17 +3964,17 @@ sections:
     raw: s → ʃ / _iV
     source: index_diachronica_original.html:1970
   - input: '{θ,l}'
-    output: r → l
+    output: r > l
     env: V_V
     raw: '{θ,l} → r → l / V_V'
     source: index_diachronica_original.html:1971
   - input: '{θ,l}'
-    output: r → n
+    output: r > n
     env: '#_ (and possibly in other places as well)'
     raw: '{θ,l} → r → n / #_ (and possibly in other places as well)'
     source: index_diachronica_original.html:1972
   - input: '{θ,l}'
-    output: r → l
+    output: r > l
     raw: '{θ,l} → r → l'
     source: index_diachronica_original.html:1973
   - input: mV[-long]
@@ -5158,7 +5158,7 @@ sections:
     raw: '{N,l,r,ʃ,z} → ∅ / #_'
     source: index_diachronica_original.html:2273
   - input: p
-    output: ɸ → h
+    output: ɸ > h
     env: '#_'
     raw: 'p → ɸ → h / #_'
     source: index_diachronica_original.html:2274
@@ -5223,7 +5223,7 @@ sections:
     raw: v → w
     source: index_diachronica_original.html:2290
   - input: ɡm rɡ
-    output: mɡ ɡr (this second one is listed as → rɡ but it might be a typo)
+    output: mɡ ɡr (this second one is listed as > rɡ but it might be a typo)
     raw: ɡm rɡ → mɡ ɡr (this second one is listed as → rɡ but it might be a typo)
     source: index_diachronica_original.html:2291
   - input: rd
@@ -5245,7 +5245,7 @@ sections:
     raw: '{d,ɡ} → j / ø_'
     source: index_diachronica_original.html:2295
   - input: d
-    output: ð → j
+    output: ð > j
     env: V_
     raw: d → ð → j / V_
     source: index_diachronica_original.html:2296
@@ -5255,7 +5255,7 @@ sections:
     raw: ɡ → w / V_
     source: index_diachronica_original.html:2297
   - input: ew (
-    output: øj) → yj
+    output: øj) > yj
     raw: ew (→ øj) → yj
     source: index_diachronica_original.html:2298
   - input: æ
@@ -5399,7 +5399,7 @@ sections:
     raw: a{ɡ̌(ɯ),b} {o{ɡ̌,b},aɡ̌u} u{ɡ̌,b} → ɰa wo uː
     source: index_diachronica_original.html:2336
   - input: iɡ̌
-    output: ɯː → iː (but original ɯː unaffected?)
+    output: ɯː > iː (but original ɯː unaffected?)
     raw: iɡ̌ → ɯː → iː (but original ɯː unaffected?)
     source: index_diachronica_original.html:2337
   - input: eɡ
@@ -5670,7 +5670,7 @@ sections:
     raw: bl → z
     source: index_diachronica_original.html:2445
   - input: ml
-    output: mɲ → ɲ (Thompson seems to indicate that this may have become [l] as well;
+    output: mɲ > ɲ (Thompson seems to indicate that this may have become [l] as well;
       only seems to have occurred with second-register tones)
     raw: ml → mɲ → ɲ (Thompson seems to indicate that this may have become [l] as
       well; only seems to have occurred with second-register tones)
@@ -5898,7 +5898,7 @@ sections:
     source: index_diachronica_original.html:2549
   rules:
   - input: r
-    output: '{r,h} → {∅,h}'
+    output: '{r,h} > {∅,h}'
     raw: r → {r,h} → {∅,h}
     source: index_diachronica_original.html:2545
   - input: h
@@ -6722,7 +6722,7 @@ sections:
     raw: a → e / _j#
     source: index_diachronica_original.html:2780
   - input: '{ts,ʈ} {ɟ͡ʝ,ɖ} {lʲ,ɲ} {ʔ,x,s,h} ʀ'
-    output: t d n ∅ r (velar fricative is conjectured; changes → d “unsure”)
+    output: t d n ∅ r (velar fricative is conjectured; changes > d “unsure”)
     raw: '{ts,ʈ} {ɟ͡ʝ,ɖ} {lʲ,ɲ} {ʔ,x,s,h} ʀ → t d n ∅ r (velar fricative is conjectured;
       changes → d “unsure”)'
     source: index_diachronica_original.html:2781
@@ -7359,7 +7359,7 @@ sections:
     raw: '∅ → ŋ / #_V'
     source: index_diachronica_original.html:2950
   - input: q
-    output: χ (→ ʕ)
+    output: χ (> ʕ)
     raw: q → χ (→ ʕ)
     source: index_diachronica_original.html:2951
 - section: Proto-Malayo-Polynesian to Proto-North Sarawak
@@ -7528,12 +7528,12 @@ sections:
     source: index_diachronica_original.html:2991
   - input: u
     output: əw
-    env: _V “(also cases of (C)u → w /__V)”
+    env: _V “(also cases of (C)u > w /__V)”
     raw: u → əw / _V “(also cases of (C)u → w /__V)”
     source: index_diachronica_original.html:2992
   - input: i
     output: əj
-    env: _V “(also cases of (C)i → j /__V)”
+    env: _V “(also cases of (C)i > j /__V)”
     raw: i → əj / _V “(also cases of (C)i → j /__V)”
     source: index_diachronica_original.html:2993
   - input: w j
@@ -7641,7 +7641,7 @@ sections:
     source: index_diachronica_original.html:3015
   - input: dz
     output: d
-    env: '#_ (though sometimes → {s,ɟ})'
+    env: '#_ (though sometimes > {s,ɟ})'
     raw: 'dz → d / #_ (though sometimes → {s,ɟ})'
     source: index_diachronica_original.html:3016
   - input: '{s,c}'
@@ -7763,7 +7763,7 @@ sections:
     source: index_diachronica_original.html:3046
   - input: ʔ
     output: ∅
-    env: _# “(but aʔ → əʔ in some forms)”
+    env: _# “(but aʔ > əʔ in some forms)”
     raw: ʔ → ∅ / _# “(but aʔ → əʔ in some forms)”
     source: index_diachronica_original.html:3047
   - input: k
@@ -8030,7 +8030,7 @@ sections:
     raw: l → j
     source: index_diachronica_original.html:3115
   - input: s
-    output: h → ∅ (sporadic)
+    output: h > ∅ (sporadic)
     raw: s → h → ∅ (sporadic)
     source: index_diachronica_original.html:3116
   - input: r
@@ -8790,7 +8790,7 @@ sections:
     raw: j → z
     source: index_diachronica_original.html:3320
   - input: bw mw
-    output: ɡw ŋw (→ ɡ ŋ
+    output: ɡw ŋw (> ɡ ŋ
     env: _V[+ rounded])
     raw: bw mw → ɡw ŋw (→ ɡ ŋ / _V[+ rounded])
     source: index_diachronica_original.html:3321
@@ -9149,7 +9149,7 @@ sections:
     raw: ɲ c *j → n s z
     source: index_diachronica_original.html:3423
   - input: m b
-    output: n̼ t̼ → n t
+    output: n̼ t̼ > n t
     env: _{a,e,i}
     raw: m b → n̼ t̼ → n t / _{a,e,i}
     source: index_diachronica_original.html:3424
@@ -9356,7 +9356,7 @@ sections:
     raw: d c ɲ → ɟ {s,∅} n
     source: index_diachronica_original.html:3480
   - input: '{r,l}'
-    output: l (occasionally → ∅?)
+    output: l (occasionally > ∅?)
     raw: '{r,l} → l (occasionally → ∅?)'
     source: index_diachronica_original.html:3481
 - section: Proto-Oceanic to Proto-Vanikoro
@@ -9568,7 +9568,7 @@ sections:
     raw: t → c / _E
     source: index_diachronica_original.html:3540
   - input: q (
-    output: kw ?) → v (rare)
+    output: kw ?) > v (rare)
     raw: q (→ kw ?) → v (rare)
     source: index_diachronica_original.html:3541
   - input: a
@@ -10458,7 +10458,7 @@ sections:
     raw: q → k
     source: index_diachronica_original.html:3780
   - input: '{qʷ,ku,qu}'
-    output: kʷ (note that PAn might have had *qʷ *kʷ → q {k,w} instead; may be a change
+    output: kʷ (note that PAn might have had *qʷ *kʷ > q {k,w} instead; may be a change
       from POn-PAn, if it existed)
     raw: '{qʷ,ku,qu} → kʷ (note that PAn might have had *qʷ *kʷ → q {k,w} instead;
       may be a change from POn-PAn, if it existed)'
@@ -11058,7 +11058,7 @@ sections:
     raw: kː ɡ → x {kː,ɡ}
     source: index_diachronica_original.html:3980
   - input: ɣ
-    output: q (more likely, *ɢ → q instead of → ɣ)
+    output: q (more likely, *ɢ > q instead of > ɣ)
     raw: ɣ → q (more likely, *ɢ → q instead of → ɣ)
     source: index_diachronica_original.html:3981
   - input: q qːʼ
@@ -13057,14 +13057,14 @@ sections:
     raw: ə → i / else
     source: index_diachronica_original.html:4652
   - input: dʒ
-    output: tʃ → s
-    env: “in certain positions” (except for Thule Greenlandic, where dʒ → tʃ and stayed
+    output: tʃ > s
+    env: “in certain positions” (except for Thule Greenlandic, where dʒ > tʃ and stayed
       there, apparently)
     raw: dʒ → tʃ → s / “in certain positions” (except for Thule Greenlandic, where
       dʒ → tʃ and stayed there, apparently)
     source: index_diachronica_original.html:4653
   - input: m n ŋ t {{ɣ,ʁ}
-    output: '{k,q}} → p t k n ŋ'
+    output: '{k,q}} > p t k n ŋ'
     env: _#
     raw: m n ŋ t {{ɣ,ʁ} → {k,q}} → p t k n ŋ / _#
     source: index_diachronica_original.html:4654
@@ -13594,7 +13594,7 @@ sections:
     raw: 'S → ∅ / #_F'
     source: index_diachronica_original.html:4774
   - input: s
-    output: ts → tʃ
+    output: ts > tʃ
     env: in some dialects?
     raw: s → ts → tʃ / in some dialects?
     source: index_diachronica_original.html:4775
@@ -14978,7 +14978,7 @@ sections:
     raw: l → ʎ / _{i,j}
     source: index_diachronica_original.html:5140
   - input: w (
-    output: v?) → f
+    output: v?) > f
     env: s_
     raw: w (→ v?) → f / s_
     source: index_diachronica_original.html:5141
@@ -15242,7 +15242,7 @@ sections:
     raw: N → w / S_S
     source: index_diachronica_original.html:5207
   - input: VN
-    output: V[+nasal] → V → (?)
+    output: V[+nasal] > V > (?)
     env: _#, in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5208
@@ -15398,7 +15398,7 @@ sections:
     raw: N → w / S_S
     source: index_diachronica_original.html:5244
   - input: VN
-    output: V[+nasal] → V → (?)
+    output: V[+nasal] > V > (?)
     env: _#, in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5245
@@ -15555,7 +15555,7 @@ sections:
     raw: N → w / S_S
     source: index_diachronica_original.html:5281
   - input: VN
-    output: V[+nasal] → V → (?)
+    output: V[+nasal] > V > (?)
     env: _#, in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5282
@@ -15711,7 +15711,7 @@ sections:
     raw: N → w / S_S
     source: index_diachronica_original.html:5318
   - input: VN
-    output: V[+nasal] → V → (?)
+    output: V[+nasal] > V > (?)
     env: _#, in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5319
@@ -15863,7 +15863,7 @@ sections:
     raw: N → w / S_S
     source: index_diachronica_original.html:5354
   - input: VN
-    output: V[+nasal] → V → (?)
+    output: V[+nasal] > V > (?)
     env: _#, in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5355
@@ -16029,7 +16029,7 @@ sections:
     raw: N → w / S_S
     source: index_diachronica_original.html:5393
   - input: VN
-    output: V[+nasal] → V → (?)
+    output: V[+nasal] > V > (?)
     env: _#, in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5394
@@ -16190,7 +16190,7 @@ sections:
     raw: N → w / S_S
     source: index_diachronica_original.html:5431
   - input: VN
-    output: V[+nasal] → V → (?)
+    output: V[+nasal] > V > (?)
     env: _#, in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5432
@@ -16765,7 +16765,7 @@ sections:
       OIr”; “[t]hat’s a little unclear, so let me try and enumerate: in words of more
       than three syllables, every other vowel (only the even ones) dropped, if it’s
       unstressed. In some words, syncope didn’t apply because it would create an unwieldy
-      consonant cluster: so PIE *komaktyom → OIr cumachte, not *cumchte”'
+      consonant cluster: so PIE *komaktyom > OIr cumachte, not *cumchte”'
     raw: 'V → ∅ / #UU(_)U(U(_)U) / unstressed; this “remained as a phonologically
       conditioned rule in OIr”; “[t]hat’s a little unclear, so let me try and enumerate:
       in words of more than three syllables, every other vowel (only the even ones)
@@ -16995,7 +16995,7 @@ sections:
     raw: ḱ ɡ́ → ts dz
     source: index_diachronica_original.html:5624
   - input: '{kʷ,kw} {ɡʷ,ɡw}'
-    output: tʃ dʒ (→ s~z z ?)
+    output: tʃ dʒ (> s~z z ?)
     env: _E
     raw: '{kʷ,kw} {ɡʷ,ɡw} → tʃ dʒ (→ s~z z ?) / _E'
     source: index_diachronica_original.html:5625
@@ -17324,7 +17324,7 @@ sections:
     raw: æː → eː
     source: index_diachronica_original.html:5705
   - input: æu
-    output: au (æ → a
+    output: au (æ > a
     env: _B in general?)
     raw: æu → au (æ → a / _B in general?)
     source: index_diachronica_original.html:5706
@@ -17409,7 +17409,7 @@ sections:
     raw: eɑ eːɑ eo eːo → ɑ ɛː e eː
     source: index_diachronica_original.html:5728
   - input: æj
-    output: aj → ej
+    output: aj > ej
     raw: æj → aj → ej
     source: index_diachronica_original.html:5729
   - input: '{æːj,e(ː)j}'
@@ -17459,7 +17459,7 @@ sections:
     raw: 'Vː → V[-long] / in #U before a U with /iː/'
     source: index_diachronica_original.html:5740
   - input: m
-    output: n → ∅
+    output: n > ∅
     env: _# when unstressed
     raw: m → n → ∅ / _# when unstressed
     source: index_diachronica_original.html:5741
@@ -17498,7 +17498,7 @@ sections:
     raw: eɑ eːɑ eo eːo → ɑ ɛː e eː
     source: index_diachronica_original.html:5750
   - input: æj
-    output: aj → ej
+    output: aj > ej
     raw: æj → aj → ej
     source: index_diachronica_original.html:5751
   - input: '{æːj,e(ː)j}'
@@ -17548,7 +17548,7 @@ sections:
     raw: 'Vː → V[-long] / in #U before a U with /iː/'
     source: index_diachronica_original.html:5761
   - input: m
-    output: n → ∅
+    output: n > ∅
     env: _# when unstressed
     raw: m → n → ∅ / _# when unstressed
     source: index_diachronica_original.html:5762
@@ -17567,7 +17567,7 @@ sections:
     raw: ɣ → w / C_V
     source: index_diachronica_original.html:5765
   - input: '{e,ɑ,o}'
-    output: ə → ∅
+    output: ə > ∅
     env: _#
     raw: '{e,ɑ,o} → ə → ∅ / _#'
     source: index_diachronica_original.html:5766
@@ -17656,7 +17656,7 @@ sections:
       which change vary between dialects”)
     source: index_diachronica_original.html:5788
   - input: ɒ
-    output: ɒː → ɔː
+    output: ɒː > ɔː
     env: _F[-voiced]
     raw: ɒ → ɒː → ɔː / _F[-voiced]
     source: index_diachronica_original.html:5789
@@ -17747,12 +17747,12 @@ sections:
     raw: ɑ → ɒ
     source: index_diachronica_original.html:5812
   - input: æ
-    output: æː → ɑː
+    output: æː > ɑː
     env: _{F[-voiced],N[-voiced]}
     raw: æ → æː → ɑː / _{F[-voiced],N[-voiced]}
     source: index_diachronica_original.html:5813
   - input: ɒ
-    output: ɒː → ɔː
+    output: ɒː > ɔː
     env: _F[-voiced]
     raw: ɒ → ɒː → ɔː / _F[-voiced]
     source: index_diachronica_original.html:5814
@@ -17775,13 +17775,13 @@ sections:
     raw: oʊ iː → əʊ ɪi / else
     source: index_diachronica_original.html:5818
   - input: uː
-    output: ʊə → uː
+    output: ʊə > uː
     env: _ɫ
     exception: in Queensland and New South Wales
     raw: uː → ʊə → uː / _ɫ ! in Queensland and New South Wales
     source: index_diachronica_original.html:5819
   - input: uː
-    output: ʊʉ → ʉː
+    output: ʊʉ > ʉː
     env: else
     raw: uː → ʊʉ → ʉː / else
     source: index_diachronica_original.html:5820
@@ -17905,12 +17905,12 @@ sections:
     raw: ɑ → ɒ
     source: index_diachronica_original.html:5846
   - input: æ
-    output: æː → ɑː
+    output: æː > ɑː
     env: _{F[-voiced],N[-voiced]}
     raw: æ → æː → ɑː / _{F[-voiced],N[-voiced]}
     source: index_diachronica_original.html:5847
   - input: ɒ
-    output: ɒː → ɔː
+    output: ɒː > ɔː
     env: _F[-voiced]
     raw: ɒ → ɒː → ɔː / _F[-voiced]
     source: index_diachronica_original.html:5848
@@ -17953,7 +17953,7 @@ sections:
     raw: eɑ eːɑ eo eːo → ɑ ɛː e eː
     source: index_diachronica_original.html:5858
   - input: æj
-    output: aj → ej
+    output: aj > ej
     raw: æj → aj → ej
     source: index_diachronica_original.html:5859
   - input: '{æːj,e(ː)j}'
@@ -18004,7 +18004,7 @@ sections:
     source: index_diachronica_original.html:5870
   - input: n
     output: ∅
-    env: _# when unstressed (not clear as to whether m → n beforehand in this position
+    env: _# when unstressed (not clear as to whether m > n beforehand in this position
       or not)
     raw: n → ∅ / _# when unstressed (not clear as to whether m → n beforehand in this
       position or not)
@@ -18033,7 +18033,7 @@ sections:
     raw: ɣ → w / C_V
     source: index_diachronica_original.html:5877
   - input: '{e,ɑ,o}'
-    output: ə → ∅
+    output: ə > ∅
     env: _#, when unstressed (it appears this sound may also have gone to /ɪ/)
     raw: '{e,ɑ,o} → ə → ∅ / _#, when unstressed (it appears this sound may also have
       gone to /ɪ/)'
@@ -18098,11 +18098,11 @@ sections:
     raw: oɡ → ʌu
     source: index_diachronica_original.html:5892
   - input: ol al
-    output: ou ɑː → ʌu {ɑ,ɔ}
+    output: ou ɑː > ʌu {ɑ,ɔ}
     raw: ol al → ou ɑː → ʌu {ɑ,ɔ}
     source: index_diachronica_original.html:5894
   - input: ai
-    output: ɛi → əi
+    output: ɛi > əi
     env: when stem-final
     raw: — ai → ɛi → əi / when stem-final
     source: index_diachronica_original.html:5896
@@ -18145,7 +18145,7 @@ sections:
     raw: — ai oi ui ei au ou iu ɛ(o)u → eː oe əi iː {ɑː,ɔː} ʌu ju j(ʌ)u
     source: index_diachronica_original.html:5904
   - input: ɛː
-    output: ɛi (→ əi?)
+    output: ɛi (> əi?)
     env: in some northern varieties
     raw: — ɛː → ɛi (→ əi?) / in some northern varieties
     source: index_diachronica_original.html:5905
@@ -18217,7 +18217,7 @@ sections:
     raw: æː(ɑ) eː(o) → ɛ iː
     source: index_diachronica_original.html:5924
   - input: ɛ
-    output: ɜi → i
+    output: ɜi > i
     env: _{m,ɲ}
     raw: ɛ → ɜi → i / _{m,ɲ}
     source: index_diachronica_original.html:5925
@@ -18244,7 +18244,7 @@ sections:
     raw: e(o) → ɛ
     source: index_diachronica_original.html:5930
   - input: u
-    output: ʊ → ɵ → ʌ
+    output: ʊ > ɵ > ʌ
     raw: u → ʊ → ɵ → ʌ
     source: index_diachronica_original.html:5931
   - input: uː
@@ -18503,7 +18503,7 @@ sections:
     raw: eɑ eːɑ eo eːo → ɑ ɛː e eː
     source: index_diachronica_original.html:5988
   - input: æj
-    output: aj → ej
+    output: aj > ej
     raw: æj → aj → ej
     source: index_diachronica_original.html:5989
   - input: '{æːj,e(ː)j}'
@@ -18557,7 +18557,7 @@ sections:
     raw: 'Vː → V[-long] / in #U before a U with /iː/'
     source: index_diachronica_original.html:6000
   - input: m
-    output: n → ∅
+    output: n > ∅
     env: _# when unstressed
     raw: m → n → ∅ / _# when unstressed
     source: index_diachronica_original.html:6001
@@ -18613,7 +18613,7 @@ sections:
     raw: 'F → F[+ voice] / #_ ! F = ʍ'
     source: index_diachronica_original.html:6014
   - input: ʍ
-    output: f (at least one instance of → w, before a high front vowel)
+    output: f (at least one instance of > w, before a high front vowel)
     raw: ʍ → f (at least one instance of → w, before a high front vowel)
     source: index_diachronica_original.html:6015
   - input: U
@@ -18655,7 +18655,7 @@ sections:
     source: index_diachronica_original.html:6030
   rules:
   - input: p t k
-    output: b d ɡ → v r ɣ
+    output: b d ɡ > v r ɣ
     env: Vː_{V,#}
     raw: p t k → b d ɡ → v r ɣ / Vː_{V,#}
     source: index_diachronica_original.html:6029
@@ -18704,7 +18704,7 @@ sections:
     raw: xs → sː
     source: index_diachronica_original.html:6041
   - input: a
-    output: ɒ? (→ o)
+    output: ɒ? (> o)
     env: _ɫ
     raw: a → ɒ? (→ o) / _ɫ
     source: index_diachronica_original.html:6043
@@ -18732,7 +18732,7 @@ sections:
       as Limburg)
     source: index_diachronica_original.html:6048
   - input: uː
-    output: ʉː (probably, in areas with uː → ʉw
+    output: ʉː (probably, in areas with uː > ʉw
     env: _V)
     raw: uː → ʉː (probably, in areas with uː → ʉw / _V)
     source: index_diachronica_original.html:6049
@@ -18778,7 +18778,7 @@ sections:
     source: index_diachronica_original.html:6059
   - input: f θ s
     output: v ð z
-    env: syllable-initially (h → ɦ?)
+    env: syllable-initially (h > ɦ?)
     raw: f θ s → v ð z / syllable-initially (h → ɦ?)
     source: index_diachronica_original.html:6061
   - input: V
@@ -18808,7 +18808,7 @@ sections:
     source: index_diachronica_original.html:6066
   - input: V[-long +stress]
     output: Vː
-    env: in open syllables (ʏ → {œː,øː} here but this is not phonemically important;
+    env: in open syllables (ʏ > {œː,øː} here but this is not phonemically important;
       there seem to have been qualitative differences between original long vowels
       and long vowels resulting from this change—lengthened iː seems to have become
       eː, but lengthened aː merged with original aː); does not affect original long
@@ -19136,7 +19136,7 @@ sections:
     source: index_diachronica_original.html:6148
   - input: k
     output: ts
-    env: _E (ɡ → dz here?)
+    env: _E (ɡ > dz here?)
     raw: k → ts / _E (ɡ → dz here?)
     source: index_diachronica_original.html:6149
   - input: n
@@ -20663,7 +20663,7 @@ sections:
     raw: ∅ → b / m_l
     source: index_diachronica_original.html:6480
   - input: nd ld (
-    output: nː lː ?) → ɲ ʎ
+    output: nː lː ?) > ɲ ʎ
     raw: nd ld (→ nː lː ?) → ɲ ʎ
     source: index_diachronica_original.html:6481
   - input: dj
@@ -21160,7 +21160,7 @@ sections:
     raw: h → ∅
     source: index_diachronica_original.html:6603
   - input: oj
-    output: øj → yj (→ yː sometimes)
+    output: øj > yj (> yː sometimes)
     raw: oj → øj → yj (→ yː sometimes)
     source: index_diachronica_original.html:6604
   - input: e o
@@ -21761,7 +21761,7 @@ sections:
     raw: h → ∅
     source: index_diachronica_original.html:6754
   - input: oj
-    output: øj → yj (→ yː sometimes)
+    output: øj > yj (> yː sometimes)
     raw: oj → øj → yj (→ yː sometimes)
     source: index_diachronica_original.html:6755
   - input: e o
@@ -22176,7 +22176,7 @@ sections:
     raw: əː → eː
     source: index_diachronica_original.html:6859
   - input: tʃ dʒ(ʱ)
-    output: tɕ dʑ(ʱ) → ɕ ɟ(ʱ)
+    output: tɕ dʑ(ʱ) > ɕ ɟ(ʱ)
     raw: tʃ dʒ(ʱ) → tɕ dʑ(ʱ) → ɕ ɟ(ʱ)
     source: index_diachronica_original.html:6860
   - input: tst dzdʱ
@@ -22252,7 +22252,7 @@ sections:
     raw: '{bʱ,dʱ,ɡʱ} {j,v} → h ∅ / V_V'
     source: index_diachronica_original.html:6878
   - input: Vm
-    output: Vv → V[+nas]v
+    output: Vv > V[+nas]v
     env: _V
     raw: Vm → Vv → V[+nas]v / _V
     source: index_diachronica_original.html:6879
@@ -22345,7 +22345,7 @@ sections:
     raw: b {d,dʒ,ɡ} → v j / V_V
     source: index_diachronica_original.html:6900
   - input: Vm
-    output: Vv → V[+nas]v
+    output: Vv > V[+nas]v
     env: _V
     raw: Vm → Vv → V[+nas]v / _V
     source: index_diachronica_original.html:6901
@@ -22436,7 +22436,7 @@ sections:
     raw: '{bʱ,dʱ,ɡʱ} {j,v} → h ∅ / V_V'
     source: index_diachronica_original.html:6922
   - input: Vm
-    output: Vv → V[+nas]v
+    output: Vv > V[+nas]v
     env: _V
     raw: Vm → Vv → V[+nas]v / _V
     source: index_diachronica_original.html:6923
@@ -22527,7 +22527,7 @@ sections:
     raw: '{bʱ,dʱ,ɡʱ} {j,v} → h ∅ / V_V'
     source: index_diachronica_original.html:6944
   - input: Vm
-    output: Vv → V[+nas]v
+    output: Vv > V[+nas]v
     env: _V
     raw: Vm → Vv → V[+nas]v / _V
     source: index_diachronica_original.html:6945
@@ -22924,7 +22924,7 @@ sections:
     raw: ь → aː / r_C[+dental -palatalized]
     source: index_diachronica_original.html:7038
   - input: ьr
-    output: i(ː)ʐ → {ɛ(ː)r,ɛ(ː)ʐ} → {ɛr,ɛʐ}
+    output: i(ː)ʐ > {ɛ(ː)r,ɛ(ː)ʐ} > {ɛr,ɛʐ}
     raw: ьr → i(ː)ʐ → {ɛ(ː)r,ɛ(ː)ʐ} → {ɛr,ɛʐ}
     source: index_diachronica_original.html:7039
   - input: '{ɛ̃,ɔ̃}'
@@ -23041,7 +23041,7 @@ sections:
     raw: ã → ɛ̃ / short only
     source: index_diachronica_original.html:7063
   - input: ãː
-    output: ã → ɔ̃
+    output: ã > ɔ̃
     raw: ãː → ã → ɔ̃
     source: index_diachronica_original.html:7064
   - input: aː ɔː ɛː
@@ -23422,7 +23422,7 @@ sections:
     raw: ʈʂ → ʂ / _p
     source: index_diachronica_original.html:7150
   - input: stʲkl
-    output: ɕtɕkl → {ɕ,s}kɫ → ʂkɫ
+    output: ɕtɕkl > {ɕ,s}kɫ > ʂkɫ
     raw: stʲkl → ɕtɕkl → {ɕ,s}kɫ → ʂkɫ
     source: index_diachronica_original.html:7151
   - input: dz ts
@@ -23449,7 +23449,7 @@ sections:
     raw: w → ∅ / C_C (sporadic)
     source: index_diachronica_original.html:7156
   - input: n
-    output: s → ɕ
+    output: s > ɕ
     env: k_ɛ̃ where the vowel was from Proto-Slavic
     raw: n → s → ɕ / k_ɛ̃ where the vowel was from Proto-Slavic
     source: index_diachronica_original.html:7158
@@ -23576,7 +23576,7 @@ sections:
     raw: ǵʰ gʷʰ → ɡʰ xʷ
     source: index_diachronica_original.html:7193
   - input: bʰ dʰ gʰ
-    output: pʰ tʰ dʰ → ɸ θ x
+    output: pʰ tʰ dʰ > ɸ θ x
     raw: bʰ dʰ gʰ → pʰ tʰ dʰ → ɸ θ x
     source: index_diachronica_original.html:7194
   - input: s
@@ -23679,15 +23679,15 @@ sections:
     raw: oː → uː / _r
     source: index_diachronica_original.html:7222
   - input: aj
-    output: ai → eː (in rustic dialects)
+    output: ai > eː (in rustic dialects)
     raw: aj → ai → eː (in rustic dialects)
     source: index_diachronica_original.html:7223
   - input: aj
-    output: ai → ae
+    output: ai > ae
     raw: aj → ai → ae
     source: index_diachronica_original.html:7224
   - input: oj
-    output: oi → oe → uː
+    output: oi > oe > uː
     raw: oj → oi → oe → uː
     source: index_diachronica_original.html:7225
   - input: aw
@@ -23699,7 +23699,7 @@ sections:
     raw: aw → au
     source: index_diachronica_original.html:7227
   - input: '{ew,ow}'
-    output: ou → uː
+    output: ou > uː
     raw: '{ew,ow} → ou → uː'
     source: index_diachronica_original.html:7228
   - input: V
@@ -23728,12 +23728,12 @@ sections:
     raw: a o → e u / %(C)(C)_C(C)% when unstressed
     source: index_diachronica_original.html:7233
   - input: a
-    output: e → i
+    output: e > i
     env: $(C)(C)_ŋ when unstressed
     raw: a → e → i / %(C)(C)_ŋ when unstressed
     source: index_diachronica_original.html:7234
   - input: a
-    output: e → u
+    output: e > u
     env: $(C)(C)_ɫ when unstressed
     raw: a → e → u / %(C)(C)_ɫ when unstressed
     source: index_diachronica_original.html:7235
@@ -23743,7 +23743,7 @@ sections:
     raw: e → u / %(C)(C)_ɫ when unstressed
     source: index_diachronica_original.html:7236
   - input: ai
-    output: ei → iː
+    output: ei > iː
     env: $(C)(C)_ when unstressed
     raw: ai → ei → iː / %(C)(C)_ when unstressed
     source: index_diachronica_original.html:7237
@@ -23779,7 +23779,7 @@ sections:
     raw: o → u / _C(C)# ! {u,w}_
     source: index_diachronica_original.html:7243
   - input: '{ai,ei,oi}'
-    output: ei → iː
+    output: ei > iː
     env: _(C)(C)#
     raw: '{ai,ei,oi} → ei → iː / _(C)(C)#'
     source: index_diachronica_original.html:7244
@@ -23951,17 +23951,17 @@ sections:
     raw: ɡʷʱ → v / V_V
     source: index_diachronica_original.html:7279
   - input: s
-    output: z → r
+    output: z > r
     env: V_V
     raw: s → z → r / V_V
     source: index_diachronica_original.html:7280
   - input: s
-    output: θ → f
+    output: θ > f
     env: '#_r'
     raw: 's → θ → f / #_r'
     source: index_diachronica_original.html:7281
   - input: s
-    output: θ → b
+    output: θ > b
     env: _r
     raw: s → θ → b / _r
     source: index_diachronica_original.html:7282
@@ -24055,12 +24055,12 @@ sections:
     raw: n → r / _r
     source: index_diachronica_original.html:7300
   - input: s
-    output: z → l
+    output: z > l
     env: l_
     raw: s → z → l / l_
     source: index_diachronica_original.html:7301
   - input: s
-    output: z → r
+    output: z > r
     env: r_
     raw: s → z → r / r_
     source: index_diachronica_original.html:7302
@@ -24075,7 +24075,7 @@ sections:
     raw: V → Vː / _{t,d}t
     source: index_diachronica_original.html:7304
   - input: '{t,d}t'
-    output: tst → sː
+    output: tst > sː
     raw: '{t,d}t → tst → sː'
     source: index_diachronica_original.html:7305
   - input: ∅
@@ -24099,7 +24099,7 @@ sections:
     raw: sː → s / {W,Vː}_
     source: index_diachronica_original.html:7309
   - input: l
-    output: r → _Vl
+    output: r > _Vl
     raw: l → r → _Vl
     source: index_diachronica_original.html:7310
   - input: l
@@ -24215,9 +24215,9 @@ sections:
     raw: j → ʝː / V_V
     source: index_diachronica_original.html:7337
   - input: “In contrast, Romanian exhibits u, uː
-    output: u (and ultimately also ɔ, oː → o); and Sardinian and African Latin underwent
+    output: u (and ultimately also ɔ, oː > o); and Sardinian and African Latin underwent
       a straight merger of the vowels by length without considering quality (e, eː
-      → e; i, iː → i; u, uː → u; etc.)”
+      > e; i, iː > i; u, uː > u; etc.)”
     raw: “In contrast, Romanian exhibits u, uː → u (and ultimately also ɔ, oː → o);
       and Sardinian and African Latin underwent a straight merger of the vowels by
       length without considering quality (e, eː → e; i, iː → i; u, uː → u; etc.)”
@@ -24269,7 +24269,7 @@ sections:
     raw: V → ∅ / ”V%s_t(C)V(C)# (irregular)
     source: index_diachronica_original.html:7349
   - input: u
-    output: w → ∅
+    output: w > ∅
     env: (“when in unstressed penult or between first and tonic syllables; irregular”)
     raw: u → w → ∅ / (“when in unstressed penult or between first and tonic syllables;
       irregular”)
@@ -24371,7 +24371,7 @@ sections:
     raw: ndj → ɲ
     source: index_diachronica_original.html:7370
   - input: dj
-    output: dʒ → ʒ
+    output: dʒ > ʒ
     raw: dj → dʒ → ʒ
     source: index_diachronica_original.html:7371
   - input: ∅
@@ -24390,7 +24390,7 @@ sections:
     raw: l → w / V_CV (“although l was usually restored later”)
     source: index_diachronica_original.html:7374
   - input: mn
-    output: nː → ɲ
+    output: nː > ɲ
     raw: mn → nː → ɲ
     source: index_diachronica_original.html:7375
   - input: p b t d k ɡ
@@ -24534,7 +24534,7 @@ sections:
     source: index_diachronica_original.html:7403
   - input: k ɡ
     output: ∅ {∅,ʒ}
-    env: V_{i,e} (ɡ → ʒ is learned)
+    env: V_{i,e} (ɡ > ʒ is learned)
     raw: k ɡ → ∅ {∅,ʒ} / V_{i,e} (ɡ → ʒ is learned)
     source: index_diachronica_original.html:7404
   - input: ɡ
@@ -24548,7 +24548,7 @@ sections:
     raw: k j → ɡ ʒ / V_V
     source: index_diachronica_original.html:7406
   - input: d
-    output: z → ∅
+    output: z > ∅
     env: V_V
     raw: — d → z → ∅ / V_V
     source: index_diachronica_original.html:7408
@@ -24613,7 +24613,7 @@ sections:
     raw: 'l → ʎ / #_'
     source: index_diachronica_original.html:7419
   - input: k
-    output: ts → s
+    output: ts > s
     env: '#_{i,e}'
     raw: 'k → ts → s / #_{i,e}'
     source: index_diachronica_original.html:7420
@@ -24623,7 +24623,7 @@ sections:
     raw: 'ɡ → ʒ / #_{i,e}'
     source: index_diachronica_original.html:7421
   - input: j
-    output: dʒ → ʒ
+    output: dʒ > ʒ
     env: '#_'
     raw: 'j → dʒ → ʒ / #_'
     source: index_diachronica_original.html:7422
@@ -24673,12 +24673,12 @@ sections:
     raw: ɡʷ → ɡw / C_a
     source: index_diachronica_original.html:7431
   - input: b
-    output: m → ∅
+    output: m > ∅
     env: Vm_V
     raw: b → m → ∅ / Vm_V
     source: index_diachronica_original.html:7432
   - input: n
-    output: r → br
+    output: r > br
     env: m_
     raw: n → r → br / m_
     source: index_diachronica_original.html:7433
@@ -24738,7 +24738,7 @@ sections:
     raw: e → i / _{nk,ŋ} when stressed (irregular)
     source: index_diachronica_original.html:7444
   - input: aj
-    output: ej → ee → e (irregular)
+    output: ej > ee > e (irregular)
     raw: aj → ej → ee → e (irregular)
     source: index_diachronica_original.html:7445
   - input: aj
@@ -24924,7 +24924,7 @@ sections:
     raw: è → ɛ / in U[+closed]
     source: index_diachronica_original.html:7488
   - input: ò
-    output: uo → uɛ
+    output: uo > uɛ
     env: in U[+open]
     exception: _N
     raw: ò → uo → uɛ / in U[+open] ! _N
@@ -25199,7 +25199,7 @@ sections:
     raw: é → ɛ / in U[+closed]
     source: index_diachronica_original.html:7546
   - input: ó
-    output: ou → ɛu
+    output: ou > ɛu
     env: in U[+open]
     raw: ó → ou → ɛu / in U[+open]
     source: index_diachronica_original.html:7547
@@ -25325,7 +25325,7 @@ sections:
     raw: ɔ → u / _”V
     source: index_diachronica_original.html:7572
   - input: V[-high]
-    output: ə → ∅
+    output: ə > ∅
     env: _V “(except that a is kept before o)”
     raw: V[-high] → ə → ∅ / _V “(except that a is kept before o)”
     source: index_diachronica_original.html:7573
@@ -25376,7 +25376,7 @@ sections:
     raw: ʎ r → j ʁ
     source: index_diachronica_original.html:7584
   - input: oi
-    output: wɛ → wa
+    output: wɛ > wa
     raw: oi → wɛ → wa
     source: index_diachronica_original.html:7585
   - input: oı̃
@@ -25404,7 +25404,7 @@ sections:
     source: index_diachronica_original.html:7594
   - input: au
     output: u
-    env: '#_ (sporadically, e.g. audire → udire)'
+    env: '#_ (sporadically, e.g. audire > udire)'
     raw: 'au → u / #_ (sporadically, e.g. audire → udire)'
     source: index_diachronica_original.html:7595
   - input: au
@@ -25620,7 +25620,7 @@ sections:
     raw: '{u,o(ː)} → o / _%”V'
     source: index_diachronica_original.html:7641
   - input: '{u(ː),o(ː)}'
-    output: o → u
+    output: o > u
     env: _#
     raw: '{u(ː),o(ː)} → o → u / _#'
     source: index_diachronica_original.html:7642
@@ -25639,7 +25639,7 @@ sections:
     raw: ɛ ɔ → e o / _(”u)#
     source: index_diachronica_original.html:7645
   - input: '{olt,okt}'
-    output: ujt → ut
+    output: ujt > ut
     raw: '{olt,okt} → ujt → ut'
     source: index_diachronica_original.html:7646
   - input: aɫ
@@ -25765,7 +25765,7 @@ sections:
     raw: 'o → ∅ / _{r,l} when between #U and U[+tonic]'
     source: index_diachronica_original.html:7671
   - input: k
-    output: ts → s
+    output: ts > s
     env: '#_{i,e}'
     raw: 'k → ts → s / #_{i,e}'
     source: index_diachronica_original.html:7673
@@ -25775,12 +25775,12 @@ sections:
     raw: 'k → ɡ / #_{a,r} (rare)'
     source: index_diachronica_original.html:7674
   - input: ɡ
-    output: ɡʲ → dʲ → dʒ → ʒ
+    output: ɡʲ > dʲ > dʒ > ʒ
     env: '#_{i,e}'
     raw: 'ɡ → ɡʲ → dʲ → dʒ → ʒ / #_{i,e}'
     source: index_diachronica_original.html:7675
   - input: j
-    output: dʒ → ʒ
+    output: dʒ > ʒ
     env: '#_'
     raw: 'j → dʒ → ʒ / #_'
     source: index_diachronica_original.html:7676
@@ -25818,7 +25818,7 @@ sections:
     raw: s → ʒ / V_C[+voiced]V
     source: index_diachronica_original.html:7683
   - input: kl
-    output: kʎ → tʃ → ʃ
+    output: kʎ > tʃ > ʃ
     env: '#_'
     raw: 'kl → kʎ → tʃ → ʃ / #_'
     source: index_diachronica_original.html:7684
@@ -25878,7 +25878,7 @@ sections:
     source: index_diachronica_original.html:7695
   - input: ɡ
     output: '{∅,ʒ}'
-    env: V_{i,e} (ɡ → ʒ is learned)
+    env: V_{i,e} (ɡ > ʒ is learned)
     raw: ɡ → {∅,ʒ} / V_{i,e} (ɡ → ʒ is learned)
     source: index_diachronica_original.html:7696
   - input: ɡ
@@ -25888,7 +25888,7 @@ sections:
     source: index_diachronica_original.html:7697
   - input: pl bl p t
     output: br {br,l} b d
-    env: V_V (bl → l is learned)
+    env: V_V (bl > l is learned)
     raw: pl bl p t → br {br,l} b d / V_V (bl → l is learned)
     source: index_diachronica_original.html:7698
   - input: p t k
@@ -25913,7 +25913,7 @@ sections:
     source: index_diachronica_original.html:7702
   - input: ks ɡn tj
     output: ʃ ɲ {z,s}
-    env: V_V (tj → s is learned)
+    env: V_V (tj > s is learned)
     raw: ks ɡn tj → ʃ ɲ {z,s} / V_V (tj → s is learned)
     source: index_diachronica_original.html:7703
   - input: tj
@@ -25922,17 +25922,17 @@ sections:
     raw: tj → s / C_V
     source: index_diachronica_original.html:7704
   - input: dj
-    output: dʒ → ʒ
+    output: dʒ > ʒ
     env: V_V
     raw: dj → dʒ → ʒ / V_V
     source: index_diachronica_original.html:7705
   - input: dj
-    output: dz → ts → s
+    output: dz > ts > s
     env: r_V
     raw: dj → dz → ts → s / r_V
     source: index_diachronica_original.html:7706
   - input: ndj
-    output: nts → ns → ɲ
+    output: nts > ns > ɲ
     env: V_V
     raw: ndj → nts → ns → ɲ / V_V
     source: index_diachronica_original.html:7707
@@ -25952,13 +25952,13 @@ sections:
     raw: sːj (m)nj lj rj → jʃ ɲʎ jr / V_V
     source: index_diachronica_original.html:7710
   - input: kj
-    output: ts → s
+    output: ts > s
     env: V_V
     raw: kj → ts → s / V_V
     source: index_diachronica_original.html:7711
   - input: ɡj
     output: '{ʒ,j}'
-    env: V_V (ɡj → j is learned)
+    env: V_V (ɡj > j is learned)
     raw: ɡj → {ʒ,j} / V_V (ɡj → j is learned)
     source: index_diachronica_original.html:7712
   - input: pj {bj,vj}
@@ -26014,7 +26014,7 @@ sections:
     source: index_diachronica_original.html:7722
   - input: j
     output: '{∅,ʒ}'
-    env: V_V (j → ʒ is learned)
+    env: V_V (j > ʒ is learned)
     raw: j → {∅,ʒ} / V_V (j → ʒ is learned)
     source: index_diachronica_original.html:7723
   - input: b
@@ -26408,7 +26408,7 @@ sections:
     source: index_diachronica_original.html:7811
   - input: p t k s
     output: b d ɡ z
-    env: V_V (this b → v?)
+    env: V_V (this b > v?)
     raw: p t k s → b d ɡ z / V_V (this b → v?)
     source: index_diachronica_original.html:7812
   - input: ∅
@@ -26417,17 +26417,17 @@ sections:
     raw: '∅ → i / #_sC'
     source: index_diachronica_original.html:7813
   - input: w
-    output: v → ∅
+    output: v > ∅
     env: _u (“restored by analogy in many words”)
     raw: w → v → ∅ / _u (“restored by analogy in many words”)
     source: index_diachronica_original.html:7814
   - input: w
-    output: v → ∅
+    output: v > ∅
     env: _”o
     raw: w → v → ∅ / _”o
     source: index_diachronica_original.html:7815
   - input: w
-    output: v → β
+    output: v > β
     raw: w → v → β
     source: index_diachronica_original.html:7816
   - input: β
@@ -26455,7 +26455,7 @@ sections:
     raw: — Loaned w → ɡw
     source: index_diachronica_original.html:7824
   - input: Original z (/ts/?)
-    output: dj → j
+    output: dj > j
     raw: Original z (/ts/?) → dj → j
     source: index_diachronica_original.html:7825
   - input: pʰ
@@ -26468,7 +26468,7 @@ sections:
     raw: '(s)k ɡ → (s)tʃ dʒ / #_a (in the north and northeast)'
     source: index_diachronica_original.html:7829
   - input: tʃ
-    output: ts → s
+    output: ts > s
     env: '#_'
     raw: 'tʃ → ts → s / #_'
     source: index_diachronica_original.html:7830
@@ -26486,7 +26486,7 @@ sections:
     raw: β → b (in Béarn, Gascon, and Languedoc)
     source: index_diachronica_original.html:7833
   - input: β
-    output: v (though sometimes → ɡw instead if analogy interfered)
+    output: v (though sometimes > ɡw instead if analogy interfered)
     raw: β → v (though sometimes → ɡw instead if analogy interfered)
     source: index_diachronica_original.html:7834
   - input: kʷ ɡʷ
@@ -26568,7 +26568,7 @@ sections:
     raw: lː → l (in the south)
     source: index_diachronica_original.html:7850
   - input: mn
-    output: mpn → nː (dialectal)
+    output: mpn > nː (dialectal)
     raw: mn → mpn → nː (dialectal)
     source: index_diachronica_original.html:7852
   - input: Cː
@@ -26631,12 +26631,12 @@ sections:
     raw: tʃ → i / C_
     source: index_diachronica_original.html:7864
   - input: tʃ
-    output: jdz → jz
+    output: jdz > jz
     env: V_V (in the south and northwest)
     raw: tʃ → jdz → jz / V_V (in the south and northwest)
     source: index_diachronica_original.html:7865
   - input: tʃ
-    output: dz → z
+    output: dz > z
     env: V_V (otherwise)
     raw: tʃ → dz → z / V_V (otherwise)
     source: index_diachronica_original.html:7866
@@ -26652,12 +26652,12 @@ sections:
     raw: ð → i / _C ! _s#
     source: index_diachronica_original.html:7868
   - input: ð
-    output: z (except in some northern and eastern dialects where → ∅)
+    output: z (except in some northern and eastern dialects where > ∅)
     raw: ð → z (except in some northern and eastern dialects where → ∅)
     source: index_diachronica_original.html:7869
   - input: ɡ
     output: j
-    env: _a (in the north and east; further → dʒ in the north)
+    env: _a (in the north and east; further > dʒ in the north)
     raw: ɡ → j / _a (in the north and east; further → dʒ in the north)
     source: index_diachronica_original.html:7870
   - input: ɡ
@@ -26666,7 +26666,7 @@ sections:
     raw: ɡ → ɡ / _{o,u/y}
     source: index_diachronica_original.html:7871
   - input: ɡ
-    output: j → dʒ
+    output: j > dʒ
     env: “[b]etween the last two vowels of a proparoxytone”, though it dropped early
       in some dialects
     raw: ɡ → j → dʒ / “[b]etween the last two vowels of a proparoxytone”, though it
@@ -26726,12 +26726,12 @@ sections:
     raw: p j → b i / _l
     source: index_diachronica_original.html:7883
   - input: p k tʃ b ɡ β j
-    output: b ɡ i {b,u,u→y→i} ∅ {u,u→y→i} i
+    output: b ɡ i {b,u,u>y>i} ∅ {u,u>y>i} i
     env: _r
     raw: p k tʃ b ɡ β j → b ɡ i {b,u,u→y→i} ∅ {u,u→y→i} i / _r
     source: index_diachronica_original.html:7884
   - input: '{t,d}'
-    output: ð → i
+    output: ð > i
     env: _r
     raw: '{t,d} → ð → i / _r'
     source: index_diachronica_original.html:7885
@@ -26756,23 +26756,23 @@ sections:
     raw: ∅ → t / s_r
     source: index_diachronica_original.html:7889
   - input: βw tw
-    output: wː dw → ɡʷ ɡʷ → ɡ ɡ
+    output: wː dw > ɡʷ ɡʷ > ɡ ɡ
     raw: βw tw → wː dw → ɡʷ ɡʷ → ɡ ɡ
     source: index_diachronica_original.html:7890
   - input: '{d,k}w'
-    output: ɡʷ → ɡ
+    output: ɡʷ > ɡ
     raw: '{d,k}w → ɡʷ → ɡ'
     source: index_diachronica_original.html:7891
   - input: (kʷ
-    output: ɡʷ → ɡ ?)
+    output: ɡʷ > ɡ ?)
     raw: (kʷ → ɡʷ → ɡ ?)
     source: index_diachronica_original.html:7892
   - input: '{l,r}w {n,ŋk,ŋɡ}w'
-    output: lɡʷ ŋɡʷ → lɡ ŋɡ
+    output: lɡʷ ŋɡʷ > lɡ ŋɡ
     raw: '{l,r}w {n,ŋk,ŋɡ}w → lɡʷ ŋɡʷ → lɡ ŋɡ'
     source: index_diachronica_original.html:7893
   - input: pw
-    output: upw → up → ub
+    output: upw > up > ub
     raw: pw → upw → up → ub
     source: index_diachronica_original.html:7894
   - input: w
@@ -26807,7 +26807,7 @@ sections:
     raw: dVɡ (n)dVɡ → dʒ(?) ndʒ
     source: index_diachronica_original.html:7901
   - input: l{tj,tʃj} ldʒ
-    output: lts ldz → uts udz → us uz
+    output: lts ldz > uts udz > us uz
     raw: l{tj,tʃj} ldʒ → lts ldz → uts udz → us uz
     source: index_diachronica_original.html:7902
   - input: lː{j,Vdʒ} lnj
@@ -26815,7 +26815,7 @@ sections:
     raw: lː{j,Vdʒ} lnj → ʎ ɲ
     source: index_diachronica_original.html:7903
   - input: lvj
-    output: lbj → ubj
+    output: lbj > ubj
     raw: lvj → lbj → ubj
     source: index_diachronica_original.html:7904
   - input: j
@@ -26844,7 +26844,7 @@ sections:
     raw: mj → {mj,ɲ}
     source: index_diachronica_original.html:7910
   - input: '{ntʃj,ndj}'
-    output: nts → ns
+    output: nts > ns
     raw: '{ntʃj,ndj} → nts → ns'
     source: index_diachronica_original.html:7911
   - input: '{ndj,ndʒj} ndʒ'
@@ -26857,15 +26857,15 @@ sections:
     raw: p → b / _rj
     source: index_diachronica_original.html:7913
   - input: ptj
-    output: ts → s
+    output: ts > s
     raw: ptj → ts → s
     source: index_diachronica_original.html:7914
   - input: pj
-    output: ptʃ → tʃ (except in western and some southern dialects)
+    output: ptʃ > tʃ (except in western and some southern dialects)
     raw: pj → ptʃ → tʃ (except in western and some southern dialects)
     source: index_diachronica_original.html:7915
   - input: rtʃj
-    output: rts (→ rs ?)
+    output: rts (> rs ?)
     raw: rtʃj → rts (→ rs ?)
     source: index_diachronica_original.html:7916
   - input: rdj rVɡ
@@ -26873,11 +26873,11 @@ sections:
     raw: rdj rVɡ → rdz rdʒ
     source: index_diachronica_original.html:7917
   - input: rdʒ
-    output: '{rdʒ,rdz(→ rz)}'
+    output: '{rdʒ,rdz(> rz)}'
     raw: rdʒ → {rdʒ,rdz(→ rz)}
     source: index_diachronica_original.html:7918
   - input: rtj
-    output: rts → rs
+    output: rts > rs
     raw: rtj → rts → rs
     source: index_diachronica_original.html:7919
   - input: rːVɡ rːj
@@ -26885,11 +26885,11 @@ sections:
     raw: rːVɡ rːj → rdʒ ir
     source: index_diachronica_original.html:7920
   - input: rtVɡ
-    output: '{rdʒ,rts(→ rs)}'
+    output: '{rdʒ,rts(> rs)}'
     raw: rtVɡ → {rdʒ,rts(→ rs)}
     source: index_diachronica_original.html:7921
   - input: rtj
-    output: rts → rs
+    output: rts > rs
     raw: rtj → rts → rs
     source: index_diachronica_original.html:7922
   - input: v
@@ -26898,31 +26898,31 @@ sections:
     raw: v → {v,b} / r_j
     source: index_diachronica_original.html:7923
   - input: rj
-    output: rʲ → ir
+    output: rʲ > ir
     env: V_V
     raw: rj → rʲ → ir / V_V
     source: index_diachronica_original.html:7924
   - input: rj
-    output: rʲ → r
+    output: rʲ > r
     env: _#
     raw: rj → rʲ → r / _#
     source: index_diachronica_original.html:7925
   - input: '{sːj,stʃj,stj}'
-    output: ʃ → is (except in the west or extreme east, where the outcome was some
+    output: ʃ > is (except in the west or extreme east, where the outcome was some
       flavor of (i)(t)ʃ)
     raw: '{sːj,stʃj,stj} → ʃ → is (except in the west or extreme east, where the outcome
       was some flavor of (i)(t)ʃ)'
     source: index_diachronica_original.html:7926
   - input: sj
-    output: ʒ → (i)(d)ʒ (in some northeastern, northern, and western dialects)
+    output: ʒ > (i)(d)ʒ (in some northeastern, northern, and western dialects)
     raw: sj → ʒ → (i)(d)ʒ (in some northeastern, northern, and western dialects)
     source: index_diachronica_original.html:7927
   - input: sj
-    output: ʒ → {r,z} (rare)
+    output: ʒ > {r,z} (rare)
     raw: sj → ʒ → {r,z} (rare)
     source: index_diachronica_original.html:7928
   - input: sj
-    output: ʒ → iz (the usual outcome)
+    output: ʒ > iz (the usual outcome)
     raw: sj → ʒ → iz (the usual outcome)
     source: index_diachronica_original.html:7929
   - input: tVɡ trj
@@ -26930,11 +26930,11 @@ sections:
     raw: tVɡ trj → dʒ ir
     source: index_diachronica_original.html:7930
   - input: tːj
-    output: ts → s
+    output: ts > s
     raw: tːj → ts → s
     source: index_diachronica_original.html:7931
   - input: tj
-    output: tʃ → dj → djʒ (?) → dz (in the north and west) or idz (in the south and
+    output: tʃ > dj > djʒ (?) > dz (in the north and west) or idz (in the south and
       east)—medial (i)dz became (i)z; i-less forms “prevail in the literary language”
       and seem to have become common if the dz follows the stress
     raw: tj → tʃ → dj → djʒ (?) → dz (in the north and west) or idz (in the south
@@ -26957,7 +26957,7 @@ sections:
     raw: l → u / _{t,d,s} (else)
     source: index_diachronica_original.html:7935
   - input: ndt ndtʃ ntʃ nkt nf
-    output: n{d,t} {nts,ndz(→ nz),ndʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,fː(→ f)}
+    output: n{d,t} {nts,ndz(> nz),ndʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,fː(> f)}
     raw: ndt ndtʃ ntʃ nkt nf → n{d,t} {nts,ndz(→ nz),ndʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,fː(→
       f)}
     source: index_diachronica_original.html:7936
@@ -26977,7 +26977,7 @@ sections:
     raw: d → t / n_#
     source: index_diachronica_original.html:7939
   - input: rtʃ rdtʃ
-    output: r(t)s {rdz(→ rz),rts,rdʒ}
+    output: r(t)s {rdz(> rz),rts,rdʒ}
     raw: rtʃ rdtʃ → r(t)s {rdz(→ rz),rts,rdʒ}
     source: index_diachronica_original.html:7940
   - input: rdɡ
@@ -27057,7 +27057,7 @@ sections:
     raw: β → u / _k
     source: index_diachronica_original.html:7956
   - input: βtʃ
-    output: u{ts,dz} → u{s,z}
+    output: u{ts,dz} > u{s,z}
     raw: βtʃ → u{ts,dz} → u{s,z}
     source: index_diachronica_original.html:7957
   - input: βt βd
@@ -27073,7 +27073,7 @@ sections:
     raw: ktʃ → (i)tʃ (in western and extreme eastern dialects)
     source: index_diachronica_original.html:7960
   - input: ktʃ
-    output: its → is (else)
+    output: its > is (else)
     raw: ktʃ → its → is (else)
     source: index_diachronica_original.html:7961
   - input: tʃ k
@@ -27098,7 +27098,7 @@ sections:
     raw: dtʃ → dʒ (for some southeastern and southwestern speakers)
     source: index_diachronica_original.html:7966
   - input: dtʃ
-    output: dz → z (else)
+    output: dz > z (else)
     raw: dtʃ → dz → z (else)
     source: index_diachronica_original.html:7967
   - input: ɡ
@@ -27107,11 +27107,11 @@ sections:
     raw: ɡ → ∅ / _m
     source: index_diachronica_original.html:7968
   - input: ɡn{d,t}
-    output: ŋn{d,t} → ɲ{d,t} → {(i)nd,ɲd,ndʒ} or t(ʃ)
+    output: ŋn{d,t} > ɲ{d,t} > {(i)nd,ɲd,ndʒ} or t(ʃ)
     raw: ɡn{d,t} → ŋn{d,t} → ɲ{d,t} → {(i)nd,ɲd,ndʒ} or t(ʃ)
     source: index_diachronica_original.html:7969
   - input: ɡn
-    output: ŋn → ɲ
+    output: ŋn > ɲ
     raw: ɡn → ŋn → ɲ
     source: index_diachronica_original.html:7970
   - input: ksk
@@ -27125,7 +27125,7 @@ sections:
     raw: k → ∅ / _sk (else)
     source: index_diachronica_original.html:7972
   - input: ks
-    output: ʃ → s
+    output: ʃ > s
     env: _m
     raw: ks → ʃ → s / _m
     source: index_diachronica_original.html:7973
@@ -27153,7 +27153,7 @@ sections:
     raw: p → ∅ / _t “except in parts of Languedoc and Gascony”
     source: index_diachronica_original.html:7979
   - input: td
-    output: tː → t
+    output: tː > t
     raw: td → tː → t
     source: index_diachronica_original.html:7980
   - input: jd
@@ -27196,7 +27196,7 @@ sections:
     raw: a → e / stressed, usually when Ḱ_
     source: index_diachronica_original.html:7992
   - input: uː
-    output: y (→ i in most descendants, with the exception of Engadine)
+    output: y (> i in most descendants, with the exception of Engadine)
     raw: uː → y (→ i in most descendants, with the exception of Engadine)
     source: index_diachronica_original.html:7993
   - input: a V
@@ -27463,7 +27463,7 @@ sections:
     raw: c → ∅ / n_t
     source: index_diachronica_original.html:8056
   - input: kj ɡj
-    output: tʃ {j,∅} (ɡj → ∅ is rare)
+    output: tʃ {j,∅} (ɡj > ∅ is rare)
     raw: kj ɡj → tʃ {j,∅} (ɡj → ∅ is rare)
     source: index_diachronica_original.html:8057
   - input: Pj
@@ -27722,7 +27722,7 @@ sections:
     raw: k → ∅ / _t ?
     source: index_diachronica_original.html:8112
   - input: l{i,j}
-    output: lː → {ts,dz,ldz,dʒ,lː} (“varies”)
+    output: lː > {ts,dz,ldz,dʒ,lː} (“varies”)
     raw: l{i,j} → lː → {ts,dz,ldz,dʒ,lː} (“varies”)
     source: index_diachronica_original.html:8113
   - input: e
@@ -27816,7 +27816,7 @@ sections:
     raw: '{tj,kj} {tːj,kːj,ptj,ktj,skj} → ts tːs'
     source: index_diachronica_original.html:8130
   - input: k ɡ
-    output: tʃ dʒ → ts dz
+    output: tʃ dʒ > ts dz
     env: _{j,i,e,ɛ}
     raw: k ɡ → tʃ dʒ → ts dz / _{j,i,e,ɛ}
     source: index_diachronica_original.html:8131
@@ -27846,7 +27846,7 @@ sections:
     raw: V → ∅ / s_C when unstressed and not at a word boundary (sporadic)
     source: index_diachronica_original.html:8136
   - input: '{k,ɡ}'
-    output: x → j
+    output: x > j
     env: _{t,s,n,l}
     raw: '{k,ɡ} → x → j / _{t,s,n,l}'
     source: index_diachronica_original.html:8137
@@ -28046,7 +28046,7 @@ sections:
     raw: — ml nɾ → lm ɾn (sometimes)
     source: index_diachronica_original.html:8185
   - input: βɣ
-    output: wɣ → ɣw
+    output: wɣ > ɣw
     raw: — βɣ → wɣ → ɣw
     source: index_diachronica_original.html:8186
   - input: ∅
@@ -28095,7 +28095,7 @@ sections:
     raw: ʃ → {x,χ}
     source: index_diachronica_original.html:8197
   - input: h
-    output: '∅ “(just a reminder: from the f → h change above)”'
+    output: '∅ “(just a reminder: from the f > h change above)”'
     raw: 'h → ∅ “(just a reminder: from the f → h change above)”'
     source: index_diachronica_original.html:8199
   - input: x
@@ -28321,7 +28321,7 @@ sections:
     raw: D(ʱ) → T
     source: index_diachronica_original.html:8260
   - input: n̩
-    output: ə → ∅
+    output: ə > ∅
     env: C_#
     raw: n̩ → ə → ∅ / C_#
     source: index_diachronica_original.html:8261
@@ -28384,7 +28384,7 @@ sections:
     raw: u → {ə,u}
     source: index_diachronica_original.html:8275
   - input: uh₁ u{h₂,h₃}
-    output: uː → wə wɨ
+    output: uː > wə wɨ
     raw: uh₁ u{h₂,h₃} → uː → wə wɨ
     source: index_diachronica_original.html:8276
   - input: i
@@ -30726,7 +30726,7 @@ sections:
     raw: iC uC → î û / _{C,#}
     source: index_diachronica_original.html:9006
   - input: ∅
-    output: dz → î_V
+    output: dz > î_V
     raw: ∅ → dz → î_V
     source: index_diachronica_original.html:9007
   - input: iC
@@ -31675,7 +31675,7 @@ sections:
     source: index_diachronica_original.html:9338
   - input: i
     output: ∅
-    env: a_ (usually; sometimes the diphthong is retained or → aj)
+    env: a_ (usually; sometimes the diphthong is retained or > aj)
     raw: i → ∅ / a_ (usually; sometimes the diphthong is retained or → aj)
     source: index_diachronica_original.html:9339
   - input: a
@@ -33349,7 +33349,7 @@ sections:
     raw: x xʷ → {xʲ,j} {ʂ,ʐ}
     source: index_diachronica_original.html:9938
   - input: Qʷ
-    output: Qʷ → Q ?
+    output: Qʷ > Q ?
     raw: Qʷ → Qʷ → Q ?
     source: index_diachronica_original.html:9939
   - input: χ(ʷ)
@@ -33448,7 +33448,7 @@ sections:
     source: index_diachronica_original.html:9998
   - input: '{n,ɲ}'
     output: d
-    env: $_V[-nas] (→ dʒ in the British Columbian dialect)
+    env: $_V[-nas] (> dʒ in the British Columbian dialect)
     raw: '{n,ɲ} → d / $_V[-nas] (→ dʒ in the British Columbian dialect)'
     source: index_diachronica_original.html:9999
   - input: ɑ
@@ -33538,7 +33538,7 @@ sections:
     raw: TS TŠ → TH TS
     source: index_diachronica_original.html:10032
   - input: TŠʷ
-    output: TṢ (→ TS in Kuskokwim dialect)
+    output: TṢ (> TS in Kuskokwim dialect)
     raw: TŠʷ → TṢ (→ TS in Kuskokwim dialect)
     source: index_diachronica_original.html:10033
   - input: K
@@ -33546,7 +33546,7 @@ sections:
     raw: K → {K,TŠ}
     source: index_diachronica_original.html:10034
   - input: w
-    output: v (→ w in Shageluk dialect)
+    output: v (> w in Shageluk dialect)
     raw: w → v (→ w in Shageluk dialect)
     source: index_diachronica_original.html:10035
   - input: ɲ
@@ -33577,7 +33577,7 @@ sections:
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - input: '{TŠ,TŠʷ}'
-    output: TŠ (→ TS in Upper Inlet dialect)
+    output: TŠ (> TS in Upper Inlet dialect)
     raw: '{TŠ,TŠʷ} → TŠ (→ TS in Upper Inlet dialect)'
     source: index_diachronica_original.html:10045
   - input: e a u {ə,ʊ}
@@ -33734,7 +33734,7 @@ sections:
     raw: Vˀ → V[+low tone]
     source: index_diachronica_original.html:10093
   - input: w (
-    output: b?) → m
+    output: b?) > m
     raw: w (→ b?) → m
     source: index_diachronica_original.html:10094
   - input: ə
@@ -33799,7 +33799,7 @@ sections:
     raw: Vˀ → V[+low tone]
     source: index_diachronica_original.html:10114
   - input: w (
-    output: b?) → m
+    output: b?) > m
     raw: w (→ b?) → m
     source: index_diachronica_original.html:10115
   - input: ə
@@ -33833,7 +33833,7 @@ sections:
     raw: C’ → C / _$
     source: index_diachronica_original.html:10125
   - input: Vˀ
-    output: V[+low tone] → V[-tone]
+    output: V[+low tone] > V[-tone]
     raw: Vˀ → V[+low tone] → V[-tone]
     source: index_diachronica_original.html:10126
   - input: w
@@ -33889,7 +33889,7 @@ sections:
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - input: TS
-    output: TH (→ TS again in some areas)
+    output: TH (> TS again in some areas)
     raw: TS → TH (→ TS again in some areas)
     source: index_diachronica_original.html:10148
   - input: '{TŠ,TŠʷ} K Q'
@@ -33920,7 +33920,7 @@ sections:
     raw: K → TS
     source: index_diachronica_original.html:10157
   - input: m
-    output: '{m,b} (→ b seems more common)'
+    output: '{m,b} (> b seems more common)'
     raw: m → {m,b} (→ b seems more common)
     source: index_diachronica_original.html:10158
   - input: ɣ
@@ -34527,11 +34527,11 @@ sections:
     raw: '{a,ɑ} e i u ʊ → e(a) {i,ea} ju {a,ɨ} o'
     source: index_diachronica_original.html:10348
   - input: ə
-    output: '{a,ɨ} (→ ø in the Northway dialect)'
+    output: '{a,ɨ} (> ø in the Northway dialect)'
     raw: ə → {a,ɨ} (→ ø in the Northway dialect)
     source: index_diachronica_original.html:10349
   - input: Vˀ
-    output: V[+low tone] (→ V[-tone] in “young speakers by 1980”)
+    output: V[+low tone] (> V[-tone] in “young speakers by 1980”)
     raw: Vˀ → V[+low tone] (→ V[-tone] in “young speakers by 1980”)
     source: index_diachronica_original.html:10350
 - section: Proto-Athabaskan to Tsetsaut
@@ -34661,7 +34661,7 @@ sections:
     raw: x → ∅ / ʃ_
     source: index_diachronica_original.html:10395
   - input: $
-    output: xʷ → {x,s}
+    output: xʷ > {x,s}
     raw: $ → xʷ → {x,s}
     source: index_diachronica_original.html:10396
 - section: Proto-Na-Dene to Tlingit
@@ -34863,7 +34863,7 @@ sections:
     raw: i u VS → j w A / _V[+high +ATR]
     source: index_diachronica_original.html:10469
   - input: S
-    output: Sʰ → Aʰ
+    output: Sʰ > Aʰ
     raw: S → Sʰ → Aʰ
     source: index_diachronica_original.html:10470
   - input: V[+high +ATR]
@@ -38934,7 +38934,7 @@ sections:
     raw: Kwə- → Kʷɨ-
     source: index_diachronica_original.html:11747
   - input: w
-    output: r → ∅
+    output: r > ∅
     env: P_-
     raw: w → r → ∅ / P_-
     source: index_diachronica_original.html:11748
@@ -39365,11 +39365,11 @@ sections:
     raw: iʔ iw → eʔ ew / C̣_ (the latter with variant iɛu?)
     source: index_diachronica_original.html:11841
   - input: iʔ
-    output: ieʔ (→ i[truncated vowel-thing]ʔ?)
+    output: ieʔ (> i[truncated vowel-thing]ʔ?)
     raw: iʔ → ieʔ (→ i[truncated vowel-thing]ʔ?)
     source: index_diachronica_original.html:11842
   - input: uʔ
-    output: oʔ (occasionally → uɛʔ?)
+    output: oʔ (occasionally > uɛʔ?)
     raw: uʔ → oʔ (occasionally → uɛʔ?)
     source: index_diachronica_original.html:11843
   - input: uj
@@ -39388,7 +39388,7 @@ sections:
     raw: uj → ui / {C[+dental],C[+sibilant]}_
     source: index_diachronica_original.html:11846
   - input: ujʔ
-    output: uɛʔ (dialectally → uɔʔ?)
+    output: uɛʔ (dialectally > uɔʔ?)
     raw: ujʔ → uɛʔ (dialectally → uɔʔ?)
     source: index_diachronica_original.html:11847
   - input: un
@@ -39416,7 +39416,7 @@ sections:
     raw: juŋ → iuŋ / _ɡ[+píng tone]
     source: index_diachronica_original.html:11852
   - input: juŋ
-    output: uŋ (→ oŋ dialectally?)
+    output: uŋ (> oŋ dialectally?)
     raw: juŋ → uŋ (→ oŋ dialectally?)
     source: index_diachronica_original.html:11853
   - input: jujŋ ujŋ
@@ -39424,7 +39424,7 @@ sections:
     raw: jujŋ ujŋ → iuŋ uŋ
     source: index_diachronica_original.html:11854
   - input: y
-    output: ɥ (→ y~u dialectally?)
+    output: ɥ (> y~u dialectally?)
     env: C̣_
     raw: y → ɥ (→ y~u dialectally?) / C̣_
     source: index_diachronica_original.html:11855
@@ -39434,7 +39434,7 @@ sections:
     raw: yʔ → yɛʔ / {l,C[+dental +sibilant]}_ in “QYS -juət-type” finals, dialectally?
     source: index_diachronica_original.html:11856
   - input: yʔ
-    output: oʔ (eventually → {ʊʔ,(i)uʔ?)
+    output: oʔ (eventually > {ʊʔ,(i)uʔ?)
     env: '{l,C[+dental +sibilant]}_, in “QYS -k-types”'
     raw: yʔ → oʔ (eventually → {ʊʔ,(i)uʔ?) / {l,C[+dental +sibilant]}_, in “QYS -k-types”
     source: index_diachronica_original.html:11857
@@ -39444,7 +39444,7 @@ sections:
     raw: yʔ → yʔ(~yɛʔ?) / {∅,C[+guttural]}, in -juət-types
     source: index_diachronica_original.html:11858
   - input: yʔ
-    output: ioʔ (→ iʊʔ dialectally?)
+    output: ioʔ (> iʊʔ dialectally?)
     env: '{∅,C[+guttural]}_, in -k-types'
     raw: yʔ → ioʔ (→ iʊʔ dialectally?) / {∅,C[+guttural]}_, in -k-types
     source: index_diachronica_original.html:11859
@@ -39454,7 +39454,7 @@ sections:
     raw: yʔ → {ɥʔ,yʔ,uʔ} / C̣, in -juət-types
     source: index_diachronica_original.html:11860
   - input: yʔ
-    output: oʔ (→ ʊʔ?)
+    output: oʔ (> ʊʔ?)
     env: C̣_, in -k-types
     raw: yʔ → oʔ (→ ʊʔ?) / C̣_, in -k-types
     source: index_diachronica_original.html:11861
@@ -39464,7 +39464,7 @@ sections:
     source: index_diachronica_original.html:11862
   - input: yn
     output: un
-    env: C̣_ (may have stayed yn or → ɥn in at least one area?)
+    env: C̣_ (may have stayed yn or > ɥn in at least one area?)
     raw: yn → un / C̣_ (may have stayed yn or → ɥn in at least one area?)
     source: index_diachronica_original.html:11863
   - input: je jeʔ yeʔ
@@ -39477,7 +39477,7 @@ sections:
     raw: je jeʔ → iɛ iɛʔ
     source: index_diachronica_original.html:11865
   - input: yeʔ
-    output: yɛʔ (→ {uɔʔ,yɔʔ} in southern speech?)
+    output: yɛʔ (> {uɔʔ,yɔʔ} in southern speech?)
     raw: yeʔ → yɛʔ (→ {uɔʔ,yɔʔ} in southern speech?)
     source: index_diachronica_original.html:11866
   - input: ye jej
@@ -39515,7 +39515,7 @@ sections:
     raw: ɔ → a / in two cases cited; extremely rare change
     source: index_diachronica_original.html:11873
   - input: wɔ
-    output: ɔ (occasionally → uɔ after a guttural?)
+    output: ɔ (occasionally > uɔ after a guttural?)
     raw: wɔ → ɔ (occasionally → uɔ after a guttural?)
     source: index_diachronica_original.html:11874
   - input: wɔʔ
@@ -39891,7 +39891,7 @@ sections:
     raw: Sb Sk Sɡ → b ? ɡ / _V
     source: index_diachronica_original.html:11971
   - input: n̥
-    output: l̥ → h
+    output: l̥ > h
     env: $_V
     raw: n̥ → l̥ → h / %_V
     source: index_diachronica_original.html:11972
@@ -39901,7 +39901,7 @@ sections:
     raw: '{r,s} → ∅ / %_V'
     source: index_diachronica_original.html:11973
   - input: '{r,s}N'
-    output: N̥ → hṼ → hV
+    output: N̥ > hṼ > hV
     raw: '{r,s}N → N̥ → hṼ → hV'
     source: index_diachronica_original.html:11974
 - section: rGyalrongic
@@ -40575,7 +40575,7 @@ sections:
     raw: kr rk {rK,Pɡ} ɡ Pɡ sɡ → k.r rk. pk k sk
     source: index_diachronica_original.html:12153
   - input: ɡj
-    output: cç ? (might be → tsç?)
+    output: cç ? (might be > tsç?)
     raw: ɡj → cç ? (might be → tsç?)
     source: index_diachronica_original.html:12154
   - input: ʔkj
@@ -44822,7 +44822,7 @@ sections:
     raw: '{u̯ɔ,u̯a} → ua~uə'
     source: index_diachronica_original.html:13234
   - input: uo
-    output: uu → u
+    output: uu > u
     env: _$
     raw: uo → uu → u / _%
     source: index_diachronica_original.html:13235
@@ -44831,7 +44831,7 @@ sections:
     raw: ɨ̯ɔ → ɨa~ɨə
     source: index_diachronica_original.html:13236
   - input: uɨ̯ ua̯
-    output: ɨə uɔ̯ → ɨː ɔː
+    output: ɨə uɔ̯ > ɨː ɔː
     raw: uɨ̯ ua̯ → ɨə uɔ̯ → ɨː ɔː
     source: index_diachronica_original.html:13237
   - input: ɛi ei
@@ -46434,7 +46434,7 @@ sections:
     raw: ê → y / _(X)CA
     source: index_diachronica_original.html:13778
   - input: ô
-    output: ɯ → i
+    output: ɯ > i
     env: _(X)CA
     raw: ô → ɯ → i / _(X)CA
     source: index_diachronica_original.html:13779
@@ -46555,7 +46555,7 @@ sections:
     raw: j → ∅ / C_i{C,#}
     source: index_diachronica_original.html:13803
   - input: yje
-    output: øː → jø (?)
+    output: øː > jø (?)
     raw: yje → øː → jø (?)
     source: index_diachronica_original.html:13804
   - input: uw ij
@@ -46627,7 +46627,7 @@ sections:
     raw: tj → ts / ! following a coronal obstruent or “before a derivational suffix”
     source: index_diachronica_original.html:13818
   - input: ʃ
-    output: ʂ → x
+    output: ʂ > x
     raw: ʃ → ʂ → x
     source: index_diachronica_original.html:13819
   - input: s
@@ -46822,22 +46822,22 @@ sections:
     raw: t → ∅ / s_r
     source: index_diachronica_original.html:13864
   - input: p
-    output: β → U
+    output: β > U
     env: _R
     raw: p → β → U / _R
     source: index_diachronica_original.html:13865
   - input: t
-    output: z → U
+    output: z > U
     env: _r{A,O}
     raw: t → z → U / _r{A,O}
     source: index_diachronica_original.html:13866
   - input: t
-    output: z → @
+    output: z > @
     env: _r{i,e}
     raw: t → z → @ / _r{i,e}
     source: index_diachronica_original.html:13867
   - input: k
-    output: z → @
+    output: z > @
     env: _j
     raw: k → z → @ / _j
     source: index_diachronica_original.html:13868
@@ -46847,7 +46847,7 @@ sections:
     raw: k → ɣ i / {i,e}_R{i,e}
     source: index_diachronica_original.html:13869
   - input: k
-    output: ɣ → U
+    output: ɣ > U
     env: '{A,O,U}_R'
     exception: R = j
     raw: k → ɣ → U / {A,O,U}_R ! R = j
@@ -47620,8 +47620,8 @@ sections:
     raw: s → ʃ / i_#
     source: index_diachronica_original.html:14092
   - input: S[+ fortis]
-    output: S[- voice]ː (specifically, the source lists t[+ fortis] k[+ fortis] →
-      t(ː) k(ː), both of the tokens with optional length suffixes and *aTa → 〈atta〉,
+    output: S[- voice]ː (specifically, the source lists t[+ fortis] k[+ fortis] >
+      t(ː) k(ː), both of the tokens with optional length suffixes and *aTa > 〈atta〉,
       so I’m extrapolating)
     raw: S[+ fortis] → S[- voice]ː (specifically, the source lists t[+ fortis] k[+
       fortis] → t(ː) k(ː), both of the tokens with optional length suffixes and *aTa
@@ -47753,7 +47753,7 @@ sections:
     source: index_diachronica_original.html:14233
   rules:
   - input: Sʰ
-    output: F → h (→ ∅)
+    output: F > h (> ∅)
     env: '#_'
     raw: 'Sʰ → F → h (→ ∅) / #_'
     source: index_diachronica_original.html:14114
@@ -47799,7 +47799,7 @@ sections:
     raw: n → h̃ / V_V
     source: index_diachronica_original.html:14123
   - input: nb
-    output: mː → m
+    output: mː > m
     raw: nb → mː → m
     source: index_diachronica_original.html:14124
   - input: N
@@ -47838,7 +47838,7 @@ sections:
     raw: C → ∅ / r_
     source: index_diachronica_original.html:14131
   - input: Cr
-    output: Cɾ → CVɾ (perhaps not a sound change per se, just a historical tendency)
+    output: Cɾ > CVɾ (perhaps not a sound change per se, just a historical tendency)
     raw: Cr → Cɾ → CVɾ (perhaps not a sound change per se, just a historical tendency)
     source: index_diachronica_original.html:14132
   - input: ɾ
@@ -47847,7 +47847,7 @@ sections:
     raw: ɾ → ∅ / V_V (Souletin)
     source: index_diachronica_original.html:14133
   - input: '*L (fortis)'
-    output: l (or *lh → lː, which then lost gemination?)
+    output: l (or *lh > lː, which then lost gemination?)
     raw: '*L (fortis) → l (or *lh → lː, which then lost gemination?)'
     source: index_diachronica_original.html:14134
   - input: ð
@@ -48075,11 +48075,11 @@ sections:
     raw: ɡ → dʒ / {E,j}_ (“in some Biscayan areas”)
     source: index_diachronica_original.html:14182
   - input: j
-    output: ʝ → j (northern High Navarrese, most Labourd, some Biscayan)
+    output: ʝ > j (northern High Navarrese, most Labourd, some Biscayan)
     raw: j → ʝ → j (northern High Navarrese, most Labourd, some Biscayan)
     source: index_diachronica_original.html:14183
   - input: j
-    output: ʝ → ʒ (Souletin, sporadic in northwestern Biscayan)
+    output: ʝ > ʒ (Souletin, sporadic in northwestern Biscayan)
     raw: j → ʝ → ʒ (Souletin, sporadic in northwestern Biscayan)
     source: index_diachronica_original.html:14184
   - input: j
@@ -48087,19 +48087,19 @@ sections:
     raw: j → ʝ (some Biscayan and Navarrese)
     source: index_diachronica_original.html:14185
   - input: j
-    output: ʝ → ɟ (typical of Low Navarrese)
+    output: ʝ > ɟ (typical of Low Navarrese)
     raw: j → ʝ → ɟ (typical of Low Navarrese)
     source: index_diachronica_original.html:14186
   - input: j
-    output: ʝ → ʒ → dʒ (northwestern Biscayan)
+    output: ʝ > ʒ > dʒ (northwestern Biscayan)
     raw: j → ʝ → ʒ → dʒ (northwestern Biscayan)
     source: index_diachronica_original.html:14187
   - input: j
-    output: ʝ → ʒ → ʃ (Aescoan, Salazarese, Roncalese, most southern High Navarrese)
+    output: ʝ > ʒ > ʃ (Aescoan, Salazarese, Roncalese, most southern High Navarrese)
     raw: j → ʝ → ʒ → ʃ (Aescoan, Salazarese, Roncalese, most southern High Navarrese)
     source: index_diachronica_original.html:14188
   - input: j
-    output: ʝ → ʒ → ʃ → x (Guipuscoan, northwestern High Navarrese, eastern Biscayan)
+    output: ʝ > ʒ > ʃ > x (Guipuscoan, northwestern High Navarrese, eastern Biscayan)
     raw: j → ʝ → ʒ → ʃ → x (Guipuscoan, northwestern High Navarrese, eastern Biscayan)
     source: index_diachronica_original.html:14189
   - input: j
@@ -48172,7 +48172,7 @@ sections:
     raw: VɪC → VCʲ
     source: index_diachronica_original.html:14207
   - input: aɪ
-    output: eɪ → e (rare)
+    output: eɪ > e (rare)
     raw: aɪ → eɪ → e (rare)
     source: index_diachronica_original.html:14209
   - input: aʊ
@@ -48194,7 +48194,7 @@ sections:
     raw: oɪ → uɪ (rare)
     source: index_diachronica_original.html:14213
   - input: eð (
-    output: e ?) → j
+    output: e ?) > j
     env: '#_V'
     raw: 'eð (→ e ?) → j / #_V'
     source: index_diachronica_original.html:14214
@@ -48513,7 +48513,7 @@ sections:
     source: index_diachronica_original.html:14336
   rules:
   - input: ai
-    output: ɛi → əi
+    output: ɛi > əi
     env: when stem-final
     raw: ai → ɛi → əi / when stem-final
     source: index_diachronica_original.html:14323
@@ -48556,7 +48556,7 @@ sections:
     raw: ai oi ui ei au ou iu ɛ(o)u → eː oe əi iː {ɑː,ɔː} ʌu ju j(ʌ)u
     source: index_diachronica_original.html:14331
   - input: ɛː
-    output: ɛi (→ əi?)
+    output: ɛi (> əi?)
     env: in some northern varieties
     raw: ɛː → ɛi (→ əi?) / in some northern varieties
     source: index_diachronica_original.html:14332
@@ -48601,7 +48601,7 @@ sections:
   citation: Jaaaaaa and Ran, citing http://www.peak.org/~jeremy/dictionary/chapters/history.php
   rules:
   - input: iː uː
-    output: əj əw → ɑj ɑw
+    output: əj əw > ɑj ɑw
     raw: iː uː → əj əw → ɑj ɑw
     source: index_diachronica_original.html:14348
   - input: eː oː
@@ -48609,11 +48609,11 @@ sections:
     raw: eː oː → iː uː
     source: index_diachronica_original.html:14349
   - input: ɛː
-    output: eː → iː
+    output: eː > iː
     raw: ɛː → eː → iː
     source: index_diachronica_original.html:14350
   - input: aː ɔː
-    output: ɛː oː → eː ow → ej (əw)
+    output: ɛː oː > eː ow > ej (əw)
     raw: aː ɔː → ɛː oː → eː ow → ej (əw)
     source: index_diachronica_original.html:14351
 - section: Greek Vowel Shift
@@ -48763,7 +48763,7 @@ sections:
     raw: a → aː / _{i,u}
     source: index_diachronica_original.html:14398
   - input: a
-    output: ə → ∅
+    output: ə > ∅
     env: i_u
     raw: a → ə → ∅ / i_u
     source: index_diachronica_original.html:14399
@@ -48815,7 +48815,7 @@ sections:
     raw: '{a,æː} → ɛa / a'
     source: index_diachronica_original.html:14418
   - input: aː
-    output: ɔa “(except NE of the Faroes → aː)”
+    output: ɔa “(except NE of the Faroes > aː)”
     env: ɔ
     raw: aː → ɔa “(except NE of the Faroes → aː)” / ɔ
     source: index_diachronica_original.html:14419
@@ -48825,8 +48825,8 @@ sections:
     raw: e → eː / ɛ
     source: index_diachronica_original.html:14420
   - input: eː
-    output: ɛa “(except Suðuroy → eː)”
-    env: a “(except Suðuroy → ɛ)”
+    output: ɛa “(except Suðuroy > eː)”
+    env: a “(except Suðuroy > ɛ)”
     raw: eː → ɛa “(except Suðuroy → eː)” / a “(except Suðuroy → ɛ)”
     source: index_diachronica_original.html:14421
   - input: '{i,y}'
@@ -48846,7 +48846,7 @@ sections:
     source: index_diachronica_original.html:14424
   - input: oː
     output: '{ɔu,ɛu,œu}'
-    env: œ “(except Suðuroy → ɔ)”
+    env: œ “(except Suðuroy > ɔ)”
     raw: oː → {ɔu,ɛu,œu} / œ “(except Suðuroy → ɔ)”
     source: index_diachronica_original.html:14425
   - input: u
@@ -48861,7 +48861,7 @@ sections:
     raw: uː → ʉu / ʏ
     source: index_diachronica_original.html:14427
   - input: '{œ,ɔ}'
-    output: øː/œ “(except Suðuroy → ʏ)”
+    output: øː/œ “(except Suðuroy > ʏ)”
     raw: '{œ,ɔ} → øː/œ “(except Suðuroy → ʏ)”'
     source: index_diachronica_original.html:14428
 - section: Pre-Slavic Vowel Changes
@@ -48889,7 +48889,7 @@ sections:
     raw: ew → ju
     source: index_diachronica_original.html:14437
   - input: i
-    output: ı̆ [ə?] → {e,a} (strong)/∅ (weak) “in modern languages”
+    output: ı̆ [ə?] > {e,a} (strong)/∅ (weak) “in modern languages”
     raw: i → ı̆ [ə?] → {e,a} (strong)/∅ (weak) “in modern languages”
     source: index_diachronica_original.html:14438
   - input: iː
@@ -48909,7 +48909,7 @@ sections:
     raw: aw → u
     source: index_diachronica_original.html:14442
   - input: u
-    output: ŭ [ɤ?] → {e,o,ɤ,a} (strong)/∅ (weak) “in modern languages”
+    output: ŭ [ɤ?] > {e,o,ɤ,a} (strong)/∅ (weak) “in modern languages”
     raw: u → ŭ [ɤ?] → {e,o,ɤ,a} (strong)/∅ (weak) “in modern languages”
     source: index_diachronica_original.html:14443
   - input: uː
@@ -49128,7 +49128,7 @@ sections:
       the most common outcome)
     source: index_diachronica_original.html:14521
   - input: r
-    output: ɡʟ → ɣ (Hiw) (http://is.gd/jCDLO1)
+    output: ɡʟ > ɣ (Hiw) (http://is.gd/jCDLO1)
     raw: r → ɡʟ → ɣ (Hiw) (http://is.gd/jCDLO1)
     source: index_diachronica_original.html:14522
   - input: mb nd
