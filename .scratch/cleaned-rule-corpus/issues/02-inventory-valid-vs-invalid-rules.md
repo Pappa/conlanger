@@ -13,7 +13,7 @@ Against the current Index Diachronica–derived artifacts (`index_diachronica_or
 - Depends on [What counts as a valid ASCA rule string?](01-valid-asca-rule-string.md) for criteria (and any chosen CLI/library check).
 - Brute-force ASCA CLI checks are acceptable; also need a durable recorded corpus of results (e.g. CSV alongside the rule identity).
 - This ticket gathers evidence for decisions — it does not itself define the correction policy (see correction-workflow ticket).
-- Existing `notebooks/data/asca_errors.csv` / related files may be reusable starting points.
+- Existing `data/asca/results/asca_errors.csv` / related files may be reusable starting points.
 - Criteria used: [asca-rule-validity.md](../research/asca-rule-validity.md).
 
 ## Answer

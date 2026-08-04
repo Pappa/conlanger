@@ -216,7 +216,7 @@ asca::error::{RuleSyntaxError, RuleRuntimeError, ASCAError}
 
 ## 6. Common invalid patterns (Index Diachronica → ASCA)
 
-Drawn from docs + observed failures (`notebooks/data/asca_errors.csv`; classify against §2). Re-verify under **0.10.2** when inventoring — set/metathesis/`C` semantics changed in 0.10.0.
+Drawn from docs + observed failures (`data/asca/results/asca_errors.csv`; classify against §2). Re-verify under **0.10.2** when inventoring — set/metathesis/`C` semantics changed in 0.10.0.
 
 | Pattern | Why invalid / fix direction |
 |---------|-----------------------------|
