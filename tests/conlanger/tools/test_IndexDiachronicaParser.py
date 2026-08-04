@@ -13,7 +13,6 @@ from conlanger.tools.IndexDiachronicaParser import (
     extract_rule_parts,
     extract_text_with_subs,
     load_group_mappings,
-    normalize_corpus_fields,
     normalize_symbols,
     parse_rule_element,
     parse_section_heading,
@@ -167,23 +166,28 @@ def test_load_group_mappings_without_comment_column(tmp_path: Path):
     assert mappings == [GroupMapping("S", "P", "")]
 
 
-def test_normalize_symbols():
-    assert normalize_symbols("#_") == "#_"
-    assert normalize_symbols("∅") == "∅"
-    assert normalize_symbols("_$%oː") == "_$$oː"
-    assert normalize_symbols("$am_w") == "$am_w"
-    assert normalize_symbols('in #”U') == "in #'U"
-    assert normalize_symbols('s “(for many speakers)”') == 's “(for many speakers)”'
-    assert normalize_symbols("") == ""
+@pytest.mark.parametrize(
+    "text, expected",
+    [
+        ("#_", "#_"),
+        ("∅", "∅"),
+        ("_$%oː", "_$$oː"),
+        ("$am_w", "$am_w"),
+        ('in #”U', 'in #”U'),
+        ('s “(for many speakers)”', 's “(for many speakers)”'),
+        ("", ""),
+    ],
+)
+def test_normalize_symbols(text, expected):
+    assert normalize_symbols(text) == expected
 
 
-def test_normalize_corpus_fields():
-    parts = {"input": "a", "output": "b", "env": "_%", "exception": "in #”U"}
-    assert normalize_corpus_fields(parts) == {
+def test_extract_rule_parts_with_symbol_normalization():
+    raw = "a → b / _$%oː"
+    assert extract_rule_parts(normalize_symbols(raw)) == {
         "input": "a",
         "output": "b",
-        "env": "_$",
-        "exception": "in #'U",
+        "env": "_$$oː",
     }
 
 

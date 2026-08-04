@@ -7,8 +7,8 @@ Phase 2: optional ``/ env`` then optional ``! exception``
 second `` / `` are edge-case fallbacks.
 Phase 3: first ``<p>`` after ``<h2>`` → section ``citation`` (whole text, cleanup later);
 other non-``schg`` paragraphs → ``comments``.
-Phase 4: **Symbol** normalization on corpus fields only (``#``, ``$``, ``%``, ``∅``,
-Index stress ``”`` → ASCA-canonical); ``raw`` unchanged. Class-letter expansion is
+Phase 4: **Symbol** normalization on corpus fields only (``#``, ``$``, ``%``, ``∅``;
+``raw`` unchanged). Index stress notation is deferred. Class-letter expansion is
 deferred to compile time (``PhonologicalRuleSet`` + ``group_mappings.csv``).
 """
 
@@ -67,9 +67,6 @@ DEFAULT_GROUP_MAPPINGS_CSV = (
 
 # Protect Index stem ``$`` while remapping syllable-boundary ``%`` → ASCA ``$``.
 _STEM_BOUNDARY_PLACEHOLDER = "\ue000"
-INDEX_PROSE_OPEN = "\u201c"
-INDEX_PROSE_CLOSE = "\u201d"
-ASCA_PRIMARY_STRESS = "'"
 
 GroupMappingTuple = tuple[str, str] | tuple[str, str, str]
 
@@ -177,52 +174,19 @@ def split_post_arrow(post_arrow: str) -> tuple[str, str | None, str | None]:
     return out, env, exception
 
 
-def _index_stress_close_positions(text: str) -> set[int]:
-    """Indices of ``”`` that close Index editorial ``“…“`` spans (not stress)."""
-    prose_closes: set[int] = set()
-    i = 0
-    while i < len(text):
-        if text[i] == INDEX_PROSE_OPEN:
-            j = text.find(INDEX_PROSE_CLOSE, i + 1)
-            if j != -1:
-                prose_closes.add(j)
-                i = j + 1
-                continue
-        i += 1
-    return prose_closes
-
-
 def normalize_symbols(text: str) -> str:
-    """Map Index **Symbol** marks to ASCA-canonical form in corpus fields.
+    """Map Index **Symbol** boundary marks to ASCA-canonical form before rule parsing.
 
-    Index ``%`` (syllable boundary) → ASCA ``$``; Index ``$`` (stem boundary) is
-    preserved. Index stress ``”`` → ASCA primary stress ``'`` (editorial ``“…”``
-    spans are left unchanged). ``#`` and ``∅`` are already shared and pass through.
+    Applied to the full rule line (not the stored ``raw``). Index ``%`` (syllable
+    boundary) → ASCA ``$``; Index ``$`` (stem boundary) is preserved. ``#`` and ``∅``
+    are already shared and pass through unchanged. Index stress notation (``”``) is
+    left unchanged at ingest.
     """
     if not text:
         return text
     text = text.replace("$", _STEM_BOUNDARY_PLACEHOLDER)
     text = text.replace("%", "$")
-    text = text.replace(_STEM_BOUNDARY_PLACEHOLDER, "$")
-    if INDEX_PROSE_CLOSE not in text:
-        return text
-    prose_closes = _index_stress_close_positions(text)
-    chars: list[str] = []
-    for idx, ch in enumerate(text):
-        if ch == INDEX_PROSE_CLOSE and idx not in prose_closes:
-            chars.append(ASCA_PRIMARY_STRESS)
-        else:
-            chars.append(ch)
-    return "".join(chars)
-
-
-def normalize_corpus_fields(parts: dict[str, str]) -> dict[str, str]:
-    """Apply symbol normalization to parsed rule parts."""
-    return {
-        key: normalize_symbols(value)
-        for key, value in parts.items()
-        if key in {"input", "output", "env", "exception"}
-    }
+    return text.replace(_STEM_BOUNDARY_PLACEHOLDER, "$")
 
 
 def extract_rule_parts(raw: str) -> dict[str, str] | None:
@@ -309,7 +273,7 @@ class IndexDiachronicaParser:
         raw = extract_text_with_subs(el)
         line = getattr(el, "sourceline", None) or 0
         source = f"{source_file}:{line}"
-        parts = extract_rule_parts(raw)
+        parts = extract_rule_parts(normalize_symbols(raw))
         if parts is None:
             return {
                 "input": "",
@@ -319,7 +283,7 @@ class IndexDiachronicaParser:
                 "skipped": f"missing separator {ARROW!r}",
             }
         return {
-            **normalize_corpus_fields(parts),
+            **parts,
             "raw": raw,
             "source": source,
         }
