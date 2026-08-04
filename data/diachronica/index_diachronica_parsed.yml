@@ -1900,12 +1900,12 @@ sections:
     output: eː(ʲ) oː(ʷ) (sometimes, the article is unclear)
     raw: aj aw → eː(ʲ) oː(ʷ) (sometimes, the article is unclear)
     source: index_diachronica_original.html:1436
-  - input: — j w
+  - input: j w
     output: i u
     env: '#_CV'
     raw: '— j w → i u / #_CV'
     source: index_diachronica_original.html:1438
-  - input: — j w
+  - input: j w
     output: iː uː
     env: '#_CC'
     raw: '— j w → iː uː / #_CC'
@@ -2144,133 +2144,133 @@ sections:
     output: ħ ʕ q
     raw: x ɣ kˤ → ħ ʕ q
     source: index_diachronica_original.html:1514
-  - input: — aː
+  - input: aː
     output: oː
     exception: _#
     raw: — aː → oː / ! _#
     source: index_diachronica_original.html:1518
-  - input: — i iː u uː
+  - input: i iː u uː
     output: eə iːə oə uːə
     env: _R
     raw: — i iː u uː → eə iːə oə uːə / _R
     source: index_diachronica_original.html:1519
-  - input: — iː
+  - input: iː
     output: eː
     env: _#
     raw: — iː → eː / _#
     source: index_diachronica_original.html:1520
-  - input: — a
+  - input: a
     output: aː
     env: _$
     raw: — a → aː / _$
     source: index_diachronica_original.html:1521
-  - input: — a
+  - input: a
     output: '{a,ɛ} (not common)'
     raw: — a → {a,ɛ} (not common)
     source: index_diachronica_original.html:1522
-  - input: — i u
+  - input: i u
     output: e a
     env: _R{$,#} (in verbs)
     raw: — i u → e a / _R{$,#} (in verbs)
     source: index_diachronica_original.html:1523
-  - input: — i u
+  - input: i u
     output: e o
     env: _C{$,#} (in verbs)
     raw: — i u → e o / _C{$,#} (in verbs)
     source: index_diachronica_original.html:1524
-  - input: — i
+  - input: i
     output: eː oː
     env: else
     raw: — i → eː oː / else
     source: index_diachronica_original.html:1525
-  - input: — aw
+  - input: aw
     output: aːw
     raw: — aw → aːw
     source: index_diachronica_original.html:1526
-  - input: — aj
+  - input: aj
     output: eː
     env: _$
     raw: — aj → eː / _$
     source: index_diachronica_original.html:1527
-  - input: — aj
+  - input: aj
     output: ɛː
     env: _#
     raw: — aj → ɛː / _#
     source: index_diachronica_original.html:1528
-  - input: — {o,u}(ː)
+  - input: '{o,u}(ː)'
     output: iː
     env: _$$oː
     raw: — {o,u}(ː) → iː / _$%oː
     source: index_diachronica_original.html:1530
-  - input: — oː
+  - input: oː
     output: uː
     raw: — oː → uː
     source: index_diachronica_original.html:1531
-  - input: — a
+  - input: a
     output: ∅
     env: _#
     raw: — a → ∅ / _#
     source: index_diachronica_original.html:1532
-  - input: — a
+  - input: a
     output: _$$$(…)”
     raw: — a → _$%%(…)”
     source: index_diachronica_original.html:1533
-  - input: — a
+  - input: a
     output: ə
     env: _R if ə in an adjacent syllable
     raw: — a → ə / _R if ə in an adjacent syllable
     source: index_diachronica_original.html:1534
-  - input: — a
+  - input: a
     output: ə
     env: R_ if ə in an adjacent syllable
     raw: — a → ə / R_ if ə in an adjacent syllable
     source: index_diachronica_original.html:1535
-  - input: — i
+  - input: i
     output: ə
     env: _R if a frontal allophone of ə in an adjacent syllable
     raw: — i → ə / _R if a frontal allophone of ə in an adjacent syllable
     source: index_diachronica_original.html:1536
-  - input: — i
+  - input: i
     output: ə
     env: R_ if a frontal allophone of ə in an adjacent syllable
     raw: — i → ə / R_ if a frontal allophone of ə in an adjacent syllable
     source: index_diachronica_original.html:1537
-  - input: — u
+  - input: u
     output: ə
     env: _R if a backed allophone of ə in an adjacent syllable
     raw: — u → ə / _R if a backed allophone of ə in an adjacent syllable
     source: index_diachronica_original.html:1538
-  - input: — u
+  - input: u
     output: ə
     env: R_ if a backed allophone of ə in an adjacent syllable
     raw: — u → ə / R_ if a backed allophone of ə in an adjacent syllable
     source: index_diachronica_original.html:1539
-  - input: — i
+  - input: i
     output: a
     env: _R
     raw: — i → a / _R
     source: index_diachronica_original.html:1540
-  - input: — i
+  - input: i
     output: a
     env: R_
     raw: — i → a / R_
     source: index_diachronica_original.html:1541
-  - input: — a i
+  - input: a i
     output: aː eː
     env: _$”
     raw: — a i → aː eː / _%”
     source: index_diachronica_original.html:1542
-  - input: — u
+  - input: u
     output: ɔ
     env: _C{$,#}
     raw: — u → ɔ / _C{$,#}
     source: index_diachronica_original.html:1543
-  - input: — u
+  - input: u
     output: ∅
     exception: _Cː
     raw: — u → ∅ / ! _Cː
     source: index_diachronica_original.html:1544
-  - input: — aj aw
+  - input: aj aw
     output: eː oː
     raw: — aj aw → eː oː
     source: index_diachronica_original.html:1545
@@ -5869,12 +5869,12 @@ sections:
     env: _#
     raw: iw uj → {i,?} i / _#
     source: index_diachronica_original.html:2534
-  - input: — aj aw
+  - input: aj aw
     output: ej ow
     env: _#
     raw: — aj aw → ej ow / _#
     source: index_diachronica_original.html:2536
-  - input: — aj aw
+  - input: aj aw
     output: e ow
     env: _#
     raw: — aj aw → e ow / _#
@@ -6957,12 +6957,12 @@ sections:
     env: _#
     raw: '{iw,uj} → i / _#'
     source: index_diachronica_original.html:2840
-  - input: — aj aw
+  - input: aj aw
     output: i u
     env: _#
     raw: — aj aw → i u / _#
     source: index_diachronica_original.html:2842
-  - input: — aj aw
+  - input: aj aw
     output: aj aw
     env: _#
     raw: — aj aw → aj aw / _#
@@ -7028,12 +7028,12 @@ sections:
     output: h ∅
     raw: q h → h ∅
     source: index_diachronica_original.html:2862
-  - input: — aw aj
+  - input: aw aj
     output: əw əj
     env: _#
     raw: — aw aj → əw əj / _#
     source: index_diachronica_original.html:2864
-  - input: — aw aj
+  - input: aw aj
     output: aw aj
     env: _#
     raw: — aw aj → aw aj / _#
@@ -7083,12 +7083,12 @@ sections:
     env: _#
     raw: iw uj → ju i / _#
     source: index_diachronica_original.html:2877
-  - input: — əw əj
+  - input: əw əj
     output: i u
     env: _#
     raw: — əw əj → i u / _#
     source: index_diachronica_original.html:2879
-  - input: — aw aj
+  - input: aw aj
     output: e ó
     env: _#
     raw: — aw aj → e ó / _#
@@ -7200,12 +7200,12 @@ sections:
     env: _#
     raw: iw uj → {ju,i} oj / _#
     source: index_diachronica_original.html:2911
-  - input: — əw əj
+  - input: əw əj
     output: o e
     env: _#
     raw: — əw əj → o e / _#
     source: index_diachronica_original.html:2913
-  - input: — aw aj
+  - input: aw aj
     output: o aj
     env: _#
     raw: — aw aj → o aj / _#
@@ -7895,37 +7895,37 @@ sections:
     output: o e (sporadic)
     raw: u i → o e (sporadic)
     source: index_diachronica_original.html:3076
-  - input: — ə
+  - input: ə
     output: a
     env: _(C…)# (eventually spread to everywhere)
     raw: — ə → a / _(C…)# (eventually spread to everywhere)
     source: index_diachronica_original.html:3078
-  - input: — m p
+  - input: m p
     output: n t
     env: '{u,i}_'
     raw: — m p → n t / {u,i}_
     source: index_diachronica_original.html:3079
-  - input: — a u
+  - input: a u
     output: e uj
     env: _{t,s}#
     raw: — a u → e uj / _{t,s}#
     source: index_diachronica_original.html:3080
-  - input: — a
+  - input: a
     output: o
     env: _p#
     raw: — a → o / _p#
     source: index_diachronica_original.html:3081
-  - input: — u i
+  - input: u i
     output: uə iə
     env: _{k,ŋ,h,l,r}#
     raw: — u i → uə iə / _{k,ŋ,h,l,r}#
     source: index_diachronica_original.html:3082
-  - input: — {p,t,k} s
+  - input: '{p,t,k} s'
     output: ʔ h
     env: _#
     raw: — {p,t,k} s → ʔ h / _#
     source: index_diachronica_original.html:3083
-  - input: — {l,r}
+  - input: '{l,r}'
     output: ∅
     env: _# (retained across morpheme boundaries)
     raw: — {l,r} → ∅ / _# (retained across morpheme boundaries)
@@ -8127,39 +8127,39 @@ sections:
     output: ŋmʷ
     raw: mʷ → ŋmʷ
     source: index_diachronica_original.html:3142
-  - input: — iCV[- high]
+  - input: iCV[- high]
     output: aC
     raw: — iCV[- high] → aC
     source: index_diachronica_original.html:3144
-  - input: — eCV[+ mid]
+  - input: eCV[+ mid]
     output: ɛC
     raw: — eCV[+ mid] → ɛC
     source: index_diachronica_original.html:3145
-  - input: — eCV[+ low]
+  - input: eCV[+ low]
     output: aC
     raw: — eCV[+ low] → aC
     source: index_diachronica_original.html:3146
-  - input: — aCV[+ high]
+  - input: aCV[+ high]
     output: '{ɛ,œ}C'
     raw: — aCV[+ high] → {ɛ,œ}C
     source: index_diachronica_original.html:3147
-  - input: — aCa
+  - input: aCa
     output: '{ɘ,a}C'
     raw: — aCa → {ɘ,a}C
     source: index_diachronica_original.html:3148
-  - input: — oCV[+ high]
+  - input: oCV[+ high]
     output: øC
     raw: — oCV[+ high] → øC
     source: index_diachronica_original.html:3149
-  - input: — oCo
+  - input: oCo
     output: œC (sporadic)
     raw: — oCo → œC (sporadic)
     source: index_diachronica_original.html:3150
-  - input: — oCV[- high]
+  - input: oCV[- high]
     output: ɔC
     raw: — oCV[- high] → ɔC
     source: index_diachronica_original.html:3151
-  - input: — uCV[- high]
+  - input: uCV[- high]
     output: oC
     raw: — uCV[- high] → oC
     source: index_diachronica_original.html:3152
@@ -12784,12 +12784,12 @@ sections:
     env: _C{u,i} “(highly sporadic)”
     raw: o e → u i / _C{u,i} “(highly sporadic)”
     source: index_diachronica_original.html:4567
-  - input: — i(ː) e(ː)
+  - input: i(ː) e(ː)
     output: u(ː) o(ː)
     env: _ɭ
     raw: — i(ː) e(ː) → u(ː) o(ː) / _ɭ
     source: index_diachronica_original.html:4569
-  - input: — eCə oCə
+  - input: eCə oCə
     output: Ceː Coː
     env: '#_'
     raw: '— eCə oCə → Ceː Coː / #_'
@@ -16306,119 +16306,119 @@ sections:
   - raw: Late Proto-Celtic
     source: index_diachronica_original.html:5487
   rules:
-  - input: — h₁e h₂e h₃e
+  - input: h₁e h₂e h₃e
     output: e a o
     raw: — h₁e h₂e h₃e → e a o
     source: index_diachronica_original.html:5466
-  - input: — eh₁ eh₂ eh₃
+  - input: eh₁ eh₂ eh₃
     output: eː aː oː
     raw: — eh₁ eh₂ eh₃ → eː aː oː
     source: index_diachronica_original.html:5467
-  - input: — H
+  - input: H
     output: a
     env: C_C
     exception: '#_'
     raw: '— H → a / C_C ! #_'
     source: index_diachronica_original.html:5468
-  - input: — SS
+  - input: SS
     output: sː
     raw: — SS → sː
     source: index_diachronica_original.html:5469
-  - input: — ∅
+  - input: ∅
     output: a
     env: CR_HC
     raw: — ∅ → a / CR_HC
     source: index_diachronica_original.html:5470
-  - input: — H
+  - input: H
     output: ∅
     env: V_C when pretonic
     raw: — H → ∅ / V_C when pretonic
     source: index_diachronica_original.html:5471
-  - input: — H
+  - input: H
     output: a
     env: '#R_C'
     raw: '— H → a / #R_C'
     source: index_diachronica_original.html:5472
-  - input: — Ḱ
+  - input: Ḱ
     output: K
     raw: — Ḱ → K
     source: index_diachronica_original.html:5473
-  - input: — ɡʷ
+  - input: ɡʷ
     output: b
     raw: — ɡʷ → b
     source: index_diachronica_original.html:5475
-  - input: — h
+  - input: h
     output: ∅
     env: C_
     raw: — h → ∅ / C_
     source: index_diachronica_original.html:5476
-  - input: — ∅
+  - input: ∅
     output: i
     env: C{l,r}S
     raw: — ∅ → i / C{l,r}S
     source: index_diachronica_original.html:5477
-  - input: — e
+  - input: e
     output: a
     env: _Ra (short a only), though “[t]he e was often restored by analogy”
     raw: — e → a / _Ra (short a only), though “[t]he e was often restored by analogy”
     source: index_diachronica_original.html:5478
-  - input: — ∅
+  - input: ∅
     output: a
     env: C_RC
     raw: — ∅ → a / C_RC
     source: index_diachronica_original.html:5479
-  - input: — H
+  - input: H
     output: ∅
     env: “if not in a syllabic position”
     raw: — H → ∅ / “if not in a syllabic position”
     source: index_diachronica_original.html:5480
-  - input: — p…kʷ
+  - input: p…kʷ
     output: kʷ…kʷ
     raw: — p…kʷ → kʷ…kʷ
     source: index_diachronica_original.html:5481
-  - input: — eː
+  - input: eː
     output: iː
     raw: — eː → iː
     source: index_diachronica_original.html:5482
-  - input: — oː
+  - input: oː
     output: uː
     env: in U#
     raw: — oː → uː / in U#
     source: index_diachronica_original.html:5483
-  - input: — Vː
+  - input: Vː
     output: V[-long]
     env: _RC
     raw: — Vː → V[-long] / _RC
     source: index_diachronica_original.html:5484
-  - input: — C₁C₂
+  - input: C₁C₂
     output: xC₂
     env: if C₂ was a plosive or s
     raw: — C₁C₂ → xC₂ / if C₂ was a plosive or s
     source: index_diachronica_original.html:5485
-  - input: — p
+  - input: p
     output: b
     env: _{r,l}
     raw: — p → b / _{r,l}
     source: index_diachronica_original.html:5486
-  - input: — p
+  - input: p
     output: w
     env: B_N
     raw: — p → w / B_N
     source: index_diachronica_original.html:5488
-  - input: — p
+  - input: p
     output: f
     raw: — p → f
     source: index_diachronica_original.html:5489
-  - input: — oː ej
+  - input: oː ej
     output: aː eː
     raw: — oː ej → aː eː
     source: index_diachronica_original.html:5490
-  - input: — e
+  - input: e
     output: o
     env: _w
     raw: — e → o / _w
     source: index_diachronica_original.html:5491
-  - input: — u
+  - input: u
     output: o
     env: _wO
     raw: — u → o / _wO
@@ -16584,27 +16584,27 @@ sections:
     env: _H (includes diphthongs)
     raw: Vː → V[-long] / _H (includes diphthongs)
     source: index_diachronica_original.html:5529
-  - input: — e
+  - input: e
     output: i
     env: _(C…)#
     raw: — e → i / _(C…)#
     source: index_diachronica_original.html:5531
-  - input: — o
+  - input: o
     output: a
     env: _{(C…),u}#
     raw: — o → a / _{(C…),u}#
     source: index_diachronica_original.html:5532
-  - input: — {ai,oi}
+  - input: '{ai,oi}'
     output: iː
     env: _#
     raw: — {ai,oi} → iː / _#
     source: index_diachronica_original.html:5533
-  - input: — i u
+  - input: i u
     output: e o
     env: _C(…C){a(ː),e(ː),o(ː)}
     raw: — i u → e o / _C(…C){a(ː),e(ː),o(ː)}
     source: index_diachronica_original.html:5535
-  - input: — e o
+  - input: e o
     output: i u
     env: _C(…C){H,j}
     raw: — e o → i u / _C(…C){H,j}
@@ -16623,12 +16623,12 @@ sections:
     output: K
     raw: Kʷ → K
     source: index_diachronica_original.html:5539
-  - input: — n
+  - input: n
     output: ∅
     env: '{i,o,u}_{p,t,k,s}'
     raw: — n → ∅ / {i,o,u}_{p,t,k,s}
     source: index_diachronica_original.html:5541
-  - input: — {a,e}n
+  - input: '{a,e}n'
     output: eː
     env: _{p t k s}
     raw: — {a,e}n → eː / _{p t k s}
@@ -16658,38 +16658,38 @@ sections:
     env: else
     raw: w → v / else
     source: index_diachronica_original.html:5547
-  - input: — {p,t}
+  - input: '{p,t}'
     output: ∅
     env: '#s_r'
     raw: '— {p,t} → ∅ / #s_r'
     source: index_diachronica_original.html:5549
-  - input: — {p,t}
+  - input: '{p,t}'
     output: ∅
     env: '#s_ “(although it says that occasionally st > t'
     exception: '#_)”'
     raw: '— {p,t} → ∅ / #s_ “(although it says that occasionally st > t / #_)”'
     source: index_diachronica_original.html:5550
-  - input: — s
+  - input: s
     output: ∅
     env: '[anything]{l,r}_O'
     raw: — s → ∅ / [anything]{l,r}_O
     source: index_diachronica_original.html:5551
-  - input: — hn hm
+  - input: hn hm
     output: nː mː
     env: '[anything]_ (“[t]his change is a bit speculative”)'
     raw: — hn hm → nː mː / [anything]_ (“[t]his change is a bit speculative”)
     source: index_diachronica_original.html:5552
-  - input: — st zd
+  - input: st zd
     output: sː dː
     env: '[anything]_'
     raw: — st zd → sː dː / [anything]_
     source: index_diachronica_original.html:5554
-  - input: — {l,h}l {l,h}r l{p,s,n} r{p,s} ln
+  - input: '{l,h}l {l,h}r l{p,s,n} r{p,s} ln'
     output: lː rː lː rː (lː?)
     env: '[anything]_'
     raw: — {l,h}l {l,h}r l{p,s,n} r{p,s} ln → lː rː lː rː (lː?) / [anything]_
     source: index_diachronica_original.html:5555
-  - input: — Cː
+  - input: Cː
     output: C[-long]
     raw: — Cː → C[-long]
     source: index_diachronica_original.html:5556
@@ -16731,16 +16731,16 @@ sections:
     output: ∅
     raw: j → ∅
     source: index_diachronica_original.html:5563
-  - input: — Vː
+  - input: Vː
     output: V[-long]
     raw: — Vː → V[-long]
     source: index_diachronica_original.html:5565
-  - input: — a
+  - input: a
     output: e
     env: _#
     raw: — a → e / _#
     source: index_diachronica_original.html:5566
-  - input: — {e,o}
+  - input: '{e,o}'
     output: a
     env: _[anything]
     raw: — {e,o} → a / _[anything]
@@ -17093,41 +17093,41 @@ sections:
       which in some cases was due to the influence of the corresponding strong verbs”
     source: index_diachronica_original.html:5682
   rules:
-  - input: — o e
+  - input: o e
     output: u i
     raw: — o e → u i
     source: index_diachronica_original.html:5650
-  - input: — u
+  - input: u
     output: ɔ
     env: _{r,h} (unless this r “arose from older s by assimilation”)
     raw: — u → ɔ / _{r,h} (unless this r “arose from older s by assimilation”)
     source: index_diachronica_original.html:5651
-  - input: — i
+  - input: i
     output: ɛ
     env: _{r,h,ʍ}
     raw: — i → ɛ / _{r,h,ʍ}
     source: index_diachronica_original.html:5652
-  - input: — æː
+  - input: æː
     output: eː
     raw: — æː → eː
     source: index_diachronica_original.html:5653
-  - input: — ew
+  - input: ew
     output: iw
     raw: — ew → iw
     source: index_diachronica_original.html:5654
-  - input: — V[- long]
+  - input: V[- long]
     output: ∅
     env: _#
     exception: V = u
     raw: — V[- long] → ∅ / _# ! V = u
     source: index_diachronica_original.html:5656
-  - input: — V[- long]
+  - input: V[- long]
     output: ∅
     env: U_C#
     exception: V = u
     raw: — V[- long] → ∅ / U_C# ! V = u
     source: index_diachronica_original.html:5657
-  - input: — aj
+  - input: aj
     output: a
     env: U_#
     raw: — aj → a / U_#
@@ -18101,73 +18101,73 @@ sections:
     output: ou ɑː → ʌu {ɑ,ɔ}
     raw: ol al → ou ɑː → ʌu {ɑ,ɔ}
     source: index_diachronica_original.html:5894
-  - input: — ai
+  - input: ai
     output: ɛi → əi
     env: when stem-final
     raw: — ai → ɛi → əi / when stem-final
     source: index_diachronica_original.html:5896
-  - input: — uː
+  - input: uː
     output: ʌu
     env: when-stem final, in northern varieties
     raw: — uː → ʌu / when-stem final, in northern varieties
     source: index_diachronica_original.html:5897
-  - input: — øː
+  - input: øː
     output: wi
     env: '{k,ɡ}_ (in Mid Northern dialects)'
     raw: — øː → wi / {k,ɡ}_ (in Mid Northern dialects)
     source: index_diachronica_original.html:5898
-  - input: — øː
+  - input: øː
     output: i (in northern dialects)
     raw: — øː → i (in northern dialects)
     source: index_diachronica_original.html:5899
-  - input: — øː
+  - input: øː
     output: (j){u,ʌ}
     env: _{k,x} (outcome varies depending upon dialect)
     raw: — øː → (j){u,ʌ} / _{k,x} (outcome varies depending upon dialect)
     source: index_diachronica_original.html:5900
-  - input: — a
+  - input: a
     output: i
     env: _n (in northern varieties)
     raw: — a → i / _n (in northern varieties)
     source: index_diachronica_original.html:5901
-  - input: — a
+  - input: a
     output: e
     env: _n (otherwise)
     raw: — a → e / _n (otherwise)
     source: index_diachronica_original.html:5902
-  - input: — a
+  - input: a
     output: '{ɛ,e}'
     env: _rC
     raw: — a → {ɛ,e} / _rC
     source: index_diachronica_original.html:5903
-  - input: — ai oi ui ei au ou iu ɛ(o)u
+  - input: ai oi ui ei au ou iu ɛ(o)u
     output: eː oe əi iː {ɑː,ɔː} ʌu ju j(ʌ)u
     raw: — ai oi ui ei au ou iu ɛ(o)u → eː oe əi iː {ɑː,ɔː} ʌu ju j(ʌ)u
     source: index_diachronica_original.html:5904
-  - input: — ɛː
+  - input: ɛː
     output: ɛi (→ əi?)
     env: in some northern varieties
     raw: — ɛː → ɛi (→ əi?) / in some northern varieties
     source: index_diachronica_original.html:5905
-  - input: — iː eː ɛː aː oː uː {øː,yː}
+  - input: iː eː ɛː aː oː uː {øː,yː}
     output: əi i {i,e} e o u ø
     raw: — iː eː ɛː aː oː uː {øː,yː} → əi i {i,e} e o u ø
     source: index_diachronica_original.html:5906
-  - input: — æ
+  - input: æ
     output: ɛ
     env: _C[+alveolar]
     raw: — æ → ɛ / _C[+alveolar]
     source: index_diachronica_original.html:5907
-  - input: — a ɔ u
+  - input: a ɔ u
     output: '{a,ɑ} ɔ ʌ'
     raw: — a ɔ u → {a,ɑ} ɔ ʌ
     source: index_diachronica_original.html:5908
-  - input: — V
+  - input: V
     output: Vː
     env: _{r,F[+voiced],$,#}
     raw: — V → Vː / _{r,F[+voiced],$,#}
     source: index_diachronica_original.html:5910
-  - input: — əi
+  - input: əi
     output: aɪ
     env: _{r,F[+voiced],$,#} (pursuant to the above)
     raw: — əi → aɪ / _{r,F[+voiced],$,#} (pursuant to the above)
@@ -18849,12 +18849,12 @@ sections:
     raw: uː → ʌu (? conjectured based on the above diphthongization and on developments
       in Polder Dutch vowels)
     source: index_diachronica_original.html:6076
-  - input: — x ɣ
+  - input: x ɣ
     output: '{x,χ} {ɣ,x,χ}'
     env: in northern dialects
     raw: — x ɣ → {x,χ} {ɣ,x,χ} / in northern dialects
     source: index_diachronica_original.html:6078
-  - input: — x ɣ
+  - input: x ɣ
     output: ç ʝ
     env: in southern dialects (the articles use velar phonemes here but describes
       them as “front velar”; based on the description and on representations in other
@@ -21978,22 +21978,22 @@ sections:
     env: u_
     raw: w → m / u_
     source: index_diachronica_original.html:6810
-  - input: — r
+  - input: r
     output: ∅
     env: '#_'
     raw: '— r → ∅ / #_'
     source: index_diachronica_original.html:6812
-  - input: — r
+  - input: r
     output: ∅
     env: _# “sometimes??”
     raw: — r → ∅ / _# “sometimes??”
     source: index_diachronica_original.html:6813
-  - input: — e(ː)
+  - input: e(ː)
     output: a(ː)
     env: _R “sometimes??”
     raw: — e(ː) → a(ː) / _R “sometimes??”
     source: index_diachronica_original.html:6814
-  - input: — e(ː)
+  - input: e(ː)
     output: a(ː)
     env: “when unstressed?”
     raw: — e(ː) → a(ː) / “when unstressed?”
@@ -22867,12 +22867,12 @@ sections:
     output: ɛ
     raw: ɛː → ɛ
     source: index_diachronica_original.html:7025
-  - input: — {ь,ъ}
+  - input: '{ь,ъ}'
     output: e
     env: iambic counting from U# or a syllable not containing a yer
     raw: — {ь,ъ} → e / iambic counting from U# or a syllable not containing a yer
     source: index_diachronica_original.html:7027
-  - input: — {ь,ъ}
+  - input: '{ь,ъ}'
     output: ∅]
     env: in even syllables counting iambic from U# or a syllable not containing a
       yer
@@ -24547,12 +24547,12 @@ sections:
     env: V_V
     raw: k j → ɡ ʒ / V_V
     source: index_diachronica_original.html:7406
-  - input: — d
+  - input: d
     output: z → ∅
     env: V_V
     raw: — d → z → ∅ / V_V
     source: index_diachronica_original.html:7408
-  - input: — d
+  - input: d
     output: w
     env: _V#
     raw: — d → w / _V#
@@ -24788,117 +24788,117 @@ sections:
       resurfaces)”
     source: index_diachronica_original.html:7587
   rules:
-  - input: — h
+  - input: h
     output: ∅
     raw: — h → ∅
     source: index_diachronica_original.html:7456
-  - input: — V₀V₀
+  - input: V₀V₀
     output: V₀ː
     raw: — V₀V₀ → V₀ː
     source: index_diachronica_original.html:7457
-  - input: — n
+  - input: n
     output: ∅
     env: _{f,v,s}
     raw: — n → ∅ / _{f,v,s}
     source: index_diachronica_original.html:7458
-  - input: — r
+  - input: r
     output: s
     env: _s
     raw: — r → s / _s
     source: index_diachronica_original.html:7459
-  - input: — {m,n}
+  - input: '{m,n}'
     output: ∅
     env: _# in polysyllables
     raw: — {m,n} → ∅ / _# in polysyllables
     source: index_diachronica_original.html:7460
-  - input: — m
+  - input: m
     output: n
     env: _#
     raw: — m → n / _#
     source: index_diachronica_original.html:7461
-  - input: — u
+  - input: u
     output: ∅
     env: CC_V
     raw: — u → ∅ / CC_V
     source: index_diachronica_original.html:7462
-  - input: — w
+  - input: w
     output: ɡu
     env: “from Germanic loanwords”
     raw: — w → ɡu / “from Germanic loanwords”
     source: index_diachronica_original.html:7463
-  - input: — V
+  - input: V
     output: V:[+stress]
     env: V:[+stress]Sr_
     raw: — V → ”V / ”VSr_
     source: index_diachronica_original.html:7464
-  - input: — V
+  - input: V
     output: V:[+stress]
     env: _C*”{i,e}V
     raw: — V → ”V / _C*”{i,e}V
     source: index_diachronica_original.html:7465
-  - input: — {i,e}
+  - input: '{i,e}'
     output: j
     env: _V
     raw: — {i,e} → j / _V
     source: index_diachronica_original.html:7466
-  - input: — aː
+  - input: aː
     output: a
     raw: — aː → a
     source: index_diachronica_original.html:7468
-  - input: — (a)e
+  - input: (a)e
     output: è
     raw: — (a)e → è
     source: index_diachronica_original.html:7469
-  - input: — {eː,i,oe}
+  - input: '{eː,i,oe}'
     output: é
     raw: — {eː,i,oe} → é
     source: index_diachronica_original.html:7470
-  - input: — iː oː
+  - input: iː oː
     output: i ó
     raw: — iː oː → i ó
     source: index_diachronica_original.html:7471
-  - input: — o
+  - input: o
     output: ò
     raw: — o → ò
     source: index_diachronica_original.html:7472
-  - input: — u
+  - input: u
     output: ó
     exception: _iː
     raw: — u → ó / !_iː
     source: index_diachronica_original.html:7473
-  - input: — uː
+  - input: uː
     output: u
     raw: — uː → u
     source: index_diachronica_original.html:7474
-  - input: — aː
+  - input: aː
     output: a
     raw: — aː → a
     source: index_diachronica_original.html:7476
-  - input: — {e(ː),i,ae,oe}
+  - input: '{e(ː),i,ae,oe}'
     output: e
     raw: — {e(ː),i,ae,oe} → e
     source: index_diachronica_original.html:7477
-  - input: — iː
+  - input: iː
     output: i
     raw: — iː → i
     source: index_diachronica_original.html:7478
-  - input: — {o(ː),u}
+  - input: '{o(ː),u}'
     output: o
     raw: — {o(ː),u} → o
     source: index_diachronica_original.html:7479
-  - input: — aː
+  - input: aː
     output: a
     raw: — aː → a
     source: index_diachronica_original.html:7481
-  - input: — {e(ː),i,ae,oe}
+  - input: '{e(ː),i,ae,oe}'
     output: e
     raw: — {e(ː),i,ae,oe} → e
     source: index_diachronica_original.html:7482
-  - input: — iː oː
+  - input: iː oː
     output: i o
     raw: — iː oː → i o
     source: index_diachronica_original.html:7483
-  - input: — u(ː)
+  - input: u(ː)
     output: o
     exception: _V (?)
     raw: — u(ː) → o / except _V (?)
@@ -25094,24 +25094,24 @@ sections:
     env: V_a
     raw: kʷ → j{v,u} / V_a
     source: index_diachronica_original.html:7523
-  - input: — (k)kj
+  - input: (k)kj
     output: ts
     raw: — (k)kj → ts
     source: index_diachronica_original.html:7525
-  - input: — ɡ
+  - input: ɡ
     output: ∅
     env: _j
     raw: — ɡ → ∅ / _j
     source: index_diachronica_original.html:7526
-  - input: — pj
+  - input: pj
     output: tʃ
     raw: — pj → tʃ
     source: index_diachronica_original.html:7527
-  - input: — {b,v}j
+  - input: '{b,v}j'
     output: dʒ
     raw: — {b,v}j → dʒ
     source: index_diachronica_original.html:7528
-  - input: — m{ɲ,j}
+  - input: m{ɲ,j}
     output: ndʒ
     raw: — m{ɲ,j} → ndʒ
     source: index_diachronica_original.html:7529
@@ -26140,46 +26140,46 @@ sections:
     raw: VN → Vː / _S (except for the prefixes con-, in-); I’m assuming this change
       happened in Vulgar Latin and then vowel length went to quality
     source: index_diachronica_original.html:7739
-  - input: — ɪ
+  - input: ɪ
     output: e
     raw: — ɪ → e
     source: index_diachronica_original.html:7741
-  - input: — ʊ
+  - input: ʊ
     output: o (this change seems to have happened later, hence is listed separately)
     raw: — ʊ → o (this change seems to have happened later, hence is listed separately)
     source: index_diachronica_original.html:7742
-  - input: — ɔ
+  - input: ɔ
     output: y
     env: _{u,P,k,ɡ,i} (in northwestern dialects)
     raw: — ɔ → y / _{u,P,k,ɡ,i} (in northwestern dialects)
     source: index_diachronica_original.html:7743
-  - input: — ɔ
+  - input: ɔ
     output: ɥe
     env: _{u,P,k,ɡ,i} (in western dialects, Limousin, and Auvergne)
     raw: — ɔ → ɥe / _{u,P,k,ɡ,i} (in western dialects, Limousin, and Auvergne)
     source: index_diachronica_original.html:7744
-  - input: — ɔ
+  - input: ɔ
     output: ɥo
     env: _{u,P,k,ɡ,i} (in Languedoc)
     raw: — ɔ → ɥo / _{u,P,k,ɡ,i} (in Languedoc)
     source: index_diachronica_original.html:7745
-  - input: — ɔ
+  - input: ɔ
     output: '{ɥe,ɥo,ɔ}'
     env: _{u,P,k,ɡ,i} (in southern dialects)
     raw: — ɔ → {ɥe,ɥo,ɔ} / _{u,P,k,ɡ,i} (in southern dialects)
     source: index_diachronica_original.html:7746
-  - input: — a
+  - input: a
     output: a
     env: _N (Rouergue, Limousin, Auvergne, Dauphiné)
     raw: — a → a / _N (Rouergue, Limousin, Auvergne, Dauphiné)
     source: index_diachronica_original.html:7747
-  - input: — a
+  - input: a
     output: a
     env: _# in monosyllables and oxytones (Rouergue, Limousin, Auvergne, Dauphiné)
     raw: — a → a / _# in monosyllables and oxytones (Rouergue, Limousin, Auvergne,
       Dauphiné)
     source: index_diachronica_original.html:7748
-  - input: — a
+  - input: a
     output: å (I have no idea what is going on here. Grandgent seems to distinguish
       an open and close /a/, and I have listed his open a as /å/, which seems to have
       been distinct from /ɔ/, but beyond this section it doesn’t really seem to matter
@@ -26189,7 +26189,7 @@ sections:
       been distinct from /ɔ/, but beyond this section it doesn’t really seem to matter
       very much)
     source: index_diachronica_original.html:7749
-  - input: — å ɛ ɔ
+  - input: å ɛ ɔ
     output: a e o
     env: _N (in Limousin and neighboring regions, the last two particularly in Limousin,
       Languedoc, and Gascon, though when _ɲ this change may have been blocked)
@@ -26197,146 +26197,146 @@ sections:
       in Limousin, Languedoc, and Gascon, though when _ɲ this change may have been
       blocked)
     source: index_diachronica_original.html:7750
-  - input: — ɛ ɔ
+  - input: ɛ ɔ
     output: jɛ wɔ (intermittent, “least common in the southwest”)
     raw: — ɛ ɔ → jɛ wɔ (intermittent, “least common in the southwest”)
     source: index_diachronica_original.html:7751
-  - input: — e
+  - input: e
     output: i
     env: _V (and possibly V_?)
     raw: — e → i / _V (and possibly V_?)
     source: index_diachronica_original.html:7752
-  - input: — e
+  - input: e
     output: i
     env: _(C…)i{C(C…)V,#}
     raw: — e → i / _(C…)i{C(C…)V,#}
     source: index_diachronica_original.html:7753
-  - input: — ɛ
+  - input: ɛ
     output: jɛ
     env: _{u,i,ʎ,rʲ,ʃ,ʒ,j,tʃ,dʒ} (except in some northern and western dialects, or
       if this u ← l or if this i ← ð)
     raw: — ɛ → jɛ / _{u,i,ʎ,rʲ,ʃ,ʒ,j,tʃ,dʒ} (except in some northern and western dialects,
       or if this u ← l or if this i ← ð)
     source: index_diachronica_original.html:7754
-  - input: — ju
+  - input: ju
     output: jeu
     raw: — ju → jeu
     source: index_diachronica_original.html:7755
-  - input: — o
+  - input: o
     output: y
     env: _{tʃ,dʒ,it,id} (did not occur in Dauphiné)
     raw: — o → y / _{tʃ,dʒ,it,id} (did not occur in Dauphiné)
     source: index_diachronica_original.html:7756
-  - input: — o
+  - input: o
     output: y
     env: _ɲ (in northern and western dialects)
     raw: — o → y / _ɲ (in northern and western dialects)
     source: index_diachronica_original.html:7757
-  - input: — o
+  - input: o
     output: y
     env: _i# (in Bordeaux, Auvergne, and some of Languedoc)
     raw: — o → y / _i# (in Bordeaux, Auvergne, and some of Languedoc)
     source: index_diachronica_original.html:7758
-  - input: — ɔ
+  - input: ɔ
     output: '{ɔ,we} (in southwestern dialects)'
     raw: — ɔ → {ɔ,we} (in southwestern dialects)
     source: index_diachronica_original.html:7759
-  - input: — u
+  - input: u
     output: y
     raw: — u → y
     source: index_diachronica_original.html:7760
-  - input: — o
+  - input: o
     output: u (during the literary period)
     raw: — o → u (during the literary period)
     source: index_diachronica_original.html:7761
-  - input: — E
+  - input: E
     output: ∅
     env: _e
     raw: — E → ∅ / _e
     source: index_diachronica_original.html:7763
-  - input: — B
+  - input: B
     output: ∅
     env: _o
     raw: — B → ∅ / _o
     source: index_diachronica_original.html:7764
-  - input: — E
+  - input: E
     output: j (presumably in the vicinity of another vowel)
     raw: — E → j (presumably in the vicinity of another vowel)
     source: index_diachronica_original.html:7765
-  - input: — V
+  - input: V
     output: ∅ (though /a/ seemed to resist this)
     raw: — V → ∅ (though /a/ seemed to resist this)
     source: index_diachronica_original.html:7766
-  - input: — {a,œ,e,i}
+  - input: '{a,œ,e,i}'
     output: e (here, 〈œ〉 denotes the reflex of the Latin vowel written this way, not
       a front rounded vowel)
     raw: — {a,œ,e,i} → e (here, 〈œ〉 denotes the reflex of the Latin vowel written
       this way, not a front rounded vowel)
     source: index_diachronica_original.html:7768
-  - input: — u
+  - input: u
     output: o
     raw: — u → o
     source: index_diachronica_original.html:7769
-  - input: — au
+  - input: au
     output: a
     env: _(C…)u
     raw: — au → a / _(C…)u
     source: index_diachronica_original.html:7770
-  - input: — V
+  - input: V
     output: ∅
     env: _r (seemed to be an intermittent change)
     raw: — V → ∅ / _r (seemed to be an intermittent change)
     source: index_diachronica_original.html:7771
-  - input: — V
+  - input: V
     output: ∅ (again, /a/ seemed to resist this change, which was itself generally
       blocked by analogy)
     raw: — V → ∅ (again, /a/ seemed to resist this change, which was itself generally
       blocked by analogy)
     source: index_diachronica_original.html:7774
-  - input: — V
+  - input: V
     output: ∅
     env: “penult of paroxytones”, though /a/ often remained “as an indistinct e”,
       probably /ə/
     raw: — V → ∅ / “penult of paroxytones”, though /a/ often remained “as an indistinct
       e”, probably /ə/
     source: index_diachronica_original.html:7776
-  - input: — CVK
+  - input: CVK
     output: CVj (intermittent if C was a resonant)
     raw: — CVK → CVj (intermittent if C was a resonant)
     source: index_diachronica_original.html:7779
-  - input: — V
+  - input: V
     output: ∅
     env: lv_r (dialect-dependent)
     raw: — V → ∅ / lv_r (dialect-dependent)
     source: index_diachronica_original.html:7780
-  - input: — e
+  - input: e
     output: i
     env: _(C…)i(C…)#
     raw: — e → i / _(C…)i(C…)#
     source: index_diachronica_original.html:7781
-  - input: — V
+  - input: V
     output: ∅
     env: R_(C…)
     raw: — V → ∅ / R_(C…)
     source: index_diachronica_original.html:7784
-  - input: — a
+  - input: a
     output: o in most dialects
     exception: Gascon and Languedoc; final -as remained in “Limousin and some others”
     raw: — a → o in most dialects except Gascon and Languedoc; final -as remained
       in “Limousin and some others”
     source: index_diachronica_original.html:7786
-  - input: — e u
+  - input: e u
     output: e o
     env: _nt#
     raw: — e u → e o / _nt#
     source: index_diachronica_original.html:7788
-  - input: — V
+  - input: V
     output: '“indistinct e” (probably /ə/) if dropping it would create ugly consonant
       clusters:'
     raw: '— V → “indistinct e” (probably /ə/) if dropping it would create ugly consonant
       clusters:'
     source: index_diachronica_original.html:7792
-  - input: — V
+  - input: V
     output: e “in many late words”
     raw: — V → e “in many late words”
     source: index_diachronica_original.html:7797
@@ -26450,7 +26450,7 @@ sections:
     env: _j
     raw: '{d,ɡ} → ∅ / _j'
     source: index_diachronica_original.html:7820
-  - input: — Loaned w
+  - input: Loaned w
     output: ɡw
     raw: — Loaned w → ɡw
     source: index_diachronica_original.html:7824
@@ -27275,56 +27275,56 @@ sections:
     env: _(C…)”{i,e}V
     raw: V → ”V / _(C…)”{i,e}V
     source: index_diachronica_original.html:8013
-  - input: — aː
+  - input: aː
     output: a
     raw: — aː → a
     source: index_diachronica_original.html:8015
-  - input: — (a)e
+  - input: (a)e
     output: ɛ
     raw: — (a)e → ɛ
     source: index_diachronica_original.html:8016
-  - input: — eː,i,oe
+  - input: eː,i,oe
     output: e
     raw: — eː,i,oe → e
     source: index_diachronica_original.html:8017
-  - input: — iː o(ː) u(ː)
+  - input: iː o(ː) u(ː)
     output: i o u
     raw: — iː o(ː) u(ː) → i o u
     source: index_diachronica_original.html:8018
-  - input: — aː
+  - input: aː
     output: a
     raw: — aː → a
     source: index_diachronica_original.html:8020
-  - input: — {e(ː),i,ae,oe}
+  - input: '{e(ː),i,ae,oe}'
     output: e
     raw: — {e(ː),i,ae,oe} → e
     source: index_diachronica_original.html:8021
-  - input: — iː
+  - input: iː
     output: i
     raw: — iː → i
     source: index_diachronica_original.html:8022
-  - input: — {o(ː),u}
+  - input: '{o(ː),u}'
     output: o
     raw: — {o(ː),u} → o
     source: index_diachronica_original.html:8023
-  - input: — aː
+  - input: aː
     output: a
     raw: — aː → a
     source: index_diachronica_original.html:8025
-  - input: — {e(ː),i,ae,oe}
+  - input: '{e(ː),i,ae,oe}'
     output: e
     env: _#
     raw: — {e(ː),i,ae,oe} → e / _#
     source: index_diachronica_original.html:8026
-  - input: — iː
+  - input: iː
     output: i
     raw: — iː → i
     source: index_diachronica_original.html:8027
-  - input: — {o(ː),uː}
+  - input: '{o(ː),uː}'
     output: o
     raw: — {o(ː),uː} → o
     source: index_diachronica_original.html:8028
-  - input: — u
+  - input: u
     output: o
     exception: V_
     raw: — u → o / ! V_
@@ -27874,18 +27874,18 @@ sections:
     output: 'i e o u; near j, in particular environments:'
     raw: 'Raising of e {ɛ,a} ɔ o → i e o u; near j, in particular environments:'
     source: index_diachronica_original.html:8143
-  - input: — e
+  - input: e
     output: i
     env: _Cj
     exception: C = p
     raw: — e → i / _Cj ! C = p
     source: index_diachronica_original.html:8144
-  - input: — ɛ ɔ u
+  - input: ɛ ɔ u
     output: e o u
     env: _(C)j
     raw: — ɛ ɔ u → e o u / _(C)j
     source: index_diachronica_original.html:8145
-  - input: — a
+  - input: a
     output: e
     env: _j
     raw: — a → e / _j
@@ -27991,74 +27991,74 @@ sections:
     env: V_V
     raw: d ɡ → ð ɣ / V_V
     source: index_diachronica_original.html:8168
-  - input: — t
+  - input: t
     output: ∅
     env: _m
     raw: — t → ∅ / _m
     source: index_diachronica_original.html:8172
-  - input: — d
+  - input: d
     output: ∅
     env: _n (sometimes)
     raw: — d → ∅ / _n (sometimes)
     source: index_diachronica_original.html:8173
-  - input: — mn
+  - input: mn
     output: ɲ (sometimes)
     raw: — mn → ɲ (sometimes)
     source: index_diachronica_original.html:8174
-  - input: — tst dzd
+  - input: tst dzd
     output: ts dz
     raw: — tst dzd → ts dz
     source: index_diachronica_original.html:8175
-  - input: — Vdz
+  - input: Vdz
     output: ∅
     env: '{nts,ndz,rdz_'
     raw: — Vdz → ∅ / {nts,ndz,rdz_
     source: index_diachronica_original.html:8176
-  - input: — ndzVɡ
+  - input: ndzVɡ
     output: nɡ
     raw: — ndzVɡ → nɡ
     source: index_diachronica_original.html:8177
-  - input: — mpVt skVp spVt stVk
+  - input: mpVt skVp spVt stVk
     output: nt sp st sk
     raw: — mpVt skVp spVt stVk → nt sp st sk
     source: index_diachronica_original.html:8178
-  - input: — n
+  - input: n
     output: '{l,ɾ}'
     env: _m
     raw: — n → {l,ɾ} / _m
     source: index_diachronica_original.html:8180
-  - input: — n
+  - input: n
     output: '{ɾ,l}'
     env: nɡ_
     raw: — n → {ɾ,l} / nɡ_
     source: index_diachronica_original.html:8181
-  - input: — n
+  - input: n
     output: ɾ
     env: nd_
     raw: — n → ɾ / nd_
     source: index_diachronica_original.html:8182
-  - input: — dn dl
+  - input: dn dl
     output: nd ld
     raw: — dn dl → nd ld
     source: index_diachronica_original.html:8184
-  - input: — ml nɾ
+  - input: ml nɾ
     output: lm ɾn (sometimes)
     raw: — ml nɾ → lm ɾn (sometimes)
     source: index_diachronica_original.html:8185
-  - input: — βɣ
+  - input: βɣ
     output: wɣ → ɣw
     raw: — βɣ → wɣ → ɣw
     source: index_diachronica_original.html:8186
-  - input: — ∅
+  - input: ∅
     output: b
     env: m_ɾ
     raw: — ∅ → b / m_ɾ
     source: index_diachronica_original.html:8188
-  - input: — mn ml
+  - input: mn ml
     output: mbɾ mbl
     raw: — mn ml → mbɾ mbl
     source: index_diachronica_original.html:8189
-  - input: — ∅
+  - input: ∅
     output: d
     env: n_ɾ
     raw: — ∅ → d / n_ɾ
@@ -42196,55 +42196,55 @@ sections:
     env: '{#,V}s_w'
     raw: ∅ → e / {#,V}s_w
     source: index_diachronica_original.html:12568
-  - input: — r
+  - input: r
     output: l
     raw: — r → l
     source: index_diachronica_original.html:12570
-  - input: — t
+  - input: t
     output: k
     env: _j
     raw: — t → k / _j
     source: index_diachronica_original.html:12571
-  - input: — k
+  - input: k
     output: t
     env: _j
     raw: — k → t / _j
     source: index_diachronica_original.html:12572
-  - input: — wə̃
+  - input: wə̃
     output: ũ
     env: '{h,s}_'
     raw: — wə̃ → ũ / {h,s}_
     source: index_diachronica_original.html:12573
-  - input: — j
+  - input: j
     output: ∅
     env: ts_
     raw: — j → ∅ / ts_
     source: index_diachronica_original.html:12574
-  - input: — t
+  - input: t
     output: tʃ
     env: _(h)j
     raw: — t → tʃ / _(h)j
     source: index_diachronica_original.html:12575
-  - input: — wh
+  - input: wh
     output: f
     raw: — wh → f
     source: index_diachronica_original.html:12576
-  - input: — ts
+  - input: ts
     output: tʃ
     env: _{(h)i,(h)j}
     raw: — ts → tʃ / _{(h)i,(h)j}
     source: index_diachronica_original.html:12578
-  - input: — t tʃ k(ʷ)
+  - input: t tʃ k(ʷ)
     output: d dʒ ɡ(ʷ)
     env: _{V,R}
     raw: — t tʃ k(ʷ) → d dʒ ɡ(ʷ) / _{V,R}
     source: index_diachronica_original.html:12579
-  - input: — s
+  - input: s
     output: ʃ
     env: _(h)j
     raw: — s → ʃ / _(h)j
     source: index_diachronica_original.html:12580
-  - input: — s
+  - input: s
     output: z
     env: '{#,V}_{V,R}'
     exception: R = j
@@ -42339,57 +42339,57 @@ sections:
       dialect”)
     raw: Vː → V[-long] _”C(C)(C)V (“this change happens only in the Ontario dialect”)
     source: index_diachronica_original.html:12601
-  - input: — ∅
+  - input: ∅
     output: e
     env: C_{n,l}V(H)#
     raw: — ∅ → e / C_{n,l}V(H)#
     source: index_diachronica_original.html:12603
-  - input: — ∅
+  - input: ∅
     output: o
     env: C_wV(H)#
     raw: — ∅ → o / C_wV(H)#
     source: index_diachronica_original.html:12604
-  - input: — ∅
+  - input: ∅
     output: i
     env: C_jV(H)#
     raw: — ∅ → i / C_jV(H)#
     source: index_diachronica_original.html:12605
-  - input: — Vː[+falling tone]C(C)V(H)
+  - input: Vː[+falling tone]C(C)V(H)
     output: V̊ː[+falling tone]C̊(C̊)V̊(H̊)
     env: _#
     raw: — Vː[+falling tone]C(C)V(H) → V̊ː[+falling tone]C̊(C̊)V̊(H̊) / _#
     source: index_diachronica_original.html:12606
-  - input: — CVː[+falling tone]
+  - input: CVː[+falling tone]
     output: C̊V̊ː[+falling tone]
     env: _#
     raw: — CVː[+falling tone] → C̊V̊ː[+falling tone] / _#
     source: index_diachronica_original.html:12607
-  - input: — CVʔ
+  - input: CVʔ
     output: C̊V̊ʔ̊
     env: _#
     raw: — CVʔ → C̊V̊ʔ̊ / _#
     source: index_diachronica_original.html:12608
-  - input: — V[-long]
+  - input: V[-long]
     output: V̊
     env: R_#
     raw: — V[-long] → V̊ / R_#
     source: index_diachronica_original.html:12609
-  - input: — OV[-long]
+  - input: OV[-long]
     output: O̊V̊
     env: _#
     raw: — OV[-long] → O̊V̊ / _#
     source: index_diachronica_original.html:12610
-  - input: — jV
+  - input: jV
     output: ∅
     env: Ci_(H)#
     raw: — jV → ∅ / Ci_(H)#
     source: index_diachronica_original.html:12611
-  - input: — ʔ
+  - input: ʔ
     output: h
     env: _C#
     raw: — ʔ → h / _C#
     source: index_diachronica_original.html:12612
-  - input: — R
+  - input: R
     output: R̊
     env: _#
     raw: — R → R̊ / _#
@@ -42636,17 +42636,17 @@ sections:
     env: k_n
     raw: ∅ → h / k_n
     source: index_diachronica_original.html:12672
-  - input: — t k(ʷ)
+  - input: t k(ʷ)
     output: d ɡ(ʷ)
     env: _{V,R}
     raw: — t k(ʷ) → d ɡ(ʷ) / _{V,R}
     source: index_diachronica_original.html:12674
-  - input: — s
+  - input: s
     output: ʃ
     env: _j
     raw: — s → ʃ / _j
     source: index_diachronica_original.html:12675
-  - input: — a e o
+  - input: a e o
     output: ə ɪ ʊ
     env: C_{C,i[-long]}
     raw: — a e o → ə ɪ ʊ / C_{C,i[-long]}
@@ -48114,19 +48114,19 @@ sections:
     raw: ʎ ɲ → jl jn (“common in Low Navarrese, Labourdin, and is even regular in
       the High Navarrese of Sakana”)
     source: index_diachronica_original.html:14191
-  - input: — V
+  - input: V
     output: ∅
     env: S_{ɾ,l} (more common in Roncalese and Salazarese, but also in Navarrese and
       Aescoan?)
     raw: — V → ∅ / S_{ɾ,l} (more common in Roncalese and Salazarese, but also in Navarrese
       and Aescoan?)
     source: index_diachronica_original.html:14193
-  - input: — V
+  - input: V
     output: ∅
     env: C[+ sibilant]_ɾ (Roncalese and Salazarese)
     raw: — V → ∅ / C[+ sibilant]_ɾ (Roncalese and Salazarese)
     source: index_diachronica_original.html:14194
-  - input: — V
+  - input: V
     output: ∅
     env: '{O,ɾ,r}_O (Roncalese, Salazarese, Navarrese, Aescoan)'
     raw: — V → ∅ / {O,ɾ,r}_O (Roncalese, Salazarese, Navarrese, Aescoan)
@@ -48573,12 +48573,12 @@ sections:
     output: '{a,ɑ} ɔ ʌ'
     raw: a ɔ u → {a,ɑ} ɔ ʌ
     source: index_diachronica_original.html:14335
-  - input: — V
+  - input: V
     output: Vː
     env: _{r,F[+voiced],$,#}
     raw: — V → Vː / _{r,F[+voiced],$,#}
     source: index_diachronica_original.html:14337
-  - input: — əi
+  - input: əi
     output: aɪ
     env: _{r,F[+voiced],$,#} (pursuant to the above)
     raw: — əi → aɪ / _{r,F[+voiced],$,#} (pursuant to the above)

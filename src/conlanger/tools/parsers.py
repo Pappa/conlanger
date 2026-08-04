@@ -8,8 +8,9 @@ second `` / `` are edge-case fallbacks.
 Phase 3: first ``<p>`` after ``<h2>`` → section ``citation`` (whole text, cleanup later);
 other non-``schg`` paragraphs → ``comments``.
 Phase 4: **Symbol** normalization on corpus fields only (``#``, ``$``, ``%``, ``∅``,
-Index stress ``”`` → ``:[+stress]``; ``raw`` unchanged). Class-letter expansion is
-deferred to compile time (``PhonologicalRuleSet`` + ``group_mappings.csv``).
+Index stress ``”`` → ``:[+stress]``; ``raw`` unchanged). Leading em dash list-item
+markers (``— ``) are stripped from the rule line before field split. Class-letter
+expansion is deferred to compile time (``PhonologicalRuleSet`` + ``group_mappings.csv``).
 """
 
 from __future__ import annotations
@@ -67,6 +68,17 @@ DEFAULT_GROUP_MAPPINGS_CSV = (
 
 # Protect Index stem ``$`` while remapping syllable-boundary ``%`` → ASCA ``$``.
 _STEM_BOUNDARY_PLACEHOLDER = "\ue000"
+
+# Index list-item em dash (U+2014) at the start of a rule line — not phonological.
+_LEADING_INDEX_LIST_MARKER_RE = re.compile(r"^—\s*")
+
+
+def strip_leading_index_list_marker(text: str) -> str:
+    """Remove Index list-item em dash from the start of a rule line."""
+    if not text:
+        return text
+    return _LEADING_INDEX_LIST_MARKER_RE.sub("", text, count=1)
+
 
 # Index Diachronica stress mark (Key to Abbreviations: ” = Stress).
 _INDEX_STRESS = "\u201d"
@@ -241,6 +253,7 @@ def extract_rule_parts(raw: str) -> dict[str, str] | None:
 
     Returns None if ``→`` is missing. Optional keys are omitted when absent.
     """
+    raw = strip_leading_index_list_marker(raw)
     split = split_input_output(raw)
     if split is None:
         return None

@@ -8,10 +8,10 @@ Target cluster: `unknown_character` — error_token `—` (266 rules at baseline
 
 ## What was built
 
-- `strip_leading_index_rule_marker()` in `src/conlanger/tools/rules.py` — ASCA compile transform (not ingest):
-  - Strip leading `— ` (U+2014 em dash + optional space) from each rule field (`input`, `output`, `env`, `exception`) before assembly.
-- Wired in `RuleChange._compile_rule_text()` at **instantiation**, ASCA only, before group mappings and length marks.
-- Corpus dict fields and `raw` unchanged.
+- `strip_leading_index_list_marker()` in `src/conlanger/tools/parsers.py` — ingest transform on the full rule line (not stored in ``raw``):
+  - Strip leading `— ` (U+2014 em dash + optional space) before field split.
+- Wired in `extract_rule_parts()` (Phase 4 parse path), applier-neutral.
+- Corpus ``input`` / ``output`` / ``env`` / ``exception`` no longer carry the list marker; ``raw`` unchanged.
 
 ## Answer (before/after)
 
@@ -27,11 +27,11 @@ uv run python -m conlanger.scripts.regenerate_corpus
 
 ## Notes
 
-- Index Diachronica uses `—` to mark sub-rule lines under a numbered entry, not as a phonological segment.
+- Index Diachronica uses `—` as a list-item starter on sub-rule lines, not as a phonological segment.
 - Inline `—` in env (1 rule) left for a later cluster.
 
 ## Acceptance criteria
 
-- [x] Class-first ASCA compile transform; corpus stays applier-neutral
+- [x] Class-first parse transform; ``raw`` preserved
 - [x] Unit + ASCA integration tests on representative fixtures
 - [x] Smoke before/after metrics recorded

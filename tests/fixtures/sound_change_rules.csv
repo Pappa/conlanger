@@ -1,7 +1,7 @@
 id,source,raw,input,output,env,exception,expect_none,kind,asca_input,asca_output,asca_env,asca_exception,asca_expect_ok
 e1e33459,index_diachronica_original.html:6251,"r → ∅ / {ð,f}_{ɡ,ɣ}",r,∅,"{ð,f}_{ɡ,ɣ}",,False,html_extract,,,,,
 effec0b5,index_diachronica_original.html:14213,oɪ → uɪ (rare),oɪ,uɪ (rare),,,False,html_extract,,,,,
-2ef656de,index_diachronica_original.html:1530,"— {o,u}(ː) → iː / _$%oː","— {o,u}(ː)",iː,_$$oː,,False,html_extract,,,,,
+2ef656de,index_diachronica_original.html:1530,"— {o,u}(ː) → iː / _$%oː","{o,u}(ː)",iː,_$$oː,,False,html_extract,,,,,
 9eabee5d,index_diachronica_original.html:5671,iji → iː / U[+ long + closed]_ in the stem,iji,iː,U[+ long + closed]_ in the stem,,False,html_extract,,,,,
 4335174c,index_diachronica_original.html:5946,dʒ → tʃ / _#,dʒ,tʃ,_#,,False,html_extract,,,,,
 4f873820,index_diachronica_original.html:7729,a → e / _j when stressed,a,e,_j when stressed,,False,html_extract,,,,,
@@ -95,7 +95,7 @@ f6b62663,index_diachronica_original.html:4689,ə → u / u_,ə,u,u_,,False,html_
 5ad060d2,index_diachronica_original.html:2254,æ → a / P_Co,æ,a,P_Co,,False,html_extract,,,,,
 231034db,index_diachronica_original.html:11178,q → χ,q,χ,,,False,html_extract,,,,,
 be741bae,index_diachronica_original.html:4239,tsʲ tsʲː tsʲʼ dzʲ → (s) tsː tsʼ dz~z,tsʲ tsʲː tsʲʼ dzʲ,(s) tsː tsʼ dz~z,,,False,html_extract,,,,,
-64124bcd,index_diachronica_original.html:12576,— wh → f,— wh,f,,,False,html_extract,,,,,
+64124bcd,index_diachronica_original.html:12576,— wh → f,wh,f,,,False,html_extract,,,,,
 cc127c1a,index_diachronica_original.html:12742,ç x → x ʃ,ç x,x ʃ,,,False,html_extract,,,,,
 e71a2977,index_diachronica_original.html:9725,ŋ → n,ŋ,n,,,False,html_extract,,,,,
 00253fd5,index_diachronica_original.html:994,x₂ → k / #_,x₂,k,#_,,False,html_extract,,,,,

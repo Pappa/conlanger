@@ -18,6 +18,7 @@ from conlanger.tools.parsers import (
     parse_section_heading,
     split_env_exception,
     split_input_output,
+    strip_leading_index_list_marker,
     split_output_rest,
     split_post_arrow,
 )
@@ -181,6 +182,28 @@ def test_normalize_symbols(text, expected):
 )
 def test_normalize_stress_marks(text, expected):
     assert normalize_stress_marks(text) == expected
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("— j w → i u / #_CV", "j w → i u / #_CV"),
+        ("— aː → oː", "aː → oː"),
+        ("— {o,u}(ː) → iː", "{o,u}(ː) → iː"),
+        ("j w → i u", "j w → i u"),
+        ("", ""),
+    ],
+)
+def test_strip_leading_index_list_marker(text, expected):
+    assert strip_leading_index_list_marker(text) == expected
+
+
+def test_extract_rule_parts_strips_leading_list_marker():
+    assert extract_rule_parts("— j w → i u / #_CV") == {
+        "input": "j w",
+        "output": "i u",
+        "env": "#_CV",
+    }
 
 
 def test_extract_rule_parts_with_symbol_normalization():
