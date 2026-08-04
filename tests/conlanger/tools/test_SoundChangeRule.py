@@ -1,5 +1,5 @@
 import pytest
-from conlanger.tools.SoundChangeRule import SoundChangeRule, DebugRules, RuleCitation, RuleComment
+from conlanger.tools.rules import SoundChangeRuleSet, DebugRules, RuleCitation, RuleComment
 
 @pytest.mark.parametrize(
     "section, format, expected",
@@ -16,8 +16,8 @@ from conlanger.tools.SoundChangeRule import SoundChangeRule, DebugRules, RuleCit
         ({"index": "1", "section": "sec"}, "brassica", "; 1 - sec"),
     ],
 )
-def test_SoundChangeRule(section, format, expected):
-    rule = SoundChangeRule(section, format)
+def test_SoundChangeRuleSet(section, format, expected):
+    rule = SoundChangeRuleSet(section, format)
     assert str(rule) == expected
     assert rule.title == section["index"] + " - " + section["section"]
 
@@ -30,9 +30,9 @@ def test_SoundChangeRule(section, format, expected):
         ({"index": "1", "section": "sec", "rules": [{"output": "b"}]}, "brassica"),
     ],
 )
-def test_SoundChangeRule_invalid_input(section, format):
+def test_SoundChangeRuleSet_invalid_input(section, format):
     with pytest.raises(ValueError):
-        SoundChangeRule(section, format)
+        SoundChangeRuleSet(section, format)
         
 
 def test_DebugRules():

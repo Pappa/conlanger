@@ -1,13 +1,13 @@
 import tensorflow as tf
 from keras import (
-    models,
     metrics,
+    models,
 )
 
 
 class WGANGP(models.Model):
     def __init__(self, critic, generator, latent_dim, critic_steps, gp_weight):
-        super(WGANGP, self).__init__()
+        super().__init__()
         self.critic = critic
         self.generator = generator
         self.latent_dim = latent_dim
@@ -15,7 +15,7 @@ class WGANGP(models.Model):
         self.gp_weight = gp_weight
 
     def compile(self, c_optimizer, g_optimizer):
-        super(WGANGP, self).compile()
+        super().compile()
         self.c_optimizer = c_optimizer
         self.g_optimizer = g_optimizer
         self.c_wass_loss_metric = metrics.Mean(name="c_wass_loss")

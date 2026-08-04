@@ -68,8 +68,6 @@ DEFAULT_GROUP_MAPPINGS_CSV = (
 # Protect Index stem ``$`` while remapping syllable-boundary ``%`` → ASCA ``$``.
 _STEM_BOUNDARY_PLACEHOLDER = "\ue000"
 
-GroupMappingTuple = tuple[str, str] | tuple[str, str, str]
-
 
 @dataclass(frozen=True)
 class GroupMapping:
@@ -248,20 +246,6 @@ def load_group_mappings(path: Path | None = None) -> list[GroupMapping]:
     return out
 
 
-def _coerce_group_mapping(item: GroupMapping | GroupMappingTuple) -> GroupMapping:
-    if isinstance(item, GroupMapping):
-        return item
-    if isinstance(item, tuple):
-        if len(item) == 2:
-            return GroupMapping(item[0], item[1])
-        if len(item) == 3:
-            return GroupMapping(item[0], item[1], item[2])
-    raise TypeError(
-        "group_mappings items must be GroupMapping or 2-/3-tuples "
-        f"(grouping, mapping[, comment]); got {item!r}"
-    )
-
-
 class IndexDiachronicaParser:
     """Parse Index Diachronica HTML into applier-neutral cleaned-corpus YAML."""
 
@@ -319,7 +303,9 @@ class IndexDiachronicaParser:
             for p in sec.xpath("./p"):
                 cls = p.get("class") or ""
                 if "schg" in cls:
-                    saw_first_p = True  # citation slot consumed even if first p was a rule
+                    saw_first_p = (
+                        True  # citation slot consumed even if first p was a rule
+                    )
                     rules.append(self.parse_rule_element(p, source_file=source_file))
                     continue
 

@@ -1,4 +1,4 @@
-"""Tests for ASCA validation of SoundChangeRule (asca 0.10.2)."""
+"""Tests for ASCA validation of SoundChangeRuleSet (asca 0.10.2)."""
 
 from pathlib import Path
 from unittest.mock import MagicMock, patch
@@ -6,7 +6,7 @@ from unittest.mock import MagicMock, patch
 import pandas as pd
 import pytest
 
-from conlanger.tools.SoundChangeRule import SoundChangeRule
+from conlanger.tools.rules import SoundChangeRuleSet
 from conlanger.tools.asca_validator import ASCAValidationError, validate_asca
 
 _FIXTURE_CSV = (
@@ -15,8 +15,8 @@ _FIXTURE_CSV = (
 _PROBE = Path(__file__).resolve().parents[2] / "fixtures" / "asca_probe_words.wsca"
 
 
-def _scr(change: dict) -> SoundChangeRule:
-    return SoundChangeRule(
+def _scr(change: dict) -> SoundChangeRuleSet:
+    return SoundChangeRuleSet(
         {"index": "1", "section": "test", "rules": [change]},
         format="asca",
     )
@@ -53,13 +53,13 @@ def test_validate_asca_rejects_invalid_rules(change, match):
 
 
 def test_validate_asca_rejects_title_only():
-    rule = SoundChangeRule({"index": "1", "section": "sec"}, format="asca")
+    rule = SoundChangeRuleSet({"index": "1", "section": "sec"}, format="asca")
     with pytest.raises(ASCAValidationError, match="no active RuleChange"):
         validate_asca(rule)
 
 
 def test_validate_asca_rejects_skipped_only():
-    rule = SoundChangeRule(
+    rule = SoundChangeRuleSet(
         {
             "index": "1",
             "section": "sec",

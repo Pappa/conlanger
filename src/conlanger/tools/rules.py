@@ -1,7 +1,9 @@
-from typing import Any
+from typing import ClassVar
+
 
 class RulePartBase:
-    prefixes = {"asca": "# ", "brassica": "; "}
+    prefixes: ClassVar[dict[str, str]] = {"asca": "# ", "brassica": "; "}
+
     def __init__(self, value: str, format: str = "asca"):
         if format not in self.prefixes:
             raise ValueError(f"Unsupported format: {format}")
@@ -9,18 +11,23 @@ class RulePartBase:
         self.format = format
 
     def __str__(self):
-        self.prefix = self.prefixes[self.format]
-        return f"{self.prefix}{self.value}"
+        return f"{self.prefixes[self.format]}{self.value}"
 
 
 class RuleTitle(RulePartBase):
-    prefixes = {"asca": "@ ", "brassica": "; "}
+    prefixes: ClassVar[dict[str, str]] = {"asca": "@ ", "brassica": "; "}
+
     def __init__(self, section: dict, format: str = "asca"):
         title = section["index"] + " - " + section["section"]
         super().__init__(title, format)
 
+
 class RuleCitation(RulePartBase):
-    prefixes = {"asca": "# citation: ", "brassica": "; citation: "}
+    prefixes: ClassVar[dict[str, str]] = {
+        "asca": "# citation: ",
+        "brassica": "; citation: ",
+    }
+
     def __init__(self, value: str, format: str = "asca"):
         super().__init__(self._format(value, format), format)
 
@@ -30,8 +37,10 @@ class RuleCitation(RulePartBase):
         if format == "brassica":
             return value.replace("\n", "\n; ")
 
+
 class RuleComment(RulePartBase):
-    prefixes = {"asca": "\t# ", "brassica": "; "}
+    prefixes: ClassVar[dict[str, str]] = {"asca": "\t# ", "brassica": "; "}
+
     def __init__(self, value: str, format: str = "asca"):
         super().__init__(self._format(value, format), format)
 
@@ -44,26 +53,27 @@ class RuleComment(RulePartBase):
 
 class RuleChange(RulePartBase):
     rule: dict[str, str]
-    prefixes = {"asca": "\t", "brassica": ""}
-    separator = {
+    prefixes: ClassVar[dict[str, str]] = {"asca": "\t", "brassica": ""}
+    separator: ClassVar[dict[str, dict[str, str]]] = {
         "asca": {
-        "output": " > ",
-        "env": " / ",
-        "exception": " // ",
-        }, 
+            "output": " > ",
+            "env": " / ",
+            "exception": " // ",
+        },
         "brassica": {
             "output": " / ",
             "env": " / ",
             "exception": " // ",
-        }
+        },
     }
-    aliases = {
+    aliases: ClassVar[dict[str, str]] = {
         "K:[": "[+ cons, - fr, + bk, + hi, - lo, ",
         "K": "[+ cons, - fr, + bk, + hi, - lo]",
         "h₁": "h",
         "h₂": "x",
         "h₃": "ɣʷ",
     }
+
     def __init__(self, rule: dict[str, str], format: str = "asca"):
         try:
             self.input = rule["input"]
@@ -73,7 +83,7 @@ class RuleChange(RulePartBase):
             self.output = rule["output"]
         except KeyError:
             raise ValueError("output is required")
-            
+
         self.env = rule.get("env", None)
         self.exception = rule.get("exception", None)
 
@@ -96,9 +106,9 @@ class RuleChange(RulePartBase):
         for alias, replacement in self.aliases.items():
             rule = rule.replace(alias, replacement)
         return rule
-    
 
-class SoundChangeRule:
+
+class SoundChangeRuleSet:
     def __init__(self, section: dict, format: str = "asca"):
         self._parts = [RuleTitle(section, format)]
         if section.get("citation"):
@@ -116,14 +126,17 @@ class SoundChangeRule:
     def title(self):
         return self._parts[0].value
 
-        
+
 class DebugRules:
     def __init__(self, section: dict, format: str = "asca"):
-        self._rules = [(index, self._create_rule(section, rule, index, format)) for index, rule in enumerate(section["rules"])]
+        self._rules = [
+            (index, self._create_rule(section, rule, index, format))
+            for index, rule in enumerate(section["rules"])
+        ]
 
-    def _create_rule(self, section: dict, rule: dict,index: int, format: str):
+    def _create_rule(self, section: dict, rule: dict, index: int, format: str):
         item = {"index": section["index"], "section": str(index), "rules": [rule]}
-        return SoundChangeRule(item, format)
+        return SoundChangeRuleSet(item, format)
 
     def __iter__(self):
         return iter(self._rules)

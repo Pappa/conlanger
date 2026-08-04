@@ -20,7 +20,7 @@ From asca-rust primary docs, what makes a rule string valid for input/output/env
 
 **Findings:** [../research/asca-rule-validity.md](../research/asca-rule-validity.md) (refreshed for **asca 0.10.2**, including §5 internal parse/validation pipeline for Python).
 
-**Context pointer (for parent wayfinder / later tickets):** Use that file’s per-field checklists, §5 pipeline tiers, and §6 ID failure patterns when inventoring/fixing Index Diachronica–derived rules and when implementing [Create an ASCA validator for SoundChangeRule](08-asca-validator.md).
+**Context pointer (for parent wayfinder / later tickets):** Use that file’s per-field checklists, §5 pipeline tiers, and §6 ID failure patterns when inventoring/fixing Index Diachronica–derived rules and when implementing [Create an ASCA validator for SoundChangeRuleSet](08-asca-validator.md).
 
 ## Comments
 

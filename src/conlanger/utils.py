@@ -1,7 +1,8 @@
+import subprocess
+
 import matplotlib.pyplot as plt
 import numpy as np
 from strip_ansi import strip_ansi
-import subprocess
 
 
 def display_rows(
@@ -23,7 +24,7 @@ def display_rows(
     _, axs = plt.subplots(r, c, figsize=size)
 
     if titles is not None and len(titles) < r * c:
-        raise
+        raise ValueError("Not enough titles")
 
     cnt = 0
     for i in range(r):
@@ -66,6 +67,7 @@ def get_exact_matches_indices(train, generated):
 
     return np.array(matches_idx).astype(int)
 
+
 def run_asca(asca_word_file, rule_file, rule_path):
     file_name = f"{rule_path}/{rule_file}"
     cmd = f"~/.cargo/bin/asca run {asca_word_file} --rules {file_name}"
@@ -73,17 +75,20 @@ def run_asca(asca_word_file, rule_file, rule_path):
     result = {"rule": rule_file, "returncode": 0, "error": ""}
 
     try:
-        output = subprocess.run(cmd, capture_output=True, timeout=10, shell=True, text=True)
+        output = subprocess.run(  # noqa: PLW1510
+            cmd, capture_output=True, timeout=10, shell=True, text=True
+        )
         output.check_returncode()
 
     except subprocess.CalledProcessError as exc:
-        result["returncode"] = exc.returncode 
-        result["error"] = strip_ansi(exc.stderr.strip()).replace('\n', ' ')
+        result["returncode"] = exc.returncode
+        result["error"] = strip_ansi(exc.stderr.strip()).replace("\n", " ")
     except subprocess.TimeoutExpired as exc:
         result["returncode"] = 124
-        result["error"] = exc.output.decode("utf-8").replace('\n', ' ')
+        result["error"] = exc.output.decode("utf-8").replace("\n", " ")
 
     return result
+
 
 def run_brassica(brassica_word_file, rule_file, rule_path):
     file_name = f"{rule_path}/{rule_file}"
@@ -92,11 +97,13 @@ def run_brassica(brassica_word_file, rule_file, rule_path):
     result = {"rule": rule_file, "returncode": 0, "error": ""}
 
     try:
-        output = subprocess.run(cmd, capture_output=True, timeout=10, shell=True, text=True)
+        output = subprocess.run(  # noqa: PLW1510
+            cmd, capture_output=True, timeout=10, shell=True, text=True
+        )
         output.check_returncode()
 
     except subprocess.CalledProcessError as exc:
-        result["returncode"] = exc.returncode 
+        result["returncode"] = exc.returncode
         result["error"] = exc.output.replace("\n", "\\n")
     except subprocess.TimeoutExpired as exc:
         result["returncode"] = 124

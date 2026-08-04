@@ -1,5 +1,5 @@
 import pytest
-from conlanger.tools import Lexicon
+from conlanger.tools.words import Lexicon
 
 
 @pytest.mark.parametrize(

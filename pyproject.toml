@@ -55,5 +55,6 @@ dev = [
     "lxml>=6.0.2",
     "pytest>=8.4.2",
     "pytest-cov>=7.0.0",
+    "ruff>=0.16.1",
     "strip-ansi>=0.1.1",
 ]

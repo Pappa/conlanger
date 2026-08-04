@@ -20,7 +20,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from conlanger.tools.SoundChangeRule import RuleChange  # noqa: E402
+from conlanger.tools.rules import RuleChange  # noqa: E402
 
 DEFAULT_YAML = ROOT / "notebooks/data/index_diachronica_ai.yml"
 DEFAULT_WORDS = ROOT / "notebooks/data/words/asca/weirdness_0.5.wsca"
@@ -69,7 +69,7 @@ def check_one(args: tuple) -> dict:
         rsca.write_text(body, encoding="utf-8")
         cmd = [asca_bin, "run", words, "-r", str(rsca)]
         try:
-            proc = subprocess.run(
+            proc = subprocess.run(  # noqa: PLW1510
                 cmd,
                 capture_output=True,
                 text=True,

@@ -39,7 +39,7 @@ Brassica compilation remains a future parallel path behind the same corpus (ADR-
 10. As an agent implementing fixes, I want **class-first** transforms implemented in the HTML parser, so that mechanical fixes scale across thousands of rules.
 11. As an agent implementing fixes, I want git-diffable YAML regeneration, so that I can review churn and grow regression fixtures when **rule status** changes.
 12. As a developer, I want **compile validation** after applier compile (not at YAML ingest), so that the corpus remains applier-neutral per ADR-0003.
-13. As a developer, I want `validate_asca(SoundChangeRule) -> True` with clear errors on failure, so that correction workflow has a concrete ASCA gate.
+13. As a developer, I want `validate_asca(SoundChangeRuleSet) -> True` with clear errors on failure, so that correction workflow has a concrete ASCA gate.
 14. As a developer, I want validation driven by ASCA 0.10.2 via `asca run` on a **probe wordlist**, so that runtime structural failures are caught alongside syntax errors.
 15. As a developer, I want **PhonologicalRuleSet** to load `group_mappings.csv` at compile time, so that **class letter** expansions apply without baking ASCA syntax into the corpus YAML.
 16. As a developer, I want unmapped **class letters** to pass through unchanged, so that validation surfaces unknown tokens via **failure classes** rather than silent substitution.
@@ -64,7 +64,7 @@ Brassica compilation remains a future parallel path behind the same corpus (ADR-
 35. As a maintainer, I want inventory metrics reproducible (rule counts, ok/fail percentages, top **failure classes**), so that progress toward a compilable corpus is trackable across iterations.
 36. As a maintainer, I want **series indices** and section-local prose abbreviations handled cluster-driven with hand-added mapping rows when warranted, so that hard cases are not blocked on a global prose-extraction spike.
 37. As a maintainer, I want **meta-notation** (`X0`, `Xn`, retroflex marks, repetition groups) deferred to validation clusters, so that the first delivery does not invent ASCA expansions without evidence.
-38. As a developer, I want `SoundChangeRule` / `RuleChange` to render ASCA rule strings from corpus rule dicts, so that the ASCA **applier compiler** has a stable string emission layer.
+38. As a developer, I want `SoundChangeRuleSet` / `RuleChange` to render ASCA rule strings from corpus rule dicts, so that the ASCA **applier compiler** has a stable string emission layer.
 39. As a developer, I want skipped corpus rules to render as ASCA comments, so that `validate_asca` ignores held-out rules without deleting section structure.
 40. As an operator, I want a script or entry point to regenerate the full cleaned YAML from HTML and emit the validation report in one invocation, so that the correction loop is automatable by agents.
 41. As a developer, I want **rule-derived probe synthesis** from post-mapping compiled `input`/`output`/`env`/`exception` strings, so that Tier 4 ASCA runtime errors (e.g. uneven sets, deletion-only segments) are exercised without relying on a fixed generic wordlist.
@@ -98,11 +98,11 @@ Brassica compilation remains a future parallel path behind the same corpus (ADR-
 ### Compile and validation
 
 - One **sound-change section** → one **PhonologicalRuleSet** (runtime container: corpus rules + abbreviation mappings + compiled output). *Not yet implemented; ticket 06 follow-on.*
-- **Applier compiler** path: corpus rule dict → `RuleChange` → `SoundChangeRule` string → `validate_asca`.
+- **Applier compiler** path: corpus rule dict → `RuleChange` → `SoundChangeRuleSet` string → `validate_asca`.
 - `validate_asca`: ASCA 0.10.2 via `asca run` on a probe wordlist; raises `ASCAValidationError` on failure; skips commented (held-out) rules.
 - **Tier 4 probe strategy (ticket 10):** rule-derived probe synthesis on top of existing `asca run` — **not** a Rust `ParsedRules::try_from` wrapper in the first slice. Tier 1–3 word-independent gate via Rust wrapper remains deferred.
 - **Probe synthesizer** (`synthesize_probes` API, Python alongside `asca_validator.py`):
-  - **Input:** post-mapping compiled strings — the same `input` / `output` / `env` / `exception` fields `SoundChangeRule` emits after group-letter expansion (not Index-shaped `raw`).
+  - **Input:** post-mapping compiled strings — the same `input` / `output` / `env` / `exception` fields `SoundChangeRuleSet` emits after group-letter expansion (not Index-shaped `raw`).
   - **MVP scope:** IPA literals; ASCA groupings → representative segments (static table, same spirit as `group_mappings.csv`); feature matrices → representative segments (small feature→segment table); sets `{a,b,c}` → one probe per choice plus a default; env `_` focus → prefix/focus/suffix word shapes; boundaries `#`, `$`, `%` → word-edge / multi-syllable variants; insertion (`*` / `∅` input) → env-shaped probes when env is present; emit **3–8** `.wsca` lines per rule.
   - **Fallback:** frozen global baseline lexicon (`tests/fixtures/asca_probe_words.wsca` plus optional ASCA-test-derived shapes) when synthesis is partial; record **coverage** metadata (`full` | `partial` | `baseline_only`) for validation CSV / debugging.
   - **Deferred (phase 2):** structures `⟨CV⟩`, ellipses, alpha notation, references, env sets, optional counts — synthesizer reports partial coverage; do not block MVP.
@@ -141,7 +141,7 @@ This is the highest seam that exercises ingest, schema shape, abbreviation/featu
 
 - Use real or minimal HTML fixtures mirroring Index Diachronica structure (`<section>`, `<h2>`, `<p class="schg">`).
 - Assert corpus rule fields (`input`, `output`, `raw`, `source`, optional `env`/`exception`/`status`) without asserting internal parser function names.
-- Build `SoundChangeRule` from compiled section output and call `validate_asca`; expect `True` or documented `ASCAValidationError` / expected skip for `status: skipped`.
+- Build `SoundChangeRuleSet` from compiled section output and call `validate_asca`; expect `True` or documented `ASCAValidationError` / expected skip for `status: skipped`.
 - Prefer parametrized cases drawn from `tests/fixtures/sound_change_rules.csv` (`html_extract` for ingest expectations; `asca_guess` for validator-aligned compile cases).
 
 Rationale: lower seams (e.g. `extract_rule_parts` alone, or `validate_asca` alone) already exist and do not prove the corpus pipeline; higher seams (full lexicon evolution) mix unrelated concerns. One end-to-end compile-validation seam minimises cross-module test duplication.
@@ -164,7 +164,7 @@ Rationale: lower seams (e.g. `extract_rule_parts` alone, or `validate_asca` alon
 
 - `IndexDiachronicaParser` (ingest)
 - `PhonologicalRuleSet` (compile — to be added)
-- `SoundChangeRule` / `RuleChange` (ASCA emission)
+- `SoundChangeRuleSet` / `RuleChange` (ASCA emission)
 - `synthesize_probes` / probe synthesizer module (ticket 10 — to be added)
 - `validate_asca` (post-compile gate; wired to synthesized probes by default)
 - Optional: thin orchestration script/module for regenerate + validation report (behaviour: produces YAML + CSV from HTML path)

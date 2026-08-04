@@ -1,6 +1,7 @@
-from dataclasses import dataclass, field
 import random
-from conlanger.tools import SyllableStructure
+from dataclasses import dataclass
+
+from conlanger.tools.syllables import SyllableStructure
 
 
 @dataclass

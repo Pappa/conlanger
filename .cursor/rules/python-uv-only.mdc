@@ -1,0 +1,31 @@
+---
+description: Use uv for Python installs and tool execution; never pip; ask before adding deps
+alwaysApply: true
+---
+
+# Python tooling — uv only
+
+## Installing packages
+
+- **Never** run `pip install`, `pip3 install`, or `python -m pip install`.
+- **Always ask the user** before adding or upgrading any Python dependency.
+- When the user approves an install, use **uv**:
+  - `uv add <package>` for runtime deps
+  - `uv add --dev <package>` or `uv add --group dev <package>` for dev deps
+  - `uv sync` to install from the lockfile
+
+## Running tools and scripts
+
+Use **uv** to execute project tools and scripts — do not call bare `python`, `pytest`, or `ruff` unless the user explicitly requests that:
+
+```bash
+uv run pytest …
+uv run ruff check …
+uv run python scripts/…
+```
+
+Prefer `uv run` over activating a venv manually.
+
+## If uv is unavailable
+
+Stop and tell the user. Do not fall back to pip.

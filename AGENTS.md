@@ -15,3 +15,4 @@ Single-context: one `CONTEXT.md` + `docs/SYSTEM.md` + `docs/adr/` at the repo ro
 ### Wayfinder ticket types
 
 In this repo, the wayfinder ticket type **`spike`** is the local name for upstream mattpocock/skills **`research`**. Write `Type: spike` on tickets; when wayfinder (or related skills) say `research`, treat that as `spike`. Spikes are still resolved with the **`/research`** skill — do not invent a `/spike` skill, and do not rename paths like `.scratch/.../research/` (those are findings directories, not ticket types).
+

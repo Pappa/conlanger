@@ -12,7 +12,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from conlanger.tools.IndexDiachronicaParser import (  # noqa: E402
+from conlanger.tools.parsers import (  # noqa: E402
     IndexDiachronicaParser,
 )
 

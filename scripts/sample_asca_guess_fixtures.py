@@ -17,10 +17,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from conlanger.tools.IndexDiachronicaParser import (  # noqa: E402
+from conlanger.tools.parsers import (  # noqa: E402
     IndexDiachronicaParser,
 )
-from conlanger.tools.SoundChangeRule import SoundChangeRule  # noqa: E402
+from conlanger.tools.rules import SoundChangeRuleSet  # noqa: E402
 from conlanger.tools.asca_validator import (  # noqa: E402
     ASCAValidationError,
     validate_asca,
@@ -182,7 +182,7 @@ def fixture_id(source: str) -> str:
     return hashlib.sha1(source.encode("utf-8")).hexdigest()[:8]
 
 
-def build_sound_change_rule(guess: dict[str, str], *, source: str) -> SoundChangeRule | None:
+def build_sound_change_rule(guess: dict[str, str], *, source: str) -> SoundChangeRuleSet | None:
     if not guess["asca_input"] or not guess["asca_output"]:
         return None
     change = {
@@ -193,7 +193,7 @@ def build_sound_change_rule(guess: dict[str, str], *, source: str) -> SoundChang
         change["env"] = guess["asca_env"]
     if guess["asca_exception"]:
         change["exception"] = guess["asca_exception"]
-    return SoundChangeRule(
+    return SoundChangeRuleSet(
         {
             "index": "fixture",
             "section": source.replace(":", "_"),

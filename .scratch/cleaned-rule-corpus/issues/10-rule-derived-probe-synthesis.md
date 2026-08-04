@@ -14,10 +14,10 @@ How should **compile validation** drive **Tier 4** ASCA runtime checks when `asc
 
 ## Notes
 
-- Context: [Create an ASCA validator for SoundChangeRule](08-asca-validator.md) uses `asca run` on a fixed five-word probe list; Tier 1–3 run on every apply, but Tier 4 errors (e.g. `UnevenSet`, `LonelySet`, `DeletionOnlySeg`, insertion env errors) only fire when probes **match** the rule. See [../research/asca-rule-validity.md](../research/asca-rule-validity.md) §5.
+- Context: [Create an ASCA validator for SoundChangeRuleSet](08-asca-validator.md) uses `asca run` on a fixed five-word probe list; Tier 1–3 run on every apply, but Tier 4 errors (e.g. `UnevenSet`, `LonelySet`, `DeletionOnlySeg`, insertion env errors) only fire when probes **match** the rule. See [../research/asca-rule-validity.md](../research/asca-rule-validity.md) §5.
 - **Decision (charting):** implement option **B** — rule-derived probes on top of existing `asca run`, **not** a Rust `ParsedRules::try_from` wrapper in the first slice.
 - **Language:** Python only (`src/conlanger/tools/`, alongside `asca_validator.py`).
-- **Input surface:** **post-mapping** compiled strings — the same `input` / `output` / `env` / `exception` fields that `SoundChangeRule` emits after group-letter expansion (not Index-shaped `raw`).
+- **Input surface:** **post-mapping** compiled strings — the same `input` / `output` / `env` / `exception` fields that `SoundChangeRuleSet` emits after group-letter expansion (not Index-shaped `raw`).
 - **MVP synthesizer scope:**
   - IPA literals from rule tokens
   - ASCA groupings → representative segments (static table, same spirit as `group_mappings.csv`)

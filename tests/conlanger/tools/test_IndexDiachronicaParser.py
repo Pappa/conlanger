@@ -4,12 +4,11 @@ import pandas as pd
 import pytest
 from lxml import html
 
-from conlanger.tools.IndexDiachronicaParser import (
+from conlanger.tools.parsers import (
     ARROW,
     DEFAULT_GROUP_MAPPINGS_CSV,
     GroupMapping,
     IndexDiachronicaParser,
-    _coerce_group_mapping,
     extract_rule_parts,
     extract_text_with_subs,
     load_group_mappings,
@@ -138,18 +137,6 @@ def test_extract_text_with_subs_tail_after_sub():
 def test_extract_text_with_subs_no_tail_after_sub():
     el = html.fragment_fromstring("<p>before<sub>2</sub></p>", create_parent=False)
     assert extract_text_with_subs(el) == "before₂"
-
-
-def test_coerce_group_mapping():
-    assert _coerce_group_mapping(GroupMapping("S", "P")) == GroupMapping("S", "P")
-    assert _coerce_group_mapping(("T", "P:[-voice]")) == GroupMapping("T", "P:[-voice]")
-    assert _coerce_group_mapping(("W", "G", "glides")) == GroupMapping(
-        "W", "G", "glides"
-    )
-    with pytest.raises(TypeError, match="group_mappings items"):
-        _coerce_group_mapping(("only-one",))  # type: ignore[arg-type]
-    with pytest.raises(TypeError, match="group_mappings items"):
-        _coerce_group_mapping(("a", "b", "c", "d"))  # type: ignore[arg-type]
 
 
 def test_load_group_mappings_missing_columns(tmp_path: Path):

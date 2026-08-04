@@ -1,7 +1,9 @@
-from dataclasses import dataclass, field
 import re
+from dataclasses import dataclass, field
+
 import numpy as np
-from conlanger.data import SYLLABLE_STRUCTURE
+
+from conlanger.data.syllable_structure import SYLLABLE_STRUCTURE
 
 ALL_STRUCTURES = np.array(SYLLABLE_STRUCTURE)
 
@@ -49,15 +51,13 @@ class SyllableStructure:
 
     def _parse_structure(self, structure: str) -> list[SyllableToken]:
         types = "".join(sorted([x for x in structure if x.isalpha()]))
-        matches = re.findall(r"\([{0}]\)|[{0}]".format(types), structure)
+        matches = re.findall(rf"\([{types}]\)|[{types}]", structure)
 
         if len(matches) == 0 or "".join(matches) != structure:
             raise ValueError("Invalid syllable structure")
 
         return [
-            SyllableToken(
-                type=re.search(r"[{0}]".format(types), c)[0], optional=len(c) > 1
-            )
+            SyllableToken(type=re.search(rf"[{types}]", c)[0], optional=len(c) > 1)
             for c in matches
         ]
 

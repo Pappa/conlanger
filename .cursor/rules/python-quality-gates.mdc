@@ -1,0 +1,41 @@
+---
+description: Run pytest and ruff after Python code changes when they are project dependencies
+alwaysApply: true
+---
+
+# Python quality gates after code changes
+
+When you modify Python code (or tests that exercise it), run project quality tools **if they are declared dependencies**. Do not install tools just to satisfy this rule.
+
+## Check first
+
+Inspect `pyproject.toml`, `requirements*.txt`, or `package.json` for:
+
+- **pytest** — `[project.optional-dependencies]`, `[dependency-groups]`, or `devDependencies`
+- **ruff** — `[project.dependencies]`, `[dependency-groups]`, `[tool.ruff]`, or dev deps
+
+If a tool is not listed, skip it.
+
+## What to run
+
+Use the repo's normal runner (`uv run`, `poetry run`, or the project venv):
+
+1. **During work** — targeted checks on touched paths:
+   - `pytest <affected test paths> --no-cov` when pytest is available
+   - `ruff check <changed paths>` when ruff is available
+2. **Before finishing** — when the change is complete:
+   - full `pytest` (respect `pyproject.toml` / CI options)
+   - `ruff check` on changed files or the package root
+
+Fix failures you introduce. If a pre-existing failure blocks verification, say so explicitly.
+
+## Examples
+
+```bash
+# This repo (uv + dev group has pytest; no ruff yet)
+uv run pytest tests/conlanger/tools/test_IndexDiachronicaParser.py --no-cov
+uv run pytest --no-cov
+
+# When ruff is added later
+uv run ruff check src/conlanger/tools/IndexDiachronicaParser.py
+```

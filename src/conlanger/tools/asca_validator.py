@@ -1,4 +1,4 @@
-"""Validate ``SoundChangeRule`` instances against ASCA (pinned to 0.10.2).
+"""Validate ``SoundChangeRuleSet`` instances against ASCA (pinned to 0.10.2).
 
 Drives the installed ``asca`` CLI (``run`` on a probe wordlist) so syntax and
 apply-time structural checks (Tier 1–4 in
@@ -15,7 +15,7 @@ import subprocess
 import tempfile
 from pathlib import Path
 
-from conlanger.tools.SoundChangeRule import RuleChange, SoundChangeRule
+from conlanger.tools.rules import RuleChange, SoundChangeRuleSet
 
 DEFAULT_ASCA_BIN = Path.home() / ".cargo" / "bin" / "asca"
 
@@ -26,7 +26,7 @@ _ANSI_RE = re.compile(r"\x1b\[[0-9;]*m")
 
 
 class ASCAValidationError(ValueError):
-    """Raised when a ``SoundChangeRule`` is not valid for ASCA."""
+    """Raised when a ``SoundChangeRuleSet`` is not valid for ASCA."""
 
     def __init__(self, message: str, *, returncode: int | None = None):
         super().__init__(message)
@@ -38,7 +38,7 @@ def _asca_bin() -> Path:
     return Path(override) if override else DEFAULT_ASCA_BIN
 
 
-def _active_rule_changes(rule: SoundChangeRule) -> list[RuleChange]:
+def _active_rule_changes(rule: SoundChangeRuleSet) -> list[RuleChange]:
     """Return RuleChange parts that are not commented out (``skip``)."""
     active: list[RuleChange] = []
     for part in rule._parts:
@@ -57,7 +57,7 @@ def _clean_asca_stderr(stderr: str) -> str:
 
 
 def validate_asca(
-    rule: SoundChangeRule,
+    rule: SoundChangeRuleSet,
     *,
     asca_bin: Path | None = None,
     probe_words: Path | None = None,
@@ -65,7 +65,7 @@ def validate_asca(
 ) -> bool:
     """Return ``True`` if ``rule`` is valid for ASCA; otherwise raise.
 
-    Writes the rendered ``SoundChangeRule`` to a temporary ``.rsca`` and runs
+    Writes the rendered ``SoundChangeRuleSet`` to a temporary ``.rsca`` and runs
     ``asca run <probe_words> --rules <file>``. Non-zero exit or ASCA
     Syntax/Runtime Error text on stderr becomes ``ASCAValidationError``.
     """
@@ -77,7 +77,7 @@ def validate_asca(
 
     if not _active_rule_changes(rule):
         raise ASCAValidationError(
-            "SoundChangeRule has no active RuleChange lines to validate"
+            "SoundChangeRuleSet has no active RuleChange lines to validate"
         )
 
     body = str(rule)
@@ -106,7 +106,7 @@ def validate_asca(
             words_path.write_text(_DEFAULT_PROBE_WORDS, encoding="utf-8")
 
         try:
-            proc = subprocess.run(
+            proc = subprocess.run(  # noqa: PLW1510
                 [str(bin_path), "run", str(words_path), "--rules", str(rsca)],
                 capture_output=True,
                 text=True,

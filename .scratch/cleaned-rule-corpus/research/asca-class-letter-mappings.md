@@ -49,7 +49,7 @@ ASCA inbuilt groupings ([Groupings](https://github.com/Girv98/asca-rust/blob/0.1
 | **F** | Fricative | *(no row)* | *(omit — identity)* | high | Index = ASCA **F** |
 | **H** | Laryngeal | `[-place]` | `[-place]` | medium | [Subnode `-place` → glottals](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#matching-a-subnode); misses pharyngeals/epiglottals (`[+pharyngeal]`) if Index meant those |
 | **J** | Approximant | `[+approximant]` | `{L,G}` | high | [Groupings L,G](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#groupings); bare `[+approximant]` also matches vowels ([Feature shorthands](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#feature-shorthands)) |
-| **K** | Velar | `[+cons,-fr,+bk,+hi,-lo]` | `C:[-front,+back,+hi,-lo]` | high | Crate TODO for **K** velar ([`parser.rs` L780](https://github.com/Girv98/asca-rust/blob/0.10.2/src/rule/parser.rs)); **C:** host matches `SoundChangeRule.aliases` intent |
+| **K** | Velar | `[+cons,-fr,+bk,+hi,-lo]` | `C:[-front,+back,+hi,-lo]` | high | Crate TODO for **K** velar ([`parser.rs` L780](https://github.com/Girv98/asca-rust/blob/0.10.2/src/rule/parser.rs)); **C:** host matches `SoundChangeRuleSet.aliases` intent |
 | **Ḱ** | Palatovelar | `[+cons,+front,+high]` | `C:[+front,+hi,-lo]` | medium | No exact palatovelar node; nearest dorsal +front +hi consonant; overlaps plain palatals |
 | **L** | Liquid | *(no row)* | *(omit — identity)* | high | Index = ASCA **L** |
 | **M** | Diphthong | `VV` | **unmapped** (validation cluster) | low | No diphthong feature/group; `VV` = two **V** tokens ([Sets/sequences](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#sets)), not a syllable nucleus class; fails as output token (`unknown_grouping` in inventory) |
@@ -135,7 +135,7 @@ ASCA inbuilt groupings ([Groupings](https://github.com/Girv98/asca-rust/blob/0.1
 - **ASCA:** Commented future groupings in [`parser.rs` L779–781](https://github.com/Girv98/asca-rust/blob/0.10.2/src/rule/parser.rs):
   - **K** (velar): `[+cons, -fr, +bk, +hi, -lo]`
   - **Q** (uvular): `[+cons, -fr, +bk, -hi, -lo]`
-- **Current K:** Same matrix as [`SoundChangeRule.aliases`](../../../src/conlanger/tools/SoundChangeRule.py) but without **C:** host — can match high back vowels.
+- **Current K:** Same matrix as [`SoundChangeRuleSet.aliases`](../../../src/conlanger/tools/SoundChangeRuleSet.py) but without **C:** host — can match high back vowels.
 - **Recommended K:** `C:[-front,+back,+hi,-lo]` (equivalent shorthands: `-fr`, `+bk`).
 - **Recommended Ḱ:** `C:[+front,+hi,-lo]` — palatal/palatovelar consonants; not exact (medium confidence).
 
