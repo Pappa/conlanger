@@ -4,24 +4,24 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9201** (one per corpus rule)
-- OK: **4655** (50.6%)
-- Fail: **4546** (49.4%)
+- OK: **5299** (57.6%)
+- Fail: **3902** (42.4%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 2605 | `unknown_character` |
-| 1085 | `syntax_other` |
-| 308 | `expected_underscore` |
-| 202 | `unknown_feature` |
-| 90 | `unknown_grouping` |
-| 49 | `stuff_after_word_bound` |
-| 48 | `prose_or_expected_arrow` |
-| 32 | `malformed_comment` |
+| 1687 | `unknown_character` |
+| 1204 | `syntax_other` |
+| 355 | `expected_underscore` |
+| 233 | `unknown_feature` |
+| 106 | `unknown_grouping` |
+| 83 | `prose_or_expected_arrow` |
+| 55 | `stuff_after_word_bound` |
+| 45 | `malformed_comment` |
+| 31 | `diacritic_prereq` |
+| 26 | `expected_number` |
 | 26 | `nested_brackets` |
-| 25 | `diacritic_prereq` |
-| 25 | `expected_number` |
 | 25 | `panic_other` |
 | 15 | `runtime_other` |
 | 9 | `runtime_delete_only_segment` |
@@ -33,31 +33,31 @@
 
 | count | error_token |
 |------:|-------------|
-| 1251 | `ː` |
 | 266 | `—` |
-| 204 | `“` |
-| 194 | `→` |
-| 49 | `₁` |
+| 241 | `“` |
+| 233 | `ː` |
+| 219 | `→` |
+| 50 | `₁` |
 
 ### unknown_feature
 
 | count | error_token |
 |------:|-------------|
-| 41 | `voiced` |
-| 20 | `sibilant` |
-| 13 | `dental` |
+| 47 | `voiced` |
+| 21 | `sibilant` |
+| 18 | `dental` |
+| 14 | `open` |
 | 13 | `palatal` |
-| 11 | `lowtone` |
 
 ### unknown_grouping
 
 | count | error_token |
 |------:|-------------|
-| 17 | `K` |
+| 18 | `K` |
 | 15 | `R` |
-| 11 | `U` |
-| 8 | `T` |
-| 7 | `B` |
+| 13 | `U` |
+| 9 | `M` |
+| 9 | `B` |
 
 ## Notes
 
