@@ -34,7 +34,7 @@ where = ["src"]
 exclude = ["tests", "notebooks"]
 
 [tool.setuptools.package-data]
-conlanger = ["data/*.csv"]
+conlanger = ["data/*.csv", "data/asca/*.csv"]
 
 [tool.pytest.ini_options]
 testpaths = "tests"

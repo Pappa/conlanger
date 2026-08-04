@@ -1,5 +1,5 @@
 Type: grilling
-Status: claimed
+Status: resolved
 Blocked by: 01, 03, 04
 
 # Resolve abbreviations unsupported by ASCA and Brassica
@@ -11,6 +11,19 @@ Which Index Diachronica abbreviations (class letters, series indices, other shor
 ## Notes
 
 - Skills: `/research` for ASCA/Brassica support surfaces; `/grill-with-docs` (or grilling + domain-modeling) for which expansions / `skipped` treatments to adopt.
-- Abbreviation tables are string→string, hierarchical (global + section); this ticket decides the gap-fill policy — a later task can populate tables once the policy is locked.
-- Honor fidelity policy from [Historical fidelity vs valid-but-inaccurate fallback](04-historical-fidelity-vs-validity.md) (class-first ladder; `status` + validation CSV; no meaning-changing rewrites without owner-approved rare swap later).
-- Evidence inputs: `notebooks/data/sound_change_abbreviations.txt`, `notebooks/data/index_diachronica_original.html`, findings from [What counts as a valid ASCA rule string?](01-valid-asca-rule-string.md).
+- Honor [Historical fidelity vs valid-but-inaccurate fallback](04-historical-fidelity-vs-validity.md).
+- Evidence: `notebooks/data/sound_change_abbreviations.txt`, `index_diachronica_original.html`, [01-valid-asca-rule-string](01-valid-asca-rule-string.md).
+
+## Answer
+
+Domain terms: **Class letter**, **Symbol**, **Meta-notation**, **PhonologicalRuleSet**, **Abbreviation table**, **Failure class**, **Series index**, **Correspondence series** — see `CONTEXT.md`.
+
+### Decisions
+
+- **No validation-first filtering** — apply mappings, throw at ASCA, fix top **failure classes** each cycle ([Correction workflow](05-correction-workflow-invalid-rules.md)).
+- **Class letters** at compile/runtime: **PhonologicalRuleSet** loads `src/conlanger/data/asca/group_mappings.csv`, passes mappings to the transformer; unmapped tokens stay as-is. Retire ingest `str.maketrans`.
+- **Symbols** at HTML→YAML ingest (distinct from class letters; see ticket 07 for **Feature matrix**).
+- HTML provides a **global Key to Abbreviations** only — section-local prose (Athabaskan `TŠ`, etc.): **failure class** clusters; hand-add rows when warranted; no prose-extraction spike.
+- **Deferred (cluster-driven):** **series indices**, **meta-notation**, section-local tokens.
+- **Brassica:** deferred (`src/conlanger/data/brassica/`).
+- **Follow-on:** [Spike 09](09-spike-asca-class-letter-feature-matrices.md) (done); implement **PhonologicalRuleSet**.

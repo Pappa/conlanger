@@ -254,8 +254,9 @@ def test_load_group_mappings_default_csv():
     mappings = load_group_mappings()
     abbrev = {m.grouping: m.mapping for m in mappings}
     assert abbrev["S"] == "P"
-    assert abbrev["A"] == "[+delrel]"
-    assert abbrev["H"] == "[-place]"
+    assert abbrev["A"] == "O:[+delrel]"
+    assert abbrev["R"] == "[+son,-syll]"
+    assert "M" not in abbrev
     assert all(isinstance(m, GroupMapping) for m in mappings)
 
 

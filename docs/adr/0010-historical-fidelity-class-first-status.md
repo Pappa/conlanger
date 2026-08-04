@@ -1,6 +1,6 @@
 # Prefer SoT fidelity with class-first transforms; hold out meaning-changing cases
 
-When cleaning Index Diachronica rules toward ASCA-valid corpus entries, **prefer faithfulness to the HTML source of truth** (the attested phonological claim; `raw`/`source` keep the surface line). Apply **class-first** safe transforms at scale — formatting, token replacement, and non-structural normalisation — then cluster remaining failures for investigation. Do **not** rewrite a rule into a valid-but-inaccurate form in the normal path; set optional corpus `status: skipped` (omit = ok; also `needs-validation` for structural normalisation pending a clean re-validate) and record full reason/description in a **temporary validation report CSV**. Permanent skip or rare same-intent swap requires project-owner approval; an agent may clear `needs-validation` when re-validation passes.
+When cleaning Index Diachronica rules toward ASCA-valid **corpus rules**, prefer **historical fidelity** and **class-first** safe transforms; hold out meaning-changing cases. Domain terms in `CONTEXT.md`; this ADR records the trade-off.
 
 ## Considered Options
 

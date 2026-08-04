@@ -10,37 +10,29 @@ What is the efficient workflow to find and modify invalid rules (regex or other 
 
 ## Notes
 
-- Skills: `/grill-with-docs` (or grilling + domain-modeling); `/prototype` if a cheap workflow artifact helps.
-- Blocked on validity criteria, the valid/invalid inventory, and fidelity policy.
-- Must honor fidelity policy from [Historical fidelity vs valid-but-inaccurate fallback](04-historical-fidelity-vs-validity.md) (class-first; optional corpus `status`; reasons in temporary validation CSV).
-- [Create an ASCA validator for SoundChangeRule](08-asca-validator.md) supports this discussion but does not block it.
-- Goal is reliability and scale beyond vibe-coded regex piles.
+- Blocked on validity criteria ([02](02-inventory-valid-vs-invalid-rules.md)), fidelity policy ([04](04-historical-fidelity-vs-validity.md)).
+- [08-asca-validator](08-asca-validator.md) supports but does not block.
 
 ## Answer
 
+Domain terms: **Class-first**, **Historical fidelity**, **Sound-change section**, **Corpus rule**, **Validation report**, **Failure class**, **Compile validation** — see `CONTEXT.md`.
+
 ### Where corrections live
 
-Class-first transforms live in **`IndexDiachronicaParser`**. Cleaned YAML is **fully regenerated** on each run. Git-diff the regenerated YAML to catch inadvertent churn on unrelated rules; use that diff to grow unit tests. Skips need not be a durable overlay — a later parse+validate pass re-marks failures. An **external one-off override file** (status / rule translations for edge cases) will exist; **exact schema deferred**.
+**Class-first** transforms in `IndexDiachronicaParser`. Regenerate cleaned YAML each run; git-diff for churn control and fixture growth. External one-off override file deferred.
 
-### `SoundChangeRule` dual role
+### Compile unit
 
-1. **Temporary (now):** Parser builds section dicts → `SoundChangeRule` (one instance per HTML section leaf; class may need updates) so each sound change can be formatted/validated with `validate_asca` while iterating on the parser.
-2. **Permanent (later):** Once YAML is the adopted SoT (few/no skips), load YAML → `SoundChangeRule` instances for the rest of the application.
-
-Regenerated YAML remains the ticket-03 **applier-neutral corpus** (successor SoT); ASCA rendering/`SoundChangeRule` are the validate/runtime view.
-
-### Validation grain
-
-Validate **each sound change individually** (not whole-section-only). Section-wide shared failures (e.g. local abbreviations) are fine and support methodical section burn-down.
+One **sound-change section** (HTML `<h2>`) per compile container → **PhonologicalRuleSet** (ticket 06). **Compile validation** per **corpus rule**, not whole-section-only.
 
 ### Steady-state loop
 
-1. Load HTML into memory.
-2. For each section / rule: parse → `SoundChangeRule` → `validate_asca` per sound change.
-3. Regenerate YAML output.
-4. Update external rule-status metadata (shape deferred).
-5. Update unit-test fixtures with samples whose **status changed**.
-6. Cluster errors (validation report / pandas).
-7. Reason about the top 3–5 classes and propose class-first resolutions (implement in parser; one-offs via override file later).
+1. Parse HTML.
+2. Per section / **corpus rule**: parse → compile → `validate_asca`.
+3. Regenerate YAML.
+4. Update validation metadata (shape deferred).
+5. Fixture samples whose **rule status** changed.
+6. Cluster errors → top **failure classes**.
+7. Propose **class-first** fixes in parser; one-offs via override file later.
 
-Honors ADR-0010 (class-first ladder, `status`, temporary validation CSV, owner-gated permanent skip/swap).
+Policy: [ADR-0010](../../../docs/adr/0010-historical-fidelity-class-first-status.md) + ticket 04 edit ladder.

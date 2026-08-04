@@ -1,0 +1,17 @@
+grouping,mapping,comment
+A,O:[+delrel],Index affricate → obstruent with delayed release (ASCA has no affricate grouping)
+B,V:[+back],Index back vowel; V host avoids matching velar/uvular consonants
+D,P:[+voice],Index voiced plosive
+E,V:[+front],Index front vowel; V host avoids matching palatal consonants
+H,[-place],Index laryngeal ≈ glottals (h ɦ ʔ); pharyngeals need cluster override
+J,"{L,G}",Index approximant ≈ liquids + glides; avoids bare [+approximant] matching vowels
+K,"C:[-front,+back,+hi,-lo]",Index velar consonant (matches crate TODO K matrix with C host)
+Ḱ,"C:[+front,+hi,-lo]",Index palatovelar approx; overlaps palatals — medium fidelity
+P,C:[+labial],Index labial/bilabial; not ASCA P (plosive)
+Q,"{C:[-front,+back,-hi,-lo],[+click]}",Index uvular OR click; dual meaning — cluster disambiguation often required
+R,"[+son,-syll]",Index resonant/sonorant ≈ ASCA S ∪ G (not ASCA S alone)
+S,P,Index plosive ↔ ASCA plosive grouping P
+T,P:[-voice],Index voiceless plosive
+U,%,Index syllable ≈ ASCA whole-syllable % (Index % boundary → ASCA $ separately)
+W,G,Index semivowel ≈ ASCA glides G
+Z,[+cont],Index continuant; includes vowels — use {F L G} or O:[+cont] in clusters if too broad

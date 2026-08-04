@@ -38,16 +38,16 @@ sections:
 | `output` | yes | same |
 | `raw` | yes | original HTML rule-line text; multi-line via `\|` literal block |
 | `source` | yes | `index_diachronica_original.html:<line>` — first line of the span |
-| `env` | no | absent = any environment |
-| `exception` | no | absent = no exceptions |
-| `status` | no | `needs-validation` \| `skipped`; omit = `ok`. **Amended by** [Historical fidelity vs valid-but-inaccurate fallback](04-historical-fidelity-vs-validity.md) (replaces earlier `skipped` reason string). Reasons/`description` live in a temporary validation CSV, not on the rule. |
+| `env` | no | **Environment** — absent = any |
+| `exception` | no | **Exception** — absent = none |
+| `status` | no | **Rule status** — see ticket 04; reasons in **validation report** |
 
-Field values stay **opaque Index Diachronica–shaped strings** (sets, series indices, feature matrices inline) — not an ASCA AST and not deep YAML structure. Compilers + abbreviation tables own applier targeting. Series indices are retained in strings; resolution uses hierarchical **abbreviation tables**. Feature-matrix synonym policy is deferred to ticket 07. Edge *splits* (one HTML line → multiple corpus rules) deferred; interim is `status: skipped`.
+Field values are opaque Index-shaped strings — not an ASCA AST. See **Corpus rule**, **Applier-neutral**, **Series index** in `CONTEXT.md`. Abbreviation / feature policy: tickets 06, 07.
 
 ### Ingest note
 
 Parse `index_diachronica_original.html` with **lxml** (non-strict HTML).
 
-### Glossary locked this ticket
+### Glossary
 
-**Abbreviation**, **Abbreviation table**, **Raw**, **Source**, **Feature matrix** — see `CONTEXT.md`. (**Skipped** / **Rule status** / **Validation report** refined in ticket 04.)
+See `CONTEXT.md` — **Corpus rule**, **Raw**, **Source**, **Environment**, **Exception**, **Rule status**, **Validation report**.

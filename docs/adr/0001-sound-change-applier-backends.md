@@ -1,11 +1,11 @@
 # ASCA first, multi-applier capable
 
-Conlanger will treat ASCA (`asca-rust`) as the default sound-change applier for execution code and tests, because that is where near-term work will land. At the same time, the package must keep a clear boundary so Brassica (or another sound-change applier) can be used later without rewriting the Index Diachronica ingestion pipeline from scratch.
+Conlanger will treat ASCA [asca-rust](https://github.com/Girv98/asca-rust) as the default sound-change applier. Howerver, this package should abstract its interface to the sound-change applier foso thatr [Brassica](https://github.com/bradrn/brassica) or another tool can be used optionally in future without needing to rewrite a significant amount of code.
 
 ## Considered Options
 
 - **ASCA-only forever** — faster short term; locks the whole stack to one syntax and CLI.
-- **Applier-neutral from day one with no ASCA bias** — cleaner long term; slows the ASCA execution/test work that is needed now.
+- **Applier-neutral from day one with no ASCA bias** — may be unnecessarily complex to support multiple appliers long term
 - **ASCA-first with an explicit multi-applier boundary** — chosen: ship ASCA hard, keep the door open for Brassica.
 
 ## Consequences

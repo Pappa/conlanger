@@ -60,7 +60,7 @@ SUBSCRIPT_MAP = str.maketrans(
 )
 
 DEFAULT_GROUP_MAPPINGS_CSV = (
-    Path(__file__).resolve().parents[1] / "data" / "group_mappings.csv"
+    Path(__file__).resolve().parents[1] / "data" / "asca" / "group_mappings.csv"
 )
 
 GroupMappingTuple = tuple[str, str] | tuple[str, str, str]
