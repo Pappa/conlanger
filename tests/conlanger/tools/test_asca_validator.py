@@ -114,6 +114,73 @@ def test_validate_asca_respects_env_bin(monkeypatch: pytest.MonkeyPatch, tmp_pat
         validate_asca(_scr({"input": "a", "output": "b"}))
 
 
+def test_validate_asca_default_probe_words(tmp_path: Path):
+    asca = tmp_path / "asca"
+    asca.write_text("#!/bin/sh\nexit 0\n", encoding="utf-8")
+    asca.chmod(0o755)
+
+    captured: dict[str, str] = {}
+
+    def fake_run(cmd, **_kwargs):
+        captured["words"] = Path(cmd[2]).read_text(encoding="utf-8")
+        return MagicMock(returncode=0, stderr="")
+
+    with patch("conlanger.tools.asca_validator.subprocess.run", fake_run):
+        validate_asca(
+            _scr({"input": "a", "output": "b"}),
+            asca_bin=asca,
+            probe_words=None,
+        )
+
+    assert captured["words"] == "a\nba\nkata\nsami\nntu\n"
+
+
+def test_validate_asca_keeps_trailing_newline(tmp_path: Path):
+    asca = tmp_path / "asca"
+    asca.write_text("#!/bin/sh\nexit 0\n", encoding="utf-8")
+    asca.chmod(0o755)
+
+    captured: dict[str, str] = {}
+
+    def fake_run(_cmd, **_kwargs):
+        captured["body"] = (tmp_path / "check.rsca").read_text(encoding="utf-8")
+        return MagicMock(returncode=0, stderr="")
+
+    rule = _scr({"input": "a", "output": "b"})
+    with patch("conlanger.tools.asca_validator.subprocess.run", fake_run):
+        with patch(
+            "conlanger.tools.asca_validator.tempfile.TemporaryDirectory"
+        ) as tmpdir:
+            tmpdir.return_value.__enter__.return_value = str(tmp_path)
+            with patch.object(rule, "__str__", return_value="@ 1 - test\na > b\n"):
+                validate_asca(rule, asca_bin=asca, probe_words=_PROBE)
+
+    assert captured["body"].endswith("\n")
+    assert not captured["body"].endswith("\n\n")
+
+
+def test_validate_asca_appends_trailing_newline(tmp_path: Path):
+    asca = tmp_path / "asca"
+    asca.write_text("#!/bin/sh\nexit 0\n", encoding="utf-8")
+    asca.chmod(0o755)
+
+    captured: dict[str, str] = {}
+
+    def fake_run(_cmd, **_kwargs):
+        captured["body"] = (tmp_path / "check.rsca").read_text(encoding="utf-8")
+        return MagicMock(returncode=0, stderr="")
+
+    rule = _scr({"input": "a", "output": "b"})
+    with patch("conlanger.tools.asca_validator.subprocess.run", fake_run):
+        with patch(
+            "conlanger.tools.asca_validator.tempfile.TemporaryDirectory"
+        ) as tmpdir:
+            tmpdir.return_value.__enter__.return_value = str(tmp_path)
+            validate_asca(rule, asca_bin=asca, probe_words=_PROBE)
+
+    assert captured["body"].endswith("\n")
+
+
 def _load_asca_guess_rows():
     df = pd.read_csv(_FIXTURE_CSV, dtype=str, keep_default_na=False)
     if "kind" not in df.columns:

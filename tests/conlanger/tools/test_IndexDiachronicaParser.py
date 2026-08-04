@@ -9,9 +9,12 @@ from conlanger.tools.IndexDiachronicaParser import (
     DEFAULT_GROUP_MAPPINGS_CSV,
     GroupMapping,
     IndexDiachronicaParser,
+    _coerce_group_mapping,
     extract_rule_parts,
+    extract_text_with_subs,
     load_group_mappings,
     parse_rule_element,
+    parse_section_heading,
     split_env_exception,
     split_input_output,
     split_output_rest,
@@ -21,6 +24,33 @@ from conlanger.tools.IndexDiachronicaParser import (
 _SAMPLED_RULES_CSV = (
     Path(__file__).resolve().parents[2] / "fixtures" / "sound_change_rules.csv"
 )
+
+_INDEX_DIACHRONICA_HTML = """\
+<!doctype html>
+<html>{head}<body>
+<section id="{section_id}">
+{section_body}
+</section>
+</body></html>
+"""
+
+
+def _write_index_diachronica_html(
+    path: Path,
+    *,
+    section_id: str,
+    section_body: str,
+    charset: bool = False,
+) -> None:
+    head = '<head><meta charset="utf-8"></head>' if charset else ""
+    path.write_text(
+        _INDEX_DIACHRONICA_HTML.format(
+            head=head,
+            section_id=section_id,
+            section_body=section_body,
+        ),
+        encoding="utf-8",
+    )
 
 
 def _load_sampled_html_rules() -> list[tuple]:
@@ -86,6 +116,118 @@ def test_split_output_rest(post_arrow, expected):
 )
 def test_split_env_exception(rest, expected):
     assert split_env_exception(rest) == expected
+
+
+def test_split_env_exception_empty_rest():
+    assert split_env_exception("") == (None, None)
+    assert split_env_exception("   ") == (None, None)
+
+
+def test_parse_section_heading_without_index():
+    assert parse_section_heading("Intro only") == ("", "Intro only")
+
+
+def test_extract_text_with_subs_tail_after_sub():
+    el = html.fragment_fromstring(
+        "<p>before<sub>2</sub>after</p>", create_parent=False
+    )
+    assert extract_text_with_subs(el) == "before₂after"
+
+
+def test_extract_text_with_subs_no_tail_after_sub():
+    el = html.fragment_fromstring("<p>before<sub>2</sub></p>", create_parent=False)
+    assert extract_text_with_subs(el) == "before₂"
+
+
+def test_coerce_group_mapping():
+    assert _coerce_group_mapping(GroupMapping("S", "P")) == GroupMapping("S", "P")
+    assert _coerce_group_mapping(("T", "P:[-voice]")) == GroupMapping("T", "P:[-voice]")
+    assert _coerce_group_mapping(("W", "G", "glides")) == GroupMapping(
+        "W", "G", "glides"
+    )
+    with pytest.raises(TypeError, match="group_mappings items"):
+        _coerce_group_mapping(("only-one",))  # type: ignore[arg-type]
+    with pytest.raises(TypeError, match="group_mappings items"):
+        _coerce_group_mapping(("a", "b", "c", "d"))  # type: ignore[arg-type]
+
+
+def test_load_group_mappings_missing_columns(tmp_path: Path):
+    bad_csv = tmp_path / "bad.csv"
+    bad_csv.write_text("grouping\nS\n", encoding="utf-8")
+    with pytest.raises(ValueError, match="missing required columns"):
+        load_group_mappings(bad_csv)
+
+
+def test_load_group_mappings_without_comment_column(tmp_path: Path):
+    csv_path = tmp_path / "minimal.csv"
+    csv_path.write_text("grouping,mapping\nS,P\n", encoding="utf-8")
+    mappings = load_group_mappings(csv_path)
+    assert mappings == [GroupMapping("S", "P", "")]
+
+
+def test_parser_tuple_group_mappings(tmp_path: Path):
+    html_path = tmp_path / "mapped.html"
+    _write_index_diachronica_html(
+        html_path,
+        section_id="Mapped",
+        section_body="""\
+<h2>1.0 Test Section</h2>
+<p class="schg">S → a</p>""",
+    )
+    doc = IndexDiachronicaParser([("S", "P")]).parse(html_path)
+    assert doc["sections"][0]["rules"][0]["input"] == "P"
+
+
+def test_parser_skips_section_without_h2(tmp_path: Path):
+    html_path = tmp_path / "no_h2.html"
+    _write_index_diachronica_html(
+        html_path,
+        section_id="NoH2",
+        section_body='<p class="schg">a → b</p>',
+    )
+    assert IndexDiachronicaParser().parse(html_path)["sections"] == []
+
+
+def test_parser_skips_section_with_empty_name(tmp_path: Path):
+    html_path = tmp_path / "empty_name.html"
+    _write_index_diachronica_html(
+        html_path,
+        section_id="Empty",
+        section_body="""\
+<h2>   </h2>
+<p class="schg">a → b</p>""",
+    )
+    assert IndexDiachronicaParser().parse(html_path)["sections"] == []
+
+
+def test_parser_skips_empty_paragraph(tmp_path: Path):
+    html_path = tmp_path / "empty_p.html"
+    _write_index_diachronica_html(
+        html_path,
+        section_id="EmptyP",
+        section_body="""\
+<h2>1.0 Test Section</h2>
+<p>   </p>
+<p class="schg">a → b</p>""",
+    )
+    doc = IndexDiachronicaParser().parse(html_path)
+    sec = doc["sections"][0]
+    assert sec["rules"][0]["input"] == "a"
+    assert "comments" not in sec
+
+
+def test_parser_citation_only_section(tmp_path: Path):
+    html_path = tmp_path / "citation_only.html"
+    _write_index_diachronica_html(
+        html_path,
+        section_id="CitationOnly",
+        section_body="""\
+<h2>1.0 Test Section</h2>
+<p>Only a citation line.</p>""",
+    )
+    sec = IndexDiachronicaParser().parse(html_path)["sections"][0]
+    assert sec["citation"] == "Only a citation line."
+    assert "rules" not in sec
 
 
 @pytest.mark.parametrize(
@@ -210,20 +352,17 @@ def test_parse_rule_element_except_without_comma():
 
 def test_first_p_is_citation_rest_comments(tmp_path: Path):
     html_path = tmp_path / "sample.html"
-    html_path.write_text(
-        """<!doctype html>
-<html><head><meta charset="utf-8"></head><body>
-<section id="Bench">
+    _write_index_diachronica_html(
+        html_path,
+        section_id="Bench",
+        charset=True,
+        section_body="""\
 <h2>6.1.1.1 North Omotic to Bench</h2>
 <p><i>Mecislau</i>, from Ehret (1995), Title</p>
 <p>NB: Does not include vowel developments.</p>
 <p class="schg">x<sub>1</sub> \u2192 k</p>
 <p>Interleaved note</p>
-<p class="schg">\u026c \u2192 l</p>
-</section>
-</body></html>
-""",
-        encoding="utf-8",
+<p class="schg">\u026c \u2192 l</p>""",
     )
     doc = IndexDiachronicaParser().parse(html_path, source_file="sample.html")
     sec = doc["sections"][0]
@@ -262,16 +401,13 @@ def test_load_group_mappings_default_csv():
 
 def test_parser_abbreviations_and_raw_preserved(tmp_path: Path):
     html_path = tmp_path / "mapped.html"
-    html_path.write_text(
-        """<!doctype html>
-<html><head><meta charset="utf-8"></head><body>
-<section id="Mapped">
+    _write_index_diachronica_html(
+        html_path,
+        section_id="Mapped",
+        charset=True,
+        section_body="""\
 <h2>1.0 Test Section</h2>
-<p class="schg">S → a / V_V</p>
-</section>
-</body></html>
-""",
-        encoding="utf-8",
+<p class="schg">S → a / V_V</p>""",
     )
     mappings = load_group_mappings()
     doc = IndexDiachronicaParser(mappings).parse(
@@ -286,16 +422,13 @@ def test_parser_abbreviations_and_raw_preserved(tmp_path: Path):
 
 def test_parser_without_mappings_unchanged(tmp_path: Path):
     html_path = tmp_path / "unmapped.html"
-    html_path.write_text(
-        """<!doctype html>
-<html><head><meta charset="utf-8"></head><body>
-<section id="Unmapped">
+    _write_index_diachronica_html(
+        html_path,
+        section_id="Unmapped",
+        charset=True,
+        section_body="""\
 <h2>1.0 Test Section</h2>
-<p class="schg">S → a / V_V</p>
-</section>
-</body></html>
-""",
-        encoding="utf-8",
+<p class="schg">S → a / V_V</p>""",
     )
     doc = IndexDiachronicaParser().parse(html_path, source_file="unmapped.html")
     assert doc["abbreviations"] == {}
