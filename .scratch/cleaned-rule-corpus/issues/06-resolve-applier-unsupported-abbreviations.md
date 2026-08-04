@@ -25,5 +25,5 @@ Domain terms: **Class letter**, **Symbol**, **Meta-notation**, **PhonologicalRul
 - **Symbols** at HTML→YAML ingest (distinct from class letters; see ticket 07 for **Feature matrix**).
 - HTML provides a **global Key to Abbreviations** only — section-local prose (Athabaskan `TŠ`, etc.): **failure class** clusters; hand-add rows when warranted; no prose-extraction spike.
 - **Deferred (cluster-driven):** **series indices**, **meta-notation**, section-local tokens.
-- **Brassica:** deferred (`src/conlanger/data/brassica/`).
+- **Brassica:** deferred .
 - **Follow-on:** [Spike 09](09-spike-asca-class-letter-feature-matrices.md) (done); implement **PhonologicalRuleSet**.
