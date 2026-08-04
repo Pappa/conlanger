@@ -35,6 +35,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - Brassica compiler (ADR-0001)
 - Edge-split policy (ADR-0005; interim **skipped**)
 - External one-off rule override schema
+- **Tier 1–3 word-independent ASCA gate** (Rust `ParsedRules::try_from` wrapper) — deferred; probe synthesis (ticket 10) addresses Tier 4 first
 
 ## Out of scope
 
