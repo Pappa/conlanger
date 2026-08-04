@@ -5,7 +5,7 @@ Type: task
 
 ## Question
 
-Replace the temporary manual notebook data-preparation flow (`prepare_phoible_data.ipynb`, `prepare_wals_data.ipynb` and their `.npz` outputs) with a repeatable, non-manual data processing pipeline suitable for the generative conlang product arc (ADR-0007).
+Replace the temporary manual notebook data-preparation flow (`01_01_prepare_phoible_data.ipynb`, `01_02_prepare_wals_data.ipynb` and their `.npz` outputs) with a repeatable, non-manual data processing pipeline suitable for the generative conlang product arc (ADR-0007).
 
 ## Notes
 

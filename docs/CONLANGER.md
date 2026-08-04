@@ -12,8 +12,8 @@ Language [phoneme data](https://raw.githubusercontent.com/phoible/dev/v2.0/data/
 
 Data on morphology and grammar from [WALS](https://wals.info/) was prepared in a similar way.
 
-- Phoible data preperation notebook: [prepare_phoible_data.ipynb](../notebooks/prepare_phoible_data.ipynb)
-- WALS data preperation notebook: [prepare_wals_data.ipynb](../notebooks/prepare_wals_data.ipynb)
+- Phoible data preperation notebook: [01_01_prepare_phoible_data.ipynb](../notebooks/01_01_prepare_phoible_data.ipynb)
+- WALS data preperation notebook: [01_02_prepare_wals_data.ipynb](../notebooks/01_02_prepare_wals_data.ipynb)
 - Language phoneme data npz file: [language_phonemes.npz](../notebooks/data/language_phonemes.npz)
 - WALS data npz file: [language_parameters.npz](../notebooks/data/language_parameters.npz)
 
@@ -22,7 +22,7 @@ Data on morphology and grammar from [WALS](https://wals.info/) was prepared in a
 
 Before using a [GAN](https://en.wikipedia.org/wiki/Generative_adversarial_network) (generative adversarial network) to generate new language phoneme inventories, I wanted to check that it was possible to predict languages by their phonemes.
 
-- Language prediction notebook: [predict_languages.ipynb](../notebooks/predict_languages.ipynb)
+- Language prediction notebook: [01_03_predict_languages.ipynb](../notebooks/01_03_predict_languages.ipynb)
 
 Overall the accuracy is very poor, but the number of classes is very high relative to the number of training samples (approx 80%). The model tends to just pick languages with the most samples in the training data. However, it does perform better than random chance and better than just picking one of the 5 most common languages in the training set.
 
@@ -32,7 +32,7 @@ Here's where the fun begins. I've previously [experimented building GANs](https:
 
 For phoneme inventory generation, I barely bothered tuning the GAN architecture that I used for Rothko paintings. It needed a few tweaks to prevent it overfitting and memorising samples. I removed some layers from the generator, reduced the number of epochs and increased the learning rate. Essentially, I just needed to make it a bit worse at generating fakes. This makes a lot of sense considering the difference in complexity between these simple pixilated phoneme inventory images and the far more complex Miro and Rothko paintings.
 
-- Phoneme inventory generation notebook: [phoneme_gan.ipynb](../notebooks/phoneme_gan.ipynb)
+- Phoneme inventory generation notebook: [02_01_phoneme_gan.ipynb](../notebooks/02_01_phoneme_gan.ipynb)
 
 ## Morphology and grammar rule generation
 
@@ -40,7 +40,7 @@ Morphology and grammar rules were generated in a similar way, though it took a l
 This is probably because of the way the each value is represented in the data, as an ordinal number rather than binary. The results aren't 
 ideal as some important values can be missing from the generated data. I might need to try a different approach.
 
-- Morphology and grammar rule generation notebook: [wals_parameters_gan.ipynb](../notebooks/wals_parameters_gan.ipynb)
+- Morphology and grammar rule generation notebook: [02_02_wals_parameters_gan.ipynb](../notebooks/02_02_wals_parameters_gan.ipynb)
 
 ## Lexicon generation
 
@@ -50,8 +50,8 @@ a basic syllable structure and phoneme inventory, and generates a lexicon. The i
 GAN and supplied to the lexicon builder. The lexicon builder produces a lot of unrealistic words, but my plan is to apply a series of sound 
 change rules to the lexicon. I'm hoping this will result in a set of proto-language root words that seem naturalistic.
 
-- Word list creation notebook: [word_list.ipynb](../notebooks/word_list.ipynb)
-- Lexicon generation notebook: [generate_lexicon.ipynb](../notebooks/generate_lexicon.ipynb)
+- Word list creation notebook: [03_01_word_list.ipynb](../notebooks/03_01_word_list.ipynb)
+- Lexicon generation notebook: [03_02_generate_lexicon.ipynb](../notebooks/03_02_generate_lexicon.ipynb)
 
 ## Sound change rules
 
