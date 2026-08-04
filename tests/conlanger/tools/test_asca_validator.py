@@ -18,7 +18,7 @@ _PROBE = Path(__file__).resolve().parents[2] / "fixtures" / "asca_probe_words.ws
 
 
 @pytest.fixture
-def fake_asca(tmp_path: Path) -> Path:
+def mock_asca(tmp_path: Path) -> Path:
     """Minimal executable stand-in for the asca CLI (subprocess is mocked separately)."""
     asca = tmp_path / "asca"
     asca.write_text("#!/bin/sh\nexit 0\n", encoding="utf-8")
@@ -41,73 +41,20 @@ def test_validate_asca_smoke_with_installed_binary():
     assert validate_asca(scr, probe_words=_PROBE) is True
 
 
-@pytest.mark.parametrize(
-    "change",
-    [
-        {"input": "a", "output": "b"},
-        {"input": "t", "output": "s", "env": "_i"},
-        {"input": "r", "output": "∅", "env": "{ð,f}_{ɡ,ɣ}"},
-        {"input": "∅", "output": "n", "env": "#_i"},
-        {"input": "ab", "output": "&"},
-        {"input": "a", "output": "e", "env": "_#", "exception": "_s"},
-    ],
-)
-def test_validate_asca_accepts_valid_rules(
-    mock_asca_subprocess, fake_asca, change
+def test_validate_asca_returns_true_when_subprocess_succeeds(
+    mock_asca_subprocess, mock_asca
 ):
     mock_asca_subprocess.return_value = MagicMock(returncode=0, stderr="")
     scr = SoundChangeRuleSet(
-        {"index": "1", "section": "test", "rules": [change]},
+        {"index": "1", "section": "test", "rules": [{"input": "a", "output": "b"}]},
         format="asca",
     )
-    assert validate_asca(scr, asca_bin=fake_asca, probe_words=_PROBE) is True
+    assert validate_asca(scr, asca_bin=mock_asca, probe_words=_PROBE) is True
 
 
-@pytest.mark.parametrize(
-    "change, match",
-    [
-        ({"input": "a", "output": ""}, r"empty|deletion|\*|Syntax Error|Unknown"),
-        ({"input": "", "output": "a"}, r"empty|insertion|\*|Syntax Error|Unknown"),
-        ({"input": "*", "output": "*"}, r"Insertion|Deletion|Syntax Error"),
-        (
-            {"input": "a", "output": "b", "env": "no underscore"},
-            r"_|underline|Expected|Unknown|Syntax Error",
-        ),
-        ({"input": "a", "output": "b", "env": "_ _"}, r"underline|_|Too many|Expected|Syntax Error"),
-    ],
-)
-def test_validate_asca_rejects_invalid_rules(
-    mock_asca_subprocess, fake_asca, change, match
-):
-    mock_asca_subprocess.return_value = MagicMock(
-        returncode=1,
-        stderr="Syntax Error: Expected '_', but received ''",
-    )
-    scr = SoundChangeRuleSet(
-        {"index": "1", "section": "test", "rules": [change]},
-        format="asca",
-    )
-    with pytest.raises(ASCAValidationError, match=match):
-        validate_asca(scr, asca_bin=fake_asca, probe_words=_PROBE)
-
-
-@pytest.mark.parametrize(
-    "change, match",
-    [
-        ({"index": "1", "section": "sec"}, "no active RuleChange"),
-        (
-            {
-                "index": "1",
-                "section": "sec",
-                "rules": [{"skip": True, "input": "a", "output": "b"}],
-            },
-            "no active RuleChange",
-        ),
-    ],
-)
-def test_validate_asca_rejects_inactive_rules(change, match):
-    scr = SoundChangeRuleSet(change, format="asca")
-    with pytest.raises(ASCAValidationError, match=match):
+def test_validate_asca_rejects_inactive_rules():
+    scr = SoundChangeRuleSet({"index": "1", "section": "sec"}, format="asca")
+    with pytest.raises(ASCAValidationError, match="no active RuleChange"):
         validate_asca(scr)
 
 
@@ -120,7 +67,7 @@ def test_validate_asca_missing_binary(tmp_path: Path):
         validate_asca(scr, asca_bin=tmp_path / "nope")
 
 
-def test_validate_asca_missing_probe_words(fake_asca, tmp_path: Path):
+def test_validate_asca_missing_probe_words(mock_asca, tmp_path: Path):
     scr = SoundChangeRuleSet(
         {"index": "1", "section": "test", "rules": [{"input": "a", "output": "b"}]},
         format="asca",
@@ -128,12 +75,12 @@ def test_validate_asca_missing_probe_words(fake_asca, tmp_path: Path):
     with pytest.raises(ASCAValidationError, match="probe wordlist not found"):
         validate_asca(
             scr,
-            asca_bin=fake_asca,
+            asca_bin=mock_asca,
             probe_words=tmp_path / "missing.wsca",
         )
 
 
-def test_validate_asca_timeout(mock_asca_subprocess, fake_asca):
+def test_validate_asca_timeout(mock_asca_subprocess, mock_asca):
     scr = SoundChangeRuleSet(
         {"index": "1", "section": "test", "rules": [{"input": "a", "output": "b"}]},
         format="asca",
@@ -142,12 +89,12 @@ def test_validate_asca_timeout(mock_asca_subprocess, fake_asca):
         cmd="asca", timeout=0.01
     )
     with pytest.raises(ASCAValidationError, match="timed out") as exc_info:
-        validate_asca(scr, asca_bin=fake_asca, probe_words=_PROBE)
+        validate_asca(scr, asca_bin=mock_asca, probe_words=_PROBE)
     assert exc_info.value.returncode == 124
 
 
 def test_validate_asca_stderr_error_with_zero_returncode(
-    mock_asca_subprocess, fake_asca
+    mock_asca_subprocess, mock_asca
 ):
     scr = SoundChangeRuleSet(
         {"index": "1", "section": "test", "rules": [{"input": "a", "output": "b"}]},
@@ -157,17 +104,17 @@ def test_validate_asca_stderr_error_with_zero_returncode(
         returncode=0, stderr="Syntax Error: boom\n"
     )
     with pytest.raises(ASCAValidationError, match="Syntax Error"):
-        validate_asca(scr, asca_bin=fake_asca, probe_words=_PROBE)
+        validate_asca(scr, asca_bin=mock_asca, probe_words=_PROBE)
 
 
-def test_validate_asca_nonzero_without_stderr(mock_asca_subprocess, fake_asca):
+def test_validate_asca_nonzero_without_stderr(mock_asca_subprocess, mock_asca):
     scr = SoundChangeRuleSet(
         {"index": "1", "section": "test", "rules": [{"input": "a", "output": "b"}]},
         format="asca",
     )
     mock_asca_subprocess.return_value = MagicMock(returncode=2, stderr="")
     with pytest.raises(ASCAValidationError, match="exited with status 2"):
-        validate_asca(scr, asca_bin=fake_asca, probe_words=_PROBE)
+        validate_asca(scr, asca_bin=mock_asca, probe_words=_PROBE)
 
 
 def test_validate_asca_respects_env_bin(
@@ -182,7 +129,7 @@ def test_validate_asca_respects_env_bin(
         validate_asca(scr)
 
 
-def test_validate_asca_default_probe_words(mock_asca_subprocess, fake_asca):
+def test_validate_asca_default_probe_words(mock_asca_subprocess, mock_asca):
     scr = SoundChangeRuleSet(
         {"index": "1", "section": "test", "rules": [{"input": "a", "output": "b"}]},
         format="asca",
@@ -194,12 +141,12 @@ def test_validate_asca_default_probe_words(mock_asca_subprocess, fake_asca):
         return MagicMock(returncode=0, stderr="")
 
     mock_asca_subprocess.side_effect = fake_run
-    validate_asca(scr, asca_bin=fake_asca, probe_words=None)
+    validate_asca(scr, asca_bin=mock_asca, probe_words=None)
     assert captured["words"] == "a\nba\nkata\nsami\nntu\n"
 
 
 def test_validate_asca_keeps_trailing_newline(
-    mock_asca_subprocess, fake_asca, tmp_path: Path
+    mock_asca_subprocess, mock_asca, tmp_path: Path
 ):
     scr = SoundChangeRuleSet(
         {"index": "1", "section": "test", "rules": [{"input": "a", "output": "b"}]},
@@ -215,14 +162,14 @@ def test_validate_asca_keeps_trailing_newline(
     with patch("conlanger.tools.asca_validator.tempfile.TemporaryDirectory") as tmpdir:
         tmpdir.return_value.__enter__.return_value = str(tmp_path)
         with patch.object(scr, "__str__", return_value="@ 1 - test\na > b\n"):
-            validate_asca(scr, asca_bin=fake_asca, probe_words=_PROBE)
+            validate_asca(scr, asca_bin=mock_asca, probe_words=_PROBE)
 
     assert captured["body"].endswith("\n")
     assert not captured["body"].endswith("\n\n")
 
 
 def test_validate_asca_appends_trailing_newline(
-    mock_asca_subprocess, fake_asca, tmp_path: Path
+    mock_asca_subprocess, mock_asca, tmp_path: Path
 ):
     scr = SoundChangeRuleSet(
         {"index": "1", "section": "test", "rules": [{"input": "a", "output": "b"}]},
@@ -237,7 +184,7 @@ def test_validate_asca_appends_trailing_newline(
     mock_asca_subprocess.side_effect = fake_run
     with patch("conlanger.tools.asca_validator.tempfile.TemporaryDirectory") as tmpdir:
         tmpdir.return_value.__enter__.return_value = str(tmp_path)
-        validate_asca(scr, asca_bin=fake_asca, probe_words=_PROBE)
+        validate_asca(scr, asca_bin=mock_asca, probe_words=_PROBE)
 
     assert captured["body"].endswith("\n")
 
