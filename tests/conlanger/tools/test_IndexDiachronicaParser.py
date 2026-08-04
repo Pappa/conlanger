@@ -19,6 +19,7 @@ from conlanger.tools.parsers import (
     split_env_exception,
     split_input_output,
     strip_leading_index_list_marker,
+    expand_chained_rule_parts,
     split_output_rest,
     split_post_arrow,
 )
@@ -213,6 +214,25 @@ def test_extract_rule_parts_normalizes_chain_arrows():
     }
 
 
+def test_expand_chained_rule_parts_splits_no_env_chain():
+    assert expand_chained_rule_parts(
+        {"input": "dʒ", "output": "tʃ > ʃ"}
+    ) == [
+        {"input": "dʒ", "output": "tʃ"},
+        {"input": "tʃ", "output": "ʃ"},
+    ]
+
+
+def test_expand_chained_rule_parts_keeps_env_chain():
+    parts = {"input": "{θ,l}", "output": "r > l", "env": "V_V"}
+    assert expand_chained_rule_parts(parts) == [parts]
+
+
+def test_expand_chained_rule_parts_keeps_single_step():
+    parts = {"input": "a", "output": "e", "env": "_#"}
+    assert expand_chained_rule_parts(parts) == [parts]
+
+
 def test_extract_rule_parts_with_symbol_normalization():
     raw = "a → b / _$%oː"
     assert extract_rule_parts(normalize_symbols(raw)) == {
@@ -328,7 +348,7 @@ def test_parse_rule_element_with_sub_and_env():
     el = html.fragment_fromstring(
         '<p class="schg">ʃ → s<sub>2</sub> / {i,j}_</p>', create_parent=False
     )
-    rule = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rule = parse_rule_element(el, source_file="index_diachronica_original.html")[0]
     assert rule["input"] == "ʃ"
     assert rule["output"] == "s₂"
     assert rule["env"] == "{i,j}_"
@@ -341,7 +361,7 @@ def test_parse_rule_element_with_exception():
     el = html.fragment_fromstring(
         '<p class="schg">w → ∅ / #C_V, except _i(ː)</p>', create_parent=False
     )
-    rule = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rule = parse_rule_element(el, source_file="index_diachronica_original.html")[0]
     assert rule["input"] == "w"
     assert rule["output"] == "∅"
     assert rule["env"] == "#C_V"
@@ -350,7 +370,7 @@ def test_parse_rule_element_with_exception():
 
 def test_parse_rule_element_no_env():
     el = html.fragment_fromstring('<p class="schg">ɬ → l</p>', create_parent=False)
-    rule = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rule = parse_rule_element(el, source_file="index_diachronica_original.html")[0]
     assert rule["input"] == "ɬ"
     assert rule["output"] == "l"
     assert "env" not in rule
@@ -359,7 +379,7 @@ def test_parse_rule_element_no_env():
 
 def test_parse_rule_element_missing_arrow():
     el = html.fragment_fromstring('<p class="schg">a to b no arrow</p>', create_parent=False)
-    rule = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rule = parse_rule_element(el, source_file="index_diachronica_original.html")[0]
     assert rule["input"] == ""
     assert rule["output"] == ""
     assert rule["skipped"] == f"missing separator {ARROW!r}"
@@ -367,7 +387,7 @@ def test_parse_rule_element_missing_arrow():
 
 def test_parse_rule_element_arrow_without_spaces():
     el = html.fragment_fromstring('<p class="schg">a \u2192\u0259 / _#</p>', create_parent=False)
-    rule = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rule = parse_rule_element(el, source_file="index_diachronica_original.html")[0]
     assert rule["input"] == "a"
     assert rule["output"] == "ə"
     assert rule["env"] == "_#"
@@ -378,7 +398,7 @@ def test_parse_rule_element_bang_exception():
     el = html.fragment_fromstring(
         '<p class="schg">s \u2192 \u0283 / !V_</p>', create_parent=False
     )
-    rule = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rule = parse_rule_element(el, source_file="index_diachronica_original.html")[0]
     assert rule["input"] == "s"
     assert rule["output"] == "ʃ"
     assert "env" not in rule
@@ -389,7 +409,7 @@ def test_parse_rule_element_env_and_bang_exception():
     el = html.fragment_fromstring(
         '<p class="schg">w \u2192 \u2205 / _# ! k(\u02d0)_</p>', create_parent=False
     )
-    rule = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rule = parse_rule_element(el, source_file="index_diachronica_original.html")[0]
     assert rule["input"] == "w"
     assert rule["output"] == "∅"
     assert rule["env"] == "_#"
@@ -401,11 +421,39 @@ def test_parse_rule_element_except_without_comma():
         '<p class="schg">q \u2192 \u0294 / except in several words</p>',
         create_parent=False,
     )
-    rule = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rule = parse_rule_element(el, source_file="index_diachronica_original.html")[0]
     assert rule["input"] == "q"
     assert rule["output"] == "ʔ"
     assert "env" not in rule
     assert rule["exception"] == "in several words"
+
+
+def test_parse_rule_element_expands_chain_without_env():
+    el = html.fragment_fromstring(
+        '<p class="schg">dʒ → tʃ → ʃ</p>', create_parent=False
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert len(rules) == 2
+    assert rules[0] == {
+        "input": "dʒ",
+        "output": "tʃ",
+        "raw": "dʒ → tʃ → ʃ",
+        "source": rules[0]["source"],
+    }
+    assert rules[1]["input"] == "tʃ"
+    assert rules[1]["output"] == "ʃ"
+    assert rules[1]["raw"] == "dʒ → tʃ → ʃ"
+
+
+def test_parse_rule_element_keeps_chain_with_env():
+    el = html.fragment_fromstring(
+        '<p class="schg">{θ,l} → r → l / V_V</p>', create_parent=False
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert len(rules) == 1
+    assert rules[0]["input"] == "{θ,l}"
+    assert rules[0]["output"] == "r > l"
+    assert rules[0]["env"] == "V_V"
 
 
 def test_first_p_is_citation_rest_comments(tmp_path: Path):

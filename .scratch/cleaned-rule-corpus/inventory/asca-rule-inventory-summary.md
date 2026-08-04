@@ -3,27 +3,27 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
-- Rows: **9201** (one per corpus rule)
-- OK: **5456** (59.3%)
-- Fail: **3745** (40.7%)
+- Rows: **9336** (one per corpus rule)
+- OK: **5592** (59.9%)
+- Fail: **3744** (40.1%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 1438 | `syntax_other` |
-| 1260 | `unknown_character` |
+| 1411 | `syntax_other` |
+| 1271 | `unknown_character` |
 | 359 | `expected_underscore` |
-| 247 | `unknown_feature` |
-| 110 | `unknown_grouping` |
-| 84 | `prose_or_expected_arrow` |
+| 248 | `unknown_feature` |
+| 111 | `unknown_grouping` |
+| 90 | `prose_or_expected_arrow` |
 | 57 | `stuff_after_word_bound` |
-| 47 | `malformed_comment` |
-| 32 | `diacritic_prereq` |
+| 52 | `malformed_comment` |
+| 33 | `diacritic_prereq` |
 | 30 | `expected_number` |
 | 28 | `nested_brackets` |
 | 26 | `panic_other` |
-| 15 | `runtime_other` |
+| 16 | `runtime_other` |
 | 10 | `runtime_delete_only_segment` |
 | 2 | `other` |
 
@@ -33,8 +33,8 @@
 
 | count | error_token |
 |------:|-------------|
-| 260 | `“` |
-| 240 | `ː` |
+| 261 | `“` |
+| 243 | `ː` |
 | 51 | `₁` |
 | 49 | `’` |
 | 49 | `₀` |

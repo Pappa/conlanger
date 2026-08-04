@@ -10,7 +10,8 @@ other non-``schg`` paragraphs → ``comments``.
 Phase 4: **Symbol** normalization on corpus fields only (``#``, ``$``, ``%``, ``∅``,
 Index stress ``”`` → ``:[+stress]``; ``raw`` unchanged). Leading em dash list-item
 markers (``— ``) are stripped from the rule line before field split. Remaining
-Index rule arrows (``→``) in field values become ASCA ``>``. Class-letter
+Index rule arrows (``→``) in field values become ASCA ``>``. Chained rules without
+``env``/``exception`` expand into sequential single-step rules. Class-letter
 expansion is deferred to compile time (``PhonologicalRuleSet`` + ``group_mappings.csv``).
 """
 
@@ -278,6 +279,28 @@ def extract_rule_parts(raw: str) -> dict[str, str] | None:
     return {key: normalize_rule_arrows(value) for key, value in parts.items()}
 
 
+def expand_chained_rule_parts(parts: dict[str, str]) -> list[dict[str, str]]:
+    """Split a no-env chain ``a > b > c`` into sequential single-step rules.
+
+    Only applies when ``output`` contains `` > `` and there is no ``env`` or
+    ``exception`` — chained rules with environments stay as one corpus row.
+    """
+    if parts.get("env") or parts.get("exception"):
+        return [parts]
+    output = parts.get("output", "")
+    if " > " not in output:
+        return [parts]
+    segments = [segment.strip() for segment in output.split(" > ") if segment.strip()]
+    if len(segments) < 2:
+        return [parts]
+    expanded: list[dict[str, str]] = []
+    current_input = parts["input"]
+    for segment in segments:
+        expanded.append({"input": current_input, "output": segment})
+        current_input = segment
+    return expanded
+
+
 def note_from_element(el, *, source_file: str) -> dict[str, Any]:
     raw = extract_text_with_subs(el)
     line = getattr(el, "sourceline", None) or 0
@@ -323,24 +346,25 @@ class IndexDiachronicaParser:
         """Global abbreviation table for the cleaned corpus (empty at ingest)."""
         return {}
 
-    def parse_rule_element(self, el, *, source_file: str) -> dict[str, Any]:
+    def parse_rule_element(self, el, *, source_file: str) -> list[dict[str, Any]]:
         raw = extract_text_with_subs(el)
         line = getattr(el, "sourceline", None) or 0
         source = f"{source_file}:{line}"
         parts = extract_rule_parts(normalize_symbols(raw))
         if parts is None:
-            return {
-                "input": "",
-                "output": "",
-                "raw": raw,
-                "source": source,
-                "skipped": f"missing separator {ARROW!r}",
-            }
-        return {
-            **parts,
-            "raw": raw,
-            "source": source,
-        }
+            return [
+                {
+                    "input": "",
+                    "output": "",
+                    "raw": raw,
+                    "source": source,
+                    "skipped": f"missing separator {ARROW!r}",
+                }
+            ]
+        return [
+            {**entry, "raw": raw, "source": source}
+            for entry in expand_chained_rule_parts(parts)
+        ]
 
     def parse(
         self,
@@ -376,7 +400,9 @@ class IndexDiachronicaParser:
                     saw_first_p = (
                         True  # citation slot consumed even if first p was a rule
                     )
-                    rules.append(self.parse_rule_element(p, source_file=source_file))
+                    rules.extend(
+                        self.parse_rule_element(p, source_file=source_file)
+                    )
                     continue
 
                 note = note_from_element(p, source_file=source_file)
@@ -407,5 +433,5 @@ class IndexDiachronicaParser:
         }
 
 
-def parse_rule_element(el, *, source_file: str) -> dict[str, Any]:
+def parse_rule_element(el, *, source_file: str) -> list[dict[str, Any]]:
     return IndexDiachronicaParser().parse_rule_element(el, source_file=source_file)

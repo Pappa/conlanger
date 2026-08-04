@@ -154,6 +154,22 @@ def test_sound_change_ruleset_validates_length_marker_fixtures():
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
+def test_sound_change_ruleset_validates_expanded_chain_fixtures():
+    from conlanger.tools.asca_validator import validate_asca
+
+    section = {
+        "index": "1.0",
+        "section": "Chain split",
+        "rules": [
+            {"input": "dʒ", "output": "tʃ"},
+            {"input": "tʃ", "output": "ʃ"},
+        ],
+    }
+    probe = Path("tests/fixtures/asca_probe_words.wsca")
+    validate_asca(SoundChangeRuleSet(section, "asca"), probe_words=probe)
+
+
+@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
 def test_sound_change_ruleset_validates_em_dash_rule_marker_fixtures():
     from conlanger.tools.asca_validator import validate_asca
 
