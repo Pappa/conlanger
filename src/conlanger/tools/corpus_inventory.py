@@ -12,6 +12,7 @@ from typing import Any
 import pandas as pd
 
 from conlanger.tools.asca_validator import ASCAValidationError, validate_asca
+from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
 from conlanger.tools.rules import RuleChange, SoundChangeRuleSet
 
 ERROR_CLASS_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
@@ -295,7 +296,7 @@ def validate_corpus_rule(
     mini = _mini_section(section, rule, rule_idx)
     try:
         validate_asca(
-            SoundChangeRuleSet(mini),
+            PhonologicalRuleSet(mini).to_sound_change_ruleset(),
             probe_words=probe_words,
         )
     except ASCAValidationError as exc:

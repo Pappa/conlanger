@@ -1,0 +1,135 @@
+import shutil
+from pathlib import Path
+from unittest.mock import patch
+
+import pytest
+
+from conlanger.tools.phonological_ruleset import (
+    PhonologicalRuleSet,
+    apply_group_mappings_to_string,
+    compile_corpus_rule,
+    group_mappings_dict,
+)
+from conlanger.tools.rules import SoundChangeRuleSet
+
+_SAMPLE_MAPPINGS = {
+    "R": "[+son,-syll]",
+    "Z": "[+cont]",
+    "E": "V:[+front]",
+    "H": "[-place]",
+    "S": "P",
+    "U": "%",
+}
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("VR", "V[+son,-syll]"),
+        ("#_VR", "#_V[+son,-syll]"),
+        ("{V,R}", "{V,[+son,-syll]}"),
+        ("V_R", "V_[+son,-syll]"),
+        ("{Z,C[-voice],r}", "{[+cont],C[-voice],r}"),
+        ("#_V{Z,C[-voice],r}", "#_V{[+cont],C[-voice],r}"),
+        ("VCH", "VC[-place]"),
+        ("E_", "V:[+front]_"),
+        ("{j,E}", "{j,V:[+front]}"),
+        ("{R,h}", "{[+son,-syll],h}"),
+        ("O_ in #U (not universal)", "O_ in #% (not universal)"),
+        ("U[+long]", "%[+long]"),
+        ("a", "a"),
+        ("", ""),
+    ],
+)
+def test_apply_group_mappings_to_string(text, expected):
+    assert (
+        apply_group_mappings_to_string(text, _SAMPLE_MAPPINGS) == expected
+    )
+
+
+def test_compile_corpus_rule_preserves_raw_and_source():
+    rule = {
+        "input": "S",
+        "output": "[+ voice]",
+        "env": "{V,R}_V",
+        "raw": "S → [+ voice] / {V,R}_V",
+        "source": "sample.html:10",
+    }
+    compiled = compile_corpus_rule(rule, _SAMPLE_MAPPINGS)
+    assert compiled["input"] == "P"
+    assert compiled["env"] == "{V,[+son,-syll]}_V"
+    assert compiled["raw"] == rule["raw"]
+    assert compiled["source"] == rule["source"]
+
+
+def test_phonological_ruleset_compiled_section():
+    section = {
+        "index": "1.0",
+        "section": "Test",
+        "rules": [
+            {
+                "input": "f",
+                "output": "p",
+                "env": "#_V{Z,C[-voice],r}",
+                "raw": "f → p / #_V{Z,C[-voice],r}",
+                "source": "sample.html:1",
+            }
+        ],
+    }
+    prs = PhonologicalRuleSet(section, group_mappings=_SAMPLE_MAPPINGS)
+    compiled = prs.compiled_section()
+    assert compiled["rules"][0]["env"] == "#_V{[+cont],C[-voice],r}"
+
+
+def test_group_mappings_dict_loads_package_csv():
+    mappings = group_mappings_dict()
+    assert mappings["R"] == "[+son,-syll]"
+    assert mappings["Z"] == "[+cont]"
+
+
+@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
+def test_phonological_ruleset_validates_known_unknown_grouping_fixtures():
+    section = {
+        "index": "6.2.2.1.2",
+        "section": "Proto-Boreafrasian to Egypto-Berber",
+        "rules": [
+            {
+                "input": "f",
+                "output": "p",
+                "env": "#_V{Z,C[-voice],r}",
+                "raw": "f → p / #_V{Z,C[-voice],r}",
+                "source": "index_diachronica_original.html:1261",
+            },
+            {
+                "input": "ʕ",
+                "output": "i",
+                "env": "#_VR",
+                "raw": "ʕ → i / #_VR",
+                "source": "index_diachronica_original.html:1274",
+            },
+        ],
+    }
+    probe = Path("tests/fixtures/asca_probe_words.wsca")
+    from conlanger.tools.asca_validator import validate_asca
+
+    prs = PhonologicalRuleSet(section)
+    validate_asca(prs.to_sound_change_ruleset(), probe_words=probe)
+
+
+@patch("conlanger.tools.corpus_inventory.validate_asca", return_value=True)
+def test_corpus_inventory_uses_phonological_ruleset(_mock_validate):
+    from conlanger.tools.corpus_inventory import validate_corpus_rule
+
+    section = {"index": "1.0", "section": "Test Section"}
+    rule = {
+        "input": "f",
+        "output": "p",
+        "env": "#_V{Z,C[-voice],r}",
+        "raw": "f → p / #_V{Z,C[-voice],r}",
+        "source": "sample.html:1",
+    }
+    validate_corpus_rule(section, rule, 0, probe_words=Path("/probe.wsca"))
+    passed_rule = _mock_validate.call_args[0][0]
+    rendered = str(passed_rule)
+    assert "[+cont]" in rendered
+    assert "Z" not in rendered.split("\t")[1]
