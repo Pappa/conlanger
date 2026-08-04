@@ -10,6 +10,7 @@ from conlanger.tools.rules import (
     RuleComment,
     SoundChangeRuleSet,
     normalize_asca_length_marks,
+    strip_leading_index_rule_marker,
 )
 
 @pytest.mark.parametrize(
@@ -108,6 +109,33 @@ def test_normalize_asca_length_marks(text, expected):
     assert normalize_asca_length_marks(text) == expected
 
 
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("— j w", "j w"),
+        ("— aː", "aː"),
+        ("— {o,u}(ː)", "{o,u}(ː)"),
+        ("— wh", "wh"),
+        ("j w", "j w"),
+        ("", ""),
+    ],
+)
+def test_strip_leading_index_rule_marker(text, expected):
+    assert strip_leading_index_rule_marker(text) == expected
+
+
+def test_rule_change_strips_leading_em_dash_at_instantiation():
+    part = RuleChange({"input": "— aː", "output": "a"}, "asca")
+    assert part.value == "a:[+long] > a"
+    assert part.input == "— aː"
+    assert "—" not in part.value
+
+
+def test_rule_change_keeps_em_dash_for_brassica():
+    part = RuleChange({"input": "— aː", "output": "a"}, "brassica")
+    assert part.value == "— aː / a"
+
+
 def test_rule_change_compiles_length_at_instantiation():
     part = RuleChange({"input": "a(ː)", "output": "e(ː)"}, "asca")
     assert part.value == "a:[+long] > e:[+long]"
@@ -141,6 +169,22 @@ def test_sound_change_ruleset_validates_length_marker_fixtures():
         "rules": [
             {"input": "a(ː)", "output": "e(ː)", "env": "_{ʕ,q}$"},
             {"input": "Vː", "output": "V", "env": "#C:[-front,+back,+hi,-lo][-voice]_C"},
+        ],
+    }
+    probe = Path("tests/fixtures/asca_probe_words.wsca")
+    validate_asca(SoundChangeRuleSet(section, "asca"), probe_words=probe)
+
+
+@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
+def test_sound_change_ruleset_validates_em_dash_rule_marker_fixtures():
+    from conlanger.tools.asca_validator import validate_asca
+
+    section = {
+        "index": "6.2.2.1.18",
+        "section": "Proto-Semitic to Biblical Hebrew",
+        "rules": [
+            {"input": "— aː", "output": "oː", "exception": "_#"},
+            {"input": "— j w", "output": "i u", "env": "#_CV"},
         ],
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")

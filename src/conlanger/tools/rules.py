@@ -14,6 +14,16 @@ _OPT_LENGTH_RE = re.compile(rf"({_IPA_SEGMENT}|[A-Z])\(ː\)")
 _GROUPING_LENGTH_RE = re.compile(r"([A-Z])ː")
 _SEGMENT_LENGTH_RE = re.compile(rf"({_IPA_SEGMENT})ː")
 
+# Index Diachronica leading em dash (U+2014) marks a sub-rule line, not a segment.
+_LEADING_INDEX_RULE_MARKER_RE = re.compile(r"^—\s*")
+
+
+def strip_leading_index_rule_marker(text: str) -> str:
+    """Remove Index leading em dash rule marker (``— ``) from one rule field."""
+    if not text:
+        return text
+    return _LEADING_INDEX_RULE_MARKER_RE.sub("", text, count=1)
+
 
 def normalize_asca_length_marks(text: str) -> str:
     """Map Index ``ː`` / ``(ː)`` length notation to ASCA ``:[+long]``."""
@@ -143,11 +153,30 @@ class RuleChange(RulePartBase):
     def _compile_rule_text(self, format: str) -> str:
         separator = self.separator.get(format, {})
 
-        result = self.input + separator["output"] + self.output
-        if self.env:
-            result += separator["env"] + self.env
-        if self.exception:
-            result += separator["exception"] + self.exception
+        if format == "asca":
+            inp = strip_leading_index_rule_marker(self.input)
+            out = strip_leading_index_rule_marker(self.output)
+            env = (
+                strip_leading_index_rule_marker(self.env) if self.env else None
+            )
+            exception = (
+                strip_leading_index_rule_marker(self.exception)
+                if self.exception
+                else None
+            )
+        else:
+            inp, out, env, exception = (
+                self.input,
+                self.output,
+                self.env,
+                self.exception,
+            )
+
+        result = inp + separator["output"] + out
+        if env:
+            result += separator["env"] + env
+        if exception:
+            result += separator["exception"] + exception
 
         if format == "asca":
             result = self._apply_asca_group_mappings(result, format)
