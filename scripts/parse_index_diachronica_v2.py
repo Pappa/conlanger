@@ -7,11 +7,10 @@ import argparse
 import sys
 from pathlib import Path
 
-import yaml
-
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
+from conlanger.tools.corpus_io import write_cleaned_corpus  # noqa: E402
 from conlanger.tools.parsers import (  # noqa: E402
     IndexDiachronicaParser,
 )
@@ -32,11 +31,7 @@ def main() -> int:
 
     parser = IndexDiachronicaParser()
     doc = parser.parse(args.html)
-    args.out.parent.mkdir(parents=True, exist_ok=True)
-    args.out.write_text(
-        yaml.safe_dump(doc, allow_unicode=True, sort_keys=False),
-        encoding="utf-8",
-    )
+    write_cleaned_corpus(doc, args.out)
 
     n_sections = len(doc["sections"])
     n_rules = sum(len(s.get("rules") or []) for s in doc["sections"])

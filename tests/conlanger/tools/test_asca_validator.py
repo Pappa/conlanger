@@ -6,13 +6,27 @@ from unittest.mock import MagicMock, patch
 import pandas as pd
 import pytest
 
-from conlanger.tools.rules import SoundChangeRuleSet
 from conlanger.tools.asca_validator import ASCAValidationError, validate_asca
+from conlanger.tools.rules import SoundChangeRuleSet
+from tests.conftest import ASCA_INSTALLED
 
 _FIXTURE_CSV = (
     Path(__file__).resolve().parents[2] / "fixtures" / "sound_change_rules.csv"
 )
+_SKIP_WITHOUT_ASCA = pytest.mark.skipif(
+    not ASCA_INSTALLED,
+    reason="asca binary not found (install asca 0.10.2 or set ASCA_BIN)",
+)
+
+
 _PROBE = Path(__file__).resolve().parents[2] / "fixtures" / "asca_probe_words.wsca"
+
+
+def _fake_asca(tmp_path: Path) -> Path:
+    asca = tmp_path / "asca"
+    asca.write_text("#!/bin/sh\nexit 0\n", encoding="utf-8")
+    asca.chmod(0o755)
+    return asca
 
 
 def _scr(change: dict) -> SoundChangeRuleSet:
@@ -33,6 +47,7 @@ def _scr(change: dict) -> SoundChangeRuleSet:
         {"input": "a", "output": "e", "env": "_#", "exception": "_s"},
     ],
 )
+@_SKIP_WITHOUT_ASCA
 def test_validate_asca_accepts_valid_rules(change):
     assert validate_asca(_scr(change), probe_words=_PROBE) is True
 
@@ -43,10 +58,14 @@ def test_validate_asca_accepts_valid_rules(change):
         ({"input": "a", "output": ""}, r"empty|deletion|\*|Unknown character"),
         ({"input": "", "output": "a"}, r"empty|insertion|\*|Unknown character"),
         ({"input": "*", "output": "*"}, r"Insertion|Deletion"),
-        ({"input": "a", "output": "b", "env": "no underscore"}, r"_|underline|Expected|Unknown"),
+        (
+            {"input": "a", "output": "b", "env": "no underscore"},
+            r"_|underline|Expected|Unknown",
+        ),
         ({"input": "a", "output": "b", "env": "_ _"}, r"underline|_|Too many|Expected"),
     ],
 )
+@_SKIP_WITHOUT_ASCA
 def test_validate_asca_rejects_invalid_rules(change, match):
     with pytest.raises(ASCAValidationError, match=match):
         validate_asca(_scr(change), probe_words=_PROBE)
@@ -80,44 +99,57 @@ def test_validate_asca_missing_probe_words(tmp_path: Path):
     with pytest.raises(ASCAValidationError, match="probe wordlist not found"):
         validate_asca(
             _scr({"input": "a", "output": "b"}),
+            asca_bin=_fake_asca(tmp_path),
             probe_words=tmp_path / "missing.wsca",
         )
 
 
-def test_validate_asca_timeout():
+def test_validate_asca_timeout(tmp_path: Path):
     with patch(
         "conlanger.tools.asca_validator.subprocess.run",
         side_effect=__import__("subprocess").TimeoutExpired(cmd="asca", timeout=0.01),
     ):
         with pytest.raises(ASCAValidationError, match="timed out") as exc_info:
-            validate_asca(_scr({"input": "a", "output": "b"}), probe_words=_PROBE)
+            validate_asca(
+                _scr({"input": "a", "output": "b"}),
+                asca_bin=_fake_asca(tmp_path),
+                probe_words=_PROBE,
+            )
     assert exc_info.value.returncode == 124
 
 
-def test_validate_asca_stderr_error_with_zero_returncode():
+def test_validate_asca_stderr_error_with_zero_returncode(tmp_path: Path):
     proc = MagicMock(returncode=0, stderr="Syntax Error: boom\n")
     with patch("conlanger.tools.asca_validator.subprocess.run", return_value=proc):
         with pytest.raises(ASCAValidationError, match="Syntax Error"):
-            validate_asca(_scr({"input": "a", "output": "b"}), probe_words=_PROBE)
+            validate_asca(
+                _scr({"input": "a", "output": "b"}),
+                asca_bin=_fake_asca(tmp_path),
+                probe_words=_PROBE,
+            )
 
 
-def test_validate_asca_nonzero_without_stderr():
+def test_validate_asca_nonzero_without_stderr(tmp_path: Path):
     proc = MagicMock(returncode=2, stderr="")
     with patch("conlanger.tools.asca_validator.subprocess.run", return_value=proc):
         with pytest.raises(ASCAValidationError, match="exited with status 2"):
-            validate_asca(_scr({"input": "a", "output": "b"}), probe_words=_PROBE)
+            validate_asca(
+                _scr({"input": "a", "output": "b"}),
+                asca_bin=_fake_asca(tmp_path),
+                probe_words=_PROBE,
+            )
 
 
-def test_validate_asca_respects_env_bin(monkeypatch: pytest.MonkeyPatch, tmp_path: Path):
+def test_validate_asca_respects_env_bin(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+):
     monkeypatch.setenv("ASCA_BIN", str(tmp_path / "missing-asca"))
     with pytest.raises(ASCAValidationError, match="asca binary not found"):
         validate_asca(_scr({"input": "a", "output": "b"}))
 
 
 def test_validate_asca_default_probe_words(tmp_path: Path):
-    asca = tmp_path / "asca"
-    asca.write_text("#!/bin/sh\nexit 0\n", encoding="utf-8")
-    asca.chmod(0o755)
+    asca = _fake_asca(tmp_path)
 
     captured: dict[str, str] = {}
 
@@ -136,9 +168,7 @@ def test_validate_asca_default_probe_words(tmp_path: Path):
 
 
 def test_validate_asca_keeps_trailing_newline(tmp_path: Path):
-    asca = tmp_path / "asca"
-    asca.write_text("#!/bin/sh\nexit 0\n", encoding="utf-8")
-    asca.chmod(0o755)
+    asca = _fake_asca(tmp_path)
 
     captured: dict[str, str] = {}
 
@@ -160,9 +190,7 @@ def test_validate_asca_keeps_trailing_newline(tmp_path: Path):
 
 
 def test_validate_asca_appends_trailing_newline(tmp_path: Path):
-    asca = tmp_path / "asca"
-    asca.write_text("#!/bin/sh\nexit 0\n", encoding="utf-8")
-    asca.chmod(0o755)
+    asca = _fake_asca(tmp_path)
 
     captured: dict[str, str] = {}
 
@@ -197,6 +225,7 @@ def test_fixture_asca_guess_count():
 
 
 @pytest.mark.parametrize("case_id", ["bulk"])
+@_SKIP_WITHOUT_ASCA
 def test_validate_asca_guess_fixture_rows(case_id):
     del case_id
     guesses = _load_asca_guess_rows()

@@ -12,6 +12,7 @@ from conlanger.tools.parsers import (
     extract_rule_parts,
     extract_text_with_subs,
     load_group_mappings,
+    normalize_stress_marks,
     normalize_symbols,
     parse_rule_element,
     parse_section_heading,
@@ -160,13 +161,26 @@ def test_load_group_mappings_without_comment_column(tmp_path: Path):
         ("∅", "∅"),
         ("_$%oː", "_$$oː"),
         ("$am_w", "$am_w"),
-        ('in #”U', 'in #”U'),
+        ("in #”U", "in #U:[+stress]"),
         ('s “(for many speakers)”', 's “(for many speakers)”'),
         ("", ""),
     ],
 )
 def test_normalize_symbols(text, expected):
     assert normalize_symbols(text) == expected
+
+
+@pytest.mark.parametrize(
+    "text, expected",
+    [
+        ("”V → ə", "V:[+stress] → ə"),
+        ("k → ɡ / ”V_", "k → ɡ / V:[+stress]_"),
+        ("V → ∅ / C”V", "V → ∅ / CV:[+stress]"),
+        ('k → ts / “After some syllables"', 'k → ts / “After some syllables"'),
+    ],
+)
+def test_normalize_stress_marks(text, expected):
+    assert normalize_stress_marks(text) == expected
 
 
 def test_extract_rule_parts_with_symbol_normalization():
@@ -399,7 +413,7 @@ _SAMPLED_HTML_RULE_CASES = _load_sampled_html_rules()
     ids=[case_id for case_id, _, _ in _SAMPLED_HTML_RULE_CASES],
 )
 def test_extract_rule_parts_sampled_html_rules(case_id, raw, expected):
-    assert extract_rule_parts(raw) == expected, case_id
+    assert extract_rule_parts(normalize_symbols(raw)) == expected, case_id
 
 
 def test_load_group_mappings_default_csv():

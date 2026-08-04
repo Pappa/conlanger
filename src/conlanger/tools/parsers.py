@@ -7,8 +7,8 @@ Phase 2: optional ``/ env`` then optional ``! exception``
 second `` / `` are edge-case fallbacks.
 Phase 3: first ``<p>`` after ``<h2>`` → section ``citation`` (whole text, cleanup later);
 other non-``schg`` paragraphs → ``comments``.
-Phase 4: **Symbol** normalization on corpus fields only (``#``, ``$``, ``%``, ``∅``;
-``raw`` unchanged). Index stress notation is deferred. Class-letter expansion is
+Phase 4: **Symbol** normalization on corpus fields only (``#``, ``$``, ``%``, ``∅``,
+Index stress ``”`` → ``:[+stress]``; ``raw`` unchanged). Class-letter expansion is
 deferred to compile time (``PhonologicalRuleSet`` + ``group_mappings.csv``).
 """
 
@@ -67,6 +67,30 @@ DEFAULT_GROUP_MAPPINGS_CSV = (
 
 # Protect Index stem ``$`` while remapping syllable-boundary ``%`` → ASCA ``$``.
 _STEM_BOUNDARY_PLACEHOLDER = "\ue000"
+
+# Index Diachronica stress mark (Key to Abbreviations: ” = Stress).
+_INDEX_STRESS = "\u201d"
+
+# Class letter or IPA vowel segment — not an English word continuation.
+_STRESS_SEGMENT = r"([A-Z](?![a-z])|[a-z\u0250-\u02AF\u1D00-\u1DBF]+(?=[\s→/\[,!\]|$]))"
+_STRESS_FEAT_SUFFIX = r"(\[[^\]]*\])?"
+
+# ” before a segment (rule input, e.g. ”V → …).
+_STRESS_PREFIX_RE = re.compile(
+    rf"{re.escape(_INDEX_STRESS)}{_STRESS_SEGMENT}{_STRESS_FEAT_SUFFIX}"
+)
+# Boundary symbol then stress: #”U → #U:[+stress].
+_STRESS_AFTER_BOUNDARY_RE = re.compile(
+    rf"([#$_∅%]){re.escape(_INDEX_STRESS)}{_STRESS_SEGMENT}{_STRESS_FEAT_SUFFIX}"
+)
+# Infix stress between segments: C”V → CV:[+stress] (class letter after C).
+_STRESS_INFIX_RE = re.compile(
+    rf"(?<=[A-Za-z\u0250-\u02AF]){re.escape(_INDEX_STRESS)}{_STRESS_SEGMENT}{_STRESS_FEAT_SUFFIX}"
+)
+# Inside sets: {”V,j} → {V:[+stress],j}.
+_STRESS_IN_SET_RE = re.compile(
+    rf"(?<=[{{,])\s*{re.escape(_INDEX_STRESS)}{_STRESS_SEGMENT}{_STRESS_FEAT_SUFFIX}"
+)
 
 
 @dataclass(frozen=True)
@@ -172,19 +196,44 @@ def split_post_arrow(post_arrow: str) -> tuple[str, str | None, str | None]:
     return out, env, exception
 
 
+def _apply_stress_re(match: re.Match[str]) -> str:
+    """Expand Index stress mark to ASCA ``segment:[+stress]`` (+ optional features)."""
+    groups = match.groups()
+    if len(groups) == 3:
+        prefix, segment, feats = groups
+        return f"{prefix}{segment}:[+stress]{feats or ''}"
+    segment, feats = groups[0], groups[1] if len(groups) > 1 else None
+    return f"{segment}:[+stress]{feats or ''}"
+
+
+def normalize_stress_marks(text: str) -> str:
+    """Map Index ``”`` stress marks to ASCA ``:[+stress]`` on the marked segment.
+
+    Prose curly quotes (``"…"``) and English env prose after ``/`` are left
+    unchanged — only phonological stress positions are rewritten.
+    """
+    if _INDEX_STRESS not in text:
+        return text
+    text = _STRESS_AFTER_BOUNDARY_RE.sub(_apply_stress_re, text)
+    text = _STRESS_IN_SET_RE.sub(_apply_stress_re, text)
+    text = _STRESS_INFIX_RE.sub(_apply_stress_re, text)
+    text = _STRESS_PREFIX_RE.sub(_apply_stress_re, text)
+    return text
+
+
 def normalize_symbols(text: str) -> str:
-    """Map Index **Symbol** boundary marks to ASCA-canonical form before rule parsing.
+    """Map Index **Symbol** marks to ASCA-canonical form before rule parsing.
 
     Applied to the full rule line (not the stored ``raw``). Index ``%`` (syllable
     boundary) → ASCA ``$``; Index ``$`` (stem boundary) is preserved. ``#`` and ``∅``
-    are already shared and pass through unchanged. Index stress notation (``”``) is
-    left unchanged at ingest.
+    pass through unchanged. Index stress ``”`` → ``segment:[+stress]``.
     """
     if not text:
         return text
     text = text.replace("$", _STEM_BOUNDARY_PLACEHOLDER)
     text = text.replace("%", "$")
-    return text.replace(_STEM_BOUNDARY_PLACEHOLDER, "$")
+    text = text.replace(_STEM_BOUNDARY_PLACEHOLDER, "$")
+    return normalize_stress_marks(text)
 
 
 def extract_rule_parts(raw: str) -> dict[str, str] | None:
