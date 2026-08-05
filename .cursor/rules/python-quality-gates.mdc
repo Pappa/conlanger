@@ -1,41 +1,31 @@
 ---
-description: Run pytest and ruff after Python code changes when they are project dependencies
+description: Python quality gates after code changes — TDD when building or fixing, then pytest (coverage threshold), ruff check, ruff format
 alwaysApply: true
 ---
 
-# Python quality gates after code changes
+# Python quality gates
 
-When you modify Python code (or tests that exercise it), run project quality tools **if they are declared dependencies**. Do not install tools just to satisfy this rule.
+When you change Python code or tests that exercise it.
 
-## Check first
+## TDD
 
-Inspect `pyproject.toml`, `requirements*.txt`, or `package.json` for:
+When building a feature or fixing a bug, reach for the **`/tdd`** skill — red before green, one vertical slice at a time.
 
-- **pytest** — `[project.optional-dependencies]`, `[dependency-groups]`, or `devDependencies`
-- **ruff** — `[project.dependencies]`, `[dependency-groups]`, `[tool.ruff]`, or dev deps
+## During work
 
-If a tool is not listed, skip it.
-
-## What to run
-
-Use the repo's normal runner (`uv run`, `poetry run`, or the project venv):
-
-1. **During work** — targeted checks on touched paths:
-   - `pytest <affected test paths> --no-cov` when pytest is available
-   - `ruff check <changed paths>` when ruff is available
-2. **Before finishing** — when the change is complete:
-   - full `pytest` (respect `pyproject.toml` / CI options)
-   - `ruff check` on changed files or the package root
-
-Fix failures you introduce. If a pre-existing failure blocks verification, say so explicitly.
-
-## Examples
+Targeted feedback on touched paths:
 
 ```bash
-# This repo (uv + dev group has pytest; no ruff yet)
-uv run pytest tests/conlanger/tools/test_IndexDiachronicaParser.py --no-cov
-uv run pytest --no-cov
-
-# When ruff is added later
-uv run ruff check src/conlanger/tools/IndexDiachronicaParser.py
+uv run pytest <affected test paths> --no-cov
+uv run ruff check <changed paths> --fix
 ```
+
+## Before finishing
+
+Run the full **gate** sequence. A step is done when its command exits 0.
+
+1. **Tests and coverage** — `uv run pytest`. Coverage must meet `[tool.coverage.report] fail_under` in `pyproject.toml` (enforced by pytest addopts).
+2. **Lint** — `uv run ruff check src --fix`; resolve anything `--fix` cannot.
+3. **Format** — `uv run ruff format src && uv run ruff format --check src`.
+
+Fix failures you introduce. If a pre-existing failure blocks verification, say so explicitly.

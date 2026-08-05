@@ -22,9 +22,7 @@ DEFAULT_SERIES_MAPPINGS_CSV = (
 )
 
 # Correspondence-series index: concrete segment base + ordinal subscript (not ₀, not ₓ).
-_CORRESPONDENCE_INDEX_RE = re.compile(
-    r"(?<![A-Z])([a-zA-Zæøåɑɡɢ]+)([₁₂₃₄₅₆₇₈₉])"
-)
+_CORRESPONDENCE_INDEX_RE = re.compile(r"(?<![A-Z])([a-zA-Zæøåɑɡɢ]+)([₁₂₃₄₅₆₇₈₉])")
 _COLLECTIVE_TOKEN_RE = re.compile(r"(?<![A-Z])([a-zA-Z]+)ₓ")
 _POSITIONAL_SLOT_RE = re.compile(r"^[A-Z][₁₂₃₄₅₆₇₈₉]$")
 _IDENTITY_SUBSCRIPT_RE = re.compile(r"^[A-Za-z]₀$")
@@ -108,12 +106,7 @@ def is_identity_subscript_token(token: str) -> bool:
 
 def is_collective_subscript_token(token: str) -> bool:
     base = token[:-1] if token.endswith("ₓ") else ""
-    return (
-        len(token) >= 2
-        and token.endswith("ₓ")
-        and base.isalpha()
-        and base.islower()
-    )
+    return len(token) >= 2 and token.endswith("ₓ") and base.isalpha() and base.islower()
 
 
 def is_correspondence_series_token(token: str) -> bool:
@@ -132,9 +125,7 @@ def is_correspondence_series_token(token: str) -> bool:
 def find_subscript_tokens(text: str) -> set[str]:
     """Return subscript-bearing tokens appearing in rule field text."""
     return {
-        match.group(0)
-        for match in _SUBSCRIPT_TOKEN_RE.finditer(text)
-        if match.group(0)
+        match.group(0) for match in _SUBSCRIPT_TOKEN_RE.finditer(text) if match.group(0)
     }
 
 
@@ -315,7 +306,9 @@ def _is_series_side_token(token: str) -> bool:
     if token.startswith("{") and token.endswith("}"):
         inner = token[1:-1]
         parts = [part.strip() for part in inner.split(",") if part.strip()]
-        return bool(parts) and all(is_correspondence_series_token(part) for part in parts)
+        return bool(parts) and all(
+            is_correspondence_series_token(part) for part in parts
+        )
     return is_correspondence_series_token(token)
 
 
@@ -362,7 +355,9 @@ def infer_parallel_rule_mappings(
     for inp, out in zip(input_tokens, output_tokens, strict=True):
         if inp.startswith("{") and inp.endswith("}"):
             continue
-        if not is_correspondence_series_token(inp) or is_collective_subscript_token(inp):
+        if not is_correspondence_series_token(inp) or is_collective_subscript_token(
+            inp
+        ):
             continue
         rows.append(
             SeriesMapping(
@@ -594,7 +589,9 @@ def survey_subscript_tokens_in_html(
         for p in sec.xpath("./p[@class and contains(@class, 'schg')]"):
             raw = extract_text_with_subs(p)
             for field in _rule_fields(raw):
-                by_section[section_index].update(find_correspondence_series_tokens(field))
+                by_section[section_index].update(
+                    find_correspondence_series_tokens(field)
+                )
     return dict(by_section)
 
 
@@ -675,7 +672,9 @@ def audit_series_extraction(
     mappings_csv: Path | None = None,
 ) -> SeriesExtractionAudit:
     """Compute confidence metrics for HTML extraction vs ``series_mappings.csv``."""
-    csv_path = DEFAULT_SERIES_MAPPINGS_CSV if mappings_csv is None else Path(mappings_csv)
+    csv_path = (
+        DEFAULT_SERIES_MAPPINGS_CSV if mappings_csv is None else Path(mappings_csv)
+    )
     rows = load_series_mappings(csv_path)
     defined = survey_html_defined_series(html_path)
     rules = survey_all_subscript_tokens_in_html(html_path)
@@ -710,7 +709,8 @@ def audit_series_extraction(
                 out_of_scope_rule_pairs += 1
 
     family_in_scope = {
-        family: (counts[0], counts[1]) for family, counts in sorted(family_counts.items())
+        family: (counts[0], counts[1])
+        for family, counts in sorted(family_counts.items())
     }
 
     return SeriesExtractionAudit(
@@ -767,16 +767,22 @@ def write_coverage_report(
         "",
         "## Extraction confidence",
         "",
-        ("Use **in-scope rule coverage** (correspondence-series + collective subscripts only) "
-        "— not the raw rule-token total, which includes positional slots (`C₁`), identity "
-        "subscripts (`V₀`), and compounds (`eh₂`) handled by other tickets."),
+        (
+            "Use **in-scope rule coverage** (correspondence-series + collective subscripts only) "
+            "— not the raw rule-token total, which includes positional slots (`C₁`), identity "
+            "subscripts (`V₀`), and compounds (`eh₂`) handled by other tickets."
+        ),
         "",
-        (f"- **HTML citation/table definitions mapped:** "
-        f"{audit.html_defined_mapped}/{audit.html_defined_pairs} "
-        f"({pct(audit.html_defined_mapped, audit.html_defined_pairs)})"),
-        (f"- **In-scope tokens in rules mapped:** "
-        f"{audit.in_scope_rule_mapped}/{audit.in_scope_rule_pairs} "
-        f"({pct(audit.in_scope_rule_mapped, audit.in_scope_rule_pairs)})"),
+        (
+            f"- **HTML citation/table definitions mapped:** "
+            f"{audit.html_defined_mapped}/{audit.html_defined_pairs} "
+            f"({pct(audit.html_defined_mapped, audit.html_defined_pairs)})"
+        ),
+        (
+            f"- **In-scope tokens in rules mapped:** "
+            f"{audit.in_scope_rule_mapped}/{audit.in_scope_rule_pairs} "
+            f"({pct(audit.in_scope_rule_mapped, audit.in_scope_rule_pairs)})"
+        ),
         f"- **Out-of-scope subscript tokens in rules (excluded):** {audit.out_of_scope_rule_pairs}",
         f"- **In-scope gaps remaining:** {len(audit.in_scope_gaps)}",
         "",
@@ -789,9 +795,11 @@ def write_coverage_report(
     lines.extend(
         [
             "",
-            ("Families **6** (Afro-Asiatic) and **17** (Indo-European) are the ticket-28 "
-            "benchmarks: citation/table rows at §6 and §17, plus rule-inferred overrides "
-            "in subsections."),
+            (
+                "Families **6** (Afro-Asiatic) and **17** (Indo-European) are the ticket-28 "
+                "benchmarks: citation/table rows at §6 and §17, plus rule-inferred overrides "
+                "in subsections."
+            ),
             "",
             "## Inference methods",
             "",
@@ -801,9 +809,11 @@ def write_coverage_report(
             "4. **Singleton rule I/O** — single indexed input token mapping to one output segment.",
             "5. **Collective subscript** — `Xₓ` expands to the set of `Xₙ` members declared in the same section citation.",
             "",
-            ("ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). "
-            "For bases that collide with ASCA grouping letters (`S`, `C`, …), "
-            "targets use `f{N}` placeholders (e.g. `s₁` → `f1`)."),
+            (
+                "ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). "
+                "For bases that collide with ASCA grouping letters (`S`, `C`, …), "
+                "targets use `f{N}` placeholders (e.g. `s₁` → `f1`)."
+            ),
             "",
             "## By section",
             "",
@@ -851,7 +861,11 @@ def write_coverage_report(
                     f"### {section_index} {name}",
                     "",
                     f"- Mapped ({len(mapped_sorted)}): "
-                    + (", ".join(f"`{t}`" for t in mapped_sorted) if mapped_sorted else "_none_"),
+                    + (
+                        ", ".join(f"`{t}`" for t in mapped_sorted)
+                        if mapped_sorted
+                        else "_none_"
+                    ),
                     f"- Unmapped ({len(unmapped)}): "
                     + (", ".join(f"`{t}`" for t in unmapped) if unmapped else "_none_"),
                     "",
@@ -874,11 +888,15 @@ def write_coverage_report(
             "## Summary",
             "",
             f"- Sections with correspondence-series rules: **{len(used_by_section)}**",
-            (f"- In-scope rule token occurrences: **{audit.in_scope_rule_pairs}** "
-            f"(mapped **{audit.in_scope_rule_mapped}**, "
-            f"**{pct(audit.in_scope_rule_mapped, audit.in_scope_rule_pairs)}**)"),
-            (f"- Out-of-scope subscript tokens (positional / identity / compound): "
-            f"**{audit.out_of_scope_rule_pairs}**"),
+            (
+                f"- In-scope rule token occurrences: **{audit.in_scope_rule_pairs}** "
+                f"(mapped **{audit.in_scope_rule_mapped}**, "
+                f"**{pct(audit.in_scope_rule_mapped, audit.in_scope_rule_pairs)}**)"
+            ),
+            (
+                f"- Out-of-scope subscript tokens (positional / identity / compound): "
+                f"**{audit.out_of_scope_rule_pairs}**"
+            ),
             "",
             "## In-scope gaps",
             "",

@@ -84,7 +84,9 @@ def validation_rows_to_dataframe(rows: list[ValidationRow]) -> pd.DataFrame:
     """Return validation rows as a DataFrame with a stable column order."""
     if not rows:
         return pd.DataFrame(columns=VALIDATION_CSV_COLUMNS)
-    return pd.DataFrame([row.as_csv_dict() for row in rows], columns=VALIDATION_CSV_COLUMNS)
+    return pd.DataFrame(
+        [row.as_csv_dict() for row in rows], columns=VALIDATION_CSV_COLUMNS
+    )
 
 
 def top_error_tokens(

@@ -4,6 +4,7 @@
 Evidence ticket: .scratch/cleaned-rule-corpus/issues/08-asca-validator.md
 RNG seed is fixed (default 20260802) and recorded beside the fixture.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -74,6 +75,7 @@ def normalise_zero(value: str) -> str:
 def fix_features(text: str) -> str:
     for pat, repl in _FEATURE_FIXES:
         text = pat.sub(repl, text)
+
     # Matrix spacing: [+ long + closed] → [+long, +closed] (best-effort)
     def _fix_matrix(m: re.Match[str]) -> str:
         inner = m.group(1)
@@ -182,7 +184,9 @@ def fixture_id(source: str) -> str:
     return hashlib.sha1(source.encode("utf-8")).hexdigest()[:8]
 
 
-def build_sound_change_rule(guess: dict[str, str], *, source: str) -> SoundChangeRuleSet | None:
+def build_sound_change_rule(
+    guess: dict[str, str], *, source: str
+) -> SoundChangeRuleSet | None:
     if not guess["asca_input"] or not guess["asca_output"]:
         return None
     change = {
@@ -334,8 +338,7 @@ def main() -> int:
         encoding="utf-8",
     )
     print(
-        f"wrote {len(new_rows)} asca_guess rows "
-        f"({ok_count} validate ok) to {args.csv}"
+        f"wrote {len(new_rows)} asca_guess rows ({ok_count} validate ok) to {args.csv}"
     )
     print(f"seed note: {note}")
     return 0

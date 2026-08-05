@@ -454,8 +454,12 @@ def test_section_all_ok_stats():
         ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", ""),
         ValidationRow("1", "A", 1, "s:2", True, "", "", "", "", ""),
         ValidationRow("2", "B", 0, "s:3", True, "", "", "", "", ""),
-        ValidationRow("2", "B", 1, "s:4", False, "syntax_other", "broken-syntax", "", "", ""),
-        ValidationRow("3", "C", 0, "s:5", False, "syntax_other", "broken-syntax", "", "", ""),
+        ValidationRow(
+            "2", "B", 1, "s:4", False, "syntax_other", "broken-syntax", "", "", ""
+        ),
+        ValidationRow(
+            "3", "C", 0, "s:5", False, "syntax_other", "broken-syntax", "", "", ""
+        ),
     ]
     assert section_all_ok_stats(rows) == (1, 3, 100.0 / 3)
 
@@ -469,7 +473,9 @@ def test_section_all_ok_stats_from_dataframe():
         ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", ""),
         ValidationRow("1", "A", 1, "s:2", True, "", "", "", "", ""),
         ValidationRow("2", "B", 0, "s:3", True, "", "", "", "", ""),
-        ValidationRow("2", "B", 1, "s:4", False, "syntax_other", "broken-syntax", "", "", ""),
+        ValidationRow(
+            "2", "B", 1, "s:4", False, "syntax_other", "broken-syntax", "", "", ""
+        ),
     ]
     df = validation_rows_to_dataframe(rows)
     assert section_all_ok_stats_from_dataframe(df) == (1, 2, 50.0)

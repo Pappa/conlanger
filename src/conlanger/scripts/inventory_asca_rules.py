@@ -4,6 +4,7 @@
 Evidence ticket: .scratch/cleaned-rule-corpus/issues/02-inventory-valid-vs-invalid-rules.md
 Criteria: .scratch/cleaned-rule-corpus/research/asca-rule-validity.md
 """
+
 from __future__ import annotations
 
 import argparse
@@ -32,12 +33,26 @@ ERROR_CLASS_PATTERNS = [
     ("nested_brackets", re.compile(r"nested brackets", re.IGNORECASE)),
     ("unknown_feature", re.compile(r"Unknown feature", re.IGNORECASE)),
     ("unknown_grouping", re.compile(r"Unknown grouping", re.IGNORECASE)),
-    ("prose_or_expected_arrow", re.compile(r"Expected '>|Expected '->'|Expected '=>'", re.IGNORECASE)),
+    (
+        "prose_or_expected_arrow",
+        re.compile(r"Expected '>|Expected '->'|Expected '=>'", re.IGNORECASE),
+    ),
     ("expected_underscore", re.compile(r"Expected '_'", re.IGNORECASE)),
     ("stuff_after_word_bound", re.compile(r"after the end of a word", re.IGNORECASE)),
-    ("diacritic_prereq", re.compile(r"prerequisite properties.*diacritic", re.IGNORECASE)),
-    ("empty_io_panic", re.compile(r"Output is not empty|Input is empty|Output is empty", re.IGNORECASE)),
-    ("runtime_delete_only_segment", re.compile(r"Can't delete a word's only segment", re.IGNORECASE)),
+    (
+        "diacritic_prereq",
+        re.compile(r"prerequisite properties.*diacritic", re.IGNORECASE),
+    ),
+    (
+        "empty_io_panic",
+        re.compile(
+            r"Output is not empty|Input is empty|Output is empty", re.IGNORECASE
+        ),
+    ),
+    (
+        "runtime_delete_only_segment",
+        re.compile(r"Can't delete a word's only segment", re.IGNORECASE),
+    ),
     ("expected_number", re.compile(r"Expected number", re.IGNORECASE)),
 ]
 

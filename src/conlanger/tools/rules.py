@@ -19,18 +19,14 @@ _IPA_SEGMENT = (
     r"[a-zA-Z\u00C0-\u024F\u0250-\u02AF\u1D00-\u1DBF]+"
     rf"(?:{_IPA_MODIFIER})*"
 )
-_OPT_LENGTH_COMMA_RE = re.compile(
-    rf"({_IPA_SEGMENT}|[A-Z])\({_LENGTH},([^)]+)\)"
-)
+_OPT_LENGTH_COMMA_RE = re.compile(rf"({_IPA_SEGMENT}|[A-Z])\({_LENGTH},([^)]+)\)")
 _OPT_LENGTH_RE = re.compile(rf"({_IPA_SEGMENT}|[A-Z])\({_LENGTH}\)")
 _SET_OPT_LENGTH_RE = re.compile(rf"\}}\({_LENGTH}\)")
 _GROUPING_LENGTH_RE = re.compile(r"([A-Z])" + re.escape(_LENGTH))
 _SEGMENT_LENGTH_RE = re.compile(rf"({_IPA_SEGMENT}){re.escape(_LENGTH)}")
 _SET_SUFFIX_LENGTH_RE = re.compile(r"\}" + re.escape(_LENGTH))
 _DOUBLE_LENGTH_RE = re.compile(r":\[\+long\]" + re.escape(_LENGTH))
-_BARE_SET_LENGTH_RE = re.compile(
-    rf"(^|,)\s*{re.escape(_LENGTH)}(?=,|$)"
-)
+_BARE_SET_LENGTH_RE = re.compile(rf"(^|,)\s*{re.escape(_LENGTH)}(?=,|$)")
 
 
 def _expand_bare_length_in_sets(text: str) -> str:
@@ -68,15 +64,15 @@ def normalize_typographic_apostrophes(text: str) -> str:
     if not text or "\u2019" not in text:
         return text
     return _TYPO_APOSTROPHE_RE.sub(rf"\1{_EJECTIVE}", text)
+
+
 _POST_MATRIX_EJECTIVE_RE = re.compile(
     rf"({_IPA_SEGMENT}):\[([^\]]+)\]{re.escape(_EJECTIVE)}"
 )
 _SET_SUFFIX_EJECTIVE_RE = re.compile(
     rf"\{{([^{re.escape(_EJECTIVE)}]+)\}}{re.escape(_EJECTIVE)}"
 )
-_BARE_EJECTIVE_RE = re.compile(
-    rf"({_IPA_SEGMENT}){re.escape(_EJECTIVE)}(?![:\[])"
-)
+_BARE_EJECTIVE_RE = re.compile(rf"({_IPA_SEGMENT}){re.escape(_EJECTIVE)}(?![:\[])")
 
 
 def _add_cg_feature(features: str) -> str:
@@ -109,9 +105,7 @@ def normalize_asca_ejective_marks(text: str) -> str:
         return text
 
     text = _POST_MATRIX_EJECTIVE_RE.sub(
-        lambda match: (
-            f"{match.group(1)}:[{_add_cg_feature(match.group(2))}]"
-        ),
+        lambda match: f"{match.group(1)}:[{_add_cg_feature(match.group(2))}]",
         text,
     )
     text = _SET_SUFFIX_EJECTIVE_RE.sub(
@@ -137,7 +131,9 @@ def _labialize_single_token(token: str) -> str:
 def _labialize_mapping(mapping: str) -> str:
     if mapping.startswith("{") and mapping.endswith("}"):
         members = [part.strip() for part in mapping[1:-1].split(",") if part.strip()]
-        return "{" + ",".join(_labialize_single_token(member) for member in members) + "}"
+        return (
+            "{" + ",".join(_labialize_single_token(member) for member in members) + "}"
+        )
     return _labialize_single_token(mapping)
 
 

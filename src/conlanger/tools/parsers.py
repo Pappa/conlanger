@@ -94,7 +94,9 @@ def strip_leading_index_list_marker(text: str) -> str:
 
 def join_rule_comment(*fragments: str | None) -> str | None:
     """Join captured prose fragments into one ``comment`` string."""
-    parts = [fragment.strip() for fragment in fragments if fragment and fragment.strip()]
+    parts = [
+        fragment.strip() for fragment in fragments if fragment and fragment.strip()
+    ]
     if not parts:
         return None
     return "; ".join(parts)
@@ -119,7 +121,9 @@ def normalize_rule_arrows(text: str) -> str:
 
 
 _UNCERTAINTY_WORD_RE = re.compile(r"\b(?:sporadic(?:ally)?|sometimes)\b", re.IGNORECASE)
-_LONE_UNCERTAINTY_RE = re.compile(r"^(?:sporadic(?:ally)?|sometimes)\??\.?$", re.IGNORECASE)
+_LONE_UNCERTAINTY_RE = re.compile(
+    r"^(?:sporadic(?:ally)?|sometimes)\??\.?$", re.IGNORECASE
+)
 _ENV_UNCERTAINTY_PREFIX_RE = re.compile(
     r"^sporadic(?:ally)?(?:,\s*usually)?\s*,?\s*",
     re.IGNORECASE,
@@ -249,9 +253,11 @@ def paren_inner_is_gloss(inner: str) -> bool:
         return True
     if re.fullmatch(r"[A-Z][a-zA-Z\u00C0-\u024F\-]+", text):
         return True
-    if " " not in text and re.fullmatch(
-        r"[\u0041-\u024F\u1E00-\u1EFF]+", text
-    ) and not re.search(r"[\u0250-\u02AF:\+\-\[\]]", text):
+    if (
+        " " not in text
+        and re.fullmatch(r"[\u0041-\u024F\u1E00-\u1EFF]+", text)
+        and not re.search(r"[\u0250-\u02AF:\+\-\[\]]", text)
+    ):
         return True
     if _PHONOLOGICAL_PAREN_INNER_RE.fullmatch(text):
         return False
@@ -285,9 +291,7 @@ def strip_trailing_quoted_gloss_from_field(text: str) -> str:
 _EMBEDDED_QUOTED_GLOSS_RE = re.compile(
     r'[\s,]*[\u201c"]([^\u201d"]{3,})[\u201d"][\s,]*'
 )
-_UNCLOSED_QUOTED_GLOSS_RE = re.compile(
-    r'[\s,]*[\u201c"]([^\u201d"]{3,})\s*$'
-)
+_UNCLOSED_QUOTED_GLOSS_RE = re.compile(r'[\s,]*[\u201c"]([^\u201d"]{3,})\s*$')
 _ORPHAN_CLOSING_QUOTE_END_RE = re.compile(r'[\s,]*[\u201c\u201d"]\s*$')
 _ORPHAN_CLOSING_QUOTE_MID_RE = re.compile(r'[\s,]+[\u201d"]+(?=\s|$)')
 
@@ -849,7 +853,9 @@ def write_rule_comment_phrase_summary(doc: dict[str, Any], path: Path) -> int:
         "| phrase | rules |",
         "| --- | ---: |",
     ]
-    for phrase, count in sorted(phrase_counts.items(), key=lambda item: (-item[1], item[0])):
+    for phrase, count in sorted(
+        phrase_counts.items(), key=lambda item: (-item[1], item[0])
+    ):
         lines.append(f"| `{phrase}` | {count} |")
 
     if not phrase_counts:
