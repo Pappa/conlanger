@@ -14,9 +14,11 @@ Index rule arrows (``→``) in field values become ASCA ``>``. Chained rules wit
 ``env``/``exception`` expand into sequential single-step rules. Uncertainty glosses
 (``sporadic``, ``sometimes``, …) are stripped from field values and recorded as
 ``sporadic: true``. **Feature matrix** synonym replacement inside ``[...]`` via
-``feature_mappings.csv`` (``raw`` unchanged). Inline prose stripped for ASCA is
-captured in optional ``comment`` on each corpus rule. Class-letter expansion is deferred to compile time
-(``PhonologicalRuleSet`` + ``group_mappings.csv``).
+``feature_mappings.csv`` (``raw`` unchanged). **Correspondence-series** and
+**collective subscript** expansion via ``series_mappings.csv`` (``raw`` unchanged).
+Inline prose stripped for ASCA is captured in optional ``comment`` on each corpus
+rule. Class-letter expansion is deferred to compile time (``PhonologicalRuleSet`` +
+``group_mappings.csv``).
 """
 
 from __future__ import annotations
@@ -871,11 +873,25 @@ def write_rule_comment_phrase_summary(doc: dict[str, Any], path: Path) -> int:
 class IndexDiachronicaParser:
     """Parse Index Diachronica HTML into applier-neutral cleaned-corpus YAML."""
 
+    def __init__(self, series_mappings: list | None = None) -> None:
+        if series_mappings is None:
+            from conlanger.tools.series_mappings import load_series_mappings
+
+            self._series_mappings = load_series_mappings()
+        else:
+            self._series_mappings = series_mappings
+
     def abbreviations(self) -> dict[str, str]:
         """Global abbreviation table for the cleaned corpus (empty at ingest)."""
         return {}
 
-    def parse_rule_element(self, el, *, source_file: str) -> list[dict[str, Any]]:
+    def parse_rule_element(
+        self,
+        el,
+        *,
+        source_file: str,
+        section_index: str = "",
+    ) -> list[dict[str, Any]]:
         raw = extract_text_with_subs(el)
         line = getattr(el, "sourceline", None) or 0
         source = f"{source_file}:{line}"
@@ -897,6 +913,9 @@ class IndexDiachronicaParser:
         parts = apply_trailing_glosses(parts)
         parts = apply_stress_conditions(parts)
         parts = apply_feature_mappings(parts)
+        from conlanger.tools.series_mappings import apply_series_mappings
+
+        parts = apply_series_mappings(parts, section_index, self._series_mappings)
         return [
             {**entry, "raw": raw, "source": source, **sporadic_flag}
             for entry in expand_chained_rule_parts(parts)
@@ -937,7 +956,11 @@ class IndexDiachronicaParser:
                         True  # citation slot consumed even if first p was a rule
                     )
                     rules.extend(
-                        self.parse_rule_element(p, source_file=source_file)
+                        self.parse_rule_element(
+                            p,
+                            source_file=source_file,
+                            section_index=index or "",
+                        )
                     )
                     continue
 
@@ -955,6 +978,17 @@ class IndexDiachronicaParser:
                 "section": name,
                 "index": index,
             }
+            section_abbrevs: dict[str, str] = {}
+            if index:
+                from conlanger.tools.series_mappings import (
+                    section_abbreviations_for_index,
+                )
+
+                section_abbrevs = section_abbreviations_for_index(
+                    index, self._series_mappings
+                )
+            if section_abbrevs:
+                section_obj["abbreviations"] = section_abbrevs
             if citation is not None:
                 section_obj["citation"] = citation
             if comments:
@@ -969,5 +1003,14 @@ class IndexDiachronicaParser:
         }
 
 
-def parse_rule_element(el, *, source_file: str) -> list[dict[str, Any]]:
-    return IndexDiachronicaParser().parse_rule_element(el, source_file=source_file)
+def parse_rule_element(
+    el,
+    *,
+    source_file: str,
+    section_index: str = "",
+) -> list[dict[str, Any]]:
+    return IndexDiachronicaParser().parse_rule_element(
+        el,
+        source_file=source_file,
+        section_index=section_index,
+    )

@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: None
 
 # Implement parse-time correspondence-series expansion
@@ -23,14 +23,27 @@ Implement resolver and lookup in `src/conlanger/tools/` alongside `IndexDiachron
 
 ## Acceptance criteria
 
-- [ ] Parse-time expansion wired in `IndexDiachronicaParser` (not compile layer)
-- [ ] Maps loaded from HTML-derived package CSV (ticket 28)
-- [ ] `raw` preserves Index subscripts; corpus fields expanded when mapped
-- [ ] Unmapped tokens left literal; no pre-emptive `status: skipped`
-- [ ] Unit tests on representative mapped sections (e.g. Afro-Asiatic) and collective (`Hₓ`) where rows exist
-- [ ] Full inventory re-run; before/after metrics in ticket **Answer**
-- [ ] Fixtures updated for intentionally changed validation outcomes
-- [ ] No imports from or dependencies on `legacy/`
+- [x] Parse-time expansion wired in `IndexDiachronicaParser` (not compile layer)
+- [x] Maps loaded from HTML-derived package CSV (ticket 28)
+- [x] `raw` preserves Index subscripts; corpus fields expanded when mapped
+- [x] Unmapped tokens left literal; no pre-emptive `status: skipped`
+- [x] Unit tests on representative mapped sections (e.g. Afro-Asiatic) and collective (`Hₓ`) where rows exist
+- [x] Full inventory re-run; before/after metrics in ticket **Answer**
+- [x] Fixtures updated for intentionally changed validation outcomes
+- [x] No imports from or dependencies on `legacy/`
+
+## Answer
+
+Parse-time expansion wired via `expand_series_tokens_in_field`, `apply_series_mappings`, and `section_abbreviations_for_index` in `series_mappings.py`; `IndexDiachronicaParser` calls them after feature-matrix normalisation. Section `abbreviations` populated from hierarchical CSV rows.
+
+**Inventory (ASCA 0.10.2, full corpus):**
+
+| Metric | Before | After |
+| --- | ---: | ---: |
+| OK / total | 6483 / 9317 (69.6%) | **6518 / 9317 (70.0%)** |
+| `unknown_character` failures | 760 | **710** (−50) |
+
+Subscript digits `₁`/`₂`/`₃` no longer appear in top `unknown_character` tokens; remaining subscript failures are mostly `₀` (identity) and unmapped in-scope gaps per `series-mappings-coverage-backlog.md`.
 
 ## Comments
 

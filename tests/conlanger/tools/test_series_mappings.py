@@ -9,9 +9,11 @@ import pytest
 from conlanger.tools.series_mappings import (
     SeriesExtractionAudit,
     SeriesMapping,
+    apply_series_mappings,
     asca_digit_segment,
     audit_series_extraction,
     classify_subscript_token,
+    expand_series_tokens_in_field,
     extract_series_mappings_from_html,
     find_correspondence_series_tokens,
     find_subscript_tokens,
@@ -24,6 +26,7 @@ from conlanger.tools.series_mappings import (
     is_positional_slot_token,
     load_series_mappings,
     lookup_series_target,
+    section_abbreviations_for_index,
     section_index_prefixes,
     survey_all_subscript_tokens_in_html,
     survey_html_defined_series,
@@ -695,3 +698,49 @@ def test_extraction_confidence_benchmarks_on_full_html():
     assert total_17 > 0 and mapped_17 / total_17 >= 0.65
     assert in_scope_series_token("s₁")
     assert not in_scope_series_token("C₁")
+
+
+def test_expand_series_tokens_in_field_uses_hierarchical_lookup():
+    rows = [
+        SeriesMapping("6", "s₁", "f1", "index.html:1", ""),
+        SeriesMapping("6.1.2.1", "s₁", "ʃ", "index.html:2", "override"),
+    ]
+    assert expand_series_tokens_in_field("s₁ → x", "6", rows) == "f1 → x"
+    assert expand_series_tokens_in_field("s₁ → x", "6.1.2.1", rows) == "ʃ → x"
+
+
+def test_expand_series_tokens_in_field_expands_collective_and_env():
+    rows = [
+        SeriesMapping("6", "h₁", "h1", "index.html:1", ""),
+        SeriesMapping("6", "h₂", "h2", "index.html:1", ""),
+        SeriesMapping("6", "hₓ", "{h1,h2}", "index.html:1", ""),
+    ]
+    text = "sₓ → ʃ / _ {h₁,h₂}"
+    assert expand_series_tokens_in_field(text, "6", rows) == "sₓ → ʃ / _ {h1,h2}"
+
+
+def test_expand_series_tokens_in_field_leaves_positional_slots():
+    rows = [SeriesMapping("10.2.1", "s₁", "f1", "index.html:1", "")]
+    text = "C₁ → C₂ / _ s₁"
+    assert expand_series_tokens_in_field(text, "10.2.1", rows) == "C₁ → C₂ / _ f1"
+
+
+def test_apply_series_mappings_on_rule_parts():
+    rows = [SeriesMapping("6.1.2.1", "s₁", "ʃ", "index.html:1", "")]
+    assert apply_series_mappings(
+        {"input": "s₁", "output": "z", "env": "_ h₂"},
+        "6.1.2.1",
+        rows,
+    ) == {"input": "ʃ", "output": "z", "env": "_ h₂"}
+
+
+def test_section_abbreviations_for_index_more_specific_wins():
+    rows = [
+        SeriesMapping("6", "s₁", "f1", "index.html:1", ""),
+        SeriesMapping("6.1.2.1", "s₁", "ʃ", "index.html:2", ""),
+        SeriesMapping("6", "sₓ", "{f1,f2,f3}", "index.html:1", ""),
+    ]
+    assert section_abbreviations_for_index("6.1.2.1", rows) == {
+        "s₁": "ʃ",
+        "sₓ": "{f1,f2,f3}",
+    }

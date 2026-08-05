@@ -67,6 +67,14 @@ sections:
     W = Semivowel Z = Continuant'
 - section: Afro-Asiatic
   index: '6'
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: For these Afro-Asiatic changes, s₁, s₂, s₃, h₁, and h₂ are consonants,
     believed to have most likely been fricatives, of indeterminate reconstruction.
     Dashes denote stem boundaries.
@@ -82,11 +90,19 @@ sections:
     source: index_diachronica_original.html:951
 - section: Proto-Afro-Asiatic to Proto-Omotic
   index: '6.1'
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
   - input: dz ʃ tʃ
-    output: ʒ s₁ s₂
+    output: ʒ f1 f2
     raw: dz ʃ tʃ → ʒ s₁ s₂
     source: index_diachronica_original.html:956
   - input: dʒ
@@ -121,7 +137,7 @@ sections:
     source: index_diachronica_original.html:962
   - input: a
     output: o
-    env: '#Cw_{(d)l,s₃}'
+    env: '#Cw_{(d)l,f3}'
     raw: 'a → o / #Cw_{(d)l,s₃}'
     source: index_diachronica_original.html:963
   - input: w
@@ -131,7 +147,7 @@ sections:
     raw: 'w → ∅ / #C_V, except _i(ː)'
     source: index_diachronica_original.html:964
   - input: ʃ
-    output: s₂
+    output: f2
     env: '{i,j}_'
     raw: ʃ → s₂ / {i,j}_
     source: index_diachronica_original.html:965
@@ -141,6 +157,14 @@ sections:
     source: index_diachronica_original.html:966
 - section: Proto-Omotic to North Omotic
   index: 6.1.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
@@ -234,19 +258,29 @@ sections:
     source: index_diachronica_original.html:988
 - section: North Omotic to Bench
   index: 6.1.1.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: ʃ
+    sₓ: '{f1,f2,f3}'
+    x₁: k
+    x₂: k
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
-  - input: x₁
+  - input: k
     output: k
     raw: x₁ → k
     source: index_diachronica_original.html:993
-  - input: x₂
+  - input: k
     output: k
     env: '#_'
     raw: 'x₂ → k / #_'
     source: index_diachronica_original.html:994
-  - input: x₂ s₃
+  - input: k ʃ
     output: ∅ ʃ
     env: V_V
     raw: x₂ s₃ → ∅ ʃ / V_V
@@ -255,11 +289,11 @@ sections:
     output: ts
     raw: tʃ → ts
     source: index_diachronica_original.html:996
-  - input: sₓ
+  - input: '{f1,f2,f3}'
     output: ʃ
     raw: sₓ → ʃ
     source: index_diachronica_original.html:997
-  - input: '{ʔ,hₓ}'
+  - input: '{ʔ,{h1,h2}}'
     output: ∅
     raw: '{ʔ,hₓ} → ∅'
     source: index_diachronica_original.html:998
@@ -279,6 +313,16 @@ sections:
     source: index_diachronica_original.html:1001
 - section: North Omotic to Dizin
   index: 6.1.1.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: ʃ
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
+    x₁: k
+    x₂: k
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
@@ -296,16 +340,16 @@ sections:
     env: V_
     raw: tsʼ → ʒ / V_
     source: index_diachronica_original.html:1008
-  - input: x₁
+  - input: k
     output: k
     raw: x₁ → k
     source: index_diachronica_original.html:1009
-  - input: x₂
+  - input: k
     output: k
     env: _#
     raw: x₂ → k / _#
     source: index_diachronica_original.html:1010
-  - input: x₂
+  - input: k
     output: ∅
     env: V_V
     raw: x₂ → ∅ / V_V
@@ -319,11 +363,11 @@ sections:
     env: _i
     raw: ts → tʃ / _i
     source: index_diachronica_original.html:1013
-  - input: sₓ
+  - input: '{f1,f2,f3}'
     output: tʃ
     raw: sₓ → tʃ
     source: index_diachronica_original.html:1014
-  - input: s₁
+  - input: ʃ
     output: ʃ
     raw: s₁ → ʃ
     source: index_diachronica_original.html:1015
@@ -331,7 +375,7 @@ sections:
     output: ∅
     raw: ʔ → ∅
     source: index_diachronica_original.html:1016
-  - input: '{h₁,h₂}'
+  - input: '{h1,h2}'
     output: h
     raw: '{h₁,h₂} → h'
     source: index_diachronica_original.html:1017
@@ -341,6 +385,16 @@ sections:
     source: index_diachronica_original.html:1018
 - section: North Omotic to Kafa
   index: 6.1.1.3
+  abbreviations:
+    h₁: h1
+    h₂: w
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: ʃ
+    sₓ: '{f1,f2,f3}'
+    x₁: k
+    x₂: k
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
@@ -367,21 +421,21 @@ sections:
     output: tʃʼ
     raw: tsʼ → tʃʼ
     source: index_diachronica_original.html:1027
-  - input: x₁
+  - input: k
     output: k
     raw: x₁ → k
     source: index_diachronica_original.html:1028
-  - input: x₂
+  - input: k
     output: k
     env: '#_'
     raw: 'x₂ → k / #_'
     source: index_diachronica_original.html:1029
-  - input: x₂
+  - input: k
     output: ∅
     env: V_V
     raw: x₂ → ∅ / V_V
     source: index_diachronica_original.html:1030
-  - input: '{s₃,ʒ}'
+  - input: '{ʃ,ʒ}'
     output: ʃ
     env: '#_'
     raw: '{s₃,ʒ} → ʃ / #_'
@@ -391,12 +445,12 @@ sections:
     env: V_
     raw: '{ts,ʒ} → tʃ / V_'
     source: index_diachronica_original.html:1032
-  - input: s₃
+  - input: ʃ
     output: ʃ
     env: V_V
     raw: s₃ → ʃ / V_V
     source: index_diachronica_original.html:1033
-  - input: s₃
+  - input: ʃ
     output: s
     env: V_$#
     raw: s₃ → s / V_$#
@@ -409,7 +463,7 @@ sections:
     output: n
     raw: ɲ → n
     source: index_diachronica_original.html:1036
-  - input: h₂
+  - input: w
     output: w
     env: '#_'
     raw: 'h₂ → w / #_'
@@ -430,6 +484,16 @@ sections:
     source: index_diachronica_original.html:1040
 - section: North Omotic to Maale
   index: 6.1.1.4
+  abbreviations:
+    h₁: h1
+    h₂: w
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
+    x₁: k
+    x₂: h
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
@@ -453,16 +517,16 @@ sections:
     env: Vj_
     raw: z → ts / Vj_
     source: index_diachronica_original.html:1048
-  - input: x₁
+  - input: k
     output: k
     raw: x₁ → k
     source: index_diachronica_original.html:1049
-  - input: x₂
+  - input: h
     output: h
     env: '#_'
     raw: 'x₂ → h / #_'
     source: index_diachronica_original.html:1050
-  - input: x₂
+  - input: h
     output: ɡ
     env: V_V
     raw: x₂ → ɡ / V_V
@@ -472,7 +536,7 @@ sections:
     env: V_
     raw: ts tsː → s ts / V_
     source: index_diachronica_original.html:1052
-  - input: sₓ
+  - input: '{f1,f2,f3}'
     output: ʃ
     raw: sₓ → ʃ
     source: index_diachronica_original.html:1053
@@ -490,13 +554,23 @@ sections:
     output: n
     raw: ɲ → n
     source: index_diachronica_original.html:1056
-  - input: h₂
+  - input: w
     output: w
     env: '#_'
     raw: 'h₂ → w / #_'
     source: index_diachronica_original.html:1057
 - section: North Omotic to Shekkacho
   index: 6.1.1.5
+  abbreviations:
+    h₁: '{h,∅}'
+    h₂: w
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: ʃ
+    s₃: ʃ
+    sₓ: '{f1,f2,f3}'
+    x₁: k
+    x₂: ∅
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
@@ -537,11 +611,11 @@ sections:
     output: tʃʼ
     raw: tsʼ → tʃʼ
     source: index_diachronica_original.html:1069
-  - input: x₁
+  - input: k
     output: k
     raw: x₁ → k
     source: index_diachronica_original.html:1070
-  - input: x₂
+  - input: ∅
     output: ∅
     env: V_V
     raw: x₂ → ∅ / V_V
@@ -551,7 +625,7 @@ sections:
     env: '#_'
     raw: 'ʒ → ʃ / #_'
     source: index_diachronica_original.html:1072
-  - input: '{s₃,ts,ʒ}'
+  - input: '{ʃ,ts,ʒ}'
     output: s
     env: _$#
     raw: '{s₃,ts,ʒ} → s / _$#'
@@ -561,31 +635,31 @@ sections:
     env: V_
     raw: ts → ʃ / V_
     source: index_diachronica_original.html:1074
-  - input: s₃
+  - input: ʃ
     output: ʃ
     env: '#_'
     raw: 's₃ → ʃ / #_'
     source: index_diachronica_original.html:1075
-  - input: s₃
+  - input: ʃ
     output: s
     env: V_$#
     raw: s₃ → s / V_$#
     source: index_diachronica_original.html:1076
-  - input: s₂
+  - input: ʃ
     output: ʃ
     raw: s₂ → ʃ
     source: index_diachronica_original.html:1077
-  - input: s₂
+  - input: ʃ
     output: '{s,tʃː}'
     env: V_
     raw: s₂ → {s,tʃː} / V_
     source: index_diachronica_original.html:1078
-  - input: h₁
+  - input: '{h,∅}'
     output: '{h,∅}'
     env: '#_'
     raw: 'h₁ → {h,∅} / #_'
     source: index_diachronica_original.html:1079
-  - input: h₂
+  - input: w
     output: w
     env: '#_'
     raw: 'h₂ → w / #_'
@@ -606,6 +680,16 @@ sections:
     source: index_diachronica_original.html:1083
 - section: North Omotic to Wolaytta
   index: 6.1.1.6
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: ʃ
+    s₂: s
+    s₃: ʃ
+    sₓ: '{f1,f2,f3}'
+    x₁: k
+    x₂: ∅
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
@@ -618,31 +702,31 @@ sections:
     output: f
     raw: p → f
     source: index_diachronica_original.html:1089
-  - input: x₁
+  - input: k
     output: k
     raw: x₁ → k
     source: index_diachronica_original.html:1090
-  - input: x₂
+  - input: ∅
     output: ∅
     env: V_V
     raw: x₂ → ∅ / V_V
     source: index_diachronica_original.html:1091
-  - input: x₂ s₃
+  - input: ∅ ʃ
     output: k ʃ
     env: V_$#
     raw: x₂ s₃ → k ʃ / V_$#
     source: index_diachronica_original.html:1092
   - input: s
-    output: s₃
+    output: ʃ
     env: V_
     comment: (V)
     raw: s → s₃ / V_(V)
     source: index_diachronica_original.html:1093
-  - input: s₁
+  - input: ʃ
     output: ʃ
     raw: s₁ → ʃ
     source: index_diachronica_original.html:1094
-  - input: s₂
+  - input: s
     output: s
     env: V_
     raw: s₂ → s / V_
@@ -663,6 +747,16 @@ sections:
     source: index_diachronica_original.html:1098
 - section: North Omotic to Yemsa
   index: 6.1.1.7
+  abbreviations:
+    h₁: '{h,∅}'
+    h₂: w
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
+    x₁: k
+    x₂: k
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
@@ -684,16 +778,16 @@ sections:
     env: V_
     raw: z → d / V_
     source: index_diachronica_original.html:1106
-  - input: x₁
+  - input: k
     output: k
     raw: x₁ → k
     source: index_diachronica_original.html:1107
-  - input: x₂
+  - input: k
     output: k
     env: '#_'
     raw: 'x₂ → k / #_'
     source: index_diachronica_original.html:1108
-  - input: x₂
+  - input: k
     output: ∅
     env: V_V
     raw: x₂ → ∅ / V_V
@@ -712,7 +806,7 @@ sections:
     env: '#_'
     raw: 'ts → s / #_'
     source: index_diachronica_original.html:1112
-  - input: sₓ
+  - input: '{f1,f2,f3}'
     output: ʃ
     raw: sₓ → ʃ
     source: index_diachronica_original.html:1113
@@ -724,12 +818,12 @@ sections:
     output: n
     raw: ɲ → n
     source: index_diachronica_original.html:1115
-  - input: h₁
+  - input: '{h,∅}'
     output: '{h,∅}'
     env: '#_'
     raw: 'h₁ → {h,∅} / #_'
     source: index_diachronica_original.html:1116
-  - input: h₂
+  - input: w
     output: w
     env: '#_'
     raw: 'h₂ → w / #_'
@@ -750,6 +844,17 @@ sections:
     source: index_diachronica_original.html:1120
 - section: North Omotic to Zayse-Zergulla
   index: 6.1.1.8
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: tʃ
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
+    x₁: k
+    x₂: h
+    x₃: ɡ
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
@@ -771,26 +876,26 @@ sections:
     output: sʼ
     raw: tsʼ → sʼ
     source: index_diachronica_original.html:1128
-  - input: x₁
+  - input: k
     output: k
     raw: x₁ → k
     source: index_diachronica_original.html:1129
-  - input: x₂
+  - input: h
     output: h
     env: '#_'
     raw: 'x₂ → h / #_'
     source: index_diachronica_original.html:1130
-  - input: x₂
+  - input: h
     output: ∅
     env: V_V
     raw: x₂ → ∅ / V_V
     source: index_diachronica_original.html:1131
-  - input: x₂
+  - input: h
     output: ɡ
     env: n_
     raw: x₂ → ɡ / n_
     source: index_diachronica_original.html:1132
-  - input: x₃
+  - input: ɡ
     output: ɡ
     env: V_#
     raw: x₃ → ɡ / V_#
@@ -800,11 +905,11 @@ sections:
     env: V_
     raw: tsː → ts / V_
     source: index_diachronica_original.html:1134
-  - input: '{s₁,s₃}'
+  - input: '{f1,f3}'
     output: ʃ
     raw: '{s₁,s₃} → ʃ'
     source: index_diachronica_original.html:1135
-  - input: s₂
+  - input: tʃ
     output: tʃ
     env: V_
     raw: s₂ → tʃ / V_
@@ -824,8 +929,24 @@ sections:
     source: index_diachronica_original.html:1139
 - section: South Omotic
   index: 6.1.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
 - section: South Omotic to Aari
   index: 6.1.2.1
+  abbreviations:
+    h₁: ∅
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: ʃ
+    s₂: z
+    s₃: tʃ
+    sₓ: '{f1,f2,f3}'
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
@@ -850,16 +971,24 @@ sections:
     output: ts
     raw: tʃ → ts
     source: index_diachronica_original.html:1151
-  - input: s₁ s₂ s₃
+  - input: ʃ z tʃ
     output: ʃ z tʃ
     raw: s₁ s₂ s₃ → ʃ z tʃ
     source: index_diachronica_original.html:1152
-  - input: h₁
+  - input: ∅
     output: ∅
     raw: h₁ → ∅
     source: index_diachronica_original.html:1153
 - section: South Omotic to Dime
   index: 6.1.2.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: ʃ
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
@@ -886,17 +1015,25 @@ sections:
     env: _i
     raw: ts → ʃ / _i
     source: index_diachronica_original.html:1162
-  - input: s₁
+  - input: ʃ
     output: ʃ
     raw: s₁ → ʃ
     source: index_diachronica_original.html:1163
-  - input: s₂ s₃
+  - input: f2 f3
     output: tʃː tʃ
     env: V_
     raw: s₂ s₃ → tʃː tʃ / V_
     source: index_diachronica_original.html:1164
 - section: Proto-Afro-Asiatic to Proto-Erythrean
   index: '6.2'
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
@@ -906,6 +1043,14 @@ sections:
     source: index_diachronica_original.html:1169
 - section: Proto-Erythrean to Proto-Cushitic
   index: 6.2.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
@@ -926,8 +1071,24 @@ sections:
     source: index_diachronica_original.html:1176
 - section: Agaw
   index: 6.2.1.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
 - section: Proto-Agaw to Awngi
   index: 6.2.1.1.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: 'Pogostick Man, from Fallon, Paul D. (2009), “The Velar Ejective in Proto-Agaw”.
     In Selected Proceedings of the 39th Annual Conference on African Linguistics,
     Ojo, Akinloye and Lioba Moshi (Eds.), 10 – 22. Sommerville, MA: Cascadilla Proceedings
@@ -961,6 +1122,14 @@ sections:
     source: index_diachronica_original.html:1189
 - section: Proto-Agaw to Blin
   index: 6.2.1.1.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: 'Pogostick Man, from Fallon, Paul D. (2009), “The Velar Ejective in Proto-Agaw”.
     In Selected Proceedings of the 39th Annual Conference on African Linguistics,
     Ojo, Akinloye and Lioba Moshi (Eds.), 10 – 22. Sommerville, MA: Cascadilla Proceedings
@@ -992,6 +1161,14 @@ sections:
     source: index_diachronica_original.html:1198
 - section: Proto-Agaw to Kemantney
   index: 6.2.1.1.3
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: 'Pogostick Man, from Fallon, Paul D. (2009), “The Velar Ejective in Proto-Agaw”.
     In Selected Proceedings of the 39th Annual Conference on African Linguistics,
     Ojo, Akinloye and Lioba Moshi (Eds.), 10 – 22. Sommerville, MA: Cascadilla Proceedings
@@ -1039,6 +1216,14 @@ sections:
     source: index_diachronica_original.html:1211
 - section: Proto-Agaw to Xamtanga
   index: 6.2.1.1.4
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: 'Pogostick Man, from Fallon, Paul D. (2009), “The Velar Ejective in Proto-Agaw”.
     In Selected Proceedings of the 39th Annual Conference on African Linguistics,
     Ojo, Akinloye and Lioba Moshi (Eds.), 10 – 22. Sommerville, MA: Cascadilla Proceedings
@@ -1087,6 +1272,14 @@ sections:
     source: index_diachronica_original.html:1224
 - section: Proto-Erythrean to Proto-North Erythrean
   index: 6.2.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
@@ -1115,6 +1308,14 @@ sections:
     source: index_diachronica_original.html:1233
 - section: Proto-North Erythrean to Proto-Chadic
   index: 6.2.2.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
@@ -1137,6 +1338,14 @@ sections:
     source: index_diachronica_original.html:1241
 - section: Proto-North Erythrean to Proto-Boreafrasian
   index: 6.2.2.1.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
@@ -1173,6 +1382,14 @@ sections:
     source: index_diachronica_original.html:1251
 - section: Proto-Boreafrasian to Egypto-Berber
   index: 6.2.2.1.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
@@ -1348,6 +1565,14 @@ sections:
     source: index_diachronica_original.html:1289
 - section: Ancient Egyptian to Coptic
   index: 6.2.2.1.3
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
@@ -1393,6 +1618,14 @@ sections:
     source: index_diachronica_original.html:1301
 - section: Proto-Boreafrasian to Proto-Semitic
   index: 6.2.2.1.4
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
@@ -1438,6 +1671,14 @@ sections:
     source: index_diachronica_original.html:1313
 - section: Proto-Semitic to Classical Arabic
   index: 6.2.2.1.5
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: Khavaragh
   comments:
   - raw: “assimilation in some of the longer vowels”
@@ -1495,6 +1736,14 @@ sections:
     source: index_diachronica_original.html:1326
 - section: Classical Arabic to Cypriot Arabic
   index: 6.2.2.1.6
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: Pogostick Man, from Borg, Alexander (1985), Cypriot Arabic
   comments:
   - raw: 'NB: Changes may not be in chronological order.'
@@ -1688,6 +1937,14 @@ sections:
     source: index_diachronica_original.html:1372
 - section: Classical Arabic to Egyptian Arabic
   index: 6.2.2.1.7
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: 'Pogostick Man, from Brustad, Kristen, Mahmoud Al-Batal, and Abbas Al-Tonsi
     (2010), Alif Baa: Introduction to Letters and Sounds, 3rd. Ed.; http://en.wikipedia.org/wiki/Egyptian_Arabic;
     At-Tonsi, Abbas, Heba Salem, and Nevenka Korica Sullivan (2013), Umm al-Dunya:
@@ -1813,6 +2070,14 @@ sections:
     source: index_diachronica_original.html:1401
 - section: Classical Arabic to Coastal Hadhrami Arabic
   index: 6.2.2.1.8
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: Pogostick Man, from Wikipedia Contributors (2013), “Hadhrami Arabic”.
     Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Hadhrami_Arabic&oldid=580700095>
   comments:
@@ -1850,6 +2115,14 @@ sections:
     source: index_diachronica_original.html:1412
 - section: Classical Arabic to Wādı̄ Hadhrami Arabic
   index: 6.2.2.1.9
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: Pogostick Man, from Wikipedia Contributors (2013), “Hadhrami Arabic”.
     Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Hadhrami_Arabic&oldid=580700095>
   comments:
@@ -1889,6 +2162,14 @@ sections:
     sporadic: true
 - section: Classical Arabic to Hassāniyya Arabic
   index: 6.2.2.1.10
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: Pogostick Man, from http://en.wikipedia.org/wiki/Hass%C4%81n%C4%ABya
   comments:
   - raw: 'NB: Words borrowed directly from CA/MSA seem to be immune to these changes.
@@ -1956,6 +2237,14 @@ sections:
     source: index_diachronica_original.html:1439
 - section: Classical Arabic to Iraqi Arabic
   index: 6.2.2.1.11
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: Pogostick Man, from http://en.wikipedia.org/wiki/Varieties_of_Arabic
   rules:
   - input: k q
@@ -1978,6 +2267,14 @@ sections:
     source: index_diachronica_original.html:1447
 - section: Classical Arabic to Eastern Libyan Arabic
   index: 6.2.2.1.12
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: Pogostick Man, from http://en.wikipedia.org/wiki/Libyan_Arabic
   rules:
   - input: dˤ dʒ q
@@ -1995,6 +2292,14 @@ sections:
     source: index_diachronica_original.html:1454
 - section: Classical Arabic to Western Libyan Arabic
   index: 6.2.2.1.13
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: Pogostick Man, from http://en.wikipedia.org/wiki/Libyan_Arabic
   rules:
   - input: q dʒ
@@ -2016,6 +2321,14 @@ sections:
     source: index_diachronica_original.html:1462
 - section: Classical Arabic to Moroccan Arabic
   index: 6.2.2.1.14
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: Pogostick Man, from http://en.wikipedia.org/wiki/Moroccan_Arabic
   rules:
   - input: t
@@ -2112,6 +2425,14 @@ sections:
     source: index_diachronica_original.html:1484
 - section: Classical Arabic to Sa‘idi Arabic
   index: 6.2.2.1.15
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: Pogostick Man, from http://en.wikipedia.org/wiki/Sa%27idi_Arabic
   comments:
   - raw: 'NB: This is probably highly incomplete.'
@@ -2123,6 +2444,14 @@ sections:
     source: index_diachronica_original.html:1490
 - section: Classical Arabic to Sudanese Arabic
   index: 6.2.2.1.16
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: Pogostick Man, from http://en.wikipedia.org/wiki/Sudanese_Arabic
   rules:
   - input: dʒ q
@@ -2135,6 +2464,14 @@ sections:
     source: index_diachronica_original.html:1496
 - section: Classical Arabic to Tunisian Arabic
   index: 6.2.2.1.17
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: Pogostick Man, from http://en.wikipedia.org/wiki/Tunisian_Arabic
   rules:
   - input: a
@@ -2173,6 +2510,14 @@ sections:
     source: index_diachronica_original.html:1507
 - section: Proto-Semitic to Biblical Hebrew
   index: 6.2.2.1.18
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: Maknas, from http://www.adath-shalom.ca/history_of_hebrew.htm “and other
     sources”
   comments:
@@ -2353,6 +2698,14 @@ sections:
     source: index_diachronica_original.html:1549
 - section: Biblical Hebrew to Modern Israeli Hebrew
   index: 6.2.2.1.19
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    hₓ: '{h1,h2}'
+    s₁: f1
+    s₂: f2
+    s₃: f3
+    sₓ: '{f1,f2,f3}'
   citation: Maknas, from http://www.adath-shalom.ca/history_of_hebrew.htm “and other
     sources”
   comments:
@@ -14625,6 +14978,10 @@ sections:
     sporadic: true
 - section: Indo-European
   index: '17'
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: 'Wikipedia gives the following phonological reconstruction for Proto-Indo-European,
     reproduced here with some slight adjustments for presentation’s sake:'
   comments:
@@ -14651,8 +15008,16 @@ sections:
     source: index_diachronica_original.html:4950
 - section: Albanian
   index: '17.1'
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
 - section: Proto-Indo-European to Gheg Albanian
   index: 17.1.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Wikipedia contributors (2013), “Albanian language”.
     Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Albanian_language&oldid=582390175>
   comments:
@@ -14825,6 +15190,10 @@ sections:
     source: index_diachronica_original.html:4992
 - section: Proto-Indo-European to Tosk Albanian
   index: 17.1.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Wikipedia contributors (2013), “Albanian language”.
     Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Albanian_language&oldid=582390175>
   comments:
@@ -14993,6 +15362,10 @@ sections:
     source: index_diachronica_original.html:5030
 - section: Proto-Indo-European to Common Anatolian
   index: '17.2'
+  abbreviations:
+    h₁: ∅
+    h₂: h2
+    h₃: ∅
   citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
   rules:
   - input: eh₂
@@ -15013,32 +15386,32 @@ sections:
     env: VR_V
     raw: H → R / VR_V
     source: index_diachronica_original.html:5038
-  - input: h₁
+  - input: ∅
     output: ∅
     raw: h₁ → ∅
     source: index_diachronica_original.html:5039
-  - input: h₃
+  - input: ∅
     output: ∅
     comment: “medially”
     raw: h₃ → ∅ / “medially”
     source: index_diachronica_original.html:5040
-  - input: T h₂
-    output: D h₃
+  - input: T h2
+    output: D ∅
     env: _#
     raw: T h₂ → D h₃ / _#
     source: index_diachronica_original.html:5041
-  - input: T h₂
-    output: D h₃
+  - input: T h2
+    output: D ∅
     env: V[-stress]_V[-stress]
     raw: T h₂ → D h₃ / V[-stress]_V[-stress]
     source: index_diachronica_original.html:5042
-  - input: T h₂
-    output: D h₃
+  - input: T h2
+    output: D ∅
     env: V:[+stress]ː
     raw: T h₂ → D h₃ / ”Vː
     source: index_diachronica_original.html:5043
-  - input: T h₂
-    output: D h₃
+  - input: T h2
+    output: D ∅
     env: W:[+stress]
     raw: T h₂ → D h₃ / ”W
     source: index_diachronica_original.html:5044
@@ -15060,13 +15433,17 @@ sections:
     comment: (not widely attested)
     raw: 'j → ∅ / #_e (not widely attested)'
     source: index_diachronica_original.html:5047
-  - input: '{{h₁,h₃}s,s{h₁,h₃}}'
+  - input: '{{∅,∅}s,s{∅,∅}}'
     output: sː
     comment: (contested)
     raw: '{{h₁,h₃}s,s{h₁,h₃}} → sː (contested)'
     source: index_diachronica_original.html:5048
 - section: Common Anatolian to Hittite
   index: 17.2.1
+  abbreviations:
+    h₁: ∅
+    h₂: hh
+    h₃: h
   citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
   rules:
   - input: D T
@@ -15078,7 +15455,7 @@ sections:
     output: T[+fortis] T[+lenis]
     raw: T D → T[+fortis] T[+lenis]
     source: index_diachronica_original.html:5054
-  - input: h₂ h₃
+  - input: hh h
     output: hh h
     raw: h₂ h₃ → hh h
     source: index_diachronica_original.html:5055
@@ -15150,6 +15527,10 @@ sections:
     source: index_diachronica_original.html:5068
 - section: Common Anatolian to Luwian
   index: 17.2.2
+  abbreviations:
+    h₁: ∅
+    h₂: hh
+    h₃: h
   citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
   rules:
   - input: D T
@@ -15161,7 +15542,7 @@ sections:
     output: T[+fortis] T[+lenis]
     raw: T D → T[+fortis] T[+lenis]
     source: index_diachronica_original.html:5074
-  - input: h₂ h₃
+  - input: hh h
     output: hh h
     raw: h₂ h₃ → hh h
     source: index_diachronica_original.html:5075
@@ -15266,6 +15647,10 @@ sections:
     source: index_diachronica_original.html:5095
 - section: Common Anatolian to Lycian
   index: 17.2.3
+  abbreviations:
+    h₁: ∅
+    h₂: k
+    h₃: ɡ
   citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
   comments:
   - raw: “[P]lus lots of syncope which he doesn’t elaborate on”
@@ -15333,24 +15718,24 @@ sections:
     output: s
     raw: ḱ → s
     source: index_diachronica_original.html:5112
-  - input: h₃
+  - input: ɡ
     output: ɡ
     env: _B
     raw: h₃ → ɡ / _B
     source: index_diachronica_original.html:5113
-  - input: h₂
+  - input: k
     output: k
     env: E_E
     comment: (probably a palatal stop)
     raw: h₂ → k / E_E (probably a palatal stop)
     source: index_diachronica_original.html:5114
-  - input: h₂
+  - input: k
     output: q
     env: _E
     comment: (possibly plain velar stop)
     raw: h₂ → q / _E (possibly plain velar stop)
     source: index_diachronica_original.html:5115
-  - input: h₂
+  - input: k
     output: x
     env: else
     comment: (possibly a uvular stop)
@@ -15392,6 +15777,10 @@ sections:
     source: index_diachronica_original.html:5123
 - section: Common Anatolian to Lydian
   index: 17.2.4
+  abbreviations:
+    h₁: ∅
+    h₂: h2
+    h₃: ∅
   citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
   comments:
   - raw: “[P]lus lots of syncope which he doesn’t elaborate on”
@@ -15439,7 +15828,7 @@ sections:
     env: i_
     raw: s → ʃ / i_
     source: index_diachronica_original.html:5137
-  - input: '{h₂,h₃}'
+  - input: '{h2,∅}'
     output: ∅
     raw: '{h₂,h₃} → ∅'
     source: index_diachronica_original.html:5138
@@ -15510,6 +15899,10 @@ sections:
     source: index_diachronica_original.html:5151
 - section: Common Anatolian to Palaic
   index: 17.2.5
+  abbreviations:
+    h₁: ∅
+    h₂: hh
+    h₃: h
   citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
   rules:
   - input: D T
@@ -15521,7 +15914,7 @@ sections:
     output: T[+fortis] T[+lenis]
     raw: T D → T[+fortis] T[+lenis]
     source: index_diachronica_original.html:5158
-  - input: h₂ h₃
+  - input: hh h
     output: hh h
     raw: h₂ h₃ → hh h
     source: index_diachronica_original.html:5159
@@ -15588,8 +15981,16 @@ sections:
     source: index_diachronica_original.html:5172
 - section: Armenian
   index: '17.3'
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
 - section: Proto-Indo-European to Artsakh Armenian
   index: 17.3.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
     “Armenian Language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Armenian_language&oldid=582063933>
   comments:
@@ -15747,6 +16148,10 @@ sections:
     source: index_diachronica_original.html:5212
 - section: Proto-Indo-European to Erevan Armenian
   index: 17.3.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
     “Armenian Language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Armenian_language&oldid=582063933>
   comments:
@@ -15904,6 +16309,10 @@ sections:
     source: index_diachronica_original.html:5249
 - section: Proto-Indo-European to Istanbul Armenian
   index: 17.3.3
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
     “Armenian Language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Armenian_language&oldid=582063933>
   comments:
@@ -16062,6 +16471,10 @@ sections:
     source: index_diachronica_original.html:5286
 - section: Proto-Indo-European to Kharpert Armenian
   index: 17.3.4
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
     “Armenian Language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Armenian_language&oldid=582063933>
   comments:
@@ -16219,6 +16632,10 @@ sections:
     source: index_diachronica_original.html:5323
 - section: Proto-Indo-European to Sebastia Armenian
   index: 17.3.5
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
     “Armenian Language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Armenian_language&oldid=582063933>
   comments:
@@ -16372,6 +16789,10 @@ sections:
     source: index_diachronica_original.html:5359
 - section: Proto-Indo-European to Southeast Armenian
   index: 17.3.6
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
     “Armenian Language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Armenian_language&oldid=582063933>
   comments:
@@ -16539,6 +16960,10 @@ sections:
     source: index_diachronica_original.html:5398
 - section: Proto-Indo-European to Southwest Armenian
   index: 17.3.7
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
     “Armenian Language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Armenian_language&oldid=582063933>
   comments:
@@ -16701,8 +17126,16 @@ sections:
     source: index_diachronica_original.html:5436
 - section: Avestan
   index: '17.4'
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
 - section: Proto-Indo-European to Avestan
   index: 17.4.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, Alex Fink, and Tropylium, the former two citing Wikipedia
     contributors (2013), “Proto-Indo-Iranian language”. Wikipedia, the Free Encyclopedia.
     <https://en.wikipedia.org/w/index.php?title=Proto-Indo-Iranian_language&oldid=543625693>;
@@ -16784,6 +17217,10 @@ sections:
     source: index_diachronica_original.html:5460
 - section: Proto-Indo-European to Proto-Celtic
   index: '17.5'
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: dhokarena56, from Matasović (2009), Etymological Dictionary of Proto-Celtic
     (ed. Lubotsky).
   comments:
@@ -16794,7 +17231,7 @@ sections:
   - raw: Late Proto-Celtic
     source: index_diachronica_original.html:5487
   rules:
-  - input: h₁e h₂e h₃e
+  - input: h1e h2e h3e
     output: e a o
     raw: — h₁e h₂e h₃e → e a o
     source: index_diachronica_original.html:5466
@@ -16914,6 +17351,10 @@ sections:
     source: index_diachronica_original.html:5492
 - section: Proto-Indo-European to Old Irish
   index: 17.5.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: dhokarena56
   comments:
   - raw: “Laryngeal rules (the ones common to all branches except Anatolian)”
@@ -17276,6 +17717,10 @@ sections:
     source: index_diachronica_original.html:5570
 - section: Proto-Celtic to Middle Welsh
   index: 17.5.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Dewrad & Pogostick Man, the latter citing Willis (David), “Old and Middle
     Welsh”
   rules:
@@ -17460,6 +17905,10 @@ sections:
     source: index_diachronica_original.html:5612
 - section: Proto-Indo-European to Dacian
   index: '17.6'
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Wikipedia contributors (2013), “Dacian language”.
     Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Dacian_language&oldid=582406161>
   rules:
@@ -17510,6 +17959,10 @@ sections:
     source: index_diachronica_original.html:5626
 - section: Proto-Indo-European to Common Germanic
   index: '17.7'
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Siride
   rules:
   - input: bʱ dʱ ɡʱ
@@ -17568,6 +18021,10 @@ sections:
     source: index_diachronica_original.html:5643
 - section: Common Germanic to Gothic
   index: 17.7.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Wright, Joseph (1910). Grammar of the Gothic Language,
     2nd Ed.; and Wikipedia contributors (2014). “Gothic language”. Wikipedia, the
     Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Gothic_language&oldid=635946920>
@@ -17766,6 +18223,10 @@ sections:
     source: index_diachronica_original.html:5686
 - section: Common Germanic to West Germanic
   index: 17.7.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Siride
   rules:
   - input: β ð ɣ
@@ -17795,6 +18256,10 @@ sections:
     source: index_diachronica_original.html:5695
 - section: West Germanic to Anglo-Frisian
   index: 17.7.2.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Siride? & Pogostick Man, the latter citing Wikipedia contributors (2014),
     “Anglo-Frisian languages”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Anglo-Frisian_languages&oldid=602286013>;
     Wikipedia contributors (2014), “Old Frisian”. Wikipedia, the Free Encyclopedia.
@@ -17877,6 +18342,10 @@ sections:
     source: index_diachronica_original.html:5713
 - section: Anglo-Frisian to Old English
   index: 17.7.2.1.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Wikipedia contributors (2011), “Phonological history
     of English”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Phonological_history_of_English&oldid=453796112>
   rules:
@@ -17899,6 +18368,10 @@ sections:
     source: index_diachronica_original.html:5722
 - section: Old English to Kentish Middle English
   index: 17.7.2.1.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English
     Phonology and Midd le English Grammar for Courses in Chaucer, Middle English,
     and the History of the English Language; and Wikipedia contributors (2011), “Middle
@@ -17998,6 +18471,10 @@ sections:
     source: index_diachronica_original.html:5744
 - section: Old English to Midlands Middle English
   index: 17.7.2.1.3
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English
     Phonology and Midd le English Grammar for Courses in Chaucer, Middle English,
     and the History of the English Language; and Wikipedia contributors (2011), “Middle
@@ -18098,6 +18575,10 @@ sections:
     source: index_diachronica_original.html:5766
 - section: Midlands Middle English to Early Modern English
   index: 17.7.2.1.4
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound
     changes”. FireSpeakerWiki. <http://wiki.firespeaker.org/English_sound_changes>
   comments:
@@ -18169,6 +18650,10 @@ sections:
     source: index_diachronica_original.html:5783
 - section: Early Modern English to American English
   index: 17.7.2.1.5
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound
     changes”. FireSpeakerWiki. <http://wiki.firespeaker.org/English_sound_changes;
     and my Phonetic Description class>
@@ -18268,6 +18753,10 @@ sections:
     source: index_diachronica_original.html:5804
 - section: Early Modern English to Australian English
   index: 17.7.2.1.6
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound
     changes”. FireSpeakerWiki. <http://wiki.firespeaker.org/English_sound_changes>;
     and my Phonetic Description class
@@ -18429,6 +18918,10 @@ sections:
     source: index_diachronica_original.html:5840
 - section: Early Modern English to British English
   index: 17.7.2.1.7
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound
     changes”. FireSpeakerWiki. <http://wiki.firespeaker.org/English_sound_changes>
   comments:
@@ -18469,6 +18962,10 @@ sections:
     source: index_diachronica_original.html:5851
 - section: Old English to Northern Middle English
   index: 17.7.2.1.8
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English
     Phonology and Midd le English Grammar for Courses in Chaucer, Middle English,
     and the History of the English Language; and Wikipedia contributors (2011), “Middle
@@ -18587,6 +19084,10 @@ sections:
     source: index_diachronica_original.html:5878
 - section: Early Northern Middle English to Scots
   index: 17.7.2.1.9
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Wikipedia contributors (2014), “Phonological history
     of Scots”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Phonological_history_of_Scots&oldid=582962563>;
     and Wikipedia contributors (2014), “Scottish Vowel Length Rule”. Wikipedia, the
@@ -18737,6 +19238,10 @@ sections:
     source: index_diachronica_original.html:5911
 - section: Old English to Scots
   index: 17.7.2.1.10
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from personal research
   comments:
   - raw: 'NB: This is an alternate listing of sound changes from Old English to Scots
@@ -19011,6 +19516,10 @@ sections:
     source: index_diachronica_original.html:5968
 - section: Scots to Falkirk Scots
   index: 17.7.2.1.11
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from personal research
   rules:
   - input: pVn tVn kVn
@@ -19074,6 +19583,10 @@ sections:
     source: index_diachronica_original.html:5982
 - section: Old English to Southern Middle English
   index: 17.7.2.1.12
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English
     Phonology and Midd le English Grammar for Courses in Chaucer, Middle English,
     and the History of the English Language; and Wikipedia contributors (2011), “Middle
@@ -19183,6 +19696,10 @@ sections:
     source: index_diachronica_original.html:6006
 - section: Middle English to Yola
   index: 17.7.2.1.13
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man and Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, the
     former from Wikipedia contributors (2016), “Forth and Bargy dialect”. Wikipedia,
     the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Forth_and_Bargy_dialect&oldid=703468711>;
@@ -19222,6 +19739,10 @@ sections:
     source: index_diachronica_original.html:6016
 - section: Anglo-Frisian to Old Frisian
   index: 17.7.2.1.14
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Wikipedia contributors (2011), “Old Frisian”. Wikipedia,
     the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Old_Frisian&oldid=461768402>
   rules:
@@ -19246,6 +19767,10 @@ sections:
     source: index_diachronica_original.html:6024
 - section: North Frisian Lenition
   index: 17.7.2.1.15
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: TzirTzi, from Goblirsch, Kurt Gustav (2002), “The North Frisian lenition
     and Danish linguistic hegemony”. In Carr, Gerald F., and Irmengard Raugh (2002),
     New Insights in Germanic Linguistics III:46 – 65
@@ -19260,6 +19785,10 @@ sections:
     source: index_diachronica_original.html:6029
 - section: West Germanic to Old Low Franconian
   index: 17.7.2.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Wikipedia contributors (2014), “Old Dutch”. Wikipedia,
     the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Old_Dutch&oldid=588537679>;
     and Wikipedia contributors (2014), “Germanic umlaut”. Wikipedia, the Free Encyclopedia.
@@ -19348,6 +19877,10 @@ sections:
     source: index_diachronica_original.html:6050
 - section: Old Low Franconian to Middle Dutch
   index: 17.7.2.2.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Wikipedia contributors (2014), “Middle Dutch”. Wikipedia,
     the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Middle_Dutch&oldid=602536434>;
     and Wikipedia contributors (2014), “Hieronymous Bosch”. Wikipedia, the Free Encyclopedia.
@@ -19430,6 +19963,10 @@ sections:
     source: index_diachronica_original.html:6067
 - section: Middle Dutch to Modern Dutch
   index: 17.7.2.2.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Wikipedia contributors (2014), “Dutch Phonology”.
     Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Dutch_phonology&oldid=602553868>;
     and Wikipedia contributors (2014), “Hard and soft G in Dutch”. Wikipedia, the
@@ -19476,6 +20013,10 @@ sections:
     source: index_diachronica_original.html:6079
 - section: Modern Dutch to Polder Dutch Vowel Shift
   index: 17.7.2.2.3
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Wikipedia contributors (2014), “Dutch Phonology”.
     Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Dutch_phonology&oldid=602553868>
   rules:
@@ -19489,6 +20030,10 @@ sections:
     source: index_diachronica_original.html:6085
 - section: Belgian and Netherlandish Dutch Monophthongization
   index: 17.7.2.2.4
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Wikipedia contributors (2014), “Dutch Phonology”.
     Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Dutch_phonology&oldid=602553868>
   rules:
@@ -19498,6 +20043,10 @@ sections:
     source: index_diachronica_original.html:6090
 - section: Middle High German to Standard German
   index: 17.7.2.3
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Paweł Ciupak, from Behr, Hans-Joahim, Ingrid Bennewitz, et al. (2004).
     Die Bamberg (BA)-Braunschweiger (BS) Grammatik des Alt- und Mittelhochdeutschen
     im Internet. <https://www.tu-braunschweig.de/Medien-DB/germanistik/babs260304.pdf>;
@@ -19656,6 +20205,10 @@ sections:
     source: index_diachronica_original.html:6121
 - section: High German Cosonant Shift and Umlaut
   index: 17.7.2.4
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from <http://en.wikipedia.org/wiki/High_German_consonant_shift>;
     and Wikipedia contributors (2014), “Germanic umlaut”. Wikipedia, the Free Encyclopedia.
     <https://en.wikipedia.org/w/index.php?title=Germanic_umlaut&oldid=602634218>
@@ -19723,6 +20276,10 @@ sections:
     source: index_diachronica_original.html:6138
 - section: West Germanic to Old Low German
   index: 17.7.2.5
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Wikipedia contributors (2014), “Old Saxon phonology”.
     Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Old_Saxon_phonology&oldid=598609310>;
     Wikipedia contributors (2014), “Old Saxon”. Wikipedia, the Free Encyclopedia.
@@ -19803,6 +20360,10 @@ sections:
     source: index_diachronica_original.html:6155
 - section: Common Germanic to Proto-Norse
   index: 17.7.3
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Theiling, Henrik, http://www.kunstsprachen.de/s17/rules.sch
   rules:
   - input: wi
@@ -19896,6 +20457,10 @@ sections:
     source: index_diachronica_original.html:6179
 - section: Proto-Norse to Old Norse
   index: 17.7.3.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Theiling, Henrik, http://www.kunstsprachen.de/s17/rules.sch
   rules:
   - input: θ
@@ -20683,6 +21248,10 @@ sections:
     source: index_diachronica_original.html:6342
 - section: Old Norse to Early Icelandic
   index: 17.7.3.1.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Theiling, Henrik, http://www.kunstsprachen.de/s17/rules.sch
   rules:
   - input: k
@@ -20934,6 +21503,10 @@ sections:
     source: index_diachronica_original.html:6398
 - section: Old Norse to Orkney Norn
   index: 17.7.3.1.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man and Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from
     http://nornlanguage.x10.mx/index.php?ork_phon, citing Marwick, Hugh, “Orkney Norn”
   comments:
@@ -21267,6 +21840,10 @@ sections:
     source: index_diachronica_original.html:6470
 - section: Old Norse to Shetland Norn
   index: 17.7.3.1.3
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man and Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from
     http://nornlanguage.x10.mx/index.php?shet_phon, citing Jakobsen, Jakob, An Etymological
     Dictionary of the Norn Language
@@ -21565,6 +22142,10 @@ sections:
     source: index_diachronica_original.html:6533
 - section: Common Germanic to Vandalic
   index: 17.7.4
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Jaceb Kilpatrick & Pogostick Man, from Wikipedia contributors (2015),
     “Vandalic language”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Vandalic_language&oldid=686359598>
   comments:
@@ -21615,10 +22196,18 @@ sections:
     source: index_diachronica_original.html:6548
 - section: Greek
   index: '17.8'
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: It is entirely possible that I utterly failed to interpret the source
     documents correctly. If so, please do not hesitate to correct me.
 - section: Proto-Indo-European to Aeolian Greek
   index: 17.8.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound
     Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors
     (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&oldid=575325271>
@@ -21689,6 +22278,10 @@ sections:
     source: index_diachronica_original.html:6570
 - section: Proto-Indo-European to Attic Greek
   index: 17.8.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound
     Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors
     (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&oldid=575325271>
@@ -21902,6 +22495,10 @@ sections:
     source: index_diachronica_original.html:6620
 - section: Proto-Indo-European to Boeotian Greek
   index: 17.8.3
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound
     Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors
     (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&oldid=575325271>
@@ -21980,6 +22577,10 @@ sections:
     source: index_diachronica_original.html:6640
 - section: Proto-Indo-European to Coan Greek
   index: 17.8.4
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound
     Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors
     (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&oldid=575325271>
@@ -22058,6 +22659,10 @@ sections:
     source: index_diachronica_original.html:6660
 - section: Proto-Indo-European to Cretan Greek
   index: 17.8.5
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound
     Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors
     (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&oldid=575325271>
@@ -22128,6 +22733,10 @@ sections:
     source: index_diachronica_original.html:6678
 - section: Proto-Indo-European to Doric Greek
   index: 17.8.6
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound
     Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors
     (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&oldid=575325271>
@@ -22221,6 +22830,10 @@ sections:
     source: index_diachronica_original.html:6699
 - section: Proto-Indo-European to Elian Greek
   index: 17.8.7
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound
     Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors
     (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&oldid=575325271>
@@ -22295,6 +22908,10 @@ sections:
     source: index_diachronica_original.html:6719
 - section: Proto-Indo-European to Ionic Greek
   index: 17.8.8
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound
     Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors
     (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&oldid=575325271>
@@ -22454,6 +23071,10 @@ sections:
     source: index_diachronica_original.html:6756
 - section: Proto-Indo-European to Laconian Greek
   index: 17.8.9
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound
     Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors
     (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&oldid=575325271>
@@ -22528,6 +23149,10 @@ sections:
     source: index_diachronica_original.html:6775
 - section: Proto-Indo-European to Mycenaean Greek
   index: 17.8.10
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound
     Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors
     (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&oldid=575325271>
@@ -22589,6 +23214,10 @@ sections:
     source: index_diachronica_original.html:6791
 - section: Proto-Indo-European to Hittite
   index: '17.9'
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: ∅
   citation: Goatface
   comments:
   - raw: “Changes I’m less sure of”
@@ -22618,31 +23247,31 @@ sections:
     source: index_diachronica_original.html:6800
   - input: e(ː)
     output: a(ː)
-    env: _h₂
+    env: _h2
     raw: e(ː) → a(ː) / _h₂
     source: index_diachronica_original.html:6801
   - input: e(ː)
     output: a(ː)
-    env: h₂_
+    env: h2_
     raw: e(ː) → a(ː) / h₂_
     source: index_diachronica_original.html:6802
   - input: e(ː)
     output: o(ː)
-    env: _h₃
+    env: _∅
     raw: e(ː) → o(ː) / _h₃
     source: index_diachronica_original.html:6803
   - input: e(ː)
     output: o(ː)
-    env: h₃_
+    env: ∅_
     raw: e(ː) → o(ː) / h₃_
     source: index_diachronica_original.html:6804
-  - input: h₃
+  - input: ∅
     output: ∅
     env: _o
     comment: “(according to Kortlandt)”
     raw: h₃ → ∅ / _o “(according to Kortlandt)”
     source: index_diachronica_original.html:6805
-  - input: h₂
+  - input: h2
     output: x
     comment: (or some sort of dorsal or laryngeal fricative?)
     raw: h₂ → x (or some sort of dorsal or laryngeal fricative?)
@@ -22690,22 +23319,26 @@ sections:
     source: index_diachronica_original.html:6815
 - section: Proto-Indo-European to Proto-Indo-Iranian
   index: '17.10'
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Tropylium, from Kobayashi, Masato (2004), Historical Phonology of Old
     Indo-Aryan Consonants
   rules:
   - input: e
     output: a
-    env: _{h₂,h₃}
+    env: _{h2,h3}
     raw: e → a / _{h₂,h₃}
     source: index_diachronica_original.html:6820
   - input: e
     output: a
-    env: '{h₂,h₃}_'
+    env: '{h2,h3}_'
     raw: e → a / {h₂,h₃}_
     source: index_diachronica_original.html:6821
   - input: p
     output: b
-    env: _h₃
+    env: _h3
     raw: p → b / _h₃
     source: index_diachronica_original.html:6822
   - input: H
@@ -22718,7 +23351,7 @@ sections:
     env: '#_'
     raw: 'ə → ∅ / #_'
     source: index_diachronica_original.html:6824
-  - input: '{h₁,h₃}'
+  - input: '{h1,h3}'
     output: '*H'
     raw: '{h₁,h₃} → *H'
     source: index_diachronica_original.html:6825
@@ -22788,6 +23421,10 @@ sections:
     source: index_diachronica_original.html:6839
 - section: Proto-Indo-Iranian to Proto-Indo-Aryan
   index: 17.10.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Tropylium, from Kobayashi, Masato (2004), Historical Phonology of Old
     Indo-Aryan Consonants
   rules:
@@ -22799,7 +23436,7 @@ sections:
     output: S[+ aspirated]
     raw: Sh₂ → S[+ aspirated]
     source: index_diachronica_original.html:6845
-  - input: h₂
+  - input: h2
     output: '*H'
     raw: h₂ → *H
     source: index_diachronica_original.html:6846
@@ -22916,6 +23553,10 @@ sections:
     source: index_diachronica_original.html:6868
 - section: Proto-Indo-Aryan to Central Middle Indo-Aryan
   index: 17.10.1.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Shukla, Shaligram (1974), “Phonological change and
     dialect variation in Middle-Indo-Aryan”. In Anderson, J., and C. Jones (Eds.),
     Historical Linguistics II:391-401.
@@ -23006,6 +23647,10 @@ sections:
     source: index_diachronica_original.html:6889
 - section: Proto-Indo-Aryan to Eastern Middle Indo-Aryan
   index: 17.10.1.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Shukla, Shaligram (1974), “Phonological change and
     dialect variation in Middle-Indo-Aryan”. In Anderson, J., and C. Jones (Eds.),
     Historical Linguistics II:391-401.
@@ -23104,6 +23749,10 @@ sections:
     source: index_diachronica_original.html:6912
 - section: Proto-Indo-Aryan to Northwestern Middle Indo-Aryan
   index: 17.10.1.3
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Shukla, Shaligram (1974), “Phonological change and
     dialect variation in Middle-Indo-Aryan”. In Anderson, J., and C. Jones (Eds.),
     Historical Linguistics II:391-401.
@@ -23197,6 +23846,10 @@ sections:
     source: index_diachronica_original.html:6934
 - section: Proto-Indo-Aryan to Western Middle Indo-Aryan
   index: 17.10.1.4
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Shukla, Shaligram (1974), “Phonological change and
     dialect variation in Middle-Indo-Aryan”. In Anderson, J., and C. Jones (Eds.),
     Historical Linguistics II:391-401.
@@ -23285,6 +23938,10 @@ sections:
     source: index_diachronica_original.html:6955
 - section: Proto-Indo-Aryan to Vedic Sanskrit
   index: 17.10.1.5
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Tropylium, from Kobayashi, Masato (2004), Historical Phonology of Old
     Indo-Aryan Consonants
   rules:
@@ -23333,6 +23990,10 @@ sections:
     source: index_diachronica_original.html:6969
 - section: Vedic Sanskrit to Classical Sanskrit
   index: 17.10.1.5.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Tropylium, from Kobayashi, Masato (2004), Historical Phonology of Old
     Indo-Aryan Consonants
   rules:
@@ -23355,6 +24016,10 @@ sections:
     source: index_diachronica_original.html:6977
 - section: Proto-Indo-European to Proto-Slavic
   index: '17.11'
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Hwhatting
   comments:
   - raw: 'NB: “Not in chronological order”'
@@ -23490,6 +24155,10 @@ sections:
     source: index_diachronica_original.html:7010
 - section: Proto-Slavic to Polish
   index: 17.11.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Xiądz Faust, in http://pittmirg.ovh.org/inne/psc.pdf http://pittmirg.ovh.org/inne/psc.pdf,
     mainly citing Klemensewicz et al. (1955), “Gramatyka historyczna języka polskiego”,
     and Dubisz and Długosz-Kurczabowa (2003?), “Gramatyka historyczna języka polskiego”
@@ -24264,6 +24933,10 @@ sections:
     sporadic: true
 - section: Proto-Slavic to Old Russian
   index: 17.11.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Hwhatting
   comments:
   - raw: 'NB: “Not in chronological order”'
@@ -24330,6 +25003,10 @@ sections:
     source: index_diachronica_original.html:7185
 - section: Proto-Indo-European to Proto-Italic
   index: '17.12'
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from http://gillesquentel.org/docs/PIE_to_Italic_C.pdf
     and http://gillesquentel.org/docs/PIE_to_Italic_V.pdf
   comments:
@@ -24368,6 +25045,10 @@ sections:
     source: index_diachronica_original.html:7196
 - section: Proto-Italic to Proto-Latino-Falsican
   index: 17.12.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from http://gillesquentel.org/docs/PIE_to_Italic_C.pdf
     and http://gillesquentel.org/docs/PIE_to_Italic_V.pdf
   comments:
@@ -24428,6 +25109,10 @@ sections:
     source: index_diachronica_original.html:7213
 - section: Proto-Indo-European to Latin
   index: 17.12.1.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Mecislau, from Ramat, Anna Giacrole and Paolo Ramat, The Indo-European
     Languages, and other sources
   rules:
@@ -24960,6 +25645,10 @@ sections:
     source: index_diachronica_original.html:7318
 - section: Classical Latin vs. Vulgar Latin
   index: 17.12.1.1.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: “The following relate to the changes of vowels as found in the evolution
     to the written medieval languages of Iberia, Gallia and Italia (Anglo-Norman,
     Old Spanish, etc.). The Latin of Africa, Sardinia and the easternmost parts of
@@ -25054,6 +25743,10 @@ sections:
     source: index_diachronica_original.html:7338
 - section: Latin to Catalan
   index: 17.12.1.1.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Mecislau
   comments:
   - raw: 'NB: Due to problems when the board migrated to a different system, a lot
@@ -25638,6 +26331,10 @@ sections:
     source: index_diachronica_original.html:7449
 - section: Latin to French
   index: 17.12.1.1.3
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: pharazon
   comments:
   - raw: 'NB: The vowels here marked 〈ó〉 and 〈ò〉 seem to have had some sort of open-close
@@ -26270,6 +26967,10 @@ sections:
     source: index_diachronica_original.html:7586
 - section: Vulgar Latin to Italian
   index: 17.12.1.1.4
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Dewrad, from Boyd-Bownam, P. From Latin to Romance in Sound Charts
   comments:
   - raw: 'NB: Dewrad says, “It should be noted that due to my source they are not
@@ -26393,6 +27094,10 @@ sections:
     source: index_diachronica_original.html:7615
 - section: Latin to Portuguese
   index: 17.12.1.1.5
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Mecislau
   comments:
   - raw: 'NB: Due to problems when the board migrated to a different system, a lot
@@ -26974,6 +27679,10 @@ sections:
     source: index_diachronica_original.html:7732
 - section: Vulgar Latin to Old Provençal
   index: 17.12.1.1.6
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Grandgent, Charles Hall (1905), An outline of the
     phonology and morphology of old Provençal, Revised Edition
   comments:
@@ -28345,6 +29054,10 @@ sections:
     source: index_diachronica_original.html:7984
 - section: Vulgar Latin to Rhaeto-Romance
   index: 17.12.1.1.7
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from Wikipedia contributors (2014), “Rhaeto-Romance languages”.
     Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Rhaeto-Romance_languages&oldid=607581179>
   comments:
@@ -28397,6 +29110,10 @@ sections:
     source: index_diachronica_original.html:7999
 - section: Latin to Romanian
   index: 17.12.1.1.8
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: pharazon, from Jensen, A Comparative Study of Romance, as well as other
     sources
   comments:
@@ -28783,6 +29500,10 @@ sections:
     source: index_diachronica_original.html:8085
 - section: Latin to Sardinian
   index: 17.12.1.1.9
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: qwed117, “mainly” from http://www.sardegnacultura.it/documenti/7_25_20060427093224.pdf
   rules:
   - input: Vː
@@ -28977,6 +29698,10 @@ sections:
     source: index_diachronica_original.html:8124
 - section: Vulgar Latin to Spanish
   index: 17.12.1.1.10
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: '? and Serafı́n, the former citing Penny, Ralph (2002), A History of the
     Spanish Language, 2nd Ed. Cambridge University Press; and Lipski, John (1994),
     Latin American Spanish. Longman Pub Group.'
@@ -29428,6 +30153,10 @@ sections:
     source: index_diachronica_original.html:8222
 - section: Proto-Italic to Proto-Sibellian
   index: 17.12.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from http://gillesquentel.org/docs/PIE_to_Italic_C.pdf
     and http://gillesquentel.org/docs/PIE_to_Italic_V.pdf
   comments:
@@ -29457,6 +30186,10 @@ sections:
     source: index_diachronica_original.html:8232
 - section: Proto-Sibellian to Oscan
   index: 17.12.2.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from http://gillesquentel.org/docs/PIE_to_Italic_C.pdf
     and http://gillesquentel.org/docs/PIE_to_Italic_V.pdf
   comments:
@@ -29469,6 +30202,10 @@ sections:
     source: index_diachronica_original.html:8238
 - section: Proto-Sibellian to Umbrian
   index: 17.12.2.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Pogostick Man, from http://gillesquentel.org/docs/PIE_to_Italic_C.pdf
     and http://gillesquentel.org/docs/PIE_to_Italic_V.pdf
   comments:
@@ -29482,6 +30219,10 @@ sections:
     source: index_diachronica_original.html:8244
 - section: Proto-Indo-European to Proto-Tocharian
   index: '17.13'
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Nortaneous, from http://www.utexas.edu/cola/centers/lrc/eieol/tokol-TC-X.html
     and https://azargoshnasp.net/history/Tocharian/positionoftocharian.pdf
   comments:
@@ -29570,12 +30311,12 @@ sections:
     env: V_V
     raw: H → ∅ / V_V
     source: index_diachronica_original.html:8265
-  - input: h₂e
+  - input: h2e
     output: ə
     env: _#
     raw: h₂e → ə / _#
     source: index_diachronica_original.html:8266
-  - input: h₂e a
+  - input: h2e a
     output: a ɨ
     raw: h₂e a → a ɨ
     source: index_diachronica_original.html:8267
@@ -29583,7 +30324,7 @@ sections:
     output: aː ɔ
     raw: '{eh₂,aH} aː → aː ɔ'
     source: index_diachronica_original.html:8268
-  - input: h₃e o
+  - input: h3e o
     output: o ɛ
     raw: h₃e o → o ɛ
     source: index_diachronica_original.html:8269
@@ -29608,7 +30349,7 @@ sections:
     output: '{ə,u}'
     raw: u → {ə,u}
     source: index_diachronica_original.html:8275
-  - input: uh₁ u{h₂,h₃}
+  - input: uh₁ u{h2,h3}
     output: uː
     raw: uh₁ u{h₂,h₃} → uː → wə wɨ
     source: index_diachronica_original.html:8276
@@ -29630,11 +30371,11 @@ sections:
     env: _tʲ
     raw: s → sʲ / _tʲ
     source: index_diachronica_original.html:8279
-  - input: ih₁ i{h₂,h₃}
+  - input: ih₁ i{h2,h3}
     output: jə jɨ
     raw: ih₁ i{h₂,h₃} → jə jɨ
     source: index_diachronica_original.html:8280
-  - input: (h₁)e (h₁)eː
+  - input: (h1)e (h1)eː
     output: jə jɛː
     env: '#_'
     raw: '(h₁)e (h₁)eː → jə jɛː / #_'
@@ -29671,6 +30412,10 @@ sections:
     source: index_diachronica_original.html:8288
 - section: Proto-Tocharian to Tocharian A
   index: 17.13.1
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Nortaneous, from http://www.utexas.edu/cola/centers/lrc/eieol/tokol-TC-X.html
     and https://azargoshnasp.net/history/Tocharian/positionoftocharian.pdf
   comments:
@@ -29742,6 +30487,10 @@ sections:
     source: index_diachronica_original.html:8305
 - section: Proto-Tocharian to Tocharian B
   index: 17.13.2
+  abbreviations:
+    h₁: h1
+    h₂: h2
+    h₃: h3
   citation: Nortaneous, from http://www.utexas.edu/cola/centers/lrc/eieol/tokol-TC-X.html
     and https://azargoshnasp.net/history/Tocharian/positionoftocharian.pdf
   comments:
@@ -36059,6 +36808,8 @@ sections:
     source: index_diachronica_original.html:10415
 - section: Niger-Congo
   index: '30'
+  abbreviations:
+    d₂: d2
   citation: 'Hedinger (1987) reconstructs the following consonant inventory for Pre-Proto-Bantu:'
   comments:
   - raw: '*’p *’c *’ɟ *’ɡ appear confined to C₁ position; *ŋ, to C₂ position.'
@@ -36078,6 +36829,8 @@ sections:
     source: index_diachronica_original.html:10438
 - section: Proto-Potou-Akanic-Bantu to Proto-Bantu
   index: '30.1'
+  abbreviations:
+    d₂: d2
   citation: Pogostick Man, from Stewart, John M. (2002), “The potential of proto-Potou-Akanic-Bantu
     as a pilot Proto-Niger-Congo, and the reconstructions updated”. JALL 23:197 –
     224
@@ -36162,6 +36915,8 @@ sections:
     source: index_diachronica_original.html:10457
 - section: Pre-Proto-Bantu to Proto-Bantu
   index: 30.1.1
+  abbreviations:
+    d₂: d
   citation: Pogostick Man, from Hedinger, Robert (1987), The Manenguba Languages (Bantu
     A.15, Mbo Cluster) of Cameroon
   rules:
@@ -36175,13 +36930,15 @@ sections:
     env: in C₂ position
     raw: N[+ lenis] N[-lenis] → N[- lenis] ⁿS / in C₂ position
     source: index_diachronica_original.html:10463
-  - input: d₂
+  - input: d
     output: d
     env: in C₂ position
     raw: d₂ → d / in C₂ position
     source: index_diachronica_original.html:10464
 - section: Proto-Bantu to Sebirwa
   index: 30.1.1.1
+  abbreviations:
+    d₂: d
   citation: 'Pogostick Man, from Chebanne, A. (2000), “The Sebirwa language: a synchronic
     and diachronic account”. Pula: Botswana Journal of African Studies 14(2)'
   rules:
@@ -36239,6 +36996,8 @@ sections:
     source: index_diachronica_original.html:10477
 - section: Proto-Bantu to Tswana
   index: 30.1.1.2
+  abbreviations:
+    d₂: d
   citation: 'Whimemsz, from Creissels, Dennis (1999), “Remarks on the Sound Corresponences
     between Proto-Bantu and Tswana (S.31), with Particular Attention to Problems Involving
     *j (or *y), *j̬ and Sequences *NC”. Bantu Historical Linguistics: Theoretical
@@ -36290,8 +37049,12 @@ sections:
     source: index_diachronica_original.html:10490
 - section: Sam
   index: 30.1.1.3
+  abbreviations:
+    d₂: d
 - section: Proto-Sam to Amu
   index: 30.1.1.3.1
+  abbreviations:
+    d₂: d
   citation: Pogostick Man, from Nurse, Derek (1985), “Dentality, Areal Features, and
     Phonological Change in Northeastern Bantu”. In Studies of African Linguistics
     16(3):243 – 279
@@ -36310,6 +37073,8 @@ sections:
     source: index_diachronica_original.html:10500
 - section: Proto-Sam to Bajuni
   index: 30.1.1.3.2
+  abbreviations:
+    d₂: d
   citation: Pogostick Man, from Nurse, Derek (1985), “Dentality, Areal Features, and
     Phonological Change in Northeastern Bantu”. In Studies of African Linguistics
     16(3):243 – 279
@@ -36328,6 +37093,8 @@ sections:
     source: index_diachronica_original.html:10507
 - section: Proto-Sam to Mwiini
   index: 30.1.1.3.3
+  abbreviations:
+    d₂: d
   citation: Pogostick Man, from Nurse, Derek (1985), “Dentality, Areal Features, and
     Phonological Change in Northeastern Bantu”. In Studies of African Linguistics
     16(3):243 – 279
@@ -36350,6 +37117,8 @@ sections:
     source: index_diachronica_original.html:10515
 - section: Proto-Sam to Siu-Pate
   index: 30.1.1.3.4
+  abbreviations:
+    d₂: d
   citation: Pogostick Man, from Nurse, Derek (1985), “Dentality, Areal Features, and
     Phonological Change in Northeastern Bantu”. In Studies of African Linguistics
     16(3):243 – 279
@@ -36368,6 +37137,8 @@ sections:
     source: index_diachronica_original.html:10522
 - section: Proto-Sam to Proto-Aweera
   index: 30.1.1.3.5
+  abbreviations:
+    d₂: d
   citation: Pogostick Man, from Nurse, Derek (1985), “Dentality, Areal Features, and
     Phonological Change in Northeastern Bantu”. In Studies of African Linguistics
     16(3):243 – 279
@@ -36381,6 +37152,8 @@ sections:
     source: index_diachronica_original.html:10528
 - section: Proto-Sam to Lower Pokomo
   index: 30.1.1.3.6
+  abbreviations:
+    d₂: d
   citation: Pogostick Man, from Nurse, Derek (1985), “Dentality, Areal Features, and
     Phonological Change in Northeastern Bantu”. In Studies of African Linguistics
     16(3):243 – 279
@@ -36395,6 +37168,8 @@ sections:
     source: index_diachronica_original.html:10534
 - section: Pre-Proto-Bantu to Proto-Manenguba
   index: 30.1.2
+  abbreviations:
+    d₂: d2
   citation: Pogostick Man, from Hedinger, Robert (1987), The Manenguba Languages (Bantu
     A.15, Mbo Cluster) of Cameroon
   comments:
@@ -36404,7 +37179,7 @@ sections:
   - raw: '*ɟ may have turned into one of {c,(n)z}?'
     source: index_diachronica_original.html:10540
   rules:
-  - input: ’p ’t ’d/d₂ c {’ɟ} ’k ɡ
+  - input: ’p ’t ’d/d2 c {’ɟ} ’k ɡ
     output: f l ɟ s ∅ {w,∅} {k,w}
     env: in C₁ position
     raw: ’p ’t ’d/d₂ c {’ɟ} ’k ɡ → f l ɟ s ∅ {w,∅} {k,w} / in C₁ position
@@ -36414,7 +37189,7 @@ sections:
     env: in C₁ position
     raw: N[+ lenis] → N[- lenis] / in C₁ position
     source: index_diachronica_original.html:10542
-  - input: p t ’t {’d,d₂} c k ’k
+  - input: p t ’t {’d,d2} c k ’k
     output: b d l {l,∅} ɟ ɡ ∅
     env: in C₂ position
     raw: p t ’t {’d,d₂} c k ’k → b d l {l,∅} ɟ ɡ ∅ / in C₂ position
@@ -36446,6 +37221,8 @@ sections:
     source: index_diachronica_original.html:10548
 - section: Proto-Potou-Akanic-Bantu to Proto-Potou-Akanic
   index: '30.2'
+  abbreviations:
+    d₂: d2
   citation: Pogostick Man, from Stewart, John M. (2002), “The potential of proto-Potou-Akanic-Bantu
     as a pilot Proto-Niger-Congo, and the reconstructions updated”. JALL 23:197 –
     224
@@ -36486,6 +37263,8 @@ sections:
     source: index_diachronica_original.html:10559
 - section: Proto-Potou-Akanic to Proto-Akanic
   index: 30.2.1
+  abbreviations:
+    d₂: d2
   citation: Pogostick Man, from Stewart, John M. (2002), “The potential of proto-Potou-Akanic-Bantu
     as a pilot Proto-Niger-Congo, and the reconstructions updated”. JALL 23:197 –
     224
@@ -36533,6 +37312,8 @@ sections:
     source: index_diachronica_original.html:10571
 - section: Proto-Akanic to Akan
   index: 30.2.1.1
+  abbreviations:
+    d₂: d2
   citation: Pogostick Man, from Stewart, John M. (2002), “The potential of proto-Potou-Akanic-Bantu
     as a pilot Proto-Niger-Congo, and the reconstructions updated”. JALL 23:197 –
     224
@@ -36611,12 +37392,20 @@ sections:
     source: index_diachronica_original.html:10589
 - section: Volta-Congo
   index: '30.3'
+  abbreviations:
+    d₂: d2
 - section: Volta-Niger
   index: 30.3.1
+  abbreviations:
+    d₂: d2
 - section: Gbe
   index: 30.3.1.1
+  abbreviations:
+    d₂: d2
 - section: Proto-Gbe to Ajá
   index: 30.3.1.1.1
+  abbreviations:
+    d₂: d2
   citation: Pogostick Man, from Capo, Hounkpati B.C. (1991), A Comparative Phonology
     of Gbe
   rules:
@@ -36660,6 +37449,8 @@ sections:
     source: index_diachronica_original.html:10610
 - section: Proto-Ajá to Hwe
   index: 30.3.1.1.2
+  abbreviations:
+    d₂: d2
   citation: Pogostick Man, from Capo, Hounkpati B.C. (1991), A Comparative Phonology
     of Gbe
   rules:
@@ -36670,6 +37461,8 @@ sections:
     source: index_diachronica_original.html:10615
 - section: Proto-Gbe to Proto-Fon
   index: 30.3.1.1.3
+  abbreviations:
+    d₂: d2
   citation: Pogostick Man, from Capo, Hounkpati B.C. (1991), A Comparative Phonology
     of Gbe
   rules:
@@ -36695,6 +37488,8 @@ sections:
     source: index_diachronica_original.html:10624
 - section: Proto-Gbe to Proto-Gen
   index: 30.3.1.1.4
+  abbreviations:
+    d₂: d2
   citation: Pogostick Man, from Capo, Hounkpati B.C. (1991), A Comparative Phonology
     of Gbe
   rules:
@@ -36733,6 +37528,8 @@ sections:
     source: index_diachronica_original.html:10636
 - section: Proto-Gbe to Proto-Phla-Pherá
   index: 30.3.1.1.5
+  abbreviations:
+    d₂: d2
   citation: Pogostick Man, from Capo, Hounkpati B.C. (1991), A Comparative Phonology
     of Gbe
   rules:
@@ -36746,6 +37543,8 @@ sections:
     source: index_diachronica_original.html:10642
 - section: Proto-Phla-Pherá to Alada
   index: 30.3.1.1.6
+  abbreviations:
+    d₂: d2
   citation: Pogostick Man, from Capo, Hounkpati B.C. (1991), A Comparative Phonology
     of Gbe
   rules:
@@ -36766,6 +37565,8 @@ sections:
     source: index_diachronica_original.html:10649
 - section: Proto-Gbe to Proto-Vhe
   index: 30.3.1.1.7
+  abbreviations:
+    d₂: d2
   citation: Pogostick Man, from Capo, Hounkpati B.C. (1991), A Comparative Phonology
     of Gbe
   rules:
@@ -36797,6 +37598,8 @@ sections:
     source: index_diachronica_original.html:10659
 - section: Proto-Vhe to Adángbe
   index: 30.3.1.1.8
+  abbreviations:
+    d₂: d2
   citation: Pogostick Man, from Capo, Hounkpati B.C. (1991), A Comparative Phonology
     of Gbe
   rules:
@@ -36822,6 +37625,8 @@ sections:
     source: index_diachronica_original.html:10667
 - section: Proto-Vhe to Avéno
   index: 30.3.1.1.9
+  abbreviations:
+    d₂: d2
   citation: Pogostick Man, from Capo, Hounkpati B.C. (1991), A Comparative Phonology
     of Gbe
   rules:
@@ -36847,6 +37652,8 @@ sections:
     source: index_diachronica_original.html:10675
 - section: Proto-Vhe to Awalan
   index: 30.3.1.1.10
+  abbreviations:
+    d₂: d2
   citation: Pogostick Man, from Capo, Hounkpati B.C. (1991), A Comparative Phonology
     of Gbe
   rules:
@@ -36877,6 +37684,8 @@ sections:
     source: index_diachronica_original.html:10684
 - section: Proto-Vhe to Kpándo
   index: 30.3.1.1.11
+  abbreviations:
+    d₂: d2
   citation: Pogostick Man, from Capo, Hounkpati B.C. (1991), A Comparative Phonology
     of Gbe
   rules:
@@ -36906,6 +37715,8 @@ sections:
     source: index_diachronica_original.html:10693
 - section: Proto-Vhe to Pecı́
   index: 30.3.1.1.12
+  abbreviations:
+    d₂: d2
   citation: Pogostick Man, from Capo, Hounkpati B.C. (1991), A Comparative Phonology
     of Gbe
   rules:
@@ -36925,6 +37736,8 @@ sections:
     source: index_diachronica_original.html:10700
 - section: "Proto-Vhe to TÉ\x94̣wun"
   index: 30.3.1.1.13
+  abbreviations:
+    d₂: d2
   citation: Pogostick Man, from Capo, Hounkpati B.C. (1991), A Comparative Phonology
     of Gbe
   rules:
@@ -36945,6 +37758,8 @@ sections:
     source: index_diachronica_original.html:10707
 - section: Proto-Vhe to Wacı́
   index: 30.3.1.1.14
+  abbreviations:
+    d₂: d2
   citation: Pogostick Man, from Capo, Hounkpati B.C. (1991), A Comparative Phonology
     of Gbe
   rules:

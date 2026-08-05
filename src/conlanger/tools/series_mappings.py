@@ -174,6 +174,75 @@ def lookup_series_target(
     return keyed.get(("*", token))
 
 
+def expand_series_tokens_in_field(
+    text: str,
+    section_index: str,
+    rows: list[SeriesMapping],
+) -> str:
+    """Expand in-scope correspondence-series tokens using hierarchical section lookup."""
+    if not text or not rows or not section_index:
+        return text
+    replacements: list[tuple[str, str]] = []
+    for token in find_subscript_tokens(text):
+        if not in_scope_series_token(token):
+            continue
+        hit = lookup_series_target(section_index, token, rows)
+        if hit is not None:
+            replacements.append((token, hit.asca_target))
+    if not replacements:
+        return text
+    replacements.sort(key=lambda pair: len(pair[0]), reverse=True)
+    result = text
+    for token, target in replacements:
+        result = result.replace(token, target)
+    return result
+
+
+def apply_series_mappings(
+    parts: dict[str, str],
+    section_index: str,
+    rows: list[SeriesMapping] | None = None,
+) -> dict[str, str]:
+    """Expand correspondence-series tokens in rule fields; ``raw`` unchanged upstream."""
+    mapping_rows = load_series_mappings() if rows is None else rows
+    if not mapping_rows or not section_index:
+        return parts
+    result = dict(parts)
+    for key in ("input", "output", "env", "exception"):
+        if key in result:
+            result[key] = expand_series_tokens_in_field(
+                result[key], section_index, mapping_rows
+            )
+    return result
+
+
+def section_abbreviations_for_index(
+    section_index: str,
+    rows: list[SeriesMapping] | None = None,
+) -> dict[str, str]:
+    """Build section ``abbreviations`` from series rows applicable to ``section_index``."""
+    mapping_rows = load_series_mappings() if rows is None else rows
+    if not mapping_rows or not section_index:
+        return {}
+    prefixes = set(section_index_prefixes(section_index)) | {"*"}
+    matching = [
+        row
+        for row in mapping_rows
+        if row.section_index in prefixes and in_scope_series_token(row.token)
+    ]
+    matching.sort(
+        key=lambda row: (
+            0 if row.section_index == "*" else len(row.section_index.split(".")),
+            row.section_index,
+            row.token,
+        )
+    )
+    abbrevs: dict[str, str] = {}
+    for row in matching:
+        abbrevs[row.token] = row.asca_target
+    return abbrevs
+
+
 def load_series_mappings(path: Path | None = None) -> list[SeriesMapping]:
     csv_path = DEFAULT_SERIES_MAPPINGS_CSV if path is None else Path(path)
     df = pd.read_csv(csv_path, dtype=str, keep_default_na=False)

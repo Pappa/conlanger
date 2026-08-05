@@ -754,8 +754,47 @@ def test_first_p_is_citation_rest_comments(tmp_path: Path):
         "Interleaved note",
     ]
     assert len(sec["rules"]) == 2
-    assert sec["rules"][0]["input"] == "x₁"
+    assert sec["rules"][0]["input"] == "k"
     assert sec["rules"][0]["output"] == "k"
+    assert sec["rules"][0]["raw"] == "x₁ → k"
+
+
+def test_parse_expands_afro_asiatic_series_tokens(tmp_path: Path):
+    html_path = tmp_path / "afro.html"
+    html_path.write_text(_HTML_FIXTURE, encoding="utf-8")
+    doc = IndexDiachronicaParser().parse(html_path, source_file="afro.html")
+    aari = next(sec for sec in doc["sections"] if sec["index"] == "6.1.2.1")
+    rule = aari["rules"][0]
+    assert rule["input"] == "ʃ z tʃ"
+    assert rule["output"] == "ʃ z tʃ"
+    assert "s₁" in rule["raw"]
+    assert aari["abbreviations"]["s₁"] == "ʃ"
+
+
+def test_parse_leaves_positional_slots_literal(tmp_path: Path):
+    html_path = tmp_path / "positional.html"
+    html_path.write_text(_HTML_FIXTURE, encoding="utf-8")
+    doc = IndexDiachronicaParser().parse(html_path, source_file="positional.html")
+    chamic = next(sec for sec in doc["sections"] if sec["index"] == "10.2.1")
+    rule = chamic["rules"][0]
+    assert rule["input"] == "C₁C₂"
+    assert rule["output"] == "C₂"
+
+
+_HTML_FIXTURE = """\
+<!doctype html>
+<html><body>
+<section id="Aari">
+<h2>6.1.2.1 South Omotic to Aari</h2>
+<p><i>Mecislau</i>
+<p class="schg">s<sub>1</sub> s<sub>2</sub> s<sub>3</sub> → ʃ z tʃ
+</section>
+<section id="Chamic">
+<h2>10.2.1 Proto-Malayo-Polynesian to Proto-Chamic</h2>
+<p class="schg">C<sub>1</sub>C<sub>2</sub> → C<sub>2</sub>
+</section>
+</body></html>
+"""
 
 
 _SAMPLED_HTML_RULE_CASES = _load_sampled_html_rules()
