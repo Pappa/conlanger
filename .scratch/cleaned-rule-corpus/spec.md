@@ -16,7 +16,7 @@ The project needs a **cleaned rule corpus** — structured YAML owned by Conlang
 
 Build an end-to-end pipeline that:
 
-1. Parses **Index Diachronica HTML** into the applier-neutral YAML schema (global and section-level **abbreviation** tables, **sound-change sections**, **corpus rules** with `input`/`output`/`raw`/`source` and optional `env`/`exception`/`status`).
+1. Parses **Index Diachronica HTML** into the applier-neutral YAML schema (global and section-level **abbreviation** tables, **sound-change sections**, **corpus rules** with `input`/`output`/`raw`/`source` and optional `env`/`exception`/`status`/`comment`).
 2. Applies **class-first** normalisation at ingest (safe **symbol** and **feature matrix** synonym replacement; **class letter** expansion deferred to compile time via **abbreviation table** CSV).
 3. Compiles each **sound-change section** through a **PhonologicalRuleSet** that loads package **abbreviation tables** and emits ASCA-ready strings.
 4. Runs **compile validation** per **corpus rule** via `validate_asca` (ASCA 0.10.2, fixed baseline wordlist `tests/fixtures/asca_probe_words.wsca`).
@@ -74,7 +74,7 @@ Brassica compilation remains a future parallel path behind the same corpus (ADR-
 
 - Top-level YAML: `abbreviations` (string→string) + `sections` array.
 - Each section: required `section` (title), `index` (dotted ancestry key); optional `citation`, section-level `abbreviations`, `rules`.
-- Each **corpus rule**: required `input`, `output`, `raw`, `source` (`index_diachronica_original.html:<line>`); optional `env`, `exception`, `status`, `sporadic`.
+- Each **corpus rule**: required `input`, `output`, `raw`, `source` (`index_diachronica_original.html:<line>`); optional `env`, `exception`, `status`, `sporadic`, `comment` (inline prose stripped from fields — ticket [30](issues/30-rule-comment-field-on-corpus-rules.md)).
 - Field values are opaque Index-shaped strings — not an ASCA AST. Empty `input`/`output` when `status: skipped`.
 - HTML (`index_diachronica_original.html`) remains current SoT until cleaned YAML meets adoption criteria; regeneration must remain traceable to HTML (ADR-0006).
 - Provisional files (`index_diachronica_ai.yml`, early XML) are migration references only.
@@ -83,7 +83,7 @@ Brassica compilation remains a future parallel path behind the same corpus (ADR-
 
 - Parser: `IndexDiachronicaParser` using lxml; phases cover section structure, `→` I/O split, `/ env` and `! exception` parsing, citation/comments.
 - **Symbol** normalisation at ingest to ASCA-canonical form in corpus fields; `raw` unchanged.
-- **Parse-time class-first transforms** (correction passes 14–25, per edit ladder): leading em-dash list markers; remaining `→` → `>` in field values; chain split (no env/exception → sequential corpus rules); uncertainty glosses → `sporadic: true`; trailing editorial glosses; env stress phrases (`when stressed` / `when unstressed`); smart-quote cleanup. All preserve `raw`.
+- **Parse-time class-first transforms** (correction passes 14–25, per edit ladder): leading em-dash list markers; remaining `→` → `>` in field values; chain split (no env/exception → sequential corpus rules); uncertainty glosses → `sporadic: true`; trailing editorial glosses → **`comment`** (ticket [31](issues/31-capture-rule-comments-at-parse-time.md)); env stress phrases (`when stressed` / `when unstressed`); smart-quote cleanup. All preserve `raw`.
 - **Correspondence-series indices** and **collective subscripts**: parse-time expansion to ASCA-parseable strings when section map exists; maps **extracted from HTML** (ticket [28](issues/28-extract-correspondence-series-mappings-from-html.md), implementation [27](issues/27-implement-parse-time-correspondence-series-expansion.md)); do not use `legacy/`. **Positional slots** and **identity subscripts** — not yet implemented.
 - **Feature matrix** synonym replacement at ingest inside `[...]` via `feature_mappings.csv`: **not yet implemented**; unmapped names left as-is (`unknown_feature` cluster).
 - **Class letters**: no ingest-time `str.maketrans` blind substitution; expansion at compile via **PhonologicalRuleSet** + `group_mappings.csv`. Six letters (C, O, F, L, N, V) pass through (ASCA inbuilt). Seventeen validated rows in `group_mappings.csv`; M (diphthong) removed — cluster-driven.

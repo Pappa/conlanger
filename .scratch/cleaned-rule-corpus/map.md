@@ -18,7 +18,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 ## Decisions so far
 
 - [What counts as a valid ASCA rule string?](issues/01-valid-asca-rule-string.md) — ASCA form is `input ARROW output [/env] [|exception]`; non-empty I/O (`*`/`∅` insert/delete, `&`/`@` metathesis); one `_` focus in env; `#` env-peripheral only; prefer `ParsedRules::try_from` (asca **0.10.2**). Findings: [research/asca-rule-validity.md](research/asca-rule-validity.md) (incl. internal parse pipeline for Python).
-- [YAML schema for the cleaned rule corpus](issues/03-yaml-schema-cleaned-rule-corpus.md) — Top-level `abbreviations` + `sections`; rules carry `input`/`output`/`raw`/`source` (optional `env`/`exception`/`status`/`sporadic`); ID-shaped strings; hierarchical string→string abbreviation tables; multi-line `raw` via `\|`; HTML SoT `index_diachronica_original.html` via lxml.
+- [YAML schema for the cleaned rule corpus](issues/03-yaml-schema-cleaned-rule-corpus.md) — Top-level `abbreviations` + `sections`; rules carry `input`/`output`/`raw`/`source` (optional `env`/`exception`/`status`/`sporadic`/`comment`); ID-shaped strings; hierarchical string→string abbreviation tables; multi-line `raw` via `\|`; HTML SoT `index_diachronica_original.html` via lxml.
 - [Inventory which current rules compile and which fail](issues/02-inventory-valid-vs-invalid-rules.md) — Provisional AI YAML: 9721 rules → 5554 ok / 4167 fail under `asca 0.9.3`; CSV + summary in [inventory/](inventory/).
 - [Create an ASCA validator for SoundChangeRuleSet](issues/08-asca-validator.md) — `validate_asca` via asca **0.10.2** `run` (raises `ASCAValidationError`); 500 `asca_guess` fixture rows (seed 20260802; 370 ok / 130 expected fail).
 - [Historical fidelity vs valid-but-inaccurate fallback](issues/04-historical-fidelity-vs-validity.md) — Edit ladder + **rule status** / **validation report** split. ADR-0010.
@@ -43,6 +43,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - [Correction pass: smart quotes and typographic apostrophes](issues/24-correction-pass-smart-quotes.md) — parse + compile quote/apostrophe cleanup.
 - [Correction pass: remaining bare length marker ː](issues/25-correction-pass-bare-length-marker.md) — extended length-mark compile pass; `ː` cluster 242 → 40.
 - [Parse-time resolution for correspondence-series indices](issues/26-parse-time-correspondence-series-indices.md) — expand at HTML→YAML parse to ASCA-parseable strings when section map exists; `raw` retains subscripts; unmapped → literal + validation fail (no pre-emptive skip). ADR-0004 amended.
+- [Rule comment field on corpus rules](issues/30-rule-comment-field-on-corpus-rules.md) — optional `comment` on corpus rules; capture-not-discard prose stripped at parse (semicolon tails, glosses, env qualifiers); distinct from section `comments`.
 
 ## Implementation plan (tickets 11+)
 
@@ -62,7 +63,7 @@ Phased delivery — not vertical slices upfront:
 - **Meta-notation at ingest** — later find/replace; cluster-driven for now (ticket 06)
 - **Section-local abbreviations** (e.g. Athabaskan `TŠ`) — cluster-driven; hand-add mapping rows when warranted
 - Abbreviation table authorship at scale
-- Prose-**environment** mapping
+- Prose-**environment** mapping — informed by extracted **`comment`** qualifiers ([Capture rule comments at parse time](issues/31-capture-rule-comments-at-parse-time.md)); structured env from prose not yet specified
 - Adoption criteria for cleaned YAML replacing HTML as **SoT**
 - Brassica compiler (ADR-0001)
 - Edge-split policy (ADR-0005; **`status: skipped` deferred** until post-correction triage per ticket 26 / ADR-0010)

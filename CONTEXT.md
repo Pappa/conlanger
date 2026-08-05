@@ -72,6 +72,10 @@ _Avoid_: “context” when `exception` is meant; prose paragraphs from Index co
 A phonological context that blocks an otherwise applicable change — the `! …` or `| …` portion of a rule. Stored as optional field `exception` on a corpus rule; absent means no exceptions.
 _Avoid_: the English word “except” in citation prose; conflating with environment
 
+**Rule comment**:
+Optional inline editorial prose on a **corpus rule** — English qualifiers, semicolon tails, parenthetical notes, and other text stripped from `input`/`output`/`env`/`exception` at parse so compile fields stay ASCA-clean. Stored as optional field `comment`; omitted when absent. **`raw`** always preserves the full Index line. Distinct from section-level **`comments`** (non-rule `<p>` prose blocks between rules).
+_Avoid_: “comment” without qualification when section comments are meant; embedding validator skip reasons in `comment`; treating `comment` as ASCA syntax
+
 **Raw**:
 The original Index Diachronica rule-line string preserved on a corpus rule for audit and fidelity checks.
 _Avoid_: treating the cleaned `input`/`output`/`env`/`exception` fields as the only recoverable form of the HTML line
