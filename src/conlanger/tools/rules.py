@@ -1,7 +1,6 @@
-from typing import ClassVar
-
 import re
 from functools import lru_cache
+from typing import ClassVar
 
 from conlanger.tools.parsers import load_group_mappings
 

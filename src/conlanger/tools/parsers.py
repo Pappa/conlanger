@@ -116,23 +116,23 @@ def normalize_rule_arrows(text: str) -> str:
     return text.replace(ARROW, ">")
 
 
-_UNCERTAINTY_WORD_RE = re.compile(r"\b(?:sporadic(?:ally)?|sometimes)\b", re.I)
-_LONE_UNCERTAINTY_RE = re.compile(r"^(?:sporadic(?:ally)?|sometimes)\??\.?$", re.I)
+_UNCERTAINTY_WORD_RE = re.compile(r"\b(?:sporadic(?:ally)?|sometimes)\b", re.IGNORECASE)
+_LONE_UNCERTAINTY_RE = re.compile(r"^(?:sporadic(?:ally)?|sometimes)\??\.?$", re.IGNORECASE)
 _ENV_UNCERTAINTY_PREFIX_RE = re.compile(
     r"^sporadic(?:ally)?(?:,\s*usually)?\s*,?\s*",
-    re.I,
+    re.IGNORECASE,
 )
 _TRAILING_PAREN_WITH_UNCERTAINTY_RE = re.compile(
     r"\s*\([^)]*(?:sporadic(?:ally)?|sometimes)[^)]*\)\s*$",
-    re.I,
+    re.IGNORECASE,
 )
 _TRAILING_QUOTED_WITH_UNCERTAINTY_RE = re.compile(
     r'\s*(?:[("\u201c][^"\u201d)]*(?:sporadic(?:ally)?|sometimes)[^"\u201d)]*[)\u201d"]|"[^"]*(?:sporadic(?:ally)?|sometimes)[^"]*")\s*$',
-    re.I,
+    re.IGNORECASE,
 )
 _TRAILING_BARE_UNCERTAINTY_RE = re.compile(
     r"\s*(?:\()?[\s\u201c\"']*(?:sporadic(?:ally)?|sometimes)\??[\s\u201d\"')]*\)?\s*$",
-    re.I,
+    re.IGNORECASE,
 )
 
 
@@ -207,9 +207,9 @@ _GLOSS_KEYWORD_RE = re.compile(
     r"across-the-board|across the board|not sure|not certain|not universal|"
     r"not common|not a complete|may have|did not occur|Whimemsz"
     r")\b",
-    re.I,
+    re.IGNORECASE,
 )
-_URL_RE = re.compile(r"https?://|www\.", re.I)
+_URL_RE = re.compile(r"https?://|www\.", re.IGNORECASE)
 _TRAILING_QUOTED_GLOSS_RE = re.compile(r'\s*["\u201c]([^"\u201d]+)["\u201d]\s*$')
 _TRAILING_PAREN_RE = re.compile(r"\(([^()]*)\)\s*$")
 _PHONOLOGICAL_PAREN_INNER_RE = re.compile(
@@ -410,18 +410,18 @@ def apply_trailing_glosses(parts: dict[str, str]) -> dict[str, Any]:
     return cleaned
 
 
-_STRESS_CONDITION_RE = re.compile(r"when (?:un)?stressed\b", re.I)
+_STRESS_CONDITION_RE = re.compile(r"when (?:un)?stressed\b", re.IGNORECASE)
 _COMMA_BEFORE_STRESS_RE = re.compile(
     r",\s*(?=when (?:un)?stressed\b)",
-    re.I,
+    re.IGNORECASE,
 )
 _TRAILING_STRESS_AFTER_HASH_RE = re.compile(
     r"\s+when (?:un)?stressed\b.*$",
-    re.I,
+    re.IGNORECASE,
 )
 _PROSE_BEFORE_STRESS_RE = re.compile(
     r"^.*?(when (?:un)?stressed\b.*)$",
-    re.I,
+    re.IGNORECASE,
 )
 
 
@@ -436,7 +436,7 @@ def normalize_stress_conditions(text: str) -> tuple[str, list[str]]:
         if match:
             captures.append(match.group(0).strip())
             text = _TRAILING_STRESS_AFTER_HASH_RE.sub("", text).rstrip()
-    elif re.match(r"when (?:un)?stressed\b", text, re.I):
+    elif re.match(r"when (?:un)?stressed\b", text, re.IGNORECASE):
         text = f"_ {text}"
     elif "_" not in text:
         match = _PROSE_BEFORE_STRESS_RE.match(text)

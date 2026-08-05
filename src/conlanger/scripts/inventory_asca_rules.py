@@ -21,24 +21,24 @@ import yaml
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "src"))
 
-from conlanger.tools.corpus_inventory import parse_unknown_token_error  # noqa: E402
-from conlanger.tools.rules import RuleChange  # noqa: E402
+from conlanger.tools.corpus_inventory import parse_unknown_token_error
+from conlanger.tools.rules import RuleChange
 
 DEFAULT_YAML = ROOT / "legacy/data/index_diachronica_ai.yml"
 DEFAULT_WORDS = ROOT / "data/generated/lexicon/asca/weirdness0.5.wsca"
 DEFAULT_OUT = ROOT / ".scratch/cleaned-rule-corpus/inventory/asca-rule-inventory.csv"
 
 ERROR_CLASS_PATTERNS = [
-    ("nested_brackets", re.compile(r"nested brackets", re.I)),
-    ("unknown_feature", re.compile(r"Unknown feature", re.I)),
-    ("unknown_grouping", re.compile(r"Unknown grouping", re.I)),
-    ("prose_or_expected_arrow", re.compile(r"Expected '>|Expected '->'|Expected '=>'", re.I)),
-    ("expected_underscore", re.compile(r"Expected '_'", re.I)),
-    ("stuff_after_word_bound", re.compile(r"after the end of a word", re.I)),
-    ("diacritic_prereq", re.compile(r"prerequisite properties.*diacritic", re.I)),
-    ("empty_io_panic", re.compile(r"Output is not empty|Input is empty|Output is empty", re.I)),
-    ("runtime_delete_only_segment", re.compile(r"Can't delete a word's only segment", re.I)),
-    ("expected_number", re.compile(r"Expected number", re.I)),
+    ("nested_brackets", re.compile(r"nested brackets", re.IGNORECASE)),
+    ("unknown_feature", re.compile(r"Unknown feature", re.IGNORECASE)),
+    ("unknown_grouping", re.compile(r"Unknown grouping", re.IGNORECASE)),
+    ("prose_or_expected_arrow", re.compile(r"Expected '>|Expected '->'|Expected '=>'", re.IGNORECASE)),
+    ("expected_underscore", re.compile(r"Expected '_'", re.IGNORECASE)),
+    ("stuff_after_word_bound", re.compile(r"after the end of a word", re.IGNORECASE)),
+    ("diacritic_prereq", re.compile(r"prerequisite properties.*diacritic", re.IGNORECASE)),
+    ("empty_io_panic", re.compile(r"Output is not empty|Input is empty|Output is empty", re.IGNORECASE)),
+    ("runtime_delete_only_segment", re.compile(r"Can't delete a word's only segment", re.IGNORECASE)),
+    ("expected_number", re.compile(r"Expected number", re.IGNORECASE)),
 ]
 
 

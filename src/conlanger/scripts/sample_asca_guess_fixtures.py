@@ -17,14 +17,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "src"))
 
-from conlanger.tools.parsers import (  # noqa: E402
-    IndexDiachronicaParser,
-)
-from conlanger.tools.rules import SoundChangeRuleSet  # noqa: E402
-from conlanger.tools.asca_validator import (  # noqa: E402
+from conlanger.tools.asca_validator import (
     ASCAValidationError,
     validate_asca,
 )
+from conlanger.tools.parsers import (
+    IndexDiachronicaParser,
+)
+from conlanger.tools.rules import SoundChangeRuleSet
 
 DEFAULT_HTML = ROOT / "data/diachronica/index_diachronica_original.html"
 DEFAULT_CSV = ROOT / "tests/fixtures/sound_change_rules.csv"
@@ -46,11 +46,11 @@ _LONE_ZERO_RE = re.compile(r"^0$")
 _SUBSCRIPT_TRANS = str.maketrans("₀₁₂₃₄₅₆₇₈₉ₓ", "0123456789x")
 _SET_THEN_DIAC_RE = re.compile(r"(\{[^}]+\})([ʲʷˤˠʰʱ]+)")
 _FEATURE_FIXES = (
-    (re.compile(r"\bvoiced\b", re.I), "voice"),
-    (re.compile(r"\bunvoiced\b", re.I), "-voice"),
-    (re.compile(r"\bhigh\s+tone\b", re.I), "high"),
-    (re.compile(r"\blow\s+tone\b", re.I), "low"),
-    (re.compile(r"\bsec(?:ondary)?\s+stress\b", re.I), "sec.stress"),
+    (re.compile(r"\bvoiced\b", re.IGNORECASE), "voice"),
+    (re.compile(r"\bunvoiced\b", re.IGNORECASE), "-voice"),
+    (re.compile(r"\bhigh\s+tone\b", re.IGNORECASE), "high"),
+    (re.compile(r"\blow\s+tone\b", re.IGNORECASE), "low"),
+    (re.compile(r"\bsec(?:ondary)?\s+stress\b", re.IGNORECASE), "sec.stress"),
 )
 
 
@@ -61,7 +61,7 @@ def strip_prose(value: str) -> str:
     text = _QUOTED_PROSE_RE.sub("", text).strip()
     text = _TRAILING_PROSE_RE.sub("", text).strip()
     # Drop dangling English leftovers after phonological material.
-    text = re.sub(r",\s*typically\b.*$", "", text, flags=re.I).strip()
+    text = re.sub(r",\s*typically\b.*$", "", text, flags=re.IGNORECASE).strip()
     return text
 
 

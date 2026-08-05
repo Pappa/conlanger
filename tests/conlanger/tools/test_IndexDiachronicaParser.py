@@ -39,7 +39,11 @@ from conlanger.tools.parsers import (
     strip_uncertainty_qualifier_from_field,
     split_output_rest,
     split_post_arrow,
+    write_rule_comment_phrase_summary,
 )
+
+from conlanger.tools.asca_validator import validate_asca
+from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
 
 _SAMPLED_RULES_CSV = (
     Path(__file__).resolve().parents[2] / "fixtures" / "sound_change_rules.csv"
@@ -267,6 +271,52 @@ def test_strip_uncertainty_qualifier_from_field(text, expected):
     assert strip_uncertainty_qualifier_from_field(text) == expected
 
 
+@pytest.mark.parametrize(
+    ("text", "expected_value", "expected_captures"),
+    [
+        ("", "", []),
+        ('h "sometimes"', "h", ['"sometimes"']),
+        ("h sometimes", "h", ["sometimes"]),
+        ("h (sometimes uncertain)", "h", ["(sometimes uncertain)"]),
+    ],
+)
+def test_extract_uncertainty_qualifier_from_field(text, expected_value, expected_captures):
+    from conlanger.tools.parsers import extract_uncertainty_qualifier_from_field
+
+    value, captures = extract_uncertainty_qualifier_from_field(text)
+    assert value == expected_value
+    assert captures == expected_captures
+
+
+def test_write_rule_comment_phrase_summary(tmp_path: Path):
+    doc = {
+        "sections": [
+            {
+                "rules": [
+                    {"comment": "when stressed; sporadic in some dialects"},
+                    {"comment": "plain gloss"},
+                    {"input": "a", "output": "b"},
+                ]
+            }
+        ]
+    }
+    out = tmp_path / "comment-summary.md"
+    count = write_rule_comment_phrase_summary(doc, out)
+    text = out.read_text(encoding="utf-8")
+    assert count == 2
+    assert "when stressed" in text
+    assert "sporadic" in text
+    assert "plain gloss" in text
+
+
+def test_write_rule_comment_phrase_summary_empty_doc(tmp_path: Path):
+    out = tmp_path / "comment-summary.md"
+    count = write_rule_comment_phrase_summary({"sections": []}, out)
+    text = out.read_text(encoding="utf-8")
+    assert count == 0
+    assert "_(none matched)_" in text
+
+
 def test_apply_sporadic_qualifier():
     assert apply_sporadic_qualifier(
         {"input": "p", "output": "h (sporadic)"}
@@ -438,10 +488,6 @@ def test_parse_rule_element_normalizes_stress_conditions():
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
 def test_parse_rule_element_stress_conditions_validate_asca():
-    from conlanger.tools.asca_validator import validate_asca
-    from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
-    from pathlib import Path
-
     cases = [
         '<p class="schg">a → i / _C(C), when stressed</p>',
         '<p class="schg">{u,a,i} → ∅ / _%, when stressed (short only)</p>',
@@ -834,9 +880,6 @@ def test_parse_rule_element_normalizes_short_to_neg_long():
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
 def test_parse_rule_element_voiced_matrix_validates_asca():
-    from conlanger.tools.asca_validator import validate_asca
-    from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
-
     el = html.fragment_fromstring(
         '<p class="schg">s → z / _C[+voiced]</p>',
         create_parent=False,

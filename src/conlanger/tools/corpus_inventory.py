@@ -13,7 +13,7 @@ import pandas as pd
 
 from conlanger.tools.asca_validator import ASCAValidationError, validate_asca
 from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
-from conlanger.tools.rules import RuleChange, SoundChangeRuleSet
+from conlanger.tools.rules import RuleChange
 
 ERROR_CLASS_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     ("nested_brackets", re.compile(r"nested brackets", re.IGNORECASE)),

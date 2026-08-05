@@ -13,7 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "src"))
 
-from conlanger.tools.series_mappings import (  # noqa: E402
+from conlanger.tools.series_mappings import (
     DEFAULT_SERIES_MAPPINGS_CSV,
     extract_series_mappings_from_html,
     write_coverage_report,

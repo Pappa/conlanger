@@ -9,6 +9,8 @@ from conlanger.tools.rules import (
     RuleCitation,
     RuleComment,
     SoundChangeRuleSet,
+    _expand_grouping_letter,
+    apply_asca_group_mappings_to_string,
     normalize_asca_ejective_marks,
     normalize_asca_length_marks,
     normalize_typographic_apostrophes,
@@ -148,6 +150,91 @@ def test_normalize_typographic_apostrophes(text, expected):
 )
 def test_normalize_asca_ejective_marks(text, expected):
     assert normalize_asca_ejective_marks(text) == expected
+
+
+def test_normalize_asca_ejective_marks_preserves_existing_cg():
+    assert normalize_asca_ejective_marks("ts:[+cg]ʼ") == "ts:[+cg]"
+
+
+def test_normalize_asca_ejective_marks_repairs_malformed_feature_colon():
+    assert normalize_asca_ejective_marks("t:brokenʼ") == "t:broken:[+cg]"
+
+
+def test_apply_asca_group_mappings_native_labialized_grouping():
+    mappings = {"K": "C:[-front,+back,+hi,-lo]"}
+    assert apply_asca_group_mappings_to_string("Sʷ", mappings) == "S:[+round]"
+
+
+def test_apply_asca_group_mappings_labializes_set_mapping_values():
+    mappings = {"M": "{C:[+hi],O:[+delrel]}"}
+    assert apply_asca_group_mappings_to_string("Mʷ", mappings) == (
+        "{C:[+hi,+round],O:[+delrel,+round]}"
+    )
+
+
+def test_apply_asca_group_mappings_optional_labial_at_set_start():
+    mappings = {"K": "C:[-front,+back,+hi,-lo]"}
+    assert apply_asca_group_mappings_to_string(
+        "i > ə / {K(ʷ),s}_",
+        mappings,
+    ) == "i > ə / {C:[-front,+back,+hi,-lo,+round],C:[-front,+back,+hi,-lo],s}_"
+
+
+def test_normalize_asca_ejective_marks_skips_blank_set_members():
+    assert normalize_asca_ejective_marks("{t,,ts}ʼ") == "{t:[+cg],ts:[+cg]}"
+
+
+def test_normalize_asca_ejective_marks_adds_cg_to_set_members_with_features():
+    assert normalize_asca_ejective_marks("{ts:[+long]}ʼ") == "{ts:[+long,+cg]}"
+
+
+def test_normalize_asca_ejective_marks_repairs_malformed_set_member_features():
+    assert normalize_asca_ejective_marks("{t:broken}ʼ") == "{t:broken:[+cg]}"
+
+
+def test_apply_asca_group_mappings_leaves_unknown_letters_unchanged():
+    mappings = {"K": "C:[-front,+back,+hi,-lo]"}
+    assert apply_asca_group_mappings_to_string("X > y", mappings) == "X > y"
+
+
+def test_apply_asca_group_mappings_optional_labial_outside_set_wraps_pair():
+    mappings = {"K": "C:[-front,+back,+hi,-lo]"}
+    assert apply_asca_group_mappings_to_string("K(ʷ) > k", mappings) == (
+        "{C:[-front,+back,+hi,-lo,+round],C:[-front,+back,+hi,-lo]} > k"
+    )
+
+
+def test_apply_asca_group_mappings_labializes_non_matrix_mapping():
+    mappings = {"M": "Kr"}
+    assert apply_asca_group_mappings_to_string("Mʷ", mappings) == "Kr"
+
+
+def test_rule_change_apply_asca_group_mappings_noop_for_non_asca():
+    part = RuleChange(
+        {"input": "S", "output": "P"},
+        "brassica",
+        group_mappings={"S": "[+cont]"},
+    )
+    assert part._apply_asca_group_mappings("S > P", "brassica") == "S > P"
+
+
+def test_expand_grouping_letter_leaves_unmapped_non_native_letters():
+    assert _expand_grouping_letter("X", {"K": "C:[-front,+back,+hi,-lo]"}, labial=False) == "X"
+    assert _expand_grouping_letter("X", {"K": "C:[-front,+back,+hi,-lo]"}, labial=True) == "X"
+
+
+def test_rule_change_format_alias_matches_compile():
+    part = RuleChange({"input": "a", "output": "e"}, "asca")
+    assert part._format("asca") == part.value
+
+
+def test_rule_change_skips_group_mappings_for_brassica():
+    part = RuleChange(
+        {"input": "S", "output": "P"},
+        "brassica",
+        group_mappings={"S": "[+cont]"},
+    )
+    assert part.value == "S / P"
 
 
 def test_rule_change_compiles_ejective_at_instantiation():

@@ -23,7 +23,10 @@ from conlanger.tools.corpus_inventory import (
     write_validation_csv,
 )
 from conlanger.tools.corpus_io import write_cleaned_corpus
-from conlanger.tools.parsers import IndexDiachronicaParser, write_rule_comment_phrase_summary
+from conlanger.tools.parsers import (
+    IndexDiachronicaParser,
+    write_rule_comment_phrase_summary,
+)
 
 DEFAULT_HTML = ROOT / "data" / "diachronica" / "index_diachronica_original.html"
 DEFAULT_YAML = ROOT / "data" / "diachronica" / "index_diachronica_parsed.yml"

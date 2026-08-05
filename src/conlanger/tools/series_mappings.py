@@ -698,16 +698,16 @@ def write_coverage_report(
         "",
         "## Extraction confidence",
         "",
-        "Use **in-scope rule coverage** (correspondence-series + collective subscripts only) "
+        ("Use **in-scope rule coverage** (correspondence-series + collective subscripts only) "
         "— not the raw rule-token total, which includes positional slots (`C₁`), identity "
-        "subscripts (`V₀`), and compounds (`eh₂`) handled by other tickets.",
+        "subscripts (`V₀`), and compounds (`eh₂`) handled by other tickets."),
         "",
-        f"- **HTML citation/table definitions mapped:** "
+        (f"- **HTML citation/table definitions mapped:** "
         f"{audit.html_defined_mapped}/{audit.html_defined_pairs} "
-        f"({pct(audit.html_defined_mapped, audit.html_defined_pairs)})",
-        f"- **In-scope tokens in rules mapped:** "
+        f"({pct(audit.html_defined_mapped, audit.html_defined_pairs)})"),
+        (f"- **In-scope tokens in rules mapped:** "
         f"{audit.in_scope_rule_mapped}/{audit.in_scope_rule_pairs} "
-        f"({pct(audit.in_scope_rule_mapped, audit.in_scope_rule_pairs)})",
+        f"({pct(audit.in_scope_rule_mapped, audit.in_scope_rule_pairs)})"),
         f"- **Out-of-scope subscript tokens in rules (excluded):** {audit.out_of_scope_rule_pairs}",
         f"- **In-scope gaps remaining:** {len(audit.in_scope_gaps)}",
         "",
@@ -720,9 +720,9 @@ def write_coverage_report(
     lines.extend(
         [
             "",
-            "Families **6** (Afro-Asiatic) and **17** (Indo-European) are the ticket-28 "
+            ("Families **6** (Afro-Asiatic) and **17** (Indo-European) are the ticket-28 "
             "benchmarks: citation/table rows at §6 and §17, plus rule-inferred overrides "
-            "in subsections.",
+            "in subsections."),
             "",
             "## Inference methods",
             "",
@@ -732,9 +732,9 @@ def write_coverage_report(
             "4. **Singleton rule I/O** — single indexed input token mapping to one output segment.",
             "5. **Collective subscript** — `Xₓ` expands to the set of `Xₙ` members declared in the same section citation.",
             "",
-            "ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). "
+            ("ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). "
             "For bases that collide with ASCA grouping letters (`S`, `C`, …), "
-            "targets use `f{N}` placeholders (e.g. `s₁` → `f1`).",
+            "targets use `f{N}` placeholders (e.g. `s₁` → `f1`)."),
             "",
             "## By section",
             "",
@@ -805,11 +805,11 @@ def write_coverage_report(
             "## Summary",
             "",
             f"- Sections with correspondence-series rules: **{len(used_by_section)}**",
-            f"- In-scope rule token occurrences: **{audit.in_scope_rule_pairs}** "
+            (f"- In-scope rule token occurrences: **{audit.in_scope_rule_pairs}** "
             f"(mapped **{audit.in_scope_rule_mapped}**, "
-            f"**{pct(audit.in_scope_rule_mapped, audit.in_scope_rule_pairs)}**)",
-            f"- Out-of-scope subscript tokens (positional / identity / compound): "
-            f"**{audit.out_of_scope_rule_pairs}**",
+            f"**{pct(audit.in_scope_rule_mapped, audit.in_scope_rule_pairs)}**)"),
+            (f"- Out-of-scope subscript tokens (positional / identity / compound): "
+            f"**{audit.out_of_scope_rule_pairs}**"),
             "",
             "## In-scope gaps",
             "",
