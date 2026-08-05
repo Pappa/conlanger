@@ -36,6 +36,8 @@ _SAMPLE_MAPPINGS = {
         ("{R,h}", "{[+son,-syll],h}"),
         ("O_ in #U (not universal)", "O_ in #% (not universal)"),
         ("U[+long]", "%[+long]"),
+        ("_V[+high +ATR]", "_V[+high +ATR]"),
+        ("V[+high +ATR]", "V[+high +ATR]"),
         ("a", "a"),
         ("", ""),
     ],

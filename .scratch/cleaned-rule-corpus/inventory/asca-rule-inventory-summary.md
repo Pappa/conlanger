@@ -4,8 +4,8 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9317** (one per corpus rule)
-- OK: **6518** (70.0%)
-- Fail: **2799** (30.0%)
+- OK: **6519** (70.0%)
+- Fail: **2798** (30.0%)
 - Sections all OK: **138 / 714** (19.3%)
 
 ## Failure classes
@@ -15,11 +15,11 @@
 | 1214 | `syntax_other` |
 | 710 | `unknown_character` |
 | 375 | `expected_underscore` |
-| 163 | `unknown_feature` |
+| 161 | `unknown_feature` |
 | 80 | `unknown_grouping` |
 | 56 | `prose_or_expected_arrow` |
 | 33 | `panic_other` |
-| 31 | `nested_brackets` |
+| 32 | `nested_brackets` |
 | 31 | `expected_number` |
 | 30 | `diacritic_prereq` |
 | 23 | `runtime_other` |
@@ -49,34 +49,34 @@
 | 13 | `palatal` | `latrl` |
 | 12 | `lowtone` | `contin` |
 | 9 | `glottalized` | `contin` |
-| 9 | `sameC` | `sec` |
+| 9 | `samePOA` | `lateral` |
 | 9 | `fortis` | `contin` |
 | 8 | `hightone` | `high` |
 | 7 | `mid` | `man` |
 | 6 | `lenis` | `tens` |
-| 5 | `velar` | `delay` |
 | 5 | `alveolar` | `delay` |
+| 5 | `velar` | `delay` |
 | 5 | `guttural` | `lateral` |
 | 4 | `closed` | `cons` |
 | 4 | `weak` | `man` |
 | 4 | `uvular` | `lar` |
 | 4 | `glottal` | `lateral` |
-| 3 | `AP` | `rt` |
 | 3 | `fallingtone` | `length` |
-| 2 | `highrisingtone` | `strident` |
 | 2 | `affricate` | `stridnt` |
 | 2 | `fricative` | `rhotic` |
 | 2 | `lowfallingtone` | `continuant` |
-| 1 | `highpitch` | `high` |
+| 2 | `highrisingtone` | `strident` |
 | 1 | `intertonic` | `anterior` |
-| 1 | `close` | `cons` |
+| 1 | `highpitch` | `high` |
 | 1 | `lowpitch` | `voice` |
-| 1 | `aspirated` | `spread` |
-| 1 | `RP` | `rt` |
+| 1 | `APOA` | `root` |
+| 1 | `close` | `cons` |
+| 1 | `glide` | `click` |
+| 1 | `palatalized` | `latrl` |
 | 1 | `alveolopalatal` | `consonantal` |
 | 1 | `tonic` | `cons` |
-| 1 | `palatalized` | `latrl` |
-| 1 | `glide` | `click` |
+| 1 | `aspirated` | `spread` |
+| 1 | `TR` | `rt` |
 | 1 | `creakyvoice` | `voice` |
 | 1 | `labiovelar` | `labiodental` |
 

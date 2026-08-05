@@ -155,11 +155,11 @@ def _grouping_letter_pattern(keys: set[str]) -> str:
     return "|".join(re.escape(key) for key in sorted(keys, key=len, reverse=True))
 
 
-def apply_asca_group_mappings_to_string(
+def _apply_asca_group_mappings_outside_brackets(
     text: str,
     mappings: dict[str, str],
 ) -> str:
-    """Expand Index class letters to ASCA tokens in one rule-string field."""
+    """Expand Index class letters outside ``[...]`` feature matrices."""
     if not text or not mappings:
         return text
 
@@ -198,6 +198,25 @@ def apply_asca_group_mappings_to_string(
         lambda match: _expand_grouping_letter(match.group(1), mappings, labial=False),
         text,
     )
+
+
+def apply_asca_group_mappings_to_string(
+    text: str,
+    mappings: dict[str, str],
+) -> str:
+    """Expand Index class letters to ASCA tokens in one rule-string field."""
+    if not text or not mappings:
+        return text
+
+    parts: list[str] = []
+    for segment in re.split(r"(\[[^\]]*\])", text):
+        if not segment:
+            continue
+        if segment.startswith("[") and segment.endswith("]"):
+            parts.append(segment)
+        else:
+            parts.append(_apply_asca_group_mappings_outside_brackets(segment, mappings))
+    return "".join(parts)
 
 
 class RulePartBase:
