@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: done
 Blocked by: None
 
 # Extract correspondence-series mappings from Index Diachronica HTML
@@ -31,11 +31,20 @@ Where do per-section **correspondence-series** and **collective subscript** expa
 
 ## Acceptance criteria
 
-- [ ] `series_mappings.csv` (or equivalent) populated from HTML evidence only
-- [ ] Coverage report lists mapped vs unmapped tokens by section
-- [ ] At least Afro-Asiatic (`6.x`) and one laryngeal-series family covered with cited HTML sources
-- [ ] No imports, copies, or references to `legacy/` in new code or data artifacts
-- [ ] Unit tests on extraction helpers where logic is non-trivial
+- [x] `series_mappings.csv` (or equivalent) populated from HTML evidence only
+- [x] Coverage report lists mapped vs unmapped tokens by section
+- [x] At least Afro-Asiatic (`6.x`) and one laryngeal-series family covered with cited HTML sources
+- [x] No imports, copies, or references to `legacy/` in new code or data artifacts
+- [x] Unit tests on extraction helpers where logic is non-trivial
+
+## Deliverables
+
+- `data/asca/series_mappings.csv` — 60 rows from HTML citations, inventory tables, and rule I/O inference
+- `src/conlanger/tools/series_mappings.py` — extraction, lookup, audit, coverage report
+- `scripts/extract_series_mappings.py` — regenerate CSV + report
+- `tests/conlanger/tools/test_series_mappings.py` — 34 unit tests
+- `.scratch/cleaned-rule-corpus/series-mappings-coverage.md` — coverage report (77.2% in-scope rule tokens mapped)
+- `.scratch/cleaned-rule-corpus/series-mappings-coverage-backlog.md` — follow-up backlog
 
 ## Follow-up (optional)
 
