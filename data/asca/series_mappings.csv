@@ -1,0 +1,61 @@
+section_index,token,asca_target,source,notes
+17,h₁,h1,index_diachronica_original.html:4932,phonology inventory table lists correspondence-series member
+17,h₂,h2,index_diachronica_original.html:4932,phonology inventory table lists correspondence-series member
+17,h₃,h3,index_diachronica_original.html:4932,phonology inventory table lists correspondence-series member
+17.2,h₁,∅,index_diachronica_original.html:5039,inferred from parallel rule I/O
+17.2,h₃,∅,index_diachronica_original.html:5040,inferred from parallel rule I/O
+17.2.1,h₂,hh,index_diachronica_original.html:5055,inferred from parallel rule I/O
+17.2.1,h₃,h,index_diachronica_original.html:5055,inferred from parallel rule I/O
+17.2.2,h₂,hh,index_diachronica_original.html:5075,inferred from parallel rule I/O
+17.2.2,h₃,h,index_diachronica_original.html:5075,inferred from parallel rule I/O
+17.2.3,h₂,k,index_diachronica_original.html:5114,inferred from parallel rule I/O
+17.2.3,h₃,ɡ,index_diachronica_original.html:5113,inferred from parallel rule I/O
+17.2.5,h₂,hh,index_diachronica_original.html:5159,inferred from parallel rule I/O
+17.2.5,h₃,h,index_diachronica_original.html:5159,inferred from parallel rule I/O
+17.9,h₃,∅,index_diachronica_original.html:6805,inferred from parallel rule I/O
+30,d₂,d2,index_diachronica_original.html:10420,phonology inventory table lists correspondence-series member
+30.1.1,d₂,d,index_diachronica_original.html:10464,inferred from parallel rule I/O
+6,h₁,h1,index_diachronica_original.html:933,section citation defines correspondence-series member
+6,h₂,h2,index_diachronica_original.html:933,section citation defines correspondence-series member
+6,hₓ,"{h1,h2}",index_diachronica_original.html:933,collective subscript over correspondence-series members from citation
+6,s₁,f1,index_diachronica_original.html:933,section citation defines correspondence-series member
+6,s₂,f2,index_diachronica_original.html:933,section citation defines correspondence-series member
+6,s₃,f3,index_diachronica_original.html:933,section citation defines correspondence-series member
+6,sₓ,"{f1,f2,f3}",index_diachronica_original.html:933,collective subscript over correspondence-series members from citation
+6.1.1.1,s₃,ʃ,index_diachronica_original.html:995,inferred from parallel rule I/O
+6.1.1.1,x₁,k,index_diachronica_original.html:993,inferred from parallel rule I/O
+6.1.1.1,x₂,k,index_diachronica_original.html:994,inferred from parallel rule I/O
+6.1.1.2,s₁,ʃ,index_diachronica_original.html:1015,inferred from parallel rule I/O
+6.1.1.2,x₁,k,index_diachronica_original.html:1009,inferred from parallel rule I/O
+6.1.1.2,x₂,k,index_diachronica_original.html:1010,inferred from parallel rule I/O
+6.1.1.3,h₂,w,index_diachronica_original.html:1037,inferred from parallel rule I/O
+6.1.1.3,s₃,ʃ,index_diachronica_original.html:1033,inferred from parallel rule I/O
+6.1.1.3,x₁,k,index_diachronica_original.html:1028,inferred from parallel rule I/O
+6.1.1.3,x₂,k,index_diachronica_original.html:1029,inferred from parallel rule I/O
+6.1.1.4,h₂,w,index_diachronica_original.html:1057,inferred from parallel rule I/O
+6.1.1.4,x₁,k,index_diachronica_original.html:1049,inferred from parallel rule I/O
+6.1.1.4,x₂,h,index_diachronica_original.html:1050,inferred from parallel rule I/O
+6.1.1.5,h₁,"{h,∅}",index_diachronica_original.html:1079,inferred from parallel rule I/O
+6.1.1.5,h₂,w,index_diachronica_original.html:1080,inferred from parallel rule I/O
+6.1.1.5,s₂,ʃ,index_diachronica_original.html:1077,inferred from parallel rule I/O
+6.1.1.5,s₃,ʃ,index_diachronica_original.html:1075,inferred from parallel rule I/O
+6.1.1.5,x₁,k,index_diachronica_original.html:1070,inferred from parallel rule I/O
+6.1.1.5,x₂,∅,index_diachronica_original.html:1071,inferred from parallel rule I/O
+6.1.1.6,s₁,ʃ,index_diachronica_original.html:1094,inferred from parallel rule I/O
+6.1.1.6,s₂,s,index_diachronica_original.html:1095,inferred from parallel rule I/O
+6.1.1.6,s₃,ʃ,index_diachronica_original.html:1092,inferred from parallel rule I/O
+6.1.1.6,x₁,k,index_diachronica_original.html:1090,inferred from parallel rule I/O
+6.1.1.6,x₂,∅,index_diachronica_original.html:1091,inferred from parallel rule I/O
+6.1.1.7,h₁,"{h,∅}",index_diachronica_original.html:1116,inferred from parallel rule I/O
+6.1.1.7,h₂,w,index_diachronica_original.html:1117,inferred from parallel rule I/O
+6.1.1.7,x₁,k,index_diachronica_original.html:1107,inferred from parallel rule I/O
+6.1.1.7,x₂,k,index_diachronica_original.html:1108,inferred from parallel rule I/O
+6.1.1.8,s₂,tʃ,index_diachronica_original.html:1136,inferred from parallel rule I/O
+6.1.1.8,x₁,k,index_diachronica_original.html:1129,inferred from parallel rule I/O
+6.1.1.8,x₂,h,index_diachronica_original.html:1130,inferred from parallel rule I/O
+6.1.1.8,x₃,ɡ,index_diachronica_original.html:1133,inferred from parallel rule I/O
+6.1.2.1,h₁,∅,index_diachronica_original.html:1153,inferred from parallel rule I/O
+6.1.2.1,s₁,ʃ,index_diachronica_original.html:1152,inferred from parallel rule I/O
+6.1.2.1,s₂,z,index_diachronica_original.html:1152,inferred from parallel rule I/O
+6.1.2.1,s₃,tʃ,index_diachronica_original.html:1152,inferred from parallel rule I/O
+6.1.2.2,s₁,ʃ,index_diachronica_original.html:1163,inferred from parallel rule I/O
