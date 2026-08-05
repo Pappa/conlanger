@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: None
 
 # Capture rule comments at parse time
@@ -23,10 +23,20 @@ Implement [Rule comment field on corpus rules](30-rule-comment-field-on-corpus-r
 
 ## Acceptance criteria
 
-- [ ] `comment` field on corpus rules when inline prose is stripped
-- [ ] Semicolon tails captured (~87 rules in current corpus have `;` in `raw`)
-- [ ] Trailing gloss strip (ticket 21 paths) captures to `comment`
-- [ ] `raw` byte-auditable against HTML
-- [ ] Qualifier / comment phrase summary artifact written
-- [ ] Tests on semicolon, `short only`, and parenthetical examples from inventory
-- [ ] Full inventory re-run optional; note delta in ticket **Answer**
+- [x] `comment` field on corpus rules when inline prose is stripped
+- [x] Semicolon tails captured (~87 rules in current corpus have `;` in `raw`)
+- [x] Trailing gloss strip (ticket 21 paths) captures to `comment`
+- [x] `raw` byte-auditable against HTML
+- [x] Qualifier / comment phrase summary artifact written
+- [x] Tests on semicolon, `short only`, and parenthetical examples from inventory
+- [x] Full inventory re-run optional; note delta in ticket **Answer**
+
+## Answer
+
+Implemented capture-not-discard in `IndexDiachronicaParser` via `extract_*` helpers and `join_rule_comment` / `_append_rule_comment_parts`. Stripped prose from sporadic, trailing-gloss, and stress-env passes accumulates into optional `comment`.
+
+**Corpus re-parse:** **1139 / 9317** rules carry `comment` (field values unchanged vs pre-ticket; validation ok/fail unchanged at 6483/2834).
+
+**Artifact:** [rule-comment-phrases.md](../rule-comment-phrases.md) — emitted by `uv run regenerate_corpus`.
+
+**Tests:** semicolon tail, `(short only)` env paren, sporadic gloss, stress-after-`#` capture.

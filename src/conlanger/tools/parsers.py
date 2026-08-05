@@ -14,7 +14,8 @@ Index rule arrows (``→``) in field values become ASCA ``>``. Chained rules wit
 ``env``/``exception`` expand into sequential single-step rules. Uncertainty glosses
 (``sporadic``, ``sometimes``, …) are stripped from field values and recorded as
 ``sporadic: true``. **Feature matrix** synonym replacement inside ``[...]`` via
-``feature_mappings.csv`` (``raw`` unchanged). Class-letter expansion is deferred to compile time
+``feature_mappings.csv`` (``raw`` unchanged). Inline prose stripped for ASCA is
+captured in optional ``comment`` on each corpus rule. Class-letter expansion is deferred to compile time
 (``PhonologicalRuleSet`` + ``group_mappings.csv``).
 """
 
@@ -89,6 +90,25 @@ def strip_leading_index_list_marker(text: str) -> str:
     return _LEADING_INDEX_LIST_MARKER_RE.sub("", text, count=1)
 
 
+def join_rule_comment(*fragments: str | None) -> str | None:
+    """Join captured prose fragments into one ``comment`` string."""
+    parts = [fragment.strip() for fragment in fragments if fragment and fragment.strip()]
+    if not parts:
+        return None
+    return "; ".join(parts)
+
+
+def _append_rule_comment_parts(parts: dict[str, Any], fragments: list[str]) -> None:
+    """Merge newly captured prose into optional ``comment`` on rule parts."""
+    addition = join_rule_comment(*fragments)
+    if not addition:
+        return
+    existing = parts.get("comment")
+    merged = join_rule_comment(existing, addition)
+    if merged:
+        parts["comment"] = merged
+
+
 def normalize_rule_arrows(text: str) -> str:
     """Map Index rule arrow ``→`` to ASCA ``>`` in one field value."""
     if not text or ARROW not in text:
@@ -121,39 +141,61 @@ def field_has_uncertainty_qualifier(text: str) -> bool:
     return bool(text and _UNCERTAINTY_WORD_RE.search(text))
 
 
-def strip_uncertainty_qualifier_from_field(text: str) -> str:
-    """Remove sporadic / sometimes glosses from one rule field value."""
+def extract_uncertainty_qualifier_from_field(text: str) -> tuple[str, list[str]]:
+    """Remove sporadic / sometimes glosses; return captured prose fragments."""
+    captures: list[str] = []
     if not text:
-        return text
+        return text, captures
     text = text.strip()
     if _LONE_UNCERTAINTY_RE.match(text):
-        return ""
-    text = _ENV_UNCERTAINTY_PREFIX_RE.sub("", text).strip()
+        return "", [text]
+    prefix = _ENV_UNCERTAINTY_PREFIX_RE.match(text)
+    if prefix:
+        captures.append(prefix.group(0).strip())
+        text = text[prefix.end() :].strip()
     if field_has_uncertainty_qualifier(text):
-        text = _TRAILING_PAREN_WITH_UNCERTAINTY_RE.sub("", text).strip()
+        match = _TRAILING_PAREN_WITH_UNCERTAINTY_RE.search(text)
+        if match:
+            captures.append(match.group(0).strip())
+            text = _TRAILING_PAREN_WITH_UNCERTAINTY_RE.sub("", text).strip()
     if field_has_uncertainty_qualifier(text):
-        text = _TRAILING_QUOTED_WITH_UNCERTAINTY_RE.sub("", text).strip()
+        match = _TRAILING_QUOTED_WITH_UNCERTAINTY_RE.search(text)
+        if match:
+            captures.append(match.group(0).strip())
+            text = _TRAILING_QUOTED_WITH_UNCERTAINTY_RE.sub("", text).strip()
     if field_has_uncertainty_qualifier(text):
-        text = _TRAILING_BARE_UNCERTAINTY_RE.sub("", text).strip()
-    return text.strip()
+        match = _TRAILING_BARE_UNCERTAINTY_RE.search(text)
+        if match:
+            captures.append(match.group(0).strip())
+            text = _TRAILING_BARE_UNCERTAINTY_RE.sub("", text).strip()
+    return text.strip(), captures
+
+
+def strip_uncertainty_qualifier_from_field(text: str) -> str:
+    """Remove sporadic / sometimes glosses from one rule field value."""
+    cleaned, _ = extract_uncertainty_qualifier_from_field(text)
+    return cleaned
 
 
 def apply_sporadic_qualifier(parts: dict[str, str]) -> dict[str, Any]:
     """Strip uncertainty glosses from rule fields; set ``sporadic: true`` when found."""
     sporadic = False
     cleaned: dict[str, str] = {}
+    comment_fragments: list[str] = []
     for key in ("input", "output", "env", "exception"):
         if key not in parts:
             continue
         value = parts[key]
         if field_has_uncertainty_qualifier(value):
             sporadic = True
-        value = strip_uncertainty_qualifier_from_field(value)
+        value, captures = extract_uncertainty_qualifier_from_field(value)
+        comment_fragments.extend(captures)
         if key in ("input", "output") or value:
             cleaned[key] = value
     result: dict[str, Any] = cleaned
     if sporadic:
         result["sporadic"] = True
+    _append_rule_comment_parts(result, comment_fragments)
     return result
 
 
@@ -214,20 +256,28 @@ def paren_inner_is_gloss(inner: str) -> bool:
     return False
 
 
-def strip_trailing_quoted_gloss_from_field(text: str) -> str:
-    """Remove trailing curly- or straight-quoted prose glosses."""
+def extract_trailing_quoted_gloss_from_field(text: str) -> tuple[str, list[str]]:
+    """Remove trailing quoted prose glosses; return captured fragments."""
+    captures: list[str] = []
     if not text:
-        return text
+        return text, captures
     while True:
         match = _TRAILING_QUOTED_GLOSS_RE.search(text)
         if not match:
             break
         inner = match.group(1)
         if paren_inner_is_gloss(inner) or re.search(r"[a-z]{3,}", inner):
+            captures.append(match.group(0).strip())
             text = text[: match.start()].rstrip()
             continue
         break
-    return text
+    return text, captures
+
+
+def strip_trailing_quoted_gloss_from_field(text: str) -> str:
+    """Remove trailing curly- or straight-quoted prose glosses."""
+    cleaned, _ = extract_trailing_quoted_gloss_from_field(text)
+    return cleaned
 
 
 _EMBEDDED_QUOTED_GLOSS_RE = re.compile(
@@ -244,75 +294,119 @@ def _quoted_inner_is_gloss(inner: str) -> bool:
     return bool(re.search(r"[a-z]{3,}", inner)) or paren_inner_is_gloss(inner)
 
 
-def strip_embedded_quoted_gloss_from_field(text: str) -> str:
-    """Remove embedded ``"…"`` / ``"…"`` Index prose glosses from one field."""
+def extract_embedded_quoted_gloss_from_field(text: str) -> tuple[str, list[str]]:
+    """Remove embedded quoted Index prose glosses; return captured fragments."""
+    captures: list[str] = []
     if not text:
-        return text
+        return text, captures
     while True:
-        updated = _EMBEDDED_QUOTED_GLOSS_RE.sub(
-            lambda match: (
-                "" if _quoted_inner_is_gloss(match.group(1)) else match.group(0)
-            ),
-            text,
-        )
-        if updated == text:
+        match = _EMBEDDED_QUOTED_GLOSS_RE.search(text)
+        if not match:
             break
-        text = updated
+        inner = match.group(1)
+        if _quoted_inner_is_gloss(inner):
+            captures.append(match.group(0).strip())
+            text = text[: match.start()] + text[match.end() :]
+            continue
+        break
     match = _UNCLOSED_QUOTED_GLOSS_RE.search(text)
     if match and _quoted_inner_is_gloss(match.group(1)):
+        captures.append(match.group(0).strip())
         text = text[: match.start()].rstrip()
-    text = _ORPHAN_CLOSING_QUOTE_MID_RE.sub("", text)
-    text = _ORPHAN_CLOSING_QUOTE_END_RE.sub("", text)
-    return text
+    orphan_mid = _ORPHAN_CLOSING_QUOTE_MID_RE.search(text)
+    if orphan_mid:
+        captures.append(orphan_mid.group(0).strip())
+        text = _ORPHAN_CLOSING_QUOTE_MID_RE.sub("", text)
+    orphan_end = _ORPHAN_CLOSING_QUOTE_END_RE.search(text)
+    if orphan_end:
+        captures.append(orphan_end.group(0).strip())
+        text = _ORPHAN_CLOSING_QUOTE_END_RE.sub("", text)
+    return text, captures
 
 
-def strip_trailing_paren_glosses_from_field(text: str) -> str:
-    """Remove trailing ``(… )`` prose glosses from one rule field."""
+def strip_embedded_quoted_gloss_from_field(text: str) -> str:
+    """Remove embedded ``"…"`` / ``"…"`` Index prose glosses from one field."""
+    cleaned, _ = extract_embedded_quoted_gloss_from_field(text)
+    return cleaned
+
+
+def extract_trailing_paren_glosses_from_field(text: str) -> tuple[str, list[str]]:
+    """Remove trailing ``(… )`` prose glosses; return captured fragments."""
+    captures: list[str] = []
     if not text:
-        return text
+        return text, captures
     while True:
         match = _TRAILING_PAREN_RE.search(text)
         if not match or not paren_inner_is_gloss(match.group(1)):
             break
+        captures.append(match.group(0).strip())
         text = text[: match.start()].rstrip()
-    return text
+    return text, captures
 
 
-def strip_semicolon_prose_from_field(text: str) -> str:
-    """Remove trailing ``; …`` English prose (ASCA treats ``;`` as malformed comment)."""
+def strip_trailing_paren_glosses_from_field(text: str) -> str:
+    """Remove trailing ``(… )`` prose glosses from one rule field."""
+    cleaned, _ = extract_trailing_paren_glosses_from_field(text)
+    return cleaned
+
+
+def extract_semicolon_prose_from_field(text: str) -> tuple[str, list[str]]:
+    """Remove trailing ``; …`` English prose; return captured tail."""
     if not text or "; " not in text:
-        return text
+        return text, []
     idx = text.find("; ")
     tail = text[idx + 2 :]
     if re.match(r'[a-z"\u201c(]', tail) and re.search(r"[a-z]{3,}", tail):
         if not re.match(r"[_#\[\{]", tail.lstrip()):
-            return text[:idx].rstrip()
-    return text
+            return text[:idx].rstrip(), [tail.strip()]
+    return text, []
+
+
+def strip_semicolon_prose_from_field(text: str) -> str:
+    """Remove trailing ``; …`` English prose (ASCA treats ``;`` as malformed comment)."""
+    cleaned, _ = extract_semicolon_prose_from_field(text)
+    return cleaned
+
+
+def extract_trailing_gloss_from_field(text: str) -> tuple[str, list[str]]:
+    """Strip Index trailing glosses; return cleaned field and captured prose."""
+    if not text:
+        return text, []
+    captures: list[str] = []
+    for extractor in (
+        extract_embedded_quoted_gloss_from_field,
+        extract_trailing_quoted_gloss_from_field,
+        extract_trailing_paren_glosses_from_field,
+        extract_semicolon_prose_from_field,
+    ):
+        text, frags = extractor(text)
+        captures.extend(frags)
+    return text.strip(), captures
 
 
 def strip_trailing_gloss_from_field(text: str) -> str:
     """Strip Index trailing glosses (parens, quotes, semicolon prose) from one field."""
-    if not text:
-        return text
-    text = strip_embedded_quoted_gloss_from_field(text)
-    text = strip_trailing_quoted_gloss_from_field(text)
-    text = strip_trailing_paren_glosses_from_field(text)
-    text = strip_semicolon_prose_from_field(text)
-    return text.strip()
+    cleaned, _ = extract_trailing_gloss_from_field(text)
+    return cleaned
 
 
-def apply_trailing_glosses(parts: dict[str, str]) -> dict[str, str]:
-    """Remove trailing bracket/quote glosses from rule fields; ``raw`` unchanged upstream."""
-    cleaned: dict[str, str] = {}
+def apply_trailing_glosses(parts: dict[str, str]) -> dict[str, Any]:
+    """Remove trailing bracket/quote glosses from rule fields; capture ``comment``."""
+    cleaned: dict[str, Any] = {}
+    if "comment" in parts:
+        cleaned["comment"] = parts["comment"]
+    comment_fragments: list[str] = []
     for key in ("input", "output", "env", "exception"):
         if key not in parts:
             continue
         original = parts[key]
-        value = strip_trailing_gloss_from_field(original)
+        value, captures = extract_trailing_gloss_from_field(original)
+        comment_fragments.extend(captures)
         if key in ("input", "output") and not value:
             value = original
         if key in ("input", "output") or value:
             cleaned[key] = value
+    _append_rule_comment_parts(cleaned, comment_fragments)
     return cleaned
 
 
@@ -331,34 +425,36 @@ _PROSE_BEFORE_STRESS_RE = re.compile(
 )
 
 
-def normalize_stress_conditions(text: str) -> str:
-    """Normalize Index ``when stressed`` / ``when unstressed`` env prose for ASCA.
-
-    ASCA accepts trailing `` when stressed`` after a focused env (``_C(C) when
-    stressed``) but rejects a comma before the phrase (``_N, when stressed``).
-    Word-boundary envs (``_# when unstressed``) cannot carry trailing prose.
-    Env-only conditions (``when unstressed``) need a focus ``_``.
-    """
+def normalize_stress_conditions(text: str) -> tuple[str, list[str]]:
+    """Normalize Index stress env prose for ASCA; capture removed trailing prose."""
+    captures: list[str] = []
     if not text or not _STRESS_CONDITION_RE.search(text):
-        return text
+        return text, captures
     text = _COMMA_BEFORE_STRESS_RE.sub(" ", text)
     if "#" in text:
-        text = _TRAILING_STRESS_AFTER_HASH_RE.sub("", text).rstrip()
+        match = _TRAILING_STRESS_AFTER_HASH_RE.search(text)
+        if match:
+            captures.append(match.group(0).strip())
+            text = _TRAILING_STRESS_AFTER_HASH_RE.sub("", text).rstrip()
     elif re.match(r"when (?:un)?stressed\b", text, re.I):
         text = f"_ {text}"
     elif "_" not in text:
         match = _PROSE_BEFORE_STRESS_RE.match(text)
         if match:
             text = f"_ {match.group(1)}"
-    return text.strip()
+    return text.strip(), captures
 
 
-def apply_stress_conditions(parts: dict[str, str]) -> dict[str, str]:
+def apply_stress_conditions(parts: dict[str, str]) -> dict[str, Any]:
     """Normalize ``when stressed`` / ``when unstressed`` in env and exception fields."""
-    result = dict(parts)
+    result: dict[str, Any] = dict(parts)
+    comment_fragments: list[str] = []
     for key in ("env", "exception"):
         if key in result:
-            result[key] = normalize_stress_conditions(result[key])
+            value, captures = normalize_stress_conditions(result[key])
+            result[key] = value
+            comment_fragments.extend(captures)
+    _append_rule_comment_parts(result, comment_fragments)
     return result
 
 
@@ -663,8 +759,9 @@ def expand_chained_rule_parts(parts: dict[str, str]) -> list[dict[str, str]]:
         return [parts]
     expanded: list[dict[str, str]] = []
     current_input = parts["input"]
+    meta = {k: parts[k] for k in ("comment", "sporadic") if k in parts}
     for segment in segments:
-        expanded.append({"input": current_input, "output": segment})
+        expanded.append({"input": current_input, "output": segment, **meta})
         current_input = segment
     return expanded
 
@@ -705,6 +802,70 @@ def load_group_mappings(path: Path | None = None) -> list[GroupMapping]:
             )
         )
     return out
+
+
+_RULE_COMMENT_QUALIFIER_PHRASES = (
+    "short only",
+    "long only",
+    "when unstressed",
+    "when stressed",
+    "except as below",
+    "sporadic",
+    "sometimes",
+    "not sure",
+    "not universal",
+    "short vowel",
+    "unstressed",
+)
+
+
+def write_rule_comment_phrase_summary(doc: dict[str, Any], path: Path) -> int:
+    """Write qualifier-phrase counts from corpus rule ``comment`` fields."""
+    comments: list[str] = []
+    for section in doc.get("sections") or []:
+        for rule in section.get("rules") or []:
+            comment = rule.get("comment")
+            if comment:
+                comments.append(str(comment))
+
+    phrase_counts: dict[str, int] = {}
+    for phrase in _RULE_COMMENT_QUALIFIER_PHRASES:
+        count = sum(1 for comment in comments if phrase.lower() in comment.lower())
+        if count:
+            phrase_counts[phrase] = count
+
+    semicolon_count = sum(1 for comment in comments if ";" in comment)
+
+    lines = [
+        "# Rule comment phrase summary",
+        "",
+        f"- Corpus rules with **`comment`**: **{len(comments)}**",
+        f"- Comments containing ``; `` (semicolon tails): **{semicolon_count}**",
+        "",
+        "## Qualifier phrases",
+        "",
+        "| phrase | rules |",
+        "| --- | ---: |",
+    ]
+    for phrase, count in sorted(phrase_counts.items(), key=lambda item: (-item[1], item[0])):
+        lines.append(f"| `{phrase}` | {count} |")
+
+    if not phrase_counts:
+        lines.append("| _(none matched)_ | 0 |")
+
+    lines.extend(
+        [
+            "",
+            "## Sample comments (first 10)",
+            "",
+        ]
+    )
+    for comment in comments[:10]:
+        lines.append(f"- {comment}")
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return len(comments)
 
 
 class IndexDiachronicaParser:

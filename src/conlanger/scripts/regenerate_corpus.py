@@ -23,11 +23,14 @@ from conlanger.tools.corpus_inventory import (
     write_validation_csv,
 )
 from conlanger.tools.corpus_io import write_cleaned_corpus
-from conlanger.tools.parsers import IndexDiachronicaParser
+from conlanger.tools.parsers import IndexDiachronicaParser, write_rule_comment_phrase_summary
 
 DEFAULT_HTML = ROOT / "data" / "diachronica" / "index_diachronica_original.html"
 DEFAULT_YAML = ROOT / "data" / "diachronica" / "index_diachronica_parsed.yml"
 DEFAULT_INVENTORY_DIR = ROOT / ".scratch" / "cleaned-rule-corpus" / "inventory"
+DEFAULT_COMMENT_SUMMARY = (
+    ROOT / ".scratch" / "cleaned-rule-corpus" / "rule-comment-phrases.md"
+)
 DEFAULT_PROBE = ROOT / "tests" / "fixtures" / "asca_probe_words.wsca"
 
 
@@ -75,6 +78,7 @@ def main() -> int:
     parser = IndexDiachronicaParser()
     doc = parser.parse(args.html)
     write_cleaned_corpus(doc, args.yaml_out)
+    n_with_comment = write_rule_comment_phrase_summary(doc, DEFAULT_COMMENT_SUMMARY)
 
     n_sections = len(doc["sections"])
     n_rules = sum(len(s.get("rules") or []) for s in doc["sections"])
@@ -86,8 +90,9 @@ def main() -> int:
     )
     print(
         f"wrote {args.yaml_out} sections={n_sections} rules={n_rules} "
-        f"parse_skipped={n_skipped}"
+        f"parse_skipped={n_skipped} rules_with_comment={n_with_comment}"
     )
+    print(f"wrote {DEFAULT_COMMENT_SUMMARY}")
 
     if args.skip_validation:
         print("skipped validation inventory (--skip-validation)")

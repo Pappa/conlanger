@@ -30,7 +30,10 @@ from conlanger.tools.parsers import (
     apply_sporadic_qualifier,
     apply_stress_conditions,
     apply_trailing_glosses,
+    extract_semicolon_prose_from_field,
+    extract_trailing_gloss_from_field,
     field_has_uncertainty_qualifier,
+    join_rule_comment,
     normalize_stress_conditions,
     strip_trailing_gloss_from_field,
     strip_uncertainty_qualifier_from_field,
@@ -267,7 +270,7 @@ def test_strip_uncertainty_qualifier_from_field(text, expected):
 def test_apply_sporadic_qualifier():
     assert apply_sporadic_qualifier(
         {"input": "p", "output": "h (sporadic)"}
-    ) == {"input": "p", "output": "h", "sporadic": True}
+    ) == {"input": "p", "output": "h", "sporadic": True, "comment": "(sporadic)"}
 
 
 def test_apply_sporadic_qualifier_unchanged_when_no_marker():
@@ -284,6 +287,7 @@ def test_parse_rule_element_marks_sporadic_and_strips_gloss():
     assert rules[0]["input"] == "p"
     assert rules[0]["output"] == "h"
     assert rules[0]["sporadic"] is True
+    assert "(sporadic)" in rules[0]["comment"]
     assert rules[0]["raw"] == "p → h (sporadic)"
 
 
@@ -344,13 +348,21 @@ def test_strip_trailing_gloss_from_field(text, expected):
 def test_apply_trailing_glosses():
     assert apply_trailing_glosses(
         {"input": "j", "output": "p (some Polynesian languages, such as Levei and Drehet)"}
-    ) == {"input": "j", "output": "p"}
+    ) == {
+        "input": "j",
+        "output": "p",
+        "comment": "(some Polynesian languages, such as Levei and Drehet)",
+    }
 
 
 def test_apply_trailing_glosses_keeps_field_when_strip_would_empty():
     assert apply_trailing_glosses(
         {"input": "hhy", "output": '"something like /ʒ/"'}
-    ) == {"input": "hhy", "output": '"something like /ʒ/"'}
+    ) == {
+        "input": "hhy",
+        "output": '"something like /ʒ/"',
+        "comment": '"something like /ʒ/"',
+    }
 
 
 def test_parse_rule_element_strips_trailing_glosses():
@@ -361,6 +373,7 @@ def test_parse_rule_element_strips_trailing_glosses():
     rules = parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["input"] == "w"
     assert rules[0]["output"] == "f"
+    assert "Celtic" in rules[0]["comment"]
     assert "Celtic" in rules[0]["raw"]
 
 
@@ -403,7 +416,8 @@ def test_parse_rule_element_strips_embedded_quoted_env_gloss():
     ],
 )
 def test_normalize_stress_conditions(text, expected):
-    assert normalize_stress_conditions(text) == expected
+    cleaned, _ = normalize_stress_conditions(text)
+    assert cleaned == expected
 
 
 def test_apply_stress_conditions():
@@ -833,4 +847,39 @@ def test_parse_rule_element_voiced_matrix_validates_asca():
         PhonologicalRuleSet(section).to_sound_change_ruleset(),
         probe_words=Path("tests/fixtures/asca_probe_words.wsca"),
     )
+
+
+def test_join_rule_comment():
+    assert join_rule_comment(None, "  a  ", "b") == "a; b"
+    assert join_rule_comment() is None
+
+
+def test_extract_semicolon_prose_captures_tail():
+    cleaned, captures = extract_semicolon_prose_from_field(
+        "depending on the environment; again, the article is unclear"
+    )
+    assert cleaned == "depending on the environment"
+    assert captures == ["again, the article is unclear"]
+
+
+def test_parse_rule_element_captures_semicolon_comment():
+    el = html.fragment_fromstring(
+        '<p class="schg">V → ∅ / short only; blocked by following consonant</p>',
+        create_parent=False,
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["env"] == "short only"
+    assert "blocked by following consonant" in rules[0]["comment"]
+    assert "; blocked" in rules[0]["raw"]
+
+
+def test_parse_rule_element_captures_short_only_paren_in_env():
+    el = html.fragment_fromstring(
+        '<p class="schg">i → e / _CVC#, when stressed (short only)</p>',
+        create_parent=False,
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["env"] == "_CVC#"
+    assert "short only" in rules[0]["comment"]
+    assert "when stressed" in rules[0]["comment"]
 
