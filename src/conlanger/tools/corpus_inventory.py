@@ -91,7 +91,7 @@ def top_error_tokens(
     rows: list[ValidationRow],
     failure_class: str,
     *,
-    limit: int = 5,
+    limit: int | None = 5,
 ) -> list[tuple[str, int]]:
     """Return the most frequent ``error_token`` values for a failure class."""
     return top_error_tokens_from_dataframe(
@@ -105,7 +105,7 @@ def top_error_tokens_from_dataframe(
     df: pd.DataFrame,
     failure_class: str,
     *,
-    limit: int = 5,
+    limit: int | None = 5,
 ) -> list[tuple[str, int]]:
     """Return the most frequent ``error_token`` values for a failure class."""
     if df.empty:
@@ -116,7 +116,9 @@ def top_error_tokens_from_dataframe(
     ]
     if tokens.empty:
         return []
-    counts = tokens.value_counts().head(limit)
+    counts = tokens.value_counts()
+    if limit is not None:
+        counts = counts.head(limit)
     return [(str(token), int(count)) for token, count in counts.items()]
 
 
@@ -124,7 +126,7 @@ def top_error_tokens_with_suggested_from_dataframe(
     df: pd.DataFrame,
     failure_class: str,
     *,
-    limit: int = 5,
+    limit: int | None = 5,
 ) -> list[tuple[str, int, str]]:
     """Return top ``error_token`` counts with the modal ASCA ``suggested`` hint."""
     if df.empty:
@@ -134,7 +136,9 @@ def top_error_tokens_with_suggested_from_dataframe(
     ]
     if subset.empty:
         return []
-    counts = subset["error_token"].value_counts().head(limit)
+    counts = subset["error_token"].value_counts()
+    if limit is not None:
+        counts = counts.head(limit)
     results: list[tuple[str, int, str]] = []
     for token, count in counts.items():
         suggested = subset.loc[subset["error_token"] == token, "suggested"]
@@ -149,6 +153,8 @@ def format_common_errors_section(rows: list[ValidationRow]) -> list[str]:
     df = validation_rows_to_dataframe(rows)
     lines = ["", "## Common Errors", ""]
     for failure_class in COMMON_ERROR_CLASSES:
+        show_all = failure_class in {"unknown_feature", "unknown_grouping"}
+        token_limit = None if show_all else 5
         if failure_class == "unknown_feature":
             lines.extend(
                 [
@@ -158,7 +164,9 @@ def format_common_errors_section(rows: list[ValidationRow]) -> list[str]:
                     "|------:|-------------|-----------|",
                 ]
             )
-            top = top_error_tokens_with_suggested_from_dataframe(df, failure_class)
+            top = top_error_tokens_with_suggested_from_dataframe(
+                df, failure_class, limit=token_limit
+            )
             if top:
                 for token, count, suggested in top:
                     suggested_cell = f"`{suggested}`" if suggested else "—"
@@ -174,7 +182,7 @@ def format_common_errors_section(rows: list[ValidationRow]) -> list[str]:
                     "|------:|-------------|",
                 ]
             )
-            top = top_error_tokens_from_dataframe(df, failure_class)
+            top = top_error_tokens_from_dataframe(df, failure_class, limit=token_limit)
             if top:
                 for token, count in top:
                     lines.append(f"| {count} | `{token}` |")

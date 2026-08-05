@@ -423,6 +423,32 @@ def test_top_error_tokens_with_suggested_from_dataframe():
     ]
 
 
+def test_top_error_tokens_unlimited():
+    rows = [
+        ValidationRow(
+            "1",
+            "A",
+            i,
+            f"s:{i}",
+            False,
+            "unknown_grouping",
+            "asca-unrepresentable",
+            token,
+            "",
+            "err",
+        )
+        for i, token in enumerate(("R", "E", "U", "H", "B", "X"))
+    ]
+    assert top_error_tokens(rows, "unknown_grouping", limit=5) == [
+        ("R", 1),
+        ("E", 1),
+        ("U", 1),
+        ("H", 1),
+        ("B", 1),
+    ]
+    assert len(top_error_tokens(rows, "unknown_grouping", limit=None)) == 6
+
+
 def test_section_all_ok_stats():
     rows = [
         ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", ""),

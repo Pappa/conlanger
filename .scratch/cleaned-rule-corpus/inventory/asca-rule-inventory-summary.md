@@ -49,6 +49,40 @@
 | 18 | `dental` | `ldental` |
 | 14 | `open` | `ten` |
 | 13 | `palatal` | `latrl` |
+| 12 | `lowtone` | `contin` |
+| 9 | `short` | `snrt` |
+| 9 | `fortis` | `contin` |
+| 9 | `sameC` | `sec` |
+| 9 | `glottalized` | `contin` |
+| 8 | `hightone` | `high` |
+| 7 | `mid` | `man` |
+| 6 | `lenis` | `tens` |
+| 5 | `velar` | `delay` |
+| 5 | `guttural` | `lateral` |
+| 5 | `alveolar` | `delay` |
+| 4 | `closed` | `cons` |
+| 4 | `uvular` | `lar` |
+| 4 | `weak` | `man` |
+| 4 | `glottal` | `lateral` |
+| 3 | `fallingtone` | `length` |
+| 3 | `stressed` | `stress` |
+| 3 | `AP` | `rt` |
+| 2 | `lowfallingtone` | `continuant` |
+| 2 | `highrisingtone` | `strident` |
+| 2 | `fricative` | `rhotic` |
+| 1 | `intertonic` | `anterior` |
+| 1 | `close` | `cons` |
+| 1 | `lowpitch` | `voice` |
+| 1 | `highpitch` | `high` |
+| 1 | `rounded` | `round` |
+| 1 | `aspirated` | `spread` |
+| 1 | `affricate` | `stridnt` |
+| 1 | `tonic` | `cons` |
+| 1 | `glide` | `click` |
+| 1 | `RP` | `rt` |
+| 1 | `palatalized` | `latrl` |
+| 1 | `creakyvoice` | `voice` |
+| 1 | `labiovelar` | `labiodental` |
 
 ### unknown_grouping
 
@@ -59,6 +93,16 @@
 | 9 | `U` |
 | 7 | `H` |
 | 6 | `B` |
+| 6 | `M` |
+| 5 | `K` |
+| 5 | `T` |
+| 3 | `D` |
+| 3 | `Y` |
+| 2 | `I` |
+| 2 | `X` |
+| 2 | `A` |
+| 1 | `W` |
+| 1 | `Q` |
 
 ## Notes
 
