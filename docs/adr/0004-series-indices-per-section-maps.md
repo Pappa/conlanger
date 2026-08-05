@@ -1,6 +1,6 @@
 # Keep Index Diachronica series indices; map per section
 
-Subscript digits and letters on segments in Index Diachronica (e.g. `x₂`) are **correspondence-series indices**, not decorative typography. They are unusable in applier parsers as-is. Resolution uses **per-section mapping tables** (as with `legacy/data/series_mapping.yaml`), not silent stripping to the base letter.
+Subscript digits and letters on segments in Index Diachronica (e.g. `x₂`) are **correspondence-series indices**, not decorative typography. They are unusable in applier parsers as-is. Resolution uses **per-section mapping tables** extracted from the HTML (citations, phonology tables, inferable rule context), not silent stripping to the base letter.
 
 ## Considered Options
 
@@ -26,9 +26,10 @@ Wayfinder session on **subscript notation** (`CONTEXT.md`) and owner clarificati
 
 ### Target (parse-time expansion)
 
-- At **HTML→YAML parse**, expand mapped **correspondence-series indices** and **collective subscripts** (`Xₓ`) in corpus fields to **ASCA-parseable** targets (IPA segments, feature matrices, sets) — same pattern as **Symbol** normalization and legacy `resolve_series_labels()`.
+- At **HTML→YAML parse**, expand mapped **correspondence-series indices** and **collective subscripts** (`Xₓ`) in corpus fields to **ASCA-parseable** targets (IPA segments, feature matrices, sets) — same pattern as **Symbol** normalization at parse.
 - **`raw`** always keeps Index subscripts unchanged.
-- Section **`abbreviations`** (and/or package CSV keyed by section index) holds the mapping; longest-prefix section match wins; global `*` fallback allowed.
+- Section **`abbreviations`** (and/or package CSV keyed by section index) holds the mapping; longest-prefix section match wins; global `*` fallback allowed where Index prose supports it.
+- **Mapping rows are authored from `data/diachronica/index_diachronica_original.html`**. Runtime CSV under **`data/asca/`**. Do **not** use `legacy/` for implementation — previous attempts only.
 - **Unmapped** tokens stay literal in corpus fields (option A); validation fails; cluster-driven map authoring adds rows.
 
 ### Out of scope for this ADR (separate tickets)

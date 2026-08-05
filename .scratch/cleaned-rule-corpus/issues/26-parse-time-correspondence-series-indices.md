@@ -11,10 +11,10 @@ When and how should **correspondence-series indices** and **collective subscript
 ## Notes
 
 - Glossary: `CONTEXT.md` — **Subscript notation** (four uses); this ticket covers **correspondence-series index** and **collective subscript** only.
-- Prior art: `legacy/data/series_mapping.yaml`, `legacy/scripts/parse_index_diachronica.py` (`resolve_series_labels`).
 - ADR: [0004-series-indices-per-section-maps](../../../docs/adr/0004-series-indices-per-section-maps.md) (amended 2026-08).
+- **Do not use `legacy/`** for implementation — previous attempts only; build from `data/diachronica/` (HTML SoT) and `src/conlanger/` code.
 - **Positional slots** and **identity subscripts** — separate tickets; not decided here.
-- Follow-on implementation: [Implement parse-time correspondence-series expansion](27-implement-parse-time-correspondence-series-expansion.md).
+- Follow-on: [Extract correspondence-series mappings from Index Diachronica HTML](28-extract-correspondence-series-mappings-from-html.md) → [Implement parse-time correspondence-series expansion](27-implement-parse-time-correspondence-series-expansion.md).
 
 ## Answer
 
@@ -31,9 +31,10 @@ Rewrite corpus `input`/`output`/`env`/`exception` to **ASCA-parseable** phonolog
 ### Mapping source
 
 - Section **`abbreviations`** table in cleaned YAML (hierarchical: section overrides global).
-- Package CSV keyed by section index acceptable (migrate/consolidate `legacy/data/series_mapping.yaml`).
-- Longest-prefix section match; optional global `*` fallback rows.
-- Values are ASCA-valid targets (see comments in legacy `series_mapping.yaml`).
+- Package CSV keyed by section index (e.g. `data/asca/series_mappings.csv`) populated by extracting definitions from **`data/diachronica/index_diachronica_original.html`** — citations, tables, and inferable rule context.
+- Longest-prefix section match; optional global `*` fallback rows only where Index prose supports it.
+- Values are ASCA-valid targets (IPA segments, feature matrices, sets).
+- **Do not use `legacy/`** for map data or resolver code.
 
 ### Unmapped tokens (option A)
 

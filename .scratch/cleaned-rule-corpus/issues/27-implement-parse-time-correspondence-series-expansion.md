@@ -1,6 +1,6 @@
 Type: task
-Status: ready-for-agent
-Blocked by: 26
+Status: needs-triage
+Blocked by: 28
 
 # Implement parse-time correspondence-series expansion
 
@@ -8,14 +8,14 @@ Blocked by: 26
 
 Apply [Parse-time resolution for correspondence-series indices](26-parse-time-correspondence-series-indices.md) in `IndexDiachronicaParser`:
 
-1. Load per-section correspondence-series maps (migrate seed data from `legacy/data/series_mapping.yaml` into package data under `src/conlanger/data/`, e.g. `series_mappings.csv` with section-index column + token + ASCA target).
-2. After existing parse-time transforms (symbols, glosses, stress, …), run `resolve_correspondence_series()` on corpus field values — **correspondence-series index** and **collective subscript** tokens only; do not expand **positional slots** or **identity subscripts** in this ticket.
-3. Merge extracted mappings from section **citation** prose into section `abbreviations` where safe (Afro-Asiatic `s₁`–`s₃` pattern); hand-authored CSV rows for the rest.
+1. Load per-section maps from **`data/asca/series_mappings.csv`** produced by [Extract correspondence-series mappings from Index Diachronica HTML](28-extract-correspondence-series-mappings-from-html.md) (loaded like `group_mappings.csv` from `data/asca/`).
+2. After existing parse-time transforms (symbols, glosses, stress, …), run correspondence-series expansion on corpus field values — **correspondence-series index** and **collective subscript** tokens only; do not expand **positional slots** or **identity subscripts** in this ticket.
+3. Populate section `abbreviations` from the same map at parse where appropriate (schema alignment with ticket 03).
 4. **`raw` unchanged**; expanded values in `input`/`output`/`env`/`exception`.
 5. Unmapped tokens: leave literal; do not set `status: skipped`.
-6. Re-run full inventory; record before/after for `unknown_character` tokens `₁`, `₀`, `₂`, `₃` and correspondence-series examples.
+6. Re-run full inventory; record before/after for `unknown_character` subscript tokens.
 
-Prior art: `legacy/scripts/parse_index_diachronica.py` — `resolve_series_labels()`, `effective_series_map()`, `SERIES_TOKEN_RE`.
+Implement resolver and lookup in `src/conlanger/tools/` alongside `IndexDiachronicaParser`. **Do not use `legacy/`** — previous attempts only; no copying from `legacy/scripts/` or `legacy/data/`.
 
 ## Target cluster
 
@@ -24,13 +24,14 @@ Prior art: `legacy/scripts/parse_index_diachronica.py` — `resolve_series_label
 ## Acceptance criteria
 
 - [ ] Parse-time expansion wired in `IndexDiachronicaParser` (not compile layer)
-- [ ] Seed mapping file under `src/conlanger/data/` with legacy YAML migrated
+- [ ] Maps loaded from HTML-derived package CSV (ticket 28)
 - [ ] `raw` preserves Index subscripts; corpus fields expanded when mapped
 - [ ] Unmapped tokens left literal; no pre-emptive `status: skipped`
-- [ ] Unit tests on representative Afro-Asiatic and collective (`sₓ` / `Hₓ`) cases
+- [ ] Unit tests on representative mapped sections (e.g. Afro-Asiatic) and collective (`Hₓ`) where rows exist
 - [ ] Full inventory re-run; before/after metrics in ticket **Answer**
 - [ ] Fixtures updated for intentionally changed validation outcomes
+- [ ] No imports from or dependencies on `legacy/`
 
 ## Blocked by
 
-- [Parse-time resolution for correspondence-series indices](26-parse-time-correspondence-series-indices.md)
+- [Extract correspondence-series mappings from Index Diachronica HTML](28-extract-correspondence-series-mappings-from-html.md)

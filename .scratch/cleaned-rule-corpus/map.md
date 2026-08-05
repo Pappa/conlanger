@@ -10,6 +10,9 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 
 - Glossary: `CONTEXT.md` — **Subscript notation** (four uses: correspondence-series index, positional slot, identity subscript, collective subscript). Decisions: ADRs 0001–0010.
 - Skills: `/research`, `/grill-with-docs` or grilling + domain-modeling, `/prototype` if needed.
+- **`data/` folder:** project data tree — use for reference **and** implementation. Index Diachronica HTML SoT: `data/diachronica/index_diachronica_original.html`; regenerated corpus YAML: `data/diachronica/index_diachronica_parsed.yml`; runtime CSV mappings: `data/asca/` (e.g. `group_mappings.csv`).
+- **`src/conlanger/`:** parser, compile, validation, and orchestration code.
+- **`legacy/` folder:** previous attempts only — do **not** copy code or data from `legacy/` when implementing cleaned-corpus work (tickets 11+).
 - Tracker: `docs/agents/issue-tracker.md` (Wayfinding operations).
 
 ## Decisions so far
@@ -47,13 +50,13 @@ Phased delivery — not vertical slices upfront:
 
 1. ~~**[Minimal extract-only ingest](issues/11-minimal-extract-only-ingest.md)**~~ — done (parse path also gained class-first fixes from passes 14–25).
 2. ~~**[Full-corpus validation inventory](issues/12-full-corpus-validation-inventory.md)**~~ — done; re-run after each correction pass.
-3. **[Correction passes](issues/13-correction-pass-template.md)** — in progress via [14–25](issues/14-correction-pass-unknown-grouping.md); cluster from [inventory summary](inventory/asca-rule-inventory-summary.md). Next: [parse-time correspondence-series expansion](issues/27-implement-parse-time-correspondence-series-expansion.md) (`unknown_character` subscripts).
+3. **[Correction passes](issues/13-correction-pass-template.md)** — in progress via [14–25](issues/14-correction-pass-unknown-grouping.md). Next chain: [Extract correspondence-series mappings from Index Diachronica HTML](issues/28-extract-correspondence-series-mappings-from-html.md) → [Implement parse-time correspondence-series expansion](issues/27-implement-parse-time-correspondence-series-expansion.md).
 
 **Compile validation:** use ASCA directly (`validate_asca` / `asca run` + baseline wordlist). Rule-derived candidate generation ([ticket 10](issues/10-rule-derived-probe-synthesis.md)) — **wontfix**.
 
 ## Not yet specified
 
-- **Positional slot** and **identity subscript** parse-time policy — ASCA reference/alpha syntax mapping (separate from correspondence-series expansion; ticket 27)
+- **Positional slot** and **identity subscript** parse-time policy — ASCA reference/alpha syntax mapping (separate from correspondence-series work; tickets 28–27)
 - **Whitespace tokenisation for ASCA** — inter-segment spacing (deferred from ticket 07)
 - **Meta-notation at ingest** — later find/replace; cluster-driven for now (ticket 06)
 - **Section-local abbreviations** (e.g. Athabaskan `TŠ`) — cluster-driven; hand-add mapping rows when warranted
