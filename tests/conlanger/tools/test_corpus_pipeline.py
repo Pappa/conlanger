@@ -1,0 +1,242 @@
+"""End-to-end tests for the cleaned rule corpus pipeline.
+
+Primary seam (spec): HTML → IndexDiachronicaParser → corpus document →
+PhonologicalRuleSet compile → validate_asca per corpus rule.
+"""
+
+from __future__ import annotations
+
+import html as html_module
+from pathlib import Path
+
+import pytest
+
+from conlanger.tools.asca_validator import validate_asca
+from conlanger.tools.corpus_inventory import iter_validation_rows, validate_corpus_rule
+from conlanger.tools.parsers import IndexDiachronicaParser
+from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
+from tests.conftest import ASCA_INSTALLED
+
+_PROBE = Path(__file__).resolve().parents[2] / "fixtures" / "asca_probe_words.wsca"
+
+_INDEX_HTML = """\
+<!doctype html>
+<html><body>
+<section id="{section_id}">
+{section_body}
+</section>
+</body></html>
+"""
+
+# Curated rules verified through HTML ingest → compile → validate.
+# ``asca_guess`` CSV rows use hand-edited asca_* fields and are not reliable
+# for full-pipeline expectation without re-baselining from raw HTML.
+_E2E_VALIDATE_SMOKE: list[tuple[str, str, bool, str]] = [
+    # id, raw, expect_ok, section_index (for series lookup)
+    ("simple-io", "a → b", True, "1.0"),
+    ("env-boundary", "dʒ → tʃ / _#", True, "1.0"),
+    ("feature-matrix", "C[+voiced] → C[-voice] / _#", True, "1.0"),
+    ("complex-env", "r → ∅ / {ð,f}_{ɡ,ɣ}", True, "1.0"),
+    ("stress-env", "a → e / _j when stressed", True, "47.1"),
+    ("chain-split", "dʒ → tʃ → ʃ", True, "1.0"),
+    ("metathesis", "uɛ → ɛu", True, "1.0"),
+    ("group-compile", "SN → N[- voice]", True, "1.0"),
+    ("prose-env-fail", "z → ð / medial", False, "1.0"),
+    ("series-mapped", "s₁ → ʃ", True, "6.1.2.1"),
+    ("positional-literal", "C₁ → C₂", False, "10.2.1"),
+    ("held-out-parse", "no arrow here", False, "1.0"),
+]
+
+# Representative ingest cases from ``sound_change_rules.csv`` (ids for traceability).
+_E2E_PARSE_SMOKE: list[tuple[str, str, dict[str, str | None]]] = [
+    ("e1e33459", "r → ∅ / {ð,f}_{ɡ,ɣ}", {
+        "input": "r", "output": "∅", "env": "{ð,f}_{ɡ,ɣ}",
+    }),
+    ("4335174c", "dʒ → tʃ / _#", {"input": "dʒ", "output": "tʃ", "env": "_#"}),
+    ("4f873820", "a → e / _j when stressed", {
+        "input": "a", "output": "e", "env": "_j when stressed",
+    }),
+    ("63f9e7f4", "SN → N[- voice]", {"input": "SN", "output": "N[- voice]"}),
+    ("9f237660", "C[+ voice] → C[- voice] / _#", {
+        "input": "C[+ voice]", "output": "C[- voice]", "env": "_#",
+    }),
+    ("f8cd1a6f", "ɑ → ə", {"input": "ɑ", "output": "ə"}),
+    ("65372311", "qh → k", {"input": "qh", "output": "k"}),
+    ("e71a2977", "ŋ → n", {"input": "ŋ", "output": "n"}),
+]
+
+
+def _write_section_html(
+    path: Path,
+    *,
+    section_id: str,
+    section_body: str,
+) -> None:
+    path.write_text(
+        _INDEX_HTML.format(section_id=section_id, section_body=section_body),
+        encoding="utf-8",
+    )
+
+
+def _parse_section(
+    html_path: Path,
+    *,
+    source_file: str = "e2e.html",
+) -> dict:
+    doc = IndexDiachronicaParser().parse(html_path, source_file=source_file)
+    assert len(doc["sections"]) == 1
+    return doc["sections"][0]
+
+
+def _assert_corpus_rule_shape(rule: dict) -> None:
+    for key in ("input", "output", "raw", "source"):
+        assert key in rule
+    if not rule.get("env"):
+        assert "env" not in rule
+    if not rule.get("exception"):
+        assert "exception" not in rule
+
+
+def test_e2e_minimal_html_fixture_shape_and_raw_preservation(tmp_path: Path):
+    """Parse a minimal Index-shaped section and assert corpus schema + raw audit."""
+    html_path = tmp_path / "minimal.html"
+    _write_section_html(
+        html_path,
+        section_id="E2E",
+        section_body="""\
+<h2>1.0 Pipeline smoke</h2>
+<p><i>Fixture citation</i></p>
+<p class="schg">a → b</p>
+<p class="schg">C[+voiced] → C[-voice] / _#</p>
+<p>Interleaved section comment</p>
+<p class="schg">no arrow here</p>""",
+    )
+    section = _parse_section(html_path, source_file="minimal.html")
+
+    assert section["index"] == "1.0"
+    assert section["section"] == "Pipeline smoke"
+    assert section["citation"] == "Fixture citation"
+    assert [c["raw"] for c in section["comments"]] == ["Interleaved section comment"]
+    assert len(section["rules"]) == 3
+
+    ok_rule, feature_rule, bad_rule = section["rules"]
+    _assert_corpus_rule_shape(ok_rule)
+    assert ok_rule["input"] == "a"
+    assert ok_rule["output"] == "b"
+    assert ok_rule["raw"] == "a → b"
+    assert ok_rule["source"].startswith("minimal.html:")
+
+    assert feature_rule["input"] == "C[+voice]"
+    assert feature_rule["output"] == "C[-voice]"
+    assert feature_rule["env"] == "_#"
+    assert "voiced" in feature_rule["raw"]
+
+    assert bad_rule["input"] == ""
+    assert bad_rule["output"] == ""
+    assert bad_rule.get("skipped")
+
+
+@pytest.mark.skipif(not ASCA_INSTALLED, reason="asca binary not on PATH")
+@pytest.mark.skipif(not _PROBE.is_file(), reason="probe wordlist missing")
+def test_e2e_minimal_html_fixture_compile_and_validate(tmp_path: Path):
+    """Active rules compile through PhonologicalRuleSet and pass validate_asca."""
+    html_path = tmp_path / "validate.html"
+    _write_section_html(
+        html_path,
+        section_id="Validate",
+        section_body="""\
+<h2>47.1 Stress conditions</h2>
+<p class="schg">a → b</p>
+<p class="schg">dʒ → tʃ / _#</p>""",
+    )
+    section = _parse_section(html_path)
+    rows = list(iter_validation_rows({"sections": [section]}, probe_words=_PROBE))
+
+    assert len(rows) == 2
+    assert all(row.ok for row in rows)
+    assert rows[0].failure_class == ""
+    assert rows[0].reason == ""
+
+    validate_asca(
+        PhonologicalRuleSet(section).to_sound_change_ruleset(),
+        probe_words=_PROBE,
+    )
+
+
+@pytest.mark.parametrize(
+    ("case_id", "raw", "expected"),
+    _E2E_PARSE_SMOKE,
+    ids=[case_id for case_id, _, _ in _E2E_PARSE_SMOKE],
+)
+def test_e2e_html_extract_pipeline_parse(
+    case_id: str,
+    raw: str,
+    expected: dict[str, str | None],
+    tmp_path: Path,
+):
+    """HTML rule line → parser → corpus fields match fixture expectations."""
+    html_path = tmp_path / f"{case_id}.html"
+    escaped = html_module.escape(raw)
+    _write_section_html(
+        html_path,
+        section_id=case_id,
+        section_body=(
+            f"<h2>99.0 Fixture {case_id}</h2>\n<p class=\"schg\">{escaped}</p>"
+        ),
+    )
+    section = _parse_section(html_path, source_file=f"{case_id}.html")
+    assert len(section["rules"]) == 1
+    rule = section["rules"][0]
+    _assert_corpus_rule_shape(rule)
+    assert rule["raw"] == raw
+
+    for key, value in expected.items():
+        assert rule.get(key) == value, case_id
+
+
+@pytest.mark.skipif(not ASCA_INSTALLED, reason="asca binary not on PATH")
+@pytest.mark.skipif(not _PROBE.is_file(), reason="probe wordlist missing")
+@pytest.mark.parametrize(
+    ("case_id", "raw", "expect_ok", "section_index"),
+    _E2E_VALIDATE_SMOKE,
+    ids=[case_id for case_id, _, _, _ in _E2E_VALIDATE_SMOKE],
+)
+def test_e2e_smoke_pipeline_validate(
+    case_id: str,
+    raw: str,
+    expect_ok: bool,
+    section_index: str,
+    tmp_path: Path,
+):
+    """Representative HTML rules → parse → compile → validate_asca outcomes."""
+    html_path = tmp_path / f"smoke_{case_id}.html"
+    escaped = html_module.escape(raw)
+    _write_section_html(
+        html_path,
+        section_id=case_id,
+        section_body=(
+            f"<h2>{section_index} Smoke {case_id}</h2>\n"
+            f"<p class=\"schg\">{escaped}</p>"
+        ),
+    )
+    section = _parse_section(html_path, source_file=f"smoke_{case_id}.html")
+    assert section["index"] == section_index
+
+    rules = section.get("rules") or []
+    assert rules, case_id
+    rows = [
+        validate_corpus_rule(section, rule, idx, probe_words=_PROBE)
+        for idx, rule in enumerate(rules)
+    ]
+
+    if case_id == "held-out-parse":
+        assert not rows[0].ok
+        assert rows[0].failure_class == "missing_arrow"
+        return
+
+    if expect_ok:
+        assert all(row.ok for row in rows), (
+            f"{case_id}: {rows[0].description if rows else 'no rules'}"
+        )
+    else:
+        assert any(not row.ok for row in rows), case_id
