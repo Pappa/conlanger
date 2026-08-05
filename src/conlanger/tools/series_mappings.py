@@ -37,6 +37,9 @@ _ASCA_GROUPING_LETTERS = frozenset("CSOPFLNGV")
 
 _SUBSCRIPT_TO_ASCII = str.maketrans("₁₂₃₄₅₆₇₈₉", "123456789")
 
+# Any token containing an Index subscript digit/letter (includes compounds like ``eh₂``, ``CV₁``).
+_SUBSCRIPT_TOKEN_RE = re.compile(r"[A-Za-zæøåɑɡɢ]*[₀₁₂₃₄₅₆₇₈₉ₓ]+")
+
 
 @dataclass(frozen=True)
 class SeriesMapping:
@@ -45,6 +48,54 @@ class SeriesMapping:
     asca_target: str
     source: str = ""
     notes: str = ""
+
+
+@dataclass(frozen=True)
+class SeriesExtractionAudit:
+    """Confidence metrics for HTML → ``series_mappings.csv`` extraction."""
+
+    csv_rows: int
+    html_defined_pairs: int
+    html_defined_mapped: int
+    in_scope_rule_pairs: int
+    in_scope_rule_mapped: int
+    out_of_scope_rule_pairs: int
+    in_scope_gaps: tuple[tuple[str, str], ...]
+    family_in_scope: dict[str, tuple[int, int]]
+
+    @property
+    def html_definition_coverage(self) -> float:
+        if not self.html_defined_pairs:
+            return 1.0
+        return self.html_defined_mapped / self.html_defined_pairs
+
+    @property
+    def in_scope_rule_coverage(self) -> float:
+        if not self.in_scope_rule_pairs:
+            return 1.0
+        return self.in_scope_rule_mapped / self.in_scope_rule_pairs
+
+
+def classify_subscript_token(token: str) -> str:
+    """Classify a subscript-bearing token for coverage accounting."""
+    if is_identity_subscript_token(token):
+        return "identity"
+    if is_positional_slot_token(token):
+        return "positional"
+    if is_collective_subscript_token(token):
+        return "collective"
+    if is_correspondence_series_token(token):
+        return "correspondence"
+    if _CORRESPONDENCE_INDEX_RE.search(token):
+        return "compound"
+    if "ₓ" in token or "₀" in token or re.search(r"[₁₂₃₄₅₆₇₈₉]", token):
+        return "other"
+    return "none"
+
+
+def in_scope_series_token(token: str) -> bool:
+    """Whether ticket-28 extraction applies to this token."""
+    return classify_subscript_token(token) in {"correspondence", "collective"}
 
 
 def is_positional_slot_token(token: str) -> bool:
@@ -56,7 +107,13 @@ def is_identity_subscript_token(token: str) -> bool:
 
 
 def is_collective_subscript_token(token: str) -> bool:
-    return token.endswith("ₓ") and len(token) >= 2 and token[:-1].isalpha()
+    base = token[:-1] if token.endswith("ₓ") else ""
+    return (
+        len(token) >= 2
+        and token.endswith("ₓ")
+        and base.isalpha()
+        and base.islower()
+    )
 
 
 def is_correspondence_series_token(token: str) -> bool:
@@ -70,6 +127,15 @@ def is_correspondence_series_token(token: str) -> bool:
     base = match.group(1)
     # Correspondence-series indices attach to concrete (lowercase) segments, not class letters.
     return base.islower()
+
+
+def find_subscript_tokens(text: str) -> set[str]:
+    """Return subscript-bearing tokens appearing in rule field text."""
+    return {
+        match.group(0)
+        for match in _SUBSCRIPT_TOKEN_RE.finditer(text)
+        if match.group(0)
+    }
 
 
 def find_correspondence_series_tokens(text: str) -> set[str]:
@@ -463,6 +529,133 @@ def survey_subscript_tokens_in_html(
     return dict(by_section)
 
 
+def survey_all_subscript_tokens_in_html(
+    html_path: Path,
+    *,
+    source_file: str | None = None,
+) -> dict[str, set[str]]:
+    """Return all subscript-bearing tokens in rule fields, keyed by section index."""
+    source_file = source_file or html_path.name
+    parser = html.HTMLParser(encoding="utf-8")
+    doc = html.parse(str(html_path), parser=parser)
+    root = doc.getroot()
+    by_section: dict[str, set[str]] = defaultdict(set)
+
+    for sec in root.xpath("//section[@id]"):
+        h2s = sec.xpath("./h2")
+        if not h2s:
+            continue
+        h2_text = strip_whitespace("".join(h2s[0].itertext()))
+        section_index, _name = parse_section_heading(h2_text)
+        if not section_index:
+            continue
+        for p in sec.xpath("./p[@class and contains(@class, 'schg')]"):
+            raw = extract_text_with_subs(p)
+            for field in _rule_fields(raw):
+                by_section[section_index].update(find_subscript_tokens(field))
+    return dict(by_section)
+
+
+def survey_html_defined_series(
+    html_path: Path,
+    *,
+    source_file: str | None = None,
+) -> dict[str, set[str]]:
+    """Return in-scope series tokens declared in section citations or inventory tables."""
+    source_file = source_file or html_path.name
+    parser = html.HTMLParser(encoding="utf-8")
+    doc = html.parse(str(html_path), parser=parser)
+    root = doc.getroot()
+    by_section: dict[str, set[str]] = defaultdict(set)
+
+    for sec in root.xpath("//section[@id]"):
+        h2s = sec.xpath("./h2")
+        if not h2s:
+            continue
+        h2_text = strip_whitespace("".join(h2s[0].itertext()))
+        section_index, _name = parse_section_heading(h2_text)
+        if not section_index or section_index == "5":
+            continue
+
+        saw_first_p = False
+        for p in sec.xpath("./p"):
+            cls = p.get("class") or ""
+            if "schg" in cls:
+                saw_first_p = True
+                continue
+            note = extract_text_with_subs(p)
+            if not note:
+                continue
+            if not saw_first_p:
+                for token in find_correspondence_series_tokens(note):
+                    if in_scope_series_token(token):
+                        by_section[section_index].add(token)
+                saw_first_p = True
+
+        for table_el in sec.xpath("./table"):
+            cell_text = extract_text_with_subs(table_el)
+            for token in find_correspondence_series_tokens(cell_text):
+                if in_scope_series_token(token):
+                    by_section[section_index].add(token)
+
+    return dict(by_section)
+
+
+def audit_series_extraction(
+    html_path: Path,
+    mappings_csv: Path | None = None,
+) -> SeriesExtractionAudit:
+    """Compute confidence metrics for HTML extraction vs ``series_mappings.csv``."""
+    csv_path = DEFAULT_SERIES_MAPPINGS_CSV if mappings_csv is None else Path(mappings_csv)
+    rows = load_series_mappings(csv_path)
+    defined = survey_html_defined_series(html_path)
+    rules = survey_all_subscript_tokens_in_html(html_path)
+
+    html_defined_pairs = 0
+    html_defined_mapped = 0
+    in_scope_rule_pairs = 0
+    in_scope_rule_mapped = 0
+    out_of_scope_rule_pairs = 0
+    gaps: list[tuple[str, str]] = []
+    family_counts: dict[str, list[int]] = defaultdict(lambda: [0, 0])
+
+    for section_index, tokens in defined.items():
+        for token in tokens:
+            html_defined_pairs += 1
+            if lookup_series_target(section_index, token, rows) is not None:
+                html_defined_mapped += 1
+
+    for section_index, tokens in rules.items():
+        for token in tokens:
+            if in_scope_series_token(token):
+                in_scope_rule_pairs += 1
+                if lookup_series_target(section_index, token, rows) is not None:
+                    in_scope_rule_mapped += 1
+                else:
+                    gaps.append((section_index, token))
+                top = section_index.split(".", 1)[0]
+                family_counts[top][0] += 1
+                if lookup_series_target(section_index, token, rows) is not None:
+                    family_counts[top][1] += 1
+            else:
+                out_of_scope_rule_pairs += 1
+
+    family_in_scope = {
+        family: (counts[0], counts[1]) for family, counts in sorted(family_counts.items())
+    }
+
+    return SeriesExtractionAudit(
+        csv_rows=len(rows),
+        html_defined_pairs=html_defined_pairs,
+        html_defined_mapped=html_defined_mapped,
+        in_scope_rule_pairs=in_scope_rule_pairs,
+        in_scope_rule_mapped=in_scope_rule_mapped,
+        out_of_scope_rule_pairs=out_of_scope_rule_pairs,
+        in_scope_gaps=tuple(sorted(gaps)),
+        family_in_scope=family_in_scope,
+    )
+
+
 def _rule_fields(raw_rule: str) -> list[str]:
     parts = extract_rule_parts(raw_rule)
     if parts is None:
@@ -482,6 +675,7 @@ def write_coverage_report(
 ) -> None:
     """Emit mapped vs unmapped correspondence-series tokens by section."""
     rows = load_series_mappings(mappings_csv)
+    audit = audit_series_extraction(html_path, mappings_csv)
     mapped_by_section: dict[str, set[str]] = defaultdict(set)
     for row in rows:
         mapped_by_section[row.section_index].add(row.token)
@@ -489,29 +683,76 @@ def write_coverage_report(
     used_by_section = survey_subscript_tokens_in_html(html_path)
     section_names = _section_names_from_html(html_path)
 
+    pct = lambda num, den: f"{100 * num / den:.1f}%" if den else "n/a"
+    family_lines = [
+        f"| {family} | {total} | {mapped} | {pct(mapped, total)} |"
+        for family, (total, mapped) in audit.family_in_scope.items()
+        if total
+    ]
+
     lines = [
         "# Correspondence-series mapping coverage",
         "",
         f"HTML source: `{html_path.name}`",
-        f"Mappings: `{mappings_csv.name}` ({len(rows)} rows)",
+        f"Mappings: `{mappings_csv.name}` ({audit.csv_rows} rows)",
         "",
-        "## Inference methods",
+        "## Extraction confidence",
         "",
-        "1. **Section citation** — prose or comments listing series members (e.g. Afro-Asiatic §6).",
-        "2. **Phonology inventory tables** — cells listing indexed tokens (e.g. PIE laryngeals §17).",
-        "3. **Parallel rule I/O** — equal-length input/output chains mapping series members to IPA segments.",
-        "4. **Singleton rule I/O** — single indexed input token mapping to one output segment.",
-        "5. **Collective subscript** — `Xₓ` expands to the set of `Xₙ` members declared in the same section citation.",
+        "Use **in-scope rule coverage** (correspondence-series + collective subscripts only) "
+        "— not the raw rule-token total, which includes positional slots (`C₁`), identity "
+        "subscripts (`V₀`), and compounds (`eh₂`) handled by other tickets.",
         "",
-        "ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). "
-        "For bases that collide with ASCA grouping letters (`S`, `C`, …), "
-        "targets use `f{N}` placeholders (e.g. `s₁` → `f1`).",
+        f"- **HTML citation/table definitions mapped:** "
+        f"{audit.html_defined_mapped}/{audit.html_defined_pairs} "
+        f"({pct(audit.html_defined_mapped, audit.html_defined_pairs)})",
+        f"- **In-scope tokens in rules mapped:** "
+        f"{audit.in_scope_rule_mapped}/{audit.in_scope_rule_pairs} "
+        f"({pct(audit.in_scope_rule_mapped, audit.in_scope_rule_pairs)})",
+        f"- **Out-of-scope subscript tokens in rules (excluded):** {audit.out_of_scope_rule_pairs}",
+        f"- **In-scope gaps remaining:** {len(audit.in_scope_gaps)}",
         "",
-        "## By section",
+        "### By top-level section family",
         "",
-        "| Section | Name | Tokens in rules | Mapped | Unmapped |",
-        "| --- | --- | ---: | ---: | ---: |",
+        "| Family | In-scope rule tokens | Mapped | Coverage |",
+        "| --- | ---: | ---: | ---: |",
     ]
+    lines.extend(family_lines or ["| _none_ | 0 | 0 | n/a |"])
+    lines.extend(
+        [
+            "",
+            "Families **6** (Afro-Asiatic) and **17** (Indo-European) are the ticket-28 "
+            "benchmarks: citation/table rows at §6 and §17, plus rule-inferred overrides "
+            "in subsections.",
+            "",
+            "## Inference methods",
+            "",
+            "1. **Section citation** — prose or comments listing series members (e.g. Afro-Asiatic §6).",
+            "2. **Phonology inventory tables** — cells listing indexed tokens (e.g. PIE laryngeals §17).",
+            "3. **Parallel rule I/O** — equal-length input/output chains mapping series members to IPA segments.",
+            "4. **Singleton rule I/O** — single indexed input token mapping to one output segment.",
+            "5. **Collective subscript** — `Xₓ` expands to the set of `Xₙ` members declared in the same section citation.",
+            "",
+            "ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). "
+            "For bases that collide with ASCA grouping letters (`S`, `C`, …), "
+            "targets use `f{N}` placeholders (e.g. `s₁` → `f1`).",
+            "",
+            "## By section",
+            "",
+            "| Section | Name | Tokens in rules | Mapped | Unmapped |",
+            "| --- | --- | ---: | ---: | ---: |",
+        ]
+    )
+
+    all_rules = survey_all_subscript_tokens_in_html(html_path)
+    out_of_scope_lines: list[str] = []
+    for section_index in sorted(all_rules, key=_section_sort_key):
+        name = section_names.get(section_index, "")
+        for token in sorted(all_rules[section_index]):
+            if not in_scope_series_token(token):
+                out_of_scope_lines.append(
+                    f"- `{token}` ({classify_subscript_token(token)}) — "
+                    f"section {section_index} ({name})"
+                )
 
     all_sections = sorted(
         set(used_by_section) | set(mapped_by_section),
@@ -519,7 +760,6 @@ def write_coverage_report(
     )
     total_used = 0
     total_mapped = 0
-    unmapped_lines: list[str] = []
     detail_lines: list[str] = []
 
     for section_index in all_sections:
@@ -548,9 +788,6 @@ def write_coverage_report(
                     "",
                 ]
             )
-        for token in unmapped:
-            unmapped_lines.append(f"- `{token}` — section {section_index} ({name})")
-
     lines.extend(
         [
             "",
@@ -567,17 +804,27 @@ def write_coverage_report(
         [
             "## Summary",
             "",
-            f"- Sections with subscript rules: **{len(used_by_section)}**",
-            f"- Token occurrences (unique per section): **{total_used}**",
-            f"- Mapped: **{total_mapped}**",
-            f"- Unmapped: **{total_used - total_mapped}**",
+            f"- Sections with correspondence-series rules: **{len(used_by_section)}**",
+            f"- In-scope rule token occurrences: **{audit.in_scope_rule_pairs}** "
+            f"(mapped **{audit.in_scope_rule_mapped}**, "
+            f"**{pct(audit.in_scope_rule_mapped, audit.in_scope_rule_pairs)}**)",
+            f"- Out-of-scope subscript tokens (positional / identity / compound): "
+            f"**{audit.out_of_scope_rule_pairs}**",
             "",
-            "## Unmapped tokens",
+            "## In-scope gaps",
             "",
         ]
     )
-    if unmapped_lines:
-        lines.extend(unmapped_lines)
+    if audit.in_scope_gaps:
+        for section_index, token in audit.in_scope_gaps:
+            name = section_names.get(section_index, "")
+            lines.append(f"- `{token}` — section {section_index} ({name})")
+    else:
+        lines.append("_None._")
+
+    lines.extend(["", "## Out-of-scope subscript tokens (all sections)", ""])
+    if out_of_scope_lines:
+        lines.extend(out_of_scope_lines)
     else:
         lines.append("_None._")
 

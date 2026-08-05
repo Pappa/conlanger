@@ -9,9 +9,12 @@ import pytest
 from conlanger.tools.series_mappings import (
     SeriesMapping,
     asca_digit_segment,
+    audit_series_extraction,
+    classify_subscript_token,
     extract_series_mappings_from_html,
     find_correspondence_series_tokens,
     infer_parallel_rule_mappings,
+    in_scope_series_token,
     is_collective_subscript_token,
     is_correspondence_series_token,
     is_identity_subscript_token,
@@ -19,6 +22,7 @@ from conlanger.tools.series_mappings import (
     load_series_mappings,
     lookup_series_target,
     section_index_prefixes,
+    survey_html_defined_series,
     write_coverage_report,
     write_series_mappings_csv,
 )
@@ -213,4 +217,56 @@ def test_write_coverage_report(tmp_path: Path):
     text = report_path.read_text(encoding="utf-8")
     assert "Afro-Asiatic" in text
     assert "Indo-European" in text
-    assert "mapped" in text.lower()
+    assert "Extraction confidence" in text
+    assert "In-scope tokens in rules mapped" in text
+
+
+@pytest.mark.parametrize(
+    ("token", "kind"),
+    [
+        ("s₁", "correspondence"),
+        ("sₓ", "collective"),
+        ("C₁", "positional"),
+        ("V₀", "identity"),
+        ("CV₁", "compound"),
+    ],
+)
+def test_classify_subscript_token(token, kind):
+    assert classify_subscript_token(token) == kind
+
+
+def test_survey_html_defined_series_fixture(tmp_path: Path):
+    html_path = tmp_path / "index.html"
+    html_path.write_text(_HTML_FIXTURE, encoding="utf-8")
+    defined = survey_html_defined_series(html_path)
+    assert "s₁" in defined["6"]
+    assert "h₃" in defined["17"]
+
+
+def test_audit_series_extraction_fixture(tmp_path: Path):
+    html_path = tmp_path / "index.html"
+    html_path.write_text(_HTML_FIXTURE, encoding="utf-8")
+    csv_path = tmp_path / "series_mappings.csv"
+    write_series_mappings_csv(extract_series_mappings_from_html(html_path), csv_path)
+    audit = audit_series_extraction(html_path, csv_path)
+    assert audit.html_definition_coverage == 1.0
+    assert audit.in_scope_rule_coverage == 1.0
+    assert audit.in_scope_gaps == ()
+
+
+_HTML = Path(__file__).resolve().parents[3] / "data" / "diachronica" / "index_diachronica_original.html"
+_CSV = Path(__file__).resolve().parents[3] / "data" / "asca" / "series_mappings.csv"
+
+
+@pytest.mark.skipif(not _HTML.is_file(), reason="Index HTML fixture missing")
+@pytest.mark.skipif(not _CSV.is_file(), reason="series_mappings.csv missing")
+def test_extraction_confidence_benchmarks_on_full_html():
+    """Regression guard: ticket-28 benchmark families stay largely extracted."""
+    audit = audit_series_extraction(_HTML, _CSV)
+    assert audit.html_definition_coverage == 1.0
+    total_6, mapped_6 = audit.family_in_scope.get("6", (0, 0))
+    total_17, mapped_17 = audit.family_in_scope.get("17", (0, 0))
+    assert total_6 > 0 and mapped_6 / total_6 >= 0.95
+    assert total_17 > 0 and mapped_17 / total_17 >= 0.65
+    assert in_scope_series_token("s₁")
+    assert not in_scope_series_token("C₁")
