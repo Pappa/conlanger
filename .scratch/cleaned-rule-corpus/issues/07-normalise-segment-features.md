@@ -17,7 +17,7 @@ How should Index Diachronica feature notation in corpus rule strings (e.g. `[+vo
 
 Domain term: **Feature matrix** — see `CONTEXT.md`.
 
-- Synonym replacement at **HTML→YAML ingest** inside `[...]` only; target ASCA canonical names via `src/conlanger/data/asca/feature_mappings.csv`; **`raw`** unchanged.
+- Synonym replacement at **HTML→YAML ingest** inside `[...]` only; target ASCA canonical names via `data/asca/feature_mappings.csv`; **`raw`** unchanged.
 - Unmapped names: no invented mappings → **validation report** (ADR-0010).
 - **`group_mappings.csv`** co-located under `src/conlanger/data/asca/`.
 - **Whitespace tokenisation** — map fog, not this ticket.

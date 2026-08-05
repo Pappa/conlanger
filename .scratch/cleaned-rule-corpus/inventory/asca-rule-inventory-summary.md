@@ -4,28 +4,28 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9317** (one per corpus rule)
-- OK: **6422** (68.9%)
-- Fail: **2895** (31.1%)
-- Sections all OK: **130 / 714** (18.2%)
+- OK: **6483** (69.6%)
+- Fail: **2834** (30.4%)
+- Sections all OK: **133 / 714** (18.6%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 1192 | `syntax_other` |
-| 758 | `unknown_character` |
-| 370 | `expected_underscore` |
-| 251 | `unknown_feature` |
-| 79 | `unknown_grouping` |
+| 1200 | `syntax_other` |
+| 760 | `unknown_character` |
+| 375 | `expected_underscore` |
+| 163 | `unknown_feature` |
+| 80 | `unknown_grouping` |
 | 56 | `prose_or_expected_arrow` |
 | 33 | `panic_other` |
 | 31 | `expected_number` |
 | 30 | `nested_brackets` |
-| 26 | `diacritic_prereq` |
+| 30 | `diacritic_prereq` |
+| 23 | `runtime_other` |
 | 20 | `runtime_delete_only_segment` |
-| 18 | `runtime_other` |
-| 17 | `stuff_after_word_bound` |
-| 12 | `malformed_comment` |
+| 18 | `stuff_after_word_bound` |
+| 13 | `malformed_comment` |
 | 2 | `other` |
 
 ## Common Errors
@@ -44,43 +44,39 @@
 
 | count | error_token | suggested |
 |------:|-------------|-----------|
-| 56 | `voiced` | `voice` |
-| 22 | `sibilant` | `sonorant` |
-| 18 | `dental` | `ldental` |
+| 19 | `dental` | `ldental` |
 | 14 | `open` | `ten` |
 | 13 | `palatal` | `latrl` |
 | 12 | `lowtone` | `contin` |
-| 9 | `short` | `snrt` |
-| 9 | `fortis` | `contin` |
-| 9 | `sameC` | `sec` |
 | 9 | `glottalized` | `contin` |
+| 9 | `sameC` | `sec` |
+| 9 | `fortis` | `contin` |
 | 8 | `hightone` | `high` |
 | 7 | `mid` | `man` |
 | 6 | `lenis` | `tens` |
 | 5 | `velar` | `delay` |
-| 5 | `guttural` | `lateral` |
 | 5 | `alveolar` | `delay` |
+| 5 | `guttural` | `lateral` |
 | 4 | `closed` | `cons` |
-| 4 | `uvular` | `lar` |
 | 4 | `weak` | `man` |
+| 4 | `uvular` | `lar` |
 | 4 | `glottal` | `lateral` |
-| 3 | `fallingtone` | `length` |
-| 3 | `stressed` | `stress` |
 | 3 | `AP` | `rt` |
-| 2 | `lowfallingtone` | `continuant` |
+| 3 | `fallingtone` | `length` |
 | 2 | `highrisingtone` | `strident` |
+| 2 | `affricate` | `stridnt` |
 | 2 | `fricative` | `rhotic` |
+| 2 | `lowfallingtone` | `continuant` |
+| 1 | `highpitch` | `high` |
 | 1 | `intertonic` | `anterior` |
 | 1 | `close` | `cons` |
 | 1 | `lowpitch` | `voice` |
-| 1 | `highpitch` | `high` |
-| 1 | `rounded` | `round` |
 | 1 | `aspirated` | `spread` |
-| 1 | `affricate` | `stridnt` |
-| 1 | `tonic` | `cons` |
-| 1 | `glide` | `click` |
 | 1 | `RP` | `rt` |
+| 1 | `alveolopalatal` | `consonantal` |
+| 1 | `tonic` | `cons` |
 | 1 | `palatalized` | `latrl` |
+| 1 | `glide` | `click` |
 | 1 | `creakyvoice` | `voice` |
 | 1 | `labiovelar` | `labiodental` |
 
@@ -98,8 +94,8 @@
 | 5 | `T` |
 | 3 | `D` |
 | 3 | `Y` |
+| 3 | `X` |
 | 2 | `I` |
-| 2 | `X` |
 | 2 | `A` |
 | 1 | `W` |
 | 1 | `Q` |

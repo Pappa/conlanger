@@ -13,7 +13,8 @@ markers (``— ``) are stripped from the rule line before field split. Remaining
 Index rule arrows (``→``) in field values become ASCA ``>``. Chained rules without
 ``env``/``exception`` expand into sequential single-step rules. Uncertainty glosses
 (``sporadic``, ``sometimes``, …) are stripped from field values and recorded as
-``sporadic: true``. Class-letter expansion is deferred to compile time
+``sporadic: true``. **Feature matrix** synonym replacement inside ``[...]`` via
+``feature_mappings.csv`` (``raw`` unchanged). Class-letter expansion is deferred to compile time
 (``PhonologicalRuleSet`` + ``group_mappings.csv``).
 """
 
@@ -69,6 +70,10 @@ SUBSCRIPT_MAP = str.maketrans(
 DEFAULT_GROUP_MAPPINGS_CSV = (
     Path(__file__).resolve().parents[3] / "data" / "asca" / "group_mappings.csv"
 )
+DEFAULT_FEATURE_MAPPINGS_CSV = (
+    Path(__file__).resolve().parents[3] / "data" / "asca" / "feature_mappings.csv"
+)
+_SUPPORTED_FEATURE_MAPPING_KINDS = frozenset({"rename", "rename_invert"})
 
 # Protect Index stem ``$`` while remapping syllable-boundary ``%`` → ASCA ``$``.
 _STEM_BOUNDARY_PLACEHOLDER = "\ue000"
@@ -357,6 +362,91 @@ def apply_stress_conditions(parts: dict[str, str]) -> dict[str, str]:
     return result
 
 
+def load_feature_mappings(path: Path | None = None) -> list[FeatureMapping]:
+    """Load Index→ASCA feature-matrix synonym mappings from CSV."""
+    csv_path = DEFAULT_FEATURE_MAPPINGS_CSV if path is None else Path(path)
+    if not csv_path.is_file():
+        return []
+    df = pd.read_csv(csv_path, dtype=str, keep_default_na=False)
+    required = {"index_feature", "mapping_kind", "asca_target", "confidence"}
+    missing = required - set(df.columns)
+    if missing:
+        raise ValueError(
+            f"feature mappings CSV missing required columns: {sorted(missing)}"
+        )
+    optional = ("host", "notes")
+    out: list[FeatureMapping] = []
+    for row in df.itertuples(index=False):
+        kind = row.mapping_kind.strip()
+        if kind not in _SUPPORTED_FEATURE_MAPPING_KINDS:
+            raise ValueError(
+                f"unsupported feature mapping_kind {kind!r} for "
+                f"{row.index_feature!r} (Phase 1: rename, rename_invert only)"
+            )
+        out.append(
+            FeatureMapping(
+                index_feature=row.index_feature,
+                mapping_kind=kind,
+                asca_target=row.asca_target,
+                host=getattr(row, "host", "") if "host" in df.columns else "",
+                confidence=row.confidence,
+                notes=getattr(row, "notes", "") if "notes" in df.columns else "",
+            )
+        )
+    return out
+
+
+def feature_mappings_dict(
+    path: Path | None = None,
+) -> dict[str, FeatureMapping]:
+    """Return feature mappings keyed by ``index_feature``."""
+    return {row.index_feature: row for row in load_feature_mappings(path)}
+
+
+def normalize_feature_matrices_in_field(
+    text: str,
+    mappings: dict[str, FeatureMapping],
+) -> str:
+    """Replace Index matrix feature names inside ``[...]`` with ASCA targets."""
+    if not text or not mappings:
+        return text
+    names = sorted(mappings.keys(), key=len, reverse=True)
+    feature_re = re.compile(
+        r"([+-])\s*(" + "|".join(re.escape(name) for name in names) + r")(?![a-zA-Z])"
+    )
+
+    def replace_polarity_and_name(match: re.Match[str]) -> str:
+        polarity, index_name = match.group(1), match.group(2)
+        mapping = mappings[index_name]
+        if mapping.mapping_kind == "rename":
+            return f"{polarity}{mapping.asca_target}"
+        if mapping.mapping_kind == "rename_invert":
+            flipped = "-" if polarity == "+" else "+"
+            return f"{flipped}{mapping.asca_target}"
+        return match.group(0)
+
+    def replace_bracket_inner(match: re.Match[str]) -> str:
+        inner = feature_re.sub(replace_polarity_and_name, match.group(1))
+        return f"[{inner}]"
+
+    return re.sub(r"\[([^\]]*)\]", replace_bracket_inner, text)
+
+
+def apply_feature_mappings(
+    parts: dict[str, str],
+    mappings: dict[str, FeatureMapping] | None = None,
+) -> dict[str, str]:
+    """Normalize Index feature matrix names in rule fields; ``raw`` unchanged upstream."""
+    table = mappings if mappings is not None else feature_mappings_dict()
+    if not table:
+        return parts
+    result = dict(parts)
+    for key in ("input", "output", "env", "exception"):
+        if key in result:
+            result[key] = normalize_feature_matrices_in_field(result[key], table)
+    return result
+
+
 # Index Diachronica stress mark (Key to Abbreviations: ” = Stress).
 _INDEX_STRESS = "\u201d"
 
@@ -387,6 +477,16 @@ class GroupMapping:
     grouping: str
     mapping: str
     comment: str = ""
+
+
+@dataclass(frozen=True)
+class FeatureMapping:
+    index_feature: str
+    mapping_kind: str
+    asca_target: str
+    host: str = ""
+    confidence: str = ""
+    notes: str = ""
 
 
 def to_subscript(text: str) -> str:
@@ -635,6 +735,7 @@ class IndexDiachronicaParser:
         sporadic_flag = {"sporadic": True} if sporadic else {}
         parts = apply_trailing_glosses(parts)
         parts = apply_stress_conditions(parts)
+        parts = apply_feature_mappings(parts)
         return [
             {**entry, "raw": raw, "source": source, **sporadic_flag}
             for entry in expand_chained_rule_parts(parts)

@@ -98,8 +98,8 @@ Do **not** seed from suggestions for: `sibilant`, `dental`, `palatal`, `open`, `
 
 ## Follow-up tickets
 
-1. **[Spike: Index feature matrices → ASCA targets](../issues/29-spike-index-feature-matrices-to-asca-targets.md)** — classify tokens using ASCA `diacritics.json` + feature tree; define `feature_mappings.csv` schema.
-2. **Correction pass: unknown_feature** — implement ingest normalisation from `feature_mappings.csv`; start with `voiced` only; re-inventory.
+1. ~~**[Spike: Index feature matrices → ASCA targets](../issues/29-spike-index-feature-matrices-to-asca-targets.md)**~~ — done; see [index-feature-matrices-to-asca-targets.md](index-feature-matrices-to-asca-targets.md).
+2. **[Correction pass: unknown_feature](../issues/32-correction-pass-unknown-feature.md)** — implement ingest normalisation from `feature_mappings.csv`; Phase 1 renames (`voiced`, `stressed`, `sibilant`); Phase 2 bundles.
 
 ## References
 

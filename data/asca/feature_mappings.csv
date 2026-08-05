@@ -1,0 +1,6 @@
+index_feature,mapping_kind,asca_target,host,confidence,notes
+voiced,rename,voice,,high,Index [±voiced] → ASCA voice (LARYNG node)
+stressed,rename,stress,,high,Index [±stressed] → ASCA stress suprasegmental
+sibilant,rename,strident,,high,Sibilant manner → strident (MANNER); not sonorant
+rounded,rename,round,,high,[+rounded] vowel rounding
+short,rename_invert,long,,medium,Index [+short] = ASCA [-long]; polarity inverted per spike 29

@@ -7,12 +7,18 @@ from lxml import html
 
 from conlanger.tools.parsers import (
     ARROW,
+    DEFAULT_FEATURE_MAPPINGS_CSV,
     DEFAULT_GROUP_MAPPINGS_CSV,
+    FeatureMapping,
     GroupMapping,
     IndexDiachronicaParser,
+    apply_feature_mappings,
     extract_rule_parts,
     extract_text_with_subs,
+    feature_mappings_dict,
+    load_feature_mappings,
     load_group_mappings,
+    normalize_feature_matrices_in_field,
     normalize_stress_marks,
     normalize_symbols,
     parse_rule_element,
@@ -751,4 +757,80 @@ def test_parser_class_letters_unchanged(tmp_path: Path):
     assert rule["env"] == "V_V"
     assert IndexDiachronicaParser().abbreviations() == {}
 
+
+def test_load_feature_mappings_from_default_csv():
+    rows = load_feature_mappings()
+    assert rows
+    by_name = {row.index_feature: row for row in rows}
+    assert by_name["voiced"].mapping_kind == "rename"
+    assert by_name["short"].mapping_kind == "rename_invert"
+    assert by_name["short"].asca_target == "long"
+
+
+def test_normalize_feature_matrices_in_field_rename():
+    mappings = feature_mappings_dict()
+    assert normalize_feature_matrices_in_field("C[+voiced]", mappings) == "C[+voice]"
+    assert normalize_feature_matrices_in_field("N[-voiced]", mappings) == "N[-voice]"
+    assert normalize_feature_matrices_in_field("C[+ sibilant]", mappings) == "C[+strident]"
+
+
+def test_normalize_feature_matrices_in_field_rename_invert():
+    mappings = feature_mappings_dict()
+    assert normalize_feature_matrices_in_field("u[+short]", mappings) == "u[-long]"
+    assert normalize_feature_matrices_in_field("V[-short]", mappings) == "V[+long]"
+
+
+def test_normalize_feature_matrices_in_field_leaves_raw_tokens_outside_brackets():
+    mappings = feature_mappings_dict()
+    assert (
+        normalize_feature_matrices_in_field("short u", mappings) == "short u"
+    )
+
+
+def test_apply_feature_mappings():
+    mappings = {
+        "voiced": FeatureMapping("voiced", "rename", "voice", confidence="high"),
+    }
+    assert apply_feature_mappings(
+        {"input": "C[+voiced]", "output": "C[+voice]"},
+        mappings,
+    ) == {"input": "C[+voice]", "output": "C[+voice]"}
+
+
+def test_parse_rule_element_normalizes_feature_matrices():
+    el = html.fragment_fromstring(
+        '<p class="schg">N → N / C[+voiced]</p>',
+        create_parent=False,
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["input"] == "N"
+    assert rules[0]["env"] == "C[+voice]"
+    assert "[+voiced]" in rules[0]["raw"]
+
+
+def test_parse_rule_element_normalizes_short_to_neg_long():
+    el = html.fragment_fromstring(
+        '<p class="schg">v → ∅ / u[+short]_V[+short]</p>',
+        create_parent=False,
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["env"] == "u[-long]_V[-long]"
+    assert "[+short]" in rules[0]["raw"]
+
+
+@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
+def test_parse_rule_element_voiced_matrix_validates_asca():
+    from conlanger.tools.asca_validator import validate_asca
+    from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
+
+    el = html.fragment_fromstring(
+        '<p class="schg">s → z / _C[+voiced]</p>',
+        create_parent=False,
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    section = {"index": "17.12", "section": "Voicing", "rules": rules}
+    validate_asca(
+        PhonologicalRuleSet(section).to_sound_change_ruleset(),
+        probe_words=Path("tests/fixtures/asca_probe_words.wsca"),
+    )
 

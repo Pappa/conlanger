@@ -1,5 +1,5 @@
 Type: spike
-Status: ready-for-agent
+Status: resolved
 Blocked by: None
 
 # Spike: Index feature matrices → ASCA targets
@@ -30,7 +30,15 @@ For high-volume **`unknown_feature`** tokens in the validation inventory (251 ru
 
 ## Acceptance criteria
 
-- [ ] Every inventory `unknown_feature` token with count ≥ 3 classified into kinds 1–4 with cited ASCA source
-- [ ] Proposed `feature_mappings.csv` columns documented (whether `asca_target` may be a multi-feature matrix)
-- [ ] High-confidence seed rows listed separately from “needs spike / env rewrite” tail
-- [ ] Findings linked from this ticket; no implementation in parser/ingest (spike only)
+- [x] Every inventory `unknown_feature` token with count ≥ 3 classified into kinds 1–4 with cited ASCA source
+- [x] Proposed `feature_mappings.csv` columns documented (whether `asca_target` may be a multi-feature matrix)
+- [x] High-confidence seed rows listed separately from “needs spike / env rewrite” tail
+- [x] Findings linked from this ticket; no implementation in parser/ingest (spike only)
+
+## Answer
+
+Findings: [research/index-feature-matrices-to-asca-targets.md](../research/index-feature-matrices-to-asca-targets.md).
+
+- **~32%** of failures (`voiced`, `stressed`, `sibilant→strident`) are high-confidence **rename** rows; **~32%** are **place bundles** (`dental`, `alveolar`, `palatal`, `velar`, `uvular`); **~35%** **defer** (tone, lenis/fortis, syllable open/closed, `sameC`, `AP`, etc.).
+- **`feature_mappings.csv`** lives at `data/asca/feature_mappings.csv` (not `src/conlanger/data/asca/`). Schema extends ticket 07 with `mapping_kind`, optional `host`, `confidence`; **`asca_target` may be a multi-feature bundle**.
+- Seed CSV block (10 rows) in findings; correction pass should start with `voiced` only per prior assessment, then add bundle support before place labels.
