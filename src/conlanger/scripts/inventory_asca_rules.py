@@ -18,7 +18,7 @@ from pathlib import Path
 
 import yaml
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "src"))
 
 from conlanger.tools.corpus_inventory import parse_unknown_token_error  # noqa: E402

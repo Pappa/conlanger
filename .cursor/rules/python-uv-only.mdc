@@ -16,15 +16,17 @@ alwaysApply: true
 
 ## Running tools and scripts
 
+Ad-hoc scripts should be created in `src/conlanger/scripts` and made executable via `[project.scripts]` in pyproject.toml.
+
 Use **uv** to execute project tools and scripts — do not call bare `python`, `pytest`, or `ruff` unless the user explicitly requests that:
 
 ```bash
 uv run pytest …
 uv run ruff check …
-uv run python scripts/…
+uv run …
 ```
 
-Prefer `uv run` over activating a venv manually.
+Prefer `uv run` over activating a venv  or `python -m` manually.
 
 ## If uv is unavailable
 

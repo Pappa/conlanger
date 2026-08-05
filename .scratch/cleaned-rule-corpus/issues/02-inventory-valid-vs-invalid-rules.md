@@ -18,7 +18,7 @@ Against the current Index Diachronica–derived artifacts (`index_diachronica_or
 
 ## Answer
 
-Ran a fresh per-rule inventory against provisional ASCA-flavoured YAML `legacy/data/index_diachronica_ai.yml` with `asca 0.9.3` (`asca run` + probe wordlist), via `scripts/inventory_asca_rules.py`.
+Ran a fresh per-rule inventory against provisional ASCA-flavoured YAML `legacy/data/index_diachronica_ai.yml` with `asca 0.9.3` (`asca run` + probe wordlist), via `uv run inventory_asca_rules`.
 
 | metric | value |
 |--------|------:|

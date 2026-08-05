@@ -1,7 +1,7 @@
 # Series mappings — coverage backlog
 
 Follow-up work to raise **in-scope** extraction coverage beyond the ticket-28 baseline.  
-Regenerate metrics after any change: `uv run python scripts/extract_series_mappings.py`.
+Regenerate metrics after any change: `uv run extract_series_mappings`.
 
 **Related:** [28-extract-correspondence-series-mappings-from-html](issues/28-extract-correspondence-series-mappings-from-html.md) (done), [27-implement-parse-time-correspondence-series-expansion](issues/27-implement-parse-time-correspondence-series-expansion.md) (blocked on parse-time wiring), live report [series-mappings-coverage.md](series-mappings-coverage.md).
 
@@ -133,7 +133,7 @@ See **Out-of-scope subscript tokens** in [series-mappings-coverage.md](series-ma
 
 ## How to verify after each item
 
-1. `uv run python scripts/extract_series_mappings.py`
+1. `uv run extract_series_mappings`
 2. Check **Extraction confidence** in `series-mappings-coverage.md`
 3. `uv run pytest tests/conlanger/tools/test_series_mappings.py -q`
 4. Optionally tighten `test_extraction_confidence_benchmarks_on_full_html` thresholds

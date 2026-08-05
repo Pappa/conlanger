@@ -41,7 +41,7 @@ Where do per-section **correspondence-series** and **collective subscript** expa
 
 - `data/asca/series_mappings.csv` — 60 rows from HTML citations, inventory tables, and rule I/O inference
 - `src/conlanger/tools/series_mappings.py` — extraction, lookup, audit, coverage report
-- `scripts/extract_series_mappings.py` — regenerate CSV + report
+- `src/conlanger/scripts/extract_series_mappings.py` — regenerate CSV + report
 - `tests/conlanger/tools/test_series_mappings.py` — 34 unit tests
 - `.scratch/cleaned-rule-corpus/series-mappings-coverage.md` — coverage report (77.2% in-scope rule tokens mapped)
 - `.scratch/cleaned-rule-corpus/series-mappings-coverage-backlog.md` — follow-up backlog
