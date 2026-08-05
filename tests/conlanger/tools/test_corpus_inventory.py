@@ -15,6 +15,7 @@ from conlanger.tools.corpus_inventory import (
     section_all_ok_stats_from_dataframe,
     summarize_inventory,
     top_error_tokens,
+    top_error_tokens_with_suggested_from_dataframe,
     validate_corpus_rule,
     validation_rows_to_dataframe,
     write_validation_csv,
@@ -375,6 +376,53 @@ def test_top_error_tokens():
     assert top_error_tokens(rows, "unknown_grouping") == []
 
 
+def test_top_error_tokens_with_suggested_from_dataframe():
+    df = validation_rows_to_dataframe(
+        [
+            ValidationRow(
+                "1",
+                "A",
+                0,
+                "s:1",
+                False,
+                "unknown_feature",
+                "asca-unrepresentable",
+                "voiced",
+                "voice",
+                "err",
+            ),
+            ValidationRow(
+                "1",
+                "A",
+                1,
+                "s:2",
+                False,
+                "unknown_feature",
+                "asca-unrepresentable",
+                "voiced",
+                "voice",
+                "err",
+            ),
+            ValidationRow(
+                "1",
+                "A",
+                2,
+                "s:3",
+                False,
+                "unknown_feature",
+                "asca-unrepresentable",
+                "sibilant",
+                "sonorant",
+                "err",
+            ),
+        ]
+    )
+    assert top_error_tokens_with_suggested_from_dataframe(df, "unknown_feature") == [
+        ("voiced", 2, "voice"),
+        ("sibilant", 1, "sonorant"),
+    ]
+
+
 def test_section_all_ok_stats():
     rows = [
         ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", ""),
@@ -437,7 +485,7 @@ def test_summarize_inventory_common_errors():
     assert "### unknown_character" in text
     assert "| 1 | `→` |" in text
     assert "### unknown_feature" in text
-    assert "| 1 | `voiced` |" in text
+    assert "| 1 | `voiced` | `voice` |" in text
     assert "### unknown_grouping" in text
     assert "| — | _(none)_ |" in text
     assert text.index("## Failure classes") < text.index("## Common Errors")

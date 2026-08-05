@@ -120,25 +120,66 @@ def top_error_tokens_from_dataframe(
     return [(str(token), int(count)) for token, count in counts.items()]
 
 
+def top_error_tokens_with_suggested_from_dataframe(
+    df: pd.DataFrame,
+    failure_class: str,
+    *,
+    limit: int = 5,
+) -> list[tuple[str, int, str]]:
+    """Return top ``error_token`` counts with the modal ASCA ``suggested`` hint."""
+    if df.empty:
+        return []
+    subset = df.loc[
+        (df["failure_class"] == failure_class) & (df["error_token"].astype(str) != "")
+    ]
+    if subset.empty:
+        return []
+    counts = subset["error_token"].value_counts().head(limit)
+    results: list[tuple[str, int, str]] = []
+    for token, count in counts.items():
+        suggested = subset.loc[subset["error_token"] == token, "suggested"]
+        modal = suggested.mode()
+        suggestion = str(modal.iloc[0]) if not modal.empty else ""
+        results.append((str(token), int(count), suggestion))
+    return results
+
+
 def format_common_errors_section(rows: list[ValidationRow]) -> list[str]:
     """Markdown lines for top ``error_token`` counts per unknown-token failure class."""
     df = validation_rows_to_dataframe(rows)
     lines = ["", "## Common Errors", ""]
     for failure_class in COMMON_ERROR_CLASSES:
-        lines.extend(
-            [
-                f"### {failure_class}",
-                "",
-                "| count | error_token |",
-                "|------:|-------------|",
-            ]
-        )
-        top = top_error_tokens_from_dataframe(df, failure_class)
-        if top:
-            for token, count in top:
-                lines.append(f"| {count} | `{token}` |")
+        if failure_class == "unknown_feature":
+            lines.extend(
+                [
+                    f"### {failure_class}",
+                    "",
+                    "| count | error_token | suggested |",
+                    "|------:|-------------|-----------|",
+                ]
+            )
+            top = top_error_tokens_with_suggested_from_dataframe(df, failure_class)
+            if top:
+                for token, count, suggested in top:
+                    suggested_cell = f"`{suggested}`" if suggested else "—"
+                    lines.append(f"| {count} | `{token}` | {suggested_cell} |")
+            else:
+                lines.append("| — | _(none)_ | — |")
         else:
-            lines.append("| — | _(none)_ |")
+            lines.extend(
+                [
+                    f"### {failure_class}",
+                    "",
+                    "| count | error_token |",
+                    "|------:|-------------|",
+                ]
+            )
+            top = top_error_tokens_from_dataframe(df, failure_class)
+            if top:
+                for token, count in top:
+                    lines.append(f"| {count} | `{token}` |")
+            else:
+                lines.append("| — | _(none)_ |")
         lines.append("")
     return lines
 

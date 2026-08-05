@@ -42,13 +42,13 @@
 
 ### unknown_feature
 
-| count | error_token |
-|------:|-------------|
-| 56 | `voiced` |
-| 22 | `sibilant` |
-| 18 | `dental` |
-| 14 | `open` |
-| 13 | `palatal` |
+| count | error_token | suggested |
+|------:|-------------|-----------|
+| 56 | `voiced` | `voice` |
+| 22 | `sibilant` | `sonorant` |
+| 18 | `dental` | `ldental` |
+| 14 | `open` | `ten` |
+| 13 | `palatal` | `latrl` |
 
 ### unknown_grouping
 
