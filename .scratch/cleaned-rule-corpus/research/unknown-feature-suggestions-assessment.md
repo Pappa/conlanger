@@ -98,14 +98,13 @@ Do **not** seed from suggestions for: `sibilant`, `dental`, `palatal`, `open`, `
 
 ## Follow-up tickets
 
-1. **Correction pass: unknown_feature** — implement ingest normalisation from `feature_mappings.csv`; start with `voiced` only; re-inventory.
-2. **Spike: Index place features** (`dental`, `palatal`, `velar`, `alveolar`, …) — map to ASCA coronal/dorsal feature bundles ([research/asca-rule-validity.md](asca-rule-validity.md) §3).
-3. **Spike: suprasegmental Index labels** (`hightone`, `lowtone`, `fallingtone`, …) — tone vs length vs stress in ASCA 0.10.2.
-4. **Spike: lenis/fortis and glottalized** — relation to `[+cg]` / `[+spread]` ([asca-ejective-notation.md](asca-ejective-notation.md)).
+1. **[Spike: Index feature matrices → ASCA targets](../issues/29-spike-index-feature-matrices-to-asca-targets.md)** — classify tokens using ASCA `diacritics.json` + feature tree; define `feature_mappings.csv` schema.
+2. **Correction pass: unknown_feature** — implement ingest normalisation from `feature_mappings.csv`; start with `voiced` only; re-inventory.
 
 ## References
 
 - [Normalise segment feature matrices for appliers](../issues/07-normalise-segment-features.md)
 - [ASCA rule validity research](asca-rule-validity.md)
 - [ASCA Feature shorthands (0.10.2)](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#feature-shorthands)
+- [ASCA `diacritics.json` (0.10.2)](https://raw.githubusercontent.com/Girv98/asca-rust/36c3c623fb9f501a358ae087764e77b92d0037bf/src/diacritics.json) — semantic payloads for named categories
 - Inventory summary: [asca-rule-inventory-summary.md](../inventory/asca-rule-inventory-summary.md) (`unknown_feature` table now includes `suggested` column)

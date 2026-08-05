@@ -50,12 +50,13 @@ Phased delivery — not vertical slices upfront:
 
 1. ~~**[Minimal extract-only ingest](issues/11-minimal-extract-only-ingest.md)**~~ — done (parse path also gained class-first fixes from passes 14–25).
 2. ~~**[Full-corpus validation inventory](issues/12-full-corpus-validation-inventory.md)**~~ — done; re-run after each correction pass.
-3. **[Correction passes](issues/13-correction-pass-template.md)** — in progress via [14–25](issues/14-correction-pass-unknown-grouping.md). ~~[Extract correspondence-series mappings from Index Diachronica HTML](issues/28-extract-correspondence-series-mappings-from-html.md)~~ done → [Implement parse-time correspondence-series expansion](issues/27-implement-parse-time-correspondence-series-expansion.md). Coverage follow-ups: [series-mappings-coverage-backlog.md](series-mappings-coverage-backlog.md).
+3. **[Correction passes](issues/13-correction-pass-template.md)** — in progress via [14–25](issues/14-correction-pass-unknown-grouping.md). ~~[Extract correspondence-series mappings from Index Diachronica HTML](issues/28-extract-correspondence-series-mappings-from-html.md)~~ done → [Implement parse-time correspondence-series expansion](issues/27-implement-parse-time-correspondence-series-expansion.md). Coverage follow-ups: [series-mappings-coverage-backlog.md](series-mappings-coverage-backlog.md). Next cluster prep: [Spike: Index feature matrices → ASCA targets](issues/29-spike-index-feature-matrices-to-asca-targets.md) (before `unknown_feature` correction pass).
 
 **Compile validation:** use ASCA directly (`validate_asca` / `asca run` + baseline wordlist). Rule-derived candidate generation ([ticket 10](issues/10-rule-derived-probe-synthesis.md)) — **wontfix**.
 
 ## Not yet specified
 
+- **`unknown_feature` correction pass** — blocked on [Spike: Index feature matrices → ASCA targets](issues/29-spike-index-feature-matrices-to-asca-targets.md); triage already in [research/unknown-feature-suggestions-assessment.md](research/unknown-feature-suggestions-assessment.md)
 - **Positional slot** and **identity subscript** parse-time policy — ASCA reference/alpha syntax mapping (separate from correspondence-series work; tickets 28–27)
 - **Whitespace tokenisation for ASCA** — inter-segment spacing (deferred from ticket 07)
 - **Meta-notation at ingest** — later find/replace; cluster-driven for now (ticket 06)
