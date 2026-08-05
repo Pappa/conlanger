@@ -22,7 +22,7 @@ Smoke re-check: **157 / 266** now pass with leading-marker strip; 1 inline em da
 Re-run full inventory:
 
 ```bash
-uv run python -m conlanger.scripts.regenerate_corpus
+uv run regenerate_corpus
 ```
 
 ## Notes

@@ -24,7 +24,7 @@ Smoke re-check on the same 317 rows after compile mappings (ASCA 0.10.2, baselin
 Re-run full inventory to refresh CSV/summary:
 
 ```bash
-uv run python -m conlanger.scripts.regenerate_corpus
+uv run regenerate_corpus
 ```
 
 ## Acceptance criteria

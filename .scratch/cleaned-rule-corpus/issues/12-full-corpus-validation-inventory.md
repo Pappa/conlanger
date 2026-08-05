@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: 11
 
 # Full-corpus validation inventory
@@ -31,8 +31,18 @@ Re-baseline against cleaned schema + ASCA 0.10.2, replacing the provisional 0.9.
 
 ## Acceptance criteria
 
-- [ ] One command regenerates cleaned YAML + validation report CSV + summary markdown from HTML path
-- [ ] CSV columns include section identity, rule index, ok/fail, failure class, reason, description
-- [ ] Summary records rule counts, ok/fail percentages, and top failure classes (reproducible across runs)
-- [ ] Inventory artifacts written under `.scratch/cleaned-rule-corpus/inventory/`
-- [ ] Per-**corpus rule** validation — one bad rule in a section does not obscure others
+- [x] One command regenerates cleaned YAML + validation report CSV + summary markdown from HTML path
+- [x] CSV columns include section identity, rule index, ok/fail, failure class, reason, description
+- [x] Summary records rule counts, ok/fail percentages, and top failure classes (reproducible across runs)
+- [x] Inventory artifacts written under `.scratch/cleaned-rule-corpus/inventory/`
+- [x] Per-**corpus rule** validation — one bad rule in a section does not obscure others
+
+## Answer
+
+Entry point: `uv run regenerate_corpus` (`src/conlanger/scripts/regenerate_corpus.py`).
+
+Inventory module: `src/conlanger/tools/corpus_inventory.py` — per-rule validation via `PhonologicalRuleSet(...).to_sound_change_ruleset()` + `validate_asca` (ASCA 0.10.2, baseline `tests/fixtures/asca_probe_words.wsca`).
+
+Artifacts: `.scratch/cleaned-rule-corpus/inventory/asca-rule-inventory.csv` and `asca-rule-inventory-summary.md`.
+
+Latest baseline (after passes 14–25): **6422 / 9317 ok (68.9%)**; top failure classes: `syntax_other`, `unknown_character`, `expected_underscore`, `unknown_feature`. Replaces provisional 0.9.3 / `index_diachronica_ai.yml` inventory.

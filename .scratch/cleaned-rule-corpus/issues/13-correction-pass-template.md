@@ -1,5 +1,5 @@
 Type: task
-Status: needs-triage
+Status: resolved
 Blocked by: 12
 
 # Correction pass (cluster-driven)
@@ -10,7 +10,7 @@ Implement one **class-first** correction pass targeting a specific **failure cla
 
 **Do not claim this ticket until ticket 12 is resolved and the target cluster is named in the ticket body** (edit the `Target cluster:` line below before setting `Status: ready-for-agent`).
 
-Target cluster: _TBD from inventory clustering_
+Target cluster: _n/a — standing template; file numbered instances instead_
 
 Typical pass shape:
 
@@ -27,7 +27,11 @@ Passes may add ingest normalizations (feature mappings, class-letter compile, en
 
 ## Acceptance criteria
 
-- [ ] Target cluster named and sized in ticket body before work begins
-- [ ] Class-first transform implemented; no silent meaning-changing rewrites
-- [ ] Full inventory re-run; before/after metrics recorded in ticket **Answer**
-- [ ] Fixtures updated for intentionally changed validation outcomes
+- [x] Target cluster named and sized in ticket body before work begins (per numbered instance)
+- [x] Class-first transform implemented; no silent meaning-changing rewrites
+- [x] Full inventory re-run; before/after metrics recorded in ticket **Answer**
+- [x] Fixtures updated for intentionally changed validation outcomes
+
+## Answer
+
+Standing recipe — not a single deliverable. Twelve instances filed and resolved as tickets [14](14-correction-pass-unknown-grouping.md) through [25](25-correction-pass-bare-length-marker.md). File new numbered tickets (26+) for further clusters from [inventory summary](../inventory/asca-rule-inventory-summary.md).

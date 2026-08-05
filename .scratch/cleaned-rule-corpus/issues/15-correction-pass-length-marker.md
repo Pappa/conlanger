@@ -28,7 +28,7 @@ Smoke re-check on same rows with full compile path (group mappings + length mark
 Re-run full inventory:
 
 ```bash
-uv run python -m conlanger.scripts.regenerate_corpus
+uv run regenerate_corpus
 ```
 
 ## Notes

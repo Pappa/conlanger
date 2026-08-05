@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: None
 
 # Minimal extract-only ingest
@@ -26,8 +26,20 @@ None — can start immediately.
 
 ## Acceptance criteria
 
-- [ ] `IndexDiachronicaParser` emits spec-aligned YAML (`abbreviations` + `sections`; corpus rules with `input`/`output`/`raw`/`source`; optional `env`/`exception` omitted when absent)
-- [ ] Only **Symbol** normalization runs on corpus fields; `raw` preserves Index form byte-for-byte
-- [ ] Ingest-time class-letter `maketrans` / `group_mappings` application removed from the parser path
-- [ ] `tests/conlanger/tools/test_IndexDiachronicaParser.py` passes for `html_extract` fixture rows (field splitting and provenance)
-- [ ] Regenerated YAML is git-diffable from `data/diachronica/index_diachronica_original.html`
+- [x] `IndexDiachronicaParser` emits spec-aligned YAML (`abbreviations` + `sections`; corpus rules with `input`/`output`/`raw`/`source`; optional `env`/`exception` omitted when absent)
+- [x] **Symbol** normalization runs on corpus fields; `raw` preserves Index form byte-for-byte
+- [x] Ingest-time class-letter `maketrans` / `group_mappings` application removed from the parser path
+- [x] `tests/conlanger/tools/test_IndexDiachronicaParser.py` passes for `html_extract` fixture rows (field splitting and provenance)
+- [x] Regenerated YAML is git-diffable from `data/diachronica/index_diachronica_original.html`
+
+## Answer
+
+Delivered via `IndexDiachronicaParser` (`src/conlanger/tools/parsers.py`) and `write_cleaned_corpus` (`src/conlanger/tools/corpus_io.py`). Output: `data/diachronica/index_diachronica_parsed.yml`.
+
+Core ticket scope met: four rule parts + **Symbol** normalization; class letters and feature matrices deferred. Correction passes [14–25](14-correction-pass-unknown-grouping.md) later added parse-time class-first transforms (em dash, arrows, chain split, glosses, stress, `sporadic`) per ticket [13](13-correction-pass-template.md) — beyond the original “symbol-only” milestone but consistent with the edit ladder.
+
+Regenerate:
+
+```bash
+uv run regenerate_corpus --skip-validation
+```
