@@ -8,7 +8,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 
 ## Notes
 
-- Glossary: `CONTEXT.md`. Decisions: ADRs 0001–0010.
+- Glossary: `CONTEXT.md` — **Subscript notation** (four uses: correspondence-series index, positional slot, identity subscript, collective subscript). Decisions: ADRs 0001–0010.
 - Skills: `/research`, `/grill-with-docs` or grilling + domain-modeling, `/prototype` if needed.
 - Tracker: `docs/agents/issue-tracker.md` (Wayfinding operations).
 
@@ -39,6 +39,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - [Correction pass: labialized Index class letters (Kʷ, K(ʷ), …)](issues/23-correction-pass-labialized-class-letters.md) — compile labialization on class letters.
 - [Correction pass: smart quotes and typographic apostrophes](issues/24-correction-pass-smart-quotes.md) — parse + compile quote/apostrophe cleanup.
 - [Correction pass: remaining bare length marker ː](issues/25-correction-pass-bare-length-marker.md) — extended length-mark compile pass; `ː` cluster 242 → 40.
+- [Parse-time resolution for correspondence-series indices](issues/26-parse-time-correspondence-series-indices.md) — expand at HTML→YAML parse to ASCA-parseable strings when section map exists; `raw` retains subscripts; unmapped → literal + validation fail (no pre-emptive skip). ADR-0004 amended.
 
 ## Implementation plan (tickets 11+)
 
@@ -46,20 +47,21 @@ Phased delivery — not vertical slices upfront:
 
 1. ~~**[Minimal extract-only ingest](issues/11-minimal-extract-only-ingest.md)**~~ — done (parse path also gained class-first fixes from passes 14–25).
 2. ~~**[Full-corpus validation inventory](issues/12-full-corpus-validation-inventory.md)**~~ — done; re-run after each correction pass.
-3. **[Correction passes](issues/13-correction-pass-template.md)** — in progress via [14–25](issues/14-correction-pass-unknown-grouping.md); cluster from [inventory summary](inventory/asca-rule-inventory-summary.md) (`syntax_other`, `unknown_character`, `expected_underscore`, `unknown_feature` lead). Continue until adoption criteria met.
+3. **[Correction passes](issues/13-correction-pass-template.md)** — in progress via [14–25](issues/14-correction-pass-unknown-grouping.md); cluster from [inventory summary](inventory/asca-rule-inventory-summary.md). Next: [parse-time correspondence-series expansion](issues/27-implement-parse-time-correspondence-series-expansion.md) (`unknown_character` subscripts).
 
 **Compile validation:** use ASCA directly (`validate_asca` / `asca run` + baseline wordlist). Rule-derived candidate generation ([ticket 10](issues/10-rule-derived-probe-synthesis.md)) — **wontfix**.
 
 ## Not yet specified
 
+- **Positional slot** and **identity subscript** parse-time policy — ASCA reference/alpha syntax mapping (separate from correspondence-series expansion; ticket 27)
 - **Whitespace tokenisation for ASCA** — inter-segment spacing (deferred from ticket 07)
 - **Meta-notation at ingest** — later find/replace; cluster-driven for now (ticket 06)
-- **Series indices** and section-local prose abbreviations — cluster-driven; hand-add mapping rows when warranted
+- **Section-local abbreviations** (e.g. Athabaskan `TŠ`) — cluster-driven; hand-add mapping rows when warranted
 - Abbreviation table authorship at scale
 - Prose-**environment** mapping
 - Adoption criteria for cleaned YAML replacing HTML as **SoT**
 - Brassica compiler (ADR-0001)
-- Edge-split policy (ADR-0005; interim **skipped**)
+- Edge-split policy (ADR-0005; **`status: skipped` deferred** until post-correction triage per ticket 26 / ADR-0010)
 - External one-off rule override schema
 
 ## Out of scope

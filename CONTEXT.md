@@ -83,7 +83,7 @@ _Avoid_: section index alone as sufficient provenance; opaque “from HTML” no
 ### Index Diachronica notation
 
 **Abbreviation**:
-Index Diachronica notational shorthand whose expansion is defined for compile — including class letters, symbols, and series-indexed tokens.
+Index Diachronica notational shorthand whose expansion is defined for compile — including class letters, symbols, section-local tokens, and subscript-marked slots. See **Class letter**, **Symbol**, and the four subscript uses under **Subscript notation**.
 _Avoid_: “alias”, “mapping”, “grouping” as the glossary term for these symbols
 
 **Class letter**:
@@ -94,21 +94,41 @@ _Avoid_: treating every capital letter in a rule as a class letter; single-chara
 Index boundary, null, stress, or syllable marks (`#`, `$`, `%`, `∅`, stress notation, etc.) — distinct from class letters. Normalised to ASCA-canonical form in corpus fields at HTML→YAML ingest; `raw` preserves the Index form.
 _Avoid_: lumping symbols with class letters under “abbreviation” when the distinction matters
 
-**Series index**:
-A subscript marker on a segment in Index Diachronica (e.g. `x₂`) identifying which member of a correspondence series is meant.
-_Avoid_: “subscript decoration”, treating `x₂` as identical to `x`
+**Subscript notation**:
+Index Diachronica’s use of Unicode subscripts (from HTML `<sub>`) attached to rule tokens. Four distinct uses — **correspondence-series index**, **positional slot**, **identity subscript**, **collective subscript** — must not be conflated; each has different resolution requirements.
+_Avoid_: “subscript decoration”; treating every subscript as a correspondence-series index; silent stripping of subscripts
+
+**Correspondence-series index**:
+An ordinal subscript on a **concrete segment** (IPA letter or spelled segment such as `s`, `x`, `eh`) selecting the *n*th member of a **correspondence series** for that sound-change section (Index key: `Xₙ` on segments; e.g. `s₁`, `x₂`, `eh₂`). Expansion requires a section-specific mapping; unmapped indices stay in the rule string and surface via validation clusters.
+_Avoid_: treating `s₁` as identical to `s`; applying global segment→IPA substitution without section scope
 
 **Correspondence series**:
-An ordered set of related segments referenced by series indices in a section (e.g. Athabaskan `T`, `TŠ`, `K`, `Q` series). Resolution requires section-specific mapping; unmapped indices surface via validation clusters.
-_Avoid_: treating a series index as a free-standing segment; silent stripping to the base letter
+An ordered set of related segments referenced by **correspondence-series indices** in a section (e.g. Afro-Asiatic `s₁`–`s₃`, `h₁`–`h₃` defined in section citation). Distinct from Athabaskan multi-letter series labels (`TŠ`, `TS`, `K`) — those are **section-local abbreviations**, not subscripts.
+_Avoid_: treating a correspondence-series index as a free-standing segment; silent stripping to the base letter; calling Athabaskan `TŠ` a series index
+
+**Positional slot**:
+An ordinal subscript on a **class letter**, marking a numbered position in a rule template; tokens sharing the same base+subscript co-refer within the rule (Index key: `Xₙ` on class letters; e.g. `C₁C₂ → C₂`, `N₁N₂ → N₂ː`, `V₁…V₂`). Slot compounds such as `nV₀` or `sV₀` combine a segment literal with a vowel slot (often **identity subscript** on `V₀`). Requires applier reference/alpha syntax or an explicit compile strategy — not correspondence-series expansion.
+_Avoid_: expanding `C₁` via `group_mappings.csv`; treating `C₁` as a correspondence-series index on a concrete segment
+
+**Identity subscript**:
+Subscript `₀` on any base, meaning “the same instance as other tokens bearing the same base+₀ in this rule” (Index key: `X₀`; e.g. `V₀V₀ → V₀`, `h → ʔ / V₀V₀`, `V₀ʔV₀ → V₀ː`). Co-reference notation, not selection from a correspondence series.
+_Avoid_: treating `V₀` as “zeroth vowel of a series”; stripping `₀` to normalize
+
+**Collective subscript**:
+Subscript `ₓ` (or `x`), meaning all members of a sequence or series (Index key: `Xₓ`; e.g. `{Hₓ,m̩,n̩} → a`). Quantifies over a class or series rather than picking one member.
+_Avoid_: treating `Hₓ` as a single segment; conflating with correspondence-series index `H₁`
+
+**Section-local abbreviation**:
+Multi-letter or prose shorthand defined only for one sound-change section (or family of sections), not in the global Index key — e.g. Athabaskan `TŠ`, `TS`, `K`, `Q` series labels. Resolved via section `abbreviations` tables when mapped; otherwise cluster-driven. Not a subscript use.
+_Avoid_: “series index” for `TŠ`; global `group_mappings.csv` rows for section-only labels
 
 **Feature matrix**:
 A distinctive-feature bundle written in brackets on a segment or alone in a rule string (e.g. `[+voice]`, `C:[+strident]`). At HTML→YAML ingest, Index feature names with safe 1:1 ASCA equivalents are normalised to ASCA canonical names via `feature_mappings.csv`; unmapped names are left as-is. `raw` preserves the original HTML form.
 _Avoid_: listing individual ASCA feature names or shorthands in this glossary; “features” when meaning phoneme-inventory dimensions
 
 **Meta-notation**:
-Index notational conventions that are neither class letters nor normalisable symbols — e.g. `X0`, `Xn`, `Xx`, retroflex `X̣`, `(…X)` repetition. Handled via validation clusters; no global compile expansion yet.
-_Avoid_: treating meta-notation as class letters; inventing ASCA expansions without a cluster-driven decision
+Index notational conventions that are neither class letters, symbols, nor the four **subscript notation** uses — e.g. retroflex `X̣`, `(…X)` repetition, tone **superscripts** `Xⁿ` (distinct from subscript `Xₙ`). Handled via validation clusters; no global compile expansion yet.
+_Avoid_: treating meta-notation as class letters or subscript slots; inventing ASCA expansions without a cluster-driven decision
 
 ### Compile and validation
 

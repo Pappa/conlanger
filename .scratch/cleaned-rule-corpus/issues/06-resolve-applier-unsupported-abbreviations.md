@@ -16,7 +16,7 @@ Which Index Diachronica abbreviations (class letters, series indices, other shor
 
 ## Answer
 
-Domain terms: **Class letter**, **Symbol**, **Meta-notation**, **PhonologicalRuleSet**, **Abbreviation table**, **Failure class**, **Series index**, **Correspondence series** — see `CONTEXT.md`.
+Domain terms: **Class letter**, **Symbol**, **Meta-notation**, **PhonologicalRuleSet**, **Abbreviation table**, **Failure class**, **Subscript notation**, **Correspondence series**, **Section-local abbreviation** — see `CONTEXT.md`.
 
 ### Decisions
 

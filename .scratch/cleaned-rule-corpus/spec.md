@@ -84,6 +84,7 @@ Brassica compilation remains a future parallel path behind the same corpus (ADR-
 - Parser: `IndexDiachronicaParser` using lxml; phases cover section structure, `→` I/O split, `/ env` and `! exception` parsing, citation/comments.
 - **Symbol** normalisation at ingest to ASCA-canonical form in corpus fields; `raw` unchanged.
 - **Parse-time class-first transforms** (correction passes 14–25, per edit ladder): leading em-dash list markers; remaining `→` → `>` in field values; chain split (no env/exception → sequential corpus rules); uncertainty glosses → `sporadic: true`; trailing editorial glosses; env stress phrases (`when stressed` / `when unstressed`); smart-quote cleanup. All preserve `raw`.
+- **Correspondence-series indices** and **collective subscripts**: parse-time expansion to ASCA-parseable strings when section map exists; `raw` unchanged; unmapped tokens left literal (ticket [26](issues/26-parse-time-correspondence-series-indices.md), implementation [27](issues/27-implement-parse-time-correspondence-series-expansion.md)). **Positional slots** and **identity subscripts** — not yet implemented.
 - **Feature matrix** synonym replacement at ingest inside `[...]` via `feature_mappings.csv`: **not yet implemented**; unmapped names left as-is (`unknown_feature` cluster).
 - **Class letters**: no ingest-time `str.maketrans` blind substitution; expansion at compile via **PhonologicalRuleSet** + `group_mappings.csv`. Six letters (C, O, F, L, N, V) pass through (ASCA inbuilt). Seventeen validated rows in `group_mappings.csv`; M (diphthong) removed — cluster-driven.
 - **Series indices**, section-local prose abbreviations, **meta-notation**: cluster-driven; hand-add abbreviation rows when inventory warrants.
@@ -101,7 +102,7 @@ Brassica compilation remains a future parallel path behind the same corpus (ADR-
 
 ### Historical fidelity and rule status
 
-- Edit ladder (ADR-0010, ticket 04): class-first safe transforms OK; meaning-changing or ASCA-unrepresentable → `status: skipped`; structural normalisation → `needs-validation` until re-validated; valid-but-inaccurate rewrites forbidden.
+- Edit ladder (ADR-0010, ticket 04): class-first safe transforms OK; meaning-changing or ASCA-unrepresentable → `status: skipped`; structural normalisation → `needs-validation` until re-validated; valid-but-inaccurate rewrites forbidden. During bulk correction (passes 14+), do **not** pre-emptively skip unmapped tokens — apply skip only after class-first work is exhausted (ticket [26](issues/26-parse-time-correspondence-series-indices.md)).
 - Corpus carries thin optional `status` only; full `reason`/`description`/validator detail live in temporary **validation report** CSV.
 - Defined transform classes: apply without per-rule approval. Permanent skip / rare swaps: project owner only.
 

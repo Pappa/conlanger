@@ -43,7 +43,7 @@ sections:
 | `sporadic` | no | **Uncertainty** — rule application is sporadic or optional; gloss stripped from fields |
 | `status` | no | **Rule status** — see ticket 04; reasons in **validation report** |
 
-Field values are opaque Index-shaped strings — not an ASCA AST. See **Corpus rule**, **Applier-neutral**, **Series index** in `CONTEXT.md`. Abbreviation / feature policy: tickets 06, 07.
+Field values are opaque Index-shaped strings — not an ASCA AST. See **Corpus rule**, **Applier-neutral**, **Subscript notation** in `CONTEXT.md`. Abbreviation / feature policy: tickets 06, 07.
 
 ### Ingest note
 
