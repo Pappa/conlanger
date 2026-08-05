@@ -36,3 +36,7 @@ Where do per-section **correspondence-series** and **collective subscript** expa
 - [ ] At least Afro-Asiatic (`6.x`) and one laryngeal-series family covered with cited HTML sources
 - [ ] No imports, copies, or references to `legacy/` in new code or data artifacts
 - [ ] Unit tests on extraction helpers where logic is non-trivial
+
+## Follow-up (optional)
+
+Coverage baseline and backlog for raising in-scope rule coverage beyond ~77%: [series-mappings-coverage-backlog.md](../series-mappings-coverage-backlog.md).

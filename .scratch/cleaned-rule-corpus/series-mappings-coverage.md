@@ -3,6 +3,8 @@
 HTML source: `index_diachronica_original.html`
 Mappings: `series_mappings.csv` (60 rows)
 
+See [series-mappings-coverage-backlog.md](series-mappings-coverage-backlog.md) for follow-up work to raise in-scope coverage.
+
 ## Extraction confidence
 
 Use **in-scope rule coverage** (correspondence-series + collective subscripts only) — not the raw rule-token total, which includes positional slots (`C₁`), identity subscripts (`V₀`), and compounds (`eh₂`) handled by other tickets.
