@@ -58,7 +58,7 @@ Phased delivery — not vertical slices upfront:
 
 ## Not yet specified
 
-- **Positional slot** and **identity subscript** parse-time policy — ASCA reference/alpha syntax mapping (separate from correspondence-series work; tickets 28–27)
+- **Positional slot** and **identity subscript** parse-time policy — researched: [positional-slots-and-identity-subscripts.md](research/positional-slots-and-identity-subscripts.md) recommends **compile-time** ASCA reference expansion in `RuleChange` (`C₁` → `C=1`, `V₀` → `V=0`); ~75 rules; open grilling items before ticket
 - **Whitespace tokenisation for ASCA** — inter-segment spacing (deferred from ticket 07)
 - **Meta-notation at ingest** — later find/replace; cluster-driven for now (ticket 06)
 - **Section-local abbreviations** (e.g. Athabaskan `TŠ`) — cluster-driven; hand-add mapping rows when warranted
