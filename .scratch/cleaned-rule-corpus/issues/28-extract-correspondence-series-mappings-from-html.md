@@ -1,6 +1,6 @@
 Type: task
 Status: ready-for-agent
-Blocked by: 26
+Blocked by: None
 
 # Extract correspondence-series mappings from Index Diachronica HTML
 
@@ -36,7 +36,3 @@ Where do per-section **correspondence-series** and **collective subscript** expa
 - [ ] At least Afro-Asiatic (`6.x`) and one laryngeal-series family covered with cited HTML sources
 - [ ] No imports, copies, or references to `legacy/` in new code or data artifacts
 - [ ] Unit tests on extraction helpers where logic is non-trivial
-
-## Blocked by
-
-- [Parse-time resolution for correspondence-series indices](26-parse-time-correspondence-series-indices.md)
