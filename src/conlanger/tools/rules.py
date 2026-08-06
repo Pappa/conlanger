@@ -11,6 +11,26 @@ _GROUPING_FOLLOW_LABIALIZED = (
 )
 _LABIAL = "\u02b7"
 _ASCA_NATIVE_GROUPINGS = frozenset("COSPFLNGV")
+_ELLIPSIS = "\u2026"
+# Index optional grouping: ``(C…)`` / ``(C..)`` / ``(C...)`` → ASCA ``(C,0)`` (zero-or-more).
+_OPTIONAL_GROUPING_ELLIPSIS_RE = re.compile(rf"\(([A-Z$%#])(?:{_ELLIPSIS}|\.\.\.?)\)")
+
+
+def normalize_asca_optional_grouping_ellipsis(text: str) -> str:
+    """Map Index zero-or-more grouping ``(C…)`` to ASCA ``(C,0)``."""
+    if not text or not re.search(rf"\([A-Z$%#](?:{_ELLIPSIS}|\.{{2,3}})", text):
+        return text
+
+    parts: list[str] = []
+    for segment in re.split(r"(\[[^\]]*\])", text):
+        if not segment:
+            continue
+        if segment.startswith("[") and segment.endswith("]"):
+            parts.append(segment)
+        else:
+            parts.append(_OPTIONAL_GROUPING_ELLIPSIS_RE.sub(r"(\1,0)", segment))
+    return "".join(parts)
+
 
 # Index length marks → ASCA [+long] feature (compile-time, ASCA only).
 _LENGTH = "\u02d0"
@@ -325,6 +345,7 @@ class RuleChange(RulePartBase):
             result += separator["exception"] + self.exception
 
         if format == "asca":
+            result = normalize_asca_optional_grouping_ellipsis(result)
             result = self._apply_asca_group_mappings(result, format)
             result = normalize_asca_length_marks(result)
             result = normalize_typographic_apostrophes(result)
