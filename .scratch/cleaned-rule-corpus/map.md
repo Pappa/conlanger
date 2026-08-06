@@ -58,7 +58,8 @@ Phased delivery — not vertical slices upfront:
 
 ## Not yet specified
 
-- **Positional slot** and **identity subscript** parse-time policy — researched: [positional-slots-and-identity-subscripts.md](research/positional-slots-and-identity-subscripts.md) recommends **compile-time** ASCA reference expansion in `RuleChange` (`C₁` → `C=1`, `V₀` → `V=0`); ~75 rules; open grilling items before ticket
+- **Subscript notation (all four uses)** — grilled + researched: [subscript-notation-index-asca-brassica.md](research/subscript-notation-index-asca-brassica.md), [positional-slots-and-identity-subscripts.md](research/positional-slots-and-identity-subscripts.md). **Working policy (grill, not yet ADR’d):** correspondence-series + collective → **parse-time** (collective members as ASCA `{…}` in corpus; Brassica delimiter rewrite deferred to compile if/when); positional + identity → **compile-time** per applier (Index-shaped in YAML). ADR offer deferred — owner wants more time. **Implementation deferred:** two future tickets (happy-path + compound-split); compile order vs `group_mappings` left open until then. Resume after more inventory correction. Residual clusters (`Hₓ`, uppercase `S₁`/section-local) stay separate.
+- **`same POA` / inventory `samePOA`:** [33-debug-same-poa-feature-artefact.md](issues/33-debug-same-poa-feature-artefact.md) — spike’s `sameC` label appears to be an artefact; HTML has `same POA` only.
 - **Whitespace tokenisation for ASCA** — inter-segment spacing (deferred from ticket 07)
 - **Meta-notation at ingest** — later find/replace; cluster-driven for now (ticket 06)
 - **Section-local abbreviations** (e.g. Athabaskan `TŠ`) — cluster-driven; hand-add mapping rows when warranted

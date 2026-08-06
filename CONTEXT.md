@@ -111,16 +111,16 @@ An ordered set of related segments referenced by **correspondence-series indices
 _Avoid_: treating a correspondence-series index as a free-standing segment; silent stripping to the base letter; calling Athabaskan `TŠ` a series index
 
 **Positional slot**:
-An ordinal subscript on a **class letter**, marking a numbered position in a rule template; tokens sharing the same base+subscript co-refer within the rule (Index key: `Xₙ` on class letters; e.g. `C₁C₂ → C₂`, `N₁N₂ → N₂ː`, `V₁…V₂`). Slot compounds such as `nV₀` or `sV₀` combine a segment literal with a vowel slot (often **identity subscript** on `V₀`). Requires applier reference/alpha syntax or an explicit compile strategy — not correspondence-series expansion.
-_Avoid_: expanding `C₁` via `group_mappings.csv`; treating `C₁` as a correspondence-series index on a concrete segment
+An ordinal subscript on a **class letter**, marking a numbered position in a rule template; tokens sharing the same base+subscript co-refer within the rule (Index key: `Xₙ` on class letters; e.g. `C₁C₂ → C₂`, `N₁N₂ → N₂ː`, `V₁…V₂`). Slot compounds such as `nV₀` or `sV₀` combine a segment literal with a vowel slot (often **identity subscript** on `V₀`). Corpus fields keep Index-shaped tokens; each **applier compiler** projects them (ASCA references, Brassica backreferences) — not correspondence-series expansion and not parse-time rewrite.
+_Avoid_: expanding `C₁` via `group_mappings.csv`; treating `C₁` as a correspondence-series index on a concrete segment; storing ASCA `C=1` or Brassica `@#…` in the rule corpus
 
 **Identity subscript**:
-Subscript `₀` on any base, meaning “the same instance as other tokens bearing the same base+₀ in this rule” (Index key: `X₀`; e.g. `V₀V₀ → V₀`, `h → ʔ / V₀V₀`, `V₀ʔV₀ → V₀ː`). Co-reference notation, not selection from a correspondence series.
-_Avoid_: treating `V₀` as “zeroth vowel of a series”; stripping `₀` to normalize
+Subscript `₀` on any base, meaning “the same instance as other tokens bearing the same base+₀ in this rule” (Index key: `X₀`; e.g. `V₀V₀ → V₀`, `h → ʔ / V₀V₀`, `V₀ʔV₀ → V₀ː`). Co-reference notation, not selection from a correspondence series. Like **positional slots**, Index-shaped in the corpus and projected at compile per applier.
+_Avoid_: treating `V₀` as “zeroth vowel of a series”; stripping `₀` to normalize; conflating with ASCA optional `(C,0)` zero-or-more syntax
 
 **Collective subscript**:
-Subscript `ₓ` (or `x`), meaning all members of a sequence or series (Index key: `Xₓ`; e.g. `{Hₓ,m̩,n̩} → a`). Quantifies over a class or series rather than picking one member.
-_Avoid_: treating `Hₓ` as a single segment; conflating with correspondence-series index `H₁`
+Subscript `ₓ` (or `x`), meaning all members of a sequence or series (Index key: `Xₓ`; e.g. `{Hₓ,m̩,n̩} → a`). Quantifies over a class or series rather than picking one member. Expanded at HTML→YAML parse when mapped; corpus fields store the member list in ASCA set spelling (`{…}`). A future Brassica **applier compiler** may rewrite delimiters to categories (`[…]`).
+_Avoid_: treating `Hₓ` as a single segment; conflating with correspondence-series index `H₁`; inventing a second on-disk set notation before Brassica is adopted
 
 **Section-local abbreviation**:
 Multi-letter or prose shorthand defined only for one sound-change section (or family of sections), not in the global Index key — e.g. Athabaskan `TŠ`, `TS`, `K`, `Q` series labels. Resolved via section `abbreviations` tables when mapped; otherwise cluster-driven. Not a subscript use.
