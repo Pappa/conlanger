@@ -9,6 +9,7 @@ import logging
 import shutil
 import subprocess
 import sys
+from datetime import UTC, datetime
 from pathlib import Path
 
 logger = logging.getLogger(__name__)
@@ -18,8 +19,17 @@ ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "src"))
 
 from conlanger.tools.corpus_inventory import (
+    INVENTORY_CHANGELOG_CSV_NAME,
+    INVENTORY_CSV_NAME,
+    INVENTORY_ERROR_CSV_NAME,
+    INVENTORY_SUCCESS_CSV_NAME,
+    append_ok_flip_changelog,
     iter_validation_rows,
+    load_inventory_csv,
+    ok_flip_changelog_rows,
     summarize_inventory,
+    validation_rows_to_dataframe,
+    write_filtered_inventory_csvs,
     write_validation_csv,
 )
 from conlanger.tools.corpus_io import write_cleaned_corpus
@@ -63,7 +73,10 @@ def main() -> int:
         "--inventory-dir",
         type=Path,
         default=DEFAULT_INVENTORY_DIR,
-        help="writes asca-rule-inventory.csv and asca-rule-inventory-summary.md",
+        help=(
+            "writes asca-rule-inventory.csv (+ success/error splits), "
+            "asca-rule-inventory-changelog.csv, and asca-rule-inventory-summary.md"
+        ),
     )
     ap.add_argument("--probe-words", type=Path, default=DEFAULT_PROBE)
     ap.add_argument(
@@ -117,9 +130,20 @@ def main() -> int:
     if args.limit:
         rows = rows[: args.limit]
 
-    csv_path = args.inventory_dir / "asca-rule-inventory.csv"
+    csv_path = args.inventory_dir / INVENTORY_CSV_NAME
+    success_path = args.inventory_dir / INVENTORY_SUCCESS_CSV_NAME
+    error_path = args.inventory_dir / INVENTORY_ERROR_CSV_NAME
+    changelog_path = args.inventory_dir / INVENTORY_CHANGELOG_CSV_NAME
     summary_path = args.inventory_dir / "asca-rule-inventory-summary.md"
+
+    previous = load_inventory_csv(csv_path)
+    current_df = validation_rows_to_dataframe(rows)
+    run_timestamp = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
+    flips = ok_flip_changelog_rows(previous, current_df, timestamp=run_timestamp)
+
     write_validation_csv(rows, csv_path)
+    write_filtered_inventory_csvs(current_df, args.inventory_dir)
+    flip_n = append_ok_flip_changelog(flips, changelog_path)
 
     summary = summarize_inventory(
         rows,
@@ -134,6 +158,9 @@ def main() -> int:
     fail_n = len(rows) - ok_n
     print(
         f"wrote {csv_path} rows={len(rows)} ok={ok_n} fail={fail_n}\n"
+        f"wrote {success_path} rows={ok_n}\n"
+        f"wrote {error_path} rows={fail_n}\n"
+        f"appended {changelog_path} flips={flip_n} timestamp={run_timestamp}\n"
         f"wrote {summary_path}"
     )
     return 0

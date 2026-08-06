@@ -6,9 +6,12 @@ import pytest
 
 from conlanger.tools.asca_validator import ASCAValidationError
 from conlanger.tools.corpus_inventory import (
+    CHANGELOG_CSV_COLUMNS,
     ValidationRow,
     classify_error,
+    filter_inventory_by_ok,
     iter_validation_rows,
+    ok_flip_changelog_rows,
     parse_unknown_token_error,
     reason_for_failure,
     section_all_ok_stats,
@@ -564,6 +567,10 @@ def test_summarize_inventory():
     assert "Sections all OK: **0 / 1** (0.0%)" in text
     assert "| 2 | `syntax_other` |" in text
     assert "## Common Errors" in text
+    assert "asca-rule-inventory.csv" in text
+    assert "asca-rule-inventory-success.csv" in text
+    assert "asca-rule-inventory-error.csv" in text
+    assert "asca-rule-inventory-changelog.csv" in text
 
 
 def test_summarize_inventory_empty():
@@ -577,3 +584,110 @@ def test_summarize_inventory_empty():
     assert "Sections all OK: **0 / 0** (0.0%)" in text
     assert "### unknown_character" in text
     assert "| — | _(none)_ |" in text
+
+
+def test_filter_inventory_by_ok_splits_success_and_error():
+    rows = [
+        ValidationRow("1", "A", 0, "file:1", True, "", "", "", "", ""),
+        ValidationRow(
+            "1",
+            "A",
+            1,
+            "file:2",
+            False,
+            "syntax_other",
+            "broken-syntax",
+            "",
+            "",
+            "err",
+        ),
+        ValidationRow("1", "A", 2, "file:3", True, "", "", "", "", ""),
+    ]
+    df = validation_rows_to_dataframe(rows)
+    success = filter_inventory_by_ok(df, ok=True)
+    error = filter_inventory_by_ok(df, ok=False)
+    assert list(success["source"]) == ["file:1", "file:3"]
+    assert list(error["source"]) == ["file:2"]
+    assert list(success.columns) == list(df.columns)
+    assert list(error.columns) == list(df.columns)
+
+
+def test_ok_flip_changelog_rows_emits_flips_by_source():
+    previous = validation_rows_to_dataframe(
+        [
+            ValidationRow("1", "A", 0, "file:1", True, "", "", "", "", ""),
+            ValidationRow(
+                "1",
+                "A",
+                1,
+                "file:2",
+                False,
+                "syntax_other",
+                "broken-syntax",
+                "",
+                "",
+                "err",
+            ),
+            ValidationRow("1", "A", 2, "file:3", True, "", "", "", "", ""),
+        ]
+    )
+    # rule_idx renumbered; file:3 ok unchanged; file:1 and file:2 flip
+    current = validation_rows_to_dataframe(
+        [
+            ValidationRow(
+                "1",
+                "A",
+                5,
+                "file:1",
+                False,
+                "syntax_other",
+                "broken-syntax",
+                "",
+                "",
+                "err",
+            ),
+            ValidationRow("1", "A", 6, "file:2", True, "", "", "", "", ""),
+            ValidationRow("1", "A", 7, "file:3", True, "", "", "", "", ""),
+        ]
+    )
+    flips = ok_flip_changelog_rows(previous, current, timestamp="2026-08-06T12:00:00Z")
+    assert list(flips.columns) == CHANGELOG_CSV_COLUMNS
+    assert list(flips["source"]) == ["file:1", "file:2"]
+    assert list(flips["ok"]) == [False, True]
+    assert list(flips["rule_idx"]) == [5, 6]
+    assert list(flips["timestamp"]) == [
+        "2026-08-06T12:00:00Z",
+        "2026-08-06T12:00:00Z",
+    ]
+
+
+def test_ok_flip_changelog_rows_empty_when_ok_unchanged():
+    df = validation_rows_to_dataframe(
+        [
+            ValidationRow("1", "A", 0, "file:1", True, "", "", "", "", ""),
+            ValidationRow(
+                "1",
+                "A",
+                1,
+                "file:2",
+                False,
+                "syntax_other",
+                "broken-syntax",
+                "",
+                "",
+                "err",
+            ),
+        ]
+    )
+    flips = ok_flip_changelog_rows(df, df, timestamp="2026-08-06T12:00:00Z")
+    assert flips.empty
+    assert list(flips.columns) == CHANGELOG_CSV_COLUMNS
+
+
+def test_ok_flip_changelog_rows_empty_without_previous_inventory():
+    current = validation_rows_to_dataframe(
+        [ValidationRow("1", "A", 0, "file:1", True, "", "", "", "", "")]
+    )
+    flips = ok_flip_changelog_rows(None, current, timestamp="2026-08-06T12:00:00Z")
+    assert flips.empty
+    assert list(flips.columns) == CHANGELOG_CSV_COLUMNS

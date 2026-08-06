@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by:
 
 # Inventory success/error CSV splits and ok-change changelog
@@ -26,14 +26,24 @@ Out of scope for this ticket: field-isolation validation; tagging “transform-e
 
 ## Acceptance criteria
 
-- [ ] Regen writes success + error filtered CSVs alongside the full inventory
-- [ ] Regen appends changelog rows only for `ok` flips, with a shared run `timestamp`
-- [ ] First run (no prior inventory) does not invent flip rows (or documents empty-changelog behaviour)
-- [ ] Summary markdown mentions the new artifacts
-- [ ] Tests cover flip detection by `source` and no-op when `ok` unchanged
+- [x] Regen writes success + error filtered CSVs alongside the full inventory
+- [x] Regen appends changelog rows only for `ok` flips, with a shared run `timestamp`
+- [x] First run (no prior inventory) does not invent flip rows (or documents empty-changelog behaviour)
+- [x] Summary markdown mentions the new artifacts
+- [x] Tests cover flip detection by `source` and no-op when `ok` unchanged
 
 ## References
 
 - `src/conlanger/scripts/regenerate_corpus.py`
 - `src/conlanger/tools/corpus_inventory.py`
 - Map grilling 2026-08-06 (Q1–Q3)
+
+## Answer
+
+`uv run regenerate_corpus` now loads the prior `asca-rule-inventory.csv` (if any), then writes:
+
+- `asca-rule-inventory.csv` (full, rewritten)
+- `asca-rule-inventory-success.csv` / `asca-rule-inventory-error.csv` (filtered views, rewritten)
+- `asca-rule-inventory-changelog.csv` (append-only `ok` flips matched by `source`; shared UTC `timestamp` per run; no rows when there is no prior inventory or `ok` is unchanged)
+
+Helpers live in `corpus_inventory.py` (`filter_inventory_by_ok`, `ok_flip_changelog_rows`, …). Summary Notes link the new files. Validity criteria unchanged.

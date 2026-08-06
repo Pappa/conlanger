@@ -79,6 +79,24 @@ VALIDATION_CSV_COLUMNS = [
     "description",
 ]
 
+CHANGELOG_CSV_COLUMNS = [
+    "section_index",
+    "rule_idx",
+    "source",
+    "ok",
+    "timestamp",
+]
+
+INVENTORY_CSV_NAME = "asca-rule-inventory.csv"
+INVENTORY_SUCCESS_CSV_NAME = "asca-rule-inventory-success.csv"
+INVENTORY_ERROR_CSV_NAME = "asca-rule-inventory-error.csv"
+INVENTORY_CHANGELOG_CSV_NAME = "asca-rule-inventory-changelog.csv"
+
+
+def _ok_as_bool(series: pd.Series) -> pd.Series:
+    """Normalize inventory ``ok`` values (bool or CSV strings) to bool."""
+    return series.astype(str).str.lower().isin({"true", "1"})
+
 
 def validation_rows_to_dataframe(rows: list[ValidationRow]) -> pd.DataFrame:
     """Return validation rows as a DataFrame with a stable column order."""
@@ -87,6 +105,45 @@ def validation_rows_to_dataframe(rows: list[ValidationRow]) -> pd.DataFrame:
     return pd.DataFrame(
         [row.as_csv_dict() for row in rows], columns=VALIDATION_CSV_COLUMNS
     )
+
+
+def filter_inventory_by_ok(df: pd.DataFrame, *, ok: bool) -> pd.DataFrame:
+    """Return inventory rows whose ``ok`` column matches ``ok``."""
+    if df.empty:
+        return df.copy()
+    mask = _ok_as_bool(df["ok"])
+    if not ok:
+        mask = ~mask
+    return df.loc[mask].reset_index(drop=True)
+
+
+def ok_flip_changelog_rows(
+    previous: pd.DataFrame | None,
+    current: pd.DataFrame,
+    *,
+    timestamp: str,
+) -> pd.DataFrame:
+    """Return changelog rows for rules whose ``ok`` flipped vs ``previous``.
+
+    Matching is by ``source``. When ``previous`` is missing or empty, no flips
+    are emitted (first-run behaviour). ``timestamp`` is copied onto every row.
+    """
+    empty = pd.DataFrame(columns=CHANGELOG_CSV_COLUMNS)
+    if previous is None or previous.empty or current.empty:
+        return empty
+    prev = previous.loc[:, ["source", "ok"]].drop_duplicates(
+        subset=["source"], keep="last"
+    )
+    prev = prev.assign(ok=_ok_as_bool(prev["ok"])).set_index("source")["ok"]
+    cur = current.loc[:, ["section_index", "rule_idx", "source", "ok"]].copy()
+    cur["ok"] = _ok_as_bool(cur["ok"])
+    cur = cur.drop_duplicates(subset=["source"], keep="last")
+    merged = cur.join(prev.rename("prev_ok"), on="source", how="inner")
+    flipped = merged.loc[merged["ok"] != merged["prev_ok"]].copy()
+    if flipped.empty:
+        return empty
+    flipped["timestamp"] = timestamp
+    return flipped.loc[:, CHANGELOG_CSV_COLUMNS].reset_index(drop=True)
 
 
 def top_error_tokens(
@@ -402,6 +459,34 @@ def write_validation_csv(rows: list[ValidationRow], path: Path) -> None:
     validation_rows_to_dataframe(rows).to_csv(path, index=False)
 
 
+def load_inventory_csv(path: Path) -> pd.DataFrame | None:
+    """Load a prior inventory CSV, or ``None`` when the file is absent."""
+    if not path.is_file():
+        return None
+    return pd.read_csv(path)
+
+
+def write_filtered_inventory_csvs(df: pd.DataFrame, inventory_dir: Path) -> None:
+    """Rewrite success/error filtered inventory CSVs under ``inventory_dir``."""
+    inventory_dir.mkdir(parents=True, exist_ok=True)
+    filter_inventory_by_ok(df, ok=True).to_csv(
+        inventory_dir / INVENTORY_SUCCESS_CSV_NAME, index=False
+    )
+    filter_inventory_by_ok(df, ok=False).to_csv(
+        inventory_dir / INVENTORY_ERROR_CSV_NAME, index=False
+    )
+
+
+def append_ok_flip_changelog(flips: pd.DataFrame, path: Path) -> int:
+    """Append ``ok``-flip rows to the changelog CSV. Returns rows written."""
+    if flips.empty:
+        return 0
+    path.parent.mkdir(parents=True, exist_ok=True)
+    write_header = not path.is_file()
+    flips.to_csv(path, mode="a", header=write_header, index=False)
+    return len(flips)
+
+
 def section_all_ok_stats(rows: list[ValidationRow]) -> tuple[int, int, float]:
     """Return count of sections with every rule ok, total sections, and percentage."""
     by_section: dict[tuple[str, str], list[bool]] = {}
@@ -467,7 +552,13 @@ def summarize_inventory(
             "## Notes",
             "",
             "- Inventory runs per corpus rule via `SoundChangeRuleSet` + `validate_asca`.",
-            "- Full rows: [asca-rule-inventory.csv](asca-rule-inventory.csv)",
+            f"- Full rows: [{INVENTORY_CSV_NAME}]({INVENTORY_CSV_NAME})",
+            f"- OK rows: [{INVENTORY_SUCCESS_CSV_NAME}]({INVENTORY_SUCCESS_CSV_NAME})",
+            f"- Fail rows: [{INVENTORY_ERROR_CSV_NAME}]({INVENTORY_ERROR_CSV_NAME})",
+            (
+                f"- `ok` flips (append-only): "
+                f"[{INVENTORY_CHANGELOG_CSV_NAME}]({INVENTORY_CHANGELOG_CSV_NAME})"
+            ),
             "",
         ]
     )
