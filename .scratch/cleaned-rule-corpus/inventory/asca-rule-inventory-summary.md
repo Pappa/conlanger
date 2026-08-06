@@ -4,15 +4,15 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9317** (one per corpus rule)
-- OK: **6557** (70.4%)
-- Fail: **2760** (29.6%)
+- OK: **6561** (70.4%)
+- Fail: **2756** (29.6%)
 - Sections all OK: **140 / 714** (19.6%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 1171 | `syntax_other` |
+| 1167 | `syntax_other` |
 | 710 | `unknown_character` |
 | 375 | `expected_underscore` |
 | 161 | `unknown_feature` |
