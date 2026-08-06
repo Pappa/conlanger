@@ -210,6 +210,10 @@ def test_normalize_asca_length_marks(text, expected):
         ("_(S…)", "_(S,0)"),
         ("_C(C…)i#", "_C(C,0)i#"),
         ("e > i / _(C…)i(C…)#", "e > i / _(C,0)i(C,0)#"),
+        ("V_(VC…)", "V_(VC,0)"),
+        ("ə(C…?)_", "ə(C,0)_"),
+        ("_C(…C){a,e}", "_C(..)C{a,e}"),
+        ("_V(…V)", "_V(..)V"),
         ("a", "a"),
         ("", ""),
     ],
@@ -462,6 +466,28 @@ def test_sound_change_ruleset_validates_optional_grouping_ellipsis_fixtures():
             {"input": "o", "output": "u", "env": "_(C…)i"},
             {"input": "ə", "output": "a", "env": "_(C…)#"},
             {"input": "o", "output": "u", "exception": "o(C…)_(C…)#"},
+        ],
+    }
+    probe = Path("tests/fixtures/asca_probe_words.wsca")
+    validate_asca(SoundChangeRuleSet(section, "asca"), probe_words=probe)
+
+
+@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
+def test_sound_change_ruleset_validates_extended_grouping_ellipsis_fixtures():
+    from conlanger.tools.asca_validator import validate_asca
+
+    section = {
+        "index": "17.12.1.1.6",
+        "section": "Extended grouping ellipsis",
+        "rules": [
+            {"input": "ɡ", "output": "∅", "env": "V_(VC…)V"},
+            {"input": "V", "output": "V:[+long]", "env": "ə(C…?)_"},
+            {"input": "C", "output": "C:[+long]", "env": "_V(…V)"},
+            {
+                "input": "i u",
+                "output": "e o",
+                "env": "_C(…C){a:[+long],e:[+long],o:[+long]}",
+            },
         ],
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")
