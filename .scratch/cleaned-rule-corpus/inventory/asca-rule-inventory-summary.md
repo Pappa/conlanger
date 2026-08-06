@@ -104,3 +104,6 @@
 
 - Inventory runs per corpus rule via `SoundChangeRuleSet` + `validate_asca`.
 - Full rows: [asca-rule-inventory.csv](asca-rule-inventory.csv)
+- OK rows: [asca-rule-inventory-success.csv](asca-rule-inventory-success.csv)
+- Fail rows: [asca-rule-inventory-error.csv](asca-rule-inventory-error.csv)
+- `ok` flips (append-only): [asca-rule-inventory-changelog.csv](asca-rule-inventory-changelog.csv)
