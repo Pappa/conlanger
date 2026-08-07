@@ -47,6 +47,20 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - [Rule comment field on corpus rules](issues/30-rule-comment-field-on-corpus-rules.md) — optional `comment` on corpus rules; capture-not-discard prose stripped at parse (semicolon tails, glosses, env qualifiers); distinct from section `comments`.
 - [Spike: field-isolation compile validation](issues/35-spike-field-isolation-compile-validation.md) — **go-with-limits**: canned/shape-aware stubs + `validate_asca`/baseline wordlist attribute most Tier 1–2 fails; whole-rule `ok` stays SoT; fails-only sidecar + `blame`; no probe synthesis. Findings: [research/field-isolation-compile-validation.md](research/field-isolation-compile-validation.md). Follow-on: [Field-isolation inventory sidecar](issues/36-field-isolation-inventory-sidecar.md).
 - [Inventory success/error CSV splits and ok-change changelog](issues/34-inventory-success-error-splits-and-ok-changelog.md) — regen writes success/error filtered CSVs + append-only `ok`-flip changelog (match by `source`); summary links new artifacts.
+- [Document the sound-change rule pipeline in docs/](issues/37-document-sound-change-pipeline.md) — **grill 2026-08-07:** four `docs/` pages + `SYSTEM.md` **Pipeline stages (legacy)** / **(new)**; applier compile table (implemented order + planned `TBD` rows); parse / validation / applier docs split; compile validation lives in applier doc; no ADR for transform order.
+- [Spike: ASCA compile transform ordering (planned steps)](issues/38-spike-asca-compile-transform-order.md) — **grill 2026-08-07:** assign `Order` for all planned **ASCA-only** compile transforms (positional/identity, section-local abbreviations, meta-notation, …); Brassica out of scope; prototype where needed.
+- [Refactor SoundChangeRuleSet and compile subcomponents](issues/39-refactor-sound-change-ruleset.md) — **blocked by 37, 38**; scope TBD until docs + ordering spike land.
+
+## Pipeline documentation (new — grill 2026-08-07)
+
+Ordered stages in `docs/SYSTEM.md` **Pipeline stages (new)**:
+
+1. [Index Diachronica parse](../../../docs/index-diachronica-parser.md) — ticket 37
+2. [Applier-neutral corpus validation](../../../docs/applier-neutral-corpus-validation.md) — ticket 37
+3. [Applier compile](../../../docs/sound-change-applier.md) — ticket 37
+4. Compile validation — section in [sound-change-applier.md](../../../docs/sound-change-applier.md) — ticket 37
+
+Transform order recorded in docs only (not an ADR). Refactor `SoundChangeRuleSet` deferred to ticket 39.
 
 ## Implementation plan (tickets 11+)
 
@@ -62,7 +76,7 @@ Phased delivery — not vertical slices upfront:
 ## Not yet specified
 
 - **Bare I/O “already good” tagging** — optional idea: for rules with only `input`/`output` (no `env`/`exception`/`comment`), try Index `raw` with arrow normalised to ASCA `>` and see if ASCA accepts; tag as not needing transforms. Left foggy on purpose (grill Q5); full-rule `ok` + [ok-change changelog](issues/34-inventory-success-error-splits-and-ok-changelog.md) may already cover regression guarding. Revisit after 34/35.
-- **Subscript notation (all four uses)** — grilled + researched: [subscript-notation-index-asca-brassica.md](research/subscript-notation-index-asca-brassica.md), [positional-slots-and-identity-subscripts.md](research/positional-slots-and-identity-subscripts.md). **Working policy (grill, not yet ADR’d):** correspondence-series + collective → **parse-time** (collective members as ASCA `{…}` in corpus; Brassica delimiter rewrite deferred to compile if/when); positional + identity → **compile-time** per applier (Index-shaped in YAML). ADR offer deferred — owner wants more time. **Implementation deferred:** two future tickets (happy-path + compound-split); compile order vs `group_mappings` left open until then. Resume after more inventory correction. Residual clusters (`Hₓ`, uppercase `S₁`/section-local) stay separate.
+- **Subscript notation (all four uses)** — grilled + researched: [subscript-notation-index-asca-brassica.md](research/subscript-notation-index-asca-brassica.md), [positional-slots-and-identity-subscripts.md](research/positional-slots-and-identity-subscripts.md). **Working policy:** correspondence-series + collective → **parse-time**; positional + identity → **compile-time** (Index-shaped in YAML). **Compile order:** [Spike 38](issues/38-spike-asca-compile-transform-order.md) (ASCA-only, all planned compile transforms). **Docs:** [ticket 37](issues/37-document-sound-change-pipeline.md). **Refactor:** [ticket 39](issues/39-refactor-sound-change-ruleset.md) after 37+38. Compound-split / residual clusters (`Hₓ`, uppercase `S₁`/section-local) may still need separate implementation tickets after ordering spike.
 - **Whitespace tokenisation for ASCA** — inter-segment spacing (deferred from ticket 07)
 - **Meta-notation at ingest** — later find/replace; cluster-driven for now (ticket 06)
 - **Section-local abbreviations** (e.g. Athabaskan `TŠ`) — cluster-driven; hand-add mapping rows when warranted
