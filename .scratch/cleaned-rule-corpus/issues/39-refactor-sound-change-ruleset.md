@@ -1,6 +1,6 @@
 Type: task
 Status: needs-triage
-Blocked by: 37, 38
+Blocked by: 37
 
 # Refactor SoundChangeRuleSet and compile subcomponents
 

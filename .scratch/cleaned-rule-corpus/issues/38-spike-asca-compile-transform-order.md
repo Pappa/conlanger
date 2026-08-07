@@ -1,5 +1,5 @@
 Type: spike
-Status: ready-for-agent
+Status: resolved
 Blocked by:
 
 # Spike: ASCA compile transform ordering (planned steps)
@@ -46,10 +46,16 @@ Update `docs/sound-change-applier.md` TBD rows if ticket 37 has landed (otherwis
 
 ## Acceptance criteria
 
-- [ ] Research file written with cited primary sources (code, ASCA 0.10.2 docs, existing `.scratch` research).
-- [ ] Every planned transform in scope has a recommended order relative to the seven implemented steps.
-- [ ] At least positional/identity vs `group_mappings` ordering is decided with evidence (prototype or ASCA probe).
-- [ ] Brassica explicitly excluded.
-- [ ] Recommendation suitable to unblock [Refactor SoundChangeRuleSet](39-refactor-sound-change-ruleset.md).
+- [x] Research file written with cited primary sources (code, ASCA 0.10.2 docs, existing `.scratch` research).
+- [x] Every planned transform in scope has a recommended order relative to the seven implemented steps.
+- [x] At least positional/identity vs `group_mappings` ordering is decided with evidence (prototype or ASCA probe).
+- [x] Brassica explicitly excluded.
+- [x] Recommendation suitable to unblock [Refactor SoundChangeRuleSet](39-refactor-sound-change-ruleset.md).
+
+## Answer
+
+Findings: [research/asca-compile-transform-order.md](../research/asca-compile-transform-order.md)
+
+Renumbered ASCA compile pipeline (10 steps): insert **Order 3** `expand_index_subscript_references` (positional + identity) and **Order 4** `apply_section_local_abbreviations` before existing group mappings; **Order 10** `expand_meta_notation` (cluster-driven, last). Section-local before group mappings is **mandatory** (`TS > ts` probe). Refs before length marks is **mandatory** (extend length pass for `\dː`). Ticket 37 can paste the §6 table fragment into `docs/sound-change-applier.md`.
 
 ## Comments
