@@ -51,16 +51,18 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - [Spike: ASCA compile transform ordering (planned steps)](issues/38-spike-asca-compile-transform-order.md) — done. Findings: [research/asca-compile-transform-order.md](research/asca-compile-transform-order.md). Orders 3–4 before group mappings; 10 meta cluster-last.
 - [Refactor SoundChangeRuleSet and compile subcomponents](issues/39-refactor-sound-change-ruleset.md) — **blocked by 37**; scope TBD until docs land.
 
-## Pipeline documentation (new — grill 2026-08-07)
+## Pipeline documentation (grill 2026-08-07)
 
-Ordered stages in `docs/SYSTEM.md` **Pipeline stages (new)**:
+**Runtime:** parse once → correction loop; each pass runs applier compile → compile validation per rule (ADR-0003). Operator command: `uv run regenerate_corpus` (rename deferred).
 
-1. [Index Diachronica parse](../../../docs/index-diachronica-parser.md) — ticket 37
-2. [Applier-neutral corpus validation](../../../docs/applier-neutral-corpus-validation.md) — ticket 37
-3. [Applier compile](../../../docs/sound-change-applier.md) — ticket 37
-4. Compile validation — section in [sound-change-applier.md](../../../docs/sound-change-applier.md) — ticket 37
+**Docs (two processing steps, ad hoc — no ticket):**
 
-Transform order recorded in docs only (not an ADR). Refactor `SoundChangeRuleSet` deferred to ticket 39.
+| SYSTEM.md row | Target doc |
+| --- | --- |
+| Index Diachronica ingest | `docs/index-diachronica-ingest.md` (merge parser + corpus-validation) |
+| Sound change rule compilation | `docs/sound-change-rule-compilation.md` (rename from `sound-change-applier.md`) |
+
+Delete superseded doc paths; fix all links. Transform order in compilation doc only. Refactor `SoundChangeRuleSet` → [ticket 39](issues/39-refactor-sound-change-ruleset.md).
 
 ## Implementation plan (tickets 11+)
 
