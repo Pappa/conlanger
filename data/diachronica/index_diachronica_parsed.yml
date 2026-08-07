@@ -2172,10 +2172,10 @@ sections:
     comment: (the article isn’t exactly clear on what this second phone is)
     raw: f θ → v z̪ (the article isn’t exactly clear on what this second phone is)
     source: index_diachronica_original.html:1430
-  - input: ʔ
+  - comment: again, the article is unclear
+    input: ʔ
     output: '{∅,j,w}'
     env: depending on the environment
-    comment: again, the article is unclear
     raw: ʔ → {∅,j,w} / depending on the environment; again, the article is unclear
     source: index_diachronica_original.html:1431
   - input: x
@@ -2316,10 +2316,10 @@ sections:
     env: plain t only, distinguishable from the sequence ts
     raw: t → t͜s / plain t only, distinguishable from the sequence ts
     source: index_diachronica_original.html:1467
-  - input: '{a,i}'
+  - comment: the change of short a blocked for some speakers before ħ ʕ
+    input: '{a,i}'
     output: ə
     env: short only
-    comment: the change of short a blocked for some speakers before ħ ʕ
     raw: '{a,i} → ə / short only; the change of short a blocked for some speakers
       before ħ ʕ'
     source: index_diachronica_original.html:1468
@@ -2706,10 +2706,10 @@ sections:
     env: near gutturals
     raw: ə → a / near gutturals
     source: index_diachronica_original.html:1557
-  - input: ə
+  - comment: in the case of two schwas, only the first one is dropped
+    input: ə
     output: ɛ
     env: '#R_C or when breaking up what would otherwise be a three-consonant cluster'
-    comment: in the case of two schwas, only the first one is dropped
     raw: 'ə → ɛ / #R_C or when breaking up what would otherwise be a three-consonant
       cluster; in the case of two schwas, only the first one is dropped'
     source: index_diachronica_original.html:1558
@@ -3487,11 +3487,11 @@ sections:
     env: '#_'
     raw: '{we,wiː} → o / #_'
     source: index_diachronica_original.html:1760
-  - input: tsi
+  - comment: the first obstruent of the follow[ing] cluster then becomes ʔ); “(before
+      a prefix
+    input: tsi
     output: ∅
     env: $_OO
-    comment: “(before a prefix; the first obstruent of the follow[ing] cluster then
-      becomes ʔ)
     raw: tsi → ∅ / $_OO “(before a prefix; the first obstruent of the follow[ing]
       cluster then becomes ʔ)
     source: index_diachronica_original.html:1761
@@ -3740,10 +3740,10 @@ sections:
     output: ʃ l
     raw: '{n,q,h}ʃ {n,q,h}l → ʃ l'
     source: index_diachronica_original.html:1823
-  - input: ʃ
+  - comment: remains /ʃ/ in coastal varieties
+    input: ʃ
     output: '{ʃ,s}'
     env: in inland varieties
-    comment: remains /ʃ/ in coastal varieties
     raw: ʃ → {ʃ,s} / in inland varieties; remains /ʃ/ in coastal varieties
     source: index_diachronica_original.html:1824
   - input: k
@@ -4125,11 +4125,11 @@ sections:
     raw: V → ∅ / _# ! some monosyllables and analogical developments, in the latter
       of which long vowels were shortened
     source: index_diachronica_original.html:1915
-  - input: '{a,ə}'
+  - comment: such vowels are considered “weak”; “in the odd-numbered of any sequence
+      of one or more short-vowel open syllables”
+    input: '{a,ə}'
     output: ∅
     env: _{x,h}
-    comment: “in the odd-numbered of any sequence of one or more short-vowel open
-      syllables”; “weak”; such vowels are considered
     raw: '{a,ə} → ∅ / _{x,h} “in the odd-numbered of any sequence of one or more short-vowel
       open syllables”; such vowels are considered “weak”'
     source: index_diachronica_original.html:1916
@@ -4320,10 +4320,10 @@ sections:
     env: _CC in even syllables
     raw: V → Vː / _CC in even syllables
     source: index_diachronica_original.html:1955
-  - input: Vː
+  - comment: “does not apply in the second syllable of a non-glottal word”
+    input: Vː
     output: V[-long]
-    env: _C{V,#} in even syllables;
-    comment: “does not apply in the second syllable of a non-glottal word”
+    env: _C{V,#} in even syllables
     raw: Vː → V[-long] / _C{V,#} in even syllables; “does not apply in the second
       syllable of a non-glottal word”
     source: index_diachronica_original.html:1956
@@ -5814,10 +5814,10 @@ sections:
     output: jn
     raw: nj → jn
     source: index_diachronica_original.html:2326
-  - input: ∅
+  - comment: maybe just some sort of back vowel?)
+    input: ∅
     output: U
-    env: '#_{l,r}'
-    comment: (not sure what 〈U〉 represents here; maybe just some sort of back vowel?)
+    env: '#_{l,r} (not sure what 〈U〉 represents here'
     raw: '∅ → U / #_{l,r} (not sure what 〈U〉 represents here; maybe just some sort
       of back vowel?)'
     source: index_diachronica_original.html:2327
@@ -7221,7 +7221,7 @@ sections:
     raw: '{ts,ʈ} {ɟ͡ʝ,ɖ} {lʲ,ɲ} {ʔ,x,s,h} ʀ → t d n ∅ r (velar fricative is conjectured;
       changes → d “unsure”)'
     source: index_diachronica_original.html:2781
-  - comment: (sometimes; “represented by *h in PB”)
+  - comment: “represented by *h in PB”); (sometimes
     input: q
     output: ∅
     env: '#_'
@@ -7761,10 +7761,10 @@ sections:
     output: ∅
     raw: h → ∅
     source: index_diachronica_original.html:2925
-  - input: ə
+  - comment: “(result of /e/ or /o/ unpredictable)”
+    input: ə
     output: '{e,o}'
-    env: stressed;
-    comment: “(result of /e/ or /o/ unpredictable)”
+    env: stressed
     raw: ə → {e,o} / stressed; “(result of /e/ or /o/ unpredictable)”
     source: index_diachronica_original.html:2926
   - input: p
@@ -11142,12 +11142,12 @@ sections:
     raw: h → {h,j,∅} (Blevins has marked what apparently is *ɟ but I’m assuming it’s
       an error)
     source: index_diachronica_original.html:3787
-  - input: e
+  - comment: included here based on a comment earlier in the paper, but not listed
+      on the correspondence list)
+    input: e
     output: ə
     env: _N when unstressed
-    exception: Ḱ_
-    comment: (?; included here based on a comment earlier in the paper, but not listed
-      on the correspondence list)
+    exception: Ḱ_ (?
     raw: e → ə / _N when unstressed ! Ḱ_ (?; included here based on a comment earlier
       in the paper, but not listed on the correspondence list)
     source: index_diachronica_original.html:3788
@@ -11184,10 +11184,10 @@ sections:
     output: h(ʷ)
     raw: k(ʷ) → h(ʷ)
     source: index_diachronica_original.html:3797
-  - input: ∅
+  - comment: this happens across the word boundary)
+    input: ∅
     output: a
-    env: h#_
-    comment: (that’s not a typo; this happens across the word boundary)
+    env: h#_ (that’s not a typo
     raw: ∅ → a / h#_ (that’s not a typo; this happens across the word boundary)
     source: index_diachronica_original.html:3798
   - input: ɡ
@@ -15904,9 +15904,9 @@ sections:
     env: u_V:[+stress]ː
     raw: h → ∅ / u_”Vː
     source: index_diachronica_original.html:5170
-  - input: w
+  - comment: conditioning unknown”; “in *díwots > Tiyaz ‘sun-god’
+    input: w
     output: j
-    comment: “in *díwots > Tiyaz ‘sun-god’; conditioning unknown”
     raw: w → j / “in *díwots > Tiyaz ‘sun-god’; conditioning unknown”
     source: index_diachronica_original.html:5171
   - input: ɛː
@@ -17413,19 +17413,19 @@ sections:
     env: V_t
     raw: k → x / V_t
     source: index_diachronica_original.html:5522
-  - input: m
-    output: n
-    env: V_#;
-    comment: “[i]t is thought that the vowel needs to be unstressed, but this is not
+  - comment: “[i]t is thought that the vowel needs to be unstressed, but this is not
       certain”
+    input: m
+    output: n
+    env: V_#
     raw: m → n / V_#; “[i]t is thought that the vowel needs to be unstressed, but
       this is not certain”
     source: index_diachronica_original.html:5523
-  - input: Vː
-    output: V
-    env: _N#;
-    comment: “[i]t is thought that the long vowel probably needed to be unstressed-
+  - comment: “[i]t is thought that the long vowel probably needed to be unstressed-
       again, this is uncertain”
+    input: Vː
+    output: V
+    env: _N#
     raw: Vː → V / _N#; “[i]t is thought that the long vowel probably needed to be
       unstressed- again, this is uncertain”
     source: index_diachronica_original.html:5524
@@ -17573,11 +17573,11 @@ sections:
     comment: when unstressed
     raw: V → ∅ / C_# when unstressed ! C = j
     source: index_diachronica_original.html:5557
-  - input: C(…C)
+  - comment: “[t]his remained a phonologically conditioned rule in OIr”
+    input: C(…C)
     output: ∅
     env: _#
-    exception: /l r/ and clusters containing them;
-    comment: “[t]his remained a phonologically conditioned rule in OIr”
+    exception: /l r/ and clusters containing them
     raw: C(…C) → ∅ / _# ! /l r/ and clusters containing them; “[t]his remained a phonologically
       conditioned rule in OIr”
     source: index_diachronica_original.html:5558
@@ -17594,11 +17594,11 @@ sections:
     env: _[anything] when stressed
     raw: oː → ua / _[anything], when stressed
     source: index_diachronica_original.html:5561
-  - input: eː
+  - comment: “ai and oi remain, but are written as <ae ai oe oi> seemingly randomly”;
+      when stressed
+    input: eː
     output: ia
     env: _{#,Cʲ}
-    comment: “ai and oi remain, but are written as <ae ai oe oi> seemingly randomly”;
-      when stressed;
     raw: eː → ia / _{#,Cʲ} when stressed; “ai and oi remain, but are written as <ae
       ai oe oi> seemingly randomly”
     source: index_diachronica_original.html:5562
@@ -17620,10 +17620,10 @@ sections:
     env: _[anything]
     raw: — {e,o} → a / _[anything]
     source: index_diachronica_original.html:5567
-  - input: V
+  - comment: “[t]his remained as a phonologically conditioned rule in OIr”; when stressed
+    input: V
     output: Vː
     env: _#
-    comment: “[t]his remained as a phonologically conditioned rule in OIr”; when stressed;
     raw: V → Vː / _#, when stressed; “[t]his remained as a phonologically conditioned
       rule in OIr”
     source: index_diachronica_original.html:5568
@@ -17633,15 +17633,15 @@ sections:
     raw: VOR → VːR; “this is a tad unclear, because in some instances it didn’t seem
       to apply”
     source: index_diachronica_original.html:5569
-  - input: V
+  - comment: 'this “remained as a phonologically conditioned rule in OIr”; “[t]hat’s
+      a little unclear, so let me try and enumerate: in words of more than three syllables,
+      every other vowel (only the even ones) dropped, if it’s unstressed. In some
+      words, syncope didn’t apply because it would create an unwieldy consonant cluster:
+      so PIE *komaktyom > OIr cumachte, not *cumchte”'
+    input: V
     output: ∅
     env: '#UU(_)U(U(_)U)'
     exception: unstressed
-    comment: '“remained as a phonologically conditioned rule in OIr”; “[t]hat’s a
-      little unclear, so let me try and enumerate: in words of more than three syllables,
-      every other vowel (only the even ones) dropped, if it’s unstressed. In some
-      words, syncope didn’t apply because it would create an unwieldy consonant cluster:
-      so PIE *komaktyom > OIr cumachte, not *cumchte”; this;'
     raw: 'V → ∅ / #UU(_)U(U(_)U) / unstressed; this “remained as a phonologically
       conditioned rule in OIr”; “[t]hat’s a little unclear, so let me try and enumerate:
       in words of more than three syllables, every other vowel (only the even ones)
@@ -18315,12 +18315,12 @@ sections:
       diphthongs
     source: index_diachronica_original.html:5739
   rules:
-  - input: Vː
+  - comment: the book gives “Christ” vs. “Christmas” as an example
+    input: Vː
     output: V[-long]
     env: _C{ː,C}
     exception: _st{#,V} or when preceding a cluster which had triggered a vowel to
       become long in Old English
-    comment: “Christ”; “Christmas”; the book givesvs.as an example
     raw: Vː → V[-long] / _C{ː,C} ! _st{#,V} or when preceding a cluster which had
       triggered a vowel to become long in Old English; the book gives “Christ” vs.
       “Christmas” as an example
@@ -18410,12 +18410,12 @@ sections:
     and the History of the English Language; and Wikipedia contributors (2011), “Middle
     English phonology”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Middle_English_phonology&oldid=456896605>
   rules:
-  - input: Vː
+  - comment: the book gives “Christ” vs. “Christmas” as an example
+    input: Vː
     output: V[-long]
     env: _C{ː,C}
     exception: _st{#,V} or when preceding a cluster which had triggered a vowel to
       become long in Old English
-    comment: “Christ”; “Christmas”; the book givesvs.as an example
     raw: Vː → V[-long] / _C{ː,C} ! _st{#,V} or when preceding a cluster which had
       triggered a vowel to become long in Old English; the book gives “Christ” vs.
       “Christmas” as an example
@@ -18902,12 +18902,12 @@ sections:
   - raw: ʍ became a sound spelled 〈qu〉
     source: index_diachronica_original.html:5874
   rules:
-  - input: Vː
+  - comment: the book gives “Christ” vs. “Christmas” as an example
+    input: Vː
     output: V[-long]
     env: _C{ː,C}
     exception: _st{#,V} or when preceding a cluster which had triggered a vowel to
       become long in Old English
-    comment: “Christ”; “Christmas”; the book givesvs.as an example
     raw: Vː → V[-long] / _C{ː,C} ! _st{#,V} or when preceding a cluster which had
       triggered a vowel to become long in Old English; the book gives “Christ” vs.
       “Christmas” as an example
@@ -19449,11 +19449,11 @@ sections:
     comment: (in words of more than one syllable)
     raw: n → ∅ / V_C (in words of more than one syllable)
     source: index_diachronica_original.html:5975
-  - input: k
+  - comment: “(except when phonemic)”; (sometimes)”; “
+    input: k
     output: ç
     env: V_#
-    exception: _C;
-    comment: “(sometimes)”; “(except when phonemic)”
+    exception: _C
     raw: k → ç / V_# ! _C “(sometimes)”; “(except when phonemic)”
     source: index_diachronica_original.html:5976
     sporadic: true
@@ -19502,12 +19502,12 @@ sections:
     and the History of the English Language; and Wikipedia contributors (2011), “Middle
     English phonology”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Middle_English_phonology&oldid=456896605>
   rules:
-  - input: Vː
+  - comment: the book gives “Christ” vs. “Christmas” as an example
+    input: Vː
     output: V[-long]
     env: _C{ː,C}
     exception: _st{#,V} or when preceding a cluster which had triggered a vowel to
       become long in Old English
-    comment: “Christ”; “Christmas”; the book givesvs.as an example
     raw: Vː → V[-long] / _C{ː,C} ! _st{#,V} or when preceding a cluster which had
       triggered a vowel to become long in Old English; the book gives “Christ” vs.
       “Christmas” as an example
@@ -19742,10 +19742,10 @@ sections:
     env: _ɫ
     raw: a → ɒ? (→ o) / _ɫ
     source: index_diachronica_original.html:6043
-  - input: ai u
+  - comment: in the case of [ʏ] at least this was not yet phonemic)
+    input: ai u
     output: ei ʏ
-    env: _(C…){i(ː),j}
-    comment: (short only; in the case of [ʏ] at least this was not yet phonemic)
+    env: _(C…){i(ː),j} (short only
     raw: ai u → ei ʏ / _(C…){i(ː),j} (short only; in the case of [ʏ] at least this
       was not yet phonemic)
     source: index_diachronica_original.html:6045
@@ -19854,13 +19854,13 @@ sections:
     env: _C[+dental]
     raw: '{ol,al} {ar,er} or → ɔu aːr oːr / _C[+dental]'
     source: index_diachronica_original.html:6066
-  - input: V[-long +stress]
-    output: Vː
-    env: in open syllables (ʏ > {œː,øː} here but this is not phonemically important
-    comment: there seem to have been qualitative differences between original long
+  - comment: there seem to have been qualitative differences between original long
       vowels and long vowels resulting from this change—lengthened iː seems to have
       become eː, but lengthened aː merged with original aː); does not affect original
       long vowels or vowels in diphthongs
+    input: V[-long +stress]
+    output: Vː
+    env: in open syllables (ʏ > {œː,øː} here but this is not phonemically important
     raw: V[-long +stress] → Vː / in open syllables (ʏ → {œː,øː} here but this is not
       phonemically important; there seem to have been qualitative differences between
       original long vowels and long vowels resulting from this change—lengthened iː
@@ -19907,12 +19907,12 @@ sections:
     env: in northern dialects
     raw: — x ɣ → {x,χ} {ɣ,x,χ} / in northern dialects
     source: index_diachronica_original.html:6078
-  - input: x ɣ
+  - comment: based on the description and on representations in other articles, the
+      palatal phonemes are used here); “front velar”
+    input: x ɣ
     output: ç ʝ
-    env: in southern dialects
-    comment: “front velar”; (the articles use velar phonemes here but describes them
-      as; based on the description and on representations in other articles, the palatal
-      phonemes are used here)
+    env: in southern dialects (the articles use velar phonemes here but describes
+      them as
     raw: — x ɣ → ç ʝ / in southern dialects (the articles use velar phonemes here
       but describes them as “front velar”; based on the description and on representations
       in other articles, the palatal phonemes are used here)
@@ -20063,10 +20063,10 @@ sections:
     output: au
     raw: aːw → au
     source: index_diachronica_original.html:6113
-  - input: Vː
+  - comment: the change was more common around _xt and _rC)
+    input: Vː
     output: V[- long]
-    env: _CC
-    comment: (some exceptions; the change was more common around _xt and _rC)
+    env: _CC (some exceptions
     raw: Vː → V[- long] / _CC (some exceptions; the change was more common around
       _xt and _rC)
     source: index_diachronica_original.html:6114
@@ -25321,14 +25321,13 @@ sections:
     comment: (rare)
     raw: V₁…V₂ → V₂…V₂ (rare)
     source: index_diachronica_original.html:7287
-  - input: V
+  - comment: “(i, e, and o sometimes bypass this)”
+    input: V
     output: Vː
-    env: _S[+voice]{S[-voice],F[-voice]};
-    comment: “(i, e, and o sometimes bypass this)”
+    env: _S[+voice]{S[-voice],F[-voice]}
     raw: V → Vː / _S[+voiced]{S[-voiced],F[-voiced]}; “(i, e, and o sometimes bypass
       this)”
     source: index_diachronica_original.html:7288
-    sporadic: true
   - input: S[+voice]
     output: S[-voice]
     env: _{S[-voice],F[-voice]}
@@ -25618,10 +25617,10 @@ sections:
     comment: (irregular)
     raw: V → ∅ / ”V%s_t(C)V(C)# (irregular)
     source: index_diachronica_original.html:7349
-  - input: u
+  - comment: irregular”); “when in unstressed penult or between first and tonic syllables
+    input: u
     output: w > ∅
-    comment: “when in unstressed penult or between first and tonic syllables; irregular”;
-      ()
+    env: (
     raw: u → w → ∅ / (“when in unstressed penult or between first and tonic syllables;
       irregular”)
     source: index_diachronica_original.html:7350
@@ -25860,10 +25859,10 @@ sections:
     comment: “in the penult”
     raw: a → e / “in the penult”
     source: index_diachronica_original.html:7397
-  - input: V
+  - comment: e is kept before n”); “irregular
+    input: V
     output: ∅
-    env: V:[+stress]$_(C)(C)V(C)#
-    comment: “irregular; e is kept before n”; ()
+    env: V:[+stress]$_(C)(C)V(C)# (
     raw: V → ∅ / ”V%_(C)(C)V(C)# (“irregular; e is kept before n”)
     source: index_diachronica_original.html:7398
   - input: b
@@ -25933,13 +25932,12 @@ sections:
     env: _#
     raw: '{u(ː),o(ː)} → ∅ / _#'
     source: index_diachronica_original.html:7412
-  - input: V
+  - comment: except when C_CC, _n”; “if there are multiple vowels between the initial
+      and tonic syllables, the vowel directly before the tonic is usually dropped”;
+      “between first and tonic syllables
+    input: V
     output: ∅
-    env: ;
     exception: V = a
-    comment: “between first and tonic syllables; except when C_CC, _n”; “if there
-      are multiple vowels between the initial and tonic syllables, the vowel directly
-      before the tonic is usually dropped”
     raw: V → ∅ / “between first and tonic syllables; except when C_CC, _n”; “if there
       are multiple vowels between the initial and tonic syllables, the vowel directly
       before the tonic is usually dropped” ! V = a
@@ -27544,10 +27542,11 @@ sections:
       “in some dialects the n fell after o, u”
     source: index_diachronica_original.html:7985
   rules:
-  - input: VN
+  - comment: I’m assuming this change happened in Vulgar Latin and then vowel length
+      went to quality; (except for the prefixes con-, in-)
+    input: VN
     output: Vː
-    env: _S (except for the prefixes con-, in-); I’m assuming this change happened
-      in Vulgar Latin and then vowel length went to quality
+    env: _S
     raw: VN → Vː / _S (except for the prefixes con-, in-); I’m assuming this change
       happened in Vulgar Latin and then vowel length went to quality
     source: index_diachronica_original.html:7739
@@ -27754,10 +27753,10 @@ sections:
     env: R_(C…)
     raw: — V → ∅ / R_(C…)
     source: index_diachronica_original.html:7784
-  - input: a
+  - comment: final -as remained in “Limousin and some others”
+    input: a
     output: o in most dialects
     exception: Gascon and Languedoc
-    comment: “Limousin and some others”; final -as remained in
     raw: — a → o in most dialects except Gascon and Languedoc; final -as remained
       in “Limousin and some others”
     source: index_diachronica_original.html:7786
@@ -28044,11 +28043,10 @@ sections:
     comment: (your guess is probably better than mine)
     raw: ɡ → k / B_ (your guess is probably better than mine)
     source: index_diachronica_original.html:7854
-  - input: ɡ
+  - comment: forms with k are “most persistent in the west” and more common overall)
+    input: ɡ
     output: '{k,j}'
-    env: V_
-    comment: “most persistent in the west”; (if /j/ resulted, it dropped after /i/;
-      forms with k areand more common overall)
+    env: V_ (if /j/ resulted, it dropped after /i/
     raw: ɡ → {k,j} / V_ (if /j/ resulted, it dropped after /i/; forms with k are “most
       persistent in the west” and more common overall)
     source: index_diachronica_original.html:7855
@@ -28129,10 +28127,10 @@ sections:
     comment: (except in some northern and eastern dialects where > ∅)
     raw: ð → z (except in some northern and eastern dialects where → ∅)
     source: index_diachronica_original.html:7869
-  - input: ɡ
+  - comment: further > dʒ in the north)
+    input: ɡ
     output: j
-    env: _a
-    comment: (in the north and east; further > dʒ in the north)
+    env: _a (in the north and east
     raw: ɡ → j / _a (in the north and east; further → dʒ in the north)
     source: index_diachronica_original.html:7870
   - input: ɡ
@@ -32367,11 +32365,11 @@ sections:
     output: dz > î_V
     raw: ∅ → dz → î_V
     source: index_diachronica_original.html:9007
-  - input: iC
+  - comment: I must have misread something)
+    input: iC
     output: iC~i
-    env: _{C,#}
-    comment: (not sure how this plays in with the change mentioned earlier about extra-high
-      vowels; I must have misread something)
+    env: _{C,#} (not sure how this plays in with the change mentioned earlier about
+      extra-high vowels
     raw: iC → iC~i / _{C,#} (not sure how this plays in with the change mentioned
       earlier about extra-high vowels; I must have misread something)
     source: index_diachronica_original.html:9008
@@ -33317,13 +33315,12 @@ sections:
     output: a
     raw: e → a
     source: index_diachronica_original.html:9338
-  - comment: (usually; sometimes the diphthong is retained or > aj)
+  - comment: sometimes the diphthong is retained or > aj)
     input: i
     output: ∅
-    env: a_
+    env: a_ (usually
     raw: i → ∅ / a_ (usually; sometimes the diphthong is retained or → aj)
     source: index_diachronica_original.html:9339
-    sporadic: true
   - input: a
     output: i
     env: iC_
@@ -36178,13 +36175,12 @@ sections:
     output: ⁿd
     raw: '{n,ɲ} → ⁿd'
     source: index_diachronica_original.html:10344
-  - input: '{A,F}'
+  - comment: diphthongs sometimes lengthen in comparison
+    input: '{A,F}'
     output: ∅
     env: _$
-    comment: diphthongs sometimes lengthen in comparison
     raw: '{A,F} → ∅ / _$; diphthongs sometimes lengthen in comparison'
     source: index_diachronica_original.html:10345
-    sporadic: true
   - input: ʃ
     output: h
     env: in the
@@ -36840,10 +36836,10 @@ sections:
     env: '#(C)V_'
     raw: 'C → J / #(C)V_'
     source: index_diachronica_original.html:10555
-  - input: ɪ(Cɪ)
+  - comment: “vowel nasalizations are retained either way on each”; (Ci)
+    input: ɪ(Cɪ)
     output: e
-    env: t_;
-    comment: (Ci); “vowel nasalizations are retained either way on each”
+    env: t_
     raw: ɪ(Cɪ) → e(Ci) / t_; “vowel nasalizations are retained either way on each”
     source: index_diachronica_original.html:10556
   - input: ɟ ʄ j c ɠʷ
@@ -38550,10 +38546,10 @@ sections:
     env: _i
     raw: s → ʃ / _i
     source: index_diachronica_original.html:11143
-  - input: t tʰ tʼ
+  - comment: conditioning factors unclear)”; “(in some words
+    input: t tʰ tʼ
     output: ts tsʰ tsʼ
     env: '#_'
-    comment: “(in some words; conditioning factors unclear)”
     raw: 't tʰ tʼ → ts tsʰ tsʼ / #_ “(in some words; conditioning factors unclear)”'
     source: index_diachronica_original.html:11144
   - input: ts tsʰ tsʼ
@@ -40613,11 +40609,10 @@ sections:
     comment: “‘in primary forms’”
     raw: N[- glottalized] → e / _O[+ same POA] “‘in primary forms’”
     source: index_diachronica_original.html:11713
-  - input: n̩
+  - comment: the paper is not being very clear here)
+    input: n̩
     output: e
-    env: n_
-    comment: (this is admittedly a bit conjectural; the paper is not being very clear
-      here)
+    env: n_ (this is admittedly a bit conjectural
     raw: n̩ → e / n_ (this is admittedly a bit conjectural; the paper is not being
       very clear here)
     source: index_diachronica_original.html:11714
@@ -41152,11 +41147,11 @@ sections:
     output: ɛʔ
     raw: '{long-tail vowel thingʔ,əʔ} → ɛʔ'
     source: index_diachronica_original.html:11839
-  - input: i
+  - comment: when following /ʂ ʐ/, sometimes yields [ʂi], other times [s truncated
+      vowel-thing]; (“sometimes”, in “variant readings”)
+    input: i
     output: '[long-tail vowel thing]'
-    env: C̣_ (in)
-    comment: “sometimes”,; “variant readings”; when following /ʂ ʐ/, sometimes yields
-      [ʂi], other times [s truncated vowel-thing]
+    env: C̣_
     raw: i → [long-tail vowel thing] / C̣_ (“sometimes”, in “variant readings”); when
       following /ʂ ʐ/, sometimes yields [ʂi], other times [s truncated vowel-thing]
     source: index_diachronica_original.html:11840
@@ -41325,10 +41320,10 @@ sections:
     output: yɛn
     raw: yen → yɛn
     source: index_diachronica_original.html:11872
-  - input: ɔ
+  - comment: extremely rare change
+    input: ɔ
     output: a
     env: in two cases cited
-    comment: extremely rare change
     raw: ɔ → a / in two cases cited; extremely rare change
     source: index_diachronica_original.html:11873
   - input: wɔ
@@ -43332,10 +43327,10 @@ sections:
     raw: V → Vː / _C[-glottal] “in even-numbered syllables when accented or immediately
       before the accent”
     source: index_diachronica_original.html:12401
-  - input: Vʔ
+  - comment: ”; “in odd-numbered unaccented non-final syllables
+    input: Vʔ
     output: ʔV
     exception: '{ʔ,h}_'
-    comment: “in odd-numbered unaccented non-final syllables;”
     raw: Vʔ → ʔV / “in odd-numbered unaccented non-final syllables;” ! {ʔ,h}_
     source: index_diachronica_original.html:12404
   - input: j
@@ -43642,10 +43637,10 @@ sections:
   citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian
     Languages”, University of Manitoba, Winnipeg
   rules:
-  - input: Vː
+  - comment: “this change may have been present in Huron already”
+    input: Vː
     output: V:[+stress]
-    env: in U#;
-    comment: “this change may have been present in Huron already”
+    env: in U#
     raw: Vː → ”V / in U#; “this change may have been present in Huron already”
     source: index_diachronica_original.html:12479
   - input: t
@@ -49424,12 +49419,12 @@ sections:
     env: _V[+high]
     raw: n → ɲ / _V[+high]
     source: index_diachronica_original.html:14055
-  - input: l
+  - comment: initial *l occurs in too few cognates to be sure. Apparently PUA initial
+      *l was rare and is of questionable certainty whether it existed at all.)”; “(in
+      doubt
+    input: l
     output: ɲ
     env: '#_'
-    comment: “(in doubt; initial *l occurs in too few cognates to be sure. Apparently
-      PUA initial *l was rare and is of questionable certainty whether it existed
-      at all.)”
     raw: 'l → ɲ / #_ “(in doubt; initial *l occurs in too few cognates to be sure.
       Apparently PUA initial *l was rare and is of questionable certainty whether
       it existed at all.)”'
@@ -49856,18 +49851,17 @@ sections:
     comment: (eastern dialects)
     raw: e → o / o(C…)_ (eastern dialects)
     source: index_diachronica_original.html:14151
-  - input: a o e
+  - comment: Egurtzegi transcribes it as /e/ but says it’s not as close as /e/)
+    input: a o e
     output: ɛ u i
-    env: '{i,u}(C…)_'
-    comment: (this [ɛ] is tentatively marked as such; Egurtzegi transcribes it as
-      /e/ but says it’s not as close as /e/)
+    env: '{i,u}(C…)_ (this [ɛ] is tentatively marked as such'
     raw: a o e → ɛ u i / {i,u}(C…)_ (this [ɛ] is tentatively marked as such; Egurtzegi
       transcribes it as /e/ but says it’s not as close as /e/)
     source: index_diachronica_original.html:14152
-  - input: o
+  - comment: some raising occurred elsewhere)
+    input: o
     output: u
-    env: _n{C,#}
-    comment: (Souletin; some raising occurred elsewhere)
+    env: _n{C,#} (Souletin
     raw: o → u / _n{C,#} (Souletin; some raising occurred elsewhere)
     source: index_diachronica_original.html:14153
   - input: a
@@ -50098,10 +50092,10 @@ sections:
     env: '#Ur_'
     raw: 'e → ∅ / #Ur_'
     source: index_diachronica_original.html:14198
-  - input: a
+  - comment: happens because of reanalysis of the definite article)
+    input: a
     output: ∅
-    env: V_#
-    comment: (Guipuscoan; happens because of reanalysis of the definite article)
+    env: V_# (Guipuscoan
     raw: a → ∅ / V_# (Guipuscoan; happens because of reanalysis of the definite article)
     source: index_diachronica_original.html:14199
   - input: V
@@ -50396,11 +50390,10 @@ sections:
     7-to-5 Vowel Merger in Bantu”. In Sound Change, M. Dominicy and D. Demolin (Eds.),
     Amsterdam: John Benjamins, 1995.'
   rules:
-  - input: S
+  - comment: in some cases, the phones go to null or to /l/)
+    input: S
     output: F
-    env: _{i,u}
-    comment: (Do not necessarily have to be fricatives at the same POA; in some cases,
-      the phones go to null or to /l/)
+    env: _{i,u} (Do not necessarily have to be fricatives at the same POA
     raw: S → F / _{i,u} (Do not necessarily have to be fricatives at the same POA;
       in some cases, the phones go to null or to /l/)
     source: index_diachronica_original.html:14293
@@ -50418,12 +50411,12 @@ sections:
   - raw: /ɪ/ otherwise has a highly variable pronunciation
     source: index_diachronica_original.html:14300
   rules:
-  - input: æ ɪ
+  - comment: some speakers (esp. in southern regions) may also have pin-pen and “a
+      single phoneme in contrast to the nasal diphthong [ãɪ̃] of the U.S. Northeast”
+      (though the article doesn’t specify what this is; maybe it’s just plain ã)
+    input: æ ɪ
     output: e i
     env: _ŋ
-    comment: “a single phoneme in contrast to the nasal diphthong [ãɪ̃] of the U.S.
-      Northeast”; (though the article doesn’t specify what this is; maybe it’s just
-      plain ã); some speakers (esp. in southern regions) may also have pin-pen and
     raw: æ ɪ → e i / _ŋ; some speakers (esp. in southern regions) may also have pin-pen
       and “a single phoneme in contrast to the nasal diphthong [ãɪ̃] of the U.S. Northeast”
       (though the article doesn’t specify what this is; maybe it’s just plain ã)
@@ -51181,11 +51174,11 @@ sections:
     comment: (Marathi)
     raw: p → w / V_V (Marathi)
     source: index_diachronica_original.html:14531
-  - input: b d ɡ
+  - comment: there may be more to it than this, since words like “repubblica” are
+      in standard Italian and not just dialects)
+    input: b d ɡ
     output: bː dː ɡː
-    env: V_V
-    comment: “repubblica”; (some dialects of Italian; there may be more to it than
-      this, since words likeare in standard Italian and not just dialects)
+    env: V_V (some dialects of Italian
     raw: b d ɡ → bː dː ɡː / V_V (some dialects of Italian; there may be more to it
       than this, since words like “repubblica” are in standard Italian and not just
       dialects)

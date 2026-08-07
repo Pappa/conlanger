@@ -13,6 +13,7 @@ from conlanger.tools.parsers import (
     GroupMapping,
     IndexDiachronicaParser,
     apply_feature_mappings,
+    apply_semicolon_field_comments,
     apply_sporadic_qualifier,
     apply_stress_conditions,
     apply_trailing_glosses,
@@ -30,6 +31,7 @@ from conlanger.tools.parsers import (
     parse_rule_element,
     parse_section_heading,
     split_env_exception,
+    split_field_semicolon_comment,
     split_input_output,
     split_output_rest,
     split_post_arrow,
@@ -902,6 +904,31 @@ def test_parse_rule_element_voiced_matrix_validates_asca():
         PhonologicalRuleSet(section).to_sound_change_ruleset(),
         probe_words=Path("tests/fixtures/asca_probe_words.wsca"),
     )
+
+
+def test_split_field_semicolon_comment():
+    assert split_field_semicolon_comment(
+        "depending on the environment; again, the article is unclear"
+    ) == (
+        "depending on the environment",
+        "again, the article is unclear",
+    )
+    assert split_field_semicolon_comment("short only") == ("short only", None)
+
+
+def test_apply_semicolon_field_comments():
+    assert apply_semicolon_field_comments(
+        {
+            "input": "V",
+            "output": "∅",
+            "env": "short only; blocked by following consonant",
+        }
+    ) == {
+        "input": "V",
+        "output": "∅",
+        "env": "short only",
+        "comment": "blocked by following consonant",
+    }
 
 
 def test_join_rule_comment():

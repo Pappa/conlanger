@@ -18,7 +18,8 @@ Uncertainty glosses
 ``feature_mappings.csv`` (``raw`` unchanged). **Correspondence-series** and
 **collective subscript** expansion via ``series_mappings.csv`` (``raw`` unchanged).
 Inline prose stripped for ASCA is captured in optional ``comment`` on each corpus
-rule. Class-letter expansion is deferred to compile time (``PhonologicalRuleSet`` +
+rule: semicolon tails in ``env`` / ``exception`` first (``apply_semicolon_field_comments``), then
+field-level glosses and env qualifiers. Class-letter expansion is deferred to compile time (``PhonologicalRuleSet`` +
 ``group_mappings.csv``).
 """
 
@@ -101,6 +102,31 @@ def join_rule_comment(*fragments: str | None) -> str | None:
     if not parts:
         return None
     return "; ".join(parts)
+
+
+def split_field_semicolon_comment(text: str) -> tuple[str, str | None]:
+    """Treat the first ``;`` and following text as ``comment`` prose in one field."""
+    if not text or ";" not in text:
+        return text, None
+    head, _semicolon, tail = text.partition(";")
+    head = head.rstrip()
+    comment = tail.strip()
+    return head, comment or None
+
+
+def apply_semicolon_field_comments(parts: dict[str, str]) -> dict[str, Any]:
+    """Strip semicolon tails from ``env`` and ``exception``; first comment pass."""
+    result: dict[str, Any] = dict(parts)
+    fragments: list[str] = []
+    for key in ("env", "exception"):
+        if key not in result:
+            continue
+        value, comment = split_field_semicolon_comment(result[key])
+        result[key] = value
+        if comment:
+            fragments.append(comment)
+    _append_rule_comment_parts(result, fragments)
+    return result
 
 
 def _append_rule_comment_parts(parts: dict[str, Any], fragments: list[str]) -> None:
@@ -187,7 +213,9 @@ def strip_uncertainty_qualifier_from_field(text: str) -> str:
 def apply_sporadic_qualifier(parts: dict[str, str]) -> dict[str, Any]:
     """Strip uncertainty glosses from rule fields; set ``sporadic: true`` when found."""
     sporadic = False
-    cleaned: dict[str, str] = {}
+    cleaned: dict[str, Any] = {}
+    if "comment" in parts:
+        cleaned["comment"] = parts["comment"]
     comment_fragments: list[str] = []
     for key in ("input", "output", "env", "exception"):
         if key not in parts:
@@ -367,12 +395,6 @@ def extract_semicolon_prose_from_field(text: str) -> tuple[str, list[str]]:
         if not re.match(r"[_#\[\{]", tail.lstrip()):
             return text[:idx].rstrip(), [tail.strip()]
     return text, []
-
-
-def strip_semicolon_prose_from_field(text: str) -> str:
-    """Remove trailing ``; …`` English prose (ASCA treats ``;`` as malformed comment)."""
-    cleaned, _ = extract_semicolon_prose_from_field(text)
-    return cleaned
 
 
 def extract_trailing_gloss_from_field(text: str) -> tuple[str, list[str]]:
@@ -891,6 +913,7 @@ class IndexDiachronicaParser:
                     "skipped": f"missing separator {ARROW!r}",
                 }
             ]
+        parts = apply_semicolon_field_comments(parts)
         parts = apply_sporadic_qualifier(parts)
         sporadic = parts.pop("sporadic", False)
         sporadic_flag = {"sporadic": True} if sporadic else {}
