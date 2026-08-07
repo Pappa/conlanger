@@ -4,22 +4,22 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9201** (one per corpus rule)
-- OK: **6527** (70.9%)
-- Fail: **2674** (29.1%)
-- Sections all OK: **140 / 714** (19.6%)
+- OK: **6578** (71.5%)
+- Fail: **2623** (28.5%)
+- Sections all OK: **145 / 714** (20.3%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 1078 | `syntax_other` |
-| 710 | `unknown_character` |
-| 381 | `expected_underscore` |
-| 160 | `unknown_feature` |
-| 85 | `unknown_grouping` |
-| 57 | `prose_or_expected_arrow` |
+| 1080 | `syntax_other` |
+| 649 | `unknown_character` |
+| 386 | `expected_underscore` |
+| 162 | `unknown_feature` |
+| 86 | `unknown_grouping` |
+| 56 | `prose_or_expected_arrow` |
+| 34 | `expected_number` |
 | 34 | `panic_other` |
-| 33 | `expected_number` |
 | 32 | `nested_brackets` |
 | 29 | `diacritic_prereq` |
 | 22 | `runtime_other` |
@@ -34,11 +34,11 @@
 
 | count | error_token |
 |------:|-------------|
-| 49 | `₀` |
+| 49 | `ː` |
 | 48 | `Š` |
 | 42 | `”` |
-| 39 | `ː` |
-| 37 | `₁` |
+| 35 | `(` |
+| 34 | `ã` |
 
 ### unknown_feature
 
@@ -52,13 +52,13 @@
 | 9 | `samePOA` | `lateral` |
 | 9 | `fortis` | `contin` |
 | 8 | `hightone` | `high` |
-| 7 | `mid` | `man` |
+| 8 | `mid` | `man` |
 | 6 | `lenis` | `tens` |
 | 5 | `alveolar` | `delay` |
-| 5 | `velar` | `delay` |
+| 5 | `weak` | `man` |
 | 5 | `guttural` | `lateral` |
+| 5 | `velar` | `delay` |
 | 4 | `closed` | `cons` |
-| 4 | `weak` | `man` |
 | 4 | `uvular` | `lar` |
 | 4 | `glottal` | `lateral` |
 | 3 | `fallingtone` | `length` |
@@ -85,7 +85,7 @@
 | count | error_token |
 |------:|-------------|
 | 15 | `R` |
-| 13 | `U` |
+| 14 | `U` |
 | 12 | `E` |
 | 7 | `H` |
 | 6 | `B` |

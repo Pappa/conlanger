@@ -1,9 +1,14 @@
-"""No-op placeholders for planned ASCA compile transforms (spike 38 orders 3, 4, 10)."""
+"""No-op placeholders for planned ASCA compile transforms (spike 38 orders 4, 10)."""
 
+from conlanger.tools.asca_compile.subscript_references import (
+    expand_index_subscript_references,
+)
 
-def expand_index_subscript_references(text: str) -> str:
-    """Positional slots + identity subscripts → ASCA reference syntax (planned)."""
-    return text
+__all__ = [
+    "apply_section_local_abbreviations",
+    "expand_index_subscript_references",
+    "expand_meta_notation",
+]
 
 
 def apply_section_local_abbreviations(text: str) -> str:
