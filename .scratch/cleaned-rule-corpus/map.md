@@ -50,6 +50,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - [Document the sound-change rule pipeline in docs/](issues/37-document-sound-change-pipeline.md) — **grill 2026-08-07:** four `docs/` pages + `SYSTEM.md` **Pipeline stages (legacy)** / **(new)**; applier compile table (implemented order + planned `TBD` rows); parse / validation / applier docs split; compile validation lives in applier doc; no ADR for transform order.
 - [Spike: ASCA compile transform ordering (planned steps)](issues/38-spike-asca-compile-transform-order.md) — done. Findings: [research/asca-compile-transform-order.md](research/asca-compile-transform-order.md). Orders 3–4 before group mappings; 10 meta cluster-last.
 - [Refactor SoundChangeRuleSet and compile subcomponents](issues/39-refactor-sound-change-ruleset.md) — **blocked by 37**; scope TBD until docs land.
+- [Spike: unknown_character → IPA mapping candidates](issues/42-spike-unknown-character-ipa-mappings.md) — 42 letter-like tokens classified; high-confidence seed set (ḱ, Ṽ, nasal vowels, š/Ṣ, French è, Slavic yers). Findings: [research/unknown-character-ipa-mappings.md](research/unknown-character-ipa-mappings.md) + [research/unknown-character-ipa-mappings.csv](research/unknown-character-ipa-mappings.csv).
 
 ## Pipeline documentation (grill 2026-08-07)
 

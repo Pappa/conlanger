@@ -1,5 +1,4 @@
 index_feature,ipa_target,confidence,notes
-Š,ʃ,high,Latin capital S-caron; same target as š
 ã,ã,high,Precomposed a-tilde → a + combining tilde; Tamil/French nasal vowel rules (n=34)
 ẽ,ẽ,high,Precomposed e-tilde → e + combining tilde (n=33)
 ı,j,low,Dotless i often marks glide in French aı̃/eı̃; Turkic ɯ contexts need cluster review (n=30)

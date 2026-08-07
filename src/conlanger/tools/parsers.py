@@ -582,7 +582,7 @@ def load_ipa_mappings(path: Path | None = None) -> list[IpaMapping]:
     if not csv_path.is_file():
         return []
     df = pd.read_csv(csv_path, dtype=str, keep_default_na=False)
-    required = {"index_feature", "ipa_target"}
+    required = {"index_feature", "ipa_target", "confidence"}
     missing = required - set(df.columns)
     if missing:
         raise ValueError(
@@ -595,6 +595,7 @@ def load_ipa_mappings(path: Path | None = None) -> list[IpaMapping]:
             IpaMapping(
                 index_feature=row.index_feature,
                 ipa_target=row.ipa_target,
+                confidence=row.confidence,
                 notes=row.notes if has_notes else "",
             )
         )
@@ -602,8 +603,12 @@ def load_ipa_mappings(path: Path | None = None) -> list[IpaMapping]:
 
 
 def ipa_mappings_dict(path: Path | None = None) -> dict[str, str]:
-    """Return IPA mappings keyed by Index character or digraph."""
-    return {row.index_feature: row.ipa_target for row in load_ipa_mappings(path)}
+    """Return high-confidence IPA mappings keyed by Index character or digraph."""
+    return {
+        row.index_feature: row.ipa_target
+        for row in load_ipa_mappings(path)
+        if row.confidence == "high" and row.ipa_target
+    }
 
 
 def normalize_ipa_in_field(text: str, mappings: dict[str, str]) -> str:
@@ -666,6 +671,7 @@ class GroupMapping:
 class IpaMapping:
     index_feature: str
     ipa_target: str
+    confidence: str = ""
     notes: str = ""
 
 

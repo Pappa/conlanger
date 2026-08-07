@@ -887,8 +887,20 @@ def test_apply_feature_mappings():
 def test_load_ipa_mappings_from_default_csv():
     rows = load_ipa_mappings()
     assert rows
-    assert rows[0].index_feature == "Š"
-    assert rows[0].ipa_target == "ʃ"
+    by_name = {row.index_feature: row for row in rows}
+    assert by_name["Š"].ipa_target == "ʃ"
+    assert by_name["Š"].confidence == "high"
+    assert by_name["é"].confidence == "medium"
+
+
+def test_ipa_mappings_dict_only_high_confidence():
+    mappings = ipa_mappings_dict()
+    assert mappings["ḱ"] == "kʲ"
+    assert mappings["Š"] == "ʃ"
+    assert mappings["è"] == "ɛ"
+    assert "é" not in mappings
+    assert "ı" not in mappings
+    assert "Ω" not in mappings
 
 
 def test_normalize_ipa_in_field():
@@ -913,6 +925,22 @@ def test_parse_rule_element_normalizes_ipa_characters():
     rules = parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["output"] == "Tʃ"
     assert rules[0]["raw"] == "K → TŠ / in Mentasta Ahtna"
+
+
+def test_parse_rule_element_applies_high_confidence_ipa_only():
+    el = html.fragment_fromstring(
+        '<p class="schg">ḱ → s / _i</p>',
+        create_parent=False,
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["input"] == "kʲ"
+    assert "ḱ" in rules[0]["raw"]
+    el2 = html.fragment_fromstring(
+        '<p class="schg">é → ɛ / _#</p>',
+        create_parent=False,
+    )
+    rules2 = parse_rule_element(el2, source_file="index_diachronica_original.html")
+    assert rules2[0]["input"] == "é"
 
 
 def test_parse_rule_element_normalizes_feature_matrices():

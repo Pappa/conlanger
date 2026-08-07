@@ -4,24 +4,24 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9201** (one per corpus rule)
-- OK: **6572** (71.4%)
-- Fail: **2629** (28.6%)
-- Sections all OK: **144 / 714** (20.2%)
+- OK: **6658** (72.4%)
+- Fail: **2543** (27.6%)
+- Sections all OK: **149 / 714** (20.9%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 1095 | `syntax_other` |
-| 613 | `unknown_character` |
-| 387 | `expected_underscore` |
-| 151 | `unknown_feature` |
-| 126 | `unknown_grouping` |
-| 63 | `prose_or_expected_arrow` |
+| 1115 | `syntax_other` |
+| 483 | `unknown_character` |
+| 398 | `expected_underscore` |
+| 156 | `unknown_feature` |
+| 133 | `unknown_grouping` |
+| 64 | `prose_or_expected_arrow` |
 | 35 | `expected_number` |
 | 34 | `panic_other` |
-| 32 | `nested_brackets` |
-| 29 | `diacritic_prereq` |
+| 31 | `nested_brackets` |
+| 30 | `diacritic_prereq` |
 | 22 | `runtime_other` |
 | 20 | `runtime_delete_only_segment` |
 | 18 | `stuff_after_word_bound` |
@@ -35,29 +35,29 @@
 | count | error_token |
 |------:|-------------|
 | 49 | `ː` |
+| 45 | `ı` |
 | 42 | `”` |
+| 37 | `́` |
 | 35 | `(` |
-| 34 | `ã` |
-| 33 | `ẽ` |
 
 ### unknown_feature
 
 | count | error_token | suggested |
 |------:|-------------|-----------|
-| 19 | `dental` | `ldental` |
-| 14 | `open` | `ten` |
+| 20 | `dental` | `ldental` |
+| 16 | `open` | `ten` |
 | 13 | `palatal` | `latrl` |
 | 11 | `lowtone` | `contin` |
 | 10 | `samePOA` | `lateral` |
 | 9 | `fortis` | `contin` |
 | 8 | `hightone` | `high` |
 | 8 | `mid` | `man` |
+| 6 | `closed` | `cons` |
 | 6 | `lenis` | `tens` |
-| 5 | `velar` | `delay` |
 | 5 | `alveolar` | `delay` |
 | 5 | `guttural` | `lateral` |
 | 5 | `weak` | `man` |
-| 4 | `closed` | `cons` |
+| 5 | `velar` | `delay` |
 | 4 | `uvular` | `lar` |
 | 3 | `fallingtone` | `length` |
 | 2 | `affricate` | `stridnt` |
@@ -83,11 +83,11 @@
 
 | count | error_token |
 |------:|-------------|
-| 43 | `T` |
+| 49 | `T` |
 | 15 | `R` |
 | 14 | `U` |
 | 12 | `E` |
-| 7 | `H` |
+| 8 | `H` |
 | 6 | `B` |
 | 6 | `M` |
 | 5 | `K` |
