@@ -23260,7 +23260,7 @@ sections:
     raw: s → ʃ / {u,i,l,r,K,Ḱ}
     source: index_diachronica_original.html:6828
   - input: Ḱ
-    output: TŠ
+    output: Tʃ
     raw: Ḱ → TŠ
     source: index_diachronica_original.html:6829
   - input: Bʱ₁P₂
@@ -35037,12 +35037,12 @@ sections:
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
-  - input: '{TŠ,TŠʷ}'
+  - input: '{Tʃ,Tʃʷ}'
     output: TS
     raw: '{TŠ,TŠʷ} → TS'
     source: index_diachronica_original.html:9979
   - input: K
-    output: TŠ
+    output: Tʃ
     env: in Mentasta Ahtna
     raw: K → TŠ / in Mentasta Ahtna
     source: index_diachronica_original.html:9980
@@ -35063,7 +35063,7 @@ sections:
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
-  - input: '{TŠ,TŠʷ}'
+  - input: '{Tʃ,Tʃʷ}'
     output: TS
     raw: '{TŠ,TŠʷ} → TS'
     source: index_diachronica_original.html:9988
@@ -35085,16 +35085,16 @@ sections:
     comment: (most often back to 3, however)
     raw: TS → TH (most often back to 3, however)
     source: index_diachronica_original.html:9995
-  - input: '{TŠ,TŠʷ}'
+  - input: '{Tʃ,Tʃʷ}'
     output: TS
     raw: '{TŠ,TŠʷ} → TS'
     source: index_diachronica_original.html:9996
   - input: K Q
-    output: TŠ K
+    output: Tʃ K
     raw: K Q → TŠ K
     source: index_diachronica_original.html:9997
   - input: T
-    output: TŠ
+    output: Tʃ
     env: _{i,e,u}, in the British Columbian dialect
     raw: T → TŠ / _{i,e,u}, in the British Columbian dialect
     source: index_diachronica_original.html:9998
@@ -35126,8 +35126,8 @@ sections:
     output: '{Vˀ,V[+RTR]}'
     raw: V → {Vˀ,V[+RTR]}
     source: index_diachronica_original.html:10007
-  - input: '{TŠ,TŠʷ} K'
-    output: TS TŠ
+  - input: '{Tʃ,Tʃʷ} K'
+    output: TS Tʃ
     raw: '{TŠ,TŠʷ} K → TS TŠ'
     source: index_diachronica_original.html:10008
   - input: e {ɑ,ə}
@@ -35143,8 +35143,8 @@ sections:
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
-  - input: TS {TŠ,TŠʷ} K Q
-    output: TH TS TŠ K
+  - input: TS {Tʃ,Tʃʷ} K Q
+    output: TH TS Tʃ K
     raw: TS {TŠ,TŠʷ} K Q → TH TS TŠ K
     source: index_diachronica_original.html:10016
   - input: t
@@ -35170,8 +35170,8 @@ sections:
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
-  - input: '{TŠ,TŠʷ} K Q'
-    output: TS TŠ K
+  - input: '{Tʃ,Tʃʷ} K Q'
+    output: TS Tʃ K
     raw: '{TŠ,TŠʷ} K Q → TS TŠ K'
     source: index_diachronica_original.html:10025
   - input: u {ɑ,ʊ}
@@ -35187,17 +35187,17 @@ sections:
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
-  - input: TS TŠ
+  - input: TS Tʃ
     output: TH TS
     raw: TS TŠ → TH TS
     source: index_diachronica_original.html:10032
-  - input: TŠʷ
+  - input: Tʃʷ
     output: TṢ
     comment: (> TS in Kuskokwim dialect)
     raw: TŠʷ → TṢ (→ TS in Kuskokwim dialect)
     source: index_diachronica_original.html:10033
   - input: K
-    output: '{K,TŠ}'
+    output: '{K,Tʃ}'
     raw: K → {K,TŠ}
     source: index_diachronica_original.html:10034
   - input: w
@@ -35232,8 +35232,8 @@ sections:
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
-  - input: '{TŠ,TŠʷ}'
-    output: TŠ
+  - input: '{Tʃ,Tʃʷ}'
+    output: Tʃ
     comment: (> TS in Upper Inlet dialect)
     raw: '{TŠ,TŠʷ} → TŠ (→ TS in Upper Inlet dialect)'
     source: index_diachronica_original.html:10045
@@ -35263,8 +35263,8 @@ sections:
     output: a e o i
     raw: ɑ ə ʊ u → a e o i
     source: index_diachronica_original.html:10054
-  - input: '{TŠ,TŠʷ} K Q'
-    output: TS TŠ K
+  - input: '{Tʃ,Tʃʷ} K Q'
+    output: TS Tʃ K
     raw: '{TŠ,TŠʷ} K Q → TS TŠ K'
     source: index_diachronica_original.html:10055
   - input: ts tsʰ tsʼ s z
@@ -35284,16 +35284,16 @@ sections:
     source: index_diachronica_original.html:10071
   rules:
   - input: TS K
-    output: TŠ TS
+    output: Tʃ TS
     env: _E
     raw: TS K → TŠ TS / _E
     source: index_diachronica_original.html:10062
   - input: TS K
-    output: TH TŠ
+    output: TH Tʃ
     env: else
     raw: TS K → TH TŠ / else
     source: index_diachronica_original.html:10063
-  - input: TŠ TŠʷ Q
+  - input: Tʃ Tʃʷ Q
     output: TS TṢ K
     raw: TŠ TŠʷ Q → TS TṢ K
     source: index_diachronica_original.html:10064
@@ -35338,8 +35338,8 @@ sections:
       comtemporary Han are /t k w j r n h ʔ/, with the addition of /l/ in Dawson Han
     source: index_diachronica_original.html:10083
   rules:
-  - input: TS TŠ TŠʷ K Q
-    output: TH TS TṢ TŠ K
+  - input: TS Tʃ Tʃʷ K Q
+    output: TH TS TṢ Tʃ K
     raw: TS TŠ TŠʷ K Q → TH TS TṢ TŠ K
     source: index_diachronica_original.html:10076
   - input: n
@@ -35378,7 +35378,7 @@ sections:
     output: e a ɔ o ŭ
     raw: i e a u {ɑ,ʊ} → e a ɔ o ŭ
     source: index_diachronica_original.html:10090
-  - input: TS {TŠ,TŠʷ}
+  - input: TS {Tʃ,Tʃʷ}
     output: TŁ TS
     raw: TS {TŠ,TŠʷ} → TŁ TS
     source: index_diachronica_original.html:10091
@@ -35443,7 +35443,7 @@ sections:
     output: a o ŏ ŭ
     raw: e a ɑ ʊ → a o ŏ ŭ
     source: index_diachronica_original.html:10111
-  - input: TS {TŠ,TŠʷ}
+  - input: TS {Tʃ,Tʃʷ}
     output: TŁ TS
     raw: TS {TŠ,TŠʷ} → TŁ TS
     source: index_diachronica_original.html:10112
@@ -35477,12 +35477,12 @@ sections:
     output: a o ŏ ŭ
     raw: e a ɑ ʊ → a o ŏ ŭ
     source: index_diachronica_original.html:10121
-  - input: TS {TŠ,TŠʷ}
+  - input: TS {Tʃ,Tʃʷ}
     output: TŁ TS
     raw: TS {TŠ,TŠʷ} → TŁ TS
     source: index_diachronica_original.html:10122
   - input: K
-    output: TŠ
+    output: Tʃ
     raw: K → TŠ
     source: index_diachronica_original.html:10124
   - input: C’
@@ -35510,8 +35510,8 @@ sections:
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
-  - input: TŠ TŠʷ K Q
-    output: TS TṢ TŠ K
+  - input: Tʃ Tʃʷ K Q
+    output: TS TṢ Tʃ K
     raw: TŠ TŠʷ K Q → TS TṢ TŠ K
     source: index_diachronica_original.html:10133
   - input: e a {ɑ,ʊ}
@@ -35527,8 +35527,8 @@ sections:
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
-  - input: '{TŠ,TŠʷ} K Q'
-    output: TS TŠ K
+  - input: '{Tʃ,Tʃʷ} K Q'
+    output: TS Tʃ K
     raw: '{TŠ,TŠʷ} K Q → TS TŠ K'
     source: index_diachronica_original.html:10140
   - input: ɑ́ ə́ ʊ́
@@ -35553,12 +35553,12 @@ sections:
     comment: (> TS again in some areas)
     raw: TS → TH (→ TS again in some areas)
     source: index_diachronica_original.html:10148
-  - input: '{TŠ,TŠʷ} K Q'
-    output: TS TŠ Q
+  - input: '{Tʃ,Tʃʷ} K Q'
+    output: TS Tʃ Q
     raw: '{TŠ,TŠʷ} K Q → TS TŠ Q'
     source: index_diachronica_original.html:10149
   - input: T
-    output: TŠ
+    output: Tʃ
     env: _{i,e,u}
     exception: in Ware Sekani
     raw: T → TŠ / _{i,e,u} ! in Ware Sekani
@@ -35925,8 +35925,8 @@ sections:
     output: a ɛ o
     raw: ɑ ə ʊ → a ɛ o
     source: index_diachronica_original.html:10259
-  - input: '{TŠ,TŠʷ} K Q'
-    output: TS TŠ K
+  - input: '{Tʃ,Tʃʷ} K Q'
+    output: TS Tʃ K
     raw: '{TŠ,TŠʷ} K Q → TS TŠ K'
     source: index_diachronica_original.html:10260
   - input: ts tsʰ tsʼ s z
@@ -35942,8 +35942,8 @@ sections:
     output: ɬ s ʃ
     raw: tɬʰ tʃ(ʷ)ʰ kʰ → ɬ s ʃ
     source: index_diachronica_original.html:10266
-  - input: '{TŠ,TŠʷ} K'
-    output: TS TŠ
+  - input: '{Tʃ,Tʃʷ} K'
+    output: TS Tʃ
     comment: (with exceptions)
     raw: '{TŠ,TŠʷ} K → TS TŠ (with exceptions)'
     source: index_diachronica_original.html:10267
@@ -35978,8 +35978,8 @@ sections:
     output: a e o
     raw: ɑ ə ʊ → a e o
     source: index_diachronica_original.html:10277
-  - input: '{TŠ,TŠʷ} K Q'
-    output: TS TŠ K
+  - input: '{Tʃ,Tʃʷ} K Q'
+    output: TS Tʃ K
     raw: '{TŠ,TŠʷ} K Q → TS TŠ K'
     source: index_diachronica_original.html:10278
   - input: ts tsʰ tsʼ s z
@@ -36000,8 +36000,8 @@ sections:
     output: a e o
     raw: ɑ ə ʊ → a e o
     source: index_diachronica_original.html:10285
-  - input: '{TŠ,TŠʷ} K Q'
-    output: TS TŠ K
+  - input: '{Tʃ,Tʃʷ} K Q'
+    output: TS Tʃ K
     raw: '{TŠ,TŠʷ} K Q → TS TŠ K'
     source: index_diachronica_original.html:10286
 - section: Proto-Athabaskan to Tahltan-Kaska-Tagish
@@ -36031,12 +36031,12 @@ sections:
     output: V[+high tone]
     raw: Vˀ → V[+high tone]
     source: index_diachronica_original.html:10298
-  - input: TS {TŠ,TŠʷ}
+  - input: TS {Tʃ,Tʃʷ}
     output: TH TS
     raw: TS {TŠ,TŠʷ} → TH TS
     source: index_diachronica_original.html:10299
   - input: K
-    output: TŠ
+    output: Tʃ
     comment: (although /xʲ/ stays as such in a few dialects)
     raw: K → TŠ (although /xʲ/ stays as such in a few dialects)
     source: index_diachronica_original.html:10300
@@ -36045,7 +36045,7 @@ sections:
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
-  - input: '{TŠ,TŠʷ} TS'
+  - input: '{Tʃ,Tʃʷ} TS'
     output: TS TSʲ
     raw: '{TŠ,TŠʷ} TS → TS TSʲ'
     source: index_diachronica_original.html:10305
@@ -36054,8 +36054,8 @@ sections:
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
-  - input: '{TŠʷ,K}'
-    output: TŠ
+  - input: '{Tʃʷ,K}'
+    output: Tʃ
     comment: (although /xʲ/ stays as such in a few dialects)
     raw: '{TŠʷ,K} → TŠ (although /xʲ/ stays as such in a few dialects)'
     source: index_diachronica_original.html:10310
@@ -36069,11 +36069,11 @@ sections:
     source: index_diachronica_original.html:10319
   rules:
   - input: K
-    output: TŠ
+    output: Tʃ
     exception: _$
     raw: K → TŠ / ! _$
     source: index_diachronica_original.html:10315
-  - input: TS TŠ TŠʷ Q
+  - input: TS Tʃ Tʃʷ Q
     output: TH TS TṢ K
     raw: TS TŠ TŠʷ Q → TH TS TṢ K
     source: index_diachronica_original.html:10316
@@ -36120,11 +36120,11 @@ sections:
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - input: K
-    output: TŠ
+    output: Tʃ
     exception: _$
     raw: K → TŠ / ! _$
     source: index_diachronica_original.html:10330
-  - input: TS TŠ TŠᵚ Q
+  - input: TS Tʃ Tʃᵚ Q
     output: TH TS TṢ K
     raw: TS TŠ TŠᵚ Q → TH TS TṢ K
     source: index_diachronica_original.html:10331
@@ -36154,11 +36154,11 @@ sections:
     source: index_diachronica_original.html:10342
   rules:
   - input: K
-    output: TŠ
+    output: Tʃ
     exception: _$
     raw: K → TŠ / ! _$
     source: index_diachronica_original.html:10339
-  - input: TS TŠ TŠʷ Q
+  - input: TS Tʃ Tʃʷ Q
     output: TH TS TṢ K
     raw: TS TŠ TŠʷ Q → TH TS TṢ K
     source: index_diachronica_original.html:10340
@@ -36218,12 +36218,12 @@ sections:
   - raw: Series TŠʷ apparently moved its POA to the labiodental or bilabial position
     source: index_diachronica_original.html:10357
   rules:
-  - input: TŠ
+  - input: Tʃ
     output: TS
     raw: TŠ → TS
     source: index_diachronica_original.html:10356
   - input: K Q
-    output: TŠ K
+    output: Tʃ K
     raw: K Q → TŠ K
     source: index_diachronica_original.html:10358
   - input: C
@@ -36246,12 +36246,12 @@ sections:
   - raw: Acquisition of nasalized vowels and diphthongs /o/ somehow develops
     source: index_diachronica_original.html:10371
   rules:
-  - input: TS {TŠ,TŠʷ}
+  - input: TS {Tʃ,Tʃʷ}
     output: TH TS
     raw: TS {TŠ,TŠʷ} → TH TS
     source: index_diachronica_original.html:10365
   - input: K
-    output: TŠ
+    output: Tʃ
     comment: (although /xʲ/ remained as such in a few dialects)
     raw: K → TŠ (although /xʲ/ remained as such in a few dialects)
     source: index_diachronica_original.html:10366
@@ -36278,12 +36278,12 @@ sections:
   - raw: Acquisition of nasalized vowels and diphthongs /ɨ/ somehow develops
     source: index_diachronica_original.html:10384
   rules:
-  - input: TS {TŠ,TŠʷ}
+  - input: TS {Tʃ,Tʃʷ}
     output: TH TS
     raw: TS {TŠ,TŠʷ} → TH TS
     source: index_diachronica_original.html:10377
   - input: K
-    output: TŠ
+    output: Tʃ
     comment: (although /xʲ/ remained as such in a few dialects)
     raw: K → TŠ (although /xʲ/ remained as such in a few dialects)
     source: index_diachronica_original.html:10378
@@ -43322,7 +43322,7 @@ sections:
     source: index_diachronica_original.html:12400
   - input: V
     output: Vː
-    env: _C[-glottal]
+    env: _C[+place]
     comment: “in even-numbered syllables when accented or immediately before the accent”
     raw: V → Vː / _C[-glottal] “in even-numbered syllables when accented or immediately
       before the accent”
@@ -43830,7 +43830,7 @@ sections:
     source: index_diachronica_original.html:12519
   - input: V
     output: Vː
-    env: _C:[+stress][-glottal](R)V{ː,H} in
+    env: _C:[+stress][+place](R)V{ː,H} in
     comment: “even numbered syllables only”
     raw: V → Vː / _”C[-glottal](R)V{ː,H} in “even numbered syllables only”
     source: index_diachronica_original.html:12520
@@ -44366,7 +44366,7 @@ sections:
     source: index_diachronica_original.html:12647
   - input: r
     output: j
-    env: C[-glottal](h)_{o(ː),õ(ː)
+    env: C[+place](h)_{o(ː),õ(ː)
     raw: r → j / C[-glottal](h)_{o(ː),õ(ː)
     source: index_diachronica_original.html:12648
   - input: r
@@ -44437,7 +44437,7 @@ sections:
     env: s_#
     raw: C → ∅ / s_#
     source: index_diachronica_original.html:12662
-  - input: C[-glottal]
+  - input: C[+place]
     output: ∅
     env: _s#
     raw: C[-glottal] → ∅ / _s#
@@ -46738,7 +46738,7 @@ sections:
     output: ɡ
     raw: ŋ → ɡ
     source: index_diachronica_original.html:13247
-  - input: TŠ
+  - input: Tʃ
     output: TS
     raw: TŠ → TS
     source: index_diachronica_original.html:13248

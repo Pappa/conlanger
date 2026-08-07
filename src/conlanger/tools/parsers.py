@@ -15,7 +15,8 @@ multi-segment ``output`` (``a > b > c``); compile-time expansion is deferred.
 Uncertainty glosses
 (``sporadic``, ``sometimes``, …) are stripped from field values and recorded as
 ``sporadic: true``. **Feature matrix** synonym replacement inside ``[...]`` via
-``feature_mappings.csv`` (``raw`` unchanged). **Correspondence-series** and
+``feature_mappings.csv`` (``raw`` unchanged). **IPA character** substitution via
+``ipa_mapping.csv`` (``raw`` unchanged). **Correspondence-series** and
 **collective subscript** expansion via ``series_mappings.csv`` (``raw`` unchanged).
 Inline prose stripped for ASCA is captured in optional ``comment`` on each corpus
 rule: semicolon tails in ``env`` / ``exception`` first (``apply_semicolon_field_comments``), then
@@ -77,6 +78,9 @@ DEFAULT_GROUP_MAPPINGS_CSV = (
 )
 DEFAULT_FEATURE_MAPPINGS_CSV = (
     Path(__file__).resolve().parents[3] / "data" / "asca" / "feature_mappings.csv"
+)
+DEFAULT_IPA_MAPPINGS_CSV = (
+    Path(__file__).resolve().parents[3] / "data" / "common" / "ipa_mapping.csv"
 )
 _SUPPORTED_FEATURE_MAPPING_KINDS = frozenset({"rename", "rename_invert", "rename_polarity"})
 
@@ -572,6 +576,60 @@ def apply_feature_mappings(
     return result
 
 
+def load_ipa_mappings(path: Path | None = None) -> list[IpaMapping]:
+    """Load Index→ASCA IPA character mappings from CSV."""
+    csv_path = DEFAULT_IPA_MAPPINGS_CSV if path is None else Path(path)
+    if not csv_path.is_file():
+        return []
+    df = pd.read_csv(csv_path, dtype=str, keep_default_na=False)
+    required = {"index_feature", "ipa_target"}
+    missing = required - set(df.columns)
+    if missing:
+        raise ValueError(
+            f"IPA mappings CSV missing required columns: {sorted(missing)}"
+        )
+    has_notes = "notes" in df.columns
+    out: list[IpaMapping] = []
+    for row in df.itertuples(index=False):
+        out.append(
+            IpaMapping(
+                index_feature=row.index_feature,
+                ipa_target=row.ipa_target,
+                notes=row.notes if has_notes else "",
+            )
+        )
+    return out
+
+
+def ipa_mappings_dict(path: Path | None = None) -> dict[str, str]:
+    """Return IPA mappings keyed by Index character or digraph."""
+    return {row.index_feature: row.ipa_target for row in load_ipa_mappings(path)}
+
+
+def normalize_ipa_in_field(text: str, mappings: dict[str, str]) -> str:
+    """Replace Index IPA characters in one rule field with ASCA targets."""
+    if not text or not mappings:
+        return text
+    for source in sorted(mappings.keys(), key=len, reverse=True):
+        text = text.replace(source, mappings[source])
+    return text
+
+
+def apply_ipa_mappings(
+    parts: dict[str, str],
+    mappings: dict[str, str] | None = None,
+) -> dict[str, str]:
+    """Normalize Index IPA characters in rule fields; ``raw`` unchanged upstream."""
+    table = mappings if mappings is not None else ipa_mappings_dict()
+    if not table:
+        return parts
+    result = dict(parts)
+    for key in ("input", "output", "env", "exception"):
+        if key in result:
+            result[key] = normalize_ipa_in_field(result[key], table)
+    return result
+
+
 # Index Diachronica stress mark (Key to Abbreviations: ” = Stress).
 _INDEX_STRESS = "\u201d"
 
@@ -602,6 +660,13 @@ class GroupMapping:
     grouping: str
     mapping: str
     comment: str = ""
+
+
+@dataclass(frozen=True)
+class IpaMapping:
+    index_feature: str
+    ipa_target: str
+    notes: str = ""
 
 
 @dataclass(frozen=True)
@@ -920,6 +985,7 @@ class IndexDiachronicaParser:
         parts = apply_trailing_glosses(parts)
         parts = apply_stress_conditions(parts)
         parts = apply_feature_mappings(parts)
+        parts = apply_ipa_mappings(parts)
         from conlanger.tools.series_mappings import apply_series_mappings
 
         parts = apply_series_mappings(parts, section_index, self._series_mappings)

@@ -13,6 +13,7 @@ from conlanger.tools.parsers import (
     GroupMapping,
     IndexDiachronicaParser,
     apply_feature_mappings,
+    apply_ipa_mappings,
     apply_semicolon_field_comments,
     apply_sporadic_qualifier,
     apply_stress_conditions,
@@ -21,10 +22,13 @@ from conlanger.tools.parsers import (
     extract_semicolon_prose_from_field,
     extract_text_with_subs,
     feature_mappings_dict,
+    ipa_mappings_dict,
     join_rule_comment,
     load_feature_mappings,
     load_group_mappings,
+    load_ipa_mappings,
     normalize_feature_matrices_in_field,
+    normalize_ipa_in_field,
     normalize_stress_conditions,
     normalize_stress_marks,
     normalize_symbols,
@@ -878,6 +882,37 @@ def test_apply_feature_mappings():
         {"input": "C[+voiced]", "output": "C[+voice]"},
         mappings,
     ) == {"input": "C[+voice]", "output": "C[+voice]"}
+
+
+def test_load_ipa_mappings_from_default_csv():
+    rows = load_ipa_mappings()
+    assert rows
+    assert rows[0].index_feature == "Š"
+    assert rows[0].ipa_target == "ʃ"
+
+
+def test_normalize_ipa_in_field():
+    mappings = ipa_mappings_dict()
+    assert normalize_ipa_in_field("TŠ", mappings) == "Tʃ"
+    assert normalize_ipa_in_field("Š", mappings) == "ʃ"
+
+
+def test_apply_ipa_mappings():
+    mappings = {"Š": "ʃ"}
+    assert apply_ipa_mappings(
+        {"input": "TŠ", "output": "TS", "env": "_{Š}"},
+        mappings,
+    ) == {"input": "Tʃ", "output": "TS", "env": "_{ʃ}"}
+
+
+def test_parse_rule_element_normalizes_ipa_characters():
+    el = html.fragment_fromstring(
+        '<p class="schg">K → TŠ / in Mentasta Ahtna</p>',
+        create_parent=False,
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["output"] == "Tʃ"
+    assert rules[0]["raw"] == "K → TŠ / in Mentasta Ahtna"
 
 
 def test_parse_rule_element_normalizes_feature_matrices():
