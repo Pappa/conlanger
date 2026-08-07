@@ -4,7 +4,7 @@ Applier compile turns one **sound-change section** (corpus dict) into a concrete
 
 Corpus YAML fields and `raw` are **never modified** — transforms apply only to the emitted applier string.
 
-**Primary code:** [`rules.py`](../src/conlanger/tools/rules.py) (`SoundChangeRuleSet`, `RuleChange`), [`phonological_ruleset.py`](../src/conlanger/tools/phonological_ruleset.py), [`asca_validator.py`](../src/conlanger/tools/asca_validator.py).
+**Primary code:** [`asca_compile/pipeline.py`](../src/conlanger/tools/asca_compile/pipeline.py) (`compile_asca_rule_string`, `ASCA_COMPILE_STEP_NAMES`), [`rules.py`](../src/conlanger/tools/rules.py) (`SoundChangeRuleSet`, `RuleChange`), [`phonological_ruleset.py`](../src/conlanger/tools/phonological_ruleset.py), [`asca_validator.py`](../src/conlanger/tools/asca_validator.py).
 
 **Related:** [ADR-0002](./adr/0002-applier-neutral-yaml-rule-corpus.md) (applier-neutral corpus), [ADR-0003](./adr/0003-validate-after-applier-compile.md) (validate after compile).
 
@@ -49,21 +49,21 @@ Parse-time transforms are documented in [index-diachronica-parser.md](./index-di
 
 ## Per-rule ASCA compile pipeline
 
-Exact order in `RuleChange._compile_rule_text` (`rules.py`):
+Exact order in `compile_asca_rule_string` ([`asca_compile/pipeline.py`](../src/conlanger/tools/asca_compile/pipeline.py)), invoked from `RuleChange._compile_rule_text`:
 
 | Step | Status | Order | Rationale | What breaks if reordered |
 | --- | --- | ---: | --- | --- |
 | Join corpus fields | implemented | 1 | Concatenate `input`, `output`, optional `env` / `exception` with ASCA separators (` > `, ` / `, ` // `). | Must be first — later steps operate on the full rule string. |
 | `normalize_asca_optional_grouping_ellipsis` | implemented | 2 | Index optional ellipsis → ASCA forms: trailing `(C…)` → `(C,0)`; leading `(…C)` → `(..)C`. Skips `[…]` matrices. | **Before group_mappings:** patterns target bare class letters (`C`, `V`, `S`) in parentheses. After expansion, `(C,0)` targets are harder to match reliably. |
-| `apply_asca_group_mappings` | implemented | 3 | Expand Index class letters from `group_mappings.csv` to ASCA groupings/matrices; handle `Kʷ`, `K(ʷ)`, optional labial pairs; skip `[…]`. | **Before length/ejective:** length on class letters (`Vː`) and set patterns assume letter tokens. **vs planned positional refs:** open question — research recommends positional **before** this step so `C=1` is not mangled by `C` expansion ([spike 38](../.scratch/cleaned-rule-corpus/issues/38-spike-asca-compile-transform-order.md)). |
-| `normalize_asca_length_marks` | implemented | 4 | Index `ː` / `(ː)` → `:[+long]` on segments, groupings, sets, optional-length-with-comma. | **Before ejective:** `ts:[+long]ʼ` must become `ts:[+long,+cg]`, not fail on post-matrix `ʼ`. **After group_mappings:** set suffix / grouping length patterns operate on expanded tokens where needed. |
-| `normalize_typographic_apostrophes` | implemented | 5 | U+2019 (typographic apostrophe) → U+02BC (modifier letter apostrophe / ejective mark) on segments and class letters. | **Before ejective:** ejective normalizer only sees `ʼ`. If after ejective, curly apostrophes remain unconverted. |
-| `normalize_asca_ejective_marks` | implemented | 6 | `segment:[feat]ʼ` → `+cg` in matrix; `{…}ʼ` → per-member `:[+cg]`; bare `segmentʼ` → `segment:[+cg]`. | **After length + apostrophe:** depends on normalized `[+long]` matrices and correct `ʼ` character. |
-| `_apply_aliases` (`h₁`/`h₂`/`h₃`) | implemented | 7 | PIE laryngeal notation in Index → IPA ASCA accepts (`h₁→h`, `h₂→x`, `h₃→ɣʷ`). | **Last:** avoids accidental interaction with class-letter or subscript-like patterns in earlier steps. |
-| Positional slots → ASCA refs | planned | TBD | `C₁C₂ → C₂` → `C=1 C=2 > 2` (declare `X=n`, invoke bare `n`). | **Before group_mappings** (research recommendation): `C=1` must not be expanded as bare `C`. Order assigned by [spike 38](../.scratch/cleaned-rule-corpus/issues/38-spike-asca-compile-transform-order.md). |
-| Identity subscripts → ASCA refs | planned | TBD | `V₀V₀ → V₀` → `V=0 V=0 > 0`; env `h → ʔ / V₀V₀` → `h > ʔ / _ V=0 V=0`. | Same ordering constraints as positional; compounds (`mV₀`, `CʔV₀`) need separate tokenization ticket. |
-| Section-local abbreviations | planned | TBD | Expand Athabaskan / section-specific tokens (e.g. `TŠ`, `TS`) via hand-authored abbreviation rows. | Likely after class-letter expansion — cluster-driven. |
-| Meta-notation | spike needed | TBD | Retroflex `X̣`, `(…X)` repetition, tone superscripts `Xⁿ`, etc. | Depends on per-cluster ASCA projection; likely late in pipeline after bracket-safe normalization. |
+| `apply_asca_group_mappings` | implemented | 5 | Expand Index class letters from `group_mappings.csv` to ASCA groupings/matrices; handle `Kʷ`, `K(ʷ)`, optional labial pairs; skip `[…]`. | **Before length/ejective:** length on class letters (`Vː`) and set patterns assume letter tokens. |
+| `normalize_asca_length_marks` | implemented | 6 | Index `ː` / `(ː)` → `:[+long]` on segments, groupings, sets, optional-length-with-comma. | **Before ejective:** `ts:[+long]ʼ` must become `ts:[+long,+cg]`, not fail on post-matrix `ʼ`. **After group_mappings:** set suffix / grouping length patterns operate on expanded tokens where needed. |
+| `normalize_typographic_apostrophes` | implemented | 7 | U+2019 (typographic apostrophe) → U+02BC (modifier letter apostrophe / ejective mark) on segments and class letters. | **Before ejective:** ejective normalizer only sees `ʼ`. If after ejective, curly apostrophes remain unconverted. |
+| `normalize_asca_ejective_marks` | implemented | 8 | `segment:[feat]ʼ` → `+cg` in matrix; `{…}ʼ` → per-member `:[+cg]`; bare `segmentʼ` → `segment:[+cg]`. | **After length + apostrophe:** depends on normalized `[+long]` matrices and correct `ʼ` character. |
+| `apply_asca_aliases` (`h₁`/`h₂`/`h₃`) | implemented | 9 | PIE laryngeal notation in Index → IPA ASCA accepts (`h₁→h`, `h₂→x`, `h₃→ɣʷ`). | **Before meta-notation:** avoids accidental interaction with subscript-like patterns in later steps. |
+| Positional slots → ASCA refs | planned | 3 | `C₁C₂ → C₂` → `C=1 C=2 > 2` (declare `X=n`, invoke bare `n`). | **Before group_mappings** ([spike 38](../.scratch/cleaned-rule-corpus/research/asca-compile-transform-order.md)). |
+| Identity subscripts → ASCA refs | planned | 3 | `V₀V₀ → V₀` → `V=0 V=0 > 0`; env `h → ʔ / V₀V₀` → `h > ʔ / _ V=0 V=0`. | Same step as positional; compounds (`mV₀`, `CʔV₀`) need separate tokenization ticket. |
+| Section-local abbreviations | planned | 4 | Expand Athabaskan / section-specific tokens (e.g. `TŠ`, `TS`) via hand-authored abbreviation rows. | **Before group_mappings** — `TS` must not be split into `T`+`S` ([spike 38](../.scratch/cleaned-rule-corpus/research/asca-compile-transform-order.md)). |
+| Meta-notation | spike needed | 10 | Retroflex `X̣`, `(…X)` repetition, tone superscripts `Xⁿ`, etc. | Cluster-driven; default slot is last in pipeline. |
 
 **Research:** [positional-slots-and-identity-subscripts.md](../.scratch/cleaned-rule-corpus/research/positional-slots-and-identity-subscripts.md), [subscript-notation-index-asca-brassica.md](../.scratch/cleaned-rule-corpus/research/subscript-notation-index-asca-brassica.md).
 

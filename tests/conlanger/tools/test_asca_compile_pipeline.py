@@ -1,0 +1,47 @@
+"""Tests for the documented ASCA per-rule compile pipeline (ticket 39)."""
+
+from conlanger.tools.asca_compile.pipeline import (
+    ASCA_COMPILE_STEP_NAMES,
+    compile_asca_rule_string,
+)
+from conlanger.tools.rules import (
+    RuleChange,
+    apply_asca_aliases,
+    apply_asca_group_mappings_to_string,
+    normalize_asca_ejective_marks,
+    normalize_asca_length_marks,
+    normalize_asca_optional_grouping_ellipsis,
+    normalize_typographic_apostrophes,
+)
+
+
+def test_asca_compile_pipeline_step_names_match_docs():
+    assert ASCA_COMPILE_STEP_NAMES == (
+        "normalize_asca_optional_grouping_ellipsis",
+        "expand_index_subscript_references",
+        "apply_section_local_abbreviations",
+        "apply_asca_group_mappings",
+        "normalize_asca_length_marks",
+        "normalize_typographic_apostrophes",
+        "normalize_asca_ejective_marks",
+        "apply_asca_aliases",
+        "expand_meta_notation",
+    )
+
+
+def test_compile_asca_rule_string_matches_legacy_manual_chain():
+    text = "tʃ:[+long]ʼ > tʃ:[+long]"
+    mappings = {"S": "P"}
+    manual = normalize_asca_optional_grouping_ellipsis(text)
+    manual = apply_asca_group_mappings_to_string(manual, mappings)
+    manual = normalize_asca_length_marks(manual)
+    manual = normalize_typographic_apostrophes(manual)
+    manual = normalize_asca_ejective_marks(manual)
+    manual = apply_asca_aliases(manual)
+    assert compile_asca_rule_string(text, group_mappings=mappings) == manual
+
+
+def test_rule_change_uses_pipeline_for_asca():
+    part = RuleChange({"input": "Vː", "output": "V", "env": "#C_C"}, "asca")
+    expected = compile_asca_rule_string("Vː > V / #C_C")
+    assert part.value == expected

@@ -1,6 +1,6 @@
 Type: task
-Status: needs-triage
-Blocked by: 37
+Status: resolved
+Blocked by:
 
 # Refactor SoundChangeRuleSet and compile subcomponents
 
@@ -14,36 +14,26 @@ Grill session (2026-08-07): implementation details are **deferred** until pipeli
 
 Current pain: `rules.py` mixes applier formatting (`RuleTitle`, `RuleCitation`, …), top-level ASCA normalizers, and assembly in `SoundChangeRuleSet` / `RuleChange`. Glossary: **`PhonologicalRuleSet`** is the applier-neutral section container; **`SoundChangeRuleSet`** is the applier render/compile output layer ([CONTEXT.md](../../../CONTEXT.md)).
 
-## Preconditions (do not start until unblocked)
+## Scope (resolved)
 
-1. [Document the sound-change rule pipeline in docs/](37-document-sound-change-pipeline.md) — `docs/sound-change-applier.md` with full transform table.
-2. [Spike: ASCA compile transform ordering](38-spike-asca-compile-transform-order.md) — planned transforms have assigned order.
+**In scope (done):**
 
-## Scope (to be refined in Answer when unblocked)
+- `src/conlanger/tools/asca_compile/` package: one module per transform + `pipeline.py` with `ASCA_COMPILE_STEP_NAMES` and `compile_asca_rule_string`.
+- `rules.py` retains section assembly classes; re-exports transform helpers for existing callers/tests.
+- No-op placeholders for planned steps 3, 4, 10 (`planned.py`) wired in documented order ([spike 38](../research/asca-compile-transform-order.md)).
+- `docs/sound-change-applier.md` updated to reference pipeline module and order integers.
 
-**In scope (intent):**
-
-- Explicit ordered compile pipeline (named steps matching docs).
-- File/module split as needed for clarity; preserve public imports used by tests and `phonological_ruleset.py`.
-- Tests remain green; no dependency additions without owner approval.
-
-**Explicitly not decided yet:**
+**Out of scope (unchanged):**
 
 - Renaming `SoundChangeRuleSet` / `RuleChange`.
 - Brassica compiler abstraction.
-- Implementing planned transforms (separate implementation tickets expected).
-
-## Notes
-
-- Treat `docs/sound-change-applier.md` as the spec for step names and order after ticket 37.
-- Follow TDD (`/tdd`) for any behaviour-changing fixes discovered during refactor.
-- `validate_asca` and existing test fixtures are the regression gate.
+- Implementing planned transforms (separate tickets).
 
 ## Acceptance criteria
 
-- [ ] Ticket body updated with concrete scope after 37 + 38 (claim work only then).
-- [ ] Code mirrors documented compile pipeline.
-- [ ] Full pytest + ruff gate passes.
-- [ ] No undocumented change to compiled ASCA strings for the existing test corpus.
+- [x] Ticket body updated with concrete scope after 37 + 38 (claim work only then).
+- [x] Code mirrors documented compile pipeline.
+- [x] Full pytest + ruff gate passes.
+- [x] No undocumented change to compiled ASCA strings for the existing test corpus.
 
 ## Comments
