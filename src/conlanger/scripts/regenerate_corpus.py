@@ -2,6 +2,7 @@
 
 Ticket 12: one invocation emits cleaned YAML, validation CSV, and summary markdown.
 Uses ticket-11 extract-only ingest (``IndexDiachronicaParser``) and ``validate_asca``.
+Optional ``--update-series-mappings`` refreshes ``data/asca/series_mappings.csv`` before parse.
 """
 
 import argparse
@@ -36,6 +37,11 @@ from conlanger.tools.corpus_io import write_cleaned_corpus
 from conlanger.tools.parsers import (
     IndexDiachronicaParser,
     write_rule_comment_phrase_summary,
+)
+from conlanger.tools.series_mappings import (
+    DEFAULT_SERIES_MAPPINGS_CSV,
+    DEFAULT_SERIES_MAPPINGS_REPORT,
+    update_series_mappings_from_html,
 )
 
 DEFAULT_HTML = ROOT / "data" / "diachronica" / "index_diachronica_original.html"
@@ -85,11 +91,30 @@ def main() -> int:
         help="ingest only; skip validate_asca inventory (when asca binary absent)",
     )
     ap.add_argument("--limit", type=int, default=0, help="optional cap for smoke tests")
+    ap.add_argument(
+        "--update-series-mappings",
+        action="store_true",
+        help=(
+            "refresh data/asca/series_mappings.csv and series-mappings-coverage.md "
+            "from HTML before parse"
+        ),
+    )
     args = ap.parse_args()
 
     if not args.html.is_file():
         print(f"ERROR: HTML not found at {args.html}", file=sys.stderr)
         return 1
+
+    if args.update_series_mappings:
+        row_count = update_series_mappings_from_html(
+            args.html,
+            csv_path=DEFAULT_SERIES_MAPPINGS_CSV,
+            report_path=DEFAULT_SERIES_MAPPINGS_REPORT,
+        )
+        print(
+            f"wrote {DEFAULT_SERIES_MAPPINGS_CSV} rows={row_count}\n"
+            f"wrote {DEFAULT_SERIES_MAPPINGS_REPORT}"
+        )
 
     parser = IndexDiachronicaParser()
     doc = parser.parse(args.html)

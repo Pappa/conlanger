@@ -101,7 +101,7 @@ Not part of the per-rule transform chain, but feeds parse-time expansion:
 
 | Component | Status | Role | Code |
 | --- | --- | --- | --- |
-| HTML → CSV extraction | implemented | Builds `data/asca/series_mappings.csv` from citations, tables, parallel/singleton rule I/O. | `extract_series_mappings_from_html` |
+| HTML → CSV extraction | implemented | Builds `data/asca/series_mappings.csv` from citations, tables, parallel/singleton rule I/O. | `update_series_mappings_from_html` via `uv run regenerate_corpus --update-series-mappings` |
 | Hierarchical lookup | implemented | Longest-prefix section match; optional `*` global fallback. | `lookup_series_target`, `section_index_prefixes` |
 | Collective subscript synthesis | implemented | `Xₓ` → `{member targets}` when ≥2 members declared in citation. | `_collective_rows_for_section` |
 | ASCA digit segment fallback | implemented | `h₁` → `h1`; grouping-letter collision → `f1`. | `asca_digit_segment` |

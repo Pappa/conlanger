@@ -17,9 +17,9 @@ from conlanger.tools.series_mappings import (
     extract_series_mappings_from_html,
     find_correspondence_series_tokens,
     find_subscript_tokens,
+    in_scope_series_token,
     infer_parallel_rule_mappings,
     infer_singleton_rule_mappings,
-    in_scope_series_token,
     is_collective_subscript_token,
     is_correspondence_series_token,
     is_identity_subscript_token,
@@ -31,6 +31,7 @@ from conlanger.tools.series_mappings import (
     survey_all_subscript_tokens_in_html,
     survey_html_defined_series,
     survey_subscript_tokens_in_html,
+    update_series_mappings_from_html,
     write_coverage_report,
     write_series_mappings_csv,
 )
@@ -232,6 +233,24 @@ def test_extract_series_mappings_from_html_fixture(tmp_path: Path):
     assert by_key[("17", "h₂")].asca_target == "h2"
     assert by_key[("6.1.2.1", "s₁")].asca_target == "ʃ"
     assert ("10.2.1", "C₁") not in by_key
+
+
+def test_update_series_mappings_from_html_writes_csv_and_report(tmp_path: Path):
+    html_path = tmp_path / "index.html"
+    html_path.write_text(_HTML_FIXTURE, encoding="utf-8")
+    csv_path = tmp_path / "series_mappings.csv"
+    report_path = tmp_path / "coverage.md"
+
+    row_count = update_series_mappings_from_html(
+        html_path,
+        csv_path=csv_path,
+        report_path=report_path,
+    )
+
+    assert row_count >= 1
+    assert csv_path.is_file()
+    assert report_path.is_file()
+    assert load_series_mappings(csv_path)
 
 
 def test_load_series_mappings_round_trip(tmp_path: Path):

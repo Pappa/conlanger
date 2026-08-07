@@ -20,6 +20,12 @@ from conlanger.tools.parsers import (
 DEFAULT_SERIES_MAPPINGS_CSV = (
     Path(__file__).resolve().parents[3] / "data" / "asca" / "series_mappings.csv"
 )
+DEFAULT_SERIES_MAPPINGS_REPORT = (
+    Path(__file__).resolve().parents[3]
+    / ".scratch"
+    / "cleaned-rule-corpus"
+    / "series-mappings-coverage.md"
+)
 
 # Correspondence-series index: concrete segment base + ordinal subscript (not ₀, not ₓ).
 _CORRESPONDENCE_INDEX_RE = re.compile(r"(?<![A-Z])([a-zA-Zæøåɑɡɢ]+)([₁₂₃₄₅₆₇₈₉])")
@@ -273,6 +279,19 @@ def write_series_mappings_csv(rows: list[SeriesMapping], path: Path) -> None:
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(path, index=False)
+
+
+def update_series_mappings_from_html(
+    html_path: Path,
+    *,
+    csv_path: Path = DEFAULT_SERIES_MAPPINGS_CSV,
+    report_path: Path = DEFAULT_SERIES_MAPPINGS_REPORT,
+) -> int:
+    """Extract correspondence-series mappings from HTML; write CSV and coverage report."""
+    rows = extract_series_mappings_from_html(html_path)
+    write_series_mappings_csv(rows, csv_path)
+    write_coverage_report(html_path, csv_path, report_path)
+    return len(rows)
 
 
 def _dedupe_rows(rows: list[SeriesMapping]) -> list[SeriesMapping]:

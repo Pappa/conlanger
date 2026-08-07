@@ -47,9 +47,11 @@ flowchart TD
 | Comment phrase survey | `.scratch/cleaned-rule-corpus/rule-comment-phrases.md` |
 | Probe wordlist | `tests/fixtures/asca_probe_words.wsca` |
 
-**Flags:** `--skip-validation` (ingest only), `--limit N` (smoke), `--html`, `--yaml-out`, `--inventory-dir`, `--probe-words`.
+**Flags:** `--skip-validation` (ingest only), `--limit N` (smoke), `--html`, `--yaml-out`, `--inventory-dir`, `--probe-words`, `--update-series-mappings` (refresh `data/asca/series_mappings.csv` and coverage report before parse).
 
 Ingest-only (no `asca` on PATH): `uv run regenerate_corpus --skip-validation`.
+
+Refresh series mappings then full regen: `uv run regenerate_corpus --update-series-mappings`.
 
 **Steady-state loop** ([ticket 05](../.scratch/cleaned-rule-corpus/issues/05-correction-workflow-invalid-rules.md)):
 
