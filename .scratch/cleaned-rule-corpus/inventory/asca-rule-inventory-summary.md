@@ -12,15 +12,15 @@
 
 | count | failure_class |
 |------:|---------------|
-| 1094 | `syntax_other` |
-| 650 | `unknown_character` |
+| 1092 | `syntax_other` |
+| 651 | `unknown_character` |
 | 387 | `expected_underscore` |
-| 162 | `unknown_feature` |
+| 156 | `unknown_feature` |
 | 88 | `unknown_grouping` |
-| 57 | `prose_or_expected_arrow` |
+| 65 | `prose_or_expected_arrow` |
 | 35 | `expected_number` |
 | 34 | `panic_other` |
-| 32 | `nested_brackets` |
+| 31 | `nested_brackets` |
 | 29 | `diacritic_prereq` |
 | 22 | `runtime_other` |
 | 20 | `runtime_delete_only_segment` |
@@ -44,29 +44,29 @@
 
 | count | error_token | suggested |
 |------:|-------------|-----------|
-| 19 | `dental` | `ldental` |
+| 20 | `dental` | `ldental` |
 | 14 | `open` | `ten` |
 | 13 | `palatal` | `latrl` |
 | 11 | `lowtone` | `contin` |
-| 9 | `glottalized` | `contin` |
-| 9 | `samePOA` | `lateral` |
+| 10 | `samePOA` | `lateral` |
 | 9 | `fortis` | `contin` |
 | 8 | `hightone` | `high` |
 | 8 | `mid` | `man` |
 | 6 | `lenis` | `tens` |
-| 5 | `alveolar` | `delay` |
 | 5 | `weak` | `man` |
-| 5 | `guttural` | `lateral` |
 | 5 | `velar` | `delay` |
+| 5 | `alveolar` | `delay` |
+| 5 | `guttural` | `lateral` |
 | 4 | `closed` | `cons` |
 | 4 | `uvular` | `lar` |
 | 4 | `glottal` | `lateral` |
 | 3 | `fallingtone` | `length` |
+| 2 | `lowfallingtone` | `continuant` |
 | 2 | `affricate` | `stridnt` |
 | 2 | `fricative` | `rhotic` |
-| 2 | `lowfallingtone` | `continuant` |
 | 2 | `highrisingtone` | `strident` |
 | 1 | `intertonic` | `anterior` |
+| 1 | `ejective` | `contin` |
 | 1 | `highpitch` | `high` |
 | 1 | `lowpitch` | `voice` |
 | 1 | `APOA` | `root` |

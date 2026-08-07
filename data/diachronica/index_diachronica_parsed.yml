@@ -13030,12 +13030,12 @@ sections:
   citation: CatDoom, from Klar, Kathryn (1977), Topics in Historical Chumash Grammar.
     <http://linguistics.berkeley.edu/~survey/documents/dissertations/klar-1977.pdf>
   rules:
-  - input: R[- glottalized]VˀR
-    output: ˀRVR[- glottalized]
+  - input: R[+place]VˀR
+    output: ˀRVR[+place]
     env: _$
     raw: R[- glottalized]VˀR → ˀRVR[- glottalized] / _$
     source: index_diachronica_original.html:4437
-  - input: R[- glottalized]VOʼ
+  - input: R[+place]VOʼ
     output: ˀRVO[- ejective]
     env: _$
     raw: R[- glottalized]VOʼ → ˀRVO[- ejective] / _$
@@ -35055,7 +35055,7 @@ sections:
     raw: ɑ ə ʊ → a e o
     source: index_diachronica_original.html:9982
   - input: Vˀ
-    output: V[-glottalized]
+    output: V[+place]
     raw: Vˀ → V[-glottalized]
     source: index_diachronica_original.html:9983
 - section: Proto-Athabaskan to Babine
@@ -35072,7 +35072,7 @@ sections:
     raw: u ɑ ʊ → {o,u} ə u
     source: index_diachronica_original.html:9989
   - input: Vˀ
-    output: V[-glottalized]
+    output: V[+place]
     raw: Vˀ → V[-glottalized]
     source: index_diachronica_original.html:9990
 - section: Proto-Athabaskan to Beaver
@@ -35179,7 +35179,7 @@ sections:
     raw: u {ɑ,ʊ} → {o,u} ə
     source: index_diachronica_original.html:10026
   - input: Vˀ
-    output: V[-glottalized]
+    output: V[+place]
     raw: Vˀ → V[-glottalized]
     source: index_diachronica_original.html:10027
 - section: Proto-Athabaskan to Deg Hit’an
@@ -35224,7 +35224,7 @@ sections:
     raw: C’ → C / _$
     source: index_diachronica_original.html:10039
   - input: Vˀ
-    output: V[-glottalized]
+    output: V[+place]
     raw: Vˀ → V[-glottalized]
     source: index_diachronica_original.html:10040
 - section: Proto-Athabaskan to Dena’ina
@@ -35246,7 +35246,7 @@ sections:
     raw: '{ʃ(ʷ),x {z,ʒ(ʷ),ɣ} → s j'
     source: index_diachronica_original.html:10047
   - input: Vˀ
-    output: V[-glottalized]
+    output: V[+place]
     raw: Vˀ → V[-glottalized]
     source: index_diachronica_original.html:10048
 - section: Proto-Athabaskan to Dogrib
@@ -35519,7 +35519,7 @@ sections:
     raw: e a {ɑ,ʊ} → a o ŭ
     source: index_diachronica_original.html:10134
   - input: Vˀ
-    output: V[-glottalized]
+    output: V[+place]
     raw: Vˀ → V[-glottalized]
     source: index_diachronica_original.html:10135
 - section: Proto-Athabaskan to Sarcee
@@ -40603,7 +40603,7 @@ sections:
   citation: Pogostick Man, from Kinkade, Dale M. “Shifts of Nasals to Vowels in Interior
     Salish”
   rules:
-  - input: N[- glottalized]
+  - input: N[+place]
     output: e
     env: _O[+ same POA]
     comment: “‘in primary forms’”

@@ -78,7 +78,7 @@ DEFAULT_GROUP_MAPPINGS_CSV = (
 DEFAULT_FEATURE_MAPPINGS_CSV = (
     Path(__file__).resolve().parents[3] / "data" / "asca" / "feature_mappings.csv"
 )
-_SUPPORTED_FEATURE_MAPPING_KINDS = frozenset({"rename", "rename_invert"})
+_SUPPORTED_FEATURE_MAPPING_KINDS = frozenset({"rename", "rename_invert", "rename_polarity"})
 
 # Protect Index stem ``$`` while remapping syllable-boundary ``%`` → ASCA ``$``.
 _STEM_BOUNDARY_PLACEHOLDER = "\ue000"
@@ -506,7 +506,7 @@ def load_feature_mappings(path: Path | None = None) -> list[FeatureMapping]:
         if kind not in _SUPPORTED_FEATURE_MAPPING_KINDS:
             raise ValueError(
                 f"unsupported feature mapping_kind {kind!r} for "
-                f"{row.index_feature!r} (Phase 1: rename, rename_invert only)"
+                f"{row.index_feature!r} (Phase 1: rename, rename_invert, rename_polarity)"
             )
         out.append(
             FeatureMapping(
@@ -545,7 +545,7 @@ def normalize_feature_matrices_in_field(
         mapping = mappings[index_name]
         if mapping.mapping_kind == "rename":
             return f"{polarity}{mapping.asca_target}"
-        if mapping.mapping_kind == "rename_invert":
+        if mapping.mapping_kind in ("rename_invert", "rename_polarity"):
             flipped = "-" if polarity == "+" else "+"
             return f"{flipped}{mapping.asca_target}"
         return match.group(0)

@@ -839,6 +839,8 @@ def test_load_feature_mappings_from_default_csv():
     assert by_name["voiced"].mapping_kind == "rename"
     assert by_name["short"].mapping_kind == "rename_invert"
     assert by_name["short"].asca_target == "long"
+    assert by_name["glottalized"].mapping_kind == "rename_polarity"
+    assert by_name["glottalized"].asca_target == "place"
 
 
 def test_normalize_feature_matrices_in_field_rename():
@@ -852,6 +854,13 @@ def test_normalize_feature_matrices_in_field_rename_invert():
     mappings = feature_mappings_dict()
     assert normalize_feature_matrices_in_field("u[+short]", mappings) == "u[-long]"
     assert normalize_feature_matrices_in_field("V[-short]", mappings) == "V[+long]"
+
+
+def test_normalize_feature_matrices_in_field_rename_polarity():
+    mappings = feature_mappings_dict()
+    assert normalize_feature_matrices_in_field("S[- glottalized]", mappings) == "S[+place]"
+    assert normalize_feature_matrices_in_field("V[+glottalized]", mappings) == "V[-place]"
+    assert normalize_feature_matrices_in_field("V[-glottalized]", mappings) == "V[+place]"
 
 
 def test_normalize_feature_matrices_in_field_leaves_raw_tokens_outside_brackets():
@@ -890,6 +899,17 @@ def test_parse_rule_element_normalizes_short_to_neg_long():
     rules = parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["env"] == "u[-long]_V[-long]"
     assert "[+short]" in rules[0]["raw"]
+
+
+def test_parse_rule_element_normalizes_glottalized_to_place():
+    el = html.fragment_fromstring(
+        '<p class="schg">R[- glottalized]VˀR → ˀRVR[- glottalized] / _$</p>',
+        create_parent=False,
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["input"] == "R[+place]VˀR"
+    assert rules[0]["output"] == "ˀRVR[+place]"
+    assert "[- glottalized]" in rules[0]["raw"]
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
