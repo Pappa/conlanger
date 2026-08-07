@@ -18,13 +18,13 @@ wayfinder:map
 
 - [Amend ADR-0005 — remove ingest-split exception](issues/01-amend-adr-0005-remove-ingest-split-exception.md) — Never inflate corpus rows at ingest; compile-time expansion only; unrepresentable → `status: skipped` (ADR-0010); supersedes ticket 18; opaque YAML strings; revert and compile expansion are separate tickets.
 - [Corpus shape for chained rules (env / exception)](issues/04-compile-time-chain-expansion-with-env.md) — One corpus rule per HTML line: single `input`, single `output` (chain in `output`), at most one `env` and one `exception`; compile splits output chain only; same env/exception on each emitted ASCA rule.
+- [Revert parse-time chain split](issues/02-revert-parse-time-chain-split.md) — Removed `expand_chained_rule_parts`; corpus **9201** rules (−116); **6395 / 9201 ok (69.5%)** until compile expansion.
 
 ## Not yet specified
 
 - **Validation granularity** — per expanded ASCA step vs whole corpus rule; interaction with field-isolation sidecar ([ticket 36](../cleaned-rule-corpus/issues/36-field-isolation-inventory-sidecar.md)).
 - **YAML shape for non-chain multi-change lines** — alternations/sets already fit ADR-0005 “internal structure”; confirm no other parse-time row inflation besides chain split.
 - **Timing vs [Refactor SoundChangeRuleSet](../cleaned-rule-corpus/issues/39-refactor-sound-change-ruleset.md)** — chain compile step slots into spike 38 order; refactor may follow or absorb.
-- **Inventory regression window** — [Revert parse-time chain split](issues/02-revert-parse-time-chain-split.md) may land before [Compile-time chain expansion](issues/03-compile-time-chain-expansion.md); ~136 ok rules temporarily lost until compile expansion ships.
 
 ## Out of scope
 

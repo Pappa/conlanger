@@ -10,8 +10,9 @@ other non-``schg`` paragraphs → ``comments``.
 Phase 4: **Symbol** normalization on corpus fields only (``#``, ``$``, ``%``, ``∅``,
 Index stress ``”`` → ``:[+stress]``; ``raw`` unchanged). Leading em dash list-item
 markers (``— ``) are stripped from the rule line before field split. Remaining
-Index rule arrows (``→``) in field values become ASCA ``>``. Chained rules without
-``env``/``exception`` expand into sequential single-step rules. Uncertainty glosses
+Index rule arrows (``→``) in field values become ASCA ``>``. Chained rules keep a
+multi-segment ``output`` (``a > b > c``); compile-time expansion is deferred.
+Uncertainty glosses
 (``sporadic``, ``sometimes``, …) are stripped from field values and recorded as
 ``sporadic: true``. **Feature matrix** synonym replacement inside ``[...]`` via
 ``feature_mappings.csv`` (``raw`` unchanged). **Correspondence-series** and
@@ -749,29 +750,6 @@ def extract_rule_parts(raw: str) -> dict[str, str] | None:
     return {key: normalize_rule_arrows(value) for key, value in parts.items()}
 
 
-def expand_chained_rule_parts(parts: dict[str, str]) -> list[dict[str, str]]:
-    """Split a no-env chain ``a > b > c`` into sequential single-step rules.
-
-    Only applies when ``output`` contains `` > `` and there is no ``env`` or
-    ``exception`` — chained rules with environments stay as one corpus row.
-    """
-    if parts.get("env") or parts.get("exception"):
-        return [parts]
-    output = parts.get("output", "")
-    if " > " not in output:
-        return [parts]
-    segments = [segment.strip() for segment in output.split(" > ") if segment.strip()]
-    if len(segments) < 2:
-        return [parts]
-    expanded: list[dict[str, str]] = []
-    current_input = parts["input"]
-    meta = {k: parts[k] for k in ("comment", "sporadic") if k in parts}
-    for segment in segments:
-        expanded.append({"input": current_input, "output": segment, **meta})
-        current_input = segment
-    return expanded
-
-
 def note_from_element(el, *, source_file: str) -> dict[str, Any]:
     raw = extract_text_with_subs(el)
     line = getattr(el, "sourceline", None) or 0
@@ -922,10 +900,7 @@ class IndexDiachronicaParser:
         from conlanger.tools.series_mappings import apply_series_mappings
 
         parts = apply_series_mappings(parts, section_index, self._series_mappings)
-        return [
-            {**entry, "raw": raw, "source": source, **sporadic_flag}
-            for entry in expand_chained_rule_parts(parts)
-        ]
+        return [{**parts, "raw": raw, "source": source, **sporadic_flag}]
 
     def parse(
         self,

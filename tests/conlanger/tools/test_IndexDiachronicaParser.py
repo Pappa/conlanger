@@ -1,48 +1,43 @@
-from pathlib import Path
 import shutil
+from pathlib import Path
 
 import pandas as pd
 import pytest
 from lxml import html
 
+from conlanger.tools.asca_validator import validate_asca
 from conlanger.tools.parsers import (
     ARROW,
-    DEFAULT_FEATURE_MAPPINGS_CSV,
     DEFAULT_GROUP_MAPPINGS_CSV,
     FeatureMapping,
     GroupMapping,
     IndexDiachronicaParser,
     apply_feature_mappings,
+    apply_sporadic_qualifier,
+    apply_stress_conditions,
+    apply_trailing_glosses,
     extract_rule_parts,
+    extract_semicolon_prose_from_field,
     extract_text_with_subs,
     feature_mappings_dict,
+    join_rule_comment,
     load_feature_mappings,
     load_group_mappings,
     normalize_feature_matrices_in_field,
+    normalize_stress_conditions,
     normalize_stress_marks,
     normalize_symbols,
     parse_rule_element,
     parse_section_heading,
     split_env_exception,
     split_input_output,
-    strip_leading_index_list_marker,
-    expand_chained_rule_parts,
-    apply_sporadic_qualifier,
-    apply_stress_conditions,
-    apply_trailing_glosses,
-    extract_semicolon_prose_from_field,
-    extract_trailing_gloss_from_field,
-    field_has_uncertainty_qualifier,
-    join_rule_comment,
-    normalize_stress_conditions,
-    strip_trailing_gloss_from_field,
-    strip_uncertainty_qualifier_from_field,
     split_output_rest,
     split_post_arrow,
+    strip_leading_index_list_marker,
+    strip_trailing_gloss_from_field,
+    strip_uncertainty_qualifier_from_field,
     write_rule_comment_phrase_summary,
 )
-
-from conlanger.tools.asca_validator import validate_asca
 from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
 
 _SAMPLED_RULES_CSV = (
@@ -235,23 +230,29 @@ def test_extract_rule_parts_normalizes_chain_arrows():
     }
 
 
-def test_expand_chained_rule_parts_splits_no_env_chain():
-    assert expand_chained_rule_parts(
-        {"input": "dʒ", "output": "tʃ > ʃ"}
-    ) == [
-        {"input": "dʒ", "output": "tʃ"},
-        {"input": "tʃ", "output": "ʃ"},
-    ]
+def test_parse_rule_element_keeps_chain_without_env():
+    el = html.fragment_fromstring(
+        '<p class="schg">dʒ → tʃ → ʃ</p>', create_parent=False
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert len(rules) == 1
+    assert rules[0] == {
+        "input": "dʒ",
+        "output": "tʃ > ʃ",
+        "raw": "dʒ → tʃ → ʃ",
+        "source": rules[0]["source"],
+    }
 
 
-def test_expand_chained_rule_parts_keeps_env_chain():
-    parts = {"input": "{θ,l}", "output": "r > l", "env": "V_V"}
-    assert expand_chained_rule_parts(parts) == [parts]
-
-
-def test_expand_chained_rule_parts_keeps_single_step():
-    parts = {"input": "a", "output": "e", "env": "_#"}
-    assert expand_chained_rule_parts(parts) == [parts]
+def test_parse_rule_element_keeps_chain_with_env():
+    el = html.fragment_fromstring(
+        '<p class="schg">{θ,l} → r → l / V_V</p>', create_parent=False
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert len(rules) == 1
+    assert rules[0]["input"] == "{θ,l}"
+    assert rules[0]["output"] == "r > l"
+    assert rules[0]["env"] == "V_V"
 
 
 @pytest.mark.parametrize(
@@ -702,34 +703,6 @@ def test_parse_rule_element_except_without_comma():
     assert rule["output"] == "ʔ"
     assert "env" not in rule
     assert rule["exception"] == "in several words"
-
-
-def test_parse_rule_element_expands_chain_without_env():
-    el = html.fragment_fromstring(
-        '<p class="schg">dʒ → tʃ → ʃ</p>', create_parent=False
-    )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
-    assert len(rules) == 2
-    assert rules[0] == {
-        "input": "dʒ",
-        "output": "tʃ",
-        "raw": "dʒ → tʃ → ʃ",
-        "source": rules[0]["source"],
-    }
-    assert rules[1]["input"] == "tʃ"
-    assert rules[1]["output"] == "ʃ"
-    assert rules[1]["raw"] == "dʒ → tʃ → ʃ"
-
-
-def test_parse_rule_element_keeps_chain_with_env():
-    el = html.fragment_fromstring(
-        '<p class="schg">{θ,l} → r → l / V_V</p>', create_parent=False
-    )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
-    assert len(rules) == 1
-    assert rules[0]["input"] == "{θ,l}"
-    assert rules[0]["output"] == "r > l"
-    assert rules[0]["env"] == "V_V"
 
 
 def test_first_p_is_citation_rest_comments(tmp_path: Path):

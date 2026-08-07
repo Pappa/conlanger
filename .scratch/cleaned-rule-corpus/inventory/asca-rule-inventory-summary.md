@@ -3,26 +3,26 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
-- Rows: **9317** (one per corpus rule)
-- OK: **6561** (70.4%)
-- Fail: **2756** (29.6%)
-- Sections all OK: **140 / 714** (19.6%)
+- Rows: **9201** (one per corpus rule)
+- OK: **6395** (69.5%)
+- Fail: **2806** (30.5%)
+- Sections all OK: **139 / 714** (19.5%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 1167 | `syntax_other` |
-| 710 | `unknown_character` |
+| 1234 | `syntax_other` |
+| 702 | `unknown_character` |
 | 375 | `expected_underscore` |
-| 161 | `unknown_feature` |
+| 160 | `unknown_feature` |
 | 84 | `unknown_grouping` |
-| 56 | `prose_or_expected_arrow` |
+| 50 | `prose_or_expected_arrow` |
 | 33 | `panic_other` |
 | 32 | `nested_brackets` |
 | 32 | `expected_number` |
-| 30 | `diacritic_prereq` |
-| 23 | `runtime_other` |
+| 29 | `diacritic_prereq` |
+| 22 | `runtime_other` |
 | 20 | `runtime_delete_only_segment` |
 | 18 | `stuff_after_word_bound` |
 | 13 | `malformed_comment` |
@@ -37,7 +37,7 @@
 | 49 | `₀` |
 | 48 | `Š` |
 | 42 | `”` |
-| 40 | `ː` |
+| 39 | `ː` |
 | 37 | `₁` |
 
 ### unknown_feature
@@ -47,37 +47,37 @@
 | 19 | `dental` | `ldental` |
 | 14 | `open` | `ten` |
 | 13 | `palatal` | `latrl` |
-| 12 | `lowtone` | `contin` |
-| 9 | `fortis` | `contin` |
-| 9 | `samePOA` | `lateral` |
+| 11 | `lowtone` | `contin` |
 | 9 | `glottalized` | `contin` |
+| 9 | `samePOA` | `lateral` |
+| 9 | `fortis` | `contin` |
 | 8 | `hightone` | `high` |
 | 7 | `mid` | `man` |
 | 6 | `lenis` | `tens` |
-| 5 | `guttural` | `lateral` |
 | 5 | `alveolar` | `delay` |
 | 5 | `velar` | `delay` |
-| 4 | `glottal` | `lateral` |
-| 4 | `weak` | `man` |
+| 5 | `guttural` | `lateral` |
 | 4 | `closed` | `cons` |
+| 4 | `weak` | `man` |
 | 4 | `uvular` | `lar` |
+| 4 | `glottal` | `lateral` |
 | 3 | `fallingtone` | `length` |
-| 2 | `fricative` | `rhotic` |
-| 2 | `highrisingtone` | `strident` |
 | 2 | `affricate` | `stridnt` |
+| 2 | `fricative` | `rhotic` |
 | 2 | `lowfallingtone` | `continuant` |
-| 1 | `creakyvoice` | `voice` |
-| 1 | `TR` | `rt` |
-| 1 | `close` | `cons` |
-| 1 | `glide` | `click` |
-| 1 | `APOA` | `root` |
-| 1 | `tonic` | `cons` |
-| 1 | `alveolopalatal` | `consonantal` |
-| 1 | `palatalized` | `latrl` |
-| 1 | `aspirated` | `spread` |
+| 2 | `highrisingtone` | `strident` |
 | 1 | `intertonic` | `anterior` |
 | 1 | `highpitch` | `high` |
 | 1 | `lowpitch` | `voice` |
+| 1 | `APOA` | `root` |
+| 1 | `close` | `cons` |
+| 1 | `glide` | `click` |
+| 1 | `palatalized` | `latrl` |
+| 1 | `alveolopalatal` | `consonantal` |
+| 1 | `tonic` | `cons` |
+| 1 | `aspirated` | `spread` |
+| 1 | `TR` | `rt` |
+| 1 | `creakyvoice` | `voice` |
 | 1 | `labiovelar` | `labiodental` |
 
 ### unknown_grouping
@@ -88,15 +88,15 @@
 | 13 | `U` |
 | 12 | `E` |
 | 7 | `H` |
-| 6 | `M` |
 | 6 | `B` |
+| 6 | `M` |
 | 5 | `K` |
 | 5 | `T` |
 | 3 | `D` |
-| 3 | `X` |
 | 3 | `Y` |
-| 2 | `A` |
+| 3 | `X` |
 | 2 | `I` |
+| 2 | `A` |
 | 1 | `W` |
 | 1 | `Q` |
 
