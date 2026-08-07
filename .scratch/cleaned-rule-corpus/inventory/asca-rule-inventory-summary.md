@@ -12,12 +12,12 @@
 
 | count | failure_class |
 |------:|---------------|
-| 1080 | `syntax_other` |
-| 649 | `unknown_character` |
+| 1082 | `syntax_other` |
+| 648 | `unknown_character` |
 | 386 | `expected_underscore` |
 | 162 | `unknown_feature` |
 | 86 | `unknown_grouping` |
-| 56 | `prose_or_expected_arrow` |
+| 55 | `prose_or_expected_arrow` |
 | 34 | `expected_number` |
 | 34 | `panic_other` |
 | 32 | `nested_brackets` |
