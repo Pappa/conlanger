@@ -5,3 +5,4 @@ sibilant,rename,strident,,high,Sibilant manner → strident (MANNER); not sonora
 rounded,rename,round,,high,[+rounded] vowel rounding
 short,rename_invert,long,,medium,Index [+short] = ASCA [-long]; polarity inverted per spike 29
 glottalized,rename_polarity,place,,medium,Index [±glottalized] → ASCA place with polarity invert (cf. glottal in spike 29)
+glottal,rename_polarity,place,,medium,Index [±glottal] → ASCA place with polarity invert (cf. glottal in spike 29)
