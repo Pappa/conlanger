@@ -48,36 +48,36 @@
 | 14 | `open` | `ten` |
 | 13 | `palatal` | `latrl` |
 | 12 | `lowtone` | `contin` |
-| 9 | `glottalized` | `contin` |
-| 9 | `samePOA` | `lateral` |
 | 9 | `fortis` | `contin` |
+| 9 | `samePOA` | `lateral` |
+| 9 | `glottalized` | `contin` |
 | 8 | `hightone` | `high` |
 | 7 | `mid` | `man` |
 | 6 | `lenis` | `tens` |
+| 5 | `guttural` | `lateral` |
 | 5 | `alveolar` | `delay` |
 | 5 | `velar` | `delay` |
-| 5 | `guttural` | `lateral` |
-| 4 | `closed` | `cons` |
-| 4 | `weak` | `man` |
-| 4 | `uvular` | `lar` |
 | 4 | `glottal` | `lateral` |
+| 4 | `weak` | `man` |
+| 4 | `closed` | `cons` |
+| 4 | `uvular` | `lar` |
 | 3 | `fallingtone` | `length` |
-| 2 | `affricate` | `stridnt` |
 | 2 | `fricative` | `rhotic` |
-| 2 | `lowfallingtone` | `continuant` |
 | 2 | `highrisingtone` | `strident` |
+| 2 | `affricate` | `stridnt` |
+| 2 | `lowfallingtone` | `continuant` |
+| 1 | `creakyvoice` | `voice` |
+| 1 | `TR` | `rt` |
+| 1 | `close` | `cons` |
+| 1 | `glide` | `click` |
+| 1 | `APOA` | `root` |
+| 1 | `tonic` | `cons` |
+| 1 | `alveolopalatal` | `consonantal` |
+| 1 | `palatalized` | `latrl` |
+| 1 | `aspirated` | `spread` |
 | 1 | `intertonic` | `anterior` |
 | 1 | `highpitch` | `high` |
 | 1 | `lowpitch` | `voice` |
-| 1 | `APOA` | `root` |
-| 1 | `close` | `cons` |
-| 1 | `glide` | `click` |
-| 1 | `palatalized` | `latrl` |
-| 1 | `alveolopalatal` | `consonantal` |
-| 1 | `tonic` | `cons` |
-| 1 | `aspirated` | `spread` |
-| 1 | `TR` | `rt` |
-| 1 | `creakyvoice` | `voice` |
 | 1 | `labiovelar` | `labiodental` |
 
 ### unknown_grouping
@@ -88,15 +88,15 @@
 | 13 | `U` |
 | 12 | `E` |
 | 7 | `H` |
-| 6 | `B` |
 | 6 | `M` |
+| 6 | `B` |
 | 5 | `K` |
 | 5 | `T` |
 | 3 | `D` |
-| 3 | `Y` |
 | 3 | `X` |
-| 2 | `I` |
+| 3 | `Y` |
 | 2 | `A` |
+| 2 | `I` |
 | 1 | `W` |
 | 1 | `Q` |
 
