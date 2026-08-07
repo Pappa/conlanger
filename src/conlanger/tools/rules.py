@@ -248,7 +248,10 @@ def apply_asca_group_mappings_to_string(
 
 
 class RulePartBase:
-    prefixes: ClassVar[dict[str, str]] = {"asca": "# ", "brassica": "; "}
+    prefixes: ClassVar[dict[str, str]] = {
+        "asca": "# ",
+        "brassica": "; ",
+    }
 
     def __init__(self, value: str, format: str = "asca"):
         if format not in self.prefixes:
@@ -261,7 +264,10 @@ class RulePartBase:
 
 
 class RuleTitle(RulePartBase):
-    prefixes: ClassVar[dict[str, str]] = {"asca": "@ ", "brassica": "; "}
+    prefixes: ClassVar[dict[str, str]] = {
+        "asca": "@ ",
+        "brassica": "; ",
+    }
 
     def __init__(self, section: dict, format: str = "asca"):
         title = section["index"] + " - " + section["section"]
@@ -285,7 +291,10 @@ class RuleCitation(RulePartBase):
 
 
 class RuleComment(RulePartBase):
-    prefixes: ClassVar[dict[str, str]] = {"asca": "\t# ", "brassica": "; "}
+    prefixes: ClassVar[dict[str, str]] = {
+        "asca": "\t# ",
+        "brassica": "; ",
+    }
 
     def __init__(self, value: str, format: str = "asca"):
         super().__init__(self._format(value, format), format)
@@ -299,7 +308,10 @@ class RuleComment(RulePartBase):
 
 class RuleChange(RulePartBase):
     rule: dict[str, str]
-    prefixes: ClassVar[dict[str, str]] = {"asca": "\t", "brassica": ""}
+    prefixes: ClassVar[dict[str, str]] = {
+        "asca": "\t",
+        "brassica": "",
+    }
     separator: ClassVar[dict[str, dict[str, str]]] = {
         "asca": {
             "output": " > ",
@@ -339,7 +351,10 @@ class RuleChange(RulePartBase):
         self._group_mappings = group_mappings
 
         if rule.get("skip", False):
-            self.prefixes = {"asca": "#\t", "brassica": ";;\t"}
+            self.prefixes = {
+                "asca": "#\t",
+                "brassica": ";;\t",
+            }
         # Compile applier-specific rule text once at construction (stored in ``value``).
         super().__init__(self._compile_rule_text(format), format)
 
