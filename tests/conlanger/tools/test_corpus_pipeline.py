@@ -38,7 +38,7 @@ _E2E_VALIDATE_SMOKE: list[tuple[str, str, bool, str]] = [
     ("feature-matrix", "C[+voiced] → C[-voice] / _#", True, "1.0"),
     ("complex-env", "r → ∅ / {ð,f}_{ɡ,ɣ}", True, "1.0"),
     ("stress-env", "a → e / _j when stressed", True, "47.1"),
-    ("chain-split", "dʒ → tʃ → ʃ", False, "1.0"),
+    ("chain-split", "dʒ → tʃ → ʃ", True, "1.0"),
     ("metathesis", "uɛ → ɛu", True, "1.0"),
     ("group-compile", "SN → N[- voice]", True, "1.0"),
     ("sebirwa-atr", "i u VS → j w A / _V[+high +ATR]", True, "30.1.1.1"),

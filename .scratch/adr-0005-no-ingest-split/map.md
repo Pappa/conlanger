@@ -19,6 +19,7 @@ wayfinder:map
 - [Amend ADR-0005 — remove ingest-split exception](issues/01-amend-adr-0005-remove-ingest-split-exception.md) — Never inflate corpus rows at ingest; compile-time expansion only; unrepresentable → `status: skipped` (ADR-0010); supersedes ticket 18; opaque YAML strings; revert and compile expansion are separate tickets.
 - [Corpus shape for chained rules (env / exception)](issues/04-compile-time-chain-expansion-with-env.md) — One corpus rule per HTML line: single `input`, single `output` (chain in `output`), at most one `env` and one `exception`; compile splits output chain only; same env/exception on each emitted ASCA rule.
 - [Revert parse-time chain split](issues/02-revert-parse-time-chain-split.md) — Removed `expand_chained_rule_parts`; corpus **9201** rules (−116); **6395 / 9201 ok (69.5%)** until compile expansion.
+- [Compile-time chain expansion](issues/03-compile-time-chain-expansion.md) — `expand_chained_corpus_rule` in `asca_compile/chains.py`; `SoundChangeRuleSet` emits one `RuleChange` per step; **6527 / 9201 ok (70.9%)** (+132 ok).
 
 ## Not yet specified
 

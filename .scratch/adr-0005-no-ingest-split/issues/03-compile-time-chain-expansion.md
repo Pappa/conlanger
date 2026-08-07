@@ -1,5 +1,5 @@
 Type: task
-Status: open
+Status: resolved
 Blocked by: 01
 
 # Compile-time chain expansion
@@ -15,3 +15,22 @@ Wire into `SoundChangeRuleSet` / `RuleChange` so `validate_asca` exercises each 
 **Target:** recover ~136 ok rules lost when [Revert parse-time chain split](02-revert-parse-time-chain-split.md) lands. **Separate ticket** from revert — may be implemented and merged independently.
 
 **Open during implementation:** whether other compile transforms run per-step or once on the joined string before split.
+
+## Answer
+
+**Done 2026-08-07.**
+
+- `expand_chained_corpus_rule()` in `src/conlanger/tools/asca_compile/chains.py`.
+- `SoundChangeRuleSet` expands each corpus rule to one `RuleChange` per chain step before compile; per-step rules run the full `compile_asca_rule_string` pipeline.
+- Rule-level `env` / `exception` propagate to every emitted step.
+
+**Design:** expand **before** per-step field join + compile transforms (not once on the multi-`>` joined string).
+
+**Inventory (ASCA 0.10.2):**
+
+| Metric | Before | After |
+| --- | ---: | ---: |
+| OK / total | 6395 / 9201 (69.5%) | **6527 / 9201 (70.9%)** |
+| `syntax_other` fails | 1234 | **1078** (−156) |
+
++132 ok rules recovered vs pre-expansion baseline.

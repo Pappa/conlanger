@@ -2,6 +2,7 @@ from typing import ClassVar
 
 from conlanger.tools.asca_compile.aliases import apply_asca_aliases
 from conlanger.tools.asca_compile.apostrophes import normalize_typographic_apostrophes
+from conlanger.tools.asca_compile.chains import expand_chained_corpus_rule
 from conlanger.tools.asca_compile.ejectives import normalize_asca_ejective_marks
 from conlanger.tools.asca_compile.ellipsis import (
     normalize_asca_optional_grouping_ellipsis,
@@ -190,9 +191,10 @@ class SoundChangeRuleSet:
             self._parts.append(RuleComment(section["comment"], format))
         if section.get("rules"):
             for rule in section["rules"]:
-                self._parts.append(
-                    RuleChange(rule, format, group_mappings=group_mappings)
-                )
+                for step in expand_chained_corpus_rule(rule):
+                    self._parts.append(
+                        RuleChange(step, format, group_mappings=group_mappings)
+                    )
 
     def __str__(self):
         return "\n".join([str(part) for part in self._parts])
