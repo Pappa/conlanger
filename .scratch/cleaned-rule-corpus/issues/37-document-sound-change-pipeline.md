@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by:
 
 # Document the sound-change rule pipeline in docs/
@@ -66,10 +66,10 @@ Primary code references: `src/conlanger/tools/rules.py`, `phonological_ruleset.p
 
 ## Acceptance criteria
 
-- [ ] All four deliverables exist and cross-link consistently.
-- [ ] `sound-change-applier.md` table lists all seven implemented ASCA transforms in code order with rationale.
-- [ ] Planned compile transforms appear in the applier table with `Order: TBD` and pointer to ticket 38.
-- [ ] `SYSTEM.md` has legacy + new pipeline sections.
-- [ ] No code changes required (docs-only); optional typo fixes in existing doc links OK.
+- [x] All four deliverables exist and cross-link consistently.
+- [x] `sound-change-applier.md` table lists all seven implemented ASCA transforms in code order with rationale.
+- [x] Planned compile transforms appear in the applier table with `Order: TBD` and pointer to ticket 38.
+- [x] `SYSTEM.md` has legacy + new pipeline sections.
+- [x] No code changes required (docs-only); optional typo fixes in existing doc links OK.
 
 ## Comments
