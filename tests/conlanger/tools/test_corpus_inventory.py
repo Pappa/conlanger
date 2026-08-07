@@ -8,9 +8,11 @@ from conlanger.tools.asca_validator import ASCAValidationError
 from conlanger.tools.corpus_inventory import (
     CHANGELOG_CSV_COLUMNS,
     ValidationRow,
+    append_ok_flip_changelog,
     classify_error,
     filter_inventory_by_ok,
     iter_validation_rows,
+    load_inventory_csv,
     ok_flip_changelog_rows,
     parse_unknown_token_error,
     reason_for_failure,
@@ -21,6 +23,7 @@ from conlanger.tools.corpus_inventory import (
     top_error_tokens_with_suggested_from_dataframe,
     validate_corpus_rule,
     validation_rows_to_dataframe,
+    write_filtered_inventory_csvs,
     write_validation_csv,
 )
 
@@ -484,6 +487,13 @@ def test_section_all_ok_stats_from_dataframe():
     assert section_all_ok_stats_from_dataframe(df) == (1, 2, 50.0)
 
 
+def test_section_all_ok_stats_from_dataframe_empty():
+    import pandas as pd
+
+    empty = pd.DataFrame(columns=validation_rows_to_dataframe([]).columns)
+    assert section_all_ok_stats_from_dataframe(empty) == (0, 0, 0.0)
+
+
 def test_summarize_inventory_common_errors():
     rows = [
         ValidationRow(
@@ -691,3 +701,88 @@ def test_ok_flip_changelog_rows_empty_without_previous_inventory():
     flips = ok_flip_changelog_rows(None, current, timestamp="2026-08-06T12:00:00Z")
     assert flips.empty
     assert list(flips.columns) == CHANGELOG_CSV_COLUMNS
+
+
+def test_load_inventory_csv_returns_none_when_missing(tmp_path: Path):
+    assert load_inventory_csv(tmp_path / "missing.csv") is None
+
+
+def test_load_inventory_csv_reads_existing_file(tmp_path: Path):
+    path = tmp_path / "inventory.csv"
+    write_validation_csv(
+        [
+            ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", ""),
+        ],
+        path,
+    )
+    loaded = load_inventory_csv(path)
+    assert loaded is not None
+    assert len(loaded) == 1
+
+
+def test_write_filtered_inventory_csvs(tmp_path: Path):
+    df = validation_rows_to_dataframe(
+        [
+            ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", ""),
+            ValidationRow(
+                "1",
+                "A",
+                1,
+                "s:2",
+                False,
+                "syntax_other",
+                "broken-syntax",
+                "",
+                "",
+                "err",
+            ),
+        ]
+    )
+    write_filtered_inventory_csvs(df, tmp_path)
+    success = tmp_path / "asca-rule-inventory-success.csv"
+    error = tmp_path / "asca-rule-inventory-error.csv"
+    assert success.is_file()
+    assert error.is_file()
+
+
+def test_append_ok_flip_changelog_writes_and_appends(tmp_path: Path):
+    flips = ok_flip_changelog_rows(
+        None,
+        validation_rows_to_dataframe(
+            [ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", "")]
+        ),
+        timestamp="2026-08-06T12:00:00Z",
+    )
+    path = tmp_path / "changelog.csv"
+    assert append_ok_flip_changelog(flips, path) == 0
+
+    flips = ok_flip_changelog_rows(
+        validation_rows_to_dataframe(
+            [ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", "")]
+        ),
+        validation_rows_to_dataframe(
+            [
+                ValidationRow(
+                    "1",
+                    "A",
+                    0,
+                    "s:1",
+                    False,
+                    "syntax_other",
+                    "broken-syntax",
+                    "",
+                    "",
+                    "err",
+                )
+            ],
+        ),
+        timestamp="2026-08-06T13:00:00Z",
+    )
+    assert append_ok_flip_changelog(flips, path) == 1
+
+
+def test_filter_inventory_by_ok_empty_dataframe():
+    import pandas as pd
+
+    empty = pd.DataFrame(columns=validation_rows_to_dataframe([]).columns)
+    assert filter_inventory_by_ok(empty, ok=True).empty

@@ -1048,3 +1048,68 @@ def test_parse_rule_element_captures_short_only_paren_in_env():
     assert "short only" in rules[0]["comment"]
     assert "when stressed" in rules[0]["comment"]
 
+
+def test_load_ipa_mappings_returns_empty_when_file_missing(tmp_path: Path):
+    assert load_ipa_mappings(tmp_path / "missing.csv") == []
+
+
+def test_load_ipa_mappings_requires_columns(tmp_path: Path):
+    path = tmp_path / "ipa.csv"
+    path.write_text("index_feature,ipa_target\nŠ,ʃ\n", encoding="utf-8")
+    with pytest.raises(ValueError, match="missing required columns"):
+        load_ipa_mappings(path)
+
+
+def test_apply_ipa_mappings_noop_when_mappings_empty():
+    parts = {"input": "Š", "output": "TS"}
+    assert apply_ipa_mappings(parts, {}) == parts
+
+
+def test_normalize_ipa_in_field_noop_without_mappings():
+    assert normalize_ipa_in_field("Š", {}) == "Š"
+    assert normalize_ipa_in_field("", {"Š": "ʃ"}) == ""
+
+
+def test_index_diachronica_parser_accepts_custom_series_mappings():
+    parser = IndexDiachronicaParser(series_mappings=[])
+    assert parser._series_mappings == []
+
+
+def test_paren_inner_is_gloss_classifies_prose_and_phonology():
+    from conlanger.tools.parsers import paren_inner_is_gloss
+
+    assert paren_inner_is_gloss("short only") is True
+    assert paren_inner_is_gloss("?") is False
+    assert paren_inner_is_gloss("https://example.com") is True
+    assert paren_inner_is_gloss("NB: see above") is True
+
+
+def test_extract_trailing_quoted_gloss_from_field():
+    from conlanger.tools.parsers import extract_trailing_quoted_gloss_from_field
+
+    cleaned, captures = extract_trailing_quoted_gloss_from_field(
+        'V / _# "when stressed"'
+    )
+    assert cleaned == "V / _#"
+    assert captures == ['"when stressed"']
+
+
+def test_extract_embedded_quoted_gloss_from_field():
+    from conlanger.tools.parsers import extract_embedded_quoted_gloss_from_field
+
+    cleaned, captures = extract_embedded_quoted_gloss_from_field(
+        'V, "short only", _C#'
+    )
+    assert cleaned == "V_C#"
+    assert '"short only"' in captures[0]
+
+
+def test_extract_trailing_paren_glosses_from_field():
+    from conlanger.tools.parsers import extract_trailing_paren_glosses_from_field
+
+    cleaned, captures = extract_trailing_paren_glosses_from_field(
+        "_CVC# (short only)"
+    )
+    assert cleaned == "_CVC#"
+    assert captures == ["(short only)"]
+

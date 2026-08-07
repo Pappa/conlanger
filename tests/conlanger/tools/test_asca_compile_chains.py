@@ -16,6 +16,11 @@ def test_expand_chained_corpus_rule_keeps_single_step():
     assert expand_chained_corpus_rule(rule) == [rule]
 
 
+def test_expand_chained_corpus_rule_ignores_degenerate_chain_marker():
+    rule = {"input": "a", "output": "e > "}
+    assert expand_chained_corpus_rule(rule) == [rule]
+
+
 def test_expand_chained_corpus_rule_propagates_env_to_each_step():
     rule = {"input": "{θ,l}", "output": "r > l", "env": "V_V"}
     assert expand_chained_corpus_rule(rule) == [

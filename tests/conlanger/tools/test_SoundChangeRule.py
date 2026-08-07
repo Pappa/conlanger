@@ -216,6 +216,7 @@ def test_normalize_asca_length_marks(text, expected):
         ("_V(…V)", "_V(..)V"),
         ("a", "a"),
         ("", ""),
+        ("[+hi](C…)", "[+hi](C,0)"),
     ],
 )
 def test_normalize_asca_optional_grouping_ellipsis(text, expected):
@@ -300,6 +301,10 @@ def test_normalize_asca_ejective_marks_repairs_malformed_set_member_features():
 def test_apply_asca_group_mappings_leaves_unknown_letters_unchanged():
     mappings = {"K": "C:[-front,+back,+hi,-lo]"}
     assert apply_asca_group_mappings_to_string("X > y", mappings) == "X > y"
+
+
+def test_apply_asca_group_mappings_noop_when_mappings_empty():
+    assert apply_asca_group_mappings_to_string("S > P", {}) == "S > P"
 
 
 def test_apply_asca_group_mappings_optional_labial_outside_set_wraps_pair():
