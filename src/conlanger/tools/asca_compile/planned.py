@@ -1,5 +1,8 @@
 """Planned ASCA compile transforms (spike 38 orders 4, 10)."""
 
+from conlanger.tools.asca_compile.input_optionals import (
+    expand_input_optionals_to_structures,
+)
 from conlanger.tools.asca_compile.parenthetical import (
     expand_index_parenthetical_notation,
 )
@@ -23,4 +26,5 @@ def apply_section_local_abbreviations(text: str) -> str:
 def expand_meta_notation(text: str) -> str:
     """Cluster-driven meta-notation handlers."""
     text = expand_index_tilde_notation(text)
-    return expand_index_parenthetical_notation(text)
+    text = expand_index_parenthetical_notation(text)
+    return expand_input_optionals_to_structures(text)

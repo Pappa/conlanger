@@ -165,16 +165,16 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 6.2.1,Proto-Erythrean to Proto-Cushitic,0,index_diachronica_original.html:1174,True,,,,,
 6.2.1,Proto-Erythrean to Proto-Cushitic,1,index_diachronica_original.html:1175,True,,,,,
 6.2.1,Proto-Erythrean to Proto-Cushitic,2,index_diachronica_original.html:1176,True,,,,,
-6.2.1.1.1,Proto-Agaw to Awngi,0,index_diachronica_original.html:1185,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | {x,ɢ}(ʷ) > ∅ / at word boundaries | ^ @ Rule 1, Line 1"
+6.2.1.1.1,Proto-Agaw to Awngi,0,index_diachronica_original.html:1185,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | {x,xʷ,ɢ,ɢʷ} > ∅ / at word boundaries | ^ @ Rule 1, Line 1"
 6.2.1.1.1,Proto-Agaw to Awngi,1,index_diachronica_original.html:1186,True,,,,,
-6.2.1.1.1,Proto-Agaw to Awngi,2,index_diachronica_original.html:1187,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | {x,ɢ}(ʷ) > {ɣ,ɣʷ} | ^ @ Rule 1, Line 1"
+6.2.1.1.1,Proto-Agaw to Awngi,2,index_diachronica_original.html:1187,True,,,,,
 6.2.1.1.1,Proto-Agaw to Awngi,3,index_diachronica_original.html:1188,True,,,,,
 6.2.1.1.1,Proto-Agaw to Awngi,4,index_diachronica_original.html:1189,True,,,,,
-6.2.1.1.2,Proto-Agaw to Blin,0,index_diachronica_original.html:1195,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | {x,ɢ}(ʷ) > ∅ / at word boundaries | ^ @ Rule 1, Line 1"
+6.2.1.1.2,Proto-Agaw to Blin,0,index_diachronica_original.html:1195,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | {x,xʷ,ɢ,ɢʷ} > ∅ / at word boundaries | ^ @ Rule 1, Line 1"
 6.2.1.1.2,Proto-Agaw to Blin,1,index_diachronica_original.html:1196,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | {ɢ,ɢʷ} > {x,xʷ} / else | ^ @ Rule 1, Line 1"
 6.2.1.1.2,Proto-Agaw to Blin,2,index_diachronica_original.html:1197,True,,,,,
 6.2.1.1.2,Proto-Agaw to Blin,3,index_diachronica_original.html:1198,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | t > r / medially | ^ @ Rule 1, Line 1"
-6.2.1.1.3,Proto-Agaw to Kemantney,0,index_diachronica_original.html:1204,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | {x,ɢ}(ʷ) > ∅ / at word boundaries | ^ @ Rule 1, Line 1"
+6.2.1.1.3,Proto-Agaw to Kemantney,0,index_diachronica_original.html:1204,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | {x,xʷ,ɢ,ɢʷ} > ∅ / at word boundaries | ^ @ Rule 1, Line 1"
 6.2.1.1.3,Proto-Agaw to Kemantney,1,index_diachronica_original.html:1205,True,,,,,
 6.2.1.1.3,Proto-Agaw to Kemantney,2,index_diachronica_original.html:1206,True,,,,,
 6.2.1.1.3,Proto-Agaw to Kemantney,3,index_diachronica_original.html:1207,True,,,,,
@@ -186,7 +186,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 6.2.1.1.4,Proto-Agaw to Xamtanga,1,index_diachronica_original.html:1218,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | {xʷ,ɢʷ} > ∅ / at word boundaries | ^ @ Rule 1, Line 1"
 6.2.1.1.4,Proto-Agaw to Xamtanga,2,index_diachronica_original.html:1219,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | {xʷ,ɢʷ} > w / else | ^ @ Rule 1, Line 1"
 6.2.1.1.4,Proto-Agaw to Xamtanga,3,index_diachronica_original.html:1220,True,,,,,
-6.2.1.1.4,Proto-Agaw to Xamtanga,4,index_diachronica_original.html:1221,False,panic_other,broken-syntax,,,thread '<unnamed>' (917854) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+6.2.1.1.4,Proto-Agaw to Xamtanga,4,index_diachronica_original.html:1221,False,panic_other,broken-syntax,,,thread '<unnamed>' (1437095) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 6.2.1.1.4,Proto-Agaw to Xamtanga,5,index_diachronica_original.html:1222,True,,,,,
 6.2.1.1.4,Proto-Agaw to Xamtanga,6,index_diachronica_original.html:1223,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | k:[+cg] > q / else | ^ @ Rule 1, Line 1"
 6.2.1.1.4,Proto-Agaw to Xamtanga,7,index_diachronica_original.html:1224,True,,,,,
@@ -297,8 +297,8 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,30,index_diachronica_original.html:1365,True,,,,,
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,31,index_diachronica_original.html:1366,True,,,,,
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,32,index_diachronica_original.html:1367,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,33,index_diachronica_original.html:1368,False,panic_other,broken-syntax,,,thread '<unnamed>' (919744) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,34,index_diachronica_original.html:1369,False,panic_other,broken-syntax,,,thread '<unnamed>' (919763) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,33,index_diachronica_original.html:1368,False,panic_other,broken-syntax,,,thread '<unnamed>' (1438984) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,34,index_diachronica_original.html:1369,False,panic_other,broken-syntax,,,thread '<unnamed>' (1439002) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,35,index_diachronica_original.html:1370,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | a > ∅ / _t, in the feminine ending | ^ @ Rule 1, Line 1"
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,36,index_diachronica_original.html:1371,False,unknown_grouping,asca-unrepresentable,E,,"Syntax Error: Unknown grouping 'E'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | a:[+long]ʔ > e / {E(C)_#,EC(C)_#} | ^ @ Rule 1, Line 1"
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,37,index_diachronica_original.html:1372,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ˤ' | a:[+long] > a / {Cˤ,w}_# | ^ @ Rule 1, Line 1"
@@ -389,7 +389,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,3,index_diachronica_original.html:1519,True,,,,,
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,4,index_diachronica_original.html:1520,True,,,,,
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,5,index_diachronica_original.html:1521,True,,,,,
-6.2.2.1.18,Proto-Semitic to Biblical Hebrew,6,index_diachronica_original.html:1522,False,panic_other,broken-syntax,,,thread '<unnamed>' (921308) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace thread '<unnamed>' (921309) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (921306) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (921307) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code
+6.2.2.1.18,Proto-Semitic to Biblical Hebrew,6,index_diachronica_original.html:1522,False,panic_other,broken-syntax,,,thread '<unnamed>' (1440564) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace thread '<unnamed>' (1440561) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1440563) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1440560) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,7,index_diachronica_original.html:1523,True,,,,,
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,8,index_diachronica_original.html:1524,True,,,,,
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,9,index_diachronica_original.html:1525,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | i > e:[+long] o:[+long] / else | ^ @ Rule 1, Line 1"
@@ -496,7 +496,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 7.3,Proto-Algonquian to Proto-Arapaho-Atsina,16,index_diachronica_original.html:1667,True,,,,,
 7.3,Proto-Algonquian to Proto-Arapaho-Atsina,17,index_diachronica_original.html:1668,True,,,,,
 7.3.1,Proto-Arapaho-Atsina to Arapaho,0,index_diachronica_original.html:1675,True,,,,,
-7.3.1,Proto-Arapaho-Atsina to Arapaho,1,index_diachronica_original.html:1676,False,syntax_other,broken-syntax,,,"Syntax Error: Options can only be used in Environments or Structures | ({C,#}V)ʔ > ({C,#}V:[+long])∅ / _C | ^^^^^^^^ @ Rule 1, Line 1"
+7.3.1,Proto-Arapaho-Atsina to Arapaho,1,index_diachronica_original.html:1676,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received '∅'. Did you forget a '/' between the output and environment? | {C,#,V}ʔ > {C,#,V:[+long]}∅ / _C | ^ @ Rule 1, Line 1"
 7.3.1,Proto-Arapaho-Atsina to Arapaho,2,index_diachronica_original.html:1677,False,unknown_feature,asca-unrepresentable,dental,ldental,"Syntax Error: Unknown feature 'dental'. Did you mean ldental? | i:[+long] > u:[+long] / o:[+long](C[-dental])(C[-dental])_ | ^^^^^^^ @ Rule 1, Line 1"
 7.3.1,Proto-Arapaho-Atsina to Arapaho,3,index_diachronica_original.html:1678,True,,,,,
 7.3.1,Proto-Arapaho-Atsina to Arapaho,4,index_diachronica_original.html:1679,True,,,,,
@@ -504,7 +504,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 7.3.1,Proto-Arapaho-Atsina to Arapaho,6,index_diachronica_original.html:1681,True,,,,,
 7.3.1,Proto-Arapaho-Atsina to Arapaho,7,index_diachronica_original.html:1682,True,,,,,
 7.3.1,Proto-Arapaho-Atsina to Arapaho,8,index_diachronica_original.html:1683,True,,,,,
-7.3.1,Proto-Arapaho-Atsina to Arapaho,9,index_diachronica_original.html:1684,False,syntax_other,broken-syntax,,,"Syntax Error: Options can only be used in Environments or Structures | (V[-long])N > ∅ / _# | ^^^^^^^^^^ @ Rule 1, Line 1"
+7.3.1,Proto-Arapaho-Atsina to Arapaho,9,index_diachronica_original.html:1684,True,,,,,
 7.3.1,Proto-Arapaho-Atsina to Arapaho,10,index_diachronica_original.html:1685,True,,,,,
 7.3.1,Proto-Arapaho-Atsina to Arapaho,11,index_diachronica_original.html:1686,True,,,,,
 7.3.1,Proto-Arapaho-Atsina to Arapaho,12,index_diachronica_original.html:1687,True,,,,,
@@ -512,13 +512,13 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 7.3.1,Proto-Arapaho-Atsina to Arapaho,14,index_diachronica_original.html:1689,True,,,,,
 7.3.1,Proto-Arapaho-Atsina to Arapaho,15,index_diachronica_original.html:1690,True,,,,,
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,0,index_diachronica_original.html:1697,True,,,,,
-7.3.2,Proto-Arapaho-Atsina to Gros Ventre,1,index_diachronica_original.html:1698,False,unknown_feature,asca-unrepresentable,fallingtone,length,"Syntax Error: Unknown feature 'fallingtone'. Did you mean length? | ({C,#}V[-long])ʔ > ({C,#}V:[+long][+falling tone])∅ / _C | ^^^^^^^^^^^^^ @ Rule 1, Line 1"
+7.3.2,Proto-Arapaho-Atsina to Gros Ventre,1,index_diachronica_original.html:1698,False,unknown_feature,asca-unrepresentable,fallingtone,length,"Syntax Error: Unknown feature 'fallingtone'. Did you mean length? | {C,#,V[-long]}ʔ > {C,#,V:[+long][+falling tone]}∅ / _C | ^^^^^^^^^^^^^ @ Rule 1, Line 1"
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,2,index_diachronica_original.html:1699,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | j > ∅ / {ʃ,θ} | ^ @ Rule 1, Line 1"
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,3,index_diachronica_original.html:1700,True,,,,,
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,4,index_diachronica_original.html:1701,True,,,,,
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,5,index_diachronica_original.html:1702,True,,,,,
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,6,index_diachronica_original.html:1703,True,,,,,
-7.3.2,Proto-Arapaho-Atsina to Gros Ventre,7,index_diachronica_original.html:1704,False,syntax_other,broken-syntax,,,"Syntax Error: Options can only be used in Environments or Structures | (V[-long])N > ∅ / _# | ^^^^^^^^^^ @ Rule 1, Line 1"
+7.3.2,Proto-Arapaho-Atsina to Gros Ventre,7,index_diachronica_original.html:1704,True,,,,,
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,8,index_diachronica_original.html:1705,True,,,,,
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,9,index_diachronica_original.html:1706,True,,,,,
 7.4,Proto-Algonquian to Blackfoot,0,index_diachronica_original.html:1711,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | {θ,tʃ,ʃ,r} > t / unless adjacent to another consonant | ^ @ Rule 1, Line 1"
@@ -844,7 +844,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 8.1,Proto-Altaic to Proto-Japonic,19,index_diachronica_original.html:2117,True,,,,,
 8.1,Proto-Altaic to Proto-Japonic,20,index_diachronica_original.html:2118,True,,,,,
 8.1,Proto-Altaic to Proto-Japonic,21,index_diachronica_original.html:2119,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '∅' | ŋ > {∅,n} #_ else | ^ @ Rule 1, Line 1"
-8.1,Proto-Altaic to Proto-Japonic,22,index_diachronica_original.html:2120,False,panic_other,broken-syntax,,,thread '<unnamed>' (929110) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace thread '<unnamed>' (929113) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code
+8.1,Proto-Altaic to Proto-Japonic,22,index_diachronica_original.html:2120,False,panic_other,broken-syntax,,,thread '<unnamed>' (1448352) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace thread '<unnamed>' (1448351) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code
 8.1,Proto-Altaic to Proto-Japonic,23,index_diachronica_original.html:2121,True,,,,,
 8.1,Proto-Altaic to Proto-Japonic,24,index_diachronica_original.html:2122,True,,,,,
 8.1,Proto-Altaic to Proto-Japonic,25,index_diachronica_original.html:2123,True,,,,,
@@ -877,7 +877,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 8.2,Proto-Altaic to Proto-Korean,12,index_diachronica_original.html:2161,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '∅' | j > {j,∅} | ^ @ Rule 1, Line 1"
 8.2,Proto-Altaic to Proto-Korean,13,index_diachronica_original.html:2162,True,,,,,
 8.3,Proto-Altaic to Proto-Mongolic,0,index_diachronica_original.html:2169,True,,,,,
-8.3,Proto-Altaic to Proto-Mongolic,1,index_diachronica_original.html:2170,False,panic_other,broken-syntax,,,thread '<unnamed>' (929671) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+8.3,Proto-Altaic to Proto-Mongolic,1,index_diachronica_original.html:2170,False,panic_other,broken-syntax,,,thread '<unnamed>' (1448911) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 8.3,Proto-Altaic to Proto-Mongolic,2,index_diachronica_original.html:2171,True,,,,,
 8.3,Proto-Altaic to Proto-Mongolic,3,index_diachronica_original.html:2172,True,,,,,
 8.3,Proto-Altaic to Proto-Mongolic,4,index_diachronica_original.html:2173,False,nested_brackets,asca-unrepresentable,,,"Syntax Error: Cannot have nested brackets of the same type | e o u æ ø y > {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i} / _Ca | ^ @ Rule 1, Line 1"
@@ -936,7 +936,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 8.4,Proto-Altaic to Proto-Tungusic,12,index_diachronica_original.html:2232,True,,,,,
 8.4,Proto-Altaic to Proto-Tungusic,13,index_diachronica_original.html:2233,True,,,,,
 8.4,Proto-Altaic to Proto-Tungusic,14,index_diachronica_original.html:2234,True,,,,,
-8.4,Proto-Altaic to Proto-Tungusic,15,index_diachronica_original.html:2235,False,panic_other,broken-syntax,,,thread '<unnamed>' (930672) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+8.4,Proto-Altaic to Proto-Tungusic,15,index_diachronica_original.html:2235,False,panic_other,broken-syntax,,,thread '<unnamed>' (1449916) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 8.4,Proto-Altaic to Proto-Tungusic,16,index_diachronica_original.html:2236,True,,,,,
 8.4,Proto-Altaic to Proto-Tungusic,17,index_diachronica_original.html:2237,True,,,,,
 8.4,Proto-Altaic to Proto-Tungusic,18,index_diachronica_original.html:2238,True,,,,,
@@ -1042,7 +1042,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 9.1.2,Proto-Vietic to Middle Vietnamese,7,index_diachronica_original.html:2415,False,nested_brackets,asca-unrepresentable,,,"Syntax Error: Cannot have nested brackets of the same type | ((h)ə)p d > b t / _l | ^ @ Rule 1, Line 1"
 9.1.2,Proto-Vietic to Middle Vietnamese,8,index_diachronica_original.html:2416,True,,,,,
 9.1.2,Proto-Vietic to Middle Vietnamese,9,index_diachronica_original.html:2417,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '*' | t*ʰ d ɡ > tʰ t k / _w | ^ @ Rule 1, Line 1"
-9.1.2,Proto-Vietic to Middle Vietnamese,10,index_diachronica_original.html:2418,False,panic_other,broken-syntax,,,thread '<unnamed>' (932497) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+9.1.2,Proto-Vietic to Middle Vietnamese,10,index_diachronica_original.html:2418,False,panic_other,broken-syntax,,,thread '<unnamed>' (1451716) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 9.1.2,Proto-Vietic to Middle Vietnamese,11,index_diachronica_original.html:2419,True,,,,,
 9.1.2,Proto-Vietic to Middle Vietnamese,12,index_diachronica_original.html:2421,True,,,,,
 9.1.2,Proto-Vietic to Middle Vietnamese,13,index_diachronica_original.html:2422,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | l > j / else | ^ @ Rule 1, Line 1"
@@ -1360,7 +1360,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 10.2.5,Proto-Malayo-Polynesian to Palauan,26,index_diachronica_original.html:2946,True,,,,,
 10.2.5,Proto-Malayo-Polynesian to Palauan,27,index_diachronica_original.html:2947,True,,,,,
 10.2.5,Proto-Malayo-Polynesian to Palauan,28,index_diachronica_original.html:2948,True,,,,,
-10.2.5,Proto-Malayo-Polynesian to Palauan,29,index_diachronica_original.html:2949,False,panic_other,broken-syntax,,,thread '<unnamed>' (937926) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace thread '<unnamed>' (937928) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code
+10.2.5,Proto-Malayo-Polynesian to Palauan,29,index_diachronica_original.html:2949,False,panic_other,broken-syntax,,,thread '<unnamed>' (1457137) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace thread '<unnamed>' (1457133) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code
 10.2.5,Proto-Malayo-Polynesian to Palauan,30,index_diachronica_original.html:2950,True,,,,,
 10.2.5,Proto-Malayo-Polynesian to Palauan,31,index_diachronica_original.html:2951,True,,,,,
 10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,0,index_diachronica_original.html:2956,True,,,,,
@@ -1494,11 +1494,11 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 10.3.2,Proto-Oceanic to Hiw,11,index_diachronica_original.html:3119,True,,,,,
 10.3.2,Proto-Oceanic to Hiw,12,index_diachronica_original.html:3121,False,unknown_feature,asca-unrepresentable,mid,man,"Syntax Error: Unknown feature 'mid'. Did you mean man? | a > e / _CV[+ mid] | ^^^^^ @ Rule 1, Line 1"
 10.3.2,Proto-Oceanic to Hiw,13,index_diachronica_original.html:3122,True,,,,,
-10.3.2,Proto-Oceanic to Hiw,14,index_diachronica_original.html:3123,False,unknown_feature,asca-unrepresentable,mid,man,"Syntax Error: Unknown feature 'mid'. Did you mean man? | {aV[+ high],aCV[+ high]} {aV[+ mid],aCV[+ mid]} aCa > {ɔ,ɔC} {a,aC} {ɔ,a}(C)ə | ^^^^^ @ Rule 1, Line 1"
+10.3.2,Proto-Oceanic to Hiw,14,index_diachronica_original.html:3123,False,unknown_feature,asca-unrepresentable,mid,man,"Syntax Error: Unknown feature 'mid'. Did you mean man? | {aV[+ high],aCV[+ high]} {aV[+ mid],aCV[+ mid]} aCa > {ɔ,ɔC} {a,aC} {ɔə,ɔCə,aə,aCə} | ^^^^^ @ Rule 1, Line 1"
 10.3.2,Proto-Oceanic to Hiw,15,index_diachronica_original.html:3124,False,nested_brackets,asca-unrepresentable,,,"Syntax Error: Cannot have nested brackets of the same type | {e{V[- low]},eC{V[- low]}} {ea,eCa} > {e,eC} {eə,eCə} | ^ @ Rule 1, Line 1"
-10.3.2,Proto-Oceanic to Hiw,16,index_diachronica_original.html:3125,False,unknown_feature,asca-unrepresentable,mid,man,"Syntax Error: Unknown feature 'mid'. Did you mean man? | {iV[+ high],iCV[+ high]} {iV[+ mid],iCV[+ mid]} {ia,iCa} > {i,iC} {iə,iCə} {e,i}(C)ə | ^^^^^ @ Rule 1, Line 1"
+10.3.2,Proto-Oceanic to Hiw,16,index_diachronica_original.html:3125,False,unknown_feature,asca-unrepresentable,mid,man,"Syntax Error: Unknown feature 'mid'. Did you mean man? | {iV[+ high],iCV[+ high]} {iV[+ mid],iCV[+ mid]} {ia,iCa} > {i,iC} {iə,iCə} {eə,eCə,iə,iCə} | ^^^^^ @ Rule 1, Line 1"
 10.3.2,Proto-Oceanic to Hiw,17,index_diachronica_original.html:3126,False,unknown_feature,asca-unrepresentable,mid,man,"Syntax Error: Unknown feature 'mid'. Did you mean man? | {oV[+ high],oCV[+ high]} {oV[+ mid],oCV[+ mid]} {oa,oCa} > {ɵ,ɵC} {o,oC} {ɔə,ɔCə} | ^^^^^ @ Rule 1, Line 1"
-10.3.2,Proto-Oceanic to Hiw,18,index_diachronica_original.html:3127,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | {uV[+ high],uCV[+ high]} {ue,uCe} {uo,uCo} {ua,uCa} > {u,i}(C) {uə,uCə} {eə,eCə} {u,ɵ}(C)ə | ^ @ Rule 1, Line 1"
+10.3.2,Proto-Oceanic to Hiw,18,index_diachronica_original.html:3127,True,,,,,
 10.3.2,Proto-Oceanic to Hiw,19,index_diachronica_original.html:3128,True,,,,,
 10.3.2,Proto-Oceanic to Hiw,20,index_diachronica_original.html:3129,True,,,,,
 10.3.2,Proto-Oceanic to Hiw,21,index_diachronica_original.html:3130,True,,,,,
@@ -1513,7 +1513,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 10.3.3,Proto-Oceanic to Lemerig,8,index_diachronica_original.html:3145,False,unknown_feature,asca-unrepresentable,mid,man,"Syntax Error: Unknown feature 'mid'. Did you mean man? | eCV[+ mid] > ɛC | ^^^^^ @ Rule 1, Line 1"
 10.3.3,Proto-Oceanic to Lemerig,9,index_diachronica_original.html:3146,True,,,,,
 10.3.3,Proto-Oceanic to Lemerig,10,index_diachronica_original.html:3147,True,,,,,
-10.3.3,Proto-Oceanic to Lemerig,11,index_diachronica_original.html:3148,False,panic_other,broken-syntax,,,thread '<unnamed>' (940526) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+10.3.3,Proto-Oceanic to Lemerig,11,index_diachronica_original.html:3148,False,panic_other,broken-syntax,,,thread '<unnamed>' (1459737) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 10.3.3,Proto-Oceanic to Lemerig,12,index_diachronica_original.html:3149,True,,,,,
 10.3.3,Proto-Oceanic to Lemerig,13,index_diachronica_original.html:3150,True,,,,,
 10.3.3,Proto-Oceanic to Lemerig,14,index_diachronica_original.html:3151,True,,,,,
@@ -1655,7 +1655,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 10.3.5.8,Proto-New Caledonia to Proto-Yunaga,10,index_diachronica_original.html:3336,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | u i > o e / in monosyllables | ^ @ Rule 1, Line 1"
 10.3.5.8,Proto-New Caledonia to Proto-Yunaga,11,index_diachronica_original.html:3337,True,,,,,
 10.3.5.8,Proto-New Caledonia to Proto-Yunaga,12,index_diachronica_original.html:3338,True,,,,,
-10.3.5.8,Proto-New Caledonia to Proto-Yunaga,13,index_diachronica_original.html:3339,False,panic_other,broken-syntax,,,thread '<unnamed>' (942953) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace thread '<unnamed>' (942952) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (942951) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (942954) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code
+10.3.5.8,Proto-New Caledonia to Proto-Yunaga,13,index_diachronica_original.html:3339,False,panic_other,broken-syntax,,,thread '<unnamed>' (1462152) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace thread '<unnamed>' (1462151) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1462153) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1462150) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code
 10.3.5.8,Proto-New Caledonia to Proto-Yunaga,14,index_diachronica_original.html:3340,True,,,,,
 10.3.5.8.1,Proto-Yunaga to Yunaga 1,0,index_diachronica_original.html:3345,False,unknown_character,asca-unrepresentable,ṽ,,"Syntax Error: Unknown character 'ṽ' | V > ṽ / _N# | ^ @ Rule 1, Line 1"
 10.3.5.8.1,Proto-Yunaga to Yunaga 1,1,index_diachronica_original.html:3346,True,,,,,
@@ -1707,7 +1707,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 10.3.8,Proto-Oceanic to Tolomako,1,index_diachronica_original.html:3421,True,,,,,
 10.3.8,Proto-Oceanic to Tolomako,2,index_diachronica_original.html:3422,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *R > {∅,r} | ^ @ Rule 1, Line 1"
 10.3.8,Proto-Oceanic to Tolomako,3,index_diachronica_original.html:3423,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '*' | ɲ c *j > n s z | ^ @ Rule 1, Line 1"
-10.3.8,Proto-Oceanic to Tolomako,4,index_diachronica_original.html:3424,False,unknown_character,asca-unrepresentable,̼,,"Syntax Error: Unknown character '̼' | m b > n̼ t̼ / _{a,e,i} | ^ @ Rule 1, Line 1"
+10.3.8,Proto-Oceanic to Tolomako,4,index_diachronica_original.html:3424,False,unknown_character,asca-unrepresentable,̼,,"Syntax Error: Unknown character '̼' | n̼ t̼ > n t / _{a,e,i} | ^ @ Rule 1, Line 2"
 10.3.8,Proto-Oceanic to Tolomako,5,index_diachronica_original.html:3425,True,,,,,
 10.3.8,Proto-Oceanic to Tolomako,6,index_diachronica_original.html:3426,True,,,,,
 10.3.8,Proto-Oceanic to Tolomako,7,index_diachronica_original.html:3427,True,,,,,
@@ -1729,8 +1729,8 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 10.3.9.1,Proto-Utupua to Asuboa,9,index_diachronica_original.html:3452,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *R > {l,∅} | ^ @ Rule 1, Line 1"
 10.3.9.2,Proto-Utupua to Nebao,0,index_diachronica_original.html:3458,True,,,,,
 10.3.9.2,Proto-Utupua to Nebao,1,index_diachronica_original.html:3459,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received '∅'. Did you forget a '/' between the output and environment? | t k > r ∅ / #_ | ^ @ Rule 1, Line 1"
-10.3.9.2,Proto-Utupua to Nebao,2,index_diachronica_original.html:3460,False,panic_other,broken-syntax,,,thread '<unnamed>' (944214) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
-10.3.9.2,Proto-Utupua to Nebao,3,index_diachronica_original.html:3461,False,panic_other,broken-syntax,,,thread '<unnamed>' (944227) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+10.3.9.2,Proto-Utupua to Nebao,2,index_diachronica_original.html:3460,False,panic_other,broken-syntax,,,thread '<unnamed>' (1463413) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+10.3.9.2,Proto-Utupua to Nebao,3,index_diachronica_original.html:3461,False,panic_other,broken-syntax,,,thread '<unnamed>' (1463426) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 10.3.9.2,Proto-Utupua to Nebao,4,index_diachronica_original.html:3462,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '∅' | r > {l,∅} / _u | ^ @ Rule 1, Line 1"
 10.3.9.2,Proto-Utupua to Nebao,5,index_diachronica_original.html:3463,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '*' | r *R > l ∅ | ^ @ Rule 1, Line 1"
 10.3.9.2,Proto-Utupua to Nebao,6,index_diachronica_original.html:3464,False,syntax_other,broken-syntax,,,"Syntax Error: The output of a deletion rule must only contain `*` or `∅` | l > ∅ (occasionally?) | ^ @ Rule 1, Line 1"
@@ -1764,7 +1764,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 10.3.10.2,Proto-Vanikoro to Tanema,3,index_diachronica_original.html:3509,True,,,,,
 10.3.10.2,Proto-Vanikoro to Tanema,4,index_diachronica_original.html:3510,True,,,,,
 10.3.10.2,Proto-Vanikoro to Tanema,5,index_diachronica_original.html:3511,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '*' | c *R > ∅ {l,∅} | ^ @ Rule 1, Line 1"
-10.3.10.2,Proto-Vanikoro to Tanema,6,index_diachronica_original.html:3512,False,panic_other,broken-syntax,,,thread '<unnamed>' (944807) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+10.3.10.2,Proto-Vanikoro to Tanema,6,index_diachronica_original.html:3512,False,panic_other,broken-syntax,,,thread '<unnamed>' (1464007) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 10.3.10.3,Proto-Vanikoro to Vano,0,index_diachronica_original.html:3517,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '∅' | w > {∅,w} | ^ @ Rule 1, Line 1"
 10.3.10.3,Proto-Vanikoro to Vano,1,index_diachronica_original.html:3518,True,,,,,
 10.3.10.3,Proto-Vanikoro to Vano,2,index_diachronica_original.html:3519,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | t > l / #_, in nouns | ^ @ Rule 1, Line 1"
@@ -1785,7 +1785,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 10.3.11,Proto-Oceanic to Proto-Southern Vanuatu,9,index_diachronica_original.html:3538,True,,,,,
 10.3.11,Proto-Oceanic to Proto-Southern Vanuatu,10,index_diachronica_original.html:3539,True,,,,,
 10.3.11,Proto-Oceanic to Proto-Southern Vanuatu,11,index_diachronica_original.html:3540,True,,,,,
-10.3.11,Proto-Oceanic to Proto-Southern Vanuatu,12,index_diachronica_original.html:3541,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '>' | q ( > kw ?) | ^ @ Rule 1, Line 1"
+10.3.11,Proto-Oceanic to Proto-Southern Vanuatu,12,index_diachronica_original.html:3541,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received ')' | kw ?) > v | ^ @ Rule 1, Line 2"
 10.3.11,Proto-Oceanic to Proto-Southern Vanuatu,13,index_diachronica_original.html:3542,True,,,,,
 10.3.11,Proto-Oceanic to Proto-Southern Vanuatu,14,index_diachronica_original.html:3543,True,,,,,
 10.3.11.1,Proto-Southern Vanuatu to Anejom,0,index_diachronica_original.html:3548,False,expected_number,asca-unrepresentable,,,"Syntax Error: Expected number, but received t | C > ∅ / _# // C = t | ^ @ Rule 1, Line 1"
@@ -1931,7 +1931,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 10.3.12,Proto-Oceanic to Vera’a,10,index_diachronica_original.html:3733,True,,,,,
 10.3.12,Proto-Oceanic to Vera’a,11,index_diachronica_original.html:3734,True,,,,,
 10.3.12,Proto-Oceanic to Vera’a,12,index_diachronica_original.html:3735,True,,,,,
-10.3.12,Proto-Oceanic to Vera’a,13,index_diachronica_original.html:3736,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | {ai,aCi} {au,aCu} > {a,ɛ}(C) {ɔ,a,ɛ} | ^ @ Rule 1, Line 1"
+10.3.12,Proto-Oceanic to Vera’a,13,index_diachronica_original.html:3736,True,,,,,
 10.3.12,Proto-Oceanic to Vera’a,14,index_diachronica_original.html:3737,False,nested_brackets,asca-unrepresentable,,,"Syntax Error: Cannot have nested brackets of the same type | {a{o,e},aC{o,e}} > a | ^ @ Rule 1, Line 1"
 10.3.12,Proto-Oceanic to Vera’a,15,index_diachronica_original.html:3738,True,,,,,
 10.3.12,Proto-Oceanic to Vera’a,16,index_diachronica_original.html:3739,True,,,,,
@@ -2021,7 +2021,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 11.1.3,Proto-Avar-Andic to Avar,3,index_diachronica_original.html:3914,True,,,,,
 11.1.3,Proto-Avar-Andic to Avar,4,index_diachronica_original.html:3915,True,,,,,
 11.1.3,Proto-Avar-Andic to Avar,5,index_diachronica_original.html:3916,True,,,,,
-11.1.3,Proto-Avar-Andic to Avar,6,index_diachronica_original.html:3917,False,panic_other,broken-syntax,,,thread '<unnamed>' (949176) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+11.1.3,Proto-Avar-Andic to Avar,6,index_diachronica_original.html:3917,False,panic_other,broken-syntax,,,thread '<unnamed>' (1468375) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 11.2,Proto-Northeast Caucasian to Dargi,0,index_diachronica_original.html:3923,True,,,,,
 11.2,Proto-Northeast Caucasian to Dargi,1,index_diachronica_original.html:3924,True,,,,,
 11.2,Proto-Northeast Caucasian to Dargi,2,index_diachronica_original.html:3925,True,,,,,
@@ -2051,7 +2051,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 11.5.1,Proto-Lezgic to Agul,3,index_diachronica_original.html:3967,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received ',' | tɬ tɬ:[+long] tɬ:[+cg] tɬ:[+long,+cg] dɮ > xʲ x k:[+cg] k:[+long] {,j,xʲ} | ^ @ Rule 1, Line 1"
 11.5.1,Proto-Lezgic to Agul,4,index_diachronica_original.html:3968,True,,,,,
 11.5.1,Proto-Lezgic to Agul,5,index_diachronica_original.html:3969,True,,,,,
-11.5.1,Proto-Lezgic to Agul,6,index_diachronica_original.html:3970,False,panic_other,broken-syntax,,,thread '<unnamed>' (949684) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+11.5.1,Proto-Lezgic to Agul,6,index_diachronica_original.html:3970,False,panic_other,broken-syntax,,,thread '<unnamed>' (1468897) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 11.5.2,Proto-Lezgic to Archi,0,index_diachronica_original.html:3975,True,,,,,
 11.5.2,Proto-Lezgic to Archi,1,index_diachronica_original.html:3976,True,,,,,
 11.5.2,Proto-Lezgic to Archi,2,index_diachronica_original.html:3977,True,,,,,
@@ -2075,14 +2075,14 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 11.5.4,Proto-Lezgic to Rutul,4,index_diachronica_original.html:4003,True,,,,,
 11.5.4,Proto-Lezgic to Rutul,5,index_diachronica_original.html:4004,True,,,,,
 11.5.4,Proto-Lezgic to Rutul,6,index_diachronica_original.html:4005,True,,,,,
-11.5.4,Proto-Lezgic to Rutul,7,index_diachronica_original.html:4006,False,panic_other,broken-syntax,,,thread '<unnamed>' (950093) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+11.5.4,Proto-Lezgic to Rutul,7,index_diachronica_original.html:4006,False,panic_other,broken-syntax,,,thread '<unnamed>' (1469306) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 11.5.5,Proto-Lezgic to Tabassaran,0,index_diachronica_original.html:4011,True,,,,,
 11.5.5,Proto-Lezgic to Tabassaran,1,index_diachronica_original.html:4012,True,,,,,
 11.5.5,Proto-Lezgic to Tabassaran,2,index_diachronica_original.html:4013,True,,,,,
 11.5.5,Proto-Lezgic to Tabassaran,3,index_diachronica_original.html:4014,True,,,,,
 11.5.5,Proto-Lezgic to Tabassaran,4,index_diachronica_original.html:4015,True,,,,,
 11.5.5,Proto-Lezgic to Tabassaran,5,index_diachronica_original.html:4016,True,,,,,
-11.5.5,Proto-Lezgic to Tabassaran,6,index_diachronica_original.html:4017,False,panic_other,broken-syntax,,,thread '<unnamed>' (950213) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+11.5.5,Proto-Lezgic to Tabassaran,6,index_diachronica_original.html:4017,False,panic_other,broken-syntax,,,thread '<unnamed>' (1469424) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 11.5.6,Proto-Lezgic to Udi,0,index_diachronica_original.html:4022,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '∅' | ts ts:[+long] ts:[+cg] ts:[+long,+cg] dz > {∅,s} tʃ {∅,ts:[+cg]} {ts:[+cg],tʃ:[+cg]} z | ^ @ Rule 1, Line 1"
 11.5.6,Proto-Lezgic to Udi,1,index_diachronica_original.html:4023,True,,,,,
 11.5.6,Proto-Lezgic to Udi,2,index_diachronica_original.html:4024,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '∅' | tʃ tʃ:[+long] tʃ:[+cg] tʃ:[+long,+cg] dʒ > {∅,ʃ} tʃ ∅ tʃ:[+cg] {dʒ,tʃ} | ^ @ Rule 1, Line 1"
@@ -2345,7 +2345,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 14.1,Proto-Elamo-Dravidian to Proto-Dravidian,1,index_diachronica_original.html:4496,True,,,,,
 14.1,Proto-Elamo-Dravidian to Proto-Dravidian,2,index_diachronica_original.html:4497,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received '*'. Did you forget a '/' between the output and environment? | k ʃk > k* k:[+long] / V_V | ^ @ Rule 1, Line 1"
 14.1,Proto-Elamo-Dravidian to Proto-Dravidian,3,index_diachronica_original.html:4498,True,,,,,
-14.1,Proto-Elamo-Dravidian to Proto-Dravidian,4,index_diachronica_original.html:4499,False,panic_other,broken-syntax,,,thread '<unnamed>' (954685) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+14.1,Proto-Elamo-Dravidian to Proto-Dravidian,4,index_diachronica_original.html:4499,False,panic_other,broken-syntax,,,thread '<unnamed>' (1473893) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 14.1,Proto-Elamo-Dravidian to Proto-Dravidian,5,index_diachronica_original.html:4500,True,,,,,
 14.1,Proto-Elamo-Dravidian to Proto-Dravidian,6,index_diachronica_original.html:4501,True,,,,,
 14.1,Proto-Elamo-Dravidian to Proto-Dravidian,7,index_diachronica_original.html:4502,True,,,,,
@@ -2547,7 +2547,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,24,index_diachronica_original.html:4768,True,,,,,
 15.2.7,Proto-Eskimo to Siberian Yup’ik,0,index_diachronica_original.html:4773,True,,,,,
 15.2.7,Proto-Eskimo to Siberian Yup’ik,1,index_diachronica_original.html:4774,True,,,,,
-15.2.7,Proto-Eskimo to Siberian Yup’ik,2,index_diachronica_original.html:4775,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | s > ts / in some dialects? | ^ @ Rule 1, Line 1"
+15.2.7,Proto-Eskimo to Siberian Yup’ik,2,index_diachronica_original.html:4775,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | ts > tʃ / in some dialects? | ^ @ Rule 1, Line 2"
 15.2.7,Proto-Eskimo to Siberian Yup’ik,3,index_diachronica_original.html:4776,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | C[+voice] > C[-voice] / next to {P,s,l̥} | ^ @ Rule 1, Line 1"
 15.2.7,Proto-Eskimo to Siberian Yup’ik,4,index_diachronica_original.html:4777,True,,,,,
 15.2.7,Proto-Eskimo to Siberian Yup’ik,5,index_diachronica_original.html:4778,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | ə > a / | ^ @ Rule 1, Line 1"
@@ -2809,7 +2809,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 17.2.4,Common Anatolian to Lydian,9,index_diachronica_original.html:5138,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '∅' | {h2,∅} > ∅ | ^ @ Rule 1, Line 1"
 17.2.4,Common Anatolian to Lydian,10,index_diachronica_original.html:5139,True,,,,,
 17.2.4,Common Anatolian to Lydian,11,index_diachronica_original.html:5140,True,,,,,
-17.2.4,Common Anatolian to Lydian,12,index_diachronica_original.html:5141,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received ')' | v?) > f / s_ | ^ @ Rule 1, Line 2"
+17.2.4,Common Anatolian to Lydian,12,index_diachronica_original.html:5141,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '>' | w ( > v?) / s_ | ^ @ Rule 1, Line 1"
 17.2.4,Common Anatolian to Lydian,13,index_diachronica_original.html:5142,True,,,,,
 17.2.4,Common Anatolian to Lydian,14,index_diachronica_original.html:5143,True,,,,,
 17.2.4,Common Anatolian to Lydian,15,index_diachronica_original.html:5144,True,,,,,
@@ -3067,7 +3067,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 17.4.1,Proto-Indo-European to Avestan,2,index_diachronica_original.html:5447,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '(' | {k,kʷ} {ɡ(ʱ),ɡʷ(ʱ)} > tʃ dʒ / _V:[+front] | ^ @ Rule 1, Line 1"
 17.4.1,Proto-Indo-European to Avestan,3,index_diachronica_original.html:5448,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '(' | k kʷ {ɡ(ʱ),ɡʷ(ʱ)} > x k ɡ / else | ^ @ Rule 1, Line 1"
 17.4.1,Proto-Indo-European to Avestan,4,index_diachronica_original.html:5449,True,,,,,
-17.4.1,Proto-Indo-European to Avestan,5,index_diachronica_original.html:5450,False,panic_other,broken-syntax,,,thread '<unnamed>' (966972) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+17.4.1,Proto-Indo-European to Avestan,5,index_diachronica_original.html:5450,False,panic_other,broken-syntax,,,thread '<unnamed>' (1486180) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 17.4.1,Proto-Indo-European to Avestan,6,index_diachronica_original.html:5451,True,,,,,
 17.4.1,Proto-Indo-European to Avestan,7,index_diachronica_original.html:5452,True,,,,,
 17.4.1,Proto-Indo-European to Avestan,8,index_diachronica_original.html:5453,True,,,,,
@@ -3350,8 +3350,8 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 17.7.2.1.6,Early Modern English to Australian English,5,index_diachronica_original.html:5816,True,,,,,
 17.7.2.1.6,Early Modern English to Australian English,6,index_diachronica_original.html:5817,True,,,,,
 17.7.2.1.6,Early Modern English to Australian English,7,index_diachronica_original.html:5818,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | oʊ i:[+long] > əʊ ɪi / else | ^ @ Rule 1, Line 1"
-17.7.2.1.6,Early Modern English to Australian English,8,index_diachronica_original.html:5819,False,unknown_grouping,asca-unrepresentable,Q,,"Syntax Error: Unknown grouping 'Q'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | u:[+long] > ʊə / _ɫ // in Queensland and New South Wales | ^ @ Rule 1, Line 1"
-17.7.2.1.6,Early Modern English to Australian English,9,index_diachronica_original.html:5820,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | ʊʉ > ʉ:[+long] / else | ^ @ Rule 1, Line 2"
+17.7.2.1.6,Early Modern English to Australian English,8,index_diachronica_original.html:5819,False,unknown_grouping,asca-unrepresentable,Q,,"Syntax Error: Unknown grouping 'Q'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | ʊə > u:[+long] / _ɫ // in Queensland and New South Wales | ^ @ Rule 1, Line 2"
+17.7.2.1.6,Early Modern English to Australian English,9,index_diachronica_original.html:5820,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | u:[+long] > ʊʉ / else | ^ @ Rule 1, Line 1"
 17.7.2.1.6,Early Modern English to Australian English,10,index_diachronica_original.html:5821,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '/' | ɫ > əɫ // if one of the above vowel changes after the formation of /ɫ/ apply | ^ @ Rule 1, Line 1"
 17.7.2.1.6,Early Modern English to Australian English,11,index_diachronica_original.html:5822,True,,,,,
 17.7.2.1.6,Early Modern English to Australian English,12,index_diachronica_original.html:5823,True,,,,,
@@ -3729,7 +3729,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 17.7.3.1,Proto-Norse to Old Norse,103,index_diachronica_original.html:6287,True,,,,,
 17.7.3.1,Proto-Norse to Old Norse,104,index_diachronica_original.html:6288,True,,,,,
 17.7.3.1,Proto-Norse to Old Norse,105,index_diachronica_original.html:6289,True,,,,,
-17.7.3.1,Proto-Norse to Old Norse,106,index_diachronica_original.html:6290,False,syntax_other,broken-syntax,,,"Syntax Error: Options can only be used in Environments or Structures | (V:[+long])θt > {Vt:[+long],t:[+long]} | ^^^^^^^^^^^ @ Rule 1, Line 1"
+17.7.3.1,Proto-Norse to Old Norse,106,index_diachronica_original.html:6290,True,,,,,
 17.7.3.1,Proto-Norse to Old Norse,107,index_diachronica_original.html:6291,False,unknown_grouping,asca-unrepresentable,E,,"Syntax Error: Unknown grouping 'E'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | E:[+long]{u,o}:[+long] E:[+long]a:[+long] > jo:[+long] ja:[+long] / {v,w}_ | ^ @ Rule 1, Line 1"
 17.7.3.1,Proto-Norse to Old Norse,108,index_diachronica_original.html:6292,True,,,,,
 17.7.3.1,Proto-Norse to Old Norse,109,index_diachronica_original.html:6293,False,unknown_character,asca-unrepresentable,ː,,"Syntax Error: Unknown character 'ː' | θː ð:[+long] > t:[+long] d:[+long] | ^ @ Rule 1, Line 1"
@@ -3906,7 +3906,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 17.7.3.1.3,Old Norse to Shetland Norn,2,index_diachronica_original.html:6478,True,,,,,
 17.7.3.1.3,Old Norse to Shetland Norn,3,index_diachronica_original.html:6479,True,,,,,
 17.7.3.1.3,Old Norse to Shetland Norn,4,index_diachronica_original.html:6480,True,,,,,
-17.7.3.1.3,Old Norse to Shetland Norn,5,index_diachronica_original.html:6481,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '' | nd ld | ^ @ Rule 1, Line 1"
+17.7.3.1.3,Old Norse to Shetland Norn,5,index_diachronica_original.html:6481,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received ')' | n:[+long] l:[+long] ?) > ɲ ʎ | ^ @ Rule 1, Line 2"
 17.7.3.1.3,Old Norse to Shetland Norn,6,index_diachronica_original.html:6482,True,,,,,
 17.7.3.1.3,Old Norse to Shetland Norn,7,index_diachronica_original.html:6483,True,,,,,
 17.7.3.1.3,Old Norse to Shetland Norn,8,index_diachronica_original.html:6484,True,,,,,
@@ -3937,7 +3937,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 17.7.3.1.3,Old Norse to Shetland Norn,33,index_diachronica_original.html:6509,True,,,,,
 17.7.3.1.3,Old Norse to Shetland Norn,34,index_diachronica_original.html:6510,True,,,,,
 17.7.3.1.3,Old Norse to Shetland Norn,35,index_diachronica_original.html:6511,True,,,,,
-17.7.3.1.3,Old Norse to Shetland Norn,36,index_diachronica_original.html:6513,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | {u,o}:[+long] a a:[+long] {ɒ,œ,y} e i:[+long] > {o,ɔ}(i) {æ,æi} {ɔ,ɒ}(i) {o,ɔ}(i) {æ,e} / _{C:[+front,+hi,-lo],Cʲ} | ^ @ Rule 1, Line 1"
+17.7.3.1.3,Old Norse to Shetland Norn,36,index_diachronica_original.html:6513,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʲ' | {u,o}:[+long] a a:[+long] {ɒ,œ,y} e i:[+long] > {o,oi,ɔ,ɔi} {æ,æi} {ɔ,ɔi,ɒ,ɒi} {o,oi,ɔ,ɔi} {æ,e} / _{C:[+front,+hi,-lo],Cʲ} | ^ @ Rule 1, Line 1"
 17.7.3.1.3,Old Norse to Shetland Norn,37,index_diachronica_original.html:6514,True,,,,,
 17.7.3.1.3,Old Norse to Shetland Norn,38,index_diachronica_original.html:6515,True,,,,,
 17.7.3.1.3,Old Norse to Shetland Norn,39,index_diachronica_original.html:6516,True,,,,,
@@ -4225,7 +4225,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 17.10.1,Proto-Indo-Iranian to Proto-Indo-Aryan,24,index_diachronica_original.html:6868,True,,,,,
 17.10.1.1,Proto-Indo-Aryan to Central Middle Indo-Aryan,0,index_diachronica_original.html:6873,True,,,,,
 17.10.1.1,Proto-Indo-Aryan to Central Middle Indo-Aryan,1,index_diachronica_original.html:6874,True,,,,,
-17.10.1.1,Proto-Indo-Aryan to Central Middle Indo-Aryan,2,index_diachronica_original.html:6875,False,syntax_other,broken-syntax,,,"Syntax Error: Options can only be used in Environments or Structures | a{i,j}(a) a{u,w} > e o | ^^^ @ Rule 1, Line 1"
+17.10.1.1,Proto-Indo-Aryan to Central Middle Indo-Aryan,2,index_diachronica_original.html:6875,True,,,,,
 17.10.1.1,Proto-Indo-Aryan to Central Middle Indo-Aryan,3,index_diachronica_original.html:6876,True,,,,,
 17.10.1.1,Proto-Indo-Aryan to Central Middle Indo-Aryan,4,index_diachronica_original.html:6877,False,runtime_other,broken-syntax,,,"Runtime Error: An incomplete matrix cannot be inserted | C > C[+voice] / V_V | ^^^^^^^^ @ Rule 1, Line 1"
 17.10.1.1,Proto-Indo-Aryan to Central Middle Indo-Aryan,5,index_diachronica_original.html:6878,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received '∅'. Did you forget a '/' between the output and environment? | {bʱ,dʱ,ɡʱ} {j,v} > h ∅ / V_V | ^ @ Rule 1, Line 1"
@@ -4242,7 +4242,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 17.10.1.1,Proto-Indo-Aryan to Central Middle Indo-Aryan,16,index_diachronica_original.html:6889,True,,,,,
 17.10.1.2,Proto-Indo-Aryan to Eastern Middle Indo-Aryan,0,index_diachronica_original.html:6894,True,,,,,
 17.10.1.2,Proto-Indo-Aryan to Eastern Middle Indo-Aryan,1,index_diachronica_original.html:6895,True,,,,,
-17.10.1.2,Proto-Indo-Aryan to Eastern Middle Indo-Aryan,2,index_diachronica_original.html:6896,False,syntax_other,broken-syntax,,,"Syntax Error: Options can only be used in Environments or Structures | a{i,j}(a) a{u,w} > e o | ^^^ @ Rule 1, Line 1"
+17.10.1.2,Proto-Indo-Aryan to Eastern Middle Indo-Aryan,2,index_diachronica_original.html:6896,True,,,,,
 17.10.1.2,Proto-Indo-Aryan to Eastern Middle Indo-Aryan,3,index_diachronica_original.html:6897,True,,,,,
 17.10.1.2,Proto-Indo-Aryan to Eastern Middle Indo-Aryan,4,index_diachronica_original.html:6898,False,runtime_other,broken-syntax,,,"Runtime Error: An incomplete matrix cannot be inserted | C > C[+voice] / V_V | ^^^^^^^^ @ Rule 1, Line 1"
 17.10.1.2,Proto-Indo-Aryan to Eastern Middle Indo-Aryan,5,index_diachronica_original.html:6899,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received '∅'. Did you forget a '/' between the output and environment? | {bʱ,dʱ,ɡʱ} {j,v} > h ∅ / V_V | ^ @ Rule 1, Line 1"
@@ -4261,7 +4261,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 17.10.1.2,Proto-Indo-Aryan to Eastern Middle Indo-Aryan,18,index_diachronica_original.html:6912,True,,,,,
 17.10.1.3,Proto-Indo-Aryan to Northwestern Middle Indo-Aryan,0,index_diachronica_original.html:6917,True,,,,,
 17.10.1.3,Proto-Indo-Aryan to Northwestern Middle Indo-Aryan,1,index_diachronica_original.html:6918,True,,,,,
-17.10.1.3,Proto-Indo-Aryan to Northwestern Middle Indo-Aryan,2,index_diachronica_original.html:6919,False,syntax_other,broken-syntax,,,"Syntax Error: Options can only be used in Environments or Structures | a{i,j}(a) a{u,w} > e o | ^^^ @ Rule 1, Line 1"
+17.10.1.3,Proto-Indo-Aryan to Northwestern Middle Indo-Aryan,2,index_diachronica_original.html:6919,True,,,,,
 17.10.1.3,Proto-Indo-Aryan to Northwestern Middle Indo-Aryan,3,index_diachronica_original.html:6920,True,,,,,
 17.10.1.3,Proto-Indo-Aryan to Northwestern Middle Indo-Aryan,4,index_diachronica_original.html:6921,False,runtime_other,broken-syntax,,,"Runtime Error: An incomplete matrix cannot be inserted | C > C[+voice] / V_V | ^^^^^^^^ @ Rule 1, Line 1"
 17.10.1.3,Proto-Indo-Aryan to Northwestern Middle Indo-Aryan,5,index_diachronica_original.html:6922,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received '∅'. Did you forget a '/' between the output and environment? | {bʱ,dʱ,ɡʱ} {j,v} > h ∅ / V_V | ^ @ Rule 1, Line 1"
@@ -4279,7 +4279,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 17.10.1.3,Proto-Indo-Aryan to Northwestern Middle Indo-Aryan,17,index_diachronica_original.html:6934,True,,,,,
 17.10.1.4,Proto-Indo-Aryan to Western Middle Indo-Aryan,0,index_diachronica_original.html:6939,True,,,,,
 17.10.1.4,Proto-Indo-Aryan to Western Middle Indo-Aryan,1,index_diachronica_original.html:6940,True,,,,,
-17.10.1.4,Proto-Indo-Aryan to Western Middle Indo-Aryan,2,index_diachronica_original.html:6941,False,syntax_other,broken-syntax,,,"Syntax Error: Options can only be used in Environments or Structures | a{i,j}(a) a{u,w} > e o | ^^^ @ Rule 1, Line 1"
+17.10.1.4,Proto-Indo-Aryan to Western Middle Indo-Aryan,2,index_diachronica_original.html:6941,True,,,,,
 17.10.1.4,Proto-Indo-Aryan to Western Middle Indo-Aryan,3,index_diachronica_original.html:6942,True,,,,,
 17.10.1.4,Proto-Indo-Aryan to Western Middle Indo-Aryan,4,index_diachronica_original.html:6943,False,runtime_other,broken-syntax,,,"Runtime Error: An incomplete matrix cannot be inserted | C > C[+voice] / V_V | ^^^^^^^^ @ Rule 1, Line 1"
 17.10.1.4,Proto-Indo-Aryan to Western Middle Indo-Aryan,5,index_diachronica_original.html:6944,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received '∅'. Did you forget a '/' between the output and environment? | {bʱ,dʱ,ɡʱ} {j,v} > h ∅ / V_V | ^ @ Rule 1, Line 1"
@@ -4491,7 +4491,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 17.12,Proto-Indo-European to Proto-Italic,0,index_diachronica_original.html:7191,True,,,,,
 17.12,Proto-Indo-European to Proto-Italic,1,index_diachronica_original.html:7192,True,,,,,
 17.12,Proto-Indo-European to Proto-Italic,2,index_diachronica_original.html:7193,False,diacritic_prereq,asca-unrepresentable,,,"Syntax Error: Segment does not have prerequisite properties to have this diacritic. Must be [-voice] | ɡʲʰ gʷʰ > ɡʰ xʷ | ^ ^ @ Rule 1, Line 1"
-17.12,Proto-Indo-European to Proto-Italic,3,index_diachronica_original.html:7194,False,diacritic_prereq,asca-unrepresentable,,,"Syntax Error: Segment does not have prerequisite properties to have this diacritic. Must be [-voice] | pʰ tʰ dʰ > ɸ θ x | ^^ @ Rule 1, Line 2"
+17.12,Proto-Indo-European to Proto-Italic,3,index_diachronica_original.html:7194,False,diacritic_prereq,asca-unrepresentable,,,"Syntax Error: Segment does not have prerequisite properties to have this diacritic. Must be [-voice] | bʰ dʰ gʰ > pʰ tʰ dʰ | ^^ @ Rule 1, Line 1"
 17.12,Proto-Indo-European to Proto-Italic,4,index_diachronica_original.html:7195,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | s > z / medial | ^ @ Rule 1, Line 1"
 17.12,Proto-Indo-European to Proto-Italic,5,index_diachronica_original.html:7196,True,,,,,
 17.12.1,Proto-Italic to Proto-Latino-Falsican,0,index_diachronica_original.html:7202,True,,,,,
@@ -5095,7 +5095,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 17.12.1.1.6,Vulgar Latin to Old Provençal,105,index_diachronica_original.html:7869,True,,,,,
 17.12.1.1.6,Vulgar Latin to Old Provençal,106,index_diachronica_original.html:7870,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '' | ɡ > j / _a (in the north and east | ^ @ Rule 1, Line 1"
 17.12.1.1.6,Vulgar Latin to Old Provençal,107,index_diachronica_original.html:7871,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '/' | ɡ > ɡ / _{o,u/y} | ^ @ Rule 1, Line 1"
-17.12.1.1.6,Vulgar Latin to Old Provençal,108,index_diachronica_original.html:7872,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | j > dʒ / though it dropped early in some dialects | ^ @ Rule 1, Line 2"
+17.12.1.1.6,Vulgar Latin to Old Provençal,108,index_diachronica_original.html:7872,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | ɡ > j / though it dropped early in some dialects | ^ @ Rule 1, Line 1"
 17.12.1.1.6,Vulgar Latin to Old Provençal,109,index_diachronica_original.html:7873,True,,,,,
 17.12.1.1.6,Vulgar Latin to Old Provençal,110,index_diachronica_original.html:7874,True,,,,,
 17.12.1.1.6,Vulgar Latin to Old Provençal,111,index_diachronica_original.html:7875,True,,,,,
@@ -5445,7 +5445,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 17.13,Proto-Indo-European to Proto-Tocharian,22,index_diachronica_original.html:8271,False,syntax_other,broken-syntax,,,"Syntax Error: Expected ':', but received 'y' | o:[+long](s,y) o:[+long]n > u {u,õ} | ^ @ Rule 1, Line 1"
 17.13,Proto-Indo-European to Proto-Tocharian,23,index_diachronica_original.html:8273,True,,,,,
 17.13,Proto-Indo-European to Proto-Tocharian,24,index_diachronica_original.html:8274,True,,,,,
-17.13,Proto-Indo-European to Proto-Tocharian,25,index_diachronica_original.html:8275,False,panic_other,broken-syntax,,,thread '<unnamed>' (1007427) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+17.13,Proto-Indo-European to Proto-Tocharian,25,index_diachronica_original.html:8275,False,panic_other,broken-syntax,,,thread '<unnamed>' (1526655) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 17.13,Proto-Indo-European to Proto-Tocharian,26,index_diachronica_original.html:8276,True,,,,,
 17.13,Proto-Indo-European to Proto-Tocharian,27,index_diachronica_original.html:8277,True,,,,,
 17.13,Proto-Indo-European to Proto-Tocharian,28,index_diachronica_original.html:8278,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received 'ʲ'. Did you forget a '/' between the output and environment? | Ci > Cʲə | ^ @ Rule 1, Line 1"
@@ -5498,7 +5498,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 18.2.1,Proto-Ofaié-Jê to Proto-Jê,3,index_diachronica_original.html:8357,True,,,,,
 18.2.1,Proto-Ofaié-Jê to Proto-Jê,4,index_diachronica_original.html:8358,True,,,,,
 18.2.2,Proto-Ofaié-Jê to Ofaié-Xavante,0,index_diachronica_original.html:8363,True,,,,,
-18.2.2,Proto-Ofaié-Jê to Ofaié-Xavante,1,index_diachronica_original.html:8364,False,panic_other,broken-syntax,,,thread '<unnamed>' (1008326) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+18.2.2,Proto-Ofaié-Jê to Ofaié-Xavante,1,index_diachronica_original.html:8364,False,panic_other,broken-syntax,,,thread '<unnamed>' (1527553) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 18.2.2,Proto-Ofaié-Jê to Ofaié-Xavante,2,index_diachronica_original.html:8365,False,unknown_character,asca-unrepresentable,ṽ,,"Syntax Error: Unknown character 'ṽ' | ɲV > jṽ | ^ @ Rule 1, Line 1"
 18.2.2,Proto-Ofaié-Jê to Ofaié-Xavante,3,index_diachronica_original.html:8366,True,,,,,
 18.2.2,Proto-Ofaié-Jê to Ofaié-Xavante,4,index_diachronica_original.html:8367,True,,,,,
@@ -5838,7 +5838,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 21.2.1.1,Proto-Central Tariku to Edopi,2,index_diachronica_original.html:8953,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received '∅'. Did you forget a '/' between the output and environment? | b k > {m,b} ∅ / #_ | ^ @ Rule 1, Line 1"
 21.2.1.1,Proto-Central Tariku to Edopi,3,index_diachronica_original.html:8954,True,,,,,
 21.2.1.1,Proto-Central Tariku to Edopi,4,index_diachronica_original.html:8955,True,,,,,
-21.2.1.1,Proto-Central Tariku to Edopi,5,index_diachronica_original.html:8956,False,panic_other,broken-syntax,,,thread '<unnamed>' (1014117) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+21.2.1.1,Proto-Central Tariku to Edopi,5,index_diachronica_original.html:8956,False,panic_other,broken-syntax,,,thread '<unnamed>' (1533348) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 21.2.1.1,Proto-Central Tariku to Edopi,6,index_diachronica_original.html:8957,True,,,,,
 21.2.1.1,Proto-Central Tariku to Edopi,7,index_diachronica_original.html:8958,True,,,,,
 21.2.1.2,Proto-Central Tariku to Iau,0,index_diachronica_original.html:8963,False,runtime_delete_only_segment,broken-syntax,,,Runtime Error: Can't delete a word's only segment
@@ -5901,7 +5901,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 21.2.3.1,Proto-West Tariku to Deirate,0,index_diachronica_original.html:9061,True,,,,,
 21.2.3.1,Proto-West Tariku to Deirate,1,index_diachronica_original.html:9062,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '∅' | b d k > {b,β} {ɾ,l,∅} {k,x,ɡ,ɣ} / V_V | ^ @ Rule 1, Line 1"
 21.2.3.1,Proto-West Tariku to Deirate,2,index_diachronica_original.html:9063,True,,,,,
-21.2.3.1,Proto-West Tariku to Deirate,3,index_diachronica_original.html:9064,False,panic_other,broken-syntax,,,thread '<unnamed>' (1015187) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+21.2.3.1,Proto-West Tariku to Deirate,3,index_diachronica_original.html:9064,False,panic_other,broken-syntax,,,thread '<unnamed>' (1534415) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 21.2.3.1,Proto-West Tariku to Deirate,4,index_diachronica_original.html:9065,True,,,,,
 21.2.3.2,Proto-West Tariku to Faia,0,index_diachronica_original.html:9070,True,,,,,
 21.2.3.2,Proto-West Tariku to Faia,1,index_diachronica_original.html:9071,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '∅' | b d k > {b,β} {ɾ,∅} {k,x,ɡ,ɣ} / V_V | ^ @ Rule 1, Line 1"
@@ -5920,7 +5920,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 21.2.3.5,Proto-West Tariku to Sehudate,0,index_diachronica_original.html:9096,True,,,,,
 21.2.3.5,Proto-West Tariku to Sehudate,1,index_diachronica_original.html:9097,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '∅' | b d k > {b,β} {ɾ,∅} {k,x,ɡ,ɣ} / V_V | ^ @ Rule 1, Line 1"
 21.2.3.5,Proto-West Tariku to Sehudate,2,index_diachronica_original.html:9098,True,,,,,
-21.2.3.5,Proto-West Tariku to Sehudate,3,index_diachronica_original.html:9099,False,panic_other,broken-syntax,,,thread '<unnamed>' (1015510) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+21.2.3.5,Proto-West Tariku to Sehudate,3,index_diachronica_original.html:9099,False,panic_other,broken-syntax,,,thread '<unnamed>' (1534740) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 21.2.3.5,Proto-West Tariku to Sehudate,4,index_diachronica_original.html:9100,True,,,,,
 21.2.3.6,Proto-West Tariku to Tause,0,index_diachronica_original.html:9105,True,,,,,
 21.2.3.6,Proto-West Tariku to Tause,1,index_diachronica_original.html:9106,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '∅' | b d k > {b,β} {ɾ,∅} {k,x,ɡ,ɣ} / V_V | ^ @ Rule 1, Line 1"
@@ -6020,7 +6020,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 23.1.1.1.3,Proto-Chibchan to Kogi,8,index_diachronica_original.html:9311,True,,,,,
 23.1.1.1.3,Proto-Chibchan to Kogi,9,index_diachronica_original.html:9312,True,,,,,
 23.1.1.1.4,Proto-Chibchan to Marocacero,0,index_diachronica_original.html:9317,True,,,,,
-23.1.1.1.4,Proto-Chibchan to Marocacero,1,index_diachronica_original.html:9318,False,panic_other,broken-syntax,,,thread '<unnamed>' (1017211) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+23.1.1.1.4,Proto-Chibchan to Marocacero,1,index_diachronica_original.html:9318,False,panic_other,broken-syntax,,,thread '<unnamed>' (1536440) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 23.1.1.1.4,Proto-Chibchan to Marocacero,2,index_diachronica_original.html:9319,True,,,,,
 23.1.1.1.4,Proto-Chibchan to Marocacero,3,index_diachronica_original.html:9320,True,,,,,
 23.1.1.1.4,Proto-Chibchan to Marocacero,4,index_diachronica_original.html:9321,True,,,,,
@@ -6029,7 +6029,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 23.1.1.1.4,Proto-Chibchan to Marocacero,7,index_diachronica_original.html:9324,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '_' | i > ∅ / {CV:[+stress]_,CVC:[+stress]_} | ^ @ Rule 1, Line 1"
 23.1.1.1.4,Proto-Chibchan to Marocacero,8,index_diachronica_original.html:9325,True,,,,,
 23.1.1.1.5,Proto-Chibchan to Motilón,0,index_diachronica_original.html:9330,True,,,,,
-23.1.1.1.5,Proto-Chibchan to Motilón,1,index_diachronica_original.html:9331,False,panic_other,broken-syntax,,,thread '<unnamed>' (1017364) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+23.1.1.1.5,Proto-Chibchan to Motilón,1,index_diachronica_original.html:9331,False,panic_other,broken-syntax,,,thread '<unnamed>' (1536593) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 23.1.1.1.5,Proto-Chibchan to Motilón,2,index_diachronica_original.html:9332,True,,,,,
 23.1.1.1.5,Proto-Chibchan to Motilón,3,index_diachronica_original.html:9333,True,,,,,
 23.1.1.1.5,Proto-Chibchan to Motilón,4,index_diachronica_original.html:9334,True,,,,,
@@ -6357,7 +6357,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 29.1.1.1.6,Proto-Athabaskan to Dakelh,2,index_diachronica_original.html:10027,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received 'ˀ' | Vˀ > V[+place] | ^ @ Rule 1, Line 1"
 29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,0,index_diachronica_original.html:10032,True,,,,,
 29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,1,index_diachronica_original.html:10033,True,,,,,
-29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,2,index_diachronica_original.html:10034,False,panic_other,broken-syntax,,,thread '<unnamed>' (1022931) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,2,index_diachronica_original.html:10034,False,panic_other,broken-syntax,,,thread '<unnamed>' (1542164) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,3,index_diachronica_original.html:10035,True,,,,,
 29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,4,index_diachronica_original.html:10036,True,,,,,
 29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,5,index_diachronica_original.html:10037,False,stuff_after_word_bound,asca-unrepresentable,,,"Syntax Error: Cannot have segments after the end of a word | [+son,-syll] F > [+son,-syll][-voice] F[-voice] / _# in suffixes | ^ @ Rule 1, Line 1"
@@ -6426,12 +6426,12 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 29.1.1.1.18,Proto-Athabaskan to Sekani,3,index_diachronica_original.html:10151,True,,,,,
 29.1.1.1.18,Proto-Athabaskan to Sekani,4,index_diachronica_original.html:10152,False,unknown_feature,asca-unrepresentable,hightone,high,"Syntax Error: Unknown feature 'hightone'. Did you mean high? | Vˀ > V[+high tone] | ^^^^^^^^^^ @ Rule 1, Line 1"
 29.1.1.1.19,Proto-Athabaskan to Proto-Southern Athabaskan,0,index_diachronica_original.html:10157,False,runtime_other,broken-syntax,,,"Runtime Error: An incomplete matrix cannot be inserted | C:[-front,+back,+hi,-lo] > P:[-voice]P | ^ @ Rule 1, Line 1"
-29.1.1.1.19,Proto-Athabaskan to Proto-Southern Athabaskan,1,index_diachronica_original.html:10158,False,panic_other,broken-syntax,,,thread '<unnamed>' (1024106) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+29.1.1.1.19,Proto-Athabaskan to Proto-Southern Athabaskan,1,index_diachronica_original.html:10158,False,panic_other,broken-syntax,,,thread '<unnamed>' (1543338) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 29.1.1.1.19,Proto-Athabaskan to Proto-Southern Athabaskan,2,index_diachronica_original.html:10159,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | ɣ > h / in prefixes relating to word derivation | ^ @ Rule 1, Line 1"
 29.1.1.1.19,Proto-Athabaskan to Proto-Southern Athabaskan,3,index_diachronica_original.html:10160,False,expected_number,asca-unrepresentable,,,"Syntax Error: Expected number, but received ʔ | VnC > V[+ nas]C / _#, unless C = ʔ | ^ @ Rule 1, Line 1"
 29.1.1.1.19,Proto-Athabaskan to Proto-Southern Athabaskan,4,index_diachronica_original.html:10161,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | t n x > d n h / in prefixes relating to word derivation | ^ @ Rule 1, Line 1"
 29.1.1.1.20,Proto-Southern Athabaskan to Proto-Eastern Southern Athabaskan,0,index_diachronica_original.html:10166,True,,,,,
-29.1.1.1.20,Proto-Southern Athabaskan to Proto-Eastern Southern Athabaskan,1,index_diachronica_original.html:10167,False,syntax_other,broken-syntax,,,"Syntax Error: Options can only be used in Environments or Structures | {s,z}(ʔ) {ʃ,ʒ}(ʔ) {ɬ,ɮ}(ʔ) > s ʃ ɬ / _# | ^^^ @ Rule 1, Line 1"
+29.1.1.1.20,Proto-Southern Athabaskan to Proto-Eastern Southern Athabaskan,1,index_diachronica_original.html:10167,True,,,,,
 29.1.1.1.21,Proto-Eastern Southern Athabaskan to Kiowa Apache,0,index_diachronica_original.html:10172,True,,,,,
 29.1.1.1.21,Proto-Eastern Southern Athabaskan to Kiowa Apache,1,index_diachronica_original.html:10173,True,,,,,
 29.1.1.1.21,Proto-Eastern Southern Athabaskan to Kiowa Apache,2,index_diachronica_original.html:10174,True,,,,,
@@ -6463,7 +6463,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 29.1.1.1.25,Proto-Western Southern Athabaskan to Chiricahua,3,index_diachronica_original.html:10217,True,,,,,
 29.1.1.1.25,Proto-Western Southern Athabaskan to Chiricahua,4,index_diachronica_original.html:10218,True,,,,,
 29.1.1.1.25,Proto-Western Southern Athabaskan to Chiricahua,5,index_diachronica_original.html:10219,True,,,,,
-29.1.1.1.25,Proto-Western Southern Athabaskan to Chiricahua,6,index_diachronica_original.html:10220,False,syntax_other,broken-syntax,,,"Syntax Error: Options can only be used in Environments or Structures | {s,z}(ʔ) {ʃ,ʒ}(ʔ) {ɬ,ɮ}(ʔ) > s ʃ ɬ / _# | ^^^ @ Rule 1, Line 1"
+29.1.1.1.25,Proto-Western Southern Athabaskan to Chiricahua,6,index_diachronica_original.html:10220,True,,,,,
 29.1.1.1.26,Proto-Western Southern Athabaskan to Mescalero,0,index_diachronica_original.html:10225,True,,,,,
 29.1.1.1.26,Proto-Western Southern Athabaskan to Mescalero,1,index_diachronica_original.html:10226,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received '∅'. Did you forget a '/' between the output and environment? | xʲ j > ʃ ∅ / _# | ^ @ Rule 1, Line 1"
 29.1.1.1.26,Proto-Western Southern Athabaskan to Mescalero,2,index_diachronica_original.html:10227,True,,,,,
@@ -6478,13 +6478,13 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 29.1.1.1.27,Proto-Western Southern Athabaskan to Navajo,3,index_diachronica_original.html:10240,True,,,,,
 29.1.1.1.27,Proto-Western Southern Athabaskan to Navajo,4,index_diachronica_original.html:10241,True,,,,,
 29.1.1.1.27,Proto-Western Southern Athabaskan to Navajo,5,index_diachronica_original.html:10242,True,,,,,
-29.1.1.1.27,Proto-Western Southern Athabaskan to Navajo,6,index_diachronica_original.html:10243,False,syntax_other,broken-syntax,,,"Syntax Error: Options can only be used in Environments or Structures | {s,z}(ʔ) {ʃ,ʒ}(ʔ) {ɬ,ɮ}(ʔ) > s ʃ ɬ / _# | ^^^ @ Rule 1, Line 1"
+29.1.1.1.27,Proto-Western Southern Athabaskan to Navajo,6,index_diachronica_original.html:10243,True,,,,,
 29.1.1.1.28,Proto-Western Southern Athabaskan to San Carlos,0,index_diachronica_original.html:10248,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received '∅'. Did you forget a '/' between the output and environment? | {x,xʲ} {j,ɣ} > h ∅ / _# | ^ @ Rule 1, Line 1"
 29.1.1.1.28,Proto-Western Southern Athabaskan to San Carlos,1,index_diachronica_original.html:10249,True,,,,,
 29.1.1.1.28,Proto-Western Southern Athabaskan to San Carlos,2,index_diachronica_original.html:10250,True,,,,,
 29.1.1.1.28,Proto-Western Southern Athabaskan to San Carlos,3,index_diachronica_original.html:10251,True,,,,,
 29.1.1.1.28,Proto-Western Southern Athabaskan to San Carlos,4,index_diachronica_original.html:10252,True,,,,,
-29.1.1.1.28,Proto-Western Southern Athabaskan to San Carlos,5,index_diachronica_original.html:10253,False,syntax_other,broken-syntax,,,"Syntax Error: Options can only be used in Environments or Structures | {s,z}(ʔ) {ʃ,ʒ}(ʔ) {ɬ,ɮ}(ʔ) > s ʃ ɬ / _# | ^^^ @ Rule 1, Line 1"
+29.1.1.1.28,Proto-Western Southern Athabaskan to San Carlos,5,index_diachronica_original.html:10253,True,,,,,
 29.1.1.1.29,Proto-Athabaskan to Bearlake Slavey-Hare,0,index_diachronica_original.html:10258,True,,,,,
 29.1.1.1.29,Proto-Athabaskan to Bearlake Slavey-Hare,1,index_diachronica_original.html:10259,True,,,,,
 29.1.1.1.29,Proto-Athabaskan to Bearlake Slavey-Hare,2,index_diachronica_original.html:10260,True,,,,,
@@ -6557,7 +6557,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 29.1.2,Proto-Athabaskan-Eyak to Eyak,2,index_diachronica_original.html:10393,True,,,,,
 29.1.2,Proto-Athabaskan-Eyak to Eyak,3,index_diachronica_original.html:10394,True,,,,,
 29.1.2,Proto-Athabaskan-Eyak to Eyak,4,index_diachronica_original.html:10395,True,,,,,
-29.1.2,Proto-Athabaskan-Eyak to Eyak,5,index_diachronica_original.html:10396,False,panic_other,broken-syntax,,,thread '<unnamed>' (1026330) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace thread '<unnamed>' (1026332) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1026331) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1026343) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1026333) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code
+29.1.2,Proto-Athabaskan-Eyak to Eyak,5,index_diachronica_original.html:10396,False,panic_other,broken-syntax,,,thread '<unnamed>' (1545576) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace thread '<unnamed>' (1545565) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1545562) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1545564) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1545570) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code
 29.2,Proto-Na-Dene to Tlingit,0,index_diachronica_original.html:10402,False,syntax_other,broken-syntax,,,"Syntax Error: Expected '[', but received 'ɬ' | s > s : ɬ | ^ @ Rule 1, Line 1"
 29.2,Proto-Na-Dene to Tlingit,1,index_diachronica_original.html:10403,False,syntax_other,broken-syntax,,,"Syntax Error: Expected '[', but received 't' | ts > ts : tɬ | ^ @ Rule 1, Line 1"
 29.2,Proto-Na-Dene to Tlingit,2,index_diachronica_original.html:10404,False,syntax_other,broken-syntax,,,"Syntax Error: Expected '[', but received '{' | ts:[+cg] > {s:[+cg],ts:[+cg]} : {ɬ,tɬ:[+cg]} | ^ @ Rule 1, Line 1"
@@ -6566,7 +6566,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 29.2,Proto-Na-Dene to Tlingit,5,index_diachronica_original.html:10407,False,syntax_other,broken-syntax,,,"Syntax Error: Expected '[', but received 't' | tʃ:[+cg] > {s:[+cg],tʃ:[+cg]} : tɬ:[+cg] | ^ @ Rule 1, Line 1"
 29.2,Proto-Na-Dene to Tlingit,6,index_diachronica_original.html:10409,True,,,,,
 29.2,Proto-Na-Dene to Tlingit,7,index_diachronica_original.html:10410,True,,,,,
-29.2,Proto-Na-Dene to Tlingit,8,index_diachronica_original.html:10411,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | {kʼ,kʷʼ} > {x,k}(ʷ)ʼ | ^ @ Rule 1, Line 1"
+29.2,Proto-Na-Dene to Tlingit,8,index_diachronica_original.html:10411,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received 'ʼ'. Did you forget a '/' between the output and environment? | {kʼ,kʷʼ} > {x,xʷ,k,kʷ}ʼ | ^ @ Rule 1, Line 1"
 29.2,Proto-Na-Dene to Tlingit,9,index_diachronica_original.html:10412,True,,,,,
 29.2,Proto-Na-Dene to Tlingit,10,index_diachronica_original.html:10413,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | q:[+cg] qʷ:[+cg] > χ(ʷ)ʼ {χʼ,qʼ,qʷʼ} | ^ @ Rule 1, Line 1"
 29.2,Proto-Na-Dene to Tlingit,11,index_diachronica_original.html:10414,True,,,,,
@@ -6626,7 +6626,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 30.1.2,Pre-Proto-Bantu to Proto-Manenguba,7,index_diachronica_original.html:10548,True,,,,,
 30.2,Proto-Potou-Akanic-Bantu to Proto-Potou-Akanic,0,index_diachronica_original.html:10553,True,,,,,
 30.2,Proto-Potou-Akanic-Bantu to Proto-Potou-Akanic,1,index_diachronica_original.html:10554,True,,,,,
-30.2,Proto-Potou-Akanic-Bantu to Proto-Potou-Akanic,2,index_diachronica_original.html:10555,False,panic_other,broken-syntax,,,thread '<unnamed>' (1027505) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace thread '<unnamed>' (1027503) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code
+30.2,Proto-Potou-Akanic-Bantu to Proto-Potou-Akanic,2,index_diachronica_original.html:10555,False,panic_other,broken-syntax,,,thread '<unnamed>' (1546736) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace thread '<unnamed>' (1546738) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code
 30.2,Proto-Potou-Akanic-Bantu to Proto-Potou-Akanic,3,index_diachronica_original.html:10556,True,,,,,
 30.2,Proto-Potou-Akanic-Bantu to Proto-Potou-Akanic,4,index_diachronica_original.html:10557,True,,,,,
 30.2,Proto-Potou-Akanic-Bantu to Proto-Potou-Akanic,5,index_diachronica_original.html:10558,False,unknown_feature,asca-unrepresentable,mid,man,"Syntax Error: Unknown feature 'mid'. Did you mean man? | {NV=1[+mid +nas](l̃),V=1[+mid +nas](l̃)} > CV[-nas]n | ^^^^^ @ Rule 1, Line 1"
@@ -6758,7 +6758,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 32.1.1,Proto-Chatino to Papabuco Chatino,25,index_diachronica_original.html:10806,True,,,,,
 32.1.1,Proto-Chatino to Papabuco Chatino,26,index_diachronica_original.html:10807,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | ẽ > i / in %[+long -stress] | ^ @ Rule 1, Line 1"
 32.1.1,Proto-Chatino to Papabuco Chatino,27,index_diachronica_original.html:10808,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | ẽ > e / else | ^ @ Rule 1, Line 1"
-32.1.1,Proto-Chatino to Papabuco Chatino,28,index_diachronica_original.html:10809,False,panic_other,broken-syntax,,,thread '<unnamed>' (1029748) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace thread '<unnamed>' (1029747) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1029750) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1029749) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code
+32.1.1,Proto-Chatino to Papabuco Chatino,28,index_diachronica_original.html:10809,False,panic_other,broken-syntax,,,thread '<unnamed>' (1548979) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace thread '<unnamed>' (1548981) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1548982) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1548983) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code
 32.1.2,Proto-Chatino to Tataltepec Chatino,0,index_diachronica_original.html:10814,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '…' | t > tʲ / _õ (…again…lolwut) | ^ @ Rule 1, Line 1"
 32.1.2,Proto-Chatino to Tataltepec Chatino,1,index_diachronica_original.html:10815,True,,,,,
 32.1.2,Proto-Chatino to Tataltepec Chatino,2,index_diachronica_original.html:10816,True,,,,,
@@ -6808,7 +6808,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 32.1.4,Proto-Chatino to Zenzontepec Chatino,1,index_diachronica_original.html:10870,True,,,,,
 32.1.4,Proto-Chatino to Zenzontepec Chatino,2,index_diachronica_original.html:10871,True,,,,,
 32.2,Proto-Oto-Manguean to Tlapanec,0,index_diachronica_original.html:10877,True,,,,,
-32.2,Proto-Oto-Manguean to Tlapanec,1,index_diachronica_original.html:10878,False,panic_other,broken-syntax,,,thread '<unnamed>' (1030597) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+32.2,Proto-Oto-Manguean to Tlapanec,1,index_diachronica_original.html:10878,False,panic_other,broken-syntax,,,thread '<unnamed>' (1549836) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 32.2,Proto-Oto-Manguean to Tlapanec,2,index_diachronica_original.html:10879,True,,,,,
 32.2,Proto-Oto-Manguean to Tlapanec,3,index_diachronica_original.html:10880,False,unknown_grouping,asca-unrepresentable,Y,,"Syntax Error: Unknown grouping 'Y'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | Yt Ynt Ys > tʃ dʒ ʃ | ^ @ Rule 1, Line 1"
 32.2,Proto-Oto-Manguean to Tlapanec,4,index_diachronica_original.html:10881,True,,,,,
@@ -7106,7 +7106,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 35.1.3,Proto-Central Salish to Cowichan Halkomelem,1,index_diachronica_original.html:11437,True,,,,,
 35.1.3,Proto-Central Salish to Cowichan Halkomelem,2,index_diachronica_original.html:11438,True,,,,,
 35.1.3,Proto-Central Salish to Cowichan Halkomelem,3,index_diachronica_original.html:11439,False,unknown_character,asca-unrepresentable,ː,,"Syntax Error: Unknown character 'ː' | V3h > V3ː / _C | ^ @ Rule 1, Line 1"
-35.1.3,Proto-Central Salish to Cowichan Halkomelem,4,index_diachronica_original.html:11440,False,unknown_character,asca-unrepresentable,ː,,"Syntax Error: Unknown character 'ː' | V=0 3ʔ(0 ) > {0 3ː,0 3ʔ0} | ^ @ Rule 1, Line 1"
+35.1.3,Proto-Central Salish to Cowichan Halkomelem,4,index_diachronica_original.html:11440,False,unknown_character,asca-unrepresentable,ː,,"Syntax Error: Unknown character 'ː' | V=0 3ʔ{0} > {0 3ː,0 3ʔ0} | ^ @ Rule 1, Line 1"
 35.1.3,Proto-Central Salish to Cowichan Halkomelem,5,index_diachronica_original.html:11441,False,unknown_character,asca-unrepresentable,ː,,"Syntax Error: Unknown character 'ː' | V3ʔR > {V3ʔR,V3ːRʔ} / _V | ^ @ Rule 1, Line 1"
 35.1.3,Proto-Central Salish to Cowichan Halkomelem,6,index_diachronica_original.html:11442,False,runtime_other,broken-syntax,,,"Runtime Error: Unknown reference '3' | a3 u3 {a1,u1} i1 > ɛ3 a3 ə1 {i1,ə1} | ^ @ Rule 1, Line 1"
 35.1.3,Proto-Central Salish to Cowichan Halkomelem,7,index_diachronica_original.html:11443,False,runtime_other,broken-syntax,,,"Runtime Error: Unknown reference '3' | {a3,ə3} > ə3 | ^ @ Rule 1, Line 1"
@@ -7137,7 +7137,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 35.1.5,Proto-Central Salish to Klallam,4,index_diachronica_original.html:11476,True,,,,,
 35.1.5,Proto-Central Salish to Klallam,5,index_diachronica_original.html:11477,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | tʃ:[+cg] > ts:[+cg] / medially | ^ @ Rule 1, Line 1"
 35.1.5,Proto-Central Salish to Klallam,6,index_diachronica_original.html:11478,True,,,,,
-35.1.5,Proto-Central Salish to Klallam,7,index_diachronica_original.html:11479,False,syntax_other,broken-syntax,,,"Syntax Error: Options can only be used in Environments or Structures | V=0 3ʔ(0 ) > 0 3ʔ0 | ^^^^ @ Rule 1, Line 1"
+35.1.5,Proto-Central Salish to Klallam,7,index_diachronica_original.html:11479,False,runtime_other,broken-syntax,,,"Runtime Error: Unknown reference '3' | V=0 3ʔ{0} > 0 3ʔ0 | ^ @ Rule 1, Line 1"
 35.1.5,Proto-Central Salish to Klallam,8,index_diachronica_original.html:11480,True,,,,,
 35.1.5,Proto-Central Salish to Klallam,9,index_diachronica_original.html:11481,False,unknown_feature,asca-unrepresentable,uvular,lar,"Syntax Error: Unknown feature 'uvular'. Did you mean lar? | a3 > u3 / {C:[+round][+uvular],C:[-front,+back,+hi,-lo,+round],w} | ^^^^^^^ @ Rule 1, Line 1"
 35.1.5,Proto-Central Salish to Klallam,10,index_diachronica_original.html:11482,False,unknown_feature,asca-unrepresentable,uvular,lar,"Syntax Error: Unknown feature 'uvular'. Did you mean lar? | a3 > u3 / _{Cu,C:[+round][+uvular],w} | ^^^^^^^ @ Rule 1, Line 1"
@@ -7433,7 +7433,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 36.2,Sin Sukchu to Guānhuà,35,index_diachronica_original.html:11854,True,,,,,
 36.2,Sin Sukchu to Guānhuà,36,index_diachronica_original.html:11855,False,unknown_character,asca-unrepresentable,̣,,"Syntax Error: Unknown character '̣' | y > ɥ / C̣_ | ^ @ Rule 1, Line 1"
 36.2,Sin Sukchu to Guānhuà,37,index_diachronica_original.html:11856,False,unknown_feature,asca-unrepresentable,dental,ldental,"Syntax Error: Unknown feature 'dental'. Did you mean ldental? | yʔ > yɛʔ / {l,C[+dental +strident]}_ infinals, dialectally? | ^^^^^^^^ @ Rule 1, Line 1"
-36.2,Sin Sukchu to Guānhuà,38,index_diachronica_original.html:11857,False,nested_brackets,asca-unrepresentable,,,"Syntax Error: Cannot have nested brackets of the same type | oʔ (eventually > {ʊʔ,(i)uʔ?) / {l,C[+dental +strident]}_, in | ^ @ Rule 1, Line 2"
+36.2,Sin Sukchu to Guānhuà,38,index_diachronica_original.html:11857,False,unknown_feature,asca-unrepresentable,dental,ldental,"Syntax Error: Unknown feature 'dental'. Did you mean ldental? | yʔ > oʔ (eventually / {l,C[+dental +strident]}_, in | ^^^^^^^^ @ Rule 1, Line 1"
 36.2,Sin Sukchu to Guānhuà,39,index_diachronica_original.html:11858,False,unknown_feature,asca-unrepresentable,guttural,lateral,"Syntax Error: Unknown feature 'guttural'. Did you mean lateral? | yʔ > {yʔ,yɛʔ?} / {∅,C[+guttural]}, in -juət-types | ^^^^^^^^^ @ Rule 1, Line 1"
 36.2,Sin Sukchu to Guānhuà,40,index_diachronica_original.html:11859,False,unknown_feature,asca-unrepresentable,guttural,lateral,"Syntax Error: Unknown feature 'guttural'. Did you mean lateral? | yʔ > ioʔ / {∅,C[+guttural]}_, in -k-types | ^^^^^^^^^ @ Rule 1, Line 1"
 36.2,Sin Sukchu to Guānhuà,41,index_diachronica_original.html:11860,False,unknown_character,asca-unrepresentable,̣,,"Syntax Error: Unknown character '̣' | yʔ > {ɥʔ,yʔ,uʔ} / C̣, in -juət-types | ^ @ Rule 1, Line 1"
@@ -7521,8 +7521,8 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 36.3.1.3,Proto-Naish to Naxi,11,index_diachronica_original.html:11966,True,,,,,
 36.3.1.3,Proto-Naish to Naxi,12,index_diachronica_original.html:11967,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | V$ > high tone / else | ^ @ Rule 1, Line 1"
 36.3.1.3,Proto-Naish to Naxi,13,index_diachronica_original.html:11968,True,,,,,
-36.3.1.3,Proto-Naish to Naxi,14,index_diachronica_original.html:11969,False,syntax_other,broken-syntax,,,"Syntax Error: Options can only be used in Environments or Structures | {r,s}pʰ {r,s}(N)p {r,s}b {r,s}mb > pʰ p b mb / _V | ^^^ @ Rule 1, Line 1"
-36.3.1.3,Proto-Naish to Naxi,15,index_diachronica_original.html:11970,False,syntax_other,broken-syntax,,,"Syntax Error: Options can only be used in Environments or Structures | {r,s}(N)k > k / _V | ^^^ @ Rule 1, Line 1"
+36.3.1.3,Proto-Naish to Naxi,14,index_diachronica_original.html:11969,True,,,,,
+36.3.1.3,Proto-Naish to Naxi,15,index_diachronica_original.html:11970,True,,,,,
 36.3.1.3,Proto-Naish to Naxi,16,index_diachronica_original.html:11971,True,,,,,
 36.3.1.3,Proto-Naish to Naxi,17,index_diachronica_original.html:11972,True,,,,,
 36.3.1.3,Proto-Naish to Naxi,18,index_diachronica_original.html:11973,True,,,,,
@@ -7622,7 +7622,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 36.3.2.2.1,Proto-rGyalrongic to Kham To,12,index_diachronica_original.html:12100,True,,,,,
 36.3.2.2.1,Proto-rGyalrongic to Kham To,13,index_diachronica_original.html:12101,True,,,,,
 36.3.2.2.1,Proto-rGyalrongic to Kham To,14,index_diachronica_original.html:12102,True,,,,,
-36.3.2.2.1,Proto-rGyalrongic to Kham To,15,index_diachronica_original.html:12103,False,panic_other,broken-syntax,,,thread '<unnamed>' (1044432) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+36.3.2.2.1,Proto-rGyalrongic to Kham To,15,index_diachronica_original.html:12103,False,panic_other,broken-syntax,,,thread '<unnamed>' (1563663) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 36.3.2.2.1,Proto-rGyalrongic to Kham To,16,index_diachronica_original.html:12104,True,,,,,
 36.3.2.2.1,Proto-rGyalrongic to Kham To,17,index_diachronica_original.html:12105,True,,,,,
 36.3.2.2.1,Proto-rGyalrongic to Kham To,18,index_diachronica_original.html:12106,True,,,,,
@@ -7633,7 +7633,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 36.3.2.2.1,Proto-rGyalrongic to Kham To,23,index_diachronica_original.html:12111,True,,,,,
 36.3.2.2.2,Proto-rGyalrongic to lCog Rtse,0,index_diachronica_original.html:12117,True,,,,,
 36.3.2.2.2,Proto-rGyalrongic to lCog Rtse,1,index_diachronica_original.html:12118,False,unknown_grouping,asca-unrepresentable,T,,"Syntax Error: Unknown grouping 'T'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | {Nt,t} {Nd,d} st sd C:[-front,+back,+hi,-lo]P:[-voice] çT tr dr çtr > {Ntʰ,tʰ} mt zd st kt {çt,çtj} trh tr çtr | ^ @ Rule 1, Line 1"
-36.3.2.2.2,Proto-rGyalrongic to lCog Rtse,2,index_diachronica_original.html:12119,False,syntax_other,broken-syntax,,,"Syntax Error: Options can only be used in Environments or Structures | (C:[+labial])ɡ sɡ çK Nɡ k sk rk {sɡj,ɡj} {ʔkj,kj} > {pk,k} sk çk mk kʰ zɡ Nɡ {skj,kj} {ʔkʰj,kʰj} | ^^^^^^^^^^^^^ @ Rule 1, Line 1"
+36.3.2.2.2,Proto-rGyalrongic to lCog Rtse,2,index_diachronica_original.html:12119,False,unknown_grouping,asca-unrepresentable,K,,"Syntax Error: Unknown grouping 'K'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | {C:[+labial]}ɡ sɡ çK Nɡ k sk rk {sɡj,ɡj} {ʔkj,kj} > {pk,k} sk çk mk kʰ zɡ Nɡ {skj,kj} {ʔkʰj,kʰj} | ^ @ Rule 1, Line 1"
 36.3.2.2.2,Proto-rGyalrongic to lCog Rtse,3,index_diachronica_original.html:12120,False,unknown_grouping,asca-unrepresentable,K,,"Syntax Error: Unknown grouping 'K'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | Nkj {sɡr,ɡr} Kç kr skr ɡr > mɡj {skr,kr} ɡçkr kʰr zɡr Nɡr | ^ @ Rule 1, Line 1"
 36.3.2.2.2,Proto-rGyalrongic to lCog Rtse,4,index_diachronica_original.html:12121,True,,,,,
 36.3.2.2.2,Proto-rGyalrongic to lCog Rtse,5,index_diachronica_original.html:12122,True,,,,,
@@ -7691,7 +7691,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 36.3.2.2.6,Proto-rGyalrongic to Tsa Ku Nao,6,index_diachronica_original.html:12200,False,syntax_other,broken-syntax,,,"Syntax Error: Expected '..', but received .' ' | kj > tʃ. | ^ @ Rule 1, Line 1"
 36.3.2.2.6,Proto-rGyalrongic to Tsa Ku Nao,7,index_diachronica_original.html:12201,True,,,,,
 36.3.2.2.6,Proto-rGyalrongic to Tsa Ku Nao,8,index_diachronica_original.html:12202,True,,,,,
-36.3.2.2.6,Proto-rGyalrongic to Tsa Ku Nao,9,index_diachronica_original.html:12203,False,syntax_other,broken-syntax,,,"Syntax Error: Expected '..', but received .'j' | (C:[+labial])ç Nç çl > {bɕ,ɕ} np.j ʂl | ^ @ Rule 1, Line 1"
+36.3.2.2.6,Proto-rGyalrongic to Tsa Ku Nao,9,index_diachronica_original.html:12203,False,syntax_other,broken-syntax,,,"Syntax Error: Expected '..', but received .'j' | {C:[+labial]}ç Nç çl > {bɕ,ɕ} np.j ʂl | ^ @ Rule 1, Line 1"
 36.3.2.2.6,Proto-rGyalrongic to Tsa Ku Nao,10,index_diachronica_original.html:12204,False,unknown_grouping,asca-unrepresentable,T,,"Syntax Error: Unknown grouping 'T'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | ts dz NP:[-voice]P C:[-front,+back,+hi,-lo]P:[-voice]P sTP > tʃ ts {ts,m} ɡts sp | ^ @ Rule 1, Line 1"
 36.3.2.2.6,Proto-rGyalrongic to Tsa Ku Nao,11,index_diachronica_original.html:12205,True,,,,,
 36.3.2.2.6,Proto-rGyalrongic to Tsa Ku Nao,12,index_diachronica_original.html:12206,True,,,,,
@@ -8170,7 +8170,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 37.2.4.2,Proto-Čiwere-Winnebago to Winnebago,0,index_diachronica_original.html:12859,True,,,,,
 37.2.4.2,Proto-Čiwere-Winnebago to Winnebago,1,index_diachronica_original.html:12860,False,runtime_delete_only_segment,broken-syntax,,,Runtime Error: Can't delete a word's only segment
 37.2.4.2,Proto-Čiwere-Winnebago to Winnebago,2,index_diachronica_original.html:12861,True,,,,,
-37.2.4.2,Proto-Čiwere-Winnebago to Winnebago,3,index_diachronica_original.html:12862,False,panic_other,broken-syntax,,,thread '<unnamed>' (1053762) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace thread '<unnamed>' (1053764) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code
+37.2.4.2,Proto-Čiwere-Winnebago to Winnebago,3,index_diachronica_original.html:12862,False,panic_other,broken-syntax,,,thread '<unnamed>' (1572995) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace thread '<unnamed>' (1572990) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code
 37.2.4.2,Proto-Čiwere-Winnebago to Winnebago,4,index_diachronica_original.html:12864,True,,,,,
 37.2.4.2,Proto-Čiwere-Winnebago to Winnebago,5,index_diachronica_original.html:12865,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received 'ʲ' | Lʲ > n / _V[+nas] | ^ @ Rule 1, Line 1"
 37.2.4.2,Proto-Čiwere-Winnebago to Winnebago,6,index_diachronica_original.html:12866,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received 'ʲ' | Lʲ > r / _V[-nas] | ^ @ Rule 1, Line 1"
@@ -8490,7 +8490,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 38.1.1.4.2,North Tai to Po-Ai,41,index_diachronica_original.html:13294,True,,,,,
 38.1.1.4.3,North Tai to Wu-Ming,0,index_diachronica_original.html:13299,True,,,,,
 38.1.1.4.3,North Tai to Wu-Ming,1,index_diachronica_original.html:13300,True,,,,,
-38.1.1.4.3,North Tai to Wu-Ming,2,index_diachronica_original.html:13301,False,panic_other,broken-syntax,,,thread '<unnamed>' (1059203) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+38.1.1.4.3,North Tai to Wu-Ming,2,index_diachronica_original.html:13301,False,panic_other,broken-syntax,,,thread '<unnamed>' (1578443) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 38.1.1.4.3,North Tai to Wu-Ming,3,index_diachronica_original.html:13302,True,,,,,
 38.1.1.4.3,North Tai to Wu-Ming,4,index_diachronica_original.html:13303,True,,,,,
 38.1.1.5,Proto-Tai to Southwest Tai,0,index_diachronica_original.html:13308,True,,,,,
@@ -8631,7 +8631,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 41.3,Proto-Trans New Guinea to Binandere,2,index_diachronica_original.html:13557,True,,,,,
 41.3,Proto-Trans New Guinea to Binandere,3,index_diachronica_original.html:13558,True,,,,,
 41.3,Proto-Trans New Guinea to Binandere,4,index_diachronica_original.html:13559,True,,,,,
-41.3,Proto-Trans New Guinea to Binandere,5,index_diachronica_original.html:13560,False,panic_other,broken-syntax,,,thread '<unnamed>' (1061597) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace thread '<unnamed>' (1061599) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1061598) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1061600) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code
+41.3,Proto-Trans New Guinea to Binandere,5,index_diachronica_original.html:13560,False,panic_other,broken-syntax,,,thread '<unnamed>' (1580840) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace thread '<unnamed>' (1580841) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1580838) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1580839) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code
 41.4,Proto-Trans New Guinea to Kaeti,0,index_diachronica_original.html:13565,True,,,,,
 41.4,Proto-Trans New Guinea to Kaeti,1,index_diachronica_original.html:13566,True,,,,,
 41.4,Proto-Trans New Guinea to Kaeti,2,index_diachronica_original.html:13567,True,,,,,
@@ -8691,7 +8691,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 41.7,Proto-Trans New Guinea to Kâte,4,index_diachronica_original.html:13695,True,,,,,
 41.8,Proto-Trans New Guinea to Kiwai,0,index_diachronica_original.html:13700,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '∅' | t k ᵐb > {s,t} {ɡ,∅} {b,p} / #_ | ^ @ Rule 1, Line 1"
 41.8,Proto-Trans New Guinea to Kiwai,1,index_diachronica_original.html:13701,True,,,,,
-41.8,Proto-Trans New Guinea to Kiwai,2,index_diachronica_original.html:13702,False,panic_other,broken-syntax,,,thread '<unnamed>' (1062620) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+41.8,Proto-Trans New Guinea to Kiwai,2,index_diachronica_original.html:13702,False,panic_other,broken-syntax,,,thread '<unnamed>' (1581863) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 41.8,Proto-Trans New Guinea to Kiwai,3,index_diachronica_original.html:13703,True,,,,,
 41.9,Proto-Trans New Guinea to Selepet,0,index_diachronica_original.html:13708,True,,,,,
 41.9,Proto-Trans New Guinea to Selepet,1,index_diachronica_original.html:13709,True,,,,,
@@ -8704,21 +8704,21 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 41.10,Proto-Trans New Guinea to Telefol,2,index_diachronica_original.html:13720,True,,,,,
 41.11,Proto-Trans New Guinea to Middle Wahgi,0,index_diachronica_original.html:13725,True,,,,,
 41.11,Proto-Trans New Guinea to Middle Wahgi,1,index_diachronica_original.html:13726,True,,,,,
-41.11,Proto-Trans New Guinea to Middle Wahgi,2,index_diachronica_original.html:13727,False,panic_other,broken-syntax,,,thread '<unnamed>' (1062841) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+41.11,Proto-Trans New Guinea to Middle Wahgi,2,index_diachronica_original.html:13727,False,panic_other,broken-syntax,,,thread '<unnamed>' (1582082) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 42.1,Proto-Uralic to Pre-Finnic,0,index_diachronica_original.html:13762,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | ŋ > k / _#, in latives | ^ @ Rule 1, Line 1"
 42.1,Proto-Uralic to Pre-Finnic,1,index_diachronica_original.html:13763,False,stuff_after_word_bound,asca-unrepresentable,,,"Syntax Error: Cannot have segments after the end of a word | ŋ > n / _# else | ^ @ Rule 1, Line 1"
 42.1,Proto-Uralic to Pre-Finnic,2,index_diachronica_original.html:13764,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | iw ow > y u:[+long] / _(C) (*) | ^ @ Rule 1, Line 1"
 42.1,Proto-Uralic to Pre-Finnic,3,index_diachronica_original.html:13765,True,,,,,
 42.1,Proto-Uralic to Pre-Finnic,4,index_diachronica_original.html:13766,True,,,,,
 42.1,Proto-Uralic to Pre-Finnic,5,index_diachronica_original.html:13767,False,unknown_character,asca-unrepresentable,ː,,"Syntax Error: Unknown character 'ː' | {ɤ,ɤː} ɑ:[+long] æ:[+long] > {ɑ,ɑː} o:[+long] e:[+long] / stressed | ^ @ Rule 1, Line 1"
-42.1,Proto-Uralic to Pre-Finnic,6,index_diachronica_original.html:13768,False,unknown_grouping,asca-unrepresentable,X,,"Syntax Error: Unknown grouping 'X'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | a > æ / {a,e,e,i,y}(X)(C)(C)_ when unstressed | ^ @ Rule 1, Line 1"
+42.1,Proto-Uralic to Pre-Finnic,6,index_diachronica_original.html:13768,False,unknown_grouping,asca-unrepresentable,X,,"Syntax Error: Unknown grouping 'X'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | a > æ / {a,aX,e,eX,e,eX,i,iX,y,yX}(C)(C)_ when unstressed | ^ @ Rule 1, Line 1"
 42.1,Proto-Uralic to Pre-Finnic,7,index_diachronica_original.html:13769,False,unknown_grouping,asca-unrepresentable,A,,"Syntax Error: Unknown grouping 'A'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | Aw > o / unstressed | ^ @ Rule 1, Line 1"
 42.1,Proto-Uralic to Pre-Finnic,8,index_diachronica_original.html:13770,True,,,,,
 42.1,Proto-Uralic to Pre-Finnic,9,index_diachronica_original.html:13771,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | iw > u / unstressed | ^ @ Rule 1, Line 1"
 42.1.1,Pre-Finnic to Proto-Finnic,0,index_diachronica_original.html:13776,True,,,,,
 42.1.1,Pre-Finnic to Proto-Finnic,1,index_diachronica_original.html:13777,False,unknown_grouping,asca-unrepresentable,X,,"Syntax Error: Unknown grouping 'X'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | e o > e o / _(X)Ci | ^ @ Rule 1, Line 1"
 42.1.1,Pre-Finnic to Proto-Finnic,2,index_diachronica_original.html:13778,False,unknown_grouping,asca-unrepresentable,X,,"Syntax Error: Unknown grouping 'X'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | e > y / _(X)CO:[+delrel] | ^ @ Rule 1, Line 1"
-42.1.1,Pre-Finnic to Proto-Finnic,3,index_diachronica_original.html:13779,False,unknown_grouping,asca-unrepresentable,X,,"Syntax Error: Unknown grouping 'X'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | o > ɯ / _(X)CO:[+delrel] | ^ @ Rule 1, Line 1"
+42.1.1,Pre-Finnic to Proto-Finnic,3,index_diachronica_original.html:13779,False,unknown_grouping,asca-unrepresentable,X,,"Syntax Error: Unknown grouping 'X'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | ɯ > i / _(X)CO:[+delrel] | ^ @ Rule 1, Line 2"
 42.1.1,Pre-Finnic to Proto-Finnic,4,index_diachronica_original.html:13780,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | ej > i / unstressed | ^ @ Rule 1, Line 1"
 42.1.1,Pre-Finnic to Proto-Finnic,5,index_diachronica_original.html:13781,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | æ > e / _j, unstressed | ^ @ Rule 1, Line 1"
 42.1.1,Pre-Finnic to Proto-Finnic,6,index_diachronica_original.html:13782,False,unknown_character,asca-unrepresentable,”,,"Syntax Error: Unknown character '”' | ɑ > e / ”{o,u}(X)C_j | ^ @ Rule 1, Line 1"
@@ -8778,8 +8778,8 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 42.1.1.1,Proto-Finnic to Proto-Finnish,13,index_diachronica_original.html:13840,True,,,,,
 42.1.1.1,Proto-Finnic to Proto-Finnish,14,index_diachronica_original.html:13841,True,,,,,
 42.1.1.1,Proto-Finnic to Proto-Finnish,15,index_diachronica_original.html:13842,True,,,,,
-42.1.1.1,Proto-Finnic to Proto-Finnish,16,index_diachronica_original.html:13843,False,syntax_other,broken-syntax,,,"Syntax Error: Options can only be used in Environments or Structures | (t:[+long])sn {kx,kxtx} rn ln > s:[+long] x:[+long] r:[+long] l:[+long] | ^^^^^^^^^^^ @ Rule 1, Line 1"
-42.1.1.1,Proto-Finnic to Proto-Finnish,17,index_diachronica_original.html:13844,False,syntax_other,broken-syntax,,,"Syntax Error: Options can only be used in Environments or Structures | {p,t,k}({p,t,k})n {p,t,k}({p,t,k})m > n:[+long] m:[+long] | ^^^^^^^^^ @ Rule 1, Line 1"
+42.1.1.1,Proto-Finnic to Proto-Finnish,16,index_diachronica_original.html:13843,True,,,,,
+42.1.1.1,Proto-Finnic to Proto-Finnish,17,index_diachronica_original.html:13844,True,,,,,
 42.1.1.1,Proto-Finnic to Proto-Finnish,18,index_diachronica_original.html:13845,True,,,,,
 42.1.1.1,Proto-Finnic to Proto-Finnish,19,index_diachronica_original.html:13846,True,,,,,
 42.1.1.1,Proto-Finnic to Proto-Finnish,20,index_diachronica_original.html:13847,False,unknown_character,asca-unrepresentable,ˑ,,"Syntax Error: Unknown character 'ˑ' | ts tsˑ ts:[+long] > s θˑ θː | ^ @ Rule 1, Line 1"
@@ -8801,7 +8801,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 42.1.1.1.1,Proto-Finnish to Standard Finnish,12,index_diachronica_original.html:13867,True,,,,,
 42.1.1.1.1,Proto-Finnish to Standard Finnish,13,index_diachronica_original.html:13868,True,,,,,
 42.1.1.1.1,Proto-Finnish to Standard Finnish,14,index_diachronica_original.html:13869,True,,,,,
-42.1.1.1.1,Proto-Finnish to Standard Finnish,15,index_diachronica_original.html:13870,False,expected_number,asca-unrepresentable,,,"Syntax Error: Expected number, but received j | ɣ > % / {O:[+delrel],O,%}_[+son,-syll] // [+son,-syll] = j | ^ @ Rule 1, Line 2"
+42.1.1.1.1,Proto-Finnish to Standard Finnish,15,index_diachronica_original.html:13870,False,expected_number,asca-unrepresentable,,,"Syntax Error: Expected number, but received j | k > ɣ / {O:[+delrel],O,%}_[+son,-syll] // [+son,-syll] = j | ^ @ Rule 1, Line 1"
 42.1.1.1.1,Proto-Finnish to Standard Finnish,16,index_diachronica_original.html:13871,True,,,,,
 42.1.1.1.1,Proto-Finnish to Standard Finnish,17,index_diachronica_original.html:13872,True,,,,,
 42.1.1.1.1,Proto-Finnish to Standard Finnish,18,index_diachronica_original.html:13873,True,,,,,
@@ -8975,7 +8975,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 44.2,Proto-Basque to Basque,34,index_diachronica_original.html:14149,True,,,,,
 44.2,Proto-Basque to Basque,35,index_diachronica_original.html:14150,True,,,,,
 44.2,Proto-Basque to Basque,36,index_diachronica_original.html:14151,True,,,,,
-44.2,Proto-Basque to Basque,37,index_diachronica_original.html:14152,False,unknown_character,asca-unrepresentable,ɛ,,"Syntax Error: Unknown character 'ɛ' | a o e > ɛ u i / {i,u}(C,0)_ (this [ɛ] is tentatively marked as such | ^ @ Rule 1, Line 1"
+44.2,Proto-Basque to Basque,37,index_diachronica_original.html:14152,False,unknown_character,asca-unrepresentable,ɛ,,"Syntax Error: Unknown character 'ɛ' | a o e > ɛ u i / {i,iC,0,u,uC,0}_ (this [ɛ] is tentatively marked as such | ^ @ Rule 1, Line 1"
 44.2,Proto-Basque to Basque,38,index_diachronica_original.html:14153,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '' | o > u / _n{C,#} (Souletin | ^ @ Rule 1, Line 1"
 44.2,Proto-Basque to Basque,39,index_diachronica_original.html:14154,True,,,,,
 44.2,Proto-Basque to Basque,40,index_diachronica_original.html:14155,True,,,,,
@@ -9077,12 +9077,12 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 46.2,California Vowel Shift (English),3,index_diachronica_original.html:14303,True,,,,,
 46.2,California Vowel Shift (English),4,index_diachronica_original.html:14304,True,,,,,
 46.2,California Vowel Shift (English),5,index_diachronica_original.html:14305,True,,,,,
-46.2,California Vowel Shift (English),6,index_diachronica_original.html:14306,False,panic_other,broken-syntax,,,thread '<unnamed>' (1069196) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+46.2,California Vowel Shift (English),6,index_diachronica_original.html:14306,False,panic_other,broken-syntax,,,thread '<unnamed>' (1588454) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 46.2,California Vowel Shift (English),7,index_diachronica_original.html:14307,True,,,,,
 46.3,Belgian and Netherlandish Dutch Monophthongization,0,index_diachronica_original.html:14312,True,,,,,
 46.4,Polder Dutch Vowel Shift,0,index_diachronica_original.html:14317,True,,,,,
 46.4,Polder Dutch Vowel Shift,1,index_diachronica_original.html:14318,True,,,,,
-46.5,Old English-to-Scots Vowel Shifts,0,index_diachronica_original.html:14323,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | ɛi > əi / when stem-final | ^ @ Rule 1, Line 2"
+46.5,Old English-to-Scots Vowel Shifts,0,index_diachronica_original.html:14323,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | ai > ɛi / when stem-final | ^ @ Rule 1, Line 1"
 46.5,Old English-to-Scots Vowel Shifts,1,index_diachronica_original.html:14324,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received ',' | u:[+long] > ʌu / when-stem final, in northern varieties | ^ @ Rule 1, Line 1"
 46.5,Old English-to-Scots Vowel Shifts,2,index_diachronica_original.html:14325,True,,,,,
 46.5,Old English-to-Scots Vowel Shifts,3,index_diachronica_original.html:14326,True,,,,,
@@ -9122,7 +9122,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 46.11,Middle Chinese to Cantonese Vowel Shift (“The Inner-Outer Flip”),4,index_diachronica_original.html:14391,True,,,,,
 46.11,Middle Chinese to Cantonese Vowel Shift (“The Inner-Outer Flip”),5,index_diachronica_original.html:14392,True,,,,,
 46.11,Middle Chinese to Cantonese Vowel Shift (“The Inner-Outer Flip”),6,index_diachronica_original.html:14394,True,,,,,
-46.11,Middle Chinese to Cantonese Vowel Shift (“The Inner-Outer Flip”),7,index_diachronica_original.html:14395,False,panic_other,broken-syntax,,,thread '<unnamed>' (1069956) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace thread '<unnamed>' (1069957) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1069958) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1069959) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code
+46.11,Middle Chinese to Cantonese Vowel Shift (“The Inner-Outer Flip”),7,index_diachronica_original.html:14395,False,panic_other,broken-syntax,,,thread '<unnamed>' (1589229) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace thread '<unnamed>' (1589228) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1589226) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code thread '<unnamed>' (1589227) panicked at /home/pappa/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/asca-0.10.2/src/rule/subrule/substitution.rs:587:54: internal error: entered unreachable code
 46.11,Middle Chinese to Cantonese Vowel Shift (“The Inner-Outer Flip”),8,index_diachronica_original.html:14396,True,,,,,
 46.11,Middle Chinese to Cantonese Vowel Shift (“The Inner-Outer Flip”),9,index_diachronica_original.html:14397,True,,,,,
 46.11,Middle Chinese to Cantonese Vowel Shift (“The Inner-Outer Flip”),10,index_diachronica_original.html:14398,True,,,,,
@@ -9148,7 +9148,7 @@ section_index,section_name,rule_idx,source,ok,failure_class,reason,error_token,s
 46.14,Pre-Slavic Vowel Changes,1,index_diachronica_original.html:14435,True,,,,,
 46.14,Pre-Slavic Vowel Changes,2,index_diachronica_original.html:14436,True,,,,,
 46.14,Pre-Slavic Vowel Changes,3,index_diachronica_original.html:14437,True,,,,,
-46.14,Pre-Slavic Vowel Changes,4,index_diachronica_original.html:14438,False,unknown_character,asca-unrepresentable,ı,,"Syntax Error: Unknown character 'ı' | i > ı̆ [ə?] | ^ @ Rule 1, Line 1"
+46.14,Pre-Slavic Vowel Changes,4,index_diachronica_original.html:14438,False,unknown_character,asca-unrepresentable,ı,,"Syntax Error: Unknown character 'ı' | ı̆ [ə?] > {e,a} (strong)/∅ | ^ @ Rule 1, Line 2"
 46.14,Pre-Slavic Vowel Changes,5,index_diachronica_original.html:14439,True,,,,,
 46.14,Pre-Slavic Vowel Changes,6,index_diachronica_original.html:14440,True,,,,,
 46.14,Pre-Slavic Vowel Changes,7,index_diachronica_original.html:14441,False,unknown_character,asca-unrepresentable,₂,,"Syntax Error: Unknown character '₂' | aj > {æ₂,i₂} | ^ @ Rule 1, Line 1"

@@ -1,4 +1,5 @@
 Type: task
+Status: resolved
 Blocked by: 12
 
 # Correction pass: input optionals to env
@@ -26,14 +27,35 @@ ASCA permits optionals `(…)` only in environments or structures, not in bare I
 
 ## Acceptance criteria
 
-- [ ] Dominant optional-in-input patterns documented
-- [ ] Handler(s) + tests on inventory samples (e.g. `(G)V > ∅ / _#`)
-- [ ] Full inventory re-baseline; cluster size before/after in **Answer**
-- [ ] Fixtures updated where outcomes change
+- [x] Dominant optional-in-input patterns documented
+- [x] Handler(s) + tests on inventory samples (e.g. `(G)V > ∅ / _#`)
+- [x] Full inventory re-baseline; cluster size before/after in **Answer**
+- [x] Fixtures updated where outcomes change
 
 ## Answer
 
-_(pending)_
+Baseline (pre-pass): **7114 / 9201** ok (77.3%); cluster `Options can only be used in Environments or Structures`: **18** rows.
+
+After `expand_input_optionals_to_structures()` wired in `expand_meta_notation()` (after parenthetical pass):
+
+- **7132 / 9201** ok (**77.5%**, **+18**)
+- Cluster: **18 → 0** (100% of syntax cluster cleared)
+- **17** rules newly pass validation; **1** rule (Klallam `V=0 3ʔ(0 )`) reclassified from `syntax_other` → `runtime_other` (`Unknown reference '3'` — subscript phase 2)
+
+**Pattern taxonomy** (module docstring in `src/conlanger/tools/asca_compile/input_optionals.py`):
+
+| Pattern | Example | Expansion |
+|---------|---------|-----------|
+| Prefix feature matrix | `(V[-long])N` | `{V[-long]}N` |
+| Prefix segment/class features | `(V:[+long])θt`, `(C:[+labial])ɡ` | `{…}tail` |
+| Prefix grouped class | `({C,#}V)ʔ` | `{C,#,V}ʔ` |
+| Set suffix optional | `{s,z}(ʔ)` | `{s,sʔ,z,zʔ}` |
+| Literal + set + optional | `a{i,j}(a)` | `a{i,j,a}` |
+| Set + class optional + tail | `{r,s}(N)k` | `{r,s,N}k` |
+| Set cross optional | `{p,t,k}({p,t,k})n` | cross-product members + suffix |
+| Identity subscript optional | `3ʔ(0 )` | `3ʔ{0}` |
+
+**Residual (not input-optional cluster):** `({C,#}V)ʔ > ({C,#}Vː)∅ / _C` — input fixed; output `∅` concatenation after structure remains `syntax_other`.
 
 ## References
 
