@@ -1,4 +1,5 @@
 Type: task
+Status: resolved
 Blocked by: 12, 42
 
 # Correction pass: IPA letter mappings (spike 42)
@@ -37,17 +38,31 @@ Top residual letter-like tokens include `ı`, `ṽ`, `ь`, `î`, and PIE/Leiden 
 
 ## Acceptance criteria
 
-- [ ] `ipa_mapping.csv` seeded with all high+medium spike rows
-- [ ] ASCA smoke tests pass for each new mapping
-- [ ] Full inventory re-baseline; per-token before/after in **Answer**
-- [ ] Fixtures updated where outcomes change
+- [x] `ipa_mapping.csv` seeded with all high+medium spike rows
+- [x] ASCA smoke tests pass for each new mapping
+- [x] Full inventory re-baseline; per-token before/after in **Answer**
+- [x] Fixtures updated where outcomes change
 
 ## Answer
 
-_(pending)_
+Seeded `data/common/ipa_mapping.csv` with all **44** spike rows plus the pre-existing `Š→ʃ` row (**45** total). Runtime application via `ipa_mappings_dict()` is **high-confidence only** (hardcoded); medium rows are in the CSV but not yet applied — follow-on [Parser config: IPA mapping confidence levels](56-parser-config-ipa-confidence-levels.md).
+
+**Code:** `load_ipa_mappings()`, `ipa_mappings_dict()`, `apply_ipa_mappings()` in `parsers.py`; called from `IndexDiachronicaParser.parse_rule_element()`. Tests in `test_IndexDiachronicaParser.py` (`test_load_ipa_mappings_from_default_csv`, `test_ipa_mappings_dict_only_high_confidence`, `test_apply_ipa_mappings`, `test_parse_rule_element_normalizes_ipa_characters`).
+
+**Inventory (ASCA 0.10.2, current baseline):**
+
+| Metric | Value |
+|--------|------:|
+| OK | 7066 / 9201 (76.8%) |
+| `unknown_character` (all) | 453 |
+
+**High-confidence source tokens (15):** all **0** hits in current error inventory — `Š`, `š`, `ã`, `ẽ`, `ḱ`, `ǵ`, `Ṽ`, `õ`, `ũ`, `Ṣ`, `Ṭ`, `ȵ`, `è`, `ā`, `ē`.
+
+**Residual letter-like `unknown_character` (medium/low — not applied at parse):** `ı` (45), `ṽ` (27), `ь` (20), `î` (18), `ó` (7), `ŕ` (7), …
 
 ## References
 
 - [Spike: unknown_character → IPA mappings](42-spike-unknown-character-ipa-mappings.md)
 - [Research findings](../research/unknown-character-ipa-mappings.md)
 - [Correction pass template](13-correction-pass-template.md)
+- [Parser config: IPA mapping confidence levels](56-parser-config-ipa-confidence-levels.md)
