@@ -1,6 +1,6 @@
 Type: grilling
 Status: ready-for-agent
-Blocked by: 44, 46
+Blocked by: 44
 
 # Grill: inter-segment whitespace placement
 
@@ -10,6 +10,8 @@ Lock the follow-on decisions from [Spike: inter-segment whitespace and phoneme b
 
 Findings: [research/inter-segment-whitespace-phoneme-boundaries.md](../research/inter-segment-whitespace-phoneme-boundaries.md)
 
+Prototype readout (UI explained + fixture dump): [research/parse-time-whitespace-prototype-results.md](../research/parse-time-whitespace-prototype-results.md)
+
 ## Scope
 
 Grill questions from the spike Answer (one design tree). Do not implement.
@@ -17,12 +19,11 @@ Grill questions from the spike Answer (one design tree). Do not implement.
 ## Blocked by
 
 - [Spike: inter-segment whitespace and phoneme boundaries](44-spike-inter-segment-whitespace.md)
-- [Prototype: parse-time inter-segment whitespace feasibility](46-prototype-parse-time-inter-segment-whitespace.md) — Q1 diverted here; resume grill after prototype verdict
 
 ## Progress
 
 ### Q1 — SoT inter-segment spacing
 
-Maintainer rejected A (affirm compile-only) / B (Brassica-shaped SoT) / C (defer without experiment).
+Maintainer rejected A/B/C lock; requested prototype first → [Prototype: parse-time inter-segment whitespace feasibility](46-prototype-parse-time-inter-segment-whitespace.md) (**resolved**).
 
-**Decision so far:** investigate parse-time insertion feasibility via prototype before locking placement. Ticket: [Prototype: parse-time inter-segment whitespace feasibility](46-prototype-parse-time-inter-segment-whitespace.md).
+Provisional prototype verdict: segmentiser sketch go-with-limits; shipping parse-time ASCII-space SoT mutation leans no-go until parallel/Kind-B/matrix issues are solved. Resume grill using the readout doc above.

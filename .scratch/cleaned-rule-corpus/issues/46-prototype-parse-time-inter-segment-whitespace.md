@@ -1,5 +1,5 @@
 Type: prototype
-Status: claimed
+Status: resolved
 Blocked by: 44
 
 # Prototype: parse-time inter-segment whitespace feasibility
@@ -32,10 +32,10 @@ Cheap, throwaway experiment (via `/prototype`) that:
 
 ## Acceptance criteria
 
-- [ ] Throwaway prototype artifact linked from this ticket (script, notebook, or scratch module — not production path)
-- [ ] Fixture table: Index string → spaced candidate → notes / pass-fail
-- [ ] Written feasibility verdict: go / no-go / go-with-limits for parse-time SoT spacing
-- [ ] Open questions fed back to [Grill: inter-segment whitespace placement](45-grill-inter-segment-whitespace-placement.md)
+- [x] Throwaway prototype artifact linked from this ticket (script, notebook, or scratch module — not production path)
+- [x] Fixture table: Index string → spaced candidate → notes / pass-fail
+- [x] Written feasibility verdict: go / no-go / go-with-limits for parse-time SoT spacing
+- [x] Open questions fed back to [Grill: inter-segment whitespace placement](45-grill-inter-segment-whitespace-placement.md)
 
 ## Prototype artifact
 
@@ -46,3 +46,13 @@ Cheap, throwaway experiment (via `/prototype`) that:
 ## Blocked by
 
 - [Spike: inter-segment whitespace and phoneme boundaries](44-spike-inter-segment-whitespace.md)
+
+## Answer
+
+**How to read the demo + fixture dump for later review** (maintainer found the live UI hard to interpret):
+
+- Findings (spike-style): [research/parse-time-whitespace-prototype-results.md](../research/parse-time-whitespace-prototype-results.md)
+- CSV: [research/parse-time-whitespace-prototype-results.csv](../research/parse-time-whitespace-prototype-results.csv)
+
+**Verdict (provisional, for grill):** segmentiser sketch is **go-with-limits**; shipping parse-time ASCII-space SoT mutation leans **no-go** until parallel vs phoneme spaces, class+matrix attachment, and Kind B bracket spaces are solved. Placement policy still owned by [Grill: inter-segment whitespace placement](45-grill-inter-segment-whitespace-placement.md).
+

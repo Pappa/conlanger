@@ -53,6 +53,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - [Refactor SoundChangeRuleSet and compile subcomponents](issues/39-refactor-sound-change-ruleset.md) — **blocked by 37**; scope TBD until docs land.
 - [Spike: unknown_character → IPA mapping candidates](issues/42-spike-unknown-character-ipa-mappings.md) — 42 letter-like tokens classified; high-confidence seed set (ḱ, Ṽ, nasal vowels, š/Ṣ, French è, Slavic yers). Findings: [research/unknown-character-ipa-mappings.md](research/unknown-character-ipa-mappings.md) + [research/unknown-character-ipa-mappings.csv](research/unknown-character-ipa-mappings.csv).
 - [Spike: inter-segment whitespace and phoneme boundaries](issues/44-spike-inter-segment-whitespace.md) — **compile-only** Brassica spacing; SoT stays Index-shaped (ASCA is space-optional/trie-segmented; Index spaces mostly parallel parts). Findings: [research/inter-segment-whitespace-phoneme-boundaries.md](research/inter-segment-whitespace-phoneme-boundaries.md).
+- [Prototype: parse-time inter-segment whitespace feasibility](issues/46-prototype-parse-time-inter-segment-whitespace.md) — demo + readout: segmentiser sketch go-with-limits; parse-time ASCII-space SoT leans no-go until parallel/Kind-B/matrix fixed. [research/parse-time-whitespace-prototype-results.md](research/parse-time-whitespace-prototype-results.md).
 
 ## Pipeline documentation (grill 2026-08-07)
 
