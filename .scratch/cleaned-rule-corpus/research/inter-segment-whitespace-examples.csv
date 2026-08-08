@@ -1,0 +1,34 @@
+pattern,kind,rule_count,example_source,example_input,example_output
+tʃ,untied_affricate,450,index_diachronica_original.html:956,dz ʃ tʃ,ʒ f1 f2
+ts,untied_affricate,446,index_diachronica_original.html:996,tʃ,ts
+kʷ,labialized,350,index_diachronica_original.html:1188,kʼ kʷʼ,"{ɣ,q} ɣʷ"
+ɡʷ,labialized,240,index_diachronica_original.html:2827,j w,dz ɡʷ
+dʒ,untied_affricate,235,index_diachronica_original.html:957,dʒ,tʃ > ʃ
+dz,untied_affricate,160,index_diachronica_original.html:956,dz ʃ tʃ,ʒ f1 f2
+tɬ,untied_affricate,50,index_diachronica_original.html:3895,tɬː dɮ,tɬ(ː) tɬː
+ʈʂ,untied_affricate,43,index_diachronica_original.html:2473,Ω cʰ,ʂ ʈʂ
+tɕ,untied_affricate,42,index_diachronica_original.html:2447,Ω cʰ,s tɕ
+CV,class_compound,35,index_diachronica_original.html:1232,$VC$,$CV$
+Kʷ,labialized,28,index_diachronica_original.html:1271,Kʷ,K
+dɮ,untied_affricate,24,index_diachronica_original.html:3895,tɬː dɮ,tɬ(ː) tɬː
+pʷ,labialized,22,index_diachronica_original.html:1904,kw pw mw,kʷ pʷ mʷ
+dʑ,untied_affricate,22,index_diachronica_original.html:4158,tʃʷ(ʼ) tɕ(ʼ) dʒʷ dʑ,f(ʼ) ts(ʼ) v dz
+VC,class_compound,16,index_diachronica_original.html:1232,$VC$,$CV$
+bʷ,labialized,13,index_diachronica_original.html:3109,β b m,βʷ bʷ mʷ
+C₁C₂,class_compound,11,index_diachronica_original.html:1478,C₁ˤC₂,C₁C₂ˤ
+tʷ,labialized,11,index_diachronica_original.html:4113,tʷː tʷʲ(ʼ),d(w) tʷ(ʼ)
+ɖʐ,untied_affricate,11,index_diachronica_original.html:7071,ʃi ʒi tʃi dʒi ɕi ʑi,ʂɨ ʐɨ ʈʂɨ ɖʐɨ tsɨ ʒɨ
+V₀V₀,class_compound,9,index_diachronica_original.html:2816,V₀V₀,V₀
+nV₀,class_compound,8,index_diachronica_original.html:12764,mn,mV₀nV₀
+mV₀,class_compound,6,index_diachronica_original.html:12764,mn,mV₀nV₀
+Cw,class_compound,5,index_diachronica_original.html:984,Cw,C
+CC,class_compound,5,index_diachronica_original.html:3196,CC,Cː
+dʷ,labialized,5,index_diachronica_original.html:4162,tʷ(ʼ) dʷ,"{tʷ(ʼ),p(ʼ)} {dʷ,b}"
+sV₀,class_compound,5,index_diachronica_original.html:12806,tʲr,sV₀rV₀
+Cʷ,labialized,4,index_diachronica_original.html:1903,Cʷ,C
+pf,untied_affricate,4,index_diachronica_original.html:6128,p t k,pf ts kx
+NC,class_compound,3,index_diachronica_original.html:966,VNC,VːC[+voice]
+tʂ,untied_affricate,3,index_diachronica_original.html:8217,tɾ,"{tɾ̥,tʃ,tʂ}"
+t͜s,tied_affricate,2,index_diachronica_original.html:1467,t,t͜s
+gʷ,labialized,2,index_diachronica_original.html:7193,ɡʲʰ gʷʰ,ɡʰ xʷ
+VNC,class_compound,1,index_diachronica_original.html:966,VNC,VːC[+voice]

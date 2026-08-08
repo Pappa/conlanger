@@ -23,7 +23,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - [Create an ASCA validator for SoundChangeRuleSet](issues/08-asca-validator.md) — `validate_asca` via asca **0.10.2** `run` (raises `ASCAValidationError`); 500 `asca_guess` fixture rows (seed 20260802; 370 ok / 130 expected fail).
 - [Historical fidelity vs valid-but-inaccurate fallback](issues/04-historical-fidelity-vs-validity.md) — Edit ladder + **rule status** / **validation report** split. ADR-0010.
 - [Correction workflow for invalid rules](issues/05-correction-workflow-invalid-rules.md) — Regen YAML, per-**corpus rule** **compile validation**, cluster **failure classes**. ADR-0010.
-- [Normalise segment feature matrices for appliers](issues/07-normalise-segment-features.md) — **Feature matrix** synonyms at ingest → `feature_mappings.csv`. Whitespace deferred.
+- [Normalise segment feature matrices for appliers](issues/07-normalise-segment-features.md) — **Feature matrix** synonyms at ingest → `feature_mappings.csv`. Inter-segment whitespace deferred here → resolved in [Spike: inter-segment whitespace and phoneme boundaries](issues/44-spike-inter-segment-whitespace.md).
 - [Resolve abbreviations unsupported by ASCA and Brassica](issues/06-resolve-applier-unsupported-abbreviations.md) — **PhonologicalRuleSet** + **class letter** mappings; **symbol** ingest norm; cluster-driven deferrals.
 - [Spike: ASCA feature-matrix expansions for Index class letters](issues/09-spike-asca-class-letter-feature-matrices.md) — `group_mappings.csv` validated. [research/asca-class-letter-mappings.md](research/asca-class-letter-mappings.md).
 - [Spike: Index feature matrices → ASCA targets](issues/29-spike-index-feature-matrices-to-asca-targets.md) — `feature_mappings.csv` schema + seed rows. [research/index-feature-matrices-to-asca-targets.md](research/index-feature-matrices-to-asca-targets.md).
@@ -52,6 +52,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - [Spike: ASCA compile transform ordering (planned steps)](issues/38-spike-asca-compile-transform-order.md) — done. Findings: [research/asca-compile-transform-order.md](research/asca-compile-transform-order.md). Orders 3–4 before group mappings; 10 meta cluster-last.
 - [Refactor SoundChangeRuleSet and compile subcomponents](issues/39-refactor-sound-change-ruleset.md) — **blocked by 37**; scope TBD until docs land.
 - [Spike: unknown_character → IPA mapping candidates](issues/42-spike-unknown-character-ipa-mappings.md) — 42 letter-like tokens classified; high-confidence seed set (ḱ, Ṽ, nasal vowels, š/Ṣ, French è, Slavic yers). Findings: [research/unknown-character-ipa-mappings.md](research/unknown-character-ipa-mappings.md) + [research/unknown-character-ipa-mappings.csv](research/unknown-character-ipa-mappings.csv).
+- [Spike: inter-segment whitespace and phoneme boundaries](issues/44-spike-inter-segment-whitespace.md) — **compile-only** Brassica spacing; SoT stays Index-shaped (ASCA is space-optional/trie-segmented; Index spaces mostly parallel parts). Findings: [research/inter-segment-whitespace-phoneme-boundaries.md](research/inter-segment-whitespace-phoneme-boundaries.md).
 
 ## Pipeline documentation (grill 2026-08-07)
 
@@ -81,7 +82,6 @@ Phased delivery — not vertical slices upfront:
 
 - **Bare I/O “already good” tagging** — optional idea: for rules with only `input`/`output` (no `env`/`exception`/`comment`), try Index `raw` with arrow normalised to ASCA `>` and see if ASCA accepts; tag as not needing transforms. Left foggy on purpose (grill Q5); full-rule `ok` + [ok-change changelog](issues/34-inventory-success-error-splits-and-ok-changelog.md) may already cover regression guarding. Revisit after 34/35.
 - **Subscript notation (all four uses)** — grilled + researched: [subscript-notation-index-asca-brassica.md](research/subscript-notation-index-asca-brassica.md), [positional-slots-and-identity-subscripts.md](research/positional-slots-and-identity-subscripts.md). **Working policy:** correspondence-series + collective → **parse-time**; positional + identity → **compile-time** (Index-shaped in YAML). **Phase 1:** [Correction pass: positional slots and identity subscripts](issues/40-correction-pass-positional-identity-subscripts.md) (+51 ok). **Phase 2:** [Correction pass: subscript edge cases](issues/41-correction-pass-subscript-edge-cases.md). **Compile order:** [research/asca-compile-transform-order.md](research/asca-compile-transform-order.md).
-- **Whitespace tokenisation for ASCA** — inter-segment spacing (deferred from ticket 07)
 - **Meta-notation at ingest** — later find/replace; cluster-driven for now (ticket 06)
 - **Section-local abbreviations** (e.g. Athabaskan `TŠ`) — cluster-driven; hand-add mapping rows when warranted
 - Abbreviation table authorship at scale
