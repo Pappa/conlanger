@@ -4,24 +4,24 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9201** (one per corpus rule)
-- OK: **7066** (76.8%)
-- Fail: **2135** (23.2%)
+- OK: **7114** (77.3%)
+- Fail: **2087** (22.7%)
 - Sections all OK: **203 / 714** (28.4%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 658 | `syntax_other` |
-| 453 | `unknown_character` |
-| 407 | `expected_underscore` |
-| 156 | `unknown_feature` |
+| 661 | `syntax_other` |
+| 411 | `expected_underscore` |
+| 383 | `unknown_character` |
+| 164 | `unknown_feature` |
 | 115 | `runtime_other` |
-| 95 | `unknown_grouping` |
+| 99 | `unknown_grouping` |
 | 66 | `prose_or_expected_arrow` |
+| 41 | `nested_brackets` |
 | 41 | `panic_other` |
-| 39 | `nested_brackets` |
-| 36 | `expected_number` |
+| 37 | `expected_number` |
 | 30 | `diacritic_prereq` |
 | 21 | `runtime_delete_only_segment` |
 | 14 | `stuff_after_word_bound` |
@@ -44,15 +44,15 @@
 
 | count | error_token | suggested |
 |------:|-------------|-----------|
-| 20 | `dental` | `ldental` |
-| 16 | `open` | `ten` |
+| 22 | `dental` | `ldental` |
+| 19 | `open` | `ten` |
 | 13 | `palatal` | `latrl` |
 | 11 | `lowtone` | `contin` |
 | 10 | `samePOA` | `lateral` |
+| 9 | `closed` | `cons` |
 | 9 | `fortis` | `contin` |
-| 8 | `hightone` | `high` |
 | 8 | `mid` | `man` |
-| 6 | `closed` | `cons` |
+| 8 | `hightone` | `high` |
 | 6 | `lenis` | `tens` |
 | 5 | `alveolar` | `delay` |
 | 5 | `guttural` | `lateral` |
@@ -90,12 +90,12 @@
 | 7 | `B` |
 | 7 | `T` |
 | 7 | `M` |
+| 6 | `X` |
 | 5 | `H` |
 | 4 | `D` |
 | 3 | `I` |
 | 3 | `Y` |
 | 2 | `W` |
-| 2 | `X` |
 | 2 | `Q` |
 | 2 | `A` |
 
