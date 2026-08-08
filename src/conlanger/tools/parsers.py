@@ -86,6 +86,7 @@ DEFAULT_IPA_MAPPINGS_CSV = (
 DEFAULT_PARSER_CONFIG_PATH = (
     Path(__file__).resolve().parents[3] / "data" / "parser_config.yml"
 )
+DEFAULT_IPA_MAPPING_CONFIDENCE = ["high"]
 _SUPPORTED_FEATURE_MAPPING_KINDS = frozenset({"rename", "rename_invert", "rename_polarity"})
 
 # Protect Index stem ``$`` while remapping syllable-boundary ``%`` → ASCA ``$``.
@@ -587,10 +588,11 @@ class ParserConfig:
 def load_parser_config(path: Path | None = None) -> ParserConfig:
     """Load parser runtime settings from YAML."""
     config_path = DEFAULT_PARSER_CONFIG_PATH if path is None else Path(path)
-    raw = yaml.safe_load(config_path.read_text(encoding="utf-8"))
-    return ParserConfig(
-        ipa_mapping_confidence=frozenset(raw["ipa_mapping"]["confidence"])
+    raw = yaml.safe_load(config_path.read_text(encoding="utf-8")) or {}
+    confidence = raw.get("ipa_mapping", {}).get(
+        "confidence", DEFAULT_IPA_MAPPING_CONFIDENCE
     )
+    return ParserConfig(ipa_mapping_confidence=frozenset(confidence))
 
 
 def load_ipa_mappings(path: Path | None = None) -> list[IpaMapping]:
