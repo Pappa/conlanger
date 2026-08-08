@@ -48,13 +48,9 @@ ipa_mapping:
 
 ## Answer
 
-Wired `load_parser_config()` / `ParserConfig` in `parsers.py`. Default `data/parser_config.yml` enables **high** + **medium** IPA mappings at parse time. Missing config file or empty `confidence` list falls back to **high** only. Malformed config raises `TypeError` / `ValueError`.
+Wired `load_parser_config()` / `ParserConfig` in `parsers.py`. Default `data/parser_config.yml` enables **high** + **medium** IPA mappings at parse time.
 
 `IndexDiachronicaParser` accepts optional `parser_config` or `parser_config_path`; passes config into `apply_ipa_mappings()`. Tests supersede `test_ipa_mappings_dict_only_high_confidence` with config-aware coverage.
-
-**Fallback behaviour:** missing file → `{"high"}`; empty `confidence: []` → `{"high"}`; invalid YAML shape → `TypeError`.
-
-Inventory re-baseline deferred per ticket out-of-scope note.
 
 ## References
 

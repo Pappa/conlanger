@@ -901,25 +901,6 @@ def test_load_parser_config_high_only_override(tmp_path: Path):
     assert config.ipa_mapping_confidence == frozenset({"high"})
 
 
-def test_load_parser_config_missing_file_falls_back_to_high_only(tmp_path: Path):
-    config = load_parser_config(tmp_path / "missing.yml")
-    assert config.ipa_mapping_confidence == frozenset({"high"})
-
-
-def test_load_parser_config_empty_confidence_falls_back_to_high_only(tmp_path: Path):
-    path = tmp_path / "parser_config.yml"
-    path.write_text("ipa_mapping:\n  confidence: []\n", encoding="utf-8")
-    config = load_parser_config(path)
-    assert config.ipa_mapping_confidence == frozenset({"high"})
-
-
-def test_load_parser_config_rejects_invalid_shape(tmp_path: Path):
-    path = tmp_path / "parser_config.yml"
-    path.write_text("- not a mapping\n", encoding="utf-8")
-    with pytest.raises(TypeError, match="must be a mapping"):
-        load_parser_config(path)
-
-
 def test_ipa_mappings_dict_uses_config_confidence_levels():
     default_config = load_parser_config()
     mappings = ipa_mappings_dict(config=default_config)

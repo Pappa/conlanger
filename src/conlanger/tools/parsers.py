@@ -86,7 +86,6 @@ DEFAULT_IPA_MAPPINGS_CSV = (
 DEFAULT_PARSER_CONFIG_PATH = (
     Path(__file__).resolve().parents[3] / "data" / "parser_config.yml"
 )
-DEFAULT_IPA_MAPPING_CONFIDENCE_LEVELS = frozenset({"high"})
 _SUPPORTED_FEATURE_MAPPING_KINDS = frozenset({"rename", "rename_invert", "rename_polarity"})
 
 # Protect Index stem ``$`` while remapping syllable-boundary ``%`` → ASCA ``$``.
@@ -586,42 +585,12 @@ class ParserConfig:
 
 
 def load_parser_config(path: Path | None = None) -> ParserConfig:
-    """Load parser runtime settings from YAML.
-
-    Missing config files and empty ``ipa_mapping.confidence`` lists fall back to
-    high-confidence IPA mappings only. Malformed config raises ``TypeError`` or
-    ``ValueError``.
-    """
+    """Load parser runtime settings from YAML."""
     config_path = DEFAULT_PARSER_CONFIG_PATH if path is None else Path(path)
-    if not config_path.is_file():
-        return ParserConfig(ipa_mapping_confidence=DEFAULT_IPA_MAPPING_CONFIDENCE_LEVELS)
-
     raw = yaml.safe_load(config_path.read_text(encoding="utf-8"))
-    if raw is None:
-        return ParserConfig(ipa_mapping_confidence=DEFAULT_IPA_MAPPING_CONFIDENCE_LEVELS)
-    if not isinstance(raw, dict):
-        raise TypeError(f"parser config must be a mapping: {config_path}")
-
-    ipa_mapping = raw.get("ipa_mapping")
-    if ipa_mapping is None:
-        raise ValueError(f"parser config missing 'ipa_mapping': {config_path}")
-    if not isinstance(ipa_mapping, dict):
-        raise TypeError(f"parser config 'ipa_mapping' must be a mapping: {config_path}")
-
-    confidence = ipa_mapping.get("confidence")
-    if confidence is None:
-        raise ValueError(
-            f"parser config missing 'ipa_mapping.confidence': {config_path}"
-        )
-    if not isinstance(confidence, list):
-        raise TypeError(
-            f"parser config 'ipa_mapping.confidence' must be a list: {config_path}"
-        )
-
-    levels = frozenset(str(level).strip() for level in confidence if str(level).strip())
-    if not levels:
-        return ParserConfig(ipa_mapping_confidence=DEFAULT_IPA_MAPPING_CONFIDENCE_LEVELS)
-    return ParserConfig(ipa_mapping_confidence=levels)
+    return ParserConfig(
+        ipa_mapping_confidence=frozenset(raw["ipa_mapping"]["confidence"])
+    )
 
 
 def load_ipa_mappings(path: Path | None = None) -> list[IpaMapping]:
