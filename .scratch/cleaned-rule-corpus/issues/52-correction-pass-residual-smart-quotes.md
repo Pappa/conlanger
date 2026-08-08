@@ -1,4 +1,5 @@
 Type: task
+Status: resolved
 Blocked by: 12, 24
 
 # Correction pass: residual smart quotes
@@ -26,14 +27,33 @@ Ticket [24](24-correction-pass-smart-quotes.md) added `strip_embedded_quoted_glo
 
 ## Acceptance criteria
 
-- [ ] Residual pattern audit documented (sample lines per sub-pattern)
-- [ ] Extended strip/normaliser + tests
-- [ ] Full inventory re-baseline; `"` / `"` / `'` token counts in **Answer**
-- [ ] Fixtures updated where outcomes change
+- [x] Residual pattern audit documented (sample lines per sub-pattern)
+- [x] Extended strip/normaliser + tests
+- [x] Full inventory re-baseline; `"` / `"` / `'` token counts in **Answer**
+- [x] Fixtures updated where outcomes change
 
 ## Answer
 
-_(pending)_
+Baseline (after issue 57): **7134 / 9201** ok (77.5%).
+
+### Residual audit (57 rows)
+
+| Sub-pattern | count | sample | fix |
+|-------------|------:|--------|-----|
+| Stress-adjacent `”` (lookahead bug, `//`, `_`, `*`, sets, infix, output) | 39 | `// ”ə_V`, `a"a`, `C"iC_`, `#_"a` | `normalize_stress_marks()` expansion |
+| Typographic apostrophe `'` (prefix, paren, Greek θ) | 12 | `'p 't`, `p(')`, `θ'` | `normalize_typographic_apostrophes()` |
+| Prose glosses `"`/`"` | 3 | `hhy > "something like /ʒ/"`, `"The CIV rules…"` | field-wrapped/leading gloss + prose skip |
+| Other stress orphans | 3 | `P"_(C,0)B`, `V(C)"(C)CaCV` | class-before-`_`, `)"(` patterns |
+
+### Per-token `unknown_character` counts
+
+| token | before | after |
+|-------|-------:|------:|
+| `"` (U+201C) | 3 | **0** |
+| `"` (U+201D) | 42 | **0** |
+| `'` (U+2019) | 12 | **0** |
+
+Full inventory re-run: **7178 / 9201** ok (**+44**, **78.0%**). Two long quoted paragraphs marked `skipped: quoted prose paragraph`.
 
 ## References
 

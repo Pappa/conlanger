@@ -328,6 +328,12 @@ def strip_trailing_quoted_gloss_from_field(text: str) -> str:
     return cleaned
 
 
+_FIELD_WRAPPED_QUOTED_GLOSS_RE = re.compile(
+    r'^[\u201c"]([^\u201d"]+)[\u201d"]\s*$'
+)
+_FIELD_LEADING_QUOTED_GLOSS_RE = re.compile(
+    r'^[\u201c"]([^\u201d"]{10,})[\u201d"]?\s*'
+)
 _EMBEDDED_QUOTED_GLOSS_RE = re.compile(
     r'[\s,]*[\u201c"]([^\u201d"]{3,})[\u201d"][\s,]*'
 )
@@ -337,7 +343,33 @@ _ORPHAN_CLOSING_QUOTE_MID_RE = re.compile(r'[\s,]+[\u201d"]+(?=\s|$)')
 
 
 def _quoted_inner_is_gloss(inner: str) -> bool:
-    return bool(re.search(r"[a-z]{3,}", inner)) or paren_inner_is_gloss(inner)
+    if re.search(r"[a-z]{3,}", inner):
+        return True
+    if re.search(r"\blike\b", inner, re.IGNORECASE):
+        return True
+    return paren_inner_is_gloss(inner)
+
+
+def extract_field_wrapped_quoted_gloss_from_field(
+    text: str,
+) -> tuple[str, list[str]]:
+    """Remove a field that is entirely a quoted prose gloss."""
+    if not text:
+        return text, []
+    match = _FIELD_WRAPPED_QUOTED_GLOSS_RE.match(text)
+    if match and _quoted_inner_is_gloss(match.group(1)):
+        return "", [match.group(0).strip()]
+    return text, []
+
+
+def extract_leading_quoted_gloss_from_field(text: str) -> tuple[str, list[str]]:
+    """Remove field-leading quoted prose glosses."""
+    if not text:
+        return text, []
+    match = _FIELD_LEADING_QUOTED_GLOSS_RE.match(text)
+    if match and _quoted_inner_is_gloss(match.group(1)):
+        return text[match.end() :].strip(), [match.group(0).strip()]
+    return text, []
 
 
 def extract_embedded_quoted_gloss_from_field(text: str) -> tuple[str, list[str]]:
@@ -414,6 +446,8 @@ def extract_trailing_gloss_from_field(text: str) -> tuple[str, list[str]]:
         return text, []
     captures: list[str] = []
     for extractor in (
+        extract_field_wrapped_quoted_gloss_from_field,
+        extract_leading_quoted_gloss_from_field,
         extract_embedded_quoted_gloss_from_field,
         extract_trailing_quoted_gloss_from_field,
         extract_trailing_paren_glosses_from_field,
@@ -440,10 +474,17 @@ def apply_trailing_glosses(parts: dict[str, str]) -> dict[str, Any]:
         if key not in parts:
             continue
         original = parts[key]
-        value, captures = extract_trailing_gloss_from_field(original)
-        comment_fragments.extend(captures)
-        if key in ("input", "output") and not value:
-            value = original
+        wrapped_cleaned, wrapped_caps = extract_field_wrapped_quoted_gloss_from_field(
+            original
+        )
+        if wrapped_caps:
+            value = wrapped_cleaned
+            comment_fragments.extend(wrapped_caps)
+        else:
+            value, captures = extract_trailing_gloss_from_field(original)
+            comment_fragments.extend(captures)
+            if key in ("input", "output") and not value:
+                value = original
         if key in ("input", "output") or value:
             cleaned[key] = value
     _append_rule_comment_parts(cleaned, comment_fragments)
@@ -674,9 +715,24 @@ def apply_ipa_mappings(
 _INDEX_STRESS = "\u201d"
 
 # Class letter or IPA vowel segment — not an English word continuation.
-_STRESS_SEGMENT = r"([A-Z](?![a-z])|[a-z\u0250-\u02AF\u1D00-\u1DBF]+(?=[\s→/\[,!\]|$]))"
+_STRESS_BOUNDARY = (
+    r"(?=$|[\s→/\[,!\]_\.\)]|[A-Za-z\u0250-\u02AF\u1D00-\u1DBF\u0370-\u03FF])"
+)
+_STRESS_VOWEL_CONTINUE = r"[aeiouyæøœɑɛɪɔʊəɨʉɯɤɐɒʌɜɞɶɤ]*"
+_STRESS_SEGMENT = (
+    rf"([A-Z]{_STRESS_VOWEL_CONTINUE}"
+    rf"|[a-z\u0250-\u02AF\u1D00-\u1DBF\u0370-\u03FF]+{_STRESS_BOUNDARY})"
+)
 _STRESS_FEAT_SUFFIX = r"(\[[^\]]*\])?"
 
+# P”_(C,0)B → P:[+stress]_(C,0)B.
+_STRESS_CLASS_BEFORE_UNDERSCORE_RE = re.compile(
+    rf"([A-Z]){re.escape(_INDEX_STRESS)}(?=_)"
+)
+# V(C)”(C)CaCV → V(C):[+stress](C)CaCV.
+_STRESS_AFTER_CLOSE_PAREN_RE = re.compile(
+    rf"\){re.escape(_INDEX_STRESS)}(?=\()"
+)
 # ” before a segment (rule input, e.g. ”V → …).
 _STRESS_PREFIX_RE = re.compile(
     rf"{re.escape(_INDEX_STRESS)}{_STRESS_SEGMENT}{_STRESS_FEAT_SUFFIX}"
@@ -685,9 +741,56 @@ _STRESS_PREFIX_RE = re.compile(
 _STRESS_AFTER_BOUNDARY_RE = re.compile(
     rf"([#$_∅%]){re.escape(_INDEX_STRESS)}{_STRESS_SEGMENT}{_STRESS_FEAT_SUFFIX}"
 )
+# After underscore boundary: #_”a → #_a:[+stress].
+_STRESS_AFTER_UNDERSCORE_RE = re.compile(
+    rf"(?<=_){re.escape(_INDEX_STRESS)}{_STRESS_SEGMENT}{_STRESS_FEAT_SUFFIX}"
+)
+# After // comment boundary: // ”ə_V → // ə:[+stress]_V.
+_STRESS_AFTER_DOUBLE_SLASH_RE = re.compile(
+    rf"(//\s*){re.escape(_INDEX_STRESS)}{_STRESS_SEGMENT}{_STRESS_FEAT_SUFFIX}"
+)
+# After Kleene star: _C*”{i,e}V → _C*{i:[+stress],e:[+stress]}V.
+_STRESS_AFTER_STAR_SET_RE = re.compile(
+    rf"\*{re.escape(_INDEX_STRESS)}\{{([^{{}}]+)\}}"
+)
+_STRESS_AFTER_STAR_SEGMENT_RE = re.compile(
+    rf"\*{re.escape(_INDEX_STRESS)}{_STRESS_SEGMENT}{_STRESS_FEAT_SUFFIX}"
+)
+# ”{i,e}V → {i:[+stress],e:[+stress]}V.
+_STRESS_BEFORE_SET_RE = re.compile(
+    rf"{re.escape(_INDEX_STRESS)}\{{([^{{}}]+)\}}(?:\s+{_STRESS_SEGMENT})?"
+)
+# After closing brace: {ʃ,ʒ}"{a,e}_ → {ʃ,ʒ}{a:[+stress],e:[+stress]}_.
+_STRESS_BEFORE_SET_AFTER_CLOSE_RE = re.compile(
+    rf"(?<=[}}]){re.escape(_INDEX_STRESS)}\{{([^{{}}]+)\}}"
+)
+# _(”u) → _(u:[+stress]).
+_STRESS_IN_PAREN_RE = re.compile(
+    rf"\({re.escape(_INDEX_STRESS)}([a-z\u0250-\u02AF\u1D00-\u1DBF\u0370-\u03FF]+)"
+    rf"{_STRESS_FEAT_SUFFIX}\)"
+)
+# ”_$ɪ:[+long] → _$ɪ:[+stress,+long].
+_STRESS_QUOTE_UNDERSCORE_SEGMENT_RE = re.compile(
+    rf"{re.escape(_INDEX_STRESS)}_\$?"
+    rf"([a-z\u0250-\u02AF\u1D00-\u1DBF\u0370-\u03FF]+)(:\[[^\]]+\])?"
+)
+# ”el:[+long] → el:[+stress,+long].
+_STRESS_PREFIX_COLON_FEAT_RE = re.compile(
+    rf"{re.escape(_INDEX_STRESS)}"
+    rf"([a-z\u0250-\u02AF\u1D00-\u1DBF\u0370-\u03FF]+)(:\[[^\]]+\])"
+)
+# V”(C) → V:[+stress](C).
+_STRESS_BEFORE_PAREN_RE = re.compile(
+    rf"(?<=[A-Za-z\u0250-\u02AF\u1D00-\u1DBF]){re.escape(_INDEX_STRESS)}(?=\()"
+)
+# ($,0)” in → ($,0):[+stress] in.
+_STRESS_ORPHAN_AFTER_PAREN_RE = re.compile(
+    rf"(\([^)]+\)){re.escape(_INDEX_STRESS)}(?=\s)"
+)
 # Infix stress between segments: C”V → CV:[+stress] (class letter after C).
 _STRESS_INFIX_RE = re.compile(
-    rf"(?<=[A-Za-z\u0250-\u02AF]){re.escape(_INDEX_STRESS)}{_STRESS_SEGMENT}{_STRESS_FEAT_SUFFIX}"
+    rf"(?<=[A-Za-z\u0250-\u02AF\u1D00-\u1DBF\u0370-\u03FF])"
+    rf"{re.escape(_INDEX_STRESS)}{_STRESS_SEGMENT}{_STRESS_FEAT_SUFFIX}"
 )
 # Inside sets: {”V,j} → {V:[+stress],j}.
 _STRESS_IN_SET_RE = re.compile(
@@ -826,6 +929,44 @@ def _apply_stress_re(match: re.Match[str]) -> str:
     return f"{segment}:[+stress]{feats or ''}"
 
 
+def _apply_stress_set_re(match: re.Match[str]) -> str:
+    members = [member.strip() for member in match.group(1).split(",")]
+    body = ",".join(f"{member}:[+stress]" for member in members)
+    tail = match.group(2) or ""
+    if tail:
+        tail = f"{tail}:[+stress]"
+    return "{" + body + "}" + tail
+
+
+def _apply_stress_paren_re(match: re.Match[str]) -> str:
+    segment, feats = match.group(1), match.group(2) or ""
+    return f"({segment}:[+stress]{feats})"
+
+
+def _apply_stress_colon_feat_re(match: re.Match[str]) -> str:
+    segment, feat = match.group(1), match.group(2)
+    inner = feat[2:-1].lstrip("[").rstrip("]")
+    return f"{segment}:[+stress,{inner}]"
+
+
+def _apply_stress_quote_underscore_re(match: re.Match[str]) -> str:
+    segment, feat = match.group(1), match.group(2) or ""
+    if feat:
+        inner = feat[2:-1].lstrip("[").rstrip("]")
+        return f"_${segment}:[+stress,{inner}]"
+    return f"_${segment}:[+stress]"
+
+
+def _apply_stress_set_after_close_re(match: re.Match[str]) -> str:
+    members = [member.strip() for member in match.group(1).split(",")]
+    return "{" + ",".join(f"{member}:[+stress]" for member in members) + "}"
+
+
+def _apply_stress_star_set_re(match: re.Match[str]) -> str:
+    members = [member.strip() for member in match.group(1).split(",")]
+    return "*{" + ",".join(f"{member}:[+stress]" for member in members) + "}"
+
+
 def normalize_stress_marks(text: str) -> str:
     """Map Index ``”`` stress marks to ASCA ``:[+stress]`` on the marked segment.
 
@@ -834,8 +975,23 @@ def normalize_stress_marks(text: str) -> str:
     """
     if _INDEX_STRESS not in text:
         return text
+    text = _STRESS_CLASS_BEFORE_UNDERSCORE_RE.sub(
+        lambda m: f"{m.group(1)}:[+stress]", text
+    )
+    text = _STRESS_AFTER_CLOSE_PAREN_RE.sub("):[+stress](", text)
     text = _STRESS_AFTER_BOUNDARY_RE.sub(_apply_stress_re, text)
+    text = _STRESS_AFTER_UNDERSCORE_RE.sub(_apply_stress_re, text)
+    text = _STRESS_AFTER_DOUBLE_SLASH_RE.sub(_apply_stress_re, text)
+    text = _STRESS_AFTER_STAR_SET_RE.sub(_apply_stress_star_set_re, text)
+    text = _STRESS_AFTER_STAR_SEGMENT_RE.sub(_apply_stress_re, text)
+    text = _STRESS_BEFORE_SET_RE.sub(_apply_stress_set_re, text)
+    text = _STRESS_BEFORE_SET_AFTER_CLOSE_RE.sub(_apply_stress_set_after_close_re, text)
+    text = _STRESS_IN_PAREN_RE.sub(_apply_stress_paren_re, text)
+    text = _STRESS_QUOTE_UNDERSCORE_SEGMENT_RE.sub(_apply_stress_quote_underscore_re, text)
     text = _STRESS_IN_SET_RE.sub(_apply_stress_re, text)
+    text = _STRESS_PREFIX_COLON_FEAT_RE.sub(_apply_stress_colon_feat_re, text)
+    text = _STRESS_BEFORE_PAREN_RE.sub(":[+stress]", text)
+    text = _STRESS_ORPHAN_AFTER_PAREN_RE.sub(r"\1:[+stress]", text)
     text = _STRESS_INFIX_RE.sub(_apply_stress_re, text)
     text = _STRESS_PREFIX_RE.sub(_apply_stress_re, text)
     return text
@@ -854,6 +1010,17 @@ def normalize_symbols(text: str) -> str:
     text = text.replace("%", "$")
     text = text.replace(_STEM_BOUNDARY_PLACEHOLDER, "$")
     return normalize_stress_marks(text)
+
+
+def is_quoted_prose_paragraph(raw: str) -> bool:
+    """True when a ``schg`` line is editorial prose wrapped in typographic quotes."""
+    text = raw.strip()
+    if not text.startswith(("\u201c", '"')):
+        return False
+    body = text[1:]
+    if _quoted_inner_is_gloss(body):
+        return True
+    return len(text) > 40 and ARROW in text and bool(re.search(r"[a-z]{5,}", text))
 
 
 def extract_rule_parts(raw: str) -> dict[str, str] | None:
@@ -1017,6 +1184,17 @@ class IndexDiachronicaParser:
         raw = extract_text_with_subs(el)
         line = getattr(el, "sourceline", None) or 0
         source = f"{source_file}:{line}"
+        if is_quoted_prose_paragraph(raw):
+            return [
+                {
+                    "input": "",
+                    "output": "",
+                    "raw": raw,
+                    "source": source,
+                    "comment": raw.strip(),
+                    "skipped": "quoted prose paragraph",
+                }
+            ]
         normalized = normalize_symbols(raw)
         parts = extract_rule_parts(normalized)
         if parts is None:

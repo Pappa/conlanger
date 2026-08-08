@@ -42,6 +42,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - [Correction pass: when stressed / when unstressed env conditions](issues/22-correction-pass-stress-conditions.md) — parse-time env stress-phrase normalization.
 - [Correction pass: labialized Index class letters (Kʷ, K(ʷ), …)](issues/23-correction-pass-labialized-class-letters.md) — compile labialization on class letters.
 - [Correction pass: smart quotes and typographic apostrophes](issues/24-correction-pass-smart-quotes.md) — parse + compile quote/apostrophe cleanup.
+- [Correction pass: residual smart quotes](issues/52-correction-pass-residual-smart-quotes.md) — stress-mark expansion + gloss/apostrophe gaps; **+44** ok.
 - [Correction pass: remaining bare length marker ː](issues/25-correction-pass-bare-length-marker.md) — extended length-mark compile pass; `ː` cluster 242 → 40.
 - [Correction pass: unknown_grouping residual `T`](issues/43-correction-pass-unknown-grouping-t.md) — `_GROUPING_FOLLOW` IPA tail fix; `T` token 49 → 5 (+38 ok).
 - [Parse-time resolution for correspondence-series indices](issues/26-parse-time-correspondence-series-indices.md) — expand at HTML→YAML parse to ASCA-parseable strings when section map exists; `raw` retains subscripts; unmapped → literal + validation fail (no pre-emptive skip). ADR-0004 amended.

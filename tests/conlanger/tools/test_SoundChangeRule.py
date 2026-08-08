@@ -228,6 +228,9 @@ def test_normalize_asca_optional_grouping_ellipsis(text, expected):
     [
         ("{O:[+delrel],O\u2019}", "{O:[+delrel],O\u02bc}"),
         ("C\u2019 > C", "C\u02bc > C"),
+        ("\u2019p \u2019t", "p\u02bc t\u02bc"),
+        ("p(\u2019) m", "p(\u02bc) m"),
+        ("ts ts:[+cg] > {\u03b8,s} \u03b8\u2019", "ts ts:[+cg] > {\u03b8,s} \u03b8\u02bc"),
         ("a", "a"),
         ("", ""),
     ],

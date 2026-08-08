@@ -4,27 +4,28 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9201** (one per corpus rule)
-- OK: **7134** (77.5%)
-- Fail: **2067** (22.5%)
-- Sections all OK: **204 / 714** (28.6%)
+- OK: **7178** (78.0%)
+- Fail: **2023** (22.0%)
+- Sections all OK: **212 / 714** (29.7%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 636 | `syntax_other` |
-| 414 | `expected_underscore` |
-| 383 | `unknown_character` |
-| 163 | `unknown_feature` |
+| 637 | `syntax_other` |
+| 417 | `expected_underscore` |
+| 324 | `unknown_character` |
+| 168 | `unknown_feature` |
 | 116 | `runtime_other` |
 | 100 | `unknown_grouping` |
-| 68 | `prose_or_expected_arrow` |
+| 69 | `prose_or_expected_arrow` |
+| 43 | `nested_brackets` |
 | 41 | `panic_other` |
-| 40 | `nested_brackets` |
 | 37 | `expected_number` |
 | 30 | `diacritic_prereq` |
 | 21 | `runtime_delete_only_segment` |
 | 14 | `stuff_after_word_bound` |
+| 2 | `missing_arrow` |
 | 2 | `malformed_comment` |
 | 2 | `other` |
 
@@ -34,23 +35,23 @@
 
 | count | error_token |
 |------:|-------------|
-| 49 | `ː` |
+| 47 | `ː` |
 | 45 | `ı` |
-| 42 | `”` |
 | 37 | `́` |
 | 27 | `ṽ` |
+| 19 | `̣` |
 
 ### unknown_feature
 
 | count | error_token | suggested |
 |------:|-------------|-----------|
 | 23 | `dental` | `ldental` |
-| 18 | `open` | `ten` |
+| 22 | `open` | `ten` |
 | 13 | `palatal` | `latrl` |
 | 11 | `lowtone` | `contin` |
 | 10 | `samePOA` | `lateral` |
+| 10 | `closed` | `cons` |
 | 9 | `fortis` | `contin` |
-| 9 | `closed` | `cons` |
 | 8 | `hightone` | `high` |
 | 8 | `mid` | `man` |
 | 6 | `lenis` | `tens` |

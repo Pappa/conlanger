@@ -203,6 +203,17 @@ def test_normalize_symbols(text, expected):
         ("”V → ə", "V:[+stress] → ə"),
         ("k → ɡ / ”V_", "k → ɡ / V:[+stress]_"),
         ("V → ∅ / C”V", "V → ∅ / CV:[+stress]"),
+        ("V → i / C”iC_", "V → i / Ci:[+stress]C_"),
+        ("V:[+stress]ʕ ʕV:[+stress] → aa:[+stress] a”a", "V:[+stress]ʕ ʕV:[+stress] → aa:[+stress] aa:[+stress]"),
+        ('p k → f ɣ / V_V // ”ə_V', 'p k → f ɣ / V_V // ə:[+stress]_V'),
+        ('”{i,e}V → jV:[+stress]', '{i:[+stress],e:[+stress]}V → jV:[+stress]'),
+        ('au → a / _$”u', 'au → a / _$u:[+stress]'),
+        ('kʷ → kw / #_”a', 'kʷ → kw / #_a:[+stress]'),
+        ('V → V:[+stress] / _C*”{i,e}V', 'V → V:[+stress] / _C*{i:[+stress],e:[+stress]}V'),
+        ('Ve:[+stress] → ”Vi', 'Ve:[+stress] → Vi:[+stress]'),
+        ('e → i:[+long] / ”_$ɪ:[+long]#', 'e → i:[+long] / _$ɪ:[+stress,+long]#'),
+        ('ɛ ɔ → e o / _(”u)#', 'ɛ ɔ → e o / _(u:[+stress])#'),
+        ('{V:[+stress](C)CaCV,VC:[+stress](C)CaCV} → {V”(C)CaCV,VC”(C)CaCV} / _#', '{V:[+stress](C)CaCV,VC:[+stress](C)CaCV} → {V:[+stress](C)CaCV,VC:[+stress](C)CaCV} / _#'),
         ('k → ts / “After some syllables"', 'k → ts / “After some syllables"'),
     ],
 )
@@ -415,12 +426,12 @@ def test_apply_trailing_glosses():
     }
 
 
-def test_apply_trailing_glosses_keeps_field_when_strip_would_empty():
+def test_apply_trailing_glosses_strips_field_wrapped_gloss_to_comment():
     assert apply_trailing_glosses(
         {"input": "hhy", "output": '"something like /ʒ/"'}
     ) == {
         "input": "hhy",
-        "output": '"something like /ʒ/"',
+        "output": "",
         "comment": '"something like /ʒ/"',
     }
 
@@ -1216,6 +1227,35 @@ def test_extract_embedded_quoted_gloss_from_field():
     )
     assert cleaned == "V_C#"
     assert '"short only"' in captures[0]
+
+
+def test_extract_field_wrapped_quoted_gloss_from_field():
+    from conlanger.tools.parsers import extract_field_wrapped_quoted_gloss_from_field
+
+    cleaned, captures = extract_field_wrapped_quoted_gloss_from_field(
+        '\u201csomething like /\u0292/\u201d'
+    )
+    assert cleaned == ""
+    assert captures == ['\u201csomething like /\u0292/\u201d']
+
+
+def test_extract_leading_quoted_gloss_from_field():
+    from conlanger.tools.parsers import extract_leading_quoted_gloss_from_field
+
+    cleaned, captures = extract_leading_quoted_gloss_from_field(
+        '\u201cThe CIV rules for the voicing of s > z\u201d a \u2192 e'
+    )
+    assert cleaned == "a \u2192 e"
+    assert captures[0].startswith('\u201cThe CIV rules')
+
+
+def test_is_quoted_prose_paragraph():
+    from conlanger.tools.parsers import is_quoted_prose_paragraph
+
+    assert is_quoted_prose_paragraph(
+        '\u201cThe PIE rules for the voicing of s \u2192 z, as in [nizdos]\u201d'
+    )
+    assert not is_quoted_prose_paragraph('a \u2192 e / _C')
 
 
 def test_extract_trailing_paren_glosses_from_field():
