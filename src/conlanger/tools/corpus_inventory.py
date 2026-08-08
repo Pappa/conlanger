@@ -91,6 +91,7 @@ INVENTORY_CSV_NAME = "asca-rule-inventory.csv"
 INVENTORY_SUCCESS_CSV_NAME = "asca-rule-inventory-success.csv"
 INVENTORY_ERROR_CSV_NAME = "asca-rule-inventory-error.csv"
 INVENTORY_CHANGELOG_CSV_NAME = "asca-rule-inventory-changelog.csv"
+OMITTED_DESCRIPTIONS = {"panic_other"}
 
 
 def _ok_as_bool(series: pd.Series) -> pd.Series:
@@ -326,7 +327,7 @@ class ValidationRow:
             "reason": self.reason,
             "error_token": self.error_token,
             "suggested": self.suggested,
-            "description": self.description,
+            "description": "thread panicked" if self.failure_class in OMITTED_DESCRIPTIONS else self.description,
         }
 
 
