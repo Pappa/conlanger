@@ -32,6 +32,7 @@ from pathlib import Path
 from typing import Any
 
 import pandas as pd
+import yaml
 from lxml import html
 
 ARROW = "→"
@@ -82,6 +83,10 @@ DEFAULT_FEATURE_MAPPINGS_CSV = (
 DEFAULT_IPA_MAPPINGS_CSV = (
     Path(__file__).resolve().parents[3] / "data" / "common" / "ipa_mapping.csv"
 )
+DEFAULT_PARSER_CONFIG_PATH = (
+    Path(__file__).resolve().parents[3] / "data" / "parser_config.yml"
+)
+DEFAULT_IPA_MAPPING_CONFIDENCE_LEVELS = frozenset({"high"})
 _SUPPORTED_FEATURE_MAPPING_KINDS = frozenset({"rename", "rename_invert", "rename_polarity"})
 
 # Protect Index stem ``$`` while remapping syllable-boundary ``%`` → ASCA ``$``.
@@ -575,6 +580,50 @@ def apply_feature_mappings(
     return result
 
 
+@dataclass(frozen=True)
+class ParserConfig:
+    ipa_mapping_confidence: frozenset[str]
+
+
+def load_parser_config(path: Path | None = None) -> ParserConfig:
+    """Load parser runtime settings from YAML.
+
+    Missing config files and empty ``ipa_mapping.confidence`` lists fall back to
+    high-confidence IPA mappings only. Malformed config raises ``TypeError`` or
+    ``ValueError``.
+    """
+    config_path = DEFAULT_PARSER_CONFIG_PATH if path is None else Path(path)
+    if not config_path.is_file():
+        return ParserConfig(ipa_mapping_confidence=DEFAULT_IPA_MAPPING_CONFIDENCE_LEVELS)
+
+    raw = yaml.safe_load(config_path.read_text(encoding="utf-8"))
+    if raw is None:
+        return ParserConfig(ipa_mapping_confidence=DEFAULT_IPA_MAPPING_CONFIDENCE_LEVELS)
+    if not isinstance(raw, dict):
+        raise TypeError(f"parser config must be a mapping: {config_path}")
+
+    ipa_mapping = raw.get("ipa_mapping")
+    if ipa_mapping is None:
+        raise ValueError(f"parser config missing 'ipa_mapping': {config_path}")
+    if not isinstance(ipa_mapping, dict):
+        raise TypeError(f"parser config 'ipa_mapping' must be a mapping: {config_path}")
+
+    confidence = ipa_mapping.get("confidence")
+    if confidence is None:
+        raise ValueError(
+            f"parser config missing 'ipa_mapping.confidence': {config_path}"
+        )
+    if not isinstance(confidence, list):
+        raise TypeError(
+            f"parser config 'ipa_mapping.confidence' must be a list: {config_path}"
+        )
+
+    levels = frozenset(str(level).strip() for level in confidence if str(level).strip())
+    if not levels:
+        return ParserConfig(ipa_mapping_confidence=DEFAULT_IPA_MAPPING_CONFIDENCE_LEVELS)
+    return ParserConfig(ipa_mapping_confidence=levels)
+
+
 def load_ipa_mappings(path: Path | None = None) -> list[IpaMapping]:
     """Load Index→ASCA IPA character mappings from CSV."""
     csv_path = DEFAULT_IPA_MAPPINGS_CSV if path is None else Path(path)
@@ -601,12 +650,21 @@ def load_ipa_mappings(path: Path | None = None) -> list[IpaMapping]:
     return out
 
 
-def ipa_mappings_dict(path: Path | None = None) -> dict[str, str]:
-    """Return high-confidence IPA mappings keyed by Index character or digraph."""
+def ipa_mappings_dict(
+    path: Path | None = None,
+    *,
+    config: ParserConfig | None = None,
+) -> dict[str, str]:
+    """Return IPA mappings keyed by Index character for configured confidence levels."""
+    confidences = (
+        config.ipa_mapping_confidence
+        if config is not None
+        else load_parser_config().ipa_mapping_confidence
+    )
     return {
         row.index_feature: row.ipa_target
         for row in load_ipa_mappings(path)
-        if row.confidence == "high" and row.ipa_target
+        if row.confidence in confidences and row.ipa_target
     }
 
 
@@ -622,9 +680,11 @@ def normalize_ipa_in_field(text: str, mappings: dict[str, str]) -> str:
 def apply_ipa_mappings(
     parts: dict[str, str],
     mappings: dict[str, str] | None = None,
+    *,
+    config: ParserConfig | None = None,
 ) -> dict[str, str]:
     """Normalize Index IPA characters in rule fields; ``raw`` unchanged upstream."""
-    table = mappings if mappings is not None else ipa_mappings_dict()
+    table = mappings if mappings is not None else ipa_mappings_dict(config=config)
     if not table:
         return parts
     result = dict(parts)
@@ -949,13 +1009,23 @@ def write_rule_comment_phrase_summary(doc: dict[str, Any], path: Path) -> int:
 class IndexDiachronicaParser:
     """Parse Index Diachronica HTML into applier-neutral cleaned-corpus YAML."""
 
-    def __init__(self, series_mappings: list | None = None) -> None:
+    def __init__(
+        self,
+        series_mappings: list | None = None,
+        parser_config: ParserConfig | None = None,
+        parser_config_path: Path | None = None,
+    ) -> None:
         if series_mappings is None:
             from conlanger.tools.series_mappings import load_series_mappings
 
             self._series_mappings = load_series_mappings()
         else:
             self._series_mappings = series_mappings
+
+        if parser_config is not None:
+            self._parser_config = parser_config
+        else:
+            self._parser_config = load_parser_config(parser_config_path)
 
     def abbreviations(self) -> dict[str, str]:
         """Global abbreviation table for the cleaned corpus (empty at ingest)."""
@@ -990,7 +1060,7 @@ class IndexDiachronicaParser:
         parts = apply_trailing_glosses(parts)
         parts = apply_stress_conditions(parts)
         parts = apply_feature_mappings(parts)
-        parts = apply_ipa_mappings(parts)
+        parts = apply_ipa_mappings(parts, config=self._parser_config)
         from conlanger.tools.series_mappings import apply_series_mappings
 
         parts = apply_series_mappings(parts, section_index, self._series_mappings)

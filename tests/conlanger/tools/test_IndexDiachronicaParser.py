@@ -12,6 +12,7 @@ from conlanger.tools.parsers import (
     FeatureMapping,
     GroupMapping,
     IndexDiachronicaParser,
+    ParserConfig,
     apply_feature_mappings,
     apply_ipa_mappings,
     apply_semicolon_field_comments,
@@ -27,6 +28,7 @@ from conlanger.tools.parsers import (
     load_feature_mappings,
     load_group_mappings,
     load_ipa_mappings,
+    load_parser_config,
     normalize_feature_matrices_in_field,
     normalize_ipa_in_field,
     normalize_stress_conditions,
@@ -884,6 +886,64 @@ def test_apply_feature_mappings():
     ) == {"input": "C[+voice]", "output": "C[+voice]"}
 
 
+def test_load_parser_config_default_includes_high_and_medium():
+    config = load_parser_config()
+    assert config.ipa_mapping_confidence == frozenset({"high", "medium"})
+
+
+def test_load_parser_config_high_only_override(tmp_path: Path):
+    path = tmp_path / "parser_config.yml"
+    path.write_text(
+        "ipa_mapping:\n  confidence:\n    - high\n",
+        encoding="utf-8",
+    )
+    config = load_parser_config(path)
+    assert config.ipa_mapping_confidence == frozenset({"high"})
+
+
+def test_load_parser_config_missing_file_falls_back_to_high_only(tmp_path: Path):
+    config = load_parser_config(tmp_path / "missing.yml")
+    assert config.ipa_mapping_confidence == frozenset({"high"})
+
+
+def test_load_parser_config_empty_confidence_falls_back_to_high_only(tmp_path: Path):
+    path = tmp_path / "parser_config.yml"
+    path.write_text("ipa_mapping:\n  confidence: []\n", encoding="utf-8")
+    config = load_parser_config(path)
+    assert config.ipa_mapping_confidence == frozenset({"high"})
+
+
+def test_load_parser_config_rejects_invalid_shape(tmp_path: Path):
+    path = tmp_path / "parser_config.yml"
+    path.write_text("- not a mapping\n", encoding="utf-8")
+    with pytest.raises(TypeError, match="must be a mapping"):
+        load_parser_config(path)
+
+
+def test_ipa_mappings_dict_uses_config_confidence_levels():
+    default_config = load_parser_config()
+    mappings = ipa_mappings_dict(config=default_config)
+    assert mappings["ḱ"] == "kʲ"
+    assert mappings["Š"] == "ʃ"
+    assert mappings["è"] == "ɛ"
+    assert mappings["é"] == "e"
+    assert "ı" not in mappings
+    assert "Ω" not in mappings
+
+
+def test_ipa_mappings_dict_high_only_config_excludes_medium(tmp_path: Path):
+    config_path = tmp_path / "parser_config.yml"
+    config_path.write_text(
+        "ipa_mapping:\n  confidence:\n    - high\n",
+        encoding="utf-8",
+    )
+    config = load_parser_config(config_path)
+    mappings = ipa_mappings_dict(config=config)
+    assert mappings["ḱ"] == "kʲ"
+    assert mappings["è"] == "ɛ"
+    assert "é" not in mappings
+
+
 def test_load_ipa_mappings_from_default_csv():
     rows = load_ipa_mappings()
     assert rows
@@ -893,18 +953,8 @@ def test_load_ipa_mappings_from_default_csv():
     assert by_name["é"].confidence == "medium"
 
 
-def test_ipa_mappings_dict_only_high_confidence():
-    mappings = ipa_mappings_dict()
-    assert mappings["ḱ"] == "kʲ"
-    assert mappings["Š"] == "ʃ"
-    assert mappings["è"] == "ɛ"
-    assert "é" not in mappings
-    assert "ı" not in mappings
-    assert "Ω" not in mappings
-
-
 def test_normalize_ipa_in_field():
-    mappings = ipa_mappings_dict()
+    mappings = ipa_mappings_dict(config=load_parser_config())
     assert normalize_ipa_in_field("TŠ", mappings) == "Tʃ"
     assert normalize_ipa_in_field("Š", mappings) == "ʃ"
 
@@ -927,7 +977,7 @@ def test_parse_rule_element_normalizes_ipa_characters():
     assert rules[0]["raw"] == "K → TŠ / in Mentasta Ahtna"
 
 
-def test_parse_rule_element_applies_high_confidence_ipa_only():
+def test_parse_rule_element_applies_configured_ipa_confidence_levels():
     el = html.fragment_fromstring(
         '<p class="schg">ḱ → s / _i</p>',
         create_parent=False,
@@ -940,7 +990,34 @@ def test_parse_rule_element_applies_high_confidence_ipa_only():
         create_parent=False,
     )
     rules2 = parse_rule_element(el2, source_file="index_diachronica_original.html")
-    assert rules2[0]["input"] == "é"
+    assert rules2[0]["input"] == "e"
+    assert "é" in rules2[0]["raw"]
+
+
+def test_index_diachronica_parser_high_only_config_skips_medium_at_parse(
+    tmp_path: Path,
+):
+    config_path = tmp_path / "parser_config.yml"
+    config_path.write_text(
+        "ipa_mapping:\n  confidence:\n    - high\n",
+        encoding="utf-8",
+    )
+    parser = IndexDiachronicaParser(parser_config_path=config_path)
+    el = html.fragment_fromstring(
+        '<p class="schg">é → ɛ / _#</p>',
+        create_parent=False,
+    )
+    rules = parser.parse_rule_element(
+        el,
+        source_file="index_diachronica_original.html",
+    )
+    assert rules[0]["input"] == "é"
+
+
+def test_index_diachronica_parser_accepts_custom_parser_config():
+    config = ParserConfig(ipa_mapping_confidence=frozenset({"high"}))
+    parser = IndexDiachronicaParser(parser_config=config)
+    assert parser._parser_config.ipa_mapping_confidence == frozenset({"high"})
 
 
 def test_parse_rule_element_normalizes_feature_matrices():

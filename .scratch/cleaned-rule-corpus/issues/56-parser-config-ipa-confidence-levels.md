@@ -1,4 +1,5 @@
 Type: task
+Status: resolved
 Blocked by: 49
 
 # Parser config: IPA mapping confidence levels
@@ -40,14 +41,20 @@ ipa_mapping:
 
 ## Acceptance criteria
 
-- [ ] `IndexDiachronicaParser` loads `data/parser_config.yml` on execution
-- [ ] `ipa_mappings_dict()` filters by config `ipa_mapping.confidence` levels
-- [ ] Tests cover default (high+medium), high-only override, and config loading errors
-- [ ] `test_ipa_mappings_dict_only_high_confidence` updated or superseded to match new behaviour
+- [x] `IndexDiachronicaParser` loads `data/parser_config.yml` on execution
+- [x] `ipa_mappings_dict()` filters by config `ipa_mapping.confidence` levels
+- [x] Tests cover default (high+medium), high-only override, and config loading errors
+- [x] `test_ipa_mappings_dict_only_high_confidence` updated or superseded to match new behaviour
 
 ## Answer
 
-_(pending)_
+Wired `load_parser_config()` / `ParserConfig` in `parsers.py`. Default `data/parser_config.yml` enables **high** + **medium** IPA mappings at parse time. Missing config file or empty `confidence` list falls back to **high** only. Malformed config raises `TypeError` / `ValueError`.
+
+`IndexDiachronicaParser` accepts optional `parser_config` or `parser_config_path`; passes config into `apply_ipa_mappings()`. Tests supersede `test_ipa_mappings_dict_only_high_confidence` with config-aware coverage.
+
+**Fallback behaviour:** missing file → `{"high"}`; empty `confidence: []` → `{"high"}`; invalid YAML shape → `TypeError`.
+
+Inventory re-baseline deferred per ticket out-of-scope note.
 
 ## References
 
