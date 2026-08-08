@@ -503,7 +503,6 @@ def load_feature_mappings(path: Path | None = None) -> list[FeatureMapping]:
         raise ValueError(
             f"feature mappings CSV missing required columns: {sorted(missing)}"
         )
-    optional = ("host", "notes")
     out: list[FeatureMapping] = []
     for row in df.itertuples(index=False):
         kind = row.mapping_kind.strip()
