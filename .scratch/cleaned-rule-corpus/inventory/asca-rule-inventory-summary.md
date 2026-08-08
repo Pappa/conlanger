@@ -4,27 +4,27 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9201** (one per corpus rule)
-- OK: **6792** (73.8%)
-- Fail: **2409** (26.2%)
-- Sections all OK: **162 / 714** (22.7%)
+- OK: **7066** (76.8%)
+- Fail: **2135** (23.2%)
+- Sections all OK: **203 / 714** (28.4%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 921 | `syntax_other` |
-| 486 | `unknown_character` |
-| 400 | `expected_underscore` |
-| 156 | `unknown_feature` |
+| 656 | `syntax_other` |
+| 453 | `unknown_character` |
+| 407 | `expected_underscore` |
+| 155 | `unknown_feature` |
 | 115 | `runtime_other` |
-| 89 | `unknown_grouping` |
-| 65 | `prose_or_expected_arrow` |
-| 39 | `panic_other` |
-| 35 | `expected_number` |
-| 31 | `nested_brackets` |
+| 95 | `unknown_grouping` |
+| 68 | `prose_or_expected_arrow` |
+| 41 | `panic_other` |
+| 40 | `nested_brackets` |
+| 36 | `expected_number` |
 | 30 | `diacritic_prereq` |
-| 20 | `runtime_delete_only_segment` |
-| 18 | `stuff_after_word_bound` |
+| 21 | `runtime_delete_only_segment` |
+| 14 | `stuff_after_word_bound` |
 | 2 | `malformed_comment` |
 | 2 | `other` |
 
@@ -37,14 +37,14 @@
 | 49 | `ː` |
 | 45 | `ı` |
 | 42 | `”` |
-| 38 | `(` |
 | 37 | `́` |
+| 27 | `ṽ` |
 
 ### unknown_feature
 
 | count | error_token | suggested |
 |------:|-------------|-----------|
-| 20 | `dental` | `ldental` |
+| 19 | `dental` | `ldental` |
 | 16 | `open` | `ten` |
 | 13 | `palatal` | `latrl` |
 | 11 | `lowtone` | `contin` |
@@ -85,17 +85,17 @@
 |------:|-------------|
 | 15 | `R` |
 | 14 | `U` |
-| 12 | `E` |
+| 14 | `E` |
+| 8 | `K` |
 | 7 | `B` |
+| 7 | `T` |
 | 7 | `M` |
-| 5 | `K` |
 | 5 | `H` |
-| 5 | `T` |
 | 4 | `D` |
 | 3 | `I` |
-| 3 | `X` |
 | 3 | `Y` |
 | 2 | `W` |
+| 2 | `X` |
 | 2 | `Q` |
 | 2 | `A` |
 

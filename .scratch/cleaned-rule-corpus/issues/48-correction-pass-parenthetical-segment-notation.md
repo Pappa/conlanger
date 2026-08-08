@@ -33,14 +33,22 @@ ASCA rejects `(` in segment position outside env/structure optionals.
 
 ## Acceptance criteria
 
-- [ ] Parenthetical pattern taxonomy documented with compile examples
-- [ ] Handler(s) + tests on representative lines from inventory
-- [ ] Full inventory re-baseline; metrics in **Answer**
-- [ ] Fixtures updated where outcomes change
+- [x] Parenthetical pattern taxonomy documented with compile examples
+- [x] Handler(s) + tests on representative lines from inventory
+- [x] Full inventory re-baseline; metrics in **Answer**
+- [x] Fixtures updated where outcomes change
 
 ## Answer
 
-_(pending)_
+Baseline (pre-pass, HEAD inventory): **6792 / 9201** ok (73.8%); `syntax_other` rows with `received '('` in description: **144**.
+
+After parenthetical compile handler (`expand_index_parenthetical_notation`, wired via `expand_meta_notation` after tilde expansion):
+
+- **7066 / 9201** ok (**76.8%**, **+274** vs pre-pass baseline — includes ticket 47 tilde uplift landed in the same regen)
+- `received '('` cluster: **144 → 35** (**109** recovered, **75.7%** recoverability; expected ~64 at ~45%)
+- Residual 35: editorial prose tails (`(Whimemsz says…)`, `(rare?)`), multi-modifier nests (`{tɕ(ʼ),tɕʷ(ʼ),…}`), `(C)` class-letter optionals in output (`{u,i}(C)`), ASCA env-structure parens (`(C,0)`), and output-side identity alternations (`k > {k(ʼ),q}`)
+
+Taxonomy and compile examples: module docstring in `src/conlanger/tools/asca_compile/parenthetical.py`.
 
 ## References
 
