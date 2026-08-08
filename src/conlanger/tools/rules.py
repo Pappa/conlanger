@@ -16,6 +16,7 @@ from conlanger.tools.asca_compile.group_mappings import (
 )
 from conlanger.tools.asca_compile.length_marks import normalize_asca_length_marks
 from conlanger.tools.asca_compile.pipeline import compile_asca_rule_string
+from conlanger.tools.asca_compile.tilde import normalize_corpus_rule_tilde_fields
 
 # Public re-exports for tests and callers that import transform helpers from ``rules``.
 __all__ = [
@@ -191,7 +192,8 @@ class SoundChangeRuleSet:
             self._parts.append(RuleComment(section["comment"], format))
         if section.get("rules"):
             for rule in section["rules"]:
-                for step in expand_chained_corpus_rule(rule):
+                normalized = normalize_corpus_rule_tilde_fields(rule)
+                for step in expand_chained_corpus_rule(normalized):
                     self._parts.append(
                         RuleChange(step, format, group_mappings=group_mappings)
                     )

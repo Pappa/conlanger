@@ -428,6 +428,25 @@ def test_sound_change_ruleset_validates_length_marker_fixtures():
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
+def test_sound_change_ruleset_validates_tilde_notation_fixtures():
+    from conlanger.tools.asca_validator import validate_asca
+
+    section = {
+        "index": "9.1.2.2",
+        "section": "Middle Vietnamese to Saigon Vietnamese",
+        "rules": [
+            {"input": "{β,w}", "output": "bj~vj~v"},
+            {"input": "ɣ", "output": "ɣ~ɡ"},
+            {"input": "ts", "output": "{ts~tsʰ,ts,s}"},
+            {"input": "ʃ(~ʃ:[+long]) ʒ", "output": "sʲ sʲ"},
+            {"input": "h", "output": "j~ʔ", "env": "_ V:[+front]"},
+        ],
+    }
+    probe = Path("tests/fixtures/asca_probe_words.wsca")
+    validate_asca(SoundChangeRuleSet(section, "asca"), probe_words=probe)
+
+
+@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
 def test_sound_change_ruleset_validates_expanded_chain_fixtures():
     from conlanger.tools.asca_validator import validate_asca
 
