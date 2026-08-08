@@ -12,14 +12,14 @@
 
 | count | failure_class |
 |------:|---------------|
-| 637 | `syntax_other` |
-| 417 | `expected_underscore` |
+| 638 | `syntax_other` |
+| 418 | `expected_underscore` |
 | 324 | `unknown_character` |
-| 168 | `unknown_feature` |
+| 167 | `unknown_feature` |
 | 116 | `runtime_other` |
 | 100 | `unknown_grouping` |
-| 69 | `prose_or_expected_arrow` |
-| 43 | `nested_brackets` |
+| 67 | `prose_or_expected_arrow` |
+| 44 | `nested_brackets` |
 | 41 | `panic_other` |
 | 37 | `expected_number` |
 | 30 | `diacritic_prereq` |
@@ -45,7 +45,7 @@
 
 | count | error_token | suggested |
 |------:|-------------|-----------|
-| 23 | `dental` | `ldental` |
+| 22 | `dental` | `ldental` |
 | 22 | `open` | `ten` |
 | 13 | `palatal` | `latrl` |
 | 11 | `lowtone` | `contin` |
