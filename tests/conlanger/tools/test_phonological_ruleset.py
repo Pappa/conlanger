@@ -63,8 +63,10 @@ def test_apply_asca_group_mappings_to_string(text, expected):
         ),
         (
             "i > ə / {P,K(ʷ),s}_",
-            "i > ə / {C:[+labial],C:[-front,+back,+hi,-lo,+round],"
-            "C:[-front,+back,+hi,-lo],s}_",
+            (
+                "i > ə / {C:[+labial],C:[-front,+back,+hi,-lo,+round],"
+                "C:[-front,+back,+hi,-lo],s}_"
+            ),
         ),
         (
             "Cʷ > C",
@@ -89,6 +91,35 @@ def test_apply_asca_group_mappings_labialized_class_letters(text, expected):
     assert apply_asca_group_mappings_to_string(text, mappings) == expected
 
 
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        (
+            "Tʃ > P:[-voice]P",
+            "P:[-voice]ʃ > C:[+labial]:[-voice]C:[+labial]",
+        ),
+        (
+            "{Tʃ,Tʃʷ} > P:[-voice]P",
+            "{P:[-voice]ʃ,P:[-voice]ʃʷ} > C:[+labial]:[-voice]C:[+labial]",
+        ),
+        (
+            "C:[+front,+hi,-lo] > Tʃ",
+            "C:[+front,+hi,-lo] > P:[-voice]ʃ",
+        ),
+        (
+            "P:[-voice]P Tʃ Tʃʷ C:[-front,+back,+hi,-lo] > P:[-voice][-place] P:[-voice]P Tʂ Tʃ",
+            (
+                "C:[+labial]:[-voice]C:[+labial] P:[-voice]ʃ P:[-voice]ʃʷ C:[-front,+back,+hi,-lo] > "
+                "C:[+labial]:[-voice][-place] C:[+labial]:[-voice]C:[+labial] P:[-voice]ʂ P:[-voice]ʃ"
+            ),
+        ),
+    ],
+)
+def test_apply_asca_group_mappings_class_letter_before_ipa_tail(text, expected):
+    mappings = asca_group_mappings_dict()
+    assert apply_asca_group_mappings_to_string(text, mappings) == expected
+
+
 def test_sound_change_ruleset_applies_group_mappings_for_asca():
     section = {
         "index": "1.0",
@@ -103,9 +134,7 @@ def test_sound_change_ruleset_applies_group_mappings_for_asca():
             }
         ],
     }
-    rendered = str(
-        SoundChangeRuleSet(section, "asca", group_mappings=_SAMPLE_MAPPINGS)
-    )
+    rendered = str(SoundChangeRuleSet(section, "asca", group_mappings=_SAMPLE_MAPPINGS))
     assert "[+cont]" in rendered
     assert "\tf > p / #_V{[+cont],C[-voice],r}" in rendered
 
@@ -173,7 +202,9 @@ def test_phonological_ruleset_validates_labialized_class_letter_fixtures():
     probe = Path("tests/fixtures/asca_probe_words.wsca")
     from conlanger.tools.asca_validator import validate_asca
 
-    validate_asca(PhonologicalRuleSet(section).to_sound_change_ruleset(), probe_words=probe)
+    validate_asca(
+        PhonologicalRuleSet(section).to_sound_change_ruleset(), probe_words=probe
+    )
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
@@ -201,7 +232,9 @@ def test_phonological_ruleset_validates_known_unknown_grouping_fixtures():
     probe = Path("tests/fixtures/asca_probe_words.wsca")
     from conlanger.tools.asca_validator import validate_asca
 
-    validate_asca(PhonologicalRuleSet(section).to_sound_change_ruleset(), probe_words=probe)
+    validate_asca(
+        PhonologicalRuleSet(section).to_sound_change_ruleset(), probe_words=probe
+    )
 
 
 @patch("conlanger.tools.corpus_inventory.validate_asca", return_value=True)

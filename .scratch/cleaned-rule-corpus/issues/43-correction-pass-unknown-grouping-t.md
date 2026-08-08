@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: 12
 
 # Correction pass: unknown_grouping — residual `T` token
@@ -115,10 +115,24 @@ Recommend **Phase 1 immediately**; file Phase 2 as a sub-task if inventory still
 
 ## Acceptance criteria
 
-- [ ] Phase 1 `_GROUPING_FOLLOW` extended; tests cover `Tʃ`, `{Tʃ,Tʃʷ}`, and ticket 23 regressions
-- [ ] Full inventory re-baseline; `unknown_grouping` `T` count **49 → ≤5** (Phase 2 residual)
-- [ ] Before/after metrics recorded in **Answer**
-- [ ] Phase 2 approach documented or implemented for rGyalrongic `sTP` / `çT` if still failing
+- [x] Phase 1 `_GROUPING_FOLLOW` extended; tests cover `Tʃ`, `{Tʃ,Tʃʷ}`, and ticket 23 regressions
+- [x] Full inventory re-baseline; `unknown_grouping` `T` count **49 → ≤5** (Phase 2 residual)
+- [x] Before/after metrics recorded in **Answer**
+- [x] Phase 2 approach documented or implemented for rGyalrongic `sTP` / `çT` if still failing
+
+## Answer
+
+Phase 1 shipped in `group_mappings.py`: `_GROUPING_FOLLOW` now accepts IPA extensions (`U+0250–U+02AF`) after class letters, so `Tʃ`/`Tʃʷ` expand to `P:[-voice]ʃ`/`P:[-voice]ʃʷ`. Tests in `test_phonological_ruleset.py`.
+
+**Inventory (ASCA 0.10.2, full HTML re-parse):**
+
+| Metric | Before | After | Δ |
+|--------|-------:|------:|--:|
+| OK | 6658 (72.4%) | 6696 (72.8%) | **+38** |
+| `unknown_grouping` (all) | 133 | 89 | **−44** |
+| `unknown_grouping` `T` token | 49 | 5 | **−44** |
+
+Residual **5** `T` failures are all §36.3.2 rGyalrongic glued clusters (`sTP`, `çTP`, `lTP`, `çT`) — Phase 2 per investigation above; no new ticket filed yet.
 
 ## References
 
