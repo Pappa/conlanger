@@ -127,7 +127,7 @@ Multi-letter or prose shorthand defined only for one sound-change section (or fa
 _Avoid_: “series index” for `TŠ`; global `group_mappings.csv` rows for section-only labels
 
 **Feature matrix**:
-A distinctive-feature bundle written in brackets on a segment or alone in a rule string (e.g. `[+voice]`, `C:[+strident]`). At HTML→YAML ingest, Index feature names with safe 1:1 ASCA equivalents are normalised to ASCA canonical names via `feature_mappings.csv`; unmapped names are left as-is. `raw` preserves the original HTML form.
+A distinctive-feature bundle written in brackets on a segment or alone in a rule string (e.g. `[+voice]`, `C:[+strident]`). At HTML→YAML ingest, Index feature names are normalised inside `[...]` via `feature_mappings.csv`: 1:1 renames where safe, or multi-feature bundle expansion where one Index token maps to several ASCA features. Unmapped names are left as-is. `raw` preserves the original HTML form.
 _Avoid_: listing individual ASCA feature names or shorthands in this glossary; “features” when meaning phoneme-inventory dimensions
 
 **Meta-notation**:
