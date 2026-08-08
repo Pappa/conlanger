@@ -150,7 +150,7 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](./ad
 
 **Resolved correction passes (14–25):** unknown_grouping, length marker ː, em dash, arrow →, chain split, sporadic glosses, ejective ʼ, trailing glosses, stress env, labialized class letters, smart quotes, bare length marker.
 
-**Follow-on cluster work:** correspondence-series [26–28](../.scratch/cleaned-rule-corpus/issues/26-parse-time-correspondence-series-indices.md), unknown_feature [32](../.scratch/cleaned-rule-corpus/issues/32-correction-pass-unknown-feature.md), `samePOA` [33](../.scratch/cleaned-rule-corpus/issues/33-debug-same-poa-feature-artefact.md), positional/identity subscripts (planned compile-time, [spike 38](../.scratch/cleaned-rule-corpus/issues/38-spike-asca-compile-transform-order.md)).
+**Follow-on cluster work:** correspondence-series [26–28](../.scratch/cleaned-rule-corpus/issues/26-parse-time-correspondence-series-indices.md), unknown_feature [32](../.scratch/cleaned-rule-corpus/issues/32-correction-pass-unknown-feature.md), positional/identity subscripts (planned compile-time, [spike 38](../.scratch/cleaned-rule-corpus/issues/38-spike-asca-compile-transform-order.md)). (`samePOA` and other deferred unknown_feature leftovers: inventory-driven; no dedicated ticket.)
 
 ---
 
