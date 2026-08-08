@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Inventory ASCA compile/validate outcomes for provisional Index Diachronica YAML rules.
 
 Evidence ticket: .scratch/cleaned-rule-corpus/issues/02-inventory-valid-vs-invalid-rules.md

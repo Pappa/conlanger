@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Sample HTML rules and append heuristic ASCA-guess fixture rows.
 
 Evidence ticket: .scratch/cleaned-rule-corpus/issues/08-asca-validator.md
