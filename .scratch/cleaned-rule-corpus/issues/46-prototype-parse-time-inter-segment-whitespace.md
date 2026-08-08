@@ -1,5 +1,5 @@
 Type: prototype
-Status: ready-for-agent
+Status: claimed
 Blocked by: 44
 
 # Prototype: parse-time inter-segment whitespace feasibility
@@ -36,6 +36,12 @@ Cheap, throwaway experiment (via `/prototype`) that:
 - [ ] Fixture table: Index string → spaced candidate → notes / pass-fail
 - [ ] Written feasibility verdict: go / no-go / go-with-limits for parse-time SoT spacing
 - [ ] Open questions fed back to [Grill: inter-segment whitespace placement](45-grill-inter-segment-whitespace-placement.md)
+
+## Prototype artifact
+
+- [prototypes/parse-time-inter-segment-whitespace.html](../prototypes/parse-time-inter-segment-whitespace.html) — throwaway shareable demo (open in a browser). Pure segmentiser in the first `<script>` module; page shell is disposable.
+
+**Run:** open that HTML file (double-click or IDE preview). No install.
 
 ## Blocked by
 

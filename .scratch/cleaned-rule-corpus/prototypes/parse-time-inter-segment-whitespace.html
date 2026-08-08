@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PROTOTYPE — Parse-time inter-segment whitespace</title>
+<style>
+  :root {
+    --bg: #f7f4ef;
+    --ink: #1c1917;
+    --muted: #78716c;
+    --panel: #ffffff;
+    --line: #e7e5e4;
+    --accent: #0f766e;
+    --warn: #b45309;
+    --bad: #b91c1c;
+    --ok: #15803d;
+    --chip: #ecfdf5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    background: radial-gradient(1200px 600px at 10% -10%, #dbeafe 0%, transparent 50%),
+                radial-gradient(900px 500px at 100% 0%, #fde68a 0%, transparent 45%),
+                var(--bg);
+    color: var(--ink);
+    line-height: 1.45;
+  }
+  main {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 3rem;
+  }
+  h1 { font-size: 1.55rem; margin: 0 0 0.35rem; letter-spacing: -0.02em; }
+  .banner {
+    display: inline-block;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--warn);
+    border: 1px solid #fcd34d;
+    background: #fffbeb;
+    padding: 0.15rem 0.45rem;
+    border-radius: 999px;
+    margin-bottom: 0.75rem;
+  }
+  .lede { color: var(--muted); margin: 0 0 1.25rem; max-width: 46rem; }
+  .grid { display: grid; gap: 1rem; }
+  @media (min-width: 800px) {
+    .grid-2 { grid-template-columns: 1fr 1fr; }
+  }
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    box-shadow: 0 1px 0 rgba(28, 25, 23, 0.04);
+  }
+  .panel h2 {
+    margin: 0 0 0.65rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    font-weight: 700;
+  }
+  .mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.92rem;
+  }
+  .state-row {
+    display: grid;
+    grid-template-columns: 8.5rem 1fr;
+    gap: 0.4rem 0.75rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .state-row:last-child { border-bottom: 0; }
+  .label { color: var(--muted); font-size: 0.85rem; }
+  .units { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.25rem; }
+  .unit {
+    background: var(--chip);
+    border: 1px solid #99f6e4;
+    color: #115e59;
+    padding: 0.15rem 0.45rem;
+    border-radius: 6px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.88rem;
+  }
+  .warnings li { margin: 0.25rem 0; color: var(--bad); }
+  .notes li { margin: 0.25rem 0; color: var(--muted); }
+  .btns { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+  button {
+    font: inherit;
+    cursor: pointer;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--ink);
+    border-radius: 8px;
+    padding: 0.4rem 0.7rem;
+  }
+  button:hover { border-color: var(--accent); color: var(--accent); }
+  button.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  button.primary:hover { filter: brightness(1.05); color: #fff; }
+  button.toggle.on {
+    background: #ecfdf5;
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  button:disabled { opacity: 0.45; cursor: not-allowed; }
+  textarea {
+    width: 100%;
+    min-height: 4.5rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.95rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 0.55rem 0.65rem;
+    resize: vertical;
+  }
+  .tabs { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.75rem; }
+  .tab {
+    border-radius: 999px;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.88rem;
+  }
+  .tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .scenario p { margin: 0 0 0.75rem; color: var(--ink); }
+  .step-meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 0.5rem; }
+  .changed { outline: 2px solid #5eead4; outline-offset: 2px; border-radius: 8px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="banner">PROTOTYPE — throwaway · not production</div>
+  <h1>Parse-time inter-segment whitespace</h1>
+  <p class="lede">
+    <strong>Question:</strong> If we insert spaces between phonemes/graphemes into Index rule fields
+    at parse time (so the cleaned YAML SoT is space-separated), does that feel workable — or does it
+    smash Index parallel parts, digraphs, matrices, and subscripts?
+  </p>
+
+  <div class="grid">
+    <section class="panel" id="state-panel">
+      <h2>Current state</h2>
+      <div id="state"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Free play</h2>
+      <p class="step-meta">Poke the model in any order. Every click re-segmentises the current field string.</p>
+      <div class="btns" style="margin-bottom:0.75rem">
+        <button type="button" data-action="prev-fixture">← Prev fixture</button>
+        <button type="button" data-action="next-fixture">Next fixture →</button>
+        <button type="button" class="toggle" data-action="toggle-digraphs" id="btn-digraphs">Digraph longest-match</button>
+        <button type="button" class="toggle" data-action="toggle-parallel" id="btn-parallel">Treat spaces as parallel parts</button>
+        <button type="button" class="toggle" data-action="toggle-insert" id="btn-insert">Insert inter-segment spaces</button>
+        <button type="button" data-action="reset">Reset defaults</button>
+      </div>
+      <label class="label" for="custom">Custom Index field string</label>
+      <textarea id="custom" spellcheck="false" placeholder="Type or paste an Index input/output/env fragment…"></textarea>
+      <div class="btns" style="margin-top:0.55rem">
+        <button type="button" class="primary" data-action="apply-custom">Segment custom string</button>
+        <button type="button" data-action="load-fixture">Reload current fixture</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Guided walkthroughs</h2>
+      <div class="tabs" id="tabs"></div>
+      <div class="scenario" id="scenario"></div>
+    </section>
+  </div>
+</main>
+
+<script>
+/**
+ * PROTOTYPE pure module — segment Index-shaped rule fields and optionally
+ * insert inter-segment whitespace. No DOM. Liftable in spirit; throwaway in practice.
+ *
+ * Assumptions (explicit, crude):
+ * - Longest-match against a small Index digraph table (affricates) when enabled.
+ * - Then one base char + following diacritics (ʷ ʲ ʼ ˤ ː ˑ ͡ ͜ ^ …).
+ * - Unicode subscripts attach to the preceding unit.
+ * - Inside [...] do not split (Kind B feature matrix).
+ * - Inside {...} split on commas, recurse members.
+ * - Existing ASCII spaces: either "parallel parts" (keep as separators between
+ *   already-complete side-pieces) or treated as ignorable / already boundaries.
+ */
+const WhitespacePrototype = (() => {
+  const DIGRAPHS = [
+    "ʈʂ", "ɖʐ", "tɕ", "dʑ", "tʃ", "dʒ", "tɬ", "dɮ", "ts", "dz", "pf", "kx",
+    "t͜s", "t͡ʃ", "d͡ʒ", "t͡s", "d͡z", "t͡ɬ", "d͡ɮ", "t͡ɕ", "d͡ʑ",
+  ].sort((a, b) => b.length - a.length);
+
+  const DIACRITICS = new Set([
+    "ʷ", "ʲ", "ʼ", "ˤ", "ː", "ˑ", "͡", "͜", "^", "ʰ", "ʱ", "ⁿ", "ˀ", "̃", "̈", "̥", "̬", "̩", "̯", "̚",
+    "\u0301", "\u0300", "\u0302", "\u0304", "\u0308", "\u0325", "\u0329", "\u032F",
+  ]);
+  const SUBSCRIPTS = new Set("₀₁₂₃₄₅₆₇₈₉ₓ".split(""));
+  const CLASS_LETTERS = new Set("CSPOFLNGVKTHMWYIXQZR".split(""));
+
+  function createInitialState() {
+    return {
+      fixtureIndex: 0,
+      source: FIXTURES[0].text,
+      fixtureId: FIXTURES[0].id,
+      fixtureNote: FIXTURES[0].note,
+      useDigraphs: true,
+      spacesAreParallel: true,
+      insertSpaces: true,
+      lastAction: "load fixture 0",
+      result: null,
+      walkthroughId: "parallel",
+      walkStep: 0,
+    };
+  }
+
+  function reduce(state, action) {
+    const next = { ...state };
+    switch (action.type) {
+      case "RESET":
+        return createInitialState();
+      case "SET_FIXTURE": {
+        const i = ((action.index % FIXTURES.length) + FIXTURES.length) % FIXTURES.length;
+        const f = FIXTURES[i];
+        next.fixtureIndex = i;
+        next.source = f.text;
+        next.fixtureId = f.id;
+        next.fixtureNote = f.note;
+        next.lastAction = `fixture → ${f.id}`;
+        break;
+      }
+      case "NEXT_FIXTURE":
+        return reduce(state, { type: "SET_FIXTURE", index: state.fixtureIndex + 1 });
+      case "PREV_FIXTURE":
+        return reduce(state, { type: "SET_FIXTURE", index: state.fixtureIndex - 1 });
+      case "TOGGLE_DIGRAPHS":
+        next.useDigraphs = !state.useDigraphs;
+        next.lastAction = `digraph longest-match ${next.useDigraphs ? "ON" : "OFF"}`;
+        break;
+      case "TOGGLE_PARALLEL":
+        next.spacesAreParallel = !state.spacesAreParallel;
+        next.lastAction = `spaces as parallel ${next.spacesAreParallel ? "ON" : "OFF"}`;
+        break;
+      case "TOGGLE_INSERT":
+        next.insertSpaces = !state.insertSpaces;
+        next.lastAction = `insert spaces ${next.insertSpaces ? "ON" : "OFF"}`;
+        break;
+      case "SET_CUSTOM":
+        next.source = action.text;
+        next.fixtureId = "custom";
+        next.fixtureNote = "Custom string";
+        next.lastAction = "custom string applied";
+        break;
+      case "START_WALKTHROUGH":
+        next.walkthroughId = action.id;
+        next.walkStep = 0;
+        Object.assign(next, applyWalkPreset(action.id, 0));
+        next.lastAction = `walkthrough ${action.id} step 0`;
+        break;
+      case "WALK_STEP": {
+        const wt = WALKTHROUGHS.find((w) => w.id === state.walkthroughId);
+        if (!wt) break;
+        const step = Math.min(action.step, wt.steps.length - 1);
+        next.walkStep = step;
+        Object.assign(next, applyWalkPreset(state.walkthroughId, step));
+        next.lastAction = `walkthrough ${state.walkthroughId} step ${step}`;
+        break;
+      }
+      default:
+        break;
+    }
+    next.result = segmentField(next.source, {
+      useDigraphs: next.useDigraphs,
+      spacesAreParallel: next.spacesAreParallel,
+      insertSpaces: next.insertSpaces,
+    });
+    return next;
+  }
+
+  function applyWalkPreset(walkId, stepIndex) {
+    const wt = WALKTHROUGHS.find((w) => w.id === walkId);
+    const step = wt.steps[stepIndex];
+    const fixture = FIXTURES.find((f) => f.id === step.fixtureId) || FIXTURES[0];
+    return {
+      fixtureIndex: FIXTURES.indexOf(fixture),
+      source: fixture.text,
+      fixtureId: fixture.id,
+      fixtureNote: fixture.note,
+      useDigraphs: step.useDigraphs,
+      spacesAreParallel: step.spacesAreParallel,
+      insertSpaces: step.insertSpaces,
+    };
+  }
+
+  function segmentField(text, opts) {
+    const warnings = [];
+    const notes = [];
+    if (!text) {
+      return { units: [], parts: [], spaced: "", warnings: ["Empty string"], notes: [] };
+    }
+
+    // Split parallel parts on ASCII space when that mode is on.
+    let parts;
+    if (opts.spacesAreParallel && /\s/.test(text)) {
+      parts = text.split(/\s+/).filter(Boolean);
+      if (parts.length > 1) {
+        warnings.push(
+          "Index spaces treated as PARALLEL PART separators (condensed multi-change), not phoneme boundaries."
+        );
+      }
+    } else {
+      parts = [text.replace(/\s+/g, "")];
+      if (/\s/.test(text) && !opts.spacesAreParallel) {
+        notes.push("Existing spaces stripped before segmentation (parallel mode OFF).");
+      }
+    }
+
+    const partUnits = parts.map((part) => scanUnits(part, opts, warnings, notes));
+    const flat = partUnits.flat();
+    let spaced;
+    if (!opts.insertSpaces) {
+      spaced = opts.spacesAreParallel ? parts.join(" ") : flat.join("");
+      notes.push("Insert spaces OFF — showing Index-shaped (or parallel-joined) string.");
+    } else if (opts.spacesAreParallel && parts.length > 1) {
+      // Space inside each parallel part; keep single space between parts.
+      spaced = partUnits.map((u) => u.join(" ")).join("  ·  ");
+      warnings.push(
+        "With parallel parts, phoneme spaces and Index parallel spaces collide visually — shown with · between parts."
+      );
+    } else {
+      spaced = flat.join(" ");
+    }
+
+    if (flat.some((u) => /[+−-]/.test(u) && u.includes("["))) {
+      notes.push("Feature matrix kept as one unit (no internal Kind-A spaces).");
+    }
+
+    return { units: flat, parts: partUnits, spaced, warnings, notes };
+  }
+
+  function scanUnits(s, opts, warnings, notes) {
+    const units = [];
+    let i = 0;
+    while (i < s.length) {
+      const ch = s[i];
+
+      if (ch === "[") {
+        const end = findMatching(s, i, "[", "]");
+        if (end < 0) {
+          warnings.push("Unmatched [ — took rest of string as matrix.");
+          units.push(s.slice(i));
+          break;
+        }
+        units.push(s.slice(i, end + 1));
+        i = end + 1;
+        continue;
+      }
+      if (ch === "{") {
+        const end = findMatching(s, i, "{", "}");
+        if (end < 0) {
+          warnings.push("Unmatched { — took rest as set.");
+          units.push(s.slice(i));
+          break;
+        }
+        const inner = s.slice(i + 1, end);
+        const members = inner.split(",").map((m) => m.trim()).filter(Boolean);
+        const nested = members.map((m) => scanUnits(m, opts, warnings, notes));
+        units.push("{" + nested.map((u) => u.join(opts.insertSpaces ? " " : "")).join(", ") + "}");
+        notes.push(`Set with ${members.length} member(s) — recursed per member.`);
+        i = end + 1;
+        continue;
+      }
+      if (ch === "(" || ch === ")" || ch === "/" || ch === "|" || ch === ">" || ch === "_" || ch === "#" || ch === "*" || ch === "∅" || ch === "$" || ch === "%" || ch === "," ) {
+        units.push(ch);
+        i += 1;
+        continue;
+      }
+
+      let matched = null;
+      if (opts.useDigraphs) {
+        for (const d of DIGRAPHS) {
+          if (s.startsWith(d, i)) {
+            matched = d;
+            break;
+          }
+        }
+      }
+      if (matched) {
+        i += matched.length;
+        // attach diacritics + subscripts
+        while (i < s.length && (DIACRITICS.has(s[i]) || SUBSCRIPTS.has(s[i]))) {
+          matched += s[i];
+          i += 1;
+        }
+        // optional :[matrix] after segment
+        if (s[i] === ":" && s[i + 1] === "[") {
+          const end = findMatching(s, i + 1, "[", "]");
+          if (end >= 0) {
+            matched += s.slice(i, end + 1);
+            i = end + 1;
+          }
+        }
+        units.push(matched);
+        continue;
+      }
+
+      // base + diacritics / class letter
+      let unit = ch;
+      i += 1;
+      while (i < s.length && (DIACRITICS.has(s[i]) || SUBSCRIPTS.has(s[i]))) {
+        unit += s[i];
+        i += 1;
+      }
+      if (s[i] === ":" && s[i + 1] === "[") {
+        const end = findMatching(s, i + 1, "[", "]");
+        if (end >= 0) {
+          unit += s.slice(i, end + 1);
+          i = end + 1;
+        }
+      }
+      // Heuristic: glued class compounds like VNC, CV without digraph table
+      if (CLASS_LETTERS.has(ch) && unit.length === 1) {
+        // leave as single letters; CV becomes C then V — intentional for prototype
+      }
+      units.push(unit);
+    }
+    return units;
+  }
+
+  function findMatching(s, start, open, close) {
+    let depth = 0;
+    for (let i = start; i < s.length; i++) {
+      if (s[i] === open) depth++;
+      else if (s[i] === close) {
+        depth--;
+        if (depth === 0) return i;
+      }
+    }
+    return -1;
+  }
+
+  const FIXTURES = [
+    { id: "parallel-afro", text: "dz ʃ tʃ", note: "Parallel condensed I/O (HTML:956) — spaces are NOT phoneme boundaries" },
+    { id: "affricate-tʃ", text: "tʃ", note: "Untied Index affricate digraph" },
+    { id: "affricate-out", text: "dʒ", note: "Another untied affricate" },
+    { id: "labial-k", text: "kʷ", note: "Base + labialisation diacritic" },
+    { id: "length", text: "aː", note: "Length mark glued to vowel" },
+    { id: "matrix", text: "C[+voice]", note: "Class letter + feature matrix" },
+    { id: "matrix-space", text: "S[+ voice]", note: "Kind B space inside brackets" },
+    { id: "slots", text: "C₁C₂", note: "Positional subscript compound" },
+    { id: "identity", text: "V₀V₀", note: "Identity subscript compound" },
+    { id: "compound", text: "mV₀nV₀", note: "Segment + identity vowel slots" },
+    { id: "class-vnc", text: "VNC", note: "Class-letter cluster" },
+    { id: "set", text: "{ɣ,q}", note: "ASCA-style set" },
+    { id: "glued-word", text: "kat", note: "Simple glued IPA sequence" },
+    { id: "ejective-lab", text: "kʼ kʷʼ", note: "Parallel ejectives / labialised" },
+    { id: "env-ish", text: "V₁[+high]_V₂", note: "Env-shaped with slots + matrix" },
+  ];
+
+  const WALKTHROUGHS = [
+    {
+      id: "parallel",
+      title: "Parallel spaces",
+      blurb: "Index uses spaces between parallel condensed parts. Watch what happens when we treat those spaces as phoneme boundaries vs parallel separators.",
+      steps: [
+        { label: "Load parallel example", fixtureId: "parallel-afro", useDigraphs: true, spacesAreParallel: true, insertSpaces: true },
+        { label: "Turn OFF parallel mode (naive)", fixtureId: "parallel-afro", useDigraphs: true, spacesAreParallel: false, insertSpaces: true },
+        { label: "Restore parallel mode", fixtureId: "parallel-afro", useDigraphs: true, spacesAreParallel: true, insertSpaces: true },
+      ],
+    },
+    {
+      id: "digraph",
+      title: "Affricate digraphs",
+      blurb: "Does longest-match keep tʃ as one unit? Turn digraph matching off and see it split — the ASCA-vs-Index tension.",
+      steps: [
+        { label: "tʃ with digraph table ON", fixtureId: "affricate-tʃ", useDigraphs: true, spacesAreParallel: true, insertSpaces: true },
+        { label: "tʃ with digraph table OFF", fixtureId: "affricate-tʃ", useDigraphs: false, spacesAreParallel: true, insertSpaces: true },
+        { label: "dʒ digraph ON", fixtureId: "affricate-out", useDigraphs: true, spacesAreParallel: true, insertSpaces: true },
+      ],
+    },
+    {
+      id: "diacritics",
+      title: "Length & labialisation",
+      blurb: "Diacritics should stay glued to their base. Spaced SoT must not become k ʷ or a ː.",
+      steps: [
+        { label: "Labialised kʷ", fixtureId: "labial-k", useDigraphs: true, spacesAreParallel: true, insertSpaces: true },
+        { label: "Long aː", fixtureId: "length", useDigraphs: true, spacesAreParallel: true, insertSpaces: true },
+      ],
+    },
+    {
+      id: "matrix",
+      title: "Feature matrices",
+      blurb: "Kind A inter-segment spaces must not be inserted inside [...]. Kind B spaces already inside brackets are a different problem.",
+      steps: [
+        { label: "C[+voice]", fixtureId: "matrix", useDigraphs: true, spacesAreParallel: true, insertSpaces: true },
+        { label: "S[+ voice] (Kind B)", fixtureId: "matrix-space", useDigraphs: true, spacesAreParallel: true, insertSpaces: true },
+      ],
+    },
+    {
+      id: "subscripts",
+      title: "Subscript compounds",
+      blurb: "C₁C₂ and mV₀ need subscript-aware units. Blind spacing breaks co-reference.",
+      steps: [
+        { label: "Positional C₁C₂", fixtureId: "slots", useDigraphs: true, spacesAreParallel: true, insertSpaces: true },
+        { label: "Identity V₀V₀", fixtureId: "identity", useDigraphs: true, spacesAreParallel: true, insertSpaces: true },
+        { label: "Compound mV₀nV₀", fixtureId: "compound", useDigraphs: true, spacesAreParallel: true, insertSpaces: true },
+        { label: "Class cluster VNC", fixtureId: "class-vnc", useDigraphs: true, spacesAreParallel: true, insertSpaces: true },
+      ],
+    },
+  ];
+
+  return { createInitialState, reduce, FIXTURES, WALKTHROUGHS, DIGRAPHS };
+})();
+
+/* --- throwaway page shell --- */
+(function () {
+  let state = WhitespacePrototype.reduce(WhitespacePrototype.createInitialState(), { type: "RESET" });
+
+  const els = {
+    state: document.getElementById("state"),
+    tabs: document.getElementById("tabs"),
+    scenario: document.getElementById("scenario"),
+    custom: document.getElementById("custom"),
+    digraphs: document.getElementById("btn-digraphs"),
+    parallel: document.getElementById("btn-parallel"),
+    insert: document.getElementById("btn-insert"),
+    statePanel: document.getElementById("state-panel"),
+  };
+
+  function dispatch(action) {
+    state = WhitespacePrototype.reduce(state, action);
+    render();
+  }
+
+  function render() {
+    const r = state.result;
+    els.digraphs.classList.toggle("on", state.useDigraphs);
+    els.parallel.classList.toggle("on", state.spacesAreParallel);
+    els.insert.classList.toggle("on", state.insertSpaces);
+
+    els.state.innerHTML = `
+      <div class="state-row"><div class="label">Fixture</div><div><strong>${escapeHtml(state.fixtureId)}</strong> — ${escapeHtml(state.fixtureNote)}</div></div>
+      <div class="state-row"><div class="label">Source</div><div class="mono">${escapeHtml(state.source)}</div></div>
+      <div class="state-row"><div class="label">Units</div><div><div class="units">${r.units.map((u) => `<span class="unit">${escapeHtml(u)}</span>`).join("") || "<span class='label'>(none)</span>"}</div></div></div>
+      <div class="state-row"><div class="label">Spaced candidate</div><div class="mono">${escapeHtml(r.spaced)}</div></div>
+      <div class="state-row"><div class="label">Toggles</div><div class="mono">digraphs=${state.useDigraphs} · parallelSpaces=${state.spacesAreParallel} · insertSpaces=${state.insertSpaces}</div></div>
+      <div class="state-row"><div class="label">Last action</div><div>${escapeHtml(state.lastAction)}</div></div>
+      <div class="state-row"><div class="label">Warnings</div><div>${listHtml(r.warnings, "warnings")}</div></div>
+      <div class="state-row"><div class="label">Notes</div><div>${listHtml(r.notes, "notes")}</div></div>
+      <div class="state-row"><div class="label">ASCA reminder</div><div class="label">ASCA 0.10.2 does not require these spaces; tied digraphs matter more than whitespace.</div></div>
+    `;
+
+    els.tabs.innerHTML = WhitespacePrototype.WALKTHROUGHS.map((w) =>
+      `<button type="button" class="tab ${w.id === state.walkthroughId ? "active" : ""}" data-walk="${w.id}">${escapeHtml(w.title)}</button>`
+    ).join("");
+
+    const wt = WhitespacePrototype.WALKTHROUGHS.find((w) => w.id === state.walkthroughId);
+    const step = wt.steps[state.walkStep];
+    els.scenario.innerHTML = `
+      <p>${escapeHtml(wt.blurb)}</p>
+      <div class="step-meta">Step ${state.walkStep + 1} of ${wt.steps.length}: <strong>${escapeHtml(step.label)}</strong></div>
+      <div class="btns">
+        ${wt.steps.map((s, i) =>
+          `<button type="button" class="${i === state.walkStep ? "primary" : ""}" data-walk-step="${i}" ${i > state.walkStep + 1 ? "disabled" : ""}>${i + 1}. ${escapeHtml(s.label)}</button>`
+        ).join("")}
+      </div>
+    `;
+
+    els.statePanel.classList.add("changed");
+    setTimeout(() => els.statePanel.classList.remove("changed"), 250);
+  }
+
+  function listHtml(items, cls) {
+    if (!items || !items.length) return `<span class="label">—</span>`;
+    return `<ul class="${cls}">${items.map((x) => `<li>${escapeHtml(x)}</li>`).join("")}</ul>`;
+  }
+
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  document.body.addEventListener("click", (e) => {
+    const t = e.target;
+    if (!(t instanceof HTMLElement)) return;
+    const action = t.getAttribute("data-action");
+    if (action === "next-fixture") dispatch({ type: "NEXT_FIXTURE" });
+    if (action === "prev-fixture") dispatch({ type: "PREV_FIXTURE" });
+    if (action === "toggle-digraphs") dispatch({ type: "TOGGLE_DIGRAPHS" });
+    if (action === "toggle-parallel") dispatch({ type: "TOGGLE_PARALLEL" });
+    if (action === "toggle-insert") dispatch({ type: "TOGGLE_INSERT" });
+    if (action === "reset") dispatch({ type: "RESET" });
+    if (action === "apply-custom") dispatch({ type: "SET_CUSTOM", text: els.custom.value });
+    if (action === "load-fixture") dispatch({ type: "SET_FIXTURE", index: state.fixtureIndex });
+    const walk = t.getAttribute("data-walk");
+    if (walk) dispatch({ type: "START_WALKTHROUGH", id: walk });
+    const walkStep = t.getAttribute("data-walk-step");
+    if (walkStep != null) dispatch({ type: "WALK_STEP", step: Number(walkStep) });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
