@@ -33,7 +33,7 @@ Passes may add ingest normalizations (feature mappings, class-letter compile, en
 
 ## Answer
 
-Standing recipe — not a single deliverable. Remains open. Twelve instances filed and resolved as tickets [14](14-correction-pass-unknown-grouping.md) through [25](25-correction-pass-bare-length-marker.md). File new numbered tickets (26+) for further clusters from [inventory summary](../inventory/asca-rule-inventory-summary.md).
+Standing recipe — not a single deliverable. Remains open. Twelve instances filed and resolved as tickets [14](14-correction-pass-unknown-grouping.md) through [25](25-correction-pass-bare-length-marker.md). Further instances from [inventory summary](../inventory/asca-rule-inventory-summary.md) include [43 — residual `unknown_grouping` `T`](43-correction-pass-unknown-grouping-t.md) (investigation filed 2026-08-08; Phase 1 fix ready-for-agent).
 
 ## Comments
 
