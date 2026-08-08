@@ -4,8 +4,8 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9201** (one per corpus rule)
-- OK: **7132** (77.5%)
-- Fail: **2069** (22.5%)
+- OK: **7134** (77.5%)
+- Fail: **2067** (22.5%)
 - Sections all OK: **204 / 714** (28.6%)
 
 ## Failure classes
@@ -15,7 +15,7 @@
 | 637 | `syntax_other` |
 | 414 | `expected_underscore` |
 | 383 | `unknown_character` |
-| 164 | `unknown_feature` |
+| 162 | `unknown_feature` |
 | 116 | `runtime_other` |
 | 100 | `unknown_grouping` |
 | 67 | `prose_or_expected_arrow` |
@@ -45,31 +45,30 @@
 | count | error_token | suggested |
 |------:|-------------|-----------|
 | 22 | `dental` | `ldental` |
-| 19 | `open` | `ten` |
+| 18 | `open` | `ten` |
 | 13 | `palatal` | `latrl` |
 | 11 | `lowtone` | `contin` |
 | 10 | `samePOA` | `lateral` |
-| 9 | `closed` | `cons` |
 | 9 | `fortis` | `contin` |
-| 8 | `mid` | `man` |
+| 9 | `closed` | `cons` |
 | 8 | `hightone` | `high` |
+| 8 | `mid` | `man` |
 | 6 | `lenis` | `tens` |
 | 5 | `alveolar` | `delay` |
-| 5 | `guttural` | `lateral` |
 | 5 | `weak` | `man` |
 | 5 | `velar` | `delay` |
+| 5 | `guttural` | `lateral` |
 | 4 | `uvular` | `lar` |
 | 3 | `fallingtone` | `length` |
-| 2 | `affricate` | `stridnt` |
 | 2 | `lowfallingtone` | `continuant` |
 | 2 | `fricative` | `rhotic` |
+| 2 | `affricate` | `stridnt` |
 | 2 | `highrisingtone` | `strident` |
 | 1 | `intertonic` | `anterior` |
-| 1 | `ejective` | `contin` |
 | 1 | `highpitch` | `high` |
+| 1 | `ejective` | `contin` |
 | 1 | `lowpitch` | `voice` |
 | 1 | `APOA` | `root` |
-| 1 | `close` | `cons` |
 | 1 | `glide` | `click` |
 | 1 | `tonic` | `cons` |
 | 1 | `palatalized` | `latrl` |

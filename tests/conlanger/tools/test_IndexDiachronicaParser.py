@@ -47,6 +47,7 @@ from conlanger.tools.parsers import (
     write_rule_comment_phrase_summary,
 )
 from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
+from conlanger.tools.rules import SoundChangeRuleSet
 
 _SAMPLED_RULES_CSV = (
     Path(__file__).resolve().parents[2] / "fixtures" / "sound_change_rules.csv"
@@ -847,6 +848,9 @@ def test_load_feature_mappings_from_default_csv():
     assert by_name["short"].asca_target == "long"
     assert by_name["glottalized"].mapping_kind == "rename_polarity"
     assert by_name["glottalized"].asca_target == "place"
+    assert by_name["close-mid"].mapping_kind == "bundle"
+    assert by_name["close-mid"].asca_target == "-hi,-lo,+tense"
+    assert by_name["open-mid"].mapping_kind == "bundle"
 
 
 def test_normalize_feature_matrices_in_field_rename():
@@ -867,6 +871,51 @@ def test_normalize_feature_matrices_in_field_rename_polarity():
     assert normalize_feature_matrices_in_field("S[- glottalized]", mappings) == "S[+place]"
     assert normalize_feature_matrices_in_field("V[+glottalized]", mappings) == "V[-place]"
     assert normalize_feature_matrices_in_field("V[-glottalized]", mappings) == "V[+place]"
+
+
+def test_normalize_feature_matrices_in_field_bundle():
+    mappings = feature_mappings_dict()
+    assert (
+        normalize_feature_matrices_in_field("_CV[+close-mid](C)#", mappings)
+        == "_CV[-hi,-lo,+tense](C)#"
+    )
+    assert (
+        normalize_feature_matrices_in_field("_CV[+open-mid](C)#", mappings)
+        == "_CV[-hi,-lo,-tense](C)#"
+    )
+
+
+def test_normalize_feature_matrices_in_field_bundle_compound_key_only():
+    mappings = feature_mappings_dict()
+    assert (
+        normalize_feature_matrices_in_field("V[+open]", mappings) == "V[+open]"
+    )
+
+
+def test_kenyah_vowel_height_rules_validate():
+    mappings = feature_mappings_dict()
+    rules = [
+        {
+            "input": "i u",
+            "output": "e o",
+            "env": normalize_feature_matrices_in_field(
+                "_CV[+close-mid](C)#", mappings
+            ),
+        },
+        {
+            "input": "i u",
+            "output": "ɛ ɔ",
+            "env": normalize_feature_matrices_in_field(
+                "_CV[+open-mid](C)#", mappings
+            ),
+        },
+    ]
+    section = {
+        "index": "10.2.6.2.1",
+        "section": "Proto-Kenyah to Òma Lóngh",
+        "rules": rules,
+    }
+    validate_asca(SoundChangeRuleSet(section, "asca"))
 
 
 def test_normalize_feature_matrices_in_field_leaves_raw_tokens_outside_brackets():

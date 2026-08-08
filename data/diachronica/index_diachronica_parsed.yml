@@ -8348,13 +8348,13 @@ sections:
     source: index_diachronica_original.html:3053
   - input: i u
     output: e o
-    env: _CV[+close-mid](C)#
+    env: _CV[-hi,-lo,+tense](C)#
     comment: “(iə is treated as close mid for this change)”
     raw: i u → e o / _CV[+close-mid](C)# “(iə is treated as close mid for this change)”
     source: index_diachronica_original.html:3054
   - input: i u
     output: ɛ ɔ
-    env: _CV[+open-mid](C)#
+    env: _CV[-hi,-lo,-tense](C)#
     raw: i u → ɛ ɔ / _CV[+open-mid](C)#
     source: index_diachronica_original.html:3055
   - input: i u
