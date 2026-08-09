@@ -1,4 +1,5 @@
 Type: task
+Status: resolved
 Blocked by: 12, 23
 
 # Correction pass: superscript segment modifiers

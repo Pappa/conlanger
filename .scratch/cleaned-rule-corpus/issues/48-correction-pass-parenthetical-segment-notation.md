@@ -1,4 +1,5 @@
 Type: task
+Status: resolved
 Blocked by: 12
 
 # Correction pass: parenthetical segment notation
