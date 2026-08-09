@@ -9266,8 +9266,8 @@ sections:
     source: index_diachronica_original.html:2950
   - stages:
     - q
-    - χ (
-    - ʕ)
+    - χ
+    - ʕ
     raw: q → χ (→ ʕ)
     source: index_diachronica_original.html:2951
 - section: Proto-Malayo-Polynesian to Proto-North Sarawak
@@ -11051,9 +11051,9 @@ sections:
     source: index_diachronica_original.html:3320
   - stages:
     - bw mw
-    - ɡw ŋw (
+    - ɡw ŋw
     - ɡ ŋ
-    env: _V[+round])
+    env: _V[+round]
     raw: bw mw → ɡw ŋw (→ ɡ ŋ / _V[+ rounded])
     source: index_diachronica_original.html:3321
 - section: Proto-New Caledonia to Proto-Yunaga
@@ -11997,8 +11997,8 @@ sections:
     raw: t → c / _E
     source: index_diachronica_original.html:3540
   - stages:
-    - q (
-    - kw ?)
+    - q
+    - kw
     - v
     comment: (rare)
     raw: q (→ kw ?) → v (rare)
@@ -13812,10 +13812,8 @@ sections:
     raw: kː ɡ → x {kː,ɡ}
     source: index_diachronica_original.html:3980
   - stages:
-    - ɣ
-    - q (more likely, *ɢ
-    - q instead of
-    - ɣ)
+    - ɢ
+    - q
     raw: ɣ → q (more likely, *ɢ → q instead of → ɣ)
     source: index_diachronica_original.html:3981
   - stages:
@@ -18627,8 +18625,8 @@ sections:
     raw: l → ʎ / _{i,j}
     source: index_diachronica_original.html:5140
   - stages:
-    - w (
-    - v?)
+    - w
+    - v
     - f
     env: s_
     raw: w (→ v?) → f / s_
@@ -20483,7 +20481,7 @@ sections:
   - stages:
     - s
     - z
-    env: _C[+voice]
+    env: C[+voice]_
     raw: “The PIE rules for the voicing of s → z, as in [nizdos] for *nisdos, are
       assumed to apply”
     source: index_diachronica_original.html:5499
@@ -22618,8 +22616,8 @@ sections:
     source: index_diachronica_original.html:5904
   - stages:
     - ɛː
-    - ɛi (
-    - əi?)
+    - ɛi
+    - əi
     env: in some northern varieties
     raw: — ɛː → ɛi (→ əi?) / in some northern varieties
     source: index_diachronica_original.html:5905
@@ -23343,8 +23341,8 @@ sections:
     source: index_diachronica_original.html:6041
   - stages:
     - a
-    - ɒ? (
-    - o)
+    - ɒ
+    - o
     env: _ɫ
     raw: a → ɒ? (→ o) / _ɫ
     source: index_diachronica_original.html:6043
@@ -25782,8 +25780,8 @@ sections:
     raw: ∅ → b / m_l
     source: index_diachronica_original.html:6480
   - stages:
-    - nd ld (
-    - nː lː ?)
+    - nd ld
+    - nː lː
     - ɲ ʎ
     raw: nd ld (→ nː lː ?) → ɲ ʎ
     source: index_diachronica_original.html:6481
@@ -30293,15 +30291,20 @@ sections:
     env: V_V
     raw: j → ʝː / V_V
     source: index_diachronica_original.html:7337
-  - stages: []
+  - stages:
+    - ;;
+    - u (and ultimately also ɔ, oː
+    - o)
+    - e; i, iː
+    - i; u, uː
+    - u
+    comment: “In contrast, Romanian exhibits u, uː; and Sardinian and African Latin
+      underwent a straight merger of the vowels by length without considering quality
+      (e, eː; ”; etc.)
     raw: “In contrast, Romanian exhibits u, uː → u (and ultimately also ɔ, oː → o);
       and Sardinian and African Latin underwent a straight merger of the vowels by
       length without considering quality (e, eː → e; i, iː → i; u, uː → u; etc.)”
     source: index_diachronica_original.html:7338
-    comment: “In contrast, Romanian exhibits u, uː → u (and ultimately also ɔ, oː
-      → o); and Sardinian and African Latin underwent a straight merger of the vowels
-      by length without considering quality (e, eː → e; i, iː → i; u, uː → u; etc.)”
-    status: skipped
 - section: Latin to Catalan
   index: 17.12.1.1.2
   abbreviations:
@@ -35152,7 +35155,7 @@ sections:
   - stages:
     - Vdz
     - ∅
-    env: '{nts,ndz,rdz_'
+    env: '{nts,ndz,rdz}_'
     raw: — Vdz → ∅ / {nts,ndz,rdz_
     source: index_diachronica_original.html:8176
   - stages:
@@ -59877,8 +59880,8 @@ sections:
     source: index_diachronica_original.html:14331
   - stages:
     - ɛː
-    - ɛi (
-    - əi?)
+    - ɛi
+    - əi
     env: in some northern varieties
     raw: ɛː → ɛi (→ əi?) / in some northern varieties
     source: index_diachronica_original.html:14332
