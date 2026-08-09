@@ -61,8 +61,12 @@ One Index Diachronica `<h2>` section — a named language-change block (index, t
 _Avoid_: `SoundChangeRuleSet` as the glossary term for this level; conflating “section” with “rule line”
 
 **Corpus rule**:
-One structured entry in the rule corpus, normally corresponding to a single Index Diachronica rule line (including internal sets/alternations when needed). It always carries input, output, raw, and source; environment and exception are optional (absent environment = any; absent exception = none). Optional rule status may hold a rule out or flag it for extra validation; edge cases not yet representable use empty input/output with `status: skipped` instead of splitting.
-_Avoid_: treating every surface alternation as a separate authored rule by default; using “rule” when the whole HTML section is meant
+One structured entry in the rule corpus, normally corresponding to a single Index Diachronica rule line (including internal sets/alternations when needed). It always carries **stages**, raw, and source; environment and exception are optional (absent environment = any; absent exception = none). Optional rule status may hold a rule out or flag it for extra validation; edge cases not yet representable use empty stages (`stages: []`) with `status: skipped` instead of splitting into multiple corpus rules.
+_Avoid_: treating every surface alternation as a separate authored rule by default; using “rule” when the whole HTML section is meant; required `input`/`output` fields as the corpus shape (replaced by **stages**)
+
+**Stages**:
+The ordered list of opaque Index-shaped strings on a corpus rule that encode the change spine — successive forms separated by arrows in the Index line. Length 2 is a single-step change (former `input` then `output`); length ≥ 3 is a chain; length 0 with `status: skipped` means unrepresentable. Each entry stays an opaque string (sets, matrices, class letters intact), not a structured segment object.
+_Avoid_: `input`/`output` as the stored spine; encoding the chain only as `" > "` inside a single string field; list-typed `input` with scalar `output`
 
 **Environment**:
 The phonological context in which a sound change applies — the `/ … _` portion of a rule (where the change is conditioned). Stored as optional field `env` on a corpus rule; absent means any environment.
@@ -73,12 +77,12 @@ A phonological context that blocks an otherwise applicable change — the `! …
 _Avoid_: the English word “except” in citation prose; conflating with environment
 
 **Rule comment**:
-Optional inline editorial prose on a **corpus rule** — English qualifiers, semicolon tails, parenthetical notes, and other text stripped from `input`/`output`/`env`/`exception` at parse so compile fields stay ASCA-clean. Stored as optional field `comment`; omitted when absent. **`raw`** always preserves the full Index line. Distinct from section-level **`comments`** (non-rule `<p>` prose blocks between rules).
+Optional inline editorial prose on a **corpus rule** — English qualifiers, semicolon tails, parenthetical notes, and other text stripped from `stages`/`env`/`exception` at parse so compile fields stay ASCA-clean. Stored as optional field `comment`; omitted when absent. **`raw`** always preserves the full Index line. Distinct from section-level **`comments`** (non-rule `<p>` prose blocks between rules).
 _Avoid_: “comment” without qualification when section comments are meant; embedding validator skip reasons in `comment`; treating `comment` as ASCA syntax
 
 **Raw**:
 The original Index Diachronica rule-line string preserved on a corpus rule for audit and fidelity checks.
-_Avoid_: treating the cleaned `input`/`output`/`env`/`exception` fields as the only recoverable form of the HTML line
+_Avoid_: treating the cleaned `stages`/`env`/`exception` fields as the only recoverable form of the HTML line
 
 **Source**:
 Provenance of a corpus rule as `file:line` pointing at the Index Diachronica HTML location of its raw string (e.g. `index_diachronica_original.html:1288`).
@@ -169,7 +173,7 @@ Optional lifecycle marker on a corpus rule: `needs-validation` or `skipped` (omi
 _Avoid_: `skipped` as a reason-string field on the rule; embedding validator diagnostics in the cleaned corpus SoT
 
 **Skipped**:
-A rule-status value meaning the rule is held out of normal compile (empty input/output) pending investigation or an owner-approved permanent deferral.
+A rule-status value meaning the rule is held out of normal compile (empty `stages: []`) pending investigation or an owner-approved permanent deferral.
 _Avoid_: deleting the HTML line from the corpus; silent drop without provenance; using “skipped” for rules that still compile
 
 ### Cleaning policy

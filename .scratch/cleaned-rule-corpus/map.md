@@ -8,7 +8,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 
 ## Notes
 
-- Glossary: `CONTEXT.md` — **Subscript notation** (four uses: correspondence-series index, positional slot, identity subscript, collective subscript). Decisions: ADRs 0001–0010.
+- Glossary: `CONTEXT.md` — **Subscript notation** (four uses: correspondence-series index, positional slot, identity subscript, collective subscript); **Stages** (corpus change spine). Decisions: ADRs 0001–0011.
 - Skills: `/research`, `/grill-with-docs` or grilling + domain-modeling, `/prototype` if needed.
 - **`data/` folder:** project data tree — use for reference **and** implementation. Index Diachronica HTML SoT: `data/diachronica/index_diachronica_original.html`; regenerated corpus YAML: `data/diachronica/index_diachronica_parsed.yml`; runtime CSV mappings: `data/asca/` (e.g. `group_mappings.csv`).
 - **`src/conlanger/`:** parser, compile, validation, and orchestration code.
@@ -18,7 +18,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 ## Decisions so far
 
 - [What counts as a valid ASCA rule string?](issues/01-valid-asca-rule-string.md) — ASCA form is `input ARROW output [/env] [|exception]`; non-empty I/O (`*`/`∅` insert/delete, `&`/`@` metathesis); one `_` focus in env; `#` env-peripheral only; prefer `ParsedRules::try_from` (asca **0.10.2**). Findings: [research/asca-rule-validity.md](research/asca-rule-validity.md) (incl. internal parse pipeline for Python).
-- [YAML schema for the cleaned rule corpus](issues/03-yaml-schema-cleaned-rule-corpus.md) — Top-level `abbreviations` + `sections`; rules carry `input`/`output`/`raw`/`source` (optional `env`/`exception`/`status`/`sporadic`/`comment`); ID-shaped strings; hierarchical string→string abbreviation tables; multi-line `raw` via `\|`; HTML SoT `index_diachronica_original.html` via lxml.
+- [YAML schema for the cleaned rule corpus](issues/03-yaml-schema-cleaned-rule-corpus.md) — Top-level `abbreviations` + `sections`; rules carry **`stages`**/`raw`/`source` (optional `env`/`exception`/`status`/`sporadic`/`comment`) per [ADR-0011](../../docs/adr/0011-corpus-rule-stages.md) / [ticket 59](issues/59-corpus-rule-stages-schema.md) (supersedes stored `input`/`output`); hierarchical string→string abbreviation tables; multi-line `raw` via `\|`; HTML SoT `index_diachronica_original.html` via lxml.
 - [Inventory which current rules compile and which fail](issues/02-inventory-valid-vs-invalid-rules.md) — Provisional AI YAML: 9721 rules → 5554 ok / 4167 fail under `asca 0.9.3`; CSV + summary in [inventory/](inventory/).
 - [Create an ASCA validator for SoundChangeRuleSet](issues/08-asca-validator.md) — `validate_asca` via asca **0.10.2** `run` (raises `ASCAValidationError`); 500 `asca_guess` fixture rows (seed 20260802; 370 ok / 130 expected fail).
 - [Historical fidelity vs valid-but-inaccurate fallback](issues/04-historical-fidelity-vs-validity.md) — Edit ladder + **rule status** / **validation report** split. ADR-0010.
@@ -59,6 +59,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - [Prototype: parse-time inter-segment whitespace feasibility](issues/46-prototype-parse-time-inter-segment-whitespace.md) — demo + readout: segmentiser sketch go-with-limits; parse-time ASCII-space SoT leans no-go until parallel/Kind-B/matrix fixed. [research/parse-time-whitespace-prototype-results.md](research/parse-time-whitespace-prototype-results.md).
 - [Feature bundle expansion + vowel-height compounds](issues/57-feature-bundle-expansion-vowel-height.md) — `mapping_kind=bundle` plumbing; seed `close-mid`→`-hi,-lo,+tense`, `open-mid`→`-hi,-lo,-tense` per ASCA vowel-space; +2 ok; unblocks [#54 place bundles](issues/54-correction-pass-unknown-feature-place-bundles.md).
 - [Spike: Index syllable position `#U` / `U#` → ASCA](issues/58-spike-index-syllable-position-u-hash.md) — grill 2026-08-09: `! in #U` is syllable-tier, not `// #_%`; leave **~14** exception rules failing until faithful encoding found.
+- [Corpus rule `stages` schema cutover](issues/59-corpus-rule-stages-schema.md) — grill 2026-08-09: replace `input`/`output` with uniform **`stages`**; one env/exception per rule; compile expands adjacent pairs. [ADR-0011](../../docs/adr/0011-corpus-rule-stages.md).
 
 ## Pipeline documentation (grill 2026-08-07)
 
