@@ -35,7 +35,9 @@ from conlanger.tools.corpus_inventory import (
 )
 from conlanger.tools.corpus_io import write_cleaned_corpus
 from conlanger.tools.parsers import (
+    MANUAL_MAPPINGS_MATCHED_CSV_NAME,
     IndexDiachronicaParser,
+    write_manual_mappings_matched_csv,
     write_rule_comment_phrase_summary,
 )
 from conlanger.tools.series_mappings import (
@@ -81,7 +83,8 @@ def main() -> int:
         default=DEFAULT_INVENTORY_DIR,
         help=(
             "writes asca-rule-inventory.csv (+ success/error splits), "
-            "asca-rule-inventory-changelog.csv, and asca-rule-inventory-summary.md"
+            "asca-rule-inventory-changelog.csv, "
+            "manual_mappings_matched_rules.csv, and asca-rule-inventory-summary.md"
         ),
     )
     ap.add_argument("--probe-words", type=Path, default=DEFAULT_PROBE)
@@ -121,6 +124,14 @@ def main() -> int:
     write_cleaned_corpus(doc, args.yaml_out)
     n_with_comment = write_rule_comment_phrase_summary(doc, DEFAULT_COMMENT_SUMMARY)
 
+    matched_path = args.inventory_dir / MANUAL_MAPPINGS_MATCHED_CSV_NAME
+    write_manual_mappings_matched_csv(parser.manual_mapping_matches, matched_path)
+    for unused in parser.unmatched_manual_mappings():
+        print(
+            f"WARNING: unmatched manual mapping from={unused.from_text!r}",
+            file=sys.stderr,
+        )
+
     n_sections = len(doc["sections"])
     n_rules = sum(len(s.get("rules") or []) for s in doc["sections"])
     n_skipped = sum(
@@ -134,6 +145,7 @@ def main() -> int:
         f"parse_skipped={n_skipped} rules_with_comment={n_with_comment}"
     )
     print(f"wrote {DEFAULT_COMMENT_SUMMARY}")
+    print(f"wrote {matched_path} matches={len(parser.manual_mapping_matches)}")
 
     if args.skip_validation:
         print("skipped validation inventory (--skip-validation)")

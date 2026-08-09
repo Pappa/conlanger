@@ -20467,13 +20467,13 @@ sections:
     - K
     raw: Kʷ → K
     source: index_diachronica_original.html:5498
-  - stages: []
+  - stages:
+    - s
+    - z
+    env: _C[+voice]
     raw: “The PIE rules for the voicing of s → z, as in [nizdos] for *nisdos, are
       assumed to apply”
     source: index_diachronica_original.html:5499
-    comment: “The PIE rules for the voicing of s → z, as in [nizdos] for *nisdos,
-      are assumed to apply”
-    status: skipped
   - stages:
     - Cʱ
     - C
@@ -20525,7 +20525,7 @@ sections:
   - stages:
     - m̩ n̩
     - am an
-    env: _{s,({m,j,w)V}
+    env: _{s,({m,j,w})V}
     raw: m̩ n̩ → am an / _{s,({m,j,w)V}
     source: index_diachronica_original.html:5509
   - stages:

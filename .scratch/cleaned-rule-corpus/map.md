@@ -61,7 +61,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - [Feature bundle expansion + vowel-height compounds](issues/57-feature-bundle-expansion-vowel-height.md) — `mapping_kind=bundle` plumbing; seed `close-mid`→`-hi,-lo,+tense`, `open-mid`→`-hi,-lo,-tense` per ASCA vowel-space; +2 ok; unblocks [#54 place bundles](issues/54-correction-pass-unknown-feature-place-bundles.md).
 - [Spike: Index syllable position `#U` / `U#` → ASCA](issues/58-spike-index-syllable-position-u-hash.md) — grill 2026-08-09: `! in #U` is syllable-tier, not `// #_%`; leave **~14** exception rules failing until faithful encoding found.
 - [Corpus rule `stages` schema cutover](issues/59-corpus-rule-stages-schema.md) — grill 2026-08-09: replace `input`/`output` with uniform **`stages`**; one env/exception per rule; compile expands adjacent pairs. [ADR-0011](../../docs/adr/0011-corpus-rule-stages.md).
-- [Parse-time manual rule mappings](issues/60-parse-time-manual-rule-mappings.md) — grill 2026-08-09: `data/common/manual_mappings.csv`; substring replace before `normalize_symbols`; `raw` unchanged; debug `manual_mappings_matched_rules.csv`.
+- [Parse-time manual rule mappings](issues/60-parse-time-manual-rule-mappings.md) — done: `manual_mappings.csv` at parse before other transforms; `raw` unchanged; debug CSV + unmatched warnings; inventory **7184 → 7185 ok (+1)**.
 
 ## Pipeline documentation (grill 2026-08-07)
 

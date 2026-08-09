@@ -1,5 +1,6 @@
 Type: task
 Blocked by: 59
+Status: resolved
 
 # Parse-time manual rule mappings
 
@@ -98,16 +99,22 @@ Collect hits on the parser (or parse pass) with `section_index`, `section_name`,
 
 ## Acceptance criteria
 
-- [ ] `manual_mappings.csv` loaded at parse time; substring replace before all other transforms
-- [ ] Corpus `raw` always preserves pre-mapping HTML string
-- [ ] `manual_mappings_matched_rules.csv` written on regen with required columns
-- [ ] Unmatched `from` patterns: one console warning each per regen
-- [ ] Both seed rows produce expected `stages` / `env`; row 2 no longer skipped
-- [ ] Tests + full pytest gate green
-- [ ] Inventory re-baseline with before/after ok count in **Answer**
+- [x] `manual_mappings.csv` loaded at parse time; substring replace before all other transforms
+- [x] Corpus `raw` always preserves pre-mapping HTML string
+- [x] `manual_mappings_matched_rules.csv` written on regen with required columns
+- [x] Unmatched `from` patterns: one console warning each per regen
+- [x] Both seed rows produce expected `stages` / `env`; row 2 no longer skipped
+- [x] Tests + full pytest gate green
+- [x] Inventory re-baseline with before/after ok count in **Answer**
 
 ## References
 
 - Seed file: [`data/common/manual_mappings.csv`](../../../data/common/manual_mappings.csv)
 - Analogous loader pattern: [Correction pass: IPA letter mappings](49-correction-pass-ipa-letter-mappings.md) (`apply_ipa_mappings` — runs later, field-level)
 - Glossary: **Manual mapping** in `CONTEXT.md`
+
+## Answer
+
+Parse-time **manual mappings** land in `parsers.py`: `load_manual_mappings` / `apply_manual_mappings` (longest-`from`-first, first-occurrence replace); `IndexDiachronicaParser` applies them immediately after extract, before `is_quoted_prose_paragraph` / `normalize_symbols`; corpus `raw` stays the HTML surface. Regen writes `manual_mappings_matched_rules.csv` and warns once per unmatched `from`.
+
+**Inventory:** before **7184 / 9201 ok (78.1%)** → after **7185 / 9201 ok** (**+1**). Both seed rows match; HTML:5499 (`s → z / _C[+voice]`) flips to ok; HTML:5509 gets fixed env `_{s,({m,j,w})V}` but still fails `nested_brackets` under ASCA.

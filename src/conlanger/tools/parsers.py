@@ -7,11 +7,12 @@ Phase 2: optional ``/ env`` then optional ``! exception``
 second `` / `` are edge-case fallbacks.
 Phase 3: first ``<p>`` after ``<h2>`` → section ``citation`` (whole text, cleanup later);
 other non-``schg`` paragraphs → ``comments``.
-Phase 4: **Symbol** normalization on corpus fields only (``#``, ``$``, ``%``, ``∅``,
-Index stress ``”`` → ``:[+stress]``; ``raw`` unchanged). Leading em dash list-item
-markers (``— ``) are stripped from the rule line before field split. Remaining
-Index rule arrows (``→``) in field values become ASCA ``>``. Chained rules store each
-spine segment in ``stages``; compile-time expansion is deferred.
+Phase 4: **Manual mapping** substring rewrites from ``manual_mappings.csv`` run first on a
+working copy (``raw`` keeps the HTML surface). Then **Symbol** normalization on corpus
+fields only (``#``, ``$``, ``%``, ``∅``, Index stress ``”`` → ``:[+stress]``; ``raw``
+unchanged). Leading em dash list-item markers (``— ``) are stripped from the rule line
+before field split. Remaining Index rule arrows (``→``) in field values become ASCA ``>``.
+Chained rules store each spine segment in ``stages``; compile-time expansion is deferred.
 Uncertainty glosses
 (``sporadic``, ``sometimes``, …) are stripped from field values and recorded as
 ``sporadic: true``. **Feature matrix** synonym replacement inside ``[...]`` via
@@ -82,6 +83,9 @@ DEFAULT_FEATURE_MAPPINGS_CSV = (
 )
 DEFAULT_IPA_MAPPINGS_CSV = (
     Path(__file__).resolve().parents[3] / "data" / "common" / "ipa_mapping.csv"
+)
+DEFAULT_MANUAL_MAPPINGS_CSV = (
+    Path(__file__).resolve().parents[3] / "data" / "common" / "manual_mappings.csv"
 )
 DEFAULT_PARSER_CONFIG_PATH = (
     Path(__file__).resolve().parents[3] / "data" / "parser_config.yml"
@@ -772,6 +776,92 @@ def apply_ipa_mappings(
     return result
 
 
+def load_manual_mappings(path: Path | None = None) -> list[ManualMapping]:
+    """Load owner-authored rule rewrites from CSV (``from``, ``to``; optional ``reason``)."""
+    csv_path = DEFAULT_MANUAL_MAPPINGS_CSV if path is None else Path(path)
+    if not csv_path.is_file():
+        return []
+    df = pd.read_csv(csv_path, dtype=str, keep_default_na=False)
+    required = {"from", "to"}
+    missing = required - set(df.columns)
+    if missing:
+        raise ValueError(
+            f"manual mappings CSV missing required columns: {sorted(missing)}"
+        )
+    has_reason = "reason" in df.columns
+    seen: set[str] = set()
+    out: list[ManualMapping] = []
+    for record in df.to_dict(orient="records"):
+        from_text = record["from"]
+        if from_text in seen:
+            raise ValueError(f"duplicate manual mapping from key: {from_text!r}")
+        seen.add(from_text)
+        out.append(
+            ManualMapping(
+                from_text=from_text,
+                to_text=record["to"],
+                reason=record["reason"] if has_reason else "",
+            )
+        )
+    return out
+
+
+def apply_manual_mappings(
+    text: str,
+    mappings: list[ManualMapping] | None = None,
+) -> tuple[str, list[ManualMappingHit]]:
+    """Replace ``from`` substrings with ``to`` (first occurrence each).
+
+    Mappings are applied longest-``from`` first so a shorter pattern cannot steal
+    a longer match when both would apply. Relative order among equal-length
+    ``from`` keys follows CSV order (stable sort).
+    """
+    rows = mappings if mappings is not None else load_manual_mappings()
+    if not text or not rows:
+        return text, []
+    # Prefer longest from first when order ambiguity matters.
+    ordered = sorted(rows, key=lambda row: len(row.from_text), reverse=True)
+    working = text
+    hits: list[ManualMappingHit] = []
+    for row in ordered:
+        if row.from_text and row.from_text in working:
+            working = working.replace(row.from_text, row.to_text, 1)
+            hits.append(ManualMappingHit(from_text=row.from_text, to_text=row.to_text))
+    return working, hits
+
+
+MANUAL_MAPPINGS_MATCHED_CSV_COLUMNS = [
+    "section_index",
+    "section_name",
+    "rule_idx",
+    "source",
+    "manual_mapping",
+]
+MANUAL_MAPPINGS_MATCHED_CSV_NAME = "manual_mappings_matched_rules.csv"
+
+
+def write_manual_mappings_matched_csv(
+    matches: list[ManualMappingMatch],
+    path: Path,
+) -> Path:
+    """Rewrite debug CSV of manual mapping hits (one row per applied pattern)."""
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    rows = [
+        {
+            "section_index": match.section_index,
+            "section_name": match.section_name,
+            "rule_idx": match.rule_idx,
+            "source": match.source,
+            "manual_mapping": match.manual_mapping,
+        }
+        for match in matches
+    ]
+    df = pd.DataFrame(rows, columns=MANUAL_MAPPINGS_MATCHED_CSV_COLUMNS)
+    df.to_csv(path, index=False)
+    return path
+
+
 # Index Diachronica stress mark (Key to Abbreviations: ” = Stress).
 _INDEX_STRESS = "\u201d"
 
@@ -868,6 +958,34 @@ class IpaMapping:
     ipa_target: str
     confidence: str = ""
     notes: str = ""
+
+
+@dataclass(frozen=True)
+class ManualMapping:
+    """One owner-authored substring rewrite from ``manual_mappings.csv``."""
+
+    from_text: str
+    to_text: str
+    reason: str = ""
+
+
+@dataclass(frozen=True)
+class ManualMappingHit:
+    """A single substring replace performed by ``apply_manual_mappings``."""
+
+    from_text: str
+    to_text: str
+
+
+@dataclass(frozen=True)
+class ManualMappingMatch:
+    """Debug row for a manual mapping applied during ingest."""
+
+    section_index: str
+    section_name: str
+    rule_idx: int
+    source: str
+    manual_mapping: str
 
 
 @dataclass(frozen=True)
@@ -1226,6 +1344,8 @@ class IndexDiachronicaParser:
         series_mappings: list | None = None,
         parser_config: ParserConfig | None = None,
         parser_config_path: Path | None = None,
+        manual_mappings: list[ManualMapping] | None = None,
+        manual_mappings_path: Path | None = None,
     ) -> None:
         if series_mappings is None:
             from conlanger.tools.series_mappings import load_series_mappings
@@ -1239,9 +1359,25 @@ class IndexDiachronicaParser:
         else:
             self._parser_config = load_parser_config(parser_config_path)
 
+        if manual_mappings is not None:
+            self._manual_mappings = manual_mappings
+        else:
+            self._manual_mappings = load_manual_mappings(manual_mappings_path)
+
+        self.manual_mapping_matches: list[ManualMappingMatch] = []
+        self._matched_manual_froms: set[str] = set()
+
     def abbreviations(self) -> dict[str, str]:
         """Global abbreviation table for the cleaned corpus (empty at ingest)."""
         return {}
+
+    def unmatched_manual_mappings(self) -> list[ManualMapping]:
+        """Return loaded mappings whose ``from`` never matched during this parse."""
+        return [
+            row
+            for row in self._manual_mappings
+            if row.from_text not in self._matched_manual_froms
+        ]
 
     def parse_rule_element(
         self,
@@ -1249,11 +1385,25 @@ class IndexDiachronicaParser:
         *,
         source_file: str,
         section_index: str = "",
+        section_name: str = "",
+        rule_idx: int = 0,
     ) -> list[dict[str, Any]]:
         raw = extract_text_with_subs(el)
         line = getattr(el, "sourceline", None) or 0
         source = f"{source_file}:{line}"
-        if is_quoted_prose_paragraph(raw):
+        working, hits = apply_manual_mappings(raw, self._manual_mappings)
+        for hit in hits:
+            self._matched_manual_froms.add(hit.from_text)
+            self.manual_mapping_matches.append(
+                ManualMappingMatch(
+                    section_index=section_index,
+                    section_name=section_name,
+                    rule_idx=rule_idx,
+                    source=source,
+                    manual_mapping=hit.to_text,
+                )
+            )
+        if is_quoted_prose_paragraph(working):
             return [
                 {
                     "stages": [],
@@ -1263,7 +1413,7 @@ class IndexDiachronicaParser:
                     "status": "skipped",
                 }
             ]
-        normalized = normalize_symbols(raw)
+        normalized = normalize_symbols(working)
         parts = extract_rule_parts(normalized)
         if parts is None:
             return [
@@ -1307,6 +1457,8 @@ class IndexDiachronicaParser:
     ) -> dict[str, Any]:
         """Parse HTML into ``{abbreviations, sections: [...]}``."""
         source_file = source_file or html_path.name
+        self.manual_mapping_matches = []
+        self._matched_manual_froms = set()
         parser = html.HTMLParser(encoding="utf-8")
         doc = html.parse(str(html_path), parser=parser)
         root = doc.getroot()
@@ -1338,6 +1490,8 @@ class IndexDiachronicaParser:
                             p,
                             source_file=source_file,
                             section_index=index or "",
+                            section_name=name,
+                            rule_idx=len(rules),
                         )
                     )
                     continue

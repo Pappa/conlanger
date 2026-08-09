@@ -12,9 +12,11 @@ from conlanger.tools.parsers import (
     FeatureMapping,
     GroupMapping,
     IndexDiachronicaParser,
+    ManualMapping,
     ParserConfig,
     apply_feature_mappings,
     apply_ipa_mappings,
+    apply_manual_mappings,
     apply_semicolon_field_comments,
     apply_sporadic_qualifier,
     apply_stress_conditions,
@@ -30,6 +32,7 @@ from conlanger.tools.parsers import (
     load_feature_mappings,
     load_group_mappings,
     load_ipa_mappings,
+    load_manual_mappings,
     load_parser_config,
     normalize_feature_matrices_in_field,
     normalize_ipa_in_field,
@@ -155,9 +158,7 @@ def test_parse_section_heading_without_index():
 
 
 def test_extract_text_with_subs_tail_after_sub():
-    el = html.fragment_fromstring(
-        "<p>before<sub>2</sub>after</p>", create_parent=False
-    )
+    el = html.fragment_fromstring("<p>before<sub>2</sub>after</p>", create_parent=False)
     assert extract_text_with_subs(el) == "before₂after"
 
 
@@ -188,7 +189,7 @@ def test_load_group_mappings_without_comment_column(tmp_path: Path):
         ("_$%oː", "_$$oː"),
         ("$am_w", "$am_w"),
         ("in #”U", "in #U:[+stress]"),
-        ('s “(for many speakers)”', 's “(for many speakers)”'),
+        ("s “(for many speakers)”", "s “(for many speakers)”"),
         ("", ""),
     ],
 )
@@ -203,16 +204,25 @@ def test_normalize_symbols(text, expected):
         ("k → ɡ / ”V_", "k → ɡ / V:[+stress]_"),
         ("V → ∅ / C”V", "V → ∅ / CV:[+stress]"),
         ("V → i / C”iC_", "V → i / Ci:[+stress]C_"),
-        ("V:[+stress]ʕ ʕV:[+stress] → aa:[+stress] a”a", "V:[+stress]ʕ ʕV:[+stress] → aa:[+stress] aa:[+stress]"),
-        ('p k → f ɣ / V_V // ”ə_V', 'p k → f ɣ / V_V // ə:[+stress]_V'),
-        ('”{i,e}V → jV:[+stress]', '{i:[+stress],e:[+stress]}V → jV:[+stress]'),
-        ('au → a / _$”u', 'au → a / _$u:[+stress]'),
-        ('kʷ → kw / #_”a', 'kʷ → kw / #_a:[+stress]'),
-        ('V → V:[+stress] / _C*”{i,e}V', 'V → V:[+stress] / _C*{i:[+stress],e:[+stress]}V'),
-        ('Ve:[+stress] → ”Vi', 'Ve:[+stress] → Vi:[+stress]'),
-        ('e → i:[+long] / ”_$ɪ:[+long]#', 'e → i:[+long] / _$ɪ:[+stress,+long]#'),
-        ('ɛ ɔ → e o / _(”u)#', 'ɛ ɔ → e o / _(u:[+stress])#'),
-        ('{V:[+stress](C)CaCV,VC:[+stress](C)CaCV} → {V”(C)CaCV,VC”(C)CaCV} / _#', '{V:[+stress](C)CaCV,VC:[+stress](C)CaCV} → {V:[+stress](C)CaCV,VC:[+stress](C)CaCV} / _#'),
+        (
+            "V:[+stress]ʕ ʕV:[+stress] → aa:[+stress] a”a",
+            "V:[+stress]ʕ ʕV:[+stress] → aa:[+stress] aa:[+stress]",
+        ),
+        ("p k → f ɣ / V_V // ”ə_V", "p k → f ɣ / V_V // ə:[+stress]_V"),
+        ("”{i,e}V → jV:[+stress]", "{i:[+stress],e:[+stress]}V → jV:[+stress]"),
+        ("au → a / _$”u", "au → a / _$u:[+stress]"),
+        ("kʷ → kw / #_”a", "kʷ → kw / #_a:[+stress]"),
+        (
+            "V → V:[+stress] / _C*”{i,e}V",
+            "V → V:[+stress] / _C*{i:[+stress],e:[+stress]}V",
+        ),
+        ("Ve:[+stress] → ”Vi", "Ve:[+stress] → Vi:[+stress]"),
+        ("e → i:[+long] / ”_$ɪ:[+long]#", "e → i:[+long] / _$ɪ:[+stress,+long]#"),
+        ("ɛ ɔ → e o / _(”u)#", "ɛ ɔ → e o / _(u:[+stress])#"),
+        (
+            "{V:[+stress](C)CaCV,VC:[+stress](C)CaCV} → {V”(C)CaCV,VC”(C)CaCV} / _#",
+            "{V:[+stress](C)CaCV,VC:[+stress](C)CaCV} → {V:[+stress](C)CaCV,VC:[+stress](C)CaCV} / _#",
+        ),
         ('k → ts / “After some syllables"', 'k → ts / “After some syllables"'),
     ],
 )
@@ -319,7 +329,9 @@ def test_strip_uncertainty_qualifier_from_field(text, expected):
         ("h (sometimes uncertain)", "h", ["(sometimes uncertain)"]),
     ],
 )
-def test_extract_uncertainty_qualifier_from_field(text, expected_value, expected_captures):
+def test_extract_uncertainty_qualifier_from_field(
+    text, expected_value, expected_captures
+):
     from conlanger.tools.parsers import extract_uncertainty_qualifier_from_field
 
     value, captures = extract_uncertainty_qualifier_from_field(text)
@@ -357,9 +369,11 @@ def test_write_rule_comment_phrase_summary_empty_doc(tmp_path: Path):
 
 
 def test_apply_sporadic_qualifier():
-    assert apply_sporadic_qualifier(
-        {"stages": ["p", "h (sporadic)"]}
-    ) == {"stages": ["p", "h"], "sporadic": True, "comment": "(sporadic)"}
+    assert apply_sporadic_qualifier({"stages": ["p", "h (sporadic)"]}) == {
+        "stages": ["p", "h"],
+        "sporadic": True,
+        "comment": "(sporadic)",
+    }
 
 
 def test_apply_sporadic_qualifier_unchanged_when_no_marker():
@@ -443,9 +457,7 @@ def test_apply_trailing_glosses():
 
 
 def test_apply_trailing_glosses_strips_field_wrapped_gloss_to_comment():
-    assert apply_trailing_glosses(
-        {"stages": ["hhy", '"something like /ʒ/"']}
-    ) == {
+    assert apply_trailing_glosses({"stages": ["hhy", '"something like /ʒ/"']}) == {
         "stages": ["hhy", ""],
         "comment": '"something like /ʒ/"',
     }
@@ -502,7 +514,10 @@ def test_parse_rule_element_strips_embedded_quoted_env_gloss():
         ("_$, when stressed", "_$ when stressed"),
         ("_N, when unstressed (?)", "_N when unstressed (?)"),
         ("when unstressed", "_ when unstressed"),
-        ("when stressed unless primarily stressed", "_ when stressed unless primarily stressed"),
+        (
+            "when stressed unless primarily stressed",
+            "_ when stressed unless primarily stressed",
+        ),
         ("_# when unstressed", "_#"),
         ("_#, when unstressed", "_#"),
         ("C_# when unstressed", "C_#"),
@@ -640,7 +655,10 @@ def test_parser_citation_only_section(tmp_path: Path):
         ("∅ / _# ! k(ː)_", ("∅", "_#", "k(ː)_")),
         ("∅ / #C_V, except _i(ː)", ("∅", "#C_V", "_i(ː)")),
         ("ʔ / except in several words", ("ʔ", None, "in several words")),
-        ("ou øy ei, except in certain endings", ("ou øy ei", None, "in certain endings")),
+        (
+            "ou øy ei, except in certain endings",
+            ("ou øy ei", None, "in certain endings"),
+        ),
         ("{∅,h} / _əNS / #_", ("{∅,h}", "_əNS", "#_")),
     ],
 )
@@ -698,14 +716,18 @@ def test_parse_rule_element_no_env():
 
 
 def test_parse_rule_element_missing_arrow():
-    el = html.fragment_fromstring('<p class="schg">a to b no arrow</p>', create_parent=False)
+    el = html.fragment_fromstring(
+        '<p class="schg">a to b no arrow</p>', create_parent=False
+    )
     rule = parse_rule_element(el, source_file="index_diachronica_original.html")[0]
     assert rule["stages"] == []
     assert rule["status"] == "skipped"
 
 
 def test_parse_rule_element_arrow_without_spaces():
-    el = html.fragment_fromstring('<p class="schg">a \u2192\u0259 / _#</p>', create_parent=False)
+    el = html.fragment_fromstring(
+        '<p class="schg">a \u2192\u0259 / _#</p>', create_parent=False
+    )
     rule = parse_rule_element(el, source_file="index_diachronica_original.html")[0]
     assert rule["stages"] == ["a", "ə"]
     assert rule["env"] == "_#"
@@ -882,7 +904,9 @@ def test_normalize_feature_matrices_in_field_rename():
     mappings = feature_mappings_dict()
     assert normalize_feature_matrices_in_field("C[+voiced]", mappings) == "C[+voice]"
     assert normalize_feature_matrices_in_field("N[-voiced]", mappings) == "N[-voice]"
-    assert normalize_feature_matrices_in_field("C[+ sibilant]", mappings) == "C[+strident]"
+    assert (
+        normalize_feature_matrices_in_field("C[+ sibilant]", mappings) == "C[+strident]"
+    )
 
 
 def test_normalize_feature_matrices_in_field_rename_invert():
@@ -893,9 +917,15 @@ def test_normalize_feature_matrices_in_field_rename_invert():
 
 def test_normalize_feature_matrices_in_field_rename_polarity():
     mappings = feature_mappings_dict()
-    assert normalize_feature_matrices_in_field("S[- glottalized]", mappings) == "S[+place]"
-    assert normalize_feature_matrices_in_field("V[+glottalized]", mappings) == "V[-place]"
-    assert normalize_feature_matrices_in_field("V[-glottalized]", mappings) == "V[+place]"
+    assert (
+        normalize_feature_matrices_in_field("S[- glottalized]", mappings) == "S[+place]"
+    )
+    assert (
+        normalize_feature_matrices_in_field("V[+glottalized]", mappings) == "V[-place]"
+    )
+    assert (
+        normalize_feature_matrices_in_field("V[-glottalized]", mappings) == "V[+place]"
+    )
 
 
 def test_normalize_feature_matrices_in_field_bundle():
@@ -912,9 +942,7 @@ def test_normalize_feature_matrices_in_field_bundle():
 
 def test_normalize_feature_matrices_in_field_bundle_compound_key_only():
     mappings = feature_mappings_dict()
-    assert (
-        normalize_feature_matrices_in_field("V[+open]", mappings) == "V[+open]"
-    )
+    assert normalize_feature_matrices_in_field("V[+open]", mappings) == "V[+open]"
 
 
 def test_kenyah_vowel_height_rules_validate():
@@ -922,15 +950,11 @@ def test_kenyah_vowel_height_rules_validate():
     rules = [
         {
             "stages": ["i u", "e o"],
-            "env": normalize_feature_matrices_in_field(
-                "_CV[+close-mid](C)#", mappings
-            ),
+            "env": normalize_feature_matrices_in_field("_CV[+close-mid](C)#", mappings),
         },
         {
             "stages": ["i u", "ɛ ɔ"],
-            "env": normalize_feature_matrices_in_field(
-                "_CV[+open-mid](C)#", mappings
-            ),
+            "env": normalize_feature_matrices_in_field("_CV[+open-mid](C)#", mappings),
         },
     ]
     section = {
@@ -943,9 +967,7 @@ def test_kenyah_vowel_height_rules_validate():
 
 def test_normalize_feature_matrices_in_field_leaves_raw_tokens_outside_brackets():
     mappings = feature_mappings_dict()
-    assert (
-        normalize_feature_matrices_in_field("short u", mappings) == "short u"
-    )
+    assert normalize_feature_matrices_in_field("short u", mappings) == "short u"
 
 
 def test_apply_feature_mappings():
@@ -1231,9 +1253,7 @@ def test_extract_trailing_quoted_gloss_from_field():
 def test_extract_embedded_quoted_gloss_from_field():
     from conlanger.tools.parsers import extract_embedded_quoted_gloss_from_field
 
-    cleaned, captures = extract_embedded_quoted_gloss_from_field(
-        'V, "short only", _C#'
-    )
+    cleaned, captures = extract_embedded_quoted_gloss_from_field('V, "short only", _C#')
     assert cleaned == "V_C#"
     assert '"short only"' in captures[0]
 
@@ -1242,37 +1262,255 @@ def test_extract_field_wrapped_quoted_gloss_from_field():
     from conlanger.tools.parsers import extract_field_wrapped_quoted_gloss_from_field
 
     cleaned, captures = extract_field_wrapped_quoted_gloss_from_field(
-        '\u201csomething like /\u0292/\u201d'
+        "\u201csomething like /\u0292/\u201d"
     )
     assert cleaned == ""
-    assert captures == ['\u201csomething like /\u0292/\u201d']
+    assert captures == ["\u201csomething like /\u0292/\u201d"]
 
 
 def test_extract_leading_quoted_gloss_from_field():
     from conlanger.tools.parsers import extract_leading_quoted_gloss_from_field
 
     cleaned, captures = extract_leading_quoted_gloss_from_field(
-        '\u201cThe CIV rules for the voicing of s > z\u201d a \u2192 e'
+        "\u201cThe CIV rules for the voicing of s > z\u201d a \u2192 e"
     )
     assert cleaned == "a \u2192 e"
-    assert captures[0].startswith('\u201cThe CIV rules')
+    assert captures[0].startswith("\u201cThe CIV rules")
 
 
 def test_is_quoted_prose_paragraph():
     from conlanger.tools.parsers import is_quoted_prose_paragraph
 
     assert is_quoted_prose_paragraph(
-        '\u201cThe PIE rules for the voicing of s \u2192 z, as in [nizdos]\u201d'
+        "\u201cThe PIE rules for the voicing of s \u2192 z, as in [nizdos]\u201d"
     )
-    assert not is_quoted_prose_paragraph('a \u2192 e / _C')
+    assert not is_quoted_prose_paragraph("a \u2192 e / _C")
 
 
 def test_extract_trailing_paren_glosses_from_field():
     from conlanger.tools.parsers import extract_trailing_paren_glosses_from_field
 
-    cleaned, captures = extract_trailing_paren_glosses_from_field(
-        "_CVC# (short only)"
-    )
+    cleaned, captures = extract_trailing_paren_glosses_from_field("_CVC# (short only)")
     assert cleaned == "_CVC#"
     assert captures == ["(short only)"]
 
+
+def test_load_manual_mappings_from_default_csv():
+    rows = load_manual_mappings()
+    assert len(rows) >= 2
+    by_from = {row.from_text: row for row in rows}
+    broken_env = "m̩ n̩ → am an / _{s,({m,j,w)V}"
+    assert by_from[broken_env].to_text == "m̩ n̩ → am an / _{s,({m,j,w})V}"
+    assert by_from[broken_env].reason == "bracket correction"
+
+
+def test_load_manual_mappings_returns_empty_when_file_missing(tmp_path: Path):
+    assert load_manual_mappings(tmp_path / "missing.csv") == []
+
+
+def test_load_manual_mappings_requires_columns(tmp_path: Path):
+    path = tmp_path / "manual.csv"
+    path.write_text("from,reason\nx,y\n", encoding="utf-8")
+    with pytest.raises(ValueError, match="missing required columns"):
+        load_manual_mappings(path)
+
+
+def test_load_manual_mappings_rejects_duplicate_from(tmp_path: Path):
+    path = tmp_path / "manual.csv"
+    path.write_text(
+        "from,to,reason\na → b,a → c,first\na → b,a → d,dup\n",
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="duplicate"):
+        load_manual_mappings(path)
+
+
+def test_apply_manual_mappings_substring_hit_first_occurrence_only():
+    mappings = [
+        ManualMapping(from_text="aa", to_text="XX", reason=""),
+        ManualMapping(from_text="bb", to_text="YY", reason=""),
+    ]
+    working, hits = apply_manual_mappings("aa mid aa bb", mappings)
+    assert working == "XX mid aa YY"
+    assert [(h.from_text, h.to_text) for h in hits] == [("aa", "XX"), ("bb", "YY")]
+
+
+def test_apply_manual_mappings_miss_leaves_text_unchanged():
+    mappings = [ManualMapping(from_text="zzz", to_text="Q", reason="")]
+    working, hits = apply_manual_mappings("a → b / _C", mappings)
+    assert working == "a → b / _C"
+    assert hits == []
+
+
+def test_parse_rule_element_applies_manual_mapping_keeps_raw():
+    broken = "m̩ n̩ → am an / _{s,({m,j,w)V}"
+    fixed = "m̩ n̩ → am an / _{s,({m,j,w})V}"
+    el = html.fragment_fromstring(
+        f'<p class="schg">{broken}</p>',
+        create_parent=False,
+    )
+    parser = IndexDiachronicaParser(
+        series_mappings=[],
+        manual_mappings=[
+            ManualMapping(from_text=broken, to_text=fixed, reason="bracket"),
+        ],
+    )
+    rules = parser.parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["raw"] == broken
+    assert rules[0]["stages"] == ["m̩ n̩", "am an"]
+    assert rules[0]["env"] == "_{s,({m,j,w})V}"
+    assert "status" not in rules[0]
+
+
+def test_parse_rule_element_manual_mapping_rescues_quoted_prose():
+    prose = (
+        "\u201cThe PIE rules for the voicing of s → z, as in [nizdos] "
+        "for *nisdos, are assumed to apply\u201d"
+    )
+    mapped = "s → z / _C[+voice]"
+    el = html.fragment_fromstring(
+        f'<p class="schg">{prose}</p>',
+        create_parent=False,
+    )
+    parser = IndexDiachronicaParser(
+        series_mappings=[],
+        manual_mappings=[
+            ManualMapping(from_text=prose, to_text=mapped, reason="nisdos"),
+        ],
+    )
+    rules = parser.parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["raw"] == prose
+    assert rules[0]["stages"] == ["s", "z"]
+    assert rules[0]["env"] == "_C[+voice]"
+    assert rules[0].get("status") != "skipped"
+
+
+def test_parse_rule_element_without_manual_row_unchanged():
+    el = html.fragment_fromstring(
+        '<p class="schg">a → e / _C</p>',
+        create_parent=False,
+    )
+    with_mappings = IndexDiachronicaParser(
+        series_mappings=[],
+        manual_mappings=[
+            ManualMapping(from_text="zzz", to_text="Q", reason=""),
+        ],
+    ).parse_rule_element(el, source_file="index_diachronica_original.html")
+    without = IndexDiachronicaParser(
+        series_mappings=[],
+        manual_mappings=[],
+    ).parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert with_mappings == without
+
+
+def test_write_manual_mappings_matched_csv(tmp_path: Path):
+    from conlanger.tools.parsers import (
+        ManualMappingMatch,
+        write_manual_mappings_matched_csv,
+    )
+
+    path = tmp_path / "manual_mappings_matched_rules.csv"
+    write_manual_mappings_matched_csv(
+        [
+            ManualMappingMatch(
+                section_index="17.5.1",
+                section_name="Proto-Indo-European to Old Irish",
+                rule_idx=3,
+                source="index_diachronica_original.html:5509",
+                manual_mapping="m̩ n̩ → am an / _{s,({m,j,w})V}",
+            )
+        ],
+        path,
+    )
+    df = pd.read_csv(path, dtype=str, keep_default_na=False)
+    assert list(df.columns) == [
+        "section_index",
+        "section_name",
+        "rule_idx",
+        "source",
+        "manual_mapping",
+    ]
+    assert df.iloc[0]["rule_idx"] == "3"
+    assert "_{s,({m,j,w})V}" in df.iloc[0]["manual_mapping"]
+
+
+def test_parse_records_manual_mapping_matches_and_unmatched(tmp_path: Path):
+    html_path = tmp_path / "index.html"
+    _write_index_diachronica_html(
+        html_path,
+        section_id="Old-Irish",
+        section_body=(
+            "<h2>17.5.1 Proto-Indo-European to Old Irish</h2>\n"
+            '<p class="schg">m̩ n̩ → am an / _{s,({m,j,w)V}</p>\n'
+            '<p class="schg">a → e / _C</p>\n'
+        ),
+        charset=True,
+    )
+    broken = "m̩ n̩ → am an / _{s,({m,j,w)V}"
+    fixed = "m̩ n̩ → am an / _{s,({m,j,w})V}"
+    parser = IndexDiachronicaParser(
+        series_mappings=[],
+        manual_mappings=[
+            ManualMapping(from_text=broken, to_text=fixed, reason="bracket"),
+            ManualMapping(from_text="never-hits", to_text="x", reason="unused"),
+        ],
+    )
+    doc = parser.parse(html_path, source_file="index.html")
+    assert doc["sections"][0]["rules"][0]["env"] == "_{s,({m,j,w})V}"
+    assert len(parser.manual_mapping_matches) == 1
+    match = parser.manual_mapping_matches[0]
+    assert match.section_index == "17.5.1"
+    assert match.section_name == "Proto-Indo-European to Old Irish"
+    assert match.rule_idx == 0
+    assert match.manual_mapping == fixed
+    unmatched = parser.unmatched_manual_mappings()
+    assert [row.from_text for row in unmatched] == ["never-hits"]
+
+
+def test_parse_old_irish_seed_manual_mappings_from_real_html_excerpt(tmp_path: Path):
+    """Integration: HTML lines 5499 and 5509 via default ``manual_mappings.csv``."""
+    html_path = tmp_path / "index.html"
+    prose = (
+        "\u201cThe PIE rules for the voicing of s → z, as in [nizdos] "
+        "for *nisdos, are assumed to apply\u201d"
+    )
+    broken = "m̩ n̩ → am an / _{s,({m,j,w)V}"
+    _write_index_diachronica_html(
+        html_path,
+        section_id="Old-Irish",
+        section_body=(
+            "<h2>17.5.1 Proto-Indo-European to Old Irish</h2>\n"
+            f'<p class="schg">{prose}</p>\n'
+            f'<p class="schg">{broken}</p>\n'
+        ),
+        charset=True,
+    )
+    parser = IndexDiachronicaParser(series_mappings=[])
+    doc = parser.parse(html_path, source_file="index_diachronica_original.html")
+    rules = doc["sections"][0]["rules"]
+
+    prose_rule = rules[0]
+    assert prose_rule["raw"] == prose
+    assert prose_rule["stages"] == ["s", "z"]
+    assert prose_rule["env"] == "_C[+voice]"
+    assert prose_rule.get("status") != "skipped"
+
+    bracket_rule = rules[1]
+    assert bracket_rule["raw"] == broken
+    assert bracket_rule["stages"] == ["m̩ n̩", "am an"]
+    assert bracket_rule["env"] == "_{s,({m,j,w})V}"
+
+    assert len(parser.manual_mapping_matches) == 2
+    assert {m.manual_mapping for m in parser.manual_mapping_matches} == {
+        "s → z / _C[+voice]",
+        "m̩ n̩ → am an / _{s,({m,j,w})V}",
+    }
+    matched_path = tmp_path / "manual_mappings_matched_rules.csv"
+    from conlanger.tools.parsers import write_manual_mappings_matched_csv
+
+    write_manual_mappings_matched_csv(parser.manual_mapping_matches, matched_path)
+    matched_df = pd.read_csv(matched_path, dtype=str, keep_default_na=False)
+    assert set(matched_df["manual_mapping"]) == {
+        "s → z / _C[+voice]",
+        "m̩ n̩ → am an / _{s,({m,j,w})V}",
+    }
