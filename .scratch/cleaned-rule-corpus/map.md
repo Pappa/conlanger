@@ -58,6 +58,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - [Spike: inter-segment whitespace and phoneme boundaries](issues/44-spike-inter-segment-whitespace.md) — **compile-only** Brassica spacing; SoT stays Index-shaped (ASCA is space-optional/trie-segmented; Index spaces mostly parallel parts). Findings: [research/inter-segment-whitespace-phoneme-boundaries.md](research/inter-segment-whitespace-phoneme-boundaries.md).
 - [Prototype: parse-time inter-segment whitespace feasibility](issues/46-prototype-parse-time-inter-segment-whitespace.md) — demo + readout: segmentiser sketch go-with-limits; parse-time ASCII-space SoT leans no-go until parallel/Kind-B/matrix fixed. [research/parse-time-whitespace-prototype-results.md](research/parse-time-whitespace-prototype-results.md).
 - [Feature bundle expansion + vowel-height compounds](issues/57-feature-bundle-expansion-vowel-height.md) — `mapping_kind=bundle` plumbing; seed `close-mid`→`-hi,-lo,+tense`, `open-mid`→`-hi,-lo,-tense` per ASCA vowel-space; +2 ok; unblocks [#54 place bundles](issues/54-correction-pass-unknown-feature-place-bundles.md).
+- [Spike: Index syllable position `#U` / `U#` → ASCA](issues/58-spike-index-syllable-position-u-hash.md) — grill 2026-08-09: `! in #U` is syllable-tier, not `// #_%`; leave **~14** exception rules failing until faithful encoding found.
 
 ## Pipeline documentation (grill 2026-08-07)
 
