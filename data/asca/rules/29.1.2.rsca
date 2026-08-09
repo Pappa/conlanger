@@ -1,9 +1,0 @@
-@ 29.1.2 - Proto-Athabaskan-Eyak to Eyak
-# citation: Pogostick Man, from Wikipedia contributors (2015), “Na-Dene languages”. Wikipedia, the Free Encyclopedia.
-	{ kʲ, kʲʼ, ɡʲ, xʲ } > { t͡s, t͡sʼ, d͡z, {s,ʃ} }
-	[+ cons, - fr, + bk, + hi, - lo]ʷ > [+ cons, - fr, + bk, + hi, - lo]
-	{ qʷ, qʷʼ, ɢʷ } > { q, qʼ, ɢ }
-	s > ∅ / _x
-	x > ∅ / ʃ_
-	$ > xʷ
-	xʷ > x, s

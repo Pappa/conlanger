@@ -1265,7 +1265,7 @@ sections:
   - stages:
     - '{x,ɢ}(ʷ)'
     - ∅
-    env: at word boundaries
+    env: '#_, _#'
     raw: '{x,ɢ}(ʷ) → ∅ / at word boundaries'
     source: index_diachronica_original.html:1185
   - stages:
@@ -1311,7 +1311,7 @@ sections:
   - stages:
     - '{x,ɢ}(ʷ)'
     - ∅
-    env: at word boundaries
+    env: '#_, _#'
     raw: '{x,ɢ}(ʷ) → ∅ / at word boundaries'
     source: index_diachronica_original.html:1195
   - stages:
@@ -1354,7 +1354,7 @@ sections:
   - stages:
     - '{x,ɢ}(ʷ)'
     - ∅
-    env: at word boundaries
+    env: '#_, _#'
     raw: '{x,ɢ}(ʷ) → ∅ / at word boundaries'
     source: index_diachronica_original.html:1204
   - stages:
@@ -1422,7 +1422,7 @@ sections:
   - stages:
     - '{xʷ,ɢʷ}'
     - ∅
-    env: at word boundaries
+    env: '#_, _#'
     raw: '{xʷ,ɢʷ} → ∅ / at word boundaries'
     source: index_diachronica_original.html:1218
   - stages:
@@ -4097,7 +4097,7 @@ sections:
   - stages:
     - a
     - i
-    exception: at word boundaries
+    exception: '#_, _#'
     raw: a → i / ! at word boundaries
     source: index_diachronica_original.html:1765
   - stages:
@@ -12416,7 +12416,7 @@ sections:
   - stages:
     - t
     - r
-    exception: at word boundaries
+    exception: '#_, _#'
     raw: t → r / ! at word boundaries
     source: index_diachronica_original.html:3625
   - stages:
@@ -16106,7 +16106,7 @@ sections:
   - stages:
     - ə
     - i
-    env: at word boundaries
+    env: '#_, _#'
     raw: ə → i / at word boundaries
     source: index_diachronica_original.html:4627
   - stages:
@@ -18368,7 +18368,7 @@ sections:
     - h
     - ∅
     env: _w
-    exception: at word boundaries
+    exception: '#_, _#'
     raw: h → ∅ / _w ! at word boundaries
     source: index_diachronica_original.html:5092
   - comment: “medially, and sporadically”
@@ -53768,7 +53768,7 @@ sections:
   - stages:
     - n
     - r
-    exception: at word boundaries
+    exception: '#_, _#'
     raw: n → r / ! at word boundaries
     source: index_diachronica_original.html:12893
   - stages:

@@ -1,8 +1,16 @@
 section_index,section_name,rule_idx,source,manual_mapping
+6.2.1.1.1,Proto-Agaw to Awngi,0,index_diachronica_original.html:1185,"/ #_, _#"
+6.2.1.1.2,Proto-Agaw to Blin,0,index_diachronica_original.html:1195,"/ #_, _#"
+6.2.1.1.3,Proto-Agaw to Kemantney,0,index_diachronica_original.html:1204,"/ #_, _#"
+6.2.1.1.4,Proto-Agaw to Xamtanga,1,index_diachronica_original.html:1218,"/ #_, _#"
+7.4,Proto-Algonquian to Blackfoot,54,index_diachronica_original.html:1765,"! #_, _#"
 10.2.5,Proto-Malayo-Polynesian to Palauan,31,index_diachronica_original.html:2951,→ ʕ
 10.3.5.7,Proto-New Caledonia to Pwapwâ,7,index_diachronica_original.html:3321,bw mw → ɡw ŋw → ɡ ŋ / _V[+ rounded]
 10.3.11,Proto-Oceanic to Proto-Southern Vanuatu,12,index_diachronica_original.html:3541,q → kw → v 
+10.3.11.2.2,Proto-Erromango to Ura,10,index_diachronica_original.html:3625,"! #_, _#"
 11.5.2,Proto-Lezgic to Archi,6,index_diachronica_original.html:3981,ɢ → q
+15.2.1,Proto-Eskimo to Barrow Iñupiaq,2,index_diachronica_original.html:4627,"/ #_, _#"
+17.2.2,Common Anatolian to Luwian,19,index_diachronica_original.html:5092,"! #_, _#"
 17.2.4,Common Anatolian to Lydian,12,index_diachronica_original.html:5141,w → v → f
 17.5.1,Proto-Indo-European to Old Irish,1,index_diachronica_original.html:5499,s → z / C[+voice]_
 17.5.1,Proto-Indo-European to Old Irish,10,index_diachronica_original.html:5509,"m̩ n̩ → am an / _{s,({m,j,w})V}"
@@ -11,4 +19,5 @@ section_index,section_name,rule_idx,source,manual_mapping
 17.7.3.1.3,Old Norse to Shetland Norn,5,index_diachronica_original.html:6481,nd ld → nː lː
 17.12.1.1.1,Classical Latin vs. Vulgar Latin,15,index_diachronica_original.html:7338,";; “In contrast, Romanian exhibits"
 17.12.1.1.10,Vulgar Latin to Spanish,44,index_diachronica_original.html:8176,"{nts,ndz,rdz}_"
+37.2.5.1,Proto-Crow-Hidatsa to Crow,3,index_diachronica_original.html:12893,"! #_, _#"
 46.5,Old English-to-Scots Vowel Shifts,9,index_diachronica_original.html:14332,ɛː → ɛi → əi

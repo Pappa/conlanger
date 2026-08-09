@@ -12,3 +12,5 @@ a → ɒ? (→ o),a → ɒ → o,chaining
 nd ld (→ nː lː ?),nd ld → nː lː,chaining
 "ɣ → q (more likely, *ɢ → q instead of → ɣ)","ɢ → q",correction
 "{nts,ndz,rdz_","{nts,ndz,rdz}_",correction
+/ at word boundaries,"/ #_, _#",replacing prose
+! at word boundaries,"! #_, _#",replacing prose

@@ -1,6 +1,0 @@
-@ 6.2.2.1.13 - Classical Arabic to Western Libyan Arabic
-# citation: Pogostick Man
-	{ q, d͡ʒ } > { ɡ, ʒ }
-	{ θ, ð(ˤ) } > { t, d(ˤ) }
-	{ aj, aw } > { e:[+long], o:[+long] }
-	∅ > ə / CCV(:[+long],V)C_C
