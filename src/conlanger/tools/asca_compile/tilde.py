@@ -139,11 +139,28 @@ def expand_index_tilde_notation(text: str) -> str:
     return _expand_tilde_tokens(text)
 
 
+def _append_stage_segments(stages: list[str], stage: str) -> None:
+    if " > " in stage:
+        parts = [part.strip() for part in stage.split(" > ") if part.strip()]
+        if len(parts) >= 2:
+            stages.extend(parts)
+            return
+    stages.append(stage)
+
+
 def normalize_corpus_rule_tilde_fields(rule: dict[str, str]) -> dict[str, str]:
-    """Normalize ``input`` / ``output`` tilde notation before chain expansion."""
+    """Normalize per-stage tilde notation before chain expansion."""
     result = dict(rule)
-    if "input" in result and "~" in result["input"]:
-        result["input"] = expand_index_tilde_notation(result["input"])
-    if "output" in result and "~" in result["output"]:
-        result["output"] = _expand_output_tilde_field(result["output"])
+    stages = list(result.get("stages") or [])
+    if not stages:
+        return result
+    normalized: list[str] = []
+    for index, stage in enumerate(stages):
+        if "~" in stage:
+            if index == len(stages) - 1:
+                stage = _expand_output_tilde_field(stage)
+            else:
+                stage = expand_index_tilde_notation(stage)
+        _append_stage_segments(normalized, stage)
+    result["stages"] = normalized
     return result

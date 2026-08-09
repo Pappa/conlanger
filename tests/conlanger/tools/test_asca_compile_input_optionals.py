@@ -49,7 +49,7 @@ def test_expand_input_optionals_to_structures(index_rule, expected):
     ],
 )
 def test_input_optionals_inventory_representatives_validate(inp, out, env):
-    rule = {"input": inp, "output": out}
+    rule = {"stages": [inp, out]}
     if env is not None:
         rule["env"] = env
     section = {"index": "1", "section": "input-opt", "rules": [rule]}

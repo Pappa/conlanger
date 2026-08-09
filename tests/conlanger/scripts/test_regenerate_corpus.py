@@ -199,8 +199,8 @@ def test_regenerate_corpus_writes_validation_inventory(
         "sections": [
             {
                 "rules": [
-                    {"input": "a", "output": "b", "skipped": False},
-                    {"input": "", "output": "", "skipped": True},
+                    {"stages": ["a", "b"]},
+                    {"stages": [], "status": "skipped"},
                 ]
             }
         ]

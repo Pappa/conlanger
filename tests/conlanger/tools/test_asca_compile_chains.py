@@ -4,28 +4,72 @@ from conlanger.tools.asca_compile.chains import expand_chained_corpus_rule
 from conlanger.tools.rules import RuleChange, SoundChangeRuleSet
 
 
-def test_expand_chained_corpus_rule_splits_output_chain():
-    assert expand_chained_corpus_rule({"input": "dʒ", "output": "tʃ > ʃ"}) == [
+def test_expand_chained_corpus_rule_splits_stages_chain():
+    assert expand_chained_corpus_rule({"stages": ["dʒ", "tʃ", "ʃ"]}) == [
         {"input": "dʒ", "output": "tʃ"},
         {"input": "tʃ", "output": "ʃ"},
     ]
 
 
 def test_expand_chained_corpus_rule_keeps_single_step():
-    rule = {"input": "a", "output": "e", "env": "_#"}
-    assert expand_chained_corpus_rule(rule) == [rule]
+    rule = {"stages": ["a", "e"], "env": "_#"}
+    assert expand_chained_corpus_rule(rule) == [{"input": "a", "output": "e", "env": "_#"}]
 
 
-def test_expand_chained_corpus_rule_ignores_degenerate_chain_marker():
-    rule = {"input": "a", "output": "e > "}
-    assert expand_chained_corpus_rule(rule) == [rule]
+def test_expand_chained_corpus_rule_empty_stages_emits_nothing():
+    assert expand_chained_corpus_rule({"stages": []}) == []
+
+
+def test_expand_chained_corpus_rule_single_stage_emits_nothing():
+    assert expand_chained_corpus_rule({"stages": ["a"]}) == []
 
 
 def test_expand_chained_corpus_rule_propagates_env_to_each_step():
-    rule = {"input": "{θ,l}", "output": "r > l", "env": "V_V"}
+    rule = {"stages": ["{θ,l}", "r", "l"], "env": "V_V"}
     assert expand_chained_corpus_rule(rule) == [
         {"input": "{θ,l}", "output": "r", "env": "V_V"},
         {"input": "r", "output": "l", "env": "V_V"},
+    ]
+
+
+def test_expand_chained_corpus_rule_propagates_exception_and_comment():
+    rule = {
+        "stages": ["a", "b", "c"],
+        "env": "_V",
+        "exception": "C_",
+        "comment": "note",
+    }
+    steps = expand_chained_corpus_rule(rule)
+    assert steps == [
+        {
+            "input": "a",
+            "output": "b",
+            "env": "_V",
+            "exception": "C_",
+            "comment": "note",
+        },
+        {
+            "input": "b",
+            "output": "c",
+            "env": "_V",
+            "exception": "C_",
+            "comment": "note",
+        },
+    ]
+
+
+def test_expand_chained_corpus_rule_propagates_skip_meta():
+    rule = {"stages": ["a", "b"], "skip": True}
+    assert expand_chained_corpus_rule(rule) == [
+        {"input": "a", "output": "b", "skip": True},
+    ]
+
+
+def test_expand_chained_corpus_rule_propagates_sporadic_to_each_step():
+    rule = {"stages": ["a", "b", "c"], "sporadic": True, "comment": "note"}
+    assert expand_chained_corpus_rule(rule) == [
+        {"input": "a", "output": "b", "sporadic": True, "comment": "note"},
+        {"input": "b", "output": "c", "sporadic": True, "comment": "note"},
     ]
 
 
@@ -33,7 +77,7 @@ def test_sound_change_ruleset_expands_chained_corpus_rule():
     section = {
         "index": "1.0",
         "section": "Chain",
-        "rules": [{"input": "dʒ", "output": "tʃ > ʃ"}],
+        "rules": [{"stages": ["dʒ", "tʃ", "ʃ"]}],
     }
     ruleset = SoundChangeRuleSet(section, "asca")
     rule_parts = [part for part in ruleset._parts if isinstance(part, RuleChange)]
@@ -46,7 +90,7 @@ def test_sound_change_ruleset_expands_chain_with_env():
     section = {
         "index": "1.0",
         "section": "Chain env",
-        "rules": [{"input": "{θ,l}", "output": "r > l", "env": "V_V"}],
+        "rules": [{"stages": ["{θ,l}", "r", "l"], "env": "V_V"}],
     }
     ruleset = SoundChangeRuleSet(section, "asca")
     rule_parts = [part for part in ruleset._parts if isinstance(part, RuleChange)]

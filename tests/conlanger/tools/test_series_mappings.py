@@ -438,6 +438,22 @@ def test_infer_parallel_rule_mappings_rejects_invalid_rules(rule):
     )
 
 
+def test_infer_singleton_rule_mappings_empty_when_spine_has_one_stage():
+    assert infer_singleton_rule_mappings(
+        "a →",
+        section_index="6",
+        source="index.html:1",
+    ) == []
+
+
+def test_infer_parallel_rule_mappings_empty_when_spine_has_one_stage():
+    assert infer_parallel_rule_mappings(
+        "a →",
+        section_index="6",
+        source="index.html:1",
+    ) == []
+
+
 def test_write_series_mappings_csv_dedupes_rows(tmp_path: Path):
     csv_path = tmp_path / "series_mappings.csv"
     write_series_mappings_csv(
@@ -744,13 +760,44 @@ def test_expand_series_tokens_in_field_leaves_positional_slots():
     assert expand_series_tokens_in_field(text, "10.2.1", rows) == "C₁ → C₂ / _ f1"
 
 
+def test_expand_series_tokens_in_field_without_section_index():
+    rows = [SeriesMapping("6", "s₁", "ʃ", "x", "")]
+    assert expand_series_tokens_in_field("s₁", "", rows) == "s₁"
+
+
+def test_section_abbreviations_for_index_without_rows():
+    assert section_abbreviations_for_index("6.1", []) == {}
+
+
+def test_apply_series_mappings_without_mapping_rows():
+    assert apply_series_mappings({"stages": ["s₁", "z"]}, "6.1", []) == {
+        "stages": ["s₁", "z"]
+    }
+
+
+def test_section_abbreviations_for_index_empty_section_index():
+    rows = [SeriesMapping("6", "s₁", "ʃ", "x", "")]
+    assert section_abbreviations_for_index("", rows) == {}
+
+
+def test_apply_series_mappings_without_section_index():
+    rows = [SeriesMapping("6", "s₁", "ʃ", "x", "")]
+    assert apply_series_mappings({"stages": ["s₁", "z"]}, "", rows) == {
+        "stages": ["s₁", "z"]
+    }
+
+
+def test_apply_series_mappings_empty_stages():
+    assert apply_series_mappings({"stages": []}, "6.1", []) == {"stages": []}
+
+
 def test_apply_series_mappings_on_rule_parts():
     rows = [SeriesMapping("6.1.2.1", "s₁", "ʃ", "index.html:1", "")]
     assert apply_series_mappings(
-        {"input": "s₁", "output": "z", "env": "_ h₂"},
+        {"stages": ["s₁", "z"], "env": "_ h₂"},
         "6.1.2.1",
         rows,
-    ) == {"input": "ʃ", "output": "z", "env": "_ h₂"}
+    ) == {"stages": ["ʃ", "z"], "env": "_ h₂"}
 
 
 def test_section_abbreviations_for_index_more_specific_wins():

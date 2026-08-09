@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 
 # Corpus rule `stages` schema cutover
 
@@ -39,11 +39,21 @@ See [ADR-0011](../../../docs/adr/0011-corpus-rule-stages.md) and glossary **Stag
 
 ## Acceptance criteria
 
-- [ ] Regenerated `index_diachronica_parsed.yml` uses `stages` only (no rule `input`/`output`).
-- [ ] Chain examples compile to the same sequential ASCA steps as before (env stamped on each step).
-- [ ] Inventory regen + tests green; skip-shaped rows use `stages: []`.
-- [ ] Docs/ADR-0005 amendment text no longer prescribe opaque `input`/`output` as the spine.
-- [ ] CONTEXT.md already matches; keep it aligned if wording drifts during impl.
+- [x] Regenerated `index_diachronica_parsed.yml` uses `stages` only (no rule `input`/`output`).
+- [x] Chain examples compile to the same sequential ASCA steps as before (env stamped on each step).
+- [x] Inventory regen + tests green; skip-shaped rows use `stages: []`.
+- [x] Docs/ADR-0005 amendment text no longer prescribe opaque `input`/`output` as the spine.
+- [x] CONTEXT.md already matches; keep it aligned if wording drifts during impl.
+
+## Answer
+
+Implemented ADR-0011 one-shot cutover:
+
+- **Parse:** `IndexDiachronicaParser` emits `stages` (split on every `→` after env/exception isolation); hold-outs use `stages: []` + `status: skipped`.
+- **Compile:** `expand_chained_corpus_rule` expands adjacent stage pairs; `normalize_corpus_rule_tilde_fields` normalizes per stage before pairing.
+- **Inventory:** `validate_corpus_rule` compiles via `PhonologicalRuleSet` (no direct `RuleChange` on corpus rows).
+- **Regenerated** `data/diachronica/index_diachronica_parsed.yml` with `stages` only.
+- **Docs:** ticket 03 schema answer + ADR-0005 amendment synced to ADR-0011.
 
 ## References
 

@@ -51,19 +51,19 @@ _E2E_VALIDATE_SMOKE: list[tuple[str, str, bool, str]] = [
 # Representative ingest cases from ``sound_change_rules.csv`` (ids for traceability).
 _E2E_PARSE_SMOKE: list[tuple[str, str, dict[str, str | None]]] = [
     ("e1e33459", "r → ∅ / {ð,f}_{ɡ,ɣ}", {
-        "input": "r", "output": "∅", "env": "{ð,f}_{ɡ,ɣ}",
+        "stages": ["r", "∅"], "env": "{ð,f}_{ɡ,ɣ}",
     }),
-    ("4335174c", "dʒ → tʃ / _#", {"input": "dʒ", "output": "tʃ", "env": "_#"}),
+    ("4335174c", "dʒ → tʃ / _#", {"stages": ["dʒ", "tʃ"], "env": "_#"}),
     ("4f873820", "a → e / _j when stressed", {
-        "input": "a", "output": "e", "env": "_j when stressed",
+        "stages": ["a", "e"], "env": "_j when stressed",
     }),
-    ("63f9e7f4", "SN → N[- voice]", {"input": "SN", "output": "N[- voice]"}),
+    ("63f9e7f4", "SN → N[- voice]", {"stages": ["SN", "N[- voice]"]}),
     ("9f237660", "C[+ voice] → C[- voice] / _#", {
-        "input": "C[+ voice]", "output": "C[- voice]", "env": "_#",
+        "stages": ["C[+ voice]", "C[- voice]"], "env": "_#",
     }),
-    ("f8cd1a6f", "ɑ → ə", {"input": "ɑ", "output": "ə"}),
-    ("65372311", "qh → k", {"input": "qh", "output": "k"}),
-    ("e71a2977", "ŋ → n", {"input": "ŋ", "output": "n"}),
+    ("f8cd1a6f", "ɑ → ə", {"stages": ["ɑ", "ə"]}),
+    ("65372311", "qh → k", {"stages": ["qh", "k"]}),
+    ("e71a2977", "ŋ → n", {"stages": ["ŋ", "n"]}),
 ]
 
 
@@ -90,7 +90,7 @@ def _parse_section(
 
 
 def _assert_corpus_rule_shape(rule: dict) -> None:
-    for key in ("input", "output", "raw", "source"):
+    for key in ("stages", "raw", "source"):
         assert key in rule
     if not rule.get("env"):
         assert "env" not in rule
@@ -122,19 +122,16 @@ def test_e2e_minimal_html_fixture_shape_and_raw_preservation(tmp_path: Path):
 
     ok_rule, feature_rule, bad_rule = section["rules"]
     _assert_corpus_rule_shape(ok_rule)
-    assert ok_rule["input"] == "a"
-    assert ok_rule["output"] == "b"
+    assert ok_rule["stages"] == ["a", "b"]
     assert ok_rule["raw"] == "a → b"
     assert ok_rule["source"].startswith("minimal.html:")
 
-    assert feature_rule["input"] == "C[+voice]"
-    assert feature_rule["output"] == "C[-voice]"
+    assert feature_rule["stages"] == ["C[+voice]", "C[-voice]"]
     assert feature_rule["env"] == "_#"
     assert "voiced" in feature_rule["raw"]
 
-    assert bad_rule["input"] == ""
-    assert bad_rule["output"] == ""
-    assert bad_rule.get("skipped")
+    assert bad_rule["stages"] == []
+    assert bad_rule.get("status") == "skipped"
 
 
 @pytest.mark.skipif(not ASCA_INSTALLED, reason="asca binary not on PATH")

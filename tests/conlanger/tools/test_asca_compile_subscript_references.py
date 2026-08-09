@@ -78,7 +78,7 @@ def test_rule_change_validates_positional_slot_fixture():
     section = {
         "index": "10.2.1",
         "section": "Positional",
-        "rules": [{"input": "C₁C₂", "output": "C₂"}],
+        "rules": [{"stages": ["C₁C₂", "C₂"]}],
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")
     validate_asca(SoundChangeRuleSet(section, "asca"), probe_words=probe)
@@ -89,7 +89,7 @@ def test_rule_change_validates_identity_fixture():
     section = {
         "index": "10.2.2",
         "section": "Identity",
-        "rules": [{"input": "V₀V₀", "output": "V₀"}],
+        "rules": [{"stages": ["V₀V₀", "V₀"]}],
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")
     validate_asca(SoundChangeRuleSet(section, "asca"), probe_words=probe)
@@ -100,7 +100,7 @@ def test_rule_change_validates_identity_env_fixture():
     section = {
         "index": "10.2.4.2",
         "section": "Identity env",
-        "rules": [{"input": "h", "output": "ʔ", "env": "V₀V₀"}],
+        "rules": [{"stages": ["h", "ʔ"], "env": "V₀V₀"}],
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")
     validate_asca(SoundChangeRuleSet(section, "asca"), probe_words=probe)

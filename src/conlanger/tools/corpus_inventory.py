@@ -12,6 +12,7 @@ from typing import Any
 import pandas as pd
 
 from conlanger.tools.asca_validator import ASCAValidationError, validate_asca
+from conlanger.tools.parsers import ARROW
 from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
 from conlanger.tools.rules import RuleChange
 
@@ -327,7 +328,9 @@ class ValidationRow:
             "reason": self.reason,
             "error_token": self.error_token,
             "suggested": self.suggested,
-            "description": "thread panicked" if self.failure_class in OMITTED_DESCRIPTIONS else self.description,
+            "description": "thread panicked"
+            if self.failure_class in OMITTED_DESCRIPTIONS
+            else self.description,
         }
 
 
@@ -352,8 +355,12 @@ def validate_corpus_rule(
     section_name = str(section.get("section", ""))
     source = str(rule.get("source", ""))
 
-    if rule.get("skipped"):
-        err = str(rule["skipped"])
+    if rule.get("status") == "skipped":
+        raw = str(rule.get("raw", ""))
+        if "→" not in raw and ARROW not in raw:
+            err = f"missing separator {ARROW!r}"
+        else:
+            err = str(rule.get("comment") or "quoted prose paragraph")
         failure_class = "missing_arrow"
         error_token, suggested = parse_unknown_token_error(err)
         return ValidationRow(
@@ -369,10 +376,28 @@ def validate_corpus_rule(
             description=err,
         )
 
+    mini = _mini_section(section, rule, rule_idx)
     try:
-        RuleChange(rule, format="asca")
+        scr = PhonologicalRuleSet(mini).to_sound_change_ruleset()
     except (KeyError, ValueError) as exc:
         err = f"format_error: {exc}"
+        failure_class = "format_error"
+        error_token, suggested = parse_unknown_token_error(err)
+        return ValidationRow(
+            section_index=section_index,
+            section_name=section_name,
+            rule_idx=rule_idx,
+            source=source,
+            ok=False,
+            failure_class=failure_class,
+            reason=reason_for_failure(failure_class, err),
+            error_token=error_token,
+            suggested=suggested,
+            description=err,
+        )
+
+    if not any(isinstance(part, RuleChange) for part in scr._parts):
+        err = "format_error: no compile steps from stages"
         failure_class = "format_error"
         error_token, suggested = parse_unknown_token_error(err)
         return ValidationRow(
@@ -402,10 +427,9 @@ def validate_corpus_rule(
             description="held-out (commented rule)",
         )
 
-    mini = _mini_section(section, rule, rule_idx)
     try:
         validate_asca(
-            PhonologicalRuleSet(mini).to_sound_change_ruleset(),
+            scr,
             probe_words=probe_words,
         )
     except ASCAValidationError as exc:

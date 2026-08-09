@@ -120,14 +120,19 @@ def test_apply_asca_group_mappings_class_letter_before_ipa_tail(text, expected):
     assert apply_asca_group_mappings_to_string(text, mappings) == expected
 
 
+def test_phonological_ruleset_section_property():
+    section = {"index": "1.0", "section": "Test"}
+    prs = PhonologicalRuleSet(section)
+    assert prs.section is section
+
+
 def test_sound_change_ruleset_applies_group_mappings_for_asca():
     section = {
         "index": "1.0",
         "section": "Test",
         "rules": [
             {
-                "input": "f",
-                "output": "p",
+                "stages": ["f", "p"],
                 "env": "#_V{Z,C[-voice],r}",
                 "raw": "f → p / #_V{Z,C[-voice],r}",
                 "source": "sample.html:1",
@@ -143,7 +148,7 @@ def test_sound_change_ruleset_skips_group_mappings_for_brassica():
     section = {
         "index": "1.0",
         "section": "Test",
-        "rules": [{"input": "S", "output": "P", "env": "{V,R}_V"}],
+        "rules": [{"stages": ["S", "P"], "env": "{V,R}_V"}],
     }
     rendered = str(
         SoundChangeRuleSet(section, "brassica", group_mappings=_SAMPLE_MAPPINGS)
@@ -157,8 +162,7 @@ def test_phonological_ruleset_does_not_mutate_corpus_rules():
         "section": "Test",
         "rules": [
             {
-                "input": "f",
-                "output": "p",
+                "stages": ["f", "p"],
                 "env": "#_V{Z,C[-voice],r}",
                 "raw": "f → p / #_V{Z,C[-voice],r}",
                 "source": "sample.html:1",
@@ -184,15 +188,13 @@ def test_phonological_ruleset_validates_labialized_class_letter_fixtures():
         "section": "PIE labiovelars",
         "rules": [
             {
-                "input": "Kʷ",
-                "output": "K",
+                "stages": ["Kʷ", "K"],
                 "env": "",
                 "raw": "Kʷ → K",
                 "source": "index_diachronica.html:334",
             },
             {
-                "input": "i",
-                "output": "ə",
+                "stages": ["i", "ə"],
                 "env": "{P,K(ʷ),s}_",
                 "raw": "i → ə / {P,K(ʷ),s}_",
                 "source": "index_diachronica.html:7340",
@@ -221,8 +223,7 @@ def test_phonological_ruleset_validates_known_unknown_grouping_fixtures():
                 "source": "index_diachronica_original.html:1261",
             },
             {
-                "input": "ʕ",
-                "output": "i",
+                "stages": ["ʕ", "i"],
                 "env": "#_VR",
                 "raw": "ʕ → i / #_VR",
                 "source": "index_diachronica_original.html:1274",
@@ -243,8 +244,7 @@ def test_corpus_inventory_uses_phonological_ruleset(_mock_validate):
 
     section = {"index": "1.0", "section": "Test Section"}
     rule = {
-        "input": "f",
-        "output": "p",
+        "stages": ["f", "p"],
         "env": "#_V{Z,C[-voice],r}",
         "raw": "f → p / #_V{Z,C[-voice],r}",
         "source": "sample.html:1",

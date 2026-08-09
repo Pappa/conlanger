@@ -78,7 +78,7 @@ def test_normalize_asca_superscript_modifiers_leaves_boundaries_and_ipa_literals
     ],
 )
 def test_superscript_inventory_representatives_validate(inp, out, env):
-    rule = {"input": inp, "output": out}
+    rule = {"stages": [inp, out]}
     if env:
         rule["env"] = env
     section = {"index": "1", "section": "superscript", "rules": [rule]}
@@ -89,7 +89,7 @@ def test_superscript_s_aspirated_rule_compiles_via_pipeline():
     section = {
         "index": "1",
         "section": "superscript",
-        "rules": [{"input": "Sʰ", "output": "S", "env": "#v_V"}],
+        "rules": [{"stages": ["Sʰ", "S"], "env": "#v_V"}],
     }
     ruleset = SoundChangeRuleSet(section, "asca")
     assert ruleset._parts[-1].value == "C:[+labial][+spread] > P / #v_V"

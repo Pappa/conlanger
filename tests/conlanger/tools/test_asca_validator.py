@@ -44,7 +44,7 @@ def mock_asca_subprocess(mocker):
 def test_validate_asca_smoke_with_installed_binary():
     """Single integration check that validate_asca invokes the real asca binary."""
     scr = SoundChangeRuleSet(
-        {"index": "1", "section": "test", "rules": [{"input": "a", "output": "b"}]},
+        {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )
     assert validate_asca(scr, probe_words=_PROBE) is True
@@ -55,7 +55,7 @@ def test_validate_asca_returns_true_when_subprocess_succeeds(
 ):
     mock_asca_subprocess.return_value = MagicMock(returncode=0, stderr="")
     scr = SoundChangeRuleSet(
-        {"index": "1", "section": "test", "rules": [{"input": "a", "output": "b"}]},
+        {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )
     assert validate_asca(scr, probe_words=_PROBE) is True
@@ -71,7 +71,7 @@ def test_validate_asca_returns_true_when_subprocess_succeeds(
             {
                 "index": "1",
                 "section": "sec",
-                "rules": [{"input": "# a", "output": "b"}],
+                "rules": [{"stages": ["# a", "b"]}],
             },
             format="asca",
         ),
@@ -85,7 +85,7 @@ def test_validate_asca_rejects_inactive_rules(scr):
 def test_validate_asca_missing_binary(mocker):
     mocker.patch("conlanger.tools.asca_validator.shutil.which", return_value=None)
     scr = SoundChangeRuleSet(
-        {"index": "1", "section": "test", "rules": [{"input": "a", "output": "b"}]},
+        {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )
     with pytest.raises(ASCAValidationError, match="asca binary not found on PATH"):
@@ -94,7 +94,7 @@ def test_validate_asca_missing_binary(mocker):
 
 def test_validate_asca_missing_probe_words(mock_asca_on_path, tmp_path: Path):
     scr = SoundChangeRuleSet(
-        {"index": "1", "section": "test", "rules": [{"input": "a", "output": "b"}]},
+        {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )
     with pytest.raises(ASCAValidationError, match="probe wordlist not found"):
@@ -103,7 +103,7 @@ def test_validate_asca_missing_probe_words(mock_asca_on_path, tmp_path: Path):
 
 def test_validate_asca_timeout(mock_asca_subprocess, mock_asca_on_path):
     scr = SoundChangeRuleSet(
-        {"index": "1", "section": "test", "rules": [{"input": "a", "output": "b"}]},
+        {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )
     mock_asca_subprocess.side_effect = subprocess.TimeoutExpired(
@@ -118,7 +118,7 @@ def test_validate_asca_stderr_error_with_zero_returncode(
     mock_asca_subprocess, mock_asca_on_path
 ):
     scr = SoundChangeRuleSet(
-        {"index": "1", "section": "test", "rules": [{"input": "a", "output": "b"}]},
+        {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )
     mock_asca_subprocess.return_value = MagicMock(
@@ -130,7 +130,7 @@ def test_validate_asca_stderr_error_with_zero_returncode(
 
 def test_validate_asca_nonzero_without_stderr(mock_asca_subprocess, mock_asca_on_path):
     scr = SoundChangeRuleSet(
-        {"index": "1", "section": "test", "rules": [{"input": "a", "output": "b"}]},
+        {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )
     mock_asca_subprocess.return_value = MagicMock(returncode=2, stderr="")
@@ -140,7 +140,7 @@ def test_validate_asca_nonzero_without_stderr(mock_asca_subprocess, mock_asca_on
 
 def test_validate_asca_default_probe_words(mock_asca_subprocess, mock_asca_on_path):
     scr = SoundChangeRuleSet(
-        {"index": "1", "section": "test", "rules": [{"input": "a", "output": "b"}]},
+        {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )
     captured: dict[str, str] = {}
@@ -158,7 +158,7 @@ def test_validate_asca_keeps_trailing_newline(
     mock_asca_subprocess, mock_asca_on_path, tmp_path: Path
 ):
     scr = SoundChangeRuleSet(
-        {"index": "1", "section": "test", "rules": [{"input": "a", "output": "b"}]},
+        {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )
     captured: dict[str, str] = {}
@@ -181,7 +181,7 @@ def test_validate_asca_appends_trailing_newline(
     mock_asca_subprocess, mock_asca_on_path, tmp_path: Path
 ):
     scr = SoundChangeRuleSet(
-        {"index": "1", "section": "test", "rules": [{"input": "a", "output": "b"}]},
+        {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )
     captured: dict[str, str] = {}

@@ -6,6 +6,7 @@ import re
 from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Any
 
 import pandas as pd
 from lxml import html
@@ -205,7 +206,13 @@ def apply_series_mappings(
     if not mapping_rows or not section_index:
         return parts
     result = dict(parts)
-    for key in ("input", "output", "env", "exception"):
+    stages = result.get("stages")
+    if stages is not None:
+        result["stages"] = [
+            expand_series_tokens_in_field(stage, section_index, mapping_rows)
+            for stage in stages
+        ]
+    for key in ("env", "exception"):
         if key in result:
             result[key] = expand_series_tokens_in_field(
                 result[key], section_index, mapping_rows
@@ -346,9 +353,14 @@ def _is_asca_side_token(token: str) -> bool:
         return False
     if re.fullmatch(r"[A-Z](?:\[[^\]]+\])?", token):
         return False
-    if re.search(r"[₀₁₂₃₄₅₆₇₈₉ₓ]", token):
-        return False
-    return True
+    return not re.search(r"[₀₁₂₃₄₅₆₇₈₉ₓ]", token)
+
+
+def _rule_io_strings(parts: dict[str, Any]) -> tuple[str, str]:
+    stages = [stage for stage in parts.get("stages", []) if stage and stage.strip()]
+    if len(stages) < 2:
+        return "", ""
+    return stages[0], stages[-1]
 
 
 def infer_parallel_rule_mappings(
@@ -361,8 +373,11 @@ def infer_parallel_rule_mappings(
     parts = extract_rule_parts(raw_rule)
     if parts is None:
         return []
-    input_tokens = _tokenize_rule_side(parts["input"])
-    output_tokens = _tokenize_rule_side(parts["output"])
+    inp, out = _rule_io_strings(parts)
+    if not inp or not out:
+        return []
+    input_tokens = _tokenize_rule_side(inp)
+    output_tokens = _tokenize_rule_side(out)
     if not input_tokens or len(input_tokens) != len(output_tokens):
         return []
     if not all(_is_series_side_token(token) for token in input_tokens):
@@ -400,8 +415,11 @@ def infer_singleton_rule_mappings(
     parts = extract_rule_parts(raw_rule)
     if parts is None:
         return []
-    input_tokens = _tokenize_rule_side(parts["input"])
-    output_tokens = _tokenize_rule_side(parts["output"])
+    inp, out = _rule_io_strings(parts)
+    if not inp or not out:
+        return []
+    input_tokens = _tokenize_rule_side(inp)
+    output_tokens = _tokenize_rule_side(out)
     if len(input_tokens) != 1 or len(output_tokens) != 1:
         return []
     inp, out = input_tokens[0], output_tokens[0]
@@ -748,12 +766,13 @@ def _rule_fields(raw_rule: str) -> list[str]:
     parts = extract_rule_parts(raw_rule)
     if parts is None:
         return [raw_rule]
-    fields = [parts["input"], parts["output"]]
+    inp, out = _rule_io_strings(parts)
+    fields = [inp, out]
     if parts.get("env"):
         fields.append(parts["env"])
     if parts.get("exception"):
         fields.append(parts["exception"])
-    return fields
+    return [field for field in fields if field]
 
 
 def write_coverage_report(

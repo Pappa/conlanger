@@ -15,3 +15,4 @@ Index Diachronica rules that express several related changes on one line should 
 - Default ingest path aims for 1 HTML rule line → 1 corpus rule.
 - Edge-case splits should be detectable (flag, comment, or dedicated shape) so they do not silently look like independent changes.
 - ASCA/Brassica compilers may further expand sets when the applier requires it; that is compile-time, not a license to always split at ingest.
+- **Amendment (2026-08-09):** corpus rules store a **`stages`** list (ADR-0011), not `input`/`output` strings; compile expands adjacent pairs.

@@ -127,7 +127,7 @@ def main() -> int:
         1
         for section in doc["sections"]
         for rule in section.get("rules") or []
-        if rule.get("skipped")
+        if rule.get("status") == "skipped"
     )
     print(
         f"wrote {args.yaml_out} sections={n_sections} rules={n_rules} "

@@ -1,4 +1,4 @@
-"""Compile-time expansion of multi-step output chains."""
+"""Compile-time expansion of multi-step change spines."""
 
 from __future__ import annotations
 
@@ -6,22 +6,25 @@ _CHAIN_META_KEYS = ("env", "exception", "comment", "sporadic", "skip")
 
 
 def expand_chained_corpus_rule(rule: dict[str, str]) -> list[dict[str, str]]:
-    """Expand ``output`` chains ``a > b > c`` into sequential single-step rules.
+    """Expand corpus ``stages`` into sequential single-step ASCA rules.
 
     One corpus YAML row may compile to several ASCA rules. Rule-level ``env`` and
-    ``exception`` (when present) attach to each emitted step.
+    ``exception`` (when present) attach to each emitted step. Empty ``stages`` emit
+    nothing.
     """
-    output = rule.get("output", "")
-    if " > " not in output:
-        return [rule]
-    segments = [segment.strip() for segment in output.split(" > ") if segment.strip()]
-    if len(segments) < 2:
-        return [rule]
+    stages = rule.get("stages", [])
+    non_empty = [stage.strip() for stage in stages if stage and stage.strip()]
+    if len(non_empty) < 2:
+        return []
 
     meta = {key: rule[key] for key in _CHAIN_META_KEYS if key in rule}
     expanded: list[dict[str, str]] = []
-    current_input = rule["input"]
-    for segment in segments:
-        expanded.append({"input": current_input, "output": segment, **meta})
-        current_input = segment
+    for index in range(len(non_empty) - 1):
+        expanded.append(
+            {
+                "input": non_empty[index],
+                "output": non_empty[index + 1],
+                **meta,
+            }
+        )
     return expanded

@@ -76,7 +76,7 @@ def test_expand_index_parenthetical_notation_leaves_bracket_matrices_untouched()
     ],
 )
 def test_parenthetical_inventory_representatives_validate(inp, out, env):
-    rule = {"input": inp, "output": out}
+    rule = {"stages": [inp, out]}
     if env is not None:
         rule["env"] = env
     section = {"index": "1", "section": "paren", "rules": [rule]}

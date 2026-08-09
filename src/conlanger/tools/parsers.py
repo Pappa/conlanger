@@ -1,7 +1,7 @@
 """Parse Index Diachronica HTML into the cleaned rule-corpus shape (incremental).
 
-Phase 1: section structure + per-rule ``input`` / ``output`` split on ``→``
-(whitespace around the arrow is trimmed).
+Phase 1: section structure + per-rule ``stages`` split on every ``→`` in the change
+spine (whitespace around arrows is trimmed).
 Phase 2: optional ``/ env`` then optional ``! exception``
 (usual form ``input → output /env ! exception``). Word ``except`` and a
 second `` / `` are edge-case fallbacks.
@@ -10,8 +10,8 @@ other non-``schg`` paragraphs → ``comments``.
 Phase 4: **Symbol** normalization on corpus fields only (``#``, ``$``, ``%``, ``∅``,
 Index stress ``”`` → ``:[+stress]``; ``raw`` unchanged). Leading em dash list-item
 markers (``— ``) are stripped from the rule line before field split. Remaining
-Index rule arrows (``→``) in field values become ASCA ``>``. Chained rules keep a
-multi-segment ``output`` (``a > b > c``); compile-time expansion is deferred.
+Index rule arrows (``→``) in field values become ASCA ``>``. Chained rules store each
+spine segment in ``stages``; compile-time expansion is deferred.
 Uncertainty glosses
 (``sporadic``, ``sometimes``, …) are stripped from field values and recorded as
 ``sporadic: true``. **Feature matrix** synonym replacement inside ``[...]`` via
@@ -96,6 +96,7 @@ _STEM_BOUNDARY_PLACEHOLDER = "\ue000"
 
 # Index list-item em dash (U+2014) at the start of a rule line — not phonological.
 _LEADING_INDEX_LIST_MARKER_RE = re.compile(r"^—\s*")
+_CORPUS_CONTEXT_FIELD_KEYS = ("env", "exception")
 
 
 def strip_leading_index_list_marker(text: str) -> str:
@@ -103,6 +104,36 @@ def strip_leading_index_list_marker(text: str) -> str:
     if not text:
         return text
     return _LEADING_INDEX_LIST_MARKER_RE.sub("", text, count=1)
+
+
+def build_stages_from_spine(inp: str, out: str) -> list[str]:
+    """Split a change spine into ordered opaque stage strings."""
+    stages = [inp.strip()]
+    if ARROW in out:
+        stages.extend(
+            segment.strip() for segment in out.split(ARROW) if segment.strip()
+        )
+    elif out.strip():
+        stages.append(out.strip())
+    return stages
+
+
+def non_empty_stages(stages: list[str]) -> list[str]:
+    return [stage for stage in stages if stage and stage.strip()]
+
+
+def finalize_stages_shape(parts: dict[str, Any]) -> dict[str, Any]:
+    """Hold out rules with fewer than two non-empty stages."""
+    stages = parts.get("stages", [])
+    kept = non_empty_stages(stages)
+    if len(kept) >= 2:
+        parts["stages"] = kept
+        return parts
+    result = {key: value for key, value in parts.items() if key != "stages"}
+    result["stages"] = []
+    if result.get("status") != "skipped":
+        result["status"] = "skipped"
+    return result
 
 
 def join_rule_comment(*fragments: str | None) -> str | None:
@@ -228,7 +259,18 @@ def apply_sporadic_qualifier(parts: dict[str, str]) -> dict[str, Any]:
     if "comment" in parts:
         cleaned["comment"] = parts["comment"]
     comment_fragments: list[str] = []
-    for key in ("input", "output", "env", "exception"):
+    stages = parts.get("stages")
+    if stages is not None:
+        new_stages: list[str] = []
+        for stage in stages:
+            value = stage
+            if field_has_uncertainty_qualifier(value):
+                sporadic = True
+            value, captures = extract_uncertainty_qualifier_from_field(value)
+            comment_fragments.extend(captures)
+            new_stages.append(value)
+        cleaned["stages"] = new_stages
+    for key in _CORPUS_CONTEXT_FIELD_KEYS:
         if key not in parts:
             continue
         value = parts[key]
@@ -236,7 +278,7 @@ def apply_sporadic_qualifier(parts: dict[str, str]) -> dict[str, Any]:
             sporadic = True
         value, captures = extract_uncertainty_qualifier_from_field(value)
         comment_fragments.extend(captures)
-        if key in ("input", "output") or value:
+        if value:
             cleaned[key] = value
     result: dict[str, Any] = cleaned
     if sporadic:
@@ -328,12 +370,8 @@ def strip_trailing_quoted_gloss_from_field(text: str) -> str:
     return cleaned
 
 
-_FIELD_WRAPPED_QUOTED_GLOSS_RE = re.compile(
-    r'^[\u201c"]([^\u201d"]+)[\u201d"]\s*$'
-)
-_FIELD_LEADING_QUOTED_GLOSS_RE = re.compile(
-    r'^[\u201c"]([^\u201d"]{10,})[\u201d"]?\s*'
-)
+_FIELD_WRAPPED_QUOTED_GLOSS_RE = re.compile(r'^[\u201c"]([^\u201d"]+)[\u201d"]\s*$')
+_FIELD_LEADING_QUOTED_GLOSS_RE = re.compile(r'^[\u201c"]([^\u201d"]{10,})[\u201d"]?\s*')
 _EMBEDDED_QUOTED_GLOSS_RE = re.compile(
     r'[\s,]*[\u201c"]([^\u201d"]{3,})[\u201d"][\s,]*'
 )
@@ -470,7 +508,24 @@ def apply_trailing_glosses(parts: dict[str, str]) -> dict[str, Any]:
     if "comment" in parts:
         cleaned["comment"] = parts["comment"]
     comment_fragments: list[str] = []
-    for key in ("input", "output", "env", "exception"):
+    stages = parts.get("stages")
+    if stages is not None:
+        new_stages: list[str] = []
+        for original in stages:
+            wrapped_cleaned, wrapped_caps = (
+                extract_field_wrapped_quoted_gloss_from_field(original)
+            )
+            if wrapped_caps:
+                value = wrapped_cleaned
+                comment_fragments.extend(wrapped_caps)
+            else:
+                value, captures = extract_trailing_gloss_from_field(original)
+                comment_fragments.extend(captures)
+                if not value:
+                    value = original
+            new_stages.append(value)
+        cleaned["stages"] = new_stages
+    for key in _CORPUS_CONTEXT_FIELD_KEYS:
         if key not in parts:
             continue
         original = parts[key]
@@ -483,9 +538,7 @@ def apply_trailing_glosses(parts: dict[str, str]) -> dict[str, Any]:
         else:
             value, captures = extract_trailing_gloss_from_field(original)
             comment_fragments.extend(captures)
-            if key in ("input", "output") and not value:
-                value = original
-        if key in ("input", "output") or value:
+        if value:
             cleaned[key] = value
     _append_rule_comment_parts(cleaned, comment_fragments)
     return cleaned
@@ -620,7 +673,12 @@ def apply_feature_mappings(
     if not table:
         return parts
     result = dict(parts)
-    for key in ("input", "output", "env", "exception"):
+    stages = result.get("stages")
+    if stages is not None:
+        result["stages"] = [
+            normalize_feature_matrices_in_field(stage, table) for stage in stages
+        ]
+    for key in _CORPUS_CONTEXT_FIELD_KEYS:
         if key in result:
             result[key] = normalize_feature_matrices_in_field(result[key], table)
     return result
@@ -705,7 +763,10 @@ def apply_ipa_mappings(
     if not table:
         return parts
     result = dict(parts)
-    for key in ("input", "output", "env", "exception"):
+    stages = result.get("stages")
+    if stages is not None:
+        result["stages"] = [normalize_ipa_in_field(stage, table) for stage in stages]
+    for key in _CORPUS_CONTEXT_FIELD_KEYS:
         if key in result:
             result[key] = normalize_ipa_in_field(result[key], table)
     return result
@@ -730,9 +791,7 @@ _STRESS_CLASS_BEFORE_UNDERSCORE_RE = re.compile(
     rf"([A-Z]){re.escape(_INDEX_STRESS)}(?=_)"
 )
 # V(C)”(C)CaCV → V(C):[+stress](C)CaCV.
-_STRESS_AFTER_CLOSE_PAREN_RE = re.compile(
-    rf"\){re.escape(_INDEX_STRESS)}(?=\()"
-)
+_STRESS_AFTER_CLOSE_PAREN_RE = re.compile(rf"\){re.escape(_INDEX_STRESS)}(?=\()")
 # ” before a segment (rule input, e.g. ”V → …).
 _STRESS_PREFIX_RE = re.compile(
     rf"{re.escape(_INDEX_STRESS)}{_STRESS_SEGMENT}{_STRESS_FEAT_SUFFIX}"
@@ -750,9 +809,7 @@ _STRESS_AFTER_DOUBLE_SLASH_RE = re.compile(
     rf"(//\s*){re.escape(_INDEX_STRESS)}{_STRESS_SEGMENT}{_STRESS_FEAT_SUFFIX}"
 )
 # After Kleene star: _C*”{i,e}V → _C*{i:[+stress],e:[+stress]}V.
-_STRESS_AFTER_STAR_SET_RE = re.compile(
-    rf"\*{re.escape(_INDEX_STRESS)}\{{([^{{}}]+)\}}"
-)
+_STRESS_AFTER_STAR_SET_RE = re.compile(rf"\*{re.escape(_INDEX_STRESS)}\{{([^{{}}]+)\}}")
 _STRESS_AFTER_STAR_SEGMENT_RE = re.compile(
     rf"\*{re.escape(_INDEX_STRESS)}{_STRESS_SEGMENT}{_STRESS_FEAT_SUFFIX}"
 )
@@ -987,7 +1044,9 @@ def normalize_stress_marks(text: str) -> str:
     text = _STRESS_BEFORE_SET_RE.sub(_apply_stress_set_re, text)
     text = _STRESS_BEFORE_SET_AFTER_CLOSE_RE.sub(_apply_stress_set_after_close_re, text)
     text = _STRESS_IN_PAREN_RE.sub(_apply_stress_paren_re, text)
-    text = _STRESS_QUOTE_UNDERSCORE_SEGMENT_RE.sub(_apply_stress_quote_underscore_re, text)
+    text = _STRESS_QUOTE_UNDERSCORE_SEGMENT_RE.sub(
+        _apply_stress_quote_underscore_re, text
+    )
     text = _STRESS_IN_SET_RE.sub(_apply_stress_re, text)
     text = _STRESS_PREFIX_COLON_FEAT_RE.sub(_apply_stress_colon_feat_re, text)
     text = _STRESS_BEFORE_PAREN_RE.sub(":[+stress]", text)
@@ -1024,12 +1083,14 @@ def is_quoted_prose_paragraph(raw: str) -> bool:
 
 
 def is_gloss_only_rule(parts: dict[str, Any]) -> bool:
-    """True when gloss stripping removed all phonological output."""
-    return not parts.get("output") and bool(parts.get("comment"))
+    """True when gloss stripping removed all phonological stages."""
+    return len(non_empty_stages(parts.get("stages", []))) < 2 and bool(
+        parts.get("comment")
+    )
 
 
-def extract_rule_parts(raw: str) -> dict[str, str] | None:
-    """Split a raw rule string into input, output, and optional env/exception.
+def extract_rule_parts(raw: str) -> dict[str, Any] | None:
+    """Split a raw rule string into ``stages`` and optional env/exception.
 
     Returns None if ``→`` is missing. Optional keys are omitted when absent.
     """
@@ -1039,15 +1100,18 @@ def extract_rule_parts(raw: str) -> dict[str, str] | None:
         return None
     inp, post_arrow = split
     out, env, exception = split_post_arrow(post_arrow)
-    parts: dict[str, str] = {
-        "input": inp,
-        "output": out,
-    }
+    stages = build_stages_from_spine(inp, out)
+    parts: dict[str, Any] = {"stages": stages}
     if env is not None:
         parts["env"] = env
     if exception is not None:
         parts["exception"] = exception
-    return {key: normalize_rule_arrows(value) for key, value in parts.items()}
+    parts["stages"] = [normalize_rule_arrows(stage) for stage in parts["stages"]]
+    if env is not None:
+        parts["env"] = normalize_rule_arrows(parts["env"])
+    if exception is not None:
+        parts["exception"] = normalize_rule_arrows(parts["exception"])
+    return parts
 
 
 def note_from_element(el, *, source_file: str) -> dict[str, Any]:
@@ -1192,12 +1256,11 @@ class IndexDiachronicaParser:
         if is_quoted_prose_paragraph(raw):
             return [
                 {
-                    "input": "",
-                    "output": "",
+                    "stages": [],
                     "raw": raw,
                     "source": source,
                     "comment": raw.strip(),
-                    "skipped": "quoted prose paragraph",
+                    "status": "skipped",
                 }
             ]
         normalized = normalize_symbols(raw)
@@ -1205,11 +1268,10 @@ class IndexDiachronicaParser:
         if parts is None:
             return [
                 {
-                    "input": "",
-                    "output": "",
+                    "stages": [],
                     "raw": raw,
                     "source": source,
-                    "skipped": f"missing separator {ARROW!r}",
+                    "status": "skipped",
                 }
             ]
         parts = apply_semicolon_field_comments(parts)
@@ -1220,12 +1282,11 @@ class IndexDiachronicaParser:
         if is_gloss_only_rule(parts):
             return [
                 {
-                    "input": "",
-                    "output": "",
+                    "stages": [],
                     "raw": raw,
                     "source": source,
                     "comment": parts["comment"],
-                    "skipped": "quoted prose paragraph",
+                    "status": "skipped",
                     **sporadic_flag,
                 }
             ]
@@ -1235,6 +1296,7 @@ class IndexDiachronicaParser:
         from conlanger.tools.series_mappings import apply_series_mappings
 
         parts = apply_series_mappings(parts, section_index, self._series_mappings)
+        parts = finalize_stages_shape(parts)
         return [{**parts, "raw": raw, "source": source, **sporadic_flag}]
 
     def parse(

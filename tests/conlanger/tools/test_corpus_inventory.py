@@ -141,15 +141,32 @@ def test_validation_row_as_csv_dict():
     }
 
 
+def test_validate_corpus_rule_skipped_quoted_prose_uses_comment():
+    row = validate_corpus_rule(
+        _SECTION,
+        {
+            "stages": [],
+            "status": "skipped",
+            "comment": "quoted prose paragraph",
+            "raw": "hhy → gloss",
+            "source": "sample.html:9",
+        },
+        0,
+        probe_words=None,
+    )
+    assert row.ok is False
+    assert row.failure_class == "missing_arrow"
+    assert row.description == "quoted prose paragraph"
+
+
 def test_validate_corpus_rule_skipped_parse_diagnostic():
     row = validate_corpus_rule(
         _SECTION,
         {
-            "input": "",
-            "output": "",
+            "stages": [],
             "raw": "no arrow",
             "source": "sample.html:1",
-            "skipped": "missing separator '→'",
+            "status": "skipped",
         },
         0,
         probe_words=None,
@@ -157,6 +174,34 @@ def test_validate_corpus_rule_skipped_parse_diagnostic():
     assert row.ok is False
     assert row.failure_class == "missing_arrow"
     assert row.reason == "broken-syntax"
+
+
+@patch(
+    "conlanger.tools.corpus_inventory.PhonologicalRuleSet",
+    side_effect=ValueError("bad compile"),
+)
+def test_validate_corpus_rule_phonological_compile_format_error(_mock_prs):
+    row = validate_corpus_rule(
+        _SECTION,
+        {"stages": ["a", "b"], "raw": "a → b", "source": "sample.html:8"},
+        0,
+        probe_words=None,
+    )
+    assert row.ok is False
+    assert row.failure_class == "format_error"
+    assert "bad compile" in row.description
+
+
+def test_validate_corpus_rule_format_error_no_compile_steps():
+    row = validate_corpus_rule(
+        _SECTION,
+        {"stages": ["a"], "raw": "a →", "source": "sample.html:7"},
+        0,
+        probe_words=None,
+    )
+    assert row.ok is False
+    assert row.failure_class == "format_error"
+    assert "no compile steps" in row.description
 
 
 def test_validate_corpus_rule_format_error():
@@ -175,8 +220,7 @@ def test_validate_corpus_rule_held_out_comment():
         _SECTION,
         {
             "skip": True,
-            "input": "a",
-            "output": "b",
+            "stages": ["a", "b"],
             "raw": "a → b",
             "source": "sample.html:3",
         },
@@ -191,7 +235,7 @@ def test_validate_corpus_rule_held_out_comment():
 def test_validate_corpus_rule_ok(_mock_validate):
     row = validate_corpus_rule(
         _SECTION,
-        {"input": "a", "output": "b", "raw": "a → b", "source": "sample.html:4"},
+        {"stages": ["a", "b"], "raw": "a → b", "source": "sample.html:4"},
         0,
         probe_words=Path("/probe.wsca"),
     )
@@ -206,7 +250,7 @@ def test_validate_corpus_rule_ok(_mock_validate):
 def test_validate_corpus_rule_asca_failure(_mock_validate):
     row = validate_corpus_rule(
         _SECTION,
-        {"input": "a", "output": "b", "env": "bad", "raw": "a → b", "source": "s:5"},
+        {"stages": ["a", "b"], "env": "bad", "raw": "a → b", "source": "s:5"},
         0,
         probe_words=None,
     )
@@ -227,8 +271,7 @@ def test_validate_corpus_rule_unknown_token_fields(_mock_validate):
     row = validate_corpus_rule(
         _SECTION,
         {
-            "input": "e",
-            "output": "i",
+            "stages": ["e", "i"],
             "env": "#l_{P,C[+voiced]}",
             "raw": "e → i",
             "source": "s:6",
@@ -287,11 +330,10 @@ def test_iter_validation_rows():
                 "section": "A",
                 "rules": [
                     {
-                        "input": "",
-                        "output": "",
+                        "stages": ["", ""],
                         "raw": "x",
                         "source": "s:1",
-                        "skipped": "missing separator '→'",
+                        "status": "skipped",
                     }
                 ],
             }

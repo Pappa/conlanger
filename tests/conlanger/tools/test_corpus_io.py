@@ -12,8 +12,7 @@ def test_dump_cleaned_corpus_uses_literal_block_for_multiline_raw():
                 "index": "1.0",
                 "rules": [
                     {
-                        "input": "a",
-                        "output": "b",
+                        "stages": ["a", "b"],
                         "raw": "line one\nline two",
                         "source": "sample.html:10",
                     }
@@ -37,8 +36,7 @@ def test_dump_cleaned_corpus_single_line_raw_uses_plain_scalar():
                 "index": "1.0",
                 "rules": [
                     {
-                        "input": "a",
-                        "output": "b",
+                        "stages": ["a", "b"],
                         "raw": "a → b",
                         "source": "sample.html:10",
                     }
@@ -60,8 +58,7 @@ def test_write_cleaned_corpus(tmp_path: Path):
                 "index": "1.0",
                 "rules": [
                     {
-                        "input": "a",
-                        "output": "b",
+                        "stages": ["a", "b"],
                         "raw": "a → b",
                         "source": "sample.html:10",
                     }

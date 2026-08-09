@@ -44,24 +44,50 @@ def test_is_multigraph_output_chain():
     assert not _is_multigraph_output_chain(["k", "x", "ɡ", "ɣ"])
 
 
-def test_normalize_corpus_rule_tilde_fields_expands_alternation_not_chain():
-    rule = {"input": "d", "output": "d~n~l", "env": "#_a"}
-    assert normalize_corpus_rule_tilde_fields(rule)["output"] == "{d,n,l}"
+def test_expand_output_tilde_field_without_tilde():
+    from conlanger.tools.asca_compile.tilde import _expand_output_tilde_field
+
+    assert _expand_output_tilde_field("abc") == "abc"
+
+
+def test_split_set_members_nested_parens():
+    from conlanger.tools.asca_compile.tilde import _split_set_members
+
+    assert _split_set_members("a,(b,c),d") == ["a", "(b,c)", "d"]
+
+
+def test_expand_tilde_in_token_single_part():
+    from conlanger.tools.asca_compile.tilde import _expand_tilde_in_token
+
+    assert _expand_tilde_in_token("abc") == "abc"
+
+
+def test_normalize_corpus_rule_tilde_fields_no_stages():
+    assert normalize_corpus_rule_tilde_fields({"stages": []}) == {"stages": []}
+
+
+def test_normalize_corpus_rule_tilde_fields_expands_tilde_on_middle_stage():
+    rule = {"stages": ["d~n", "l"]}
+    assert normalize_corpus_rule_tilde_fields(rule)["stages"] == ["{d,n}", "l"]
+    rule = {"stages": ["d", "d~n~l"], "env": "#_a"}
+    assert normalize_corpus_rule_tilde_fields(rule)["stages"] == ["d", "{d,n,l}"]
 
 
 def test_normalize_corpus_rule_tilde_fields_expands_output_chain():
-    rule = {"input": "{β,w}", "output": "bj~vj~v"}
-    assert normalize_corpus_rule_tilde_fields(rule) == {
-        "input": "{β,w}",
-        "output": "bj > vj > v",
-    }
+    rule = {"stages": ["{β,w}", "bj~vj~v"]}
+    assert normalize_corpus_rule_tilde_fields(rule)["stages"] == [
+        "{β,w}",
+        "bj",
+        "vj",
+        "v",
+    ]
 
 
 def test_sound_change_ruleset_expands_tilde_output_chain():
     section = {
         "index": "1.0",
         "section": "Tilde chain",
-        "rules": [{"input": "{β,w}", "output": "bj~vj~v"}],
+        "rules": [{"stages": ["{β,w}", "bj~vj~v"]}],
     }
     ruleset = SoundChangeRuleSet(section, "asca")
     rule_parts = [part for part in ruleset._parts if isinstance(part, RuleChange)]
@@ -89,7 +115,7 @@ def test_sound_change_ruleset_expands_tilde_output_chain():
     ],
 )
 def test_tilde_inventory_representatives_validate(inp, out, env):
-    rule = {"input": inp, "output": out}
+    rule = {"stages": [inp, out]}
     if env is not None:
         rule["env"] = env
     section = {"index": "1", "section": "tilde", "rules": [rule]}
@@ -100,6 +126,6 @@ def test_tilde_inventory_representative_paren_input_validates_after_expansion():
     section = {
         "index": "1",
         "section": "paren",
-        "rules": [{"input": "ʔ(ʷ)~q:[+cg](ʷ)", "output": "ʔ(ʷ)"}],
+        "rules": [{"stages": ["ʔ(ʷ)~q:[+cg](ʷ)", "ʔ(ʷ)"]}],
     }
     validate_asca(SoundChangeRuleSet(section, "asca"))

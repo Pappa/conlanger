@@ -151,7 +151,7 @@ def guess_field(value: str | None, *, is_env: bool = False) -> str:
 
 def guess_asca_fields(rule: dict) -> dict[str, str]:
     """Heuristic ASCA field guess from an HTML-parsed rule dict."""
-    if rule.get("skipped"):
+    if rule.get("status") == "skipped":
         return {
             "asca_input": "",
             "asca_output": "",
@@ -159,8 +159,9 @@ def guess_asca_fields(rule: dict) -> dict[str, str]:
             "asca_exception": "",
         }
 
-    inp = guess_field(rule.get("input", ""))
-    out = guess_field(rule.get("output", ""))
+    stages = [stage for stage in rule.get("stages", []) if stage and str(stage).strip()]
+    inp = guess_field(stages[0] if stages else "")
+    out = guess_field(stages[-1] if len(stages) >= 2 else "")
     env = guess_field(rule.get("env"), is_env=True)
     exc = guess_field(rule.get("exception"), is_env=True)
     inp, out = parallel_spaces_to_commas(inp, out)
@@ -286,9 +287,12 @@ def main() -> int:
     for rule in sample:
         source = rule.get("source", "")
         raw = rule.get("raw", "")
+        stages = [
+            stage for stage in rule.get("stages", []) if stage and str(stage).strip()
+        ]
         parts = {
-            "input": rule.get("input", ""),
-            "output": rule.get("output", ""),
+            "input": stages[0] if stages else "",
+            "output": stages[-1] if len(stages) >= 2 else "",
             "env": rule.get("env", ""),
             "exception": rule.get("exception", ""),
         }
@@ -312,7 +316,7 @@ def main() -> int:
                 "output": parts["output"],
                 "env": parts["env"],
                 "exception": parts["exception"],
-                "expect_none": "True" if rule.get("skipped") else "False",
+                "expect_none": "True" if rule.get("status") == "skipped" else "False",
                 "kind": "asca_guess",
                 "asca_input": guess["asca_input"],
                 "asca_output": guess["asca_output"],

@@ -34,17 +34,20 @@ sections:
 
 | Field | Required | Notes |
 |-------|----------|--------|
-| `input` | yes | Index Diachronica–shaped string; `""` when `status: skipped` |
-| `output` | yes | same |
+| `stages` | yes | ordered opaque Index-shaped strings; length 2 = single step; ≥ 3 = chain; `[]` + `status: skipped` = hold-out |
 | `raw` | yes | original HTML rule-line text; multi-line via `\|` literal block |
 | `source` | yes | `index_diachronica_original.html:<line>` — first line of the span |
 | `env` | no | **Environment** — absent = any |
 | `exception` | no | **Exception** — absent = none |
 | `sporadic` | no | **Uncertainty** — rule application is sporadic or optional; gloss stripped from fields |
 | `comment` | no | Inline editorial prose for **this rule line** — qualifiers, semicolon tails, parenthetical notes stripped from fields; see [ticket 30](30-rule-comment-field-on-corpus-rules.md) |
-| `status` | no | **Rule status** — see ticket 04; reasons in **validation report** |
+| `status` | no | **Rule status** — e.g. `skipped` for hold-outs; reasons in **validation report** |
 
-Field values are opaque Index-shaped strings — not an ASCA AST. See **Corpus rule**, **Applier-neutral**, **Subscript notation**, **Rule comment** in `CONTEXT.md`. Abbreviation / feature policy: tickets 06, 07.
+Field values in `stages`, `env`, and `exception` are opaque Index-shaped strings — not an ASCA AST. See **Corpus rule**, **Stages**, **Applier-neutral**, **Subscript notation**, **Rule comment** in `CONTEXT.md`. Abbreviation / feature policy: tickets 06, 07.
+
+### Schema amendment (2026-08-09)
+
+Uniform **`stages`** spine per [ADR-0011](../../docs/adr/0011-corpus-rule-stages.md) — replaces required `input`/`output`; compile expands adjacent pairs at compile time.
 
 ### Schema amendment (2026-08)
 
