@@ -15,6 +15,9 @@ from conlanger.tools.asca_compile.group_mappings import (
     expand_grouping_letter as _expand_grouping_letter,
 )
 from conlanger.tools.asca_compile.length_marks import normalize_asca_length_marks
+from conlanger.tools.asca_compile.parallel_null_columns import (
+    drop_mixed_parallel_null_columns,
+)
 from conlanger.tools.asca_compile.pipeline import compile_asca_rule_string
 from conlanger.tools.asca_compile.superscript_modifiers import (
     normalize_asca_superscript_modifiers,
@@ -151,7 +154,13 @@ class RuleChange(RulePartBase):
     def _compile_rule_text(self, format: str) -> str:
         separator = self.separator.get(format, {})
 
-        result = self.input + separator["output"] + self.output
+        input_text = self.input
+        output_text = self.output
+        if format == "asca":
+            input_text = drop_mixed_parallel_null_columns(input_text)
+            output_text = drop_mixed_parallel_null_columns(output_text)
+
+        result = input_text + separator["output"] + output_text
         if self.env:
             result += separator["env"] + self.env
         if self.exception:

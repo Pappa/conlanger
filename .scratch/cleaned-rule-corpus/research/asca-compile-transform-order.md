@@ -16,6 +16,7 @@ Renumbered pipeline (integer `Order` column ready for [ticket 37](../issues/37-d
 
 | Order | Step | Status | Rationale (one line) |
 |------:|------|--------|----------------------|
+| 0 | `drop_mixed_parallel_null_columns` (per I/O side) | implemented | Index parallel-column `∅`/`*` beside other segments → omit null tokens before join ([ticket 60](../issues/60-correction-pass-parallel-column-null.md)) |
 | 1 | Join corpus fields (`input` + `output` + `env` + `exception`) | implemented | Establishes rule string before transforms |
 | 2 | `normalize_asca_optional_grouping_ellipsis` | implemented | Index `(C…)` / `(…C)` must become ASCA `(C,0)` / `(..)C` before token transforms |
 | 3 | `expand_index_subscript_references` (positional + identity) | planned | Unicode subscripts → ASCA `X=n` / bare `n`; must precede length norm for `N₂ː` → `2:[+long]` |
