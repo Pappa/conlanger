@@ -8,7 +8,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 
 ## Notes
 
-- Glossary: `CONTEXT.md` — **Subscript notation** (four uses: correspondence-series index, positional slot, identity subscript, collective subscript); **Stages** (corpus change spine). Decisions: ADRs 0001–0011.
+- Glossary: `CONTEXT.md` — **Subscript notation** (four uses); **Stages**; **Optional outputs** (grill open). Decisions: ADRs 0001–0011.
 - Skills: `/research`, `/grill-with-docs` or grilling + domain-modeling, `/prototype` if needed.
 - **`data/` folder:** project data tree — use for reference **and** implementation. Index Diachronica HTML SoT: `data/diachronica/index_diachronica_original.html`; regenerated corpus YAML: `data/diachronica/index_diachronica_parsed.yml`; runtime CSV mappings: `data/asca/` (e.g. `group_mappings.csv`).
 - **`src/conlanger/`:** parser, compile, validation, and orchestration code.
@@ -62,6 +62,8 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - [Spike: Index syllable position `#U` / `U#` → ASCA](issues/58-spike-index-syllable-position-u-hash.md) — grill 2026-08-09: `! in #U` is syllable-tier, not `// #_%`; leave **~14** exception rules failing until faithful encoding found.
 - [Corpus rule `stages` schema cutover](issues/59-corpus-rule-stages-schema.md) — grill 2026-08-09: replace `input`/`output` with uniform **`stages`**; one env/exception per rule; compile expands adjacent pairs. [ADR-0011](../../docs/adr/0011-corpus-rule-stages.md).
 - [Parse-time manual rule mappings](issues/60-parse-time-manual-rule-mappings.md) — done: `manual_mappings.csv` at parse before other transforms; `raw` unchanged; debug CSV + unmatched warnings; inventory **7184 → 7185 ok (+1)**.
+- [Correction pass: Index parallel-column `∅` in multi-segment I/O](issues/60-correction-pass-parallel-column-null.md) — grill 2026-08-09: omit mixed top-level null columns on input/output; set-internal `∅` out of scope (**note:** duplicate ticket number 60 with manual mappings — rename when convenient).
+- [Grill: optional outputs](issues/61-grill-optional-outputs.md) — **needs-grilling** (paused): unpaired output sets e.g. `d → {∅,ð}`; YAML keeps set; choice/testability still open. Glossary: **Optional outputs**.
 
 ## Pipeline documentation (grill 2026-08-07)
 
@@ -95,6 +97,7 @@ Phased delivery — not vertical slices upfront:
 - **Section-local abbreviations** (e.g. Athabaskan `TŠ`) — cluster-driven; hand-add mapping rows when warranted
 - Abbreviation table authorship at scale
 - Prose-**environment** mapping — informed by extracted **`comment`** qualifiers ([Capture rule comments at parse time](issues/31-capture-rule-comments-at-parse-time.md)); structured env from prose not yet specified
+- **Optional outputs** — unpaired Index output sets (e.g. `d → {∅,ð}`); ASCA-illegal; choice/render design paused — [grill ticket 61](issues/61-grill-optional-outputs.md) (`needs-grilling`)
 - Adoption criteria for cleaned YAML replacing HTML as **SoT**
 - Brassica compiler (ADR-0001)
 - Edge-split policy (ADR-0005; **`status: skipped` deferred** until post-correction triage per ticket 26 / ADR-0010)

@@ -68,6 +68,10 @@ _Avoid_: treating every surface alternation as a separate authored rule by defau
 The ordered list of opaque Index-shaped strings on a corpus rule that encode the change spine — successive forms separated by arrows in the Index line. Length 2 is a single-step change (former `input` then `output`); length ≥ 3 is a chain; length 0 with `status: skipped` means unrepresentable. Each entry stays an opaque string (sets, matrices, class letters intact), not a structured segment object.
 _Avoid_: `input`/`output` as the stored spine; encoding the chain only as `" > "` inside a single string field; list-typed `input` with scalar `output`
 
+**Optional outputs**:
+An Index output written as a set while the matching input is **not** a set (e.g. `d → {∅,ð}`), encoding speaker variation among alternative results (including null). The YAML SoT keeps the set opaque in **stages**. How (and when) one alternative is chosen for ASCA is still open — see the optional-outputs grill ticket. Distinct from **sporadic** (whether to apply the rule at all).
+_Avoid_: calling this `sporadic`; structuring optional outputs as a separate YAML field; treating paired input/output sets (`{a,b} → {c,d}`) as optional outputs
+
 **Environment**:
 The phonological context in which a sound change applies — the `/ … _` portion of a rule (where the change is conditioned). Stored as optional field `env` on a corpus rule; absent means any environment.
 _Avoid_: “context” when `exception` is meant; prose paragraphs from Index comments
