@@ -4,23 +4,23 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9201** (one per corpus rule)
-- OK: **7308** (79.4%)
-- Fail: **1893** (20.6%)
-- Sections all OK: **229 / 714** (32.1%)
+- OK: **7372** (80.1%)
+- Fail: **1829** (19.9%)
+- Sections all OK: **234 / 714** (32.8%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 560 | `syntax_other` |
-| 409 | `expected_underscore` |
-| 325 | `unknown_character` |
-| 120 | `unknown_feature` |
+| 562 | `syntax_other` |
+| 334 | `expected_underscore` |
+| 326 | `unknown_character` |
+| 121 | `unknown_feature` |
 | 118 | `runtime_other` |
-| 104 | `unknown_grouping` |
-| 65 | `prose_or_expected_arrow` |
-| 44 | `nested_brackets` |
-| 40 | `panic_other` |
+| 106 | `unknown_grouping` |
+| 68 | `prose_or_expected_arrow` |
+| 45 | `nested_brackets` |
+| 41 | `panic_other` |
 | 37 | `expected_number` |
 | 30 | `diacritic_prereq` |
 | 21 | `runtime_delete_only_segment` |
@@ -39,7 +39,7 @@
 | 45 | `ı` |
 | 37 | `́` |
 | 27 | `ṽ` |
-| 19 | `̣` |
+| 20 | `̣` |
 
 ### unknown_feature
 
@@ -53,8 +53,8 @@
 | 8 | `mid` | `man` |
 | 8 | `hightone` | `high` |
 | 6 | `lenis` | `tens` |
+| 6 | `guttural` | `lateral` |
 | 5 | `weak` | `man` |
-| 5 | `guttural` | `lateral` |
 | 3 | `palatalized` | `latrl` |
 | 3 | `fallingtone` | `length` |
 | 2 | `lowfallingtone` | `continuant` |
@@ -81,8 +81,8 @@
 | 17 | `R` |
 | 15 | `U` |
 | 14 | `E` |
+| 10 | `B` |
 | 9 | `K` |
-| 8 | `B` |
 | 8 | `M` |
 | 7 | `T` |
 | 6 | `X` |

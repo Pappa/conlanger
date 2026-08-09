@@ -74,6 +74,12 @@ Applied to the working copy only; **`raw` is stored before this** (see `parse_ru
 | Chain split (no env/exception) | implemented | E1 | `a > b > c` without env becomes sequential single-step rules ([pass 18](../.scratch/cleaned-rule-corpus/issues/18-correction-pass-chain-split.md)). Chains **with** env/exception stay one row. | `expand_chained_rule_parts` |
 | Attach provenance (`raw`, `source`, optional `sporadic`) | implemented | E2 | Every emitted rule carries HTML line ref and original Index text. | `parse_rule_element` |
 
+### Phase F — Section post-pass (after per-line extract)
+
+| Step | Status | Order | Rationale | Code |
+| --- | --- | ---: | --- | --- |
+| Catch-all `/ else` → complementary `exception` | implemented | F1 | Index default branch is not an env; when the previous rule has `env` and no `exception`, omit `env` and set `exception` to that env ([pass 53](../.scratch/cleaned-rule-corpus/issues/53-correction-pass-prose-env-else.md)). Deferred: prev with both env+exception, neither, or else-after-else. | `resolve_catch_all_else_rules` (in `parse`) |
+
 ---
 
 ## Planned / deferred parse-time work

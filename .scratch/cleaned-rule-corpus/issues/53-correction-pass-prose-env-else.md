@@ -1,5 +1,5 @@
 Type: task
-Status: claimed
+Status: resolved
 Blocked by: 12
 
 # Correction pass: prose env `else`
@@ -54,16 +54,23 @@ ASCA rejects `else` (`Expected '_'`). The second rule is the complementary defau
 
 ## Acceptance criteria
 
-- [ ] Parse resolves in-scope else → omitted `env` + `exception` = prev `env`
-- [ ] Deferred leftovers still have `env: else` / `else?` (or gloss variants only after strip failure)
-- [ ] Tests cover complementary, gloss, cascade-immediate-prev, and one deferred env+exception pair
-- [ ] Full inventory re-baseline; else cluster size in **Answer**
-- [ ] Fixtures updated where outcomes change
-- [ ] `CONTEXT.md` Environment / Exception wording kept aligned
+- [x] Parse resolves in-scope else → omitted `env` + `exception` = prev `env`
+- [x] Deferred leftovers still have `env: else` / `else?` (or gloss variants only after strip failure)
+- [x] Tests cover complementary, gloss, cascade-immediate-prev, and one deferred env+exception pair
+- [x] Full inventory re-baseline; else cluster size in **Answer**
+- [x] Fixtures updated where outcomes change
+- [x] `CONTEXT.md` Environment / Exception wording kept aligned
 
 ## Answer
 
-_(pending)_
+Baseline (before): **7308 / 9201** ok (79.4%); **93** rules with catch-all `env: else` / `else?`.
+
+Full inventory re-run:
+
+- **7372 / 9201** ok (**+64** rules, **80.1%**)
+- Catch-all `else` / `else?` in `env`: **93 → 9** (84 rewritten to `exception` = immediate prev `env`; 8 structural deferred + 1 gloss-only else-after-else chain)
+- `expected_underscore` failure class: **409 → 334** (−75)
+- Implementation: `resolve_catch_all_else_rules` section post-pass in `IndexDiachronicaParser.parse`
 
 ## References
 

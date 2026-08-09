@@ -1317,9 +1317,9 @@ sections:
   - stages:
     - ɢ(ʷ)
     - x(ʷ)
-    env: else
     raw: ɢ(ʷ) → x(ʷ) / else
     source: index_diachronica_original.html:1196
+    exception: '#_, _#'
   - stages:
     - '{ts,tʃ} z dz'
     - ʃ d dʒ
@@ -1428,9 +1428,9 @@ sections:
   - stages:
     - '{xʷ,ɢʷ}'
     - w
-    env: else
     raw: '{xʷ,ɢʷ} → w / else'
     source: index_diachronica_original.html:1219
+    exception: '#_, _#'
   - stages:
     - ts tʃ dz
     - sʼ tʃʼ z
@@ -1450,9 +1450,9 @@ sections:
   - stages:
     - kʼ
     - q
-    env: else
     raw: kʼ → q / else
     source: index_diachronica_original.html:1223
+    exception: '#_'
   - stages:
     - ʔ
     - ∅
@@ -2723,9 +2723,9 @@ sections:
   - stages:
     - ə
     - ɪ
-    env: else
     raw: ə → ɪ / else
     source: index_diachronica_original.html:1474
+    exception: near emphatics
   - stages:
     - u
     - ʊ
@@ -2741,9 +2741,9 @@ sections:
   - stages:
     - aː
     - æː
-    env: else
     raw: aː → æː / else
     source: index_diachronica_original.html:1477
+    exception: near emphatics
   - stages:
     - C₁ˤC₂
     - C₁C₂ˤ
@@ -2769,9 +2769,9 @@ sections:
   - stages:
     - dʒ
     - ʒ
-    env: else
     raw: dʒ → ʒ / else
     source: index_diachronica_original.html:1482
+    exception: if s or z occur somewhere else in the word
   - stages:
     - s
     - ʃ
@@ -2959,9 +2959,9 @@ sections:
   - stages:
     - i
     - eː oː
-    env: else
     raw: — i → eː oː / else
     source: index_diachronica_original.html:1525
+    exception: _C{$,#}
   - stages:
     - aw
     - aːw
@@ -3144,9 +3144,10 @@ sections:
   - stages:
     - ə
     - ∅
-    env: else
     raw: ə → ∅ / else
     source: index_diachronica_original.html:1559
+    exception: '#R_C or when breaking up what would otherwise be a three-consonant
+      cluster'
   - comment: (sometimes)
     stages:
     - w θ ð ɣ
@@ -5780,9 +5781,9 @@ sections:
   - stages:
     - ɡ
     - k
-    env: else
     raw: ɡ → k / else
     source: index_diachronica_original.html:2115
+    exception: iV_
   - stages:
     - '{ʃ,z}'
     - s
@@ -5830,9 +5831,9 @@ sections:
   - stages:
     - l lʲ
     - r s
-    env: else
     raw: l lʲ → r s / else
     source: index_diachronica_original.html:2124
+    exception: '#_'
   - stages:
     - j
     - '{j,∅}'
@@ -5991,9 +5992,9 @@ sections:
   - stages:
     - l(ʲ)
     - r
-    env: else
     raw: l(ʲ) → r / else
     source: index_diachronica_original.html:2160
+    exception: '#_'
   - stages:
     - j
     - '{j,∅}'
@@ -6153,9 +6154,9 @@ sections:
   - stages:
     - tʰ
     - t
-    env: else
     raw: tʰ → t / else
     source: index_diachronica_original.html:2191
+    exception: _i
   - stages:
     - tʃ
     - dʒ
@@ -6194,9 +6195,9 @@ sections:
   - stages:
     - kʰ
     - k
-    env: else
     raw: kʰ → k / else
     source: index_diachronica_original.html:2198
+    exception: '{C,V}_h'
   - stages:
     - z
     - s
@@ -6211,9 +6212,9 @@ sections:
   - stages:
     - ʃ
     - s
-    env: else
     raw: ʃ → s / else
     source: index_diachronica_original.html:2201
+    exception: '#_a'
   - stages:
     - nʲ
     - dʒ
@@ -6223,9 +6224,9 @@ sections:
   - stages:
     - nʲ
     - '{j,n}'
-    env: else
     raw: nʲ → {j,n} / else
     source: index_diachronica_original.html:2203
+    exception: '#_'
   - stages:
     - ŋ
     - ɡ
@@ -6741,9 +6742,9 @@ sections:
   - stages:
     - f
     - p
-    env: else
     raw: f → p / else
     source: index_diachronica_original.html:2304
+    exception: _V
   - stages:
     - ŋ
     - ɡ
@@ -7145,9 +7146,9 @@ sections:
   - stages:
     - l
     - j
-    env: else
     raw: l → j / else
     source: index_diachronica_original.html:2422
+    exception: '{i,e}_'
   - stages:
     - c ɲ
     - t n
@@ -7330,9 +7331,9 @@ sections:
   - stages:
     - '{c,ɲ}'
     - ∅
-    env: else
     raw: '{c,ɲ} → ∅ / else'
     source: index_diachronica_original.html:2478
+    exception: '{i,e}_'
   - stages:
     - ə
     - ∅
@@ -8769,9 +8770,9 @@ sections:
   - stages:
     - h
     - ∅
-    env: else
     raw: h → ∅ / else
     source: index_diachronica_original.html:2839
+    exception: _#
   - stages:
     - '{iw,uj}'
     - i
@@ -12528,9 +12529,9 @@ sections:
   - stages:
     - ə
     - e
-    env: else
     raw: ə → e / else
     source: index_diachronica_original.html:3653
+    exception: in U#
 - section: Proto-Tanna to Lenakel
   index: 10.3.11.3.2
   citation: thetha, from Lynch, John (2001), The Linguistic History of Southern Vanuatu
@@ -12859,10 +12860,10 @@ sections:
   - stages:
     - β
     - f
-    env: else
     comment: (rarely)
     raw: β → f / else (rarely)
     source: index_diachronica_original.html:3729
+    exception: '#_'
   - stages:
     - bʷ ɡ
     - kpʷ k
@@ -13034,9 +13035,9 @@ sections:
   - stages:
     - f
     - j
-    env: else
     raw: f → j / else
     source: index_diachronica_original.html:3764
+    exception: '#_aCo'
   - stages:
     - ∅
     - ɰ
@@ -15986,9 +15987,9 @@ sections:
   - stages:
     - ð
     - t
-    env: else
     raw: ð → t / else
     source: index_diachronica_original.html:4601
+    exception: _#
   - stages:
     - ∅
     - t
@@ -16124,9 +16125,9 @@ sections:
   - stages:
     - ə
     - ∅
-    env: else
     raw: ə → ∅ / else
     source: index_diachronica_original.html:4630
+    exception: a_
   - stages:
     - ɣ ʁ
     - k q
@@ -16234,9 +16235,9 @@ sections:
   - stages:
     - ə
     - i
-    env: else
     raw: ə → i / else
     source: index_diachronica_original.html:4652
+    exception: i_
   - stages:
     - dʒ
     - tʃ
@@ -16354,9 +16355,9 @@ sections:
   - stages:
     - ə
     - i
-    env: else
     raw: ə → i / else
     source: index_diachronica_original.html:4673
+    exception: a_
   - stages:
     - ɣ ʁ
     - k q
@@ -16443,9 +16444,9 @@ sections:
   - stages:
     - ə
     - i
-    env: else
     raw: ə → i / else
     source: index_diachronica_original.html:4691
+    exception: a_
   - stages:
     - v
     - u
@@ -17703,9 +17704,9 @@ sections:
   - stages:
     - kʷ
     - k
-    env: else?
     raw: kʷ → k / else?
     source: index_diachronica_original.html:4966
+    exception: _B?
   - stages:
     - ɡ́(ʱ)
     - d
@@ -17909,9 +17910,9 @@ sections:
   - stages:
     - kʷ
     - k
-    env: else?
     raw: kʷ → k / else?
     source: index_diachronica_original.html:5005
+    exception: _B?
   - stages:
     - ɡ́(ʱ)
     - d
@@ -18499,10 +18500,10 @@ sections:
   - stages:
     - k
     - x
-    env: else
     comment: (possibly a uvular stop)
     raw: h₂ → x / else (possibly a uvular stop)
     source: index_diachronica_original.html:5116
+    exception: _E
   - stages:
     - w
     - b
@@ -20211,9 +20212,9 @@ sections:
   - stages:
     - k kʷ ɡ(ʷ)(ʱ)
     - x k ɡ
-    env: else
     raw: k kʷ ɡ(ʷ)(ʱ) → x k ɡ / else
     source: index_diachronica_original.html:5448
+    exception: _E
   - stages:
     - rt
     - ʃ
@@ -20516,9 +20517,9 @@ sections:
   - stages:
     - f
     - ∅
-    env: else
     raw: f → ∅ / else
     source: index_diachronica_original.html:5506
+    exception: _O
   - stages:
     - r̩ l̩
     - '{ri,ra} {li,la}'
@@ -20542,9 +20543,9 @@ sections:
   - stages:
     - m̩ n̩
     - em en
-    env: else
     raw: m̩ n̩ → em en / else
     source: index_diachronica_original.html:5510
+    exception: _{s,({m,j,w})V}
   - stages:
     - ɡʷ
     - b
@@ -20625,9 +20626,9 @@ sections:
   - stages:
     - oː
     - aː
-    env: else
     raw: oː → aː / else
     source: index_diachronica_original.html:5528
+    exception: _#
   - stages:
     - Vː
     - V[-long]
@@ -20721,9 +20722,9 @@ sections:
   - stages:
     - w
     - v
-    env: else
     raw: w → v / else
     source: index_diachronica_original.html:5547
+    exception: V_{V,#}
   - stages:
     - '{p,t}'
     - ∅
@@ -21153,9 +21154,9 @@ sections:
   - stages:
     - '{kʷ,kw} {ɡʷ,ɡw}'
     - k ɡ
-    env: else
     raw: '{kʷ,kw} {ɡʷ,ɡw} → k ɡ / else'
     source: index_diachronica_original.html:5626
+    exception: _E
 - section: Proto-Indo-European to Common Germanic
   index: '17.7'
   abbreviations:
@@ -21926,9 +21927,9 @@ sections:
   - stages:
     - ɑʊ
     - ɔː
-    env: else
     raw: ɑʊ → ɔː / else
     source: index_diachronica_original.html:5777
+    exception: _N
   - stages:
     - a
     - ɑː
@@ -22135,9 +22136,9 @@ sections:
   - stages:
     - oʊ iː
     - əʊ ɪi
-    env: else
     raw: oʊ iː → əʊ ɪi / else
     source: index_diachronica_original.html:5818
+    exception: _ɫ
   - stages:
     - uː
     - ʊə
@@ -22230,10 +22231,10 @@ sections:
   - stages:
     - sj zj lj
     - ʃ ʒ j~ɫj
-    env: else
     comment: “(j~ɫj fluctuation is formality)”
     raw: sj zj lj → ʃ ʒ j~ɫj / else “(j~ɫj fluctuation is formality)”
     source: index_diachronica_original.html:5833
+    exception: ${θ,s,z,l}_V:[+stress]
   - stages:
     - ɫj
     - ɫi
@@ -28608,9 +28609,9 @@ sections:
   - stages:
     - ɤl
     - ɫu
-    env: else
     raw: ъl → ɫu / else
     source: index_diachronica_original.html:7033
+    exception: K_
   - stages:
     - ɪl
     - ɫu
@@ -28852,9 +28853,9 @@ sections:
   - stages:
     - ŕ
     - ʐ
-    env: else
     raw: ŕ → ʐ / else
     source: index_diachronica_original.html:7075
+    exception: _C[+voice]
   - stages:
     - ɛ
     - ɔ
@@ -28895,9 +28896,9 @@ sections:
   - stages:
     - o
     - u
-    env: else
     raw: o → u / else
     source: index_diachronica_original.html:7082
+    exception: _N
   - comment: (rare, sporadic)
     stages:
     - u
@@ -36058,9 +36059,9 @@ sections:
   - stages:
     - t
     - ∅
-    env: else
     raw: t → ∅ / else
     source: index_diachronica_original.html:8401
+    exception: _V
   - stages:
     - k
     - ∅
@@ -36121,9 +36122,9 @@ sections:
   - stages:
     - ð
     - '{∅,c}'
-    env: else
     raw: ð → {∅,c} / else
     source: index_diachronica_original.html:8412
+    exception: '#_V[-nas]'
   - stages:
     - j ŋʷ m n
     - ɲ m {m,p} {∅,t}
@@ -36233,9 +36234,9 @@ sections:
   - stages:
     - ð
     - h
-    env: else
     raw: ð → h / else
     source: index_diachronica_original.html:8434
+    exception: _i
   - stages:
     - ŋ ŋʷ
     - k m
@@ -36257,9 +36258,9 @@ sections:
   - stages:
     - ɨ
     - ∅
-    env: else
     raw: ɨ → ∅ / else
     source: index_diachronica_original.html:8438
+    exception: '#_{p,βe}'
   - stages:
     - '{{a/e},{e/a}} {ı̃,ẽ}'
     - a ẽ
@@ -36305,9 +36306,9 @@ sections:
   - stages:
     - '{(n)dz,ts}'
     - t
-    env: else
     raw: '{(n)dz,ts} → t / else'
     source: index_diachronica_original.html:8449
+    exception: _i
   - stages:
     - β ð
     - ∅ {s,h}
@@ -36570,9 +36571,9 @@ sections:
   - stages:
     - b
     - w
-    env: else
     raw: b → w / else
     source: index_diachronica_original.html:8506
+    exception: _#
   - stages:
     - w
     - ∅
@@ -36659,9 +36660,9 @@ sections:
   - stages:
     - b
     - w
-    env: else
     raw: b → w / else
     source: index_diachronica_original.html:8524
+    exception: u_#
   - stages:
     - u
     - ∅
@@ -36826,9 +36827,9 @@ sections:
   - stages:
     - b
     - w
-    env: else
     raw: b → w / else
     source: index_diachronica_original.html:8561
+    exception: _#
   - stages:
     - ã
     - a
@@ -36917,9 +36918,9 @@ sections:
   - stages:
     - p
     - h
-    env: else
     raw: p → h / else
     source: index_diachronica_original.html:8583
+    exception: _w
   - stages:
     - t
     - '{ts,tʃ}'
@@ -36963,9 +36964,9 @@ sections:
   - stages:
     - j
     - '{ɲ,tʃ}'
-    env: else
     raw: j → {ɲ,tʃ} / else
     source: index_diachronica_original.html:8591
+    exception: _#
   - stages:
     - w
     - '{ɡ,k}'
@@ -37189,9 +37190,9 @@ sections:
   - stages:
     - k
     - '{k,ʃ}'
-    env: else
     raw: k → {k,ʃ} / else
     source: index_diachronica_original.html:8651
+    exception: _#
   - stages:
     - ts
     - '{s,h}'
@@ -37219,9 +37220,9 @@ sections:
   - stages:
     - b
     - w
-    env: else
     raw: b → w / else
     source: index_diachronica_original.html:8656
+    exception: _#
   - stages:
     - u
     - ∅
@@ -38901,9 +38902,9 @@ sections:
   - stages:
     - pʰ
     - ɸ
-    env: else
     raw: pʰ → ɸ / else
     source: index_diachronica_original.html:9146
+    exception: '#_'
   - stages:
     - ɗ
     - t
@@ -39095,9 +39096,9 @@ sections:
   - stages:
     - e
     - a
-    env: else
     raw: e → a / else
     source: index_diachronica_original.html:9197
+    exception: _#
   - stages:
     - '{p(ʰ),ɓ}'
     - h
@@ -41874,9 +41875,9 @@ sections:
   - stages:
     - TS K
     - TH Tʃ
-    env: else
     raw: TS K → TH TŠ / else
     source: index_diachronica_original.html:10063
+    exception: _E
   - stages:
     - Tʃ Tʃʷ Q
     - TS Tʂ K
@@ -44479,9 +44480,9 @@ sections:
   - stages:
     - tʲ
     - tʃ
-    env: else
     raw: tʲ → tʃ / else
     source: index_diachronica_original.html:10787
+    exception: _u
   - stages:
     - k
     - ɡ
@@ -44497,9 +44498,9 @@ sections:
   - stages:
     - kʷ
     - b
-    env: else
     raw: kʷ → b / else
     source: index_diachronica_original.html:10790
+    exception: '#_ek'
   - stages:
     - ʔ
     - ∅ (?)
@@ -44542,10 +44543,10 @@ sections:
   - stages:
     - h
     - t
-    env: else
     comment: (…again, lolwut)
     raw: h → t / else (…again, lolwut)
     source: index_diachronica_original.html:10798
+    exception: _a (…lolwut)
   - stages:
     - j
     - nʲ
@@ -44606,9 +44607,9 @@ sections:
   - stages:
     - ẽ
     - e
-    env: else
     raw: ẽ → e / else
     source: index_diachronica_original.html:10808
+    exception: in U[+long -stress]
   - stages:
     - a
     - '{i,e}'
@@ -44746,9 +44747,9 @@ sections:
   - stages:
     - kʲ
     - kj
-    env: else
     raw: kʲ → kj / else
     source: index_diachronica_original.html:10839
+    exception: _{a,ã}
   - stages:
     - kʷ
     - w
@@ -44771,9 +44772,9 @@ sections:
   - stages:
     - kʷ
     - kw
-    env: else
     raw: kʷ → kw / else
     source: index_diachronica_original.html:10843
+    exception: ku_
   - stages:
     - ts
     - tʃ
@@ -44842,9 +44843,9 @@ sections:
   - stages:
     - lʲ
     - lj
-    env: else
     raw: lʲ → lj / else
     source: index_diachronica_original.html:10855
+    exception: '#_ in U[-long -stress]'
   - stages:
     - nʲ
     - j
@@ -44855,9 +44856,9 @@ sections:
   - stages:
     - nʲ
     - nj
-    env: else
     raw: nʲ → nj / else
     source: index_diachronica_original.html:10857
+    exception: _ã
   - stages:
     - h
     - ʔ
@@ -45123,9 +45124,9 @@ sections:
   - stages:
     - kʷ
     - w
-    env: else
     raw: kʷ → w / else
     source: index_diachronica_original.html:10935
+    exception: '#_'
   - stages:
     - l
     - ɾ
@@ -45218,9 +45219,9 @@ sections:
   - stages:
     - kʷ
     - '{k,w}'
-    env: else
     raw: kʷ → {k,w} / else
     source: index_diachronica_original.html:10960
+    exception: '#_'
   - stages:
     - l
     - ɾ
@@ -45283,9 +45284,9 @@ sections:
   - stages:
     - kʷ
     - '{k,w}'
-    env: else
     raw: kʷ → {k,w} / else
     source: index_diachronica_original.html:10974
+    exception: '#_'
   - stages:
     - l
     - ɾ
@@ -46703,9 +46704,9 @@ sections:
   - stages:
     - l(ʲ)
     - j
-    env: else
     raw: l(ʲ) → j / else
     source: index_diachronica_original.html:11395
+    exception: u_
   - stages:
     - s
     - ∅
@@ -47453,9 +47454,9 @@ sections:
   - stages:
     - a3
     - e3
-    env: else
     raw: a3 → e3 / else
     source: index_diachronica_original.html:11554
+    exception: _{Cu,C[-fr,+bk,-hi,-lo]ʷ,w}
   - stages:
     - a1
     - ə1
@@ -48358,9 +48359,9 @@ sections:
   - stages:
     - V5
     - V3
-    env: else
     raw: V5 → V3 / else
     source: index_diachronica_original.html:11764
+    exception: in syllables with a nasal or liquid
   - stages:
     - ɦ
     - h
@@ -48370,9 +48371,9 @@ sections:
   - stages:
     - ɦ
     - ∅
-    env: else
     raw: ɦ → ∅ / else
     source: index_diachronica_original.html:11766
+    exception: S_V2
   - stages:
     - Cʲ
     - C
@@ -48394,9 +48395,9 @@ sections:
   - stages:
     - ia
     - e
-    env: else
     raw: ia → e / else
     source: index_diachronica_original.html:11770
+    exception: C(w)_a
   - stages:
     - C
     - Cʲ
@@ -48446,9 +48447,9 @@ sections:
   - stages:
     - '{a(ta),a(ch)}'
     - o
-    env: else
     raw: '{a(ta),a(ch)} → o / else'
     source: index_diachronica_original.html:11778
+    exception: _ŋ
   - stages:
     - '?'
     - o
@@ -48967,9 +48968,9 @@ sections:
   - stages:
     - jew
     - iau
-    env: else
     raw: jew → iau / else
     source: index_diachronica_original.html:11869
+    exception: C̣(C?)_
   - stages:
     - '{jem,jen}'
     - iɛn
@@ -49014,9 +49015,9 @@ sections:
   - stages:
     - wɔʔ
     - ɔʔ
-    env: else
     raw: wɔʔ → ɔʔ / else
     source: index_diachronica_original.html:11876
+    exception: C[+guttural]_
   - stages:
     - ɔn
     - an;
@@ -49093,9 +49094,9 @@ sections:
   - stages:
     - wan
     - uan
-    env: else
     raw: wan → uan / else
     source: index_diachronica_original.html:11890
+    exception: C[+labiodental]_
   - stages:
     - aŋ jaŋ
     - uaŋ aŋ
@@ -49429,9 +49430,9 @@ sections:
   - stages:
     - V$
     - high tone
-    env: else
     raw: V% → high tone / else
     source: index_diachronica_original.html:11967
+    exception: C_ru
   - stages:
     - N
     - ∅
@@ -50996,9 +50997,9 @@ sections:
   - stages:
     - tʰ
     - n
-    env: else
     raw: tʰ → n / else
     source: index_diachronica_original.html:12326
+    exception: _i
   - stages:
     - ã
     - ẽ
@@ -53089,9 +53090,9 @@ sections:
   - stages:
     - tʲ
     - ʒ
-    env: else
     raw: tʲ → ʒ / else
     source: index_diachronica_original.html:12746
+    exception: in U:[+stress]
   - stages:
     - t
     - ∅
@@ -53144,9 +53145,9 @@ sections:
   - stages:
     - tʲ
     - ʒ
-    env: else
     raw: tʲ → ʒ / else
     source: index_diachronica_original.html:12758
+    exception: in U:[+stress]
   - stages:
     - s
     - z
@@ -57442,9 +57443,9 @@ sections:
   - stages:
     - nʲ
     - n
-    env: else
     raw: nʲ → n / else
     source: index_diachronica_original.html:13810
+    exception: V_V
   - stages:
     - n
     - ∅
@@ -60338,9 +60339,9 @@ sections:
   - stages:
     - e o
     - i u
-    env: else
     raw: e o → i u / else
     source: index_diachronica_original.html:14450
+    exception: _#
   - stages:
     - '{ɨ,ə}'
     - o
@@ -60425,10 +60426,10 @@ sections:
   - stages:
     - aɪ
     - ɑeː
-    env: else
     comment: (only for some speakers)
     raw: aɪ → ɑeː / else (only for some speakers)
     source: index_diachronica_original.html:14478
+    exception: _C[+voice]
   - stages:
     - aɪ
     - aː
