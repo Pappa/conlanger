@@ -436,6 +436,20 @@ def test_apply_trailing_glosses_strips_field_wrapped_gloss_to_comment():
     }
 
 
+def test_parse_rule_element_skips_gloss_only_output():
+    el = html.fragment_fromstring(
+        '<p class="schg">hhy \u2192 \u201csomething like /\u0292/\u201d</p>',
+        create_parent=False,
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert len(rules) == 1
+    assert rules[0]["skipped"] == "quoted prose paragraph"
+    assert rules[0]["input"] == ""
+    assert rules[0]["output"] == ""
+    assert "something like" in rules[0]["comment"]
+    assert rules[0]["raw"] == "hhy \u2192 \u201csomething like /\u0292/\u201d"
+
+
 def test_parse_rule_element_strips_trailing_glosses():
     el = html.fragment_fromstring(
         '<p class="schg">w → f (Common Celtic; I’m not sure of the conditions)</p>',

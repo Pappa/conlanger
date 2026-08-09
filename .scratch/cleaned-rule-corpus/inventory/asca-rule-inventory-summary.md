@@ -12,20 +12,20 @@
 
 | count | failure_class |
 |------:|---------------|
-| 615 | `syntax_other` |
+| 616 | `syntax_other` |
 | 416 | `expected_underscore` |
 | 324 | `unknown_character` |
 | 167 | `unknown_feature` |
 | 117 | `runtime_other` |
 | 101 | `unknown_grouping` |
-| 50 | `prose_or_expected_arrow` |
+| 48 | `prose_or_expected_arrow` |
 | 44 | `nested_brackets` |
 | 41 | `panic_other` |
 | 37 | `expected_number` |
 | 30 | `diacritic_prereq` |
 | 21 | `runtime_delete_only_segment` |
 | 14 | `stuff_after_word_bound` |
-| 2 | `missing_arrow` |
+| 3 | `missing_arrow` |
 | 2 | `malformed_comment` |
 | 2 | `other` |
 

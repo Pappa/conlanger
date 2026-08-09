@@ -1023,6 +1023,11 @@ def is_quoted_prose_paragraph(raw: str) -> bool:
     return len(text) > 40 and ARROW in text and bool(re.search(r"[a-z]{5,}", text))
 
 
+def is_gloss_only_rule(parts: dict[str, Any]) -> bool:
+    """True when gloss stripping removed all phonological output."""
+    return not parts.get("output") and bool(parts.get("comment"))
+
+
 def extract_rule_parts(raw: str) -> dict[str, str] | None:
     """Split a raw rule string into input, output, and optional env/exception.
 
@@ -1212,6 +1217,18 @@ class IndexDiachronicaParser:
         sporadic = parts.pop("sporadic", False)
         sporadic_flag = {"sporadic": True} if sporadic else {}
         parts = apply_trailing_glosses(parts)
+        if is_gloss_only_rule(parts):
+            return [
+                {
+                    "input": "",
+                    "output": "",
+                    "raw": raw,
+                    "source": source,
+                    "comment": parts["comment"],
+                    "skipped": "quoted prose paragraph",
+                    **sporadic_flag,
+                }
+            ]
         parts = apply_stress_conditions(parts)
         parts = apply_feature_mappings(parts)
         parts = apply_ipa_mappings(parts, config=self._parser_config)

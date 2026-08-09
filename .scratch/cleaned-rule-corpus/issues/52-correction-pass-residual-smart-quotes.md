@@ -53,7 +53,7 @@ Baseline (after issue 57): **7134 / 9201** ok (77.5%).
 | `"` (U+201D) | 42 | **0** |
 | `'` (U+2019) | 12 | **0** |
 
-Full inventory re-run: **7178 / 9201** ok (**+44**, **78.0%**). Two long quoted paragraphs marked `skipped: quoted prose paragraph`.
+Full inventory re-run: **7178 / 9201** ok (**+44**, **78.0%**). Three quoted gloss/prose rows marked `skipped: quoted prose paragraph` (including `hhy → "something like /ʒ/"`).
 
 ## References
 

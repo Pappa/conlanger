@@ -15889,11 +15889,12 @@ sections:
     env: medially
     raw: ɡʷ → hʷ / medially
     source: index_diachronica_original.html:5167
-  - input: hhy
+  - input: ''
     output: ''
-    comment: “something like /ʒ/”
     raw: hhy → “something like /ʒ/”
     source: index_diachronica_original.html:5168
+    comment: “something like /ʒ/”
+    skipped: quoted prose paragraph
   - input: h
     output: ∅
     env: V:[+stress]ː_u
