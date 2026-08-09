@@ -18,12 +18,16 @@ from conlanger.tools.asca_compile.planned import (
     expand_index_subscript_references,
     expand_meta_notation,
 )
+from conlanger.tools.asca_compile.superscript_modifiers import (
+    normalize_asca_superscript_modifiers,
+)
 
 # Steps 2–10 after field join (step 1) in RuleChange._compile_rule_text.
 ASCA_COMPILE_STEP_NAMES: tuple[str, ...] = (
     "normalize_asca_optional_grouping_ellipsis",
     "expand_index_subscript_references",
     "apply_section_local_abbreviations",
+    "normalize_asca_superscript_modifiers",
     "apply_asca_group_mappings",
     "normalize_asca_length_marks",
     "normalize_typographic_apostrophes",
@@ -45,6 +49,7 @@ def compile_asca_rule_string(
     text = normalize_asca_optional_grouping_ellipsis(text)
     text = expand_index_subscript_references(text)
     text = apply_section_local_abbreviations(text)
+    text = normalize_asca_superscript_modifiers(text)
     text = apply_asca_group_mappings_to_string(text, mappings)
     text = normalize_asca_length_marks(text)
     text = normalize_typographic_apostrophes(text)

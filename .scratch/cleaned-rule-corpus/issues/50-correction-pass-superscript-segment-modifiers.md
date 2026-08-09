@@ -33,16 +33,23 @@ Examples: `{x,ɢ}(ʷ) > ∅`, `tɬ:[+long](ʼ)`, `mV[-long] > ∅ / #_{ʰC,s,ʃ}
 - Compile-layer fix preferred; `raw` unchanged (ADR-0010).
 - Preserve ticket 23 regressions (`Kr`, `Kw`, `rK` class-letter boundaries).
 
-## Acceptance criteria
-
-- [ ] Superscript attachment patterns documented (segment vs env)
-- [ ] Handler(s) + tests including ticket 23 regression fixtures
-- [ ] Full inventory re-baseline; per-token residual counts in **Answer**
-- [ ] Fixtures updated where outcomes change
-
 ## Answer
 
-_(pending)_
+Baseline (pre-pass, HEAD inventory): **7178 / 9201** ok (78.0%); `syntax_other` **638**; rules whose error description contains `received 'ʷ'`, `'ʲ'`, `'ʰ'`, or `'ʱ'`: **56** (inventory grep on error CSV).
+
+After `normalize_asca_superscript_modifiers` (pipeline step 4, before `apply_asca_group_mappings`):
+
+- **7218 / 9201** ok (**78.4%**, **+40** vs pre-pass baseline)
+- `syntax_other` **638 → 618** (−20)
+- Residual `received 'ʷ'/'ʲ'/'ʰ'/'ʱ'` parse errors: **ʷ 11**, **ʲ 5**, **ʰ 1**, **ʱ 0** (17 total; mostly IPA-literal suffixes, env-adjacent `k(ʷ)` parentheticals, and prose-adjacent tokens out of scope)
+- Taxonomy and compile examples: module docstring in `src/conlanger/tools/asca_compile/superscript_modifiers.py`
+
+## Acceptance criteria
+
+- [x] Superscript attachment patterns documented (segment vs env)
+- [x] Handler(s) + tests including ticket 23 regression fixtures
+- [x] Full inventory re-baseline; per-token residual counts in **Answer**
+- [x] Fixtures updated where outcomes change (inventory CSVs + changelog)
 
 ## References
 

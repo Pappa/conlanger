@@ -16,6 +16,9 @@ from conlanger.tools.asca_compile.group_mappings import (
 )
 from conlanger.tools.asca_compile.length_marks import normalize_asca_length_marks
 from conlanger.tools.asca_compile.pipeline import compile_asca_rule_string
+from conlanger.tools.asca_compile.superscript_modifiers import (
+    normalize_asca_superscript_modifiers,
+)
 from conlanger.tools.asca_compile.tilde import normalize_corpus_rule_tilde_fields
 
 # Public re-exports for tests and callers that import transform helpers from ``rules``.
@@ -34,6 +37,7 @@ __all__ = [
     "normalize_asca_ejective_marks",
     "normalize_asca_length_marks",
     "normalize_asca_optional_grouping_ellipsis",
+    "normalize_asca_superscript_modifiers",
     "normalize_typographic_apostrophes",
 ]
 

@@ -4,6 +4,9 @@ from conlanger.tools.asca_compile.pipeline import (
     ASCA_COMPILE_STEP_NAMES,
     compile_asca_rule_string,
 )
+from conlanger.tools.asca_compile.superscript_modifiers import (
+    normalize_asca_superscript_modifiers,
+)
 from conlanger.tools.rules import (
     RuleChange,
     apply_asca_aliases,
@@ -20,6 +23,7 @@ def test_asca_compile_pipeline_step_names_match_docs():
         "normalize_asca_optional_grouping_ellipsis",
         "expand_index_subscript_references",
         "apply_section_local_abbreviations",
+        "normalize_asca_superscript_modifiers",
         "apply_asca_group_mappings",
         "normalize_asca_length_marks",
         "normalize_typographic_apostrophes",
@@ -33,6 +37,7 @@ def test_compile_asca_rule_string_matches_legacy_manual_chain():
     text = "tʃ:[+long]ʼ > tʃ:[+long]"
     mappings = {"S": "P"}
     manual = normalize_asca_optional_grouping_ellipsis(text)
+    manual = normalize_asca_superscript_modifiers(manual)
     manual = apply_asca_group_mappings_to_string(manual, mappings)
     manual = normalize_asca_length_marks(manual)
     manual = normalize_typographic_apostrophes(manual)
