@@ -1698,7 +1698,7 @@ sections:
   - stages:
     - q
     - i
-    env: '#_V{Z,C[+dental]}'
+    env: '#_V{Z,C[+cor,+anterior,+dist]}'
     raw: 'q → i / #_V{Z,C[+dental]}'
     source: index_diachronica_original.html:1273
   - stages:
@@ -1730,7 +1730,7 @@ sections:
   - stages:
     - q
     - ʔ
-    env: _C[+dental]
+    env: _C[+cor,+anterior,+dist]
     raw: q → ʔ / _C[+dental]
     source: index_diachronica_original.html:1278
   - stages:
@@ -1764,7 +1764,7 @@ sections:
     source: index_diachronica_original.html:1283
   - stages:
     - O[+lateral]
-    - O[+palatal]
+    - O[+cor,+dist]
     raw: O[+lateral] → O[+palatal]
     source: index_diachronica_original.html:1284
   - stages:
@@ -2697,7 +2697,7 @@ sections:
     raw: u → ə / short only, except near “a labial or velar consonant”
     source: index_diachronica_original.html:1469
   - stages:
-    - C[+labial/+velar]
+    - C[+labial/-fr,+bk,+hi,-lo]
     - ʷ
     env: adjacent to short u
     raw: C[+labial/+velar] → ʷ / adjacent to short u
@@ -3624,7 +3624,7 @@ sections:
   - stages:
     - i(ː)
     - u(ː)
-    env: o(ː)(C[-dental])(C[-dental])_
+    env: o(ː)(C[+cor,+anterior,+dist])(C[+cor,+anterior,+dist])_
     raw: i(ː) → u(ː) / o(ː)(C[-dental])(C[-dental])_
     source: index_diachronica_original.html:1677
   - stages:
@@ -7234,7 +7234,7 @@ sections:
   - stages:
     - ɛ
     - a
-    env: _C[+palatal]
+    env: _C[+cor,+dist]
     raw: ɛ → a / _C[+palatal]
     source: index_diachronica_original.html:2450
   - stages:
@@ -7366,7 +7366,7 @@ sections:
   - stages:
     - ɛ
     - a
-    env: _C[+palatal]
+    env: _C[+cor,+dist]
     raw: ɛ → a / _C[+palatal]
     source: index_diachronica_original.html:2486
   - stages:
@@ -9200,7 +9200,7 @@ sections:
   - stages:
     - ʀ
     - r
-    env: _C[+dental]
+    env: _C[+cor,+anterior,+dist]
     raw: ʀ → r / _C[+dental]
     source: index_diachronica_original.html:2939
   - stages:
@@ -16618,7 +16618,7 @@ sections:
   - stages:
     - i
     - ∅
-    env: '#C[+dental]_C[+dental]V'
+    env: '#C[+cor,+anterior,+dist]_C[+cor,+anterior,+dist]V'
     raw: 'i → ∅ / #C[+dental]_C[+dental]V'
     source: index_diachronica_original.html:4724
   - stages:
@@ -16768,13 +16768,13 @@ sections:
   - stages:
     - i
     - ∅
-    env: '#C[+dental]_C[+dental]V'
+    env: '#C[+cor,+anterior,+dist]_C[+cor,+anterior,+dist]V'
     raw: 'i → ∅ / #C[+dental]_C[+dental]V'
     source: index_diachronica_original.html:4751
   - stages:
     - a
     - ∅
-    env: C[+velar]_C[+velar]
+    env: C[-fr,+bk,+hi,-lo]_C[-fr,+bk,+hi,-lo]
     raw: a → ∅ / C[+velar]_C[+velar]
     source: index_diachronica_original.html:4752
   - stages:
@@ -16921,13 +16921,13 @@ sections:
   - stages:
     - i
     - ∅
-    env: '#C[+dental]_C[+dental]V'
+    env: '#C[+cor,+anterior,+dist]_C[+cor,+anterior,+dist]V'
     raw: 'i → ∅ / #C[+dental]_C[+dental]V'
     source: index_diachronica_original.html:4780
   - stages:
     - a
     - ∅
-    env: C[+velar]_C[+velar]
+    env: C[-fr,+bk,+hi,-lo]_C[-fr,+bk,+hi,-lo]
     raw: a → ∅ / C[+velar]_C[+velar]
     source: index_diachronica_original.html:4781
   - stages:
@@ -17082,13 +17082,13 @@ sections:
   - stages:
     - i
     - ∅
-    env: '#C[+dental]_C[+dental]V'
+    env: '#C[+cor,+anterior,+dist]_C[+cor,+anterior,+dist]V'
     raw: 'i → ∅ / #C[+dental]_C[+dental]V'
     source: index_diachronica_original.html:4809
   - stages:
     - a
     - ∅
-    env: C[+velar]_C[+velar]
+    env: C[-fr,+bk,+hi,-lo]_C[-fr,+bk,+hi,-lo]
     raw: a → ∅ / C[+velar]_C[+velar]
     source: index_diachronica_original.html:4810
   - stages:
@@ -17254,7 +17254,7 @@ sections:
   - stages:
     - ə
     - e
-    env: _{C[+palatal],E}
+    env: _{C[+cor,+dist],E}
     raw: ə → e / _{C[+palatal],E}
     source: index_diachronica_original.html:4858
   - stages:
@@ -17346,7 +17346,7 @@ sections:
   - stages:
     - ə
     - e
-    env: _{C[+palatal],E}
+    env: _{C[+cor,+dist],E}
     raw: ə → e / _{C[+palatal],E}
     source: index_diachronica_original.html:4876
   - stages:
@@ -17438,7 +17438,7 @@ sections:
   - stages:
     - ə
     - e
-    env: _{C[+palatal],E}
+    env: _{C[+cor,+dist],E}
     raw: ə → e / _{C[+palatal],E}
     source: index_diachronica_original.html:4894
   - stages:
@@ -17524,7 +17524,7 @@ sections:
   - stages:
     - ə
     - e
-    env: _{C[+palatal],E}
+    env: _{C[+cor,+dist],E}
     raw: ə → e / _{C[+palatal],E}
     source: index_diachronica_original.html:4911
   - stages:
@@ -22629,7 +22629,7 @@ sections:
   - stages:
     - æ
     - ɛ
-    env: _C[+alveolar]
+    env: _C[+cor,+anterior,-dist]
     raw: — æ → ɛ / _C[+alveolar]
     source: index_diachronica_original.html:5907
   - stages:
@@ -23473,7 +23473,7 @@ sections:
   - stages:
     - '{ol,al} {ar,er} or'
     - ɔu aːr oːr
-    env: _C[+dental]
+    env: _C[+cor,+anterior,+dist]
     raw: '{ol,al} {ar,er} or → ɔu aːr oːr / _C[+dental]'
     source: index_diachronica_original.html:6066
   - comment: there seem to have been qualitative differences between original long
@@ -23643,7 +23643,7 @@ sections:
     stages:
     - aː
     - oː
-    env: _{N,C[+ dental],P,h}
+    env: _{N,C[+cor,+anterior,+dist],P,h}
     raw: aː → oː / _{N,C[+ dental],P,h} (sporadic?)
     source: index_diachronica_original.html:6103
     sporadic: true
@@ -23651,7 +23651,7 @@ sections:
     stages:
     - aː
     - oː
-    env: '{N,C[+ dental],P,h}_'
+    env: '{N,C[+cor,+anterior,+dist],P,h}_'
     raw: aː → oː / {N,C[+ dental],P,h}_ (sporadic?)
     source: index_diachronica_original.html:6104
     sporadic: true
@@ -24929,7 +24929,7 @@ sections:
   - stages:
     - eː{Bː,i(ː)}
     - joː
-    env: _C[+ alveolar]#
+    env: _C[+cor,+anterior,-dist]#
     raw: eː{Bː,i(ː)} → joː / _C[+ alveolar]#
     source: index_diachronica_original.html:6328
   - stages:
@@ -25991,7 +25991,7 @@ sections:
   - stages:
     - ɒ
     - ø
-    env: _O[+ dental/alveolar]
+    env: _O[+cor,+anterior,+dist/alveolar]
     raw: ɒ → ø / _O[+ dental/alveolar]
     source: index_diachronica_original.html:6518
   - stages:
@@ -26008,7 +26008,7 @@ sections:
   - stages:
     - a
     - ∅
-    env: C[+ dental/alveolar]_u
+    env: C[+cor,+anterior,+dist/alveolar]_u
     raw: a → ∅ / C[+ dental/alveolar]_u
     source: index_diachronica_original.html:6521
   - stages:
@@ -26051,7 +26051,7 @@ sections:
   - stages:
     - yː
     - ø
-    env: _O[+ dental/alveolar]
+    env: _O[+cor,+anterior,+dist/alveolar]
     raw: yː → ø / _O[+ dental/alveolar]
     source: index_diachronica_original.html:6528
   - stages:
@@ -28563,7 +28563,7 @@ sections:
     stages:
     - ɛ ɛ̃ ɛː
     - ɔ ɔ̃ a
-    env: _C[-palatalized +dental]
+    env: _C[-palatalized +cor,+anterior,+dist]
     raw: ɛ ɛ̃ ɛː → ɔ ɔ̃ a / _C[-palatalized +dental] (also sporadically before plain
       non-dentals)
     source: index_diachronica_original.html:7024
@@ -28614,13 +28614,13 @@ sections:
   - stages:
     - ɪl
     - ɫu
-    env: C[+dental]_
+    env: C[+cor,+anterior,+dist]_
     raw: ьl → ɫu / C[+dental]_
     source: index_diachronica_original.html:7034
   - stages:
     - ɪl
     - ɛɫ
-    env: P_C[+dental -palatalized]
+    env: P_C[+cor,+anterior,+dist -palatalized]
     raw: ьl → ɛɫ / P_C[+dental -palatalized]
     source: index_diachronica_original.html:7035
   - stages:
@@ -28637,7 +28637,7 @@ sections:
   - stages:
     - ɪ
     - aː
-    env: r_C[+dental -palatalized]
+    env: r_C[+cor,+anterior,+dist -palatalized]
     raw: ь → aː / r_C[+dental -palatalized]
     source: index_diachronica_original.html:7038
   - stages:
@@ -28945,7 +28945,7 @@ sections:
   - stages:
     - ɛ̃ ɔ̃
     - ɛɰ̃ ɔɰ̃
-    env: _F[-palatal]
+    env: _F[+cor,+dist]
     raw: ɛ̃ ɔ̃ → ɛɰ̃ ɔɰ̃ / _F[-palatal]
     source: index_diachronica_original.html:7090
   - stages:
@@ -28958,7 +28958,7 @@ sections:
   - stages:
     - ɛ̃ ɔ̃
     - ɛj̃ ɔj̃
-    env: _F[+palatal]
+    env: _F[+cor,+dist]
     raw: ɛ̃ ɔ̃ → ɛj̃ ɔj̃ / _F[+palatal]
     source: index_diachronica_original.html:7092
   - stages:
@@ -28970,14 +28970,14 @@ sections:
   - stages:
     - n
     - ŋ
-    env: _S[+velar]
+    env: _S[-fr,+bk,+hi,-lo]
     comment: (regional)
     raw: n → ŋ / _S[+velar] (regional)
     source: index_diachronica_original.html:7094
   - stages:
     - Cʲ
     - C
-    env: _C[+dental] with developments of yers in ablaut environments
+    env: _C[+cor,+anterior,+dist] with developments of yers in ablaut environments
     raw: Cʲ → C / _C[+dental] with developments of yers in ablaut environments
     source: index_diachronica_original.html:7096
   - stages:
@@ -29296,7 +29296,7 @@ sections:
     source: index_diachronica_original.html:7153
   - stages:
     - C[+strident]P
-    - C[+dental]
+    - C[+cor,+anterior,+dist]
     raw: C[+sibilant]P → C[+dental]
     source: index_diachronica_original.html:7154
   - stages:
@@ -34527,7 +34527,7 @@ sections:
   - stages:
     - a
     - e
-    env: C[+palatal]_#
+    env: C[+cor,+dist]_#
     raw: a → e / C[+palatal]_#
     source: index_diachronica_original.html:8069
   - stages:
@@ -34564,7 +34564,7 @@ sections:
   - stages:
     - a
     - a
-    env: '#(C…)V…C[+palatal]_…U:[+stress]'
+    env: '#(C…)V…C[+cor,+dist]_…U:[+stress]'
     raw: 'a → a / #(C…)V…C[+palatal]_…”U'
     source: index_diachronica_original.html:8075
   - stages:
@@ -40016,13 +40016,13 @@ sections:
   - stages:
     - a
     - i
-    env: '#C[+palatal]V[-long]C_'
+    env: '#C[+cor,+dist]V[-long]C_'
     raw: 'a → i / #C[+palatal]V[-long]C_'
     source: index_diachronica_original.html:9463
   - stages:
     - i
     - e
-    env: '#(C)aC[-palatal]_'
+    env: '#(C)aC[+cor,+dist]_'
     raw: 'i → e / #(C)aC[-palatal]_'
     source: index_diachronica_original.html:9464
   - stages:
@@ -46405,7 +46405,7 @@ sections:
   - stages:
     - s
     - ʃ
-    env: _C[+alveolar]
+    env: _C[+cor,+anterior,-dist]
     raw: s → ʃ / _C[+alveolar]
     source: index_diachronica_original.html:11314
   - stages:
@@ -47102,13 +47102,13 @@ sections:
   - stages:
     - a3
     - u3
-    env: '{Cʷ[+uvular],Kʷ,w}'
+    env: '{Cʷ[-fr,+bk,-hi,-lo],Kʷ,w}'
     raw: a3 → u3 / {Cʷ[+uvular],Kʷ,w}
     source: index_diachronica_original.html:11481
   - stages:
     - a3
     - u3
-    env: _{Cu,Cʷ[+uvular],w}
+    env: _{Cu,Cʷ[-fr,+bk,-hi,-lo],w}
     raw: a3 → u3 / _{Cu,Cʷ[+uvular],w}
     source: index_diachronica_original.html:11482
   - stages:
@@ -47441,13 +47441,13 @@ sections:
   - stages:
     - a3
     - o3
-    env: '{{C[+ uvular],K}ʷ,w}_'
+    env: '{{C[-fr,+bk,-hi,-lo],K}ʷ,w}_'
     raw: a3 → o3 / {{C[+ uvular],K}ʷ,w}_
     source: index_diachronica_original.html:11552
   - stages:
     - a3
     - o3
-    env: _{Cu,C[+ uvular]ʷ,w}
+    env: _{Cu,C[-fr,+bk,-hi,-lo]ʷ,w}
     raw: a3 → o3 / _{Cu,C[+ uvular]ʷ,w}
     source: index_diachronica_original.html:11553
   - stages:
@@ -47571,7 +47571,7 @@ sections:
   - stages:
     - a3
     - e3
-    exception: '{{C[+ uvular],K}ʷ,w}_ or when _{Cu,C[+ uvular]ʷ,w}'
+    exception: '{{C[-fr,+bk,-hi,-lo],K}ʷ,w}_ or when _{Cu,C[-fr,+bk,-hi,-lo]ʷ,w}'
     raw: a3 → e3 / ! {{C[+ uvular],K}ʷ,w}_ or when _{Cu,C[+ uvular]ʷ,w}
     source: index_diachronica_original.html:11579
   - stages:
@@ -47674,13 +47674,13 @@ sections:
   - stages:
     - a3
     - a3
-    env: '{{C[+ uvular],K}ʷ,w}_'
+    env: '{{C[-fr,+bk,-hi,-lo],K}ʷ,w}_'
     raw: a3 → a3 / {{C[+ uvular],K}ʷ,w}_
     source: index_diachronica_original.html:11601
   - stages:
     - a3
     - a3
-    env: _{Cu,C[+ uvular]ʷ,w}
+    env: _{Cu,C[-fr,+bk,-hi,-lo]ʷ,w}
     raw: a3 → a3 / _{Cu,C[+ uvular]ʷ,w}
     source: index_diachronica_original.html:11602
   - stages:
@@ -47781,7 +47781,7 @@ sections:
   - stages:
     - a3
     - '{a3,o3}'
-    env: '{{C[+ uvular],K}ʷ,w}_'
+    env: '{{C[-fr,+bk,-hi,-lo],K}ʷ,w}_'
     raw: a3 → {a3,o3} / {{C[+ uvular],K}ʷ,w}_
     source: index_diachronica_original.html:11624
   - stages:
@@ -48456,7 +48456,7 @@ sections:
     raw: '? → o / _ŋ'
     source: index_diachronica_original.html:11779
   - stages:
-    - '{Aʲ,Fʲ}[+alveolar]'
+    - '{Aʲ,Fʲ}[+cor,+anterior,-dist]'
     - '{A,F}'
     env: _?ʲ
     raw: '{Aʲ,Fʲ}[+alveolar] →{A,F} / _?ʲ'
@@ -48826,7 +48826,7 @@ sections:
   - stages:
     - uj
     - ui
-    env: '{C[+dental],C[+strident]}_'
+    env: '{C[+cor,+anterior,+dist],C[+strident]}_'
     raw: uj → ui / {C[+dental],C[+sibilant]}_
     source: index_diachronica_original.html:11846
   - stages:
@@ -48838,7 +48838,7 @@ sections:
   - stages:
     - un
     - uɛn
-    exception: '{C[+dental],C[+strident]}_'
+    exception: '{C[+cor,+anterior,+dist],C[+strident]}_'
     raw: un → uɛn / ! {C[+dental],C[+sibilant]}_
     source: index_diachronica_original.html:11848
   - stages:
@@ -48886,7 +48886,7 @@ sections:
   - stages:
     - yʔ
     - yɛʔ
-    env: '{l,C[+dental +strident]}_ infinals, dialectally?'
+    env: '{l,C[+cor,+anterior,+dist +strident]}_ infinals, dialectally?'
     comment: “QYS -juət-type”
     raw: yʔ → yɛʔ / {l,C[+dental +sibilant]}_ in “QYS -juət-type” finals, dialectally?
     source: index_diachronica_original.html:11856
@@ -48894,7 +48894,7 @@ sections:
     - yʔ
     - oʔ (eventually
     - '{ʊʔ,(i)uʔ?)'
-    env: '{l,C[+dental +strident]}_, in'
+    env: '{l,C[+cor,+anterior,+dist +strident]}_, in'
     comment: “QYS -k-types”
     raw: yʔ → oʔ (eventually → {ʊʔ,(i)uʔ?) / {l,C[+dental +sibilant]}_, in “QYS -k-types”
     source: index_diachronica_original.html:11857
@@ -59893,7 +59893,7 @@ sections:
   - stages:
     - æ
     - ɛ
-    env: _C[+alveolar]
+    env: _C[+cor,+anterior,-dist]
     raw: æ → ɛ / _C[+alveolar]
     source: index_diachronica_original.html:14334
   - stages:

@@ -929,6 +929,12 @@ def test_load_feature_mappings_from_default_csv():
     assert by_name["close-mid"].mapping_kind == "bundle"
     assert by_name["close-mid"].asca_target == "-hi,-lo,+tense"
     assert by_name["open-mid"].mapping_kind == "bundle"
+    assert by_name["dental"].mapping_kind == "bundle"
+    assert by_name["dental"].asca_target == "+cor,+anterior,+dist"
+    assert by_name["alveolar"].asca_target == "+cor,+anterior,-dist"
+    assert by_name["palatal"].asca_target == "+cor,+dist"
+    assert by_name["velar"].asca_target == "-fr,+bk,+hi,-lo"
+    assert by_name["uvular"].asca_target == "-fr,+bk,-hi,-lo"
 
 
 def test_normalize_feature_matrices_in_field_rename():
@@ -974,6 +980,24 @@ def test_normalize_feature_matrices_in_field_bundle():
 def test_normalize_feature_matrices_in_field_bundle_compound_key_only():
     mappings = feature_mappings_dict()
     assert normalize_feature_matrices_in_field("V[+open]", mappings) == "V[+open]"
+
+
+@pytest.mark.parametrize(
+    ("before", "after"),
+    [
+        ("C:[+dental]", "C:[+cor,+anterior,+dist]"),
+        ("_C[+dental]", "_C[+cor,+anterior,+dist]"),
+        ("C:[+alveolar]", "C:[+cor,+anterior,-dist]"),
+        ("O:[+palatal]", "O:[+cor,+dist]"),
+        ("_C[+palatal]", "_C[+cor,+dist]"),
+        ("C:[+velar]", "C:[-fr,+bk,+hi,-lo]"),
+        ("C[+velar]_C[+velar]", "C[-fr,+bk,+hi,-lo]_C[-fr,+bk,+hi,-lo]"),
+        ("Cʷ:[+uvular]", "Cʷ:[-fr,+bk,-hi,-lo]"),
+    ],
+)
+def test_normalize_feature_matrices_in_field_place_bundles(before, after):
+    mappings = feature_mappings_dict()
+    assert normalize_feature_matrices_in_field(before, mappings) == after
 
 
 def test_kenyah_vowel_height_rules_validate():
