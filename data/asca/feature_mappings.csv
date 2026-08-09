@@ -8,3 +8,8 @@ glottalized,rename_polarity,place,,medium,Index [±glottalized] → ASCA place w
 glottal,rename_polarity,place,,medium,Index [±glottal] → ASCA place with polarity invert (cf. glottal in spike 29)
 close-mid,bundle,"-hi,-lo,+tense",,high,Index [+close-mid] vowel height; ASCA mid row +tense per vowel-space table (0.10.2)
 open-mid,bundle,"-hi,-lo,-tense",,high,Index [+open-mid] vowel height; ASCA mid row -tense per vowel-space table (0.10.2)
+dental,bundle,"+cor,+anterior,+dist",C,high,Coronal dental; cf. diacritics.json denti-alveolar (spike 29)
+alveolar,bundle,"+cor,+anterior,-dist",C,high,Coronal alveolar (spike 29)
+palatal,bundle,"+cor,+dist",C,medium,Coronal palatal/post-palatal (spike 29)
+velar,bundle,"-fr,+bk,+hi,-lo",C,high,Dorsal velar; matches group_mappings K (spike 29)
+uvular,bundle,"-fr,+bk,-hi,-lo",C,high,Dorsal uvular; matches group_mappings Q uvular branch (spike 29)
