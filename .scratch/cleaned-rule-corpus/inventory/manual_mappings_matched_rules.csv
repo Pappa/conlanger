@@ -1,23 +1,203 @@
 section_index,section_name,rule_idx,source,manual_mapping
-6.2.1.1.1,Proto-Agaw to Awngi,0,index_diachronica_original.html:1185,"/ #_, _#"
-6.2.1.1.2,Proto-Agaw to Blin,0,index_diachronica_original.html:1195,"/ #_, _#"
-6.2.1.1.3,Proto-Agaw to Kemantney,0,index_diachronica_original.html:1204,"/ #_, _#"
-6.2.1.1.4,Proto-Agaw to Xamtanga,1,index_diachronica_original.html:1218,"/ #_, _#"
-7.4,Proto-Algonquian to Blackfoot,54,index_diachronica_original.html:1765,"! #_, _#"
+6.2.1.1.1,Proto-Agaw to Awngi,0,index_diachronica_original.html:1185," / #_, _#"
+6.2.1.1.2,Proto-Agaw to Blin,0,index_diachronica_original.html:1195," / #_, _#"
+6.2.1.1.3,Proto-Agaw to Kemantney,0,index_diachronica_original.html:1204," / #_, _#"
+6.2.1.1.4,Proto-Agaw to Xamtanga,1,index_diachronica_original.html:1218," / #_, _#"
+6.2.2.1.5,Proto-Semitic to Classical Arabic,3,index_diachronica_original.html:1321, / 
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,7,index_diachronica_original.html:1384, / 
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,19,index_diachronica_original.html:1401, / 
+6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,3,index_diachronica_original.html:1409, / 
+6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,3,index_diachronica_original.html:1420, / 
+6.2.2.1.11,Classical Arabic to Iraqi Arabic,1,index_diachronica_original.html:1445, / 
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,3,index_diachronica_original.html:1470," / u[-long]_, _u[-long]"
+6.2.2.1.17,Classical Arabic to Tunisian Arabic,6,index_diachronica_original.html:1507, / 
+6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,9,index_diachronica_original.html:1564, ! 
+7.4,Proto-Algonquian to Blackfoot,0,index_diachronica_original.html:1711," / ! C_,_C"
+7.4,Proto-Algonquian to Blackfoot,54,index_diachronica_original.html:1765," ! #_, _#"
+7.6,Proto-Algonquian to Northern East Cree,15,index_diachronica_original.html:1803, / 
+7.7,Proto-Algonquian to Southern East Cree,14,index_diachronica_original.html:1824, / 
+7.9,Proto-Algonquian to Swampy Cree,14,index_diachronica_original.html:1868, / 
+7.11,Proto-Algonquian to Munsee Delaware,0,index_diachronica_original.html:1896, / 
+7.11,Proto-Algonquian to Munsee Delaware,1,index_diachronica_original.html:1897, / 
+7.12,Proto-Algonquian to Menominee,25,index_diachronica_original.html:1960, / 
+7.13,Proto-Algonquian to Miami-Illinois,0,index_diachronica_original.html:1967, / 
+7.13,Proto-Algonquian to Miami-Illinois,1,index_diachronica_original.html:1968, / 
+8.5.1,Proto-Turkic to Proto-Kypchak,16,index_diachronica_original.html:2298,ew → øj → yj
+10.2.5,Proto-Malayo-Polynesian to Palauan,6,index_diachronica_original.html:2926, / [+stress]
+10.2.5,Proto-Malayo-Polynesian to Palauan,9,index_diachronica_original.html:2929, / [-stress]
 10.2.5,Proto-Malayo-Polynesian to Palauan,31,index_diachronica_original.html:2951,→ ʕ
+10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,6,index_diachronica_original.html:2962," / V_, _V"
+10.2.6.1,Proto-North Sarawak to Kiput,9,index_diachronica_original.html:2988," / V_, _V"
+10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,14,index_diachronica_original.html:3265, / 
 10.3.5.7,Proto-New Caledonia to Pwapwâ,7,index_diachronica_original.html:3321,bw mw → ɡw ŋw → ɡ ŋ / _V[+ rounded]
+10.3.5.8,Proto-New Caledonia to Proto-Yunaga,10,index_diachronica_original.html:3336, / 
 10.3.11,Proto-Oceanic to Proto-Southern Vanuatu,12,index_diachronica_original.html:3541,q → kw → v 
-10.3.11.2.2,Proto-Erromango to Ura,10,index_diachronica_original.html:3625,"! #_, _#"
+10.3.11.2.2,Proto-Erromango to Ura,10,index_diachronica_original.html:3625," ! #_, _#"
+10.3.11.3.1,Proto-Tanna to Kwamera,6,index_diachronica_original.html:3652, / 
+10.3.11.3.4,Proto-Tanna to Southwest Tanna,9,index_diachronica_original.html:3702, / 
 11.5.2,Proto-Lezgic to Archi,6,index_diachronica_original.html:3981,ɢ → q
-15.2.1,Proto-Eskimo to Barrow Iñupiaq,2,index_diachronica_original.html:4627,"/ #_, _#"
-17.2.2,Common Anatolian to Luwian,19,index_diachronica_original.html:5092,"! #_, _#"
+14.3.1,Standard Tamil to Colloquial Tamil,15,index_diachronica_original.html:4553, ! 
+15.2.1,Proto-Eskimo to Barrow Iñupiaq,2,index_diachronica_original.html:4627," / #_, _#"
+15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,3,index_diachronica_original.html:4719, / 
+15.2.6,Proto-Eskimo to Nunivak Yup’ik,3,index_diachronica_original.html:4746, / 
+15.2.7,Proto-Eskimo to Siberian Yup’ik,2,index_diachronica_original.html:4775, / 
+15.2.8,Proto-Eskimo to Unaaliq Yup’ik,3,index_diachronica_original.html:4804, / 
+16.1.5,Proto-Tabla-Sentani to Tabla,3,index_diachronica_original.html:4924, / [-stress]
+17.2.1,Common Anatolian to Hittite,4,index_diachronica_original.html:5057, / 
+17.2.1,Common Anatolian to Hittite,5,index_diachronica_original.html:5058, / 
+17.2.2,Common Anatolian to Luwian,12,index_diachronica_original.html:5085, / 
+17.2.2,Common Anatolian to Luwian,13,index_diachronica_original.html:5086, / 
+17.2.2,Common Anatolian to Luwian,19,index_diachronica_original.html:5092," ! #_, _#"
 17.2.4,Common Anatolian to Lydian,12,index_diachronica_original.html:5141,w → v → f
+17.2.4,Common Anatolian to Lydian,19,index_diachronica_original.html:5148, / 
+17.2.5,Common Anatolian to Palaic,8,index_diachronica_original.html:5165, / 
+17.3.1,Proto-Indo-European to Artsakh Armenian,7,index_diachronica_original.html:5188, / 
+17.3.2,Proto-Indo-European to Erevan Armenian,7,index_diachronica_original.html:5225, / 
+17.3.3,Proto-Indo-European to Istanbul Armenian,7,index_diachronica_original.html:5262, / 
+17.3.4,Proto-Indo-European to Kharpert Armenian,7,index_diachronica_original.html:5299, / 
+17.3.5,Proto-Indo-European to Sebastia Armenian,7,index_diachronica_original.html:5336, / 
+17.3.6,Proto-Indo-European to Southeast Armenian,7,index_diachronica_original.html:5372, / 
+17.3.7,Proto-Indo-European to Southwest Armenian,7,index_diachronica_original.html:5411, / 
+17.5,Proto-Indo-European to Proto-Celtic,16,index_diachronica_original.html:5483, / 
 17.5.1,Proto-Indo-European to Old Irish,1,index_diachronica_original.html:5499,s → z / C[+voice]_
 17.5.1,Proto-Indo-European to Old Irish,10,index_diachronica_original.html:5509,"m̩ n̩ → am an / _{s,({m,j,w})V}"
+17.5.1,Proto-Indo-European to Old Irish,59,index_diachronica_original.html:5570, / [-stress]
+17.6,Proto-Indo-European to Dacian,1,index_diachronica_original.html:5618, / 
+17.6,Proto-Indo-European to Dacian,2,index_diachronica_original.html:5619, / 
+17.7.1,Common Germanic to Gothic,29,index_diachronica_original.html:5685, / 
+17.7.1,Common Germanic to Gothic,30,index_diachronica_original.html:5686, / 
+17.7.2.1,West Germanic to Anglo-Frisian,8,index_diachronica_original.html:5708, / [-stress]
+17.7.2.1.2,Old English to Kentish Middle English,11,index_diachronica_original.html:5738, / 
+17.7.2.1.2,Old English to Kentish Middle English,11,index_diachronica_original.html:5738, ! 
+17.7.2.1.2,Old English to Kentish Middle English,12,index_diachronica_original.html:5740, / 
+17.7.2.1.3,Old English to Midlands Middle English,11,index_diachronica_original.html:5760, / 
+17.7.2.1.3,Old English to Midlands Middle English,11,index_diachronica_original.html:5760, ! 
+17.7.2.1.3,Old English to Midlands Middle English,12,index_diachronica_original.html:5761, / 
+17.7.2.1.6,Early Modern English to Australian English,8,index_diachronica_original.html:5819, ! 
+17.7.2.1.6,Early Modern English to Australian English,13,index_diachronica_original.html:5824, / [-stress]
+17.7.2.1.8,Old English to Northern Middle English,10,index_diachronica_original.html:5868, / 
+17.7.2.1.8,Old English to Northern Middle English,10,index_diachronica_original.html:5868, ! 
+17.7.2.1.8,Old English to Northern Middle English,12,index_diachronica_original.html:5870, / 
+17.7.2.1.8,Old English to Northern Middle English,15,index_diachronica_original.html:5873, / 
 17.7.2.1.9,Early Northern Middle English to Scots,19,index_diachronica_original.html:5905,ɛː → ɛi → əi
+17.7.2.1.9,Early Northern Middle English to Scots,19,index_diachronica_original.html:5905, / 
+17.7.2.1.12,Old English to Southern Middle English,11,index_diachronica_original.html:5998, / 
+17.7.2.1.12,Old English to Southern Middle English,11,index_diachronica_original.html:5998, ! 
+17.7.2.1.12,Old English to Southern Middle English,13,index_diachronica_original.html:6000, / 
 17.7.2.2,West Germanic to Old Low Franconian,7,index_diachronica_original.html:6043,a → ɒ → o
+17.7.2.2.1,Old Low Franconian to Middle Dutch,11,index_diachronica_original.html:6067, / 
+17.7.2.2.2,Middle Dutch to Modern Dutch,3,index_diachronica_original.html:6078, / 
+17.7.2.2.2,Middle Dutch to Modern Dutch,4,index_diachronica_original.html:6079, / 
+17.7.2.3,Middle High German to Standard German,23,index_diachronica_original.html:6118, / 
+17.7.2.3,Middle High German to Standard German,25,index_diachronica_original.html:6120, / [-stress]
+17.7.3,Common Germanic to Proto-Norse,7,index_diachronica_original.html:6168, ! 
+17.7.3.1,Proto-Norse to Old Norse,11,index_diachronica_original.html:6195, ! 
+17.7.3.1,Proto-Norse to Old Norse,20,index_diachronica_original.html:6204, ! 
+17.7.3.1,Proto-Norse to Old Norse,37,index_diachronica_original.html:6221, ! 
+17.7.3.1,Proto-Norse to Old Norse,96,index_diachronica_original.html:6280, / 
+17.7.3.1,Proto-Norse to Old Norse,138,index_diachronica_original.html:6322, ! 
 17.7.3.1.3,Old Norse to Shetland Norn,5,index_diachronica_original.html:6481,nd ld → nː lː
+17.7.4,Common Germanic to Vandalic,1,index_diachronica_original.html:6541, / [-stress]
+17.8.2,Proto-Indo-European to Attic Greek,35,index_diachronica_original.html:6613, / 
+17.11.1,Proto-Slavic to Polish,11,index_diachronica_original.html:7028, / 
+17.11.1,Proto-Slavic to Polish,38,index_diachronica_original.html:7057, / [-stress]
+17.11.1,Proto-Slavic to Polish,118,index_diachronica_original.html:7144, / 
 17.12.1.1.1,Classical Latin vs. Vulgar Latin,15,index_diachronica_original.html:7338,";; “In contrast, Romanian exhibits"
+17.12.1.1.2,Latin to Catalan,7,index_diachronica_original.html:7351, / [+stress]
+17.12.1.1.2,Latin to Catalan,9,index_diachronica_original.html:7353, / [+stress]
+17.12.1.1.2,Latin to Catalan,12,index_diachronica_original.html:7356, / [+stress]
+17.12.1.1.2,Latin to Catalan,15,index_diachronica_original.html:7359, / [+stress]
+17.12.1.1.2,Latin to Catalan,21,index_diachronica_original.html:7365, / [+stress]
+17.12.1.1.2,Latin to Catalan,102,index_diachronica_original.html:7447, / [+stress]
+17.12.1.1.3,Latin to French,27,index_diachronica_original.html:7486, / 
+17.12.1.1.3,Latin to French,29,index_diachronica_original.html:7488, / 
+17.12.1.1.3,Latin to French,30,index_diachronica_original.html:7489, / 
+17.12.1.1.3,Latin to French,31,index_diachronica_original.html:7490, / 
+17.12.1.1.3,Latin to French,41,index_diachronica_original.html:7500, / 
+17.12.1.1.3,Latin to French,84,index_diachronica_original.html:7545, / 
+17.12.1.1.3,Latin to French,85,index_diachronica_original.html:7546, / 
+17.12.1.1.3,Latin to French,86,index_diachronica_original.html:7547, / 
+17.12.1.1.3,Latin to French,88,index_diachronica_original.html:7549, / 
+17.12.1.1.3,Latin to French,93,index_diachronica_original.html:7554, / 
+17.12.1.1.4,Vulgar Latin to Italian,1,index_diachronica_original.html:7594, / [-stress]
+17.12.1.1.4,Vulgar Latin to Italian,5,index_diachronica_original.html:7598, / [-stress]
+17.12.1.1.4,Vulgar Latin to Italian,7,index_diachronica_original.html:7600, / [-stress]
+17.12.1.1.4,Vulgar Latin to Italian,12,index_diachronica_original.html:7605, / [+stress]
+17.12.1.1.5,Latin to Portuguese,13,index_diachronica_original.html:7634, / [+stress]
+17.12.1.1.5,Latin to Portuguese,19,index_diachronica_original.html:7640, / [+stress]
+17.12.1.1.5,Latin to Portuguese,23,index_diachronica_original.html:7644, / [+stress]
+17.12.1.1.5,Latin to Portuguese,38,index_diachronica_original.html:7659, / [-stress]
+17.12.1.1.5,Latin to Portuguese,39,index_diachronica_original.html:7660, / 
+17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,1,index_diachronica_original.html:7992, / [+stress]
+17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,3,index_diachronica_original.html:7994, / 
+17.12.1.1.10,Vulgar Latin to Spanish,34,index_diachronica_original.html:8163, / [-stress]
 17.12.1.1.10,Vulgar Latin to Spanish,44,index_diachronica_original.html:8176,"{nts,ndz,rdz}_"
-37.2.5.1,Proto-Crow-Hidatsa to Crow,3,index_diachronica_original.html:12893,"! #_, _#"
+18.3.2,Proto-Tuparí to Mekens,2,index_diachronica_original.html:8424, / 
+18.3.4,Proto-Tuparí to Wayoró,3,index_diachronica_original.html:8465, / 
+24.1.1,Proto-Paman to AritinÅitiÉ£,5,index_diachronica_original.html:9415, / 
+24.1.2,Proto-Paman to AwÅtim,7,index_diachronica_original.html:9427, / 
+24.1.3,Proto-Paman to LinÅitiÉ£,3,index_diachronica_original.html:9435, / 
+24.1.4,Proto-Paman to Mbiywom,5,index_diachronica_original.html:9445, / 
+24.1.5,Proto-Paman to Mpalican,2,index_diachronica_original.html:9452, / 
+24.1.6,Proto-Paman to UraÃ°i,1,index_diachronica_original.html:9458, / 
+24.1.7,Proto-Paman to Yinwum,7,index_diachronica_original.html:9470, / 
+29.1.1.1.1,Proto-Athabaskan to Ahtna,1,index_diachronica_original.html:9980, / 
+29.1.1.1.12,Proto-Athabaskan to Holikachuk,1,index_diachronica_original.html:10089, / 
+29.1.1.1.18,Proto-Athabaskan to Sekani,2,index_diachronica_original.html:10150, ! 
+29.1.1.1.19,Proto-Athabaskan to Proto-Southern Athabaskan,2,index_diachronica_original.html:10159, / 
+29.1.1.1.19,Proto-Athabaskan to Proto-Southern Athabaskan,4,index_diachronica_original.html:10161, / 
+29.1.1.1.27,Proto-Western Southern Athabaskan to Navajo,0,index_diachronica_original.html:10237, / 
+29.1.1.1.37,Proto-Athabaskan to Tanacross,7,index_diachronica_original.html:10323, / 
+29.1.1.1.37,Proto-Athabaskan to Tanacross,8,index_diachronica_original.html:10324, / 
+29.1.1.1.39,Proto-Athabaskan to Upper Tanana,6,index_diachronica_original.html:10346, / 
+29.1.1.1.39,Proto-Athabaskan to Upper Tanana,7,index_diachronica_original.html:10347, / 
+30.1.1,Pre-Proto-Bantu to Proto-Bantu,0,index_diachronica_original.html:10462, / 
+30.1.1,Pre-Proto-Bantu to Proto-Bantu,1,index_diachronica_original.html:10463, / 
+30.1.1,Pre-Proto-Bantu to Proto-Bantu,2,index_diachronica_original.html:10464, / 
+30.1.2,Pre-Proto-Bantu to Proto-Manenguba,0,index_diachronica_original.html:10541, / 
+30.1.2,Pre-Proto-Bantu to Proto-Manenguba,1,index_diachronica_original.html:10542, / 
+30.1.2,Pre-Proto-Bantu to Proto-Manenguba,2,index_diachronica_original.html:10543, / 
+30.1.2,Pre-Proto-Bantu to Proto-Manenguba,3,index_diachronica_original.html:10544, / 
+32.1.1,Proto-Chatino to Papabuco Chatino,23,index_diachronica_original.html:10804, / 
+32.1.1,Proto-Chatino to Papabuco Chatino,26,index_diachronica_original.html:10807, / 
+33.3.1.3,Buena Vista Yokuts to Tulamni,1,index_diachronica_original.html:11077, / [+stress]
+35.1.7,Proto-Central Salish to Nooksack,14,index_diachronica_original.html:11529, / 
+35.3,Shuswap to Eastern Shuswap Nasal-to-Vowel Shifts,1,index_diachronica_original.html:11720, / 
+35.3,Shuswap to Eastern Shuswap Nasal-to-Vowel Shifts,3,index_diachronica_original.html:11722, / 
+36.1.1,Late Middle Chinese to Old Mandarin,5,index_diachronica_original.html:11759, / 
+36.1.1,Late Middle Chinese to Old Mandarin,6,index_diachronica_original.html:11760, / 
+36.1.1,Late Middle Chinese to Old Mandarin,8,index_diachronica_original.html:11762, / 
+36.1.1,Late Middle Chinese to Old Mandarin,9,index_diachronica_original.html:11763, / 
+36.2,Sin Sukchu to Guānhuà,54,index_diachronica_original.html:11873, / 
+37.1.2,Proto-Iroquoian to Proto-Northern Iroquoian,6,index_diachronica_original.html:12384, ! 
+37.1.2.2.1,Huron to Wyandot,0,index_diachronica_original.html:12479, / 
+37.2.1,Proto-Siouan to Catawba,3,index_diachronica_original.html:12745, / 
+37.2.2,Proto-Siouan to Dakota,2,index_diachronica_original.html:12757, / 
+37.2.2,Proto-Siouan to Dakota,4,index_diachronica_original.html:12759, / 
+37.2.3,Proto-Siouan to Mandan,6,index_diachronica_original.html:12802, / 
+37.2.4,Proto-Siouan to Proto-Čiwere-Winnebago,5,index_diachronica_original.html:12824, / 
+37.2.4,Proto-Siouan to Proto-Čiwere-Winnebago,6,index_diachronica_original.html:12825, / 
+37.2.5.1,Proto-Crow-Hidatsa to Crow,3,index_diachronica_original.html:12893," ! #_, _#"
+37.2.6,Proto-Siouan to Proto-Dhegiha,2,index_diachronica_original.html:12921, / 
+37.2.6,Proto-Siouan to Proto-Dhegiha,3,index_diachronica_original.html:12922, / 
+37.2.6,Proto-Siouan to Proto-Dhegiha,9,index_diachronica_original.html:12928, / 
+37.2.6.1,Proto-Dhegiha to Kansa,7,index_diachronica_original.html:12943, / [+stress]
+37.2.6.2,Proto-Dhegiha to Omaha-Ponca,6,index_diachronica_original.html:12959, / [+stress]
+37.2.6.4,Proto-Dhegiha to Quapaw,7,index_diachronica_original.html:13000, / [+stress]
+42.1,Proto-Uralic to Pre-Finnic,5,index_diachronica_original.html:13767, / [+stress]
+42.1,Proto-Uralic to Pre-Finnic,7,index_diachronica_original.html:13769, / [-stress]
+42.1,Proto-Uralic to Pre-Finnic,9,index_diachronica_original.html:13771, / [-stress]
+42.1.1,Pre-Finnic to Proto-Finnic,4,index_diachronica_original.html:13780, / [-stress]
+42.1.1,Pre-Finnic to Proto-Finnic,39,index_diachronica_original.html:13815, / 
+42.1.1.1,Proto-Finnic to Proto-Finnish,12,index_diachronica_original.html:13839, / [-stress]
+42.1.1.1.1,Proto-Finnish to Standard Finnish,26,index_diachronica_original.html:13881, / [-stress]
+42.1.1.1.1,Proto-Finnish to Standard Finnish,28,index_diachronica_original.html:13883, / [-stress]
+42.1.1.1.2,Standard Finnish to Modern Standard Finnish,2,index_diachronica_original.html:13897, / [-stress]
+42.1.2,Proto-Finnic to Livonian,3,index_diachronica_original.html:13906, / [-stress]
+42.1.2,Proto-Finnic to Livonian,7,index_diachronica_original.html:13910, / [-stress]
+42.1.2,Proto-Finnic to Livonian,21,index_diachronica_original.html:13924, ! 
+45.1.2,Proto-Pai to Paipai,4,index_diachronica_original.html:14268, / [-stress]
+45.1.3,Proto-Pai to Tipai,2,index_diachronica_original.html:14278, / [-stress]
 46.5,Old English-to-Scots Vowel Shifts,9,index_diachronica_original.html:14332,ɛː → ɛi → əi
+46.5,Old English-to-Scots Vowel Shifts,9,index_diachronica_original.html:14332, / 
+46.13,Old Norse to Faroese Vowel Shift,8,index_diachronica_original.html:14426, / [-stress]

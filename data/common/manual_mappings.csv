@@ -2,7 +2,7 @@ from,to,reason
 "m̩ n̩ → am an / _{s,({m,j,w)V}","m̩ n̩ → am an / _{s,({m,j,w})V}",bracket correction
 "“The PIE rules for the voicing of s → z, as in [nizdos] for *nisdos, are assumed to apply”","s → z / C[+voice]_","*nisdos > nizdos"
 "“In contrast, Romanian exhibits",";; “In contrast, Romanian exhibits","comment"
-ew → øj → yj,ew (→ øj) → yj,chaining
+ew (→ øj) → yj,ew → øj → yj,chaining
 (→ ʕ),→ ʕ,chaining
 bw mw → ɡw ŋw (→ ɡ ŋ / _V[+ rounded]),bw mw → ɡw ŋw → ɡ ŋ / _V[+ rounded],chaining
 q (→ kw ?) → v ,q → kw → v ,chaining
@@ -12,5 +12,12 @@ a → ɒ? (→ o),a → ɒ → o,chaining
 nd ld (→ nː lː ?),nd ld → nː lː,chaining
 "ɣ → q (more likely, *ɢ → q instead of → ɣ)","ɢ → q",correction
 "{nts,ndz,rdz_","{nts,ndz,rdz}_",correction
-/ at word boundaries,"/ #_, _#",replacing prose
-! at word boundaries,"! #_, _#",replacing prose
+" / at word boundaries"," / #_, _#",replacing prose
+" ! at word boundaries"," ! #_, _#",replacing prose
+" / unstressed"," / [-stress]",replacing prose
+" / stressed"," / [+stress]",replacing prose
+" / adjacent to short u"," / u[-long]_, _u[-long]",replacing prose
+" / unless adjacent to another consonant"," / ! C_,_C",replacing prose
+" / adjacent to a vowel"," / V_, _V",replacing prose
+" / in "," / ",replace prose
+" ! in "," ! ",replace prose
