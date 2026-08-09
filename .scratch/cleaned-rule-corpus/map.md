@@ -66,6 +66,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - [Parse-time manual rule mappings](issues/60-parse-time-manual-rule-mappings.md) — done: `manual_mappings.csv` at parse before other transforms; `raw` unchanged; debug CSV + unmatched warnings; inventory **7184 → 7185 ok (+1)**.
 - [Correction pass: Index parallel-column `∅` in multi-segment I/O](issues/60-correction-pass-parallel-column-null.md) — grill 2026-08-09: omit mixed top-level null columns on input/output; set-internal `∅` out of scope (**note:** duplicate ticket number 60 with manual mappings — rename when convenient).
 - [Grill: optional outputs](issues/61-grill-optional-outputs.md) — **needs-grilling** (paused): unpaired output sets e.g. `d → {∅,ð}`; YAML keeps set; choice/testability still open. Glossary: **Optional outputs**.
+- [Correction pass: prose env `else`](issues/53-correction-pass-prose-env-else.md) — grill 2026-08-09: parse-time complementary rewrite — prev `env`∧¬exception → else omits `env`, `exception` = prev env; defer 4 env+exception pairs; no `#_` stub.
 
 ## Pipeline documentation (grill 2026-08-07)
 
@@ -98,7 +99,7 @@ Phased delivery — not vertical slices upfront:
 - **Meta-notation at ingest** — later find/replace; cluster-driven for now (ticket 06)
 - **Section-local abbreviations** (e.g. Athabaskan `TŠ`) — cluster-driven; hand-add mapping rows when warranted
 - Abbreviation table authorship at scale
-- Prose-**environment** mapping — informed by extracted **`comment`** qualifiers ([Capture rule comments at parse time](issues/31-capture-rule-comments-at-parse-time.md)); structured env from prose not yet specified
+- Prose-**environment** mapping — informed by extracted **`comment`** qualifiers ([Capture rule comments at parse time](issues/31-capture-rule-comments-at-parse-time.md)); structured env from prose not yet specified. **`/ else` catch-alls** → [ticket 53](issues/53-correction-pass-prose-env-else.md) (grill settled; implement).
 - **Optional outputs** — unpaired Index output sets (e.g. `d → {∅,ð}`); ASCA-illegal; choice/render design paused — [grill ticket 61](issues/61-grill-optional-outputs.md) (`needs-grilling`)
 - Adoption criteria for cleaned YAML replacing HTML as **SoT**
 - Brassica compiler (ADR-0001)

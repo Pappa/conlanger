@@ -73,12 +73,12 @@ An Index output written as a set while the matching input is **not** a set (e.g.
 _Avoid_: calling this `sporadic`; structuring optional outputs as a separate YAML field; treating paired input/output sets (`{a,b} → {c,d}`) as optional outputs
 
 **Environment**:
-The phonological context in which a sound change applies — the `/ … _` portion of a rule (where the change is conditioned). Stored as optional field `env` on a corpus rule; absent means any environment.
-_Avoid_: “context” when `exception` is meant; prose paragraphs from Index comments
+The phonological context in which a sound change applies — the `/ … _` portion of a rule (where the change is conditioned). Stored as optional field `env` on a corpus rule; absent means any environment. Index prose catch-all **`else`** is not itself an environment — after parse resolution it becomes an **exception** derived from the previous rule (see correction pass on `/ else`).
+_Avoid_: “context” when `exception` is meant; prose paragraphs from Index comments; treating bare `else` as a valid `env` value in the cleaned SoT
 
 **Exception**:
-A phonological context that blocks an otherwise applicable change — the `! …` or `| …` portion of a rule. Stored as optional field `exception` on a corpus rule; absent means no exceptions.
-_Avoid_: the English word “except” in citation prose; conflating with environment
+A phonological context that blocks an otherwise applicable change — the `! …` or `| …` portion of a rule. Stored as optional field `exception` on a corpus rule; absent means no exceptions. For Index `/ else` rules whose previous sibling has an environment and no exception, parse writes that previous environment into `exception` and omits `env` (complementary default branch).
+_Avoid_: the English word “except” in citation prose; conflating with environment; leaving Index `else` in `env`
 
 **Rule comment**:
 Optional inline editorial prose on a **corpus rule** — English qualifiers, semicolon tails, parenthetical notes, and other text stripped from `stages`/`env`/`exception` at parse so compile fields stay ASCA-clean. Stored as optional field `comment`; omitted when absent. **`raw`** always preserves the full Index line. Distinct from section-level **`comments`** (non-rule `<p>` prose blocks between rules).
