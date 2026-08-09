@@ -84,6 +84,10 @@ _Avoid_: “comment” without qualification when section comments are meant; em
 The original Index Diachronica rule-line string preserved on a corpus rule for audit and fidelity checks.
 _Avoid_: treating the cleaned `stages`/`env`/`exception` fields as the only recoverable form of the HTML line
 
+**Manual mapping**:
+A maintainer-authored rewrite of part or all of an Index rule string, keyed by a `from` substring in `data/common/manual_mappings.csv`. At HTML→YAML parse, the first transform replaces `from` with `to` on a working copy; **`raw`** keeps the original HTML surface form. Hits are logged to `manual_mappings_matched_rules.csv` at regen.
+_Avoid_: IPA mapping, feature mapping, or correction-pass transforms (those are programmatic; manual mappings are owner decisions for lines that cannot be resolved safely in code)
+
 **Source**:
 Provenance of a corpus rule as `file:line` pointing at the Index Diachronica HTML location of its raw string (e.g. `index_diachronica_original.html:1288`).
 _Avoid_: section index alone as sufficient provenance; opaque “from HTML” notes without a locatable line
