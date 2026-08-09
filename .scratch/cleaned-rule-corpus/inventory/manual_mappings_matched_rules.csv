@@ -73,7 +73,7 @@ section_index,section_name,rule_idx,source,manual_mapping
 17.7.2.1.3,Old English to Midlands Middle English,11,index_diachronica_original.html:5760, / 
 17.7.2.1.3,Old English to Midlands Middle English,11,index_diachronica_original.html:5760, ! 
 17.7.2.1.3,Old English to Midlands Middle English,12,index_diachronica_original.html:5761, / 
-17.7.2.1.6,Early Modern English to Australian English,8,index_diachronica_original.html:5819, ! 
+17.7.2.1.6,Early Modern English to Australian English,8,index_diachronica_original.html:5819, sporadic ;; not in Queensland
 17.7.2.1.6,Early Modern English to Australian English,13,index_diachronica_original.html:5824, / [-stress]
 17.7.2.1.8,Old English to Northern Middle English,10,index_diachronica_original.html:5868, / 
 17.7.2.1.8,Old English to Northern Middle English,10,index_diachronica_original.html:5868, ! 
@@ -141,9 +141,10 @@ section_index,section_name,rule_idx,source,manual_mapping
 24.1.5,Proto-Paman to Mpalican,2,index_diachronica_original.html:9452, / 
 24.1.6,Proto-Paman to UraÃ°i,1,index_diachronica_original.html:9458, / 
 24.1.7,Proto-Paman to Yinwum,7,index_diachronica_original.html:9470, / 
-29.1.1.1.1,Proto-Athabaskan to Ahtna,1,index_diachronica_original.html:9980, / 
+29.1.1.1.1,Proto-Athabaskan to Ahtna,1,index_diachronica_original.html:9980, / sporadic ;; in Mentasta Ahtna
+29.1.1.1.8,Proto-Athabaskan to Dena’ina,2,index_diachronica_original.html:10047,"{ʃ(ʷ),x} {z,ʒ(ʷ),ɣ} → s j"
 29.1.1.1.12,Proto-Athabaskan to Holikachuk,1,index_diachronica_original.html:10089, / 
-29.1.1.1.18,Proto-Athabaskan to Sekani,2,index_diachronica_original.html:10150, ! 
+29.1.1.1.18,Proto-Athabaskan to Sekani,2,index_diachronica_original.html:10150, sporadic ;; not in Ware Sekani
 29.1.1.1.19,Proto-Athabaskan to Proto-Southern Athabaskan,2,index_diachronica_original.html:10159, / 
 29.1.1.1.19,Proto-Athabaskan to Proto-Southern Athabaskan,4,index_diachronica_original.html:10161, / 
 29.1.1.1.27,Proto-Western Southern Athabaskan to Navajo,0,index_diachronica_original.html:10237, / 

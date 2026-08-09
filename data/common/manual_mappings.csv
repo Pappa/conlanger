@@ -19,5 +19,9 @@ nd ld (→ nː lː ?),nd ld → nː lː,chaining
 " / adjacent to short u"," / u[-long]_, _u[-long]",replacing prose
 " / unless adjacent to another consonant"," / ! C_,_C",replacing prose
 " / adjacent to a vowel"," / V_, _V",replacing prose
+" / in Mentasta Ahtna"," / sporadic ;; in Mentasta Ahtna",replace prose
+" ! in Ware Sekani"," sporadic ;; not in Ware Sekani",replace prose
+" ! in Queensland"," sporadic ;; not in Queensland",replace prose
 " / in "," / ",replace prose
 " ! in "," ! ",replace prose
+"{ʃ(ʷ),x {z,ʒ(ʷ),ɣ} → s j","{ʃ(ʷ),x} {z,ʒ(ʷ),ɣ} → s j","corrected from original source: Northern Athapaskan Languages (Vol. 6), p. 73"

@@ -22137,21 +22137,22 @@ sections:
     raw: oʊ iː → əʊ ɪi / else
     source: index_diachronica_original.html:5818
     exception: _ɫ
-  - stages:
+  - comment: ; not in Queensland and New South Wales; sporadic
+    stages:
     - uː
     - ʊə
     - uː
     env: _ɫ
-    exception: Queensland and New South Wales
     raw: uː → ʊə → uː / _ɫ ! in Queensland and New South Wales
     source: index_diachronica_original.html:5819
+    sporadic: true
   - stages:
     - uː
     - ʊʉ
     - ʉː
-    env: else
     raw: uː → ʊʉ → ʉː / else
     source: index_diachronica_original.html:5820
+    exception: _ɫ
   - stages:
     - ɫ
     - əɫ
@@ -41578,12 +41579,13 @@ sections:
     - TS
     raw: '{TŠ,TŠʷ} → TS'
     source: index_diachronica_original.html:9979
-  - stages:
+  - comment: ; in Mentasta Ahtna; sporadic
+    stages:
     - K
     - Tʃ
-    env: Mentasta Ahtna
     raw: K → TŠ / in Mentasta Ahtna
     source: index_diachronica_original.html:9980
+    sporadic: true
   - stages:
     - '{ʃ(ʷ),x}'
     - s
@@ -41816,7 +41818,7 @@ sections:
     raw: e a u {ə,ʊ} → a u i ə
     source: index_diachronica_original.html:10046
   - stages:
-    - '{ʃ(ʷ),x {z,ʒ(ʷ),ɣ}'
+    - '{ʃ(ʷ),x} {z,ʒ(ʷ),ɣ}'
     - s j
     raw: '{ʃ(ʷ),x {z,ʒ(ʷ),ɣ} → s j'
     source: index_diachronica_original.html:10047
@@ -42050,7 +42052,7 @@ sections:
   rules:
   - stages:
     - e a ɑ ʊ
-    - a o ŏ u
+    - a o ɑ u
     raw: e a ɑ ʊ → a o ŏ ŭ
     source: index_diachronica_original.html:10111
   - stages:
@@ -42091,7 +42093,7 @@ sections:
   rules:
   - stages:
     - e a ɑ ʊ
-    - a o ŏ u
+    - a o ɑ u
     raw: e a ɑ ʊ → a o ŏ ŭ
     source: index_diachronica_original.html:10121
   - stages:
@@ -42190,13 +42192,14 @@ sections:
     - TS Tʃ Q
     raw: '{TŠ,TŠʷ} K Q → TS TŠ Q'
     source: index_diachronica_original.html:10149
-  - stages:
+  - comment: ; not in Ware Sekani; sporadic
+    stages:
     - T
     - Tʃ
     env: _{i,e,u}
-    exception: Ware Sekani
     raw: T → TŠ / _{i,e,u} ! in Ware Sekani
     source: index_diachronica_original.html:10150
+    sporadic: true
   - stages:
     - ʊ
     - o
@@ -42842,7 +42845,7 @@ sections:
     source: index_diachronica_original.html:10324
   - stages:
     - ɑ ə ʊ
-    - '{æ̆,ă} æ̆ ŏ'
+    - '{æ̆,ă} æ̆ ɑ'
     raw: ɑ ə ʊ → {æ̆,ă} æ̆ ŏ
     source: index_diachronica_original.html:10325
 - section: Proto-Athabaskan to Lower Tanana
@@ -48818,7 +48821,7 @@ sections:
   - stages:
     - uj
     - uɛi
-    env: '{P,C[+guttural],∅}_'
+    env: '{P,C[+laryngeal],∅}_'
     raw: uj → uɛi / {P,C[+guttural],∅}_
     source: index_diachronica_original.html:11845
   - stages:
@@ -48899,14 +48902,14 @@ sections:
   - stages:
     - yʔ
     - yʔ(~yɛʔ?)
-    env: '{∅,C[+guttural]}, in -juət-types'
+    env: '{∅,C[+laryngeal]}, in -juət-types'
     raw: yʔ → yʔ(~yɛʔ?) / {∅,C[+guttural]}, in -juət-types
     source: index_diachronica_original.html:11858
   - stages:
     - yʔ
     - ioʔ (
     - iʊʔ dialectally?)
-    env: '{∅,C[+guttural]}_, in -k-types'
+    env: '{∅,C[+laryngeal]}_, in -k-types'
     raw: yʔ → ioʔ (→ iʊʔ dialectally?) / {∅,C[+guttural]}_, in -k-types
     source: index_diachronica_original.html:11859
   - stages:
@@ -49006,7 +49009,7 @@ sections:
   - stages:
     - wɔʔ
     - uɔʔ
-    env: C[+guttural]_
+    env: C[+laryngeal]_
     raw: wɔʔ → uɔʔ / C[+guttural]_
     source: index_diachronica_original.html:11875
   - stages:
@@ -49014,7 +49017,7 @@ sections:
     - ɔʔ
     raw: wɔʔ → ɔʔ / else
     source: index_diachronica_original.html:11876
-    exception: C[+guttural]_
+    exception: C[+laryngeal]_
   - stages:
     - ɔn
     - an;
@@ -49029,7 +49032,7 @@ sections:
   - stages:
     - aʔ
     - ɔʔ
-    env: C[+guttural]_
+    env: C[+laryngeal]_
     raw: aʔ → ɔʔ / C[+guttural]_
     source: index_diachronica_original.html:11879
   - stages:
