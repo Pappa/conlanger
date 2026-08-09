@@ -1,4 +1,5 @@
 Type: task
+Status: claimed
 Blocked by: 12
 
 # Correction pass: prose env `else`
