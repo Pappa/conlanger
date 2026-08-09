@@ -16451,12 +16451,13 @@ sections:
     - u
     raw: v → u
     source: index_diachronica_original.html:4692
-  - stages:
+  - comment: ; “in some positions”; sporadic
+    stages:
     - ɣ
     - u
-    comment: “in some positions”
     raw: ɣ → u / “in some positions”
     source: index_diachronica_original.html:4693
+    sporadic: true
   - stages:
     - p k q s
     - v ɣ ʁ z
@@ -16586,12 +16587,13 @@ sections:
     env: '#_F'
     raw: 'S → ∅ / #_F'
     source: index_diachronica_original.html:4718
-  - stages:
+  - comment: ; in certain situations?; sporadic
+    stages:
     - s
     - ts
-    env: certain situations?
     raw: s → ts / in certain situations?
     source: index_diachronica_original.html:4719
+    sporadic: true
   - stages:
     - C[+voice]
     - C[-voice]
@@ -16736,12 +16738,13 @@ sections:
     env: '#_F'
     raw: 'S → ∅ / #_F'
     source: index_diachronica_original.html:4745
-  - stages:
+  - comment: ; in certain situations?; sporadic
+    stages:
     - s
     - ts
-    env: certain situations?
     raw: s → ts / in certain situations?
     source: index_diachronica_original.html:4746
+    sporadic: true
   - stages:
     - C[+voice]
     - C[-voice]
@@ -16888,13 +16891,14 @@ sections:
     env: '#_F'
     raw: 'S → ∅ / #_F'
     source: index_diachronica_original.html:4774
-  - stages:
+  - comment: ; in some dialects?; sporadic
+    stages:
     - s
     - ts
     - tʃ
-    env: some dialects?
     raw: s → ts → tʃ / in some dialects?
     source: index_diachronica_original.html:4775
+    sporadic: true
   - stages:
     - C[+voice]
     - C[-voice]
@@ -17049,12 +17053,13 @@ sections:
     env: '#_F'
     raw: 'S → ∅ / #_F'
     source: index_diachronica_original.html:4803
-  - stages:
+  - comment: ; in certain situations?; sporadic
+    stages:
     - s
     - ts
-    env: certain situations?
     raw: s → ts / in certain situations?
     source: index_diachronica_original.html:4804
+    sporadic: true
   - stages:
     - C[+voice]
     - C[-voice]
@@ -22614,13 +22619,14 @@ sections:
     - eː oe əi iː {ɑː,ɔː} ʌu ju j(ʌ)u
     raw: — ai oi ui ei au ou iu ɛ(o)u → eː oe əi iː {ɑː,ɔː} ʌu ju j(ʌ)u
     source: index_diachronica_original.html:5904
-  - stages:
+  - comment: ; in some northern varieties; sporadic
+    stages:
     - ɛː
     - ɛi
     - əi
-    env: some northern varieties
     raw: — ɛː → ɛi (→ əi?) / in some northern varieties
     source: index_diachronica_original.html:5905
+    sporadic: true
   - stages:
     - iː eː ɛː aː oː uː {øː,yː}
     - əi i {i,e} e o u ø
@@ -59879,13 +59885,14 @@ sections:
     - eː oe əi iː {ɑː,ɔː} ʌu ju j(ʌ)u
     raw: ai oi ui ei au ou iu ɛ(o)u → eː oe əi iː {ɑː,ɔː} ʌu ju j(ʌ)u
     source: index_diachronica_original.html:14331
-  - stages:
+  - comment: ; in some northern varieties; sporadic
+    stages:
     - ɛː
     - ɛi
     - əi
-    env: some northern varieties
     raw: ɛː → ɛi (→ əi?) / in some northern varieties
     source: index_diachronica_original.html:14332
+    sporadic: true
   - stages:
     - iː eː ɛː aː oː uː {øː,yː}
     - əi i {i,e} e o u ø
