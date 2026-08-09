@@ -61,7 +61,7 @@ Applied to the working copy only; **`raw` is stored before this** (see `parse_ru
 
 | Step | Status | Order | Rationale | Code |
 | --- | --- | ---: | --- | --- |
-| Uncertainty gloss → `sporadic: true` + `comment` | implemented | D1 | `sporadic`/`sometimes` are editorial qualifiers, not ASCA syntax ([pass 19](../.scratch/cleaned-rule-corpus/issues/19-correction-pass-sporadic-qualifier.md)). Stripped prose captured, not discarded. | `apply_sporadic_qualifier` |
+| Uncertainty gloss → `sporadic: true` + `comment` | implemented | D1 | `sporadic`/`sometimes`/`occasionally` are editorial qualifiers, not ASCA syntax ([pass 19](../.scratch/cleaned-rule-corpus/issues/19-correction-pass-sporadic-qualifier.md)). Stripped prose captured, not discarded. | `apply_sporadic_qualifier` |
 | Trailing / embedded editorial gloss strip → `comment` | implemented | D2 | Prose in quotes, parens, semicolon tails breaks ASCA; capture-not-discard ([passes 21, 24, 31](../.scratch/cleaned-rule-corpus/map.md)). Internal order: embedded quotes → trailing quotes → trailing parens → semicolon prose. | `apply_trailing_glosses` |
 | Env stress phrase normalization (`when stressed` / `when unstressed`) | implemented | D3 | Index env prose → ASCA env with `_` focus prefix ([pass 22](../.scratch/cleaned-rule-corpus/issues/22-correction-pass-stress-conditions.md)). | `apply_stress_conditions` |
 | Feature matrix synonym replacement (inside `[...]` only) | implemented (Phase 1) | D4 | Safe 1:1 Index→ASCA renames via `data/asca/feature_mappings.csv` (5 seed rows; [pass 32](../.scratch/cleaned-rule-corpus/issues/32-correction-pass-unknown-feature.md)). Unmapped names left literal for `unknown_feature` clustering. | `apply_feature_mappings` |

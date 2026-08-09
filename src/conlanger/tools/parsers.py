@@ -14,8 +14,8 @@ unchanged). Leading em dash list-item markers (``— ``) are stripped from the r
 before field split. Remaining Index rule arrows (``→``) in field values become ASCA ``>``.
 Chained rules store each spine segment in ``stages``; compile-time expansion is deferred.
 Uncertainty glosses
-(``sporadic``, ``sometimes``, …) are stripped from field values and recorded as
-``sporadic: true``. **Feature matrix** synonym replacement inside ``[...]`` via
+(``sporadic``, ``sometimes``, ``occasionally``, …) are stripped from field values
+and recorded as ``sporadic: true``. **Feature matrix** synonym replacement inside ``[...]`` via
 ``feature_mappings.csv`` (``raw`` unchanged). **IPA character** substitution via
 ``ipa_mapping.csv`` (``raw`` unchanged). **Correspondence-series** and
 **collective subscript** expansion via ``series_mappings.csv`` (``raw`` unchanged).
@@ -193,35 +193,36 @@ def normalize_rule_arrows(text: str) -> str:
     return text.replace(ARROW, ">")
 
 
-_UNCERTAINTY_WORD_RE = re.compile(r"\b(?:sporadic(?:ally)?|sometimes)\b", re.IGNORECASE)
+_UNCERTAINTY_WORDS = r"sporadic(?:ally)?|sometimes|occasionally"
+_UNCERTAINTY_WORD_RE = re.compile(rf"\b(?:{_UNCERTAINTY_WORDS})\b", re.IGNORECASE)
 _LONE_UNCERTAINTY_RE = re.compile(
-    r"^(?:sporadic(?:ally)?|sometimes)\??\.?$", re.IGNORECASE
+    rf"^(?:{_UNCERTAINTY_WORDS})\??\.?$", re.IGNORECASE
 )
 _ENV_UNCERTAINTY_PREFIX_RE = re.compile(
     r"^sporadic(?:ally)?(?:,\s*usually)?\s*,?\s*",
     re.IGNORECASE,
 )
 _TRAILING_PAREN_WITH_UNCERTAINTY_RE = re.compile(
-    r"\s*\([^)]*(?:sporadic(?:ally)?|sometimes)[^)]*\)\s*$",
+    rf"\s*\([^)]*(?:{_UNCERTAINTY_WORDS})[^)]*\)\s*$",
     re.IGNORECASE,
 )
 _TRAILING_QUOTED_WITH_UNCERTAINTY_RE = re.compile(
-    r'\s*(?:[("\u201c][^"\u201d)]*(?:sporadic(?:ally)?|sometimes)[^"\u201d)]*[)\u201d"]|"[^"]*(?:sporadic(?:ally)?|sometimes)[^"]*")\s*$',
+    rf'\s*(?:[("\u201c][^"\u201d)]*(?:{_UNCERTAINTY_WORDS})[^"\u201d)]*[)\u201d"]|"[^"]*(?:{_UNCERTAINTY_WORDS})[^"]*")\s*$',
     re.IGNORECASE,
 )
 _TRAILING_BARE_UNCERTAINTY_RE = re.compile(
-    r"\s*(?:\()?[\s\u201c\"']*(?:sporadic(?:ally)?|sometimes)\??[\s\u201d\"')]*\)?\s*$",
+    rf"(?:,\s*|\s*(?:\()?)[\s\u201c\"']*(?:{_UNCERTAINTY_WORDS})\??[\s\u201d\"')]*\)?\s*$",
     re.IGNORECASE,
 )
 
 
 def field_has_uncertainty_qualifier(text: str) -> bool:
-    """Return whether ``text`` mentions sporadic / sometimes uncertainty."""
+    """Return whether ``text`` mentions sporadic / sometimes / occasionally uncertainty."""
     return bool(text and _UNCERTAINTY_WORD_RE.search(text))
 
 
 def extract_uncertainty_qualifier_from_field(text: str) -> tuple[str, list[str]]:
-    """Remove sporadic / sometimes glosses; return captured prose fragments."""
+    """Remove sporadic / sometimes / occasionally glosses; return captured prose."""
     captures: list[str] = []
     if not text:
         return text, captures
@@ -251,7 +252,7 @@ def extract_uncertainty_qualifier_from_field(text: str) -> tuple[str, list[str]]
 
 
 def strip_uncertainty_qualifier_from_field(text: str) -> str:
-    """Remove sporadic / sometimes glosses from one rule field value."""
+    """Remove sporadic / sometimes / occasionally glosses from one rule field value."""
     cleaned, _ = extract_uncertainty_qualifier_from_field(text)
     return cleaned
 

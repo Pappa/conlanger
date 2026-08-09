@@ -2272,6 +2272,7 @@ sections:
     - zˤ, occasionally tˤ
     raw: ðˤ → zˤ, occasionally tˤ
     source: index_diachronica_original.html:1379
+    sporadic: true
   - stages:
     - dˤ
     - zˤ (seems to be a sporadic change only affecting a few words, e.g. CA/MSA ˈdˤaːbitˤ
@@ -2399,6 +2400,7 @@ sections:
     - j, occasionally ɟ or dʒ in educated speech
     raw: dʒ → j, occasionally ɟ or dʒ in educated speech
     source: index_diachronica_original.html:1406
+    sporadic: true
   - stages:
     - θ ð ðˤ
     - t d dˤ
@@ -2450,6 +2452,7 @@ sections:
     - j, occasionally ɟ or dʒ in educated speech
     raw: dʒ → j, occasionally ɟ or dʒ in educated speech
     source: index_diachronica_original.html:1417
+    sporadic: true
   - stages:
     - θ ð ðˤ
     - t d dˤ
@@ -11621,13 +11624,14 @@ sections:
     - vʷ
     raw: pʷ → vʷ
     source: index_diachronica_original.html:3458
-  - stages:
+  - comment: (though *t seems to have occasionally survived?)
+    stages:
     - t k
     - r ∅
     env: '#_'
-    comment: (though *t seems to have occasionally survived?)
     raw: 't k → r ∅ / #_ (though *t seems to have occasionally survived?)'
     source: index_diachronica_original.html:3459
+    sporadic: true
   - stages:
     - t
     - '{r,t}'
@@ -11651,11 +11655,13 @@ sections:
     - l ∅
     raw: r *R → l ∅
     source: index_diachronica_original.html:3463
-  - stages:
+  - comment: (occasionally?)
+    stages:
     - l
-    - ∅ (occasionally?)
+    - ∅
     raw: l → ∅ (occasionally?)
     source: index_diachronica_original.html:3464
+    sporadic: true
   - stages:
     - c ɲ
     - ∅ n
@@ -11730,12 +11736,14 @@ sections:
     - ɟ {s,∅} n
     raw: d c ɲ → ɟ {s,∅} n
     source: index_diachronica_original.html:3480
-  - stages:
+  - comment: (occasionally
+    stages:
     - '{r,l}'
-    - l (occasionally
+    - l
     - ∅?)
     raw: '{r,l} → l (occasionally → ∅?)'
     source: index_diachronica_original.html:3481
+    sporadic: true
 - section: Proto-Oceanic to Proto-Vanikoro
   index: 10.3.10
   citation: Pogostick Man, from Ross, Malcolm, and Åshlid Næss (2007), “An Oceanic
@@ -12052,12 +12060,14 @@ sections:
     comment: “rarely”
     raw: s → h / “rarely”
     source: index_diachronica_original.html:3553
-  - stages:
+  - comment: ', occasionally'
+    stages:
     - s
     - θ
-    exception: _i, occasionally
+    exception: _i
     raw: s → θ / ! _i, occasionally
     source: index_diachronica_original.html:3554
+    sporadic: true
   - stages:
     - d {c,*j}
     - tʃ s
@@ -12207,13 +12217,13 @@ sections:
     env: $C[+strident]
     raw: v → f / %C[+ sibilant]
     source: index_diachronica_original.html:3583
-  - stages:
+  - comment: occasionally; (some sort of lateral?)
+    stages:
     - r
     - '*L'
-    env: occasionally
-    comment: (some sort of lateral?)
     raw: r → *L (some sort of lateral?) / occasionally
     source: index_diachronica_original.html:3584
+    sporadic: true
   - stages:
     - s {c,*j}
     - h s
@@ -12292,13 +12302,14 @@ sections:
     comment: “often”
     raw: s → h “often”
     source: index_diachronica_original.html:3602
-  - stages:
+  - comment: (occasionally blocked)
+    stages:
     - s
     - ∅
     env: _C
-    comment: (occasionally blocked)
     raw: s → ∅ / _C (occasionally blocked)
     source: index_diachronica_original.html:3603
+    sporadic: true
   - stages:
     - i
     - e
@@ -12749,13 +12760,14 @@ sections:
     - '{l,i}'
     raw: r → {l,i}
     source: index_diachronica_original.html:3707
-  - stages:
+  - comment: (occasionally elsewhere as well)
+    stages:
     - d
     - r
     env: _ŋ
-    comment: (occasionally elsewhere as well)
     raw: d → r / _ŋ (occasionally elsewhere as well)
     source: index_diachronica_original.html:3708
+    sporadic: true
   - stages:
     - b(ʷ) d
     - p(ʷ) t
@@ -15873,7 +15885,7 @@ sections:
     raw: ɳ → n “(sporadic and dialect development)”
     source: index_diachronica_original.html:4563
     sporadic: true
-  - comment: sporadic)”; “(again,
+  - comment: ', sporadic)”; “(again'
     stages:
     - ɭ
     - l
@@ -18329,12 +18341,13 @@ sections:
     - a(ː)
     raw: o(ː) → a(ː)
     source: index_diachronica_original.html:5087
-  - stages:
+  - comment: “in Hieroglyphic Luwian, occasionally”
+    stages:
     - '{d,l}'
     - r
-    comment: “in Hieroglyphic Luwian, occasionally”
     raw: '{d,l} → r “in Hieroglyphic Luwian, occasionally”'
     source: index_diachronica_original.html:5088
+    sporadic: true
   - stages:
     - j
     - ∅
@@ -20727,6 +20740,7 @@ sections:
     comment: “(although it says that occasionally st > t; ”
     raw: '— {p,t} → ∅ / #s_ “(although it says that occasionally st > t / #_)”'
     source: index_diachronica_original.html:5550
+    sporadic: true
   - stages:
     - s
     - ∅
@@ -23608,13 +23622,14 @@ sections:
     env: V_V
     raw: '{h,j} → ∅ / V_V'
     source: index_diachronica_original.html:6099
-  - stages:
+  - comment: (occasionally otherwise)
+    stages:
     - w j
     - b ɡ
     env: '{l,r}_'
-    comment: (occasionally otherwise)
     raw: w j → b ɡ / {l,r}_ (occasionally otherwise)
     source: index_diachronica_original.html:6100
+    sporadic: true
   - stages:
     - w
     - ∅
@@ -48785,12 +48800,14 @@ sections:
     - i[truncated vowel-thing]ʔ?)
     raw: iʔ → ieʔ (→ i[truncated vowel-thing]ʔ?)
     source: index_diachronica_original.html:11842
-  - stages:
+  - comment: (occasionally
+    stages:
     - uʔ
-    - oʔ (occasionally
+    - oʔ
     - uɛʔ?)
     raw: uʔ → oʔ (occasionally → uɛʔ?)
     source: index_diachronica_original.html:11843
+    sporadic: true
   - stages:
     - uj
     - u(ɛ)i
@@ -48977,12 +48994,14 @@ sections:
     env: in two cases cited
     raw: ɔ → a / in two cases cited; extremely rare change
     source: index_diachronica_original.html:11873
-  - stages:
+  - comment: (occasionally
+    stages:
     - wɔ
-    - ɔ (occasionally
+    - ɔ
     - uɔ after a guttural?)
     raw: wɔ → ɔ (occasionally → uɔ after a guttural?)
     source: index_diachronica_original.html:11874
+    sporadic: true
   - stages:
     - wɔʔ
     - uɔʔ

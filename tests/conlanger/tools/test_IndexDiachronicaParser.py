@@ -7,7 +7,6 @@ from lxml import html
 
 from conlanger.tools.asca_validator import validate_asca
 from conlanger.tools.parsers import (
-    ARROW,
     DEFAULT_GROUP_MAPPINGS_CSV,
     FeatureMapping,
     GroupMapping,
@@ -22,11 +21,11 @@ from conlanger.tools.parsers import (
     apply_stress_conditions,
     apply_trailing_glosses,
     build_stages_from_spine,
-    finalize_stages_shape,
     extract_rule_parts,
     extract_semicolon_prose_from_field,
     extract_text_with_subs,
     feature_mappings_dict,
+    finalize_stages_shape,
     ipa_mappings_dict,
     join_rule_comment,
     load_feature_mappings,
@@ -313,6 +312,10 @@ def test_parse_rule_element_keeps_chain_with_env():
         ('∅ "(sporadic)"', "∅"),
         ("ɛ (sometimes)", "ɛ"),
         ("_# (sporadic?)", "_#"),
+        ("∅ (occasionally?)", "∅"),
+        ("occasionally", ""),
+        ("_i, occasionally", "_i"),
+        ("_C (occasionally blocked)", "_C"),
         ("a", "a"),
     ],
 )
@@ -327,6 +330,9 @@ def test_strip_uncertainty_qualifier_from_field(text, expected):
         ('h "sometimes"', "h", ['"sometimes"']),
         ("h sometimes", "h", ["sometimes"]),
         ("h (sometimes uncertain)", "h", ["(sometimes uncertain)"]),
+        ("∅ (occasionally?)", "∅", ["(occasionally?)"]),
+        ("occasionally", "", ["occasionally"]),
+        ('r "in Hieroglyphic Luwian, occasionally"', "r", ['"in Hieroglyphic Luwian, occasionally"']),
     ],
 )
 def test_extract_uncertainty_qualifier_from_field(
@@ -400,6 +406,31 @@ def test_parse_rule_element_strips_sporadic_env_gloss():
     rules = parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["env"] == "_{f,s}"
     assert rules[0]["sporadic"] is True
+
+
+def test_parse_rule_element_marks_occasionally_sporadic_and_strips_gloss():
+    el = html.fragment_fromstring(
+        '<p class="schg">l → ∅ (occasionally?)</p>', create_parent=False
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert len(rules) == 1
+    assert rules[0]["stages"] == ["l", "∅"]
+    assert rules[0]["sporadic"] is True
+    assert "(occasionally?)" in rules[0]["comment"]
+    assert rules[0]["raw"] == "l → ∅ (occasionally?)"
+
+
+def test_parse_rule_element_strips_lone_occasionally_env():
+    el = html.fragment_fromstring(
+        '<p class="schg">r → *L (some sort of lateral?) / occasionally</p>',
+        create_parent=False,
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert len(rules) == 1
+    assert rules[0]["stages"] == ["r", "*L"]
+    assert "env" not in rules[0]
+    assert rules[0]["sporadic"] is True
+    assert "occasionally" in rules[0]["comment"]
 
 
 @pytest.mark.parametrize(
