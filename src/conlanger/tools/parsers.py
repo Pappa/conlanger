@@ -21,7 +21,9 @@ and recorded as ``sporadic: true``. **Feature matrix** synonym replacement insid
 **collective subscript** expansion via ``series_mappings.csv`` (``raw`` unchanged).
 Inline prose stripped for ASCA is captured in optional ``comment`` on each corpus
 rule: semicolon tails in ``env`` / ``exception`` first (``apply_semicolon_field_comments``), then
-field-level glosses and env qualifiers. Class-letter expansion is deferred to compile time (``PhonologicalRuleSet`` +
+field-level glosses and env qualifiers. Index word-internal ``medial`` / ``medially`` env
+prose becomes ``env: _`` with boundary ``exception: :{#_, _#}:`` (``apply_medial_env_conditions``).
+Class-letter expansion is deferred to compile time (``PhonologicalRuleSet`` +
 ``group_mappings.csv``).
 """
 
@@ -195,9 +197,7 @@ def normalize_rule_arrows(text: str) -> str:
 
 _UNCERTAINTY_WORDS = r"sporadic(?:ally)?|sometimes|occasionally"
 _UNCERTAINTY_WORD_RE = re.compile(rf"\b(?:{_UNCERTAINTY_WORDS})\b", re.IGNORECASE)
-_LONE_UNCERTAINTY_RE = re.compile(
-    rf"^(?:{_UNCERTAINTY_WORDS})\??\.?$", re.IGNORECASE
-)
+_LONE_UNCERTAINTY_RE = re.compile(rf"^(?:{_UNCERTAINTY_WORDS})\??\.?$", re.IGNORECASE)
 _ENV_UNCERTAINTY_PREFIX_RE = re.compile(
     r"^sporadic(?:ally)?(?:,\s*usually)?\s*,?\s*",
     re.IGNORECASE,
@@ -597,6 +597,41 @@ def apply_stress_conditions(parts: dict[str, str]) -> dict[str, Any]:
     return result
 
 
+MEDIAL_BOUNDARY_EXCEPTION = ":{#_, _#}:"
+_BARE_MEDIAL_ENV_RE = re.compile(r"^\s*medial(?:ly)?\s*,?\s*$", re.IGNORECASE)
+_BARE_WHEN_MEDIAL_ENV_RE = re.compile(r"^\s*when\s+medial(?:ly)?\s*$", re.IGNORECASE)
+_WHEN_MEDIAL_SUFFIX_RE = re.compile(r"(?:,\s*)?when\s+medial(?:ly)?\s*$", re.IGNORECASE)
+
+
+def normalize_medial_env_field(text: str) -> tuple[str, bool]:
+    """Normalize Index ``medial`` / ``medially`` env prose for ASCA word-internal focus."""
+    if not text:
+        return text, False
+    stripped = text.strip()
+    if _BARE_MEDIAL_ENV_RE.match(stripped) or _BARE_WHEN_MEDIAL_ENV_RE.match(stripped):
+        return "_", True
+    match = _WHEN_MEDIAL_SUFFIX_RE.search(stripped)
+    if match:
+        return stripped[: match.start()].rstrip(), True
+    return text, False
+
+
+def apply_medial_env_conditions(parts: dict[str, Any]) -> dict[str, Any]:
+    """Rewrite Index word-internal ``medial`` env prose to ``_`` + boundary exception."""
+    result: dict[str, Any] = dict(parts)
+    if result.get("exception"):
+        return result
+    env = result.get("env")
+    if not env:
+        return result
+    normalized, is_medial = normalize_medial_env_field(env)
+    if not is_medial:
+        return result
+    result["env"] = normalized
+    result["exception"] = MEDIAL_BOUNDARY_EXCEPTION
+    return result
+
+
 _CATCH_ALL_ELSE_ENV_RE = re.compile(r"^\s*else\??\s*$", re.IGNORECASE)
 _ELSE_ENV_CANDIDATE_RE = re.compile(r"\belse\b", re.IGNORECASE)
 
@@ -650,7 +685,9 @@ def resolve_catch_all_else_rules(rules: list[dict[str, Any]]) -> list[dict[str, 
                         and not is_catch_all_else_env(prev_env)
                     ):
                         resolved = {
-                            key: value for key, value in resolved.items() if key != "env"
+                            key: value
+                            for key, value in resolved.items()
+                            if key != "env"
                         }
                         resolved["exception"] = prev_env
         resolved_rules.append(resolved)
@@ -1502,6 +1539,7 @@ class IndexDiachronicaParser:
                 }
             ]
         parts = apply_stress_conditions(parts)
+        parts = apply_medial_env_conditions(parts)
         parts = apply_feature_mappings(parts)
         parts = apply_ipa_mappings(parts, config=self._parser_config)
         from conlanger.tools.series_mappings import apply_series_mappings

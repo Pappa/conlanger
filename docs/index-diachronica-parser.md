@@ -79,7 +79,7 @@ Applied to the working copy only; **`raw` is stored before this** (see `parse_ru
 | Step | Status | Order | Rationale | Code |
 | --- | --- | ---: | --- | --- |
 | Catch-all `/ else` → complementary `exception` | implemented | F1 | Index default branch is not an env; when the previous rule has `env` and no `exception`, omit `env` and set `exception` to that env ([pass 53](../.scratch/cleaned-rule-corpus/issues/53-correction-pass-prose-env-else.md)). Deferred: prev with both env+exception, neither, or else-after-else. | `resolve_catch_all_else_rules` (in `parse`) |
-| Env medial phrase normalization (`medial` / `medially`) | planned | F2 | Index word-internal prose → `env: _` + boundary `exception: :{#_, _#}:` ([pass 55](../.scratch/cleaned-rule-corpus/issues/55-correction-pass-prose-env-medial.md)). Defer env+existing-exception merge. | `apply_medial_env_conditions` (TBD) |
+| Env medial phrase normalization (`medial` / `medially`) | implemented | F2 | Index word-internal prose → `env: _` + boundary `exception: :{#_, _#}:` ([pass 55](../.scratch/cleaned-rule-corpus/issues/55-correction-pass-prose-env-medial.md)). Defer env+existing-exception merge. | `apply_medial_env_conditions` |
 
 ---
 

@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: 12
 
 # Correction pass: prose env medial
@@ -62,16 +62,23 @@ Out of scope: **`comment`**-only medial qualifiers where `env` is already struct
 
 ## Acceptance criteria
 
-- [ ] Parse-time transform per Decision table
-- [ ] Deferred env+exception pair still fails compile validation
-- [ ] Tests on inventory samples + ASCA boundary spot-check
-- [ ] Full inventory re-baseline; cluster size in **Answer**
-- [ ] Fixtures updated where outcomes change
-- [ ] `CONTEXT.md` Environment / Exception wording aligned
+- [x] Parse-time transform per Decision table
+- [x] Deferred env+exception pair still fails compile validation
+- [x] Tests on inventory samples + ASCA boundary spot-check
+- [x] Full inventory re-baseline; cluster size in **Answer**
+- [x] Fixtures updated where outcomes change
+- [x] `CONTEXT.md` Environment / Exception wording aligned
 
 ## Answer
 
-_(pending implementation)_
+Baseline (before): **7394 / 9201** ok (80.4%); **55** rules with `env` matching bare `medial` / `medially` / `when medial` (including trailing-comma Mongolic).
+
+Full inventory re-run:
+
+- **7447 / 9201** ok (**+53** rules, **80.9%**)
+- Medial env cluster: **55 → 1** (54 rewritten; 1 deferred Mongolic `b → h / medially, ! …` still has `env: medially,`)
+- `expected_underscore` failure class: **338 → 285** (−53)
+- Implementation: `apply_medial_env_conditions` in `parse_rule_element` after `apply_stress_conditions`
 
 ## References
 

@@ -77,7 +77,7 @@ The phonological context in which a sound change applies — the `/ … _` porti
 _Avoid_: “context” when `exception` is meant; prose paragraphs from Index comments; treating bare `else` as a valid `env` value in the cleaned SoT; equating medial with intervocalic (`V_V`) or with boundary shorthand `#_, _#`
 
 **Exception**:
-A phonological context that blocks an otherwise applicable change — the `! …` or `| …` portion of a rule. Stored as optional field `exception` on a corpus rule; absent means no exceptions. For Index `/ else` rules whose previous sibling has an environment and no exception, parse writes that previous environment into `exception` and omits `env` (complementary default branch).
+A phonological context that blocks an otherwise applicable change — the `! …` or `| …` portion of a rule. Stored as optional field `exception` on a corpus rule; absent means no exceptions. For Index `/ else` rules whose previous sibling has an environment and no exception, parse writes that previous environment into `exception` and omits `env` (complementary default branch). For Index word-internal **`medial`** / **`medially`** env prose (when no separate exception is already present), parse sets `exception: :{#_, _#}:` to block word-initial and word-final positions.
 _Avoid_: the English word “except” in citation prose; conflating with environment; leaving Index `else` in `env`
 
 **Rule comment**:

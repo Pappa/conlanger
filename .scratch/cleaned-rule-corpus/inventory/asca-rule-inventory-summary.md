@@ -4,22 +4,22 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9201** (one per corpus rule)
-- OK: **7394** (80.4%)
-- Fail: **1807** (19.6%)
-- Sections all OK: **234 / 714** (32.8%)
+- OK: **7447** (80.9%)
+- Fail: **1754** (19.1%)
+- Sections all OK: **247 / 714** (34.6%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 549 | `syntax_other` |
-| 338 | `expected_underscore` |
+| 552 | `syntax_other` |
 | 323 | `unknown_character` |
+| 285 | `expected_underscore` |
 | 118 | `runtime_other` |
 | 115 | `unknown_feature` |
 | 103 | `unknown_grouping` |
-| 67 | `prose_or_expected_arrow` |
-| 44 | `nested_brackets` |
+| 65 | `prose_or_expected_arrow` |
+| 43 | `nested_brackets` |
 | 42 | `panic_other` |
 | 37 | `expected_number` |
 | 30 | `diacritic_prereq` |
@@ -47,8 +47,8 @@
 |------:|-------------|-----------|
 | 22 | `open` | `ten` |
 | 11 | `lowtone` | `contin` |
-| 10 | `samePOA` | `lateral` |
 | 10 | `closed` | `cons` |
+| 10 | `samePOA` | `lateral` |
 | 9 | `fortis` | `contin` |
 | 8 | `mid` | `man` |
 | 8 | `hightone` | `high` |
@@ -56,20 +56,20 @@
 | 5 | `weak` | `man` |
 | 3 | `palatalized` | `latrl` |
 | 3 | `fallingtone` | `length` |
-| 2 | `lowfallingtone` | `continuant` |
 | 2 | `highrisingtone` | `strident` |
+| 2 | `lowfallingtone` | `continuant` |
 | 2 | `fricative` | `rhotic` |
 | 2 | `affricate` | `stridnt` |
-| 1 | `ejective` | `contin` |
-| 1 | `highpitch` | `high` |
-| 1 | `lowpitch` | `voice` |
-| 1 | `APOA` | `root` |
-| 1 | `tonic` | `cons` |
-| 1 | `alveolopalatal` | `consonantal` |
-| 1 | `intertonic` | `anterior` |
 | 1 | `aspirated` | `spread` |
-| 1 | `TR` | `rt` |
+| 1 | `alveolopalatal` | `consonantal` |
+| 1 | `tonic` | `cons` |
+| 1 | `intertonic` | `anterior` |
 | 1 | `glide` | `click` |
+| 1 | `ejective` | `contin` |
+| 1 | `APOA` | `root` |
+| 1 | `TR` | `rt` |
+| 1 | `lowpitch` | `voice` |
+| 1 | `highpitch` | `high` |
 | 1 | `creakyvoice` | `voice` |
 | 1 | `labiovelar` | `labiodental` |
 
@@ -82,13 +82,13 @@
 | 14 | `E` |
 | 10 | `B` |
 | 9 | `K` |
-| 7 | `T` |
 | 7 | `M` |
+| 7 | `T` |
 | 6 | `X` |
 | 5 | `H` |
-| 3 | `I` |
 | 3 | `D` |
 | 3 | `Y` |
+| 3 | `I` |
 | 2 | `A` |
 | 1 | `W` |
 | 1 | `Q` |
