@@ -17697,7 +17697,7 @@ sections:
     source: index_diachronica_original.html:4961
   - stages:
     - kʲ
-    - '{ts,tʃ}'
+    - '{ts,tʃ} ;;'
     comment: “[a]rchaic relic”; ()
     raw: ḱ → {ts,tʃ} (“[a]rchaic relic”)
     source: index_diachronica_original.html:4962
@@ -17907,7 +17907,7 @@ sections:
     source: index_diachronica_original.html:5000
   - stages:
     - kʲ
-    - '{ts,tʃ}'
+    - '{ts,tʃ} ;;'
     comment: “[a]rchaic relic”; ()
     raw: ḱ → {ts,tʃ} (“[a]rchaic relic”)
     source: index_diachronica_original.html:5001
