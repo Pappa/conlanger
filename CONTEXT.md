@@ -73,8 +73,8 @@ An Index output written as a set while the matching input is **not** a set (e.g.
 _Avoid_: calling this `sporadic`; structuring optional outputs as a separate YAML field; treating paired input/output sets (`{a,b} → {c,d}`) as optional outputs
 
 **Environment**:
-The phonological context in which a sound change applies — the `/ … _` portion of a rule (where the change is conditioned). Stored as optional field `env` on a corpus rule; absent means any environment. Index prose catch-all **`else`** is not itself an environment — after parse resolution it becomes an **exception** derived from the previous rule (see correction pass on `/ else`).
-_Avoid_: “context” when `exception` is meant; prose paragraphs from Index comments; treating bare `else` as a valid `env` value in the cleaned SoT
+The phonological context in which a sound change applies — the `/ … _` portion of a rule (where the change is conditioned). Stored as optional field `env` on a corpus rule; absent means any environment. Index prose catch-all **`else`** is not itself an environment — after parse resolution it becomes an **exception** derived from the previous rule (see correction pass on `/ else`). Index prose **`medial`** / **`medially`** means word-internal (not word-initial, not word-final) — after parse resolution bare forms become `_` with a boundary **exception** (ASCA `// :{#_, _#}:`); tentative qualifiers in **`comment`** do not narrow the rewrite.
+_Avoid_: “context” when `exception` is meant; prose paragraphs from Index comments; treating bare `else` as a valid `env` value in the cleaned SoT; equating medial with intervocalic (`V_V`) or with boundary shorthand `#_, _#`
 
 **Exception**:
 A phonological context that blocks an otherwise applicable change — the `! …` or `| …` portion of a rule. Stored as optional field `exception` on a corpus rule; absent means no exceptions. For Index `/ else` rules whose previous sibling has an environment and no exception, parse writes that previous environment into `exception` and omits `env` (complementary default branch).
