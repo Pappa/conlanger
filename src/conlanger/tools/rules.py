@@ -182,7 +182,7 @@ class DiachronicSeries:
         return self._parts[0].value
 
 
-class DebugRules:
+class DebugDiachronicSeriesSet:
     def __init__(self, section: dict, format: str = "asca"):
         self._rules = [
             (index, self._create_rule(section, rule, index, format))

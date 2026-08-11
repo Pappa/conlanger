@@ -15,7 +15,7 @@ from conlanger.tools.compile.asca.group_mappings import (
 )
 from conlanger.tools.compile.asca.length_marks import normalize_asca_length_marks
 from conlanger.tools.rules import (
-    DebugRules,
+    DebugDiachronicSeriesSet,
     SoundChangeRule,
     RuleCitation,
     RuleComment,
@@ -136,8 +136,8 @@ def test_DiachronicSeries_invalid_format(section, format):
         DiachronicSeries(section, format)
 
 
-def test_DebugRules():
-    rules = DebugRules(
+def test_DebugDiachronicSeriesSet():
+    rules = DebugDiachronicSeriesSet(
         {"index": "1", "section": "sec", "rules": [{"stages": ["a", "b"]}]},
         "asca",
     )
