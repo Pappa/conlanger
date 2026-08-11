@@ -21,7 +21,9 @@ and recorded as ``sporadic: true``. **Feature matrix** synonym replacement insid
 **collective subscript** expansion via ``series_mappings.csv`` (``raw`` unchanged).
 Inline prose stripped for ASCA is captured in optional ``comment`` on each corpus
 rule: semicolon tails in ``env`` / ``exception`` first (``apply_semicolon_field_comments``), then
-field-level glosses and env qualifiers. Class-letter expansion is deferred to compile time (``PhonologicalRuleSet`` +
+field-level glosses and env qualifiers. Index word-internal ``medial`` / ``medially`` env
+prose becomes ``env: _`` with boundary ``exception: :{#_, _#}:`` (``apply_medial_env_conditions``).
+Class-letter expansion is deferred to compile time (``PhonologicalRuleSet`` +
 ``group_mappings.csv``).
 """
 
@@ -403,6 +405,41 @@ def apply_stress_conditions(parts: dict[str, str]) -> dict[str, Any]:
             result[key] = value
             comment_fragments.extend(captures)
     _append_rule_comment_parts(result, comment_fragments)
+    return result
+
+
+MEDIAL_BOUNDARY_EXCEPTION = ":{#_, _#}:"
+_BARE_MEDIAL_ENV_RE = re.compile(r"^\s*medial(?:ly)?\s*,?\s*$", re.IGNORECASE)
+_BARE_WHEN_MEDIAL_ENV_RE = re.compile(r"^\s*when\s+medial(?:ly)?\s*$", re.IGNORECASE)
+_WHEN_MEDIAL_SUFFIX_RE = re.compile(r"(?:,\s*)?when\s+medial(?:ly)?\s*$", re.IGNORECASE)
+
+
+def normalize_medial_env_field(text: str) -> tuple[str, bool]:
+    """Normalize Index ``medial`` / ``medially`` env prose for ASCA word-internal focus."""
+    if not text:
+        return text, False
+    stripped = text.strip()
+    if _BARE_MEDIAL_ENV_RE.match(stripped) or _BARE_WHEN_MEDIAL_ENV_RE.match(stripped):
+        return "_", True
+    match = _WHEN_MEDIAL_SUFFIX_RE.search(stripped)
+    if match:
+        return stripped[: match.start()].rstrip(), True
+    return text, False
+
+
+def apply_medial_env_conditions(parts: dict[str, Any]) -> dict[str, Any]:
+    """Rewrite Index word-internal ``medial`` env prose to ``_`` + boundary exception."""
+    result: dict[str, Any] = dict(parts)
+    if result.get("exception"):
+        return result
+    env = result.get("env")
+    if not env:
+        return result
+    normalized, is_medial = normalize_medial_env_field(env)
+    if not is_medial:
+        return result
+    result["env"] = normalized
+    result["exception"] = MEDIAL_BOUNDARY_EXCEPTION
     return result
 
 
@@ -805,6 +842,7 @@ class IndexDiachronicaParser:
                 }
             ]
         parts = apply_stress_conditions(parts)
+        parts = apply_medial_env_conditions(parts)
         parts = apply_feature_mappings(parts)
         parts = apply_ipa_mappings(parts, config=self._parser_config)
         parts = apply_series_mappings(parts, section_index, self._series_mappings)

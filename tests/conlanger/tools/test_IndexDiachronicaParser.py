@@ -5,9 +5,10 @@ import pandas as pd
 import pytest
 from lxml import html
 
-from conlanger.tools.asca_validator import validate_asca
+from conlanger.tools.asca_validator import ASCAValidationError, validate_asca
 from conlanger.tools.parsers import (
     DEFAULT_GROUP_MAPPINGS_CSV,
+    MEDIAL_BOUNDARY_EXCEPTION,
     FeatureMapping,
     GroupMapping,
     IndexDiachronicaParser,
@@ -16,6 +17,7 @@ from conlanger.tools.parsers import (
     apply_feature_mappings,
     apply_ipa_mappings,
     apply_manual_mappings,
+    apply_medial_env_conditions,
     apply_semicolon_field_comments,
     apply_sporadic_qualifier,
     apply_stress_conditions,
@@ -36,6 +38,7 @@ from conlanger.tools.parsers import (
     load_parser_config,
     normalize_feature_matrices_in_field,
     normalize_ipa_in_field,
+    normalize_medial_env_field,
     normalize_stress_conditions,
     normalize_stress_marks,
     normalize_symbols,
@@ -570,6 +573,100 @@ def test_apply_stress_conditions():
     assert apply_stress_conditions(
         {"stages": ["a", "e"], "env": "_C(C), when stressed"}
     ) == {"stages": ["a", "e"], "env": "_C(C) when stressed"}
+
+
+@pytest.mark.parametrize(
+    ("text", "expected_env", "expected_medial"),
+    [
+        ("medial", "_", True),
+        ("medially", "_", True),
+        ("medially,", "_", True),
+        ("  Medial  ", "_", True),
+        ("when medial", "_", True),
+        ("C[-voice]_n, when medial", "C[-voice]_n", True),
+        ("_k, when medial", "_k", True),
+        ("_#", "_#", False),
+        ("ku_", "ku_", False),
+    ],
+)
+def test_normalize_medial_env_field(text, expected_env, expected_medial):
+    env, is_medial = normalize_medial_env_field(text)
+    assert env == expected_env
+    assert is_medial is expected_medial
+
+
+def test_apply_medial_env_conditions_bare_medial():
+    assert apply_medial_env_conditions(
+        {"stages": ["t", "r"], "env": "medially"}
+    ) == {
+        "stages": ["t", "r"],
+        "env": "_",
+        "exception": MEDIAL_BOUNDARY_EXCEPTION,
+    }
+
+
+def test_apply_medial_env_conditions_structural_when_medial():
+    assert apply_medial_env_conditions(
+        {"stages": ["m", "β"], "env": "C[-voice]_n, when medial"}
+    ) == {
+        "stages": ["m", "β"],
+        "env": "C[-voice]_n",
+        "exception": MEDIAL_BOUNDARY_EXCEPTION,
+    }
+
+
+def test_apply_medial_env_conditions_deferred_env_and_exception():
+    parts = {
+        "stages": ["b", "h"],
+        "env": "medially,",
+        "exception": "{r(ʲ),l(ʲ)}_ or _ɡ",
+    }
+    assert apply_medial_env_conditions(parts) == parts
+
+
+def test_parse_rule_element_proto_italic_medial_comment_unchanged():
+    el = html.fragment_fromstring(
+        '<p class="schg">s → z / medial (I\'m assuming between vowels or when *s voiced in PIE)</p>',
+        create_parent=False,
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["env"] == "_"
+    assert rules[0]["exception"] == MEDIAL_BOUNDARY_EXCEPTION
+    assert "between vowels" in rules[0]["comment"]
+    assert "medial" in rules[0]["raw"]
+
+
+@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
+def test_parse_rule_element_medial_validate_asca():
+    probe = Path("tests/fixtures/asca_probe_words.wsca")
+    el = html.fragment_fromstring(
+        '<p class="schg">t → r / medially</p>',
+        create_parent=False,
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    section = {"index": "6.2.1.1.2", "section": "Proto-Agaw to Blin", "rules": rules}
+    validate_asca(
+        PhonologicalRuleSet(section).to_sound_change_ruleset(),
+        probe_words=probe,
+    )
+
+
+@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
+def test_parse_rule_element_medial_deferred_env_exception_still_fails():
+    el = html.fragment_fromstring(
+        '<p class="schg">b → h / medially, ! {r(ʲ),l(ʲ)}_ or _ɡ</p>',
+        create_parent=False,
+    )
+    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["env"] == "medially,"
+    assert rules[0]["exception"] == "{r(ʲ),l(ʲ)}_ or _ɡ"
+    section = {
+        "index": "8.3",
+        "section": "Proto-Altaic to Proto-Mongolic",
+        "rules": rules,
+    }
+    with pytest.raises(ASCAValidationError, match="Expected '_', but received ','"):
+        validate_asca(PhonologicalRuleSet(section).to_sound_change_ruleset())
 
 
 def test_is_catch_all_else_env():

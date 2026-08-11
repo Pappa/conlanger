@@ -1328,7 +1328,8 @@ sections:
   - stages:
     - t
     - r
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: t → r / medially
     source: index_diachronica_original.html:1198
 - section: Proto-Agaw to Kemantney
@@ -1375,7 +1376,8 @@ sections:
   - stages:
     - t
     - j
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: t → j / medially
     source: index_diachronica_original.html:1208
   - stages:
@@ -3982,7 +3984,8 @@ sections:
   - stages:
     - i(ː)wi
     - iː
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: i(ː)wi → iː / medially
     source: index_diachronica_original.html:1746
   - stages:
@@ -6117,7 +6120,8 @@ sections:
   - stages:
     - pʰ
     - '{b,h}'
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: pʰ → {b,h} / medially
     source: index_diachronica_original.html:2185
   - stages:
@@ -6355,7 +6359,8 @@ sections:
   - stages:
     - p
     - b
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: p → b / medially
     source: index_diachronica_original.html:2230
   - stages:
@@ -7553,8 +7558,9 @@ sections:
   - stages:
     - d
     - r
-    env: medial
+    env: _
     comment: (Meno-mene and Mriak-mriku only)
+    exception: ':{#_, _#}:'
     raw: d → r / medial (Meno-mene and Mriak-mriku only)
     source: index_diachronica_original.html:2561
   - stages:
@@ -7633,7 +7639,8 @@ sections:
     stages:
     - b
     - ∅
-    env: medial
+    env: _
+    exception: ':{#_, _#}:'
     raw: b → ∅ / medial (sporadic)
     source: index_diachronica_original.html:2577
     sporadic: true
@@ -15967,7 +15974,8 @@ sections:
   - stages:
     - v
     - m
-    env: medial
+    env: _
+    exception: ':{#_, _#}:'
     raw: v → m / medial
     source: index_diachronica_original.html:4598
   - stages:
@@ -16004,7 +16012,8 @@ sections:
   - stages:
     - z
     - ð
-    env: medial
+    env: _
+    exception: ':{#_, _#}:'
     raw: z → ð / medial
     source: index_diachronica_original.html:4604
   - stages:
@@ -16094,7 +16103,8 @@ sections:
   - stages:
     - l̥
     - l
-    env: medial
+    env: _
+    exception: ':{#_, _#}:'
     raw: l̥ → l / medial
     source: index_diachronica_original.html:4625
   - stages:
@@ -17308,7 +17318,8 @@ sections:
   - stages:
     - d
     - l
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: d → l / medially
     source: index_diachronica_original.html:4869
   - stages:
@@ -17400,7 +17411,8 @@ sections:
   - stages:
     - d
     - l
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: d → l / medially
     source: index_diachronica_original.html:4887
   - stages:
@@ -17571,7 +17583,8 @@ sections:
   - stages:
     - d
     - r
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: d → r / medially
     source: index_diachronica_original.html:4920
   - stages:
@@ -17684,7 +17697,7 @@ sections:
     source: index_diachronica_original.html:4961
   - stages:
     - kʲ
-    - '{ts,tʃ}'
+    - '{ts,tʃ} ;;'
     comment: “[a]rchaic relic”; ()
     raw: ḱ → {ts,tʃ} (“[a]rchaic relic”)
     source: index_diachronica_original.html:4962
@@ -17742,25 +17755,29 @@ sections:
   - stages:
     - sd
     - θ
-    env: medial
+    env: _
+    exception: ':{#_, _#}:'
     raw: sd → θ / medial
     source: index_diachronica_original.html:4972
   - stages:
     - skʲ
     - h
-    env: medial
+    env: _
+    exception: ':{#_, _#}:'
     raw: sḱ → h / medial
     source: index_diachronica_original.html:4973
   - stages:
     - sp
     - f
-    env: medial
+    env: _
+    exception: ':{#_, _#}:'
     raw: sp → f / medial
     source: index_diachronica_original.html:4974
   - stages:
     - st
     - ʃt
-    env: medial
+    env: _
+    exception: ':{#_, _#}:'
     raw: st → ʃt / medial
     source: index_diachronica_original.html:4975
   - stages:
@@ -17890,7 +17907,7 @@ sections:
     source: index_diachronica_original.html:5000
   - stages:
     - kʲ
-    - '{ts,tʃ}'
+    - '{ts,tʃ} ;;'
     comment: “[a]rchaic relic”; ()
     raw: ḱ → {ts,tʃ} (“[a]rchaic relic”)
     source: index_diachronica_original.html:5001
@@ -17948,25 +17965,29 @@ sections:
   - stages:
     - sd
     - θ
-    env: medial
+    env: _
+    exception: ':{#_, _#}:'
     raw: sd → θ / medial
     source: index_diachronica_original.html:5011
   - stages:
     - skʲ
     - h
-    env: medial
+    env: _
+    exception: ':{#_, _#}:'
     raw: sḱ → h / medial
     source: index_diachronica_original.html:5012
   - stages:
     - sp
     - f
-    env: medial
+    env: _
+    exception: ':{#_, _#}:'
     raw: sp → f / medial
     source: index_diachronica_original.html:5013
   - stages:
     - st
     - ʃt
-    env: medial
+    env: _
+    exception: ':{#_, _#}:'
     raw: st → ʃt / medial
     source: index_diachronica_original.html:5014
   - stages:
@@ -18761,7 +18782,8 @@ sections:
   - stages:
     - ɡʷ
     - hʷ
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: ɡʷ → hʷ / medially
     source: index_diachronica_original.html:5167
   - stages: []
@@ -21393,13 +21415,15 @@ sections:
   - stages:
     - m
     - β
-    env: C[-voice]_n, when medial
+    env: C[-voice]_n
+    exception: ':{#_, _#}:'
     raw: m → β / C[- voiced]_n, when medial
     source: index_diachronica_original.html:5673
   - stages:
     - m
     - ɸ
-    env: C[+voice]_n, when medial
+    env: C[+voice]_n
+    exception: ':{#_, _#}:'
     raw: m → ɸ / C[+ voiced]_n, when medial
     source: index_diachronica_original.html:5674
   - stages:
@@ -26355,7 +26379,8 @@ sections:
   - stages:
     - tʃ
     - tː
-    env: medial
+    env: _
+    exception: ':{#_, _#}:'
     raw: tʃ → tː / medial
     source: index_diachronica_original.html:6591
   - stages:
@@ -26889,7 +26914,8 @@ sections:
   - stages:
     - tʃ
     - tː
-    env: medial
+    env: _
+    exception: ':{#_, _#}:'
     raw: tʃ → tː / medial
     source: index_diachronica_original.html:6698
   - stages:
@@ -27101,7 +27127,8 @@ sections:
   - stages:
     - tʃ
     - sː
-    env: medial
+    env: _
+    exception: ':{#_, _#}:'
     raw: tʃ → sː / medial
     source: index_diachronica_original.html:6740
   - stages:
@@ -29493,8 +29520,9 @@ sections:
   - stages:
     - s
     - z
-    env: medial
+    env: _
     comment: (I’m assuming between vowels or when *s voiced in PIE)
+    exception: ':{#_, _#}:'
     raw: s → z / medial (I’m assuming between vowels or when *s voiced in PIE)
     source: index_diachronica_original.html:7195
   - stages:
@@ -38918,7 +38946,8 @@ sections:
   - stages:
     - dz
     - s
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: dz → s / medially
     source: index_diachronica_original.html:9148
   - stages:
@@ -38940,7 +38969,8 @@ sections:
   - stages:
     - ɓ
     - ɸ
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: ɓ → ɸ / medially
     source: index_diachronica_original.html:9155
   - stages:
@@ -38976,7 +39006,8 @@ sections:
   - stages:
     - e
     - a
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: e → a / medially
     source: index_diachronica_original.html:9165
   - stages:
@@ -38993,7 +39024,8 @@ sections:
   - stages:
     - pʰ
     - h
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: pʰ → h / medially
     source: index_diachronica_original.html:9168
   - stages:
@@ -39015,7 +39047,8 @@ sections:
   - stages:
     - ɓ
     - f
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: ɓ → f / medially
     source: index_diachronica_original.html:9175
   - stages:
@@ -39062,7 +39095,8 @@ sections:
   - stages:
     - ɓ
     - p
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: ɓ → p / medially
     source: index_diachronica_original.html:9187
   - stages:
@@ -39143,7 +39177,8 @@ sections:
   - stages:
     - e
     - a
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: e → a / medially
     source: index_diachronica_original.html:9208
   - stages:
@@ -39161,7 +39196,8 @@ sections:
   - stages:
     - pʰ t
     - ɸ ʔ
-    env: medial
+    env: _
+    exception: ':{#_, _#}:'
     raw: pʰ t → ɸ ʔ / medial
     source: index_diachronica_original.html:9211
   - stages:
@@ -47087,7 +47123,8 @@ sections:
   - stages:
     - tʃʼ
     - tsʼ
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: tʃʼ → tsʼ / medially
     source: index_diachronica_original.html:11477
   - stages:
@@ -47419,7 +47456,8 @@ sections:
   - stages:
     - tʃ’
     - ts’
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: tʃ’ → ts’ / medially
     source: index_diachronica_original.html:11547
   - stages:
@@ -47549,7 +47587,8 @@ sections:
   - stages:
     - tʃ’
     - θ’
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: tʃ’ → θ’ / medially
     source: index_diachronica_original.html:11574
   - stages:
@@ -47658,7 +47697,8 @@ sections:
   - stages:
     - tʃ’
     - ts’
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: tʃ’ → ts’ / medially
     source: index_diachronica_original.html:11597
   - stages:
@@ -47771,7 +47811,8 @@ sections:
   - stages:
     - tʃ’
     - ts’
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: tʃ’ → ts’ / medially
     source: index_diachronica_original.html:11621
   - stages:
@@ -53102,7 +53143,8 @@ sections:
   - stages:
     - t
     - ∅
-    env: _k, when medial
+    env: _k
+    exception: ':{#_, _#}:'
     raw: t → ∅ / _k, when medial
     source: index_diachronica_original.html:12747
   - stages:
@@ -53203,7 +53245,8 @@ sections:
   - stages:
     - t
     - ∅
-    env: _k, when medial
+    env: _k
+    exception: ':{#_, _#}:'
     raw: t → ∅ / _k, when medial
     source: index_diachronica_original.html:12767
   - stages:
@@ -53249,7 +53292,8 @@ sections:
   - stages:
     - kr
     - ɡj
-    env: medial
+    env: _
+    exception: ':{#_, _#}:'
     raw: kr → ɡj / medial
     source: index_diachronica_original.html:12778
 - section: Dakota to Teton Dakota
@@ -53391,7 +53435,8 @@ sections:
   - stages:
     - t
     - ∅
-    env: _k, when medial
+    env: _k
+    exception: ':{#_, _#}:'
     raw: t → ∅ / _k, when medial
     source: index_diachronica_original.html:12812
   - stages:
@@ -53589,7 +53634,8 @@ sections:
   - stages:
     - tk
     - ɡ
-    env: when medial
+    env: _
+    exception: ':{#_, _#}:'
     raw: tk → ɡ / when medial
     source: index_diachronica_original.html:12851
   - stages:
@@ -53686,7 +53732,8 @@ sections:
   - stages:
     - t
     - ∅
-    env: _k, when medial
+    env: _k
+    exception: ':{#_, _#}:'
     raw: t → ∅ / _k, when medial
     source: index_diachronica_original.html:12871
   - stages:
@@ -53739,7 +53786,8 @@ sections:
   - stages:
     - t
     - ∅
-    env: _k, when medial
+    env: _k
+    exception: ':{#_, _#}:'
     raw: t → ∅ / _k, when medial
     source: index_diachronica_original.html:12884
 - section: Proto-Crow-Hidatsa to Crow
@@ -53964,7 +54012,8 @@ sections:
   - stages:
     - tk
     - ɡ
-    env: when medial
+    env: _
+    exception: ':{#_, _#}:'
     raw: tk → ɡ / when medial
     source: index_diachronica_original.html:12930
 - section: Proto-Dhegiha to Kansa
@@ -58215,7 +58264,8 @@ sections:
   - stages:
     - '{w,j}'
     - ∅
-    env: medial
+    env: _
+    exception: ':{#_, _#}:'
     raw: '{w,j} → ∅ / medial'
     source: index_diachronica_original.html:13969
 - section: Proto-Uto-Aztecan to Hopi
@@ -58246,7 +58296,8 @@ sections:
   - stages:
     - l h
     - n ∅
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: l h → n ∅ / medially
     source: index_diachronica_original.html:13977
   - stages:
@@ -58292,7 +58343,8 @@ sections:
   - stages:
     - t
     - l
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: t → l / medially
     source: index_diachronica_original.html:13987
   - stages:
@@ -58332,7 +58384,8 @@ sections:
   - stages:
     - l
     - n
-    env: medially
+    env: _
+    exception: ':{#_, _#}:'
     raw: l → n / medially
     source: index_diachronica_original.html:13995
   - stages:
