@@ -1,5 +1,15 @@
 """Tests for the documented ASCA per-rule compile pipeline (ticket 39)."""
 
+from conlanger.tools.asca_compile.aliases import apply_asca_aliases
+from conlanger.tools.asca_compile.apostrophes import normalize_typographic_apostrophes
+from conlanger.tools.asca_compile.ejectives import normalize_asca_ejective_marks
+from conlanger.tools.asca_compile.ellipsis import (
+    normalize_asca_optional_grouping_ellipsis,
+)
+from conlanger.tools.asca_compile.group_mappings import (
+    apply_asca_group_mappings_to_string,
+)
+from conlanger.tools.asca_compile.length_marks import normalize_asca_length_marks
 from conlanger.tools.asca_compile.pipeline import (
     ASCA_COMPILE_STEP_NAMES,
     compile_asca_rule_string,
@@ -7,15 +17,7 @@ from conlanger.tools.asca_compile.pipeline import (
 from conlanger.tools.asca_compile.superscript_modifiers import (
     normalize_asca_superscript_modifiers,
 )
-from conlanger.tools.rules import (
-    RuleChange,
-    apply_asca_aliases,
-    apply_asca_group_mappings_to_string,
-    normalize_asca_ejective_marks,
-    normalize_asca_length_marks,
-    normalize_asca_optional_grouping_ellipsis,
-    normalize_typographic_apostrophes,
-)
+from conlanger.tools.rules import RuleChange
 
 
 def test_asca_compile_pipeline_step_names_match_docs():

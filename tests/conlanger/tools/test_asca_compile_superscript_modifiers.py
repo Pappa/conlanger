@@ -2,15 +2,15 @@
 
 import pytest
 
-from conlanger.tools.asca_compile.superscript_modifiers import (
-    normalize_asca_superscript_modifiers,
-)
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.rules import (
-    SoundChangeRuleSet,
+from conlanger.tools.asca_compile.group_mappings import (
     apply_asca_group_mappings_to_string,
     asca_group_mappings_dict,
 )
+from conlanger.tools.asca_compile.superscript_modifiers import (
+    normalize_asca_superscript_modifiers,
+)
+from conlanger.tools.rules import SoundChangeRuleSet
 
 
 @pytest.mark.parametrize(
@@ -82,7 +82,9 @@ def test_superscript_inventory_representatives_validate(inp, out, env):
     if env:
         rule["env"] = env
     section = {"index": "1", "section": "superscript", "rules": [rule]}
-    validate_asca(SoundChangeRuleSet(section, "asca", group_mappings=asca_group_mappings_dict()))
+    validate_asca(
+        SoundChangeRuleSet(section, "asca", group_mappings=asca_group_mappings_dict())
+    )
 
 
 def test_superscript_s_aspirated_rule_compiles_via_pipeline():
@@ -91,6 +93,8 @@ def test_superscript_s_aspirated_rule_compiles_via_pipeline():
         "section": "superscript",
         "rules": [{"stages": ["Sʰ", "S"], "env": "#v_V"}],
     }
-    ruleset = SoundChangeRuleSet(section, "asca", group_mappings=asca_group_mappings_dict())
+    ruleset = SoundChangeRuleSet(
+        section, "asca", group_mappings=asca_group_mappings_dict()
+    )
     assert ruleset._parts[-1].value == "C:[+labial][+spread] > P / #v_V"
     validate_asca(ruleset)

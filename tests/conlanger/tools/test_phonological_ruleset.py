@@ -4,12 +4,12 @@ from unittest.mock import patch
 
 import pytest
 
-from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
-from conlanger.tools.rules import (
-    SoundChangeRuleSet,
+from conlanger.tools.asca_compile.group_mappings import (
     apply_asca_group_mappings_to_string,
     asca_group_mappings_dict,
 )
+from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
+from conlanger.tools.rules import SoundChangeRuleSet
 
 _SAMPLE_MAPPINGS = {
     "R": "[+son,-syll]",
@@ -205,7 +205,10 @@ def test_phonological_ruleset_validates_labialized_class_letter_fixtures():
     from conlanger.appliers.asca import validate_asca
 
     validate_asca(
-        PhonologicalRuleSet(section).to_sound_change_ruleset(group_mappings=asca_group_mappings_dict()), probe_words=probe
+        PhonologicalRuleSet(section).to_sound_change_ruleset(
+            group_mappings=asca_group_mappings_dict()
+        ),
+        probe_words=probe,
     )
 
 
@@ -234,7 +237,10 @@ def test_phonological_ruleset_validates_known_unknown_grouping_fixtures():
     from conlanger.appliers.asca import validate_asca
 
     validate_asca(
-        PhonologicalRuleSet(section).to_sound_change_ruleset(group_mappings=asca_group_mappings_dict()), probe_words=probe
+        PhonologicalRuleSet(section).to_sound_change_ruleset(
+            group_mappings=asca_group_mappings_dict()
+        ),
+        probe_words=probe,
     )
 
 

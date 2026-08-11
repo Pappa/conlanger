@@ -3,19 +3,23 @@ from pathlib import Path
 
 import pytest
 
+from conlanger.tools.asca_compile.apostrophes import normalize_typographic_apostrophes
+from conlanger.tools.asca_compile.ejectives import normalize_asca_ejective_marks
+from conlanger.tools.asca_compile.ellipsis import (
+    normalize_asca_optional_grouping_ellipsis,
+)
+from conlanger.tools.asca_compile.group_mappings import (
+    apply_asca_group_mappings_to_string,
+    asca_group_mappings_dict,
+    expand_grouping_letter,
+)
+from conlanger.tools.asca_compile.length_marks import normalize_asca_length_marks
 from conlanger.tools.rules import (
     DebugRules,
     RuleChange,
     RuleCitation,
     RuleComment,
     SoundChangeRuleSet,
-    _expand_grouping_letter,
-    apply_asca_group_mappings_to_string,
-    asca_group_mappings_dict,
-    normalize_asca_ejective_marks,
-    normalize_asca_length_marks,
-    normalize_asca_optional_grouping_ellipsis,
-    normalize_typographic_apostrophes,
 )
 
 
@@ -239,7 +243,10 @@ def test_normalize_asca_optional_grouping_ellipsis(text, expected):
         ("C\u2019 > C", "C\u02bc > C"),
         ("\u2019p \u2019t", "p\u02bc t\u02bc"),
         ("p(\u2019) m", "p(\u02bc) m"),
-        ("ts ts:[+cg] > {\u03b8,s} \u03b8\u2019", "ts ts:[+cg] > {\u03b8,s} \u03b8\u02bc"),
+        (
+            "ts ts:[+cg] > {\u03b8,s} \u03b8\u2019",
+            "ts ts:[+cg] > {\u03b8,s} \u03b8\u02bc",
+        ),
         ("a", "a"),
         ("", ""),
     ],
@@ -350,11 +357,11 @@ def test_rule_change_apply_asca_group_mappings_noop_for_non_asca():
 
 def test_expand_grouping_letter_leaves_unmapped_non_native_letters():
     assert (
-        _expand_grouping_letter("X", {"K": "C:[-front,+back,+hi,-lo]"}, labial=False)
+        expand_grouping_letter("X", {"K": "C:[-front,+back,+hi,-lo]"}, labial=False)
         == "X"
     )
     assert (
-        _expand_grouping_letter("X", {"K": "C:[-front,+back,+hi,-lo]"}, labial=True)
+        expand_grouping_letter("X", {"K": "C:[-front,+back,+hi,-lo]"}, labial=True)
         == "X"
     )
 
