@@ -1409,7 +1409,7 @@ def test_index_diachronica_parser_accepts_custom_series_mappings():
 
 
 def test_paren_inner_is_gloss_classifies_prose_and_phonology():
-    from conlanger.tools.parsers import paren_inner_is_gloss
+    from conlanger.utils.gloss import paren_inner_is_gloss
 
     assert paren_inner_is_gloss("short only") is True
     assert paren_inner_is_gloss("?") is False
@@ -1418,7 +1418,7 @@ def test_paren_inner_is_gloss_classifies_prose_and_phonology():
 
 
 def test_extract_trailing_quoted_gloss_from_field():
-    from conlanger.tools.parsers import extract_trailing_quoted_gloss_from_field
+    from conlanger.utils.gloss import extract_trailing_quoted_gloss_from_field
 
     cleaned, captures = extract_trailing_quoted_gloss_from_field(
         'V / _# "when stressed"'
@@ -1428,7 +1428,7 @@ def test_extract_trailing_quoted_gloss_from_field():
 
 
 def test_extract_embedded_quoted_gloss_from_field():
-    from conlanger.tools.parsers import extract_embedded_quoted_gloss_from_field
+    from conlanger.utils.gloss import extract_embedded_quoted_gloss_from_field
 
     cleaned, captures = extract_embedded_quoted_gloss_from_field('V, "short only", _C#')
     assert cleaned == "V_C#"
@@ -1436,7 +1436,7 @@ def test_extract_embedded_quoted_gloss_from_field():
 
 
 def test_extract_field_wrapped_quoted_gloss_from_field():
-    from conlanger.tools.parsers import extract_field_wrapped_quoted_gloss_from_field
+    from conlanger.utils.gloss import extract_field_wrapped_quoted_gloss_from_field
 
     cleaned, captures = extract_field_wrapped_quoted_gloss_from_field(
         "\u201csomething like /\u0292/\u201d"
@@ -1446,7 +1446,7 @@ def test_extract_field_wrapped_quoted_gloss_from_field():
 
 
 def test_extract_leading_quoted_gloss_from_field():
-    from conlanger.tools.parsers import extract_leading_quoted_gloss_from_field
+    from conlanger.utils.gloss import extract_leading_quoted_gloss_from_field
 
     cleaned, captures = extract_leading_quoted_gloss_from_field(
         "\u201cThe CIV rules for the voicing of s > z\u201d a \u2192 e"
@@ -1456,7 +1456,7 @@ def test_extract_leading_quoted_gloss_from_field():
 
 
 def test_is_quoted_prose_paragraph():
-    from conlanger.tools.parsers import is_quoted_prose_paragraph
+    from conlanger.utils.gloss import is_quoted_prose_paragraph
 
     assert is_quoted_prose_paragraph(
         "\u201cThe PIE rules for the voicing of s \u2192 z, as in [nizdos]\u201d"
@@ -1465,7 +1465,7 @@ def test_is_quoted_prose_paragraph():
 
 
 def test_extract_trailing_paren_glosses_from_field():
-    from conlanger.tools.parsers import extract_trailing_paren_glosses_from_field
+    from conlanger.utils.gloss import extract_trailing_paren_glosses_from_field
 
     cleaned, captures = extract_trailing_paren_glosses_from_field("_CVC# (short only)")
     assert cleaned == "_CVC#"

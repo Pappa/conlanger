@@ -11,7 +11,7 @@ from typing import Any
 import pandas as pd
 from lxml import html
 
-from conlanger.tools.parsers import (
+from conlanger.utils.parsing import (
     extract_rule_parts,
     extract_text_with_subs,
     parse_section_heading,

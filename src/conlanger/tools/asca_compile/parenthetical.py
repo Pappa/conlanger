@@ -20,7 +20,7 @@ from __future__ import annotations
 import re
 
 from conlanger.tools.asca_compile._patterns import IPA_SEGMENT
-from conlanger.tools.parsers import paren_inner_is_gloss
+from conlanger.utils.gloss import paren_inner_is_gloss
 
 _SET_RE = re.compile(r"\{([^{}]*)\}")
 _CHAIN_ALTERNATE_RE = re.compile(r"\s*\(>\s*[^)]*\)\s*")

@@ -22,6 +22,12 @@ from __future__ import annotations
 
 import re
 
+from conlanger.tools.asca_compile.group_mappings import (
+    _merge_mapping_with_features,
+    asca_group_mappings_dict,
+    expand_grouping_letter,
+)
+
 _GROUPING_PREC = r"(?:^|(?<=[\{\[\s/,>_A-Z#$%|!\(-]))"
 _GROUPING_FOLLOW = r"(?=[:,\[\]\{\}\s/>_#$%|!\)-]|$|[A-Z]|[a-z\u0250-\u02AF])"
 _ASCA_NATIVE_GROUPINGS = frozenset("COSPFLNGV")
@@ -75,11 +81,6 @@ def _expand_class_letter_modifier(
     mappings: dict[str, str],
 ) -> str:
     if letter in index_keys:
-        from conlanger.tools.asca_compile.group_mappings import (
-            _merge_mapping_with_features,
-            expand_grouping_letter,
-        )
-
         base = expand_grouping_letter(letter, mappings, labial=False)
         feature_text = ",".join(features)
         if re.fullmatch(r"[A-Z]", base):
@@ -148,8 +149,6 @@ def normalize_asca_superscript_modifiers(text: str) -> str:
     """Rewrite Index superscript modifiers on class letters and braced sets."""
     if not text:
         return text
-
-    from conlanger.tools.asca_compile.group_mappings import asca_group_mappings_dict
 
     mappings = asca_group_mappings_dict()
     index_keys = set(mappings.keys())

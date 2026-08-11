@@ -12,9 +12,9 @@ from typing import Any
 import pandas as pd
 
 from conlanger.tools.asca_validator import ASCAValidationError, validate_asca
-from conlanger.tools.parsers import ARROW
 from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
 from conlanger.tools.rules import RuleChange
+from conlanger.utils.parsing import ARROW
 
 ERROR_CLASS_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     ("nested_brackets", re.compile(r"nested brackets", re.IGNORECASE)),
