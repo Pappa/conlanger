@@ -23,9 +23,10 @@ class RulePartBase:
             raise ValueError(f"Unsupported format: {format}")
         self.value = value
         self.format = format
+        self.prefix = self.prefixes[format]
 
     def __str__(self):
-        return f"{self.prefixes[self.format]}{self.value}"
+        return f"{self.prefix}{self.value}"
 
 
 class RuleTitle(RulePartBase):
@@ -77,7 +78,7 @@ class SoundChangeRule(RulePartBase):
         "asca": "\t",
         "brassica": "",
     }
-    separator: ClassVar[dict[str, dict[str, str]]] = {
+    separators: ClassVar[dict[str, dict[str, str]]] = {
         "asca": {
             "output": " > ",
             "env": " / ",
@@ -119,7 +120,7 @@ class SoundChangeRule(RulePartBase):
         super().__init__(self._compile_rule_text(format), format)
 
     def _compile_rule_text(self, format: str) -> str:
-        separator = self.separator.get(format, {})
+        separators = self.separators.get(format, {})
 
         input_text = self.input
         output_text = self.output
@@ -127,11 +128,11 @@ class SoundChangeRule(RulePartBase):
             input_text = drop_mixed_parallel_null_columns(input_text)
             output_text = drop_mixed_parallel_null_columns(output_text)
 
-        result = input_text + separator["output"] + output_text
+        result = input_text + separators["output"] + output_text
         if self.env:
-            result += separator["env"] + self.env
+            result += separators["env"] + self.env
         if self.exception:
-            result += separator["exception"] + self.exception
+            result += separators["exception"] + self.exception
 
         if format == "asca":
             result = compile_asca_rule_string(
