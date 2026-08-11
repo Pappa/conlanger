@@ -21,10 +21,12 @@ from conlanger.appliers.asca import (
     ASCAValidationError,
     validate_asca,
 )
+from conlanger.tools.asca_compile.group_mappings import asca_group_mappings_dict
 from conlanger.tools.parsers import (
     IndexDiachronicaParser,
 )
 from conlanger.tools.rules import SoundChangeRuleSet
+from conlanger.utils.file_io import load_default_ingest_tables
 
 DEFAULT_HTML = ROOT / "data/diachronica/index_diachronica_original.html"
 DEFAULT_CSV = ROOT / "tests/fixtures/sound_change_rules.csv"
@@ -204,6 +206,7 @@ def build_sound_change_rule(
             "rules": [change],
         },
         format="asca",
+        group_mappings=asca_group_mappings_dict(),
     )
 
 
@@ -241,12 +244,15 @@ def load_existing(path: Path) -> list[dict[str, str]]:
 
 
 def collect_schg_rules(html_path: Path) -> list[dict]:
-    doc = IndexDiachronicaParser().parse(html_path)
-    rules: list[dict] = []
-    for section in doc["sections"]:
-        for rule in section.get("rules", []):
-            rules.append(rule)
-    return rules
+    tables = load_default_ingest_tables()
+    doc = IndexDiachronicaParser(
+        series_mappings=tables.series_mappings,
+        manual_mappings=tables.manual_mappings,
+        parser_config=tables.parser_config,
+        feature_mappings=tables.feature_mappings,
+        ipa_mappings=tables.ipa_mappings,
+    ).parse(html_path)
+    return [rule for section in doc["sections"] for rule in section.get("rules", [])]
 
 
 def main() -> int:

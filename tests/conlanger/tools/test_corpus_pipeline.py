@@ -13,7 +13,8 @@ import pytest
 
 from conlanger.appliers.asca import validate_asca
 from conlanger.tools.corpus_inventory import iter_validation_rows, validate_corpus_rule
-from conlanger.tools.parsers import IndexDiachronicaParser
+from conlanger.tools.asca_compile.group_mappings import asca_group_mappings_dict
+from helpers import default_index_parser
 from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
 from tests.conftest import ASCA_INSTALLED
 
@@ -84,7 +85,7 @@ def _parse_section(
     *,
     source_file: str = "e2e.html",
 ) -> dict:
-    doc = IndexDiachronicaParser().parse(html_path, source_file=source_file)
+    doc = default_index_parser().parse(html_path, source_file=source_file)
     assert len(doc["sections"]) == 1
     return doc["sections"][0]
 
@@ -148,7 +149,13 @@ def test_e2e_minimal_html_fixture_compile_and_validate(tmp_path: Path):
 <p class="schg">dʒ → tʃ / _#</p>""",
     )
     section = _parse_section(html_path)
-    rows = list(iter_validation_rows({"sections": [section]}, probe_words=_PROBE))
+    rows = list(
+        iter_validation_rows(
+            {"sections": [section]},
+            probe_words=_PROBE,
+            group_mappings=asca_group_mappings_dict(),
+        )
+    )
 
     assert len(rows) == 2
     assert all(row.ok for row in rows)
@@ -156,7 +163,7 @@ def test_e2e_minimal_html_fixture_compile_and_validate(tmp_path: Path):
     assert rows[0].reason == ""
 
     validate_asca(
-        PhonologicalRuleSet(section).to_sound_change_ruleset(),
+        PhonologicalRuleSet(section).to_sound_change_ruleset(group_mappings=asca_group_mappings_dict()),
         probe_words=_PROBE,
     )
 
@@ -223,7 +230,13 @@ def test_e2e_smoke_pipeline_validate(
     rules = section.get("rules") or []
     assert rules, case_id
     rows = [
-        validate_corpus_rule(section, rule, idx, probe_words=_PROBE)
+        validate_corpus_rule(
+            section,
+            rule,
+            idx,
+            probe_words=_PROBE,
+            group_mappings=asca_group_mappings_dict(),
+        )
         for idx, rule in enumerate(rules)
     ]
 

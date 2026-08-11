@@ -350,6 +350,7 @@ def validate_corpus_rule(
     rule_idx: int,
     *,
     probe_words: Path | None,
+    group_mappings: dict[str, str] | None = None,
 ) -> ValidationRow:
     section_index = str(section.get("index", ""))
     section_name = str(section.get("section", ""))
@@ -378,7 +379,9 @@ def validate_corpus_rule(
 
     mini = _mini_section(section, rule, rule_idx)
     try:
-        scr = PhonologicalRuleSet(mini).to_sound_change_ruleset()
+        scr = PhonologicalRuleSet(mini).to_sound_change_ruleset(
+            group_mappings=group_mappings
+        )
     except (KeyError, ValueError) as exc:
         err = f"format_error: {exc}"
         failure_class = "format_error"
@@ -467,6 +470,7 @@ def iter_validation_rows(
     doc: dict[str, Any],
     *,
     probe_words: Path | None,
+    group_mappings: dict[str, str] | None = None,
 ) -> Iterator[ValidationRow]:
     for section in doc.get("sections") or []:
         rules = section.get("rules") or []
@@ -476,6 +480,7 @@ def iter_validation_rows(
                 rule,
                 rule_idx,
                 probe_words=probe_words,
+                group_mappings=group_mappings,
             )
 
 

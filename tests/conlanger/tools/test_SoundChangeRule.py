@@ -331,11 +331,11 @@ def test_apply_asca_group_mappings_labializes_non_matrix_mapping():
     assert apply_asca_group_mappings_to_string("Mʷ", mappings) == "Kr"
 
 
-def test_rule_change_apply_asca_group_mappings_uses_default_csv_mappings():
-    part = RuleChange({"input": "a", "output": "b"}, "asca")
-    assert (
-        part._apply_asca_group_mappings("R > a", "asca")
-        == apply_asca_group_mappings_to_string("R > a", asca_group_mappings_dict())
+def test_rule_change_apply_asca_group_mappings_uses_injected_csv_mappings():
+    mappings = asca_group_mappings_dict()
+    part = RuleChange({"input": "a", "output": "b"}, "asca", group_mappings=mappings)
+    assert part._apply_asca_group_mappings("R > a", "asca") == (
+        apply_asca_group_mappings_to_string("R > a", mappings)
     )
 
 

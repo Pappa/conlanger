@@ -141,7 +141,7 @@ class RuleChange(RulePartBase):
 
         self.env = rule.get("env", None)
         self.exception = rule.get("exception", None)
-        self._group_mappings = group_mappings
+        self._group_mappings = {} if group_mappings is None else group_mappings
 
         if rule.get("skip", False):
             self.prefixes = {
@@ -182,12 +182,7 @@ class RuleChange(RulePartBase):
     def _apply_asca_group_mappings(self, rule: str, format: str) -> str:
         if format != "asca":
             return rule
-        mappings = (
-            self._group_mappings
-            if self._group_mappings is not None
-            else asca_group_mappings_dict()
-        )
-        return apply_asca_group_mappings_to_string(rule, mappings)
+        return apply_asca_group_mappings_to_string(rule, self._group_mappings)
 
 
 class SoundChangeRuleSet:
@@ -198,6 +193,7 @@ class SoundChangeRuleSet:
         *,
         group_mappings: dict[str, str] | None = None,
     ):
+        mappings = {} if group_mappings is None else group_mappings
         self._parts = [RuleTitle(section, format)]
         if section.get("citation"):
             self._parts.append(RuleCitation(section["citation"], format))
@@ -208,7 +204,7 @@ class SoundChangeRuleSet:
                 normalized = normalize_corpus_rule_tilde_fields(rule)
                 for step in expand_chained_corpus_rule(normalized):
                     self._parts.append(
-                        RuleChange(step, format, group_mappings=group_mappings)
+                        RuleChange(step, format, group_mappings=mappings)
                     )
 
     def __str__(self):

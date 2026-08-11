@@ -37,7 +37,7 @@ def test_compile_asca_rule_string_matches_legacy_manual_chain():
     text = "tʃ:[+long]ʼ > tʃ:[+long]"
     mappings = {"S": "P"}
     manual = normalize_asca_optional_grouping_ellipsis(text)
-    manual = normalize_asca_superscript_modifiers(manual)
+    manual = normalize_asca_superscript_modifiers(manual, mappings)
     manual = apply_asca_group_mappings_to_string(manual, mappings)
     manual = normalize_asca_length_marks(manual)
     manual = normalize_typographic_apostrophes(manual)
@@ -48,5 +48,5 @@ def test_compile_asca_rule_string_matches_legacy_manual_chain():
 
 def test_rule_change_uses_pipeline_for_asca():
     part = RuleChange({"input": "Vː", "output": "V", "env": "#C_C"}, "asca")
-    expected = compile_asca_rule_string("Vː > V / #C_C")
+    expected = compile_asca_rule_string("Vː > V / #C_C", group_mappings={})
     assert part.value == expected

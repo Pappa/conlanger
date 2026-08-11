@@ -4,7 +4,7 @@ import re
 from functools import lru_cache
 
 from conlanger.utils.features import apply_features_to_token
-from conlanger.utils.mappings import load_group_mappings
+from conlanger.utils.file_io import load_group_mappings
 
 _GROUPING_PREC = r"(?:^|(?<=[\{\[\s/,>_A-Z#$%|!\(-]))"
 _GROUPING_FOLLOW = r"(?=[:,\[\]\{\}\s/>_#$%|!\)-]|$|[A-Z]|[\u0250-\u02AF])"

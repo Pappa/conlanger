@@ -1,4 +1,4 @@
-"""Extract and load correspondence-series mappings from Index Diachronica HTML."""
+"""Extract correspondence-series mappings from Index Diachronica HTML."""
 
 from __future__ import annotations
 
@@ -8,19 +8,34 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-import pandas as pd
 from lxml import html
 
+from conlanger.utils.file_io import (
+    DEFAULT_SERIES_MAPPINGS_CSV,
+    load_series_mappings,
+    write_series_mappings_csv,
+)
 from conlanger.utils.parsing import (
     extract_rule_parts,
     extract_text_with_subs,
     parse_section_heading,
     strip_whitespace,
 )
-
-DEFAULT_SERIES_MAPPINGS_CSV = (
-    Path(__file__).resolve().parents[3] / "data" / "asca" / "series_mappings.csv"
+from conlanger.utils.series import (
+    _CORRESPONDENCE_INDEX_RE,
+    SeriesMapping,
+    asca_digit_segment,
+    classify_subscript_token,
+    find_correspondence_series_tokens,
+    find_subscript_tokens,
+    in_scope_series_token,
+    is_collective_subscript_token,
+    is_correspondence_series_token,
+    is_identity_subscript_token,
+    is_positional_slot_token,
+    lookup_series_target,
 )
+
 DEFAULT_SERIES_MAPPINGS_REPORT = (
     Path(__file__).resolve().parents[3]
     / ".scratch"
@@ -28,31 +43,11 @@ DEFAULT_SERIES_MAPPINGS_REPORT = (
     / "series-mappings-coverage.md"
 )
 
-# Correspondence-series index: concrete segment base + ordinal subscript (not ₀, not ₓ).
-_CORRESPONDENCE_INDEX_RE = re.compile(r"(?<![A-Z])([a-zA-Zæøåɑɡɢ]+)([₁₂₃₄₅₆₇₈₉])")
-_COLLECTIVE_TOKEN_RE = re.compile(r"(?<![A-Z])([a-zA-Z]+)ₓ")
-_POSITIONAL_SLOT_RE = re.compile(r"^[A-Z][₁₂₃₄₅₆₇₈₉]$")
-_IDENTITY_SUBSCRIPT_RE = re.compile(r"^[A-Za-z]₀$")
 # Whitespace split respecting {...} groups (single level).
 _RULE_TOKEN_RE = re.compile(
     r"\{[^{}]+\}|[A-Za-zÀ-ÿɑæøåɡɢʃʒθðβγχħʕʔ]+(?:\[[^\]]+\])?|[^\s{}]+"
 )
-# ASCA grouping letters cannot host a digit suffix (s1 → S + reference 1).
-_ASCA_GROUPING_LETTERS = frozenset("CSOPFLNGV")
-
-_SUBSCRIPT_TO_ASCII = str.maketrans("₁₂₃₄₅₆₇₈₉", "123456789")
-
-# Any token containing an Index subscript digit/letter (includes compounds like ``eh₂``, ``CV₁``).
-_SUBSCRIPT_TOKEN_RE = re.compile(r"[A-Za-zæøåɑɡɢ]*[₀₁₂₃₄₅₆₇₈₉ₓ]+")
-
-
-@dataclass(frozen=True)
-class SeriesMapping:
-    section_index: str
-    token: str
-    asca_target: str
-    source: str = ""
-    notes: str = ""
+_SUBSCRIPT_CHARS = frozenset("₀₁₂₃₄₅₆₇₈₉ₓ")
 
 
 @dataclass(frozen=True)
@@ -81,213 +76,6 @@ class SeriesExtractionAudit:
         return self.in_scope_rule_mapped / self.in_scope_rule_pairs
 
 
-def classify_subscript_token(token: str) -> str:
-    """Classify a subscript-bearing token for coverage accounting."""
-    if is_identity_subscript_token(token):
-        return "identity"
-    if is_positional_slot_token(token):
-        return "positional"
-    if is_collective_subscript_token(token):
-        return "collective"
-    if is_correspondence_series_token(token):
-        return "correspondence"
-    if _CORRESPONDENCE_INDEX_RE.search(token):
-        return "compound"
-    if "ₓ" in token or "₀" in token or re.search(r"[₁₂₃₄₅₆₇₈₉]", token):
-        return "other"
-    return "none"
-
-
-def in_scope_series_token(token: str) -> bool:
-    """Whether ticket-28 extraction applies to this token."""
-    return classify_subscript_token(token) in {"correspondence", "collective"}
-
-
-def is_positional_slot_token(token: str) -> bool:
-    return bool(_POSITIONAL_SLOT_RE.match(token))
-
-
-def is_identity_subscript_token(token: str) -> bool:
-    return bool(_IDENTITY_SUBSCRIPT_RE.match(token))
-
-
-def is_collective_subscript_token(token: str) -> bool:
-    base = token[:-1] if token.endswith("ₓ") else ""
-    return len(token) >= 2 and token.endswith("ₓ") and base.isalpha() and base.islower()
-
-
-def is_correspondence_series_token(token: str) -> bool:
-    if is_positional_slot_token(token) or is_identity_subscript_token(token):
-        return False
-    if is_collective_subscript_token(token):
-        return True
-    match = _CORRESPONDENCE_INDEX_RE.fullmatch(token)
-    if not match:
-        return False
-    base = match.group(1)
-    # Correspondence-series indices attach to concrete (lowercase) segments, not class letters.
-    return base.islower()
-
-
-def find_subscript_tokens(text: str) -> set[str]:
-    """Return subscript-bearing tokens appearing in rule field text."""
-    return {
-        match.group(0) for match in _SUBSCRIPT_TOKEN_RE.finditer(text) if match.group(0)
-    }
-
-
-def find_correspondence_series_tokens(text: str) -> set[str]:
-    tokens: set[str] = set()
-    for base, sub in _CORRESPONDENCE_INDEX_RE.findall(text):
-        tokens.add(f"{base}{sub}")
-    for base in _COLLECTIVE_TOKEN_RE.findall(text):
-        tokens.add(f"{base}ₓ")
-    return tokens
-
-
-def section_index_prefixes(section_index: str) -> list[str]:
-    parts = [part for part in section_index.split(".") if part]
-    return [".".join(parts[:index]) for index in range(len(parts), 0, -1)]
-
-
-def asca_digit_segment(base: str, subscript_digit: str) -> str:
-    """Map Index ``base`` + subscript digit to an ASCA-parseable segment name."""
-    ascii_digit = subscript_digit.translate(_SUBSCRIPT_TO_ASCII)
-    if base.upper() in _ASCA_GROUPING_LETTERS:
-        # ``s₁`` cannot become ``s1`` (ASCA reads ``S`` + reference ``1``).
-        return f"f{ascii_digit}"
-    return f"{base}{ascii_digit}"
-
-
-def lookup_series_target(
-    section_index: str,
-    token: str,
-    rows: list[SeriesMapping],
-) -> SeriesMapping | None:
-    keyed = {(row.section_index, row.token): row for row in rows}
-    for prefix in section_index_prefixes(section_index):
-        hit = keyed.get((prefix, token))
-        if hit is not None:
-            return hit
-    return keyed.get(("*", token))
-
-
-def expand_series_tokens_in_field(
-    text: str,
-    section_index: str,
-    rows: list[SeriesMapping],
-) -> str:
-    """Expand in-scope correspondence-series tokens using hierarchical section lookup."""
-    if not text or not rows or not section_index:
-        return text
-    replacements: list[tuple[str, str]] = []
-    for token in find_subscript_tokens(text):
-        if not in_scope_series_token(token):
-            continue
-        hit = lookup_series_target(section_index, token, rows)
-        if hit is not None:
-            replacements.append((token, hit.asca_target))
-    if not replacements:
-        return text
-    replacements.sort(key=lambda pair: len(pair[0]), reverse=True)
-    result = text
-    for token, target in replacements:
-        result = result.replace(token, target)
-    return result
-
-
-def apply_series_mappings(
-    parts: dict[str, str],
-    section_index: str,
-    rows: list[SeriesMapping] | None = None,
-) -> dict[str, str]:
-    """Expand correspondence-series tokens in rule fields; ``raw`` unchanged upstream."""
-    mapping_rows = load_series_mappings() if rows is None else rows
-    if not mapping_rows or not section_index:
-        return parts
-    result = dict(parts)
-    stages = result.get("stages")
-    if stages is not None:
-        result["stages"] = [
-            expand_series_tokens_in_field(stage, section_index, mapping_rows)
-            for stage in stages
-        ]
-    for key in ("env", "exception"):
-        if key in result:
-            result[key] = expand_series_tokens_in_field(
-                result[key], section_index, mapping_rows
-            )
-    return result
-
-
-def section_abbreviations_for_index(
-    section_index: str,
-    rows: list[SeriesMapping] | None = None,
-) -> dict[str, str]:
-    """Build section ``abbreviations`` from series rows applicable to ``section_index``."""
-    mapping_rows = load_series_mappings() if rows is None else rows
-    if not mapping_rows or not section_index:
-        return {}
-    prefixes = set(section_index_prefixes(section_index)) | {"*"}
-    matching = [
-        row
-        for row in mapping_rows
-        if row.section_index in prefixes and in_scope_series_token(row.token)
-    ]
-    matching.sort(
-        key=lambda row: (
-            0 if row.section_index == "*" else len(row.section_index.split(".")),
-            row.section_index,
-            row.token,
-        )
-    )
-    abbrevs: dict[str, str] = {}
-    for row in matching:
-        abbrevs[row.token] = row.asca_target
-    return abbrevs
-
-
-def load_series_mappings(path: Path | None = None) -> list[SeriesMapping]:
-    csv_path = DEFAULT_SERIES_MAPPINGS_CSV if path is None else Path(path)
-    df = pd.read_csv(csv_path, dtype=str, keep_default_na=False)
-    missing = {"section_index", "token", "asca_target"} - set(df.columns)
-    if missing:
-        raise ValueError(
-            f"series mappings CSV missing required columns: {sorted(missing)}"
-        )
-    has_source = "source" in df.columns
-    has_notes = "notes" in df.columns
-    return [
-        SeriesMapping(
-            section_index=row.section_index,
-            token=row.token,
-            asca_target=row.asca_target,
-            source=row.source if has_source else "",
-            notes=row.notes if has_notes else "",
-        )
-        for row in df.itertuples(index=False)
-    ]
-
-
-def write_series_mappings_csv(rows: list[SeriesMapping], path: Path) -> None:
-    deduped = _dedupe_rows(rows)
-    deduped.sort(key=lambda row: (row.section_index, row.token))
-    df = pd.DataFrame(
-        [
-            {
-                "section_index": row.section_index,
-                "token": row.token,
-                "asca_target": row.asca_target,
-                "source": row.source,
-                "notes": row.notes,
-            }
-            for row in deduped
-        ]
-    )
-    path.parent.mkdir(parents=True, exist_ok=True)
-    df.to_csv(path, index=False)
-
-
 def update_series_mappings_from_html(
     html_path: Path,
     *,
@@ -299,22 +87,6 @@ def update_series_mappings_from_html(
     write_series_mappings_csv(rows, csv_path)
     write_coverage_report(html_path, csv_path, report_path)
     return len(rows)
-
-
-def _dedupe_rows(rows: list[SeriesMapping]) -> list[SeriesMapping]:
-    """Keep the first row per (section_index, token); extraction order = priority."""
-    seen: set[tuple[str, str]] = set()
-    out: list[SeriesMapping] = []
-    for row in rows:
-        key = (row.section_index, row.token)
-        if key in seen:
-            continue
-        seen.add(key)
-        out.append(row)
-    return out
-
-
-_SUBSCRIPT_CHARS = frozenset("₀₁₂₃₄₅₆₇₈₉ₓ")
 
 
 def _tokenize_rule_side(text: str) -> list[str]:
@@ -518,6 +290,19 @@ def _collective_rows_for_section(
             )
         )
     return rows
+
+
+def _dedupe_rows(rows: list[SeriesMapping]) -> list[SeriesMapping]:
+    """Keep the first row per (section_index, token); extraction order = priority."""
+    seen: set[tuple[str, str]] = set()
+    out: list[SeriesMapping] = []
+    for row in rows:
+        key = (row.section_index, row.token)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(row)
+    return out
 
 
 def extract_series_mappings_from_html(
@@ -790,7 +575,9 @@ def write_coverage_report(
     used_by_section = survey_subscript_tokens_in_html(html_path)
     section_names = _section_names_from_html(html_path)
 
-    pct = lambda num, den: f"{100 * num / den:.1f}%" if den else "n/a"
+    def pct(num: int, den: int) -> str:
+        return f"{100 * num / den:.1f}%" if den else "n/a"
+
     family_lines = [
         f"| {family} | {total} | {mapped} | {pct(mapped, total)} |"
         for family, (total, mapped) in audit.family_in_scope.items()

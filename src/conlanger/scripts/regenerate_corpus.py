@@ -19,6 +19,7 @@ logger.setLevel(logging.INFO)
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "src"))
 
+from conlanger.tools.asca_compile.group_mappings import asca_group_mappings_dict
 from conlanger.tools.corpus_inventory import (
     INVENTORY_CHANGELOG_CSV_NAME,
     INVENTORY_CSV_NAME,
@@ -38,13 +39,14 @@ from conlanger.tools.parsers import (
     IndexDiachronicaParser,
     write_rule_comment_phrase_summary,
 )
-from conlanger.tools.series_mappings import (
-    DEFAULT_SERIES_MAPPINGS_CSV,
+from conlanger.tools.series_extract import (
     DEFAULT_SERIES_MAPPINGS_REPORT,
     update_series_mappings_from_html,
 )
-from conlanger.utils.mappings import (
+from conlanger.utils.file_io import (
+    DEFAULT_SERIES_MAPPINGS_CSV,
     MANUAL_MAPPINGS_MATCHED_CSV_NAME,
+    load_default_ingest_tables,
     write_manual_mappings_matched_csv,
 )
 
@@ -121,7 +123,14 @@ def main() -> int:
             f"wrote {DEFAULT_SERIES_MAPPINGS_REPORT}"
         )
 
-    parser = IndexDiachronicaParser()
+    tables = load_default_ingest_tables()
+    parser = IndexDiachronicaParser(
+        series_mappings=tables.series_mappings,
+        manual_mappings=tables.manual_mappings,
+        parser_config=tables.parser_config,
+        feature_mappings=tables.feature_mappings,
+        ipa_mappings=tables.ipa_mappings,
+    )
     doc = parser.parse(args.html)
     write_cleaned_corpus(doc, args.yaml_out)
     n_with_comment = write_rule_comment_phrase_summary(doc, DEFAULT_COMMENT_SUMMARY)
@@ -165,7 +174,14 @@ def main() -> int:
         )
         return 1
 
-    rows = list(iter_validation_rows(doc, probe_words=args.probe_words))
+    group_mappings = asca_group_mappings_dict()
+    rows = list(
+        iter_validation_rows(
+            doc,
+            probe_words=args.probe_words,
+            group_mappings=group_mappings,
+        )
+    )
     if args.limit:
         rows = rows[: args.limit]
 

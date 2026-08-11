@@ -23,7 +23,6 @@ from __future__ import annotations
 import re
 
 from conlanger.tools.asca_compile.group_mappings import (
-    asca_group_mappings_dict,
     expand_grouping_letter,
 )
 from conlanger.utils.features import (
@@ -128,13 +127,15 @@ def _expand_set_suffix_modifiers(text: str) -> str:
     return _SET_SUFFIX_MODIFIER_RE.sub(repl, text)
 
 
-def normalize_asca_superscript_modifiers(text: str) -> str:
+def normalize_asca_superscript_modifiers(
+    text: str,
+    group_mappings: dict[str, str],
+) -> str:
     """Rewrite Index superscript modifiers on class letters and braced sets."""
     if not text:
         return text
 
-    mappings = asca_group_mappings_dict()
-    index_keys = set(mappings.keys())
+    index_keys = set(group_mappings.keys())
 
     parts: list[str] = []
     for segment in re.split(r"(\[[^\]]*\])", text):
@@ -147,7 +148,7 @@ def normalize_asca_superscript_modifiers(text: str) -> str:
                 _apply_class_letter_modifiers_outside_brackets(
                     segment,
                     index_keys=index_keys,
-                    mappings=mappings,
+                    mappings=group_mappings,
                 )
             )
     text = "".join(parts)

@@ -205,7 +205,7 @@ def test_phonological_ruleset_validates_labialized_class_letter_fixtures():
     from conlanger.appliers.asca import validate_asca
 
     validate_asca(
-        PhonologicalRuleSet(section).to_sound_change_ruleset(), probe_words=probe
+        PhonologicalRuleSet(section).to_sound_change_ruleset(group_mappings=asca_group_mappings_dict()), probe_words=probe
     )
 
 
@@ -234,7 +234,7 @@ def test_phonological_ruleset_validates_known_unknown_grouping_fixtures():
     from conlanger.appliers.asca import validate_asca
 
     validate_asca(
-        PhonologicalRuleSet(section).to_sound_change_ruleset(), probe_words=probe
+        PhonologicalRuleSet(section).to_sound_change_ruleset(group_mappings=asca_group_mappings_dict()), probe_words=probe
     )
 
 
@@ -249,7 +249,13 @@ def test_corpus_inventory_uses_phonological_ruleset(_mock_validate):
         "raw": "f → p / #_V{Z,C[-voice],r}",
         "source": "sample.html:1",
     }
-    validate_corpus_rule(section, rule, 0, probe_words=Path("/probe.wsca"))
+    validate_corpus_rule(
+        section,
+        rule,
+        0,
+        probe_words=Path("/probe.wsca"),
+        group_mappings=asca_group_mappings_dict(),
+    )
     passed_rule = _mock_validate.call_args[0][0]
     rendered = str(passed_rule)
     assert "[+cont]" in rendered

@@ -43,6 +43,7 @@ conlanger = ["data/*.csv", "data/asca/*.csv"]
 
 [tool.pytest.ini_options]
 testpaths = "tests"
+pythonpath = ["tests"]
 addopts = ["--cov=src", "--cov-report=html", "-s", "-vv"]
 
 [tool.coverage.run]

@@ -35,11 +35,6 @@ from typing import Any
 
 from lxml import html
 
-from conlanger.tools.series_mappings import (
-    apply_series_mappings,
-    load_series_mappings,
-    section_abbreviations_for_index,
-)
 from conlanger.utils.gloss import (
     extract_field_wrapped_quoted_gloss_from_field,
     extract_trailing_gloss_from_field,
@@ -47,14 +42,13 @@ from conlanger.utils.gloss import (
     is_quoted_prose_paragraph,
 )
 from conlanger.utils.mappings import (
+    FeatureMapping,
     ManualMapping,
     ManualMappingMatch,
     ParserConfig,
     apply_feature_mappings,
     apply_ipa_mappings,
     apply_manual_mappings,
-    load_manual_mappings,
-    load_parser_config,
 )
 from conlanger.utils.parsing import (
     extract_rule_parts,
@@ -62,6 +56,11 @@ from conlanger.utils.parsing import (
     finalize_stages_shape,
     parse_section_heading,
     strip_whitespace,
+)
+from conlanger.utils.series import (
+    SeriesMapping,
+    apply_series_mappings,
+    section_abbreviations_for_index,
 )
 
 # Protect Index stem ``$`` while remapping syllable-boundary ``%`` → ASCA ``$``.
@@ -641,25 +640,18 @@ class IndexDiachronicaParser:
 
     def __init__(
         self,
-        series_mappings: list | None = None,
-        parser_config: ParserConfig | None = None,
-        parser_config_path: Path | None = None,
-        manual_mappings: list[ManualMapping] | None = None,
-        manual_mappings_path: Path | None = None,
+        *,
+        series_mappings: list[SeriesMapping],
+        manual_mappings: list[ManualMapping],
+        parser_config: ParserConfig,
+        feature_mappings: dict[str, FeatureMapping],
+        ipa_mappings: dict[str, str],
     ) -> None:
-        self._series_mappings = (
-            load_series_mappings() if series_mappings is None else series_mappings
-        )
-        self._parser_config = (
-            parser_config
-            if parser_config is not None
-            else load_parser_config(parser_config_path)
-        )
-        self._manual_mappings = (
-            manual_mappings
-            if manual_mappings is not None
-            else load_manual_mappings(manual_mappings_path)
-        )
+        self._series_mappings = series_mappings
+        self._manual_mappings = manual_mappings
+        self._parser_config = parser_config
+        self._feature_mappings = feature_mappings
+        self._ipa_mappings = ipa_mappings
         self.manual_mapping_matches: list[ManualMappingMatch] = []
         self._matched_manual_froms: set[str] = set()
 
@@ -738,8 +730,8 @@ class IndexDiachronicaParser:
             ]
         parts = apply_stress_conditions(parts)
         parts = apply_medial_env_conditions(parts)
-        parts = apply_feature_mappings(parts)
-        parts = apply_ipa_mappings(parts, config=self._parser_config)
+        parts = apply_feature_mappings(parts, self._feature_mappings)
+        parts = apply_ipa_mappings(parts, self._ipa_mappings)
         parts = apply_series_mappings(parts, section_index, self._series_mappings)
         parts = finalize_stages_shape(parts)
         return [{**parts, "raw": raw, "source": source, **sporadic_flag}]
@@ -828,8 +820,10 @@ def parse_rule_element(
     *,
     source_file: str,
     section_index: str = "",
+    parser: IndexDiachronicaParser,
 ) -> list[dict[str, Any]]:
-    return IndexDiachronicaParser().parse_rule_element(
+    """Delegate to an injected parser instance (callers must supply tables)."""
+    return parser.parse_rule_element(
         el,
         source_file=source_file,
         section_index=section_index,

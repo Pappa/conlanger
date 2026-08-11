@@ -6,34 +6,38 @@ from pathlib import Path
 
 import pytest
 
-from conlanger.tools.series_mappings import (
+from conlanger.tools.series_extract import (
     SeriesExtractionAudit,
-    SeriesMapping,
-    apply_series_mappings,
-    asca_digit_segment,
     audit_series_extraction,
-    classify_subscript_token,
-    expand_series_tokens_in_field,
     extract_series_mappings_from_html,
-    find_correspondence_series_tokens,
-    find_subscript_tokens,
-    in_scope_series_token,
     infer_parallel_rule_mappings,
     infer_singleton_rule_mappings,
-    is_collective_subscript_token,
-    is_correspondence_series_token,
-    is_identity_subscript_token,
-    is_positional_slot_token,
-    load_series_mappings,
-    lookup_series_target,
-    section_abbreviations_for_index,
-    section_index_prefixes,
     survey_all_subscript_tokens_in_html,
     survey_html_defined_series,
     survey_subscript_tokens_in_html,
     update_series_mappings_from_html,
     write_coverage_report,
+)
+from conlanger.utils.file_io import (
+    load_series_mappings,
     write_series_mappings_csv,
+)
+from conlanger.utils.series import (
+    SeriesMapping,
+    apply_series_mappings,
+    asca_digit_segment,
+    classify_subscript_token,
+    expand_series_tokens_in_field,
+    find_correspondence_series_tokens,
+    find_subscript_tokens,
+    in_scope_series_token,
+    is_collective_subscript_token,
+    is_correspondence_series_token,
+    is_identity_subscript_token,
+    is_positional_slot_token,
+    lookup_series_target,
+    section_abbreviations_for_index,
+    section_index_prefixes,
 )
 
 _HTML_FIXTURE = """\

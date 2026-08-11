@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import re
 
-from conlanger.tools.series_mappings import (
+from conlanger.utils.series import (
     is_identity_subscript_token,
     is_positional_slot_token,
 )

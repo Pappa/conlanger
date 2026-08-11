@@ -34,7 +34,7 @@ from conlanger.tools.rules import (
 )
 def test_normalize_asca_superscript_modifiers(text, expected):
     mappings = asca_group_mappings_dict()
-    transformed = normalize_asca_superscript_modifiers(text)
+    transformed = normalize_asca_superscript_modifiers(text, mappings)
     assert apply_asca_group_mappings_to_string(transformed, mappings) == expected
 
 
@@ -42,7 +42,7 @@ def test_normalize_asca_superscript_modifiers_preserves_ticket_23_labial_regress
     mappings = asca_group_mappings_dict()
     text = "Kʷ > K / _V[+round]"
     expected = apply_asca_group_mappings_to_string(text, mappings)
-    assert normalize_asca_superscript_modifiers(text) == text
+    assert normalize_asca_superscript_modifiers(text, mappings) == text
     assert expected == (
         "C:[-front,+back,+hi,-lo,+round] > C:[-front,+back,+hi,-lo] / _V[+round]"
     )
@@ -62,7 +62,7 @@ def test_normalize_asca_superscript_modifiers_preserves_ticket_23_labial_regress
 def test_normalize_asca_superscript_modifiers_leaves_boundaries_and_ipa_literals(
     text, expected
 ):
-    assert normalize_asca_superscript_modifiers(text) == expected
+    assert normalize_asca_superscript_modifiers(text, {}) == expected
 
 
 @pytest.mark.parametrize(
@@ -82,7 +82,7 @@ def test_superscript_inventory_representatives_validate(inp, out, env):
     if env:
         rule["env"] = env
     section = {"index": "1", "section": "superscript", "rules": [rule]}
-    validate_asca(SoundChangeRuleSet(section, "asca"))
+    validate_asca(SoundChangeRuleSet(section, "asca", group_mappings=asca_group_mappings_dict()))
 
 
 def test_superscript_s_aspirated_rule_compiles_via_pipeline():
@@ -91,6 +91,6 @@ def test_superscript_s_aspirated_rule_compiles_via_pipeline():
         "section": "superscript",
         "rules": [{"stages": ["Sʰ", "S"], "env": "#v_V"}],
     }
-    ruleset = SoundChangeRuleSet(section, "asca")
+    ruleset = SoundChangeRuleSet(section, "asca", group_mappings=asca_group_mappings_dict())
     assert ruleset._parts[-1].value == "C:[+labial][+spread] > P / #v_V"
     validate_asca(ruleset)

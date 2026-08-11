@@ -6,6 +6,7 @@ import pytest
 from lxml import html
 
 from conlanger.appliers.asca import ASCAValidationError, validate_asca
+from conlanger.tools.asca_compile.group_mappings import asca_group_mappings_dict
 from conlanger.tools.parsers import (
     MEDIAL_BOUNDARY_EXCEPTION,
     IndexDiachronicaParser,
@@ -28,19 +29,8 @@ from conlanger.tools.parsers import (
 )
 from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
 from conlanger.tools.rules import SoundChangeRuleSet
-from conlanger.utils.gloss import (
-    extract_semicolon_prose_from_field,
-    strip_trailing_gloss_from_field,
-)
-from conlanger.utils.mappings import (
+from conlanger.utils.file_io import (
     DEFAULT_GROUP_MAPPINGS_CSV,
-    FeatureMapping,
-    GroupMapping,
-    ManualMapping,
-    ParserConfig,
-    apply_feature_mappings,
-    apply_ipa_mappings,
-    apply_manual_mappings,
     feature_mappings_dict,
     ipa_mappings_dict,
     load_feature_mappings,
@@ -48,6 +38,20 @@ from conlanger.utils.mappings import (
     load_ipa_mappings,
     load_manual_mappings,
     load_parser_config,
+    write_manual_mappings_matched_csv,
+)
+from conlanger.utils.gloss import (
+    extract_semicolon_prose_from_field,
+    strip_trailing_gloss_from_field,
+)
+from conlanger.utils.mappings import (
+    FeatureMapping,
+    GroupMapping,
+    ManualMapping,
+    ParserConfig,
+    apply_feature_mappings,
+    apply_ipa_mappings,
+    apply_manual_mappings,
     normalize_feature_matrices_in_field,
     normalize_ipa_in_field,
 )
@@ -63,6 +67,18 @@ from conlanger.utils.parsing import (
     split_post_arrow,
     strip_leading_index_list_marker,
 )
+from helpers import default_index_parser
+
+
+def _parse_rule_element(el, *, source_file: str, section_index: str = ""):
+    """Parse one rule element with package-default injected tables."""
+    return parse_rule_element(
+        el,
+        source_file=source_file,
+        section_index=section_index,
+        parser=default_index_parser(),
+    )
+
 
 _SAMPLED_RULES_CSV = (
     Path(__file__).resolve().parents[2] / "fixtures" / "sound_change_rules.csv"
@@ -294,7 +310,7 @@ def test_parse_rule_element_keeps_chain_without_env():
     el = html.fragment_fromstring(
         '<p class="schg">dʒ → tʃ → ʃ</p>', create_parent=False
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert len(rules) == 1
     assert rules[0] == {
         "stages": ["dʒ", "tʃ", "ʃ"],
@@ -307,7 +323,7 @@ def test_parse_rule_element_keeps_chain_with_env():
     el = html.fragment_fromstring(
         '<p class="schg">{θ,l} → r → l / V_V</p>', create_parent=False
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert len(rules) == 1
     assert rules[0]["stages"] == ["{θ,l}", "r", "l"]
     assert rules[0]["env"] == "V_V"
@@ -406,7 +422,7 @@ def test_parse_rule_element_marks_sporadic_and_strips_gloss():
     el = html.fragment_fromstring(
         '<p class="schg">p → h (sporadic)</p>', create_parent=False
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert len(rules) == 1
     assert rules[0]["stages"] == ["p", "h"]
     assert rules[0]["sporadic"] is True
@@ -418,7 +434,7 @@ def test_parse_rule_element_strips_sporadic_env_gloss():
     el = html.fragment_fromstring(
         '<p class="schg">qu → w / _{f,s} (sporadic)</p>', create_parent=False
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["env"] == "_{f,s}"
     assert rules[0]["sporadic"] is True
 
@@ -427,7 +443,7 @@ def test_parse_rule_element_marks_occasionally_sporadic_and_strips_gloss():
     el = html.fragment_fromstring(
         '<p class="schg">l → ∅ (occasionally?)</p>', create_parent=False
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert len(rules) == 1
     assert rules[0]["stages"] == ["l", "∅"]
     assert rules[0]["sporadic"] is True
@@ -440,7 +456,7 @@ def test_parse_rule_element_strips_lone_occasionally_env():
         '<p class="schg">r → *L (some sort of lateral?) / occasionally</p>',
         create_parent=False,
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert len(rules) == 1
     assert rules[0]["stages"] == ["r", "*L"]
     assert "env" not in rules[0]
@@ -514,7 +530,7 @@ def test_parse_rule_element_skips_gloss_only_output():
         '<p class="schg">hhy \u2192 \u201csomething like /\u0292/\u201d</p>',
         create_parent=False,
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert len(rules) == 1
     assert rules[0]["status"] == "skipped"
     assert rules[0]["stages"] == []
@@ -527,7 +543,7 @@ def test_parse_rule_element_strips_trailing_glosses():
         '<p class="schg">w → f (Common Celtic; I’m not sure of the conditions)</p>',
         create_parent=False,
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["stages"] == ["w", "f"]
     assert "Celtic" in rules[0]["comment"]
     assert "Celtic" in rules[0]["raw"]
@@ -538,7 +554,7 @@ def test_parse_rule_element_strips_env_trailing_glosses():
         '<p class="schg">t → k / _s̩ (Ōgami) (http://example.com)</p>',
         create_parent=False,
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["env"] == "_s̩"
     assert "Ōgami" in rules[0]["raw"]
 
@@ -548,7 +564,7 @@ def test_parse_rule_element_strips_embedded_quoted_env_gloss():
         '<p class="schg">z → d / “when another sibilant is in the word nearby” and (word-finally?) when</p>',
         create_parent=False,
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["env"] == "and (word-finally?) when"
     assert "sibilant" in rules[0]["raw"]
 
@@ -637,7 +653,7 @@ def test_parse_rule_element_proto_italic_medial_comment_unchanged():
         '<p class="schg">s → z / medial (I\'m assuming between vowels or when *s voiced in PIE)</p>',
         create_parent=False,
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["env"] == "_"
     assert rules[0]["exception"] == MEDIAL_BOUNDARY_EXCEPTION
     assert "between vowels" in rules[0]["comment"]
@@ -651,10 +667,10 @@ def test_parse_rule_element_medial_validate_asca():
         '<p class="schg">t → r / medially</p>',
         create_parent=False,
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     section = {"index": "6.2.1.1.2", "section": "Proto-Agaw to Blin", "rules": rules}
     validate_asca(
-        PhonologicalRuleSet(section).to_sound_change_ruleset(),
+        PhonologicalRuleSet(section).to_sound_change_ruleset(group_mappings=asca_group_mappings_dict()),
         probe_words=probe,
     )
 
@@ -665,7 +681,7 @@ def test_parse_rule_element_medial_deferred_env_exception_still_fails():
         '<p class="schg">b → h / medially, ! {r(ʲ),l(ʲ)}_ or _ɡ</p>',
         create_parent=False,
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["env"] == "medially,"
     assert rules[0]["exception"] == "{r(ʲ),l(ʲ)}_ or _ɡ"
     section = {
@@ -674,7 +690,7 @@ def test_parse_rule_element_medial_deferred_env_exception_still_fails():
         "rules": rules,
     }
     with pytest.raises(ASCAValidationError, match="Expected '_', but received ','"):
-        validate_asca(PhonologicalRuleSet(section).to_sound_change_ruleset())
+        validate_asca(PhonologicalRuleSet(section).to_sound_change_ruleset(group_mappings=asca_group_mappings_dict()))
 
 
 def test_is_catch_all_else_env():
@@ -790,7 +806,7 @@ def test_parser_resolves_catch_all_else_in_section(tmp_path: Path):
 <p class="schg">kʼ → {χʷ,qʷ} / #_</p>
 <p class="schg">kʼ → q / else</p>""",
     )
-    rules = IndexDiachronicaParser().parse(html_path)["sections"][0]["rules"]
+    rules = default_index_parser().parse(html_path)["sections"][0]["rules"]
     assert rules[0]["env"] == "#_"
     assert "env" not in rules[1]
     assert rules[1]["exception"] == "#_"
@@ -802,7 +818,7 @@ def test_parse_rule_element_normalizes_stress_conditions():
         '<p class="schg">a → i / _C(C), when stressed</p>',
         create_parent=False,
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["env"] == "_C(C) when stressed"
     assert ", when stressed" in rules[0]["raw"]
 
@@ -818,14 +834,14 @@ def test_parse_rule_element_stress_conditions_validate_asca():
     probe = Path("tests/fixtures/asca_probe_words.wsca")
     for html_snippet in cases:
         el = html.fragment_fromstring(html_snippet, create_parent=False)
-        rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+        rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
         section = {
             "index": "47.1",
             "section": "Stress conditions",
             "rules": rules,
         }
         validate_asca(
-            PhonologicalRuleSet(section).to_sound_change_ruleset(),
+            PhonologicalRuleSet(section).to_sound_change_ruleset(group_mappings=asca_group_mappings_dict()),
             probe_words=probe,
         )
 
@@ -847,7 +863,7 @@ def test_parser_preserves_class_letters(tmp_path: Path):
 <h2>1.0 Test Section</h2>
 <p class="schg">S → a</p>""",
     )
-    doc = IndexDiachronicaParser().parse(html_path)
+    doc = default_index_parser().parse(html_path)
     assert doc["abbreviations"] == {}
     assert doc["sections"][0]["rules"][0]["stages"][0] == "S"
 
@@ -859,7 +875,7 @@ def test_parser_skips_section_without_h2(tmp_path: Path):
         section_id="NoH2",
         section_body='<p class="schg">a → b</p>',
     )
-    assert IndexDiachronicaParser().parse(html_path)["sections"] == []
+    assert default_index_parser().parse(html_path)["sections"] == []
 
 
 def test_parser_skips_section_with_empty_name(tmp_path: Path):
@@ -871,7 +887,7 @@ def test_parser_skips_section_with_empty_name(tmp_path: Path):
 <h2>   </h2>
 <p class="schg">a → b</p>""",
     )
-    assert IndexDiachronicaParser().parse(html_path)["sections"] == []
+    assert default_index_parser().parse(html_path)["sections"] == []
 
 
 def test_parser_skips_empty_paragraph(tmp_path: Path):
@@ -884,7 +900,7 @@ def test_parser_skips_empty_paragraph(tmp_path: Path):
 <p>   </p>
 <p class="schg">a → b</p>""",
     )
-    doc = IndexDiachronicaParser().parse(html_path)
+    doc = default_index_parser().parse(html_path)
     sec = doc["sections"][0]
     assert sec["rules"][0]["stages"][0] == "a"
     assert "comments" not in sec
@@ -899,7 +915,7 @@ def test_parser_citation_only_section(tmp_path: Path):
 <h2>1.0 Test Section</h2>
 <p>Only a citation line.</p>""",
     )
-    sec = IndexDiachronicaParser().parse(html_path)["sections"][0]
+    sec = default_index_parser().parse(html_path)["sections"][0]
     assert sec["citation"] == "Only a citation line."
     assert "rules" not in sec
 
@@ -947,7 +963,7 @@ def test_parse_rule_element_with_sub_and_env():
     el = html.fragment_fromstring(
         '<p class="schg">ʃ → s<sub>2</sub> / {i,j}_</p>', create_parent=False
     )
-    rule = parse_rule_element(el, source_file="index_diachronica_original.html")[0]
+    rule = _parse_rule_element(el, source_file="index_diachronica_original.html")[0]
     assert rule["stages"] == ["ʃ", "s₂"]
     assert rule["env"] == "{i,j}_"
     assert rule["raw"] == "ʃ → s₂ / {i,j}_"
@@ -959,7 +975,7 @@ def test_parse_rule_element_with_exception():
     el = html.fragment_fromstring(
         '<p class="schg">w → ∅ / #C_V, except _i(ː)</p>', create_parent=False
     )
-    rule = parse_rule_element(el, source_file="index_diachronica_original.html")[0]
+    rule = _parse_rule_element(el, source_file="index_diachronica_original.html")[0]
     assert rule["stages"] == ["w", "∅"]
     assert rule["env"] == "#C_V"
     assert rule["exception"] == "_i(ː)"
@@ -967,7 +983,7 @@ def test_parse_rule_element_with_exception():
 
 def test_parse_rule_element_no_env():
     el = html.fragment_fromstring('<p class="schg">ɬ → l</p>', create_parent=False)
-    rule = parse_rule_element(el, source_file="index_diachronica_original.html")[0]
+    rule = _parse_rule_element(el, source_file="index_diachronica_original.html")[0]
     assert rule["stages"] == ["ɬ", "l"]
     assert "env" not in rule
     assert "exception" not in rule
@@ -977,7 +993,7 @@ def test_parse_rule_element_missing_arrow():
     el = html.fragment_fromstring(
         '<p class="schg">a to b no arrow</p>', create_parent=False
     )
-    rule = parse_rule_element(el, source_file="index_diachronica_original.html")[0]
+    rule = _parse_rule_element(el, source_file="index_diachronica_original.html")[0]
     assert rule["stages"] == []
     assert rule["status"] == "skipped"
 
@@ -986,7 +1002,7 @@ def test_parse_rule_element_arrow_without_spaces():
     el = html.fragment_fromstring(
         '<p class="schg">a \u2192\u0259 / _#</p>', create_parent=False
     )
-    rule = parse_rule_element(el, source_file="index_diachronica_original.html")[0]
+    rule = _parse_rule_element(el, source_file="index_diachronica_original.html")[0]
     assert rule["stages"] == ["a", "ə"]
     assert rule["env"] == "_#"
     assert "status" not in rule
@@ -996,7 +1012,7 @@ def test_parse_rule_element_bang_exception():
     el = html.fragment_fromstring(
         '<p class="schg">s \u2192 \u0283 / !V_</p>', create_parent=False
     )
-    rule = parse_rule_element(el, source_file="index_diachronica_original.html")[0]
+    rule = _parse_rule_element(el, source_file="index_diachronica_original.html")[0]
     assert rule["stages"] == ["s", "ʃ"]
     assert "env" not in rule
     assert rule["exception"] == "V_"
@@ -1006,7 +1022,7 @@ def test_parse_rule_element_env_and_bang_exception():
     el = html.fragment_fromstring(
         '<p class="schg">w \u2192 \u2205 / _# ! k(\u02d0)_</p>', create_parent=False
     )
-    rule = parse_rule_element(el, source_file="index_diachronica_original.html")[0]
+    rule = _parse_rule_element(el, source_file="index_diachronica_original.html")[0]
     assert rule["stages"] == ["w", "∅"]
     assert rule["env"] == "_#"
     assert rule["exception"] == "k(ː)_"
@@ -1017,7 +1033,7 @@ def test_parse_rule_element_except_without_comma():
         '<p class="schg">q \u2192 \u0294 / except in several words</p>',
         create_parent=False,
     )
-    rule = parse_rule_element(el, source_file="index_diachronica_original.html")[0]
+    rule = _parse_rule_element(el, source_file="index_diachronica_original.html")[0]
     assert rule["stages"] == ["q", "ʔ"]
     assert "env" not in rule
     assert rule["exception"] == "in several words"
@@ -1037,7 +1053,7 @@ def test_first_p_is_citation_rest_comments(tmp_path: Path):
 <p>Interleaved note</p>
 <p class="schg">\u026c \u2192 l</p>""",
     )
-    doc = IndexDiachronicaParser().parse(html_path, source_file="sample.html")
+    doc = default_index_parser().parse(html_path, source_file="sample.html")
     sec = doc["sections"][0]
     assert sec["citation"] == "Mecislau, from Ehret (1995), Title"
     assert [c["raw"] for c in sec["comments"]] == [
@@ -1052,7 +1068,7 @@ def test_first_p_is_citation_rest_comments(tmp_path: Path):
 def test_parse_expands_afro_asiatic_series_tokens(tmp_path: Path):
     html_path = tmp_path / "afro.html"
     html_path.write_text(_HTML_FIXTURE, encoding="utf-8")
-    doc = IndexDiachronicaParser().parse(html_path, source_file="afro.html")
+    doc = default_index_parser().parse(html_path, source_file="afro.html")
     aari = next(sec for sec in doc["sections"] if sec["index"] == "6.1.2.1")
     rule = aari["rules"][0]
     assert rule["stages"] == ["ʃ z tʃ", "ʃ z tʃ"]
@@ -1063,7 +1079,7 @@ def test_parse_expands_afro_asiatic_series_tokens(tmp_path: Path):
 def test_parse_leaves_positional_slots_literal(tmp_path: Path):
     html_path = tmp_path / "positional.html"
     html_path.write_text(_HTML_FIXTURE, encoding="utf-8")
-    doc = IndexDiachronicaParser().parse(html_path, source_file="positional.html")
+    doc = default_index_parser().parse(html_path, source_file="positional.html")
     chamic = next(sec for sec in doc["sections"] if sec["index"] == "10.2.1")
     rule = chamic["rules"][0]
     assert rule["stages"] == ["C₁C₂", "C₂"]
@@ -1118,7 +1134,7 @@ def test_parser_normalizes_symbols_and_preserves_raw(tmp_path: Path):
 <h2>1.0 Test Section</h2>
 <p class="schg">a → b / _$%oː</p>""",
     )
-    doc = IndexDiachronicaParser().parse(html_path, source_file="mapped.html")
+    doc = default_index_parser().parse(html_path, source_file="mapped.html")
     assert doc["abbreviations"] == {}
     rule = doc["sections"][0]["rules"][0]
     assert rule["stages"] == ["a", "b"]
@@ -1136,12 +1152,12 @@ def test_parser_class_letters_unchanged(tmp_path: Path):
 <h2>1.0 Test Section</h2>
 <p class="schg">S → a / V_V</p>""",
     )
-    doc = IndexDiachronicaParser().parse(html_path, source_file="unmapped.html")
+    doc = default_index_parser().parse(html_path, source_file="unmapped.html")
     assert doc["abbreviations"] == {}
     rule = doc["sections"][0]["rules"][0]
     assert rule["stages"][0] == "S"
     assert rule["env"] == "V_V"
-    assert IndexDiachronicaParser().abbreviations() == {}
+    assert default_index_parser().abbreviations() == {}
 
 
 def test_load_feature_mappings_from_default_csv():
@@ -1244,7 +1260,7 @@ def test_kenyah_vowel_height_rules_validate():
         "section": "Proto-Kenyah to Òma Lóngh",
         "rules": rules,
     }
-    validate_asca(SoundChangeRuleSet(section, "asca"))
+    validate_asca(SoundChangeRuleSet(section, "asca", group_mappings=asca_group_mappings_dict()))
 
 
 def test_normalize_feature_matrices_in_field_leaves_raw_tokens_outside_brackets():
@@ -1336,7 +1352,7 @@ def test_parse_rule_element_normalizes_ipa_characters():
         '<p class="schg">K → TŠ / in Mentasta Ahtna</p>',
         create_parent=False,
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["stages"][-1] == "Tʃ"
     assert rules[0]["raw"] == "K → TŠ / in Mentasta Ahtna"
 
@@ -1346,14 +1362,14 @@ def test_parse_rule_element_applies_configured_ipa_confidence_levels():
         '<p class="schg">ḱ → s / _i</p>',
         create_parent=False,
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["stages"][0] == "kʲ"
     assert "ḱ" in rules[0]["raw"]
     el2 = html.fragment_fromstring(
         '<p class="schg">é → ɛ / _#</p>',
         create_parent=False,
     )
-    rules2 = parse_rule_element(el2, source_file="index_diachronica_original.html")
+    rules2 = _parse_rule_element(el2, source_file="index_diachronica_original.html")
     assert rules2[0]["stages"][0] == "e"
     assert "é" in rules2[0]["raw"]
 
@@ -1366,7 +1382,11 @@ def test_index_diachronica_parser_high_only_config_skips_medium_at_parse(
         "ipa_mapping:\n  confidence:\n    - high\n",
         encoding="utf-8",
     )
-    parser = IndexDiachronicaParser(parser_config_path=config_path)
+    config = load_parser_config(config_path)
+    parser = default_index_parser(
+        parser_config=config,
+        ipa_mappings=ipa_mappings_dict(config=config),
+    )
     el = html.fragment_fromstring(
         '<p class="schg">é → ɛ / _#</p>',
         create_parent=False,
@@ -1380,7 +1400,7 @@ def test_index_diachronica_parser_high_only_config_skips_medium_at_parse(
 
 def test_index_diachronica_parser_accepts_custom_parser_config():
     config = ParserConfig(ipa_mapping_confidence=frozenset({"high"}))
-    parser = IndexDiachronicaParser(parser_config=config)
+    parser = default_index_parser(parser_config=config)
     assert parser._parser_config.ipa_mapping_confidence == frozenset({"high"})
 
 
@@ -1389,7 +1409,7 @@ def test_parse_rule_element_normalizes_feature_matrices():
         '<p class="schg">N → N / C[+voiced]</p>',
         create_parent=False,
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["stages"][0] == "N"
     assert rules[0]["env"] == "C[+voice]"
     assert "[+voiced]" in rules[0]["raw"]
@@ -1400,7 +1420,7 @@ def test_parse_rule_element_normalizes_short_to_neg_long():
         '<p class="schg">v → ∅ / u[+short]_V[+short]</p>',
         create_parent=False,
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["env"] == "u[-long]_V[-long]"
     assert "[+short]" in rules[0]["raw"]
 
@@ -1410,7 +1430,7 @@ def test_parse_rule_element_normalizes_glottalized_to_place():
         '<p class="schg">R[- glottalized]VˀR → ˀRVR[- glottalized] / _$</p>',
         create_parent=False,
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["stages"] == ["R[+place]VˀR", "ˀRVR[+place]"]
     assert "[- glottalized]" in rules[0]["raw"]
 
@@ -1421,10 +1441,10 @@ def test_parse_rule_element_voiced_matrix_validates_asca():
         '<p class="schg">s → z / _C[+voiced]</p>',
         create_parent=False,
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     section = {"index": "17.12", "section": "Voicing", "rules": rules}
     validate_asca(
-        PhonologicalRuleSet(section).to_sound_change_ruleset(),
+        PhonologicalRuleSet(section).to_sound_change_ruleset(group_mappings=asca_group_mappings_dict()),
         probe_words=Path("tests/fixtures/asca_probe_words.wsca"),
     )
 
@@ -1470,7 +1490,7 @@ def test_parse_rule_element_captures_semicolon_comment():
         '<p class="schg">V → ∅ / short only; blocked by following consonant</p>',
         create_parent=False,
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["env"] == "short only"
     assert "blocked by following consonant" in rules[0]["comment"]
     assert "; blocked" in rules[0]["raw"]
@@ -1481,7 +1501,7 @@ def test_parse_rule_element_captures_short_only_paren_in_env():
         '<p class="schg">i → e / _CVC#, when stressed (short only)</p>',
         create_parent=False,
     )
-    rules = parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["env"] == "_CVC#"
     assert "short only" in rules[0]["comment"]
     assert "when stressed" in rules[0]["comment"]
@@ -1509,7 +1529,7 @@ def test_normalize_ipa_in_field_noop_without_mappings():
 
 
 def test_index_diachronica_parser_accepts_custom_series_mappings():
-    parser = IndexDiachronicaParser(series_mappings=[])
+    parser = default_index_parser(series_mappings=[])
     assert parser._series_mappings == []
 
 
@@ -1631,7 +1651,7 @@ def test_parse_rule_element_applies_manual_mapping_keeps_raw():
         f'<p class="schg">{broken}</p>',
         create_parent=False,
     )
-    parser = IndexDiachronicaParser(
+    parser = default_index_parser(
         series_mappings=[],
         manual_mappings=[
             ManualMapping(from_text=broken, to_text=fixed, reason="bracket"),
@@ -1654,7 +1674,7 @@ def test_parse_rule_element_manual_mapping_rescues_quoted_prose():
         f'<p class="schg">{prose}</p>',
         create_parent=False,
     )
-    parser = IndexDiachronicaParser(
+    parser = default_index_parser(
         series_mappings=[],
         manual_mappings=[
             ManualMapping(from_text=prose, to_text=mapped, reason="nisdos"),
@@ -1672,13 +1692,13 @@ def test_parse_rule_element_without_manual_row_unchanged():
         '<p class="schg">a → e / _C</p>',
         create_parent=False,
     )
-    with_mappings = IndexDiachronicaParser(
+    with_mappings = default_index_parser(
         series_mappings=[],
         manual_mappings=[
             ManualMapping(from_text="zzz", to_text="Q", reason=""),
         ],
     ).parse_rule_element(el, source_file="index_diachronica_original.html")
-    without = IndexDiachronicaParser(
+    without = default_index_parser(
         series_mappings=[],
         manual_mappings=[],
     ).parse_rule_element(el, source_file="index_diachronica_original.html")
@@ -1686,10 +1706,7 @@ def test_parse_rule_element_without_manual_row_unchanged():
 
 
 def test_write_manual_mappings_matched_csv(tmp_path: Path):
-    from conlanger.utils.mappings import (
-        ManualMappingMatch,
-        write_manual_mappings_matched_csv,
-    )
+    from conlanger.utils.mappings import ManualMappingMatch
 
     path = tmp_path / "manual_mappings_matched_rules.csv"
     write_manual_mappings_matched_csv(
@@ -1730,7 +1747,7 @@ def test_parse_records_manual_mapping_matches_and_unmatched(tmp_path: Path):
     )
     broken = "m̩ n̩ → am an / _{s,({m,j,w)V}"
     fixed = "m̩ n̩ → am an / _{s,({m,j,w})V}"
-    parser = IndexDiachronicaParser(
+    parser = default_index_parser(
         series_mappings=[],
         manual_mappings=[
             ManualMapping(from_text=broken, to_text=fixed, reason="bracket"),

@@ -10,7 +10,6 @@ from conlanger.tools.asca_compile.ellipsis import (
 )
 from conlanger.tools.asca_compile.group_mappings import (
     apply_asca_group_mappings_to_string,
-    asca_group_mappings_dict,
 )
 from conlanger.tools.asca_compile.length_marks import normalize_asca_length_marks
 from conlanger.tools.asca_compile.planned import (
@@ -40,17 +39,14 @@ ASCA_COMPILE_STEP_NAMES: tuple[str, ...] = (
 def compile_asca_rule_string(
     text: str,
     *,
-    group_mappings: dict[str, str] | None = None,
+    group_mappings: dict[str, str],
 ) -> str:
     """Run the documented ASCA compile transforms on a joined rule string."""
-    mappings = (
-        group_mappings if group_mappings is not None else asca_group_mappings_dict()
-    )
     text = normalize_asca_optional_grouping_ellipsis(text)
     text = expand_index_subscript_references(text)
     text = apply_section_local_abbreviations(text)
-    text = normalize_asca_superscript_modifiers(text)
-    text = apply_asca_group_mappings_to_string(text, mappings)
+    text = normalize_asca_superscript_modifiers(text, group_mappings)
+    text = apply_asca_group_mappings_to_string(text, group_mappings)
     text = normalize_asca_length_marks(text)
     text = normalize_typographic_apostrophes(text)
     text = normalize_asca_ejective_marks(text)
