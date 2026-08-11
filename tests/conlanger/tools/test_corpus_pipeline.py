@@ -11,7 +11,7 @@ from pathlib import Path
 
 import pytest
 
-from conlanger.tools.asca_validator import validate_asca
+from conlanger.appliers.asca import validate_asca
 from conlanger.tools.corpus_inventory import iter_validation_rows, validate_corpus_rule
 from conlanger.tools.parsers import IndexDiachronicaParser
 from conlanger.tools.phonological_ruleset import PhonologicalRuleSet

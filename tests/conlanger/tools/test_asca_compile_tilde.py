@@ -6,7 +6,7 @@ from conlanger.tools.asca_compile.tilde import (
     expand_index_tilde_notation,
     normalize_corpus_rule_tilde_fields,
 )
-from conlanger.tools.asca_validator import validate_asca
+from conlanger.appliers.asca import validate_asca
 from conlanger.tools.rules import RuleChange, SoundChangeRuleSet
 
 

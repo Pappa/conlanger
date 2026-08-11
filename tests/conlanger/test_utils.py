@@ -1,6 +1,6 @@
 import pytest
 import numpy as np
-from conlanger.utils import get_closest_matches, get_exact_matches_indices, display_rows
+from conlanger.ml.utils import get_closest_matches, get_exact_matches_indices, display_rows
 
 
 @pytest.mark.parametrize(

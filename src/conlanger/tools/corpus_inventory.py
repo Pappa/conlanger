@@ -11,7 +11,7 @@ from typing import Any
 
 import pandas as pd
 
-from conlanger.tools.asca_validator import ASCAValidationError, validate_asca
+from conlanger.appliers.asca import ASCAValidationError, validate_asca
 from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
 from conlanger.tools.rules import RuleChange
 from conlanger.utils.parsing import ARROW

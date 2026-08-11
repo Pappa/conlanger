@@ -5,7 +5,7 @@ import pandas as pd
 import pytest
 from lxml import html
 
-from conlanger.tools.asca_validator import ASCAValidationError, validate_asca
+from conlanger.appliers.asca import ASCAValidationError, validate_asca
 from conlanger.tools.parsers import (
     DEFAULT_GROUP_MAPPINGS_CSV,
     MEDIAL_BOUNDARY_EXCEPTION,

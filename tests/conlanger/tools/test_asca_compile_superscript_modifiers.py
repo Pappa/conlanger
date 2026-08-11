@@ -5,7 +5,7 @@ import pytest
 from conlanger.tools.asca_compile.superscript_modifiers import (
     normalize_asca_superscript_modifiers,
 )
-from conlanger.tools.asca_validator import validate_asca
+from conlanger.appliers.asca import validate_asca
 from conlanger.tools.rules import (
     SoundChangeRuleSet,
     apply_asca_group_mappings_to_string,

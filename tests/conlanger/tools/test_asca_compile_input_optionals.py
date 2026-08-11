@@ -5,7 +5,7 @@ import pytest
 from conlanger.tools.asca_compile.input_optionals import (
     expand_input_optionals_to_structures,
 )
-from conlanger.tools.asca_validator import validate_asca
+from conlanger.appliers.asca import validate_asca
 from conlanger.tools.rules import SoundChangeRuleSet
 
 

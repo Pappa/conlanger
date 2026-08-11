@@ -12,7 +12,7 @@ from conlanger.tools.asca_compile.subscript_references import (
     expand_index_subscript_references,
     is_easy_subscript_rule_text,
 )
-from conlanger.tools.asca_validator import validate_asca
+from conlanger.appliers.asca import validate_asca
 from conlanger.tools.rules import SoundChangeRuleSet
 
 

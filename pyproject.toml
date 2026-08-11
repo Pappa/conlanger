@@ -48,7 +48,7 @@ addopts = ["--cov=src", "--cov-report=html", "-s", "-vv"]
 [tool.coverage.run]
 branch = true
 source = ["src"]
-omit = ["src/conlanger/models/*", "src/conlanger/utils/ml.py"]
+omit = ["src/conlanger/ml/models/*", "src/conlanger/ml/utils.py"]
 
 [tool.coverage.report]
 fail_under = 95

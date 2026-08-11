@@ -17,7 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "src"))
 
-from conlanger.tools.asca_validator import (
+from conlanger.appliers.asca import (
     ASCAValidationError,
     validate_asca,
 )

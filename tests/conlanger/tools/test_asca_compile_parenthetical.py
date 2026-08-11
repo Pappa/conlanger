@@ -5,7 +5,7 @@ import pytest
 from conlanger.tools.asca_compile.parenthetical import (
     expand_index_parenthetical_notation,
 )
-from conlanger.tools.asca_validator import validate_asca
+from conlanger.appliers.asca import validate_asca
 from conlanger.tools.rules import SoundChangeRuleSet
 
 

@@ -444,7 +444,7 @@ def test_sound_change_ruleset_compiles_length_at_instantiation():
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
 def test_sound_change_ruleset_validates_length_marker_fixtures():
-    from conlanger.tools.asca_validator import validate_asca
+    from conlanger.appliers.asca import validate_asca
 
     section = {
         "index": "6.1",
@@ -463,7 +463,7 @@ def test_sound_change_ruleset_validates_length_marker_fixtures():
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
 def test_sound_change_ruleset_validates_tilde_notation_fixtures():
-    from conlanger.tools.asca_validator import validate_asca
+    from conlanger.appliers.asca import validate_asca
 
     section = {
         "index": "9.1.2.2",
@@ -482,7 +482,7 @@ def test_sound_change_ruleset_validates_tilde_notation_fixtures():
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
 def test_sound_change_ruleset_validates_expanded_chain_fixtures():
-    from conlanger.tools.asca_validator import validate_asca
+    from conlanger.appliers.asca import validate_asca
 
     section = {
         "index": "1.0",
@@ -495,7 +495,7 @@ def test_sound_change_ruleset_validates_expanded_chain_fixtures():
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
 def test_sound_change_ruleset_validates_ejective_marker_fixtures():
-    from conlanger.tools.asca_validator import validate_asca
+    from conlanger.appliers.asca import validate_asca
 
     section = {
         "index": "11.5.1",
@@ -512,7 +512,7 @@ def test_sound_change_ruleset_validates_ejective_marker_fixtures():
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
 def test_sound_change_ruleset_validates_optional_grouping_ellipsis_fixtures():
-    from conlanger.tools.asca_validator import validate_asca
+    from conlanger.appliers.asca import validate_asca
 
     section = {
         "index": "33.1.1.4",
@@ -529,7 +529,7 @@ def test_sound_change_ruleset_validates_optional_grouping_ellipsis_fixtures():
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
 def test_sound_change_ruleset_validates_extended_grouping_ellipsis_fixtures():
-    from conlanger.tools.asca_validator import validate_asca
+    from conlanger.appliers.asca import validate_asca
 
     section = {
         "index": "17.12.1.1.6",
@@ -550,7 +550,7 @@ def test_sound_change_ruleset_validates_extended_grouping_ellipsis_fixtures():
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
 def test_sound_change_ruleset_validates_em_dash_rule_marker_fixtures():
-    from conlanger.tools.asca_validator import validate_asca
+    from conlanger.appliers.asca import validate_asca
 
     section = {
         "index": "6.2.2.1.18",

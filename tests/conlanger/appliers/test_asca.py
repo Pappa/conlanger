@@ -7,7 +7,7 @@ import subprocess
 import pandas as pd
 import pytest
 
-from conlanger.tools.asca_validator import ASCAValidationError, validate_asca
+from conlanger.appliers.asca import ASCAValidationError, validate_asca
 from conlanger.tools.rules import SoundChangeRuleSet
 from tests.conftest import ASCA_INSTALLED
 
@@ -29,7 +29,7 @@ def mock_asca(tmp_path: Path) -> Path:
 @pytest.fixture
 def mock_asca_on_path(mock_asca, mocker):
     mocker.patch(
-        "conlanger.tools.asca_validator.shutil.which",
+        "conlanger.appliers.asca.shutil.which",
         return_value=str(mock_asca),
     )
     return mock_asca
@@ -37,7 +37,7 @@ def mock_asca_on_path(mock_asca, mocker):
 
 @pytest.fixture
 def mock_asca_subprocess(mocker):
-    return mocker.patch("conlanger.tools.asca_validator.subprocess.run")
+    return mocker.patch("conlanger.appliers.asca.subprocess.run")
 
 
 @pytest.mark.skipif(not ASCA_INSTALLED, reason="asca binary not found on PATH")
@@ -83,7 +83,7 @@ def test_validate_asca_rejects_inactive_rules(scr):
 
 
 def test_validate_asca_missing_binary(mocker):
-    mocker.patch("conlanger.tools.asca_validator.shutil.which", return_value=None)
+    mocker.patch("conlanger.appliers.asca.shutil.which", return_value=None)
     scr = SoundChangeRuleSet(
         {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
@@ -168,7 +168,7 @@ def test_validate_asca_keeps_trailing_newline(
         return MagicMock(returncode=0, stderr="")
 
     mock_asca_subprocess.side_effect = fake_run
-    with patch("conlanger.tools.asca_validator.tempfile.TemporaryDirectory") as tmpdir:
+    with patch("conlanger.appliers.asca.tempfile.TemporaryDirectory") as tmpdir:
         tmpdir.return_value.__enter__.return_value = str(tmp_path)
         with patch.object(scr, "__str__", return_value="@ 1 - test\na > b\n"):
             validate_asca(scr, probe_words=_PROBE)
@@ -191,7 +191,7 @@ def test_validate_asca_appends_trailing_newline(
         return MagicMock(returncode=0, stderr="")
 
     mock_asca_subprocess.side_effect = fake_run
-    with patch("conlanger.tools.asca_validator.tempfile.TemporaryDirectory") as tmpdir:
+    with patch("conlanger.appliers.asca.tempfile.TemporaryDirectory") as tmpdir:
         tmpdir.return_value.__enter__.return_value = str(tmp_path)
         validate_asca(scr, probe_words=_PROBE)
 

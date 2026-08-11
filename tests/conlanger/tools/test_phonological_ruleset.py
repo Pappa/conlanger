@@ -202,7 +202,7 @@ def test_phonological_ruleset_validates_labialized_class_letter_fixtures():
         ],
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")
-    from conlanger.tools.asca_validator import validate_asca
+    from conlanger.appliers.asca import validate_asca
 
     validate_asca(
         PhonologicalRuleSet(section).to_sound_change_ruleset(), probe_words=probe
@@ -231,7 +231,7 @@ def test_phonological_ruleset_validates_known_unknown_grouping_fixtures():
         ],
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")
-    from conlanger.tools.asca_validator import validate_asca
+    from conlanger.appliers.asca import validate_asca
 
     validate_asca(
         PhonologicalRuleSet(section).to_sound_change_ruleset(), probe_words=probe

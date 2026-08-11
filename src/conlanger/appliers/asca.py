@@ -1,11 +1,4 @@
-"""Validate ``SoundChangeRuleSet`` instances against ASCA (0.10.x).
-
-Drives the ``asca`` CLI on ``PATH`` (``run`` on a probe wordlist) so syntax and
-apply-time structural checks (Tier 1–4 in
-``.scratch/cleaned-rule-corpus/research/asca-rule-validity.md`` §5) stay aligned
-with ``ParsedRules`` / ``Rule::split_into_subrules`` rather than a docs-only
-grammar.
-"""
+"""ASCA applier: CLI apply helper and compile validation."""
 
 from __future__ import annotations
 
@@ -15,6 +8,8 @@ import shutil
 import subprocess
 import tempfile
 from pathlib import Path
+
+from strip_ansi import strip_ansi
 
 from conlanger.tools.rules import RuleChange, SoundChangeRuleSet
 
@@ -121,3 +116,26 @@ def validate_asca(
             raise ASCAValidationError(err, returncode=proc.returncode)
 
     return True
+
+
+def run_asca(asca_word_file, rule_file, rule_path):
+    """Run ``asca`` on a word file and rule file; return a result dict."""
+    file_name = f"{rule_path}/{rule_file}"
+    cmd = f"~/.cargo/bin/asca run {asca_word_file} --rules {file_name}"
+
+    result = {"rule": rule_file, "returncode": 0, "error": ""}
+
+    try:
+        output = subprocess.run(  # noqa: PLW1510
+            cmd, capture_output=True, timeout=10, shell=True, text=True
+        )
+        output.check_returncode()
+
+    except subprocess.CalledProcessError as exc:
+        result["returncode"] = exc.returncode
+        result["error"] = strip_ansi(exc.stderr.strip()).replace("\n", " ")
+    except subprocess.TimeoutExpired as exc:
+        result["returncode"] = 124
+        result["error"] = exc.output.decode("utf-8").replace("\n", " ")
+
+    return result

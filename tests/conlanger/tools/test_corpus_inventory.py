@@ -4,7 +4,7 @@ from unittest.mock import patch
 
 import pytest
 
-from conlanger.tools.asca_validator import ASCAValidationError
+from conlanger.appliers.asca import ASCAValidationError
 from conlanger.tools.corpus_inventory import (
     CHANGELOG_CSV_COLUMNS,
     ValidationRow,
