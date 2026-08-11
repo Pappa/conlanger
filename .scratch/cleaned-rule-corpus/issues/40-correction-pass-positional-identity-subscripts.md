@@ -16,7 +16,7 @@ Implement **`expand_index_subscript_references`** at **compile time** per [posit
 2. Map **`₀` identity** on class letters → `V=0` / bare `0` (`V₀V₀ → V₀` → `V=0 0 > 0`).
 3. Whole-rule pass: declare refs in input before use in output/env; env co-reference may need `_` focus insertion.
 4. Bracket-safe: do not rewrite inside `[...]` feature matrices except where research documents feature-attached identity (`V₀[+nas]`).
-5. Corpus YAML and **`raw`** unchanged; transform in `RuleChange` / `asca_compile/` pipeline only.
+5. Corpus YAML and **`raw`** unchanged; transform in `SoundChangeRule` / `asca_compile/` pipeline only.
 6. Re-run `uv run regenerate_corpus`; record before/after for `₀` / `₁` error tokens and overall ok count.
 
 ## Policy

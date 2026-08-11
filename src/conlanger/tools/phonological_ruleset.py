@@ -11,7 +11,7 @@ class PhonologicalRuleSet:
     """One sound-change section ready for applier compilation.
 
     Holds corpus rules unchanged; ASCA-specific transforms (e.g. Index class
-    letters from ``group_mappings.csv``) run in ``DiachronicSeries`` / ``RuleChange``.
+    letters from ``group_mappings.csv``) run in ``DiachronicSeries`` / ``SoundChangeRule``.
     """
 
     def __init__(self, section: dict[str, Any], *, format: str = "asca"):

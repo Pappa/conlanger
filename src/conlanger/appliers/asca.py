@@ -11,7 +11,7 @@ from pathlib import Path
 
 from strip_ansi import strip_ansi
 
-from conlanger.tools.rules import RuleChange, DiachronicSeries
+from conlanger.tools.rules import SoundChangeRule, DiachronicSeries
 
 # Minimal probe lexicon for ``asca run`` (Tier 4 boundary). Override with ASCA_PROBE_WORDS.
 _DEFAULT_PROBE_WORDS = "a\nba\nkata\nsami\nntu\n"
@@ -27,11 +27,11 @@ class ASCAValidationError(ValueError):
         self.returncode = returncode
 
 
-def _active_rule_changes(rule: DiachronicSeries) -> list[RuleChange]:
-    """Return RuleChange parts that are not commented out (``skip``)."""
-    active: list[RuleChange] = []
+def _active_rule_changes(rule: DiachronicSeries) -> list[SoundChangeRule]:
+    """Return SoundChangeRule parts that are not commented out (``skip``)."""
+    active: list[SoundChangeRule] = []
     for part in rule._parts:
-        if not isinstance(part, RuleChange):
+        if not isinstance(part, SoundChangeRule):
             continue
         # Skipped rules render as ASCA comments (``#\t…``).
         if str(part).lstrip().startswith("#"):
@@ -61,7 +61,7 @@ def validate_asca(
     """
     if not _active_rule_changes(rule):
         raise ASCAValidationError(
-            "DiachronicSeries has no active RuleChange lines to validate"
+            "DiachronicSeries has no active SoundChangeRule lines to validate"
         )
 
     asca = shutil.which("asca")

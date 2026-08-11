@@ -14,7 +14,7 @@ Today inventory validates the **whole** compiled rule via `validate_asca` + base
 
 ## What to investigate (primary sources)
 
-1. Current compile path: corpus rule dict → `RuleChange` / `PhonologicalRuleSet` → `validate_asca` (`src/conlanger/tools/`).
+1. Current compile path: corpus rule dict → `SoundChangeRule` / `PhonologicalRuleSet` → `validate_asca` (`src/conlanger/tools/`).
 2. ASCA 0.10.2 constraints on env/exception (e.g. single `_` focus, `#` periphery, optionals env-only) — [research/asca-rule-validity.md](../research/asca-rule-validity.md) + ASCA docs.
 3. Concrete stub candidates: what minimal always-valid `input`/`output`/`env`/`exception` combinations let a *real* field be the only variable?
 4. False positives/negatives: when would a field pass in isolation but fail in the full rule (or the reverse)?

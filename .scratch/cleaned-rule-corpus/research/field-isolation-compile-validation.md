@@ -19,7 +19,7 @@ Primary sources: `src/conlanger/tools/{rules,phonological_ruleset,asca_validator
 ```text
 corpus rule dict {input, output, env?, exception?, …}
         │
-        ▼  RuleChange (requires input+output; optional env/exception)
+        ▼  SoundChangeRule (requires input+output; optional env/exception)
    compile: join fields → group_mappings → length/ejective/alias norms
         │
         ▼  DiachronicSeries / PhonologicalRuleSet.to_sound_change_ruleset()
@@ -31,7 +31,7 @@ corpus rule dict {input, output, env?, exception?, …}
 
 Inventory (`validate_corpus_rule`) already isolates **per corpus rule** (one rule per mini-section) but not **per field**. A whole-rule failure yields one `failure_class` + `description` with no field attribution ([ticket 12](../issues/12-full-corpus-validation-inventory.md)).
 
-`RuleChange` ASCA separators (`rules.py`): ` > ` / ` / ` / ` // `. Skipped rules render as `#\t…` and are excluded by `_active_rule_changes`.
+`SoundChangeRule` ASCA separators (`rules.py`): ` > ` / ` / ` / ` // `. Skipped rules render as `#\t…` and are excluded by `_active_rule_changes`.
 
 ## 3. ASCA field constraints (0.10.2)
 
@@ -44,7 +44,7 @@ Primary: [asca-rust `doc/doc.md` @ 0.10.2](https://github.com/Girv98/asca-rust/b
 | **env** | Exactly one `_` focus (or joined `___`); empty `/` invalid (`EmptyEnv` / Expected `_`); `#` periphery only; optionals allowed; env sets `:{ … }:` |
 | **exception** | Same env grammar; `|` or `//`; omit ≠ `| _` (“except everywhere”) |
 
-CLI note: `parse_rsca` treats a trimmed line starting with `#` (but not `##`) as a **description**, not a rule (`src/cli/parse.rs`). A corpus `input: "#"` compiles to `\t# > …`, which after trim becomes `# > …` → **no rule line**. Local `validate_asca` then raises “no active RuleChange lines” because `_active_rule_changes` also treats `#…` as skipped. This is a render/parse hazard for isolation of bare `#` I/O, not a field-stub issue alone.
+CLI note: `parse_rsca` treats a trimmed line starting with `#` (but not `##`) as a **description**, not a rule (`src/cli/parse.rs`). A corpus `input: "#"` compiles to `\t# > …`, which after trim becomes `# > …` → **no rule line**. Local `validate_asca` then raises “no active SoundChangeRule lines” because `_active_rule_changes` also treats `#…` as skipped. This is a render/parse hazard for isolation of bare `#` I/O, not a field-stub issue alone.
 
 ## 4. Stub strategy table
 
@@ -90,7 +90,7 @@ Definitions relative to **whole-rule** `validate_asca` on the real compiled rule
 | **False pass** | Isolating env of an insert rule with stub `a > e / _` OK; full `* > a / _` → `InsertionNoEnv` | Bare `_` is empty context for insertion (`insertion.rs`) |
 | **False fail** (isolation FAIL, full OK) | Isolating output `{b,d,g}` as `a > {b,d,g}` → ASCA **panic** / lonely-set path; full `{p,t,k} > {b,d,g}` OK | Stub input lacked matching set |
 | **False fail** | Isolating delete as `a > *` → `DeletionOnlySeg` on baseline word `a`; full rule with rarer match or `x > *` OK | Baseline lexicon + stub input choice |
-| **False fail** | Isolating `#` input via `RuleChange` → treated as comment / no active lines | `.rsca` `#` description rule (`parse_rsca`) |
+| **False fail** | Isolating `#` input via `SoundChangeRule` → treated as comment / no active lines | `.rsca` `#` description rule (`parse_rsca`) |
 | **Aligned (useful)** | Unknown feature/character/grouping, missing `_`, OptLocError, BadNegationOutput, StuffBefore/AfterWordBound | Error token position is in the real field; stubs stay inert |
 
 Inventory baseline (summary at research time): ~30% fail; top classes `syntax_other`, `unknown_character`, `expected_underscore`, `unknown_feature` — overwhelmingly Tier 1–2 where isolation **aligns**. Tier 4 / set / insert coupling is the residual disagreement band (same band ticket 10 declined to chase with probe synthesis).

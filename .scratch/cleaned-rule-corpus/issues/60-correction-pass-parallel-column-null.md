@@ -68,7 +68,7 @@ Symmetric **input** case is **in scope for this ticket**: Index `∅ ʃ → k ʃ
 
 ## Answer
 
-Compile-time **`drop_mixed_parallel_null_columns`** in `asca_compile/parallel_null_columns.py`, applied in `RuleChange._compile_rule_text` on input/output before join (Index SoT unchanged).
+Compile-time **`drop_mixed_parallel_null_columns`** in `asca_compile/parallel_null_columns.py`, applied in `SoundChangeRule._compile_rule_text` on input/output before join (Index SoT unchanged).
 
 **Inventory:** before **7187 / 9201 ok (78.1%)** → after **7255 / 9201 ok (78.9%)** (**+68**). `deletion rule must only contain` cluster **~42 → 0**; mixed-input `∅ ʃ > k ʃ` fixed (e.g. HTML:1092). Residual insertion errors are proto-reconstruction `*T`/`*D`/`*R` tokens (out of scope). Deletion residuals: `l > ∅?)`, `r > *L` (malformed / non-column null).
 

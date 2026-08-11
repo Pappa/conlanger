@@ -5,7 +5,7 @@ import pytest
 from conlanger.tools.compile.asca.parallel_null_columns import (
     drop_mixed_parallel_null_columns,
 )
-from conlanger.tools.rules import RuleChange, DiachronicSeries
+from conlanger.tools.rules import SoundChangeRule, DiachronicSeries
 
 
 @pytest.mark.parametrize(
@@ -40,27 +40,27 @@ def test_drop_mixed_parallel_null_columns_proto_star_token_unchanged():
 
 
 def test_rule_change_compiles_parallel_column_output_null():
-    part = RuleChange({"input": "c ɲ", "output": "∅ n"}, "asca")
+    part = SoundChangeRule({"input": "c ɲ", "output": "∅ n"}, "asca")
     assert part.value == "c ɲ > n"
 
 
 def test_rule_change_compiles_parallel_column_input_null():
-    part = RuleChange({"input": "∅ ʃ", "output": "k ʃ", "env": "V_$#"}, "asca")
+    part = SoundChangeRule({"input": "∅ ʃ", "output": "k ʃ", "env": "V_$#"}, "asca")
     assert part.value == "ʃ > k ʃ / V_$#"
 
 
 def test_rule_change_compiles_parallel_column_with_env():
-    part = RuleChange({"input": "k ʃ", "output": "∅ ʃ", "env": "V_V"}, "asca")
+    part = SoundChangeRule({"input": "k ʃ", "output": "∅ ʃ", "env": "V_V"}, "asca")
     assert part.value == "k ʃ > ʃ / V_V"
 
 
 def test_rule_change_pure_deletion_unchanged():
-    part = RuleChange({"input": "ɡ", "output": "∅", "env": "V_(VC…)V"}, "asca")
+    part = SoundChangeRule({"input": "ɡ", "output": "∅", "env": "V_(VC…)V"}, "asca")
     assert part.value == "ɡ > ∅ / V_(VC,0)V"
 
 
 def test_rule_change_pure_insertion_unchanged():
-    part = RuleChange({"input": "∅", "output": "x"}, "asca")
+    part = SoundChangeRule({"input": "∅", "output": "x"}, "asca")
     assert part.value == "∅ > x"
 
 
@@ -71,6 +71,6 @@ def test_sound_change_ruleset_parallel_column_from_stages():
         "rules": [{"stages": ["c ɲ", "∅ n"]}],
     }
     ruleset = DiachronicSeries(section, "asca")
-    rule_parts = [part for part in ruleset._parts if isinstance(part, RuleChange)]
+    rule_parts = [part for part in ruleset._parts if isinstance(part, SoundChangeRule)]
     assert len(rule_parts) == 1
     assert rule_parts[0].value == "c ɲ > n"

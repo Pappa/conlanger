@@ -18,7 +18,7 @@ Local ASCA probes run with `asca 0.10.2` on `PATH`.
 
 ## 1. Executive summary
 
-**Recommendation:** implement a **compile-time** transform in `RuleChange` (ASCA emission layer) that maps Index subscript notation to ASCA **reference syntax** (`X=n` … bare `n`), leaving corpus YAML fields and `raw` Index-shaped.
+**Recommendation:** implement a **compile-time** transform in `SoundChangeRule` (ASCA emission layer) that maps Index subscript notation to ASCA **reference syntax** (`X=n` … bare `n`), leaving corpus YAML fields and `raw` Index-shaped.
 
 | Index use | Index example | ASCA target (validated locally) |
 |-----------|---------------|----------------------------------|
@@ -187,7 +187,7 @@ Baseline before this work: **6518 / 9317 ok (70.0%)** ([inventory summary](../in
 
 ### 6.1 Where
 
-**`RuleChange`** in [`src/conlanger/tools/rules.py`](../../../src/conlanger/tools/rules.py) — new function e.g. `expand_index_subscript_references(text: str) -> str`, called when rendering ASCA strings (after or before `group_mappings`, order TBD: likely **after** group expansion so `C` is still a grouping letter).
+**`SoundChangeRule`** in [`src/conlanger/tools/rules.py`](../../../src/conlanger/tools/rules.py) — new function e.g. `expand_index_subscript_references(text: str) -> str`, called when rendering ASCA strings (after or before `group_mappings`, order TBD: likely **after** group expansion so `C` is still a grouping letter).
 
 **Not** in `IndexDiachronicaParser` — corpus fields and `raw` stay Index-shaped.
 

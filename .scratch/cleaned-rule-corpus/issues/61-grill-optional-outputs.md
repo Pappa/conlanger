@@ -16,9 +16,9 @@ Index rules like `d → {∅,ð} / V_V` and `ɡ → {∅,ɣ} / V_V` encode speak
 
 ## Open / blocked on rethink
 
-- **When to choose** an alternative: earlier lean was `str(DiachronicSeries)`; then revised to `RuleChange` instantiation via `random` + caller `random.seed`.
+- **When to choose** an alternative: earlier lean was `str(DiachronicSeries)`; then revised to `SoundChangeRule` instantiation via `random` + caller `random.seed`.
 - **Testability concern (owner pause):** instantiation-time `random.choice` means unit tests will not systematically exercise every alternative unless tests inject choice or enumerate members explicitly.
-- Whether `RuleChange` keeps `outputs: tuple[str, …]` plus selected `output`, or only the chosen string.
+- Whether `SoundChangeRule` keeps `outputs: tuple[str, …]` plus selected `output`, or only the chosen string.
 - Set-detection heuristic (whole-field `{…}`).
 - Fixed seed for inventory/regen vs free seed for generative apply.
 - Relationship to future sporadic sample/skip (still unimplemented on render).
@@ -26,13 +26,13 @@ Index rules like `d → {∅,ð} / V_V` and `ɡ → {∅,ɣ} / V_V` encode speak
 ## Facts (do not re-litigate)
 
 - ASCA rejects `d > {∅,ð} / V_V`; `d > ∅ / V_V` and `d > ð / V_V` are valid.
-- `RuleChange` today freezes compiled `value` in `__init__`; ignores `sporadic`.
+- `SoundChangeRule` today freezes compiled `value` in `__init__`; ignores `sporadic`.
 - No RNG on the sound-change render path today.
 - Corpus: ~85 `{∅` lines in parsed YAML; canonical Spanish examples at `index_diachronica_original.html:8156–8157`.
 
 ## Next grilling round (when resumed)
 
-Start from testability: how should tests force or enumerate each optional output without relying on chance? Then re-decide selection timing and `RuleChange` shape.
+Start from testability: how should tests force or enumerate each optional output without relying on chance? Then re-decide selection timing and `SoundChangeRule` shape.
 
 ## References
 

@@ -16,7 +16,7 @@ from conlanger.tools.compile.asca.group_mappings import (
 from conlanger.tools.compile.asca.length_marks import normalize_asca_length_marks
 from conlanger.tools.rules import (
     DebugRules,
-    RuleChange,
+    SoundChangeRule,
     RuleCitation,
     RuleComment,
     DiachronicSeries,
@@ -114,12 +114,12 @@ def test_DiachronicSeries(section, format, expected):
 
 def test_rule_change_requires_input():
     with pytest.raises(ValueError, match="input is required"):
-        RuleChange({"output": "b"}, "asca")
+        SoundChangeRule({"output": "b"}, "asca")
 
 
 def test_rule_change_requires_output():
     with pytest.raises(ValueError, match="output is required"):
-        RuleChange({"input": "a"}, "asca")
+        SoundChangeRule({"input": "a"}, "asca")
 
 
 @pytest.mark.parametrize(
@@ -340,14 +340,14 @@ def test_apply_asca_group_mappings_labializes_non_matrix_mapping():
 
 def test_rule_change_apply_asca_group_mappings_uses_injected_csv_mappings():
     mappings = asca_group_mappings_dict()
-    part = RuleChange({"input": "a", "output": "b"}, "asca", group_mappings=mappings)
+    part = SoundChangeRule({"input": "a", "output": "b"}, "asca", group_mappings=mappings)
     assert part._apply_asca_group_mappings("R > a", "asca") == (
         apply_asca_group_mappings_to_string("R > a", mappings)
     )
 
 
 def test_rule_change_apply_asca_group_mappings_noop_for_non_asca():
-    part = RuleChange(
+    part = SoundChangeRule(
         {"input": "S", "output": "P"},
         "brassica",
         group_mappings={"S": "[+cont]"},
@@ -367,7 +367,7 @@ def test_expand_grouping_letter_leaves_unmapped_non_native_letters():
 
 
 def test_rule_change_format_backward_compatible():
-    part = RuleChange({"input": "a", "output": "b"}, "asca")
+    part = SoundChangeRule({"input": "a", "output": "b"}, "asca")
     assert part._format("asca") == part.value
 
 
@@ -382,12 +382,12 @@ def test_sound_change_ruleset_includes_section_comment():
 
 
 def test_rule_change_format_alias_matches_compile():
-    part = RuleChange({"input": "a", "output": "e"}, "asca")
+    part = SoundChangeRule({"input": "a", "output": "e"}, "asca")
     assert part._format("asca") == part.value
 
 
 def test_rule_change_skips_group_mappings_for_brassica():
-    part = RuleChange(
+    part = SoundChangeRule(
         {"input": "S", "output": "P"},
         "brassica",
         group_mappings={"S": "[+cont]"},
@@ -396,14 +396,14 @@ def test_rule_change_skips_group_mappings_for_brassica():
 
 
 def test_rule_change_compiles_ejective_at_instantiation():
-    part = RuleChange({"input": "tʃ:[+long]ʼ", "output": "tʃ:[+long]"}, "asca")
+    part = SoundChangeRule({"input": "tʃ:[+long]ʼ", "output": "tʃ:[+long]"}, "asca")
     assert part.value == "tʃ:[+long,+cg] > tʃ:[+long]"
     assert "ʼ" not in part.value
     assert part.input == "tʃ:[+long]ʼ"
 
 
 def test_rule_change_compiles_typographic_apostrophe_ejective():
-    part = RuleChange(
+    part = SoundChangeRule(
         {"input": "{O:[+delrel],O\u2019}", "output": "F", "env": "_$"}, "asca"
     )
     assert part.value == "{O:[+delrel],O:[+cg]} > F / _$"
@@ -411,14 +411,14 @@ def test_rule_change_compiles_typographic_apostrophe_ejective():
 
 
 def test_rule_change_compiles_length_at_instantiation():
-    part = RuleChange({"input": "a(ː)", "output": "e(ː)"}, "asca")
+    part = SoundChangeRule({"input": "a(ː)", "output": "e(ː)"}, "asca")
     assert part.value == "a:[+long] > e:[+long]"
     assert "ː" not in part.value
     assert part.input == "a(ː)"
 
 
 def test_rule_change_compiles_optional_grouping_ellipsis_at_instantiation():
-    part = RuleChange(
+    part = SoundChangeRule(
         {"input": "o", "output": "u", "env": "_(C…)i"},
         "asca",
     )
@@ -428,13 +428,13 @@ def test_rule_change_compiles_optional_grouping_ellipsis_at_instantiation():
 
 
 def test_rule_change_compiles_chain_arrows_in_output():
-    part = RuleChange({"input": "dʒ", "output": "tʃ > ʃ"}, "asca")
+    part = SoundChangeRule({"input": "dʒ", "output": "tʃ > ʃ"}, "asca")
     assert part.value == "dʒ > tʃ > ʃ"
     assert "→" not in part.value
 
 
 def test_rule_change_skips_length_for_brassica():
-    part = RuleChange({"input": "aː", "output": "eː"}, "brassica")
+    part = SoundChangeRule({"input": "aː", "output": "eː"}, "brassica")
     assert part.value == "aː / eː"
 
 

@@ -7,7 +7,7 @@ from conlanger.tools.compile.asca.tilde import (
     normalize_corpus_rule_tilde_fields,
 )
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.rules import RuleChange, DiachronicSeries
+from conlanger.tools.rules import SoundChangeRule, DiachronicSeries
 
 
 @pytest.mark.parametrize(
@@ -90,7 +90,7 @@ def test_sound_change_ruleset_expands_tilde_output_chain():
         "rules": [{"stages": ["{β,w}", "bj~vj~v"]}],
     }
     ruleset = DiachronicSeries(section, "asca")
-    rule_parts = [part for part in ruleset._parts if isinstance(part, RuleChange)]
+    rule_parts = [part for part in ruleset._parts if isinstance(part, SoundChangeRule)]
     assert len(rule_parts) == 3
     assert rule_parts[0].value == "{β,w} > bj"
     assert rule_parts[1].value == "bj > vj"

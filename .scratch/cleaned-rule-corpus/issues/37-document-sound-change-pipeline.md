@@ -10,7 +10,7 @@ Write the step-by-step documentation for the **new** sound-change rule pipeline 
 
 ## Context
 
-Grill session (2026-08-07): compile transform order must be clearly defined and justified before refactoring `DiachronicSeries` / `RuleChange` ([ticket 39](39-refactor-sound-change-ruleset.md)). Applier compile and parse are **separate** docs; transform order is recorded in docs only (no ADR).
+Grill session (2026-08-07): compile transform order must be clearly defined and justified before refactoring `DiachronicSeries` / `SoundChangeRule` ([ticket 39](39-refactor-sound-change-ruleset.md)). Applier compile and parse are **separate** docs; transform order is recorded in docs only (no ADR).
 
 ## Deliverables
 
@@ -29,7 +29,7 @@ Grill session (2026-08-07): compile transform order must be clearly defined and 
 ### 3. `docs/sound-change-applier.md`
 
 - **Applier compile only:** `PhonologicalRuleSet` → `DiachronicSeries` section assembly → per-rule ASCA transforms → `.rsca` string shape.
-- Single pipeline table for per-rule transforms. Implemented steps (current `RuleChange._compile_rule_text` order):
+- Single pipeline table for per-rule transforms. Implemented steps (current `SoundChangeRule._compile_rule_text` order):
   1. Join corpus fields
   2. `normalize_asca_optional_grouping_ellipsis`
   3. `apply_asca_group_mappings`

@@ -124,7 +124,7 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](./ad
 
 ## Correction pass
 
-**Goal:** Reduce failure clusters via **class-first** transforms — parser (parse-time) or compiler (`RuleChange`, compile-time) — without meaning-changing rewrites unless owner-approved.
+**Goal:** Reduce failure clusters via **class-first** transforms — parser (parse-time) or compiler (`SoundChangeRule`, compile-time) — without meaning-changing rewrites unless owner-approved.
 
 **Standing recipe** — [ticket 13](../.scratch/cleaned-rule-corpus/issues/13-correction-pass-template.md):
 
@@ -139,7 +139,7 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](./ad
 | Layer | Module | Examples (tickets 14–25) |
 | --- | --- | --- |
 | Parse-time | `IndexDiachronicaParser` / `parsers.py` | em dash [16](../.scratch/cleaned-rule-corpus/issues/16-correction-pass-em-dash.md), arrow [17](../.scratch/cleaned-rule-corpus/issues/17-correction-pass-arrow.md), chain split [18](../.scratch/cleaned-rule-corpus/issues/18-correction-pass-chain-split.md), sporadic [19](../.scratch/cleaned-rule-corpus/issues/19-correction-pass-sporadic-qualifier.md), glosses [21](../.scratch/cleaned-rule-corpus/issues/21-correction-pass-trailing-glosses.md), stress [22](../.scratch/cleaned-rule-corpus/issues/22-correction-pass-stress-conditions.md), smart quotes [24](../.scratch/cleaned-rule-corpus/issues/24-correction-pass-smart-quotes.md) |
-| Compile-time | `RuleChange` in `rules.py` | class letters [14](../.scratch/cleaned-rule-corpus/issues/14-correction-pass-unknown-grouping.md), length marks [15](../.scratch/cleaned-rule-corpus/issues/15-correction-pass-length-marker.md), [25](../.scratch/cleaned-rule-corpus/issues/25-correction-pass-bare-length-marker.md), ejectives [20](../.scratch/cleaned-rule-corpus/issues/20-correction-pass-ejective-marks.md), labialized letters [23](../.scratch/cleaned-rule-corpus/issues/23-correction-pass-labialized-class-letters.md) |
+| Compile-time | `SoundChangeRule` in `rules.py` | class letters [14](../.scratch/cleaned-rule-corpus/issues/14-correction-pass-unknown-grouping.md), length marks [15](../.scratch/cleaned-rule-corpus/issues/15-correction-pass-length-marker.md), [25](../.scratch/cleaned-rule-corpus/issues/25-correction-pass-bare-length-marker.md), ejectives [20](../.scratch/cleaned-rule-corpus/issues/20-correction-pass-ejective-marks.md), labialized letters [23](../.scratch/cleaned-rule-corpus/issues/23-correction-pass-labialized-class-letters.md) |
 
 **Policy highlights:**
 

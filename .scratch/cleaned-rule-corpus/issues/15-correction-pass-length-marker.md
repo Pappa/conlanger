@@ -12,7 +12,7 @@ Target cluster: `unknown_character` — error_token `ː` (1251 rules at baseline
   1. `segment(ː)` → `segment:[+long]`
   2. `Groupingː` → `Grouping:[+long]`
   3. `segmentː` → `segment:[+long]`
-- Wired in `RuleChange._compile_rule_text()` at **instantiation** (stored in ``value`` before ``__str__``), after group mappings, ASCA only.
+- Wired in `SoundChangeRule._compile_rule_text()` at **instantiation** (stored in ``value`` before ``__str__``), after group mappings, ASCA only.
 - Corpus dict fields (`input`, `output`, …) and `raw` unchanged.
 
 ## Answer (before/after)

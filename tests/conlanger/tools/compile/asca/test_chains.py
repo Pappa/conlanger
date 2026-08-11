@@ -1,7 +1,7 @@
 """Tests for compile-time chain expansion (ADR-0005 ticket 03)."""
 
 from conlanger.tools.compile.asca.chains import expand_chained_corpus_rule
-from conlanger.tools.rules import RuleChange, DiachronicSeries
+from conlanger.tools.rules import SoundChangeRule, DiachronicSeries
 
 
 def test_expand_chained_corpus_rule_splits_stages_chain():
@@ -82,7 +82,7 @@ def test_sound_change_ruleset_expands_chained_corpus_rule():
         "rules": [{"stages": ["dʒ", "tʃ", "ʃ"]}],
     }
     ruleset = DiachronicSeries(section, "asca")
-    rule_parts = [part for part in ruleset._parts if isinstance(part, RuleChange)]
+    rule_parts = [part for part in ruleset._parts if isinstance(part, SoundChangeRule)]
     assert len(rule_parts) == 2
     assert rule_parts[0].value == "dʒ > tʃ"
     assert rule_parts[1].value == "tʃ > ʃ"
@@ -95,7 +95,7 @@ def test_sound_change_ruleset_expands_chain_with_env():
         "rules": [{"stages": ["{θ,l}", "r", "l"], "env": "V_V"}],
     }
     ruleset = DiachronicSeries(section, "asca")
-    rule_parts = [part for part in ruleset._parts if isinstance(part, RuleChange)]
+    rule_parts = [part for part in ruleset._parts if isinstance(part, SoundChangeRule)]
     assert len(rule_parts) == 2
     assert rule_parts[0].value == "{θ,l} > r / V_V"
     assert rule_parts[1].value == "r > l / V_V"

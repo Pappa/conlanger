@@ -16,7 +16,7 @@ Index Diachronica places ejective `ʼ` **after** feature matrices and sets (`ts:
   1. `segment:[features]ʼ` → `segment:[features,+cg]`
   2. `{members}ʼ` → `{member:[+cg],…}` per set member
   3. bare `segmentʼ` → `segment:[+cg]` (voiced ejectives + normalize voiceless)
-- Wired in `RuleChange._compile_rule_text()` after length marks, ASCA only.
+- Wired in `SoundChangeRule._compile_rule_text()` after length marks, ASCA only.
 - Corpus dict fields and `raw` unchanged.
 
 ## Acceptance criteria

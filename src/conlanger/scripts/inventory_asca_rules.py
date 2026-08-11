@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "src"))
 
 from conlanger.tools.corpus_inventory import parse_unknown_token_error
-from conlanger.tools.rules import RuleChange
+from conlanger.tools.rules import SoundChangeRule
 
 DEFAULT_YAML = ROOT / "legacy/data/index_diachronica_ai.yml"
 DEFAULT_WORDS = ROOT / "data/generated/lexicon/asca/weirdness0.5.wsca"
@@ -72,7 +72,7 @@ def classify_error(error: str) -> str:
 
 
 def format_syntax(rule: dict) -> str:
-    return RuleChange(rule, format="asca").value
+    return SoundChangeRule(rule, format="asca").value
 
 
 def check_one(args: tuple) -> dict:

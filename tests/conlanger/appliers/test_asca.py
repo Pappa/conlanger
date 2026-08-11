@@ -78,7 +78,7 @@ def test_validate_asca_returns_true_when_subprocess_succeeds(
     ],
 )
 def test_validate_asca_rejects_inactive_rules(scr):
-    with pytest.raises(ASCAValidationError, match="no active RuleChange"):
+    with pytest.raises(ASCAValidationError, match="no active SoundChangeRule"):
         validate_asca(scr)
 
 

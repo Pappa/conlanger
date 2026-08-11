@@ -71,7 +71,7 @@ class RuleComment(RulePartBase):
             return value.replace("\n", "\n; ")
 
 
-class RuleChange(RulePartBase):
+class SoundChangeRule(RulePartBase):
     rule: dict[str, str]
     prefixes: ClassVar[dict[str, str]] = {
         "asca": "\t",
@@ -171,7 +171,7 @@ class DiachronicSeries:
                 normalized = normalize_corpus_rule_tilde_fields(rule)
                 for step in expand_chained_corpus_rule(normalized):
                     self._parts.append(
-                        RuleChange(step, format, group_mappings=mappings)
+                        SoundChangeRule(step, format, group_mappings=mappings)
                     )
 
     def __str__(self):

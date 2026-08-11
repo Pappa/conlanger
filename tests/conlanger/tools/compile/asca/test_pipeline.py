@@ -17,7 +17,7 @@ from conlanger.tools.compile.asca.pipeline import (
 from conlanger.tools.compile.asca.superscript_modifiers import (
     normalize_asca_superscript_modifiers,
 )
-from conlanger.tools.rules import RuleChange
+from conlanger.tools.rules import SoundChangeRule
 
 
 def test_asca_compile_pipeline_step_names_match_docs():
@@ -49,6 +49,6 @@ def test_compile_asca_rule_string_matches_legacy_manual_chain():
 
 
 def test_rule_change_uses_pipeline_for_asca():
-    part = RuleChange({"input": "Vː", "output": "V", "env": "#C_C"}, "asca")
+    part = SoundChangeRule({"input": "Vː", "output": "V", "env": "#C_C"}, "asca")
     expected = compile_asca_rule_string("Vː > V / #C_C", group_mappings={})
     assert part.value == expected

@@ -64,7 +64,7 @@ Brassica compilation remains a future parallel path behind the same corpus (ADR-
 35. As a maintainer, I want inventory metrics reproducible (rule counts, ok/fail percentages, top **failure classes**), so that progress toward a compilable corpus is trackable across iterations.
 36. As a maintainer, I want **series indices** and section-local prose abbreviations handled cluster-driven with hand-added mapping rows when warranted, so that hard cases are not blocked on a global prose-extraction spike.
 37. As a maintainer, I want **meta-notation** (`X0`, `Xn`, retroflex marks, repetition groups) deferred to validation clusters, so that the first delivery does not invent ASCA expansions without evidence.
-38. As a developer, I want `DiachronicSeries` / `RuleChange` to render ASCA rule strings from corpus rule dicts, so that the ASCA **applier compiler** has a stable string emission layer.
+38. As a developer, I want `DiachronicSeries` / `SoundChangeRule` to render ASCA rule strings from corpus rule dicts, so that the ASCA **applier compiler** has a stable string emission layer.
 39. As a developer, I want skipped corpus rules to render as ASCA comments, so that `validate_asca` ignores held-out rules without deleting section structure.
 40. As an operator, I want a script or entry point to regenerate the full cleaned YAML from HTML and emit the validation report in one invocation, so that the correction loop is automatable by agents.
 
@@ -93,9 +93,9 @@ Brassica compilation remains a future parallel path behind the same corpus (ADR-
 
 ### Compile and validation
 
-- One **sound-change section** → one **PhonologicalRuleSet** (`src/conlanger/tools/phonological_ruleset.py`): runtime container delegating to `DiachronicSeries` with compile-time transforms in `RuleChange`.
+- One **sound-change section** → one **PhonologicalRuleSet** (`src/conlanger/tools/phonological_ruleset.py`): runtime container delegating to `DiachronicSeries` with compile-time transforms in `SoundChangeRule`.
 - **Compile-time transforms** (correction passes): `group_mappings.csv` class-letter expansion; `normalize_asca_length_marks()`; `normalize_asca_ejective_marks()`; labialized class letters (`Kʷ`, `K(ʷ)`, …); typographic apostrophe → ejective mark. Corpus dict fields and `raw` unchanged.
-- **Applier compiler** path: corpus rule dict → `RuleChange` → `DiachronicSeries` string → `validate_asca`.
+- **Applier compiler** path: corpus rule dict → `SoundChangeRule` → `DiachronicSeries` string → `validate_asca`.
 - `validate_asca`: ASCA 0.10.2 via `asca run` on baseline probe wordlist (`tests/fixtures/asca_probe_words.wsca`); raises `ASCAValidationError` on failure; skips commented (held-out) rules. Tier 4 runtime failures may be under-detected when probes do not match rule shape — acceptable for clustering (~98% of failures are Tier 1–2 syntax). Rule-derived probe synthesis (ticket 10) — **wontfix**.
 - Validation runs per **corpus rule**, not whole-section-only gate.
 - Post-compile validation only — ingest does not reject non-ASCA-shaped corpus fields (ADR-0003).
@@ -110,7 +110,7 @@ Brassica compilation remains a future parallel path behind the same corpus (ADR-
 
 - Steady-state loop: parse HTML → per section/rule compile + `validate_asca` → regenerate YAML → update validation report → fixture samples for changed **rule status** → cluster **failure classes** → implement **class-first** parser/compiler fixes → repeat.
 - Entry point: `uv run regenerate_corpus`.
-- Class-first transforms live in `IndexDiachronicaParser` (parse-time) and `RuleChange` (compile-time). External one-off override file deferred.
+- Class-first transforms live in `IndexDiachronicaParser` (parse-time) and `SoundChangeRule` (compile-time). External one-off override file deferred.
 - Baseline inventory (cleaned schema + ASCA 0.10.2, after passes 14–25): **6422 / 9317 ok (68.9%)**; top failure classes: `syntax_other`, `unknown_character`, `expected_underscore`, `unknown_feature`. Provisional reference: 9721 rules, ~57% ok under ASCA 0.9.3 / `index_diachronica_ai.yml`.
 
 ### Package data
@@ -154,7 +154,7 @@ Rationale: lower seams (e.g. `extract_rule_parts` alone, or `validate_asca` alon
 
 - `IndexDiachronicaParser` (ingest)
 - `PhonologicalRuleSet` (compile)
-- `DiachronicSeries` / `RuleChange` (ASCA emission + compile transforms)
+- `DiachronicSeries` / `SoundChangeRule` (ASCA emission + compile transforms)
 - `validate_asca` (post-compile gate; baseline probe wordlist)
 - `corpus_inventory` / `regenerate_corpus` (orchestration: YAML + validation report from HTML path)
 
@@ -181,5 +181,5 @@ Rationale: lower seams (e.g. `extract_rule_parts` alone, or `validate_asca` alon
 - Class letter research: `.scratch/cleaned-rule-corpus/research/asca-class-letter-mappings.md`.
 - Inventory baseline: `.scratch/cleaned-rule-corpus/inventory/` (cleaned YAML + ASCA 0.10.2; **6422 / 9317 ok** after passes 14–25).
 - Resolved wayfinder tickets 01–13 and correction passes 14–25 are incorporated above; ticket 10 (probe synthesis) is **wontfix**; other fog items remain explicitly deferred.
-- `PhonologicalRuleSet` + compile-time transforms in `RuleChange` replace parser-time `str.maketrans` for class letters.
+- `PhonologicalRuleSet` + compile-time transforms in `SoundChangeRule` replace parser-time `str.maketrans` for class letters.
 - Re-inventory after major milestones: `uv run regenerate_corpus`.

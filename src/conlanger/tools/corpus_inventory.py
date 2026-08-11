@@ -13,7 +13,7 @@ import pandas as pd
 
 from conlanger.appliers.asca import ASCAValidationError, validate_asca
 from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
-from conlanger.tools.rules import RuleChange
+from conlanger.tools.rules import SoundChangeRule
 from conlanger.utils.parsing import ARROW
 
 ERROR_CLASS_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
@@ -399,7 +399,7 @@ def validate_corpus_rule(
             description=err,
         )
 
-    if not any(isinstance(part, RuleChange) for part in scr._parts):
+    if not any(isinstance(part, SoundChangeRule) for part in scr._parts):
         err = "format_error: no compile steps from stages"
         failure_class = "format_error"
         error_token, suggested = parse_unknown_token_error(err)

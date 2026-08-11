@@ -20,7 +20,7 @@ When and how should **correspondence-series indices** and **collective subscript
 
 ### Parse-time, not compile-time
 
-Expand at **HTML→YAML parse** (same seam as **Symbol** normalization), not inside `RuleChange` / compile transforms. Owner intent for ADR-0004 was interim literal tokens until the correction loop surfaced clusters — **not** permanent compile-time deferral.
+Expand at **HTML→YAML parse** (same seam as **Symbol** normalization), not inside `SoundChangeRule` / compile transforms. Owner intent for ADR-0004 was interim literal tokens until the correction loop surfaced clusters — **not** permanent compile-time deferral.
 
 ### Target representation
 

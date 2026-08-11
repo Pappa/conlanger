@@ -4,7 +4,7 @@ Spike for [ticket 38](../issues/38-spike-asca-compile-transform-order.md).
 **Scope:** ASCA compile path only — Brassica ordering is explicitly out of scope.  
 **ASCA version:** 0.10.2 (local `asca --version`; probes via `asca run` + `tests/fixtures/asca_probe_words.wsca`).
 
-Primary sources: [`src/conlanger/tools/rules.py`](../../../src/conlanger/tools/rules.py) (`RuleChange._compile_rule_text`), [positional-slots-and-identity-subscripts.md](./positional-slots-and-identity-subscripts.md), [subscript-notation-index-asca-brassica.md](./subscript-notation-index-asca-brassica.md), [ticket 06](../issues/06-resolve-applier-unsupported-abbreviations.md), [ASCA 0.10.2 References](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#references).
+Primary sources: [`src/conlanger/tools/rules.py`](../../../src/conlanger/tools/rules.py) (`SoundChangeRule._compile_rule_text`), [positional-slots-and-identity-subscripts.md](./positional-slots-and-identity-subscripts.md), [subscript-notation-index-asca-brassica.md](./subscript-notation-index-asca-brassica.md), [ticket 06](../issues/06-resolve-applier-unsupported-abbreviations.md), [ASCA 0.10.2 References](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#references).
 
 ---
 
@@ -34,7 +34,7 @@ Renumbered pipeline (integer `Order` column ready for [ticket 37](../issues/37-d
 
 ## 2. Implemented baseline (code order)
 
-From `RuleChange._compile_rule_text` ([`rules.py`](../../../src/conlanger/tools/rules.py) lines 361–376):
+From `SoundChangeRule._compile_rule_text` ([`rules.py`](../../../src/conlanger/tools/rules.py) lines 361–376):
 
 ```text
 join fields
