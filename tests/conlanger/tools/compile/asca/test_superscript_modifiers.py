@@ -3,11 +3,11 @@
 import pytest
 
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.asca_compile.group_mappings import (
+from conlanger.tools.compile.asca.group_mappings import (
     apply_asca_group_mappings_to_string,
     asca_group_mappings_dict,
 )
-from conlanger.tools.asca_compile.superscript_modifiers import (
+from conlanger.tools.compile.asca.superscript_modifiers import (
     normalize_asca_superscript_modifiers,
 )
 from conlanger.tools.rules import SoundChangeRuleSet

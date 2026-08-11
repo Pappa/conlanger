@@ -4,7 +4,7 @@ from unittest.mock import patch
 
 import pytest
 
-from conlanger.tools.asca_compile.group_mappings import (
+from conlanger.tools.compile.asca.group_mappings import (
     apply_asca_group_mappings_to_string,
     asca_group_mappings_dict,
 )

@@ -2,22 +2,22 @@
 
 from __future__ import annotations
 
-from conlanger.tools.asca_compile.aliases import apply_asca_aliases
-from conlanger.tools.asca_compile.apostrophes import normalize_typographic_apostrophes
-from conlanger.tools.asca_compile.ejectives import normalize_asca_ejective_marks
-from conlanger.tools.asca_compile.ellipsis import (
+from conlanger.tools.compile.asca.aliases import apply_asca_aliases
+from conlanger.tools.compile.asca.apostrophes import normalize_typographic_apostrophes
+from conlanger.tools.compile.asca.ejectives import normalize_asca_ejective_marks
+from conlanger.tools.compile.asca.ellipsis import (
     normalize_asca_optional_grouping_ellipsis,
 )
-from conlanger.tools.asca_compile.group_mappings import (
+from conlanger.tools.compile.asca.group_mappings import (
     apply_asca_group_mappings_to_string,
 )
-from conlanger.tools.asca_compile.length_marks import normalize_asca_length_marks
-from conlanger.tools.asca_compile.planned import (
+from conlanger.tools.compile.asca.length_marks import normalize_asca_length_marks
+from conlanger.tools.compile.asca.planned import (
     apply_section_local_abbreviations,
     expand_index_subscript_references,
     expand_meta_notation,
 )
-from conlanger.tools.asca_compile.superscript_modifiers import (
+from conlanger.tools.compile.asca.superscript_modifiers import (
     normalize_asca_superscript_modifiers,
 )
 

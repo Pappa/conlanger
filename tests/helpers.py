@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from conlanger.tools.parsers import IndexDiachronicaParser
+from conlanger.tools.ingest import IndexDiachronicaParser
 from conlanger.utils.file_io import load_default_ingest_tables
 
 _CACHED_INGEST_TABLES = None

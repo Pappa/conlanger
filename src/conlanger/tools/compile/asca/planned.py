@@ -1,15 +1,15 @@
 """Planned ASCA compile transforms (spike 38 orders 4, 10)."""
 
-from conlanger.tools.asca_compile.input_optionals import (
+from conlanger.tools.compile.asca.input_optionals import (
     expand_input_optionals_to_structures,
 )
-from conlanger.tools.asca_compile.parenthetical import (
+from conlanger.tools.compile.asca.parenthetical import (
     expand_index_parenthetical_notation,
 )
-from conlanger.tools.asca_compile.subscript_references import (
+from conlanger.tools.compile.asca.subscript_references import (
     expand_index_subscript_references,
 )
-from conlanger.tools.asca_compile.tilde import expand_index_tilde_notation
+from conlanger.tools.compile.asca.tilde import expand_index_tilde_notation
 
 __all__ = [
     "apply_section_local_abbreviations",

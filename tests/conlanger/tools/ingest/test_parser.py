@@ -6,27 +6,33 @@ import pytest
 from lxml import html
 
 from conlanger.appliers.asca import ASCAValidationError, validate_asca
-from conlanger.tools.asca_compile.group_mappings import asca_group_mappings_dict
-from conlanger.tools.parsers import (
-    MEDIAL_BOUNDARY_EXCEPTION,
+from conlanger.tools.compile.asca.group_mappings import asca_group_mappings_dict
+from conlanger.tools.ingest import (
     IndexDiachronicaParser,
+    write_rule_comment_phrase_summary,
+)
+from conlanger.tools.ingest.parser import parse_rule_element
+from conlanger.tools.ingest.section_policy import (
+    is_catch_all_else_env,
+    resolve_catch_all_else_rules,
+)
+from conlanger.tools.ingest.transforms import (
+    MEDIAL_BOUNDARY_EXCEPTION,
     apply_medial_env_conditions,
     apply_semicolon_field_comments,
     apply_sporadic_qualifier,
     apply_stress_conditions,
     apply_trailing_glosses,
-    is_catch_all_else_env,
     join_rule_comment,
     normalize_medial_env_field,
     normalize_stress_conditions,
-    normalize_stress_marks,
-    normalize_symbols,
-    parse_rule_element,
-    resolve_catch_all_else_rules,
     split_field_semicolon_comment,
-    strip_uncertainty_qualifier_from_field,
-    write_rule_comment_phrase_summary,
 )
+from conlanger.utils.gloss import (
+    extract_uncertainty_qualifier_from_field,
+    strip_uncertainty_qualifier_from_field,
+)
+from conlanger.utils.symbols import normalize_stress_marks, normalize_symbols
 from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
 from conlanger.tools.rules import SoundChangeRuleSet
 from conlanger.utils.file_io import (
@@ -81,7 +87,7 @@ def _parse_rule_element(el, *, source_file: str, section_index: str = ""):
 
 
 _SAMPLED_RULES_CSV = (
-    Path(__file__).resolve().parents[2] / "fixtures" / "sound_change_rules.csv"
+    Path(__file__).resolve().parents[3] / "fixtures" / "sound_change_rules.csv"
 )
 
 _INDEX_DIACHRONICA_HTML = """\
@@ -369,8 +375,6 @@ def test_strip_uncertainty_qualifier_from_field(text, expected):
 def test_extract_uncertainty_qualifier_from_field(
     text, expected_value, expected_captures
 ):
-    from conlanger.tools.parsers import extract_uncertainty_qualifier_from_field
-
     value, captures = extract_uncertainty_qualifier_from_field(text)
     assert value == expected_value
     assert captures == expected_captures
@@ -670,7 +674,9 @@ def test_parse_rule_element_medial_validate_asca():
     rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     section = {"index": "6.2.1.1.2", "section": "Proto-Agaw to Blin", "rules": rules}
     validate_asca(
-        PhonologicalRuleSet(section).to_sound_change_ruleset(group_mappings=asca_group_mappings_dict()),
+        PhonologicalRuleSet(section).to_sound_change_ruleset(
+            group_mappings=asca_group_mappings_dict()
+        ),
         probe_words=probe,
     )
 
@@ -690,7 +696,11 @@ def test_parse_rule_element_medial_deferred_env_exception_still_fails():
         "rules": rules,
     }
     with pytest.raises(ASCAValidationError, match="Expected '_', but received ','"):
-        validate_asca(PhonologicalRuleSet(section).to_sound_change_ruleset(group_mappings=asca_group_mappings_dict()))
+        validate_asca(
+            PhonologicalRuleSet(section).to_sound_change_ruleset(
+                group_mappings=asca_group_mappings_dict()
+            )
+        )
 
 
 def test_is_catch_all_else_env():
@@ -841,7 +851,9 @@ def test_parse_rule_element_stress_conditions_validate_asca():
             "rules": rules,
         }
         validate_asca(
-            PhonologicalRuleSet(section).to_sound_change_ruleset(group_mappings=asca_group_mappings_dict()),
+            PhonologicalRuleSet(section).to_sound_change_ruleset(
+                group_mappings=asca_group_mappings_dict()
+            ),
             probe_words=probe,
         )
 
@@ -1260,7 +1272,9 @@ def test_kenyah_vowel_height_rules_validate():
         "section": "Proto-Kenyah to Òma Lóngh",
         "rules": rules,
     }
-    validate_asca(SoundChangeRuleSet(section, "asca", group_mappings=asca_group_mappings_dict()))
+    validate_asca(
+        SoundChangeRuleSet(section, "asca", group_mappings=asca_group_mappings_dict())
+    )
 
 
 def test_normalize_feature_matrices_in_field_leaves_raw_tokens_outside_brackets():
@@ -1444,7 +1458,9 @@ def test_parse_rule_element_voiced_matrix_validates_asca():
     rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     section = {"index": "17.12", "section": "Voicing", "rules": rules}
     validate_asca(
-        PhonologicalRuleSet(section).to_sound_change_ruleset(group_mappings=asca_group_mappings_dict()),
+        PhonologicalRuleSet(section).to_sound_change_ruleset(
+            group_mappings=asca_group_mappings_dict()
+        ),
         probe_words=Path("tests/fixtures/asca_probe_words.wsca"),
     )
 

@@ -238,3 +238,65 @@ def is_gloss_only_rule(parts: dict[str, Any]) -> bool:
     return len(non_empty_stages(parts.get("stages", []))) < 2 and bool(
         parts.get("comment")
     )
+
+
+_UNCERTAINTY_WORDS = r"sporadic(?:ally)?|sometimes|occasionally"
+_UNCERTAINTY_WORD_RE = re.compile(rf"\b(?:{_UNCERTAINTY_WORDS})\b", re.IGNORECASE)
+_LONE_UNCERTAINTY_RE = re.compile(rf"^(?:{_UNCERTAINTY_WORDS})\??\.?$", re.IGNORECASE)
+_ENV_UNCERTAINTY_PREFIX_RE = re.compile(
+    r"^sporadic(?:ally)?(?:,\s*usually)?\s*,?\s*",
+    re.IGNORECASE,
+)
+_TRAILING_PAREN_WITH_UNCERTAINTY_RE = re.compile(
+    rf"\s*\([^)]*(?:{_UNCERTAINTY_WORDS})[^)]*\)\s*$",
+    re.IGNORECASE,
+)
+_TRAILING_QUOTED_WITH_UNCERTAINTY_RE = re.compile(
+    rf'\s*(?:[("\u201c][^"\u201d)]*(?:{_UNCERTAINTY_WORDS})[^"\u201d)]*[)\u201d"]|"[^"]*(?:{_UNCERTAINTY_WORDS})[^"]*")\s*$',
+    re.IGNORECASE,
+)
+_TRAILING_BARE_UNCERTAINTY_RE = re.compile(
+    rf"(?:,\s*|\s*(?:\()?)[\s\u201c\"']*(?:{_UNCERTAINTY_WORDS})\??[\s\u201d\"')]*\)?\s*$",
+    re.IGNORECASE,
+)
+
+
+def field_has_uncertainty_qualifier(text: str) -> bool:
+    """Return whether ``text`` mentions sporadic / sometimes / occasionally uncertainty."""
+    return bool(text and _UNCERTAINTY_WORD_RE.search(text))
+
+
+def extract_uncertainty_qualifier_from_field(text: str) -> tuple[str, list[str]]:
+    """Remove sporadic / sometimes / occasionally glosses; return captured prose."""
+    captures: list[str] = []
+    if not text:
+        return text, captures
+    text = text.strip()
+    if _LONE_UNCERTAINTY_RE.match(text):
+        return "", [text]
+    prefix = _ENV_UNCERTAINTY_PREFIX_RE.match(text)
+    if prefix:
+        captures.append(prefix.group(0).strip())
+        text = text[prefix.end() :].strip()
+    if field_has_uncertainty_qualifier(text):
+        match = _TRAILING_PAREN_WITH_UNCERTAINTY_RE.search(text)
+        if match:
+            captures.append(match.group(0).strip())
+            text = _TRAILING_PAREN_WITH_UNCERTAINTY_RE.sub("", text).strip()
+    if field_has_uncertainty_qualifier(text):
+        match = _TRAILING_QUOTED_WITH_UNCERTAINTY_RE.search(text)
+        if match:
+            captures.append(match.group(0).strip())
+            text = _TRAILING_QUOTED_WITH_UNCERTAINTY_RE.sub("", text).strip()
+    if field_has_uncertainty_qualifier(text):
+        match = _TRAILING_BARE_UNCERTAINTY_RE.search(text)
+        if match:
+            captures.append(match.group(0).strip())
+            text = _TRAILING_BARE_UNCERTAINTY_RE.sub("", text).strip()
+    return text.strip(), captures
+
+
+def strip_uncertainty_qualifier_from_field(text: str) -> str:
+    """Remove sporadic / sometimes / occasionally glosses from one rule field value."""
+    cleaned, _ = extract_uncertainty_qualifier_from_field(text)
+    return cleaned

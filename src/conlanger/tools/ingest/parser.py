@@ -1,0 +1,274 @@
+"""Parse Index Diachronica HTML into the cleaned rule-corpus shape (incremental).
+
+Phase 1: section structure + per-rule ``stages`` split on every ``→`` in the change
+spine (whitespace around arrows is trimmed).
+Phase 2: optional ``/ env`` then optional ``! exception``
+(usual form ``input → output /env ! exception``). Word ``except`` and a
+second `` / `` are edge-case fallbacks.
+Phase 3: first ``<p>`` after ``<h2>`` → section ``citation`` (whole text, cleanup later);
+other non-``schg`` paragraphs → ``comments``.
+Phase 4: **Manual mapping** substring rewrites from ``manual_mappings.csv`` run first on a
+working copy (``raw`` keeps the HTML surface). Then **Symbol** normalization on corpus
+fields only (``#``, ``$``, ``%``, ``∅``, Index stress ``”`` → ``:[+stress]``; ``raw``
+unchanged). Leading em dash list-item markers (``— ``) are stripped from the rule line
+before field split. Remaining Index rule arrows (``→``) in field values become ASCA ``>``.
+Chained rules store each spine segment in ``stages``; compile-time expansion is deferred.
+Uncertainty glosses
+(``sporadic``, ``sometimes``, ``occasionally``, …) are stripped from field values
+and recorded as ``sporadic: true``. **Feature matrix** synonym replacement inside ``[...]`` via
+``feature_mappings.csv`` (``raw`` unchanged). **IPA character** substitution via
+``ipa_mapping.csv`` (``raw`` unchanged). **Correspondence-series** and
+**collective subscript** expansion via ``series_mappings.csv`` (``raw`` unchanged).
+Inline prose stripped for ASCA is captured in optional ``comment`` on each corpus
+rule: semicolon tails in ``env`` / ``exception`` first (``apply_semicolon_field_comments``), then
+field-level glosses and env qualifiers. Index word-internal ``medial`` / ``medially`` env
+prose becomes ``env: _`` with boundary ``exception: :{#_, _#}:`` (``apply_medial_env_conditions``).
+Class-letter expansion is deferred to compile time (``PhonologicalRuleSet`` +
+``group_mappings.csv``).
+"""
+
+from __future__ import annotations
+
+from pathlib import Path
+from typing import Any
+
+from lxml import html
+
+from conlanger.tools.ingest.section_policy import resolve_catch_all_else_rules
+from conlanger.tools.ingest.transforms import (
+    apply_medial_env_conditions,
+    apply_semicolon_field_comments,
+    apply_sporadic_qualifier,
+    apply_stress_conditions,
+    apply_trailing_glosses,
+)
+from conlanger.utils.gloss import (
+    is_gloss_only_rule,
+    is_quoted_prose_paragraph,
+)
+from conlanger.utils.mappings import (
+    FeatureMapping,
+    ManualMapping,
+    ManualMappingMatch,
+    ParserConfig,
+    apply_feature_mappings,
+    apply_ipa_mappings,
+    apply_manual_mappings,
+)
+from conlanger.utils.parsing import (
+    extract_rule_parts,
+    extract_text_with_subs,
+    finalize_stages_shape,
+    parse_section_heading,
+    strip_whitespace,
+)
+from conlanger.utils.series import (
+    SeriesMapping,
+    apply_series_mappings,
+    section_abbreviations_for_index,
+)
+from conlanger.utils.symbols import normalize_symbols
+
+
+def note_from_element(el, *, source_file: str) -> dict[str, Any]:
+    raw = extract_text_with_subs(el)
+    line = getattr(el, "sourceline", None) or 0
+    return {
+        "raw": raw,
+        "source": f"{source_file}:{line}",
+    }
+
+
+class IndexDiachronicaParser:
+    """Parse Index Diachronica HTML into applier-neutral cleaned-corpus YAML."""
+
+    def __init__(
+        self,
+        *,
+        series_mappings: list[SeriesMapping],
+        manual_mappings: list[ManualMapping],
+        parser_config: ParserConfig,
+        feature_mappings: dict[str, FeatureMapping],
+        ipa_mappings: dict[str, str],
+    ) -> None:
+        self._series_mappings = series_mappings
+        self._manual_mappings = manual_mappings
+        self._parser_config = parser_config
+        self._feature_mappings = feature_mappings
+        self._ipa_mappings = ipa_mappings
+        self.manual_mapping_matches: list[ManualMappingMatch] = []
+        self._matched_manual_froms: set[str] = set()
+
+    def abbreviations(self) -> dict[str, str]:
+        """Global abbreviation table for the cleaned corpus (empty at ingest)."""
+        return {}
+
+    def unmatched_manual_mappings(self) -> list[ManualMapping]:
+        """Return loaded mappings whose ``from`` never matched during this parse."""
+        return [
+            row
+            for row in self._manual_mappings
+            if row.from_text not in self._matched_manual_froms
+        ]
+
+    def parse_rule_element(
+        self,
+        el,
+        *,
+        source_file: str,
+        section_index: str = "",
+        section_name: str = "",
+        rule_idx: int = 0,
+    ) -> list[dict[str, Any]]:
+        raw = extract_text_with_subs(el)
+        line = getattr(el, "sourceline", None) or 0
+        source = f"{source_file}:{line}"
+        working, hits = apply_manual_mappings(raw, self._manual_mappings)
+        for hit in hits:
+            self._matched_manual_froms.add(hit.from_text)
+            self.manual_mapping_matches.append(
+                ManualMappingMatch(
+                    section_index=section_index,
+                    section_name=section_name,
+                    rule_idx=rule_idx,
+                    source=source,
+                    manual_mapping=hit.to_text,
+                )
+            )
+        if is_quoted_prose_paragraph(working):
+            return [
+                {
+                    "stages": [],
+                    "raw": raw,
+                    "source": source,
+                    "comment": raw.strip(),
+                    "status": "skipped",
+                }
+            ]
+        normalized = normalize_symbols(working)
+        parts = extract_rule_parts(normalized)
+        if parts is None:
+            return [
+                {
+                    "stages": [],
+                    "raw": raw,
+                    "source": source,
+                    "status": "skipped",
+                }
+            ]
+        parts = apply_semicolon_field_comments(parts)
+        parts = apply_sporadic_qualifier(parts)
+        sporadic = parts.pop("sporadic", False)
+        sporadic_flag = {"sporadic": True} if sporadic else {}
+        parts = apply_trailing_glosses(parts)
+        if is_gloss_only_rule(parts):
+            return [
+                {
+                    "stages": [],
+                    "raw": raw,
+                    "source": source,
+                    "comment": parts["comment"],
+                    "status": "skipped",
+                    **sporadic_flag,
+                }
+            ]
+        parts = apply_stress_conditions(parts)
+        parts = apply_medial_env_conditions(parts)
+        parts = apply_feature_mappings(parts, self._feature_mappings)
+        parts = apply_ipa_mappings(parts, self._ipa_mappings)
+        parts = apply_series_mappings(parts, section_index, self._series_mappings)
+        parts = finalize_stages_shape(parts)
+        return [{**parts, "raw": raw, "source": source, **sporadic_flag}]
+
+    def parse(
+        self,
+        html_path: Path,
+        *,
+        source_file: str | None = None,
+    ) -> dict[str, Any]:
+        """Parse HTML into ``{abbreviations, sections: [...]}``."""
+        source_file = source_file or html_path.name
+        self.manual_mapping_matches = []
+        self._matched_manual_froms = set()
+        parser = html.HTMLParser(encoding="utf-8")
+        doc = html.parse(str(html_path), parser=parser)
+        root = doc.getroot()
+        sections_out: list[dict[str, Any]] = []
+
+        for sec in root.xpath("//section[@id]"):
+            h2s = sec.xpath("./h2")
+            if not h2s:
+                continue
+            h2_text = strip_whitespace("".join(h2s[0].itertext()))
+            index, name = parse_section_heading(h2_text)
+            if not name:
+                continue
+
+            rules: list[dict[str, Any]] = []
+            citation: str | None = None
+            comments: list[dict[str, Any]] = []
+            saw_first_p = False
+
+            for p in sec.xpath("./p"):
+                cls = p.get("class") or ""
+                if "schg" in cls:
+                    saw_first_p = True
+                    rules.extend(
+                        self.parse_rule_element(
+                            p,
+                            source_file=source_file,
+                            section_index=index or "",
+                            section_name=name,
+                            rule_idx=len(rules),
+                        )
+                    )
+                    continue
+
+                note = note_from_element(p, source_file=source_file)
+                if not note["raw"]:
+                    continue
+
+                if not saw_first_p:
+                    citation = note["raw"]
+                    saw_first_p = True
+                else:
+                    comments.append(note)
+
+            section_obj: dict[str, Any] = {
+                "section": name,
+                "index": index,
+            }
+            section_abbrevs: dict[str, str] = {}
+            if index:
+                section_abbrevs = section_abbreviations_for_index(
+                    index, self._series_mappings
+                )
+            if section_abbrevs:
+                section_obj["abbreviations"] = section_abbrevs
+            if citation is not None:
+                section_obj["citation"] = citation
+            if comments:
+                section_obj["comments"] = comments
+            if rules:
+                section_obj["rules"] = resolve_catch_all_else_rules(rules)
+            sections_out.append(section_obj)
+
+        return {
+            "abbreviations": self.abbreviations(),
+            "sections": sections_out,
+        }
+
+
+def parse_rule_element(
+    el,
+    *,
+    source_file: str,
+    section_index: str = "",
+    parser: IndexDiachronicaParser,
+) -> list[dict[str, Any]]:
+    """Delegate to an injected parser instance (callers must supply tables)."""
+    return parser.parse_rule_element(
+        el,
+        source_file=source_file,
+        section_index=section_index,
+    )

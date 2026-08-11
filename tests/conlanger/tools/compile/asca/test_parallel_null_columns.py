@@ -2,7 +2,7 @@
 
 import pytest
 
-from conlanger.tools.asca_compile.parallel_null_columns import (
+from conlanger.tools.compile.asca.parallel_null_columns import (
     drop_mixed_parallel_null_columns,
 )
 from conlanger.tools.rules import RuleChange, SoundChangeRuleSet
@@ -24,9 +24,12 @@ from conlanger.tools.rules import RuleChange, SoundChangeRuleSet
 def test_drop_mixed_parallel_null_columns_side(side, expected):
     if " > " in side:
         inp, out = side.split(" > ", 1)
-        assert drop_mixed_parallel_null_columns(inp) + " > " + drop_mixed_parallel_null_columns(
-            out
-        ) == expected
+        assert (
+            drop_mixed_parallel_null_columns(inp)
+            + " > "
+            + drop_mixed_parallel_null_columns(out)
+            == expected
+        )
     else:
         assert drop_mixed_parallel_null_columns(side) == expected
 

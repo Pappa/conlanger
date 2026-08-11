@@ -1,6 +1,6 @@
 """Tests for compile-time chain expansion (ADR-0005 ticket 03)."""
 
-from conlanger.tools.asca_compile.chains import expand_chained_corpus_rule
+from conlanger.tools.compile.asca.chains import expand_chained_corpus_rule
 from conlanger.tools.rules import RuleChange, SoundChangeRuleSet
 
 
@@ -13,7 +13,9 @@ def test_expand_chained_corpus_rule_splits_stages_chain():
 
 def test_expand_chained_corpus_rule_keeps_single_step():
     rule = {"stages": ["a", "e"], "env": "_#"}
-    assert expand_chained_corpus_rule(rule) == [{"input": "a", "output": "e", "env": "_#"}]
+    assert expand_chained_corpus_rule(rule) == [
+        {"input": "a", "output": "e", "env": "_#"}
+    ]
 
 
 def test_expand_chained_corpus_rule_empty_stages_emits_nothing():

@@ -13,7 +13,7 @@ import pytest
 
 from conlanger.appliers.asca import validate_asca
 from conlanger.tools.corpus_inventory import iter_validation_rows, validate_corpus_rule
-from conlanger.tools.asca_compile.group_mappings import asca_group_mappings_dict
+from conlanger.tools.compile.asca.group_mappings import asca_group_mappings_dict
 from helpers import default_index_parser
 from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
 from tests.conftest import ASCA_INSTALLED

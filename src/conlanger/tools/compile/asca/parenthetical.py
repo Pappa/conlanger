@@ -19,7 +19,7 @@ from __future__ import annotations
 
 import re
 
-from conlanger.tools.asca_compile._patterns import IPA_SEGMENT
+from conlanger.tools.compile.asca._patterns import IPA_SEGMENT
 from conlanger.utils.gloss import paren_inner_is_gloss
 
 _SET_RE = re.compile(r"\{([^{}]*)\}")

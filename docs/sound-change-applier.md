@@ -4,7 +4,7 @@ Applier compile turns one **sound-change section** (corpus dict) into a concrete
 
 Corpus YAML fields and `raw` are **never modified** — transforms apply only to the emitted applier string.
 
-**Primary code:** [`asca_compile/pipeline.py`](../src/conlanger/tools/asca_compile/pipeline.py) (`compile_asca_rule_string`, `ASCA_COMPILE_STEP_NAMES`), [`rules.py`](../src/conlanger/tools/rules.py) (`SoundChangeRuleSet`, `RuleChange`), [`phonological_ruleset.py`](../src/conlanger/tools/phonological_ruleset.py), [`asca_validator.py`](../src/conlanger/tools/asca_validator.py).
+**Primary code:** [`compile/asca/pipeline.py`](../src/conlanger/tools/compile/asca/pipeline.py) (`compile_asca_rule_string`, `ASCA_COMPILE_STEP_NAMES`), [`rules.py`](../src/conlanger/tools/rules.py) (`SoundChangeRuleSet`, `RuleChange`), [`phonological_ruleset.py`](../src/conlanger/tools/phonological_ruleset.py), [`appliers/asca.py`](../src/conlanger/appliers/asca.py) (`validate_asca`).
 
 **Related:** [ADR-0002](./adr/0002-applier-neutral-yaml-rule-corpus.md) (applier-neutral corpus), [ADR-0003](./adr/0003-validate-after-applier-compile.md) (validate after compile).
 
@@ -49,7 +49,7 @@ Parse-time transforms are documented in [index-diachronica-parser.md](./index-di
 
 ## Per-rule ASCA compile pipeline
 
-Exact order in `compile_asca_rule_string` ([`asca_compile/pipeline.py`](../src/conlanger/tools/asca_compile/pipeline.py)), invoked from `RuleChange._compile_rule_text`:
+Exact order in `compile_asca_rule_string` ([`compile/asca/pipeline.py`](../src/conlanger/tools/compile/asca/pipeline.py)), invoked from `RuleChange._compile_rule_text`:
 
 | Step | Status | Order | Rationale | What breaks if reordered |
 | --- | --- | ---: | --- | --- |
@@ -82,7 +82,7 @@ Compile validation is stage 4 of the sound-change pipeline. It runs **after** ap
 
 ### `validate_asca`
 
-Module: [`asca_validator.py`](../src/conlanger/tools/asca_validator.py)
+Module: [`appliers/asca.py`](../src/conlanger/appliers/asca.py)
 
 ```python
 validate_asca(

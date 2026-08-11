@@ -22,7 +22,7 @@ from __future__ import annotations
 
 import re
 
-from conlanger.tools.asca_compile.group_mappings import (
+from conlanger.tools.compile.asca.group_mappings import (
     expand_grouping_letter,
 )
 from conlanger.utils.features import (

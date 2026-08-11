@@ -3,17 +3,17 @@ from pathlib import Path
 
 import pytest
 
-from conlanger.tools.asca_compile.apostrophes import normalize_typographic_apostrophes
-from conlanger.tools.asca_compile.ejectives import normalize_asca_ejective_marks
-from conlanger.tools.asca_compile.ellipsis import (
+from conlanger.tools.compile.asca.apostrophes import normalize_typographic_apostrophes
+from conlanger.tools.compile.asca.ejectives import normalize_asca_ejective_marks
+from conlanger.tools.compile.asca.ellipsis import (
     normalize_asca_optional_grouping_ellipsis,
 )
-from conlanger.tools.asca_compile.group_mappings import (
+from conlanger.tools.compile.asca.group_mappings import (
     apply_asca_group_mappings_to_string,
     asca_group_mappings_dict,
     expand_grouping_letter,
 )
-from conlanger.tools.asca_compile.length_marks import normalize_asca_length_marks
+from conlanger.tools.compile.asca.length_marks import normalize_asca_length_marks
 from conlanger.tools.rules import (
     DebugRules,
     RuleChange,

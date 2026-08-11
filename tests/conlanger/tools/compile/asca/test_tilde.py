@@ -2,7 +2,7 @@
 
 import pytest
 
-from conlanger.tools.asca_compile.tilde import (
+from conlanger.tools.compile.asca.tilde import (
     expand_index_tilde_notation,
     normalize_corpus_rule_tilde_fields,
 )
@@ -37,7 +37,7 @@ def test_expand_index_tilde_notation_leaves_bracket_matrices_untouched():
 
 
 def test_is_multigraph_output_chain():
-    from conlanger.tools.asca_compile.tilde import _is_multigraph_output_chain
+    from conlanger.tools.compile.asca.tilde import _is_multigraph_output_chain
 
     assert _is_multigraph_output_chain(["bj", "vj", "v"])
     assert not _is_multigraph_output_chain(["d", "n", "l"])
@@ -45,19 +45,19 @@ def test_is_multigraph_output_chain():
 
 
 def test_expand_output_tilde_field_without_tilde():
-    from conlanger.tools.asca_compile.tilde import _expand_output_tilde_field
+    from conlanger.tools.compile.asca.tilde import _expand_output_tilde_field
 
     assert _expand_output_tilde_field("abc") == "abc"
 
 
 def test_split_set_members_nested_parens():
-    from conlanger.tools.asca_compile.tilde import _split_set_members
+    from conlanger.tools.compile.asca.tilde import _split_set_members
 
     assert _split_set_members("a,(b,c),d") == ["a", "(b,c)", "d"]
 
 
 def test_expand_tilde_in_token_single_part():
-    from conlanger.tools.asca_compile.tilde import _expand_tilde_in_token
+    from conlanger.tools.compile.asca.tilde import _expand_tilde_in_token
 
     assert _expand_tilde_in_token("abc") == "abc"
 

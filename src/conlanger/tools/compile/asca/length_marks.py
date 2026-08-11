@@ -2,7 +2,7 @@
 
 import re
 
-from conlanger.tools.asca_compile._patterns import IPA_SEGMENT
+from conlanger.tools.compile.asca._patterns import IPA_SEGMENT
 
 _LENGTH = "\u02d0"
 _IPA_SEGMENT = IPA_SEGMENT

@@ -19,7 +19,7 @@ logger.setLevel(logging.INFO)
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "src"))
 
-from conlanger.tools.asca_compile.group_mappings import asca_group_mappings_dict
+from conlanger.tools.compile.asca.group_mappings import asca_group_mappings_dict
 from conlanger.tools.corpus_inventory import (
     INVENTORY_CHANGELOG_CSV_NAME,
     INVENTORY_CSV_NAME,
@@ -35,7 +35,7 @@ from conlanger.tools.corpus_inventory import (
     write_validation_csv,
 )
 from conlanger.tools.corpus_io import write_cleaned_corpus
-from conlanger.tools.parsers import (
+from conlanger.tools.ingest import (
     IndexDiachronicaParser,
     write_rule_comment_phrase_summary,
 )

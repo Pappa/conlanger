@@ -1,15 +1,15 @@
 from typing import ClassVar
 
-from conlanger.tools.asca_compile.aliases import apply_asca_aliases
-from conlanger.tools.asca_compile.chains import expand_chained_corpus_rule
-from conlanger.tools.asca_compile.group_mappings import (
+from conlanger.tools.compile.asca.aliases import apply_asca_aliases
+from conlanger.tools.compile.asca.chains import expand_chained_corpus_rule
+from conlanger.tools.compile.asca.group_mappings import (
     apply_asca_group_mappings_to_string,
 )
-from conlanger.tools.asca_compile.parallel_null_columns import (
+from conlanger.tools.compile.asca.parallel_null_columns import (
     drop_mixed_parallel_null_columns,
 )
-from conlanger.tools.asca_compile.pipeline import compile_asca_rule_string
-from conlanger.tools.asca_compile.tilde import normalize_corpus_rule_tilde_fields
+from conlanger.tools.compile.asca.pipeline import compile_asca_rule_string
+from conlanger.tools.compile.asca.tilde import normalize_corpus_rule_tilde_fields
 
 
 class RulePartBase:

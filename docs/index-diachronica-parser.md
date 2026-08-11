@@ -2,7 +2,7 @@
 
 Parse-time transforms turn Index Diachronica HTML into an **applier-neutral** rule corpus YAML. This stage normalizes Index notation toward ASCA-parseable form in corpus fields (`input`, `output`, `env`, `exception`) while preserving the original HTML line in `raw` for audit ([ADR-0006](./adr/0006-html-source-of-truth-yaml-successor.md), [ADR-0010](./adr/0010-historical-fidelity-class-first-status.md)).
 
-**Primary code:** [`src/conlanger/tools/parsers.py`](../src/conlanger/tools/parsers.py) (`IndexDiachronicaParser`). **Series expansion:** [`src/conlanger/tools/series_mappings.py`](../src/conlanger/tools/series_mappings.py). **Orchestration:** `uv run regenerate_corpus` → [`regenerate_corpus.py`](../src/conlanger/scripts/regenerate_corpus.py).
+**Primary code:** [`src/conlanger/tools/ingest/parser.py`](../src/conlanger/tools/ingest/parser.py) (`IndexDiachronicaParser`). **Series expansion:** [`src/conlanger/utils/series.py`](../src/conlanger/utils/series.py) (lookup/apply) + [`src/conlanger/tools/series_extract.py`](../src/conlanger/tools/series_extract.py) (HTML→CSV). **Orchestration:** `uv run regenerate_corpus` → [`regenerate_corpus.py`](../src/conlanger/scripts/regenerate_corpus.py).
 
 **Scope:** parse-time only. Class-letter expansion, length marks, ejectives, and laryngeal aliases run at [applier compile](./sound-change-applier.md). Compile validation runs after that ([ADR-0003](./adr/0003-validate-after-applier-compile.md)).
 
@@ -27,7 +27,7 @@ Parse-time transforms turn Index Diachronica HTML into an **applier-neutral** ru
 
 ## Per-rule pipeline
 
-Deterministic order is fixed in `parse_rule_element` (`parsers.py`).
+Deterministic order is fixed in `parse_rule_element` (`tools/ingest/parser.py`).
 
 ### Phase A — HTML text extraction
 

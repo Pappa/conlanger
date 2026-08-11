@@ -2,7 +2,7 @@
 
 import pytest
 
-from conlanger.tools.asca_compile.input_optionals import (
+from conlanger.tools.compile.asca.input_optionals import (
     expand_input_optionals_to_structures,
 )
 from conlanger.appliers.asca import validate_asca

@@ -7,8 +7,8 @@ from pathlib import Path
 
 import pytest
 
-from conlanger.tools.asca_compile.pipeline import compile_asca_rule_string
-from conlanger.tools.asca_compile.subscript_references import (
+from conlanger.tools.compile.asca.pipeline import compile_asca_rule_string
+from conlanger.tools.compile.asca.subscript_references import (
     expand_index_subscript_references,
     is_easy_subscript_rule_text,
 )
@@ -70,7 +70,9 @@ def test_is_easy_subscript_rule_text_accepts_in_scope():
 
 def test_compile_pipeline_applies_subscript_expansion_before_group_mappings():
     text = "C₁C₂ > C₂"
-    assert compile_asca_rule_string(text, group_mappings={}) == expand_index_subscript_references(text)
+    assert compile_asca_rule_string(
+        text, group_mappings={}
+    ) == expand_index_subscript_references(text)
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")

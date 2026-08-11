@@ -2,7 +2,7 @@
 
 import re
 
-from conlanger.tools.asca_compile._patterns import IPA_SEGMENT
+from conlanger.tools.compile.asca._patterns import IPA_SEGMENT
 
 _EJECTIVE = "\u02bc"
 _POST_MATRIX_EJECTIVE_RE = re.compile(

@@ -21,10 +21,8 @@ from conlanger.appliers.asca import (
     ASCAValidationError,
     validate_asca,
 )
-from conlanger.tools.asca_compile.group_mappings import asca_group_mappings_dict
-from conlanger.tools.parsers import (
-    IndexDiachronicaParser,
-)
+from conlanger.tools.compile.asca.group_mappings import asca_group_mappings_dict
+from conlanger.tools.ingest import IndexDiachronicaParser
 from conlanger.tools.rules import SoundChangeRuleSet
 from conlanger.utils.file_io import load_default_ingest_tables
 

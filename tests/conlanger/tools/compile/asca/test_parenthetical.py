@@ -2,7 +2,7 @@
 
 import pytest
 
-from conlanger.tools.asca_compile.parenthetical import (
+from conlanger.tools.compile.asca.parenthetical import (
     expand_index_parenthetical_notation,
 )
 from conlanger.appliers.asca import validate_asca

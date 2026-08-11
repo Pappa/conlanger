@@ -23,7 +23,7 @@ from __future__ import annotations
 
 import re
 
-from conlanger.tools.asca_compile._patterns import IPA_SEGMENT
+from conlanger.tools.compile.asca._patterns import IPA_SEGMENT
 
 _ASCA_ENV_OPTIONAL_RE = re.compile(r"^\([A-Z$%#][A-Z$%#0-9,.…]*\)$")
 _CLASS_OR_GROUP_INNER_RE = re.compile(
