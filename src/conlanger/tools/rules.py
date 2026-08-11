@@ -180,24 +180,3 @@ class DiachronicSeries:
     @property
     def title(self):
         return self._parts[0].value
-
-
-class DebugDiachronicSeriesSet:
-    def __init__(self, section: dict, format: str = "asca"):
-        self._rules = [
-            (index, self._create_rule(section, rule, index, format))
-            for index, rule in enumerate(section["rules"])
-        ]
-
-    def _create_rule(self, section: dict, rule: dict, index: int, format: str):
-        item = {"index": section["index"], "section": str(index), "rules": [rule]}
-        return DiachronicSeries(item, format)
-
-    def __iter__(self):
-        return iter(self._rules)
-
-    def __len__(self):
-        return len(self._rules)
-
-    def __getitem__(self, index):
-        return self._rules[index]

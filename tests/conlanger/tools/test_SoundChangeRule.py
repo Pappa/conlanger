@@ -15,7 +15,6 @@ from conlanger.tools.compile.asca.group_mappings import (
 )
 from conlanger.tools.compile.asca.length_marks import normalize_asca_length_marks
 from conlanger.tools.rules import (
-    DebugDiachronicSeriesSet,
     SoundChangeRule,
     RuleCitation,
     RuleComment,
@@ -134,24 +133,6 @@ def test_rule_change_requires_output():
 def test_DiachronicSeries_invalid_format(section, format):
     with pytest.raises(ValueError):
         DiachronicSeries(section, format)
-
-
-def test_DebugDiachronicSeriesSet():
-    rules = DebugDiachronicSeriesSet(
-        {"index": "1", "section": "sec", "rules": [{"stages": ["a", "b"]}]},
-        "asca",
-    )
-
-    assert len(rules) == 1
-
-    _, rule = rules[0]
-
-    assert rule.title == "1 - 0"
-    assert str(rule) == "@ 1 - 0\n\ta > b"
-
-    for index, rule in rules:
-        assert rule.title == f"1 - {index}"
-        assert str(rule) == f"@ 1 - {index}\n\ta > b"
 
 
 @pytest.mark.parametrize(
