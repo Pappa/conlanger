@@ -69,3 +69,9 @@ dev = [
 [[tool.uv.index]]
 url = "https://pypi.org/simple"
 # explicit = true
+
+[tool.ruff]
+exclude = ["*.ipynb", "legacy/*"]
+
+[tool.ruff.format]
+exclude = ["*.ipynb", "legacy/*"]

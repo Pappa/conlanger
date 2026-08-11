@@ -1,12 +1,11 @@
+import json
 import re
 import sys
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple, Set
-import json
-import yaml
-
-from lxml import html, etree  # type: ignore
 from xml.sax.saxutils import escape as xml_escape
+
+import yaml
+from lxml import html  # type: ignore
 
 # Project root (…/conlanger)
 ROOT = Path(__file__).resolve().parent.parent
@@ -61,7 +60,7 @@ def strip_whitespace(text: str) -> str:
 
 def extract_text_with_subs(el) -> str:
     """Extract text, converting <sub>...</sub> to unicode subscripts."""
-    parts: List[str] = []
+    parts: list[str] = []
 
     def walk(node):
         if node.text:
@@ -244,7 +243,7 @@ def normalize_features(text: str) -> str:
 # Series label resolution (per-section mappings)
 #
 
-def load_series_map(path: Path) -> Dict[str, Dict[str, str]]:
+def load_series_map(path: Path) -> dict[str, dict[str, str]]:
     """
     Load a mapping of section -> { series_label: replacement }.
     Supports YAML (if PyYAML present) or JSON; returns {} if file missing/unreadable.
@@ -265,7 +264,7 @@ def load_series_map(path: Path) -> Dict[str, Dict[str, str]]:
     except Exception:
         return {}
 
-def load_env_text_map(path: Path) -> Dict[str, str]:
+def load_env_text_map(path: Path) -> dict[str, str]:
     """
     Load environment textual phrase mappings -> env fragments.
     Supports YAML/JSON; keys are case-insensitive phrases; values are env replacements.
@@ -292,7 +291,7 @@ def load_env_text_map(path: Path) -> Dict[str, str]:
         return {}
 
 
-def section_ancestry(section_idx: str) -> List[str]:
+def section_ancestry(section_idx: str) -> list[str]:
     """
     Return ancestry list from most specific to least: '6.1.2.3' -> ['6.1.2.3','6.1.2','6.1','6']
     """
@@ -303,14 +302,14 @@ def section_ancestry(section_idx: str) -> List[str]:
     return chain
 
 
-def build_effective_series_map(section_idx: str, global_map: Dict[str, Dict[str, str]]) -> Dict[str, str]:
+def build_effective_series_map(section_idx: str, global_map: dict[str, dict[str, str]]) -> dict[str, str]:
     """
     Merge maps for exact section, then ancestors, then '*' default (last).
     Later (more specific) overrides earlier.
     """
-    eff: Dict[str, str] = {}
+    eff: dict[str, str] = {}
     # Start from least specific so that specific ones override
-    order: List[str] = []
+    order: list[str] = []
     anc = section_ancestry(section_idx)
     for key in reversed(anc):
         if key in global_map:
@@ -325,7 +324,7 @@ def build_effective_series_map(section_idx: str, global_map: Dict[str, Dict[str,
 
 SERIES_TOKEN_RE = re.compile(r"([^\s{}\[\]/(),:+]+?)([\u2080-\u209F]+)")
 
-def resolve_series_labels(text: str, eff_map: Dict[str, str], unmapped: Set[str]) -> str:
+def resolve_series_labels(text: str, eff_map: dict[str, str], unmapped: set[str]) -> str:
     """
     Replace series labels like s₁, x₂, h₁ using the effective map.
     If no mapping present, leave as-is but record in unmapped set.
@@ -353,8 +352,8 @@ def normalize_env_fragment(env: str) -> str:
     s = env
     # Map known textual descriptions to concrete environments
     if not hasattr(normalize_env_fragment, "_env_text_map"):
-        setattr(normalize_env_fragment, "_env_text_map", load_env_text_map(ENV_TEXT_MAP_PATH))
-    env_text_map: Dict[str, str] = getattr(normalize_env_fragment, "_env_text_map")
+        normalize_env_fragment._env_text_map = load_env_text_map(ENV_TEXT_MAP_PATH)
+    env_text_map: dict[str, str] = normalize_env_fragment._env_text_map
     cleaned = s.strip().strip('"').replace("“", "").replace("”", "").strip().lower()
     if cleaned in env_text_map:
         repl = env_text_map[cleaned]
@@ -391,9 +390,9 @@ def normalize_env_fragment(env: str) -> str:
     s = re.sub(r"\bVCH\b", "VC h", s)
     # If a brace-set appears immediately after '_' or immediately before '_',
     # promote it to an environment set :{ alt1, alt2 }:
-    def build_env_set(pre: str, core_items: List[str], post: str) -> str:
+    def build_env_set(pre: str, core_items: list[str], post: str) -> str:
         # Do NOT expand optional parentheses; ASCA supports (X) directly
-        alts: List[str] = [strip_whitespace(f"{pre}_{it}{post}") for it in core_items]
+        alts: list[str] = [strip_whitespace(f"{pre}_{it}{post}") for it in core_items]
         return ":{ " + ", ".join(alts) + " }:"
     # Case A: _{...}suffix
     m_right = re.match(r"^(.*)_\{\s*([^}]*)\s*\}(.*)$", s)
@@ -414,7 +413,7 @@ def normalize_env_fragment(env: str) -> str:
     return s.strip()
 
 
-def split_mapping_and_context(rule_text: str) -> Tuple[str, Optional[str], Optional[str]]:
+def split_mapping_and_context(rule_text: str) -> tuple[str, str | None, str | None]:
     exception = None
     m_exc = re.search(r",\s*except\s+(.*)$", rule_text, flags=re.IGNORECASE)
     if m_exc:
@@ -429,7 +428,7 @@ def split_mapping_and_context(rule_text: str) -> Tuple[str, Optional[str], Optio
     return mapping_part.strip(), env, exception
 
 
-def split_chain_mappings(mapping_text: str) -> List[Tuple[str, str]]:
+def split_chain_mappings(mapping_text: str) -> list[tuple[str, str]]:
     parts = [p.strip() for p in mapping_text.split("→")]
     parts = [p for p in parts if p]
     if len(parts) < 2:
@@ -437,8 +436,8 @@ def split_chain_mappings(mapping_text: str) -> List[Tuple[str, str]]:
     return [(parts[i], parts[i + 1]) for i in range(len(parts) - 1)]
 
 
-def build_rule_obj(input_str: str, output_str: str, env: Optional[str], exception: Optional[str]) -> Dict[str, str]:
-    obj: Dict[str, str] = {
+def build_rule_obj(input_str: str, output_str: str, env: str | None, exception: str | None) -> dict[str, str]:
+    obj: dict[str, str] = {
         "input": input_str,
         "output": output_str,
     }
@@ -449,7 +448,7 @@ def build_rule_obj(input_str: str, output_str: str, env: Optional[str], exceptio
     return obj
 
 
-def parse_section(sec_el) -> Tuple[str, str, Dict[str, object]]:
+def parse_section(sec_el) -> tuple[str, str, dict[str, object]]:
     h2 = sec_el.xpath("./h2")
     if not h2:
         return "", "", ""
@@ -462,7 +461,7 @@ def parse_section(sec_el) -> Tuple[str, str, Dict[str, object]]:
         idx, name = m.group(1).strip(), m.group(2).strip()
 
     non_rule_ps = sec_el.xpath("./p[not(contains(@class,'rule'))]")
-    cite_texts: List[str] = []
+    cite_texts: list[str] = []
     for p in non_rule_ps:
         txt = extract_text_with_subs(p)
         if txt:
@@ -471,18 +470,18 @@ def parse_section(sec_el) -> Tuple[str, str, Dict[str, object]]:
 
     rule_ps = sec_el.xpath("./p[contains(@class,'rule')]")
 
-    section_obj: Dict[str, object] = {
+    section_obj: dict[str, object] = {
         "section": name,
         "index": idx,
     }
     if cite_combined:
         section_obj["citation"] = cite_combined
-    rules_list: List[Dict[str, str]] = []
+    rules_list: list[dict[str, str]] = []
 
     # Load per-section series map once per section
     series_map_all = load_series_map(SERIES_MAP_PATH)
     eff_series_map = build_effective_series_map(idx, series_map_all) if idx else series_map_all.get("*", {})
-    unmapped_series: Set[str] = set()
+    unmapped_series: set[str] = set()
 
     for i, rp in enumerate(rule_ps):
         raw = extract_text_with_subs(rp)
@@ -526,9 +525,7 @@ def parse_section(sec_el) -> Tuple[str, str, Dict[str, object]]:
                 if any(tok in ("∅", "*") for tok in in_parts + out_parts):
                     for a, b in zip(in_parts, out_parts):
                         # Enforce ASCA rule: insertion/deletion sides must ONLY contain the operator
-                        if b in ("∅", "*"):
-                            rules_list.append(build_rule_obj(a, b, env, exception))
-                        elif a in ("∅", "*"):
+                        if b in ("∅", "*") or a in ("∅", "*"):
                             rules_list.append(build_rule_obj(a, b, env, exception))
                         else:
                             rules_list.append(build_rule_obj(a, b, env, exception))
@@ -559,12 +556,12 @@ def parse_section(sec_el) -> Tuple[str, str, Dict[str, object]]:
     return idx, name, section_obj
 
 
-def build_document(root) -> Dict[str, object]:
+def build_document(root) -> dict[str, object]:
     # reset report buffer
     global UNMAPPED_BUFFER
     UNMAPPED_BUFFER = []
     sections = root.xpath("//section[contains(@class,'showtarget')]")
-    doc_sections: List[Dict[str, object]] = []
+    doc_sections: list[dict[str, object]] = []
     for sec in sections:
         _idx, _name, sec_obj = parse_section(sec)
         if sec_obj:

@@ -1,7 +1,7 @@
 """Tests for compile-time chain expansion (ADR-0005 ticket 03)."""
 
 from conlanger.tools.compile.asca.chains import expand_chained_corpus_rule
-from conlanger.tools.rules import SoundChangeRule, DiachronicSeries
+from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
 
 
 def test_expand_chained_corpus_rule_splits_stages_chain():

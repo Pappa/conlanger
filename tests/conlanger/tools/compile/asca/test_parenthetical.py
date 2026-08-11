@@ -2,10 +2,10 @@
 
 import pytest
 
+from conlanger.appliers.asca import validate_asca
 from conlanger.tools.compile.asca.parenthetical import (
     expand_index_parenthetical_notation,
 )
-from conlanger.appliers.asca import validate_asca
 from conlanger.tools.rules import DiachronicSeries
 
 

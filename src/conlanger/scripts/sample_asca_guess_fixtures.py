@@ -142,7 +142,7 @@ def guess_field(value: str | None, *, is_env: bool = False) -> str:
     if is_env and text and "_" not in text:
         if re.fullmatch(r"[#%$].*", text):
             pass
-        elif text.endswith("#") or text.endswith("$"):
+        elif text.endswith(("#", "$")):
             text = f"_{text}" if not text.startswith("_") else text
         else:
             text = f"{text}_"

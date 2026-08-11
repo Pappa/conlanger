@@ -25,7 +25,7 @@ uv run ruff check <changed paths> --fix
 Run the full **gate** sequence. A step is done when its command exits 0.
 
 1. **Tests and coverage** — `uv run pytest`. Coverage must meet `[tool.coverage.report] fail_under` in `pyproject.toml` (enforced by pytest addopts).
-2. **Lint** — `uv run ruff check src --fix`; resolve anything `--fix` cannot.
-3. **Format** — `uv run ruff format src && uv run ruff format --check src`.
+2. **Lint** — `uv run ruff check --fix`; resolve anything `--fix` cannot.
+3. **Format** — `uv run ruff format && uv run ruff format --check src`.
 
 Fix failures you introduce. If a pre-existing failure blocks verification, say so explicitly.

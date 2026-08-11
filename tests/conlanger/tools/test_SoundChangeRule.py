@@ -15,10 +15,10 @@ from conlanger.tools.compile.asca.group_mappings import (
 )
 from conlanger.tools.compile.asca.length_marks import normalize_asca_length_marks
 from conlanger.tools.rules import (
-    SoundChangeRule,
+    DiachronicSeries,
     RuleCitation,
     RuleComment,
-    DiachronicSeries,
+    SoundChangeRule,
 )
 
 
@@ -321,7 +321,9 @@ def test_apply_asca_group_mappings_labializes_non_matrix_mapping():
 
 def test_rule_change_apply_asca_group_mappings_uses_injected_csv_mappings():
     mappings = asca_group_mappings_dict()
-    part = SoundChangeRule({"input": "a", "output": "b"}, "asca", group_mappings=mappings)
+    part = SoundChangeRule(
+        {"input": "a", "output": "b"}, "asca", group_mappings=mappings
+    )
     assert part._apply_asca_group_mappings("R > a", "asca") == (
         apply_asca_group_mappings_to_string("R > a", mappings)
     )

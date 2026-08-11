@@ -3,12 +3,12 @@ from pathlib import Path
 
 import pandas as pd
 import pytest
+from helpers import default_index_parser
 from lxml import html
 
 from conlanger.appliers.asca import ASCAValidationError, validate_asca
 from conlanger.tools.compile.asca.group_mappings import asca_group_mappings_dict
 from conlanger.tools.ingest import (
-    IndexDiachronicaParser,
     write_rule_comment_phrase_summary,
 )
 from conlanger.tools.ingest.parser import parse_rule_element
@@ -28,11 +28,6 @@ from conlanger.tools.ingest.transforms import (
     normalize_stress_conditions,
     split_field_semicolon_comment,
 )
-from conlanger.utils.gloss import (
-    extract_uncertainty_qualifier_from_field,
-    strip_uncertainty_qualifier_from_field,
-)
-from conlanger.utils.symbols import normalize_stress_marks, normalize_symbols
 from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
 from conlanger.tools.rules import DiachronicSeries
 from conlanger.utils.file_io import (
@@ -48,7 +43,9 @@ from conlanger.utils.file_io import (
 )
 from conlanger.utils.gloss import (
     extract_semicolon_prose_from_field,
+    extract_uncertainty_qualifier_from_field,
     strip_trailing_gloss_from_field,
+    strip_uncertainty_qualifier_from_field,
 )
 from conlanger.utils.mappings import (
     FeatureMapping,
@@ -73,7 +70,7 @@ from conlanger.utils.parsing import (
     split_post_arrow,
     strip_leading_index_list_marker,
 )
-from helpers import default_index_parser
+from conlanger.utils.symbols import normalize_stress_marks, normalize_symbols
 
 
 def _parse_rule_element(el, *, source_file: str, section_index: str = ""):

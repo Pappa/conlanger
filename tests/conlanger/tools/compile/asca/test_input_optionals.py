@@ -2,10 +2,10 @@
 
 import pytest
 
+from conlanger.appliers.asca import validate_asca
 from conlanger.tools.compile.asca.input_optionals import (
     expand_input_optionals_to_structures,
 )
-from conlanger.appliers.asca import validate_asca
 from conlanger.tools.rules import DiachronicSeries
 
 

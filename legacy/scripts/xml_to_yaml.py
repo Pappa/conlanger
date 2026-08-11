@@ -1,7 +1,8 @@
-import yaml
-from lxml import html, etree
 import argparse
 import re
+
+import yaml
+from lxml import etree
 
 default = etree.Element('default')
 default.text = ""

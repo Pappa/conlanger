@@ -10,11 +10,11 @@ import html as html_module
 from pathlib import Path
 
 import pytest
+from helpers import default_index_parser
 
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.corpus_inventory import iter_validation_rows, validate_corpus_rule
 from conlanger.tools.compile.asca.group_mappings import asca_group_mappings_dict
-from helpers import default_index_parser
+from conlanger.tools.corpus_inventory import iter_validation_rows, validate_corpus_rule
 from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
 from tests.conftest import ASCA_INSTALLED
 
@@ -51,17 +51,32 @@ _E2E_VALIDATE_SMOKE: list[tuple[str, str, bool, str]] = [
 
 # Representative ingest cases from ``sound_change_rules.csv`` (ids for traceability).
 _E2E_PARSE_SMOKE: list[tuple[str, str, dict[str, str | None]]] = [
-    ("e1e33459", "r → ∅ / {ð,f}_{ɡ,ɣ}", {
-        "stages": ["r", "∅"], "env": "{ð,f}_{ɡ,ɣ}",
-    }),
+    (
+        "e1e33459",
+        "r → ∅ / {ð,f}_{ɡ,ɣ}",
+        {
+            "stages": ["r", "∅"],
+            "env": "{ð,f}_{ɡ,ɣ}",
+        },
+    ),
     ("4335174c", "dʒ → tʃ / _#", {"stages": ["dʒ", "tʃ"], "env": "_#"}),
-    ("4f873820", "a → e / _j when stressed", {
-        "stages": ["a", "e"], "env": "_j when stressed",
-    }),
+    (
+        "4f873820",
+        "a → e / _j when stressed",
+        {
+            "stages": ["a", "e"],
+            "env": "_j when stressed",
+        },
+    ),
     ("63f9e7f4", "SN → N[- voice]", {"stages": ["SN", "N[- voice]"]}),
-    ("9f237660", "C[+ voice] → C[- voice] / _#", {
-        "stages": ["C[+ voice]", "C[- voice]"], "env": "_#",
-    }),
+    (
+        "9f237660",
+        "C[+ voice] → C[- voice] / _#",
+        {
+            "stages": ["C[+ voice]", "C[- voice]"],
+            "env": "_#",
+        },
+    ),
     ("f8cd1a6f", "ɑ → ə", {"stages": ["ɑ", "ə"]}),
     ("65372311", "qh → k", {"stages": ["qh", "k"]}),
     ("e71a2977", "ŋ → n", {"stages": ["ŋ", "n"]}),
@@ -163,7 +178,9 @@ def test_e2e_minimal_html_fixture_compile_and_validate(tmp_path: Path):
     assert rows[0].reason == ""
 
     validate_asca(
-        PhonologicalRuleSet(section).to_sound_change_ruleset(group_mappings=asca_group_mappings_dict()),
+        PhonologicalRuleSet(section).to_sound_change_ruleset(
+            group_mappings=asca_group_mappings_dict()
+        ),
         probe_words=_PROBE,
     )
 
@@ -186,7 +203,7 @@ def test_e2e_html_extract_pipeline_parse(
         html_path,
         section_id=case_id,
         section_body=(
-            f"<h2>99.0 Fixture {case_id}</h2>\n<p class=\"schg\">{escaped}</p>"
+            f'<h2>99.0 Fixture {case_id}</h2>\n<p class="schg">{escaped}</p>'
         ),
     )
     section = _parse_section(html_path, source_file=f"{case_id}.html")
@@ -220,8 +237,7 @@ def test_e2e_smoke_pipeline_validate(
         html_path,
         section_id=case_id,
         section_body=(
-            f"<h2>{section_index} Smoke {case_id}</h2>\n"
-            f"<p class=\"schg\">{escaped}</p>"
+            f'<h2>{section_index} Smoke {case_id}</h2>\n<p class="schg">{escaped}</p>'
         ),
     )
     section = _parse_section(html_path, source_file=f"smoke_{case_id}.html")

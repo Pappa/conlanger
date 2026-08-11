@@ -11,7 +11,7 @@ from pathlib import Path
 
 from strip_ansi import strip_ansi
 
-from conlanger.tools.rules import SoundChangeRule, DiachronicSeries
+from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
 
 # Minimal probe lexicon for ``asca run`` (Tier 4 boundary). Override with ASCA_PROBE_WORDS.
 _DEFAULT_PROBE_WORDS = "a\nba\nkata\nsami\nntu\n"

@@ -7,12 +7,12 @@ from pathlib import Path
 
 import pytest
 
+from conlanger.appliers.asca import validate_asca
 from conlanger.tools.compile.asca.pipeline import compile_asca_rule_string
 from conlanger.tools.compile.asca.subscript_references import (
     expand_index_subscript_references,
     is_easy_subscript_rule_text,
 )
-from conlanger.appliers.asca import validate_asca
 from conlanger.tools.rules import DiachronicSeries
 
 

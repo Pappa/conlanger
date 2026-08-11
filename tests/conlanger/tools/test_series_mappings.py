@@ -443,19 +443,25 @@ def test_infer_parallel_rule_mappings_rejects_invalid_rules(rule):
 
 
 def test_infer_singleton_rule_mappings_empty_when_spine_has_one_stage():
-    assert infer_singleton_rule_mappings(
-        "a →",
-        section_index="6",
-        source="index.html:1",
-    ) == []
+    assert (
+        infer_singleton_rule_mappings(
+            "a →",
+            section_index="6",
+            source="index.html:1",
+        )
+        == []
+    )
 
 
 def test_infer_parallel_rule_mappings_empty_when_spine_has_one_stage():
-    assert infer_parallel_rule_mappings(
-        "a →",
-        section_index="6",
-        source="index.html:1",
-    ) == []
+    assert (
+        infer_parallel_rule_mappings(
+            "a →",
+            section_index="6",
+            source="index.html:1",
+        )
+        == []
+    )
 
 
 def test_write_series_mappings_csv_dedupes_rows(tmp_path: Path):
@@ -480,9 +486,7 @@ def test_extract_series_mappings_skips_malformed_sections(tmp_path: Path):
     assert ("6", "s₁") in by_key
     assert ("6.9", "x₁") in by_key
     rule_inferred_s1 = [
-        row
-        for row in rows
-        if row.token == "s₁" and row.notes.startswith("inferred")
+        row for row in rows if row.token == "s₁" and row.notes.startswith("inferred")
     ]
     assert len(rule_inferred_s1) == 1
     assert rule_inferred_s1[0].section_index == "6.9.1"
@@ -698,7 +702,9 @@ def test_extract_series_mappings_skips_sections_without_headings(tmp_path: Path)
     rows = extract_series_mappings_from_html(html_path)
     by_key = {(row.section_index, row.token) for row in rows}
     assert ("6.8", "s₁") in by_key
-    assert not any(token == "s₁" and section_index != "6.8" for section_index, token in by_key)
+    assert not any(
+        token == "s₁" and section_index != "6.8" for section_index, token in by_key
+    )
 
 
 def test_survey_functions_skip_sections_without_headings(tmp_path: Path):
@@ -721,7 +727,12 @@ def test_survey_functions_skip_sections_without_headings(tmp_path: Path):
     assert survey_all_subscript_tokens_in_html(html_path) == {"6.8": {"s₁"}}
 
 
-_HTML = Path(__file__).resolve().parents[3] / "data" / "diachronica" / "index_diachronica_original.html"
+_HTML = (
+    Path(__file__).resolve().parents[3]
+    / "data"
+    / "diachronica"
+    / "index_diachronica_original.html"
+)
 _CSV = Path(__file__).resolve().parents[3] / "data" / "asca" / "series_mappings.csv"
 
 

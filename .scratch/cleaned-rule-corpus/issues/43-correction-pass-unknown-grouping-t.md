@@ -76,9 +76,7 @@ Affected sections: **§36.3.2** rGyalrongic (5 rules).
 Extend `_GROUPING_FOLLOW` to accept IPA extensions **without** ASCII lowercase (preserves `Kr` / `Kw` / `rK` regression tests from ticket 23):
 
 ```python
-_GROUPING_FOLLOW = (
-    r"(?=[:,\[\]\{\}\s/>_#$%|!\)-]|$|[A-Z]|[\u0250-\u02AF])"
-)
+_GROUPING_FOLLOW = r"(?=[:,\[\]\{\}\s/>_#$%|!\)-]|$|[A-Z]|[\u0250-\u02AF])"
 ```
 
 **Expected transforms:**

@@ -38,6 +38,7 @@ Implement an ASCA validator that takes a `DiachronicSeries` instance, returns `T
 **API:**
 ```python
 from conlanger.tools.asca_validator import validate_asca, ASCAValidationError
+
 validate_asca(sound_change_rule)  # True or raises
 ```
 

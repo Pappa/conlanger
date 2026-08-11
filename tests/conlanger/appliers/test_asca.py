@@ -1,8 +1,8 @@
 """Tests for ASCA validation of DiachronicSeries (asca 0.10.x)."""
 
+import subprocess
 from pathlib import Path
 from unittest.mock import MagicMock, patch
-import subprocess
 
 import pandas as pd
 import pytest
@@ -64,9 +64,7 @@ def test_validate_asca_returns_true_when_subprocess_succeeds(
 @pytest.mark.parametrize(
     "scr",
     [
-        DiachronicSeries(
-            {"index": "1", "section": "sec", "rules": []}, format="asca"
-        ),
+        DiachronicSeries({"index": "1", "section": "sec", "rules": []}, format="asca"),
         DiachronicSeries(
             {
                 "index": "1",

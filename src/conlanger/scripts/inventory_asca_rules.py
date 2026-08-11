@@ -208,13 +208,11 @@ def main() -> int:
     rows = list(precomputed)
     with ProcessPoolExecutor(max_workers=args.workers) as pool:
         futures = [pool.submit(check_one, job) for job in jobs]
-        done = 0
         total = len(futures)
-        for fut in as_completed(futures):
+        for idx, fut in enumerate(as_completed(futures)):
             rows.append(fut.result())
-            done += 1
-            if done % 500 == 0 or done == total:
-                print(f"progress {done}/{total}", flush=True)
+            if idx % 500 == 0 or idx == total:
+                print(f"progress {idx}/{total}", flush=True)
 
     rows.sort(key=lambda r: (r["section_index"], int(r["rule_idx"])))
     with args.out.open("w", encoding="utf-8", newline="") as f:

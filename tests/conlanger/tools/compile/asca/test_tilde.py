@@ -2,12 +2,12 @@
 
 import pytest
 
+from conlanger.appliers.asca import validate_asca
 from conlanger.tools.compile.asca.tilde import (
     expand_index_tilde_notation,
     normalize_corpus_rule_tilde_fields,
 )
-from conlanger.appliers.asca import validate_asca
-from conlanger.tools.rules import SoundChangeRule, DiachronicSeries
+from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
 
 
 @pytest.mark.parametrize(

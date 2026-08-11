@@ -1,4 +1,5 @@
 import pytest
+
 from conlanger.tools.words import Lexicon
 
 
@@ -91,7 +92,16 @@ def test_Lexicon():
         vowels=["i", "ə"],
         seed=0,
         max_syllables=3,
-        word_list=[{"meaning": "word", "topic": "topic", "v": True, "n": False, "adj": False, "adv": False}],
+        word_list=[
+            {
+                "meaning": "word",
+                "topic": "topic",
+                "v": True,
+                "n": False,
+                "adj": False,
+                "adv": False,
+            }
+        ],
     )
 
     assert str(lex) == "əplək"

@@ -1,5 +1,10 @@
 import pytest
-from conlanger.tools.syllables import SyllableStructures, SyllableStructure, SyllableToken
+
+from conlanger.tools.syllables import (
+    SyllableStructure,
+    SyllableStructures,
+    SyllableToken,
+)
 
 
 @pytest.mark.parametrize(

@@ -5,7 +5,7 @@ import pytest
 from conlanger.tools.compile.asca.parallel_null_columns import (
     drop_mixed_parallel_null_columns,
 )
-from conlanger.tools.rules import SoundChangeRule, DiachronicSeries
+from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
 
 
 @pytest.mark.parametrize(
