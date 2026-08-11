@@ -110,7 +110,7 @@ def test_regenerate_corpus_writes_manual_mappings_matched_csv(
     tmp_path: Path,
     capsys,
 ):
-    from conlanger.tools.parsers import ManualMapping, ManualMappingMatch
+    from conlanger.utils.mappings import ManualMapping, ManualMappingMatch
 
     html_path = tmp_path / "index.html"
     html_path.write_text("<html><body></body></html>", encoding="utf-8")

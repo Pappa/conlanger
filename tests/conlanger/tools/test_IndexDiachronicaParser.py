@@ -7,30 +7,42 @@ from lxml import html
 
 from conlanger.appliers.asca import ASCAValidationError, validate_asca
 from conlanger.tools.parsers import (
-    DEFAULT_GROUP_MAPPINGS_CSV,
     MEDIAL_BOUNDARY_EXCEPTION,
-    FeatureMapping,
-    GroupMapping,
     IndexDiachronicaParser,
-    ManualMapping,
-    ParserConfig,
-    apply_feature_mappings,
-    apply_ipa_mappings,
-    apply_manual_mappings,
     apply_medial_env_conditions,
     apply_semicolon_field_comments,
     apply_sporadic_qualifier,
     apply_stress_conditions,
     apply_trailing_glosses,
-    build_stages_from_spine,
-    extract_rule_parts,
-    extract_semicolon_prose_from_field,
-    extract_text_with_subs,
-    feature_mappings_dict,
-    finalize_stages_shape,
-    ipa_mappings_dict,
     is_catch_all_else_env,
     join_rule_comment,
+    normalize_medial_env_field,
+    normalize_stress_conditions,
+    normalize_stress_marks,
+    normalize_symbols,
+    parse_rule_element,
+    resolve_catch_all_else_rules,
+    split_field_semicolon_comment,
+    strip_uncertainty_qualifier_from_field,
+    write_rule_comment_phrase_summary,
+)
+from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
+from conlanger.tools.rules import SoundChangeRuleSet
+from conlanger.utils.gloss import (
+    extract_semicolon_prose_from_field,
+    strip_trailing_gloss_from_field,
+)
+from conlanger.utils.mappings import (
+    DEFAULT_GROUP_MAPPINGS_CSV,
+    FeatureMapping,
+    GroupMapping,
+    ManualMapping,
+    ParserConfig,
+    apply_feature_mappings,
+    apply_ipa_mappings,
+    apply_manual_mappings,
+    feature_mappings_dict,
+    ipa_mappings_dict,
     load_feature_mappings,
     load_group_mappings,
     load_ipa_mappings,
@@ -38,25 +50,19 @@ from conlanger.tools.parsers import (
     load_parser_config,
     normalize_feature_matrices_in_field,
     normalize_ipa_in_field,
-    normalize_medial_env_field,
-    normalize_stress_conditions,
-    normalize_stress_marks,
-    normalize_symbols,
-    parse_rule_element,
+)
+from conlanger.utils.parsing import (
+    build_stages_from_spine,
+    extract_rule_parts,
+    extract_text_with_subs,
+    finalize_stages_shape,
     parse_section_heading,
-    resolve_catch_all_else_rules,
     split_env_exception,
-    split_field_semicolon_comment,
     split_input_output,
     split_output_rest,
     split_post_arrow,
     strip_leading_index_list_marker,
-    strip_trailing_gloss_from_field,
-    strip_uncertainty_qualifier_from_field,
-    write_rule_comment_phrase_summary,
 )
-from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
-from conlanger.tools.rules import SoundChangeRuleSet
 
 _SAMPLED_RULES_CSV = (
     Path(__file__).resolve().parents[2] / "fixtures" / "sound_change_rules.csv"
@@ -337,7 +343,11 @@ def test_strip_uncertainty_qualifier_from_field(text, expected):
         ("h (sometimes uncertain)", "h", ["(sometimes uncertain)"]),
         ("∅ (occasionally?)", "∅", ["(occasionally?)"]),
         ("occasionally", "", ["occasionally"]),
-        ('r "in Hieroglyphic Luwian, occasionally"', "r", ['"in Hieroglyphic Luwian, occasionally"']),
+        (
+            'r "in Hieroglyphic Luwian, occasionally"',
+            "r",
+            ['"in Hieroglyphic Luwian, occasionally"'],
+        ),
     ],
 )
 def test_extract_uncertainty_qualifier_from_field(
@@ -596,9 +606,7 @@ def test_normalize_medial_env_field(text, expected_env, expected_medial):
 
 
 def test_apply_medial_env_conditions_bare_medial():
-    assert apply_medial_env_conditions(
-        {"stages": ["t", "r"], "env": "medially"}
-    ) == {
+    assert apply_medial_env_conditions({"stages": ["t", "r"], "env": "medially"}) == {
         "stages": ["t", "r"],
         "env": "_",
         "exception": MEDIAL_BOUNDARY_EXCEPTION,
@@ -1678,7 +1686,7 @@ def test_parse_rule_element_without_manual_row_unchanged():
 
 
 def test_write_manual_mappings_matched_csv(tmp_path: Path):
-    from conlanger.tools.parsers import (
+    from conlanger.utils.mappings import (
         ManualMappingMatch,
         write_manual_mappings_matched_csv,
     )

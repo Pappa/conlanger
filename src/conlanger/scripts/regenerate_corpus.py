@@ -35,15 +35,17 @@ from conlanger.tools.corpus_inventory import (
 )
 from conlanger.tools.corpus_io import write_cleaned_corpus
 from conlanger.tools.parsers import (
-    MANUAL_MAPPINGS_MATCHED_CSV_NAME,
     IndexDiachronicaParser,
-    write_manual_mappings_matched_csv,
     write_rule_comment_phrase_summary,
 )
 from conlanger.tools.series_mappings import (
     DEFAULT_SERIES_MAPPINGS_CSV,
     DEFAULT_SERIES_MAPPINGS_REPORT,
     update_series_mappings_from_html,
+)
+from conlanger.utils.mappings import (
+    MANUAL_MAPPINGS_MATCHED_CSV_NAME,
+    write_manual_mappings_matched_csv,
 )
 
 DEFAULT_HTML = ROOT / "data" / "diachronica" / "index_diachronica_original.html"
