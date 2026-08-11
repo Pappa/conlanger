@@ -23,9 +23,12 @@ from __future__ import annotations
 import re
 
 from conlanger.tools.asca_compile.group_mappings import (
-    _merge_mapping_with_features,
     asca_group_mappings_dict,
     expand_grouping_letter,
+)
+from conlanger.utils.features import (
+    apply_features_to_token,
+    merge_mapping_with_features,
 )
 
 _GROUPING_PREC = r"(?:^|(?<=[\{\[\s/,>_A-Z#$%|!\(-]))"
@@ -49,26 +52,6 @@ _SET_SUFFIX_MODIFIER_RE = re.compile(
 )
 
 
-def _add_features_to_matrix_body(features: str, extra: tuple[str, ...]) -> str:
-    body = features
-    for feature in extra:
-        token = feature if feature.startswith(("+", "-")) else f"+{feature}"
-        if token in body or f"-{token.lstrip('+-')}" in body:
-            continue
-        body = f"{body},{token}" if body else token
-    return body
-
-
-def _apply_features_to_token(token: str, extra: tuple[str, ...]) -> str:
-    if not extra:
-        return token
-    match = re.fullmatch(r"(.+):\[([^\]]+)\]", token)
-    if match:
-        host, body = match.group(1), match.group(2)
-        return f"{host}:[{_add_features_to_matrix_body(body, extra)}]"
-    return f"{token}:[{_add_features_to_matrix_body('', extra)}]"
-
-
 def _grouping_letter_pattern(keys: set[str]) -> str:
     return "|".join(re.escape(key) for key in sorted(keys, key=len, reverse=True))
 
@@ -85,8 +68,8 @@ def _expand_class_letter_modifier(
         feature_text = ",".join(features)
         if re.fullmatch(r"[A-Z]", base):
             return f"{base}[{feature_text}]"
-        return _merge_mapping_with_features(base, feature_text)
-    return _apply_features_to_token(letter, features)
+        return merge_mapping_with_features(base, feature_text)
+    return apply_features_to_token(letter, features)
 
 
 def _apply_class_letter_modifiers_outside_brackets(

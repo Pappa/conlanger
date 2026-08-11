@@ -3,6 +3,7 @@
 import re
 from functools import lru_cache
 
+from conlanger.utils.features import apply_features_to_token
 from conlanger.utils.mappings import load_group_mappings
 
 _GROUPING_PREC = r"(?:^|(?<=[\{\[\s/,>_A-Z#$%|!\(-]))"
@@ -20,31 +21,11 @@ def asca_group_mappings_dict() -> dict[str, str]:
     return {row.grouping: row.mapping for row in load_group_mappings()}
 
 
-def _add_features_to_matrix_body(features: str, extra: tuple[str, ...]) -> str:
-    body = features
-    for feature in extra:
-        token = feature if feature.startswith(("+", "-")) else f"+{feature}"
-        if token in body or f"-{token.lstrip('+-')}" in body:
-            continue
-        body = f"{body},{token}" if body else token
-    return body
-
-
-def _apply_features_to_token(token: str, extra: tuple[str, ...]) -> str:
-    if not extra:
-        return token
-    match = re.fullmatch(r"(.+):\[([^\]]+)\]", token)
-    if match:
-        host, body = match.group(1), match.group(2)
-        return f"{host}:[{_add_features_to_matrix_body(body, extra)}]"
-    return f"{token}:[{_add_features_to_matrix_body('', extra)}]"
-
-
 def _labialize_single_token(token: str) -> str:
     if not token.endswith("]"):
         return token
     if re.fullmatch(r"(.+):\[([^\]]+)\]", token):
-        return _apply_features_to_token(token, ("+round",))
+        return apply_features_to_token(token, ("+round",))
     return f"{token[:-1]},+round]"
 
 
@@ -55,20 +36,6 @@ def _labialize_mapping(mapping: str) -> str:
             "{" + ",".join(_labialize_single_token(member) for member in members) + "}"
         )
     return _labialize_single_token(mapping)
-
-
-def _merge_mapping_with_features(mapping: str, features: str) -> str:
-    extra = tuple(part.strip() for part in features.split(",") if part.strip())
-    if mapping.startswith("{") and mapping.endswith("}"):
-        members = [part.strip() for part in mapping[1:-1].split(",") if part.strip()]
-        return (
-            "{"
-            + ",".join(
-                _merge_mapping_with_features(member, features) for member in members
-            )
-            + "}"
-        )
-    return _apply_features_to_token(mapping, extra)
 
 
 def expand_grouping_letter(
