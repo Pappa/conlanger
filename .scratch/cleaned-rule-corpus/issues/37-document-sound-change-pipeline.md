@@ -10,7 +10,7 @@ Write the step-by-step documentation for the **new** sound-change rule pipeline 
 
 ## Context
 
-Grill session (2026-08-07): compile transform order must be clearly defined and justified before refactoring `SoundChangeRuleSet` / `RuleChange` ([ticket 39](39-refactor-sound-change-ruleset.md)). Applier compile and parse are **separate** docs; transform order is recorded in docs only (no ADR).
+Grill session (2026-08-07): compile transform order must be clearly defined and justified before refactoring `DiachronicSeries` / `RuleChange` ([ticket 39](39-refactor-sound-change-ruleset.md)). Applier compile and parse are **separate** docs; transform order is recorded in docs only (no ADR).
 
 ## Deliverables
 
@@ -28,7 +28,7 @@ Grill session (2026-08-07): compile transform order must be clearly defined and 
 
 ### 3. `docs/sound-change-applier.md`
 
-- **Applier compile only:** `PhonologicalRuleSet` → `SoundChangeRuleSet` section assembly → per-rule ASCA transforms → `.rsca` string shape.
+- **Applier compile only:** `PhonologicalRuleSet` → `DiachronicSeries` section assembly → per-rule ASCA transforms → `.rsca` string shape.
 - Single pipeline table for per-rule transforms. Implemented steps (current `RuleChange._compile_rule_text` order):
   1. Join corpus fields
   2. `normalize_asca_optional_grouping_ellipsis`
@@ -56,13 +56,13 @@ Primary code references: `src/conlanger/tools/rules.py`, `phonological_ruleset.p
   | Applier compile | [sound-change-applier.md](../sound-change-applier.md) |
   | Compile validation | [sound-change-applier.md](../sound-change-applier.md#compile-validation) (anchor in applier doc) |
 
-- Fix stale link: `SoundChangeRuleSet` lives in `src/conlanger/tools/rules.py`, not `SoundChangeRuleSet.py`.
+- Fix stale link: `DiachronicSeries` lives in `src/conlanger/tools/rules.py`, not `DiachronicSeries.py`.
 
 ## Notes
 
 - `CONTEXT.md` is glossary-only — do not move implementation detail there.
 - Spike [38](38-spike-asca-compile-transform-order.md) fills TBD `Order` cells for planned ASCA compile transforms; this ticket may leave those rows as TBD with cross-ref to 38.
-- Do not refactor `SoundChangeRuleSet` in this ticket.
+- Do not refactor `DiachronicSeries` in this ticket.
 
 ## Acceptance criteria
 

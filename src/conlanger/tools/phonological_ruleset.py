@@ -4,14 +4,14 @@ from __future__ import annotations
 
 from typing import Any
 
-from conlanger.tools.rules import SoundChangeRuleSet
+from conlanger.tools.rules import DiachronicSeries
 
 
 class PhonologicalRuleSet:
     """One sound-change section ready for applier compilation.
 
     Holds corpus rules unchanged; ASCA-specific transforms (e.g. Index class
-    letters from ``group_mappings.csv``) run in ``SoundChangeRuleSet`` / ``RuleChange``.
+    letters from ``group_mappings.csv``) run in ``DiachronicSeries`` / ``RuleChange``.
     """
 
     def __init__(self, section: dict[str, Any], *, format: str = "asca"):
@@ -26,8 +26,8 @@ class PhonologicalRuleSet:
         self,
         *,
         group_mappings: dict[str, str] | None = None,
-    ) -> SoundChangeRuleSet:
-        return SoundChangeRuleSet(
+    ) -> DiachronicSeries:
+        return DiachronicSeries(
             self._section,
             self._format,
             group_mappings=group_mappings,

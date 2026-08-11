@@ -50,7 +50,7 @@ Update `docs/sound-change-applier.md` TBD rows if ticket 37 has landed (otherwis
 - [x] Every planned transform in scope has a recommended order relative to the seven implemented steps.
 - [x] At least positional/identity vs `group_mappings` ordering is decided with evidence (prototype or ASCA probe).
 - [x] Brassica explicitly excluded.
-- [x] Recommendation suitable to unblock [Refactor SoundChangeRuleSet](39-refactor-sound-change-ruleset.md).
+- [x] Recommendation suitable to unblock [Refactor DiachronicSeries](39-refactor-sound-change-ruleset.md).
 
 ## Answer
 

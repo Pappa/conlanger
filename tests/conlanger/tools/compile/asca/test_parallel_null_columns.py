@@ -5,7 +5,7 @@ import pytest
 from conlanger.tools.compile.asca.parallel_null_columns import (
     drop_mixed_parallel_null_columns,
 )
-from conlanger.tools.rules import RuleChange, SoundChangeRuleSet
+from conlanger.tools.rules import RuleChange, DiachronicSeries
 
 
 @pytest.mark.parametrize(
@@ -70,7 +70,7 @@ def test_sound_change_ruleset_parallel_column_from_stages():
         "section": "Proto-Utupua to Nebao",
         "rules": [{"stages": ["c ɲ", "∅ n"]}],
     }
-    ruleset = SoundChangeRuleSet(section, "asca")
+    ruleset = DiachronicSeries(section, "asca")
     rule_parts = [part for part in ruleset._parts if isinstance(part, RuleChange)]
     assert len(rule_parts) == 1
     assert rule_parts[0].value == "c ɲ > n"

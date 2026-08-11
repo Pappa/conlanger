@@ -8,7 +8,7 @@ Target cluster: `unknown_grouping` — Index class letters from `group_mappings.
 
 ## What was built
 
-- `PhonologicalRuleSet` (`src/conlanger/tools/phonological_ruleset.py`) holds one applier-neutral section and delegates to `SoundChangeRuleSet`.
+- `PhonologicalRuleSet` (`src/conlanger/tools/phonological_ruleset.py`) holds one applier-neutral section and delegates to `DiachronicSeries`.
 - Index class letters from `data/asca/group_mappings.csv` expand in `RuleChange` during ASCA string emission (not in the corpus dict).
 - `corpus_inventory.validate_corpus_rule` validates via `PhonologicalRuleSet(...).to_sound_change_ruleset()`.
 

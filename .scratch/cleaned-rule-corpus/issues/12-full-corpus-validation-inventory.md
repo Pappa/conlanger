@@ -8,7 +8,7 @@ Blocked by: 11
 
 Run every **corpus rule** from extract-only cleaned YAML through ASCA **compile validation** and produce a recorded inventory for clustering and iterative correction.
 
-Pipeline per rule: corpus rule dict → `SoundChangeRuleSet` → `validate_asca` (existing `src/conlanger/tools/asca_validator.py`, driving installed **asca 0.10.2** via `asca run`). Use the baseline wordlist (`tests/fixtures/asca_probe_words.wsca` or equivalent fixed lexicon) — no rule-derived candidate generator.
+Pipeline per rule: corpus rule dict → `DiachronicSeries` → `validate_asca` (existing `src/conlanger/tools/asca_validator.py`, driving installed **asca 0.10.2** via `asca run`). Use the baseline wordlist (`tests/fixtures/asca_probe_words.wsca` or equivalent fixed lexicon) — no rule-derived candidate generator.
 
 Deliver a single invocable entry point (script or module) that takes an HTML path and emits:
 
@@ -20,7 +20,7 @@ Re-baseline against cleaned schema + ASCA 0.10.2, replacing the provisional 0.9.
 
 ## Notes
 
-- Validation is post-extract only — no compile-layer transforms beyond what `SoundChangeRuleSet` already renders from corpus fields.
+- Validation is post-extract only — no compile-layer transforms beyond what `DiachronicSeries` already renders from corpus fields.
 - Tier 4 runtime failures may be under-detected when the baseline wordlist does not match a rule's shape; acceptable for this inventory pass (~98% of provisional failures are Tier 1–2 syntax). Revisit only if clustering shows a Tier 4 cluster worth targeting later.
 - Does **not** implement parser/compiler fixes — measures only. Correction passes (ticket 13+) are filed after reviewing the clustered output.
 - Skip gracefully when `asca` 0.10.2 binary is absent (match existing validator test pattern).

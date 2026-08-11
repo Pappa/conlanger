@@ -55,5 +55,5 @@ Implement **`expand_index_subscript_references`** at **compile time** per [posit
 ## References
 
 - [Spike: ASCA compile transform ordering](38-spike-asca-compile-transform-order.md)
-- [Refactor SoundChangeRuleSet and compile subcomponents](39-refactor-sound-change-ruleset.md) — `asca_compile/` package is the landing zone
+- [Refactor DiachronicSeries and compile subcomponents](39-refactor-sound-change-ruleset.md) — `asca_compile/` package is the landing zone
 - Map fog: **Subscript notation** — positional + identity → compile-time

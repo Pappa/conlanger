@@ -23,7 +23,7 @@ from conlanger.appliers.asca import (
 )
 from conlanger.tools.compile.asca.group_mappings import asca_group_mappings_dict
 from conlanger.tools.ingest import IndexDiachronicaParser
-from conlanger.tools.rules import SoundChangeRuleSet
+from conlanger.tools.rules import DiachronicSeries
 from conlanger.utils.file_io import load_default_ingest_tables
 
 DEFAULT_HTML = ROOT / "data/diachronica/index_diachronica_original.html"
@@ -186,7 +186,7 @@ def fixture_id(source: str) -> str:
 
 def build_sound_change_rule(
     guess: dict[str, str], *, source: str
-) -> SoundChangeRuleSet | None:
+) -> DiachronicSeries | None:
     if not guess["asca_input"] or not guess["asca_output"]:
         return None
     change = {
@@ -197,7 +197,7 @@ def build_sound_change_rule(
         change["env"] = guess["asca_env"]
     if guess["asca_exception"]:
         change["exception"] = guess["asca_exception"]
-    return SoundChangeRuleSet(
+    return DiachronicSeries(
         {
             "index": "fixture",
             "section": source.replace(":", "_"),

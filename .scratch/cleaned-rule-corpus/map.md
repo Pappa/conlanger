@@ -21,7 +21,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - [Corpus rule `stages` schema cutover](issues/59-corpus-rule-stages-schema.md) — ADR-0011: uniform **`stages`** spine; compile expands adjacent pairs; `stages: []` + `status: skipped` hold-outs; regenerated `index_diachronica_parsed.yml`.
 - [YAML schema for the cleaned rule corpus](issues/03-yaml-schema-cleaned-rule-corpus.md) — Top-level `abbreviations` + `sections`; rules carry **`stages`**/`raw`/`source` (optional `env`/`exception`/`status`/`sporadic`/`comment`) per [ADR-0011](../../docs/adr/0011-corpus-rule-stages.md) / [ticket 59](issues/59-corpus-rule-stages-schema.md) (supersedes stored `input`/`output`); hierarchical string→string abbreviation tables; multi-line `raw` via `\|`; HTML SoT `index_diachronica_original.html` via lxml.
 - [Inventory which current rules compile and which fail](issues/02-inventory-valid-vs-invalid-rules.md) — Provisional AI YAML: 9721 rules → 5554 ok / 4167 fail under `asca 0.9.3`; CSV + summary in [inventory/](inventory/).
-- [Create an ASCA validator for SoundChangeRuleSet](issues/08-asca-validator.md) — `validate_asca` via asca **0.10.2** `run` (raises `ASCAValidationError`); 500 `asca_guess` fixture rows (seed 20260802; 370 ok / 130 expected fail).
+- [Create an ASCA validator for DiachronicSeries](issues/08-asca-validator.md) — `validate_asca` via asca **0.10.2** `run` (raises `ASCAValidationError`); 500 `asca_guess` fixture rows (seed 20260802; 370 ok / 130 expected fail).
 - [Historical fidelity vs valid-but-inaccurate fallback](issues/04-historical-fidelity-vs-validity.md) — Edit ladder + **rule status** / **validation report** split. ADR-0010.
 - [Correction workflow for invalid rules](issues/05-correction-workflow-invalid-rules.md) — Regen YAML, per-**corpus rule** **compile validation**, cluster **failure classes**. ADR-0010.
 - [Normalise segment feature matrices for appliers](issues/07-normalise-segment-features.md) — **Feature matrix** synonyms at ingest → `feature_mappings.csv`. Inter-segment whitespace deferred here → resolved in [Spike: inter-segment whitespace and phoneme boundaries](issues/44-spike-inter-segment-whitespace.md).
@@ -53,7 +53,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - [Inventory success/error CSV splits and ok-change changelog](issues/34-inventory-success-error-splits-and-ok-changelog.md) — regen writes success/error filtered CSVs + append-only `ok`-flip changelog (match by `source`); summary links new artifacts.
 - [Document the sound-change rule pipeline in docs/](issues/37-document-sound-change-pipeline.md) — **grill 2026-08-07:** four `docs/` pages + `SYSTEM.md` **Pipeline stages (legacy)** / **(new)**; applier compile table (implemented order + planned `TBD` rows); parse / validation / applier docs split; compile validation lives in applier doc; no ADR for transform order.
 - [Spike: ASCA compile transform ordering (planned steps)](issues/38-spike-asca-compile-transform-order.md) — done. Findings: [research/asca-compile-transform-order.md](research/asca-compile-transform-order.md). Orders 3–4 before group mappings; 10 meta cluster-last.
-- [Refactor SoundChangeRuleSet and compile subcomponents](issues/39-refactor-sound-change-ruleset.md) — **blocked by 37**; scope TBD until docs land.
+- [Refactor DiachronicSeries and compile subcomponents](issues/39-refactor-sound-change-ruleset.md) — **blocked by 37**; scope TBD until docs land.
 - [Spike: unknown_character → IPA mapping candidates](issues/42-spike-unknown-character-ipa-mappings.md) — 42 letter-like tokens classified; high-confidence seed set (ḱ, Ṽ, nasal vowels, š/Ṣ, French è, Slavic yers). Findings: [research/unknown-character-ipa-mappings.md](research/unknown-character-ipa-mappings.md) + [research/unknown-character-ipa-mappings.csv](research/unknown-character-ipa-mappings.csv).
 - [Correction pass: IPA letter mappings](issues/49-correction-pass-ipa-letter-mappings.md) — `ipa_mapping.csv` seeded (45 rows); high-confidence applied at parse; all 15 high-conf source tokens cleared from error inventory. Medium rows in CSV; runtime levels → ~~[Parser config: IPA mapping confidence levels](issues/56-parser-config-ipa-confidence-levels.md)~~ done (`data/parser_config.yml` → high+medium at parse).
 - [Correction pass: parenthetical segment notation](issues/48-correction-pass-parenthetical-segment-notation.md) — compile `expand_index_parenthetical_notation()` via `expand_meta_notation`; `received '('` cluster 144 → 35 (+109 recovered).
@@ -81,7 +81,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 | Index Diachronica ingest | `docs/index-diachronica-ingest.md` (merge parser + corpus-validation) |
 | Sound change rule compilation | `docs/sound-change-rule-compilation.md` (rename from `sound-change-applier.md`) |
 
-Delete superseded doc paths; fix all links. Transform order in compilation doc only. Refactor `SoundChangeRuleSet` → [ticket 39](issues/39-refactor-sound-change-ruleset.md).
+Delete superseded doc paths; fix all links. Transform order in compilation doc only. Refactor `DiachronicSeries` → [ticket 39](issues/39-refactor-sound-change-ruleset.md).
 
 ## Implementation plan (tickets 11+)
 

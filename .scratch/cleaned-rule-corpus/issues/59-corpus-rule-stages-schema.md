@@ -34,7 +34,7 @@ See [ADR-0011](../../../docs/adr/0011-corpus-rule-stages.md) and glossary **Stag
 ### Cutover
 
 - No dual-read of legacy `input`/`output`.
-- Regen YAML + update parsers, `asca_compile` chains/tilde, `SoundChangeRuleSet`, inventory, tests, and docs in one change set.
+- Regen YAML + update parsers, `asca_compile` chains/tilde, `DiachronicSeries`, inventory, tests, and docs in one change set.
 - Sync ticket 03 schema answer; fold remaining ADR-0005 doc lag ([adr-0005 ticket 05](../../adr-0005-no-ingest-split/issues/05-update-docs-and-parent-map.md)) into this work where it still mentions opaque I/O / parse-time chain split.
 
 ## Acceptance criteria

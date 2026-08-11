@@ -1,4 +1,4 @@
-"""Tests for ASCA validation of SoundChangeRuleSet (asca 0.10.x)."""
+"""Tests for ASCA validation of DiachronicSeries (asca 0.10.x)."""
 
 from pathlib import Path
 from unittest.mock import MagicMock, patch
@@ -8,7 +8,7 @@ import pandas as pd
 import pytest
 
 from conlanger.appliers.asca import ASCAValidationError, validate_asca
-from conlanger.tools.rules import SoundChangeRuleSet
+from conlanger.tools.rules import DiachronicSeries
 from tests.conftest import ASCA_INSTALLED
 
 _FIXTURE_CSV = (
@@ -43,7 +43,7 @@ def mock_asca_subprocess(mocker):
 @pytest.mark.skipif(not ASCA_INSTALLED, reason="asca binary not found on PATH")
 def test_validate_asca_smoke_with_installed_binary():
     """Single integration check that validate_asca invokes the real asca binary."""
-    scr = SoundChangeRuleSet(
+    scr = DiachronicSeries(
         {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )
@@ -54,7 +54,7 @@ def test_validate_asca_returns_true_when_subprocess_succeeds(
     mock_asca_subprocess, mock_asca_on_path
 ):
     mock_asca_subprocess.return_value = MagicMock(returncode=0, stderr="")
-    scr = SoundChangeRuleSet(
+    scr = DiachronicSeries(
         {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )
@@ -64,10 +64,10 @@ def test_validate_asca_returns_true_when_subprocess_succeeds(
 @pytest.mark.parametrize(
     "scr",
     [
-        SoundChangeRuleSet(
+        DiachronicSeries(
             {"index": "1", "section": "sec", "rules": []}, format="asca"
         ),
-        SoundChangeRuleSet(
+        DiachronicSeries(
             {
                 "index": "1",
                 "section": "sec",
@@ -84,7 +84,7 @@ def test_validate_asca_rejects_inactive_rules(scr):
 
 def test_validate_asca_missing_binary(mocker):
     mocker.patch("conlanger.appliers.asca.shutil.which", return_value=None)
-    scr = SoundChangeRuleSet(
+    scr = DiachronicSeries(
         {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )
@@ -93,7 +93,7 @@ def test_validate_asca_missing_binary(mocker):
 
 
 def test_validate_asca_missing_probe_words(mock_asca_on_path, tmp_path: Path):
-    scr = SoundChangeRuleSet(
+    scr = DiachronicSeries(
         {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )
@@ -102,7 +102,7 @@ def test_validate_asca_missing_probe_words(mock_asca_on_path, tmp_path: Path):
 
 
 def test_validate_asca_timeout(mock_asca_subprocess, mock_asca_on_path):
-    scr = SoundChangeRuleSet(
+    scr = DiachronicSeries(
         {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )
@@ -117,7 +117,7 @@ def test_validate_asca_timeout(mock_asca_subprocess, mock_asca_on_path):
 def test_validate_asca_stderr_error_with_zero_returncode(
     mock_asca_subprocess, mock_asca_on_path
 ):
-    scr = SoundChangeRuleSet(
+    scr = DiachronicSeries(
         {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )
@@ -129,7 +129,7 @@ def test_validate_asca_stderr_error_with_zero_returncode(
 
 
 def test_validate_asca_nonzero_without_stderr(mock_asca_subprocess, mock_asca_on_path):
-    scr = SoundChangeRuleSet(
+    scr = DiachronicSeries(
         {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )
@@ -139,7 +139,7 @@ def test_validate_asca_nonzero_without_stderr(mock_asca_subprocess, mock_asca_on
 
 
 def test_validate_asca_default_probe_words(mock_asca_subprocess, mock_asca_on_path):
-    scr = SoundChangeRuleSet(
+    scr = DiachronicSeries(
         {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )
@@ -157,7 +157,7 @@ def test_validate_asca_default_probe_words(mock_asca_subprocess, mock_asca_on_pa
 def test_validate_asca_keeps_trailing_newline(
     mock_asca_subprocess, mock_asca_on_path, tmp_path: Path
 ):
-    scr = SoundChangeRuleSet(
+    scr = DiachronicSeries(
         {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )
@@ -180,7 +180,7 @@ def test_validate_asca_keeps_trailing_newline(
 def test_validate_asca_appends_trailing_newline(
     mock_asca_subprocess, mock_asca_on_path, tmp_path: Path
 ):
-    scr = SoundChangeRuleSet(
+    scr = DiachronicSeries(
         {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )

@@ -6,7 +6,7 @@ from conlanger.tools.compile.asca.parenthetical import (
     expand_index_parenthetical_notation,
 )
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.rules import SoundChangeRuleSet
+from conlanger.tools.rules import DiachronicSeries
 
 
 @pytest.mark.parametrize(
@@ -80,4 +80,4 @@ def test_parenthetical_inventory_representatives_validate(inp, out, env):
     if env is not None:
         rule["env"] = env
     section = {"index": "1", "section": "paren", "rules": [rule]}
-    validate_asca(SoundChangeRuleSet(section, "asca"))
+    validate_asca(DiachronicSeries(section, "asca"))

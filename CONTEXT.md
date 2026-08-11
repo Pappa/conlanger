@@ -58,7 +58,7 @@ _Avoid_: treating hand-cleaned XML/YAML samples as overriding the HTML
 
 **Sound-change section**:
 One Index Diachronica `<h2>` section — a named language-change block (index, title, citation, comments) containing zero or more rule lines. One sound-change section maps to one runtime compile unit (e.g. a `PhonologicalRuleSet`), not to a single corpus rule.
-_Avoid_: `SoundChangeRuleSet` as the glossary term for this level; conflating “section” with “rule line”
+_Avoid_: `DiachronicSeries` as the glossary term for this level; conflating “section” with “rule line”
 
 **Corpus rule**:
 One structured entry in the rule corpus, normally corresponding to a single Index Diachronica rule line (including internal sets/alternations when needed). It always carries **stages**, raw, and source; environment and exception are optional (absent environment = any; absent exception = none). Optional rule status may hold a rule out or flag it for extra validation; edge cases not yet representable use empty stages (`stages: []`) with `status: skipped` instead of splitting into multiple corpus rules.
@@ -154,7 +154,7 @@ _Avoid_: parser (reserved for Index Diachronica HTML → rule corpus)
 
 **PhonologicalRuleSet**:
 A runtime container for one sound-change section: its corpus rules, abbreviation mappings (passed in from package CSV), and compiled applier output. Applies mappings to rule strings; unmapped tokens remain unchanged.
-_Avoid_: `SoundChangeRuleSet` as the name for this container; assuming mappings are baked into the corpus YAML
+_Avoid_: `DiachronicSeries` as the name for this container; assuming mappings are baked into the corpus YAML
 
 **Abbreviation table**:
 Runtime mapping from Index shorthand to applier strings, loaded from package CSV (e.g. `data/asca/group_mappings.csv`) and passed into a `PhonologicalRuleSet`. Apply known rows; unmapped tokens stay in the rule string. Section-specific overrides are deferred — handle high-volume failures via validation clusters and hand-authored rows.

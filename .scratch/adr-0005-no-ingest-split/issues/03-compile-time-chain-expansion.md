@@ -10,7 +10,7 @@ Implement compile-time expansion when a corpus rule's `output` contains ` > ` (m
 
 **Corpus invariants** (grill 2026-08-07): a chained HTML line is still **one corpus rule** with one `input`, one `output` (chain in `output`), and at most **one** optional `env` and **one** optional `exception` — never per-step env/exception in YAML. Expansion splits the **output chain** only; rule-level `env`/`exception` attach to each emitted ASCA rule when present.
 
-Wire into `SoundChangeRuleSet` / `RuleChange` so `validate_asca` exercises each expanded step. Slot into compile order per [ASCA compile transform ordering](../cleaned-rule-corpus/research/asca-compile-transform-order.md).
+Wire into `DiachronicSeries` / `RuleChange` so `validate_asca` exercises each expanded step. Slot into compile order per [ASCA compile transform ordering](../cleaned-rule-corpus/research/asca-compile-transform-order.md).
 
 **Target:** recover ~136 ok rules lost when [Revert parse-time chain split](02-revert-parse-time-chain-split.md) lands. **Separate ticket** from revert — may be implemented and merged independently.
 
@@ -21,7 +21,7 @@ Wire into `SoundChangeRuleSet` / `RuleChange` so `validate_asca` exercises each 
 **Done 2026-08-07.**
 
 - `expand_chained_corpus_rule()` in `src/conlanger/tools/asca_compile/chains.py`.
-- `SoundChangeRuleSet` expands each corpus rule to one `RuleChange` per chain step before compile; per-step rules run the full `compile_asca_rule_string` pipeline.
+- `DiachronicSeries` expands each corpus rule to one `RuleChange` per chain step before compile; per-step rules run the full `compile_asca_rule_string` pipeline.
 - Rule-level `env` / `exception` propagate to every emitted step.
 
 **Design:** expand **before** per-step field join + compile transforms (not once on the multi-`>` joined string).

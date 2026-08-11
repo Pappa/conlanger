@@ -12,13 +12,13 @@
 
 | count | failure_class |
 |------:|---------------|
-| 551 | `syntax_other` |
+| 550 | `syntax_other` |
 | 323 | `unknown_character` |
-| 285 | `expected_underscore` |
+| 286 | `expected_underscore` |
 | 118 | `runtime_other` |
 | 115 | `unknown_feature` |
-| 103 | `unknown_grouping` |
-| 65 | `prose_or_expected_arrow` |
+| 104 | `unknown_grouping` |
+| 64 | `prose_or_expected_arrow` |
 | 44 | `nested_brackets` |
 | 42 | `panic_other` |
 | 37 | `expected_number` |
@@ -82,20 +82,20 @@
 | 14 | `E` |
 | 10 | `B` |
 | 9 | `K` |
-| 7 | `T` |
 | 7 | `M` |
+| 7 | `T` |
 | 6 | `X` |
 | 5 | `H` |
-| 3 | `I` |
+| 3 | `A` |
 | 3 | `D` |
+| 3 | `I` |
 | 3 | `Y` |
-| 2 | `A` |
 | 1 | `W` |
 | 1 | `Q` |
 
 ## Notes
 
-- Inventory runs per corpus rule via `SoundChangeRuleSet` + `validate_asca`.
+- Inventory runs per corpus rule via `DiachronicSeries` + `validate_asca`.
 - Full rows: [asca-rule-inventory.csv](asca-rule-inventory.csv)
 - OK rows: [asca-rule-inventory-success.csv](asca-rule-inventory-success.csv)
 - Fail rows: [asca-rule-inventory-error.csv](asca-rule-inventory-error.csv)

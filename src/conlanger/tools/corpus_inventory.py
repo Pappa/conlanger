@@ -581,7 +581,7 @@ def summarize_inventory(
         [
             "## Notes",
             "",
-            "- Inventory runs per corpus rule via `SoundChangeRuleSet` + `validate_asca`.",
+            "- Inventory runs per corpus rule via `DiachronicSeries` + `validate_asca`.",
             f"- Full rows: [{INVENTORY_CSV_NAME}]({INVENTORY_CSV_NAME})",
             f"- OK rows: [{INVENTORY_SUCCESS_CSV_NAME}]({INVENTORY_SUCCESS_CSV_NAME})",
             f"- Fail rows: [{INVENTORY_ERROR_CSV_NAME}]({INVENTORY_ERROR_CSV_NAME})",

@@ -34,7 +34,7 @@ from conlanger.utils.gloss import (
 )
 from conlanger.utils.symbols import normalize_stress_marks, normalize_symbols
 from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
-from conlanger.tools.rules import SoundChangeRuleSet
+from conlanger.tools.rules import DiachronicSeries
 from conlanger.utils.file_io import (
     DEFAULT_GROUP_MAPPINGS_CSV,
     feature_mappings_dict,
@@ -1273,7 +1273,7 @@ def test_kenyah_vowel_height_rules_validate():
         "rules": rules,
     }
     validate_asca(
-        SoundChangeRuleSet(section, "asca", group_mappings=asca_group_mappings_dict())
+        DiachronicSeries(section, "asca", group_mappings=asca_group_mappings_dict())
     )
 
 

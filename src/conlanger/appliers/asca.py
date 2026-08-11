@@ -11,7 +11,7 @@ from pathlib import Path
 
 from strip_ansi import strip_ansi
 
-from conlanger.tools.rules import RuleChange, SoundChangeRuleSet
+from conlanger.tools.rules import RuleChange, DiachronicSeries
 
 # Minimal probe lexicon for ``asca run`` (Tier 4 boundary). Override with ASCA_PROBE_WORDS.
 _DEFAULT_PROBE_WORDS = "a\nba\nkata\nsami\nntu\n"
@@ -20,14 +20,14 @@ _ANSI_RE = re.compile(r"\x1b\[[0-9;]*m")
 
 
 class ASCAValidationError(ValueError):
-    """Raised when a ``SoundChangeRuleSet`` is not valid for ASCA."""
+    """Raised when a ``DiachronicSeries`` is not valid for ASCA."""
 
     def __init__(self, message: str, *, returncode: int | None = None):
         super().__init__(message)
         self.returncode = returncode
 
 
-def _active_rule_changes(rule: SoundChangeRuleSet) -> list[RuleChange]:
+def _active_rule_changes(rule: DiachronicSeries) -> list[RuleChange]:
     """Return RuleChange parts that are not commented out (``skip``)."""
     active: list[RuleChange] = []
     for part in rule._parts:
@@ -46,14 +46,14 @@ def _clean_asca_stderr(stderr: str) -> str:
 
 
 def validate_asca(
-    rule: SoundChangeRuleSet,
+    rule: DiachronicSeries,
     *,
     probe_words: Path | None = None,
     timeout: float = 15.0,
 ) -> bool:
     """Return ``True`` if ``rule`` is valid for ASCA; otherwise raise.
 
-    Writes the rendered ``SoundChangeRuleSet`` to a temporary ``.rsca`` and runs
+    Writes the rendered ``DiachronicSeries`` to a temporary ``.rsca`` and runs
     ``asca run <probe_words> --rules <file>``. Non-zero exit or ASCA
     Syntax/Runtime Error text on stderr becomes ``ASCAValidationError``.
 
@@ -61,7 +61,7 @@ def validate_asca(
     """
     if not _active_rule_changes(rule):
         raise ASCAValidationError(
-            "SoundChangeRuleSet has no active RuleChange lines to validate"
+            "DiachronicSeries has no active RuleChange lines to validate"
         )
 
     asca = shutil.which("asca")

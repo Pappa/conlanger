@@ -19,7 +19,7 @@ from conlanger.tools.rules import (
     RuleChange,
     RuleCitation,
     RuleComment,
-    SoundChangeRuleSet,
+    DiachronicSeries,
 )
 
 
@@ -106,8 +106,8 @@ from conlanger.tools.rules import (
         ({"index": "1", "section": "sec"}, "brassica", "; 1 - sec"),
     ],
 )
-def test_SoundChangeRuleSet(section, format, expected):
-    rule = SoundChangeRuleSet(section, format)
+def test_DiachronicSeries(section, format, expected):
+    rule = DiachronicSeries(section, format)
     assert str(rule) == expected
     assert rule.title == section["index"] + " - " + section["section"]
 
@@ -131,9 +131,9 @@ def test_rule_change_requires_output():
         ),
     ],
 )
-def test_SoundChangeRuleSet_invalid_format(section, format):
+def test_DiachronicSeries_invalid_format(section, format):
     with pytest.raises(ValueError):
-        SoundChangeRuleSet(section, format)
+        DiachronicSeries(section, format)
 
 
 def test_DebugRules():
@@ -378,7 +378,7 @@ def test_sound_change_ruleset_includes_section_comment():
         "comment": "section note",
         "rules": [{"stages": ["a", "b"]}],
     }
-    assert "# section note" in str(SoundChangeRuleSet(section, "asca"))
+    assert "# section note" in str(DiachronicSeries(section, "asca"))
 
 
 def test_rule_change_format_alias_matches_compile():
@@ -444,7 +444,7 @@ def test_sound_change_ruleset_compiles_length_at_instantiation():
         "section": "Test",
         "rules": [{"stages": ["Vː", "V"], "env": "#C_C"}],
     }
-    ruleset = SoundChangeRuleSet(section, "asca")
+    ruleset = DiachronicSeries(section, "asca")
     rule_part = ruleset._parts[-1]
     assert rule_part.value == "V:[+long] > V / #C_C"
 
@@ -465,7 +465,7 @@ def test_sound_change_ruleset_validates_length_marker_fixtures():
         ],
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(SoundChangeRuleSet(section, "asca"), probe_words=probe)
+    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
@@ -484,7 +484,7 @@ def test_sound_change_ruleset_validates_tilde_notation_fixtures():
         ],
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(SoundChangeRuleSet(section, "asca"), probe_words=probe)
+    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
@@ -497,7 +497,7 @@ def test_sound_change_ruleset_validates_expanded_chain_fixtures():
         "rules": [{"stages": ["dʒ", "tʃ > ʃ"]}],
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(SoundChangeRuleSet(section, "asca"), probe_words=probe)
+    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
@@ -514,7 +514,7 @@ def test_sound_change_ruleset_validates_ejective_marker_fixtures():
         ],
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(SoundChangeRuleSet(section, "asca"), probe_words=probe)
+    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
@@ -531,7 +531,7 @@ def test_sound_change_ruleset_validates_optional_grouping_ellipsis_fixtures():
         ],
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(SoundChangeRuleSet(section, "asca"), probe_words=probe)
+    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
@@ -552,7 +552,7 @@ def test_sound_change_ruleset_validates_extended_grouping_ellipsis_fixtures():
         ],
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(SoundChangeRuleSet(section, "asca"), probe_words=probe)
+    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
@@ -568,4 +568,4 @@ def test_sound_change_ruleset_validates_em_dash_rule_marker_fixtures():
         ],
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(SoundChangeRuleSet(section, "asca"), probe_words=probe)
+    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)

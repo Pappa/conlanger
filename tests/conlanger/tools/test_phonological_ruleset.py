@@ -9,7 +9,7 @@ from conlanger.tools.compile.asca.group_mappings import (
     asca_group_mappings_dict,
 )
 from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
-from conlanger.tools.rules import SoundChangeRuleSet
+from conlanger.tools.rules import DiachronicSeries
 
 _SAMPLE_MAPPINGS = {
     "R": "[+son,-syll]",
@@ -139,7 +139,7 @@ def test_sound_change_ruleset_applies_group_mappings_for_asca():
             }
         ],
     }
-    rendered = str(SoundChangeRuleSet(section, "asca", group_mappings=_SAMPLE_MAPPINGS))
+    rendered = str(DiachronicSeries(section, "asca", group_mappings=_SAMPLE_MAPPINGS))
     assert "[+cont]" in rendered
     assert "\tf > p / #_V{[+cont],C[-voice],r}" in rendered
 
@@ -151,7 +151,7 @@ def test_sound_change_ruleset_skips_group_mappings_for_brassica():
         "rules": [{"stages": ["S", "P"], "env": "{V,R}_V"}],
     }
     rendered = str(
-        SoundChangeRuleSet(section, "brassica", group_mappings=_SAMPLE_MAPPINGS)
+        DiachronicSeries(section, "brassica", group_mappings=_SAMPLE_MAPPINGS)
     )
     assert rendered.endswith("S / P / {V,R}_V")
 

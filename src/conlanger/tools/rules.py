@@ -152,7 +152,7 @@ class RuleChange(RulePartBase):
         return apply_asca_group_mappings_to_string(rule, self._group_mappings)
 
 
-class SoundChangeRuleSet:
+class DiachronicSeries:
     def __init__(
         self,
         section: dict,
@@ -191,7 +191,7 @@ class DebugRules:
 
     def _create_rule(self, section: dict, rule: dict, index: int, format: str):
         item = {"index": section["index"], "section": str(index), "rules": [rule]}
-        return SoundChangeRuleSet(item, format)
+        return DiachronicSeries(item, format)
 
     def __iter__(self):
         return iter(self._rules)

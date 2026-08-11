@@ -39,7 +39,7 @@ Brassica compilation remains a future parallel path behind the same corpus (ADR-
 10. As an agent implementing fixes, I want **class-first** transforms in the parser or compile layer, so that mechanical fixes scale across thousands of rules.
 11. As an agent implementing fixes, I want git-diffable YAML regeneration, so that I can review churn and grow regression fixtures when **rule status** changes.
 12. As a developer, I want **compile validation** after applier compile (not at YAML ingest), so that the corpus remains applier-neutral per ADR-0003.
-13. As a developer, I want `validate_asca(SoundChangeRuleSet) -> True` with clear errors on failure, so that correction workflow has a concrete ASCA gate.
+13. As a developer, I want `validate_asca(DiachronicSeries) -> True` with clear errors on failure, so that correction workflow has a concrete ASCA gate.
 14. As a developer, I want validation driven by ASCA 0.10.2 via `asca run` on the **baseline probe wordlist** (`tests/fixtures/asca_probe_words.wsca`), so that runtime structural failures are caught alongside syntax errors where probes match rule shape.
 15. As a developer, I want **PhonologicalRuleSet** to load `group_mappings.csv` at compile time, so that **class letter** expansions apply without baking ASCA syntax into the corpus YAML.
 16. As a developer, I want unmapped **class letters** to pass through unchanged, so that validation surfaces unknown tokens via **failure classes** rather than silent substitution.
@@ -64,7 +64,7 @@ Brassica compilation remains a future parallel path behind the same corpus (ADR-
 35. As a maintainer, I want inventory metrics reproducible (rule counts, ok/fail percentages, top **failure classes**), so that progress toward a compilable corpus is trackable across iterations.
 36. As a maintainer, I want **series indices** and section-local prose abbreviations handled cluster-driven with hand-added mapping rows when warranted, so that hard cases are not blocked on a global prose-extraction spike.
 37. As a maintainer, I want **meta-notation** (`X0`, `Xn`, retroflex marks, repetition groups) deferred to validation clusters, so that the first delivery does not invent ASCA expansions without evidence.
-38. As a developer, I want `SoundChangeRuleSet` / `RuleChange` to render ASCA rule strings from corpus rule dicts, so that the ASCA **applier compiler** has a stable string emission layer.
+38. As a developer, I want `DiachronicSeries` / `RuleChange` to render ASCA rule strings from corpus rule dicts, so that the ASCA **applier compiler** has a stable string emission layer.
 39. As a developer, I want skipped corpus rules to render as ASCA comments, so that `validate_asca` ignores held-out rules without deleting section structure.
 40. As an operator, I want a script or entry point to regenerate the full cleaned YAML from HTML and emit the validation report in one invocation, so that the correction loop is automatable by agents.
 
@@ -93,9 +93,9 @@ Brassica compilation remains a future parallel path behind the same corpus (ADR-
 
 ### Compile and validation
 
-- One **sound-change section** → one **PhonologicalRuleSet** (`src/conlanger/tools/phonological_ruleset.py`): runtime container delegating to `SoundChangeRuleSet` with compile-time transforms in `RuleChange`.
+- One **sound-change section** → one **PhonologicalRuleSet** (`src/conlanger/tools/phonological_ruleset.py`): runtime container delegating to `DiachronicSeries` with compile-time transforms in `RuleChange`.
 - **Compile-time transforms** (correction passes): `group_mappings.csv` class-letter expansion; `normalize_asca_length_marks()`; `normalize_asca_ejective_marks()`; labialized class letters (`Kʷ`, `K(ʷ)`, …); typographic apostrophe → ejective mark. Corpus dict fields and `raw` unchanged.
-- **Applier compiler** path: corpus rule dict → `RuleChange` → `SoundChangeRuleSet` string → `validate_asca`.
+- **Applier compiler** path: corpus rule dict → `RuleChange` → `DiachronicSeries` string → `validate_asca`.
 - `validate_asca`: ASCA 0.10.2 via `asca run` on baseline probe wordlist (`tests/fixtures/asca_probe_words.wsca`); raises `ASCAValidationError` on failure; skips commented (held-out) rules. Tier 4 runtime failures may be under-detected when probes do not match rule shape — acceptable for clustering (~98% of failures are Tier 1–2 syntax). Rule-derived probe synthesis (ticket 10) — **wontfix**.
 - Validation runs per **corpus rule**, not whole-section-only gate.
 - Post-compile validation only — ingest does not reject non-ASCA-shaped corpus fields (ADR-0003).
@@ -132,7 +132,7 @@ This is the highest seam that exercises ingest, schema shape, abbreviation/featu
 
 - Use real or minimal HTML fixtures mirroring Index Diachronica structure (`<section>`, `<h2>`, `<p class="schg">`).
 - Assert corpus rule fields (`input`, `output`, `raw`, `source`, optional `env`/`exception`/`status`) without asserting internal parser function names.
-- Build `SoundChangeRuleSet` from compiled section output and call `validate_asca`; expect `True` or documented `ASCAValidationError` / expected skip for `status: skipped`.
+- Build `DiachronicSeries` from compiled section output and call `validate_asca`; expect `True` or documented `ASCAValidationError` / expected skip for `status: skipped`.
 - Prefer parametrized cases drawn from `tests/fixtures/sound_change_rules.csv` (`html_extract` for ingest expectations; `asca_guess` for validator-aligned compile cases).
 
 Rationale: lower seams (e.g. `extract_rule_parts` alone, or `validate_asca` alone) already exist and do not prove the corpus pipeline; higher seams (full lexicon evolution) mix unrelated concerns. One end-to-end compile-validation seam minimises cross-module test duplication.
@@ -154,7 +154,7 @@ Rationale: lower seams (e.g. `extract_rule_parts` alone, or `validate_asca` alon
 
 - `IndexDiachronicaParser` (ingest)
 - `PhonologicalRuleSet` (compile)
-- `SoundChangeRuleSet` / `RuleChange` (ASCA emission + compile transforms)
+- `DiachronicSeries` / `RuleChange` (ASCA emission + compile transforms)
 - `validate_asca` (post-compile gate; baseline probe wordlist)
 - `corpus_inventory` / `regenerate_corpus` (orchestration: YAML + validation report from HTML path)
 

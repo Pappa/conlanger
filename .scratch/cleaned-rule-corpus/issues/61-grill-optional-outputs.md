@@ -16,7 +16,7 @@ Index rules like `d → {∅,ð} / V_V` and `ɡ → {∅,ɣ} / V_V` encode speak
 
 ## Open / blocked on rethink
 
-- **When to choose** an alternative: earlier lean was `str(SoundChangeRuleSet)`; then revised to `RuleChange` instantiation via `random` + caller `random.seed`.
+- **When to choose** an alternative: earlier lean was `str(DiachronicSeries)`; then revised to `RuleChange` instantiation via `random` + caller `random.seed`.
 - **Testability concern (owner pause):** instantiation-time `random.choice` means unit tests will not systematically exercise every alternative unless tests inject choice or enumerate members explicitly.
 - Whether `RuleChange` keeps `outputs: tuple[str, …]` plus selected `output`, or only the chosen string.
 - Set-detection heuristic (whole-field `{…}`).

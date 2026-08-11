@@ -7,7 +7,7 @@ from conlanger.tools.compile.asca.tilde import (
     normalize_corpus_rule_tilde_fields,
 )
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.rules import RuleChange, SoundChangeRuleSet
+from conlanger.tools.rules import RuleChange, DiachronicSeries
 
 
 @pytest.mark.parametrize(
@@ -89,7 +89,7 @@ def test_sound_change_ruleset_expands_tilde_output_chain():
         "section": "Tilde chain",
         "rules": [{"stages": ["{β,w}", "bj~vj~v"]}],
     }
-    ruleset = SoundChangeRuleSet(section, "asca")
+    ruleset = DiachronicSeries(section, "asca")
     rule_parts = [part for part in ruleset._parts if isinstance(part, RuleChange)]
     assert len(rule_parts) == 3
     assert rule_parts[0].value == "{β,w} > bj"
@@ -119,7 +119,7 @@ def test_tilde_inventory_representatives_validate(inp, out, env):
     if env is not None:
         rule["env"] = env
     section = {"index": "1", "section": "tilde", "rules": [rule]}
-    validate_asca(SoundChangeRuleSet(section, "asca"))
+    validate_asca(DiachronicSeries(section, "asca"))
 
 
 def test_tilde_inventory_representative_paren_input_validates_after_expansion():
@@ -128,4 +128,4 @@ def test_tilde_inventory_representative_paren_input_validates_after_expansion():
         "section": "paren",
         "rules": [{"stages": ["ʔ(ʷ)~q:[+cg](ʷ)", "ʔ(ʷ)"]}],
     }
-    validate_asca(SoundChangeRuleSet(section, "asca"))
+    validate_asca(DiachronicSeries(section, "asca"))

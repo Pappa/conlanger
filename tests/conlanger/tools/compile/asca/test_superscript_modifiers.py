@@ -10,7 +10,7 @@ from conlanger.tools.compile.asca.group_mappings import (
 from conlanger.tools.compile.asca.superscript_modifiers import (
     normalize_asca_superscript_modifiers,
 )
-from conlanger.tools.rules import SoundChangeRuleSet
+from conlanger.tools.rules import DiachronicSeries
 
 
 @pytest.mark.parametrize(
@@ -83,7 +83,7 @@ def test_superscript_inventory_representatives_validate(inp, out, env):
         rule["env"] = env
     section = {"index": "1", "section": "superscript", "rules": [rule]}
     validate_asca(
-        SoundChangeRuleSet(section, "asca", group_mappings=asca_group_mappings_dict())
+        DiachronicSeries(section, "asca", group_mappings=asca_group_mappings_dict())
     )
 
 
@@ -93,7 +93,7 @@ def test_superscript_s_aspirated_rule_compiles_via_pipeline():
         "section": "superscript",
         "rules": [{"stages": ["Sʰ", "S"], "env": "#v_V"}],
     }
-    ruleset = SoundChangeRuleSet(
+    ruleset = DiachronicSeries(
         section, "asca", group_mappings=asca_group_mappings_dict()
     )
     assert ruleset._parts[-1].value == "C:[+labial][+spread] > P / #v_V"

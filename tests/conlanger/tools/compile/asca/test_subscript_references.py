@@ -13,7 +13,7 @@ from conlanger.tools.compile.asca.subscript_references import (
     is_easy_subscript_rule_text,
 )
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.rules import SoundChangeRuleSet
+from conlanger.tools.rules import DiachronicSeries
 
 
 @pytest.mark.parametrize(
@@ -83,7 +83,7 @@ def test_rule_change_validates_positional_slot_fixture():
         "rules": [{"stages": ["C₁C₂", "C₂"]}],
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(SoundChangeRuleSet(section, "asca"), probe_words=probe)
+    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
@@ -94,7 +94,7 @@ def test_rule_change_validates_identity_fixture():
         "rules": [{"stages": ["V₀V₀", "V₀"]}],
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(SoundChangeRuleSet(section, "asca"), probe_words=probe)
+    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
@@ -105,4 +105,4 @@ def test_rule_change_validates_identity_env_fixture():
         "rules": [{"stages": ["h", "ʔ"], "env": "V₀V₀"}],
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(SoundChangeRuleSet(section, "asca"), probe_words=probe)
+    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)

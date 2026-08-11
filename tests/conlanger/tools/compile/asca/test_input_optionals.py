@@ -6,7 +6,7 @@ from conlanger.tools.compile.asca.input_optionals import (
     expand_input_optionals_to_structures,
 )
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.rules import SoundChangeRuleSet
+from conlanger.tools.rules import DiachronicSeries
 
 
 @pytest.mark.parametrize(
@@ -53,7 +53,7 @@ def test_input_optionals_inventory_representatives_validate(inp, out, env):
     if env is not None:
         rule["env"] = env
     section = {"index": "1", "section": "input-opt", "rules": [rule]}
-    validate_asca(SoundChangeRuleSet(section, "asca"))
+    validate_asca(DiachronicSeries(section, "asca"))
 
 
 def test_expand_input_optionals_leaves_asca_env_optionals():
