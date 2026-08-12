@@ -45,9 +45,12 @@ DEFAULT_SERIES_MAPPINGS_REPORT = (
 
 # Whitespace split respecting {...} groups (single level).
 _RULE_TOKEN_RE = re.compile(
-    r"\{[^{}]+\}|[A-Za-zÀ-ÿɑæøåɡɢʃʒθðβγχħʕʔ]+(?:\[[^\]]+\])?|[^\s{}]+"
+    r"\{[^{}]+\}|[A-Za-zÀ-ÿɑæøåɡɢʃʒθðβγχħʕʔəɨʊɪɛɔ]+(?:\[[^\]]+\])?|[^\s{}]+"
 )
 _SUBSCRIPT_CHARS = frozenset("₀₁₂₃₄₅₆₇₈₉ₓ")
+_LENGTH_MARKS = frozenset("ːˑ")
+# Trailing Index glosses like ``(not sure…)`` or ``“(reduced)”``.
+_TRAILING_GLOSS_RE = re.compile(r"(?:\s*\([^)]*\)\s*|\s*[\"“][^\"”]*[\"”]\s*)+$")
 
 
 @dataclass(frozen=True)
@@ -89,25 +92,31 @@ def update_series_mappings_from_html(
     return len(rows)
 
 
+def _strip_trailing_gloss(text: str) -> str:
+    return _TRAILING_GLOSS_RE.sub("", text.strip()).strip()
+
+
 def _tokenize_rule_side(text: str) -> list[str]:
-    rough = [token for token in _RULE_TOKEN_RE.findall(text.strip()) if token.strip()]
+    cleaned = _strip_trailing_gloss(text)
+    rough = [token for token in _RULE_TOKEN_RE.findall(cleaned) if token.strip()]
     merged: list[str] = []
     for token in rough:
-        if merged and len(token) == 1 and token in _SUBSCRIPT_CHARS:
+        if (
+            merged
+            and len(token) == 1
+            and (token in _SUBSCRIPT_CHARS or token in _LENGTH_MARKS)
+        ):
             merged[-1] += token
         else:
             merged.append(token)
     return merged
 
 
-def _is_series_side_token(token: str) -> bool:
-    if token.startswith("{") and token.endswith("}"):
-        inner = token[1:-1]
-        parts = [part.strip() for part in inner.split(",") if part.strip()]
-        return bool(parts) and all(
-            is_correspondence_series_token(part) for part in parts
-        )
-    return is_correspondence_series_token(token)
+def _brace_parts(token: str) -> list[str] | None:
+    if not (token.startswith("{") and token.endswith("}")):
+        return None
+    parts = [part.strip() for part in token[1:-1].split(",") if part.strip()]
+    return parts or None
 
 
 def _is_asca_side_token(token: str) -> bool:
@@ -115,10 +124,9 @@ def _is_asca_side_token(token: str) -> bool:
         return True
     if token.startswith("*"):
         return False
-    if token.startswith("{") and token.endswith("}"):
-        inner = token[1:-1]
-        parts = [part.strip() for part in inner.split(",") if part.strip()]
-        return bool(parts) and all(_is_asca_side_token(part) for part in parts)
+    parts = _brace_parts(token)
+    if parts is not None:
+        return all(_is_asca_side_token(part) for part in parts)
     if is_correspondence_series_token(token):
         return False
     if is_positional_slot_token(token) or is_identity_subscript_token(token):
@@ -126,6 +134,27 @@ def _is_asca_side_token(token: str) -> bool:
     if re.fullmatch(r"[A-Z](?:\[[^\]]+\])?", token):
         return False
     return not re.search(r"[₀₁₂₃₄₅₆₇₈₉ₓ]", token)
+
+
+def _series_members_from_input_token(token: str) -> list[str]:
+    """Return correspondence-series members from a plain or braced input token."""
+    parts = _brace_parts(token)
+    if parts is not None:
+        return [
+            part
+            for part in parts
+            if is_correspondence_series_token(part)
+            and not is_collective_subscript_token(part)
+        ]
+    if is_correspondence_series_token(token) and not is_collective_subscript_token(
+        token
+    ):
+        return [token]
+    return []
+
+
+def _is_brace_input_token(token: str) -> bool:
+    return _brace_parts(token) is not None
 
 
 def _rule_io_strings(parts: dict[str, Any]) -> tuple[str, str]:
@@ -141,7 +170,13 @@ def infer_parallel_rule_mappings(
     section_index: str,
     source: str,
 ) -> list[SeriesMapping]:
-    """Infer series→segment mappings from parallel input/output tokens in one rule."""
+    """Infer series→segment mappings from parallel input/output tokens in one rule.
+
+    Emits only aligned series↔ASCA pairs. Non-series inputs (class letters, plain
+    segments) and braced mixes are skipped per slot so one bad token does not
+    discard the whole chain. Braced inputs expand each series member to the
+    aligned output target.
+    """
     parts = extract_rule_parts(raw_rule)
     if parts is None:
         return []
@@ -152,28 +187,27 @@ def infer_parallel_rule_mappings(
     output_tokens = _tokenize_rule_side(out)
     if not input_tokens or len(input_tokens) != len(output_tokens):
         return []
-    if not all(_is_series_side_token(token) for token in input_tokens):
-        return []
-    if not all(_is_asca_side_token(token) for token in output_tokens):
-        return []
 
     rows: list[SeriesMapping] = []
-    for inp, out in zip(input_tokens, output_tokens, strict=True):
-        if inp.startswith("{") and inp.endswith("}"):
+    for inp_tok, out_tok in zip(input_tokens, output_tokens, strict=True):
+        if not _is_asca_side_token(out_tok):
             continue
-        if not is_correspondence_series_token(inp) or is_collective_subscript_token(
-            inp
-        ):
-            continue
-        rows.append(
-            SeriesMapping(
-                section_index=section_index,
-                token=inp,
-                asca_target=out,
-                source=source,
-                notes="inferred from parallel rule I/O",
-            )
+        from_brace = _is_brace_input_token(inp_tok)
+        notes = (
+            "inferred from braced parallel rule I/O"
+            if from_brace
+            else "inferred from parallel rule I/O"
         )
+        for member in _series_members_from_input_token(inp_tok):
+            rows.append(
+                SeriesMapping(
+                    section_index=section_index,
+                    token=member,
+                    asca_target=out_tok,
+                    source=source,
+                    notes=notes,
+                )
+            )
     return rows
 
 
@@ -194,20 +228,74 @@ def infer_singleton_rule_mappings(
     output_tokens = _tokenize_rule_side(out)
     if len(input_tokens) != 1 or len(output_tokens) != 1:
         return []
-    inp, out = input_tokens[0], output_tokens[0]
-    if not is_correspondence_series_token(inp) or is_collective_subscript_token(inp):
+    inp_tok, out_tok = input_tokens[0], output_tokens[0]
+    if not _is_asca_side_token(out_tok):
         return []
-    if not _is_asca_side_token(out):
+    members = _series_members_from_input_token(inp_tok)
+    if not members:
         return []
+    from_brace = _is_brace_input_token(inp_tok)
+    notes = "inferred from braced rule I/O" if from_brace else "inferred from rule I/O"
     return [
         SeriesMapping(
             section_index=section_index,
-            token=inp,
-            asca_target=out,
+            token=member,
+            asca_target=out_tok,
             source=source,
-            notes="inferred from rule I/O",
+            notes=notes,
         )
+        for member in members
     ]
+
+
+def infer_attested_series_digit_mappings(
+    raw_rule: str,
+    *,
+    section_index: str,
+    source: str,
+) -> list[SeriesMapping]:
+    """Emit digit-segment rows for correspondence-series tokens attested in a rule.
+
+    Lowest-priority fallback when citation/table/I/O inference did not define a
+    target (e.g. Slavic ``æ₂``/``i₂`` only appearing in an output set, or
+    compounds named only in an environment gloss).
+    """
+    parts = extract_rule_parts(raw_rule)
+    if parts is None:
+        return []
+    fields: list[str] = [
+        stage for stage in parts.get("stages", []) if stage and stage.strip()
+    ]
+    for key in ("env", "exception"):
+        value = parts.get(key)
+        if value and str(value).strip():
+            fields.append(str(value))
+
+    rows: list[SeriesMapping] = []
+    seen: set[str] = set()
+    for field in fields:
+        for token in sorted(find_correspondence_series_tokens(field)):
+            if token in seen:
+                continue
+            if not is_correspondence_series_token(token):
+                continue
+            if is_collective_subscript_token(token):
+                continue
+            match = _CORRESPONDENCE_INDEX_RE.fullmatch(token)
+            if not match:
+                continue
+            seen.add(token)
+            base, sub = match.group(1), match.group(2)
+            rows.append(
+                SeriesMapping(
+                    section_index=section_index,
+                    token=token,
+                    asca_target=asca_digit_segment(base, sub),
+                    source=source,
+                    notes="series member attested in rule fields",
+                )
+            )
+    return rows
 
 
 def _citation_series_rows(
@@ -286,22 +374,43 @@ def _collective_rows_for_section(
                 token=collective,
                 asca_target="{" + ",".join(targets) + "}",
                 source=source,
-                notes="collective subscript over correspondence-series members from citation",
+                notes="collective subscript over correspondence-series members",
             )
         )
     return rows
 
 
 def _dedupe_rows(rows: list[SeriesMapping]) -> list[SeriesMapping]:
-    """Keep the first row per (section_index, token); extraction order = priority."""
-    seen: set[tuple[str, str]] = set()
+    """Keep the best row per (section_index, token); prefer bare I/O over braces."""
+    priority = {
+        "section citation defines correspondence-series member": 0,
+        "phonology inventory table lists correspondence-series member": 0,
+        "collective subscript over correspondence-series members": 1,
+        "inferred from rule I/O": 2,
+        "inferred from parallel rule I/O": 3,
+        "inferred from braced rule I/O": 4,
+        "inferred from braced parallel rule I/O": 5,
+        "series member attested in rule fields": 6,
+    }
+
+    def rank(row: SeriesMapping) -> int:
+        return priority.get(row.notes, 50)
+
+    best: dict[tuple[str, str], SeriesMapping] = {}
+    for row in rows:
+        key = (row.section_index, row.token)
+        existing = best.get(key)
+        if existing is None or rank(row) < rank(existing):
+            best[key] = row
+
     out: list[SeriesMapping] = []
+    seen: set[tuple[str, str]] = set()
     for row in rows:
         key = (row.section_index, row.token)
         if key in seen:
             continue
         seen.add(key)
-        out.append(row)
+        out.append(best[key])
     return out
 
 
@@ -329,7 +438,8 @@ def extract_series_mappings_from_html(
         citation_text: str | None = None
         citation_source = ""
         saw_first_p = False
-        rule_rows: list[SeriesMapping] = []
+        rule_io_rows: list[SeriesMapping] = []
+        attestation_rows: list[SeriesMapping] = []
 
         for p in sec.xpath("./p"):
             cls = p.get("class") or ""
@@ -338,13 +448,18 @@ def extract_series_mappings_from_html(
                 raw = extract_text_with_subs(p)
                 line = getattr(p, "sourceline", None) or 0
                 source = f"{source_file}:{line}"
-                rule_rows.extend(
+                rule_io_rows.extend(
                     infer_parallel_rule_mappings(
                         raw, section_index=section_index, source=source
                     )
                 )
-                rule_rows.extend(
+                rule_io_rows.extend(
                     infer_singleton_rule_mappings(
+                        raw, section_index=section_index, source=source
+                    )
+                )
+                attestation_rows.extend(
+                    infer_attested_series_digit_mappings(
                         raw, section_index=section_index, source=source
                     )
                 )
@@ -375,15 +490,24 @@ def extract_series_mappings_from_html(
             )
 
         for table_el in sec.xpath("./table"):
-            rows.extend(
-                _table_series_rows(
-                    section_index,
-                    table_el,
-                    source_file=source_file,
-                )
+            table_rows = _table_series_rows(
+                section_index,
+                table_el,
+                source_file=source_file,
             )
+            rows.extend(table_rows)
+            if table_rows:
+                line = getattr(table_el, "sourceline", None) or 0
+                rows.extend(
+                    _collective_rows_for_section(
+                        section_index,
+                        table_rows,
+                        source=f"{source_file}:{line}",
+                    )
+                )
 
-        rows.extend(rule_rows)
+        rows.extend(rule_io_rows)
+        rows.extend(attestation_rows)
 
     return _dedupe_rows(rows)
 
@@ -595,7 +719,7 @@ def write_coverage_report(
         (
             "Use **in-scope rule coverage** (correspondence-series + collective subscripts only) "
             "— not the raw rule-token total, which includes positional slots (`C₁`), identity "
-            "subscripts (`V₀`), and compounds (`eh₂`) handled by other tickets."
+            "subscripts (`V₀`), and uppercase/template compounds (`CV₁`, `Hₓ`) deferred elsewhere."
         ),
         "",
         (
@@ -621,18 +745,19 @@ def write_coverage_report(
         [
             "",
             (
-                "Families **6** (Afro-Asiatic) and **17** (Indo-European) are the ticket-28 "
-                "benchmarks: citation/table rows at §6 and §17, plus rule-inferred overrides "
-                "in subsections."
+                "Families **6** (Afro-Asiatic) and **17** (Indo-European) are the historical "
+                "ticket-28 benchmarks; ticket 65 also tracks Austronesian (§10) and meta "
+                "vowel-shift (§46) in-scope coverage."
             ),
             "",
             "## Inference methods",
             "",
             "1. **Section citation** — prose or comments listing series members (e.g. Afro-Asiatic §6).",
             "2. **Phonology inventory tables** — cells listing indexed tokens (e.g. PIE laryngeals §17).",
-            "3. **Parallel rule I/O** — equal-length input/output chains mapping series members to IPA segments.",
-            "4. **Singleton rule I/O** — single indexed input token mapping to one output segment.",
-            "5. **Collective subscript** — `Xₓ` expands to the set of `Xₙ` members declared in the same section citation.",
+            "3. **Parallel rule I/O** — equal-length input/output chains mapping series members to IPA segments (including mixed/non-series slots and braced alternates).",
+            "4. **Singleton rule I/O** — single indexed input token (or braced series set) mapping to one output segment.",
+            "5. **Collective subscript** — `Xₓ` expands to the set of `Xₙ` members declared in the same section citation or inventory table.",
+            "6. **Attested digit fallback** — correspondence-series tokens named in rule fields without an I/O target get `{base}{digit}` ASCA names (lowest priority).",
             "",
             (
                 "ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). "

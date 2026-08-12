@@ -10,6 +10,7 @@ from conlanger.tools.series_extract import (
     SeriesExtractionAudit,
     audit_series_extraction,
     extract_series_mappings_from_html,
+    infer_attested_series_digit_mappings,
     infer_parallel_rule_mappings,
     infer_singleton_rule_mappings,
     survey_all_subscript_tokens_in_html,
@@ -202,6 +203,74 @@ def test_infer_parallel_rule_mappings_from_aari_chain():
             notes="inferred from parallel rule I/O",
         ),
     ]
+
+
+def test_infer_singleton_merges_length_marks_on_output():
+    rows = infer_singleton_rule_mappings(
+        "eh₂ → æː / “tautosyllabic”",
+        section_index="17.2",
+        source="index_diachronica_original.html:5035",
+    )
+    assert rows == [
+        SeriesMapping(
+            section_index="17.2",
+            token="eh₂",
+            asca_target="æː",
+            source="index_diachronica_original.html:5035",
+            notes="inferred from rule I/O",
+        )
+    ]
+
+
+def test_infer_parallel_maps_series_tokens_alongside_class_letters():
+    """Paiwan: non-series slots (Z) must not block series alignments."""
+    rows = infer_parallel_rule_mappings(
+        "t₁ d₁ d₃ Z → t d ɖ ɟ",
+        section_index="10.6",
+        source="index_diachronica_original.html:3822",
+    )
+    assert [(row.token, row.asca_target) for row in rows] == [
+        ("t₁", "t"),
+        ("d₁", "d"),
+        ("d₃", "ɖ"),
+    ]
+
+
+def test_infer_parallel_maps_series_token_in_mixed_length_chain():
+    """Paiwan: only the indexed input needs a series→segment pair."""
+    rows = infer_parallel_rule_mappings(
+        "b d₂ → {v,b} z",
+        section_index="10.6",
+        source="index_diachronica_original.html:3824",
+    )
+    assert [(row.token, row.asca_target) for row in rows] == [("d₂", "z")]
+
+
+def test_infer_parallel_expands_mixed_brace_inputs():
+    """Rukai: series members inside mixed braces align to the output segment."""
+    rows = infer_parallel_rule_mappings(
+        "{t₁,c} {d₁,z} d₃ → t d ɖ",
+        section_index="10.7",
+        source="index_diachronica_original.html:3849",
+    )
+    assert [(row.token, row.asca_target, row.notes) for row in rows] == [
+        ("t₁", "t", "inferred from braced parallel rule I/O"),
+        ("d₁", "d", "inferred from braced parallel rule I/O"),
+        ("d₃", "ɖ", "inferred from parallel rule I/O"),
+    ]
+
+
+def test_infer_parallel_expands_all_series_brace_to_singleton():
+    rows = infer_parallel_rule_mappings(
+        "{x₁,x₂} → ɡ",
+        section_index="6.1.2.1",
+        source="index_diachronica_original.html:1149",
+    )
+    assert [(row.token, row.asca_target) for row in rows] == [
+        ("x₁", "ɡ"),
+        ("x₂", "ɡ"),
+    ]
+    assert all(row.notes == "inferred from braced parallel rule I/O" for row in rows)
 
 
 def test_infer_parallel_rule_mappings_skips_positional_slots():
@@ -411,15 +480,44 @@ def test_infer_singleton_rule_mappings_rejects_invalid_rules(rule, expected_note
     assert rows == expected_notes
 
 
-def test_infer_parallel_rule_mappings_skips_brace_input_groups():
-    assert (
-        infer_parallel_rule_mappings(
-            "{s₁,s₂} → ɡ",
-            section_index="6.1.2.1",
-            source="index.html:1",
-        )
-        == []
+def test_infer_parallel_with_length_marked_outputs():
+    rows = infer_parallel_rule_mappings(
+        "— eh₁ eh₂ eh₃ → eː aː oː",
+        section_index="17.5",
+        source="index_diachronica_original.html:5467",
     )
+    assert [(row.token, row.asca_target) for row in rows] == [
+        ("eh₁", "eː"),
+        ("eh₂", "aː"),
+        ("eh₃", "oː"),
+    ]
+
+
+def test_infer_parallel_strips_trailing_prose_gloss():
+    rows = infer_parallel_rule_mappings(
+        "S₁ s d₂ *C → s θ ð ts (not sure what *C stands for here)",
+        section_index="10.7",
+        source="index_diachronica_original.html:3851",
+    )
+    assert [(row.token, row.asca_target) for row in rows] == [("d₂", "ð")]
+
+
+def test_infer_parallel_mixed_brace_to_singleton_output():
+    rows = infer_parallel_rule_mappings(
+        "{eh₃,oH} → oː",
+        section_index="17.13",
+        source="index_diachronica_original.html:8270",
+    )
+    assert [(row.token, row.asca_target) for row in rows] == [("eh₃", "oː")]
+
+
+def test_infer_parallel_series_member_in_mixed_brace_to_singleton():
+    rows = infer_parallel_rule_mappings(
+        "{e,o,o₂,N̊} → a",
+        section_index="17.10",
+        source="index_diachronica_original.html:6839",
+    )
+    assert [(row.token, row.asca_target) for row in rows] == [("o₂", "a")]
 
 
 @pytest.mark.parametrize(
@@ -678,6 +776,74 @@ def test_collective_subscript_not_created_for_single_member_series(tmp_path: Pat
     assert ("30", "dₓ") not in {(row.section_index, row.token) for row in rows}
 
 
+def test_dedupe_prefers_bare_singleton_over_braced_mapping(tmp_path: Path):
+    """Shekkacho: bare ``s₃ → ʃ`` must beat earlier ``{s₃,…} → s``."""
+    html_path = tmp_path / "index.html"
+    html_path.write_text(
+        """\
+<!doctype html><html><body>
+<section id="Shekkacho">
+<h2>6.1.1.5 North Omotic to Shekkacho</h2>
+<p class="schg">{s<sub>3</sub>,ts,ʒ} → s / _$#
+<p class="schg">s<sub>3</sub> → ʃ / #_
+</section>
+</body></html>
+""",
+        encoding="utf-8",
+    )
+    rows = extract_series_mappings_from_html(html_path)
+    by_key = {(row.section_index, row.token): row for row in rows}
+    assert by_key[("6.1.1.5", "s₃")].asca_target == "ʃ"
+    assert by_key[("6.1.1.5", "s₃")].notes == "inferred from rule I/O"
+
+
+def test_collective_subscript_created_from_inventory_table(tmp_path: Path):
+    """§17-style tables should yield lowercase collectives (Avestan hₓ)."""
+    html_path = tmp_path / "index.html"
+    html_path.write_text(
+        """\
+<!doctype html><html><body>
+<section id="Indo-European">
+<h2>17 Indo-European</h2>
+<table>
+<tr><td>Fricative <td> <td> s <td> <td> <td> h<sub>1</sub> h<sub>2</sub> h<sub>3</sub>
+</table>
+</section>
+</body></html>
+""",
+        encoding="utf-8",
+    )
+    rows = extract_series_mappings_from_html(html_path)
+    by_key = {(row.section_index, row.token): row for row in rows}
+    assert ("17", "h₁") in by_key
+    assert ("17", "hₓ") in by_key
+    assert by_key[("17", "hₓ")].asca_target == "{h1,h2,h3}"
+
+
+def test_infer_attested_series_digit_mappings_from_rule_fields():
+    rows = infer_attested_series_digit_mappings(
+        "aj → {æ₂,i₂} “(reduced)”",
+        section_index="46.14",
+        source="index_diachronica_original.html:14441",
+    )
+    assert {(row.token, row.asca_target) for row in rows} == {
+        ("æ₂", "æ2"),
+        ("i₂", "i2"),
+    }
+
+
+def test_infer_attested_series_digit_mappings_from_env_comment():
+    rows = infer_attested_series_digit_mappings(
+        "o → aː / _CV, “does not affect o₂ < eh₃”",
+        section_index="17.10",
+        source="index_diachronica_original.html:6838",
+    )
+    assert {(row.token, row.asca_target) for row in rows} == {
+        ("o₂", "f2"),
+        ("eh₃", "eh3"),
+    }
+
+
 def test_extract_series_mappings_skips_sections_without_headings(tmp_path: Path):
     html_path = tmp_path / "index.html"
     html_path.write_text(
@@ -739,13 +905,14 @@ _CSV = Path(__file__).resolve().parents[3] / "data" / "asca" / "series_mappings.
 @pytest.mark.skipif(not _HTML.is_file(), reason="Index HTML fixture missing")
 @pytest.mark.skipif(not _CSV.is_file(), reason="series_mappings.csv missing")
 def test_extraction_confidence_benchmarks_on_full_html():
-    """Regression guard: ticket-28 benchmark families stay largely extracted."""
+    """Regression guard: ticket-65 in-scope families stay fully extracted."""
     audit = audit_series_extraction(_HTML, _CSV)
     assert audit.html_definition_coverage == 1.0
-    total_6, mapped_6 = audit.family_in_scope.get("6", (0, 0))
-    total_17, mapped_17 = audit.family_in_scope.get("17", (0, 0))
-    assert total_6 > 0 and mapped_6 / total_6 >= 0.95
-    assert total_17 > 0 and mapped_17 / total_17 >= 0.65
+    assert audit.in_scope_rule_coverage == 1.0
+    assert audit.in_scope_gaps == ()
+    for family in ("6", "10", "17", "30", "46"):
+        total, mapped = audit.family_in_scope.get(family, (0, 0))
+        assert total > 0 and mapped == total
     assert in_scope_series_token("s₁")
     assert not in_scope_series_token("C₁")
 

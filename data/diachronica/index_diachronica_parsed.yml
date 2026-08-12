@@ -349,8 +349,8 @@ sections:
 - section: North Omotic to Dizin
   index: 6.1.1.2
   abbreviations:
-    h₁: h1
-    h₂: h2
+    h₁: h
+    h₂: h
     hₓ: '{h1,h2}'
     s₁: ʃ
     s₂: f2
@@ -422,7 +422,7 @@ sections:
     raw: ʔ → ∅
     source: index_diachronica_original.html:1016
   - stages:
-    - '{h1,h2}'
+    - '{h,h}'
     - h
     raw: '{h₁,h₂} → h'
     source: index_diachronica_original.html:1017
@@ -978,9 +978,9 @@ sections:
     h₁: h1
     h₂: h2
     hₓ: '{h1,h2}'
-    s₁: f1
+    s₁: ʃ
     s₂: tʃ
-    s₃: f3
+    s₃: ʃ
     sₓ: '{f1,f2,f3}'
     x₁: k
     x₂: h
@@ -1046,7 +1046,7 @@ sections:
     raw: tsː → ts / V_
     source: index_diachronica_original.html:1134
   - stages:
-    - '{f1,f3}'
+    - '{ʃ,ʃ}'
     - ʃ
     raw: '{s₁,s₃} → ʃ'
     source: index_diachronica_original.html:1135
@@ -1092,6 +1092,8 @@ sections:
     s₂: z
     s₃: tʃ
     sₓ: '{f1,f2,f3}'
+    x₁: ɡ
+    x₂: ɡ
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
   rules:
@@ -1107,7 +1109,7 @@ sections:
     raw: z → {d,z} / V_
     source: index_diachronica_original.html:1148
   - stages:
-    - '{x₁,x₂}'
+    - '{ɡ,ɡ}'
     - ɡ
     raw: '{x₁,x₂} → ɡ'
     source: index_diachronica_original.html:1149
@@ -1138,8 +1140,8 @@ sections:
     h₂: h2
     hₓ: '{h1,h2}'
     s₁: ʃ
-    s₂: f2
-    s₃: f3
+    s₂: tʃː
+    s₃: tʃ
     sₓ: '{f1,f2,f3}'
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
     (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary (Voices from Asia)'
@@ -1178,7 +1180,7 @@ sections:
     raw: s₁ → ʃ
     source: index_diachronica_original.html:1163
   - stages:
-    - f2 f3
+    - tʃː tʃ
     - tʃː tʃ
     env: V_
     raw: s₂ s₃ → tʃː tʃ / V_
@@ -13297,11 +13299,16 @@ sections:
     source: index_diachronica_original.html:3817
 - section: Proto-Austronesian to Proto-Paiwan
   index: '10.6'
+  abbreviations:
+    d₁: d
+    d₂: z
+    d₃: ɖ
+    t₁: t
   citation: 'Pogostick Man, from Chen, Chun-Mei (2006), A Comparative Study on Formosan
     Phonology: Paiwan and Budai Rukai 313 – 320'
   rules:
   - stages:
-    - t₁ d₁ d₃ Z
+    - t d ɖ Z
     - t d ɖ ɟ
     raw: t₁ d₁ d₃ Z → t d ɖ ɟ
     source: index_diachronica_original.html:3822
@@ -13311,7 +13318,7 @@ sections:
     raw: l *L → ɭ ʎ
     source: index_diachronica_original.html:3823
   - stages:
-    - b d₂
+    - b z
     - '{v,b} z'
     raw: b d₂ → {v,b} z
     source: index_diachronica_original.html:3824
@@ -13327,6 +13334,11 @@ sections:
     source: index_diachronica_original.html:3826
 - section: Proto-Paiwan to Northern Paiwan
   index: 10.6.1
+  abbreviations:
+    d₁: d
+    d₂: z
+    d₃: ɖ
+    t₁: t
   citation: 'Pogostick Man, from Chen, Chun-Mei (2006), A Comparative Study on Formosan
     Phonology: Paiwan and Budai Rukai 313 – 320'
   comments:
@@ -13340,6 +13352,11 @@ sections:
     source: index_diachronica_original.html:3831
 - section: Proto-Paiwan to Central Paiwan
   index: 10.6.2
+  abbreviations:
+    d₁: d
+    d₂: z
+    d₃: ɖ
+    t₁: t
   citation: 'Pogostick Man, from Chen, Chun-Mei (2006), A Comparative Study on Formosan
     Phonology: Paiwan and Budai Rukai 313 – 320'
   comments:
@@ -13354,6 +13371,11 @@ sections:
     source: index_diachronica_original.html:3837
 - section: Proto-Paiwan to Southern Paiwan
   index: 10.6.3
+  abbreviations:
+    d₁: d
+    d₂: z
+    d₃: ɖ
+    t₁: t
   citation: 'Pogostick Man, from Chen, Chun-Mei (2006), A Comparative Study on Formosan
     Phonology: Paiwan and Budai Rukai 313 – 320'
   comments:
@@ -13367,6 +13389,11 @@ sections:
     source: index_diachronica_original.html:3843
 - section: Proto-Austronesian to Proto-Rukai
   index: '10.7'
+  abbreviations:
+    d₁: d
+    d₂: ð
+    d₃: ɖ
+    t₁: t
   citation: 'Pogostick Man, from Chen, Chun-Mei (2006), A Comparative Study on Formosan
     Phonology: Paiwan and Budai Rukai 313 – 320'
   comments:
@@ -13375,7 +13402,7 @@ sections:
     source: index_diachronica_original.html:3852
   rules:
   - stages:
-    - '{t₁,c} {d₁,z} d₃'
+    - '{t,c} {d,z} ɖ'
     - t d ɖ
     raw: '{t₁,c} {d₁,z} d₃ → t d ɖ'
     source: index_diachronica_original.html:3849
@@ -13385,13 +13412,18 @@ sections:
     raw: R l L → {r,ʔ} ɭ l
     source: index_diachronica_original.html:3850
   - stages:
-    - S₁ s d₂ *C
+    - S₁ s ð *C
     - s θ ð ts
     comment: (not sure what *C stands for here)
     raw: S₁ s d₂ *C → s θ ð ts (not sure what *C stands for here)
     source: index_diachronica_original.html:3851
 - section: Proto-Rukai to Budai Rukai
   index: 10.7.1
+  abbreviations:
+    d₁: d
+    d₂: ð
+    d₃: ɖ
+    t₁: t
   citation: 'Pogostick Man, from Chen, Chun-Mei (2006), A Comparative Study on Formosan
     Phonology: Paiwan and Budai Rukai 313 – 320'
   comments:
@@ -17625,6 +17657,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: 'Wikipedia gives the following phonological reconstruction for Proto-Indo-European,
     reproduced here with some slight adjustments for presentation’s sake:'
   comments:
@@ -17655,12 +17688,14 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
 - section: Proto-Indo-European to Gheg Albanian
   index: 17.1.1
   abbreviations:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Wikipedia contributors (2013), “Albanian language”.
     Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Albanian_language&oldid=582390175>
   comments:
@@ -17874,6 +17909,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Wikipedia contributors (2013), “Albanian language”.
     Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Albanian_language&oldid=582390175>
   comments:
@@ -18083,10 +18119,12 @@ sections:
     h₁: ∅
     h₂: h2
     h₃: ∅
+    hₓ: '{h1,h2,h3}'
+    eh₂: æː
   citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
   rules:
   - stages:
-    - eh₂
+    - æː
     - æː
     comment: “tautosyllabic”
     raw: eh₂ → æː / “tautosyllabic”
@@ -18175,6 +18213,8 @@ sections:
     h₁: ∅
     h₂: hh
     h₃: h
+    hₓ: '{h1,h2,h3}'
+    eh₂: æː
   citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
   rules:
   - stages:
@@ -18278,6 +18318,8 @@ sections:
     h₁: ∅
     h₂: hh
     h₃: h
+    hₓ: '{h1,h2,h3}'
+    eh₂: æː
   citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
   rules:
   - stages:
@@ -18422,6 +18464,8 @@ sections:
     h₁: ∅
     h₂: k
     h₃: ɡ
+    hₓ: '{h1,h2,h3}'
+    eh₂: æː
   citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
   comments:
   - raw: “[P]lus lots of syncope which he doesn’t elaborate on”
@@ -18574,8 +18618,10 @@ sections:
   index: 17.2.4
   abbreviations:
     h₁: ∅
-    h₂: h2
+    h₂: ∅
     h₃: ∅
+    hₓ: '{h1,h2,h3}'
+    eh₂: æː
   citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
   comments:
   - raw: “[P]lus lots of syncope which he doesn’t elaborate on”
@@ -18633,7 +18679,7 @@ sections:
     raw: s → ʃ / i_
     source: index_diachronica_original.html:5137
   - stages:
-    - '{h2,∅}'
+    - '{∅,∅}'
     - ∅
     raw: '{h₂,h₃} → ∅'
     source: index_diachronica_original.html:5138
@@ -18722,6 +18768,8 @@ sections:
     h₁: ∅
     h₂: hh
     h₃: h
+    hₓ: '{h1,h2,h3}'
+    eh₂: æː
   citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
   rules:
   - stages:
@@ -18820,12 +18868,14 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
 - section: Proto-Indo-European to Artsakh Armenian
   index: 17.3.1
   abbreviations:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
     “Armenian Language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Armenian_language&oldid=582063933>
   comments:
@@ -19021,6 +19071,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
     “Armenian Language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Armenian_language&oldid=582063933>
   comments:
@@ -19216,6 +19267,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
     “Armenian Language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Armenian_language&oldid=582063933>
   comments:
@@ -19412,6 +19464,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
     “Armenian Language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Armenian_language&oldid=582063933>
   comments:
@@ -19607,6 +19660,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
     “Armenian Language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Armenian_language&oldid=582063933>
   comments:
@@ -19797,6 +19851,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
     “Armenian Language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Armenian_language&oldid=582063933>
   comments:
@@ -20004,6 +20059,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
     “Armenian Language”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Armenian_language&oldid=582063933>
   comments:
@@ -20205,12 +20261,14 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
 - section: Proto-Indo-European to Avestan
   index: 17.4.1
   abbreviations:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, Alex Fink, and Tropylium, the former two citing Wikipedia
     contributors (2013), “Proto-Indo-Iranian language”. Wikipedia, the Free Encyclopedia.
     <https://en.wikipedia.org/w/index.php?title=Proto-Indo-Iranian_language&oldid=543625693>;
@@ -20302,7 +20360,7 @@ sections:
     raw: h → ŋ / a_ra
     source: index_diachronica_original.html:5459
   - stages:
-    - hₓ
+    - '{h1,h2,h3}'
     - ∅
     raw: hₓ → ∅
     source: index_diachronica_original.html:5460
@@ -20312,6 +20370,10 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
+    eh₁: eː
+    eh₂: aː
+    eh₃: oː
   citation: dhokarena56, from Matasović (2009), Etymological Dictionary of Proto-Celtic
     (ed. Lubotsky).
   comments:
@@ -20328,7 +20390,7 @@ sections:
     raw: — h₁e h₂e h₃e → e a o
     source: index_diachronica_original.html:5466
   - stages:
-    - eh₁ eh₂ eh₃
+    - eː aː oː
     - eː aː oː
     raw: — eh₁ eh₂ eh₃ → eː aː oː
     source: index_diachronica_original.html:5467
@@ -20471,6 +20533,10 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
+    eh₁: eː
+    eh₂: aː
+    eh₃: oː
   citation: dhokarena56
   comments:
   - raw: “Laryngeal rules (the ones common to all branches except Anatolian)”
@@ -20898,6 +20964,10 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
+    eh₁: eː
+    eh₂: aː
+    eh₃: oː
   citation: Dewrad & Pogostick Man, the latter citing Willis (David), “Old and Middle
     Welsh”
   rules:
@@ -21124,6 +21194,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Wikipedia contributors (2013), “Dacian language”.
     Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Dacian_language&oldid=582406161>
   rules:
@@ -21189,6 +21260,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Siride
   rules:
   - stages:
@@ -21264,6 +21336,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Wright, Joseph (1910). Grammar of the Gothic Language,
     2nd Ed.; and Wikipedia contributors (2014). “Gothic language”. Wikipedia, the
     Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Gothic_language&oldid=635946920>
@@ -21498,6 +21571,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Siride
   rules:
   - stages:
@@ -21536,6 +21610,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Siride? & Pogostick Man, the latter citing Wikipedia contributors (2014),
     “Anglo-Frisian languages”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Anglo-Frisian_languages&oldid=602286013>;
     Wikipedia contributors (2014), “Old Frisian”. Wikipedia, the Free Encyclopedia.
@@ -21637,6 +21712,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Wikipedia contributors (2011), “Phonological history
     of English”. Wikipedia, the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Phonological_history_of_English&oldid=453796112>
   rules:
@@ -21667,6 +21743,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English
     Phonology and Midd le English Grammar for Courses in Chaucer, Middle English,
     and the History of the English Language; and Wikipedia contributors (2011), “Middle
@@ -21785,6 +21862,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English
     Phonology and Midd le English Grammar for Courses in Chaucer, Middle English,
     and the History of the English Language; and Wikipedia contributors (2011), “Middle
@@ -21906,6 +21984,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound
     changes”. FireSpeakerWiki. <http://wiki.firespeaker.org/English_sound_changes>
   comments:
@@ -21993,6 +22072,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound
     changes”. FireSpeakerWiki. <http://wiki.firespeaker.org/English_sound_changes;
     and my Phonetic Description class>
@@ -22114,6 +22194,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound
     changes”. FireSpeakerWiki. <http://wiki.firespeaker.org/English_sound_changes>;
     and my Phonetic Description class
@@ -22314,6 +22395,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from FireSpeakerWiki contributors (2013), “English sound
     changes”. FireSpeakerWiki. <http://wiki.firespeaker.org/English_sound_changes>
   comments:
@@ -22367,6 +22449,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English
     Phonology and Midd le English Grammar for Courses in Chaucer, Middle English,
     and the History of the English Language; and Wikipedia contributors (2011), “Middle
@@ -22507,6 +22590,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Wikipedia contributors (2014), “Phonological history
     of Scots”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Phonological_history_of_Scots&oldid=582962563>;
     and Wikipedia contributors (2014), “Scottish Vowel Length Rule”. Wikipedia, the
@@ -22686,6 +22770,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from personal research
   comments:
   - raw: 'NB: This is an alternate listing of sound changes from Old English to Scots
@@ -23011,6 +23096,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from personal research
   rules:
   - stages:
@@ -23088,6 +23174,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English
     Phonology and Midd le English Grammar for Courses in Chaucer, Middle English,
     and the History of the English Language; and Wikipedia contributors (2011), “Middle
@@ -23219,6 +23306,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man and Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, the
     former from Wikipedia contributors (2016), “Forth and Bargy dialect”. Wikipedia,
     the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Forth_and_Bargy_dialect&oldid=703468711>;
@@ -23268,6 +23356,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Wikipedia contributors (2011), “Old Frisian”. Wikipedia,
     the Free Encyclopedia. <http://en.wikipedia.org/w/index.php?title=Old_Frisian&oldid=461768402>
   rules:
@@ -23300,6 +23389,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: TzirTzi, from Goblirsch, Kurt Gustav (2002), “The North Frisian lenition
     and Danish linguistic hegemony”. In Carr, Gerald F., and Irmengard Raugh (2002),
     New Insights in Germanic Linguistics III:46 – 65
@@ -23320,6 +23410,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Wikipedia contributors (2014), “Old Dutch”. Wikipedia,
     the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Old_Dutch&oldid=588537679>;
     and Wikipedia contributors (2014), “Germanic umlaut”. Wikipedia, the Free Encyclopedia.
@@ -23428,6 +23519,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Wikipedia contributors (2014), “Middle Dutch”. Wikipedia,
     the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Middle_Dutch&oldid=602536434>;
     and Wikipedia contributors (2014), “Hieronymous Bosch”. Wikipedia, the Free Encyclopedia.
@@ -23526,6 +23618,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Wikipedia contributors (2014), “Dutch Phonology”.
     Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Dutch_phonology&oldid=602553868>;
     and Wikipedia contributors (2014), “Hard and soft G in Dutch”. Wikipedia, the
@@ -23581,6 +23674,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Wikipedia contributors (2014), “Dutch Phonology”.
     Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Dutch_phonology&oldid=602553868>
   rules:
@@ -23600,6 +23694,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Wikipedia contributors (2014), “Dutch Phonology”.
     Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Dutch_phonology&oldid=602553868>
   rules:
@@ -23614,6 +23709,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Paweł Ciupak, from Behr, Hans-Joahim, Ingrid Bennewitz, et al. (2004).
     Die Bamberg (BA)-Braunschweiger (BS) Grammatik des Alt- und Mittelhochdeutschen
     im Internet. <https://www.tu-braunschweig.de/Medien-DB/germanistik/babs260304.pdf>;
@@ -23804,6 +23900,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from <http://en.wikipedia.org/wiki/High_German_consonant_shift>;
     and Wikipedia contributors (2014), “Germanic umlaut”. Wikipedia, the Free Encyclopedia.
     <https://en.wikipedia.org/w/index.php?title=Germanic_umlaut&oldid=602634218>
@@ -23888,6 +23985,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Wikipedia contributors (2014), “Old Saxon phonology”.
     Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Old_Saxon_phonology&oldid=598609310>;
     Wikipedia contributors (2014), “Old Saxon”. Wikipedia, the Free Encyclopedia.
@@ -23985,6 +24083,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Theiling, Henrik, http://www.kunstsprachen.de/s17/rules.sch
   rules:
   - stages:
@@ -24101,6 +24200,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Theiling, Henrik, http://www.kunstsprachen.de/s17/rules.sch
   rules:
   - stages:
@@ -25051,6 +25151,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Theiling, Henrik, http://www.kunstsprachen.de/s17/rules.sch
   rules:
   - stages:
@@ -25358,6 +25459,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man and Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from
     http://nornlanguage.x10.mx/index.php?ork_phon, citing Marwick, Hugh, “Orkney Norn”
   comments:
@@ -25762,6 +25864,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man and Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, from
     http://nornlanguage.x10.mx/index.php?shet_phon, citing Jakobsen, Jakob, An Etymological
     Dictionary of the Norn Language
@@ -26118,6 +26221,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Jaceb Kilpatrick & Pogostick Man, from Wikipedia contributors (2015),
     “Vandalic language”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Vandalic_language&oldid=686359598>
   comments:
@@ -26181,6 +26285,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: It is entirely possible that I utterly failed to interpret the source
     documents correctly. If so, please do not hesitate to correct me.
 - section: Proto-Indo-European to Aeolian Greek
@@ -26189,6 +26294,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound
     Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors
     (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&oldid=575325271>
@@ -26277,6 +26383,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound
     Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors
     (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&oldid=575325271>
@@ -26534,6 +26641,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound
     Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors
     (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&oldid=575325271>
@@ -26632,6 +26740,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound
     Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors
     (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&oldid=575325271>
@@ -26729,6 +26838,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound
     Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors
     (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&oldid=575325271>
@@ -26817,6 +26927,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound
     Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors
     (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&oldid=575325271>
@@ -26932,6 +27043,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound
     Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors
     (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&oldid=575325271>
@@ -27025,6 +27137,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound
     Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors
     (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&oldid=575325271>
@@ -27216,6 +27329,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound
     Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors
     (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&oldid=575325271>
@@ -27309,6 +27423,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Tucker, R. Whitney (1969), “Chronology of Greek Sound
     Changes”. The American Journal of Philology 90(1):36 – 47; and Wikipedia contributors
     (2013), “Ancient Greek dialects”. Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Ancient_Greek_dialects&oldid=575325271>
@@ -27384,8 +27499,9 @@ sections:
   index: '17.9'
   abbreviations:
     h₁: h1
-    h₂: h2
+    h₂: x
     h₃: ∅
+    hₓ: '{h1,h2,h3}'
   citation: Goatface
   comments:
   - raw: “Changes I’m less sure of”
@@ -27421,13 +27537,13 @@ sections:
   - stages:
     - e(ː)
     - a(ː)
-    env: _h2
+    env: _x
     raw: e(ː) → a(ː) / _h₂
     source: index_diachronica_original.html:6801
   - stages:
     - e(ː)
     - a(ː)
-    env: h2_
+    env: x_
     raw: e(ː) → a(ː) / h₂_
     source: index_diachronica_original.html:6802
   - stages:
@@ -27450,7 +27566,7 @@ sections:
     raw: h₃ → ∅ / _o “(according to Kortlandt)”
     source: index_diachronica_original.html:6805
   - stages:
-    - h2
+    - x
     - x
     comment: (or some sort of dorsal or laryngeal fricative?)
     raw: h₂ → x (or some sort of dorsal or laryngeal fricative?)
@@ -27510,6 +27626,9 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
+    eh₃: eh3
+    o₂: a
   citation: Tropylium, from Kobayashi, Masato (2004), Historical Phonology of Old
     Indo-Aryan Consonants
   rules:
@@ -27622,7 +27741,7 @@ sections:
     raw: o → aː / _CV, “does not affect o₂ < eh₃”
     source: index_diachronica_original.html:6838
   - stages:
-    - '{e,o,o₂,N̊}'
+    - '{e,o,a,N̊}'
     - a
     raw: '{e,o,o₂,N̊} → a'
     source: index_diachronica_original.html:6839
@@ -27632,6 +27751,9 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
+    eh₃: eh3
+    o₂: a
   citation: Tropylium, from Kobayashi, Masato (2004), Historical Phonology of Old
     Indo-Aryan Consonants
   rules:
@@ -27786,6 +27908,9 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
+    eh₃: eh3
+    o₂: a
   citation: Pogostick Man, from Shukla, Shaligram (1974), “Phonological change and
     dialect variation in Middle-Indo-Aryan”. In Anderson, J., and C. Jones (Eds.),
     Historical Linguistics II:391-401.
@@ -27898,6 +28023,9 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
+    eh₃: eh3
+    o₂: a
   citation: Pogostick Man, from Shukla, Shaligram (1974), “Phonological change and
     dialect variation in Middle-Indo-Aryan”. In Anderson, J., and C. Jones (Eds.),
     Historical Linguistics II:391-401.
@@ -28020,6 +28148,9 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
+    eh₃: eh3
+    o₂: a
   citation: Pogostick Man, from Shukla, Shaligram (1974), “Phonological change and
     dialect variation in Middle-Indo-Aryan”. In Anderson, J., and C. Jones (Eds.),
     Historical Linguistics II:391-401.
@@ -28136,6 +28267,9 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
+    eh₃: eh3
+    o₂: a
   citation: Pogostick Man, from Shukla, Shaligram (1974), “Phonological change and
     dialect variation in Middle-Indo-Aryan”. In Anderson, J., and C. Jones (Eds.),
     Historical Linguistics II:391-401.
@@ -28246,6 +28380,9 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
+    eh₃: eh3
+    o₂: a
   citation: Tropylium, from Kobayashi, Masato (2004), Historical Phonology of Old
     Indo-Aryan Consonants
   rules:
@@ -28308,6 +28445,9 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
+    eh₃: eh3
+    o₂: a
   citation: Tropylium, from Kobayashi, Masato (2004), Historical Phonology of Old
     Indo-Aryan Consonants
   rules:
@@ -28338,6 +28478,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Hwhatting
   comments:
   - raw: 'NB: “Not in chronological order”'
@@ -28505,6 +28646,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Xiądz Faust, in http://pittmirg.ovh.org/inne/psc.pdf http://pittmirg.ovh.org/inne/psc.pdf,
     mainly citing Klemensewicz et al. (1955), “Gramatyka historyczna języka polskiego”,
     and Dubisz and Długosz-Kurczabowa (2003?), “Gramatyka historyczna języka polskiego”
@@ -29408,6 +29550,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Hwhatting
   comments:
   - raw: 'NB: “Not in chronological order”'
@@ -29490,6 +29633,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from http://gillesquentel.org/docs/PIE_to_Italic_C.pdf
     and http://gillesquentel.org/docs/PIE_to_Italic_V.pdf
   comments:
@@ -29536,6 +29680,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from http://gillesquentel.org/docs/PIE_to_Italic_C.pdf
     and http://gillesquentel.org/docs/PIE_to_Italic_V.pdf
   comments:
@@ -29612,6 +29757,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Mecislau, from Ramat, Anna Giacrole and Paolo Ramat, The Indo-European
     Languages, and other sources
   rules:
@@ -30235,6 +30381,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: “The following relate to the changes of vowels as found in the evolution
     to the written medieval languages of Iberia, Gallia and Italia (Anglo-Norman,
     Old Spanish, etc.). The Latin of Africa, Sardinia and the easternmost parts of
@@ -30344,6 +30491,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Mecislau
   comments:
   - raw: 'NB: Due to problems when the board migrated to a different system, a lot
@@ -31021,6 +31169,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: pharazon
   comments:
   - raw: 'NB: The vowels here marked 〈ó〉 and 〈ò〉 seem to have had some sort of open-close
@@ -31782,6 +31931,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Dewrad, from Boyd-Bownam, P. From Latin to Romance in Sound Charts
   comments:
   - raw: 'NB: Dewrad says, “It should be noted that due to my source they are not
@@ -31932,6 +32082,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Mecislau
   comments:
   - raw: 'NB: Due to problems when the board migrated to a different system, a lot
@@ -32639,6 +32790,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Grandgent, Charles Hall (1905), An outline of the
     phonology and morphology of old Provençal, Revised Edition
   comments:
@@ -34135,6 +34287,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from Wikipedia contributors (2014), “Rhaeto-Romance languages”.
     Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Rhaeto-Romance_languages&oldid=607581179>
   comments:
@@ -34198,6 +34351,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: pharazon, from Jensen, A Comparative Study of Romance, as well as other
     sources
   comments:
@@ -34666,6 +34820,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: qwed117, “mainly” from http://www.sardegnacultura.it/documenti/7_25_20060427093224.pdf
   rules:
   - stages:
@@ -34895,6 +35050,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: '? and Serafı́n, the former citing Penny, Ralph (2002), A History of the
     Spanish Language, 2nd Ed. Cambridge University Press; and Lipski, John (1994),
     Latin American Spanish. Longman Pub Group.'
@@ -35437,6 +35593,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from http://gillesquentel.org/docs/PIE_to_Italic_C.pdf
     and http://gillesquentel.org/docs/PIE_to_Italic_V.pdf
   comments:
@@ -35475,6 +35632,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from http://gillesquentel.org/docs/PIE_to_Italic_C.pdf
     and http://gillesquentel.org/docs/PIE_to_Italic_V.pdf
   comments:
@@ -35492,6 +35650,7 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
   citation: Pogostick Man, from http://gillesquentel.org/docs/PIE_to_Italic_C.pdf
     and http://gillesquentel.org/docs/PIE_to_Italic_V.pdf
   comments:
@@ -35510,6 +35669,11 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
+    eh₂: aː
+    eh₃: oː
+    ih₁: ih1
+    uh₁: uh1
   citation: Nortaneous, from http://www.utexas.edu/cola/centers/lrc/eieol/tokol-TC-X.html
     and https://azargoshnasp.net/history/Tocharian/positionoftocharian.pdf
   comments:
@@ -35628,7 +35792,7 @@ sections:
     raw: h₂e a → a ɨ
     source: index_diachronica_original.html:8267
   - stages:
-    - '{eh₂,aH} aː'
+    - '{aː,aH} aː'
     - aː ɔ
     raw: '{eh₂,aH} aː → aː ɔ'
     source: index_diachronica_original.html:8268
@@ -35638,7 +35802,7 @@ sections:
     raw: h₃e o → o ɛ
     source: index_diachronica_original.html:8269
   - stages:
-    - '{eh₃,oH}'
+    - '{oː,oH}'
     - oː
     raw: '{eh₃,oH} → oː'
     source: index_diachronica_original.html:8270
@@ -35664,7 +35828,7 @@ sections:
     raw: u → {ə,u}
     source: index_diachronica_original.html:8275
   - stages:
-    - uh₁ u{h2,h3}
+    - uh1 u{h2,h3}
     - uː
     - wə wɨ
     raw: uh₁ u{h₂,h₃} → uː → wə wɨ
@@ -35687,7 +35851,7 @@ sections:
     raw: s → sʲ / _tʲ
     source: index_diachronica_original.html:8279
   - stages:
-    - ih₁ i{h2,h3}
+    - ih1 i{h2,h3}
     - jə jɨ
     raw: ih₁ i{h₂,h₃} → jə jɨ
     source: index_diachronica_original.html:8280
@@ -35740,6 +35904,11 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
+    eh₂: aː
+    eh₃: oː
+    ih₁: ih1
+    uh₁: uh1
   citation: Nortaneous, from http://www.utexas.edu/cola/centers/lrc/eieol/tokol-TC-X.html
     and https://azargoshnasp.net/history/Tocharian/positionoftocharian.pdf
   comments:
@@ -35828,6 +35997,11 @@ sections:
     h₁: h1
     h₂: h2
     h₃: h3
+    hₓ: '{h1,h2,h3}'
+    eh₂: aː
+    eh₃: oː
+    ih₁: ih1
+    uh₁: uh1
   citation: Nortaneous, from http://www.utexas.edu/cola/centers/lrc/eieol/tokol-TC-X.html
     and https://azargoshnasp.net/history/Tocharian/positionoftocharian.pdf
   comments:
@@ -43638,7 +43812,7 @@ sections:
 - section: Pre-Proto-Bantu to Proto-Manenguba
   index: 30.1.2
   abbreviations:
-    d₂: d2
+    d₂: '{l,∅}'
   citation: Pogostick Man, from Hedinger, Robert (1987), The Manenguba Languages (Bantu
     A.15, Mbo Cluster) of Cameroon
   comments:
@@ -43649,7 +43823,7 @@ sections:
     source: index_diachronica_original.html:10540
   rules:
   - stages:
-    - ’p ’t ’d/d2 c {’ɟ} ’k ɡ
+    - ’p ’t ’d/{l,∅} c {’ɟ} ’k ɡ
     - f l ɟ s ∅ {w,∅} {k,w}
     env: C₁ position
     raw: ’p ’t ’d/d₂ c {’ɟ} ’k ɡ → f l ɟ s ∅ {w,∅} {k,w} / in C₁ position
@@ -43661,7 +43835,7 @@ sections:
     raw: N[+ lenis] → N[- lenis] / in C₁ position
     source: index_diachronica_original.html:10542
   - stages:
-    - p t ’t {’d,d2} c k ’k
+    - p t ’t {’d,{l,∅}} c k ’k
     - b d l {l,∅} ɟ ɡ ∅
     env: C₂ position
     raw: p t ’t {’d,d₂} c k ’k → b d l {l,∅} ɟ ɡ ∅ / in C₂ position
@@ -60319,6 +60493,9 @@ sections:
     source: index_diachronica_original.html:14428
 - section: Pre-Slavic Vowel Changes
   index: '46.14'
+  abbreviations:
+    i₂: i2
+    æ₂: æ2
   citation: Macska
   comments:
   - raw: “PIE *a and *o with their variants have merged in the Balto-Slavic period;
@@ -60364,7 +60541,7 @@ sections:
     source: index_diachronica_original.html:14440
   - stages:
     - aj
-    - '{æ₂,i₂}'
+    - '{æ2,i2}'
     comment: “(reduced)”
     raw: aj → {æ₂,i₂} “(reduced)”
     source: index_diachronica_original.html:14441

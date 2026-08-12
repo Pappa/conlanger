@@ -1,36 +1,37 @@
 # Correspondence-series mapping coverage
 
 HTML source: `index_diachronica_original.html`
-Mappings: `series_mappings.csv` (60 rows)
+Mappings: `series_mappings.csv` (107 rows)
 
 ## Extraction confidence
 
-Use **in-scope rule coverage** (correspondence-series + collective subscripts only) — not the raw rule-token total, which includes positional slots (`C₁`), identity subscripts (`V₀`), and compounds (`eh₂`) handled by other tickets.
+Use **in-scope rule coverage** (correspondence-series + collective subscripts only) — not the raw rule-token total, which includes positional slots (`C₁`), identity subscripts (`V₀`), and uppercase/template compounds (`CV₁`, `Hₓ`) deferred elsewhere.
 
 - **HTML citation/table definitions mapped:** 9/9 (100.0%)
-- **In-scope tokens in rules mapped:** 78/101 (77.2%)
+- **In-scope tokens in rules mapped:** 101/101 (100.0%)
 - **Out-of-scope subscript tokens in rules (excluded):** 150
-- **In-scope gaps remaining:** 23
+- **In-scope gaps remaining:** 0
 
 ### By top-level section family
 
 | Family | In-scope rule tokens | Mapped | Coverage |
 | --- | ---: | ---: | ---: |
-| 10 | 8 | 0 | 0.0% |
-| 17 | 36 | 25 | 69.4% |
+| 10 | 8 | 8 | 100.0% |
+| 17 | 36 | 36 | 100.0% |
 | 30 | 2 | 2 | 100.0% |
-| 46 | 2 | 0 | 0.0% |
-| 6 | 53 | 51 | 96.2% |
+| 46 | 2 | 2 | 100.0% |
+| 6 | 53 | 53 | 100.0% |
 
-Families **6** (Afro-Asiatic) and **17** (Indo-European) are the ticket-28 benchmarks: citation/table rows at §6 and §17, plus rule-inferred overrides in subsections.
+Families **6** (Afro-Asiatic) and **17** (Indo-European) are the historical ticket-28 benchmarks; ticket 65 also tracks Austronesian (§10) and meta vowel-shift (§46) in-scope coverage.
 
 ## Inference methods
 
 1. **Section citation** — prose or comments listing series members (e.g. Afro-Asiatic §6).
 2. **Phonology inventory tables** — cells listing indexed tokens (e.g. PIE laryngeals §17).
-3. **Parallel rule I/O** — equal-length input/output chains mapping series members to IPA segments.
-4. **Singleton rule I/O** — single indexed input token mapping to one output segment.
-5. **Collective subscript** — `Xₓ` expands to the set of `Xₙ` members declared in the same section citation.
+3. **Parallel rule I/O** — equal-length input/output chains mapping series members to IPA segments (including mixed/non-series slots and braced alternates).
+4. **Singleton rule I/O** — single indexed input token (or braced series set) mapping to one output segment.
+5. **Collective subscript** — `Xₓ` expands to the set of `Xₙ` members declared in the same section citation or inventory table.
+6. **Attested digit fallback** — correspondence-series tokens named in rule fields without an I/O target get `{base}{digit}` ASCA names (lowest priority).
 
 ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). For bases that collide with ASCA grouping letters (`S`, `C`, …), targets use `f{N}` placeholders (e.g. `s₁` → `f1`).
 
@@ -49,7 +50,7 @@ ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). For
 | 6.1.1.6 | North Omotic to Wolaytta | 5 | 5 | 0 |
 | 6.1.1.7 | North Omotic to Yemsa | 5 | 5 | 0 |
 | 6.1.1.8 | North Omotic to Zayse-Zergulla | 6 | 6 | 0 |
-| 6.1.2.1 | South Omotic to Aari | 6 | 4 | 2 |
+| 6.1.2.1 | South Omotic to Aari | 6 | 6 | 0 |
 | 6.1.2.2 | South Omotic to Dime | 3 | 3 | 0 |
 | 6.2 | Proto-Afro-Asiatic to Proto-Erythrean | 0 | 0 | 0 |
 | 6.2.1 | Proto-Erythrean to Proto-Cushitic | 0 | 0 | 0 |
@@ -193,11 +194,11 @@ ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). For
 | 10.5 | Proto-Austronesian to Proto-Ongan | 0 | 0 | 0 |
 | 10.5.1 | Proto-Ongan to Jarawa | 0 | 0 | 0 |
 | 10.5.2 | Proto-Ongan to Onge | 0 | 0 | 0 |
-| 10.6 | Proto-Austronesian to Proto-Paiwan | 5 | 0 | 5 |
+| 10.6 | Proto-Austronesian to Proto-Paiwan | 5 | 4 | 1 |
 | 10.6.1 | Proto-Paiwan to Northern Paiwan | 0 | 0 | 0 |
 | 10.6.2 | Proto-Paiwan to Central Paiwan | 0 | 0 | 0 |
 | 10.6.3 | Proto-Paiwan to Southern Paiwan | 0 | 0 | 0 |
-| 10.7 | Proto-Austronesian to Proto-Rukai | 5 | 0 | 5 |
+| 10.7 | Proto-Austronesian to Proto-Rukai | 5 | 4 | 1 |
 | 10.7.1 | Proto-Rukai to Budai Rukai | 0 | 0 | 0 |
 | 10.8 | Proto-Austronesian to Proto-Tsouic | 0 | 0 | 0 |
 | 11.1 | Proto-Northeast Caucasian to Proto-Avar-Andic | 0 | 0 | 0 |
@@ -261,7 +262,7 @@ ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). For
 | 17 | Indo-European | 0 | 0 | 0 |
 | 17.1.1 | Proto-Indo-European to Gheg Albanian | 0 | 0 | 0 |
 | 17.1.2 | Proto-Indo-European to Tosk Albanian | 0 | 0 | 0 |
-| 17.2 | Proto-Indo-European to Common Anatolian | 4 | 3 | 1 |
+| 17.2 | Proto-Indo-European to Common Anatolian | 4 | 4 | 0 |
 | 17.2.1 | Common Anatolian to Hittite | 2 | 2 | 0 |
 | 17.2.2 | Common Anatolian to Luwian | 2 | 2 | 0 |
 | 17.2.3 | Common Anatolian to Lycian | 2 | 2 | 0 |
@@ -274,8 +275,8 @@ ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). For
 | 17.3.5 | Proto-Indo-European to Sebastia Armenian | 0 | 0 | 0 |
 | 17.3.6 | Proto-Indo-European to Southeast Armenian | 0 | 0 | 0 |
 | 17.3.7 | Proto-Indo-European to Southwest Armenian | 0 | 0 | 0 |
-| 17.4.1 | Proto-Indo-European to Avestan | 1 | 0 | 1 |
-| 17.5 | Proto-Indo-European to Proto-Celtic | 9 | 3 | 6 |
+| 17.4.1 | Proto-Indo-European to Avestan | 1 | 1 | 0 |
+| 17.5 | Proto-Indo-European to Proto-Celtic | 9 | 6 | 3 |
 | 17.5.1 | Proto-Indo-European to Old Irish | 0 | 0 | 0 |
 | 17.5.2 | Proto-Celtic to Middle Welsh | 0 | 0 | 0 |
 | 17.6 | Proto-Indo-European to Dacian | 0 | 0 | 0 |
@@ -323,7 +324,7 @@ ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). For
 | 17.8.9 | Proto-Indo-European to Laconian Greek | 1 | 0 | 1 |
 | 17.8.10 | Proto-Indo-European to Mycenaean Greek | 1 | 0 | 1 |
 | 17.9 | Proto-Indo-European to Hittite | 2 | 2 | 0 |
-| 17.10 | Proto-Indo-European to Proto-Indo-Iranian | 7 | 3 | 4 |
+| 17.10 | Proto-Indo-European to Proto-Indo-Iranian | 7 | 5 | 2 |
 | 17.10.1 | Proto-Indo-Iranian to Proto-Indo-Aryan | 2 | 1 | 1 |
 | 17.10.1.1 | Proto-Indo-Aryan to Central Middle Indo-Aryan | 2 | 0 | 2 |
 | 17.10.1.2 | Proto-Indo-Aryan to Eastern Middle Indo-Aryan | 2 | 0 | 2 |
@@ -350,7 +351,7 @@ ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). For
 | 17.12.2 | Proto-Italic to Proto-Sibellian | 0 | 0 | 0 |
 | 17.12.2.1 | Proto-Sibellian to Oscan | 0 | 0 | 0 |
 | 17.12.2.2 | Proto-Sibellian to Umbrian | 0 | 0 | 0 |
-| 17.13 | Proto-Indo-European to Proto-Tocharian | 7 | 3 | 4 |
+| 17.13 | Proto-Indo-European to Proto-Tocharian | 7 | 7 | 0 |
 | 17.13.1 | Proto-Tocharian to Tocharian A | 0 | 0 | 0 |
 | 17.13.2 | Proto-Tocharian to Tocharian B | 0 | 0 | 0 |
 | 18.1.1 | Pre-Bakairi to Eastern Bakairi | 0 | 0 | 0 |
@@ -746,7 +747,7 @@ ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). For
 | 46.11 | Middle Chinese to Cantonese Vowel Shift (“The Inner-Outer Flip”) | 0 | 0 | 0 |
 | 46.12 | Northern Cities Vowel Shift (English) | 0 | 0 | 0 |
 | 46.13 | Old Norse to Faroese Vowel Shift | 0 | 0 | 0 |
-| 46.14 | Pre-Slavic Vowel Changes | 2 | 0 | 2 |
+| 46.14 | Pre-Slavic Vowel Changes | 2 | 2 | 0 |
 | 46.15 | Proto-Japanese to Old Japanese Vowel Shift | 0 | 0 | 0 |
 | 46.16 | Development of Proto-Lolo-Burmese -i(C)# and -u(C)# to Lahu | 0 | 0 | 0 |
 | 46.17 | Proto-Maidun to Nisenian Vowel Shift | 0 | 0 | 0 |
@@ -805,8 +806,8 @@ ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). For
 
 ### 6.1.2.1 South Omotic to Aari
 
-- Mapped (4): `h₁`, `s₁`, `s₂`, `s₃`
-- Unmapped (2): `x₁`, `x₂`
+- Mapped (6): `h₁`, `s₁`, `s₂`, `s₃`, `x₁`, `x₂`
+- Unmapped (0): _none_
 
 ### 6.1.2.2 South Omotic to Dime
 
@@ -855,13 +856,13 @@ ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). For
 
 ### 10.6 Proto-Austronesian to Proto-Paiwan
 
-- Mapped (0): _none_
-- Unmapped (5): `S₁`, `d₁`, `d₂`, `d₃`, `t₁`
+- Mapped (4): `d₁`, `d₂`, `d₃`, `t₁`
+- Unmapped (1): `S₁`
 
 ### 10.7 Proto-Austronesian to Proto-Rukai
 
-- Mapped (0): _none_
-- Unmapped (5): `S₁`, `d₁`, `d₂`, `d₃`, `t₁`
+- Mapped (4): `d₁`, `d₂`, `d₃`, `t₁`
+- Unmapped (1): `S₁`
 
 ### 15.1 Proto-Eskimo-Aleut to Proto-Aleut
 
@@ -875,8 +876,8 @@ ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). For
 
 ### 17.2 Proto-Indo-European to Common Anatolian
 
-- Mapped (3): `h₁`, `h₂`, `h₃`
-- Unmapped (1): `eh₂`
+- Mapped (4): `eh₂`, `h₁`, `h₂`, `h₃`
+- Unmapped (0): _none_
 
 ### 17.2.1 Common Anatolian to Hittite
 
@@ -905,13 +906,13 @@ ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). For
 
 ### 17.4.1 Proto-Indo-European to Avestan
 
-- Mapped (0): _none_
-- Unmapped (1): `hₓ`
+- Mapped (1): `hₓ`
+- Unmapped (0): _none_
 
 ### 17.5 Proto-Indo-European to Proto-Celtic
 
-- Mapped (3): `h₁`, `h₂`, `h₃`
-- Unmapped (6): `C₁`, `C₂`, `eh₁`, `eh₂`, `eh₃`, `xC₂`
+- Mapped (6): `eh₁`, `eh₂`, `eh₃`, `h₁`, `h₂`, `h₃`
+- Unmapped (3): `C₁`, `C₂`, `xC₂`
 
 ### 17.8.1 Proto-Indo-European to Aeolian Greek
 
@@ -970,8 +971,8 @@ ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). For
 
 ### 17.10 Proto-Indo-European to Proto-Indo-Iranian
 
-- Mapped (3): `h₁`, `h₂`, `h₃`
-- Unmapped (4): `B₁`, `P₂`, `eh₃`, `o₂`
+- Mapped (5): `eh₃`, `h₁`, `h₂`, `h₃`, `o₂`
+- Unmapped (2): `B₁`, `P₂`
 
 ### 17.10.1 Proto-Indo-Iranian to Proto-Indo-Aryan
 
@@ -1020,8 +1021,8 @@ ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). For
 
 ### 17.13 Proto-Indo-European to Proto-Tocharian
 
-- Mapped (3): `h₁`, `h₂`, `h₃`
-- Unmapped (4): `eh₂`, `eh₃`, `ih₁`, `uh₁`
+- Mapped (7): `eh₂`, `eh₃`, `h₁`, `h₂`, `h₃`, `ih₁`, `uh₁`
+- Unmapped (0): _none_
 
 ### 28.1.2 Proto-Eastern Muskogean to Creek
 
@@ -1065,40 +1066,18 @@ ASCA targets use `{base}{ascii_digit}` segment names (e.g. `h₁` → `h1`). For
 
 ### 46.14 Pre-Slavic Vowel Changes
 
-- Mapped (0): _none_
-- Unmapped (2): `i₂`, `æ₂`
+- Mapped (2): `i₂`, `æ₂`
+- Unmapped (0): _none_
 
 ## Summary
 
 - Sections with correspondence-series rules: **714**
-- In-scope rule token occurrences: **101** (mapped **78**, **77.2%**)
+- In-scope rule token occurrences: **101** (mapped **101**, **100.0%**)
 - Out-of-scope subscript tokens (positional / identity / compound): **150**
 
 ## In-scope gaps
 
-- `d₁` — section 10.6 (Proto-Austronesian to Proto-Paiwan)
-- `d₂` — section 10.6 (Proto-Austronesian to Proto-Paiwan)
-- `d₃` — section 10.6 (Proto-Austronesian to Proto-Paiwan)
-- `t₁` — section 10.6 (Proto-Austronesian to Proto-Paiwan)
-- `d₁` — section 10.7 (Proto-Austronesian to Proto-Rukai)
-- `d₂` — section 10.7 (Proto-Austronesian to Proto-Rukai)
-- `d₃` — section 10.7 (Proto-Austronesian to Proto-Rukai)
-- `t₁` — section 10.7 (Proto-Austronesian to Proto-Rukai)
-- `eh₃` — section 17.10 (Proto-Indo-European to Proto-Indo-Iranian)
-- `o₂` — section 17.10 (Proto-Indo-European to Proto-Indo-Iranian)
-- `eh₂` — section 17.13 (Proto-Indo-European to Proto-Tocharian)
-- `eh₃` — section 17.13 (Proto-Indo-European to Proto-Tocharian)
-- `ih₁` — section 17.13 (Proto-Indo-European to Proto-Tocharian)
-- `uh₁` — section 17.13 (Proto-Indo-European to Proto-Tocharian)
-- `eh₂` — section 17.2 (Proto-Indo-European to Common Anatolian)
-- `hₓ` — section 17.4.1 (Proto-Indo-European to Avestan)
-- `eh₁` — section 17.5 (Proto-Indo-European to Proto-Celtic)
-- `eh₂` — section 17.5 (Proto-Indo-European to Proto-Celtic)
-- `eh₃` — section 17.5 (Proto-Indo-European to Proto-Celtic)
-- `i₂` — section 46.14 (Pre-Slavic Vowel Changes)
-- `æ₂` — section 46.14 (Pre-Slavic Vowel Changes)
-- `x₁` — section 6.1.2.1 (South Omotic to Aari)
-- `x₂` — section 6.1.2.1 (South Omotic to Aari)
+_None._
 
 ## Out-of-scope subscript tokens (all sections)
 
