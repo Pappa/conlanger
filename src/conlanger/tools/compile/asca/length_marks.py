@@ -14,6 +14,8 @@ _SEGMENT_LENGTH_RE = re.compile(rf"({_IPA_SEGMENT}){re.escape(_LENGTH)}")
 _SET_SUFFIX_LENGTH_RE = re.compile(r"\}" + re.escape(_LENGTH))
 _DOUBLE_LENGTH_RE = re.compile(r":\[\+long\]" + re.escape(_LENGTH))
 _BARE_SET_LENGTH_RE = re.compile(rf"(^|,)\s*{re.escape(_LENGTH)}(?=,|$)")
+# Length mark between two matrices: V:[+stress]ː[+falling…] → V:[+stress, +long][…
+_INTER_MATRIX_LENGTH_RE = re.compile(r"\]" + re.escape(_LENGTH) + r"\[")
 
 
 def _expand_bare_length_in_sets(text: str) -> str:
@@ -37,6 +39,7 @@ def normalize_asca_length_marks(text: str) -> str:
     text = _GROUPING_LENGTH_RE.sub(r"\1:[+long]", text)
     text = _SEGMENT_LENGTH_RE.sub(r"\1:[+long]", text)
     text = _SET_SUFFIX_LENGTH_RE.sub("}:[+long]", text)
+    text = _INTER_MATRIX_LENGTH_RE.sub(", +long][", text)
     text = _expand_bare_length_in_sets(text)
     text = _DOUBLE_LENGTH_RE.sub(":[+long]", text)
     return text

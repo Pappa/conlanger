@@ -17,6 +17,7 @@ from conlanger.tools.compile.asca.pipeline import (
 from conlanger.tools.compile.asca.superscript_modifiers import (
     normalize_asca_superscript_modifiers,
 )
+from conlanger.tools.compile.asca.tone_matrices import normalize_asca_tone_matrices
 from conlanger.tools.rules import SoundChangeRule
 
 
@@ -28,6 +29,7 @@ def test_asca_compile_pipeline_step_names_match_docs():
         "normalize_asca_superscript_modifiers",
         "apply_asca_group_mappings",
         "normalize_asca_length_marks",
+        "normalize_asca_tone_matrices",
         "normalize_typographic_apostrophes",
         "normalize_asca_ejective_marks",
         "apply_asca_aliases",
@@ -42,6 +44,7 @@ def test_compile_asca_rule_string_matches_legacy_manual_chain():
     manual = normalize_asca_superscript_modifiers(manual, mappings)
     manual = apply_asca_group_mappings_to_string(manual, mappings)
     manual = normalize_asca_length_marks(manual)
+    manual = normalize_asca_tone_matrices(manual)
     manual = normalize_typographic_apostrophes(manual)
     manual = normalize_asca_ejective_marks(manual)
     manual = apply_asca_aliases(manual)

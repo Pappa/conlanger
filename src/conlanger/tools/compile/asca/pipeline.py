@@ -20,6 +20,7 @@ from conlanger.tools.compile.asca.planned import (
 from conlanger.tools.compile.asca.superscript_modifiers import (
     normalize_asca_superscript_modifiers,
 )
+from conlanger.tools.compile.asca.tone_matrices import normalize_asca_tone_matrices
 
 ASCA_COMPILE_STEP_NAMES: tuple[str, ...] = (
     "normalize_asca_optional_grouping_ellipsis",
@@ -28,6 +29,7 @@ ASCA_COMPILE_STEP_NAMES: tuple[str, ...] = (
     "normalize_asca_superscript_modifiers",
     "apply_asca_group_mappings",
     "normalize_asca_length_marks",
+    "normalize_asca_tone_matrices",
     "normalize_typographic_apostrophes",
     "normalize_asca_ejective_marks",
     "apply_asca_aliases",
@@ -47,6 +49,7 @@ def compile_asca_rule_string(
     text = normalize_asca_superscript_modifiers(text, group_mappings)
     text = apply_asca_group_mappings_to_string(text, group_mappings)
     text = normalize_asca_length_marks(text)
+    text = normalize_asca_tone_matrices(text)
     text = normalize_typographic_apostrophes(text)
     text = normalize_asca_ejective_marks(text)
     text = apply_asca_aliases(text)

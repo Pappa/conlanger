@@ -29,7 +29,7 @@ DEFAULT_PARSER_CONFIG_PATH = _DATA_ROOT / "parser_config.yml"
 DEFAULT_IPA_MAPPING_CONFIDENCE = ["high"]
 
 _SUPPORTED_FEATURE_MAPPING_KINDS = frozenset(
-    {"rename", "rename_invert", "rename_polarity", "bundle"}
+    {"rename", "rename_invert", "rename_polarity", "bundle", "tone"}
 )
 
 MANUAL_MAPPINGS_MATCHED_CSV_COLUMNS = [
@@ -96,7 +96,7 @@ def load_feature_mappings(path: Path | None = None) -> list[FeatureMapping]:
             raise ValueError(
                 f"unsupported feature mapping_kind {kind!r} for "
                 f"{row['index_feature']!r} (supported: rename, rename_invert, "
-                f"rename_polarity, bundle)"
+                f"rename_polarity, bundle, tone)"
             )
         out.append(
             FeatureMapping(

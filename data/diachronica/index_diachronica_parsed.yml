@@ -3722,7 +3722,7 @@ sections:
     source: index_diachronica_original.html:1697
   - stages:
     - ({C,#}V[-long])ʔ
-    - ({C,#}Vː[+falling tone])∅
+    - '({C,#}Vː[tone: 51])∅'
     env: _C
     raw: ({C,#}V[-long])ʔ → ({C,#}Vː[+falling tone])∅ / _C
     source: index_diachronica_original.html:1698
@@ -41704,7 +41704,7 @@ sections:
     source: index_diachronica_original.html:10000
   - stages:
     - Vˀ
-    - V[+high tone]
+    - 'V[tone: 5]'
     raw: Vˀ → V[+high tone]
     source: index_diachronica_original.html:10001
 - section: Proto-Athabaskan to Chilcotin
@@ -41734,7 +41734,7 @@ sections:
     source: index_diachronica_original.html:10010
   - stages:
     - Vˀ
-    - V[+high tone]
+    - 'V[tone: 5]'
     raw: Vˀ → V[+high tone]
     source: index_diachronica_original.html:10011
 - section: Proto-Athabaskan to Chipewyan
@@ -41766,7 +41766,7 @@ sections:
     source: index_diachronica_original.html:10019
   - stages:
     - Vˀ
-    - V[+high tone]
+    - 'V[tone: 5]'
     raw: Vˀ → V[+high tone]
     source: index_diachronica_original.html:10020
 - section: Proto-Athabaskan to Dakelh
@@ -41955,7 +41955,7 @@ sections:
     source: index_diachronica_original.html:10069
   - stages:
     - Vˀ
-    - V[+low tone]
+    - 'V[tone: 1]'
     raw: Vˀ → V[+low tone]
     source: index_diachronica_original.html:10070
 - section: Proto-Athabaskan to Han
@@ -41995,7 +41995,7 @@ sections:
     source: index_diachronica_original.html:10080
   - stages:
     - Vˀ
-    - V[+low tone]
+    - 'V[tone: 1]'
     raw: Vˀ → V[+low tone]
     source: index_diachronica_original.html:10082
 - section: Proto-Athabaskan to Holikachuk
@@ -42032,7 +42032,7 @@ sections:
     source: index_diachronica_original.html:10092
   - stages:
     - Vˀ
-    - V[+low tone]
+    - 'V[tone: 1]'
     raw: Vˀ → V[+low tone]
     source: index_diachronica_original.html:10093
   - stages:
@@ -42110,7 +42110,7 @@ sections:
     source: index_diachronica_original.html:10113
   - stages:
     - Vˀ
-    - V[+low tone]
+    - 'V[tone: 1]'
     raw: Vˀ → V[+low tone]
     source: index_diachronica_original.html:10114
   - stages:
@@ -42156,7 +42156,7 @@ sections:
     source: index_diachronica_original.html:10125
   - stages:
     - Vˀ
-    - V[+low tone]
+    - 'V[tone: 1]'
     - V[-tone]
     raw: Vˀ → V[+low tone] → V[-tone]
     source: index_diachronica_original.html:10126
@@ -42215,7 +42215,7 @@ sections:
     source: index_diachronica_original.html:10142
   - stages:
     - Vˀ
-    - V[+low tone]
+    - 'V[tone: 1]'
     raw: Vˀ → V[+low tone]
     source: index_diachronica_original.html:10143
 - section: Proto-Athabaskan to Sekani
@@ -42249,7 +42249,7 @@ sections:
     source: index_diachronica_original.html:10151
   - stages:
     - Vˀ
-    - V[+high tone]
+    - 'V[tone: 5]'
     raw: Vˀ → V[+high tone]
     source: index_diachronica_original.html:10152
 - section: Proto-Athabaskan to Proto-Southern Athabaskan
@@ -42790,7 +42790,7 @@ sections:
   rules:
   - stages:
     - Vˀ
-    - V[+high tone]
+    - 'V[tone: 5]'
     raw: Vˀ → V[+high tone]
     source: index_diachronica_original.html:10298
   - stages:
@@ -42853,7 +42853,7 @@ sections:
     source: index_diachronica_original.html:10317
   - stages:
     - Vˀ
-    - V[+high tone]
+    - 'V[tone: 5]'
     raw: Vˀ → V[+high tone]
     source: index_diachronica_original.html:10318
   - stages:
@@ -42914,7 +42914,7 @@ sections:
     source: index_diachronica_original.html:10332
   - stages:
     - Vˀ
-    - V[+low tone]
+    - 'V[tone: 1]'
     comment: “since then partially neutralized in noun and verb stems, but ‘still
       clear in verbal prefixes’”; ()
     raw: Vˀ → V[+low tone] (“since then partially neutralized in noun and verb stems,
@@ -42994,7 +42994,7 @@ sections:
     source: index_diachronica_original.html:10349
   - stages:
     - Vˀ
-    - V[+low tone] (
+    - 'V[tone: 1] ('
     - V[-tone] in)
     comment: “young speakers by 1980”
     raw: Vˀ → V[+low tone] (→ V[-tone] in “young speakers by 1980”)
@@ -43066,7 +43066,7 @@ sections:
     source: index_diachronica_original.html:10368
   - stages:
     - Vˀ
-    - V[+high tone]
+    - 'V[tone: 5]'
     raw: Vˀ → V[+high tone]
     source: index_diachronica_original.html:10370
 - section: Proto-Athabaskan to Southern Tutchone
@@ -43108,7 +43108,7 @@ sections:
     source: index_diachronica_original.html:10381
   - stages:
     - Vˀ
-    - V[+low tone]
+    - 'V[tone: 1]'
     raw: Vˀ → V[+low tone]
     source: index_diachronica_original.html:10383
   - stages:
@@ -51164,7 +51164,7 @@ sections:
     source: index_diachronica_original.html:12349
   - stages:
     - '{wV,jV}'
-    - Vː[+low falling tone]
+    - 'Vː[tone: 21]'
     raw: '{wV,jV} → Vː[+low falling tone]'
     source: index_diachronica_original.html:12350
   - stages:
@@ -51175,7 +51175,7 @@ sections:
     source: index_diachronica_original.html:12351
   - stages:
     - Vʔ
-    - Vː[+low falling tone]
+    - 'Vː[tone: 21]'
     env: _C
     raw: Vʔ → Vː[+low falling tone] / _C
     source: index_diachronica_original.html:12352
@@ -51192,12 +51192,12 @@ sections:
     source: index_diachronica_original.html:12354
   - stages:
     - V[+nas]
-    - aː[+high rising tone]
+    - 'aː[tone: 35]'
     raw: V[+nas] → aː[+high rising tone]
     source: index_diachronica_original.html:12355
   - stages:
     - ∅
-    - Vː[+high rising tone]
+    - 'Vː[tone: 35]'
     env: C_#
     comment: “usually one of [/aː iː ʌ̃ː/ with this tone], the conditions are unclear”;
       ()
@@ -52040,7 +52040,7 @@ sections:
     source: index_diachronica_original.html:12521
   - stages:
     - V
-    - V[+high tone]
+    - 'V[tone: 5]'
     env: _$V:[+stress]
     raw: V → V[+high tone] / _$”V
     source: index_diachronica_original.html:12522
@@ -52156,20 +52156,20 @@ sections:
     source: index_diachronica_original.html:12545
   - stages:
     - V:[+stress]
-    - V:[+stress]ː[+falling tone]
+    - 'V:[+stress]ː[tone: 51]'
     env: _{ʔ,hR}
     raw: ”V → ”Vː[+falling tone] / _{ʔ,hR}
     source: index_diachronica_original.html:12546
   - stages:
     - ʔ
     - ∅
-    env: V:[+stress]ː[+falling tone]_C
+    env: 'V:[+stress]ː[tone: 51]_C'
     raw: ʔ → ∅ / ”Vː[+falling tone]_C
     source: index_diachronica_original.html:12547
   - stages:
     - h
     - ∅
-    env: V:[+stress]ː[+falling tone]_R
+    env: 'V:[+stress]ː[tone: 51]_R'
     raw: h → ∅ / ”Vː[+falling tone]_R
     source: index_diachronica_original.html:12548
   - stages:
@@ -52439,7 +52439,7 @@ sections:
     raw: r → l
     source: index_diachronica_original.html:12599
   - stages:
-    - V:[+stress]ː[+falling tone]
+    - 'V:[+stress]ː[tone: 51]'
     - V:[+stress][-long -falling tone]
     raw: ”Vː[+falling tone] → ”V[-long -falling tone]
     source: index_diachronica_original.html:12600
@@ -52468,15 +52468,15 @@ sections:
     raw: — ∅ → i / C_jV(H)#
     source: index_diachronica_original.html:12605
   - stages:
-    - Vː[+falling tone]C(C)V
-    - V̊ː[+falling tone]C̊(C̊)V̊(H̊)
+    - 'Vː[tone: 51]C(C)V'
+    - 'V̊ː[tone: 51]C̊(C̊)V̊(H̊)'
     env: _#
     comment: (H)
     raw: — Vː[+falling tone]C(C)V(H) → V̊ː[+falling tone]C̊(C̊)V̊(H̊) / _#
     source: index_diachronica_original.html:12606
   - stages:
-    - CVː[+falling tone]
-    - C̊V̊ː[+falling tone]
+    - 'CVː[tone: 51]'
+    - 'C̊V̊ː[tone: 51]'
     env: _#
     raw: — CVː[+falling tone] → C̊V̊ː[+falling tone] / _#
     source: index_diachronica_original.html:12607
@@ -56811,15 +56811,15 @@ sections:
     raw: ʔv ʔm ʔɡ ʔr ʔh → p b k t {s,f}
     source: index_diachronica_original.html:13625
   - stages:
-    - V[+ low tone]
+    - 'V[tone: 1]'
     - ∅
-    env: C_hV[+ high tone]
+    env: 'C_hV[tone: 5]'
     raw: V[+ low tone] → ∅ / C_hV[+ high tone]
     source: index_diachronica_original.html:13626
   - stages:
-    - V[+ low tone]
+    - 'V[tone: 1]'
     - ∅
-    env: C_CV[+ high tone] if both vowels are the same
+    env: 'C_CV[tone: 5] if both vowels are the same'
     raw: V[+ low tone] → ∅ / C_CV[+ high tone] if both vowels are the same
     source: index_diachronica_original.html:13627
 - section: Proto-Gorokan to Siane

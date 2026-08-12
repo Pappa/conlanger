@@ -83,6 +83,11 @@ def normalize_feature_matrices_in_field(
         mapping = mappings[index_name]
         if mapping.mapping_kind == "bundle":
             return mapping.asca_target
+        if mapping.mapping_kind == "tone":
+            # ASCA tone is `[tone: N]` only — never ± (ticket 62).
+            if polarity != "+":
+                return match.group(0)
+            return f"tone: {mapping.asca_target}"
         if mapping.mapping_kind == "rename":
             return f"{polarity}{mapping.asca_target}"
         if mapping.mapping_kind in ("rename_invert", "rename_polarity"):

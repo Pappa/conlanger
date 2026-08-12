@@ -1180,6 +1180,12 @@ def test_load_feature_mappings_from_default_csv():
     assert by_name["palatal"].asca_target == "+cor,+dist"
     assert by_name["velar"].asca_target == "-fr,+bk,+hi,-lo"
     assert by_name["uvular"].asca_target == "-fr,+bk,-hi,-lo"
+    assert by_name["high tone"].mapping_kind == "tone"
+    assert by_name["high tone"].asca_target == "5"
+    assert by_name["low tone"].asca_target == "1"
+    assert by_name["falling tone"].asca_target == "51"
+    assert by_name["low falling tone"].asca_target == "21"
+    assert by_name["high rising tone"].asca_target == "35"
 
 
 def test_normalize_feature_matrices_in_field_rename():
@@ -1270,6 +1276,38 @@ def test_kenyah_vowel_height_rules_validate():
 def test_normalize_feature_matrices_in_field_leaves_raw_tokens_outside_brackets():
     mappings = feature_mappings_dict()
     assert normalize_feature_matrices_in_field("short u", mappings) == "short u"
+
+
+@pytest.mark.parametrize(
+    ("before", "after"),
+    [
+        ("V[+high tone]", "V[tone: 5]"),
+        ("V[+low tone]", "V[tone: 1]"),
+        ("V[+ falling tone]", "V[tone: 51]"),
+        ("V:[+long][+low falling tone]", "V:[+long][tone: 21]"),
+        ("aː[+high rising tone]", "aː[tone: 35]"),
+        ("V[+ low tone]", "V[tone: 1]"),
+        ("V[+ high tone]", "V[tone: 5]"),
+    ],
+)
+def test_normalize_feature_matrices_in_field_tone(before, after):
+    mappings = feature_mappings_dict()
+    assert normalize_feature_matrices_in_field(before, mappings) == after
+
+
+def test_normalize_feature_matrices_in_field_tone_leaves_negated():
+    mappings = feature_mappings_dict()
+    assert normalize_feature_matrices_in_field("V[-tone]", mappings) == "V[-tone]"
+    assert (
+        normalize_feature_matrices_in_field("V:[-falling tone]", mappings)
+        == "V:[-falling tone]"
+    )
+    assert (
+        normalize_feature_matrices_in_field(
+            "V:[+stress][-long -falling tone]", mappings
+        )
+        == "V:[+stress][-long -falling tone]"
+    )
 
 
 def test_apply_feature_mappings():

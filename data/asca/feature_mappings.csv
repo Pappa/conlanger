@@ -14,3 +14,8 @@ palatal,bundle,"+cor,+dist",C,medium,Coronal palatal/post-palatal (spike 29)
 velar,bundle,"-fr,+bk,+hi,-lo",C,high,Dorsal velar; matches group_mappings K (spike 29)
 uvular,bundle,"-fr,+bk,-hi,-lo",C,high,Dorsal uvular; matches group_mappings Q uvular branch (spike 29)
 guttural,rename,laryngeal,,high,Index [±guttural] → ASCA laryngeal
+high tone,tone,5,,high,Index [+high tone] → ASCA [tone: 5] (Chinese-style default; ticket 62)
+low tone,tone,1,,high,Index [+low tone] → ASCA [tone: 1]
+falling tone,tone,51,,high,Index [+falling tone] → ASCA [tone: 51]
+low falling tone,tone,21,,high,Index [+low falling tone] → ASCA [tone: 21]
+high rising tone,tone,35,,high,Index [+high rising tone] → ASCA [tone: 35]
