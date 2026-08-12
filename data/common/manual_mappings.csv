@@ -44,3 +44,4 @@ nd ld (→ nː lː ?),nd ld → nː lː,chaining
 "{ʔθ,ʔr} → {ʔ,j,∅}","ʔθ, ʔr → {ʔ,j,∅}","corrected form original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
 " / when stem-final"," / _%# ;; when stem-final","replacing prose - this is an approximation and may be wrong"
 " / when-stem final"," / _%# ;; when-stem final","replacing prose - this is an approximation and may be wrong"
+" (→ yː sometimes)"," → yː ;; (sometimes)",workaround - we can't handle different envs for chained rules

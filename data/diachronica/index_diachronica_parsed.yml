@@ -26548,12 +26548,12 @@ sections:
     - ∅
     raw: h → ∅
     source: index_diachronica_original.html:6603
-  - comment: sometimes)
+  - comment: (sometimes)
     stages:
     - oj
     - øj
-    - yj (
-    - yː
+    - yj
+    - yː ;;
     raw: oj → øj → yj (→ yː sometimes)
     source: index_diachronica_original.html:6604
     sporadic: true
@@ -27312,12 +27312,12 @@ sections:
     - ∅
     raw: h → ∅
     source: index_diachronica_original.html:6754
-  - comment: sometimes)
+  - comment: (sometimes)
     stages:
     - oj
     - øj
-    - yj (
-    - yː
+    - yj
+    - yː ;;
     raw: oj → øj → yj (→ yː sometimes)
     source: index_diachronica_original.html:6755
     sporadic: true
