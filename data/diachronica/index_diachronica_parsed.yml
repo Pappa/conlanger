@@ -3813,12 +3813,12 @@ sections:
     raw: '{ʃ,tʃ} → s / #_'
     source: index_diachronica_original.html:1715
   - stages:
-    - '{ʔθ,ʔr}'
+    - ʔθ, ʔr
     - '{ʔ,j,∅}'
     raw: '{ʔθ,ʔr} → {ʔ,j,∅}'
     source: index_diachronica_original.html:1716
   - stages:
-    - nr
+    - nl
     - s
     raw: nr → s
     source: index_diachronica_original.html:1717
