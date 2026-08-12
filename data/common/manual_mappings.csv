@@ -26,10 +26,11 @@ nd ld (→ nː lː ?),nd ld → nː lː,chaining
 " / in some dialects"," / sporadic ;; in some dialects",replace proseq
 " / in some northern"," / sporadic ;; in some northern",replace prose
 " / in northern dialects"," / sporadic ;; in northern dialects",replace prose
-" / southern regions"," / sporadic ;; southern regions",replace prose
-" / southern dialects"," / sporadic ;; southern dialects",replace prose
-" / (in some regions"," / sporadic ;; (in some regions",replace prose
-" / (some dialects"," / sporadic ;; (some dialects",replace prose
+" / in southern regions"," / sporadic ;; in southern regions",replace prose
+" / in southern dialects"," / sporadic ;; in southern dialects",replace prose
+" (in southern dialects"," sporadic ;; (in southern dialects",replace prose
+" (in some regions"," sporadic ;; (in some regions",replace prose
+" (some dialects"," sporadic ;; (some dialects",replace prose
 " (most dialects"," ;; (most dialects",replace prose
 " / “in some positions”"," / sporadic ;; “in some positions”",replace prose
 " ! in Ware Sekani"," sporadic ;; not in Ware Sekani",replace prose

@@ -2588,12 +2588,13 @@ sections:
     comment: (ɡ is more common)
     raw: k q → tʃ {ɡ,q} (ɡ is more common)
     source: index_diachronica_original.html:1444
-  - stages:
+  - comment: ; in southern regions; sporadic
+    stages:
     - ɡʲ
     - j
-    env: southern regions
     raw: ɡʲ → j / in southern regions
     source: index_diachronica_original.html:1445
+    sporadic: true
   - stages:
     - ʕ
     - ʔˤ
@@ -23660,17 +23661,17 @@ sections:
     raw: — x ɣ → {x,χ} {ɣ,x,χ} / in northern dialects
     source: index_diachronica_original.html:6078
     sporadic: true
-  - comment: based on the description and on representations in other articles, the
-      palatal phonemes are used here); “front velar”
+  - comment: ; in southern dialects (the articles use velar phonemes here but describes
+      them as “front velar”; based on the description and on representations in other
+      articles, the palatal phonemes are used here); sporadic
     stages:
     - x ɣ
     - ç ʝ
-    env: southern dialects (the articles use velar phonemes here but describes them
-      as
     raw: — x ɣ → ç ʝ / in southern dialects (the articles use velar phonemes here
       but describes them as “front velar”; based on the description and on representations
       in other articles, the palatal phonemes are used here)
     source: index_diachronica_original.html:6079
+    sporadic: true
 - section: Modern Dutch to Polder Dutch Vowel Shift
   index: 17.7.2.2.3
   abbreviations:
@@ -29106,13 +29107,14 @@ sections:
     env: _{l,ɫ}
     raw: ɔ̃ → ɔ / _{l,ɫ}
     source: index_diachronica_original.html:7087
-  - stages:
+  - comment: ; (in some regions or dialects); sporadic
+    stages:
     - ɔ̃
     - ɔ
     env: _#
-    comment: (in some regions or dialects)
     raw: ɔ̃ → ɔ / _# (in some regions or dialects)
     source: index_diachronica_original.html:7088
+    sporadic: true
   - stages:
     - ɛ̃ ɔ̃
     - ɛ̃N ɔ̃N
@@ -32905,13 +32907,14 @@ sections:
     comment: (in Languedoc)
     raw: — ɔ → ɥo / _{u,P,k,ɡ,i} (in Languedoc)
     source: index_diachronica_original.html:7745
-  - stages:
+  - comment: ; (in southern dialects); sporadic
+    stages:
     - ɔ
     - '{ɥe,ɥo,ɔ}'
     env: _{u,P,k,ɡ,i}
-    comment: (in southern dialects)
     raw: — ɔ → {ɥe,ɥo,ɔ} / _{u,P,k,ɡ,i} (in southern dialects)
     source: index_diachronica_original.html:7746
+    sporadic: true
   - stages:
     - a
     - a
@@ -51113,13 +51116,14 @@ sections:
     env: '#_'
     raw: '{d,ɡ,s,l,r} → {h,r} / #_'
     source: index_diachronica_original.html:12288
-  - stages:
+  - comment: ; (some dialects, never when following preinitials); sporadic
+    stages:
     - ʃ
     - x
     env: '#_'
-    comment: (some dialects, never when following preinitials)
     raw: 'ʃ → x / #_ (some dialects, never when following preinitials)'
     source: index_diachronica_original.html:12289
+    sporadic: true
   - stages:
     - k(ʰ){r,j} ɡ{r,j}
     - tɕ(ʰ) dʑ
@@ -51148,13 +51152,14 @@ sections:
     env: _#
     raw: s → either i or a diphthong ending in i? / _#
     source: index_diachronica_original.html:12294
-  - stages:
+  - comment: ; (some dialects); sporadic
+    stages:
     - d
     - l
     env: _#
-    comment: (some dialects)
     raw: d → l / _# (some dialects)
     source: index_diachronica_original.html:12295
+    sporadic: true
   - stages:
     - t
     - l
@@ -60878,16 +60883,17 @@ sections:
     comment: (Marathi)
     raw: p → w / V_V (Marathi)
     source: index_diachronica_original.html:14531
-  - comment: there may be more to it than this, since words like “repubblica” are
-      in standard Italian and not just dialects)
+  - comment: ; (some dialects of Italian; there may be more to it than this, since
+      words like “repubblica” are in standard Italian and not just dialects); sporadic
     stages:
     - b d ɡ
     - bː dː ɡː
-    env: V_V (some dialects of Italian
+    env: V_V
     raw: b d ɡ → bː dː ɡː / V_V (some dialects of Italian; there may be more to it
       than this, since words like “repubblica” are in standard Italian and not just
       dialects)
     source: index_diachronica_original.html:14532
+    sporadic: true
   - stages:
     - t
     - k

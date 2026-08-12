@@ -9,7 +9,7 @@ section_index,section_name,rule_idx,source,manual_mapping
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,3,index_diachronica_original.html:1409, / 
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,3,index_diachronica_original.html:1420, / 
 6.2.2.1.10,Classical Arabic to Hassāniyya Arabic,2,index_diachronica_original.html:1431, / sporadic ;; depending on the environment
-6.2.2.1.11,Classical Arabic to Iraqi Arabic,1,index_diachronica_original.html:1445, / 
+6.2.2.1.11,Classical Arabic to Iraqi Arabic,1,index_diachronica_original.html:1445, / sporadic ;; in southern regions
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,3,index_diachronica_original.html:1470," / u[-long]_, _u[-long]"
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,6,index_diachronica_original.html:1507, / 
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,9,index_diachronica_original.html:1564, ! 
@@ -103,7 +103,7 @@ section_index,section_name,rule_idx,source,manual_mapping
 17.7.2.2,West Germanic to Old Low Franconian,7,index_diachronica_original.html:6043,a → ɒ → o
 17.7.2.2.1,Old Low Franconian to Middle Dutch,11,index_diachronica_original.html:6067, / 
 17.7.2.2.2,Middle Dutch to Modern Dutch,3,index_diachronica_original.html:6078, / sporadic ;; in northern dialects
-17.7.2.2.2,Middle Dutch to Modern Dutch,4,index_diachronica_original.html:6079, / 
+17.7.2.2.2,Middle Dutch to Modern Dutch,4,index_diachronica_original.html:6079, / sporadic ;; in southern dialects
 17.7.2.3,Middle High German to Standard German,23,index_diachronica_original.html:6118, / 
 17.7.2.3,Middle High German to Standard German,25,index_diachronica_original.html:6120, / [-stress]
 17.7.3,Common Germanic to Proto-Norse,7,index_diachronica_original.html:6168, ! 
@@ -119,6 +119,7 @@ section_index,section_name,rule_idx,source,manual_mapping
 17.8.8,Proto-Indo-European to Ionic Greek,29,index_diachronica_original.html:6755, → yː ;; (sometimes)
 17.11.1,Proto-Slavic to Polish,11,index_diachronica_original.html:7028, / 
 17.11.1,Proto-Slavic to Polish,38,index_diachronica_original.html:7057, / [-stress]
+17.11.1,Proto-Slavic to Polish,68,index_diachronica_original.html:7088, sporadic ;; (in some regions
 17.11.1,Proto-Slavic to Polish,118,index_diachronica_original.html:7144, / 
 17.12.1.1.1,Classical Latin vs. Vulgar Latin,15,index_diachronica_original.html:7338,";; “In contrast, Romanian exhibits"
 17.12.1.1.2,Latin to Catalan,7,index_diachronica_original.html:7351, / [+stress]
@@ -146,6 +147,7 @@ section_index,section_name,rule_idx,source,manual_mapping
 17.12.1.1.5,Latin to Portuguese,23,index_diachronica_original.html:7644, / [+stress]
 17.12.1.1.5,Latin to Portuguese,38,index_diachronica_original.html:7659, / [-stress]
 17.12.1.1.5,Latin to Portuguese,39,index_diachronica_original.html:7660, / 
+17.12.1.1.6,Vulgar Latin to Old Provençal,6,index_diachronica_original.html:7746, sporadic ;; (in southern dialects
 17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,1,index_diachronica_original.html:7992, / [+stress]
 17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,3,index_diachronica_original.html:7994, / 
 17.12.1.1.10,Vulgar Latin to Spanish,34,index_diachronica_original.html:8163, / [-stress]
@@ -189,6 +191,8 @@ section_index,section_name,rule_idx,source,manual_mapping
 36.1.1,Late Middle Chinese to Old Mandarin,9,index_diachronica_original.html:11763, / 
 36.2,Sin Sukchu to Guānhuà,15,index_diachronica_original.html:11833, ;; There seems to ahve been some stuff going on
 36.2,Sin Sukchu to Guānhuà,54,index_diachronica_original.html:11873, / 
+36.3.3.1,Old Tibetan to Amdo dialects,1,index_diachronica_original.html:12289, sporadic ;; (some dialects
+36.3.3.1,Old Tibetan to Amdo dialects,7,index_diachronica_original.html:12295, sporadic ;; (some dialects
 37.1.2,Proto-Iroquoian to Proto-Northern Iroquoian,6,index_diachronica_original.html:12384, ! 
 37.1.2.2.1,Huron to Wyandot,0,index_diachronica_original.html:12479, / 
 37.2.1,Proto-Siouan to Catawba,3,index_diachronica_original.html:12745, / 
@@ -223,3 +227,4 @@ section_index,section_name,rule_idx,source,manual_mapping
 46.5,Old English-to-Scots Vowel Shifts,9,index_diachronica_original.html:14332, / sporadic ;; in some northern
 46.5,Old English-to-Scots Vowel Shifts,9,index_diachronica_original.html:14332,ɛː → ɛi → əi
 46.13,Old Norse to Faroese Vowel Shift,8,index_diachronica_original.html:14426, / [-stress]
+47.2,List 2: Conditional or complex consonant changes,4,index_diachronica_original.html:14532, sporadic ;; (some dialects
