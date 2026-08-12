@@ -330,6 +330,83 @@ def test_regenerate_corpus_writes_validation_inventory(
     assert "asca-test-0.10" in summary_path.read_text(encoding="utf-8")
 
 
+@patch.object(regen, "_asca_version", return_value="asca-test-0.10")
+@patch.object(regen, "append_ok_flip_changelog", return_value=1)
+@patch.object(regen, "write_filtered_inventory_csvs")
+@patch.object(regen, "write_validation_csv")
+@patch.object(regen, "ok_flip_changelog_rows")
+@patch.object(regen, "load_inventory_csv", return_value=None)
+@patch.object(regen, "iter_validation_rows")
+@patch.object(regen, "write_rule_comment_phrase_summary", return_value=0)
+@patch.object(regen, "write_cleaned_corpus")
+@patch.object(regen, "IndexDiachronicaParser")
+def test_regenerate_corpus_reset_changelog_overwrites_existing(
+    mock_parser_cls,
+    _mock_write_corpus,
+    _mock_comment_summary,
+    mock_iter_rows,
+    _mock_load_inventory,
+    mock_flip_rows,
+    _mock_write_csv,
+    _mock_write_filtered,
+    mock_append_changelog,
+    _mock_asca_version,
+    tmp_path: Path,
+    capsys,
+):
+    work = tmp_path / "work"
+    work.mkdir()
+    html_path = work / "index.html"
+    html_path.write_text("<html><body></body></html>", encoding="utf-8")
+    probe = work / "probe.wsca"
+    probe.write_text("probe", encoding="utf-8")
+    inventory_dir = work / "inventory"
+    inventory_dir.mkdir()
+    changelog_path = inventory_dir / "asca-rule-inventory-changelog.csv"
+    changelog_path.write_text(
+        "section_index,rule_idx,source,ok,timestamp\nold,0,s:0,True,old\n",
+        encoding="utf-8",
+    )
+    _configure_parser_mock(
+        mock_parser_cls, sections=[{"rules": [{"stages": ["a", "b"]}]}]
+    )
+    mock_iter_rows.return_value = [
+        ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", "")
+    ]
+    mock_flip_rows.return_value = MagicMock()
+
+    def _assert_cleared_then_append(flips, path):
+        assert not path.is_file()
+        return 1
+
+    mock_append_changelog.side_effect = _assert_cleared_then_append
+
+    with (
+        patch.object(regen, "ROOT", tmp_path),
+        patch.object(regen.shutil, "which", return_value="/usr/bin/asca"),
+        patch.object(
+            sys,
+            "argv",
+            [
+                "regenerate_corpus",
+                "--html",
+                str(html_path),
+                "--yaml-out",
+                str(work / "out.yml"),
+                "--inventory-dir",
+                str(inventory_dir),
+                "--probe-words",
+                str(probe),
+                "--reset-changelog",
+            ],
+        ),
+    ):
+        assert regen.main() == 0
+
+    mock_append_changelog.assert_called_once()
+    assert "reset" in capsys.readouterr().out
+
+
 def test_asca_version_when_binary_not_on_path():
     with patch.object(regen.shutil, "which", return_value=None):
         assert regen._asca_version() == "not found on PATH"

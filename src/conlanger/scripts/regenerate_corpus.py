@@ -106,6 +106,14 @@ def main() -> int:
             "from HTML before parse"
         ),
     )
+    ap.add_argument(
+        "--reset-changelog",
+        action="store_true",
+        help=(
+            "overwrite asca-rule-inventory-changelog.csv instead of appending "
+            "(use after a column-schema change)"
+        ),
+    )
     args = ap.parse_args()
 
     if not args.html.is_file():
@@ -198,7 +206,10 @@ def main() -> int:
 
     write_validation_csv(rows, csv_path)
     write_filtered_inventory_csvs(current_df, args.inventory_dir)
+    if args.reset_changelog and changelog_path.is_file():
+        changelog_path.unlink()
     flip_n = append_ok_flip_changelog(flips, changelog_path)
+    changelog_action = "reset" if args.reset_changelog else "appended"
 
     summary = summarize_inventory(
         rows,
@@ -215,7 +226,8 @@ def main() -> int:
         f"wrote {csv_path} rows={len(rows)} ok={ok_n} fail={fail_n}\n"
         f"wrote {success_path} rows={ok_n}\n"
         f"wrote {error_path} rows={fail_n}\n"
-        f"appended {changelog_path} flips={flip_n} timestamp={run_timestamp}\n"
+        f"{changelog_action} {changelog_path} flips={flip_n} "
+        f"timestamp={run_timestamp}\n"
         f"wrote {summary_path}"
     )
     return 0
