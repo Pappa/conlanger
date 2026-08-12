@@ -69,7 +69,7 @@ The ordered list of opaque Index-shaped strings on a corpus rule that encode the
 _Avoid_: `input`/`output` as the stored spine; encoding the chain only as `" > "` inside a single string field; list-typed `input` with scalar `output`
 
 **Optional outputs**:
-An Index output written as a set while the matching input is **not** a set (e.g. `d → {∅,ð}`), encoding speaker variation among alternative results (including null). The YAML SoT keeps the set opaque in **stages**. How (and when) one alternative is chosen for ASCA is still open — see the optional-outputs grill ticket. Distinct from **sporadic** (whether to apply the rule at all).
+An Index output written as a set while the matching input is **not** a set (e.g. `d → {∅,ð}`), encoding speaker variation among alternative results (including null). In HTML/YAML they look like ordinary sets; unequal input/output segment arity is a detection clue under grill. The YAML SoT keeps the set opaque in **stages**. Choice for ASCA (and shared seeded randomness with **sporadic**) is open — [grill ticket 61](.scratch/cleaned-rule-corpus/issues/61-grill-optional-outputs.md). Distinct from **sporadic** (whether to apply the rule at all).
 _Avoid_: calling this `sporadic`; structuring optional outputs as a separate YAML field; treating paired input/output sets (`{a,b} → {c,d}`) as optional outputs
 
 **Environment**:
