@@ -1,0 +1,328 @@
+{
+  "total_rules_scanned": 9201,
+  "rules_with_nested_signal": 40,
+  "inventory_nested_brackets_unique_sources": 45,
+  "bucket_counts": {
+    "A_true_nested_io": 5,
+    "B_true_nested_env_exception": 8,
+    "C_parenthetical_in_env_set": 4,
+    "C_parenthetical_in_io_set": 2,
+    "E_unbalanced_malformed": 21
+  },
+  "bucket_inventory_overlap": {
+    "A_true_nested_io": 5,
+    "B_true_nested_env_exception": 8,
+    "C_parenthetical_in_env_set": 4,
+    "C_parenthetical_in_io_set": 1,
+    "E_unbalanced_malformed": 5
+  },
+  "bucket_examples": {
+    "A_true_nested_io": [
+      {
+        "source": "index_diachronica_original.html:998",
+        "section": "North Omotic to Bench",
+        "rule_idx": 5,
+        "tags": [
+          "depth_ge_2",
+          "io_true_nested"
+        ],
+        "fields": {
+          "stage[0]": "{ʔ,{h1,h2}}",
+          "raw": "{ʔ,hₓ} → ∅"
+        },
+        "in_inventory_nested_brackets": true
+      },
+      {
+        "source": "index_diachronica_original.html:1398",
+        "section": "Classical Arabic to Egyptian Arabic",
+        "rule_idx": 17,
+        "tags": [
+          "depth_ge_2",
+          "io_true_nested"
+        ],
+        "fields": {
+          "stage[0]": "{{s,z}(ˤ),ʒ}ʃ",
+          "raw": "{{s,z}(ˤ),ʒ}ʃ → ʃː"
+        },
+        "in_inventory_nested_brackets": true
+      },
+      {
+        "source": "index_diachronica_original.html:5048",
+        "section": "Proto-Indo-European to Common Anatolian",
+        "rule_idx": 13,
+        "tags": [
+          "depth_ge_2",
+          "io_parenthetical",
+          "io_true_nested"
+        ],
+        "fields": {
+          "stage[0]": "{{∅,∅}s,s{∅,∅}}",
+          "raw": "{{h₁,h₃}s,s{h₁,h₃}} → sː (contested)"
+        },
+        "in_inventory_nested_brackets": true
+      },
+      {
+        "source": "index_diachronica_original.html:8439",
+        "section": "Proto-Tuparí to Mekens",
+        "rule_idx": 17,
+        "tags": [
+          "depth_ge_2",
+          "io_true_nested"
+        ],
+        "fields": {
+          "stage[0]": "{{a/e},{e/a}} {ı̃,ẽ}",
+          "raw": "{{a/e},{e/a}} {ı̃,ẽ} → a ẽ"
+        },
+        "in_inventory_nested_brackets": true
+      },
+      {
+        "source": "index_diachronica_original.html:10543",
+        "section": "Pre-Proto-Bantu to Proto-Manenguba",
+        "rule_idx": 2,
+        "tags": [
+          "depth_ge_2",
+          "io_true_nested"
+        ],
+        "fields": {
+          "stage[0]": "p t ’t {’d,{l,∅}} c k ’k",
+          "stage[1]": "b d l {l,∅} ɟ ɡ ∅",
+          "raw": "p t ’t {’d,d₂} c k ’k → b d l {l,∅} ɟ ɡ ∅ / in C₂ position"
+        },
+        "in_inventory_nested_brackets": true
+      }
+    ],
+    "B_true_nested_env_exception": [
+      {
+        "source": "index_diachronica_original.html:6192",
+        "section": "Proto-Norse to Old Norse",
+        "rule_idx": 8,
+        "tags": [
+          "depth_ge_2",
+          "env_true_nested"
+        ],
+        "fields": {
+          "exception": "{{h,k,ŋ}n,w,v,l,r}_, _{u,o,i}",
+          "raw": "e → ja / ! {{h,k,ŋ}n,w,v,l,r}_, _{u,o,i}"
+        },
+        "in_inventory_nested_brackets": true
+      },
+      {
+        "source": "index_diachronica_original.html:6225",
+        "section": "Proto-Norse to Old Norse",
+        "rule_idx": 41,
+        "tags": [
+          "depth_ge_2",
+          "env_true_nested"
+        ],
+        "fields": {
+          "exception": "{{h,k,ŋ}n,w,v,l,r}_",
+          "raw": "e → jɒ / _(C)(C)(C)u ! {{h,k,ŋ}n,w,v,l,r}_"
+        },
+        "in_inventory_nested_brackets": true
+      },
+      {
+        "source": "index_diachronica_original.html:6226",
+        "section": "Proto-Norse to Old Norse",
+        "rule_idx": 42,
+        "tags": [
+          "depth_ge_2",
+          "env_true_nested"
+        ],
+        "fields": {
+          "exception": "{{h,k,ŋ}n,w,v,l,r}_",
+          "raw": "e → ja / _(C)(C)(C)u ! {{h,k,ŋ}n,w,v,l,r}_"
+        },
+        "in_inventory_nested_brackets": true
+      },
+      {
+        "source": "index_diachronica_original.html:11552",
+        "section": "Proto-Central Salish to Lummi Northern Straits",
+        "rule_idx": 11,
+        "tags": [
+          "depth_ge_2",
+          "env_true_nested"
+        ],
+        "fields": {
+          "env": "{{C[-fr,+bk,-hi,-lo],K}ʷ,w}_",
+          "raw": "a3 → o3 / {{C[+ uvular],K}ʷ,w}_"
+        },
+        "in_inventory_nested_brackets": true
+      },
+      {
+        "source": "index_diachronica_original.html:11579",
+        "section": "Proto-Central Salish to Saanich Northern Straits",
+        "rule_idx": 12,
+        "tags": [
+          "depth_ge_2",
+          "env_true_nested"
+        ],
+        "fields": {
+          "exception": "{{C[-fr,+bk,-hi,-lo],K}ʷ,w}_ or when _{Cu,C[-fr,+bk,-hi,-lo]ʷ,w}",
+          "raw": "a3 → e3 / ! {{C[+ uvular],K}ʷ,w}_ or when _{Cu,C[+ uvular]ʷ,w}"
+        },
+        "in_inventory_nested_brackets": true
+      }
+    ],
+    "C_parenthetical_in_env_set": [
+      {
+        "source": "index_diachronica_original.html:1762",
+        "section": "Proto-Algonquian to Blackfoot",
+        "rule_idx": 51,
+        "tags": [
+          "depth_ge_2",
+          "env_parenthetical"
+        ],
+        "fields": {
+          "exception": "when _{C{C,ː},#}",
+          "raw": "aː → aa / W_ ! when _{C{C,ː},#}"
+        },
+        "in_inventory_nested_brackets": true
+      },
+      {
+        "source": "index_diachronica_original.html:1903",
+        "section": "Proto-Algonquian to Munsee Delaware",
+        "rule_idx": 7,
+        "tags": [
+          "depth_ge_2",
+          "env_parenthetical"
+        ],
+        "fields": {
+          "env": "_ə{(C){p,kʷ},m,w}",
+          "raw": "Cʷ → C / _ə{(C){p,kʷ},m,w}"
+        },
+        "in_inventory_nested_brackets": true
+      },
+      {
+        "source": "index_diachronica_original.html:5510",
+        "section": "Proto-Indo-European to Old Irish",
+        "rule_idx": 11,
+        "tags": [
+          "depth_ge_2",
+          "env_parenthetical"
+        ],
+        "fields": {
+          "exception": "_{s,({m,j,w})V}"
+        },
+        "in_inventory_nested_brackets": true
+      },
+      {
+        "source": "index_diachronica_original.html:11518",
+        "section": "Proto-Central Salish to Nooksack",
+        "rule_idx": 3,
+        "tags": [
+          "depth_ge_2",
+          "env_parenthetical"
+        ],
+        "fields": {
+          "env": "#_{xʲ,w{i,a},qʷa}",
+          "raw": "s → ʃ / #_{xʲ,w{i,a},qʷa}"
+        },
+        "in_inventory_nested_brackets": true
+      }
+    ],
+    "C_parenthetical_in_io_set": [
+      {
+        "source": "index_diachronica_original.html:2336",
+        "section": "Proto-Turkic to Sakha",
+        "rule_idx": 2,
+        "tags": [
+          "depth_ge_2",
+          "io_parenthetical"
+        ],
+        "fields": {
+          "stage[0]": "a{ɡ̌(ɯ),b} {o{ɡ̌,b},aɡ̌u} u{ɡ̌,b}",
+          "raw": "a{ɡ̌(ɯ),b} {o{ɡ̌,b},aɡ̌u} u{ɡ̌,b} → ɰa wo uː"
+        },
+        "in_inventory_nested_brackets": false
+      },
+      {
+        "source": "index_diachronica_original.html:6193",
+        "section": "Proto-Norse to Old Norse",
+        "rule_idx": 9,
+        "tags": [
+          "depth_ge_2",
+          "io_parenthetical"
+        ],
+        "fields": {
+          "stage[0]": "a(i) {e,w{æ,i}} {we,ei} (w)ɪ",
+          "raw": "a(i) {e,w{æ,i}} {we,ei} (w)ɪ → ey ø y ʏ / w_ ! hw_"
+        },
+        "in_inventory_nested_brackets": true
+      }
+    ],
+    "E_unbalanced_malformed": [
+      {
+        "source": "index_diachronica_original.html:2173",
+        "section": "Proto-Altaic to Proto-Mongolic",
+        "rule_idx": 4,
+        "tags": [
+          "depth_ge_2",
+          "io_adjacent_parallel_only",
+          "unbalanced"
+        ],
+        "fields": {
+          "stage[1]": "{a,e} {o,u} {a,o,u a {a,o,u} {o,u,i}",
+          "raw": "e o u æ ø y → {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i} / _Ca"
+        },
+        "in_inventory_nested_brackets": true
+      },
+      {
+        "source": "index_diachronica_original.html:4654",
+        "section": "Proto-Eskimo to Greenlandic Iñupiaq",
+        "rule_idx": 6,
+        "tags": [
+          "depth_ge_2",
+          "unbalanced"
+        ],
+        "fields": {
+          "stage[0]": "m n ŋ t {{ɣ,ʁ}",
+          "stage[1]": "{k,q}}",
+          "raw": "m n ŋ t {{ɣ,ʁ} → {k,q}} → p t k n ŋ / _#"
+        },
+        "in_inventory_nested_brackets": true
+      },
+      {
+        "source": "index_diachronica_original.html:5509",
+        "section": "Proto-Indo-European to Old Irish",
+        "rule_idx": 10,
+        "tags": [
+          "depth_ge_2",
+          "env_parenthetical",
+          "unbalanced"
+        ],
+        "fields": {
+          "env": "_{s,({m,j,w})V}",
+          "raw": "m̩ n̩ → am an / _{s,({m,j,w)V}"
+        },
+        "in_inventory_nested_brackets": true
+      },
+      {
+        "source": "index_diachronica_original.html:5839",
+        "section": "Early Modern English to Australian English",
+        "rule_idx": 28,
+        "tags": [
+          "unbalanced"
+        ],
+        "fields": {
+          "env": "_{n,m,ɡ,ɫ$",
+          "exception": "_n,m,ɡ,ɫ}${j,w} or a form of a strong verb",
+          "raw": "æ → æː / _{n,m,ɡ,ɫ% ! _n,m,ɡ,ɫ}%{j,w} or a form of a strong verb"
+        },
+        "in_inventory_nested_brackets": false
+      },
+      {
+        "source": "index_diachronica_original.html:6380",
+        "section": "Old Norse to Early Icelandic",
+        "rule_idx": 33,
+        "tags": [
+          "unbalanced"
+        ],
+        "fields": {
+          "stage[0]": "{n̥n,nn̥",
+          "raw": "{n̥n,nn̥ → tn̥ / V_"
+        },
+        "in_inventory_nested_brackets": false
+      }
+    ]
+  }
+}

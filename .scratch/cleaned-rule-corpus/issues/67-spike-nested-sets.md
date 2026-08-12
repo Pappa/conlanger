@@ -1,5 +1,5 @@
 Type: spike
-Status: ready-for-agent
+Status: resolved
 Blocked by: None
 
 # Spike: nested sets in Index optional-output / set notation
@@ -19,9 +19,9 @@ What nested-set shapes appear in Index Diachronica / the cleaned corpus (e.g. se
 
 ## Acceptance criteria
 
-- [ ] Findings under `.scratch/cleaned-rule-corpus/research/`
-- [ ] Counted buckets with example `source` lines
-- [ ] Follow-on ticket(s) filed **or** explicit defer/skip recommendation
+- [x] Findings under `.scratch/cleaned-rule-corpus/research/`
+- [x] Counted buckets with example `source` lines
+- [x] Follow-on ticket(s) filed **or** explicit defer/skip recommendation
 
 ## References
 
@@ -54,14 +54,32 @@ A research write-up that:
 - Findings live under the cleaned-rule-corpus research tree; follow-ons as numbered issue tickets in the same effort
 
 **Acceptance criteria:**
-- [ ] Research markdown under `.scratch/cleaned-rule-corpus/research/` with method + counted buckets
-- [ ] Each bucket has counts and example `source` (`file:line`) values
-- [ ] ASCA (and Brassica if cited) constraints noted per material bucket
-- [ ] Follow-on ticket(s) filed **or** explicit defer/skip written in the findings and linked from this ticket’s **Answer**
-- [ ] This spike marked `resolved` with an **Answer** summarizing recommendations
+- [x] Research markdown under `.scratch/cleaned-rule-corpus/research/` with method + counted buckets
+- [x] Each bucket has counts and example `source` (`file:line`) values
+- [x] ASCA (and Brassica if cited) constraints noted per material bucket
+- [x] Follow-on ticket(s) filed **or** explicit defer/skip written in the findings and linked from this ticket’s **Answer**
+- [x] This spike marked `resolved` with an **Answer** summarizing recommendations
 
 **Out of scope:**
 - Implementing nested-set expansion or compile transforms
 - Changing optional-output detection / `alternatives` / `alt_idx` from ticket 66
 - Uneven paired-set (UnevenSet) repair as a general project (mention only if it collides with a nested bucket)
 - Full `regenerate_corpus` / committing inventory CSV churn unless required to cite fresh failure classes
+
+## Answer
+
+Research complete (2026-08-12). Findings: [nested-sets-inventory.md](../research/nested-sets-inventory.md).
+
+**Headline counts:** 46 `nested_brackets` inventory rows (**45** unique `source`; down from 585 at early baseline); **40** corpus rules with brace depth ≥ 2 or unbalanced `{` (**23** with depth > 1 only); **0** overlap with ticket 66 optional-output nested-member gate. Scan: [scan_nested_sets.py](../research/scan_nested_sets.py).
+
+**Recommendations:**
+
+| Bucket | Rows | Action |
+|--------|-----:|--------|
+| Nested env/exception `{}` | ~16 | [69 correction pass](69-correction-pass-flatten-nested-context-sets.md) |
+| Nested stages I/O `{}` | ~9 | [70 correction pass](70-correction-pass-flatten-nested-io-sets.md) (blocked by 71) |
+| Optional-prefix + parallel set `(h)ə{p,b}`, `e(C){V…}` | ~10 | [71 grill](71-grill-paren-and-parallel-set-notation.md) |
+| Prose / malformed / other | ~12 | **Defer** — per-rule `manual_mappings` or `status: skipped` |
+
+Ticket 66 optional-output detection unchanged. No compile implementation in this spike.
+
