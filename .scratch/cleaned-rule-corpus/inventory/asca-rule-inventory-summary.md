@@ -4,21 +4,21 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9638** (one per corpus rule)
-- OK: **7956** (82.5%)
-- Fail: **1682** (17.5%)
+- OK: **7963** (82.6%)
+- Fail: **1675** (17.4%)
 - Sections all OK: **263 / 714** (36.8%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 502 | `syntax_other` |
+| 506 | `syntax_other` |
 | 317 | `unknown_character` |
-| 297 | `expected_underscore` |
+| 290 | `expected_underscore` |
 | 121 | `runtime_other` |
-| 109 | `unknown_grouping` |
+| 110 | `unknown_grouping` |
 | 91 | `unknown_feature` |
-| 85 | `prose_or_expected_arrow` |
+| 80 | `prose_or_expected_arrow` |
 | 46 | `nested_brackets` |
 | 37 | `expected_number` |
 | 32 | `diacritic_prereq` |
@@ -78,14 +78,14 @@
 | 14 | `E` |
 | 10 | `B` |
 | 9 | `K` |
-| 7 | `T` |
 | 7 | `M` |
+| 7 | `T` |
 | 6 | `X` |
 | 5 | `H` |
-| 3 | `I` |
+| 3 | `A` |
 | 3 | `D` |
+| 3 | `I` |
 | 3 | `Y` |
-| 2 | `A` |
 | 1 | `W` |
 | 1 | `Q` |
 

@@ -4772,7 +4772,7 @@ sections:
     - we
     - wə
     - oː
-    exception: adjacent to {p,m,k}
+    exception: _,{p,m,k}
     raw: we → wə → oː / ! adjacent to {p,m,k}
     source: index_diachronica_original.html:1905
   - stages:
@@ -16639,7 +16639,7 @@ sections:
   - stages:
     - C[+voice]
     - C[-voice]
-    env: adjacent to {S,s,l̥}
+    env: _,{S,s,l̥}
     raw: C[+voice] → C[-voice] / adjacent to {S,s,l̥}
     source: index_diachronica_original.html:4720
   - stages:
@@ -16668,7 +16668,7 @@ sections:
   - stages:
     - F[+voice]
     - F[-voice]
-    env: adjacent to {S,ts}
+    env: _,{S,ts}
     raw: F[+voice] → F[-voice] / adjacent to {S,ts}
     source: index_diachronica_original.html:4725
   - stages:
@@ -16790,7 +16790,7 @@ sections:
   - stages:
     - C[+voice]
     - C[-voice]
-    env: adjacent to {S,s,l̥}
+    env: _,{S,s,l̥}
     raw: C[+voice] → C[-voice] / adjacent to {S,s,l̥}
     source: index_diachronica_original.html:4747
   - stages:
@@ -16831,7 +16831,7 @@ sections:
   - stages:
     - F[+voice]
     - F[-voice]
-    env: adjacent to {S,ts}
+    env: _,{S,ts}
     raw: F[+voice] → F[-voice] / adjacent to {S,ts}
     source: index_diachronica_original.html:4755
   - stages:
@@ -16979,7 +16979,7 @@ sections:
   - stages:
     - F[+voice]
     - F[-voice]
-    env: adjacent to {S,ts}
+    env: _,{S,ts}
     raw: F[+voice] → F[-voice] / adjacent to {S,ts}
     source: index_diachronica_original.html:4782
   - stages:
@@ -17147,7 +17147,7 @@ sections:
   - stages:
     - F[+voice]
     - F[-voice]
-    env: adjacent to {S,ts}
+    env: _,{S,ts}
     raw: F[+voice] → F[-voice] / adjacent to {S,ts}
     source: index_diachronica_original.html:4812
   - stages:

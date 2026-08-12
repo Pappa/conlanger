@@ -21,6 +21,7 @@ section_index,section_name,rule_idx,source,manual_mapping
 7.9,Proto-Algonquian to Swampy Cree,14,index_diachronica_original.html:1868, / 
 7.11,Proto-Algonquian to Munsee Delaware,0,index_diachronica_original.html:1896, / 
 7.11,Proto-Algonquian to Munsee Delaware,1,index_diachronica_original.html:1897, / 
+7.11,Proto-Algonquian to Munsee Delaware,9,index_diachronica_original.html:1905," ! _,{"
 7.12,Proto-Algonquian to Menominee,25,index_diachronica_original.html:1960, / 
 7.13,Proto-Algonquian to Miami-Illinois,0,index_diachronica_original.html:1967, / 
 7.13,Proto-Algonquian to Miami-Illinois,1,index_diachronica_original.html:1968, / 
@@ -42,9 +43,15 @@ section_index,section_name,rule_idx,source,manual_mapping
 15.2.1,Proto-Eskimo to Barrow Iñupiaq,2,index_diachronica_original.html:4627," / #_, _#"
 15.2.4,Proto-Eskimo to Wales Iñupiaq,4,index_diachronica_original.html:4693, / sporadic ;; “in some positions”
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,3,index_diachronica_original.html:4719, / sporadic ;; in certain situations
+15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,4,index_diachronica_original.html:4720," / _,{"
+15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,9,index_diachronica_original.html:4725," / _,{"
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,3,index_diachronica_original.html:4746, / sporadic ;; in certain situations
+15.2.6,Proto-Eskimo to Nunivak Yup’ik,4,index_diachronica_original.html:4747," / _,{"
+15.2.6,Proto-Eskimo to Nunivak Yup’ik,11,index_diachronica_original.html:4755," / _,{"
 15.2.7,Proto-Eskimo to Siberian Yup’ik,2,index_diachronica_original.html:4775, / sporadic ;; in some dialects
+15.2.7,Proto-Eskimo to Siberian Yup’ik,9,index_diachronica_original.html:4782," / _,{"
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,3,index_diachronica_original.html:4804, / sporadic ;; in certain situations
+15.2.8,Proto-Eskimo to Unaaliq Yup’ik,11,index_diachronica_original.html:4812," / _,{"
 16.1.5,Proto-Tabla-Sentani to Tabla,3,index_diachronica_original.html:4924, / [-stress]
 17.1.1,Proto-Indo-European to Gheg Albanian,4,index_diachronica_original.html:4962, ;; (“[a]rchaic relic”)
 17.1.2,Proto-Indo-European to Tosk Albanian,4,index_diachronica_original.html:5001, ;; (“[a]rchaic relic”)
