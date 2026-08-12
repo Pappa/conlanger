@@ -137,6 +137,8 @@ def test_RuleComment(value, expected):
         ("aj aw > e(ː,j) o(ː,w)", "aj aw > {e:[+long],ej} {o:[+long],ow}"),
         ("a", "a"),
         ("", ""),
+        ("0ː", "0:[+long]"),
+        ("C=0 V0 > 0ː", "C=0 V0 > 0:[+long]"),
     ],
 )
 def test_normalize_asca_length_marks(text, expected):

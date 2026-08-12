@@ -4,22 +4,22 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9638** (one per corpus rule)
-- OK: **7963** (82.6%)
-- Fail: **1675** (17.4%)
-- Sections all OK: **263 / 714** (36.8%)
+- OK: **7977** (82.8%)
+- Fail: **1661** (17.2%)
+- Sections all OK: **265 / 714** (37.1%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 506 | `syntax_other` |
-| 317 | `unknown_character` |
-| 290 | `expected_underscore` |
-| 121 | `runtime_other` |
-| 110 | `unknown_grouping` |
-| 91 | `unknown_feature` |
-| 80 | `prose_or_expected_arrow` |
-| 46 | `nested_brackets` |
+| 504 | `syntax_other` |
+| 298 | `unknown_character` |
+| 285 | `expected_underscore` |
+| 128 | `runtime_other` |
+| 111 | `unknown_grouping` |
+| 92 | `unknown_feature` |
+| 82 | `prose_or_expected_arrow` |
+| 47 | `nested_brackets` |
 | 37 | `expected_number` |
 | 32 | `diacritic_prereq` |
 | 21 | `runtime_delete_only_segment` |
@@ -36,9 +36,9 @@
 | count | error_token |
 |------:|-------------|
 | 46 | `ı` |
-| 42 | `ː` |
 | 37 | `́` |
 | 27 | `ṽ` |
+| 25 | `ː` |
 | 22 | `̣` |
 
 ### unknown_feature
@@ -46,26 +46,27 @@
 | count | error_token | suggested |
 |------:|-------------|-----------|
 | 22 | `open` | `ten` |
-| 10 | `samePOA` | `lateral` |
 | 10 | `closed` | `cons` |
+| 10 | `samePOA` | `lateral` |
 | 9 | `fortis` | `contin` |
 | 8 | `mid` | `man` |
 | 6 | `lenis` | `tens` |
 | 5 | `weak` | `man` |
 | 3 | `palatalized` | `latrl` |
 | 2 | `affricate` | `stridnt` |
-| 2 | `fallingtone` | `length` |
 | 2 | `fricative` | `rhotic` |
+| 2 | `fallingtone` | `length` |
+| 1 | `lowpitch` | `voice` |
 | 1 | `ejective` | `contin` |
 | 1 | `APOA` | `root` |
-| 1 | `lowpitch` | `voice` |
 | 1 | `highpitch` | `high` |
-| 1 | `aspirated` | `spread` |
 | 1 | `intertonic` | `anterior` |
-| 1 | `tonic` | `cons` |
 | 1 | `alveolopalatal` | `consonantal` |
+| 1 | `aspirated` | `spread` |
 | 1 | `glide` | `click` |
+| 1 | `tonic` | `cons` |
 | 1 | `TR` | `rt` |
+| 1 | `accent` | `cont` |
 | 1 | `creakyvoice` | `voice` |
 | 1 | `labiovelar` | `labiodental` |
 
@@ -73,19 +74,19 @@
 
 | count | error_token |
 |------:|-------------|
-| 23 | `R` |
-| 15 | `U` |
+| 26 | `R` |
+| 14 | `U` |
 | 14 | `E` |
 | 10 | `B` |
 | 9 | `K` |
-| 7 | `M` |
 | 7 | `T` |
+| 7 | `M` |
 | 6 | `X` |
 | 5 | `H` |
-| 3 | `A` |
-| 3 | `D` |
 | 3 | `I` |
+| 3 | `D` |
 | 3 | `Y` |
+| 2 | `A` |
 | 1 | `W` |
 | 1 | `Q` |
 

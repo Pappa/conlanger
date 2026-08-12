@@ -28,9 +28,23 @@ def test_expand_index_subscript_references_happy_path(index_rule, expected):
     assert expand_index_subscript_references(index_rule) == expected
 
 
-def test_expand_index_subscript_references_leaves_bracket_matrices_untouched():
+def test_expand_index_subscript_references_leaves_bare_feature_matrices_untouched():
     assert expand_index_subscript_references("C > V / [+high]") == "C > V / [+high]"
-    assert expand_index_subscript_references("C₁[+high] > C₂") == "C=1[+high] > C=2"
+
+
+def test_expand_index_subscript_references_matrix_attached_identity():
+    assert (
+        expand_index_subscript_references("V₀[+nas]V₀[-nas] > V₀[+nas]")
+        == "V:[+nas]=0 V:[-nas]=0 > 0:[+nas]"
+    )
+
+
+def test_expand_index_subscript_references_matrix_attached_positional():
+    assert expand_index_subscript_references("C₁[+high] > C₂") == "C:[+high]=1 > C=2"
+    assert (
+        expand_index_subscript_references("CV₁CV:[+stress]₂ > CV₂CV:[+stress]₂")
+        == "CV=1 CV:[+stress]=2 > 2 2:[+stress]"
+    )
 
 
 def test_expand_index_subscript_references_prefixes_env_without_underscore():
@@ -103,6 +117,85 @@ def test_rule_change_validates_identity_env_fixture():
         "index": "10.2.4.2",
         "section": "Identity env",
         "rules": [{"stages": ["h", "ʔ"], "env": "V₀V₀"}],
+    }
+    probe = Path("tests/fixtures/asca_probe_words.wsca")
+    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
+
+
+def test_expand_index_subscript_references_inter_slot_pharyngeal():
+    assert (
+        expand_index_subscript_references("C₁ˤC₂ > C₁C₂ˤ")
+        == "C:[+pharyn]=1 C=2 > 1 2:[+pharyn]"
+    )
+
+
+def test_expand_index_subscript_references_identity_compounds():
+    assert expand_index_subscript_references("mn > mV₀nV₀ / #_") == "mn > mV=0 n0 / #_"
+    assert expand_index_subscript_references("CʔV₀ > CV₀ʔV₀") == "CʔV=0 > C0 ʔ0"
+    assert expand_index_subscript_references("C₀VC₀ > C₀ː") == "C=0 V0 > 0ː"
+
+
+def test_expand_index_subscript_references_optional_positional():
+    assert (
+        expand_index_subscript_references("C₁C₂C₃C₄ > (C₃)C₄")
+        == "C=1 C=2 C=3 C=4 > {3}4"
+    )
+    assert (
+        compile_asca_rule_string("C₁C₂C₃C₄ > (C₃)C₄", group_mappings={})
+        == "C=1 C=2 C=3 C=4 > {3}4"
+    )
+
+
+def test_expand_index_subscript_references_leaves_prose_env_and_exception():
+    assert (
+        expand_index_subscript_references("C₁C₂ > xC₂ / if C₂ was a plosive or s")
+        == "C=1 C=2 > x2 / if C₂ was a plosive or s"
+    )
+    assert (
+        expand_index_subscript_references("ɣ > ʔ / VV₀_V₀ // V₀ = U")
+        == "ɣ > ʔ / VV=0 _0 // V₀ = U"
+    )
+
+
+@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
+def test_rule_change_validates_matrix_attached_identity_fixture():
+    section = {
+        "index": "10.2.5",
+        "section": "Matrix identity",
+        "rules": [{"stages": ["V₀[+nas]V₀[-nas]", "V₀[+nas]"]}],
+    }
+    probe = Path("tests/fixtures/asca_probe_words.wsca")
+    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
+
+
+@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
+def test_rule_change_validates_inter_slot_pharyngeal_fixture():
+    section = {
+        "index": "10.2.6",
+        "section": "Inter-slot pharyngeal",
+        "rules": [{"stages": ["C₁ˤC₂", "C₁C₂ˤ"]}],
+    }
+    probe = Path("tests/fixtures/asca_probe_words.wsca")
+    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
+
+
+@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
+def test_rule_change_validates_optional_positional_fixture():
+    section = {
+        "index": "10.2.7",
+        "section": "Optional positional",
+        "rules": [{"stages": ["C₁C₂C₃C₄", "(C₃)C₄"]}],
+    }
+    probe = Path("tests/fixtures/asca_probe_words.wsca")
+    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
+
+
+@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
+def test_rule_change_validates_identity_compound_length_fixture():
+    section = {
+        "index": "10.2.8",
+        "section": "Identity compound length",
+        "rules": [{"stages": ["C₀VC₀", "C₀ː"]}],
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")
     validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
