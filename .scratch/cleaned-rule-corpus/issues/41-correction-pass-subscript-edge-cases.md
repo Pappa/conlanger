@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: claimed
 Blocked by: 40
 
 # Correction pass: subscript edge cases (phase 2)
