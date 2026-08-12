@@ -106,13 +106,15 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](./ad
 | `asca-rule-inventory.csv` | Full per-rule report (rewritten each regen) | [12](../.scratch/cleaned-rule-corpus/issues/12-full-corpus-validation-inventory.md) |
 | `asca-rule-inventory-success.csv` | Filtered `ok=True` | [34](../.scratch/cleaned-rule-corpus/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
 | `asca-rule-inventory-error.csv` | Filtered `ok=False` | [34](../.scratch/cleaned-rule-corpus/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
-| `asca-rule-inventory-changelog.csv` | Append-only **ok flips** matched by `source` (HTML `file:line`) | [34](../.scratch/cleaned-rule-corpus/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
+| `asca-rule-inventory-changelog.csv` | Append-only **ok flips** matched by `(source, alt_idx)` (HTML `file:line` + optional-output alternative) | [34](../.scratch/cleaned-rule-corpus/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
 | `asca-rule-inventory-summary.md` | Counts, percentages, top failure classes, common `error_token`s | [12](../.scratch/cleaned-rule-corpus/issues/12-full-corpus-validation-inventory.md) |
 | `asca-field-isolation.csv` | *(planned)* per-field blame sidecar | [36](../.scratch/cleaned-rule-corpus/issues/36-field-isolation-inventory-sidecar.md) |
 
 **CSV columns** (`VALIDATION_CSV_COLUMNS` in `corpus_inventory.py`):
 
-`section_index`, `section_name`, `rule_idx`, `source`, `ok`, `failure_class`, `reason`, `error_token`, `suggested`, `description`
+`section_index`, `section_name`, `rule_idx`, `alt_idx`, `source`, `ok`, `failure_class`, `reason`, `error_token`, `suggested`, `description`
+
+`alt_idx` is the 0-based optional-output alternative index (e.g. `d → {∅,ð}` emits one row per alternative and never the parent's random pick); it is empty for rules without alternatives.
 
 **Reason vocabulary** (filterable skip decisions): `trailing-comment`, `broken-syntax`, `asca-unrepresentable`, `valid-but-inaccurate`, `other`
 

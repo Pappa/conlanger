@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: 61
 
 # Implement optional outputs + `alt_idx` + instance RNG
@@ -38,14 +38,41 @@ Index rules like `d → {∅,ð} / V_V` keep an opaque set in **stages**. ASCA r
 
 ## Acceptance criteria
 
-- [ ] Optional-output detection matches grill gate; paired sets unchanged
-- [ ] `SoundChangeRule.alternatives` populated; leaves have empty `alternatives`
-- [ ] Parent picks uniformly via instance `Random`; optional `seed` / `rng`; no global `random.seed`
-- [ ] `str(rule)` / series render uses frozen parent choice
-- [ ] Inventory: `alt_idx` column; alternatives-only rows when present; empty `alt_idx` otherwise
-- [ ] Changelog keys on `(source, alt_idx)`; tests updated
-- [ ] Targeted tests green; full gate (`uv run pytest`, ruff) when finishing
-- [ ] Re-run inventory; note before/after for `{∅` / LonelySet-style optional-output failures in **Answer**
+- [x] Optional-output detection matches grill gate; paired sets unchanged
+- [x] `SoundChangeRule.alternatives` populated; leaves have empty `alternatives`
+- [x] Parent picks uniformly via instance `Random`; optional `seed` / `rng`; no global `random.seed`
+- [x] `str(rule)` / series render uses frozen parent choice
+- [x] Inventory: `alt_idx` column; alternatives-only rows when present; empty `alt_idx` otherwise
+- [x] Changelog keys on `(source, alt_idx)`; tests updated
+- [x] Targeted tests green; full gate (`uv run pytest`, ruff) when finishing
+- [x] Re-run inventory; note before/after for `{∅` / LonelySet-style optional-output failures in **Answer**
+
+## Answer
+
+Implemented 2026-08-12.
+
+### `SoundChangeRule` (`src/conlanger/tools/rules.py`)
+- Optional-output detection via `_is_whole_field_set`: whole-field `{…}` output + input **not** a whole-field set. Paired `{a,b} → {c,d}`, nested sets, and empty members yield **no** alternatives (out of scope → [67](67-spike-nested-sets.md)).
+- `alternatives: list[SoundChangeRule]` built as full leaf peers (Index/set order; each leaf `alternatives == []`).
+- Instance RNG only: optional ctor `seed` / `rng`, falling back to `random.Random(seed)`; process-global `random.seed` is never touched. Parent freezes one uniform `randrange` pick as its `value`; `str()` re-renders that frozen choice (no re-sample).
+
+### Inventory (`src/conlanger/tools/corpus_inventory.py`)
+- `alt_idx` column added immediately after `rule_idx` in `ValidationRow`, `VALIDATION_CSV_COLUMNS`, and `CHANGELOG_CSV_COLUMNS`.
+- `validate_corpus_rule` now returns `list[ValidationRow]`: alternatives-only rows with 0-based `alt_idx` when the rule has alternatives (parent's random pick is never inventoried), else a single row with empty `alt_idx`. `iter_validation_rows` flattens.
+- Changelog uniqueness moved to `(source, alt_idx)` (`ok_flip_changelog_rows` + `_alt_idx_key`).
+
+### Tests
+- New `tests/conlanger/tools/test_optional_outputs.py`: detection gate, alternatives contents/leaf-ness, seeded + caller-`rng` picks, frozen render, global-RNG-state isolation, per-alternative ASCA validation.
+- New inventory tests for alternative rows + `(source, alt_idx)` changelog; existing callers updated for the list return (`test_corpus_inventory.py`, `test_corpus_pipeline.py`).
+- Full gate green: `uv run pytest` → **916 passed**, coverage **95.19%** (≥95); `ruff check` + `ruff format --check` clean.
+
+### Inventory before/after (optional-output subset)
+Measured over the **363** optional-output candidate rules in `data/diachronica/index_diachronica_parsed.yml` (800 alternatives; 62 with a null `∅`/`*` member):
+
+- **Before** — whole set compiled to ASCA (committed `asca-rule-inventory.csv`): **234 ok / 129 fail**. The 129 failures are the set-internal `∅` / LonelySet-style rejections ASCA cannot represent (`d > {∅,ð}`).
+- **After** — per-alternative rows: **727 / 800** alternatives validate; **327 / 363** candidates have every alternative valid. The residual 73 alternative failures are unrelated ASCA issues (nested/other clusters), not the `{∅` rejection.
+
+Net: the in-scope single-step optional-output rejection class (`{∅`) is resolved by splitting into per-alternative `alt_idx` rows. A full `regenerate_corpus` run will now emit the `alt_idx` column and alternative rows across the whole inventory; it was not committed here to avoid unrelated corpus-diff churn.
 
 ## References
 

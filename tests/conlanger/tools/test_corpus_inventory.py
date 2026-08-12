@@ -131,6 +131,7 @@ def test_validation_row_as_csv_dict():
         "section_index": "1.0",
         "section_name": "Test",
         "rule_idx": 2,
+        "alt_idx": "",
         "source": "sample.html:10",
         "ok": False,
         "failure_class": "syntax_other",
@@ -142,7 +143,7 @@ def test_validation_row_as_csv_dict():
 
 
 def test_validate_corpus_rule_skipped_quoted_prose_uses_comment():
-    row = validate_corpus_rule(
+    (row,) = validate_corpus_rule(
         _SECTION,
         {
             "stages": [],
@@ -160,7 +161,7 @@ def test_validate_corpus_rule_skipped_quoted_prose_uses_comment():
 
 
 def test_validate_corpus_rule_skipped_parse_diagnostic():
-    row = validate_corpus_rule(
+    (row,) = validate_corpus_rule(
         _SECTION,
         {
             "stages": [],
@@ -181,7 +182,7 @@ def test_validate_corpus_rule_skipped_parse_diagnostic():
     side_effect=ValueError("bad compile"),
 )
 def test_validate_corpus_rule_diachronic_compile_format_error(_mock_prs):
-    row = validate_corpus_rule(
+    (row,) = validate_corpus_rule(
         _SECTION,
         {"stages": ["a", "b"], "raw": "a → b", "source": "sample.html:8"},
         0,
@@ -193,7 +194,7 @@ def test_validate_corpus_rule_diachronic_compile_format_error(_mock_prs):
 
 
 def test_validate_corpus_rule_format_error_no_compile_steps():
-    row = validate_corpus_rule(
+    (row,) = validate_corpus_rule(
         _SECTION,
         {"stages": ["a"], "raw": "a →", "source": "sample.html:7"},
         0,
@@ -205,7 +206,7 @@ def test_validate_corpus_rule_format_error_no_compile_steps():
 
 
 def test_validate_corpus_rule_format_error():
-    row = validate_corpus_rule(
+    (row,) = validate_corpus_rule(
         _SECTION,
         {"output": "b", "raw": "→ b", "source": "sample.html:2"},
         1,
@@ -216,7 +217,7 @@ def test_validate_corpus_rule_format_error():
 
 
 def test_validate_corpus_rule_held_out_comment():
-    row = validate_corpus_rule(
+    (row,) = validate_corpus_rule(
         _SECTION,
         {
             "skip": True,
@@ -233,7 +234,7 @@ def test_validate_corpus_rule_held_out_comment():
 
 @patch("conlanger.tools.corpus_inventory.validate_asca", return_value=True)
 def test_validate_corpus_rule_ok(_mock_validate):
-    row = validate_corpus_rule(
+    (row,) = validate_corpus_rule(
         _SECTION,
         {"stages": ["a", "b"], "raw": "a → b", "source": "sample.html:4"},
         0,
@@ -248,7 +249,7 @@ def test_validate_corpus_rule_ok(_mock_validate):
     side_effect=ASCAValidationError("Syntax Error: Expected '_'"),
 )
 def test_validate_corpus_rule_asca_failure(_mock_validate):
-    row = validate_corpus_rule(
+    (row,) = validate_corpus_rule(
         _SECTION,
         {"stages": ["a", "b"], "env": "bad", "raw": "a → b", "source": "s:5"},
         0,
@@ -268,7 +269,7 @@ def test_validate_corpus_rule_asca_failure(_mock_validate):
     ),
 )
 def test_validate_corpus_rule_unknown_token_fields(_mock_validate):
-    row = validate_corpus_rule(
+    (row,) = validate_corpus_rule(
         _SECTION,
         {
             "stages": ["e", "i"],
@@ -282,6 +283,69 @@ def test_validate_corpus_rule_unknown_token_fields(_mock_validate):
     assert row.failure_class == "unknown_feature"
     assert row.error_token == "voiced"
     assert row.suggested == "voice"
+
+
+@patch("conlanger.tools.corpus_inventory.validate_asca", return_value=True)
+def test_validate_corpus_rule_emits_alternative_rows(_mock_validate):
+    rows = validate_corpus_rule(
+        _SECTION,
+        {
+            "stages": ["d", "{∅,ð}"],
+            "env": "V_V",
+            "raw": "d → {∅,ð} / V_V",
+            "source": "s:1",
+        },
+        0,
+        probe_words=None,
+    )
+    assert [row.alt_idx for row in rows] == [0, 1]
+    assert all(row.ok for row in rows)
+    assert all(row.source == "s:1" for row in rows)
+    assert _mock_validate.call_count == 2
+
+
+@patch("conlanger.tools.corpus_inventory.validate_asca", return_value=True)
+def test_validate_corpus_rule_non_optional_has_empty_alt_idx(_mock_validate):
+    (row,) = validate_corpus_rule(
+        _SECTION,
+        {"stages": ["a", "b"], "raw": "a → b", "source": "s:1"},
+        0,
+        probe_words=None,
+    )
+    assert row.alt_idx is None
+
+
+def test_ok_flip_changelog_rows_keys_on_source_and_alt_idx():
+    previous = validation_rows_to_dataframe(
+        [
+            ValidationRow("1", "A", 0, "file:1", True, "", "", "", "", "", 0),
+            ValidationRow("1", "A", 0, "file:1", True, "", "", "", "", "", 1),
+        ]
+    )
+    # alt_idx 0 unchanged; alt_idx 1 flips to failing under the same source
+    current = validation_rows_to_dataframe(
+        [
+            ValidationRow("1", "A", 0, "file:1", True, "", "", "", "", "", 0),
+            ValidationRow(
+                "1",
+                "A",
+                0,
+                "file:1",
+                False,
+                "syntax_other",
+                "broken-syntax",
+                "",
+                "",
+                "err",
+                1,
+            ),
+        ]
+    )
+    flips = ok_flip_changelog_rows(previous, current, timestamp="2026-08-12T00:00:00Z")
+    assert list(flips.columns) == CHANGELOG_CSV_COLUMNS
+    assert list(flips["source"]) == ["file:1"]
+    assert list(flips["alt_idx"]) == ["1"]
+    assert list(flips["ok"]) == [False]
 
 
 def test_write_validation_csv(tmp_path: Path):
@@ -711,6 +775,33 @@ def test_ok_flip_changelog_rows_emits_flips_by_source():
         "2026-08-06T12:00:00Z",
         "2026-08-06T12:00:00Z",
     ]
+
+
+def test_ok_flip_changelog_rows_tolerates_previous_without_alt_idx():
+    # Inventories written before ticket 66 have no ``alt_idx`` column.
+    previous = validation_rows_to_dataframe(
+        [ValidationRow("1", "A", 0, "file:1", True, "", "", "", "", "")]
+    ).drop(columns=["alt_idx"])
+    current = validation_rows_to_dataframe(
+        [
+            ValidationRow(
+                "1",
+                "A",
+                0,
+                "file:1",
+                False,
+                "syntax_other",
+                "broken-syntax",
+                "",
+                "",
+                "err",
+            )
+        ]
+    )
+    flips = ok_flip_changelog_rows(previous, current, timestamp="2026-08-12T00:00:00Z")
+    assert list(flips.columns) == CHANGELOG_CSV_COLUMNS
+    assert list(flips["source"]) == ["file:1"]
+    assert list(flips["ok"]) == [False]
 
 
 def test_ok_flip_changelog_rows_empty_when_ok_unchanged():

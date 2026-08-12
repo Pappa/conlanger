@@ -70,6 +70,7 @@ VALIDATION_CSV_COLUMNS = [
     "section_index",
     "section_name",
     "rule_idx",
+    "alt_idx",
     "source",
     "ok",
     "failure_class",
@@ -82,6 +83,7 @@ VALIDATION_CSV_COLUMNS = [
 CHANGELOG_CSV_COLUMNS = [
     "section_index",
     "rule_idx",
+    "alt_idx",
     "source",
     "ok",
     "timestamp",
@@ -97,6 +99,24 @@ OMITTED_DESCRIPTIONS = {"panic_other"}
 def _ok_as_bool(series: pd.Series) -> pd.Series:
     """Normalize inventory ``ok`` values (bool or CSV strings) to bool."""
     return series.astype(str).str.lower().isin({"true", "1"})
+
+
+def _alt_idx_key(series: pd.Series) -> pd.Series:
+    """Normalize ``alt_idx`` (int / empty / NaN / CSV float) into a string key."""
+
+    def _norm(value: object) -> str:
+        if (
+            value is None
+            or value == ""
+            or (isinstance(value, float) and pd.isna(value))
+        ):
+            return ""
+        try:
+            return str(int(float(value)))  # type: ignore[arg-type]
+        except (TypeError, ValueError):
+            return str(value)
+
+    return series.map(_norm)
 
 
 def validation_rows_to_dataframe(rows: list[ValidationRow]) -> pd.DataFrame:
@@ -126,23 +146,33 @@ def ok_flip_changelog_rows(
 ) -> pd.DataFrame:
     """Return changelog rows for rules whose ``ok`` flipped vs ``previous``.
 
-    Matching is by ``source``. When ``previous`` is missing or empty, no flips
-    are emitted (first-run behaviour). ``timestamp`` is copied onto every row.
+    Matching is by ``(source, alt_idx)`` so optional-output alternatives are
+    tracked independently. When ``previous`` is missing or empty, no flips are
+    emitted (first-run behaviour). ``timestamp`` is copied onto every row.
     """
     empty = pd.DataFrame(columns=CHANGELOG_CSV_COLUMNS)
     if previous is None or previous.empty or current.empty:
         return empty
-    prev = previous.loc[:, ["source", "ok"]].drop_duplicates(
-        subset=["source"], keep="last"
+    # Prior inventories predating ``alt_idx`` have no such column — treat as empty.
+    previous = (
+        previous if "alt_idx" in previous.columns else previous.assign(alt_idx="")
     )
-    prev = prev.assign(ok=_ok_as_bool(prev["ok"])).set_index("source")["ok"]
-    cur = current.loc[:, ["section_index", "rule_idx", "source", "ok"]].copy()
+    prev = previous.loc[:, ["source", "alt_idx", "ok"]].copy()
+    prev["_alt_key"] = _alt_idx_key(prev["alt_idx"])
+    prev["ok"] = _ok_as_bool(prev["ok"])
+    prev = prev.drop_duplicates(subset=["source", "_alt_key"], keep="last")
+    prev = prev.set_index(["source", "_alt_key"])["ok"]
+    cur = current.loc[
+        :, ["section_index", "rule_idx", "alt_idx", "source", "ok"]
+    ].copy()
+    cur["_alt_key"] = _alt_idx_key(cur["alt_idx"])
     cur["ok"] = _ok_as_bool(cur["ok"])
-    cur = cur.drop_duplicates(subset=["source"], keep="last")
-    merged = cur.join(prev.rename("prev_ok"), on="source", how="inner")
+    cur = cur.drop_duplicates(subset=["source", "_alt_key"], keep="last")
+    merged = cur.join(prev.rename("prev_ok"), on=["source", "_alt_key"], how="inner")
     flipped = merged.loc[merged["ok"] != merged["prev_ok"]].copy()
     if flipped.empty:
         return empty
+    flipped["alt_idx"] = _alt_idx_key(flipped["alt_idx"])
     flipped["timestamp"] = timestamp
     return flipped.loc[:, CHANGELOG_CSV_COLUMNS].reset_index(drop=True)
 
@@ -315,12 +345,14 @@ class ValidationRow:
     error_token: str
     suggested: str
     description: str
+    alt_idx: int | None = None
 
     def as_csv_dict(self) -> dict[str, str | int | bool]:
         return {
             "section_index": self.section_index,
             "section_name": self.section_name,
             "rule_idx": self.rule_idx,
+            "alt_idx": "" if self.alt_idx is None else self.alt_idx,
             "source": self.source,
             "ok": self.ok,
             "failure_class": self.failure_class,
@@ -343,95 +375,40 @@ def _mini_section(
     }
 
 
-def validate_corpus_rule(
+def _series_for_alternative(
     section: dict[str, Any],
     rule: dict[str, Any],
     rule_idx: int,
+    alternative: SoundChangeRule,
+    group_mappings: dict[str, str] | None,
+) -> DiachronicSeries:
+    """Build a standalone series for one optional-output alternative."""
+    alt_rule: dict[str, Any] = {
+        "stages": [alternative.input, alternative.output],
+        "raw": rule.get("raw", ""),
+        "source": rule.get("source", ""),
+    }
+    if alternative.env:
+        alt_rule["env"] = alternative.env
+    if alternative.exception:
+        alt_rule["exception"] = alternative.exception
+    mini = _mini_section(section, alt_rule, rule_idx)
+    return DiachronicSeries(mini, group_mappings=group_mappings)
+
+
+def _asca_validation_row(
+    scr: DiachronicSeries,
     *,
+    section_index: str,
+    section_name: str,
+    rule_idx: int,
+    alt_idx: int | None,
+    source: str,
     probe_words: Path | None,
-    group_mappings: dict[str, str] | None = None,
 ) -> ValidationRow:
-    section_index = str(section.get("index", ""))
-    section_name = str(section.get("section", ""))
-    source = str(rule.get("source", ""))
-
-    if rule.get("status") == "skipped":
-        raw = str(rule.get("raw", ""))
-        if "→" not in raw and ARROW not in raw:
-            err = f"missing separator {ARROW!r}"
-        else:
-            err = str(rule.get("comment") or "quoted prose paragraph")
-        failure_class = "missing_arrow"
-        error_token, suggested = parse_unknown_token_error(err)
-        return ValidationRow(
-            section_index=section_index,
-            section_name=section_name,
-            rule_idx=rule_idx,
-            source=source,
-            ok=False,
-            failure_class=failure_class,
-            reason=reason_for_failure(failure_class, err),
-            error_token=error_token,
-            suggested=suggested,
-            description=err,
-        )
-
-    mini = _mini_section(section, rule, rule_idx)
+    """Validate an already-compiled series and build its ``ValidationRow``."""
     try:
-        scr = DiachronicSeries(mini, group_mappings=group_mappings)
-    except (KeyError, ValueError) as exc:
-        err = f"format_error: {exc}"
-        failure_class = "format_error"
-        error_token, suggested = parse_unknown_token_error(err)
-        return ValidationRow(
-            section_index=section_index,
-            section_name=section_name,
-            rule_idx=rule_idx,
-            source=source,
-            ok=False,
-            failure_class=failure_class,
-            reason=reason_for_failure(failure_class, err),
-            error_token=error_token,
-            suggested=suggested,
-            description=err,
-        )
-
-    if not any(isinstance(part, SoundChangeRule) for part in scr._parts):
-        err = "format_error: no compile steps from stages"
-        failure_class = "format_error"
-        error_token, suggested = parse_unknown_token_error(err)
-        return ValidationRow(
-            section_index=section_index,
-            section_name=section_name,
-            rule_idx=rule_idx,
-            source=source,
-            ok=False,
-            failure_class=failure_class,
-            reason=reason_for_failure(failure_class, err),
-            error_token=error_token,
-            suggested=suggested,
-            description=err,
-        )
-
-    if rule.get("skip"):
-        return ValidationRow(
-            section_index=section_index,
-            section_name=section_name,
-            rule_idx=rule_idx,
-            source=source,
-            ok=True,
-            failure_class="",
-            reason="",
-            error_token="",
-            suggested="",
-            description="held-out (commented rule)",
-        )
-
-    try:
-        validate_asca(
-            scr,
-            probe_words=probe_words,
-        )
+        validate_asca(scr, probe_words=probe_words)
     except ASCAValidationError as exc:
         err = str(exc)
         failure_class = classify_error(err)
@@ -440,6 +417,7 @@ def validate_corpus_rule(
             section_index=section_index,
             section_name=section_name,
             rule_idx=rule_idx,
+            alt_idx=alt_idx,
             source=source,
             ok=False,
             failure_class=failure_class,
@@ -453,6 +431,7 @@ def validate_corpus_rule(
         section_index=section_index,
         section_name=section_name,
         rule_idx=rule_idx,
+        alt_idx=alt_idx,
         source=source,
         ok=True,
         failure_class="",
@@ -461,6 +440,136 @@ def validate_corpus_rule(
         suggested="",
         description="",
     )
+
+
+def validate_corpus_rule(
+    section: dict[str, Any],
+    rule: dict[str, Any],
+    rule_idx: int,
+    *,
+    probe_words: Path | None,
+    group_mappings: dict[str, str] | None = None,
+) -> list[ValidationRow]:
+    """Validate one corpus rule.
+
+    Returns one row per optional-output alternative (0-based ``alt_idx``) when the
+    rule has alternatives; otherwise a single row with an empty ``alt_idx``.
+    """
+    section_index = str(section.get("index", ""))
+    section_name = str(section.get("section", ""))
+    source = str(rule.get("source", ""))
+
+    if rule.get("status") == "skipped":
+        raw = str(rule.get("raw", ""))
+        if "→" not in raw and ARROW not in raw:
+            err = f"missing separator {ARROW!r}"
+        else:
+            err = str(rule.get("comment") or "quoted prose paragraph")
+        failure_class = "missing_arrow"
+        error_token, suggested = parse_unknown_token_error(err)
+        return [
+            ValidationRow(
+                section_index=section_index,
+                section_name=section_name,
+                rule_idx=rule_idx,
+                source=source,
+                ok=False,
+                failure_class=failure_class,
+                reason=reason_for_failure(failure_class, err),
+                error_token=error_token,
+                suggested=suggested,
+                description=err,
+            )
+        ]
+
+    mini = _mini_section(section, rule, rule_idx)
+    try:
+        scr = DiachronicSeries(mini, group_mappings=group_mappings)
+    except (KeyError, ValueError) as exc:
+        err = f"format_error: {exc}"
+        failure_class = "format_error"
+        error_token, suggested = parse_unknown_token_error(err)
+        return [
+            ValidationRow(
+                section_index=section_index,
+                section_name=section_name,
+                rule_idx=rule_idx,
+                source=source,
+                ok=False,
+                failure_class=failure_class,
+                reason=reason_for_failure(failure_class, err),
+                error_token=error_token,
+                suggested=suggested,
+                description=err,
+            )
+        ]
+
+    sound_change_parts = [
+        part for part in scr._parts if isinstance(part, SoundChangeRule)
+    ]
+    if not sound_change_parts:
+        err = "format_error: no compile steps from stages"
+        failure_class = "format_error"
+        error_token, suggested = parse_unknown_token_error(err)
+        return [
+            ValidationRow(
+                section_index=section_index,
+                section_name=section_name,
+                rule_idx=rule_idx,
+                source=source,
+                ok=False,
+                failure_class=failure_class,
+                reason=reason_for_failure(failure_class, err),
+                error_token=error_token,
+                suggested=suggested,
+                description=err,
+            )
+        ]
+
+    if rule.get("skip"):
+        return [
+            ValidationRow(
+                section_index=section_index,
+                section_name=section_name,
+                rule_idx=rule_idx,
+                source=source,
+                ok=True,
+                failure_class="",
+                reason="",
+                error_token="",
+                suggested="",
+                description="held-out (commented rule)",
+            )
+        ]
+
+    if len(sound_change_parts) == 1 and sound_change_parts[0].alternatives:
+        # Inventory only the alternatives, never the parent's random pick.
+        return [
+            _asca_validation_row(
+                _series_for_alternative(
+                    section, rule, rule_idx, alternative, group_mappings
+                ),
+                section_index=section_index,
+                section_name=section_name,
+                rule_idx=rule_idx,
+                alt_idx=alt_idx,
+                source=source,
+                probe_words=probe_words,
+            )
+            for alt_idx, alternative in enumerate(sound_change_parts[0].alternatives)
+        ]
+
+    return [
+        _asca_validation_row(
+            scr,
+            section_index=section_index,
+            section_name=section_name,
+            rule_idx=rule_idx,
+            alt_idx=None,
+            source=source,
+            probe_words=probe_words,
+        )
+    ]
 
 
 def iter_validation_rows(
@@ -472,7 +581,7 @@ def iter_validation_rows(
     for section in doc.get("sections") or []:
         rules = section.get("rules") or []
         for rule_idx, rule in enumerate(rules):
-            yield validate_corpus_rule(
+            yield from validate_corpus_rule(
                 section,
                 rule,
                 rule_idx,

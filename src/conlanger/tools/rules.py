@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+import random
 from typing import ClassVar
 
 from conlanger.tools.compile.asca.chains import expand_chained_corpus_rule
@@ -11,6 +14,46 @@ from conlanger.tools.compile.asca.pipeline import compile_asca_rule_string
 from conlanger.tools.compile.asca.tilde import normalize_corpus_rule_tilde_fields
 
 _SUPPORTED_FORMATS = frozenset({"asca"})
+
+
+def _is_whole_field_set(text: str) -> bool:
+    """True when ``text`` is a single ``{…}`` set spanning the whole field."""
+    stripped = text.strip()
+    if len(stripped) < 2 or not stripped.startswith("{") or not stripped.endswith("}"):
+        return False
+    depth = 0
+    for position, char in enumerate(stripped):
+        if char == "{":
+            depth += 1
+        elif char == "}":
+            depth -= 1
+            if depth < 0:
+                return False
+            if depth == 0 and position != len(stripped) - 1:
+                return False
+    return depth == 0
+
+
+def _split_set_members(text: str) -> list[str]:
+    """Split a whole-field ``{a,b,c}`` set into top-level member strings."""
+    inner = text.strip()[1:-1]
+    members: list[str] = []
+    current: list[str] = []
+    depth = 0
+    for char in inner:
+        if char == "{":
+            depth += 1
+            current.append(char)
+        elif char == "}":
+            depth -= 1
+            current.append(char)
+        elif char == "," and depth == 0:
+            members.append("".join(current).strip())
+            current = []
+        else:
+            current.append(char)
+    members.append("".join(current).strip())
+    return members
 
 
 class RulePartBase:
@@ -58,6 +101,8 @@ class SoundChangeRule(RulePartBase):
         rule: dict[str, str],
         *,
         group_mappings: dict[str, str] | None = None,
+        seed: int | None = None,
+        rng: random.Random | None = None,
     ):
         try:
             self.input = rule["input"]
@@ -71,11 +116,43 @@ class SoundChangeRule(RulePartBase):
         self.env = rule.get("env", None)
         self.exception = rule.get("exception", None)
         self._group_mappings = {} if group_mappings is None else group_mappings
+        # Instance RNG only — never the process-global ``random.seed`` (ticket 66).
+        self._rng = rng if rng is not None else random.Random(seed)
 
         if rule.get("skip", False):
             self.prefix = self.skip_prefix
-        # Compile ASCA rule text once at construction (stored in ``value``).
-        super().__init__(self._format())
+
+        self.alternatives = self._build_alternatives(rule)
+        if self.alternatives:
+            # Freeze one alternative uniformly as the emitted outcome.
+            chosen = self.alternatives[self._rng.randrange(len(self.alternatives))]
+            value = chosen.value
+        else:
+            # Compile ASCA rule text once at construction (stored in ``value``).
+            value = self._format()
+        super().__init__(value)
+
+    def _build_alternatives(self, rule: dict[str, str]) -> list[SoundChangeRule]:
+        """Build peer alternatives for an optional-output rule (else empty).
+
+        Optional outputs are a whole-field output set with an input that is not a
+        whole-field set (e.g. ``d → {∅,ð}``). Paired sets, nested sets, and empty
+        members are out of scope and yield no alternatives.
+        """
+        if not (
+            _is_whole_field_set(self.output) and not _is_whole_field_set(self.input)
+        ):
+            return []
+        members = _split_set_members(self.output)
+        if not members or any(not member or "{" in member for member in members):
+            return []
+        return [
+            SoundChangeRule(
+                {**rule, "input": self.input, "output": member},
+                group_mappings=self._group_mappings,
+            )
+            for member in members
+        ]
 
     def _format(self) -> str:
         input_text = drop_mixed_parallel_null_columns(self.input)

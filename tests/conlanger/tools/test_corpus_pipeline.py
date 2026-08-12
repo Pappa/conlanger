@@ -244,14 +244,15 @@ def test_e2e_smoke_pipeline_validate(
     rules = section.get("rules") or []
     assert rules, case_id
     rows = [
-        validate_corpus_rule(
+        row
+        for idx, rule in enumerate(rules)
+        for row in validate_corpus_rule(
             section,
             rule,
             idx,
             probe_words=_PROBE,
             group_mappings=asca_group_mappings_dict(),
         )
-        for idx, rule in enumerate(rules)
     ]
 
     if case_id == "held-out-parse":
