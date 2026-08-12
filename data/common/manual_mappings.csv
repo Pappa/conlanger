@@ -25,9 +25,16 @@ nd ld (→ nː lː ?),nd ld → nː lː,chaining
 " / in certain situations"," / sporadic ;; in certain situations",replace prose
 " / in some dialects"," / sporadic ;; in some dialects",replace proseq
 " / in some northern"," / sporadic ;; in some northern",replace prose
+" / in northern dialects"," / sporadic ;; in northern dialects",replace prose
+" / southern regions"," / sporadic ;; southern regions",replace prose
+" / southern dialects"," / sporadic ;; southern dialects",replace prose
+" / (in some regions"," / sporadic ;; (in some regions",replace prose
+" / (some dialects"," / sporadic ;; (some dialects",replace prose
+" (most dialects"," ;; (most dialects",replace prose
 " / “in some positions”"," / sporadic ;; “in some positions”",replace prose
 " ! in Ware Sekani"," sporadic ;; not in Ware Sekani",replace prose
 " ! in Queensland"," sporadic ;; not in Queensland",replace prose
+" / depending on the environment"," / sporadic ;; depending on the environment",replace prose
 " / in "," / ",replace prose
 " ! in "," ! ",replace prose
 "{ʃ(ʷ),x {z,ʒ(ʷ),ɣ} → s j","{ʃ(ʷ),x} {z,ʒ(ʷ),ɣ} → s j","corrected from original source: Northern Athapaskan Languages (Vol. 6), p. 73"
@@ -35,3 +42,5 @@ nd ld (→ nː lː ?),nd ld → nː lː,chaining
 " (“[a]rchaic relic”)"," ;; (“[a]rchaic relic”)",comment
 "nr → s","nl → s","corrected form original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
 "{ʔθ,ʔr} → {ʔ,j,∅}","ʔθ, ʔr → {ʔ,j,∅}","corrected form original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
+" / when stem-final"," / _%# ;; when stem-final","replacing prose - this is an approximation and may be wrong"
+" / when-stem final"," / _%# ;; when-stem final","replacing prose - this is an approximation and may be wrong"

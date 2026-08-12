@@ -8,6 +8,7 @@ section_index,section_name,rule_idx,source,manual_mapping
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,19,index_diachronica_original.html:1401, / 
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,3,index_diachronica_original.html:1409, / 
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,3,index_diachronica_original.html:1420, / 
+6.2.2.1.10,Classical Arabic to Hassāniyya Arabic,2,index_diachronica_original.html:1431, / sporadic ;; depending on the environment
 6.2.2.1.11,Classical Arabic to Iraqi Arabic,1,index_diachronica_original.html:1445, / 
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,3,index_diachronica_original.html:1470," / u[-long]_, _u[-long]"
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,6,index_diachronica_original.html:1507, / 
@@ -85,12 +86,15 @@ section_index,section_name,rule_idx,source,manual_mapping
 17.7.2.1.3,Old English to Midlands Middle English,11,index_diachronica_original.html:5760, / 
 17.7.2.1.3,Old English to Midlands Middle English,11,index_diachronica_original.html:5760, ! 
 17.7.2.1.3,Old English to Midlands Middle English,12,index_diachronica_original.html:5761, / 
+17.7.2.1.5,Early Modern English to American English,8,index_diachronica_original.html:5796, ;; (most dialects
 17.7.2.1.6,Early Modern English to Australian English,8,index_diachronica_original.html:5819, sporadic ;; not in Queensland
 17.7.2.1.6,Early Modern English to Australian English,13,index_diachronica_original.html:5824, / [-stress]
 17.7.2.1.8,Old English to Northern Middle English,10,index_diachronica_original.html:5868, / 
 17.7.2.1.8,Old English to Northern Middle English,10,index_diachronica_original.html:5868, ! 
 17.7.2.1.8,Old English to Northern Middle English,12,index_diachronica_original.html:5870, / 
 17.7.2.1.8,Old English to Northern Middle English,15,index_diachronica_original.html:5873, / 
+17.7.2.1.9,Early Northern Middle English to Scots,10,index_diachronica_original.html:5896, / _%# ;; when stem-final
+17.7.2.1.9,Early Northern Middle English to Scots,11,index_diachronica_original.html:5897, / _%# ;; when-stem final
 17.7.2.1.9,Early Northern Middle English to Scots,19,index_diachronica_original.html:5905, / sporadic ;; in some northern
 17.7.2.1.9,Early Northern Middle English to Scots,19,index_diachronica_original.html:5905,ɛː → ɛi → əi
 17.7.2.1.12,Old English to Southern Middle English,11,index_diachronica_original.html:5998, / 
@@ -98,7 +102,7 @@ section_index,section_name,rule_idx,source,manual_mapping
 17.7.2.1.12,Old English to Southern Middle English,13,index_diachronica_original.html:6000, / 
 17.7.2.2,West Germanic to Old Low Franconian,7,index_diachronica_original.html:6043,a → ɒ → o
 17.7.2.2.1,Old Low Franconian to Middle Dutch,11,index_diachronica_original.html:6067, / 
-17.7.2.2.2,Middle Dutch to Modern Dutch,3,index_diachronica_original.html:6078, / 
+17.7.2.2.2,Middle Dutch to Modern Dutch,3,index_diachronica_original.html:6078, / sporadic ;; in northern dialects
 17.7.2.2.2,Middle Dutch to Modern Dutch,4,index_diachronica_original.html:6079, / 
 17.7.2.3,Middle High German to Standard German,23,index_diachronica_original.html:6118, / 
 17.7.2.3,Middle High German to Standard German,25,index_diachronica_original.html:6120, / [-stress]
@@ -212,6 +216,8 @@ section_index,section_name,rule_idx,source,manual_mapping
 42.1.2,Proto-Finnic to Livonian,21,index_diachronica_original.html:13924, ! 
 45.1.2,Proto-Pai to Paipai,4,index_diachronica_original.html:14268, / [-stress]
 45.1.3,Proto-Pai to Tipai,2,index_diachronica_original.html:14278, / [-stress]
+46.5,Old English-to-Scots Vowel Shifts,0,index_diachronica_original.html:14323, / _%# ;; when stem-final
+46.5,Old English-to-Scots Vowel Shifts,1,index_diachronica_original.html:14324, / _%# ;; when-stem final
 46.5,Old English-to-Scots Vowel Shifts,9,index_diachronica_original.html:14332, / sporadic ;; in some northern
 46.5,Old English-to-Scots Vowel Shifts,9,index_diachronica_original.html:14332,ɛː → ɛi → əi
 46.13,Old Norse to Faroese Vowel Shift,8,index_diachronica_original.html:14426, / [-stress]

@@ -2518,13 +2518,13 @@ sections:
     comment: (the article isn’t exactly clear on what this second phone is)
     raw: f θ → v z̪ (the article isn’t exactly clear on what this second phone is)
     source: index_diachronica_original.html:1430
-  - comment: again, the article is unclear
+  - comment: ; depending on the environment; again, the article is unclear; sporadic
     stages:
     - ʔ
     - '{∅,j,w}'
-    env: depending on the environment
     raw: ʔ → {∅,j,w} / depending on the environment; again, the article is unclear
     source: index_diachronica_original.html:1431
+    sporadic: true
   - stages:
     - x
     - χ
@@ -22132,11 +22132,11 @@ sections:
     env: _ɹ
     raw: i u e → ɪ ʊ ɛ / _ɹ
     source: index_diachronica_original.html:5795
-  - stages:
+  - comment: ; (most dialects have at least one if not both)
+    stages:
     - o ɔ
     - ɔ ɒ
     env: _ɹ
-    comment: (most dialects have at least one if not both)
     raw: o ɔ → ɔ ɒ / _ɹ (most dialects have at least one if not both)
     source: index_diachronica_original.html:5796
   - stages:
@@ -22669,17 +22669,19 @@ sections:
     - ʌu {ɑ,ɔ}
     raw: ol al → ou ɑː → ʌu {ɑ,ɔ}
     source: index_diachronica_original.html:5894
-  - stages:
+  - comment: ; when stem-final
+    stages:
     - ai
     - ɛi
     - əi
-    env: when stem-final
+    env: _$#
     raw: — ai → ɛi → əi / when stem-final
     source: index_diachronica_original.html:5896
-  - stages:
+  - comment: ; when-stem final, in northern varieties
+    stages:
     - uː
     - ʌu
-    env: when-stem final, in northern varieties
+    env: _$#
     raw: — uː → ʌu / when-stem final, in northern varieties
     source: index_diachronica_original.html:5897
   - stages:
@@ -23651,12 +23653,13 @@ sections:
     raw: uː → ʌu (? conjectured based on the above diphthongization and on developments
       in Polder Dutch vowels)
     source: index_diachronica_original.html:6076
-  - stages:
+  - comment: ; in northern dialects; sporadic
+    stages:
     - x ɣ
     - '{x,χ} {ɣ,x,χ}'
-    env: northern dialects
     raw: — x ɣ → {x,χ} {ɣ,x,χ} / in northern dialects
     source: index_diachronica_original.html:6078
+    sporadic: true
   - comment: based on the description and on representations in other articles, the
       palatal phonemes are used here); “front velar”
     stages:
@@ -60054,17 +60057,19 @@ sections:
   - raw: 'Application of the Scottish vowel-length rule:'
     source: index_diachronica_original.html:14336
   rules:
-  - stages:
+  - comment: ; when stem-final
+    stages:
     - ai
     - ɛi
     - əi
-    env: when stem-final
+    env: _$#
     raw: ai → ɛi → əi / when stem-final
     source: index_diachronica_original.html:14323
-  - stages:
+  - comment: ; when-stem final, in northern varieties
+    stages:
     - uː
     - ʌu
-    env: when-stem final, in northern varieties
+    env: _$#
     raw: uː → ʌu / when-stem final, in northern varieties
     source: index_diachronica_original.html:14324
   - stages:
