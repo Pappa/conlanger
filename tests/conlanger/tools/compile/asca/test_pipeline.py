@@ -49,6 +49,6 @@ def test_compile_asca_rule_string_matches_legacy_manual_chain():
 
 
 def test_rule_change_uses_pipeline_for_asca():
-    part = SoundChangeRule({"input": "Vː", "output": "V", "env": "#C_C"}, "asca")
+    part = SoundChangeRule({"input": "Vː", "output": "V", "env": "#C_C"})
     expected = compile_asca_rule_string("Vː > V / #C_C", group_mappings={})
     assert part.value == expected

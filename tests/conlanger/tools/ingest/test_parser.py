@@ -28,7 +28,6 @@ from conlanger.tools.ingest.transforms import (
     normalize_stress_conditions,
     split_field_semicolon_comment,
 )
-from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
 from conlanger.tools.rules import DiachronicSeries
 from conlanger.utils.file_io import (
     DEFAULT_GROUP_MAPPINGS_CSV,
@@ -671,9 +670,7 @@ def test_parse_rule_element_medial_validate_asca():
     rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     section = {"index": "6.2.1.1.2", "section": "Proto-Agaw to Blin", "rules": rules}
     validate_asca(
-        PhonologicalRuleSet(section).to_sound_change_ruleset(
-            group_mappings=asca_group_mappings_dict()
-        ),
+        DiachronicSeries(section, group_mappings=asca_group_mappings_dict()),
         probe_words=probe,
     )
 
@@ -694,9 +691,7 @@ def test_parse_rule_element_medial_deferred_env_exception_still_fails():
     }
     with pytest.raises(ASCAValidationError, match="Expected '_', but received ','"):
         validate_asca(
-            PhonologicalRuleSet(section).to_sound_change_ruleset(
-                group_mappings=asca_group_mappings_dict()
-            )
+            DiachronicSeries(section, group_mappings=asca_group_mappings_dict())
         )
 
 
@@ -848,9 +843,7 @@ def test_parse_rule_element_stress_conditions_validate_asca():
             "rules": rules,
         }
         validate_asca(
-            PhonologicalRuleSet(section).to_sound_change_ruleset(
-                group_mappings=asca_group_mappings_dict()
-            ),
+            DiachronicSeries(section, group_mappings=asca_group_mappings_dict()),
             probe_words=probe,
         )
 
@@ -1455,9 +1448,7 @@ def test_parse_rule_element_voiced_matrix_validates_asca():
     rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     section = {"index": "17.12", "section": "Voicing", "rules": rules}
     validate_asca(
-        PhonologicalRuleSet(section).to_sound_change_ruleset(
-            group_mappings=asca_group_mappings_dict()
-        ),
+        DiachronicSeries(section, group_mappings=asca_group_mappings_dict()),
         probe_words=Path("tests/fixtures/asca_probe_words.wsca"),
     )
 

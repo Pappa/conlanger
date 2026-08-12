@@ -21,7 +21,6 @@ from conlanger.tools.compile.asca.superscript_modifiers import (
     normalize_asca_superscript_modifiers,
 )
 
-# Steps 2–10 after field join (step 1) in SoundChangeRule._compile_rule_text.
 ASCA_COMPILE_STEP_NAMES: tuple[str, ...] = (
     "normalize_asca_optional_grouping_ellipsis",
     "expand_index_subscript_references",

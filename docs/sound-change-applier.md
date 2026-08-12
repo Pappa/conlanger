@@ -4,7 +4,7 @@ Applier compile turns one **sound-change section** (corpus dict) into a concrete
 
 Corpus YAML fields and `raw` are **never modified** — transforms apply only to the emitted applier string.
 
-**Primary code:** [`compile/asca/pipeline.py`](../src/conlanger/tools/compile/asca/pipeline.py) (`compile_asca_rule_string`, `ASCA_COMPILE_STEP_NAMES`), [`rules.py`](../src/conlanger/tools/rules.py) (`DiachronicSeries`, `SoundChangeRule`), [`phonological_ruleset.py`](../src/conlanger/tools/phonological_ruleset.py), [`appliers/asca.py`](../src/conlanger/appliers/asca.py) (`validate_asca`).
+**Primary code:** [`compile/asca/pipeline.py`](../src/conlanger/tools/compile/asca/pipeline.py) (`compile_asca_rule_string`, `ASCA_COMPILE_STEP_NAMES`), [`rules.py`](../src/conlanger/tools/rules.py) (`DiachronicSeries`, `SoundChangeRule`), [`appliers/asca.py`](../src/conlanger/appliers/asca.py) (`validate_asca`).
 
 **Related:** [ADR-0002](./adr/0002-applier-neutral-yaml-rule-corpus.md) (applier-neutral corpus), [ADR-0003](./adr/0003-validate-after-applier-compile.md) (validate after compile).
 
@@ -15,11 +15,8 @@ Corpus YAML fields and `raw` are **never modified** — transforms apply only to
 ```text
 corpus section dict
         │
-        ▼  PhonologicalRuleSet(section, format="asca")
-        │     holds section unchanged; no transforms here
-        ▼  .to_sound_change_ruleset(group_mappings?)
-        ▼  DiachronicSeries(section, format, group_mappings)
-        │     assembles .rsca-shaped parts; SoundChangeRule compiles each rule
+        ▼  DiachronicSeries(section, format="asca")
+        │     holds section; assembles ASCA .rsca parts
         ▼  str(DiachronicSeries)  →  temporary .rsca
         ▼  validate_asca(...)  →  asca run <probe.wsca> --rules <file>
 ```
@@ -30,9 +27,7 @@ Parse-time transforms are documented in [index-diachronica-parser.md](./index-di
 
 ## Section assembly
 
-`PhonologicalRuleSet` is a thin compile container — it holds the section unchanged and delegates to `DiachronicSeries` for ASCA-specific work.
-
-`DiachronicSeries` builds `_parts` in fixed order:
+`DiachronicSeries` compiles one sound-change section to ASCA-ready `.rsca` text.
 
 | Order | Part class | Condition | ASCA render prefix |
 | ---: | --- | --- | --- |
@@ -43,13 +38,13 @@ Parse-time transforms are documented in [index-diachronica-parser.md](./index-di
 
 `str(DiachronicSeries)` joins parts with newlines → `.rsca` body shape.
 
-`SoundChangeRule` requires `input`, `output`; optional `env`, `exception`. `skip: True` → commented prefixes (`#\t` ASCA, `;;\t` Brassica); excluded from validation. Compiled text is stored in `value` at construction via `_compile_rule_text(format)`.
+`SoundChangeRule` requires `input`, `output`; optional `env`, `exception`. `skip: True` → commented prefix (`#\t`); excluded from validation. Compiled text is stored in `value` at construction via `_format()`.
 
 ---
 
 ## Per-rule ASCA compile pipeline
 
-Exact order in `compile_asca_rule_string` ([`compile/asca/pipeline.py`](../src/conlanger/tools/compile/asca/pipeline.py)), invoked from `SoundChangeRule._compile_rule_text`:
+Exact order in `compile_asca_rule_string` ([`compile/asca/pipeline.py`](../src/conlanger/tools/compile/asca/pipeline.py)), invoked from `SoundChangeRule._format`:
 
 | Step | Status | Order | Rationale | What breaks if reordered |
 | --- | --- | ---: | --- | --- |
@@ -104,7 +99,7 @@ validate_asca(
 7. Non-zero exit → `ASCAValidationError` with cleaned stderr.
 8. Also fail if stderr contains `Syntax Error` or `Runtime Error` even on exit 0.
 
-**Inventory integration** (`corpus_inventory.py`): each corpus rule → `_mini_section` → `PhonologicalRuleSet(mini).to_sound_change_ruleset()` → `validate_asca(..., probe_words=fixture)`.
+**Inventory integration** (`corpus_inventory.py`): each corpus rule → `_mini_section` → `DiachronicSeries(mini, group_mappings=…)` → `validate_asca(..., probe_words=fixture)`.
 
 ### Probe wordlist
 

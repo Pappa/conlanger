@@ -23,7 +23,7 @@ Inline prose stripped for ASCA is captured in optional ``comment`` on each corpu
 rule: semicolon tails in ``env`` / ``exception`` first (``apply_semicolon_field_comments``), then
 field-level glosses and env qualifiers. Index word-internal ``medial`` / ``medially`` env
 prose becomes ``env: _`` with boundary ``exception: :{#_, _#}:`` (``apply_medial_env_conditions``).
-Class-letter expansion is deferred to compile time (``PhonologicalRuleSet`` +
+Class-letter expansion is deferred to compile time (``DiachronicSeries`` +
 ``group_mappings.csv``).
 """
 

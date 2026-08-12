@@ -1,7 +1,7 @@
 """End-to-end tests for the cleaned rule corpus pipeline.
 
 Primary seam (spec): HTML → IndexDiachronicaParser → corpus document →
-PhonologicalRuleSet compile → validate_asca per corpus rule.
+DiachronicSeries compile → validate_asca per corpus rule.
 """
 
 from __future__ import annotations
@@ -15,7 +15,7 @@ from helpers import default_index_parser
 from conlanger.appliers.asca import validate_asca
 from conlanger.tools.compile.asca.group_mappings import asca_group_mappings_dict
 from conlanger.tools.corpus_inventory import iter_validation_rows, validate_corpus_rule
-from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
+from conlanger.tools.rules import DiachronicSeries
 from tests.conftest import ASCA_INSTALLED
 
 _PROBE = Path(__file__).resolve().parents[2] / "fixtures" / "asca_probe_words.wsca"
@@ -153,7 +153,7 @@ def test_e2e_minimal_html_fixture_shape_and_raw_preservation(tmp_path: Path):
 @pytest.mark.skipif(not ASCA_INSTALLED, reason="asca binary not on PATH")
 @pytest.mark.skipif(not _PROBE.is_file(), reason="probe wordlist missing")
 def test_e2e_minimal_html_fixture_compile_and_validate(tmp_path: Path):
-    """Active rules compile through PhonologicalRuleSet and pass validate_asca."""
+    """Active rules compile through DiachronicSeries and pass validate_asca."""
     html_path = tmp_path / "validate.html"
     _write_section_html(
         html_path,
@@ -178,9 +178,7 @@ def test_e2e_minimal_html_fixture_compile_and_validate(tmp_path: Path):
     assert rows[0].reason == ""
 
     validate_asca(
-        PhonologicalRuleSet(section).to_sound_change_ruleset(
-            group_mappings=asca_group_mappings_dict()
-        ),
+        DiachronicSeries(section, group_mappings=asca_group_mappings_dict()),
         probe_words=_PROBE,
     )
 

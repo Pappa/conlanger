@@ -1,6 +1,5 @@
 from typing import ClassVar
 
-from conlanger.tools.compile.asca.aliases import apply_asca_aliases
 from conlanger.tools.compile.asca.chains import expand_chained_corpus_rule
 from conlanger.tools.compile.asca.group_mappings import (
     apply_asca_group_mappings_to_string,
@@ -11,90 +10,52 @@ from conlanger.tools.compile.asca.parallel_null_columns import (
 from conlanger.tools.compile.asca.pipeline import compile_asca_rule_string
 from conlanger.tools.compile.asca.tilde import normalize_corpus_rule_tilde_fields
 
+_SUPPORTED_FORMATS = frozenset({"asca"})
+
 
 class RulePartBase:
-    prefixes: ClassVar[dict[str, str]] = {
-        "asca": "# ",
-        "brassica": "; ",
-    }
+    prefix: ClassVar[str] = "# "
 
-    def __init__(self, value: str, format: str = "asca"):
-        if format not in self.prefixes:
-            raise ValueError(f"Unsupported format: {format}")
+    def __init__(self, value: str):
         self.value = value
-        self.format = format
-        self.prefix = self.prefixes[format]
 
     def __str__(self):
         return f"{self.prefix}{self.value}"
 
 
 class RuleTitle(RulePartBase):
-    prefixes: ClassVar[dict[str, str]] = {
-        "asca": "@ ",
-        "brassica": "; ",
-    }
+    prefix: ClassVar[str] = "@ "
 
-    def __init__(self, section: dict, format: str = "asca"):
+    def __init__(self, section: dict):
         title = section["index"] + " - " + section["section"]
-        super().__init__(title, format)
+        super().__init__(title)
 
 
 class RuleCitation(RulePartBase):
-    prefixes: ClassVar[dict[str, str]] = {
-        "asca": "# citation: ",
-        "brassica": "; citation: ",
-    }
+    prefix: ClassVar[str] = "# citation: "
 
-    def __init__(self, value: str, format: str = "asca"):
-        super().__init__(self._format(value, format), format)
-
-    def _format(self, value: str, format: str):
-        if format == "asca":
-            return value.replace("\n", "\n# ")
-        if format == "brassica":
-            return value.replace("\n", "\n; ")
+    def __init__(self, value: str):
+        super().__init__(value.replace("\n", "\n# "))
 
 
 class RuleComment(RulePartBase):
-    prefixes: ClassVar[dict[str, str]] = {
-        "asca": "\t# ",
-        "brassica": "; ",
-    }
+    prefix: ClassVar[str] = "\t# "
 
-    def __init__(self, value: str, format: str = "asca"):
-        super().__init__(self._format(value, format), format)
-
-    def _format(self, value: str, format: str):
-        if format == "asca":
-            return value.replace("\n", "\n\t# ")
-        if format == "brassica":
-            return value.replace("\n", "\n; ")
+    def __init__(self, value: str):
+        super().__init__(value.replace("\n", "\n\t# "))
 
 
 class SoundChangeRule(RulePartBase):
     rule: dict[str, str]
-    prefixes: ClassVar[dict[str, str]] = {
-        "asca": "\t",
-        "brassica": "",
-    }
-    separators: ClassVar[dict[str, dict[str, str]]] = {
-        "asca": {
-            "output": " > ",
-            "env": " / ",
-            "exception": " // ",
-        },
-        "brassica": {
-            "output": " / ",
-            "env": " / ",
-            "exception": " // ",
-        },
-    }
+    prefix: ClassVar[str] = "\t"
+    skip_prefix: ClassVar[str] = "#\t"
+    output_separator: ClassVar[str] = " > "
+    env_separator: ClassVar[str] = " / "
+    exception_separator: ClassVar[str] = " // "
 
     def __init__(
         self,
         rule: dict[str, str],
-        format: str = "asca",
         *,
         group_mappings: dict[str, str] | None = None,
     ):
@@ -112,44 +73,26 @@ class SoundChangeRule(RulePartBase):
         self._group_mappings = {} if group_mappings is None else group_mappings
 
         if rule.get("skip", False):
-            self.prefixes = {
-                "asca": "#\t",
-                "brassica": ";;\t",
-            }
-        # Compile applier-specific rule text once at construction (stored in ``value``).
-        super().__init__(self._compile_rule_text(format), format)
+            self.prefix = self.skip_prefix
+        # Compile ASCA rule text once at construction (stored in ``value``).
+        super().__init__(self._format())
 
-    def _compile_rule_text(self, format: str) -> str:
-        separators = self.separators.get(format, {})
+    def _format(self) -> str:
+        input_text = drop_mixed_parallel_null_columns(self.input)
+        output_text = drop_mixed_parallel_null_columns(self.output)
 
-        input_text = self.input
-        output_text = self.output
-        if format == "asca":
-            input_text = drop_mixed_parallel_null_columns(input_text)
-            output_text = drop_mixed_parallel_null_columns(output_text)
-
-        result = input_text + separators["output"] + output_text
+        result = input_text + self.output_separator + output_text
         if self.env:
-            result += separators["env"] + self.env
+            result += self.env_separator + self.env
         if self.exception:
-            result += separators["exception"] + self.exception
+            result += self.exception_separator + self.exception
 
-        if format == "asca":
-            result = compile_asca_rule_string(
-                result,
-                group_mappings=self._group_mappings,
-            )
-        else:
-            result = apply_asca_aliases(result)
-        return result
+        return compile_asca_rule_string(
+            result,
+            group_mappings=self._group_mappings,
+        )
 
-    def _format(self, format: str):
-        """Backward-compatible alias for ``_compile_rule_text``."""
-        return self._compile_rule_text(format)
-
-    def _apply_asca_group_mappings(self, rule: str, format: str) -> str:
-        if format != "asca":
-            return rule
+    def _apply_asca_group_mappings(self, rule: str) -> str:
         return apply_asca_group_mappings_to_string(rule, self._group_mappings)
 
 
@@ -161,19 +104,20 @@ class DiachronicSeries:
         *,
         group_mappings: dict[str, str] | None = None,
     ):
+        if format not in _SUPPORTED_FORMATS:
+            raise ValueError(f"Unsupported format: {format}")
+
         mappings = {} if group_mappings is None else group_mappings
-        self._parts = [RuleTitle(section, format)]
+        self._parts = [RuleTitle(section)]
         if section.get("citation"):
-            self._parts.append(RuleCitation(section["citation"], format))
+            self._parts.append(RuleCitation(section["citation"]))
         if section.get("comment"):
-            self._parts.append(RuleComment(section["comment"], format))
+            self._parts.append(RuleComment(section["comment"]))
         if section.get("rules"):
             for rule in section["rules"]:
                 normalized = normalize_corpus_rule_tilde_fields(rule)
                 for step in expand_chained_corpus_rule(normalized):
-                    self._parts.append(
-                        SoundChangeRule(step, format, group_mappings=mappings)
-                    )
+                    self._parts.append(SoundChangeRule(step, group_mappings=mappings))
 
     def __str__(self):
         return "\n".join([str(part) for part in self._parts])

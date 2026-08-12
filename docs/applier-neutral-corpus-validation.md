@@ -74,7 +74,7 @@ Refresh series mappings then full regen: `uv run regenerate_corpus --update-seri
 | 1 | Parse HTML → applier-neutral YAML | `IndexDiachronicaParser` → `data/diachronica/index_diachronica_parsed.yml` |
 | 2 | For each corpus rule in each section | `iter_validation_rows()` in `corpus_inventory.py` |
 | 3 | Build mini-section (one rule) | `_mini_section()` |
-| 4 | Compile | `PhonologicalRuleSet(mini).to_sound_change_ruleset()` |
+| 4 | Compile | `DiachronicSeries(mini, group_mappings=…)` |
 | 5 | Validate | `validate_asca(..., probe_words=tests/fixtures/asca_probe_words.wsca)` |
 | 6 | Classify failure | `classify_error()`, `reason_for_failure()`, `parse_unknown_token_error()` |
 | 7 | Emit artifacts | See [Validation report](#validation-report) below |
@@ -162,10 +162,10 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](./ad
 | [`corpus_inventory.py`](../src/conlanger/tools/corpus_inventory.py) | Per-rule validation, CSV/changelog/summary |
 | [`corpus_io.py`](../src/conlanger/tools/corpus_io.py) | Write cleaned YAML |
 | [`parsers.py`](../src/conlanger/tools/parsers.py) | `IndexDiachronicaParser` |
-| [`phonological_ruleset.py`](../src/conlanger/tools/phonological_ruleset.py) | Section compile container |
+| [`rules.py`](../src/conlanger/tools/rules.py) | Section compile (`DiachronicSeries`) |
 | [`asca_validator.py`](../src/conlanger/tools/asca_validator.py) | `validate_asca` |
 
-**Primary integration seam (tests):** `tests/conlanger/tools/test_corpus_pipeline.py` — HTML → parse → `PhonologicalRuleSet` → `validate_asca`.
+**Primary integration seam (tests):** `tests/conlanger/tools/test_corpus_pipeline.py` — HTML → parse → `DiachronicSeries` → `validate_asca`.
 
 ---
 

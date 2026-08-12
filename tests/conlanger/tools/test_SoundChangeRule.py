@@ -23,7 +23,7 @@ from conlanger.tools.rules import (
 
 
 @pytest.mark.parametrize(
-    "section, format, expected",
+    "section, expected",
     [
         (
             {
@@ -31,94 +31,51 @@ from conlanger.tools.rules import (
                 "section": "sec",
                 "rules": [{"stages": ["a", "b"], "env": "c", "exception": "d"}],
             },
-            "asca",
             "@ 1 - sec\n\ta > b / c // d",
         ),
         (
             {
                 "index": "1",
                 "section": "sec",
-                "rules": [{"stages": ["a", "b"], "env": "c", "exception": "d"}],
-            },
-            "brassica",
-            "; 1 - sec\na / b / c // d",
-        ),
-        (
-            {
-                "index": "1",
-                "section": "sec",
                 "rules": [{"skip": True, "stages": ["a", "b"]}],
             },
-            "asca",
             "@ 1 - sec\n#\ta > b",
         ),
         (
             {
                 "index": "1",
                 "section": "sec",
-                "rules": [{"skip": True, "stages": ["a", "b"]}],
-            },
-            "brassica",
-            "; 1 - sec\n;;\ta / b",
-        ),
-        (
-            {
-                "index": "1",
-                "section": "sec",
                 "citation": "citation text",
                 "rules": [{"stages": ["a", "b"]}],
             },
-            "asca",
             "@ 1 - sec\n# citation: citation text\n\ta > b",
         ),
         (
             {
                 "index": "1",
                 "section": "sec",
-                "citation": "citation text",
-                "rules": [{"stages": ["a", "b"]}],
-            },
-            "brassica",
-            "; 1 - sec\n; citation: citation text\na / b",
-        ),
-        (
-            {
-                "index": "1",
-                "section": "sec",
                 "comment": "comment text",
                 "rules": [{"stages": ["a", "b"]}],
             },
-            "asca",
             "@ 1 - sec\n\t# comment text\n\ta > b",
         ),
-        (
-            {
-                "index": "1",
-                "section": "sec",
-                "comment": "comment text",
-                "rules": [{"stages": ["a", "b"]}],
-            },
-            "brassica",
-            "; 1 - sec\n; comment text\na / b",
-        ),
-        ({"index": "1", "section": "sec"}, "asca", "@ 1 - sec"),
-        ({"index": "1", "section": "sec"}, "brassica", "; 1 - sec"),
+        ({"index": "1", "section": "sec"}, "@ 1 - sec"),
     ],
 )
-def test_DiachronicSeries(section, format, expected):
-    rule = DiachronicSeries(section, format)
+def test_DiachronicSeries(section, expected):
+    rule = DiachronicSeries(section)
     assert str(rule) == expected
     assert rule.title == section["index"] + " - " + section["section"]
 
 
 def test_rule_change_requires_input():
     with pytest.raises(ValueError, match="input is required"):
-        SoundChangeRule({"output": "b"}, "asca")
+        SoundChangeRule({"output": "b"})
 
 
 def test_rule_change_requires_output():
     with pytest.raises(ValueError, match="output is required"):
-        SoundChangeRule({"input": "a"}, "asca")
+        SoundChangeRule({"input": "a"})
 
 
 @pytest.mark.parametrize(
@@ -128,42 +85,37 @@ def test_rule_change_requires_output():
             {"index": "1", "section": "sec", "rules": [{"stages": ["a", "b"]}]},
             "invalid",
         ),
+        (
+            {"index": "1", "section": "sec", "rules": [{"stages": ["a", "b"]}]},
+            "brassica",
+        ),
     ],
 )
 def test_DiachronicSeries_invalid_format(section, format):
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match="Unsupported format"):
         DiachronicSeries(section, format)
 
 
 @pytest.mark.parametrize(
-    "value, format, expected",
+    "value, expected",
     [
-        ("citation text", "asca", "# citation: citation text"),
-        ("citation text", "brassica", "; citation: citation text"),
+        ("citation text", "# citation: citation text"),
     ],
 )
-def test_RuleCitation(value, format, expected):
-    rule = RuleCitation(value, format)
+def test_RuleCitation(value, expected):
+    rule = RuleCitation(value)
     assert str(rule) == expected
 
 
 @pytest.mark.parametrize(
-    "value, format, expected",
+    "value, expected",
     [
-        ("comment text", "asca", "\t# comment text"),
-        ("comment text", "brassica", "; comment text"),
+        ("comment text", "\t# comment text"),
     ],
 )
-def test_RuleComment(value, format, expected):
-    rule = RuleComment(value, format)
+def test_RuleComment(value, expected):
+    rule = RuleComment(value)
     assert str(rule) == expected
-
-
-def test_format_not_supported():
-    with pytest.raises(ValueError):
-        RuleCitation("citation text", "invalid")
-    with pytest.raises(ValueError):
-        RuleComment("comment text", "invalid")
 
 
 @pytest.mark.parametrize(
@@ -321,21 +273,10 @@ def test_apply_asca_group_mappings_labializes_non_matrix_mapping():
 
 def test_rule_change_apply_asca_group_mappings_uses_injected_csv_mappings():
     mappings = asca_group_mappings_dict()
-    part = SoundChangeRule(
-        {"input": "a", "output": "b"}, "asca", group_mappings=mappings
-    )
-    assert part._apply_asca_group_mappings("R > a", "asca") == (
+    part = SoundChangeRule({"input": "a", "output": "b"}, group_mappings=mappings)
+    assert part._apply_asca_group_mappings("R > a") == (
         apply_asca_group_mappings_to_string("R > a", mappings)
     )
-
-
-def test_rule_change_apply_asca_group_mappings_noop_for_non_asca():
-    part = SoundChangeRule(
-        {"input": "S", "output": "P"},
-        "brassica",
-        group_mappings={"S": "[+cont]"},
-    )
-    assert part._apply_asca_group_mappings("S > P", "brassica") == "S > P"
 
 
 def test_expand_grouping_letter_leaves_unmapped_non_native_letters():
@@ -350,8 +291,8 @@ def test_expand_grouping_letter_leaves_unmapped_non_native_letters():
 
 
 def test_rule_change_format_backward_compatible():
-    part = SoundChangeRule({"input": "a", "output": "b"}, "asca")
-    assert part._format("asca") == part.value
+    part = SoundChangeRule({"input": "a", "output": "b"})
+    assert part._format() == part.value
 
 
 def test_sound_change_ruleset_includes_section_comment():
@@ -364,22 +305,13 @@ def test_sound_change_ruleset_includes_section_comment():
     assert "# section note" in str(DiachronicSeries(section, "asca"))
 
 
-def test_rule_change_format_alias_matches_compile():
-    part = SoundChangeRule({"input": "a", "output": "e"}, "asca")
-    assert part._format("asca") == part.value
-
-
-def test_rule_change_skips_group_mappings_for_brassica():
-    part = SoundChangeRule(
-        {"input": "S", "output": "P"},
-        "brassica",
-        group_mappings={"S": "[+cont]"},
-    )
-    assert part.value == "S / P"
+def test_rule_change_format_matches_compile():
+    part = SoundChangeRule({"input": "a", "output": "e"})
+    assert part._format() == part.value
 
 
 def test_rule_change_compiles_ejective_at_instantiation():
-    part = SoundChangeRule({"input": "tʃ:[+long]ʼ", "output": "tʃ:[+long]"}, "asca")
+    part = SoundChangeRule({"input": "tʃ:[+long]ʼ", "output": "tʃ:[+long]"})
     assert part.value == "tʃ:[+long,+cg] > tʃ:[+long]"
     assert "ʼ" not in part.value
     assert part.input == "tʃ:[+long]ʼ"
@@ -387,14 +319,14 @@ def test_rule_change_compiles_ejective_at_instantiation():
 
 def test_rule_change_compiles_typographic_apostrophe_ejective():
     part = SoundChangeRule(
-        {"input": "{O:[+delrel],O\u2019}", "output": "F", "env": "_$"}, "asca"
+        {"input": "{O:[+delrel],O\u2019}", "output": "F", "env": "_$"}
     )
     assert part.value == "{O:[+delrel],O:[+cg]} > F / _$"
     assert "\u2019" not in part.value
 
 
 def test_rule_change_compiles_length_at_instantiation():
-    part = SoundChangeRule({"input": "a(ː)", "output": "e(ː)"}, "asca")
+    part = SoundChangeRule({"input": "a(ː)", "output": "e(ː)"})
     assert part.value == "a:[+long] > e:[+long]"
     assert "ː" not in part.value
     assert part.input == "a(ː)"
@@ -403,7 +335,6 @@ def test_rule_change_compiles_length_at_instantiation():
 def test_rule_change_compiles_optional_grouping_ellipsis_at_instantiation():
     part = SoundChangeRule(
         {"input": "o", "output": "u", "env": "_(C…)i"},
-        "asca",
     )
     assert part.value == "o > u / _(C,0)i"
     assert "…" not in part.value
@@ -411,14 +342,9 @@ def test_rule_change_compiles_optional_grouping_ellipsis_at_instantiation():
 
 
 def test_rule_change_compiles_chain_arrows_in_output():
-    part = SoundChangeRule({"input": "dʒ", "output": "tʃ > ʃ"}, "asca")
+    part = SoundChangeRule({"input": "dʒ", "output": "tʃ > ʃ"})
     assert part.value == "dʒ > tʃ > ʃ"
     assert "→" not in part.value
-
-
-def test_rule_change_skips_length_for_brassica():
-    part = SoundChangeRule({"input": "aː", "output": "eː"}, "brassica")
-    assert part.value == "aː / eː"
 
 
 def test_sound_change_ruleset_compiles_length_at_instantiation():

@@ -8,7 +8,6 @@ from conlanger.tools.compile.asca.group_mappings import (
     apply_asca_group_mappings_to_string,
     asca_group_mappings_dict,
 )
-from conlanger.tools.phonological_ruleset import PhonologicalRuleSet
 from conlanger.tools.rules import DiachronicSeries
 
 _SAMPLE_MAPPINGS = {
@@ -120,10 +119,22 @@ def test_apply_asca_group_mappings_class_letter_before_ipa_tail(text, expected):
     assert apply_asca_group_mappings_to_string(text, mappings) == expected
 
 
-def test_phonological_ruleset_section_property():
-    section = {"index": "1.0", "section": "Test"}
-    prs = PhonologicalRuleSet(section)
-    assert prs.section is section
+def test_diachronic_series_does_not_mutate_corpus_rules():
+    section = {
+        "index": "1.0",
+        "section": "Test",
+        "rules": [
+            {
+                "stages": ["f", "p"],
+                "env": "#_V{Z,C[-voice],r}",
+                "raw": "f → p / #_V{Z,C[-voice],r}",
+                "source": "sample.html:1",
+            }
+        ],
+    }
+    assert section["rules"][0]["env"] == "#_V{Z,C[-voice],r}"
+    rendered = str(DiachronicSeries(section, group_mappings=_SAMPLE_MAPPINGS))
+    assert "[+cont]" in rendered
 
 
 def test_sound_change_ruleset_applies_group_mappings_for_asca():
@@ -139,40 +150,9 @@ def test_sound_change_ruleset_applies_group_mappings_for_asca():
             }
         ],
     }
-    rendered = str(DiachronicSeries(section, "asca", group_mappings=_SAMPLE_MAPPINGS))
+    rendered = str(DiachronicSeries(section, group_mappings=_SAMPLE_MAPPINGS))
     assert "[+cont]" in rendered
     assert "\tf > p / #_V{[+cont],C[-voice],r}" in rendered
-
-
-def test_sound_change_ruleset_skips_group_mappings_for_brassica():
-    section = {
-        "index": "1.0",
-        "section": "Test",
-        "rules": [{"stages": ["S", "P"], "env": "{V,R}_V"}],
-    }
-    rendered = str(
-        DiachronicSeries(section, "brassica", group_mappings=_SAMPLE_MAPPINGS)
-    )
-    assert rendered.endswith("S / P / {V,R}_V")
-
-
-def test_phonological_ruleset_does_not_mutate_corpus_rules():
-    section = {
-        "index": "1.0",
-        "section": "Test",
-        "rules": [
-            {
-                "stages": ["f", "p"],
-                "env": "#_V{Z,C[-voice],r}",
-                "raw": "f → p / #_V{Z,C[-voice],r}",
-                "source": "sample.html:1",
-            }
-        ],
-    }
-    prs = PhonologicalRuleSet(section)
-    assert prs.section["rules"][0]["env"] == "#_V{Z,C[-voice],r}"
-    rendered = str(prs.to_sound_change_ruleset(group_mappings=_SAMPLE_MAPPINGS))
-    assert "[+cont]" in rendered
 
 
 def test_asca_group_mappings_dict_loads_package_csv():
@@ -205,15 +185,13 @@ def test_phonological_ruleset_validates_labialized_class_letter_fixtures():
     from conlanger.appliers.asca import validate_asca
 
     validate_asca(
-        PhonologicalRuleSet(section).to_sound_change_ruleset(
-            group_mappings=asca_group_mappings_dict()
-        ),
+        DiachronicSeries(section, group_mappings=asca_group_mappings_dict()),
         probe_words=probe,
     )
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_phonological_ruleset_validates_known_unknown_grouping_fixtures():
+def test_diachronic_series_validates_known_unknown_grouping_fixtures():
     section = {
         "index": "6.2.2.1.2",
         "section": "Proto-Boreafrasian to Egypto-Berber",
@@ -237,15 +215,13 @@ def test_phonological_ruleset_validates_known_unknown_grouping_fixtures():
     from conlanger.appliers.asca import validate_asca
 
     validate_asca(
-        PhonologicalRuleSet(section).to_sound_change_ruleset(
-            group_mappings=asca_group_mappings_dict()
-        ),
+        DiachronicSeries(section, group_mappings=asca_group_mappings_dict()),
         probe_words=probe,
     )
 
 
 @patch("conlanger.tools.corpus_inventory.validate_asca", return_value=True)
-def test_corpus_inventory_uses_phonological_ruleset(_mock_validate):
+def test_corpus_inventory_uses_diachronic_series(_mock_validate):
     from conlanger.tools.corpus_inventory import validate_corpus_rule
 
     section = {"index": "1.0", "section": "Test Section"}

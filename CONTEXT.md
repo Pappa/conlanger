@@ -57,7 +57,7 @@ _Avoid_: treating hand-cleaned XML/YAML samples as overriding the HTML
 ### Sound-change structure
 
 **Sound-change section**:
-One Index Diachronica `<h2>` section — a named language-change block (index, title, citation, comments) containing zero or more rule lines. One sound-change section maps to one runtime compile unit (e.g. a `PhonologicalRuleSet`), not to a single corpus rule.
+One Index Diachronica `<h2>` section — a named language-change block (index, title, citation, comments) containing zero or more rule lines. One sound-change section maps to one runtime compile unit (`DiachronicSeries`), not to a single corpus rule.
 _Avoid_: `DiachronicSeries` as the glossary term for this level; conflating “section” with “rule line”
 
 **Corpus rule**:
@@ -152,12 +152,12 @@ _Avoid_: treating meta-notation as class letters or subscript slots; inventing A
 A translation step from the rule corpus into a concrete sound-change applier’s syntax or API (e.g. ASCA or Brassica).
 _Avoid_: parser (reserved for Index Diachronica HTML → rule corpus)
 
-**PhonologicalRuleSet**:
-A runtime container for one sound-change section: its corpus rules, abbreviation mappings (passed in from package CSV), and compiled applier output. Applies mappings to rule strings; unmapped tokens remain unchanged.
-_Avoid_: `DiachronicSeries` as the name for this container; assuming mappings are baked into the corpus YAML
+**DiachronicSeries**:
+A runtime container for one sound-change section: its corpus rules, abbreviation mappings (passed in from package CSV), and compiled ASCA output. Applies mappings to rule strings; unmapped tokens remain unchanged.
+_Avoid_: assuming mappings are baked into the corpus YAML
 
 **Abbreviation table**:
-Runtime mapping from Index shorthand to applier strings, loaded from package CSV (e.g. `data/asca/group_mappings.csv`) and passed into a `PhonologicalRuleSet`. Apply known rows; unmapped tokens stay in the rule string. Section-specific overrides are deferred — handle high-volume failures via validation clusters and hand-authored rows.
+Runtime mapping from Index shorthand to applier strings, loaded from package CSV (e.g. `data/asca/group_mappings.csv`) and passed into a `DiachronicSeries`. Apply known rows; unmapped tokens stay in the rule string. Section-specific overrides are deferred — handle high-volume failures via validation clusters and hand-authored rows.
 _Avoid_: “mapping”, “series map”, “alias table”; global one-size alphabet substitution without section scope; assuming structured per-section abbreviation tables exist in the HTML
 
 **Compile validation**:

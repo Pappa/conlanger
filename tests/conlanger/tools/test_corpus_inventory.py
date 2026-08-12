@@ -177,10 +177,10 @@ def test_validate_corpus_rule_skipped_parse_diagnostic():
 
 
 @patch(
-    "conlanger.tools.corpus_inventory.PhonologicalRuleSet",
+    "conlanger.tools.corpus_inventory.DiachronicSeries",
     side_effect=ValueError("bad compile"),
 )
-def test_validate_corpus_rule_phonological_compile_format_error(_mock_prs):
+def test_validate_corpus_rule_diachronic_compile_format_error(_mock_prs):
     row = validate_corpus_rule(
         _SECTION,
         {"stages": ["a", "b"], "raw": "a → b", "source": "sample.html:8"},
