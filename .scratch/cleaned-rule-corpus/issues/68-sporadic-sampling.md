@@ -1,0 +1,41 @@
+Type: task
+Status: needs-triage
+Blocked by: 66
+
+# Sporadic sampling (apply vs skip) on shared instance RNG
+
+Spawned from [grill 61](61-grill-optional-outputs.md). Ticket 19 already strips uncertainty glosses and sets `sporadic: true` (~195 rules); apply/skip at render/apply time was left aspirational.
+
+## Problem
+
+**Sporadic** means the rule may or may not apply (distinct from **optional outputs**). Grill 61 deferred behavior but required RNG plumbing on [66](66-implement-optional-outputs-alt-idx.md) to stay reusable (`random.Random`, not global seed).
+
+## What to build (after triage)
+
+1. Use the same instance-`Random` story as optional outputs (from 66).
+2. When `sporadic` is true, sample apply vs skip (mechanism TBD in triage — rate, default, whether skip is `#\t` comment line vs omit from series).
+3. **Do not** fold sporadic into `alternatives` (grill Q9: separate gate).
+4. Inventory policy TBD: always-apply, always-skip, or enumerate both branches (with identity columns if needed).
+5. Tests must force both branches without relying on chance (inject / enumerate), consistent with 66’s testability approach.
+
+## Open for triage (before `ready-for-agent`)
+
+- Default apply probability when Index only says “sporadic” / “sometimes” / “occasionally”
+- Per-rule rate override in corpus? (likely no — keep SoT thin)
+- Inventory: force apply, force skip, or two rows
+- Interaction when a rule is both sporadic **and** has optional outputs (draw order)
+
+## Acceptance criteria
+
+- [ ] Triage decisions recorded (rate, inventory, draw order)
+- [ ] Sporadic apply/skip uses instance `Random` from 66’s plumbing
+- [ ] `alternatives` remains optional-outputs-only
+- [ ] Tests cover apply and skip without chance
+- [ ] Unit + inventory behavior documented in **Answer**
+
+## References
+
+- [Grill 61](61-grill-optional-outputs.md)
+- [Ticket 19](19-correction-pass-sporadic-qualifier.md) — flag only
+- [Implement optional outputs](66-implement-optional-outputs-alt-idx.md) — RNG prerequisite
+- `CONTEXT.md` — **Optional outputs** vs sporadic

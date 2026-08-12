@@ -1,5 +1,5 @@
 Type: grilling
-Status: ready-for-human
+Status: resolved
 
 # Grill: optional outputs + seeded randomness (with sporadic)
 
@@ -7,7 +7,7 @@ Status: ready-for-human
 
 Index rules like `d → {∅,ð} / V_V` encode speaker variation (including null). ASCA 0.10.2 rejects `∅` inside sets. How should the cleaned corpus and ASCA compile/render path retain alternatives and choose one for emission — and how should the **same seeded-randomness design** also cover **sporadic** rules (apply vs skip) — without making unit tests unable to exercise every branch?
 
-## Settled (grill closed 2026-08-12 — awaiting owner confirm before filing/implementing)
+## Settled (grill closed 2026-08-12; owner confirmed)
 
 ### Detection & corpus
 - **Optional outputs** ≠ **sporadic** — `CONTEXT.md`.
@@ -28,15 +28,23 @@ Index rules like `d → {∅,ð} / V_V` encode speaker variation (including null
 - When no alternatives: one row, **`alt_idx` empty**.
 - Changelog / uniqueness: `(source, alt_idx)`.
 
-### Sporadic & follow-ups (not implemented in the first build)
+### Sporadic & follow-ups
 - **Defer** sporadic apply/skip sampling; keep RNG plumbing reusable.
-- After confirm, file: **(1)** implementation ticket (optional outputs + `alt_idx` + `Random` plumbing), **(2)** nested sets, **(3)** sporadic sampling.
+- Filed: [66 implement](66-implement-optional-outputs-alt-idx.md), [67 nested sets spike](67-spike-nested-sets.md), [68 sporadic sampling](68-sporadic-sampling.md).
 
 ## Facts (do not re-litigate)
 
 - ASCA rejects `d > {∅,ð} / V_V`; `d > ∅ / V_V` and `d > ð / V_V` are valid.
 - Today: `SoundChangeRule` freezes `value` in `__init__`; ignores `sporadic`; no RNG on render path.
 - Changelog today keys on unique `source` only — must move to `(source, alt_idx)`.
+
+## Answer
+
+Owner confirmed the settled design (2026-08-12). Implementation and deferred work:
+
+1. [66 — Implement optional outputs + `alt_idx` + instance RNG](66-implement-optional-outputs-alt-idx.md) (`ready-for-agent`)
+2. [67 — Spike: nested sets](67-spike-nested-sets.md) (`needs-triage`, blocked by 66)
+3. [68 — Sporadic sampling](68-sporadic-sampling.md) (`needs-triage`, blocked by 66)
 
 ## References
 
