@@ -20,6 +20,7 @@ from conlanger.tools.series_extract import (
     survey_subscript_tokens_in_html,
     update_series_mappings_from_html,
     write_coverage_report,
+    write_section_abbreviations_yaml,
 )
 from conlanger.utils.file_io import (
     load_series_mappings,
@@ -94,6 +95,20 @@ _HTML_CITATION_ONLY = """\
 <section id="CitationOnly">
 <h2>6 Afro-Asiatic</h2>
 <p>For these changes, s<sub>1</sub> and s<sub>2</sub> are fricatives.
+</section>
+</body></html>
+"""
+
+_HTML_TABLE_ABBREVS = """\
+<!doctype html>
+<html><body>
+<section id="Indo-European">
+<h2>17 Indo-European</h2>
+<p>Inventory from Wikipedia:
+<table>
+<tr><td>Fricative <td> <td> s <td> <td> <td> h<sub>1</sub> h<sub>2</sub> h<sub>3</sub>
+</table>
+<p class="schg">h<sub>1</sub> → h
 </section>
 </body></html>
 """
@@ -356,9 +371,59 @@ def test_extract_section_abbreviations_from_prose_paragraphs(tmp_path: Path):
         {
             "section": "North Omotic to Bench",
             "index": "6.1.1.1",
-            "abbreviations": {"h₁": "x", "h₂": "k"},
+            "abbreviations": ["h₁", "h₂"],
+            "raw": "h₁ = x\nh₂ = k",
         }
     ]
+
+
+def test_extract_section_abbreviations_from_narrative_prose(tmp_path: Path):
+    html_path = tmp_path / "index.html"
+    html_path.write_text(_HTML_CITATION_ONLY, encoding="utf-8")
+    sections = extract_section_abbreviations_from_html(html_path)
+    assert sections == [
+        {
+            "section": "Afro-Asiatic",
+            "index": "6",
+            "abbreviations": ["s₁", "s₂"],
+            "raw": "For these changes, s₁ and s₂ are fricatives.",
+        }
+    ]
+
+
+def test_extract_section_abbreviations_from_table_cells(tmp_path: Path):
+    html_path = tmp_path / "index.html"
+    html_path.write_text(_HTML_TABLE_ABBREVS, encoding="utf-8")
+    sections = extract_section_abbreviations_from_html(html_path)
+    assert sections == [
+        {
+            "section": "Indo-European",
+            "index": "17",
+            "abbreviations": ["h₁", "h₂", "h₃"],
+            "raw": "Fricative\ns\nh₁ h₂ h₃",
+        }
+    ]
+
+
+def test_write_section_abbreviations_yaml_uses_literal_block_for_raw(tmp_path: Path):
+    abbrev_path = tmp_path / "section_abbreviations.yml"
+    write_section_abbreviations_yaml(
+        [
+            {
+                "section": "North Omotic to Bench",
+                "index": "6.1.1.1",
+                "abbreviations": ["h₁", "h₂"],
+                "raw": "h₁ = x\nh₂ = k",
+            }
+        ],
+        abbrev_path,
+    )
+    text = abbrev_path.read_text(encoding="utf-8")
+    assert "- h₁" in text
+    assert "- h₂" in text
+    assert "raw: |" in text
+    assert "h₁ = x" in text
+    assert "h₂ = k" in text
 
 
 def test_prose_paragraph_lines_splits_on_br(tmp_path: Path):

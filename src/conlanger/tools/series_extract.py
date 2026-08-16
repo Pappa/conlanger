@@ -132,11 +132,41 @@ def prose_paragraph_lines(p_el) -> list[str]:
     return lines
 
 
+def _table_prose_lines(table_el) -> list[str]:
+    """Return one line per table cell with ``<sub>`` normalised."""
+    lines: list[str] = []
+    for cell in table_el.xpath(".//td | .//th"):
+        text = extract_text_with_subs(cell)
+        if text:
+            lines.append(text)
+    return lines
+
+
+def _section_prose_blocks(sec) -> list[list[str]]:
+    """Return prose blocks from a section, excluding ``p.schg`` rule lines."""
+    blocks: list[list[str]] = []
+    for child in sec:
+        if not isinstance(child.tag, str):
+            continue
+        if child.tag == "p":
+            cls = child.get("class") or ""
+            if "schg" in cls:
+                continue
+            lines = prose_paragraph_lines(child)
+            if lines:
+                blocks.append(lines)
+        elif child.tag == "table":
+            lines = _table_prose_lines(child)
+            if lines:
+                blocks.append(lines)
+    return blocks
+
+
 _PROSE_ABBREV_SEP_RE = re.compile(r"(=|:|→|->)")
 
 
-def _parse_prose_abbreviation_line(line: str) -> tuple[str, str] | None:
-    """Return ``(token, target)`` when a prose line defines a series abbreviation."""
+def _parse_prose_abbreviation_line(line: str) -> str | None:
+    """Return series token when a prose line defines an abbreviation mapping."""
     line = strip_whitespace(line)
     if not line or not _PROSE_ABBREV_SEP_RE.search(line):
         return None
@@ -147,21 +177,40 @@ def _parse_prose_abbreviation_line(line: str) -> tuple[str, str] | None:
     if not left or not right:
         return None
     if in_scope_series_token(left):
-        token = left
-    else:
-        in_scope = [
-            tok for tok in find_subscript_tokens(left) if in_scope_series_token(tok)
-        ]
-        if len(in_scope) != 1:
-            return None
-        token = in_scope[0]
-    return token, right
+        return left
+    in_scope = [tok for tok in find_subscript_tokens(left) if in_scope_series_token(tok)]
+    if len(in_scope) != 1:
+        return None
+    return in_scope[0]
+
+
+def _prose_abbreviation_tokens_in_order(lines: list[str]) -> list[str]:
+    """Return in-scope series tokens from prose lines in first-mention order."""
+    text = "\n".join(lines)
+    ordered: list[str] = []
+    seen: set[str] = set()
+
+    for line in lines:
+        token = _parse_prose_abbreviation_line(line)
+        if token is not None and token not in seen:
+            seen.add(token)
+            ordered.append(token)
+
+    for token in sorted(
+        (tok for tok in find_subscript_tokens(text) if in_scope_series_token(tok)),
+        key=text.index,
+    ):
+        if token not in seen:
+            seen.add(token)
+            ordered.append(token)
+
+    return ordered
 
 
 def extract_section_abbreviations_from_html(
     html_path: Path,
 ) -> list[dict[str, Any]]:
-    """Extract section ``abbreviations`` from non-rule ``<p>`` prose in HTML sections."""
+    """Extract section ``abbreviations`` from non-``schg`` prose and tables in HTML sections."""
     parser = html.HTMLParser(encoding="utf-8")
     doc = html.parse(str(html_path), parser=parser)
     root = doc.getroot()
@@ -176,17 +225,18 @@ def extract_section_abbreviations_from_html(
         if not section_index or not section_name:
             continue
 
-        abbreviations: dict[str, str] = {}
-        for p in sec.xpath("./p"):
-            cls = p.get("class") or ""
-            if "schg" in cls:
+        abbreviations: list[str] = []
+        seen_tokens: set[str] = set()
+        raw_blocks: list[str] = []
+        for lines in _section_prose_blocks(sec):
+            block_tokens = _prose_abbreviation_tokens_in_order(lines)
+            if not block_tokens:
                 continue
-            for line in prose_paragraph_lines(p):
-                parsed = _parse_prose_abbreviation_line(line)
-                if parsed is None:
-                    continue
-                token, target = parsed
-                abbreviations[token] = target
+            for token in block_tokens:
+                if token not in seen_tokens:
+                    seen_tokens.add(token)
+                    abbreviations.append(token)
+            raw_blocks.append("\n".join(lines))
 
         if abbreviations:
             sections_out.append(
@@ -194,11 +244,41 @@ def extract_section_abbreviations_from_html(
                     "section": section_name,
                     "index": section_index,
                     "abbreviations": abbreviations,
+                    "raw": "\n\n".join(raw_blocks),
                 }
             )
 
     sections_out.sort(key=lambda item: _section_sort_key(str(item["index"])))
     return sections_out
+
+
+class _LiteralStr(str):
+    """Marker type for YAML literal-block emission."""
+
+
+def _literal_str_representer(
+    dumper: yaml.Dumper, data: _LiteralStr
+) -> yaml.nodes.ScalarNode:
+    style = "|" if "\n" in data else None
+    return dumper.represent_scalar("tag:yaml.org,2002:str", data, style=style)
+
+
+yaml.add_representer(_LiteralStr, _literal_str_representer)
+yaml.add_representer(_LiteralStr, _literal_str_representer, Dumper=yaml.SafeDumper)
+
+
+def _mark_section_abbrev_raw_literal(obj: Any) -> Any:
+    if isinstance(obj, dict):
+        out: dict[str, Any] = {}
+        for key, value in obj.items():
+            if key == "raw" and isinstance(value, str):
+                out[key] = _LiteralStr(value)
+            else:
+                out[key] = _mark_section_abbrev_raw_literal(value)
+        return out
+    if isinstance(obj, list):
+        return [_mark_section_abbrev_raw_literal(item) for item in obj]
+    return obj
 
 
 def write_section_abbreviations_yaml(
@@ -210,7 +290,11 @@ def write_section_abbreviations_yaml(
     path.parent.mkdir(parents=True, exist_ok=True)
     doc = {"sections": sections}
     path.write_text(
-        yaml.safe_dump(doc, allow_unicode=True, sort_keys=False),
+        yaml.safe_dump(
+            _mark_section_abbrev_raw_literal(doc),
+            allow_unicode=True,
+            sort_keys=False,
+        ),
         encoding="utf-8",
     )
 

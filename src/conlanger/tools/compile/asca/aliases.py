@@ -1,6 +1,6 @@
 """PIE laryngeal alias substitution."""
 
-_ALIASES = {
+PIE_LARYNGEAL_ALIASES = {
     "h₁": "h",
     "h₂": "x",
     "h₃": "ɣʷ",
@@ -8,6 +8,6 @@ _ALIASES = {
 
 
 def apply_asca_aliases(text: str) -> str:
-    for alias, replacement in _ALIASES.items():
+    for alias, replacement in PIE_LARYNGEAL_ALIASES.items():
         text = text.replace(alias, replacement)
     return text
