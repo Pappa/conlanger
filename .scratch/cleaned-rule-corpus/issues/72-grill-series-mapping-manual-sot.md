@@ -81,3 +81,9 @@ A recorded decision on:
 - Migration plan for the current CSV (revert inferred rows? split “definition” vs “attested in rules” columns?).
 
 Follow-on implementation tickets should be filed **after** this grill closes — not in this session.
+
+Series ontology (what may be a defined expansion; unknown-token policy) moved to [ticket 73](73-grill-series-mapping-config-sot.md).
+
+## Comments
+
+- 2026-08-16 grill session: ingest pipeline overtook the original question. Settled so far: pre-lxml `<sub>`→Unicode (skip nested tags); in-memory HTML only; **Index Diachronica correction** replaces **raw** by **rule id** (flat YAML, Unicode lines); Manual mapping never mutates raw (first match, optional regex); **rule id** replaces positional `rule_idx` everywhere; unmatched correction keys warn. Q10 reversed: this work **removes** parse-time `series_mappings.csv` / expansion; PIE aliases stay in Python (ticket 73); inventory `ok` drop accepted. Collective subscripts also stay Index-shaped at parse. `section_abbreviations.yml` left as a stale advisory snapshot (not regenerated); corpus section `abbreviations` omitted when empty.

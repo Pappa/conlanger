@@ -31,8 +31,8 @@ _Avoid_: “sound change rules” when the ordering/batch of application is what
 ### Corpus and source of truth
 
 **Source of truth (SoT)**:
-The artifact treated as authoritative for a given stage of work. Index Diachronica HTML is SoT for attested rules today; the cleaned rule corpus is the planned successor SoT.
-_Avoid_: “canonical” without naming which artifact; treating provisional YAML dumps or compiled ASCA strings as SoT
+The artifact treated as authoritative for a given stage of work. Index Diachronica HTML is SoT for an attested rule line unless an **Index Diachronica correction** replaces that line; the cleaned rule corpus is the planned successor SoT.
+_Avoid_: “canonical” without naming which artifact; treating provisional parse dumps or compiled ASCA strings as SoT
 
 **Applier-neutral**:
 Describes a representation (especially the rule corpus) owned by this project, not by ASCA or Brassica syntax. Appliers compile from it; they do not define its on-disk shape.
@@ -51,8 +51,8 @@ The curated HTML corpus of attested sound-change rules being ingested into this 
 _Avoid_: “the HTML file”, “diachronica dump” as glossary terms
 
 **Index Diachronica HTML**:
-The current ultimate source artifact for attested rules (`data/diachronica/index_diachronica_original.html`).
-_Avoid_: treating hand-cleaned XML/YAML samples as overriding the HTML
+The published HTML artifact (`data/diachronica/index_diachronica_original.html`). It is SoT for a rule line unless an **Index Diachronica correction** overrides that line; the file itself is never edited to apply owner corrections.
+_Avoid_: treating uncorrected parse dumps as overriding the HTML; using “the HTML” when a correction has already replaced the line
 
 ### Sound-change structure
 
@@ -61,8 +61,8 @@ One Index Diachronica `<h2>` section — a named language-change block (index, t
 _Avoid_: `DiachronicSeries` as the glossary term for this level; conflating “section” with “rule line”
 
 **Corpus rule**:
-One structured entry in the rule corpus, normally corresponding to a single Index Diachronica rule line (including internal sets/alternations when needed). It always carries **stages**, raw, and source; environment and exception are optional (absent environment = any; absent exception = none). Optional rule status may hold a rule out or flag it for extra validation; edge cases not yet representable use empty stages (`stages: []`) with `status: skipped` instead of splitting into multiple corpus rules.
-_Avoid_: treating every surface alternation as a separate authored rule by default; using “rule” when the whole HTML section is meant; required `input`/`output` fields as the corpus shape (replaced by **stages**)
+One structured entry in the rule corpus, normally corresponding to a single Index Diachronica rule line (including internal sets/alternations when needed). It always carries **stages**, raw, **rule id**, and source; environment and exception are optional (absent environment = any; absent exception = none). Optional rule status may hold a rule out or flag it for extra validation; edge cases not yet representable use empty stages (`stages: []`) with `status: skipped` instead of splitting into multiple corpus rules.
+_Avoid_: treating every surface alternation as a separate authored rule by default; using “rule” when the whole HTML section is meant; required `input`/`output` fields as the corpus shape (replaced by **stages**); positional `rule_idx` as the stored identifier
 
 **Stages**:
 The ordered list of opaque Index-shaped strings on a corpus rule that encode the change spine — successive forms separated by arrows in the Index line. Length 2 is a single-step change (former `input` then `output`); length ≥ 3 is a chain; length 0 with `status: skipped` means unrepresentable. Each entry stays an opaque string (sets, matrices, class letters intact), not a structured segment object.
@@ -85,15 +85,23 @@ Optional inline editorial prose on a **corpus rule** — English qualifiers, sem
 _Avoid_: “comment” without qualification when section comments are meant; embedding validator skip reasons in `comment`; treating `comment` as ASCA syntax
 
 **Raw**:
-The original Index Diachronica rule-line string preserved on a corpus rule for audit and fidelity checks.
-_Avoid_: treating the cleaned `stages`/`env`/`exception` fields as the only recoverable form of the HTML line
+The Index rule-line string stored on a corpus rule for audit. It is the HTML P text after subscript tags become Unicode characters, except that an **Index Diachronica correction** replaces that string entirely when one is keyed for the rule.
+_Avoid_: treating raw as byte-identical to the on-disk HTML; treating `stages`/`env`/`exception` as the only recoverable form of the Index line
+
+**Index Diachronica correction**:
+A maintainer-authored replacement for one Index rule line, keyed by **rule id**, stored as a Unicode Index string (not HTML). When present, it is the rule’s **raw** — an updated Index claim without editing the HTML file.
+_Avoid_: Manual mapping; correspondence-series expansion; “correction pass” (class-first transforms); keying by positional `rule_idx`; putting `<sub>` markup in the replacement
+
+**Rule id**:
+The HTML `id` on an Index sound-change rule element (`p.schg`). In the current Index file every rule element has one, and values are unique. It is the identifier on a corpus rule, inventory and changelog rows, debug CSVs, and **Index Diachronica correction** keys.
+_Avoid_: `rule_idx` as a stored identifier; “series index” when the **sound-change section** index is meant
 
 **Manual mapping**:
-A maintainer-authored rewrite of part or all of an Index rule string, keyed by a `from` substring in `data/common/manual_mappings.csv`. At HTML→YAML parse, the first transform replaces `from` with `to` on a working copy; **`raw`** keeps the original HTML surface form. Hits are logged to `manual_mappings_matched_rules.csv` at regen.
-_Avoid_: IPA mapping, feature mapping, or correction-pass transforms (those are programmatic; manual mappings are owner decisions for lines that cannot be resolved safely in code)
+A maintainer-authored rewrite of part or all of an Index rule string, keyed by a `from` pattern. At parse, after **raw** is fixed, it replaces the first match of `from` with `to` on a working copy (literal substring, or a regular expression when flagged); **raw** is not rewritten by this step. Hits are logged to `manual_mappings_matched_rules.csv` at regen.
+_Avoid_: IPA mapping, feature mapping, or correction-pass transforms; conflating with **Index Diachronica correction**
 
 **Source**:
-Provenance of a corpus rule as `file:line` pointing at the Index Diachronica HTML location of its raw string (e.g. `index_diachronica_original.html:1288`).
+Provenance of a corpus rule as `file:line` pointing at the Index Diachronica HTML location of the original P (e.g. `index_diachronica_original.html:1288`). When an **Index Diachronica correction** replaced **raw**, source still locates that HTML P, not the overlay file.
 _Avoid_: section index alone as sufficient provenance; opaque “from HTML” notes without a locatable line
 
 ### Index Diachronica notation
@@ -115,8 +123,8 @@ Index Diachronica’s use of Unicode subscripts (from HTML `<sub>`) attached to 
 _Avoid_: “subscript decoration”; treating every subscript as a correspondence-series index; silent stripping of subscripts
 
 **Correspondence-series index**:
-An ordinal subscript on a **concrete segment** (IPA letter or spelled segment such as `s`, `x`, `eh`) selecting the *n*th member of a **correspondence series** for that sound-change section (Index key: `Xₙ` on segments; e.g. `s₁`, `x₂`, `eh₂`). Expansion requires a section-specific mapping; unmapped indices stay in the rule string and surface via validation clusters.
-_Avoid_: treating `s₁` as identical to `s`; applying global segment→IPA substitution without section scope
+An ordinal subscript on a **concrete segment** (IPA letter or spelled segment such as `s`, `x`, `eh`) selecting the *n*th member of a **correspondence series** for that sound-change section (Index key: `Xₙ` on segments; e.g. `s₁`, `x₂`, `eh₂`). Corpus fields keep the Index-shaped token at HTML→YAML parse; there is no parse-time series CSV. Unmapped indices stay in the rule string and surface via validation clusters.
+_Avoid_: treating `s₁` as identical to `s`; parse-time expansion from `series_mappings.csv`; applying global segment→IPA substitution without section scope
 
 **Correspondence series**:
 An ordered set of related segments referenced by **correspondence-series indices** in a section (e.g. Afro-Asiatic `s₁`–`s₃`, `h₁`–`h₃` defined in section citation). Distinct from Athabaskan multi-letter series labels (`TŠ`, `TS`, `K`) — those are **section-local abbreviations**, not subscripts.
@@ -131,8 +139,8 @@ Subscript `₀` on any base, meaning “the same instance as other tokens bearin
 _Avoid_: treating `V₀` as “zeroth vowel of a series”; stripping `₀` to normalize; conflating with ASCA optional `(C,0)` zero-or-more syntax
 
 **Collective subscript**:
-Subscript `ₓ` (or `x`), meaning all members of a sequence or series (Index key: `Xₓ`; e.g. `{Hₓ,m̩,n̩} → a`). Quantifies over a class or series rather than picking one member. Expanded at HTML→YAML parse when mapped; corpus fields store the member list in ASCA set spelling (`{…}`). A future Brassica **applier compiler** may rewrite delimiters to categories (`[…]`).
-_Avoid_: treating `Hₓ` as a single segment; conflating with correspondence-series index `H₁`; inventing a second on-disk set notation before Brassica is adopted
+Subscript `ₓ` (or `x`), meaning all members of a sequence or series (Index key: `Xₓ`; e.g. `{Hₓ,m̩,n̩} → a`). Quantifies over a class or series rather than picking one member. Corpus fields keep the Index-shaped token at HTML→YAML parse (same interim as **correspondence-series index**). A future Brassica **applier compiler** may rewrite delimiters to categories (`[…]`).
+_Avoid_: treating `Hₓ` as a single segment; conflating with correspondence-series index `H₁`; parse-time expansion from `series_mappings.csv`; inventing a second on-disk set notation before Brassica is adopted
 
 **Section-local abbreviation**:
 Multi-letter or prose shorthand defined only for one sound-change section (or family of sections), not in the global Index key — e.g. Athabaskan `TŠ`, `TS`, `K`, `Q` series labels. Resolved via section `abbreviations` tables when mapped; otherwise cluster-driven. Not a subscript use.
@@ -191,8 +199,8 @@ The preferred correction strategy: define reusable transform classes (formatting
 _Avoid_: hand-editing individual rules when a class rewrite exists; “batch fix” without recording the transform class
 
 **Historical fidelity**:
-Prefer faithfulness to the attested phonological claim in Index Diachronica HTML over rewriting a rule into a valid-but-inaccurate form. `raw` and `source` preserve the surface line for audit.
-_Avoid_: maximising “compiles” by changing phonological meaning; byte-identical spelling as a substitute for the claim
+Prefer faithfulness to the attested phonological claim — Index Diachronica HTML, or the **Index Diachronica correction** that replaces that line — over rewriting a rule into a valid-but-inaccurate form. `raw` and `source` preserve the Index surface and the HTML location for audit.
+_Avoid_: maximising “compiles” by changing phonological meaning; byte-identical HTML spelling as a substitute for the claim
 
 ### Generative pipeline
 
