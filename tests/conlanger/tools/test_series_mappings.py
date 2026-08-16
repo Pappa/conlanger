@@ -9,10 +9,12 @@ import pytest
 from conlanger.tools.series_extract import (
     SeriesExtractionAudit,
     audit_series_extraction,
+    extract_section_abbreviations_from_html,
     extract_series_mappings_from_html,
     infer_attested_series_digit_mappings,
     infer_parallel_rule_mappings,
     infer_singleton_rule_mappings,
+    prose_paragraph_lines,
     survey_all_subscript_tokens_in_html,
     survey_html_defined_series,
     survey_subscript_tokens_in_html,
@@ -65,6 +67,23 @@ fricatives, of indeterminate reconstruction.
 <section id="Chamic">
 <h2>10.2.1 Proto-Malayo-Polynesian to Proto-Chamic</h2>
 <p class="schg">C<sub>1</sub>C<sub>2</sub> → C<sub>2</sub>
+</section>
+</body></html>
+"""
+
+_HTML_PROSE_ABBREVS = """\
+<!doctype html>
+<html><body>
+<section id="Bench">
+<h2>6.1.1.1 North Omotic to Bench</h2>
+<p><i>Mecislau</i>, citation only
+<p>h<sub>1</sub> = x<br>h<sub>2</sub> = k
+<p class="schg">x<sub>1</sub> → k
+</section>
+<section id="NoAbbrevs">
+<h2>6.1.1.2 North Omotic to Dizin</h2>
+<p><i>Mecislau</i>
+<p class="schg">x<sub>1</sub> → k
 </section>
 </body></html>
 """
@@ -313,17 +332,44 @@ def test_update_series_mappings_from_html_writes_csv_and_report(tmp_path: Path):
     html_path.write_text(_HTML_FIXTURE, encoding="utf-8")
     csv_path = tmp_path / "series_mappings.csv"
     report_path = tmp_path / "coverage.md"
+    abbrev_path = tmp_path / "section_abbreviations.yml"
 
     row_count = update_series_mappings_from_html(
         html_path,
         csv_path=csv_path,
         report_path=report_path,
+        abbreviations_path=abbrev_path,
     )
 
     assert row_count >= 1
     assert csv_path.is_file()
     assert report_path.is_file()
+    assert abbrev_path.is_file()
     assert load_series_mappings(csv_path)
+
+
+def test_extract_section_abbreviations_from_prose_paragraphs(tmp_path: Path):
+    html_path = tmp_path / "index.html"
+    html_path.write_text(_HTML_PROSE_ABBREVS, encoding="utf-8")
+    sections = extract_section_abbreviations_from_html(html_path)
+    assert sections == [
+        {
+            "section": "North Omotic to Bench",
+            "index": "6.1.1.1",
+            "abbreviations": {"h₁": "x", "h₂": "k"},
+        }
+    ]
+
+
+def test_prose_paragraph_lines_splits_on_br(tmp_path: Path):
+    html_path = tmp_path / "index.html"
+    html_path.write_text(_HTML_PROSE_ABBREVS, encoding="utf-8")
+    from lxml import html
+
+    doc = html.parse(str(html_path), parser=html.HTMLParser(encoding="utf-8"))
+    paragraphs = doc.xpath("//section[@id='Bench']/p")
+    abbrev_p = [p for p in paragraphs if "schg" not in (p.get("class") or "")][1]
+    assert prose_paragraph_lines(abbrev_p) == ["h₁ = x", "h₂ = k"]
 
 
 def test_load_series_mappings_round_trip(tmp_path: Path):

@@ -1,5 +1,5 @@
 """
-Refreshes ``data/asca/series_mappings.csv`
+Refreshes ``data/asca/series_mappings.csv`` and ``data/diachronica/section_abbreviations.yml``.
 """
 
 import argparse
@@ -17,6 +17,7 @@ from conlanger.tools.series_extract import (
     update_series_mappings_from_html,
 )
 from conlanger.utils.file_io import (
+    DEFAULT_SECTION_ABBREVIATIONS_YML,
     DEFAULT_SERIES_MAPPINGS_CSV,
 )
 
@@ -36,11 +37,14 @@ def main() -> int:
         args.html,
         csv_path=DEFAULT_SERIES_MAPPINGS_CSV,
         report_path=DEFAULT_SERIES_MAPPINGS_REPORT,
+        abbreviations_path=DEFAULT_SECTION_ABBREVIATIONS_YML,
     )
     print(
         f"wrote {DEFAULT_SERIES_MAPPINGS_CSV} rows={row_count}\n"
+        f"wrote {DEFAULT_SECTION_ABBREVIATIONS_YML}\n"
         f"wrote {DEFAULT_SERIES_MAPPINGS_REPORT}"
     )
+    return 0
 
 
 if __name__ == "__main__":

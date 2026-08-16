@@ -8,9 +8,11 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+import yaml
 from lxml import html
 
 from conlanger.utils.file_io import (
+    DEFAULT_SECTION_ABBREVIATIONS_YML,
     DEFAULT_SERIES_MAPPINGS_CSV,
     load_series_mappings,
     write_series_mappings_csv,
@@ -20,6 +22,7 @@ from conlanger.utils.parsing import (
     extract_text_with_subs,
     parse_section_heading,
     strip_whitespace,
+    to_subscript,
 )
 from conlanger.utils.series import (
     _CORRESPONDENCE_INDEX_RE,
@@ -84,12 +87,132 @@ def update_series_mappings_from_html(
     *,
     csv_path: Path = DEFAULT_SERIES_MAPPINGS_CSV,
     report_path: Path = DEFAULT_SERIES_MAPPINGS_REPORT,
+    abbreviations_path: Path = DEFAULT_SECTION_ABBREVIATIONS_YML,
 ) -> int:
-    """Extract correspondence-series mappings from HTML; write CSV and coverage report."""
+    """Extract correspondence-series mappings from HTML; write CSV, YAML, and report."""
     rows = extract_series_mappings_from_html(html_path)
     write_series_mappings_csv(rows, csv_path)
     write_coverage_report(html_path, csv_path, report_path)
+    abbrev_sections = extract_section_abbreviations_from_html(html_path)
+    write_section_abbreviations_yaml(abbrev_sections, abbreviations_path)
     return len(rows)
+
+
+def prose_paragraph_lines(p_el) -> list[str]:
+    """Split a non-rule ``<p>`` into lines at ``<br>`` with Unicode subscripts."""
+    lines: list[str] = []
+    buf: list[str] = []
+
+    def flush() -> None:
+        text = strip_whitespace("".join(buf))
+        buf.clear()
+        if text:
+            lines.append(text)
+
+    def walk(node) -> None:
+        if node.text:
+            buf.append(node.text)
+        for child in node:
+            tag = child.tag if isinstance(child.tag, str) else ""
+            if tag == "br":
+                flush()
+                if child.tail:
+                    buf.append(child.tail)
+            elif tag == "sub":
+                buf.append(to_subscript(child.text or ""))
+                if child.tail:
+                    buf.append(child.tail)
+            else:
+                walk(child)
+                if child.tail:
+                    buf.append(child.tail)
+
+    walk(p_el)
+    flush()
+    return lines
+
+
+_PROSE_ABBREV_SEP_RE = re.compile(r"(=|:|→|->)")
+
+
+def _parse_prose_abbreviation_line(line: str) -> tuple[str, str] | None:
+    """Return ``(token, target)`` when a prose line defines a series abbreviation."""
+    line = strip_whitespace(line)
+    if not line or not _PROSE_ABBREV_SEP_RE.search(line):
+        return None
+    match = _PROSE_ABBREV_SEP_RE.search(line)
+    assert match is not None
+    left = line[: match.start()].strip()
+    right = _strip_trailing_gloss(line[match.end() :].strip())
+    if not left or not right:
+        return None
+    if in_scope_series_token(left):
+        token = left
+    else:
+        in_scope = [
+            tok for tok in find_subscript_tokens(left) if in_scope_series_token(tok)
+        ]
+        if len(in_scope) != 1:
+            return None
+        token = in_scope[0]
+    return token, right
+
+
+def extract_section_abbreviations_from_html(
+    html_path: Path,
+) -> list[dict[str, Any]]:
+    """Extract section ``abbreviations`` from non-rule ``<p>`` prose in HTML sections."""
+    parser = html.HTMLParser(encoding="utf-8")
+    doc = html.parse(str(html_path), parser=parser)
+    root = doc.getroot()
+    sections_out: list[dict[str, Any]] = []
+
+    for sec in root.xpath("//section[@id]"):
+        h2s = sec.xpath("./h2")
+        if not h2s:
+            continue
+        h2_text = strip_whitespace("".join(h2s[0].itertext()))
+        section_index, section_name = parse_section_heading(h2_text)
+        if not section_index or not section_name:
+            continue
+
+        abbreviations: dict[str, str] = {}
+        for p in sec.xpath("./p"):
+            cls = p.get("class") or ""
+            if "schg" in cls:
+                continue
+            for line in prose_paragraph_lines(p):
+                parsed = _parse_prose_abbreviation_line(line)
+                if parsed is None:
+                    continue
+                token, target = parsed
+                abbreviations[token] = target
+
+        if abbreviations:
+            sections_out.append(
+                {
+                    "section": section_name,
+                    "index": section_index,
+                    "abbreviations": abbreviations,
+                }
+            )
+
+    sections_out.sort(key=lambda item: _section_sort_key(str(item["index"])))
+    return sections_out
+
+
+def write_section_abbreviations_yaml(
+    sections: list[dict[str, Any]],
+    path: Path,
+) -> None:
+    """Write ``section_abbreviations.yml`` (sections with abbreviations only)."""
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    doc = {"sections": sections}
+    path.write_text(
+        yaml.safe_dump(doc, allow_unicode=True, sort_keys=False),
+        encoding="utf-8",
+    )
 
 
 def _strip_trailing_gloss(text: str) -> str:

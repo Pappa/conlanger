@@ -7,8 +7,9 @@ Phase 2: optional ``/ env`` then optional ``! exception``
 second `` / `` are edge-case fallbacks.
 Phase 3: first ``<p>`` after ``<h2>`` → section ``citation`` (whole text, cleanup later);
 other non-``schg`` paragraphs → ``comments``.
-Phase 4: **Manual mapping** substring rewrites from ``manual_mappings.csv`` run first on a
-working copy (``raw`` keeps the HTML surface). Then **Symbol** normalization on corpus
+Phase 4: HTML ``<sub>`` tags are normalised to Unicode subscripts on the rule line, then
+**Manual mapping** substring rewrites from ``manual_mappings.csv`` run on that working copy
+(``raw`` keeps the subscript-normalised surface). Then **Symbol** normalization on corpus
 fields only (``#``, ``$``, ``%``, ``∅``, Index stress ``”`` → ``:[+stress]``; ``raw``
 unchanged). Leading em dash list-item markers (``— ``) are stripped from the rule line
 before field split. Remaining Index rule arrows (``→``) in field values become ASCA ``>``.

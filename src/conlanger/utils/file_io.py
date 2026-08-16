@@ -25,6 +25,9 @@ DEFAULT_FEATURE_MAPPINGS_CSV = _DATA_ROOT / "asca" / "feature_mappings.csv"
 DEFAULT_IPA_MAPPINGS_CSV = _DATA_ROOT / "common" / "ipa_mapping.csv"
 DEFAULT_MANUAL_MAPPINGS_CSV = _DATA_ROOT / "common" / "manual_mappings.csv"
 DEFAULT_SERIES_MAPPINGS_CSV = _DATA_ROOT / "asca" / "series_mappings.csv"
+DEFAULT_SECTION_ABBREVIATIONS_YML = (
+    _DATA_ROOT / "diachronica" / "section_abbreviations.yml"
+)
 DEFAULT_PARSER_CONFIG_PATH = _DATA_ROOT / "parser_config.yml"
 DEFAULT_IPA_MAPPING_CONFIDENCE = ["high"]
 

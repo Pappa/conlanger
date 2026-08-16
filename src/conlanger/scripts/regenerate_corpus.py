@@ -2,7 +2,7 @@
 
 Ticket 12: one invocation emits cleaned YAML, validation CSV, and summary markdown.
 Uses ticket-11 extract-only ingest (``IndexDiachronicaParser``) and ``validate_asca``.
-Optional ``--update-series-mappings`` refreshes ``data/asca/series_mappings.csv`` before parse.
+Series mappings are refreshed separately via ``uv run update_series_mappings``.
 """
 
 import argparse
@@ -39,12 +39,7 @@ from conlanger.tools.ingest import (
     IndexDiachronicaParser,
     write_rule_comment_phrase_summary,
 )
-from conlanger.tools.series_extract import (
-    DEFAULT_SERIES_MAPPINGS_REPORT,
-    update_series_mappings_from_html,
-)
 from conlanger.utils.file_io import (
-    DEFAULT_SERIES_MAPPINGS_CSV,
     MANUAL_MAPPINGS_MATCHED_CSV_NAME,
     load_default_ingest_tables,
     write_manual_mappings_matched_csv,
@@ -99,14 +94,6 @@ def main() -> int:
     )
     ap.add_argument("--limit", type=int, default=0, help="optional cap for smoke tests")
     ap.add_argument(
-        "--update-series-mappings",
-        action="store_true",
-        help=(
-            "refresh data/asca/series_mappings.csv and series-mappings-coverage.md "
-            "from HTML before parse"
-        ),
-    )
-    ap.add_argument(
         "--reset-changelog",
         action="store_true",
         help=(
@@ -119,17 +106,6 @@ def main() -> int:
     if not args.html.is_file():
         print(f"ERROR: HTML not found at {args.html}", file=sys.stderr)
         return 1
-
-    if args.update_series_mappings:
-        row_count = update_series_mappings_from_html(
-            args.html,
-            csv_path=DEFAULT_SERIES_MAPPINGS_CSV,
-            report_path=DEFAULT_SERIES_MAPPINGS_REPORT,
-        )
-        print(
-            f"wrote {DEFAULT_SERIES_MAPPINGS_CSV} rows={row_count}\n"
-            f"wrote {DEFAULT_SERIES_MAPPINGS_REPORT}"
-        )
 
     tables = load_default_ingest_tables()
     parser = IndexDiachronicaParser(
