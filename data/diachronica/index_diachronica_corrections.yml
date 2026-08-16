@@ -1,0 +1,19 @@
+sections:
+- section: Proto-Algonquian to Blackfoot
+  index: 7.4 
+  rules:
+  - idx: 6
+    rule: "nl → s"
+    reason: "Corrected from original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
+- section: Proto-Algonquian to Blackfoot
+  index: 17.4
+  rules:
+  - idx: 5
+    rule: "ʔθ, ʔr → {ʔ,j,∅}"
+    reason: "Corrected from original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
+- section: Proto-Athabaskan to Dena’ina
+  index: 29.1.1.1.8
+  rules:
+  - idx: 2
+    rule: "{ʃ(ʷ),x} {z,ʒ(ʷ),ɣ} → s j"
+    reason: "Corrected from original source: Northern Athapaskan Languages (Vol. 6), p. 73"

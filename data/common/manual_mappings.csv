@@ -1,48 +1,48 @@
-from,to,reason
-"m̩ n̩ → am an / _{s,({m,j,w)V}","m̩ n̩ → am an / _{s,({m,j,w})V}",bracket correction
-"“The PIE rules for the voicing of s → z, as in [nizdos] for *nisdos, are assumed to apply”","s → z / C[+voice]_","*nisdos > nizdos"
-"“In contrast, Romanian exhibits",";; “In contrast, Romanian exhibits","comment"
-ew (→ øj) → yj,ew → øj → yj,chaining
-(→ ʕ),→ ʕ,chaining
-bw mw → ɡw ŋw (→ ɡ ŋ / _V[+ rounded]),bw mw → ɡw ŋw → ɡ ŋ / _V[+ rounded],chaining
-q (→ kw ?) → v ,q → kw → v ,chaining
-w (→ v?) → f,w → v → f,chaining
-ɛː → ɛi (→ əi?),ɛː → ɛi → əi,chaining
-a → ɒ? (→ o),a → ɒ → o,chaining
-nd ld (→ nː lː ?),nd ld → nː lː,chaining
-"ɣ → q (more likely, *ɢ → q instead of → ɣ)","ɢ → q",correction
-"{nts,ndz,rdz_","{nts,ndz,rdz}_",correction
-" / at word boundaries"," / #_, _#",replacing prose
-" ! at word boundaries"," ! #_, _#",replacing prose
-" / unstressed"," / [-stress]",replacing prose
-" / stressed"," / [+stress]",replacing prose
-" / adjacent to short u"," / u[-long]_, _u[-long]",replacing prose
-" / unless adjacent to another consonant"," / ! C_,_C",replacing prose
-" / adjacent to {"," / _,{",replacing prose
-" ! adjacent to {"," ! _,{",replacing prose
-" / adjacent to a vowel"," / V_, _V",replacing prose
-" / in Mentasta Ahtna"," / sporadic ;; in Mentasta Ahtna",replace prose
-" / in certain situations"," / sporadic ;; in certain situations",replace prose
-" / in some dialects"," / sporadic ;; in some dialects",replace proseq
-" / in some northern"," / sporadic ;; in some northern",replace prose
-" / in northern dialects"," / sporadic ;; in northern dialects",replace prose
-" / in southern regions"," / sporadic ;; in southern regions",replace prose
-" / in southern dialects"," / sporadic ;; in southern dialects",replace prose
-" (in southern dialects"," sporadic ;; (in southern dialects",replace prose
-" (in some regions"," sporadic ;; (in some regions",replace prose
-" (some dialects"," sporadic ;; (some dialects",replace prose
-" (most dialects"," ;; (most dialects",replace prose
-" / “in some positions”"," / sporadic ;; “in some positions”",replace prose
-" ! in Ware Sekani"," sporadic ;; not in Ware Sekani",replace prose
-" ! in Queensland"," sporadic ;; not in Queensland",replace prose
-" / depending on the environment"," / sporadic ;; depending on the environment",replace prose
-" / in "," / ",replace prose
-" ! in "," ! ",replace prose
-"{ʃ(ʷ),x {z,ʒ(ʷ),ɣ} → s j","{ʃ(ʷ),x} {z,ʒ(ʷ),ɣ} → s j","corrected from original source: Northern Athapaskan Languages (Vol. 6), p. 73"
-"There seems to ahve been some stuff going on"," ;; There seems to ahve been some stuff going on",comment
-" (“[a]rchaic relic”)"," ;; (“[a]rchaic relic”)",comment
-"nr → s","nl → s","corrected form original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
-"{ʔθ,ʔr} → {ʔ,j,∅}","ʔθ, ʔr → {ʔ,j,∅}","corrected form original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
-" / when stem-final"," / _%# ;; when stem-final","replacing prose - this is an approximation and may be wrong"
-" / when-stem final"," / _%# ;; when-stem final","replacing prose - this is an approximation and may be wrong"
-" (→ yː sometimes)"," → yː ;; (sometimes)",workaround - we can't handle different envs for chained rules
+from,to,use_regex,reason
+"m̩ n̩ → am an / _{s,({m,j,w)V}","m̩ n̩ → am an / _{s,({m,j,w})V}",False,bracket correction
+"“The PIE rules for the voicing of s → z, as in [nizdos] for *nisdos, are assumed to apply”","s → z / C[+voice]_",False,"*nisdos > nizdos"
+"“In contrast, Romanian exhibits",";; “In contrast, Romanian exhibits",False,"comment"
+ew (→ øj) → yj,ew → øj → yj,Faalse,chaining
+(→ ʕ),→ ʕ,Faalse,chaining
+bw mw → ɡw ŋw (→ ɡ ŋ / _V[+ rounded]),bw mw → ɡw ŋw → ɡ ŋ / _V[+ rounded],Faalse,chaining
+q (→ kw ?) → v ,q → kw → v ,Faalse,chaining
+w (→ v?) → f,w → v → f,Faalse,chaining
+ɛː → ɛi (→ əi?),ɛː → ɛi → əi,Faalse,chaining
+a → ɒ? (→ o),a → ɒ → o,Faalse,chaining
+nd ld (→ nː lː ?),nd ld → nː lː,Faalse,chaining
+"ɣ → q (more likely, *ɢ → q instead of → ɣ)","ɢ → q",False,correction
+"{nts,ndz,rdz_","{nts,ndz,rdz}_",False,correction
+" / at word boundaries"," / #_, _#",False,replacing prose
+" ! at word boundaries"," ! #_, _#",False,replacing prose
+" / unstressed"," / [-stress]",False,replacing prose
+" / stressed"," / [+stress]",False,replacing prose
+" / adjacent to short u"," / u[-long]_, _u[-long]",False,replacing prose
+" / unless adjacent to another consonant"," / ! C_,_C",False,replacing prose
+" / adjacent to {"," / _,{",False,replacing prose
+" ! adjacent to {"," ! _,{",False,replacing prose
+" / adjacent to a vowel"," / V_, _V",False,replacing prose
+" / in Mentasta Ahtna"," / sporadic ;; in Mentasta Ahtna",False,replace prose
+" / in certain situations"," / sporadic ;; in certain situations",False,replace prose
+" / in some dialects"," / sporadic ;; in some dialects",False,replace proseq
+" / in some northern"," / sporadic ;; in some northern",False,replace prose
+" / in northern dialects"," / sporadic ;; in northern dialects",False,replace prose
+" / in southern regions"," / sporadic ;; in southern regions",False,replace prose
+" / in southern dialects"," / sporadic ;; in southern dialects",False,replace prose
+" (in southern dialects"," sporadic ;; (in southern dialects",False,replace prose
+" (in some regions"," sporadic ;; (in some regions",False,replace prose
+" (some dialects"," sporadic ;; (some dialects",False,replace prose
+" (most dialects"," ;; (most dialects",False,replace prose
+" / “in some positions”"," / sporadic ;; “in some positions”",False,replace prose
+" ! in Ware Sekani"," sporadic ;; not in Ware Sekani",False,replace prose
+" ! in Queensland"," sporadic ;; not in Queensland",False,replace prose
+" / depending on the environment"," / sporadic ;; depending on the environment",False,replace prose
+" / in "," / ",False,replace prose
+" ! in "," ! ",False,replace prose
+"{ʃ(ʷ),x {z,ʒ(ʷ),ɣ} → s j","{ʃ(ʷ),x} {z,ʒ(ʷ),ɣ} → s j",False,"corrected from original source: Northern Athapaskan Languages (Vol. 6), p. 73"
+"There seems to ahve been some stuff going on"," ;; There seems to ahve been some stuff going on",False,comment
+" (“[a]rchaic relic”)"," ;; (“[a]rchaic relic”)",False,comment
+"nr → s","nl → s",False,"corrected form original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
+"{ʔθ,ʔr} → {ʔ,j,∅}","ʔθ, ʔr → {ʔ,j,∅}",False,"corrected form original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
+" / when stem-final"," / _%# ;; when stem-final",False,"replacing prose - this is an approximation and may be wrong"
+" / when-stem final"," / _%# ;; when-stem final",False,"replacing prose - this is an approximation and may be wrong"
+" (→ yː sometimes)"," → yː ;; (sometimes)",False,workaround - we can't handle different envs for chained rules
