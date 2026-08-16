@@ -2,14 +2,14 @@ from,to,use_regex,reason
 "m̩ n̩ → am an / _{s,({m,j,w)V}","m̩ n̩ → am an / _{s,({m,j,w})V}",False,bracket correction
 "“The PIE rules for the voicing of s → z, as in [nizdos] for *nisdos, are assumed to apply”","s → z / C[+voice]_",False,"*nisdos > nizdos"
 "“In contrast, Romanian exhibits",";; “In contrast, Romanian exhibits",False,"comment"
-ew (→ øj) → yj,ew → øj → yj,Faalse,chaining
-(→ ʕ),→ ʕ,Faalse,chaining
-bw mw → ɡw ŋw (→ ɡ ŋ / _V[+ rounded]),bw mw → ɡw ŋw → ɡ ŋ / _V[+ rounded],Faalse,chaining
-q (→ kw ?) → v ,q → kw → v ,Faalse,chaining
-w (→ v?) → f,w → v → f,Faalse,chaining
-ɛː → ɛi (→ əi?),ɛː → ɛi → əi,Faalse,chaining
-a → ɒ? (→ o),a → ɒ → o,Faalse,chaining
-nd ld (→ nː lː ?),nd ld → nː lː,Faalse,chaining
+ew (→ øj) → yj,ew → øj → yj,False,chaining
+(→ ʕ),→ ʕ,False,chaining
+bw mw → ɡw ŋw (→ ɡ ŋ / _V[+ rounded]),bw mw → ɡw ŋw → ɡ ŋ / _V[+ rounded],False,chaining
+q (→ kw ?) → v ,q → kw → v ,False,chaining
+w (→ v?) → f,w → v → f,False,chaining
+ɛː → ɛi (→ əi?),ɛː → ɛi → əi,False,chaining
+a → ɒ? (→ o),a → ɒ → o,False,chaining
+nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 "ɣ → q (more likely, *ɢ → q instead of → ɣ)","ɢ → q",False,correction
 "{nts,ndz,rdz_","{nts,ndz,rdz}_",False,correction
 " / at word boundaries"," / #_, _#",False,replacing prose
