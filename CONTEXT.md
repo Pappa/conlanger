@@ -123,8 +123,8 @@ Index Diachronica’s use of Unicode subscripts (from HTML `<sub>`) attached to 
 _Avoid_: “subscript decoration”; treating every subscript as a correspondence-series index; silent stripping of subscripts
 
 **Correspondence-series index**:
-An ordinal subscript on a **concrete segment** (IPA letter or spelled segment such as `s`, `x`, `eh`) selecting the *n*th member of a **correspondence series** for that sound-change section (Index key: `Xₙ` on segments; e.g. `s₁`, `x₂`, `eh₂`). Corpus fields keep the Index-shaped token at HTML→YAML parse; there is no parse-time series CSV. Unmapped indices stay in the rule string and surface via validation clusters.
-_Avoid_: treating `s₁` as identical to `s`; parse-time expansion from `series_mappings.csv`; applying global segment→IPA substitution without section scope
+An ordinal subscript on a **concrete segment** (IPA letter or spelled segment such as `s`, `x`, `eh`) selecting the *n*th member of a **correspondence series** for that sound-change section (Index key: `Xₙ` on segments; e.g. `s₁`, `x₂`, `eh₂`). Corpus fields keep the Index-shaped token at HTML→YAML parse. **Series mapping** at compile (`data/compiler_config.yml`, hierarchical section + `global`) expands mapped indices to ASCA-parseable segments; unmapped stay literal and surface via validation clusters.
+_Avoid_: treating `s₁` as identical to `s`; parse-time index→IPA substitution; applying global segment→IPA substitution without section scope
 
 **Correspondence series**:
 An ordered set of related segments referenced by **correspondence-series indices** in a section (e.g. Afro-Asiatic `s₁`–`s₃`, `h₁`–`h₃` defined in section citation). Distinct from Athabaskan multi-letter series labels (`TŠ`, `TS`, `K`) — those are **section-local abbreviations**, not subscripts.
@@ -139,8 +139,8 @@ Subscript `₀` on any base, meaning “the same instance as other tokens bearin
 _Avoid_: treating `V₀` as “zeroth vowel of a series”; stripping `₀` to normalize; conflating with ASCA optional `(C,0)` zero-or-more syntax
 
 **Collective subscript**:
-Subscript `ₓ` (or `x`), meaning all members of a sequence or series (Index key: `Xₓ`; e.g. `{Hₓ,m̩,n̩} → a`). Quantifies over a class or series rather than picking one member. Corpus fields keep the Index-shaped token at HTML→YAML parse (same interim as **correspondence-series index**). A future Brassica **applier compiler** may rewrite delimiters to categories (`[…]`).
-_Avoid_: treating `Hₓ` as a single segment; conflating with correspondence-series index `H₁`; parse-time expansion from `series_mappings.csv`; inventing a second on-disk set notation before Brassica is adopted
+Subscript `ₓ` (or `x`), meaning all members of a sequence or series (Index key: `Xₓ`; e.g. `{Hₓ,m̩,n̩} → a`). Quantifies over a class or series rather than picking one member. At parse, **series expansion** in `data/parser_config.yml` fans out collectives to member **correspondence-series indices** in corpus fields (flatten inside sets; `raw` unchanged). **Series mapping** at compile resolves those indices to segments.
+_Avoid_: treating `Hₓ` as a single segment; conflating with correspondence-series index `H₁`; nested sets after collective expansion; inventing a second on-disk set notation before Brassica is adopted
 
 **Section-local abbreviation**:
 Multi-letter or prose shorthand defined only for one sound-change section (or family of sections), not in the global Index key — e.g. Athabaskan `TŠ`, `TS`, `K`, `Q` series labels. Resolved via section `abbreviations` tables when mapped; otherwise cluster-driven. Not a subscript use.

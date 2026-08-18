@@ -29,14 +29,33 @@ Migrate the existing nested draft (`sections` / `idx`) to flat **rule id** keys 
 
 Unchanged relative to corrections: Manual mapping runs on a **working copy** only; **`raw` is not rewritten** by Manual mapping. First match; `use_regex` means `from` is a pattern.
 
-### 4. Drop parse-time series expansion
+### 4. Drop parse-time correspondence-series **mapping** (retired CSV)
 
-- Remove `apply_series_mappings` from `IndexDiachronicaParser` parse path.
-- Stop loading `series_mappings.csv` for parse (remove from parser constructor / regen orchestration).
+- Remove `apply_series_mappings` (correspondence-index → IPA) from `IndexDiachronicaParser`.
+- Stop loading `series_mappings.csv` for parse.
 - Do **not** populate section `abbreviations` from series CSV; omit `abbreviations` when empty.
-- Leave `section_abbreviations.yml` as a stale advisory snapshot — do not regenerate from extract tooling in this ticket.
-- **Correspondence-series index** and **collective subscript** tokens stay Index-shaped in corpus **stages** / env / exception.
-- `PIE_LARYNGEAL_ALIASES` / `apply_asca_aliases` stay in Python at **compile** until ticket 73 decides config shape.
+- **Correspondence-series indices** (`h₁`, `s₁`, …) stay Index-shaped in corpus until compile ([75](75-implement-compiler-config-series-mappings.md)).
+
+### 4b. Parse-time collective **series expansions** (`parser_config.yml`)
+
+Per [grill 73](73-grill-series-mapping-config-sot.md): load `series_expansions` from `data/parser_config.yml` and apply at parse **after** Manual mapping on corpus field values (`stages`, env, exception). **`raw` unchanged.**
+
+```yaml
+series_expansions:
+  Hₓ: [h₁, h₂, h₃]
+  hₓ: [h₁, h₂, h₃]
+  sₓ: [s₁, s₂, s₃]
+```
+
+- Global table only (no section scope).
+- Standalone collective: `sₓ → ʃ` → `{s₁,s₂,s₃} → ʃ`.
+- Inside a set: `{Hₓ,m̩,n̩} → a` → `{h₁,h₂,h₃,m̩,n̩} → a` (flatten members; no nested set).
+- Separate rows for `Hₓ` and `hₓ` (same member list).
+
+### 4c. Compile config deferred
+
+- `data/compiler_config.yml` **series_mappings** and PIE laryngeal compile apply → [75](75-implement-compiler-config-series-mappings.md).
+- `PIE_LARYNGEAL_ALIASES` stays in Python until 75 lands.
 
 Retire or gate `update_series_mappings` script and `series_extract` integration from regen if they only served the deleted CSV path (tests may keep minimal fixtures).
 
@@ -63,6 +82,7 @@ Retire or gate `update_series_mappings` script and `series_extract` integration 
 - [ ] Parse order matches grill 72: in-memory HTML → `<sub>` replace → lxml → corrections overlay → Manual mapping → rest of parse **without** series expansion.
 - [ ] `index_diachronica_corrections.yml` flat `rule_id` keys; draft rows migrated.
 - [ ] Corpus rules include `rule_id`; inventory/debug CSVs use `rule_id`.
+- [ ] Parse collective `series_expansions` from `parser_config.yml` (flatten sets; `raw` unchanged).
 - [ ] No runtime dependency on `series_mappings.csv` in parse path.
 - [ ] `section_abbreviations.yml` not regenerated; empty section `abbreviations` omitted.
 - [ ] Tests updated; targeted pytest green.

@@ -29,12 +29,16 @@ Wayfinder session on **subscript notation** (`CONTEXT.md`) and owner clarificati
 Grill [72](.scratch/cleaned-rule-corpus/issues/72-grill-series-mapping-manual-sot.md) retired parse-time `series_mappings.csv` expansion:
 
 - **No parse-time series CSV** — I/O-inferred rows conflated sound changes with notation definitions and could collapse multi-step rules to identity.
-- Corpus **stages** / env / exception keep Index-shaped **correspondence-series indices** and **collective subscripts** until a replacement config is decided ([ticket 73](.scratch/cleaned-rule-corpus/issues/73-grill-series-mapping-config-sot.md)).
-- `PIE_LARYNGEAL_ALIASES` remains compile-time Python until that config lands.
+- Corpus **stages** / env / exception keep Index-shaped **correspondence-series indices** until compile mapping; **collective subscripts** fan out to member indices at parse via `parser_config.yml` `series_expansions` ([ticket 73](.scratch/cleaned-rule-corpus/issues/73-grill-series-mapping-config-sot.md)).
+- **Series mappings** (index → segment) live in `data/compiler_config.yml` at compile ([ticket 75](.scratch/cleaned-rule-corpus/issues/75-implement-compiler-config-series-mappings.md)); replaces `PIE_LARYNGEAL_ALIASES` Python.
 - `section_abbreviations.yml` is advisory only; not regenerated from extract tooling.
 - Inventory `ok` may drop when incorrect parse expansions are removed; that regression is accepted.
 
 See also [ADR-0012](0012-index-diachronica-corrections-overlay.md) for the corrections overlay.
+
+### Amendment (2026-08-18, grill 73)
+
+Split **series expansion** (parse, global collectives in `parser_config.yml`) from **series mapping** (compile, hierarchical `compiler_config.yml`). Correspondence-series indices remain literal in the YAML corpus until compile; collectives expand to flat member lists in corpus fields with `raw` unchanged.
 
 ### Target (parse-time expansion) — superseded 2026-08-18
 
