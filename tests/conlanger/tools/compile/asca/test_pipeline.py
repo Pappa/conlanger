@@ -1,5 +1,7 @@
 """Tests for the documented ASCA per-rule compile pipeline (ticket 39)."""
 
+import pytest
+
 from conlanger.tools.compile.asca.apostrophes import normalize_typographic_apostrophes
 from conlanger.tools.compile.asca.ejectives import normalize_asca_ejective_marks
 from conlanger.tools.compile.asca.ellipsis import (
@@ -62,49 +64,40 @@ def test_rule_change_uses_pipeline_for_asca():
     assert part.value == expected
 
 
-def test_compile_applies_compiler_config_series_mappings():
-    config = CompilerConfig(series_mappings_global={"h₂": "ʔ"})
+@pytest.mark.parametrize(
+    ("compiler_config", "text", "expected"),
+    [
+        (CompilerConfig(series_mappings_global={"h₂": "ʔ"}), "eh₂ > a", "eʔ > a"),
+        (CompilerConfig(), "s₁ > ʃ", "s₁ > ʃ"),
+        (
+            CompilerConfig(series_mappings_global={"h₁": "h"}),
+            "s₁ > ʃ / _h₁",
+            "s₁ > ʃ / _h",
+        ),
+        (
+            CompilerConfig(series_mappings_global={"h₁": "h"}),
+            "a > e // _h₁",
+            "a > e // _h",
+        ),
+        (None, "eh₂ > a", "ex > a"),
+    ],
+    ids=[
+        "custom_global_mapping",
+        "unmapped_left_literal",
+        "mapped_in_environment",
+        "mapped_in_exception",
+        "default_pie_laryngeals",
+    ],
+)
+def test_compile_applies_compiler_config_series_mappings(
+    compiler_config, text, expected
+):
     compiled = compile_asca_rule_string(
-        "eh₂ > a",
+        text,
         group_mappings={},
-        compiler_config=config,
+        compiler_config=compiler_config,
     )
-    assert compiled == "eʔ > a"
-
-
-def test_compile_leaves_unmapped_series_indices_literal():
-    config = CompilerConfig()
-    compiled = compile_asca_rule_string(
-        "s₁ > ʃ",
-        group_mappings={},
-        compiler_config=config,
-    )
-    assert compiled == "s₁ > ʃ"
-
-
-def test_compile_applies_mapped_indices_in_environment():
-    config = CompilerConfig(series_mappings_global={"h₁": "h"})
-    compiled = compile_asca_rule_string(
-        "s₁ > ʃ / _h₁",
-        group_mappings={},
-        compiler_config=config,
-    )
-    assert compiled == "s₁ > ʃ / _h"
-
-
-def test_compile_applies_mapped_indices_in_exception():
-    config = CompilerConfig(series_mappings_global={"h₁": "h"})
-    compiled = compile_asca_rule_string(
-        "a > e // _h₁",
-        group_mappings={},
-        compiler_config=config,
-    )
-    assert compiled == "a > e // _h"
-
-
-def test_compile_default_config_maps_pie_laryngeals():
-    compiled = compile_asca_rule_string("eh₂ > a", group_mappings={})
-    assert compiled == "ex > a"
+    assert compiled == expected
 
 
 def test_diachronic_series_applies_section_series_mappings():
