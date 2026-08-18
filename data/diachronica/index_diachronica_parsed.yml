@@ -2572,7 +2572,7 @@ sections:
     raw: f θ → v z̪ (the article isn’t exactly clear on what this second phone is)
     source: index_diachronica_original.html:1430
     rule_id: Hassāniyya-Arabic-f-θ
-  - comment: ; depending on the environment; again, the article is unclear; sporadic
+  - comment: depending on the environment; again, the article is unclear; sporadic
     stages:
     - ʔ
     - '{∅,j,w}'
@@ -2643,7 +2643,7 @@ sections:
     raw: k q → tʃ {ɡ,q} (ɡ is more common)
     source: index_diachronica_original.html:1444
     rule_id: Iraqi-Arabic-k-q
-  - comment: ; in southern regions; sporadic
+  - comment: in southern regions; sporadic
     stages:
     - ɡʲ
     - j
@@ -4290,8 +4290,8 @@ sections:
     raw: '{we,wiː} → o / #_'
     source: index_diachronica_original.html:1760
     rule_id: Blackfoot-we,wiː
-  - comment: the first obstruent of the follow[ing] cluster then becomes ʔ); “(before
-      a prefix
+  - comment: “(before a prefix; the first obstruent of the follow[ing] cluster then
+      becomes ʔ)
     stages:
     - tsi
     - ∅
@@ -7499,11 +7499,11 @@ sections:
     raw: nj → jn
     source: index_diachronica_original.html:2326
     rule_id: Kyrgyz-nj
-  - comment: maybe just some sort of back vowel?)
+  - comment: (not sure what 〈U〉 represents here; maybe just some sort of back vowel?)
     stages:
     - ∅
     - U
-    env: '#_{l,r} (not sure what 〈U〉 represents here'
+    env: '#_{l,r}'
     raw: '∅ → U / #_{l,r} (not sure what 〈U〉 represents here; maybe just some sort
       of back vowel?)'
     source: index_diachronica_original.html:2327
@@ -9249,7 +9249,7 @@ sections:
     rule_id: Tagalog-*R
   - stages:
     - q
-    - ∅
+    - ∅ ;
     comment: (not sure what happens word-finally to it)
     raw: q → ∅ (not sure what happens word-finally to it)
     source: index_diachronica_original.html:2755
@@ -15035,7 +15035,7 @@ sections:
     rule_id: Proto-Rukai-R-l-L
   - stages:
     - S₁ s d₂ *C
-    - s θ ð ts
+    - s θ ð ts ;
     comment: (not sure what *C stands for here)
     raw: S₁ s d₂ *C → s θ ð ts (not sure what *C stands for here)
     source: index_diachronica_original.html:3851
@@ -15527,7 +15527,7 @@ sections:
     rule_id: Archi-kː-ɡ
   - stages:
     - ɣ
-    - q ;
+    - q
     - q instead of
     - ɣ)
     comment: (more likely, *ɢ
@@ -18592,7 +18592,7 @@ sections:
     raw: v → u
     source: index_diachronica_original.html:4692
     rule_id: Wales-Iñupiaq-v
-  - comment: ; “in some positions”; sporadic
+  - comment: “in some positions”; sporadic
     stages:
     - ɣ
     - u
@@ -18749,7 +18749,7 @@ sections:
     raw: 'S → ∅ / #_F'
     source: index_diachronica_original.html:4718
     rule_id: Kuskokwim-Yup’ik-S
-  - comment: ; in certain situations?; sporadic
+  - comment: in certain situations?; sporadic
     stages:
     - s
     - ts
@@ -18923,7 +18923,7 @@ sections:
     raw: 'S → ∅ / #_F'
     source: index_diachronica_original.html:4745
     rule_id: Nunivak-Yup’ik-S
-  - comment: ; in certain situations?; sporadic
+  - comment: in certain situations?; sporadic
     stages:
     - s
     - ts
@@ -19100,7 +19100,7 @@ sections:
     raw: 'S → ∅ / #_F'
     source: index_diachronica_original.html:4774
     rule_id: Siberian-Yup’ik-S
-  - comment: ; in some dialects?; sporadic
+  - comment: in some dialects?; sporadic
     stages:
     - s
     - ts
@@ -19287,7 +19287,7 @@ sections:
     raw: 'S → ∅ / #_F'
     source: index_diachronica_original.html:4803
     rule_id: Unaaliq-Yup’ik-S
-  - comment: ; in certain situations?; sporadic
+  - comment: in certain situations?; sporadic
     stages:
     - s
     - ts
@@ -19995,7 +19995,7 @@ sections:
     rule_id: Gheg-Albanian-ḱ_2
   - stages:
     - kʲ
-    - '{ts,tʃ} ;;'
+    - '{ts,tʃ} ;'
     comment: “[a]rchaic relic”; ()
     raw: ḱ → {ts,tʃ} (“[a]rchaic relic”)
     source: index_diachronica_original.html:4962
@@ -20234,7 +20234,7 @@ sections:
     rule_id: Tosk-Albanian-ḱ_2
   - stages:
     - kʲ
-    - '{ts,tʃ} ;;'
+    - '{ts,tʃ} ;'
     comment: “[a]rchaic relic”; ()
     raw: ḱ → {ts,tʃ} (“[a]rchaic relic”)
     source: index_diachronica_original.html:5001
@@ -24905,7 +24905,7 @@ sections:
     raw: i u e → ɪ ʊ ɛ / _ɹ
     source: index_diachronica_original.html:5795
     rule_id: American-English-i-u-e
-  - comment: ; (most dialects have at least one if not both)
+  - comment: (most dialects have at least one if not both)
     stages:
     - o ɔ
     - ɔ ɒ
@@ -25032,7 +25032,7 @@ sections:
     source: index_diachronica_original.html:5818
     rule_id: Australian-English-oʊ-iː_2
     exception: _ɫ
-  - comment: ; not in Queensland and New South Wales; sporadic
+  - comment: not in Queensland and New South Wales; sporadic
     stages:
     - uː
     - ʊə
@@ -25498,7 +25498,7 @@ sections:
     raw: ol al → ou ɑː → ʌu {ɑ,ɔ}
     source: index_diachronica_original.html:5894
     rule_id: Scots-ol-al
-  - comment: ; when stem-final
+  - comment: when stem-final
     stages:
     - ai
     - ɛi
@@ -25507,7 +25507,7 @@ sections:
     raw: — ai → ɛi → əi / when stem-final
     source: index_diachronica_original.html:5896
     rule_id: Scots-—-ai
-  - comment: ; when-stem final, in northern varieties
+  - comment: when-stem final, in northern varieties
     stages:
     - uː
     - ʌu
@@ -25567,7 +25567,7 @@ sections:
     raw: — ai oi ui ei au ou iu ɛ(o)u → eː oe əi iː {ɑː,ɔː} ʌu ju j(ʌ)u
     source: index_diachronica_original.html:5904
     rule_id: Scots-—-ai-oi-ui-ei-au-ou-iu-ɛou
-  - comment: ; in some northern varieties; sporadic
+  - comment: in some northern varieties; sporadic
     stages:
     - ɛː
     - ɛi
@@ -26574,7 +26574,7 @@ sections:
       in Polder Dutch vowels)
     source: index_diachronica_original.html:6076
     rule_id: Modern-Dutch-uː
-  - comment: ; in northern dialects; sporadic
+  - comment: in northern dialects; sporadic
     stages:
     - x ɣ
     - '{x,χ} {ɣ,x,χ}'
@@ -26582,7 +26582,7 @@ sections:
     source: index_diachronica_original.html:6078
     sporadic: true
     rule_id: Modern-Dutch-—-x-ɣ
-  - comment: ; in southern dialects (the articles use velar phonemes here but describes
+  - comment: in southern dialects (the articles use velar phonemes here but describes
       them as “front velar”; based on the description and on representations in other
       articles, the palatal phonemes are used here); sporadic
     stages:
@@ -29861,12 +29861,12 @@ sections:
     raw: h → ∅
     source: index_diachronica_original.html:6603
     rule_id: Attic-Greek-h_2
-  - comment: (sometimes)
+  - comment: (> yː sometimes); sporadic
     stages:
     - oj
     - øj
     - yj
-    - yː ;;
+    - yː
     raw: oj → øj → yj (→ yː sometimes)
     source: index_diachronica_original.html:6604
     sporadic: true
@@ -30717,12 +30717,12 @@ sections:
     raw: h → ∅
     source: index_diachronica_original.html:6754
     rule_id: Ionic-Greek-h_3
-  - comment: (sometimes)
+  - comment: (> yː sometimes); sporadic
     stages:
     - oj
     - øj
     - yj
-    - yː ;;
+    - yː
     raw: oj → øj → yj (→ yː sometimes)
     source: index_diachronica_original.html:6755
     sporadic: true
@@ -32704,7 +32704,7 @@ sections:
     raw: ɔ̃ → ɔ / _{l,ɫ}
     source: index_diachronica_original.html:7087
     rule_id: Polish-ɔ̃
-  - comment: ; (in some regions or dialects); sporadic
+  - comment: (in some regions or dialects); sporadic
     stages:
     - ɔ̃
     - ɔ
@@ -34267,7 +34267,7 @@ sections:
     source: index_diachronica_original.html:7337
     rule_id: Classical-Latin-vs.-Vulgar-Latin-j_2
   - stages:
-    - ;;
+    - ;
     - u (and ultimately also ɔ, oː
     - o)
     - e; i, iː
@@ -37043,7 +37043,7 @@ sections:
     raw: — ɔ → ɥo / _{u,P,k,ɡ,i} (in Languedoc)
     source: index_diachronica_original.html:7745
     rule_id: Old-Provençal-—-ɔ_3
-  - comment: ; (in southern dialects); sporadic
+  - comment: (in southern dialects); sporadic
     stages:
     - ɔ
     - '{ɥe,ɥo,ɔ}'
@@ -47211,7 +47211,7 @@ sections:
     raw: '{TŠ,TŠʷ} → TS'
     source: index_diachronica_original.html:9979
     rule_id: Ahtna-TŠ,TŠʷ
-  - comment: ; in Mentasta Ahtna; sporadic
+  - comment: in Mentasta Ahtna; sporadic
     stages:
     - K
     - Tʃ
@@ -47917,7 +47917,7 @@ sections:
     raw: '{TŠ,TŠʷ} K Q → TS TŠ Q'
     source: index_diachronica_original.html:10149
     rule_id: Sekani-TŠ,TŠʷ-K-Q
-  - comment: ; not in Ware Sekani; sporadic
+  - comment: not in Ware Sekani; sporadic
     stages:
     - T
     - Tʃ
@@ -55399,7 +55399,7 @@ sections:
     source: index_diachronica_original.html:11832
     rule_id: Guānhuà-j
   - stages:
-    - ;; There seems to ahve been some stuff going on with palatalized [ŋ]
+    - ; There seems to ahve been some stuff going on with palatalized [ŋ]
     - '{ɲ,n} but it seems highly dialectal and I’m not entirely sure just what exactly
       was going on here'
     raw: There seems to ahve been some stuff going on with palatalized [ŋ] → {ɲ,n}
@@ -57887,7 +57887,7 @@ sections:
     raw: '{d,ɡ,s,l,r} → {h,r} / #_'
     source: index_diachronica_original.html:12288
     rule_id: Amdo-dialects-d,ɡ,s,l,r
-  - comment: ; (some dialects, never when following preinitials); sporadic
+  - comment: (some dialects, never when following preinitials); sporadic
     stages:
     - ʃ
     - x
@@ -57929,7 +57929,7 @@ sections:
     raw: s → either i or a diphthong ending in i? / _#
     source: index_diachronica_original.html:12294
     rule_id: Amdo-dialects-s
-  - comment: ; (some dialects); sporadic
+  - comment: (some dialects); sporadic
     stages:
     - d
     - l
@@ -68159,7 +68159,7 @@ sections:
   - raw: 'Application of the Scottish vowel-length rule:'
     source: index_diachronica_original.html:14336
   rules:
-  - comment: ; when stem-final
+  - comment: when stem-final
     stages:
     - ai
     - ɛi
@@ -68168,7 +68168,7 @@ sections:
     raw: ai → ɛi → əi / when stem-final
     source: index_diachronica_original.html:14323
     rule_id: Scots-Vowel-Shifts-ai
-  - comment: ; when-stem final, in northern varieties
+  - comment: when-stem final, in northern varieties
     stages:
     - uː
     - ʌu
@@ -68228,7 +68228,7 @@ sections:
     raw: ai oi ui ei au ou iu ɛ(o)u → eː oe əi iː {ɑː,ɔː} ʌu ju j(ʌ)u
     source: index_diachronica_original.html:14331
     rule_id: Scots-Vowel-Shifts-ai-oi-ui-ei-au-ou-iu-ɛou
-  - comment: ; in some northern varieties; sporadic
+  - comment: in some northern varieties; sporadic
     stages:
     - ɛː
     - ɛi
@@ -69090,8 +69090,8 @@ sections:
     raw: p → w / V_V (Marathi)
     source: index_diachronica_original.html:14531
     rule_id: List-2:-Conditional-or-complex-consonant-changes-p
-  - comment: ; (some dialects of Italian; there may be more to it than this, since
-      words like “repubblica” are in standard Italian and not just dialects); sporadic
+  - comment: (some dialects of Italian; there may be more to it than this, since words
+      like “repubblica” are in standard Italian and not just dialects); sporadic
     stages:
     - b d ɡ
     - bː dː ɡː
