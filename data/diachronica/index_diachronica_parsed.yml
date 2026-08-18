@@ -23238,7 +23238,7 @@ sections:
     - m̩ n̩
     - am an
     env: _{s,({m,j,w})V}
-    raw: m̩ n̩ → am an / _{s,({m,j,w)V}
+    raw: m̩ n̩ → am an / _{s,({m,j,w})V}
     source: index_diachronica_original.html:5509
     rule_id: Old-Irish-m̩-n̩
   - stages:
