@@ -3,24 +3,20 @@
 Phase 1: section structure + per-rule ``stages`` split on every ``→`` in the change
 spine (whitespace around arrows is trimmed).
 Phase 2: optional ``/ env`` then optional ``! exception``
-(usual form ``input → output /env ! exception``). Word ``except`` and a
-second `` / `` are edge-case fallbacks.
+(usual form ``input → output /env ! exception``). Word ``except`` and a second `` / `` are edge-case fallbacks.
 Phase 3: first ``<p>`` after ``<h2>`` → section ``citation`` (whole text, cleanup later);
 other non-``schg`` paragraphs → ``comments``.
-Phase 4: HTML ``<sub>`` tags are normalised to Unicode subscripts on the rule line, then
-**Manual mapping** substring rewrites from ``manual_mappings.csv`` run on that working copy
-(``raw`` keeps the subscript-normalised surface). Then **Symbol** normalization on corpus
-fields only (``#``, ``$``, ``%``, ``∅``, Index stress ``”`` → ``:[+stress]``; ``raw``
-unchanged). Leading em dash list-item markers (``— ``) are stripped from the rule line
-before field split. Remaining Index rule arrows (``→``) in field values become ASCA ``>``.
+Phase 4: pre-lxml ``<sub>``→Unicode normalisation, then element text extract; **Index
+Diachronica correction** overlay by **rule id**; **Manual mapping** on working copy
+(``raw`` unchanged). Then **collective subscript** expansion via ``parser_config.yml``
+``series_expansions`` on corpus fields (``raw`` unchanged). **Symbol** normalization on
+corpus fields only. Remaining Index rule arrows (``→``) in field values become ASCA ``>``.
 Chained rules store each spine segment in ``stages``; compile-time expansion is deferred.
 Uncertainty glosses
 (``sporadic``, ``sometimes``, ``occasionally``, …) are stripped from field values
 and recorded as ``sporadic: true``. **Feature matrix** synonym replacement inside ``[...]`` via
 ``feature_mappings.csv`` (``raw`` unchanged). **IPA character** substitution via
-``ipa_mapping.csv`` (``raw`` unchanged). **Correspondence-series** and
-**collective subscript** expansion via ``series_mappings.csv`` (``raw`` unchanged).
-Inline prose stripped for ASCA is captured in optional ``comment`` on each corpus
+``ipa_mapping.csv`` (``raw`` unchanged). Inline prose stripped for ASCA is captured in optional ``comment`` on each corpus
 rule: semicolon tails in ``env`` / ``exception`` first (``apply_semicolon_field_comments``), then
 field-level glosses and env qualifiers. Index word-internal ``medial`` / ``medially`` env
 prose becomes ``env: _`` with boundary ``exception: :{#_, _#}:`` (``apply_medial_env_conditions``).
@@ -32,8 +28,6 @@ from __future__ import annotations
 
 from pathlib import Path
 from typing import Any
-
-from lxml import html
 
 from conlanger.tools.ingest.section_policy import resolve_catch_all_else_rules
 from conlanger.tools.ingest.transforms import (
@@ -60,14 +54,11 @@ from conlanger.utils.parsing import (
     extract_rule_parts,
     extract_text_with_subs,
     finalize_stages_shape,
+    load_html_document,
     parse_section_heading,
     strip_whitespace,
 )
-from conlanger.utils.series import (
-    SeriesMapping,
-    apply_series_mappings,
-    section_abbreviations_for_index,
-)
+from conlanger.utils.series import apply_series_expansions
 from conlanger.utils.symbols import normalize_symbols
 
 
@@ -86,19 +77,20 @@ class IndexDiachronicaParser:
     def __init__(
         self,
         *,
-        series_mappings: list[SeriesMapping],
         manual_mappings: list[ManualMapping],
         parser_config: ParserConfig,
         feature_mappings: dict[str, FeatureMapping],
         ipa_mappings: dict[str, str],
+        corrections: dict[str, str] | None = None,
     ) -> None:
-        self._series_mappings = series_mappings
         self._manual_mappings = manual_mappings
         self._parser_config = parser_config
         self._feature_mappings = feature_mappings
         self._ipa_mappings = ipa_mappings
+        self._corrections = corrections or {}
         self.manual_mapping_matches: list[ManualMappingMatch] = []
         self._matched_manual_froms: set[str] = set()
+        self._matched_correction_ids: set[str] = set()
 
     def abbreviations(self) -> dict[str, str]:
         """Global abbreviation table for the cleaned corpus (empty at ingest)."""
@@ -112,6 +104,14 @@ class IndexDiachronicaParser:
             if row.from_text not in self._matched_manual_froms
         ]
 
+    def unmatched_corrections(self) -> list[str]:
+        """Return correction rule ids that matched no HTML rule during this parse."""
+        return [
+            rule_id
+            for rule_id in self._corrections
+            if rule_id not in self._matched_correction_ids
+        ]
+
     def parse_rule_element(
         self,
         el,
@@ -119,9 +119,12 @@ class IndexDiachronicaParser:
         source_file: str,
         section_index: str = "",
         section_name: str = "",
-        rule_idx: int = 0,
+        rule_id: str = "",
     ) -> list[dict[str, Any]]:
         raw = extract_text_with_subs(el)
+        if rule_id and rule_id in self._corrections:
+            raw = self._corrections[rule_id]
+            self._matched_correction_ids.add(rule_id)
         line = getattr(el, "sourceline", None) or 0
         source = f"{source_file}:{line}"
         working, hits = apply_manual_mappings(raw, self._manual_mappings)
@@ -131,55 +134,61 @@ class IndexDiachronicaParser:
                 ManualMappingMatch(
                     section_index=section_index,
                     section_name=section_name,
-                    rule_idx=rule_idx,
+                    rule_id=rule_id,
                     source=source,
                     manual_mapping=hit.to_text,
                 )
             )
         if is_quoted_prose_paragraph(working):
-            return [
-                {
-                    "stages": [],
-                    "raw": raw,
-                    "source": source,
-                    "comment": raw.strip(),
-                    "status": "skipped",
-                }
-            ]
+            rule: dict[str, Any] = {
+                "stages": [],
+                "raw": raw,
+                "source": source,
+                "comment": raw.strip(),
+                "status": "skipped",
+            }
+            if rule_id:
+                rule["rule_id"] = rule_id
+            return [rule]
         normalized = normalize_symbols(working)
         parts = extract_rule_parts(normalized)
         if parts is None:
-            return [
-                {
-                    "stages": [],
-                    "raw": raw,
-                    "source": source,
-                    "status": "skipped",
-                }
-            ]
+            rule = {
+                "stages": [],
+                "raw": raw,
+                "source": source,
+                "status": "skipped",
+            }
+            if rule_id:
+                rule["rule_id"] = rule_id
+            return [rule]
+        parts = apply_series_expansions(parts, self._parser_config.series_expansions)
         parts = apply_semicolon_field_comments(parts)
         parts = apply_sporadic_qualifier(parts)
         sporadic = parts.pop("sporadic", False)
         sporadic_flag = {"sporadic": True} if sporadic else {}
         parts = apply_trailing_glosses(parts)
         if is_gloss_only_rule(parts):
-            return [
-                {
-                    "stages": [],
-                    "raw": raw,
-                    "source": source,
-                    "comment": parts["comment"],
-                    "status": "skipped",
-                    **sporadic_flag,
-                }
-            ]
+            rule = {
+                "stages": [],
+                "raw": raw,
+                "source": source,
+                "comment": parts["comment"],
+                "status": "skipped",
+                **sporadic_flag,
+            }
+            if rule_id:
+                rule["rule_id"] = rule_id
+            return [rule]
         parts = apply_stress_conditions(parts)
         parts = apply_medial_env_conditions(parts)
         parts = apply_feature_mappings(parts, self._feature_mappings)
         parts = apply_ipa_mappings(parts, self._ipa_mappings)
-        parts = apply_series_mappings(parts, section_index, self._series_mappings)
         parts = finalize_stages_shape(parts)
-        return [{**parts, "raw": raw, "source": source, **sporadic_flag}]
+        rule = {**parts, "raw": raw, "source": source, **sporadic_flag}
+        if rule_id:
+            rule["rule_id"] = rule_id
+        return [rule]
 
     def parse(
         self,
@@ -191,9 +200,8 @@ class IndexDiachronicaParser:
         source_file = source_file or html_path.name
         self.manual_mapping_matches = []
         self._matched_manual_froms = set()
-        parser = html.HTMLParser(encoding="utf-8")
-        doc = html.parse(str(html_path), parser=parser)
-        root = doc.getroot()
+        self._matched_correction_ids = set()
+        root = load_html_document(html_path)
         sections_out: list[dict[str, Any]] = []
 
         for sec in root.xpath("//section[@id]"):
@@ -214,13 +222,14 @@ class IndexDiachronicaParser:
                 cls = p.get("class") or ""
                 if "schg" in cls:
                     saw_first_p = True
+                    rule_id = p.get("id") or ""
                     rules.extend(
                         self.parse_rule_element(
                             p,
                             source_file=source_file,
                             section_index=index or "",
                             section_name=name,
-                            rule_idx=len(rules),
+                            rule_id=rule_id,
                         )
                     )
                     continue
@@ -239,13 +248,6 @@ class IndexDiachronicaParser:
                 "section": name,
                 "index": index,
             }
-            section_abbrevs: dict[str, str] = {}
-            if index:
-                section_abbrevs = section_abbreviations_for_index(
-                    index, self._series_mappings
-                )
-            if section_abbrevs:
-                section_obj["abbreviations"] = section_abbrevs
             if citation is not None:
                 section_obj["citation"] = citation
             if comments:

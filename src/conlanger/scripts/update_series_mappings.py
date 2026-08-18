@@ -1,5 +1,8 @@
 """
 Refreshes ``data/asca/series_mappings.csv`` and ``data/diachronica/section_abbreviations.yml``.
+
+Retired from the ingest regen path (ticket 74): parse no longer loads ``series_mappings.csv``.
+Use ``--legacy-extraction`` only for HTML extraction tooling and tests.
 """
 
 import argparse
@@ -27,7 +30,20 @@ DEFAULT_HTML = ROOT / "data" / "diachronica" / "index_diachronica_original.html"
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--html", type=Path, default=DEFAULT_HTML)
+    ap.add_argument(
+        "--legacy-extraction",
+        action="store_true",
+        help="required; ingest no longer consumes series_mappings.csv (ticket 74)",
+    )
     args = ap.parse_args()
+
+    if not args.legacy_extraction:
+        print(
+            "ERROR: update_series_mappings is gated; pass --legacy-extraction for "
+            "HTML extraction tooling only (parse no longer uses series_mappings.csv)",
+            file=sys.stderr,
+        )
+        return 1
 
     if not args.html.is_file():
         print(f"ERROR: HTML not found at {args.html}", file=sys.stderr)

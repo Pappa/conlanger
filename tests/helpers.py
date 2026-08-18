@@ -19,11 +19,11 @@ def default_index_parser(**overrides) -> IndexDiachronicaParser:
         _CACHED_INGEST_TABLES = load_default_ingest_tables()
     tables = _CACHED_INGEST_TABLES
     kwargs = {
-        "series_mappings": tables.series_mappings,
         "manual_mappings": tables.manual_mappings,
         "parser_config": tables.parser_config,
         "feature_mappings": tables.feature_mappings,
         "ipa_mappings": tables.ipa_mappings,
+        "corrections": tables.corrections,
     }
     kwargs.update(overrides)
     return IndexDiachronicaParser(**kwargs)

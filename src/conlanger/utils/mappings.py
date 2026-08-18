@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 _CORPUS_CONTEXT_FIELD_KEYS = ("env", "exception")
 
@@ -46,7 +46,7 @@ class ManualMappingMatch:
 
     section_index: str
     section_name: str
-    rule_idx: int
+    rule_id: str
     source: str
     manual_mapping: str
 
@@ -64,6 +64,7 @@ class FeatureMapping:
 @dataclass(frozen=True)
 class ParserConfig:
     ipa_mapping_confidence: frozenset[str]
+    series_expansions: dict[str, tuple[str, ...]] = field(default_factory=dict)
 
 
 def normalize_feature_matrices_in_field(

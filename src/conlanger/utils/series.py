@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
+from typing import Any
 
 # Correspondence-series index: concrete segment base + ordinal subscript (not ₀, not ₓ).
 _CORRESPONDENCE_INDEX_RE = re.compile(r"(?<![A-Z])([a-zA-Zæøåɑɡɢ]+)([₁₂₃₄₅₆₇₈₉])")
@@ -140,6 +141,78 @@ def expand_series_tokens_in_field(
     result = text
     for token, target in replacements:
         result = result.replace(token, target)
+    return result
+
+
+def apply_series_expansions(
+    parts: dict[str, Any],
+    expansions: dict[str, tuple[str, ...]],
+) -> dict[str, Any]:
+    """Expand collective subscript tokens in rule fields; ``raw`` unchanged upstream."""
+    if not expansions:
+        return parts
+    result = dict(parts)
+    stages = result.get("stages")
+    if stages is not None:
+        result["stages"] = [
+            expand_collectives_in_field(stage, expansions) for stage in stages
+        ]
+    for key in ("env", "exception"):
+        if key in result:
+            result[key] = expand_collectives_in_field(result[key], expansions)
+    return result
+
+
+def expand_collectives_in_field(
+    text: str,
+    expansions: dict[str, tuple[str, ...]],
+) -> str:
+    """Fan out collective ``Xₓ`` tokens per ``parser_config`` ``series_expansions``."""
+    if not text or not expansions:
+        return text
+    ordered = sorted(expansions.items(), key=lambda pair: len(pair[0]), reverse=True)
+    parts: list[str] = []
+    index = 0
+    while index < len(text):
+        if text[index] == "{":
+            close = text.find("}", index)
+            if close == -1:
+                parts.append(_expand_collectives_outside_braces(text[index:], ordered))
+                break
+            inner = text[index + 1 : close]
+            parts.append("{" + _expand_collectives_inside_braces(inner, ordered) + "}")
+            index = close + 1
+        else:
+            next_brace = text.find("{", index)
+            if next_brace == -1:
+                parts.append(_expand_collectives_outside_braces(text[index:], ordered))
+                break
+            parts.append(
+                _expand_collectives_outside_braces(text[index:next_brace], ordered)
+            )
+            index = next_brace
+    return "".join(parts)
+
+
+def _expand_collectives_inside_braces(
+    inner: str,
+    ordered: list[tuple[str, tuple[str, ...]]],
+) -> str:
+    result = inner
+    for token, members in ordered:
+        if token in result:
+            result = result.replace(token, ",".join(members))
+    return result
+
+
+def _expand_collectives_outside_braces(
+    segment: str,
+    ordered: list[tuple[str, tuple[str, ...]]],
+) -> str:
+    result = segment
+    for token, members in ordered:
+        if token in result:
+            result = result.replace(token, "{" + ",".join(members) + "}")
     return result
 
 

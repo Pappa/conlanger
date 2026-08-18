@@ -2,3 +2,7 @@ ipa_mapping:
   confidence:
     - high
     - medium
+series_expansions:
+  Hₓ: [h₁, h₂, h₃]
+  hₓ: [h₁, h₂, h₃]
+  sₓ: [s₁, s₂, s₃]

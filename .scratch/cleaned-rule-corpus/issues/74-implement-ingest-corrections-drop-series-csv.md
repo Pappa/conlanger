@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by:
 
 # Implement ingest corrections overlay and drop parse-time series CSV
@@ -79,14 +79,25 @@ Retire or gate `update_series_mappings` script and `series_extract` integration 
 
 ## Acceptance criteria
 
-- [ ] Parse order matches grill 72: in-memory HTML → `<sub>` replace → lxml → corrections overlay → Manual mapping → rest of parse **without** series expansion.
-- [ ] `index_diachronica_corrections.yml` flat `rule_id` keys; draft rows migrated.
-- [ ] Corpus rules include `rule_id`; inventory/debug CSVs use `rule_id`.
-- [ ] Parse collective `series_expansions` from `parser_config.yml` (flatten sets; `raw` unchanged).
-- [ ] No runtime dependency on `series_mappings.csv` in parse path.
-- [ ] `section_abbreviations.yml` not regenerated; empty section `abbreviations` omitted.
-- [ ] Tests updated; targeted pytest green.
-- [ ] Full regen + inventory; before/after metrics in **Answer**.
+- [x] Parse order matches grill 72: in-memory HTML → `<sub>` replace → lxml → corrections overlay → Manual mapping → rest of parse **without** series expansion.
+- [x] `index_diachronica_corrections.yml` flat `rule_id` keys; draft rows migrated.
+- [x] Corpus rules include `rule_id`; inventory/debug CSVs use `rule_id`.
+- [x] Parse collective `series_expansions` from `parser_config.yml` (flatten sets; `raw` unchanged).
+- [x] No runtime dependency on `series_mappings.csv` in parse path.
+- [x] `section_abbreviations.yml` not regenerated; empty section `abbreviations` omitted.
+- [x] Tests updated; targeted pytest green.
+- [x] Full regen + inventory; before/after metrics in **Answer**.
+
+## Answer
+
+**Inventory (ASCA 0.10.2, 2026-08-18 regen)**
+
+| Metric | Before | After |
+| --- | ---: | ---: |
+| OK / total | 7990 / 9640 (82.9%) | **7957 / 9640 (82.5%)** |
+| Sections all OK | 268 / 714 (37.5%) | **271 / 714 (38.0%)** |
+
+−33 ok rules from dropping parse-time I/O-inferred `series_mappings.csv` expansion (accepted per grill 72). Corrections overlay applied for `Blackfoot-nr`, `Blackfoot-ʔθ,ʔr`, `Dena’ina-ʃʷ,x-z,ʒʷ,ɣ`. Collective `series_expansions` (`Hₓ`, `hₓ`, `sₓ`) fan out at parse; correspondence-series indices stay literal until compile ([75](75-implement-compiler-config-series-mappings.md)). `update_series_mappings` CLI gated behind `--legacy-extraction`.
 
 ## References
 

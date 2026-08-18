@@ -76,8 +76,8 @@ def format_syntax(rule: dict) -> str:
 
 
 def check_one(args: tuple) -> dict:
-    section_index, section_name, rule_idx, syntax, words, asca_bin = args
-    title = f"{section_index}_{rule_idx}"
+    section_index, section_name, rule_id, syntax, words, asca_bin = args
+    title = f"{section_index}_{rule_id}"
     body = f"@ {title}\n\t{syntax}\n"
     with tempfile.TemporaryDirectory() as tmp:
         rsca = Path(tmp) / f"{title}.rsca"
@@ -97,7 +97,7 @@ def check_one(args: tuple) -> dict:
             return {
                 "section_index": section_index,
                 "section_name": section_name,
-                "rule_idx": rule_idx,
+                "rule_id": rule_id,
                 "syntax": syntax,
                 "ok": proc.returncode == 0,
                 "returncode": proc.returncode,
@@ -110,7 +110,7 @@ def check_one(args: tuple) -> dict:
             return {
                 "section_index": section_index,
                 "section_name": section_name,
-                "rule_idx": rule_idx,
+                "rule_id": rule_id,
                 "syntax": syntax,
                 "ok": False,
                 "returncode": 124,
@@ -128,7 +128,8 @@ def iter_jobs(doc: dict, words: str, asca_bin: str):
             continue
         section_index = str(section.get("index", ""))
         section_name = str(section.get("section", ""))
-        for rule_idx, rule in enumerate(rules):
+        for rule in rules:
+            rule_id = str(rule.get("rule_id", ""))
             try:
                 syntax = format_syntax(rule)
             except Exception as exc:  # noqa: BLE001 — record format failures
@@ -137,7 +138,7 @@ def iter_jobs(doc: dict, words: str, asca_bin: str):
                 yield {
                     "section_index": section_index,
                     "section_name": section_name,
-                    "rule_idx": rule_idx,
+                    "rule_id": rule_id,
                     "syntax": "",
                     "ok": False,
                     "returncode": -1,
@@ -151,7 +152,7 @@ def iter_jobs(doc: dict, words: str, asca_bin: str):
             yield (
                 section_index,
                 section_name,
-                rule_idx,
+                rule_id,
                 syntax,
                 words,
                 asca_bin,
@@ -195,7 +196,7 @@ def main() -> int:
     fieldnames = [
         "section_index",
         "section_name",
-        "rule_idx",
+        "rule_id",
         "syntax",
         "ok",
         "returncode",
@@ -214,7 +215,7 @@ def main() -> int:
             if idx % 500 == 0 or idx == total:
                 print(f"progress {idx}/{total}", flush=True)
 
-    rows.sort(key=lambda r: (r["section_index"], int(r["rule_idx"])))
+    rows.sort(key=lambda r: (r["section_index"], r["rule_id"]))
     with args.out.open("w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()

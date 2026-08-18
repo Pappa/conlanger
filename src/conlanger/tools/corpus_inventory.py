@@ -69,7 +69,7 @@ COMMON_ERROR_CLASSES = (
 VALIDATION_CSV_COLUMNS = [
     "section_index",
     "section_name",
-    "rule_idx",
+    "rule_id",
     "alt_idx",
     "source",
     "ok",
@@ -82,7 +82,7 @@ VALIDATION_CSV_COLUMNS = [
 
 CHANGELOG_CSV_COLUMNS = [
     "section_index",
-    "rule_idx",
+    "rule_id",
     "alt_idx",
     "source",
     "ok",
@@ -162,9 +162,7 @@ def ok_flip_changelog_rows(
     prev["ok"] = _ok_as_bool(prev["ok"])
     prev = prev.drop_duplicates(subset=["source", "_alt_key"], keep="last")
     prev = prev.set_index(["source", "_alt_key"])["ok"]
-    cur = current.loc[
-        :, ["section_index", "rule_idx", "alt_idx", "source", "ok"]
-    ].copy()
+    cur = current.loc[:, ["section_index", "rule_id", "alt_idx", "source", "ok"]].copy()
     cur["_alt_key"] = _alt_idx_key(cur["alt_idx"])
     cur["ok"] = _ok_as_bool(cur["ok"])
     cur = cur.drop_duplicates(subset=["source", "_alt_key"], keep="last")
@@ -337,7 +335,7 @@ def reason_for_failure(failure_class: str, error: str) -> str:
 class ValidationRow:
     section_index: str
     section_name: str
-    rule_idx: int
+    rule_id: str
     source: str
     ok: bool
     failure_class: str
@@ -351,7 +349,7 @@ class ValidationRow:
         return {
             "section_index": self.section_index,
             "section_name": self.section_name,
-            "rule_idx": self.rule_idx,
+            "rule_id": self.rule_id,
             "alt_idx": "" if self.alt_idx is None else self.alt_idx,
             "source": self.source,
             "ok": self.ok,
@@ -366,11 +364,11 @@ class ValidationRow:
 
 
 def _mini_section(
-    section: dict[str, Any], rule: dict[str, Any], rule_idx: int
+    section: dict[str, Any], rule: dict[str, Any], rule_id: str
 ) -> dict[str, Any]:
     return {
         "index": section.get("index", ""),
-        "section": f"{section.get('section', '')}#{rule_idx}",
+        "section": f"{section.get('section', '')}#{rule_id}",
         "rules": [rule],
     }
 
@@ -378,7 +376,7 @@ def _mini_section(
 def _series_for_alternative(
     section: dict[str, Any],
     rule: dict[str, Any],
-    rule_idx: int,
+    rule_id: str,
     alternative: SoundChangeRule,
     group_mappings: dict[str, str] | None,
 ) -> DiachronicSeries:
@@ -392,7 +390,7 @@ def _series_for_alternative(
         alt_rule["env"] = alternative.env
     if alternative.exception:
         alt_rule["exception"] = alternative.exception
-    mini = _mini_section(section, alt_rule, rule_idx)
+    mini = _mini_section(section, alt_rule, rule_id)
     return DiachronicSeries(mini, group_mappings=group_mappings)
 
 
@@ -401,7 +399,7 @@ def _asca_validation_row(
     *,
     section_index: str,
     section_name: str,
-    rule_idx: int,
+    rule_id: str,
     alt_idx: int | None,
     source: str,
     probe_words: Path | None,
@@ -416,7 +414,7 @@ def _asca_validation_row(
         return ValidationRow(
             section_index=section_index,
             section_name=section_name,
-            rule_idx=rule_idx,
+            rule_id=rule_id,
             alt_idx=alt_idx,
             source=source,
             ok=False,
@@ -430,7 +428,7 @@ def _asca_validation_row(
     return ValidationRow(
         section_index=section_index,
         section_name=section_name,
-        rule_idx=rule_idx,
+        rule_id=rule_id,
         alt_idx=alt_idx,
         source=source,
         ok=True,
@@ -445,7 +443,7 @@ def _asca_validation_row(
 def validate_corpus_rule(
     section: dict[str, Any],
     rule: dict[str, Any],
-    rule_idx: int,
+    rule_id: str,
     *,
     probe_words: Path | None,
     group_mappings: dict[str, str] | None = None,
@@ -471,7 +469,7 @@ def validate_corpus_rule(
             ValidationRow(
                 section_index=section_index,
                 section_name=section_name,
-                rule_idx=rule_idx,
+                rule_id=rule_id,
                 source=source,
                 ok=False,
                 failure_class=failure_class,
@@ -482,7 +480,7 @@ def validate_corpus_rule(
             )
         ]
 
-    mini = _mini_section(section, rule, rule_idx)
+    mini = _mini_section(section, rule, rule_id)
     try:
         scr = DiachronicSeries(mini, group_mappings=group_mappings)
     except (KeyError, ValueError) as exc:
@@ -493,7 +491,7 @@ def validate_corpus_rule(
             ValidationRow(
                 section_index=section_index,
                 section_name=section_name,
-                rule_idx=rule_idx,
+                rule_id=rule_id,
                 source=source,
                 ok=False,
                 failure_class=failure_class,
@@ -515,7 +513,7 @@ def validate_corpus_rule(
             ValidationRow(
                 section_index=section_index,
                 section_name=section_name,
-                rule_idx=rule_idx,
+                rule_id=rule_id,
                 source=source,
                 ok=False,
                 failure_class=failure_class,
@@ -531,7 +529,7 @@ def validate_corpus_rule(
             ValidationRow(
                 section_index=section_index,
                 section_name=section_name,
-                rule_idx=rule_idx,
+                rule_id=rule_id,
                 source=source,
                 ok=True,
                 failure_class="",
@@ -547,11 +545,11 @@ def validate_corpus_rule(
         return [
             _asca_validation_row(
                 _series_for_alternative(
-                    section, rule, rule_idx, alternative, group_mappings
+                    section, rule, rule_id, alternative, group_mappings
                 ),
                 section_index=section_index,
                 section_name=section_name,
-                rule_idx=rule_idx,
+                rule_id=rule_id,
                 alt_idx=alt_idx,
                 source=source,
                 probe_words=probe_words,
@@ -564,7 +562,7 @@ def validate_corpus_rule(
             scr,
             section_index=section_index,
             section_name=section_name,
-            rule_idx=rule_idx,
+            rule_id=rule_id,
             alt_idx=None,
             source=source,
             probe_words=probe_words,
@@ -580,11 +578,12 @@ def iter_validation_rows(
 ) -> Iterator[ValidationRow]:
     for section in doc.get("sections") or []:
         rules = section.get("rules") or []
-        for rule_idx, rule in enumerate(rules):
+        for rule in rules:
+            rule_id = str(rule.get("rule_id", ""))
             yield from validate_corpus_rule(
                 section,
                 rule,
-                rule_idx,
+                rule_id,
                 probe_words=probe_words,
                 group_mappings=group_mappings,
             )

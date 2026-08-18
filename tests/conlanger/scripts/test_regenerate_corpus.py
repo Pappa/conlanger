@@ -41,7 +41,7 @@ def test_regenerate_corpus_writes_manual_mappings_matched_csv(
             ManualMappingMatch(
                 section_index="17.5.1",
                 section_name="Proto-Indo-European to Old Irish",
-                rule_idx=0,
+                rule_id="r0",
                 source="index.html:10",
                 manual_mapping="s → z / _C[+voice]",
             )
@@ -284,7 +284,7 @@ def test_regenerate_corpus_reset_changelog_overwrites_existing(
     inventory_dir.mkdir()
     changelog_path = inventory_dir / "asca-rule-inventory-changelog.csv"
     changelog_path.write_text(
-        "section_index,rule_idx,source,ok,timestamp\nold,0,s:0,True,old\n",
+        "section_index,rule_id,source,ok,timestamp\nold,r0,s:0,True,old\n",
         encoding="utf-8",
     )
     _configure_parser_mock(

@@ -28,9 +28,11 @@ from conlanger.utils.file_io import (
 )
 from conlanger.utils.series import (
     SeriesMapping,
+    apply_series_expansions,
     apply_series_mappings,
     asca_digit_segment,
     classify_subscript_token,
+    expand_collectives_in_field,
     expand_series_tokens_in_field,
     find_correspondence_series_tokens,
     find_subscript_tokens,
@@ -1091,6 +1093,35 @@ def test_apply_series_mappings_on_rule_parts():
         "6.1.2.1",
         rows,
     ) == {"stages": ["ʃ", "z"], "env": "_ h₂"}
+
+
+def test_apply_series_expansions_standalone_collective():
+    expansions = {"sₓ": ("s₁", "s₂", "s₃")}
+    assert apply_series_expansions(
+        {"stages": ["sₓ", "ʃ"]},
+        expansions,
+    ) == {"stages": ["{s₁,s₂,s₃}", "ʃ"]}
+
+
+def test_apply_series_expansions_flattens_inside_set():
+    expansions = {"Hₓ": ("h₁", "h₂", "h₃")}
+    assert apply_series_expansions(
+        {"stages": ["{Hₓ,m̩,n̩}", "a"]},
+        expansions,
+    ) == {"stages": ["{h₁,h₂,h₃,m̩,n̩}", "a"]}
+
+
+def test_apply_series_expansions_on_env_and_exception():
+    expansions = {"sₓ": ("s₁", "s₂", "s₃")}
+    assert apply_series_expansions({"env": "sₓ"}, expansions) == {"env": "{s₁,s₂,s₃}"}
+    assert apply_series_expansions({"exception": "sₓ"}, expansions) == {
+        "exception": "{s₁,s₂,s₃}"
+    }
+
+
+def test_expand_collectives_in_field_unclosed_brace():
+    expansions = {"Hₓ": ("h₁", "h₂", "h₃")}
+    assert expand_collectives_in_field("{Hₓ foo", expansions) == "{{h₁,h₂,h₃} foo"
 
 
 def test_section_abbreviations_for_index_more_specific_wins():

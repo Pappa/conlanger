@@ -35,6 +35,7 @@ from conlanger.utils.file_io import (
     ipa_mappings_dict,
     load_feature_mappings,
     load_group_mappings,
+    load_index_diachronica_corrections,
     load_ipa_mappings,
     load_manual_mappings,
     load_parser_config,
@@ -62,6 +63,7 @@ from conlanger.utils.parsing import (
     extract_rule_parts,
     extract_text_with_subs,
     finalize_stages_shape,
+    normalize_html_sub_tags,
     parse_section_heading,
     split_env_exception,
     split_input_output,
@@ -70,6 +72,14 @@ from conlanger.utils.parsing import (
     strip_leading_index_list_marker,
 )
 from conlanger.utils.symbols import normalize_stress_marks, normalize_symbols
+
+
+def _html_fragment(html_snippet: str):
+    """Parse HTML fragment after pre-lxml ``<sub>`` normalisation."""
+    return html.fragment_fromstring(
+        normalize_html_sub_tags(html_snippet),
+        create_parent=False,
+    )
 
 
 def _parse_rule_element(el, *, source_file: str, section_index: str = ""):
@@ -186,12 +196,12 @@ def test_parse_section_heading_without_index():
 
 
 def test_extract_text_with_subs_tail_after_sub():
-    el = html.fragment_fromstring("<p>before<sub>2</sub>after</p>", create_parent=False)
+    el = _html_fragment("<p>before<sub>2</sub>after</p>")
     assert extract_text_with_subs(el) == "before₂after"
 
 
 def test_extract_text_with_subs_no_tail_after_sub():
-    el = html.fragment_fromstring("<p>before<sub>2</sub></p>", create_parent=False)
+    el = _html_fragment("<p>before<sub>2</sub></p>")
     assert extract_text_with_subs(el) == "before₂"
 
 
@@ -962,9 +972,7 @@ def test_extract_rule_parts(raw, expected):
 
 
 def test_parse_rule_element_with_sub_and_env():
-    el = html.fragment_fromstring(
-        '<p class="schg">ʃ → s<sub>2</sub> / {i,j}_</p>', create_parent=False
-    )
+    el = _html_fragment('<p class="schg">ʃ → s<sub>2</sub> / {i,j}_</p>')
     rule = _parse_rule_element(el, source_file="index_diachronica_original.html")[0]
     assert rule["stages"] == ["ʃ", "s₂"]
     assert rule["env"] == "{i,j}_"
@@ -1063,19 +1071,66 @@ def test_first_p_is_citation_rest_comments(tmp_path: Path):
         "Interleaved note",
     ]
     assert len(sec["rules"]) == 2
-    assert sec["rules"][0]["stages"] == ["k", "k"]
+    assert sec["rules"][0]["stages"] == ["x₁", "k"]
     assert sec["rules"][0]["raw"] == "x₁ → k"
 
 
-def test_parse_expands_afro_asiatic_series_tokens(tmp_path: Path):
+def test_parse_expands_collective_series_tokens(tmp_path: Path):
+    html_path = tmp_path / "collective.html"
+    html_path.write_text(
+        """<!doctype html>
+<html><body>
+<section id="Test">
+<h2>1.0 Test</h2>
+<p class="schg" id="Test-sx">sₓ → ʃ</p>
+<p class="schg" id="Test-Hx">{Hₓ,m̩,n̩} → a</p>
+</section>
+</body></html>""",
+        encoding="utf-8",
+    )
+    doc = default_index_parser().parse(html_path, source_file="collective.html")
+    rules = doc["sections"][0]["rules"]
+    assert rules[0]["stages"] == ["{s₁,s₂,s₃}", "ʃ"]
+    assert rules[0]["raw"] == "sₓ → ʃ"
+    assert rules[1]["stages"] == ["{h₁,h₂,h₃,m̩,n̩}", "a"]
+    assert rules[1]["raw"] == "{Hₓ,m̩,n̩} → a"
+
+
+def test_parse_applies_corrections_overlay_by_rule_id(tmp_path: Path):
+    html_path = tmp_path / "index.html"
+    _write_index_diachronica_html(
+        html_path,
+        section_id="Blackfoot",
+        section_body=(
+            "<h2>7.4 Proto-Algonquian to Blackfoot</h2>\n"
+            '<p class="schg" id="Blackfoot-nr">nr → s</p>\n'
+        ),
+        charset=True,
+    )
+    doc = default_index_parser(
+        corrections={"Blackfoot-nr": "nl → s"},
+    ).parse(html_path, source_file="index.html")
+    rule = doc["sections"][0]["rules"][0]
+    assert rule["rule_id"] == "Blackfoot-nr"
+    assert rule["raw"] == "nl → s"
+    assert rule["stages"] == ["nl", "s"]
+
+
+def test_normalize_html_sub_tags_skips_nested_markup():
+    html_text = "<p>x<sub>1<sub>2</sub></sub></p>"
+    assert normalize_html_sub_tags(html_text) == html_text
+    assert normalize_html_sub_tags("<p>x<sub>1</sub></p>") == "<p>x₁</p>"
+
+
+def test_parse_keeps_correspondence_series_indices_literal(tmp_path: Path):
     html_path = tmp_path / "afro.html"
     html_path.write_text(_HTML_FIXTURE, encoding="utf-8")
     doc = default_index_parser().parse(html_path, source_file="afro.html")
     aari = next(sec for sec in doc["sections"] if sec["index"] == "6.1.2.1")
     rule = aari["rules"][0]
-    assert rule["stages"] == ["ʃ z tʃ", "ʃ z tʃ"]
+    assert rule["stages"] == ["s₁ s₂ s₃", "ʃ z tʃ"]
     assert "s₁" in rule["raw"]
-    assert aari["abbreviations"]["s₁"] == "ʃ"
+    assert "abbreviations" not in aari
 
 
 def test_parse_leaves_positional_slots_literal(tmp_path: Path):
@@ -1335,6 +1390,16 @@ def test_load_parser_config_high_only_override(tmp_path: Path):
     assert config.ipa_mapping_confidence == frozenset({"high"})
 
 
+def test_load_parser_config_ignores_non_list_series_expansion_entries(tmp_path: Path):
+    path = tmp_path / "parser_config.yml"
+    path.write_text(
+        "ipa_mapping:\n  confidence: [high]\nseries_expansions:\n  Hₓ: not-a-list\n",
+        encoding="utf-8",
+    )
+    config = load_parser_config(path)
+    assert config.series_expansions == {}
+
+
 def test_load_parser_config_defaults_confidence_to_high_when_missing(tmp_path: Path):
     path = tmp_path / "parser_config.yml"
     path.write_text("ipa_mapping: {}\n", encoding="utf-8")
@@ -1570,9 +1635,9 @@ def test_normalize_ipa_in_field_noop_without_mappings():
     assert normalize_ipa_in_field("", {"Š": "ʃ"}) == ""
 
 
-def test_index_diachronica_parser_accepts_custom_series_mappings():
-    parser = default_index_parser(series_mappings=[])
-    assert parser._series_mappings == []
+def test_index_diachronica_parser_accepts_custom_corrections():
+    parser = default_index_parser(corrections={"Test-id": "a → b"})
+    assert parser._corrections == {"Test-id": "a → b"}
 
 
 def test_paren_inner_is_gloss_classifies_prose_and_phonology():
@@ -1694,7 +1759,6 @@ def test_parse_rule_element_applies_manual_mapping_keeps_raw():
         create_parent=False,
     )
     parser = default_index_parser(
-        series_mappings=[],
         manual_mappings=[
             ManualMapping(from_text=broken, to_text=fixed, reason="bracket"),
         ],
@@ -1717,7 +1781,6 @@ def test_parse_rule_element_manual_mapping_rescues_quoted_prose():
         create_parent=False,
     )
     parser = default_index_parser(
-        series_mappings=[],
         manual_mappings=[
             ManualMapping(from_text=prose, to_text=mapped, reason="nisdos"),
         ],
@@ -1735,13 +1798,11 @@ def test_parse_rule_element_without_manual_row_unchanged():
         create_parent=False,
     )
     with_mappings = default_index_parser(
-        series_mappings=[],
         manual_mappings=[
             ManualMapping(from_text="zzz", to_text="Q", reason=""),
         ],
     ).parse_rule_element(el, source_file="index_diachronica_original.html")
     without = default_index_parser(
-        series_mappings=[],
         manual_mappings=[],
     ).parse_rule_element(el, source_file="index_diachronica_original.html")
     assert with_mappings == without
@@ -1756,7 +1817,7 @@ def test_write_manual_mappings_matched_csv(tmp_path: Path):
             ManualMappingMatch(
                 section_index="17.5.1",
                 section_name="Proto-Indo-European to Old Irish",
-                rule_idx=3,
+                rule_id="Old-Irish-mn",
                 source="index_diachronica_original.html:5509",
                 manual_mapping="m̩ n̩ → am an / _{s,({m,j,w})V}",
             )
@@ -1767,11 +1828,11 @@ def test_write_manual_mappings_matched_csv(tmp_path: Path):
     assert list(df.columns) == [
         "section_index",
         "section_name",
-        "rule_idx",
+        "rule_id",
         "source",
         "manual_mapping",
     ]
-    assert df.iloc[0]["rule_idx"] == "3"
+    assert df.iloc[0]["rule_id"] == "Old-Irish-mn"
     assert "_{s,({m,j,w})V}" in df.iloc[0]["manual_mapping"]
 
 
@@ -1790,7 +1851,6 @@ def test_parse_records_manual_mapping_matches_and_unmatched(tmp_path: Path):
     broken = "m̩ n̩ → am an / _{s,({m,j,w)V}"
     fixed = "m̩ n̩ → am an / _{s,({m,j,w})V}"
     parser = default_index_parser(
-        series_mappings=[],
         manual_mappings=[
             ManualMapping(from_text=broken, to_text=fixed, reason="bracket"),
             ManualMapping(from_text="never-hits", to_text="x", reason="unused"),
@@ -1802,7 +1862,60 @@ def test_parse_records_manual_mapping_matches_and_unmatched(tmp_path: Path):
     match = parser.manual_mapping_matches[0]
     assert match.section_index == "17.5.1"
     assert match.section_name == "Proto-Indo-European to Old Irish"
-    assert match.rule_idx == 0
+    assert match.rule_id == ""
     assert match.manual_mapping == fixed
     unmatched = parser.unmatched_manual_mappings()
     assert [row.from_text for row in unmatched] == ["never-hits"]
+
+
+def test_load_index_diachronica_corrections_missing_file(tmp_path: Path):
+    assert load_index_diachronica_corrections(tmp_path / "missing.yml") == {}
+
+
+def test_load_index_diachronica_corrections_skips_empty_values(tmp_path: Path):
+    path = tmp_path / "corrections.yml"
+    path.write_text("good: a → b\nempty:\n", encoding="utf-8")
+    assert load_index_diachronica_corrections(path) == {"good": "a → b"}
+
+
+def test_load_index_diachronica_corrections_non_dict_yaml(tmp_path: Path):
+    path = tmp_path / "corrections.yml"
+    path.write_text("- not a dict\n", encoding="utf-8")
+    assert load_index_diachronica_corrections(path) == {}
+
+
+def test_unmatched_corrections_reports_unused_rule_ids(tmp_path: Path):
+    html_path = tmp_path / "index.html"
+    _write_index_diachronica_html(
+        html_path,
+        section_id="Test",
+        section_body='<h2>1.0 Test</h2>\n<p class="schg">a → b</p>',
+        charset=True,
+    )
+    parser = default_index_parser(
+        corrections={"unused-id": "x → y", "also-unused": "p → q"},
+    )
+    parser.parse(html_path, source_file="index.html")
+    assert parser.unmatched_corrections() == ["unused-id", "also-unused"]
+
+
+def test_parse_rule_element_sets_rule_id_on_missing_arrow_skip():
+    el = _html_fragment('<p class="schg" id="Test-bad">not a rule</p>')
+    rules = default_index_parser().parse_rule_element(
+        el,
+        source_file="index.html",
+        rule_id="Test-bad",
+    )
+    assert rules[0]["rule_id"] == "Test-bad"
+    assert rules[0]["status"] == "skipped"
+
+
+def test_parse_rule_element_sets_rule_id_on_skipped_paths():
+    el = _html_fragment('<p class="schg" id="Test-prose">"quoted prose only"</p>')
+    rules = default_index_parser().parse_rule_element(
+        el,
+        source_file="index.html",
+        rule_id="Test-prose",
+    )
+    assert rules[0]["rule_id"] == "Test-prose"
+    assert rules[0]["status"] == "skipped"

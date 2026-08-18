@@ -44,7 +44,7 @@ _E2E_VALIDATE_SMOKE: list[tuple[str, str, bool, str]] = [
     ("group-compile", "SN → N[- voice]", True, "1.0"),
     ("sebirwa-atr", "i u VS → j w A / _V[+high +ATR]", True, "30.1.1.1"),
     ("prose-env-medial", "z → ð / medial", True, "1.0"),
-    ("series-mapped", "s₁ → ʃ", True, "6.1.2.1"),
+    ("collective-expanded", "sₓ → ʃ", False, "6.1.2.1"),
     ("positional-literal", "C₁ → C₂", True, "10.2.1"),
     ("held-out-parse", "no arrow here", False, "1.0"),
 ]
@@ -245,15 +245,19 @@ def test_e2e_smoke_pipeline_validate(
     assert rules, case_id
     rows = [
         row
-        for idx, rule in enumerate(rules)
+        for rule in rules
         for row in validate_corpus_rule(
             section,
             rule,
-            idx,
+            str(rule.get("rule_id", "")),
             probe_words=_PROBE,
             group_mappings=asca_group_mappings_dict(),
         )
     ]
+
+    if case_id == "collective-expanded":
+        assert rules[0]["stages"] == ["{s₁,s₂,s₃}", "ʃ"]
+        assert rules[0]["raw"] == "sₓ → ʃ"
 
     if case_id == "held-out-parse":
         assert not rows[0].ok

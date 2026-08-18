@@ -112,7 +112,7 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](./ad
 
 **CSV columns** (`VALIDATION_CSV_COLUMNS` in `corpus_inventory.py`):
 
-`section_index`, `section_name`, `rule_idx`, `alt_idx`, `source`, `ok`, `failure_class`, `reason`, `error_token`, `suggested`, `description`
+`section_index`, `section_name`, `rule_id`, `alt_idx`, `source`, `ok`, `failure_class`, `reason`, `error_token`, `suggested`, `description`
 
 `alt_idx` is the 0-based optional-output alternative index (e.g. `d → {∅,ð}` emits one row per alternative and never the parent's random pick); it is empty for rules without alternatives.
 

@@ -2,7 +2,7 @@
 
 Ticket 12: one invocation emits cleaned YAML, validation CSV, and summary markdown.
 Uses ticket-11 extract-only ingest (``IndexDiachronicaParser``) and ``validate_asca``.
-Series mappings are refreshed separately via ``uv run update_series_mappings``.
+Series mappings are no longer refreshed at regen (retired parse-time CSV; see ticket 74).
 """
 
 import argparse
@@ -109,11 +109,11 @@ def main() -> int:
 
     tables = load_default_ingest_tables()
     parser = IndexDiachronicaParser(
-        series_mappings=tables.series_mappings,
         manual_mappings=tables.manual_mappings,
         parser_config=tables.parser_config,
         feature_mappings=tables.feature_mappings,
         ipa_mappings=tables.ipa_mappings,
+        corrections=tables.corrections,
     )
     doc = parser.parse(args.html)
     write_cleaned_corpus(doc, args.yaml_out)
@@ -124,6 +124,11 @@ def main() -> int:
     for unused in parser.unmatched_manual_mappings():
         print(
             f"WARNING: unmatched manual mapping from={unused.from_text!r}",
+            file=sys.stderr,
+        )
+    for unused_id in parser.unmatched_corrections():
+        print(
+            f"WARNING: unmatched correction rule_id={unused_id!r}",
             file=sys.stderr,
         )
 

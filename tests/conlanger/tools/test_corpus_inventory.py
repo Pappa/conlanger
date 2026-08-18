@@ -118,7 +118,7 @@ def test_validation_row_as_csv_dict():
     row = ValidationRow(
         section_index="1.0",
         section_name="Test",
-        rule_idx=2,
+        rule_id="Test-2",
         source="sample.html:10",
         ok=False,
         failure_class="syntax_other",
@@ -130,7 +130,7 @@ def test_validation_row_as_csv_dict():
     assert row.as_csv_dict() == {
         "section_index": "1.0",
         "section_name": "Test",
-        "rule_idx": 2,
+        "rule_id": "Test-2",
         "alt_idx": "",
         "source": "sample.html:10",
         "ok": False,
@@ -152,7 +152,7 @@ def test_validate_corpus_rule_skipped_quoted_prose_uses_comment():
             "raw": "hhy → gloss",
             "source": "sample.html:9",
         },
-        0,
+        "r0",
         probe_words=None,
     )
     assert row.ok is False
@@ -169,7 +169,7 @@ def test_validate_corpus_rule_skipped_parse_diagnostic():
             "source": "sample.html:1",
             "status": "skipped",
         },
-        0,
+        "r0",
         probe_words=None,
     )
     assert row.ok is False
@@ -185,7 +185,7 @@ def test_validate_corpus_rule_diachronic_compile_format_error(_mock_prs):
     (row,) = validate_corpus_rule(
         _SECTION,
         {"stages": ["a", "b"], "raw": "a → b", "source": "sample.html:8"},
-        0,
+        "r0",
         probe_words=None,
     )
     assert row.ok is False
@@ -197,7 +197,7 @@ def test_validate_corpus_rule_format_error_no_compile_steps():
     (row,) = validate_corpus_rule(
         _SECTION,
         {"stages": ["a"], "raw": "a →", "source": "sample.html:7"},
-        0,
+        "r0",
         probe_words=None,
     )
     assert row.ok is False
@@ -209,7 +209,7 @@ def test_validate_corpus_rule_format_error():
     (row,) = validate_corpus_rule(
         _SECTION,
         {"output": "b", "raw": "→ b", "source": "sample.html:2"},
-        1,
+        "r1",
         probe_words=None,
     )
     assert row.ok is False
@@ -225,7 +225,7 @@ def test_validate_corpus_rule_held_out_comment():
             "raw": "a → b",
             "source": "sample.html:3",
         },
-        2,
+        "r2",
         probe_words=None,
     )
     assert row.ok is True
@@ -237,7 +237,7 @@ def test_validate_corpus_rule_ok(_mock_validate):
     (row,) = validate_corpus_rule(
         _SECTION,
         {"stages": ["a", "b"], "raw": "a → b", "source": "sample.html:4"},
-        0,
+        "r0",
         probe_words=Path("/probe.wsca"),
     )
     assert row.ok is True
@@ -252,7 +252,7 @@ def test_validate_corpus_rule_asca_failure(_mock_validate):
     (row,) = validate_corpus_rule(
         _SECTION,
         {"stages": ["a", "b"], "env": "bad", "raw": "a → b", "source": "s:5"},
-        0,
+        "r0",
         probe_words=None,
     )
     assert row.ok is False
@@ -277,7 +277,7 @@ def test_validate_corpus_rule_unknown_token_fields(_mock_validate):
             "raw": "e → i",
             "source": "s:6",
         },
-        0,
+        "r0",
         probe_words=None,
     )
     assert row.failure_class == "unknown_feature"
@@ -295,7 +295,7 @@ def test_validate_corpus_rule_emits_alternative_rows(_mock_validate):
             "raw": "d → {∅,ð} / V_V",
             "source": "s:1",
         },
-        0,
+        "r0",
         probe_words=None,
     )
     assert [row.alt_idx for row in rows] == [0, 1]
@@ -309,7 +309,7 @@ def test_validate_corpus_rule_non_optional_has_empty_alt_idx(_mock_validate):
     (row,) = validate_corpus_rule(
         _SECTION,
         {"stages": ["a", "b"], "raw": "a → b", "source": "s:1"},
-        0,
+        "r0",
         probe_words=None,
     )
     assert row.alt_idx is None
@@ -318,14 +318,14 @@ def test_validate_corpus_rule_non_optional_has_empty_alt_idx(_mock_validate):
 def test_ok_flip_changelog_rows_keys_on_source_and_alt_idx():
     previous = validation_rows_to_dataframe(
         [
-            ValidationRow("1", "A", 0, "file:1", True, "", "", "", "", "", 0),
-            ValidationRow("1", "A", 0, "file:1", True, "", "", "", "", "", 1),
+            ValidationRow("1", "A", "r0", "file:1", True, "", "", "", "", "", 0),
+            ValidationRow("1", "A", "r0", "file:1", True, "", "", "", "", "", 1),
         ]
     )
     # alt_idx 0 unchanged; alt_idx 1 flips to failing under the same source
     current = validation_rows_to_dataframe(
         [
-            ValidationRow("1", "A", 0, "file:1", True, "", "", "", "", "", 0),
+            ValidationRow("1", "A", "r0", "file:1", True, "", "", "", "", "", 0),
             ValidationRow(
                 "1",
                 "A",
@@ -353,7 +353,7 @@ def test_write_validation_csv(tmp_path: Path):
         ValidationRow(
             section_index="1.0",
             section_name="A",
-            rule_idx=0,
+            rule_id="r0",
             source="s:1",
             ok=True,
             failure_class="",
@@ -365,7 +365,7 @@ def test_write_validation_csv(tmp_path: Path):
         ValidationRow(
             section_index="1.0",
             section_name="A",
-            rule_idx=1,
+            rule_id="r1",
             source="s:2",
             ok=False,
             failure_class="unknown_feature",
@@ -563,9 +563,9 @@ def test_top_error_tokens_unlimited():
 
 def test_section_all_ok_stats():
     rows = [
-        ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", ""),
-        ValidationRow("1", "A", 1, "s:2", True, "", "", "", "", ""),
-        ValidationRow("2", "B", 0, "s:3", True, "", "", "", "", ""),
+        ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
+        ValidationRow("1", "A", "r1", "s:2", True, "", "", "", "", ""),
+        ValidationRow("2", "B", "r0", "s:3", True, "", "", "", "", ""),
         ValidationRow(
             "2", "B", 1, "s:4", False, "syntax_other", "broken-syntax", "", "", ""
         ),
@@ -582,9 +582,9 @@ def test_section_all_ok_stats_empty():
 
 def test_section_all_ok_stats_from_dataframe():
     rows = [
-        ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", ""),
-        ValidationRow("1", "A", 1, "s:2", True, "", "", "", "", ""),
-        ValidationRow("2", "B", 0, "s:3", True, "", "", "", "", ""),
+        ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
+        ValidationRow("1", "A", "r1", "s:2", True, "", "", "", "", ""),
+        ValidationRow("2", "B", "r0", "s:3", True, "", "", "", "", ""),
         ValidationRow(
             "2", "B", 1, "s:4", False, "syntax_other", "broken-syntax", "", "", ""
         ),
@@ -645,7 +645,7 @@ def test_summarize_inventory_common_errors():
 
 def test_summarize_inventory():
     rows = [
-        ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", ""),
+        ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
         ValidationRow(
             "1",
             "A",
@@ -704,7 +704,7 @@ def test_summarize_inventory_empty():
 
 def test_filter_inventory_by_ok_splits_success_and_error():
     rows = [
-        ValidationRow("1", "A", 0, "file:1", True, "", "", "", "", ""),
+        ValidationRow("1", "A", "r0", "file:1", True, "", "", "", "", ""),
         ValidationRow(
             "1",
             "A",
@@ -717,7 +717,7 @@ def test_filter_inventory_by_ok_splits_success_and_error():
             "",
             "err",
         ),
-        ValidationRow("1", "A", 2, "file:3", True, "", "", "", "", ""),
+        ValidationRow("1", "A", "r2", "file:3", True, "", "", "", "", ""),
     ]
     df = validation_rows_to_dataframe(rows)
     success = filter_inventory_by_ok(df, ok=True)
@@ -731,7 +731,7 @@ def test_filter_inventory_by_ok_splits_success_and_error():
 def test_ok_flip_changelog_rows_emits_flips_by_source():
     previous = validation_rows_to_dataframe(
         [
-            ValidationRow("1", "A", 0, "file:1", True, "", "", "", "", ""),
+            ValidationRow("1", "A", "r0", "file:1", True, "", "", "", "", ""),
             ValidationRow(
                 "1",
                 "A",
@@ -744,16 +744,16 @@ def test_ok_flip_changelog_rows_emits_flips_by_source():
                 "",
                 "err",
             ),
-            ValidationRow("1", "A", 2, "file:3", True, "", "", "", "", ""),
+            ValidationRow("1", "A", "r2", "file:3", True, "", "", "", "", ""),
         ]
     )
-    # rule_idx renumbered; file:3 ok unchanged; file:1 and file:2 flip
+    # rule_id changed; file:3 ok unchanged; file:1 and file:2 flip
     current = validation_rows_to_dataframe(
         [
             ValidationRow(
                 "1",
                 "A",
-                5,
+                "r5",
                 "file:1",
                 False,
                 "syntax_other",
@@ -762,15 +762,15 @@ def test_ok_flip_changelog_rows_emits_flips_by_source():
                 "",
                 "err",
             ),
-            ValidationRow("1", "A", 6, "file:2", True, "", "", "", "", ""),
-            ValidationRow("1", "A", 7, "file:3", True, "", "", "", "", ""),
+            ValidationRow("1", "A", "r6", "file:2", True, "", "", "", "", ""),
+            ValidationRow("1", "A", "r7", "file:3", True, "", "", "", "", ""),
         ]
     )
     flips = ok_flip_changelog_rows(previous, current, timestamp="2026-08-06T12:00:00Z")
     assert list(flips.columns) == CHANGELOG_CSV_COLUMNS
     assert list(flips["source"]) == ["file:1", "file:2"]
     assert list(flips["ok"]) == [False, True]
-    assert list(flips["rule_idx"]) == [5, 6]
+    assert list(flips["rule_id"]) == ["r5", "r6"]
     assert list(flips["timestamp"]) == [
         "2026-08-06T12:00:00Z",
         "2026-08-06T12:00:00Z",
@@ -780,7 +780,7 @@ def test_ok_flip_changelog_rows_emits_flips_by_source():
 def test_ok_flip_changelog_rows_tolerates_previous_without_alt_idx():
     # Inventories written before ticket 66 have no ``alt_idx`` column.
     previous = validation_rows_to_dataframe(
-        [ValidationRow("1", "A", 0, "file:1", True, "", "", "", "", "")]
+        [ValidationRow("1", "A", "r0", "file:1", True, "", "", "", "", "")]
     ).drop(columns=["alt_idx"])
     current = validation_rows_to_dataframe(
         [
@@ -807,7 +807,7 @@ def test_ok_flip_changelog_rows_tolerates_previous_without_alt_idx():
 def test_ok_flip_changelog_rows_empty_when_ok_unchanged():
     df = validation_rows_to_dataframe(
         [
-            ValidationRow("1", "A", 0, "file:1", True, "", "", "", "", ""),
+            ValidationRow("1", "A", "r0", "file:1", True, "", "", "", "", ""),
             ValidationRow(
                 "1",
                 "A",
@@ -829,7 +829,7 @@ def test_ok_flip_changelog_rows_empty_when_ok_unchanged():
 
 def test_ok_flip_changelog_rows_empty_without_previous_inventory():
     current = validation_rows_to_dataframe(
-        [ValidationRow("1", "A", 0, "file:1", True, "", "", "", "", "")]
+        [ValidationRow("1", "A", "r0", "file:1", True, "", "", "", "", "")]
     )
     flips = ok_flip_changelog_rows(None, current, timestamp="2026-08-06T12:00:00Z")
     assert flips.empty
@@ -844,7 +844,7 @@ def test_load_inventory_csv_reads_existing_file(tmp_path: Path):
     path = tmp_path / "inventory.csv"
     write_validation_csv(
         [
-            ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", ""),
+            ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
         ],
         path,
     )
@@ -856,7 +856,7 @@ def test_load_inventory_csv_reads_existing_file(tmp_path: Path):
 def test_write_filtered_inventory_csvs(tmp_path: Path):
     df = validation_rows_to_dataframe(
         [
-            ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", ""),
+            ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
             ValidationRow(
                 "1",
                 "A",
@@ -882,7 +882,7 @@ def test_append_ok_flip_changelog_writes_and_appends(tmp_path: Path):
     flips = ok_flip_changelog_rows(
         None,
         validation_rows_to_dataframe(
-            [ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", "")]
+            [ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", "")]
         ),
         timestamp="2026-08-06T12:00:00Z",
     )
@@ -891,7 +891,7 @@ def test_append_ok_flip_changelog_writes_and_appends(tmp_path: Path):
 
     flips = ok_flip_changelog_rows(
         validation_rows_to_dataframe(
-            [ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", "")]
+            [ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", "")]
         ),
         validation_rows_to_dataframe(
             [

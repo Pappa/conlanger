@@ -9,7 +9,6 @@ from pathlib import Path
 from typing import Any
 
 import yaml
-from lxml import html
 
 from conlanger.utils.file_io import (
     DEFAULT_SECTION_ABBREVIATIONS_YML,
@@ -20,6 +19,7 @@ from conlanger.utils.file_io import (
 from conlanger.utils.parsing import (
     extract_rule_parts,
     extract_text_with_subs,
+    load_html_document,
     parse_section_heading,
     strip_whitespace,
     to_subscript,
@@ -178,7 +178,9 @@ def _parse_prose_abbreviation_line(line: str) -> str | None:
         return None
     if in_scope_series_token(left):
         return left
-    in_scope = [tok for tok in find_subscript_tokens(left) if in_scope_series_token(tok)]
+    in_scope = [
+        tok for tok in find_subscript_tokens(left) if in_scope_series_token(tok)
+    ]
     if len(in_scope) != 1:
         return None
     return in_scope[0]
@@ -211,9 +213,7 @@ def extract_section_abbreviations_from_html(
     html_path: Path,
 ) -> list[dict[str, Any]]:
     """Extract section ``abbreviations`` from non-``schg`` prose and tables in HTML sections."""
-    parser = html.HTMLParser(encoding="utf-8")
-    doc = html.parse(str(html_path), parser=parser)
-    root = doc.getroot()
+    root = load_html_document(html_path)
     sections_out: list[dict[str, Any]] = []
 
     for sec in root.xpath("//section[@id]"):
@@ -628,9 +628,7 @@ def extract_series_mappings_from_html(
 ) -> list[SeriesMapping]:
     """Survey HTML and extract section-scoped correspondence-series mappings."""
     source_file = source_file or html_path.name
-    parser = html.HTMLParser(encoding="utf-8")
-    doc = html.parse(str(html_path), parser=parser)
-    root = doc.getroot()
+    root = load_html_document(html_path)
     rows: list[SeriesMapping] = []
 
     for sec in root.xpath("//section[@id]"):
@@ -726,9 +724,7 @@ def survey_subscript_tokens_in_html(
 ) -> dict[str, set[str]]:
     """Return correspondence-series tokens used in rules, keyed by section index."""
     source_file = source_file or html_path.name
-    parser = html.HTMLParser(encoding="utf-8")
-    doc = html.parse(str(html_path), parser=parser)
-    root = doc.getroot()
+    root = load_html_document(html_path)
     by_section: dict[str, set[str]] = defaultdict(set)
 
     for sec in root.xpath("//section[@id]"):
@@ -755,9 +751,7 @@ def survey_all_subscript_tokens_in_html(
 ) -> dict[str, set[str]]:
     """Return all subscript-bearing tokens in rule fields, keyed by section index."""
     source_file = source_file or html_path.name
-    parser = html.HTMLParser(encoding="utf-8")
-    doc = html.parse(str(html_path), parser=parser)
-    root = doc.getroot()
+    root = load_html_document(html_path)
     by_section: dict[str, set[str]] = defaultdict(set)
 
     for sec in root.xpath("//section[@id]"):
@@ -782,9 +776,7 @@ def survey_html_defined_series(
 ) -> dict[str, set[str]]:
     """Return in-scope series tokens declared in section citations or inventory tables."""
     source_file = source_file or html_path.name
-    parser = html.HTMLParser(encoding="utf-8")
-    doc = html.parse(str(html_path), parser=parser)
-    root = doc.getroot()
+    root = load_html_document(html_path)
     by_section: dict[str, set[str]] = defaultdict(set)
 
     for sec in root.xpath("//section[@id]"):
@@ -1081,10 +1073,9 @@ def _section_sort_key(section_index: str) -> tuple:
 
 
 def _section_names_from_html(html_path: Path) -> dict[str, str]:
-    parser = html.HTMLParser(encoding="utf-8")
-    doc = html.parse(str(html_path), parser=parser)
+    root = load_html_document(html_path)
     names: dict[str, str] = {}
-    for sec in doc.getroot().xpath("//section[@id]"):
+    for sec in root.xpath("//section[@id]"):
         h2s = sec.xpath("./h2")
         if not h2s:
             continue

@@ -28,6 +28,9 @@ DEFAULT_SERIES_MAPPINGS_CSV = _DATA_ROOT / "asca" / "series_mappings.csv"
 DEFAULT_SECTION_ABBREVIATIONS_YML = (
     _DATA_ROOT / "diachronica" / "section_abbreviations.yml"
 )
+DEFAULT_INDEX_DIACHRONICA_CORRECTIONS = (
+    _DATA_ROOT / "diachronica" / "index_diachronica_corrections.yml"
+)
 DEFAULT_PARSER_CONFIG_PATH = _DATA_ROOT / "parser_config.yml"
 DEFAULT_IPA_MAPPING_CONFIDENCE = ["high"]
 
@@ -38,7 +41,7 @@ _SUPPORTED_FEATURE_MAPPING_KINDS = frozenset(
 MANUAL_MAPPINGS_MATCHED_CSV_COLUMNS = [
     "section_index",
     "section_name",
-    "rule_idx",
+    "rule_id",
     "source",
     "manual_mapping",
 ]
@@ -128,7 +131,32 @@ def load_parser_config(path: Path | None = None) -> ParserConfig:
     confidence = raw.get("ipa_mapping", {}).get(
         "confidence", DEFAULT_IPA_MAPPING_CONFIDENCE
     )
-    return ParserConfig(ipa_mapping_confidence=frozenset(confidence))
+    raw_expansions = raw.get("series_expansions") or {}
+    series_expansions: dict[str, tuple[str, ...]] = {}
+    for token, members in raw_expansions.items():
+        if isinstance(members, list):
+            series_expansions[str(token)] = tuple(str(m) for m in members)
+    return ParserConfig(
+        ipa_mapping_confidence=frozenset(confidence),
+        series_expansions=series_expansions,
+    )
+
+
+def load_index_diachronica_corrections(
+    path: Path | None = None,
+) -> dict[str, str]:
+    """Load flat rule-id → Unicode line corrections overlay."""
+    yml_path = DEFAULT_INDEX_DIACHRONICA_CORRECTIONS if path is None else Path(path)
+    if not yml_path.is_file():
+        return {}
+    raw = _load_yaml(yml_path)
+    if not isinstance(raw, dict):
+        return {}
+    return {
+        str(key): str(value)
+        for key, value in raw.items()
+        if value is not None and str(value).strip()
+    }
 
 
 def load_ipa_mappings(path: Path | None = None) -> list[IpaMapping]:
@@ -200,7 +228,7 @@ def write_manual_mappings_matched_csv(
         {
             "section_index": match.section_index,
             "section_name": match.section_name,
-            "rule_idx": str(match.rule_idx),
+            "rule_id": match.rule_id,
             "source": match.source,
             "manual_mapping": match.manual_mapping,
         }
@@ -265,27 +293,27 @@ def write_series_mappings_csv(rows: list[SeriesMapping], path: Path) -> None:
 class DefaultIngestTables:
     """Package-default tables for Index Diachronica ingest."""
 
-    series_mappings: list[SeriesMapping]
     manual_mappings: list[ManualMapping]
     parser_config: ParserConfig
     feature_mappings: dict[str, FeatureMapping]
     ipa_mappings: dict[str, str]
+    corrections: dict[str, str]
 
 
 def load_default_ingest_tables(
     *,
-    series_mappings_path: Path | None = None,
     manual_mappings_path: Path | None = None,
     parser_config_path: Path | None = None,
     feature_mappings_path: Path | None = None,
     ipa_mappings_path: Path | None = None,
+    corrections_path: Path | None = None,
 ) -> DefaultIngestTables:
     """Load all parse-time mapping tables from package defaults (or overrides)."""
     parser_config = load_parser_config(parser_config_path)
     return DefaultIngestTables(
-        series_mappings=load_series_mappings(series_mappings_path),
         manual_mappings=load_manual_mappings(manual_mappings_path),
         parser_config=parser_config,
         feature_mappings=feature_mappings_dict(feature_mappings_path),
         ipa_mappings=ipa_mappings_dict(ipa_mappings_path, config=parser_config),
+        corrections=load_index_diachronica_corrections(corrections_path),
     )
