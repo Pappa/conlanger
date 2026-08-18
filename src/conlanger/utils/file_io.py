@@ -1,14 +1,16 @@
-"""CSV/YAML I/O for mapping tables and parser config (no apply/classify logic)."""
+"""CSV/YAML I/O for mapping tables, parser config, and compiler config."""
 
 from __future__ import annotations
 
 from dataclasses import dataclass
+from functools import cache
 from pathlib import Path
 
 import pandas as pd
 import yaml
 
 from conlanger.utils.mappings import (
+    CompilerConfig,
     FeatureMapping,
     GroupMapping,
     IpaMapping,
@@ -32,6 +34,7 @@ DEFAULT_INDEX_DIACHRONICA_CORRECTIONS = (
     _DATA_ROOT / "diachronica" / "index_diachronica_corrections.yml"
 )
 DEFAULT_PARSER_CONFIG_PATH = _DATA_ROOT / "parser_config.yml"
+DEFAULT_COMPILER_CONFIG_PATH = _DATA_ROOT / "compiler_config.yml"
 DEFAULT_IPA_MAPPING_CONFIDENCE = ["high"]
 
 _SUPPORTED_FEATURE_MAPPING_KINDS = frozenset(
@@ -139,6 +142,44 @@ def load_parser_config(path: Path | None = None) -> ParserConfig:
     return ParserConfig(
         ipa_mappings_confidence=frozenset(confidence),
         series_expansions=series_expansions,
+    )
+
+
+def load_compiler_config(
+    path: Path | None = None,
+    *,
+    overlay_path: Path | None = None,
+) -> CompilerConfig:
+    """Load compile-time settings from YAML.
+
+    ``overlay_path`` is accepted for a future user overlay; merge is deferred
+    (package file wins; grill 73 Q13).
+    """
+    del overlay_path
+    config_path = DEFAULT_COMPILER_CONFIG_PATH if path is None else Path(path)
+    return _load_compiler_config_file(str(config_path.resolve()))
+
+
+@cache
+def _load_compiler_config_file(config_path: str) -> CompilerConfig:
+    raw = _load_yaml(Path(config_path))
+    series = raw.get("series_mappings") or {}
+    raw_global = series.get("global") or {}
+    global_map = {str(token): str(target) for token, target in raw_global.items()}
+    sections: dict[str, dict[str, str]] = {}
+    for entry in series.get("sections") or []:
+        if not isinstance(entry, dict) or entry.get("section") is None:
+            continue
+        section_key = str(entry["section"])
+        token_map = {
+            str(token): str(target)
+            for token, target in entry.items()
+            if token != "section"
+        }
+        sections[section_key] = token_map
+    return CompilerConfig(
+        series_mappings_global=global_map,
+        series_mappings_sections=sections,
     )
 
 

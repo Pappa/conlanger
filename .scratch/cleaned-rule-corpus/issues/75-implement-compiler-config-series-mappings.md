@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: 74
 
 # Implement compiler_config.yml series mappings at compile
@@ -58,13 +58,21 @@ Seed `global` PIE laryngeals; section overrides only where Index prose requires.
 
 ## Acceptance criteria
 
-- [ ] `load_compiler_config()` + hierarchical lookup tests
-- [ ] Compile pipeline applies mappings; laryngeals from YAML not Python
-- [ ] Inventory before/after in **Answer**
-- [ ] Tests green; no runtime dependency on `series_mappings.csv`
+- [x] `load_compiler_config()` + hierarchical lookup tests
+- [x] Compile pipeline applies mappings; laryngeals from YAML not Python
+- [x] Inventory before/after in **Answer**
+- [x] Tests green; no runtime dependency on `series_mappings.csv`
 
 ## References
 
 - [Grill 73 answer](73-grill-series-mapping-config-sot.md)
 - ADR-0004 (amended 2026-08-18)
 - `src/conlanger/tools/compile/asca/pipeline.py`
+
+## Answer
+
+Compile-time **series mappings** live in `data/compiler_config.yml`. `load_compiler_config()` loads `global` + per-section rows; `CompilerConfig.lookup_series_mapping` uses longest-prefix section match (section beats `global`). Overlay path is accepted and ignored (merge deferred).
+
+`DiachronicSeries` / `compile_asca_rule_string` apply mappings on the joined rule string **before** `expand_index_subscript_references`. Seed `global` rows replace `PIE_LARYNGEAL_ALIASES` (`h₁→h`, `h₂→x`, `h₃→ɣʷ`, including compounds like `eh₂` → `ex`). Unmapped indices stay literal. No section override rows seeded (Index prose not yet authored). `series_mappings.csv` is unused at compile/parse (legacy extract CLI remains gated).
+
+**Inventory:** before **7956 / 9640 ok (82.5%)**, 270 / 714 sections all-OK → after **7956 / 9640 ok**, **0 ok-flips**. Fail-class counts on already-failing rows shifted slightly (earlier mapping can change which chain step ASCA blames).

@@ -5,6 +5,8 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 
+from conlanger.utils.series import section_index_prefixes
+
 _CORPUS_CONTEXT_FIELD_KEYS = ("env", "exception")
 
 
@@ -65,6 +67,29 @@ class FeatureMapping:
 class ParserConfig:
     ipa_mappings_confidence: frozenset[str]
     series_expansions: dict[str, tuple[str, ...]] = field(default_factory=dict)
+
+
+@dataclass(frozen=True)
+class CompilerConfig:
+    """Compile-time settings from ``compiler_config.yml`` (ticket 75)."""
+
+    series_mappings_global: dict[str, str] = field(default_factory=dict)
+    series_mappings_sections: dict[str, dict[str, str]] = field(default_factory=dict)
+
+    def resolved_series_mappings(self, section_index: str) -> dict[str, str]:
+        """Global token map with longest-prefix section rows overlaid."""
+        result = dict(self.series_mappings_global)
+        if not section_index:
+            return result
+        for prefix in reversed(section_index_prefixes(section_index)):
+            section_map = self.series_mappings_sections.get(prefix)
+            if section_map:
+                result.update(section_map)
+        return result
+
+    def lookup_series_mapping(self, section_index: str, token: str) -> str | None:
+        """Return the target for ``token`` via section longest-prefix, else ``global``."""
+        return self.resolved_series_mappings(section_index).get(token)
 
 
 def normalize_feature_matrices_in_field(
