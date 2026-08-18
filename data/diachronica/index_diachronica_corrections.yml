@@ -15,3 +15,7 @@ rules:
       id: Old-Irish-m̩-n̩
       content: "m̩ n̩ → am an / _{s,({m,j,w})V}"
       reason: "Bracket fix for env set with optional grouping"
+  - rule:
+      id: Spanish-—-Vdz
+      content: "— Vdz → ∅ / {nts,ndz,rdz}_"
+      reason: "Bracket fix - not confirmed from original source"

@@ -12,13 +12,13 @@
 
 | count | failure_class |
 |------:|---------------|
-| 489 | `syntax_other` |
+| 494 | `syntax_other` |
 | 348 | `unknown_character` |
-| 276 | `expected_underscore` |
+| 275 | `expected_underscore` |
 | 128 | `runtime_other` |
-| 110 | `unknown_grouping` |
+| 111 | `unknown_grouping` |
 | 92 | `unknown_feature` |
-| 81 | `prose_or_expected_arrow` |
+| 76 | `prose_or_expected_arrow` |
 | 45 | `nested_brackets` |
 | 37 | `expected_number` |
 | 32 | `diacritic_prereq` |
@@ -79,14 +79,14 @@
 | 14 | `E` |
 | 10 | `B` |
 | 9 | `K` |
-| 7 | `T` |
 | 7 | `M` |
+| 7 | `T` |
 | 6 | `X` |
 | 5 | `H` |
-| 3 | `Y` |
+| 3 | `A` |
 | 3 | `D` |
+| 3 | `Y` |
 | 2 | `I` |
-| 2 | `A` |
 | 1 | `W` |
 | 1 | `Q` |
 

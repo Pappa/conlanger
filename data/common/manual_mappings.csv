@@ -1,5 +1,4 @@
 from,to,use_regex,reason
-"m̩ n̩ → am an / _{s,({m,j,w)V}","m̩ n̩ → am an / _{s,({m,j,w})V}",False,bracket correction
 "“The PIE rules for the voicing of s → z, as in [nizdos] for *nisdos, are assumed to apply”","s → z / C[+voice]_",False,"*nisdos > nizdos"
 "“In contrast, Romanian exhibits",";; “In contrast, Romanian exhibits",False,"comment"
 ew (→ øj) → yj,ew → øj → yj,False,chaining
@@ -11,19 +10,18 @@ w (→ v?) → f,w → v → f,False,chaining
 a → ɒ? (→ o),a → ɒ → o,False,chaining
 nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 "ɣ → q (more likely, *ɢ → q instead of → ɣ)","ɢ → q",False,correction
-"{nts,ndz,rdz_","{nts,ndz,rdz}_",False,correction
-" / at word boundaries"," / #_, _#",False,replacing prose
-" ! at word boundaries"," ! #_, _#",False,replacing prose
-" / unstressed"," / [-stress]",False,replacing prose
-" / stressed"," / [+stress]",False,replacing prose
-" / adjacent to short u"," / u[-long]_, _u[-long]",False,replacing prose
-" / unless adjacent to another consonant"," / ! C_,_C",False,replacing prose
-" / adjacent to {"," / _,{",False,replacing prose
-" ! adjacent to {"," ! _,{",False,replacing prose
-" / adjacent to a vowel"," / V_, _V",False,replacing prose
+" / at word boundaries"," / #_, _#",False,replace prose
+" ! at word boundaries"," ! #_, _#",False,replace prose
+" / unstressed"," / [-stress]",False,replace prose
+" / stressed"," / [+stress]",False,replace prose
+" / adjacent to short u"," / u[-long]_, _u[-long]",False,replace prose
+" / unless adjacent to another consonant"," / ! C_,_C",False,replace prose
+" / adjacent to {"," / _,{",False,replace prose
+" ! adjacent to {"," ! _,{",False,replace prose
+" / adjacent to a vowel"," / V_, _V",False,replace prose
 " / in Mentasta Ahtna"," / sporadic ;; in Mentasta Ahtna",False,replace prose
 " / in certain situations"," / sporadic ;; in certain situations",False,replace prose
-" / in some dialects"," / sporadic ;; in some dialects",False,replace proseq
+" / in some dialects"," / sporadic ;; in some dialects",False,replace prose
 " / in some northern"," / sporadic ;; in some northern",False,replace prose
 " / in northern dialects"," / sporadic ;; in northern dialects",False,replace prose
 " / in southern regions"," / sporadic ;; in southern regions",False,replace prose
@@ -40,6 +38,6 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 " ! in "," ! ",False,replace prose
 "There seems to ahve been some stuff going on"," ;; There seems to ahve been some stuff going on",False,comment
 " (“[a]rchaic relic”)"," ;; (“[a]rchaic relic”)",False,comment
-" / when stem-final"," / _%# ;; when stem-final",False,"replacing prose - this is an approximation and may be wrong"
-" / when-stem final"," / _%# ;; when-stem final",False,"replacing prose - this is an approximation and may be wrong"
+" / when stem-final"," / _%# ;; when stem-final",False,"replace prose - this is an approximation and may be wrong"
+" / when-stem final"," / _%# ;; when-stem final",False,"replace prose - this is an approximation and may be wrong"
 " (→ yː sometimes)"," → yː ;; (sometimes)",False,workaround - we can't handle different envs for chained rules
