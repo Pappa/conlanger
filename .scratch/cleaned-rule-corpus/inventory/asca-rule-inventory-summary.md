@@ -14,11 +14,11 @@
 |------:|---------------|
 | 507 | `syntax_other` |
 | 347 | `unknown_character` |
-| 275 | `expected_underscore` |
+| 276 | `expected_underscore` |
 | 128 | `runtime_other` |
 | 111 | `unknown_grouping` |
 | 92 | `unknown_feature` |
-| 78 | `prose_or_expected_arrow` |
+| 77 | `prose_or_expected_arrow` |
 | 45 | `nested_brackets` |
 | 36 | `expected_number` |
 | 32 | `diacritic_prereq` |
