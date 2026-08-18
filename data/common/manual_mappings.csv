@@ -43,3 +43,8 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 " (→ yː sometimes)"," → yː / sporadic ; (→ yː sometimes)",False,workaround - we can't handle different envs for chained rules
 " (not sure what "," ; (not sure what ",False,comment
 " “(before a prefix; "," ; “(before a prefix; ",False,comment
+" (note that PAn might "," ; (note that PAn might ",False,comment
+" (again, "," ; (again, ",False,comment
+" (Blevins "," ; (Blevins ",False,comment
+" (first change marked "," ; (first change marked ",False,comment
+" (?; included here based on ","; ; (?; included here based on ",False,comment

@@ -6,3 +6,7 @@ series_expansions:
   Hₓ: [h₁, h₂, h₃]
   hₓ: [h₁, h₂, h₃]
   sₓ: [s₁, s₂, s₃]
+skip_sections:
+  - section:
+    id: "37.1.2.4.2"
+    reason: "Index Diachronica does not represent the source material correctly: https://mspace.lib.umanitoba.ca/items/e0467e7f-1d1a-464f-b07f-8fefe8ce0225 p. 237"

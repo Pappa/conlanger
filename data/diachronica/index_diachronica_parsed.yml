@@ -8284,11 +8284,11 @@ sections:
     raw: iw ow ej → i o e / _#
     source: index_diachronica_original.html:2557
     rule_id: Sasak-iw-ow-ej
-  - stages:
+  - comment: (again, might’ve been a retention?); (h); (q)
+    stages:
     - V
     - V
     env: _#
-    comment: (h); (q); (again, might’ve been a retention?)
     raw: V(h) → V(q) / _# (again, might’ve been a retention?)
     source: index_diachronica_original.html:2559
     rule_id: Sasak-Vh
@@ -8361,11 +8361,11 @@ sections:
     source: index_diachronica_original.html:2571
     sporadic: true
     rule_id: Sumbawan-u-i
-  - stages:
+  - comment: (again, might’ve been a retention?); (h); (q)
+    stages:
     - V
     - V
     env: _#
-    comment: (h); (q); (again, might’ve been a retention?)
     raw: V(h) → V(q) / _# (again, might’ve been a retention?)
     source: index_diachronica_original.html:2572
     rule_id: Sumbawan-Vh
@@ -14717,19 +14717,19 @@ sections:
     raw: q → k
     source: index_diachronica_original.html:3780
     rule_id: Proto-Ongan-q_2
-  - comment: may be a change from POn-PAn, if it existed)
+  - comment: (note that PAn might have had *qʷ *kʷ → q {k,w} instead; may be a change
+      from POn-PAn, if it existed)
     stages:
     - '{qʷ,ku,qu}'
-    - kʷ (note that PAn might have had *qʷ *kʷ
-    - q {k,w} instead
+    - kʷ
     raw: '{qʷ,ku,qu} → kʷ (note that PAn might have had *qʷ *kʷ → q {k,w} instead;
       may be a change from POn-PAn, if it existed)'
     source: index_diachronica_original.html:3781
     rule_id: Proto-Ongan-qʷ,ku,qu-qʷ-kʷ
-  - stages:
+  - comment: (again, possibly a change from POn-PAn, if it existed)
+    stages:
     - '{c,*C,s,*S}'
     - c
-    comment: (again, possibly a change from POn-PAn, if it existed)
     raw: '{c,*C,s,*S} → c (again, possibly a change from POn-PAn, if it existed)'
     source: index_diachronica_original.html:3782
     rule_id: Proto-Ongan-c,*C,s,*S
@@ -14752,37 +14752,37 @@ sections:
     raw: ɟ ɡ *N *R → {ɟ,j} {ɟ,ɡ} {l,j} {l,r}
     source: index_diachronica_original.html:3785
     rule_id: Proto-Ongan-ɟ-ɡ-*N-*R
-  - stages:
+  - comment: (again, possibly evidence of a change from POn-PAn, if it existed)
+    stages:
     - z
     - c
-    comment: (again, possibly evidence of a change from POn-PAn, if it existed)
     raw: z → c (again, possibly evidence of a change from POn-PAn, if it existed)
     source: index_diachronica_original.html:3786
     rule_id: Proto-Ongan-z
-  - stages:
+  - comment: (Blevins has marked what apparently is *ɟ but I’m assuming it’s an error)
+    stages:
     - h
     - '{h,j,∅}'
-    comment: (Blevins has marked what apparently is *ɟ but I’m assuming it’s an error)
     raw: h → {h,j,∅} (Blevins has marked what apparently is *ɟ but I’m assuming it’s
       an error)
     source: index_diachronica_original.html:3787
     rule_id: Proto-Ongan-h
-  - comment: included here based on a comment earlier in the paper, but not listed
-      on the correspondence list)
+  - comment: ; (?; included here based on a comment earlier in the paper, but not
+      listed on the correspondence list)
     stages:
     - e
     - ə
     env: _N when unstressed
-    exception: Ḱ_ (?
+    exception: Ḱ_
     raw: e → ə / _N when unstressed ! Ḱ_ (?; included here based on a comment earlier
       in the paper, but not listed on the correspondence list)
     source: index_diachronica_original.html:3788
     rule_id: Proto-Ongan-e
-  - stages:
+  - comment: (first change marked “in progress?”)
+    stages:
     - '{m,ɲ} n'
     - '{ɲ,∅} {ŋ,∅}'
     env: _#
-    comment: “in progress?”; (first change marked)
     raw: '{m,ɲ} n → {ɲ,∅} {ŋ,∅} / _# (first change marked “in progress?”)'
     source: index_diachronica_original.html:3789
     rule_id: Proto-Ongan-m,ɲ-n
@@ -15572,11 +15572,11 @@ sections:
     raw: kː ɡ → ɣ kː
     source: index_diachronica_original.html:3991
     rule_id: Lezghi-kː-ɡ
-  - stages:
+  - comment: (again, probably a difference in the development of *ɢ than this strict
+      sound change)
+    stages:
     - ɣ
     - '{qː,ɣ}'
-    comment: (again, probably a difference in the development of *ɢ than this strict
-      sound change)
     raw: ɣ → {qː,ɣ} (again, probably a difference in the development of *ɢ than this
       strict sound change)
     source: index_diachronica_original.html:3992
@@ -37218,11 +37218,11 @@ sections:
     raw: — V → ∅ / _r (seemed to be an intermittent change)
     source: index_diachronica_original.html:7771
     rule_id: Old-Provençal-—-V_2
-  - stages:
+  - comment: (again, /a/ seemed to resist this change, which was itself generally
+      blocked by analogy)
+    stages:
     - V
     - ∅
-    comment: (again, /a/ seemed to resist this change, which was itself generally
-      blocked by analogy)
     raw: — V → ∅ (again, /a/ seemed to resist this change, which was itself generally
       blocked by analogy)
     source: index_diachronica_original.html:7774
@@ -59865,8 +59865,8 @@ sections:
   - stages:
     - r
     - j
-    env: C[+place](h)_{o(ː),õ(ː)
-    raw: r → j / C[-glottal](h)_{o(ː),õ(ː)
+    env: C[+place](h)_{o(ː),õ(ː)}
+    raw: r → j / C[-glottal](h)_{o(ː),õ(ː)}
     source: index_diachronica_original.html:12648
     rule_id: Seneca-r_3
   - stages:
@@ -59926,8 +59926,8 @@ sections:
   - stages:
     - ẽ(ː)
     - e(ː)
-    env: _{e(ː),o(ː)
-    raw: ẽ(ː) → e(ː) / _{e(ː),o(ː)
+    env: _{e(ː),o(ː)}
+    raw: ẽ(ː) → e(ː) / _{e(ː),o(ː)}
     source: index_diachronica_original.html:12657
     rule_id: Seneca-ẽː
   - stages:
