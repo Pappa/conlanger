@@ -51,6 +51,7 @@ section_index,section_name,rule_id,source,manual_mapping
 10.7,Proto-Austronesian to Proto-Rukai,Proto-Rukai-S1-s-d2-*C,index_diachronica_original.html:3851, ; (not sure what 
 11.5.2,Proto-Lezgic to Archi,"Archi-ɢ,ɣ",index_diachronica_original.html:3981,"ɣ → q ; (more likely, *ɢ → q instead of → ɣ)"
 11.5.3,Proto-Lezgic to Lezghi,Lezghi-ɣ,index_diachronica_original.html:3992," ; (again, "
+14.1,Proto-Elamo-Dravidian to Proto-Dravidian,Proto-Dravidian-k-ʃk,index_diachronica_original.html:4497,ʃk → kː / V_V ; k ʃk → k* kː / V_V 
 14.3.1,Standard Tamil to Colloquial Tamil,Colloquial-Tamil-i-u_2,index_diachronica_original.html:4553, ! 
 15.2.1,Proto-Eskimo to Barrow Iñupiaq,Barrow-Iñupiaq-ə,index_diachronica_original.html:4627," / #_, _#"
 15.2.4,Proto-Eskimo to Wales Iñupiaq,Wales-Iñupiaq-ɣ,index_diachronica_original.html:4693, / sporadic ; “in some positions”
@@ -137,6 +138,7 @@ section_index,section_name,rule_id,source,manual_mapping
 17.11.1,Proto-Slavic to Polish,Polish-ɔ̃_2,index_diachronica_original.html:7088, sporadic ; (in some regions
 17.11.1,Proto-Slavic to Polish,Polish-trk,index_diachronica_original.html:7144, / 
 17.12.1.1.1,Classical Latin vs. Vulgar Latin,"Classical-Latin-vs.-Vulgar-Latin-uː-ɔ,oː-eː-iː",index_diachronica_original.html:7338,"; “In contrast, Romanian exhibits"
+17.12.1.1.2,Latin to Catalan,Catalan-u,index_diachronica_original.html:7350, / sporadic ; (“when in unstressed penult
 17.12.1.1.2,Latin to Catalan,Catalan-iː,index_diachronica_original.html:7351, / _[+stress]
 17.12.1.1.2,Latin to Catalan,"Catalan-i,eː-e",index_diachronica_original.html:7353, / _[+stress]
 17.12.1.1.2,Latin to Catalan,Catalan-uː,index_diachronica_original.html:7356, / _[+stress]
@@ -164,7 +166,9 @@ section_index,section_name,rule_id,source,manual_mapping
 17.12.1.1.5,Latin to Portuguese,Portuguese-V+nas_2,index_diachronica_original.html:7660, / 
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-ɔ_4,index_diachronica_original.html:7746, sporadic ; (in southern dialects
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-V_3,index_diachronica_original.html:7774," ; (again, "
+17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-ɡ_6,index_diachronica_original.html:7872, / sporadic ; “[b]etween the last two vowels of a proparoxytone”
 17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,Rhaeto-Romance-a,index_diachronica_original.html:7992, / _[+stress]
+17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,Rhaeto-Romance-uː,index_diachronica_original.html:7993, → i / sporadic ; (→ i in most descendants
 17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,Rhaeto-Romance-a-V,index_diachronica_original.html:7994, / 
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-V_5,index_diachronica_original.html:8163, / _[-stress]
 18.3.2,Proto-Tuparí to Mekens,Mekens-k,index_diachronica_original.html:8424, / 

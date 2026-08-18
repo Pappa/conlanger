@@ -34,6 +34,8 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 " ! in Ware Sekani"," sporadic ; not in Ware Sekani",False,replace prose
 " ! in Queensland"," sporadic ; not in Queensland",False,replace prose
 " / depending on the environment"," / sporadic ; depending on the environment",False,replace prose
+" / (“when in unstressed penult"," / sporadic ; (“when in unstressed penult",False,replace prose
+" / “[b]etween the last two vowels of a proparoxytone”"," / sporadic ; “[b]etween the last two vowels of a proparoxytone”",False,replace prose
 " / in "," / ",False,replace prose
 " ! in "," ! ",False,replace prose
 "There seems to ahve been some stuff going on"," ; There seems to ahve been some stuff going on",False,comment
@@ -41,6 +43,7 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 " / when stem-final"," / _%# ; when stem-final",False,"replace prose - this is an approximation and may be wrong"
 " / when-stem final"," / _%# ; when-stem final",False,"replace prose - this is an approximation and may be wrong"
 " (→ yː sometimes)"," → yː / sporadic ; (→ yː sometimes)",False,workaround - we can't handle different envs for chained rules
+" (→ i in most descendants"," → i / sporadic ; (→ i in most descendants",False,workaround - we can't handle different envs for chained rules
 " (not sure what "," ; (not sure what ",False,comment
 " “(before a prefix; "," ; “(before a prefix; ",False,comment
 " (note that PAn might "," ; (note that PAn might ",False,comment
@@ -53,3 +56,5 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 " / syllable-initially (h → ɦ?)"," / $_ ; (h → ɦ?)",False,replace prose
 " / syllable-initially"," / $_ ",False,replace 
 " / if short and unstressed"," / _[-long, -stress]",False,replace prose
+"k ʃk → k* kː / V_V ","ʃk → kː / V_V ; k ʃk → k* kː / V_V ",False,unresolvable symbol
+"w (→ b?) → m","w → b → m",False,chaining

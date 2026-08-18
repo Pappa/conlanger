@@ -17530,12 +17530,12 @@ sections:
     raw: w → v / V_
     source: index_diachronica_original.html:4496
     rule_id: Proto-Dravidian-w_2
-  - stages:
-    - k ʃk
-    - k* kː
+  - comment: k ʃk → k* kː / V_V (the asterisk-marked k is what McAlpin terms “weak
+      k”, which tends to drop out in morphology)
+    stages:
+    - ʃk
+    - kː
     env: V_V
-    comment: “weak k”,; (the asterisk-marked k is what McAlpin termswhich tends to
-      drop out in morphology)
     raw: k ʃk → k* kː / V_V (the asterisk-marked k is what McAlpin terms “weak k”,
       which tends to drop out in morphology)
     source: index_diachronica_original.html:4497
@@ -17585,8 +17585,8 @@ sections:
   - stages:
     - s
     - ∅
-    env: '#V_{r̀,l}'
-    raw: 's → ∅ / #V_{r̀,l}'
+    env: '#V_{r,ɾ,l}'
+    raw: 's → ∅ / #V_{r,ɾ,l}'
     source: index_diachronica_original.html:4504
     rule_id: Proto-Dravidian-s_3
   - stages:
@@ -17604,35 +17604,35 @@ sections:
     source: index_diachronica_original.html:4506
     rule_id: Proto-Dravidian-s_5
   - stages:
-    - r̀
-    - r̲
-    raw: r̀ → r̲
+    - '{r,ɾ}'
+    - r
+    raw: '{r,ɾ} → r'
     source: index_diachronica_original.html:4507
     rule_id: Proto-Dravidian-r̀
   - stages:
-    - ŕ
+    - '{ɹ,ɾ}'
     - r
     env: V_V
-    raw: ŕ → r / V_V
+    raw: '{ɹ,ɾ} → r / V_V'
     source: index_diachronica_original.html:4508
     rule_id: Proto-Dravidian-ŕ
   - stages:
     - n nː rn
-    - '{n̲,r} n̲(ː) ɳ'
+    - '{n,r} n(ː) ɳ'
     env: V_V
-    raw: n nː rn → {n̲,r} n̲(ː) ɳ / V_V
+    raw: n nː rn → {n,r} n(ː) ɳ / V_V
     source: index_diachronica_original.html:4509
     rule_id: Proto-Dravidian-n-nː-rn
   - stages:
     - nː
-    - n̲(ː)
-    raw: nː → n̲(ː)
+    - n(ː)
+    raw: nː → n(ː)
     source: index_diachronica_original.html:4510
     rule_id: Proto-Dravidian-nː
   - stages:
-    - nr̀
-    - n̲r̲
-    raw: nr̀ → n̲r̲
+    - n{r,ɾ}
+    - nr
+    raw: n{r,ɾ} → nr
     source: index_diachronica_original.html:4511
     rule_id: Proto-Dravidian-nr̀
   - stages:
@@ -34329,15 +34329,16 @@ sections:
     raw: V → ∅ / ”V%s_t(C)V(C)# (irregular)
     source: index_diachronica_original.html:7349
     rule_id: Catalan-V_3
-  - comment: irregular”); “when in unstressed penult or between first and tonic syllables
+  - comment: (“when in unstressed penult or between first and tonic syllables; irregular”);
+      sporadic
     stages:
     - u
     - w
     - ∅
-    env: (
     raw: u → w → ∅ / (“when in unstressed penult or between first and tonic syllables;
       irregular”)
     source: index_diachronica_original.html:7350
+    sporadic: true
     rule_id: Catalan-u
   - stages:
     - iː
@@ -37804,15 +37805,16 @@ sections:
     raw: ɡ → ɡ / _{o,u/y}
     source: index_diachronica_original.html:7871
     rule_id: Old-Provençal-ɡ_5
-  - stages:
+  - comment: “[b]etween the last two vowels of a proparoxytone”, though it dropped
+      early in some dialects; sporadic
+    stages:
     - ɡ
     - j
     - dʒ
-    env: ', though it dropped early in some dialects'
-    comment: “[b]etween the last two vowels of a proparoxytone”
     raw: ɡ → j → dʒ / “[b]etween the last two vowels of a proparoxytone”, though it
       dropped early in some dialects
     source: index_diachronica_original.html:7872
+    sporadic: true
     rule_id: Old-Provençal-ɡ_6
   - stages:
     - dʒ
@@ -38649,12 +38651,14 @@ sections:
     raw: a → e / stressed, usually when Ḱ_
     source: index_diachronica_original.html:7992
     rule_id: Rhaeto-Romance-a
-  - stages:
+  - comment: (→ i in most descendants, with the exception of Engadine); sporadic
+    stages:
     - uː
-    - y (
-    - i in most descendants, with the exception of Engadine)
+    - y
+    - i
     raw: uː → y (→ i in most descendants, with the exception of Engadine)
     source: index_diachronica_original.html:7993
+    sporadic: true
     rule_id: Rhaeto-Romance-uː
   - stages:
     - a V

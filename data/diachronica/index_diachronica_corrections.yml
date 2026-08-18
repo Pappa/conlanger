@@ -31,3 +31,27 @@ rules:
       id: Zayse-Zergulla-x3
       content: "x₂ → ɡ / V_#"
       reason: "x3 does not appear in the original source, x2 is a best guess"
+  - rule:
+      id: Proto-Dravidian-s_3
+      content: "s → ∅ / #V_{r,ɾ,l}"
+      reason: "Replacing with IPA symbols"
+  - rule:
+      id: Proto-Dravidian-r̀
+      content: "{r,ɾ} → r"
+      reason: "Replacing with IPA symbols"
+  - rule:
+      id: Proto-Dravidian-ŕ
+      content: "{ɹ,ɾ} → r / V_V"
+      reason: "Replacing with IPA symbols"
+  - rule:
+      id: Proto-Dravidian-n-nː-rn
+      content: "n nː rn → {n,r} n(ː) ɳ / V_V"
+      reason: "Replacing with IPA symbols"
+  - rule:
+      id: Proto-Dravidian-nː
+      content: "nː → n(ː)"
+      reason: "Replacing with IPA symbols"
+  - rule:
+      id: Proto-Dravidian-nr̀
+      content: "n{r,ɾ} → nr"
+      reason: "Replacing with IPA symbols"
