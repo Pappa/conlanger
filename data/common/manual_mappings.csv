@@ -1,6 +1,6 @@
 from,to,use_regex,reason
 "“The PIE rules for the voicing of s → z, as in [nizdos] for *nisdos, are assumed to apply”","s → z / C[+voice]_",False,"*nisdos > nizdos"
-"“In contrast, Romanian exhibits",";; “In contrast, Romanian exhibits",False,"comment"
+"“In contrast, Romanian exhibits","; “In contrast, Romanian exhibits",False,"comment"
 ew (→ øj) → yj,ew → øj → yj,False,chaining
 (→ ʕ),→ ʕ,False,chaining
 bw mw → ɡw ŋw (→ ɡ ŋ / _V[+ rounded]),bw mw → ɡw ŋw → ɡ ŋ / _V[+ rounded],False,chaining
@@ -9,7 +9,7 @@ w (→ v?) → f,w → v → f,False,chaining
 ɛː → ɛi (→ əi?),ɛː → ɛi → əi,False,chaining
 a → ɒ? (→ o),a → ɒ → o,False,chaining
 nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
-"ɣ → q (more likely, *ɢ → q instead of → ɣ)","ɣ → q ;; (more likely, *ɢ → q instead of → ɣ)",False,comment
+"ɣ → q (more likely, *ɢ → q instead of → ɣ)","ɣ → q ; (more likely, *ɢ → q instead of → ɣ)",False,comment
 " / at word boundaries"," / #_, _#",False,replace prose
 " ! at word boundaries"," ! #_, _#",False,replace prose
 " / unstressed"," / [-stress]",False,replace prose
@@ -19,25 +19,27 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 " / adjacent to {"," / _,{",False,replace prose
 " ! adjacent to {"," ! _,{",False,replace prose
 " / adjacent to a vowel"," / V_, _V",False,replace prose
-" / in Mentasta Ahtna"," / sporadic ;; in Mentasta Ahtna",False,replace prose
-" / in certain situations"," / sporadic ;; in certain situations",False,replace prose
-" / in some dialects"," / sporadic ;; in some dialects",False,replace prose
-" / in some northern"," / sporadic ;; in some northern",False,replace prose
-" / in northern dialects"," / sporadic ;; in northern dialects",False,replace prose
-" / in southern regions"," / sporadic ;; in southern regions",False,replace prose
-" / in southern dialects"," / sporadic ;; in southern dialects",False,replace prose
-" (in southern dialects"," sporadic ;; (in southern dialects",False,replace prose
-" (in some regions"," sporadic ;; (in some regions",False,replace prose
-" (some dialects"," sporadic ;; (some dialects",False,replace prose
-" (most dialects"," ;; (most dialects",False,replace prose
-" / “in some positions”"," / sporadic ;; “in some positions”",False,replace prose
-" ! in Ware Sekani"," sporadic ;; not in Ware Sekani",False,replace prose
-" ! in Queensland"," sporadic ;; not in Queensland",False,replace prose
-" / depending on the environment"," / sporadic ;; depending on the environment",False,replace prose
+" / in Mentasta Ahtna"," / sporadic ; in Mentasta Ahtna",False,replace prose
+" / in certain situations"," / sporadic ; in certain situations",False,replace prose
+" / in some dialects"," / sporadic ; in some dialects",False,replace prose
+" / in some northern"," / sporadic ; in some northern",False,replace prose
+" / in northern dialects"," / sporadic ; in northern dialects",False,replace prose
+" / in southern regions"," / sporadic ; in southern regions",False,replace prose
+" / in southern dialects"," / sporadic ; in southern dialects",False,replace prose
+" (in southern dialects"," sporadic ; (in southern dialects",False,replace prose
+" (in some regions"," sporadic ; (in some regions",False,replace prose
+" (some dialects"," sporadic ; (some dialects",False,replace prose
+" (most dialects"," ; (most dialects",False,replace prose
+" / “in some positions”"," / sporadic ; “in some positions”",False,replace prose
+" ! in Ware Sekani"," sporadic ; not in Ware Sekani",False,replace prose
+" ! in Queensland"," sporadic ; not in Queensland",False,replace prose
+" / depending on the environment"," / sporadic ; depending on the environment",False,replace prose
 " / in "," / ",False,replace prose
 " ! in "," ! ",False,replace prose
-"There seems to ahve been some stuff going on"," ;; There seems to ahve been some stuff going on",False,comment
-" (“[a]rchaic relic”)"," ;; (“[a]rchaic relic”)",False,comment
-" / when stem-final"," / _%# ;; when stem-final",False,"replace prose - this is an approximation and may be wrong"
-" / when-stem final"," / _%# ;; when-stem final",False,"replace prose - this is an approximation and may be wrong"
-" (→ yː sometimes)"," → yː ;; (sometimes)",False,workaround - we can't handle different envs for chained rules
+"There seems to ahve been some stuff going on"," ; There seems to ahve been some stuff going on",False,comment
+" (“[a]rchaic relic”)"," ; (“[a]rchaic relic”)",False,comment
+" / when stem-final"," / _%# ; when stem-final",False,"replace prose - this is an approximation and may be wrong"
+" / when-stem final"," / _%# ; when-stem final",False,"replace prose - this is an approximation and may be wrong"
+" (→ yː sometimes)"," → yː / sporadic ; (→ yː sometimes)",False,workaround - we can't handle different envs for chained rules
+" (not sure what "," ; (not sure what ",False,comment
+" “(before a prefix; "," ; “(before a prefix; ",False,comment

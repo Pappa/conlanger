@@ -1,5 +1,5 @@
 Type: grilling
-Status: ready-for-human
+Status: resolved
 Blocked by:
 
 # Grill: `;;` as rule-line comment delimiter at parse
@@ -42,14 +42,46 @@ Decide policy **before** implementation (details and edge cases TBD in this gril
 - Whether [ADR-0012](../../docs/adr/0012-index-diachronica-corrections-overlay.md) or ticket 30 answer needs amendment.
 - Implementation follow-on ticket (task) with acceptance criteria — **no code in this grill**.
 
+## Settled (grill closed 2026-08-18; owner confirmed)
+
+Delimiter is the **first `;`** on the working line (after **Manual mapping**), not `;;`. Naive cut (including inside parens/quotes). Peel **before** `extract_rule_parts`. Tail is **rule comment** as-is; detectors do **not** read it. Owner mappings plant the intended `;` first and plant `sporadic` before `;`.
+
+Full policy in **Answer**. Implementation: [77](77-implement-first-semicolon-comment-cut.md).
+
+## Answer
+
+Owner confirmed (2026-08-18). Policy (amends ticket 30 extraction **order** only; schema unchanged):
+
+1. **Delimiter.** First `;` on the working line after **Manual mapping**. Trim whitespace on both sides of the cut. Not `;;`. Naive — first `;` anywhere, including inside parens/quotes. Owner adds **Manual mapping** rows so the *intended* `;` is first (CSV already rewrote `;;` → `;`; Kyrgyz/Blackfoot/Greek sporadic convention rows present).
+2. **Pass order.** Quoted-prose skip (unchanged) → peel that `;` tail from `working` → `normalize_symbols` + `extract_rule_parts` on the **remainder only**. The tail never becomes **stages**. One **corpus rule**, one **rule comment** for the whole spine.
+3. **Empty remainder.** No `→` after the cut → `status: skipped`, `stages: []`, **rule comment** = the tail. `raw` unchanged.
+4. **Comment vs remainder.** Tail stored as-is (no symbol/feature/IPA/series). Remainder keeps today’s sporadic / gloss / stress / medial / mappings. No second `;` pass on remainder. Detectors **do not** scan **rule comment**. Uncertainty that should set `sporadic: true` stays **before** `;`.
+5. **Docs / ADRs.** Update [docs/index-diachronica-parser.md](../../docs/index-diachronica-parser.md) in the implement ticket. **No** ADR-0012 change. No new ADR. Ticket 30 “comment after `→` split” is amended by (2). Still do **not** emit corpus **rule comment** as ASCA `;;`.
+6. **Out of scope.** Detector-on-comment; field-source telemetry in the inventory summary; bracket-aware `;`; unifying on `;;`.
+7. **Acceptance watch.** Regen changelog `ok` flips; Archi chain corruption and `malformed_comment` / `trailing-comment` should move. New fails → a later ticket, not a different cut.
+
+Handle now vs later:
+
+| Case | Disposition |
+| --- | --- |
+| Native editorial `;` tails (`Old-Irish-VOR`, Moroccan `; the change…`) | Handle: whole-line first `;` before chain split |
+| Archi `→` inside gloss | Handle: mapping inserts `;` before the gloss; cut before `extract_rule_parts` |
+| Paren/quote-internal `;` (Kyrgyz, Blackfoot) | Owner mapping inserts an earlier `;`; naive cut otherwise |
+| `sporadic` / `sometimes` after `;` | Won't-fix as detector-on-comment; mappings plant the keyword before `;` |
+| Field-source detection counts | Won't-fix |
+| ASCA compile `;;` emission from `comment` | Unchanged (ticket 30): not this slice |
+
+Follow-on: [77 — Implement first-`;` comment cut before chain split](77-implement-first-semicolon-comment-cut.md).
+
 ## References
 
 - `src/conlanger/tools/ingest/parser.py` — `parse_rule_element` pass order
 - `src/conlanger/tools/ingest/transforms.py` — `apply_semicolon_field_comments`, `join_rule_comment`
 - `src/conlanger/utils/gloss.py` — `extract_semicolon_prose_from_field`
 - `src/conlanger/utils/parsing.py` — `extract_rule_parts`, `build_stages_from_spine`
-- [docs/index-diachronica-parser.md](../../docs/index-diachronica-parser.md) (update after policy)
+- [docs/index-diachronica-parser.md](../../docs/index-diachronica-parser.md) (update in [77](77-implement-first-semicolon-comment-cut.md))
 
 ## Comments
 
 - 2026-08-18: Filed from map wayfinder session. Owner direction: `;;` should start comment; implementation details and edge cases deferred to this grill.
+- 2026-08-18: Grill closed. Owner reversed the `;;` delimiter to **first `;`**, rewrote mapping `to` values, and declined detector-on-comment / telemetry. Implementation is ticket 77.

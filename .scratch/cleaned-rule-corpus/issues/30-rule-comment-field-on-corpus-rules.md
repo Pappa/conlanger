@@ -61,3 +61,11 @@ Extracted **`comment`** values are an explicit corpus artifact for iterative rev
 ### Follow-on
 
 - [Capture rule comments at parse time](31-capture-rule-comments-at-parse-time.md) — implement capture-not-discard; refactor passes 19–22 / 21.
+
+## Amendment (grill 76, 2026-08-18)
+
+Extraction **order** only: the first `;` on the working line is peeled **before** `extract_rule_parts` / chain split ([76](76-grill-double-semicolon-rule-comment-delimiter.md), implement [77](77-implement-first-semicolon-comment-cut.md)). Schema, capture-not-discard, and “do not emit `comment` into ASCA” are unchanged. Detectors still do not scan **rule comment**; uncertainty keywords belong before `;`.
+
+## Comments
+
+- 2026-08-18: Grill 76 amended pass order (see **Amendment** above).
