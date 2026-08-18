@@ -145,18 +145,32 @@ def load_parser_config(path: Path | None = None) -> ParserConfig:
 def load_index_diachronica_corrections(
     path: Path | None = None,
 ) -> dict[str, str]:
-    """Load flat rule-id → Unicode line corrections overlay."""
+    """Load rule-id → Unicode line corrections from ``rules`` list overlay YAML."""
     yml_path = DEFAULT_INDEX_DIACHRONICA_CORRECTIONS if path is None else Path(path)
     if not yml_path.is_file():
         return {}
     raw = _load_yaml(yml_path)
     if not isinstance(raw, dict):
         return {}
-    return {
-        str(key): str(value)
-        for key, value in raw.items()
-        if value is not None and str(value).strip()
-    }
+    rules_list = raw.get("rules")
+    if not isinstance(rules_list, list):
+        return {}
+    out: dict[str, str] = {}
+    for entry in rules_list:
+        if not isinstance(entry, dict):
+            continue
+        rule = entry.get("rule")
+        if not isinstance(rule, dict):
+            continue
+        rule_id = rule.get("id")
+        content = rule.get("content")
+        if rule_id is None or content is None:
+            continue
+        content_str = str(content).strip()
+        if not content_str:
+            continue
+        out[str(rule_id)] = content_str
+    return out
 
 
 def load_ipa_mappings(path: Path | None = None) -> list[IpaMapping]:

@@ -1,3 +1,17 @@
-Blackfoot-nr: "nl → s"
-Blackfoot-ʔθ,ʔr: "ʔθ, ʔr → {ʔ,j,∅}"
-Dena’ina-ʃʷ,x-z,ʒʷ,ɣ: "{ʃ(ʷ),x} {z,ʒ(ʷ),ɣ} → s j"
+rules:
+  - rule:
+      id: Blackfoot-nr
+      content: "nl → s"
+      reason: "Corrected from original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
+  - rule:
+      id: Blackfoot-ʔθ,ʔr
+      content: "ʔθ, ʔr → {ʔ,j,∅}"
+      reason: "Corrected from original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
+  - rule:
+      id: Dena’ina-ʃʷ,x-z,ʒʷ,ɣ
+      content: "{ʃ(ʷ),x} {z,ʒ(ʷ),ɣ} → s j"
+      reason: "Corrected from original source: Northern Athapaskan Languages (Vol. 6), p. 73"
+  - rule:
+      id: Old-Irish-m̩-n̩
+      content: "m̩ n̩ → am an / _{s,({m,j,w})V}"
+      reason: "Bracket fix for env set with optional grouping"

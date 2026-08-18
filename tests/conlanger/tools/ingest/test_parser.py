@@ -1872,10 +1872,90 @@ def test_load_index_diachronica_corrections_missing_file(tmp_path: Path):
     assert load_index_diachronica_corrections(tmp_path / "missing.yml") == {}
 
 
-def test_load_index_diachronica_corrections_skips_empty_values(tmp_path: Path):
+def test_load_index_diachronica_corrections_skips_empty_content(tmp_path: Path):
     path = tmp_path / "corrections.yml"
-    path.write_text("good: a → b\nempty:\n", encoding="utf-8")
+    path.write_text(
+        "rules:\n"
+        "  - rule:\n"
+        "      id: good\n"
+        "      content: a → b\n"
+        "      reason: ok\n"
+        "  - rule:\n"
+        "      id: empty\n"
+        "      content:\n"
+        "      reason: skip\n",
+        encoding="utf-8",
+    )
     assert load_index_diachronica_corrections(path) == {"good": "a → b"}
+
+
+def test_load_index_diachronica_corrections_reads_rules_list_schema(tmp_path: Path):
+    path = tmp_path / "corrections.yml"
+    path.write_text(
+        "rules:\n"
+        "  - rule:\n"
+        "      id: Test-id\n"
+        "      content: x → y\n"
+        "      reason: author note\n",
+        encoding="utf-8",
+    )
+    assert load_index_diachronica_corrections(path) == {"Test-id": "x → y"}
+
+
+def test_load_index_diachronica_corrections_skips_malformed_entries(tmp_path: Path):
+    path = tmp_path / "corrections.yml"
+    path.write_text(
+        "rules:\n"
+        "  - not-a-rule\n"
+        "  - rule:\n"
+        "      id: ok\n"
+        "      content: a → b\n",
+        encoding="utf-8",
+    )
+    assert load_index_diachronica_corrections(path) == {"ok": "a → b"}
+
+
+def test_load_index_diachronica_corrections_skips_non_dict_rule_block(tmp_path: Path):
+    path = tmp_path / "corrections.yml"
+    path.write_text("rules:\n  - rule: not-a-dict\n", encoding="utf-8")
+    assert load_index_diachronica_corrections(path) == {}
+
+
+def test_load_index_diachronica_corrections_skips_entry_without_id(tmp_path: Path):
+    path = tmp_path / "corrections.yml"
+    path.write_text(
+        "rules:\n"
+        "  - rule:\n"
+        "      content: a → b\n"
+        "      reason: no id\n",
+        encoding="utf-8",
+    )
+    assert load_index_diachronica_corrections(path) == {}
+
+
+def test_load_index_diachronica_corrections_skips_whitespace_only_content(tmp_path: Path):
+    path = tmp_path / "corrections.yml"
+    path.write_text(
+        "rules:\n"
+        "  - rule:\n"
+        "      id: blank\n"
+        "      content: '   '\n"
+        "      reason: skip\n",
+        encoding="utf-8",
+    )
+    assert load_index_diachronica_corrections(path) == {}
+
+
+def test_load_index_diachronica_corrections_rules_not_a_list(tmp_path: Path):
+    path = tmp_path / "corrections.yml"
+    path.write_text("rules: not-a-list\n", encoding="utf-8")
+    assert load_index_diachronica_corrections(path) == {}
+
+
+def test_load_index_diachronica_corrections_missing_rules_list(tmp_path: Path):
+    path = tmp_path / "corrections.yml"
+    path.write_text("other: {}\n", encoding="utf-8")
+    assert load_index_diachronica_corrections(path) == {}
 
 
 def test_load_index_diachronica_corrections_non_dict_yaml(tmp_path: Path):
