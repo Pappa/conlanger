@@ -263,7 +263,7 @@ _TRAILING_BARE_UNCERTAINTY_RE = re.compile(
 
 def field_has_uncertainty_qualifier(text: str) -> bool:
     """Return whether ``text`` mentions sporadic / sometimes / occasionally uncertainty."""
-    return bool(text and _UNCERTAINTY_WORD_RE.search(text))
+    return bool(text and (_UNCERTAINTY_WORD_RE.search(text) or text.endswith("?")))
 
 
 def extract_uncertainty_qualifier_from_field(text: str) -> tuple[str, list[str]]:

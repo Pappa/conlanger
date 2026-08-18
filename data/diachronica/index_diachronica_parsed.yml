@@ -1808,6 +1808,7 @@ sections:
     env: '#_iC ?'
     raw: 'l → j / #_iC ?'
     source: index_diachronica_original.html:1287
+    sporadic: true
     rule_id: Egypto-Berber-l_2
   - stages:
     - l
@@ -1875,6 +1876,7 @@ sections:
     env: '#(C)_c(C)# ?'
     raw: 'r → l / #(C)_c(C)# ?'
     source: index_diachronica_original.html:1300
+    sporadic: true
     rule_id: Coptic-r
   - stages:
     - r
@@ -4260,6 +4262,7 @@ sections:
     comment: (h)
     raw: ke(h) → tː ?
     source: index_diachronica_original.html:1756
+    sporadic: true
     rule_id: Blackfoot-keh
   - stages:
     - '{k(ʷ)es,keθ}'
@@ -5622,6 +5625,7 @@ sections:
     env: not universal?
     raw: VNs VNʃ → V[+nas]z V[+nas]ʒ / not universal?
     source: index_diachronica_original.html:1982
+    sporadic: true
     rule_id: Miami-Illinois-VNs-VNʃ
   - comment: (sporadic)
     stages:
@@ -6254,6 +6258,7 @@ sections:
     exception: _#?
     raw: tʃ → s / maybe ! _#?
     source: index_diachronica_original.html:2112
+    sporadic: true
     rule_id: Proto-Japonic-tʃ
   - stages:
     - dʒ
@@ -8700,6 +8705,7 @@ sections:
     env: possible exception in word-initial position?
     raw: '*j → ɡ / possible exception in word-initial position?'
     source: index_diachronica_original.html:2646
+    sporadic: true
     rule_id: Ibanag-*j
   - stages:
     - '*Z'
@@ -12052,6 +12058,7 @@ sections:
     env: near nasals?
     raw: V[+ mid] → a / near nasals?
     source: index_diachronica_original.html:3267
+    sporadic: true
     rule_id: Nixumwak-Nêlêmwa-V+-mid
   - stages:
     - u i
@@ -12488,6 +12495,7 @@ sections:
     - '{ð,z} ?'
     raw: j → {ð,z} ?
     source: index_diachronica_original.html:3348
+    sporadic: true
     rule_id: Yunaga-1-j
 - section: Proto-Yunaga to Yunaga 2
   index: 10.3.5.8.2
@@ -20004,6 +20012,7 @@ sections:
     env: _E:[+stress]?
     raw: kʷ → s / _”E?
     source: index_diachronica_original.html:4964
+    sporadic: true
     rule_id: Gheg-Albanian-kʷ
   - stages:
     - kʷ
@@ -20011,12 +20020,14 @@ sections:
     env: _B?
     raw: kʷ → c / _B?
     source: index_diachronica_original.html:4965
+    sporadic: true
     rule_id: Gheg-Albanian-kʷ_2
   - stages:
     - kʷ
     - k
     raw: kʷ → k / else?
     source: index_diachronica_original.html:4966
+    sporadic: true
     rule_id: Gheg-Albanian-kʷ_3
     exception: _B?
   - stages:
@@ -20140,6 +20151,7 @@ sections:
     env: _C?
     raw: Vn → V[+nasal] / _C?
     source: index_diachronica_original.html:4983
+    sporadic: true
     rule_id: Gheg-Albanian-Vn
   - comment: (sometimes?)
     stages:
@@ -20243,6 +20255,7 @@ sections:
     env: _E:[+stress]?
     raw: kʷ → s / _”E?
     source: index_diachronica_original.html:5003
+    sporadic: true
     rule_id: Tosk-Albanian-kʷ
   - stages:
     - kʷ
@@ -20250,12 +20263,14 @@ sections:
     env: _B?
     raw: kʷ → c / _B?
     source: index_diachronica_original.html:5004
+    sporadic: true
     rule_id: Tosk-Albanian-kʷ_2
   - stages:
     - kʷ
     - k
     raw: kʷ → k / else?
     source: index_diachronica_original.html:5005
+    sporadic: true
     rule_id: Tosk-Albanian-kʷ_3
     exception: _B?
   - stages:
@@ -20379,6 +20394,7 @@ sections:
     env: V_C?
     raw: n → ∅ / V_C?
     source: index_diachronica_original.html:5022
+    sporadic: true
     rule_id: Tosk-Albanian-n
   - comment: (sometimes?)
     stages:
@@ -21396,6 +21412,7 @@ sections:
     - '?'
     raw: j → ?
     source: index_diachronica_original.html:5200
+    sporadic: true
     rule_id: Artsakh-Armenian-j_2
   - stages:
     - '{sk,ks} kj'
@@ -21447,7 +21464,6 @@ sections:
     - VN
     - V[+nasal]
     - V
-    - (?)
     env: _#, in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5208
@@ -21619,6 +21635,7 @@ sections:
     - '?'
     raw: j → ?
     source: index_diachronica_original.html:5237
+    sporadic: true
     rule_id: Erevan-Armenian-j_2
   - stages:
     - '{sk,ks} kj'
@@ -21670,7 +21687,6 @@ sections:
     - VN
     - V[+nasal]
     - V
-    - (?)
     env: _#, in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5245
@@ -21843,6 +21859,7 @@ sections:
     - '?'
     raw: j → ?
     source: index_diachronica_original.html:5274
+    sporadic: true
     rule_id: Istanbul-Armenian-j_2
   - stages:
     - '{sk,ks} kj'
@@ -21894,7 +21911,6 @@ sections:
     - VN
     - V[+nasal]
     - V
-    - (?)
     env: _#, in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5282
@@ -22066,6 +22082,7 @@ sections:
     - '?'
     raw: j → ?
     source: index_diachronica_original.html:5311
+    sporadic: true
     rule_id: Kharpert-Armenian-j_2
   - stages:
     - '{sk,ks} kj'
@@ -22117,7 +22134,6 @@ sections:
     - VN
     - V[+nasal]
     - V
-    - (?)
     env: _#, in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5319
@@ -22283,6 +22299,7 @@ sections:
     - '?'
     raw: j → ?
     source: index_diachronica_original.html:5347
+    sporadic: true
     rule_id: Sebastia-Armenian-j_2
   - stages:
     - '{sk,ks} kj'
@@ -22334,7 +22351,6 @@ sections:
     - VN
     - V[+nasal]
     - V
-    - (?)
     env: _#, in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5355
@@ -22520,6 +22536,7 @@ sections:
     - '?'
     raw: j → ?
     source: index_diachronica_original.html:5386
+    sporadic: true
     rule_id: Southeast-Armenian-j_2
   - stages:
     - '{sk,ks} kj'
@@ -22571,7 +22588,6 @@ sections:
     - VN
     - V[+nasal]
     - V
-    - (?)
     env: _#, in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5394
@@ -22750,6 +22766,7 @@ sections:
     - '?'
     raw: j → ?
     source: index_diachronica_original.html:5424
+    sporadic: true
     rule_id: Southwest-Armenian-j_2
   - stages:
     - '{sk,ks} kj'
@@ -22801,7 +22818,6 @@ sections:
     - VN
     - V[+nasal]
     - V
-    - (?)
     env: _#, in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5432
@@ -27025,6 +27041,7 @@ sections:
     env: X[+voice]_X[+voice]?
     raw: F[-voice] → F[+voice] / X[+voiced]_X[+voiced]?
     source: index_diachronica_original.html:6155
+    sporadic: true
     rule_id: Old-Low-German-F-voice
 - section: Common Germanic to Proto-Norse
   index: 17.7.3
@@ -28803,6 +28820,7 @@ sections:
     env: _Vr ?
     raw: s → ʃ / _Vr ?
     source: index_diachronica_original.html:6429
+    sporadic: true
     rule_id: Orkney-Norn-s_2
   - stages:
     - ɣ
@@ -28830,6 +28848,7 @@ sections:
     env: _# ?
     raw: l → ∅ / _# ?
     source: index_diachronica_original.html:6433
+    sporadic: true
     rule_id: Orkney-Norn-l_3
   - comment: (sporadic)
     stages:
@@ -37636,6 +37655,7 @@ sections:
     env: r_(s)#?
     raw: n → ∅ / r_(s)#?
     source: index_diachronica_original.html:7848
+    sporadic: true
     rule_id: Old-Provençal-n_3
   - stages:
     - kː
@@ -37986,6 +38006,7 @@ sections:
     env: s_ ?
     raw: w → ∅ / s_ ?
     source: index_diachronica_original.html:7895
+    sporadic: true
     rule_id: Old-Provençal-w_5
   - stages:
     - βj
@@ -39407,6 +39428,7 @@ sections:
     env: _t ?
     raw: k → ∅ / _t ?
     source: index_diachronica_original.html:8112
+    sporadic: true
     rule_id: Sardinian-k_2
   - stages:
     - l{i,j}
@@ -43728,6 +43750,7 @@ sections:
     env: '{s,k,p}_ ?'
     raw: ik → ɡ / {s,k,p}_ ?
     source: index_diachronica_original.html:9036
+    sporadic: true
     rule_id: Sikaritai-ik
 - section: Proto-East Tariku to Waritai
   index: 21.2.2.7
@@ -43788,6 +43811,7 @@ sections:
     env: '{s,p}_ ?'
     raw: ik → ɡ / {s,p}_ ?
     source: index_diachronica_original.html:9048
+    sporadic: true
     rule_id: Waritai-ik
 - section: Proto-Tariku to Proto-West Tariku
   index: 21.2.3
@@ -44391,6 +44415,7 @@ sections:
     env: '#_, possibly everywhere?'
     raw: 'ʔ → ∅ / #_, possibly everywhere?'
     source: index_diachronica_original.html:9203
+    sporadic: true
     rule_id: Sorowahá-ʔ
 - section: Proto-Arawá to Paumarí
   index: '22.7'
@@ -45597,6 +45622,7 @@ sections:
     env: _E ?
     raw: w → β / _E ?
     source: index_diachronica_original.html:9522
+    sporadic: true
     rule_id: Reyesano-w
   - stages:
     - '*ŕ'
@@ -46195,6 +46221,7 @@ sections:
     - j ?
     raw: z → j ?
     source: index_diachronica_original.html:9676
+    sporadic: true
     rule_id: Soninka-z
   - stages:
     - '{w,ŋ}'
@@ -46670,6 +46697,7 @@ sections:
     env: _Cko, ko lost?
     raw: V → V̂ː / _Cko, ko lost?
     source: index_diachronica_original.html:9820
+    sporadic: true
     rule_id: Muskogean-V
 - section: Proto-Muskogean to Proto-Eastern Muskogean
   index: '28.1'
@@ -47158,6 +47186,7 @@ sections:
     - Q ?
     raw: Qʷ → Qʷ → Q ?
     source: index_diachronica_original.html:9939
+    sporadic: true
     rule_id: Proto-Athabaskan-Qʷ
   - stages:
     - χ(ʷ)
@@ -47679,8 +47708,8 @@ sections:
     source: index_diachronica_original.html:10093
     rule_id: Holikachuk-Vˀ
   - stages:
-    - w (
-    - b?)
+    - w
+    - b
     - m
     raw: w (→ b?) → m
     source: index_diachronica_original.html:10094
@@ -47769,8 +47798,8 @@ sections:
     source: index_diachronica_original.html:10114
     rule_id: Lower-Koyukon-Vˀ
   - stages:
-    - w (
-    - b?)
+    - w
+    - b
     - m
     raw: w (→ b?) → m
     source: index_diachronica_original.html:10115
@@ -50376,6 +50405,7 @@ sections:
     env: _ when stressed ?
     raw: V → Vː / when stressed ?
     source: index_diachronica_original.html:10754
+    sporadic: true
     rule_id: Bardi-V
 - section: Oto-Manguean
   index: '32'
@@ -54923,6 +54953,7 @@ sections:
     - ∅
     raw: '? → ∅'
     source: index_diachronica_original.html:11761
+    sporadic: true
     rule_id: Old-Mandarin-?
   - stages:
     - V5
@@ -55053,6 +55084,7 @@ sections:
     env: _ŋ
     raw: '? → o / _ŋ'
     source: index_diachronica_original.html:11779
+    sporadic: true
     rule_id: Old-Mandarin-?_2
   - stages:
     - '{Aʲ,Fʲ}[+cor,+anterior,-dist]'
@@ -55118,6 +55150,7 @@ sections:
     env: Cw_Cʲ
     raw: '? → a / Cw_Cʲ'
     source: index_diachronica_original.html:11788
+    sporadic: true
     rule_id: Old-Mandarin-?_3
   - stages:
     - '{o,e}'
@@ -55125,6 +55158,7 @@ sections:
     env: _Cʲ
     raw: '{o,e} → ? / _Cʲ'
     source: index_diachronica_original.html:11789
+    sporadic: true
     rule_id: Old-Mandarin-o,e
   - stages:
     - wʲ
@@ -55556,6 +55590,7 @@ sections:
     comment: “QYS -juət-type”
     raw: yʔ → yɛʔ / {l,C[+dental +sibilant]}_ in “QYS -juət-type” finals, dialectally?
     source: index_diachronica_original.html:11856
+    sporadic: true
     rule_id: Guānhuà-yʔ
   - stages:
     - yʔ
@@ -56356,6 +56391,7 @@ sections:
     - rɲ ?
     raw: rnj → rɲ ?
     source: index_diachronica_original.html:11998
+    sporadic: true
     rule_id: bTshan-La-rnj
   - stages:
     - w
@@ -57662,6 +57698,7 @@ sections:
     - mɲ ?
     raw: Nnj → mɲ ?
     source: index_diachronica_original.html:12243
+    sporadic: true
     rule_id: Tzu-Ta-Nnj
   - stages:
     - j
@@ -57919,6 +57956,7 @@ sections:
     env: _#
     raw: s → either i or a diphthong ending in i? / _#
     source: index_diachronica_original.html:12294
+    sporadic: true
     rule_id: Amdo-dialects-s
   - comment: (some dialects); sporadic
     stages:
@@ -63238,6 +63276,7 @@ sections:
     - '{a,ɒ,ɑ,ʌ} ?'
     raw: ə → {a,ɒ,ɑ,ʌ} ?
     source: index_diachronica_original.html:13272
+    sporadic: true
     rule_id: Po-Ai-ə
   - stages:
     - u̯ɨ
@@ -64867,6 +64906,7 @@ sections:
     - N₂ː ?
     raw: N₁N₂ → N₂ː ?
     source: index_diachronica_original.html:13675
+    sporadic: true
     rule_id: Usarufa-N1N2
   - stages:
     - N
@@ -67894,6 +67934,7 @@ sections:
     - V ?
     raw: Vː → V ?
     source: index_diachronica_original.html:14258
+    sporadic: true
     rule_id: Chapai-Vː
 - section: Proto-Pai to Paipai
   index: 45.1.2

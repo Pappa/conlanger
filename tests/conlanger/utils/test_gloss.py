@@ -267,6 +267,7 @@ def test_is_gloss_only_rule(parts, expected):
         ("", False),
         ("a", False),
         ("h (sporadic)", True),
+        ("when stressed ?", True),
     ],
 )
 def test_field_has_uncertainty_qualifier(text, expected):

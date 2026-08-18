@@ -77,12 +77,19 @@ section_index,section_name,rule_id,source,manual_mapping
 17.2.4,Common Anatolian to Lydian,"Lydian-e,o",index_diachronica_original.html:5148, / 
 17.2.5,Common Anatolian to Palaic,Palaic-a-e,index_diachronica_original.html:5165, / 
 17.3.1,Proto-Indo-European to Artsakh Armenian,"Artsakh-Armenian-i,u",index_diachronica_original.html:5188, / 
+17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-VN,index_diachronica_original.html:5208,VN → V[+nasal] → V
 17.3.2,Proto-Indo-European to Erevan Armenian,"Erevan-Armenian-i,u",index_diachronica_original.html:5225, / 
+17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-VN,index_diachronica_original.html:5245,VN → V[+nasal] → V
 17.3.3,Proto-Indo-European to Istanbul Armenian,"Istanbul-Armenian-i,u",index_diachronica_original.html:5262, / 
+17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-VN,index_diachronica_original.html:5282,VN → V[+nasal] → V
 17.3.4,Proto-Indo-European to Kharpert Armenian,"Kharpert-Armenian-i,u",index_diachronica_original.html:5299, / 
+17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-VN,index_diachronica_original.html:5319,VN → V[+nasal] → V
 17.3.5,Proto-Indo-European to Sebastia Armenian,"Sebastia-Armenian-i,u",index_diachronica_original.html:5336, / 
+17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-VN,index_diachronica_original.html:5355,VN → V[+nasal] → V
 17.3.6,Proto-Indo-European to Southeast Armenian,"Southeast-Armenian-i,u",index_diachronica_original.html:5372, / 
+17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-VN,index_diachronica_original.html:5394,VN → V[+nasal] → V
 17.3.7,Proto-Indo-European to Southwest Armenian,"Southwest-Armenian-i,u",index_diachronica_original.html:5411, / 
+17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-VN,index_diachronica_original.html:5432,VN → V[+nasal] → V
 17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-oː,index_diachronica_original.html:5483, / 
 17.5.1,Proto-Indo-European to Old Irish,Old-Irish-s,index_diachronica_original.html:5499,s → z / C[+voice]_
 17.5.1,Proto-Indo-European to Old Irish,Old-Irish-V_3,index_diachronica_original.html:5570, / _[-stress]
@@ -182,6 +189,8 @@ section_index,section_name,rule_id,source,manual_mapping
 24.1.7,Proto-Paman to Yinwum,Yinwum-Vː,index_diachronica_original.html:9470, / 
 29.1.1.1.1,Proto-Athabaskan to Ahtna,Ahtna-K,index_diachronica_original.html:9980, / sporadic ; in Mentasta Ahtna
 29.1.1.1.12,Proto-Athabaskan to Holikachuk,Holikachuk-e,index_diachronica_original.html:10089, / 
+29.1.1.1.12,Proto-Athabaskan to Holikachuk,Holikachuk-w,index_diachronica_original.html:10094,w → b → m
+29.1.1.1.14,Proto-Athabaskan to Lower Koyukon,Lower-Koyukon-w,index_diachronica_original.html:10115,w → b → m
 29.1.1.1.18,Proto-Athabaskan to Sekani,Sekani-T,index_diachronica_original.html:10150, sporadic ; not in Ware Sekani
 29.1.1.1.19,Proto-Athabaskan to Proto-Southern Athabaskan,Proto-Southern-Athabaskan-ɣ,index_diachronica_original.html:10159, / 
 29.1.1.1.19,Proto-Athabaskan to Proto-Southern Athabaskan,Proto-Southern-Athabaskan-t-n-x,index_diachronica_original.html:10161, / 
