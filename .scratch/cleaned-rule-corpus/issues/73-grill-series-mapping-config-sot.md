@@ -36,4 +36,4 @@ A recorded decision on config SoT, unknown-token policy, and whether ADR-0004 ne
 
 ## Comments
 
-- 2026-08-16: Filed during grill 72. Q2/Q3 parked here. **Confirmed:** parse-time `series_mappings.csv` is removed in 72’s implementation; `PIE_LARYNGEAL_ALIASES` stays in Python until this grill; inventory `ok` drop from deleting I/O maps is accepted.
+- 2026-08-16: Filed during grill 72. Q2/Q3 parked here. **Confirmed:** parse-time `series_mappings.csv` is removed in 72’s implementation ([74](74-implement-ingest-corrections-drop-series-csv.md)); `PIE_LARYNGEAL_ALIASES` stays in Python until this grill; inventory `ok` drop from deleting I/O maps is accepted. **Next frontier** after grill 72 close (2026-08-18).

@@ -24,13 +24,21 @@ Wayfinder session on **subscript notation** (`CONTEXT.md`) and owner clarificati
 - Let **compile validation** report failures (e.g. `unknown_character` for `₁`).
 - Do **not** assign `status: skipped` pre-emptively for unmapped indices — skipping is for post-correction triage per [ADR-0010](0010-historical-fidelity-class-first-status.md) and the edit ladder (ticket 04), not for missing map rows.
 
-### Target (parse-time expansion)
+### Amendment (2026-08-18)
 
-- At **HTML→YAML parse**, expand mapped **correspondence-series indices** and **collective subscripts** (`Xₓ`) in corpus fields to **ASCA-parseable** targets (IPA segments, feature matrices, sets) — same pattern as **Symbol** normalization at parse.
-- **`raw`** always keeps Index subscripts unchanged.
-- Section **`abbreviations`** (and/or package CSV keyed by section index) holds the mapping; longest-prefix section match wins; global `*` fallback allowed where Index prose supports it.
-- **Mapping rows are authored from `data/diachronica/index_diachronica_original.html`**. Runtime CSV under **`data/asca/`**. Do **not** use `legacy/` for implementation — previous attempts only.
-- **Unmapped** tokens stay literal in corpus fields (option A); validation fails; cluster-driven map authoring adds rows.
+Grill [72](.scratch/cleaned-rule-corpus/issues/72-grill-series-mapping-manual-sot.md) retired parse-time `series_mappings.csv` expansion:
+
+- **No parse-time series CSV** — I/O-inferred rows conflated sound changes with notation definitions and could collapse multi-step rules to identity.
+- Corpus **stages** / env / exception keep Index-shaped **correspondence-series indices** and **collective subscripts** until a replacement config is decided ([ticket 73](.scratch/cleaned-rule-corpus/issues/73-grill-series-mapping-config-sot.md)).
+- `PIE_LARYNGEAL_ALIASES` remains compile-time Python until that config lands.
+- `section_abbreviations.yml` is advisory only; not regenerated from extract tooling.
+- Inventory `ok` may drop when incorrect parse expansions are removed; that regression is accepted.
+
+See also [ADR-0012](0012-index-diachronica-corrections-overlay.md) for the corrections overlay.
+
+### Target (parse-time expansion) — superseded 2026-08-18
+
+**Superseded** by amendment above. Future expansion (if any) is config-driven per ticket 73, not `series_mappings.csv` at parse.
 
 ### Out of scope for this ADR (separate tickets)
 

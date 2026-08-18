@@ -1,5 +1,5 @@
 Type: grilling
-Status: ready-for-human
+Status: resolved
 Blocked by:
 
 # Grill: correspondence-series mapping source of truth (manual SoT vs rule I/O inference)
@@ -87,3 +87,34 @@ Series ontology (what may be a defined expansion; unknown-token policy) moved to
 ## Comments
 
 - 2026-08-16 grill session: ingest pipeline overtook the original question. Settled so far: pre-lxml `<sub>`→Unicode (skip nested tags); in-memory HTML only; **Index Diachronica correction** replaces **raw** by **rule id** (flat YAML, Unicode lines); Manual mapping never mutates raw (first match, optional regex); **rule id** replaces positional `rule_idx` everywhere; unmatched correction keys warn. Q10 reversed: this work **removes** parse-time `series_mappings.csv` / expansion; PIE aliases stay in Python (ticket 73); inventory `ok` drop accepted. Collective subscripts also stay Index-shaped at parse. `section_abbreviations.yml` left as a stale advisory snapshot (not regenerated); corpus section `abbreviations` omitted when empty.
+- 2026-08-18: Owner confirmed shared understanding (Q1 option 1). Ticket closed; implementation filed as [74](74-implement-ingest-corrections-drop-series-csv.md). Series ontology remains [73](73-grill-series-mapping-config-sot.md).
+
+## Answer
+
+### Ingest pipeline (this work)
+
+1. Load HTML in memory only (never write the file).
+2. Whole-file `<sub>…</sub>` → Unicode (`to_subscript`); nested inner tags: skip that tag; tree walk extracts text only.
+3. lxml parse.
+4. For each `p.schg`, extract text. If `index_diachronica_corrections.yml` has that **rule id**, that Unicode line **is `raw`**. Missing file = no replacements. Unknown keys: warn; use HTML extract.
+5. **Manual mapping** on working copy only (first match; `use_regex` → `from` is a pattern). `raw` unchanged.
+6. Rest of parse **without** `apply_series_mappings`.
+
+**Rule id** (HTML `id`) replaces `rule_idx` on corpus rules, inventory, changelogs, and debug CSVs. Corrections file: flat YAML `rule_id: line`, Unicode, no `<sub>`.
+
+**Retire parse-time series expansion:** delete `series_mappings.csv` apply path from parse; do not regenerate `section_abbreviations.yml`; omit empty section `abbreviations`. Correspondence-series and collective tokens stay Index-shaped. Inventory `ok` drop accepted.
+
+`PIE_LARYNGEAL_ALIASES` stays in Python at compile until [ticket 73](73-grill-series-mapping-config-sot.md).
+
+### Deferred to ticket 73
+
+What counts as an authoritative expansion row; config shape and layer; indeterminate/unknown token policy (config vs skip vs fail); collective handling under any future config; migration of any manually curated rows. I/O inference and opaque placeholders (`s₁→f1`) are **not** a SoT.
+
+### ADRs
+
+- [ADR-0004](../../../docs/adr/0004-series-indices-per-section-maps.md) amended (parse-time CSV retired).
+- [ADR-0012](../../../docs/adr/0012-index-diachronica-corrections-overlay.md) (corrections overlay).
+
+### Implementation
+
+[Implement ingest corrections overlay and drop parse-time series CSV](74-implement-ingest-corrections-drop-series-csv.md).
