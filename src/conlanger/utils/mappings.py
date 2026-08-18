@@ -63,7 +63,7 @@ class FeatureMapping:
 
 @dataclass(frozen=True)
 class ParserConfig:
-    ipa_mapping_confidence: frozenset[str]
+    ipa_mappings_confidence: frozenset[str]
     series_expansions: dict[str, tuple[str, ...]] = field(default_factory=dict)
 
 

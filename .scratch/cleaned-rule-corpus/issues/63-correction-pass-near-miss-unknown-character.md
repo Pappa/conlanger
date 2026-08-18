@@ -17,7 +17,7 @@ Section-completeness goal: maximize sections with 0 fails. Among ≤3-fail secti
 ## What to build
 
 1. After ticket 62 lands, re-pull near-miss ≤3 token table (don't trust stale counts).
-2. Class-first mappings for the top recoverable tokens (parse `ipa_mapping.csv` / compile diacritic passes as warranted).
+2. Class-first mappings for the top recoverable tokens (parse `ipa_mappings.csv` / compile diacritic passes as warranted).
 3. Full inventory; record section-complete delta.
 
 ## Acceptance criteria

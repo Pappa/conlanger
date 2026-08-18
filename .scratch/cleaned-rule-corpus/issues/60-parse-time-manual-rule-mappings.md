@@ -95,7 +95,7 @@ Collect hits on the parser (or parse pass) with `section_index`, `section_name`,
 - `reason` → corpus `comment`
 - Corpus-rule boolean flag for manual mapping
 - Compile-time application
-- Replacing `ipa_mapping.csv`, `feature_mappings.csv`, or correction passes for systematic clusters
+- Replacing `ipa_mappings.csv`, `feature_mappings.csv`, or correction passes for systematic clusters
 
 ## Acceptance criteria
 

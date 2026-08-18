@@ -38,11 +38,8 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 " / depending on the environment"," / sporadic ;; depending on the environment",False,replace prose
 " / in "," / ",False,replace prose
 " ! in "," ! ",False,replace prose
-"{ʃ(ʷ),x {z,ʒ(ʷ),ɣ} → s j","{ʃ(ʷ),x} {z,ʒ(ʷ),ɣ} → s j",False,"corrected from original source: Northern Athapaskan Languages (Vol. 6), p. 73"
 "There seems to ahve been some stuff going on"," ;; There seems to ahve been some stuff going on",False,comment
 " (“[a]rchaic relic”)"," ;; (“[a]rchaic relic”)",False,comment
-"nr → s","nl → s",False,"corrected form original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
-"{ʔθ,ʔr} → {ʔ,j,∅}","ʔθ, ʔr → {ʔ,j,∅}",False,"corrected form original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
 " / when stem-final"," / _%# ;; when stem-final",False,"replacing prose - this is an approximation and may be wrong"
 " / when-stem final"," / _%# ;; when-stem final",False,"replacing prose - this is an approximation and may be wrong"
 " (→ yː sometimes)"," → yː ;; (sometimes)",False,workaround - we can't handle different envs for chained rules

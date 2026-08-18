@@ -5,12 +5,12 @@ Status: resolved
 
 ## Question
 
-For **`unknown_character`** failures in [asca-rule-inventory-error.csv](../inventory/asca-rule-inventory-error.csv), which non-punctuation error tokens are **letter-like** Index graphèmes that should map to ASCA-accepted IPA at parse time (via `ipa_mapping.csv`), and with what confidence?
+For **`unknown_character`** failures in [asca-rule-inventory-error.csv](../inventory/asca-rule-inventory-error.csv), which non-punctuation error tokens are **letter-like** Index graphèmes that should map to ASCA-accepted IPA at parse time (via `ipa_mappings.csv`), and with what confidence?
 
 ## Notes
 
 - Baseline: **613** `unknown_character` rows ([inventory summary](../inventory/asca-rule-inventory-summary.md)); **51** distinct letter-like `error_token` values after filtering punctuation and combining marks alone.
-- Existing ingest path: `data/common/ipa_mapping.csv` + `apply_ipa_mappings()` in `IndexDiachronicaParser` (Š→ʃ seeded).
+- Existing ingest path: `data/common/ipa_mappings.csv` + `apply_ipa_mappings()` in `IndexDiachronicaParser` (Š→ʃ seeded).
 - **Out of scope for this spike:** length marks (`ː`, `ˑ` — tickets 15/25); subscript correspondence notation (`ₓ`, `ₙ`, …); pure punctuation (`(`, `"`, …); prose env fragments where the character is not a phonological segment.
 - Validate proposed targets against **ASCA 0.10.2** `validate_asca` smoke (single-segment rules).
 - Resolve with `/research`; deliver CSV columns: `index_feature`, `ipa_target`, `confidence`, `notes`.
@@ -21,7 +21,7 @@ For **`unknown_character`** failures in [asca-rule-inventory-error.csv](../inven
 - [x] Punctuation / combining-only / length / subscript tokens documented as excluded
 - [x] Proposed mappings with `high` | `medium` | `low` | `defer` confidence and cited rationale
 - [x] Output CSV at `research/unknown-character-ipa-mappings.csv`
-- [x] Findings markdown linked from this ticket; no bulk seeding of `ipa_mapping.csv` (spike only)
+- [x] Findings markdown linked from this ticket; no bulk seeding of `ipa_mappings.csv` (spike only)
 
 ## Answer
 
@@ -36,4 +36,4 @@ For **`unknown_character`** failures in [asca-rule-inventory-error.csv](../inven
 
 **Defer:** `Ω` (author placeholder); `ð`/`ŋ`/`ɛ`/`ʝ` (ASCA already accepts; inventory hits are prose).
 
-**Follow-on:** paste high/medium rows into `data/common/ipa_mapping.csv` as a correction pass (not done in this spike).
+**Follow-on:** paste high/medium rows into `data/common/ipa_mappings.csv` as a correction pass (not done in this spike).

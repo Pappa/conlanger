@@ -1377,23 +1377,23 @@ def test_apply_feature_mappings():
 
 def test_load_parser_config_default_includes_high_and_medium():
     config = load_parser_config()
-    assert config.ipa_mapping_confidence == frozenset({"high", "medium"})
+    assert config.ipa_mappings_confidence == frozenset({"high", "medium"})
 
 
 def test_load_parser_config_high_only_override(tmp_path: Path):
     path = tmp_path / "parser_config.yml"
     path.write_text(
-        "ipa_mapping:\n  confidence:\n    - high\n",
+        "ipa_mappings:\n  confidence:\n    - high\n",
         encoding="utf-8",
     )
     config = load_parser_config(path)
-    assert config.ipa_mapping_confidence == frozenset({"high"})
+    assert config.ipa_mappings_confidence == frozenset({"high"})
 
 
 def test_load_parser_config_ignores_non_list_series_expansion_entries(tmp_path: Path):
     path = tmp_path / "parser_config.yml"
     path.write_text(
-        "ipa_mapping:\n  confidence: [high]\nseries_expansions:\n  Hₓ: not-a-list\n",
+        "ipa_mappings:\n  confidence: [high]\nseries_expansions:\n  Hₓ: not-a-list\n",
         encoding="utf-8",
     )
     config = load_parser_config(path)
@@ -1402,9 +1402,9 @@ def test_load_parser_config_ignores_non_list_series_expansion_entries(tmp_path: 
 
 def test_load_parser_config_defaults_confidence_to_high_when_missing(tmp_path: Path):
     path = tmp_path / "parser_config.yml"
-    path.write_text("ipa_mapping: {}\n", encoding="utf-8")
+    path.write_text("ipa_mappings: {}\n", encoding="utf-8")
     config = load_parser_config(path)
-    assert config.ipa_mapping_confidence == frozenset({"high"})
+    assert config.ipa_mappings_confidence == frozenset({"high"})
 
 
 def test_ipa_mappings_dict_uses_config_confidence_levels():
@@ -1421,7 +1421,7 @@ def test_ipa_mappings_dict_uses_config_confidence_levels():
 def test_ipa_mappings_dict_high_only_config_excludes_medium(tmp_path: Path):
     config_path = tmp_path / "parser_config.yml"
     config_path.write_text(
-        "ipa_mapping:\n  confidence:\n    - high\n",
+        "ipa_mappings:\n  confidence:\n    - high\n",
         encoding="utf-8",
     )
     config = load_parser_config(config_path)
@@ -1486,7 +1486,7 @@ def test_index_diachronica_parser_high_only_config_skips_medium_at_parse(
 ):
     config_path = tmp_path / "parser_config.yml"
     config_path.write_text(
-        "ipa_mapping:\n  confidence:\n    - high\n",
+        "ipa_mappings:\n  confidence:\n    - high\n",
         encoding="utf-8",
     )
     config = load_parser_config(config_path)
@@ -1506,9 +1506,9 @@ def test_index_diachronica_parser_high_only_config_skips_medium_at_parse(
 
 
 def test_index_diachronica_parser_accepts_custom_parser_config():
-    config = ParserConfig(ipa_mapping_confidence=frozenset({"high"}))
+    config = ParserConfig(ipa_mappings_confidence=frozenset({"high"}))
     parser = default_index_parser(parser_config=config)
-    assert parser._parser_config.ipa_mapping_confidence == frozenset({"high"})
+    assert parser._parser_config.ipa_mappings_confidence == frozenset({"high"})
 
 
 def test_parse_rule_element_normalizes_feature_matrices():

@@ -22,7 +22,7 @@ _DATA_ROOT = Path(__file__).resolve().parents[3] / "data"
 
 DEFAULT_GROUP_MAPPINGS_CSV = _DATA_ROOT / "asca" / "group_mappings.csv"
 DEFAULT_FEATURE_MAPPINGS_CSV = _DATA_ROOT / "asca" / "feature_mappings.csv"
-DEFAULT_IPA_MAPPINGS_CSV = _DATA_ROOT / "common" / "ipa_mapping.csv"
+DEFAULT_IPA_MAPPINGS_CSV = _DATA_ROOT / "common" / "ipa_mappings.csv"
 DEFAULT_MANUAL_MAPPINGS_CSV = _DATA_ROOT / "common" / "manual_mappings.csv"
 DEFAULT_SERIES_MAPPINGS_CSV = _DATA_ROOT / "asca" / "series_mappings.csv"
 DEFAULT_SECTION_ABBREVIATIONS_YML = (
@@ -128,7 +128,7 @@ def load_parser_config(path: Path | None = None) -> ParserConfig:
     """Load parser runtime settings from YAML."""
     config_path = DEFAULT_PARSER_CONFIG_PATH if path is None else Path(path)
     raw = _load_yaml(config_path)
-    confidence = raw.get("ipa_mapping", {}).get(
+    confidence = raw.get("ipa_mappings", {}).get(
         "confidence", DEFAULT_IPA_MAPPING_CONFIDENCE
     )
     raw_expansions = raw.get("series_expansions") or {}
@@ -137,7 +137,7 @@ def load_parser_config(path: Path | None = None) -> ParserConfig:
         if isinstance(members, list):
             series_expansions[str(token)] = tuple(str(m) for m in members)
     return ParserConfig(
-        ipa_mapping_confidence=frozenset(confidence),
+        ipa_mappings_confidence=frozenset(confidence),
         series_expansions=series_expansions,
     )
 
@@ -185,9 +185,9 @@ def ipa_mappings_dict(
 ) -> dict[str, str]:
     """Return IPA mappings keyed by Index character for configured confidence levels."""
     confidences = (
-        config.ipa_mapping_confidence
+        config.ipa_mappings_confidence
         if config is not None
-        else load_parser_config().ipa_mapping_confidence
+        else load_parser_config().ipa_mappings_confidence
     )
     return {
         row.index_feature: row.ipa_target

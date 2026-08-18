@@ -11,7 +11,7 @@ Spike for [42-spike-unknown-character-ipa-mappings](../issues/42-spike-unknown-c
 3. **Exclude non-segment letters** — length modifiers (`ː`, `ˑ`; tickets 15/25) and subscript correspondence glyphs (`ₓ`, `ₙ`, `ₛ`, `ᵤ`, `ᵚ`).
 4. For each remaining letter token, propose an `ipa_target` that **ASCA 0.10.2 accepts** in a single-segment smoke rule (`segment > ∅`), with confidence `high` | `medium` | `low` | `defer`.
 
-**Deliverable CSV:** [unknown-character-ipa-mappings.csv](./unknown-character-ipa-mappings.csv) — paste-ready review set; **not** auto-seeded into `data/common/ipa_mapping.csv`.
+**Deliverable CSV:** [unknown-character-ipa-mappings.csv](./unknown-character-ipa-mappings.csv) — paste-ready review set; **not** auto-seeded into `data/common/ipa_mappings.csv`.
 
 ---
 
@@ -78,6 +78,6 @@ Spike for [42-spike-unknown-character-ipa-mappings](../issues/42-spike-unknown-c
 ## References
 
 - Index inventory: [asca-rule-inventory-summary.md](../inventory/asca-rule-inventory-summary.md)
-- Existing ingest: `data/common/ipa_mapping.csv`, `apply_ipa_mappings()`
+- Existing ingest: `data/common/ipa_mappings.csv`, `apply_ipa_mappings()`
 - PIE palatovelars: Index reconstruction tables (`ḱ`, `ǵ`) → IPA `kʲ`, `ɡʲ`
 - ASCA validity: [asca-rule-validity.md](./asca-rule-validity.md)

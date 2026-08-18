@@ -25,7 +25,7 @@ index_feature,ipa_target,confidence,notes
 Ω,,defer,Middle Vietnamese author placeholder (tʃ>Ω); no stable IPA target (n=3)
 å,ɔ,low,Ring-a; section-specific (2 rows) (n=2)
 ŏ,o,low,Breve o; rare (n=2)
-š,ʃ,high,Latin s-caron; same target as Š in ipa_mapping.csv (n=2)
+š,ʃ,high,Latin s-caron; same target as Š in ipa_mappings.csv (n=2)
 â,ɑ,medium,French a-circumflex often open back /ɑ/ (n=1)
 ë,e,low,Diaeresis e; rare (1 row) (n=1)
 ô,o,medium,Circumflex o phoneme letter (n=1)

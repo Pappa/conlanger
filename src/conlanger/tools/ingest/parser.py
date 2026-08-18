@@ -16,7 +16,7 @@ Uncertainty glosses
 (``sporadic``, ``sometimes``, ``occasionally``, …) are stripped from field values
 and recorded as ``sporadic: true``. **Feature matrix** synonym replacement inside ``[...]`` via
 ``feature_mappings.csv`` (``raw`` unchanged). **IPA character** substitution via
-``ipa_mapping.csv`` (``raw`` unchanged). Inline prose stripped for ASCA is captured in optional ``comment`` on each corpus
+``ipa_mappings.csv`` (``raw`` unchanged). Inline prose stripped for ASCA is captured in optional ``comment`` on each corpus
 rule: semicolon tails in ``env`` / ``exception`` first (``apply_semicolon_field_comments``), then
 field-level glosses and env qualifiers. Index word-internal ``medial`` / ``medially`` env
 prose becomes ``env: _`` with boundary ``exception: :{#_, _#}:`` (``apply_medial_env_conditions``).

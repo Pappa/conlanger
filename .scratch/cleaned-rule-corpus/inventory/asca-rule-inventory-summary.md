@@ -12,9 +12,9 @@
 
 | count | failure_class |
 |------:|---------------|
-| 493 | `syntax_other` |
+| 492 | `syntax_other` |
 | 348 | `unknown_character` |
-| 275 | `expected_underscore` |
+| 276 | `expected_underscore` |
 | 128 | `runtime_other` |
 | 110 | `unknown_grouping` |
 | 92 | `unknown_feature` |
