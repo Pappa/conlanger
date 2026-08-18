@@ -110,12 +110,17 @@ section_index,section_name,rule_id,source,manual_mapping
 17.7.2.1.12,Old English to Southern Middle English,Southern-Middle-English-ɑ-e-o,index_diachronica_original.html:5998, / 
 17.7.2.1.12,Old English to Southern Middle English,Southern-Middle-English-ɑ-e-o,index_diachronica_original.html:5998, ! 
 17.7.2.1.12,Old English to Southern Middle English,Southern-Middle-English-Vː_2,index_diachronica_original.html:6000, / 
+17.7.2.1.13,Middle English to Yola,Yola-t-d,index_diachronica_original.html:6012," "" / sporadic ; (conditioning unclear)"""
+17.7.2.1.13,Middle English to Yola,Yola-ʍ,index_diachronica_original.html:6015, ; (at least one instance of 
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-a,index_diachronica_original.html:6043,a → ɒ → o
+17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-f-θ-s,index_diachronica_original.html:6061, / $_ ; (h → ɦ?)
+17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-V,index_diachronica_original.html:6062," / _[-long, -stress]"
 17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-V-long-+stress,index_diachronica_original.html:6067, / 
 17.7.2.2.2,Middle Dutch to Modern Dutch,Modern-Dutch-—-x-ɣ,index_diachronica_original.html:6078, / sporadic ; in northern dialects
 17.7.2.2.2,Middle Dutch to Modern Dutch,Modern-Dutch-—-x-ɣ_2,index_diachronica_original.html:6079, / sporadic ; in southern dialects
 17.7.2.3,Middle High German to Standard German,Standard-German-V_3,index_diachronica_original.html:6118, / 
 17.7.2.3,Middle High German to Standard German,Standard-German-ə,index_diachronica_original.html:6120, / _[-stress]
+17.7.2.5,West Germanic to Old Low German,Old-Low-German-f-θ-s,index_diachronica_original.html:6146, / $_ 
 17.7.3,Common Germanic to Proto-Norse,Proto-Norse-i,index_diachronica_original.html:6168, ! 
 17.7.3.1,Proto-Norse to Old Norse,Old-Norse-VN,index_diachronica_original.html:6195, ! 
 17.7.3.1,Proto-Norse to Old Norse,Old-Norse-a_4,index_diachronica_original.html:6204, ! 

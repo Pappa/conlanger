@@ -4,8 +4,8 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9638** (one per corpus rule)
-- OK: **8007** (83.1%)
-- Fail: **1600** (16.6%)
+- OK: **8011** (83.1%)
+- Fail: **1596** (16.6%)
 - Skipped: **31** (0.3%)
 - Sections all OK: **286 / 713** (40.1%)
 - Sections skipped: **1 / 714** (0.1%)
@@ -14,13 +14,13 @@
 
 | count | failure_class |
 |------:|---------------|
-| 501 | `syntax_other` |
+| 503 | `syntax_other` |
 | 289 | `unknown_character` |
-| 241 | `expected_underscore` |
+| 238 | `expected_underscore` |
 | 128 | `runtime_other` |
 | 111 | `unknown_grouping` |
 | 90 | `unknown_feature` |
-| 79 | `prose_or_expected_arrow` |
+| 76 | `prose_or_expected_arrow` |
 | 45 | `nested_brackets` |
 | 38 | `expected_number` |
 | 32 | `diacritic_prereq` |

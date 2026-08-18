@@ -26219,12 +26219,13 @@ sections:
     raw: C → ∅ / C_%
     source: index_diachronica_original.html:6011
     rule_id: Yola-C
-  - stages:
+  - comment: (conditioning unclear)"; sporadic; "
+    stages:
     - t d
     - θ ð
-    comment: (conditioning unclear)
     raw: t d → θ ð (conditioning unclear)
     source: index_diachronica_original.html:6012
+    sporadic: true
     rule_id: Yola-t-d
   - stages:
     - ∅
@@ -26241,10 +26242,10 @@ sections:
     raw: 'F → F[+ voice] / #_ ! F = ʍ'
     source: index_diachronica_original.html:6014
     rule_id: Yola-F
-  - stages:
+  - comment: (at least one instance of → w, before a high front vowel)
+    stages:
     - ʍ
-    - f (at least one instance of
-    - w, before a high front vowel)
+    - f
     raw: ʍ → f (at least one instance of → w, before a high front vowel)
     source: index_diachronica_original.html:6015
     rule_id: Yola-ʍ
@@ -26468,18 +26469,18 @@ sections:
     raw: '{ie,ia,io} uo → iə uə'
     source: index_diachronica_original.html:6059
     rule_id: Middle-Dutch-ie,ia,io-uo
-  - stages:
+  - comment: (h → ɦ?)
+    stages:
     - f θ s
     - v ð z
-    env: syllable-initially
-    comment: (h > ɦ?)
+    env: $_
     raw: f θ s → v ð z / syllable-initially (h → ɦ?)
     source: index_diachronica_original.html:6061
     rule_id: Middle-Dutch-f-θ-s
   - stages:
     - V
     - ə
-    env: if short and unstressed
+    env: _[-long, -stress]
     raw: V → ə / if short and unstressed
     source: index_diachronica_original.html:6062
     rule_id: Middle-Dutch-V
@@ -26954,7 +26955,7 @@ sections:
   - stages:
     - f θ s
     - v ð z
-    env: syllable-initially
+    env: $_
     raw: f θ s → v ð z / syllable-initially
     source: index_diachronica_original.html:6146
     rule_id: Old-Low-German-f-θ-s

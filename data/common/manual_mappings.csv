@@ -48,3 +48,8 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 " (Blevins "," ; (Blevins ",False,comment
 " (first change marked "," ; (first change marked ",False,comment
 " (?; included here based on ","; ; (?; included here based on ",False,comment
+" (at least one instance of "," ; (at least one instance of ",False,comment
+" (conditioning unclear)", " / sporadic ; (conditioning unclear)",False,comment
+" / syllable-initially (h → ɦ?)"," / $_ ; (h → ɦ?)",False,replace prose
+" / syllable-initially"," / $_ ",False,replace 
+" / if short and unstressed"," / _[-long, -stress]",False,replace prose
