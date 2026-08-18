@@ -55,3 +55,11 @@ rules:
       id: Proto-Dravidian-nr̀
       content: "n{r,ɾ} → nr"
       reason: "Replacing with IPA symbols"
+  - rule:
+      id: Yemsa-kʼ
+      content: "kʼ → k / #_"
+      reason: "This is a guess, it could be _# or _,#"
+  - rule:
+      id: Proto-Mongolic-tʃ_2
+      content: "tʃ → d / #_"
+      reason: "This is a guess, it could be _# or _,#"

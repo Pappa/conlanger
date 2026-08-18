@@ -942,8 +942,8 @@ sections:
   - stages:
     - kʼ
     - k
-    env: '#'
-    raw: 'kʼ → k / #'
+    env: '#_'
+    raw: 'kʼ → k / #_'
     source: index_diachronica_original.html:1110
     rule_id: Yemsa-kʼ
   - stages:
@@ -6723,8 +6723,8 @@ sections:
   - stages:
     - tʃ
     - d
-    env: '#'
-    raw: 'tʃ → d / #'
+    env: '#_'
+    raw: 'tʃ → d / #_'
     source: index_diachronica_original.html:2193
     rule_id: Proto-Mongolic-tʃ_2
   - stages:
