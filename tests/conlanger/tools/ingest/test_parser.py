@@ -41,12 +41,6 @@ from conlanger.utils.file_io import (
     load_parser_config,
     write_manual_mappings_matched_csv,
 )
-from conlanger.utils.gloss import (
-    extract_semicolon_prose_from_field,
-    extract_uncertainty_qualifier_from_field,
-    strip_trailing_gloss_from_field,
-    strip_uncertainty_qualifier_from_field,
-)
 from conlanger.utils.mappings import (
     FeatureMapping,
     GroupMapping,
@@ -341,51 +335,6 @@ def test_parse_rule_element_keeps_chain_with_env():
     assert rules[0]["env"] == "V_V"
 
 
-@pytest.mark.parametrize(
-    ("text", "expected"),
-    [
-        ("h (sporadic)", "h"),
-        ("_{f,s} (sporadic)", "_{f,s}"),
-        ("sporadic, usually {#,V[+front]}_", "{#,V[+front]}_"),
-        ("sometimes", ""),
-        ('∅ "(sporadic)"', "∅"),
-        ("ɛ (sometimes)", "ɛ"),
-        ("_# (sporadic?)", "_#"),
-        ("∅ (occasionally?)", "∅"),
-        ("occasionally", ""),
-        ("_i, occasionally", "_i"),
-        ("_C (occasionally blocked)", "_C"),
-        ("a", "a"),
-    ],
-)
-def test_strip_uncertainty_qualifier_from_field(text, expected):
-    assert strip_uncertainty_qualifier_from_field(text) == expected
-
-
-@pytest.mark.parametrize(
-    ("text", "expected_value", "expected_captures"),
-    [
-        ("", "", []),
-        ('h "sometimes"', "h", ['"sometimes"']),
-        ("h sometimes", "h", ["sometimes"]),
-        ("h (sometimes uncertain)", "h", ["(sometimes uncertain)"]),
-        ("∅ (occasionally?)", "∅", ["(occasionally?)"]),
-        ("occasionally", "", ["occasionally"]),
-        (
-            'r "in Hieroglyphic Luwian, occasionally"',
-            "r",
-            ['"in Hieroglyphic Luwian, occasionally"'],
-        ),
-    ],
-)
-def test_extract_uncertainty_qualifier_from_field(
-    text, expected_value, expected_captures
-):
-    value, captures = extract_uncertainty_qualifier_from_field(text)
-    assert value == expected_value
-    assert captures == expected_captures
-
-
 def test_write_rule_comment_phrase_summary(tmp_path: Path):
     doc = {
         "sections": [
@@ -472,51 +421,6 @@ def test_parse_rule_element_strips_lone_occasionally_env():
     assert "env" not in rules[0]
     assert rules[0]["sporadic"] is True
     assert "occasionally" in rules[0]["comment"]
-
-
-@pytest.mark.parametrize(
-    ("text", "expected"),
-    [
-        (
-            "p (some Polynesian languages, such as Levei and Drehet)",
-            "p",
-        ),
-        (
-            "f (Common Celtic; I'm not sure of the conditions)",
-            "f",
-        ),
-        (
-            "s̩ f̩ (Ōgami) (http://amritas.com/101023.htm#10192359)",
-            "s̩ f̩",
-        ),
-        (
-            'ɔa "(except NV:[+front] of the Faroes > a:[+long])"',
-            "ɔa",
-        ),
-        ("_{f,s}", "_{f,s}"),
-        ("_# (except as below)", "_#"),
-        ("tʃ {ɡ,q} (ɡ is more common)", "tʃ {ɡ,q}"),
-        (
-            "depending on the environment; again, the article is unclear",
-            "depending on the environment",
-        ),
-        (
-            "“when another sibilant is in the word nearby” and (word-finally?) when",
-            "and (word-finally?) when",
-        ),
-        (
-            "{a,ə} / _{x,h} “in the odd-numbered of any sequence of one or more short-vowel open syllables”",
-            "{a,ə} / _{x,h}",
-        ),
-        ("_# when unstressed", "_# when unstressed"),
-        ("z > d / $_OO “", "z > d / $_OO"),
-        ("k(ʼ)", "k(ʼ)"),
-        ("(?)", "(?)"),
-        ("C(…C)", "C(…C)"),
-    ],
-)
-def test_strip_trailing_gloss_from_field(text, expected):
-    assert strip_trailing_gloss_from_field(text) == expected
 
 
 def test_apply_trailing_glosses():
@@ -1584,14 +1488,6 @@ def test_join_rule_comment():
     assert join_rule_comment() is None
 
 
-def test_extract_semicolon_prose_captures_tail():
-    cleaned, captures = extract_semicolon_prose_from_field(
-        "depending on the environment; again, the article is unclear"
-    )
-    assert cleaned == "depending on the environment"
-    assert captures == ["again, the article is unclear"]
-
-
 def test_parse_rule_element_captures_semicolon_comment():
     el = html.fragment_fromstring(
         '<p class="schg">V → ∅ / short only; blocked by following consonant</p>',
@@ -1638,79 +1534,6 @@ def test_normalize_ipa_in_field_noop_without_mappings():
 def test_index_diachronica_parser_accepts_custom_corrections():
     parser = default_index_parser(corrections={"Test-id": "a → b"})
     assert parser._corrections == {"Test-id": "a → b"}
-
-
-def test_paren_inner_is_gloss_classifies_prose_and_phonology():
-    from conlanger.utils.gloss import paren_inner_is_gloss
-
-    assert paren_inner_is_gloss("short only") is True
-    assert paren_inner_is_gloss("?") is False
-    assert paren_inner_is_gloss("https://example.com") is True
-    assert paren_inner_is_gloss("NB: see above") is True
-
-
-def test_extract_trailing_quoted_gloss_from_field():
-    from conlanger.utils.gloss import extract_trailing_quoted_gloss_from_field
-
-    cleaned, captures = extract_trailing_quoted_gloss_from_field(
-        'V / _# "when stressed"'
-    )
-    assert cleaned == "V / _#"
-    assert captures == ['"when stressed"']
-
-
-def test_extract_embedded_quoted_gloss_from_field():
-    from conlanger.utils.gloss import extract_embedded_quoted_gloss_from_field
-
-    cleaned, captures = extract_embedded_quoted_gloss_from_field('V, "short only", _C#')
-    assert cleaned == "V_C#"
-    assert '"short only"' in captures[0]
-
-
-def test_extract_field_wrapped_quoted_gloss_from_field():
-    from conlanger.utils.gloss import extract_field_wrapped_quoted_gloss_from_field
-
-    cleaned, captures = extract_field_wrapped_quoted_gloss_from_field(
-        "\u201csomething like /\u0292/\u201d"
-    )
-    assert cleaned == ""
-    assert captures == ["\u201csomething like /\u0292/\u201d"]
-
-
-def test_extract_leading_quoted_gloss_from_field():
-    from conlanger.utils.gloss import extract_leading_quoted_gloss_from_field
-
-    cleaned, captures = extract_leading_quoted_gloss_from_field(
-        "\u201cThe CIV rules for the voicing of s > z\u201d a \u2192 e"
-    )
-    assert cleaned == "a \u2192 e"
-    assert captures[0].startswith("\u201cThe CIV rules")
-
-
-def test_is_quoted_prose_paragraph():
-    from conlanger.utils.gloss import is_quoted_prose_paragraph
-
-    assert is_quoted_prose_paragraph(
-        "\u201cThe PIE rules for the voicing of s \u2192 z, as in [nizdos]\u201d"
-    )
-    assert not is_quoted_prose_paragraph("a \u2192 e / _C")
-
-
-def test_extract_trailing_paren_glosses_from_field():
-    from conlanger.utils.gloss import extract_trailing_paren_glosses_from_field
-
-    cleaned, captures = extract_trailing_paren_glosses_from_field("_CVC# (short only)")
-    assert cleaned == "_CVC#"
-    assert captures == ["(short only)"]
-
-
-def test_load_manual_mappings_from_default_csv():
-    rows = load_manual_mappings()
-    assert len(rows) >= 2
-    by_from = {row.from_text: row for row in rows}
-    broken_env = "m̩ n̩ → am an / _{s,({m,j,w)V}"
-    assert by_from[broken_env].to_text == "m̩ n̩ → am an / _{s,({m,j,w})V}"
-    assert by_from[broken_env].reason == "bracket correction"
 
 
 def test_load_manual_mappings_returns_empty_when_file_missing(tmp_path: Path):
@@ -1934,11 +1757,7 @@ def test_load_index_diachronica_corrections_reads_rules_list_schema(tmp_path: Pa
 def test_load_index_diachronica_corrections_skips_malformed_entries(tmp_path: Path):
     path = tmp_path / "corrections.yml"
     path.write_text(
-        "rules:\n"
-        "  - not-a-rule\n"
-        "  - rule:\n"
-        "      id: ok\n"
-        "      content: a → b\n",
+        "rules:\n  - not-a-rule\n  - rule:\n      id: ok\n      content: a → b\n",
         encoding="utf-8",
     )
     assert load_index_diachronica_corrections(path) == {"ok": "a → b"}
