@@ -1,9 +1,8 @@
-"""In-memory correspondence-series apply/classify (no CSV I/O)."""
+"""Subscript token classification and parse-time collective expansion."""
 
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass
 from typing import Any
 
 # Correspondence-series index: concrete segment base + ordinal subscript (not ₀, not ₓ).
@@ -11,22 +10,8 @@ _CORRESPONDENCE_INDEX_RE = re.compile(r"(?<![A-Z])([a-zA-Zæøåɑɡɢ]+)([₁�
 _COLLECTIVE_TOKEN_RE = re.compile(r"(?<![A-Z])([a-zA-Z]+)ₓ")
 _POSITIONAL_SLOT_RE = re.compile(r"^[A-Z][₁₂₃₄₅₆₇₈₉]$")
 _IDENTITY_SUBSCRIPT_RE = re.compile(r"^[A-Za-z]₀$")
-# ASCA grouping letters cannot host a digit suffix (s1 → S + reference 1).
-_ASCA_GROUPING_LETTERS = frozenset("CSOPFLNGV")
-
-_SUBSCRIPT_TO_ASCII = str.maketrans("₁₂₃₄₅₆₇₈₉", "123456789")
-
 # Any token containing an Index subscript digit/letter (includes compounds like ``eh₂``, ``CV₁``).
 _SUBSCRIPT_TOKEN_RE = re.compile(r"[A-Za-zæøåɑɡɢ]*[₀₁₂₃₄₅₆₇₈₉ₓ]+")
-
-
-@dataclass(frozen=True)
-class SeriesMapping:
-    section_index: str
-    token: str
-    asca_target: str
-    source: str = ""
-    notes: str = ""
 
 
 def classify_subscript_token(token: str) -> str:
@@ -96,52 +81,6 @@ def find_correspondence_series_tokens(text: str) -> set[str]:
 def section_index_prefixes(section_index: str) -> list[str]:
     parts = [part for part in section_index.split(".") if part]
     return [".".join(parts[:index]) for index in range(len(parts), 0, -1)]
-
-
-def asca_digit_segment(base: str, subscript_digit: str) -> str:
-    """Map Index ``base`` + subscript digit to an ASCA-parseable segment name."""
-    ascii_digit = subscript_digit.translate(_SUBSCRIPT_TO_ASCII)
-    if base.upper() in _ASCA_GROUPING_LETTERS:
-        # ``s₁`` cannot become ``s1`` (ASCA reads ``S`` + reference ``1``).
-        return f"f{ascii_digit}"
-    return f"{base}{ascii_digit}"
-
-
-def lookup_series_target(
-    section_index: str,
-    token: str,
-    rows: list[SeriesMapping],
-) -> SeriesMapping | None:
-    keyed = {(row.section_index, row.token): row for row in rows}
-    for prefix in section_index_prefixes(section_index):
-        hit = keyed.get((prefix, token))
-        if hit is not None:
-            return hit
-    return keyed.get(("*", token))
-
-
-def expand_series_tokens_in_field(
-    text: str,
-    section_index: str,
-    rows: list[SeriesMapping],
-) -> str:
-    """Expand in-scope correspondence-series tokens using hierarchical section lookup."""
-    if not text or not rows or not section_index:
-        return text
-    replacements: list[tuple[str, str]] = []
-    for token in find_subscript_tokens(text):
-        if not in_scope_series_token(token):
-            continue
-        hit = lookup_series_target(section_index, token, rows)
-        if hit is not None:
-            replacements.append((token, hit.asca_target))
-    if not replacements:
-        return text
-    replacements.sort(key=lambda pair: len(pair[0]), reverse=True)
-    result = text
-    for token, target in replacements:
-        result = result.replace(token, target)
-    return result
 
 
 def apply_series_expansions(
@@ -214,52 +153,3 @@ def _expand_collectives_outside_braces(
         if token in result:
             result = result.replace(token, "{" + ",".join(members) + "}")
     return result
-
-
-def apply_series_mappings(
-    parts: dict[str, str],
-    section_index: str,
-    rows: list[SeriesMapping],
-) -> dict[str, str]:
-    """Expand correspondence-series tokens in rule fields; ``raw`` unchanged upstream."""
-    if not rows or not section_index:
-        return parts
-    result = dict(parts)
-    stages = result.get("stages")
-    if stages is not None:
-        result["stages"] = [
-            expand_series_tokens_in_field(stage, section_index, rows)
-            for stage in stages
-        ]
-    for key in ("env", "exception"):
-        if key in result:
-            result[key] = expand_series_tokens_in_field(
-                result[key], section_index, rows
-            )
-    return result
-
-
-def section_abbreviations_for_index(
-    section_index: str,
-    rows: list[SeriesMapping],
-) -> dict[str, str]:
-    """Build section ``abbreviations`` from series rows applicable to ``section_index``."""
-    if not rows or not section_index:
-        return {}
-    prefixes = set(section_index_prefixes(section_index)) | {"*"}
-    matching = [
-        row
-        for row in rows
-        if row.section_index in prefixes and in_scope_series_token(row.token)
-    ]
-    matching.sort(
-        key=lambda row: (
-            0 if row.section_index == "*" else len(row.section_index.split(".")),
-            row.section_index,
-            row.token,
-        )
-    )
-    abbrevs: dict[str, str] = {}
-    for row in matching:
-        abbrevs[row.token] = row.asca_target
-    return abbrevs

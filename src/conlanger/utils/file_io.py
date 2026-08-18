@@ -18,7 +18,6 @@ from conlanger.utils.mappings import (
     ManualMappingMatch,
     ParserConfig,
 )
-from conlanger.utils.series import SeriesMapping
 
 _DATA_ROOT = Path(__file__).resolve().parents[3] / "data"
 
@@ -26,10 +25,6 @@ DEFAULT_GROUP_MAPPINGS_CSV = _DATA_ROOT / "asca" / "group_mappings.csv"
 DEFAULT_FEATURE_MAPPINGS_CSV = _DATA_ROOT / "asca" / "feature_mappings.csv"
 DEFAULT_IPA_MAPPINGS_CSV = _DATA_ROOT / "common" / "ipa_mappings.csv"
 DEFAULT_MANUAL_MAPPINGS_CSV = _DATA_ROOT / "common" / "manual_mappings.csv"
-DEFAULT_SERIES_MAPPINGS_CSV = _DATA_ROOT / "asca" / "series_mappings.csv"
-DEFAULT_SECTION_ABBREVIATIONS_YML = (
-    _DATA_ROOT / "diachronica" / "section_abbreviations.yml"
-)
 DEFAULT_INDEX_DIACHRONICA_CORRECTIONS = (
     _DATA_ROOT / "diachronica" / "index_diachronica_corrections.yml"
 )
@@ -291,57 +286,6 @@ def write_manual_mappings_matched_csv(
     ]
     write_csv_rows(path, rows, MANUAL_MAPPINGS_MATCHED_CSV_COLUMNS)
     return Path(path)
-
-
-def load_series_mappings(path: Path | None = None) -> list[SeriesMapping]:
-    """Load correspondence-series mappings from CSV."""
-    csv_path = DEFAULT_SERIES_MAPPINGS_CSV if path is None else Path(path)
-    records = read_csv_rows(
-        csv_path, required_columns={"section_index", "token", "asca_target"}
-    )
-    return [
-        SeriesMapping(
-            section_index=row["section_index"],
-            token=row["token"],
-            asca_target=row["asca_target"],
-            source=row.get("source", ""),
-            notes=row.get("notes", ""),
-        )
-        for row in records
-    ]
-
-
-def _dedupe_series_rows(rows: list[SeriesMapping]) -> list[SeriesMapping]:
-    """Keep the first row per (section_index, token); extraction order = priority."""
-    seen: set[tuple[str, str]] = set()
-    out: list[SeriesMapping] = []
-    for row in rows:
-        key = (row.section_index, row.token)
-        if key in seen:
-            continue
-        seen.add(key)
-        out.append(row)
-    return out
-
-
-def write_series_mappings_csv(rows: list[SeriesMapping], path: Path) -> None:
-    """Dedupe, sort, and write series mappings CSV."""
-    deduped = _dedupe_series_rows(rows)
-    deduped.sort(key=lambda row: (row.section_index, row.token))
-    write_csv_rows(
-        path,
-        [
-            {
-                "section_index": row.section_index,
-                "token": row.token,
-                "asca_target": row.asca_target,
-                "source": row.source,
-                "notes": row.notes,
-            }
-            for row in deduped
-        ],
-        ["section_index", "token", "asca_target", "source", "notes"],
-    )
 
 
 @dataclass(frozen=True)

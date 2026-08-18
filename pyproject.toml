@@ -26,7 +26,6 @@ dependencies = [
 regenerate_corpus = "conlanger.scripts.regenerate_corpus:main"
 inventory_asca_rules = "conlanger.scripts.inventory_asca_rules:main"
 sample_asca_guess_fixtures = "conlanger.scripts.sample_asca_guess_fixtures:main"
-update_series_mappings = "conlanger.scripts.update_series_mappings:main"
 
 [project.optional-dependencies]
 testing = ["pytest", "pytest-cov", "pytest-mock"]

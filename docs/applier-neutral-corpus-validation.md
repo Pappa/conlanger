@@ -51,8 +51,6 @@ flowchart TD
 
 Ingest-only (no `asca` on PATH): `uv run regenerate_corpus --skip-validation`.
 
-Refresh series mappings separately: `uv run update_series_mappings`, then `uv run regenerate_corpus`.
-
 **Steady-state loop** ([ticket 05](../.scratch/cleaned-rule-corpus/issues/05-correction-workflow-invalid-rules.md)):
 
 1. Parse HTML → compile → validate per rule

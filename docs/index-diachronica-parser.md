@@ -2,7 +2,7 @@
 
 Parse-time transforms turn Index Diachronica HTML into an **applier-neutral** rule corpus YAML. This stage normalizes Index notation toward ASCA-parseable form in corpus fields (`input`, `output`, `env`, `exception`) while preserving the original HTML line in `raw` for audit ([ADR-0006](./adr/0006-html-source-of-truth-yaml-successor.md), [ADR-0010](./adr/0010-historical-fidelity-class-first-status.md)).
 
-**Primary code:** [`src/conlanger/tools/ingest/parser.py`](../src/conlanger/tools/ingest/parser.py) (`IndexDiachronicaParser`). **Series expansion:** [`src/conlanger/utils/series.py`](../src/conlanger/utils/series.py) (lookup/apply) + [`src/conlanger/tools/series_extract.py`](../src/conlanger/tools/series_extract.py) (HTML→CSV). **Orchestration:** `uv run regenerate_corpus` → [`regenerate_corpus.py`](../src/conlanger/scripts/regenerate_corpus.py).
+**Primary code:** [`src/conlanger/tools/ingest/parser.py`](../src/conlanger/tools/ingest/parser.py) (`IndexDiachronicaParser`). **Collective subscript expansion:** [`src/conlanger/utils/series.py`](../src/conlanger/utils/series.py) (`apply_series_expansions` from `data/parser_config.yml`). **Correspondence-series indices** stay Index-shaped at parse and expand at [compile](./sound-change-applier.md) via `data/compiler_config.yml`. **Orchestration:** `uv run regenerate_corpus` → [`regenerate_corpus.py`](../src/conlanger/scripts/regenerate_corpus.py).
 
 **Scope:** parse-time only. Class-letter expansion, length marks, ejectives, and laryngeal aliases run at [applier compile](./sound-change-applier.md). Compile validation runs after that ([ADR-0003](./adr/0003-validate-after-applier-compile.md)).
 
@@ -20,8 +20,7 @@ Parse-time transforms turn Index Diachronica HTML into an **applier-neutral** ru
 | Citation extraction (first `<p>` after `<h2>`, non-`schg`) | implemented | 4 | Bibliographic provenance per section. | `IndexDiachronicaParser.parse` |
 | Section comments (later non-`schg` paragraphs) | implemented | 5 | Editorial prose preserved separately from rules. | `IndexDiachronicaParser.parse`, `note_from_element` |
 | Rule extraction (`<p class="schg">` → `parse_rule_element`) | implemented | 6 | Sound-change rules are the corpus payload. | `IndexDiachronicaParser.parse` |
-| Section `abbreviations` table (from series mappings) | implemented | 7 | Hierarchical token→target map for correspondence-series; populated from `data/asca/series_mappings.csv`, not prose inference. | `section_abbreviations_for_index`, `IndexDiachronicaParser.parse` |
-| Global `abbreviations` | planned | 8 | Schema slot exists; global Key-to-Abbreviations not authored at ingest yet. | `IndexDiachronicaParser.abbreviations` (returns `{}`) |
+| Global `abbreviations` | planned | 7 | Schema slot exists; global Key-to-Abbreviations not authored at ingest yet. | `IndexDiachronicaParser.abbreviations` (returns `{}`) |
 
 ---
 
@@ -74,7 +73,7 @@ After **Manual mapping** and quoted-prose skip; **before** symbol normalization 
 | Trailing / embedded editorial gloss strip → `comment` | implemented | D2 | Prose in quotes, parens, semicolon tails breaks ASCA; capture-not-discard ([passes 21, 24, 31](../.scratch/cleaned-rule-corpus/map.md)). Internal order: embedded quotes → trailing quotes → trailing parens → semicolon prose. Field-level `;` capture retired (B½). | `apply_trailing_glosses` |
 | Env stress phrase normalization (`when stressed` / `when unstressed`) | implemented | D3 | Index env prose → ASCA env with `_` focus prefix ([pass 22](../.scratch/cleaned-rule-corpus/issues/22-correction-pass-stress-conditions.md)). | `apply_stress_conditions` |
 | Feature matrix synonym replacement (inside `[...]` only) | implemented | D4 | Index→ASCA renames / bundles / **tone** via `data/asca/feature_mappings.csv` (`mapping_kind` includes `tone` → `[tone: N]`; [pass 62](../.scratch/cleaned-rule-corpus/issues/62-correction-pass-tone-features.md)). Unmapped names left literal for `unknown_feature` clustering. | `apply_feature_mappings` |
-| Correspondence-series + collective subscript expansion | implemented (partial coverage) | D5 | When `series_mappings.csv` has a section hit, rewrite tokens to ASCA-parseable targets; unmapped tokens stay literal ([ADR-0004](./adr/0004-series-indices-per-section-maps.md), [tickets 26–28](../.scratch/cleaned-rule-corpus/issues/26-parse-time-correspondence-series-indices.md)). Positional (`C₁`) and identity (`V₀`) tokens are **explicitly skipped** by `in_scope_series_token`. | `apply_series_mappings` |
+| Collective subscript expansion (`series_expansions`) | implemented | D5 | Fan out `Xₓ` collectives from `data/parser_config.yml` ([grill 73](../.scratch/cleaned-rule-corpus/issues/73-grill-series-mapping-config-sot.md)). Correspondence-series indices (`h₁`, `s₁`, …) stay literal until compile. | `apply_series_expansions` |
 
 ### Phase E — Rule expansion (post-transform)
 
@@ -103,25 +102,11 @@ After **Manual mapping** and quoted-prose skip; **before** symbol normalization 
 | Whitespace tokenisation inside brackets | deferred | TBD | Most polarity-space cases handled by feature regex; multi-word tone names are CSV keys with spaces. |
 | Meta-notation (`X0`, `Xn`, retroflex marks, repetition groups) | deferred (cluster-driven) | TBD | No evidence-based ASCA expansion without inventory clustering. |
 | Section-local abbreviations (`TŠ`, uppercase `S₁`) | deferred (cluster-driven) | TBD | Index global Key insufficient; hand-added rows when clusters warrant. |
-| Global abbreviation table authorship | planned | TBD | `abbreviations()` returns `{}`; hierarchical section tables partially populated via series mappings only. |
+| Global abbreviation table authorship | planned | TBD | `abbreviations()` returns `{}`. |
 | Edge-split / `status: skipped` for unrepresentable lines | deferred | TBD | ADR-0005 interim skip policy deferred until post-correction triage. |
 | Prose-environment mapping (comment paragraphs → structured `env`) | planned (spike) | TBD | `comment` field captures qualifiers; structured env from prose not specified. |
 | Dedicated smart-quote normalizer | partial | TBD | Embedded/trailing `"`/`"` stripped as glosses at parse ([pass 24](../.scratch/cleaned-rule-corpus/issues/24-correction-pass-smart-quotes.md)); typographic apostrophe `'` → ejective at **compile**. |
-| Series mappings full coverage | in progress | TBD | HTML extraction done ([ticket 28](../.scratch/cleaned-rule-corpus/issues/28-extract-series-mappings-from-html.md)); gaps remain per coverage backlog. |
-
----
-
-## Series mappings module (parse-adjacent)
-
-Not part of the per-rule transform chain, but feeds parse-time expansion:
-
-| Component | Status | Role | Code |
-| --- | --- | --- | --- |
-| HTML → CSV extraction | implemented | Builds `data/asca/series_mappings.csv` from citations, tables, parallel/singleton rule I/O. | `update_series_mappings_from_html` via `uv run update_series_mappings` |
-| Hierarchical lookup | implemented | Longest-prefix section match; optional `*` global fallback. | `lookup_series_target`, `section_index_prefixes` |
-| Collective subscript synthesis | implemented | `Xₓ` → `{member targets}` when ≥2 members declared in citation. | `_collective_rows_for_section` |
-| ASCA digit segment fallback | implemented | `h₁` → `h1`; grouping-letter collision → `f1`. | `asca_digit_segment` |
-| Coverage audit / report | implemented | Tracks in-scope vs out-of-scope subscript tokens. | `audit_series_extraction`, `write_coverage_report` |
+| Correspondence-series index mappings | compile-time | TBD | Section-scoped rows authored in `data/compiler_config.yml` ([ticket 75](../.scratch/cleaned-rule-corpus/issues/75-implement-compiler-config-series-mappings.md)); PIE laryngeals seeded in `global`. |
 
 ---
 

@@ -244,11 +244,11 @@ def load_existing(path: Path) -> list[dict[str, str]]:
 def collect_schg_rules(html_path: Path) -> list[dict]:
     tables = load_default_ingest_tables()
     doc = IndexDiachronicaParser(
-        series_mappings=tables.series_mappings,
         manual_mappings=tables.manual_mappings,
         parser_config=tables.parser_config,
         feature_mappings=tables.feature_mappings,
         ipa_mappings=tables.ipa_mappings,
+        corrections=tables.corrections,
     ).parse(html_path)
     return [rule for section in doc["sections"] for rule in section.get("rules", [])]
 
