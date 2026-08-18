@@ -14,14 +14,14 @@
 
 | count | failure_class |
 |------:|---------------|
-| 493 | `syntax_other` |
-| 283 | `unknown_character` |
+| 491 | `syntax_other` |
+| 282 | `unknown_character` |
 | 242 | `expected_underscore` |
 | 128 | `runtime_other` |
 | 111 | `unknown_grouping` |
 | 90 | `unknown_feature` |
-| 74 | `prose_or_expected_arrow` |
-| 45 | `nested_brackets` |
+| 76 | `prose_or_expected_arrow` |
+| 46 | `nested_brackets` |
 | 38 | `expected_number` |
 | 32 | `diacritic_prereq` |
 | 22 | `runtime_delete_only_segment` |

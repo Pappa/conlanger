@@ -59,3 +59,4 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 "k ʃk → k* kː / V_V ","ʃk → kː / V_V ; k ʃk → k* kː / V_V ",False,unresolvable symbol
 "w (→ b?) → m","w → b → m",False,chaining
 "VN → V[+nasal] → V → (?)","VN → V[+nasal] → V",False,unresolvable symbol
+" (→ b seems more common)"," ; (→ b seems more common)",False,replace prose
