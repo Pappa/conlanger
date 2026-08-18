@@ -17,7 +17,7 @@ Uncertainty glosses
 and recorded as ``sporadic: true``. **Feature matrix** synonym replacement inside ``[...]`` via
 ``feature_mappings.csv`` (``raw`` unchanged). **IPA character** substitution via
 ``ipa_mappings.csv`` (``raw`` unchanged). Inline prose stripped for ASCA is captured in optional ``comment`` on each corpus
-rule: semicolon tails in ``env`` / ``exception`` first (``apply_semicolon_field_comments``), then
+rule: the first ``;`` on the working line is peeled before structural split, then
 field-level glosses and env qualifiers. Index word-internal ``medial`` / ``medially`` env
 prose becomes ``env: _`` with boundary ``exception: :{#_, _#}:`` (``apply_medial_env_conditions``).
 Class-letter expansion is deferred to compile time (``DiachronicSeries`` +
@@ -32,10 +32,10 @@ from typing import Any
 from conlanger.tools.ingest.section_policy import resolve_catch_all_else_rules
 from conlanger.tools.ingest.transforms import (
     apply_medial_env_conditions,
-    apply_semicolon_field_comments,
     apply_sporadic_qualifier,
     apply_stress_conditions,
     apply_trailing_glosses,
+    split_line_semicolon_comment,
 )
 from conlanger.utils.gloss import (
     is_gloss_only_rule,
@@ -150,6 +150,7 @@ class IndexDiachronicaParser:
             if rule_id:
                 rule["rule_id"] = rule_id
             return [rule]
+        working, rule_comment = split_line_semicolon_comment(working)
         normalized = normalize_symbols(working)
         parts = extract_rule_parts(normalized)
         if parts is None:
@@ -159,11 +160,14 @@ class IndexDiachronicaParser:
                 "source": source,
                 "status": "skipped",
             }
+            if rule_comment:
+                rule["comment"] = rule_comment
             if rule_id:
                 rule["rule_id"] = rule_id
             return [rule]
+        if rule_comment:
+            parts["comment"] = rule_comment
         parts = apply_series_expansions(parts, self._parser_config.series_expansions)
-        parts = apply_semicolon_field_comments(parts)
         parts = apply_sporadic_qualifier(parts)
         sporadic = parts.pop("sporadic", False)
         sporadic_flag = {"sporadic": True} if sporadic else {}

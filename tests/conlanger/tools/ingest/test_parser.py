@@ -27,6 +27,7 @@ from conlanger.tools.ingest.transforms import (
     normalize_medial_env_field,
     normalize_stress_conditions,
     split_field_semicolon_comment,
+    split_line_semicolon_comment,
 )
 from conlanger.tools.rules import DiachronicSeries
 from conlanger.utils.file_io import (
@@ -454,7 +455,7 @@ def test_parse_rule_element_skips_gloss_only_output():
 
 def test_parse_rule_element_strips_trailing_glosses():
     el = html.fragment_fromstring(
-        '<p class="schg">w → f (Common Celtic; I’m not sure of the conditions)</p>',
+        '<p class="schg">w → f (Common Celtic, I’m not sure of the conditions)</p>',
         create_parent=False,
     )
     rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
@@ -1497,6 +1498,84 @@ def test_parse_rule_element_captures_semicolon_comment():
     assert rules[0]["env"] == "short only"
     assert "blocked by following consonant" in rules[0]["comment"]
     assert "; blocked" in rules[0]["raw"]
+
+
+def test_split_line_semicolon_comment():
+    assert split_line_semicolon_comment("a → b ; tail") == ("a → b", "tail")
+    assert split_line_semicolon_comment("no semicolon") == ("no semicolon", None)
+
+
+def test_parse_rule_element_archi_style_comment_before_chain_split():
+    broken = "ɣ → q (more likely, *ɢ → q instead of → ɣ)"
+    fixed = "ɣ → q ; (more likely, *ɢ → q instead of → ɣ)"
+    el = html.fragment_fromstring(f'<p class="schg">{broken}</p>', create_parent=False)
+    parser = default_index_parser(
+        manual_mappings=[
+            ManualMapping(from_text=broken, to_text=fixed, reason="comment"),
+        ],
+    )
+    rules = parser.parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["stages"] == ["ɣ", "q"]
+    assert "more likely" in rules[0]["comment"]
+    assert "ɢ" in rules[0]["comment"]
+
+
+def test_parse_rule_element_native_editorial_tail_in_comment():
+    el = html.fragment_fromstring(
+        '<p class="schg">VOR → VːR; “this is a tad unclear, because in some instances it didn’t seem to apply”</p>',
+        create_parent=False,
+    )
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["stages"] == ["VOR", "VːR"]
+    assert ";" not in rules[0]["stages"][-1]
+    assert "tad unclear" in rules[0]["comment"]
+
+
+def test_parse_rule_element_leading_semicolon_skips_with_comment():
+    prose = "“In contrast, Romanian exhibits"
+    mapped = "; “In contrast, Romanian exhibits"
+    el = html.fragment_fromstring(f'<p class="schg">{prose}</p>', create_parent=False)
+    parser = default_index_parser(
+        manual_mappings=[
+            ManualMapping(from_text=prose, to_text=mapped, reason="comment"),
+        ],
+    )
+    rules = parser.parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["status"] == "skipped"
+    assert rules[0]["stages"] == []
+    assert "Romanian exhibits" in rules[0]["comment"]
+    assert rules[0]["raw"] == prose
+
+
+def test_parse_rule_element_sporadic_before_semicolon_cut():
+    el = html.fragment_fromstring(
+        '<p class="schg">k → ∅ / _# / sporadic ; in Mentasta Ahtna</p>',
+        create_parent=False,
+    )
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["sporadic"] is True
+    assert "Mentasta Ahtna" in rules[0]["comment"]
+    assert rules[0]["env"] == "_#"
+
+
+def test_parse_rule_element_sporadic_after_semicolon_not_detected():
+    el = html.fragment_fromstring(
+        '<p class="schg">i → yː ; (sometimes)</p>',
+        create_parent=False,
+    )
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert "sporadic" not in rules[0]
+    assert "(sometimes)" in rules[0]["comment"]
+
+
+def test_parse_rule_element_comment_tail_not_symbol_normalized():
+    el = html.fragment_fromstring(
+        '<p class="schg">a → b ; prose with % boundary and $ stem</p>',
+        create_parent=False,
+    )
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["comment"] == "prose with % boundary and $ stem"
+    assert "%" in rules[0]["comment"]
 
 
 def test_parse_rule_element_captures_short_only_paren_in_env():

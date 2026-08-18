@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: ready-for-human
 Blocked by: 76
 
 # Implement first-`;` comment cut before chain split
@@ -53,14 +53,20 @@ Update [docs/index-diachronica-parser.md](../../docs/index-diachronica-parser.md
 
 ## Acceptance criteria
 
-- [ ] First `;` peeled from working line after mappings / quoted-prose skip, before `extract_rule_parts`
-- [ ] Remainder-only symbol norm + structural split; tail is **rule comment** as-is
-- [ ] No-`→` remainder → skipped with `comment` = tail
-- [ ] `apply_semicolon_field_comments` no longer runs
-- [ ] Sporadic/gloss detectors do not read `comment`
-- [ ] Tests above green; full gate (`uv run pytest`, ruff) when finishing
-- [ ] Parser docs updated
-- [ ] Inventory regen; `ok`-flip delta and `malformed_comment` / Archi notes in **Answer**
+- [x] First `;` peeled from working line after mappings / quoted-prose skip, before `extract_rule_parts`
+- [x] Remainder-only symbol norm + structural split; tail is **rule comment** as-is
+- [x] No-`→` remainder → skipped with `comment` = tail
+- [x] `apply_semicolon_field_comments` no longer runs
+- [x] Sporadic/gloss detectors do not read `comment`
+- [x] Tests above green; full gate (`uv run pytest`, ruff) when finishing
+- [x] Parser docs updated
+- [x] Inventory regen; `ok`-flip delta and `malformed_comment` / Archi notes in **Answer**
+
+## Answer
+
+Implemented 2026-08-18. `split_line_semicolon_comment` peels the first `;` in `parse_rule_element` after manual mapping / quoted-prose skip, before `normalize_symbols` / `extract_rule_parts`. Tail seeds `comment`; remainder-only pipeline unchanged except `apply_semicolon_field_comments` removed from the call chain.
+
+**Regen (`uv run regenerate_corpus`):** OK **7941** (82.4%, was 7953). **16** changelog flips: **3** false→true (incl. **Archi-ɢ,ɣ**), **13** true→false (naive in-paren `;` cuts — spec-accepted). **`malformed_comment` cluster eliminated** (7→0). **Old-Irish-VOR** no longer `malformed_comment` / `trailing-comment` (now `unknown_grouping` for `R`). **rules_with_comment** 1100.
 
 ## References
 

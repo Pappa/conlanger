@@ -38,13 +38,22 @@ Deterministic order is fixed in `parse_rule_element` (`tools/ingest/parser.py`).
 
 ### Phase B — Symbol normalization (before field split)
 
-Applied to the working copy only; **`raw` is stored before this** (see `parse_rule_element`).
+Applied to the **remainder** after the first-`;` comment peel (see Phase B½); **`raw` is stored before any of this** (see `parse_rule_element`).
 
 | Step | Status | Order | Rationale | Code |
 | --- | --- | ---: | --- | --- |
 | Stem boundary `$` preservation | implemented | B1 | Index `$` (stem) and `%` (syllable) both map to ASCA `$`; placeholder prevents `%→$` from clobbering stem `$`. | `normalize_symbols` |
 | Syllable boundary `%` → ASCA `$` | implemented | B2 | Index `%` is syllable boundary; ASCA uses `$`. | `normalize_symbols` |
 | Index stress mark `"` (U+201D) → `segment:[+stress]` | implemented | B3 | Index stress notation is phonological, not prose quotes; must become ASCA feature syntax. Prose curly quotes in env are left alone. | `normalize_stress_marks` (via `normalize_symbols`) |
+
+### Phase B½ — First-`;` rule comment peel (before structural split)
+
+After **Manual mapping** and quoted-prose skip; **before** symbol normalization and `extract_rule_parts`. The tail is stored as corpus **rule comment** as-is (no symbol/feature/IPA/series transforms). Detectors (`sporadic`, trailing glosses, stress, medial) run on the remainder only — not on **rule comment**. Field-level env/exception `;` capture (`apply_semicolon_field_comments`) is retired in favour of this whole-line cut ([ticket 77](../.scratch/cleaned-rule-corpus/issues/77-implement-first-semicolon-comment-cut.md)).
+
+| Step | Status | Order | Rationale | Code |
+| --- | --- | ---: | --- | --- |
+| Peel first `;` on working line | implemented | B½1 | Editorial tails (including arrows inside gloss) must not become spurious chain stages. Naive first-`;` anywhere; owner **Manual mapping** rows plant the intended delimiter. | `split_line_semicolon_comment` |
+| No `→` in remainder → skipped + comment | implemented | B½2 | Prose-only or mapping-shaped lines with no rule spine. | `parse_rule_element` |
 
 ### Phase C — Structural field split
 
@@ -61,8 +70,8 @@ Applied to the working copy only; **`raw` is stored before this** (see `parse_ru
 
 | Step | Status | Order | Rationale | Code |
 | --- | --- | ---: | --- | --- |
-| Uncertainty gloss → `sporadic: true` + `comment` | implemented | D1 | `sporadic`/`sometimes`/`occasionally` are editorial qualifiers, not ASCA syntax ([pass 19](../.scratch/cleaned-rule-corpus/issues/19-correction-pass-sporadic-qualifier.md)). Stripped prose captured, not discarded. | `apply_sporadic_qualifier` |
-| Trailing / embedded editorial gloss strip → `comment` | implemented | D2 | Prose in quotes, parens, semicolon tails breaks ASCA; capture-not-discard ([passes 21, 24, 31](../.scratch/cleaned-rule-corpus/map.md)). Internal order: embedded quotes → trailing quotes → trailing parens → semicolon prose. | `apply_trailing_glosses` |
+| Uncertainty gloss → `sporadic: true` + `comment` | implemented | D1 | `sporadic`/`sometimes`/`occasionally` are editorial qualifiers, not ASCA syntax ([pass 19](../.scratch/cleaned-rule-corpus/issues/19-correction-pass-sporadic-qualifier.md)). Stripped prose captured, not discarded. Runs on remainder only (not **rule comment** seeded at B½). | `apply_sporadic_qualifier` |
+| Trailing / embedded editorial gloss strip → `comment` | implemented | D2 | Prose in quotes, parens, semicolon tails breaks ASCA; capture-not-discard ([passes 21, 24, 31](../.scratch/cleaned-rule-corpus/map.md)). Internal order: embedded quotes → trailing quotes → trailing parens → semicolon prose. Field-level `;` capture retired (B½). | `apply_trailing_glosses` |
 | Env stress phrase normalization (`when stressed` / `when unstressed`) | implemented | D3 | Index env prose → ASCA env with `_` focus prefix ([pass 22](../.scratch/cleaned-rule-corpus/issues/22-correction-pass-stress-conditions.md)). | `apply_stress_conditions` |
 | Feature matrix synonym replacement (inside `[...]` only) | implemented | D4 | Index→ASCA renames / bundles / **tone** via `data/asca/feature_mappings.csv` (`mapping_kind` includes `tone` → `[tone: N]`; [pass 62](../.scratch/cleaned-rule-corpus/issues/62-correction-pass-tone-features.md)). Unmapped names left literal for `unknown_feature` clustering. | `apply_feature_mappings` |
 | Correspondence-series + collective subscript expansion | implemented (partial coverage) | D5 | When `series_mappings.csv` has a section hit, rewrite tokens to ASCA-parseable targets; unmapped tokens stay literal ([ADR-0004](./adr/0004-series-indices-per-section-maps.md), [tickets 26–28](../.scratch/cleaned-rule-corpus/issues/26-parse-time-correspondence-series-indices.md)). Positional (`C₁`) and identity (`V₀`) tokens are **explicitly skipped** by `in_scope_series_token`. | `apply_series_mappings` |

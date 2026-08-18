@@ -3,31 +3,30 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
-- Rows: **9640** (one per corpus rule)
-- OK: **7953** (82.5%)
-- Fail: **1687** (17.5%)
+- Rows: **9638** (one per corpus rule)
+- OK: **7941** (82.4%)
+- Fail: **1697** (17.6%)
 - Sections all OK: **271 / 714** (38.0%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 495 | `syntax_other` |
+| 507 | `syntax_other` |
 | 347 | `unknown_character` |
 | 275 | `expected_underscore` |
 | 128 | `runtime_other` |
-| 110 | `unknown_grouping` |
+| 111 | `unknown_grouping` |
 | 92 | `unknown_feature` |
-| 77 | `prose_or_expected_arrow` |
+| 78 | `prose_or_expected_arrow` |
 | 45 | `nested_brackets` |
-| 37 | `expected_number` |
+| 36 | `expected_number` |
 | 32 | `diacritic_prereq` |
-| 21 | `runtime_delete_only_segment` |
+| 22 | `runtime_delete_only_segment` |
 | 14 | `stuff_after_word_bound` |
-| 7 | `malformed_comment` |
 | 4 | `panic_other` |
+| 4 | `missing_arrow` |
 | 2 | `other` |
-| 1 | `missing_arrow` |
 
 ## Common Errors
 
@@ -74,7 +73,7 @@
 
 | count | error_token |
 |------:|-------------|
-| 26 | `R` |
+| 27 | `R` |
 | 14 | `U` |
 | 14 | `E` |
 | 10 | `B` |
