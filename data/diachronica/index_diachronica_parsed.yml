@@ -1070,10 +1070,10 @@ sections:
     source: index_diachronica_original.html:1132
     rule_id: Zayse-Zergulla-x2_3
   - stages:
-    - x₃
+    - x₂
     - ɡ
     env: V_#
-    raw: x₃ → ɡ / V_#
+    raw: x₂ → ɡ / V_#
     source: index_diachronica_original.html:1133
     rule_id: Zayse-Zergulla-x3
   - stages:

@@ -19,3 +19,7 @@ rules:
       id: Spanish-—-Vdz
       content: "— Vdz → ∅ / {nts,ndz,rdz}_"
       reason: "Bracket fix - not confirmed from original source"
+  - rule:
+      id: Zayse-Zergulla-x3
+      content: "x₂ → ɡ / V_#"
+      reason: "x3 does not appear in the original source, x2 is a best guess"
