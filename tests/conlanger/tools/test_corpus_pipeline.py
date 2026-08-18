@@ -44,7 +44,7 @@ _E2E_VALIDATE_SMOKE: list[tuple[str, str, bool, str]] = [
     ("group-compile", "SN → N[- voice]", True, "1.0"),
     ("sebirwa-atr", "i u VS → j w A / _V[+high +ATR]", True, "30.1.1.1"),
     ("prose-env-medial", "z → ð / medial", True, "1.0"),
-    ("collective-expanded", "sₓ → ʃ", False, "6.1.2.1"),
+    ("collective-expanded", "sₓ → ʃ", True, "6.1.2.1"),
     ("positional-literal", "C₁ → C₂", True, "10.2.1"),
     ("held-out-parse", "no arrow here", False, "1.0"),
 ]

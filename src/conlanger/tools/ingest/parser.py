@@ -258,6 +258,8 @@ class IndexDiachronicaParser:
                 section_obj["comments"] = comments
             if rules:
                 section_obj["rules"] = resolve_catch_all_else_rules(rules)
+            if index and index in self._parser_config.skip_section_ids:
+                section_obj["skipped"] = True
             sections_out.append(section_obj)
 
         return {

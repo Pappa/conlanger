@@ -68,6 +68,18 @@ def test_DiachronicSeries(section, expected):
     assert rule.title == section["index"] + " - " + section["section"]
 
 
+def test_DiachronicSeries_skipped_section_omits_rules():
+    section = {
+        "index": "9.9.9",
+        "section": "Skipped",
+        "skipped": True,
+        "rules": [{"stages": ["a", "b"], "raw": "a → b", "source": "x:1"}],
+    }
+    rendered = str(DiachronicSeries(section))
+    assert rendered == "@ 9.9.9 - Skipped"
+    assert "a > b" not in rendered
+
+
 def test_rule_change_requires_input():
     with pytest.raises(ValueError, match="input is required"):
         SoundChangeRule({"output": "b"})

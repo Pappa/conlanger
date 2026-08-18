@@ -4,21 +4,23 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9638** (one per corpus rule)
-- OK: **8026** (83.3%)
-- Fail: **1612** (16.7%)
-- Sections all OK: **286 / 714** (40.1%)
+- OK: **8007** (83.1%)
+- Fail: **1600** (16.6%)
+- Skipped: **31** (0.3%)
+- Sections all OK: **286 / 713** (40.1%)
+- Sections skipped: **1 / 714** (0.1%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 507 | `syntax_other` |
-| 297 | `unknown_character` |
+| 501 | `syntax_other` |
+| 289 | `unknown_character` |
 | 241 | `expected_underscore` |
 | 128 | `runtime_other` |
 | 111 | `unknown_grouping` |
-| 92 | `unknown_feature` |
-| 75 | `prose_or_expected_arrow` |
+| 90 | `unknown_feature` |
+| 79 | `prose_or_expected_arrow` |
 | 45 | `nested_brackets` |
 | 38 | `expected_number` |
 | 32 | `diacritic_prereq` |
@@ -37,7 +39,7 @@
 | 46 | `ı` |
 | 37 | `́` |
 | 27 | `ṽ` |
-| 25 | `ː` |
+| 23 | `ː` |
 | 22 | `̣` |
 
 ### unknown_feature
@@ -45,8 +47,8 @@
 | count | error_token | suggested |
 |------:|-------------|-----------|
 | 22 | `open` | `ten` |
-| 10 | `closed` | `cons` |
 | 10 | `samePOA` | `lateral` |
+| 10 | `closed` | `cons` |
 | 9 | `fortis` | `contin` |
 | 8 | `mid` | `man` |
 | 6 | `lenis` | `tens` |
@@ -54,16 +56,15 @@
 | 3 | `palatalized` | `latrl` |
 | 2 | `affricate` | `stridnt` |
 | 2 | `fricative` | `rhotic` |
-| 2 | `fallingtone` | `length` |
-| 1 | `lowpitch` | `voice` |
+| 1 | `highpitch` | `high` |
 | 1 | `ejective` | `contin` |
 | 1 | `APOA` | `root` |
-| 1 | `highpitch` | `high` |
+| 1 | `lowpitch` | `voice` |
 | 1 | `intertonic` | `anterior` |
-| 1 | `alveolopalatal` | `consonantal` |
 | 1 | `aspirated` | `spread` |
-| 1 | `glide` | `click` |
+| 1 | `alveolopalatal` | `consonantal` |
 | 1 | `tonic` | `cons` |
+| 1 | `glide` | `click` |
 | 1 | `TR` | `rt` |
 | 1 | `accent` | `cont` |
 | 1 | `creakyvoice` | `voice` |

@@ -203,6 +203,8 @@ class DiachronicSeries:
             self._parts.append(RuleCitation(section["citation"]))
         if section.get("comment"):
             self._parts.append(RuleComment(section["comment"]))
+        if section.get("skipped"):
+            return
         if section.get("rules"):
             for rule in section["rules"]:
                 normalized = normalize_corpus_rule_tilde_fields(rule)

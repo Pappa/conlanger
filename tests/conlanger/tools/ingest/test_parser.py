@@ -837,6 +837,46 @@ def test_parser_citation_only_section(tmp_path: Path):
     assert "rules" not in sec
 
 
+def test_parser_marks_skip_sections_from_config(tmp_path: Path):
+    html_path = tmp_path / "skip_section.html"
+    config_path = tmp_path / "parser_config.yml"
+    config_path.write_text(
+        "ipa_mappings:\n  confidence: [high]\n"
+        "skip_sections:\n"
+        '  - id: "9.9.9"\n'
+        '    reason: "test skip"\n',
+        encoding="utf-8",
+    )
+    _write_index_diachronica_html(
+        html_path,
+        section_id="SkipMe",
+        section_body="""\
+<h2>9.9.9 Skipped Section</h2>
+<p class="schg">a → b</p>""",
+    )
+    parser = default_index_parser(
+        parser_config=load_parser_config(config_path),
+    )
+    sec = parser.parse(html_path)["sections"][0]
+    assert sec["index"] == "9.9.9"
+    assert sec["skipped"] is True
+    assert sec["rules"][0]["stages"] == ["a", "b"]
+    assert "status" not in sec["rules"][0]
+
+
+def test_parser_unlisted_section_not_marked_skipped(tmp_path: Path):
+    html_path = tmp_path / "active_section.html"
+    _write_index_diachronica_html(
+        html_path,
+        section_id="Active",
+        section_body="""\
+<h2>1.0 Active Section</h2>
+<p class="schg">a → b</p>""",
+    )
+    sec = default_index_parser().parse(html_path)["sections"][0]
+    assert "skipped" not in sec
+
+
 @pytest.mark.parametrize(
     "post_arrow, expected",
     [
@@ -1312,6 +1352,37 @@ def test_load_parser_config_defaults_confidence_to_high_when_missing(tmp_path: P
     assert config.ipa_mappings_confidence == frozenset({"high"})
 
 
+def test_load_parser_config_skip_sections(tmp_path: Path):
+    path = tmp_path / "parser_config.yml"
+    path.write_text(
+        "ipa_mappings:\n  confidence: [high]\n"
+        "skip_sections:\n"
+        '  - id: "37.1.2.4.2"\n'
+        '    reason: "bad source"\n',
+        encoding="utf-8",
+    )
+    config = load_parser_config(path)
+    assert config.skip_section_ids == frozenset({"37.1.2.4.2"})
+
+
+def test_load_parser_config_skip_sections_ignores_malformed_entries(tmp_path: Path):
+    path = tmp_path / "parser_config.yml"
+    path.write_text(
+        "ipa_mappings:\n  confidence: [high]\n"
+        "skip_sections:\n"
+        "  - not-a-mapping\n"
+        "  - id: ''\n",
+        encoding="utf-8",
+    )
+    config = load_parser_config(path)
+    assert config.skip_section_ids == frozenset()
+
+
+def test_load_parser_config_default_includes_skip_section_seed():
+    config = load_parser_config()
+    assert "37.1.2.4.2" in config.skip_section_ids
+
+
 def test_ipa_mappings_dict_uses_config_confidence_levels():
     default_config = load_parser_config()
     mappings = ipa_mappings_dict(config=default_config)
@@ -1780,11 +1851,13 @@ def test_parse_records_manual_mapping_matches_and_unmatched(tmp_path: Path):
         ),
         (
             "whitespace_only_content",
-            "rules:\n"
-            "  - rule:\n"
-            "      id: blank\n"
-            "      content: '   '\n"
-            "      reason: skip\n",
+            (
+                "rules:\n"
+                "  - rule:\n"
+                "      id: blank\n"
+                "      content: '   '\n"
+                "      reason: skip\n"
+            ),
         ),
         ("rules_not_a_list", "rules: not-a-list\n"),
         ("missing_rules_list", "other: {}\n"),

@@ -7,6 +7,7 @@ import pytest
 from conlanger.appliers.asca import ASCAValidationError
 from conlanger.tools.corpus_inventory import (
     CHANGELOG_CSV_COLUMNS,
+    SECTION_SKIPPED_FAILURE_CLASS,
     ValidationRow,
     append_ok_flip_changelog,
     classify_error,
@@ -140,6 +141,20 @@ def test_validation_row_as_csv_dict():
         "suggested": "",
         "description": "Syntax Error: …",
     }
+
+
+def test_validate_corpus_rule_skipped_section():
+    section = {"index": "9.9.9", "section": "Skipped", "skipped": True}
+    with patch("conlanger.tools.corpus_inventory.DiachronicSeries") as mock_series:
+        (row,) = validate_corpus_rule(
+            section,
+            {"stages": ["a", "b"], "raw": "a → b", "source": "sample.html:1"},
+            "r0",
+            probe_words=None,
+        )
+    mock_series.assert_not_called()
+    assert row.ok is True
+    assert row.failure_class == SECTION_SKIPPED_FAILURE_CLASS
 
 
 def test_validate_corpus_rule_skipped_quoted_prose_uses_comment():
@@ -680,7 +695,9 @@ def test_summarize_inventory():
     assert "Rows: **3**" in text
     assert "OK: **1** (33.3%)" in text
     assert "Fail: **2** (66.7%)" in text
+    assert "Skipped: **0** (0.0%)" in text
     assert "Sections all OK: **0 / 1** (0.0%)" in text
+    assert "Sections skipped: **0 / 1** (0.0%)" in text
     assert "| 2 | `syntax_other` |" in text
     assert "## Common Errors" in text
     assert "asca-rule-inventory.csv" in text
@@ -697,9 +714,52 @@ def test_summarize_inventory_empty():
     )
     assert "Rows: **0**" in text
     assert "OK: **0** (0.0%)" in text
+    assert "Skipped: **0** (0.0%)" in text
     assert "Sections all OK: **0 / 0** (0.0%)" in text
+    assert "Sections skipped: **0 / 0** (0.0%)" in text
     assert "### unknown_character" in text
     assert "| — | _(none)_ |" in text
+
+
+def test_summarize_inventory_section_skipped():
+    rows = [
+        ValidationRow(
+            "9.9.9",
+            "Skipped",
+            "r0",
+            "s:1",
+            True,
+            SECTION_SKIPPED_FAILURE_CLASS,
+            "",
+            "",
+            "",
+            "section skipped",
+        ),
+        ValidationRow("1", "A", "r0", "s:2", True, "", "", "", "", ""),
+        ValidationRow(
+            "1",
+            "A",
+            1,
+            "s:3",
+            False,
+            "syntax_other",
+            "broken-syntax",
+            "",
+            "",
+            "err",
+        ),
+    ]
+    text = summarize_inventory(
+        rows,
+        source_yaml="out.yml",
+        probe_words="probe.wsca",
+    )
+    assert "Rows: **3**" in text
+    assert "OK: **1** (33.3%)" in text
+    assert "Fail: **1** (33.3%)" in text
+    assert "Skipped: **1** (33.3%)" in text
+    assert "Sections all OK: **0 / 1** (0.0%)" in text
+    assert "Sections skipped: **1 / 2** (50.0%)" in text
 
 
 def test_filter_inventory_by_ok_splits_success_and_error():

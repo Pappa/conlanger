@@ -59726,6 +59726,7 @@ sections:
     raw: s → z / {#,V}_{V,R}
     source: index_diachronica_original.html:12618
     rule_id: Oneida-s_2
+  skipped: true
 - section: Proto-Northern Iroquoian to Seneca
   index: 37.1.2.5
   citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian

@@ -93,6 +93,7 @@ INVENTORY_CSV_NAME = "asca-rule-inventory.csv"
 INVENTORY_SUCCESS_CSV_NAME = "asca-rule-inventory-success.csv"
 INVENTORY_ERROR_CSV_NAME = "asca-rule-inventory-error.csv"
 INVENTORY_CHANGELOG_CSV_NAME = "asca-rule-inventory-changelog.csv"
+SECTION_SKIPPED_FAILURE_CLASS = "section_skipped"
 OMITTED_DESCRIPTIONS = {"panic_other"}
 
 
@@ -129,12 +130,22 @@ def validation_rows_to_dataframe(rows: list[ValidationRow]) -> pd.DataFrame:
 
 
 def filter_inventory_by_ok(df: pd.DataFrame, *, ok: bool) -> pd.DataFrame:
-    """Return inventory rows whose ``ok`` column matches ``ok``."""
+    """Return inventory rows whose ``ok`` column matches ``ok``.
+
+    Section-skipped rows (``failure_class=section_skipped``) are excluded from
+    both success and error filtered CSVs.
+    """
     if df.empty:
         return df.copy()
-    mask = _ok_as_bool(df["ok"])
-    if not ok:
-        mask = ~mask
+    is_ok = _ok_as_bool(df["ok"])
+    if "failure_class" in df.columns:
+        is_skipped = df["failure_class"].astype(str) == SECTION_SKIPPED_FAILURE_CLASS
+    else:
+        is_skipped = pd.Series(False, index=df.index)
+    if ok:
+        mask = is_ok & ~is_skipped
+    else:
+        mask = ~is_ok & ~is_skipped
     return df.loc[mask].reset_index(drop=True)
 
 
@@ -457,6 +468,22 @@ def validate_corpus_rule(
     section_name = str(section.get("section", ""))
     source = str(rule.get("source", ""))
 
+    if section.get("skipped"):
+        return [
+            ValidationRow(
+                section_index=section_index,
+                section_name=section_name,
+                rule_id=rule_id,
+                source=source,
+                ok=True,
+                failure_class=SECTION_SKIPPED_FAILURE_CLASS,
+                reason="",
+                error_token="",
+                suggested="",
+                description="section skipped at compile (parser_config skip_sections)",
+            )
+        ]
+
     if rule.get("status") == "skipped":
         raw = str(rule.get("raw", ""))
         if "→" not in raw and ARROW not in raw:
@@ -623,26 +650,79 @@ def append_ok_flip_changelog(flips: pd.DataFrame, path: Path) -> int:
 
 
 def section_all_ok_stats(rows: list[ValidationRow]) -> tuple[int, int, float]:
-    """Return count of sections with every rule ok, total sections, and percentage."""
-    by_section: dict[tuple[str, str], list[bool]] = {}
+    """Return count of sections with every rule ok, total sections, and percentage.
+
+    Sections marked ``skipped`` in the corpus are excluded from the denominator.
+    """
+    by_section: dict[tuple[str, str], list[ValidationRow]] = {}
     for row in rows:
         key = (row.section_index, row.section_name)
-        by_section.setdefault(key, []).append(row.ok)
-    total_sections = len(by_section)
-    sections_all_ok = sum(1 for oks in by_section.values() if oks and all(oks))
+        by_section.setdefault(key, []).append(row)
+    active_sections = {
+        key
+        for key, section_rows in by_section.items()
+        if not any(
+            row.failure_class == SECTION_SKIPPED_FAILURE_CLASS for row in section_rows
+        )
+    }
+    total_sections = len(active_sections)
+    sections_all_ok = sum(
+        1
+        for key in active_sections
+        if by_section[key] and all(row.ok for row in by_section[key])
+    )
     pct = (100.0 * sections_all_ok / total_sections) if total_sections else 0.0
     return sections_all_ok, total_sections, pct
+
+
+def section_skip_stats(rows: list[ValidationRow]) -> tuple[int, int, float]:
+    """Return skipped section count, total sections (including skipped), and pct."""
+    by_section: dict[tuple[str, str], list[ValidationRow]] = {}
+    for row in rows:
+        key = (row.section_index, row.section_name)
+        by_section.setdefault(key, []).append(row)
+    total_sections = len(by_section)
+    skipped_sections = sum(
+        1
+        for section_rows in by_section.values()
+        if section_rows
+        and all(
+            row.failure_class == SECTION_SKIPPED_FAILURE_CLASS for row in section_rows
+        )
+    )
+    pct = (100.0 * skipped_sections / total_sections) if total_sections else 0.0
+    return skipped_sections, total_sections, pct
 
 
 def section_all_ok_stats_from_dataframe(df: pd.DataFrame) -> tuple[int, int, float]:
     """Return section all-ok stats from an inventory CSV dataframe."""
     if df.empty:
         return 0, 0, 0.0
-    grouped = df.groupby(["section_index", "section_name"], sort=False)["ok"]
+    active = df[df["failure_class"].astype(str) != SECTION_SKIPPED_FAILURE_CLASS]
+    if active.empty:
+        return 0, 0, 0.0
+    grouped = active.groupby(["section_index", "section_name"], sort=False)["ok"]
     total_sections = grouped.ngroups
     sections_all_ok = int(grouped.all().sum())
     pct = (100.0 * sections_all_ok / total_sections) if total_sections else 0.0
     return sections_all_ok, total_sections, pct
+
+
+def section_skip_stats_from_dataframe(df: pd.DataFrame) -> tuple[int, int, float]:
+    """Return skipped-section stats from an inventory CSV dataframe."""
+    if df.empty:
+        return 0, 0, 0.0
+    grouped = df.groupby(["section_index", "section_name"], sort=False)
+    total_sections = grouped.ngroups
+    skipped_sections = int(
+        grouped["failure_class"]
+        .apply(
+            lambda values: (values.astype(str) == SECTION_SKIPPED_FAILURE_CLASS).all()
+        )
+        .sum()
+    )
+    pct = (100.0 * skipped_sections / total_sections) if total_sections else 0.0
+    return skipped_sections, total_sections, pct
 
 
 def summarize_inventory(
@@ -653,11 +733,20 @@ def summarize_inventory(
     asca_version: str = "0.10.x",
 ) -> str:
     total = len(rows)
-    ok_n = sum(1 for row in rows if row.ok)
-    fail_n = total - ok_n
+    skipped_n = sum(
+        1 for row in rows if row.failure_class == SECTION_SKIPPED_FAILURE_CLASS
+    )
+    ok_n = sum(
+        1
+        for row in rows
+        if row.ok and row.failure_class != SECTION_SKIPPED_FAILURE_CLASS
+    )
+    fail_n = total - ok_n - skipped_n
     ok_pct = (100.0 * ok_n / total) if total else 0.0
     fail_pct = (100.0 * fail_n / total) if total else 0.0
+    skipped_pct = (100.0 * skipped_n / total) if total else 0.0
     sections_all_ok, section_total, section_ok_pct = section_all_ok_stats(rows)
+    sections_skipped, section_grand_total, section_skip_pct = section_skip_stats(rows)
 
     class_counts = Counter(
         row.failure_class for row in rows if not row.ok and row.failure_class
@@ -672,7 +761,9 @@ def summarize_inventory(
         f"- Rows: **{total}** (one per corpus rule)",
         f"- OK: **{ok_n}** ({ok_pct:.1f}%)",
         f"- Fail: **{fail_n}** ({fail_pct:.1f}%)",
+        f"- Skipped: **{skipped_n}** ({skipped_pct:.1f}%)",
         f"- Sections all OK: **{sections_all_ok} / {section_total}** ({section_ok_pct:.1f}%)",
+        f"- Sections skipped: **{sections_skipped} / {section_grand_total}** ({section_skip_pct:.1f}%)",
         "",
         "## Failure classes",
         "",

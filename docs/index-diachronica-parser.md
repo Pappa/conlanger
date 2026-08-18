@@ -88,6 +88,17 @@ After **Manual mapping** and quoted-prose skip; **before** symbol normalization 
 | --- | --- | ---: | --- | --- |
 | Catch-all `/ else` → complementary `exception` | implemented | F1 | Index default branch is not an env; when the previous rule has `env` and no `exception`, omit `env` and set `exception` to that env ([pass 53](../.scratch/cleaned-rule-corpus/issues/53-correction-pass-prose-env-else.md)). Deferred: prev with both env+exception, neither, or else-after-else. | `resolve_catch_all_else_rules` (in `parse`) |
 | Env medial phrase normalization (`medial` / `medially`) | implemented | F2 | Index word-internal prose → `env: _` + boundary `exception: :{#_, _#}:` ([pass 55](../.scratch/cleaned-rule-corpus/issues/55-correction-pass-prose-env-medial.md)). Defer env+existing-exception merge. | `apply_medial_env_conditions` |
+| Section skip (`skip_sections` in `parser_config.yml`) | implemented | F3 | Owner-curated hold-out when Index misrepresents source material; parse extracts rules normally, sets `skipped: true` on the section object; compile and inventory validation bypass those rules ([ticket 78](../.scratch/cleaned-rule-corpus/issues/78-implement-parser-config-section-skip.md)). Distinct from per-rule `status: skipped`. | `IndexDiachronicaParser.parse`, `DiachronicSeries`, `corpus_inventory` |
+
+---
+
+## `data/parser_config.yml`
+
+| Key | Purpose |
+| --- | --- |
+| `ipa_mappings.confidence` | Which `ipa_mappings.csv` confidence levels apply at parse |
+| `series_expansions` | Collective subscript fan-out (`Hₓ` → `h₁, h₂, h₃`, …) |
+| `skip_sections` | List of `{id, reason}` — `id` matches section `index`; `reason` is operator documentation only. Listed sections gain `skipped: true` in parsed YAML. |
 
 ---
 

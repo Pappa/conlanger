@@ -122,6 +122,20 @@ def feature_mappings_dict(
     return {row.index_feature: row for row in load_feature_mappings(path)}
 
 
+def _parse_skip_section_ids(raw: object) -> frozenset[str]:
+    """Return section ``index`` values listed under ``skip_sections`` in parser config."""
+    if not isinstance(raw, list):
+        return frozenset()
+    ids: set[str] = set()
+    for entry in raw:
+        if not isinstance(entry, dict):
+            continue
+        section_id = entry.get("id")
+        if section_id:
+            ids.add(str(section_id))
+    return frozenset(ids)
+
+
 def load_parser_config(path: Path | None = None) -> ParserConfig:
     """Load parser runtime settings from YAML."""
     config_path = DEFAULT_PARSER_CONFIG_PATH if path is None else Path(path)
@@ -137,6 +151,7 @@ def load_parser_config(path: Path | None = None) -> ParserConfig:
     return ParserConfig(
         ipa_mappings_confidence=frozenset(confidence),
         series_expansions=series_expansions,
+        skip_section_ids=_parse_skip_section_ids(raw.get("skip_sections")),
     )
 
 
