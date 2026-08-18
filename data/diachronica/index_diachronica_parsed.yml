@@ -15526,8 +15526,11 @@ sections:
     source: index_diachronica_original.html:3980
     rule_id: Archi-kː-ɡ
   - stages:
-    - ɢ
-    - q
+    - ɣ
+    - q ;
+    - q instead of
+    - ɣ)
+    comment: (more likely, *ɢ
     raw: ɣ → q (more likely, *ɢ → q instead of → ɣ)
     source: index_diachronica_original.html:3981
     rule_id: Archi-ɢ,ɣ

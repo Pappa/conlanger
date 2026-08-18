@@ -9,7 +9,7 @@ w (→ v?) → f,w → v → f,False,chaining
 ɛː → ɛi (→ əi?),ɛː → ɛi → əi,False,chaining
 a → ɒ? (→ o),a → ɒ → o,False,chaining
 nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
-"ɣ → q (more likely, *ɢ → q instead of → ɣ)","ɢ → q",False,correction
+"ɣ → q (more likely, *ɢ → q instead of → ɣ)","ɣ → q ;; (more likely, *ɢ → q instead of → ɣ)",False,comment
 " / at word boundaries"," / #_, _#",False,replace prose
 " ! at word boundaries"," ! #_, _#",False,replace prose
 " / unstressed"," / [-stress]",False,replace prose
