@@ -12,8 +12,8 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 "ɣ → q (more likely, *ɢ → q instead of → ɣ)","ɣ → q ; (more likely, *ɢ → q instead of → ɣ)",False,comment
 " / at word boundaries"," / #_, _#",False,replace prose
 " ! at word boundaries"," ! #_, _#",False,replace prose
-" / unstressed"," / [-stress]",False,replace prose
-" / stressed"," / [+stress]",False,replace prose
+" / unstressed"," / _[-stress]",False,replace prose
+" / stressed"," / _[+stress]",False,replace prose
 " / adjacent to short u"," / u[-long]_, _u[-long]",False,replace prose
 " / unless adjacent to another consonant"," / ! C_,_C",False,replace prose
 " / adjacent to {"," / _,{",False,replace prose

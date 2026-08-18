@@ -10112,7 +10112,7 @@ sections:
     stages:
     - ə
     - '{e,o}'
-    env: '[+stress]'
+    env: _[+stress]
     raw: ə → {e,o} / stressed; “(result of /e/ or /o/ unpredictable)”
     source: index_diachronica_original.html:2926
     rule_id: Palauan-ə_2
@@ -10133,7 +10133,7 @@ sections:
   - stages:
     - V
     - ə
-    env: '[-stress]'
+    env: _[-stress]
     raw: V → ə / unstressed
     source: index_diachronica_original.html:2929
     rule_id: Palauan-V
@@ -19898,7 +19898,7 @@ sections:
   - stages:
     - e
     - ə
-    env: '[-stress]'
+    env: _[-stress]
     comment: (possibly only in disyllables?)
     raw: e → ə / unstressed (possibly only in disyllables?)
     source: index_diachronica_original.html:4924
@@ -23602,7 +23602,7 @@ sections:
     - V
     - ∅
     env: '#UU(_)U(U(_)U)'
-    exception: '[-stress]'
+    exception: _[-stress]
     raw: 'V → ∅ / #UU(_)U(U(_)U) / unstressed; this “remained as a phonologically
       conditioned rule in OIr”; “[t]hat’s a little unclear, so let me try and enumerate:
       in words of more than three syllables, every other vowel (only the even ones)
@@ -24399,7 +24399,7 @@ sections:
   - stages:
     - i o
     - e a
-    env: '[-stress]'
+    env: _[-stress]
     raw: i o → e a / unstressed
     source: index_diachronica_original.html:5708
     rule_id: Anglo-Frisian-i-o
@@ -25069,7 +25069,7 @@ sections:
   - stages:
     - ɪ
     - ə
-    env: '[-stress]'
+    env: _[-stress]
     raw: ɪ → ə / unstressed
     source: index_diachronica_original.html:5824
     rule_id: Australian-English-ɪ_3
@@ -26814,7 +26814,7 @@ sections:
   - stages:
     - ə
     - ∅
-    env: '[-stress], but not in every case'
+    env: _[-stress], but not in every case
     raw: ə → ∅ / unstressed, but not in every case
     source: index_diachronica_original.html:6120
     rule_id: Standard-German-ə
@@ -29510,7 +29510,7 @@ sections:
   - stages:
     - eː
     - i
-    env: '[-stress]'
+    env: _[-stress]
     raw: eː → i / unstressed
     source: index_diachronica_original.html:6541
     rule_id: Vandalic-eː
@@ -32483,7 +32483,7 @@ sections:
     stages:
     - V
     - ∅
-    env: '[-stress]'
+    env: _[-stress]
     raw: V → ∅ / unstressed (sporadic)
     source: index_diachronica_original.html:7057
     sporadic: true
@@ -34341,7 +34341,7 @@ sections:
   - stages:
     - iː
     - i
-    env: '[+stress]'
+    env: _[+stress]
     raw: iː → i / stressed
     source: index_diachronica_original.html:7351
     rule_id: Catalan-iː
@@ -34355,7 +34355,7 @@ sections:
   - stages:
     - '{i,eː} e'
     - '{e,ɛ} {ɛ,e}'
-    env: '[+stress]'
+    env: _[+stress]
     raw: '{i,eː} e → {e,ɛ} {ɛ,e} / stressed'
     source: index_diachronica_original.html:7353
     rule_id: Catalan-i,eː-e
@@ -34376,7 +34376,7 @@ sections:
   - stages:
     - uː
     - u
-    env: '[+stress]'
+    env: _[+stress]
     raw: uː → u / stressed
     source: index_diachronica_original.html:7356
     rule_id: Catalan-uː
@@ -34397,7 +34397,7 @@ sections:
   - stages:
     - '{u,oː} o'
     - o ɔ
-    env: '[+stress]'
+    env: _[+stress]
     raw: '{u,oː} o → o ɔ / stressed'
     source: index_diachronica_original.html:7359
     rule_id: Catalan-u,oː-o
@@ -34437,7 +34437,7 @@ sections:
   - stages:
     - ae au
     - e ɔ
-    env: '[+stress]'
+    env: _[+stress]
     raw: ae au → e ɔ / stressed
     source: index_diachronica_original.html:7365
     rule_id: Catalan-ae-au
@@ -35026,7 +35026,7 @@ sections:
     - ɛj ɔj
     - jɛj uei
     env: i {u,ui}
-    exception: '[+stress]'
+    exception: _[+stress]
     raw: ɛj ɔj → jɛj uei / i {u,ui} / stressed
     source: index_diachronica_original.html:7447
     rule_id: Catalan-ɛj-ɔj
@@ -35945,7 +35945,7 @@ sections:
   - stages:
     - tVk
     - dʒ
-    env: '[-stress]'
+    env: _[-stress]
     raw: tVk → dʒ / unstressed
     source: index_diachronica_original.html:7594
     rule_id: Italian-tVk
@@ -35974,7 +35974,7 @@ sections:
   - stages:
     - kVl
     - kːj
-    env: '[-stress]'
+    env: _[-stress]
     raw: kVl → kːj / unstressed
     source: index_diachronica_original.html:7598
     rule_id: Italian-kVl
@@ -35987,7 +35987,7 @@ sections:
   - stages:
     - ɛ
     - jɛ
-    env: '[-stress]'
+    env: _[-stress]
     exception: _{dʒ,ʎ,ɲ}
     raw: ɛ → jɛ / unstressed ! _{dʒ,ʎ,ɲ}
     source: index_diachronica_original.html:7600
@@ -36022,7 +36022,7 @@ sections:
   - stages:
     - ɔ
     - uo
-    env: '[+stress]'
+    env: _[+stress]
     exception: j_ or _{dʒ,L}
     raw: ɔ → uo / stressed ! j_ or _{dʒ,L}
     source: index_diachronica_original.html:7605
@@ -36205,7 +36205,7 @@ sections:
   - stages:
     - iː {i,eː} e
     - i e ɛ
-    env: '[+stress]'
+    env: _[+stress]
     raw: iː {i,eː} e → i e ɛ / stressed
     source: index_diachronica_original.html:7634
     rule_id: Portuguese-iː-i,eː-e
@@ -36246,7 +36246,7 @@ sections:
   - stages:
     - '{u,oː} o'
     - o ɔ
-    env: '[+stress]'
+    env: _[+stress]
     raw: '{u,oː} o → o ɔ / stressed'
     source: index_diachronica_original.html:7640
     rule_id: Portuguese-u,oː-o
@@ -36274,7 +36274,7 @@ sections:
   - stages:
     - ae
     - ɛ
-    env: '[+stress]'
+    env: _[+stress]
     raw: ae → ɛ / stressed
     source: index_diachronica_original.html:7644
     rule_id: Portuguese-ae
@@ -36380,7 +36380,7 @@ sections:
   - stages:
     - V[+nas]
     - V[-nas]
-    env: '[-stress]'
+    env: _[-stress]
     raw: V[+nas] → V[-nas] / unstressed
     source: index_diachronica_original.html:7659
     rule_id: Portuguese-V+nas
@@ -38644,7 +38644,7 @@ sections:
   - stages:
     - a
     - e
-    env: '[+stress], usually when Ḱ_'
+    env: _[+stress], usually when Ḱ_
     raw: a → e / stressed, usually when Ḱ_
     source: index_diachronica_original.html:7992
     rule_id: Rhaeto-Romance-a
@@ -39755,7 +39755,7 @@ sections:
   - stages:
     - V
     - ∅
-    env: '[-stress]'
+    env: _[-stress]
     exception: V = a
     raw: V → ∅ / unstressed ! V = a
     source: index_diachronica_original.html:8163
@@ -51601,7 +51601,7 @@ sections:
   - stages:
     - Vʔ
     - Vː
-    env: '[+stress]'
+    env: _[+stress]
     raw: Vʔ → Vː / stressed
     source: index_diachronica_original.html:11077
     rule_id: Tulamni-Vʔ
@@ -61483,7 +61483,7 @@ sections:
   - stages:
     - ũ
     - aN
-    env: '[+stress]'
+    env: _[+stress]
     raw: ũ → aN / stressed
     source: index_diachronica_original.html:12943
     rule_id: Kansa-ũ
@@ -61572,7 +61572,7 @@ sections:
   - stages:
     - ũ
     - ã
-    env: '[+stress]'
+    env: _[+stress]
     raw: ũ → ã / stressed
     source: index_diachronica_original.html:12959
     rule_id: Omaha-Ponca-ũ
@@ -61813,7 +61813,7 @@ sections:
   - stages:
     - ũ
     - ã
-    env: '[+stress] (*)'
+    env: _[+stress] (*)
     raw: ũ → ã / stressed (*)
     source: index_diachronica_original.html:13000
     rule_id: Quapaw-ũ
@@ -65149,7 +65149,7 @@ sections:
   - stages:
     - ɤ(ː?) ɑː æː
     - ɑ(ː?) oː eː
-    env: '[+stress]'
+    env: _[+stress]
     raw: ɤ(ː?) ɑː æː → ɑ(ː?) oː eː / stressed
     source: index_diachronica_original.html:13767
     rule_id: Pre-Finnic-ɤː?-ɑː-æː
@@ -65163,7 +65163,7 @@ sections:
   - stages:
     - Aw
     - o
-    env: '[-stress]'
+    env: _[-stress]
     comment: (possibly analogical)
     raw: Aw → o / unstressed (possibly analogical)
     source: index_diachronica_original.html:13769
@@ -65178,7 +65178,7 @@ sections:
   - stages:
     - iw
     - u
-    env: '[-stress]'
+    env: _[-stress]
     raw: iw → u / unstressed
     source: index_diachronica_original.html:13771
     rule_id: Pre-Finnic-iw
@@ -65223,7 +65223,7 @@ sections:
   - stages:
     - ej
     - i
-    env: '[-stress]'
+    env: _[-stress]
     raw: ej → i / unstressed
     source: index_diachronica_original.html:13780
     rule_id: Proto-Finnic-ej
@@ -65610,7 +65610,7 @@ sections:
   - stages:
     - oi
     - o
-    env: '[-stress]'
+    env: _[-stress]
     raw: oi → o / unstressed
     source: index_diachronica_original.html:13839
     rule_id: Proto-Finnish-oi
@@ -65886,7 +65886,7 @@ sections:
   - stages:
     - AO
     - '{A,O,U}ː'
-    env: '[-stress]'
+    env: _[-stress]
     raw: AO → {A,O,U}ː / unstressed
     source: index_diachronica_original.html:13881
     rule_id: Standard-Finnish-AO
@@ -65900,7 +65900,7 @@ sections:
   - stages:
     - Ue
     - eː
-    env: '[-stress]'
+    env: _[-stress]
     raw: Ue → eː / unstressed
     source: index_diachronica_original.html:13883
     rule_id: Standard-Finnish-Ue
@@ -65982,7 +65982,7 @@ sections:
   - stages:
     - Va
     - Vː
-    env: '[-stress]'
+    env: _[-stress]
     raw: Va → Vː / unstressed
     source: index_diachronica_original.html:13897
     rule_id: Modern-Standard-Finnish-Va
@@ -66026,7 +66026,7 @@ sections:
   - stages:
     - æ
     - ɑ
-    env: '[-stress]'
+    env: _[-stress]
     raw: æ → ɑ / unstressed
     source: index_diachronica_original.html:13906
     rule_id: Livonian-æ
@@ -66054,7 +66054,7 @@ sections:
   - stages:
     - V
     - ə
-    env: '[-stress]'
+    env: _[-stress]
     exception: V = ɑ
     raw: V → ə / unstressed ! V = ɑ
     source: index_diachronica_original.html:13910
@@ -67924,7 +67924,7 @@ sections:
   - stages:
     - i
     - ə
-    env: '[-stress]'
+    env: _[-stress]
     raw: i → ə / unstressed
     source: index_diachronica_original.html:14268
     rule_id: Paipai-i
@@ -67974,7 +67974,7 @@ sections:
   - stages:
     - i
     - ə
-    env: '[-stress]'
+    env: _[-stress]
     raw: i → ə / unstressed
     source: index_diachronica_original.html:14278
     rule_id: Tipai-i
@@ -68626,7 +68626,7 @@ sections:
     - u
     - uː
     env: 'short: ʊ'
-    exception: '[-stress]: {o,ɔ}'
+    exception: '_[-stress]: {o,ɔ}'
     raw: 'u → uː / short: ʊ / unstressed: {o,ɔ}'
     source: index_diachronica_original.html:14426
     rule_id: Faroese-Vowel-Shift-u
