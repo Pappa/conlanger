@@ -1,7 +1,9 @@
 # Correspondence-series mapping coverage
 
+> **Legacy report (2026-08-12).** Generated for the retired parse-time `series_mappings.csv` path ([ticket 65](issues/65-series-mappings-coverage-pass.md)). CSV expansion was removed 2026-08-18 ([grill 72](issues/72-grill-series-mapping-manual-sot.md) → [74](issues/74-implement-ingest-corrections-drop-series-csv.md) / [75](issues/75-implement-compiler-config-series-mappings.md)). Do not regenerate; see `data/compiler_config.yml` and ADR-0004 for current policy.
+
 HTML source: `index_diachronica_original.html`
-Mappings: `series_mappings.csv` (107 rows)
+Mappings: `series_mappings.csv` (107 rows) *(retired)*
 
 ## Extraction confidence
 

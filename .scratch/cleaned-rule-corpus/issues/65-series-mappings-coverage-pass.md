@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-human
+Status: resolved
 Blocked by:
 
 # Series mappings coverage pass (backlog A–E)
@@ -21,6 +21,8 @@ Priority: on the frontier, but **after** [62](62-correction-pass-tone-features.m
 Out of scope here: positional/identity ([41](41-correction-pass-subscript-edge-cases.md)); uppercase section-local (`Sh₂`, `S₁`) — backlog F.
 
 ## What to build
+
+*(Historical — parse-time `series_mappings.csv` and `--update-series-mappings` retired; see Superseded below.)*
 
 1. `uv run regenerate_corpus --update-series-mappings` baseline.
 2. Close A–E per backlog (extractor fixes and/or authored CSV rows with HTML evidence).
@@ -44,6 +46,16 @@ Out of scope here: positional/identity ([41](41-correction-pass-subscript-edge-c
 **Coverage:** **101/101 (100%)** in-scope; CSV **107** rows (was 60). Families 6/10/17/30/46 all 100%.
 
 **Inventory:** before **7456/9201 ok (81.0%)**, **248/714** sections all OK → after **7462/9201 ok (81.1%)**, fail **1739** (−6 fails; +6 ok flips). Sections all OK unchanged at **248/714**.
+
+## Superseded (2026-08-18)
+
+The parse-time `series_mappings.csv` approach this ticket completed was retired after [Grill: correspondence-series mapping source of truth](72-grill-series-mapping-manual-sot.md):
+
+- [74](74-implement-ingest-corrections-drop-series-csv.md) — dropped parse-time CSV expansion; collectives → `parser_config.yml` `series_expansions`
+- [75](75-implement-compiler-config-series-mappings.md) — correspondence-series indices → `compiler_config.yml` `series_mappings` at compile
+- [ADR-0004](../../../docs/adr/0004-series-indices-per-section-maps.md) — amended
+
+The 101/101 metric and I/O-inferred rows documented here remain useful audit context for why grill 72 happened; do not treat this ticket as current implementation guidance.
 
 ## References
 
