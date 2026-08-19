@@ -1,5 +1,5 @@
 Type: spike
-Status: ready-for-agent
+Status: resolved
 Blocked by:
 
 # Spike: Index breve vowel notation (`̆`) → ASCA representation
@@ -43,11 +43,25 @@ Resolve with `/research`. Deliver findings markdown + optional CSV (same shape a
 
 ## Acceptance criteria
 
-- [ ] Subcluster table with counts and linguistic gloss
-- [ ] ASCA acceptance probes recorded (legal / illegal forms)
-- [ ] Per-subcluster recommendation with confidence
-- [ ] Findings under `.scratch/cleaned-rule-corpus/research/`
-- [ ] Follow-on correction-pass ticket filed **or** explicit defer/skip recommendation
+- [x] Subcluster table with counts and linguistic gloss
+- [x] ASCA acceptance probes recorded (legal / illegal forms)
+- [x] Per-subcluster recommendation with confidence
+- [x] Findings under `.scratch/cleaned-rule-corpus/research/`
+- [x] Follow-on correction-pass ticket filed **or** explicit defer/skip recommendation
+
+## Answer
+
+**Resolved 2026-08-19.**
+
+Findings: [breve-vowel-notation.md](../research/breve-vowel-notation.md), [breve-vowel-notation.csv](../research/breve-vowel-notation.csv).
+
+**ASCA:** Breve glyphs (`j̆`, `ɨ̆`, `ə̆`, `ă`, `æ̆`, `ŭ`, `ŏ`) all reject. `segment:[-long]` and bare-segment stripping validate. `[+short]` rejects. `@{Breve}` is romanisation-only.
+
+**Per-subcluster:** Tai + Scots + Tanacross → **`compile_transform`** (`normalize_asca_breve_marks()`); Slavic §46.14 → **`skip`**.
+
+**Impact:** 13 rows / 8 sections; **+1** section all-OK if cleared (Scots 17.7.2.1.10 only). Low near-miss leverage.
+
+**Follow-on:** [84 correction pass: breve vowel notation](84-correction-pass-breve-vowel-notation.md).
 
 ## References
 

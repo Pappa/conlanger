@@ -1,0 +1,14 @@
+source,subcluster,raw_snippet,linguistic_gloss,candidate_target,asca_probe_result,confidence,recommendation
+index_diachronica_original.html:13128,Tai,iə > j̆ / _C%,extra-short reduced reflex of *iə in closed syllable (Li 1977),j,✓ (bare j),medium,compile_transform
+index_diachronica_original.html:13142,Tai,ɨə > ɨ̆ / _C%,extra-short reflex of *ɨə in closed syllable,ɨ or ɨ:[-long],✓,medium,compile_transform
+index_diachronica_original.html:13143,Tai,ɨ̆ i̯o > u ə,chain monophthongisation after breve vowel,ɨ i̯o > u ə,✓,medium,compile_transform
+index_diachronica_original.html:13228,Tai,iə > j̆ / _C%,North Tai parallel to Central Tai iə rule,j,✓,medium,compile_transform
+index_diachronica_original.html:13229,Tai,ɨ̆ > a / _K,breve vowel raises to /a/ before velar,ɨ > a / _K,✓,medium,compile_transform
+index_diachronica_original.html:13258,Tai,ɨ̆ə > ɨ̆ / _C%,Po-Ai diphthong shortening,ɨə > ɨ / _C$,✓,medium,compile_transform
+index_diachronica_original.html:13259,Tai,ɨ̆ > a / _K,Po-Ai breve vowel shift,ɨ > a / _K,✓,medium,compile_transform
+index_diachronica_original.html:13260,Tai,ɨ̆ > ə,Po-Ai breve vowel to schwa,ɨ > ə,✓,medium,compile_transform
+index_diachronica_original.html:13268,Tai,ɛ iɛ > e:[+long] j̆,Po-Ai outputs long e + breve glide,ɛ iɛ > e:[+long] j,✓,medium,compile_transform
+index_diachronica_original.html:13324,Tai,iə > j̆ / _C%,Southwest Tai (not all languages),j,✓,medium,compile_transform
+index_diachronica_original.html:5955,Scots,∅ > ə̆ / _{n,r},epenthetic extra-short schwa before n/r,∅ > ə:[-long] / _{n,r},✓,high,compile_transform
+index_diachronica_original.html:10325,Tanacross,ɑ ə ʊ > {æ̆,ă} æ̆ ŏ,Athabaskan reduced vowel grades (Krauss & Golla 1981),{æ:[-long],a:[-long]} æ:[-long] ɑ,✓ (nested set may still fail),medium,compile_transform
+index_diachronica_original.html:14438,Slavic,i > j̆ [ə?],yer-like reduced vowel with optional schwa; strong/weak allomorphy chain,,✗ (structural),high,skip
