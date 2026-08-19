@@ -15,12 +15,12 @@
 | count | failure_class |
 |------:|---------------|
 | 494 | `syntax_other` |
-| 245 | `expected_underscore` |
+| 246 | `expected_underscore` |
 | 206 | `unknown_character` |
 | 128 | `runtime_other` |
 | 111 | `unknown_grouping` |
 | 90 | `unknown_feature` |
-| 78 | `prose_or_expected_arrow` |
+| 77 | `prose_or_expected_arrow` |
 | 46 | `nested_brackets` |
 | 38 | `expected_number` |
 | 32 | `diacritic_prereq` |
