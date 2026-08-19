@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by:
 
 # Correction pass: parallel output ∅ sets
@@ -34,10 +34,47 @@ ASCA accepts `∅` as a segment (deletion) but not as a member of a parallel cor
 
 ## Acceptance criteria
 
-- [ ] Subcluster shapes documented with ASCA smoke examples
-- [ ] Compile transform implemented
-- [ ] Full inventory re-run; before/after ok + section-complete delta in **Answer**
-- [ ] Fixtures updated where validation outcomes change
+- [x] Subcluster shapes documented with ASCA smoke examples
+- [x] Compile transform implemented
+- [x] Full inventory re-run; before/after ok + section-complete delta in **Answer**
+- [x] Fixtures updated where validation outcomes change
+
+## Answer
+
+Implemented 2026-08-19.
+
+### Shapes → ASCA mapping
+
+| Shape | Index example | ASCA branches (smoke) |
+|-------|---------------|----------------------|
+| Paired whole-field sets | `{r,h} > {∅,h}` | `r > ∅`, `h > h` |
+| Paired column sets | `{pʰ,ŋ} > {∅,j}` | `pʰ > ∅`, `ŋ > j` |
+| Multi-column zip | `{m,ɲ} n > {ɲ,∅} {ŋ,∅}` | `m n > ɲ ŋ`, `ɲ n > ∅` |
+| Single + set column | `m l > {m,n} {l,∅}` | `m l > m l`, `m l > n` |
+| Fixed + branching column | `p k > ɸ {∅,k}` | `p k > ɸ`, `p k > ɸ k` |
+| Input set + trailing segment | `{b,k} r > {r,∅}` | `b r > r`, `k r > ∅` |
+| Out of scope | `k b r > {ŋ,∅} {w,m} {n,r,t}` | uneven branch counts across columns |
+| Out of scope | `b d k > {b,β} {ɾ,l,∅} {k,x,ɡ,ɣ}` | 2 / 3 / 4 branch counts |
+
+### Code
+
+- `expand_parallel_output_null_branches` in `src/conlanger/tools/compile/asca/parallel_output_null.py`
+- `SoundChangeRule._build_parallel_null_set_alternatives` (ticket 81) after optional-output detection (ticket 66)
+- `_peel_trailing_env_from_output` for stages that embed env after set output (`ŋ > {∅,n} #_ else`)
+- Exported `split_outside_groupers` from `parallel_null_columns.py`
+
+### Inventory
+
+Before (committed inventory): **8125 / 9639 ok (84.3%)**.
+
+After: **8195 / 9683 ok (84.7%)** (**+70** ok rows; extra rows from `alt_idx` expansion).
+
+`null_in_parallel_output_set` near-miss cluster (**24** rules): **15 / 24** rule_ids now validate on all alternative rows; **9** residuals are uneven multi-column branch counts (`Akwára-k-b-r`, West Tariku `b d k` family, `Tunebo-m-n-h-j`).
+
+Full-corpus `received '∅'` in set syntax: **~40 → ~15** error rows (remaining include uneven-branch residuals and rules outside the near-miss set).
+
+Mono-class near-miss sections from spike: **9 / 19** now section-complete for this subcluster (remainder blocked on uneven-branch rules in mixed sections).
+
 
 ## References
 

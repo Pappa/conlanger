@@ -14,7 +14,12 @@ from __future__ import annotations
 _NULL_COLUMN_TOKENS = frozenset({"∅", "Ø", "0", "*"})
 
 
-def _split_outside_groupers(text: str, sep: str = " ") -> list[str]:
+def split_outside_groupers(text: str, sep: str = " ") -> list[str]:
+    """Split on ``sep`` outside ``{}``, ``()``, and ``[]`` groupers."""
+    return _split_outside_groupers_impl(text, sep)
+
+
+def _split_outside_groupers_impl(text: str, sep: str = " ") -> list[str]:
     parts: list[str] = []
     current: list[str] = []
     depth_brace = 0
@@ -52,7 +57,7 @@ def drop_mixed_parallel_null_columns(side: str) -> str:
     """Drop top-level ``∅``/``*`` tokens when mixed with other segments on one side."""
     if not side or not side.strip():
         return side
-    tokens = _split_outside_groupers(side.strip())
+    tokens = split_outside_groupers(side.strip())
     if not tokens:
         return side
     null_count = sum(1 for token in tokens if _is_null_column_token(token))

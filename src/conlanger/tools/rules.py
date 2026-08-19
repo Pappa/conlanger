@@ -10,6 +10,9 @@ from conlanger.tools.compile.asca.group_mappings import (
 from conlanger.tools.compile.asca.parallel_null_columns import (
     drop_mixed_parallel_null_columns,
 )
+from conlanger.tools.compile.asca.parallel_output_null import (
+    expand_parallel_output_null_branches,
+)
 from conlanger.tools.compile.asca.pipeline import compile_asca_rule_string
 from conlanger.tools.compile.asca.tilde import normalize_corpus_rule_tilde_fields
 from conlanger.utils.file_io import load_compiler_config
@@ -37,7 +40,6 @@ def _is_whole_field_set(text: str) -> bool:
 
 
 def _split_set_members(text: str) -> list[str]:
-    """Split a whole-field ``{a,b,c}`` set into top-level member strings."""
     inner = text.strip()[1:-1]
     members: list[str] = []
     current: list[str] = []
@@ -56,6 +58,24 @@ def _split_set_members(text: str) -> list[str]:
             current.append(char)
     members.append("".join(current).strip())
     return members
+
+
+def _peel_trailing_env_from_output(output: str) -> tuple[str, str] | None:
+    """When stages embed env after a whole-field set output, split it off."""
+    stripped = output.strip()
+    if len(stripped) < 3 or stripped[0] != "{":
+        return None
+    depth = 0
+    for position, char in enumerate(stripped):
+        if char == "{":
+            depth += 1
+        elif char == "}":
+            depth -= 1
+            if depth == 0 and position < len(stripped) - 1:
+                rest = stripped[position + 1 :].lstrip()
+                if rest.startswith(("#", "/", "_")):
+                    return stripped[: position + 1], rest
+    return None
 
 
 class RulePartBase:
@@ -119,6 +139,10 @@ class SoundChangeRule(RulePartBase):
 
         self.env = rule.get("env", None)
         self.exception = rule.get("exception", None)
+        if self.env is None:
+            peeled = _peel_trailing_env_from_output(self.output)
+            if peeled is not None:
+                self.output, self.env = peeled
         self._group_mappings = {} if group_mappings is None else group_mappings
         self._section_index = section_index
         self._compiler_config = compiler_config
@@ -139,12 +163,16 @@ class SoundChangeRule(RulePartBase):
         super().__init__(value)
 
     def _build_alternatives(self, rule: dict[str, str]) -> list[SoundChangeRule]:
-        """Build peer alternatives for an optional-output rule (else empty).
+        """Build peer alternatives for optional outputs or parallel ``∅`` output sets."""
+        optional = self._build_optional_output_alternatives(rule)
+        if optional:
+            return optional
+        return self._build_parallel_null_set_alternatives(rule)
 
-        Optional outputs are a whole-field output set with an input that is not a
-        whole-field set (e.g. ``d → {∅,ð}``). Paired sets, nested sets, and empty
-        members are out of scope and yield no alternatives.
-        """
+    def _build_optional_output_alternatives(
+        self, rule: dict[str, str]
+    ) -> list[SoundChangeRule]:
+        """Whole-field output set with unpaired input (ticket 66)."""
         if not (
             _is_whole_field_set(self.output) and not _is_whole_field_set(self.input)
         ):
@@ -154,12 +182,41 @@ class SoundChangeRule(RulePartBase):
             return []
         return [
             SoundChangeRule(
-                {**rule, "input": self.input, "output": member},
+                {
+                    **rule,
+                    "input": self.input,
+                    "output": member,
+                    "env": self.env,
+                    "exception": self.exception,
+                },
                 group_mappings=self._group_mappings,
                 section_index=self._section_index,
                 compiler_config=self._compiler_config,
             )
             for member in members
+        ]
+
+    def _build_parallel_null_set_alternatives(
+        self, rule: dict[str, str]
+    ) -> list[SoundChangeRule]:
+        """Paired parallel columns with ``∅`` inside output sets (ticket 81)."""
+        branches = expand_parallel_output_null_branches(self.input, self.output)
+        if branches is None:
+            return []
+        return [
+            SoundChangeRule(
+                {
+                    **rule,
+                    "input": branch_input,
+                    "output": branch_output,
+                    "env": self.env,
+                    "exception": self.exception,
+                },
+                group_mappings=self._group_mappings,
+                section_index=self._section_index,
+                compiler_config=self._compiler_config,
+            )
+            for branch_input, branch_output in branches
         ]
 
     def _format(self) -> str:
