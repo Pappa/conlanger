@@ -101,7 +101,7 @@ rules:
       reason: "Correcting env delimiter"
   - rule:
       id: Comox-ʔ
-      content: "ʔ → ∅ / V3R_V"
+      content: "ʔ → ∅ / V₃R_V"
       reason: "Adding env delimiter"
   - rule:
       id: Portuguese-V_3

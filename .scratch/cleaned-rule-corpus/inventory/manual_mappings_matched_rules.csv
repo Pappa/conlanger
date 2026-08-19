@@ -30,10 +30,13 @@ section_index,section_name,rule_id,source,manual_mapping
 10.1.1.2,Proto-Bali-Sasak-Sumbawan to Sasak,Sasak-Vh,index_diachronica_original.html:2559," ; (again, "
 10.1.1.3,Proto-Bali-Sasak-Sumbawan to Sumbawan,Sumbawan-Vh,index_diachronica_original.html:2572," ; (again, "
 10.1.2.9,Proto-Philippine to Tagalog,Tagalog-q,index_diachronica_original.html:2755, ; (not sure what 
+10.2,Proto-Austronesian to Proto-Batak,"Proto-Batak-ts,ʈ-ɟ͡ʝ,ɖ-lʲ,ɲ-ʔ,x,s,h-ʀ",index_diachronica_original.html:2781, ; (velar fricative is conjectured
+10.2,Proto-Austronesian to Proto-Batak,Proto-Batak-z,index_diachronica_original.html:2783, ; (fricative changes to approximant)
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-ə_2,index_diachronica_original.html:2926, / _[+stress]
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-V,index_diachronica_original.html:2929, / _[-stress]
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-q,index_diachronica_original.html:2951,→ ʕ
 10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-ə,index_diachronica_original.html:2962," / V_, _V"
+10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-bː-dː-dzː-ɡː,index_diachronica_original.html:2970, ; (Whimemsz says
 10.2.6.1,Proto-North Sarawak to Kiput,Kiput-ə_2,index_diachronica_original.html:2988," / V_, _V"
 10.2.6.3,Proto-Malayic to Minangkabau,Minangkabau-h,index_diachronica_original.html:3074, ; sporadic (some exceptions
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-pwʰ-pʰ-tʰ-kʰ,index_diachronica_original.html:3265, / 

@@ -53094,8 +53094,8 @@ sections:
   - stages:
     - ʔ
     - ∅
-    env: V3R_V
-    raw: ʔ → ∅ / V3R_V
+    env: V₃R_V
+    raw: ʔ → ∅ / V₃R_V
     source: index_diachronica_original.html:11400
     rule_id: Comox-ʔ
   - stages:

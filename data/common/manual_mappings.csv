@@ -63,3 +63,6 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 " (→ b seems more common)"," ; (→ b seems more common)",False,replace prose
 "(kʷ → ɡʷ → ɡ ?)","kʷ → ɡʷ → ɡ / sporadic ; (kʷ → ɡʷ → ɡ ?)",False,workaround
 "C[+ affricate]","O:[+delrel]",False,asca syntax replacement
+" (velar fricative is conjectured"," ; (velar fricative is conjectured",False,comment
+" (fricative changes to approximant)"," ; (fricative changes to approximant)",False,comment
+" (Whimemsz says"," ; (Whimemsz says",False,comment
