@@ -1390,7 +1390,9 @@ def test_ipa_mappings_dict_uses_config_confidence_levels():
     assert mappings["Š"] == "ʃ"
     assert mappings["è"] == "ɛ"
     assert mappings["é"] == "e"
-    assert "ı" not in mappings
+    assert mappings["ı"] == "j"
+    assert mappings["ṽ"] == "v\u0303"
+    assert mappings["û"] == "u"
     assert "Ω" not in mappings
 
 
@@ -1679,6 +1681,42 @@ def test_apply_ipa_mappings_noop_when_mappings_empty():
 def test_normalize_ipa_in_field_noop_without_mappings():
     assert normalize_ipa_in_field("Š", {}) == "Š"
     assert normalize_ipa_in_field("", {"Š": "ʃ"}) == ""
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("oı̃ > wɛ̃", "oj\u0303 > wɛ\u0303"),
+        ("VnV > ṽlṽ", "VnV > v\u0303lv\u0303"),
+        ("iC uC > i û / _{C,#}", "iC uC > i u / _{C,#}"),
+        ("Ṽ > V", "v\u0303 > V"),
+    ],
+)
+def test_normalize_ipa_in_field_near_miss_unknown_characters(text, expected):
+    mappings = ipa_mappings_dict(config=load_parser_config())
+    assert normalize_ipa_in_field(text, mappings) == expected
+
+
+@pytest.mark.parametrize(
+    ("html_line", "stage_index", "expected_stage"),
+    [
+        ("{aı̃,eı̃} → ɛ̃", 0, "{aj\u0303,ej\u0303}"),
+        ("VnV → ṽlṽ", -1, "v\u0303lv\u0303"),
+        ("iC uC → î û / _{C,#}", -1, "i u"),
+    ],
+)
+def test_parse_rule_element_normalizes_near_miss_unknown_characters(
+    html_line,
+    stage_index,
+    expected_stage,
+):
+    el = html.fragment_fromstring(
+        f'<p class="schg">{html_line}</p>',
+        create_parent=False,
+    )
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["stages"][stage_index] == expected_stage
+    assert html_line.split(" → ")[0] in rules[0]["raw"] or "→" in rules[0]["raw"]
 
 
 def test_index_diachronica_parser_accepts_custom_corrections():
