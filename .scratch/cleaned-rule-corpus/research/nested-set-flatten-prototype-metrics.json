@@ -1,0 +1,79 @@
+{
+  "before": {
+    "ok_true": 8270,
+    "nested_brackets": 45,
+    "working_depth_ge2": 31,
+    "inventory_rows": 9689
+  },
+  "union": {
+    "ok_true": 8277,
+    "nested_brackets": 32,
+    "ok_flips": 7,
+    "regressions": 0,
+    "transitions": {
+      "nested_brackets→ok": 7,
+      "nested_brackets→syntax_other": 5
+    },
+    "inventory_rows": 9689,
+    "rules_flattened": 13,
+    "working_depth_ge2": 18
+  },
+  "union_paren": {
+    "ok_true": 8281,
+    "nested_brackets": 27,
+    "ok_flips": 11,
+    "regressions": 0,
+    "transitions": {
+      "nested_brackets→ok": 11,
+      "nested_brackets→syntax_other": 5,
+      "nested_brackets→expected_underscore": 1
+    },
+    "inventory_rows": 9689,
+    "rules_flattened": 20,
+    "working_depth_ge2": 13
+  },
+  "scan_buckets_after_union": {
+    "A_true_nested_io": 1,
+    "F_depth_ge2_unclassified": 13,
+    "C_parenthetical_in_env_set": 3,
+    "E_unbalanced_malformed": 12,
+    "B_true_nested_env_exception": 1
+  },
+  "else_fixtures": {
+    "union": {
+      "p3_prev_env": "_{s,({m,j,w})V}",
+      "p3_else_exception": "_{s,({m,j,w})V}",
+      "p4_prev_env": "_{s,({m,j,w})V}",
+      "p4_else_exception": "_{s,({m,j,w})V}",
+      "exception_equal": true
+    },
+    "union_paren": {
+      "p3_prev_env": "_{s,mV,jV,wV}",
+      "p3_else_exception": "_{s,mV,jV,wV}",
+      "p4_prev_env": "_{s,mV,jV,wV}",
+      "p4_else_exception": "_{s,mV,jV,wV}",
+      "exception_equal": true
+    },
+    "deferred_1762_1763": {
+      "else_keeps_env": "else",
+      "else_has_exception": false,
+      "prev_exception_still_nested": "when _{C{C,ː},#}"
+    }
+  },
+  "series_slot_probe": {
+    "html_shape": "{ʔ,hₓ}",
+    "after_series_expansions": [
+      "{ʔ,h₁,h₂,h₃}"
+    ],
+    "p1_flatten_then_series": [
+      "{ʔ,h₁,h₂,h₃}"
+    ],
+    "p2_series_then_flatten": [
+      "{ʔ,h₁,h₂,h₃}"
+    ],
+    "hypothetical_nested_after_series": [
+      "{ʔ,h₁,h₂,h₃}"
+    ],
+    "p1_equals_p2_on_current_998_shape": true
+  }
+}

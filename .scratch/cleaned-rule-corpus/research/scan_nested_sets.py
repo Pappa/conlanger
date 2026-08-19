@@ -179,6 +179,40 @@ def _field_kind(name: str) -> str:
     return "other"
 
 
+def working_fields(rule: dict) -> list[tuple[str, str]]:
+    """Yield ``(name, value)`` for stages / env / exception (never ``raw``)."""
+    fields: list[tuple[str, str]] = []
+    for i, stage in enumerate(rule.get("stages") or []):
+        if stage and str(stage).strip():
+            fields.append((f"stage[{i}]", str(stage)))
+    for key in ("env", "exception"):
+        if rule.get(key):
+            fields.append((key, str(rule[key])))
+    return fields
+
+
+def working_max_brace_depth(rule: dict) -> int:
+    """Max ``{`` depth in stages / env / exception (excludes ``raw``)."""
+    depth = 0
+    for _name, value in working_fields(rule):
+        depth = max(depth, max_brace_depth(value))
+    return depth
+
+
+def working_unbalanced(rule: dict) -> bool:
+    return any(brace_balance(value) != 0 for _name, value in working_fields(rule))
+
+
+def count_working_depth_ge2(doc: dict) -> int:
+    """Corpus rules whose working fields have brace depth ≥ 2 or unbalanced ``{``."""
+    count = 0
+    for section in doc.get("sections") or []:
+        for rule in section.get("rules") or []:
+            if working_max_brace_depth(rule) >= 2 or working_unbalanced(rule):
+                count += 1
+    return count
+
+
 def classify_rule(rule: dict, section_name: str, rule_idx: int) -> RuleHit | None:
     source = rule.get("source", "")
     hit = RuleHit(source=source, section=section_name, rule_idx=rule_idx)
@@ -287,6 +321,7 @@ def main() -> None:
     summary = {
         "total_rules_scanned": total_rules,
         "rules_with_nested_signal": len(hits),
+        "working_fields_depth_ge2_or_unbalanced": count_working_depth_ge2(data),
         "inventory_nested_brackets_unique_sources": len(inv_nested_sources),
         "bucket_counts": {k: len(v) for k, v in sorted(buckets.items())},
         "bucket_inventory_overlap": {},
@@ -316,6 +351,10 @@ def main() -> None:
     )
     print(json.dumps(summary["bucket_counts"], indent=2))
     print("inventory overlap per bucket:", summary["bucket_inventory_overlap"])
+    print(
+        "working_fields_depth_ge2_or_unbalanced:",
+        summary["working_fields_depth_ge2_or_unbalanced"],
+    )
     print(f"Wrote {out_path}")
 
 

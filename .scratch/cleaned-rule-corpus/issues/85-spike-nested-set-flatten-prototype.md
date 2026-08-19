@@ -1,5 +1,5 @@
 Type: spike
-Status: ready-for-agent
+Status: resolved
 Blocked by: None
 
 # Spike: prototype parse-time nested-set flatten
@@ -88,13 +88,29 @@ For **5–10** rules across #67 buckets (A–E from [nested-sets-inventory.md](.
 
 ## Acceptance criteria
 
-- [ ] Naive algorithm documented with explicit scope exclusions
-- [ ] Phase A before/after inventory metrics (not changelog-only)
-- [ ] Regression count and `failure_class` transition summary
-- [ ] Parse insertion recommendation with evidence (**else-rule** fixture required)
-- [ ] Per #67 bucket (A–E): **go** / **no-go** / **go-with-limits** for parse-time flatten
-- [ ] Recommendation: parse-time vs compile-time; whether to rewrite [69](69-correction-pass-flatten-nested-context-sets.md) / [70](70-correction-pass-flatten-nested-io-sets.md)
-- [ ] Ticket marked `resolved` with **Answer** summarizing policy + follow-ons
+- [x] Naive algorithm documented with explicit scope exclusions
+- [x] Phase A before/after inventory metrics (not changelog-only)
+- [x] Regression count and `failure_class` transition summary
+- [x] Parse insertion recommendation with evidence (**else-rule** fixture required)
+- [x] Per #67 bucket (A–E): **go** / **no-go** / **go-with-limits** for parse-time flatten
+- [x] Recommendation: parse-time vs compile-time; whether to rewrite [69](69-correction-pass-flatten-nested-context-sets.md) / [70](70-correction-pass-flatten-nested-io-sets.md)
+- [x] Ticket marked `resolved` with **Answer** summarizing policy + follow-ons
+
+## Answer
+
+**Parse-time flatten at P4** (after `resolve_catch_all_else_rules`), not compile-time. Preserve `raw`. Findings: [nested-set-flatten-prototype.md](../research/nested-set-flatten-prototype.md).
+
+| Metric | Before | Union-only | Union + paren-in-set |
+|--------|-------:|-----------:|---------------------:|
+| `ok=True` inventory rows | 8270 | 8277 | 8281 |
+| `nested_brackets` | 45 | 32 | 27 |
+| `ok` flips / regressions | — | 7 / 0 | 11 / 0 |
+| Rules flattened | — | 13 | 20 |
+| Working-field brace depth ≥ 2 | 31 | 18 | 13 |
+
+Else `:5509`/`:5510`: P3 vs P4 commute (copy ∘ flatten). Recommend **P4**. Bucket **B go** (with paren mode); **A/C go-with-limits**; **D/E no-go**. Naive flatten does **not** fix #71 parallel columns. **#69 and #70 briefs rewritten** to parse-time P4.
+
+Follow-ons: implement #69 (env/exception `union_paren`); #70 (stages union, `:1398` paren); #71 keeps D.
 
 ## Out of scope
 
@@ -109,8 +125,8 @@ For **5–10** rules across #67 buckets (A–E from [nested-sets-inventory.md](.
 
 - [Spike: nested sets](67-spike-nested-sets.md)
 - [nested-sets-inventory.md](../research/nested-sets-inventory.md)
-- [Correction pass: flatten nested context sets](69-correction-pass-flatten-nested-context-sets.md) — pending policy from this spike
-- [Correction pass: flatten nested I/O sets](70-correction-pass-flatten-nested-io-sets.md)
+- [Correction pass: flatten nested context sets](69-correction-pass-flatten-nested-context-sets.md) — parse-time P4 (rewritten after this spike)
+- [Correction pass: flatten nested I/O sets](70-correction-pass-flatten-nested-io-sets.md) — parse-time union (rewritten; D stays #71)
 - [Grill: paren and parallel set notation](71-grill-paren-and-parallel-set-notation.md)
 - [ADR-0010 Historical fidelity](../../docs/adr/0010-historical-fidelity-class-first-status.md)
 - [ADR-0002 Applier-neutral YAML](../../docs/adr/0002-applier-neutral-yaml-rule-corpus.md)
@@ -156,3 +172,7 @@ For **5–10** rules across #67 buckets (A–E from [nested-sets-inventory.md](.
 - Parse slot P4 (post–else resolution) or P3 avoids propagating nested env into derived exceptions
 - Parallel-column bucket D will not be fixed by naive flatten — confirms #71 boundary
 - Parse-time flatten aligns better with ADR-0010 than compile-only (#69 as written)
+
+## Comments
+
+Claimed 2026-08-19. Research complete — findings: [nested-set-flatten-prototype.md](../research/nested-set-flatten-prototype.md). Verdict: parse-time P4; #69/#70 briefs rewritten.
