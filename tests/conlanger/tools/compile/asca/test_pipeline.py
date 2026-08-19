@@ -3,6 +3,7 @@
 import pytest
 
 from conlanger.tools.compile.asca.apostrophes import normalize_typographic_apostrophes
+from conlanger.tools.compile.asca.breve_marks import normalize_asca_breve_marks
 from conlanger.tools.compile.asca.ejectives import normalize_asca_ejective_marks
 from conlanger.tools.compile.asca.ellipsis import (
     normalize_asca_optional_grouping_ellipsis,
@@ -37,6 +38,7 @@ def test_asca_compile_pipeline_step_names_match_docs():
         "normalize_asca_tone_matrices",
         "normalize_typographic_apostrophes",
         "normalize_asca_ejective_marks",
+        "normalize_asca_breve_marks",
         "expand_meta_notation",
     )
 
@@ -55,6 +57,7 @@ def test_compile_asca_rule_string_matches_legacy_manual_chain():
     manual = normalize_asca_tone_matrices(manual)
     manual = normalize_typographic_apostrophes(manual)
     manual = normalize_asca_ejective_marks(manual)
+    manual = normalize_asca_breve_marks(manual)
     assert compile_asca_rule_string(text, group_mappings=mappings) == manual
 
 

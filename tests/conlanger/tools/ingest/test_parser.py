@@ -1383,6 +1383,52 @@ def test_load_parser_config_default_includes_skip_section_seed():
     assert "37.1.2.4.2" in config.skip_section_ids
 
 
+def test_load_parser_config_default_includes_skip_rule_seed():
+    config = load_parser_config()
+    assert "Pre-Slavic-Vowel-Changes-i" in config.skip_rule_ids
+
+
+def test_load_parser_config_skip_rules(tmp_path: Path):
+    path = tmp_path / "parser_config.yml"
+    path.write_text(
+        "ipa_mappings:\n  confidence: [high]\n"
+        "skip_rules:\n"
+        "  - id: Pre-Slavic-Vowel-Changes-i\n"
+        '    reason: "structural hold-out"\n',
+        encoding="utf-8",
+    )
+    config = load_parser_config(path)
+    assert config.skip_rule_ids == frozenset({"Pre-Slavic-Vowel-Changes-i"})
+    assert (
+        config.skip_rule_comments["Pre-Slavic-Vowel-Changes-i"] == "structural hold-out"
+    )
+
+
+def test_parser_marks_skip_rules_from_config(tmp_path: Path):
+    html_path = tmp_path / "skip_rule.html"
+    config_path = tmp_path / "parser_config.yml"
+    config_path.write_text(
+        "ipa_mappings:\n  confidence: [high]\n"
+        "skip_rules:\n"
+        "  - id: Hold-out-rule\n"
+        '    reason: "unrepresentable chain"\n',
+        encoding="utf-8",
+    )
+    _write_index_diachronica_html(
+        html_path,
+        section_id="SkipRule",
+        section_body="""\
+<h2>1.0 Hold-out</h2>
+<p class="schg" id="Hold-out-rule">i → j [ə?] → {e,a}</p>""",
+    )
+    parser = default_index_parser(parser_config=load_parser_config(config_path))
+    rule = parser.parse(html_path)["sections"][0]["rules"][0]
+    assert rule["status"] == "skipped"
+    assert rule["stages"] == []
+    assert rule["comment"] == "unrepresentable chain"
+    assert rule["raw"] == "i → j [ə?] → {e,a}"
+
+
 def test_ipa_mappings_dict_uses_config_confidence_levels():
     default_config = load_parser_config()
     mappings = ipa_mappings_dict(config=default_config)

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from conlanger.tools.compile.asca.apostrophes import normalize_typographic_apostrophes
+from conlanger.tools.compile.asca.breve_marks import normalize_asca_breve_marks
 from conlanger.tools.compile.asca.ejectives import normalize_asca_ejective_marks
 from conlanger.tools.compile.asca.ellipsis import (
     normalize_asca_optional_grouping_ellipsis,
@@ -35,6 +36,7 @@ ASCA_COMPILE_STEP_NAMES: tuple[str, ...] = (
     "normalize_asca_tone_matrices",
     "normalize_typographic_apostrophes",
     "normalize_asca_ejective_marks",
+    "normalize_asca_breve_marks",
     "expand_meta_notation",
 )
 
@@ -60,4 +62,5 @@ def compile_asca_rule_string(
     text = normalize_asca_tone_matrices(text)
     text = normalize_typographic_apostrophes(text)
     text = normalize_asca_ejective_marks(text)
+    text = normalize_asca_breve_marks(text)
     return expand_meta_notation(text)

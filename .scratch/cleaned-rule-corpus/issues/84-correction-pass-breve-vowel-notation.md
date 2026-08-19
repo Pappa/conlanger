@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by:
 
 # Correction pass: breve vowel notation (`̆`)
@@ -37,11 +37,30 @@ ASCA 0.10.2 rejects combining breve U+0306 and precomposed breve vowels (`ă`, `
 
 ## Acceptance criteria
 
-- [ ] `normalize_asca_breve_marks()` implemented; corpus `raw` unchanged (ADR-0010)
-- [ ] ASCA smoke tests for Tai, Scots, Tanacross representative rules
-- [ ] Slavic §46.14 rule held out
-- [ ] Full inventory re-run; before/after `̆` residual + sections-all-OK in **Answer**
-- [ ] Fixtures updated where validation outcomes change
+- [x] `normalize_asca_breve_marks()` implemented; corpus `raw` unchanged (ADR-0010)
+- [x] ASCA smoke tests for Tai, Scots, Tanacross representative rules
+- [x] Slavic §46.14 rule held out
+- [x] Full inventory re-run; before/after `̆` residual + sections-all-OK in **Answer**
+- [x] Fixtures updated where validation outcomes change
+
+## Answer
+
+**Shipped 2026-08-19.**
+
+### Inventory
+
+| Metric | Before | After | Δ |
+|--------|-------:|------:|--:|
+| OK / total | 8168 / 9683 (84.4%) | **8180 / 9683 (84.5%)** | **+12** |
+| Sections all OK | 308 / 712 (43.3%) | **309 / 712 (43.4%)** | **+1** (Scots 17.7.2.1.10) |
+| `unknown_character` | 207 | **194** | **−13** |
+| `̆` error-token residual | 13 | **0** | **−13** |
+
+**Recovered:** 12 breve rules via `normalize_asca_breve_marks()` (Tai ×10, Scots ×1, Tanacross ×1). Tanacross nested set `{æ̆,ă}` validates after breve transform (no separate nested-set pass needed for this rule).
+
+**Held out:** `Pre-Slavic-Vowel-Changes-i` (§46.14) via `parser_config.yml` `skip_rules` → `status: skipped` at parse.
+
+**Code:** `src/conlanger/tools/compile/asca/breve_marks.py`; pipeline step after ejective marks; `data/parser_config.yml` `skip_rules`; tests in `test_breve_marks.py`.
 
 ## References
 

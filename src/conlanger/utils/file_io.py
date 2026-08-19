@@ -136,6 +136,26 @@ def _parse_skip_section_ids(raw: object) -> frozenset[str]:
     return frozenset(ids)
 
 
+def _parse_skip_rules(raw: object) -> tuple[frozenset[str], dict[str, str]]:
+    """Return rule ids and optional comments from ``skip_rules`` in parser config."""
+    if not isinstance(raw, list):
+        return frozenset(), {}
+    ids: set[str] = set()
+    comments: dict[str, str] = {}
+    for entry in raw:
+        if not isinstance(entry, dict):
+            continue
+        rule_id = entry.get("id")
+        if not rule_id:
+            continue
+        rule_id = str(rule_id)
+        ids.add(rule_id)
+        reason = entry.get("reason")
+        if reason:
+            comments[rule_id] = str(reason)
+    return frozenset(ids), comments
+
+
 def load_parser_config(path: Path | None = None) -> ParserConfig:
     """Load parser runtime settings from YAML."""
     config_path = DEFAULT_PARSER_CONFIG_PATH if path is None else Path(path)
@@ -148,10 +168,13 @@ def load_parser_config(path: Path | None = None) -> ParserConfig:
     for token, members in raw_expansions.items():
         if isinstance(members, list):
             series_expansions[str(token)] = tuple(str(m) for m in members)
+    skip_rule_ids, skip_rule_comments = _parse_skip_rules(raw.get("skip_rules"))
     return ParserConfig(
         ipa_mappings_confidence=frozenset(confidence),
         series_expansions=series_expansions,
         skip_section_ids=_parse_skip_section_ids(raw.get("skip_sections")),
+        skip_rule_ids=skip_rule_ids,
+        skip_rule_comments=skip_rule_comments,
     )
 
 

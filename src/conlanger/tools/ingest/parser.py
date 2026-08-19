@@ -189,6 +189,18 @@ class IndexDiachronicaParser:
         parts = apply_feature_mappings(parts, self._feature_mappings)
         parts = apply_ipa_mappings(parts, self._ipa_mappings)
         parts = finalize_stages_shape(parts)
+        if rule_id and rule_id in self._parser_config.skip_rule_ids:
+            skipped: dict[str, Any] = {
+                "stages": [],
+                "raw": raw,
+                "source": source,
+                "status": "skipped",
+                "rule_id": rule_id,
+            }
+            comment = self._parser_config.skip_rule_comments.get(rule_id)
+            if comment:
+                skipped["comment"] = comment
+            return [skipped]
         rule = {**parts, "raw": raw, "source": source, **sporadic_flag}
         if rule_id:
             rule["rule_id"] = rule_id

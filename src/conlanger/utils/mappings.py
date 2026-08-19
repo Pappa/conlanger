@@ -68,6 +68,8 @@ class ParserConfig:
     ipa_mappings_confidence: frozenset[str]
     series_expansions: dict[str, tuple[str, ...]] = field(default_factory=dict)
     skip_section_ids: frozenset[str] = field(default_factory=frozenset)
+    skip_rule_ids: frozenset[str] = field(default_factory=frozenset)
+    skip_rule_comments: dict[str, str] = field(default_factory=dict)
 
 
 @dataclass(frozen=True)

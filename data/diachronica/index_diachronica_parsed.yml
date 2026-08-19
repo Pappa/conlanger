@@ -68728,14 +68728,13 @@ sections:
     raw: ew → ju
     source: index_diachronica_original.html:14437
     rule_id: Pre-Slavic-Vowel-Changes-ew
-  - stages:
-    - i
-    - j̆ [ə?]
-    - '{e,a} (strong)/∅'
-    comment: “in modern languages”; (weak)
+  - stages: []
     raw: i → ı̆ [ə?] → {e,a} (strong)/∅ (weak) “in modern languages”
     source: index_diachronica_original.html:14438
+    status: skipped
     rule_id: Pre-Slavic-Vowel-Changes-i
+    comment: chained optional multi-output; structurally unrepresentable in ASCA (ticket
+      84)
   - stages:
     - iː
     - i
