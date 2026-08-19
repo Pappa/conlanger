@@ -39,6 +39,10 @@ Findings: [research/field-isolation-compile-validation.md](../research/field-iso
 
 - [Inventory success/error CSV splits and ok-change changelog](34-inventory-success-error-splits-and-ok-changelog.md) — ship filtered CSVs + changelog first; wire isolation into the same regen pass or behind a flag once 34 lands.
 
+## Comments
+
+- 2026-08-19: Owner hesitant to start stubs; alternative is native asca per-field validation. Spike: [Native ASCA per-field validation effort](86-spike-asca-native-per-field-validation.md). Findings: [research/asca-native-per-field-validation.md](../research/asca-native-per-field-validation.md). Hold implementation until that path is accepted or declined; if accepted, retarget this ticket (sidecar CSV + `blame`, drop stub engine).
+
 ## Acceptance criteria
 
 - [ ] Sidecar CSV produced by regen (fails-only by default; flag documented if broader)
