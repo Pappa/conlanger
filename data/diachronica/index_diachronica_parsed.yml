@@ -2327,8 +2327,10 @@ sections:
     rule_id: Egyptian-Arabic-ðˤ
   - stages:
     - dˤ
-    - zˤ (seems to be a sporadic change only affecting a few words, e.g. CA/MSA ˈdˤaːbitˤ
+    - zˤ
     - EA ˈzˤaːbitˤ)
+    comment: (seems to be a sporadic change only affecting a few words, e.g. CA/MSA
+      ˈdˤaːbitˤ
     raw: dˤ → zˤ (seems to be a sporadic change only affecting a few words, e.g. CA/MSA
       ˈdˤaːbitˤ → EA ˈzˤaːbitˤ)
     source: index_diachronica_original.html:1380
@@ -4251,8 +4253,9 @@ sections:
     rule_id: Blackfoot-tem-k,pen
   - stages:
     - ket
-    - tː (
+    - tː
     - sː?)
+    comment: (
     raw: ket → tː (→ sː?)
     source: index_diachronica_original.html:1755
     rule_id: Blackfoot-ket
@@ -6302,7 +6305,8 @@ sections:
     rule_id: Proto-Japonic-ŋ
   - stages:
     - ŋ
-    - '{∅,n} #_ else'
+    - '{∅,n}'
+    env: '#_ else'
     raw: 'ŋ → {∅,n} #_ else'
     source: index_diachronica_original.html:2119
     rule_id: Proto-Japonic-ŋ_2
@@ -7211,10 +7215,11 @@ sections:
     raw: 'p → ɸ → h / #_'
     source: index_diachronica_original.html:2274
     rule_id: Proto-Turkic-p
-  - comment: Firespeaker calls it “lenis-fortis”)
+  - comment: Firespeaker calls it “lenis-fortis”); (may have been part of a more sweeping
+      merger
     stages:
     - d ɡ
-    - t k (may have been part of a more sweeping merger
+    - t k
     raw: d ɡ → t k (may have been part of a more sweeping merger; Firespeaker calls
       it “lenis-fortis”)
     source: index_diachronica_original.html:2275
@@ -7300,8 +7305,9 @@ sections:
     rule_id: Proto-Kypchak-v
   - stages:
     - ɡm rɡ
-    - mɡ ɡr (this second one is listed as
+    - mɡ ɡr
     - rɡ but it might be a typo)
+    comment: (this second one is listed as
     raw: ɡm rɡ → mɡ ɡr (this second one is listed as → rɡ but it might be a typo)
     source: index_diachronica_original.html:2291
     rule_id: Proto-Kypchak-ɡm-rɡ
@@ -7532,11 +7538,11 @@ sections:
   citation: Pogostick Man, from Firespeaker.org wiki contributors (2014), “Turkic
     sound changes”. <http://wiki.firespeaker.org/Turkic_sound_changes>
   rules:
-  - comment: I can only guess that 〈ė〉 is some sort of back unrounded vowel)
+  - comment: I can only guess that 〈ė〉 is some sort of back unrounded vowel); (the
+      second one is conjectured based on my admittedly sparse knowledge of Turkish
     stages:
     - '{e,ɤ}ː'
-    - je (the second one is conjectured based on my admittedly sparse knowledge of
-      Turkish
+    - je
     raw: '{e,ɤ}ː → je (the second one is conjectured based on my admittedly sparse
       knowledge of Turkish; I can only guess that 〈ė〉 is some sort of back unrounded
       vowel)'
@@ -7779,19 +7785,20 @@ sections:
     source: index_diachronica_original.html:2411
     rule_id: Middle-Vietnamese-ɓ-ɗ
   - comment: based on other evidence in the paper I’m sticking this one as a palatal
-      nasal)
+      nasal); (Thompson appears to me to have hedged a bit on the last one
     stages:
     - '{n̥j,nj,ɲ̊j,ɲj}'
-    - ɲ (Thompson appears to me to have hedged a bit on the last one
+    - ɲ
     raw: '{n̥j,nj,ɲ̊j,ɲj} → ɲ (Thompson appears to me to have hedged a bit on the
       last one; based on other evidence in the paper I’m sticking this one as a palatal
       nasal)'
     source: index_diachronica_original.html:2412
     rule_id: Middle-Vietnamese-n̥j,nj,ɲ̊j,ɲj
-  - comment: became something else in different dialects)
+  - comment: became something else in different dialects); (This is my own notation.
+      I don’t have a clue what the intermediate form was
     stages:
     - tʃ
-    - Ω (This is my own notation. I don’t have a clue what the intermediate form was
+    - Ω
     raw: tʃ → Ω (This is my own notation. I don’t have a clue what the intermediate
       form was; became something else in different dialects)
     source: index_diachronica_original.html:2413
@@ -7921,11 +7928,12 @@ sections:
     raw: bl → z
     source: index_diachronica_original.html:2445
     rule_id: Hanoi-Vietnamese-bl
-  - comment: only seems to have occurred with second-register tones)
+  - comment: only seems to have occurred with second-register tones); (Thompson seems
+      to indicate that this may have become [l] as well
     stages:
     - ml
     - mɲ
-    - ɲ (Thompson seems to indicate that this may have become [l] as well
+    - ɲ
     raw: ml → mɲ → ɲ (Thompson seems to indicate that this may have become [l] as
       well; only seems to have occurred with second-register tones)
     source: index_diachronica_original.html:2446
@@ -9059,7 +9067,8 @@ sections:
     rule_id: Karamiananen-s_3
   - stages:
     - s
-    - c& _
+    - c&
+    env: _
     comment: (the paper doesn’t explain what this represents)
     raw: s → c& _ (the paper doesn’t explain what this represents)
     source: index_diachronica_original.html:2716
@@ -9376,10 +9385,10 @@ sections:
     raw: a → e / _j#
     source: index_diachronica_original.html:2780
     rule_id: Proto-Batak-a
-  - comment: changes → d “unsure”)
+  - comment: changes → d “unsure”); (velar fricative is conjectured
     stages:
     - '{ts,ʈ} {ɟ͡ʝ,ɖ} {lʲ,ɲ} {ʔ,x,s,h} ʀ'
-    - t d n ∅ r (velar fricative is conjectured
+    - t d n ∅ r
     raw: '{ts,ʈ} {ɟ͡ʝ,ɖ} {lʲ,ɲ} {ʔ,x,s,h} ʀ → t d n ∅ r (velar fricative is conjectured;
       changes → d “unsure”)'
     source: index_diachronica_original.html:2781
@@ -10367,7 +10376,8 @@ sections:
     rule_id: Proto-North-Sarawak-ə_2
   - stages:
     - ə
-    - ∅ VC_CV
+    - ∅
+    env: VC_CV
     raw: ə → ∅ VC_CV
     source: index_diachronica_original.html:2965
     rule_id: Proto-North-Sarawak-ə_3
@@ -10386,9 +10396,9 @@ sections:
     rule_id: Proto-North-Sarawak-ɟː
   - stages:
     - bː dː dzː ɡː
-    - bʱ dʱ dzʱ ɡʱ (Whimemsz says these become
+    - bʱ dʱ dzʱ ɡʱ
     comment: “voiced stops with voiceless releases. . .treated as unit phonemes, not
-      clusters)”
+      clusters)”; (Whimemsz says these become
     raw: bː dː dzː ɡː → bʱ dʱ dzʱ ɡʱ (Whimemsz says these become “voiced stops with
       voiceless releases. . .treated as unit phonemes, not clusters)”
     source: index_diachronica_original.html:2970
@@ -11927,7 +11937,8 @@ sections:
   - stages:
     - C
     - ∅
-    env: _$(possessive suffix)#
+    env: '_$ #'
+    comment: (possessive suffix)
     raw: C → ∅ / _$(possessive suffix)#
     source: index_diachronica_original.html:3245
     rule_id: Proto-Northern-C
@@ -16136,8 +16147,8 @@ sections:
     rule_id: Proto-Abazgi-xʷʲ-ɣʷʲ
   - stages:
     - q qː ɢ
-    - (ħ) q ɣ
-    comment: (*ɢ is marked as *G in the document)
+    - q ɣ
+    comment: (*ɢ is marked as *G in the document); (ħ)
     raw: q qː ɢ → (ħ) q ɣ (*ɢ is marked as *G in the document)
     source: index_diachronica_original.html:4140
     rule_id: Proto-Abazgi-q-qː-ɢ
@@ -23052,8 +23063,8 @@ sections:
   - stages:
     - e
     - a
-    env: _Ra (short a only), though
-    comment: “[t]he e was often restored by analogy”
+    env: _Ra , though
+    comment: “[t]he e was often restored by analogy”; (short a only)
     raw: — e → a / _Ra (short a only), though “[t]he e was often restored by analogy”
     source: index_diachronica_original.html:5478
     rule_id: Proto-Celtic-—-e
@@ -23945,9 +23956,10 @@ sections:
     rule_id: Dacian-ḱ-ɡ́
   - stages:
     - '{kʷ,kw} {ɡʷ,ɡw}'
-    - tʃ dʒ (
+    - tʃ dʒ
     - s~z z ?)
     env: _E
+    comment: (
     raw: '{kʷ,kw} {ɡʷ,ɡw} → tʃ dʒ (→ s~z z ?) / _E'
     source: index_diachronica_original.html:5625
     rule_id: Dacian-kʷ,kw-ɡʷ,ɡw
@@ -24399,9 +24411,10 @@ sections:
     rule_id: Anglo-Frisian-æː_2
   - stages:
     - æu
-    - au (æ
+    - au
     - a
     env: _B in general?)
+    comment: (æ
     raw: æu → au (æ → a / _B in general?)
     source: index_diachronica_original.html:5706
     rule_id: Anglo-Frisian-æu
@@ -24472,7 +24485,9 @@ sections:
     rule_id: Old-English-V+nas
   - stages:
     - '{i,u}'
-    - ∅/ _# ! V[-long]C_#
+    - ∅
+    env: _#
+    exception: V[-long]C_#
     raw: '{i,u} → ∅/ _# ! V[-long]C_#'
     source: index_diachronica_original.html:5721
     rule_id: Old-English-i,u
@@ -24760,7 +24775,8 @@ sections:
   rules:
   - stages:
     - ʊ
-    - ɤ ! P_ and _l
+    - ɤ !
+    env: P_ and _l
     raw: ʊ → ɤ ! P_ and _l
     source: index_diachronica_original.html:5771
     rule_id: Early-Modern-English-ʊ
@@ -26425,16 +26441,18 @@ sections:
     rule_id: Old-Low-Franconian-uː_2
   - stages:
     - uː
-    - ʉː (probably, in areas with uː
+    - ʉː
     - ʉw
     env: _V)
+    comment: (probably, in areas with uː
     raw: uː → ʉː (probably, in areas with uː → ʉw / _V)
     source: index_diachronica_original.html:6049
     rule_id: Old-Low-Franconian-uː_3
-  - comment: '*ei as a result of the umlaut of *ai was not affected)'
+  - comment: '*ei as a result of the umlaut of *ai was not affected); (except in southeastern
+      dialects'
     stages:
     - ei ou
-    - eː oː (except in southeastern dialects
+    - eː oː
     raw: ei ou → eː oː (except in southeastern dialects; *ei as a result of the umlaut
       of *ai was not affected)
     source: index_diachronica_original.html:6050
@@ -26464,10 +26482,10 @@ sections:
     raw: 'iu → ju / #_ (in some northern dialects)'
     source: index_diachronica_original.html:6056
     rule_id: Middle-Dutch-iu
-  - comment: the former seems more typical)
+  - comment: the former seems more typical); (outcome varies depending upon dialect
     stages:
     - iu
-    - '{yː,io} (outcome varies depending upon dialect'
+    - '{yː,io}'
     raw: iu → {yː,io} (outcome varies depending upon dialect; the former seems more
       typical)
     source: index_diachronica_original.html:6057
@@ -26747,10 +26765,9 @@ sections:
     rule_id: Standard-German-yː-yə-øː-øy
   - stages:
     - uː yː iː
-    - ou øy ei
-    exception: in certain unstressed endings and monosyllables, _C{C,V,#} (), and
-      Low German borrowings
-    comment: “especially before /xt/”
+    - ou øy ei, except in certain unstressed endings and monosyllables,
+    env: _C{C,V,#} , and Low German borrowings
+    comment: “especially before /xt/”; ()
     raw: uː yː iː → ou øy ei, except in certain unstressed endings and monosyllables,
       _C{C,V,#} (“especially before /xt/”), and Low German borrowings
     source: index_diachronica_original.html:6109
@@ -28791,7 +28808,8 @@ sections:
     rule_id: Orkney-Norn-ð
   - stages:
     - ð
-    - ∅ /{a,E}_
+    - ∅
+    env: /{a,E}_
     raw: ð → ∅ /{a,E}_
     source: index_diachronica_original.html:6425
     rule_id: Orkney-Norn-ð_2
@@ -29382,10 +29400,10 @@ sections:
     source: index_diachronica_original.html:6514
     rule_id: Shetland-Norn-u
   - comment: it seems the presence of a velar consonant may have helped to retain
-      the quality of /u/)
+      the quality of /u/); (conditioning unclear
     stages:
     - uː
-    - '{u,o,ɒ,ø} (conditioning unclear'
+    - '{u,o,ɒ,ø}'
     raw: uː → {u,o,ɒ,ø} (conditioning unclear; it seems the presence of a velar consonant
       may have helped to retain the quality of /u/)
     source: index_diachronica_original.html:6515
@@ -29567,10 +29585,10 @@ sections:
     raw: tj → tsj
     source: index_diachronica_original.html:6546
     rule_id: Vandalic-tj
-  - comment: apparently due to Latin)
+  - comment: apparently due to Latin); (not a complete change
     stages:
     - θ ð
-    - t d (not a complete change
+    - t d
     raw: θ ð → t d (not a complete change; apparently due to Latin)
     source: index_diachronica_original.html:6547
     rule_id: Vandalic-θ-ð
@@ -34113,7 +34131,7 @@ sections:
   - stages:
     - l
     - r
-    - _Vl
+    env: _Vl
     raw: l → r → _Vl
     source: index_diachronica_original.html:7310
     rule_id: Latin-l
@@ -36177,7 +36195,8 @@ sections:
     rule_id: Portuguese-V_2
   - stages:
     - V
-    - ∅ V:[+stress]$s_t(C)V(C)#
+    - ∅
+    env: V:[+stress]$s_t(C)V(C)#
     comment: (irregular)
     raw: V → ∅ ”V%s_t(C)V(C)# (irregular)
     source: index_diachronica_original.html:7627
@@ -37305,8 +37324,8 @@ sections:
     rule_id: Old-Provençal-—-e-u
   - stages:
     - V
-    - '(probably /ə/) if dropping it would create ugly consonant clusters:'
-    comment: “indistinct e”
+    - 'if dropping it would create ugly consonant clusters:'
+    comment: “indistinct e”; (probably /ə/)
     raw: '— V → “indistinct e” (probably /ə/) if dropping it would create ugly consonant
       clusters:'
     source: index_diachronica_original.html:7792
@@ -37545,10 +37564,10 @@ sections:
     raw: β → b (in Béarn, Gascon, and Languedoc)
     source: index_diachronica_original.html:7833
     rule_id: Old-Provençal-β_2
-  - comment: sometimes
+  - comment: sometimes; (though
     stages:
     - β
-    - v (though
+    - v
     - ɡw instead if analogy interfered)
     raw: β → v (though sometimes → ɡw instead if analogy interfered)
     source: index_diachronica_original.html:7834
@@ -37806,8 +37825,9 @@ sections:
     rule_id: Old-Provençal-ð_4
   - stages:
     - ð
-    - z (except in some northern and eastern dialects where
+    - z
     - ∅)
+    comment: (except in some northern and eastern dialects where
     raw: ð → z (except in some northern and eastern dialects where → ∅)
     source: index_diachronica_original.html:7869
     rule_id: Old-Provençal-ð_5
@@ -38150,8 +38170,9 @@ sections:
     rule_id: Old-Provençal-pj
   - stages:
     - rtʃj
-    - rts (
+    - rts
     - rs ?)
+    comment: (
     raw: rtʃj → rts (→ rs ?)
     source: index_diachronica_original.html:7916
     rule_id: Old-Provençal-rtʃj
@@ -38263,14 +38284,14 @@ sections:
     source: index_diachronica_original.html:7931
     rule_id: Old-Provençal-tːj
   - comment: i-less forms “prevail in the literary language” and seem to have become
-      common if the dz follows the stress
+      common if the dz follows the stress; (in the north and west); (in the south
+      and east)
     stages:
     - tj
     - tʃ
     - dj
     - djʒ (?)
-    - dz (in the north and west) or idz (in the south and east)—medial (i)dz became
-      (i)z
+    - dz or idz —medial (i)dz became (i)z
     raw: tj → tʃ → dj → djʒ (?) → dz (in the north and west) or idz (in the south
       and east)—medial (i)dz became (i)z; i-less forms “prevail in the literary language”
       and seem to have become common if the dz follows the stress
@@ -38302,9 +38323,10 @@ sections:
     rule_id: Old-Provençal-l_5
   - stages:
     - ndt ndtʃ ntʃ nkt nf
-    - n{d,t} {nts,ndz(
-    - nz),ndʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,fː(
+    - n{d,t} {nts,ndz
+    - nz),ndʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,fː
     - f)}
+    comment: (; (
     raw: ndt ndtʃ ntʃ nkt nf → n{d,t} {nts,ndz(→ nz),ndʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,fː(→
       f)}
     source: index_diachronica_original.html:7936
@@ -38683,9 +38705,9 @@ sections:
     rule_id: Rhaeto-Romance-uː
   - stages:
     - a V
-    - e (= /ə/?) ∅
+    - e ∅
     env: final syllables
-    comment: (though Friulian preserves the ending -is)
+    comment: (= /ə/?); (though Friulian preserves the ending -is)
     raw: a V → e (= /ə/?) ∅ / in final syllables (though Friulian preserves the ending
       -is)
     source: index_diachronica_original.html:7994
@@ -38937,7 +38959,9 @@ sections:
     rule_id: Romanian-o-e
   - stages:
     - a
-    - ɨ _N ! _{nː,mn}
+    - ɨ
+    env: _N
+    exception: _{nː,mn}
     raw: a → ɨ _N ! _{nː,mn}
     source: index_diachronica_original.html:8040
     rule_id: Romanian-a
@@ -39236,7 +39260,8 @@ sections:
     rule_id: Romanian-o
   - stages:
     - a
-    - 'ə #C(C…)_…U:[+stress]'
+    - ə
+    env: '#C(C…)_…U:[+stress]'
     raw: 'a → ə #C(C…)_…”U'
     source: index_diachronica_original.html:8083
     rule_id: Romanian-a_4
@@ -43614,7 +43639,7 @@ sections:
   - stages:
     - ∅
     - dz
-    - i_V
+    env: i_V
     raw: ∅ → dz → î_V
     source: index_diachronica_original.html:9007
     rule_id: Eritai-∅
@@ -47092,7 +47117,8 @@ sections:
   rules:
   - stages:
     - ʔ
-    - ∅/ _#
+    - ∅
+    env: _#
     raw: ʔ → ∅/ _#
     source: index_diachronica_original.html:9915
     rule_id: Choctaw-ʔ
@@ -47437,8 +47463,9 @@ sections:
     rule_id: Deg-Hit’an-TS-TŠ
   - stages:
     - Tʃʷ
-    - Tʂ (
+    - Tʂ
     - TS in Kuskokwim dialect)
+    comment: (
     raw: TŠʷ → TṢ (→ TS in Kuskokwim dialect)
     source: index_diachronica_original.html:10033
     rule_id: Deg-Hit’an-TŠʷ
@@ -47450,8 +47477,9 @@ sections:
     rule_id: Deg-Hit’an-K
   - stages:
     - w
-    - v (
+    - v
     - w in Shageluk dialect)
+    comment: (
     raw: w → v (→ w in Shageluk dialect)
     source: index_diachronica_original.html:10035
     rule_id: Deg-Hit’an-w
@@ -47494,8 +47522,9 @@ sections:
   rules:
   - stages:
     - '{Tʃ,Tʃʷ}'
-    - Tʃ (
+    - Tʃ
     - TS in Upper Inlet dialect)
+    comment: (
     raw: '{TŠ,TŠʷ} → TŠ (→ TS in Upper Inlet dialect)'
     source: index_diachronica_original.html:10045
     rule_id: Dena’ina-TŠ,TŠʷ
@@ -47925,8 +47954,9 @@ sections:
   rules:
   - stages:
     - TS
-    - TH (
+    - TH
     - TS again in some areas)
+    comment: (
     raw: TS → TH (→ TS again in some areas)
     source: index_diachronica_original.html:10148
     rule_id: Sekani-TS
@@ -48802,16 +48832,17 @@ sections:
     rule_id: Upper-Tanana-a,ɑ-e-i-u-ʊ
   - stages:
     - ə
-    - '{a,ɨ} ('
+    - '{a,ɨ}'
     - ø in the Northway dialect)
+    comment: (
     raw: ə → {a,ɨ} (→ ø in the Northway dialect)
     source: index_diachronica_original.html:10349
     rule_id: Upper-Tanana-ə
   - stages:
     - Vˀ
-    - 'V[tone: 1] ('
+    - 'V[tone: 1]'
     - V[-tone] in)
-    comment: “young speakers by 1980”
+    comment: (; “young speakers by 1980”
     raw: Vˀ → V[+low tone] (→ V[-tone] in “young speakers by 1980”)
     source: index_diachronica_original.html:10350
     rule_id: Upper-Tanana-Vˀ
@@ -48942,10 +48973,10 @@ sections:
     raw: Vˀ → V[+low tone]
     source: index_diachronica_original.html:10383
     rule_id: Southern-Tutchone-Vˀ
-  - comment: alveolars become dentals, for instance)
+  - comment: alveolars become dentals, for instance); (some slight POA changes
     stages:
     - A
-    - F (some slight POA changes
+    - F
     raw: A → F (some slight POA changes; alveolars become dentals, for instance)
     source: index_diachronica_original.html:10386
     rule_id: Southern-Tutchone-A
@@ -49636,9 +49667,8 @@ sections:
   rules:
   - stages:
     - V[+high +ATR](C(V[+high -ATR]))
-    - '#(C)V[-high +ATR]'
+    - '#(C)V[-high +ATR](CV[+high +ATR])'
     env: '#J[+dorsal -voice]_'
-    comment: (CV[+high +ATR])
     raw: 'V[+high +ATR](C(V[+high -ATR])) → #(C)V[-high +ATR](CV[+high +ATR]) / #J[+dorsal
       -voiced]_'
     source: index_diachronica_original.html:10564
@@ -52109,7 +52139,8 @@ sections:
     rule_id: Cuzco-ph_2
   - stages:
     - pʼ
-    - 'p/ #_C[+strident]'
+    - p
+    env: '#_C[+strident]'
     raw: 'pʼ → p/ #_C[+sibilant]'
     source: index_diachronica_original.html:11214
     rule_id: Cuzco-pʼ
@@ -52540,7 +52571,8 @@ sections:
     rule_id: Quito-ʂ
   - stages:
     - χ
-    - 'h #_'
+    - h
+    env: '#_'
     raw: 'χ → h #_'
     source: index_diachronica_original.html:11289
     rule_id: Quito-χ
@@ -52698,7 +52730,8 @@ sections:
     rule_id: Riobamba-ʂ
   - stages:
     - χ
-    - 'kʰ #_'
+    - kʰ
+    env: '#_'
     raw: 'χ → kʰ #_'
     source: index_diachronica_original.html:11316
     rule_id: Riobamba-χ
@@ -53064,13 +53097,15 @@ sections:
     rule_id: Comox-V3ʔ
   - stages:
     - ʔ
-    - ∅ V3_RV
+    - ∅
+    env: V3_RV
     raw: ʔ → ∅ V3_RV
     source: index_diachronica_original.html:11400
     rule_id: Comox-ʔ
   - stages:
     - ʔ
-    - ∅ V3R_V
+    - ∅
+    env: V3R_V
     raw: ʔ → ∅ V3R_V
     source: index_diachronica_original.html:11401
     rule_id: Comox-ʔ_2
@@ -54919,7 +54954,8 @@ sections:
     rule_id: Old-Mandarin-xɦ
   - stages:
     - Cʲ
-    - C {Ạ,F̣}_
+    - C
+    env: '{Ạ,F̣}_'
     raw: Cʲ → C {Ạ,F̣}_
     source: index_diachronica_original.html:11756
     rule_id: Old-Mandarin-Cʲ
@@ -55486,8 +55522,9 @@ sections:
     rule_id: Guānhuà-iʔ-iw
   - stages:
     - iʔ
-    - ieʔ (
+    - ieʔ
     - i[truncated vowel-thing]ʔ?)
+    comment: (
     raw: iʔ → ieʔ (→ i[truncated vowel-thing]ʔ?)
     source: index_diachronica_original.html:11842
     rule_id: Guānhuà-iʔ
@@ -55523,8 +55560,9 @@ sections:
     rule_id: Guānhuà-uj_4
   - stages:
     - ujʔ
-    - uɛʔ (dialectally
+    - uɛʔ
     - uɔʔ?)
+    comment: (dialectally
     raw: ujʔ → uɛʔ (dialectally → uɔʔ?)
     source: index_diachronica_original.html:11847
     rule_id: Guānhuà-ujʔ
@@ -55565,8 +55603,9 @@ sections:
     rule_id: Guānhuà-juŋ_2
   - stages:
     - juŋ
-    - uŋ (
+    - uŋ
     - oŋ dialectally?)
+    comment: (
     raw: juŋ → uŋ (→ oŋ dialectally?)
     source: index_diachronica_original.html:11853
     rule_id: Guānhuà-juŋ_3
@@ -55578,9 +55617,10 @@ sections:
     rule_id: Guānhuà-jujŋ-ujŋ
   - stages:
     - y
-    - ɥ (
+    - ɥ
     - y~u dialectally?)
     env: C̣_
+    comment: (
     raw: y → ɥ (→ y~u dialectally?) / C̣_
     source: index_diachronica_original.html:11855
     rule_id: Guānhuà-y
@@ -55595,10 +55635,10 @@ sections:
     rule_id: Guānhuà-yʔ
   - stages:
     - yʔ
-    - oʔ (eventually
+    - oʔ
     - '{ʊʔ,(i)uʔ?)'
     env: '{l,C[+cor,+anterior,+dist +strident]}_, in'
-    comment: “QYS -k-types”
+    comment: (eventually; “QYS -k-types”
     raw: yʔ → oʔ (eventually → {ʊʔ,(i)uʔ?) / {l,C[+dental +sibilant]}_, in “QYS -k-types”
     source: index_diachronica_original.html:11857
     rule_id: Guānhuà-yʔ_2
@@ -55611,9 +55651,10 @@ sections:
     rule_id: Guānhuà-yʔ_3
   - stages:
     - yʔ
-    - ioʔ (
+    - ioʔ
     - iʊʔ dialectally?)
     env: '{∅,C[+laryngeal]}_, in -k-types'
+    comment: (
     raw: yʔ → ioʔ (→ iʊʔ dialectally?) / {∅,C[+guttural]}_, in -k-types
     source: index_diachronica_original.html:11859
     rule_id: Guānhuà-yʔ_4
@@ -55626,9 +55667,10 @@ sections:
     rule_id: Guānhuà-yʔ_5
   - stages:
     - yʔ
-    - oʔ (
+    - oʔ
     - ʊʔ?)
     env: C̣_, in -k-types
+    comment: (
     raw: yʔ → oʔ (→ ʊʔ?) / C̣_, in -k-types
     source: index_diachronica_original.html:11861
     rule_id: Guānhuà-yʔ_6
@@ -55661,8 +55703,9 @@ sections:
     rule_id: Guānhuà-je-jeʔ
   - stages:
     - yeʔ
-    - yɛʔ (
+    - yɛʔ
     - '{uɔʔ,yɔʔ} in southern speech?)'
+    comment: (
     raw: yeʔ → yɛʔ (→ {uɔʔ,yɔʔ} in southern speech?)
     source: index_diachronica_original.html:11866
     rule_id: Guānhuà-yeʔ
@@ -56204,7 +56247,8 @@ sections:
   - stages:
     - B
     - v̩
-    env: '{qʰ,(ŋ)q}_'
+    env: '{qʰ, q}_'
+    comment: (ŋ)
     raw: B → v̩ / {qʰ,(ŋ)q}_
     source: index_diachronica_original.html:11965
     rule_id: Naxi-B
@@ -56304,8 +56348,9 @@ sections:
     source: index_diachronica_original.html:11984
     rule_id: bTshan-La-P
   - stages:
-    - t d Nt Nd st sd çT tr (ç)dr KT
-    - tʰ t Ntʰ md zd st çtj trh (ç)tr kt
+    - t d Nt Nd st sd çT tr dr KT
+    - tʰ t Ntʰ md zd st çtj trh tr kt
+    comment: (ç); (ç)
     raw: t d Nt Nd st sd çT tr (ç)dr KT → tʰ t Ntʰ md zd st çtj trh (ç)tr kt
     source: index_diachronica_original.html:11985
     rule_id: bTshan-La-t-d-Nt-Nd-st-sd-çT-tr-çdr-KT
@@ -56482,8 +56527,9 @@ sections:
     source: index_diachronica_original.html:12015
     rule_id: Chos-Kia-b
   - stages:
-    - p çp (ç)b rP Np Nb pr {br,pj}
-    - p. ç.w (ç)p rp. kj m.p n.br p.j
+    - p çp b rP Np Nb pr {br,pj}
+    - p. ç.w p rp. kj m.p n.br p.j
+    comment: (ç); (ç)
     raw: p çp (ç)b rP Np Nb pr {br,pj} → p. ç.w (ç)p rp. kj m.p n.br p.j
     source: index_diachronica_original.html:12016
     rule_id: Chos-Kia-p-çp-çb-rP-Np-Nb-pr-br,pj
@@ -56495,8 +56541,9 @@ sections:
     source: index_diachronica_original.html:12017
     rule_id: Chos-Kia-P
   - stages:
-    - t st tr d sd (ç)dr Nt çT KT
+    - t st tr d sd dr Nt çT KT
     - t. s.d tr. t s.t (ç.)tr m.t. n.dr ɡ.t
+    comment: (ç)
     raw: t st tr d sd (ç)dr Nt çT KT → t. s.d tr. t s.t (ç.)tr m.t. n.dr ɡ.t
     source: index_diachronica_original.html:12018
     rule_id: Chos-Kia-t-st-tr-d-sd-çdr-Nt-çT-KT
@@ -57207,8 +57254,9 @@ sections:
     rule_id: Suo-Mo-kr-rk-rK,Pɡ-ɡ-Pɡ-sɡ
   - stages:
     - ɡj
-    - cç ? (might be
+    - cç ?
     - tsç?)
+    comment: (might be
     raw: ɡj → cç ? (might be → tsç?)
     source: index_diachronica_original.html:12154
     rule_id: Suo-Mo-ɡj
@@ -58103,10 +58151,10 @@ sections:
     raw: p → kʷ / else
     source: index_diachronica_original.html:12335
     rule_id: Proto-Iroquoian-p_2
-  - comment: the paper proper has 〈hw〉 here)
+  - comment: the paper proper has 〈hw〉 here); (this is a bit of a guess
     stages:
     - pʰ
-    - ʍ (this is a bit of a guess
+    - ʍ
     raw: pʰ → ʍ (this is a bit of a guess; the paper proper has 〈hw〉 here)
     source: index_diachronica_original.html:12336
     rule_id: Proto-Iroquoian-pʰ
@@ -59659,7 +59707,8 @@ sections:
     rule_id: Oneida-”Vː+falling-tone
   - stages:
     - Vː
-    - V[-long] _C:[+stress](C)(C)V
+    - V[-long]
+    env: _C:[+stress](C)(C)V
     comment: “this change happens only in the Ontario dialect”; ()
     raw: Vː → V[-long] _”C(C)(C)V (“this change happens only in the Ontario dialect”)
     source: index_diachronica_original.html:12601
@@ -60480,7 +60529,8 @@ sections:
   - stages:
     - ∅
     - ʔ
-    env: C_# (only sometimes?) (*)
+    env: C_# (*)
+    comment: (only sometimes?)
     raw: ∅ → ʔ / C_# (only sometimes?) (*)
     source: index_diachronica_original.html:12749
     sporadic: true
@@ -61447,7 +61497,8 @@ sections:
     rule_id: Proto-Dhegiha-u
   - stages:
     - k
-    - '∅ #t_'
+    - ∅
+    env: '#t_'
     comment: (in morphemes)
     raw: 'k → ∅ #t_ (in morphemes)'
     source: index_diachronica_original.html:12929
@@ -61865,7 +61916,8 @@ sections:
   - stages:
     - m
     - ∅
-    env: '#_n (in morphemes) (*)'
+    env: '#_n (*)'
+    comment: (in morphemes)
     raw: 'm → ∅ / #_n (in morphemes) (*)'
     source: index_diachronica_original.html:13001
     rule_id: Quapaw-m
@@ -65993,10 +66045,10 @@ sections:
     source: index_diachronica_original.html:13889
     rule_id: Standard-Finnish-i_2
   - comment: additionally, in some dialects these may become {t(ː),h~t} and {r,∅},
-      respectively)
+      respectively); (this latter does have some highly sporadic exceptions
     stages:
     - θ(ː) ð
-    - ts d (this latter does have some highly sporadic exceptions
+    - ts d
     raw: θ(ː) ð → ts d (this latter does have some highly sporadic exceptions; additionally,
       in some dialects these may become {t(ː),h~t} and {r,∅}, respectively)
     source: index_diachronica_original.html:13890
@@ -67055,9 +67107,10 @@ sections:
   - stages:
     - Sʰ
     - F
-    - h (
+    - h
     - ∅)
     env: '#_'
+    comment: (
     raw: 'Sʰ → F → h (→ ∅) / #_'
     source: index_diachronica_original.html:14114
     rule_id: Basque-Sʰ
@@ -67752,10 +67805,11 @@ sections:
     source: index_diachronica_original.html:14213
     rule_id: Basque-oɪ
   - stages:
-    - eð (
+    - eð
     - e ?)
     - j
     env: '#_V'
+    comment: (
     raw: 'eð (→ e ?) → j / #_V'
     source: index_diachronica_original.html:14214
     rule_id: Basque-eð
@@ -68969,10 +69023,10 @@ sections:
     raw: kʲ ɡʲ → k ɡ (Danish)
     source: index_diachronica_original.html:14509
     rule_id: List-1:-Simple-Consonant-Changes-kʲ-ɡʲ
-  - comment: some Samoyedic langs)
+  - comment: some Samoyedic langs); (Possibly unconditional
     stages:
     - ɕ
-    - k (Possibly unconditional
+    - k
     raw: ś → k (Possibly unconditional; some Samoyedic langs)
     source: index_diachronica_original.html:14510
     rule_id: List-1:-Simple-Consonant-Changes-ś
@@ -68983,10 +69037,10 @@ sections:
     raw: pʲ → kʲ (some Romanian dialects, Tsakonian)
     source: index_diachronica_original.html:14511
     rule_id: List-1:-Simple-Consonant-Changes-pʲ
-  - comment: some Samoyedic langs)
+  - comment: some Samoyedic langs); (unconditional
     stages:
     - ts
-    - t (unconditional
+    - t
     raw: ts → t (unconditional; some Samoyedic langs)
     source: index_diachronica_original.html:14512
     rule_id: List-1:-Simple-Consonant-Changes-ts
@@ -69048,11 +69102,11 @@ sections:
       source is admittedly theoretical, and acknowledges on page 77 another reconstruction
       that doesn’t believe Proto-Afro-Asiatic had /f/ at all) (Page 77 of http://is.gd/WNyXdn,
       https://en.wikipedia.org/wiki/Proto-Afro-Asiatic_language); (but this may be
-      related to the Semitic change)
+      related to the Semitic change); (? claimed to have occurred independently in
+      Proto-Semitic and Proto-Omotic, and to a limited extent in Egyptian
     stages:
     - f
-    - p (? claimed to have occurred independently in Proto-Semitic and Proto-Omotic,
-      and to a limited extent in Egyptian
+    - p
     raw: f → p (? claimed to have occurred independently in Proto-Semitic and Proto-Omotic,
       and to a limited extent in Egyptian (but this may be related to the Semitic
       change); note that the Wikipedia article is cited to a single source and that
@@ -69061,10 +69115,11 @@ sections:
       https://en.wikipedia.org/wiki/Proto-Afro-Asiatic_language)
     source: index_diachronica_original.html:14520
     rule_id: List-1:-Simple-Consonant-Changes-f
-  - comment: may not be unconditional but was certainly the most common outcome)
+  - comment: may not be unconditional but was certainly the most common outcome);
+      (general Baltic-Finnic
     stages:
     - tʃ
-    - t (general Baltic-Finnic
+    - t
     raw: tš → t (general Baltic-Finnic; may not be unconditional but was certainly
       the most common outcome)
     source: index_diachronica_original.html:14521
@@ -69089,10 +69144,10 @@ sections:
   citation: 'Western and Eastern Armenian often have swapped voicing in stop consonants:
     e.g. vardapet vs. vartabed. This is a result of changes related to aspiration.'
   rules:
-  - comment: I’m not sure of the conditions)
+  - comment: I’m not sure of the conditions); (Common Celtic
     stages:
     - w
-    - f (Common Celtic
+    - f
     raw: w → f (Common Celtic; I’m not sure of the conditions)
     source: index_diachronica_original.html:14528
     rule_id: List-2:-Conditional-or-complex-consonant-changes-w
@@ -69158,10 +69213,11 @@ sections:
   index: '47.3'
   rules:
   - comment: this particular sound change has been said in some places to be impossible)
-      (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
+      (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants); (some mainland
+      Greek dialects, and Tsakonian
     stages:
     - y
-    - u (some mainland Greek dialects, and Tsakonian
+    - u
     raw: y → u (some mainland Greek dialects, and Tsakonian; this particular sound
       change has been said in some places to be impossible) (https://en.wikipedia.org/wiki/Tsakonian_language#Consonants)
     source: index_diachronica_original.html:14538

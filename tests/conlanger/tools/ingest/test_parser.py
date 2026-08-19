@@ -158,6 +158,18 @@ def test_split_input_output(raw, expected):
         ("∅ / #C_V", ("∅", "#C_V")),
         ("tʃ → ʃ", ("tʃ → ʃ", None)),
         ("a / b / c", ("a", "b / c")),
+        ("h #_", ("h", "#_")),
+        ("b d #_", ("b d", "#_")),
+        ("kʰ #_", ("kʰ", "#_")),
+        ("∅ VC_CV", ("∅", "VC_CV")),
+        ("c& _", ("c&", "_")),
+        ("∅/ _#", ("∅", "_#")),
+        ("p/ #_C[+sibilant]", ("p", "#_C[+sibilant]")),
+        ("ɨ _N ! _{nː,mn}", ("ɨ", "_N ! _{nː,mn}")),
+        ("t k", ("t k", None)),
+        ("r…∅", ("r…∅", None)),
+        ("ej (əw)", ("ej (əw)", None)),
+        ("({C,#}Vː)∅", ("({C,#}Vː)∅", None)),
     ],
 )
 def test_split_output_rest(post_arrow, expected):
@@ -462,6 +474,60 @@ def test_parse_rule_element_strips_trailing_glosses():
     assert rules[0]["stages"] == ["w", "f"]
     assert "Celtic" in rules[0]["comment"]
     assert "Celtic" in rules[0]["raw"]
+
+
+def test_apply_trailing_glosses_keeps_unclosed_paren_on_env():
+    """Env/exception unclosed parens stay paired for compile-time gloss strip."""
+    assert apply_trailing_glosses(
+        {
+            "stages": ["Vn", "ṽ"],
+            "env": "_# (seems to have been reverted in most dialects",
+            "exception": "for Souletin)",
+        }
+    ) == {
+        "stages": ["Vn", "ṽ"],
+        "env": "_# (seems to have been reverted in most dialects",
+        "exception": "for Souletin)",
+    }
+
+
+def test_parse_rule_element_keeps_set_and_matrix_parentheticals():
+    el = html.fragment_fromstring(
+        '<p class="schg">({C,#}V[-long])ʔ → ({C,#}Vː[+falling tone])∅ / _C</p>',
+        create_parent=False,
+    )
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["stages"] == [
+        "({C,#}V[-long])ʔ",
+        "({C,#}Vː[tone: 51])∅",
+    ]
+    assert rules[0]["env"] == "_C"
+    assert "comment" not in rules[0]
+
+
+def test_parse_rule_element_keeps_nested_feature_matrix_optionals():
+    el = html.fragment_fromstring(
+        '<p class="schg">V[+high +ATR](C(V[+high -ATR])) → '
+        "#(C)V[-high +ATR](CV[+high +ATR]) / #J[+dorsal -voiced]_</p>",
+        create_parent=False,
+    )
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["stages"] == [
+        "V[+high +ATR](C(V[+high -ATR]))",
+        "#(C)V[-high +ATR](CV[+high +ATR])",
+    ]
+    assert "comment" not in rules[0]
+
+
+def test_parse_rule_element_strips_unclosed_paren_gloss():
+    el = html.fragment_fromstring(
+        '<p class="schg">d ɡ → t k (may have been part of a more sweeping merger</p>',
+        create_parent=False,
+    )
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["stages"] == ["d ɡ", "t k"]
+    assert "sweeping merger" in rules[0]["comment"]
+    assert "sweeping merger" in rules[0]["raw"]
 
 
 def test_parse_rule_element_strips_env_trailing_glosses():
@@ -891,6 +957,9 @@ def test_parser_unlisted_section_not_marked_skipped(tmp_path: Path):
             ("ou øy ei", None, "in certain endings"),
         ),
         ("{∅,h} / _əNS / #_", ("{∅,h}", "_əNS", "#_")),
+        ("h #_", ("h", "#_", None)),
+        ("ɨ _N ! _{nː,mn}", ("ɨ", "_N", "_{nː,mn}")),
+        ("dz → î_V", ("dz → î_V", None, None)),
     ],
 )
 def test_split_post_arrow(post_arrow, expected):
@@ -910,6 +979,32 @@ def test_split_post_arrow(post_arrow, expected):
         ),
         ("ɬ → l", {"stages": ["ɬ", "l"]}),
         ("no arrow here", None),
+        (
+            "χ → h #_",
+            {"stages": ["χ", "h"], "env": "#_"},
+        ),
+        (
+            "ə → ∅ VC_CV",
+            {"stages": ["ə", "∅"], "env": "VC_CV"},
+        ),
+        (
+            "s → c& _",
+            {"stages": ["s", "c&"], "env": "_"},
+        ),
+        (
+            "ʔ → ∅/ _#",
+            {"stages": ["ʔ", "∅"], "env": "_#"},
+        ),
+        (
+            "a → ɨ _N ! _{nː,mn}",
+            {"stages": ["a", "ɨ"], "env": "_N", "exception": "_{nː,mn}"},
+        ),
+        (
+            "∅ → dz → î_V",
+            {"stages": ["∅", "dz"], "env": "î_V"},
+        ),
+        ("d ɡ → t k", {"stages": ["d ɡ", "t k"]}),
+        ("r…r → r…∅", {"stages": ["r…r", "r…∅"]}),
     ],
 )
 def test_extract_rule_parts(raw, expected):

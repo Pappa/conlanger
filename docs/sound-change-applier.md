@@ -38,7 +38,7 @@ Parse-time transforms are documented in [index-diachronica-parser.md](./index-di
 
 `str(DiachronicSeries)` joins parts with newlines → `.rsca` body shape.
 
-`SoundChangeRule` requires `input`, `output`; optional `env`, `exception`. `skip: True` → commented prefix (`#\t`); excluded from validation. Compiled text is stored in `value` at construction via `_format()`.
+`SoundChangeRule` requires `input`, `output`; optional `env`, `exception`. If `env` is absent, a glued env suffix on output (`h #_`) is peeled at construction. `skip: True` → commented prefix (`#\t`); excluded from validation. Compiled text is stored in `value` at construction via `_format()`.
 
 ---
 
@@ -59,10 +59,11 @@ Exact order in `compile_asca_rule_string` ([`compile/asca/pipeline.py`](../src/c
 | `normalize_typographic_apostrophes` | implemented | 7 | U+2019 (typographic apostrophe) → U+02BC (modifier letter apostrophe / ejective mark) on segments and class letters. | **Before ejective:** ejective normalizer only sees `ʼ`. If after ejective, curly apostrophes remain unconverted. |
 | `normalize_asca_ejective_marks` | implemented | 8 | `segment:[feat]ʼ` → `+cg` in matrix; `{…}ʼ` → per-member `:[+cg]`; bare `segmentʼ` → `segment:[+cg]`. | **After length + apostrophe:** depends on normalized `[+long]` matrices and correct `ʼ` character. |
 | `normalize_asca_breve_marks` | implemented | 8b | Index breve vowels (`j̆`, `ɨ̆`, `ə̆`, `ă`, `æ̆`, `ŏ`, `ŭ`) → bare segment (Tai glides) or `:[-long]` (Scots/Tanacross extra-short). Decomposes NFC precomposed breve letters first. | **After ejective:** breve segments are unrelated to `ʼ`. **After parse IPA map:** Tai `ı̆` is already `j̆` before compile. |
+| `expand_meta_notation` | implemented | 10 | Tilde, parentheticals (including spaced parallel `(əw)` unwrap), input optionals, then drop `}∅` concatenated deletion columns ([pass 82](../.scratch/cleaned-rule-corpus/issues/82-correction-pass-output-env-slash-boundary.md)). | **Last string step:** residual output/env boundary after other meta handlers. |
 | Positional slots → ASCA refs | planned | 3 | `C₁C₂ → C₂` → `C=1 C=2 > 2` (declare `X=n`, invoke bare `n`). | **Before group_mappings** ([spike 38](../.scratch/cleaned-rule-corpus/research/asca-compile-transform-order.md)). |
 | Identity subscripts → ASCA refs | planned | 3 | `V₀V₀ → V₀` → `V=0 V=0 > 0`; env `h → ʔ / V₀V₀` → `h > ʔ / _ V=0 V=0`. | Same step as positional; compounds (`mV₀`, `CʔV₀`) need separate tokenization ticket. |
 | Section-local abbreviations | planned | 4 | Expand Athabaskan / section-specific tokens (e.g. `TŠ`, `TS`) via hand-authored abbreviation rows. | **Before group_mappings** — `TS` must not be split into `T`+`S` ([spike 38](../.scratch/cleaned-rule-corpus/research/asca-compile-transform-order.md)). |
-| Meta-notation | spike needed | 10 | Retroflex `X̣`, `(…X)` repetition, tone superscripts `Xⁿ`, etc. | Cluster-driven; default slot is last in pipeline. |
+| Residual meta-notation | spike needed | 10 | Retroflex `X̣`, `(…X)` repetition, tone superscripts `Xⁿ`, etc. still cluster-driven. | Same `expand_meta_notation` slot; further handlers as new tickets. |
 
 **Research:** [positional-slots-and-identity-subscripts.md](../.scratch/cleaned-rule-corpus/research/positional-slots-and-identity-subscripts.md), [subscript-notation-index-asca-brassica.md](../.scratch/cleaned-rule-corpus/research/subscript-notation-index-asca-brassica.md).
 

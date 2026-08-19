@@ -20,6 +20,8 @@ _GLOSS_KEYWORD_RE = re.compile(
 _URL_RE = re.compile(r"https?://|www\.", re.IGNORECASE)
 _TRAILING_QUOTED_GLOSS_RE = re.compile(r'\s*["\u201c]([^"\u201d]+)["\u201d]\s*$')
 _TRAILING_PAREN_RE = re.compile(r"\(([^()]*)\)\s*$")
+_ANY_PAREN_RE = re.compile(r"\(([^()]*)\)")
+_UNCLOSED_TRAILING_PAREN_RE = re.compile(r"\(([^()]*)$")
 _PHONOLOGICAL_PAREN_INNER_RE = re.compile(
     r"^(?:"
     r"\?"
@@ -50,10 +52,16 @@ def paren_inner_is_gloss(inner: str) -> bool:
         return True
     if "→" in text or re.search(r"\s>\s", text):
         return True
-    if text.startswith(("NB:", "NB ", "Note:", "note ")):
+    if text.startswith(("NB:", "NB ", "Note:", "note ", "=")):
+        return True
+    if "=" in text:
         return True
     if _GLOSS_KEYWORD_RE.search(text):
         return True
+    if "{" in text or "}" in text:
+        return False
+    if re.search(r"\[(?:\+|-)", text):
+        return False
     if ("…" in text or "..." in text) and re.fullmatch(r"[A-Z#_\[\].…]+", text):
         return False
     if "," in text and re.search(r"[a-z]{3,}", text):
@@ -163,7 +171,9 @@ def strip_embedded_quoted_gloss_from_field(text: str) -> str:
     return cleaned
 
 
-def extract_trailing_paren_glosses_from_field(text: str) -> tuple[str, list[str]]:
+def extract_trailing_paren_glosses_from_field(
+    text: str, *, include_unclosed: bool = True
+) -> tuple[str, list[str]]:
     """Remove trailing ``(… )`` prose glosses; return captured fragments."""
     captures: list[str] = []
     if not text:
@@ -174,7 +184,34 @@ def extract_trailing_paren_glosses_from_field(text: str) -> tuple[str, list[str]
             break
         captures.append(match.group(0).strip())
         text = text[: match.start()].rstrip()
+    text, embedded = _extract_embedded_paren_glosses(text)
+    captures.extend(embedded)
+    if include_unclosed:
+        match = _UNCLOSED_TRAILING_PAREN_RE.search(text)
+        if match and paren_inner_is_gloss(match.group(1)):
+            captures.append(match.group(0).strip())
+            text = text[: match.start()].rstrip()
     return text, captures
+
+
+def _extract_embedded_paren_glosses(text: str) -> tuple[str, list[str]]:
+    """Remove non-trailing closed ``(…)`` prose glosses, keeping phonological parens."""
+    captures: list[str] = []
+    if "(" not in text:
+        return text, captures
+
+    def repl(match: re.Match[str]) -> str:
+        inner = match.group(1)
+        if _PHONOLOGICAL_PAREN_INNER_RE.fullmatch(inner.strip()):
+            return match.group(0)
+        if not paren_inner_is_gloss(inner):
+            return match.group(0)
+        captures.append(match.group(0).strip())
+        return " "
+
+    cleaned = _ANY_PAREN_RE.sub(repl, text)
+    cleaned = re.sub(r" {2,}", " ", cleaned).strip()
+    return cleaned, captures
 
 
 def strip_trailing_paren_glosses_from_field(text: str) -> str:
@@ -198,17 +235,25 @@ def extract_semicolon_prose_from_field(text: str) -> tuple[str, list[str]]:
     return text, []
 
 
-def extract_trailing_gloss_from_field(text: str) -> tuple[str, list[str]]:
+def extract_trailing_gloss_from_field(
+    text: str, *, include_unclosed_paren: bool = True
+) -> tuple[str, list[str]]:
     """Strip Index trailing glosses; return cleaned field and captured prose."""
     if not text:
         return text, []
     captures: list[str] = []
+
+    def paren_extract(value: str) -> tuple[str, list[str]]:
+        return extract_trailing_paren_glosses_from_field(
+            value, include_unclosed=include_unclosed_paren
+        )
+
     for extractor in (
         extract_field_wrapped_quoted_gloss_from_field,
         extract_leading_quoted_gloss_from_field,
         extract_embedded_quoted_gloss_from_field,
         extract_trailing_quoted_gloss_from_field,
-        extract_trailing_paren_glosses_from_field,
+        paren_extract,
         extract_semicolon_prose_from_field,
     ):
         text, frags = extractor(text)

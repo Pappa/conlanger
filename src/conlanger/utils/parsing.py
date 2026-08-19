@@ -158,14 +158,97 @@ def split_input_output(raw: str) -> tuple[str, str] | None:
     return left.strip(), right.strip()
 
 
+def _split_outside_groupers(text: str, sep: str = " ") -> list[str]:
+    parts: list[str] = []
+    current: list[str] = []
+    depth_brace = 0
+    depth_paren = 0
+    depth_bracket = 0
+    for char in text:
+        if char == "{":
+            depth_brace += 1
+        elif char == "}":
+            depth_brace -= 1
+        elif char == "(":
+            depth_paren += 1
+        elif char == ")":
+            depth_paren -= 1
+        elif char == "[":
+            depth_bracket += 1
+        elif char == "]":
+            depth_bracket -= 1
+        if char == sep and depth_brace == 0 and depth_paren == 0 and depth_bracket == 0:
+            if current:
+                parts.append("".join(current))
+                current = []
+        else:
+            current.append(char)
+    if current:
+        parts.append("".join(current))
+    return parts
+
+
+def _has_focus_outside_groupers(text: str) -> bool:
+    depth_brace = 0
+    depth_paren = 0
+    depth_bracket = 0
+    for char in text:
+        if char == "{":
+            depth_brace += 1
+        elif char == "}":
+            depth_brace -= 1
+        elif char == "(":
+            depth_paren += 1
+        elif char == ")":
+            depth_paren -= 1
+        elif char == "[":
+            depth_bracket += 1
+        elif char == "]":
+            depth_bracket -= 1
+        elif (
+            char == "_" and depth_brace == 0 and depth_paren == 0 and depth_bracket == 0
+        ):
+            return True
+    return False
+
+
+def is_env_shaped(text: str) -> bool:
+    """True when ``text`` looks like an Index environment, not an I/O segment."""
+    stripped = text.strip()
+    if not stripped:
+        return False
+    if stripped[0] in "#_&":
+        return True
+    return _has_focus_outside_groupers(stripped)
+
+
+def peel_glued_env_from_output(text: str) -> tuple[str, str | None]:
+    """Split a space-separated env suffix that Index omitted `` / `` before."""
+    stripped = text.strip()
+    if not stripped:
+        return text, None
+    tokens = _split_outside_groupers(stripped)
+    for index, token in enumerate(tokens):
+        if index == 0:
+            continue
+        if is_env_shaped(token):
+            output = " ".join(tokens[:index]).rstrip("/").rstrip()
+            rest = " ".join(tokens[index:])
+            if output:
+                return output, rest
+    return stripped, None
+
+
 def split_output_rest(post_arrow: str) -> tuple[str, str | None]:
     """Split post-arrow text on the first ``\" / \"`` into output and optional rest."""
     text = post_arrow.strip()
-    if ENV_SEP not in text:
+    if ENV_SEP in text:
+        out, rest = text.split(ENV_SEP, 1)
+        out, rest = out.strip(), rest.strip()
+        return out, rest or None
+    if ARROW in text:
         return text, None
-    out, rest = text.split(ENV_SEP, 1)
-    out, rest = out.strip(), rest.strip()
-    return out, rest or None
+    return peel_glued_env_from_output(text)
 
 
 def split_env_exception(rest: str) -> tuple[str | None, str | None]:
@@ -225,6 +308,11 @@ def extract_rule_parts(raw: str) -> dict[str, Any] | None:
     inp, post_arrow = split
     out, env, exception = split_post_arrow(post_arrow)
     stages = build_stages_from_spine(inp, out)
+    if env is None and exception is None and len(stages) >= 3:
+        last = stages[-1]
+        if is_env_shaped(last):
+            env = last
+            stages = stages[:-1]
     parts: dict[str, Any] = {"stages": stages}
     if env is not None:
         parts["env"] = env

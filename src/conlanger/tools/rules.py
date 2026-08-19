@@ -17,6 +17,7 @@ from conlanger.tools.compile.asca.pipeline import compile_asca_rule_string
 from conlanger.tools.compile.asca.tilde import normalize_corpus_rule_tilde_fields
 from conlanger.utils.file_io import load_compiler_config
 from conlanger.utils.mappings import CompilerConfig
+from conlanger.utils.parsing import peel_glued_env_from_output, split_env_exception
 
 _SUPPORTED_FORMATS = frozenset({"asca"})
 
@@ -141,8 +142,23 @@ class SoundChangeRule(RulePartBase):
         self.exception = rule.get("exception", None)
         if self.env is None:
             peeled = _peel_trailing_env_from_output(self.output)
+            if peeled is None:
+                output, rest = peel_glued_env_from_output(self.output)
+                if rest is not None:
+                    peeled = (output, rest)
             if peeled is not None:
-                self.output, self.env = peeled
+                self.output, rest = peeled
+                if rest.startswith("/"):
+                    rest = rest.lstrip("/ ").strip()
+                env, exception = split_env_exception(rest)
+                if env:
+                    self.env = env
+                elif rest:
+                    self.env = rest
+                if exception and self.exception is None:
+                    self.exception = exception
+        if self.env and self.output.endswith("/"):
+            self.output = self.output[:-1].rstrip()
         self._group_mappings = {} if group_mappings is None else group_mappings
         self._section_index = section_index
         self._compiler_config = compiler_config

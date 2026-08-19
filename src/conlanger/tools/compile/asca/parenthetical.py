@@ -122,6 +122,10 @@ def _expand_optional_in_token(token: str) -> list[str]:
     if _ASCA_ENV_OPTIONAL_RE.fullmatch(token):
         return [token]
 
+    whole_paren = re.fullmatch(r"\(([^)]+)\)$", token)
+    if whole_paren and _is_phonological_optional_inner(whole_paren.group(1)):
+        return [_normalize_optional_inner(whole_paren.group(1))]
+
     prefix_match = re.fullmatch(r"\(([^)]+)\)(.+)", token)
     if prefix_match and _is_phonological_optional_inner(prefix_match.group(1)):
         prefix = _normalize_optional_inner(prefix_match.group(1))

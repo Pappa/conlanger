@@ -32,6 +32,11 @@ from conlanger.tools.rules import DiachronicSeries
         ("{bl,tl} > ʈ (?)", "{bl,tl} > ʈ"),
         ("{ɡ,q}(?)", "{ɡ,q}"),
         ("z dz ɡ > ɡ {z,dz} ɡ(ʷ)", "z dz ɡ > ɡ {z,dz} {ɡ,ɡʷ}"),
+        ("eː ow > ej (əw)", "eː ow > ej əw"),
+        (
+            "a > o / _{C:[-front,+back,+hi,-lo],r} ( // C:[-front,+back,+hi,-lo] = w ?)",
+            "a > o / _{C:[-front,+back,+hi,-lo],r}",
+        ),
         ("a > o / #Cw_{(d)l,f3}", "a > o / #Cw_{dl,l,f3}"),
         (
             "e o > i u / #{k(ʼ),x}_{t(ʼ),ts:[+cg]}",

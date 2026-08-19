@@ -135,7 +135,9 @@ def apply_trailing_glosses(parts: dict[str, str]) -> dict[str, Any]:
             value = wrapped_cleaned
             comment_fragments.extend(wrapped_caps)
         else:
-            value, captures = extract_trailing_gloss_from_field(original)
+            value, captures = extract_trailing_gloss_from_field(
+                original, include_unclosed_paren=False
+            )
             comment_fragments.extend(captures)
         if value:
             cleaned[key] = value

@@ -6,6 +6,9 @@ from conlanger.tools.compile.asca.input_optionals import (
 from conlanger.tools.compile.asca.parenthetical import (
     expand_index_parenthetical_notation,
 )
+from conlanger.tools.compile.asca.slash_boundary import (
+    drop_concatenated_deletion_column,
+)
 from conlanger.tools.compile.asca.subscript_references import (
     expand_index_subscript_references,
 )
@@ -27,4 +30,5 @@ def expand_meta_notation(text: str) -> str:
     """Cluster-driven meta-notation handlers."""
     text = expand_index_tilde_notation(text)
     text = expand_index_parenthetical_notation(text)
-    return expand_input_optionals_to_structures(text)
+    text = expand_input_optionals_to_structures(text)
+    return drop_concatenated_deletion_column(text)
