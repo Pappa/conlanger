@@ -40,3 +40,4 @@ Findings: [research/asca-native-per-field-validation.md](../research/asca-native
 ## Comments
 
 - 2026-08-19 grill: **Q1 B** — whole-rule `validate` **plus** per-field `validate_part`. **Q2 C** — private fork only for now; no upstream. Clone: `/home/pappa/Projects/Pappa/asca-rust` (`github.com/Pappa/asca-rust`, vanilla **0.10.2** / `36c3c62`).
+- 2026-08-19 grill: **Q3 A** — inventory `ok` stays `asca run` + probes. **Q4** — block [Field-isolation inventory sidecar](36-field-isolation-inventory-sidecar.md) (may rewrite/delete/close). **Q5 A** — [Implement `validate` + `validate_part` on the private asca fork](87-implement-asca-fork-validate.md) then [Wire conlanger to forked asca `validate`](88-wire-conlanger-forked-asca-validate.md). Version: asca-rust is `x.y.z` only (not git-describe); fork uses `0.10.3-dev` then `0.10.3`.

@@ -1,8 +1,14 @@
 Type: task
 Status: ready-for-agent
-Blocked by: 34
+Blocked by: 87, 88
 
 # Field-isolation inventory sidecar
+
+## Fate (2026-08-19)
+
+**Blocked** on native asca validation. After [Implement `validate` + `validate_part` on the private asca fork](87-implement-asca-fork-validate.md) and [Wire conlanger to forked asca `validate`](88-wire-conlanger-forked-asca-validate.md), this ticket may be **rewritten** (sidecar CSV + `blame` via `validate_part`, drop stubs), **deleted**, or **closed** — depending on what that work actually enables. Do not implement the stub engine until then.
+
+Whole-rule inventory `ok` stays `asca run` + probe words (grill Q3 A).
 
 ## Question
 
@@ -37,11 +43,14 @@ Findings: [research/field-isolation-compile-validation.md](../research/field-iso
 
 ## Blocked by
 
-- [Inventory success/error CSV splits and ok-change changelog](34-inventory-success-error-splits-and-ok-changelog.md) — ship filtered CSVs + changelog first; wire isolation into the same regen pass or behind a flag once 34 lands.
+- [Implement `validate` + `validate_part` on the private asca fork](87-implement-asca-fork-validate.md)
+- [Wire conlanger to forked asca `validate`](88-wire-conlanger-forked-asca-validate.md)
+- ~~[Inventory success/error CSV splits and ok-change changelog](34-inventory-success-error-splits-and-ok-changelog.md)~~ done
 
 ## Comments
 
-- 2026-08-19: Owner hesitant to start stubs; alternative is native asca per-field validation. Spike: [Native ASCA per-field validation effort](86-spike-asca-native-per-field-validation.md). Findings: [research/asca-native-per-field-validation.md](../research/asca-native-per-field-validation.md). Hold implementation until that path is accepted or declined; if accepted, retarget this ticket (sidecar CSV + `blame`, drop stub engine).
+- 2026-08-19: Owner hesitant to start stubs; alternative is native asca per-field validation. Spike: [Native ASCA per-field validation effort](86-spike-asca-native-per-field-validation.md). Findings: [research/asca-native-per-field-validation.md](../research/asca-native-per-field-validation.md).
+- 2026-08-19 grill: **Q3 A** keep `ok` as `asca run` + probes. **Q4** block this ticket; it may be rewritten, deleted, or closed after 87/88. **Q5 A** chart those tasks; private fork only (`/home/pappa/Projects/Pappa/asca-rust`).
 
 ## Acceptance criteria
 
