@@ -60,3 +60,4 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 "w (→ b?) → m","w → b → m",False,chaining
 "VN → V[+nasal] → V → (?)","VN → V[+nasal] → V",False,unresolvable symbol
 " (→ b seems more common)"," ; (→ b seems more common)",False,replace prose
+"(kʷ → ɡʷ → ɡ ?)","kʷ → ɡʷ → ɡ / sporadic ; (kʷ → ɡʷ → ɡ ?)",False,workaround

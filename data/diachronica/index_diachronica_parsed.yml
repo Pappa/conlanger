@@ -37978,12 +37978,14 @@ sections:
     raw: '{d,k}w → ɡʷ → ɡ'
     source: index_diachronica_original.html:7891
     rule_id: Old-Provençal-d,kw
-  - stages:
-    - (kʷ
+  - comment: (kʷ → ɡʷ → ɡ ?); sporadic
+    stages:
+    - kʷ
     - ɡʷ
-    - ɡ ?)
+    - ɡ
     raw: (kʷ → ɡʷ → ɡ ?)
     source: index_diachronica_original.html:7892
+    sporadic: true
     rule_id: Old-Provençal-kʷ
   - stages:
     - '{l,r}w {n,ŋk,ŋɡ}w'
@@ -54886,6 +54888,7 @@ sections:
     raw: w → r → ∅ / P_-
     source: index_diachronica_original.html:11748
     rule_id: Middle-Chinese-w
+  skipped: true
 - section: Late Middle Chinese to Old Mandarin
   index: 36.1.1
   citation: Ran, from Hsueh, F.S. (1975), Phonology of Old Mandarin
