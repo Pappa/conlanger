@@ -119,3 +119,11 @@ rules:
       id: Eritai-∅
       content: "∅ → dz / î_V"
       reason: "Adding env delimiter"
+  - rule:
+      id: Old-Russian-kt-ɡd
+      content: "kt → ɡd / _E"
+      reason: "Correcting delimiters - this may be wrong"
+  - rule:
+      id: Attic-Greek-ɔ
+      content: "ɔ → ∅ / %i_n#, %i_s#"
+      reason: "Correcting env - this may be wrong"

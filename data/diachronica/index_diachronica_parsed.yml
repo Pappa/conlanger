@@ -29944,8 +29944,8 @@ sections:
   - stages:
     - ɔ
     - ∅
-    env: the suffixes -ios and -ion
-    raw: ɔ → ∅ / in the suffixes -ios and -ion
+    env: $i_n#, $i_s#
+    raw: ɔ → ∅ / %i_n#, %i_s#
     source: index_diachronica_original.html:6613
     rule_id: Attic-Greek-ɔ
   - stages:
@@ -33279,9 +33279,10 @@ sections:
     source: index_diachronica_original.html:7177
     rule_id: Old-Russian-tj-dj
   - stages:
-    - kt ɡd
-    - _E
-    raw: kt ɡd → _E
+    - kt
+    - ɡd
+    env: _E
+    raw: kt → ɡd / _E
     source: index_diachronica_original.html:7178
     rule_id: Old-Russian-kt-ɡd
   - stages:
