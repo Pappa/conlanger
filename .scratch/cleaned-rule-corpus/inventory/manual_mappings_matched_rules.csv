@@ -35,6 +35,7 @@ section_index,section_name,rule_id,source,manual_mapping
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-q,index_diachronica_original.html:2951,→ ʕ
 10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-ə,index_diachronica_original.html:2962," / V_, _V"
 10.2.6.1,Proto-North Sarawak to Kiput,Kiput-ə_2,index_diachronica_original.html:2988," / V_, _V"
+10.2.6.3,Proto-Malayic to Minangkabau,Minangkabau-h,index_diachronica_original.html:3074, ; sporadic (some exceptions
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-pwʰ-pʰ-tʰ-kʰ,index_diachronica_original.html:3265, / 
 10.3.5.7,Proto-New Caledonia to Pwapwâ,Pwapwâ-bw-mw,index_diachronica_original.html:3321,bw mw → ɡw ŋw → ɡ ŋ / _V[+ rounded]
 10.3.5.8,Proto-New Caledonia to Proto-Yunaga,Proto-Yunaga-u-i,index_diachronica_original.html:3336, / 
@@ -126,6 +127,9 @@ section_index,section_name,rule_id,source,manual_mapping
 17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-V-long-+stress,index_diachronica_original.html:6067, / 
 17.7.2.2.2,Middle Dutch to Modern Dutch,Modern-Dutch-—-x-ɣ,index_diachronica_original.html:6078, / sporadic ; in northern dialects
 17.7.2.2.2,Middle Dutch to Modern Dutch,Modern-Dutch-—-x-ɣ_2,index_diachronica_original.html:6079, / sporadic ; in southern dialects
+17.7.2.3,Middle High German to Standard German,Standard-German-eː-i,index_diachronica_original.html:6105,O:[+delrel]
+17.7.2.3,Middle High German to Standard German,Standard-German-Vː,index_diachronica_original.html:6114, ; sporadic (some exceptions
+17.7.2.3,Middle High German to Standard German,Standard-German-Vː_2,index_diachronica_original.html:6115, ; sporadic (some exceptions
 17.7.2.3,Middle High German to Standard German,Standard-German-V_3,index_diachronica_original.html:6118, / 
 17.7.2.3,Middle High German to Standard German,Standard-German-ə,index_diachronica_original.html:6120, / _[-stress]
 17.7.2.5,West Germanic to Old Low German,Old-Low-German-f-θ-s,index_diachronica_original.html:6146, / $_ 
@@ -249,6 +253,7 @@ section_index,section_name,rule_id,source,manual_mapping
 42.1.2,Proto-Finnic to Livonian,Livonian-æ,index_diachronica_original.html:13906, / _[-stress]
 42.1.2,Proto-Finnic to Livonian,Livonian-V,index_diachronica_original.html:13910, / _[-stress]
 42.1.2,Proto-Finnic to Livonian,Livonian-Cː,index_diachronica_original.html:13924, ! 
+44.2,Proto-Basque to Basque,Basque-C+-sibilant,index_diachronica_original.html:14224,O:[+delrel]
 45.1.2,Proto-Pai to Paipai,Paipai-i,index_diachronica_original.html:14268, / _[-stress]
 45.1.3,Proto-Pai to Tipai,Tipai-i,index_diachronica_original.html:14278, / _[-stress]
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-ai,index_diachronica_original.html:14323, / _%# ; when stem-final

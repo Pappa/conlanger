@@ -35,6 +35,7 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 " ! in Queensland"," sporadic ; not in Queensland",False,replace prose
 " / depending on the environment"," / sporadic ; depending on the environment",False,replace prose
 " / (“when in unstressed penult"," / sporadic ; (“when in unstressed penult",False,replace prose
+" (some exceptions"," ; sporadic (some exceptions",False,replace prose
 " / “[b]etween the last two vowels of a proparoxytone”"," / sporadic ; “[b]etween the last two vowels of a proparoxytone”",False,replace prose
 " / in "," / ",False,replace prose
 " ! in "," ! ",False,replace prose
@@ -61,3 +62,4 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 "VN → V[+nasal] → V → (?)","VN → V[+nasal] → V",False,unresolvable symbol
 " (→ b seems more common)"," ; (→ b seems more common)",False,replace prose
 "(kʷ → ɡʷ → ɡ ?)","kʷ → ɡʷ → ɡ / sporadic ; (kʷ → ɡʷ → ɡ ?)",False,workaround
+"C[+ affricate]","O:[+delrel]",False,asca syntax replacement

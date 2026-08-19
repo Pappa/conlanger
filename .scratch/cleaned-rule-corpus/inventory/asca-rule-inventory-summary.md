@@ -4,8 +4,8 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9683** (one per corpus rule)
-- OK: **8165** (84.3%)
-- Fail: **1475** (15.2%)
+- OK: **8168** (84.4%)
+- Fail: **1472** (15.2%)
 - Skipped: **43** (0.4%)
 - Sections all OK: **308 / 712** (43.3%)
 - Sections skipped: **2 / 714** (0.3%)
@@ -14,13 +14,13 @@
 
 | count | failure_class |
 |------:|---------------|
-| 453 | `syntax_other` |
-| 245 | `expected_underscore` |
+| 448 | `syntax_other` |
+| 246 | `expected_underscore` |
 | 207 | `unknown_character` |
 | 128 | `runtime_other` |
 | 109 | `unknown_grouping` |
-| 90 | `unknown_feature` |
-| 81 | `prose_or_expected_arrow` |
+| 88 | `unknown_feature` |
+| 84 | `prose_or_expected_arrow` |
 | 46 | `nested_brackets` |
 | 38 | `expected_number` |
 | 32 | `diacritic_prereq` |
@@ -47,20 +47,19 @@
 | count | error_token | suggested |
 |------:|-------------|-----------|
 | 22 | `open` | `ten` |
-| 10 | `samePOA` | `lateral` |
 | 10 | `closed` | `cons` |
+| 10 | `samePOA` | `lateral` |
 | 9 | `fortis` | `contin` |
 | 8 | `mid` | `man` |
 | 6 | `lenis` | `tens` |
 | 5 | `weak` | `man` |
 | 3 | `palatalized` | `latrl` |
-| 2 | `affricate` | `stridnt` |
 | 2 | `fricative` | `rhotic` |
 | 1 | `highpitch` | `high` |
-| 1 | `ejective` | `contin` |
 | 1 | `APOA` | `root` |
 | 1 | `lowpitch` | `voice` |
 | 1 | `intertonic` | `anterior` |
+| 1 | `ejective` | `contin` |
 | 1 | `aspirated` | `spread` |
 | 1 | `alveolopalatal` | `consonantal` |
 | 1 | `tonic` | `cons` |

@@ -11037,11 +11037,11 @@ sections:
     raw: n → ɲ / “in the environment of i”
     source: index_diachronica_original.html:3073
     rule_id: Minangkabau-n
-  - stages:
+  - comment: sporadic (some exceptions)
+    stages:
     - h
     - ∅
     exception: _#
-    comment: (some exceptions)
     raw: h → ∅ / ! _# (some exceptions)
     source: index_diachronica_original.html:3074
     rule_id: Minangkabau-h
@@ -26716,7 +26716,7 @@ sections:
   - stages:
     - e(ː) i
     - ø(ː) y
-    env: _C[+ affricate]
+    env: _O:[+delrel]
     raw: e(ː) i → ø(ː) y / _C[+ affricate]
     source: index_diachronica_original.html:6105
     rule_id: Standard-German-eː-i
@@ -26781,20 +26781,21 @@ sections:
     raw: aːw → au
     source: index_diachronica_original.html:6113
     rule_id: Standard-German-aːw
-  - comment: the change was more common around _xt and _rC)
+  - comment: sporadic (some exceptions; the change was more common around _xt and
+      _rC)
     stages:
     - Vː
     - V[- long]
-    env: _CC (some exceptions
+    env: _CC
     raw: Vː → V[- long] / _CC (some exceptions; the change was more common around
       _xt and _rC)
     source: index_diachronica_original.html:6114
     rule_id: Standard-German-Vː
-  - stages:
+  - comment: sporadic (some exceptions)
+    stages:
     - Vː
     - V[- long]
     env: _$Cə{r,l,n}#
-    comment: (some exceptions)
     raw: Vː → V[- long] / _%Cə{r,l,n}# (some exceptions)
     source: index_diachronica_original.html:6115
     rule_id: Standard-German-Vː_2
@@ -67798,7 +67799,7 @@ sections:
     rule_id: Basque-C-voice
   - stages:
     - C[+strident]
-    - C[+ affricate]
+    - O:[+delrel]
     env: _#
     raw: C[+ sibilant] → C[+ affricate] / _#
     source: index_diachronica_original.html:14224
