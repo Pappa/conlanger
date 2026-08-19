@@ -158,16 +158,15 @@ def test_split_input_output(raw, expected):
         ("∅ / #C_V", ("∅", "#C_V")),
         ("tʃ → ʃ", ("tʃ → ʃ", None)),
         ("a / b / c", ("a", "b / c")),
-        ("h #_", ("h", "#_")),
-        ("b d #_", ("b d", "#_")),
-        ("kʰ #_", ("kʰ", "#_")),
-        ("∅ VC_CV", ("∅", "VC_CV")),
-        ("c& _", ("c&", "_")),
         ("∅/ _#", ("∅", "_#")),
         ("p/ #_C[+sibilant]", ("p", "#_C[+sibilant]")),
-        ("ɨ _N ! _{nː,mn}", ("ɨ", "_N ! _{nː,mn}")),
-        ("t k", ("t k", None)),
-        ("r…∅", ("r…∅", None)),
+        (
+            "š (Alex Fink says that the realization of /š/ “is unclear”)",
+            ("š (Alex Fink says that the realization of /š/ “is unclear”)", None),
+        ),
+        ("h #_", ("h #_", None)),
+        ("∅ VC_CV", ("∅ VC_CV", None)),
+        ("c& _", ("c& _", None)),
         ("ej (əw)", ("ej (əw)", None)),
         ("({C,#}Vː)∅", ("({C,#}Vː)∅", None)),
     ],
@@ -957,9 +956,7 @@ def test_parser_unlisted_section_not_marked_skipped(tmp_path: Path):
             ("ou øy ei", None, "in certain endings"),
         ),
         ("{∅,h} / _əNS / #_", ("{∅,h}", "_əNS", "#_")),
-        ("h #_", ("h", "#_", None)),
-        ("ɨ _N ! _{nː,mn}", ("ɨ", "_N", "_{nː,mn}")),
-        ("dz → î_V", ("dz → î_V", None, None)),
+        ("∅/ _# ! V[-long]C_#", ("∅", "_#", "V[-long]C_#")),
     ],
 )
 def test_split_post_arrow(post_arrow, expected):
@@ -980,30 +977,38 @@ def test_split_post_arrow(post_arrow, expected):
         ("ɬ → l", {"stages": ["ɬ", "l"]}),
         ("no arrow here", None),
         (
-            "χ → h #_",
-            {"stages": ["χ", "h"], "env": "#_"},
-        ),
-        (
-            "ə → ∅ VC_CV",
-            {"stages": ["ə", "∅"], "env": "VC_CV"},
-        ),
-        (
-            "s → c& _",
-            {"stages": ["s", "c&"], "env": "_"},
-        ),
-        (
             "ʔ → ∅/ _#",
             {"stages": ["ʔ", "∅"], "env": "_#"},
         ),
         (
-            "a → ɨ _N ! _{nː,mn}",
-            {"stages": ["a", "ɨ"], "env": "_N", "exception": "_{nː,mn}"},
+            "{i,u} → ∅/ _# ! V[-long]C_#",
+            {
+                "stages": ["{i,u}", "∅"],
+                "env": "_#",
+                "exception": "V[-long]C_#",
+            },
+        ),
+        (
+            "ə → ∅ VC_CV",
+            {"stages": ["ə", "∅ VC_CV"]},
+        ),
+        (
+            "χ → h #_",
+            {"stages": ["χ", "h #_"]},
         ),
         (
             "∅ → dz → î_V",
-            {"stages": ["∅", "dz"], "env": "î_V"},
+            {"stages": ["∅", "dz", "î_V"]},
         ),
-        ("d ɡ → t k", {"stages": ["d ɡ", "t k"]}),
+        (
+            "rt → š (Alex Fink says that the realization of /š/ “is unclear”)",
+            {
+                "stages": [
+                    "rt",
+                    "š (Alex Fink says that the realization of /š/ “is unclear”)",
+                ]
+            },
+        ),
         ("r…r → r…∅", {"stages": ["r…r", "r…∅"]}),
     ],
 )

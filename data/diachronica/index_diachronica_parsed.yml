@@ -6305,8 +6305,7 @@ sections:
     rule_id: Proto-Japonic-ŋ
   - stages:
     - ŋ
-    - '{∅,n}'
-    env: '#_ else'
+    - '{∅,n} #_ else'
     raw: 'ŋ → {∅,n} #_ else'
     source: index_diachronica_original.html:2119
     rule_id: Proto-Japonic-ŋ_2
@@ -9067,8 +9066,7 @@ sections:
     rule_id: Karamiananen-s_3
   - stages:
     - s
-    - c&
-    env: _
+    - c& _
     comment: (the paper doesn’t explain what this represents)
     raw: s → c& _ (the paper doesn’t explain what this represents)
     source: index_diachronica_original.html:2716
@@ -9385,7 +9383,7 @@ sections:
     raw: a → e / _j#
     source: index_diachronica_original.html:2780
     rule_id: Proto-Batak-a
-  - comment: changes → d “unsure”); (velar fricative is conjectured
+  - comment: (velar fricative is conjectured; changes → d “unsure”)
     stages:
     - '{ts,ʈ} {ɟ͡ʝ,ɖ} {lʲ,ɲ} {ʔ,x,s,h} ʀ'
     - t d n ∅ r
@@ -9402,10 +9400,10 @@ sections:
     source: index_diachronica_original.html:2782
     sporadic: true
     rule_id: Proto-Batak-q
-  - stages:
+  - comment: (fricative changes to approximant)
+    stages:
     - z
     - j
-    comment: (fricative changes to approximant)
     raw: z → j (fricative changes to approximant)
     source: index_diachronica_original.html:2783
     rule_id: Proto-Batak-z
@@ -10378,7 +10376,7 @@ sections:
     - ə
     - ∅
     env: VC_CV
-    raw: ə → ∅ VC_CV
+    raw: ə → ∅ / VC_CV
     source: index_diachronica_original.html:2965
     rule_id: Proto-North-Sarawak-ə_3
   - stages:
@@ -10394,11 +10392,11 @@ sections:
     raw: ɟ(ː) → d(ː)
     source: index_diachronica_original.html:2969
     rule_id: Proto-North-Sarawak-ɟː
-  - stages:
+  - comment: (Whimemsz says these become “voiced stops with voiceless releases. .
+      .treated as unit phonemes, not clusters)”
+    stages:
     - bː dː dzː ɡː
     - bʱ dʱ dzʱ ɡʱ
-    comment: “voiced stops with voiceless releases. . .treated as unit phonemes, not
-      clusters)”; (Whimemsz says these become
     raw: bː dː dzː ɡː → bʱ dʱ dzʱ ɡʱ (Whimemsz says these become “voiced stops with
       voiceless releases. . .treated as unit phonemes, not clusters)”
     source: index_diachronica_original.html:2970
@@ -24488,7 +24486,7 @@ sections:
     - ∅
     env: _#
     exception: V[-long]C_#
-    raw: '{i,u} → ∅/ _# ! V[-long]C_#'
+    raw: '{i,u} → ∅ / _# ! V[-long]C_#'
     source: index_diachronica_original.html:5721
     rule_id: Old-English-i,u
   - stages:
@@ -24775,8 +24773,7 @@ sections:
   rules:
   - stages:
     - ʊ
-    - ɤ !
-    env: P_ and _l
+    - ɤ ! P_ and _l
     raw: ʊ → ɤ ! P_ and _l
     source: index_diachronica_original.html:5771
     rule_id: Early-Modern-English-ʊ
@@ -26765,8 +26762,9 @@ sections:
     rule_id: Standard-German-yː-yə-øː-øy
   - stages:
     - uː yː iː
-    - ou øy ei, except in certain unstressed endings and monosyllables,
-    env: _C{C,V,#} , and Low German borrowings
+    - ou øy ei
+    exception: in certain unstressed endings and monosyllables, _C{C,V,#} , and Low
+      German borrowings
     comment: “especially before /xt/”; ()
     raw: uː yː iː → ou øy ei, except in certain unstressed endings and monosyllables,
       _C{C,V,#} (“especially before /xt/”), and Low German borrowings
@@ -28808,8 +28806,7 @@ sections:
     rule_id: Orkney-Norn-ð
   - stages:
     - ð
-    - ∅
-    env: /{a,E}_
+    - ∅ /{a,E}_
     raw: ð → ∅ /{a,E}_
     source: index_diachronica_original.html:6425
     rule_id: Orkney-Norn-ð_2
@@ -34132,7 +34129,7 @@ sections:
     - l
     - r
     env: _Vl
-    raw: l → r → _Vl
+    raw: l → r / _Vl
     source: index_diachronica_original.html:7310
     rule_id: Latin-l
   - stages:
@@ -36193,12 +36190,12 @@ sections:
     raw: V → ∅ / _L(C)(C)V(C)# (irregular)
     source: index_diachronica_original.html:7626
     rule_id: Portuguese-V_2
-  - stages:
+  - comment: (irregular)
+    stages:
     - V
     - ∅
     env: V:[+stress]$s_t(C)V(C)#
-    comment: (irregular)
-    raw: V → ∅ ”V%s_t(C)V(C)# (irregular)
+    raw: V → ∅ / ”V%s_t(C)V(C)# ; (irregular)
     source: index_diachronica_original.html:7627
     rule_id: Portuguese-V_3
   - stages:
@@ -38962,7 +38959,7 @@ sections:
     - ɨ
     env: _N
     exception: _{nː,mn}
-    raw: a → ɨ _N ! _{nː,mn}
+    raw: a → ɨ / _N ! _{nː,mn}
     source: index_diachronica_original.html:8040
     rule_id: Romanian-a
   - stages:
@@ -39260,8 +39257,7 @@ sections:
     rule_id: Romanian-o
   - stages:
     - a
-    - ə
-    env: '#C(C…)_…U:[+stress]'
+    - 'ə #C(C…)_…U:[+stress]'
     raw: 'a → ə #C(C…)_…”U'
     source: index_diachronica_original.html:8083
     rule_id: Romanian-a_4
@@ -43640,7 +43636,7 @@ sections:
     - ∅
     - dz
     env: i_V
-    raw: ∅ → dz → î_V
+    raw: ∅ → dz / î_V
     source: index_diachronica_original.html:9007
     rule_id: Eritai-∅
   - comment: I must have misread something)
@@ -52573,7 +52569,7 @@ sections:
     - χ
     - h
     env: '#_'
-    raw: 'χ → h #_'
+    raw: 'χ → h / #_'
     source: index_diachronica_original.html:11289
     rule_id: Quito-χ
 - section: Proto-Quechumaran to Riobamba
@@ -52732,7 +52728,7 @@ sections:
     - χ
     - kʰ
     env: '#_'
-    raw: 'χ → kʰ #_'
+    raw: 'χ → kʰ / #_'
     source: index_diachronica_original.html:11316
     rule_id: Riobamba-χ
   - stages:
@@ -53098,14 +53094,13 @@ sections:
   - stages:
     - ʔ
     - ∅
-    env: V3_RV
-    raw: ʔ → ∅ V3_RV
+    env: V3R_V
+    raw: ʔ → ∅ / V3R_V
     source: index_diachronica_original.html:11400
     rule_id: Comox-ʔ
   - stages:
     - ʔ
-    - ∅
-    env: V3R_V
+    - ∅ V3R_V
     raw: ʔ → ∅ V3R_V
     source: index_diachronica_original.html:11401
     rule_id: Comox-ʔ_2
@@ -54954,8 +54949,7 @@ sections:
     rule_id: Old-Mandarin-xɦ
   - stages:
     - Cʲ
-    - C
-    env: '{Ạ,F̣}_'
+    - C {Ạ,F̣}_
     raw: Cʲ → C {Ạ,F̣}_
     source: index_diachronica_original.html:11756
     rule_id: Old-Mandarin-Cʲ
@@ -59707,8 +59701,7 @@ sections:
     rule_id: Oneida-”Vː+falling-tone
   - stages:
     - Vː
-    - V[-long]
-    env: _C:[+stress](C)(C)V
+    - V[-long] _C:[+stress](C)(C)V
     comment: “this change happens only in the Ontario dialect”; ()
     raw: Vː → V[-long] _”C(C)(C)V (“this change happens only in the Ontario dialect”)
     source: index_diachronica_original.html:12601
@@ -61495,12 +61488,12 @@ sections:
     source: index_diachronica_original.html:12928
     sporadic: true
     rule_id: Proto-Dhegiha-u
-  - stages:
+  - comment: (in morphemes)
+    stages:
     - k
     - ∅
     env: '#t_'
-    comment: (in morphemes)
-    raw: 'k → ∅ #t_ (in morphemes)'
+    raw: 'k → ∅ / #t_ ; (in morphemes)'
     source: index_diachronica_original.html:12929
     rule_id: Proto-Dhegiha-k_2
   - stages:

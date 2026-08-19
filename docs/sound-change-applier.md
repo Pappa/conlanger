@@ -38,7 +38,7 @@ Parse-time transforms are documented in [index-diachronica-parser.md](./index-di
 
 `str(DiachronicSeries)` joins parts with newlines → `.rsca` body shape.
 
-`SoundChangeRule` requires `input`, `output`; optional `env`, `exception`. If `env` is absent, a glued env suffix on output (`h #_`) is peeled at construction. `skip: True` → commented prefix (`#\t`); excluded from validation. Compiled text is stored in `value` at construction via `_format()`.
+`SoundChangeRule` requires `input`, `output`; optional `env`, `exception`. `skip: True` → commented prefix (`#\t`); excluded from validation. Compiled text is stored in `value` at construction via `_format()`.
 
 ---
 

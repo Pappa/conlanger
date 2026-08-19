@@ -79,3 +79,43 @@ rules:
       id: Old-Provençal-rtʃ-rdtʃ
       content: "rtʃ rdtʃ → {rts,rs} {rz,rts,rdʒ}"
       reason: "Skipping intermediate step"
+  - rule:
+      id: Proto-North-Sarawak-ə_3
+      content: "ə → ∅ / VC_CV"
+      reason: "Adding env delimiter"
+  - rule:
+      id: Quito-χ
+      content: "χ → h / #_"
+      reason: "Adding env delimiter"
+  - rule:
+      id: Riobamba-χ
+      content: "χ → kʰ / #_"
+      reason: "Adding env delimiter"
+  - rule:
+      id: Romanian-a
+      content: "a → ɨ / _N ! _{nː,mn}"
+      reason: "Adding env delimiter"
+  - rule:
+      id: Old-English-i,u
+      content: "{i,u} → ∅ / _# ! V[-long]C_#"
+      reason: "Correcting env delimiter"
+  - rule:
+      id: Comox-ʔ
+      content: "ʔ → ∅ / V3R_V"
+      reason: "Adding env delimiter"
+  - rule:
+      id: Portuguese-V_3
+      content: "V → ∅ / ”V%s_t(C)V(C)# ; (irregular)"
+      reason: "Adding env delimiter"
+  - rule:
+      id: Proto-Dhegiha-k_2
+      content: "k → ∅ / #t_ ; (in morphemes)"
+      reason: "Adding env delimiter"
+  - rule:
+      id: Latin-l
+      content: "l → r / _Vl"
+      reason: "Correcting env delimiter"
+  - rule:
+      id: Eritai-∅
+      content: "∅ → dz / î_V"
+      reason: "Adding env delimiter"

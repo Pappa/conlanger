@@ -8,7 +8,7 @@ import pytest
 from conlanger.tools.compile.asca.slash_boundary import (
     drop_concatenated_deletion_column,
 )
-from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
+from conlanger.tools.rules import DiachronicSeries
 
 
 @pytest.mark.parametrize(
@@ -30,18 +30,6 @@ from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
 )
 def test_drop_concatenated_deletion_column(text, expected):
     assert drop_concatenated_deletion_column(text) == expected
-
-
-def test_sound_change_rule_inserts_slash_before_glued_env():
-    rule = SoundChangeRule({"input": "χ", "output": "h #_"})
-    assert rule.value == "χ > h / #_"
-
-
-def test_sound_change_rule_peels_glued_env_and_bang_exception():
-    rule = SoundChangeRule({"input": "a", "output": "ɨ _N ! _{n:[+long],mn}"})
-    assert rule.env == "_N"
-    assert rule.exception == "_{n:[+long],mn}"
-    assert rule.value == "a > ɨ / _N // _{n:[+long],mn}"
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
