@@ -1,12 +1,14 @@
 Type: task
 Status: ready-for-agent
-Blocked by: None
+Blocked by: [85](85-spike-nested-set-flatten-prototype.md)
 
 # Correction pass: flatten nested sets in env / exception
 
 Target cluster: `nested_brackets` — nested `{…}` in **env** or **exception** only (~16 inventory rows at 2026-08-12 baseline).
 
 Spawned from [spike 67](67-spike-nested-sets.md). Findings: [nested-sets-inventory.md](../research/nested-sets-inventory.md) §4.2–4.4.
+
+**Policy hold:** compile-time approach below is provisional. [Spike 85](85-spike-nested-set-flatten-prototype.md) will recommend parse-time vs compile-time placement; rewrite this ticket’s implementation brief before agent pickup if spike concludes parse-time.
 
 ## Problem
 

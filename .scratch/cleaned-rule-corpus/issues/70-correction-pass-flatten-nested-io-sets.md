@@ -10,7 +10,7 @@ Spawned from [spike 67](67-spike-nested-sets.md). Findings: [nested-sets-invento
 
 **Blocked by [71](71-grill-paren-and-parallel-set-notation.md)** where shapes mix optional-prefix parallel columns with nested braces (`(h)ə{p,b}`, `{e{V…},…}`).
 
-## Problem
+**Policy hold:** [Spike 85](85-spike-nested-set-flatten-prototype.md) will recommend parse-time vs compile-time placement for all nested-set flatten work; rewrite implementation brief before agent pickup if spike concludes parse-time.
 
 Examples:
 
