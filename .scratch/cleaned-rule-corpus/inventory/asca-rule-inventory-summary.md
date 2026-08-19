@@ -3,25 +3,25 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
-- Rows: **9683** (one per corpus rule)
-- OK: **8180** (84.5%)
-- Fail: **1460** (15.1%)
+- Rows: **9685** (one per corpus rule)
+- OK: **8186** (84.5%)
+- Fail: **1456** (15.0%)
 - Skipped: **43** (0.4%)
-- Sections all OK: **309 / 712** (43.4%)
+- Sections all OK: **310 / 712** (43.5%)
 - Sections skipped: **2 / 714** (0.3%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 450 | `syntax_other` |
+| 447 | `syntax_other` |
 | 245 | `expected_underscore` |
 | 194 | `unknown_character` |
 | 128 | `runtime_other` |
 | 109 | `unknown_grouping` |
 | 88 | `unknown_feature` |
 | 83 | `prose_or_expected_arrow` |
-| 46 | `nested_brackets` |
+| 45 | `nested_brackets` |
 | 38 | `expected_number` |
 | 32 | `diacritic_prereq` |
 | 22 | `runtime_delete_only_segment` |

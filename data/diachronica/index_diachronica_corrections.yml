@@ -63,3 +63,19 @@ rules:
       id: Proto-Mongolic-tʃ_2
       content: "tʃ → d / #_"
       reason: "This is a guess, it could be _# or _,#"
+  - rule:
+      id: Old-Japanese-Vowel-Shift-u,ɨi-,a,i-ɨi,ia,ə-uɨ,a,ə
+      content: "{u,ɨ}i {a,ə}i i{a,ə} u{ɨ,a,ə} → wi e je wo"
+      reason: "Corrected from original source: https://conf.ling.cornell.edu/whitman/FrellWhitman.pdf"
+  - rule:
+      id: Old-Provençal-rdʒ
+      content: "rdʒ → {rdʒ,rz}"
+      reason: "Skipping intermediate step"
+  - rule:
+      id: Old-Provençal-rtVɡ
+      content: "rtVɡ → {rdʒ,rs}"
+      reason: "Skipping intermediate step"
+  - rule:
+      id: Old-Provençal-rtʃ-rdtʃ
+      content: "rtʃ rdtʃ → {rts,rs} {rz,rts,rdʒ}"
+      reason: "Skipping intermediate step"

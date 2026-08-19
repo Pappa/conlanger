@@ -38163,9 +38163,8 @@ sections:
     rule_id: Old-Provençal-rdj-rVɡ
   - stages:
     - rdʒ
-    - '{rdʒ,rdz('
-    - rz)}
-    raw: rdʒ → {rdʒ,rdz(→ rz)}
+    - '{rdʒ,rz}'
+    raw: rdʒ → {rdʒ,rz}
     source: index_diachronica_original.html:7918
     rule_id: Old-Provençal-rdʒ
   - stages:
@@ -38183,9 +38182,8 @@ sections:
     rule_id: Old-Provençal-rːVɡ-rːj
   - stages:
     - rtVɡ
-    - '{rdʒ,rts('
-    - rs)}
-    raw: rtVɡ → {rdʒ,rts(→ rs)}
+    - '{rdʒ,rs}'
+    raw: rtVɡ → {rdʒ,rs}
     source: index_diachronica_original.html:7921
     rule_id: Old-Provençal-rtVɡ
   - stages:
@@ -38336,9 +38334,8 @@ sections:
     rule_id: Old-Provençal-d_2
   - stages:
     - rtʃ rdtʃ
-    - r(t)s {rdz(
-    - rz),rts,rdʒ}
-    raw: rtʃ rdtʃ → r(t)s {rdz(→ rz),rts,rdʒ}
+    - '{rts,rs} {rz,rts,rdʒ}'
+    raw: rtʃ rdtʃ → {rts,rs} {rz,rts,rdʒ}
     source: index_diachronica_original.html:7940
     rule_id: Old-Provençal-rtʃ-rdtʃ
   - stages:
@@ -68800,9 +68797,9 @@ sections:
     source: index_diachronica_original.html:14451
     rule_id: Old-Japanese-Vowel-Shift-ɨ,ə
   - stages:
-    - '{u,ɨ}i {,a,i {ɨi,i{a,ə}} u{ɨ,a,ə}'
+    - '{u,ɨ}i {a,ə}i i{a,ə} u{ɨ,a,ə}'
     - wi e je wo
-    raw: '{u,ɨ}i {,a,i {ɨi,i{a,ə}} u{ɨ,a,ə} → wi e je wo'
+    raw: '{u,ɨ}i {a,ə}i i{a,ə} u{ɨ,a,ə} → wi e je wo'
     source: index_diachronica_original.html:14452
     rule_id: Old-Japanese-Vowel-Shift-u,ɨi-,a,i-ɨi,ia,ə-uɨ,a,ə
 - section: Development of Proto-Lolo-Burmese -i(C)# and -u(C)# to Lahu
