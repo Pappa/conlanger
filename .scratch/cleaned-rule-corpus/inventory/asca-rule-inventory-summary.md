@@ -4,29 +4,29 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9689** (one per corpus rule)
-- OK: **8232** (85.0%)
-- Fail: **1414** (14.6%)
+- OK: **8234** (85.0%)
+- Fail: **1412** (14.6%)
 - Skipped: **43** (0.4%)
-- Sections all OK: **322 / 712** (45.2%)
+- Sections all OK: **323 / 712** (45.4%)
 - Sections skipped: **2 / 714** (0.3%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 427 | `syntax_other` |
+| 419 | `syntax_other` |
 | 243 | `expected_underscore` |
 | 186 | `unknown_character` |
 | 130 | `runtime_other` |
 | 111 | `unknown_grouping` |
 | 88 | `unknown_feature` |
-| 67 | `prose_or_expected_arrow` |
+| 66 | `prose_or_expected_arrow` |
 | 45 | `nested_brackets` |
 | 38 | `expected_number` |
 | 32 | `diacritic_prereq` |
 | 22 | `runtime_delete_only_segment` |
 | 14 | `stuff_after_word_bound` |
-| 5 | `missing_arrow` |
+| 12 | `missing_arrow` |
 | 4 | `panic_other` |
 | 2 | `other` |
 
@@ -96,8 +96,8 @@
 |------:|-------|
 | 582 | `input` |
 | 514 | `env` |
-| 431 | `output` |
-| 216 | `multi` |
+| 415 | `output` |
+| 223 | `multi` |
 | 129 | `exception` |
 
 ## Notes

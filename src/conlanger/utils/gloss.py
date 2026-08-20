@@ -285,7 +285,7 @@ def is_gloss_only_rule(parts: dict[str, Any]) -> bool:
     )
 
 
-_UNCERTAINTY_WORDS = r"sporadic(?:ally)?|sometimes|occasionally"
+_UNCERTAINTY_WORDS = r"sporadic(?:ally)?|sometimes|occasionally|\(\?\)"
 _UNCERTAINTY_WORD_RE = re.compile(rf"\b(?:{_UNCERTAINTY_WORDS})\b", re.IGNORECASE)
 _LONE_UNCERTAINTY_RE = re.compile(rf"^(?:{_UNCERTAINTY_WORDS})\??\.?$", re.IGNORECASE)
 _ENV_UNCERTAINTY_PREFIX_RE = re.compile(
@@ -308,7 +308,7 @@ _TRAILING_BARE_UNCERTAINTY_RE = re.compile(
 
 def field_has_uncertainty_qualifier(text: str) -> bool:
     """Return whether ``text`` mentions sporadic / sometimes / occasionally uncertainty."""
-    return bool(text and (_UNCERTAINTY_WORD_RE.search(text) or text.endswith("?")))
+    return bool(text and (_UNCERTAINTY_WORD_RE.search(text) or text.endswith(("?", "(?)"))))
 
 
 def extract_uncertainty_qualifier_from_field(text: str) -> tuple[str, list[str]]:

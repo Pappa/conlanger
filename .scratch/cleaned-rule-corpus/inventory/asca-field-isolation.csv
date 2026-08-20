@@ -1122,7 +1122,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 9.1.2.2,Middle Vietnamese to Saigon Vietnamese,Saigon-Vietnamese-pʰ,,index_diachronica_original.html:2467,True,,True,True,,,,,,,,,,,none
 9.1.2.2,Middle Vietnamese to Saigon Vietnamese,Saigon-Vietnamese-kʰ,,index_diachronica_original.html:2468,True,,True,True,,,,,,,,,,,none
 9.1.2.2,Middle Vietnamese to Saigon Vietnamese,"Saigon-Vietnamese-β,w",,index_diachronica_original.html:2469,True,,,,,,,,,,,,,,none
-9.1.2.2,Middle Vietnamese to Saigon Vietnamese,"Saigon-Vietnamese-bl,tl",,index_diachronica_original.html:2470,True,,True,False,,,,syntax_other,,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | ʈ (?) | ^ @ Rule 1, Line 1",,,output
+9.1.2.2,Middle Vietnamese to Saigon Vietnamese,"Saigon-Vietnamese-bl,tl",,index_diachronica_original.html:2470,True,,True,True,,,,,,,,,,,none
 9.1.2.2,Middle Vietnamese to Saigon Vietnamese,Saigon-Vietnamese-dʲ-ɟ,,index_diachronica_original.html:2471,True,,True,True,,,,,,,,,,,none
 9.1.2.2,Middle Vietnamese to Saigon Vietnamese,Saigon-Vietnamese-m,,index_diachronica_original.html:2472,True,,True,True,True,,,,,,,,,,none
 9.1.2.2,Middle Vietnamese to Saigon Vietnamese,Saigon-Vietnamese-Ω-cʰ,,index_diachronica_original.html:2473,True,,True,True,,,,,,,,,,,none
@@ -2101,17 +2101,17 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 10.5,Proto-Austronesian to Proto-Ongan,"Proto-Ongan-m,ɲ-n",1,index_diachronica_original.html:3789,True,,True,True,True,,,,,,,,,,none
 10.5,Proto-Austronesian to Proto-Ongan,Proto-Ongan-aj,,index_diachronica_original.html:3790,True,,True,True,,,,,,,,,,,none
 10.5.1,Proto-Ongan to Jarawa,Jarawa-e,,index_diachronica_original.html:3795,True,,True,True,True,,,,,,,,,,none
-10.5.1,Proto-Ongan to Jarawa,Jarawa-n,,index_diachronica_original.html:3796,True,,True,True,False,,,,stuff_after_word_bound,,,,"Syntax Error: Cannot have segments after the end of a word | _# (?) | ^ @ Rule 1, Line 1",,env
+10.5.1,Proto-Ongan to Jarawa,Jarawa-n,,index_diachronica_original.html:3796,True,,True,True,True,,,,,,,,,,none
 10.5.1,Proto-Ongan to Jarawa,Jarawa-kʷ,,index_diachronica_original.html:3797,True,,False,False,,,syntax_other,syntax_other,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | k(ʷ) | ^ @ Rule 1, Line 1","Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | h(ʷ) | ^ @ Rule 1, Line 1",,,input|output
 10.5.1,Proto-Ongan to Jarawa,Jarawa-∅,,index_diachronica_original.html:3798,False,syntax_other,False,True,False,,syntax_other,,unknown_character,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | ∅ | ^ @ Rule 1, Line 1",,"Syntax Error: Unknown character '’' | h#_ (that’s not a typo | ^ @ Rule 1, Line 1",,input|env
 10.5.1,Proto-Ongan to Jarawa,Jarawa-ɡ,,index_diachronica_original.html:3799,True,,True,True,,,,,,,,,,,none
 10.5.1,Proto-Ongan to Jarawa,Jarawa-e_2,0,index_diachronica_original.html:3800,True,,True,True,True,,,,,,,,,,none
 10.5.1,Proto-Ongan to Jarawa,Jarawa-e_2,1,index_diachronica_original.html:3800,True,,True,True,True,,,,,,,,,,none
 10.5.1,Proto-Ongan to Jarawa,Jarawa-e_2,2,index_diachronica_original.html:3800,True,,True,True,True,,,,,,,,,,none
-10.5.1,Proto-Ongan to Jarawa,Jarawa-e_3,,index_diachronica_original.html:3801,True,,True,True,False,,,,stuff_after_word_bound,,,,"Syntax Error: Cannot have segments after the end of a word | _# (?) | ^ @ Rule 1, Line 1",,env
+10.5.1,Proto-Ongan to Jarawa,Jarawa-e_3,,index_diachronica_original.html:3801,True,,True,True,True,,,,,,,,,,none
 10.5.1,Proto-Ongan to Jarawa,Jarawa-p,,index_diachronica_original.html:3802,True,,True,True,True,,,,,,,,,,none
 10.5.2,Proto-Ongan to Onge,Onge-e,,index_diachronica_original.html:3808,True,,True,True,True,,,,,,,,,,none
-10.5.2,Proto-Ongan to Onge,Onge-n,,index_diachronica_original.html:3809,True,,True,True,False,,,,stuff_after_word_bound,,,,"Syntax Error: Cannot have segments after the end of a word | _# (?) | ^ @ Rule 1, Line 1",,env
+10.5.2,Proto-Ongan to Onge,Onge-n,,index_diachronica_original.html:3809,True,,True,True,True,,,,,,,,,,none
 10.5.2,Proto-Ongan to Onge,Onge-d,,index_diachronica_original.html:3810,True,,True,True,True,,,,,,,,,,none
 10.5.2,Proto-Ongan to Onge,"Onge-w,r",,index_diachronica_original.html:3811,True,,True,True,True,,,,,,,,,,none
 10.5.2,Proto-Ongan to Onge,Onge-∅,,index_diachronica_original.html:3812,True,,False,True,True,,syntax_other,,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | ∅ | ^ @ Rule 1, Line 1",,,,input
@@ -2159,7 +2159,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 11.1.3,Proto-Avar-Andic to Avar,Avar-m,1,index_diachronica_original.html:3917,True,,True,True,,,,,,,,,,,none
 11.2,Proto-Northeast Caucasian to Dargi,"Dargi-tsː,st-tsːʼ-dz-stː",,index_diachronica_original.html:3923,True,,False,False,,,unknown_character,unknown_character,,,"Syntax Error: Unknown character 'ː' | {tsː,st} tsːʼ dz stː | ^ @ Rule 1, Line 1","Syntax Error: Unknown character 'ː' | ts z tsː s | ^ @ Rule 1, Line 1",,,input|output
 11.2,Proto-Northeast Caucasian to Dargi,Dargi-tʃ-tʃː-dʒ,,index_diachronica_original.html:3924,True,,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | tʃ tʃː dʒ | ^ @ Rule 1, Line 1",,,,input
-11.2,Proto-Northeast Caucasian to Dargi,Dargi-tɬ-tɬː-tɬʼ-tɬːʼ,,index_diachronica_original.html:3925,True,,False,False,,,unknown_character,unknown_character,,,"Syntax Error: Unknown character 'ː' | tɬ tɬː tɬʼ tɬːʼ | ^ @ Rule 1, Line 1","Syntax Error: Unknown character 'ː' | k {xʲː,kː} kʰ {ɡ,q}(?) | ^ @ Rule 1, Line 1",,,input|output
+11.2,Proto-Northeast Caucasian to Dargi,Dargi-tɬ-tɬː-tɬʼ-tɬːʼ,,index_diachronica_original.html:3925,True,,False,False,,,unknown_character,unknown_character,,,"Syntax Error: Unknown character 'ː' | tɬ tɬː tɬʼ tɬːʼ | ^ @ Rule 1, Line 1","Syntax Error: Unknown character 'ː' | k {xʲː,kː} kʰ {ɡ,q} | ^ @ Rule 1, Line 1",,,input|output
 11.2,Proto-Northeast Caucasian to Dargi,Dargi-qːʼ,,index_diachronica_original.html:3926,True,,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | qːʼ | ^ @ Rule 1, Line 1",,,,input
 11.2,Proto-Northeast Caucasian to Dargi,Dargi-ʃ-ʃː-ɬ-ɬː,,index_diachronica_original.html:3927,True,,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | ʃ ʃː ɬ ɬː | ^ @ Rule 1, Line 1",,,,input
 11.3,Proto-Northeast Caucasian to Khinalug,Khinalug-b-d,,index_diachronica_original.html:3932,True,,True,True,,,,,,,,,,,none
@@ -2219,7 +2219,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 11.5.4,Proto-Lezgic to Rutul,Rutul-m,1,index_diachronica_original.html:4006,True,,True,True,,,,,,,,,,,none
 11.5.5,Proto-Lezgic to Tabassaran,Tabassaran-b-d,,index_diachronica_original.html:4011,True,,True,True,,,,,,,,,,,none
 11.5.5,Proto-Lezgic to Tabassaran,"Tabassaran-ts,st-tsː-tsːʼ",,index_diachronica_original.html:4012,True,,False,False,,,unknown_character,unknown_character,,,"Syntax Error: Unknown character 'ː' | {ts,st} tsː tsːʼ | ^ @ Rule 1, Line 1","Syntax Error: Unknown character 'ː' | {s,ts} {ts,tʃ} tsː | ^ @ Rule 1, Line 1",,,input|output
-11.5.5,Proto-Lezgic to Tabassaran,Tabassaran-tʃ-tʃː-tʃːʼ,,index_diachronica_original.html:4013,True,,False,False,,,unknown_character,unknown_character,,,"Syntax Error: Unknown character 'ː' | tʃ tʃː tʃːʼ | ^ @ Rule 1, Line 1","Syntax Error: Unknown character 'ː' | {ʃ,tʃ} {tʃ,dʒ} {tʃː,tʃʼ}(?) | ^ @ Rule 1, Line 1",,,input|output
+11.5.5,Proto-Lezgic to Tabassaran,Tabassaran-tʃ-tʃː-tʃːʼ,,index_diachronica_original.html:4013,True,,False,False,,,unknown_character,unknown_character,,,"Syntax Error: Unknown character 'ː' | tʃ tʃː tʃːʼ | ^ @ Rule 1, Line 1","Syntax Error: Unknown character 'ː' | {ʃ,tʃ} {tʃ,dʒ} {tʃː,tʃʼ} | ^ @ Rule 1, Line 1",,,input|output
 11.5.5,Proto-Lezgic to Tabassaran,Tabassaran-tɬ-tɬː-tɬʼ-tɬːʼ-dɮ,,index_diachronica_original.html:4014,True,,False,False,,,unknown_character,unknown_character,,,"Syntax Error: Unknown character 'ː' | tɬ tɬː tɬʼ tɬːʼ dɮ | ^ @ Rule 1, Line 1","Syntax Error: Unknown character 'ː' | xʲ {ɣʲ,ɡ} k kː ɣʲ | ^ @ Rule 1, Line 1",,,input|output
 11.5.5,Proto-Lezgic to Tabassaran,Tabassaran-kː,,index_diachronica_original.html:4015,True,,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | kː | ^ @ Rule 1, Line 1",,,,input
 11.5.5,Proto-Lezgic to Tabassaran,"Tabassaran-ɬ-ʃː,ɬː-xː",,index_diachronica_original.html:4016,True,,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | ɬ {ʃː,ɬː} xː | ^ @ Rule 1, Line 1",,,,input
@@ -2301,7 +2301,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 12.1,Proto-Northwest Caucasian to Proto-Abazgi,Proto-Abazgi-χʷʲ-ʁʷʲ,,index_diachronica_original.html:4147,True,,True,False,,,,syntax_other,,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | ħ(ʷ) ʕ(ʷ) | ^ @ Rule 1, Line 1",,,output
 12.1,Proto-Northwest Caucasian to Proto-Abazgi,Proto-Abazgi-qˤː-qˤʼ,,index_diachronica_original.html:4148,True,,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | qˤː qˤʼ | ^ @ Rule 1, Line 1",,,,input
 12.1,Proto-Northwest Caucasian to Proto-Abazgi,Proto-Abazgi-ʁʕ,,index_diachronica_original.html:4149,True,,True,True,,,,,,,,,,,none
-12.1,Proto-Northwest Caucasian to Proto-Abazgi,Proto-Abazgi-qˤʲ-qˤʲː-qˤʲʼ,,index_diachronica_original.html:4150,True,,False,False,,,unknown_character,syntax_other,,,"Syntax Error: Unknown character 'ː' | qˤʲ qˤʲː qˤʲʼ | ^ @ Rule 1, Line 1","Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | q ʔ ħ(?) | ^ @ Rule 1, Line 1",,,input|output
+12.1,Proto-Northwest Caucasian to Proto-Abazgi,Proto-Abazgi-qˤʲ-qˤʲː-qˤʲʼ,,index_diachronica_original.html:4150,True,,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | qˤʲ qˤʲː qˤʲʼ | ^ @ Rule 1, Line 1",,,,input
 12.1,Proto-Northwest Caucasian to Proto-Abazgi,Proto-Abazgi-χˤʲ-ʁˤʲ,,index_diachronica_original.html:4151,True,,True,True,,,,,,,,,,,none
 12.1,Proto-Northwest Caucasian to Proto-Abazgi,Proto-Abazgi-qˤʷ-qˤʷː-qˤʷʼ-χˤʷ-ʁˤʷ,,index_diachronica_original.html:4152,False,syntax_other,False,False,,,unknown_character,syntax_other,,,"Syntax Error: Unknown character 'ː' | qˤʷ qˤʷː qˤʷʼ χˤʷ ʁˤʷ | ^ @ Rule 1, Line 1","Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | ħʷ ʕʷ qʷ(ʼ) ħʷ (ħʷ?) | ^ @ Rule 1, Line 1",,,input|output
 12.1,Proto-Northwest Caucasian to Proto-Abazgi,Proto-Abazgi-qˤʷʲ-qˤʷʲ-qˤʷʲʼ-ʁˤʷʲ,,index_diachronica_original.html:4153,True,,True,True,,,,,,,,,,,none
@@ -2474,7 +2474,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 12.3,Proto-Northwest Caucasian to Ubykh,Ubykh-k-kʼ-ɡ-x-ɣ,,index_diachronica_original.html:4403,True,,True,True,,,,,,,,,,,none
 12.3,Proto-Northwest Caucasian to Ubykh,Ubykh-xʲ-ɣʲ,,index_diachronica_original.html:4404,True,,True,True,,,,,,,,,,,none
 12.3,Proto-Northwest Caucasian to Ubykh,Ubykh-kʷː-xʷ,,index_diachronica_original.html:4405,True,,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | kʷː xʷ | ^ @ Rule 1, Line 1",,,,input
-12.3,Proto-Northwest Caucasian to Ubykh,Ubykh-kʲʷː-xʲʷ-ɣʲʷ?,,index_diachronica_original.html:4406,True,,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | kʲʷː xʲʷ ɣʲʷ(?) | ^ @ Rule 1, Line 1",,,,input
+12.3,Proto-Northwest Caucasian to Ubykh,Ubykh-kʲʷː-xʲʷ-ɣʲʷ?,,index_diachronica_original.html:4406,True,,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | kʲʷː xʲʷ ɣʲʷ | ^ @ Rule 1, Line 1",,,,input
 12.3,Proto-Northwest Caucasian to Ubykh,Ubykh-ɣ,,index_diachronica_original.html:4407,True,,True,True,,,,,,,,,,,none
 12.3,Proto-Northwest Caucasian to Ubykh,Ubykh-qʲːʼ-ɢʲ-χʲ,,index_diachronica_original.html:4408,True,,False,False,,,unknown_character,syntax_other,,,"Syntax Error: Unknown character 'ː' | qʲː(ʼ) ɢʲ χʲ | ^ @ Rule 1, Line 1","Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | qʲ(ʼ) ʁʲ xʲ | ^ @ Rule 1, Line 1",,,input|output
 12.3,Proto-Northwest Caucasian to Ubykh,Ubykh-qʷː-ɢʷ,,index_diachronica_original.html:4409,True,,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | qʷː ɢʷ | ^ @ Rule 1, Line 1",,,,input
@@ -3013,13 +3013,13 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-kʷ,,index_diachronica_original.html:5192,True,,True,True,True,,,,,,,,,,none
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-t-kʷ,,index_diachronica_original.html:5193,True,,False,True,True,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | t k(ʷ) | ^ @ Rule 1, Line 1",,,,input
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-p-ḱ-kʷ,,index_diachronica_original.html:5194,True,,False,True,,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | p kʲ k(ʷ) | ^ @ Rule 1, Line 1",,,,input
-17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-ɡ́,,index_diachronica_original.html:5195,False,unknown_character,False,False,,,unknown_character,syntax_other,,,"Syntax Error: Unknown character '́' | ɡ́ | ^ @ Rule 1, Line 1","Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | ts (?) | ^ @ Rule 1, Line 1",,,input|output
+17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-ɡ́,,index_diachronica_original.html:5195,False,unknown_character,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '́' | ɡ́ | ^ @ Rule 1, Line 1",,,,input
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-b-d-ɡʷ,,index_diachronica_original.html:5196,True,,False,True,,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | b d ɡ(ʷ) | ^ @ Rule 1, Line 1",,,,input
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʷʱ,,index_diachronica_original.html:5197,False,unknown_character,False,True,True,,unknown_character,,,,"Syntax Error: Unknown character '́' | bʱ dʱ ɡ́ʱ ɡʷʱ | ^ @ Rule 1, Line 1",,,,input
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʱ-ɡʷʱ,,index_diachronica_original.html:5198,False,unknown_character,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '́' | bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ | ^ @ Rule 1, Line 1",,,,input
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-j,,index_diachronica_original.html:5199,True,,True,True,True,,,,,,,,,,none
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-j_2,,index_diachronica_original.html:5200,True,,True,True,,,,,,,,,,,none
-17.3.1,Proto-Indo-European to Artsakh Armenian,"Artsakh-Armenian-sk,ks-kj",,index_diachronica_original.html:5201,True,,True,False,,,,syntax_other,,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | tsʰ tʃʰ (?) | ^ @ Rule 1, Line 1",,,output
+17.3.1,Proto-Indo-European to Artsakh Armenian,"Artsakh-Armenian-sk,ks-kj",,index_diachronica_original.html:5201,True,,True,True,,,,,,,,,,,none
 17.3.1,Proto-Indo-European to Artsakh Armenian,"Artsakh-Armenian-sr,rs",,index_diachronica_original.html:5202,True,,True,False,,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | rː | ^ @ Rule 1, Line 1",,,output
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-r,,index_diachronica_original.html:5203,True,,True,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | rː | ^ @ Rule 1, Line 1",,,output
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-l,,index_diachronica_original.html:5204,True,,True,True,True,,,,,,,,,,none
@@ -3030,7 +3030,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-N_2,,index_diachronica_original.html:5209,False,expected_underscore,True,True,False,,,,expected_underscore,,,,"Syntax Error: Expected '_', but received '' | _#, in monosyllables | ^ @ Rule 1, Line 1",,env
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-N̩,,index_diachronica_original.html:5210,False,prose_or_expected_arrow,False,True,True,,syntax_other,,,,"Syntax Error: Expected end of line, received '̩'. Did you forget a '/' between the output and environment? | N̩ | ^ @ Rule 1, Line 1",,,,input
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-m̩-n̩-r̩-l̩,,index_diachronica_original.html:5211,True,,True,True,,,,,,,,,,,none
-17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-V,,index_diachronica_original.html:5212,False,syntax_other,True,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '(' | (?) | ^ @ Rule 1, Line 1",,,output
+17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-V,,index_diachronica_original.html:5212,False,missing_arrow,,,,,,,,,,,,,multi
 17.3.2,Proto-Indo-European to Erevan Armenian,"Erevan-Armenian-e,iː-u,oː",,index_diachronica_original.html:5218,True,,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | {e,i}ː {u,o}ː | ^ @ Rule 1, Line 1",,,,input
 17.3.2,Proto-Indo-European to Erevan Armenian,"Erevan-Armenian-e,oj-ɛw",,index_diachronica_original.html:5219,True,,True,True,,,,,,,,,,,none
 17.3.2,Proto-Indo-European to Erevan Armenian,"Erevan-Armenian-e,o",,index_diachronica_original.html:5220,True,,True,True,,,,,,,,,,,none
@@ -3045,13 +3045,13 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-kʷ,,index_diachronica_original.html:5229,True,,True,True,True,,,,,,,,,,none
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-t-kʷ,,index_diachronica_original.html:5230,True,,False,True,True,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | t k(ʷ) | ^ @ Rule 1, Line 1",,,,input
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-p-ḱ-kʷ,,index_diachronica_original.html:5231,True,,False,True,,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | p kʲ k(ʷ) | ^ @ Rule 1, Line 1",,,,input
-17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-ɡ́,,index_diachronica_original.html:5232,False,unknown_character,False,False,,,unknown_character,syntax_other,,,"Syntax Error: Unknown character '́' | ɡ́ | ^ @ Rule 1, Line 1","Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | ts (?) | ^ @ Rule 1, Line 1",,,input|output
+17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-ɡ́,,index_diachronica_original.html:5232,False,unknown_character,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '́' | ɡ́ | ^ @ Rule 1, Line 1",,,,input
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-b-d-ɡʷ,,index_diachronica_original.html:5233,True,,False,True,,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | b d ɡ(ʷ) | ^ @ Rule 1, Line 1",,,,input
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-ɡʷʱ,,index_diachronica_original.html:5234,True,,True,True,True,,,,,,,,,,none
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʱ-ɡʷʱ,,index_diachronica_original.html:5235,False,unknown_character,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '́' | bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ | ^ @ Rule 1, Line 1",,,,input
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-j,,index_diachronica_original.html:5236,True,,True,True,True,,,,,,,,,,none
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-j_2,,index_diachronica_original.html:5237,True,,True,True,,,,,,,,,,,none
-17.3.2,Proto-Indo-European to Erevan Armenian,"Erevan-Armenian-sk,ks-kj",,index_diachronica_original.html:5238,True,,True,False,,,,syntax_other,,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | tsʰ tʃʰ (?) | ^ @ Rule 1, Line 1",,,output
+17.3.2,Proto-Indo-European to Erevan Armenian,"Erevan-Armenian-sk,ks-kj",,index_diachronica_original.html:5238,True,,True,True,,,,,,,,,,,none
 17.3.2,Proto-Indo-European to Erevan Armenian,"Erevan-Armenian-sr,rs",,index_diachronica_original.html:5239,True,,True,False,,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | rː | ^ @ Rule 1, Line 1",,,output
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-r,,index_diachronica_original.html:5240,True,,True,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | rː | ^ @ Rule 1, Line 1",,,output
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-l,,index_diachronica_original.html:5241,True,,True,True,True,,,,,,,,,,none
@@ -3062,7 +3062,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-N_2,,index_diachronica_original.html:5246,False,expected_underscore,True,True,False,,,,expected_underscore,,,,"Syntax Error: Expected '_', but received '' | _#, in monosyllables | ^ @ Rule 1, Line 1",,env
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-N̩,,index_diachronica_original.html:5247,False,prose_or_expected_arrow,False,True,True,,syntax_other,,,,"Syntax Error: Expected end of line, received '̩'. Did you forget a '/' between the output and environment? | N̩ | ^ @ Rule 1, Line 1",,,,input
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-m̩-n̩-r̩-l̩,,index_diachronica_original.html:5248,True,,True,True,,,,,,,,,,,none
-17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-V,,index_diachronica_original.html:5249,False,syntax_other,True,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '(' | (?) | ^ @ Rule 1, Line 1",,,output
+17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-V,,index_diachronica_original.html:5249,False,missing_arrow,,,,,,,,,,,,,multi
 17.3.3,Proto-Indo-European to Istanbul Armenian,"Istanbul-Armenian-e,iː-u,oː",,index_diachronica_original.html:5255,True,,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | {e,i}ː {u,o}ː | ^ @ Rule 1, Line 1",,,,input
 17.3.3,Proto-Indo-European to Istanbul Armenian,"Istanbul-Armenian-e,oj-ɛw",,index_diachronica_original.html:5256,True,,True,True,,,,,,,,,,,none
 17.3.3,Proto-Indo-European to Istanbul Armenian,"Istanbul-Armenian-e,o",,index_diachronica_original.html:5257,True,,True,True,,,,,,,,,,,none
@@ -3076,14 +3076,14 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-kʷ,,index_diachronica_original.html:5265,True,,True,True,True,,,,,,,,,,none
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-t-kʷ,,index_diachronica_original.html:5266,True,,False,True,True,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | t k(ʷ) | ^ @ Rule 1, Line 1",,,,input
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-p-ḱ-kʷ,,index_diachronica_original.html:5267,True,,False,True,,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | p kʲ k(ʷ) | ^ @ Rule 1, Line 1",,,,input
-17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-ɡ́,,index_diachronica_original.html:5268,False,unknown_character,False,False,,,unknown_character,syntax_other,,,"Syntax Error: Unknown character '́' | ɡ́ | ^ @ Rule 1, Line 1","Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | ts (?) | ^ @ Rule 1, Line 1",,,input|output
+17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-ɡ́,,index_diachronica_original.html:5268,False,unknown_character,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '́' | ɡ́ | ^ @ Rule 1, Line 1",,,,input
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-b-d-ɡʷ,,index_diachronica_original.html:5269,True,,False,True,,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | b d ɡ(ʷ) | ^ @ Rule 1, Line 1",,,,input
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-ɡʷʱ,,index_diachronica_original.html:5270,True,,True,True,True,,,,,,,,,,none
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-bʱ-ɡ́ʱ-ɡʷʱ,,index_diachronica_original.html:5271,False,unknown_character,False,True,True,,unknown_character,,,,"Syntax Error: Unknown character '́' | bʱ ɡ́ʱ ɡ(ʷ)ʱ | ^ @ Rule 1, Line 1",,,,input
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʱ-ɡʷʱ,,index_diachronica_original.html:5272,False,unknown_character,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '́' | bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ | ^ @ Rule 1, Line 1",,,,input
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-j,,index_diachronica_original.html:5273,True,,True,True,True,,,,,,,,,,none
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-j_2,,index_diachronica_original.html:5274,True,,True,True,,,,,,,,,,,none
-17.3.3,Proto-Indo-European to Istanbul Armenian,"Istanbul-Armenian-sk,ks-kj",,index_diachronica_original.html:5275,True,,True,False,,,,syntax_other,,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | tsʰ tʃʰ (?) | ^ @ Rule 1, Line 1",,,output
+17.3.3,Proto-Indo-European to Istanbul Armenian,"Istanbul-Armenian-sk,ks-kj",,index_diachronica_original.html:5275,True,,True,True,,,,,,,,,,,none
 17.3.3,Proto-Indo-European to Istanbul Armenian,"Istanbul-Armenian-sr,rs",,index_diachronica_original.html:5276,True,,True,False,,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | rː | ^ @ Rule 1, Line 1",,,output
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-r,,index_diachronica_original.html:5277,True,,True,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | rː | ^ @ Rule 1, Line 1",,,output
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-l,,index_diachronica_original.html:5278,True,,True,True,True,,,,,,,,,,none
@@ -3094,7 +3094,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-N_2,,index_diachronica_original.html:5283,False,expected_underscore,True,True,False,,,,expected_underscore,,,,"Syntax Error: Expected '_', but received '' | _#, in monosyllables | ^ @ Rule 1, Line 1",,env
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-N̩,,index_diachronica_original.html:5284,False,prose_or_expected_arrow,False,True,True,,syntax_other,,,,"Syntax Error: Expected end of line, received '̩'. Did you forget a '/' between the output and environment? | N̩ | ^ @ Rule 1, Line 1",,,,input
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-m̩-n̩-r̩-l̩,,index_diachronica_original.html:5285,True,,True,True,,,,,,,,,,,none
-17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-V,,index_diachronica_original.html:5286,False,syntax_other,True,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '(' | (?) | ^ @ Rule 1, Line 1",,,output
+17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-V,,index_diachronica_original.html:5286,False,missing_arrow,,,,,,,,,,,,,multi
 17.3.4,Proto-Indo-European to Kharpert Armenian,"Kharpert-Armenian-e,iː-u,oː",,index_diachronica_original.html:5292,True,,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | {e,i}ː {u,o}ː | ^ @ Rule 1, Line 1",,,,input
 17.3.4,Proto-Indo-European to Kharpert Armenian,"Kharpert-Armenian-e,oj-ɛw",,index_diachronica_original.html:5293,True,,True,True,,,,,,,,,,,none
 17.3.4,Proto-Indo-European to Kharpert Armenian,"Kharpert-Armenian-e,o",,index_diachronica_original.html:5294,True,,True,True,,,,,,,,,,,none
@@ -3109,13 +3109,13 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-kʷ,,index_diachronica_original.html:5303,True,,True,True,True,,,,,,,,,,none
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-t-kʷ,,index_diachronica_original.html:5304,True,,False,True,True,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | t k(ʷ) | ^ @ Rule 1, Line 1",,,,input
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-p-ḱ-kʷ,,index_diachronica_original.html:5305,True,,False,True,,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | p kʲ k(ʷ) | ^ @ Rule 1, Line 1",,,,input
-17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-ɡ́,,index_diachronica_original.html:5306,False,unknown_character,False,False,,,unknown_character,syntax_other,,,"Syntax Error: Unknown character '́' | ɡ́ | ^ @ Rule 1, Line 1","Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | ts (?) | ^ @ Rule 1, Line 1",,,input|output
+17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-ɡ́,,index_diachronica_original.html:5306,False,unknown_character,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '́' | ɡ́ | ^ @ Rule 1, Line 1",,,,input
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-b-d-ɡʷ,,index_diachronica_original.html:5307,True,,False,True,,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | b d ɡ(ʷ) | ^ @ Rule 1, Line 1",,,,input
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʷʱ,,index_diachronica_original.html:5308,False,unknown_character,False,True,True,,unknown_character,,,,"Syntax Error: Unknown character '́' | bʱ dʱ ɡ́ʱ ɡ(ʷ)ʱ | ^ @ Rule 1, Line 1",,,,input
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʱ-ɡʷʱ,,index_diachronica_original.html:5309,False,unknown_character,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '́' | bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ | ^ @ Rule 1, Line 1",,,,input
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-j,,index_diachronica_original.html:5310,True,,True,True,True,,,,,,,,,,none
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-j_2,,index_diachronica_original.html:5311,True,,True,True,,,,,,,,,,,none
-17.3.4,Proto-Indo-European to Kharpert Armenian,"Kharpert-Armenian-sk,ks-kj",,index_diachronica_original.html:5312,True,,True,False,,,,syntax_other,,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | tsʰ tʃʰ (?) | ^ @ Rule 1, Line 1",,,output
+17.3.4,Proto-Indo-European to Kharpert Armenian,"Kharpert-Armenian-sk,ks-kj",,index_diachronica_original.html:5312,True,,True,True,,,,,,,,,,,none
 17.3.4,Proto-Indo-European to Kharpert Armenian,"Kharpert-Armenian-sr,rs",,index_diachronica_original.html:5313,True,,True,False,,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | rː | ^ @ Rule 1, Line 1",,,output
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-r,,index_diachronica_original.html:5314,True,,True,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | rː | ^ @ Rule 1, Line 1",,,output
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-l,,index_diachronica_original.html:5315,True,,True,True,True,,,,,,,,,,none
@@ -3126,7 +3126,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-N_2,,index_diachronica_original.html:5320,False,expected_underscore,True,True,False,,,,expected_underscore,,,,"Syntax Error: Expected '_', but received '' | _#, in monosyllables | ^ @ Rule 1, Line 1",,env
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-N̩,,index_diachronica_original.html:5321,False,prose_or_expected_arrow,False,True,True,,syntax_other,,,,"Syntax Error: Expected end of line, received '̩'. Did you forget a '/' between the output and environment? | N̩ | ^ @ Rule 1, Line 1",,,,input
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-m̩-n̩-r̩-l̩,,index_diachronica_original.html:5322,True,,True,True,,,,,,,,,,,none
-17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-V,,index_diachronica_original.html:5323,False,syntax_other,True,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '(' | (?) | ^ @ Rule 1, Line 1",,,output
+17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-V,,index_diachronica_original.html:5323,False,missing_arrow,,,,,,,,,,,,,multi
 17.3.5,Proto-Indo-European to Sebastia Armenian,"Sebastia-Armenian-e,iː-u,oː",,index_diachronica_original.html:5329,True,,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | {e,i}ː {u,o}ː | ^ @ Rule 1, Line 1",,,,input
 17.3.5,Proto-Indo-European to Sebastia Armenian,"Sebastia-Armenian-e,oj-ɛw",,index_diachronica_original.html:5330,True,,True,True,,,,,,,,,,,none
 17.3.5,Proto-Indo-European to Sebastia Armenian,"Sebastia-Armenian-e,o",,index_diachronica_original.html:5331,True,,True,True,,,,,,,,,,,none
@@ -3141,12 +3141,12 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-kʷ,,index_diachronica_original.html:5340,True,,True,True,True,,,,,,,,,,none
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-t-kʷ,,index_diachronica_original.html:5341,True,,False,True,True,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | t k(ʷ) | ^ @ Rule 1, Line 1",,,,input
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-p-ḱ-kʷ,,index_diachronica_original.html:5342,True,,False,True,,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | p kʲ k(ʷ) | ^ @ Rule 1, Line 1",,,,input
-17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-ɡ́,,index_diachronica_original.html:5343,False,unknown_character,False,False,,,unknown_character,syntax_other,,,"Syntax Error: Unknown character '́' | ɡ́ | ^ @ Rule 1, Line 1","Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | ts (?) | ^ @ Rule 1, Line 1",,,input|output
+17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-ɡ́,,index_diachronica_original.html:5343,False,unknown_character,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '́' | ɡ́ | ^ @ Rule 1, Line 1",,,,input
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-b-d-ɡʷ,,index_diachronica_original.html:5344,True,,False,True,,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | b d ɡ(ʷ) | ^ @ Rule 1, Line 1",,,,input
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʱ-ɡʷʱ,,index_diachronica_original.html:5345,False,unknown_character,False,True,,True,unknown_character,,,,"Syntax Error: Unknown character '́' | bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ | ^ @ Rule 1, Line 1",,,,input
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-j,,index_diachronica_original.html:5346,True,,True,True,True,,,,,,,,,,none
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-j_2,,index_diachronica_original.html:5347,True,,True,True,,,,,,,,,,,none
-17.3.5,Proto-Indo-European to Sebastia Armenian,"Sebastia-Armenian-sk,ks-kj",,index_diachronica_original.html:5348,True,,True,False,,,,syntax_other,,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | tsʰ tʃʰ (?) | ^ @ Rule 1, Line 1",,,output
+17.3.5,Proto-Indo-European to Sebastia Armenian,"Sebastia-Armenian-sk,ks-kj",,index_diachronica_original.html:5348,True,,True,True,,,,,,,,,,,none
 17.3.5,Proto-Indo-European to Sebastia Armenian,"Sebastia-Armenian-sr,rs",,index_diachronica_original.html:5349,True,,True,False,,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | rː | ^ @ Rule 1, Line 1",,,output
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-r,,index_diachronica_original.html:5350,True,,True,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | rː | ^ @ Rule 1, Line 1",,,output
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-l,,index_diachronica_original.html:5351,True,,True,True,True,,,,,,,,,,none
@@ -3157,7 +3157,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-N_2,,index_diachronica_original.html:5356,False,expected_underscore,True,True,False,,,,expected_underscore,,,,"Syntax Error: Expected '_', but received '' | _#, in monosyllables | ^ @ Rule 1, Line 1",,env
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-N̩,,index_diachronica_original.html:5357,False,prose_or_expected_arrow,False,True,True,,syntax_other,,,,"Syntax Error: Expected end of line, received '̩'. Did you forget a '/' between the output and environment? | N̩ | ^ @ Rule 1, Line 1",,,,input
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-m̩-n̩-r̩-l̩,,index_diachronica_original.html:5358,True,,True,True,,,,,,,,,,,none
-17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-V,,index_diachronica_original.html:5359,False,syntax_other,True,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '(' | (?) | ^ @ Rule 1, Line 1",,,output
+17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-V,,index_diachronica_original.html:5359,False,missing_arrow,,,,,,,,,,,,,multi
 17.3.6,Proto-Indo-European to Southeast Armenian,"Southeast-Armenian-e,iː-u,oː",,index_diachronica_original.html:5365,True,,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | {e,i}ː {u,o}ː | ^ @ Rule 1, Line 1",,,,input
 17.3.6,Proto-Indo-European to Southeast Armenian,"Southeast-Armenian-e,oj-ɛw",,index_diachronica_original.html:5366,True,,True,True,,,,,,,,,,,none
 17.3.6,Proto-Indo-European to Southeast Armenian,"Southeast-Armenian-e,o",,index_diachronica_original.html:5367,True,,True,True,,,,,,,,,,,none
@@ -3172,7 +3172,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-kʷ,,index_diachronica_original.html:5376,True,,True,True,True,,,,,,,,,,none
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-t-kʷ,,index_diachronica_original.html:5377,True,,False,True,True,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | t k(ʷ) | ^ @ Rule 1, Line 1",,,,input
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-p-ḱ-kʷ,,index_diachronica_original.html:5378,True,,False,True,,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | p kʲ k(ʷ) | ^ @ Rule 1, Line 1",,,,input
-17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-ɡ́,,index_diachronica_original.html:5379,False,unknown_character,False,False,,,unknown_character,syntax_other,,,"Syntax Error: Unknown character '́' | ɡ́ | ^ @ Rule 1, Line 1","Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | ts (?) | ^ @ Rule 1, Line 1",,,input|output
+17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-ɡ́,,index_diachronica_original.html:5379,False,unknown_character,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '́' | ɡ́ | ^ @ Rule 1, Line 1",,,,input
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-b-d-ɡʷ,,index_diachronica_original.html:5380,True,,False,True,,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | b d ɡ(ʷ) | ^ @ Rule 1, Line 1",,,,input
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-ɡʷʱ,,index_diachronica_original.html:5381,True,,True,True,True,,,,,,,,,,none
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-bʱ-ɡ́ʱ-ɡʷʱ,,index_diachronica_original.html:5382,False,unknown_character,False,True,True,,unknown_character,,,,"Syntax Error: Unknown character '́' | bʱ ɡ́ʱ ɡʷʱ | ^ @ Rule 1, Line 1",,,,input
@@ -3180,7 +3180,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʱ-ɡʷʱ_2,,index_diachronica_original.html:5384,False,unknown_character,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '́' | bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ | ^ @ Rule 1, Line 1",,,,input
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-j,,index_diachronica_original.html:5385,True,,True,True,True,,,,,,,,,,none
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-j_2,,index_diachronica_original.html:5386,True,,True,True,,,,,,,,,,,none
-17.3.6,Proto-Indo-European to Southeast Armenian,"Southeast-Armenian-sk,ks-kj",,index_diachronica_original.html:5387,True,,True,False,,,,syntax_other,,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | tsʰ tʃʰ (?) | ^ @ Rule 1, Line 1",,,output
+17.3.6,Proto-Indo-European to Southeast Armenian,"Southeast-Armenian-sk,ks-kj",,index_diachronica_original.html:5387,True,,True,True,,,,,,,,,,,none
 17.3.6,Proto-Indo-European to Southeast Armenian,"Southeast-Armenian-sr,rs",,index_diachronica_original.html:5388,True,,True,False,,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | rː | ^ @ Rule 1, Line 1",,,output
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-r,,index_diachronica_original.html:5389,True,,True,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | rː | ^ @ Rule 1, Line 1",,,output
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-l,,index_diachronica_original.html:5390,True,,True,True,True,,,,,,,,,,none
@@ -3191,7 +3191,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-N_2,,index_diachronica_original.html:5395,False,expected_underscore,True,True,False,,,,expected_underscore,,,,"Syntax Error: Expected '_', but received '' | _#, in monosyllables | ^ @ Rule 1, Line 1",,env
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-N̩,,index_diachronica_original.html:5396,False,prose_or_expected_arrow,False,True,True,,syntax_other,,,,"Syntax Error: Expected end of line, received '̩'. Did you forget a '/' between the output and environment? | N̩ | ^ @ Rule 1, Line 1",,,,input
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-m̩-n̩-r̩-l̩,,index_diachronica_original.html:5397,True,,True,True,,,,,,,,,,,none
-17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-V,,index_diachronica_original.html:5398,False,syntax_other,True,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '(' | (?) | ^ @ Rule 1, Line 1",,,output
+17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-V,,index_diachronica_original.html:5398,False,missing_arrow,,,,,,,,,,,,,multi
 17.3.7,Proto-Indo-European to Southwest Armenian,"Southwest-Armenian-e,iː-u,oː",,index_diachronica_original.html:5404,True,,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | {e,i}ː {u,o}ː | ^ @ Rule 1, Line 1",,,,input
 17.3.7,Proto-Indo-European to Southwest Armenian,"Southwest-Armenian-e,oj-ɛw",,index_diachronica_original.html:5405,True,,True,True,,,,,,,,,,,none
 17.3.7,Proto-Indo-European to Southwest Armenian,"Southwest-Armenian-e,o",,index_diachronica_original.html:5406,True,,True,True,,,,,,,,,,,none
@@ -3206,14 +3206,14 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-kʷ,,index_diachronica_original.html:5415,True,,True,True,True,,,,,,,,,,none
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-t-kʷ,,index_diachronica_original.html:5416,True,,False,True,True,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | t k(ʷ) | ^ @ Rule 1, Line 1",,,,input
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-p-ḱ-kʷ,,index_diachronica_original.html:5417,True,,False,True,,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | p kʲ k(ʷ) | ^ @ Rule 1, Line 1",,,,input
-17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-ɡ́,,index_diachronica_original.html:5418,False,unknown_character,False,False,,,unknown_character,syntax_other,,,"Syntax Error: Unknown character '́' | ɡ́ | ^ @ Rule 1, Line 1","Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | ts (?) | ^ @ Rule 1, Line 1",,,input|output
+17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-ɡ́,,index_diachronica_original.html:5418,False,unknown_character,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '́' | ɡ́ | ^ @ Rule 1, Line 1",,,,input
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-b-d-ɡʷ,,index_diachronica_original.html:5419,True,,False,True,,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | b d ɡ(ʷ) | ^ @ Rule 1, Line 1",,,,input
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-ɡʷʱ,,index_diachronica_original.html:5420,True,,True,True,True,,,,,,,,,,none
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-bʱ-ɡ́ʱ-ɡʷʱ,,index_diachronica_original.html:5421,False,unknown_character,False,True,True,,unknown_character,,,,"Syntax Error: Unknown character '́' | bʱ ɡ́ʱ ɡʷʱ | ^ @ Rule 1, Line 1",,,,input
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʱ-ɡʷʱ,,index_diachronica_original.html:5422,False,unknown_character,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '́' | bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ | ^ @ Rule 1, Line 1",,,,input
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-j,,index_diachronica_original.html:5423,True,,True,True,True,,,,,,,,,,none
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-j_2,,index_diachronica_original.html:5424,True,,True,True,,,,,,,,,,,none
-17.3.7,Proto-Indo-European to Southwest Armenian,"Southwest-Armenian-sk,ks-kj",,index_diachronica_original.html:5425,True,,True,False,,,,syntax_other,,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | tsʰ tʃʰ (?) | ^ @ Rule 1, Line 1",,,output
+17.3.7,Proto-Indo-European to Southwest Armenian,"Southwest-Armenian-sk,ks-kj",,index_diachronica_original.html:5425,True,,True,True,,,,,,,,,,,none
 17.3.7,Proto-Indo-European to Southwest Armenian,"Southwest-Armenian-sr,rs",,index_diachronica_original.html:5426,True,,True,False,,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | rː | ^ @ Rule 1, Line 1",,,output
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-r,,index_diachronica_original.html:5427,True,,True,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | rː | ^ @ Rule 1, Line 1",,,output
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-l,,index_diachronica_original.html:5428,True,,True,True,True,,,,,,,,,,none
@@ -3224,7 +3224,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-N_2,,index_diachronica_original.html:5433,False,expected_underscore,True,True,False,,,,expected_underscore,,,,"Syntax Error: Expected '_', but received '' | _#, in monosyllables | ^ @ Rule 1, Line 1",,env
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-N̩,,index_diachronica_original.html:5434,False,prose_or_expected_arrow,False,True,True,,syntax_other,,,,"Syntax Error: Expected end of line, received '̩'. Did you forget a '/' between the output and environment? | N̩ | ^ @ Rule 1, Line 1",,,,input
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-m̩-n̩-r̩-l̩,,index_diachronica_original.html:5435,True,,True,True,,,,,,,,,,,none
-17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-V,,index_diachronica_original.html:5436,False,syntax_other,True,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '(' | (?) | ^ @ Rule 1, Line 1",,,output
+17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-V,,index_diachronica_original.html:5436,False,missing_arrow,,,,,,,,,,,,,multi
 17.4.1,Proto-Indo-European to Avestan,Avestan_2-bʱ-dʱ-ɡ́ʱ,,index_diachronica_original.html:5445,False,unknown_character,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '́' | bʱ dʱ ɡ́ʱ | ^ @ Rule 1, Line 1",,,,input
 17.4.1,Proto-Indo-European to Avestan,Avestan_2-ḱ-ɡ́,,index_diachronica_original.html:5446,False,unknown_character,False,True,,,unknown_character,,,,"Syntax Error: Unknown character '́' | kʲ ɡ́ | ^ @ Rule 1, Line 1",,,,input
 17.4.1,Proto-Indo-European to Avestan,Avestan_2-kʷ-ɡʷʱ,,index_diachronica_original.html:5447,False,syntax_other,False,True,False,,syntax_other,,unknown_grouping,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | k(ʷ) ɡ(ʷ)(ʱ) | ^ @ Rule 1, Line 1",,"Syntax Error: Unknown grouping 'E'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | _E | ^ @ Rule 1, Line 1",,input|env
@@ -3388,7 +3388,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.7,Proto-Indo-European to Common Germanic,Common-Germanic-eː,,index_diachronica_original.html:5639,True,,False,False,,,unknown_character,unknown_character,,,"Syntax Error: Unknown character 'ː' | eː | ^ @ Rule 1, Line 1","Syntax Error: Unknown character 'ː' | æː | ^ @ Rule 1, Line 1",,,input|output
 17.7,Proto-Indo-European to Common Germanic,Common-Germanic-o,,index_diachronica_original.html:5640,True,,True,True,,,,,,,,,,,none
 17.7,Proto-Indo-European to Common Germanic,Common-Germanic-ei-oi,,index_diachronica_original.html:5641,True,,True,False,,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | iː ai | ^ @ Rule 1, Line 1",,,output
-17.7,Proto-Indo-European to Common Germanic,"Common-Germanic-eːi-oːi,aːi",,index_diachronica_original.html:5642,True,,False,False,,,unknown_character,unknown_character,,,"Syntax Error: Unknown character 'ː' | eːi {oːi,aːi} | ^ @ Rule 1, Line 1","Syntax Error: Unknown character 'ː' | eː oː (?) | ^ @ Rule 1, Line 1",,,input|output
+17.7,Proto-Indo-European to Common Germanic,"Common-Germanic-eːi-oːi,aːi",,index_diachronica_original.html:5642,True,,False,False,,,unknown_character,unknown_character,,,"Syntax Error: Unknown character 'ː' | eːi {oːi,aːi} | ^ @ Rule 1, Line 1","Syntax Error: Unknown character 'ː' | eː oː | ^ @ Rule 1, Line 1",,,input|output
 17.7,Proto-Indo-European to Common Germanic,Common-Germanic-eu-ou,,index_diachronica_original.html:5643,True,,True,True,,,,,,,,,,,none
 17.7.1,Common Germanic to Gothic,Gothic-—-o-e,,index_diachronica_original.html:5650,True,,True,True,,,,,,,,,,,none
 17.7.1,Common Germanic to Gothic,Gothic-—-u,,index_diachronica_original.html:5651,True,,True,True,True,,,,,,,,,,none
@@ -3430,7 +3430,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-a,,index_diachronica_original.html:5700,True,,True,True,True,,,,,,,,,,none
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-VN,,index_diachronica_original.html:5701,True,,True,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | ṽː | ^ @ Rule 1, Line 1",,,output
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-a_2,,index_diachronica_original.html:5702,False,expected_underscore,True,False,False,False,,unknown_character,expected_underscore,unknown_grouping,,"Syntax Error: Unknown character 'ː' | æː | ^ @ Rule 1, Line 1","Syntax Error: Expected '_', but received ',' | short only, includes diphthongs | ^ @ Rule 1, Line 1","Syntax Error: Unknown grouping 'B'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | B or *ã in next syllable | ^ @ Rule 1, Line 1",output|env|exception
-17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-k-ɡ,,index_diachronica_original.html:5703,True,,True,False,,,,syntax_other,,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | tʃ j(?) | ^ @ Rule 1, Line 1",,,output
+17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-k-ɡ,,index_diachronica_original.html:5703,True,,True,True,,,,,,,,,,,none
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-æː,,index_diachronica_original.html:5704,True,,False,False,,,unknown_character,unknown_character,,,"Syntax Error: Unknown character 'ː' | æː | ^ @ Rule 1, Line 1","Syntax Error: Unknown character 'ː' | aːbut the article doesn’t elaborate | ^ @ Rule 1, Line 1",,,input|output
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-æː_2,,index_diachronica_original.html:5705,True,,False,False,,,unknown_character,unknown_character,,,"Syntax Error: Unknown character 'ː' | æː | ^ @ Rule 1, Line 1","Syntax Error: Unknown character 'ː' | eː | ^ @ Rule 1, Line 1",,,input|output
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-æu,,index_diachronica_original.html:5706,False,syntax_other,,,,,,,,,,,,,multi
@@ -4318,7 +4318,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.8.8,Proto-Indo-European to Ionic Greek,Ionic-Greek-æː,,index_diachronica_original.html:6745,True,,False,False,,,unknown_character,unknown_character,,,"Syntax Error: Unknown character 'ː' | æː | ^ @ Rule 1, Line 1","Syntax Error: Unknown character 'ː' | ɛː | ^ @ Rule 1, Line 1",,,input|output
 17.8.8,Proto-Indo-European to Ionic Greek,Ionic-Greek-ej-ow,,index_diachronica_original.html:6746,True,,True,False,,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | eː oː happened | ^ @ Rule 1, Line 1",,,output
 17.8.8,Proto-Indo-European to Ionic Greek,Ionic-Greek-uːj,,index_diachronica_original.html:6748,True,,False,False,,,unknown_character,unknown_character,,,"Syntax Error: Unknown character 'ː' | u(ː) | ^ @ Rule 1, Line 1","Syntax Error: Unknown character 'ː' | y(ː) | ^ @ Rule 1, Line 1",,,input|output
-17.8.8,Proto-Indo-European to Ionic Greek,Ionic-Greek-oː,,index_diachronica_original.html:6749,True,,False,False,,,unknown_character,unknown_character,,,"Syntax Error: Unknown character 'ː' | oː | ^ @ Rule 1, Line 1","Syntax Error: Unknown character 'ː' | uː (?) | ^ @ Rule 1, Line 1",,,input|output
+17.8.8,Proto-Indo-European to Ionic Greek,Ionic-Greek-oː,,index_diachronica_original.html:6749,True,,False,False,,,unknown_character,unknown_character,,,"Syntax Error: Unknown character 'ː' | oː | ^ @ Rule 1, Line 1","Syntax Error: Unknown character 'ː' | uː | ^ @ Rule 1, Line 1",,,input|output
 17.8.8,Proto-Indo-European to Ionic Greek,Ionic-Greek-j_2,,index_diachronica_original.html:6750,True,,True,True,False,,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | Vː_ | ^ @ Rule 1, Line 1",,env
 17.8.8,Proto-Indo-European to Ionic Greek,Ionic-Greek-eː,,index_diachronica_original.html:6751,True,,False,False,True,,unknown_character,unknown_character,,,"Syntax Error: Unknown character 'ː' | eː | ^ @ Rule 1, Line 1","Syntax Error: Unknown character 'ː' | iː | ^ @ Rule 1, Line 1",,,input|output
 17.8.8,Proto-Indo-European to Ionic Greek,Ionic-Greek-ɛː,,index_diachronica_original.html:6752,True,,False,False,,,unknown_character,unknown_character,,,"Syntax Error: Unknown character 'ː' | ɛː | ^ @ Rule 1, Line 1","Syntax Error: Unknown character 'ː' | eː | ^ @ Rule 1, Line 1",,,input|output
@@ -5025,7 +5025,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.12.1.1.3,Latin to French,French-ó_2,,index_diachronica_original.html:7548,True,,True,True,True,,,,,,,,,,none
 17.12.1.1.3,Latin to French,French-ó_3,,index_diachronica_original.html:7549,False,unknown_feature,True,True,False,,,,unknown_feature,,,,"Syntax Error: Unknown feature 'closed'. Did you mean cons? | U[+closed] | ^^^^^^^ @ Rule 1, Line 1",,env
 17.12.1.1.3,Latin to French,French-e,,index_diachronica_original.html:7550,False,unknown_feature,True,True,False,,,,unknown_feature,,,,"Syntax Error: Unknown feature 'open'. Did you mean ten? | #(C…)_($…):[+stress] in U[+open] | ^^^^^ @ Rule 1, Line 1",,env
-17.12.1.1.3,Latin to French,French-e_2,,index_diachronica_original.html:7551,False,unknown_feature,True,True,False,,,,unknown_feature,,,,"Syntax Error: Unknown feature 'closed'. Did you mean cons? | #(C…)_($…):[+stress] in U[+closed] or _V (?) | ^^^^^^^ @ Rule 1, Line 1",,env
+17.12.1.1.3,Latin to French,French-e_2,,index_diachronica_original.html:7551,False,unknown_feature,True,True,False,,,,unknown_feature,,,,"Syntax Error: Unknown feature 'closed'. Did you mean cons? | #(C…)_($…):[+stress] in U[+closed] or _V | ^^^^^^^ @ Rule 1, Line 1",,env
 17.12.1.1.3,Latin to French,French-o,0,index_diachronica_original.html:7552,True,,True,True,,,,,,,,,,,none
 17.12.1.1.3,Latin to French,French-o,1,index_diachronica_original.html:7552,True,,True,True,,,,,,,,,,,none
 17.12.1.1.3,Latin to French,French-a_2,,index_diachronica_original.html:7553,False,unknown_feature,True,True,False,,,,unknown_feature,,,,"Syntax Error: Unknown feature 'open'. Did you mean ten? | #{tʃ,dʒ}_($…):[+stress] in U[+open] | ^^^^^ @ Rule 1, Line 1",,env
@@ -5326,7 +5326,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.12.1.1.6,Vulgar Latin to Old Provençal,"Old-Provençal-t,dl-k,ɡl",,index_diachronica_original.html:7881,True,,True,False,,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | lː ʎ | ^ @ Rule 1, Line 1",,,output
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-∅_3,,index_diachronica_original.html:7882,True,,False,True,True,,syntax_other,,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | ∅ | ^ @ Rule 1, Line 1",,,,input
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-p-j,,index_diachronica_original.html:7883,True,,True,True,True,,,,,,,,,,none
-17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-p-k-tʃ-b-ɡ-β-j,,index_diachronica_original.html:7884,False,prose_or_expected_arrow,,,,,,,,,,,,,multi
+17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-p-k-tʃ-b-ɡ-β-j,,index_diachronica_original.html:7884,False,syntax_other,,,,,,,,,,,,,multi
 17.12.1.1.6,Vulgar Latin to Old Provençal,"Old-Provençal-t,d",,index_diachronica_original.html:7885,True,,,,,,,,,,,,,,none
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-ð_6,,index_diachronica_original.html:7886,True,,True,True,True,,,,,,,,,,none
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-∅_4,,index_diachronica_original.html:7887,True,,False,True,True,,syntax_other,,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | ∅ | ^ @ Rule 1, Line 1",,,,input
@@ -6073,7 +6073,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 20.2.1,Proto-Kx’a to ÇHoan,ÇHoan-!!,,index_diachronica_original.html:8837,False,syntax_other,False,False,,,syntax_other,syntax_other,,,"Syntax Error: Could not get value of IPA 'ǃ'. | !! | ^ @ Rule 1, Line 1","Syntax Error: Could not get value of IPA 'ǁ'. | ǁ | ^ @ Rule 1, Line 1",,,input|output
 20.2.1,Proto-Kx’a to ÇHoan,ÇHoan-ⁿQʰ-Q͡ɢ,,index_diachronica_original.html:8838,False,unknown_character,False,False,,,unknown_character,unknown_grouping,,,"Syntax Error: Unknown character '͡' | ⁿQʰ Q͡ɢ | ^ @ Rule 1, Line 1","Syntax Error: Unknown grouping 'Q'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | Qʰ Q | ^ @ Rule 1, Line 1",,,input|output
 20.2.2,Proto-Kx’a to Northwestern !Xun,Northwestern-!Xun-a,,index_diachronica_original.html:8843,True,,True,True,True,,,,,,,,,,none
-20.2.2,Proto-Kx’a to Northwestern !Xun,Northwestern-!Xun-ui,,index_diachronica_original.html:8844,True,,True,False,,,,syntax_other,,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | o (?) | ^ @ Rule 1, Line 1",,,output
+20.2.2,Proto-Kx’a to Northwestern !Xun,Northwestern-!Xun-ui,,index_diachronica_original.html:8844,True,,True,True,,,,,,,,,,,none
 20.2.2,Proto-Kx’a to Northwestern !Xun,Northwestern-!Xun-i,,index_diachronica_original.html:8845,True,,True,True,True,,,,,,,,,,none
 20.2.2,Proto-Kx’a to Northwestern !Xun,Northwestern-!Xun-a_2,,index_diachronica_original.html:8846,True,,True,True,True,,,,,,,,,,none
 20.2.2,Proto-Kx’a to Northwestern !Xun,Northwestern-!Xun-u,,index_diachronica_original.html:8847,True,,True,True,True,,,,,,,,,,none
@@ -6086,7 +6086,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 20.2.2,Proto-Kx’a to Northwestern !Xun,Northwestern-!Xun-!!-ʘ,,index_diachronica_original.html:8855,False,syntax_other,False,False,,,syntax_other,syntax_other,,,"Syntax Error: Could not get value of IPA 'ǃ'. | !! ʘ | ^ @ Rule 1, Line 1","Syntax Error: Could not get value of IPA 'ǁ'. | ǁ ǀ | ^ @ Rule 1, Line 1",,,input|output
 20.2.2,Proto-Kx’a to Northwestern !Xun,Northwestern-!Xun-ǂ,,index_diachronica_original.html:8856,False,syntax_other,False,False,,,syntax_other,syntax_other,,,"Syntax Error: Could not get value of IPA 'ǂ'. | ǂ | ^ @ Rule 1, Line 1","Syntax Error: Could not get value of IPA 'ǃ'. | !! | ^ @ Rule 1, Line 1",,,input|output
 20.2.3,Proto-Kx’a to Southeastern !Xun,Southeastern-!Xun-a,,index_diachronica_original.html:8861,True,,True,True,True,,,,,,,,,,none
-20.2.3,Proto-Kx’a to Southeastern !Xun,Southeastern-!Xun-ui,,index_diachronica_original.html:8862,True,,True,False,,,,syntax_other,,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | o (?) | ^ @ Rule 1, Line 1",,,output
+20.2.3,Proto-Kx’a to Southeastern !Xun,Southeastern-!Xun-ui,,index_diachronica_original.html:8862,True,,True,True,,,,,,,,,,,none
 20.2.3,Proto-Kx’a to Southeastern !Xun,Southeastern-!Xun-i,,index_diachronica_original.html:8863,True,,True,True,True,,,,,,,,,,none
 20.2.3,Proto-Kx’a to Southeastern !Xun,Southeastern-!Xun-ɛ-ɔ,,index_diachronica_original.html:8864,True,,True,True,,,,,,,,,,,none
 20.2.3,Proto-Kx’a to Southeastern !Xun,Southeastern-!Xun-u,,index_diachronica_original.html:8865,True,,True,True,True,,,,,,,,,,none
@@ -6105,7 +6105,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 21.1,Proto-Lakes Plain to Proto-Far West,Proto-Far-West-d,,index_diachronica_original.html:8899,True,,True,True,True,,,,,,,,,,none
 21.1,Proto-Lakes Plain to Proto-Far West,Proto-Far-West-∅,,index_diachronica_original.html:8900,True,,False,True,True,,syntax_other,,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | ∅ | ^ @ Rule 1, Line 1",,,,input
 21.1,Proto-Lakes Plain to Proto-Far West,Proto-Far-West-CV,,index_diachronica_original.html:8901,False,runtime_delete_only_segment,True,True,True,,,,,,,,,,multi
-21.1,Proto-Lakes Plain to Proto-Far West,Proto-Far-West-e-o,,index_diachronica_original.html:8902,True,,True,False,,,,syntax_other,,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | ɛ ɔ (?) | ^ @ Rule 1, Line 1",,,output
+21.1,Proto-Lakes Plain to Proto-Far West,Proto-Far-West-e-o,,index_diachronica_original.html:8902,True,,True,True,,,,,,,,,,,none
 21.1.1,Proto-Far West to Awera,Awera-k,,index_diachronica_original.html:8907,True,,True,True,True,,,,,,,,,,none
 21.1.1,Proto-Far West to Awera,Awera-b,0,index_diachronica_original.html:8908,True,,True,True,True,,,,,,,,,,none
 21.1.1,Proto-Far West to Awera,Awera-b,1,index_diachronica_original.html:8908,True,,True,True,True,,,,,,,,,,none
@@ -6135,7 +6135,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 21.2.1,Proto-Tariku to Proto-Central Tariku,Proto-Central-Tariku-d,0,index_diachronica_original.html:8943,True,,True,True,True,,,,,,,,,,none
 21.2.1,Proto-Tariku to Proto-Central Tariku,Proto-Central-Tariku-d,1,index_diachronica_original.html:8943,True,,True,True,True,,,,,,,,,,none
 21.2.1,Proto-Tariku to Proto-Central Tariku,Proto-Central-Tariku-iC-uC,,index_diachronica_original.html:8944,True,,True,True,True,,,,,,,,,,none
-21.2.1,Proto-Tariku to Proto-Central Tariku,Proto-Central-Tariku-a,,index_diachronica_original.html:8945,True,,True,False,,,,syntax_other,,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | e (?) | ^ @ Rule 1, Line 1",,,output
+21.2.1,Proto-Tariku to Proto-Central Tariku,Proto-Central-Tariku-a,,index_diachronica_original.html:8945,True,,True,True,,,,,,,,,,,none
 21.2.1,Proto-Tariku to Proto-Central Tariku,Proto-Central-Tariku-e-o,,index_diachronica_original.html:8946,True,,True,True,,,,,,,,,,,none
 21.2.1.1,Proto-Central Tariku to Edopi,Edopi-C,,index_diachronica_original.html:8951,True,,True,True,True,,,,,,,,,,none
 21.2.1.1,Proto-Central Tariku to Edopi,Edopi-ɸ,,index_diachronica_original.html:8952,True,,True,True,,,,,,,,,,,none
@@ -6161,7 +6161,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 21.2.2,Proto-Tariku to Proto-East Tariku,Proto-East-Tariku-ti,1,index_diachronica_original.html:8974,True,,True,True,True,,,,,,,,,,none
 21.2.2,Proto-Tariku to Proto-East Tariku,Proto-East-Tariku-ɾ,0,index_diachronica_original.html:8975,True,,True,True,True,,,,,,,,,,none
 21.2.2,Proto-Tariku to Proto-East Tariku,Proto-East-Tariku-ɾ,1,index_diachronica_original.html:8975,True,,True,True,True,,,,,,,,,,none
-21.2.2,Proto-Tariku to Proto-East Tariku,Proto-East-Tariku-a,,index_diachronica_original.html:8976,True,,True,False,,,,syntax_other,,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | e (?) | ^ @ Rule 1, Line 1",,,output
+21.2.2,Proto-Tariku to Proto-East Tariku,Proto-East-Tariku-a,,index_diachronica_original.html:8976,True,,True,True,,,,,,,,,,,none
 21.2.2,Proto-Tariku to Proto-East Tariku,Proto-East-Tariku-e,,index_diachronica_original.html:8977,True,,True,True,,,,,,,,,,,none
 21.2.2.1,Proto-East Tariku to Biritai,Biritai-p,0,index_diachronica_original.html:8982,True,,True,True,,,,,,,,,,,none
 21.2.2.1,Proto-East Tariku to Biritai,Biritai-p,1,index_diachronica_original.html:8982,True,,True,True,,,,,,,,,,,none
@@ -6292,7 +6292,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 22.5,Proto-Arawá to Kulína-Dení,Kulína-Dení-ɓ_2,,index_diachronica_original.html:9187,True,,True,True,True,True,,,,,,,,,none
 22.5,Proto-Arawá to Kulína-Dení,Kulína-Dení-ɗ,,index_diachronica_original.html:9188,True,,True,True,,,,,,,,,,,none
 22.5,Proto-Arawá to Kulína-Dení,Kulína-Dení-ɡ,,index_diachronica_original.html:9189,True,,True,True,,,,,,,,,,,none
-22.5,Proto-Arawá to Kulína-Dení,Kulína-Dení-tʃ,,index_diachronica_original.html:9190,True,,True,False,,,,syntax_other,,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | ʃ (?) | ^ @ Rule 1, Line 1",,,output
+22.5,Proto-Arawá to Kulína-Dení,Kulína-Dení-tʃ,,index_diachronica_original.html:9190,True,,True,True,,,,,,,,,,,none
 22.5,Proto-Arawá to Kulína-Dení,Kulína-Dení-ʔ,,index_diachronica_original.html:9191,True,,True,True,True,,,,,,,,,,none
 22.6,Proto-Arawá to Sorowahá,Sorowahá-e,,index_diachronica_original.html:9196,True,,True,True,True,,,,,,,,,,none
 22.6,Proto-Arawá to Sorowahá,Sorowahá-e_2,,index_diachronica_original.html:9197,True,,True,True,,True,,,,,,,,,none
@@ -7107,7 +7107,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-k,,index_diachronica_original.html:10788,True,,True,True,True,,,,,,,,,,none
 32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-kʷ,,index_diachronica_original.html:10789,True,,True,True,True,,,,,,,,,,none
 32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-kʷ_2,,index_diachronica_original.html:10790,True,,True,True,,True,,,,,,,,,none
-32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-ʔ,,index_diachronica_original.html:10791,False,syntax_other,True,False,,,,syntax_other,,,,"Syntax Error: The output of a deletion rule must only contain `*` or `∅` | ∅ (?) | ^ @ Rule 1, Line 1",,,output
+32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-ʔ,,index_diachronica_original.html:10791,True,,True,True,,,,,,,,,,,none
 32.1.1,Proto-Chatino to Papabuco Chatino,"Papabuco-Chatino-c,tʃ",,index_diachronica_original.html:10792,True,,True,True,,,,,,,,,,,none
 32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-s,,index_diachronica_original.html:10793,True,,True,True,,,,,,,,,,,none
 32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-l,0,index_diachronica_original.html:10794,True,,True,True,,,,,,,,,,,none
@@ -7257,7 +7257,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 33.2.3,Proto-Wintuan to South Patwin,South-Patwin-tʃ-tʃʰ-tʃʼ,,index_diachronica_original.html:11018,True,,True,True,,,,,,,,,,,none
 33.2.3,Proto-Wintuan to South Patwin,South-Patwin-kʰ-kʼ-qʰ-qʼ,,index_diachronica_original.html:11019,True,,False,False,,,syntax_other,syntax_other,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʰ' | k(ʰ) kʼ q(ʰ) qʼ | ^ @ Rule 1, Line 1","Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | tʃ(ʰ) tʃʼ k(ʰ) kʼ | ^ @ Rule 1, Line 1",,,input|output
 33.2.3,Proto-Wintuan to South Patwin,South-Patwin-x,,index_diachronica_original.html:11020,True,,True,True,,,,,,,,,,,none
-33.2.3,Proto-Wintuan to South Patwin,South-Patwin-χ,,index_diachronica_original.html:11021,False,syntax_other,True,False,,,,syntax_other,,,,"Syntax Error: The output of a deletion rule must only contain `*` or `∅` | ∅ (?) | ^ @ Rule 1, Line 1",,,output
+33.2.3,Proto-Wintuan to South Patwin,South-Patwin-χ,,index_diachronica_original.html:11021,True,,True,True,,,,,,,,,,,none
 33.2.4,Proto-Wintuan to Wintu,Wintu-tʃʰ,,index_diachronica_original.html:11026,True,,True,True,,,,,,,,,,,none
 33.2.4,Proto-Wintuan to Wintu,Wintu-kʰ-qʰ,,index_diachronica_original.html:11027,True,,True,True,,,,,,,,,,,none
 33.3.1,Proto-Yokuts to General Yokuts,General-Yokuts-iː-ɨː-uː,,index_diachronica_original.html:11057,True,,False,False,,,unknown_character,unknown_character,,,"Syntax Error: Unknown character 'ː' | iː ɨː uː | ^ @ Rule 1, Line 1","Syntax Error: Unknown character 'ː' | eː əː oː | ^ @ Rule 1, Line 1",,,input|output
@@ -9168,7 +9168,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 41.8,Proto-Trans New Guinea to Kiwai,Kiwai-u-i,,index_diachronica_original.html:13703,True,,True,True,,,,,,,,,,,none
 41.9,Proto-Trans New Guinea to Selepet,Selepet-ᵐb-ⁿd-s,,index_diachronica_original.html:13708,True,,True,True,True,,,,,,,,,,none
 41.9,Proto-Trans New Guinea to Selepet,Selepet-t-ᵐb-nj-s,,index_diachronica_original.html:13709,True,,True,True,True,,,,,,,,,,none
-41.9,Proto-Trans New Guinea to Selepet,Selepet-t,,index_diachronica_original.html:13710,True,,True,True,False,,,,stuff_after_word_bound,,,,"Syntax Error: Cannot have segments after the end of a word | _# (?) | ^ @ Rule 1, Line 1",,env
+41.9,Proto-Trans New Guinea to Selepet,Selepet-t,,index_diachronica_original.html:13710,True,,True,True,True,,,,,,,,,,none
 41.9,Proto-Trans New Guinea to Selepet,Selepet-ŋ,0,index_diachronica_original.html:13711,True,,True,True,True,,,,,,,,,,none
 41.9,Proto-Trans New Guinea to Selepet,Selepet-ŋ,1,index_diachronica_original.html:13711,True,,True,True,True,,,,,,,,,,none
 41.9,Proto-Trans New Guinea to Selepet,Selepet-ᵑɡ,,index_diachronica_original.html:13712,True,,True,True,,,,,,,,,,,none
@@ -9230,7 +9230,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-w,,index_diachronica_original.html:13812,False,syntax_other,True,True,False,,,,syntax_other,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | o_st (*) | ^ @ Rule 1, Line 1",,env
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ð,,index_diachronica_original.html:13813,True,,True,True,,,,,,,,,,,none
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tʃ,,index_diachronica_original.html:13814,False,unknown_grouping,True,True,False,,,,unknown_grouping,,,,"Syntax Error: Unknown grouping 'E'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | _k, in South Estonian | ^ @ Rule 1, Line 1",,env
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tk,,index_diachronica_original.html:13815,False,expected_underscore,True,True,False,,,,expected_underscore,,,,"Syntax Error: Expected '_', but received '' | Pre-Livonian (?) | ^ @ Rule 1, Line 1",,env
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tk,,index_diachronica_original.html:13815,False,expected_underscore,True,True,False,,,,expected_underscore,,,,"Syntax Error: Expected '_', but received '' | Pre-Livonian | ^ @ Rule 1, Line 1",,env
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tʃ-tʃː,,index_diachronica_original.html:13816,True,,False,True,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | tʃ tʃː | ^ @ Rule 1, Line 1",,,,input
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-t,,index_diachronica_original.html:13817,False,expected_underscore,True,True,True,False,,,,expected_underscore,,,,"Syntax Error: Expected '_', but received '' | following a coronal obstruent or | ^ @ Rule 1, Line 1",exception
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tj,,index_diachronica_original.html:13818,False,expected_underscore,True,True,,False,,,,expected_underscore,,,,"Syntax Error: Expected '_', but received '' | following a coronal obstruent or | ^ @ Rule 1, Line 1",exception

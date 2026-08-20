@@ -308,6 +308,7 @@ def test_field_has_uncertainty_qualifier(text, expected):
         ("h sometimes", "h", ["sometimes"]),
         ('h "sometimes"', "h", ['"sometimes"']),
         ("∅ (occasionally?)", "∅", ["(occasionally?)"]),
+        ("∅ (?)", "∅", ["(?)"]),
         ("_i, occasionally", "_i", [", occasionally"]),
         (
             'r "in Hieroglyphic Luwian, occasionally"',
