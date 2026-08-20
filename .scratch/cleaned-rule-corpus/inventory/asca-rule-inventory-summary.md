@@ -4,11 +4,11 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9689** (one per corpus rule)
-- OK: **8234** (85.0%)
-- Fail: **1412** (14.6%)
-- Skipped: **43** (0.4%)
-- Sections all OK: **323 / 712** (45.4%)
-- Sections skipped: **2 / 714** (0.3%)
+- OK: **8219** (84.8%)
+- Fail: **1410** (14.6%)
+- Skipped: **60** (0.6%)
+- Sections all OK: **323 / 711** (45.4%)
+- Sections skipped: **3 / 714** (0.4%)
 
 ## Failure classes
 
@@ -18,9 +18,9 @@
 | 243 | `expected_underscore` |
 | 186 | `unknown_character` |
 | 130 | `runtime_other` |
-| 111 | `unknown_grouping` |
+| 110 | `unknown_grouping` |
 | 88 | `unknown_feature` |
-| 66 | `prose_or_expected_arrow` |
+| 65 | `prose_or_expected_arrow` |
 | 45 | `nested_brackets` |
 | 38 | `expected_number` |
 | 32 | `diacritic_prereq` |
@@ -77,9 +77,9 @@
 | 15 | `U` |
 | 14 | `E` |
 | 10 | `B` |
-| 8 | `K` |
-| 7 | `T` |
 | 7 | `M` |
+| 7 | `T` |
+| 7 | `K` |
 | 6 | `X` |
 | 5 | `H` |
 | 3 | `Y` |
@@ -94,8 +94,8 @@
 
 | count | blame |
 |------:|-------|
-| 582 | `input` |
-| 514 | `env` |
+| 581 | `input` |
+| 513 | `env` |
 | 415 | `output` |
 | 223 | `multi` |
 | 129 | `exception` |

@@ -38,6 +38,7 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 " / some sequences"," / sporadic ; some sequences",False,replace prose
 " (some exceptions"," ; sporadic (some exceptions",False,replace prose
 ", in the feminine ending"," sporadic ; in the feminine ending",False,replace prose
+" / _Ra (short a only)"," / _Ra sporadic ; (short a only)",False,replace prose
 " / “[b]etween the last two vowels of a proparoxytone”"," / sporadic ; “[b]etween the last two vowels of a proparoxytone”",False,replace prose
 " / in "," / ",False,replace prose
 " ! in "," ! ",False,replace prose

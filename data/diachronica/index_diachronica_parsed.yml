@@ -23127,13 +23127,14 @@ sections:
     raw: — ∅ → i / C{l,r}S
     source: index_diachronica_original.html:5477
     rule_id: Proto-Celtic-—-∅_2
-  - stages:
+  - comment: (short a only), though “[t]he e was often restored by analogy”; sporadic
+    stages:
     - e
     - a
-    env: _Ra , though
-    comment: “[t]he e was often restored by analogy”; (short a only)
+    env: _Ra
     raw: — e → a / _Ra (short a only), though “[t]he e was often restored by analogy”
     source: index_diachronica_original.html:5478
+    sporadic: true
     rule_id: Proto-Celtic-—-e
   - stages:
     - ∅
@@ -56268,6 +56269,7 @@ sections:
     raw: l̥ → ɬ / %_V
     source: index_diachronica_original.html:11950
     rule_id: Mosuo-Na-l̥
+  skipped: true
 - section: Proto-Naish to Naxi
   index: 36.3.1.3
   citation: 'Pogostick Man, from Jacques, Guillaume, and Alexis Michaud (2011), “Approaching

@@ -7,7 +7,7 @@
 
 | phrase | rules |
 | --- | ---: |
-| `sporadic` | 153 |
+| `sporadic` | 154 |
 | `sometimes` | 56 |
 | `unstressed` | 19 |
 | `not sure` | 14 |
