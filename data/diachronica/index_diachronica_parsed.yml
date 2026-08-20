@@ -2007,12 +2007,13 @@ sections:
     raw: m → n / “in certain contexts, notably in the nunation”
     source: index_diachronica_original.html:1325
     rule_id: Classical-Arabic-m
-  - stages:
+  - comment: some sequences; sporadic
+    stages:
     - V{j,w}V
     - aː
-    env: some sequences
     raw: V{j,w}V → aː / some sequences
     source: index_diachronica_original.html:1326
+    sporadic: true
     rule_id: Classical-Arabic-Vj,wV
 - section: Classical Arabic to Cypriot Arabic
   index: 6.2.2.1.6
@@ -2262,12 +2263,14 @@ sections:
     raw: a → {u,o} / _P
     source: index_diachronica_original.html:1369
     rule_id: Cypriot-Arabic-a_5
-  - stages:
+  - comment: in the feminine ending; sporadic
+    stages:
     - a
     - ∅
-    env: _t, in the feminine ending
+    env: _t
     raw: a → ∅ / _t, in the feminine ending
     source: index_diachronica_original.html:1370
+    sporadic: true
     rule_id: Cypriot-Arabic-a_6
   - stages:
     - aːʔ
@@ -7797,7 +7800,7 @@ sections:
       I don’t have a clue what the intermediate form was
     stages:
     - tʃ
-    - Ω
+    - ɤ
     raw: tʃ → Ω (This is my own notation. I don’t have a clue what the intermediate
       form was; became something else in different dialects)
     source: index_diachronica_original.html:2413
@@ -7938,7 +7941,7 @@ sections:
     source: index_diachronica_original.html:2446
     rule_id: Hanoi-Vietnamese-ml
   - stages:
-    - Ω cʰ
+    - ɤ cʰ
     - s tɕ
     raw: Ω cʰ → s tɕ
     source: index_diachronica_original.html:2447
@@ -8030,7 +8033,7 @@ sections:
     source: index_diachronica_original.html:2472
     rule_id: Saigon-Vietnamese-m
   - stages:
-    - Ω cʰ
+    - ɤ cʰ
     - ʂ ʈʂ
     raw: Ω cʰ → ʂ ʈʂ
     source: index_diachronica_original.html:2473

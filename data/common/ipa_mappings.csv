@@ -25,7 +25,7 @@ index_feature,ipa_target,confidence,notes
 Ł,ɬ,medium,Athabaskan TŁ lateral series component; not Polish ł>w (n=3)
 ś,ɕ,medium,Polish palatalized s; ASCA accepts ɕ; some sections may intend ʃ (n=3)
 ɚ,ə,medium,Rhotacized schwa; ASCA rejects ɚ; Naxi rules—ə or ɜ cluster review (n=3)
-Ω,,defer,Middle Vietnamese author placeholder (tʃ>Ω); no stable IPA target (n=3)
+Ω,ɤ,medium,Middle Vietnamese author placeholder - usually ɤ
 å,ɔ,low,Ring-a; section-specific (2 rows) (n=2)
 ŏ,o,low,Breve o; rare (n=2)
 š,ʃ,high,Latin s-caron; same target as Š in ipa_mappings.csv (n=2)

@@ -183,6 +183,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_4,1,index_diachronica_original.html:1368,True,,True,True,True,,,,,,,,,,none
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_5,0,index_diachronica_original.html:1369,True,,True,True,True,,,,,,,,,,none
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_5,1,index_diachronica_original.html:1369,True,,True,True,True,,,,,,,,,,none
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_6,,index_diachronica_original.html:1370,True,,True,True,True,,,,,,,,,,none
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-θ-ð,,index_diachronica_original.html:1377,True,,True,True,,,,,,,,,,,none
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-θ-ð_2,,index_diachronica_original.html:1378,True,,True,True,,,,,,,,,,,none
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-ðˤ,,index_diachronica_original.html:1379,True,,True,True,,,,,,,,,,,none
@@ -671,6 +672,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 9.1.1,Proto-Vietic to Muong Khen,Muong-Khen-w,,index_diachronica_original.html:2402,True,,True,True,True,,,,,,,,,,none
 9.1.2,Proto-Vietic to Middle Vietnamese,"Middle-Vietnamese-pj,bj-tj,dj-cj,ɟj",,index_diachronica_original.html:2410,True,,True,True,,,,,,,,,,,none
 9.1.2,Proto-Vietic to Middle Vietnamese,Middle-Vietnamese-ɓ-ɗ,,index_diachronica_original.html:2411,True,,True,True,,,,,,,,,,,none
+9.1.2,Proto-Vietic to Middle Vietnamese,Middle-Vietnamese-tʃ,,index_diachronica_original.html:2413,True,,True,True,,,,,,,,,,,none
 9.1.2,Proto-Vietic to Middle Vietnamese,Middle-Vietnamese-t,,index_diachronica_original.html:2416,True,,True,True,True,,,,,,,,,,none
 9.1.2,Proto-Vietic to Middle Vietnamese,"Middle-Vietnamese-əkʰ,əɡɦj",,index_diachronica_original.html:2419,True,,True,True,,,,,,,,,,,none
 9.1.2,Proto-Vietic to Middle Vietnamese,Middle-Vietnamese-l,,index_diachronica_original.html:2421,True,,True,True,True,,,,,,,,,,none
@@ -682,6 +684,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 9.1.2.1,Middle Vietnamese to Hanoi Vietnamese,Hanoi-Vietnamese-ɹ,,index_diachronica_original.html:2444,True,,True,True,,,,,,,,,,,none
 9.1.2.1,Middle Vietnamese to Hanoi Vietnamese,Hanoi-Vietnamese-bl,,index_diachronica_original.html:2445,True,,True,True,,,,,,,,,,,none
 9.1.2.1,Middle Vietnamese to Hanoi Vietnamese,Hanoi-Vietnamese-ml,,index_diachronica_original.html:2446,True,,,,,,,,,,,,,,none
+9.1.2.1,Middle Vietnamese to Hanoi Vietnamese,Hanoi-Vietnamese-Ω-cʰ,,index_diachronica_original.html:2447,True,,True,True,,,,,,,,,,,none
 9.1.2.1,Middle Vietnamese to Hanoi Vietnamese,Hanoi-Vietnamese-ɨ,,index_diachronica_original.html:2449,True,,True,True,True,,,,,,,,,,none
 9.1.2.1,Middle Vietnamese to Hanoi Vietnamese,Hanoi-Vietnamese-ɛ,,index_diachronica_original.html:2450,True,,True,True,True,,,,,,,,,,none
 9.1.2.1,Middle Vietnamese to Hanoi Vietnamese,Hanoi-Vietnamese-w,,index_diachronica_original.html:2452,True,,True,True,True,,,,,,,,,,none
@@ -690,6 +693,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 9.1.2.2,Middle Vietnamese to Saigon Vietnamese,"Saigon-Vietnamese-β,w",,index_diachronica_original.html:2469,True,,,,,,,,,,,,,,none
 9.1.2.2,Middle Vietnamese to Saigon Vietnamese,Saigon-Vietnamese-dʲ-ɟ,,index_diachronica_original.html:2471,True,,True,True,,,,,,,,,,,none
 9.1.2.2,Middle Vietnamese to Saigon Vietnamese,Saigon-Vietnamese-m,,index_diachronica_original.html:2472,True,,True,True,True,,,,,,,,,,none
+9.1.2.2,Middle Vietnamese to Saigon Vietnamese,Saigon-Vietnamese-Ω-cʰ,,index_diachronica_original.html:2473,True,,True,True,,,,,,,,,,,none
 9.1.2.2,Middle Vietnamese to Saigon Vietnamese,Saigon-Vietnamese-ɹ,,index_diachronica_original.html:2474,True,,True,True,,,,,,,,,,,none
 9.1.2.2,Middle Vietnamese to Saigon Vietnamese,Saigon-Vietnamese-c-ɲ-t-n,,index_diachronica_original.html:2476,True,,True,True,True,,,,,,,,,,none
 9.1.2.2,Middle Vietnamese to Saigon Vietnamese,Saigon-Vietnamese-c-ɲ,,index_diachronica_original.html:2477,True,,True,True,True,,,,,,,,,,none
