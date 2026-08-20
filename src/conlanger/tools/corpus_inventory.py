@@ -121,6 +121,7 @@ FIELD_ISOLATION_CSV_COLUMNS = [
     "alt_idx",
     "source",
     "whole_ok",
+    "failure_class",
     "input_ok",
     "output_ok",
     "env_ok",
@@ -434,6 +435,7 @@ class FieldIsolationRow:
     env_description: str
     exception_description: str
     blame: str
+    failure_class: str = ""
     alt_idx: int | None = None
 
     def as_csv_dict(self) -> dict[str, str | int | bool]:
@@ -449,6 +451,7 @@ class FieldIsolationRow:
             "alt_idx": "" if self.alt_idx is None else self.alt_idx,
             "source": self.source,
             "whole_ok": self.whole_ok,
+            "failure_class": self.failure_class,
             "input_ok": _field(self.input_ok),
             "output_ok": _field(self.output_ok),
             "env_ok": _field(self.env_ok),
@@ -474,8 +477,6 @@ def derive_blame(
     exception_ok: bool | None,
 ) -> str:
     """Derive the ``blame`` column from whole-rule and per-field ok flags."""
-    if whole_ok:
-        return "none"
     field_ok: dict[ASCARulePart, bool | None] = {
         "input": input_ok,
         "output": output_ok,
@@ -485,7 +486,62 @@ def derive_blame(
     failing = [name for name in BLAME_FIELD_ORDER if field_ok[name] is False]
     if failing:
         return "|".join(failing)
+    if whole_ok:
+        return "none"
     return "multi"
+
+
+def _field_isolation_skipped_mask(df: pd.DataFrame) -> pd.Series:
+    if "failure_class" not in df.columns:
+        return pd.Series(False, index=df.index)
+    return df["failure_class"].astype(str) == SECTION_SKIPPED_FAILURE_CLASS
+
+
+def _field_isolation_field_failure_mask(df: pd.DataFrame) -> pd.Series:
+    mask = pd.Series(False, index=df.index)
+    for column in ("input_ok", "output_ok", "env_ok", "exception_ok"):
+        mask = mask | (df[column].astype(str).str.lower() == "false")
+    return mask
+
+
+def filter_field_isolation_success(df: pd.DataFrame) -> pd.DataFrame:
+    """Return clean field-isolation rows (whole ok, fields ok, not section-skipped)."""
+    if df.empty:
+        return df.copy()
+    whole_ok = _ok_as_bool(df["whole_ok"])
+    skipped = _field_isolation_skipped_mask(df)
+    field_fail = _field_isolation_field_failure_mask(df)
+    return df.loc[whole_ok & ~skipped & ~field_fail].reset_index(drop=True)
+
+
+def filter_field_isolation_error(df: pd.DataFrame) -> pd.DataFrame:
+    """Return field-isolation error rows (whole fail or field fail, not section-skipped)."""
+    if df.empty:
+        return df.copy()
+    whole_ok = _ok_as_bool(df["whole_ok"])
+    skipped = _field_isolation_skipped_mask(df)
+    field_fail = _field_isolation_field_failure_mask(df)
+    return df.loc[(~whole_ok | field_fail) & ~skipped].reset_index(drop=True)
+
+
+def filter_field_isolation_by_whole_ok(
+    df: pd.DataFrame, *, whole_ok: bool
+) -> pd.DataFrame:
+    """Return field-isolation rows whose ``whole_ok`` column matches ``whole_ok``.
+
+    Section-skipped rows are excluded from both outcomes (mirror ticket 34).
+    Prefer :func:`filter_field_isolation_success` / :func:`filter_field_isolation_error`
+    for the regen sidecar splits.
+    """
+    if df.empty:
+        return df.copy()
+    is_ok = _ok_as_bool(df["whole_ok"])
+    skipped = _field_isolation_skipped_mask(df)
+    if whole_ok:
+        mask = is_ok & ~skipped
+    else:
+        mask = ~is_ok & ~skipped
+    return df.loc[mask].reset_index(drop=True)
 
 
 def _field_rule_from_series(scr: DiachronicSeries) -> SoundChangeRule | None:
@@ -635,6 +691,7 @@ def build_field_isolation_row(
         "alt_idx": validation_row.alt_idx,
         "source": validation_row.source,
         "whole_ok": validation_row.ok,
+        "failure_class": validation_row.failure_class,
     }
     if field_rule is None:
         return FieldIsolationRow(
@@ -726,16 +783,6 @@ def field_isolation_rows_to_dataframe(rows: list[FieldIsolationRow]) -> pd.DataF
     )
 
 
-def filter_field_isolation_by_whole_ok(
-    df: pd.DataFrame, *, whole_ok: bool
-) -> pd.DataFrame:
-    """Return field-isolation rows whose ``whole_ok`` column matches ``whole_ok``."""
-    if df.empty:
-        return df.copy()
-    mask = _ok_as_bool(df["whole_ok"]) if whole_ok else ~_ok_as_bool(df["whole_ok"])
-    return df.loc[mask].reset_index(drop=True)
-
-
 def write_field_isolation_csvs(
     rows: list[FieldIsolationRow],
     inventory_dir: Path,
@@ -745,21 +792,23 @@ def write_field_isolation_csvs(
     """Write field-isolation CSVs (full/success/error) under ``inventory_dir``."""
     inventory_dir.mkdir(parents=True, exist_ok=True)
     df = field_isolation_rows_to_dataframe(rows)
-    filter_field_isolation_by_whole_ok(df, whole_ok=True).to_csv(
+    filter_field_isolation_success(df).to_csv(
         inventory_dir / FIELD_ISOLATION_SUCCESS_CSV_NAME, index=False
     )
-    error_df = filter_field_isolation_by_whole_ok(df, whole_ok=False)
+    error_df = filter_field_isolation_error(df)
     error_df.to_csv(inventory_dir / FIELD_ISOLATION_ERROR_CSV_NAME, index=False)
-    main_df = df if include_all else error_df
+    main_df = (
+        df if include_all else filter_field_isolation_by_whole_ok(df, whole_ok=False)
+    )
     main_df.to_csv(inventory_dir / FIELD_ISOLATION_CSV_NAME, index=False)
 
 
 def format_field_isolation_blame_section(rows: list[FieldIsolationRow]) -> list[str]:
     """Markdown lines for ``blame`` bucket counts on error rows."""
-    error_rows = [row for row in rows if not row.whole_ok]
-    if not error_rows:
+    error_df = filter_field_isolation_error(field_isolation_rows_to_dataframe(rows))
+    if error_df.empty:
         return []
-    counts = Counter(row.blame for row in error_rows)
+    counts = Counter(error_df["blame"].astype(str))
     lines = [
         "",
         "## Field isolation blame (error rows)",

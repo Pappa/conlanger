@@ -16,7 +16,8 @@ from conlanger.tools.corpus_inventory import (
     derive_blame,
     field_isolation_rows_for_validation_rows,
     field_isolation_rows_to_dataframe,
-    filter_field_isolation_by_whole_ok,
+    filter_field_isolation_error,
+    filter_field_isolation_success,
     filter_inventory_by_ok,
     iter_validation_rows,
     load_inventory_csv,
@@ -1002,7 +1003,7 @@ def test_filter_inventory_by_ok_empty_dataframe():
     ),
     [
         (True, True, True, True, True, "none"),
-        (True, False, True, None, None, "none"),
+        (True, False, True, None, None, "input"),
         (False, False, True, None, None, "input"),
         (False, True, False, None, None, "output"),
         (False, True, True, False, None, "env"),
@@ -1033,7 +1034,7 @@ def test_derive_blame(
     )
 
 
-def test_filter_field_isolation_by_whole_ok_splits_success_and_error():
+def test_filter_field_isolation_splits_success_and_error():
     rows = [
         FieldIsolationRow(
             "1",
@@ -1075,12 +1076,54 @@ def test_filter_field_isolation_by_whole_ok_splits_success_and_error():
             "",
             "input",
         ),
+        FieldIsolationRow(
+            "1",
+            "A",
+            "r2",
+            "s:3",
+            True,
+            False,
+            True,
+            None,
+            None,
+            "unknown_feature",
+            "",
+            "",
+            "",
+            "err",
+            "",
+            "",
+            "",
+            "input",
+        ),
+        FieldIsolationRow(
+            "9",
+            "Skipped",
+            "r3",
+            "s:4",
+            True,
+            None,
+            None,
+            None,
+            None,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "none",
+            failure_class=SECTION_SKIPPED_FAILURE_CLASS,
+        ),
     ]
     df = field_isolation_rows_to_dataframe(rows)
-    success = filter_field_isolation_by_whole_ok(df, whole_ok=True)
-    error = filter_field_isolation_by_whole_ok(df, whole_ok=False)
+    success = filter_field_isolation_success(df)
+    error = filter_field_isolation_error(df)
     assert list(success["source"]) == ["s:1"]
-    assert list(error["source"]) == ["s:2"]
+    assert set(error["source"]) == {"s:2", "s:3"}
+    assert "s:4" not in set(success["source"]) | set(error["source"])
     assert list(success.columns) == list(df.columns)
 
 
@@ -1155,7 +1198,9 @@ def test_write_field_isolation_csvs_default_fails_only(tmp_path: Path):
     assert len(main) == 1
     assert main[0]["source"] == "s:2"
     assert len(success) == 1
+    assert success[0]["source"] == "s:1"
     assert len(error) == 1
+    assert error[0]["source"] == "s:2"
 
 
 def test_summarize_inventory_links_field_isolation_csvs():
