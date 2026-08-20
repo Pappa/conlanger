@@ -14,13 +14,13 @@
 
 | count | failure_class |
 |------:|---------------|
-| 427 | `syntax_other` |
+| 429 | `syntax_other` |
 | 246 | `expected_underscore` |
 | 189 | `unknown_character` |
 | 130 | `runtime_other` |
 | 111 | `unknown_grouping` |
 | 88 | `unknown_feature` |
-| 66 | `prose_or_expected_arrow` |
+| 64 | `prose_or_expected_arrow` |
 | 45 | `nested_brackets` |
 | 38 | `expected_number` |
 | 32 | `diacritic_prereq` |
