@@ -88,6 +88,7 @@ def test_find_correspondence_series_tokens_in_text():
         ("C₁", "positional"),
         ("V₀", "identity"),
         ("CV₁", "compound"),
+        ("ɬ₀", "other"),
         ("plain", "none"),
     ],
 )
