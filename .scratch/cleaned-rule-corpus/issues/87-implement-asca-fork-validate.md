@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: done
 Blocked by: 86
 
 # Implement `validate` + `validate_part` on the private asca fork
@@ -61,8 +61,8 @@ Exit 0 on success; non-zero + existing `Syntax Error:` formatting on failure. No
 
 ## Acceptance criteria
 
-- [ ] `asca validate` checks a `.rsca` / one `--rule` without words
-- [ ] `validate_part` (and `--field`) for input, output, env, exception
-- [ ] `check_structure` covers Tier 3 without applying
-- [ ] Version `0.10.3-dev` during work; `0.10.3` + CHANGELOG when done
-- [ ] Tests for the cases above; CLI help matches `trace` quality
+- [x] `asca validate` checks a `.rsca` / one `--rule` without words
+- [x] `validate_part` (and `--field`) for input, output, env, exception
+- [x] `check_structure` covers Tier 3 without applying
+- [x] Version `0.10.3-dev` during work; `0.10.3` + CHANGELOG when done
+- [x] Tests for the cases above; CLI help matches `trace` quality
