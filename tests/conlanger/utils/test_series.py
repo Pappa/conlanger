@@ -88,14 +88,11 @@ def test_find_correspondence_series_tokens_in_text():
         ("C₁", "positional"),
         ("V₀", "identity"),
         ("CV₁", "compound"),
+        ("plain", "none"),
     ],
 )
 def test_classify_subscript_token(token, kind):
     assert classify_subscript_token(token) == kind
-
-
-def test_classify_subscript_token_without_subscript():
-    assert classify_subscript_token("plain") == "none"
 
 
 def test_find_correspondence_series_tokens_includes_collective():
@@ -108,28 +105,18 @@ def test_find_subscript_tokens_in_rule_fields():
     assert tokens == {"s₁", "C₁", "V₀"}
 
 
-def test_apply_series_expansions_standalone_collective():
-    expansions = {"sₓ": ("s₁", "s₂", "s₃")}
-    assert apply_series_expansions(
-        {"stages": ["sₓ", "ʃ"]},
-        expansions,
-    ) == {"stages": ["{s₁,s₂,s₃}", "ʃ"]}
-
-
-def test_apply_series_expansions_flattens_inside_set():
-    expansions = {"Hₓ": ("h₁", "h₂", "h₃")}
-    assert apply_series_expansions(
-        {"stages": ["{Hₓ,m̩,n̩}", "a"]},
-        expansions,
-    ) == {"stages": ["{h₁,h₂,h₃,m̩,n̩}", "a"]}
-
-
-def test_apply_series_expansions_on_env_and_exception():
-    expansions = {"sₓ": ("s₁", "s₂", "s₃")}
-    assert apply_series_expansions({"env": "sₓ"}, expansions) == {"env": "{s₁,s₂,s₃}"}
-    assert apply_series_expansions({"exception": "sₓ"}, expansions) == {
-        "exception": "{s₁,s₂,s₃}"
-    }
+@pytest.mark.parametrize(
+    ("input", "expected"),
+    [
+        ({"stages": ["sₓ", "ʃ"]}, {"stages": ["{s₁,s₂,s₃}", "ʃ"]}),
+        ({"stages": ["{Hₓ,m̩,n̩}", "a"]}, {"stages": ["{h₁,h₂,h₃,m̩,n̩}", "a"]}),
+        ({"env": "sₓ"}, {"env": "{s₁,s₂,s₃}"}),
+        ({"exception": "sₓ"}, {"exception": "{s₁,s₂,s₃}"}),
+    ],
+)
+def test_apply_series_expansions(input, expected):
+    expansions = {"sₓ": ("s₁", "s₂", "s₃"), "Hₓ": ("h₁", "h₂", "h₃")}
+    assert apply_series_expansions(input, expansions) == expected
 
 
 def test_expand_collectives_in_field_unclosed_brace():
