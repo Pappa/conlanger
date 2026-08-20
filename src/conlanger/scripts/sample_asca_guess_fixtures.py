@@ -36,7 +36,7 @@ _PAREN_PROSE_RE = re.compile(r"\s*\([^)]*\)\s*$")
 _TRAILING_PROSE_RE = re.compile(
     r"\s+(?:when|where|in|if|though|although|sometimes|rarely|"
     r"usually|especially|also|only|before|after|except|typically|"
-    r"possibly|sporadic|involving)\b.*$",
+    r"possibly|sporadic|involving|\(\?\))\b.*$",
     re.IGNORECASE,
 )
 _SEMICOLON_PROSE_RE = re.compile(r"\s*;.*$")

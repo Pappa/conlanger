@@ -2375,7 +2375,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 12.2,Proto-Northwest Caucasian to Proto-Circassian,Proto-Circassian-k-kʼ-ɡ,,index_diachronica_original.html:4257,True,,True,True,,,,,,,,,,,none
 12.2,Proto-Northwest Caucasian to Proto-Circassian,Proto-Circassian-xʲ-ɣʲ,,index_diachronica_original.html:4258,True,,True,True,,,,,,,,,,,none
 12.2,Proto-Northwest Caucasian to Proto-Circassian,Proto-Circassian-xʷ,,index_diachronica_original.html:4259,True,,True,False,,,,syntax_other,,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | x(ʷ) | ^ @ Rule 1, Line 1",,,output
-12.2,Proto-Northwest Caucasian to Proto-Circassian,Proto-Circassian-ɡʲʷ-xʲʷ-ɣʲʷ?,,index_diachronica_original.html:4260,True,,False,True,,,syntax_other,,,,"Syntax Error: Options can only be used in Environments or Structures | ɡʲʷ xʲʷ ɣʲʷ(?) | ^^^ @ Rule 1, Line 1",,,,input
+12.2,Proto-Northwest Caucasian to Proto-Circassian,Proto-Circassian-ɡʲʷ-xʲʷ-ɣʲʷ?,,index_diachronica_original.html:4260,True,,True,True,,,,,,,,,,,none
 12.2,Proto-Northwest Caucasian to Proto-Circassian,Proto-Circassian-ɢ,,index_diachronica_original.html:4261,True,,True,True,,,,,,,,,,,none
 12.2,Proto-Northwest Caucasian to Proto-Circassian,Proto-Circassian-qʲʼ-ʁʲ,,index_diachronica_original.html:4262,True,,True,True,,,,,,,,,,,none
 12.2,Proto-Northwest Caucasian to Proto-Circassian,Proto-Circassian-qʷ,,index_diachronica_original.html:4263,True,,True,False,,True,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | qʷː | ^ @ Rule 1, Line 1",,,output
@@ -5326,7 +5326,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.12.1.1.6,Vulgar Latin to Old Provençal,"Old-Provençal-t,dl-k,ɡl",,index_diachronica_original.html:7881,True,,True,False,,,,unknown_character,,,,"Syntax Error: Unknown character 'ː' | lː ʎ | ^ @ Rule 1, Line 1",,,output
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-∅_3,,index_diachronica_original.html:7882,True,,False,True,True,,syntax_other,,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | ∅ | ^ @ Rule 1, Line 1",,,,input
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-p-j,,index_diachronica_original.html:7883,True,,True,True,True,,,,,,,,,,none
-17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-p-k-tʃ-b-ɡ-β-j,,index_diachronica_original.html:7884,False,syntax_other,,,,,,,,,,,,,multi
+17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-p-k-tʃ-b-ɡ-β-j,,index_diachronica_original.html:7884,False,prose_or_expected_arrow,,,,,,,,,,,,,multi
 17.12.1.1.6,Vulgar Latin to Old Provençal,"Old-Provençal-t,d",,index_diachronica_original.html:7885,True,,,,,,,,,,,,,,none
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-ð_6,,index_diachronica_original.html:7886,True,,True,True,True,,,,,,,,,,none
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-∅_4,,index_diachronica_original.html:7887,True,,False,True,True,,syntax_other,,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | ∅ | ^ @ Rule 1, Line 1",,,,input

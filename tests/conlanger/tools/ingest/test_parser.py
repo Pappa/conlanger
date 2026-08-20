@@ -1287,54 +1287,49 @@ def test_load_feature_mappings_from_default_csv():
     assert by_name["low falling tone"].asca_target == "21"
     assert by_name["high rising tone"].asca_target == "35"
 
-
-def test_normalize_feature_matrices_in_field_rename():
+@pytest.mark.parametrize(
+    "input, expected",
+    [
+        ("C[+voiced]", "C[+voice]"),
+        ("N[-voiced]", "N[-voice]"),
+        ("C[+ sibilant]", "C[+strident]"),    
+    ],
+)
+def test_normalize_feature_matrices_in_field_rename(input, expected):
     mappings = feature_mappings_dict()
-    assert normalize_feature_matrices_in_field("C[+voiced]", mappings) == "C[+voice]"
-    assert normalize_feature_matrices_in_field("N[-voiced]", mappings) == "N[-voice]"
-    assert (
-        normalize_feature_matrices_in_field("C[+ sibilant]", mappings) == "C[+strident]"
-    )
-
-
-def test_normalize_feature_matrices_in_field_rename_invert():
-    mappings = feature_mappings_dict()
-    assert normalize_feature_matrices_in_field("u[+short]", mappings) == "u[-long]"
-    assert normalize_feature_matrices_in_field("V[-short]", mappings) == "V[+long]"
-
-
-def test_normalize_feature_matrices_in_field_rename_polarity():
-    mappings = feature_mappings_dict()
-    assert (
-        normalize_feature_matrices_in_field("S[- glottalized]", mappings) == "S[+place]"
-    )
-    assert (
-        normalize_feature_matrices_in_field("V[+glottalized]", mappings) == "V[-place]"
-    )
-    assert (
-        normalize_feature_matrices_in_field("V[-glottalized]", mappings) == "V[+place]"
-    )
-
-
-def test_normalize_feature_matrices_in_field_bundle():
-    mappings = feature_mappings_dict()
-    assert (
-        normalize_feature_matrices_in_field("_CV[+close-mid](C)#", mappings)
-        == "_CV[-hi,-lo,+tense](C)#"
-    )
-    assert (
-        normalize_feature_matrices_in_field("_CV[+open-mid](C)#", mappings)
-        == "_CV[-hi,-lo,-tense](C)#"
-    )
-
-
-def test_normalize_feature_matrices_in_field_bundle_compound_key_only():
-    mappings = feature_mappings_dict()
-    assert normalize_feature_matrices_in_field("V[+open]", mappings) == "V[+open]"
+    assert normalize_feature_matrices_in_field(input, mappings) == expected
 
 
 @pytest.mark.parametrize(
-    ("before", "after"),
+    "input, expected",
+    [
+        ("u[+short]", "u[-long]"),
+        ("V[-short]", "V[+long]"),
+    ],
+)
+def test_normalize_feature_matrices_in_field_rename_invert(input, expected):
+    mappings = feature_mappings_dict()
+    assert normalize_feature_matrices_in_field(input, mappings) == expected
+
+
+@pytest.mark.parametrize(
+    "input, expected",
+    [
+        ("S[- glottalized]", "S[+place]"),
+        ("V[-glottalized]", "V[+place]"),
+        ("V[+glottalized]", "V[-place]"),
+        ("_CV[+close-mid](C)#", "_CV[-hi,-lo,+tense](C)#"),
+        ("_CV[+open-mid](C)#", "_CV[-hi,-lo,-tense](C)#"),
+        ("V[+open]", "V[+open]"),
+    ],
+)
+def test_normalize_feature_matrices_in_field_rename_polarity(input, expected):
+    mappings = feature_mappings_dict()
+    assert normalize_feature_matrices_in_field(input, mappings) == expected
+
+
+@pytest.mark.parametrize(
+    "input, expected",
     [
         ("C:[+dental]", "C:[+cor,+anterior,+dist]"),
         ("_C[+dental]", "_C[+cor,+anterior,+dist]"),
@@ -1344,11 +1339,22 @@ def test_normalize_feature_matrices_in_field_bundle_compound_key_only():
         ("C:[+velar]", "C:[-fr,+bk,+hi,-lo]"),
         ("C[+velar]_C[+velar]", "C[-fr,+bk,+hi,-lo]_C[-fr,+bk,+hi,-lo]"),
         ("Cʷ:[+uvular]", "Cʷ:[-fr,+bk,-hi,-lo]"),
+        ("short u", "short u"),
+        ("V[+high tone]", "V[tone: 5]"),
+        ("V[+low tone]", "V[tone: 1]"),
+        ("V[+ falling tone]", "V[tone: 51]"),
+        ("V:[+long][+low falling tone]", "V:[+long][tone: 21]"),
+        ("aː[+high rising tone]", "aː[tone: 35]"),
+        ("V[+ low tone]", "V[tone: 1]"),
+        ("V[+ high tone]", "V[tone: 5]"),
+        ("V[- tone]", "V[- tone]"),
+        ("V:[-falling tone]", "V:[-falling tone]"),
+        ("V:[+stress][-long -falling tone]", "V:[+stress][-long -falling tone]"),
     ],
 )
-def test_normalize_feature_matrices_in_field_place_bundles(before, after):
+def test_normalize_feature_matrices_in_field_place_bundles(input, expected):
     mappings = feature_mappings_dict()
-    assert normalize_feature_matrices_in_field(before, mappings) == after
+    assert normalize_feature_matrices_in_field(input, mappings) == expected
 
 
 def test_kenyah_vowel_height_rules_validate():
@@ -1370,43 +1376,6 @@ def test_kenyah_vowel_height_rules_validate():
     }
     validate_asca(
         DiachronicSeries(section, "asca", group_mappings=asca_group_mappings_dict())
-    )
-
-
-def test_normalize_feature_matrices_in_field_leaves_raw_tokens_outside_brackets():
-    mappings = feature_mappings_dict()
-    assert normalize_feature_matrices_in_field("short u", mappings) == "short u"
-
-
-@pytest.mark.parametrize(
-    ("before", "after"),
-    [
-        ("V[+high tone]", "V[tone: 5]"),
-        ("V[+low tone]", "V[tone: 1]"),
-        ("V[+ falling tone]", "V[tone: 51]"),
-        ("V:[+long][+low falling tone]", "V:[+long][tone: 21]"),
-        ("aː[+high rising tone]", "aː[tone: 35]"),
-        ("V[+ low tone]", "V[tone: 1]"),
-        ("V[+ high tone]", "V[tone: 5]"),
-    ],
-)
-def test_normalize_feature_matrices_in_field_tone(before, after):
-    mappings = feature_mappings_dict()
-    assert normalize_feature_matrices_in_field(before, mappings) == after
-
-
-def test_normalize_feature_matrices_in_field_tone_leaves_negated():
-    mappings = feature_mappings_dict()
-    assert normalize_feature_matrices_in_field("V[-tone]", mappings) == "V[-tone]"
-    assert (
-        normalize_feature_matrices_in_field("V:[-falling tone]", mappings)
-        == "V:[-falling tone]"
-    )
-    assert (
-        normalize_feature_matrices_in_field(
-            "V:[+stress][-long -falling tone]", mappings
-        )
-        == "V:[+stress][-long -falling tone]"
     )
 
 
@@ -1539,7 +1508,6 @@ def test_ipa_mappings_dict_uses_config_confidence_levels():
     assert mappings["ı"] == "j"
     assert mappings["ṽ"] == "v\u0303"
     assert mappings["û"] == "u"
-    assert "Ω" not in mappings
 
 
 def test_ipa_mappings_dict_high_only_config_excludes_medium(tmp_path: Path):

@@ -16705,9 +16705,9 @@ sections:
     source: index_diachronica_original.html:4259
     rule_id: Proto-Circassian-xʷ
   - stages:
-    - ɡʲʷ xʲʷ ɣʲʷ(?)
+    - ɡʲʷ xʲʷ ɣʲʷ
     - ɡʷ xʷ ʁʷ
-    raw: ɡʲʷ xʲʷ ɣʲʷ(?) → ɡʷ xʷ ʁʷ
+    raw: ɡʲʷ xʲʷ ɣʲʷ → ɡʷ xʷ ʁʷ
     source: index_diachronica_original.html:4260
     rule_id: Proto-Circassian-ɡʲʷ-xʲʷ-ɣʲʷ?
   - stages:
