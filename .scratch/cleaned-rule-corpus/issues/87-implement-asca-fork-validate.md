@@ -1,5 +1,5 @@
 Type: task
-Status: done
+Status: resolved
 Blocked by: 86
 
 # Implement `validate` + `validate_part` on the private asca fork
@@ -66,3 +66,7 @@ Exit 0 on success; non-zero + existing `Syntax Error:` formatting on failure. No
 - [x] `check_structure` covers Tier 3 without applying
 - [x] Version `0.10.3-dev` during work; `0.10.3` + CHANGELOG when done
 - [x] Tests for the cases above; CLI help matches `trace` quality
+
+## Answer
+
+**Gist:** Private fork (`github.com/Pappa/asca-rust`, branch `feature/validate`, **0.10.3**) ships `asca validate` (`-r` / `-s` / `-f`), library `validate_part` + `ParsedRules::check_structure`. Field CLI names: `input`, `output`, `context`, `exception`. Unblocks [Wire conlanger to forked asca `validate`](88-wire-conlanger-forked-asca-validate.md) and retargeted [Per-field ASCA blame in inventory](36-per-field-asca-blame-in-inventory.md).

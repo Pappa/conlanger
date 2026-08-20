@@ -23,7 +23,7 @@ wayfinder:map
 
 ## Not yet specified
 
-- **Validation granularity** — per expanded ASCA step vs whole corpus rule; interaction with field-isolation sidecar ([ticket 36](../cleaned-rule-corpus/issues/36-field-isolation-inventory-sidecar.md)).
+- **Validation granularity** — per expanded ASCA step vs whole corpus rule; interaction with per-field blame inventory ([ticket 36](../cleaned-rule-corpus/issues/36-per-field-asca-blame-in-inventory.md)).
 - **YAML shape for non-chain multi-change lines** — alternations/sets already fit ADR-0005 “internal structure”; confirm no other parse-time row inflation besides chain split.
 - **Timing vs [Refactor DiachronicSeries](../cleaned-rule-corpus/issues/39-refactor-sound-change-ruleset.md)** — chain compile step slots into spike 38 order; refactor may follow or absorb.
 

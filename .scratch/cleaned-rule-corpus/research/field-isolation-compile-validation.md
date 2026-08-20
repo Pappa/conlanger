@@ -105,7 +105,7 @@ Suggested columns:
 - `whole_ok` (copy/join from main inventory)
 - `input_ok`, `output_ok`, `env_ok`, `exception_ok` (bool or empty if field absent)
 - `input_class`, `output_class`, … (reuse `classify_error`)
-- `blame` — derived: sole failing isolated field, `multi`, `cross_field` (isolation all OK but whole fail), `none`
+- `blame` — derived: pipe-joined failing field names (`input`, `input|env`, …), `multi` (isolation all OK but whole fail), `none`
 - `description_*` truncated ASCA messages
 
 **Run policy:** only for rows where `whole_ok` is false (and optionally where env/exception present). Cost: up to 4 extra `asca run` invocations per failing rule (~2.8k fails → ~10k runs), acceptable for regen; skip fields that are absent (`env`/`exception` empty → N/A, not OK).
@@ -136,7 +136,7 @@ Field isolation is a **diagnostic lens** on syntax/shape, not a Tier 4 coverage 
 
 ## 9. Open questions (for follow-on task / grilling)
 
-1. Should `blame=cross_field` (isolation all green, whole red) file into a dedicated failure class for set/condensed/insert clusters?
+1. Should `blame=multi` (isolation all green, whole red) file into a dedicated failure class for set/condensed/insert clusters?
 2. How far may set-cardinality stub heuristics go before they feel like a mini-parser (still OK vs ticket 10)?
 3. Should absent optional fields be omitted from sidecar columns or recorded as `n/a`?
 4. Handle bare `#` I/O as a pre-ASCA `format_error` in isolation, or teach a non-comment render path?

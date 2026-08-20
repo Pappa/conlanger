@@ -6,7 +6,7 @@ Spike for [ticket 86](../issues/86-spike-asca-native-per-field-validation.md).
 
 Recovers and extends the 2026-08-04 wayfinder discussion: validation is staged; `asca run` is word-dependent at Tier 4; `ParsedRules::try_from` exists but there is no `validate` CLI.
 
-Related: [asca-rule-validity.md](asca-rule-validity.md), [field-isolation-compile-validation.md](field-isolation-compile-validation.md), [Field-isolation inventory sidecar](../issues/36-field-isolation-inventory-sidecar.md).
+Related: [asca-rule-validity.md](asca-rule-validity.md), [field-isolation-compile-validation.md](field-isolation-compile-validation.md), [Per-field ASCA blame in inventory](../issues/36-per-field-asca-blame-in-inventory.md).
 
 ---
 

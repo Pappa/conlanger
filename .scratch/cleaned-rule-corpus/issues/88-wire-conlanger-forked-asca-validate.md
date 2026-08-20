@@ -1,5 +1,5 @@
 Type: task
-Status: done
+Status: resolved
 Blocked by: 87
 
 # Wire conlanger to forked asca `validate`
@@ -28,7 +28,7 @@ Grill 2026-08-19: **Q3 A** — do not redefine `ok`.
 
 ## Out of scope
 
-- Sidecar CSV / `blame` ([Field-isolation inventory sidecar](36-field-isolation-inventory-sidecar.md) — may be rewritten, deleted, or closed after this)
+- Per-field blame CSV / `blame` ([Per-field ASCA blame in inventory](36-per-field-asca-blame-in-inventory.md) — may be rewritten, deleted, or closed after this)
 - Probe synthesis (ticket 10 wontfix)
 - Changing success-metric definitions
 
@@ -38,3 +38,7 @@ Grill 2026-08-19: **Q3 A** — do not redefine `ok`.
 - [x] Inventory / `validate_asca` still uses `asca run` + probes for `ok`
 - [x] Callable `validate_part` wrapper for the four fields
 - [x] Install/run documented in [docs/DEV.md](../../../docs/DEV.md); implementation docs point there instead of duplicating cargo commands
+
+## Answer
+
+**Gist:** `resolve_asca_bin()` (`ASCA_BIN` then PATH) shared by `validate_asca`, `run_asca`, `validate_asca_syntax`, `validate_asca_part`. `validate_asca` runs `asca validate -r` then `asca run` + probes when validate exists. Part wrapper maps corpus `env` → ASCA `context`. Tests in `tests/conlanger/appliers/test_asca.py`; docs in [DEV.md](../../../docs/DEV.md) and [sound-change-applier.md](../../../docs/sound-change-applier.md). Unblocks native [Per-field ASCA blame in inventory](36-per-field-asca-blame-in-inventory.md).
