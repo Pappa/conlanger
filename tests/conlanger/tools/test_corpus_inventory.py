@@ -1199,7 +1199,7 @@ def test_summarize_inventory_links_field_isolation_csvs():
 
 @patch("conlanger.tools.corpus_inventory.validate_asca_part", return_value=True)
 def test_build_field_isolation_row_unknown_feature_on_input(mock_validate_part):
-    def side_effect(part, fragment):
+    def side_effect(part, fragment, **kwargs):
         if part == "input":
             raise ASCAValidationError("Syntax Error: Unknown feature 'voiced'")
         return True
@@ -1233,7 +1233,7 @@ def test_build_field_isolation_row_unknown_feature_on_input(mock_validate_part):
 
 @patch("conlanger.tools.corpus_inventory.validate_asca_part")
 def test_build_field_isolation_row_missing_underscore_on_env(mock_validate_part):
-    def side_effect(part, fragment):
+    def side_effect(part, fragment, **kwargs):
         if part == "env":
             raise ASCAValidationError("Syntax Error: Expected '_'")
         return True
@@ -1269,7 +1269,7 @@ def test_build_field_isolation_row_missing_underscore_on_env(mock_validate_part)
 
 @patch("conlanger.tools.corpus_inventory.validate_asca_part")
 def test_build_field_isolation_row_two_fields_fail(mock_validate_part):
-    def side_effect(part, _fragment):
+    def side_effect(part, _fragment, **kwargs):
         if part in {"input", "env"}:
             raise ASCAValidationError(f"Syntax Error: bad {part}")
         return True

@@ -10,6 +10,7 @@ import pytest
 
 from conlanger.appliers.asca import (
     ASCAValidationError,
+    fork_asca_bin,
     resolve_asca_bin,
     validate_asca,
     validate_asca_part,
@@ -112,6 +113,26 @@ def test_resolve_asca_bin_returns_none_when_missing(mocker):
     mocker.patch("conlanger.appliers.asca.shutil.which", return_value=None)
 
     assert resolve_asca_bin() is None
+
+
+def test_fork_asca_bin_points_at_repo_install():
+    repo_root = Path(__file__).resolve().parents[3]
+    assert fork_asca_bin(repo_root=repo_root) == repo_root / "bin" / "bin" / "asca"
+
+
+def test_validate_asca_honors_explicit_asca_bin(
+    mock_asca_subprocess, mock_asca_on_path, tmp_path: Path
+):
+    mock_asca_subprocess.return_value = MagicMock(returncode=0, stderr="")
+    explicit = str(tmp_path / "custom-asca")
+    scr = DiachronicSeries(
+        {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
+        format="asca",
+    )
+    with patch("conlanger.appliers.asca._asca_supports_validate", return_value=True):
+        validate_asca(scr, probe_words=_PROBE, asca_bin=explicit)
+
+    assert mock_asca_subprocess.call_args.args[0][0] == explicit
 
 
 def test_validate_asca_missing_binary(mocker):

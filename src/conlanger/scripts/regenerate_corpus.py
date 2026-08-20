@@ -7,7 +7,6 @@ Series mappings are no longer refreshed at regen (retired parse-time CSV; see ti
 
 import argparse
 import logging
-import shutil
 import subprocess
 import sys
 from datetime import UTC, datetime
@@ -59,13 +58,22 @@ DEFAULT_COMMENT_SUMMARY = (
 DEFAULT_PROBE = ROOT / "tests" / "fixtures" / "asca_probe_words.wsca"
 
 
-def _asca_version() -> str:
-    asca = shutil.which("asca")
-    if asca is None:
-        return "not found on PATH"
+def _fork_asca_command(*, repo_root: Path = ROOT) -> Path:
+    return repo_root / "bin" / "bin" / "asca"
+
+
+def _validation_asca_command(*, use_fork: bool, repo_root: Path = ROOT) -> str | None:
+    """Return the asca executable path for inventory validation."""
+    if use_fork:
+        fork = _fork_asca_command(repo_root=repo_root)
+        return str(fork) if fork.is_file() else None
+    return resolve_asca_bin()
+
+
+def _asca_version(asca_bin: str) -> str:
     try:
         proc = subprocess.run(  # noqa: PLW1510
-            [asca, "--version"],
+            [asca_bin, "--version"],
             capture_output=True,
             text=True,
             timeout=5,
@@ -101,6 +109,15 @@ def main() -> int:
         ),
     )
     ap.add_argument("--probe-words", type=Path, default=DEFAULT_PROBE)
+    ap.add_argument(
+        "--use-asca-fork",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help=(
+            "use the repo-local asca fork at bin/bin/asca for validation "
+            "(default: on; off uses ASCA_BIN or PATH)"
+        ),
+    )
     ap.add_argument(
         "--skip-validation",
         action="store_true",
@@ -169,18 +186,33 @@ def main() -> int:
         print(f"ERROR: probe wordlist not found at {args.probe_words}", file=sys.stderr)
         return 1
 
-    if shutil.which("asca") is None:
+    asca_command = _validation_asca_command(
+        use_fork=args.use_asca_fork,
+        repo_root=ROOT,
+    )
+    if args.use_asca_fork and asca_command is None:
+        fork = _fork_asca_command(repo_root=ROOT)
         print(
-            "ERROR: asca binary not found on PATH "
-            "(install asca 0.10.x and ensure it is on PATH, or use --skip-validation)",
+            f"ERROR: asca fork not found at {fork} "
+            "(install with cargo per docs/DEV.md, or pass --no-use-asca-fork)",
             file=sys.stderr,
         )
         return 1
 
-    if resolve_asca_bin() is None or not asca_supports_validate():
+    if asca_command is None:
+        print(
+            "ERROR: asca binary not found "
+            "(install the fork per docs/DEV.md or use --use-asca-fork, "
+            "or use --skip-validation)",
+            file=sys.stderr,
+        )
+        return 1
+
+    if not asca_supports_validate(asca_bin=asca_command):
         print(
             "ERROR: asca binary lacks the validate subcommand "
-            "(install the fork from docs/DEV.md, or use --skip-validation)",
+            "(install the fork from docs/DEV.md, or use --no-use-asca-fork, "
+            "or use --skip-validation)",
             file=sys.stderr,
         )
         return 1
@@ -190,6 +222,7 @@ def main() -> int:
         doc,
         probe_words=args.probe_words,
         group_mappings=group_mappings,
+        asca_bin=asca_command,
     )
     if args.limit:
         rows = rows[: args.limit]
@@ -225,7 +258,7 @@ def main() -> int:
         rows,
         source_yaml=str(args.yaml_out.relative_to(ROOT)),
         probe_words=str(args.probe_words.relative_to(ROOT)),
-        asca_version=_asca_version(),
+        asca_version=_asca_version(asca_command),
         field_isolation_rows=field_rows,
     )
     summary_path.parent.mkdir(parents=True, exist_ok=True)

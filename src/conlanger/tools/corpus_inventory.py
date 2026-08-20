@@ -559,10 +559,12 @@ def _resolve_inventory_targets(
 def _validate_field_part(
     part: ASCARulePart,
     fragment: str,
+    *,
+    asca_bin: str | None = None,
 ) -> tuple[bool, str, str]:
     """Validate one compiled field; return ``(ok, failure_class, description)``."""
     try:
-        validate_asca_part(part, fragment)
+        validate_asca_part(part, fragment, asca_bin=asca_bin)
     except ASCAValidationError as exc:
         err = str(exc)
         return False, classify_error(err), err
@@ -571,6 +573,8 @@ def _validate_field_part(
 
 def _field_isolation_checks(
     field_rule: SoundChangeRule,
+    *,
+    asca_bin: str | None = None,
 ) -> tuple[
     bool | None,
     bool | None,
@@ -592,7 +596,9 @@ def _field_isolation_checks(
         if fragment is None:
             results[part] = (None, "", "")
             continue
-        ok, failure_class, description = _validate_field_part(part, fragment)
+        ok, failure_class, description = _validate_field_part(
+            part, fragment, asca_bin=asca_bin
+        )
         results[part] = (ok, failure_class, description)
 
     input_ok, input_class, input_description = results["input"]
@@ -618,6 +624,8 @@ def _field_isolation_checks(
 def build_field_isolation_row(
     validation_row: ValidationRow,
     field_rule: SoundChangeRule | None,
+    *,
+    asca_bin: str | None = None,
 ) -> FieldIsolationRow:
     """Build one field-isolation sidecar row for an inventory ``ValidationRow``."""
     base = {
@@ -665,7 +673,7 @@ def build_field_isolation_row(
         output_description,
         env_description,
         exception_description,
-    ) = _field_isolation_checks(field_rule)
+    ) = _field_isolation_checks(field_rule, asca_bin=asca_bin)
     return FieldIsolationRow(
         **base,
         input_ok=input_ok,
@@ -693,6 +701,8 @@ def build_field_isolation_row(
 def field_isolation_rows_for_validation_rows(
     validation_rows: list[ValidationRow],
     targets: list[_InventoryTarget],
+    *,
+    asca_bin: str | None = None,
 ) -> list[FieldIsolationRow]:
     """Pair inventory rows with compile targets and build field-isolation rows."""
     if len(validation_rows) != len(targets):
@@ -702,7 +712,7 @@ def field_isolation_rows_for_validation_rows(
         )
         raise ValueError(msg)
     return [
-        build_field_isolation_row(row, target.field_rule)
+        build_field_isolation_row(row, target.field_rule, asca_bin=asca_bin)
         for row, target in zip(validation_rows, targets, strict=True)
     ]
 
@@ -803,10 +813,11 @@ def _asca_validation_row(
     alt_idx: int | None,
     source: str,
     probe_words: Path | None,
+    asca_bin: str | None = None,
 ) -> ValidationRow:
     """Validate an already-compiled series and build its ``ValidationRow``."""
     try:
-        validate_asca(scr, probe_words=probe_words)
+        validate_asca(scr, probe_words=probe_words, asca_bin=asca_bin)
     except ASCAValidationError as exc:
         err = str(exc)
         failure_class = classify_error(err)
@@ -847,6 +858,7 @@ def validate_corpus_rule_with_targets(
     *,
     probe_words: Path | None,
     group_mappings: dict[str, str] | None = None,
+    asca_bin: str | None = None,
 ) -> tuple[list[ValidationRow], list[_InventoryTarget]]:
     """Validate one corpus rule and return inventory rows with compile targets."""
     section_index = str(section.get("index", ""))
@@ -942,6 +954,7 @@ def validate_corpus_rule_with_targets(
                 alt_idx=target.alt_idx,
                 source=source,
                 probe_words=probe_words,
+                asca_bin=asca_bin,
             )
         )
     return rows, targets
@@ -954,6 +967,7 @@ def validate_corpus_rule(
     *,
     probe_words: Path | None,
     group_mappings: dict[str, str] | None = None,
+    asca_bin: str | None = None,
 ) -> list[ValidationRow]:
     """Validate one corpus rule.
 
@@ -966,6 +980,7 @@ def validate_corpus_rule(
         rule_id,
         probe_words=probe_words,
         group_mappings=group_mappings,
+        asca_bin=asca_bin,
     )
     return rows
 
@@ -994,6 +1009,7 @@ def iter_inventory_with_field_isolation(
     *,
     probe_words: Path | None,
     group_mappings: dict[str, str] | None = None,
+    asca_bin: str | None = None,
 ) -> tuple[list[ValidationRow], list[FieldIsolationRow]]:
     """Validate the corpus and build matching field-isolation sidecar rows."""
     validation_rows: list[ValidationRow] = []
@@ -1008,9 +1024,14 @@ def iter_inventory_with_field_isolation(
                 rule_id,
                 probe_words=probe_words,
                 group_mappings=group_mappings,
+                asca_bin=asca_bin,
             )
             validation_rows.extend(rows)
-            field_rows.extend(field_isolation_rows_for_validation_rows(rows, targets))
+            field_rows.extend(
+                field_isolation_rows_for_validation_rows(
+                    rows, targets, asca_bin=asca_bin
+                )
+            )
     return validation_rows, field_rows
 
 

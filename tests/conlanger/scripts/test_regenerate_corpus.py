@@ -10,6 +10,14 @@ from conlanger.scripts import regenerate_corpus as regen
 from conlanger.tools.corpus_inventory import FieldIsolationRow, ValidationRow
 
 
+def _write_fake_fork(root: Path) -> Path:
+    fork = root / "bin" / "bin" / "asca"
+    fork.parent.mkdir(parents=True, exist_ok=True)
+    fork.write_text("#!/bin/sh\nexit 0\n", encoding="utf-8")
+    fork.chmod(0o755)
+    return fork
+
+
 def _configure_parser_mock(
     mock_parser_cls, *, sections=None, matches=None, unmatched=None
 ):
@@ -102,8 +110,11 @@ def test_regenerate_corpus_errors_when_probe_missing(
     html_path.write_text("<html><body></body></html>", encoding="utf-8")
     _configure_parser_mock(mock_parser_cls)
 
+    _write_fake_fork(tmp_path)
+
     with (
-        patch.object(regen.shutil, "which", return_value="/usr/bin/asca"),
+        patch.object(regen, "ROOT", tmp_path),
+        patch.object(regen, "asca_supports_validate", return_value=True),
         patch.object(
             sys,
             "argv",
@@ -123,23 +134,20 @@ def test_regenerate_corpus_errors_when_probe_missing(
         assert regen.main() == 1
 
 
-@patch.object(regen, "write_rule_comment_phrase_summary", return_value=0)
-@patch.object(regen, "write_cleaned_corpus")
-@patch.object(regen, "IndexDiachronicaParser")
-def test_regenerate_corpus_errors_when_asca_missing(
-    mock_parser_cls,
-    _mock_write_corpus,
-    _mock_comment_summary,
+def test_regenerate_corpus_errors_when_asca_fork_missing(
     tmp_path: Path,
+    capsys,
 ):
     html_path = tmp_path / "index.html"
     html_path.write_text("<html><body></body></html>", encoding="utf-8")
     probe = tmp_path / "probe.wsca"
     probe.write_text("probe", encoding="utf-8")
-    _configure_parser_mock(mock_parser_cls)
 
     with (
-        patch.object(regen.shutil, "which", return_value=None),
+        patch.object(regen, "write_rule_comment_phrase_summary", return_value=0),
+        patch.object(regen, "write_cleaned_corpus"),
+        patch.object(regen, "IndexDiachronicaParser") as mock_parser_cls,
+        patch.object(regen, "ROOT", tmp_path),
         patch.object(
             sys,
             "argv",
@@ -153,6 +161,47 @@ def test_regenerate_corpus_errors_when_asca_missing(
                 str(tmp_path / "inventory"),
                 "--probe-words",
                 str(probe),
+            ],
+        ),
+    ):
+        _configure_parser_mock(mock_parser_cls)
+        assert regen.main() == 1
+
+    assert "fork not found" in capsys.readouterr().err
+
+
+@patch.object(regen, "write_rule_comment_phrase_summary", return_value=0)
+@patch.object(regen, "write_cleaned_corpus")
+@patch.object(regen, "IndexDiachronicaParser")
+def test_regenerate_corpus_errors_when_asca_missing_on_path(
+    mock_parser_cls,
+    _mock_write_corpus,
+    _mock_comment_summary,
+    tmp_path: Path,
+):
+    html_path = tmp_path / "index.html"
+    html_path.write_text("<html><body></body></html>", encoding="utf-8")
+    probe = tmp_path / "probe.wsca"
+    probe.write_text("probe", encoding="utf-8")
+    _configure_parser_mock(mock_parser_cls)
+
+    with (
+        patch.object(regen, "ROOT", tmp_path),
+        patch.object(regen, "_validation_asca_command", return_value=None),
+        patch.object(
+            sys,
+            "argv",
+            [
+                "regenerate_corpus",
+                "--html",
+                str(html_path),
+                "--yaml-out",
+                str(tmp_path / "out.yml"),
+                "--inventory-dir",
+                str(tmp_path / "inventory"),
+                "--probe-words",
+                str(probe),
+                "--no-use-asca-fork",
             ],
         ),
     ):
@@ -242,10 +291,10 @@ def test_regenerate_corpus_writes_validation_inventory(
     ]
     mock_iter_rows.return_value = (rows[:1], field_rows[:1])
     mock_flip_rows.return_value = MagicMock()
+    _write_fake_fork(tmp_path)
 
     with (
         patch.object(regen, "ROOT", tmp_path),
-        patch.object(regen.shutil, "which", return_value="/usr/bin/asca"),
         patch.object(regen, "asca_supports_validate", return_value=True),
         patch.object(
             sys,
@@ -269,6 +318,7 @@ def test_regenerate_corpus_writes_validation_inventory(
 
     mock_iter_rows.assert_called_once()
     assert mock_iter_rows.call_args.kwargs["probe_words"] == probe
+    assert mock_iter_rows.call_args.kwargs["asca_bin"] == str(tmp_path / "bin" / "bin" / "asca")
     mock_write_field_isolation.assert_called_once()
     mock_flip_rows.assert_called_once()
     summary_path = inventory_dir / "asca-rule-inventory-summary.md"
@@ -350,10 +400,10 @@ def test_regenerate_corpus_reset_changelog_overwrites_existing(
         return 1
 
     mock_append_changelog.side_effect = _assert_cleared_then_append
+    _write_fake_fork(tmp_path)
 
     with (
         patch.object(regen, "ROOT", tmp_path),
-        patch.object(regen.shutil, "which", return_value="/usr/bin/asca"),
         patch.object(regen, "asca_supports_validate", return_value=True),
         patch.object(
             sys,
@@ -378,23 +428,22 @@ def test_regenerate_corpus_reset_changelog_overwrites_existing(
     assert "reset" in capsys.readouterr().out
 
 
-def test_asca_version_when_binary_not_on_path():
-    with patch.object(regen.shutil, "which", return_value=None):
-        assert regen._asca_version() == "not found on PATH"
-
-
 def test_asca_version_reads_stdout():
     proc = MagicMock(stdout="asca 0.10.5\n", returncode=0)
-    with (
-        patch.object(regen.shutil, "which", return_value="/usr/bin/asca"),
-        patch.object(regen.subprocess, "run", return_value=proc),
-    ):
-        assert regen._asca_version() == "asca 0.10.5"
+    with patch.object(regen.subprocess, "run", return_value=proc):
+        assert regen._asca_version("/usr/bin/asca") == "asca 0.10.5"
 
 
 def test_asca_version_falls_back_on_subprocess_error():
-    with (
-        patch.object(regen.shutil, "which", return_value="/usr/bin/asca"),
-        patch.object(regen.subprocess, "run", side_effect=OSError("boom")),
-    ):
-        assert regen._asca_version() == "0.10.x"
+    with patch.object(regen.subprocess, "run", side_effect=OSError("boom")):
+        assert regen._asca_version("/usr/bin/asca") == "0.10.x"
+
+
+def test_validation_asca_command_uses_fork_or_path(tmp_path: Path):
+    fork = regen._fork_asca_command(repo_root=tmp_path)
+    _write_fake_fork(tmp_path)
+    assert regen._validation_asca_command(use_fork=True, repo_root=tmp_path) == str(fork)
+    with patch.object(regen, "resolve_asca_bin", return_value="/usr/bin/asca"):
+        assert regen._validation_asca_command(use_fork=False, repo_root=tmp_path) == (
+            "/usr/bin/asca"
+        )

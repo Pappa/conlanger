@@ -46,6 +46,12 @@ def resolve_asca_bin() -> str | None:
     return shutil.which("asca")
 
 
+def fork_asca_bin(*, repo_root: Path | None = None) -> Path:
+    """Return the repo-local asca fork installed under ``bin/bin/asca``."""
+    root = repo_root or Path(__file__).resolve().parents[3]
+    return root / "bin" / "bin" / "asca"
+
+
 @functools.lru_cache(maxsize=8)
 def _asca_supports_validate(asca_bin: str) -> bool:
     """Return True when *asca_bin* exposes the ``validate`` subcommand."""
@@ -61,8 +67,8 @@ def _asca_supports_validate(asca_bin: str) -> bool:
     return proc.returncode == 0
 
 
-def _require_asca_bin() -> str:
-    asca = resolve_asca_bin()
+def _require_asca_bin(*, asca_bin: str | None = None) -> str:
+    asca = asca_bin if asca_bin is not None else resolve_asca_bin()
     if asca is None:
         raise ASCAValidationError(
             "asca binary not found (set ASCA_BIN or install asca 0.10.x on PATH)"
@@ -133,17 +139,22 @@ def _run_asca_command(
         ) from exc
 
 
-def asca_supports_validate() -> bool:
-    """Return True when the resolved asca binary exposes ``validate``."""
-    asca = resolve_asca_bin()
+def asca_supports_validate(*, asca_bin: str | None = None) -> bool:
+    """Return True when the asca binary exposes ``validate``."""
+    asca = asca_bin if asca_bin is not None else resolve_asca_bin()
     if asca is None:
         return False
     return _asca_supports_validate(asca)
 
 
-def validate_asca_syntax(rule: str, *, timeout: float = 15.0) -> bool:
+def validate_asca_syntax(
+    rule: str,
+    *,
+    asca_bin: str | None = None,
+    timeout: float = 15.0,
+) -> bool:
     """Return ``True`` when a whole rule line passes ``asca validate -s``."""
-    asca = _require_asca_bin()
+    asca = _require_asca_bin(asca_bin=asca_bin)
     _require_validate_support(asca)
     proc = _run_asca_command([asca, "validate", "-s", rule], timeout=timeout)
     _raise_if_asca_failed(proc, timeout=timeout)
@@ -154,10 +165,11 @@ def validate_asca_part(
     part: ASCARulePart,
     fragment: str,
     *,
+    asca_bin: str | None = None,
     timeout: float = 15.0,
 ) -> bool:
     """Return ``True`` when a rule field fragment passes ``asca validate -s -f``."""
-    asca = _require_asca_bin()
+    asca = _require_asca_bin(asca_bin=asca_bin)
     _require_validate_support(asca)
     field = _ASCA_FIELD_FLAGS[part]
     proc = _run_asca_command(
@@ -172,6 +184,7 @@ def validate_asca(
     rule: DiachronicSeries,
     *,
     probe_words: Path | None = None,
+    asca_bin: str | None = None,
     timeout: float = 15.0,
 ) -> bool:
     """Return ``True`` if ``rule`` is valid for ASCA; otherwise raise.
@@ -187,7 +200,7 @@ def validate_asca(
             "DiachronicSeries has no active SoundChangeRule lines to validate"
         )
 
-    asca = _require_asca_bin()
+    asca = _require_asca_bin(asca_bin=asca_bin)
 
     body = str(rule)
     if not body.endswith("\n"):
