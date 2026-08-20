@@ -12,7 +12,7 @@ from conlanger.utils.mappings import normalize_feature_matrices_in_field
 
 
 @pytest.mark.parametrize(
-    ("before", "after"),
+    ("input", "expected"),
     [
         ("V[tone: 5]", "V:[tone: 5]"),
         ("V:[+long][tone: 51]", "V:[+long, tone: 51]"),
@@ -21,10 +21,11 @@ from conlanger.utils.mappings import normalize_feature_matrices_in_field
         ("V:[+stress][tone: 51]", "V:[+stress, tone: 51]"),
         ("V:[tone: 5]", "V:[tone: 5]"),
         ("{C,#}V:[+long][tone: 51]∅", "{C,#}V:[+long, tone: 51]∅"),
+        ("V:[+stress]ː[tone: 51]", "V:[+stress]ː[tone: 51]"),
     ],
 )
-def test_normalize_asca_tone_matrices(before, after):
-    assert normalize_asca_tone_matrices(before) == after
+def test_normalize_asca_tone_matrices(input, expected):
+    assert normalize_asca_tone_matrices(input) == expected
 
 
 def test_length_then_tone_merge_for_index_length_mark():
@@ -33,27 +34,19 @@ def test_length_then_tone_merge_for_index_length_mark():
         feature_mappings_dict(),
     )
     assert mapped == "Vː[tone: 51]"
-    after_length = normalize_asca_length_marks(mapped)
-    assert after_length == "V:[+long][tone: 51]"
-    assert normalize_asca_tone_matrices(after_length) == "V:[+long, tone: 51]"
+    expected_length = normalize_asca_length_marks(mapped)
+    assert expected_length == "V:[+long][tone: 51]"
 
 
-def test_normalize_asca_tone_matrices_does_not_colon_after_length_mark():
-    assert (
-        normalize_asca_tone_matrices("V:[+stress]ː[tone: 51]")
-        == "V:[+stress]ː[tone: 51]"
-    )
-
-
-def test_length_marks_merge_intervening_mark_into_prior_matrix():
-    assert (
-        normalize_asca_length_marks("V:[+stress]ː[tone: 51]")
-        == "V:[+stress, +long][tone: 51]"
-    )
-    assert (
-        normalize_asca_length_marks("V:[+stress]ː[-falling tone]")
-        == "V:[+stress, +long][-falling tone]"
-    )
+@pytest.mark.parametrize(
+    ("input", "expected"),
+    [
+        ("V:[+stress]ː[tone: 51]", "V:[+stress, +long][tone: 51]"),
+        ("V:[+stress]ː[-falling tone]", "V:[+stress, +long][-falling tone]"),
+    ],
+)
+def test_normalize_asca_length_marks(input, expected):
+    assert normalize_asca_length_marks(input) == expected
 
 
 def test_compile_stress_length_tone_merges():

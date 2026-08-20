@@ -68,9 +68,7 @@ def _split_set_members(content: str) -> list[str]:
 
 def _is_structural_optional_inner(inner: str) -> bool:
     text = inner.strip()
-    if not text:
-        return False
-    if _ASCA_ENV_OPTIONAL_RE.fullmatch(f"({text})"):
+    if not text or _ASCA_ENV_OPTIONAL_RE.fullmatch(f"({text})"):
         return False
     return bool(_CLASS_OR_GROUP_INNER_RE.fullmatch(text))
 

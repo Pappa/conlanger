@@ -44,6 +44,27 @@ def mock_env_vars(mocker):
     if _FORK_ASCA.is_file() and "ASCA_BIN" not in os.environ:
         mocker.patch.dict(os.environ, {"ASCA_BIN": str(_FORK_ASCA)})
 
+@pytest.fixture
+def fx_sample_group_mappings():
+    return {
+        "A": "O:[+delrel]",
+        "B": "V:[+back]",
+        "D": "P:[+voice]",
+        "E": "V:[+front]",
+        "H": "[-place]",
+        "J": "{L,G}",
+        "K": "C:[-front,+back,+hi,-lo]",
+        "Ḱ": "C:[+front,+hi,-lo]",
+        "P": "C:[+labial]",
+        "Q": "{C:[-front,+back,-hi,-lo],[+click]}",
+        "R": "[+son,-syll]",
+        "S": "P",
+        "T": "P:[-voice]",
+        "U": "%",
+        "W": "G",
+        "Z": "[+cont]",
+    }
+
 
 # Evaluated at collection time for ``skipif`` (before autouse fixtures run).
 ASCA_INSTALLED = _FORK_ASCA.is_file() or require_executable("asca")

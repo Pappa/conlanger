@@ -25,21 +25,6 @@ from conlanger.tools.compile.asca.tone_matrices import normalize_asca_tone_matri
 from conlanger.utils.file_io import load_compiler_config
 from conlanger.utils.mappings import CompilerConfig
 
-ASCA_COMPILE_STEP_NAMES: tuple[str, ...] = (
-    "normalize_asca_optional_grouping_ellipsis",
-    "apply_compiler_series_mappings",
-    "expand_index_subscript_references",
-    "apply_section_local_abbreviations",
-    "normalize_asca_superscript_modifiers",
-    "apply_asca_group_mappings",
-    "normalize_asca_length_marks",
-    "normalize_asca_tone_matrices",
-    "normalize_typographic_apostrophes",
-    "normalize_asca_ejective_marks",
-    "normalize_asca_breve_marks",
-    "expand_meta_notation",
-)
-
 
 def compile_asca_rule_string(
     text: str,

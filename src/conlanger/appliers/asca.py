@@ -203,8 +203,6 @@ def validate_asca(
     asca = _require_asca_bin(asca_bin=asca_bin)
 
     body = str(rule)
-    if not body.endswith("\n"):
-        body += "\n"
 
     words_override = probe_words or (
         Path(os.environ["ASCA_PROBE_WORDS"])

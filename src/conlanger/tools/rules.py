@@ -4,9 +4,6 @@ import random
 from typing import ClassVar
 
 from conlanger.tools.compile.asca.chains import expand_chained_corpus_rule
-from conlanger.tools.compile.asca.group_mappings import (
-    apply_asca_group_mappings_to_string,
-)
 from conlanger.tools.compile.asca.parallel_null_columns import (
     drop_mixed_parallel_null_columns,
 )
@@ -236,9 +233,6 @@ class SoundChangeRule(RulePartBase):
             compiler_config=self._compiler_config,
         )
 
-    def _apply_asca_group_mappings(self, rule: str) -> str:
-        return apply_asca_group_mappings_to_string(rule, self._group_mappings)
-
 
 class DiachronicSeries:
     def __init__(
@@ -276,7 +270,7 @@ class DiachronicSeries:
                     )
 
     def __str__(self):
-        return "\n".join([str(part) for part in self._parts])
+        return "\n".join([str(part) for part in self._parts]) + "\n"
 
     @property
     def title(self):

@@ -61,9 +61,6 @@ def _apply_asca_group_mappings_outside_brackets(
     mappings: dict[str, str],
 ) -> str:
     """Expand Index class letters outside ``[...]`` feature matrices."""
-    if not text or not mappings:
-        return text
-
     index_keys = set(mappings.keys())
     labial_keys = index_keys | _ASCA_NATIVE_GROUPINGS
 
