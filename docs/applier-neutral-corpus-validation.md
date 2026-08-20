@@ -106,9 +106,9 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](./ad
 | `asca-rule-inventory-error.csv` | Filtered `ok=False` | [34](../.scratch/cleaned-rule-corpus/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
 | `asca-rule-inventory-changelog.csv` | Append-only **ok flips** matched by `(source, alt_idx)` (HTML `file:line` + optional-output alternative). Pass `--reset-changelog` to overwrite after a column-schema change. | [34](../.scratch/cleaned-rule-corpus/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
 | `asca-rule-inventory-summary.md` | Counts, percentages, top failure classes, common `error_token`s | [12](../.scratch/cleaned-rule-corpus/issues/12-full-corpus-validation-inventory.md) |
-| `asca-field-isolation.csv` | *(planned)* per-field `blame`; default fails-only (`whole_ok == false`) | [36](../.scratch/cleaned-rule-corpus/issues/36-per-field-asca-blame-in-inventory.md) |
-| `asca-field-isolation-success.csv` | *(planned)* filtered `whole_ok == true` | [36](../.scratch/cleaned-rule-corpus/issues/36-per-field-asca-blame-in-inventory.md) |
-| `asca-field-isolation-error.csv` | *(planned)* filtered `whole_ok == false` | [36](../.scratch/cleaned-rule-corpus/issues/36-per-field-asca-blame-in-inventory.md) |
+| `asca-field-isolation.csv` | per-field `blame`; default fails-only (`whole_ok == false`) | [36](../.scratch/cleaned-rule-corpus/issues/36-per-field-asca-blame-in-inventory.md) |
+| `asca-field-isolation-success.csv` | filtered `whole_ok == true` | [36](../.scratch/cleaned-rule-corpus/issues/36-per-field-asca-blame-in-inventory.md) |
+| `asca-field-isolation-error.csv` | filtered `whole_ok == false` | [36](../.scratch/cleaned-rule-corpus/issues/36-per-field-asca-blame-in-inventory.md) |
 
 **CSV columns** (`VALIDATION_CSV_COLUMNS` in `corpus_inventory.py`):
 

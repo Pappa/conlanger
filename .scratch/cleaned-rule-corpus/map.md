@@ -85,7 +85,7 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - [Spike: native ASCA per-field validation effort](issues/86-spike-asca-native-per-field-validation.md) — fork path; grill 2026-08-19 Q1–Q5. Findings: [research/asca-native-per-field-validation.md](research/asca-native-per-field-validation.md).
 - [Implement `validate` + `validate_part` on the private asca fork](issues/87-implement-asca-fork-validate.md) — **resolved** (2026-08-20): `github.com/Pappa/asca-rust` **0.10.3** — `asca validate`, `validate_part`, `check_structure`; CLI fields `input`/`output`/`context`/`exception`.
 - [Wire conlanger to forked asca `validate`](issues/88-wire-conlanger-forked-asca-validate.md) — **resolved** (2026-08-20): `ASCA_BIN` + `validate_asca_syntax` / `validate_asca_part`; `validate_asca` = validate then run+probes; [DEV.md](../../docs/DEV.md).
-- [Per-field ASCA blame in inventory](issues/36-per-field-asca-blame-in-inventory.md) — **rewritten** (2026-08-20): `validate_asca_part` on compiled fields + `blame` CSV; stubs dropped; `ok` unchanged. **Frontier** (ready-for-agent).
+- [Per-field ASCA blame in inventory](issues/36-per-field-asca-blame-in-inventory.md) — **resolved** (2026-08-20): `validate_asca_part` on compiled fields + `blame` CSV; stubs dropped; `ok` unchanged.
 
 ## Pipeline documentation (grill 2026-08-07)
 

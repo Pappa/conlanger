@@ -8,9 +8,15 @@ from conlanger.appliers.asca import ASCAValidationError
 from conlanger.tools.corpus_inventory import (
     CHANGELOG_CSV_COLUMNS,
     SECTION_SKIPPED_FAILURE_CLASS,
+    FieldIsolationRow,
     ValidationRow,
     append_ok_flip_changelog,
+    build_field_isolation_row,
     classify_error,
+    derive_blame,
+    field_isolation_rows_for_validation_rows,
+    field_isolation_rows_to_dataframe,
+    filter_field_isolation_by_whole_ok,
     filter_inventory_by_ok,
     iter_validation_rows,
     load_inventory_csv,
@@ -23,10 +29,14 @@ from conlanger.tools.corpus_inventory import (
     top_error_tokens,
     top_error_tokens_with_suggested_from_dataframe,
     validate_corpus_rule,
+    validate_corpus_rule_with_targets,
     validation_rows_to_dataframe,
+    write_field_isolation_csvs,
     write_filtered_inventory_csvs,
     write_validation_csv,
 )
+from conlanger.tools.rules import SoundChangeRule
+from tests.conftest import ASCA_VALIDATE_INSTALLED
 
 _SECTION = {"index": "1.0", "section": "Test Section"}
 
@@ -979,3 +989,348 @@ def test_filter_inventory_by_ok_empty_dataframe():
 
     empty = pd.DataFrame(columns=validation_rows_to_dataframe([]).columns)
     assert filter_inventory_by_ok(empty, ok=True).empty
+
+
+@pytest.mark.parametrize(
+    (
+        "whole_ok",
+        "input_ok",
+        "output_ok",
+        "env_ok",
+        "exception_ok",
+        "expected",
+    ),
+    [
+        (True, True, True, True, True, "none"),
+        (True, False, True, None, None, "none"),
+        (False, False, True, None, None, "input"),
+        (False, True, False, None, None, "output"),
+        (False, True, True, False, None, "env"),
+        (False, True, True, None, False, "exception"),
+        (False, False, False, False, False, "input|output|env|exception"),
+        (False, False, True, False, None, "input|env"),
+        (False, True, True, True, True, "multi"),
+        (False, None, None, None, None, "multi"),
+    ],
+)
+def test_derive_blame(
+    whole_ok,
+    input_ok,
+    output_ok,
+    env_ok,
+    exception_ok,
+    expected,
+):
+    assert (
+        derive_blame(
+            whole_ok,
+            input_ok=input_ok,
+            output_ok=output_ok,
+            env_ok=env_ok,
+            exception_ok=exception_ok,
+        )
+        == expected
+    )
+
+
+def test_filter_field_isolation_by_whole_ok_splits_success_and_error():
+    rows = [
+        FieldIsolationRow(
+            "1",
+            "A",
+            "r0",
+            "s:1",
+            True,
+            True,
+            True,
+            None,
+            None,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "none",
+        ),
+        FieldIsolationRow(
+            "1",
+            "A",
+            "r1",
+            "s:2",
+            False,
+            False,
+            True,
+            None,
+            None,
+            "unknown_feature",
+            "",
+            "",
+            "",
+            "err",
+            "",
+            "",
+            "",
+            "input",
+        ),
+    ]
+    df = field_isolation_rows_to_dataframe(rows)
+    success = filter_field_isolation_by_whole_ok(df, whole_ok=True)
+    error = filter_field_isolation_by_whole_ok(df, whole_ok=False)
+    assert list(success["source"]) == ["s:1"]
+    assert list(error["source"]) == ["s:2"]
+    assert list(success.columns) == list(df.columns)
+
+
+def test_build_field_isolation_row_without_field_rule():
+    validation_row = ValidationRow(
+        "1",
+        "A",
+        "r0",
+        "s:1",
+        False,
+        "format_error",
+        "broken-syntax",
+        "",
+        "",
+        "bad",
+    )
+    row = build_field_isolation_row(validation_row, None)
+    assert row.whole_ok is False
+    assert row.input_ok is None
+    assert row.blame == "multi"
+
+
+def test_write_field_isolation_csvs_default_fails_only(tmp_path: Path):
+    rows = [
+        FieldIsolationRow(
+            "1",
+            "A",
+            "r0",
+            "s:1",
+            True,
+            True,
+            True,
+            None,
+            None,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "none",
+        ),
+        FieldIsolationRow(
+            "1",
+            "A",
+            "r1",
+            "s:2",
+            False,
+            False,
+            True,
+            None,
+            None,
+            "unknown_feature",
+            "",
+            "",
+            "",
+            "err",
+            "",
+            "",
+            "",
+            "input",
+        ),
+    ]
+    write_field_isolation_csvs(rows, tmp_path)
+    main = list(csv.DictReader((tmp_path / "asca-field-isolation.csv").open()))
+    success = list(
+        csv.DictReader((tmp_path / "asca-field-isolation-success.csv").open())
+    )
+    error = list(csv.DictReader((tmp_path / "asca-field-isolation-error.csv").open()))
+    assert len(main) == 1
+    assert main[0]["source"] == "s:2"
+    assert len(success) == 1
+    assert len(error) == 1
+
+
+def test_summarize_inventory_links_field_isolation_csvs():
+    validation_rows = [
+        ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
+    ]
+    field_rows = [
+        FieldIsolationRow(
+            "1",
+            "A",
+            "r1",
+            "s:2",
+            False,
+            False,
+            True,
+            None,
+            None,
+            "unknown_feature",
+            "",
+            "",
+            "",
+            "err",
+            "",
+            "",
+            "",
+            "input",
+        ),
+    ]
+    text = summarize_inventory(
+        validation_rows,
+        source_yaml="out.yml",
+        probe_words="probe.wsca",
+        field_isolation_rows=field_rows,
+    )
+    assert "asca-field-isolation.csv" in text
+    assert "asca-field-isolation-success.csv" in text
+    assert "asca-field-isolation-error.csv" in text
+    assert "## Field isolation blame (error rows)" in text
+    assert "| 1 | `input` |" in text
+
+
+@patch("conlanger.tools.corpus_inventory.validate_asca_part", return_value=True)
+def test_build_field_isolation_row_unknown_feature_on_input(mock_validate_part):
+    def side_effect(part, fragment):
+        if part == "input":
+            raise ASCAValidationError("Syntax Error: Unknown feature 'voiced'")
+        return True
+
+    mock_validate_part.side_effect = side_effect
+
+    field_rule = SoundChangeRule(
+        {
+            "input": "C:[+voiced]",
+            "output": "e",
+        }
+    )
+    validation_row = ValidationRow(
+        "1",
+        "A",
+        "r0",
+        "s:1",
+        False,
+        "unknown_feature",
+        "asca-unrepresentable",
+        "voiced",
+        "voice",
+        "whole fail",
+    )
+    row = build_field_isolation_row(validation_row, field_rule)
+    assert row.blame == "input"
+    assert row.input_ok is False
+    assert row.input_class == "unknown_feature"
+    assert row.output_ok is True
+
+
+@patch("conlanger.tools.corpus_inventory.validate_asca_part")
+def test_build_field_isolation_row_missing_underscore_on_env(mock_validate_part):
+    def side_effect(part, fragment):
+        if part == "env":
+            raise ASCAValidationError("Syntax Error: Expected '_'")
+        return True
+
+    mock_validate_part.side_effect = side_effect
+
+    field_rule = SoundChangeRule(
+        {
+            "input": "a",
+            "output": "e",
+            "env": "word-initially",
+        }
+    )
+    validation_row = ValidationRow(
+        "1",
+        "A",
+        "r0",
+        "s:1",
+        False,
+        "expected_underscore",
+        "asca-unrepresentable",
+        "",
+        "",
+        "whole fail",
+    )
+    row = build_field_isolation_row(validation_row, field_rule)
+    assert row.blame == "env"
+    assert row.env_ok is False
+    assert row.env_class == "expected_underscore"
+    assert row.input_ok is True
+    assert row.output_ok is True
+
+
+@patch("conlanger.tools.corpus_inventory.validate_asca_part")
+def test_build_field_isolation_row_two_fields_fail(mock_validate_part):
+    def side_effect(part, _fragment):
+        if part in {"input", "env"}:
+            raise ASCAValidationError(f"Syntax Error: bad {part}")
+        return True
+
+    mock_validate_part.side_effect = side_effect
+
+    field_rule = SoundChangeRule(
+        {
+            "input": "bad",
+            "output": "e",
+            "env": "bad-env",
+        }
+    )
+    validation_row = ValidationRow(
+        "1",
+        "A",
+        "r0",
+        "s:1",
+        False,
+        "syntax_other",
+        "broken-syntax",
+        "",
+        "",
+        "whole fail",
+    )
+    row = build_field_isolation_row(validation_row, field_rule)
+    assert row.blame == "input|env"
+
+
+@pytest.mark.skipif(not ASCA_VALIDATE_INSTALLED, reason="asca validate not available")
+def test_field_isolation_integration_multi_blame():
+    validation_row = ValidationRow(
+        "1",
+        "A",
+        "r0",
+        "s:1",
+        False,
+        "runtime_other",
+        "broken-syntax",
+        "",
+        "",
+        "uneven set",
+    )
+    field_rule = SoundChangeRule(
+        {
+            "input": "{p,t}",
+            "output": "{b}",
+        }
+    )
+    row = build_field_isolation_row(validation_row, field_rule)
+    assert row.input_ok is True
+    assert row.output_ok is True
+    assert row.blame == "multi"
+
+    rows, targets = validate_corpus_rule_with_targets(
+        _SECTION,
+        {"stages": ["{p,t}", "{b}"], "raw": "{p,t} → {b}", "source": "s:multi"},
+        "r0",
+        probe_words=None,
+    )
+    assert len(rows) == 1
+    assert rows[0].ok is False
+    field_rows = field_isolation_rows_for_validation_rows(rows, targets)
+    assert field_rows[0].blame == "multi"

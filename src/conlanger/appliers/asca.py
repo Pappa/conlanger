@@ -133,6 +133,14 @@ def _run_asca_command(
         ) from exc
 
 
+def asca_supports_validate() -> bool:
+    """Return True when the resolved asca binary exposes ``validate``."""
+    asca = resolve_asca_bin()
+    if asca is None:
+        return False
+    return _asca_supports_validate(asca)
+
+
 def validate_asca_syntax(rule: str, *, timeout: float = 15.0) -> bool:
     """Return ``True`` when a whole rule line passes ``asca validate -s``."""
     asca = _require_asca_bin()

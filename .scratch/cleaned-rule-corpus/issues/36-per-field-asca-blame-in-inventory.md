@@ -106,8 +106,8 @@ Stub build plan in [research/field-isolation-compile-validation.md](../research/
 
 ## Acceptance criteria
 
-- [ ] Field-blame CSVs produced by regen: full (fails-only by default), success, and error splits
-- [ ] Per-field checks via `validate_asca_part` on compiled `SoundChangeRule` strings; no stubs
-- [ ] `blame` column derived; main inventory `ok` unchanged
-- [ ] Tests: pipe-joined failing fields (`input`, `input|env`), `blame=multi` (whole fail, fields ok); ticket-10 boundary noted in docs
-- [ ] Summary links `asca-field-isolation.csv`, `-success.csv`, and `-error.csv`
+- [x] Field-blame CSVs produced by regen: full (fails-only by default), success, and error splits
+- [x] Per-field checks via `validate_asca_part` on compiled `SoundChangeRule` strings; no stubs
+- [x] `blame` column derived; main inventory `ok` unchanged
+- [x] Tests: pipe-joined failing fields (`input`, `input|env`), `blame=multi` (whole fail, fields ok); ticket-10 boundary noted in docs
+- [x] Summary links `asca-field-isolation.csv`, `-success.csv`, and `-error.csv`

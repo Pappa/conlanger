@@ -7,7 +7,7 @@ from pathlib import Path
 from unittest.mock import MagicMock, patch
 
 from conlanger.scripts import regenerate_corpus as regen
-from conlanger.tools.corpus_inventory import ValidationRow
+from conlanger.tools.corpus_inventory import FieldIsolationRow, ValidationRow
 
 
 def _configure_parser_mock(
@@ -161,11 +161,12 @@ def test_regenerate_corpus_errors_when_asca_missing(
 
 @patch.object(regen, "_asca_version", return_value="asca-test-0.10")
 @patch.object(regen, "append_ok_flip_changelog", return_value=2)
+@patch.object(regen, "write_field_isolation_csvs")
 @patch.object(regen, "write_filtered_inventory_csvs")
 @patch.object(regen, "write_validation_csv")
 @patch.object(regen, "ok_flip_changelog_rows")
 @patch.object(regen, "load_inventory_csv", return_value=None)
-@patch.object(regen, "iter_validation_rows")
+@patch.object(regen, "iter_inventory_with_field_isolation")
 @patch.object(regen, "write_rule_comment_phrase_summary", return_value=0)
 @patch.object(regen, "write_cleaned_corpus")
 @patch.object(regen, "IndexDiachronicaParser")
@@ -178,6 +179,7 @@ def test_regenerate_corpus_writes_validation_inventory(
     mock_flip_rows,
     _mock_write_csv,
     _mock_write_filtered,
+    mock_write_field_isolation,
     _mock_append_changelog,
     _mock_asca_version,
     tmp_path: Path,
@@ -216,12 +218,35 @@ def test_regenerate_corpus_writes_validation_inventory(
             "err",
         ),
     ]
-    mock_iter_rows.return_value = rows
+    field_rows = [
+        FieldIsolationRow(
+            "1",
+            "A",
+            0,
+            "s:1",
+            True,
+            True,
+            True,
+            None,
+            None,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "none",
+        ),
+    ]
+    mock_iter_rows.return_value = (rows[:1], field_rows[:1])
     mock_flip_rows.return_value = MagicMock()
 
     with (
         patch.object(regen, "ROOT", tmp_path),
         patch.object(regen.shutil, "which", return_value="/usr/bin/asca"),
+        patch.object(regen, "asca_supports_validate", return_value=True),
         patch.object(
             sys,
             "argv",
@@ -244,6 +269,7 @@ def test_regenerate_corpus_writes_validation_inventory(
 
     mock_iter_rows.assert_called_once()
     assert mock_iter_rows.call_args.kwargs["probe_words"] == probe
+    mock_write_field_isolation.assert_called_once()
     mock_flip_rows.assert_called_once()
     summary_path = inventory_dir / "asca-rule-inventory-summary.md"
     assert summary_path.is_file()
@@ -252,11 +278,12 @@ def test_regenerate_corpus_writes_validation_inventory(
 
 @patch.object(regen, "_asca_version", return_value="asca-test-0.10")
 @patch.object(regen, "append_ok_flip_changelog", return_value=1)
+@patch.object(regen, "write_field_isolation_csvs")
 @patch.object(regen, "write_filtered_inventory_csvs")
 @patch.object(regen, "write_validation_csv")
 @patch.object(regen, "ok_flip_changelog_rows")
 @patch.object(regen, "load_inventory_csv", return_value=None)
-@patch.object(regen, "iter_validation_rows")
+@patch.object(regen, "iter_inventory_with_field_isolation")
 @patch.object(regen, "write_rule_comment_phrase_summary", return_value=0)
 @patch.object(regen, "write_cleaned_corpus")
 @patch.object(regen, "IndexDiachronicaParser")
@@ -269,6 +296,7 @@ def test_regenerate_corpus_reset_changelog_overwrites_existing(
     mock_flip_rows,
     _mock_write_csv,
     _mock_write_filtered,
+    _mock_write_field_isolation,
     mock_append_changelog,
     _mock_asca_version,
     tmp_path: Path,
@@ -290,9 +318,31 @@ def test_regenerate_corpus_reset_changelog_overwrites_existing(
     _configure_parser_mock(
         mock_parser_cls, sections=[{"rules": [{"stages": ["a", "b"]}]}]
     )
-    mock_iter_rows.return_value = [
-        ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", "")
-    ]
+    mock_iter_rows.return_value = (
+        [ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", "")],
+        [
+            FieldIsolationRow(
+                "1",
+                "A",
+                0,
+                "s:1",
+                True,
+                True,
+                True,
+                None,
+                None,
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "none",
+            )
+        ],
+    )
     mock_flip_rows.return_value = MagicMock()
 
     def _assert_cleared_then_append(flips, path):
@@ -304,6 +354,7 @@ def test_regenerate_corpus_reset_changelog_overwrites_existing(
     with (
         patch.object(regen, "ROOT", tmp_path),
         patch.object(regen.shutil, "which", return_value="/usr/bin/asca"),
+        patch.object(regen, "asca_supports_validate", return_value=True),
         patch.object(
             sys,
             "argv",

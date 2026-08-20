@@ -1,4 +1,12 @@
-"""Validation inventory for cleaned rule corpus (ticket 12)."""
+"""Validation inventory for cleaned rule corpus (ticket 12).
+
+Whole-rule ``ok`` uses ``validate_asca`` (syntax + baseline probe run). Per-field
+checks (ticket 36) use ``validate_asca_part`` on compiled ``SoundChangeRule``
+field strings — Tier 1–2 / field-local syntax only. ``blame=multi`` means the
+whole rule failed while every present field passed in isolation (uneven sets,
+cross-field coupling, Tier-4 runtime, etc.); ticket 10 probe synthesis is out
+of scope.
+"""
 
 from __future__ import annotations
 
@@ -11,7 +19,12 @@ from typing import Any
 
 import pandas as pd
 
-from conlanger.appliers.asca import ASCAValidationError, validate_asca
+from conlanger.appliers.asca import (
+    ASCARulePart,
+    ASCAValidationError,
+    validate_asca,
+    validate_asca_part,
+)
 from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
 from conlanger.utils.parsing import ARROW
 
@@ -93,8 +106,35 @@ INVENTORY_CSV_NAME = "asca-rule-inventory.csv"
 INVENTORY_SUCCESS_CSV_NAME = "asca-rule-inventory-success.csv"
 INVENTORY_ERROR_CSV_NAME = "asca-rule-inventory-error.csv"
 INVENTORY_CHANGELOG_CSV_NAME = "asca-rule-inventory-changelog.csv"
+FIELD_ISOLATION_CSV_NAME = "asca-field-isolation.csv"
+FIELD_ISOLATION_SUCCESS_CSV_NAME = "asca-field-isolation-success.csv"
+FIELD_ISOLATION_ERROR_CSV_NAME = "asca-field-isolation-error.csv"
 SECTION_SKIPPED_FAILURE_CLASS = "section_skipped"
 OMITTED_DESCRIPTIONS = {"panic_other"}
+
+BLAME_FIELD_ORDER: tuple[ASCARulePart, ...] = ("input", "output", "env", "exception")
+
+FIELD_ISOLATION_CSV_COLUMNS = [
+    "section_index",
+    "section_name",
+    "rule_id",
+    "alt_idx",
+    "source",
+    "whole_ok",
+    "input_ok",
+    "output_ok",
+    "env_ok",
+    "exception_ok",
+    "input_class",
+    "output_class",
+    "env_class",
+    "exception_class",
+    "input_description",
+    "output_description",
+    "env_description",
+    "exception_description",
+    "blame",
+]
 
 
 def _ok_as_bool(series: pd.Series) -> pd.Series:
@@ -374,6 +414,355 @@ class ValidationRow:
         }
 
 
+@dataclass(frozen=True)
+class FieldIsolationRow:
+    section_index: str
+    section_name: str
+    rule_id: str
+    source: str
+    whole_ok: bool
+    input_ok: bool | None
+    output_ok: bool | None
+    env_ok: bool | None
+    exception_ok: bool | None
+    input_class: str
+    output_class: str
+    env_class: str
+    exception_class: str
+    input_description: str
+    output_description: str
+    env_description: str
+    exception_description: str
+    blame: str
+    alt_idx: int | None = None
+
+    def as_csv_dict(self) -> dict[str, str | int | bool]:
+        def _field(value: bool | None) -> str | bool:
+            if value is None:
+                return ""
+            return value
+
+        return {
+            "section_index": self.section_index,
+            "section_name": self.section_name,
+            "rule_id": self.rule_id,
+            "alt_idx": "" if self.alt_idx is None else self.alt_idx,
+            "source": self.source,
+            "whole_ok": self.whole_ok,
+            "input_ok": _field(self.input_ok),
+            "output_ok": _field(self.output_ok),
+            "env_ok": _field(self.env_ok),
+            "exception_ok": _field(self.exception_ok),
+            "input_class": self.input_class,
+            "output_class": self.output_class,
+            "env_class": self.env_class,
+            "exception_class": self.exception_class,
+            "input_description": self.input_description,
+            "output_description": self.output_description,
+            "env_description": self.env_description,
+            "exception_description": self.exception_description,
+            "blame": self.blame,
+        }
+
+
+def derive_blame(
+    whole_ok: bool,
+    *,
+    input_ok: bool | None,
+    output_ok: bool | None,
+    env_ok: bool | None,
+    exception_ok: bool | None,
+) -> str:
+    """Derive the ``blame`` column from whole-rule and per-field ok flags."""
+    if whole_ok:
+        return "none"
+    field_ok: dict[ASCARulePart, bool | None] = {
+        "input": input_ok,
+        "output": output_ok,
+        "env": env_ok,
+        "exception": exception_ok,
+    }
+    failing = [name for name in BLAME_FIELD_ORDER if field_ok[name] is False]
+    if failing:
+        return "|".join(failing)
+    return "multi"
+
+
+def _field_rule_from_series(scr: DiachronicSeries) -> SoundChangeRule | None:
+    """Return the sole ``SoundChangeRule`` in *scr*, or ``None`` for chains."""
+    parts = [part for part in scr._parts if isinstance(part, SoundChangeRule)]
+    if len(parts) == 1:
+        return parts[0]
+    return None
+
+
+@dataclass(frozen=True)
+class _InventoryTarget:
+    alt_idx: int | None
+    series: DiachronicSeries | None
+    field_rule: SoundChangeRule | None
+    format_error: str | None = None
+
+
+def _resolve_inventory_targets(
+    section: dict[str, Any],
+    rule: dict[str, Any],
+    rule_id: str,
+    *,
+    group_mappings: dict[str, str] | None = None,
+) -> list[_InventoryTarget]:
+    """Compile paths shared by whole-rule inventory and field isolation."""
+    mini = _mini_section(section, rule, rule_id)
+    try:
+        scr = DiachronicSeries(mini, group_mappings=group_mappings)
+    except (KeyError, ValueError) as exc:
+        return [
+            _InventoryTarget(
+                None,
+                None,
+                None,
+                format_error=f"format_error: {exc}",
+            )
+        ]
+
+    sound_change_parts = [
+        part for part in scr._parts if isinstance(part, SoundChangeRule)
+    ]
+    if not sound_change_parts:
+        return [
+            _InventoryTarget(
+                None,
+                None,
+                None,
+                format_error="format_error: no compile steps from stages",
+            )
+        ]
+
+    if rule.get("skip"):
+        return [_InventoryTarget(None, scr, _field_rule_from_series(scr))]
+
+    if len(sound_change_parts) == 1 and sound_change_parts[0].alternatives:
+        return [
+            _InventoryTarget(
+                alt_idx,
+                _series_for_alternative(
+                    section, rule, rule_id, alternative, group_mappings
+                ),
+                alternative,
+            )
+            for alt_idx, alternative in enumerate(sound_change_parts[0].alternatives)
+        ]
+
+    return [_InventoryTarget(None, scr, _field_rule_from_series(scr))]
+
+
+def _validate_field_part(
+    part: ASCARulePart,
+    fragment: str,
+) -> tuple[bool, str, str]:
+    """Validate one compiled field; return ``(ok, failure_class, description)``."""
+    try:
+        validate_asca_part(part, fragment)
+    except ASCAValidationError as exc:
+        err = str(exc)
+        return False, classify_error(err), err
+    return True, "", ""
+
+
+def _field_isolation_checks(
+    field_rule: SoundChangeRule,
+) -> tuple[
+    bool | None,
+    bool | None,
+    bool | None,
+    bool | None,
+    str,
+    str,
+    str,
+    str,
+    str,
+    str,
+    str,
+    str,
+]:
+    """Run per-field ``validate_asca_part`` on compiled ``SoundChangeRule`` strings."""
+    results: dict[ASCARulePart, tuple[bool | None, str, str]] = {}
+    for part in BLAME_FIELD_ORDER:
+        fragment = getattr(field_rule, part)
+        if fragment is None:
+            results[part] = (None, "", "")
+            continue
+        ok, failure_class, description = _validate_field_part(part, fragment)
+        results[part] = (ok, failure_class, description)
+
+    input_ok, input_class, input_description = results["input"]
+    output_ok, output_class, output_description = results["output"]
+    env_ok, env_class, env_description = results["env"]
+    exception_ok, exception_class, exception_description = results["exception"]
+    return (
+        input_ok,
+        output_ok,
+        env_ok,
+        exception_ok,
+        input_class,
+        output_class,
+        env_class,
+        exception_class,
+        input_description,
+        output_description,
+        env_description,
+        exception_description,
+    )
+
+
+def build_field_isolation_row(
+    validation_row: ValidationRow,
+    field_rule: SoundChangeRule | None,
+) -> FieldIsolationRow:
+    """Build one field-isolation sidecar row for an inventory ``ValidationRow``."""
+    base = {
+        "section_index": validation_row.section_index,
+        "section_name": validation_row.section_name,
+        "rule_id": validation_row.rule_id,
+        "alt_idx": validation_row.alt_idx,
+        "source": validation_row.source,
+        "whole_ok": validation_row.ok,
+    }
+    if field_rule is None:
+        return FieldIsolationRow(
+            **base,
+            input_ok=None,
+            output_ok=None,
+            env_ok=None,
+            exception_ok=None,
+            input_class="",
+            output_class="",
+            env_class="",
+            exception_class="",
+            input_description="",
+            output_description="",
+            env_description="",
+            exception_description="",
+            blame=derive_blame(
+                validation_row.ok,
+                input_ok=None,
+                output_ok=None,
+                env_ok=None,
+                exception_ok=None,
+            ),
+        )
+
+    (
+        input_ok,
+        output_ok,
+        env_ok,
+        exception_ok,
+        input_class,
+        output_class,
+        env_class,
+        exception_class,
+        input_description,
+        output_description,
+        env_description,
+        exception_description,
+    ) = _field_isolation_checks(field_rule)
+    return FieldIsolationRow(
+        **base,
+        input_ok=input_ok,
+        output_ok=output_ok,
+        env_ok=env_ok,
+        exception_ok=exception_ok,
+        input_class=input_class,
+        output_class=output_class,
+        env_class=env_class,
+        exception_class=exception_class,
+        input_description=input_description,
+        output_description=output_description,
+        env_description=env_description,
+        exception_description=exception_description,
+        blame=derive_blame(
+            validation_row.ok,
+            input_ok=input_ok,
+            output_ok=output_ok,
+            env_ok=env_ok,
+            exception_ok=exception_ok,
+        ),
+    )
+
+
+def field_isolation_rows_for_validation_rows(
+    validation_rows: list[ValidationRow],
+    targets: list[_InventoryTarget],
+) -> list[FieldIsolationRow]:
+    """Pair inventory rows with compile targets and build field-isolation rows."""
+    if len(validation_rows) != len(targets):
+        msg = (
+            "validation row count does not match compile target count: "
+            f"{len(validation_rows)} vs {len(targets)}"
+        )
+        raise ValueError(msg)
+    return [
+        build_field_isolation_row(row, target.field_rule)
+        for row, target in zip(validation_rows, targets, strict=True)
+    ]
+
+
+def field_isolation_rows_to_dataframe(rows: list[FieldIsolationRow]) -> pd.DataFrame:
+    """Return field-isolation rows as a DataFrame with stable column order."""
+    if not rows:
+        return pd.DataFrame(columns=FIELD_ISOLATION_CSV_COLUMNS)
+    return pd.DataFrame(
+        [row.as_csv_dict() for row in rows], columns=FIELD_ISOLATION_CSV_COLUMNS
+    )
+
+
+def filter_field_isolation_by_whole_ok(
+    df: pd.DataFrame, *, whole_ok: bool
+) -> pd.DataFrame:
+    """Return field-isolation rows whose ``whole_ok`` column matches ``whole_ok``."""
+    if df.empty:
+        return df.copy()
+    mask = _ok_as_bool(df["whole_ok"]) if whole_ok else ~_ok_as_bool(df["whole_ok"])
+    return df.loc[mask].reset_index(drop=True)
+
+
+def write_field_isolation_csvs(
+    rows: list[FieldIsolationRow],
+    inventory_dir: Path,
+    *,
+    include_all: bool = False,
+) -> None:
+    """Write field-isolation CSVs (full/success/error) under ``inventory_dir``."""
+    inventory_dir.mkdir(parents=True, exist_ok=True)
+    df = field_isolation_rows_to_dataframe(rows)
+    filter_field_isolation_by_whole_ok(df, whole_ok=True).to_csv(
+        inventory_dir / FIELD_ISOLATION_SUCCESS_CSV_NAME, index=False
+    )
+    error_df = filter_field_isolation_by_whole_ok(df, whole_ok=False)
+    error_df.to_csv(inventory_dir / FIELD_ISOLATION_ERROR_CSV_NAME, index=False)
+    main_df = df if include_all else error_df
+    main_df.to_csv(inventory_dir / FIELD_ISOLATION_CSV_NAME, index=False)
+
+
+def format_field_isolation_blame_section(rows: list[FieldIsolationRow]) -> list[str]:
+    """Markdown lines for ``blame`` bucket counts on error rows."""
+    error_rows = [row for row in rows if not row.whole_ok]
+    if not error_rows:
+        return []
+    counts = Counter(row.blame for row in error_rows)
+    lines = [
+        "",
+        "## Field isolation blame (error rows)",
+        "",
+        "| count | blame |",
+        "|------:|-------|",
+    ]
+    for blame, count in counts.most_common():
+        lines.append(f"| {count} | `{blame}` |")
+    lines.append("")
+    return lines
+
+
 def _mini_section(
     section: dict[str, Any], rule: dict[str, Any], rule_id: str
 ) -> dict[str, Any]:
@@ -451,6 +840,113 @@ def _asca_validation_row(
     )
 
 
+def validate_corpus_rule_with_targets(
+    section: dict[str, Any],
+    rule: dict[str, Any],
+    rule_id: str,
+    *,
+    probe_words: Path | None,
+    group_mappings: dict[str, str] | None = None,
+) -> tuple[list[ValidationRow], list[_InventoryTarget]]:
+    """Validate one corpus rule and return inventory rows with compile targets."""
+    section_index = str(section.get("index", ""))
+    section_name = str(section.get("section", ""))
+    source = str(rule.get("source", ""))
+
+    if section.get("skipped"):
+        row = ValidationRow(
+            section_index=section_index,
+            section_name=section_name,
+            rule_id=rule_id,
+            source=source,
+            ok=True,
+            failure_class=SECTION_SKIPPED_FAILURE_CLASS,
+            reason="",
+            error_token="",
+            suggested="",
+            description="section skipped at compile (parser_config skip_sections)",
+        )
+        return [row], [_InventoryTarget(None, None, None)]
+
+    if rule.get("status") == "skipped":
+        raw = str(rule.get("raw", ""))
+        if "→" not in raw and ARROW not in raw:
+            err = f"missing separator {ARROW!r}"
+        else:
+            err = str(rule.get("comment") or "quoted prose paragraph")
+        failure_class = "missing_arrow"
+        error_token, suggested = parse_unknown_token_error(err)
+        row = ValidationRow(
+            section_index=section_index,
+            section_name=section_name,
+            rule_id=rule_id,
+            source=source,
+            ok=False,
+            failure_class=failure_class,
+            reason=reason_for_failure(failure_class, err),
+            error_token=error_token,
+            suggested=suggested,
+            description=err,
+        )
+        return [row], [_InventoryTarget(None, None, None)]
+
+    targets = _resolve_inventory_targets(
+        section, rule, rule_id, group_mappings=group_mappings
+    )
+    rows: list[ValidationRow] = []
+    for target in targets:
+        if target.format_error is not None:
+            err = target.format_error
+            failure_class = "format_error"
+            error_token, suggested = parse_unknown_token_error(err)
+            rows.append(
+                ValidationRow(
+                    section_index=section_index,
+                    section_name=section_name,
+                    rule_id=rule_id,
+                    source=source,
+                    ok=False,
+                    failure_class=failure_class,
+                    reason=reason_for_failure(failure_class, err),
+                    error_token=error_token,
+                    suggested=suggested,
+                    description=err,
+                )
+            )
+            continue
+
+        assert target.series is not None
+        if rule.get("skip"):
+            rows.append(
+                ValidationRow(
+                    section_index=section_index,
+                    section_name=section_name,
+                    rule_id=rule_id,
+                    source=source,
+                    ok=True,
+                    failure_class="",
+                    reason="",
+                    error_token="",
+                    suggested="",
+                    description="held-out (commented rule)",
+                )
+            )
+            continue
+
+        rows.append(
+            _asca_validation_row(
+                target.series,
+                section_index=section_index,
+                section_name=section_name,
+                rule_id=rule_id,
+                alt_idx=target.alt_idx,
+                source=source,
+                probe_words=probe_words,
+            )
+        )
+    return rows, targets
+
+
 def validate_corpus_rule(
     section: dict[str, Any],
     rule: dict[str, Any],
@@ -464,137 +960,14 @@ def validate_corpus_rule(
     Returns one row per optional-output alternative (0-based ``alt_idx``) when the
     rule has alternatives; otherwise a single row with an empty ``alt_idx``.
     """
-    section_index = str(section.get("index", ""))
-    section_name = str(section.get("section", ""))
-    source = str(rule.get("source", ""))
-
-    if section.get("skipped"):
-        return [
-            ValidationRow(
-                section_index=section_index,
-                section_name=section_name,
-                rule_id=rule_id,
-                source=source,
-                ok=True,
-                failure_class=SECTION_SKIPPED_FAILURE_CLASS,
-                reason="",
-                error_token="",
-                suggested="",
-                description="section skipped at compile (parser_config skip_sections)",
-            )
-        ]
-
-    if rule.get("status") == "skipped":
-        raw = str(rule.get("raw", ""))
-        if "→" not in raw and ARROW not in raw:
-            err = f"missing separator {ARROW!r}"
-        else:
-            err = str(rule.get("comment") or "quoted prose paragraph")
-        failure_class = "missing_arrow"
-        error_token, suggested = parse_unknown_token_error(err)
-        return [
-            ValidationRow(
-                section_index=section_index,
-                section_name=section_name,
-                rule_id=rule_id,
-                source=source,
-                ok=False,
-                failure_class=failure_class,
-                reason=reason_for_failure(failure_class, err),
-                error_token=error_token,
-                suggested=suggested,
-                description=err,
-            )
-        ]
-
-    mini = _mini_section(section, rule, rule_id)
-    try:
-        scr = DiachronicSeries(mini, group_mappings=group_mappings)
-    except (KeyError, ValueError) as exc:
-        err = f"format_error: {exc}"
-        failure_class = "format_error"
-        error_token, suggested = parse_unknown_token_error(err)
-        return [
-            ValidationRow(
-                section_index=section_index,
-                section_name=section_name,
-                rule_id=rule_id,
-                source=source,
-                ok=False,
-                failure_class=failure_class,
-                reason=reason_for_failure(failure_class, err),
-                error_token=error_token,
-                suggested=suggested,
-                description=err,
-            )
-        ]
-
-    sound_change_parts = [
-        part for part in scr._parts if isinstance(part, SoundChangeRule)
-    ]
-    if not sound_change_parts:
-        err = "format_error: no compile steps from stages"
-        failure_class = "format_error"
-        error_token, suggested = parse_unknown_token_error(err)
-        return [
-            ValidationRow(
-                section_index=section_index,
-                section_name=section_name,
-                rule_id=rule_id,
-                source=source,
-                ok=False,
-                failure_class=failure_class,
-                reason=reason_for_failure(failure_class, err),
-                error_token=error_token,
-                suggested=suggested,
-                description=err,
-            )
-        ]
-
-    if rule.get("skip"):
-        return [
-            ValidationRow(
-                section_index=section_index,
-                section_name=section_name,
-                rule_id=rule_id,
-                source=source,
-                ok=True,
-                failure_class="",
-                reason="",
-                error_token="",
-                suggested="",
-                description="held-out (commented rule)",
-            )
-        ]
-
-    if len(sound_change_parts) == 1 and sound_change_parts[0].alternatives:
-        # Inventory only the alternatives, never the parent's random pick.
-        return [
-            _asca_validation_row(
-                _series_for_alternative(
-                    section, rule, rule_id, alternative, group_mappings
-                ),
-                section_index=section_index,
-                section_name=section_name,
-                rule_id=rule_id,
-                alt_idx=alt_idx,
-                source=source,
-                probe_words=probe_words,
-            )
-            for alt_idx, alternative in enumerate(sound_change_parts[0].alternatives)
-        ]
-
-    return [
-        _asca_validation_row(
-            scr,
-            section_index=section_index,
-            section_name=section_name,
-            rule_id=rule_id,
-            alt_idx=None,
-            source=source,
-            probe_words=probe_words,
-        )
-    ]
+    rows, _ = validate_corpus_rule_with_targets(
+        section,
+        rule,
+        rule_id,
+        probe_words=probe_words,
+        group_mappings=group_mappings,
+    )
+    return rows
 
 
 def iter_validation_rows(
@@ -614,6 +987,31 @@ def iter_validation_rows(
                 probe_words=probe_words,
                 group_mappings=group_mappings,
             )
+
+
+def iter_inventory_with_field_isolation(
+    doc: dict[str, Any],
+    *,
+    probe_words: Path | None,
+    group_mappings: dict[str, str] | None = None,
+) -> tuple[list[ValidationRow], list[FieldIsolationRow]]:
+    """Validate the corpus and build matching field-isolation sidecar rows."""
+    validation_rows: list[ValidationRow] = []
+    field_rows: list[FieldIsolationRow] = []
+    for section in doc.get("sections") or []:
+        rules = section.get("rules") or []
+        for rule in rules:
+            rule_id = str(rule.get("rule_id", ""))
+            rows, targets = validate_corpus_rule_with_targets(
+                section,
+                rule,
+                rule_id,
+                probe_words=probe_words,
+                group_mappings=group_mappings,
+            )
+            validation_rows.extend(rows)
+            field_rows.extend(field_isolation_rows_for_validation_rows(rows, targets))
+    return validation_rows, field_rows
 
 
 def write_validation_csv(rows: list[ValidationRow], path: Path) -> None:
@@ -731,6 +1129,7 @@ def summarize_inventory(
     source_yaml: str,
     probe_words: str,
     asca_version: str = "0.10.x",
+    field_isolation_rows: list[FieldIsolationRow] | None = None,
 ) -> str:
     total = len(rows)
     skipped_n = sum(
@@ -773,6 +1172,8 @@ def summarize_inventory(
     for failure_class, count in class_counts.most_common():
         lines.append(f"| {count} | `{failure_class}` |")
     lines.extend(format_common_errors_section(rows))
+    if field_isolation_rows is not None:
+        lines.extend(format_field_isolation_blame_section(field_isolation_rows))
     lines.extend(
         [
             "## Notes",
@@ -784,6 +1185,18 @@ def summarize_inventory(
             (
                 f"- `ok` flips (append-only): "
                 f"[{INVENTORY_CHANGELOG_CSV_NAME}]({INVENTORY_CHANGELOG_CSV_NAME})"
+            ),
+            (
+                f"- Field blame (fails-only default): "
+                f"[{FIELD_ISOLATION_CSV_NAME}]({FIELD_ISOLATION_CSV_NAME})"
+            ),
+            (
+                f"- Field blame OK rows: "
+                f"[{FIELD_ISOLATION_SUCCESS_CSV_NAME}]({FIELD_ISOLATION_SUCCESS_CSV_NAME})"
+            ),
+            (
+                f"- Field blame fail rows: "
+                f"[{FIELD_ISOLATION_ERROR_CSV_NAME}]({FIELD_ISOLATION_ERROR_CSV_NAME})"
             ),
             "",
         ]
