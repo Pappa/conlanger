@@ -20,7 +20,10 @@ Grill 2026-08-19: **Q3 A** — do not redefine `ok`.
 
 1. **Binary resolution:** honor `ASCA_BIN` if set; else `shutil.which("asca")`. Use the same helper for `validate_asca` and `run_asca` (today `run_asca` hardcodes `~/.cargo/bin/asca`).
 2. **Helpers** for later field isolation — e.g. `validate_asca_syntax(rule)` → `asca validate -s …` (whole rule) and `validate_asca_part(part, fragment)` → `asca validate -s … -f …`. Do **not** switch inventory `ok` onto these.
-3. **`validate_asca`** remains `asca run` + probe words (Tier 1–4 sample). Optional: call `validate` first as a fast syntax fail (same fail set for Tiers 1–2; must not turn current runtime-only fails into `ok`).
+3. **`validate_asca`**:
+   1. call `validate` first as a fast syntax fail (same fail set for Tiers 1–2;
+   2. if `validate` is successful, call  `asca run` + probe words (Tier 1–4 sample).
+   3. must not turn current runtime-only fails into `ok`).
 4. Tests: `ASCA_BIN` override; skip or xfail cleanly if the binary lacks `validate` (old 0.10.2).
 
 ## Out of scope
