@@ -80,7 +80,7 @@ def find_correspondence_series_tokens(text: str) -> set[str]:
 
 def section_index_prefixes(section_index: str) -> list[str]:
     parts = [part for part in section_index.split(".") if part]
-    return [".".join(parts[:index]) for index in range(len(parts), 0, -1)]
+    return [".".join(parts[:index]) for index in range(1, len(parts) + 1)]
 
 
 def apply_series_expansions(

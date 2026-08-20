@@ -84,7 +84,7 @@ class CompilerConfig:
         result = dict(self.series_mappings_global)
         if not section_index:
             return result
-        for prefix in reversed(section_index_prefixes(section_index)):
+        for prefix in section_index_prefixes(section_index):
             section_map = self.series_mappings_sections.get(prefix)
             if section_map:
                 result.update(section_map)

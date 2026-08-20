@@ -71,8 +71,8 @@ def test_is_collective_subscript_token(token, expected):
     assert is_collective_subscript_token(token) is expected
 
 
-def test_section_index_prefixes_longest_first():
-    assert section_index_prefixes("6.1.2.1") == ["6.1.2.1", "6.1.2", "6.1", "6"]
+def test_section_index_prefixes_shortest_first():
+    assert section_index_prefixes("6.1.2.1") == ["6", "6.1", "6.1.2", "6.1.2.1"]
 
 
 def test_find_correspondence_series_tokens_in_text():
