@@ -803,12 +803,27 @@ def write_field_isolation_csvs(
     main_df.to_csv(inventory_dir / FIELD_ISOLATION_CSV_NAME, index=False)
 
 
+def count_field_blame_categories(df: pd.DataFrame) -> Counter[str]:
+    """Count rows per individual blame field (pipe-separated values split)."""
+    counts: Counter[str] = Counter()
+    for blame in df["blame"].astype(str):
+        if blame == "multi":
+            counts["multi"] += 1
+            continue
+        for part in blame.split("|"):
+            if part:
+                counts[part] += 1
+    return counts
+
+
 def format_field_isolation_blame_section(rows: list[FieldIsolationRow]) -> list[str]:
-    """Markdown lines for ``blame`` bucket counts on error rows."""
-    error_df = filter_field_isolation_error(field_isolation_rows_to_dataframe(rows))
+    """Markdown lines for individual blame category counts on whole-rule failure rows."""
+    error_df = filter_field_isolation_by_whole_ok(
+        field_isolation_rows_to_dataframe(rows), whole_ok=False
+    )
     if error_df.empty:
         return []
-    counts = Counter(error_df["blame"].astype(str))
+    counts = count_field_blame_categories(error_df)
     lines = [
         "",
         "## Field isolation blame (error rows)",

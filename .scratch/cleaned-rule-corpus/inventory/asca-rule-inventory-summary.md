@@ -94,21 +94,11 @@
 
 | count | blame |
 |------:|-------|
-| 1025 | `input` |
-| 670 | `input|output` |
-| 658 | `env` |
-| 650 | `output` |
+| 582 | `input` |
+| 514 | `env` |
+| 431 | `output` |
 | 216 | `multi` |
-| 124 | `input|env` |
-| 105 | `exception` |
-| 63 | `output|env` |
-| 56 | `input|output|env` |
-| 23 | `env|exception` |
-| 12 | `output|env|exception` |
-| 11 | `input|exception` |
-| 7 | `input|env|exception` |
-| 6 | `output|exception` |
-| 5 | `input|output|exception` |
+| 129 | `exception` |
 
 ## Notes
 

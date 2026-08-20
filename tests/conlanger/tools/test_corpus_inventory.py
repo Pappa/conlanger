@@ -13,6 +13,7 @@ from conlanger.tools.corpus_inventory import (
     append_ok_flip_changelog,
     build_field_isolation_row,
     classify_error,
+    count_field_blame_categories,
     derive_blame,
     field_isolation_rows_for_validation_rows,
     field_isolation_rows_to_dataframe,
@@ -1240,6 +1241,141 @@ def test_summarize_inventory_links_field_isolation_csvs():
     assert "asca-field-isolation-error.csv" in text
     assert "## Field isolation blame (error rows)" in text
     assert "| 1 | `input` |" in text
+
+
+def test_summarize_inventory_blame_section_counts_whole_rule_failures_only():
+    validation_rows = [
+        ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
+        ValidationRow("1", "A", "r1", "s:2", False, "", "", "", "", ""),
+        ValidationRow("1", "A", "r2", "s:3", False, "", "", "", "", ""),
+    ]
+    field_rows = [
+        FieldIsolationRow(
+            "1",
+            "A",
+            "r0",
+            "s:1",
+            True,
+            False,
+            True,
+            None,
+            None,
+            "unknown_feature",
+            "",
+            "",
+            "",
+            "err",
+            "",
+            "",
+            "",
+            "input",
+        ),
+        FieldIsolationRow(
+            "1",
+            "A",
+            "r1",
+            "s:2",
+            False,
+            True,
+            True,
+            False,
+            None,
+            "",
+            "",
+            "expected_underscore",
+            "",
+            "",
+            "",
+            "bad env",
+            "",
+            "env",
+        ),
+        FieldIsolationRow(
+            "1",
+            "A",
+            "r2",
+            "s:3",
+            False,
+            True,
+            True,
+            None,
+            None,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "multi",
+        ),
+    ]
+    text = summarize_inventory(
+        validation_rows,
+        source_yaml="out.yml",
+        probe_words="probe.wsca",
+        field_isolation_rows=field_rows,
+    )
+    assert "| 1 | `env` |" in text
+    assert "| 1 | `multi` |" in text
+    assert (
+        "`input`"
+        not in text.split("## Field isolation blame (error rows)")[1].split("## Notes")[
+            0
+        ]
+    )
+
+
+def test_count_field_blame_categories_splits_composite_blame():
+    rows = [
+        FieldIsolationRow(
+            "1",
+            "A",
+            "r0",
+            "s:1",
+            False,
+            False,
+            False,
+            None,
+            None,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "input|output",
+        ),
+        FieldIsolationRow(
+            "1",
+            "A",
+            "r1",
+            "s:2",
+            False,
+            True,
+            True,
+            None,
+            None,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "multi",
+        ),
+    ]
+    df = field_isolation_rows_to_dataframe(rows)
+    counts = count_field_blame_categories(df)
+    assert counts["input"] == 1
+    assert counts["output"] == 1
+    assert counts["multi"] == 1
+    assert len(counts) == 3
 
 
 @patch("conlanger.tools.corpus_inventory.validate_asca_part", return_value=True)
