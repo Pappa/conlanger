@@ -35,9 +35,10 @@ def mock_asca(tmp_path: Path) -> Path:
 
 @pytest.fixture
 def mock_asca_on_path(mock_asca, mocker):
+    mocker.patch.dict(os.environ, {"ASCA_BIN": str(mock_asca)}, clear=False)
     mocker.patch(
-        "conlanger.appliers.asca.shutil.which",
-        return_value=str(mock_asca),
+        "conlanger.appliers.asca._asca_supports_validate",
+        return_value=False,
     )
     return mock_asca
 

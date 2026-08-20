@@ -5,7 +5,9 @@ from __future__ import annotations
 import os
 import shutil
 import subprocess
+from pathlib import Path
 
+import pytest
 from helpers import default_index_parser
 
 __all__ = [
@@ -14,6 +16,9 @@ __all__ = [
     "default_index_parser",
     "require_executable",
 ]
+
+_REPO_ROOT = Path(__file__).resolve().parents[1]
+_FORK_ASCA = _REPO_ROOT / "bin" / "bin" / "asca"
 
 
 def require_executable(name: str) -> bool:
@@ -34,13 +39,12 @@ def _asca_supports_validate(asca_bin: str) -> bool:
     return proc.returncode == 0
 
 
-def _resolved_asca_bin() -> str | None:
-    if override := os.environ.get("ASCA_BIN"):
-        return override
-    return shutil.which("asca")
+@pytest.fixture(autouse=True)
+def mock_env_vars(mocker):
+    if _FORK_ASCA.is_file() and "ASCA_BIN" not in os.environ:
+        mocker.patch.dict(os.environ, {"ASCA_BIN": str(_FORK_ASCA)})
 
 
-ASCA_INSTALLED = _resolved_asca_bin() is not None
-ASCA_VALIDATE_INSTALLED = bool(
-    _resolved_asca_bin() and _asca_supports_validate(_resolved_asca_bin())  # type: ignore[arg-type]
-)
+# Evaluated at collection time for ``skipif`` (before autouse fixtures run).
+ASCA_INSTALLED = _FORK_ASCA.is_file() or require_executable("asca")
+ASCA_VALIDATE_INSTALLED = _FORK_ASCA.is_file()
