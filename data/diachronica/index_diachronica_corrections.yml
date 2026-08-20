@@ -127,3 +127,7 @@ rules:
       id: Attic-Greek-ɔ
       content: "ɔ → ∅ / %i_n#, %i_s#"
       reason: "Correcting env - this may be wrong"
+  - rule:
+      id: Proto-Circassian-ɡʲʷ-xʲʷ-ɣʲʷ?
+      content: "ɡʲʷ xʲʷ ɣʲʷ → ɡʷ xʷ ʁʷ"
+      reason: "Removing (?) - this may be wrong"
