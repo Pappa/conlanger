@@ -14,13 +14,13 @@
 
 | count | failure_class |
 |------:|---------------|
-| 429 | `syntax_other` |
-| 246 | `expected_underscore` |
+| 427 | `syntax_other` |
+| 245 | `expected_underscore` |
 | 189 | `unknown_character` |
 | 130 | `runtime_other` |
 | 111 | `unknown_grouping` |
 | 88 | `unknown_feature` |
-| 64 | `prose_or_expected_arrow` |
+| 67 | `prose_or_expected_arrow` |
 | 45 | `nested_brackets` |
 | 38 | `expected_number` |
 | 32 | `diacritic_prereq` |
@@ -89,6 +89,27 @@
 | 1 | `W` |
 | 1 | `Q` |
 
+
+## Field isolation blame (error rows)
+
+| count | blame |
+|------:|-------|
+| 1027 | `input` |
+| 670 | `input|output` |
+| 659 | `env` |
+| 650 | `output` |
+| 216 | `multi` |
+| 124 | `input|env` |
+| 105 | `exception` |
+| 64 | `output|env` |
+| 56 | `input|output|env` |
+| 23 | `env|exception` |
+| 12 | `output|env|exception` |
+| 11 | `input|exception` |
+| 7 | `input|env|exception` |
+| 6 | `output|exception` |
+| 5 | `input|output|exception` |
+
 ## Notes
 
 - Inventory runs per corpus rule via `DiachronicSeries` + `validate_asca`.
@@ -96,3 +117,6 @@
 - OK rows: [asca-rule-inventory-success.csv](asca-rule-inventory-success.csv)
 - Fail rows: [asca-rule-inventory-error.csv](asca-rule-inventory-error.csv)
 - `ok` flips (append-only): [asca-rule-inventory-changelog.csv](asca-rule-inventory-changelog.csv)
+- Field blame (fails-only default): [asca-field-isolation.csv](asca-field-isolation.csv)
+- Field blame OK rows: [asca-field-isolation-success.csv](asca-field-isolation-success.csv)
+- Field blame fail rows: [asca-field-isolation-error.csv](asca-field-isolation-error.csv)
