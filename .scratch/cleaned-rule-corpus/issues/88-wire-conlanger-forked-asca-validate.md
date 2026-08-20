@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: done
 Blocked by: 87
 
 # Wire conlanger to forked asca `validate`
@@ -34,7 +34,7 @@ Grill 2026-08-19: **Q3 A** — do not redefine `ok`.
 
 ## Acceptance criteria
 
-- [ ] `ASCA_BIN` + PATH resolution shared by run and validate helpers
-- [ ] Inventory / `validate_asca` still uses `asca run` + probes for `ok`
-- [ ] Callable `validate_part` wrapper for the four fields
-- [ ] Install/run documented in [docs/DEV.md](../../../docs/DEV.md); implementation docs point there instead of duplicating cargo commands
+- [x] `ASCA_BIN` + PATH resolution shared by run and validate helpers
+- [x] Inventory / `validate_asca` still uses `asca run` + probes for `ok`
+- [x] Callable `validate_part` wrapper for the four fields
+- [x] Install/run documented in [docs/DEV.md](../../../docs/DEV.md); implementation docs point there instead of duplicating cargo commands

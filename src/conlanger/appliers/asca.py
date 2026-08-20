@@ -2,12 +2,14 @@
 
 from __future__ import annotations
 
+import functools
 import os
 import re
 import shutil
 import subprocess
 import tempfile
 from pathlib import Path
+from typing import Literal
 
 from strip_ansi import strip_ansi
 
@@ -18,6 +20,15 @@ _DEFAULT_PROBE_WORDS = "a\nba\nkata\nsami\nntu\n"
 
 _ANSI_RE = re.compile(r"\x1b\[[0-9;]*m")
 
+ASCARulePart = Literal["input", "output", "env", "exception"]
+
+_ASCA_FIELD_FLAGS: dict[ASCARulePart, str] = {
+    "input": "input",
+    "output": "output",
+    "env": "context",
+    "exception": "exception",
+}
+
 
 class ASCAValidationError(ValueError):
     """Raised when a ``DiachronicSeries`` is not valid for ASCA."""
@@ -25,6 +36,46 @@ class ASCAValidationError(ValueError):
     def __init__(self, message: str, *, returncode: int | None = None):
         super().__init__(message)
         self.returncode = returncode
+
+
+def resolve_asca_bin() -> str | None:
+    """Return the asca binary path, honoring ``ASCA_BIN`` then ``PATH``."""
+    override = os.environ.get("ASCA_BIN")
+    if override:
+        return override
+    return shutil.which("asca")
+
+
+@functools.lru_cache(maxsize=8)
+def _asca_supports_validate(asca_bin: str) -> bool:
+    """Return True when *asca_bin* exposes the ``validate`` subcommand."""
+    try:
+        proc = subprocess.run(  # noqa: PLW1510
+            [asca_bin, "validate", "--help"],
+            capture_output=True,
+            text=True,
+            timeout=5.0,
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        return False
+    return proc.returncode == 0
+
+
+def _require_asca_bin() -> str:
+    asca = resolve_asca_bin()
+    if asca is None:
+        raise ASCAValidationError(
+            "asca binary not found (set ASCA_BIN or install asca 0.10.x on PATH)"
+        )
+    return asca
+
+
+def _require_validate_support(asca: str) -> None:
+    if not _asca_supports_validate(asca):
+        raise ASCAValidationError(
+            "asca binary lacks the validate subcommand "
+            "(install the fork from docs/DEV.md)"
+        )
 
 
 def _active_rule_changes(rule: DiachronicSeries) -> list[SoundChangeRule]:
@@ -45,6 +96,70 @@ def _clean_asca_stderr(stderr: str) -> str:
     return re.sub(r"\s+", " ", text)
 
 
+def _raise_if_asca_failed(
+    proc: subprocess.CompletedProcess[str],
+    *,
+    timeout: float,
+) -> None:
+    err = _clean_asca_stderr(proc.stderr)
+    if proc.returncode != 0:
+        message = err or f"asca exited with status {proc.returncode}"
+        raise ASCAValidationError(message, returncode=proc.returncode)
+    if err and re.search(r"(?i)(syntax error|runtime error)", err):
+        raise ASCAValidationError(err, returncode=proc.returncode)
+
+
+def _run_asca_command(
+    cmd: list[str],
+    *,
+    timeout: float,
+) -> subprocess.CompletedProcess[str]:
+    try:
+        return subprocess.run(  # noqa: PLW1510
+            cmd,
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+        )
+    except subprocess.TimeoutExpired as exc:
+        raise ASCAValidationError(
+            f"asca timed out after {timeout}s validating rule",
+            returncode=124,
+        ) from exc
+    except OSError as exc:
+        raise ASCAValidationError(
+            f"asca binary not found at {cmd[0]}",
+            returncode=127,
+        ) from exc
+
+
+def validate_asca_syntax(rule: str, *, timeout: float = 15.0) -> bool:
+    """Return ``True`` when a whole rule line passes ``asca validate -s``."""
+    asca = _require_asca_bin()
+    _require_validate_support(asca)
+    proc = _run_asca_command([asca, "validate", "-s", rule], timeout=timeout)
+    _raise_if_asca_failed(proc, timeout=timeout)
+    return True
+
+
+def validate_asca_part(
+    part: ASCARulePart,
+    fragment: str,
+    *,
+    timeout: float = 15.0,
+) -> bool:
+    """Return ``True`` when a rule field fragment passes ``asca validate -s -f``."""
+    asca = _require_asca_bin()
+    _require_validate_support(asca)
+    field = _ASCA_FIELD_FLAGS[part]
+    proc = _run_asca_command(
+        [asca, "validate", "-s", fragment, "-f", field],
+        timeout=timeout,
+    )
+    _raise_if_asca_failed(proc, timeout=timeout)
+    return True
+
+
 def validate_asca(
     rule: DiachronicSeries,
     *,
@@ -53,22 +168,18 @@ def validate_asca(
 ) -> bool:
     """Return ``True`` if ``rule`` is valid for ASCA; otherwise raise.
 
-    Writes the rendered ``DiachronicSeries`` to a temporary ``.rsca`` and runs
-    ``asca run <probe_words> --rules <file>``. Non-zero exit or ASCA
-    Syntax/Runtime Error text on stderr becomes ``ASCAValidationError``.
+    When the asca binary supports ``validate``, runs ``asca validate -r`` on the
+    rendered rule file first (Tiers 1–3), then ``asca run`` with probe words
+    (Tier 4). Inventory ``ok`` still requires a successful ``run`` pass.
 
-    Requires ``asca`` 0.10.x to be installed and available on ``PATH``.
+    Requires ``asca`` 0.10.x to be installed (``ASCA_BIN`` or ``PATH``).
     """
     if not _active_rule_changes(rule):
         raise ASCAValidationError(
             "DiachronicSeries has no active SoundChangeRule lines to validate"
         )
 
-    asca = shutil.which("asca")
-    if asca is None:
-        raise ASCAValidationError(
-            "asca binary not found on PATH (install asca 0.10.x and ensure it is on PATH)"
-        )
+    asca = _require_asca_bin()
 
     body = str(rule)
     if not body.endswith("\n"):
@@ -95,45 +206,47 @@ def validate_asca(
             words_path = tmp_path / "probe.wsca"
             words_path.write_text(_DEFAULT_PROBE_WORDS, encoding="utf-8")
 
-        try:
-            proc = subprocess.run(  # noqa: PLW1510
-                [asca, "run", str(words_path), "--rules", str(rsca)],
-                capture_output=True,
-                text=True,
+        if _asca_supports_validate(asca):
+            proc = _run_asca_command(
+                [asca, "validate", "-r", str(rsca)],
                 timeout=timeout,
             )
-        except subprocess.TimeoutExpired as exc:
-            raise ASCAValidationError(
-                f"asca timed out after {timeout}s validating rule",
-                returncode=124,
-            ) from exc
+            _raise_if_asca_failed(proc, timeout=timeout)
 
-        err = _clean_asca_stderr(proc.stderr)
-        if proc.returncode != 0:
-            message = err or f"asca exited with status {proc.returncode}"
-            raise ASCAValidationError(message, returncode=proc.returncode)
-        if err and re.search(r"(?i)(syntax error|runtime error)", err):
-            raise ASCAValidationError(err, returncode=proc.returncode)
+        proc = _run_asca_command(
+            [asca, "run", str(words_path), "--rules", str(rsca)],
+            timeout=timeout,
+        )
+        _raise_if_asca_failed(proc, timeout=timeout)
 
     return True
 
 
 def run_asca(asca_word_file, rule_file, rule_path):
     """Run ``asca`` on a word file and rule file; return a result dict."""
+    asca = resolve_asca_bin()
     file_name = f"{rule_path}/{rule_file}"
-    cmd = f"~/.cargo/bin/asca run {asca_word_file} --rules {file_name}"
-
     result = {"rule": rule_file, "returncode": 0, "error": ""}
 
+    if asca is None:
+        result["returncode"] = 127
+        result["error"] = "asca binary not found (set ASCA_BIN or install on PATH)"
+        return result
+
+    cmd = [asca, "run", asca_word_file, "--rules", file_name]
+
     try:
-        output = subprocess.run(  # noqa: PLW1510
-            cmd, capture_output=True, timeout=10, shell=True, text=True
+        output = subprocess.run(
+            cmd, capture_output=True, timeout=10, text=True, check=True
         )
         output.check_returncode()
 
     except subprocess.CalledProcessError as exc:
         result["returncode"] = exc.returncode
         result["error"] = strip_ansi(exc.stderr.strip()).replace("\n", " ")
+    except OSError:
+        result["returncode"] = 127
+        result["error"] = f"asca binary not found at {asca}"
     except subprocess.TimeoutExpired as exc:
         result["returncode"] = 124
         result["error"] = exc.output.decode("utf-8").replace("\n", " ")

@@ -26,5 +26,8 @@ cargo install --git https://github.com/Pappa/asca-rust --branch feature/validate
 And run it:
 
 ```bash
+export ASCA_BIN="$(pwd)/bin/bin/asca"
 ./bin/bin/asca validate --help
 ```
+
+Set `ASCA_BIN` when the fork is not first on `PATH` (see `resolve_asca_bin` in [`appliers/asca.py`](../src/conlanger/appliers/asca.py)).

@@ -1,5 +1,6 @@
 """Tests for ASCA validation of DiachronicSeries (asca 0.10.x)."""
 
+import os
 import subprocess
 from pathlib import Path
 from unittest.mock import MagicMock, patch
@@ -7,9 +8,15 @@ from unittest.mock import MagicMock, patch
 import pandas as pd
 import pytest
 
-from conlanger.appliers.asca import ASCAValidationError, validate_asca
+from conlanger.appliers.asca import (
+    ASCAValidationError,
+    resolve_asca_bin,
+    validate_asca,
+    validate_asca_part,
+    validate_asca_syntax,
+)
 from conlanger.tools.rules import DiachronicSeries
-from tests.conftest import ASCA_INSTALLED
+from tests.conftest import ASCA_INSTALLED, ASCA_VALIDATE_INSTALLED
 
 _FIXTURE_CSV = (
     Path(__file__).resolve().parents[2] / "fixtures" / "sound_change_rules.csv"
@@ -80,13 +87,39 @@ def test_validate_asca_rejects_inactive_rules(scr):
         validate_asca(scr)
 
 
-def test_validate_asca_missing_binary(mocker):
+def test_resolve_asca_bin_honors_env_override(mocker, tmp_path: Path):
+    asca = tmp_path / "custom-asca"
+    asca.write_text("#!/bin/sh\n", encoding="utf-8")
+    asca.chmod(0o755)
+    mocker.patch.dict(os.environ, {"ASCA_BIN": str(asca)}, clear=False)
+    mocker.patch("conlanger.appliers.asca.shutil.which", return_value="/other/asca")
+
+    assert resolve_asca_bin() == str(asca)
+
+
+def test_resolve_asca_bin_falls_back_to_path(mocker):
+    mocker.patch.dict(os.environ, {}, clear=True)
+    os.environ.pop("ASCA_BIN", None)
+    mocker.patch("conlanger.appliers.asca.shutil.which", return_value="/path/asca")
+
+    assert resolve_asca_bin() == "/path/asca"
+
+
+def test_resolve_asca_bin_returns_none_when_missing(mocker):
+    mocker.patch.dict(os.environ, {}, clear=True)
+    os.environ.pop("ASCA_BIN", None)
     mocker.patch("conlanger.appliers.asca.shutil.which", return_value=None)
+
+    assert resolve_asca_bin() is None
+
+
+def test_validate_asca_missing_binary(mocker):
+    mocker.patch("conlanger.appliers.asca.resolve_asca_bin", return_value=None)
     scr = DiachronicSeries(
         {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
         format="asca",
     )
-    with pytest.raises(ASCAValidationError, match="asca binary not found on PATH"):
+    with pytest.raises(ASCAValidationError, match="asca binary not found"):
         validate_asca(scr)
 
 
@@ -194,6 +227,147 @@ def test_validate_asca_appends_trailing_newline(
         validate_asca(scr, probe_words=_PROBE)
 
     assert captured["body"].endswith("\n")
+
+
+def test_validate_asca_calls_validate_before_run_when_supported(
+    mock_asca_subprocess, mock_asca_on_path
+):
+    calls: list[list[str]] = []
+
+    def fake_run(cmd, **_kwargs):
+        calls.append(list(cmd))
+        return MagicMock(returncode=0, stderr="")
+
+    mock_asca_subprocess.side_effect = fake_run
+    with patch("conlanger.appliers.asca._asca_supports_validate", return_value=True):
+        scr = DiachronicSeries(
+            {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
+            format="asca",
+        )
+        validate_asca(scr, probe_words=_PROBE)
+
+    assert len(calls) == 2
+    assert calls[0][1] == "validate"
+    assert calls[0][2] == "-r"
+    assert calls[1][1] == "run"
+
+
+def test_validate_asca_skips_validate_when_unsupported(
+    mock_asca_subprocess, mock_asca_on_path
+):
+    calls: list[list[str]] = []
+
+    def fake_run(cmd, **_kwargs):
+        calls.append(list(cmd))
+        return MagicMock(returncode=0, stderr="")
+
+    mock_asca_subprocess.side_effect = fake_run
+    with patch("conlanger.appliers.asca._asca_supports_validate", return_value=False):
+        scr = DiachronicSeries(
+            {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
+            format="asca",
+        )
+        validate_asca(scr, probe_words=_PROBE)
+
+    assert len(calls) == 1
+    assert calls[0][1] == "run"
+
+
+def test_validate_asca_validate_failure_short_circuits(
+    mock_asca_subprocess, mock_asca_on_path
+):
+    calls: list[list[str]] = []
+
+    def fake_run(cmd, **_kwargs):
+        calls.append(list(cmd))
+        if cmd[1] == "validate":
+            return MagicMock(returncode=1, stderr="Syntax Error: bad rule\n")
+        return MagicMock(returncode=0, stderr="")
+
+    mock_asca_subprocess.side_effect = fake_run
+    with patch("conlanger.appliers.asca._asca_supports_validate", return_value=True):
+        scr = DiachronicSeries(
+            {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
+            format="asca",
+        )
+        with pytest.raises(ASCAValidationError, match="Syntax Error"):
+            validate_asca(scr, probe_words=_PROBE)
+
+    assert len(calls) == 1
+    assert calls[0][1] == "validate"
+
+
+def test_validate_asca_syntax_invokes_validate_subcommand(
+    mock_asca_subprocess, mock_asca_on_path
+):
+    mock_asca_subprocess.return_value = MagicMock(returncode=0, stderr="")
+    with patch("conlanger.appliers.asca._asca_supports_validate", return_value=True):
+        assert validate_asca_syntax("a > b / _") is True
+
+    cmd = mock_asca_subprocess.call_args.args[0]
+    assert cmd[1:] == ["validate", "-s", "a > b / _"]
+
+
+def test_validate_asca_syntax_requires_validate_subcommand(
+    mock_asca_on_path,
+):
+    with (
+        patch("conlanger.appliers.asca._asca_supports_validate", return_value=False),
+        pytest.raises(ASCAValidationError, match="validate subcommand"),
+    ):
+        validate_asca_syntax("a > b / _")
+
+
+@pytest.mark.parametrize(
+    ("part", "field"),
+    [
+        ("input", "input"),
+        ("output", "output"),
+        ("env", "context"),
+        ("exception", "exception"),
+    ],
+)
+def test_validate_asca_part_invokes_field_flag(
+    mock_asca_subprocess,
+    mock_asca_on_path,
+    part,
+    field,
+):
+    mock_asca_subprocess.return_value = MagicMock(returncode=0, stderr="")
+    with patch("conlanger.appliers.asca._asca_supports_validate", return_value=True):
+        assert validate_asca_part(part, "#_") is True
+
+    cmd = mock_asca_subprocess.call_args.args[0]
+    assert cmd[1:] == ["validate", "-s", "#_", "-f", field]
+
+
+def test_validate_asca_invalid_asca_bin_raises(mocker, tmp_path: Path):
+    mocker.patch(
+        "conlanger.appliers.asca.resolve_asca_bin",
+        return_value=str(tmp_path / "missing-asca"),
+    )
+    scr = DiachronicSeries(
+        {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
+        format="asca",
+    )
+    with pytest.raises(ASCAValidationError, match="not found at"):
+        validate_asca(scr, probe_words=_PROBE)
+
+
+@pytest.mark.skipif(
+    not ASCA_VALIDATE_INSTALLED,
+    reason="asca validate subcommand not available",
+)
+def test_validate_asca_syntax_integration():
+    assert validate_asca_syntax("a > b / _") is True
+
+
+@pytest.mark.skipif(
+    not ASCA_VALIDATE_INSTALLED,
+    reason="asca validate subcommand not available",
+)
+def test_validate_asca_part_integration():
+    assert validate_asca_part("env", "#_") is True
 
 
 def test_fixture_asca_guess_count():

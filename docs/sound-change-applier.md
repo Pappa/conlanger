@@ -90,18 +90,30 @@ validate_asca(
     probe_words: Path | None = None,
     timeout: float = 15.0,
 ) -> bool  # raises ASCAValidationError
+
+validate_asca_syntax(rule: str, *, timeout: float = 15.0) -> bool
+validate_asca_part(part: ASCARulePart, fragment: str, *, timeout: float = 15.0) -> bool
+resolve_asca_bin() -> str | None  # ASCA_BIN env, then PATH
 ```
+
+**Binary resolution:** `ASCA_BIN` if set, else `shutil.which("asca")`. Same helper for `validate_asca`, `run_asca`, and the field helpers. Install the fork with `validate` per [DEV.md](./DEV.md#asca-sound-change-rule-validation).
 
 **Flow:**
 
 1. `_active_rule_changes(rule)` — collect `SoundChangeRule` parts whose rendered line does **not** start with `#` (skipped rules render as `#\t…`).
 2. Error if no active rules.
-3. Require `asca` on `PATH` (expects **0.10.x**).
+3. Resolve asca binary (`ASCA_BIN` or `PATH`; expects **0.10.x**, fork **0.10.3+** for `validate`).
 4. Write `str(rule)` (+ trailing newline) to temp `check.rsca`.
 5. Resolve probe wordlist (see below).
-6. `subprocess.run([asca, "run", words_path, "--rules", rsca_path], …)`.
-7. Non-zero exit → `ASCAValidationError` with cleaned stderr.
-8. Also fail if stderr contains `Syntax Error` or `Runtime Error` even on exit 0.
+6. When the binary supports `validate`: `subprocess.run([asca, "validate", "-r", rsca_path], …)` — fast syntax/structure fail (Tiers 1–3).
+7. `subprocess.run([asca, "run", words_path, "--rules", rsca_path], …)` — still required for inventory `ok` (Tier 4).
+8. Non-zero exit → `ASCAValidationError` with cleaned stderr.
+9. Also fail if stderr contains `Syntax Error` or `Runtime Error` even on exit 0.
+
+**Field helpers** (fork `validate` only; for later field isolation — inventory does **not** use these for `ok`):
+
+- `validate_asca_syntax("a > b / _")` → `asca validate -s …`
+- `validate_asca_part("env", "#_")` → `asca validate -s … -f context` (`env` maps to ASCA `context`)
 
 **Inventory integration** (`corpus_inventory.py`): each corpus rule → `_mini_section` → `DiachronicSeries(mini, group_mappings=…)` → `validate_asca(..., probe_words=fixture)`.
 
@@ -126,10 +138,10 @@ See [asca-rule-validity.md](../.scratch/cleaned-rule-corpus/research/asca-rule-v
 
 | Tier | Stage | Caught by `validate_asca`? |
 | --- | --- | --- |
-| 1 | Lexer | Yes (via `run`) |
+| 1 | Lexer | Yes (`validate` when available, else `run`) |
 | 2 | Parser | Yes |
-| 3 | `split_into_subrules` (first apply) | Yes (via `run`) |
-| 4 | Runtime apply | Partially — probe-dependent |
+| 3 | `split_into_subrules` (first apply) | Yes (`validate` when available, else `run`) |
+| 4 | Runtime apply | Yes via `run` — probe-dependent |
 
 ### Skipped rules
 
