@@ -20,13 +20,11 @@ from conlanger.tools.corpus_inventory import (
     filter_field_isolation_error,
     filter_field_isolation_success,
     filter_inventory_by_ok,
-    iter_validation_rows,
     load_inventory_csv,
     ok_flip_changelog_rows,
     parse_unknown_token_error,
     reason_for_failure,
     section_all_ok_stats,
-    section_all_ok_stats_from_dataframe,
     summarize_inventory,
     top_error_tokens,
     top_error_tokens_with_suggested_from_dataframe,
@@ -410,30 +408,6 @@ def test_write_validation_csv(tmp_path: Path):
     assert list(parsed[0].keys())[-1] == "description"
 
 
-def test_iter_validation_rows_skipped_rule():
-    doc = {
-        "sections": [
-            {
-                "index": "1.0",
-                "section": "A",
-                "rules": [
-                    {
-                        "stages": [],
-                        "raw": "a → b",
-                        "source": "s:1",
-                        "status": "skipped",
-                    }
-                ],
-            }
-        ]
-    }
-    rows = list(iter_validation_rows(doc, probe_words=None))
-    assert len(rows) == 1
-    assert rows[0].section_name == "A"
-    assert rows[0].ok is True
-    assert rows[0].description == "held-out (commented rule)"
-
-
 def test_top_error_tokens():
     rows = [
         ValidationRow(
@@ -604,26 +578,6 @@ def test_section_all_ok_stats():
 
 def test_section_all_ok_stats_empty():
     assert section_all_ok_stats([]) == (0, 0, 0.0)
-
-
-def test_section_all_ok_stats_from_dataframe():
-    rows = [
-        ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
-        ValidationRow("1", "A", "r1", "s:2", True, "", "", "", "", ""),
-        ValidationRow("2", "B", "r0", "s:3", True, "", "", "", "", ""),
-        ValidationRow(
-            "2", "B", 1, "s:4", False, "syntax_other", "broken-syntax", "", "", ""
-        ),
-    ]
-    df = validation_rows_to_dataframe(rows)
-    assert section_all_ok_stats_from_dataframe(df) == (1, 2, 50.0)
-
-
-def test_section_all_ok_stats_from_dataframe_empty():
-    import pandas as pd
-
-    empty = pd.DataFrame(columns=validation_rows_to_dataframe([]).columns)
-    assert section_all_ok_stats_from_dataframe(empty) == (0, 0, 0.0)
 
 
 def test_summarize_inventory_common_errors():

@@ -46,12 +46,6 @@ def resolve_asca_bin() -> str | None:
     return shutil.which("asca")
 
 
-def fork_asca_bin(*, repo_root: Path | None = None) -> Path:
-    """Return the repo-local asca fork installed under ``bin/bin/asca``."""
-    root = repo_root or Path(__file__).resolve().parents[3]
-    return root / "bin" / "bin" / "asca"
-
-
 @functools.lru_cache(maxsize=8)
 def _asca_supports_validate(asca_bin: str) -> bool:
     """Return True when *asca_bin* exposes the ``validate`` subcommand."""
@@ -145,20 +139,6 @@ def asca_supports_validate(*, asca_bin: str | None = None) -> bool:
     if asca is None:
         return False
     return _asca_supports_validate(asca)
-
-
-def validate_asca_syntax(
-    rule: str,
-    *,
-    asca_bin: str | None = None,
-    timeout: float = 15.0,
-) -> bool:
-    """Return ``True`` when a whole rule line passes ``asca validate -s``."""
-    asca = _require_asca_bin(asca_bin=asca_bin)
-    _require_validate_support(asca)
-    proc = _run_asca_command([asca, "validate", "-s", rule], timeout=timeout)
-    _raise_if_asca_failed(proc, timeout=timeout)
-    return True
 
 
 def validate_asca_part(

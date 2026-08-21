@@ -9,11 +9,43 @@ import pytest
 
 from conlanger.appliers.asca import validate_asca
 from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
+from conlanger.tools.compile.asca.structures import (
+    ENV_SEPARATOR,
+    EXCEPTION_SEPARATOR,
+    OUTPUT_SEPARATOR,
+    join_asca_rule_fields,
+)
 from conlanger.tools.compile.asca.subscript_references import (
-    expand_index_subscript_references,
-    is_easy_subscript_rule_text,
+    expand_subscript_references_across_fields,
 )
 from conlanger.tools.rules import DiachronicSeries
+
+
+def _split_joined_rule(text: str) -> tuple[str, str, str | None, str | None]:
+    exception: str | None = None
+    if EXCEPTION_SEPARATOR in text:
+        text, exception = text.split(EXCEPTION_SEPARATOR, 1)
+    env: str | None = None
+    if OUTPUT_SEPARATOR in text:
+        inp, rest = text.split(OUTPUT_SEPARATOR, 1)
+        if ENV_SEPARATOR in rest:
+            output, env = rest.split(ENV_SEPARATOR, 1)
+        else:
+            output = rest
+    else:
+        inp = text
+        output = ""
+    return inp, output, env, exception
+
+
+def _expand_joined_subscripts(text: str) -> str:
+    if not text:
+        return text
+    inp, output, env, exception = _split_joined_rule(text)
+    inp, output, env, exception = expand_subscript_references_across_fields(
+        inp, output, env, exception
+    )
+    return join_asca_rule_fields(inp, output, env, exception)
 
 
 @pytest.mark.parametrize(
@@ -24,68 +56,49 @@ from conlanger.tools.rules import DiachronicSeries
         ("h > ʔ / V₀V₀", "h > ʔ / _ V=0 0"),
     ],
 )
-def test_expand_index_subscript_references_happy_path(index_rule, expected):
-    assert expand_index_subscript_references(index_rule) == expected
+def test_expand_subscript_references_happy_path(index_rule, expected):
+    assert _expand_joined_subscripts(index_rule) == expected
 
 
-def test_expand_index_subscript_references_leaves_bare_feature_matrices_untouched():
-    assert expand_index_subscript_references("C > V / [+high]") == "C > V / [+high]"
+def test_expand_subscript_references_leaves_bare_feature_matrices_untouched():
+    assert _expand_joined_subscripts("C > V / [+high]") == "C > V / [+high]"
 
 
-def test_expand_index_subscript_references_matrix_attached_identity():
+def test_expand_subscript_references_matrix_attached_identity():
     assert (
-        expand_index_subscript_references("V₀[+nas]V₀[-nas] > V₀[+nas]")
+        _expand_joined_subscripts("V₀[+nas]V₀[-nas] > V₀[+nas]")
         == "V:[+nas]=0 V:[-nas]=0 > 0:[+nas]"
     )
 
 
-def test_expand_index_subscript_references_matrix_attached_positional():
-    assert expand_index_subscript_references("C₁[+high] > C₂") == "C:[+high]=1 > C=2"
+def test_expand_subscript_references_matrix_attached_positional():
+    assert _expand_joined_subscripts("C₁[+high] > C₂") == "C:[+high]=1 > C=2"
     assert (
-        expand_index_subscript_references("CV₁CV:[+stress]₂ > CV₂CV:[+stress]₂")
+        _expand_joined_subscripts("CV₁CV:[+stress]₂ > CV₂CV:[+stress]₂")
         == "CV=1 CV:[+stress]=2 > 2 2:[+stress]"
     )
 
 
-def test_expand_index_subscript_references_prefixes_env_without_underscore():
-    assert expand_index_subscript_references("h > ʔ / V₀") == "h > ʔ / _ V=0"
+def test_expand_subscript_references_prefixes_env_without_underscore():
+    assert _expand_joined_subscripts("h > ʔ / V₀") == "h > ʔ / _ V=0"
 
 
-def test_expand_index_subscript_references_with_exception_block():
-    assert (
-        expand_index_subscript_references("C₁ > C₂ // except _#")
-        == "C=1 > C=2 // except _#"
-    )
+def test_expand_subscript_references_with_exception_block():
+    assert _expand_joined_subscripts("C₁ > C₂ // except _#") == "C=1 > C=2 // except _#"
 
 
-def test_expand_index_subscript_references_reuses_declared_slot():
-    assert expand_index_subscript_references("C₁C₁ > C₁") == "C=1 1 > 1"
+def test_expand_subscript_references_reuses_declared_slot():
+    assert _expand_joined_subscripts("C₁C₁ > C₁") == "C=1 1 > 1"
 
 
-def test_expand_index_subscript_references_without_arrow_expands_input_only():
-    assert expand_index_subscript_references("C₁C₂") == "C=1 C=2 > "
-
-
-@pytest.mark.parametrize(
-    "text",
-    [
-        "C₀[+high]",
-        "CˤC₂",
-        "x₁₂",
-    ],
-)
-def test_is_easy_subscript_rule_text_rejects_out_of_scope(text):
-    assert is_easy_subscript_rule_text(text) is False
-
-
-def test_is_easy_subscript_rule_text_accepts_in_scope():
-    assert is_easy_subscript_rule_text("C₁ > C₂") is True
+def test_expand_subscript_references_without_arrow_expands_input_only():
+    assert _expand_joined_subscripts("C₁C₂") == "C=1 C=2 > "
 
 
 def test_compile_pipeline_applies_subscript_expansion_before_group_mappings():
     inp, output = "C₁C₂", "C₂"
     assert compile_asca_rule_fields(inp, output, group_mappings={}) == (
-        expand_index_subscript_references(f"{inp} > {output}")
+        _expand_joined_subscripts(f"{inp} > {output}")
     )
 
 
@@ -122,37 +135,34 @@ def test_rule_change_validates_identity_env_fixture():
     validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
 
 
-def test_expand_index_subscript_references_inter_slot_pharyngeal():
+def test_expand_subscript_references_inter_slot_pharyngeal():
     assert (
-        expand_index_subscript_references("C₁ˤC₂ > C₁C₂ˤ")
+        _expand_joined_subscripts("C₁ˤC₂ > C₁C₂ˤ")
         == "C:[+pharyn]=1 C=2 > 1 2:[+pharyn]"
     )
 
 
-def test_expand_index_subscript_references_identity_compounds():
-    assert expand_index_subscript_references("mn > mV₀nV₀ / #_") == "mn > mV=0 n0 / #_"
-    assert expand_index_subscript_references("CʔV₀ > CV₀ʔV₀") == "CʔV=0 > C0 ʔ0"
-    assert expand_index_subscript_references("C₀VC₀ > C₀ː") == "C=0 V0 > 0ː"
+def test_expand_subscript_references_identity_compounds():
+    assert _expand_joined_subscripts("mn > mV₀nV₀ / #_") == "mn > mV=0 n0 / #_"
+    assert _expand_joined_subscripts("CʔV₀ > CV₀ʔV₀") == "CʔV=0 > C0 ʔ0"
+    assert _expand_joined_subscripts("C₀VC₀ > C₀ː") == "C=0 V0 > 0ː"
 
 
-def test_expand_index_subscript_references_optional_positional():
-    assert (
-        expand_index_subscript_references("C₁C₂C₃C₄ > (C₃)C₄")
-        == "C=1 C=2 C=3 C=4 > {3}4"
-    )
+def test_expand_subscript_references_optional_positional():
+    assert _expand_joined_subscripts("C₁C₂C₃C₄ > (C₃)C₄") == "C=1 C=2 C=3 C=4 > {3}4"
     assert (
         compile_asca_rule_fields("C₁C₂C₃C₄", "(C₃)C₄", group_mappings={})
         == "C=1 C=2 C=3 C=4 > {3}4"
     )
 
 
-def test_expand_index_subscript_references_leaves_prose_env_and_exception():
+def test_expand_subscript_references_leaves_prose_env_and_exception():
     assert (
-        expand_index_subscript_references("C₁C₂ > xC₂ / if C₂ was a plosive or s")
+        _expand_joined_subscripts("C₁C₂ > xC₂ / if C₂ was a plosive or s")
         == "C=1 C=2 > x2 / if C₂ was a plosive or s"
     )
     assert (
-        expand_index_subscript_references("ɣ > ʔ / VV₀_V₀ // V₀ = U")
+        _expand_joined_subscripts("ɣ > ʔ / VV₀_V₀ // V₀ = U")
         == "ɣ > ʔ / VV=0 _0 // V₀ = U"
     )
 

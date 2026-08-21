@@ -38,26 +38,6 @@ def split_outside_groupers(text: str, sep: str = " ") -> list[str]:
     return parts
 
 
-def split_compiled_rule_fields(
-    text: str,
-) -> tuple[str, str, str | None, str | None]:
-    """Split a joined ASCA rule string into input, output, env, and exception."""
-    exception: str | None = None
-    if EXCEPTION_SEPARATOR in text:
-        text, exception = text.split(EXCEPTION_SEPARATOR, 1)
-    env: str | None = None
-    if OUTPUT_SEPARATOR in text:
-        inp, rest = text.split(OUTPUT_SEPARATOR, 1)
-        if ENV_SEPARATOR in rest:
-            output, env = rest.split(ENV_SEPARATOR, 1)
-        else:
-            output = rest
-    else:
-        inp = text
-        output = ""
-    return inp, output, env, exception
-
-
 def join_asca_rule_fields(
     inp: str,
     output: str,

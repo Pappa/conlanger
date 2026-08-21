@@ -12,7 +12,6 @@ from __future__ import annotations
 
 import re
 from collections import Counter
-from collections.abc import Iterator
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -1021,25 +1020,6 @@ def validate_corpus_rule(
     return rows
 
 
-def iter_validation_rows(
-    doc: dict[str, Any],
-    *,
-    probe_words: Path | None,
-    group_mappings: dict[str, str] | None = None,
-) -> Iterator[ValidationRow]:
-    for section in doc.get("sections") or []:
-        rules = section.get("rules") or []
-        for rule in rules:
-            rule_id = str(rule.get("rule_id", ""))
-            yield from validate_corpus_rule(
-                section,
-                rule,
-                rule_id,
-                probe_words=probe_words,
-                group_mappings=group_mappings,
-            )
-
-
 def iter_inventory_with_field_isolation(
     doc: dict[str, Any],
     *,
@@ -1144,37 +1124,6 @@ def section_skip_stats(rows: list[ValidationRow]) -> tuple[int, int, float]:
         and all(
             row.failure_class == SECTION_SKIPPED_FAILURE_CLASS for row in section_rows
         )
-    )
-    pct = (100.0 * skipped_sections / total_sections) if total_sections else 0.0
-    return skipped_sections, total_sections, pct
-
-
-def section_all_ok_stats_from_dataframe(df: pd.DataFrame) -> tuple[int, int, float]:
-    """Return section all-ok stats from an inventory CSV dataframe."""
-    if df.empty:
-        return 0, 0, 0.0
-    active = df[df["failure_class"].astype(str) != SECTION_SKIPPED_FAILURE_CLASS]
-    if active.empty:
-        return 0, 0, 0.0
-    grouped = active.groupby(["section_index", "section_name"], sort=False)["ok"]
-    total_sections = grouped.ngroups
-    sections_all_ok = int(grouped.all().sum())
-    pct = (100.0 * sections_all_ok / total_sections) if total_sections else 0.0
-    return sections_all_ok, total_sections, pct
-
-
-def section_skip_stats_from_dataframe(df: pd.DataFrame) -> tuple[int, int, float]:
-    """Return skipped-section stats from an inventory CSV dataframe."""
-    if df.empty:
-        return 0, 0, 0.0
-    grouped = df.groupby(["section_index", "section_name"], sort=False)
-    total_sections = grouped.ngroups
-    skipped_sections = int(
-        grouped["failure_class"]
-        .apply(
-            lambda values: (values.astype(str) == SECTION_SKIPPED_FAILURE_CLASS).all()
-        )
-        .sum()
     )
     pct = (100.0 * skipped_sections / total_sections) if total_sections else 0.0
     return skipped_sections, total_sections, pct

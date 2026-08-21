@@ -14,7 +14,7 @@ from helpers import default_index_parser
 
 from conlanger.appliers.asca import validate_asca
 from conlanger.tools.compile.asca.group_mappings import asca_group_mappings_dict
-from conlanger.tools.corpus_inventory import iter_validation_rows, validate_corpus_rule
+from conlanger.tools.corpus_inventory import validate_corpus_rule
 from conlanger.tools.rules import DiachronicSeries
 from tests.conftest import ASCA_INSTALLED
 
@@ -164,13 +164,18 @@ def test_e2e_minimal_html_fixture_compile_and_validate(tmp_path: Path):
 <p class="schg">dʒ → tʃ / _#</p>""",
     )
     section = _parse_section(html_path)
-    rows = list(
-        iter_validation_rows(
-            {"sections": [section]},
-            probe_words=_PROBE,
-            group_mappings=asca_group_mappings_dict(),
+    rows: list = []
+    for rule in section.get("rules") or []:
+        rule_id = str(rule.get("rule_id", ""))
+        rows.extend(
+            validate_corpus_rule(
+                section,
+                rule,
+                rule_id,
+                probe_words=_PROBE,
+                group_mappings=asca_group_mappings_dict(),
+            )
         )
-    )
 
     assert len(rows) == 2
     assert all(row.ok for row in rows)

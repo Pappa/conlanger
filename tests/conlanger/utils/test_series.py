@@ -6,10 +6,7 @@ import pytest
 
 from conlanger.utils.series import (
     apply_series_expansions,
-    classify_subscript_token,
     expand_collectives_in_field,
-    find_correspondence_series_tokens,
-    find_subscript_tokens,
     is_collective_subscript_token,
     is_correspondence_series_token,
     is_identity_subscript_token,
@@ -73,37 +70,6 @@ def test_is_collective_subscript_token(token, expected):
 
 def test_section_index_prefixes_shortest_first():
     assert section_index_prefixes("6.1.2.1") == ["6", "6.1", "6.1.2", "6.1.2.1"]
-
-
-def test_find_correspondence_series_tokens_in_text():
-    tokens = find_correspondence_series_tokens("s₁ s₂ → ʃ z / _{h₁,h₂}")
-    assert tokens == {"s₁", "s₂", "h₁", "h₂"}
-
-
-@pytest.mark.parametrize(
-    ("token", "kind"),
-    [
-        ("s₁", "correspondence"),
-        ("sₓ", "collective"),
-        ("C₁", "positional"),
-        ("V₀", "identity"),
-        ("CV₁", "compound"),
-        ("ɬ₀", "other"),
-        ("plain", "none"),
-    ],
-)
-def test_classify_subscript_token(token, kind):
-    assert classify_subscript_token(token) == kind
-
-
-def test_find_correspondence_series_tokens_includes_collective():
-    tokens = find_correspondence_series_tokens("sₓ s₁")
-    assert tokens == {"sₓ", "s₁"}
-
-
-def test_find_subscript_tokens_in_rule_fields():
-    tokens = find_subscript_tokens("s₁ → ʃ / _ {C₁,V₀}")
-    assert tokens == {"s₁", "C₁", "V₀"}
 
 
 @pytest.mark.parametrize(

@@ -40,21 +40,6 @@ def split_line_semicolon_comment(text: str) -> tuple[str, str | None]:
     return head, comment or None
 
 
-def apply_semicolon_field_comments(parts: dict[str, str]) -> dict[str, Any]:
-    """Strip semicolon tails from ``env`` and ``exception``; first comment pass."""
-    result: dict[str, Any] = dict(parts)
-    fragments: list[str] = []
-    for key in ("env", "exception"):
-        if key not in result:
-            continue
-        value, comment = split_field_semicolon_comment(result[key])
-        result[key] = value
-        if comment:
-            fragments.append(comment)
-    _append_rule_comment_parts(result, fragments)
-    return result
-
-
 def _append_rule_comment_parts(parts: dict[str, Any], fragments: list[str]) -> None:
     """Merge newly captured prose into optional ``comment`` on rule parts."""
     addition = join_rule_comment(*fragments)

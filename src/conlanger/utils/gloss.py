@@ -107,12 +107,6 @@ def extract_trailing_quoted_gloss_from_field(text: str) -> tuple[str, list[str]]
     return text, captures
 
 
-def strip_trailing_quoted_gloss_from_field(text: str) -> str:
-    """Remove trailing curly- or straight-quoted prose glosses."""
-    cleaned, _ = extract_trailing_quoted_gloss_from_field(text)
-    return cleaned
-
-
 def extract_field_wrapped_quoted_gloss_from_field(
     text: str,
 ) -> tuple[str, list[str]]:
@@ -165,12 +159,6 @@ def extract_embedded_quoted_gloss_from_field(text: str) -> tuple[str, list[str]]
     return text, captures
 
 
-def strip_embedded_quoted_gloss_from_field(text: str) -> str:
-    """Remove embedded ``"…"`` / ``"…"`` Index prose glosses from one field."""
-    cleaned, _ = extract_embedded_quoted_gloss_from_field(text)
-    return cleaned
-
-
 def extract_trailing_paren_glosses_from_field(
     text: str, *, include_unclosed: bool = True
 ) -> tuple[str, list[str]]:
@@ -214,12 +202,6 @@ def _extract_embedded_paren_glosses(text: str) -> tuple[str, list[str]]:
     return cleaned, captures
 
 
-def strip_trailing_paren_glosses_from_field(text: str) -> str:
-    """Remove trailing ``(… )`` prose glosses from one rule field."""
-    cleaned, _ = extract_trailing_paren_glosses_from_field(text)
-    return cleaned
-
-
 def extract_semicolon_prose_from_field(text: str) -> tuple[str, list[str]]:
     """Remove trailing ``; …`` English prose; return captured tail."""
     if not text or "; " not in text:
@@ -259,12 +241,6 @@ def extract_trailing_gloss_from_field(
         text, frags = extractor(text)
         captures.extend(frags)
     return text.strip(), captures
-
-
-def strip_trailing_gloss_from_field(text: str) -> str:
-    """Strip Index trailing glosses (parens, quotes, semicolon prose) from one field."""
-    cleaned, _ = extract_trailing_gloss_from_field(text)
-    return cleaned
 
 
 def is_quoted_prose_paragraph(raw: str) -> bool:
@@ -341,9 +317,3 @@ def extract_uncertainty_qualifier_from_field(text: str) -> tuple[str, list[str]]
             captures.append(match.group(0).strip())
             text = _TRAILING_BARE_UNCERTAINTY_RE.sub("", text).strip()
     return text.strip(), captures
-
-
-def strip_uncertainty_qualifier_from_field(text: str) -> str:
-    """Remove sporadic / sometimes / occasionally glosses from one rule field value."""
-    cleaned, _ = extract_uncertainty_qualifier_from_field(text)
-    return cleaned

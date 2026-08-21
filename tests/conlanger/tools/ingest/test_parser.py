@@ -19,7 +19,6 @@ from conlanger.tools.ingest.section_policy import (
 from conlanger.tools.ingest.transforms import (
     MEDIAL_BOUNDARY_EXCEPTION,
     apply_medial_env_conditions,
-    apply_semicolon_field_comments,
     apply_sporadic_qualifier,
     apply_stress_conditions,
     apply_trailing_glosses,
@@ -1679,19 +1678,6 @@ def test_split_field_semicolon_comment():
         "again, the article is unclear",
     )
     assert split_field_semicolon_comment("short only") == ("short only", None)
-
-
-def test_apply_semicolon_field_comments():
-    assert apply_semicolon_field_comments(
-        {
-            "stages": ["V", "∅"],
-            "env": "short only; blocked by following consonant",
-        }
-    ) == {
-        "stages": ["V", "∅"],
-        "env": "short only",
-        "comment": "blocked by following consonant",
-    }
 
 
 def test_join_rule_comment():

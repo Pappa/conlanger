@@ -76,23 +76,6 @@ def compile_asca_field_post_subscript(text: str) -> str:
     return expand_meta_notation(text)
 
 
-def compile_asca_field(
-    text: str,
-    *,
-    group_mappings: dict[str, str],
-    section_index: str = "",
-    compiler_config: CompilerConfig | None = None,
-) -> str:
-    """Run the full per-field ASCA compile path when no cross-field subscripts apply."""
-    text = compile_asca_field_pre_subscript(
-        text,
-        group_mappings=group_mappings,
-        section_index=section_index,
-        compiler_config=compiler_config,
-    )
-    return compile_asca_field_post_subscript(text)
-
-
 def compile_asca_rule_fields(
     inp: str,
     output: str,

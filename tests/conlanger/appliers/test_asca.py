@@ -10,11 +10,9 @@ import pytest
 
 from conlanger.appliers.asca import (
     ASCAValidationError,
-    fork_asca_bin,
     resolve_asca_bin,
     validate_asca,
     validate_asca_part,
-    validate_asca_syntax,
 )
 from conlanger.tools.rules import DiachronicSeries
 from tests.conftest import ASCA_INSTALLED, ASCA_VALIDATE_INSTALLED
@@ -113,11 +111,6 @@ def test_resolve_asca_bin_returns_none_when_missing(mocker):
     mocker.patch("conlanger.appliers.asca.shutil.which", return_value=None)
 
     assert resolve_asca_bin() is None
-
-
-def test_fork_asca_bin_points_at_repo_install():
-    repo_root = Path(__file__).resolve().parents[3]
-    assert fork_asca_bin(repo_root=repo_root) == repo_root / "bin" / "bin" / "asca"
 
 
 def test_validate_asca_honors_explicit_asca_bin(
@@ -319,27 +312,6 @@ def test_validate_asca_validate_failure_short_circuits(
     assert calls[0][1] == "validate"
 
 
-def test_validate_asca_syntax_invokes_validate_subcommand(
-    mock_asca_subprocess, mock_asca_on_path
-):
-    mock_asca_subprocess.return_value = MagicMock(returncode=0, stderr="")
-    with patch("conlanger.appliers.asca._asca_supports_validate", return_value=True):
-        assert validate_asca_syntax("a > b / _") is True
-
-    cmd = mock_asca_subprocess.call_args.args[0]
-    assert cmd[1:] == ["validate", "-s", "a > b / _"]
-
-
-def test_validate_asca_syntax_requires_validate_subcommand(
-    mock_asca_on_path,
-):
-    with (
-        patch("conlanger.appliers.asca._asca_supports_validate", return_value=False),
-        pytest.raises(ASCAValidationError, match="validate subcommand"),
-    ):
-        validate_asca_syntax("a > b / _")
-
-
 @pytest.mark.parametrize(
     ("part", "field"),
     [
@@ -374,14 +346,6 @@ def test_validate_asca_invalid_asca_bin_raises(mocker, tmp_path: Path):
     )
     with pytest.raises(ASCAValidationError, match="not found at"):
         validate_asca(scr, probe_words=_PROBE)
-
-
-@pytest.mark.skipif(
-    not ASCA_VALIDATE_INSTALLED,
-    reason="asca validate subcommand not available",
-)
-def test_validate_asca_syntax_integration():
-    assert validate_asca_syntax("a > b / _") is True
 
 
 @pytest.mark.skipif(

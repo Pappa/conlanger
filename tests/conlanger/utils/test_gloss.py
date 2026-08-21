@@ -15,11 +15,6 @@ from conlanger.utils.gloss import (
     is_gloss_only_rule,
     is_quoted_prose_paragraph,
     paren_inner_is_gloss,
-    strip_embedded_quoted_gloss_from_field,
-    strip_trailing_gloss_from_field,
-    strip_trailing_paren_glosses_from_field,
-    strip_trailing_quoted_gloss_from_field,
-    strip_uncertainty_qualifier_from_field,
 )
 
 
@@ -82,10 +77,6 @@ def test_extract_trailing_quoted_gloss_from_field(
     assert captures == expected_captures
 
 
-def test_strip_trailing_quoted_gloss_from_field_drops_prose():
-    assert strip_trailing_quoted_gloss_from_field('V / _# "when stressed"') == "V / _#"
-
-
 @pytest.mark.parametrize(
     ("text", "expected_cleaned", "expected_captures"),
     [
@@ -142,10 +133,6 @@ def test_extract_embedded_quoted_gloss_from_field(
     assert captures == expected_captures
 
 
-def test_strip_embedded_quoted_gloss_from_field_drops_prose():
-    assert strip_embedded_quoted_gloss_from_field('V, "short only", _C#') == "V_C#"
-
-
 @pytest.mark.parametrize(
     ("text", "expected_cleaned", "expected_captures"),
     [
@@ -176,10 +163,6 @@ def test_extract_trailing_paren_glosses_from_field(
     cleaned, captures = extract_trailing_paren_glosses_from_field(text)
     assert cleaned == expected_cleaned
     assert captures == expected_captures
-
-
-def test_strip_trailing_paren_glosses_from_field_drops_prose():
-    assert strip_trailing_paren_glosses_from_field("_CVC# (short only)") == "_CVC#"
 
 
 @pytest.mark.parametrize(
@@ -245,8 +228,9 @@ def test_extract_semicolon_prose_from_field(text, expected_cleaned, expected_cap
         ("z > d / $_OO “", "z > d / $_OO"),
     ],
 )
-def test_strip_trailing_gloss_from_field(text, expected_cleaned):
-    assert strip_trailing_gloss_from_field(text) == expected_cleaned
+def test_extract_trailing_gloss_from_field(text, expected_cleaned):
+    cleaned, _ = extract_trailing_gloss_from_field(text)
+    assert cleaned == expected_cleaned
 
 
 def test_extract_trailing_gloss_from_field_returns_captures():
@@ -343,5 +327,6 @@ def test_extract_uncertainty_qualifier_from_field(
         ("a", "a"),
     ],
 )
-def test_strip_uncertainty_qualifier_from_field(text, expected):
-    assert strip_uncertainty_qualifier_from_field(text) == expected
+def test_extract_uncertainty_qualifier_from_field_strips(text, expected):
+    cleaned, _ = extract_uncertainty_qualifier_from_field(text)
+    assert cleaned == expected

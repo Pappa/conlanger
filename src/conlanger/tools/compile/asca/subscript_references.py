@@ -4,15 +4,6 @@ from __future__ import annotations
 
 import re
 
-from conlanger.tools.compile.asca.structures import (
-    join_asca_rule_fields,
-    split_compiled_rule_fields,
-)
-from conlanger.utils.series import (
-    is_identity_subscript_token,
-    is_positional_slot_token,
-)
-
 _SUBSCRIPT_TO_ASCII = str.maketrans("₀₁₂₃₄₅₆₇₈₉", "0123456789")
 _SUBSCRIPT_CHAR_RE = re.compile(r"[₀₁₂₃₄₅₆₇₈₉]")
 _PROSE_FIELD_RE = re.compile(
@@ -163,39 +154,3 @@ def expand_subscript_references_across_fields(
 
     output = _expand_field(output, declared)
     return inp, output, env, exception
-
-
-def expand_index_subscript_references(text: str) -> str:
-    """Map positional slots and identity subscripts to ASCA reference syntax.
-
-    Handles phase-1 bare slots plus phase-2 edge cases: matrix-attached
-    identity/positional (``V₀[+nas]``, ``CV:[+stress]₂``), inter-slot
-    pharyngeal diacritics (``C₁ˤ`` → ``C:[+pharyn]=1``), identity compounds
-    (``mV₀``), and leaves Index prose env/exception fields unexpanded.
-    """
-    if not text or not _SUBSCRIPT_CHAR_RE.search(text):
-        return text
-
-    inp, output, env, exception = split_compiled_rule_fields(text)
-    inp, output, env, exception = expand_subscript_references_across_fields(
-        inp, output, env, exception
-    )
-    return join_asca_rule_fields(inp, output, env, exception)
-
-
-def is_easy_subscript_rule_text(text: str) -> bool:
-    """Whether ``text`` is in scope for phase-1 positional/identity expansion."""
-    if re.search(r"[A-Za-z][₀₁₂₃₄₅₆₇₈₉]\[[^\]]+\]", text):
-        return False
-    if re.search(r"[A-Za-z]+:\[[^\]]+\][₀₁₂₃₄₅₆₇₈₉]", text):
-        return False
-    if "ˤ" in text:
-        return False
-    if _is_prose_field(text):
-        return False
-    for token in re.findall(r"\S+", text):
-        if is_positional_slot_token(token) or is_identity_subscript_token(token):
-            continue
-        if _SUBSCRIPT_CHAR_RE.search(token):
-            return False
-    return bool(_SUBSCRIPT_CHAR_RE.search(text))

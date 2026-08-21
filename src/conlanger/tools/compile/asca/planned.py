@@ -9,14 +9,10 @@ from conlanger.tools.compile.asca.parenthetical import (
 from conlanger.tools.compile.asca.slash_boundary import (
     drop_concatenated_deletion_column,
 )
-from conlanger.tools.compile.asca.subscript_references import (
-    expand_index_subscript_references,
-)
 from conlanger.tools.compile.asca.tilde import expand_index_tilde_notation
 
 __all__ = [
     "apply_section_local_abbreviations",
-    "expand_index_subscript_references",
     "expand_meta_notation",
 ]
 
