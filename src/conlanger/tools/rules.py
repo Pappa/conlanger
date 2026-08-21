@@ -1,14 +1,13 @@
 from __future__ import annotations
 
 import random
-from typing import ClassVar
+from typing import ClassVar, Self
+
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 from conlanger.tools.compile.asca.chains import expand_chained_corpus_rule
-from conlanger.tools.compile.asca.parallel import (
-    drop_mixed_parallel_null_columns,
-    expand_parallel_output_null_branches,
-)
-from conlanger.tools.compile.asca.pipeline import compile_asca_rule_string
+from conlanger.tools.compile.asca.parallel import expand_parallel_output_null_branches
+from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
 from conlanger.tools.compile.asca.tilde import normalize_corpus_rule_tilde_fields
 from conlanger.utils.file_io import load_compiler_config
 from conlanger.utils.mappings import CompilerConfig
@@ -55,86 +54,101 @@ def _split_set_members(text: str) -> list[str]:
     return members
 
 
-class RulePartBase:
+class RulePartBase(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
     prefix: ClassVar[str] = "# "
+    value: str = ""
 
-    def __init__(self, value: str):
-        self.value = value
-
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.prefix}{self.value}"
 
 
 class RuleTitle(RulePartBase):
     prefix: ClassVar[str] = "@ "
 
-    def __init__(self, section: dict):
+    @classmethod
+    def from_section(cls, section: dict) -> Self:
         title = section["index"] + " - " + section["section"]
-        super().__init__(title)
+        return cls(value=title)
 
 
 class RuleCitation(RulePartBase):
     prefix: ClassVar[str] = "# citation: "
 
-    def __init__(self, value: str):
-        super().__init__(value.replace("\n", "\n# "))
+    def __init__(self, value: str = "", **kwargs: object) -> None:
+        super().__init__(value=value.replace("\n", "\n# "), **kwargs)
 
 
 class RuleComment(RulePartBase):
     prefix: ClassVar[str] = "\t# "
 
-    def __init__(self, value: str):
-        super().__init__(value.replace("\n", "\n\t# "))
+    def __init__(self, value: str = "", **kwargs: object) -> None:
+        super().__init__(value=value.replace("\n", "\n\t# "), **kwargs)
 
 
 class SoundChangeRule(RulePartBase):
+    model_config = ConfigDict(extra="ignore", arbitrary_types_allowed=True)
+
     prefix: ClassVar[str] = "\t"
     skip_prefix: ClassVar[str] = "#\t"
-    output_separator: ClassVar[str] = " > "
-    env_separator: ClassVar[str] = " / "
-    exception_separator: ClassVar[str] = " // "
 
-    def __init__(
-        self,
-        input: str = "",
-        output: str = "",
-        env: str | None = None,
-        exception: str | None = None,
-        *,
-        skipped: bool = False,
-        raw: str = "",
-        group_mappings: dict[str, str] | None = None,
-        seed: int | None = None,
-        rng: random.Random | None = None,
-        section_index: str = "",
-        compiler_config: CompilerConfig | None = None,
-        **_: object,
-    ):
-        self.input = input
-        self.output = output
-        self.env = env
-        self.exception = exception
-        self._group_mappings = {} if group_mappings is None else group_mappings
-        self._section_index = section_index
-        self._compiler_config = compiler_config
-        # Instance RNG only — never the process-global ``random.seed`` (ticket 66).
-        self._rng = rng if rng is not None else random.Random(seed)
-        self.alternatives: list[SoundChangeRule] = []
+    input: str = ""
+    output: str = ""
+    env: str | None = None
+    exception: str | None = None
+    skipped: bool = False
+    raw: str = ""
 
-        if skipped:
-            self.prefix = self.skip_prefix
-            super().__init__(raw)
-            return
+    alternatives: list[SoundChangeRule] = Field(default_factory=list)
+    group_mappings: dict[str, str] = Field(
+        default_factory=dict, exclude=True, repr=False
+    )
+    compiler_config: CompilerConfig | None = Field(
+        default=None, exclude=True, repr=False
+    )
+    section_index: str = Field(default="", exclude=True, repr=False)
+    rng: random.Random = Field(default_factory=random.Random, exclude=True, repr=False)
+    detect_alternatives: bool = Field(default=True, exclude=True, repr=False)
 
-        self.alternatives = self._build_alternatives()
-        if self.alternatives:
-            # Freeze one alternative uniformly as the emitted outcome.
-            chosen = self.alternatives[self._rng.randrange(len(self.alternatives))]
-            value = chosen.value
-        else:
-            # Compile ASCA rule text once at construction (stored in ``value``).
-            value = self._format()
-        super().__init__(value)
+    @model_validator(mode="before")
+    @classmethod
+    def normalize_rng(cls, data: object) -> object:
+        if not isinstance(data, dict):
+            return data
+        updated = dict(data)
+        if "rng" not in updated and "seed" in updated:
+            updated["rng"] = random.Random(updated.pop("seed"))
+        return updated
+
+    @model_validator(mode="after")
+    def compile_rule(self) -> Self:
+        if self.skipped:
+            self.value = self.raw
+            return self
+
+        if self.detect_alternatives:
+            alternatives = self._build_alternatives()
+            self.alternatives = alternatives
+            if alternatives:
+                chosen = alternatives[self.rng.randrange(len(alternatives))]
+                self.value = chosen.value
+                return self
+
+        self.value = compile_asca_rule_fields(
+            self.input,
+            self.output,
+            self.env,
+            self.exception,
+            group_mappings=self.group_mappings,
+            section_index=self.section_index,
+            compiler_config=self.compiler_config,
+        )
+        return self
+
+    def __str__(self) -> str:
+        prefix = self.skip_prefix if self.skipped else self.prefix
+        return f"{prefix}{self.value}"
 
     def _build_alternatives(self) -> list[SoundChangeRule]:
         """Build peer alternatives for optional outputs or parallel ``∅`` output sets."""
@@ -158,9 +172,10 @@ class SoundChangeRule(RulePartBase):
                 output=member,
                 env=self.env,
                 exception=self.exception,
-                group_mappings=self._group_mappings,
-                section_index=self._section_index,
-                compiler_config=self._compiler_config,
+                group_mappings=self.group_mappings,
+                section_index=self.section_index,
+                compiler_config=self.compiler_config,
+                detect_alternatives=False,
             )
             for member in members
         ]
@@ -176,32 +191,20 @@ class SoundChangeRule(RulePartBase):
                 output=branch_output,
                 env=self.env,
                 exception=self.exception,
-                group_mappings=self._group_mappings,
-                section_index=self._section_index,
-                compiler_config=self._compiler_config,
+                group_mappings=self.group_mappings,
+                section_index=self.section_index,
+                compiler_config=self.compiler_config,
+                detect_alternatives=False,
             )
             for branch_input, branch_output in branches
         ]
 
-    def _format(self) -> str:
-        input_text = drop_mixed_parallel_null_columns(self.input)
-        output_text = drop_mixed_parallel_null_columns(self.output)
 
-        result = input_text + self.output_separator + output_text
-        if self.env:
-            result += self.env_separator + self.env
-        if self.exception:
-            result += self.exception_separator + self.exception
+class DiachronicSeries(BaseModel):
+    model_config = ConfigDict(extra="ignore", arbitrary_types_allowed=True)
 
-        return compile_asca_rule_string(
-            result,
-            group_mappings=self._group_mappings,
-            section_index=self._section_index,
-            compiler_config=self._compiler_config,
-        )
+    parts: list[RulePartBase] = Field(default_factory=list)
 
-
-class DiachronicSeries:
     def __init__(
         self,
         section: dict,
@@ -209,24 +212,22 @@ class DiachronicSeries:
         *,
         group_mappings: dict[str, str] | None = None,
         compiler_config: CompilerConfig | None = None,
-    ):
+    ) -> None:
         if format not in _SUPPORTED_FORMATS:
             raise ValueError(f"Unsupported format: {format}")
 
         mappings = {} if group_mappings is None else group_mappings
         config = load_compiler_config() if compiler_config is None else compiler_config
         section_index = str(section.get("index", ""))
-        self._parts = [RuleTitle(section)]
+        parts: list[RulePartBase] = [RuleTitle.from_section(section)]
         if section.get("citation"):
-            self._parts.append(RuleCitation(section["citation"]))
+            parts.append(RuleCitation(section["citation"]))
         if section.get("comment"):
-            self._parts.append(RuleComment(section["comment"]))
-        if section.get("status") == "skipped":
-            return
-        if section.get("rules"):
-            for rule in section["rules"]:
+            parts.append(RuleComment(section["comment"]))
+        if section.get("status") != "skipped":
+            for rule in section.get("rules") or []:
                 if rule.get("status") == "skipped":
-                    self._parts.append(
+                    parts.append(
                         SoundChangeRule(
                             **rule,
                             skipped=True,
@@ -238,7 +239,7 @@ class DiachronicSeries:
                     continue
                 normalized = normalize_corpus_rule_tilde_fields(rule)
                 for step in expand_chained_corpus_rule(normalized):
-                    self._parts.append(
+                    parts.append(
                         SoundChangeRule(
                             **step,
                             group_mappings=mappings,
@@ -246,10 +247,15 @@ class DiachronicSeries:
                             compiler_config=config,
                         )
                     )
-
-    def __str__(self):
-        return "\n".join([str(part) for part in self._parts]) + "\n"
+        super().__init__(parts=parts)
 
     @property
-    def title(self):
-        return self._parts[0].value
+    def _parts(self) -> list[RulePartBase]:
+        return self.parts
+
+    def __str__(self) -> str:
+        return "\n".join(str(part) for part in self.parts) + "\n"
+
+    @property
+    def title(self) -> str:
+        return self.parts[0].value

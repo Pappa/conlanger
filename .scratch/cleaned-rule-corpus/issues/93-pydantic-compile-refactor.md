@@ -32,9 +32,18 @@ Re-implement `src/conlanger/tools/rules.py` as **pydantic** `BaseModel`s (**late
 
 ## Acceptance criteria
 
-- [ ] `uv add pydantic` (latest 2.x at claim time)
-- [ ] Six `rules.py` types are pydantic `BaseModel`s; compile is not a post-join string pipeline
-- [ ] Alternatives remain on `SoundChangeRule`; chains on `DiachronicSeries`
-- [ ] Callers (`validate_asca`, inventory, tests, docs) updated; name stays `DiachronicSeries`
-- [ ] Full gate: `uv run pytest`; `uv run ruff check --fix`; `uv run ruff format && uv run ruff format --check src`
-- [ ] Any unit-test I/O string changes documented in **Answer** with justification
+- [x] `uv add pydantic` (latest 2.x at claim time) — pydantic 2.13.4
+- [x] Six `rules.py` types are pydantic `BaseModel`s; compile is not a post-join string pipeline
+- [x] Alternatives remain on `SoundChangeRule`; chains on `DiachronicSeries`
+- [x] Callers (`validate_asca`, inventory, tests, docs) updated; name stays `DiachronicSeries`
+- [x] Full gate: `uv run pytest`; `uv run ruff check --fix`; `uv run ruff format && uv run ruff format --check src`
+- [x] Any unit-test I/O string changes documented in **Answer** with justification
+
+## Answer
+
+No `DiachronicSeries` / `SoundChangeRule` unit-test input/output strings changed — all 1084 tests pass byte-identically on `.rsca` render paths.
+
+Implementation notes:
+- `compile/asca/pipeline.py`: `compile_asca_field_pre_subscript`, `compile_asca_field_post_subscript`, `compile_asca_rule_fields`, `join_asca_rule_fields`; removed `compile_asca_rule_string`.
+- Cross-field subscripts via `expand_subscript_references_across_fields` in `subscript_references.py` (shared `declared`, output last).
+- Spike-38 order preserved: pre-subscript per-field transforms → cross-field subscripts → post-subscript per-field transforms → join at render.

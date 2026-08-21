@@ -163,6 +163,35 @@ def _expand_field(
     )
 
 
+def expand_subscript_references_across_fields(
+    inp: str,
+    output: str,
+    env: str | None,
+    exception: str | None,
+) -> tuple[str, str, str | None, str | None]:
+    """Expand subscripts field-by-field with a shared ``declared`` set (output last)."""
+    if not any(
+        _SUBSCRIPT_CHAR_RE.search(field or "")
+        for field in (inp, output, env, exception)
+    ):
+        return inp, output, env, exception
+
+    declared: set[int] = set()
+    inp = _expand_field(inp, declared, redeclare_identity_matrix=True)
+
+    if env is not None:
+        original_env = env
+        env = _expand_field(env, declared)
+        if env != original_env and not _is_prose_field(original_env) and "_" not in env:
+            env = f"_ {env}"
+
+    if exception is not None:
+        exception = _expand_field(exception, declared)
+
+    output = _expand_field(output, declared)
+    return inp, output, env, exception
+
+
 def expand_index_subscript_references(text: str) -> str:
     """Map positional slots and identity subscripts to ASCA reference syntax.
 
@@ -175,22 +204,9 @@ def expand_index_subscript_references(text: str) -> str:
         return text
 
     inp, output, env, exception = _split_rule_fields(text)
-    declared: set[int] = set()
-
-    inp = _expand_field(inp, declared, redeclare_identity_matrix=True)
-
-    if env is not None:
-        original_env = env
-        env = _expand_field(env, declared)
-        if env != original_env and not _is_prose_field(original_env) and "_" not in env:
-            env = f"_ {env}"
-
-    if exception is not None:
-        exception = _expand_field(exception, declared)
-
-    # ASCA binds refs input → context → output; expand output last so env can declare.
-    output = _expand_field(output, declared)
-
+    inp, output, env, exception = expand_subscript_references_across_fields(
+        inp, output, env, exception
+    )
     return _join_rule_fields(inp, output, env, exception)
 
 
