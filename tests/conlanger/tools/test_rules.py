@@ -257,11 +257,95 @@ def test_RuleComment(value, expected):
         ({"input": "a(ː)", "output": "e(ː)"}, "\ta:[+long] > e:[+long]"),
         ({"input": "o", "output": "u", "env": "_(C…)i"}, "\to > u / _(C,0)i"),
         ({"input": "dʒ", "output": "tʃ > ʃ"}, "\tdʒ > tʃ > ʃ"),
+        ({"input": "c ɲ", "output": "∅ n"}, "\tc ɲ > n"),
+        (
+            {"input": "∅ ʃ", "output": "k ʃ", "env": "V_$#"},
+            "\tʃ > k ʃ / V_$#",
+        ),
+        (
+            {"input": "k ʃ", "output": "∅ ʃ", "env": "V_V"},
+            "\tk ʃ > ʃ / V_V",
+        ),
+        (
+            {"input": "ɡ", "output": "∅", "env": "V_(VC…)V"},
+            "\tɡ > ∅ / V_(VC,0)V",
+        ),
+        ({"input": "∅", "output": "x"}, "\t∅ > x"),
+    ],
+    ids=[
+        "basic",
+        "ejective_long",
+        "grouping_ellipsis",
+        "length_marker",
+        "optional_grouping_ellipsis_env",
+        "chained_output",
+        "parallel_column_output_null",
+        "parallel_column_input_null",
+        "parallel_column_output_null_with_env",
+        "pure_deletion",
+        "pure_insertion",
     ],
 )
 def test_SoundChangeRule(fields, expected):
     rule = SoundChangeRule(**fields)
     assert str(rule) == expected
+
+
+@pytest.mark.parametrize(
+    "fields, expected_values",
+    [
+        (
+            {"input": "{r,h}", "output": "{∅,h}"},
+            ["r > ∅", "h > h"],
+        ),
+        (
+            {"input": "{m,ɲ} n", "output": "{ɲ,∅} {ŋ,∅}", "env": "_#"},
+            ["m n > ɲ ŋ / _#", "ɲ n > ∅ / _#"],
+        ),
+        (
+            {"input": "d", "output": "{∅,ð}", "env": "V_V"},
+            ["d > ∅ / V_V", "d > ð / V_V"],
+        ),
+    ],
+    ids=[
+        "paired_null_set",
+        "multi_column_null_set",
+        "optional_output_over_parallel_null",
+    ],
+)
+def test_sound_change_rule_parallel_null_alternatives(fields, expected_values):
+    rule = SoundChangeRule(**fields)
+    assert len(rule.alternatives) == len(expected_values)
+    assert [alt.value for alt in rule.alternatives] == expected_values
+    for alt in rule.alternatives:
+        assert alt.alternatives == []
+
+
+def test_diachronic_series_parallel_column_from_stages():
+    section = {
+        "index": "10.3.9.2",
+        "section": "Proto-Utupua to Nebao",
+        "rules": [{"stages": ["c ɲ", "∅ n"]}],
+    }
+    ruleset = DiachronicSeries(section, "asca")
+    rule_parts = [part for part in ruleset._parts if isinstance(part, SoundChangeRule)]
+    assert len(rule_parts) == 1
+    assert rule_parts[0].value == "c ɲ > n"
+
+
+@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
+def test_sound_change_rule_parallel_null_alternatives_validate_independently():
+    from conlanger.appliers.asca import validate_asca
+
+    probe = Path("tests/fixtures/asca_probe_words.wsca")
+    rule = SoundChangeRule(input="{r,h}", output="{∅,h}")
+    for alt in rule.alternatives:
+        section = {
+            "index": "10.1.1.1",
+            "section": "Balinese",
+            "rules": [{"stages": [alt.input, alt.output]}],
+        }
+        validate_asca(DiachronicSeries(section), probe_words=probe)
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
