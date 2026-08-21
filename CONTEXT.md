@@ -5,7 +5,10 @@ Automatic and assisted conlang tooling: phoneme inventories, morphology/grammar 
 ## Documentation
 
 - [Project overview](docs/CONLANGER.md)
-- [System map](docs/SYSTEM.md)
+- [System map](docs/SYSTEM.md) — parse → compile → validate for the rule corpus
+- [Index Diachronica parse](docs/index-diachronica-parser.md)
+- [Applier compile](docs/sound-change-applier.md)
+- [Validate](docs/validate.md) — inventory, correction loop, compile validation
 - [Architectural decisions](docs/adr/)
 
 ## Language

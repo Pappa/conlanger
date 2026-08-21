@@ -4,7 +4,9 @@ Status: ready-for-agent
 
 Applier-neutral YAML successor to Index Diachronica HTML as the authoritative **rule corpus**, with **corpus rules** that **compile** to valid ASCA under **historical fidelity** constraints and a scalable **class-first** correction workflow.
 
-Glossary: `CONTEXT.md`. Architectural context: ADRs 0001–0006, 0010. Prior decisions: `.scratch/cleaned-rule-corpus/map.md`, resolved tickets 01–13 and correction passes [14–25](issues/). Ticket [10](issues/10-rule-derived-probe-synthesis.md) (rule-derived candidate generation) — **wontfix**; use ASCA directly via `validate_asca` and the baseline wordlist.
+Glossary: `CONTEXT.md`. Architectural context: ADRs 0001–0006, 0010, 0013. Prior decisions: `.scratch/cleaned-rule-corpus/map.md`, resolved tickets 01–13 and correction passes [14–25](issues/). Ticket [10](issues/10-rule-derived-probe-synthesis.md) (rule-derived candidate generation) — **wontfix**; use ASCA directly via `validate_asca` and the baseline wordlist.
+
+Living pipeline docs: **parse → compile → validate** ([ADR-0013](../../docs/adr/0013-parse-compile-validate.md)); inventory and `uv run regenerate_corpus` sit under validate, not a separate applier-neutral stage.
 
 ## Problem Statement
 
@@ -83,13 +85,13 @@ Brassica compilation remains a future parallel path behind the same corpus (ADR-
 
 - Parser: `IndexDiachronicaParser` using lxml; phases cover section structure, `→` I/O split, `/ env` and `! exception` parsing, citation/comments.
 - **Symbol** normalisation at ingest to ASCA-canonical form in corpus fields; `raw` unchanged.
-- **Parse-time class-first transforms** (correction passes 14–25, per edit ladder): leading em-dash list markers; remaining `→` → `>` in field values; chain split (no env/exception → sequential corpus rules); uncertainty glosses → `sporadic: true`; trailing editorial glosses → **`comment`** (ticket [31](issues/31-capture-rule-comments-at-parse-time.md)); env stress phrases (`when stressed` / `when unstressed`); smart-quote cleanup. All preserve `raw`.
+- **Parse-time class-first transforms** (correction passes 14–25, per edit ladder): leading em-dash list markers; remaining `→` → `>` in field values; uncertainty glosses → `sporadic: true`; trailing editorial glosses → **`comment`** (ticket [31](issues/31-capture-rule-comments-at-parse-time.md)); env stress phrases (`when stressed` / `when unstressed`); smart-quote cleanup. All preserve `raw`.
 - **Correspondence-series indices** and **collective subscripts**: parse-time expansion to ASCA-parseable strings when section map exists; maps **extracted from HTML** (ticket [28](issues/28-extract-correspondence-series-mappings-from-html.md), implementation [27](issues/27-implement-parse-time-correspondence-series-expansion.md)); do not use `legacy/`. **Positional slots** and **identity subscripts** — not yet implemented.
 - **Feature matrix** synonym replacement at ingest inside `[...]` via `feature_mappings.csv`: **not yet implemented**; unmapped names left as-is (`unknown_feature` cluster).
 - **Class letters**: no ingest-time `str.maketrans` blind substitution; expansion at compile via **PhonologicalRuleSet** + `group_mappings.csv`. Six letters (C, O, F, L, N, V) pass through (ASCA inbuilt). Seventeen validated rows in `group_mappings.csv`; M (diphthong) removed — cluster-driven.
 - **Series indices**, section-local prose abbreviations, **meta-notation**: cluster-driven; hand-add abbreviation rows when inventory warrants.
 - **Whitespace tokenisation** for inter-segment spacing: deferred.
-- Edge-split (ADR-0005): interim `status: skipped` for lines not yet representable as one **corpus rule**. Chain split (ticket 18) is a separate policy: expand representable multi-step chains into sequential rules rather than skip.
+- Edge-split (ADR-0005): interim `status: skipped` for lines not yet representable as one **corpus rule**. Multi-step chains stay one corpus row; **compile-time chain expansion** ([`expand_chained_corpus_rule`](../../src/conlanger/tools/compile/asca/chains.py)) emits sequential ASCA steps rather than skipping.
 
 ### Compile and validation
 

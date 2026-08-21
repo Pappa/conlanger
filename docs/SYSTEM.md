@@ -19,14 +19,13 @@ Most stages still live in **Jupyter notebooks** for exploration and convenience.
 
 ## Pipeline stages (new)
 
-Sound-change rule corpus processing — parse → validate → compile → compile validation:
+Sound-change rule corpus processing — parse → compile → validate:
 
 | Stage | Doc |
 | --- | --- |
 | Index Diachronica parse | [index-diachronica-parser.md](./index-diachronica-parser.md) |
-| Applier-neutral corpus validation | [applier-neutral-corpus-validation.md](./applier-neutral-corpus-validation.md) |
 | Applier compile | [sound-change-applier.md](./sound-change-applier.md) |
-| Compile validation | [sound-change-applier.md#compile-validation](./sound-change-applier.md#compile-validation) |
+| Validate | [validate.md](./validate.md) |
 
 ## Exploratory / out of pipeline
 

@@ -21,7 +21,7 @@ corpus section dict
         ▼  validate_asca(...)  →  asca run <probe.wsca> --rules <file>
 ```
 
-Parse-time transforms are documented in [index-diachronica-parser.md](./index-diachronica-parser.md). Corpus validation workflow is in [applier-neutral-corpus-validation.md](./applier-neutral-corpus-validation.md).
+Parse-time transforms are documented in [index-diachronica-parser.md](./index-diachronica-parser.md). Inventory, compile validation, and the correction loop are in [validate.md](./validate.md).
 
 ---
 
@@ -77,75 +77,9 @@ Future backend; compile transforms and validation will mirror the [ADR-0003](./a
 
 ## Compile validation
 
-Compile validation is stage 4 of the sound-change pipeline. It runs **after** applier compile, not at HTML→YAML ingest ([ADR-0003](./adr/0003-validate-after-applier-compile.md)).
+Compile validation is part of the **validate** stage ([validate.md — Compile validation](./validate.md#compile-validation)). It runs **after** applier compile, not at HTML→YAML ingest ([ADR-0003](./adr/0003-validate-after-applier-compile.md)).
 
-### `validate_asca`
-
-Module: [`appliers/asca.py`](../src/conlanger/appliers/asca.py)
-
-```python
-validate_asca(
-    rule: DiachronicSeries,
-    *,
-    probe_words: Path | None = None,
-    timeout: float = 15.0,
-) -> bool  # raises ASCAValidationError
-
-validate_asca_syntax(rule: str, *, timeout: float = 15.0) -> bool
-validate_asca_part(part: ASCARulePart, fragment: str, *, timeout: float = 15.0) -> bool
-resolve_asca_bin() -> str | None  # ASCA_BIN env, then PATH
-```
-
-**Binary resolution:** `ASCA_BIN` if set, else `shutil.which("asca")`. Same helper for `validate_asca`, `run_asca`, and the field helpers. Install the fork with `validate` per [DEV.md](./DEV.md#asca-sound-change-rule-validation).
-
-**Flow:**
-
-1. `_active_rule_changes(rule)` — collect `SoundChangeRule` parts whose rendered line does **not** start with `#` (skipped rules render as `#\t…`).
-2. Error if no active rules.
-3. Resolve asca binary (`ASCA_BIN` or `PATH`; expects **0.10.x**, fork **0.10.3+** for `validate`).
-4. Write `str(rule)` (+ trailing newline) to temp `check.rsca`.
-5. Resolve probe wordlist (see below).
-6. When the binary supports `validate`: `subprocess.run([asca, "validate", "-r", rsca_path], …)` — fast syntax/structure fail (Tiers 1–3).
-7. `subprocess.run([asca, "run", words_path, "--rules", rsca_path], …)` — still required for inventory `ok` (Tier 4).
-8. Non-zero exit → `ASCAValidationError` with cleaned stderr.
-9. Also fail if stderr contains `Syntax Error` or `Runtime Error` even on exit 0.
-
-**Field helpers** (fork `validate` only; for later field isolation — inventory does **not** use these for `ok`):
-
-- `validate_asca_syntax("a > b / _")` → `asca validate -s …`
-- `validate_asca_part("env", "#_")` → `asca validate -s … -f context` (`env` maps to ASCA `context`)
-
-**Inventory integration** (`corpus_inventory.py`): each corpus rule → `_mini_section` → `DiachronicSeries(mini, group_mappings=…)` → `validate_asca(..., probe_words=fixture)`.
-
-### Probe wordlist
-
-| Source | Path / content |
-| --- | --- |
-| Default (validator internal) | `a`, `ba`, `kata`, `sami`, `ntu` (5 words) |
-| Inventory / tests fixture | `tests/fixtures/asca_probe_words.wsca` (same 5 words) |
-| Override | `probe_words=` argument or `ASCA_PROBE_WORDS` env var |
-
-**Purpose:** `asca run` exercises parse **and** apply (Tier 1–4 in validity research). Not parse-only.
-
-**Limits** ([ticket 10](../.scratch/cleaned-rule-corpus/issues/10-rule-derived-probe-synthesis.md) wontfix):
-
-- ~98% of inventory failures are Tier 1–2 syntax — baseline probes suffice for clustering.
-- Tier 4 runtime errors (lonely sets, insertion+env, deletion-only-segment) may be **under-detected** when probes don't match rule shape — acceptable for correction-loop clustering.
-
-### ASCA validation tiers
-
-See [asca-rule-validity.md](../.scratch/cleaned-rule-corpus/research/asca-rule-validity.md) §5 for ASCA constraint detail:
-
-| Tier | Stage | Caught by `validate_asca`? |
-| --- | --- | --- |
-| 1 | Lexer | Yes (`validate` when available, else `run`) |
-| 2 | Parser | Yes |
-| 3 | `split_into_subrules` (first apply) | Yes (`validate` when available, else `run`) |
-| 4 | Runtime apply | Yes via `run` — probe-dependent |
-
-### Skipped rules
-
-Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` excludes them; inventory marks `ok=True`, description `"held-out (commented rule)"`.
+Corpus `status: skipped` → `#\t{raw}` in ASCA output; `_active_rule_changes` excludes them from validation. See [validate.md](./validate.md) for `validate_asca` API, probe wordlists, validation tiers, and inventory integration.
 
 ---
 
@@ -154,8 +88,7 @@ Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` e
 | Stage | Doc |
 | --- | --- |
 | Index Diachronica parse | [index-diachronica-parser.md](./index-diachronica-parser.md) |
-| Applier-neutral corpus validation | [applier-neutral-corpus-validation.md](./applier-neutral-corpus-validation.md) |
 | **Applier compile** (this page) | — |
-| **Compile validation** | [Compile validation](#compile-validation) (this page) |
+| Validate | [validate.md](./validate.md) |
 
 See also [SYSTEM.md](./SYSTEM.md#pipeline-stages-new).

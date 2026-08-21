@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by:
 
 # Docs: parse → compile → validate (three stages)
@@ -21,6 +21,6 @@ Grill 2026-08-21 Q7 / [ADR-0013](../../../docs/adr/0013-parse-compile-validate.m
 
 ## Acceptance criteria
 
-- [ ] No living doc treats inventory as an applier-neutral stage
-- [ ] SYSTEM.md and stage docs agree on parse → compile → validate
-- [ ] Skip policy in those docs matches config-only `status: skipped`
+- [x] No living doc treats inventory as an applier-neutral stage
+- [x] SYSTEM.md and stage docs agree on parse → compile → validate
+- [x] Skip policy in those docs matches config-only `status: skipped`

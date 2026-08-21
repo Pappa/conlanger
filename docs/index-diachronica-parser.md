@@ -4,7 +4,7 @@ Parse-time transforms turn Index Diachronica HTML into an **applier-neutral** ru
 
 **Primary code:** [`src/conlanger/tools/ingest/parser.py`](../src/conlanger/tools/ingest/parser.py) (`IndexDiachronicaParser`). **Collective subscript expansion:** [`src/conlanger/utils/series.py`](../src/conlanger/utils/series.py) (`apply_series_expansions` from `data/parser_config.yml`). **Correspondence-series indices** stay Index-shaped at parse and expand at [compile](./sound-change-applier.md) via `data/compiler_config.yml`. **Orchestration:** `uv run regenerate_corpus` → [`regenerate_corpus.py`](../src/conlanger/scripts/regenerate_corpus.py).
 
-**Scope:** parse-time only. Class-letter expansion, length marks, ejectives, and laryngeal aliases run at [applier compile](./sound-change-applier.md). Compile validation runs after that ([ADR-0003](./adr/0003-validate-after-applier-compile.md)).
+**Scope:** parse-time only. Class-letter expansion, length marks, ejectives, laryngeal aliases, and multi-step **chain expansion** run at [applier compile](./sound-change-applier.md). Compile validation runs in [validate](./validate.md) ([ADR-0003](./adr/0003-validate-after-applier-compile.md)).
 
 **Related:** [spec](../.scratch/cleaned-rule-corpus/spec.md) (Ingest section), [wayfinder map](../.scratch/cleaned-rule-corpus/map.md), [ADR-0004](./adr/0004-series-indices-per-section-maps.md) (correspondence-series indices).
 
@@ -75,12 +75,12 @@ After **Manual mapping** and quoted-prose detection; **before** symbol normaliza
 | Feature matrix synonym replacement (inside `[...]` only) | implemented | D4 | Index→ASCA renames / bundles / **tone** via `data/asca/feature_mappings.csv` (`mapping_kind` includes `tone` → `[tone: N]`; [pass 62](../.scratch/cleaned-rule-corpus/issues/62-correction-pass-tone-features.md)). Unmapped names left literal for `unknown_feature` clustering. | `apply_feature_mappings` |
 | Collective subscript expansion (`series_expansions`) | implemented | D5 | Fan out `Xₓ` collectives from `data/parser_config.yml` ([grill 73](../.scratch/cleaned-rule-corpus/issues/73-grill-series-mapping-config-sot.md)). Correspondence-series indices (`h₁`, `s₁`, …) stay literal until compile. | `apply_series_expansions` |
 
-### Phase E — Rule expansion (post-transform)
+### Phase E — Rule assembly (post-transform)
 
 | Step | Status | Order | Rationale | Code |
 | --- | --- | ---: | --- | --- |
-| Chain split (no env/exception) | implemented | E1 | `a > b > c` without env becomes sequential single-step rules ([pass 18](../.scratch/cleaned-rule-corpus/issues/18-correction-pass-chain-split.md)). Chains **with** env/exception stay one row. | `expand_chained_rule_parts` |
-| Attach provenance (`raw`, `source`, optional `sporadic`) | implemented | E2 | Every emitted rule carries HTML line ref and original Index text. | `parse_rule_element` |
+| Multi-step chains (`a > b > c`) | compile-time | — | One corpus row per HTML line; adjacent **stages** expand at compile ([`expand_chained_corpus_rule`](../src/conlanger/tools/compile/asca/chains.py)). Chains **with** env/exception stay one row; env/exception attach to each emitted step. | `SoundChangeRule` / compile pipeline |
+| Attach provenance (`raw`, `source`, optional `sporadic`) | implemented | E1 | Every emitted rule carries HTML line ref and original Index text. | `parse_rule_element` |
 
 ### Phase F — Section post-pass (after per-line extract)
 
@@ -128,8 +128,7 @@ After **Manual mapping** and quoted-prose detection; **before** symbol normaliza
 | Stage | Doc |
 | --- | --- |
 | **Index Diachronica parse** (this page) | — |
-| Applier-neutral corpus validation | [applier-neutral-corpus-validation.md](./applier-neutral-corpus-validation.md) |
 | Applier compile | [sound-change-applier.md](./sound-change-applier.md) |
-| Compile validation | [sound-change-applier.md#compile-validation](./sound-change-applier.md#compile-validation) |
+| Validate | [validate.md](./validate.md) |
 
 See also [SYSTEM.md](./SYSTEM.md#pipeline-stages-new).
