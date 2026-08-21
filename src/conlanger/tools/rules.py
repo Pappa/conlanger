@@ -122,9 +122,7 @@ class SoundChangeRule(RulePartBase):
 
     def _build_optional_output_alternatives(self) -> list[SoundChangeRule]:
         """Whole-field output set with unpaired input (ticket 66)."""
-        if not (
-            is_whole_field_set(self.output) and not is_whole_field_set(self.input)
-        ):
+        if not (is_whole_field_set(self.output) and not is_whole_field_set(self.input)):
             return []
         members = split_braced_set_members(self.output)
         if not members or any(not member or "{" in member for member in members):
@@ -182,9 +180,7 @@ class DiachronicSeries(BaseModel):
         mappings = {} if group_mappings is None else group_mappings
         config = load_compiler_config() if compiler_config is None else compiler_config
         section_index = str(section.get("index", ""))
-        parts: list[RulePartBase] = [
-            RuleTitle(section["index"], section["section"])
-        ]
+        parts: list[RulePartBase] = [RuleTitle(section["index"], section["section"])]
         if section.get("citation"):
             parts.append(RuleCitation(section["citation"]))
         if section.get("comment"):
