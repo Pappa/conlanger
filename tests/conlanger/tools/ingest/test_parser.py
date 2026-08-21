@@ -294,16 +294,15 @@ def test_build_stages_from_spine_splits_remaining_arrows():
 
 def test_finalize_stages_shape_preserves_existing_skipped_status():
     assert finalize_stages_shape({"stages": ["a"], "status": "skipped"}) == {
-        "stages": [],
+        "stages": ["a"],
         "status": "skipped",
     }
 
 
-def test_finalize_stages_shape_holds_out_short_spine():
+def test_finalize_stages_shape_keeps_short_spine():
     assert finalize_stages_shape({"stages": ["a"], "env": "_#"}) == {
         "env": "_#",
-        "stages": [],
-        "status": "skipped",
+        "stages": ["a"],
     }
 
 
@@ -451,15 +450,15 @@ def test_apply_trailing_glosses_strips_field_wrapped_gloss_to_comment():
     }
 
 
-def test_parse_rule_element_skips_gloss_only_output():
+def test_parse_rule_element_keeps_gloss_only_output():
     el = html.fragment_fromstring(
         '<p class="schg">hhy \u2192 \u201csomething like /\u0292/\u201d</p>',
         create_parent=False,
     )
     rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert len(rules) == 1
-    assert rules[0]["status"] == "skipped"
-    assert rules[0]["stages"] == []
+    assert "status" not in rules[0]
+    assert rules[0]["stages"] == ["hhy"]
     assert "something like" in rules[0]["comment"]
     assert rules[0]["raw"] == "hhy \u2192 \u201csomething like /\u0292/\u201d"
 
@@ -924,7 +923,7 @@ def test_parser_marks_skip_sections_from_config(tmp_path: Path):
     )
     sec = parser.parse(html_path)["sections"][0]
     assert sec["index"] == "9.9.9"
-    assert sec["skipped"] is True
+    assert sec["status"] == "skipped"
     assert sec["rules"][0]["stages"] == ["a", "b"]
     assert "status" not in sec["rules"][0]
 
@@ -939,7 +938,7 @@ def test_parser_unlisted_section_not_marked_skipped(tmp_path: Path):
 <p class="schg">a → b</p>""",
     )
     sec = default_index_parser().parse(html_path)["sections"][0]
-    assert "skipped" not in sec
+    assert "status" not in sec
 
 
 @pytest.mark.parametrize(
@@ -1050,7 +1049,7 @@ def test_parse_rule_element_missing_arrow():
     )
     rule = _parse_rule_element(el, source_file="index_diachronica_original.html")[0]
     assert rule["stages"] == []
-    assert rule["status"] == "skipped"
+    assert "status" not in rule
 
 
 def test_parse_rule_element_arrow_without_spaces():
@@ -1287,12 +1286,13 @@ def test_load_feature_mappings_from_default_csv():
     assert by_name["low falling tone"].asca_target == "21"
     assert by_name["high rising tone"].asca_target == "35"
 
+
 @pytest.mark.parametrize(
     "input, expected",
     [
         ("C[+voiced]", "C[+voice]"),
         ("N[-voiced]", "N[-voice]"),
-        ("C[+ sibilant]", "C[+strident]"),    
+        ("C[+ sibilant]", "C[+strident]"),
     ],
 )
 def test_normalize_feature_matrices_in_field_rename(input, expected):
@@ -1718,7 +1718,7 @@ def test_parse_rule_element_native_editorial_tail_in_comment():
     assert "tad unclear" in rules[0]["comment"]
 
 
-def test_parse_rule_element_leading_semicolon_skips_with_comment():
+def test_parse_rule_element_leading_semicolon_keeps_comment():
     prose = "“In contrast, Romanian exhibits"
     mapped = "; “In contrast, Romanian exhibits"
     el = html.fragment_fromstring(f'<p class="schg">{prose}</p>', create_parent=False)
@@ -1728,7 +1728,7 @@ def test_parse_rule_element_leading_semicolon_skips_with_comment():
         ],
     )
     rules = parser.parse_rule_element(el, source_file="index_diachronica_original.html")
-    assert rules[0]["status"] == "skipped"
+    assert "status" not in rules[0]
     assert rules[0]["stages"] == []
     assert "Romanian exhibits" in rules[0]["comment"]
     assert rules[0]["raw"] == prose
@@ -2082,7 +2082,7 @@ def test_unmatched_corrections_reports_unused_rule_ids(tmp_path: Path):
     assert parser.unmatched_corrections() == ["unused-id", "also-unused"]
 
 
-def test_parse_rule_element_sets_rule_id_on_missing_arrow_skip():
+def test_parse_rule_element_sets_rule_id_on_missing_arrow():
     el = _html_fragment('<p class="schg" id="Test-bad">not a rule</p>')
     rules = default_index_parser().parse_rule_element(
         el,
@@ -2090,10 +2090,10 @@ def test_parse_rule_element_sets_rule_id_on_missing_arrow_skip():
         rule_id="Test-bad",
     )
     assert rules[0]["rule_id"] == "Test-bad"
-    assert rules[0]["status"] == "skipped"
+    assert "status" not in rules[0]
 
 
-def test_parse_rule_element_sets_rule_id_on_skipped_paths():
+def test_parse_rule_element_sets_rule_id_on_quoted_prose():
     el = _html_fragment('<p class="schg" id="Test-prose">"quoted prose only"</p>')
     rules = default_index_parser().parse_rule_element(
         el,
@@ -2101,4 +2101,4 @@ def test_parse_rule_element_sets_rule_id_on_skipped_paths():
         rule_id="Test-prose",
     )
     assert rules[0]["rule_id"] == "Test-prose"
-    assert rules[0]["status"] == "skipped"
+    assert "status" not in rules[0]

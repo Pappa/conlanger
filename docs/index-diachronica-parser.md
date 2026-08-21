@@ -47,12 +47,12 @@ Applied to the **remainder** after the first-`;` comment peel (see Phase B½); *
 
 ### Phase B½ — First-`;` rule comment peel (before structural split)
 
-After **Manual mapping** and quoted-prose skip; **before** symbol normalization and `extract_rule_parts`. The tail is stored as corpus **rule comment** as-is (no symbol/feature/IPA/series transforms). Detectors (`sporadic`, trailing glosses, stress, medial) run on the remainder only — not on **rule comment**. Field-level env/exception `;` capture (`apply_semicolon_field_comments`) is retired in favour of this whole-line cut ([ticket 77](../.scratch/cleaned-rule-corpus/issues/77-implement-first-semicolon-comment-cut.md)).
+After **Manual mapping** and quoted-prose detection; **before** symbol normalization and `extract_rule_parts`. The tail is stored as corpus **rule comment** as-is (no symbol/feature/IPA/series transforms). Detectors (`sporadic`, trailing glosses, stress, medial) run on the remainder only — not on **rule comment**. Field-level env/exception `;` capture (`apply_semicolon_field_comments`) is retired in favour of this whole-line cut ([ticket 77](../.scratch/cleaned-rule-corpus/issues/77-implement-first-semicolon-comment-cut.md)).
 
 | Step | Status | Order | Rationale | Code |
 | --- | --- | ---: | --- | --- |
 | Peel first `;` on working line | implemented | B½1 | Editorial tails (including arrows inside gloss) must not become spurious chain stages. Naive first-`;` anywhere; owner **Manual mapping** rows plant the intended delimiter. | `split_line_semicolon_comment` |
-| No `→` in remainder → skipped + comment | implemented | B½2 | Prose-only or mapping-shaped lines with no rule spine. | `parse_rule_element` |
+| No `→` in remainder → empty `stages` + optional `comment` | implemented | B½2 | Prose-only or mapping-shaped lines with no rule spine stay in the corpus; compile validation may fail. | `parse_rule_element` |
 
 ### Phase C — Structural field split
 
@@ -63,7 +63,7 @@ After **Manual mapping** and quoted-prose skip; **before** symbol normalization 
 | Output / env / exception split | implemented | C3 | ASCA env uses `/`; exception via `!`, word `except`, or second `/`. A slash glued to output (`∅/ _#`) is the same delimiter without the preceding space ([pass 82](../.scratch/cleaned-rule-corpus/issues/82-correction-pass-output-env-slash-boundary.md)). Lines that omit `/` entirely are Index errata — overlay in `index_diachronica_corrections.yml`, not a parse peel. | `split_post_arrow`, `split_env_exception` |
 | Remaining `→` → `>` in field values | implemented | C4 | Chained outputs and embedded arrows must use ASCA `>` ([correction pass 17](../.scratch/cleaned-rule-corpus/issues/17-correction-pass-arrow.md)). | `normalize_rule_arrows` (via `extract_rule_parts`) |
 
-**Missing `→`:** returns a skip-shaped dict with empty I/O and `"skipped": "missing separator '→'"` — not yet wired to corpus `status: skipped` schema.
+**Missing `→`:** returns a corpus rule with empty `stages` and optional `comment`; no `status: skipped` unless the **rule id** is listed in `parser_config.yml` `skip_rules`.
 
 ### Phase D — Class-first field transforms (post-split)
 
@@ -88,7 +88,8 @@ After **Manual mapping** and quoted-prose skip; **before** symbol normalization 
 | --- | --- | ---: | --- | --- |
 | Catch-all `/ else` → complementary `exception` | implemented | F1 | Index default branch is not an env; when the previous rule has `env` and no `exception`, omit `env` and set `exception` to that env ([pass 53](../.scratch/cleaned-rule-corpus/issues/53-correction-pass-prose-env-else.md)). Deferred: prev with both env+exception, neither, or else-after-else. | `resolve_catch_all_else_rules` (in `parse`) |
 | Env medial phrase normalization (`medial` / `medially`) | implemented | F2 | Index word-internal prose → `env: _` + boundary `exception: :{#_, _#}:` ([pass 55](../.scratch/cleaned-rule-corpus/issues/55-correction-pass-prose-env-medial.md)). Defer env+existing-exception merge. | `apply_medial_env_conditions` |
-| Section skip (`skip_sections` in `parser_config.yml`) | implemented | F3 | Owner-curated hold-out when Index misrepresents source material; parse extracts rules normally, sets `skipped: true` on the section object; compile and inventory validation bypass those rules ([ticket 78](../.scratch/cleaned-rule-corpus/issues/78-implement-parser-config-section-skip.md)). Distinct from per-rule `status: skipped`. | `IndexDiachronicaParser.parse`, `DiachronicSeries`, `corpus_inventory` |
+| Section skip (`skip_sections` in `parser_config.yml`) | implemented | F3 | Owner-curated hold-out when Index misrepresents source material; parse extracts rules normally, sets `status: skipped` on the section object; compile and inventory validation bypass those rules ([ticket 78](../.scratch/cleaned-rule-corpus/issues/78-implement-parser-config-section-skip.md)). Distinct from per-rule `status: skipped` ([ticket 89](../.scratch/cleaned-rule-corpus/issues/89-unify-status-skipped.md)). | `IndexDiachronicaParser.parse`, `DiachronicSeries`, `corpus_inventory` |
+| Rule skip (`skip_rules` in `parser_config.yml`) | implemented | F4 | Owner-curated hold-out for individual **rule id**s; sets `status: skipped` on the corpus rule. | `IndexDiachronicaParser.parse_rule_element` |
 
 ---
 
@@ -98,7 +99,8 @@ After **Manual mapping** and quoted-prose skip; **before** symbol normalization 
 | --- | --- |
 | `ipa_mappings.confidence` | Which `ipa_mappings.csv` confidence levels apply at parse |
 | `series_expansions` | Collective subscript fan-out (`Hₓ` → `h₁, h₂, h₃`, …) |
-| `skip_sections` | List of `{id, reason}` — `id` matches section `index`; `reason` is operator documentation only. Listed sections gain `skipped: true` in parsed YAML. |
+| `skip_sections` | List of `{id, reason}` — `id` matches section `index`; `reason` is operator documentation only. Listed sections gain `status: skipped` in parsed YAML. |
+| `skip_rules` | List of `{id, reason}` — `id` matches HTML **rule id**; `reason` becomes optional corpus `comment`. Listed rules gain `status: skipped`. |
 
 ---
 
@@ -114,7 +116,7 @@ After **Manual mapping** and quoted-prose skip; **before** symbol normalization 
 | Meta-notation (`X0`, `Xn`, retroflex marks, repetition groups) | deferred (cluster-driven) | TBD | No evidence-based ASCA expansion without inventory clustering. |
 | Section-local abbreviations (`TŠ`, uppercase `S₁`) | deferred (cluster-driven) | TBD | Index global Key insufficient; hand-added rows when clusters warrant. |
 | Global abbreviation table authorship | planned | TBD | `abbreviations()` returns `{}`. |
-| Edge-split / `status: skipped` for unrepresentable lines | deferred | TBD | ADR-0005 interim skip policy deferred until post-correction triage. |
+| Edge-split / parse-time auto-skip for unrepresentable lines | removed | — | `status: skipped` is config-only ([ticket 89](../.scratch/cleaned-rule-corpus/issues/89-unify-status-skipped.md)); missing-arrow / gloss-only lines stay in parse → compile → validate. |
 | Prose-environment mapping (comment paragraphs → structured `env`) | planned (spike) | TBD | `comment` field captures qualifiers; structured env from prose not specified. |
 | Dedicated smart-quote normalizer | partial | TBD | Embedded/trailing `"`/`"` stripped as glosses at parse ([pass 24](../.scratch/cleaned-rule-corpus/issues/24-correction-pass-smart-quotes.md)); typographic apostrophe `'` → ejective at **compile**. |
 | Correspondence-series index mappings | compile-time | TBD | Section-scoped rows authored in `data/compiler_config.yml` ([ticket 75](../.scratch/cleaned-rule-corpus/issues/75-implement-compiler-config-series-mappings.md)); PIE laryngeals seeded in `global`. |

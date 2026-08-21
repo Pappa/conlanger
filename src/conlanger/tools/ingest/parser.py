@@ -38,7 +38,6 @@ from conlanger.tools.ingest.transforms import (
     split_line_semicolon_comment,
 )
 from conlanger.utils.gloss import (
-    is_gloss_only_rule,
     is_quoted_prose_paragraph,
 )
 from conlanger.utils.mappings import (
@@ -145,7 +144,6 @@ class IndexDiachronicaParser:
                 "raw": raw,
                 "source": source,
                 "comment": raw.strip(),
-                "status": "skipped",
             }
             if rule_id:
                 rule["rule_id"] = rule_id
@@ -158,7 +156,6 @@ class IndexDiachronicaParser:
                 "stages": [],
                 "raw": raw,
                 "source": source,
-                "status": "skipped",
             }
             if rule_comment:
                 rule["comment"] = rule_comment
@@ -172,18 +169,6 @@ class IndexDiachronicaParser:
         sporadic = parts.pop("sporadic", False)
         sporadic_flag = {"sporadic": True} if sporadic else {}
         parts = apply_trailing_glosses(parts)
-        if is_gloss_only_rule(parts):
-            rule = {
-                "stages": [],
-                "raw": raw,
-                "source": source,
-                "comment": parts["comment"],
-                "status": "skipped",
-                **sporadic_flag,
-            }
-            if rule_id:
-                rule["rule_id"] = rule_id
-            return [rule]
         parts = apply_stress_conditions(parts)
         parts = apply_medial_env_conditions(parts)
         parts = apply_feature_mappings(parts, self._feature_mappings)
@@ -271,7 +256,7 @@ class IndexDiachronicaParser:
             if rules:
                 section_obj["rules"] = resolve_catch_all_else_rules(rules)
             if index and index in self._parser_config.skip_section_ids:
-                section_obj["skipped"] = True
+                section_obj["status"] = "skipped"
             sections_out.append(section_obj)
 
         return {

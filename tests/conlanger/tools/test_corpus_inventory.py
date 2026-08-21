@@ -156,7 +156,7 @@ def test_validation_row_as_csv_dict():
 
 
 def test_validate_corpus_rule_skipped_section():
-    section = {"index": "9.9.9", "section": "Skipped", "skipped": True}
+    section = {"index": "9.9.9", "section": "Skipped", "status": "skipped"}
     with patch("conlanger.tools.corpus_inventory.DiachronicSeries") as mock_series:
         (row,) = validate_corpus_rule(
             section,
@@ -174,7 +174,6 @@ def test_validate_corpus_rule_skipped_quoted_prose_uses_comment():
         _SECTION,
         {
             "stages": [],
-            "status": "skipped",
             "comment": "quoted prose paragraph",
             "raw": "hhy → gloss",
             "source": "sample.html:9",
@@ -183,25 +182,22 @@ def test_validate_corpus_rule_skipped_quoted_prose_uses_comment():
         probe_words=None,
     )
     assert row.ok is False
-    assert row.failure_class == "missing_arrow"
-    assert row.description == "quoted prose paragraph"
+    assert row.failure_class == "format_error"
 
 
-def test_validate_corpus_rule_skipped_parse_diagnostic():
+def test_validate_corpus_rule_missing_arrow():
     (row,) = validate_corpus_rule(
         _SECTION,
         {
             "stages": [],
             "raw": "no arrow",
             "source": "sample.html:1",
-            "status": "skipped",
         },
         "r0",
         probe_words=None,
     )
     assert row.ok is False
-    assert row.failure_class == "missing_arrow"
-    assert row.reason == "broken-syntax"
+    assert row.failure_class == "format_error"
 
 
 @patch(
@@ -247,7 +243,7 @@ def test_validate_corpus_rule_held_out_comment():
     (row,) = validate_corpus_rule(
         _SECTION,
         {
-            "skip": True,
+            "status": "skipped",
             "stages": ["a", "b"],
             "raw": "a → b",
             "source": "sample.html:3",
@@ -421,8 +417,8 @@ def test_iter_validation_rows():
                 "section": "A",
                 "rules": [
                     {
-                        "stages": ["", ""],
-                        "raw": "x",
+                        "stages": ["a", "b"],
+                        "raw": "a → b",
                         "source": "s:1",
                         "status": "skipped",
                     }
@@ -433,6 +429,8 @@ def test_iter_validation_rows():
     rows = list(iter_validation_rows(doc, probe_words=None))
     assert len(rows) == 1
     assert rows[0].section_name == "A"
+    assert rows[0].ok is True
+    assert rows[0].description == "held-out (commented rule)"
 
 
 def test_top_error_tokens():

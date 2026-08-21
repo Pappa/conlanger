@@ -38,7 +38,7 @@ Parse-time transforms are documented in [index-diachronica-parser.md](./index-di
 
 `str(DiachronicSeries)` joins parts with newlines → `.rsca` body shape.
 
-`SoundChangeRule` requires `input`, `output`; optional `env`, `exception`. `skip: True` → commented prefix (`#\t`); excluded from validation. Compiled text is stored in `value` at construction via `_format()`.
+`SoundChangeRule` requires `input`, `output`; optional `env`, `exception`. Corpus rules with `status: skipped` render as commented ASCA lines (`#\t` + `raw`); excluded from validation. Compiled text is stored in `value` at construction via `_format()`.
 
 ---
 
@@ -145,7 +145,7 @@ See [asca-rule-validity.md](../.scratch/cleaned-rule-corpus/research/asca-rule-v
 
 ### Skipped rules
 
-Corpus `skip: True` → `#\t{rule}` in ASCA output. `_active_rule_changes` excludes them; inventory marks `ok=True`, description `"held-out (commented rule)"`.
+Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` excludes them; inventory marks `ok=True`, description `"held-out (commented rule)"`.
 
 ---
 

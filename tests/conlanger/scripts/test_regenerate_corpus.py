@@ -318,7 +318,9 @@ def test_regenerate_corpus_writes_validation_inventory(
 
     mock_iter_rows.assert_called_once()
     assert mock_iter_rows.call_args.kwargs["probe_words"] == probe
-    assert mock_iter_rows.call_args.kwargs["asca_bin"] == str(tmp_path / "bin" / "bin" / "asca")
+    assert mock_iter_rows.call_args.kwargs["asca_bin"] == str(
+        tmp_path / "bin" / "bin" / "asca"
+    )
     mock_write_field_isolation.assert_called_once()
     mock_flip_rows.assert_called_once()
     summary_path = inventory_dir / "asca-rule-inventory-summary.md"
@@ -442,7 +444,9 @@ def test_asca_version_falls_back_on_subprocess_error():
 def test_validation_asca_command_uses_fork_or_path(tmp_path: Path):
     fork = regen._fork_asca_command(repo_root=tmp_path)
     _write_fake_fork(tmp_path)
-    assert regen._validation_asca_command(use_fork=True, repo_root=tmp_path) == str(fork)
+    assert regen._validation_asca_command(use_fork=True, repo_root=tmp_path) == str(
+        fork
+    )
     with patch.object(regen, "resolve_asca_bin", return_value="/usr/bin/asca"):
         assert regen._validation_asca_command(use_fork=False, repo_root=tmp_path) == (
             "/usr/bin/asca"

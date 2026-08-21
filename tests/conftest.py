@@ -44,6 +44,7 @@ def mock_env_vars(mocker):
     if _FORK_ASCA.is_file() and "ASCA_BIN" not in os.environ:
         mocker.patch.dict(os.environ, {"ASCA_BIN": str(_FORK_ASCA)})
 
+
 @pytest.fixture
 def fx_sample_group_mappings():
     return {

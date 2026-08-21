@@ -147,7 +147,7 @@ def test_e2e_minimal_html_fixture_shape_and_raw_preservation(tmp_path: Path):
     assert "voiced" in feature_rule["raw"]
 
     assert bad_rule["stages"] == []
-    assert bad_rule.get("status") == "skipped"
+    assert "status" not in bad_rule
 
 
 @pytest.mark.skipif(not ASCA_INSTALLED, reason="asca binary not on PATH")
@@ -261,7 +261,7 @@ def test_e2e_smoke_pipeline_validate(
 
     if case_id == "held-out-parse":
         assert not rows[0].ok
-        assert rows[0].failure_class == "missing_arrow"
+        assert rows[0].failure_class == "format_error"
         return
 
     if expect_ok:

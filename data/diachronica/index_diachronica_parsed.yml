@@ -55022,7 +55022,7 @@ sections:
     raw: w → r → ∅ / P_-
     source: index_diachronica_original.html:11748
     rule_id: Middle-Chinese-w
-  skipped: true
+  status: skipped
 - section: Late Middle Chinese to Old Mandarin
   index: 36.1.1
   citation: Ran, from Hsueh, F.S. (1975), Phonology of Old Mandarin
@@ -56269,7 +56269,7 @@ sections:
     raw: l̥ → ɬ / %_V
     source: index_diachronica_original.html:11950
     rule_id: Mosuo-Na-l̥
-  skipped: true
+  status: skipped
 - section: Proto-Naish to Naxi
   index: 36.3.1.3
   citation: 'Pogostick Man, from Jacques, Guillaume, and Alexis Michaud (2011), “Approaching
@@ -59919,7 +59919,7 @@ sections:
     raw: s → z / {#,V}_{V,R}
     source: index_diachronica_original.html:12618
     rule_id: Oneida-s_2
-  skipped: true
+  status: skipped
 - section: Proto-Northern Iroquoian to Seneca
   index: 37.1.2.5
   citation: cedh audmanh, from Julian, Charles (2010), “A History of the Iroquoian

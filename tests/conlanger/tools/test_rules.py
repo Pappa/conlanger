@@ -126,9 +126,15 @@ def test_diachronic_series_validates_known_unknown_grouping_fixtures(
             {
                 "index": "1",
                 "section": "sec",
-                "rules": [{"skip": True, "stages": ["a", "b"]}],
+                "rules": [
+                    {
+                        "status": "skipped",
+                        "stages": ["a", "b"],
+                        "raw": "a → b",
+                    }
+                ],
             },
-            "@ 1 - sec\n#\ta > b\n",
+            "@ 1 - sec\n#\ta → b\n",
         ),
         (
             {
@@ -153,7 +159,7 @@ def test_diachronic_series_validates_known_unknown_grouping_fixtures(
             {
                 "index": "9.9.9",
                 "section": "Skipped",
-                "skipped": True,
+                "status": "skipped",
                 "rules": [{"stages": ["a", "b"], "raw": "a → b", "source": "x:1"}],
             },
             "@ 9.9.9 - Skipped\n",

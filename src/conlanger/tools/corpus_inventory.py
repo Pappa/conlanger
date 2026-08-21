@@ -26,7 +26,6 @@ from conlanger.appliers.asca import (
     validate_asca_part,
 )
 from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
-from conlanger.utils.parsing import ARROW
 
 ERROR_CLASS_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     ("nested_brackets", re.compile(r"nested brackets", re.IGNORECASE)),
@@ -594,9 +593,6 @@ def _resolve_inventory_targets(
             )
         ]
 
-    if rule.get("skip"):
-        return [_InventoryTarget(None, scr, _field_rule_from_series(scr))]
-
     if len(sound_change_parts) == 1 and sound_change_parts[0].alternatives:
         return [
             _InventoryTarget(
@@ -929,7 +925,7 @@ def validate_corpus_rule_with_targets(
     section_name = str(section.get("section", ""))
     source = str(rule.get("source", ""))
 
-    if section.get("skipped"):
+    if section.get("status") == "skipped":
         row = ValidationRow(
             section_index=section_index,
             section_name=section_name,
@@ -945,24 +941,17 @@ def validate_corpus_rule_with_targets(
         return [row], [_InventoryTarget(None, None, None)]
 
     if rule.get("status") == "skipped":
-        raw = str(rule.get("raw", ""))
-        if "→" not in raw and ARROW not in raw:
-            err = f"missing separator {ARROW!r}"
-        else:
-            err = str(rule.get("comment") or "quoted prose paragraph")
-        failure_class = "missing_arrow"
-        error_token, suggested = parse_unknown_token_error(err)
         row = ValidationRow(
             section_index=section_index,
             section_name=section_name,
             rule_id=rule_id,
             source=source,
-            ok=False,
-            failure_class=failure_class,
-            reason=reason_for_failure(failure_class, err),
-            error_token=error_token,
-            suggested=suggested,
-            description=err,
+            ok=True,
+            failure_class="",
+            reason="",
+            error_token="",
+            suggested="",
+            description="held-out (commented rule)",
         )
         return [row], [_InventoryTarget(None, None, None)]
 
@@ -992,23 +981,6 @@ def validate_corpus_rule_with_targets(
             continue
 
         assert target.series is not None
-        if rule.get("skip"):
-            rows.append(
-                ValidationRow(
-                    section_index=section_index,
-                    section_name=section_name,
-                    rule_id=rule_id,
-                    source=source,
-                    ok=True,
-                    failure_class="",
-                    reason="",
-                    error_token="",
-                    suggested="",
-                    description="held-out (commented rule)",
-                )
-            )
-            continue
-
         rows.append(
             _asca_validation_row(
                 target.series,

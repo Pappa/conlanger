@@ -77,7 +77,7 @@ Ingest-only (no `asca` on PATH): `uv run regenerate_corpus --skip-validation`.
 | 6 | Classify failure | `classify_error()`, `reason_for_failure()`, `parse_unknown_token_error()` |
 | 7 | Emit artifacts | See [Validation report](#validation-report) below |
 
-**Scope:** One row per **corpus rule** (not whole-section-only). Held-out rules (`skip: true` on the corpus rule, rendered as ASCA comments) validate as ok with description `held-out (commented rule)`. Parse-time missing-`→` failures emit a `skipped` string on the rule dict but are **not** held-out — they inventory as `ok=False`.
+**Scope:** One row per **corpus rule** (not whole-section-only). Config hold-outs (`status: skipped` from `skip_rules`, rendered as ASCA comments) validate as ok with description `held-out (commented rule)`. Missing-`→` and other unlisted parse failures inventory as `ok=False` through compile validation.
 
 **Baseline metrics** (re-run after each correction pass):
 

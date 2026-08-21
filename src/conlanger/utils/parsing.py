@@ -76,17 +76,10 @@ def non_empty_stages(stages: list[str]) -> list[str]:
 
 
 def finalize_stages_shape(parts: dict[str, Any]) -> dict[str, Any]:
-    """Hold out rules with fewer than two non-empty stages."""
+    """Drop empty stage slots; keep short spines as ordinary corpus rules."""
     stages = parts.get("stages", [])
-    kept = non_empty_stages(stages)
-    if len(kept) >= 2:
-        parts["stages"] = kept
-        return parts
-    result = {key: value for key, value in parts.items() if key != "stages"}
-    result["stages"] = []
-    if result.get("status") != "skipped":
-        result["status"] = "skipped"
-    return result
+    parts["stages"] = non_empty_stages(stages)
+    return parts
 
 
 def normalize_rule_arrows(text: str) -> str:

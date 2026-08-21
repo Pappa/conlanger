@@ -115,6 +115,23 @@ class SoundChangeRule(RulePartBase):
     env_separator: ClassVar[str] = " / "
     exception_separator: ClassVar[str] = " // "
 
+    @classmethod
+    def from_held_out_raw(cls, raw: str) -> SoundChangeRule:
+        """Build a commented ASCA line from a held-out corpus rule's ``raw`` text."""
+        instance = object.__new__(cls)
+        instance.prefix = cls.skip_prefix
+        instance.value = raw
+        instance.input = ""
+        instance.output = ""
+        instance.env = None
+        instance.exception = None
+        instance.alternatives = []
+        instance._group_mappings = {}
+        instance._section_index = ""
+        instance._compiler_config = None
+        instance._rng = random.Random()
+        return instance
+
     def __init__(
         self,
         rule: dict[str, str],
@@ -145,9 +162,6 @@ class SoundChangeRule(RulePartBase):
         self._compiler_config = compiler_config
         # Instance RNG only — never the process-global ``random.seed`` (ticket 66).
         self._rng = rng if rng is not None else random.Random(seed)
-
-        if rule.get("skip", False):
-            self.prefix = self.skip_prefix
 
         self.alternatives = self._build_alternatives(rule)
         if self.alternatives:
@@ -254,10 +268,14 @@ class DiachronicSeries:
             self._parts.append(RuleCitation(section["citation"]))
         if section.get("comment"):
             self._parts.append(RuleComment(section["comment"]))
-        if section.get("skipped"):
+        if section.get("status") == "skipped":
             return
         if section.get("rules"):
             for rule in section["rules"]:
+                if rule.get("status") == "skipped":
+                    raw = str(rule.get("raw", ""))
+                    self._parts.append(SoundChangeRule.from_held_out_raw(raw))
+                    continue
                 normalized = normalize_corpus_rule_tilde_fields(rule)
                 for step in expand_chained_corpus_rule(normalized):
                     self._parts.append(

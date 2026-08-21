@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-_CHAIN_META_KEYS = ("env", "exception", "comment", "sporadic", "skip")
+_CHAIN_META_KEYS = ("env", "exception", "comment", "sporadic")
 
 
 def expand_chained_corpus_rule(rule: dict[str, str]) -> list[dict[str, str]]:

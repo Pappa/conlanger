@@ -60,13 +60,6 @@ def test_expand_chained_corpus_rule_propagates_exception_and_comment():
     ]
 
 
-def test_expand_chained_corpus_rule_propagates_skip_meta():
-    rule = {"stages": ["a", "b"], "skip": True}
-    assert expand_chained_corpus_rule(rule) == [
-        {"input": "a", "output": "b", "skip": True},
-    ]
-
-
 def test_expand_chained_corpus_rule_propagates_sporadic_to_each_step():
     rule = {"stages": ["a", "b", "c"], "sporadic": True, "comment": "note"}
     assert expand_chained_corpus_rule(rule) == [

@@ -1,4 +1,3 @@
-
 import pytest
 
 from conlanger.tools.compile.asca.apostrophes import normalize_typographic_apostrophes

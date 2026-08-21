@@ -85,7 +85,7 @@ def _require_validate_support(asca: str) -> None:
 
 
 def _active_rule_changes(rule: DiachronicSeries) -> list[SoundChangeRule]:
-    """Return SoundChangeRule parts that are not commented out (``skip``)."""
+    """Return SoundChangeRule parts that are not commented out (``#\\t`` prefix)."""
     active: list[SoundChangeRule] = []
     for part in rule._parts:
         if not isinstance(part, SoundChangeRule):
