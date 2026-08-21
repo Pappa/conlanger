@@ -203,18 +203,6 @@ def test_diachronic_series_applies_section_series_mappings():
 
 
 @pytest.mark.parametrize(
-    "input, error",
-    [
-        ({"output": "b"}, "input is required"),
-        ({"input": "a"}, "output is required"),
-    ],
-)
-def test_rule_change_required_fields(input, error):
-    with pytest.raises(ValueError, match=error):
-        SoundChangeRule(input)
-
-
-@pytest.mark.parametrize(
     "section, format",
     [
         (
@@ -255,7 +243,7 @@ def test_RuleComment(value, expected):
 
 
 @pytest.mark.parametrize(
-    "input, expected",
+    "fields, expected",
     [
         ({"input": "a", "output": "b"}, "\ta > b"),
         (
@@ -271,8 +259,8 @@ def test_RuleComment(value, expected):
         ({"input": "dʒ", "output": "tʃ > ʃ"}, "\tdʒ > tʃ > ʃ"),
     ],
 )
-def test_SoundChangeRule(input, expected):
-    rule = SoundChangeRule(input)
+def test_SoundChangeRule(fields, expected):
+    rule = SoundChangeRule(**fields)
     assert str(rule) == expected
 
 

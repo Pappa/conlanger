@@ -44,37 +44,28 @@ def test_expand_parallel_output_null_branches_out_of_scope(input_text, output_te
 
 
 def test_paired_null_set_builds_alternatives():
-    rule = SoundChangeRule({"input": "{r,h}", "output": "{∅,h}"})
+    rule = SoundChangeRule(input="{r,h}", output="{∅,h}")
     assert len(rule.alternatives) == 2
     assert [alt.value for alt in rule.alternatives] == ["r > ∅", "h > h"]
 
 
 def test_multi_column_null_set_alternatives():
-    rule = SoundChangeRule({"input": "{m,ɲ} n", "output": "{ɲ,∅} {ŋ,∅}", "env": "_#"})
+    rule = SoundChangeRule(input="{m,ɲ} n", output="{ɲ,∅} {ŋ,∅}", env="_#")
     assert len(rule.alternatives) == 2
     assert rule.alternatives[0].value == "m n > ɲ ŋ / _#"
     assert rule.alternatives[1].value == "ɲ n > ∅ / _#"
 
 
 def test_optional_output_still_wins_over_parallel_null_expander():
-    rule = SoundChangeRule({"input": "d", "output": "{∅,ð}", "env": "V_V"})
+    rule = SoundChangeRule(input="d", output="{∅,ð}", env="V_V")
     assert len(rule.alternatives) == 2
     assert [alt.output for alt in rule.alternatives] == ["∅", "ð"]
 
 
 def test_parallel_null_alternatives_are_leaf_peers():
-    rule = SoundChangeRule({"input": "{r,h}", "output": "{∅,h}"})
+    rule = SoundChangeRule(input="{r,h}", output="{∅,h}")
     for alt in rule.alternatives:
         assert alt.alternatives == []
-
-
-def test_peel_trailing_env_from_merged_output_stage():
-    rule = SoundChangeRule(
-        {"input": "ŋ", "output": "{∅,n} #_ else"},
-    )
-    assert len(rule.alternatives) == 2
-    assert rule.alternatives[0].value == "ŋ > ∅ / #_ else"
-    assert rule.alternatives[1].value == "ŋ > n / #_ else"
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
@@ -84,7 +75,7 @@ def test_parallel_null_alternatives_validate_independently():
     from conlanger.appliers.asca import validate_asca
 
     probe = Path("tests/fixtures/asca_probe_words.wsca")
-    rule = SoundChangeRule({"input": "{r,h}", "output": "{∅,h}"})
+    rule = SoundChangeRule(input="{r,h}", output="{∅,h}")
     for alt in rule.alternatives:
         section = {
             "index": "10.1.1.1",

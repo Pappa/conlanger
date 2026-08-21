@@ -24,7 +24,7 @@ def _rule(**overrides):
     ],
 )
 def test_optional_output_builds_alternatives(input_text, output_text, expected_members):
-    rule = SoundChangeRule({"input": input_text, "output": output_text})
+    rule = SoundChangeRule(input=input_text, output=output_text)
     assert [alt.output for alt in rule.alternatives] == expected_members
     assert [alt.input for alt in rule.alternatives] == [input_text] * len(
         expected_members
@@ -42,12 +42,12 @@ def test_optional_output_builds_alternatives(input_text, output_text, expected_m
     ],
 )
 def test_non_optional_output_has_no_alternatives(input_text, output_text):
-    rule = SoundChangeRule({"input": input_text, "output": output_text})
+    rule = SoundChangeRule(input=input_text, output=output_text)
     assert rule.alternatives == []
 
 
 def test_alternatives_are_leaf_peers():
-    rule = SoundChangeRule(_rule())
+    rule = SoundChangeRule(**_rule())
     for alt in rule.alternatives:
         assert isinstance(alt, SoundChangeRule)
         assert alt.alternatives == []
@@ -56,7 +56,7 @@ def test_alternatives_are_leaf_peers():
 
 
 def test_parent_pick_is_frozen_choice():
-    rule = SoundChangeRule(_rule(), seed=1234)
+    rule = SoundChangeRule(**_rule(), seed=1234)
     chosen_values = {alt.value for alt in rule.alternatives}
     assert rule.value in chosen_values
     # ``str`` renders the frozen choice with no re-sample.
@@ -66,33 +66,33 @@ def test_parent_pick_is_frozen_choice():
 
 
 def test_seed_selects_alternative_uniformly_via_instance_rng():
-    rule = SoundChangeRule(_rule(), seed=7)
+    rule = SoundChangeRule(**_rule(), seed=7)
     expected_idx = random.Random(7).randrange(len(rule.alternatives))
     assert rule.value == rule.alternatives[expected_idx].value
 
 
 def test_caller_supplied_rng_is_used_for_pick():
-    rule = SoundChangeRule(_rule(), rng=random.Random(99))
+    rule = SoundChangeRule(**_rule(), rng=random.Random(99))
     expected_idx = random.Random(99).randrange(len(rule.alternatives))
     assert rule.value == rule.alternatives[expected_idx].value
 
 
 def test_same_seed_is_deterministic():
-    first = SoundChangeRule(_rule(), seed=2024)
-    second = SoundChangeRule(_rule(), seed=2024)
+    first = SoundChangeRule(**_rule(), seed=2024)
+    second = SoundChangeRule(**_rule(), seed=2024)
     assert first.value == second.value
 
 
 def test_parent_pick_does_not_touch_global_random_state():
     random.seed(0)
     before = random.getstate()
-    SoundChangeRule(_rule(), seed=None)
-    SoundChangeRule(_rule(), seed=42)
+    SoundChangeRule(**_rule(), seed=None)
+    SoundChangeRule(**_rule(), seed=42)
     assert random.getstate() == before
 
 
 def test_non_optional_rule_keeps_single_value():
-    rule = SoundChangeRule({"input": "p", "output": "b", "env": "V_V"})
+    rule = SoundChangeRule(input="p", output="b", env="V_V")
     assert rule.alternatives == []
     assert rule.value == "p > b / V_V"
 
@@ -104,7 +104,7 @@ def test_each_alternative_validates_independently():
     from conlanger.appliers.asca import validate_asca
 
     probe = Path("tests/fixtures/asca_probe_words.wsca")
-    rule = SoundChangeRule(_rule())
+    rule = SoundChangeRule(**_rule())
     for alt in rule.alternatives:
         section = {
             "index": "1.0",

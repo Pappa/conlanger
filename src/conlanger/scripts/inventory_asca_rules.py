@@ -72,7 +72,7 @@ def classify_error(error: str) -> str:
 
 
 def format_syntax(rule: dict) -> str:
-    return SoundChangeRule(rule).value
+    return SoundChangeRule(**rule).value
 
 
 def check_one(args: tuple) -> dict:

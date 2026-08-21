@@ -57,24 +57,6 @@ def _split_set_members(text: str) -> list[str]:
     return members
 
 
-def _peel_trailing_env_from_output(output: str) -> tuple[str, str] | None:
-    """When stages embed env after a whole-field set output, split it off."""
-    stripped = output.strip()
-    if len(stripped) < 3 or stripped[0] != "{":
-        return None
-    depth = 0
-    for position, char in enumerate(stripped):
-        if char == "{":
-            depth += 1
-        elif char == "}":
-            depth -= 1
-            if depth == 0 and position < len(stripped) - 1:
-                rest = stripped[position + 1 :].lstrip()
-                if rest.startswith(("#", "/", "_")):
-                    return stripped[: position + 1], rest
-    return None
-
-
 class RulePartBase:
     prefix: ClassVar[str] = "# "
 
@@ -108,62 +90,45 @@ class RuleComment(RulePartBase):
 
 
 class SoundChangeRule(RulePartBase):
-    rule: dict[str, str]
     prefix: ClassVar[str] = "\t"
     skip_prefix: ClassVar[str] = "#\t"
     output_separator: ClassVar[str] = " > "
     env_separator: ClassVar[str] = " / "
     exception_separator: ClassVar[str] = " // "
 
-    @classmethod
-    def from_held_out_raw(cls, raw: str) -> SoundChangeRule:
-        """Build a commented ASCA line from a held-out corpus rule's ``raw`` text."""
-        instance = object.__new__(cls)
-        instance.prefix = cls.skip_prefix
-        instance.value = raw
-        instance.input = ""
-        instance.output = ""
-        instance.env = None
-        instance.exception = None
-        instance.alternatives = []
-        instance._group_mappings = {}
-        instance._section_index = ""
-        instance._compiler_config = None
-        instance._rng = random.Random()
-        return instance
-
     def __init__(
         self,
-        rule: dict[str, str],
+        input: str = "",
+        output: str = "",
+        env: str | None = None,
+        exception: str | None = None,
         *,
+        skipped: bool = False,
+        raw: str = "",
         group_mappings: dict[str, str] | None = None,
         seed: int | None = None,
         rng: random.Random | None = None,
         section_index: str = "",
         compiler_config: CompilerConfig | None = None,
+        **_: object,
     ):
-        try:
-            self.input = rule["input"]
-        except KeyError:
-            raise ValueError("input is required")
-        try:
-            self.output = rule["output"]
-        except KeyError:
-            raise ValueError("output is required")
-
-        self.env = rule.get("env", None)
-        self.exception = rule.get("exception", None)
-        if self.env is None:
-            peeled = _peel_trailing_env_from_output(self.output)
-            if peeled is not None:
-                self.output, self.env = peeled
+        self.input = input
+        self.output = output
+        self.env = env
+        self.exception = exception
         self._group_mappings = {} if group_mappings is None else group_mappings
         self._section_index = section_index
         self._compiler_config = compiler_config
         # Instance RNG only — never the process-global ``random.seed`` (ticket 66).
         self._rng = rng if rng is not None else random.Random(seed)
+        self.alternatives: list[SoundChangeRule] = []
 
-        self.alternatives = self._build_alternatives(rule)
+        if skipped:
+            self.prefix = self.skip_prefix
+            super().__init__(raw)
+            return
+
+        self.alternatives = self._build_alternatives()
         if self.alternatives:
             # Freeze one alternative uniformly as the emitted outcome.
             chosen = self.alternatives[self._rng.randrange(len(self.alternatives))]
@@ -173,16 +138,14 @@ class SoundChangeRule(RulePartBase):
             value = self._format()
         super().__init__(value)
 
-    def _build_alternatives(self, rule: dict[str, str]) -> list[SoundChangeRule]:
+    def _build_alternatives(self) -> list[SoundChangeRule]:
         """Build peer alternatives for optional outputs or parallel ``∅`` output sets."""
-        optional = self._build_optional_output_alternatives(rule)
+        optional = self._build_optional_output_alternatives()
         if optional:
             return optional
-        return self._build_parallel_null_set_alternatives(rule)
+        return self._build_parallel_null_set_alternatives()
 
-    def _build_optional_output_alternatives(
-        self, rule: dict[str, str]
-    ) -> list[SoundChangeRule]:
+    def _build_optional_output_alternatives(self) -> list[SoundChangeRule]:
         """Whole-field output set with unpaired input (ticket 66)."""
         if not (
             _is_whole_field_set(self.output) and not _is_whole_field_set(self.input)
@@ -193,13 +156,10 @@ class SoundChangeRule(RulePartBase):
             return []
         return [
             SoundChangeRule(
-                {
-                    **rule,
-                    "input": self.input,
-                    "output": member,
-                    "env": self.env,
-                    "exception": self.exception,
-                },
+                input=self.input,
+                output=member,
+                env=self.env,
+                exception=self.exception,
                 group_mappings=self._group_mappings,
                 section_index=self._section_index,
                 compiler_config=self._compiler_config,
@@ -207,22 +167,17 @@ class SoundChangeRule(RulePartBase):
             for member in members
         ]
 
-    def _build_parallel_null_set_alternatives(
-        self, rule: dict[str, str]
-    ) -> list[SoundChangeRule]:
+    def _build_parallel_null_set_alternatives(self) -> list[SoundChangeRule]:
         """Paired parallel columns with ``∅`` inside output sets (ticket 81)."""
         branches = expand_parallel_output_null_branches(self.input, self.output)
         if branches is None:
             return []
         return [
             SoundChangeRule(
-                {
-                    **rule,
-                    "input": branch_input,
-                    "output": branch_output,
-                    "env": self.env,
-                    "exception": self.exception,
-                },
+                input=branch_input,
+                output=branch_output,
+                env=self.env,
+                exception=self.exception,
                 group_mappings=self._group_mappings,
                 section_index=self._section_index,
                 compiler_config=self._compiler_config,
@@ -273,14 +228,21 @@ class DiachronicSeries:
         if section.get("rules"):
             for rule in section["rules"]:
                 if rule.get("status") == "skipped":
-                    raw = str(rule.get("raw", ""))
-                    self._parts.append(SoundChangeRule.from_held_out_raw(raw))
+                    self._parts.append(
+                        SoundChangeRule(
+                            **rule,
+                            skipped=True,
+                            group_mappings=mappings,
+                            section_index=section_index,
+                            compiler_config=config,
+                        )
+                    )
                     continue
                 normalized = normalize_corpus_rule_tilde_fields(rule)
                 for step in expand_chained_corpus_rule(normalized):
                     self._parts.append(
                         SoundChangeRule(
-                            step,
+                            **step,
                             group_mappings=mappings,
                             section_index=section_index,
                             compiler_config=config,

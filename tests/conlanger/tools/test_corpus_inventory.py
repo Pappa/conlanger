@@ -239,12 +239,12 @@ def test_validate_corpus_rule_format_error():
     assert row.failure_class == "format_error"
 
 
-def test_validate_corpus_rule_held_out_comment():
+def test_validate_corpus_rule_skipped_is_held_out_comment():
     (row,) = validate_corpus_rule(
         _SECTION,
         {
             "status": "skipped",
-            "stages": ["a", "b"],
+            "stages": [],
             "raw": "a → b",
             "source": "sample.html:3",
         },
@@ -409,7 +409,7 @@ def test_write_validation_csv(tmp_path: Path):
     assert list(parsed[0].keys())[-1] == "description"
 
 
-def test_iter_validation_rows():
+def test_iter_validation_rows_skipped_rule():
     doc = {
         "sections": [
             {
@@ -417,7 +417,7 @@ def test_iter_validation_rows():
                 "section": "A",
                 "rules": [
                     {
-                        "stages": ["a", "b"],
+                        "stages": [],
                         "raw": "a → b",
                         "source": "s:1",
                         "status": "skipped",
@@ -1385,12 +1385,7 @@ def test_build_field_isolation_row_unknown_feature_on_input(mock_validate_part):
 
     mock_validate_part.side_effect = side_effect
 
-    field_rule = SoundChangeRule(
-        {
-            "input": "C:[+voiced]",
-            "output": "e",
-        }
-    )
+    field_rule = SoundChangeRule(input="C:[+voiced]", output="e")
     validation_row = ValidationRow(
         "1",
         "A",
@@ -1419,13 +1414,7 @@ def test_build_field_isolation_row_missing_underscore_on_env(mock_validate_part)
 
     mock_validate_part.side_effect = side_effect
 
-    field_rule = SoundChangeRule(
-        {
-            "input": "a",
-            "output": "e",
-            "env": "word-initially",
-        }
-    )
+    field_rule = SoundChangeRule(input="a", output="e", env="word-initially")
     validation_row = ValidationRow(
         "1",
         "A",
@@ -1455,13 +1444,7 @@ def test_build_field_isolation_row_two_fields_fail(mock_validate_part):
 
     mock_validate_part.side_effect = side_effect
 
-    field_rule = SoundChangeRule(
-        {
-            "input": "bad",
-            "output": "e",
-            "env": "bad-env",
-        }
-    )
+    field_rule = SoundChangeRule(input="bad", output="e", env="bad-env")
     validation_row = ValidationRow(
         "1",
         "A",
@@ -1492,12 +1475,7 @@ def test_field_isolation_integration_multi_blame():
         "",
         "uneven set",
     )
-    field_rule = SoundChangeRule(
-        {
-            "input": "{p,t}",
-            "output": "{b}",
-        }
-    )
+    field_rule = SoundChangeRule(input="{p,t}", output="{b}")
     row = build_field_isolation_row(validation_row, field_rule)
     assert row.input_ok is True
     assert row.output_ok is True
