@@ -781,8 +781,6 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 8.1,Proto-Altaic to Proto-Japonic,"Proto-Japonic-ʃ,z",,index_diachronica_original.html:2116,True,,,,,
 8.1,Proto-Altaic to Proto-Japonic,Proto-Japonic-n,,index_diachronica_original.html:2117,True,,,,,
 8.1,Proto-Altaic to Proto-Japonic,Proto-Japonic-ŋ,,index_diachronica_original.html:2118,True,,,,,
-8.1,Proto-Altaic to Proto-Japonic,Proto-Japonic-ŋ_2,0,index_diachronica_original.html:2119,True,,,,,
-8.1,Proto-Altaic to Proto-Japonic,Proto-Japonic-ŋ_2,1,index_diachronica_original.html:2119,True,,,,,
 8.1,Proto-Altaic to Proto-Japonic,Proto-Japonic-N,0,index_diachronica_original.html:2120,True,,,,,
 8.1,Proto-Altaic to Proto-Japonic,Proto-Japonic-N,1,index_diachronica_original.html:2120,True,,,,,
 8.1,Proto-Altaic to Proto-Japonic,Proto-Japonic-r,,index_diachronica_original.html:2121,True,,,,,
@@ -8175,6 +8173,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-en-an,,index_diachronica_original.html:14435,True,,,,,
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-ej,,index_diachronica_original.html:14436,True,,,,,
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-ew,,index_diachronica_original.html:14437,True,,,,,
+46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-i,,index_diachronica_original.html:14438,True,,,,,held-out (commented rule)
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-iː,,index_diachronica_original.html:14439,True,,,,,
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-a-aː,,index_diachronica_original.html:14440,True,,,,,
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-aw,,index_diachronica_original.html:14442,True,,,,,

@@ -3,8 +3,8 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
-- Rows: **9689** (one per corpus rule)
-- OK: **8219** (84.8%)
+- Rows: **9688** (one per corpus rule)
+- OK: **8218** (84.8%)
 - Fail: **1410** (14.6%)
 - Skipped: **60** (0.6%)
 - Sections all OK: **323 / 711** (45.4%)
@@ -14,20 +14,20 @@
 
 | count | failure_class |
 |------:|---------------|
-| 419 | `syntax_other` |
+| 430 | `syntax_other` |
 | 243 | `expected_underscore` |
 | 186 | `unknown_character` |
 | 130 | `runtime_other` |
 | 110 | `unknown_grouping` |
 | 88 | `unknown_feature` |
-| 65 | `prose_or_expected_arrow` |
+| 64 | `prose_or_expected_arrow` |
 | 45 | `nested_brackets` |
 | 38 | `expected_number` |
 | 32 | `diacritic_prereq` |
 | 22 | `runtime_delete_only_segment` |
 | 14 | `stuff_after_word_bound` |
-| 12 | `missing_arrow` |
 | 4 | `panic_other` |
+| 2 | `format_error` |
 | 2 | `other` |
 
 ## Common Errors
@@ -96,8 +96,8 @@
 |------:|-------|
 | 581 | `input` |
 | 513 | `env` |
-| 415 | `output` |
-| 223 | `multi` |
+| 425 | `output` |
+| 213 | `multi` |
 | 129 | `exception` |
 
 ## Notes

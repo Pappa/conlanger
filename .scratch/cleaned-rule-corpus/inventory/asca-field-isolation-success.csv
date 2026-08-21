@@ -486,8 +486,6 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 8.1,Proto-Altaic to Proto-Japonic,"Proto-Japonic-ʃ,z",,index_diachronica_original.html:2116,True,,True,True,,,,,,,,,,,none
 8.1,Proto-Altaic to Proto-Japonic,Proto-Japonic-n,,index_diachronica_original.html:2117,True,,True,True,True,,,,,,,,,,none
 8.1,Proto-Altaic to Proto-Japonic,Proto-Japonic-ŋ,,index_diachronica_original.html:2118,True,,True,True,True,,,,,,,,,,none
-8.1,Proto-Altaic to Proto-Japonic,Proto-Japonic-ŋ_2,0,index_diachronica_original.html:2119,True,,True,True,True,,,,,,,,,,none
-8.1,Proto-Altaic to Proto-Japonic,Proto-Japonic-ŋ_2,1,index_diachronica_original.html:2119,True,,True,True,True,,,,,,,,,,none
 8.1,Proto-Altaic to Proto-Japonic,Proto-Japonic-N,0,index_diachronica_original.html:2120,True,,True,True,,,,,,,,,,,none
 8.1,Proto-Altaic to Proto-Japonic,Proto-Japonic-N,1,index_diachronica_original.html:2120,True,,True,True,,,,,,,,,,,none
 8.1,Proto-Altaic to Proto-Japonic,Proto-Japonic-r,,index_diachronica_original.html:2121,True,,True,True,True,,,,,,,,,,none
@@ -5994,6 +5992,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-en-an,,index_diachronica_original.html:14435,True,,True,True,,,,,,,,,,,none
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-ej,,index_diachronica_original.html:14436,True,,True,True,,,,,,,,,,,none
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-ew,,index_diachronica_original.html:14437,True,,True,True,,,,,,,,,,,none
+46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-i,,index_diachronica_original.html:14438,True,,,,,,,,,,,,,,none
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-aw,,index_diachronica_original.html:14442,True,,True,True,,,,,,,,,,,none
 46.15,Proto-Japanese to Old Japanese Vowel Shift,Old-Japanese-Vowel-Shift-e-o,,index_diachronica_original.html:14449,True,,True,True,True,,,,,,,,,,none
 46.15,Proto-Japanese to Old Japanese Vowel Shift,Old-Japanese-Vowel-Shift-e-o_2,,index_diachronica_original.html:14450,True,,True,True,,True,,,,,,,,,none

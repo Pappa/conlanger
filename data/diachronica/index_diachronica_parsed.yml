@@ -18447,12 +18447,13 @@ sections:
     raw: S₁S₂ → F₁F₂
     source: index_diachronica_original.html:4660
     rule_id: Greenlandic-Iñupiaq-S1S2
-  - stages: []
+  - comment: the given example cited within the text is lʁ → ʁl
+    stages:
+    - Some metathesis in consonant clusters, the conditions of which are not elaborated
+      upon
     raw: Some metathesis in consonant clusters, the conditions of which are not elaborated
       upon; the given example cited within the text is lʁ → ʁl
     source: index_diachronica_original.html:4661
-    status: skipped
-    comment: the given example cited within the text is lʁ → ʁl
     rule_id: Greenlandic-Iñupiaq-lʁ
   - stages:
     - v
@@ -21275,11 +21276,11 @@ sections:
     raw: ɡʷ → hʷ / medially
     source: index_diachronica_original.html:5167
     rule_id: Palaic-ɡʷ
-  - stages: []
+  - stages:
+    - hhy
+    comment: “something like /ʒ/”
     raw: hhy → “something like /ʒ/”
     source: index_diachronica_original.html:5168
-    comment: “something like /ʒ/”
-    status: skipped
     rule_id: Palaic-hhy
   - stages:
     - h
@@ -21532,11 +21533,12 @@ sections:
     raw: m̩ n̩ r̩ l̩ → am an ar aɫ
     source: index_diachronica_original.html:5211
     rule_id: Artsakh-Armenian-m̩-n̩-r̩-l̩
-  - stages: []
+  - comment: (?)
+    stages:
+    - V
+    env: _(C)#
     raw: V → (?) / _(C)#
     source: index_diachronica_original.html:5212
-    comment: (?)
-    status: skipped
     sporadic: true
     rule_id: Artsakh-Armenian-V
 - section: Proto-Indo-European to Erevan Armenian
@@ -21761,11 +21763,12 @@ sections:
     raw: m̩ n̩ r̩ l̩ → am an ar aɫ
     source: index_diachronica_original.html:5248
     rule_id: Erevan-Armenian-m̩-n̩-r̩-l̩
-  - stages: []
+  - comment: (?)
+    stages:
+    - V
+    env: _(C)#
     raw: V → (?) / _(C)#
     source: index_diachronica_original.html:5249
-    comment: (?)
-    status: skipped
     sporadic: true
     rule_id: Erevan-Armenian-V
 - section: Proto-Indo-European to Istanbul Armenian
@@ -21989,11 +21992,12 @@ sections:
     raw: m̩ n̩ r̩ l̩ → am an ar aɫ
     source: index_diachronica_original.html:5285
     rule_id: Istanbul-Armenian-m̩-n̩-r̩-l̩
-  - stages: []
+  - comment: (?)
+    stages:
+    - V
+    env: _(C)#
     raw: V → (?) / _(C)#
     source: index_diachronica_original.html:5286
-    comment: (?)
-    status: skipped
     sporadic: true
     rule_id: Istanbul-Armenian-V
 - section: Proto-Indo-European to Kharpert Armenian
@@ -22218,11 +22222,12 @@ sections:
     raw: m̩ n̩ r̩ l̩ → am an ar aɫ
     source: index_diachronica_original.html:5322
     rule_id: Kharpert-Armenian-m̩-n̩-r̩-l̩
-  - stages: []
+  - comment: (?)
+    stages:
+    - V
+    env: _(C)#
     raw: V → (?) / _(C)#
     source: index_diachronica_original.html:5323
-    comment: (?)
-    status: skipped
     sporadic: true
     rule_id: Kharpert-Armenian-V
 - section: Proto-Indo-European to Sebastia Armenian
@@ -22441,11 +22446,12 @@ sections:
     raw: m̩ n̩ r̩ l̩ → am an ar aɫ
     source: index_diachronica_original.html:5358
     rule_id: Sebastia-Armenian-m̩-n̩-r̩-l̩
-  - stages: []
+  - comment: (?)
+    stages:
+    - V
+    env: _(C)#
     raw: V → (?) / _(C)#
     source: index_diachronica_original.html:5359
-    comment: (?)
-    status: skipped
     sporadic: true
     rule_id: Sebastia-Armenian-V
 - section: Proto-Indo-European to Southeast Armenian
@@ -22684,11 +22690,12 @@ sections:
     raw: m̩ n̩ r̩ l̩ → am an ar aɫ
     source: index_diachronica_original.html:5397
     rule_id: Southeast-Armenian-m̩-n̩-r̩-l̩
-  - stages: []
+  - comment: (?)
+    stages:
+    - V
+    env: _(C)#
     raw: V → (?) / _(C)#
     source: index_diachronica_original.html:5398
-    comment: (?)
-    status: skipped
     sporadic: true
     rule_id: Southeast-Armenian-V
 - section: Proto-Indo-European to Southwest Armenian
@@ -22920,11 +22927,12 @@ sections:
     raw: m̩ n̩ r̩ l̩ → am an ar aɫ
     source: index_diachronica_original.html:5435
     rule_id: Southwest-Armenian-m̩-n̩-r̩-l̩
-  - stages: []
+  - comment: (?)
+    stages:
+    - V
+    env: _(C)#
     raw: V → (?) / _(C)#
     source: index_diachronica_original.html:5436
-    comment: (?)
-    status: skipped
     sporadic: true
     rule_id: Southwest-Armenian-V
 - section: Avestan
@@ -34370,15 +34378,14 @@ sections:
     raw: j → ʝː / V_V
     source: index_diachronica_original.html:7337
     rule_id: Classical-Latin-vs.-Vulgar-Latin-j_2
-  - stages: []
+  - comment: “In contrast, Romanian exhibits u, uː → u (and ultimately also ɔ, oː
+      → o); and Sardinian and African Latin underwent a straight merger of the vowels
+      by length without considering quality (e, eː → e; i, iː → i; u, uː → u; etc.)”
+    stages: []
     raw: “In contrast, Romanian exhibits u, uː → u (and ultimately also ɔ, oː → o);
       and Sardinian and African Latin underwent a straight merger of the vowels by
       length without considering quality (e, eː → e; i, iː → i; u, uː → u; etc.)”
     source: index_diachronica_original.html:7338
-    status: skipped
-    comment: “In contrast, Romanian exhibits u, uː → u (and ultimately also ɔ, oː
-      → o); and Sardinian and African Latin underwent a straight merger of the vowels
-      by length without considering quality (e, eː → e; i, iː → i; u, uː → u; etc.)”
     rule_id: Classical-Latin-vs.-Vulgar-Latin-uː-ɔ,oː-eː-iː
 - section: Latin to Catalan
   index: 17.12.1.1.2
@@ -55559,15 +55566,14 @@ sections:
     raw: j → i
     source: index_diachronica_original.html:11832
     rule_id: Guānhuà-j
-  - stages: []
+  - comment: There seems to ahve been some stuff going on with palatalized [ŋ] → {ɲ,n}
+      but it seems highly dialectal and I’m not entirely sure just what exactly was
+      going on here
+    stages: []
     raw: There seems to ahve been some stuff going on with palatalized [ŋ] → {ɲ,n}
       but it seems highly dialectal and I’m not entirely sure just what exactly was
       going on here
     source: index_diachronica_original.html:11833
-    status: skipped
-    comment: There seems to ahve been some stuff going on with palatalized [ŋ] → {ɲ,n}
-      but it seems highly dialectal and I’m not entirely sure just what exactly was
-      going on here
     rule_id: Guānhuà-ŋ_3
   - stages:
     - w
