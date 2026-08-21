@@ -56,7 +56,7 @@ def test_apply_asca_group_mappings_to_string(input, expected, fx_sample_group_ma
 
 
 # TODO: figure out what these 2 tests are supposed to be doing and delete if unnecessary
-def test_apply_asca_group_mappings_to_string_labialized():
+def test_apply_asca_group_mappings_labializes_set_mapping_values():
     mappings = {"M": "{C:[+hi],O:[+delrel]}"}
     assert (
         apply_asca_group_mappings_to_string("Mʷ", mappings)
