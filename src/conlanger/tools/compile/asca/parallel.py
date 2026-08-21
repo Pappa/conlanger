@@ -1,23 +1,80 @@
-"""Expand parallel output sets that contain ``∅`` into ASCA-legal branches (ticket 81).
+"""Parallel-column null handling for ASCA compile (tickets 60 and 81).
 
-Index writes paired parallel outputs with deletion branches inline, e.g.
+Index multi-segment rules may use ``∅``, ``*``, ``Ø``, or ``0`` as a parallel-column null alongside
+other segments (e.g. ``c ɲ > ∅ n``). ASCA treats bare ``∅``/``*`` as pure
+insertion/deletion only. When null tokens are mixed with other top-level segments,
+omit the null columns so ASCA receives uneven-length substitution (``c ɲ > n``).
+
+Index also writes paired parallel outputs with deletion branches inline, e.g.
 ``{r,h} > {∅,h}`` or ``{m,ɲ} n > {ɲ,∅} {ŋ,∅}``. ASCA accepts ``∅`` as a
 segment but not inside correspondence sets. This module zips parallel columns
 into concrete input/output pairs (one branch per alternative index) so
 ``SoundChangeRule`` can emit peer alternatives for inventory validation.
 
-Top-level parallel-column nulls (``c ɲ > ∅ n``) remain ticket 60.
+Pure deletion/insertion (``x > ∅``, ``∅ > x``) is unchanged. Null inside sets
+(e.g. ``{j,∅}``) is not stripped — only space-separated top-level tokens.
+
 Whole-field unpaired optional outputs (``d > {∅,ð}``) remain ticket 66.
 """
 
 from __future__ import annotations
 
-from conlanger.tools.compile.asca.parallel_null_columns import (
-    drop_mixed_parallel_null_columns,
-    split_outside_groupers,
-)
+_NULL_TOKENS = frozenset({"∅", "Ø", "0", "*"})
 
-_NULL_SET_MEMBERS = frozenset({"∅", "Ø", "0", "*"})
+
+def split_outside_groupers(text: str, sep: str = " ") -> list[str]:
+    """Split on ``sep`` outside ``{}``, ``()``, and ``[]`` groupers."""
+    return _split_outside_groupers_impl(text, sep)
+
+
+def _split_outside_groupers_impl(text: str, sep: str = " ") -> list[str]:
+    parts: list[str] = []
+    current: list[str] = []
+    depth_brace = 0
+    depth_paren = 0
+    depth_bracket = 0
+    for ch in text:
+        if ch == "{":
+            depth_brace += 1
+        elif ch == "}":
+            depth_brace -= 1
+        elif ch == "(":
+            depth_paren += 1
+        elif ch == ")":
+            depth_paren -= 1
+        elif ch == "[":
+            depth_bracket += 1
+        elif ch == "]":
+            depth_bracket -= 1
+        if ch == sep and depth_brace == 0 and depth_paren == 0 and depth_bracket == 0:
+            if current:
+                parts.append("".join(current))
+                current = []
+        else:
+            current.append(ch)
+    if current:
+        parts.append("".join(current))
+    return parts
+
+
+def _is_null_column_token(token: str) -> bool:
+    return token in _NULL_TOKENS
+
+
+def drop_mixed_parallel_null_columns(side: str) -> str:
+    """Drop top-level ``∅``/``*`` tokens when mixed with other segments on one side."""
+    if not side or not side.strip():
+        return side
+    tokens = split_outside_groupers(side.strip())
+    if not tokens:
+        return side
+    null_count = sum(1 for token in tokens if _is_null_column_token(token))
+    if null_count == 0:
+        return side
+    if null_count == len(tokens):
+        return side
+    kept = [token for token in tokens if not _is_null_column_token(token)]
+    return " ".join(kept)
 
 
 def _is_set_token(token: str) -> bool:
@@ -49,7 +106,7 @@ def _split_set_members(text: str) -> list[str]:
 def _set_contains_null_member(token: str) -> bool:
     if not _is_set_token(token):
         return False
-    return any(member in _NULL_SET_MEMBERS for member in _split_set_members(token))
+    return any(member in _NULL_TOKENS for member in _split_set_members(token))
 
 
 def _output_contains_null_in_set(output: str) -> bool:
@@ -92,7 +149,7 @@ def _finalize_branch_io(input_text: str, output_text: str) -> tuple[str, str]:
     input_text = drop_mixed_parallel_null_columns(input_text)
     output_text = drop_mixed_parallel_null_columns(output_text)
     out_tokens = split_outside_groupers(output_text.strip())
-    if out_tokens and all(token in _NULL_SET_MEMBERS for token in out_tokens):
+    if out_tokens and all(token in _NULL_TOKENS for token in out_tokens):
         output_text = "∅"
     return input_text, output_text
 
@@ -129,7 +186,7 @@ def _expand_uneven_input_set_to_output_set(
     branches: list[tuple[str, str]] = []
     for in_member, out_member in pairs:
         input_branch = f"{in_member} {trailing_input}"
-        if out_member in _NULL_SET_MEMBERS:
+        if out_member in _NULL_TOKENS:
             output_branch = "∅"
         else:
             output_branch = out_member

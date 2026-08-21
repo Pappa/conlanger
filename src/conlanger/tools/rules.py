@@ -4,10 +4,8 @@ import random
 from typing import ClassVar
 
 from conlanger.tools.compile.asca.chains import expand_chained_corpus_rule
-from conlanger.tools.compile.asca.parallel_null_columns import (
+from conlanger.tools.compile.asca.parallel import (
     drop_mixed_parallel_null_columns,
-)
-from conlanger.tools.compile.asca.parallel_output_null import (
     expand_parallel_output_null_branches,
 )
 from conlanger.tools.compile.asca.pipeline import compile_asca_rule_string
