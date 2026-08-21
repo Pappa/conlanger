@@ -15,10 +15,10 @@ def expand_chained_corpus_rule(rule: dict[str, str]) -> list[dict[str, str]]:
     stages = rule.get("stages", [])
     non_empty = [stage.strip() for stage in stages if stage and stage.strip()]
     meta = {key: rule[key] for key in _CHAIN_META_KEYS if key in rule}
+    if len(non_empty) == 0:
+        return []
     if len(non_empty) == 1:
         return [{"input": non_empty[0], "output": "", **meta}]
-    if len(non_empty) < 2:
-        return []
     expanded: list[dict[str, str]] = []
     for index in range(len(non_empty) - 1):
         expanded.append(
