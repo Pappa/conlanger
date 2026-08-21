@@ -23,6 +23,7 @@ from __future__ import annotations
 import re
 
 from conlanger.tools.compile.asca.group_mappings import (
+    _grouping_letter_pattern,
     expand_grouping_letter,
 )
 from conlanger.utils.features import (
@@ -49,10 +50,6 @@ _SET_SUFFIX_MODIFIER_RE = re.compile(
     rf"\{{([^{_PALATAL}{_ASPIRATED}{_BREATHY}{_LABIAL}]+)\}}"
     rf"([{_PALATAL}{_ASPIRATED}{_BREATHY}])"
 )
-
-
-def _grouping_letter_pattern(keys: set[str]) -> str:
-    return "|".join(re.escape(key) for key in sorted(keys, key=len, reverse=True))
 
 
 def _expand_class_letter_modifier(

@@ -4,41 +4,12 @@ from __future__ import annotations
 
 import re
 
+from conlanger.tools.compile.asca._patterns import SET_BODY_RE
 from conlanger.tools.compile.asca.sets import split_set_members
+from conlanger.tools.compile.asca.structures import split_outside_groupers
 
 _SPACED_TILDE_RE = re.compile(r"\s+~\s+")
 _PAREN_OPTIONAL_TILDE_RE = re.compile(r"([^\s{}/\[\]()~]+)\(~([^)]+)\)")
-_SET_RE = re.compile(r"\{([^{}]*)\}")
-
-
-def _split_outside_groupers(text: str, sep: str = " ") -> list[str]:
-    parts: list[str] = []
-    current: list[str] = []
-    depth_brace = 0
-    depth_paren = 0
-    depth_bracket = 0
-    for ch in text:
-        if ch == "{":
-            depth_brace += 1
-        elif ch == "}":
-            depth_brace -= 1
-        elif ch == "(":
-            depth_paren += 1
-        elif ch == ")":
-            depth_paren -= 1
-        elif ch == "[":
-            depth_bracket += 1
-        elif ch == "]":
-            depth_bracket -= 1
-        if ch == sep and depth_brace == 0 and depth_paren == 0 and depth_bracket == 0:
-            if current:
-                parts.append("".join(current))
-                current = []
-        else:
-            current.append(ch)
-    if current:
-        parts.append("".join(current))
-    return parts
 
 
 def _expand_tilde_set_member(member: str) -> list[str]:
@@ -59,7 +30,7 @@ def _expand_sets_with_tilde(text: str) -> str:
             members.extend(_expand_tilde_set_member(member))
         return "{" + ",".join(members) + "}"
 
-    return _SET_RE.sub(repl, text)
+    return SET_BODY_RE.sub(repl, text)
 
 
 def _expand_paren_optional_tilde(text: str) -> str:
@@ -80,7 +51,7 @@ def _expand_tilde_in_token(token: str) -> str:
 def _expand_tilde_tokens(text: str) -> str:
     if "~" not in text:
         return text
-    tokens = _split_outside_groupers(text)
+    tokens = split_outside_groupers(text)
     return " ".join(_expand_tilde_in_token(token) for token in tokens)
 
 
@@ -98,7 +69,7 @@ def _expand_output_tilde_field(field: str) -> str:
     field = _SPACED_TILDE_RE.sub("~", field)
     field = _expand_sets_with_tilde(field)
     field = _expand_paren_optional_tilde(field)
-    tokens = _split_outside_groupers(field)
+    tokens = split_outside_groupers(field)
     if len(tokens) == 1 and "~" in tokens[0]:
         parts = [part for part in tokens[0].split("~") if part]
         if _is_multigraph_output_chain(parts):

@@ -18,6 +18,7 @@ from conlanger.tools.compile.asca.planned import (
     expand_meta_notation,
 )
 from conlanger.tools.compile.asca.series_mappings import apply_compiler_series_mappings
+from conlanger.tools.compile.asca.structures import join_asca_rule_fields
 from conlanger.tools.compile.asca.subscript_references import (
     expand_subscript_references_across_fields,
 )
@@ -27,10 +28,6 @@ from conlanger.tools.compile.asca.superscript_modifiers import (
 from conlanger.tools.compile.asca.tone_matrices import normalize_asca_tone_matrices
 from conlanger.utils.file_io import load_compiler_config
 from conlanger.utils.mappings import CompilerConfig
-
-_OUTPUT_SEPARATOR = " > "
-_ENV_SEPARATOR = " / "
-_EXCEPTION_SEPARATOR = " // "
 
 
 def _compile_kwargs(
@@ -94,21 +91,6 @@ def compile_asca_field(
         compiler_config=compiler_config,
     )
     return compile_asca_field_post_subscript(text)
-
-
-def join_asca_rule_fields(
-    inp: str,
-    output: str,
-    env: str | None = None,
-    exception: str | None = None,
-) -> str:
-    """Join already-compiled ASCA rule fields for render."""
-    result = inp + _OUTPUT_SEPARATOR + output
-    if env:
-        result += _ENV_SEPARATOR + env
-    if exception:
-        result += _EXCEPTION_SEPARATOR + exception
-    return result
 
 
 def compile_asca_rule_fields(

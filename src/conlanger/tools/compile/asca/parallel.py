@@ -23,43 +23,9 @@ from conlanger.tools.compile.asca.sets import (
     is_whole_field_set,
     split_braced_set_members,
 )
+from conlanger.tools.compile.asca.structures import split_outside_groupers
 
 _NULL_TOKENS = frozenset({"∅", "Ø", "0", "*"})
-
-
-def split_outside_groupers(text: str, sep: str = " ") -> list[str]:
-    """Split on ``sep`` outside ``{}``, ``()``, and ``[]`` groupers."""
-    return _split_outside_groupers_impl(text, sep)
-
-
-def _split_outside_groupers_impl(text: str, sep: str = " ") -> list[str]:
-    parts: list[str] = []
-    current: list[str] = []
-    depth_brace = 0
-    depth_paren = 0
-    depth_bracket = 0
-    for ch in text:
-        if ch == "{":
-            depth_brace += 1
-        elif ch == "}":
-            depth_brace -= 1
-        elif ch == "(":
-            depth_paren += 1
-        elif ch == ")":
-            depth_paren -= 1
-        elif ch == "[":
-            depth_bracket += 1
-        elif ch == "]":
-            depth_bracket -= 1
-        if ch == sep and depth_brace == 0 and depth_paren == 0 and depth_bracket == 0:
-            if current:
-                parts.append("".join(current))
-                current = []
-        else:
-            current.append(ch)
-    if current:
-        parts.append("".join(current))
-    return parts
 
 
 def _is_null_column_token(token: str) -> bool:
@@ -82,13 +48,8 @@ def drop_mixed_parallel_null_columns(side: str) -> str:
     return " ".join(kept)
 
 
-def _is_set_token(token: str) -> bool:
-    stripped = token.strip()
-    return len(stripped) >= 2 and stripped.startswith("{") and stripped.endswith("}")
-
-
 def _set_contains_null_member(token: str) -> bool:
-    if not _is_set_token(token):
+    if not is_whole_field_set(token):
         return False
     return any(member in _NULL_TOKENS for member in split_braced_set_members(token))
 
@@ -96,7 +57,7 @@ def _set_contains_null_member(token: str) -> bool:
 def _output_contains_null_in_set(output: str) -> bool:
     if not output or not output.strip():
         return False
-    if _is_set_token(output.strip()) and _set_contains_null_member(output):
+    if is_whole_field_set(output.strip()) and _set_contains_null_member(output):
         return True
     return any(
         _set_contains_null_member(token) for token in split_outside_groupers(output)
@@ -108,12 +69,12 @@ def _column_branch_pairs(
 ) -> list[tuple[str, str]] | None:
     in_members = (
         split_braced_set_members(input_col)
-        if _is_set_token(input_col)
+        if is_whole_field_set(input_col)
         else [input_col.strip()]
     )
     out_members = (
         split_braced_set_members(output_col)
-        if _is_set_token(output_col)
+        if is_whole_field_set(output_col)
         else [output_col.strip()]
     )
     if not in_members or not out_members:
@@ -144,7 +105,7 @@ def _expand_uneven_input_set_to_output_set(
     """``{b,k} r > {r,∅}`` — input set + trailing segment, single output set."""
     if len(input_cols) != 2 or len(output_cols) != 1:
         return None
-    if not _is_set_token(input_cols[0]) or not _is_set_token(output_cols[0]):
+    if not is_whole_field_set(input_cols[0]) or not is_whole_field_set(output_cols[0]):
         return None
     pairs = _column_branch_pairs(input_cols[0], output_cols[0])
     if pairs is None:

@@ -19,25 +19,23 @@ from __future__ import annotations
 
 import re
 
-from conlanger.tools.compile.asca._patterns import IPA_SEGMENT
+from conlanger.tools.compile.asca._patterns import (
+    ASCA_ENV_OPTIONAL_RE,
+    IPA_SEGMENT,
+    SET_BODY_RE,
+)
+from conlanger.tools.compile.asca.ejectives import _add_cg_feature
 from conlanger.tools.compile.asca.sets import split_set_members
+from conlanger.tools.compile.asca.structures import split_outside_groupers
 from conlanger.utils.gloss import paren_inner_is_gloss
 
-_SET_RE = re.compile(r"\{([^{}]*)\}")
 _CHAIN_ALTERNATE_RE = re.compile(r"\s*\(>\s*[^)]*\)\s*")
 _UNCERTAINTY_PAREN_RE = re.compile(r"\(\?\)")
-_ASCA_ENV_OPTIONAL_RE = re.compile(r"^\([A-Z$%#][A-Z$%#0-9,.…]*\)$")
 _EJECTIVE = "\u02bc"
 _ROUND = "\u02b7"
 _PHONOLOGICAL_OPTIONAL_INNER_RE = re.compile(
     r"^[\u0250-\u02AFa-zA-Z0-9:+ʼʷʲʰː\u02b0-\u02b8\u02bc\u02d1\u02e4\u0300-\u036f\u02b7w]+$"
 )
-
-
-def _add_cg_feature(features: str) -> str:
-    if "+cg" in features or "-cg" in features:
-        return features
-    return f"{features},+cg" if features else "+cg"
 
 
 def _add_round_feature(features: str) -> str:
@@ -95,7 +93,7 @@ def _apply_optional_modifier(
 
 
 def _expand_optional_in_token(token: str) -> list[str]:
-    if _ASCA_ENV_OPTIONAL_RE.fullmatch(token):
+    if ASCA_ENV_OPTIONAL_RE.fullmatch(token):
         return [token]
 
     whole_paren = re.fullmatch(r"\(([^)]+)\)$", token)
@@ -140,37 +138,7 @@ def _expand_sets(text: str) -> str:
             members.extend(_expand_set_member(member))
         return "{" + ",".join(members) + "}"
 
-    return _SET_RE.sub(repl, text)
-
-
-def _split_outside_groupers(text: str, sep: str = " ") -> list[str]:
-    parts: list[str] = []
-    current: list[str] = []
-    depth_brace = 0
-    depth_paren = 0
-    depth_bracket = 0
-    for ch in text:
-        if ch == "{":
-            depth_brace += 1
-        elif ch == "}":
-            depth_brace -= 1
-        elif ch == "(":
-            depth_paren += 1
-        elif ch == ")":
-            depth_paren -= 1
-        elif ch == "[":
-            depth_bracket += 1
-        elif ch == "]":
-            depth_bracket -= 1
-        if ch == sep and depth_brace == 0 and depth_paren == 0 and depth_bracket == 0:
-            if current:
-                parts.append("".join(current))
-                current = []
-        else:
-            current.append(ch)
-    if current:
-        parts.append("".join(current))
-    return parts
+    return SET_BODY_RE.sub(repl, text)
 
 
 def _wrap_alternates(variants: list[str]) -> str:
@@ -183,7 +151,7 @@ def _expand_bare_tokens(text: str) -> str:
     if "(" not in text:
         return text
 
-    tokens = _split_outside_groupers(text)
+    tokens = split_outside_groupers(text)
     expanded_tokens: list[str] = []
     for token in tokens:
         variants = _expand_optional_in_token(token)

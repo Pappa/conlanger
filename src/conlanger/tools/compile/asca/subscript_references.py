@@ -4,6 +4,10 @@ from __future__ import annotations
 
 import re
 
+from conlanger.tools.compile.asca.structures import (
+    join_asca_rule_fields,
+    split_compiled_rule_fields,
+)
 from conlanger.utils.series import (
     is_identity_subscript_token,
     is_positional_slot_token,
@@ -27,37 +31,6 @@ _SLOT_RE = re.compile(
 )
 _SPACE_BEFORE_LENGTH_OR_MATRIX_RE = re.compile(r"(\d)\s+(?=[ː\[])")
 _PAREN_REF_OPTIONAL_RE = re.compile(r"\(\s*(\d+)\s*\)")
-
-
-def _split_rule_fields(text: str) -> tuple[str, str, str | None, str | None]:
-    exception: str | None = None
-    if " // " in text:
-        text, exception = text.split(" // ", 1)
-    env: str | None = None
-    if " > " in text:
-        inp, rest = text.split(" > ", 1)
-        if " / " in rest:
-            output, env = rest.split(" / ", 1)
-        else:
-            output = rest
-    else:
-        inp = text
-        output = ""
-    return inp, output, env, exception
-
-
-def _join_rule_fields(
-    inp: str,
-    output: str,
-    env: str | None,
-    exception: str | None,
-) -> str:
-    result = f"{inp} > {output}"
-    if env:
-        result += f" / {env}"
-    if exception:
-        result += f" // {exception}"
-    return result
 
 
 def _normalize_field_spacing(text: str) -> str:
@@ -203,11 +176,11 @@ def expand_index_subscript_references(text: str) -> str:
     if not text or not _SUBSCRIPT_CHAR_RE.search(text):
         return text
 
-    inp, output, env, exception = _split_rule_fields(text)
+    inp, output, env, exception = split_compiled_rule_fields(text)
     inp, output, env, exception = expand_subscript_references_across_fields(
         inp, output, env, exception
     )
-    return _join_rule_fields(inp, output, env, exception)
+    return join_asca_rule_fields(inp, output, env, exception)
 
 
 def is_easy_subscript_rule_text(text: str) -> bool:

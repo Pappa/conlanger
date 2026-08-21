@@ -23,10 +23,10 @@ from __future__ import annotations
 
 import re
 
-from conlanger.tools.compile.asca._patterns import IPA_SEGMENT
+from conlanger.tools.compile.asca._patterns import ASCA_ENV_OPTIONAL_RE, IPA_SEGMENT
 from conlanger.tools.compile.asca.sets import split_set_members
+from conlanger.tools.compile.asca.structures import split_outside_groupers
 
-_ASCA_ENV_OPTIONAL_RE = re.compile(r"^\([A-Z$%#][A-Z$%#0-9,.…]*\)$")
 _CLASS_OR_GROUP_INNER_RE = re.compile(
     r"^(?:"
     r"[A-Z]"  # class letter
@@ -44,7 +44,7 @@ _BRACED_GROUP_PREFIX_RE = re.compile(r"^\((\{[^{}]+\}[^)]*)\)(.+)$")
 
 def _is_structural_optional_inner(inner: str) -> bool:
     text = inner.strip()
-    if not text or _ASCA_ENV_OPTIONAL_RE.fullmatch(f"({text})"):
+    if not text or ASCA_ENV_OPTIONAL_RE.fullmatch(f"({text})"):
         return False
     return bool(_CLASS_OR_GROUP_INNER_RE.fullmatch(text))
 
@@ -131,40 +131,10 @@ def _expand_prefix_structure_optional(token: str) -> str:
     return f"{{{inner}}}{rest}"
 
 
-def _split_outside_groupers(text: str, sep: str = " ") -> list[str]:
-    parts: list[str] = []
-    current: list[str] = []
-    depth_brace = 0
-    depth_paren = 0
-    depth_bracket = 0
-    for ch in text:
-        if ch == "{":
-            depth_brace += 1
-        elif ch == "}":
-            depth_brace -= 1
-        elif ch == "(":
-            depth_paren += 1
-        elif ch == ")":
-            depth_paren -= 1
-        elif ch == "[":
-            depth_bracket += 1
-        elif ch == "]":
-            depth_bracket -= 1
-        if ch == sep and depth_brace == 0 and depth_paren == 0 and depth_bracket == 0:
-            if current:
-                parts.append("".join(current))
-                current = []
-        else:
-            current.append(ch)
-    if current:
-        parts.append("".join(current))
-    return parts
-
-
 def _expand_bare_tokens(text: str) -> str:
     if "(" not in text:
         return text
-    tokens = _split_outside_groupers(text)
+    tokens = split_outside_groupers(text)
     return " ".join(_expand_prefix_structure_optional(token) for token in tokens)
 
 
