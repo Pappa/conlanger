@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import re
 
+from conlanger.tools.compile.asca.sets import split_set_members
+
 _SPACED_TILDE_RE = re.compile(r"\s+~\s+")
 _PAREN_OPTIONAL_TILDE_RE = re.compile(r"([^\s{}/\[\]()~]+)\(~([^)]+)\)")
 _SET_RE = re.compile(r"\{([^{}]*)\}")
@@ -39,31 +41,6 @@ def _split_outside_groupers(text: str, sep: str = " ") -> list[str]:
     return parts
 
 
-def _split_set_members(content: str) -> list[str]:
-    members: list[str] = []
-    current: list[str] = []
-    depth_paren = 0
-    depth_bracket = 0
-    for ch in content:
-        if ch == "(":
-            depth_paren += 1
-        elif ch == ")":
-            depth_paren -= 1
-        elif ch == "[":
-            depth_bracket += 1
-        elif ch == "]":
-            depth_bracket -= 1
-        if ch == "," and depth_paren == 0 and depth_bracket == 0:
-            members.append("".join(current).strip())
-            current = []
-        else:
-            current.append(ch)
-    tail = "".join(current).strip()
-    if tail:
-        members.append(tail)
-    return members
-
-
 def _expand_tilde_set_member(member: str) -> list[str]:
     token = member.strip()
     token = token.removeprefix("~")
@@ -78,7 +55,7 @@ def _expand_sets_with_tilde(text: str) -> str:
         if "~" not in content:
             return match.group(0)
         members: list[str] = []
-        for member in _split_set_members(content):
+        for member in split_set_members(content):
             members.extend(_expand_tilde_set_member(member))
         return "{" + ",".join(members) + "}"
 

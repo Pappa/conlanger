@@ -13,6 +13,8 @@ from pathlib import Path
 
 import yaml
 
+from conlanger.tools.compile.asca.sets import is_whole_field_set, split_braced_set_members
+
 ROOT = Path(__file__).resolve().parents[3]
 YAML_PATH = ROOT / "data/diachronica/index_diachronica_parsed.yml"
 INVENTORY_PATH = (
@@ -46,23 +48,6 @@ def brace_balance(text: str) -> int:
     return depth
 
 
-def _is_whole_field_set(text: str) -> bool:
-    stripped = text.strip()
-    if len(stripped) < 2 or not stripped.startswith("{") or not stripped.endswith("}"):
-        return False
-    depth = 0
-    for position, char in enumerate(stripped):
-        if char == "{":
-            depth += 1
-        elif char == "}":
-            depth -= 1
-            if depth < 0:
-                return False
-            if depth == 0 and position != len(stripped) - 1:
-                return False
-    return depth == 0
-
-
 def _split_top_level_sets(text: str) -> list[str]:
     """Split a field into top-level ``{…}`` chunks (condensed parallel columns)."""
     chunks: list[str] = []
@@ -79,27 +64,6 @@ def _split_top_level_sets(text: str) -> list[str]:
                 chunks.append(text[start : i + 1])
                 start = None
     return chunks
-
-
-def _split_set_members(set_text: str) -> list[str]:
-    inner = set_text.strip()[1:-1]
-    members: list[str] = []
-    current: list[str] = []
-    depth = 0
-    for char in inner:
-        if char == "{":
-            depth += 1
-            current.append(char)
-        elif char == "}":
-            depth -= 1
-            current.append(char)
-        elif char == "," and depth == 0:
-            members.append("".join(current).strip())
-            current = []
-        else:
-            current.append(char)
-    members.append("".join(current).strip())
-    return members
 
 
 def analyze_braces(text: str) -> dict[str, bool]:
@@ -120,7 +84,7 @@ def analyze_braces(text: str) -> dict[str, bool]:
     nested_members = 0
     paren_in_set = 0
     for set_chunk in sets:
-        for member in _split_set_members(set_chunk):
+        for member in split_braced_set_members(set_chunk):
             if "{" in member:
                 if _PAREN_SEG_RE.search(member) and not member.strip().startswith("{"):
                     paren_in_set += 1
@@ -145,7 +109,7 @@ def analyze_braces(text: str) -> dict[str, bool]:
         result["adjacent_parallel_sets_only"] = True
 
     # Whole-field single set with nested member
-    if _is_whole_field_set(text) and nested_members:
+    if is_whole_field_set(text) and nested_members:
         result["true_nested_set"] = True
 
     return result
@@ -153,10 +117,10 @@ def analyze_braces(text: str) -> dict[str, bool]:
 
 def is_optional_output_skipped(input_text: str, output_text: str) -> bool:
     if not (
-        _is_whole_field_set(output_text) and not _is_whole_field_set(input_text)
+        is_whole_field_set(output_text) and not is_whole_field_set(input_text)
     ):
         return False
-    members = _split_set_members(output_text)
+    members = split_braced_set_members(output_text)
     return bool(members) and any("{" in m for m in members)
 
 

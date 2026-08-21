@@ -51,9 +51,9 @@ def test_expand_output_tilde_field_without_tilde():
 
 
 def test_split_set_members_nested_parens():
-    from conlanger.tools.compile.asca.tilde import _split_set_members
+    from conlanger.tools.compile.asca.sets import split_set_members
 
-    assert _split_set_members("a,(b,c),d") == ["a", "(b,c)", "d"]
+    assert split_set_members("a,(b,c),d") == ["a", "(b,c)", "d"]
 
 
 def test_expand_tilde_in_token_single_part():

@@ -19,6 +19,11 @@ Whole-field unpaired optional outputs (``d > {∅,ð}``) remain ticket 66.
 
 from __future__ import annotations
 
+from conlanger.tools.compile.asca.sets import (
+    is_whole_field_set,
+    split_braced_set_members,
+)
+
 _NULL_TOKENS = frozenset({"∅", "Ø", "0", "*"})
 
 
@@ -82,31 +87,10 @@ def _is_set_token(token: str) -> bool:
     return len(stripped) >= 2 and stripped.startswith("{") and stripped.endswith("}")
 
 
-def _split_set_members(text: str) -> list[str]:
-    inner = text.strip()[1:-1]
-    members: list[str] = []
-    current: list[str] = []
-    depth = 0
-    for char in inner:
-        if char == "{":
-            depth += 1
-            current.append(char)
-        elif char == "}":
-            depth -= 1
-            current.append(char)
-        elif char == "," and depth == 0:
-            members.append("".join(current).strip())
-            current = []
-        else:
-            current.append(char)
-    members.append("".join(current).strip())
-    return members
-
-
 def _set_contains_null_member(token: str) -> bool:
     if not _is_set_token(token):
         return False
-    return any(member in _NULL_TOKENS for member in _split_set_members(token))
+    return any(member in _NULL_TOKENS for member in split_braced_set_members(token))
 
 
 def _output_contains_null_in_set(output: str) -> bool:
@@ -123,12 +107,12 @@ def _column_branch_pairs(
     input_col: str, output_col: str
 ) -> list[tuple[str, str]] | None:
     in_members = (
-        _split_set_members(input_col)
+        split_braced_set_members(input_col)
         if _is_set_token(input_col)
         else [input_col.strip()]
     )
     out_members = (
-        _split_set_members(output_col)
+        split_braced_set_members(output_col)
         if _is_set_token(output_col)
         else [output_col.strip()]
     )
@@ -152,23 +136,6 @@ def _finalize_branch_io(input_text: str, output_text: str) -> tuple[str, str]:
     if out_tokens and all(token in _NULL_TOKENS for token in out_tokens):
         output_text = "∅"
     return input_text, output_text
-
-
-def _is_whole_field_set(text: str) -> bool:
-    stripped = text.strip()
-    if len(stripped) < 2 or not stripped.startswith("{") or not stripped.endswith("}"):
-        return False
-    depth = 0
-    for position, char in enumerate(stripped):
-        if char == "{":
-            depth += 1
-        elif char == "}":
-            depth -= 1
-            if depth < 0:
-                return False
-            if depth == 0 and position != len(stripped) - 1:
-                return False
-    return depth == 0
 
 
 def _expand_uneven_input_set_to_output_set(
@@ -212,8 +179,8 @@ def expand_parallel_output_null_branches(
     # Whole-field unpaired optional outputs are handled in ``SoundChangeRule`` (ticket 66).
     if (
         len(input_cols) == 1
-        and not _is_whole_field_set(input_text)
-        and _is_whole_field_set(output_text)
+        and not is_whole_field_set(input_text)
+        and is_whole_field_set(output_text)
     ):
         return None
 

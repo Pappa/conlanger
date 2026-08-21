@@ -20,6 +20,7 @@ from __future__ import annotations
 import re
 
 from conlanger.tools.compile.asca._patterns import IPA_SEGMENT
+from conlanger.tools.compile.asca.sets import split_set_members
 from conlanger.utils.gloss import paren_inner_is_gloss
 
 _SET_RE = re.compile(r"\{([^{}]*)\}")
@@ -31,31 +32,6 @@ _ROUND = "\u02b7"
 _PHONOLOGICAL_OPTIONAL_INNER_RE = re.compile(
     r"^[\u0250-\u02AFa-zA-Z0-9:+ʼʷʲʰː\u02b0-\u02b8\u02bc\u02d1\u02e4\u0300-\u036f\u02b7w]+$"
 )
-
-
-def _split_set_members(content: str) -> list[str]:
-    members: list[str] = []
-    current: list[str] = []
-    depth_paren = 0
-    depth_bracket = 0
-    for ch in content:
-        if ch == "(":
-            depth_paren += 1
-        elif ch == ")":
-            depth_paren -= 1
-        elif ch == "[":
-            depth_bracket += 1
-        elif ch == "]":
-            depth_bracket -= 1
-        if ch == "," and depth_paren == 0 and depth_bracket == 0:
-            members.append("".join(current).strip())
-            current = []
-        else:
-            current.append(ch)
-    tail = "".join(current).strip()
-    if tail:
-        members.append(tail)
-    return members
 
 
 def _add_cg_feature(features: str) -> str:
@@ -160,7 +136,7 @@ def _expand_set_member(member: str) -> list[str]:
 def _expand_sets(text: str) -> str:
     def repl(match: re.Match[str]) -> str:
         members: list[str] = []
-        for member in _split_set_members(match.group(1)):
+        for member in split_set_members(match.group(1)):
             members.extend(_expand_set_member(member))
         return "{" + ",".join(members) + "}"
 

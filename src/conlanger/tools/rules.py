@@ -8,50 +8,15 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 from conlanger.tools.compile.asca.chains import expand_chained_corpus_rule
 from conlanger.tools.compile.asca.parallel import expand_parallel_output_null_branches
 from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
+from conlanger.tools.compile.asca.sets import (
+    is_whole_field_set,
+    split_braced_set_members,
+)
 from conlanger.tools.compile.asca.tilde import normalize_corpus_rule_tilde_fields
 from conlanger.utils.file_io import load_compiler_config
 from conlanger.utils.mappings import CompilerConfig
 
 _SUPPORTED_FORMATS = frozenset({"asca"})
-
-
-def _is_whole_field_set(text: str) -> bool:
-    """True when ``text`` is a single ``{…}`` set spanning the whole field."""
-    stripped = text.strip()
-    if len(stripped) < 2 or not stripped.startswith("{") or not stripped.endswith("}"):
-        return False
-    depth = 0
-    for position, char in enumerate(stripped):
-        if char == "{":
-            depth += 1
-        elif char == "}":
-            depth -= 1
-            if depth < 0:
-                return False
-            if depth == 0 and position != len(stripped) - 1:
-                return False
-    return depth == 0
-
-
-def _split_set_members(text: str) -> list[str]:
-    inner = text.strip()[1:-1]
-    members: list[str] = []
-    current: list[str] = []
-    depth = 0
-    for char in inner:
-        if char == "{":
-            depth += 1
-            current.append(char)
-        elif char == "}":
-            depth -= 1
-            current.append(char)
-        elif char == "," and depth == 0:
-            members.append("".join(current).strip())
-            current = []
-        else:
-            current.append(char)
-    members.append("".join(current).strip())
-    return members
 
 
 class RulePartBase(BaseModel):
@@ -67,10 +32,8 @@ class RulePartBase(BaseModel):
 class RuleTitle(RulePartBase):
     prefix: ClassVar[str] = "@ "
 
-    @classmethod
-    def from_section(cls, section: dict) -> Self:
-        title = section["index"] + " - " + section["section"]
-        return cls(value=title)
+    def __init__(self, index: str, section: str, **kwargs: object) -> None:
+        super().__init__(value=f"{index} - {section}", **kwargs)
 
 
 class RuleCitation(RulePartBase):
@@ -160,10 +123,10 @@ class SoundChangeRule(RulePartBase):
     def _build_optional_output_alternatives(self) -> list[SoundChangeRule]:
         """Whole-field output set with unpaired input (ticket 66)."""
         if not (
-            _is_whole_field_set(self.output) and not _is_whole_field_set(self.input)
+            is_whole_field_set(self.output) and not is_whole_field_set(self.input)
         ):
             return []
-        members = _split_set_members(self.output)
+        members = split_braced_set_members(self.output)
         if not members or any(not member or "{" in member for member in members):
             return []
         return [
@@ -219,7 +182,9 @@ class DiachronicSeries(BaseModel):
         mappings = {} if group_mappings is None else group_mappings
         config = load_compiler_config() if compiler_config is None else compiler_config
         section_index = str(section.get("index", ""))
-        parts: list[RulePartBase] = [RuleTitle.from_section(section)]
+        parts: list[RulePartBase] = [
+            RuleTitle(section["index"], section["section"])
+        ]
         if section.get("citation"):
             parts.append(RuleCitation(section["citation"]))
         if section.get("comment"):
