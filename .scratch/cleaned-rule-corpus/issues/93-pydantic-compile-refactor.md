@@ -4,29 +4,37 @@ Blocked by: 92
 
 # Refactor compile classes to pydantic (per-field transforms)
 
-Grill 2026-08-21 Q8. Re-implement compile assembly in `src/conlanger/tools/rules.py` as **pydantic** models (**latest** pydantic 2.x — `uv add pydantic` when claiming this ticket; owner approved). Target names from the owner: **`DiachronicRuleset`**, **`SoundChangeRule`**, and the other classes in `rules.py`. Transforms run on **input / output / env / exception separately at instantiation**; join is render-time. **Do not claim until [ticket 92](92-grill-pydantic-compile-refactor.md) is resolved** — that grill is the spec.
+Spec: [ticket 92 Answer](92-grill-pydantic-compile-refactor.md). ADR: [0014](../../../docs/adr/0014-per-field-asca-compile.md).
 
-## Placeholder scope (replace with grill 92 answer)
+Re-implement `src/conlanger/tools/rules.py` as **pydantic** `BaseModel`s (**latest** pydantic 2.x — `uv add pydantic` when claiming; owner approved). Keep the name **`DiachronicSeries`**. Transforms run on **input / output / env / exception separately at instantiation**; join is render-time.
 
-Until 92 closes, treat this as the owner’s intent, not a license to invent details:
+## Spec (grill 92)
 
-- Pydantic models for every `rules.py` compile type the grill includes.
-- Per-field string transforms on instantiation; `__str__` joins already-transformed fields into ASCA.
-- Cross-field behaviour (subscript `declared` set, optional-output alternatives, length-1 `stages`) only as 92 decides.
-- Keep transform **functions** in `compile/asca/` unless 92 says otherwise; validators call them.
-- Skip / missing-arrow behaviour from [89](89-unify-status-skipped.md) / [90](90-missing-arrow-single-stage.md) / `CONTEXT.md`.
-- Rename `DiachronicSeries` → `DiachronicRuleset` if 92 confirms; update callers, tests, docs.
+- **Models:** `RulePartBase`, `RuleTitle`, `RuleCitation`, `RuleComment`, `SoundChangeRule`, `DiachronicSeries` — all `BaseModel`. Title/citation/comment: format only, no compile validators.
+- **Pure functions** stay in `compile/asca/`; pydantic `field_validator` / `model_validator` call them (Q3: may change later).
+- **Per-field** pipeline on the four compile fields (`field_validator`). Spike-38 **order** still applies per field.
+- **Cross-field:** `model_validator(mode='after')` for subscript refs (shared `declared`, **output last**).
+- **Alternatives** stay on `SoundChangeRule`: detect on **raw** I/O (`_build_alternatives` gates as pure functions), compile each peer, parent RNG-picks one emitted line. Inventory still reads `.alternatives`. Do not hoist to `DiachronicSeries`. Do not add a corpus YAML field.
+- **Join** only at `__str__` / render. Remove join-then-rewrite `compile_asca_rule_string`.
+- **Chains** on `DiachronicSeries` (`stages` → adjacent pairs). `SoundChangeRule` does not read `stages`. Length-1 → `output=""` ([ticket 90](90-missing-arrow-single-stage.md)).
+- **Injection:** `PrivateAttr` for `group_mappings`, `compiler_config`, `section_index`, instance `Random`.
+- **Skip:** `status: skipped` → comment `#\t` + `raw`; skip compile validators ([ticket 89](89-unify-status-skipped.md)).
+- **ASCA-only** (no Brassica compiler).
+- **Tests:** prefer byte-identical `.rsca`. If any `DiachronicSeries` / `SoundChangeRule` **unit-test input/output strings** change, list each in this ticket’s **Answer** with description and justification.
 
-## Out of scope unless 92 says otherwise
+## Out of scope
 
 - Brassica compiler
 - Changing corpus YAML (`stages` stays parse SoT)
-- Re-ordering transforms contrary to [spike 38](../research/asca-compile-transform-order.md) without an explicit grill decision
+- Renaming `DiachronicSeries`
+- Re-ordering transforms contrary to [spike 38](../research/asca-compile-transform-order.md)
+- Structured column/set IR on `SoundChangeRule` — [ticket 94](94-grill-structured-soundchangerule-ir.md) (grill after this lands)
 
 ## Acceptance criteria
 
-- [ ] Ticket 92 **Answer** is inlined or linked here as the spec before coding
-- [ ] `pydantic` is a project dependency via `uv add pydantic` (latest 2.x at claim time)
-- [ ] `rules.py` types are pydantic models; compile transforms are not a post-join string pipeline
-- [ ] Callers (`validate_asca`, inventory, tests) updated; full gate passes
-- [ ] Living docs (`sound-change-applier.md` or successor) match the grilled shape
+- [ ] `uv add pydantic` (latest 2.x at claim time)
+- [ ] Six `rules.py` types are pydantic `BaseModel`s; compile is not a post-join string pipeline
+- [ ] Alternatives remain on `SoundChangeRule`; chains on `DiachronicSeries`
+- [ ] Callers (`validate_asca`, inventory, tests, docs) updated; name stays `DiachronicSeries`
+- [ ] Full gate: `uv run pytest`; `uv run ruff check --fix`; `uv run ruff format && uv run ruff format --check src`
+- [ ] Any unit-test I/O string changes documented in **Answer** with justification

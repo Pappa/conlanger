@@ -89,8 +89,9 @@ A **cleaned rule corpus** (applier-neutral YAML SoT) derived from **Index Diachr
 - [Config-only `status: skipped`; stop parse auto-skip](issues/89-unify-status-skipped.md) — grill 2026-08-21 Q5: skip only `skip_rules` / `skip_sections`; auto-skip off; skipped rules are ASCA comments; section field is `status: skipped`.
 - [Missing-arrow `stages: ["text"]`](issues/90-missing-arrow-single-stage.md) — Q6: length-1 spine; compile supplies empty output; not skipped unless also in `skip_rules`. Blocked by 89.
 - [Docs: parse → compile → validate](issues/91-three-stage-pipeline-docs.md) — Q7 / [ADR-0013](../../docs/adr/0013-parse-compile-validate.md); inventory under validate.
-- [Grill: pydantic compile models](issues/92-grill-pydantic-compile-refactor.md) — Q8; **ready-for-human**; blocks 93.
-- [Refactor compile classes to pydantic](issues/93-pydantic-compile-refactor.md) — per-field transforms; `DiachronicRuleset`; blocked by 92.
+- [Grill: pydantic compile models](issues/92-grill-pydantic-compile-refactor.md) — **resolved** (2026-08-21): keep **`DiachronicSeries`**; per-field compile at instantiation; alternatives stay on `SoundChangeRule`. [ADR-0014](../../docs/adr/0014-per-field-asca-compile.md).
+- [Refactor compile classes to pydantic](issues/93-pydantic-compile-refactor.md) — per-field **string** transforms; spec is ticket 92 Answer. [ADR-0014](../../docs/adr/0014-per-field-asca-compile.md).
+- [Grill: structured compile IR on SoundChangeRule](issues/94-grill-structured-soundchangerule-ir.md) — collections for condensed/parallel columns and sets; **blocked by 93**; not in 93.
 
 
 ## Pipeline documentation (grill 2026-08-07)
