@@ -189,7 +189,7 @@ def test_validate_corpus_rule_missing_arrow():
     (row,) = validate_corpus_rule(
         _SECTION,
         {
-            "stages": [],
+            "stages": ["no arrow"],
             "raw": "no arrow",
             "source": "sample.html:1",
         },
@@ -197,7 +197,8 @@ def test_validate_corpus_rule_missing_arrow():
         probe_words=None,
     )
     assert row.ok is False
-    assert row.failure_class == "format_error"
+    assert row.failure_class != "format_error"
+    assert "no compile steps" not in row.description
 
 
 @patch(
@@ -216,7 +217,7 @@ def test_validate_corpus_rule_diachronic_compile_format_error(_mock_prs):
     assert "bad compile" in row.description
 
 
-def test_validate_corpus_rule_format_error_no_compile_steps():
+def test_validate_corpus_rule_single_stage_compiles_with_empty_output():
     (row,) = validate_corpus_rule(
         _SECTION,
         {"stages": ["a"], "raw": "a →", "source": "sample.html:7"},
@@ -224,8 +225,8 @@ def test_validate_corpus_rule_format_error_no_compile_steps():
         probe_words=None,
     )
     assert row.ok is False
-    assert row.failure_class == "format_error"
-    assert "no compile steps" in row.description
+    assert row.failure_class != "format_error"
+    assert "no compile steps" not in row.description
 
 
 def test_validate_corpus_rule_format_error():

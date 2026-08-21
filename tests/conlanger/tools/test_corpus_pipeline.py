@@ -146,7 +146,7 @@ def test_e2e_minimal_html_fixture_shape_and_raw_preservation(tmp_path: Path):
     assert feature_rule["env"] == "_#"
     assert "voiced" in feature_rule["raw"]
 
-    assert bad_rule["stages"] == []
+    assert bad_rule["stages"] == ["no arrow here"]
     assert "status" not in bad_rule
 
 
@@ -261,7 +261,8 @@ def test_e2e_smoke_pipeline_validate(
 
     if case_id == "held-out-parse":
         assert not rows[0].ok
-        assert rows[0].failure_class == "format_error"
+        assert rows[0].failure_class != "format_error"
+        assert "no compile steps" not in rows[0].description
         return
 
     if expect_ok:

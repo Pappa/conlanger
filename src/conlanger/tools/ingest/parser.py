@@ -50,6 +50,7 @@ from conlanger.utils.mappings import (
     apply_manual_mappings,
 )
 from conlanger.utils.parsing import (
+    extract_missing_arrow_rule_parts,
     extract_rule_parts,
     extract_text_with_subs,
     finalize_stages_shape,
@@ -152,16 +153,7 @@ class IndexDiachronicaParser:
         normalized = normalize_symbols(working)
         parts = extract_rule_parts(normalized)
         if parts is None:
-            rule = {
-                "stages": [],
-                "raw": raw,
-                "source": source,
-            }
-            if rule_comment:
-                rule["comment"] = rule_comment
-            if rule_id:
-                rule["rule_id"] = rule_id
-            return [rule]
+            parts = extract_missing_arrow_rule_parts(normalized)
         if rule_comment:
             parts["comment"] = rule_comment
         parts = apply_series_expansions(parts, self._parser_config.series_expansions)

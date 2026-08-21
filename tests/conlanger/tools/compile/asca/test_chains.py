@@ -22,8 +22,10 @@ def test_expand_chained_corpus_rule_empty_stages_emits_nothing():
     assert expand_chained_corpus_rule({"stages": []}) == []
 
 
-def test_expand_chained_corpus_rule_single_stage_emits_nothing():
-    assert expand_chained_corpus_rule({"stages": ["a"]}) == []
+def test_expand_chained_corpus_rule_single_stage_emits_empty_output():
+    assert expand_chained_corpus_rule({"stages": ["a"]}) == [
+        {"input": "a", "output": ""}
+    ]
 
 
 def test_expand_chained_corpus_rule_propagates_env_to_each_step():
@@ -66,6 +68,19 @@ def test_expand_chained_corpus_rule_propagates_sporadic_to_each_step():
         {"input": "a", "output": "b", "sporadic": True, "comment": "note"},
         {"input": "b", "output": "c", "sporadic": True, "comment": "note"},
     ]
+
+
+def test_sound_change_ruleset_expands_single_stage_with_empty_output():
+    section = {
+        "index": "1.0",
+        "section": "Missing arrow",
+        "rules": [{"stages": ["no arrow here"], "raw": "no arrow here"}],
+    }
+    ruleset = DiachronicSeries(section, "asca")
+    rule_parts = [part for part in ruleset._parts if isinstance(part, SoundChangeRule)]
+    assert len(rule_parts) == 1
+    assert rule_parts[0].input == "no arrow here"
+    assert rule_parts[0].output == ""
 
 
 def test_sound_change_ruleset_expands_chained_corpus_rule():

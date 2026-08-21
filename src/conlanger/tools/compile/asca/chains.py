@@ -9,15 +9,16 @@ def expand_chained_corpus_rule(rule: dict[str, str]) -> list[dict[str, str]]:
     """Expand corpus ``stages`` into sequential single-step ASCA rules.
 
     One corpus YAML row may compile to several ASCA rules. Rule-level ``env`` and
-    ``exception`` (when present) attach to each emitted step. Empty ``stages`` emit
-    nothing.
+    ``exception`` (when present) attach to each emitted step. A single non-empty
+    stage compiles to one rule with empty output. Empty ``stages`` emit nothing.
     """
     stages = rule.get("stages", [])
     non_empty = [stage.strip() for stage in stages if stage and stage.strip()]
+    meta = {key: rule[key] for key in _CHAIN_META_KEYS if key in rule}
+    if len(non_empty) == 1:
+        return [{"input": non_empty[0], "output": "", **meta}]
     if len(non_empty) < 2:
         return []
-
-    meta = {key: rule[key] for key in _CHAIN_META_KEYS if key in rule}
     expanded: list[dict[str, str]] = []
     for index in range(len(non_empty) - 1):
         expanded.append(

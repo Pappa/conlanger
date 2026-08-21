@@ -55,6 +55,7 @@ from conlanger.utils.mappings import (
 )
 from conlanger.utils.parsing import (
     build_stages_from_spine,
+    extract_missing_arrow_rule_parts,
     extract_rule_parts,
     extract_text_with_subs,
     finalize_stages_shape,
@@ -119,6 +120,13 @@ def _write_index_diachronica_html(
     )
 
 
+def _extract_rule_parts_for_test(normalized: str):
+    parts = extract_rule_parts(normalized)
+    if parts is None:
+        return extract_missing_arrow_rule_parts(normalized)
+    return parts
+
+
 def _load_sampled_html_rules() -> list[tuple]:
     df = pd.read_csv(_SAMPLED_RULES_CSV, dtype=str, keep_default_na=False)
     if "kind" in df.columns:
@@ -129,7 +137,7 @@ def _load_sampled_html_rules() -> list[tuple]:
             expected = None
         else:
             normalized = normalize_symbols(strip_leading_index_list_marker(row.raw))
-            expected = extract_rule_parts(normalized)
+            expected = _extract_rule_parts_for_test(normalized)
         cases.append((row.id, row.raw, expected))
     return cases
 
@@ -308,6 +316,21 @@ def test_finalize_stages_shape_keeps_short_spine():
 
 def test_finalize_stages_shape_keeps_valid_spine():
     assert finalize_stages_shape({"stages": ["a", " ", "b"]}) == {"stages": ["a", "b"]}
+
+
+def test_extract_missing_arrow_rule_parts():
+    assert extract_missing_arrow_rule_parts("no arrow here") == {
+        "stages": ["no arrow here"]
+    }
+    assert extract_missing_arrow_rule_parts("a to b / _#") == {
+        "stages": ["a to b"],
+        "env": "_#",
+    }
+    assert extract_missing_arrow_rule_parts("a to b / _# ! V_") == {
+        "stages": ["a to b"],
+        "env": "_#",
+        "exception": "V_",
+    }
 
 
 def test_extract_rule_parts_strips_leading_list_marker():
@@ -974,7 +997,7 @@ def test_split_post_arrow(post_arrow, expected):
             {"stages": ["s", "ʃ"], "exception": "V_"},
         ),
         ("ɬ → l", {"stages": ["ɬ", "l"]}),
-        ("no arrow here", None),
+        ("no arrow here", {"stages": ["no arrow here"]}),
         (
             "ʔ → ∅/ _#",
             {"stages": ["ʔ", "∅"], "env": "_#"},
@@ -1012,7 +1035,7 @@ def test_split_post_arrow(post_arrow, expected):
     ],
 )
 def test_extract_rule_parts(raw, expected):
-    assert extract_rule_parts(raw) == expected
+    assert _extract_rule_parts_for_test(raw) == expected
 
 
 def test_parse_rule_element_with_sub_and_env():
@@ -1048,7 +1071,7 @@ def test_parse_rule_element_missing_arrow():
         '<p class="schg">a to b no arrow</p>', create_parent=False
     )
     rule = _parse_rule_element(el, source_file="index_diachronica_original.html")[0]
-    assert rule["stages"] == []
+    assert rule["stages"] == ["a to b no arrow"]
     assert "status" not in rule
 
 

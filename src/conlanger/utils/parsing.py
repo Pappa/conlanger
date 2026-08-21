@@ -218,6 +218,39 @@ def split_post_arrow(post_arrow: str) -> tuple[str, str | None, str | None]:
     return out, env, exception
 
 
+def _rule_parts_from_spine_text(
+    spine_text: str,
+    *,
+    rest: str | None,
+) -> dict[str, Any]:
+    """Build corpus rule parts from pre-env spine text and optional env/exception tail."""
+    stage_text = spine_text.strip()
+    if rest is None:
+        trail = TRAILING_EXCEPTION_RE.search(stage_text)
+        if trail:
+            stage_text = stage_text[: trail.start()].rstrip()
+            env, exception = None, trail.group(1).strip() or None
+        else:
+            env, exception = None, None
+    else:
+        env, exception = split_env_exception(rest)
+
+    stages = [normalize_rule_arrows(stage_text)] if stage_text else []
+    parts: dict[str, Any] = {"stages": stages}
+    if env is not None:
+        parts["env"] = normalize_rule_arrows(env)
+    if exception is not None:
+        parts["exception"] = normalize_rule_arrows(exception)
+    return parts
+
+
+def extract_missing_arrow_rule_parts(raw: str) -> dict[str, Any]:
+    """Split a no-arrow rule string into a single input stage plus optional env/exception."""
+    raw = strip_leading_index_list_marker(raw)
+    stage_text, rest = split_output_rest(raw.strip())
+    return _rule_parts_from_spine_text(stage_text, rest=rest)
+
+
 def extract_rule_parts(raw: str) -> dict[str, Any] | None:
     """Split a raw rule string into ``stages`` and optional env/exception.
 
