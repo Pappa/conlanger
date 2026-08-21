@@ -14,3 +14,7 @@ When cleaning Index Diachronica rules toward ASCA-valid **corpus rules**, prefer
 - Corpus field is thin optional `status` (`needs-validation` \| `skipped`); the older `skipped` reason-string field is superseded.
 - Validation reports are analysis artifacts (e.g. pandas), not long-term SoT.
 - Correction workflow, abbreviation, and feature-normalisation work follow this ladder and authority split (see wayfinder ticket *Historical fidelity vs valid-but-inaccurate fallback*).
+
+## Amendment (2026-08-21)
+
+**`status: skipped` is config-only.** Parse must not auto-skip missing-arrow, gloss-only, or otherwise unrepresentable lines — those stay in parse → compile → validate so ASCA can fail in the open. A **corpus rule** is skipped only when its **rule id** is in `parser_config.yml` `skip_rules`; a **sound-change section** is skipped only when its `index` is in `skip_sections`. Boolean `skipped: true` / `skip: true` are not corpus fields. `needs-validation` on individual rules is unused in the current pipeline. See `CONTEXT.md` (**Status**, **Skipped**) and [ADR-0013](0013-parse-compile-validate.md).

@@ -57,16 +57,16 @@ _Avoid_: treating uncorrected parse dumps as overriding the HTML; using “the H
 ### Sound-change structure
 
 **Sound-change section**:
-One Index Diachronica `<h2>` section — a named language-change block (index, title, citation, comments) containing zero or more rule lines. One sound-change section maps to one runtime compile unit (`DiachronicSeries`), not to a single corpus rule.
-_Avoid_: `DiachronicSeries` as the glossary term for this level; conflating “section” with “rule line”
+One Index Diachronica `<h2>` section — a named language-change block (index, title, citation, comments) containing zero or more rule lines. One sound-change section maps to one runtime compile unit (`DiachronicSeries`), not to a single corpus rule. Optional **status** may hold the whole section out of compile (`status: skipped`).
+_Avoid_: `DiachronicSeries` as the glossary term for this level; conflating “section” with “rule line”; boolean `skipped: true` on the section
 
 **Corpus rule**:
-One structured entry in the rule corpus, normally corresponding to a single Index Diachronica rule line (including internal sets/alternations when needed). It always carries **stages**, raw, **rule id**, and source; environment and exception are optional (absent environment = any; absent exception = none). Optional rule status may hold a rule out or flag it for extra validation; edge cases not yet representable use empty stages (`stages: []`) with `status: skipped` instead of splitting into multiple corpus rules.
-_Avoid_: treating every surface alternation as a separate authored rule by default; using “rule” when the whole HTML section is meant; required `input`/`output` fields as the corpus shape (replaced by **stages**); positional `rule_idx` as the stored identifier
+One structured entry in the rule corpus, normally corresponding to a single Index Diachronica rule line (including internal sets/alternations when needed). It always carries **stages**, raw, **rule id**, and source; environment and exception are optional (absent environment = any; absent exception = none). **Status** is omitted unless the rule’s **rule id** is listed in `parser_config.yml` `skip_rules`. A line with no change arrow is still a corpus rule (not auto-skipped); its **stages** hold the pre-env text and compile validation is allowed to fail.
+_Avoid_: treating every surface alternation as a separate authored rule by default; using “rule” when the whole HTML section is meant; required `input`/`output` fields as the corpus shape (replaced by **stages**); positional `rule_idx` as the stored identifier; `skip: true`; auto-skipping missing-arrow or prose lines at parse
 
 **Stages**:
-The ordered list of opaque Index-shaped strings on a corpus rule that encode the change spine — successive forms separated by arrows in the Index line. Length 2 is a single-step change (former `input` then `output`); length ≥ 3 is a chain; length 0 with `status: skipped` means unrepresentable. Each entry stays an opaque string (sets, matrices, class letters intact), not a structured segment object.
-_Avoid_: `input`/`output` as the stored spine; encoding the chain only as `" > "` inside a single string field; list-typed `input` with scalar `output`
+The ordered list of opaque Index-shaped strings on a corpus rule that encode the change spine — successive forms separated by arrows in the Index line. Length 2 is a single-step change (former `input` then `output`); length ≥ 3 is a chain (compile expands adjacent pairs; parse does not split the chain into extra corpus rows). Length 1 is a line with no `→`: the pre-env / pre-exception / pre-comment text; compile supplies a missing output. Each entry stays an opaque string (sets, matrices, class letters intact), not a structured segment object.
+_Avoid_: `input`/`output` as the stored spine; encoding the chain only as `" > "` inside a single string field; list-typed `input` with scalar `output`; parse-time chain split into extra YAML rows; treating a length-1 spine as a skip
 
 **Optional outputs**:
 An Index output written as a set while the matching input is **not** a set (e.g. `d → {∅,ð}`), encoding speaker variation among alternative results (including null). Detection gate: whole-field output `{…}` and input not a whole-field set — not unequal paired-set arity. Uneven set↔set and nested sets are out of scope for this resolution path. The YAML SoT keeps the set opaque in **stages**. At compile, every member becomes an **alternative outcome** (full compiled peer rule, no further children); the parent picks one uniformly at random via an instance `Random` (unseeded if omitted) as its emitted outcome. Inventory validates **only** those alternatives (column **`alt_idx`**, empty when there are no alternatives)—never the parent’s sample. **Sporadic** sampling is a separate later ticket; RNG plumbing should stay reusable. Design recorded in [ticket 61](.scratch/cleaned-rule-corpus/issues/61-grill-optional-outputs.md). Distinct from **sporadic** (whether to apply the rule at all).
@@ -184,13 +184,13 @@ _Avoid_: ad-hoc one-off regex fixes without clustering; “error message” when
 A temporary CSV of per-rule validation state (status, reason, description, and related detail) produced for analysis (e.g. with pandas); not the long-term source of truth.
 _Avoid_: treating the report as the cleaned rule corpus; requiring the CSV to interpret an omitted (ok) status
 
-**Rule status**:
-Optional lifecycle marker on a corpus rule: `needs-validation` or `skipped` (omit means ok). Full reason and description live in a temporary validation report, not on the YAML rule.
-_Avoid_: `skipped` as a reason-string field on the rule; embedding validator diagnostics in the cleaned corpus SoT
+**Status**:
+Optional lifecycle marker: `skipped` (omit means active). On a **sound-change section**, set when the section `index` is in `parser_config.yml` `skip_sections`. On a **corpus rule**, set only when the **rule id** is in `skip_rules`. Parse does not invent `status` for missing arrows, gloss-only lines, or other unrepresentable spines.
+_Avoid_: `skip: true`; boolean `skipped: true`; auto-skip at parse; embedding validator diagnostics in the cleaned corpus SoT
 
 **Skipped**:
-A rule-status value meaning the rule is held out of normal compile (empty `stages: []`) pending investigation or an owner-approved permanent deferral.
-_Avoid_: deleting the HTML line from the corpus; silent drop without provenance; using “skipped” for rules that still compile
+A **status** value meaning compile hold-out from owner config. A skipped **section** is parsed then bypassed at compile and inventory. A skipped **corpus rule** is parsed then emitted as an ASCA comment (`#\t…`), not as an active change. Unlisted failing rules still compile and are allowed to fail **compile validation**.
+_Avoid_: auto-skipping rules that are merely invalid; omitting unlisted failures from validation; deleting the HTML line from the corpus
 
 ### Cleaning policy
 
