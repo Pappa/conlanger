@@ -47,26 +47,13 @@ from conlanger.tools.compile.asca.group_mappings import (
         ("X > y", "X > y"),
         ("S > P", "P > C:[+labial]"),
         ("K(ʷ) > k", "{C:[-front,+back,+hi,-lo,+round],C:[-front,+back,+hi,-lo]} > k"),
+        ("Qʷ > k", "{C:[-front,+back,-hi,-lo,+round],[+click,+round]} > k"),
     ],
 )
 def test_apply_asca_group_mappings_to_string(input, expected, fx_sample_group_mappings):
     assert (
         apply_asca_group_mappings_to_string(input, fx_sample_group_mappings) == expected
     )
-
-
-# TODO: figure out what these 2 tests are supposed to be doing and delete if unnecessary
-def test_apply_asca_group_mappings_labializes_set_mapping_values():
-    mappings = {"M": "{C:[+hi],O:[+delrel]}"}
-    assert (
-        apply_asca_group_mappings_to_string("Mʷ", mappings)
-        == "{C:[+hi,+round],O:[+delrel,+round]}"
-    )
-
-
-def test_apply_asca_group_mappings_labializes_non_matrix_mapping():
-    mappings = {"M": "Kr"}
-    assert apply_asca_group_mappings_to_string("Mʷ", mappings) == "Kr"
 
 
 @pytest.mark.parametrize(

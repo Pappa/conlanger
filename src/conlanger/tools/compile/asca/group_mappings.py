@@ -21,21 +21,23 @@ def asca_group_mappings_dict() -> dict[str, str]:
     return {row.grouping: row.mapping for row in load_group_mappings()}
 
 
-def _labialize_single_token(token: str) -> str:
-    if not token.endswith("]"):
-        return token
-    if re.fullmatch(r"(.+):\[([^\]]+)\]", token):
-        return apply_features_to_token(token, ("+round",))
-    return f"{token[:-1]},+round]"
-
-
 def _labialize_mapping(mapping: str) -> str:
     if mapping.startswith("{") and mapping.endswith("}"):
         members = [part.strip() for part in mapping[1:-1].split(",") if part.strip()]
-        return (
-            "{" + ",".join(_labialize_single_token(member) for member in members) + "}"
-        )
-    return _labialize_single_token(mapping)
+        labialized: list[str] = []
+        for member in members:
+            if not member.endswith("]"):
+                labialized.append(member)
+            elif re.fullmatch(r"(.+):\[([^\]]+)\]", member):
+                labialized.append(apply_features_to_token(member, ("+round",)))
+            else:
+                labialized.append(f"{member[:-1]},+round]")
+        return "{" + ",".join(labialized) + "}"
+    if not mapping.endswith("]"):
+        return mapping
+    if re.fullmatch(r"(.+):\[([^\]]+)\]", mapping):
+        return apply_features_to_token(mapping, ("+round",))
+    return f"{mapping[:-1]},+round]"
 
 
 def expand_grouping_letter(
