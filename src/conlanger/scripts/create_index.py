@@ -101,6 +101,12 @@ def main() -> int:
         ),
     )
     ap.add_argument(
+        "--field-isolation",
+        type=bool,
+        default=False,
+        help=("run asca-field-isolation (default: False)"),
+    )
+    ap.add_argument(
         "--field-isolation-all",
         action="store_true",
         help=(
@@ -220,6 +226,7 @@ def main() -> int:
     group_mappings = asca_group_mappings_dict()
     rows, field_rows = iter_inventory_with_field_isolation(
         doc,
+        field_isolation=args.field_isolation,
         probe_words=args.probe_words,
         group_mappings=group_mappings,
         asca_bin=asca_command,
@@ -244,11 +251,12 @@ def main() -> int:
 
     write_validation_csv(rows, csv_path)
     write_filtered_inventory_csvs(current_df, args.inventory_dir)
-    write_field_isolation_csvs(
-        field_rows,
-        args.inventory_dir,
-        include_all=args.field_isolation_all,
-    )
+    if args.field_isolation:
+        write_field_isolation_csvs(
+            field_rows,
+            args.inventory_dir,
+            include_all=args.field_isolation_all,
+        )
     if args.reset_changelog and changelog_path.is_file():
         changelog_path.unlink()
     flip_n = append_ok_flip_changelog(flips, changelog_path)

@@ -4,8 +4,8 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9688** (one per index rule)
-- OK: **8270** (85.4%)
-- Fail: **1358** (14.0%)
+- OK: **8286** (85.5%)
+- Fail: **1342** (13.9%)
 - Skipped: **60** (0.6%)
 - Sections all OK: **337 / 711** (47.4%)
 - Sections skipped: **3 / 714** (0.4%)
@@ -15,11 +15,11 @@
 | count | failure_class |
 |------:|---------------|
 | 388 | `syntax_other` |
-| 238 | `expected_underscore` |
-| 186 | `unknown_character` |
-| 131 | `runtime_other` |
+| 239 | `expected_underscore` |
+| 172 | `unknown_character` |
+| 130 | `runtime_other` |
 | 114 | `unknown_grouping` |
-| 88 | `unknown_feature` |
+| 86 | `unknown_feature` |
 | 56 | `prose_or_expected_arrow` |
 | 43 | `nested_brackets` |
 | 38 | `expected_number` |
@@ -37,10 +37,10 @@
 | count | error_token |
 |------:|-------------|
 | 37 | `́` |
-| 23 | `ː` |
 | 22 | `̣` |
 | 14 | `₂` |
 | 12 | `̊` |
+| 9 | `ː` |
 
 ### unknown_feature
 
@@ -48,8 +48,8 @@
 |------:|-------------|-----------|
 | 22 | `open` | `ten` |
 | 10 | `closed` | `cons` |
-| 10 | `samePOA` | `lateral` |
 | 9 | `fortis` | `contin` |
+| 8 | `samePOA` | `lateral` |
 | 8 | `mid` | `man` |
 | 6 | `lenis` | `tens` |
 | 5 | `weak` | `man` |
@@ -88,17 +88,6 @@
 | 2 | `A` |
 | 1 | `W` |
 | 1 | `Q` |
-
-
-## Field isolation blame (error rows)
-
-| count | blame |
-|------:|-------|
-| 545 | `input` |
-| 509 | `env` |
-| 415 | `output` |
-| 198 | `multi` |
-| 130 | `exception` |
 
 ## Notes
 

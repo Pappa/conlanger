@@ -11907,7 +11907,7 @@ sections:
     rule_id: Nemi-Pije-Fwai-n-n̥
   - stages:
     - ONV
-    - Sʰṽ
+    - Shṽ
     env: Pije and Fwai
     raw: ONV → SʰṼ / Pije and Fwai
     source: index_diachronica_original.html:3236
@@ -28537,19 +28537,19 @@ sections:
   - stages:
     - S[- voice]ː S[+ voice]ː
     - hS S[- voice]ː
-    raw: S[- voice]ː S[+ voice]ː → hS S[- voice]ː
+    raw: S[- voice]ː S[+ voice]ː → ʰS S[- voice]ː
     source: index_diachronica_original.html:6369
     rule_id: Early-Icelandic-S-voiceː-S+-voiceː
   - stages:
     - S[- voice]
     - hS
     env: _{l,ɬ,m,n}
-    raw: S[- voice] → hS / _{l,ɬ,m,n}
+    raw: S[- voice] → ʰS / _{l,ɬ,m,n}
     source: index_diachronica_original.html:6370
     rule_id: Early-Icelandic-S-voice
   - stages:
     - S[- voice]
-    - Sʰ
+    - Sh
     env: '#v_V'
     raw: 'S[- voice] → Sʰ / #v_V'
     source: index_diachronica_original.html:6371
@@ -49387,7 +49387,7 @@ sections:
     rule_id: Sebirwa-i-u-VS
   - stages:
     - S
-    - Sʰ
+    - Sh
     - Aʰ
     raw: S → Sʰ → Aʰ
     source: index_diachronica_original.html:10470
@@ -67227,7 +67227,7 @@ sections:
     source: index_diachronica_original.html:14233
   rules:
   - stages:
-    - Sʰ
+    - Sh
     - F
     - h
     - ∅)

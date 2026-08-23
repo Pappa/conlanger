@@ -151,11 +151,3 @@ rules:
               id: Early-Icelandic-S
               content: "S → ∅ / N_S"
               reason: "Can't find any reference to POA in original source. Same POA as what exactly?: http://www.kunstsprachen.de/s17/rules.sch"
-      - rule:
-              id: Early-Icelandic-S-voiceː-S+-voiceː
-              content: "S[- voice]ː S[+ voice]ː → hS S[- voice]ː"
-              reason: "I'm struggling to match all these Early Icelandic rules to the source: http://www.kunstsprachen.de/s17/rules.sch"
-      - rule:
-              id: Early-Icelandic-S-voice
-              content: "S[- voice] → hS / _{l,ɬ,m,n}"
-              reason: "I'm struggling to match all these Early Icelandic rules to the source: http://www.kunstsprachen.de/s17/rules.sch"

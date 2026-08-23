@@ -74,3 +74,5 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 "*L","L",False,liquids - may be too broad
 "*j","j",False,may be too broad
 "*r","r",False,may be too broad
+"ʰS","hS",False,I have no idea what ʰ is supposed to represent - and the source isn't clear either
+"Sʰ","Sh",False,I have no idea what ʰ is supposed to represent - and the source isn't clear either

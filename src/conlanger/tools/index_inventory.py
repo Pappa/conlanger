@@ -1023,6 +1023,7 @@ def validate_index_rule(
 def iter_inventory_with_field_isolation(
     doc: dict[str, Any],
     *,
+    field_isolation: bool = False,
     probe_words: Path | None,
     group_mappings: dict[str, str] | None = None,
     asca_bin: str | None = None,
@@ -1043,11 +1044,12 @@ def iter_inventory_with_field_isolation(
                 asca_bin=asca_bin,
             )
             validation_rows.extend(rows)
-            field_rows.extend(
-                field_isolation_rows_for_validation_rows(
-                    rows, targets, asca_bin=asca_bin
+            if field_isolation:
+                field_rows.extend(
+                    field_isolation_rows_for_validation_rows(
+                        rows, targets, asca_bin=asca_bin
+                    )
                 )
-            )
     return validation_rows, field_rows
 
 
