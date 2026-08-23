@@ -26,4 +26,4 @@ Findings: [research/asca-class-letter-mappings.md](../research/asca-class-letter
 
 ### Implementation note
 
-Current `IndexDiachronicaParser.apply_group_mappings` still uses `str.maketrans` (single-char, one pass). Expansions containing nested letters (e.g. `{L,G}`) are not re-translated — documented in research. Runtime `PhonologicalRuleSet` may replace this.
+Current `IndexDiachronicaParser.apply_group_mappings` still uses `str.maketrans` (single-char, one pass). Expansions containing nested letters (e.g. `{L,G}`) are not re-translated — documented in research. Runtime `DiachronicSeries` may replace this.

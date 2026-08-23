@@ -51,7 +51,7 @@ Implemented ADR-0011 one-shot cutover:
 
 - **Parse:** `IndexDiachronicaParser` emits `stages` (split on every `→` after env/exception isolation); hold-outs use `stages: []` + `status: skipped`.
 - **Compile:** `expand_chained_corpus_rule` expands adjacent stage pairs; `normalize_corpus_rule_tilde_fields` normalizes per stage before pairing.
-- **Inventory:** `validate_corpus_rule` compiles via `PhonologicalRuleSet` (no direct `SoundChangeRule` on corpus rows).
+- **Inventory:** `validate_corpus_rule` compiles via `DiachronicSeries` (no direct `SoundChangeRule` on corpus rows).
 - **Regenerated** `data/diachronica/index_diachronica_parsed.yml` with `stages` only.
 - **Docs:** ticket 03 schema answer + ADR-0005 amendment synced to ADR-0011.
 

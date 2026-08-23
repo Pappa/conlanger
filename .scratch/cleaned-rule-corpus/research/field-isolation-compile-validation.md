@@ -22,7 +22,7 @@ corpus rule dict {input, output, env?, exception?, …}
         ▼  SoundChangeRule (requires input+output; optional env/exception)
    compile: join fields → group_mappings → length/ejective/alias norms
         │
-        ▼  DiachronicSeries / PhonologicalRuleSet.to_sound_change_ruleset()
+        ▼  DiachronicSeries
    .rsca body (@ title + indented rule lines)
         │
         ▼  validate_asca → asca run <probe.wsca> --rules <tmp.rsca>

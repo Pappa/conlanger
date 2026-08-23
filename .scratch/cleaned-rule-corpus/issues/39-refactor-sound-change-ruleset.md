@@ -12,7 +12,7 @@ Refactor `DiachronicSeries`, `SoundChangeRule`, and related compile helpers in `
 
 Grill session (2026-08-07): implementation details are **deferred** until pipeline documentation and ASCA transform ordering are complete. This ticket is a **placeholder**; scope is written after [37](37-document-sound-change-pipeline.md) and [38](38-spike-asca-compile-transform-order.md) resolve.
 
-Current pain: `rules.py` mixes applier formatting (`RuleTitle`, `RuleCitation`, …), top-level ASCA normalizers, and assembly in `DiachronicSeries` / `SoundChangeRule`. Glossary: **`PhonologicalRuleSet`** is the applier-neutral section container; **`DiachronicSeries`** is the applier render/compile output layer ([CONTEXT.md](../../../CONTEXT.md)).
+Current pain: `rules.py` mixes applier formatting (`RuleTitle`, `RuleCitation`, …), top-level ASCA normalizers, and assembly in `DiachronicSeries` / `SoundChangeRule`. Glossary: **`DiachronicSeries`** is the applier-neutral section container; **`DiachronicSeries`** is the applier render/compile output layer ([CONTEXT.md](../../../CONTEXT.md)).
 
 ## Scope (resolved)
 

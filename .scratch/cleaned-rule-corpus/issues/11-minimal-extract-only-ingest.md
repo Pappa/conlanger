@@ -16,7 +16,7 @@ Sound-change sections map one-to-one with HTML `<h2>` blocks (section title, ind
 
 - Class-letter expansion and `group_mappings.csv` (retire ingest-time `str.maketrans` from `IndexDiachronicaParser`)
 - Feature-matrix synonym replacement (`feature_mappings.csv`)
-- `PhonologicalRuleSet` compile layer
+- `DiachronicSeries` compile layer
 - `status` assignment on corpus rules
 - Trailing-comment extraction, prose-env mapping, meta-notation, series indices
 

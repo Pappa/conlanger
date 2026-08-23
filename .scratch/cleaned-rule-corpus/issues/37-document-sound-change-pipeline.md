@@ -28,7 +28,7 @@ Grill session (2026-08-07): compile transform order must be clearly defined and 
 
 ### 3. `docs/sound-change-applier.md`
 
-- **Applier compile only:** `PhonologicalRuleSet` → `DiachronicSeries` section assembly → per-rule ASCA transforms → `.rsca` string shape.
+- **Applier compile only:** `DiachronicSeries` → `DiachronicSeries` section assembly → per-rule ASCA transforms → `.rsca` string shape.
 - Single pipeline table for per-rule transforms. Implemented steps (current `SoundChangeRule._compile_rule_text` order):
   1. Join corpus fields
   2. `normalize_asca_optional_grouping_ellipsis`

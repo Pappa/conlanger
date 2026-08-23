@@ -20,7 +20,7 @@ Build an end-to-end pipeline that:
 
 1. Parses **Index Diachronica HTML** into the applier-neutral YAML schema (global and section-level **abbreviation** tables, **sound-change sections**, **corpus rules** with `input`/`output`/`raw`/`source` and optional `env`/`exception`/`status`/`comment`).
 2. Applies **class-first** normalisation at ingest (safe **symbol** and **feature matrix** synonym replacement; **class letter** expansion deferred to compile time via **abbreviation table** CSV).
-3. Compiles each **sound-change section** through a **PhonologicalRuleSet** that loads package **abbreviation tables** and emits ASCA-ready strings.
+3. Compiles each **sound-change section** through a **DiachronicSeries** that loads package **abbreviation tables** and emits ASCA-ready strings.
 4. Runs **compile validation** per **corpus rule** via `validate_asca` (ASCA 0.10.2, fixed baseline wordlist `tests/fixtures/asca_probe_words.wsca`).
 5. Produces a temporary **validation report** (CSV) with **failure classes** and reason vocabulary; sets thin optional `status` on corpus rules (`needs-validation`, `skipped`; omit = ok).
 6. Iterates: cluster failures → implement parser/compiler fixes → regenerate YAML → grow fixtures for changed **rule status** — until adoption criteria for replacing HTML as SoT are met.
@@ -43,7 +43,7 @@ Brassica compilation remains a future parallel path behind the same corpus (ADR-
 12. As a developer, I want **compile validation** after applier compile (not at YAML ingest), so that the corpus remains applier-neutral per ADR-0003.
 13. As a developer, I want `validate_asca(DiachronicSeries) -> True` with clear errors on failure, so that correction workflow has a concrete ASCA gate.
 14. As a developer, I want validation driven by ASCA 0.10.2 via `asca run` on the **baseline probe wordlist** (`tests/fixtures/asca_probe_words.wsca`), so that runtime structural failures are caught alongside syntax errors where probes match rule shape.
-15. As a developer, I want **PhonologicalRuleSet** to load `group_mappings.csv` at compile time, so that **class letter** expansions apply without baking ASCA syntax into the corpus YAML.
+15. As a developer, I want **DiachronicSeries** to load `group_mappings.csv` at compile time, so that **class letter** expansions apply without baking ASCA syntax into the corpus YAML.
 16. As a developer, I want unmapped **class letters** to pass through unchanged, so that validation surfaces unknown tokens via **failure classes** rather than silent substitution.
 17. As a developer, I want **symbol** normalisation at HTML→YAML ingest, so that Index boundary/null/stress marks become ASCA-canonical in corpus fields while `raw` preserves Index form.
 18. As a developer, I want **feature matrix** synonym replacement at ingest inside `[...]` only, so that Index feature names with safe 1:1 ASCA equivalents normalise via `feature_mappings.csv`.
@@ -88,14 +88,14 @@ Brassica compilation remains a future parallel path behind the same corpus (ADR-
 - **Parse-time class-first transforms** (correction passes 14–25, per edit ladder): leading em-dash list markers; remaining `→` → `>` in field values; uncertainty glosses → `sporadic: true`; trailing editorial glosses → **`comment`** (ticket [31](issues/31-capture-rule-comments-at-parse-time.md)); env stress phrases (`when stressed` / `when unstressed`); smart-quote cleanup. All preserve `raw`.
 - **Correspondence-series indices** and **collective subscripts**: parse-time expansion to ASCA-parseable strings when section map exists; maps **extracted from HTML** (ticket [28](issues/28-extract-correspondence-series-mappings-from-html.md), implementation [27](issues/27-implement-parse-time-correspondence-series-expansion.md)); do not use `legacy/`. **Positional slots** and **identity subscripts** — not yet implemented.
 - **Feature matrix** synonym replacement at ingest inside `[...]` via `feature_mappings.csv`: **not yet implemented**; unmapped names left as-is (`unknown_feature` cluster).
-- **Class letters**: no ingest-time `str.maketrans` blind substitution; expansion at compile via **PhonologicalRuleSet** + `group_mappings.csv`. Six letters (C, O, F, L, N, V) pass through (ASCA inbuilt). Seventeen validated rows in `group_mappings.csv`; M (diphthong) removed — cluster-driven.
+- **Class letters**: no ingest-time `str.maketrans` blind substitution; expansion at compile via **DiachronicSeries** + `group_mappings.csv`. Six letters (C, O, F, L, N, V) pass through (ASCA inbuilt). Seventeen validated rows in `group_mappings.csv`; M (diphthong) removed — cluster-driven.
 - **Series indices**, section-local prose abbreviations, **meta-notation**: cluster-driven; hand-add abbreviation rows when inventory warrants.
 - **Whitespace tokenisation** for inter-segment spacing: deferred.
 - Edge-split (ADR-0005): interim `status: skipped` for lines not yet representable as one **corpus rule**. Multi-step chains stay one corpus row; **compile-time chain expansion** ([`expand_chained_corpus_rule`](../../src/conlanger/tools/compile/asca/chains.py)) emits sequential ASCA steps rather than skipping.
 
 ### Compile and validation
 
-- One **sound-change section** → one **PhonologicalRuleSet** (`src/conlanger/tools/phonological_ruleset.py`): runtime container delegating to `DiachronicSeries` with compile-time transforms in `SoundChangeRule`.
+- One **sound-change section** → one **DiachronicSeries** (`src/conlanger/tools/phonological_ruleset.py`): runtime container delegating to `DiachronicSeries` with compile-time transforms in `SoundChangeRule`.
 - **Compile-time transforms** (correction passes): `group_mappings.csv` class-letter expansion; `normalize_asca_length_marks()`; `normalize_asca_ejective_marks()`; labialized class letters (`Kʷ`, `K(ʷ)`, …); typographic apostrophe → ejective mark. Corpus dict fields and `raw` unchanged.
 - **Applier compiler** path: corpus rule dict → `SoundChangeRule` → `DiachronicSeries` string → `validate_asca`.
 - `validate_asca`: ASCA 0.10.2 via `asca run` on baseline probe wordlist (`tests/fixtures/asca_probe_words.wsca`); raises `ASCAValidationError` on failure; skips commented (held-out) rules. Tier 4 runtime failures may be under-detected when probes do not match rule shape — acceptable for clustering (~98% of failures are Tier 1–2 syntax). Rule-derived probe synthesis (ticket 10) — **wontfix**.
@@ -128,7 +128,7 @@ Brassica compilation remains a future parallel path behind the same corpus (ADR-
 
 ### Primary seam (proposed — one integration surface)
 
-**HTML file → `IndexDiachronicaParser.parse` → cleaned YAML document → per-section `PhonologicalRuleSet` compile → `validate_asca` per active corpus rule.**
+**HTML file → `IndexDiachronicaParser.parse` → cleaned YAML document → per-section `DiachronicSeries` compile → `validate_asca` per active corpus rule.**
 
 This is the highest seam that exercises ingest, schema shape, abbreviation/feature policy, ASCA compilation, and post-compile validation together — matching the correction workflow loop (ticket 05) and ADR-0003. Tests at this seam should:
 
@@ -155,7 +155,7 @@ Rationale: lower seams (e.g. `extract_rule_parts` alone, or `validate_asca` alon
 ### Modules under test
 
 - `IndexDiachronicaParser` (ingest)
-- `PhonologicalRuleSet` (compile)
+- `DiachronicSeries` (compile)
 - `DiachronicSeries` / `SoundChangeRule` (ASCA emission + compile transforms)
 - `validate_asca` (post-compile gate; baseline probe wordlist)
 - `corpus_inventory` / `regenerate_corpus` (orchestration: YAML + validation report from HTML path)
@@ -183,5 +183,5 @@ Rationale: lower seams (e.g. `extract_rule_parts` alone, or `validate_asca` alon
 - Class letter research: `.scratch/cleaned-rule-corpus/research/asca-class-letter-mappings.md`.
 - Inventory baseline: `.scratch/cleaned-rule-corpus/inventory/` (cleaned YAML + ASCA 0.10.2; **6422 / 9317 ok** after passes 14–25).
 - Resolved wayfinder tickets 01–13 and correction passes 14–25 are incorporated above; ticket 10 (probe synthesis) is **wontfix**; other fog items remain explicitly deferred.
-- `PhonologicalRuleSet` + compile-time transforms in `SoundChangeRule` replace parser-time `str.maketrans` for class letters.
+- `DiachronicSeries` + compile-time transforms in `SoundChangeRule` replace parser-time `str.maketrans` for class letters.
 - Re-inventory after major milestones: `uv run regenerate_corpus`.

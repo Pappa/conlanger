@@ -163,7 +163,7 @@ Placement in the four-stage pipeline ([SYSTEM.md](docs/SYSTEM.md)):
       - `normalize_asca_breve_marks`
       - `expand_meta_notation` → tilde, parentheticals, input optionals, `drop_concatenated_deletion_column`
     - `group_mappings` / series mappings are **not** applied by `DiachronicSeries` itself; they are injected into each `SoundChangeRule` and applied only inside this pipeline
-    - There is no `ASCA_COMPILE_STEP_NAMES` and no `PhonologicalRuleSet` class (the spec still names both)
+    - There is no `ASCA_COMPILE_STEP_NAMES` and no `DiachronicSeries` class (the spec still names both)
 
 How the two classes share the work, in one picture:
 

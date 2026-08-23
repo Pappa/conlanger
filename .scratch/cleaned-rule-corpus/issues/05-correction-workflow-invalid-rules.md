@@ -23,7 +23,7 @@ Domain terms: **Class-first**, **Historical fidelity**, **Sound-change section**
 
 ### Compile unit
 
-One **sound-change section** (HTML `<h2>`) per compile container → **PhonologicalRuleSet** (ticket 06). **Compile validation** per **corpus rule**, not whole-section-only.
+One **sound-change section** (HTML `<h2>`) per compile container → **DiachronicSeries** (ticket 06). **Compile validation** per **corpus rule**, not whole-section-only.
 
 ### Steady-state loop
 

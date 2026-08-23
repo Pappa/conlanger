@@ -41,7 +41,7 @@ Re-baseline against cleaned schema + ASCA 0.10.2, replacing the provisional 0.9.
 
 Entry point: `uv run regenerate_corpus` (`src/conlanger/scripts/regenerate_corpus.py`).
 
-Inventory module: `src/conlanger/tools/corpus_inventory.py` — per-rule validation via `PhonologicalRuleSet(...).to_sound_change_ruleset()` + `validate_asca` (ASCA 0.10.2, baseline `tests/fixtures/asca_probe_words.wsca`).
+Inventory module: `src/conlanger/tools/corpus_inventory.py` — per-rule validation via `DiachronicSeries(...)` + `validate_asca` (ASCA 0.10.2, baseline `tests/fixtures/asca_probe_words.wsca`).
 
 Artifacts: `.scratch/cleaned-rule-corpus/inventory/asca-rule-inventory.csv` and `asca-rule-inventory-summary.md`.
 
