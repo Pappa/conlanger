@@ -72,3 +72,7 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 " (fricative changes to approximant)"," ; (fricative changes to approximant)",False,comment
 " (Whimemsz says"," ; (Whimemsz says",False,comment
 "*L","L",False,liquids - may be too broad
+"*j","j",False,may be too broad
+"*r","r",False,may be too broad
+"*y","y",False,may be too broad
+"*z","z",False,may be too broad

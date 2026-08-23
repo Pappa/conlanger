@@ -1189,32 +1189,32 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 10.1.2,Proto-Austronesian to Proto-Philippine,Proto-Philippine-c,,index_diachronica_original.html:2601,True,,,,,
 10.1.2.1,Proto-Philippine to Bicol,Bicol-ə,,index_diachronica_original.html:2606,True,,,,,
 10.1.2.1,Proto-Philippine to Bicol,Bicol-ə_2,,index_diachronica_original.html:2607,True,,,,,
-10.1.2.1,Proto-Philippine to Bicol,"Bicol-*j-*D,z",,index_diachronica_original.html:2608,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *j {*D,z} > r d / V_V | ^ @ Rule 1, Line 1"
-10.1.2.1,Proto-Philippine to Bicol,Bicol-*j,,index_diachronica_original.html:2609,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *j > ɡ / #_ | ^ @ Rule 1, Line 1"
-10.1.2.1,Proto-Philippine to Bicol,Bicol-h-*j,,index_diachronica_original.html:2610,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '*' | h *j > d / _# | ^ @ Rule 1, Line 1"
+10.1.2.1,Proto-Philippine to Bicol,"Bicol-*j-*D,z",,index_diachronica_original.html:2608,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | j {*D,z} > r d / V_V | ^ @ Rule 1, Line 1"
+10.1.2.1,Proto-Philippine to Bicol,Bicol-*j,,index_diachronica_original.html:2609,True,,,,,
+10.1.2.1,Proto-Philippine to Bicol,Bicol-h-*j,,index_diachronica_original.html:2610,True,,,,,
 10.1.2.1,Proto-Philippine to Bicol,Bicol-*R,,index_diachronica_original.html:2611,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *R > ɡ | ^ @ Rule 1, Line 1"
 10.1.2.1,Proto-Philippine to Bicol,Bicol-q,,index_diachronica_original.html:2612,True,,,,,
 10.1.2.1,Proto-Philippine to Bicol,Bicol-iw,,index_diachronica_original.html:2613,True,,,,,
 10.1.2.2,Proto-Philippine to Cebuano,Cebuano-ə,,index_diachronica_original.html:2618,True,,,,,
 10.1.2.2,Proto-Philippine to Cebuano,Cebuano-*D-d,,index_diachronica_original.html:2619,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *D d > l r / V_V | ^ @ Rule 1, Line 1"
-10.1.2.2,Proto-Philippine to Cebuano,Cebuano-*j,,index_diachronica_original.html:2620,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *j > d / #_ | ^ @ Rule 1, Line 1"
-10.1.2.2,Proto-Philippine to Cebuano,"Cebuano-*j,*Z-z",,index_diachronica_original.html:2621,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | {*j,*Z} z > l r / V_V | ^ @ Rule 1, Line 1"
-10.1.2.2,Proto-Philippine to Cebuano,Cebuano-h-*j,,index_diachronica_original.html:2622,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '*' | h *j > d / _# | ^ @ Rule 1, Line 1"
+10.1.2.2,Proto-Philippine to Cebuano,Cebuano-*j,,index_diachronica_original.html:2620,True,,,,,
+10.1.2.2,Proto-Philippine to Cebuano,"Cebuano-*j,*Z-z",,index_diachronica_original.html:2621,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | {j,*Z} z > l r / V_V | ^ @ Rule 1, Line 1"
+10.1.2.2,Proto-Philippine to Cebuano,Cebuano-h-*j,,index_diachronica_original.html:2622,True,,,,,
 10.1.2.2,Proto-Philippine to Cebuano,Cebuano-*R,,index_diachronica_original.html:2623,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *R > ɡ | ^ @ Rule 1, Line 1"
 10.1.2.2,Proto-Philippine to Cebuano,Cebuano-q,,index_diachronica_original.html:2624,True,,,,,
 10.1.2.2,Proto-Philippine to Cebuano,Cebuano-h,,index_diachronica_original.html:2625,True,,,,,
 10.1.2.2,Proto-Philippine to Cebuano,Cebuano-iw,,index_diachronica_original.html:2626,True,,,,,
 10.1.2.3,Proto-Philippine to Hiligaynon,Hiligaynon-ə,,index_diachronica_original.html:2631,True,,,,,
 10.1.2.3,Proto-Philippine to Hiligaynon,Hiligaynon-*D,,index_diachronica_original.html:2632,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *D > l | ^ @ Rule 1, Line 1"
-10.1.2.3,Proto-Philippine to Hiligaynon,Hiligaynon-*j,,index_diachronica_original.html:2633,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *j > d / #_ | ^ @ Rule 1, Line 1"
-10.1.2.3,Proto-Philippine to Hiligaynon,"Hiligaynon-*Z,*j-z",,index_diachronica_original.html:2634,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | {*Z,*j} z > l r / V_V | ^ @ Rule 1, Line 1"
-10.1.2.3,Proto-Philippine to Hiligaynon,Hiligaynon-*j_2,,index_diachronica_original.html:2635,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *j > d / _# | ^ @ Rule 1, Line 1"
+10.1.2.3,Proto-Philippine to Hiligaynon,Hiligaynon-*j,,index_diachronica_original.html:2633,True,,,,,
+10.1.2.3,Proto-Philippine to Hiligaynon,"Hiligaynon-*Z,*j-z",,index_diachronica_original.html:2634,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | {*Z,j} z > l r / V_V | ^ @ Rule 1, Line 1"
+10.1.2.3,Proto-Philippine to Hiligaynon,Hiligaynon-*j_2,,index_diachronica_original.html:2635,True,,,,,
 10.1.2.3,Proto-Philippine to Hiligaynon,Hiligaynon-h,,index_diachronica_original.html:2636,True,,,,,
 10.1.2.3,Proto-Philippine to Hiligaynon,Hiligaynon-q,,index_diachronica_original.html:2637,True,,,,,
 10.1.2.3,Proto-Philippine to Hiligaynon,Hiligaynon-iw,,index_diachronica_original.html:2638,True,,,,,
 10.1.2.4,Proto-Philippine to Ibanag,Ibanag-ə,,index_diachronica_original.html:2643,True,,,,,
 10.1.2.4,Proto-Philippine to Ibanag,Ibanag-*D,,index_diachronica_original.html:2645,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *D > r | ^ @ Rule 1, Line 1"
-10.1.2.4,Proto-Philippine to Ibanag,Ibanag-*j,,index_diachronica_original.html:2646,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *j > ɡ / possible exception in word-initial position? | ^ @ Rule 1, Line 1"
+10.1.2.4,Proto-Philippine to Ibanag,Ibanag-*j,,index_diachronica_original.html:2646,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | j > ɡ / possible exception in word-initial position? | ^ @ Rule 1, Line 1"
 10.1.2.4,Proto-Philippine to Ibanag,Ibanag-*Z,,index_diachronica_original.html:2647,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *Z > r | ^ @ Rule 1, Line 1"
 10.1.2.4,Proto-Philippine to Ibanag,Ibanag-z,,index_diachronica_original.html:2648,True,,,,,
 10.1.2.4,Proto-Philippine to Ibanag,Ibanag-*R,,index_diachronica_original.html:2649,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *R > ɡ | ^ @ Rule 1, Line 1"
@@ -1224,15 +1224,15 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 10.1.2.4,Proto-Philippine to Ibanag,Ibanag-uj,,index_diachronica_original.html:2653,True,,,,,
 10.1.2.4,Proto-Philippine to Ibanag,Ibanag-iw,,index_diachronica_original.html:2654,True,,,,,
 10.1.2.5,Proto-Philippine to Ifugao,Ifugao-ə,,index_diachronica_original.html:2659,True,,,,,
-10.1.2.5,Proto-Philippine to Ifugao,Ifugao-*j,,index_diachronica_original.html:2660,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *j > ɡ / _# | ^ @ Rule 1, Line 1"
-10.1.2.5,Proto-Philippine to Ifugao,"Ifugao-z,*Z,*D,*j",,index_diachronica_original.html:2661,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | {z,*Z,*D,*j} > d | ^ @ Rule 1, Line 1"
+10.1.2.5,Proto-Philippine to Ifugao,Ifugao-*j,,index_diachronica_original.html:2660,True,,,,,
+10.1.2.5,Proto-Philippine to Ifugao,"Ifugao-z,*Z,*D,*j",,index_diachronica_original.html:2661,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | {z,*Z,*D,j} > d | ^ @ Rule 1, Line 1"
 10.1.2.5,Proto-Philippine to Ifugao,"Ifugao-q,h",,index_diachronica_original.html:2663,True,,,,,
 10.1.2.5,Proto-Philippine to Ifugao,"Ifugao-s,c",,index_diachronica_original.html:2664,True,,,,,
 10.1.2.5,Proto-Philippine to Ifugao,Ifugao-∅,,index_diachronica_original.html:2665,True,,,,,
 10.1.2.5,Proto-Philippine to Ifugao,Ifugao-ay,,index_diachronica_original.html:2666,True,,,,,
 10.1.2.6,Proto-Philippine to Ilocano,Ilocano-*D,,index_diachronica_original.html:2671,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *D > d | ^ @ Rule 1, Line 1"
-10.1.2.6,Proto-Philippine to Ilocano,"Ilocano-z,*Z,*j",,index_diachronica_original.html:2672,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | {z,*Z,*j} > d / V_V | ^ @ Rule 1, Line 1"
-10.1.2.6,Proto-Philippine to Ilocano,Ilocano-*j,,index_diachronica_original.html:2673,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *j > ɡ | ^ @ Rule 1, Line 1"
+10.1.2.6,Proto-Philippine to Ilocano,"Ilocano-z,*Z,*j",,index_diachronica_original.html:2672,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | {z,*Z,j} > d / V_V | ^ @ Rule 1, Line 1"
+10.1.2.6,Proto-Philippine to Ilocano,Ilocano-*j,,index_diachronica_original.html:2673,True,,,,,
 10.1.2.6,Proto-Philippine to Ilocano,Ilocano-R,0,index_diachronica_original.html:2674,True,,,,,
 10.1.2.6,Proto-Philippine to Ilocano,Ilocano-R,1,index_diachronica_original.html:2674,True,,,,,
 10.1.2.6,Proto-Philippine to Ilocano,Ilocano-R_2,,index_diachronica_original.html:2675,True,,,,,
@@ -1277,16 +1277,16 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 10.1.2.7.3,Proto-Kalamian to Kalamian Tagbanwa,Kalamian-Tagbanwa-∅,,index_diachronica_original.html:2731,True,,,,,
 10.1.2.7.3,Proto-Kalamian to Kalamian Tagbanwa,Kalamian-Tagbanwa-∅_2,,index_diachronica_original.html:2732,True,,,,,
 10.1.2.8,Proto-Philippine to Kankanay,"Kankanay-*D,*Z",,index_diachronica_original.html:2737,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | {*D,*Z} > d | ^ @ Rule 1, Line 1"
-10.1.2.8,Proto-Philippine to Kankanay,"Kankanay-z,*j",,index_diachronica_original.html:2738,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | {z,*j} > d / V_V | ^ @ Rule 1, Line 1"
-10.1.2.8,Proto-Philippine to Kankanay,Kankanay-*j,,index_diachronica_original.html:2739,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *j > ɡ / _# | ^ @ Rule 1, Line 1"
+10.1.2.8,Proto-Philippine to Kankanay,"Kankanay-z,*j",,index_diachronica_original.html:2738,True,,,,,
+10.1.2.8,Proto-Philippine to Kankanay,Kankanay-*j,,index_diachronica_original.html:2739,True,,,,,
 10.1.2.8,Proto-Philippine to Kankanay,Kankanay-c,,index_diachronica_original.html:2741,True,,,,,
 10.1.2.8,Proto-Philippine to Kankanay,"Kankanay-h,q",,index_diachronica_original.html:2742,True,,,,,
 10.1.2.8,Proto-Philippine to Kankanay,Kankanay-iw,,index_diachronica_original.html:2744,True,,,,,
 10.1.2.9,Proto-Philippine to Tagalog,Tagalog-ə,,index_diachronica_original.html:2749,True,,,,,
 10.1.2.9,Proto-Philippine to Tagalog,Tagalog-u,,index_diachronica_original.html:2750,True,,,,,
-10.1.2.9,Proto-Philippine to Tagalog,"Tagalog-*D,*j-d,z",,index_diachronica_original.html:2751,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | {*D,*j} {d,z} > l r / V_V | ^ @ Rule 1, Line 1"
-10.1.2.9,Proto-Philippine to Tagalog,Tagalog-*j,,index_diachronica_original.html:2752,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *j > d / #_ | ^ @ Rule 1, Line 1"
-10.1.2.9,Proto-Philippine to Tagalog,Tagalog-h-*j,,index_diachronica_original.html:2753,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '*' | h *j > d / _# | ^ @ Rule 1, Line 1"
+10.1.2.9,Proto-Philippine to Tagalog,"Tagalog-*D,*j-d,z",,index_diachronica_original.html:2751,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | {*D,j} {d,z} > l r / V_V | ^ @ Rule 1, Line 1"
+10.1.2.9,Proto-Philippine to Tagalog,Tagalog-*j,,index_diachronica_original.html:2752,True,,,,,
+10.1.2.9,Proto-Philippine to Tagalog,Tagalog-h-*j,,index_diachronica_original.html:2753,True,,,,,
 10.1.2.9,Proto-Philippine to Tagalog,Tagalog-*R,,index_diachronica_original.html:2754,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *R > ɡ | ^ @ Rule 1, Line 1"
 10.1.2.9,Proto-Philippine to Tagalog,Tagalog-q,,index_diachronica_original.html:2755,True,,,,,
 10.1.2.9,Proto-Philippine to Tagalog,Tagalog-uj-iw,,index_diachronica_original.html:2756,True,,,,,
@@ -1295,8 +1295,8 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 10.1.2.10,Proto-Philippine to Waray,Waray-*T,,index_diachronica_original.html:2763,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *T > t | ^ @ Rule 1, Line 1"
 10.1.2.10,Proto-Philippine to Waray,"Waray-*D,*Z",,index_diachronica_original.html:2764,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | {*D,*Z} > r / V_V | ^ @ Rule 1, Line 1"
 10.1.2.10,Proto-Philippine to Waray,"Waray-*D,*Z,z",,index_diachronica_original.html:2765,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | {*D,*Z,z} > d | ^ @ Rule 1, Line 1"
-10.1.2.10,Proto-Philippine to Waray,Waray-*j,,index_diachronica_original.html:2766,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *j > r / V_V | ^ @ Rule 1, Line 1"
-10.1.2.10,Proto-Philippine to Waray,Waray-*j_2,,index_diachronica_original.html:2767,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *j > d | ^ @ Rule 1, Line 1"
+10.1.2.10,Proto-Philippine to Waray,Waray-*j,,index_diachronica_original.html:2766,True,,,,,
+10.1.2.10,Proto-Philippine to Waray,Waray-*j_2,,index_diachronica_original.html:2767,True,,,,,
 10.1.2.10,Proto-Philippine to Waray,Waray-*R,,index_diachronica_original.html:2768,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *R > ɡ | ^ @ Rule 1, Line 1"
 10.1.2.10,Proto-Philippine to Waray,Waray-r,,index_diachronica_original.html:2769,True,,,,,
 10.1.2.10,Proto-Philippine to Waray,Waray-*c,,index_diachronica_original.html:2770,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *c > s | ^ @ Rule 1, Line 1"
@@ -1556,9 +1556,9 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 10.3.1,Proto-Oceanic to Hawai’ian,"Hawai’ian-s,f",,index_diachronica_original.html:3101,True,,,,,
 10.3.1,Proto-Oceanic to Hawai’ian,Hawai’ian-k-t,,index_diachronica_original.html:3102,True,,,,,
 10.3.1,Proto-Oceanic to Hawai’ian,Hawai’ian-ŋ-r-v,,index_diachronica_original.html:3103,True,,,,,
-10.3.2,Proto-Oceanic to Hiw,"Hiw-p-pʷ-c,*j-k-q",,index_diachronica_original.html:3108,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | p pʷ {c,*j} k q > β βʷ s ɣ | ^ @ Rule 1, Line 1"
+10.3.2,Proto-Oceanic to Hiw,"Hiw-p-pʷ-c,*j-k-q",,index_diachronica_original.html:3108,True,,,,,
 10.3.2,Proto-Oceanic to Hiw,Hiw-β-b-m,,index_diachronica_original.html:3109,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '*' | β b m > βʷ bʷ mʷ / typically near *u | ^ @ Rule 1, Line 1"
-10.3.2,Proto-Oceanic to Hiw,Hiw-dr-*r,,index_diachronica_original.html:3110,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '*' | dr *r > d r | ^ @ Rule 1, Line 1"
+10.3.2,Proto-Oceanic to Hiw,Hiw-dr-*r,,index_diachronica_original.html:3110,True,,,,,
 10.3.2,Proto-Oceanic to Hiw,Hiw-C,,index_diachronica_original.html:3111,True,,,,,
 10.3.2,Proto-Oceanic to Hiw,Hiw-ɲ,,index_diachronica_original.html:3112,True,,,,,
 10.3.2,Proto-Oceanic to Hiw,Hiw-b-d-ɡ,,index_diachronica_original.html:3113,True,,,,,
@@ -1581,7 +1581,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 10.3.3,Proto-Oceanic to Lemerig,Lemerig-p-pʷ-k-q,,index_diachronica_original.html:3136,True,,,,,
 10.3.3,Proto-Oceanic to Lemerig,Lemerig-VV,,index_diachronica_original.html:3137,True,,,,,
 10.3.3,Proto-Oceanic to Lemerig,Lemerig-ndr-*R,,index_diachronica_original.html:3138,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '*' | ndr *R > d r | ^ @ Rule 1, Line 1"
-10.3.3,Proto-Oceanic to Lemerig,"Lemerig-c,*j-ɲ",,index_diachronica_original.html:3139,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | {c,*j} ɲ > s n | ^ @ Rule 1, Line 1"
+10.3.3,Proto-Oceanic to Lemerig,"Lemerig-c,*j-ɲ",,index_diachronica_original.html:3139,True,,,,,
 10.3.3,Proto-Oceanic to Lemerig,Lemerig-t,,index_diachronica_original.html:3140,True,,,,,
 10.3.3,Proto-Oceanic to Lemerig,Lemerig-b-bʷ-d-ɡ,,index_diachronica_original.html:3141,True,,,,,
 10.3.3,Proto-Oceanic to Lemerig,Lemerig-mʷ,,index_diachronica_original.html:3142,True,,,,,
@@ -1606,7 +1606,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 10.3.4,Proto-Oceanic to Mwotlap,Mwotlap-d,,index_diachronica_original.html:3166,True,,,,,
 10.3.4,Proto-Oceanic to Mwotlap,Mwotlap-p-pʷ-bʷ-k-ɡ,,index_diachronica_original.html:3167,True,,,,,
 10.3.4,Proto-Oceanic to Mwotlap,Mwotlap-mʷ-ɲ,,index_diachronica_original.html:3168,True,,,,,
-10.3.4,Proto-Oceanic to Mwotlap,"Mwotlap-c,*j",,index_diachronica_original.html:3169,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | {c,*j} > s | ^ @ Rule 1, Line 1"
+10.3.4,Proto-Oceanic to Mwotlap,"Mwotlap-c,*j",,index_diachronica_original.html:3169,True,,,,,
 10.3.4,Proto-Oceanic to Mwotlap,Mwotlap-s,,index_diachronica_original.html:3170,True,,,,,
 10.3.4,Proto-Oceanic to Mwotlap,Mwotlap-r,,index_diachronica_original.html:3171,True,,,,,
 10.3.4,Proto-Oceanic to Mwotlap,Mwotlap-o-e-i,,index_diachronica_original.html:3172,True,,,,,
@@ -1774,7 +1774,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 10.3.7,Proto-Oceanic to Shark Bay,Shark-Bay-q,,index_diachronica_original.html:3397,True,,,,,
 10.3.7,Proto-Oceanic to Shark Bay,Shark-Bay-*R,0,index_diachronica_original.html:3398,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *R > ∅ | ^ @ Rule 1, Line 1"
 10.3.7,Proto-Oceanic to Shark Bay,Shark-Bay-*R,1,index_diachronica_original.html:3398,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *R > r | ^ @ Rule 1, Line 1"
-10.3.7,Proto-Oceanic to Shark Bay,Shark-Bay-ɲ-c-*j,,index_diachronica_original.html:3399,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '*' | ɲ c *j > n s z | ^ @ Rule 1, Line 1"
+10.3.7,Proto-Oceanic to Shark Bay,Shark-Bay-ɲ-c-*j,,index_diachronica_original.html:3399,True,,,,,
 10.3.7,Proto-Oceanic to Shark Bay,Shark-Bay-p-pʷ-k,,index_diachronica_original.html:3400,True,,,,,
 10.3.7,Proto-Oceanic to Shark Bay,Shark-Bay-b-bʷ-ɡ,,index_diachronica_original.html:3401,True,,,,,
 10.3.7,Proto-Oceanic to Shark Bay,Shark-Bay-V+-high,,index_diachronica_original.html:3402,True,,,,,
@@ -1794,7 +1794,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-q,,index_diachronica_original.html:3421,True,,,,,
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-*R,0,index_diachronica_original.html:3422,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *R > ∅ | ^ @ Rule 1, Line 1"
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-*R,1,index_diachronica_original.html:3422,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *R > r | ^ @ Rule 1, Line 1"
-10.3.8,Proto-Oceanic to Tolomako,Tolomako-ɲ-c-*j,,index_diachronica_original.html:3423,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '*' | ɲ c *j > n s z | ^ @ Rule 1, Line 1"
+10.3.8,Proto-Oceanic to Tolomako,Tolomako-ɲ-c-*j,,index_diachronica_original.html:3423,True,,,,,
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-m-b,,index_diachronica_original.html:3424,False,unknown_character,asca-unrepresentable,̼,,"Syntax Error: Unknown character '̼' | m b > n̼ t̼ / _{a,e,i} | ^ @ Rule 1, Line 1"
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-pʷ-k,,index_diachronica_original.html:3425,True,,,,,
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-mʷ-bʷ-vʷ,,index_diachronica_original.html:3426,True,,,,,
@@ -1910,7 +1910,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 10.3.11.1,Proto-Southern Vanuatu to Anejom,Anejom-bʷ-ɡ,,index_diachronica_original.html:3552,True,,,,,
 10.3.11.1,Proto-Southern Vanuatu to Anejom,Anejom-s,,index_diachronica_original.html:3553,True,,,,,
 10.3.11.1,Proto-Southern Vanuatu to Anejom,Anejom-s_2,,index_diachronica_original.html:3554,True,,,,,
-10.3.11.1,Proto-Southern Vanuatu to Anejom,"Anejom-d-c,*j",,index_diachronica_original.html:3555,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | d {c,*j} > tʃ s | ^ @ Rule 1, Line 1"
+10.3.11.1,Proto-Southern Vanuatu to Anejom,"Anejom-d-c,*j",,index_diachronica_original.html:3555,True,,,,,
 10.3.11.1,Proto-Southern Vanuatu to Anejom,"Anejom-n,ŋ",,index_diachronica_original.html:3556,True,,,,,
 10.3.11.1,Proto-Southern Vanuatu to Anejom,Anejom-w,,index_diachronica_original.html:3557,True,,,,,
 10.3.11.1,Proto-Southern Vanuatu to Anejom,Anejom-l,,index_diachronica_original.html:3558,True,,,,,
@@ -1936,7 +1936,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,Proto-Erromango-v_2,,index_diachronica_original.html:3582,True,,,,,
 10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,Proto-Erromango-v_3,,index_diachronica_original.html:3583,True,,,,,
 10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,Proto-Erromango-r,,index_diachronica_original.html:3584,True,,,,,
-10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,"Proto-Erromango-s-c,*j",,index_diachronica_original.html:3585,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | s {c,*j} > h s | ^ @ Rule 1, Line 1"
+10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,"Proto-Erromango-s-c,*j",,index_diachronica_original.html:3585,True,,,,,
 10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,Proto-Erromango-o,,index_diachronica_original.html:3586,True,,,,,
 10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,Proto-Erromango-u-i,,index_diachronica_original.html:3587,True,,,,,
 10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,Proto-Erromango-a,,index_diachronica_original.html:3588,True,,,,,
@@ -1998,7 +1998,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 10.3.11.3.2,Proto-Tanna to Lenakel,Lenakel-ɣ_2,,index_diachronica_original.html:3663,True,,,,,
 10.3.11.3.2,Proto-Tanna to Lenakel,Lenakel-ɣ_3,,index_diachronica_original.html:3664,True,,,,,
 10.3.11.3.2,Proto-Tanna to Lenakel,Lenakel-r_2,,index_diachronica_original.html:3665,True,,,,,
-10.3.11.3.2,Proto-Tanna to Lenakel,Lenakel-c-*j,,index_diachronica_original.html:3666,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '*' | c *j > s {z,s} | ^ @ Rule 1, Line 1"
+10.3.11.3.2,Proto-Tanna to Lenakel,Lenakel-c-*j,,index_diachronica_original.html:3666,True,,,,,
 10.3.11.3.2,Proto-Tanna to Lenakel,Lenakel-z,,index_diachronica_original.html:3667,True,,,,,
 10.3.11.3.2,Proto-Tanna to Lenakel,Lenakel-s,,index_diachronica_original.html:3668,True,,,,,
 10.3.11.3.2,Proto-Tanna to Lenakel,"Lenakel-pʷ,vVh",,index_diachronica_original.html:3669,True,,,,,
@@ -2024,7 +2024,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 10.3.11.3.4,Proto-Tanna to Southwest Tanna,Southwest-Tanna-ɣ,,index_diachronica_original.html:3695,True,,,,,
 10.3.11.3.4,Proto-Tanna to Southwest Tanna,Southwest-Tanna-ɣ_2,,index_diachronica_original.html:3696,True,,,,,
 10.3.11.3.4,Proto-Tanna to Southwest Tanna,Southwest-Tanna-r,,index_diachronica_original.html:3697,True,,,,,
-10.3.11.3.4,Proto-Tanna to Southwest Tanna,"Southwest-Tanna-c,*j",,index_diachronica_original.html:3698,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | {c,*j} > s | ^ @ Rule 1, Line 1"
+10.3.11.3.4,Proto-Tanna to Southwest Tanna,"Southwest-Tanna-c,*j",,index_diachronica_original.html:3698,True,,,,,
 10.3.11.3.4,Proto-Tanna to Southwest Tanna,Southwest-Tanna-s,,index_diachronica_original.html:3699,True,,,,,
 10.3.11.3.4,Proto-Tanna to Southwest Tanna,"Southwest-Tanna-pʷ,vVh",,index_diachronica_original.html:3700,True,,,,,
 10.3.11.3.4,Proto-Tanna to Southwest Tanna,Southwest-Tanna-u,0,index_diachronica_original.html:3701,True,,,,,
@@ -2039,13 +2039,13 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 10.3.11.3.5,Proto-Tanna to Whitesands,Whitesands-ɣ,,index_diachronica_original.html:3713,True,,,,,
 10.3.11.3.5,Proto-Tanna to Whitesands,Whitesands-ɣ_2,,index_diachronica_original.html:3714,True,,,,,
 10.3.11.3.5,Proto-Tanna to Whitesands,Whitesands-ɣ_3,,index_diachronica_original.html:3715,True,,,,,
-10.3.11.3.5,Proto-Tanna to Whitesands,Whitesands-c-*j,,index_diachronica_original.html:3716,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '*' | c *j > s {z,s} | ^ @ Rule 1, Line 1"
+10.3.11.3.5,Proto-Tanna to Whitesands,Whitesands-c-*j,,index_diachronica_original.html:3716,True,,,,,
 10.3.11.3.5,Proto-Tanna to Whitesands,Whitesands-s,,index_diachronica_original.html:3717,True,,,,,
 10.3.11.3.5,Proto-Tanna to Whitesands,Whitesands-z,,index_diachronica_original.html:3718,True,,,,,
 10.3.12,Proto-Oceanic to Vera’a,Vera’a-p-pʷ-k-q,,index_diachronica_original.html:3723,True,,,,,
 10.3.12,Proto-Oceanic to Vera’a,Vera’a-VV,,index_diachronica_original.html:3724,True,,,,,
 10.3.12,Proto-Oceanic to Vera’a,Vera’a-ndr-*R,,index_diachronica_original.html:3725,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '*' | ndr *R > d r | ^ @ Rule 1, Line 1"
-10.3.12,Proto-Oceanic to Vera’a,"Vera’a-c,*j-ɲ",,index_diachronica_original.html:3726,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | {c,*j} ɲ > s n | ^ @ Rule 1, Line 1"
+10.3.12,Proto-Oceanic to Vera’a,"Vera’a-c,*j-ɲ",,index_diachronica_original.html:3726,True,,,,,
 10.3.12,Proto-Oceanic to Vera’a,Vera’a-t,,index_diachronica_original.html:3727,True,,,,,
 10.3.12,Proto-Oceanic to Vera’a,Vera’a-β,,index_diachronica_original.html:3728,True,,,,,
 10.3.12,Proto-Oceanic to Vera’a,Vera’a-β_2,,index_diachronica_original.html:3729,True,,,,,
@@ -3025,7 +3025,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-l_2,,index_diachronica_original.html:5205,True,,,,,
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-Ns-sN,,index_diachronica_original.html:5206,True,,,,,
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-N,,index_diachronica_original.html:5207,True,,,,,
-17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-VN,,index_diachronica_original.html:5208,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | VN > V[+nasal] / _#, in polysyllables | ^ @ Rule 1, Line 1"
+17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-VN,,index_diachronica_original.html:5208,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | V[+nasal] > V / _#, in polysyllables | ^ @ Rule 1, Line 2"
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-N_2,,index_diachronica_original.html:5209,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | N > n / _#, in monosyllables | ^ @ Rule 1, Line 1"
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-N̩,,index_diachronica_original.html:5210,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '̩' | N̩ > n / _# | ^ @ Rule 1, Line 1"
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-m̩-n̩-r̩-l̩,,index_diachronica_original.html:5211,True,,,,,
@@ -3089,7 +3089,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-l_2,,index_diachronica_original.html:5279,True,,,,,
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-Ns-sN,,index_diachronica_original.html:5280,True,,,,,
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-N,,index_diachronica_original.html:5281,True,,,,,
-17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-VN,,index_diachronica_original.html:5282,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | VN > V[+nasal] / _#, in polysyllables | ^ @ Rule 1, Line 1"
+17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-VN,,index_diachronica_original.html:5282,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | V[+nasal] > V / _#, in polysyllables | ^ @ Rule 1, Line 2"
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-N_2,,index_diachronica_original.html:5283,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | N > n / _#, in monosyllables | ^ @ Rule 1, Line 1"
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-N̩,,index_diachronica_original.html:5284,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '̩' | N̩ > n / _# | ^ @ Rule 1, Line 1"
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-m̩-n̩-r̩-l̩,,index_diachronica_original.html:5285,True,,,,,
@@ -3121,7 +3121,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-l_2,,index_diachronica_original.html:5316,True,,,,,
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-Ns-sN,,index_diachronica_original.html:5317,True,,,,,
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-N,,index_diachronica_original.html:5318,True,,,,,
-17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-VN,,index_diachronica_original.html:5319,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | VN > V[+nasal] / _#, in polysyllables | ^ @ Rule 1, Line 1"
+17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-VN,,index_diachronica_original.html:5319,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | V[+nasal] > V / _#, in polysyllables | ^ @ Rule 1, Line 2"
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-N_2,,index_diachronica_original.html:5320,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | N > n / _#, in monosyllables | ^ @ Rule 1, Line 1"
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-N̩,,index_diachronica_original.html:5321,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '̩' | N̩ > n / _# | ^ @ Rule 1, Line 1"
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-m̩-n̩-r̩-l̩,,index_diachronica_original.html:5322,True,,,,,
@@ -3186,7 +3186,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-l_2,,index_diachronica_original.html:5391,True,,,,,
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-Ns-sN,,index_diachronica_original.html:5392,True,,,,,
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-N,,index_diachronica_original.html:5393,True,,,,,
-17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-VN,,index_diachronica_original.html:5394,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | V[+nasal] > V / _#, in polysyllables | ^ @ Rule 1, Line 2"
+17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-VN,,index_diachronica_original.html:5394,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | VN > V[+nasal] / _#, in polysyllables | ^ @ Rule 1, Line 1"
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-N_2,,index_diachronica_original.html:5395,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | N > n / _#, in monosyllables | ^ @ Rule 1, Line 1"
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-N̩,,index_diachronica_original.html:5396,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '̩' | N̩ > n / _# | ^ @ Rule 1, Line 1"
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-m̩-n̩-r̩-l̩,,index_diachronica_original.html:5397,True,,,,,
@@ -3219,7 +3219,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-l_2,,index_diachronica_original.html:5429,True,,,,,
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-Ns-sN,,index_diachronica_original.html:5430,True,,,,,
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-N,,index_diachronica_original.html:5431,True,,,,,
-17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-VN,,index_diachronica_original.html:5432,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | VN > V[+nasal] / _#, in polysyllables | ^ @ Rule 1, Line 1"
+17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-VN,,index_diachronica_original.html:5432,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | V[+nasal] > V / _#, in polysyllables | ^ @ Rule 1, Line 2"
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-N_2,,index_diachronica_original.html:5433,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | N > n / _#, in monosyllables | ^ @ Rule 1, Line 1"
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-N̩,,index_diachronica_original.html:5434,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '̩' | N̩ > n / _# | ^ @ Rule 1, Line 1"
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-m̩-n̩-r̩-l̩,,index_diachronica_original.html:5435,True,,,,,
@@ -3432,7 +3432,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-k-ɡ,,index_diachronica_original.html:5703,True,,,,,
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-æː,,index_diachronica_original.html:5704,True,,,,,
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-æː_2,,index_diachronica_original.html:5705,True,,,,,
-17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-æu,,index_diachronica_original.html:5706,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received ')'. Did you forget a '/' between the output and environment? | au > a / _V:[+back] in general?) | ^ @ Rule 1, Line 2"
+17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-æu,,index_diachronica_original.html:5706,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received ')'. Did you forget a '/' between the output and environment? | æu > au / _V:[+back] in general?) | ^ @ Rule 1, Line 1"
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-aː,,index_diachronica_original.html:5707,True,,,,,
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-i-o,,index_diachronica_original.html:5708,True,,,,,
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-ai-au-eu,,index_diachronica_original.html:5709,True,,,,,
@@ -3696,7 +3696,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-a_2,,index_diachronica_original.html:6046,True,,,,,
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-uː,,index_diachronica_original.html:6047,True,,,,,
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-uː_2,,index_diachronica_original.html:6048,True,,,,,
-17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-uː_3,,index_diachronica_original.html:6049,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received ')'. Did you forget a '/' between the output and environment? | ʉ:[+long] > ʉw / _V) | ^ @ Rule 1, Line 2"
+17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-uː_3,,index_diachronica_original.html:6049,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received ')'. Did you forget a '/' between the output and environment? | u:[+long] > ʉ:[+long] / _V) | ^ @ Rule 1, Line 1"
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-ei-ou,,index_diachronica_original.html:6050,True,,,,,
 17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-uː,,index_diachronica_original.html:6055,True,,,,,
 17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-iu,,index_diachronica_original.html:6056,True,,,,,
@@ -5325,7 +5325,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.12.1.1.6,Vulgar Latin to Old Provençal,"Old-Provençal-t,dl-k,ɡl",,index_diachronica_original.html:7881,True,,,,,
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-∅_3,,index_diachronica_original.html:7882,True,,,,,
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-p-j,,index_diachronica_original.html:7883,True,,,,,
-17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-p-k-tʃ-b-ɡ-β-j,,index_diachronica_original.html:7884,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received '}'. Did you forget a '/' between the output and environment? | y > i} i / _r | ^ @ Rule 1, Line 5"
+17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-p-k-tʃ-b-ɡ-β-j,,index_diachronica_original.html:7884,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '}' | i} ∅ {u,u > y / _r | ^ @ Rule 1, Line 4"
 17.12.1.1.6,Vulgar Latin to Old Provençal,"Old-Provençal-t,d",,index_diachronica_original.html:7885,True,,,,,
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-ð_6,,index_diachronica_original.html:7886,True,,,,,
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-∅_4,,index_diachronica_original.html:7887,True,,,,,
@@ -9277,7 +9277,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-t_3,,index_diachronica_original.html:13867,True,,,,,
 42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-k,,index_diachronica_original.html:13868,True,,,,,
 42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-k_2,,index_diachronica_original.html:13869,True,,,,,
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-k_3,,index_diachronica_original.html:13870,False,expected_number,asca-unrepresentable,,,"Syntax Error: Expected number, but received j | k > ɣ / {O:[+delrel],O,%}_[+son,-syll] // [+son,-syll] = j | ^ @ Rule 1, Line 1"
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-k_3,,index_diachronica_original.html:13870,False,expected_number,asca-unrepresentable,,,"Syntax Error: Expected number, but received j | ɣ > % / {O:[+delrel],O,%}_[+son,-syll] // [+son,-syll] = j | ^ @ Rule 1, Line 2"
 42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-β,,index_diachronica_original.html:13871,True,,,,,
 42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-ʋ,,index_diachronica_original.html:13872,True,,,,,
 42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-ið,,index_diachronica_original.html:13873,True,,,,,
@@ -9639,7 +9639,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-aj,0,index_diachronica_original.html:14441,False,unknown_character,asca-unrepresentable,₂,,"Syntax Error: Unknown character '₂' | aj > æ₂ | ^ @ Rule 1, Line 1"
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-aj,1,index_diachronica_original.html:14441,False,unknown_character,asca-unrepresentable,₂,,"Syntax Error: Unknown character '₂' | aj > i₂ | ^ @ Rule 1, Line 1"
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-aw,,index_diachronica_original.html:14442,True,,,,,
-46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-u,,index_diachronica_original.html:14443,False,unknown_character,asca-unrepresentable,ɤ,,"Syntax Error: Unknown character 'ɤ' | u [ɤ?] > {e,o,ɤ,a} (strong)/∅ | ^ @ Rule 1, Line 2"
+46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-u,,index_diachronica_original.html:14443,False,unknown_character,asca-unrepresentable,ɤ,,"Syntax Error: Unknown character 'ɤ' | u > u [ɤ?] | ^ @ Rule 1, Line 1"
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-uː,,index_diachronica_original.html:14444,True,,,,,
 46.15,Proto-Japanese to Old Japanese Vowel Shift,Old-Japanese-Vowel-Shift-e-o,,index_diachronica_original.html:14449,True,,,,,
 46.15,Proto-Japanese to Old Japanese Vowel Shift,Old-Japanese-Vowel-Shift-e-o_2,,index_diachronica_original.html:14450,True,,,,,

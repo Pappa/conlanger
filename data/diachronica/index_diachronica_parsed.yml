@@ -8532,21 +8532,21 @@ sections:
     source: index_diachronica_original.html:2607
     rule_id: Bicol-ə_2
   - stages:
-    - '*j {*D,z}'
+    - j {*D,z}
     - r d
     env: V_V
     raw: '*j {*D,z} → r d / V_V'
     source: index_diachronica_original.html:2608
     rule_id: Bicol-*j-*D,z
   - stages:
-    - '*j'
+    - j
     - ɡ
     env: '#_'
     raw: '*j → ɡ / #_'
     source: index_diachronica_original.html:2609
     rule_id: Bicol-*j
   - stages:
-    - h *j
+    - h j
     - ∅ d
     env: _#
     raw: h *j → ∅ d / _#
@@ -8589,21 +8589,21 @@ sections:
     source: index_diachronica_original.html:2619
     rule_id: Cebuano-*D-d
   - stages:
-    - '*j'
+    - j
     - d
     env: '#_'
     raw: '*j → d / #_'
     source: index_diachronica_original.html:2620
     rule_id: Cebuano-*j
   - stages:
-    - '{*j,*Z} z'
+    - '{j,*Z} z'
     - l r
     env: V_V
     raw: '{*j,*Z} z → l r / V_V'
     source: index_diachronica_original.html:2621
     rule_id: Cebuano-*j,*Z-z
   - stages:
-    - h *j
+    - h j
     - ∅ d
     env: _#
     raw: h *j → ∅ d / _#
@@ -8652,21 +8652,21 @@ sections:
     source: index_diachronica_original.html:2632
     rule_id: Hiligaynon-*D
   - stages:
-    - '*j'
+    - j
     - d
     env: '#_'
     raw: '*j → d / #_'
     source: index_diachronica_original.html:2633
     rule_id: Hiligaynon-*j
   - stages:
-    - '{*Z,*j} z'
+    - '{*Z,j} z'
     - l r
     env: V_V
     raw: '{*Z,*j} z → l r / V_V'
     source: index_diachronica_original.html:2634
     rule_id: Hiligaynon-*Z,*j-z
   - stages:
-    - '*j'
+    - j
     - d
     env: _#
     raw: '*j → d / _#'
@@ -8712,7 +8712,7 @@ sections:
     source: index_diachronica_original.html:2645
     rule_id: Ibanag-*D
   - stages:
-    - '*j'
+    - j
     - ɡ
     env: possible exception in word-initial position?
     raw: '*j → ɡ / possible exception in word-initial position?'
@@ -8788,14 +8788,14 @@ sections:
     source: index_diachronica_original.html:2659
     rule_id: Ifugao-ə
   - stages:
-    - '*j'
+    - j
     - ɡ
     env: _#
     raw: '*j → ɡ / _#'
     source: index_diachronica_original.html:2660
     rule_id: Ifugao-*j
   - stages:
-    - '{z,*Z,*D,*j}'
+    - '{z,*Z,*D,j}'
     - d
     raw: '{z,*Z,*D,*j} → d'
     source: index_diachronica_original.html:2661
@@ -8838,14 +8838,14 @@ sections:
     source: index_diachronica_original.html:2671
     rule_id: Ilocano-*D
   - stages:
-    - '{z,*Z,*j}'
+    - '{z,*Z,j}'
     - d
     env: V_V
     raw: '{z,*Z,*j} → d / V_V'
     source: index_diachronica_original.html:2672
     rule_id: Ilocano-z,*Z,*j
   - stages:
-    - '*j'
+    - j
     - ɡ
     raw: '*j → ɡ'
     source: index_diachronica_original.html:2673
@@ -9188,14 +9188,14 @@ sections:
     source: index_diachronica_original.html:2737
     rule_id: Kankanay-*D,*Z
   - stages:
-    - '{z,*j}'
+    - '{z,j}'
     - d
     env: V_V
     raw: '{z,*j} → d / V_V'
     source: index_diachronica_original.html:2738
     rule_id: Kankanay-z,*j
   - stages:
-    - '*j'
+    - j
     - ɡ
     env: _#
     raw: '*j → ɡ / _#'
@@ -9238,21 +9238,21 @@ sections:
     source: index_diachronica_original.html:2750
     rule_id: Tagalog-u
   - stages:
-    - '{*D,*j} {d,z}'
+    - '{*D,j} {d,z}'
     - l r
     env: V_V
     raw: '{*D,*j} {d,z} → l r / V_V'
     source: index_diachronica_original.html:2751
     rule_id: Tagalog-*D,*j-d,z
   - stages:
-    - '*j'
+    - j
     - d
     env: '#_'
     raw: '*j → d / #_'
     source: index_diachronica_original.html:2752
     rule_id: Tagalog-*j
   - stages:
-    - h *j
+    - h j
     - ∅ d
     env: _#
     raw: h *j → ∅ d / _#
@@ -9316,14 +9316,14 @@ sections:
     source: index_diachronica_original.html:2765
     rule_id: Waray-*D,*Z,z
   - stages:
-    - '*j'
+    - j
     - r
     env: V_V
     raw: '*j → r / V_V'
     source: index_diachronica_original.html:2766
     rule_id: Waray-*j
   - stages:
-    - '*j'
+    - j
     - d
     raw: '*j → d'
     source: index_diachronica_original.html:2767
@@ -11214,7 +11214,7 @@ sections:
     source: index_diachronica_original.html:3131
   rules:
   - stages:
-    - p pʷ {c,*j} k q
+    - p pʷ {c,j} k q
     - β βʷ s ɣ ∅
     raw: p pʷ {c,*j} k q → β βʷ s ɣ ∅
     source: index_diachronica_original.html:3108
@@ -11227,7 +11227,7 @@ sections:
     source: index_diachronica_original.html:3109
     rule_id: Hiw-β-b-m
   - stages:
-    - dr *r
+    - dr r
     - d r
     raw: dr *r → d r
     source: index_diachronica_original.html:3110
@@ -11389,7 +11389,7 @@ sections:
     source: index_diachronica_original.html:3138
     rule_id: Lemerig-ndr-*R
   - stages:
-    - '{c,*j} ɲ'
+    - '{c,j} ɲ'
     - s n
     raw: '{c,*j} ɲ → s n'
     source: index_diachronica_original.html:3139
@@ -11560,7 +11560,7 @@ sections:
     source: index_diachronica_original.html:3168
     rule_id: Mwotlap-mʷ-ɲ
   - stages:
-    - '{c,*j}'
+    - '{c,j}'
     - s
     raw: '{c,*j} → s'
     source: index_diachronica_original.html:3169
@@ -12724,7 +12724,7 @@ sections:
     source: index_diachronica_original.html:3398
     rule_id: Shark-Bay-*R
   - stages:
-    - ɲ c *j
+    - ɲ c j
     - n s z
     raw: ɲ c *j → n s z
     source: index_diachronica_original.html:3399
@@ -12860,7 +12860,7 @@ sections:
     source: index_diachronica_original.html:3422
     rule_id: Tolomako-*R
   - stages:
-    - ɲ c *j
+    - ɲ c j
     - n s z
     raw: ɲ c *j → n s z
     source: index_diachronica_original.html:3423
@@ -13542,7 +13542,7 @@ sections:
     sporadic: true
     rule_id: Anejom-s_2
   - stages:
-    - d {c,*j}
+    - d {c,j}
     - tʃ s
     raw: d {c,*j} → tʃ s
     source: index_diachronica_original.html:3555
@@ -13723,7 +13723,7 @@ sections:
     sporadic: true
     rule_id: Proto-Erromango-r
   - stages:
-    - s {c,*j}
+    - s {c,j}
     - h s
     raw: s {c,*j} → h s
     source: index_diachronica_original.html:3585
@@ -14135,7 +14135,7 @@ sections:
     source: index_diachronica_original.html:3665
     rule_id: Lenakel-r_2
   - stages:
-    - c *j
+    - c j
     - s {z,s}
     raw: c *j → s {z,s}
     source: index_diachronica_original.html:3666
@@ -14301,7 +14301,7 @@ sections:
     source: index_diachronica_original.html:3697
     rule_id: Southwest-Tanna-r
   - stages:
-    - '{c,*j}'
+    - '{c,j}'
     - s
     raw: '{c,*j} → s'
     source: index_diachronica_original.html:3698
@@ -14396,7 +14396,7 @@ sections:
     source: index_diachronica_original.html:3715
     rule_id: Whitesands-ɣ_3
   - stages:
-    - c *j
+    - c j
     - s {z,s}
     raw: c *j → s {z,s}
     source: index_diachronica_original.html:3716
@@ -14438,7 +14438,7 @@ sections:
     source: index_diachronica_original.html:3725
     rule_id: Vera’a-ndr-*R
   - stages:
-    - '{c,*j} ɲ'
+    - '{c,j} ɲ'
     - s n
     raw: '{c,*j} ɲ → s n'
     source: index_diachronica_original.html:3726

@@ -749,13 +749,17 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 10.1.2,Proto-Austronesian to Proto-Philippine,Proto-Philippine-c,,index_diachronica_original.html:2601,True,,True,True,,,,,,,,,,,none
 10.1.2.1,Proto-Philippine to Bicol,Bicol-ə,,index_diachronica_original.html:2606,True,,True,True,True,,,,,,,,,,none
 10.1.2.1,Proto-Philippine to Bicol,Bicol-ə_2,,index_diachronica_original.html:2607,True,,True,True,True,,,,,,,,,,none
+10.1.2.1,Proto-Philippine to Bicol,Bicol-*j,,index_diachronica_original.html:2609,True,,True,True,True,,,,,,,,,,none
 10.1.2.1,Proto-Philippine to Bicol,Bicol-q,,index_diachronica_original.html:2612,True,,True,True,,,,,,,,,,,none
 10.1.2.1,Proto-Philippine to Bicol,Bicol-iw,,index_diachronica_original.html:2613,True,,True,True,,,,,,,,,,,none
 10.1.2.2,Proto-Philippine to Cebuano,Cebuano-ə,,index_diachronica_original.html:2618,True,,True,True,,,,,,,,,,,none
+10.1.2.2,Proto-Philippine to Cebuano,Cebuano-*j,,index_diachronica_original.html:2620,True,,True,True,True,,,,,,,,,,none
 10.1.2.2,Proto-Philippine to Cebuano,Cebuano-q,,index_diachronica_original.html:2624,True,,True,True,,,,,,,,,,,none
 10.1.2.2,Proto-Philippine to Cebuano,Cebuano-h,,index_diachronica_original.html:2625,True,,True,True,True,,,,,,,,,,none
 10.1.2.2,Proto-Philippine to Cebuano,Cebuano-iw,,index_diachronica_original.html:2626,True,,True,True,,,,,,,,,,,none
 10.1.2.3,Proto-Philippine to Hiligaynon,Hiligaynon-ə,,index_diachronica_original.html:2631,True,,True,True,,,,,,,,,,,none
+10.1.2.3,Proto-Philippine to Hiligaynon,Hiligaynon-*j,,index_diachronica_original.html:2633,True,,True,True,True,,,,,,,,,,none
+10.1.2.3,Proto-Philippine to Hiligaynon,Hiligaynon-*j_2,,index_diachronica_original.html:2635,True,,True,True,True,,,,,,,,,,none
 10.1.2.3,Proto-Philippine to Hiligaynon,Hiligaynon-h,,index_diachronica_original.html:2636,True,,True,True,True,,,,,,,,,,none
 10.1.2.3,Proto-Philippine to Hiligaynon,Hiligaynon-q,,index_diachronica_original.html:2637,True,,True,True,,,,,,,,,,,none
 10.1.2.3,Proto-Philippine to Hiligaynon,Hiligaynon-iw,,index_diachronica_original.html:2638,True,,True,True,,,,,,,,,,,none
@@ -767,9 +771,11 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 10.1.2.4,Proto-Philippine to Ibanag,Ibanag-uj,,index_diachronica_original.html:2653,True,,True,True,,,,,,,,,,,none
 10.1.2.4,Proto-Philippine to Ibanag,Ibanag-iw,,index_diachronica_original.html:2654,True,,True,True,,,,,,,,,,,none
 10.1.2.5,Proto-Philippine to Ifugao,Ifugao-ə,,index_diachronica_original.html:2659,True,,True,True,,,,,,,,,,,none
+10.1.2.5,Proto-Philippine to Ifugao,Ifugao-*j,,index_diachronica_original.html:2660,True,,True,True,True,,,,,,,,,,none
 10.1.2.5,Proto-Philippine to Ifugao,"Ifugao-q,h",,index_diachronica_original.html:2663,True,,True,True,,,,,,,,,,,none
 10.1.2.5,Proto-Philippine to Ifugao,"Ifugao-s,c",,index_diachronica_original.html:2664,True,,True,True,,,,,,,,,,,none
 10.1.2.5,Proto-Philippine to Ifugao,Ifugao-ay,,index_diachronica_original.html:2666,True,,True,True,True,,,,,,,,,,none
+10.1.2.6,Proto-Philippine to Ilocano,Ilocano-*j,,index_diachronica_original.html:2673,True,,True,True,,,,,,,,,,,none
 10.1.2.6,Proto-Philippine to Ilocano,"Ilocano-q,h",,index_diachronica_original.html:2676,True,,True,True,,,,,,,,,,,none
 10.1.2.6,Proto-Philippine to Ilocano,Ilocano-iw,,index_diachronica_original.html:2677,True,,True,True,,,,,,,,,,,none
 10.1.2.7,Proto-Philippine to Proto-Kalamian,"Proto-Kalamian-h,ʔ",,index_diachronica_original.html:2682,True,,True,True,,,,,,,,,,,none
@@ -800,15 +806,20 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 10.1.2.7.3,Proto-Kalamian to Kalamian Tagbanwa,Kalamian-Tagbanwa-q,,index_diachronica_original.html:2728,True,,True,True,,,,,,,,,,,none
 10.1.2.7.3,Proto-Kalamian to Kalamian Tagbanwa,Kalamian-Tagbanwa-aɪ-ai,,index_diachronica_original.html:2729,True,,True,True,,,,,,,,,,,none
 10.1.2.7.3,Proto-Kalamian to Kalamian Tagbanwa,Kalamian-Tagbanwa-b-ɡ,,index_diachronica_original.html:2730,True,,True,True,True,,,,,,,,,,none
+10.1.2.8,Proto-Philippine to Kankanay,"Kankanay-z,*j",,index_diachronica_original.html:2738,True,,True,True,True,,,,,,,,,,none
+10.1.2.8,Proto-Philippine to Kankanay,Kankanay-*j,,index_diachronica_original.html:2739,True,,True,True,True,,,,,,,,,,none
 10.1.2.8,Proto-Philippine to Kankanay,Kankanay-c,,index_diachronica_original.html:2741,True,,True,True,,,,,,,,,,,none
 10.1.2.8,Proto-Philippine to Kankanay,"Kankanay-h,q",,index_diachronica_original.html:2742,True,,True,True,,,,,,,,,,,none
 10.1.2.8,Proto-Philippine to Kankanay,Kankanay-iw,,index_diachronica_original.html:2744,True,,True,True,,,,,,,,,,,none
 10.1.2.9,Proto-Philippine to Tagalog,Tagalog-ə,,index_diachronica_original.html:2749,True,,True,True,,,,,,,,,,,none
 10.1.2.9,Proto-Philippine to Tagalog,Tagalog-u,,index_diachronica_original.html:2750,True,,True,True,True,,,,,,,,,,none
+10.1.2.9,Proto-Philippine to Tagalog,Tagalog-*j,,index_diachronica_original.html:2752,True,,True,True,True,,,,,,,,,,none
 10.1.2.9,Proto-Philippine to Tagalog,Tagalog-q,,index_diachronica_original.html:2755,True,,True,True,,,,,,,,,,,none
 10.1.2.9,Proto-Philippine to Tagalog,Tagalog-uj-iw,,index_diachronica_original.html:2756,True,,True,True,True,,,,,,,,,,none
 10.1.2.10,Proto-Philippine to Waray,Waray-h,,index_diachronica_original.html:2761,True,,True,True,True,,,,,,,,,,none
 10.1.2.10,Proto-Philippine to Waray,Waray-ə,,index_diachronica_original.html:2762,True,,True,True,,,,,,,,,,,none
+10.1.2.10,Proto-Philippine to Waray,Waray-*j,,index_diachronica_original.html:2766,True,,True,True,True,,,,,,,,,,none
+10.1.2.10,Proto-Philippine to Waray,Waray-*j_2,,index_diachronica_original.html:2767,True,,True,True,,,,,,,,,,,none
 10.1.2.10,Proto-Philippine to Waray,Waray-r,,index_diachronica_original.html:2769,True,,True,True,True,,,,,,,,,,none
 10.1.2.10,Proto-Philippine to Waray,Waray-q,,index_diachronica_original.html:2771,True,,True,True,,,,,,,,,,,none
 10.1.2.10,Proto-Philippine to Waray,Waray-iw,,index_diachronica_original.html:2772,True,,True,True,,,,,,,,,,,none
@@ -1009,6 +1020,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 10.3.1,Proto-Oceanic to Hawai’ian,"Hawai’ian-s,f",,index_diachronica_original.html:3101,True,,True,True,,,,,,,,,,,none
 10.3.1,Proto-Oceanic to Hawai’ian,Hawai’ian-k-t,,index_diachronica_original.html:3102,True,,True,True,,,,,,,,,,,none
 10.3.1,Proto-Oceanic to Hawai’ian,Hawai’ian-ŋ-r-v,,index_diachronica_original.html:3103,True,,True,True,,,,,,,,,,,none
+10.3.2,Proto-Oceanic to Hiw,Hiw-dr-*r,,index_diachronica_original.html:3110,True,,True,True,,,,,,,,,,,none
 10.3.2,Proto-Oceanic to Hiw,Hiw-C,,index_diachronica_original.html:3111,True,,True,True,True,,,,,,,,,,none
 10.3.2,Proto-Oceanic to Hiw,Hiw-ɲ,,index_diachronica_original.html:3112,True,,True,True,,,,,,,,,,,none
 10.3.2,Proto-Oceanic to Hiw,Hiw-b-d-ɡ,,index_diachronica_original.html:3113,True,,True,True,,,,,,,,,,,none
@@ -1021,6 +1033,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 10.3.2,Proto-Oceanic to Hiw,Hiw-u,,index_diachronica_original.html:3128,True,,True,True,,True,,,,,,,,,none
 10.3.2,Proto-Oceanic to Hiw,"Hiw-e,i",,index_diachronica_original.html:3129,True,,True,True,,,,,,,,,,,none
 10.3.3,Proto-Oceanic to Lemerig,Lemerig-VV,,index_diachronica_original.html:3137,True,,True,True,,,,,,,,,,,none
+10.3.3,Proto-Oceanic to Lemerig,"Lemerig-c,*j-ɲ",,index_diachronica_original.html:3139,True,,True,True,,,,,,,,,,,none
 10.3.3,Proto-Oceanic to Lemerig,Lemerig-t,,index_diachronica_original.html:3140,True,,True,True,,,,,,,,,,,none
 10.3.3,Proto-Oceanic to Lemerig,Lemerig-b-bʷ-d-ɡ,,index_diachronica_original.html:3141,True,,True,True,,,,,,,,,,,none
 10.3.3,Proto-Oceanic to Lemerig,Lemerig-mʷ,,index_diachronica_original.html:3142,True,,True,True,,,,,,,,,,,none
@@ -1040,6 +1053,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 10.3.4,Proto-Oceanic to Mwotlap,Mwotlap-d,,index_diachronica_original.html:3166,True,,True,True,,,,,,,,,,,none
 10.3.4,Proto-Oceanic to Mwotlap,Mwotlap-p-pʷ-bʷ-k-ɡ,,index_diachronica_original.html:3167,True,,True,True,,,,,,,,,,,none
 10.3.4,Proto-Oceanic to Mwotlap,Mwotlap-mʷ-ɲ,,index_diachronica_original.html:3168,True,,True,True,,,,,,,,,,,none
+10.3.4,Proto-Oceanic to Mwotlap,"Mwotlap-c,*j",,index_diachronica_original.html:3169,True,,True,True,,,,,,,,,,,none
 10.3.4,Proto-Oceanic to Mwotlap,Mwotlap-s,,index_diachronica_original.html:3170,True,,True,True,,,,,,,,,,,none
 10.3.4,Proto-Oceanic to Mwotlap,Mwotlap-r,,index_diachronica_original.html:3171,True,,True,True,,,,,,,,,,,none
 10.3.4,Proto-Oceanic to Mwotlap,Mwotlap-o-e-i,,index_diachronica_original.html:3172,True,,True,True,True,,,,,,,,,,none
@@ -1147,6 +1161,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 10.3.6.3,Proto-Reefs/Santa Cruz to Natügu,Natügu-ŋ,,index_diachronica_original.html:3390,True,,True,True,True,,,,,,,,,,none
 10.3.7,Proto-Oceanic to Shark Bay,Shark-Bay-C,,index_diachronica_original.html:3396,True,,True,True,True,,,,,,,,,,none
 10.3.7,Proto-Oceanic to Shark Bay,Shark-Bay-q,,index_diachronica_original.html:3397,True,,True,True,,,,,,,,,,,none
+10.3.7,Proto-Oceanic to Shark Bay,Shark-Bay-ɲ-c-*j,,index_diachronica_original.html:3399,True,,True,True,,,,,,,,,,,none
 10.3.7,Proto-Oceanic to Shark Bay,Shark-Bay-p-pʷ-k,,index_diachronica_original.html:3400,True,,True,True,,,,,,,,,,,none
 10.3.7,Proto-Oceanic to Shark Bay,Shark-Bay-b-bʷ-ɡ,,index_diachronica_original.html:3401,True,,True,True,,,,,,,,,,,none
 10.3.7,Proto-Oceanic to Shark Bay,Shark-Bay-v-t-l-r,,index_diachronica_original.html:3403,True,,True,True,True,,,,,,,,,,none
@@ -1158,6 +1173,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 10.3.7,Proto-Oceanic to Shark Bay,Shark-Bay-z,,index_diachronica_original.html:3413,True,,True,True,,,,,,,,,,,none
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-C,,index_diachronica_original.html:3420,True,,True,True,True,,,,,,,,,,none
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-q,,index_diachronica_original.html:3421,True,,True,True,,,,,,,,,,,none
+10.3.8,Proto-Oceanic to Tolomako,Tolomako-ɲ-c-*j,,index_diachronica_original.html:3423,True,,True,True,,,,,,,,,,,none
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-d-ɡ,,index_diachronica_original.html:3427,True,,True,True,,,,,,,,,,,none
 10.3.8,Proto-Oceanic to Tolomako,"Tolomako-z,dr",,index_diachronica_original.html:3428,True,,True,True,,,,,,,,,,,none
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-u,,index_diachronica_original.html:3429,True,,True,True,,,,,,,,,,,none
@@ -1238,6 +1254,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 10.3.11.1,Proto-Southern Vanuatu to Anejom,Anejom-k,,index_diachronica_original.html:3551,True,,True,True,True,,,,,,,,,,none
 10.3.11.1,Proto-Southern Vanuatu to Anejom,Anejom-s,,index_diachronica_original.html:3553,True,,True,True,,,,,,,,,,,none
 10.3.11.1,Proto-Southern Vanuatu to Anejom,Anejom-s_2,,index_diachronica_original.html:3554,True,,True,True,,True,,,,,,,,,none
+10.3.11.1,Proto-Southern Vanuatu to Anejom,"Anejom-d-c,*j",,index_diachronica_original.html:3555,True,,True,True,,,,,,,,,,,none
 10.3.11.1,Proto-Southern Vanuatu to Anejom,Anejom-w,,index_diachronica_original.html:3557,True,,True,True,,,,,,,,,,,none
 10.3.11.1,Proto-Southern Vanuatu to Anejom,Anejom-q,,index_diachronica_original.html:3559,True,,True,True,,,,,,,,,,,none
 10.3.11.1,Proto-Southern Vanuatu to Anejom,"Anejom-r,h",,index_diachronica_original.html:3561,True,,True,True,True,,,,,,,,,,none
@@ -1258,6 +1275,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,Proto-Erromango-v_2,,index_diachronica_original.html:3582,True,,True,True,True,,,,,,,,,,none
 10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,Proto-Erromango-v_3,,index_diachronica_original.html:3583,True,,True,True,True,,,,,,,,,,none
 10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,Proto-Erromango-r,,index_diachronica_original.html:3584,True,,True,True,,,,,,,,,,,none
+10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,"Proto-Erromango-s-c,*j",,index_diachronica_original.html:3585,True,,True,True,,,,,,,,,,,none
 10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,Proto-Erromango-o,,index_diachronica_original.html:3586,True,,True,True,,,,,,,,,,,none
 10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,Proto-Erromango-u-i,,index_diachronica_original.html:3587,True,,True,True,,,,,,,,,,,none
 10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,Proto-Erromango-a,,index_diachronica_original.html:3588,True,,True,True,True,,,,,,,,,,none
@@ -1308,6 +1326,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 10.3.11.3.2,Proto-Tanna to Lenakel,Lenakel-kʷ,1,index_diachronica_original.html:3661,True,,True,True,,,,,,,,,,,none
 10.3.11.3.2,Proto-Tanna to Lenakel,Lenakel-ɣ_3,,index_diachronica_original.html:3664,True,,True,True,,,,,,,,,,,none
 10.3.11.3.2,Proto-Tanna to Lenakel,Lenakel-r_2,,index_diachronica_original.html:3665,True,,True,True,True,,,,,,,,,,none
+10.3.11.3.2,Proto-Tanna to Lenakel,Lenakel-c-*j,,index_diachronica_original.html:3666,True,,True,True,,,,,,,,,,,none
 10.3.11.3.2,Proto-Tanna to Lenakel,Lenakel-z,,index_diachronica_original.html:3667,True,,True,True,,,,,,,,,,,none
 10.3.11.3.2,Proto-Tanna to Lenakel,Lenakel-s,,index_diachronica_original.html:3668,True,,True,True,,,,,,,,,,,none
 10.3.11.3.3,Proto-Tanna to North Tanna,North-Tanna-kʷ,,index_diachronica_original.html:3674,True,,True,True,True,,,,,,,,,,none
@@ -1329,6 +1348,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 10.3.11.3.4,Proto-Tanna to Southwest Tanna,Southwest-Tanna-ɣ,,index_diachronica_original.html:3695,True,,True,True,True,,,,,,,,,,none
 10.3.11.3.4,Proto-Tanna to Southwest Tanna,Southwest-Tanna-ɣ_2,,index_diachronica_original.html:3696,True,,True,True,,,,,,,,,,,none
 10.3.11.3.4,Proto-Tanna to Southwest Tanna,Southwest-Tanna-r,,index_diachronica_original.html:3697,True,,True,True,,,,,,,,,,,none
+10.3.11.3.4,Proto-Tanna to Southwest Tanna,"Southwest-Tanna-c,*j",,index_diachronica_original.html:3698,True,,True,True,,,,,,,,,,,none
 10.3.11.3.4,Proto-Tanna to Southwest Tanna,Southwest-Tanna-s,,index_diachronica_original.html:3699,True,,True,True,,,,,,,,,,,none
 10.3.11.3.4,Proto-Tanna to Southwest Tanna,Southwest-Tanna-u,0,index_diachronica_original.html:3701,True,,True,True,True,,,,,,,,,,none
 10.3.11.3.4,Proto-Tanna to Southwest Tanna,Southwest-Tanna-u,1,index_diachronica_original.html:3701,True,,True,True,True,,,,,,,,,,none
@@ -1338,9 +1358,11 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 10.3.11.3.5,Proto-Tanna to Whitesands,Whitesands-kʷ,,index_diachronica_original.html:3710,True,,True,True,True,,,,,,,,,,none
 10.3.11.3.5,Proto-Tanna to Whitesands,Whitesands-kʷ_2,,index_diachronica_original.html:3711,True,,True,True,True,,,,,,,,,,none
 10.3.11.3.5,Proto-Tanna to Whitesands,Whitesands-ɣ_3,,index_diachronica_original.html:3715,True,,True,True,,,,,,,,,,,none
+10.3.11.3.5,Proto-Tanna to Whitesands,Whitesands-c-*j,,index_diachronica_original.html:3716,True,,True,True,,,,,,,,,,,none
 10.3.11.3.5,Proto-Tanna to Whitesands,Whitesands-s,,index_diachronica_original.html:3717,True,,True,True,,,,,,,,,,,none
 10.3.11.3.5,Proto-Tanna to Whitesands,Whitesands-z,,index_diachronica_original.html:3718,True,,True,True,,,,,,,,,,,none
 10.3.12,Proto-Oceanic to Vera’a,Vera’a-VV,,index_diachronica_original.html:3724,True,,True,True,,,,,,,,,,,none
+10.3.12,Proto-Oceanic to Vera’a,"Vera’a-c,*j-ɲ",,index_diachronica_original.html:3726,True,,True,True,,,,,,,,,,,none
 10.3.12,Proto-Oceanic to Vera’a,Vera’a-t,,index_diachronica_original.html:3727,True,,True,True,,,,,,,,,,,none
 10.3.12,Proto-Oceanic to Vera’a,Vera’a-β,,index_diachronica_original.html:3728,True,,True,True,True,,,,,,,,,,none
 10.3.12,Proto-Oceanic to Vera’a,Vera’a-β_2,,index_diachronica_original.html:3729,True,,True,True,,True,,,,,,,,,none
