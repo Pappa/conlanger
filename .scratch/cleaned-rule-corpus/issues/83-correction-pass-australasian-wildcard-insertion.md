@@ -4,7 +4,7 @@ Blocked by:
 
 # Correction pass: Australasian `*X` wildcard insertion / correspondence
 
-Target cluster: `syntax_other` — **`*R`/`*L`/`*j`/`*D`/`*Z` in insertion inputs and correspondence sets** — **23** rules in ≤3-fail sections (**6** mono-class sections would complete if cleared). Full-corpus count TBD at claim time ([inventory summary](../inventory/asca-rule-inventory-summary.md)).
+Target cluster: `syntax_other` — **`*R`/`*L`/`*j`/`*D`/`*Z` in insertion inputs and correspondence sets** — **23** rules in ≤3-fail sections (**6** mono-class sections would complete if cleared). Full-index count TBD at claim time ([inventory summary](../inventory/asca-rule-inventory-summary.md)).
 
 Spawned from [64 syntax_other near-miss spike](../issues/64-spike-syntax-other-near-miss-sections.md) (2026-08-19).
 

@@ -1,19 +1,19 @@
 # Sound-change applier compile
 
-Applier compile turns one **sound-change section** (corpus dict) into a concrete backend string. ASCA is the first backend; Brassica is deferred ([ADR-0001](./adr/0001-sound-change-applier-backends.md)).
+Applier compile turns one **sound-change section** (index dict) into a concrete backend string. ASCA is the first backend; Brassica is deferred ([ADR-0001](./adr/0001-sound-change-applier-backends.md)).
 
 Corpus YAML fields and `raw` are **never modified** — transforms apply only to the emitted applier string.
 
 **Primary code:** [`compile/asca/pipeline.py`](../src/conlanger/tools/compile/asca/pipeline.py) (`compile_asca_rule_fields`, `compile_asca_field_pre_subscript`, `compile_asca_field_post_subscript`), [`rules.py`](../src/conlanger/tools/rules.py) (pydantic `DiachronicSeries`, `SoundChangeRule`), [`appliers/asca.py`](../src/conlanger/appliers/asca.py) (`validate_asca`). See [ADR-0014](./adr/0014-per-field-asca-compile.md).
 
-**Related:** [ADR-0002](./adr/0002-applier-neutral-yaml-rule-corpus.md) (applier-neutral corpus), [ADR-0003](./adr/0003-validate-after-applier-compile.md) (validate after compile).
+**Related:** [ADR-0002](./adr/0002-applier-neutral-yaml-rule-index.md) (applier-neutral index), [ADR-0003](./adr/0003-validate-after-applier-compile.md) (validate after compile).
 
 ---
 
 ## Overview
 
 ```text
-corpus section dict
+index section dict
         │
         ▼  DiachronicSeries(section, format="asca")
         │     holds section; assembles ASCA .rsca parts
@@ -55,7 +55,7 @@ Per-field transforms run on `input`, `output`, `env`, and `exception` separately
 | Per-field post-subscript transforms | implemented | 6–10 | Each field: length → tone → apostrophe → ejective → breve → meta notation. | Length/tone/ejective order unchanged from spike 38. |
 | Join compiled fields | implemented | render | `input > output / env // exception` into `SoundChangeRule.value`. | Join is render-only; no join-then-rewrite pipeline. |
 
-**Research:** [positional-slots-and-identity-subscripts.md](../.scratch/cleaned-rule-corpus/research/positional-slots-and-identity-subscripts.md), [subscript-notation-index-asca-brassica.md](../.scratch/cleaned-rule-corpus/research/subscript-notation-index-asca-brassica.md).
+**Research:** [positional-slots-and-identity-subscripts.md](../.scratch/cleaned-rule-index/research/positional-slots-and-identity-subscripts.md), [subscript-notation-index-asca-brassica.md](../.scratch/cleaned-rule-index/research/subscript-notation-index-asca-brassica.md).
 
 ---
 

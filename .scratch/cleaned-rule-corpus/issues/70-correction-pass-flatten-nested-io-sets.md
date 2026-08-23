@@ -34,7 +34,7 @@ ASCA 0.10.2 rejects nested `{}` of the same bracket type at lex time (`NestedBra
 ## Policy
 
 - ADR-0010 / ADR-0002: parse-time class-first de-condensation; `raw` unchanged. Do **not** compile-flatten after parentheticals (would rewrite bucket D).
-- Spike 85: **0** `ok` regressions on full-corpus prototype; `:8439` union → `syntax_other` (slash members) — document as residual, not success.
+- Spike 85: **0** `ok` regressions on full-index prototype; `:8439` union → `syntax_other` (slash members) — document as residual, not success.
 
 ## Acceptance criteria
 
@@ -52,7 +52,7 @@ ASCA 0.10.2 rejects nested `{}` of the same bracket type at lex time (`NestedBra
 **Category:** enhancement  
 **State:** `needs-triage` → **`ready-for-agent`**
 
-**Redundancy check:** No `flatten_nested_sets` in `src/conlanger/` (confirmed). Prototype only: `.scratch/cleaned-rule-corpus/research/nested_set_flatten_prototype.py` + [nested-set-flatten-prototype.md](../research/nested-set-flatten-prototype.md).
+**Redundancy check:** No `flatten_nested_sets` in `src/conlanger/` (confirmed). Prototype only: `.scratch/cleaned-rule-index/research/nested_set_flatten_prototype.py` + [nested-set-flatten-prototype.md](../research/nested-set-flatten-prototype.md).
 
 **Claim verification (spike 85):** In-memory flatten at P4 with `union_paren` recovered **`ok`** on stages rows `:5048`, `:1398`, `:6193`; **0** True→False regressions. Bucket D rows (`:2398`, `:3124`, `:3737`) correctly unchanged. `:1149` nesting is compile-created — out of scope.
 
@@ -65,7 +65,7 @@ ASCA 0.10.2 rejects nested `{}` of the same bracket type at lex time (`NestedBra
 **Category:** enhancement  
 **Summary:** Extend parse-time `flatten_nested_sets` (P4) to each **stages** string; recover true nested I/O rows from spike 85 without touching bucket D / #71 shapes.
 
-**Current behavior:** Stage strings keep nested `{…}` through ingest. Compile parenthetical expansion cannot un-nest YAML depth > 1. Inventory: **45** `nested_brackets` rows corpus-wide; stages-only recoveries in spike 85 include `:5048`, `:1398` (union_paren), `:6193` (union). No production ingest flatten shipped.
+**Current behavior:** Stage strings keep nested `{…}` through ingest. Compile parenthetical expansion cannot un-nest YAML depth > 1. Inventory: **45** `nested_brackets` rows index-wide; stages-only recoveries in spike 85 include `:5048`, `:1398` (union_paren), `:6193` (union). No production ingest flatten shipped.
 
 **Desired behavior:**
 - After [69](69-correction-pass-flatten-nested-context-sets.md) lands `flatten_nested_sets` at **P4**, apply the same function to every string in each rule’s **`stages`** list (in addition to env/exception from #69).
@@ -75,13 +75,13 @@ ASCA 0.10.2 rejects nested `{}` of the same bracket type at lex time (`NestedBra
 
 **Key interfaces:**
 - `IndexDiachronicaParser.parse()` — P4 after `resolve_catch_all_else_rules` (same insertion as #69).
-- Shared ingest helper from #69 (port from `.scratch/cleaned-rule-corpus/research/nested_set_flatten_prototype.py` if #69 not merged yet — do not fork two implementations).
+- Shared ingest helper from #69 (port from `.scratch/cleaned-rule-index/research/nested_set_flatten_prototype.py` if #69 not merged yet — do not fork two implementations).
 - Tests under `tests/conlanger/tools/ingest/` — positive: HTML sources `:5048`, `:6193`, `:1398`; negative: `:2398`, `:3124`, `:3737`, `:1149` (field values unchanged post-flatten).
 
 **Acceptance criteria:**
 - [ ] Each stage string passed through `flatten_nested_sets` at P4
 - [ ] TDD fixtures above pass; negative fixtures show no mutation
-- [ ] `uv run regenerate_corpus` re-baseline; **Answer** records `nested_brackets` before/after and `ok` delta
+- [ ] `uv run create_index` re-baseline; **Answer** records `nested_brackets` before/after and `ok` delta
 - [ ] Residual rows classified (D → #71; malformed → manual/skip; compile nesting → out of scope)
 
 **Out of scope:**

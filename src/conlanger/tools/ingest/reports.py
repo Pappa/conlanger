@@ -1,4 +1,4 @@
-"""Ingest reporting helpers for cleaned-corpus regeneration."""
+"""Ingest reporting helpers for cleaned-index regeneration."""
 
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ _RULE_COMMENT_QUALIFIER_PHRASES = (
 
 
 def write_rule_comment_phrase_summary(doc: dict[str, Any], path: Path) -> int:
-    """Write qualifier-phrase counts from corpus rule ``comment`` fields."""
+    """Write qualifier-phrase counts from index rule ``comment`` fields."""
     comments: list[str] = []
     for section in doc.get("sections") or []:
         for rule in section.get("rules") or []:

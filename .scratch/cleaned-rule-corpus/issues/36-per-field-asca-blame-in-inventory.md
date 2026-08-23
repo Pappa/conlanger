@@ -6,7 +6,7 @@ Blocked by:
 
 ## Question
 
-How should regen attach **per-field** ASCA diagnostics for failing corpus rules so correction triage can blame `input` / `output` / `env` / `exception` — without changing whole-rule `ok` or reviving probe synthesis?
+How should regen attach **per-field** ASCA diagnostics for failing index rules so correction triage can blame `input` / `output` / `env` / `exception` — without changing whole-rule `ok` or reviving probe synthesis?
 
 ## Decision (2026-08-20)
 
@@ -17,14 +17,14 @@ Whole-rule inventory `ok` stays **`validate_asca`** (`asca validate -r` when ava
 ## Prerequisites (done)
 
 - [Implement `validate` + `validate_part` on the private asca fork](87-implement-asca-fork-validate.md)
-- [Wire conlanger to forked asca `validate`](88-wire-conlanger-forked-asca-validate.md) — `validate_asca_part(part, fragment)` in `src/conlanger/appliers/asca.py`; corpus `env` → ASCA `-f context`
+- [Wire conlanger to forked asca `validate`](88-wire-conlanger-forked-asca-validate.md) — `validate_asca_part(part, fragment)` in `src/conlanger/appliers/asca.py`; index `env` → ASCA `-f context`
 - ~~[Inventory success/error CSV splits and ok-change changelog](34-inventory-success-error-splits-and-ok-changelog.md)~~
 
 ## What to build
 
 ### 1. Field-blame CSVs
 
-Write three artifacts under `inventory/` (name constants beside existing `INVENTORY_*_NAME` in `corpus_inventory.py`):
+Write three artifacts under `inventory/` (name constants beside existing `INVENTORY_*_NAME` in `index_inventory.py`):
 
 | File | Rows |
 |------|------|
@@ -48,7 +48,7 @@ Success and error splits use the **same columns** as the full field-blame CSV an
 
 ### 2. Field source
 
-For each inventory row (same `DiachronicSeries` / optional-output expansion as `validate_corpus_rule`):
+For each inventory row (same `DiachronicSeries` / optional-output expansion as `validate_index_rule`):
 
 - Read **post-compile** strings from the active `SoundChangeRule`: `.input`, `.output`, `.env`, `.exception` (after compile transforms; not raw YAML / `stages`).
 - Call `validate_asca_part("input", input)` etc.; catch `ASCAValidationError` → `ok=false`, message for class/description.
@@ -68,7 +68,7 @@ Do **not** redefine main `ok` from isolation.
 
 ### 4. Regen integration
 
-- Hook from `regenerate_corpus` after main inventory CSV is written (same pass; share compile context).
+- Hook from `create_index` after main inventory CSV is written (same pass; share compile context).
 - Build the full field-blame dataframe, then:
   - write `asca-field-isolation-success.csv` / `asca-field-isolation-error.csv` (filter on `whole_ok`)
   - write `asca-field-isolation.csv` — **default: fails-only** (`whole_ok == false`); optional `--field-isolation-all` for all rows

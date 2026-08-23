@@ -1,7 +1,7 @@
-"""End-to-end tests for the cleaned rule corpus pipeline.
+"""End-to-end tests for the cleaned rule index pipeline.
 
-Primary seam (spec): HTML → IndexDiachronicaParser → corpus document →
-DiachronicSeries compile → validate_asca per corpus rule.
+Primary seam (spec): HTML → IndexDiachronicaParser → index document →
+DiachronicSeries compile → validate_asca per index rule.
 """
 
 from __future__ import annotations
@@ -14,7 +14,7 @@ from helpers import default_index_parser
 
 from conlanger.appliers.asca import validate_asca
 from conlanger.tools.compile.asca.group_mappings import asca_group_mappings_dict
-from conlanger.tools.corpus_inventory import validate_corpus_rule
+from conlanger.tools.index_inventory import validate_index_rule
 from conlanger.tools.rules import DiachronicSeries
 from tests.conftest import ASCA_INSTALLED
 
@@ -105,7 +105,7 @@ def _parse_section(
     return doc["sections"][0]
 
 
-def _assert_corpus_rule_shape(rule: dict) -> None:
+def _assert_index_rule_shape(rule: dict) -> None:
     for key in ("stages", "raw", "source"):
         assert key in rule
     if not rule.get("env"):
@@ -115,7 +115,7 @@ def _assert_corpus_rule_shape(rule: dict) -> None:
 
 
 def test_e2e_minimal_html_fixture_shape_and_raw_preservation(tmp_path: Path):
-    """Parse a minimal Index-shaped section and assert corpus schema + raw audit."""
+    """Parse a minimal Index-shaped section and assert index schema + raw audit."""
     html_path = tmp_path / "minimal.html"
     _write_section_html(
         html_path,
@@ -137,7 +137,7 @@ def test_e2e_minimal_html_fixture_shape_and_raw_preservation(tmp_path: Path):
     assert len(section["rules"]) == 3
 
     ok_rule, feature_rule, bad_rule = section["rules"]
-    _assert_corpus_rule_shape(ok_rule)
+    _assert_index_rule_shape(ok_rule)
     assert ok_rule["stages"] == ["a", "b"]
     assert ok_rule["raw"] == "a → b"
     assert ok_rule["source"].startswith("minimal.html:")
@@ -168,7 +168,7 @@ def test_e2e_minimal_html_fixture_compile_and_validate(tmp_path: Path):
     for rule in section.get("rules") or []:
         rule_id = str(rule.get("rule_id", ""))
         rows.extend(
-            validate_corpus_rule(
+            validate_index_rule(
                 section,
                 rule,
                 rule_id,
@@ -199,7 +199,7 @@ def test_e2e_html_extract_pipeline_parse(
     expected: dict[str, str | None],
     tmp_path: Path,
 ):
-    """HTML rule line → parser → corpus fields match fixture expectations."""
+    """HTML rule line → parser → index fields match fixture expectations."""
     html_path = tmp_path / f"{case_id}.html"
     escaped = html_module.escape(raw)
     _write_section_html(
@@ -212,7 +212,7 @@ def test_e2e_html_extract_pipeline_parse(
     section = _parse_section(html_path, source_file=f"{case_id}.html")
     assert len(section["rules"]) == 1
     rule = section["rules"][0]
-    _assert_corpus_rule_shape(rule)
+    _assert_index_rule_shape(rule)
     assert rule["raw"] == raw
 
     for key, value in expected.items():
@@ -251,7 +251,7 @@ def test_e2e_smoke_pipeline_validate(
     rows = [
         row
         for rule in rules
-        for row in validate_corpus_rule(
+        for row in validate_index_rule(
             section,
             rule,
             str(rule.get("rule_id", "")),

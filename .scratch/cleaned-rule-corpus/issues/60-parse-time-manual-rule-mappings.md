@@ -4,7 +4,7 @@ Status: resolved
 
 # Parse-time manual rule mappings
 
-Owner-authored rewrites for Index lines that cannot be fixed programmatically. Load `data/common/manual_mappings.csv` at parse time and apply **before** any other transform; **`raw`** in corpus YAML stays the HTML surface string.
+Owner-authored rewrites for Index lines that cannot be fixed programmatically. Load `data/common/manual_mappings.csv` at parse time and apply **before** any other transform; **`raw`** in index YAML stays the HTML surface string.
 
 Spawned from grill 2026-08-09 ([map](../map.md)).
 
@@ -26,9 +26,9 @@ Today:
 
 | # | Decision |
 | --- | --- |
-| Q1 | **Substring match** — `from` must appear in the extracted HTML string; replace that substring with `to` to form the working parse string. `raw` on the corpus rule stays the unmodified extract. |
+| Q1 | **Substring match** — `from` must appear in the extracted HTML string; replace that substring with `to` to form the working parse string. `raw` on the index rule stays the unmodified extract. |
 | Q2 | **No `comment` mutation** — emit debug CSV `manual_mappings_matched_rules.csv` (see below). `reason` stays human audit in `manual_mappings.csv` only. |
-| Q3 | **No corpus flag** on the rule. |
+| Q3 | **No index flag** on the rule. |
 | Q4 | **Console warning** once per unmatched `from` pattern per regen (not per HTML line). |
 | Q5 | Manual mapping runs **before** `is_quoted_prose_paragraph` and all other parse transforms. |
 
@@ -51,7 +51,7 @@ One row per mapping hit (if multiple patterns match one rule in one pass, one ro
 ### 1. CSV loader
 
 - Path: `data/common/manual_mappings.csv` (default; overridable in tests).
-- Required columns: `from`, `to`. Optional: `reason` (audit only; not written to corpus).
+- Required columns: `from`, `to`. Optional: `reason` (audit only; not written to index).
 - Reject duplicate `from` keys at load time.
 - `load_manual_mappings()` + apply helper in `parsers.py`.
 
@@ -60,7 +60,7 @@ One row per mapping hit (if multiple patterns match one rule in one pass, one ro
 In `IndexDiachronicaParser.parse_rule_element()` (or caller with section context), immediately after `raw = extract_text_with_subs(el)`:
 
 ```text
-raw          ← HTML surface (stored on corpus rule)
+raw          ← HTML surface (stored on index rule)
 working      ← apply_manual_mappings(raw)   # substring replace
 …            ← is_quoted_prose_paragraph(working)? … NO — use working
 …            ← normalize_symbols(working) → extract_rule_parts → … (unchanged order)
@@ -75,7 +75,7 @@ Collect hits on the parser (or parse pass) with `section_index`, `section_name`,
 
 ### 3. Regen integration
 
-- `uv run regenerate_corpus` writes `manual_mappings_matched_rules.csv` alongside inventory outputs.
+- `uv run create_index` writes `manual_mappings_matched_rules.csv` alongside inventory outputs.
 - After full parse, emit **one console warning per `from` pattern** that never matched any rule in that regen.
 
 ### 4. Tests
@@ -86,13 +86,13 @@ Collect hits on the parser (or parse pass) with `section_index`, `section_name`,
 
 ### 5. Regen + inventory
 
-- Re-run `uv run regenerate_corpus`; record ok-count delta in **Answer**.
+- Re-run `uv run create_index`; record ok-count delta in **Answer**.
 - Expect row 1 env fix + row 2 new compileable rule (exact uplift TBD).
 
 ## Out of scope
 
 - Regex / fuzzy matching
-- `reason` → corpus `comment`
+- `reason` → index `comment`
 - Corpus-rule boolean flag for manual mapping
 - Compile-time application
 - Replacing `ipa_mappings.csv`, `feature_mappings.csv`, or correction passes for systematic clusters
@@ -115,6 +115,6 @@ Collect hits on the parser (or parse pass) with `section_index`, `section_name`,
 
 ## Answer
 
-Parse-time **manual mappings** land in `parsers.py`: `load_manual_mappings` / `apply_manual_mappings` (longest-`from`-first, first-occurrence replace); `IndexDiachronicaParser` applies them immediately after extract, before `is_quoted_prose_paragraph` / `normalize_symbols`; corpus `raw` stays the HTML surface. Regen writes `manual_mappings_matched_rules.csv` and warns once per unmatched `from`.
+Parse-time **manual mappings** land in `parsers.py`: `load_manual_mappings` / `apply_manual_mappings` (longest-`from`-first, first-occurrence replace); `IndexDiachronicaParser` applies them immediately after extract, before `is_quoted_prose_paragraph` / `normalize_symbols`; index `raw` stays the HTML surface. Regen writes `manual_mappings_matched_rules.csv` and warns once per unmatched `from`.
 
 **Inventory:** before **7184 / 9201 ok (78.1%)** → after **7185 / 9201 ok** (**+1**). Both seed rows match; HTML:5499 (`s → z / _C[+voice]`) flips to ok; HTML:5509 gets fixed env `_{s,({m,j,w})V}` but still fails `nested_brackets` under ASCA.

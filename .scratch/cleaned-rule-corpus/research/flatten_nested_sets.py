@@ -3,7 +3,7 @@
 Not production parser/compiler code. Scope is documented in
 ``nested-set-flatten-prototype.md``.
 
-Run self-check: ``uv run python .scratch/cleaned-rule-corpus/research/flatten_nested_sets.py``
+Run self-check: ``uv run python .scratch/cleaned-rule-index/research/flatten_nested_sets.py``
 """
 
 from __future__ import annotations
@@ -145,12 +145,7 @@ def _split_members(inner: str) -> list[str]:
             depth_bracket += 1
         elif char == "]":
             depth_bracket -= 1
-        if (
-            char == ","
-            and depth_brace == 0
-            and depth_paren == 0
-            and depth_bracket == 0
-        ):
+        if char == "," and depth_brace == 0 and depth_paren == 0 and depth_bracket == 0:
             members.append("".join(current).strip())
             current = []
         else:
@@ -313,8 +308,11 @@ _SELF_CHECKS: list[tuple[str, str, str]] = [
     ("_ə{(C){p,kʷ},m,w}", MODE_UNION, "_ə{(C){p,kʷ},m,w}"),
     ("_ə{(C){p,kʷ},m,w}", MODE_UNION_PAREN, "_ə{(C)p,(C)kʷ,m,w}"),
     ("{hə{p,b},ə{p,b}}", MODE_UNION, "{həp,həb,əp,əb}"),
-    ("e o u æ ø y → {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i}", MODE_UNION,
-     "e o u æ ø y → {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i}"),
+    (
+        "e o u æ ø y → {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i}",
+        MODE_UNION,
+        "e o u æ ø y → {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i}",
+    ),
     ("{{∅,∅}s,s{∅,∅}}", MODE_UNION, "{∅s,∅s,s∅,s∅}"),
     (":{#_, _#}:", MODE_UNION, ":{#_, _#}:"),
     ("{a, b, c}", MODE_UNION, "{a, b, c}"),
@@ -328,8 +326,10 @@ def main() -> None:
         status = "ok" if got == expected else "FAIL"
         if got != expected:
             failed += 1
-        print(f"{status:4} [{mode}] {source!r} → {got!r}"
-              + ("" if got == expected else f" (want {expected!r})"))
+        print(
+            f"{status:4} [{mode}] {source!r} → {got!r}"
+            + ("" if got == expected else f" (want {expected!r})")
+        )
     raise SystemExit(failed)
 
 

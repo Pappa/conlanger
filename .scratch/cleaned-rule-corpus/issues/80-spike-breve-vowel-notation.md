@@ -46,7 +46,7 @@ Resolve with `/research`. Deliver findings markdown + optional CSV (same shape a
 - [x] Subcluster table with counts and linguistic gloss
 - [x] ASCA acceptance probes recorded (legal / illegal forms)
 - [x] Per-subcluster recommendation with confidence
-- [x] Findings under `.scratch/cleaned-rule-corpus/research/`
+- [x] Findings under `.scratch/cleaned-rule-index/research/`
 - [x] Follow-on correction-pass ticket filed **or** explicit defer/skip recommendation
 
 ## Answer
@@ -82,7 +82,7 @@ Promoted `needs-triage` → `ready-for-agent`. Inventory verified: **13** rows, 
 **Skill:** `/research`  
 **Summary:** Determine what Index Diachronica breve vowel notation (`̆`) means per subcluster and whether a class-first ASCA representation exists — or route to `manual_mappings` / skip.
 
-**Current behavior:** 13 corpus rules fail `unknown_character` on combining breve in stages after #63's `ı→j` IPA map shifted Tai failures from dotless `ı` to `j̆`/`ɨ̆`. Spike #42 excluded bare `̆` from letter IPA CSV. Env `[+short]` maps to `[-long]` via `feature_mappings.csv` — unrelated to breve **segment** glyphs.
+**Current behavior:** 13 index rules fail `unknown_character` on combining breve in stages after #63's `ı→j` IPA map shifted Tai failures from dotless `ı` to `j̆`/`ɨ̆`. Spike #42 excluded bare `̆` from letter IPA CSV. Env `[+short]` maps to `[-long]` via `feature_mappings.csv` — unrelated to breve **segment** glyphs.
 
 **Research questions:**
 1. **Linguistic intent** — sample HTML + section prose for each subcluster:
@@ -96,8 +96,8 @@ Promoted `needs-triage` → `ready-for-agent`. Inventory verified: **13** rows, 
 5. **Section-complete impact** — re-count from current `asca-rule-inventory-error.csv`; rank subclusters.
 
 **Deliverables:**
-- Findings: `.scratch/cleaned-rule-corpus/research/breve-vowel-notation.md`
-- Optional CSV: `.scratch/cleaned-rule-corpus/research/breve-vowel-notation.csv` (columns like [unknown-character-ipa-mappings.csv](../research/unknown-character-ipa-mappings.csv): `source`, `subcluster`, `raw_snippet`, `linguistic_gloss`, `candidate_target`, `asca_probe_result`, `confidence`, `recommendation`)
+- Findings: `.scratch/cleaned-rule-index/research/breve-vowel-notation.md`
+- Optional CSV: `.scratch/cleaned-rule-index/research/breve-vowel-notation.csv` (columns like [unknown-character-ipa-mappings.csv](../research/unknown-character-ipa-mappings.csv): `source`, `subcluster`, `raw_snippet`, `linguistic_gloss`, `candidate_target`, `asca_probe_result`, `confidence`, `recommendation`)
 - On close: file follow-on correction-pass ticket **or** explicit defer/skip in ticket **Answer**; set `Status: resolved`
 
 **Verified inventory rows** (join keys for research):

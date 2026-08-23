@@ -4,7 +4,7 @@ Blocked by: 12
 
 # Correction pass: prose env `else`
 
-Target cluster: `expected_underscore` — Index catch-all **`/ else`** — **93** corpus rules with `env` matching `^\s*else\b` (inventory: **90** of those in `expected_underscore`; baseline in older notes said 85).
+Target cluster: `expected_underscore` — Index catch-all **`/ else`** — **93** index rules with `env` matching `^\s*else\b` (inventory: **90** of those in `expected_underscore`; baseline in older notes said 85).
 
 Spawned from [correction pass template](13-correction-pass-template.md). **Grill 2026-08-09** retargeted this ticket (parse-time complementary rewrite; no `#_` stub).
 

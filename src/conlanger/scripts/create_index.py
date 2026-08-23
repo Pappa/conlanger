@@ -1,4 +1,4 @@
-"""Regenerate cleaned corpus YAML and ASCA validation inventory from Index HTML.
+"""Create cleaned index YAML and ASCA validation inventory from Index HTML.
 
 Ticket 12: one invocation emits cleaned YAML, validation CSV, and summary markdown.
 Uses ticket-11 extract-only ingest (``IndexDiachronicaParser``) and ``validate_asca``.
@@ -20,7 +20,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from conlanger.appliers.asca import asca_supports_validate, resolve_asca_bin
 from conlanger.tools.compile.asca.group_mappings import asca_group_mappings_dict
-from conlanger.tools.corpus_inventory import (
+from conlanger.tools.index_inventory import (
     FIELD_ISOLATION_CSV_NAME,
     FIELD_ISOLATION_ERROR_CSV_NAME,
     FIELD_ISOLATION_SUCCESS_CSV_NAME,
@@ -38,7 +38,7 @@ from conlanger.tools.corpus_inventory import (
     write_filtered_inventory_csvs,
     write_validation_csv,
 )
-from conlanger.tools.corpus_io import write_cleaned_corpus
+from conlanger.tools.index_io import write_cleaned_index
 from conlanger.tools.ingest import (
     IndexDiachronicaParser,
     write_rule_comment_phrase_summary,
@@ -51,9 +51,9 @@ from conlanger.utils.file_io import (
 
 DEFAULT_HTML = ROOT / "data" / "diachronica" / "index_diachronica_original.html"
 DEFAULT_YAML = ROOT / "data" / "diachronica" / "index_diachronica_parsed.yml"
-DEFAULT_INVENTORY_DIR = ROOT / ".scratch" / "cleaned-rule-corpus" / "inventory"
+DEFAULT_INVENTORY_DIR = ROOT / ".scratch" / "cleaned-rule-index" / "inventory"
 DEFAULT_COMMENT_SUMMARY = (
-    ROOT / ".scratch" / "cleaned-rule-corpus" / "rule-comment-phrases.md"
+    ROOT / ".scratch" / "cleaned-rule-index" / "rule-comment-phrases.md"
 )
 DEFAULT_PROBE = ROOT / "tests" / "fixtures" / "asca_probe_words.wsca"
 
@@ -147,7 +147,7 @@ def main() -> int:
         corrections=tables.corrections,
     )
     doc = parser.parse(args.html)
-    write_cleaned_corpus(doc, args.yaml_out)
+    write_cleaned_index(doc, args.yaml_out)
     n_with_comment = write_rule_comment_phrase_summary(doc, DEFAULT_COMMENT_SUMMARY)
 
     matched_path = args.inventory_dir / MANUAL_MAPPINGS_MATCHED_CSV_NAME

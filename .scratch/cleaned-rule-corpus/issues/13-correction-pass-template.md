@@ -22,7 +22,7 @@ Passes may add ingest normalizations (feature mappings, class-letter compile, en
 
 ## Blocked by
 
-- [Full-corpus validation inventory](12-full-corpus-validation-inventory.md)
+- [Full-index validation inventory](12-full-index-validation-inventory.md)
 
 ## Acceptance criteria
 

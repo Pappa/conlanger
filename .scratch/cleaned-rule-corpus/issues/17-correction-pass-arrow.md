@@ -19,7 +19,7 @@ Baseline: **223** rules with `unknown_character` / error_token `→` (258 rules 
 Re-run full inventory:
 
 ```bash
-uv run regenerate_corpus
+uv run create_index
 ```
 
 ## Notes

@@ -96,7 +96,7 @@ def _append_stage_segments(stages: list[str], stage: str) -> None:
     stages.append(stage)
 
 
-def normalize_corpus_rule_tilde_fields(rule: dict[str, str]) -> dict[str, str]:
+def normalize_index_rule_tilde_fields(rule: dict[str, str]) -> dict[str, str]:
     """Normalize per-stage tilde notation before chain expansion."""
     result = dict(rule)
     stages = list(result.get("stages") or [])

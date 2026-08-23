@@ -24,7 +24,7 @@ skip_sections:
 ```
 
 - **`id`**: matches section **`index`** in parsed YAML (dotted ancestry key from `<h2>` heading).
-- **`reason`**: operator documentation only; not required on the corpus section object.
+- **`reason`**: operator documentation only; not required on the index section object.
 
 Load into `ParserConfig` (extend `ParserConfig` + `load_parser_config()` in `src/conlanger/utils/mappings.py` / `file_io.py`).
 
@@ -42,11 +42,11 @@ When emitting a section whose `index` is listed in `skip_sections`:
 When a section has **`skipped: true`**:
 
 - **No compile** for any rule in that section (skip `SoundChangeRule` construction / ASCA pipeline for those rules).
-- Implement at the compile boundary (`DiachronicSeries` or the inventory/compile caller) — not by mutating corpus rules.
+- Implement at the compile boundary (`DiachronicSeries` or the inventory/compile caller) — not by mutating index rules.
 
 Distinction from rule-level hold-outs: `status: skipped` / `skip` on a rule still applies only to that rule inside an otherwise active section.
 
-### 4. Inventory — `corpus_inventory.py` + summary
+### 4. Inventory — `index_inventory.py` + summary
 
 Rules in **`skipped: true`** sections:
 
@@ -59,10 +59,10 @@ Rules in **`skipped: true`** sections:
   - Sections skipped: **M / total** (pct%)
   ```
 
-  Percentages are of **total corpus rules** / **total sections** respectively (same style as OK/Fail lines). Example target after seeding one section:
+  Percentages are of **total index rules** / **total sections** respectively (same style as OK/Fail lines). Example target after seeding one section:
 
   ```
-  - Rows: **9638** (one per corpus rule)
+  - Rows: **9638** (one per index rule)
   - OK: **8026** (83.3%)
   - Fail: **1612** (16.7%)
   - Skipped: **30** (0.3%)
@@ -82,17 +82,17 @@ Rules in **`skipped: true`** sections:
 ### 6. Docs
 
 - `docs/index-diachronica-parser.md` — `skip_sections` config + `skipped` section field.
-- `CONTEXT.md` or schema ticket cross-link if section `skipped` amends the corpus schema (optional field on section objects).
+- `CONTEXT.md` or schema ticket cross-link if section `skipped` amends the index schema (optional field on section objects).
 
 ### Regen
 
-`uv run regenerate_corpus`; record rule/section skip counts and any OK/Fail delta in **Answer**.
+`uv run create_index`; record rule/section skip counts and any OK/Fail delta in **Answer**.
 
 ## Policy
 
 - **Section skip** = owner-curated config (`parser_config.yml`); permanent, citation-backed.
 - **Rule skip** (`status: skipped`) = per-rule hold-out after class-first work (ADR-0010); unchanged by this ticket.
-- Parse still extracts skipped sections so rules remain visible in the corpus and inventory.
+- Parse still extracts skipped sections so rules remain visible in the index and inventory.
 
 ## Out of scope
 
@@ -117,15 +117,15 @@ Implemented 2026-08-18.
 - **`ParserConfig.skip_section_ids`** loaded from flat `skip_sections: [{id, reason}]` in `data/parser_config.yml` (seed **37.1.2.4.2**).
 - **Parse:** `IndexDiachronicaParser` sets `skipped: true` on matching sections; rules unchanged.
 - **Compile:** `DiachronicSeries` returns after metadata when `section.skipped`; no `SoundChangeRule` parts.
-- **Inventory:** `validate_corpus_rule` short-circuits with `failure_class=section_skipped`; summary adds **Skipped** / **Sections skipped** lines; skipped rows excluded from success/error CSV splits; section all-OK stats exclude skipped sections.
+- **Inventory:** `validate_index_rule` short-circuits with `failure_class=section_skipped`; summary adds **Skipped** / **Sections skipped** lines; skipped rows excluded from success/error CSV splits; section all-OK stats exclude skipped sections.
 
-**Regen (`uv run regenerate_corpus`):** **9638** rules — OK **8007** (83.1%), Fail **1600** (16.6%), **Skipped 31** (0.3%); **Sections skipped 1 / 714** (0.1%); sections all OK **286 / 713** (40.1%). Changelog **12** ok-flips (rules moved out of OK/Fail into skipped). Parsed YAML: one section with `skipped: true` at **37.1.2.4.2**.
+**Regen (`uv run create_index`):** **9638** rules — OK **8007** (83.1%), Fail **1600** (16.6%), **Skipped 31** (0.3%); **Sections skipped 1 / 714** (0.1%); sections all OK **286 / 713** (40.1%). Changelog **12** ok-flips (rules moved out of OK/Fail into skipped). Parsed YAML: one section with `skipped: true` at **37.1.2.4.2**.
 
 ## References
 
 - [`data/parser_config.yml`](../../../data/parser_config.yml)
 - [`src/conlanger/tools/ingest/parser.py`](../../../src/conlanger/tools/ingest/parser.py) — section emission
-- [`src/conlanger/tools/corpus_inventory.py`](../../../src/conlanger/tools/corpus_inventory.py) — `validate_corpus_rule`, `summarize_inventory`
+- [`src/conlanger/tools/index_inventory.py`](../../../src/conlanger/tools/index_inventory.py) — `validate_index_rule`, `summarize_inventory`
 - [`src/conlanger/tools/rules.py`](../../../src/conlanger/tools/rules.py) — `DiachronicSeries`
-- [Corpus rule `stages` schema / rule `status: skipped`](59-corpus-rule-stages-schema.md)
+- [Corpus rule `stages` schema / rule `status: skipped`](59-index-rule-stages-schema.md)
 - [Parse-time correspondence-series indices (no pre-emptive rule skip)](26-parse-time-correspondence-series-indices.md)

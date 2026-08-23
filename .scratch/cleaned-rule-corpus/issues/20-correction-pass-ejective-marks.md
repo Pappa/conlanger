@@ -8,7 +8,7 @@ Target cluster: `prose_or_expected_arrow` / `syntax_other` — error_token `ʼ` 
 
 ## Problem
 
-Index Diachronica places ejective `ʼ` **after** feature matrices and sets (`ts:[+long]ʼ`, `{t,ts}ʼ`). ASCA parses `ʼ` only as a **segment diacritic** (before `:`) or as the feature **`[+cg]`**. See `.scratch/cleaned-rule-corpus/research/asca-ejective-notation.md`.
+Index Diachronica places ejective `ʼ` **after** feature matrices and sets (`ts:[+long]ʼ`, `{t,ts}ʼ`). ASCA parses `ʼ` only as a **segment diacritic** (before `:`) or as the feature **`[+cg]`**. See `.scratch/cleaned-rule-index/research/asca-ejective-notation.md`.
 
 ## What was built
 

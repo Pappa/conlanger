@@ -9,8 +9,8 @@ Target cluster: `unknown_grouping` — Index class letters from `group_mappings.
 ## What was built
 
 - `DiachronicSeries` (`src/conlanger/tools/phonological_ruleset.py`) holds one applier-neutral section and delegates to `DiachronicSeries`.
-- Index class letters from `data/asca/group_mappings.csv` expand in `SoundChangeRule` during ASCA string emission (not in the corpus dict).
-- `corpus_inventory.validate_corpus_rule` validates via `DiachronicSeries(...)`.
+- Index class letters from `data/asca/group_mappings.csv` expand in `SoundChangeRule` during ASCA string emission (not in the index dict).
+- `index_inventory.validate_index_rule` validates via `DiachronicSeries(...)`.
 
 ## Answer (before/after)
 
@@ -24,7 +24,7 @@ Smoke re-check on the same 317 rows after compile mappings (ASCA 0.10.2, baselin
 Re-run full inventory to refresh CSV/summary:
 
 ```bash
-uv run regenerate_corpus
+uv run create_index
 ```
 
 ## Acceptance criteria

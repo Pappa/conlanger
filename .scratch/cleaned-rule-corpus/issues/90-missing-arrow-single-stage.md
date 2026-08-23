@@ -4,7 +4,7 @@ Blocked by: 89
 
 # Missing-arrow lines: `stages: ["text"]`; compile without output
 
-Grill 2026-08-21 Q6: If the Index line has **no `→`**, parse still emits a corpus rule. **`stages`** is a one-element list: the text that can be parsed **before** env, exception, or **rule comment**. Compile treats that as input and **deals with the missing output** (empty output), so ASCA **compile validation** can fail in the open. These rules are **not** skipped unless they are also in `skip_rules` ([ticket 89](89-unify-status-skipped.md)). Glossary: `CONTEXT.md` (**Stages**).
+Grill 2026-08-21 Q6: If the Index line has **no `→`**, parse still emits a index rule. **`stages`** is a one-element list: the text that can be parsed **before** env, exception, or **rule comment**. Compile treats that as input and **deals with the missing output** (empty output), so ASCA **compile validation** can fail in the open. These rules are **not** skipped unless they are also in `skip_rules` ([ticket 89](89-unify-status-skipped.md)). Glossary: `CONTEXT.md` (**Stages**).
 
 ## What to build
 

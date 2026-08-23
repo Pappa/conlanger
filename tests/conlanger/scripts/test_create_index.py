@@ -1,4 +1,4 @@
-"""Tests for ``regenerate_corpus`` CLI."""
+"""Tests for ``create_index`` CLI."""
 
 from __future__ import annotations
 
@@ -6,8 +6,8 @@ import sys
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
-from conlanger.scripts import regenerate_corpus as regen
-from conlanger.tools.corpus_inventory import FieldIsolationRow, ValidationRow
+from conlanger.scripts import create_index as regen
+from conlanger.tools.index_inventory import FieldIsolationRow, ValidationRow
 
 
 def _write_fake_fork(root: Path) -> Path:
@@ -29,11 +29,11 @@ def _configure_parser_mock(
 
 
 @patch.object(regen, "write_rule_comment_phrase_summary", return_value=0)
-@patch.object(regen, "write_cleaned_corpus")
+@patch.object(regen, "write_cleaned_index")
 @patch.object(regen, "IndexDiachronicaParser")
-def test_regenerate_corpus_writes_manual_mappings_matched_csv(
+def test_create_index_writes_manual_mappings_matched_csv(
     mock_parser_cls,
-    _mock_write_corpus,
+    _mock_write_index,
     _mock_comment_summary,
     tmp_path: Path,
     capsys,
@@ -61,7 +61,7 @@ def test_regenerate_corpus_writes_manual_mappings_matched_csv(
         sys,
         "argv",
         [
-            "regenerate_corpus",
+            "create_index",
             "--html",
             str(html_path),
             "--yaml-out",
@@ -83,12 +83,12 @@ def test_regenerate_corpus_writes_manual_mappings_matched_csv(
     assert "manual mapping" in err.lower()
 
 
-def test_regenerate_corpus_errors_when_html_missing(tmp_path: Path):
+def test_create_index_errors_when_html_missing(tmp_path: Path):
     with patch.object(
         sys,
         "argv",
         [
-            "regenerate_corpus",
+            "create_index",
             "--html",
             str(tmp_path / "missing.html"),
             "--skip-validation",
@@ -98,11 +98,11 @@ def test_regenerate_corpus_errors_when_html_missing(tmp_path: Path):
 
 
 @patch.object(regen, "write_rule_comment_phrase_summary", return_value=0)
-@patch.object(regen, "write_cleaned_corpus")
+@patch.object(regen, "write_cleaned_index")
 @patch.object(regen, "IndexDiachronicaParser")
-def test_regenerate_corpus_errors_when_probe_missing(
+def test_create_index_errors_when_probe_missing(
     mock_parser_cls,
-    _mock_write_corpus,
+    _mock_write_index,
     _mock_comment_summary,
     tmp_path: Path,
 ):
@@ -119,7 +119,7 @@ def test_regenerate_corpus_errors_when_probe_missing(
             sys,
             "argv",
             [
-                "regenerate_corpus",
+                "create_index",
                 "--html",
                 str(html_path),
                 "--yaml-out",
@@ -134,7 +134,7 @@ def test_regenerate_corpus_errors_when_probe_missing(
         assert regen.main() == 1
 
 
-def test_regenerate_corpus_errors_when_asca_fork_missing(
+def test_create_index_errors_when_asca_fork_missing(
     tmp_path: Path,
     capsys,
 ):
@@ -145,14 +145,14 @@ def test_regenerate_corpus_errors_when_asca_fork_missing(
 
     with (
         patch.object(regen, "write_rule_comment_phrase_summary", return_value=0),
-        patch.object(regen, "write_cleaned_corpus"),
+        patch.object(regen, "write_cleaned_index"),
         patch.object(regen, "IndexDiachronicaParser") as mock_parser_cls,
         patch.object(regen, "ROOT", tmp_path),
         patch.object(
             sys,
             "argv",
             [
-                "regenerate_corpus",
+                "create_index",
                 "--html",
                 str(html_path),
                 "--yaml-out",
@@ -171,11 +171,11 @@ def test_regenerate_corpus_errors_when_asca_fork_missing(
 
 
 @patch.object(regen, "write_rule_comment_phrase_summary", return_value=0)
-@patch.object(regen, "write_cleaned_corpus")
+@patch.object(regen, "write_cleaned_index")
 @patch.object(regen, "IndexDiachronicaParser")
-def test_regenerate_corpus_errors_when_asca_missing_on_path(
+def test_create_index_errors_when_asca_missing_on_path(
     mock_parser_cls,
-    _mock_write_corpus,
+    _mock_write_index,
     _mock_comment_summary,
     tmp_path: Path,
 ):
@@ -192,7 +192,7 @@ def test_regenerate_corpus_errors_when_asca_missing_on_path(
             sys,
             "argv",
             [
-                "regenerate_corpus",
+                "create_index",
                 "--html",
                 str(html_path),
                 "--yaml-out",
@@ -217,11 +217,11 @@ def test_regenerate_corpus_errors_when_asca_missing_on_path(
 @patch.object(regen, "load_inventory_csv", return_value=None)
 @patch.object(regen, "iter_inventory_with_field_isolation")
 @patch.object(regen, "write_rule_comment_phrase_summary", return_value=0)
-@patch.object(regen, "write_cleaned_corpus")
+@patch.object(regen, "write_cleaned_index")
 @patch.object(regen, "IndexDiachronicaParser")
-def test_regenerate_corpus_writes_validation_inventory(
+def test_create_index_writes_validation_inventory(
     mock_parser_cls,
-    _mock_write_corpus,
+    _mock_write_index,
     _mock_comment_summary,
     mock_iter_rows,
     _mock_load_inventory,
@@ -300,7 +300,7 @@ def test_regenerate_corpus_writes_validation_inventory(
             sys,
             "argv",
             [
-                "regenerate_corpus",
+                "create_index",
                 "--html",
                 str(html_path),
                 "--yaml-out",
@@ -337,11 +337,11 @@ def test_regenerate_corpus_writes_validation_inventory(
 @patch.object(regen, "load_inventory_csv", return_value=None)
 @patch.object(regen, "iter_inventory_with_field_isolation")
 @patch.object(regen, "write_rule_comment_phrase_summary", return_value=0)
-@patch.object(regen, "write_cleaned_corpus")
+@patch.object(regen, "write_cleaned_index")
 @patch.object(regen, "IndexDiachronicaParser")
-def test_regenerate_corpus_reset_changelog_overwrites_existing(
+def test_create_index_reset_changelog_overwrites_existing(
     mock_parser_cls,
-    _mock_write_corpus,
+    _mock_write_index,
     _mock_comment_summary,
     mock_iter_rows,
     _mock_load_inventory,
@@ -411,7 +411,7 @@ def test_regenerate_corpus_reset_changelog_overwrites_existing(
             sys,
             "argv",
             [
-                "regenerate_corpus",
+                "create_index",
                 "--html",
                 str(html_path),
                 "--yaml-out",

@@ -4,7 +4,7 @@ Blocked by:
 
 # Config-only `status: skipped`; stop parse auto-skip
 
-Grill 2026-08-21 (Q3–Q5, Q7): **`status: skipped` is the only skip field.** A **corpus rule** is skipped only if its **rule id** is in `parser_config.yml` `skip_rules`. A **sound-change section** is skipped only if its `index` is in `skip_sections` (YAML `status: skipped`, not boolean `skipped: true`). Parse must **not** auto-skip missing-arrow, quoted-prose, gloss-only, or short-spine lines. Skipped **rules** compile as ASCA comments (`#\t…`). Glossary: `CONTEXT.md`. ADRs: [0010 amendment](../../../docs/adr/0010-historical-fidelity-class-first-status.md), [0013](../../../docs/adr/0013-parse-compile-validate.md).
+Grill 2026-08-21 (Q3–Q5, Q7): **`status: skipped` is the only skip field.** A **index rule** is skipped only if its **rule id** is in `parser_config.yml` `skip_rules`. A **sound-change section** is skipped only if its `index` is in `skip_sections` (YAML `status: skipped`, not boolean `skipped: true`). Parse must **not** auto-skip missing-arrow, quoted-prose, gloss-only, or short-spine lines. Skipped **rules** compile as ASCA comments (`#\t…`). Glossary: `CONTEXT.md`. ADRs: [0010 amendment](../../../docs/adr/0010-historical-fidelity-class-first-status.md), [0013](../../../docs/adr/0013-parse-compile-validate.md).
 
 ## Problem
 
@@ -15,7 +15,7 @@ Parse stamps `status: skipped` + `stages: []` on several automatic paths **and**
 ### 1. Parse — auto-skip off; `skip_rules` on
 
 - Keep `skip_rules`: listed **rule id**s → `status: skipped` (optional `comment` from config `reason` as today).
-- Stop emitting `status: skipped` for quoted-prose, missing-`→`, gloss-only, and `finalize_stages_shape`. Those remain ordinary corpus rules (spine shape is [ticket 90](90-missing-arrow-single-stage.md)).
+- Stop emitting `status: skipped` for quoted-prose, missing-`→`, gloss-only, and `finalize_stages_shape`. Those remain ordinary index rules (spine shape is [ticket 90](90-missing-arrow-single-stage.md)).
 - Do **not** stamp skip on rules inside a skipped section ([ticket 78](78-implement-parser-config-section-skip.md)).
 
 ### 2. Parse — sections
@@ -26,7 +26,7 @@ Parse stamps `status: skipped` + `stages: []` on several automatic paths **and**
 ### 3. Compile
 
 - Rule `status: skipped` → still a `SoundChangeRule` (or equivalent), prefix `#\t`, body **`raw`**. Excluded from `_active_rule_changes`.
-- Remove boolean `skip` / `skip: true` as a separate corpus/compile flag; chain meta copies `status` if needed, not `skip`.
+- Remove boolean `skip` / `skip: true` as a separate index/compile flag; chain meta copies `status` if needed, not `skip`.
 - Section `status: skipped` → early return, no rule parts (ticket 78).
 
 ### 4. Inventory
@@ -52,5 +52,5 @@ Parse stamps `status: skipped` + `stages: []` on several automatic paths **and**
 - [ ] Auto-skip paths gone; `skip_rules` still sets rule `status: skipped`
 - [ ] Section skip is `status: skipped` only
 - [ ] Skipped rules render as `#\t` + `raw`; skipped sections bypass compile
-- [ ] No `skip: true` / `skipped: true` in corpus YAML
+- [ ] No `skip: true` / `skipped: true` in index YAML
 - [ ] Full gate: `uv run pytest`; `uv run ruff check --fix`; `uv run ruff format && uv run ruff format --check src`

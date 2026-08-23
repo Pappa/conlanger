@@ -4,7 +4,7 @@ Blocked by:
 
 # Correction pass: output/env slash boundary (residual)
 
-Target cluster: `syntax_other` — **`Expected end of line… Did you forget a '/' between the output and environment?`** — **23** rules in ≤3-fail sections (**9** mono-class sections would complete if cleared). Full-corpus count at claim: **68** ([inventory summary](../inventory/asca-rule-inventory-summary.md)).
+Target cluster: `syntax_other` — **`Expected end of line… Did you forget a '/' between the output and environment?`** — **23** rules in ≤3-fail sections (**9** mono-class sections would complete if cleared). Full-index count at claim: **68** ([inventory summary](../inventory/asca-rule-inventory-summary.md)).
 
 Spawned from [64 syntax_other near-miss spike](../issues/64-spike-syntax-other-near-miss-sections.md) (2026-08-19).
 

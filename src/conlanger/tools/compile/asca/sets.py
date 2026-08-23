@@ -21,6 +21,11 @@ def is_whole_field_set(text: str) -> bool:
     return depth == 0
 
 
+def convert_set_to_environment_set(text: str) -> str:
+    """Convert a ``{…}`` set to an environment set (e.g. ``{…}`` → ``:{…}:``)."""
+    return f":{text}:"
+
+
 def split_braced_set_members(set_text: str) -> list[str]:
     """Split a ``{…}`` set string into top-level members (nested ``{…}`` aware)."""
     inner = set_text.strip()[1:-1]

@@ -20,7 +20,7 @@ How much work would it take to modify **asca-rust** so it can validate a rule â€
 
 ## Deliverable
 
-Findings markdown under `.scratch/cleaned-rule-corpus/research/` with a sized work breakdown and a recommendation for ticket 36.
+Findings markdown under `.scratch/cleaned-rule-index/research/` with a sized work breakdown and a recommendation for ticket 36.
 
 ## Acceptance criteria
 

@@ -40,14 +40,14 @@ Update [docs/index-diachronica-parser.md](../../docs/index-diachronica-parser.md
 
 ### Regen
 
-`uv run regenerate_corpus` (or the repo’s usual inventory regen). Note changelog `ok` flips in **Answer**. Watch `malformed_comment` / `trailing-comment` and `Archi-ɢ,ɣ`.
+`uv run create_index` (or the repo’s usual inventory regen). Note changelog `ok` flips in **Answer**. Watch `malformed_comment` / `trailing-comment` and `Archi-ɢ,ɣ`.
 
 ## Out of scope
 
 - Detector-on-comment (looking at the tail for `sporadic` / gloss)
 - Field-source detection counts in `asca-rule-inventory-summary.md`
 - Bracket-aware / quote-aware `;` (owner mappings cover false positives)
-- Emitting corpus **rule comment** as ASCA `;;`
+- Emitting index **rule comment** as ASCA `;;`
 - ADR-0012
 - Re-authoring **Manual mapping** rows (owner already converted `;;` → `;` and added Kyrgyz/Blackfoot/Greek rows)
 
@@ -66,12 +66,12 @@ Update [docs/index-diachronica-parser.md](../../docs/index-diachronica-parser.md
 
 Implemented 2026-08-18. `split_line_semicolon_comment` peels the first `;` in `parse_rule_element` after manual mapping / quoted-prose skip, before `normalize_symbols` / `extract_rule_parts`. Tail seeds `comment`; remainder-only pipeline unchanged except `apply_semicolon_field_comments` removed from the call chain.
 
-**Regen (`uv run regenerate_corpus`):** OK **7941** (82.4%, was 7953). **16** changelog flips: **3** false→true (incl. **Archi-ɢ,ɣ**), **13** true→false (naive in-paren `;` cuts — spec-accepted). **`malformed_comment` cluster eliminated** (7→0). **Old-Irish-VOR** no longer `malformed_comment` / `trailing-comment` (now `unknown_grouping` for `R`). **rules_with_comment** 1100.
+**Regen (`uv run create_index`):** OK **7941** (82.4%, was 7953). **16** changelog flips: **3** false→true (incl. **Archi-ɢ,ɣ**), **13** true→false (naive in-paren `;` cuts — spec-accepted). **`malformed_comment` cluster eliminated** (7→0). **Old-Irish-VOR** no longer `malformed_comment` / `trailing-comment` (now `unknown_grouping` for `R`). **rules_with_comment** 1100.
 
 ## References
 
 - [Grill 76](76-grill-double-semicolon-rule-comment-delimiter.md)
-- [Ticket 30](30-rule-comment-field-on-corpus-rules.md) (order amended)
+- [Ticket 30](30-rule-comment-field-on-index-rules.md) (order amended)
 - `src/conlanger/tools/ingest/parser.py` — `parse_rule_element`
 - `src/conlanger/tools/ingest/transforms.py` — `apply_semicolon_field_comments`, `join_rule_comment`
 - `data/common/manual_mappings.csv`

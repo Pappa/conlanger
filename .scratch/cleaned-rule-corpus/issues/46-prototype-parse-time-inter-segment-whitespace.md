@@ -6,7 +6,7 @@ Blocked by: 44
 
 ## Question
 
-Is it **feasible** to insert inter-segment (phoneme/grapheme) whitespace into rule fields **at HTML→YAML parse time**, such that the applier-neutral corpus carries spaced strings — without destroying Index meaning (especially parallel condensed parts) or making ASCA compile validation worse?
+Is it **feasible** to insert inter-segment (phoneme/grapheme) whitespace into rule fields **at HTML→YAML parse time**, such that the applier-neutral index carries spaced strings — without destroying Index meaning (especially parallel condensed parts) or making ASCA compile validation worse?
 
 ## Context
 
@@ -25,7 +25,7 @@ Cheap, throwaway experiment (via `/prototype`) that:
 
 ## Out of scope
 
-- Merging into `IndexDiachronicaParser` or regenerating the full corpus
+- Merging into `IndexDiachronicaParser` or regenerating the full index
 - Shipping a production correction pass
 - Implementing a Brassica compiler
 - Resolving the full grill tree (that waits on this prototype’s results)

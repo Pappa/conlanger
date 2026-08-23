@@ -5,7 +5,7 @@ Automatic and assisted conlang tooling: phoneme inventories, morphology/grammar 
 ## Documentation
 
 - [Project overview](docs/CONLANGER.md)
-- [System map](docs/SYSTEM.md) — parse → compile → validate for the rule corpus
+- [System map](docs/SYSTEM.md) — parse → compile → validate for the rule index
 - [Index Diachronica parse](docs/index-diachronica-parser.md)
 - [Applier compile](docs/sound-change-applier.md)
 - [Validate](docs/validate.md) — inventory, correction loop, compile validation
@@ -25,32 +25,32 @@ _Avoid_: treating ASCA as the only conceivable applier forever
 
 **Brassica**:
 An alternate sound-change applier the package should remain able to target in principle, behind the same conceptual pipeline.
-_Avoid_: hard-wiring Brassica-only assumptions into the shared corpus format without an explicit decision
+_Avoid_: hard-wiring Brassica-only assumptions into the shared index format without an explicit decision
 
 **Sound-change sequence**:
-An ordered list of corpus rules (or compiled applier rules) applied across an evolutionary step.
+An ordered list of index rules (or compiled applier rules) applied across an evolutionary step.
 _Avoid_: “sound change rules” when the ordering/batch of application is what matters
 
 ### Corpus and source of truth
 
 **Source of truth (SoT)**:
-The artifact treated as authoritative for a given stage of work. Index Diachronica HTML is SoT for an attested rule line unless an **Index Diachronica correction** replaces that line; the cleaned rule corpus is the planned successor SoT.
+The artifact treated as authoritative for a given stage of work. Index Diachronica HTML is SoT for an attested rule line unless an **Index Diachronica correction** replaces that line; the cleaned rule index is the planned successor SoT.
 _Avoid_: “canonical” without naming which artifact; treating provisional parse dumps or compiled ASCA strings as SoT
 
 **Applier-neutral**:
-Describes a representation (especially the rule corpus) owned by this project, not by ASCA or Brassica syntax. Appliers compile from it; they do not define its on-disk shape.
-_Avoid_: “format-agnostic YAML” as a substitute term; storing ASCA rule strings in the corpus
+Describes a representation (especially the rule index) owned by this project, not by ASCA or Brassica syntax. Appliers compile from it; they do not define its on-disk shape.
+_Avoid_: “format-agnostic YAML” as a substitute term; storing ASCA rule strings in the index
 
-**Rule corpus**:
-The project’s stored sound-change rules as applier-neutral structured YAML. Appliers (ASCA, Brassica) receive compiled views of this corpus, not ad-hoc one-off formats.
+**Rule index**:
+The project’s stored sound-change rules as applier-neutral structured YAML. Appliers (ASCA, Brassica) receive compiled views of this index, not ad-hoc one-off formats.
 _Avoid_: “the YAML”, “output.xml”, treating ASCA rule strings as the source of truth
 
-**Cleaned rule corpus**:
+**Cleaned rule index**:
 The planned authoritative applier-neutral YAML successor to relying on the raw HTML.
 _Avoid_: calling today’s provisional YAML dumps “cleaned” or “canonical” until that effort lands
 
 **Index Diachronica**:
-The curated HTML corpus of attested sound-change rules being ingested into this project (`index_diachronica_original.html` and derived artifacts).
+The curated HTML index of attested sound-change rules being ingested into this project (`index_diachronica_original.html` and derived artifacts).
 _Avoid_: “the HTML file”, “diachronica dump” as glossary terms
 
 **Index Diachronica HTML**:
@@ -60,35 +60,35 @@ _Avoid_: treating uncorrected parse dumps as overriding the HTML; using “the H
 ### Sound-change structure
 
 **Sound-change section**:
-One Index Diachronica `<h2>` section — a named language-change block (index, title, citation, comments) containing zero or more rule lines. One sound-change section maps to one runtime compile unit (`DiachronicSeries`), not to a single corpus rule. Optional **status** may hold the whole section out of compile (`status: skipped`).
+One Index Diachronica `<h2>` section — a named language-change block (index, title, citation, comments) containing zero or more rule lines. One sound-change section maps to one runtime compile unit (`DiachronicSeries`), not to a single index rule. Optional **status** may hold the whole section out of compile (`status: skipped`).
 _Avoid_: `DiachronicSeries` as the glossary term for this level; conflating “section” with “rule line”; boolean `skipped: true` on the section
 
 **Corpus rule**:
-One structured entry in the rule corpus, normally corresponding to a single Index Diachronica rule line (including internal sets/alternations when needed). It always carries **stages**, raw, **rule id**, and source; environment and exception are optional (absent environment = any; absent exception = none). **Status** is omitted unless the rule’s **rule id** is listed in `parser_config.yml` `skip_rules`. A line with no change arrow is still a corpus rule (not auto-skipped); its **stages** hold the pre-env text and compile validation is allowed to fail.
-_Avoid_: treating every surface alternation as a separate authored rule by default; using “rule” when the whole HTML section is meant; required `input`/`output` fields as the corpus shape (replaced by **stages**); positional `rule_idx` as the stored identifier; `skip: true`; auto-skipping missing-arrow or prose lines at parse
+One structured entry in the rule index, normally corresponding to a single Index Diachronica rule line (including internal sets/alternations when needed). It always carries **stages**, raw, **rule id**, and source; environment and exception are optional (absent environment = any; absent exception = none). **Status** is omitted unless the rule’s **rule id** is listed in `parser_config.yml` `skip_rules`. A line with no change arrow is still a index rule (not auto-skipped); its **stages** hold the pre-env text and compile validation is allowed to fail.
+_Avoid_: treating every surface alternation as a separate authored rule by default; using “rule” when the whole HTML section is meant; required `input`/`output` fields as the index shape (replaced by **stages**); positional `rule_idx` as the stored identifier; `skip: true`; auto-skipping missing-arrow or prose lines at parse
 
 **Stages**:
-The ordered list of opaque Index-shaped strings on a corpus rule that encode the change spine — successive forms separated by arrows in the Index line. Length 2 is a single-step change (former `input` then `output`); length ≥ 3 is a chain (compile expands adjacent pairs; parse does not split the chain into extra corpus rows). Length 1 is a line with no `→`: the pre-env / pre-exception / pre-comment text; compile supplies a missing output. Each entry stays an opaque string (sets, matrices, class letters intact), not a structured segment object.
+The ordered list of opaque Index-shaped strings on a index rule that encode the change spine — successive forms separated by arrows in the Index line. Length 2 is a single-step change (former `input` then `output`); length ≥ 3 is a chain (compile expands adjacent pairs; parse does not split the chain into extra index rows). Length 1 is a line with no `→`: the pre-env / pre-exception / pre-comment text; compile supplies a missing output. Each entry stays an opaque string (sets, matrices, class letters intact), not a structured segment object.
 _Avoid_: `input`/`output` as the stored spine; encoding the chain only as `" > "` inside a single string field; list-typed `input` with scalar `output`; parse-time chain split into extra YAML rows; treating a length-1 spine as a skip
 
 **Optional outputs**:
-An Index output written as a set while the matching input is **not** a set (e.g. `d → {∅,ð}`), encoding speaker variation among alternative results (including null). Detection gate: whole-field output `{…}` and input not a whole-field set — not unequal paired-set arity. Uneven set↔set and nested sets are out of scope for this resolution path. The YAML SoT keeps the set opaque in **stages**. At compile, every member becomes an **alternative outcome** (full compiled peer rule, no further children); the parent picks one uniformly at random via an instance `Random` (unseeded if omitted) as its emitted outcome. Inventory validates **only** those alternatives (column **`alt_idx`**, empty when there are no alternatives)—never the parent’s sample. **Sporadic** sampling is a separate later ticket; RNG plumbing should stay reusable. Design recorded in [ticket 61](.scratch/cleaned-rule-corpus/issues/61-grill-optional-outputs.md). Distinct from **sporadic** (whether to apply the rule at all).
+An Index output written as a set while the matching input is **not** a set (e.g. `d → {∅,ð}`), encoding speaker variation among alternative results (including null). Detection gate: whole-field output `{…}` and input not a whole-field set — not unequal paired-set arity. Uneven set↔set and nested sets are out of scope for this resolution path. The YAML SoT keeps the set opaque in **stages**. At compile, every member becomes an **alternative outcome** (full compiled peer rule, no further children); the parent picks one uniformly at random via an instance `Random` (unseeded if omitted) as its emitted outcome. Inventory validates **only** those alternatives (column **`alt_idx`**, empty when there are no alternatives)—never the parent’s sample. **Sporadic** sampling is a separate later ticket; RNG plumbing should stay reusable. Design recorded in [ticket 61](.scratch/cleaned-rule-index/issues/61-grill-optional-outputs.md). Distinct from **sporadic** (whether to apply the rule at all).
 _Avoid_: calling this `sporadic`; structuring optional outputs as a separate YAML field; treating paired input/output sets (`{a,b} → {c,d}`) as optional outputs; using unequal zip arity or nested sets as the optional-outputs trigger; inventory rows for the randomly chosen parent when alternatives exist; process-global `random.seed` as the shared randomness story
 
 **Environment**:
-The phonological context in which a sound change applies — the `/ … _` portion of a rule (where the change is conditioned). Stored as optional field `env` on a corpus rule; absent means any environment. Index prose catch-all **`else`** is not itself an environment — after parse resolution it becomes an **exception** derived from the previous rule (see correction pass on `/ else`). Index prose **`medial`** / **`medially`** means word-internal (not word-initial, not word-final) — after parse resolution bare forms become `_` with a boundary **exception** (ASCA `// :{#_, _#}:`); tentative qualifiers in **`comment`** do not narrow the rewrite.
+The phonological context in which a sound change applies — the `/ … _` portion of a rule (where the change is conditioned). Stored as optional field `env` on a index rule; absent means any environment. Index prose catch-all **`else`** is not itself an environment — after parse resolution it becomes an **exception** derived from the previous rule (see correction pass on `/ else`). Index prose **`medial`** / **`medially`** means word-internal (not word-initial, not word-final) — after parse resolution bare forms become `_` with a boundary **exception** (ASCA `// :{#_, _#}:`); tentative qualifiers in **`comment`** do not narrow the rewrite.
 _Avoid_: “context” when `exception` is meant; prose paragraphs from Index comments; treating bare `else` as a valid `env` value in the cleaned SoT; equating medial with intervocalic (`V_V`) or with boundary shorthand `#_, _#`
 
 **Exception**:
-A phonological context that blocks an otherwise applicable change — the `! …` or `| …` portion of a rule. Stored as optional field `exception` on a corpus rule; absent means no exceptions. For Index `/ else` rules whose previous sibling has an environment and no exception, parse writes that previous environment into `exception` and omits `env` (complementary default branch). For Index word-internal **`medial`** / **`medially`** env prose (when no separate exception is already present), parse sets `exception: :{#_, _#}:` to block word-initial and word-final positions.
+A phonological context that blocks an otherwise applicable change — the `! …` or `| …` portion of a rule. Stored as optional field `exception` on a index rule; absent means no exceptions. For Index `/ else` rules whose previous sibling has an environment and no exception, parse writes that previous environment into `exception` and omits `env` (complementary default branch). For Index word-internal **`medial`** / **`medially`** env prose (when no separate exception is already present), parse sets `exception: :{#_, _#}:` to block word-initial and word-final positions.
 _Avoid_: the English word “except” in citation prose; conflating with environment; leaving Index `else` in `env`
 
 **Rule comment**:
-Optional inline editorial prose on a **corpus rule** — English qualifiers, semicolon tails, parenthetical notes, and other text stripped from `stages`/`env`/`exception` at parse so compile fields stay ASCA-clean. Stored as optional field `comment`; omitted when absent. **`raw`** always preserves the full Index line. Distinct from section-level **`comments`** (non-rule `<p>` prose blocks between rules).
+Optional inline editorial prose on a **index rule** — English qualifiers, semicolon tails, parenthetical notes, and other text stripped from `stages`/`env`/`exception` at parse so compile fields stay ASCA-clean. Stored as optional field `comment`; omitted when absent. **`raw`** always preserves the full Index line. Distinct from section-level **`comments`** (non-rule `<p>` prose blocks between rules).
 _Avoid_: “comment” without qualification when section comments are meant; embedding validator skip reasons in `comment`; treating `comment` as ASCA syntax
 
 **Raw**:
-The Index rule-line string stored on a corpus rule for audit. It is the HTML P text after subscript tags become Unicode characters, except that an **Index Diachronica correction** replaces that string entirely when one is keyed for the rule.
+The Index rule-line string stored on a index rule for audit. It is the HTML P text after subscript tags become Unicode characters, except that an **Index Diachronica correction** replaces that string entirely when one is keyed for the rule.
 _Avoid_: treating raw as byte-identical to the on-disk HTML; treating `stages`/`env`/`exception` as the only recoverable form of the Index line
 
 **Index Diachronica correction**:
@@ -96,7 +96,7 @@ A maintainer-authored replacement for one Index rule line, keyed by **rule id**,
 _Avoid_: Manual mapping; correspondence-series expansion; “correction pass” (class-first transforms); keying by positional `rule_idx`; putting `<sub>` markup in the replacement
 
 **Rule id**:
-The HTML `id` on an Index sound-change rule element (`p.schg`). In the current Index file every rule element has one, and values are unique. It is the identifier on a corpus rule, inventory and changelog rows, debug CSVs, and **Index Diachronica correction** keys.
+The HTML `id` on an Index sound-change rule element (`p.schg`). In the current Index file every rule element has one, and values are unique. It is the identifier on a index rule, inventory and changelog rows, debug CSVs, and **Index Diachronica correction** keys.
 _Avoid_: `rule_idx` as a stored identifier; “series index” when the **sound-change section** index is meant
 
 **Manual mapping**:
@@ -104,7 +104,7 @@ A maintainer-authored rewrite of part or all of an Index rule string, keyed by a
 _Avoid_: IPA mapping, feature mapping, or correction-pass transforms; conflating with **Index Diachronica correction**
 
 **Source**:
-Provenance of a corpus rule as `file:line` pointing at the Index Diachronica HTML location of the original P (e.g. `index_diachronica_original.html:1288`). When an **Index Diachronica correction** replaced **raw**, source still locates that HTML P, not the overlay file.
+Provenance of a index rule as `file:line` pointing at the Index Diachronica HTML location of the original P (e.g. `index_diachronica_original.html:1288`). When an **Index Diachronica correction** replaced **raw**, source still locates that HTML P, not the overlay file.
 _Avoid_: section index alone as sufficient provenance; opaque “from HTML” notes without a locatable line
 
 ### Index Diachronica notation
@@ -118,7 +118,7 @@ A capital-letter class abbreviation from the Index key (`C`, `V`, `S`, `A`, …)
 _Avoid_: treating every capital letter in a rule as a class letter; single-character blind substitution at ingest
 
 **Symbol**:
-Index boundary, null, stress, or syllable marks (`#`, `$`, `%`, `∅`, stress notation, etc.) — distinct from class letters. Normalised to ASCA-canonical form in corpus fields at HTML→YAML ingest; `raw` preserves the Index form.
+Index boundary, null, stress, or syllable marks (`#`, `$`, `%`, `∅`, stress notation, etc.) — distinct from class letters. Normalised to ASCA-canonical form in index fields at HTML→YAML ingest; `raw` preserves the Index form.
 _Avoid_: lumping symbols with class letters under “abbreviation” when the distinction matters
 
 **Subscript notation**:
@@ -135,14 +135,14 @@ _Avoid_: treating a correspondence-series index as a free-standing segment; sile
 
 **Positional slot**:
 An ordinal subscript on a **class letter**, marking a numbered position in a rule template; tokens sharing the same base+subscript co-refer within the rule (Index key: `Xₙ` on class letters; e.g. `C₁C₂ → C₂`, `N₁N₂ → N₂ː`, `V₁…V₂`). Slot compounds such as `nV₀` or `sV₀` combine a segment literal with a vowel slot (often **identity subscript** on `V₀`). Corpus fields keep Index-shaped tokens; each **applier compiler** projects them (ASCA references, Brassica backreferences) — not correspondence-series expansion and not parse-time rewrite.
-_Avoid_: expanding `C₁` via `group_mappings.csv`; treating `C₁` as a correspondence-series index on a concrete segment; storing ASCA `C=1` or Brassica `@#…` in the rule corpus
+_Avoid_: expanding `C₁` via `group_mappings.csv`; treating `C₁` as a correspondence-series index on a concrete segment; storing ASCA `C=1` or Brassica `@#…` in the rule index
 
 **Identity subscript**:
-Subscript `₀` on any base, meaning “the same instance as other tokens bearing the same base+₀ in this rule” (Index key: `X₀`; e.g. `V₀V₀ → V₀`, `h → ʔ / V₀V₀`, `V₀ʔV₀ → V₀ː`). Co-reference notation, not selection from a correspondence series. Like **positional slots**, Index-shaped in the corpus and projected at compile per applier.
+Subscript `₀` on any base, meaning “the same instance as other tokens bearing the same base+₀ in this rule” (Index key: `X₀`; e.g. `V₀V₀ → V₀`, `h → ʔ / V₀V₀`, `V₀ʔV₀ → V₀ː`). Co-reference notation, not selection from a correspondence series. Like **positional slots**, Index-shaped in the index and projected at compile per applier.
 _Avoid_: treating `V₀` as “zeroth vowel of a series”; stripping `₀` to normalize; conflating with ASCA optional `(C,0)` zero-or-more syntax
 
 **Collective subscript**:
-Subscript `ₓ` (or `x`), meaning all members of a sequence or series (Index key: `Xₓ`; e.g. `{Hₓ,m̩,n̩} → a`). Quantifies over a class or series rather than picking one member. At parse, **series expansion** in `data/parser_config.yml` fans out collectives to member **correspondence-series indices** in corpus fields (flatten inside sets; `raw` unchanged). **Series mapping** at compile resolves those indices to segments.
+Subscript `ₓ` (or `x`), meaning all members of a sequence or series (Index key: `Xₓ`; e.g. `{Hₓ,m̩,n̩} → a`). Quantifies over a class or series rather than picking one member. At parse, **series expansion** in `data/parser_config.yml` fans out collectives to member **correspondence-series indices** in index fields (flatten inside sets; `raw` unchanged). **Series mapping** at compile resolves those indices to segments.
 _Avoid_: treating `Hₓ` as a single segment; conflating with correspondence-series index `H₁`; nested sets after collective expansion; inventing a second on-disk set notation before Brassica is adopted
 
 **Section-local abbreviation**:
@@ -160,12 +160,12 @@ _Avoid_: treating meta-notation as class letters or subscript slots; inventing A
 ### Compile and validation
 
 **Applier compiler**:
-A translation step from the rule corpus into a concrete sound-change applier’s syntax or API (e.g. ASCA or Brassica).
-_Avoid_: parser (reserved for Index Diachronica HTML → rule corpus)
+A translation step from the rule index into a concrete sound-change applier’s syntax or API (e.g. ASCA or Brassica).
+_Avoid_: parser (reserved for Index Diachronica HTML → rule index)
 
 **DiachronicSeries**:
-A runtime container for one sound-change section: its corpus rules, abbreviation mappings (passed in from package CSV), and compiled ASCA output. Applies mappings to rule strings; unmapped tokens remain unchanged.
-_Avoid_: assuming mappings are baked into the corpus YAML
+A runtime container for one sound-change section: its index rules, abbreviation mappings (passed in from package CSV), and compiled ASCA output. Applies mappings to rule strings; unmapped tokens remain unchanged.
+_Avoid_: assuming mappings are baked into the index YAML
 
 **Abbreviation table**:
 Runtime mapping from Index shorthand to applier strings, loaded from package CSV (e.g. `data/asca/group_mappings.csv`) and passed into a `DiachronicSeries`. Apply known rows; unmapped tokens stay in the rule string. Section-specific overrides are deferred — handle high-volume failures via validation clusters and hand-authored rows.
@@ -180,25 +180,25 @@ A minimal lexicon file (`.wsca`) used by `asca run` to exercise compiled rules d
 _Avoid_: treating validation as parse-only; a production lexicon of the conlang
 
 **Failure class**:
-A grouped category of compile-validation errors (e.g. `unknown_feature`, `nested_brackets`) used to prioritise correction work across the corpus.
+A grouped category of compile-validation errors (e.g. `unknown_feature`, `nested_brackets`) used to prioritise correction work across the index.
 _Avoid_: ad-hoc one-off regex fixes without clustering; “error message” when the class label is meant
 
 **Validation report**:
 A temporary CSV of per-rule validation state (status, reason, description, and related detail) produced for analysis (e.g. with pandas); not the long-term source of truth.
-_Avoid_: treating the report as the cleaned rule corpus; requiring the CSV to interpret an omitted (ok) status
+_Avoid_: treating the report as the cleaned rule index; requiring the CSV to interpret an omitted (ok) status
 
 **Status**:
-Optional lifecycle marker: `skipped` (omit means active). On a **sound-change section**, set when the section `index` is in `parser_config.yml` `skip_sections`. On a **corpus rule**, set only when the **rule id** is in `skip_rules`. Parse does not invent `status` for missing arrows, gloss-only lines, or other unrepresentable spines.
-_Avoid_: `skip: true`; boolean `skipped: true`; auto-skip at parse; embedding validator diagnostics in the cleaned corpus SoT
+Optional lifecycle marker: `skipped` (omit means active). On a **sound-change section**, set when the section `index` is in `parser_config.yml` `skip_sections`. On a **index rule**, set only when the **rule id** is in `skip_rules`. Parse does not invent `status` for missing arrows, gloss-only lines, or other unrepresentable spines.
+_Avoid_: `skip: true`; boolean `skipped: true`; auto-skip at parse; embedding validator diagnostics in the cleaned index SoT
 
 **Skipped**:
-A **status** value meaning compile hold-out from owner config. A skipped **section** is parsed then bypassed at compile and inventory. A skipped **corpus rule** is parsed then emitted as an ASCA comment (`#\t…`), not as an active change. Unlisted failing rules still compile and are allowed to fail **compile validation**.
-_Avoid_: auto-skipping rules that are merely invalid; omitting unlisted failures from validation; deleting the HTML line from the corpus
+A **status** value meaning compile hold-out from owner config. A skipped **section** is parsed then bypassed at compile and inventory. A skipped **index rule** is parsed then emitted as an ASCA comment (`#\t…`), not as an active change. Unlisted failing rules still compile and are allowed to fail **compile validation**.
+_Avoid_: auto-skipping rules that are merely invalid; omitting unlisted failures from validation; deleting the HTML line from the index
 
 ### Cleaning policy
 
 **Class-first**:
-The preferred correction strategy: define reusable transform classes (formatting, token replacement, safe normalisation) and apply them mechanically across the corpus before case-by-case fixes.
+The preferred correction strategy: define reusable transform classes (formatting, token replacement, safe normalisation) and apply them mechanically across the index before case-by-case fixes.
 _Avoid_: hand-editing individual rules when a class rewrite exists; “batch fix” without recording the transform class
 
 **Historical fidelity**:

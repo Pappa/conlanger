@@ -31,7 +31,7 @@ Prototype (2026-08-19): extend compile pass with `Matrix]ː` → `Matrix, +long]
 
 ## Policy
 
-- Compile-layer fix only; corpus YAML `raw` unchanged (ADR-0010).
+- Compile-layer fix only; index YAML `raw` unchanged (ADR-0010).
 - Class-first mechanical transform — same edit ladder as tickets 15/25.
 
 ## Acceptance criteria

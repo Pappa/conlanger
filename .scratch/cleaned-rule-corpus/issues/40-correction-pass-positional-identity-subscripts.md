@@ -4,7 +4,7 @@ Blocked by: 38
 
 # Correction pass: positional slots and identity subscripts (compile-time)
 
-Target cluster: `unknown_character` — error tokens **`₀`** (49 rules), **`₁`** (37 rules) — **86** failing corpus rules in [asca-rule-inventory-error.csv](../inventory/asca-rule-inventory-error.csv) (2026-08-07 baseline: **6395 / 9201 ok**).
+Target cluster: `unknown_character` — error tokens **`₀`** (49 rules), **`₁`** (37 rules) — **86** failing index rules in [asca-rule-inventory-error.csv](../inventory/asca-rule-inventory-error.csv) (2026-08-07 baseline: **6395 / 9201 ok**).
 
 Related: correspondence-series **`₁`** on lowercase segments may overlap with [series-mappings coverage backlog](../series-mappings-coverage-backlog.md); this ticket is **positional slots** (`C₁`, `V₂`, …) and **identity subscripts** (`V₀`) only — see `classify_subscript_token()` in `series_mappings.py`.
 
@@ -17,7 +17,7 @@ Implement **`expand_index_subscript_references`** at **compile time** per [posit
 3. Whole-rule pass: declare refs in input before use in output/env; env co-reference may need `_` focus insertion.
 4. Bracket-safe: do not rewrite inside `[...]` feature matrices except where research documents feature-attached identity (`V₀[+nas]`).
 5. Corpus YAML and **`raw`** unchanged; transform in `SoundChangeRule` / `asca_compile/` pipeline only.
-6. Re-run `uv run regenerate_corpus`; record before/after for `₀` / `₁` error tokens and overall ok count.
+6. Re-run `uv run create_index`; record before/after for `₀` / `₁` error tokens and overall ok count.
 
 ## Policy
 

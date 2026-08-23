@@ -21,7 +21,7 @@ Spawned from [grill 61](61-grill-optional-outputs.md). Ticket 19 already strips 
 ## Open for triage (before `ready-for-agent`)
 
 - Default apply probability when Index only says “sporadic” / “sometimes” / “occasionally”
-- Per-rule rate override in corpus? (likely no — keep SoT thin)
+- Per-rule rate override in index? (likely no — keep SoT thin)
 - Inventory: force apply, force skip, or two rows
 - Interaction when a rule is both sporadic **and** has optional outputs (draw order)
 

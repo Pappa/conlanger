@@ -6,7 +6,7 @@ Blocked by: 86
 
 ## Question
 
-Add parse-only whole-rule validation and independent field validation to the **private** asca-rust fork so this corpus can blame `input` / `output` / `env` / `exception` without stub rules.
+Add parse-only whole-rule validation and independent field validation to the **private** asca-rust fork so this index can blame `input` / `output` / `env` / `exception` without stub rules.
 
 ## Repo
 
@@ -33,7 +33,7 @@ Keep `Lexer` / `Parser` / `SubRule` crate-private. Façade only.
 - `pub enum RulePart { Input, Output, Environment, Exception }`
 - `pub fn validate_part(part: RulePart, fragment: &str) -> Result<(), RuleSyntaxError>`
   - Lex the fragment; dispatch to existing `get_input` / `get_output` / `get_env_expr`.
-  - Env and exception share grammar; **do not** require a leading `/` or `|` (corpus fields are stored without introducers).
+  - Env and exception share grammar; **do not** require a leading `/` or `|` (index fields are stored without introducers).
   - Expect EOL/comment after the field; leftover → `ExpectedEndLine`.
 - Whole-rule parse stays `ParsedRules::try_from` (already public).
 

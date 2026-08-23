@@ -5,7 +5,7 @@ import pytest
 from conlanger.appliers.asca import validate_asca
 from conlanger.tools.compile.asca.tilde import (
     expand_index_tilde_notation,
-    normalize_corpus_rule_tilde_fields,
+    normalize_index_rule_tilde_fields,
 )
 from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
 
@@ -62,20 +62,20 @@ def test_expand_tilde_in_token_single_part():
     assert _expand_tilde_in_token("abc") == "abc"
 
 
-def test_normalize_corpus_rule_tilde_fields_no_stages():
-    assert normalize_corpus_rule_tilde_fields({"stages": []}) == {"stages": []}
+def test_normalize_index_rule_tilde_fields_no_stages():
+    assert normalize_index_rule_tilde_fields({"stages": []}) == {"stages": []}
 
 
-def test_normalize_corpus_rule_tilde_fields_expands_tilde_on_middle_stage():
+def test_normalize_index_rule_tilde_fields_expands_tilde_on_middle_stage():
     rule = {"stages": ["d~n", "l"]}
-    assert normalize_corpus_rule_tilde_fields(rule)["stages"] == ["{d,n}", "l"]
+    assert normalize_index_rule_tilde_fields(rule)["stages"] == ["{d,n}", "l"]
     rule = {"stages": ["d", "d~n~l"], "env": "#_a"}
-    assert normalize_corpus_rule_tilde_fields(rule)["stages"] == ["d", "{d,n,l}"]
+    assert normalize_index_rule_tilde_fields(rule)["stages"] == ["d", "{d,n,l}"]
 
 
-def test_normalize_corpus_rule_tilde_fields_expands_output_chain():
+def test_normalize_index_rule_tilde_fields_expands_output_chain():
     rule = {"stages": ["{β,w}", "bj~vj~v"]}
-    assert normalize_corpus_rule_tilde_fields(rule)["stages"] == [
+    assert normalize_index_rule_tilde_fields(rule)["stages"] == [
         "{β,w}",
         "bj",
         "vj",

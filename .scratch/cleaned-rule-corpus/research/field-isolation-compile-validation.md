@@ -8,16 +8,16 @@ Spike for [ticket 35](../issues/35-spike-field-isolation-compile-validation.md).
 
 **Recommendation: go-with-limits.**
 
-Validating one corpus field at a time by pairing it with **canned known-valid stubs**, still driving `validate_asca` + the baseline wordlist, **does** raise diagnostic confidence for the dominant failure modes (Tier 1–2 syntax: unknown character/feature/grouping, missing `_`, optionals in I/O, word-bound location, negation in output). It does **not** replace whole-rule validation: cross-field structural errors (uneven/lonely sets, condensed I/O balance, insertion+env coupling, deletion-only-segment against the baseline lexicon) can disagree between isolation and the full rule.
+Validating one index field at a time by pairing it with **canned known-valid stubs**, still driving `validate_asca` + the baseline wordlist, **does** raise diagnostic confidence for the dominant failure modes (Tier 1–2 syntax: unknown character/feature/grouping, missing `_`, optionals in I/O, word-bound location, negation in output). It does **not** replace whole-rule validation: cross-field structural errors (uneven/lonely sets, condensed I/O balance, insertion+env coupling, deletion-only-segment against the baseline lexicon) can disagree between isolation and the full rule.
 
 Stay inside the [ticket 10](../issues/10-rule-derived-probe-synthesis.md) boundary: **no** per-rule probe-word synthesis. Shape-aware **stub selection** (pick among a fixed stub table based on coarse field shape: insert/delete/set/metathesis) is allowed; inventing words from rule tokens is not.
 
 ## 2. Current compile / validate path
 
-Primary sources: `src/conlanger/tools/{rules,phonological_ruleset,asca_validator,corpus_inventory}.py`.
+Primary sources: `src/conlanger/tools/{rules,phonological_ruleset,asca_validator,index_inventory}.py`.
 
 ```text
-corpus rule dict {input, output, env?, exception?, …}
+index rule dict {input, output, env?, exception?, …}
         │
         ▼  SoundChangeRule (requires input+output; optional env/exception)
    compile: join fields → group_mappings → length/ejective/alias norms
@@ -29,7 +29,7 @@ corpus rule dict {input, output, env?, exception?, …}
    baseline: tests/fixtures/asca_probe_words.wsca  (or ASCA_PROBE_WORDS / default five words)
 ```
 
-Inventory (`validate_corpus_rule`) already isolates **per corpus rule** (one rule per mini-section) but not **per field**. A whole-rule failure yields one `failure_class` + `description` with no field attribution ([ticket 12](../issues/12-full-corpus-validation-inventory.md)).
+Inventory (`validate_index_rule`) already isolates **per index rule** (one rule per mini-section) but not **per field**. A whole-rule failure yields one `failure_class` + `description` with no field attribution ([ticket 12](../issues/12-full-index-validation-inventory.md)).
 
 `SoundChangeRule` ASCA separators (`rules.py`): ` > ` / ` / ` / ` // `. Skipped rules render as `#\t…` and are excluded by `_active_rule_changes`.
 
@@ -44,7 +44,7 @@ Primary: [asca-rust `doc/doc.md` @ 0.10.2](https://github.com/Girv98/asca-rust/b
 | **env** | Exactly one `_` focus (or joined `___`); empty `/` invalid (`EmptyEnv` / Expected `_`); `#` periphery only; optionals allowed; env sets `:{ … }:` |
 | **exception** | Same env grammar; `|` or `//`; omit ≠ `| _` (“except everywhere”) |
 
-CLI note: `parse_rsca` treats a trimmed line starting with `#` (but not `##`) as a **description**, not a rule (`src/cli/parse.rs`). A corpus `input: "#"` compiles to `\t# > …`, which after trim becomes `# > …` → **no rule line**. Local `validate_asca` then raises “no active SoundChangeRule lines” because `_active_rule_changes` also treats `#…` as skipped. This is a render/parse hazard for isolation of bare `#` I/O, not a field-stub issue alone.
+CLI note: `parse_rsca` treats a trimmed line starting with `#` (but not `##`) as a **description**, not a rule (`src/cli/parse.rs`). A index `input: "#"` compiles to `\t# > …`, which after trim becomes `# > …` → **no rule line**. Local `validate_asca` then raises “no active SoundChangeRule lines” because `_active_rule_changes` also treats `#…` as skipped. This is a render/parse hazard for isolation of bare `#` I/O, not a field-stub issue alone.
 
 ## 4. Stub strategy table
 
@@ -151,6 +151,6 @@ Field isolation is a **diagnostic lens** on syntax/shape, not a Tier 4 coverage 
 | `.rsca` `#` description lines | asca-rust 0.10.2 `src/cli/parse.rs` (`parse_rsca`) |
 | Parse pipeline / tiers | crate `parser.rs`, `mod.rs` (`split_into_subrules`), `error/syntax.rs`, `error/runtime.rs`; [asca-rule-validity.md](asca-rule-validity.md) |
 | UnevenSet / LonelySet / InsertionNoEnv | `subrule/substitution.rs`, `subrule/insertion.rs` |
-| Local compile + validate | `src/conlanger/tools/rules.py`, `phonological_ruleset.py`, `asca_validator.py`, `corpus_inventory.py` |
-| Whole-rule inventory policy | [ticket 12](../issues/12-full-corpus-validation-inventory.md), [ticket 10](../issues/10-rule-derived-probe-synthesis.md) |
-| CLI probes | local `asca 0.10.2` + `tests/fixtures/asca_probe_words.wsca` (temp under `.scratch/cleaned-rule-corpus/tmp-*`, deleted after) |
+| Local compile + validate | `src/conlanger/tools/rules.py`, `phonological_ruleset.py`, `asca_validator.py`, `index_inventory.py` |
+| Whole-rule inventory policy | [ticket 12](../issues/12-full-index-validation-inventory.md), [ticket 10](../issues/10-rule-derived-probe-synthesis.md) |
+| CLI probes | local `asca 0.10.2` + `tests/fixtures/asca_probe_words.wsca` (temp under `.scratch/cleaned-rule-index/tmp-*`, deleted after) |

@@ -4,7 +4,7 @@ Blocked by:
 
 # Grill: `;;` as rule-line comment delimiter at parse
 
-Spawned from wayfinder session on [Cleaned rule corpus SoT](map.md) ingest pipeline (2026-08-18). Owner expects `;;` to start editorial **comment** prose; current ingest does not treat `;;` uniformly ([Capture rule comments at parse time](31-capture-rule-comments-at-parse-time.md) shipped single-`;` / `; ` heuristics only).
+Spawned from wayfinder session on [Cleaned rule index SoT](map.md) ingest pipeline (2026-08-18). Owner expects `;;` to start editorial **comment** prose; current ingest does not treat `;;` uniformly ([Capture rule comments at parse time](31-capture-rule-comments-at-parse-time.md) shipped single-`;` / `; ` heuristics only).
 
 ## Question
 
@@ -20,7 +20,7 @@ Decide policy **before** implementation (details and edge cases TBD in this gril
   - `extract_semicolon_prose_from_field` — **`; `** (semicolon + space) + English-prose heuristic on stages/env/exception via `apply_trailing_glosses`.
   - No `;;` handling in `src/` (grep empty).
 - **Manual mappings** often author ` ;; ` in the `to` column as an editorial marker (see `data/common/manual_mappings.csv` and `manual_mappings_matched_rules.csv`).
-- **Corpus `comment`** is ingest-side only — not emitted into ASCA rule strings ([Rule comment field](30-rule-comment-field-on-corpus-rules.md)); compile `malformed_comment` / `trailing-comment` when `; ` fragments remain in `stages`.
+- **Corpus `comment`** is ingest-side only — not emitted into ASCA rule strings ([Rule comment field](30-rule-comment-field-on-index-rules.md)); compile `malformed_comment` / `trailing-comment` when `; ` fragments remain in `stages`.
 - **Distinct from** section-level `comments`, **Index Diachronica correction** overlay, and compile-time ASCA `;;` lines.
 
 ## Edge cases to grill (non-exhaustive)
@@ -53,10 +53,10 @@ Full policy in **Answer**. Implementation: [77](77-implement-first-semicolon-com
 Owner confirmed (2026-08-18). Policy (amends ticket 30 extraction **order** only; schema unchanged):
 
 1. **Delimiter.** First `;` on the working line after **Manual mapping**. Trim whitespace on both sides of the cut. Not `;;`. Naive — first `;` anywhere, including inside parens/quotes. Owner adds **Manual mapping** rows so the *intended* `;` is first (CSV already rewrote `;;` → `;`; Kyrgyz/Blackfoot/Greek sporadic convention rows present).
-2. **Pass order.** Quoted-prose skip (unchanged) → peel that `;` tail from `working` → `normalize_symbols` + `extract_rule_parts` on the **remainder only**. The tail never becomes **stages**. One **corpus rule**, one **rule comment** for the whole spine.
+2. **Pass order.** Quoted-prose skip (unchanged) → peel that `;` tail from `working` → `normalize_symbols` + `extract_rule_parts` on the **remainder only**. The tail never becomes **stages**. One **index rule**, one **rule comment** for the whole spine.
 3. **Empty remainder.** No `→` after the cut → `status: skipped`, `stages: []`, **rule comment** = the tail. `raw` unchanged.
 4. **Comment vs remainder.** Tail stored as-is (no symbol/feature/IPA/series). Remainder keeps today’s sporadic / gloss / stress / medial / mappings. No second `;` pass on remainder. Detectors **do not** scan **rule comment**. Uncertainty that should set `sporadic: true` stays **before** `;`.
-5. **Docs / ADRs.** Update [docs/index-diachronica-parser.md](../../docs/index-diachronica-parser.md) in the implement ticket. **No** ADR-0012 change. No new ADR. Ticket 30 “comment after `→` split” is amended by (2). Still do **not** emit corpus **rule comment** as ASCA `;;`.
+5. **Docs / ADRs.** Update [docs/index-diachronica-parser.md](../../docs/index-diachronica-parser.md) in the implement ticket. **No** ADR-0012 change. No new ADR. Ticket 30 “comment after `→` split” is amended by (2). Still do **not** emit index **rule comment** as ASCA `;;`.
 6. **Out of scope.** Detector-on-comment; field-source telemetry in the inventory summary; bracket-aware `;`; unifying on `;;`.
 7. **Acceptance watch.** Regen changelog `ok` flips; Archi chain corruption and `malformed_comment` / `trailing-comment` should move. New fails → a later ticket, not a different cut.
 

@@ -8,7 +8,7 @@ Spawned from [grill 61](61-grill-optional-outputs.md). Nested sets are **out of 
 
 ## Question
 
-What nested-set shapes appear in Index Diachronica / the cleaned corpus (e.g. sets inside sets, or set members that are themselves parallel/set-valued), and which of those should become a class-first compile path, `manual_mappings`, skip, or a later grill?
+What nested-set shapes appear in Index Diachronica / the cleaned index (e.g. sets inside sets, or set members that are themselves parallel/set-valued), and which of those should become a class-first compile path, `manual_mappings`, skip, or a later grill?
 
 ## What to research
 
@@ -19,7 +19,7 @@ What nested-set shapes appear in Index Diachronica / the cleaned corpus (e.g. se
 
 ## Acceptance criteria
 
-- [x] Findings under `.scratch/cleaned-rule-corpus/research/`
+- [x] Findings under `.scratch/cleaned-rule-index/research/`
 - [x] Counted buckets with example `source` lines
 - [x] Follow-on ticket(s) filed **or** explicit defer/skip recommendation
 
@@ -36,14 +36,14 @@ What nested-set shapes appear in Index Diachronica / the cleaned corpus (e.g. se
 ## Agent Brief
 
 **Category:** enhancement  
-**Summary:** Research nested `{…}` shapes in the cleaned corpus and recommend class-first fix, manual map, skip, or grill — do not implement a compile path in this spike.
+**Summary:** Research nested `{…}` shapes in the cleaned index and recommend class-first fix, manual map, skip, or grill — do not implement a compile path in this spike.
 
 **Current behavior:**
 Flat optional outputs (unpaired whole-field output sets) are resolved into `SoundChangeRule.alternatives` with inventory `alt_idx`. If a set member itself contains `{`, or braces are nested, the rule gets **no** alternatives and falls through to ordinary ASCA compile, which typically fails (`NestedBrackets` or related). Env/exception fields can also carry nested braces. There is no dedicated inventory bucket or correction path for these shapes.
 
 **Desired behavior:**
 A research write-up that:
-1. Scans the cleaned corpus YAML (and inventory failures where useful) for brace depth > 1 / nested `{` in **stages**, **env**, **exception**, and **raw** as needed for provenance.
+1. Scans the cleaned index YAML (and inventory failures where useful) for brace depth > 1 / nested `{` in **stages**, **env**, **exception**, and **raw** as needed for provenance.
 2. Buckets shapes (true nested sets in I/O; nested sets only in env/exception; parenthetical-inside-set; unbalanced/malformed braces; overlap with optional-output candidates that 66 skipped).
 3. States what ASCA 0.10.2 (and Brassica if relevant) allows or rejects for each bucket.
 4. Recommends for each material bucket: correction-pass ticket, `manual_mappings`, `status: skipped`, later grill, or explicit defer — and **files follow-on tickets or records defer/skip**.
@@ -51,10 +51,10 @@ A research write-up that:
 **Key interfaces:**
 - Corpus rule fields: opaque **stages** strings (and optional `env` / `exception` / `raw` / `source`)
 - Optional-output gate already excludes nested members — do not change that behavior in this spike
-- Findings live under the cleaned-rule-corpus research tree; follow-ons as numbered issue tickets in the same effort
+- Findings live under the cleaned-rule-index research tree; follow-ons as numbered issue tickets in the same effort
 
 **Acceptance criteria:**
-- [x] Research markdown under `.scratch/cleaned-rule-corpus/research/` with method + counted buckets
+- [x] Research markdown under `.scratch/cleaned-rule-index/research/` with method + counted buckets
 - [x] Each bucket has counts and example `source` (`file:line`) values
 - [x] ASCA (and Brassica if cited) constraints noted per material bucket
 - [x] Follow-on ticket(s) filed **or** explicit defer/skip written in the findings and linked from this ticket’s **Answer**
@@ -64,13 +64,13 @@ A research write-up that:
 - Implementing nested-set expansion or compile transforms
 - Changing optional-output detection / `alternatives` / `alt_idx` from ticket 66
 - Uneven paired-set (UnevenSet) repair as a general project (mention only if it collides with a nested bucket)
-- Full `regenerate_corpus` / committing inventory CSV churn unless required to cite fresh failure classes
+- Full `create_index` / committing inventory CSV churn unless required to cite fresh failure classes
 
 ## Answer
 
 Research complete (2026-08-12). Findings: [nested-sets-inventory.md](../research/nested-sets-inventory.md).
 
-**Headline counts:** 46 `nested_brackets` inventory rows (**45** unique `source`; down from 585 at early baseline); **40** corpus rules with brace depth ≥ 2 or unbalanced `{` (**23** with depth > 1 only); **0** overlap with ticket 66 optional-output nested-member gate. Scan: [scan_nested_sets.py](../research/scan_nested_sets.py).
+**Headline counts:** 46 `nested_brackets` inventory rows (**45** unique `source`; down from 585 at early baseline); **40** index rules with brace depth ≥ 2 or unbalanced `{` (**23** with depth > 1 only); **0** overlap with ticket 66 optional-output nested-member gate. Scan: [scan_nested_sets.py](../research/scan_nested_sets.py).
 
 **Recommendations:**
 

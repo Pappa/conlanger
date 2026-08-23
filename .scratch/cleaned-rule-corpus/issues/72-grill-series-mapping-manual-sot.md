@@ -86,7 +86,7 @@ Series ontology (what may be a defined expansion; unknown-token policy) moved to
 
 ## Comments
 
-- 2026-08-16 grill session: ingest pipeline overtook the original question. Settled so far: pre-lxml `<sub>`→Unicode (skip nested tags); in-memory HTML only; **Index Diachronica correction** replaces **raw** by **rule id** (flat YAML, Unicode lines); Manual mapping never mutates raw (first match, optional regex); **rule id** replaces positional `rule_idx` everywhere; unmatched correction keys warn. Q10 reversed: this work **removes** parse-time `series_mappings.csv` / expansion; PIE aliases stay in Python (ticket 73); inventory `ok` drop accepted. Collective subscripts also stay Index-shaped at parse. `section_abbreviations.yml` left as a stale advisory snapshot (not regenerated); corpus section `abbreviations` omitted when empty.
+- 2026-08-16 grill session: ingest pipeline overtook the original question. Settled so far: pre-lxml `<sub>`→Unicode (skip nested tags); in-memory HTML only; **Index Diachronica correction** replaces **raw** by **rule id** (flat YAML, Unicode lines); Manual mapping never mutates raw (first match, optional regex); **rule id** replaces positional `rule_idx` everywhere; unmatched correction keys warn. Q10 reversed: this work **removes** parse-time `series_mappings.csv` / expansion; PIE aliases stay in Python (ticket 73); inventory `ok` drop accepted. Collective subscripts also stay Index-shaped at parse. `section_abbreviations.yml` left as a stale advisory snapshot (not regenerated); index section `abbreviations` omitted when empty.
 - 2026-08-18: Owner confirmed shared understanding (Q1 option 1). Ticket closed; implementation filed as [74](74-implement-ingest-corrections-drop-series-csv.md). Series ontology remains [73](73-grill-series-mapping-config-sot.md).
 
 ## Answer
@@ -100,7 +100,7 @@ Series ontology (what may be a defined expansion; unknown-token policy) moved to
 5. **Manual mapping** on working copy only (first match; `use_regex` → `from` is a pattern). `raw` unchanged.
 6. Rest of parse **without** `apply_series_mappings`.
 
-**Rule id** (HTML `id`) replaces `rule_idx` on corpus rules, inventory, changelogs, and debug CSVs. Corrections file: flat YAML `rule_id: line`, Unicode, no `<sub>`.
+**Rule id** (HTML `id`) replaces `rule_idx` on index rules, inventory, changelogs, and debug CSVs. Corrections file: flat YAML `rule_id: line`, Unicode, no `<sub>`.
 
 **Retire parse-time series expansion:** delete `series_mappings.csv` apply path from parse; do not regenerate `section_abbreviations.yml`; omit empty section `abbreviations`. Correspondence-series and collective tokens stay Index-shaped. Inventory `ok` drop accepted.
 

@@ -49,7 +49,7 @@ Context7: ASCA / Brassica are **not indexed**; sources below are first-party Git
 | Grammar: consecutive lexemes/graphemes separated by whitespace **except when unambiguous**; grapheme = non-whitespace run | [Reference — Sound change syntax](https://github.com/bradrn/brassica/blob/master/docs/Reference.md#sound-change-syntax) |
 | Inline categories are **space-separated** (`[a e i o u]`) | [Categories of sounds](https://github.com/bradrn/brassica/blob/master/docs/Writing-Sound-Changes.md#categories-of-sounds) |
 
-**Implication:** Brassica’s space convention is real and **Brassica-shaped**. Baking it into YAML SoT fights [ADR-0002](../../../docs/adr/0002-applier-neutral-yaml-rule-corpus.md) (“Do not encode … Brassica-only syntax as the only representable form”).
+**Implication:** Brassica’s space convention is real and **Brassica-shaped**. Baking it into YAML SoT fights [ADR-0002](../../../docs/adr/0002-applier-neutral-yaml-rule-index.md) (“Do not encode … Brassica-only syntax as the only representable form”).
 
 ### 1.3 Two different “whitespace” problems
 
@@ -80,7 +80,7 @@ See CSV. Highlights (substring hits in `input`/`output`):
 | Pattern | Rules | Role |
 |---------|------:|------|
 | `tʃ` / `ts` / `dʒ` / `dz` | 450 / 446 / 235 / 160 | Untied affricates — Index digraphs; ASCA needs ties for single-segment semantics |
-| Tied `t͜s` etc. | ≤4 | Almost never present in corpus |
+| Tied `t͜s` etc. | ≤4 | Almost never present in index |
 | `kʷ` / `ɡʷ` | 350 / 240 | Base + labialisation diacritic (not inter-segment space) |
 | `Vː` / `aː`… | hundreds | Length glued to segment; ASCA compile → `:[+long]` |
 | `C₁C₂`, `V₀V₀`, `mV₀` | tens | Subscript compounds — compile/token split (tickets 40–41), not spaces |
@@ -90,7 +90,7 @@ See CSV. Highlights (substring hits in `input`/`output`):
 ### 2.3 Incidental tokenisers (not SoT policy)
 
 - [`series_mappings._tokenize_rule_side`](../../../src/conlanger/tools/series_mappings.py) — regex split for correspondence-series inference; merges subscript chars; **not** a phoneme boundary SoT.
-- Legacy [`add_affricate_ties`](../../../legacy/scripts/parse_index_diachronica.py) — documents ASCA tie requirement; **do not copy** as SoT policy (map: no `legacy/` for cleaned-corpus implementation). Useful as a **compile-time** candidate list only.
+- Legacy [`add_affricate_ties`](../../../legacy/scripts/parse_index_diachronica.py) — documents ASCA tie requirement; **do not copy** as SoT policy (map: no `legacy/` for cleaned-index implementation). Useful as a **compile-time** candidate list only.
 
 ---
 
@@ -140,7 +140,7 @@ scan left→right with a nest stack ([], {}, (), ⟨⟩/<>, optional :[):
 
 | Option | Assessment |
 |--------|------------|
-| **Parse-time SoT spacing** (maintainer preference to evaluate) | **Reject for now.** Contradicted for ASCA (spaces not part of the model). Encodes Brassica convention into “neutral” YAML (ADR-0002). Collides with Index’s use of spaces for parallel parts. Digraph/boundary errors would permanently mutate the corpus. |
+| **Parse-time SoT spacing** (maintainer preference to evaluate) | **Reject for now.** Contradicted for ASCA (spaces not part of the model). Encodes Brassica convention into “neutral” YAML (ADR-0002). Collides with Index’s use of spaces for parallel parts. Digraph/boundary errors would permanently mutate the index. |
 | **Compile-only Brassica spacing** | **Adopt.** Brassica compiler owns grapheme inventory + multigraph list + space insertion. |
 | **Compile-only ASCA digraph ties / length** | **Keep / extend** existing seam (tickets 15, 20, 25; legacy tie list as seed only). Spaces unnecessary. |
 | **Structured segment arrays in YAML** | Possible future IR (list of atoms per field) — larger schema change; not required to unblock ASCA path. |

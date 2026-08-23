@@ -12,11 +12,11 @@ If we flatten Index editorial nested `{…}` at ingest (**stages**, **env**, **e
 
 ## Hypothesis
 
-Nested braces in Index Diachronica are often **authorial condensation**, not faithful transcription of cited source notation. Flat alternation in corpus fields is the right applier-neutral IR; **`raw`** preserves Index wording for audit (ADR-0010).
+Nested braces in Index Diachronica are often **authorial condensation**, not faithful transcription of cited source notation. Flat alternation in index fields is the right applier-neutral IR; **`raw`** preserves Index wording for audit (ADR-0010).
 
 ## Context
 
-- **#67** bucketed **46** `nested_brackets` inventory rows; **40** corpus rules with brace depth ≥ 2 or unbalanced `{` in working fields. Findings: [nested-sets-inventory.md](../research/nested-sets-inventory.md). Scan: [scan_nested_sets.py](../research/scan_nested_sets.py).
+- **#67** bucketed **46** `nested_brackets` inventory rows; **40** index rules with brace depth ≥ 2 or unbalanced `{` in working fields. Findings: [nested-sets-inventory.md](../research/nested-sets-inventory.md). Scan: [scan_nested_sets.py](../research/scan_nested_sets.py).
 - **#69** / **#70** currently assume **compile-time** flatten for env/exception and stages I/O respectively; **#70** blocked by grill [71](71-grill-paren-and-parallel-set-notation.md) for parallel-column shapes.
 - Parse-time env normalizations already exist (medial, else, stress, feature/IPA, `series_expansions`) — nested-set flatten is the same *class* of move: de-condense Index shorthand into explicit alternation.
 - No current applier accepts nested `{}` of the same type (ASCA `NestedBrackets`; Brassica flat `[a b]` categories only).
@@ -41,8 +41,8 @@ Run **two labelled modes** if cheap: **union-only** vs **union + parenthetical-i
 ### 2. Phase A — in-memory YAML prototype
 
 1. Load `data/diachronica/index_diachronica_parsed.yml`.
-2. Apply flatten to `stages` / `env` / `exception` in memory (do not commit corpus YAML).
-3. Run full compile validation inventory (same path as `regenerate_corpus` validation).
+2. Apply flatten to `stages` / `env` / `exception` in memory (do not commit index YAML).
+3. Run full compile validation inventory (same path as `create_index` validation).
 4. Record before/after metrics (see deliverables).
 
 ### 3. Phase B — parse insertion probe
@@ -57,7 +57,7 @@ Run **two labelled modes** if cheap: **union-only** vs **union + parenthetical-i
 | P3 | After `apply_medial_env_conditions` / feature / IPA, before `finalize_stages_shape` | Post env prose normalizers |
 | P4 | After `resolve_catch_all_else_rules` (section assembly) | **else** copies prev `env` → `exception` |
 
-3. Regen to **temp YAML** (`uv run regenerate_corpus --yaml-out /tmp/...`) — not `data/diachronica/index_diachronica_parsed.yml`.
+3. Regen to **temp YAML** (`uv run create_index --yaml-out /tmp/...`) — not `data/diachronica/index_diachronica_parsed.yml`.
 4. Re-validate inventory; compare to Phase A.
 
 ### 4. Source-vs-Index sample (qualitative)
@@ -129,17 +129,17 @@ Follow-ons: implement #69 (env/exception `union_paren`); #70 (stages union, `:13
 - [Correction pass: flatten nested I/O sets](70-correction-pass-flatten-nested-io-sets.md) — parse-time union (rewritten; D stays #71)
 - [Grill: paren and parallel set notation](71-grill-paren-and-parallel-set-notation.md)
 - [ADR-0010 Historical fidelity](../../docs/adr/0010-historical-fidelity-class-first-status.md)
-- [ADR-0002 Applier-neutral YAML](../../docs/adr/0002-applier-neutral-yaml-rule-corpus.md)
+- [ADR-0002 Applier-neutral YAML](../../docs/adr/0002-applier-neutral-yaml-rule-index.md)
 - `src/conlanger/tools/ingest/parser.py` — `parse_rule_element` transform order
 - `src/conlanger/tools/ingest/section_policy.py` — `resolve_catch_all_else_rules`
 
 ## Agent Brief
 
 **Category:** enhancement  
-**Skills:** `/prototype` (throwaway code), metrics via `uv run regenerate_corpus` validation path  
-**Summary:** Prototype naive nested-set flatten on corpus fields; measure compile validation impact and recommend parse pipeline insertion point — informs parse-time vs compile-time policy for #69/#70.
+**Skills:** `/prototype` (throwaway code), metrics via `uv run create_index` validation path  
+**Summary:** Prototype naive nested-set flatten on index fields; measure compile validation impact and recommend parse pipeline insertion point — informs parse-time vs compile-time policy for #69/#70.
 
-**Current behavior:** ~46 `nested_brackets` inventory rows; corpus fields may carry nested `{…}` that no applier accepts. #69/#70 assume compile-time flatten; no flatten implementation shipped.
+**Current behavior:** ~46 `nested_brackets` inventory rows; index fields may carry nested `{…}` that no applier accepts. #69/#70 assume compile-time flatten; no flatten implementation shipped.
 
 **Desired behavior:**
 1. Shared `flatten_nested_sets()` with documented naive scope (see ticket body).
@@ -150,8 +150,8 @@ Follow-ons: implement #69 (env/exception `union_paren`); #70 (stages union, `:13
 
 **Key interfaces:**
 - Corpus fields: `stages` (list of strings), optional `env` / `exception`; never mutate `raw`
-- Validation: `corpus_inventory` / `validate_asca` via `regenerate_corpus` (use `--yaml-out` temp path for Phase B)
-- Prior scan: `.scratch/cleaned-rule-corpus/research/scan_nested_sets.py`
+- Validation: `index_inventory` / `validate_asca` via `create_index` (use `--yaml-out` temp path for Phase B)
+- Prior scan: `.scratch/cleaned-rule-index/research/scan_nested_sets.py`
 
 **Verified baseline (2026-08-12, #67):**
 

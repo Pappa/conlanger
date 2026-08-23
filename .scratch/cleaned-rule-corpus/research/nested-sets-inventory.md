@@ -1,6 +1,6 @@
-# Nested sets in Index Diachronica / cleaned corpus
+# Nested sets in Index Diachronica / cleaned index
 
-Research for spike [67](../issues/67-spike-nested-sets.md): nested `{…}` shapes in the cleaned rule corpus, overlap with optional outputs (ticket 66), and ASCA 0.10.2 representability.
+Research for spike [67](../issues/67-spike-nested-sets.md): nested `{…}` shapes in the cleaned rule index, overlap with optional outputs (ticket 66), and ASCA 0.10.2 representability.
 
 Primary sources:
 
@@ -12,7 +12,7 @@ Primary sources:
 - Corpus YAML: [`data/diachronica/index_diachronica_parsed.yml`](../../../data/diachronica/index_diachronica_parsed.yml)
 - Inventory: [asca-rule-inventory.csv](../inventory/asca-rule-inventory.csv) (ASCA 0.10.2, 2026-08-12 baseline)
 
-Local scan script: [`scan_nested_sets.py`](./scan_nested_sets.py) → [`nested-sets-scan.json`](./nested-sets-scan.json). Run: `uv run python .scratch/cleaned-rule-corpus/research/scan_nested_sets.py`.
+Local scan script: [`scan_nested_sets.py`](./scan_nested_sets.py) → [`nested-sets-scan.json`](./nested-sets-scan.json). Run: `uv run python .scratch/cleaned-rule-index/research/scan_nested_sets.py`.
 
 ---
 
@@ -34,7 +34,7 @@ Local scan script: [`scan_nested_sets.py`](./scan_nested_sets.py) → [`nested-s
 | Index **optional-prefix + parallel set** `(h)ə{p,b}`, `e(C){V[…]}` | 11 | **Grill** then correction pass (ticket [71](../issues/71-grill-paren-and-parallel-set-notation.md)) |
 | Residual **other** (prose env, chain malformation, deep parens) | 12 | **Defer** — per-rule `manual_mappings` or `status: skipped`; no general compile path |
 
-**Do not** extend ticket 66 optional-output detection to nested members. The gate (`"{" in member` → no `alternatives`) is correct; the corpus simply has **no** flat optional-output rows with nested members today.
+**Do not** extend ticket 66 optional-output detection to nested members. The gate (`"{" in member` → no `alternatives`) is correct; the index simply has **no** flat optional-output rows with nested members today.
 
 **Brassica:** nested sets are an ASCA lexer constraint (`NestedBrackets`); Brassica categories `[a b]` likewise have no nested-category grammar in [Writing Sound Changes](https://github.com/bradrn/brassica/blob/master/docs/Writing-Sound-Changes.md). Any flatten/split strategy should stay applier-neutral in YAML and emit per-backend surface at compile (ADR-0002).
 
@@ -42,9 +42,9 @@ Local scan script: [`scan_nested_sets.py`](./scan_nested_sets.py) → [`nested-s
 
 ## 2. Method
 
-1. Loaded `index_diachronica_parsed.yml` (**9201** corpus rules, `stages` list spine per ADR-0011).
-2. For each rule, parsed `stages` into adjacent input/output pairs (same as `expand_chained_corpus_rule`), and scanned `stages`, `env`, `exception`, and `raw` for max `{` depth, unbalanced braces, true nested set members (comma-bounded `{` inside `{…}`), and Index parenthetical-in-set (`segment{variants}` per ticket 48).
-3. Cross-matched all **46** `nested_brackets` inventory rows (**45** unique `source` lines) to corpus rows by `source` (`file:line`).
+1. Loaded `index_diachronica_parsed.yml` (**9201** index rules, `stages` list spine per ADR-0011).
+2. For each rule, parsed `stages` into adjacent input/output pairs (same as `expand_chained_index_rule`), and scanned `stages`, `env`, `exception`, and `raw` for max `{` depth, unbalanced braces, true nested set members (comma-bounded `{` inside `{…}`), and Index parenthetical-in-set (`segment{variants}` per ticket 48).
+3. Cross-matched all **46** `nested_brackets` inventory rows (**45** unique `source` lines) to index rows by `source` (`file:line`).
 4. Classified each failure into buckets (below); spot-checked ASCA error strings in inventory `description`.
 5. Ran optional-output gate from `SoundChangeRule._build_alternatives` (`_is_whole_field_set`, `"{" in member`) over chained compile steps — **zero** flat optional-output rows with nested members.
 6. Secondary pass: **31** additional rules use depth-1 `segment{…}` / `(h)ə{…}` shapes that still surface as `nested_brackets` after compile (overlap with ticket 48 residuals).
@@ -202,7 +202,7 @@ Ticket 66 builds `alternatives` only when:
 - input is **not** a whole-field set, and
 - no member contains `{`.
 
-Scan of all chained compile steps: **0** rules match the first two gates **and** have nested members. The nested-set problem is **orthogonal** to optional outputs in the current corpus.
+Scan of all chained compile steps: **0** rules match the first two gates **and** have nested members. The nested-set problem is **orthogonal** to optional outputs in the current index.
 
 The one nested output example `{ʔ,{h1,h2}}` is on the **input** side (`998`), not an optional output.
 

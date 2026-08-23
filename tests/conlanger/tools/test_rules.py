@@ -12,7 +12,7 @@ from conlanger.tools.rules import (
 from conlanger.utils.mappings import CompilerConfig
 
 
-def test_diachronic_series_does_not_mutate_corpus_rules(fx_sample_group_mappings):
+def test_diachronic_series_does_not_mutate_index_rules(fx_sample_group_mappings):
     section = {
         "index": "1.0",
         "section": "Test",
@@ -271,6 +271,7 @@ def test_RuleComment(value, expected):
             "\tɡ > ∅ / V_(VC,0)V",
         ),
         ({"input": "∅", "output": "x"}, "\t∅ > x"),
+        ({"input": "a", "output": "æ", "env": "{i_,iC_}"}, "\ta > æ / :{i_,iC_}:"),
     ],
     ids=[
         "basic",
@@ -284,6 +285,7 @@ def test_RuleComment(value, expected):
         "parallel_column_output_null_with_env",
         "pure_deletion",
         "pure_insertion",
+        "environment_set",
     ],
 )
 def test_SoundChangeRule(fields, expected):

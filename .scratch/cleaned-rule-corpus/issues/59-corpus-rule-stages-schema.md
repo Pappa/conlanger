@@ -5,11 +5,11 @@ Status: resolved
 
 ## Question
 
-Implement ADR-0011: replace corpus-rule `input`/`output` with uniform **`stages`**, keep compile-time chain expansion, one-shot cutover.
+Implement ADR-0011: replace index-rule `input`/`output` with uniform **`stages`**, keep compile-time chain expansion, one-shot cutover.
 
 ## Decision (grill 2026-08-09)
 
-See [ADR-0011](../../../docs/adr/0011-corpus-rule-stages.md) and glossary **Stages** / **Corpus rule** in `CONTEXT.md`.
+See [ADR-0011](../../../docs/adr/0011-index-rule-stages.md) and glossary **Stages** / **Corpus rule** in `CONTEXT.md`.
 
 ### Schema
 
@@ -18,7 +18,7 @@ See [ADR-0011](../../../docs/adr/0011-corpus-rule-stages.md) and glossary **Stag
 - **Delete** `input` / `output` from YAML SoT.
 - Length 2 = single step; ≥ 3 = chain; `[]` + `status: skipped` = hold-out.
 - After parse, &lt; 2 non-empty stages → `stages: []` + `status: skipped` (do not abort regen).
-- At most one `env` and one `exception` per corpus rule (never per-stage).
+- At most one `env` and one `exception` per index rule (never per-stage).
 
 ### Parse
 
@@ -50,12 +50,12 @@ See [ADR-0011](../../../docs/adr/0011-corpus-rule-stages.md) and glossary **Stag
 Implemented ADR-0011 one-shot cutover:
 
 - **Parse:** `IndexDiachronicaParser` emits `stages` (split on every `→` after env/exception isolation); hold-outs use `stages: []` + `status: skipped`.
-- **Compile:** `expand_chained_corpus_rule` expands adjacent stage pairs; `normalize_corpus_rule_tilde_fields` normalizes per stage before pairing.
-- **Inventory:** `validate_corpus_rule` compiles via `DiachronicSeries` (no direct `SoundChangeRule` on corpus rows).
+- **Compile:** `expand_chained_index_rule` expands adjacent stage pairs; `normalize_index_rule_tilde_fields` normalizes per stage before pairing.
+- **Inventory:** `validate_index_rule` compiles via `DiachronicSeries` (no direct `SoundChangeRule` on index rows).
 - **Regenerated** `data/diachronica/index_diachronica_parsed.yml` with `stages` only.
 - **Docs:** ticket 03 schema answer + ADR-0005 amendment synced to ADR-0011.
 
 ## References
 
 - Grill: chained rule I/O → uniform `stages` (2026-08-09)
-- [ADR-0011](../../../docs/adr/0011-corpus-rule-stages.md)
+- [ADR-0011](../../../docs/adr/0011-index-rule-stages.md)

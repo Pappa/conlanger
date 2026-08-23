@@ -10,6 +10,6 @@ Conlanger will treat ASCA [asca-rust](https://github.com/Girv98/asca-rust) as th
 
 ## Consequences
 
-- Prefer interfaces and corpus shapes that can compile or adapt to more than one applier.
+- Prefer interfaces and index shapes that can compile or adapt to more than one applier.
 - Do not scatter raw ASCA CLI calls through unrelated modules without a single applier boundary.
 - Brassica support may stay “in principle” until a later ADR adopts it for real.

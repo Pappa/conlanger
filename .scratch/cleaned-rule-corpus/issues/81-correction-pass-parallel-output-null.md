@@ -4,7 +4,7 @@ Blocked by:
 
 # Correction pass: parallel output ∅ sets
 
-Target cluster: `syntax_other` — **`∅` in parallel output sets** — **24** rules in ≤3-fail sections (**17** mono-class sections would complete if cleared). Full-corpus count TBD at claim time ([inventory summary](../inventory/asca-rule-inventory-summary.md)).
+Target cluster: `syntax_other` — **`∅` in parallel output sets** — **24** rules in ≤3-fail sections (**17** mono-class sections would complete if cleared). Full-index count TBD at claim time ([inventory summary](../inventory/asca-rule-inventory-summary.md)).
 
 Spawned from [64 syntax_other near-miss spike](../issues/64-spike-syntax-other-near-miss-sections.md) (2026-08-19).
 
@@ -29,7 +29,7 @@ ASCA accepts `∅` as a segment (deletion) but not as a member of a parallel cor
 
 ## Policy
 
-- Compile-layer fix; corpus YAML `raw` unchanged (ADR-0010).
+- Compile-layer fix; index YAML `raw` unchanged (ADR-0010).
 - Preserve parallel semantics — do not drop a deletion branch.
 
 ## Acceptance criteria
@@ -71,7 +71,7 @@ After: **8195 / 9683 ok (84.7%)** (**+70** ok rows; extra rows from `alt_idx` ex
 
 `null_in_parallel_output_set` near-miss cluster (**24** rules): **15 / 24** rule_ids now validate on all alternative rows; **9** residuals are uneven multi-column branch counts (`Akwára-k-b-r`, West Tariku `b d k` family, `Tunebo-m-n-h-j`).
 
-Full-corpus `received '∅'` in set syntax: **~40 → ~15** error rows (remaining include uneven-branch residuals and rules outside the near-miss set).
+Full-index `received '∅'` in set syntax: **~40 → ~15** error rows (remaining include uneven-branch residuals and rules outside the near-miss set).
 
 Mono-class near-miss sections from spike: **9 / 19** now section-complete for this subcluster (remainder blocked on uneven-branch rules in mixed sections).
 

@@ -24,7 +24,7 @@ dependencies = [
 ]
 
 [project.scripts]
-regenerate_corpus = "conlanger.scripts.regenerate_corpus:main"
+create_index = "conlanger.scripts.create_index:main"
 inventory_asca_rules = "conlanger.scripts.inventory_asca_rules:main"
 sample_asca_guess_fixtures = "conlanger.scripts.sample_asca_guess_fixtures:main"
 

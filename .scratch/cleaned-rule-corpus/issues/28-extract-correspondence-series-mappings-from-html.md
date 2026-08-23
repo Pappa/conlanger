@@ -14,7 +14,7 @@ Where do per-section **correspondence-series** and **collective subscript** expa
 - **Do not use `legacy/`** — previous attempts only. Implement from **`data/diachronica/`** (HTML SoT and reference files) and **`data/asca/`** (runtime CSV mappings, alongside `group_mappings.csv`), plus `src/conlanger/` code.
 - **Source of truth for map rows:** `data/diachronica/index_diachronica_original.html` — section citations, phonology tables, and other prose that defines what indexed tokens (e.g. `s₁`, `h₂`, `Hₓ`) denote in that section family. See also `data/diachronica/sound_change_abbreviations.txt` for global Index key.
 - Glossary: `CONTEXT.md` — **Correspondence-series index**, **Correspondence series**, **Collective subscript** (not **positional slot** / **identity subscript**).
-- Cross-check: ~210 corpus rules carry subscripts; [inventory summary](../inventory/asca-rule-inventory-summary.md) `unknown_character` for `₁`, `₀`, `₂`, `₃`.
+- Cross-check: ~210 index rules carry subscripts; [inventory summary](../inventory/asca-rule-inventory-summary.md) `unknown_character` for `₁`, `₀`, `₂`, `₃`.
 - Examples in HTML:
   - Afro-Asiatic citation: `s₁, s₂, s₃, h₁, h₂` as fricatives (`index_diachronica_original.html` ~933).
   - Laryngeal series in tables (PIE `h₁ h₂ h₃` rows).
@@ -27,7 +27,7 @@ Where do per-section **correspondence-series** and **collective subscript** expa
 2. **Extract** section-scoped token → ASCA-parseable target mappings into **`data/asca/series_mappings.csv`** (same tree as `group_mappings.csv`) with columns at minimum: `section_index`, `token`, `asca_target`; optional `source` (`file:line`), `notes`.
 3. **Hierarchical lookup:** longest-prefix section match; optional global `*` fallback only where Index key defines a family-wide default.
 4. **Infer** mappings from rule I/O where section prose lists series members but does not give IPA (e.g. chain `s₁ s₂ s₃ → ʃ z tʃ`) — document inference method; prefer explicit citation over guess; leave unmapped when ambiguous.
-5. Emit **coverage report** (sections with subscript rules vs rows authored; unmapped tokens list) under `.scratch/cleaned-rule-corpus/` for later correction passes.
+5. Emit **coverage report** (sections with subscript rules vs rows authored; unmapped tokens list) under `.scratch/cleaned-rule-index/` for later correction passes.
 
 ## Acceptance criteria
 
@@ -43,8 +43,8 @@ Where do per-section **correspondence-series** and **collective subscript** expa
 - `src/conlanger/tools/series_mappings.py` — extraction, lookup, audit, coverage report
 - `src/conlanger/scripts/extract_series_mappings.py` — regenerate CSV + report
 - `tests/conlanger/tools/test_series_mappings.py` — 34 unit tests
-- `.scratch/cleaned-rule-corpus/series-mappings-coverage.md` — coverage report (77.2% in-scope rule tokens mapped)
-- `.scratch/cleaned-rule-corpus/series-mappings-coverage-backlog.md` — follow-up backlog
+- `.scratch/cleaned-rule-index/series-mappings-coverage.md` — coverage report (77.2% in-scope rule tokens mapped)
+- `.scratch/cleaned-rule-index/series-mappings-coverage-backlog.md` — follow-up backlog
 
 ## Follow-up (optional)
 

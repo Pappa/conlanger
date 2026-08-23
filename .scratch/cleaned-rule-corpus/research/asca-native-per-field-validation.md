@@ -25,7 +25,7 @@ Related: [asca-rule-validity.md](asca-rule-validity.md), [field-isolation-compil
 
 This is cheaper than ticket 36’s stub sidecar **in semantic quality**, and similar or slightly more in calendar time if you include Python inventory wiring. It does **not** replace whole-rule `ok`: cross-field / match-dependent errors (`UnevenSet`, `LonelySet`, `InsertionNoEnv`, `UnbalancedRuleIO`) stay whole-rule. Native field checks **avoid** the stub false-fails that made spike 35 “go-with-limits”.
 
-**Upstream interest:** plausible. No open “validate” issue today; the maintainer recently added `trace` as a similar CLI increment; asca-web would benefit from parse-without-apply. Per-field is a linter/editor feature — useful to them, not only to this corpus.
+**Upstream interest:** plausible. No open “validate” issue today; the maintainer recently added `trace` as a similar CLI increment; asca-web would benefit from parse-without-apply. Per-field is a linter/editor feature — useful to them, not only to this index.
 
 ---
 
@@ -122,7 +122,7 @@ pub fn validate_part(part: RulePart, fragment: &str) -> Result<(), RuleSyntaxErr
 3. Dispatch:
    - Input → `get_input()` then expect EOL/comment (do **not** require an arrow)
    - Output → `get_output()` then expect EOL
-   - Environment / Exception → `get_env_expr()` **without** requiring `/` or `|` (those are whole-rule introducers; corpus fields are stored without them)
+   - Environment / Exception → `get_env_expr()` **without** requiring `/` or `|` (those are whole-rule introducers; index fields are stored without them)
 4. Reject leftover tokens with `ExpectedEndLine`
 
 Tiny glue; the grammar stays where it is. Need a few terminator tweaks so `get_input` treats EOL as a successful end (it already breaks on non-comma leftover when the term is non-empty). Empty fragment → existing `EmptyInput` / `EmptyOutput` / `EmptyEnv`.

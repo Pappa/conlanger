@@ -10,7 +10,7 @@ Run `/grill-with-docs`.
 
 ## Question
 
-What is the compile-time internal representation of a `SoundChangeRule`’s input, output, env, and exception — Index strings vs sequences of columns vs ordered set members vs a richer tree — so alternatives, condensed (parallel-column) rules, and context fields can be detected and transformed without regex on blobs? YAML **stages** stay opaque ([ADR-0002](../../../docs/adr/0002-applier-neutral-yaml-rule-corpus.md), **optional outputs** in `CONTEXT.md`).
+What is the compile-time internal representation of a `SoundChangeRule`’s input, output, env, and exception — Index strings vs sequences of columns vs ordered set members vs a richer tree — so alternatives, condensed (parallel-column) rules, and context fields can be detected and transformed without regex on blobs? YAML **stages** stay opaque ([ADR-0002](../../../docs/adr/0002-applier-neutral-yaml-rule-index.md), **optional outputs** in `CONTEXT.md`).
 
 ## Facts (do not re-litigate without new evidence)
 

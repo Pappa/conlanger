@@ -1,9 +1,9 @@
 # Assessment: ASCA Levenshtein suggestions for `unknown_feature` tokens
 
 Spike for a future **Correction pass: unknown_feature** (ticket 07 policy).  
-Baseline inventory: `uv run regenerate_corpus` (2026-08-05) — **251** rules, **39** distinct `error_token` → `suggested` pairs.
+Baseline inventory: `uv run create_index` (2026-08-05) — **251** rules, **39** distinct `error_token` → `suggested` pairs.
 
-ASCA suggestions come from the parser’s “Did you mean …?” hint ([`parse_unknown_token_error`](../../../src/conlanger/tools/corpus_inventory.py)); they are **string-distance guesses**, not semantic mappings. Use them to triage only — not as `feature_mappings.csv` rows without review.
+ASCA suggestions come from the parser’s “Did you mean …?” hint ([`parse_unknown_token_error`](../../../src/conlanger/tools/index_inventory.py)); they are **string-distance guesses**, not semantic mappings. Use them to triage only — not as `feature_mappings.csv` rows without review.
 
 ## Summary
 

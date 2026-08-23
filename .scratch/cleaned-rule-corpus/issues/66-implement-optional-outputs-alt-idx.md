@@ -8,7 +8,7 @@ Spawned from [grill 61](61-grill-optional-outputs.md) (owner confirmed 2026-08-1
 
 ## Problem
 
-Index rules like `d → {∅,ð} / V_V` keep an opaque set in **stages**. ASCA rejects set-internal `∅` (`d > {∅,ð} / V_V` fails; `d > ∅ / V_V` and `d > ð / V_V` are valid). Compile must resolve unpaired output sets into concrete ASCA strings without splitting the YAML corpus rule, while tests and inventory exercise every alternative.
+Index rules like `d → {∅,ð} / V_V` keep an opaque set in **stages**. ASCA rejects set-internal `∅` (`d > {∅,ð} / V_V` fails; `d > ∅ / V_V` and `d > ð / V_V` are valid). Compile must resolve unpaired output sets into concrete ASCA strings without splitting the YAML index rule, while tests and inventory exercise every alternative.
 
 ## What to build
 
@@ -33,7 +33,7 @@ Index rules like `d → {∅,ð} / V_V` keep an opaque set in **stages**. ASCA r
 - Nested sets → [67](67-spike-nested-sets.md)
 - Sporadic apply/skip → [68](68-sporadic-sampling.md)
 - Uneven paired sets / UnevenSet repair
-- Splitting corpus YAML into one rule per alternative
+- Splitting index YAML into one rule per alternative
 - Ticket 60 parallel-column top-level `∅` (already handled)
 
 ## Acceptance criteria
@@ -56,14 +56,14 @@ Implemented 2026-08-12.
 - `alternatives: list[SoundChangeRule]` built as full leaf peers (Index/set order; each leaf `alternatives == []`).
 - Instance RNG only: optional ctor `seed` / `rng`, falling back to `random.Random(seed)`; process-global `random.seed` is never touched. Parent freezes one uniform `randrange` pick as its `value`; `str()` re-renders that frozen choice (no re-sample).
 
-### Inventory (`src/conlanger/tools/corpus_inventory.py`)
+### Inventory (`src/conlanger/tools/index_inventory.py`)
 - `alt_idx` column added immediately after `rule_idx` in `ValidationRow`, `VALIDATION_CSV_COLUMNS`, and `CHANGELOG_CSV_COLUMNS`.
-- `validate_corpus_rule` now returns `list[ValidationRow]`: alternatives-only rows with 0-based `alt_idx` when the rule has alternatives (parent's random pick is never inventoried), else a single row with empty `alt_idx`. `iter_validation_rows` flattens.
+- `validate_index_rule` now returns `list[ValidationRow]`: alternatives-only rows with 0-based `alt_idx` when the rule has alternatives (parent's random pick is never inventoried), else a single row with empty `alt_idx`. `iter_validation_rows` flattens.
 - Changelog uniqueness moved to `(source, alt_idx)` (`ok_flip_changelog_rows` + `_alt_idx_key`).
 
 ### Tests
 - New `tests/conlanger/tools/test_optional_outputs.py`: detection gate, alternatives contents/leaf-ness, seeded + caller-`rng` picks, frozen render, global-RNG-state isolation, per-alternative ASCA validation.
-- New inventory tests for alternative rows + `(source, alt_idx)` changelog; existing callers updated for the list return (`test_corpus_inventory.py`, `test_corpus_pipeline.py`).
+- New inventory tests for alternative rows + `(source, alt_idx)` changelog; existing callers updated for the list return (`test_index_inventory.py`, `test_index_pipeline.py`).
 - Full gate green: `uv run pytest` → **916 passed**, coverage **95.19%** (≥95); `ruff check` + `ruff format --check` clean.
 
 ### Inventory before/after (optional-output subset)
@@ -72,7 +72,7 @@ Measured over the **363** optional-output candidate rules in `data/diachronica/i
 - **Before** — whole set compiled to ASCA (committed `asca-rule-inventory.csv`): **234 ok / 129 fail**. The 129 failures are the set-internal `∅` / LonelySet-style rejections ASCA cannot represent (`d > {∅,ð}`).
 - **After** — per-alternative rows: **727 / 800** alternatives validate; **327 / 363** candidates have every alternative valid. The residual 73 alternative failures are unrelated ASCA issues (nested/other clusters), not the `{∅` rejection.
 
-Net: the in-scope single-step optional-output rejection class (`{∅`) is resolved by splitting into per-alternative `alt_idx` rows. A full `regenerate_corpus` run will now emit the `alt_idx` column and alternative rows across the whole inventory; it was not committed here to avoid unrelated corpus-diff churn.
+Net: the in-scope single-step optional-output rejection class (`{∅`) is resolved by splitting into per-alternative `alt_idx` rows. A full `create_index` run will now emit the `alt_idx` column and alternative rows across the whole inventory; it was not committed here to avoid unrelated index-diff churn.
 
 ## References
 

@@ -37,7 +37,7 @@ ASCA 0.10.2 rejects combining breve U+0306 and precomposed breve vowels (`ă`, `
 
 ## Acceptance criteria
 
-- [x] `normalize_asca_breve_marks()` implemented; corpus `raw` unchanged (ADR-0010)
+- [x] `normalize_asca_breve_marks()` implemented; index `raw` unchanged (ADR-0010)
 - [x] ASCA smoke tests for Tai, Scots, Tanacross representative rules
 - [x] Slavic §46.14 rule held out
 - [x] Full inventory re-run; before/after `̆` residual + sections-all-OK in **Answer**

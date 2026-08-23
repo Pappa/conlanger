@@ -9,7 +9,7 @@ Blocked by: None
 Apply [Parse-time resolution for correspondence-series indices](26-parse-time-correspondence-series-indices.md) in `IndexDiachronicaParser`:
 
 1. Load per-section maps from **`data/asca/series_mappings.csv`** produced by [Extract correspondence-series mappings from Index Diachronica HTML](28-extract-correspondence-series-mappings-from-html.md) (loaded like `group_mappings.csv` from `data/asca/`).
-2. After existing parse-time transforms (symbols, glosses, stress, …), run correspondence-series expansion on corpus field values — **correspondence-series index** and **collective subscript** tokens only; do not expand **positional slots** or **identity subscripts** in this ticket.
+2. After existing parse-time transforms (symbols, glosses, stress, …), run correspondence-series expansion on index field values — **correspondence-series index** and **collective subscript** tokens only; do not expand **positional slots** or **identity subscripts** in this ticket.
 3. Populate section `abbreviations` from the same map at parse where appropriate (schema alignment with ticket 03).
 4. **`raw` unchanged**; expanded values in `input`/`output`/`env`/`exception`.
 5. Unmapped tokens: leave literal; do not set `status: skipped`.
@@ -25,7 +25,7 @@ Implement resolver and lookup in `src/conlanger/tools/` alongside `IndexDiachron
 
 - [x] Parse-time expansion wired in `IndexDiachronicaParser` (not compile layer)
 - [x] Maps loaded from HTML-derived package CSV (ticket 28)
-- [x] `raw` preserves Index subscripts; corpus fields expanded when mapped
+- [x] `raw` preserves Index subscripts; index fields expanded when mapped
 - [x] Unmapped tokens left literal; no pre-emptive `status: skipped`
 - [x] Unit tests on representative mapped sections (e.g. Afro-Asiatic) and collective (`Hₓ`) where rows exist
 - [x] Full inventory re-run; before/after metrics in ticket **Answer**
@@ -36,7 +36,7 @@ Implement resolver and lookup in `src/conlanger/tools/` alongside `IndexDiachron
 
 Parse-time expansion wired via `expand_series_tokens_in_field`, `apply_series_mappings`, and `section_abbreviations_for_index` in `series_mappings.py`; `IndexDiachronicaParser` calls them after feature-matrix normalisation. Section `abbreviations` populated from hierarchical CSV rows.
 
-**Inventory (ASCA 0.10.2, full corpus):**
+**Inventory (ASCA 0.10.2, full index):**
 
 | Metric | Before | After |
 | --- | ---: | ---: |
@@ -54,7 +54,7 @@ Subscript digits `₁`/`₂`/`₃` no longer appear in top `unknown_character` t
 **Category:** enhancement  
 **Summary:** Wire parse-time correspondence-series / collective-subscript expansion using package `series_mappings.csv`.
 
-**Current behavior:** `IndexDiachronicaParser` emits Index subscript tokens literally in corpus fields; `series_mappings.py` loads CSV and resolves targets but nothing calls lookup during parse.
+**Current behavior:** `IndexDiachronicaParser` emits Index subscript tokens literally in index fields; `series_mappings.py` loads CSV and resolves targets but nothing calls lookup during parse.
 
 **Desired behavior:**
 - After existing parse transforms (symbols, glosses, stress, feature mappings), expand **correspondence-series index** and **collective subscript** tokens in `input`/`output`/`env`/`exception` using hierarchical section lookup (`lookup_series_target` semantics).

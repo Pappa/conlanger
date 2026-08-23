@@ -4,7 +4,7 @@ Blocked by: None
 
 # Correction pass: flatten nested sets in env / exception
 
-Target cluster: `nested_brackets` — nested `{…}` in **env** or **exception** only (~16 inventory rows at 2026-08-12 baseline; **45** rows corpus-wide on 2026-08-19 inventory).
+Target cluster: `nested_brackets` — nested `{…}` in **env** or **exception** only (~16 inventory rows at 2026-08-12 baseline; **45** rows index-wide on 2026-08-19 inventory).
 
 Spawned from [spike 67](67-spike-nested-sets.md). Findings: [nested-sets-inventory.md](../research/nested-sets-inventory.md) §4.2–4.4. **Placement:** [spike 85](85-spike-nested-set-flatten-prototype.md) — **parse-time at slot P4** (after `resolve_catch_all_else_rules`), not compile-time.
 
@@ -43,11 +43,11 @@ ASCA 0.10.2 rejects nested `{}` of the same bracket type at lex time (`NestedBra
 **Category:** enhancement  
 **Summary:** Parse-time flatten of nested `{…}` in **env** and **exception** (P4, after else resolution) so ASCA 0.10.2 no longer hits `NestedBrackets` on Index editorial context sets.
 
-**Current behavior:** Env/exception strings keep nested braces through ingest. Compile `parenthetical.py` `_SET_RE` cannot un-nest. Spike 85 in-memory flatten: union-only **+7** `ok`, union+paren **+11** `ok` corpus-wide (env/exception share of that); 0 regressions. Findings: [nested-set-flatten-prototype.md](../research/nested-set-flatten-prototype.md).
+**Current behavior:** Env/exception strings keep nested braces through ingest. Compile `parenthetical.py` `_SET_RE` cannot un-nest. Spike 85 in-memory flatten: union-only **+7** `ok`, union+paren **+11** `ok` index-wide (env/exception share of that); 0 regressions. Findings: [nested-set-flatten-prototype.md](../research/nested-set-flatten-prototype.md).
 
 **Desired behavior:**
 - Production `flatten_nested_sets` (prefer a neutral ingest helper, not an ASCA compile step). Apply to **env** and **exception** only — stages I/O is ticket [70](70-correction-pass-flatten-nested-io-sets.md).
-- Wire at **P4** (`IndexDiachronicaParser.parse` after `resolve_catch_all_else_rules`). Prototype: `.scratch/cleaned-rule-corpus/research/flatten_nested_sets.py` (`MODE_UNION_PAREN`).
+- Wire at **P4** (`IndexDiachronicaParser.parse` after `resolve_catch_all_else_rules`). Prototype: `.scratch/cleaned-rule-index/research/flatten_nested_sets.py` (`MODE_UNION_PAREN`).
 - Handle shapes from research §4.2–4.4 and spike 85:
   - Union flatten + suffix distribution: `{a,{b,c}}`, `{{h,k,ŋ}n,w,v,l,r}_`
   - Parenthetical-in-set: `({m,j,w})V` → `{mV,jV,wV}`; `_ə{(C){p,kʷ},m,w}`

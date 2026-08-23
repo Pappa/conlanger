@@ -1,12 +1,12 @@
 # Index Diachronica parse
 
-Parse-time transforms turn Index Diachronica HTML into an **applier-neutral** rule corpus YAML. This stage normalizes Index notation toward ASCA-parseable form in corpus fields (`input`, `output`, `env`, `exception`) while preserving the original HTML line in `raw` for audit ([ADR-0006](./adr/0006-html-source-of-truth-yaml-successor.md), [ADR-0010](./adr/0010-historical-fidelity-class-first-status.md)).
+Parse-time transforms turn Index Diachronica HTML into an **applier-neutral** rule index YAML. This stage normalizes Index notation toward ASCA-parseable form in index fields (`input`, `output`, `env`, `exception`) while preserving the original HTML line in `raw` for audit ([ADR-0006](./adr/0006-html-source-of-truth-yaml-successor.md), [ADR-0010](./adr/0010-historical-fidelity-class-first-status.md)).
 
-**Primary code:** [`src/conlanger/tools/ingest/parser.py`](../src/conlanger/tools/ingest/parser.py) (`IndexDiachronicaParser`). **Collective subscript expansion:** [`src/conlanger/utils/series.py`](../src/conlanger/utils/series.py) (`apply_series_expansions` from `data/parser_config.yml`). **Correspondence-series indices** stay Index-shaped at parse and expand at [compile](./sound-change-applier.md) via `data/compiler_config.yml`. **Orchestration:** `uv run regenerate_corpus` → [`regenerate_corpus.py`](../src/conlanger/scripts/regenerate_corpus.py).
+**Primary code:** [`src/conlanger/tools/ingest/parser.py`](../src/conlanger/tools/ingest/parser.py) (`IndexDiachronicaParser`). **Collective subscript expansion:** [`src/conlanger/utils/series.py`](../src/conlanger/utils/series.py) (`apply_series_expansions` from `data/parser_config.yml`). **Correspondence-series indices** stay Index-shaped at parse and expand at [compile](./sound-change-applier.md) via `data/compiler_config.yml`. **Orchestration:** `uv run create_index` → [`create_index.py`](../src/conlanger/scripts/create_index.py).
 
 **Scope:** parse-time only. Class-letter expansion, length marks, ejectives, laryngeal aliases, and multi-step **chain expansion** run at [applier compile](./sound-change-applier.md). Compile validation runs in [validate](./validate.md) ([ADR-0003](./adr/0003-validate-after-applier-compile.md)).
 
-**Related:** [spec](../.scratch/cleaned-rule-corpus/spec.md) (Ingest section), [wayfinder map](../.scratch/cleaned-rule-corpus/map.md), [ADR-0004](./adr/0004-series-indices-per-section-maps.md) (correspondence-series indices).
+**Related:** [spec](../.scratch/cleaned-rule-index/spec.md) (Ingest section), [wayfinder map](../.scratch/cleaned-rule-index/map.md), [ADR-0004](./adr/0004-series-indices-per-section-maps.md) (correspondence-series indices).
 
 ---
 
@@ -19,7 +19,7 @@ Parse-time transforms turn Index Diachronica HTML into an **applier-neutral** ru
 | Section heading split (`index`, section title) | implemented | 3 | Dotted ancestry key drives hierarchical series lookup ([ADR-0004](./adr/0004-series-indices-per-section-maps.md)). | `parse_section_heading` |
 | Citation extraction (first `<p>` after `<h2>`, non-`schg`) | implemented | 4 | Bibliographic provenance per section. | `IndexDiachronicaParser.parse` |
 | Section comments (later non-`schg` paragraphs) | implemented | 5 | Editorial prose preserved separately from rules. | `IndexDiachronicaParser.parse`, `note_from_element` |
-| Rule extraction (`<p class="schg">` → `parse_rule_element`) | implemented | 6 | Sound-change rules are the corpus payload. | `IndexDiachronicaParser.parse` |
+| Rule extraction (`<p class="schg">` → `parse_rule_element`) | implemented | 6 | Sound-change rules are the index payload. | `IndexDiachronicaParser.parse` |
 | Global `abbreviations` | planned | 7 | Schema slot exists; global Key-to-Abbreviations not authored at ingest yet. | `IndexDiachronicaParser.abbreviations` (returns `{}`) |
 
 ---
@@ -47,49 +47,49 @@ Applied to the **remainder** after the first-`;` comment peel (see Phase B½); *
 
 ### Phase B½ — First-`;` rule comment peel (before structural split)
 
-After **Manual mapping** and quoted-prose detection; **before** symbol normalization and `extract_rule_parts`. The tail is stored as corpus **rule comment** as-is (no symbol/feature/IPA/series transforms). Detectors (`sporadic`, trailing glosses, stress, medial) run on the remainder only — not on **rule comment**. Field-level env/exception `;` capture (`apply_semicolon_field_comments`) is retired in favour of this whole-line cut ([ticket 77](../.scratch/cleaned-rule-corpus/issues/77-implement-first-semicolon-comment-cut.md)).
+After **Manual mapping** and quoted-prose detection; **before** symbol normalization and `extract_rule_parts`. The tail is stored as index **rule comment** as-is (no symbol/feature/IPA/series transforms). Detectors (`sporadic`, trailing glosses, stress, medial) run on the remainder only — not on **rule comment**. Field-level env/exception `;` capture (`apply_semicolon_field_comments`) is retired in favour of this whole-line cut ([ticket 77](../.scratch/cleaned-rule-index/issues/77-implement-first-semicolon-comment-cut.md)).
 
 | Step | Status | Order | Rationale | Code |
 | --- | --- | ---: | --- | --- |
 | Peel first `;` on working line | implemented | B½1 | Editorial tails (including arrows inside gloss) must not become spurious chain stages. Naive first-`;` anywhere; owner **Manual mapping** rows plant the intended delimiter. | `split_line_semicolon_comment` |
-| No `→` in remainder → empty `stages` + optional `comment` | implemented | B½2 | Prose-only or mapping-shaped lines with no rule spine stay in the corpus; compile validation may fail. | `parse_rule_element` |
+| No `→` in remainder → empty `stages` + optional `comment` | implemented | B½2 | Prose-only or mapping-shaped lines with no rule spine stay in the index; compile validation may fail. | `parse_rule_element` |
 
 ### Phase C — Structural field split
 
 | Step | Status | Order | Rationale | Code |
 | --- | --- | ---: | --- | --- |
-| Leading em-dash list marker strip (`— `) | implemented | C1 | Index list formatting, not phonology ([correction pass 16](../.scratch/cleaned-rule-corpus/issues/16-correction-pass-em-dash.md)). | `strip_leading_index_list_marker` → `extract_rule_parts` |
+| Leading em-dash list marker strip (`— `) | implemented | C1 | Index list formatting, not phonology ([correction pass 16](../.scratch/cleaned-rule-index/issues/16-correction-pass-em-dash.md)). | `strip_leading_index_list_marker` → `extract_rule_parts` |
 | Primary I/O split (first `→`) | implemented | C2 | Core rule shape: `input → output [/ env] [! exception]`. | `split_input_output` |
-| Output / env / exception split | implemented | C3 | ASCA env uses `/`; exception via `!`, word `except`, or second `/`. A slash glued to output (`∅/ _#`) is the same delimiter without the preceding space ([pass 82](../.scratch/cleaned-rule-corpus/issues/82-correction-pass-output-env-slash-boundary.md)). Lines that omit `/` entirely are Index errata — overlay in `index_diachronica_corrections.yml`, not a parse peel. | `split_post_arrow`, `split_env_exception` |
-| Remaining `→` → `>` in field values | implemented | C4 | Chained outputs and embedded arrows must use ASCA `>` ([correction pass 17](../.scratch/cleaned-rule-corpus/issues/17-correction-pass-arrow.md)). | `normalize_rule_arrows` (via `extract_rule_parts`) |
+| Output / env / exception split | implemented | C3 | ASCA env uses `/`; exception via `!`, word `except`, or second `/`. A slash glued to output (`∅/ _#`) is the same delimiter without the preceding space ([pass 82](../.scratch/cleaned-rule-index/issues/82-correction-pass-output-env-slash-boundary.md)). Lines that omit `/` entirely are Index errata — overlay in `index_diachronica_corrections.yml`, not a parse peel. | `split_post_arrow`, `split_env_exception` |
+| Remaining `→` → `>` in field values | implemented | C4 | Chained outputs and embedded arrows must use ASCA `>` ([correction pass 17](../.scratch/cleaned-rule-index/issues/17-correction-pass-arrow.md)). | `normalize_rule_arrows` (via `extract_rule_parts`) |
 
-**Missing `→`:** returns a corpus rule with empty `stages` and optional `comment`; no `status: skipped` unless the **rule id** is listed in `parser_config.yml` `skip_rules`.
+**Missing `→`:** returns a index rule with empty `stages` and optional `comment`; no `status: skipped` unless the **rule id** is listed in `parser_config.yml` `skip_rules`.
 
 ### Phase D — Class-first field transforms (post-split)
 
 | Step | Status | Order | Rationale | Code |
 | --- | --- | ---: | --- | --- |
-| Uncertainty gloss → `sporadic: true` + `comment` | implemented | D1 | `sporadic`/`sometimes`/`occasionally` are editorial qualifiers, not ASCA syntax ([pass 19](../.scratch/cleaned-rule-corpus/issues/19-correction-pass-sporadic-qualifier.md)). Stripped prose captured, not discarded. Runs on remainder only (not **rule comment** seeded at B½). | `apply_sporadic_qualifier` |
-| Trailing / embedded editorial gloss strip → `comment` | implemented | D2 | Prose in quotes, parens, semicolon tails breaks ASCA; capture-not-discard ([passes 21, 24, 31, 82](../.scratch/cleaned-rule-corpus/map.md)). Internal order: embedded quotes → trailing quotes → trailing parens (including unclosed `(prose…` and `= /ə/` pronunciation glosses; set/matrix parentheticals stay in stages) → semicolon prose. Field-level `;` capture retired (B½). Unclosed strip is stages-only so env/exception can still pair a gloss Index split across `!`. | `apply_trailing_glosses` |
-| Env stress phrase normalization (`when stressed` / `when unstressed`) | implemented | D3 | Index env prose → ASCA env with `_` focus prefix ([pass 22](../.scratch/cleaned-rule-corpus/issues/22-correction-pass-stress-conditions.md)). | `apply_stress_conditions` |
-| Feature matrix synonym replacement (inside `[...]` only) | implemented | D4 | Index→ASCA renames / bundles / **tone** via `data/asca/feature_mappings.csv` (`mapping_kind` includes `tone` → `[tone: N]`; [pass 62](../.scratch/cleaned-rule-corpus/issues/62-correction-pass-tone-features.md)). Unmapped names left literal for `unknown_feature` clustering. | `apply_feature_mappings` |
-| Collective subscript expansion (`series_expansions`) | implemented | D5 | Fan out `Xₓ` collectives from `data/parser_config.yml` ([grill 73](../.scratch/cleaned-rule-corpus/issues/73-grill-series-mapping-config-sot.md)). Correspondence-series indices (`h₁`, `s₁`, …) stay literal until compile. | `apply_series_expansions` |
+| Uncertainty gloss → `sporadic: true` + `comment` | implemented | D1 | `sporadic`/`sometimes`/`occasionally` are editorial qualifiers, not ASCA syntax ([pass 19](../.scratch/cleaned-rule-index/issues/19-correction-pass-sporadic-qualifier.md)). Stripped prose captured, not discarded. Runs on remainder only (not **rule comment** seeded at B½). | `apply_sporadic_qualifier` |
+| Trailing / embedded editorial gloss strip → `comment` | implemented | D2 | Prose in quotes, parens, semicolon tails breaks ASCA; capture-not-discard ([passes 21, 24, 31, 82](../.scratch/cleaned-rule-index/map.md)). Internal order: embedded quotes → trailing quotes → trailing parens (including unclosed `(prose…` and `= /ə/` pronunciation glosses; set/matrix parentheticals stay in stages) → semicolon prose. Field-level `;` capture retired (B½). Unclosed strip is stages-only so env/exception can still pair a gloss Index split across `!`. | `apply_trailing_glosses` |
+| Env stress phrase normalization (`when stressed` / `when unstressed`) | implemented | D3 | Index env prose → ASCA env with `_` focus prefix ([pass 22](../.scratch/cleaned-rule-index/issues/22-correction-pass-stress-conditions.md)). | `apply_stress_conditions` |
+| Feature matrix synonym replacement (inside `[...]` only) | implemented | D4 | Index→ASCA renames / bundles / **tone** via `data/asca/feature_mappings.csv` (`mapping_kind` includes `tone` → `[tone: N]`; [pass 62](../.scratch/cleaned-rule-index/issues/62-correction-pass-tone-features.md)). Unmapped names left literal for `unknown_feature` clustering. | `apply_feature_mappings` |
+| Collective subscript expansion (`series_expansions`) | implemented | D5 | Fan out `Xₓ` collectives from `data/parser_config.yml` ([grill 73](../.scratch/cleaned-rule-index/issues/73-grill-series-mapping-config-sot.md)). Correspondence-series indices (`h₁`, `s₁`, …) stay literal until compile. | `apply_series_expansions` |
 
 ### Phase E — Rule assembly (post-transform)
 
 | Step | Status | Order | Rationale | Code |
 | --- | --- | ---: | --- | --- |
-| Multi-step chains (`a > b > c`) | compile-time | — | One corpus row per HTML line; adjacent **stages** expand at compile ([`expand_chained_corpus_rule`](../src/conlanger/tools/compile/asca/chains.py)). Chains **with** env/exception stay one row; env/exception attach to each emitted step. | `SoundChangeRule` / compile pipeline |
+| Multi-step chains (`a > b > c`) | compile-time | — | One index row per HTML line; adjacent **stages** expand at compile ([`expand_chained_index_rule`](../src/conlanger/tools/compile/asca/chains.py)). Chains **with** env/exception stay one row; env/exception attach to each emitted step. | `SoundChangeRule` / compile pipeline |
 | Attach provenance (`raw`, `source`, optional `sporadic`) | implemented | E1 | Every emitted rule carries HTML line ref and original Index text. | `parse_rule_element` |
 
 ### Phase F — Section post-pass (after per-line extract)
 
 | Step | Status | Order | Rationale | Code |
 | --- | --- | ---: | --- | --- |
-| Catch-all `/ else` → complementary `exception` | implemented | F1 | Index default branch is not an env; when the previous rule has `env` and no `exception`, omit `env` and set `exception` to that env ([pass 53](../.scratch/cleaned-rule-corpus/issues/53-correction-pass-prose-env-else.md)). Deferred: prev with both env+exception, neither, or else-after-else. | `resolve_catch_all_else_rules` (in `parse`) |
-| Env medial phrase normalization (`medial` / `medially`) | implemented | F2 | Index word-internal prose → `env: _` + boundary `exception: :{#_, _#}:` ([pass 55](../.scratch/cleaned-rule-corpus/issues/55-correction-pass-prose-env-medial.md)). Defer env+existing-exception merge. | `apply_medial_env_conditions` |
-| Section skip (`skip_sections` in `parser_config.yml`) | implemented | F3 | Owner-curated hold-out when Index misrepresents source material; parse extracts rules normally, sets `status: skipped` on the section object; compile and inventory validation bypass those rules ([ticket 78](../.scratch/cleaned-rule-corpus/issues/78-implement-parser-config-section-skip.md)). Distinct from per-rule `status: skipped` ([ticket 89](../.scratch/cleaned-rule-corpus/issues/89-unify-status-skipped.md)). | `IndexDiachronicaParser.parse`, `DiachronicSeries`, `corpus_inventory` |
-| Rule skip (`skip_rules` in `parser_config.yml`) | implemented | F4 | Owner-curated hold-out for individual **rule id**s; sets `status: skipped` on the corpus rule. | `IndexDiachronicaParser.parse_rule_element` |
+| Catch-all `/ else` → complementary `exception` | implemented | F1 | Index default branch is not an env; when the previous rule has `env` and no `exception`, omit `env` and set `exception` to that env ([pass 53](../.scratch/cleaned-rule-index/issues/53-correction-pass-prose-env-else.md)). Deferred: prev with both env+exception, neither, or else-after-else. | `resolve_catch_all_else_rules` (in `parse`) |
+| Env medial phrase normalization (`medial` / `medially`) | implemented | F2 | Index word-internal prose → `env: _` + boundary `exception: :{#_, _#}:` ([pass 55](../.scratch/cleaned-rule-index/issues/55-correction-pass-prose-env-medial.md)). Defer env+existing-exception merge. | `apply_medial_env_conditions` |
+| Section skip (`skip_sections` in `parser_config.yml`) | implemented | F3 | Owner-curated hold-out when Index misrepresents source material; parse extracts rules normally, sets `status: skipped` on the section object; compile and inventory validation bypass those rules ([ticket 78](../.scratch/cleaned-rule-index/issues/78-implement-parser-config-section-skip.md)). Distinct from per-rule `status: skipped` ([ticket 89](../.scratch/cleaned-rule-index/issues/89-unify-status-skipped.md)). | `IndexDiachronicaParser.parse`, `DiachronicSeries`, `index_inventory` |
+| Rule skip (`skip_rules` in `parser_config.yml`) | implemented | F4 | Owner-curated hold-out for individual **rule id**s; sets `status: skipped` on the index rule. | `IndexDiachronicaParser.parse_rule_element` |
 
 ---
 
@@ -100,7 +100,7 @@ After **Manual mapping** and quoted-prose detection; **before** symbol normaliza
 | `ipa_mappings.confidence` | Which `ipa_mappings.csv` confidence levels apply at parse |
 | `series_expansions` | Collective subscript fan-out (`Hₓ` → `h₁, h₂, h₃`, …) |
 | `skip_sections` | List of `{id, reason}` — `id` matches section `index`; `reason` is operator documentation only. Listed sections gain `status: skipped` in parsed YAML. |
-| `skip_rules` | List of `{id, reason}` — `id` matches HTML **rule id**; `reason` becomes optional corpus `comment`. Listed rules gain `status: skipped`. |
+| `skip_rules` | List of `{id, reason}` — `id` matches HTML **rule id**; `reason` becomes optional index `comment`. Listed rules gain `status: skipped`. |
 
 ---
 
@@ -108,18 +108,18 @@ After **Manual mapping** and quoted-prose detection; **before** symbol normaliza
 
 | Step | Status | Order | Rationale |
 | --- | --- | --- | --- |
-| Positional slots (`C₁C₂ → C₂`) | planned (compile-time) | TBD | ASCA reference syntax (`C=1`, bare `2`) is applier-specific; corpus stays Index-shaped. See [positional-slots research](../.scratch/cleaned-rule-corpus/research/positional-slots-and-identity-subscripts.md). |
+| Positional slots (`C₁C₂ → C₂`) | planned (compile-time) | TBD | ASCA reference syntax (`C=1`, bare `2`) is applier-specific; index stays Index-shaped. See [positional-slots research](../.scratch/cleaned-rule-index/research/positional-slots-and-identity-subscripts.md). |
 | Identity subscripts (`V₀V₀ → V₀`) | planned (compile-time) | TBD | Same policy as positional slots. |
-| Class letter expansion (`S`, `A`, `R`, …) | implemented at **compile**, not parse | — | Avoid baking ASCA syntax into applier-neutral YAML ([pass 14](../.scratch/cleaned-rule-corpus/issues/14-correction-pass-unknown-grouping.md)). |
-| Feature matrix Phase 2+ (remaining place/manner, pitch accent, …) | planned | TBD | Tone pass shipped ([62](../.scratch/cleaned-rule-corpus/issues/62-correction-pass-tone-features.md)); other deferred features stay inventory-driven. |
+| Class letter expansion (`S`, `A`, `R`, …) | implemented at **compile**, not parse | — | Avoid baking ASCA syntax into applier-neutral YAML ([pass 14](../.scratch/cleaned-rule-index/issues/14-correction-pass-unknown-grouping.md)). |
+| Feature matrix Phase 2+ (remaining place/manner, pitch accent, …) | planned | TBD | Tone pass shipped ([62](../.scratch/cleaned-rule-index/issues/62-correction-pass-tone-features.md)); other deferred features stay inventory-driven. |
 | Whitespace tokenisation inside brackets | deferred | TBD | Most polarity-space cases handled by feature regex; multi-word tone names are CSV keys with spaces. |
 | Meta-notation (`X0`, `Xn`, retroflex marks, repetition groups) | deferred (cluster-driven) | TBD | No evidence-based ASCA expansion without inventory clustering. |
 | Section-local abbreviations (`TŠ`, uppercase `S₁`) | deferred (cluster-driven) | TBD | Index global Key insufficient; hand-added rows when clusters warrant. |
 | Global abbreviation table authorship | planned | TBD | `abbreviations()` returns `{}`. |
-| Edge-split / parse-time auto-skip for unrepresentable lines | removed | — | `status: skipped` is config-only ([ticket 89](../.scratch/cleaned-rule-corpus/issues/89-unify-status-skipped.md)); missing-arrow / gloss-only lines stay in parse → compile → validate. |
+| Edge-split / parse-time auto-skip for unrepresentable lines | removed | — | `status: skipped` is config-only ([ticket 89](../.scratch/cleaned-rule-index/issues/89-unify-status-skipped.md)); missing-arrow / gloss-only lines stay in parse → compile → validate. |
 | Prose-environment mapping (comment paragraphs → structured `env`) | planned (spike) | TBD | `comment` field captures qualifiers; structured env from prose not specified. |
-| Dedicated smart-quote normalizer | partial | TBD | Embedded/trailing `"`/`"` stripped as glosses at parse ([pass 24](../.scratch/cleaned-rule-corpus/issues/24-correction-pass-smart-quotes.md)); typographic apostrophe `'` → ejective at **compile**. |
-| Correspondence-series index mappings | compile-time | TBD | Section-scoped rows authored in `data/compiler_config.yml` ([ticket 75](../.scratch/cleaned-rule-corpus/issues/75-implement-compiler-config-series-mappings.md)); PIE laryngeals seeded in `global`. |
+| Dedicated smart-quote normalizer | partial | TBD | Embedded/trailing `"`/`"` stripped as glosses at parse ([pass 24](../.scratch/cleaned-rule-index/issues/24-correction-pass-smart-quotes.md)); typographic apostrophe `'` → ejective at **compile**. |
+| Correspondence-series index mappings | compile-time | TBD | Section-scoped rows authored in `data/compiler_config.yml` ([ticket 75](../.scratch/cleaned-rule-index/issues/75-implement-compiler-config-series-mappings.md)); PIE laryngeals seeded in `global`. |
 
 ---
 

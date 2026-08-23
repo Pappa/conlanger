@@ -6,7 +6,7 @@ Blocked by: 01, 03
 
 ## Question
 
-How should Index Diachronica feature notation in corpus rule strings (e.g. `[+voiced]`, `[+sibilant]`) be normalised so ASCA and Brassica compilers accept them — which synonyms map to which canonical names, when normalisation runs (ingest vs compile), and what remains applier-neutral in the cleaned corpus?
+How should Index Diachronica feature notation in index rule strings (e.g. `[+voiced]`, `[+sibilant]`) be normalised so ASCA and Brassica compilers accept them — which synonyms map to which canonical names, when normalisation runs (ingest vs compile), and what remains applier-neutral in the cleaned index?
 
 ## Notes
 

@@ -18,7 +18,7 @@ Renumbered pipeline (integer `Order` column ready for [ticket 37](../issues/37-d
 |------:|------|--------|----------------------|
 | 0 | `drop_mixed_parallel_null_columns` (per I/O side) | implemented | Index parallel-column `∅`/`*` beside other segments → omit null tokens before join ([ticket 60](../issues/60-correction-pass-parallel-column-null.md)) |
 | 0b | `expand_parallel_output_null_branches` (alternatives) | implemented | Index `∅` inside parallel output sets → branch split via `SoundChangeRule.alternatives` ([ticket 81](../issues/81-correction-pass-parallel-output-null.md)) |
-| 1 | Join corpus fields (`input` + `output` + `env` + `exception`) | implemented | Establishes rule string before transforms |
+| 1 | Join index fields (`input` + `output` + `env` + `exception`) | implemented | Establishes rule string before transforms |
 | 2 | `normalize_asca_optional_grouping_ellipsis` | implemented | Index `(C…)` / `(…C)` must become ASCA `(C,0)` / `(..)C` before token transforms |
 | 3 | `expand_index_subscript_references` (positional + identity) | planned | Unicode subscripts → ASCA `X=n` / bare `n`; must precede length norm for `N₂ː` → `2:[+long]` |
 | 4 | `apply_section_local_abbreviations` | planned | Multi-letter section tokens (e.g. Athabaskan `TS`) must expand before `T`/`S` are split by group mappings |
@@ -222,7 +222,7 @@ Copy-ready fragment for [ticket 37](../issues/37-document-sound-change-pipeline.
 
 | Order | Step | Status | Rationale |
 |------:|------|--------|-----------|
-| 1 | Join corpus fields | implemented | Build single rule string with ASCA separators |
+| 1 | Join index fields | implemented | Build single rule string with ASCA separators |
 | 2 | `normalize_asca_optional_grouping_ellipsis` | implemented | Index optional ellipsis → ASCA `(C,0)` / `(..)X` |
 | 3 | `expand_index_subscript_references` | planned | Positional `C₁` + identity `V₀` → ASCA refs ([research](./positional-slots-and-identity-subscripts.md)) |
 | 4 | `apply_section_local_abbreviations` | planned | Section `abbreviations` table → concrete tokens **before** class-letter expansion ([ticket 06](../issues/06-resolve-applier-unsupported-abbreviations.md)) |
@@ -262,7 +262,7 @@ Copy-ready fragment for [ticket 37](../issues/37-document-sound-change-pipeline.
 | [`.scratch/.../issues/37-document-sound-change-pipeline.md`](../issues/37-document-sound-change-pipeline.md) | Docs home for this table |
 | [`.scratch/.../issues/39-refactor-sound-change-ruleset.md`](../issues/39-refactor-sound-change-ruleset.md) | Refactor blocked until this spike + 37 |
 | [ASCA 0.10.2 doc — References](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#references) | `X=n` / bare `n` grammar |
-| [ADR-0002 applier-neutral YAML](../../../docs/adr/0002-applier-neutral-yaml-rule-corpus.md) | Index-shaped YAML; compile-time projection |
+| [ADR-0002 applier-neutral YAML](../../../docs/adr/0002-applier-neutral-yaml-rule-index.md) | Index-shaped YAML; compile-time projection |
 | [ADR-0003 validate after compile](../../../docs/adr/0003-validate-after-applier-compile.md) | Validation gate |
 
 ---

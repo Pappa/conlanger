@@ -1,4 +1,4 @@
-"""Field-level ingest transforms for Index → cleaned corpus rules."""
+"""Field-level ingest transforms for Index → cleaned index rules."""
 
 from __future__ import annotations
 

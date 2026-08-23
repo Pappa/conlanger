@@ -14,7 +14,7 @@ Re-implement `src/conlanger/tools/rules.py` as **pydantic** `BaseModel`s (**late
 - **Pure functions** stay in `compile/asca/`; pydantic `field_validator` / `model_validator` call them (Q3: may change later).
 - **Per-field** pipeline on the four compile fields (`field_validator`). Spike-38 **order** still applies per field.
 - **Cross-field:** `model_validator(mode='after')` for subscript refs (shared `declared`, **output last**).
-- **Alternatives** stay on `SoundChangeRule`: detect on **raw** I/O (`_build_alternatives` gates as pure functions), compile each peer, parent RNG-picks one emitted line. Inventory still reads `.alternatives`. Do not hoist to `DiachronicSeries`. Do not add a corpus YAML field.
+- **Alternatives** stay on `SoundChangeRule`: detect on **raw** I/O (`_build_alternatives` gates as pure functions), compile each peer, parent RNG-picks one emitted line. Inventory still reads `.alternatives`. Do not hoist to `DiachronicSeries`. Do not add a index YAML field.
 - **Join** only at `__str__` / render. Remove join-then-rewrite `compile_asca_rule_string`.
 - **Chains** on `DiachronicSeries` (`stages` → adjacent pairs). `SoundChangeRule` does not read `stages`. Length-1 → `output=""` ([ticket 90](90-missing-arrow-single-stage.md)).
 - **Injection:** `PrivateAttr` for `group_mappings`, `compiler_config`, `section_index`, instance `Random`.
@@ -25,7 +25,7 @@ Re-implement `src/conlanger/tools/rules.py` as **pydantic** `BaseModel`s (**late
 ## Out of scope
 
 - Brassica compiler
-- Changing corpus YAML (`stages` stays parse SoT)
+- Changing index YAML (`stages` stays parse SoT)
 - Renaming `DiachronicSeries`
 - Re-ordering transforms contrary to [spike 38](../research/asca-compile-transform-order.md)
 - Structured column/set IR on `SoundChangeRule` — [ticket 94](94-grill-structured-soundchangerule-ir.md) (grill after this lands)

@@ -136,4 +136,4 @@ This aligns with the prior spike’s **compile-only Brassica spacing** recommend
 - Demo: [prototypes/parse-time-inter-segment-whitespace.html](../prototypes/parse-time-inter-segment-whitespace.html)
 - Spike findings: [inter-segment-whitespace-phoneme-boundaries.md](./inter-segment-whitespace-phoneme-boundaries.md)
 - Examples CSV from spike: [inter-segment-whitespace-examples.csv](./inter-segment-whitespace-examples.csv)
-- ADR-0002 applier-neutral corpus
+- ADR-0002 applier-neutral index

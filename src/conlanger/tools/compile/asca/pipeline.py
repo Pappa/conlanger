@@ -18,6 +18,10 @@ from conlanger.tools.compile.asca.planned import (
     expand_meta_notation,
 )
 from conlanger.tools.compile.asca.series_mappings import apply_compiler_series_mappings
+from conlanger.tools.compile.asca.sets import (
+    convert_set_to_environment_set,
+    is_whole_field_set,
+)
 from conlanger.tools.compile.asca.structures import join_asca_rule_fields
 from conlanger.tools.compile.asca.subscript_references import (
     expand_subscript_references_across_fields,
@@ -118,8 +122,12 @@ def compile_asca_rule_fields(
     compiled_output = compile_asca_field_post_subscript(compiled_output)
     if compiled_env is not None:
         compiled_env = compile_asca_field_post_subscript(compiled_env)
+        if is_whole_field_set(compiled_env):
+            compiled_env = convert_set_to_environment_set(compiled_env)
     if compiled_exception is not None:
         compiled_exception = compile_asca_field_post_subscript(compiled_exception)
+        if is_whole_field_set(compiled_exception):
+            compiled_exception = convert_set_to_environment_set(compiled_exception)
     return join_asca_rule_fields(
         compiled_input,
         compiled_output,

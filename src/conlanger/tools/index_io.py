@@ -1,4 +1,4 @@
-"""Read/write helpers for the cleaned rule corpus YAML."""
+"""Read/write helpers for the cleaned rule index YAML."""
 
 from __future__ import annotations
 
@@ -37,8 +37,8 @@ def _mark_raw_literal(obj: Any) -> Any:
     return obj
 
 
-def dump_cleaned_corpus(doc: dict[str, Any]) -> str:
-    """Serialize a cleaned corpus document; multi-line ``raw`` uses YAML ``|`` blocks."""
+def dump_cleaned_index(doc: dict[str, Any]) -> str:
+    """Serialize a cleaned index document; multi-line ``raw`` uses YAML ``|`` blocks."""
     return yaml.safe_dump(
         _mark_raw_literal(doc),
         allow_unicode=True,
@@ -46,6 +46,6 @@ def dump_cleaned_corpus(doc: dict[str, Any]) -> str:
     )
 
 
-def write_cleaned_corpus(doc: dict[str, Any], path: Path) -> None:
+def write_cleaned_index(doc: dict[str, Any], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(dump_cleaned_corpus(doc), encoding="utf-8")
+    path.write_text(dump_cleaned_index(doc), encoding="utf-8")

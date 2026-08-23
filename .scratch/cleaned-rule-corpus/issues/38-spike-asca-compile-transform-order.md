@@ -36,7 +36,7 @@ Investigate and assign slot numbers for **all** of the following (expand list if
 
 ## Deliverable
 
-Findings markdown under `.scratch/cleaned-rule-corpus/research/` (e.g. `asca-compile-transform-order.md`) containing:
+Findings markdown under `.scratch/cleaned-rule-index/research/` (e.g. `asca-compile-transform-order.md`) containing:
 
 - Updated pipeline table fragment: all planned rows with recommended `Order` integers and rationale.
 - Explicit “rejected orderings” notes where alternatives were tried.

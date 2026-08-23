@@ -20,17 +20,17 @@ Grill session (2026-08-07): compile transform order must be clearly defined and 
 - Use a pipeline **table**: columns `Step`, `Status` (`implemented` / `planned` / `spike needed`), `Order`, `Rationale`.
 - Applier-neutral scope only — do not duplicate applier compile steps.
 
-### 2. `docs/applier-neutral-corpus-validation.md`
+### 2. `docs/applier-neutral-index-validation.md`
 
-- Document stage **Applier-neutral corpus validation** (inventory, correction pass, regen workflow, validation report — sub-steps may evolve).
+- Document stage **Applier-neutral index validation** (inventory, correction pass, regen workflow, validation report — sub-steps may evolve).
 - Same table format where ordering applies; prose OK for workflow that is not a strict transform pipeline.
-- Cross-link `.scratch/cleaned-rule-corpus/spec.md` and relevant correction-pass tickets; this doc is the stable `docs/` entry point.
+- Cross-link `.scratch/cleaned-rule-index/spec.md` and relevant correction-pass tickets; this doc is the stable `docs/` entry point.
 
 ### 3. `docs/sound-change-applier.md`
 
 - **Applier compile only:** `DiachronicSeries` → `DiachronicSeries` section assembly → per-rule ASCA transforms → `.rsca` string shape.
 - Single pipeline table for per-rule transforms. Implemented steps (current `SoundChangeRule._compile_rule_text` order):
-  1. Join corpus fields
+  1. Join index fields
   2. `normalize_asca_optional_grouping_ellipsis`
   3. `apply_asca_group_mappings`
   4. `normalize_asca_length_marks`
@@ -52,7 +52,7 @@ Primary code references: `src/conlanger/tools/rules.py`, `phonological_ruleset.p
   | Stage | Doc |
   |-------|-----|
   | Index Diachronica parse | [index-diachronica-parser.md](../index-diachronica-parser.md) |
-  | Applier-neutral corpus validation | [applier-neutral-corpus-validation.md](../applier-neutral-corpus-validation.md) |
+  | Applier-neutral index validation | [applier-neutral-index-validation.md](../applier-neutral-index-validation.md) |
   | Applier compile | [sound-change-applier.md](../sound-change-applier.md) |
   | Compile validation | [sound-change-applier.md](../sound-change-applier.md#compile-validation) (anchor in applier doc) |
 

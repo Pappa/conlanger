@@ -6,7 +6,7 @@ Blocked by: 01, 03, 04
 
 ## Question
 
-Which Index Diachronica abbreviations (class letters, series indices, other shorthand) cannot be expressed under ASCA and/or Brassica, and what concrete expansions or corpus treatments should replace them so compilers can emit valid applier input?
+Which Index Diachronica abbreviations (class letters, series indices, other shorthand) cannot be expressed under ASCA and/or Brassica, and what concrete expansions or index treatments should replace them so compilers can emit valid applier input?
 
 ## Notes
 

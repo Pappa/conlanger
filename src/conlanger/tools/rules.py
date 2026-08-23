@@ -5,14 +5,14 @@ from typing import ClassVar, Self
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-from conlanger.tools.compile.asca.chains import expand_chained_corpus_rule
+from conlanger.tools.compile.asca.chains import expand_chained_index_rule
 from conlanger.tools.compile.asca.parallel import expand_parallel_output_null_branches
 from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
 from conlanger.tools.compile.asca.sets import (
     is_whole_field_set,
     split_braced_set_members,
 )
-from conlanger.tools.compile.asca.tilde import normalize_corpus_rule_tilde_fields
+from conlanger.tools.compile.asca.tilde import normalize_index_rule_tilde_fields
 from conlanger.utils.file_io import load_compiler_config
 from conlanger.utils.mappings import CompilerConfig
 
@@ -198,8 +198,8 @@ class DiachronicSeries(BaseModel):
                         )
                     )
                     continue
-                normalized = normalize_corpus_rule_tilde_fields(rule)
-                for step in expand_chained_corpus_rule(normalized):
+                normalized = normalize_index_rule_tilde_fields(rule)
+                for step in expand_chained_index_rule(normalized):
                     parts.append(
                         SoundChangeRule(
                             **step,

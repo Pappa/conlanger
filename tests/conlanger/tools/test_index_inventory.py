@@ -5,7 +5,7 @@ from unittest.mock import patch
 import pytest
 
 from conlanger.appliers.asca import ASCAValidationError
-from conlanger.tools.corpus_inventory import (
+from conlanger.tools.index_inventory import (
     CHANGELOG_CSV_COLUMNS,
     SECTION_SKIPPED_FAILURE_CLASS,
     FieldIsolationRow,
@@ -28,8 +28,8 @@ from conlanger.tools.corpus_inventory import (
     summarize_inventory,
     top_error_tokens,
     top_error_tokens_with_suggested_from_dataframe,
-    validate_corpus_rule,
-    validate_corpus_rule_with_targets,
+    validate_index_rule,
+    validate_index_rule_with_targets,
     validation_rows_to_dataframe,
     write_field_isolation_csvs,
     write_filtered_inventory_csvs,
@@ -153,10 +153,10 @@ def test_validation_row_as_csv_dict():
     }
 
 
-def test_validate_corpus_rule_skipped_section():
+def test_validate_index_rule_skipped_section():
     section = {"index": "9.9.9", "section": "Skipped", "status": "skipped"}
-    with patch("conlanger.tools.corpus_inventory.DiachronicSeries") as mock_series:
-        (row,) = validate_corpus_rule(
+    with patch("conlanger.tools.index_inventory.DiachronicSeries") as mock_series:
+        (row,) = validate_index_rule(
             section,
             {"stages": ["a", "b"], "raw": "a → b", "source": "sample.html:1"},
             "r0",
@@ -167,8 +167,8 @@ def test_validate_corpus_rule_skipped_section():
     assert row.failure_class == SECTION_SKIPPED_FAILURE_CLASS
 
 
-def test_validate_corpus_rule_skipped_quoted_prose_uses_comment():
-    (row,) = validate_corpus_rule(
+def test_validate_index_rule_skipped_quoted_prose_uses_comment():
+    (row,) = validate_index_rule(
         _SECTION,
         {
             "stages": [],
@@ -183,8 +183,8 @@ def test_validate_corpus_rule_skipped_quoted_prose_uses_comment():
     assert row.failure_class == "format_error"
 
 
-def test_validate_corpus_rule_missing_arrow():
-    (row,) = validate_corpus_rule(
+def test_validate_index_rule_missing_arrow():
+    (row,) = validate_index_rule(
         _SECTION,
         {
             "stages": ["no arrow"],
@@ -200,11 +200,11 @@ def test_validate_corpus_rule_missing_arrow():
 
 
 @patch(
-    "conlanger.tools.corpus_inventory.DiachronicSeries",
+    "conlanger.tools.index_inventory.DiachronicSeries",
     side_effect=ValueError("bad compile"),
 )
-def test_validate_corpus_rule_diachronic_compile_format_error(_mock_prs):
-    (row,) = validate_corpus_rule(
+def test_validate_index_rule_diachronic_compile_format_error(_mock_prs):
+    (row,) = validate_index_rule(
         _SECTION,
         {"stages": ["a", "b"], "raw": "a → b", "source": "sample.html:8"},
         "r0",
@@ -215,8 +215,8 @@ def test_validate_corpus_rule_diachronic_compile_format_error(_mock_prs):
     assert "bad compile" in row.description
 
 
-def test_validate_corpus_rule_single_stage_compiles_with_empty_output():
-    (row,) = validate_corpus_rule(
+def test_validate_index_rule_single_stage_compiles_with_empty_output():
+    (row,) = validate_index_rule(
         _SECTION,
         {"stages": ["a"], "raw": "a →", "source": "sample.html:7"},
         "r0",
@@ -227,8 +227,8 @@ def test_validate_corpus_rule_single_stage_compiles_with_empty_output():
     assert "no compile steps" not in row.description
 
 
-def test_validate_corpus_rule_format_error():
-    (row,) = validate_corpus_rule(
+def test_validate_index_rule_format_error():
+    (row,) = validate_index_rule(
         _SECTION,
         {"output": "b", "raw": "→ b", "source": "sample.html:2"},
         "r1",
@@ -238,8 +238,8 @@ def test_validate_corpus_rule_format_error():
     assert row.failure_class == "format_error"
 
 
-def test_validate_corpus_rule_skipped_is_held_out_comment():
-    (row,) = validate_corpus_rule(
+def test_validate_index_rule_skipped_is_held_out_comment():
+    (row,) = validate_index_rule(
         _SECTION,
         {
             "status": "skipped",
@@ -254,9 +254,9 @@ def test_validate_corpus_rule_skipped_is_held_out_comment():
     assert row.description == "held-out (commented rule)"
 
 
-@patch("conlanger.tools.corpus_inventory.validate_asca", return_value=True)
-def test_validate_corpus_rule_ok(_mock_validate):
-    (row,) = validate_corpus_rule(
+@patch("conlanger.tools.index_inventory.validate_asca", return_value=True)
+def test_validate_index_rule_ok(_mock_validate):
+    (row,) = validate_index_rule(
         _SECTION,
         {"stages": ["a", "b"], "raw": "a → b", "source": "sample.html:4"},
         "r0",
@@ -267,11 +267,11 @@ def test_validate_corpus_rule_ok(_mock_validate):
 
 
 @patch(
-    "conlanger.tools.corpus_inventory.validate_asca",
+    "conlanger.tools.index_inventory.validate_asca",
     side_effect=ASCAValidationError("Syntax Error: Expected '_'"),
 )
-def test_validate_corpus_rule_asca_failure(_mock_validate):
-    (row,) = validate_corpus_rule(
+def test_validate_index_rule_asca_failure(_mock_validate):
+    (row,) = validate_index_rule(
         _SECTION,
         {"stages": ["a", "b"], "env": "bad", "raw": "a → b", "source": "s:5"},
         "r0",
@@ -285,13 +285,13 @@ def test_validate_corpus_rule_asca_failure(_mock_validate):
 
 
 @patch(
-    "conlanger.tools.corpus_inventory.validate_asca",
+    "conlanger.tools.index_inventory.validate_asca",
     side_effect=ASCAValidationError(
         "Syntax Error: Unknown feature 'voiced'. Did you mean voice? | e > i"
     ),
 )
-def test_validate_corpus_rule_unknown_token_fields(_mock_validate):
-    (row,) = validate_corpus_rule(
+def test_validate_index_rule_unknown_token_fields(_mock_validate):
+    (row,) = validate_index_rule(
         _SECTION,
         {
             "stages": ["e", "i"],
@@ -307,9 +307,9 @@ def test_validate_corpus_rule_unknown_token_fields(_mock_validate):
     assert row.suggested == "voice"
 
 
-@patch("conlanger.tools.corpus_inventory.validate_asca", return_value=True)
-def test_validate_corpus_rule_emits_alternative_rows(_mock_validate):
-    rows = validate_corpus_rule(
+@patch("conlanger.tools.index_inventory.validate_asca", return_value=True)
+def test_validate_index_rule_emits_alternative_rows(_mock_validate):
+    rows = validate_index_rule(
         _SECTION,
         {
             "stages": ["d", "{∅,ð}"],
@@ -326,9 +326,9 @@ def test_validate_corpus_rule_emits_alternative_rows(_mock_validate):
     assert _mock_validate.call_count == 2
 
 
-@patch("conlanger.tools.corpus_inventory.validate_asca", return_value=True)
-def test_validate_corpus_rule_non_optional_has_empty_alt_idx(_mock_validate):
-    (row,) = validate_corpus_rule(
+@patch("conlanger.tools.index_inventory.validate_asca", return_value=True)
+def test_validate_index_rule_non_optional_has_empty_alt_idx(_mock_validate):
+    (row,) = validate_index_rule(
         _SECTION,
         {"stages": ["a", "b"], "raw": "a → b", "source": "s:1"},
         "r0",
@@ -1331,7 +1331,7 @@ def test_count_field_blame_categories_splits_composite_blame():
     assert len(counts) == 3
 
 
-@patch("conlanger.tools.corpus_inventory.validate_asca_part", return_value=True)
+@patch("conlanger.tools.index_inventory.validate_asca_part", return_value=True)
 def test_build_field_isolation_row_unknown_feature_on_input(mock_validate_part):
     def side_effect(part, fragment, **kwargs):
         if part == "input":
@@ -1360,7 +1360,7 @@ def test_build_field_isolation_row_unknown_feature_on_input(mock_validate_part):
     assert row.output_ok is True
 
 
-@patch("conlanger.tools.corpus_inventory.validate_asca_part")
+@patch("conlanger.tools.index_inventory.validate_asca_part")
 def test_build_field_isolation_row_missing_underscore_on_env(mock_validate_part):
     def side_effect(part, fragment, **kwargs):
         if part == "env":
@@ -1390,7 +1390,7 @@ def test_build_field_isolation_row_missing_underscore_on_env(mock_validate_part)
     assert row.output_ok is True
 
 
-@patch("conlanger.tools.corpus_inventory.validate_asca_part")
+@patch("conlanger.tools.index_inventory.validate_asca_part")
 def test_build_field_isolation_row_two_fields_fail(mock_validate_part):
     def side_effect(part, _fragment, **kwargs):
         if part in {"input", "env"}:
@@ -1436,7 +1436,7 @@ def test_field_isolation_integration_multi_blame():
     assert row.output_ok is True
     assert row.blame == "multi"
 
-    rows, targets = validate_corpus_rule_with_targets(
+    rows, targets = validate_index_rule_with_targets(
         _SECTION,
         {"stages": ["{p,t}", "{b}"], "raw": "{p,t} → {b}", "source": "s:multi"},
         "r0",

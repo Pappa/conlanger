@@ -42,7 +42,7 @@ Spike for replacing compile-time `group_mappings.csv` expansion with an ASCA `.a
 
 ## Empirical probes (local, 2026-08-10)
 
-Probe artifacts: `.scratch/cleaned-rule-corpus/research/_alias-spike/` (gitignored scratch).
+Probe artifacts: `.scratch/cleaned-rule-index/research/_alias-spike/` (gitignored scratch).
 
 ### 1. Alias file does not change rule grouping semantics
 
@@ -123,7 +123,7 @@ No ASCA `-l` mechanism provides bracket-aware class-letter rewriting or labializ
 
 ---
 
-## Implications for the cleaned-rule corpus pipeline
+## Implications for the cleaned-rule index pipeline
 
 1. **`group_mappings.csv` + `apply_asca_group_mappings` stay** for Index class letters in compiled ASCA rule strings (ticket 14 / spike 09 findings unchanged).
 
@@ -147,7 +147,7 @@ If the intent were only to **store** mappings in `.alias` syntax but still expan
 
 ```bash
 # Rule grouping unchanged by alias file
-cd .scratch/cleaned-rule-corpus/research/_alias-spike
+cd .scratch/cleaned-rule-index/research/_alias-spike
 printf '@ T\n    S > F\n' > s.rsca
 printf 'sami\n' > w.wsca
 printf '@into\n    S > P\n@from\n' > m.alias

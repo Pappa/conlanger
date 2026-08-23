@@ -5,7 +5,7 @@ Status: resolved
 
 ## Question
 
-How should Index Diachronica rule fields gain **inter-segment whitespace** so the **applier-neutral** cleaned corpus matches ASCA and Brassica’s space-separated phoneme convention — including how to detect **digraph / trigraph** graphemes and phoneme boundaries around length markers, feature matrices, class letters, sets, and subscript compounds?
+How should Index Diachronica rule fields gain **inter-segment whitespace** so the **applier-neutral** cleaned index matches ASCA and Brassica’s space-separated phoneme convention — including how to detect **digraph / trigraph** graphemes and phoneme boundaries around length markers, feature matrices, class letters, sets, and subscript compounds?
 
 ## Why now
 
@@ -26,7 +26,7 @@ Map fog (deferred from [Normalise segment feature matrices for appliers](07-norm
 
 ## Deliverables
 
-- Findings markdown under `.scratch/cleaned-rule-corpus/research/` (cite primary sources)
+- Findings markdown under `.scratch/cleaned-rule-index/research/` (cite primary sources)
 - Optional supporting CSV or example table of digraph/trigraph / boundary cases if useful
 - Explicit follow-on: grill questions + implementation ticket shape
 

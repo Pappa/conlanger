@@ -2,15 +2,15 @@ Type: grilling
 Status: resolved
 Blocked by: None
 
-# Rule comment field on corpus rules
+# Rule comment field on index rules
 
 ## Question
 
-Should the cleaned rule corpus schema carry an optional **`comment`** on each **corpus rule** — and how should parse-time extraction populate it from Index Diachronica rule lines?
+Should the cleaned rule index schema carry an optional **`comment`** on each **index rule** — and how should parse-time extraction populate it from Index Diachronica rule lines?
 
 ## Notes
 
-- Amends [YAML schema for the cleaned rule corpus](03-yaml-schema-cleaned-rule-corpus.md) (2026-08).
+- Amends [YAML schema for the cleaned rule index](03-yaml-schema-cleaned-rule-index.md) (2026-08).
 - Distinct from section-level **`comments`** (non-`schg` `<p>` blocks between rules).
 - Distinct from **`sporadic`** (boolean uncertainty flag), **`status`** / validation report, and compile-time ASCA comments ([Historical fidelity vs valid-but-inaccurate fallback](04-historical-fidelity-vs-validity.md) edit-ladder step 3).
 - Current parser **discards** much inline prose via correction passes 19–22, 21 (`strip_semicolon_prose`, trailing parens/quotes) — ~87 rules still carry `;` in `raw`; qualifiers like `short only` / `when unstressed` often remain in `env` or were stripped without retention.
@@ -20,7 +20,7 @@ Should the cleaned rule corpus schema carry an optional **`comment`** on each **
 
 ### Schema (amends ticket 03)
 
-Add optional **`comment`** on each **corpus rule**:
+Add optional **`comment`** on each **index rule**:
 
 | Field | Required | Notes |
 |-------|----------|--------|
@@ -50,7 +50,7 @@ Do **not** duplicate text that remains in cleaned `env`/`exception` unless it wa
 
 ### Analysis loop
 
-Extracted **`comment`** values are an explicit corpus artifact for iterative review: cluster common qualifiers (`short only`, `unstressed`, dialect labels) to drive later env-syntax transforms or prose-env mapping — not thrown away after strip.
+Extracted **`comment`** values are an explicit index artifact for iterative review: cluster common qualifiers (`short only`, `unstressed`, dialect labels) to drive later env-syntax transforms or prose-env mapping — not thrown away after strip.
 
 ### Compile / validation
 

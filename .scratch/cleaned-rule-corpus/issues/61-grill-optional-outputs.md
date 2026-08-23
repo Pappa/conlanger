@@ -5,15 +5,15 @@ Status: resolved
 
 ## Question
 
-Index rules like `d → {∅,ð} / V_V` encode speaker variation (including null). ASCA 0.10.2 rejects `∅` inside sets. How should the cleaned corpus and ASCA compile/render path retain alternatives and choose one for emission — and how should the **same seeded-randomness design** also cover **sporadic** rules (apply vs skip) — without making unit tests unable to exercise every branch?
+Index rules like `d → {∅,ð} / V_V` encode speaker variation (including null). ASCA 0.10.2 rejects `∅` inside sets. How should the cleaned index and ASCA compile/render path retain alternatives and choose one for emission — and how should the **same seeded-randomness design** also cover **sporadic** rules (apply vs skip) — without making unit tests unable to exercise every branch?
 
 ## Settled (grill closed 2026-08-12; owner confirmed)
 
-### Detection & corpus
+### Detection & index
 - **Optional outputs** ≠ **sporadic** — `CONTEXT.md`.
 - **Gate:** input not a whole-field set + output is a whole-field set (e.g. `d → {∅,ð}`). Not paired `{a,b} → {c,d}`.
 - Uneven zip / UnevenSet shapes: unresolvable as written — other cluster. Nested sets: separate issue.
-- **YAML SoT unchanged:** opaque set in **stages**; resolve at compile (do not split corpus rules). Ticket 60 parallel-column nulls still out of scope for set-internal `∅`.
+- **YAML SoT unchanged:** opaque set in **stages**; resolve at compile (do not split index rules). Ticket 60 parallel-column nulls still out of scope for set-internal `∅`.
 
 ### `SoundChangeRule` shape & randomness
 - On instantiation: build `alternatives: list[SoundChangeRule]` (full peers; leaves have no children).

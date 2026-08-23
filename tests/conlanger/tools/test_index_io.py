@@ -1,9 +1,9 @@
 from pathlib import Path
 
-from conlanger.tools.corpus_io import dump_cleaned_corpus, write_cleaned_corpus
+from conlanger.tools.index_io import dump_cleaned_index, write_cleaned_index
 
 
-def test_dump_cleaned_corpus_uses_literal_block_for_multiline_raw():
+def test_dump_cleaned_index_uses_literal_block_for_multiline_raw():
     doc = {
         "abbreviations": {},
         "sections": [
@@ -20,14 +20,14 @@ def test_dump_cleaned_corpus_uses_literal_block_for_multiline_raw():
             }
         ],
     }
-    text = dump_cleaned_corpus(doc)
+    text = dump_cleaned_index(doc)
     assert "raw: |" in text
     assert "line one" in text
     assert "line two" in text
     assert "line one\\nline two" not in text
 
 
-def test_dump_cleaned_corpus_single_line_raw_uses_plain_scalar():
+def test_dump_cleaned_index_single_line_raw_uses_plain_scalar():
     doc = {
         "abbreviations": {},
         "sections": [
@@ -44,12 +44,12 @@ def test_dump_cleaned_corpus_single_line_raw_uses_plain_scalar():
             }
         ],
     }
-    text = dump_cleaned_corpus(doc)
+    text = dump_cleaned_index(doc)
     assert "raw: |\n" not in text
     assert "raw: a → b" in text
 
 
-def test_write_cleaned_corpus(tmp_path: Path):
+def test_write_cleaned_index(tmp_path: Path):
     doc = {
         "abbreviations": {},
         "sections": [
@@ -66,8 +66,8 @@ def test_write_cleaned_corpus(tmp_path: Path):
             }
         ],
     }
-    out = tmp_path / "nested" / "corpus.yml"
-    write_cleaned_corpus(doc, out)
+    out = tmp_path / "nested" / "index.yml"
+    write_cleaned_index(doc, out)
     text = out.read_text(encoding="utf-8")
     assert "raw: a → b" in text
     assert out.is_file()

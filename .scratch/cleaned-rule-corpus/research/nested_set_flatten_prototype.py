@@ -3,10 +3,10 @@
 Throwaway. Does not write ``data/diachronica/index_diachronica_parsed.yml``.
 Does not append the committed changelog.
 
-    uv run python .scratch/cleaned-rule-corpus/research/nested_set_flatten_prototype.py
+    uv run python .scratch/cleaned-rule-index/research/nested_set_flatten_prototype.py
 
 Phase A validates every rule whose working fields change (plus every current
-``nested_brackets`` inventory source) via ``validate_corpus_rule``, then merges
+``nested_brackets`` inventory source) via ``validate_index_rule``, then merges
 unchanged rows from the committed inventory. That is a full inventory
 comparison: unflattened rules cannot flip ``ok``.
 """
@@ -29,9 +29,9 @@ ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "src"))
 
 from conlanger.tools.compile.asca.group_mappings import asca_group_mappings_dict
-from conlanger.tools.corpus_inventory import (  # noqa: E402
+from conlanger.tools.index_inventory import (  # noqa: E402
     load_inventory_csv,
-    validate_corpus_rule,
+    validate_index_rule,
 )
 from conlanger.tools.ingest.section_policy import resolve_catch_all_else_rules
 from flatten_nested_sets import (  # noqa: E402
@@ -48,9 +48,7 @@ from scan_nested_sets import (  # noqa: E402
 )
 
 YAML_PATH = ROOT / "data/diachronica/index_diachronica_parsed.yml"
-INVENTORY_PATH = (
-    ROOT / ".scratch/cleaned-rule-corpus/inventory/asca-rule-inventory.csv"
-)
+INVENTORY_PATH = ROOT / ".scratch/cleaned-rule-index/inventory/asca-rule-inventory.csv"
 PROBE_WORDS = ROOT / "tests/fixtures/asca_probe_words.wsca"
 OUT_CSV = Path(__file__).with_name("nested-set-flatten-prototype.csv")
 OUT_JSON = Path(__file__).with_name("nested-set-flatten-prototype-metrics.json")
@@ -155,11 +153,11 @@ def _ok_bool(value: Any) -> bool:
     return str(value).strip().lower() in {"true", "1", "yes"}
 
 
-def load_corpus() -> dict[str, Any]:
+def load_index() -> dict[str, Any]:
     return yaml.safe_load(YAML_PATH.read_text(encoding="utf-8"))
 
 
-def flatten_corpus(
+def flatten_index(
     doc: dict[str, Any], *, mode: str
 ) -> tuple[dict[str, Any], dict[str, list[str]]]:
     """Deep-copy ``doc`` and flatten working fields. Returns changed ``source`` map."""
@@ -189,7 +187,7 @@ def _validate_job(
     payload: tuple[dict[str, Any], dict[str, Any], Path, dict[str, str]],
 ) -> list[dict[str, Any]]:
     section, rule, probe, group_mappings = payload
-    rows = validate_corpus_rule(
+    rows = validate_index_rule(
         section,
         rule,
         str(rule.get("rule_id", "")),
@@ -202,7 +200,9 @@ def _validate_job(
 def _row_to_dict(row: Any) -> dict[str, Any]:
     data = dict(row.as_csv_dict())
     data["ok"] = _ok_bool(data.get("ok"))
-    data["alt_idx"] = "" if data.get("alt_idx") in (None, "None") else str(data.get("alt_idx") or "")
+    data["alt_idx"] = (
+        "" if data.get("alt_idx") in (None, "None") else str(data.get("alt_idx") or "")
+    )
     return data
 
 
@@ -226,7 +226,7 @@ def validate_changed_rules(
     with ThreadPoolExecutor(max_workers=workers) as pool:
         futures = [
             pool.submit(
-                validate_corpus_rule,
+                validate_index_rule,
                 section,
                 rule,
                 str(rule.get("rule_id", "")),
@@ -240,7 +240,11 @@ def validate_changed_rules(
             rows = future.result()
             for row in rows:
                 data = _row_to_dict(row)
-                alt = "" if data.get("alt_idx") in (None, "None") else str(data["alt_idx"])
+                alt = (
+                    ""
+                    if data.get("alt_idx") in (None, "None")
+                    else str(data["alt_idx"])
+                )
                 results[(data["source"], alt)] = data
             done += 1
             if done % 25 == 0 or done == len(futures):
@@ -305,7 +309,11 @@ def summarize(
             flips += 1
             if prev_ok and not cur_ok:
                 regressions += 1
-        if prev_fc != cur_fc and (prev_fc == "nested_brackets" or cur_fc == "nested_brackets" or prev_ok != cur_ok):
+        if prev_fc != cur_fc and (
+            prev_fc == "nested_brackets"
+            or cur_fc == "nested_brackets"
+            or prev_ok != cur_ok
+        ):
             label_prev = "ok" if prev_ok and not prev_fc else (prev_fc or "ok")
             label_cur = "ok" if cur_ok else (cur_fc or "fail")
             transitions[f"{label_prev}→{label_cur}"] += 1
@@ -329,7 +337,7 @@ def write_per_rule_csv(
     sources: set[str] = set()
     for changed in changed_by_mode.values():
         sources.update(changed)
-    for (source, _alt) in baseline:
+    for source, _alt in baseline:
         if baseline[(source, _alt)].get("failure_class") == "nested_brackets":
             sources.add(source)
     fieldnames = [
@@ -376,7 +384,9 @@ def write_per_rule_csv(
                     "ok_union": _ok_bool(u.get("ok", prev.get("ok"))),
                     "ok_union_paren": _ok_bool(p.get("ok", prev.get("ok"))),
                     "failure_class_before": prev.get("failure_class") or "",
-                    "failure_class_union": u.get("failure_class", prev.get("failure_class") or ""),
+                    "failure_class_union": u.get(
+                        "failure_class", prev.get("failure_class") or ""
+                    ),
                     "failure_class_union_paren": p.get(
                         "failure_class", prev.get("failure_class") or ""
                     ),
@@ -391,13 +401,21 @@ def run_else_fixtures() -> dict[str, Any]:
     for mode in (MODE_UNION, MODE_UNION_PAREN):
         env_p3 = flatten_nested_sets(nested_env, mode=mode)
         pair_p3 = [
-            {"stages": ["m̩ n̩", "am an"], "env": env_p3, "raw": "m̩ n̩ → am an / _{s,({m,j,w})V}"},
+            {
+                "stages": ["m̩ n̩", "am an"],
+                "env": env_p3,
+                "raw": "m̩ n̩ → am an / _{s,({m,j,w})V}",
+            },
             {"stages": ["m̩ n̩", "em en"], "env": "else", "raw": "m̩ n̩ → em en / else"},
         ]
         resolved_p3 = resolve_catch_all_else_rules(pair_p3)
 
         pair_p4 = [
-            {"stages": ["m̩ n̩", "am an"], "env": nested_env, "raw": "m̩ n̩ → am an / _{s,({m,j,w})V}"},
+            {
+                "stages": ["m̩ n̩", "am an"],
+                "env": nested_env,
+                "raw": "m̩ n̩ → am an / _{s,({m,j,w})V}",
+            },
             {"stages": ["m̩ n̩", "em en"], "env": "else", "raw": "m̩ n̩ → em en / else"},
         ]
         resolved_p4 = resolve_catch_all_else_rules(pair_p4)
@@ -458,7 +476,7 @@ def run_series_slot_probe() -> dict[str, Any]:
 
 def run_phase_a(workers: int) -> dict[str, Any]:
     print("loading YAML…", flush=True)
-    doc = load_corpus()
+    doc = load_index()
     baseline = _inventory_index(INVENTORY_PATH)
     nested_sources = {
         source
@@ -485,7 +503,7 @@ def run_phase_a(workers: int) -> dict[str, Any]:
 
     for mode in (MODE_UNION, MODE_UNION_PAREN):
         print(f"\n=== Phase A mode={mode} ===", flush=True)
-        flattened, changed = flatten_corpus(doc, mode=mode)
+        flattened, changed = flatten_index(doc, mode=mode)
         changed_by_mode[mode] = changed
         depth_by_mode[mode] = count_working_depth_ge2(flattened)
         sources = set(changed) | nested_sources
@@ -494,9 +512,7 @@ def run_phase_a(workers: int) -> dict[str, Any]:
             f"validate sources: {len(sources)}",
             flush=True,
         )
-        validated = validate_changed_rules(
-            flattened, sources=sources, workers=workers
-        )
+        validated = validate_changed_rules(flattened, sources=sources, workers=workers)
         merged = merge_inventory(baseline, validated, replaced_sources=sources)
         merged_by_mode[mode] = merged
         stats = summarize(merged, baseline)
@@ -515,7 +531,7 @@ def run_phase_a(workers: int) -> dict[str, Any]:
 
     # Scan-style bucket counts after union flatten (working fields via classify).
     after_hits = []
-    flattened_union, _ = flatten_corpus(doc, mode=MODE_UNION)
+    flattened_union, _ = flatten_index(doc, mode=MODE_UNION)
     for section in flattened_union.get("sections") or []:
         for idx, rule in enumerate(section.get("rules") or []):
             hit = classify_rule(rule, section.get("section", ""), idx)
@@ -525,7 +541,9 @@ def run_phase_a(workers: int) -> dict[str, Any]:
     metrics["scan_buckets_after_union"] = dict(bucket_counts)
     metrics["else_fixtures"] = run_else_fixtures()
     metrics["series_slot_probe"] = run_series_slot_probe()
-    OUT_JSON.write_text(json.dumps(metrics, indent=2, ensure_ascii=False), encoding="utf-8")
+    OUT_JSON.write_text(
+        json.dumps(metrics, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
     print(f"wrote {OUT_JSON}", flush=True)
     return metrics
 

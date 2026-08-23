@@ -102,12 +102,12 @@ Recommend **Phase 1 immediately**; file Phase 2 as a sub-task if inventory still
 ## What to build
 
 1. Phase 1 code change in `src/conlanger/tools/asca_compile/group_mappings.py` (+ unit tests on Athabaskan fixtures above).
-2. Full inventory re-run (`uv run regenerate_corpus`); record before/after for `unknown_grouping` / `T` token.
+2. Full inventory re-run (`uv run create_index`); record before/after for `unknown_grouping` / `T` token.
 3. Phase 2 only if residual `T` cluster remains.
 
 ## Policy
 
-- Compile-layer boundary fix only; `raw` and corpus YAML unchanged (ADR-0010).
+- Compile-layer boundary fix only; `raw` and index YAML unchanged (ADR-0010).
 - No new CSV rows for Phase 1 — existing `T` mapping is correct; the expander regex is wrong.
 - Do not expand ASCII-lowercase-glued class letters without Phase 2 spike (risk to `Kr`-style segment literals).
 

@@ -10,9 +10,9 @@ Implement an ASCA validator that takes a `DiachronicSeries` instance, returns `T
 
 ## Notes
 
-- Wayfinder role: AFK task that makes post-compile ASCA checking concrete so [Correction workflow for invalid rules](05-correction-workflow-invalid-rules.md) can decide workflow against a real validator (does not deliver the cleaned corpus itself).
+- Wayfinder role: AFK task that makes post-compile ASCA checking concrete so [Correction workflow for invalid rules](05-correction-workflow-invalid-rules.md) can decide workflow against a real validator (does not deliver the cleaned index itself).
 - Aligns with ADR-0003 (validate after applier compile): this is the ASCA-side check, not an HTML→YAML ingest gate.
-- Spec source of truth for accept/reject behaviour: `.scratch/cleaned-rule-corpus/research/asca-rule-validity.md` — whole-rule form, per-field checklists, operators, ID failure patterns, CLI/`ParsedRules::try_from` validation (§4), and the lexer→parser→split_into_subrules→runtime map for a Python implementation (§5).
+- Spec source of truth for accept/reject behaviour: `.scratch/cleaned-rule-index/research/asca-rule-validity.md` — whole-rule form, per-field checklists, operators, ID failure patterns, CLI/`ParsedRules::try_from` validation (§4), and the lexer→parser→split_into_subrules→runtime map for a Python implementation (§5).
 - API contract (required):
   - **Input:** an instance of `DiachronicSeries` (`src/conlanger/tools/DiachronicSeries.py`).
   - **Valid:** return `True`.

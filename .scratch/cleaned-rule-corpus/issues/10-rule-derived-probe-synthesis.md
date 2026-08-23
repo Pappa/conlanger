@@ -6,7 +6,7 @@ Blocked by: 08
 
 ## Answer
 
-**Wontfix.** Use ASCA directly for **compile validation** via existing `validate_asca` (`asca run` + baseline wordlist). Rule-derived candidate word generation (formerly "probe synthesis") is redundant with a parse/apply gate for error clustering — ~98% of provisional inventory failures are Tier 1–2 syntax, catchable without per-rule word synthesis. See tickets [11](11-minimal-extract-only-ingest.md) → [12](12-full-corpus-validation-inventory.md) → cluster-driven [13+](13-correction-pass-template.md).
+**Wontfix.** Use ASCA directly for **compile validation** via existing `validate_asca` (`asca run` + baseline wordlist). Rule-derived candidate word generation (formerly "probe synthesis") is redundant with a parse/apply gate for error clustering — ~98% of provisional inventory failures are Tier 1–2 syntax, catchable without per-rule word synthesis. See tickets [11](11-minimal-extract-only-ingest.md) → [12](12-full-index-validation-inventory.md) → cluster-driven [13+](13-correction-pass-template.md).
 
 ## Question
 
@@ -29,7 +29,7 @@ How should **compile validation** drive **Tier 4** ASCA runtime checks when `asc
   - Emit **3–8** `.wsca` lines per rule
 - **Fallback:** frozen global baseline lexicon (`tests/fixtures/asca_probe_words.wsca` + optional ASCA-test-derived shapes) when synthesis is partial; record **coverage** metadata (`full` | `partial` | `baseline_only`) for validation CSV / debugging.
 - **Deferred (phase 2 / fog):** structures `⟨CV⟩`, ellipses, alpha notation, references, env sets, optional counts — synthesizer reports partial coverage; do not block MVP.
-- **Out of scope for this ticket:** seeded random fuzz (optional nightly script later); porting ASCA’s full unit-test corpus wholesale.
+- **Out of scope for this ticket:** seeded random fuzz (optional nightly script later); porting ASCA’s full unit-test index wholesale.
 - **Integration:** `validate_asca` uses synthesized probes by default when `probe_words` is omitted (or explicit `synthesize_probes=True` flag — decide at implementation).
 - **Tests:** deterministic unit tests on `synthesize_probes(rule_dict) → list[str]`; integration cases where fixed probes miss Tier 4 but synthesized probes catch it (e.g. uneven set with plosive in input).
 - Skills: `/prototype` if a stub helps review the table layout before full integration.

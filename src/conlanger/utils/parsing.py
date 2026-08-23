@@ -76,7 +76,7 @@ def non_empty_stages(stages: list[str]) -> list[str]:
 
 
 def finalize_stages_shape(parts: dict[str, Any]) -> dict[str, Any]:
-    """Drop empty stage slots; keep short spines as ordinary corpus rules."""
+    """Drop empty stage slots; keep short spines as ordinary index rules."""
     stages = parts.get("stages", [])
     parts["stages"] = non_empty_stages(stages)
     return parts
@@ -223,7 +223,7 @@ def _rule_parts_from_spine_text(
     *,
     rest: str | None,
 ) -> dict[str, Any]:
-    """Build corpus rule parts from pre-env spine text and optional env/exception tail."""
+    """Build index rule parts from pre-env spine text and optional env/exception tail."""
     stage_text = spine_text.strip()
     if rest is None:
         trail = TRAILING_EXCEPTION_RE.search(stage_text)

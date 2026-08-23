@@ -57,11 +57,11 @@ Index uses `~` for optional segments, repetition, and output-chain glue. ASCA 0.
 | Multigraph output chain | `{β,w} > bj~vj~v` (sole output token) | `{β,w} > bj` … `vj > v` | `_expand_output_tilde_field` + chain split |
 | Input alternation | `q:[+long]~qχ` | `{q:[+long],qχ}` | token alternation |
 
-**Wiring:** `normalize_corpus_rule_tilde_fields()` on corpus `input`/`output` before `expand_chained_corpus_rule()`; `expand_index_tilde_notation()` via pipeline step 10 (`expand_meta_notation`).
+**Wiring:** `normalize_index_rule_tilde_fields()` on index `input`/`output` before `expand_chained_index_rule()`; `expand_index_tilde_notation()` via pipeline step 10 (`expand_meta_notation`).
 
 **Hold-outs:** Parenthetical segments without tilde (`(s)`, `Cw_{(d)l,f3}`) remain for ticket 48. One inventory row still mentions `~` in the error string (`!` click-letter input; tilde in output is expanded but rule fails on `ǃ`).
 
-### Inventory (ASCA 0.10.2, `regenerate_corpus` 2026-08-08)
+### Inventory (ASCA 0.10.2, `create_index` 2026-08-08)
 
 | Metric | Before | After |
 | --- | ---: | ---: |
@@ -73,7 +73,7 @@ Index uses `~` for optional segments, repetition, and output-chain glue. ASCA 0.
 
 ### Implementation
 
-- `src/conlanger/tools/asca_compile/tilde.py` — `expand_index_tilde_notation`, `normalize_corpus_rule_tilde_fields`
+- `src/conlanger/tools/asca_compile/tilde.py` — `expand_index_tilde_notation`, `normalize_index_rule_tilde_fields`
 - `src/conlanger/tools/asca_compile/planned.py` — `expand_meta_notation` delegates to tilde expander
 - `src/conlanger/tools/rules.py` — tilde field normalize before chain expansion
 - Tests: `tests/conlanger/tools/test_asca_compile_tilde.py`, `test_sound_change_ruleset_validates_tilde_notation_fixtures` in `test_SoundChangeRule.py`

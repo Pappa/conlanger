@@ -15,7 +15,7 @@ Grill session (2026-08-09) on `split_env_exception()` and syllable exceptions. A
 - `#` = word boundary; `U` = syllable class letter (maps to ASCA `%` at compile).
 - `in #U` = “in the word's **first syllable**” (any nucleus/onset inside that syllable).
 - `! in #U` = **exception** — block the change when the target segment is in the first syllable.
-- `in U#` = word-**final** syllable (mirror case; one corpus rule today).
+- `in U#` = word-**final** syllable (mirror case; one index rule today).
 - Prose `in` is Index editorial glue, not ASCA syntax.
 
 ### What does **not** work (empirical, ASCA 0.10.2)
@@ -49,7 +49,7 @@ Proto-Norse parallel: `Vː → V[- long] / ! #U, U#` (no prose `in`) — same sy
 
 1. **Primary sources** — ASCA 0.10.2 docs: `%` (whole syllable), `$` (boundary), `#` (word edge), underline structures `⟨…⟩`, syllable-structure matching, exception syntax. Can a segment rule block on syllable membership?
 2. **Worked examples** — Old Norse `! in #U`, Proto-Norse `! #U, U#`, Iroquoian `! in U#`; define expected apply/block behaviour on consonant-initial and vowel-initial test words.
-3. **Candidate encodings** — e.g. structure + env inversion, multi-rule decompositions, syllable-tier rules, blocking/propagation, explicit `$` requirements; rate each for fidelity and corpus coverage.
+3. **Candidate encodings** — e.g. structure + env inversion, multi-rule decompositions, syllable-tier rules, blocking/propagation, explicit `$` requirements; rate each for fidelity and index coverage.
 4. **Policy recommendation** — implementable correction pass vs permanent medium-fidelity deferral vs `status:` / comment-only for irreducible prose tails (ME “following U containing /iː/ …”).
 5. **Follow-on ticket shape** — correction pass scope, parse-only normalisations (`in` strip, `U`→`%`), and whether `group_mappings.csv` comment on `U`→`%` needs amending.
 
@@ -61,7 +61,7 @@ Proto-Norse parallel: `Vː → V[- long] / ! #U, U#` (no prose `in`) — same sy
 
 ## Deliverables
 
-- Findings markdown: `.scratch/cleaned-rule-corpus/research/index-syllable-position-u-hash.md`
+- Findings markdown: `.scratch/cleaned-rule-index/research/index-syllable-position-u-hash.md`
 - Optional: small table of test words + expected vs actual ASCA outcomes per candidate encoding
 - Explicit recommendation: fidelity tier + follow-on implementation ticket(s)
 

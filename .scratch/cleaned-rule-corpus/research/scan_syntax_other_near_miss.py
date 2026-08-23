@@ -1,6 +1,6 @@
 """Scan syntax_other failures in ≤3-fail sections (spike 64).
 
-Run: uv run python .scratch/cleaned-rule-corpus/research/scan_syntax_other_near_miss.py
+Run: uv run python .scratch/cleaned-rule-index/research/scan_syntax_other_near_miss.py
 """
 
 from __future__ import annotations
@@ -12,7 +12,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-INVENTORY_PATH = ROOT / ".scratch/cleaned-rule-corpus/inventory/asca-rule-inventory.csv"
+INVENTORY_PATH = ROOT / ".scratch/cleaned-rule-index/inventory/asca-rule-inventory.csv"
 OUT_CSV = Path(__file__).with_name("syntax-other-near-miss-sections.csv")
 OUT_MD = Path(__file__).with_name("syntax-other-near-miss-sections.md")
 

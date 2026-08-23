@@ -24,10 +24,10 @@ Out of scope here: positional/identity ([41](41-correction-pass-subscript-edge-c
 
 *(Historical — parse-time `series_mappings.csv` and `--update-series-mappings` retired; see Superseded below.)*
 
-1. `uv run regenerate_corpus --update-series-mappings` baseline.
+1. `uv run create_index --update-series-mappings` baseline.
 2. Close A–E per backlog (extractor fixes and/or authored CSV rows with HTML evidence).
 3. Re-run coverage report + confidence tests; bump regression floors only when justified.
-4. Regen corpus / inventory; note ok + section-complete deltas.
+4. Regen index / inventory; note ok + section-complete deltas.
 
 ## Acceptance criteria
 

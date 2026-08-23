@@ -6,7 +6,7 @@ Blocked by: 01, 02, 04
 
 ## Question
 
-What is the efficient workflow to find and modify invalid rules (regex or other approaches; case-by-case vs class-of-rules), such that corrections land in the cleaned rule corpus and remain auditable against Index Diachronica HTML?
+What is the efficient workflow to find and modify invalid rules (regex or other approaches; case-by-case vs class-of-rules), such that corrections land in the cleaned rule index and remain auditable against Index Diachronica HTML?
 
 ## Notes
 
@@ -23,12 +23,12 @@ Domain terms: **Class-first**, **Historical fidelity**, **Sound-change section**
 
 ### Compile unit
 
-One **sound-change section** (HTML `<h2>`) per compile container → **DiachronicSeries** (ticket 06). **Compile validation** per **corpus rule**, not whole-section-only.
+One **sound-change section** (HTML `<h2>`) per compile container → **DiachronicSeries** (ticket 06). **Compile validation** per **index rule**, not whole-section-only.
 
 ### Steady-state loop
 
 1. Parse HTML.
-2. Per section / **corpus rule**: parse → compile → `validate_asca`.
+2. Per section / **index rule**: parse → compile → `validate_asca`.
 3. Regenerate YAML.
 4. Update validation metadata (shape deferred).
 5. Fixture samples whose **rule status** changed.

@@ -34,11 +34,11 @@ Unchanged relative to corrections: Manual mapping runs on a **working copy** onl
 - Remove `apply_series_mappings` (correspondence-index → IPA) from `IndexDiachronicaParser`.
 - Stop loading `series_mappings.csv` for parse.
 - Do **not** populate section `abbreviations` from series CSV; omit `abbreviations` when empty.
-- **Correspondence-series indices** (`h₁`, `s₁`, …) stay Index-shaped in corpus until compile ([75](75-implement-compiler-config-series-mappings.md)).
+- **Correspondence-series indices** (`h₁`, `s₁`, …) stay Index-shaped in index until compile ([75](75-implement-compiler-config-series-mappings.md)).
 
 ### 4b. Parse-time collective **series expansions** (`parser_config.yml`)
 
-Per [grill 73](73-grill-series-mapping-config-sot.md): load `series_expansions` from `data/parser_config.yml` and apply at parse **after** Manual mapping on corpus field values (`stages`, env, exception). **`raw` unchanged.**
+Per [grill 73](73-grill-series-mapping-config-sot.md): load `series_expansions` from `data/parser_config.yml` and apply at parse **after** Manual mapping on index field values (`stages`, env, exception). **`raw` unchanged.**
 
 ```yaml
 series_expansions:
@@ -67,7 +67,7 @@ Retire or gate `update_series_mappings` script and `series_extract` integration 
 
 ### 6. Regen + inventory
 
-- `uv run regenerate_corpus` after implementation.
+- `uv run create_index` after implementation.
 - Record before/after `ok` totals; inventory **ok** drop from removing I/O-inferred expansions is **expected and accepted** (grill 72).
 
 ## Explicitly out of scope
@@ -104,4 +104,4 @@ Retire or gate `update_series_mappings` script and `series_extract` integration 
 - `CONTEXT.md` — **Index Diachronica correction**, **Rule id**, **Correspondence-series index**, **Collective subscript**
 - ADR-0004 (amended 2026-08-18), ADR-0012 (corrections overlay)
 - [Parse-time manual rule mappings](60-parse-time-manual-rule-mappings.md)
-- `src/conlanger/tools/ingest/parser.py`, `src/conlanger/tools/corpus_inventory.py`, `src/conlanger/utils/file_io.py`
+- `src/conlanger/tools/ingest/parser.py`, `src/conlanger/tools/index_inventory.py`, `src/conlanger/utils/file_io.py`

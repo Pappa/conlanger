@@ -24,7 +24,7 @@ Expand at **HTML→YAML parse** (same seam as **Symbol** normalization), not ins
 
 ### Target representation
 
-Rewrite corpus `input`/`output`/`env`/`exception` to **ASCA-parseable** phonological notation (IPA segments, feature matrices, sets) when a section map entry exists. Do not invent a parallel applier-neutral symbol set beyond ASCA's segment/matrix/set vocabulary (grouping-letter syntax differences remain compile concerns).
+Rewrite index `input`/`output`/`env`/`exception` to **ASCA-parseable** phonological notation (IPA segments, feature matrices, sets) when a section map entry exists. Do not invent a parallel applier-neutral symbol set beyond ASCA's segment/matrix/set vocabulary (grouping-letter syntax differences remain compile concerns).
 
 **`raw`** always preserves Index subscripts unchanged (`s₁`, etc.) for audit and [historical fidelity](04-historical-fidelity-vs-validity.md).
 
@@ -40,7 +40,7 @@ Rewrite corpus `input`/`output`/`env`/`exception` to **ASCA-parseable** phonolog
 
 When no map row exists for a token (e.g. `s₁` in a section without a defined series):
 
-- Leave the literal token in corpus fields.
+- Leave the literal token in index fields.
 - Do **not** set `status: skipped`.
 - Let compile validation fail (`unknown_character`, etc.); cluster drives map authoring.
 
@@ -50,7 +50,7 @@ When no map row exists for a token (e.g. `s₁` in a section without a defined s
 
 Apply `status: skipped` only after class-first transforms are exhausted, per edit ladder (ticket 04) / ADR-0010 — e.g. ASCA-unrepresentable with clear phonology, valid-but-inaccurate rewrite forbidden, trailing-comment hold-outs. Permanent skips: project owner.
 
-Current corpus: zero `status: skipped` rules (correct for this phase).
+Current index: zero `status: skipped` rules (correct for this phase).
 
 ### Collective subscripts
 

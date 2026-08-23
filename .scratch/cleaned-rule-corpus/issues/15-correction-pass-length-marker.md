@@ -28,7 +28,7 @@ Smoke re-check on same rows with full compile path (group mappings + length mark
 Re-run full inventory:
 
 ```bash
-uv run regenerate_corpus
+uv run create_index
 ```
 
 ## Notes
@@ -38,6 +38,6 @@ uv run regenerate_corpus
 
 ## Acceptance criteria
 
-- [x] Class-first ASCA compile transform; corpus stays applier-neutral
+- [x] Class-first ASCA compile transform; index stays applier-neutral
 - [x] Unit + ASCA integration tests on representative fixtures
 - [x] Smoke before/after metrics recorded

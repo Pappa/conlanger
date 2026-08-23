@@ -9,7 +9,7 @@ When a rule cannot be expressed in a form that is both historically faithful and
 
 ## Notes
 
-- Amends schema from [YAML schema for the cleaned rule corpus](03-yaml-schema-cleaned-rule-corpus.md): replaces `skipped` reason field with optional `status`.
+- Amends schema from [YAML schema for the cleaned rule index](03-yaml-schema-cleaned-rule-index.md): replaces `skipped` reason field with optional `status`.
 
 ## Answer
 
@@ -31,7 +31,7 @@ Domain terms: **Historical fidelity**, **Class-first**, **Rule status**, **Valid
 
 | Layer | What |
 |-------|------|
-| YAML corpus | Optional `status: needs-validation \| skipped` (omit = ok). Empty `input`/`output` when **skipped**. |
+| YAML index | Optional `status: needs-validation \| skipped` (omit = ok). Empty `input`/`output` when **skipped**. |
 | **Validation report** | Full state: status, `reason`, `description`, validator detail. Not SoT. |
 
 CSV `reason` vocabulary: `trailing-comment`, `broken-syntax`, `asca-unrepresentable`, `valid-but-inaccurate`, `other`.

@@ -1,4 +1,4 @@
-"""Parse Index Diachronica HTML into the cleaned rule-corpus shape (incremental).
+"""Parse Index Diachronica HTML into the cleaned rule-index shape (incremental).
 
 Phase 1: section structure + per-rule ``stages`` split on every ``→`` in the change
 spine (whitespace around arrows is trimmed).
@@ -9,14 +9,14 @@ other non-``schg`` paragraphs → ``comments``.
 Phase 4: pre-lxml ``<sub>``→Unicode normalisation, then element text extract; **Index
 Diachronica correction** overlay by **rule id**; **Manual mapping** on working copy
 (``raw`` unchanged). Then **collective subscript** expansion via ``parser_config.yml``
-``series_expansions`` on corpus fields (``raw`` unchanged). **Symbol** normalization on
-corpus fields only. Remaining Index rule arrows (``→``) in field values become ASCA ``>``.
+``series_expansions`` on index fields (``raw`` unchanged). **Symbol** normalization on
+index fields only. Remaining Index rule arrows (``→``) in field values become ASCA ``>``.
 Chained rules store each spine segment in ``stages``; compile-time expansion is deferred.
 Uncertainty glosses
 (``sporadic``, ``sometimes``, ``occasionally``, …) are stripped from field values
 and recorded as ``sporadic: true``. **Feature matrix** synonym replacement inside ``[...]`` via
 ``feature_mappings.csv`` (``raw`` unchanged). **IPA character** substitution via
-``ipa_mappings.csv`` (``raw`` unchanged). Inline prose stripped for ASCA is captured in optional ``comment`` on each corpus
+``ipa_mappings.csv`` (``raw`` unchanged). Inline prose stripped for ASCA is captured in optional ``comment`` on each index
 rule: the first ``;`` on the working line is peeled before structural split, then
 field-level glosses and env qualifiers. Index word-internal ``medial`` / ``medially`` env
 prose becomes ``env: _`` with boundary ``exception: :{#_, _#}:`` (``apply_medial_env_conditions``).
@@ -72,7 +72,7 @@ def note_from_element(el, *, source_file: str) -> dict[str, Any]:
 
 
 class IndexDiachronicaParser:
-    """Parse Index Diachronica HTML into applier-neutral cleaned-corpus YAML."""
+    """Parse Index Diachronica HTML into applier-neutral cleaned-index YAML."""
 
     def __init__(
         self,
@@ -93,7 +93,7 @@ class IndexDiachronicaParser:
         self._matched_correction_ids: set[str] = set()
 
     def abbreviations(self) -> dict[str, str]:
-        """Global abbreviation table for the cleaned corpus (empty at ingest)."""
+        """Global abbreviation table for the cleaned index (empty at ingest)."""
         return {}
 
     def unmatched_manual_mappings(self) -> list[ManualMapping]:

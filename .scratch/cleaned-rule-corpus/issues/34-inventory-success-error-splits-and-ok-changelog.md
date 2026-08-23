@@ -6,11 +6,11 @@ Blocked by:
 
 ## Question
 
-How should `uv run regenerate_corpus` extend the validation inventory so regressions in **compile validation** are easy to spot — without changing what counts as a valid rule?
+How should `uv run create_index` extend the validation inventory so regressions in **compile validation** are easy to spot — without changing what counts as a valid rule?
 
 ## Decision (charted)
 
-Extend [Full-corpus validation inventory](12-full-corpus-validation-inventory.md) artifacts under `.scratch/cleaned-rule-corpus/inventory/`:
+Extend [Full-index validation inventory](12-full-index-validation-inventory.md) artifacts under `.scratch/cleaned-rule-index/inventory/`:
 
 1. **Filtered views** (same columns as `asca-rule-inventory.csv`, rewritten each regen):
    - `asca-rule-inventory-success.csv` — rows with `ok=True`
@@ -34,16 +34,16 @@ Out of scope for this ticket: field-isolation validation; tagging “transform-e
 
 ## References
 
-- `src/conlanger/scripts/regenerate_corpus.py`
-- `src/conlanger/tools/corpus_inventory.py`
+- `src/conlanger/scripts/create_index.py`
+- `src/conlanger/tools/index_inventory.py`
 - Map grilling 2026-08-06 (Q1–Q3)
 
 ## Answer
 
-`uv run regenerate_corpus` now loads the prior `asca-rule-inventory.csv` (if any), then writes:
+`uv run create_index` now loads the prior `asca-rule-inventory.csv` (if any), then writes:
 
 - `asca-rule-inventory.csv` (full, rewritten)
 - `asca-rule-inventory-success.csv` / `asca-rule-inventory-error.csv` (filtered views, rewritten)
 - `asca-rule-inventory-changelog.csv` (append-only `ok` flips matched by `source`; shared UTC `timestamp` per run; no rows when there is no prior inventory or `ok` is unchanged)
 
-Helpers live in `corpus_inventory.py` (`filter_inventory_by_ok`, `ok_flip_changelog_rows`, …). Summary Notes link the new files. Validity criteria unchanged.
+Helpers live in `index_inventory.py` (`filter_inventory_by_ok`, `ok_flip_changelog_rows`, …). Summary Notes link the new files. Validity criteria unchanged.

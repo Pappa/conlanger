@@ -6,15 +6,15 @@ Blocked by:
 
 ## Question
 
-Can we raise confidence in **compile validation** by validating **individual corpus-rule fields** (`input`, `output`, `env`, `exception`) against ASCA when the other fields are replaced by known-valid stubs — without reviving [Rule-derived probe synthesis](10-rule-derived-probe-synthesis.md) (wontfix)?
+Can we raise confidence in **compile validation** by validating **individual index-rule fields** (`input`, `output`, `env`, `exception`) against ASCA when the other fields are replaced by known-valid stubs — without reviving [Rule-derived probe synthesis](10-rule-derived-probe-synthesis.md) (wontfix)?
 
 ## Context
 
-Today inventory validates the **whole** compiled rule via `validate_asca` + baseline wordlist ([Full-corpus validation inventory](12-full-corpus-validation-inventory.md)). When a rule fails, it is often unclear *which field* is at fault. Owner intent (map grill Q4): explore **syntax/shape isolation** with canned stubs, still using ASCA — but design is unclear; this spike must recommend whether to proceed, and how.
+Today inventory validates the **whole** compiled rule via `validate_asca` + baseline wordlist ([Full-index validation inventory](12-full-index-validation-inventory.md)). When a rule fails, it is often unclear *which field* is at fault. Owner intent (map grill Q4): explore **syntax/shape isolation** with canned stubs, still using ASCA — but design is unclear; this spike must recommend whether to proceed, and how.
 
 ## What to investigate (primary sources)
 
-1. Current compile path: corpus rule dict → `SoundChangeRule` / `DiachronicSeries` → `validate_asca` (`src/conlanger/tools/`).
+1. Current compile path: index rule dict → `SoundChangeRule` / `DiachronicSeries` → `validate_asca` (`src/conlanger/tools/`).
 2. ASCA 0.10.2 constraints on env/exception (e.g. single `_` focus, `#` periphery, optionals env-only) — [research/asca-rule-validity.md](../research/asca-rule-validity.md) + ASCA docs.
 3. Concrete stub candidates: what minimal always-valid `input`/`output`/`env`/`exception` combinations let a *real* field be the only variable?
 4. False positives/negatives: when would a field pass in isolation but fail in the full rule (or the reverse)?
@@ -23,7 +23,7 @@ Today inventory validates the **whole** compiled rule via `validate_asca` + base
 
 ## Deliverable
 
-Findings markdown under `.scratch/cleaned-rule-corpus/research/` (e.g. `field-isolation-compile-validation.md`) with a clear **go / no-go / go-with-limits** recommendation and open questions for a follow-on task ticket.
+Findings markdown under `.scratch/cleaned-rule-index/research/` (e.g. `field-isolation-compile-validation.md`) with a clear **go / no-go / go-with-limits** recommendation and open questions for a follow-on task ticket.
 
 ## Acceptance criteria
 

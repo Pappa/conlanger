@@ -1,4 +1,4 @@
-"""Validation inventory for cleaned rule corpus (ticket 12).
+"""Validation inventory for cleaned rule index (ticket 12).
 
 Whole-rule ``ok`` uses ``validate_asca`` (syntax + baseline probe run). Per-field
 checks (ticket 36) use ``validate_asca_part`` on compiled ``SoundChangeRule``
@@ -910,7 +910,7 @@ def _asca_validation_row(
     )
 
 
-def validate_corpus_rule_with_targets(
+def validate_index_rule_with_targets(
     section: dict[str, Any],
     rule: dict[str, Any],
     rule_id: str,
@@ -919,7 +919,7 @@ def validate_corpus_rule_with_targets(
     group_mappings: dict[str, str] | None = None,
     asca_bin: str | None = None,
 ) -> tuple[list[ValidationRow], list[_InventoryTarget]]:
-    """Validate one corpus rule and return inventory rows with compile targets."""
+    """Validate one index rule and return inventory rows with compile targets."""
     section_index = str(section.get("index", ""))
     section_name = str(section.get("section", ""))
     source = str(rule.get("source", ""))
@@ -995,7 +995,7 @@ def validate_corpus_rule_with_targets(
     return rows, targets
 
 
-def validate_corpus_rule(
+def validate_index_rule(
     section: dict[str, Any],
     rule: dict[str, Any],
     rule_id: str,
@@ -1004,12 +1004,12 @@ def validate_corpus_rule(
     group_mappings: dict[str, str] | None = None,
     asca_bin: str | None = None,
 ) -> list[ValidationRow]:
-    """Validate one corpus rule.
+    """Validate one index rule.
 
     Returns one row per optional-output alternative (0-based ``alt_idx``) when the
     rule has alternatives; otherwise a single row with an empty ``alt_idx``.
     """
-    rows, _ = validate_corpus_rule_with_targets(
+    rows, _ = validate_index_rule_with_targets(
         section,
         rule,
         rule_id,
@@ -1027,14 +1027,14 @@ def iter_inventory_with_field_isolation(
     group_mappings: dict[str, str] | None = None,
     asca_bin: str | None = None,
 ) -> tuple[list[ValidationRow], list[FieldIsolationRow]]:
-    """Validate the corpus and build matching field-isolation sidecar rows."""
+    """Validate the index and build matching field-isolation sidecar rows."""
     validation_rows: list[ValidationRow] = []
     field_rows: list[FieldIsolationRow] = []
     for section in doc.get("sections") or []:
         rules = section.get("rules") or []
         for rule in rules:
             rule_id = str(rule.get("rule_id", ""))
-            rows, targets = validate_corpus_rule_with_targets(
+            rows, targets = validate_index_rule_with_targets(
                 section,
                 rule,
                 rule_id,
@@ -1087,7 +1087,7 @@ def append_ok_flip_changelog(flips: pd.DataFrame, path: Path) -> int:
 def section_all_ok_stats(rows: list[ValidationRow]) -> tuple[int, int, float]:
     """Return count of sections with every rule ok, total sections, and percentage.
 
-    Sections marked ``skipped`` in the corpus are excluded from the denominator.
+    Sections marked ``skipped`` in the index are excluded from the denominator.
     """
     by_section: dict[tuple[str, str], list[ValidationRow]] = {}
     for row in rows:
@@ -1158,12 +1158,12 @@ def summarize_inventory(
     )
 
     lines = [
-        "# Cleaned rule corpus — ASCA validation inventory",
+        "# Cleaned rule index — ASCA validation inventory",
         "",
         f"- Source YAML: `{source_yaml}`",
         f"- Probe words: `{probe_words}`",
         f"- Checker: `validate_asca` / asca **{asca_version}**",
-        f"- Rows: **{total}** (one per corpus rule)",
+        f"- Rows: **{total}** (one per index rule)",
         f"- OK: **{ok_n}** ({ok_pct:.1f}%)",
         f"- Fail: **{fail_n}** ({fail_pct:.1f}%)",
         f"- Skipped: **{skipped_n}** ({skipped_pct:.1f}%)",
@@ -1184,7 +1184,7 @@ def summarize_inventory(
         [
             "## Notes",
             "",
-            "- Inventory runs per corpus rule via `DiachronicSeries` + `validate_asca`.",
+            "- Inventory runs per index rule via `DiachronicSeries` + `validate_asca`.",
             f"- Full rows: [{INVENTORY_CSV_NAME}]({INVENTORY_CSV_NAME})",
             f"- OK rows: [{INVENTORY_SUCCESS_CSV_NAME}]({INVENTORY_SUCCESS_CSV_NAME})",
             f"- Fail rows: [{INVENTORY_ERROR_CSV_NAME}]({INVENTORY_ERROR_CSV_NAME})",

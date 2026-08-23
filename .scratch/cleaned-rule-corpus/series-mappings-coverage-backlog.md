@@ -3,7 +3,7 @@
 > **Legacy artifact.** This backlog tracked parse-time `series_mappings.csv` coverage through [ticket 65](issues/65-series-mappings-coverage-pass.md) (closed 2026-08-12). The CSV path was retired 2026-08-18 ([grill 72](issues/72-grill-series-mapping-manual-sot.md) → [74](issues/74-implement-ingest-corrections-drop-series-csv.md) / [75](issues/75-implement-compiler-config-series-mappings.md)). Current SoT: `data/parser_config.yml` (`series_expansions`) and `data/compiler_config.yml` (`series_mappings`).
 
 Follow-up work to raise **in-scope** extraction coverage beyond the ticket-28 baseline.  
-Regenerate metrics after any change: ~~`uv run regenerate_corpus --update-series-mappings`~~ *(retired CLI)*.
+Regenerate metrics after any change: ~~`uv run create_index --update-series-mappings`~~ *(retired CLI)*.
 
 **Related:** [28-extract-correspondence-series-mappings-from-html](issues/28-extract-correspondence-series-mappings-from-html.md) (done), [27-implement-parse-time-correspondence-series-expansion](issues/27-implement-parse-time-correspondence-series-expansion.md) (done), live report [series-mappings-coverage.md](series-mappings-coverage.md), coverage pass [65](issues/65-series-mappings-coverage-pass.md) (done — **101/101**).
 
@@ -76,8 +76,8 @@ See **Out-of-scope subscript tokens** in [series-mappings-coverage.md](series-ma
 
 *(Historical — steps below applied to the retired CSV path only.)*
 
-1. ~~`uv run regenerate_corpus --update-series-mappings`~~
+1. ~~`uv run create_index --update-series-mappings`~~
 2. Check **Extraction confidence** in `series-mappings-coverage.md`
 3. ~~`uv run pytest tests/conlanger/tools/test_series_mappings.py -q`~~
 4. Optionally tighten `test_extraction_confidence_benchmarks_on_full_html` thresholds
-5. Re-run `uv run regenerate_corpus` and compare `unknown_character` counts for `₁`, `₂`, … in [inventory/](inventory/)
+5. Re-run `uv run create_index` and compare `unknown_character` counts for `₁`, `₂`, … in [inventory/](inventory/)

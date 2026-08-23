@@ -34,6 +34,6 @@ Current pain: `rules.py` mixes applier formatting (`RuleTitle`, `RuleCitation`, 
 - [x] Ticket body updated with concrete scope after 37 + 38 (claim work only then).
 - [x] Code mirrors documented compile pipeline.
 - [x] Full pytest + ruff gate passes.
-- [x] No undocumented change to compiled ASCA strings for the existing test corpus.
+- [x] No undocumented change to compiled ASCA strings for the existing test index.
 
 ## Comments

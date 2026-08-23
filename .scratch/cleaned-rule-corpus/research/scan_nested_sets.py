@@ -1,6 +1,6 @@
 """Scan Index Diachronica parsed YAML for nested-set shapes (spike 67).
 
-Run: uv run python .scratch/cleaned-rule-corpus/research/scan_nested_sets.py
+Run: uv run python .scratch/cleaned-rule-index/research/scan_nested_sets.py
 """
 
 from __future__ import annotations
@@ -13,13 +13,14 @@ from pathlib import Path
 
 import yaml
 
-from conlanger.tools.compile.asca.sets import is_whole_field_set, split_braced_set_members
+from conlanger.tools.compile.asca.sets import (
+    is_whole_field_set,
+    split_braced_set_members,
+)
 
 ROOT = Path(__file__).resolve().parents[3]
 YAML_PATH = ROOT / "data/diachronica/index_diachronica_parsed.yml"
-INVENTORY_PATH = (
-    ROOT / ".scratch/cleaned-rule-corpus/inventory/asca-rule-inventory.csv"
-)
+INVENTORY_PATH = ROOT / ".scratch/cleaned-rule-index/inventory/asca-rule-inventory.csv"
 
 # Index parenthetical segment notation (ticket 48): segment + {variants}
 _PAREN_SEG_RE = __import__("re").compile(
@@ -100,7 +101,7 @@ def analyze_braces(text: str) -> dict[str, bool]:
     if nested_members and paren_in_set:
         result["mixed_nested_and_paren"] = True
 
-  # Adjacent parallel sets without true nesting: multiple top-level sets, depth 1 each
+    # Adjacent parallel sets without true nesting: multiple top-level sets, depth 1 each
     if (
         len(sets) > 1
         and not result["true_nested_set"]
@@ -116,9 +117,7 @@ def analyze_braces(text: str) -> dict[str, bool]:
 
 
 def is_optional_output_skipped(input_text: str, output_text: str) -> bool:
-    if not (
-        is_whole_field_set(output_text) and not is_whole_field_set(input_text)
-    ):
+    if not (is_whole_field_set(output_text) and not is_whole_field_set(input_text)):
         return False
     members = split_braced_set_members(output_text)
     return bool(members) and any("{" in m for m in members)

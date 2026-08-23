@@ -1,4 +1,4 @@
-"""Index Symbol mark normalization for ASCA-canonical corpus fields."""
+"""Index Symbol mark normalization for ASCA-canonical index fields."""
 
 from __future__ import annotations
 

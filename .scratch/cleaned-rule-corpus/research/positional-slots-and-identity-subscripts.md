@@ -1,6 +1,6 @@
 # Positional slots and identity subscripts → ASCA
 
-Research for handling Index Diachronica **positional slots** (`C₁`, `V₂`) and **identity subscripts** (`V₀`) in the cleaned rule corpus pipeline.
+Research for handling Index Diachronica **positional slots** (`C₁`, `V₂`) and **identity subscripts** (`V₀`) in the cleaned rule index pipeline.
 
 Primary sources:
 
@@ -10,7 +10,7 @@ Primary sources:
 - ASCA **0.10.2**: [`doc/doc.md`](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md) — [References](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#references), [Alpha notation](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#alpha-notation)
 - Prior art: [`asca-rule-validity.md`](./asca-rule-validity.md), [`series_mappings.py`](../../../src/conlanger/tools/series_mappings.py)
 - HTML SoT: [`data/diachronica/index_diachronica_original.html`](../../../data/diachronica/index_diachronica_original.html)
-- Inventory: [`.scratch/cleaned-rule-corpus/inventory/asca-rule-inventory.csv`](../inventory/asca-rule-inventory.csv) (ASCA 0.10.2, 2026-08-06)
+- Inventory: [`.scratch/cleaned-rule-index/inventory/asca-rule-inventory.csv`](../inventory/asca-rule-inventory.csv) (ASCA 0.10.2, 2026-08-06)
 
 Local ASCA probes run with `asca 0.10.2` on `PATH`.
 
@@ -18,7 +18,7 @@ Local ASCA probes run with `asca 0.10.2` on `PATH`.
 
 ## 1. Executive summary
 
-**Recommendation:** implement a **compile-time** transform in `SoundChangeRule` (ASCA emission layer) that maps Index subscript notation to ASCA **reference syntax** (`X=n` … bare `n`), leaving corpus YAML fields and `raw` Index-shaped.
+**Recommendation:** implement a **compile-time** transform in `SoundChangeRule` (ASCA emission layer) that maps Index subscript notation to ASCA **reference syntax** (`X=n` … bare `n`), leaving index YAML fields and `raw` Index-shaped.
 
 | Index use | Index example | ASCA target (validated locally) |
 |-----------|---------------|----------------------------------|
@@ -31,7 +31,7 @@ Local ASCA probes run with `asca 0.10.2` on `PATH`.
 **Why compile-time, not parse-time (unlike correspondence-series):**
 
 - Correspondence-series expansion (ticket 27) produces **IPA segments** — still phonological content. Reference syntax is **ASCA-specific** surface form ([ADR-0004](../../../docs/adr/0004-series-indices-per-section-maps.md) defers positional/identity to “ASCA reference/alpha syntax”).
-- Keeps the corpus **applier-neutral** in the sense that `C₁` remains visible in YAML for audit; only the ASCA compiler emits `C=1` / `2`.
+- Keeps the index **applier-neutral** in the sense that `C₁` remains visible in YAML for audit; only the ASCA compiler emits `C=1` / `2`.
 - Mirrors **`group_mappings.csv`** (class letters expanded at compile, not ingest).
 
 **Why not `status: skipped`:** all **75** HTML rules that use positional or identity subscripts currently fail validation (`unknown_character` 72, `unknown_feature` 3). A faithful reference mapping should clear most of them without owner skip approval (ADR-0010 class-first safe transform).
@@ -146,7 +146,7 @@ Correspondence-series maps (`series_mappings.csv`) key on **lowercase segment + 
 | Policy | Corpus YAML | `raw` | Pros | Cons |
 |--------|-------------|-------|------|------|
 | **Compile-time ref expansion** (recommended) | Keeps `C₁`, `V₀` | Unchanged | Applier-neutral YAML; ASCA-only syntax at compile; matches class-letter policy | Brassica path needs its own ref syntax later |
-| Parse-time expansion | `C=1`, `0` in fields | Unchanged | Single shape for all appliers if they share refs | Bakes ASCA syntax into corpus; breaks applier-neutral goal |
+| Parse-time expansion | `C=1`, `0` in fields | Unchanged | Single shape for all appliers if they share refs | Bakes ASCA syntax into index; breaks applier-neutral goal |
 | `status: skipped` | `""` / `""` | Unchanged | Safe for unrepresentable edge cases | Loses 75 rules from compile surface; owner approval for permanent skip |
 
 **Edit ladder** ([ADR-0010](../../../docs/adr/0010-historical-fidelity-class-first-status.md)): reference mapping is a **class-first mechanical transform** (like `→` → `>`), not a meaning-changing rewrite. Apply without per-rule owner approval. Use `status: skipped` only for rules that remain unrepresentable after the transform (prose env, meta-notation).
@@ -177,7 +177,7 @@ Survey (`extract_text_with_subs` + `find_subscript_tokens` + `classify_subscript
 
 Inventory `error_token` counts for subscript digits (overlapping correspondence + positional): `₀` 49, `₁` 37, `₂` 4. Positional/identity work should eliminate most `₀` failures and a subset of `₁` (positional `C₁` vs correspondence `s₁`).
 
-**Expected uplift if reference mapping lands:** up to **~75** rules move from fail → ok (0.8% of 9317 corpus rules), plus downstream env-focus fixes for rules like `h → ʔ / V₀V₀`.
+**Expected uplift if reference mapping lands:** up to **~75** rules move from fail → ok (0.8% of 9317 index rules), plus downstream env-focus fixes for rules like `h → ʔ / V₀V₀`.
 
 Baseline before this work: **6518 / 9317 ok (70.0%)** ([inventory summary](../inventory/asca-rule-inventory-summary.md)).
 
@@ -189,7 +189,7 @@ Baseline before this work: **6518 / 9317 ok (70.0%)** ([inventory summary](../in
 
 **`SoundChangeRule`** in [`src/conlanger/tools/rules.py`](../../../src/conlanger/tools/rules.py) — new function e.g. `expand_index_subscript_references(text: str) -> str`, called when rendering ASCA strings (after or before `group_mappings`, order TBD: likely **after** group expansion so `C` is still a grouping letter).
 
-**Not** in `IndexDiachronicaParser` — corpus fields and `raw` stay Index-shaped.
+**Not** in `IndexDiachronicaParser` — index fields and `raw` stay Index-shaped.
 
 **Not** in `series_mappings.csv` — no per-section table; mapping is purely positional/identity grammar.
 
@@ -227,8 +227,8 @@ Reuse [`series_mappings.py`](../../../src/conlanger/tools/series_mappings.py) cl
 ### 6.4 Tests
 
 - Unit tests in `test_SoundChangeRule.py` — parametrized Index → ASCA string pairs from §3.1.
-- E2E: extend `test_corpus_pipeline.py` smoke — `C₁C₂ → C₂` with `expect_ok=True` after implementation.
-- Regression: re-run `uv run regenerate_corpus`; expect ~75-rule uplift.
+- E2E: extend `test_index_pipeline.py` smoke — `C₁C₂ → C₂` with `expect_ok=True` after implementation.
+- Regression: re-run `uv run create_index`; expect ~75-rule uplift.
 
 ---
 
@@ -250,9 +250,9 @@ Reuse [`series_mappings.py`](../../../src/conlanger/tools/series_mappings.py) cl
 | Glossary (positional, identity, subscript notation) | [`CONTEXT.md`](../../../CONTEXT.md) |
 | ADR-0004 (correspondence vs positional) | [`docs/adr/0004-series-indices-per-section-maps.md`](../../../docs/adr/0004-series-indices-per-section-maps.md) |
 | ADR-0010 (edit ladder) | [`docs/adr/0010-historical-fidelity-class-first-status.md`](../../../docs/adr/0010-historical-fidelity-class-first-status.md) |
-| Ticket 26 (parse-time policy) | [`.scratch/cleaned-rule-corpus/issues/26-parse-time-correspondence-series-indices.md`](../issues/26-parse-time-correspondence-series-indices.md) |
+| Ticket 26 (parse-time policy) | [`.scratch/cleaned-rule-index/issues/26-parse-time-correspondence-series-indices.md`](../issues/26-parse-time-correspondence-series-indices.md) |
 | Token classification | [`src/conlanger/tools/series_mappings.py`](../../../src/conlanger/tools/series_mappings.py) |
-| ASCA validity / refs summary | [`.scratch/cleaned-rule-corpus/research/asca-rule-validity.md`](./asca-rule-validity.md) |
+| ASCA validity / refs summary | [`.scratch/cleaned-rule-index/research/asca-rule-validity.md`](./asca-rule-validity.md) |
 | ASCA 0.10.2 docs | https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md |
 | Index HTML SoT | [`data/diachronica/index_diachronica_original.html`](../../../data/diachronica/index_diachronica_original.html) |
-| Validation inventory | [`.scratch/cleaned-rule-corpus/inventory/asca-rule-inventory.csv`](../inventory/asca-rule-inventory.csv) |
+| Validation inventory | [`.scratch/cleaned-rule-index/inventory/asca-rule-inventory.csv`](../inventory/asca-rule-inventory.csv) |

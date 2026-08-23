@@ -18,7 +18,7 @@ Policy (owner): keep the phonological rule, strip the English gloss, set `sporad
   - Detect `\bsporadic(ally)?\b`, `\bsometimes\b`, or `\boccasionally\b` in any field.
   - Strip trailing parenthetical / quoted / bare glosses (incl. `, occasionally` suffix); strip env prefix `sporadic, usually …`.
   - Env/exception that is only `sometimes` or `occasionally` → omitted (universal application, flagged sporadic).
-  - Set `sporadic: true` on the corpus rule; propagated to chain-expanded steps.
+  - Set `sporadic: true` on the index rule; propagated to chain-expanded steps.
 - ``raw`` unchanged.
 
 ## Answer (before/after)

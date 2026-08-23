@@ -2,7 +2,7 @@
 
 Spike for [42-spike-unknown-character-ipa-mappings](../issues/42-spike-unknown-character-ipa-mappings.md).
 
-**Source:** `.scratch/cleaned-rule-corpus/inventory/asca-rule-inventory-error.csv` (ASCA 0.10.2 baseline: **613** `unknown_character` rows).
+**Source:** `.scratch/cleaned-rule-index/inventory/asca-rule-inventory-error.csv` (ASCA 0.10.2 baseline: **613** `unknown_character` rows).
 
 **Method**
 

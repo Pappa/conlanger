@@ -60,10 +60,10 @@ series_expansions:
 ```
 
 - Global only; separate rows for `Hₓ` and `hₓ` (same members; not case-aliased).
-- Apply on corpus `stages` / env / exception after Manual mapping; **`raw` keeps Index surface** (e.g. `{Hₓ,m̩,n̩}`).
+- Apply on index `stages` / env / exception after Manual mapping; **`raw` keeps Index surface** (e.g. `{Hₓ,m̩,n̩}`).
 - Standalone: `sₓ → ʃ` → `{s₁,s₂,s₃} → ʃ`.
 - Inside set: `{Hₓ,m̩,n̩} → a` → `{h₁,h₂,h₃,m̩,n̩} → a` — flatten members, no nested set.
-- Correspondence-series indices in corpus stay literal until compile mapping.
+- Correspondence-series indices in index stay literal until compile mapping.
 
 ### `compiler_config.yml` — `series_mappings` (compile)
 

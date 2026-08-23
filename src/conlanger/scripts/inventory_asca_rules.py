@@ -1,7 +1,7 @@
 """Inventory ASCA compile/validate outcomes for provisional Index Diachronica YAML rules.
 
-Evidence ticket: .scratch/cleaned-rule-corpus/issues/02-inventory-valid-vs-invalid-rules.md
-Criteria: .scratch/cleaned-rule-corpus/research/asca-rule-validity.md
+Evidence ticket: .scratch/cleaned-rule-index/issues/02-inventory-valid-vs-invalid-rules.md
+Criteria: .scratch/cleaned-rule-index/research/asca-rule-validity.md
 """
 
 from __future__ import annotations
@@ -21,12 +21,12 @@ import yaml
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "src"))
 
-from conlanger.tools.corpus_inventory import classify_error, parse_unknown_token_error
+from conlanger.tools.index_inventory import classify_error, parse_unknown_token_error
 from conlanger.tools.rules import SoundChangeRule
 
 DEFAULT_YAML = ROOT / "legacy/data/index_diachronica_ai.yml"
 DEFAULT_WORDS = ROOT / "data/generated/lexicon/asca/weirdness0.5.wsca"
-DEFAULT_OUT = ROOT / ".scratch/cleaned-rule-corpus/inventory/asca-rule-inventory.csv"
+DEFAULT_OUT = ROOT / ".scratch/cleaned-rule-index/inventory/asca-rule-inventory.csv"
 
 
 def format_syntax(rule: dict) -> str:

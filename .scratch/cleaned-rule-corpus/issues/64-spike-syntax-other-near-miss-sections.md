@@ -19,7 +19,7 @@ Among sections with **1–3** validation fails, `syntax_other` is the largest le
 
 ## Acceptance criteria
 
-- [x] Findings under `.scratch/cleaned-rule-corpus/research/`
+- [x] Findings under `.scratch/cleaned-rule-index/research/`
 - [x] Ranked subcluster table with section-complete impact
 - [x] Follow-on correction-pass tickets filed **or** explicit defer/skip recommendation
 

@@ -8,7 +8,7 @@ Target cluster: `syntax_other` — multi-`>` chains without env/exception (140+ 
 
 ## Analysis: env/exception on chained rules
 
-Of **258** rules with chain notation in the corpus:
+Of **258** rules with chain notation in the index:
 
 | | count |
 |---|------:|
@@ -31,7 +31,7 @@ Of the 131 without env/exception, **113** have ` > ` in `output` after arrow nor
 
 Smoke on 113 split candidates: **44 / 113** pass ASCA after split (0 regressions).
 
-Full inventory: **5592 / 9336 ok (59.9%)**, up from 5456 / 9201 (+136 ok, +135 corpus rows from expansion).
+Full inventory: **5592 / 9336 ok (59.9%)**, up from 5456 / 9201 (+136 ok, +135 index rows from expansion).
 
 ## Notes
 

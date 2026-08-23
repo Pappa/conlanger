@@ -24,7 +24,7 @@ How should compile-time classes in `src/conlanger/tools/rules.py` be reshaped �
 | 4 | `field_validator` on the four compile fields; `model_validator(mode='after')` for subscript refs (shared `declared`, output last). Alternatives: split **raw** I/O then compile each child. |
 | 5 | Join only at `__str__` / render. Drop join-then-rewrite `compile_asca_rule_string`. |
 | 6 | Chain expansion stays on `DiachronicSeries`. `SoundChangeRule` never reads `stages`. Length-1 → `output=""` ([ticket 90](90-missing-arrow-single-stage.md)). |
-| 7 | `group_mappings`, `compiler_config`, `section_index`, instance `Random`: `PrivateAttr` (or non-dump injection). Not corpus YAML. |
+| 7 | `group_mappings`, `compiler_config`, `section_index`, instance `Random`: `PrivateAttr` (or non-dump injection). Not index YAML. |
 | 8 | Ticket 93 is **ASCA-only**. |
 | 9 | Prefer byte-identical `.rsca`. If `DiachronicSeries` / `SoundChangeRule` **unit-test input/output strings** must change, document each change in ticket 93’s resolution with description and justification. |
 | 10 | **`_build_alternatives` is the first detection of optional paths** (parse does not). Keep detection and peers on **`SoundChangeRule`**. Gates as pure functions called from its `model_validator`. No YAML alternatives field. Do not hoist fan-out to `DiachronicSeries`. |
@@ -39,7 +39,7 @@ Skip comments: config `status: skipped` ([ticket 89](89-unify-status-skipped.md)
 - **Cross-field today:** `expand_index_subscript_references` splits the joined string and shares a `declared` set across fields, expanding **output last**. Optional-output / parallel-∅ alternatives inspect input and output together.
 - **Skip:** config-only `status: skipped` ([ticket 89](89-unify-status-skipped.md)); skipped rules are ASCA comments. Missing-arrow `stages` length 1 ([ticket 90](90-missing-arrow-single-stage.md)).
 - **Prior refactor:** [ticket 39](39-refactor-sound-change-ruleset.md) extracted `compile/asca/` but kept join-then-rewrite. [Spike 38](38-spike-asca-compile-transform-order.md) order still applies per field.
-- **ADR-0001 / 0002:** corpus stays applier-neutral; pydantic models are the **ASCA compile** layer, not the YAML schema.
+- **ADR-0001 / 0002:** index stays applier-neutral; pydantic models are the **ASCA compile** layer, not the YAML schema.
 - **Alternatives:** first detected in `SoundChangeRule._build_alternatives`; inventory only reads `.alternatives` afterward.
 
 ## Outcomes

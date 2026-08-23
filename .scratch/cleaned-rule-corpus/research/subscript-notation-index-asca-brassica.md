@@ -61,7 +61,7 @@ Token classifiers in [`series_mappings.py`](../../../src/conlanger/tools/series_
 |--|-------------------|-------------|----------|
 | **Example** | `s₁ → ʃ` (Dizin, HTML:1015); `x₁ → k` (Bench, HTML:993); `eh₂` compounds | No subscript characters | No subscript characters |
 | **Native representation** | Concrete segment + ordinal `<sub>` | **Unrepresentable** as `s₁` — `Unknown character '₁'` / `'ₓ'` (validated; see prior research + probe below) | **Unrepresentable** as Index subscripts (docs define graphemes/categories/backrefs only) |
-| **Faithful workaround** | Section map → IPA / matrix / set in corpus fields; `raw` keeps `s₁` | After expansion: plain IPA / features / sets (`ʃ`, `{…}`) | After expansion: plain graphemes or categories (`ʃ`, `[…]`) |
+| **Faithful workaround** | Section map → IPA / matrix / set in index fields; `raw` keeps `s₁` | After expansion: plain IPA / features / sets (`ʃ`, `{…}`) | After expansion: plain graphemes or categories (`ʃ`, `[…]`) |
 | **Notes** | Requires **section-scoped** maps ([ADR-0004](../../../docs/adr/0004-series-indices-per-section-maps.md)); ASCA refs **cannot** attach to IPA literals (`IPACannotBeRefd` — [asca-rule-validity.md](./asca-rule-validity.md)) | Same phonological content once expanded; category *order* is a different mechanism |
 
 ### 3.2 Positional slot
@@ -198,7 +198,7 @@ Tutorial example (linguistic gloss uses Index-like `V₁`):
 |----------|--------|
 | Correspondence-series + collective → **parse-time** expansion when mapped; `raw` keeps Index; unmapped stay literal | [Ticket 26](../issues/26-parse-time-correspondence-series-indices.md), [ADR-0004 amendment](../../../docs/adr/0004-series-indices-per-section-maps.md) |
 | Positional + identity **out of scope** for series maps; need reference/co-ref mapping | Same ADR / ticket 26 “Not in scope” |
-| Applier-neutral YAML; ASCA/Brassica are compile targets | [ADR-0002](../../../docs/adr/0002-applier-neutral-yaml-rule-corpus.md), [ADR-0001](../../../docs/adr/0001-sound-change-applier-backends.md) |
+| Applier-neutral YAML; ASCA/Brassica are compile targets | [ADR-0002](../../../docs/adr/0002-applier-neutral-yaml-rule-index.md), [ADR-0001](../../../docs/adr/0001-sound-change-applier-backends.md) |
 | Validate **after** compile | [ADR-0003](../../../docs/adr/0003-validate-after-applier-compile.md) |
 | Class-first fidelity; no silent subscript strip | [ADR-0010](../../../docs/adr/0010-historical-fidelity-class-first-status.md) |
 | ASCA-only research recommended compile-time refs for positional/identity | [positional-slots-and-identity-subscripts.md](./positional-slots-and-identity-subscripts.md) |
@@ -216,7 +216,7 @@ Tutorial example (linguistic gloss uses Index-like `V₁`):
 
 - Semantics = “union of members” → ASCA set or Brassica category.
 - Ticket 26 maps e.g. `sₓ → { s, ʃ }` (ASCA set spelling).
-- **Tension with ADR-0002:** baking `{…}` into corpus fields is ASCA-shaped; Brassica wants `[s ʃ]` (space-separated).
+- **Tension with ADR-0002:** baking `{…}` into index fields is ASCA-shaped; Brassica wants `[s ʃ]` (space-separated).
 - **Recommendation:** treat parse-time expansion as producing a **member list** (structured field or normalised set token that compilers rewrite). Near-term ASCA-only execution can keep `{…}` strings if Brassica compile stays deferred — but the ASCA↔Brassica delimiter gap is real.
 - Uppercase `Hₓ`: not covered by lowercase collective classifier; needs class/set expansion (laryngeals), separate from `series_mappings.csv` rows for `sₓ`/`hₓ`.
 
@@ -254,7 +254,7 @@ Tutorial example (linguistic gloss uses Index-like `V₁`):
 
 ## 7. Open questions
 
-1. ~~**Collective IR shape:**~~ **Settled (grill):** ASCA `{…}` in corpus fields; Brassica `[…]` rewrite at compile if/when Brassica is supported.
+1. ~~**Collective IR shape:**~~ **Settled (grill):** ASCA `{…}` in index fields; Brassica `[…]` rewrite at compile if/when Brassica is supported.
 2. **`Hₓ` / class-letter collectives:** Expand via `group_mappings` / section laryngeal inventory, or a dedicated collective-on-class path? (Classifier today: `other`.)
 3. **Brassica category definitions for Index class letters:** Global `C`/`V`/… blocks vs per-section inventories — out of scope here, but required before a real Brassica compile of slot rules.
 4. **Cross-field ASCA ref binding** for env-only identity (`h → ʔ / V₀V₀`) vs Brassica env backref scope — implementation detail already flagged in positional-slots research; still needs whole-rule compile tests per applier.
@@ -270,15 +270,15 @@ Tutorial example (linguistic gloss uses Index-like `V₁`):
 |------|------|
 | [`CONTEXT.md`](../../../CONTEXT.md) | Four subscript uses + avoid-conflation notes |
 | [`docs/adr/0001-sound-change-applier-backends.md`](../../../docs/adr/0001-sound-change-applier-backends.md) | ASCA-first, multi-applier boundary |
-| [`docs/adr/0002-applier-neutral-yaml-rule-corpus.md`](../../../docs/adr/0002-applier-neutral-yaml-rule-corpus.md) | Applier-neutral YAML |
+| [`docs/adr/0002-applier-neutral-yaml-rule-index.md`](../../../docs/adr/0002-applier-neutral-yaml-rule-index.md) | Applier-neutral YAML |
 | [`docs/adr/0003-validate-after-applier-compile.md`](../../../docs/adr/0003-validate-after-applier-compile.md) | Post-compile validation |
 | [`docs/adr/0004-series-indices-per-section-maps.md`](../../../docs/adr/0004-series-indices-per-section-maps.md) | Series/collective parse-time; positional/identity out of scope |
 | [`docs/adr/0010-historical-fidelity-class-first-status.md`](../../../docs/adr/0010-historical-fidelity-class-first-status.md) | Fidelity / class-first ladder |
-| [`.scratch/cleaned-rule-corpus/issues/26-parse-time-correspondence-series-indices.md`](../issues/26-parse-time-correspondence-series-indices.md) | Parse-time policy for series + collective |
-| [`.scratch/cleaned-rule-corpus/research/positional-slots-and-identity-subscripts.md`](./positional-slots-and-identity-subscripts.md) | ASCA ref probes for slots/identity |
-| [`.scratch/cleaned-rule-corpus/research/asca-rule-validity.md`](./asca-rule-validity.md) | ASCA validity / refs / IPACannotBeRefd |
-| [`.scratch/cleaned-rule-corpus/research/asca-class-letter-mappings.md`](./asca-class-letter-mappings.md) | Class letter ↔ ASCA groupings |
-| [`.scratch/cleaned-rule-corpus/series-mappings-coverage-backlog.md`](../series-mappings-coverage-backlog.md) | `Hₓ` out of series CSV |
+| [`.scratch/cleaned-rule-index/issues/26-parse-time-correspondence-series-indices.md`](../issues/26-parse-time-correspondence-series-indices.md) | Parse-time policy for series + collective |
+| [`.scratch/cleaned-rule-index/research/positional-slots-and-identity-subscripts.md`](./positional-slots-and-identity-subscripts.md) | ASCA ref probes for slots/identity |
+| [`.scratch/cleaned-rule-index/research/asca-rule-validity.md`](./asca-rule-validity.md) | ASCA validity / refs / IPACannotBeRefd |
+| [`.scratch/cleaned-rule-index/research/asca-class-letter-mappings.md`](./asca-class-letter-mappings.md) | Class letter ↔ ASCA groupings |
+| [`.scratch/cleaned-rule-index/series-mappings-coverage-backlog.md`](../series-mappings-coverage-backlog.md) | `Hₓ` out of series CSV |
 | [`src/conlanger/tools/series_mappings.py`](../../../src/conlanger/tools/series_mappings.py) | Token classifiers + collective row synthesis |
 | [`src/conlanger/tools/parsers.py`](../../../src/conlanger/tools/parsers.py) | `<sub>` → Unicode subscripts |
 | [`data/diachronica/index_diachronica_original.html`](../../../data/diachronica/index_diachronica_original.html) | SoT examples (Key §5; rule lines cited above) |
@@ -300,4 +300,4 @@ Tutorial example (linguistic gloss uses Index-like `V₁`):
 
 ### Probes
 
-Local `asca 0.10.2` probes for collective set expansion and `sₓ` rejection were run under `.scratch/cleaned-rule-corpus/tmp-subscript-probes` and removed after this note. Brassica claims are from GitHub docs only (no local Brassica binary exercised).
+Local `asca 0.10.2` probes for collective set expansion and `sₓ` rejection were run under `.scratch/cleaned-rule-index/tmp-subscript-probes` and removed after this note. Brassica claims are from GitHub docs only (no local Brassica binary exercised).

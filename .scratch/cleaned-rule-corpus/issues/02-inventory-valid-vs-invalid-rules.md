@@ -11,7 +11,7 @@ Against the current Index Diachronica–derived artifacts (`index_diachronica_or
 ## Notes
 
 - Depends on [What counts as a valid ASCA rule string?](01-valid-asca-rule-string.md) for criteria (and any chosen CLI/library check).
-- Brute-force ASCA CLI checks are acceptable; also need a durable recorded corpus of results (e.g. CSV alongside the rule identity).
+- Brute-force ASCA CLI checks are acceptable; also need a durable recorded index of results (e.g. CSV alongside the rule identity).
 - This ticket gathers evidence for decisions — it does not itself define the correction policy (see correction-workflow ticket).
 - Existing `data/asca/results/asca_errors.csv` / related files may be reusable starting points.
 - Criteria used: [asca-rule-validity.md](../research/asca-rule-validity.md).
@@ -32,4 +32,4 @@ Top failure classes: `syntax_other` (2652), `nested_brackets` (585), `expected_u
 - [../inventory/asca-rule-inventory.csv](../inventory/asca-rule-inventory.csv) — one row per rule (`section_index`, `section_name`, `rule_idx`, `syntax`, `ok`, `returncode`, `error`, `error_class`)
 - [../inventory/asca-rule-inventory-summary.md](../inventory/asca-rule-inventory-summary.md)
 
-Note: `ok` is full `asca run` success on the probe wordlist (not parse-only); a small slice is runtime (`runtime_delete_only_segment`, etc.). This is evidence for correction-policy tickets, not the cleaned corpus itself.
+Note: `ok` is full `asca run` success on the probe wordlist (not parse-only); a small slice is runtime (`runtime_delete_only_segment`, etc.). This is evidence for correction-policy tickets, not the cleaned index itself.

@@ -4,7 +4,7 @@ Question: if we flatten Index editorial nested `{…}` at ingest (`stages`, `env
 
 Throwaway code: [`flatten_nested_sets.py`](./flatten_nested_sets.py), [`nested_set_flatten_prototype.py`](./nested_set_flatten_prototype.py). Scan helpers: [`scan_nested_sets.py`](./scan_nested_sets.py) (`working_max_brace_depth`, `count_working_depth_ge2`). Per-rule table: [`nested-set-flatten-prototype.csv`](./nested-set-flatten-prototype.csv). Metrics dump: [`nested-set-flatten-prototype-metrics.json`](./nested-set-flatten-prototype-metrics.json).
 
-**Not merged to `main`.** Corpus YAML was loaded read-only; validation used in-memory rules + committed inventory as baseline. No writes to `data/diachronica/index_diachronica_parsed.yml` or `.scratch/cleaned-rule-corpus/inventory/`.
+**Not merged to `main`.** Corpus YAML was loaded read-only; validation used in-memory rules + committed inventory as baseline. No writes to `data/diachronica/index_diachronica_parsed.yml` or `.scratch/cleaned-rule-index/inventory/`.
 
 ---
 
@@ -21,16 +21,16 @@ Throwaway code: [`flatten_nested_sets.py`](./flatten_nested_sets.py), [`nested_s
 
 Unbalanced strings (`brace_balance != 0`) are left unchanged. Flat sets are not re-serialized (preserves ASCA env-set spacing `:{#_, _#}:` from medial, [`transforms.py`](../../../src/conlanger/tools/ingest/transforms.py) `apply_medial_env_conditions`).
 
-Self-check (2026-08-19): `uv run python .scratch/cleaned-rule-corpus/research/flatten_nested_sets.py` — all fixtures pass, including `(h)ə{p,b}` unchanged in both modes and `{hə{p,b},ə{p,b}}` → `{həp,həb,əp,əb}` (compile-time D shape; see §6).
+Self-check (2026-08-19): `uv run python .scratch/cleaned-rule-index/research/flatten_nested_sets.py` — all fixtures pass, including `(h)ə{p,b}` unchanged in both modes and `{hə{p,b},ə{p,b}}` → `{həp,həb,əp,əb}` (compile-time D shape; see §6).
 
 ---
 
 ## 2. Method (Phase A)
 
-1. Load [`data/diachronica/index_diachronica_parsed.yml`](../../../data/diachronica/index_diachronica_parsed.yml) (9201 corpus rules; [`nested-sets-scan.json`](./nested-sets-scan.json) `total_rules_scanned`).
+1. Load [`data/diachronica/index_diachronica_parsed.yml`](../../../data/diachronica/index_diachronica_parsed.yml) (9201 index rules; [`nested-sets-scan.json`](./nested-sets-scan.json) `total_rules_scanned`).
 2. Deep-copy; flatten `stages` / `env` / `exception` in memory (two modes).
-3. Re-validate every source that either changed or is currently `failure_class=nested_brackets` via `validate_corpus_rule` / `iter_validation_rows` path ([`corpus_inventory.py`](../../../src/conlanger/tools/corpus_inventory.py) `validate_corpus_rule`; group mappings `asca_group_mappings_dict()` as `regenerate_corpus`). ASCA **0.10.2** (`asca --version`).
-4. Merge unchanged inventory rows from [`.scratch/cleaned-rule-corpus/inventory/asca-rule-inventory.csv`](../inventory/asca-rule-inventory.csv). Unflattened rules cannot flip `ok`. Changelog flips are computed in memory against that CSV (`ok_flip_changelog_rows` match key `(source, alt_idx)`); **not** appended to the committed changelog.
+3. Re-validate every source that either changed or is currently `failure_class=nested_brackets` via `validate_index_rule` / `iter_validation_rows` path ([`index_inventory.py`](../../../src/conlanger/tools/index_inventory.py) `validate_index_rule`; group mappings `asca_group_mappings_dict()` as `create_index`). ASCA **0.10.2** (`asca --version`).
+4. Merge unchanged inventory rows from [`.scratch/cleaned-rule-index/inventory/asca-rule-inventory.csv`](../inventory/asca-rule-inventory.csv). Unflattened rules cannot flip `ok`. Changelog flips are computed in memory against that CSV (`ok_flip_changelog_rows` match key `(source, alt_idx)`); **not** appended to the committed changelog.
 
 Phase A on committed YAML is **P4-equivalent**: else resolution has already copied prev `env` → `exception` ([`section_policy.py`](../../../src/conlanger/tools/ingest/section_policy.py) `resolve_catch_all_else_rules`; YAML `:5510` already has `exception: _{s,({m,j,w})V}`).
 
@@ -38,7 +38,7 @@ Phase A on committed YAML is **P4-equivalent**: else resolution has already copi
 
 ## 3. Metrics
 
-Inventory baseline (CSV walk, 2026-08-19): **9689** rows, **45** `nested_brackets` (summary [asca-rule-inventory-summary.md](../inventory/asca-rule-inventory-summary.md) also lists 45; #67 reported 46 on 2026-08-12). `ok=True` in the CSV includes **43** `section_skipped` rows (`ok=True` by [`validate_corpus_rule`](../../../src/conlanger/tools/corpus_inventory.py) when `section.skipped`); summary “OK **8227**” excludes those. Deltas below are identical on either counting convention.
+Inventory baseline (CSV walk, 2026-08-19): **9689** rows, **45** `nested_brackets` (summary [asca-rule-inventory-summary.md](../inventory/asca-rule-inventory-summary.md) also lists 45; #67 reported 46 on 2026-08-12). `ok=True` in the CSV includes **43** `section_skipped` rows (`ok=True` by [`validate_index_rule`](../../../src/conlanger/tools/index_inventory.py) when `section.skipped`); summary “OK **8227**” excludes those. Deltas below are identical on either counting convention.
 
 Working-field brace depth counts **exclude `raw`** (`count_working_depth_ge2`). #67’s **40** used `classify_rule`, which also scans `raw` ([`scan_nested_sets.py`](./scan_nested_sets.py)).
 
@@ -51,7 +51,7 @@ Working-field brace depth counts **exclude `raw`** (`count_working_depth_ge2`). 
 | Rules with ≥1 field flattened | — | 13 | 20 |
 | Corpus rules brace depth ≥ 2 (working fields) | 31 | 18 | 13 |
 
-Compile-ok excluding `section_skipped`: **8227 → 8234 → 8238** ([`summarize_inventory`](../../../src/conlanger/tools/corpus_inventory.py) formula).
+Compile-ok excluding `section_skipped`: **8227 → 8234 → 8238** ([`summarize_inventory`](../../../src/conlanger/tools/index_inventory.py) formula).
 
 ### `failure_class` transitions
 
@@ -178,4 +178,4 @@ Naive flatten **does not** fix parallel-column bucket D. Inventory rows `:2398` 
 3. **#71** — grill `(h)ə{p,b}`, `e(C){V[…]}`, compile-created `{CC_C{V,#},CCG_C{V,#}}` from `CC(G)_C{V,#}` (`:1954`).
 4. Optional later: compile flatten **after group mappings** for `:1149`-class nesting — separate from Index editorial flatten.
 
-Run: `uv run python .scratch/cleaned-rule-corpus/research/flatten_nested_sets.py` then `uv run python .scratch/cleaned-rule-corpus/research/nested_set_flatten_prototype.py`.
+Run: `uv run python .scratch/cleaned-rule-index/research/flatten_nested_sets.py` then `uv run python .scratch/cleaned-rule-index/research/nested_set_flatten_prototype.py`.
