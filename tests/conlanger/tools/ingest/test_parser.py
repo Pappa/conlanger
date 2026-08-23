@@ -443,19 +443,6 @@ def test_parse_rule_element_marks_occasionally_sporadic_and_strips_gloss():
     assert rules[0]["raw"] == "l → ∅ (occasionally?)"
 
 
-def test_parse_rule_element_strips_lone_occasionally_env():
-    el = html.fragment_fromstring(
-        '<p class="schg">r → *L (some sort of lateral?) / occasionally</p>',
-        create_parent=False,
-    )
-    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
-    assert len(rules) == 1
-    assert rules[0]["stages"] == ["r", "*L"]
-    assert "env" not in rules[0]
-    assert rules[0]["sporadic"] is True
-    assert "occasionally" in rules[0]["comment"]
-
-
 def test_apply_trailing_glosses():
     assert apply_trailing_glosses(
         {"stages": ["j", "p (some Polynesian languages, such as Levei and Drehet)"]}

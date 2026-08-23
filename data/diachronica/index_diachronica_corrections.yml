@@ -135,3 +135,11 @@ rules:
           id: Proto-Erromango-r
           content: "r → L / sporadic"
           reason: "Corrected from original source: https://www.ethnologue.com/language/erohttps://www.researchgate.net/publication/306887303_The_Linguistic_History_of_Southern_Vanuatu"
+    - rule:
+          id: Proto-Erromango-v_2
+          content: "v → f / [+ sibilant](..)$(..)_"
+          reason: "Corrected from original source: https://www.ethnologue.com/language/erohttps://www.researchgate.net/publication/306887303_The_Linguistic_History_of_Southern_Vanuatu"
+    - rule:
+          id: Proto-Erromango-v_3
+          content: "v → f / _(..)$(..)[+ sibilant]"
+          reason: "Corrected from original source: https://www.ethnologue.com/language/erohttps://www.researchgate.net/publication/306887303_The_Linguistic_History_of_Southern_Vanuatu"

@@ -13703,15 +13703,15 @@ sections:
   - stages:
     - v
     - f
-    env: C[+strident]$
-    raw: v → f / C[+ sibilant]%
+    env: '[+strident](..)$(..)_'
+    raw: v → f / [+ sibilant](..)$(..)_
     source: index_diachronica_original.html:3582
     rule_id: Proto-Erromango-v_2
   - stages:
     - v
     - f
-    env: $C[+strident]
-    raw: v → f / %C[+ sibilant]
+    env: _(..)$(..)[+strident]
+    raw: v → f / _(..)$(..)[+ sibilant]
     source: index_diachronica_original.html:3583
     rule_id: Proto-Erromango-v_3
   - comment: sporadic
@@ -13754,7 +13754,7 @@ sections:
   citation: thetha, from Lynch, John (2001), The Linguistic History of Southern Vanuatu
   rules:
   - stages:
-    - '*L'
+    - L
     - r
     raw: '*L → r'
     source: index_diachronica_original.html:3594
@@ -13881,7 +13881,7 @@ sections:
     source: index_diachronica_original.html:3615
     rule_id: Ura-h
   - stages:
-    - '*L'
+    - L
     - l
     raw: '*L → l'
     source: index_diachronica_original.html:3616
@@ -14978,7 +14978,7 @@ sections:
     source: index_diachronica_original.html:3822
     rule_id: Proto-Paiwan-t1-d1-d3-Z
   - stages:
-    - l *L
+    - l L
     - ɭ ʎ
     raw: l *L → ɭ ʎ
     source: index_diachronica_original.html:3823
@@ -67370,7 +67370,7 @@ sections:
     source: index_diachronica_original.html:14133
     rule_id: Basque-ɾ_2
   - stages:
-    - '*L'
+    - L
     - l (or *lh
     - lː, which then lost gemination?)
     comment: (fortis)
