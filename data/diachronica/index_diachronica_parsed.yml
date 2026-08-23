@@ -64418,8 +64418,8 @@ sections:
     source: index_diachronica_original.html:13502
     rule_id: Proto-Mixe-Zoquean-x-ɬ,tɬ
   - stages:
-    - V[+ creaky voice]
-    - V[- creaky voice]
+    - V[+voice, -sg, +cg]
+    - V[+voice, -sg, +cg]
     raw: V[+ creaky voice] → V[- creaky voice]
     source: index_diachronica_original.html:13503
     rule_id: Proto-Mixe-Zoquean-V+-creaky-voice

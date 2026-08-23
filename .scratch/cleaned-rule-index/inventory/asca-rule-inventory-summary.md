@@ -4,10 +4,10 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9688** (one per index rule)
-- OK: **8286** (85.5%)
-- Fail: **1342** (13.9%)
+- OK: **8287** (85.5%)
+- Fail: **1341** (13.8%)
 - Skipped: **60** (0.6%)
-- Sections all OK: **337 / 711** (47.4%)
+- Sections all OK: **338 / 711** (47.5%)
 - Sections skipped: **3 / 714** (0.4%)
 
 ## Failure classes
@@ -19,7 +19,7 @@
 | 172 | `unknown_character` |
 | 130 | `runtime_other` |
 | 114 | `unknown_grouping` |
-| 86 | `unknown_feature` |
+| 85 | `unknown_feature` |
 | 55 | `prose_or_expected_arrow` |
 | 43 | `nested_brackets` |
 | 38 | `expected_number` |
@@ -49,24 +49,23 @@
 | 22 | `open` | `ten` |
 | 10 | `closed` | `cons` |
 | 9 | `fortis` | `contin` |
-| 8 | `samePOA` | `lateral` |
 | 8 | `mid` | `man` |
+| 8 | `samePOA` | `lateral` |
 | 6 | `lenis` | `tens` |
 | 5 | `weak` | `man` |
 | 3 | `palatalized` | `latrl` |
 | 2 | `fricative` | `rhotic` |
-| 1 | `highpitch` | `high` |
 | 1 | `APOA` | `root` |
 | 1 | `lowpitch` | `voice` |
-| 1 | `intertonic` | `anterior` |
+| 1 | `highpitch` | `high` |
 | 1 | `ejective` | `contin` |
 | 1 | `aspirated` | `spread` |
+| 1 | `intertonic` | `anterior` |
 | 1 | `alveolopalatal` | `consonantal` |
 | 1 | `tonic` | `cons` |
 | 1 | `glide` | `click` |
 | 1 | `TR` | `rt` |
 | 1 | `accent` | `cont` |
-| 1 | `creakyvoice` | `voice` |
 | 1 | `labiovelar` | `labiodental` |
 
 ### unknown_grouping

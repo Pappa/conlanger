@@ -13,6 +13,7 @@ alveolar,bundle,"+cor,+anterior,-dist",C,high,Coronal alveolar (spike 29)
 palatal,bundle,"+cor,+dist",C,medium,Coronal palatal/post-palatal (spike 29)
 velar,bundle,"-fr,+bk,+hi,-lo",C,high,Dorsal velar; matches group_mappings K (spike 29)
 uvular,bundle,"-fr,+bk,-hi,-lo",C,high,Dorsal uvular; matches group_mappings Q uvular branch (spike 29)
+creaky voice,bundle,"+voice, -sg, +cg",,high,"Index [+creaky voice] → ASCA [+voice, -sg, +cg]"
 guttural,rename,laryngeal,,high,Index [±guttural] → ASCA laryngeal
 high tone,tone,5,,high,Index [+high tone] → ASCA [tone: 5] (Chinese-style default; ticket 62)
 low tone,tone,1,,high,Index [+low tone] → ASCA [tone: 1]
