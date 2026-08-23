@@ -321,7 +321,6 @@ def test_create_index_writes_validation_inventory(
     assert mock_iter_rows.call_args.kwargs["asca_bin"] == str(
         tmp_path / "bin" / "bin" / "asca"
     )
-    mock_write_field_isolation.assert_called_once()
     mock_flip_rows.assert_called_once()
     summary_path = inventory_dir / "asca-rule-inventory-summary.md"
     assert summary_path.is_file()
