@@ -3,7 +3,6 @@
 import pytest
 
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.compile.asca.length_marks import normalize_asca_length_marks
 from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
 from conlanger.tools.compile.asca.tone_matrices import normalize_asca_tone_matrices
 from conlanger.tools.rules import DiachronicSeries
@@ -34,19 +33,6 @@ def test_length_then_tone_merge_for_index_length_mark():
         feature_mappings_dict(),
     )
     assert mapped == "Vː[tone: 51]"
-    expected_length = normalize_asca_length_marks(mapped)
-    assert expected_length == "V:[+long][tone: 51]"
-
-
-@pytest.mark.parametrize(
-    ("input", "expected"),
-    [
-        ("V:[+stress]ː[tone: 51]", "V:[+stress, +long][tone: 51]"),
-        ("V:[+stress]ː[-falling tone]", "V:[+stress, +long][-falling tone]"),
-    ],
-)
-def test_normalize_asca_length_marks(input, expected):
-    assert normalize_asca_length_marks(input) == expected
 
 
 def test_compile_stress_length_tone_merges():

@@ -1,145 +1,161 @@
 rules:
-    - rule:
-          id: Blackfoot-nr
-          content: "nl → s"
-          reason: "Corrected from original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
-    - rule:
-          id: Blackfoot-ʔθ,ʔr
-          content: "ʔθ, ʔr → {ʔ,j,∅}"
-          reason: "Corrected from original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
-    - rule:
-          id: Dena’ina-ʃʷ,x-z,ʒʷ,ɣ
-          content: "{ʃ(ʷ),x} {z,ʒ(ʷ),ɣ} → s j"
-          reason: "Corrected from original source: Northern Athapaskan Languages (Vol. 6), p. 73"
-    - rule:
-          id: Old-Irish-m̩-n̩
-          content: "m̩ n̩ → am an / _{s,({m,j,w})V}"
-          reason: "Bracket fix for env set with optional grouping"
-    - rule:
-          id: Spanish-—-Vdz
-          content: "— Vdz → ∅ / {nts,ndz,rdz}_"
-          reason: "Bracket fix - not confirmed from original source"
-    - rule:
-          id: Seneca-r_3
-          content: "r → j / C[-glottal](h)_{o(ː),õ(ː)}"
-          reason: "Bracket fix - not confirmed from original source"
-    - rule:
-          id: Seneca-ẽː
-          content: "ẽ(ː) → e(ː) / _{e(ː),o(ː)}"
-          reason: "Bracket fix - not confirmed from original source"
-    - rule:
-          id: Zayse-Zergulla-x3
-          content: "x₂ → ɡ / V_#"
-          reason: "x3 does not appear in the original source, x2 is a best guess"
-    - rule:
-          id: Proto-Dravidian-s_3
-          content: "s → ∅ / #V_{r,ɾ,l}"
-          reason: "Replacing with IPA symbols"
-    - rule:
-          id: Proto-Dravidian-r̀
-          content: "{r,ɾ} → r"
-          reason: "Replacing with IPA symbols"
-    - rule:
-          id: Proto-Dravidian-ŕ
-          content: "{ɹ,ɾ} → r / V_V"
-          reason: "Replacing with IPA symbols"
-    - rule:
-          id: Proto-Dravidian-n-nː-rn
-          content: "n nː rn → {n,r} n(ː) ɳ / V_V"
-          reason: "Replacing with IPA symbols"
-    - rule:
-          id: Proto-Dravidian-nː
-          content: "nː → n(ː)"
-          reason: "Replacing with IPA symbols"
-    - rule:
-          id: Proto-Dravidian-nr̀
-          content: "n{r,ɾ} → nr"
-          reason: "Replacing with IPA symbols"
-    - rule:
-          id: Yemsa-kʼ
-          content: "kʼ → k / #_"
-          reason: "This is a guess, it could be _# or _,#"
-    - rule:
-          id: Proto-Mongolic-tʃ_2
-          content: "tʃ → d / #_"
-          reason: "This is a guess, it could be _# or _,#"
-    - rule:
-          id: Old-Japanese-Vowel-Shift-u,ɨi-,a,i-ɨi,ia,ə-uɨ,a,ə
-          content: "{u,ɨ}i {a,ə}i i{a,ə} u{ɨ,a,ə} → wi e je wo"
-          reason: "Corrected from original source: https://conf.ling.cornell.edu/whitman/FrellWhitman.pdf"
-    - rule:
-          id: Old-Provençal-rdʒ
-          content: "rdʒ → {rdʒ,rz}"
-          reason: "Skipping intermediate step"
-    - rule:
-          id: Old-Provençal-rtVɡ
-          content: "rtVɡ → {rdʒ,rs}"
-          reason: "Skipping intermediate step"
-    - rule:
-          id: Old-Provençal-rtʃ-rdtʃ
-          content: "rtʃ rdtʃ → {rts,rs} {rz,rts,rdʒ}"
-          reason: "Skipping intermediate step"
-    - rule:
-          id: Proto-North-Sarawak-ə_3
-          content: "ə → ∅ / VC_CV"
-          reason: "Adding env delimiter"
-    - rule:
-          id: Quito-χ
-          content: "χ → h / #_"
-          reason: "Adding env delimiter"
-    - rule:
-          id: Riobamba-χ
-          content: "χ → kʰ / #_"
-          reason: "Adding env delimiter"
-    - rule:
-          id: Romanian-a
-          content: "a → ɨ / _N ! _{nː,mn}"
-          reason: "Adding env delimiter"
-    - rule:
-          id: Old-English-i,u
-          content: "{i,u} → ∅ / _# ! V[-long]C_#"
-          reason: "Correcting env delimiter"
-    - rule:
-          id: Comox-ʔ
-          content: "ʔ → ∅ / V₃R_V"
-          reason: "Adding env delimiter"
-    - rule:
-          id: Portuguese-V_3
-          content: "V → ∅ / ”V%s_t(C)V(C)# ; (irregular)"
-          reason: "Adding env delimiter"
-    - rule:
-          id: Proto-Dhegiha-k_2
-          content: "k → ∅ / #t_ ; (in morphemes)"
-          reason: "Adding env delimiter"
-    - rule:
-          id: Latin-l
-          content: "l → r / _Vl"
-          reason: "Correcting env delimiter"
-    - rule:
-          id: Eritai-∅
-          content: "∅ → dz / î_V"
-          reason: "Adding env delimiter"
-    - rule:
-          id: Old-Russian-kt-ɡd
-          content: "kt → ɡd / _E"
-          reason: "Correcting delimiters - this may be wrong"
-    - rule:
-          id: Attic-Greek-ɔ
-          content: "ɔ → ∅ / %i_n#, %i_s#"
-          reason: "Correcting env - this may be wrong"
-    - rule:
-          id: Proto-Circassian-ɡʲʷ-xʲʷ-ɣʲʷ?
-          content: "ɡʲʷ xʲʷ ɣʲʷ → ɡʷ xʷ ʁʷ"
-          reason: "Removing (?) - this may be wrong"
-    - rule:
-          id: Proto-Erromango-r
-          content: "r → L / sporadic"
-          reason: "Corrected from original source: https://www.ethnologue.com/language/erohttps://www.researchgate.net/publication/306887303_The_Linguistic_History_of_Southern_Vanuatu"
-    - rule:
-          id: Proto-Erromango-v_2
-          content: "v → f / [+ sibilant](..)$(..)_"
-          reason: "Corrected from original source: https://www.ethnologue.com/language/erohttps://www.researchgate.net/publication/306887303_The_Linguistic_History_of_Southern_Vanuatu"
-    - rule:
-          id: Proto-Erromango-v_3
-          content: "v → f / _(..)$(..)[+ sibilant]"
-          reason: "Corrected from original source: https://www.ethnologue.com/language/erohttps://www.researchgate.net/publication/306887303_The_Linguistic_History_of_Southern_Vanuatu"
+      - rule:
+              id: Blackfoot-nr
+              content: "nl → s"
+              reason: "Corrected from original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
+      - rule:
+              id: Blackfoot-ʔθ,ʔr
+              content: "ʔθ, ʔr → {ʔ,j,∅}"
+              reason: "Corrected from original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
+      - rule:
+              id: Dena’ina-ʃʷ,x-z,ʒʷ,ɣ
+              content: "{ʃ(ʷ),x} {z,ʒ(ʷ),ɣ} → s j"
+              reason: "Corrected from original source: Northern Athapaskan Languages (Vol. 6), p. 73"
+      - rule:
+              id: Old-Irish-m̩-n̩
+              content: "m̩ n̩ → am an / _{s,({m,j,w})V}"
+              reason: "Bracket fix for env set with optional grouping"
+      - rule:
+              id: Spanish-—-Vdz
+              content: "— Vdz → ∅ / {nts,ndz,rdz}_"
+              reason: "Bracket fix - not confirmed from original source"
+      - rule:
+              id: Seneca-r_3
+              content: "r → j / C[-glottal](h)_{o(ː),õ(ː)}"
+              reason: "Bracket fix - not confirmed from original source"
+      - rule:
+              id: Seneca-ẽː
+              content: "ẽ(ː) → e(ː) / _{e(ː),o(ː)}"
+              reason: "Bracket fix - not confirmed from original source"
+      - rule:
+              id: Zayse-Zergulla-x3
+              content: "x₂ → ɡ / V_#"
+              reason: "x3 does not appear in the original source, x2 is a best guess"
+      - rule:
+              id: Proto-Dravidian-s_3
+              content: "s → ∅ / #V_{r,ɾ,l}"
+              reason: "Replacing with IPA symbols"
+      - rule:
+              id: Proto-Dravidian-r̀
+              content: "{r,ɾ} → r"
+              reason: "Replacing with IPA symbols"
+      - rule:
+              id: Proto-Dravidian-ŕ
+              content: "{ɹ,ɾ} → r / V_V"
+              reason: "Replacing with IPA symbols"
+      - rule:
+              id: Proto-Dravidian-n-nː-rn
+              content: "n nː rn → {n,r} n(ː) ɳ / V_V"
+              reason: "Replacing with IPA symbols"
+      - rule:
+              id: Proto-Dravidian-nː
+              content: "nː → n(ː)"
+              reason: "Replacing with IPA symbols"
+      - rule:
+              id: Proto-Dravidian-nr̀
+              content: "n{r,ɾ} → nr"
+              reason: "Replacing with IPA symbols"
+      - rule:
+              id: Yemsa-kʼ
+              content: "kʼ → k / #_"
+              reason: "This is a guess, it could be _# or _,#"
+      - rule:
+              id: Proto-Mongolic-tʃ_2
+              content: "tʃ → d / #_"
+              reason: "This is a guess, it could be _# or _,#"
+      - rule:
+              id: Old-Japanese-Vowel-Shift-u,ɨi-,a,i-ɨi,ia,ə-uɨ,a,ə
+              content: "{u,ɨ}i {a,ə}i i{a,ə} u{ɨ,a,ə} → wi e je wo"
+              reason: "Corrected from original source: https://conf.ling.cornell.edu/whitman/FrellWhitman.pdf"
+      - rule:
+              id: Old-Provençal-rdʒ
+              content: "rdʒ → {rdʒ,rz}"
+              reason: "Skipping intermediate step"
+      - rule:
+              id: Old-Provençal-rtVɡ
+              content: "rtVɡ → {rdʒ,rs}"
+              reason: "Skipping intermediate step"
+      - rule:
+              id: Old-Provençal-rtʃ-rdtʃ
+              content: "rtʃ rdtʃ → {rts,rs} {rz,rts,rdʒ}"
+              reason: "Skipping intermediate step"
+      - rule:
+              id: Proto-North-Sarawak-ə_3
+              content: "ə → ∅ / VC_CV"
+              reason: "Adding env delimiter"
+      - rule:
+              id: Quito-χ
+              content: "χ → h / #_"
+              reason: "Adding env delimiter"
+      - rule:
+              id: Riobamba-χ
+              content: "χ → kʰ / #_"
+              reason: "Adding env delimiter"
+      - rule:
+              id: Romanian-a
+              content: "a → ɨ / _N ! _{nː,mn}"
+              reason: "Adding env delimiter"
+      - rule:
+              id: Old-English-i,u
+              content: "{i,u} → ∅ / _# ! V[-long]C_#"
+              reason: "Correcting env delimiter"
+      - rule:
+              id: Comox-ʔ
+              content: "ʔ → ∅ / V₃R_V"
+              reason: "Adding env delimiter"
+      - rule:
+              id: Portuguese-V_3
+              content: "V → ∅ / ”V%s_t(C)V(C)# ; (irregular)"
+              reason: "Adding env delimiter"
+      - rule:
+              id: Proto-Dhegiha-k_2
+              content: "k → ∅ / #t_ ; (in morphemes)"
+              reason: "Adding env delimiter"
+      - rule:
+              id: Latin-l
+              content: "l → r / _Vl"
+              reason: "Correcting env delimiter"
+      - rule:
+              id: Eritai-∅
+              content: "∅ → dz / î_V"
+              reason: "Adding env delimiter"
+      - rule:
+              id: Old-Russian-kt-ɡd
+              content: "kt → ɡd / _E"
+              reason: "Correcting delimiters - this may be wrong"
+      - rule:
+              id: Attic-Greek-ɔ
+              content: "ɔ → ∅ / %i_n#, %i_s#"
+              reason: "Correcting env - this may be wrong"
+      - rule:
+              id: Proto-Circassian-ɡʲʷ-xʲʷ-ɣʲʷ?
+              content: "ɡʲʷ xʲʷ ɣʲʷ → ɡʷ xʷ ʁʷ"
+              reason: "Removing (?) - this may be wrong"
+      - rule:
+              id: Proto-Erromango-r
+              content: "r → L / sporadic"
+              reason: "Corrected from original source: https://www.ethnologue.com/language/erohttps://www.researchgate.net/publication/306887303_The_Linguistic_History_of_Southern_Vanuatu"
+      - rule:
+              id: Proto-Erromango-v_2
+              content: "v → f / [+ sibilant](..)$(..)_"
+              reason: "Corrected from original source: https://www.ethnologue.com/language/erohttps://www.researchgate.net/publication/306887303_The_Linguistic_History_of_Southern_Vanuatu"
+      - rule:
+              id: Proto-Erromango-v_3
+              content: "v → f / _(..)$(..)[+ sibilant]"
+              reason: "Corrected from original source: https://www.ethnologue.com/language/erohttps://www.researchgate.net/publication/306887303_The_Linguistic_History_of_Southern_Vanuatu"
+      - rule:
+              id: Early-Icelandic-O
+              content: "O → ∅ / {F,r,l}_O"
+              reason: "Can't find any reference to POA in original source. Same POA as what exactly?: http://www.kunstsprachen.de/s17/rules.sch"
+      - rule:
+              id: Early-Icelandic-S
+              content: "S → ∅ / N_S"
+              reason: "Can't find any reference to POA in original source. Same POA as what exactly?: http://www.kunstsprachen.de/s17/rules.sch"
+      - rule:
+              id: Early-Icelandic-S-voiceː-S+-voiceː
+              content: "S[- voice]ː S[+ voice]ː → hS S[- voice]ː"
+              reason: "I'm struggling to match all these Early Icelandic rules to the source: http://www.kunstsprachen.de/s17/rules.sch"
+      - rule:
+              id: Early-Icelandic-S-voice
+              content: "S[- voice] → hS / _{l,ɬ,m,n}"
+              reason: "I'm struggling to match all these Early Icelandic rules to the source: http://www.kunstsprachen.de/s17/rules.sch"
