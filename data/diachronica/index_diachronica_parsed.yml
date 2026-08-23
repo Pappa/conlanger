@@ -2407,7 +2407,7 @@ sections:
   - stages:
     - a(ː)
     - ɑ(ː)
-    env: near emphatics
+    env: _[+rtr], [+rtr]_
     raw: a(ː) → ɑ(ː) / near emphatics
     source: index_diachronica_original.html:1393
     rule_id: Egyptian-Arabic-aː
@@ -2492,7 +2492,7 @@ sections:
   - stages:
     - aː
     - æː
-    env: when not near emphatics
+    exception: _[+rtr], [+rtr]_
     raw: aː → æː / when not near emphatics
     source: index_diachronica_original.html:1410
     rule_id: Coastal-Hadhrami-Arabic-aː_2
@@ -2542,7 +2542,7 @@ sections:
   - stages:
     - aː
     - æː
-    env: when not near emphatics
+    exception: _[+rtr], [+rtr]_
     raw: aː → æː / when not near emphatics
     source: index_diachronica_original.html:1421
     rule_id: Wādı̄-Hadhrami-Arabic-aː_2
@@ -2775,7 +2775,7 @@ sections:
   - stages:
     - ə
     - ɐ
-    env: near emphatics
+    env: _[+rtr], [+rtr]_
     raw: ə → ɐ / near emphatics
     source: index_diachronica_original.html:1473
     rule_id: Moroccan-Arabic-ə_2
@@ -2785,7 +2785,7 @@ sections:
     raw: ə → ɪ / else
     source: index_diachronica_original.html:1474
     rule_id: Moroccan-Arabic-ə_3
-    exception: near emphatics
+    exception: _[+rtr], [+rtr]_
   - stages:
     - u
     - ʊ
@@ -2796,7 +2796,7 @@ sections:
   - stages:
     - aː iː uː
     - ɑː eː oː
-    env: near emphatics
+    env: _[+rtr], [+rtr]_
     raw: aː iː uː → ɑː eː oː / near emphatics
     source: index_diachronica_original.html:1476
     rule_id: Moroccan-Arabic-aː-iː-uː
@@ -2806,7 +2806,7 @@ sections:
     raw: aː → æː / else
     source: index_diachronica_original.html:1477
     rule_id: Moroccan-Arabic-aː
-    exception: near emphatics
+    exception: _[+rtr], [+rtr]_
   - stages:
     - C₁ˤC₂
     - C₁C₂ˤ
@@ -2890,7 +2890,7 @@ sections:
   - stages:
     - a
     - ɑ
-    env: near emphatics
+    env: _[+rtr], [+rtr]_
     raw: a → ɑ / near emphatics
     source: index_diachronica_original.html:1501
     rule_id: Tunisian-Arabic-a
@@ -13714,11 +13714,11 @@ sections:
     raw: v → f / %C[+ sibilant]
     source: index_diachronica_original.html:3583
     rule_id: Proto-Erromango-v_3
-  - comment: occasionally; (some sort of lateral?)
+  - comment: sporadic
     stages:
     - r
-    - '*L'
-    raw: r → *L (some sort of lateral?) / occasionally
+    - L
+    raw: r → L / sporadic
     source: index_diachronica_original.html:3584
     sporadic: true
     rule_id: Proto-Erromango-r

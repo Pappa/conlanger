@@ -215,10 +215,13 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 6.2.2.1.12,Classical Arabic to Eastern Libyan Arabic,Eastern-Libyan-Arabic-dˤ-dʒ-q,,index_diachronica_original.html:1452,True,,True,True,,,,,,,,,,,none
 6.2.2.1.13,Classical Arabic to Western Libyan Arabic,Western-Libyan-Arabic-q-dʒ,,index_diachronica_original.html:1459,True,,True,True,,,,,,,,,,,none
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,"Moroccan-Arabic-u,ə",,index_diachronica_original.html:1471,True,,True,True,,True,,,,,,,,,none
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə_2,,index_diachronica_original.html:1473,True,,True,True,True,,,,,,,,,,none
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə_3,,index_diachronica_original.html:1474,True,,True,True,,True,,,,,,,,,none
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-q,0,index_diachronica_original.html:1480,True,,True,True,,,,,,,,,,,none
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-q,1,index_diachronica_original.html:1480,True,,True,True,,,,,,,,,,,none
 6.2.2.1.15,Classical Arabic to Sa‘idi Arabic,Sa‘idi-Arabic-q-x-ɣ,,index_diachronica_original.html:1490,True,,True,True,,,,,,,,,,,none
 6.2.2.1.16,Classical Arabic to Sudanese Arabic,Sudanese-Arabic-dʒ-q,,index_diachronica_original.html:1495,True,,True,True,,,,,,,,,,,none
+6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-a,,index_diachronica_original.html:1501,True,,True,True,True,,,,,,,,,,none
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-a_2,,index_diachronica_original.html:1502,True,,True,True,,,,,,,,,,,none
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-dˤ-q,,index_diachronica_original.html:1503,True,,True,True,,,,,,,,,,,none
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-dʒ-x-ɣ,,index_diachronica_original.html:1504,True,,True,True,,,,,,,,,,,none
@@ -1252,6 +1255,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 10.3.11.1,Proto-Southern Vanuatu to Anejom,Anejom-a_2,,index_diachronica_original.html:3575,True,,True,True,True,,,,,,,,,,none
 10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,Proto-Erromango-mʷ-pʷ-bʷ-vʷ,,index_diachronica_original.html:3580,True,,True,True,,,,,,,,,,,none
 10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,Proto-Erromango-v,,index_diachronica_original.html:3581,True,,True,True,True,,,,,,,,,,none
+10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,Proto-Erromango-r,,index_diachronica_original.html:3584,True,,True,True,,,,,,,,,,,none
 10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,Proto-Erromango-o,,index_diachronica_original.html:3586,True,,True,True,,,,,,,,,,,none
 10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,Proto-Erromango-u-i,,index_diachronica_original.html:3587,True,,True,True,,,,,,,,,,,none
 10.3.11.2,Proto-Southern Vanuatu to Proto-Erromango,Proto-Erromango-a,,index_diachronica_original.html:3588,True,,True,True,True,,,,,,,,,,none

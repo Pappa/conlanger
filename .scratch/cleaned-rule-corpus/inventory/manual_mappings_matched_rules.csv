@@ -7,12 +7,18 @@ section_index,section_name,rule_id,source,manual_mapping
 6.2.2.1.5,Proto-Semitic to Classical Arabic,"Classical-Arabic-Vj,wV",index_diachronica_original.html:1326, / sporadic ; some sequences
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_6,index_diachronica_original.html:1370, sporadic ; in the feminine ending
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aj-aw,index_diachronica_original.html:1384, / 
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː,index_diachronica_original.html:1393," / _[+ emphatic], [+ emphatic]_"
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-h,index_diachronica_original.html:1401, / 
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-aː,index_diachronica_original.html:1409, / 
+6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-aː_2,index_diachronica_original.html:1410," / ! _[+ emphatic], [+ emphatic]_"
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-aː,index_diachronica_original.html:1420, / 
+6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-aː_2,index_diachronica_original.html:1421," / ! _[+ emphatic], [+ emphatic]_"
 6.2.2.1.10,Classical Arabic to Hassāniyya Arabic,Hassāniyya-Arabic-ʔ,index_diachronica_original.html:1431, / sporadic ; depending on the environment
 6.2.2.1.11,Classical Arabic to Iraqi Arabic,Iraqi-Arabic-ɡʲ,index_diachronica_original.html:1445, / sporadic ; in southern regions
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,"Moroccan-Arabic-C+labial,+velar",index_diachronica_original.html:1470," / u[-long]_, _u[-long]"
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə_2,index_diachronica_original.html:1473," / _[+ emphatic], [+ emphatic]_"
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-aː-iː-uː,index_diachronica_original.html:1476," / _[+ emphatic], [+ emphatic]_"
+6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-a,index_diachronica_original.html:1501," / _[+ emphatic], [+ emphatic]_"
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-Vː_2,index_diachronica_original.html:1507, / 
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ʔ,index_diachronica_original.html:1564, ! 
 7.4,Proto-Algonquian to Blackfoot,"Blackfoot-θ,tʃ,ʃ,r",index_diachronica_original.html:1711," / ! C_,_C"

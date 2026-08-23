@@ -19,3 +19,4 @@ low tone,tone,1,,high,Index [+low tone] → ASCA [tone: 1]
 falling tone,tone,51,,high,Index [+falling tone] → ASCA [tone: 51]
 low falling tone,tone,21,,high,Index [+low falling tone] → ASCA [tone: 21]
 high rising tone,tone,35,,high,Index [+high rising tone] → ASCA [tone: 35]
+emphatic,rename,rtr,,high,Index [±emphatic] → ASCA rtr (note: emphatic is not present in the Index - the feature is created in manual_mappings
