@@ -79,3 +79,6 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 "+ B POA","β place",False,Point of articulation - asca syntax alpha notation
 "ATR","atr",False,Lowercase feature name
 "RTR","rtr",False,Lowercase feature name
+" / only when short, ! "," / _:[-long] ! ",False,replace prose
+" / short only, _#"," / _:[-long]#",False,replace prose
+" _%, when stressed (short only)"," _[+stress, -long]:%",False,replace prose

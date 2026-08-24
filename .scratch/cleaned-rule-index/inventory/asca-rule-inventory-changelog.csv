@@ -24,3 +24,11 @@ section_index,rule_id,alt_idx,source,ok,timestamp
 6.2.2.1.6,Cypriot-Arabic-i_2,,index_diachronica_original.html:1358,True,2026-08-24T20:03:57Z
 6.2.2.1.6,Cypriot-Arabic-aːʔ,,index_diachronica_original.html:1371,True,2026-08-24T20:03:57Z
 6.2.2.1.6,Cypriot-Arabic-aː_2,,index_diachronica_original.html:1372,True,2026-08-24T20:03:57Z
+6.2.2.1.7,"Egyptian-Arabic-i,u",,index_diachronica_original.html:1388,False,2026-08-24T20:40:53Z
+6.2.2.1.7,Egyptian-Arabic-i-u,,index_diachronica_original.html:1382,True,2026-08-24T20:43:59Z
+6.2.2.1.7,Egyptian-Arabic-u,0,index_diachronica_original.html:1383,True,2026-08-24T20:43:59Z
+6.2.2.1.7,Egyptian-Arabic-u,1,index_diachronica_original.html:1383,True,2026-08-24T20:43:59Z
+6.2.2.1.7,"Egyptian-Arabic-i,u",,index_diachronica_original.html:1388,True,2026-08-24T20:43:59Z
+6.2.2.1.14,"Moroccan-Arabic-a,i",,index_diachronica_original.html:1468,True,2026-08-24T20:43:59Z
+6.2.2.1.14,Moroccan-Arabic-u,,index_diachronica_original.html:1469,True,2026-08-24T20:43:59Z
+6.2.2.1.14,Moroccan-Arabic-u_2,,index_diachronica_original.html:1475,True,2026-08-24T20:43:59Z

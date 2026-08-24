@@ -2218,9 +2218,8 @@ sections:
   - stages:
     - '{u,a,i}'
     - ∅
-    env: _$ when stressed
-    comment: (short only)
-    raw: '{u,a,i} → ∅ / _%, when stressed (short only)'
+    env: _[+stress, -long]
+    raw: '{u,a,i} → ∅ / _[+stress, -long]'
     source: index_diachronica_original.html:1362
     rule_id: Cypriot-Arabic-u,a,i
   - stages:
@@ -2350,16 +2349,16 @@ sections:
   - stages:
     - i u
     - e o
-    env: only when short,
+    env: _[-long]
     exception: _#
-    raw: i u → e o / only when short, ! _#
+    raw: i u → e o  / _[-long] ! _#
     source: index_diachronica_original.html:1382
     rule_id: Egyptian-Arabic-i-u
   - stages:
     - u
     - '{o,u}'
-    env: short only, _#
-    raw: u → {o,u} / short only, _#
+    env: _[-long]#
+    raw: u → {o,u} / _[-long]#
     source: index_diachronica_original.html:1383
     rule_id: Egyptian-Arabic-u
   - stages:
@@ -2393,9 +2392,8 @@ sections:
   - stages:
     - '{i,u}'
     - ∅
-    env: VC_CV when unstressed
-    comment: (short only)
-    raw: '{i,u} → ∅ / VC_CV when unstressed (short only)'
+    env: VC_[-stress, -long]CV
+    raw: '{i,u} → ∅ / VC_[-stress, -long]CV'
     source: index_diachronica_original.html:1388
     rule_id: Egyptian-Arabic-i,u
   - stages:
@@ -2735,22 +2733,18 @@ sections:
     raw: t → t͜s / plain t only, distinguishable from the sequence ts
     source: index_diachronica_original.html:1467
     rule_id: Moroccan-Arabic-t
-  - comment: the change of short a blocked for some speakers before ħ ʕ
-    stages:
+  - stages:
     - '{a,i}'
     - ə
-    env: short only
-    raw: '{a,i} → ə / short only; the change of short a blocked for some speakers
-      before ħ ʕ'
+    env: _[-long]
+    raw: '{a,i} → ə / _[-long]'
     source: index_diachronica_original.html:1468
     rule_id: Moroccan-Arabic-a,i
   - stages:
     - u
     - ə
-    env: short only
-    exception: near
-    comment: “a labial or velar consonant”
-    raw: u → ə / short only, except near “a labial or velar consonant”
+    env: _[-long]
+    raw: u → ə / _[-long]
     source: index_diachronica_original.html:1469
     rule_id: Moroccan-Arabic-u
   - stages:
@@ -2791,8 +2785,8 @@ sections:
   - stages:
     - u
     - ʊ
-    env: short only
-    raw: u → ʊ / short only
+    env: _[-long]
+    raw: u → ʊ / _[-long]
     source: index_diachronica_original.html:1475
     rule_id: Moroccan-Arabic-u_2
   - stages:
