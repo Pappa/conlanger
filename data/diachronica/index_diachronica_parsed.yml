@@ -2363,7 +2363,7 @@ sections:
   - stages:
     - aj aw
     - eː oː
-    env: U[+closed]
+    env: U[+hi]
     raw: aj aw → eː oː / in U[+closed]
     source: index_diachronica_original.html:1384
     rule_id: Egyptian-Arabic-aj-aw
@@ -11296,7 +11296,7 @@ sections:
     stages:
     - a
     - e
-    env: _CV[+ mid]
+    env: _CV[-hi,-lo]
     raw: a → e / _CV[+ mid] (sporadic)
     source: index_diachronica_original.html:3121
     sporadic: true
@@ -11311,7 +11311,7 @@ sections:
     sporadic: true
     rule_id: Hiw-a_2
   - stages:
-    - a(C)V[+ high] a(C)V[+ mid] aCa
+    - a(C)V[+ high] a(C)V[-hi,-lo] aCa
     - ɔ(C) a(C) {ɔ,a}(C)ə
     raw: a(C)V[+ high] a(C)V[+ mid] aCa → ɔ(C) a(C) {ɔ,a}(C)ə
     source: index_diachronica_original.html:3123
@@ -11323,13 +11323,13 @@ sections:
     source: index_diachronica_original.html:3124
     rule_id: Hiw-eCV-low-eCa
   - stages:
-    - i(C)V[+ high] i(C)V[+ mid] i(C)a
+    - i(C)V[+ high] i(C)V[-hi,-lo] i(C)a
     - i(C) i(C)ə {e,i}(C)ə
     raw: i(C)V[+ high] i(C)V[+ mid] i(C)a → i(C) i(C)ə {e,i}(C)ə
     source: index_diachronica_original.html:3125
     rule_id: Hiw-iCV+-high-iCV+-mid-iCa
   - stages:
-    - o(C)V[+ high] o(C)V[+ mid] o(C)a
+    - o(C)V[+ high] o(C)V[-hi,-lo] o(C)a
     - ɵ(C) o(C) ɔ(C)ə
     raw: o(C)V[+ high] o(C)V[+ mid] o(C)a → ɵ(C) o(C) ɔ(C)ə
     source: index_diachronica_original.html:3126
@@ -11420,7 +11420,7 @@ sections:
     source: index_diachronica_original.html:3144
     rule_id: Lemerig-—-iCV-high
   - stages:
-    - eCV[+ mid]
+    - eCV[-hi,-lo]
     - ɛC
     raw: — eCV[+ mid] → ɛC
     source: index_diachronica_original.html:3145
@@ -12071,7 +12071,7 @@ sections:
     source: index_diachronica_original.html:3266
     rule_id: Nixumwak-Nêlêmwa-uCu
   - stages:
-    - V[+ mid]
+    - V[-hi,-lo]
     - a
     env: near nasals?
     raw: V[+ mid] → a / near nasals?
@@ -14619,7 +14619,7 @@ sections:
     source: index_diachronica_original.html:3757
     rule_id: Marshallese-V
   - stages:
-    - V[+mid]
+    - V[-hi,-lo]
     - ɘ
     env: _C[+high] when stressed
     raw: V[+mid] → ɘ / _C[+high] when stressed
@@ -18854,7 +18854,7 @@ sections:
   - stages:
     - i a u
     - ii aa uu
-    env: C_ in U[+open -initial -final] such that U[+open]_
+    env: C_ in U[+lo -initial -final] such that U[+lo]_
     raw: i a u → ii aa uu / C_ in U[+open -initial -final] such that U[+open]_
     source: index_diachronica_original.html:4728
     rule_id: Kuskokwim-Yup’ik-i-a-u
@@ -19042,7 +19042,7 @@ sections:
   - stages:
     - i a u
     - ii aa uu
-    env: C_ in U[+open -initial -final] such that U[+open]_
+    env: C_ in U[+lo -initial -final] such that U[+lo]_
     raw: i a u → ii aa uu / C_ in U[+open -initial -final] such that U[+open]_
     source: index_diachronica_original.html:4758
     rule_id: Nunivak-Yup’ik-i-a-u
@@ -19407,7 +19407,7 @@ sections:
   - stages:
     - i a u
     - ii aa uu
-    env: C_ in U[+open -initial -final] such that U[+open]_
+    env: C_ in U[+lo -initial -final] such that U[+lo]_
     raw: i a u → ii aa uu / C_ in U[+open -initial -final] such that U[+open]_
     source: index_diachronica_original.html:4815
     rule_id: Unaaliq-Yup’ik-i-a-u
@@ -20614,7 +20614,7 @@ sections:
   - stages:
     - V
     - Vː
-    env: U:[+stress][+open]
+    env: U:[+stress][+lo]
     raw: V → Vː / in ”U[+open]
     source: index_diachronica_original.html:5057
     rule_id: Hittite-V
@@ -20634,14 +20634,14 @@ sections:
   - stages:
     - e
     - i
-    env: _{m,ŋ} when posttonic in U[+closed] or when pretonic
+    env: _{m,ŋ} when posttonic in U[+hi] or when pretonic
     raw: e → i / _{m,ŋ} when posttonic in U[+closed] or when pretonic
     source: index_diachronica_original.html:5060
     rule_id: Hittite-e
   - stages:
     - e
     - a
-    env: _n in U[+open +posttonic]
+    env: _n in U[+lo +posttonic]
     raw: e → a / _n in U[+open +posttonic]
     source: index_diachronica_original.html:5061
     rule_id: Hittite-e_2
@@ -20784,7 +20784,7 @@ sections:
   - stages:
     - V
     - Vː
-    env: U:[+stress][+open]
+    env: U:[+stress][+lo]
     raw: V → Vː / in ”U[+open]
     source: index_diachronica_original.html:5085
     rule_id: Luwian-V
@@ -20850,7 +20850,7 @@ sections:
   - stages:
     - D R
     - Dː Rː
-    env: e:[+stress]_ in U[+open]
+    env: e:[+stress]_ in U[+lo]
     raw: D R → Dː Rː / ”e_ in U[+open]
     source: index_diachronica_original.html:5094
     rule_id: Luwian-D-R
@@ -21161,14 +21161,14 @@ sections:
   - stages:
     - '{e,a,o}'
     - eː
-    env: _N in U:[+stress][+closed]
+    env: _N in U:[+stress][+hi]
     raw: '{e,a,o} → ē / _N in ”U[+closed]'
     source: index_diachronica_original.html:5146
     rule_id: Lydian-e,a,o
   - stages:
     - '{e,a,o}'
     - aː
-    env: _N in U:[+stress][+open]
+    env: _N in U:[+stress][+lo]
     raw: '{e,a,o} → ā / _N in ”U[+open]'
     source: index_diachronica_original.html:5147
     rule_id: Lydian-e,a,o_2
@@ -21231,7 +21231,7 @@ sections:
   - stages:
     - V
     - Vː
-    env: U:[+stress][+open]
+    env: U:[+stress][+lo]
     raw: V → Vː / ”U[+open]
     source: index_diachronica_original.html:5161
     rule_id: Palaic-V
@@ -21245,7 +21245,7 @@ sections:
   - stages:
     - e
     - a
-    env: posttonic in U[+open]
+    env: posttonic in U[+lo]
     raw: e → a / posttonic in U[+open]
     source: index_diachronica_original.html:5163
     rule_id: Palaic-e_2
@@ -21258,7 +21258,7 @@ sections:
   - stages:
     - a e
     - aː eː
-    env: U:[+stress][+closed]
+    env: U:[+stress][+hi]
     raw: a e → aː eː / in ”U[+closed]
     source: index_diachronica_original.html:5165
     rule_id: Palaic-a-e
@@ -24290,7 +24290,7 @@ sections:
   - stages:
     - iji
     - iː
-    env: U[+ long + closed]_ in the stem
+    env: U[+ long +hi]_ in the stem
     raw: iji → iː / U[+ long + closed]_ in the stem
     source: index_diachronica_original.html:5671
     rule_id: Gothic-iji_2
@@ -24666,7 +24666,7 @@ sections:
   - stages:
     - ɑ e o
     - ɑː ɛː oː
-    env: U[+open]
+    env: U[+lo]
     exception: '#U with the following U containing /iː/ or ending in one of /m n r
       l/'
     raw: 'ɑ e o → ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/
@@ -24793,7 +24793,7 @@ sections:
   - stages:
     - ɑ e o
     - ɑː ɛː oː
-    env: U[+open]
+    env: U[+lo]
     exception: '#U with the following U containing /iː/ or ending in one of /m n r
       l/'
     raw: 'ɑ e o → ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/
@@ -25438,7 +25438,7 @@ sections:
   - stages:
     - ɑ e o
     - ɑː ɛː oː
-    env: U[+open]
+    env: U[+lo]
     exception: '#U with the following U containing /iː/ or ending in one of /m n r
       l/'
     raw: 'ɑ e o → ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/
@@ -26253,7 +26253,7 @@ sections:
   - stages:
     - ɑ e o
     - ɑː ɛː oː
-    env: U[+open]
+    env: U[+lo]
     exception: '#U with the following U containing /iː/ or ending in one of /m n r
       l/'
     raw: 'ɑ e o → ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/
@@ -35371,7 +35371,7 @@ sections:
   - stages:
     - ɛ
     - iɛ
-    env: U[+open]
+    env: U[+lo]
     raw: è → iɛ / in U[+open]
     source: index_diachronica_original.html:7486
     rule_id: French-è
@@ -35385,7 +35385,7 @@ sections:
   - stages:
     - ɛ
     - ɛ
-    env: U[+closed]
+    env: U[+hi]
     raw: è → ɛ / in U[+closed]
     source: index_diachronica_original.html:7488
     rule_id: French-è_3
@@ -35393,7 +35393,7 @@ sections:
     - o
     - uo
     - uɛ
-    env: U[+open]
+    env: U[+lo]
     exception: _N
     raw: ò → uo → uɛ / in U[+open] ! _N
     source: index_diachronica_original.html:7489
@@ -35401,7 +35401,7 @@ sections:
   - stages:
     - o
     - ɔ
-    env: U[+closed]
+    env: U[+hi]
     raw: ò → ɔ / in U[+closed]
     source: index_diachronica_original.html:7490
     rule_id: French-ò_2
@@ -35711,7 +35711,7 @@ sections:
   - stages:
     - ∅
     - j
-    env: '{ʃ,ʒ,sj,zj}{a:[+stress],e:[+stress]}_ in U[+open]'
+    env: '{ʃ,ʒ,sj,zj}{a:[+stress],e:[+stress]}_ in U[+lo]'
     raw: ∅ → j / {ʃ,ʒ,sj,zj}”{a,é}_ in U[+open]
     source: index_diachronica_original.html:7537
     rule_id: French-∅_6
@@ -35768,14 +35768,14 @@ sections:
   - stages:
     - e
     - ɛi
-    env: U[+open]
+    env: U[+lo]
     raw: é → ɛi / in U[+open]
     source: index_diachronica_original.html:7545
     rule_id: French-é
   - stages:
     - e
     - ɛ
-    env: U[+closed]
+    env: U[+hi]
     raw: é → ɛ / in U[+closed]
     source: index_diachronica_original.html:7546
     rule_id: French-é_2
@@ -35783,7 +35783,7 @@ sections:
     - o
     - ou
     - ɛu
-    env: U[+open]
+    env: U[+lo]
     raw: ó → ou → ɛu / in U[+open]
     source: index_diachronica_original.html:7547
     rule_id: French-ó
@@ -35797,14 +35797,14 @@ sections:
   - stages:
     - o
     - ou
-    env: U[+closed]
+    env: U[+hi]
     raw: ó → ou / in U[+closed]
     source: index_diachronica_original.html:7549
     rule_id: French-ó_3
   - stages:
     - e
     - ə
-    env: '#(C…)_($…):[+stress] in U[+open]'
+    env: '#(C…)_($…):[+stress] in U[+lo]'
     raw: 'e → ə / #(C…)_(%…)” in U[+open]'
     source: index_diachronica_original.html:7550
     rule_id: French-e
@@ -35812,7 +35812,7 @@ sections:
     stages:
     - e
     - ɛ
-    env: '#(C…)_($…):[+stress] in U[+closed] or _V'
+    env: '#(C…)_($…):[+stress] in U[+hi] or _V'
     raw: 'e → ɛ / #(C…)_(%…)” in U[+closed] or _V (?)'
     source: index_diachronica_original.html:7551
     sporadic: true
@@ -35829,14 +35829,14 @@ sections:
   - stages:
     - a
     - ə
-    env: '#{tʃ,dʒ}_($…):[+stress] in U[+open]'
+    env: '#{tʃ,dʒ}_($…):[+stress] in U[+lo]'
     raw: 'a → ə / #{tʃ,dʒ}_(%…)” in U[+open]'
     source: index_diachronica_original.html:7553
     rule_id: French-a_2
   - stages:
     - a
     - ɛ
-    env: U[+open]
+    env: U[+lo]
     comment: “(but a following ʎ creates a [closed] syllable)”
     raw: a → ɛ / in U[+open] “(but a following ʎ creates a [closed] syllable)”
     source: index_diachronica_original.html:7554
@@ -49748,7 +49748,7 @@ sections:
     source: index_diachronica_original.html:10557
     rule_id: Proto-Potou-Akanic-ɟ-ʄ-j-c-ɠʷ
   - stages:
-    - (N)V₁[+mid +nas](l̃)
+    - (N)V₁[-hi,-lo +nas](l̃)
     - CV[-nas]n
     raw: (N)V₁[+mid +nas](l̃) → CV[-nas]n
     source: index_diachronica_original.html:10558
