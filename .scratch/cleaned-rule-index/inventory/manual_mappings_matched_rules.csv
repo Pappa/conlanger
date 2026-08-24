@@ -20,6 +20,7 @@ section_index,section_name,rule_id,source,manual_mapping
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-aː-iː-uː,index_diachronica_original.html:1476," / _[+ emphatic], [+ emphatic]_"
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-a,index_diachronica_original.html:1501," / _[+ emphatic], [+ emphatic]_"
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-Vː_2,index_diachronica_original.html:1507, / 
+6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ə,index_diachronica_original.html:1557," / _[+laryngeal], [+laryngeal]_"
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ʔ,index_diachronica_original.html:1564, ! 
 7.4,Proto-Algonquian to Blackfoot,"Blackfoot-θ,tʃ,ʃ,r",index_diachronica_original.html:1711," / ! C_,_C"
 7.4,Proto-Algonquian to Blackfoot,Blackfoot-tsi,index_diachronica_original.html:1761, ; “(before a prefix; 
@@ -278,7 +279,7 @@ section_index,section_name,rule_id,source,manual_mapping
 36.1.1,Late Middle Chinese to Old Mandarin,Old-Mandarin-V5,index_diachronica_original.html:11762, / 
 36.1.1,Late Middle Chinese to Old Mandarin,Old-Mandarin-V5_2,index_diachronica_original.html:11763, / 
 36.2,Sin Sukchu to Guānhuà,Guānhuà-ŋ_3,index_diachronica_original.html:11833, ; There seems to ahve been some stuff going on
-36.2,Sin Sukchu to Guānhuà,Guānhuà-ɔ,index_diachronica_original.html:11873, / 
+36.2,Sin Sukchu to Guānhuà,Guānhuà-ɔ,index_diachronica_original.html:11873, / sporadic ; in two cases cited
 36.3.3.1,Old Tibetan to Amdo dialects,Amdo-dialects-ʃ,index_diachronica_original.html:12289, sporadic ; (some dialects
 36.3.3.1,Old Tibetan to Amdo dialects,Amdo-dialects-d,index_diachronica_original.html:12295, sporadic ; (some dialects
 37.1.2,Proto-Iroquoian to Proto-Northern Iroquoian,Proto-Northern-Iroquoian-Vː,index_diachronica_original.html:12384, ! 

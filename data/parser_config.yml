@@ -19,6 +19,10 @@ skip_sections:
     reason: "Need to refer to the cited source to determine the correct rule syntax"
   - id: "6.2.2.1.6"
     reason: "Need to refer to the cited source to determine the correct rule syntax"
+  - id: "6.2.2.1.7"
+    reason: "Need to refer to the cited source to determine the correct rule syntax"
+  - id: "6.2.2.1.14"
+    reason: "Need to refer to the cited source to determine the correct rule syntax"
 skip_rules:
   - id: Pre-Slavic-Vowel-Changes-i
     reason: chained optional multi-output; structurally unrepresentable in ASCA (ticket 84)

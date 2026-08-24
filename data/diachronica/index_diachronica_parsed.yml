@@ -2453,6 +2453,7 @@ sections:
     raw: h → ∅ / in coda
     source: index_diachronica_original.html:1401
     rule_id: Egyptian-Arabic-h
+  status: skipped
 - section: Classical Arabic to Coastal Hadhrami Arabic
   index: 6.2.2.1.8
   citation: Pogostick Man, from Wikipedia Contributors (2013), “Hadhrami Arabic”.
@@ -2850,6 +2851,7 @@ sections:
     raw: z → ʒ / if ʒ is somewhere in the stem after it
     source: index_diachronica_original.html:1484
     rule_id: Moroccan-Arabic-z
+  status: skipped
 - section: Classical Arabic to Sa‘idi Arabic
   index: 6.2.2.1.15
   citation: Pogostick Man, from http://en.wikipedia.org/wiki/Sa%27idi_Arabic
@@ -3201,7 +3203,7 @@ sections:
   - stages:
     - ə
     - a
-    env: near gutturals
+    env: _[+laryngeal], [+laryngeal]_
     raw: ə → a / near gutturals
     source: index_diachronica_original.html:1557
     rule_id: Modern-Israeli-Hebrew-ə
@@ -55855,13 +55857,13 @@ sections:
     raw: yen → yɛn
     source: index_diachronica_original.html:11872
     rule_id: Guānhuà-yen_2
-  - comment: extremely rare change
+  - comment: in two cases cited; extremely rare change; sporadic
     stages:
     - ɔ
     - a
-    env: two cases cited
     raw: ɔ → a / in two cases cited; extremely rare change
     source: index_diachronica_original.html:11873
+    sporadic: true
     rule_id: Guānhuà-ɔ
   - comment: (occasionally
     stages:

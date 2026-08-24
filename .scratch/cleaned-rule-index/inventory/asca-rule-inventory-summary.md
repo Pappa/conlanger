@@ -3,24 +3,24 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
-- Rows: **9686** (one per index rule)
-- OK: **8279** (85.5%)
-- Fail: **1298** (13.4%)
-- Skipped: **109** (1.1%)
-- Sections all OK: **339 / 708** (47.9%)
-- Sections skipped: **6 / 714** (0.8%)
+- Rows: **9682** (one per index rule)
+- OK: **8256** (85.3%)
+- Fail: **1279** (13.2%)
+- Skipped: **147** (1.5%)
+- Sections all OK: **339 / 706** (48.0%)
+- Sections skipped: **8 / 714** (1.1%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
 | 390 | `syntax_other` |
-| 250 | `expected_underscore` |
-| 171 | `unknown_character` |
+| 237 | `expected_underscore` |
+| 167 | `unknown_character` |
 | 130 | `runtime_other` |
 | 114 | `unknown_grouping` |
-| 56 | `prose_or_expected_arrow` |
-| 43 | `nested_brackets` |
+| 55 | `prose_or_expected_arrow` |
+| 42 | `nested_brackets` |
 | 38 | `expected_number` |
 | 32 | `diacritic_prereq` |
 | 31 | `unknown_feature` |

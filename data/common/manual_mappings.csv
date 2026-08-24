@@ -82,3 +82,5 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 " / only when short, ! "," / _:[-long] ! ",False,replace prose
 " / short only, _#"," / _:[-long]#",False,replace prose
 " _%, when stressed (short only)"," _[+stress, -long]:%",False,replace prose
+" / near gutturals"," / _[+laryngeal], [+laryngeal]_",False,replace prose
+" / in two cases cited"," / sporadic ; in two cases cited",False,replace prose
