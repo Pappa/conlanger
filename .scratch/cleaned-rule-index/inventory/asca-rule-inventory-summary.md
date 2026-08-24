@@ -17,9 +17,9 @@
 | 389 | `syntax_other` |
 | 239 | `expected_underscore` |
 | 172 | `unknown_character` |
-| 130 | `runtime_other` |
+| 131 | `runtime_other` |
 | 114 | `unknown_grouping` |
-| 85 | `unknown_feature` |
+| 84 | `unknown_feature` |
 | 55 | `prose_or_expected_arrow` |
 | 43 | `nested_brackets` |
 | 38 | `expected_number` |
@@ -55,12 +55,11 @@
 | 5 | `weak` | `man` |
 | 3 | `palatalized` | `latrl` |
 | 2 | `fricative` | `rhotic` |
-| 1 | `APOA` | `root` |
-| 1 | `lowpitch` | `voice` |
 | 1 | `highpitch` | `high` |
-| 1 | `ejective` | `contin` |
-| 1 | `aspirated` | `spread` |
+| 1 | `lowpitch` | `voice` |
+| 1 | `APOA` | `root` |
 | 1 | `intertonic` | `anterior` |
+| 1 | `ejective` | `contin` |
 | 1 | `alveolopalatal` | `consonantal` |
 | 1 | `tonic` | `cons` |
 | 1 | `glide` | `click` |
