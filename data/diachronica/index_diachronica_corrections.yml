@@ -152,18 +152,6 @@ rules:
                   content: "S → ∅ / N_S"
                   reason: "Can't find any reference to POA in original source. Same POA as what exactly?: http://www.kunstsprachen.de/s17/rules.sch"
         - rule:
-                  id: Egyptian-Arabic-i-u
-                  content: "i u → e o  / _[-long] ! _#"
-                  reason: "Replacing prose"
-        - rule:
-                  id: Cypriot-Arabic-u,a,i
-                  content: "{u,a,i} → ∅ / _[+stress, -long]"
-                  reason: "Replacing prose"
-        - rule:
-                  id: Egyptian-Arabic-u
-                  content: "u → {o,u} / _[-long]#"
-                  reason: "Replacing prose"
-        - rule:
                   id: Egyptian-Arabic-i,u
                   content: "{i,u} → ∅ / VC_[-stress, -long]CV"
                   reason: "Replacing prose"

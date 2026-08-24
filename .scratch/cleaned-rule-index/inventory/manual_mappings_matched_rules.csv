@@ -5,7 +5,11 @@ section_index,section_name,rule_id,source,manual_mapping
 6.2.1.1.4,Proto-Agaw to Xamtanga,"Xamtanga-xʷ,ɢʷ",index_diachronica_original.html:1218," / #_, _#"
 6.2.2.1.5,Proto-Semitic to Classical Arabic,Classical-Arabic-s,index_diachronica_original.html:1321, / 
 6.2.2.1.5,Proto-Semitic to Classical Arabic,"Classical-Arabic-Vj,wV",index_diachronica_original.html:1326, / sporadic ; some sequences
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,"Cypriot-Arabic-u,a,i",index_diachronica_original.html:1362," _[+stress, -long]:%"
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_6,index_diachronica_original.html:1370, sporadic ; in the feminine ending
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-dˤ,index_diachronica_original.html:1380, ; (seems to be a sporadic change
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-i-u,index_diachronica_original.html:1382, / _[-long] ! 
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-u,index_diachronica_original.html:1383, / _[-long]#
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aj-aw,index_diachronica_original.html:1384, / 
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː,index_diachronica_original.html:1393," / _[+ emphatic], [+ emphatic]_"
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-h,index_diachronica_original.html:1401, / 
@@ -25,15 +29,16 @@ section_index,section_name,rule_id,source,manual_mapping
 7.4,Proto-Algonquian to Blackfoot,"Blackfoot-θ,tʃ,ʃ,r",index_diachronica_original.html:1711," / ! C_,_C"
 7.4,Proto-Algonquian to Blackfoot,Blackfoot-tsi,index_diachronica_original.html:1761, ; “(before a prefix; 
 7.4,Proto-Algonquian to Blackfoot,Blackfoot-a_2,index_diachronica_original.html:1765," ! #_, _#"
-7.6,Proto-Algonquian to Northern East Cree,Northern-East-Cree-a,index_diachronica_original.html:1803, / 
+7.6,Proto-Algonquian to Northern East Cree,Northern-East-Cree-a,index_diachronica_original.html:1803, / sporadic ; in some unaccented syllables
 7.7,Proto-Algonquian to Southern East Cree,Southern-East-Cree-ʃ,index_diachronica_original.html:1824, / 
 7.9,Proto-Algonquian to Swampy Cree,Swampy-Cree-ʃ,index_diachronica_original.html:1868, / 
 7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-tʃ,index_diachronica_original.html:1896, / 
-7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-t-s,index_diachronica_original.html:1897, / 
+7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-t-s,index_diachronica_original.html:1897, / sporadic ; diminutives
 7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-we,index_diachronica_original.html:1905," ! _,{"
 7.12,Proto-Algonquian to Menominee,Menominee-æ,index_diachronica_original.html:1960, / 
-7.13,Proto-Algonquian to Miami-Illinois,Miami-Illinois-tʃ,index_diachronica_original.html:1967, / 
-7.13,Proto-Algonquian to Miami-Illinois,Miami-Illinois-t,index_diachronica_original.html:1968, / 
+7.13,Proto-Algonquian to Miami-Illinois,Miami-Illinois-tʃ,index_diachronica_original.html:1967, / sporadic ; nominal suffixes
+7.13,Proto-Algonquian to Miami-Illinois,Miami-Illinois-t,index_diachronica_original.html:1968, / sporadic ; diminutives
+7.16,Proto-Algonquian to Piscataway,Piscataway-e,index_diachronica_original.html:2036, / sporadic ; unclear conditioning
 8.5.1,Proto-Turkic to Proto-Kypchak,Proto-Kypchak-ew,index_diachronica_original.html:2298,ew → øj → yj
 8.5.1.2,Proto-Kypchak to Kyrgyz,Kyrgyz-∅,index_diachronica_original.html:2327, ; (not sure what 
 10.1.1.2,Proto-Bali-Sasak-Sumbawan to Sasak,Sasak-Vh,index_diachronica_original.html:2559," ; (again, "
@@ -127,19 +132,19 @@ section_index,section_name,rule_id,source,manual_mapping
 17.2.4,Common Anatolian to Lydian,Lydian-w,index_diachronica_original.html:5141,w → v → f
 17.2.4,Common Anatolian to Lydian,"Lydian-e,o",index_diachronica_original.html:5148, / 
 17.2.5,Common Anatolian to Palaic,Palaic-a-e,index_diachronica_original.html:5165, / 
-17.3.1,Proto-Indo-European to Artsakh Armenian,"Artsakh-Armenian-i,u",index_diachronica_original.html:5188, / 
+17.3.1,Proto-Indo-European to Artsakh Armenian,"Artsakh-Armenian-i,u",index_diachronica_original.html:5188, / sporadic ; in some unstressed syllables
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-VN,index_diachronica_original.html:5208,VN → V[+nasal] → V
-17.3.2,Proto-Indo-European to Erevan Armenian,"Erevan-Armenian-i,u",index_diachronica_original.html:5225, / 
+17.3.2,Proto-Indo-European to Erevan Armenian,"Erevan-Armenian-i,u",index_diachronica_original.html:5225, / sporadic ; in some unstressed syllables
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-VN,index_diachronica_original.html:5245,VN → V[+nasal] → V
-17.3.3,Proto-Indo-European to Istanbul Armenian,"Istanbul-Armenian-i,u",index_diachronica_original.html:5262, / 
+17.3.3,Proto-Indo-European to Istanbul Armenian,"Istanbul-Armenian-i,u",index_diachronica_original.html:5262, / sporadic ; in some unstressed syllables
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-VN,index_diachronica_original.html:5282,VN → V[+nasal] → V
-17.3.4,Proto-Indo-European to Kharpert Armenian,"Kharpert-Armenian-i,u",index_diachronica_original.html:5299, / 
+17.3.4,Proto-Indo-European to Kharpert Armenian,"Kharpert-Armenian-i,u",index_diachronica_original.html:5299, / sporadic ; in some unstressed syllables
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-VN,index_diachronica_original.html:5319,VN → V[+nasal] → V
-17.3.5,Proto-Indo-European to Sebastia Armenian,"Sebastia-Armenian-i,u",index_diachronica_original.html:5336, / 
+17.3.5,Proto-Indo-European to Sebastia Armenian,"Sebastia-Armenian-i,u",index_diachronica_original.html:5336, / sporadic ; in some unstressed syllables
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-VN,index_diachronica_original.html:5355,VN → V[+nasal] → V
-17.3.6,Proto-Indo-European to Southeast Armenian,"Southeast-Armenian-i,u",index_diachronica_original.html:5372, / 
+17.3.6,Proto-Indo-European to Southeast Armenian,"Southeast-Armenian-i,u",index_diachronica_original.html:5372, / sporadic ; in some unstressed syllables
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-VN,index_diachronica_original.html:5394,VN → V[+nasal] → V
-17.3.7,Proto-Indo-European to Southwest Armenian,"Southwest-Armenian-i,u",index_diachronica_original.html:5411, / 
+17.3.7,Proto-Indo-European to Southwest Armenian,"Southwest-Armenian-i,u",index_diachronica_original.html:5411, / sporadic ; in some unstressed syllables
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-VN,index_diachronica_original.html:5432,VN → V[+nasal] → V
 17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-e,index_diachronica_original.html:5478, / _Ra sporadic ; (short a only)
 17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-oː,index_diachronica_original.html:5483, / 

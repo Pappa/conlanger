@@ -42,8 +42,6 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 ", in the feminine ending"," sporadic ; in the feminine ending",False,replace prose
 " / _Ra (short a only)"," / _Ra sporadic ; (short a only)",False,replace prose
 " / “[b]etween the last two vowels of a proparoxytone”"," / sporadic ; “[b]etween the last two vowels of a proparoxytone”",False,replace prose
-" / in "," / ",False,replace prose
-" ! in "," ! ",False,replace prose
 "There seems to ahve been some stuff going on"," ; There seems to ahve been some stuff going on",False,comment
 " (“[a]rchaic relic”)"," ; (“[a]rchaic relic”)",False,comment
 " / when stem-final"," / _%# ; when stem-final",False,"replace prose - this is an approximation and may be wrong"
@@ -79,8 +77,19 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 "+ B POA","β place",False,Point of articulation - asca syntax alpha notation
 "ATR","atr",False,Lowercase feature name
 "RTR","rtr",False,Lowercase feature name
-" / only when short, ! "," / _:[-long] ! ",False,replace prose
-" / short only, _#"," / _:[-long]#",False,replace prose
+" / only when short, ! "," / _[-long] ! ",False,replace prose
+" / short only, _#"," / _[-long]#",False,replace prose
 " _%, when stressed (short only)"," _[+stress, -long]:%",False,replace prose
 " / near gutturals"," / _[+laryngeal], [+laryngeal]_",False,replace prose
 " / in two cases cited"," / sporadic ; in two cases cited",False,replace prose
+" / in some unaccented syllables"," / sporadic ; in some unaccented syllables",False,replace prose
+" / in some unstressed syllables"," / sporadic ; in some unstressed syllables",False,replace prose
+" / inland varieties"," / sporadic ; inland varieties",False,replace prose
+" / in diminutives"," / sporadic ; diminutives",False,replace prose
+" / in nominal suffixes"," / sporadic ; nominal suffixes",False,replace prose
+" / unclear conditioning"," / sporadic ; unclear conditioning",False,replace prose
+" (seems to be a sporadic change"," ; (seems to be a sporadic change",False,comment
+" / in "," / ",False,replace prose
+" ! in "," ! ",False,replace prose
+
+
