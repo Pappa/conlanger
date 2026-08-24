@@ -1329,7 +1329,8 @@ def test_normalize_feature_matrices_in_field_rename_invert(input, expected):
         ("V[+glottalized]", "V[-place]"),
         ("_CV[+close-mid](C)#", "_CV[-hi,-lo,+tense](C)#"),
         ("_CV[+open-mid](C)#", "_CV[-hi,-lo,-tense](C)#"),
-        ("V[+open]", "V[+open]"),
+        ("V[-open]", "V[-lo]"),
+        ("V[-closed]", "V[-hi]"),
     ],
 )
 def test_normalize_feature_matrices_in_field_rename_polarity(input, expected):
@@ -1853,16 +1854,6 @@ def test_load_manual_mappings_rejects_duplicate_from(tmp_path: Path):
     )
     with pytest.raises(ValueError, match="duplicate"):
         load_manual_mappings(path)
-
-
-def test_apply_manual_mappings_substring_hit_first_occurrence_only():
-    mappings = [
-        ManualMapping(from_text="aa", to_text="XX", reason=""),
-        ManualMapping(from_text="bb", to_text="YY", reason=""),
-    ]
-    working, hits = apply_manual_mappings("aa mid aa bb", mappings)
-    assert working == "XX mid aa YY"
-    assert [(h.from_text, h.to_text) for h in hits] == [("aa", "XX"), ("bb", "YY")]
 
 
 def test_apply_manual_mappings_miss_leaves_text_unchanged():

@@ -4,23 +4,23 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9688** (one per index rule)
-- OK: **8299** (85.7%)
-- Fail: **1329** (13.7%)
+- OK: **8300** (85.7%)
+- Fail: **1328** (13.7%)
 - Skipped: **60** (0.6%)
-- Sections all OK: **338 / 711** (47.5%)
+- Sections all OK: **339 / 711** (47.7%)
 - Sections skipped: **3 / 714** (0.4%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 391 | `syntax_other` |
+| 392 | `syntax_other` |
 | 259 | `expected_underscore` |
 | 172 | `unknown_character` |
 | 131 | `runtime_other` |
 | 115 | `unknown_grouping` |
-| 56 | `prose_or_expected_arrow` |
-| 48 | `unknown_feature` |
+| 55 | `prose_or_expected_arrow` |
+| 47 | `unknown_feature` |
 | 43 | `nested_brackets` |
 | 38 | `expected_number` |
 | 32 | `diacritic_prereq` |
@@ -50,12 +50,11 @@
 | 8 | `samePOA` | `lateral` |
 | 6 | `lenis` | `tens` |
 | 5 | `weak` | `man` |
-| 3 | `initial` | `nasal` |
 | 3 | `palatalized` | `latrl` |
+| 3 | `initial` | `nasal` |
 | 2 | `fricative` | `rhotic` |
-| 1 | `lowpitch` | `voice` |
 | 1 | `highpitch` | `high` |
-| 1 | `APOA` | `root` |
+| 1 | `lowpitch` | `voice` |
 | 1 | `ejective` | `contin` |
 | 1 | `intertonic` | `anterior` |
 | 1 | `posttonic` | `sonor` |

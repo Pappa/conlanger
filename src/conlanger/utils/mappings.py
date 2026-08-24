@@ -180,7 +180,7 @@ def apply_manual_mappings(
     text: str,
     mappings: list[ManualMapping],
 ) -> tuple[str, list[ManualMappingHit]]:
-    """Replace ``from`` substrings with ``to`` (first occurrence each).
+    """Replace ``from`` substrings with ``to`` (all occurrences).
 
     Mappings are applied longest-``from`` first so a shorter pattern cannot steal
     a longer match when both would apply. Relative order among equal-length
@@ -193,6 +193,6 @@ def apply_manual_mappings(
     hits: list[ManualMappingHit] = []
     for row in ordered:
         if row.from_text and row.from_text in working:
-            working = working.replace(row.from_text, row.to_text, 1)
+            working = working.replace(row.from_text, row.to_text)
             hits.append(ManualMappingHit(from_text=row.from_text, to_text=row.to_text))
     return working, hits

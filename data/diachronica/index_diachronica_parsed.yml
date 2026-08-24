@@ -9758,8 +9758,8 @@ sections:
     source: index_diachronica_original.html:2845
     rule_id: Proto-Malayic-C1C2
   - stages:
-    - C[+ A POA]C[+ B POA]
-    - C[+ B POA]C[+ B POA]
+    - C[α place]C[β place]
+    - C[β place]C[β place]
     raw: C[+ A POA]C[+ B POA] → C[+ B POA]C[+ B POA]
     source: index_diachronica_original.html:2846
     rule_id: Proto-Malayic-C+-A-POAC+-B-POA

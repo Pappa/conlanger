@@ -61,6 +61,8 @@ section_index,section_name,rule_id,source,manual_mapping
 10.1.2.10,Proto-Philippine to Waray,Waray-*j_2,index_diachronica_original.html:2767,j
 10.2,Proto-Austronesian to Proto-Batak,"Proto-Batak-ts,ʈ-ɟ͡ʝ,ɖ-lʲ,ɲ-ʔ,x,s,h-ʀ",index_diachronica_original.html:2781, ; (velar fricative is conjectured
 10.2,Proto-Austronesian to Proto-Batak,Proto-Batak-z,index_diachronica_original.html:2783, ; (fricative changes to approximant)
+10.2.3,Proto-Malayo-Polynesian to Proto-Malayic,Proto-Malayic-C+-A-POAC+-B-POA,index_diachronica_original.html:2846,α place
+10.2.3,Proto-Malayo-Polynesian to Proto-Malayic,Proto-Malayic-C+-A-POAC+-B-POA,index_diachronica_original.html:2846,β place
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-ə_2,index_diachronica_original.html:2926, / _[+stress]
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-V,index_diachronica_original.html:2929, / _[-stress]
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-q,index_diachronica_original.html:2951,→ ʕ

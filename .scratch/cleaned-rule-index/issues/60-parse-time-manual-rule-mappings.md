@@ -68,7 +68,7 @@ working      ← apply_manual_mappings(raw)   # substring replace
 
 **Substring policy (implementation):**
 
-- Scan mappings in CSV order; if `from in working`, replace **first occurrence** only (`str.replace(from, to, 1)`), record hit, continue (allow chained fixes only if multiple rows match disjoint substrings — unlikely).
+- Scan mappings in CSV order; if `from in working`, replace **all occurrences** (`str.replace(from, to)`), record hit, continue (allow chained fixes only if multiple rows match disjoint substrings — unlikely).
 - Prefer **longest `from` first** when building the apply list if order ambiguity matters (document in code if adopted).
 
 Collect hits on the parser (or parse pass) with `section_index`, `section_name`, `rule_idx`, `source`, `manual_mapping` for regen to flush.
