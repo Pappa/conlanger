@@ -244,6 +244,7 @@ section_index,section_name,rule_id,source,manual_mapping
 24.1.6,Proto-Paman to UraÃ°i,UraÃ°i-Vː,index_diachronica_original.html:9458, / 
 24.1.7,Proto-Paman to Yinwum,Yinwum-Vː,index_diachronica_original.html:9470, / 
 29.1.1.1.1,Proto-Athabaskan to Ahtna,Ahtna-K,index_diachronica_original.html:9980, / sporadic ; in Mentasta Ahtna
+29.1.1.1.4,Proto-Athabaskan to Chilcotin,Chilcotin-V,index_diachronica_original.html:10007,rtr
 29.1.1.1.12,Proto-Athabaskan to Holikachuk,Holikachuk-e,index_diachronica_original.html:10089, / 
 29.1.1.1.12,Proto-Athabaskan to Holikachuk,Holikachuk-w,index_diachronica_original.html:10094,w → b → m
 29.1.1.1.14,Proto-Athabaskan to Lower Koyukon,Lower-Koyukon-w,index_diachronica_original.html:10115,w → b → m
@@ -259,10 +260,13 @@ section_index,section_name,rule_id,source,manual_mapping
 30.1.1,Pre-Proto-Bantu to Proto-Bantu,Proto-Bantu_2-S+-lenis-N+-lenis,index_diachronica_original.html:10462, / 
 30.1.1,Pre-Proto-Bantu to Proto-Bantu,Proto-Bantu_2-N+-lenis-N-lenis,index_diachronica_original.html:10463, / 
 30.1.1,Pre-Proto-Bantu to Proto-Bantu,Proto-Bantu_2-d2,index_diachronica_original.html:10464, / 
+30.1.1.1,Proto-Bantu to Sebirwa,Sebirwa-i-u-VS,index_diachronica_original.html:10469,atr
+30.1.1.1,Proto-Bantu to Sebirwa,Sebirwa-V+high-+ATR,index_diachronica_original.html:10471,atr
 30.1.2,Pre-Proto-Bantu to Proto-Manenguba,Proto-Manenguba-’p-’t-’d/d2-c-’ɟ-’k-ɡ,index_diachronica_original.html:10541, / 
 30.1.2,Pre-Proto-Bantu to Proto-Manenguba,Proto-Manenguba-N+-lenis,index_diachronica_original.html:10542, / 
 30.1.2,Pre-Proto-Bantu to Proto-Manenguba,"Proto-Manenguba-p-t-’t-’d,d2-c-k-’k",index_diachronica_original.html:10543, / 
 30.1.2,Pre-Proto-Bantu to Proto-Manenguba,"Proto-Manenguba-’m-m-’n-n-’ɲ,ɲ-ŋ",index_diachronica_original.html:10544, / 
+30.2.1,Proto-Potou-Akanic to Proto-Akanic,Proto-Akanic-V+high-+ATRCV+high-ATR,index_diachronica_original.html:10564,atr
 32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-e_3,index_diachronica_original.html:10804, / 
 32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-ẽ_3,index_diachronica_original.html:10807, / 
 33.3.1.3,Buena Vista Yokuts to Tulamni,Tulamni-Vʔ,index_diachronica_original.html:11077, / _[+stress]

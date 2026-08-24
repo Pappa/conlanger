@@ -20588,14 +20588,14 @@ sections:
   rules:
   - stages:
     - D T
-    - T T[+lenis]
+    - T T[-tense]
     env: '#_'
     raw: 'D T → T T[+lenis] / #_'
     source: index_diachronica_original.html:5053
     rule_id: Hittite-D-T
   - stages:
     - T D
-    - T[+fortis] T[+lenis]
+    - T[+tense] T[-tense]
     raw: T D → T[+fortis] T[+lenis]
     source: index_diachronica_original.html:5054
     rule_id: Hittite-T-D
@@ -20703,14 +20703,14 @@ sections:
   rules:
   - stages:
     - D T
-    - T T[+lenis]
+    - T T[-tense]
     env: '#_'
     raw: 'D T → T T[+lenis] / #_'
     source: index_diachronica_original.html:5073
     rule_id: Luwian-D-T
   - stages:
     - T D
-    - T[+fortis] T[+lenis]
+    - T[+tense] T[-tense]
     raw: T D → T[+fortis] T[+lenis]
     source: index_diachronica_original.html:5074
     rule_id: Luwian-T-D
@@ -21205,14 +21205,14 @@ sections:
   rules:
   - stages:
     - D T
-    - T T[+lenis]
+    - T T[-tense]
     env: '#_'
     raw: 'D T → T T[+lenis] / #_'
     source: index_diachronica_original.html:5157
     rule_id: Palaic-D-T
   - stages:
     - T D
-    - T[+fortis] T[+lenis]
+    - T[+tense] T[-tense]
     raw: T D → T[+fortis] T[+lenis]
     source: index_diachronica_original.html:5158
     rule_id: Palaic-T-D
@@ -47469,7 +47469,7 @@ sections:
   rules:
   - stages:
     - V
-    - '{Vˀ,V[+RTR]}'
+    - '{Vˀ,V[+rtr]}'
     raw: V → {Vˀ,V[+RTR]}
     source: index_diachronica_original.html:10007
     rule_id: Chilcotin-V
@@ -49353,15 +49353,15 @@ sections:
     A.15, Mbo Cluster) of Cameroon
   rules:
   - stages:
-    - S[+ lenis] N[+ lenis]
-    - S[- lenis] N[- lenis]
+    - S[-tense] N[-tense]
+    - S[+tense] N[+tense]
     env: C₁ position
     raw: S[+ lenis] N[+ lenis] → S[- lenis] N[- lenis] / in C₁ position
     source: index_diachronica_original.html:10462
     rule_id: Proto-Bantu_2-S+-lenis-N+-lenis
   - stages:
-    - N[+ lenis] N[-lenis]
-    - N[- lenis] ⁿS
+    - N[-tense] N[+tense]
+    - N[+tense] ⁿS
     env: C₂ position
     raw: N[+ lenis] N[-lenis] → N[- lenis] ⁿS / in C₂ position
     source: index_diachronica_original.html:10463
@@ -49381,7 +49381,7 @@ sections:
   - stages:
     - i u VS
     - j w A
-    env: _V[+high +ATR]
+    env: _V[+high +atr]
     raw: i u VS → j w A / _V[+high +ATR]
     source: index_diachronica_original.html:10469
     rule_id: Sebirwa-i-u-VS
@@ -49393,8 +49393,8 @@ sections:
     source: index_diachronica_original.html:10470
     rule_id: Sebirwa-S
   - stages:
-    - V[+high +ATR]
-    - V[+high -ATR]
+    - V[+high +atr]
+    - V[+high -atr]
     raw: V[+high +ATR] → V[+high -ATR]
     source: index_diachronica_original.html:10471
     rule_id: Sebirwa-V+high-+ATR
@@ -49658,8 +49658,8 @@ sections:
     source: index_diachronica_original.html:10541
     rule_id: Proto-Manenguba-’p-’t-’d/d2-c-’ɟ-’k-ɡ
   - stages:
-    - N[+ lenis]
-    - N[- lenis]
+    - N[-tense]
+    - N[+tense]
     env: C₁ position
     raw: N[+ lenis] → N[- lenis] / in C₁ position
     source: index_diachronica_original.html:10542
@@ -49767,8 +49767,8 @@ sections:
     224
   rules:
   - stages:
-    - V[+high +ATR](C(V[+high -ATR]))
-    - '#(C)V[-high +ATR](CV[+high +ATR])'
+    - V[+high +atr](C(V[+high -atr]))
+    - '#(C)V[-high +atr](CV[+high +atr])'
     env: '#J[+dorsal -voice]_'
     raw: 'V[+high +ATR](C(V[+high -ATR])) → #(C)V[-high +ATR](CV[+high +ATR]) / #J[+dorsal
       -voiced]_'
@@ -67078,8 +67078,8 @@ sections:
     source: index_diachronica_original.html:14092
     rule_id: Aquitanian-s
   - stages:
-    - S[+ fortis]
-    - S[- voice]ː (specifically, the source lists t[+ fortis] k[+ fortis]
+    - S[+tense]
+    - S[- voice]ː (specifically, the source lists t[+tense] k[+tense]
     - t(ː) k(ː), both of the tokens with optional length suffixes and *aTa
     - 〈atta〉, so I’m extrapolating)
     raw: S[+ fortis] → S[- voice]ː (specifically, the source lists t[+ fortis] k[+
@@ -67088,14 +67088,14 @@ sections:
     source: index_diachronica_original.html:14094
     rule_id: Aquitanian-S+-fortis
   - stages:
-    - n[+ fortis]
+    - n[+tense]
     - n(ː)
     env: V_V
     raw: n[+ fortis] → n(ː) / V_V
     source: index_diachronica_original.html:14095
     rule_id: Aquitanian-n+-fortis
   - stages:
-    - n[- fortis] n[+ fortis]
+    - n[-tense] n[+tense]
     - '{n,r}(?) n'
     raw: n[- fortis] n[+ fortis] → {n,r}(?) n
     source: index_diachronica_original.html:14096
@@ -67108,14 +67108,14 @@ sections:
     source: index_diachronica_original.html:14097
     rule_id: Aquitanian-N
   - stages:
-    - r[+ fortis]
+    - r[+tense]
     - ɾ
     env: _#
     raw: r[+ fortis] → ɾ / _#
     source: index_diachronica_original.html:14098
     rule_id: Aquitanian-r+-fortis
   - stages:
-    - r[+ fortis]
+    - r[+tense]
     - r
     raw: r[+ fortis] → r
     source: index_diachronica_original.html:14099
@@ -67833,7 +67833,7 @@ sections:
     source: index_diachronica_original.html:14195
     rule_id: Basque-—-V_3
   - stages:
-    - n[+ fortis]
+    - n[+tense]
     - n
     raw: n[+ fortis] → n
     source: index_diachronica_original.html:14196

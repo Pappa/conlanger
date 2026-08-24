@@ -4,8 +4,8 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9688** (one per index rule)
-- OK: **8300** (85.7%)
-- Fail: **1328** (13.7%)
+- OK: **8314** (85.8%)
+- Fail: **1314** (13.6%)
 - Skipped: **60** (0.6%)
 - Sections all OK: **339 / 711** (47.7%)
 - Sections skipped: **3 / 714** (0.4%)
@@ -14,16 +14,16 @@
 
 | count | failure_class |
 |------:|---------------|
-| 392 | `syntax_other` |
+| 394 | `syntax_other` |
 | 259 | `expected_underscore` |
 | 172 | `unknown_character` |
 | 131 | `runtime_other` |
 | 115 | `unknown_grouping` |
 | 55 | `prose_or_expected_arrow` |
-| 47 | `unknown_feature` |
 | 43 | `nested_brackets` |
 | 38 | `expected_number` |
 | 32 | `diacritic_prereq` |
+| 31 | `unknown_feature` |
 | 22 | `runtime_delete_only_segment` |
 | 14 | `stuff_after_word_bound` |
 | 4 | `panic_other` |
@@ -46,22 +46,19 @@
 
 | count | error_token | suggested |
 |------:|-------------|-----------|
-| 9 | `fortis` | `contin` |
 | 8 | `samePOA` | `lateral` |
-| 6 | `lenis` | `tens` |
 | 5 | `weak` | `man` |
-| 3 | `palatalized` | `latrl` |
 | 3 | `initial` | `nasal` |
+| 3 | `palatalized` | `latrl` |
 | 2 | `fricative` | `rhotic` |
-| 1 | `highpitch` | `high` |
 | 1 | `lowpitch` | `voice` |
-| 1 | `ejective` | `contin` |
-| 1 | `intertonic` | `anterior` |
+| 1 | `highpitch` | `high` |
 | 1 | `posttonic` | `sonor` |
+| 1 | `ejective` | `contin` |
 | 1 | `alveolopalatal` | `consonantal` |
+| 1 | `intertonic` | `anterior` |
 | 1 | `tonic` | `cons` |
 | 1 | `glide` | `click` |
-| 1 | `TR` | `rt` |
 | 1 | `accent` | `cont` |
 | 1 | `labiovelar` | `labiodental` |
 

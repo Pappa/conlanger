@@ -77,3 +77,5 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 " ʰS "," Sʰ ",False,I have no idea what ʰS  is supposed to represent - I'm assuming it's a typo for Sʰ
 "+ A POA","α place",False,Point of articulation - asca syntax alpha notation
 "+ B POA","β place",False,Point of articulation - asca syntax alpha notation
+"ATR","atr",False,Lowercase feature name
+"RTR","rtr",False,Lowercase feature name
