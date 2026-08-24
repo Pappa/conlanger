@@ -13,6 +13,12 @@ skip_sections:
     reason: "Need to refer to the cited source to determine the correct rule syntax"
   - id: "36.3.1.2"
     reason: "Index Diachrinica rules appear to contains groupings, but the source material seems to be referring to concrete phonemes in the proto language: https://shs.hal.science/halshs-00537990/document "
+  - id: "10.6"
+    reason: "It's not possible to determine how t₁, d₁, etc. should be represented"
+  - id: "6.2.2.1.1"
+    reason: "Need to refer to the cited source to determine the correct rule syntax"
+  - id: "6.2.2.1.6"
+    reason: "Need to refer to the cited source to determine the correct rule syntax"
 skip_rules:
   - id: Pre-Slavic-Vowel-Changes-i
     reason: chained optional multi-output; structurally unrepresentable in ASCA (ticket 84)

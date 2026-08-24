@@ -1582,6 +1582,7 @@ sections:
     raw: 'ŋ → ∅ / #_CV'
     source: index_diachronica_original.html:1251
     rule_id: Proto-Boreafrasian-ŋ
+  status: skipped
 - section: Proto-Boreafrasian to Egypto-Berber
   index: 6.2.2.1.2
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
@@ -2286,6 +2287,7 @@ sections:
     raw: aː → a / {Cˤ,w}_#
     source: index_diachronica_original.html:1372
     rule_id: Cypriot-Arabic-aː_2
+  status: skipped
 - section: Classical Arabic to Egyptian Arabic
   index: 6.2.2.1.7
   citation: 'Pogostick Man, from Brustad, Kristen, Mahmoud Al-Batal, and Abbas Al-Tonsi
@@ -15001,6 +15003,7 @@ sections:
     raw: Vː → V[- long]
     source: index_diachronica_original.html:3826
     rule_id: Proto-Paiwan-Vː
+  status: skipped
 - section: Proto-Paiwan to Northern Paiwan
   index: 10.6.1
   citation: 'Pogostick Man, from Chen, Chun-Mei (2006), A Comparative Study on Formosan

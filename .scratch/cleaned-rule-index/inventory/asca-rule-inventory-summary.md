@@ -3,28 +3,28 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
-- Rows: **9688** (one per index rule)
-- OK: **8314** (85.8%)
-- Fail: **1314** (13.6%)
-- Skipped: **60** (0.6%)
-- Sections all OK: **339 / 711** (47.7%)
-- Sections skipped: **3 / 714** (0.4%)
+- Rows: **9686** (one per index rule)
+- OK: **8273** (85.4%)
+- Fail: **1304** (13.5%)
+- Skipped: **109** (1.1%)
+- Sections all OK: **339 / 708** (47.9%)
+- Sections skipped: **6 / 714** (0.8%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 394 | `syntax_other` |
-| 259 | `expected_underscore` |
-| 172 | `unknown_character` |
-| 131 | `runtime_other` |
-| 115 | `unknown_grouping` |
+| 392 | `syntax_other` |
+| 256 | `expected_underscore` |
+| 170 | `unknown_character` |
+| 130 | `runtime_other` |
+| 114 | `unknown_grouping` |
 | 55 | `prose_or_expected_arrow` |
 | 43 | `nested_brackets` |
 | 38 | `expected_number` |
 | 32 | `diacritic_prereq` |
 | 31 | `unknown_feature` |
-| 22 | `runtime_delete_only_segment` |
+| 21 | `runtime_delete_only_segment` |
 | 14 | `stuff_after_word_bound` |
 | 4 | `panic_other` |
 | 2 | `format_error` |
@@ -38,7 +38,7 @@
 |------:|-------------|
 | 37 | `́` |
 | 22 | `̣` |
-| 14 | `₂` |
+| 13 | `₂` |
 | 12 | `̊` |
 | 9 | `ː` |
 
@@ -68,7 +68,7 @@
 |------:|-------------|
 | 28 | `R` |
 | 15 | `U` |
-| 14 | `E` |
+| 13 | `E` |
 | 10 | `B` |
 | 9 | `X` |
 | 7 | `K` |

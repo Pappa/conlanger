@@ -209,12 +209,12 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 6.2.2.1,Proto-North Erythrean to Proto-Chadic,Proto-Chadic-ħ-ʕ,,index_diachronica_original.html:1239,True,,,,,
 6.2.2.1,Proto-North Erythrean to Proto-Chadic,"Proto-Chadic-ts-dz-t,tsʼ-tʃʼ",,index_diachronica_original.html:1240,True,,,,,
 6.2.2.1,Proto-North Erythrean to Proto-Chadic,Proto-Chadic-ŋ,,index_diachronica_original.html:1241,True,,,,,
-6.2.2.1.1,Proto-North Erythrean to Proto-Boreafrasian,Proto-Boreafrasian-sʼ,,index_diachronica_original.html:1246,True,,,,,
-6.2.2.1.1,Proto-North Erythrean to Proto-Boreafrasian,Proto-Boreafrasian-h,,index_diachronica_original.html:1247,True,,,,,
-6.2.2.1.1,Proto-North Erythrean to Proto-Boreafrasian,Proto-Boreafrasian-z,,index_diachronica_original.html:1248,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | z > d / and (word-finally?) when | ^ @ Rule 1, Line 1"
-6.2.2.1.1,Proto-North Erythrean to Proto-Boreafrasian,"Proto-Boreafrasian-ɲ,ŋw",,index_diachronica_original.html:1249,True,,,,,
-6.2.2.1.1,Proto-North Erythrean to Proto-Boreafrasian,Proto-Boreafrasian-V,,index_diachronica_original.html:1250,False,runtime_delete_only_segment,broken-syntax,,,Runtime Error: Can't delete a word's only segment
-6.2.2.1.1,Proto-North Erythrean to Proto-Boreafrasian,Proto-Boreafrasian-ŋ,,index_diachronica_original.html:1251,True,,,,,
+6.2.2.1.1,Proto-North Erythrean to Proto-Boreafrasian,Proto-Boreafrasian-sʼ,,index_diachronica_original.html:1246,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.1,Proto-North Erythrean to Proto-Boreafrasian,Proto-Boreafrasian-h,,index_diachronica_original.html:1247,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.1,Proto-North Erythrean to Proto-Boreafrasian,Proto-Boreafrasian-z,,index_diachronica_original.html:1248,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.1,Proto-North Erythrean to Proto-Boreafrasian,"Proto-Boreafrasian-ɲ,ŋw",,index_diachronica_original.html:1249,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.1,Proto-North Erythrean to Proto-Boreafrasian,Proto-Boreafrasian-V,,index_diachronica_original.html:1250,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.1,Proto-North Erythrean to Proto-Boreafrasian,Proto-Boreafrasian-ŋ,,index_diachronica_original.html:1251,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
 6.2.2.1.2,Proto-Boreafrasian to Egypto-Berber,Egypto-Berber-ə,,index_diachronica_original.html:1256,True,,,,,
 6.2.2.1.2,Proto-Boreafrasian to Egypto-Berber,Egypto-Berber-h,,index_diachronica_original.html:1257,True,,,,,
 6.2.2.1.2,Proto-Boreafrasian to Egypto-Berber,Egypto-Berber-l,,index_diachronica_original.html:1258,True,,,,,
@@ -275,46 +275,44 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 6.2.2.1.5,Proto-Semitic to Classical Arabic,Classical-Arabic-ɬˤ,,index_diachronica_original.html:1324,True,,,,,
 6.2.2.1.5,Proto-Semitic to Classical Arabic,Classical-Arabic-m,,index_diachronica_original.html:1325,True,,,,,
 6.2.2.1.5,Proto-Semitic to Classical Arabic,"Classical-Arabic-Vj,wV",,index_diachronica_original.html:1326,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-S+-voice,,index_diachronica_original.html:1333,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-q,,index_diachronica_original.html:1334,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-S,,index_diachronica_original.html:1335,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-S_2,,index_diachronica_original.html:1336,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-S_3,,index_diachronica_original.html:1338,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-f-θ,,index_diachronica_original.html:1339,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-k-x,,index_diachronica_original.html:1340,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,"Cypriot-Arabic-l,nj",,index_diachronica_original.html:1341,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-j,,index_diachronica_original.html:1342,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received ',' | j > c / :{O,r}: | ^ @ Rule 1, Line 1"
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-j_2,,index_diachronica_original.html:1343,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-nx,,index_diachronica_original.html:1344,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-∅,,index_diachronica_original.html:1345,False,runtime_other,broken-syntax,,,"Runtime Error: An incomplete matrix cannot be inserted | ∅ > F / N_{O,r} // m_f | ^ @ Rule 1, Line 1"
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,"Cypriot-Arabic-ðˤ,dˤ",,index_diachronica_original.html:1346,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-tˤ-sˤ,,index_diachronica_original.html:1347,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-ʔ-h,,index_diachronica_original.html:1348,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-∅_2,,index_diachronica_original.html:1349,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-dʒ,,index_diachronica_original.html:1350,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-ɣ-ħ,,index_diachronica_original.html:1351,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-w,,index_diachronica_original.html:1352,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-wː,,index_diachronica_original.html:1353,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-jː,,index_diachronica_original.html:1354,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-uː-iː,,index_diachronica_original.html:1355,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-uː-iː_2,,index_diachronica_original.html:1356,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-i,,index_diachronica_original.html:1357,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received 'ˤ' | i > a / Cˤ_{q,ɣ,ʕ} | ^ @ Rule 1, Line 1"
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-i_2,,index_diachronica_original.html:1358,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received 'ˤ'. Did you forget a '/' between the output and environment? | i > a / {q,ɣ,ʕ}_Cˤ | ^ @ Rule 1, Line 1"
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a,,index_diachronica_original.html:1359,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-u,,index_diachronica_original.html:1360,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-u_2,,index_diachronica_original.html:1361,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,"Cypriot-Arabic-u,a,i",,index_diachronica_original.html:1362,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-uː-iː_3,,index_diachronica_original.html:1364,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_2,,index_diachronica_original.html:1365,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_3,,index_diachronica_original.html:1366,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-aː,,index_diachronica_original.html:1367,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_4,0,index_diachronica_original.html:1368,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_4,1,index_diachronica_original.html:1368,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_5,0,index_diachronica_original.html:1369,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_5,1,index_diachronica_original.html:1369,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_6,,index_diachronica_original.html:1370,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-aːʔ,,index_diachronica_original.html:1371,False,unknown_grouping,asca-unrepresentable,E,,"Syntax Error: Unknown grouping 'E'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | a:[+long]ʔ > e / :{E(C)_#,EC(C)_#}: | ^ @ Rule 1, Line 1"
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-aː_2,,index_diachronica_original.html:1372,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ˤ' | a:[+long] > a / {Cˤ,w}_# | ^ @ Rule 1, Line 1"
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-S+-voice,,index_diachronica_original.html:1333,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-q,,index_diachronica_original.html:1334,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-S,,index_diachronica_original.html:1335,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-S_2,,index_diachronica_original.html:1336,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-S_3,,index_diachronica_original.html:1338,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-f-θ,,index_diachronica_original.html:1339,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-k-x,,index_diachronica_original.html:1340,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,"Cypriot-Arabic-l,nj",,index_diachronica_original.html:1341,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-j,,index_diachronica_original.html:1342,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-j_2,,index_diachronica_original.html:1343,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-nx,,index_diachronica_original.html:1344,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-∅,,index_diachronica_original.html:1345,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,"Cypriot-Arabic-ðˤ,dˤ",,index_diachronica_original.html:1346,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-tˤ-sˤ,,index_diachronica_original.html:1347,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-ʔ-h,,index_diachronica_original.html:1348,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-∅_2,,index_diachronica_original.html:1349,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-dʒ,,index_diachronica_original.html:1350,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-ɣ-ħ,,index_diachronica_original.html:1351,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-w,,index_diachronica_original.html:1352,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-wː,,index_diachronica_original.html:1353,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-jː,,index_diachronica_original.html:1354,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-uː-iː,,index_diachronica_original.html:1355,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-uː-iː_2,,index_diachronica_original.html:1356,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-i,,index_diachronica_original.html:1357,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-i_2,,index_diachronica_original.html:1358,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a,,index_diachronica_original.html:1359,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-u,,index_diachronica_original.html:1360,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-u_2,,index_diachronica_original.html:1361,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,"Cypriot-Arabic-u,a,i",,index_diachronica_original.html:1362,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-uː-iː_3,,index_diachronica_original.html:1364,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_2,,index_diachronica_original.html:1365,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_3,,index_diachronica_original.html:1366,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-aː,,index_diachronica_original.html:1367,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_4,,index_diachronica_original.html:1368,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_5,,index_diachronica_original.html:1369,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_6,,index_diachronica_original.html:1370,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-aːʔ,,index_diachronica_original.html:1371,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-aː_2,,index_diachronica_original.html:1372,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-θ-ð,,index_diachronica_original.html:1377,True,,,,,
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-θ-ð_2,,index_diachronica_original.html:1378,True,,,,,
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-ðˤ,,index_diachronica_original.html:1379,True,,,,,
@@ -2121,11 +2119,11 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 10.5.2,Proto-Ongan to Onge,Onge-e_2,2,index_diachronica_original.html:3815,True,,,,,
 10.5.2,Proto-Ongan to Onge,Onge-N,,index_diachronica_original.html:3816,True,,,,,
 10.5.2,Proto-Ongan to Onge,Onge-ɡd-ɡl,,index_diachronica_original.html:3817,True,,,,,
-10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-t1-d1-d3-Z,,index_diachronica_original.html:3822,False,unknown_character,asca-unrepresentable,₁,,"Syntax Error: Unknown character '₁' | t₁ d₁ d₃ [+cont] > t d ɖ ɟ | ^ @ Rule 1, Line 1"
-10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-l-*L,,index_diachronica_original.html:3823,True,,,,,
-10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-b-d2,,index_diachronica_original.html:3824,False,unknown_character,asca-unrepresentable,₂,,"Syntax Error: Unknown character '₂' | b d₂ > {v,b} z | ^ @ Rule 1, Line 1"
-10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-S1-s-c,,index_diachronica_original.html:3825,True,,,,,
-10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-Vː,,index_diachronica_original.html:3826,True,,,,,
+10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-t1-d1-d3-Z,,index_diachronica_original.html:3822,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-l-*L,,index_diachronica_original.html:3823,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-b-d2,,index_diachronica_original.html:3824,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-S1-s-c,,index_diachronica_original.html:3825,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-Vː,,index_diachronica_original.html:3826,True,section_skipped,,,,section skipped at compile (parser_config skip_sections)
 10.6.1,Proto-Paiwan to Northern Paiwan,Northern-Paiwan-c-ɟ-q-ɭ,,index_diachronica_original.html:3831,True,,,,,
 10.6.2,Proto-Paiwan to Central Paiwan,Central-Paiwan-w,,index_diachronica_original.html:3837,True,,,,,
 10.6.3,Proto-Paiwan to Southern Paiwan,Southern-Paiwan-k-r,,index_diachronica_original.html:3843,True,,,,,
@@ -3025,7 +3023,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-l_2,,index_diachronica_original.html:5205,True,,,,,
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-Ns-sN,,index_diachronica_original.html:5206,True,,,,,
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-N,,index_diachronica_original.html:5207,True,,,,,
-17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-VN,,index_diachronica_original.html:5208,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | V[+nasal] > V / _#, in polysyllables | ^ @ Rule 1, Line 2"
+17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-VN,,index_diachronica_original.html:5208,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | VN > V[+nasal] / _#, in polysyllables | ^ @ Rule 1, Line 1"
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-N_2,,index_diachronica_original.html:5209,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | N > n / _#, in monosyllables | ^ @ Rule 1, Line 1"
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-N̩,,index_diachronica_original.html:5210,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '̩' | N̩ > n / _# | ^ @ Rule 1, Line 1"
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-m̩-n̩-r̩-l̩,,index_diachronica_original.html:5211,True,,,,,
@@ -3152,7 +3150,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-l_2,,index_diachronica_original.html:5352,True,,,,,
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-Ns-sN,,index_diachronica_original.html:5353,True,,,,,
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-N,,index_diachronica_original.html:5354,True,,,,,
-17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-VN,,index_diachronica_original.html:5355,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | V[+nasal] > V / _#, in polysyllables | ^ @ Rule 1, Line 2"
+17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-VN,,index_diachronica_original.html:5355,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | VN > V[+nasal] / _#, in polysyllables | ^ @ Rule 1, Line 1"
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-N_2,,index_diachronica_original.html:5356,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | N > n / _#, in monosyllables | ^ @ Rule 1, Line 1"
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-N̩,,index_diachronica_original.html:5357,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '̩' | N̩ > n / _# | ^ @ Rule 1, Line 1"
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-m̩-n̩-r̩-l̩,,index_diachronica_original.html:5358,True,,,,,
@@ -3186,7 +3184,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-l_2,,index_diachronica_original.html:5391,True,,,,,
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-Ns-sN,,index_diachronica_original.html:5392,True,,,,,
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-N,,index_diachronica_original.html:5393,True,,,,,
-17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-VN,,index_diachronica_original.html:5394,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | VN > V[+nasal] / _#, in polysyllables | ^ @ Rule 1, Line 1"
+17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-VN,,index_diachronica_original.html:5394,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | V[+nasal] > V / _#, in polysyllables | ^ @ Rule 1, Line 2"
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-N_2,,index_diachronica_original.html:5395,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | N > n / _#, in monosyllables | ^ @ Rule 1, Line 1"
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-N̩,,index_diachronica_original.html:5396,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received '̩' | N̩ > n / _# | ^ @ Rule 1, Line 1"
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-m̩-n̩-r̩-l̩,,index_diachronica_original.html:5397,True,,,,,
@@ -3432,7 +3430,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-k-ɡ,,index_diachronica_original.html:5703,True,,,,,
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-æː,,index_diachronica_original.html:5704,True,,,,,
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-æː_2,,index_diachronica_original.html:5705,True,,,,,
-17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-æu,,index_diachronica_original.html:5706,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received ')'. Did you forget a '/' between the output and environment? | æu > au / _V:[+back] in general?) | ^ @ Rule 1, Line 1"
+17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-æu,,index_diachronica_original.html:5706,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received ')'. Did you forget a '/' between the output and environment? | au > a / _V:[+back] in general?) | ^ @ Rule 1, Line 2"
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-aː,,index_diachronica_original.html:5707,True,,,,,
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-i-o,,index_diachronica_original.html:5708,True,,,,,
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-ai-au-eu,,index_diachronica_original.html:5709,True,,,,,
@@ -3696,7 +3694,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-a_2,,index_diachronica_original.html:6046,True,,,,,
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-uː,,index_diachronica_original.html:6047,True,,,,,
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-uː_2,,index_diachronica_original.html:6048,True,,,,,
-17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-uː_3,,index_diachronica_original.html:6049,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received ')'. Did you forget a '/' between the output and environment? | ʉ:[+long] > ʉw / _V) | ^ @ Rule 1, Line 2"
+17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-uː_3,,index_diachronica_original.html:6049,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received ')'. Did you forget a '/' between the output and environment? | u:[+long] > ʉ:[+long] / _V) | ^ @ Rule 1, Line 1"
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-ei-ou,,index_diachronica_original.html:6050,True,,,,,
 17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-uː,,index_diachronica_original.html:6055,True,,,,,
 17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-iu,,index_diachronica_original.html:6056,True,,,,,
@@ -5020,7 +5018,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.12.1.1.3,Latin to French,French-ɛau,,index_diachronica_original.html:7544,True,,,,,
 17.12.1.1.3,Latin to French,French-é,,index_diachronica_original.html:7545,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | e > ɛi / %[+lo] | ^ @ Rule 1, Line 1"
 17.12.1.1.3,Latin to French,French-é_2,,index_diachronica_original.html:7546,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | e > ɛ / %[+hi] | ^ @ Rule 1, Line 1"
-17.12.1.1.3,Latin to French,French-ó,,index_diachronica_original.html:7547,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | o > ou / %[+lo] | ^ @ Rule 1, Line 1"
+17.12.1.1.3,Latin to French,French-ó,,index_diachronica_original.html:7547,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | ou > ɛu / %[+lo] | ^ @ Rule 1, Line 2"
 17.12.1.1.3,Latin to French,French-ó_2,,index_diachronica_original.html:7548,True,,,,,
 17.12.1.1.3,Latin to French,French-ó_3,,index_diachronica_original.html:7549,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | o > ou / %[+hi] | ^ @ Rule 1, Line 1"
 17.12.1.1.3,Latin to French,French-e,,index_diachronica_original.html:7550,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received ':'. Did you forget a '/' between the output and environment? | e > ə / #(C,0)_($,0):[+stress] in %[+lo] | ^ @ Rule 1, Line 1"
@@ -5325,7 +5323,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.12.1.1.6,Vulgar Latin to Old Provençal,"Old-Provençal-t,dl-k,ɡl",,index_diachronica_original.html:7881,True,,,,,
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-∅_3,,index_diachronica_original.html:7882,True,,,,,
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-p-j,,index_diachronica_original.html:7883,True,,,,,
-17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-p-k-tʃ-b-ɡ-β-j,,index_diachronica_original.html:7884,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '>' | b ɡ i {b,u,u > y / _r | ^ @ Rule 1, Line 2"
+17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-p-k-tʃ-b-ɡ-β-j,,index_diachronica_original.html:7884,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received '}'. Did you forget a '/' between the output and environment? | y > i} ∅ {u,u / _r | ^ @ Rule 1, Line 3"
 17.12.1.1.6,Vulgar Latin to Old Provençal,"Old-Provençal-t,d",,index_diachronica_original.html:7885,True,,,,,
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-ð_6,,index_diachronica_original.html:7886,True,,,,,
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-∅_4,,index_diachronica_original.html:7887,True,,,,,
@@ -5494,7 +5492,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.12.1.1.8,Latin to Romanian,"Romanian-sc,st",,index_diachronica_original.html:8054,True,,,,,
 17.12.1.1.8,Latin to Romanian,Romanian-s_2,,index_diachronica_original.html:8055,True,,,,,
 17.12.1.1.8,Latin to Romanian,Romanian-c_2,,index_diachronica_original.html:8056,True,,,,,
-17.12.1.1.8,Latin to Romanian,Romanian-kj-ɡj,,index_diachronica_original.html:8057,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '∅' | tʃ {j,∅} (ɡj > is rare) | ^ @ Rule 1, Line 2"
+17.12.1.1.8,Latin to Romanian,Romanian-kj-ɡj,,index_diachronica_original.html:8057,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '∅' | kj ɡj > tʃ {j,∅} (ɡj | ^ @ Rule 1, Line 1"
 17.12.1.1.8,Latin to Romanian,Romanian-Pj,,index_diachronica_original.html:8058,True,,,,,
 17.12.1.1.8,Latin to Romanian,"Romanian-sj,stj,sːj",,index_diachronica_original.html:8059,True,,,,,
 17.12.1.1.8,Latin to Romanian,Romanian-j,,index_diachronica_original.html:8060,True,,,,,
@@ -7847,7 +7845,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 36.2,Sin Sukchu to Guānhuà,Guānhuà-yʔ_5,0,index_diachronica_original.html:11860,False,unknown_character,asca-unrepresentable,̣,,"Syntax Error: Unknown character '̣' | yʔ > ɥʔ / C̣, in -juət-types | ^ @ Rule 1, Line 1"
 36.2,Sin Sukchu to Guānhuà,Guānhuà-yʔ_5,1,index_diachronica_original.html:11860,False,unknown_character,asca-unrepresentable,̣,,"Syntax Error: Unknown character '̣' | yʔ > yʔ / C̣, in -juət-types | ^ @ Rule 1, Line 1"
 36.2,Sin Sukchu to Guānhuà,Guānhuà-yʔ_5,2,index_diachronica_original.html:11860,False,unknown_character,asca-unrepresentable,̣,,"Syntax Error: Unknown character '̣' | yʔ > uʔ / C̣, in -juət-types | ^ @ Rule 1, Line 1"
-36.2,Sin Sukchu to Guānhuà,Guānhuà-yʔ_6,,index_diachronica_original.html:11861,False,unknown_character,asca-unrepresentable,̣,,"Syntax Error: Unknown character '̣' | oʔ > ʊʔ?) / C̣_, in -k-types | ^ @ Rule 1, Line 2"
+36.2,Sin Sukchu to Guānhuà,Guānhuà-yʔ_6,,index_diachronica_original.html:11861,False,unknown_character,asca-unrepresentable,̣,,"Syntax Error: Unknown character '̣' | yʔ > oʔ / C̣_, in -k-types | ^ @ Rule 1, Line 1"
 36.2,Sin Sukchu to Guānhuà,Guānhuà-yjʔ,,index_diachronica_original.html:11862,True,,,,,
 36.2,Sin Sukchu to Guānhuà,Guānhuà-yn,,index_diachronica_original.html:11863,False,unknown_character,asca-unrepresentable,̣,,"Syntax Error: Unknown character '̣' | yn > un / C̣_ | ^ @ Rule 1, Line 1"
 36.2,Sin Sukchu to Guānhuà,Guānhuà-je-jeʔ-yeʔ,,index_diachronica_original.html:11864,False,unknown_character,asca-unrepresentable,̣,,"Syntax Error: Unknown character '̣' | je jeʔ yeʔ > ɛ ɛʔ uɛʔ / C̣_ | ^ @ Rule 1, Line 1"
@@ -9277,7 +9275,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-t_3,,index_diachronica_original.html:13867,True,,,,,
 42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-k,,index_diachronica_original.html:13868,True,,,,,
 42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-k_2,,index_diachronica_original.html:13869,True,,,,,
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-k_3,,index_diachronica_original.html:13870,False,expected_number,asca-unrepresentable,,,"Syntax Error: Expected number, but received j | ɣ > % / {O:[+delrel],O,%}_[+son,-syll] // [+son,-syll] = j | ^ @ Rule 1, Line 2"
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-k_3,,index_diachronica_original.html:13870,False,expected_number,asca-unrepresentable,,,"Syntax Error: Expected number, but received j | k > ɣ / {O:[+delrel],O,%}_[+son,-syll] // [+son,-syll] = j | ^ @ Rule 1, Line 1"
 42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-β,,index_diachronica_original.html:13871,True,,,,,
 42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-ʋ,,index_diachronica_original.html:13872,True,,,,,
 42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-ið,,index_diachronica_original.html:13873,True,,,,,
