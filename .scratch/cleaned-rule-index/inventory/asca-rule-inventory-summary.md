@@ -4,10 +4,10 @@
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
 - Rows: **9676** (one per index rule)
-- OK: **7993** (82.6%)
-- Fail: **1170** (12.1%)
+- OK: **8013** (82.8%)
+- Fail: **1150** (11.9%)
 - Skipped: **513** (5.3%)
-- Sections all OK: **344 / 692** (49.7%)
+- Sections all OK: **347 / 692** (50.1%)
 - Sections skipped: **22 / 714** (3.1%)
 
 ## Failure classes
@@ -15,19 +15,19 @@
 | count | failure_class |
 |------:|---------------|
 | 378 | `syntax_other` |
-| 211 | `expected_underscore` |
-| 131 | `unknown_character` |
+| 210 | `expected_underscore` |
+| 132 | `unknown_character` |
 | 129 | `runtime_other` |
 | 89 | `unknown_grouping` |
-| 47 | `prose_or_expected_arrow` |
+| 46 | `prose_or_expected_arrow` |
 | 41 | `nested_brackets` |
 | 38 | `expected_number` |
 | 32 | `diacritic_prereq` |
 | 31 | `unknown_feature` |
-| 21 | `runtime_delete_only_segment` |
 | 14 | `stuff_after_word_bound` |
 | 4 | `panic_other` |
 | 2 | `format_error` |
+| 2 | `runtime_delete_only_segment` |
 | 2 | `other` |
 
 ## Common Errors
@@ -40,7 +40,7 @@
 | 13 | `₂` |
 | 12 | `̊` |
 | 9 | `ː` |
-| 6 | `̺` |
+| 6 | `ŕ` |
 
 ### unknown_feature
 

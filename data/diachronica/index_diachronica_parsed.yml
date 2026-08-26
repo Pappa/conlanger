@@ -2495,12 +2495,14 @@ sections:
     raw: aː → æː / when not near emphatics
     source: index_diachronica_original.html:1410
     rule_id: Coastal-Hadhrami-Arabic-aː_2
-  - stages:
+  - comment: in some words; sporadic
+    stages:
     - V[-long]
     - ∅
-    env: '#C_C, in some words'
+    env: '#C_C'
     raw: 'V[-long] → ∅ / #C_C, in some words'
     source: index_diachronica_original.html:1412
+    sporadic: true
     rule_id: Coastal-Hadhrami-Arabic-V-long
 - section: Classical Arabic to Wādı̄ Hadhrami Arabic
   index: 6.2.2.1.9
