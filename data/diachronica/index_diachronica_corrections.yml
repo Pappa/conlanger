@@ -175,3 +175,7 @@ rules:
                   id: Proto-Slavic-Kʷ-ḱ-ɡ́
                   content: "Kʷ ḱ g → K s z"
                   reason: "Not really sure what to do with ɡ́"
+        - rule:
+                  id: Saigon-Vietnamese-ə
+                  content: "ə → ∅ / {i,ɨ}_{p,m,w}"
+                  reason: "Typo? - ə → ∅ / {i,ɨ}_{p,m.w}"

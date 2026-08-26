@@ -7878,6 +7878,7 @@ sections:
     raw: a ɔ → ɨə uə
     source: index_diachronica_original.html:2425
     rule_id: Middle-Vietnamese-a-ɔ
+  status: skipped
 - section: Middle Vietnamese to Hanoi Vietnamese
   index: 9.1.2.1
   citation: Pogostick Man, from Thompson, Laurence C. (1976), “Proto-Viet-Muong Phonology”.
@@ -8075,8 +8076,8 @@ sections:
   - stages:
     - ə
     - ∅
-    env: '{i,ɨ}_{p,m.w}'
-    raw: ə → ∅ / {i,ɨ}_{p,m.w}
+    env: '{i,ɨ}_{p,m,w}'
+    raw: ə → ∅ / {i,ɨ}_{p,m,w}
     source: index_diachronica_original.html:2480
     rule_id: Saigon-Vietnamese-ə
   - stages:
