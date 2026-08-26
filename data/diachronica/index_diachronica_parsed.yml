@@ -2218,7 +2218,7 @@ sections:
   - stages:
     - '{u,a,i}'
     - ∅
-    env: _[+stress, -long]:$
+    env: _[+stress, -long]$
     raw: '{u,a,i} → ∅ / _%, when stressed (short only)'
     source: index_diachronica_original.html:1362
     rule_id: Cypriot-Arabic-u,a,i

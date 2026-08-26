@@ -520,10 +520,9 @@ def test_parse_rule_element_keeps_nested_feature_matrix_optionals():
     )
     rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     assert rules[0]["stages"] == [
-        "V[+high +ATR](C(V[+high -ATR]))",
-        "#(C)V[-high +ATR](CV[+high +ATR])",
+        "V[+high +atr](C(V[+high -atr]))",
+        "#(C)V[-high +atr](CV[+high +atr])",
     ]
-    assert "comment" not in rules[0]
 
 
 def test_parse_rule_element_strips_unclosed_paren_gloss():

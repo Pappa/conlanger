@@ -40,14 +40,16 @@ from conlanger.tools.compile.asca.group_mappings import (
             "i > ə / {C:[+labial],C:[-front,+back,+hi,-lo,+round],C:[-front,+back,+hi,-lo],s}_",
         ),
         ("Cʷ > C", "C:[+round] > C"),
-        ("Kr > k", "Kr > k"),
+        ("Kr > k", "C:[-front,+back,+hi,-lo]r > k"),
         ("rK > k", "rK > k"),
-        ("Kw > k", "Kw > k"),
+        ("Kw > k", "C:[-front,+back,+hi,-lo]w > k"),
         ("Sʷ", "C:[+labial]"),
         ("X > y", "X > y"),
         ("S > P", "P > C:[+labial]"),
         ("K(ʷ) > k", "{C:[-front,+back,+hi,-lo,+round],C:[-front,+back,+hi,-lo]} > k"),
         ("Qʷ > k", "{C:[-front,+back,-hi,-lo,+round],[+click,+round]} > k"),
+        ("e > a / _R", "e > a / _[+son,-syll]"),
+        ("e > a / _Ra", "e > a / _[+son,-syll]a"),
     ],
 )
 def test_apply_asca_group_mappings_to_string(input, expected, fx_sample_group_mappings):

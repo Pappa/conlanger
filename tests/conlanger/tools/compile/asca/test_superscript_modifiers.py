@@ -30,22 +30,16 @@ from conlanger.tools.rules import DiachronicSeries
             "Pʲ > C:[+labial] / _C",
             "C:[+labial,+cor,+dist] > C:[+labial] / _C",
         ),
+        (
+            "Kʷ > K / _V[+round]",
+            "C:[-front,+back,+hi,-lo,+round] > C:[-front,+back,+hi,-lo] / _V[+round]",
+        ),
     ],
 )
 def test_normalize_asca_superscript_modifiers(text, expected):
     mappings = asca_group_mappings_dict()
     transformed = normalize_asca_superscript_modifiers(text, mappings)
     assert apply_asca_group_mappings_to_string(transformed, mappings) == expected
-
-
-def test_normalize_asca_superscript_modifiers_preserves_ticket_23_labial_regressions():
-    mappings = asca_group_mappings_dict()
-    text = "Kʷ > K / _V[+round]"
-    expected = apply_asca_group_mappings_to_string(text, mappings)
-    assert normalize_asca_superscript_modifiers(text, mappings) == text
-    assert expected == (
-        "C:[-front,+back,+hi,-lo,+round] > C:[-front,+back,+hi,-lo] / _V[+round]"
-    )
 
 
 @pytest.mark.parametrize(

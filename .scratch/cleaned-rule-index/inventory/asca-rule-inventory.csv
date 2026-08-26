@@ -682,7 +682,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 7.9,Proto-Algonquian to Swampy Cree,Swampy-Cree-θ,,index_diachronica_original.html:1865,True,,,,,
 7.9,Proto-Algonquian to Swampy Cree,Swampy-Cree-l,,index_diachronica_original.html:1866,True,,,,,
 7.9,Proto-Algonquian to Swampy Cree,"Swampy-Cree-n,q,hʃ-n,q,hl",,index_diachronica_original.html:1867,True,,,,,
-7.9,Proto-Algonquian to Swampy Cree,Swampy-Cree-ʃ,,index_diachronica_original.html:1868,False,unknown_grouping,asca-unrepresentable,W,,"Syntax Error: Unknown grouping 'W'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | ʃ > s / West Swampy Cree | ^ @ Rule 1, Line 1"
+7.9,Proto-Algonquian to Swampy Cree,Swampy-Cree-ʃ,,index_diachronica_original.html:1868,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | ʃ > s / Gest Pwampy Cree | ^ @ Rule 1, Line 1"
 7.9,Proto-Algonquian to Swampy Cree,Swampy-Cree-tʃ,,index_diachronica_original.html:1869,True,,,,,
 7.9,Proto-Algonquian to Swampy Cree,Swampy-Cree-θ_2,,index_diachronica_original.html:1870,True,,,,,
 7.9,Proto-Algonquian to Swampy Cree,Swampy-Cree-l_2,,index_diachronica_original.html:1871,True,,,,,
@@ -1648,8 +1648,8 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-jʰ,,index_diachronica_original.html:3233,False,diacritic_prereq,asca-unrepresentable,,,"Syntax Error: Segment does not have prerequisite properties to have this diacritic. Must be [-voice] | jʰ > h / _i | ^^ @ Rule 1, Line 1"
 10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-bw-mw,,index_diachronica_original.html:3234,True,,,,,
 10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-n-n̥,,index_diachronica_original.html:3235,False,unknown_character,asca-unrepresentable,̊,,"Syntax Error: Unknown character '̊' | n n̥ > ɲ ɲ̊ / _V:[+front] | ^ @ Rule 1, Line 1"
-10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-ONV,,index_diachronica_original.html:3236,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | ONV > C:[+labial][+spread]ṽ / Pije and Fwai | ^ @ Rule 1, Line 1"
-10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-f,,index_diachronica_original.html:3237,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | f > ɸ / Pije and Fwai | ^ @ Rule 1, Line 1"
+10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-ONV,,index_diachronica_original.html:3236,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | ONV > C:[+labial][+spread]ṽ / C:[+labial]ije and Fwai | ^ @ Rule 1, Line 1"
+10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-f,,index_diachronica_original.html:3237,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | f > ɸ / C:[+labial]ije and Fwai | ^ @ Rule 1, Line 1"
 10.3.5.4,Proto-New Caledonia to Proto-Northern,Proto-Northern-q-qː-k-kː-s-sː,,index_diachronica_original.html:3242,True,,,,,
 10.3.5.4,Proto-New Caledonia to Proto-Northern,Proto-Northern-Cː,,index_diachronica_original.html:3243,True,,,,,
 10.3.5.4,Proto-New Caledonia to Proto-Northern,Proto-Northern-C,,index_diachronica_original.html:3245,True,,,,,
@@ -1789,7 +1789,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-*R,0,index_diachronica_original.html:3422,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *R > ∅ | ^ @ Rule 1, Line 1"
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-*R,1,index_diachronica_original.html:3422,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *R > r | ^ @ Rule 1, Line 1"
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-ɲ-c-*j,,index_diachronica_original.html:3423,True,,,,,
-10.3.8,Proto-Oceanic to Tolomako,Tolomako-m-b,,index_diachronica_original.html:3424,False,unknown_character,asca-unrepresentable,̼,,"Syntax Error: Unknown character '̼' | n̼ t̼ > n t / _{a,e,i} | ^ @ Rule 1, Line 2"
+10.3.8,Proto-Oceanic to Tolomako,Tolomako-m-b,,index_diachronica_original.html:3424,False,unknown_character,asca-unrepresentable,̼,,"Syntax Error: Unknown character '̼' | m b > n̼ t̼ / _{a,e,i} | ^ @ Rule 1, Line 1"
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-pʷ-k,,index_diachronica_original.html:3425,True,,,,,
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-mʷ-bʷ-vʷ,,index_diachronica_original.html:3426,True,,,,,
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-d-ɡ,,index_diachronica_original.html:3427,True,,,,,
@@ -2608,7 +2608,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 15.2.2,Proto-Eskimo to Greenlandic Iñupiaq,Greenlandic-Iñupiaq-v-ɣ-ʁ,,index_diachronica_original.html:4658,True,,,,,
 15.2.2,Proto-Eskimo to Greenlandic Iñupiaq,"Greenlandic-Iñupiaq-p,v-t-k,ɣ",,index_diachronica_original.html:4659,True,,,,,
 15.2.2,Proto-Eskimo to Greenlandic Iñupiaq,Greenlandic-Iñupiaq-S1S2,,index_diachronica_original.html:4660,True,,,,,
-15.2.2,Proto-Eskimo to Greenlandic Iñupiaq,Greenlandic-Iñupiaq-lʁ,,index_diachronica_original.html:4661,False,syntax_other,broken-syntax,,,"Syntax Error: Output cannot be empty. Use `*` or '∅' to indicate deletion | Some metathesis in consonant clusters, the conditions of which are not elaborated upon > | ^ @ Rule 1, Line 1"
+15.2.2,Proto-Eskimo to Greenlandic Iñupiaq,Greenlandic-Iñupiaq-lʁ,,index_diachronica_original.html:4661,False,syntax_other,broken-syntax,,,"Syntax Error: Output cannot be empty. Use `*` or '∅' to indicate deletion | Pome metathesis in consonant clusters, the conditions of which are not elaborated upon > | ^ @ Rule 1, Line 1"
 15.2.2,Proto-Eskimo to Greenlandic Iñupiaq,Greenlandic-Iñupiaq-v,,index_diachronica_original.html:4662,True,,,,,
 15.2.2,Proto-Eskimo to Greenlandic Iñupiaq,Greenlandic-Iñupiaq-iv,,index_diachronica_original.html:4663,True,,,,,
 15.2.2,Proto-Eskimo to Greenlandic Iñupiaq,Greenlandic-Iñupiaq-dʒ_2,,index_diachronica_original.html:4664,True,,,,,
@@ -3241,7 +3241,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-ɡʷ,,index_diachronica_original.html:5475,True,,,,,
 17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-h,,index_diachronica_original.html:5476,True,,,,,
 17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-∅_2,,index_diachronica_original.html:5477,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | ∅ > i / C{l,r}S | ^ @ Rule 1, Line 1"
-17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-e,,index_diachronica_original.html:5478,False,unknown_grouping,asca-unrepresentable,R,,"Syntax Error: Unknown grouping 'R'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | e > a / _Ra | ^ @ Rule 1, Line 1"
+17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-e,,index_diachronica_original.html:5478,True,,,,,
 17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-∅_3,,index_diachronica_original.html:5479,True,,,,,
 17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-H_4,,index_diachronica_original.html:5480,True,,,,,
 17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-p…kʷ,,index_diachronica_original.html:5481,True,,,,,
@@ -3432,7 +3432,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.7.2.1.1,Anglo-Frisian to Old English,Old-English-V+nas,,index_diachronica_original.html:5720,True,,,,,
 17.7.2.1.1,Anglo-Frisian to Old English,"Old-English-i,u",,index_diachronica_original.html:5721,True,,,,,
 17.7.2.1.1,Anglo-Frisian to Old English,Old-English-k-ɣ-ɡ,,index_diachronica_original.html:5722,True,,,,,
-17.7.2.1.2,Old English to Kentish Middle English,Kentish-Middle-English-Vː,,index_diachronica_original.html:5727,False,unknown_grouping,asca-unrepresentable,E,,"Syntax Error: Unknown grouping 'E'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | V:[+long] > V[-long] / _C{V:[+long],C} // _st{#,V} or when preceding a cluster which had triggered a vowel to become long in Old English | ^ @ Rule 1, Line 1"
+17.7.2.1.2,Old English to Kentish Middle English,Kentish-Middle-English-Vː,,index_diachronica_original.html:5727,True,,,,,
 17.7.2.1.2,Old English to Kentish Middle English,Kentish-Middle-English-eɑ-eːɑ-eo-eːo,,index_diachronica_original.html:5728,True,,,,,
 17.7.2.1.2,Old English to Kentish Middle English,Kentish-Middle-English-æj,,index_diachronica_original.html:5729,True,,,,,
 17.7.2.1.2,Old English to Kentish Middle English,"Kentish-Middle-English-æːj,eːj",,index_diachronica_original.html:5730,True,,,,,
@@ -3449,7 +3449,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.7.2.1.2,Old English to Kentish Middle English,"Kentish-Middle-English-hn-wl,hl-hr",,index_diachronica_original.html:5742,True,,,,,
 17.7.2.1.2,Old English to Kentish Middle English,Kentish-Middle-English-ɣ,,index_diachronica_original.html:5743,True,,,,,
 17.7.2.1.2,Old English to Kentish Middle English,Kentish-Middle-English-ɣ_2,,index_diachronica_original.html:5744,True,,,,,
-17.7.2.1.3,Old English to Midlands Middle English,Midlands-Middle-English-Vː,,index_diachronica_original.html:5749,False,unknown_grouping,asca-unrepresentable,E,,"Syntax Error: Unknown grouping 'E'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | V:[+long] > V[-long] / _C{V:[+long],C} // _st{#,V} or when preceding a cluster which had triggered a vowel to become long in Old English | ^ @ Rule 1, Line 1"
+17.7.2.1.3,Old English to Midlands Middle English,Midlands-Middle-English-Vː,,index_diachronica_original.html:5749,True,,,,,
 17.7.2.1.3,Old English to Midlands Middle English,Midlands-Middle-English-eɑ-eːɑ-eo-eːo,,index_diachronica_original.html:5750,True,,,,,
 17.7.2.1.3,Old English to Midlands Middle English,Midlands-Middle-English-æj,,index_diachronica_original.html:5751,True,,,,,
 17.7.2.1.3,Old English to Midlands Middle English,"Midlands-Middle-English-æːj,eːj",,index_diachronica_original.html:5752,True,,,,,
@@ -3533,7 +3533,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.7.2.1.7,Early Modern English to British English,British-English-ʍ,,index_diachronica_original.html:5849,True,,,,,
 17.7.2.1.7,Early Modern English to British English,British-English-l,,index_diachronica_original.html:5850,True,,,,,
 17.7.2.1.7,Early Modern English to British English,British-English-oʊ,,index_diachronica_original.html:5851,True,,,,,
-17.7.2.1.8,Old English to Northern Middle English,Northern-Middle-English-Vː,,index_diachronica_original.html:5857,False,unknown_grouping,asca-unrepresentable,E,,"Syntax Error: Unknown grouping 'E'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | V:[+long] > V[-long] / _C{V:[+long],C} // _st{#,V} or when preceding a cluster which had triggered a vowel to become long in Old English | ^ @ Rule 1, Line 1"
+17.7.2.1.8,Old English to Northern Middle English,Northern-Middle-English-Vː,,index_diachronica_original.html:5857,True,,,,,
 17.7.2.1.8,Old English to Northern Middle English,Northern-Middle-English-eɑ-eːɑ-eo-eːo,,index_diachronica_original.html:5858,True,,,,,
 17.7.2.1.8,Old English to Northern Middle English,Northern-Middle-English-æj,,index_diachronica_original.html:5859,True,,,,,
 17.7.2.1.8,Old English to Northern Middle English,"Northern-Middle-English-æːj,eːj",,index_diachronica_original.html:5860,True,,,,,
@@ -3641,7 +3641,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.7.2.1.11,Scots to Falkirk Scots,Falkirk-Scots-n_2,,index_diachronica_original.html:5980,True,,,,,
 17.7.2.1.11,Scots to Falkirk Scots,Falkirk-Scots-l,,index_diachronica_original.html:5981,True,,,,,
 17.7.2.1.11,Scots to Falkirk Scots,Falkirk-Scots-ʟ,,index_diachronica_original.html:5982,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '//' | ʟ > ʊ / {a,ɛ}_, typically // _V | ^^ @ Rule 1, Line 1"
-17.7.2.1.12,Old English to Southern Middle English,Southern-Middle-English-Vː,,index_diachronica_original.html:5987,False,unknown_grouping,asca-unrepresentable,E,,"Syntax Error: Unknown grouping 'E'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | V:[+long] > V[-long] / _C{V:[+long],C} // _st{#,V} or when preceding a cluster which had triggered a vowel to become long in Old English | ^ @ Rule 1, Line 1"
+17.7.2.1.12,Old English to Southern Middle English,Southern-Middle-English-Vː,,index_diachronica_original.html:5987,True,,,,,
 17.7.2.1.12,Old English to Southern Middle English,Southern-Middle-English-eɑ-eːɑ-eo-eːo,,index_diachronica_original.html:5988,True,,,,,
 17.7.2.1.12,Old English to Southern Middle English,Southern-Middle-English-æj,,index_diachronica_original.html:5989,True,,,,,
 17.7.2.1.12,Old English to Southern Middle English,"Southern-Middle-English-æːj,eːj",,index_diachronica_original.html:5990,True,,,,,
@@ -4593,7 +4593,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.11.1,Proto-Slavic to Polish,Polish-ȵ,,index_diachronica_original.html:7093,True,,,,,
 17.11.1,Proto-Slavic to Polish,Polish-n,,index_diachronica_original.html:7094,True,,,,,
 17.11.1,Proto-Slavic to Polish,Polish-Cʲ,,index_diachronica_original.html:7096,True,,,,,
-17.11.1,Proto-Slavic to Polish,Polish-Cʲ_2,,index_diachronica_original.html:7097,False,unknown_grouping,asca-unrepresentable,M,,"Syntax Error: Unknown grouping 'M'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | C:[+cor,+dist] > C in select words due to prestige influence of Czech in the Middle Ages | ^ @ Rule 1, Line 1"
+17.11.1,Proto-Slavic to Polish,Polish-Cʲ_2,,index_diachronica_original.html:7097,False,unknown_grouping,asca-unrepresentable,M,,"Syntax Error: Unknown grouping 'M'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | C:[+cor,+dist] > C in select words due to prestige influence of Czech in the Middle O:[+delrel]ges | ^ @ Rule 1, Line 1"
 17.11.1,Proto-Slavic to Polish,Polish-Cʲ_3,,index_diachronica_original.html:7098,True,,,,,
 17.11.1,Proto-Slavic to Polish,Polish-t,,index_diachronica_original.html:7099,True,,,,,
 17.11.1,Proto-Slavic to Polish,Polish-n_2,,index_diachronica_original.html:7100,True,,,,,
@@ -4827,7 +4827,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.12.1.1.2,Latin to Catalan,Catalan-uː_2,,index_diachronica_original.html:7357,True,,,,,
 17.12.1.1.2,Latin to Catalan,Catalan-au,,index_diachronica_original.html:7358,True,,,,,
 17.12.1.1.2,Latin to Catalan,"Catalan-u,oː-o",,index_diachronica_original.html:7359,True,,,,,
-17.12.1.1.2,Latin to Catalan,"Catalan-u,oː",,index_diachronica_original.html:7360,False,unknown_grouping,asca-unrepresentable,E,,"Syntax Error: Unknown grouping 'E'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | {u,o:[+long]} > u / _$V:[+stress] in East Catalan | ^ @ Rule 1, Line 1"
+17.12.1.1.2,Latin to Catalan,"Catalan-u,oː",,index_diachronica_original.html:7360,True,,,,,
 17.12.1.1.2,Latin to Catalan,"Catalan-u,oː_2",,index_diachronica_original.html:7361,True,,,,,
 17.12.1.1.2,Latin to Catalan,Catalan-u_2,,index_diachronica_original.html:7362,True,,,,,
 17.12.1.1.2,Latin to Catalan,Catalan-aː,,index_diachronica_original.html:7363,True,,,,,
@@ -5560,7 +5560,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-mb-mn,,index_diachronica_original.html:8140,True,,,,,
 17.12.1.1.10,Vulgar Latin to Spanish,"Spanish-jl,lj-jn,nj-jɡ,ɡj",,index_diachronica_original.html:8141,True,,,,,
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-bj,,index_diachronica_original.html:8142,True,,,,,
-17.12.1.1.10,Vulgar Latin to Spanish,"Spanish-e-ɛ,a-ɔ-o",,index_diachronica_original.html:8143,False,unknown_grouping,asca-unrepresentable,R,,"Syntax Error: Unknown grouping 'R'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | Raising of e {ɛ,a} ɔ o > i e o u | ^ @ Rule 1, Line 1"
+17.12.1.1.10,Vulgar Latin to Spanish,"Spanish-e-ɛ,a-ɔ-o",,index_diachronica_original.html:8143,True,,,,,
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-—-e,,index_diachronica_original.html:8144,False,expected_number,asca-unrepresentable,,,"Syntax Error: Expected number, but received p | e > i / _Cj // C = p | ^ @ Rule 1, Line 1"
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-—-ɛ-ɔ-u,,index_diachronica_original.html:8145,True,,,,,
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-—-a,,index_diachronica_original.html:8146,True,,,,,
@@ -5664,7 +5664,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.13,Proto-Indo-European to Proto-Tocharian,Proto-Tocharian-Dʱ,,index_diachronica_original.html:8260,False,unknown_grouping,asca-unrepresentable,D,,"Syntax Error: Unknown grouping 'D'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | {D,Dʱ} > P:[-voice] | ^ @ Rule 1, Line 1"
 17.13,Proto-Indo-European to Proto-Tocharian,Proto-Tocharian-n̩,,index_diachronica_original.html:8261,True,,,,,
 17.13,Proto-Indo-European to Proto-Tocharian,Proto-Tocharian-R-H,,index_diachronica_original.html:8262,False,unknown_grouping,asca-unrepresentable,R,,"Syntax Error: Unknown grouping 'R'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | [+son,-syll] [-place] > uR ɨ / C_{C,#} when syllabic | ^ @ Rule 1, Line 1"
-17.13,Proto-Indo-European to Proto-Tocharian,Proto-Tocharian-R-Hn̩,,index_diachronica_original.html:8263,False,unknown_grouping,asca-unrepresentable,H,,"Syntax Error: Unknown grouping 'H'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | [+son,-syll] Hn̩ > ɛR ɨn / #_C | ^ @ Rule 1, Line 1"
+17.13,Proto-Indo-European to Proto-Tocharian,Proto-Tocharian-R-Hn̩,,index_diachronica_original.html:8263,False,unknown_grouping,asca-unrepresentable,R,,"Syntax Error: Unknown grouping 'R'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | [+son,-syll] [-place]n̩ > ɛR ɨn / #_C | ^ @ Rule 1, Line 1"
 17.13,Proto-Indo-European to Proto-Tocharian,Proto-Tocharian-H,,index_diachronica_original.html:8264,False,expected_number,asca-unrepresentable,,,"Syntax Error: Expected number, but received s | [-place] > ɛ / _[+son,-syll], when [+son,-syll] = syllabic | ^ @ Rule 1, Line 1"
 17.13,Proto-Indo-European to Proto-Tocharian,Proto-Tocharian-H_2,,index_diachronica_original.html:8265,True,,,,,
 17.13,Proto-Indo-European to Proto-Tocharian,Proto-Tocharian-h2e,,index_diachronica_original.html:8266,True,,,,,
@@ -6678,7 +6678,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 29.1.1.1.3,Proto-Athabaskan to Beaver,Beaver-TS,,index_diachronica_original.html:9995,True,,,,,
 29.1.1.1.3,Proto-Athabaskan to Beaver,"Beaver-TŠ,TŠʷ",,index_diachronica_original.html:9996,True,,,,,
 29.1.1.1.3,Proto-Athabaskan to Beaver,Beaver-K-Q,,index_diachronica_original.html:9997,True,,,,,
-29.1.1.1.3,Proto-Athabaskan to Beaver,Beaver-T,,index_diachronica_original.html:9998,False,unknown_grouping,asca-unrepresentable,B,,"Syntax Error: Unknown grouping 'B'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | P:[-voice] > P:[-voice]ʃ / _{i,e,u}, in the British Columbian dialect | ^ @ Rule 1, Line 1"
+29.1.1.1.3,Proto-Athabaskan to Beaver,Beaver-T,,index_diachronica_original.html:9998,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | P:[-voice] > P:[-voice]ʃ / _{i,e,u}, in the V:[+back]ritish Columbian dialect | ^ @ Rule 1, Line 1"
 29.1.1.1.3,Proto-Athabaskan to Beaver,"Beaver-n,ɲ",,index_diachronica_original.html:9999,True,,,,,
 29.1.1.1.3,Proto-Athabaskan to Beaver,Beaver-ɑ,,index_diachronica_original.html:10000,True,,,,,
 29.1.1.1.3,Proto-Athabaskan to Beaver,Beaver-Vˀ,,index_diachronica_original.html:10001,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received 'ˀ' | Vˀ > V:[tone: 5] | ^ @ Rule 1, Line 1"
@@ -6696,16 +6696,16 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 29.1.1.1.6,Proto-Athabaskan to Dakelh,"Dakelh-u-ɑ,ʊ",,index_diachronica_original.html:10026,True,,,,,
 29.1.1.1.6,Proto-Athabaskan to Dakelh,Dakelh-Vˀ,,index_diachronica_original.html:10027,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received 'ˀ' | Vˀ > V[+place] | ^ @ Rule 1, Line 1"
 29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,Deg-Hit’an-TS-TŠ,,index_diachronica_original.html:10032,True,,,,,
-29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,Deg-Hit’an-TŠʷ,,index_diachronica_original.html:10033,False,unknown_grouping,asca-unrepresentable,K,,"Syntax Error: Unknown grouping 'K'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | P:[-voice]ʂ > P:[-voice]P in Kuskokwim dialect) | ^ @ Rule 1, Line 2"
+29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,Deg-Hit’an-TŠʷ,,index_diachronica_original.html:10033,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received ')'. Did you forget a '/' between the output and environment? | P:[-voice]ʂ > P:[-voice]P in C:[-front,+back,+hi,-lo]uskokwim dialect) | ^ @ Rule 1, Line 2"
 29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,Deg-Hit’an-K,0,index_diachronica_original.html:10034,True,,,,,
 29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,Deg-Hit’an-K,1,index_diachronica_original.html:10034,True,,,,,
-29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,Deg-Hit’an-w,,index_diachronica_original.html:10035,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received ')'. Did you forget a '/' between the output and environment? | v > w in Shageluk dialect) | ^ @ Rule 1, Line 2"
+29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,Deg-Hit’an-w,,index_diachronica_original.html:10035,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received ')'. Did you forget a '/' between the output and environment? | v > w in Phageluk dialect) | ^ @ Rule 1, Line 2"
 29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,Deg-Hit’an-ɲ,,index_diachronica_original.html:10036,True,,,,,
 29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,Deg-Hit’an-R-F,,index_diachronica_original.html:10037,False,stuff_after_word_bound,asca-unrepresentable,,,"Syntax Error: Cannot have segments after the end of a word | [+son,-syll] F > [+son,-syll][-voice] F[-voice] / _# in suffixes | ^ @ Rule 1, Line 1"
 29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,"Deg-Hit’an-e-u-a-ɑ,ʊ",,index_diachronica_original.html:10038,True,,,,,
 29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,Deg-Hit’an-C’,,index_diachronica_original.html:10039,True,,,,,
 29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,Deg-Hit’an-Vˀ,,index_diachronica_original.html:10040,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received 'ˀ' | Vˀ > V[+place] | ^ @ Rule 1, Line 1"
-29.1.1.1.8,Proto-Athabaskan to Dena’ina,"Dena’ina-TŠ,TŠʷ",,index_diachronica_original.html:10045,False,unknown_grouping,asca-unrepresentable,U,,"Syntax Error: Unknown grouping 'U'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | P:[-voice]ʃ > P:[-voice]P in Upper Inlet dialect) | ^ @ Rule 1, Line 2"
+29.1.1.1.8,Proto-Athabaskan to Dena’ina,"Dena’ina-TŠ,TŠʷ",,index_diachronica_original.html:10045,False,unknown_grouping,asca-unrepresentable,I,,"Syntax Error: Unknown grouping 'I'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | P:[-voice]ʃ > P:[-voice]P in %pper Inlet dialect) | ^ @ Rule 1, Line 2"
 29.1.1.1.8,Proto-Athabaskan to Dena’ina,"Dena’ina-e-a-u-ə,ʊ",,index_diachronica_original.html:10046,True,,,,,
 29.1.1.1.8,Proto-Athabaskan to Dena’ina,"Dena’ina-ʃʷ,x-z,ʒʷ,ɣ",,index_diachronica_original.html:10047,True,,,,,
 29.1.1.1.8,Proto-Athabaskan to Dena’ina,Dena’ina-Vˀ,,index_diachronica_original.html:10048,False,prose_or_expected_arrow,asca-unrepresentable,,,"Syntax Error: Expected '>', '->' or '=>', but received 'ˀ' | Vˀ > V[+place] | ^ @ Rule 1, Line 1"
@@ -7133,7 +7133,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 32.1.2,Proto-Chatino to Tataltepec Chatino,Tataltepec-Chatino-ɛ_2,,index_diachronica_original.html:10829,True,,,,,
 32.1.2,Proto-Chatino to Tataltepec Chatino,Tataltepec-Chatino-ɛ_3,,index_diachronica_original.html:10830,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | ɛ > e / _ʔ#, in monosyllables | ^ @ Rule 1, Line 1"
 32.1.3,Proto-Chatino to Yaitepec Chatino,Yaitepec-Chatino-tʲ,,index_diachronica_original.html:10835,True,,,,,
-32.1.3,Proto-Chatino to Yaitepec Chatino,Yaitepec-Chatino-k,,index_diachronica_original.html:10837,False,unknown_grouping,asca-unrepresentable,E,,"Syntax Error: Unknown grouping 'E'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | k > tʃ / _Ek(ʷ) | ^ @ Rule 1, Line 1"
+32.1.3,Proto-Chatino to Yaitepec Chatino,Yaitepec-Chatino-k,,index_diachronica_original.html:10837,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received 'ʷ' | k > tʃ / _V:[+front]k(ʷ) | ^ @ Rule 1, Line 1"
 32.1.3,Proto-Chatino to Yaitepec Chatino,Yaitepec-Chatino-kʲ,,index_diachronica_original.html:10838,True,,,,,
 32.1.3,Proto-Chatino to Yaitepec Chatino,Yaitepec-Chatino-kʲ_2,,index_diachronica_original.html:10839,True,,,,,
 32.1.3,Proto-Chatino to Yaitepec Chatino,Yaitepec-Chatino-kʷ,,index_diachronica_original.html:10840,True,,,,,
@@ -7965,7 +7965,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 36.3.2.1.1,Proto-rGyalrongic to Chos Kia,Chos-Kia-K,,index_diachronica_original.html:12026,False,syntax_other,broken-syntax,,,"Syntax Error: Expected '..', but received .' ' | C:[-front,+back,+hi,-lo] > ɡ. / _ç | ^ @ Rule 1, Line 1"
 36.3.2.1.1,Proto-rGyalrongic to Chos Kia,Chos-Kia-Nç,,index_diachronica_original.html:12027,False,syntax_other,broken-syntax,,,"Syntax Error: Expected '..', but received .'p' | Nç > n.pj. | ^ @ Rule 1, Line 1"
 36.3.2.1.1,Proto-rGyalrongic to Chos Kia,Chos-Kia-çl,,index_diachronica_original.html:12028,True,,,,,
-36.3.2.1.1,Proto-rGyalrongic to Chos Kia,Chos-Kia-Kts,,index_diachronica_original.html:12029,False,syntax_other,broken-syntax,,,"Syntax Error: Expected '..', but received .'t' | Kts > ɡ.tsʰ. | ^ @ Rule 1, Line 1"
+36.3.2.1.1,Proto-rGyalrongic to Chos Kia,Chos-Kia-Kts,,index_diachronica_original.html:12029,False,syntax_other,broken-syntax,,,"Syntax Error: Expected '..', but received .'t' | C:[-front,+back,+hi,-lo]ts > ɡ.tsʰ. | ^ @ Rule 1, Line 1"
 36.3.2.1.1,Proto-rGyalrongic to Chos Kia,Chos-Kia-lTS,,index_diachronica_original.html:12030,False,syntax_other,broken-syntax,,,"Syntax Error: Expected '..', but received .'d' | lTP > l.dz | ^ @ Rule 1, Line 1"
 36.3.2.1.1,Proto-rGyalrongic to Chos Kia,Chos-Kia-ts-rdz-dʒ-PTS-KTS-sTS-çTS,,index_diachronica_original.html:12031,False,syntax_other,broken-syntax,,,"Syntax Error: Expected '..', but received .'t' | ts {rdz,dz} dʒ C:[+labial]P:[-voice]P C:[-front,+back,+hi,-lo]P:[-voice]P sTP çTP > {tsʰ,s} {rts,ts} tsʰ ɡ.ts s.{ts,pj} {s.ts,br} | ^ @ Rule 1, Line 1"
 36.3.2.1.1,Proto-rGyalrongic to Chos Kia,Chos-Kia-rm-rn,,index_diachronica_original.html:12032,True,,,,,
@@ -8039,7 +8039,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 36.3.2.2.2,Proto-rGyalrongic to lCog Rtse,lCog-Rtse-C+-sibilant,,index_diachronica_original.html:12122,True,,,,,
 36.3.2.2.2,Proto-rGyalrongic to lCog Rtse,lCog-Rtse-N-P-K,,index_diachronica_original.html:12123,True,,,,,
 36.3.2.2.2,Proto-rGyalrongic to lCog Rtse,lCog-Rtse-l,,index_diachronica_original.html:12124,True,,,,,
-36.3.2.2.2,Proto-rGyalrongic to lCog Rtse,lCog-Rtse-ts-rdz-dzl-dʒ-NTS-PTS-Kts-KTS-sTS-çTS,,index_diachronica_original.html:12125,False,unknown_grouping,asca-unrepresentable,K,,"Syntax Error: Unknown grouping 'K'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | ts {rdz,dz} dzl dʒ NP:[-voice]P C:[+labial]P:[-voice]P Kts C:[-front,+back,+hi,-lo]P:[-voice]P sTP çTP > tsʰ {rts,ts} Ndz tsl ts ptç ktç kts sts {s,ç}ts | ^ @ Rule 1, Line 1"
+36.3.2.2.2,Proto-rGyalrongic to lCog Rtse,lCog-Rtse-ts-rdz-dzl-dʒ-NTS-PTS-Kts-KTS-sTS-çTS,,index_diachronica_original.html:12125,False,unknown_grouping,asca-unrepresentable,T,,"Syntax Error: Unknown grouping 'T'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | ts {rdz,dz} dzl dʒ NP:[-voice]P C:[+labial]P:[-voice]P C:[-front,+back,+hi,-lo]ts C:[-front,+back,+hi,-lo]P:[-voice]P sTP çTP > tsʰ {rts,ts} Ndz tsl ts ptç ktç kts sts {s,ç}ts | ^ @ Rule 1, Line 1"
 36.3.2.2.2,Proto-rGyalrongic to lCog Rtse,lCog-Rtse-LTS,,index_diachronica_original.html:12126,True,,,,,
 36.3.2.2.2,Proto-rGyalrongic to lCog Rtse,lCog-Rtse-N,,index_diachronica_original.html:12127,True,,,,,
 36.3.2.2.2,Proto-rGyalrongic to lCog Rtse,lCog-Rtse-*w,,index_diachronica_original.html:12128,False,syntax_other,broken-syntax,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | *w > ʔ / something to do either with back vowels or prefixes | ^ @ Rule 1, Line 1"
@@ -9175,13 +9175,13 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-m,,index_diachronica_original.html:13766,True,,,,,
 42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-ɤː?-ɑː-æː,,index_diachronica_original.html:13767,False,unknown_character,asca-unrepresentable,ː,,"Syntax Error: Unknown character 'ː' | {ɤ,ɤː} ɑ:[+long] æ:[+long] > {ɑ,ɑː} o:[+long] e:[+long] / _[+stress] | ^ @ Rule 1, Line 1"
 42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-a,,index_diachronica_original.html:13768,False,unknown_grouping,asca-unrepresentable,X,,"Syntax Error: Unknown grouping 'X'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | a > æ / {a,aX,e,eX,e,eX,i,iX,y,yX}(C)(C)_ when unstressed | ^ @ Rule 1, Line 1"
-42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-Aw,,index_diachronica_original.html:13769,False,unknown_grouping,asca-unrepresentable,A,,"Syntax Error: Unknown grouping 'A'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | Aw > o / _[-stress] | ^ @ Rule 1, Line 1"
+42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-Aw,,index_diachronica_original.html:13769,True,,,,,
 42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-i,,index_diachronica_original.html:13770,True,,,,,
 42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-iw,,index_diachronica_original.html:13771,True,,,,,
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-V,,index_diachronica_original.html:13776,True,,,,,
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ê-ô,,index_diachronica_original.html:13777,False,unknown_grouping,asca-unrepresentable,X,,"Syntax Error: Unknown grouping 'X'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | e o > e o / _(X)Ci | ^ @ Rule 1, Line 1"
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ê,,index_diachronica_original.html:13778,False,unknown_grouping,asca-unrepresentable,X,,"Syntax Error: Unknown grouping 'X'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | e > y / _(X)CO:[+delrel] | ^ @ Rule 1, Line 1"
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ô,,index_diachronica_original.html:13779,False,unknown_grouping,asca-unrepresentable,X,,"Syntax Error: Unknown grouping 'X'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | ɯ > i / _(X)CO:[+delrel] | ^ @ Rule 1, Line 2"
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ô,,index_diachronica_original.html:13779,False,unknown_grouping,asca-unrepresentable,X,,"Syntax Error: Unknown grouping 'X'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | o > ɯ / _(X)CO:[+delrel] | ^ @ Rule 1, Line 1"
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ej,,index_diachronica_original.html:13780,True,,,,,
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-æ,,index_diachronica_original.html:13781,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | æ > e / _j, unstressed | ^ @ Rule 1, Line 1"
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ɑ,,index_diachronica_original.html:13782,False,unknown_grouping,asca-unrepresentable,X,,"Syntax Error: Unknown grouping 'X'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | ɑ > e / :{o:[+stress]C_j,o:[+stress]XC_j,u:[+stress]C_j,u:[+stress]XC_j}: | ^ @ Rule 1, Line 1"
@@ -9199,11 +9199,11 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ŋ_5,,index_diachronica_original.html:13794,True,,,,,
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ŋ_6,,index_diachronica_original.html:13795,True,,,,,
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-uwa,,index_diachronica_original.html:13796,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received '('. Did you forget a '/' between the output and environment? | uwa > o:[+long] (*) | ^ @ Rule 1, Line 1"
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-Uwi-ewi,,index_diachronica_original.html:13797,False,unknown_grouping,asca-unrepresentable,U,,"Syntax Error: Unknown grouping 'U'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | Uwi ewi > o:[+long] ø:[+long] | ^ @ Rule 1, Line 1"
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-Uwi-ewi,,index_diachronica_original.html:13797,True,,,,,
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-i,,index_diachronica_original.html:13798,True,,,,,
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-wI,,index_diachronica_original.html:13799,False,unknown_grouping,asca-unrepresentable,I,,"Syntax Error: Unknown grouping 'I'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | wI > i | ^ @ Rule 1, Line 1"
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ji,,index_diachronica_original.html:13800,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received ',' | ji > O / :{i,e,y}: | ^ @ Rule 1, Line 1"
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-i_2,,index_diachronica_original.html:13801,False,unknown_grouping,asca-unrepresentable,A,,"Syntax Error: Unknown grouping 'A'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | i > ∅ / Aj_# | ^ @ Rule 1, Line 1"
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-i_2,,index_diachronica_original.html:13801,True,,,,,
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-i_3,,index_diachronica_original.html:13802,True,,,,,
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-j,,index_diachronica_original.html:13803,True,,,,,
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-yje,,index_diachronica_original.html:13804,True,,,,,
@@ -9216,8 +9216,8 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-n,,index_diachronica_original.html:13811,True,,,,,
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-w,,index_diachronica_original.html:13812,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '*' | w > ∅ / o_st (*) | ^ @ Rule 1, Line 1"
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ð,,index_diachronica_original.html:13813,True,,,,,
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tʃ,,index_diachronica_original.html:13814,False,unknown_grouping,asca-unrepresentable,E,,"Syntax Error: Unknown grouping 'E'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | tʃ > ts / _k, in South Estonian | ^ @ Rule 1, Line 1"
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tk,,index_diachronica_original.html:13815,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | tk > k / Pre-Livonian | ^ @ Rule 1, Line 1"
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tʃ,,index_diachronica_original.html:13814,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | tʃ > ts / _k, in Pouth V:[+front]stonian | ^ @ Rule 1, Line 1"
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tk,,index_diachronica_original.html:13815,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | tk > k / C:[+labial]re-Livonian | ^ @ Rule 1, Line 1"
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tʃ-tʃː,,index_diachronica_original.html:13816,True,,,,,
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-t,,index_diachronica_original.html:13817,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | t > ts / _i // following a coronal obstruent or | ^ @ Rule 1, Line 1"
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tj,,index_diachronica_original.html:13818,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | tj > ts // following a coronal obstruent or | ^ @ Rule 1, Line 1"
@@ -9278,7 +9278,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-h,,index_diachronica_original.html:13880,False,unknown_grouping,asca-unrepresentable,X,,"Syntax Error: Unknown grouping 'X'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | h > ∅ / V[-stress](X)_V | ^ @ Rule 1, Line 1"
 42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-AO,,index_diachronica_original.html:13881,False,syntax_other,broken-syntax,,,"Syntax Error: Syllables cannot be modified with 'length' | O:[+delrel]O > {O:[+delrel],O,%}:[+long] / _[-stress] | ^ ^^^^^^^ @ Rule 1, Line 1"
 42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-e,,index_diachronica_original.html:13882,True,,,,,
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-Ue,,index_diachronica_original.html:13883,False,unknown_grouping,asca-unrepresentable,U,,"Syntax Error: Unknown grouping 'U'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | Ue > e:[+long] / _[-stress] | ^ @ Rule 1, Line 1"
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-Ue,,index_diachronica_original.html:13883,True,,,,,
 42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-VU,,index_diachronica_original.html:13884,True,,,,,
 42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-iU-OU,,index_diachronica_original.html:13885,False,unknown_grouping,asca-unrepresentable,U,,"Syntax Error: Unknown grouping 'U'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | iU O% > U:[+long] O:[+long] | ^ @ Rule 1, Line 1"
 42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-æ,,index_diachronica_original.html:13886,True,,,,,
@@ -9405,7 +9405,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 44.1,Proto-Vasconic to Aquitanian,Aquitanian-ɡ,,index_diachronica_original.html:14101,True,,,,,
 44.2,Proto-Basque to Basque,Basque-Sʰ,,index_diachronica_original.html:14114,False,syntax_other,broken-syntax,,,"Syntax Error: The output of a deletion rule must only contain `*` or `∅` | h > ∅) / #_ | ^ @ Rule 1, Line 3"
 44.2,Proto-Basque to Basque,Basque-S,,index_diachronica_original.html:14115,False,runtime_other,broken-syntax,,,"Runtime Error: An incomplete matrix cannot be inserted | P > P[+voice] / #_ | ^^^^^^^^ @ Rule 1, Line 1"
-44.2,Proto-Basque to Basque,Basque-Vn,,index_diachronica_original.html:14117,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '//' | Vn > ṽ / _# (seems to have been reverted in most dialects // for Souletin) | ^^ @ Rule 1, Line 1"
+44.2,Proto-Basque to Basque,Basque-Vn,,index_diachronica_original.html:14117,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '//' | Vn > ṽ / _# (seems to have been reverted in most dialects // for Pouletin) | ^^ @ Rule 1, Line 1"
 44.2,Proto-Basque to Basque,Basque-Vn_2,,index_diachronica_original.html:14118,True,,,,,
 44.2,Proto-Basque to Basque,Basque-V,,index_diachronica_original.html:14119,True,,,,,
 44.2,Proto-Basque to Basque,Basque-d,,index_diachronica_original.html:14120,True,,,,,
@@ -9441,7 +9441,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 44.2,Proto-Basque to Basque,Basque-e,,index_diachronica_original.html:14150,True,,,,,
 44.2,Proto-Basque to Basque,Basque-e_2,,index_diachronica_original.html:14151,True,,,,,
 44.2,Proto-Basque to Basque,Basque-a-o-e,,index_diachronica_original.html:14152,False,unknown_character,asca-unrepresentable,ɛ,,"Syntax Error: Unknown character 'ɛ' | a o e > ɛ u i / {i,iC,0,u,uC,0}_ (this [ɛ] is tentatively marked as such | ^ @ Rule 1, Line 1"
-44.2,Proto-Basque to Basque,Basque-o,,index_diachronica_original.html:14153,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '' | o > u / _n{C,#} (Souletin | ^ @ Rule 1, Line 1"
+44.2,Proto-Basque to Basque,Basque-o,,index_diachronica_original.html:14153,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '' | o > u / _n{C,#} (Pouletin | ^ @ Rule 1, Line 1"
 44.2,Proto-Basque to Basque,Basque-a,,index_diachronica_original.html:14154,True,,,,,
 44.2,Proto-Basque to Basque,Basque-o-e,,index_diachronica_original.html:14155,True,,,,,
 44.2,Proto-Basque to Basque,Basque-e_3,,index_diachronica_original.html:14156,True,,,,,
@@ -9482,7 +9482,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 44.2,Proto-Basque to Basque,Basque-—-V_2,,index_diachronica_original.html:14194,True,,,,,
 44.2,Proto-Basque to Basque,Basque-—-V_3,,index_diachronica_original.html:14195,True,,,,,
 44.2,Proto-Basque to Basque,Basque-n+-fortis,,index_diachronica_original.html:14196,True,,,,,
-44.2,Proto-Basque to Basque,Basque-e_7,,index_diachronica_original.html:14198,False,unknown_grouping,asca-unrepresentable,U,,"Syntax Error: Unknown grouping 'U'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | e > ∅ / #Ur_ | ^ @ Rule 1, Line 1"
+44.2,Proto-Basque to Basque,Basque-e_7,,index_diachronica_original.html:14198,True,,,,,
 44.2,Proto-Basque to Basque,Basque-a_3,,index_diachronica_original.html:14199,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '' | a > ∅ / V_# (Guipuscoan | ^ @ Rule 1, Line 1"
 44.2,Proto-Basque to Basque,Basque-V_3,,index_diachronica_original.html:14200,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | V > ∅ / _#, in trisyllables | ^ @ Rule 1, Line 1"
 44.2,Proto-Basque to Basque,Basque-i_3,,index_diachronica_original.html:14201,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | i > ∅ / _#, in disyllables | ^ @ Rule 1, Line 1"
@@ -9535,7 +9535,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 45.1.3,Proto-Pai to Tipai,Tipai-tʃ,,index_diachronica_original.html:14281,True,,,,,
 45.1.3,Proto-Pai to Tipai,Tipai-ɲj,,index_diachronica_original.html:14282,True,,,,,
 45.1.3,Proto-Pai to Tipai,Tipai-Vː,,index_diachronica_original.html:14283,True,,,,,
-46.1,7-to-5 Vowel Merger (Bantu),5-Vowel-Merger-Bantu-S,,index_diachronica_original.html:14293,False,unknown_grouping,asca-unrepresentable,D,,"Syntax Error: Unknown grouping 'D'. Known groupings are (C)onsonant, (O)bstruent, (S)onorant, (P)losive, (F)ricative, (L)iquid, (N)asal, (G)lide, and (V)owel | P > F / _{i,u} (Do not necessarily have to be fricatives at the same C:[+labial]OO:[+delrel] | ^ @ Rule 1, Line 1"
+46.1,7-to-5 Vowel Merger (Bantu),5-Vowel-Merger-Bantu-S,,index_diachronica_original.html:14293,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '' | P > F / _{i,u} (P:[+voice]o not necessarily have to be fricatives at the same C:[+labial]OO:[+delrel] | ^ @ Rule 1, Line 1"
 46.1,7-to-5 Vowel Merger (Bantu),5-Vowel-Merger-Bantu-ɪ-ʊ,,index_diachronica_original.html:14294,True,,,,,
 46.2,California Vowel Shift (English),California-Vowel-Shift-English-æ-ɪ,,index_diachronica_original.html:14299,True,,,,,
 46.2,California Vowel Shift (English),California-Vowel-Shift-English-æ,0,index_diachronica_original.html:14301,True,,,,,
@@ -9644,7 +9644,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 46.19,Southern [United States] Shift (English),Southern-United-States-Shift-English-aɪ_4,,index_diachronica_original.html:14479,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | aɪ > a:[+long] / else | ^ @ Rule 1, Line 1"
 46.19,Southern [United States] Shift (English),Southern-United-States-Shift-English-æ-ɛ-ɪ,,index_diachronica_original.html:14480,True,,,,,
 46.19,Southern [United States] Shift (English),Southern-United-States-Shift-English-ɛjə-ɪjə-i-eɪ,,index_diachronica_original.html:14481,True,,,,,
-46.19,Southern [United States] Shift (English),Southern-United-States-Shift-English-uʊ-oʊ,,index_diachronica_original.html:14482,False,nested_brackets,asca-unrepresentable,,,"Syntax Error: Cannot have nested brackets of the same type | uʊ oʊ > ʉʊ̈ əʊ̈ (a bit of a guesstimate based upon the prose description in the article and the mean-formant-value chart cited from Labov, Ash & Bobert (2006)) | ^ @ Rule 1, Line 1"
+46.19,Southern [United States] Shift (English),Southern-United-States-Shift-English-uʊ-oʊ,,index_diachronica_original.html:14482,False,nested_brackets,asca-unrepresentable,,,"Syntax Error: Cannot have nested brackets of the same type | uʊ oʊ > ʉʊ̈ əʊ̈ (a bit of a guesstimate based upon the prose description in the article and the mean-formant-value chart cited from Labov, O:[+delrel]sh & V:[+back]obert (2006)) | ^ @ Rule 1, Line 1"
 46.19,Southern [United States] Shift (English),Southern-United-States-Shift-English-ɔ,,index_diachronica_original.html:14483,True,,,,,
 46.19,Southern [United States] Shift (English),Southern-United-States-Shift-English-ɑɹ,,index_diachronica_original.html:14484,True,,,,,
 46.19,Southern [United States] Shift (English),Southern-United-States-Shift-English-z,,index_diachronica_original.html:14485,True,,,,,
