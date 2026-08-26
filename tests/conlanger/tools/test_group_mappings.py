@@ -50,6 +50,8 @@ from conlanger.tools.compile.asca.group_mappings import (
         ("Qʷ > k", "{C:[-front,+back,-hi,-lo,+round],[+click,+round]} > k"),
         ("e > a / _R", "e > a / _[+son,-syll]"),
         ("e > a / _Ra", "e > a / _[+son,-syll]a"),
+        ("SR", "P[+son,-syll]"),
+        ("VOR > VːR", "VO[+son,-syll] > Vː[+son,-syll]"),
     ],
 )
 def test_apply_asca_group_mappings_to_string(input, expected, fx_sample_group_mappings):
