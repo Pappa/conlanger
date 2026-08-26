@@ -167,3 +167,11 @@ rules:
                   id: Moroccan-Arabic-u_2
                   content: "u → ʊ / _[-long]"
                   reason: "Replacing prose"
+        - rule:
+                  id: Proto-Slavic-bʱ-dʱ-ɡʱ,ɡ́ʱ-ɡʷʱ
+                  content: "bʱ dʱ ɡʱ ɡʷʱ → b d ɡ ɡʷ"
+                  reason: "Not really sure what to do with ɡ́"
+        - rule:
+                  id: Proto-Slavic-Kʷ-ḱ-ɡ́
+                  content: "Kʷ ḱ g → K s z"
+                  reason: "Not really sure what to do with ɡ́"

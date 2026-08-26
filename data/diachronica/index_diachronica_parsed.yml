@@ -4650,13 +4650,13 @@ sections:
     raw: '{n,q,h}ʃ {n,q,h}l → ʃ l'
     source: index_diachronica_original.html:1823
     rule_id: Southern-East-Cree-n,q,hʃ-n,q,hl
-  - comment: remains /ʃ/ in coastal varieties
+  - comment: in inland varieties; remains /ʃ/ in coastal varieties; sporadic
     stages:
     - ʃ
     - '{ʃ,s}'
-    env: inland varieties
     raw: ʃ → {ʃ,s} / in inland varieties; remains /ʃ/ in coastal varieties
     source: index_diachronica_original.html:1824
+    sporadic: true
     rule_id: Southern-East-Cree-ʃ
   - stages:
     - k
@@ -20239,6 +20239,7 @@ sections:
     raw: c ɟ → tʃ dʒ (for most speakers)
     source: index_diachronica_original.html:4992
     rule_id: Gheg-Albanian-c-ɟ
+  status: skipped
 - section: Proto-Indo-European to Tosk Albanian
   index: 17.1.2
   citation: Pogostick Man, from Wikipedia contributors (2013), “Albanian language”.
@@ -20481,6 +20482,7 @@ sections:
     raw: c ɟ → tʃ dʒ (much less widespread than in Gheg)
     source: index_diachronica_original.html:5030
     rule_id: Tosk-Albanian-c-ɟ
+  status: skipped
 - section: Proto-Indo-European to Common Anatolian
   index: '17.2'
   citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
@@ -21035,6 +21037,7 @@ sections:
     raw: a → e / _U[+e,i]
     source: index_diachronica_original.html:5123
     rule_id: Lycian-a
+  status: skipped
 - section: Common Anatolian to Lydian
   index: 17.2.4
   citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
@@ -21543,6 +21546,7 @@ sections:
     source: index_diachronica_original.html:5212
     sporadic: true
     rule_id: Artsakh-Armenian-V
+  status: skipped
 - section: Proto-Indo-European to Erevan Armenian
   index: 17.3.2
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -21774,6 +21778,7 @@ sections:
     source: index_diachronica_original.html:5249
     sporadic: true
     rule_id: Erevan-Armenian-V
+  status: skipped
 - section: Proto-Indo-European to Istanbul Armenian
   index: 17.3.3
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -22004,6 +22009,7 @@ sections:
     source: index_diachronica_original.html:5286
     sporadic: true
     rule_id: Istanbul-Armenian-V
+  status: skipped
 - section: Proto-Indo-European to Kharpert Armenian
   index: 17.3.4
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -22235,6 +22241,7 @@ sections:
     source: index_diachronica_original.html:5323
     sporadic: true
     rule_id: Kharpert-Armenian-V
+  status: skipped
 - section: Proto-Indo-European to Sebastia Armenian
   index: 17.3.5
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -22460,6 +22467,7 @@ sections:
     source: index_diachronica_original.html:5359
     sporadic: true
     rule_id: Sebastia-Armenian-V
+  status: skipped
 - section: Proto-Indo-European to Southeast Armenian
   index: 17.3.6
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -22705,6 +22713,7 @@ sections:
     source: index_diachronica_original.html:5398
     sporadic: true
     rule_id: Southeast-Armenian-V
+  status: skipped
 - section: Proto-Indo-European to Southwest Armenian
   index: 17.3.7
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -22943,6 +22952,7 @@ sections:
     source: index_diachronica_original.html:5436
     sporadic: true
     rule_id: Southwest-Armenian-V
+  status: skipped
 - section: Avestan
   index: '17.4'
 - section: Proto-Indo-European to Avestan
@@ -23058,6 +23068,7 @@ sections:
     raw: hₓ → ∅
     source: index_diachronica_original.html:5460
     rule_id: Avestan_2-hx
+  status: skipped
 - section: Proto-Indo-European to Proto-Celtic
   index: '17.5'
   citation: dhokarena56, from Matasović (2009), Etymological Dictionary of Proto-Celtic
@@ -24054,6 +24065,7 @@ sections:
     source: index_diachronica_original.html:5626
     rule_id: Dacian-kʷ,kw-ɡʷ,ɡw_2
     exception: _E
+  status: skipped
 - section: Proto-Indo-European to Common Germanic
   index: '17.7'
   citation: Siride
@@ -31180,6 +31192,7 @@ sections:
     raw: — e(ː) → a(ː) / “when unstressed?”
     source: index_diachronica_original.html:6815
     rule_id: Hittite_2-—-eː_2
+  status: skipped
 - section: Proto-Indo-European to Proto-Indo-Iranian
   index: '17.10'
   citation: Tropylium, from Kobayashi, Masato (2004), Historical Phonology of Old
@@ -32114,15 +32127,15 @@ sections:
     source: index_diachronica_original.html:6982
   rules:
   - stages:
-    - bʱ dʱ {ɡʱ,ɡ́ʱ} ɡʷʱ
+    - bʱ dʱ ɡʱ ɡʷʱ
     - b d ɡ ɡʷ
-    raw: bʱ dʱ {ɡʱ,ɡ́ʱ} ɡʷʱ → b d ɡ ɡʷ
+    raw: bʱ dʱ ɡʱ ɡʷʱ → b d ɡ ɡʷ
     source: index_diachronica_original.html:6983
     rule_id: Proto-Slavic-bʱ-dʱ-ɡʱ,ɡ́ʱ-ɡʷʱ
   - stages:
-    - Kʷ kʲ ɡ́
+    - Kʷ kʲ g
     - K s z
-    raw: Kʷ ḱ ɡ́ → K s z
+    raw: Kʷ ḱ g → K s z
     source: index_diachronica_original.html:6984
     rule_id: Proto-Slavic-Kʷ-ḱ-ɡ́
   - stages:
@@ -33934,12 +33947,12 @@ sections:
     raw: dʱ → d
     source: index_diachronica_original.html:7269
     rule_id: Latin-dʱ_5
-  - stages:
-    - kʲ ɡ́
-    - k ɡ
+  - stages: []
     raw: ḱ ɡ́ → k ɡ
     source: index_diachronica_original.html:7270
+    status: skipped
     rule_id: Latin-ḱ-ɡ́
+    comment: Not really sure what to do with ɡ́
   - stages:
     - ɡʱ
     - ɡ
@@ -34233,12 +34246,12 @@ sections:
     raw: l → r / lV_ “(in suffixes with l if root already has l)”
     source: index_diachronica_original.html:7311
     rule_id: Latin-l_2
-  - stages:
-    - r…r
-    - r…∅
+  - stages: []
     raw: r…r → r…∅
     source: index_diachronica_original.html:7312
+    status: skipped
     rule_id: Latin-r…r
+    comment: 'Not sure how to interpret rule: r…r → r…∅'
   - stages:
     - '{n,d}…r'
     - r…r
@@ -40298,6 +40311,7 @@ sections:
     raw: eu → ou
     source: index_diachronica_original.html:8232
     rule_id: Proto-Sibellian-eu
+  status: skipped
 - section: Proto-Sibellian to Oscan
   index: 17.12.2.1
   citation: Pogostick Man, from http://gillesquentel.org/docs/PIE_to_Italic_C.pdf

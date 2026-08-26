@@ -3,24 +3,24 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
-- Rows: **9682** (one per index rule)
-- OK: **8268** (85.4%)
-- Fail: **1267** (13.1%)
-- Skipped: **147** (1.5%)
-- Sections all OK: **341 / 706** (48.3%)
-- Sections skipped: **8 / 714** (1.1%)
+- Rows: **9676** (one per index rule)
+- OK: **7980** (82.5%)
+- Fail: **1183** (12.2%)
+- Skipped: **513** (5.3%)
+- Sections all OK: **344 / 692** (49.7%)
+- Sections skipped: **22 / 714** (3.1%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 390 | `syntax_other` |
-| 226 | `expected_underscore` |
-| 167 | `unknown_character` |
-| 130 | `runtime_other` |
-| 114 | `unknown_grouping` |
-| 54 | `prose_or_expected_arrow` |
-| 42 | `nested_brackets` |
+| 376 | `syntax_other` |
+| 207 | `expected_underscore` |
+| 132 | `unknown_character` |
+| 129 | `runtime_other` |
+| 108 | `unknown_grouping` |
+| 46 | `prose_or_expected_arrow` |
+| 41 | `nested_brackets` |
 | 38 | `expected_number` |
 | 32 | `diacritic_prereq` |
 | 31 | `unknown_feature` |
@@ -36,11 +36,11 @@
 
 | count | error_token |
 |------:|-------------|
-| 37 | `́` |
 | 22 | `̣` |
 | 13 | `₂` |
 | 12 | `̊` |
 | 9 | `ː` |
+| 6 | `ŕ` |
 
 ### unknown_feature
 
@@ -69,14 +69,14 @@
 | 28 | `R` |
 | 15 | `U` |
 | 13 | `E` |
-| 10 | `B` |
 | 9 | `X` |
 | 7 | `K` |
-| 7 | `M` |
 | 7 | `T` |
+| 6 | `M` |
+| 6 | `B` |
 | 5 | `H` |
-| 4 | `D` |
 | 3 | `Y` |
+| 3 | `D` |
 | 2 | `I` |
 | 2 | `A` |
 | 1 | `W` |

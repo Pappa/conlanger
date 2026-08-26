@@ -7,14 +7,6 @@ series_expansions:
   hₓ: [h₁, h₂, h₃]
   sₓ: [s₁, s₂, s₃]
 skip_sections:
-  - id: "37.1.2.4.2"
-    reason: "Index Diachronica does not represent the source material correctly: https://mspace.lib.umanitoba.ca/items/e0467e7f-1d1a-464f-b07f-8fefe8ce0225 p. 237"
-  - id: "36.1"
-    reason: "Need to refer to the cited source to determine the correct rule syntax"
-  - id: "36.3.1.2"
-    reason: "Index Diachrinica rules appear to contains groupings, but the source material seems to be referring to concrete phonemes in the proto language: https://shs.hal.science/halshs-00537990/document "
-  - id: "10.6"
-    reason: "It's not possible to determine how t₁, d₁, etc. should be represented"
   - id: "6.2.2.1.1"
     reason: "Need to refer to the cited source to determine the correct rule syntax"
   - id: "6.2.2.1.6"
@@ -23,6 +15,51 @@ skip_sections:
     reason: "Need to refer to the cited source to determine the correct rule syntax"
   - id: "6.2.2.1.14"
     reason: "Need to refer to the cited source to determine the correct rule syntax"
+  - id: "10.6"
+    reason: "It's not possible to determine how t₁, d₁, etc. should be represented"
+  - id: "17.1.1"
+    reason: "Not sure what to do with ɡ́"
+  - id: "17.1.2"
+    reason: "Not sure what to do with ɡ́"
+  - id: "17.2.3"
+    reason: "Not sure what to do with ɡ́"
+  - id: "17.3.1"
+    reason: "Not sure what to do with ɡ́"
+  - id: "17.3.2"
+    reason: "Not sure what to do with ɡ́"
+  - id: "17.3.3"
+    reason: "Not sure what to do with ɡ́"
+  - id: "17.3.4"
+    reason: "Not sure what to do with ɡ́"
+  - id: "17.3.5"
+    reason: "Not sure what to do with ɡ́"
+  - id: "17.3.6"
+    reason: "Not sure what to do with ɡ́"
+  - id: "17.3.7"
+    reason: "Not sure what to do with ɡ́"
+  - id: "17.4.1"
+    reason: "Not sure what to do with ɡ́"
+  - id: "17.6"
+    reason: "Not sure what to do with ɡ́"
+  - id: "17.9"
+    reason: "Not sure what to do with ɡ́"
+  - id: "17.12.2"
+    reason: "Not sure what to do with ɡ́"
+  - id: "36.1"
+    reason: "Need to refer to the cited source to determine the correct rule syntax"
+  - id: "36.3.1.2"
+    reason: |
+      Index Diachrinica rules appear to contains groupings, but the source material seems 
+      to be referring to concrete phonemes in the proto language:
+      https://shs.hal.science/halshs-00537990/document
+  - id: "37.1.2.4.2"
+    reason: |
+      Index Diachronica does not represent the source material correctly:
+      https://mspace.lib.umanitoba.ca/items/e0467e7f-1d1a-464f-b07f-8fefe8ce0225 p. 237
 skip_rules:
   - id: Pre-Slavic-Vowel-Changes-i
     reason: chained optional multi-output; structurally unrepresentable in ASCA (ticket 84)
+  - id: Latin-ḱ-ɡ́
+    reason: "Not really sure what to do with ɡ́"
+  - id: Latin-r…r
+    reason: "Not sure how to interpret rule: r…r → r…∅"
