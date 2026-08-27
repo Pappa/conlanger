@@ -7,8 +7,9 @@ Phase 2: optional ``/ env`` then optional ``! exception``
 Phase 3: first ``<p>`` after ``<h2>`` → section ``citation`` (whole text, cleanup later);
 other non-``schg`` paragraphs → ``comments``.
 Phase 4: pre-lxml ``<sub>``→Unicode normalisation, then element text extract; **Index
-Diachronica correction** overlay by **rule id**; **Manual mapping** on working copy
-(``raw`` unchanged). Then **collective subscript** expansion via ``parser_config.yml``
+Diachronica correction** overlay by **rule id**; **section mapping** on working copy
+from ``parser_config.yml`` ``section_mappings`` (ancestry merge); **Manual mapping** on
+working copy (``raw`` unchanged). Then **collective subscript** expansion via
 ``series_expansions`` on index fields (``raw`` unchanged). **Symbol** normalization on
 index fields only. Remaining Index rule arrows (``→``) in field values become ASCA ``>``.
 Chained rules store each spine segment in ``stages``; compile-time expansion is deferred.
@@ -48,6 +49,7 @@ from conlanger.utils.mappings import (
     apply_feature_mappings,
     apply_ipa_mappings,
     apply_manual_mappings,
+    apply_section_mappings,
 )
 from conlanger.utils.parsing import (
     extract_missing_arrow_rule_parts,
@@ -92,10 +94,6 @@ class IndexDiachronicaParser:
         self._matched_manual_froms: set[str] = set()
         self._matched_correction_ids: set[str] = set()
 
-    def abbreviations(self) -> dict[str, str]:
-        """Global abbreviation table for the cleaned index (empty at ingest)."""
-        return {}
-
     def unmatched_manual_mappings(self) -> list[ManualMapping]:
         """Return loaded mappings whose ``from`` never matched during this parse."""
         return [
@@ -127,7 +125,8 @@ class IndexDiachronicaParser:
             self._matched_correction_ids.add(rule_id)
         line = getattr(el, "sourceline", None) or 0
         source = f"{source_file}:{line}"
-        working, hits = apply_manual_mappings(raw, self._manual_mappings)
+        working = apply_section_mappings(raw, section_index, self._parser_config)
+        working, hits = apply_manual_mappings(working, self._manual_mappings)
         for hit in hits:
             self._matched_manual_froms.add(hit.from_text)
             self.manual_mapping_matches.append(
@@ -189,7 +188,7 @@ class IndexDiachronicaParser:
         *,
         source_file: str | None = None,
     ) -> dict[str, Any]:
-        """Parse HTML into ``{abbreviations, sections: [...]}``."""
+        """Parse HTML into ``{sections: [...]}``."""
         source_file = source_file or html_path.name
         self.manual_mapping_matches = []
         self._matched_manual_froms = set()
@@ -251,10 +250,7 @@ class IndexDiachronicaParser:
                 section_obj["status"] = "skipped"
             sections_out.append(section_obj)
 
-        return {
-            "abbreviations": self.abbreviations(),
-            "sections": sections_out,
-        }
+        return {"sections": sections_out}
 
 
 def parse_rule_element(

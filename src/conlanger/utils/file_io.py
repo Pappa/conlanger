@@ -169,9 +169,19 @@ def load_parser_config(path: Path | None = None) -> ParserConfig:
         if isinstance(members, list):
             series_expansions[str(token)] = tuple(str(m) for m in members)
     skip_rule_ids, skip_rule_comments = _parse_skip_rules(raw.get("skip_rules"))
+    raw_section_mappings = raw.get("section_mappings") or {}
+    section_mappings_sections: dict[str, dict[str, str]] = {}
+    if isinstance(raw_section_mappings, dict):
+        for section_key, token_map in raw_section_mappings.items():
+            if not isinstance(token_map, dict):
+                continue
+            section_mappings_sections[str(section_key)] = {
+                str(token): str(target) for token, target in token_map.items()
+            }
     return ParserConfig(
         ipa_mappings_confidence=frozenset(confidence),
         series_expansions=series_expansions,
+        section_mappings_sections=section_mappings_sections,
         skip_section_ids=_parse_skip_section_ids(raw.get("skip_sections")),
         skip_rule_ids=skip_rule_ids,
         skip_rule_comments=skip_rule_comments,

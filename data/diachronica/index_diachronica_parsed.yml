@@ -1,4 +1,3 @@
-abbreviations: {}
 sections:
 - section: Preface
   index: '1'
@@ -8470,34 +8469,34 @@ sections:
     Archipel 9(1):29 – 42; and from other changes and information from this document
   rules:
   - stages:
-    - '*T'
+    - T
     - t
     raw: '*T → t'
     source: index_diachronica_original.html:2595
     rule_id: Proto-Philippine-*T
   - stages:
-    - '{*D,*Z,z}'
+    - '{D,*Z,z}'
     - d
     env: '#_'
     raw: '{*D,*Z,z} → d / #_'
     source: index_diachronica_original.html:2596
     rule_id: Proto-Philippine-*D,*Z,z
   - stages:
-    - '*D'
+    - D
     - d
     env: _#
     raw: '*D → d / _#'
     source: index_diachronica_original.html:2597
     rule_id: Proto-Philippine-*D
   - stages:
-    - '*R'
+    - R
     - ɡ
     env: '#_'
     raw: '*R → ɡ / #_'
     source: index_diachronica_original.html:2598
     rule_id: Proto-Philippine-*R
   - stages:
-    - '*R'
+    - R
     - '{l,ɡ}'
     env: _#
     raw: '*R → {l,ɡ} / _#'
@@ -8535,7 +8534,7 @@ sections:
     source: index_diachronica_original.html:2607
     rule_id: Bicol-ə_2
   - stages:
-    - j {*D,z}
+    - j {D,z}
     - r d
     env: V_V
     raw: '*j {*D,z} → r d / V_V'
@@ -8556,7 +8555,7 @@ sections:
     source: index_diachronica_original.html:2610
     rule_id: Bicol-h-*j
   - stages:
-    - '*R'
+    - R
     - ɡ
     raw: '*R → ɡ'
     source: index_diachronica_original.html:2611
@@ -8585,7 +8584,7 @@ sections:
     source: index_diachronica_original.html:2618
     rule_id: Cebuano-ə
   - stages:
-    - '*D d'
+    - D d
     - l r
     env: V_V
     raw: '*D d → l r / V_V'
@@ -8613,7 +8612,7 @@ sections:
     source: index_diachronica_original.html:2622
     rule_id: Cebuano-h-*j
   - stages:
-    - '*R'
+    - R
     - ɡ
     raw: '*R → ɡ'
     source: index_diachronica_original.html:2623
@@ -8649,7 +8648,7 @@ sections:
     source: index_diachronica_original.html:2631
     rule_id: Hiligaynon-ə
   - stages:
-    - '*D'
+    - D
     - l
     raw: '*D → l'
     source: index_diachronica_original.html:2632
@@ -8709,7 +8708,7 @@ sections:
     source: index_diachronica_original.html:2643
     rule_id: Ibanag-ə
   - stages:
-    - '*D'
+    - D
     - r
     raw: '*D → r'
     source: index_diachronica_original.html:2645
@@ -8736,7 +8735,7 @@ sections:
     source: index_diachronica_original.html:2648
     rule_id: Ibanag-z
   - stages:
-    - '*R'
+    - R
     - ɡ
     raw: '*R → ɡ'
     source: index_diachronica_original.html:2649
@@ -8798,7 +8797,7 @@ sections:
     source: index_diachronica_original.html:2660
     rule_id: Ifugao-*j
   - stages:
-    - '{z,*Z,*D,j}'
+    - '{z,*Z,D,j}'
     - d
     raw: '{z,*Z,*D,*j} → d'
     source: index_diachronica_original.html:2661
@@ -8835,7 +8834,7 @@ sections:
     Archipel 9(1):29 – 42; and from other changes and information from this document
   rules:
   - stages:
-    - '*D'
+    - D
     - d
     raw: '*D → d'
     source: index_diachronica_original.html:2671
@@ -8901,7 +8900,7 @@ sections:
     source: index_diachronica_original.html:2683
     rule_id: Proto-Kalamian-z,j
   - stages:
-    - '*R ɲ'
+    - R ɲ
     - l n
     raw: '*R ɲ → l n'
     source: index_diachronica_original.html:2684
@@ -9185,7 +9184,7 @@ sections:
     source: index_diachronica_original.html:2743
   rules:
   - stages:
-    - '{*D,*Z}'
+    - '{D,*Z}'
     - d
     raw: '{*D,*Z} → d'
     source: index_diachronica_original.html:2737
@@ -9241,7 +9240,7 @@ sections:
     source: index_diachronica_original.html:2750
     rule_id: Tagalog-u
   - stages:
-    - '{*D,j} {d,z}'
+    - '{D,j} {d,z}'
     - l r
     env: V_V
     raw: '{*D,*j} {d,z} → l r / V_V'
@@ -9262,7 +9261,7 @@ sections:
     source: index_diachronica_original.html:2753
     rule_id: Tagalog-h-*j
   - stages:
-    - '*R'
+    - R
     - ɡ
     raw: '*R → ɡ'
     source: index_diachronica_original.html:2754
@@ -9300,20 +9299,20 @@ sections:
     source: index_diachronica_original.html:2762
     rule_id: Waray-ə
   - stages:
-    - '*T'
+    - T
     - t
     raw: '*T → t'
     source: index_diachronica_original.html:2763
     rule_id: Waray-*T
   - stages:
-    - '{*D,*Z}'
+    - '{D,*Z}'
     - r
     env: V_V
     raw: '{*D,*Z} → r / V_V'
     source: index_diachronica_original.html:2764
     rule_id: Waray-*D,*Z
   - stages:
-    - '{*D,*Z,z}'
+    - '{D,*Z,z}'
     - d
     raw: '{*D,*Z,z} → d'
     source: index_diachronica_original.html:2765
@@ -9332,7 +9331,7 @@ sections:
     source: index_diachronica_original.html:2767
     rule_id: Waray-*j_2
   - stages:
-    - '*R'
+    - R
     - ɡ
     raw: '*R → ɡ'
     source: index_diachronica_original.html:2768

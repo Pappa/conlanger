@@ -49,6 +49,7 @@ from conlanger.utils.mappings import (
     apply_feature_mappings,
     apply_ipa_mappings,
     apply_manual_mappings,
+    apply_section_mappings,
     normalize_feature_matrices_in_field,
     normalize_ipa_in_field,
 )
@@ -853,7 +854,7 @@ def test_parser_preserves_class_letters(tmp_path: Path):
 <p class="schg">S → a</p>""",
     )
     doc = default_index_parser().parse(html_path)
-    assert doc["abbreviations"] == {}
+    assert "abbreviations" not in doc
     assert doc["sections"][0]["rules"][0]["stages"][0] == "S"
 
 
@@ -1244,7 +1245,7 @@ def test_parser_normalizes_symbols_and_preserves_raw(tmp_path: Path):
 <p class="schg">a → b / _$%oː</p>""",
     )
     doc = default_index_parser().parse(html_path, source_file="mapped.html")
-    assert doc["abbreviations"] == {}
+    assert "abbreviations" not in doc
     rule = doc["sections"][0]["rules"][0]
     assert rule["stages"] == ["a", "b"]
     assert rule["env"] == "_$$oː"
@@ -1262,11 +1263,10 @@ def test_parser_class_letters_unchanged(tmp_path: Path):
 <p class="schg">S → a / V_V</p>""",
     )
     doc = default_index_parser().parse(html_path, source_file="unmapped.html")
-    assert doc["abbreviations"] == {}
+    assert "abbreviations" not in doc
     rule = doc["sections"][0]["rules"][0]
     assert rule["stages"][0] == "S"
     assert rule["env"] == "V_V"
-    assert default_index_parser().abbreviations() == {}
 
 
 def test_load_feature_mappings_from_default_csv():
@@ -1464,6 +1464,100 @@ def test_load_parser_config_default_includes_skip_section_seed():
 def test_load_parser_config_default_includes_skip_rule_seed():
     config = load_parser_config()
     assert "Pre-Slavic-Vowel-Changes-i" in config.skip_rule_ids
+
+
+def test_load_parser_config_section_mappings(tmp_path: Path):
+    path = tmp_path / "parser_config.yml"
+    path.write_text(
+        "ipa_mappings:\n  confidence: [high]\n"
+        "section_mappings:\n"
+        '  "10.1":\n'
+        '    "*D": "D"\n'
+        '    "*R": "R"\n'
+        '    "*T": "T"\n',
+        encoding="utf-8",
+    )
+    config = load_parser_config(path)
+    assert config.section_mappings_sections == {
+        "10.1": {"*D": "D", "*R": "R", "*T": "T"},
+    }
+
+
+def test_load_parser_config_section_mappings_empty_or_absent(tmp_path: Path):
+    path = tmp_path / "parser_config.yml"
+    path.write_text("ipa_mappings:\n  confidence: [high]\n", encoding="utf-8")
+    config = load_parser_config(path)
+    assert config.section_mappings_sections == {}
+
+
+def test_load_parser_config_default_includes_section_mapping_seed():
+    config = load_parser_config()
+    assert config.section_mappings_sections["10.1"] == {
+        "*D": "D",
+        "*R": "R",
+        "*T": "T",
+    }
+
+
+def test_parser_config_resolved_section_mappings_ancestry_and_override():
+    config = ParserConfig(
+        ipa_mappings_confidence=frozenset({"high"}),
+        section_mappings_sections={
+            "10.1": {"*D": "D", "*R": "R"},
+            "10.1.2": {"*D": "d"},
+        },
+    )
+    assert config.resolved_section_mappings("10.1.2.1") == {
+        "*D": "d",
+        "*R": "R",
+    }
+    assert config.resolved_section_mappings("10.2.1") == {}
+    assert config.resolved_section_mappings("") == {}
+
+
+def test_apply_section_mappings_longest_from_first():
+    config = ParserConfig(
+        ipa_mappings_confidence=frozenset({"high"}),
+        section_mappings_sections={"1.0": {"*D": "D", "*DZ": "dz"}},
+    )
+    assert apply_section_mappings("*DZ → z", "1.0", config) == "dz → z"
+
+
+def test_parse_rule_element_applies_section_mapping_keeps_raw():
+    el = html.fragment_fromstring(
+        '<p class="schg">*D → d / _#</p>',
+        create_parent=False,
+    )
+    parser = default_index_parser()
+    rules = parser.parse_rule_element(
+        el,
+        source_file="index_diachronica_original.html",
+        section_index="10.1.2.1",
+    )
+    assert rules[0]["stages"] == ["D", "d"]
+    assert rules[0]["env"] == "_#"
+    assert rules[0]["raw"] == "*D → d / _#"
+
+
+def test_parse_order_correction_then_section_then_manual():
+    el = html.fragment_fromstring(
+        '<p class="schg" id="Test-rule">*D → d</p>',
+        create_parent=False,
+    )
+    parser = default_index_parser(
+        corrections={"Test-rule": "*D → mapped"},
+        manual_mappings=[
+            ManualMapping(from_text="D → mapped", to_text="D → manual", reason=""),
+        ],
+    )
+    rules = parser.parse_rule_element(
+        el,
+        source_file="index.html",
+        section_index="10.1",
+        rule_id="Test-rule",
+    )
+    assert rules[0]["raw"] == "*D → mapped"
+    assert rules[0]["stages"] == ["D", "manual"]
 
 
 def test_load_parser_config_skip_rules(tmp_path: Path):

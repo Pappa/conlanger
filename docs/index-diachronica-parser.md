@@ -20,7 +20,6 @@ Parse-time transforms turn Index Diachronica HTML into an **applier-neutral** ru
 | Citation extraction (first `<p>` after `<h2>`, non-`schg`) | implemented | 4 | Bibliographic provenance per section. | `IndexDiachronicaParser.parse` |
 | Section comments (later non-`schg` paragraphs) | implemented | 5 | Editorial prose preserved separately from rules. | `IndexDiachronicaParser.parse`, `note_from_element` |
 | Rule extraction (`<p class="schg">` → `parse_rule_element`) | implemented | 6 | Sound-change rules are the index payload. | `IndexDiachronicaParser.parse` |
-| Global `abbreviations` | planned | 7 | Schema slot exists; global Key-to-Abbreviations not authored at ingest yet. | `IndexDiachronicaParser.abbreviations` (returns `{}`) |
 
 ---
 
@@ -34,6 +33,21 @@ Deterministic order is fixed in `parse_rule_element` (`tools/ingest/parser.py`).
 | --- | --- | ---: | --- | --- |
 | `<sub>` → Unicode subscripts | implemented | A1 | HTML `<sub>1</sub>` must become `₁` before token recognition. | `extract_text_with_subs`, `to_subscript` |
 | Whitespace collapse | implemented | A2 | Normalize inter-element whitespace on the rule line. | `strip_whitespace` (via `extract_text_with_subs`) |
+
+### Phase A½ — Working-line overlays (before structural split)
+
+Applied to a **working copy** of the extracted line; **`raw` is stored before any of this** and is never rewritten.
+
+| Step | Status | Order | Rationale | Code |
+| --- | --- | ---: | --- | --- |
+| Index Diachronica correction overlay (by rule id) | implemented | A½1 | Owner-authored Unicode line fixes from `index_diachronica_corrections.yml`; replaces extracted text when the HTML **rule id** matches. | `parse_rule_element` |
+| Section mapping (`section_mappings`) | implemented | A½2 | Section-scoped token rewrites from `data/parser_config.yml` (e.g. Austronesian `*D` → class letter `D`); ancestry merge via `section_index_prefixes` ([ticket 97](../.scratch/cleaned-rule-index/issues/97-implement-parser-config-section-mappings.md)). | `apply_section_mappings` |
+| Manual mapping (`manual_mappings.csv`) | implemented | A½3 | Owner-authored substring rewrites on the working line; longest `from` first. | `apply_manual_mappings` |
+| Quoted-prose detection | implemented | A½4 | Whole-line editorial prose → empty `stages` + `comment`; no further transforms. | `is_quoted_prose_paragraph` |
+
+---
+
+## Per-rule pipeline (continued)
 
 ### Phase B — Symbol normalization (before field split)
 
@@ -99,6 +113,7 @@ After **Manual mapping** and quoted-prose detection; **before** symbol normaliza
 | --- | --- |
 | `ipa_mappings.confidence` | Which `ipa_mappings.csv` confidence levels apply at parse |
 | `series_expansions` | Collective subscript fan-out (`Hₓ` → `h₁, h₂, h₃`, …) |
+| `section_mappings` | Section-scoped token rewrites (`"10.1": {"*D": "D", …}`); applies to matching section and all descendants; child row overrides ancestor for the same `from` key ([ticket 97](../.scratch/cleaned-rule-index/issues/97-implement-parser-config-section-mappings.md)) |
 | `skip_sections` | List of `{id, reason}` — `id` matches section `index`; `reason` is operator documentation only. Listed sections gain `status: skipped` in parsed YAML. |
 | `skip_rules` | List of `{id, reason}` — `id` matches HTML **rule id**; `reason` becomes optional index `comment`. Listed rules gain `status: skipped`. |
 
@@ -114,8 +129,8 @@ After **Manual mapping** and quoted-prose detection; **before** symbol normaliza
 | Feature matrix Phase 2+ (remaining place/manner, pitch accent, …) | planned | TBD | Tone pass shipped ([62](../.scratch/cleaned-rule-index/issues/62-correction-pass-tone-features.md)); other deferred features stay inventory-driven. |
 | Whitespace tokenisation inside brackets | deferred | TBD | Most polarity-space cases handled by feature regex; multi-word tone names are CSV keys with spaces. |
 | Meta-notation (`X0`, `Xn`, retroflex marks, repetition groups) | deferred (cluster-driven) | TBD | No evidence-based ASCA expansion without inventory clustering. |
-| Section-local abbreviations (`TŠ`, uppercase `S₁`) | deferred (cluster-driven) | TBD | Index global Key insufficient; hand-added rows when clusters warrant. |
-| Global abbreviation table authorship | planned | TBD | `abbreviations()` returns `{}`. |
+| Section-local abbreviations (`TŠ`, uppercase `S₁`) | partial (cluster-driven) | TBD | Owner-curated `section_mappings` rows at parse ([ticket 97](../.scratch/cleaned-rule-index/issues/97-implement-parser-config-section-mappings.md)); bulk authoring inventory-driven. |
+| Global abbreviation table authorship | removed | — | Document-level `abbreviations` key dropped from parse output; section mappings are config-driven, not stored tables. |
 | Edge-split / parse-time auto-skip for unrepresentable lines | removed | — | `status: skipped` is config-only ([ticket 89](../.scratch/cleaned-rule-index/issues/89-unify-status-skipped.md)); missing-arrow / gloss-only lines stay in parse → compile → validate. |
 | Prose-environment mapping (comment paragraphs → structured `env`) | planned (spike) | TBD | `comment` field captures qualifiers; structured env from prose not specified. |
 | Dedicated smart-quote normalizer | partial | TBD | Embedded/trailing `"`/`"` stripped as glosses at parse ([pass 24](../.scratch/cleaned-rule-index/issues/24-correction-pass-smart-quotes.md)); typographic apostrophe `'` → ejective at **compile**. |

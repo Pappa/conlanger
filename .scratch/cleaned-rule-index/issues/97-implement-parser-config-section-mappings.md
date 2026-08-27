@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: done
 
 # Implement parser_config section_mappings
 
@@ -101,12 +101,16 @@ Stop emitting the document-level `abbreviations` key from `IndexDiachronicaParse
 
 ## Acceptance criteria
 
-- [ ] `section_mappings` loads from `parser_config.yml` into `ParserConfig`
-- [ ] Mappings apply to matching section and all descendants; child overrides parent
-- [ ] Applied after corrections, before manual mappings; `raw` unchanged
-- [ ] Top-level `abbreviations` removed from parse output and dependent tests
-- [ ] Tests green; full gate when finishing
-- [ ] Parser docs updated
+- [x] `section_mappings` loads from `parser_config.yml` into `ParserConfig`
+- [x] Mappings apply to matching section and all descendants; child overrides parent
+- [x] Applied after corrections, before manual mappings; `raw` unchanged
+- [x] Top-level `abbreviations` removed from parse output and dependent tests
+- [x] Tests green; full gate when finishing
+- [x] Parser docs updated
+
+## Answer
+
+Regen (`uv run create_index`): **ok +18** for §10.x `*D`/`*R`/`*T` rules (18 changelog flips at 2026-08-27T22:04:06Z, sections 10.1.2–10.1.2.10). Inventory totals: ok=8606 (+18), fail=1070 (−18). Parsed YAML drops top-level `abbreviations`; Austronesian series tokens normalize to class letters `D`/`R`/`T` in `stages` while `raw` retains `*D`/`*R`/`*T`.
 
 ## References
 

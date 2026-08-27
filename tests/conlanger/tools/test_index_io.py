@@ -5,7 +5,6 @@ from conlanger.tools.index_io import dump_cleaned_index, write_cleaned_index
 
 def test_dump_cleaned_index_uses_literal_block_for_multiline_raw():
     doc = {
-        "abbreviations": {},
         "sections": [
             {
                 "section": "Test",
@@ -29,7 +28,6 @@ def test_dump_cleaned_index_uses_literal_block_for_multiline_raw():
 
 def test_dump_cleaned_index_single_line_raw_uses_plain_scalar():
     doc = {
-        "abbreviations": {},
         "sections": [
             {
                 "section": "Test",
@@ -51,7 +49,6 @@ def test_dump_cleaned_index_single_line_raw_uses_plain_scalar():
 
 def test_write_cleaned_index(tmp_path: Path):
     doc = {
-        "abbreviations": {},
         "sections": [
             {
                 "section": "Test",

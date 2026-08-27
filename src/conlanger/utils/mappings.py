@@ -67,9 +67,21 @@ class FeatureMapping:
 class ParserConfig:
     ipa_mappings_confidence: frozenset[str]
     series_expansions: dict[str, tuple[str, ...]] = field(default_factory=dict)
+    section_mappings_sections: dict[str, dict[str, str]] = field(default_factory=dict)
     skip_section_ids: frozenset[str] = field(default_factory=frozenset)
     skip_rule_ids: frozenset[str] = field(default_factory=frozenset)
     skip_rule_comments: dict[str, str] = field(default_factory=dict)
+
+    def resolved_section_mappings(self, section_index: str) -> dict[str, str]:
+        """Merge section rows via longest-prefix ancestry; child overrides parent."""
+        result: dict[str, str] = {}
+        if not section_index:
+            return result
+        for prefix in section_index_prefixes(section_index):
+            section_map = self.section_mappings_sections.get(prefix)
+            if section_map:
+                result.update(section_map)
+        return result
 
 
 @dataclass(frozen=True)
@@ -174,6 +186,25 @@ def apply_ipa_mappings(
         if key in result:
             result[key] = normalize_ipa_in_field(result[key], mappings)
     return result
+
+
+def apply_section_mappings(
+    text: str,
+    section_index: str,
+    config: ParserConfig,
+) -> str:
+    """Replace section-scoped tokens on the working line (``raw`` unchanged upstream)."""
+    if not text or not section_index:
+        return text
+    mapping = config.resolved_section_mappings(section_index)
+    if not mapping:
+        return text
+    ordered = sorted(mapping.items(), key=lambda pair: len(pair[0]), reverse=True)
+    working = text
+    for from_text, to_text in ordered:
+        if from_text and from_text in working:
+            working = working.replace(from_text, to_text)
+    return working
 
 
 def apply_manual_mappings(
