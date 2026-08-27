@@ -144,7 +144,7 @@ Per [`CONTEXT.md`](../../../CONTEXT.md) (**Meta-notation**): retroflex `X̣`, to
 
 **Evidence:**
 
-1. **Regex boundary (defensive):** `apply_asca_group_mappings_to_string` does not expand `C` in `C₁` — subscript is not in `_GROUPING_FOLLOW` ([`rules.py`](../../../src/conlanger/tools/rules.py) lines 7–8, 222–227). Probes: `C₁`, `S₁`, `C=1`, `S=1` all unchanged by group mappings alone.
+1. **Regex boundary (defensive):** `apply_asca_group_mappings_to_string` does not expand `C` in `C₁` — subscript is not in the **after** boundary ([`group_mappings.py`](../../../src/conlanger/tools/compile/asca/group_mappings.py)). Probes: `C₁`, `S₁`, `C=1`, `S=1` unchanged by group mappings alone. **Glued clusters** (`SR`, `VOR`, `VːR`) and env literals (`_Ra`) expand when **before** / **after** rules allow — see [sound-change-applier.md](../../../docs/sound-change-applier.md) § Class-letter expansion boundaries.
 2. **Semantic clarity:** `S₁ → S=1` preserves the Index class letter on the declaration; `S → P` mapping must not apply to positional slots even if boundary rules change.
 3. **No observed case** where refs-after-group differs on validated happy-path rules — but ordering refs first is cost-free and matches [positional-slots research §7 Q6](./positional-slots-and-identity-subscripts.md).
 

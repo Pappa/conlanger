@@ -57,6 +57,19 @@ Per-field transforms run on `input`, `output`, `env`, and `exception` separately
 
 **Research:** [positional-slots-and-identity-subscripts.md](../.scratch/cleaned-rule-index/research/positional-slots-and-identity-subscripts.md), [subscript-notation-index-asca-brassica.md](../.scratch/cleaned-rule-index/research/subscript-notation-index-asca-brassica.md).
 
+### Class-letter expansion boundaries
+
+`apply_asca_group_mappings_to_string` ([`group_mappings.py`](../src/conlanger/tools/compile/asca/group_mappings.py)) expands Index class letters only **outside** `[...]` feature matrices. A letter is recognised only when both boundary checks pass:
+
+| Boundary | Allows expansion when… | Examples |
+| --- | --- | --- |
+| **Before** | At field start, or immediately after delimiter / peer uppercase class / length mark `ː` / hyphen | `SR` → `P[+son,-syll]`; `VOR` → `VO[+son,-syll]`; `VːR` → `Vː[+son,-syll]` |
+| **After** | Next char is punctuation, field end, glued uppercase class, IPA extension (`U+0250–U+02AF`), or ASCII lowercase segment literal | `Tʃ` → `P:[-voice]ʃ`; `Kr` → `C:[…]r`; `_Ra` → `_[+son,-syll]a` |
+
+**Blocked (intentionally):** subscript digits (`C₁`, `S₁` unchanged); lowercase-glued **prefix** (`rK` unchanged — `K` is not preceded by an allowed boundary). Labialized forms (`Kʷ`, `K(ʷ)`) use separate passes before bare expansion.
+
+Unmapped uppercase letters that pass both boundaries but are not in `group_mappings.csv` and are not ASCA-native groupings (`C`, `O`, `S`, `P`, `F`, `L`, `N`, `G`, `V`) stay literal.
+
 ---
 
 ## Brassica

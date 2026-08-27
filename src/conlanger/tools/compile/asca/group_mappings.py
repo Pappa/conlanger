@@ -6,11 +6,34 @@ from functools import lru_cache
 from conlanger.utils.features import apply_features_to_token
 from conlanger.utils.file_io import load_group_mappings
 
-_GROUPING_PREC = r"(?:^|(?<=[\{\[\s/,>_A-Z#$%|!\(ː-]))"
-_GROUPING_FOLLOW = r"(?=[:,\[\]\{\}\s/>_#$%|!\)-]|$|[A-Z]|[\u0250-\u02AF]|[a-z])"
-_GROUPING_FOLLOW_LABIALIZED = (
-    r"(?=[:,\[\]\{\}\s/>_#$%|!\)-]|$|[A-Z]|[a-z\u0250-\u02AF])"
+# Class-letter boundary policy (compile-time tokenisation).
+# See docs/sound-change-applier.md — "Class-letter expansion boundaries".
+#
+# A mapped uppercase letter expands only when both lookarounds succeed:
+# - BEFORE: start of (non-matrix) segment, or after delimiter / peer class /
+#   length mark / hyphen — enables glued clusters (SR, VOR) and VːR.
+# - AFTER: punctuation, end, glued uppercase class, IPA extension (Tʃ), or
+#   ASCII lowercase segment literal (Kr, _Ra). Subscripts (₁) are excluded.
+
+_CLASS_BEFORE_DELIMS = r"[\{\[\s/,>_A-Z#$%|!\(ː-]"
+_CLASS_BEFORE = rf"(?:^|(?<={_CLASS_BEFORE_DELIMS}))"
+
+_FOLLOW_PUNCT = r"[:,\[\]\{\}\s/>_#$%|!\)-]"
+_FOLLOW_GLUED_UPPER = r"[A-Z]"
+_FOLLOW_IPA_EXT = r"[\u0250-\u02AF]"
+_FOLLOW_ASCII_LOWER = r"[a-z]"
+_FOLLOW_ASCII_OR_IPA = r"[a-z\u0250-\u02AF]"
+
+_CLASS_AFTER = (
+    rf"(?={_FOLLOW_PUNCT}|$"
+    rf"|{_FOLLOW_GLUED_UPPER}"
+    rf"|{_FOLLOW_IPA_EXT}"
+    rf"|{_FOLLOW_ASCII_LOWER})"
 )
+_CLASS_AFTER_LABIALIZED = (
+    rf"(?={_FOLLOW_PUNCT}|$|{_FOLLOW_GLUED_UPPER}|{_FOLLOW_ASCII_OR_IPA})"
+)
+
 _LABIAL = "\u02b7"
 _ASCA_NATIVE_GROUPINGS = frozenset("COSPFLNGV")
 
@@ -58,6 +81,17 @@ def _grouping_letter_pattern(keys: set[str]) -> str:
     return "|".join(re.escape(key) for key in sorted(keys, key=len, reverse=True))
 
 
+def _class_letter_pattern(
+    keys: set[str],
+    *,
+    before: str,
+    after: str,
+    suffix: str = "",
+) -> re.Pattern[str]:
+    letters = _grouping_letter_pattern(keys)
+    return re.compile(rf"{before}({letters}){suffix}{after}")
+
+
 def _apply_asca_group_mappings_outside_brackets(
     text: str,
     mappings: dict[str, str],
@@ -66,9 +100,11 @@ def _apply_asca_group_mappings_outside_brackets(
     index_keys = set(mappings.keys())
     labial_keys = index_keys | _ASCA_NATIVE_GROUPINGS
 
-    optional_labial = re.compile(
-        rf"{_GROUPING_PREC}({_grouping_letter_pattern(labial_keys)})"
-        rf"\({_LABIAL}\){_GROUPING_FOLLOW}"
+    optional_labial = _class_letter_pattern(
+        labial_keys,
+        before=_CLASS_BEFORE,
+        after=_CLASS_AFTER,
+        suffix=rf"\({_LABIAL}\)",
     )
 
     def _replace_optional_labial(match: re.Match[str]) -> str:
@@ -82,17 +118,21 @@ def _apply_asca_group_mappings_outside_brackets(
 
     text = optional_labial.sub(_replace_optional_labial, text)
 
-    suffix_labial = re.compile(
-        rf"{_GROUPING_PREC}({_grouping_letter_pattern(labial_keys)})"
-        rf"{_LABIAL}{_GROUPING_FOLLOW_LABIALIZED}"
+    suffix_labial = _class_letter_pattern(
+        labial_keys,
+        before=_CLASS_BEFORE,
+        after=_CLASS_AFTER_LABIALIZED,
+        suffix=re.escape(_LABIAL),
     )
     text = suffix_labial.sub(
         lambda match: expand_grouping_letter(match.group(1), mappings, labial=True),
         text,
     )
 
-    bare = re.compile(
-        rf"{_GROUPING_PREC}({_grouping_letter_pattern(index_keys)}){_GROUPING_FOLLOW}"
+    bare = _class_letter_pattern(
+        index_keys,
+        before=_CLASS_BEFORE,
+        after=_CLASS_AFTER,
     )
     return bare.sub(
         lambda match: expand_grouping_letter(match.group(1), mappings, labial=False),
