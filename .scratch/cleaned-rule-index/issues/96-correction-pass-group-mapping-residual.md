@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: 95
 
 # Correction pass: group-mapping residuals (post-boundaries)
@@ -38,10 +38,37 @@ After 95, remaining in-scope failures are likely **not** solvable by another glo
 
 ## Acceptance criteria
 
-- [ ] Post-95 residual rows enumerated and bucketed in ticket body or linked research note
-- [ ] Each bucket either fixed with tests or explicitly deferred with new ticket / `wontfix` rationale
-- [ ] Full inventory re-run; `unknown_grouping` in-scope count in **Answer**
-- [ ] No regressions on 95 fixture set
+- [x] Post-95 residual rows enumerated and bucketed in ticket body or linked research note
+- [x] Each bucket either fixed with tests or explicitly deferred with new ticket / `wontfix` rationale
+- [x] Full inventory re-run; `unknown_grouping` in-scope count in **Answer**
+- [x] No regressions on 95 fixture set
+
+## Residual buckets (post-95, 9 in-scope rows)
+
+| Bucket | Rows | Root cause | Resolution |
+| --- | ---: | --- | --- |
+| Class letter before `ː` | 7 | Group mappings run pre-length-mark; `Eː`, `Dː`, `Bː`, `Uː` need `ː` in **After** | `group_mappings.py`: add `ː` to after punct set |
+| `Kç` glued tail | 2 | `ç` was **Before** only (ticket 95); `K` before `ç` missed **After** | `group_mappings.py`: add `ç` to extra-modifier after set |
+| Finnish `Uː` output | 1 | `U`→`%` then `%ː` not normalized (overlap ticket 79) | `length_marks.py`: `%ː` → `%:[+long]`; rule still fails `syntax_other` (ASCA syllable tone/stress) — out of `unknown_grouping` |
+
+Out of scope unchanged: **M**, **X**, **I**, **Y** (21 rows).
+
+## Answer
+
+Compile-layer only (`group_mappings.py`, `length_marks.py`). **After** boundary gained length mark `ː` (pre-`:[+long]` tokens) and `ç` (symmetric with ticket 95 **Before**). Length pass gained `%ː` → `%:[+long]` for syllable-marker output after `U`→`%` expansion.
+
+**Inventory (`uv run create_index`, 2026-08-27):**
+
+| Metric | Post-95 | After 96 | Δ |
+|--------|--------:|---------:|--:|
+| OK | 8051 (83.2%) | 8059 (83.3%) | **+8** |
+| Fail | 1096 (11.3%) | 1088 (11.2%) | **−8** |
+| `unknown_grouping` (all) | 30 | 21 | **−9** |
+| In-scope CSV/native letters | 9 | **0** | **−9 (100%)** |
+
+Cleared rule_ids: `Luwian-D-R`, `Old-Norse-EːBː-Eːaː`, `Old-Norse-Eːu,oː-Eːaː`, `Old-Norse-BːB-aːo,a,æ,e-æ,eːæ,eː-æ,eːi-iːEː`, `Old-Norse-eːBː,iː`, `Old-Norse-eːBː,iː_2`, `bTshan-La-k-sk-kr-ɡ-Pɡ-sɡ-Nɡ-sɡr-çK-rK-Kç`, `lCog-Rtse-Nkj-sɡr-Kç-kr-skr-ɡr`. `Standard-Finnish-iU-OU` no longer `unknown_grouping` (`U`); residual `syntax_other` (ASCA syllable parameter) — not group_mappings.
+
+`grouping_errors.csv` regenerated (21 rows, all M/X/I/Y).
 
 ## References
 

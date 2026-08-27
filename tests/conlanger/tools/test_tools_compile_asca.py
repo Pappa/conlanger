@@ -36,6 +36,7 @@ from conlanger.tools.compile.asca.length_marks import normalize_asca_length_mark
             "S:[- voice, +long] S:[+ voice, +long] → hS S:[- voice, +long]",
         ),
         ("Vː[tone: 51]", "V:[+long][tone: 51]"),
+        ("%ː", "%:[+long]"),
     ],
 )
 def test_normalize_asca_length_marks(text, expected):

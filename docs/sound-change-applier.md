@@ -64,7 +64,7 @@ Per-field transforms run on `input`, `output`, `env`, and `exception` separately
 | Boundary | Allows expansion when… | Examples |
 | --- | --- | --- |
 | **Before** | At field start, or immediately after delimiter / peer uppercase class / length mark `ː` / hyphen / digit / closing `)` or `]` / ellipsis `…` / `ʔ` / `ç` | `SR` → `P[+son,-syll]`; `VOR` → `VO[+son,-syll]`; `VːR` → `Vː[+son,-syll]`; `V3R` → `V3[+son,-syll]`; `(C,0)U` → `(C,0)%`; `ʔR` → `ʔ[+son,-syll]`; `çT` → `çP:[-voice]` |
-| **After** | Next char is punctuation (incl. `(` and `…`), field end, glued uppercase class, IPA extension (`U+0250–U+02AF`), ASCII lowercase segment literal, or extra modifiers outside that block (`β`, `ʱ`, `ŋ`) | `Tʃ` → `P:[-voice]ʃ`; `Kr` / `rK` → `C:[…]r` / `rC:[…]`; `_Ra` → `_[+son,-syll]a`; `_%U(` → `_%%(`; `Eβu` → `V:[+front]βu`; `Bʱ` → `V:[+back]ʱ` |
+| **After** | Next char is punctuation (incl. `(` and `…`), length mark `ː`, field end, glued uppercase class, IPA extension (`U+0250–U+02AF`), ASCII lowercase segment literal, or extra modifiers outside that block (`β`, `ʱ`, `ŋ`, `ç`) | `Tʃ` → `P:[-voice]ʃ`; `Kr` / `rK` → `C:[…]r` / `rC:[…]`; `_Ra` → `_[+son,-syll]a`; `_%U(` → `_%%(`; `Eβu` → `V:[+front]βu`; `Bʱ` → `V:[+back]ʱ`; `EːBː` → `V:[+front]ːV:[+back]ː`; `Kç` → `C:[…]ç` |
 
 **Unglued pass:** after optional-labial / suffix-labial / bare expansion, any **remaining** mapped uppercase letter whose previous character is **not** a Before delimiter still expands when After succeeds. That covers lowercase IPA prefixes (`rK`, `sTP`, `nQ`, `hR`) without re-expanding mapping results (`S` → `P` stays `P`).
 

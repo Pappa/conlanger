@@ -13,9 +13,10 @@ from conlanger.utils.file_io import load_group_mappings
 # - BEFORE: start of (non-matrix) segment, or after delimiter / peer class /
 #   length mark / hyphen / digit / closing ) ] / ellipsis / ʔ / ç —
 #   enables glued clusters (SR, VOR), VːR, digit refs (V3R), (C,0)U, ʔR, çT.
-# - AFTER: punctuation (incl. '(' and '…'), end, glued uppercase class,
-#   IPA extension (Tʃ), ASCII lowercase (Kr, _Ra), or extra modifiers
-#   outside the IPA-ext block (β, ʱ, ŋ). Subscripts (₁) are excluded.
+# - AFTER: punctuation (incl. '(' and '…'), length mark ː, end, glued
+#   uppercase class, IPA extension (Tʃ), ASCII lowercase (Kr, _Ra), or
+#   extra modifiers outside the IPA-ext block (β, ʱ, ŋ, ç). Subscripts
+#   (₁) are excluded.
 # Unglued pass: remaining mapped letters whose previous char is *not* a
 # BEFORE delimiter (lowercase IPA prefix: rK, sTP, nQ, hR). Mapping
 # results are not re-expanded (S→P stays P).
@@ -25,12 +26,12 @@ _CLASS_BEFORE_DELIMS = rf"[{_CLASS_BEFORE_CHARS}]"
 _CLASS_BEFORE = rf"(?:^|(?<={_CLASS_BEFORE_DELIMS}))"
 _CLASS_UNGLUED_PREFIX = rf"(?<=[^{_CLASS_BEFORE_CHARS}])"
 
-_FOLLOW_PUNCT = r"[:,\[\]\{\}\s/>_#$%|!\)\(…-]"
+_FOLLOW_PUNCT = r"[:,\[\]\{\}\s/>_#$%|!\)\(…ː-]"
 _FOLLOW_GLUED_UPPER = r"[A-Z]"
 _FOLLOW_IPA_EXT = r"[\u0250-\u02AF]"
 _FOLLOW_ASCII_LOWER = r"[a-z]"
 _FOLLOW_ASCII_OR_IPA = r"[a-z\u0250-\u02AF]"
-_FOLLOW_EXTRA_MODIFIERS = r"[βʱŋ]"
+_FOLLOW_EXTRA_MODIFIERS = r"[βʱŋç]"
 
 _CLASS_AFTER = (
     rf"(?={_FOLLOW_PUNCT}|$"

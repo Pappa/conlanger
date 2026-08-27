@@ -125,6 +125,25 @@ def test_apply_asca_group_mappings_boundary_and_unglued(
     )
 
 
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("EːBː Eːaː", "V:[+front]ːV:[+back]ː V:[+front]ːaː"),
+        ("Eː{u,o}ː Eːaː", "V:[+front]ː{u,o}ː V:[+front]ːaː"),
+        ("Dː Rː", "P:[+voice]ː [+son,-syll]ː"),
+        ("eː{Bː,i(ː)}", "eː{V:[+back]ː,i(ː)}"),
+        ("Uː Oː", "%ː Oː"),
+        ("Kç", "C:[-front,+back,+hi,-lo]ç"),
+    ],
+)
+def test_apply_asca_group_mappings_residual_length_and_cedilla(
+    text, expected, fx_sample_group_mappings
+):
+    assert (
+        apply_asca_group_mappings_to_string(text, fx_sample_group_mappings) == expected
+    )
+
+
 def test_expand_grouping_letter_leaves_unmapped_non_native_letters():
     assert (
         expand_grouping_letter("X", {"K": "C:[-front,+back,+hi,-lo]"}, labial=False)

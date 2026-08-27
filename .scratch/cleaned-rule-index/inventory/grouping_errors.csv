@@ -1,31 +1,22 @@
 section_index,rule_id,error_token,rule
 14.3.1,Colloquial-Tamil-∅_2,M,"∅ > ʉ / {l,ɭ}_# if {M,V:[+long]} previously in the lexeme"
-17.2.2,Luwian-D-R,D,"P:[+voice] [+son,-syll] > D:[+long] R:[+long] / e:[+stress]_ in %[+lo]"
 17.5.1,Old-Irish-p-t-k-kʷ-b-d-ɡ-m-n-l-r-s,M,"p t k kʷ b d ɡ m n l r s > f θ x xʷ v ð ɣ M N L [+son,-syll] h / V(#)_{[+son,-syll],V}"
 17.7.2.3,Standard-German-∅,M,∅ > ə / M_r$
 17.7.2.5,Old-Low-German-F-voice,X,F[-voice] > F[+voice] / X[+voice]_X[+voice]?
-17.7.3.1,Old-Norse-EːBː-Eːaː,E,"E:[+long]B:[+long] E:[+long]a:[+long] > jo:[+long] ja:[+long] / {v,w}_"
-17.7.3.1,"Old-Norse-BːB-aːo,a,æ,e-æ,eːæ,eː-æ,eːi-iːEː",B,"B:[+long]V:[+back] a:[+long]{o,a,æ,e} {æ,e}:[+long]{æ,e}:[+long] {æ,e}:[+long]i i:[+long]E:[+long] > o:[+long] a:[+long] e:[+long] e:[+long] i:[+long]"
-17.7.3.1,"Old-Norse-Eːu,oː-Eːaː",E,"E:[+long]{u,o}:[+long] E:[+long]a:[+long] > jo:[+long] ja:[+long] / {v,w}_"
-17.7.3.1,"Old-Norse-eːBː,iː",B,"e:[+long]{B:[+long],i:[+long]} > jo:[+long] / _C[+cor,+anterior,-dist]#"
-17.7.3.1,"Old-Norse-eːBː,iː_2",B,"e:[+long]{B:[+long],i:[+long]} > ju:[+long]"
 17.11.1,Polish-Cʲ_2,M,"C:[+cor,+dist] > C in select words due to prestige influence of Czech in the Middle O:[+delrel]ges"
 29.1.1.1.8,"Dena’ina-TŠ,TŠʷ",I,P:[-voice]ʃ > P:[-voice]P in %pper Inlet dialect)
 32.2,Tlapanec-Yt-Ynt-Ys,Y,Yt Ynt Ys > tʃ dʒ ʃ
 33.2.1,Nomlaki-VrV,M,VrV > M
-36.3.2.1,bTshan-La-k-sk-kr-ɡ-Pɡ-sɡ-Nɡ-sɡr-çK-rK-Kç,K,"k sk kr ɡ C:[+labial]ɡ sɡ Nɡ {sɡr,ɡr} çC:[-front,+back,+hi,-lo] rC:[-front,+back,+hi,-lo] Kç > kʰ zɡw dr Nɡ pk sk mk {skr,kr} çk rɡj ɡçkr"
-36.3.2.2.2,lCog-Rtse-Nkj-sɡr-Kç-kr-skr-ɡr,K,"Nkj {sɡr,ɡr} Kç kr skr ɡr > mɡj {skr,kr} ɡçkr kʰr zɡr Nɡr"
 41.5.2.3,"Gadsup-D,Y",Y,"{P:[+voice],Y} > ∅ / _n"
 41.5.2.3,Gadsup-YO+-voice-YO-voice,Y,YO[+ voice] YO[- voice] > Y t
 42.1,Pre-Finnic-a,X,"a > æ / {a,aX,e,eX,e,eX,i,iX,y,yX}(C)(C)_ when unstressed"
 42.1.1,Proto-Finnic-ê-ô,X,e o > e o / _(X)Ci
 42.1.1,Proto-Finnic-ê,X,e > y / _(X)CO:[+delrel]
-42.1.1,Proto-Finnic-ô,X,ɯ > i / _(X)CO:[+delrel]
+42.1.1,Proto-Finnic-ô,X,o > ɯ / _(X)CO:[+delrel]
 42.1.1,Proto-Finnic-ɑ,X,"ɑ > e / :{o:[+stress]C_j,o:[+stress]XC_j,u:[+stress]C_j,u:[+stress]XC_j}:"
 42.1.1,Proto-Finnic-ɑ_2,X,"ɑ > o / :{a:[+stress]C_j,a:[+stress]XC_j,e:[+stress]C_j,e:[+stress]XC_j,i:[+stress]C_j,i:[+stress]XC_j}:"
 42.1.1,Proto-Finnic-x_2,I,"x > j / {I,V:[+front]}_C"
 42.1.1,Proto-Finnic-wI,I,wI > i
 42.1.1.1.1,Standard-Finnish-ð,X,"ð > ∅ // :{V:[+stress]_,VX:[+stress]_}:"
 42.1.1.1.1,Standard-Finnish-h,X,h > ∅ / V[-stress](X)_V
-42.1.1.1.1,Standard-Finnish-iU-OU,U,i% O% > U:[+long] O:[+long]
 47.2,"List-2:-Conditional-or-complex-consonant-changes-t,k",M,"{t,k} > ∅ / V_V (Marathi) probably with voiced stops as intermediates, since they also became silent"
