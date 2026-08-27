@@ -184,6 +184,6 @@ rules:
                   content: "ket → tː → sː"
                   reason: "Allowing for possible alternative output"
         - rule:
-                  id: Cheyenne-W"
+                  id: Cheyenne-W
                   content: "W → ∅ / [+nasal]_, _[+nasal], t_, _t"
                   reason: "Prose"

@@ -11,7 +11,7 @@ section_index,section_name,rule_id,source,manual_mapping
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-i-u,index_diachronica_original.html:1382, / _[-long] ! 
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-u,index_diachronica_original.html:1383, / _[-long]#
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aj-aw,index_diachronica_original.html:1384, / 
-6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː,index_diachronica_original.html:1393," / _[+ emphatic], [+ emphatic]_"
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː,index_diachronica_original.html:1393," / _[+ emphatic], [+ emphatic]_ ; near emphatics"
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-h,index_diachronica_original.html:1401, / 
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-aː,index_diachronica_original.html:1409, / 
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-aː_2,index_diachronica_original.html:1410," / ! _[+ emphatic], [+ emphatic]_"
@@ -21,16 +21,18 @@ section_index,section_name,rule_id,source,manual_mapping
 6.2.2.1.10,Classical Arabic to Hassāniyya Arabic,Hassāniyya-Arabic-ʔ,index_diachronica_original.html:1431, / sporadic ; depending on the environment
 6.2.2.1.11,Classical Arabic to Iraqi Arabic,Iraqi-Arabic-ɡʲ,index_diachronica_original.html:1445, / sporadic ; in southern regions
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,"Moroccan-Arabic-C+labial,+velar",index_diachronica_original.html:1470," / u[-long]_, _u[-long]"
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə_2,index_diachronica_original.html:1473," / _[+ emphatic], [+ emphatic]_"
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-aː-iː-uː,index_diachronica_original.html:1476," / _[+ emphatic], [+ emphatic]_"
-6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-a,index_diachronica_original.html:1501," / _[+ emphatic], [+ emphatic]_"
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə_2,index_diachronica_original.html:1473," / _[+ emphatic], [+ emphatic]_ ; near emphatics"
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-aː-iː-uː,index_diachronica_original.html:1476," / _[+ emphatic], [+ emphatic]_ ; near emphatics"
+6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-a,index_diachronica_original.html:1501," / _[+ emphatic], [+ emphatic]_ ; near emphatics"
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-Vː_2,index_diachronica_original.html:1507, / 
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ə,index_diachronica_original.html:1557," / _[+laryngeal], [+laryngeal]_"
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ʔ,index_diachronica_original.html:1564, ! 
-7.4,Proto-Algonquian to Blackfoot,"Blackfoot-θ,tʃ,ʃ,r",index_diachronica_original.html:1711," / ! C_,_C"
+7.4,Proto-Algonquian to Blackfoot,"Blackfoot-θ,tʃ,ʃ,r",index_diachronica_original.html:1711," / ! C_,_C ; unless adjacent to another consonant"
 7.4,Proto-Algonquian to Blackfoot,Blackfoot-tsi,index_diachronica_original.html:1761, ; “(before a prefix; 
 7.4,Proto-Algonquian to Blackfoot,Blackfoot-a_2,index_diachronica_original.html:1765," ! #_, _#"
-7.5,Proto-Algonquian to Cheyenne,Cheyenne-p,index_diachronica_original.html:1782," / C_, _C"
+7.5,Proto-Algonquian to Cheyenne,Cheyenne-C-nasal,index_diachronica_original.html:1780," / [+nasal]_, _[+nasal] ; near nasals"
+7.5,Proto-Algonquian to Cheyenne,Cheyenne-m,index_diachronica_original.html:1781," / [+nasal]_, _[+nasal] ; near nasals"
+7.5,Proto-Algonquian to Cheyenne,Cheyenne-p,index_diachronica_original.html:1782," / C_, _C ; near consonants"
 7.6,Proto-Algonquian to Northern East Cree,Northern-East-Cree-a,index_diachronica_original.html:1803, / sporadic ; in some unaccented syllables
 7.7,Proto-Algonquian to Southern East Cree,Southern-East-Cree-ʃ,index_diachronica_original.html:1824, / sporadic ; in inland varieties
 7.9,Proto-Algonquian to Swampy Cree,Swampy-Cree-ʃ,index_diachronica_original.html:1868, / 
@@ -74,15 +76,16 @@ section_index,section_name,rule_id,source,manual_mapping
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-ə_2,index_diachronica_original.html:2926, / _[+stress]
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-V,index_diachronica_original.html:2929, / _[-stress]
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-q,index_diachronica_original.html:2951,→ ʕ
-10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-ə,index_diachronica_original.html:2962," / V_, _V"
+10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-ə,index_diachronica_original.html:2962," / V_, _V ; adjacent to a vowel"
 10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-bː-dː-dzː-ɡː,index_diachronica_original.html:2970, ; (Whimemsz says
-10.2.6.1,Proto-North Sarawak to Kiput,Kiput-ə_2,index_diachronica_original.html:2988," / V_, _V"
+10.2.6.1,Proto-North Sarawak to Kiput,Kiput-ə_2,index_diachronica_original.html:2988," / V_, _V ; adjacent to a vowel"
 10.2.6.3,Proto-Malayic to Minangkabau,Minangkabau-h,index_diachronica_original.html:3074, ; sporadic (some exceptions
 10.3.2,Proto-Oceanic to Hiw,"Hiw-p-pʷ-c,*j-k-q",index_diachronica_original.html:3108,j
 10.3.2,Proto-Oceanic to Hiw,Hiw-dr-*r,index_diachronica_original.html:3110,r
 10.3.3,Proto-Oceanic to Lemerig,"Lemerig-c,*j-ɲ",index_diachronica_original.html:3139,j
 10.3.4,Proto-Oceanic to Mwotlap,"Mwotlap-c,*j",index_diachronica_original.html:3169,j
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-pwʰ-pʰ-tʰ-kʰ,index_diachronica_original.html:3265, / 
+10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-V+-mid,index_diachronica_original.html:3267," / [+nasal]_, _[+nasal] ; near nasals"
 10.3.5.7,Proto-New Caledonia to Pwapwâ,Pwapwâ-bw-mw,index_diachronica_original.html:3321,bw mw → ɡw ŋw → ɡ ŋ / _V[+ rounded]
 10.3.5.8,Proto-New Caledonia to Proto-Yunaga,Proto-Yunaga-u-i,index_diachronica_original.html:3336, / 
 10.3.7,Proto-Oceanic to Shark Bay,Shark-Bay-ɲ-c-*j,index_diachronica_original.html:3399,j

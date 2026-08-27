@@ -2401,7 +2401,8 @@ sections:
     raw: ∅ → e / CVCC_CVCV (applies across word boundaries)
     source: index_diachronica_original.html:1390
     rule_id: Egyptian-Arabic-∅
-  - stages:
+  - comment: near emphatics
+    stages:
     - a(ː)
     - ɑ(ː)
     env: _[+rtr], [+rtr]_
@@ -2768,7 +2769,8 @@ sections:
     raw: ə → a / near ħ ʕ
     source: index_diachronica_original.html:1472
     rule_id: Moroccan-Arabic-ə
-  - stages:
+  - comment: near emphatics
+    stages:
     - ə
     - ɐ
     env: _[+rtr], [+rtr]_
@@ -2789,7 +2791,8 @@ sections:
     raw: u → ʊ / _[-long]
     source: index_diachronica_original.html:1475
     rule_id: Moroccan-Arabic-u_2
-  - stages:
+  - comment: near emphatics
+    stages:
     - aː iː uː
     - ɑː eː oː
     env: _[+rtr], [+rtr]_
@@ -2884,7 +2887,8 @@ sections:
   index: 6.2.2.1.17
   citation: Pogostick Man, from http://en.wikipedia.org/wiki/Tunisian_Arabic
   rules:
-  - stages:
+  - comment: near emphatics
+    stages:
     - a
     - ɑ
     env: _[+rtr], [+rtr]_
@@ -3953,7 +3957,8 @@ sections:
   citation: Whimemsz, from Proulx, Paul (1989), “A Sketch of Blackfoot Historical
     Phonology”. International Journal of American Linguistics, 55:43 – 82
   rules:
-  - stages:
+  - comment: unless adjacent to another consonant
+    stages:
     - '{θ,tʃ,ʃ,r}'
     - t
     exception: C_,_C
@@ -4398,21 +4403,24 @@ sections:
     raw: '{kC,Ck} → ʔ'
     source: index_diachronica_original.html:1779
     rule_id: Cheyenne-kC,Ck
-  - stages:
+  - comment: near nasals
+    stages:
     - C[- nasal]
     - ∅
-    env: near nasals
+    env: '[+nasal]_, _[+nasal]'
     raw: C[- nasal] → ∅ / near nasals
     source: index_diachronica_original.html:1780
     rule_id: Cheyenne-C-nasal
-  - stages:
+  - comment: near nasals
+    stages:
     - m
     - ∅
-    env: near nasals
+    env: '[+nasal]_, _[+nasal]'
     raw: m → ∅ / near nasals
     source: index_diachronica_original.html:1781
     rule_id: Cheyenne-m
-  - stages:
+  - comment: near consonants
+    stages:
     - p
     - '{t,∅}'
     env: C_, _C
@@ -4422,8 +4430,8 @@ sections:
   - stages:
     - W
     - ∅
-    env: near nasals or t
-    raw: W → ∅ / near nasals or t
+    env: '[+nasal]_, _[+nasal], t_, _t'
+    raw: W → ∅ / [+nasal]_, _[+nasal], t_, _t
     source: index_diachronica_original.html:1783
     rule_id: Cheyenne-W
 - section: Proto-Algonquian to Northern East Cree
@@ -10359,7 +10367,8 @@ sections:
     raw: h → ʔ / a_{i,u}
     source: index_diachronica_original.html:2961
     rule_id: Proto-North-Sarawak-h_3
-  - stages:
+  - comment: adjacent to a vowel
+    stages:
     - ə
     - ∅
     env: V_, _V
@@ -10506,7 +10515,8 @@ sections:
     raw: V₀V₀ → V₀
     source: index_diachronica_original.html:2987
     rule_id: Kiput-V0V0
-  - stages:
+  - comment: adjacent to a vowel
+    stages:
     - ə
     - ∅
     env: V_, _V
@@ -12071,13 +12081,13 @@ sections:
     raw: uCu → iCi
     source: index_diachronica_original.html:3266
     rule_id: Nixumwak-Nêlêmwa-uCu
-  - stages:
+  - comment: near nasals?
+    stages:
     - V[-hi,-lo]
     - a
-    env: near nasals?
+    env: '[+nasal]_, _[+nasal]'
     raw: V[+ mid] → a / near nasals?
     source: index_diachronica_original.html:3267
-    sporadic: true
     rule_id: Nixumwak-Nêlêmwa-V+-mid
   - stages:
     - u i

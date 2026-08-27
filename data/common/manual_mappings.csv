@@ -15,12 +15,13 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 " / unstressed"," / _[-stress]",False,replace prose
 " / stressed"," / _[+stress]",False,replace prose
 " / adjacent to short u"," / u[-long]_, _u[-long]",False,replace prose
-" / unless adjacent to another consonant"," / ! C_,_C",False,replace prose
+" / unless adjacent to another consonant"," / ! C_,_C ; unless adjacent to another consonant",False,replace prose
 " / adjacent to {"," / _,{",False,replace prose
 " ! adjacent to {"," ! _,{",False,replace prose
-" / adjacent to a vowel"," / V_, _V",False,replace prose
-" / near emphatics"," / _[+ emphatic], [+ emphatic]_",False,replace prose
-" / near consonants"," / C_, _C",False,replace prose
+" / adjacent to a vowel"," / V_, _V ; adjacent to a vowel",False,replace prose
+" / near emphatics"," / _[+ emphatic], [+ emphatic]_ ; near emphatics",False,replace prose
+" / near consonants"," / C_, _C ; near consonants",False,replace prose
+" / near nasals"," / [+nasal]_, _[+nasal] ; near nasals",False,replace prose
 " / when not near emphatics"," / ! _[+ emphatic], [+ emphatic]_",False,replace prose
 " / in Mentasta Ahtna"," / sporadic ; in Mentasta Ahtna",False,replace prose
 " / in certain situations"," / sporadic ; in certain situations",False,replace prose
