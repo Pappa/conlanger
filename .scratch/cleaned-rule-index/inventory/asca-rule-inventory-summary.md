@@ -15,9 +15,9 @@
 | count | failure_class |
 |------:|---------------|
 | 361 | `syntax_other` |
-| 211 | `expected_underscore` |
+| 212 | `expected_underscore` |
 | 134 | `runtime_other` |
-| 132 | `unknown_character` |
+| 131 | `unknown_character` |
 | 48 | `prose_or_expected_arrow` |
 | 39 | `nested_brackets` |
 | 38 | `expected_number` |
@@ -40,7 +40,7 @@
 | 13 | `₂` |
 | 11 | `̊` |
 | 10 | `ː` |
-| 6 | `ŕ` |
+| 6 | `̺` |
 
 ### unknown_feature
 
