@@ -64,9 +64,9 @@ Per-field transforms run on `input`, `output`, `env`, and `exception` separately
 | Boundary | Allows expansion when… | Examples |
 | --- | --- | --- |
 | **Before** | At field start, or immediately after delimiter / peer uppercase class / length mark `ː` / hyphen | `SR` → `P[+son,-syll]`; `VOR` → `VO[+son,-syll]`; `VːR` → `Vː[+son,-syll]` |
-| **After** | Next char is punctuation, field end, glued uppercase class, IPA extension (`U+0250–U+02AF`), or ASCII lowercase segment literal | `Tʃ` → `P:[-voice]ʃ`; `Kr` → `C:[…]r`; `_Ra` → `_[+son,-syll]a` |
+| **After** | Next char is punctuation, field end, glued uppercase class, IPA extension (`U+0250–U+02AF`), or ASCII lowercase segment literal | `Tʃ` → `P:[-voice]ʃ`; `Kr` / `rK` → `C:[…]r` / `rC:[…]`; `_Ra` → `_[+son,-syll]a` |
 
-**Blocked (intentionally):** subscript digits (`C₁`, `S₁` unchanged); lowercase-glued **prefix** (`rK` unchanged — `K` is not preceded by an allowed boundary). Labialized forms (`Kʷ`, `K(ʷ)`) use separate passes before bare expansion.
+**Blocked (intentionally):** subscript digits (`C₁`, `S₁` unchanged). **Mapped uppercase class letters** in a rule segment expand even after a lowercase IPA prefix (`rK`, `sTP`, `nQ`) — the uppercase letter is always the class, not part of a literal digraph. Labialized forms (`Kʷ`, `K(ʷ)`) use separate passes before bare expansion.
 
 Unmapped uppercase letters that pass both boundaries but are not in `group_mappings.csv` and are not ASCA-native groupings (`C`, `O`, `S`, `P`, `F`, `L`, `N`, `G`, `V`) stay literal.
 

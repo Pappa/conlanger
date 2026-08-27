@@ -114,8 +114,8 @@ Index Diachronica notational shorthand whose expansion is defined for compile �
 _Avoid_: “alias”, “mapping”, “grouping” as the glossary term for these symbols
 
 **Class letter**:
-A capital-letter class abbreviation from the Index key (`C`, `V`, `S`, `A`, …) denoting a phonological class. Expanded at compile from `group_mappings.csv` where Index meaning diverges from ASCA inbuilt groupings; unmapped letters stay in the rule string. **Glued class-letter sequences** (e.g. `SR`, `VOR`) are consecutive class letters without delimiters — each letter expands when compile boundary rules recognise it (see applier compile doc).
-_Avoid_: treating every capital letter in a rule as a class letter; single-character blind substitution at ingest
+A capital-letter class abbreviation from the Index key (`C`, `V`, `S`, `A`, …) denoting a phonological class. Expanded at compile from `group_mappings.csv` where Index meaning diverges from ASCA inbuilt groupings; unmapped letters stay in the rule string. **Glued class-letter sequences** (e.g. `SR`, `VOR`) are consecutive class letters without delimiters — each letter expands when compile boundary rules recognise it (see applier compile doc). A mapped uppercase class letter in a rule segment expands regardless of a lowercase IPA prefix (`rK` → velar class + `r`, same as `Kr`).
+_Avoid_: treating every capital letter in a rule as a class letter; single-character blind substitution at ingest; preserving lowercase-glued uppercase class letters as literal digraphs when the uppercase letter is a mapped Index class
 
 **Symbol**:
 Index boundary, null, stress, or syllable marks (`#`, `$`, `%`, `∅`, stress notation, etc.) — distinct from class letters. Normalised to ASCA-canonical form in index fields at HTML→YAML ingest; `raw` preserves the Index form.
