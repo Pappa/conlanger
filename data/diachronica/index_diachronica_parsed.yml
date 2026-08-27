@@ -8482,7 +8482,7 @@ sections:
     source: index_diachronica_original.html:2595
     rule_id: Proto-Philippine-*T
   - stages:
-    - '{D,*Z,z}'
+    - '{D,Z,z}'
     - d
     env: '#_'
     raw: '{*D,*Z,z} → d / #_'
@@ -8605,7 +8605,7 @@ sections:
     source: index_diachronica_original.html:2620
     rule_id: Cebuano-*j
   - stages:
-    - '{j,*Z} z'
+    - '{j,Z} z'
     - l r
     env: V_V
     raw: '{*j,*Z} z → l r / V_V'
@@ -8668,7 +8668,7 @@ sections:
     source: index_diachronica_original.html:2633
     rule_id: Hiligaynon-*j
   - stages:
-    - '{*Z,j} z'
+    - '{Z,j} z'
     - l r
     env: V_V
     raw: '{*Z,*j} z → l r / V_V'
@@ -8729,7 +8729,7 @@ sections:
     sporadic: true
     rule_id: Ibanag-*j
   - stages:
-    - '*Z'
+    - Z
     - r
     raw: '*Z → r'
     source: index_diachronica_original.html:2647
@@ -8804,7 +8804,7 @@ sections:
     source: index_diachronica_original.html:2660
     rule_id: Ifugao-*j
   - stages:
-    - '{z,*Z,D,j}'
+    - '{z,Z,D,j}'
     - d
     raw: '{z,*Z,*D,*j} → d'
     source: index_diachronica_original.html:2661
@@ -8847,7 +8847,7 @@ sections:
     source: index_diachronica_original.html:2671
     rule_id: Ilocano-*D
   - stages:
-    - '{z,*Z,j}'
+    - '{z,Z,j}'
     - d
     env: V_V
     raw: '{z,*Z,*j} → d / V_V'
@@ -9191,7 +9191,7 @@ sections:
     source: index_diachronica_original.html:2743
   rules:
   - stages:
-    - '{D,*Z}'
+    - '{D,Z}'
     - d
     raw: '{*D,*Z} → d'
     source: index_diachronica_original.html:2737
@@ -9312,14 +9312,14 @@ sections:
     source: index_diachronica_original.html:2763
     rule_id: Waray-*T
   - stages:
-    - '{D,*Z}'
+    - '{D,Z}'
     - r
     env: V_V
     raw: '{*D,*Z} → r / V_V'
     source: index_diachronica_original.html:2764
     rule_id: Waray-*D,*Z
   - stages:
-    - '{D,*Z,z}'
+    - '{D,Z,z}'
     - d
     raw: '{*D,*Z,z} → d'
     source: index_diachronica_original.html:2765
@@ -11394,7 +11394,7 @@ sections:
     source: index_diachronica_original.html:3137
     rule_id: Lemerig-VV
   - stages:
-    - ndr *R
+    - ndr R
     - d r
     raw: ndr *R → d r
     source: index_diachronica_original.html:3138
@@ -11687,7 +11687,7 @@ sections:
     source: index_diachronica_original.html:3191
     rule_id: Proto-New-Caledonia-l,ɲ
   - stages:
-    - '*R'
+    - R
     - ∅
     raw: '*R → ∅'
     source: index_diachronica_original.html:3192
@@ -12611,7 +12611,7 @@ sections:
     source: index_diachronica_original.html:3370
     rule_id: Äiwoo-q
   - stages:
-    - '*R'
+    - R
     - l
     raw: '*R → l'
     source: index_diachronica_original.html:3371
@@ -12650,7 +12650,7 @@ sections:
     source: index_diachronica_original.html:3379
     rule_id: Nagu-ŋ
   - stages:
-    - q *R
+    - q R
     - ∅ {l,∅}
     raw: q *R → ∅ {l,∅}
     source: index_diachronica_original.html:3380
@@ -12703,7 +12703,7 @@ sections:
     source: index_diachronica_original.html:3390
     rule_id: Natügu-ŋ
   - stages:
-    - q *R
+    - q R
     - ∅ {l,∅}
     raw: q *R → ∅ {l,∅}
     source: index_diachronica_original.html:3391
@@ -12729,7 +12729,7 @@ sections:
     source: index_diachronica_original.html:3397
     rule_id: Shark-Bay-q
   - stages:
-    - '*R'
+    - R
     - '{∅,r}'
     raw: '*R → {∅,r}'
     source: index_diachronica_original.html:3398
@@ -12864,7 +12864,7 @@ sections:
     source: index_diachronica_original.html:3421
     rule_id: Tolomako-q
   - stages:
-    - '*R'
+    - R
     - '{∅,r}'
     comment: (the former seems more common)
     raw: '*R → {∅,r} (the former seems more common)'
@@ -13021,7 +13021,7 @@ sections:
     source: index_diachronica_original.html:3451
     rule_id: Asuboa-r
   - stages:
-    - '*R'
+    - R
     - '{l,∅}'
     raw: '*R → {l,∅}'
     source: index_diachronica_original.html:3452
@@ -13072,7 +13072,7 @@ sections:
     source: index_diachronica_original.html:3462
     rule_id: Nebao-r
   - stages:
-    - r *R
+    - r R
     - l ∅
     raw: r *R → l ∅
     source: index_diachronica_original.html:3463
@@ -13110,7 +13110,7 @@ sections:
     source: index_diachronica_original.html:3471
   rules:
   - stages:
-    - '{s,*R}'
+    - '{s,R}'
     - ∅
     raw: '{s,*R} → ∅'
     source: index_diachronica_original.html:3472
@@ -13213,7 +13213,7 @@ sections:
     source: index_diachronica_original.html:3489
     rule_id: Proto-Vanikoro-k
   - stages:
-    - '{s,*R}'
+    - '{s,R}'
     - r
     env: _#
     raw: '{s,*R} → r / _#'
@@ -13260,7 +13260,7 @@ sections:
     source: index_diachronica_original.html:3499
     rule_id: Buma-pʷ-bw-mʷ
   - stages:
-    - c *R
+    - c R
     - ∅ {l,∅}
     raw: c *R → ∅ {l,∅}
     source: index_diachronica_original.html:3500
@@ -13313,7 +13313,7 @@ sections:
     source: index_diachronica_original.html:3510
     rule_id: Tanema-r
   - stages:
-    - c *R
+    - c R
     - ∅ {l,∅}
     raw: c *R → ∅ {l,∅}
     source: index_diachronica_original.html:3511
@@ -13378,7 +13378,7 @@ sections:
     source: index_diachronica_original.html:3523
     rule_id: Vano-s
   - stages:
-    - c *R
+    - c R
     - '{j,∅} l'
     raw: c *R → {j,∅} l
     source: index_diachronica_original.html:3524
@@ -13419,14 +13419,14 @@ sections:
     source: index_diachronica_original.html:3532
     rule_id: Proto-Southern-Vanuatu-p_3
   - stages:
-    - k *R
+    - k R
     - ɣ r
     comment: “(frequently)”
     raw: k *R → ɣ r “(frequently)”
     source: index_diachronica_original.html:3533
     rule_id: Proto-Southern-Vanuatu-k-*R
   - stages:
-    - '*R'
+    - R
     - ∅
     raw: '*R → ∅'
     source: index_diachronica_original.html:3534
@@ -14443,7 +14443,7 @@ sections:
     source: index_diachronica_original.html:3724
     rule_id: Vera’a-VV
   - stages:
-    - ndr *R
+    - ndr R
     - d r
     raw: ndr *R → d r
     source: index_diachronica_original.html:3725
@@ -14784,7 +14784,7 @@ sections:
     source: index_diachronica_original.html:3784
     rule_id: Proto-Ongan-u-a-ə
   - stages:
-    - ɟ ɡ *N *R
+    - ɟ ɡ *N R
     - '{ɟ,j} {ɟ,ɡ} {l,j} {l,r}'
     raw: ɟ ɡ *N *R → {ɟ,j} {ɟ,ɡ} {l,j} {l,r}
     source: index_diachronica_original.html:3785
@@ -15105,7 +15105,7 @@ sections:
     Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Tsouic_languages&oldid=602917078>
   rules:
   - stages:
-    - '{*C,d} j *R'
+    - '{*C,d} j R'
     - c z r
     raw: '{*C,d} j *R → c z r'
     source: index_diachronica_original.html:3863

@@ -7,10 +7,12 @@ series_expansions:
   hₓ: [h₁, h₂, h₃]
   sₓ: [s₁, s₂, s₃]
 section_mappings:
-  "10.1":
+  "10":
     "*D": "D"
     "*R": "R"
     "*T": "T"
+    "*Z": "Z"
+    "*j": "j"
 skip_sections:
   - id: "6.2.2.1.1"
     reason: "Need to refer to the cited source to determine the correct rule syntax"
