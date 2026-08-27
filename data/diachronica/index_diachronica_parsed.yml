@@ -4254,9 +4254,8 @@ sections:
   - stages:
     - ket
     - tː
-    - sː?)
-    comment: (
-    raw: ket → tː (→ sː?)
+    - sː
+    raw: ket → tː → sː
     source: index_diachronica_original.html:1755
     rule_id: Blackfoot-ket
   - stages:
@@ -4416,7 +4415,7 @@ sections:
   - stages:
     - p
     - '{t,∅}'
-    env: near consonants
+    env: C_, _C
     raw: p → {t,∅} / near consonants
     source: index_diachronica_original.html:1782
     rule_id: Cheyenne-p

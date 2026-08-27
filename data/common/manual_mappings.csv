@@ -20,6 +20,7 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 " ! adjacent to {"," ! _,{",False,replace prose
 " / adjacent to a vowel"," / V_, _V",False,replace prose
 " / near emphatics"," / _[+ emphatic], [+ emphatic]_",False,replace prose
+" / near consonants"," / C_, _C",False,replace prose
 " / when not near emphatics"," / ! _[+ emphatic], [+ emphatic]_",False,replace prose
 " / in Mentasta Ahtna"," / sporadic ; in Mentasta Ahtna",False,replace prose
 " / in certain situations"," / sporadic ; in certain situations",False,replace prose

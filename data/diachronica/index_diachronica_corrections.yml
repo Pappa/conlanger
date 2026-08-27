@@ -179,3 +179,11 @@ rules:
                   id: Saigon-Vietnamese-ə
                   content: "ə → ∅ / {i,ɨ}_{p,m,w}"
                   reason: "Typo? - ə → ∅ / {i,ɨ}_{p,m.w}"
+        - rule:
+                  id: Blackfoot-ket
+                  content: "ket → tː → sː"
+                  reason: "Allowing for possible alternative output"
+        - rule:
+                  id: Cheyenne-W"
+                  content: "W → ∅ / [+nasal]_, _[+nasal], t_, _t"
+                  reason: "Prose"
