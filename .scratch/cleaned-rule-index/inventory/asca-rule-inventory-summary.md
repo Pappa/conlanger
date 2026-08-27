@@ -16,10 +16,10 @@
 |------:|---------------|
 | 376 | `syntax_other` |
 | 209 | `expected_underscore` |
-| 130 | `unknown_character` |
+| 131 | `unknown_character` |
 | 129 | `runtime_other` |
 | 89 | `unknown_grouping` |
-| 47 | `prose_or_expected_arrow` |
+| 46 | `prose_or_expected_arrow` |
 | 39 | `nested_brackets` |
 | 38 | `expected_number` |
 | 32 | `diacritic_prereq` |
@@ -40,7 +40,7 @@
 | 13 | `₂` |
 | 11 | `̊` |
 | 9 | `ː` |
-| 6 | `̺` |
+| 6 | `ŕ` |
 
 ### unknown_feature
 
