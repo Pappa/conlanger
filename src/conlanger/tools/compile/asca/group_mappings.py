@@ -9,29 +9,39 @@ from conlanger.utils.file_io import load_group_mappings
 # Class-letter boundary policy (compile-time tokenisation).
 # See docs/sound-change-applier.md — "Class-letter expansion boundaries".
 #
-# A mapped uppercase letter expands only when both lookarounds succeed:
+# A mapped uppercase letter expands when both lookarounds succeed:
 # - BEFORE: start of (non-matrix) segment, or after delimiter / peer class /
-#   length mark / hyphen — enables glued clusters (SR, VOR) and VːR.
-# - AFTER: punctuation, end, glued uppercase class, IPA extension (Tʃ), or
-#   ASCII lowercase segment literal (Kr, _Ra). Subscripts (₁) are excluded.
+#   length mark / hyphen / digit / closing ) ] / ellipsis / ʔ / ç —
+#   enables glued clusters (SR, VOR), VːR, digit refs (V3R), (C,0)U, ʔR, çT.
+# - AFTER: punctuation (incl. '(' and '…'), end, glued uppercase class,
+#   IPA extension (Tʃ), ASCII lowercase (Kr, _Ra), or extra modifiers
+#   outside the IPA-ext block (β, ʱ, ŋ). Subscripts (₁) are excluded.
+# Unglued pass: remaining mapped letters whose previous char is *not* a
+# BEFORE delimiter (lowercase IPA prefix: rK, sTP, nQ, hR). Mapping
+# results are not re-expanded (S→P stays P).
 
-_CLASS_BEFORE_DELIMS = r"[\{\[\s/,>_A-Z#$%|!\(ː-]"
+_CLASS_BEFORE_CHARS = r"\{\[\s/,>_A-Z#$%|!\(ː0-9)\]…ʔç-"
+_CLASS_BEFORE_DELIMS = rf"[{_CLASS_BEFORE_CHARS}]"
 _CLASS_BEFORE = rf"(?:^|(?<={_CLASS_BEFORE_DELIMS}))"
+_CLASS_UNGLUED_PREFIX = rf"(?<=[^{_CLASS_BEFORE_CHARS}])"
 
-_FOLLOW_PUNCT = r"[:,\[\]\{\}\s/>_#$%|!\)-]"
+_FOLLOW_PUNCT = r"[:,\[\]\{\}\s/>_#$%|!\)\(…-]"
 _FOLLOW_GLUED_UPPER = r"[A-Z]"
 _FOLLOW_IPA_EXT = r"[\u0250-\u02AF]"
 _FOLLOW_ASCII_LOWER = r"[a-z]"
 _FOLLOW_ASCII_OR_IPA = r"[a-z\u0250-\u02AF]"
+_FOLLOW_EXTRA_MODIFIERS = r"[βʱŋ]"
 
 _CLASS_AFTER = (
     rf"(?={_FOLLOW_PUNCT}|$"
     rf"|{_FOLLOW_GLUED_UPPER}"
     rf"|{_FOLLOW_IPA_EXT}"
-    rf"|{_FOLLOW_ASCII_LOWER})"
+    rf"|{_FOLLOW_ASCII_LOWER}"
+    rf"|{_FOLLOW_EXTRA_MODIFIERS})"
 )
 _CLASS_AFTER_LABIALIZED = (
-    rf"(?={_FOLLOW_PUNCT}|$|{_FOLLOW_GLUED_UPPER}|{_FOLLOW_ASCII_OR_IPA})"
+    rf"(?={_FOLLOW_PUNCT}|$|{_FOLLOW_GLUED_UPPER}"
+    rf"|{_FOLLOW_ASCII_OR_IPA}|{_FOLLOW_EXTRA_MODIFIERS})"
 )
 
 _LABIAL = "\u02b7"
@@ -134,7 +144,17 @@ def _apply_asca_group_mappings_outside_brackets(
         before=_CLASS_BEFORE,
         after=_CLASS_AFTER,
     )
-    return bare.sub(
+    text = bare.sub(
+        lambda match: expand_grouping_letter(match.group(1), mappings, labial=False),
+        text,
+    )
+
+    unglued = _class_letter_pattern(
+        index_keys,
+        before=_CLASS_UNGLUED_PREFIX,
+        after=_CLASS_AFTER,
+    )
+    return unglued.sub(
         lambda match: expand_grouping_letter(match.group(1), mappings, labial=False),
         text,
     )

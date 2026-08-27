@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: 12
 
 # Correction pass: group-mapping boundaries + unglued class letters
@@ -54,12 +54,32 @@ After the normal pass, expand any **remaining** mapped uppercase letter when the
 
 ## Acceptance criteria
 
-- [ ] Before/after char sets extended with documented rationale per char class
-- [ ] Unglued second pass implemented; `rK` expands **K** (test updated)
-- [ ] `C₁`, `S₁` regressions unchanged
-- [ ] Ticket 23 labialization regressions unchanged (`Kʷ`, `K(ʷ)`, …)
-- [ ] Full inventory re-run; in-scope `unknown_grouping` count in **Answer** (target **~55–58 / 68** in-scope rows cleared, ~**85%**)
-- [ ] `grouping_errors.csv` regenerated or diff noted
+- [x] Before/after char sets extended with documented rationale per char class
+- [x] Unglued second pass implemented; `rK` expands **K** (test updated)
+- [x] `C₁`, `S₁` regressions unchanged
+- [x] Ticket 23 labialization regressions unchanged (`Kʷ`, `K(ʷ)`, …)
+- [x] Full inventory re-run; in-scope `unknown_grouping` count in **Answer** (target **~55–58 / 68** in-scope rows cleared, ~**85%**)
+- [x] `grouping_errors.csv` regenerated or diff noted
+
+## Answer
+
+Compile-layer only (`group_mappings.py`). Before-set gained digits, `)`, `]`, `…`, `ʔ`, `ç`; after-set gained `(`, `…`, and extra modifiers `β` `ʱ` `ŋ` (outside IPA-ext `U+0250–U+02AF`). Unglued pass expands remaining mapped letters whose previous char is **not** a Before delimiter (so `rK` / `sTP` expand without re-expanding mapping results such as `S` → `P`). `rK > k` regression now expects `rC:[-front,+back,+hi,-lo] > k`. Subscripts and labialization tests unchanged.
+
+**Inventory (ASCA 0.10.2, `uv run create_index` 2026-08-27):**
+
+| Metric | Before | After | Δ |
+|--------|-------:|------:|--:|
+| OK | 8004 (82.7%) | 8051 (83.2%) | **+47** |
+| Fail | 1143 (11.8%) | 1096 (11.3%) | **−47** |
+| Sections all OK | 348 / 691 (50.4%) | 351 / 691 (50.8%) | **+3** |
+| `unknown_grouping` (all) | 89 | 30 | **−59** |
+| In-scope CSV/native letters | 68 | 9 | **−59 (87%)** |
+
+In-scope tokens cleared: **R** 26→0, **T** 8→0, **H** 4→0, **Q** 1→0, **U** 11→1, **E** 6→2, **B** 5→3, **K** 5→2, **D** 2→1. Out of scope **M/X/I/Y** unchanged (21).
+
+12 of the 59 token-clears still fail under other classes (47 ok-flips). Residual 9 in-scope rows (ticket 96): Old-Norse/Luwian class letter before `ː` (not in After at mapping time); rGyalrongic `Kç` (`ç` in Before only); Finnish output `Uː`.
+
+`grouping_errors.csv` regenerated (30 rows).
 
 ## References
 

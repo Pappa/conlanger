@@ -41,7 +41,7 @@ from conlanger.tools.compile.asca.group_mappings import (
         ),
         ("Cʷ > C", "C:[+round] > C"),
         ("Kr > k", "C:[-front,+back,+hi,-lo]r > k"),
-        ("rK > k", "rK > k"),
+        ("rK > k", "rC:[-front,+back,+hi,-lo] > k"),
         ("Kw > k", "C:[-front,+back,+hi,-lo]w > k"),
         ("Sʷ", "C:[+labial]"),
         ("X > y", "X > y"),
@@ -93,6 +93,36 @@ def test_asca_group_mappings_dict_loads_package_csv():
     mappings = asca_group_mappings_dict()
     assert mappings["R"] == "[+son,-syll]"
     assert mappings["Z"] == "[+cont]"
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("V3R", "V3[+son,-syll]"),
+        ("(C,0)U", "(C,0)%"),
+        ("#_(j)B", "#_(j)V:[+back]"),
+        ("…U:[+stress]", "…%:[+stress]"),
+        ("ʔR", "ʔ[+son,-syll]"),
+        ("çT", "çP:[-voice]"),
+        ("_%U(%,0)#", "_%%(%,0)#"),
+        ("Eβu", "V:[+front]βu"),
+        ("Bʱ", "V:[+back]ʱ"),
+        ("{D,Dʱ}", "{P:[+voice],P:[+voice]ʱ}"),
+        ("UŋA", "%ŋO:[+delrel]"),
+        ("R…R", "[+son,-syll]…[+son,-syll]"),
+        ("sTP", "sP:[-voice]C:[+labial]"),
+        ("nQ", "n{C:[-front,+back,-hi,-lo],[+click]}"),
+        ("hR", "h[+son,-syll]"),
+        ("C₁", "C₁"),
+        ("S₁", "S₁"),
+    ],
+)
+def test_apply_asca_group_mappings_boundary_and_unglued(
+    text, expected, fx_sample_group_mappings
+):
+    assert (
+        apply_asca_group_mappings_to_string(text, fx_sample_group_mappings) == expected
+    )
 
 
 def test_expand_grouping_letter_leaves_unmapped_non_native_letters():
