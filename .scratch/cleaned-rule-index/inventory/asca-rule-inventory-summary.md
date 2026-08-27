@@ -14,11 +14,11 @@
 
 | count | failure_class |
 |------:|---------------|
-| 378 | `syntax_other` |
+| 380 | `syntax_other` |
 | 211 | `expected_underscore` |
 | 134 | `runtime_other` |
-| 132 | `unknown_character` |
-| 48 | `prose_or_expected_arrow` |
+| 131 | `unknown_character` |
+| 47 | `prose_or_expected_arrow` |
 | 39 | `nested_brackets` |
 | 38 | `expected_number` |
 | 32 | `diacritic_prereq` |
@@ -40,7 +40,7 @@
 | 13 | `₂` |
 | 11 | `̊` |
 | 10 | `ː` |
-| 6 | `ŕ` |
+| 6 | `̺` |
 
 ### unknown_feature
 
