@@ -60630,10 +60630,11 @@ sections:
     raw: p → {p,b,m,w} / _C
     source: index_diachronica_original.html:12743
     rule_id: Catawba-p
-  - stages:
+  - comment: (*)
+    stages:
     - p
     - b
-    env: V_V (*)
+    env: V_V
     raw: p → b / V_V (*)
     source: index_diachronica_original.html:12744
     rule_id: Catawba-p_2
@@ -60659,17 +60660,18 @@ sections:
     raw: t → ∅ / _k, when medial
     source: index_diachronica_original.html:12747
     rule_id: Catawba-t
-  - stages:
+  - comment: (*)
+    stages:
     - V:[+stress][+nas]
-    - Vn (*)
+    - Vn
     raw: ”V[+nas] → Vn (*)
     source: index_diachronica_original.html:12748
     rule_id: Catawba-”V+nas
-  - stages:
+  - comment: (*); (only sometimes?)
+    stages:
     - ∅
     - ʔ
-    env: C_# (*)
-    comment: (only sometimes?)
+    env: C_#
     raw: ∅ → ʔ / C_# (only sometimes?) (*)
     source: index_diachronica_original.html:12749
     sporadic: true
@@ -61687,17 +61689,19 @@ sections:
     raw: 'w → b / #_'
     source: index_diachronica_original.html:12938
     rule_id: Kansa-w
-  - stages:
+  - comment: (*)
+    stages:
     - r L(ʲ)
     - d j
-    env: '#_ (*)'
+    env: '#_'
     raw: 'r L(ʲ) → d j / #_ (*)'
     source: index_diachronica_original.html:12939
     rule_id: Kansa-r-Lʲ
-  - stages:
+  - comment: (*)
+    stages:
     - L
     - bl
-    env: '#_e (*)'
+    env: '#_e'
     raw: 'L → bl / #_e (*)'
     source: index_diachronica_original.html:12940
     rule_id: Kansa-L
@@ -62019,44 +62023,49 @@ sections:
     raw: 'L → d / #_'
     source: index_diachronica_original.html:12995
     rule_id: Quapaw-L
-  - stages:
+  - comment: (*)
+    stages:
     - x
-    - ʒ (*)
+    - ʒ
     raw: x → ʒ (*)
     source: index_diachronica_original.html:12996
     rule_id: Quapaw-x
-  - stages:
+  - comment: (*)
+    stages:
     - Lʲ
     - j
-    env: '#_õ (*)'
+    env: '#_õ'
     raw: 'Lʲ → j / #_õ (*)'
     source: index_diachronica_original.html:12997
     rule_id: Quapaw-Lʲ
-  - stages:
+  - comment: (*)
+    stages:
     - Lʲ
     - t
-    env: '#_ã (*)'
+    env: '#_ã'
     raw: 'Lʲ → t / #_ã (*)'
     source: index_diachronica_original.html:12998
     rule_id: Quapaw-Lʲ_2
-  - stages:
+  - comment: (*)
+    stages:
     - ã
-    - õ (*)
+    - õ
     raw: ã → õ (*)
     source: index_diachronica_original.html:12999
     rule_id: Quapaw-ã
-  - stages:
+  - comment: (*)
+    stages:
     - ũ
     - ã
-    env: _[+stress] (*)
+    env: _[+stress]
     raw: ũ → ã / stressed (*)
     source: index_diachronica_original.html:13000
     rule_id: Quapaw-ũ
-  - stages:
+  - comment: (*); (in morphemes)
+    stages:
     - m
     - ∅
-    env: '#_n (*)'
-    comment: (in morphemes)
+    env: '#_n'
     raw: 'm → ∅ / #_n (in morphemes) (*)'
     source: index_diachronica_original.html:13001
     rule_id: Quapaw-m
@@ -65373,10 +65382,11 @@ sections:
     raw: ŋ → n / _# else
     source: index_diachronica_original.html:13763
     rule_id: Pre-Finnic-ŋ_2
-  - stages:
+  - comment: (*); (C)
+    stages:
     - iw ow
     - y uː
-    env: _(C) (*)
+    env: _
     raw: iw ow → y uː / _(C) (*)
     source: index_diachronica_original.html:13764
     rule_id: Pre-Finnic-iw-ow
@@ -65582,9 +65592,10 @@ sections:
     raw: ŋ → w / C_
     source: index_diachronica_original.html:13795
     rule_id: Proto-Finnic-ŋ_6
-  - stages:
+  - comment: (*)
+    stages:
     - uwa
-    - oː (*)
+    - oː
     raw: uwa → oː (*)
     source: index_diachronica_original.html:13796
     rule_id: Proto-Finnic-uwa
@@ -65692,10 +65703,11 @@ sections:
     raw: n → ∅ / _tː
     source: index_diachronica_original.html:13811
     rule_id: Proto-Finnic-n
-  - stages:
+  - comment: (*)
+    stages:
     - w
     - ∅
-    env: o_st (*)
+    env: o_st
     raw: w → ∅ / o_st (*)
     source: index_diachronica_original.html:13812
     rule_id: Proto-Finnic-w
@@ -65847,10 +65859,11 @@ sections:
     raw: 'ʋ → ∅ / #_{o,u,y}'
     source: index_diachronica_original.html:13836
     rule_id: Proto-Finnish-ʋ
-  - stages:
+  - comment: (*)
+    stages:
     - j
     - ∅
-    env: _i (*)
+    env: _i
     raw: j → ∅ / _i (*)
     source: index_diachronica_original.html:13837
     rule_id: Proto-Finnish-j

@@ -262,7 +262,10 @@ section_index,section_name,rule_id,source,manual_mapping
 36.3.3.1,Old Tibetan to Amdo dialects,Amdo-dialects-d,index_diachronica_original.html:12295, sporadic ; (some dialects
 37.1.2,Proto-Iroquoian to Proto-Northern Iroquoian,Proto-Northern-Iroquoian-Vː,index_diachronica_original.html:12384, ! 
 37.1.2.2.1,Huron to Wyandot,Wyandot-Vː,index_diachronica_original.html:12479, / 
+37.2.1,Proto-Siouan to Catawba,Catawba-p_2,index_diachronica_original.html:12744, ; (*)
 37.2.1,Proto-Siouan to Catawba,Catawba-tʲ,index_diachronica_original.html:12745, / 
+37.2.1,Proto-Siouan to Catawba,Catawba-”V+nas,index_diachronica_original.html:12748, ; (*)
+37.2.1,Proto-Siouan to Catawba,Catawba-∅,index_diachronica_original.html:12749, ; (*)
 37.2.2,Proto-Siouan to Dakota,Dakota-tʲ,index_diachronica_original.html:12757, / 
 37.2.2,Proto-Siouan to Dakota,Dakota-s,index_diachronica_original.html:12759, / 
 37.2.3,Proto-Siouan to Mandan,Mandan-ã,index_diachronica_original.html:12802, / 
@@ -272,14 +275,26 @@ section_index,section_name,rule_id,source,manual_mapping
 37.2.6,Proto-Siouan to Proto-Dhegiha,Proto-Dhegiha-t-tʲ-s,index_diachronica_original.html:12921, / 
 37.2.6,Proto-Siouan to Proto-Dhegiha,Proto-Dhegiha-tʲ,index_diachronica_original.html:12922, / 
 37.2.6,Proto-Siouan to Proto-Dhegiha,Proto-Dhegiha-u,index_diachronica_original.html:12928, / 
+37.2.6.1,Proto-Dhegiha to Kansa,Kansa-r-Lʲ,index_diachronica_original.html:12939, ; (*)
+37.2.6.1,Proto-Dhegiha to Kansa,Kansa-L,index_diachronica_original.html:12940, ; (*)
 37.2.6.1,Proto-Dhegiha to Kansa,Kansa-ũ,index_diachronica_original.html:12943, / _[+stress]
 37.2.6.2,Proto-Dhegiha to Omaha-Ponca,Omaha-Ponca-ũ,index_diachronica_original.html:12959, / _[+stress]
+37.2.6.4,Proto-Dhegiha to Quapaw,Quapaw-x,index_diachronica_original.html:12996, ; (*)
+37.2.6.4,Proto-Dhegiha to Quapaw,Quapaw-Lʲ,index_diachronica_original.html:12997, ; (*)
+37.2.6.4,Proto-Dhegiha to Quapaw,Quapaw-Lʲ_2,index_diachronica_original.html:12998, ; (*)
+37.2.6.4,Proto-Dhegiha to Quapaw,Quapaw-ã,index_diachronica_original.html:12999, ; (*)
 37.2.6.4,Proto-Dhegiha to Quapaw,Quapaw-ũ,index_diachronica_original.html:13000, / _[+stress]
+37.2.6.4,Proto-Dhegiha to Quapaw,Quapaw-ũ,index_diachronica_original.html:13000, ; (*)
+37.2.6.4,Proto-Dhegiha to Quapaw,Quapaw-m,index_diachronica_original.html:13001, ; (*)
+42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-iw-ow,index_diachronica_original.html:13764, ; (*)
 42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-ɤː?-ɑː-æː,index_diachronica_original.html:13767, / _[+stress]
 42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-Aw,index_diachronica_original.html:13769, / _[-stress]
 42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-iw,index_diachronica_original.html:13771, / _[-stress]
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ej,index_diachronica_original.html:13780, / _[-stress]
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-uwa,index_diachronica_original.html:13796, ; (*)
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-w,index_diachronica_original.html:13812, ; (*)
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tk,index_diachronica_original.html:13815, / 
+42.1.1.1,Proto-Finnic to Proto-Finnish,Proto-Finnish-j,index_diachronica_original.html:13837, ; (*)
 42.1.1.1,Proto-Finnic to Proto-Finnish,Proto-Finnish-oi,index_diachronica_original.html:13839, / _[-stress]
 42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-AO,index_diachronica_original.html:13881, / _[-stress]
 42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-Ue,index_diachronica_original.html:13883, / _[-stress]

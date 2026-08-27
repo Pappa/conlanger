@@ -94,5 +94,4 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 " (seems to be a sporadic change"," ; (seems to be a sporadic change",False,comment
 " / in "," / ",False,replace prose
 " ! in "," ! ",False,replace prose
-
-
+" (*)"," ; (*)",False,ambiguous symbol
