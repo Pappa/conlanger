@@ -84,12 +84,14 @@ nd ld (→ nː lː ?),nd ld → nː lː,False,chaining
 " _%, when stressed (short only)"," _[+stress, -long]%",False,replace prose
 " / near gutturals"," / _[+laryngeal], [+laryngeal]_",False,replace prose
 " / in two cases cited"," / sporadic ; in two cases cited",False,replace prose
-" / in some unaccented syllables"," / sporadic ; in some unaccented syllables",False,replace prose
-" / in some unstressed syllables"," / sporadic ; in some unstressed syllables",False,replace prose
+" / in some "," / sporadic ; in some ",False,replace prose
 " / in inland varieties"," / sporadic ; in inland varieties",False,replace prose
 " / in diminutives"," / sporadic ; diminutives",False,replace prose
 " / in nominal suffixes"," / sporadic ; nominal suffixes",False,replace prose
+" / in nouns"," / sporadic ; in nouns",False,replace prose
 ", in some words"," sporadic ; in some words",False,replace prose
+" / in coda"," / :{ _#, _% }: ; in coda",False,replace prose
+" / possible exception"," / sporadic ; possible exception",False,replace prose
 " / unclear conditioning"," / sporadic ; unclear conditioning",False,replace prose
 " (seems to be a sporadic change"," ; (seems to be a sporadic change",False,comment
 " / in "," / ",False,replace prose

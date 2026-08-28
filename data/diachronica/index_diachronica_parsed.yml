@@ -2444,10 +2444,11 @@ sections:
     raw: ʕ → {ʕ̞,ħ} / _h
     source: index_diachronica_original.html:1399
     rule_id: Egyptian-Arabic-ʕ
-  - stages:
+  - comment: in coda
+    stages:
     - h
     - ∅
-    env: coda
+    env: ':{ _#, _$ }:'
     raw: h → ∅ / in coda
     source: index_diachronica_original.html:1401
     rule_id: Egyptian-Arabic-h
@@ -5054,12 +5055,13 @@ sections:
   - raw: 'Synchronic alterations:'
     source: index_diachronica_original.html:1921
   rules:
-  - stages:
+  - comment: in nouns; sporadic
+    stages:
     - tʃ
     - t
-    env: nouns
     raw: tʃ → t / in nouns
     source: index_diachronica_original.html:1896
+    sporadic: true
     rule_id: Munsee-Delaware-tʃ
   - comment: diminutives; sporadic
     stages:
@@ -8720,10 +8722,10 @@ sections:
     raw: '*D → r'
     source: index_diachronica_original.html:2645
     rule_id: Ibanag-*D
-  - stages:
+  - comment: possible exception in word-initial position?; sporadic
+    stages:
     - j
     - ɡ
-    env: possible exception in word-initial position?
     raw: '*j → ɡ / possible exception in word-initial position?'
     source: index_diachronica_original.html:2646
     sporadic: true
@@ -26943,12 +26945,13 @@ sections:
     raw: V → Vː / _r{t,d,s,ts} (except /ə/)
     source: index_diachronica_original.html:6117
     rule_id: Standard-German-V_2
-  - stages:
+  - comment: in some monosyllables ending in alveolar resonants or vowels; sporadic
+    stages:
     - V
     - Vː
-    env: some monosyllables ending in alveolar resonants or vowels
     raw: V → Vː / in some monosyllables ending in alveolar resonants or vowels
     source: index_diachronica_original.html:6118
+    sporadic: true
     rule_id: Standard-German-V_3
   - stages:
     - V
@@ -53941,12 +53944,13 @@ sections:
     raw: ə1 → æ2 / _C(C)a3
     source: index_diachronica_original.html:11528
     rule_id: Nooksack-ə1_2
-  - stages:
+  - comment: in some other unspecified circumstances; sporadic
+    stages:
     - ə1
     - æ2
-    env: some other unspecified circumstances
     raw: ə1 → æ2 / in some other unspecified circumstances
     source: index_diachronica_original.html:11529
+    sporadic: true
     rule_id: Nooksack-ə1_3
   - stages:
     - '{u3~ə3}'
