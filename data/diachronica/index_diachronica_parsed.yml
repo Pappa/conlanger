@@ -27164,14 +27164,12 @@ sections:
     raw: ɡ → x / _#
     source: index_diachronica_original.html:6154
     rule_id: Old-Low-German-ɡ_4
-  - stages:
-    - F[-voice]
-    - F[+voice]
-    env: X[+voice]_X[+voice]?
+  - stages: []
     raw: F[-voice] → F[+voice] / X[+voiced]_X[+voiced]?
     source: index_diachronica_original.html:6155
-    sporadic: true
+    status: skipped
     rule_id: Old-Low-German-F-voice
+    comment: No idea what X means
 - section: Common Germanic to Proto-Norse
   index: 17.7.3
   citation: Pogostick Man, from Theiling, Henrik, http://www.kunstsprachen.de/s17/rules.sch
@@ -65783,6 +65781,7 @@ sections:
     raw: w → ʋ
     source: index_diachronica_original.html:13822
     rule_id: Proto-Finnic-w_2
+  status: skipped
 - section: Proto-Finnic to Proto-Finnish
   index: 42.1.1.1
   citation: Tropylium, from Hakulinen, Lauri (1979), “Suomen kielen rakenne ja kehitys”.
@@ -66222,6 +66221,7 @@ sections:
     source: index_diachronica_original.html:13890
     sporadic: true
     rule_id: Standard-Finnish-θː-ð
+  status: skipped
 - section: Standard Finnish to Modern Standard Finnish
   index: 42.1.1.1.2
   citation: Tropylium, from Hakulinen, Lauri (1979), “Suomen kielen rakenne ja kehitys”.
