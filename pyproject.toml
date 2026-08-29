@@ -26,6 +26,7 @@ dependencies = [
 [project.scripts]
 create_index = "conlanger.scripts.create_index:main"
 sample_asca_guess_fixtures = "conlanger.scripts.sample_asca_guess_fixtures:main"
+per_file_coverage_gate = "conlanger.scripts.per_file_coverage_gate:main"
 
 [project.optional-dependencies]
 testing = ["pytest", "pytest-cov", "pytest-mock"]
