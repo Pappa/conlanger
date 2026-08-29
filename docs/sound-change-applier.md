@@ -34,11 +34,11 @@ Parse-time transforms are documented in [index-diachronica-parser.md](./index-di
 | 1 | `RuleTitle` | always | `@ {index} - {section}` |
 | 2 | `RuleCitation` | `section.get("citation")` | `# citation: …` |
 | 3 | `RuleComment` | `section.get("comment")` | `\t# …` |
-| 4+ | `SoundChangeRule` | each item in `section["rules"]` | `\t{compiled rule}` |
+| 4+ | `SoundChangeRule` | each item in `section["rules"]` unless the **section** has `status: skipped` | `\t{compiled rule}` or `#\t{raw}` when the **rule** has `status: skipped` |
 
 `str(DiachronicSeries)` joins parts with newlines → `.rsca` body shape.
 
-`SoundChangeRule` requires `input`, `output`; optional `env`, `exception`. Corpus rules with `status: skipped` render as commented ASCA lines (`#\t` + `raw`); excluded from validation. Compiled text is stored in `value` at construction via per-field compile ([ADR-0014](./adr/0014-per-field-asca-compile.md)).
+`SoundChangeRule` requires `input`, `output`; optional `env`, `exception`. Corpus rules with `status: skipped` render as commented ASCA lines (`#\t` + `raw`); excluded from `_active_rule_changes`. Boolean `skip` / `skipped` are not compile flags. Compiled text is stored in `value` at construction via per-field compile ([ADR-0014](./adr/0014-per-field-asca-compile.md)).
 
 ---
 

@@ -188,6 +188,21 @@ def test_DiachronicSeries(section, expected):
     assert str(ruleset) == expected
 
 
+def test_sound_change_rule_comments_raw_when_status_skipped():
+    rule = SoundChangeRule(status="skipped", raw="a → b")
+    assert str(rule) == "#\ta → b"
+
+
+def test_diachronic_series_ignores_boolean_skip_fields():
+    section = {
+        "index": "1",
+        "section": "sec",
+        "skipped": True,
+        "rules": [{"stages": ["a", "b"], "skip": True, "raw": "a → b"}],
+    }
+    assert str(DiachronicSeries(section)) == "@ 1 - sec\n\ta > b\n"
+
+
 def test_diachronic_series_applies_section_series_mappings():
     config = CompilerConfig(
         series_mappings_global={"h₁": "h"},

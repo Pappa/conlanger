@@ -77,7 +77,7 @@ After **Manual mapping** and quoted-prose detection; **before** symbol normaliza
 | Output / env / exception split | implemented | C3 | ASCA env uses `/`; exception via `!`, word `except`, or second `/`. A slash glued to output (`∅/ _#`) is the same delimiter without the preceding space ([pass 82](../.scratch/cleaned-rule-index/issues/82-correction-pass-output-env-slash-boundary.md)). Lines that omit `/` entirely are Index errata — overlay in `index_diachronica_corrections.yml`, not a parse peel. | `split_post_arrow`, `split_env_exception` |
 | Remaining `→` → `>` in field values | implemented | C4 | Chained outputs and embedded arrows must use ASCA `>` ([correction pass 17](../.scratch/cleaned-rule-index/issues/17-correction-pass-arrow.md)). | `normalize_rule_arrows` (via `extract_rule_parts`) |
 
-**Missing `→`:** returns a index rule with empty `stages` and optional `comment`; no `status: skipped` unless the **rule id** is listed in `parser_config.yml` `skip_rules`.
+**Missing `→`:** still a index rule (spine shape is [ticket 90](../.scratch/cleaned-rule-index/issues/90-missing-arrow-single-stage.md)); no `status: skipped` unless the **rule id** is listed in `parser_config.yml` `skip_rules`. Boolean `skip` / `skipped` are not index fields.
 
 ### Phase D — Class-first field transforms (post-split)
 

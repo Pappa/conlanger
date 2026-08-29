@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by:
 
 # Config-only `status: skipped`; stop parse auto-skip
@@ -49,8 +49,16 @@ Parse stamps `status: skipped` + `stages: []` on several automatic paths **and**
 
 ## Acceptance criteria
 
-- [ ] Auto-skip paths gone; `skip_rules` still sets rule `status: skipped`
-- [ ] Section skip is `status: skipped` only
-- [ ] Skipped rules render as `#\t` + `raw`; skipped sections bypass compile
-- [ ] No `skip: true` / `skipped: true` in index YAML
-- [ ] Full gate: `uv run pytest`; `uv run ruff check --fix`; `uv run ruff format && uv run ruff format --check src`
+- [x] Auto-skip paths gone; `skip_rules` still sets rule `status: skipped`
+- [x] Section skip is `status: skipped` only
+- [x] Skipped rules render as `#\t` + `raw`; skipped sections bypass compile
+- [x] No `skip: true` / `skipped: true` in index YAML
+- [ ] Full gate: `uv run pytest` blocked by pre-existing `test_load_parser_config_default_includes_section_mapping_seed`; `uv run ruff check --fix`; `uv run ruff format && uv run ruff format --check src`
+
+## Answer
+
+Hold-out is **`status: skipped` only**, from `parser_config.yml` `skip_rules` / `skip_sections`. Parse does not auto-skip missing-arrow, quoted-prose, gloss-only, or short-spine lines. Compile comments skipped **rules** as `#\t` + `raw` via `SoundChangeRule.status` (boolean `skipped` / `skip` are ignored). Skipped **sections** emit no rule parts. Inventory: rule hold-out `ok=True` / `held-out (commented rule)`; section hold-out `failure_class=section_skipped`.
+
+**Gate:** ruff check/format passed. `uv run pytest` fails on pre-existing `test_load_parser_config_default_includes_section_mapping_seed` (`KeyError: '10.1'` — seed is under `"10"` in `parser_config.yml`); not introduced by this ticket.
+
+## Comments

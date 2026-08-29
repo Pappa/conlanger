@@ -60,7 +60,7 @@ class SoundChangeRule(RulePartBase):
     output: str = ""
     env: str | None = None
     exception: str | None = None
-    skipped: bool = False
+    status: str | None = None
     raw: str = ""
 
     alternatives: list[SoundChangeRule] = Field(default_factory=list)
@@ -86,7 +86,7 @@ class SoundChangeRule(RulePartBase):
 
     @model_validator(mode="after")
     def compile_rule(self) -> Self:
-        if self.skipped:
+        if self.status == "skipped":
             self.value = self.raw
             return self
 
@@ -110,7 +110,7 @@ class SoundChangeRule(RulePartBase):
         return self
 
     def __str__(self) -> str:
-        prefix = self.skip_prefix if self.skipped else self.prefix
+        prefix = self.skip_prefix if self.status == "skipped" else self.prefix
         return f"{prefix}{self.value}"
 
     def _build_alternatives(self) -> list[SoundChangeRule]:
@@ -191,7 +191,6 @@ class DiachronicSeries(BaseModel):
                     parts.append(
                         SoundChangeRule(
                             **rule,
-                            skipped=True,
                             group_mappings=mappings,
                             section_index=section_index,
                             compiler_config=config,

@@ -1089,7 +1089,7 @@ def append_ok_flip_changelog(flips: pd.DataFrame, path: Path) -> int:
 def section_all_ok_stats(rows: list[ValidationRow]) -> tuple[int, int, float]:
     """Return count of sections with every rule ok, total sections, and percentage.
 
-    Sections marked ``skipped`` in the index are excluded from the denominator.
+    Sections with ``status: skipped`` are excluded from the denominator.
     """
     by_section: dict[tuple[str, str], list[ValidationRow]] = {}
     for row in rows:
