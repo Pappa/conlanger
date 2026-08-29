@@ -1,9 +1,14 @@
 """Tests for Index input-side optionals → ASCA structure optionals (ticket 51)."""
 
+import re
+
 import pytest
 
 from conlanger.appliers.asca import validate_asca
+from conlanger.tools.compile.asca import input_optionals as io
 from conlanger.tools.compile.asca.input_optionals import (
+    _expand_prefix_structure_optional,
+    _is_structural_optional_inner,
     expand_input_optionals_to_structures,
 )
 from conlanger.tools.rules import DiachronicSeries
@@ -25,6 +30,16 @@ from conlanger.tools.rules import DiachronicSeries
             "{pn,ppn,ptn,pkn,tn,tpn,ttn,tkn,kn,kpn,ktn,kkn}",
         ),
         ("V=0 3ʔ(0 )", "V=0 3ʔ{0}"),
+        ("", ""),
+        ("plain text", "plain text"),
+        ("a{i}(i)", "a{i}"),
+        ("({foo,bar})x", "{foo,bar}x"),
+        ("({foo})x", "{foo}x"),
+        ("( {foo} )x", "{foo}x"),
+        ("{p,p}({p})n", "{pn,ppn}"),
+        ("(notstructural)bar", "(notstructural)bar"),
+        ("C > V / (C,V)_", "C > V / (C,V)_"),
+        ("C > V / (C,0)_", "C > V / (C,0)_"),
     ],
 )
 def test_expand_input_optionals_to_structures(index_rule, expected):
@@ -56,6 +71,25 @@ def test_input_optionals_inventory_representatives_validate(inp, out, env):
     validate_asca(DiachronicSeries(section, "asca"))
 
 
-def test_expand_input_optionals_leaves_asca_env_optionals():
-    assert expand_input_optionals_to_structures("C > V / (C,V)_") == "C > V / (C,V)_"
-    assert expand_input_optionals_to_structures("C > V / (C,0)_") == "C > V / (C,0)_"
+@pytest.mark.parametrize(
+    ("inner", "expected"),
+    [
+        ("", False),
+        ("C,V", False),
+        ("V[-long]", True),
+    ],
+)
+def test_is_structural_optional_inner(inner, expected):
+    assert _is_structural_optional_inner(inner) is expected
+
+
+def test_braced_prefix_wraps_unparsed_inner_without_brace_strip(monkeypatch):
+    real_fullmatch = re.fullmatch
+
+    def fake_fullmatch(pattern, string, *args, **kwargs):
+        if pattern == r"\{([^{}]+)\}(.+)" and string == "{C}V":
+            return None
+        return real_fullmatch(pattern, string, *args, **kwargs)
+
+    monkeypatch.setattr(io.re, "fullmatch", fake_fullmatch)
+    assert _expand_prefix_structure_optional("({C}V)ʔ") == "{{C}V}ʔ"
