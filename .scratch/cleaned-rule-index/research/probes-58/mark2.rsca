@@ -1,0 +1,4 @@
+@ Mark first syllable vowels
+	V:[+long] > [+long,+sg] / #_%
+	V:[+long] > [-long] // [+sg]
+	V:[+long] > [-sg] / [+sg]

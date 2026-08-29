@@ -1,4 +1,5 @@
 Type: spike
+Status: resolved
 
 # Spike: Index syllable position `#U` / `U#` → ASCA
 
@@ -67,11 +68,21 @@ Proto-Norse parallel: `Vː → V[- long] / ! #U, U#` (no prose `in`) — same sy
 
 ## Acceptance criteria
 
-- [ ] ASCA syllable / word-boundary semantics cited from primary sources
-- [ ] Index `#U` / `U#` semantics documented with grill examples
-- [ ] At least three candidate ASCA encodings evaluated against test words (including consonant-initial first syllable)
-- [ ] Recommendation: pass / partial / defer, with expected inventory uplift if pass is viable
-- [ ] Findings linked from this ticket's **Answer**; no production code change required to resolve
+- [x] ASCA syllable / word-boundary semantics cited from primary sources
+- [x] Index `#U` / `U#` semantics documented with grill examples
+- [x] At least three candidate ASCA encodings evaluated against test words (including consonant-initial first syllable)
+- [x] Recommendation: pass / partial / defer, with expected inventory uplift if pass is viable
+- [x] Findings linked from this ticket's **Answer**; no production code change required to resolve
+
+## Answer
+
+Findings: [research/index-syllable-position-u-hash.md](../research/index-syllable-position-u-hash.md). Probes: [research/probes-58/](./research/probes-58/).
+
+- **Partial pass** — faithful ASCA encodings exist for **mechanical** `#U` / `U#` tails using underline structures + env-set exceptions; do **not** ship `// #_%` or naive `U`→`%` on boundary tokens.
+- **Recommended rewrites:** `! in #U` → `// :{#_#, #<.._>}:`; `! in U#` → `// :{#_#, <.._>#}:`; `! #U, U#` → `// :{#_#, #<.._>, <.._>#}:`; positive `in #U` / `in U#` → `/ #<.._>` / `/ <.._>#`. Env-set **member order** matters (`{#_#}` before structure).
+- **~29 rules** uplift (16 mechanical exceptions + ~13 simple positive env); **~60+** prose/comment/complex tails defer.
+- **Parse-only:** strip `in` before `#U`/`U#`; **amend** `group_mappings.csv` comment — `U`→`%` is class letter only, not `#U`/`U#` position markers.
+- **Follow-on:** correction-pass ticket for compile rewrite; separate defer tickets for ME / Portuguese prose clusters.
 
 ## Blocked by
 

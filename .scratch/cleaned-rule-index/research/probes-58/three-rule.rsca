@@ -1,0 +1,4 @@
+@ Mark then shorten
+	V:[+long] > [+long,+str] / <_(..)>
+	V:[+long] > [-long] // [+str]
+	V:[+long] > [-str] / [+str]

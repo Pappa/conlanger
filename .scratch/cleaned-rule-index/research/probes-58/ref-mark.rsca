@@ -1,0 +1,4 @@
+@ Reference mark first syllable
+	V:[+long]=1 > 1:[tone:1] / #<.._>
+	V:[+long] > [-long] // [tone: 1]
+	V:[+long] > [-long] / _ [tone: 1]

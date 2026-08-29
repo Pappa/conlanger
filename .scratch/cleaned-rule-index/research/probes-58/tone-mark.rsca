@@ -1,0 +1,4 @@
+@ Tone mark first syllable long vowels
+	V:[+long] > [tone:1] / #<.._>
+	V:[+long] > [-long] // [tone: 1]
+	V:[+long] > * / _ [tone: 1]

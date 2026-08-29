@@ -1,0 +1,28 @@
+@ Syllable position probes (#58)
+
+# Candidate A: // #_%  (failed - word onset not syllable)
+V:[+long] > [-long] // #_%
+
+# Candidate B: // #_  (partial - first segment only)
+# V:[+long] > [-long] // #_
+
+# Candidate C: env inversion / $ _
+# V:[+long] > [-long] / $ _
+
+# Candidate D: underline structure initial syllable onset
+# V:[+long] > [-long] // <_..>_
+
+# Candidate E: syllable-tier rule with exception
+# %:[+long] > [-long] // #_%
+
+# Candidate F: structure matching first syllable
+# V:[+long] > [-long] // #<..>_
+
+# Candidate G: except when in first syllable via structure
+# V:[+long] > [-long] // <(..)_>
+
+# Candidate H: except word-initial AND word-final syllable (Proto-Norse)
+# V:[+long] > [-long] // #_%, _%#
+
+# Candidate I: except first syllable via % reference at word start
+# V:[+long] > [-long] // #%_
