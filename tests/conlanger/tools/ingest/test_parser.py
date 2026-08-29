@@ -1061,6 +1061,19 @@ def test_parse_rule_element_missing_arrow():
     assert "status" not in rule
 
 
+def test_parse_rule_element_missing_arrow_with_env_exception_comment():
+    el = html.fragment_fromstring(
+        '<p class="schg">a to b no arrow / _# ! V_ ; editorial note</p>',
+        create_parent=False,
+    )
+    rule = _parse_rule_element(el, source_file="index_diachronica_original.html")[0]
+    assert rule["stages"] == ["a to b no arrow"]
+    assert rule["env"] == "_#"
+    assert rule["exception"] == "V_"
+    assert rule["comment"] == "editorial note"
+    assert "status" not in rule
+
+
 def test_parse_rule_element_arrow_without_spaces():
     el = html.fragment_fromstring(
         '<p class="schg">a \u2192\u0259 / _#</p>', create_parent=False
