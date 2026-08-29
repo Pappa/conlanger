@@ -33,7 +33,7 @@ Grill 2026-08-21 Q6: If the Index line has **no `→`**, parse still emits a ind
 
 - [x] No-arrow parse emits `stages: ["text"]` without `status: skipped`
 - [x] Compile produces a real rule with empty output; inventory records an ASCA failure, not omit/skip
-- [x] Full gate: `uv run pytest`; `uv run ruff check --fix`; `uv run ruff format && uv run ruff format --check src`
+- [x] Full gate: `uv run pytest`; `uv run ruff check --fix`; `uv run ruff format && uv run ruff format --check`
 
 ## Answer
 

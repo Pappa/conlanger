@@ -44,7 +44,7 @@ conlanger = ["data/*.csv", "data/asca/*.csv"]
 [tool.pytest.ini_options]
 testpaths = "tests"
 pythonpath = ["tests"]
-addopts = ["--cov=src", "--cov-report=html", "-s", "-vv"]
+addopts = ["--cov=src", "--cov-report=html", "--cov-report=json:.coverage.json"]
 
 [tool.coverage.run]
 branch = true
@@ -71,7 +71,7 @@ url = "https://pypi.org/simple"
 # explicit = true
 
 [tool.ruff]
-exclude = ["*.ipynb", "legacy/*"]
+exclude = ["*.ipynb", "legacy/*", ".scratch/*"]
 
 [tool.ruff.format]
-exclude = ["*.ipynb", "legacy/*"]
+exclude = ["*.ipynb", "legacy/*", ".scratch/*"]

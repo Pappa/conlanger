@@ -32,7 +32,7 @@ After 93:
 - [ ] Alternative peers still detected from **raw** I/O before field compile
 - [ ] Field isolation `validate_asca_part` fragments match the compiled fields whole-rule validation used
 - [ ] Reconstructing an alternative for inventory does not run the compile pipeline twice on the same text
-- [ ] Full gate: `uv run pytest`; `uv run ruff check --fix`; `uv run ruff format && uv run ruff format --check src`
+- [ ] Full gate: `uv run pytest`; `uv run ruff check --fix`; `uv run ruff format && uv run ruff format --check`
 
 ## Out of scope
 

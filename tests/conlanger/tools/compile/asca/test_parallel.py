@@ -3,6 +3,7 @@
 import pytest
 
 from conlanger.tools.compile.asca.parallel import (
+    _column_branch_pairs,
     drop_mixed_parallel_null_columns,
     expand_parallel_output_null_branches,
 )
@@ -66,7 +67,22 @@ def test_expand_parallel_output_null_branches(
         ("k b r", "{ŋ,∅} {w,m} {n,r,t}"),  # uneven branch counts across columns
         ("d", "{∅,ð}"),  # optional-output shape — expander returns None
         ("c ɲ", "∅ n"),  # top-level column null — ticket 60
+        ("", "{∅,a}"),  # empty input columns after split
+        ("{a,b} x y", "{r,∅}"),  # uneven column count with no uneven-set expansion
+        ("{a,b,c} x", "{x,y} {∅,a}"),  # mismatched correspondence set widths
+        ("{a,{b,c}}", "{∅,x,y}"),  # nested set members are not expandable
     ],
 )
 def test_expand_parallel_output_null_branches_out_of_scope(input_text, output_text):
     assert expand_parallel_output_null_branches(input_text, output_text) is None
+
+
+@pytest.mark.parametrize(
+    ("input_col", "output_col"),
+    [
+        ("{a,b,c}", "{x,y}"),
+        ("{,}", "{∅,a}"),
+    ],
+)
+def test_column_branch_pairs_rejects_non_uniform_set_widths(input_col, output_col):
+    assert _column_branch_pairs(input_col, output_col) is None

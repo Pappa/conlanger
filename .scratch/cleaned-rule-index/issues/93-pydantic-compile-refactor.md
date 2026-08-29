@@ -36,7 +36,7 @@ Re-implement `src/conlanger/tools/rules.py` as **pydantic** `BaseModel`s (**late
 - [x] Six `rules.py` types are pydantic `BaseModel`s; compile is not a post-join string pipeline
 - [x] Alternatives remain on `SoundChangeRule`; chains on `DiachronicSeries`
 - [x] Callers (`validate_asca`, inventory, tests, docs) updated; name stays `DiachronicSeries`
-- [x] Full gate: `uv run pytest`; `uv run ruff check --fix`; `uv run ruff format && uv run ruff format --check src`
+- [x] Full gate: `uv run pytest`; `uv run ruff check --fix`; `uv run ruff format && uv run ruff format --check`
 - [x] Any unit-test I/O string changes documented in **Answer** with justification
 
 ## Answer

@@ -692,6 +692,21 @@ def test_is_catch_all_else_env():
     assert not is_catch_all_else_env("if ɑ is elsewhere in the word")
 
 
+def test_resolve_catch_all_else_empty_rules():
+    assert resolve_catch_all_else_rules([]) == []
+
+
+def test_resolve_catch_all_else_paren_gloss_only_env():
+    rules = [
+        {"stages": ["a", "b"], "env": "#_", "raw": "a → b / #_"},
+        {"stages": ["c", "d"], "env": "(else)", "raw": "c → d / (else)"},
+    ]
+    resolved = resolve_catch_all_else_rules(rules)
+    assert "env" not in resolved[1]
+    assert resolved[1]["comment"] == "(else)"
+    assert "exception" not in resolved[1]
+
+
 def test_resolve_catch_all_else_complementary_pair():
     rules = [
         {"stages": ["kʼ", "{χʷ,qʷ}"], "env": "#_", "raw": "kʼ → {χʷ,qʷ} / #_"},

@@ -191,7 +191,7 @@ def classify_rule(rule: dict, section_name: str, rule_idx: int) -> RuleHit | Non
         hit.max_depth = max(hit.max_depth, fa["max_depth"])
 
     for key in ("env", "exception", "raw"):
-        if key in rule and rule[key]:
+        if rule.get(key):
             val = str(rule[key])
             if "{" not in val:
                 continue

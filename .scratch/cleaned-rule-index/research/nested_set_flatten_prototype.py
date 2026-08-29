@@ -17,7 +17,7 @@ import argparse
 import csv
 import json
 import sys
-from collections import Counter, defaultdict
+from collections import Counter
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from copy import deepcopy
 from pathlib import Path
@@ -28,24 +28,24 @@ import yaml
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "src"))
 
-from conlanger.tools.compile.asca.group_mappings import asca_group_mappings_dict
-from conlanger.tools.index_inventory import (  # noqa: E402
-    load_inventory_csv,
-    validate_index_rule,
-)
-from conlanger.tools.ingest.section_policy import resolve_catch_all_else_rules
-from flatten_nested_sets import (  # noqa: E402
+from flatten_nested_sets import (
     MODE_UNION,
     MODE_UNION_PAREN,
     apply_flatten_to_parts,
     apply_flatten_to_rule,
     flatten_nested_sets,
 )
-from scan_nested_sets import (  # noqa: E402
+from scan_nested_sets import (
     assign_bucket,
     classify_rule,
     count_working_depth_ge2,
 )
+
+from conlanger.tools.compile.asca.group_mappings import asca_group_mappings_dict
+from conlanger.tools.index_inventory import (
+    validate_index_rule,
+)
+from conlanger.tools.ingest.section_policy import resolve_catch_all_else_rules
 
 YAML_PATH = ROOT / "data/diachronica/index_diachronica_parsed.yml"
 INVENTORY_PATH = ROOT / ".scratch/cleaned-rule-index/inventory/asca-rule-inventory.csv"

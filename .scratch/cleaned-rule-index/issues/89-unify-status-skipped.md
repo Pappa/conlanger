@@ -53,7 +53,7 @@ Parse stamps `status: skipped` + `stages: []` on several automatic paths **and**
 - [x] Section skip is `status: skipped` only
 - [x] Skipped rules render as `#\t` + `raw`; skipped sections bypass compile
 - [x] No `skip: true` / `skipped: true` in index YAML
-- [ ] Full gate: `uv run pytest` blocked by pre-existing `test_load_parser_config_default_includes_section_mapping_seed`; `uv run ruff check --fix`; `uv run ruff format && uv run ruff format --check src`
+- [ ] Full gate: `uv run pytest` blocked by pre-existing `test_load_parser_config_default_includes_section_mapping_seed`; `uv run ruff check --fix`; `uv run ruff format && uv run ruff format --check`
 
 ## Answer
 
