@@ -2062,7 +2062,7 @@ def test_parse_records_manual_mapping_matches_and_unmatched(tmp_path: Path):
         ],
     )
     doc = parser.parse(html_path, source_file="index.html")
-    assert doc["sections"][0]["rules"][0]["env"] == "_{s,({m,j,w})V}"
+    assert doc["sections"][0]["rules"][0]["env"] == "_{s,mV,jV,wV}"
     assert len(parser.manual_mapping_matches) == 1
     match = parser.manual_mapping_matches[0]
     assert match.section_index == "17.5.1"

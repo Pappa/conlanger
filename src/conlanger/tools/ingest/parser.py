@@ -21,8 +21,10 @@ and recorded as ``sporadic: true``. **Feature matrix** synonym replacement insid
 rule: the first ``;`` on the working line is peeled before structural split, then
 field-level glosses and env qualifiers. Index word-internal ``medial`` / ``medially`` env
 prose becomes ``env: _`` with boundary ``exception: :{#_, _#}:`` (``apply_medial_env_conditions``).
-Class-letter expansion is deferred to compile time (``DiachronicSeries`` +
-``group_mappings.csv``).
+After catch-all ``else`` resolution, nested ``{}`` in ``env`` / ``exception`` are
+flattened (``flatten_nested_sets``; ``raw`` unchanged). Stages I/O nests are left
+for a later pass. Class-letter expansion is deferred to compile time
+(``DiachronicSeries`` + ``group_mappings.csv``).
 """
 
 from __future__ import annotations
@@ -30,6 +32,9 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
+from conlanger.tools.ingest.flatten_nested_sets import (
+    flatten_nested_sets_in_section_rules,
+)
 from conlanger.tools.ingest.section_policy import resolve_catch_all_else_rules
 from conlanger.tools.ingest.transforms import (
     apply_medial_env_conditions,
@@ -245,7 +250,9 @@ class IndexDiachronicaParser:
             if comments:
                 section_obj["comments"] = comments
             if rules:
-                section_obj["rules"] = resolve_catch_all_else_rules(rules)
+                section_obj["rules"] = flatten_nested_sets_in_section_rules(
+                    resolve_catch_all_else_rules(rules)
+                )
             if index and index in self._parser_config.skip_section_ids:
                 section_obj["status"] = "skipped"
             sections_out.append(section_obj)

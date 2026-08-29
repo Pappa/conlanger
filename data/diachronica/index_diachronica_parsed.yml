@@ -4315,7 +4315,7 @@ sections:
     - aː
     - aa
     env: W_
-    exception: when _{C{C,ː},#}
+    exception: when _{CC,Cː,#}
     raw: aː → aa / W_ ! when _{C{C,ː},#}
     source: index_diachronica_original.html:1762
     rule_id: Blackfoot-aː
@@ -5108,7 +5108,7 @@ sections:
   - stages:
     - Cʷ
     - C
-    env: _ə{(C){p,kʷ},m,w}
+    env: _ə{(C)p,(C)kʷ,m,w}
     raw: Cʷ → C / _ə{(C){p,kʷ},m,w}
     source: index_diachronica_original.html:1903
     rule_id: Munsee-Delaware-Cʷ
@@ -23367,7 +23367,7 @@ sections:
   - stages:
     - m̩ n̩
     - am an
-    env: _{s,({m,j,w})V}
+    env: _{s,mV,jV,wV}
     raw: m̩ n̩ → am an / _{s,({m,j,w})V}
     source: index_diachronica_original.html:5509
     rule_id: Old-Irish-m̩-n̩
@@ -23377,7 +23377,7 @@ sections:
     raw: m̩ n̩ → em en / else
     source: index_diachronica_original.html:5510
     rule_id: Old-Irish-m̩-n̩_2
-    exception: _{s,({m,j,w})V}
+    exception: _{s,mV,jV,wV}
   - stages:
     - ɡʷ
     - b
@@ -27367,7 +27367,7 @@ sections:
   - stages:
     - e
     - ja
-    exception: '{{h,k,ŋ}n,w,v,l,r}_, _{u,o,i}'
+    exception: '{hn,kn,ŋn,w,v,l,r}_, _{u,o,i}'
     raw: e → ja / ! {{h,k,ŋ}n,w,v,l,r}_, _{u,o,i}
     source: index_diachronica_original.html:6192
     rule_id: Old-Norse-e_2
@@ -27600,7 +27600,7 @@ sections:
     - e
     - jɒ
     env: _(C)(C)(C)u
-    exception: '{{h,k,ŋ}n,w,v,l,r}_'
+    exception: '{hn,kn,ŋn,w,v,l,r}_'
     raw: e → jɒ / _(C)(C)(C)u ! {{h,k,ŋ}n,w,v,l,r}_
     source: index_diachronica_original.html:6225
     rule_id: Old-Norse-e_3
@@ -27608,7 +27608,7 @@ sections:
     - e
     - ja
     env: _(C)(C)(C)u
-    exception: '{{h,k,ŋ}n,w,v,l,r}_'
+    exception: '{hn,kn,ŋn,w,v,l,r}_'
     raw: e → ja / _(C)(C)(C)u ! {{h,k,ŋ}n,w,v,l,r}_
     source: index_diachronica_original.html:6226
     rule_id: Old-Norse-e_4
@@ -53872,7 +53872,7 @@ sections:
   - stages:
     - s
     - ʃ
-    env: '#_{xʲ,w{i,a},qʷa}'
+    env: '#_{xʲ,wi,wa,qʷa}'
     raw: 's → ʃ / #_{xʲ,w{i,a},qʷa}'
     source: index_diachronica_original.html:11518
     rule_id: Nooksack-s_2
@@ -54077,7 +54077,7 @@ sections:
   - stages:
     - a3
     - o3
-    env: '{{C[-fr,+bk,-hi,-lo],K}ʷ,w}_'
+    env: '{C[-fr,+bk,-hi,-lo]ʷ,Kʷ,w}_'
     raw: a3 → o3 / {{C[+ uvular],K}ʷ,w}_
     source: index_diachronica_original.html:11552
     rule_id: Lummi-Northern-Straits-a3
@@ -54231,7 +54231,7 @@ sections:
   - stages:
     - a3
     - e3
-    exception: '{{C[-fr,+bk,-hi,-lo],K}ʷ,w}_ or when _{Cu,C[-fr,+bk,-hi,-lo]ʷ,w}'
+    exception: '{C[-fr,+bk,-hi,-lo]ʷ,Kʷ,w}_ or when _{Cu,C[-fr,+bk,-hi,-lo]ʷ,w}'
     raw: a3 → e3 / ! {{C[+ uvular],K}ʷ,w}_ or when _{Cu,C[+ uvular]ʷ,w}
     source: index_diachronica_original.html:11579
     rule_id: Saanich-Northern-Straits-a3
@@ -54353,7 +54353,7 @@ sections:
   - stages:
     - a3
     - a3
-    env: '{{C[-fr,+bk,-hi,-lo],K}ʷ,w}_'
+    env: '{C[-fr,+bk,-hi,-lo]ʷ,Kʷ,w}_'
     raw: a3 → a3 / {{C[+ uvular],K}ʷ,w}_
     source: index_diachronica_original.html:11601
     rule_id: Songish-Northern-Straits-a3
@@ -54480,7 +54480,7 @@ sections:
   - stages:
     - a3
     - '{a3,o3}'
-    env: '{{C[-fr,+bk,-hi,-lo],K}ʷ,w}_'
+    env: '{C[-fr,+bk,-hi,-lo]ʷ,Kʷ,w}_'
     raw: a3 → {a3,o3} / {{C[+ uvular],K}ʷ,w}_
     source: index_diachronica_original.html:11624
     rule_id: Sooke-Northern-Straits-a3
@@ -54948,7 +54948,7 @@ sections:
     - en enˀ
     - a ʔ
     env: U[-stress]
-    exception: '{t(’),lʲ,{n,l}(ˀ)}_'
+    exception: '{t(’),lʲ,n(ˀ),l(ˀ)}_'
     raw: en enˀ → a ʔ / in U[- stressed] ! {t(’),lʲ,{n,l}(ˀ)}_
     source: index_diachronica_original.html:11722
     rule_id: Vowel-Shifts_3-en-enˀ_2
