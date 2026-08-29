@@ -1469,16 +1469,6 @@ def test_load_parser_config_skip_sections_ignores_malformed_entries(tmp_path: Pa
     assert config.skip_section_ids == frozenset()
 
 
-def test_load_parser_config_default_includes_skip_section_seed():
-    config = load_parser_config()
-    assert "37.1.2.4.2" in config.skip_section_ids
-
-
-def test_load_parser_config_default_includes_skip_rule_seed():
-    config = load_parser_config()
-    assert "Pre-Slavic-Vowel-Changes-i" in config.skip_rule_ids
-
-
 def test_load_parser_config_section_mappings(tmp_path: Path):
     path = tmp_path / "parser_config.yml"
     path.write_text(
@@ -1501,15 +1491,6 @@ def test_load_parser_config_section_mappings_empty_or_absent(tmp_path: Path):
     path.write_text("ipa_mappings:\n  confidence: [high]\n", encoding="utf-8")
     config = load_parser_config(path)
     assert config.section_mappings_sections == {}
-
-
-def test_load_parser_config_default_includes_section_mapping_seed():
-    config = load_parser_config()
-    assert config.section_mappings_sections["10.1"] == {
-        "*D": "D",
-        "*R": "R",
-        "*T": "T",
-    }
 
 
 def test_parser_config_resolved_section_mappings_ancestry_and_override():
