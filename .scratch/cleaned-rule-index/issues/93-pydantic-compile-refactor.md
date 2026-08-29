@@ -1,6 +1,6 @@
 Type: task
 Status: ready-for-agent
-Blocked by: 92
+Blocked by: None
 
 # Refactor compile classes to pydantic (per-field transforms)
 

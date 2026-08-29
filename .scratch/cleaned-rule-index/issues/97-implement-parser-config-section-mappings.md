@@ -1,5 +1,5 @@
 Type: task
-Status: done
+Status: resolved
 
 # Implement parser_config section_mappings
 

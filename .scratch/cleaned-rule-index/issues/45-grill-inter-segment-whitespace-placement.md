@@ -1,6 +1,6 @@
 Type: grilling
 Status: ready-for-human
-Blocked by: 44
+Blocked by: None
 
 # Grill: inter-segment whitespace placement
 
