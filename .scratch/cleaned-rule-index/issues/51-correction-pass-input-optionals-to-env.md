@@ -61,3 +61,7 @@ After `expand_input_optionals_to_structures()` wired in `expand_meta_notation()`
 
 - [Correction pass template](13-correction-pass-template.md)
 - [Correction pass: parenthetical segment notation](48-correction-pass-parenthetical-segment-notation.md) — overlapping `(` handling
+
+## Comments
+
+> **2026-08-29:** Owner re-opened the **pattern taxonomy** in a paused grill ([71](71-grill-paren-and-parallel-set-notation.md)), now blocked on [spike 100](100-spike-io-optionals-asca-and-convention.md). The +18 `ok` cluster clear is not treated as historically faithful. `Muong-Khen-həp,b` nested braces are **48**, not this pass. Do not implement a 51 rewrite until 100 + 71 Q5″/Q10 are settled.
