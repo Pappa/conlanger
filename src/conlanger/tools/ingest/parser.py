@@ -21,9 +21,9 @@ and recorded as ``sporadic: true``. **Feature matrix** synonym replacement insid
 rule: the first ``;`` on the working line is peeled before structural split, then
 field-level glosses and env qualifiers. Index word-internal ``medial`` / ``medially`` env
 prose becomes ``env: _`` with boundary ``exception: :{#_, _#}:`` (``apply_medial_env_conditions``).
-After catch-all ``else`` resolution, nested ``{}`` in ``env`` / ``exception`` are
-flattened (``flatten_nested_sets``; ``raw`` unchanged). Stages I/O nests are left
-for a later pass. Class-letter expansion is deferred to compile time
+After catch-all ``else`` resolution, nested ``{}`` in ``env`` / ``exception`` /
+``stages`` are flattened (``flatten_nested_sets``; ``raw`` unchanged). Class-letter
+expansion is deferred to compile time
 (``DiachronicSeries`` + ``group_mappings.csv``).
 """
 

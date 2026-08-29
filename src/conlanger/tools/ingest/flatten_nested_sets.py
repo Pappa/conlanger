@@ -1,8 +1,8 @@
-"""Flatten nested Index ``{}`` sets in env / exception (parse-time P4).
+"""Flatten nested Index ``{}`` sets in env / exception / stages (parse-time P4).
 
 ASCA 0.10.2 rejects nested brackets of the same type (``NestedBrackets``).
-Index env/exception often encode union of members with nested braces; this
-helper rewrites those to a single-level set. Unbalanced strings are left
+Index env/exception/stages often encode union of members with nested braces;
+this helper rewrites those to a single-level set. Unbalanced strings are left
 unchanged. ``raw`` is never mutated (callers apply this to working fields).
 """
 
@@ -24,22 +24,28 @@ def flatten_nested_sets(text: str) -> str:
     return _flatten_nested_sets(text)
 
 
-def flatten_nested_sets_in_context_fields(rule: dict[str, Any]) -> dict[str, Any]:
-    """Return a copy of ``rule`` with ``env`` / ``exception`` flattened."""
+def flatten_nested_sets_in_rule_fields(rule: dict[str, Any]) -> dict[str, Any]:
+    """Return a copy of ``rule`` with ``env`` / ``exception`` / ``stages`` flattened."""
     updated = dict(rule)
     for key in ("env", "exception"):
         if key not in updated or updated[key] in (None, ""):
             continue
         original = str(updated[key])
         updated[key] = flatten_nested_sets(original)
+    stages = updated.get("stages")
+    if stages:
+        updated["stages"] = [
+            flatten_nested_sets(str(stage)) if stage not in (None, "") else stage
+            for stage in stages
+        ]
     return updated
 
 
 def flatten_nested_sets_in_section_rules(
     rules: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
-    """Flatten env/exception on each rule (after else resolution)."""
-    return [flatten_nested_sets_in_context_fields(rule) for rule in rules]
+    """Flatten env/exception/stages on each rule (after else resolution)."""
+    return [flatten_nested_sets_in_rule_fields(rule) for rule in rules]
 
 
 def _flatten_nested_sets(text: str) -> str:

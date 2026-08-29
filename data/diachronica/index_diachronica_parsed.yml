@@ -2432,7 +2432,7 @@ sections:
     source: index_diachronica_original.html:1396
     rule_id: Egyptian-Arabic-q
   - stages:
-    - '{{s,z}(ˤ),ʒ}ʃ'
+    - '{s(ˤ),z(ˤ),ʒ}ʃ'
     - ʃː
     raw: '{{s,z}(ˤ),ʒ}ʃ → ʃː'
     source: index_diachronica_original.html:1398
@@ -7567,7 +7567,7 @@ sections:
     source: index_diachronica_original.html:2335
     rule_id: Sakha-o-oɡ-ø-øɡ-iɡ
   - stages:
-    - a{ɡ̌(ɯ),b} {o{ɡ̌,b},aɡ̌u} u{ɡ̌,b}
+    - a{ɡ̌(ɯ),b} {oɡ̌,ob,aɡ̌u} u{ɡ̌,b}
     - ɰa wo uː
     raw: a{ɡ̌(ɯ),b} {o{ɡ̌,b},aɡ̌u} u{ɡ̌,b} → ɰa wo uː
     source: index_diachronica_original.html:2336
@@ -20592,7 +20592,7 @@ sections:
     source: index_diachronica_original.html:5047
     rule_id: Common-Anatolian-j
   - stages:
-    - '{{h₁,h₃}s,s{h₁,h₃}}'
+    - '{h₁s,h₃s,sh₁,sh₃}'
     - sː
     comment: (contested)
     raw: '{{h₁,h₃}s,s{h₁,h₃}} → sː (contested)'
@@ -27372,7 +27372,7 @@ sections:
     source: index_diachronica_original.html:6192
     rule_id: Old-Norse-e_2
   - stages:
-    - a(i) {e,w{æ,i}} {we,ei} (w)ɪ
+    - a(i) {e,wæ,wi} {we,ei} (w)ɪ
     - ey ø y ʏ
     env: w_
     exception: hw_
@@ -41252,7 +41252,7 @@ sections:
     rule_id: Mekens-ɨ_2
     exception: '#_{p,βe}'
   - stages:
-    - '{{a/e},{e/a}} {j̃,ẽ}'
+    - '{a/e,e/a} {j̃,ẽ}'
     - a ẽ
     raw: '{{a/e},{e/a}} {ı̃,ẽ} → a ẽ'
     source: index_diachronica_original.html:8439

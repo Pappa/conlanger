@@ -143,7 +143,22 @@ def test_parse_flattens_nested_env_nooksack(tmp_path: Path):
     assert rule["raw"] == "s → ʃ / #_{xʲ,w{i,a},qʷa}"
 
 
-def test_parse_does_not_flatten_nested_sets_in_stages(tmp_path: Path):
+def test_parse_flattens_nested_stages_common_anatolian(tmp_path: Path):
+    html_path = tmp_path / "index.html"
+    _write_index_html(
+        html_path,
+        section_id="Common-Anatolian",
+        section_body="""\
+<h2>17.2 Proto-Indo-European to Common Anatolian</h2>
+<p class="schg">{{h₁,h₃}s,s{h₁,h₃}} → sː</p>
+""",
+    )
+    rule = default_index_parser().parse(html_path)["sections"][0]["rules"][0]
+    assert rule["stages"][0] == "{h₁s,h₃s,sh₁,sh₃}"
+    assert rule["raw"] == "{{h₁,h₃}s,s{h₁,h₃}} → sː"
+
+
+def test_parse_flattens_nested_stages_old_norse(tmp_path: Path):
     html_path = tmp_path / "index.html"
     _write_index_html(
         html_path,
@@ -154,4 +169,52 @@ def test_parse_does_not_flatten_nested_sets_in_stages(tmp_path: Path):
 """,
     )
     rule = default_index_parser().parse(html_path)["sections"][0]["rules"][0]
-    assert rule["stages"][0] == "a(i) {e,w{æ,i}} {we,ei} (w)ɪ"
+    assert rule["stages"][0] == "a(i) {e,wæ,wi} {we,ei} (w)ɪ"
+    assert rule["raw"] == "a(i) {e,w{æ,i}} {we,ei} (w)ɪ → ey ø y ʏ / w_ ! hw_"
+
+
+def test_parse_flattens_nested_stages_egyptian_arabic(tmp_path: Path):
+    html_path = tmp_path / "index.html"
+    _write_index_html(
+        html_path,
+        section_id="Egyptian-Arabic",
+        section_body="""\
+<h2>1.0 Egyptian Arabic</h2>
+<p class="schg">{{s,z}(ˤ),ʒ}ʃ → ʃː</p>
+""",
+    )
+    rule = default_index_parser().parse(html_path)["sections"][0]["rules"][0]
+    assert rule["stages"][0] == "{s(ˤ),z(ˤ),ʒ}ʃ"
+    assert rule["raw"] == "{{s,z}(ˤ),ʒ}ʃ → ʃː"
+
+
+def test_parse_leaves_bucket_d_stage_shapes_unchanged(tmp_path: Path):
+    html_path = tmp_path / "index.html"
+    _write_index_html(
+        html_path,
+        section_id="Muong-Khen",
+        section_body="""\
+<h2>1.0 Muong Khen</h2>
+<p class="schg">(h)ə{p,b} → t / _l</p>
+<p class="schg">e(C){V[- low]} e(C)a → e(C) e(C)ə</p>
+<p class="schg">a(C){o,e} → a</p>
+""",
+    )
+    rules = default_index_parser().parse(html_path)["sections"][0]["rules"]
+    assert rules[0]["stages"][0] == "(h)ə{p,b}"
+    assert rules[1]["stages"][0] == "e(C){V[- low]} e(C)a"
+    assert rules[2]["stages"][0] == "a(C){o,e}"
+
+
+def test_parse_leaves_compile_created_nesting_unchanged(tmp_path: Path):
+    html_path = tmp_path / "index.html"
+    _write_index_html(
+        html_path,
+        section_id="Aari",
+        section_body="""\
+<h2>1.0 Aari</h2>
+<p class="schg">{x₁,x₂} → ɡ</p>
+""",
+    )
+    rule = default_index_parser().parse(html_path)["sections"][0]["rules"][0]
+    assert rule["stages"][0] == "{x₁,x₂}"
