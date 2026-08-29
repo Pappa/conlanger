@@ -8,7 +8,7 @@ Blocked by: None
 
 Apply [Parse-time resolution for correspondence-series indices](26-parse-time-correspondence-series-indices.md) in `IndexDiachronicaParser`:
 
-1. Load per-section maps from **`data/asca/series_mappings.csv`** produced by [Extract correspondence-series mappings from Index Diachronica HTML](28-extract-correspondence-series-mappings-from-html.md) (loaded like `group_mappings.csv` from `data/asca/`).
+1. Load per-section maps from **`data/asca/series_mappings.csv`** (loaded like `group_mappings.csv` from `data/asca/`).
 2. After existing parse-time transforms (symbols, glosses, stress, …), run correspondence-series expansion on index field values — **correspondence-series index** and **collective subscript** tokens only; do not expand **positional slots** or **identity subscripts** in this ticket.
 3. Populate section `abbreviations` from the same map at parse where appropriate (schema alignment with ticket 03).
 4. **`raw` unchanged**; expanded values in `input`/`output`/`env`/`exception`.
@@ -24,7 +24,7 @@ Implement resolver and lookup in `src/conlanger/tools/` alongside `IndexDiachron
 ## Acceptance criteria
 
 - [x] Parse-time expansion wired in `IndexDiachronicaParser` (not compile layer)
-- [x] Maps loaded from HTML-derived package CSV (ticket 28)
+- [x] Maps loaded from HTML-derived package CSV
 - [x] `raw` preserves Index subscripts; index fields expanded when mapped
 - [x] Unmapped tokens left literal; no pre-emptive `status: skipped`
 - [x] Unit tests on representative mapped sections (e.g. Afro-Asiatic) and collective (`Hₓ`) where rows exist
@@ -76,4 +76,4 @@ Subscript digits `₁`/`₂`/`₃` no longer appear in top `unknown_character` t
 
 **Out of scope:** Positional/identity subscripts; raising CSV coverage (see `series-mappings-coverage-backlog.md`); compile-layer substitution.
 
-**Blocker cleared:** [28](28-extract-correspondence-series-mappings-from-html.md) done — 60 CSV rows, 78/101 in-scope rule tokens mapped.
+**Maps available at start:** 60 CSV rows, 78/101 in-scope rule tokens mapped.

@@ -4,7 +4,7 @@ Blocked by:
 
 # Series mappings coverage pass (backlog A–E)
 
-Raise in-scope `series_mappings.csv` coverage beyond the ticket-28 baseline (**78/101 = 77.2%**; **23** gaps). Extraction + parse-time expansion already ship ([28](28-extract-correspondence-series-mappings-from-html.md), [27](27-implement-parse-time-correspondence-series-expansion.md)); this ticket **authors/fixes rows and extractor gaps** from [series-mappings-coverage-backlog.md](../series-mappings-coverage-backlog.md).
+Raise in-scope `series_mappings.csv` coverage beyond the original extract baseline (**78/101 = 77.2%**; **23** gaps). Parse-time expansion already ships ([27](27-implement-parse-time-correspondence-series-expansion.md)); this ticket **authors/fixes rows and extractor gaps** from [series-mappings-coverage-backlog.md](../series-mappings-coverage-backlog.md).
 
 Priority: on the frontier, but **after** [62](62-correction-pass-tone-features.md) / [63](63-correction-pass-near-miss-unknown-character.md) unless unblocked parallel work is available.
 

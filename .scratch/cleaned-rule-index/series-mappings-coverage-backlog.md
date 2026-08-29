@@ -2,10 +2,10 @@
 
 > **Legacy artifact.** This backlog tracked parse-time `series_mappings.csv` coverage through [ticket 65](issues/65-series-mappings-coverage-pass.md) (closed 2026-08-12). The CSV path was retired 2026-08-18 ([grill 72](issues/72-grill-series-mapping-manual-sot.md) → [74](issues/74-implement-ingest-corrections-drop-series-csv.md) / [75](issues/75-implement-compiler-config-series-mappings.md)). Current SoT: `data/parser_config.yml` (`series_expansions`) and `data/compiler_config.yml` (`series_mappings`).
 
-Follow-up work to raise **in-scope** extraction coverage beyond the ticket-28 baseline.  
+Follow-up work to raise **in-scope** extraction coverage beyond the original HTML-extract baseline.  
 Regenerate metrics after any change: ~~`uv run create_index --update-series-mappings`~~ *(retired CLI)*.
 
-**Related:** [28-extract-correspondence-series-mappings-from-html](issues/28-extract-correspondence-series-mappings-from-html.md) (done), [27-implement-parse-time-correspondence-series-expansion](issues/27-implement-parse-time-correspondence-series-expansion.md) (done), live report [series-mappings-coverage.md](series-mappings-coverage.md), coverage pass [65](issues/65-series-mappings-coverage-pass.md) (done — **101/101**).
+**Related:** [27-implement-parse-time-correspondence-series-expansion](issues/27-implement-parse-time-correspondence-series-expansion.md) (done), live report [series-mappings-coverage.md](series-mappings-coverage.md), coverage pass [65](issues/65-series-mappings-coverage-pass.md) (done — **101/101**).
 
 ## Baseline (2026-08-05)
 
@@ -59,7 +59,7 @@ Regression guards: `tests/conlanger/tools/test_series_mappings.py::test_extracti
 
 ## Explicitly not this backlog
 
-These appear in the full HTML survey but are **out of scope** for ticket 28 / `series_mappings.csv`:
+These appear in the full HTML survey but are **out of scope** for `series_mappings.csv`:
 
 | Kind | Examples | Handle in |
 | --- | --- | --- |

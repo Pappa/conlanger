@@ -86,7 +86,7 @@ Brassica compilation remains a future parallel path behind the same index (ADR-0
 - Parser: `IndexDiachronicaParser` using lxml; phases cover section structure, `→` I/O split, `/ env` and `! exception` parsing, citation/comments.
 - **Symbol** normalisation at ingest to ASCA-canonical form in index fields; `raw` unchanged.
 - **Parse-time class-first transforms** (correction passes 14–25, per edit ladder): leading em-dash list markers; remaining `→` → `>` in field values; uncertainty glosses → `sporadic: true`; trailing editorial glosses → **`comment`** (ticket [31](issues/31-capture-rule-comments-at-parse-time.md)); env stress phrases (`when stressed` / `when unstressed`); smart-quote cleanup. All preserve `raw`.
-- **Correspondence-series indices** and **collective subscripts**: parse-time expansion to ASCA-parseable strings when section map exists; maps **extracted from HTML** (ticket [28](issues/28-extract-correspondence-series-mappings-from-html.md), implementation [27](issues/27-implement-parse-time-correspondence-series-expansion.md)); do not use `legacy/`. **Positional slots** and **identity subscripts** — not yet implemented.
+- **Correspondence-series indices** and **collective subscripts**: parse-time expansion to ASCA-parseable strings when section map exists; maps applied at parse ([27](issues/27-implement-parse-time-correspondence-series-expansion.md)); do not use `legacy/`. **Positional slots** and **identity subscripts** — not yet implemented.
 - **Feature matrix** synonym replacement at ingest inside `[...]` via `feature_mappings.csv`: **not yet implemented**; unmapped names left as-is (`unknown_feature` cluster).
 - **Class letters**: no ingest-time `str.maketrans` blind substitution; expansion at compile via **DiachronicSeries** + `group_mappings.csv`. Six letters (C, O, F, L, N, V) pass through (ASCA inbuilt). Seventeen validated rows in `group_mappings.csv`; M (diphthong) removed — cluster-driven.
 - **Series indices**, section-local prose abbreviations, **meta-notation**: cluster-driven; hand-add abbreviation rows when inventory warrants.
@@ -117,7 +117,7 @@ Brassica compilation remains a future parallel path behind the same index (ADR-0
 
 ### Package data
 
-- Abbreviation tables under `data/asca/`: `group_mappings.csv`, `feature_mappings.csv` (when added), `series_mappings.csv` (ticket 28).
+- Abbreviation tables under `data/asca/`: `group_mappings.csv`, `feature_mappings.csv` (when added). Series maps live in `parser_config.yml` / `compiler_config.yml` (CSV path retired).
 - Brassica data path reserved; Brassica compiler out of scope for this spec.
 
 ### Adoption criteria (to define during implementation)

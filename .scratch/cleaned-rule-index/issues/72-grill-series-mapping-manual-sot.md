@@ -61,7 +61,7 @@ Changes on `t₁`, `d₁`, `d₃` collapse to identity; only `Z → ɟ` remains.
 ## Facts (do not re-litigate without new evidence)
 
 - Parse expansion: `apply_series_mappings` / `expand_series_tokens_in_field` in `src/conlanger/utils/series.py` — global substring replace on all `stages` + env/exception.
-- Extraction: `infer_parallel_rule_mappings`, `infer_singleton_rule_mappings` in `src/conlanger/tools/series_extract.py`; [ticket 28](28-extract-correspondence-series-mappings-from-html.md) explicitly allowed I/O inference; [ticket 65](65-series-mappings-coverage-pass.md) expanded it to 100% in-scope coverage.
+- Extraction: `infer_parallel_rule_mappings`, `infer_singleton_rule_mappings` in `src/conlanger/tools/series_extract.py`; I/O inference was allowed on the retired CSV path; [ticket 65](65-series-mappings-coverage-pass.md) expanded it to 100% in-scope coverage.
 - `section_abbreviations.yml` ≠ `series_mappings.csv`; YAML is documentary, CSV drives parse.
 - `apply_asca_aliases` runs at **compile**, not parse; maps Unicode laryngeals to conventional IPA.
 

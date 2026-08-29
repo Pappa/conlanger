@@ -14,7 +14,7 @@ When and how should **correspondence-series indices** and **collective subscript
 - ADR: [0004-series-indices-per-section-maps](../../../docs/adr/0004-series-indices-per-section-maps.md) (amended 2026-08).
 - **Do not use `legacy/`** for implementation — previous attempts only; build from `data/diachronica/` (HTML SoT) and `src/conlanger/` code.
 - **Positional slots** and **identity subscripts** — separate tickets; not decided here.
-- Follow-on: [Extract correspondence-series mappings from Index Diachronica HTML](28-extract-correspondence-series-mappings-from-html.md) → [Implement parse-time correspondence-series expansion](27-implement-parse-time-correspondence-series-expansion.md).
+- Follow-on: [Implement parse-time correspondence-series expansion](27-implement-parse-time-correspondence-series-expansion.md).
 
 ## Answer
 
