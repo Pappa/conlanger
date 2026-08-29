@@ -1,12 +1,12 @@
 Type: grilling
 Status: needs-triage
-Blocked by: 100
+Blocked by: None
 
 # Grill: parenthetical + parallel-set notation (`(h)ə{p,b}`, `e(C){V[…]}`)
 
-Spawned from [spike 67](67-spike-nested-sets.md). Findings: [nested-sets-inventory.md](../research/nested-sets-inventory.md) §4.5.
+Spawned from [spike 67](67-spike-nested-sets.md). Findings: [nested-sets-inventory.md](../research/nested-sets-inventory.md) §4.5; [spike 100](../issues/100-spike-io-optionals-asca-and-convention.md) → [research/io-optionals-asca-and-convention.md](../research/io-optionals-asca-and-convention.md).
 
-**Paused 2026-08-29** — session also re-opened [ticket 51](51-correction-pass-input-optionals-to-env.md) (input optionals). **Blocked on [spike 100](100-spike-io-optionals-asca-and-convention.md)** before answering Q5″/Q10/Q6. Resume from **Open** after 100’s findings; do not implement until the owner confirms the frontier is empty.
+**Paused 2026-08-29** — also re-opened [ticket 51](51-correction-pass-input-optionals-to-env.md). ~~Blocked on [spike 100](100-spike-io-optionals-asca-and-convention.md)~~ **resolved 2026-08-29.** Q5″/Q10/Q6 answered in spike findings; **owner confirm** to close grill and file implementation tickets. Do not ship 48/51 changes until confirmed.
 
 ## Question
 
@@ -28,11 +28,14 @@ Scope was **both** 51 taxonomy and 71 shapes; 51 first.
 | Q4 | `({C,#}V)ʔ` is still an optional group, but **`#` in I/O** is invalid ASCA at **run** (`Word Boundaries cannot be in the input or output`; Arapaho `{C,#,V}ʔ` after 51). **Do not** parse/compile-resolve; **corrections.yml or `manual_mappings`**. |
 | Q7 | `Central-Middle-Indo-Aryan-ai,ja-au,wa`: peeling the last `(a)` into `comment` is a **parse bug**. `raw` is `a{i,j}(a) a{u,w}(a) → e o`; YAML stages drop the second optional. In scope of this work, not a glossary “comment”. |
 | Q9 | Family B Amdo `k(ʰ){r,j}` → **`{k,kʰ}{r,j}`** (two adjacent sets, **no** `<>`). Lone modifiers stay cartesian: `{ɡ,ɡʷ}`, `{k,k:[+cg]}` (member order in the set does not matter). |
+| Q5″ | **(a) Cartesian flat sets** on I/O for zero-or-one / parallel-column shapes — per [spike 100](../research/io-optionals-asca-and-convention.md) §1. Not native `(C)a` on I/O; env `(C)_` stays ASCA-native. |
+| Q10 | **(a) Never emit `<>` on I/O** in 48/51 cleanup — reserve for env syllable-position ([58](58-spike-index-syllable-position-u-hash.md)) or manual rows. |
+| Q6 | **Family A** → cartesian then **one flat set** (fix 48 nesting). **Family B** → modifier cartesian then **adjacent sets** (Q9). Re-scope 51 unfaithful wraps. |
 
-**Withdrawn / reopened**
+**Withdrawn**
 
-- **Q5 wrap-in-`<>`:** owner first chose wrap for I/O optionals; **reopened (Q8)** after apply probes. **Q5″ / Q10 unanswered** (paused here).
-- Owner later proposed: keep simple `(C)a` as Index I/O; wrap only complex cases. **Not settled** — contradicted by `OptLocError` on `(C)a > x` and by syllable-scoped `<>` (see findings).
+- **Q5 wrap-in-`<>`:** rejected by apply probes (spike 100 §2.2).
+- **Keep `(C)a` on I/O:** rejected (`OptLocError`; spike 100 §2.1).
 
 ## Findings (facts)
 
@@ -52,13 +55,10 @@ Scope was **both** 51 taxonomy and 71 shapes; 51 first.
 
 **Inventory `ok` is a weak fidelity signal:** validate+run can succeed on **identity** (wrap that never matches).
 
-## Open (resume here)
+## Open (owner confirm to close)
 
-❓ **Q5″** — I/O compile target after wrap failed apply: (a) cartesian flat sets for I/O optionals in segment strings; leave **env** `(C)` as Index; (b) keep `(C)a` in I/O (`OptLocError` = fork/validator issue); (c) underline structures in env only, cartesian all I/O. Last recommendation: **(a)**.
-
-❓ **Q10** — When may compile emit `<>`? (a) never on I/O this pass; (b) only when Index is already syllable-talk (`U`, `%`, `.`); (c) per-rule `manual_mappings`. Last recommendation: **(a)** for 48/51 cleanup.
-
-❓ **Q6** — 48 policy for Family A vs B: blocked on Q5″. Lean: B stays cartesian (+ Q9 adjacent sets); Family A follows Q5″ (likely cartesian product into a flat set, not `<>`).
+- [ ] Owner confirms spike 100 recommendations (Q5″/Q10/Q6) — then mark grill **resolved** and file implementation ticket(s) for 48/51 re-scope (+ parse Q7).
+- [ ] Implementation ticket(s) filed or defer written (acceptance criteria below).
 
 ## Original acceptance criteria
 
@@ -75,10 +75,11 @@ Scope was **both** 51 taxonomy and 71 shapes; 51 first.
 
 ## References
 
-- [51](51-correction-pass-input-optionals-to-env.md), [48](48-correction-pass-parenthetical-segment-notation.md)
+- [51](51-correction-pass-input-optionals-to-env.md), [48](48-correction-pass-parenthetical-segment-notation.md), [100](100-spike-io-optionals-asca-and-convention.md)
+- [research/io-optionals-asca-and-convention.md](../research/io-optionals-asca-and-convention.md)
 - [ASCA Optionals](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#optionals), [Syllable Structure Matching](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#syllable-structure-matching)
 - Compile: `src/conlanger/tools/compile/asca/parenthetical.py`, `input_optionals.py`
 
 ## Comments
 
-> 2026-08-29: Grill-with-docs session paused. Owner will resume Q5″/Q10. Do not ship 51/48 behaviour changes from this notes dump.
+> 2026-08-29: Grill-with-docs session paused. Spike 100 resolved — see [findings](../research/io-optionals-asca-and-convention.md). Owner confirm Q5″/Q10/Q6 to close grill.
