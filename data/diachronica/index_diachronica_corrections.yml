@@ -187,3 +187,9 @@ rules:
                   id: Cheyenne-W
                   content: "W → ∅ / [+nasal]_, _[+nasal], t_, _t"
                   reason: "Prose"
+        - rule:
+                  id: Old-Provençal-p-k-tʃ-b-ɡ-β-j
+                  content: "p k tʃ b ɡ β j → b ɡ i {b,i} ∅ {u,i} i / _r"
+                  reason: |
+                          Removing intermediate steps - original:
+                          p k tʃ b ɡ β j → b ɡ i {b,u,u→y→i} ∅ {u,u→y→i} i / _r

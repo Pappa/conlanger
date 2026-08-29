@@ -38057,13 +38057,9 @@ sections:
     rule_id: Old-Provençal-p-j
   - stages:
     - p k tʃ b ɡ β j
-    - b ɡ i {b,u,u
-    - y
-    - i} ∅ {u,u
-    - y
-    - i} i
+    - b ɡ i {b,i} ∅ {u,i} i
     env: _r
-    raw: p k tʃ b ɡ β j → b ɡ i {b,u,u→y→i} ∅ {u,u→y→i} i / _r
+    raw: p k tʃ b ɡ β j → b ɡ i {b,i} ∅ {u,i} i / _r
     source: index_diachronica_original.html:7884
     rule_id: Old-Provençal-p-k-tʃ-b-ɡ-β-j
   - stages:
