@@ -2,7 +2,6 @@ import pytest
 
 from conlanger.tools.compile.asca.group_mappings import (
     apply_asca_group_mappings_to_string,
-    asca_group_mappings_dict,
     expand_grouping_letter,
 )
 
@@ -84,15 +83,12 @@ def test_apply_asca_group_mappings_to_string(input, expected, fx_sample_group_ma
         ),
     ],
 )
-def test_apply_asca_group_mappings_class_letter_before_ipa_tail(text, expected):
-    mappings = asca_group_mappings_dict()
-    assert apply_asca_group_mappings_to_string(text, mappings) == expected
-
-
-def test_asca_group_mappings_dict_loads_package_csv():
-    mappings = asca_group_mappings_dict()
-    assert mappings["R"] == "[+son,-syll]"
-    assert mappings["Z"] == "[+cont]"
+def test_apply_asca_group_mappings_class_letter_before_ipa_tail(
+    text, expected, fx_sample_group_mappings
+):
+    assert (
+        apply_asca_group_mappings_to_string(text, fx_sample_group_mappings) == expected
+    )
 
 
 @pytest.mark.parametrize(

@@ -1,6 +1,5 @@
 Type: task
 Status: ready-for-agent
-Blocked by: 102
 
 # Refactor config layout, YAML migration, and dependency injection
 

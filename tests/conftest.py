@@ -9,6 +9,7 @@ from pathlib import Path
 
 import pytest
 from helpers import default_index_parser
+from tests.fixtures.minimal_mappings import MINIMAL_GROUP_MAPPINGS
 
 __all__ = [
     "ASCA_INSTALLED",
@@ -47,24 +48,7 @@ def mock_env_vars(mocker):
 
 @pytest.fixture
 def fx_sample_group_mappings():
-    return {
-        "A": "O:[+delrel]",
-        "B": "V:[+back]",
-        "D": "P:[+voice]",
-        "E": "V:[+front]",
-        "H": "[-place]",
-        "J": "{L,G}",
-        "K": "C:[-front,+back,+hi,-lo]",
-        "Ḱ": "C:[+front,+hi,-lo]",
-        "P": "C:[+labial]",
-        "Q": "{C:[-front,+back,-hi,-lo],[+click]}",
-        "R": "[+son,-syll]",
-        "S": "P",
-        "T": "P:[-voice]",
-        "U": "%",
-        "W": "G",
-        "Z": "[+cont]",
-    }
+    return MINIMAL_GROUP_MAPPINGS
 
 
 # Evaluated at collection time for ``skipif`` (before autouse fixtures run).

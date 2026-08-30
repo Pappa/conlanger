@@ -5,13 +5,6 @@ from pathlib import Path
 from conlanger.utils.file_io import load_compiler_config
 
 
-def test_load_compiler_config_default_includes_pie_laryngeals():
-    config = load_compiler_config()
-    assert config.lookup_series_mapping("17.2", "h₁") == "h"
-    assert config.lookup_series_mapping("17.2", "h₂") == "x"
-    assert config.lookup_series_mapping("17.2", "h₃") == "ɣʷ"
-
-
 def test_section_row_beats_global_on_longest_prefix(tmp_path: Path):
     path = tmp_path / "compiler_config.yml"
     path.write_text(

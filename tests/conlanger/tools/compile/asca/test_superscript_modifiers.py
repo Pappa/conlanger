@@ -5,7 +5,6 @@ import pytest
 from conlanger.appliers.asca import validate_asca
 from conlanger.tools.compile.asca.group_mappings import (
     apply_asca_group_mappings_to_string,
-    asca_group_mappings_dict,
 )
 from conlanger.tools.compile.asca.superscript_modifiers import (
     normalize_asca_superscript_modifiers,
@@ -36,10 +35,12 @@ from conlanger.tools.rules import DiachronicSeries
         ),
     ],
 )
-def test_normalize_asca_superscript_modifiers(text, expected):
-    mappings = asca_group_mappings_dict()
-    transformed = normalize_asca_superscript_modifiers(text, mappings)
-    assert apply_asca_group_mappings_to_string(transformed, mappings) == expected
+def test_normalize_asca_superscript_modifiers(text, expected, fx_sample_group_mappings):
+    transformed = normalize_asca_superscript_modifiers(text, fx_sample_group_mappings)
+    assert (
+        apply_asca_group_mappings_to_string(transformed, fx_sample_group_mappings)
+        == expected
+    )
 
 
 @pytest.mark.parametrize(
@@ -71,24 +72,24 @@ def test_normalize_asca_superscript_modifiers_leaves_boundaries_and_ipa_literals
         ("e:[+long]", "ia", "_{#,C:[+cor,+dist]}"),
     ],
 )
-def test_superscript_inventory_representatives_validate(inp, out, env):
+def test_superscript_inventory_representatives_validate(
+    inp, out, env, fx_sample_group_mappings
+):
     rule = {"stages": [inp, out]}
     if env:
         rule["env"] = env
     section = {"index": "1", "section": "superscript", "rules": [rule]}
     validate_asca(
-        DiachronicSeries(section, "asca", group_mappings=asca_group_mappings_dict())
+        DiachronicSeries(section, "asca", group_mappings=fx_sample_group_mappings)
     )
 
 
-def test_superscript_s_aspirated_rule_compiles_via_pipeline():
+def test_superscript_s_aspirated_rule_compiles_via_pipeline(fx_sample_group_mappings):
     section = {
         "index": "1",
         "section": "superscript",
         "rules": [{"stages": ["Sʰ", "S"], "env": "#v_V"}],
     }
-    ruleset = DiachronicSeries(
-        section, "asca", group_mappings=asca_group_mappings_dict()
-    )
+    ruleset = DiachronicSeries(section, "asca", group_mappings=fx_sample_group_mappings)
     assert ruleset._parts[-1].value == "C:[+labial][+spread] > P / #v_V"
     validate_asca(ruleset)

@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 
 # Remove production config content assertions from unit tests
 
@@ -65,10 +65,14 @@ Prefer **B** if many integration tests need the same handful of IPA/feature rows
 
 ## Acceptance criteria
 
-- [ ] No test calls `load_*_mappings()`, `load_parser_config()`, `load_compiler_config()`, `feature_mappings_dict()`, `ipa_mappings_dict()`, or `asca_group_mappings_dict()` **without** an explicit `tmp_path` path or inline constructor args — except tmp_path loader tests may use those functions with a fixture path.
-- [ ] No test asserts specific values from the production `data/parser_config.yml`, `data/compiler_config.yml`, or `data/**/*.csv` mapping files.
-- [ ] `uv run pytest` passes; ruff clean on touched test files.
-- [ ] Ticket 101 unblocked (remove `Blocked by: 102` on 101 when this resolves).
+- [x] No test calls `load_*_mappings()`, `load_parser_config()`, `load_compiler_config()`, `feature_mappings_dict()`, `ipa_mappings_dict()`, or `asca_group_mappings_dict()` **without** an explicit `tmp_path` path or inline constructor args — except tmp_path loader tests may use those functions with a fixture path.
+- [x] No test asserts specific values from the production `data/parser_config.yml`, `data/compiler_config.yml`, or `data/**/*.csv` mapping files.
+- [x] `uv run pytest` passes; ruff clean on touched test files.
+- [x] Ticket 101 unblocked (remove `Blocked by: 102` on 101 when this resolves).
+
+## Answer
+
+Introduced `tests/fixtures/minimal_mappings.py` with inline parser/compile mapping fixtures. `default_index_parser()` now wires those instead of `load_default_ingest_tables()`. Removed seven production-seed assertion tests; refactored transform and integration tests to use minimal fixtures or `tmp_path` loader paths. Unblocked ticket 101.
 
 ## Related
 

@@ -3,27 +3,26 @@
 from __future__ import annotations
 
 from conlanger.tools.ingest import IndexDiachronicaParser
-from conlanger.utils.file_io import load_default_ingest_tables
-
-_CACHED_INGEST_TABLES = None
+from tests.fixtures.minimal_mappings import (
+    minimal_feature_mappings,
+    minimal_ipa_mappings,
+    minimal_manual_mappings,
+    minimal_parser_config,
+)
 
 
 def default_index_parser(**overrides) -> IndexDiachronicaParser:
-    """Build an ``IndexDiachronicaParser`` with package-default mapping tables.
+    """Build an ``IndexDiachronicaParser`` with minimal inline mapping fixtures.
 
-    Tables are loaded once per process; pass keyword overrides to replace
-    individual constructor arguments (e.g. ``parser_config=...``).
+    Pass keyword overrides to replace individual constructor arguments
+    (e.g. ``parser_config=...``, ``ipa_mappings=...``).
     """
-    global _CACHED_INGEST_TABLES
-    if _CACHED_INGEST_TABLES is None:
-        _CACHED_INGEST_TABLES = load_default_ingest_tables()
-    tables = _CACHED_INGEST_TABLES
     kwargs = {
-        "manual_mappings": tables.manual_mappings,
-        "parser_config": tables.parser_config,
-        "feature_mappings": tables.feature_mappings,
-        "ipa_mappings": tables.ipa_mappings,
-        "corrections": tables.corrections,
+        "manual_mappings": minimal_manual_mappings(),
+        "parser_config": minimal_parser_config(),
+        "feature_mappings": minimal_feature_mappings(),
+        "ipa_mappings": minimal_ipa_mappings(),
+        "corrections": {},
     }
     kwargs.update(overrides)
     return IndexDiachronicaParser(**kwargs)

@@ -7,7 +7,6 @@ from helpers import default_index_parser
 from lxml import html
 
 from conlanger.appliers.asca import ASCAValidationError, validate_asca
-from conlanger.tools.compile.asca.group_mappings import asca_group_mappings_dict
 from conlanger.tools.ingest import (
     write_rule_comment_phrase_summary,
 )
@@ -30,10 +29,7 @@ from conlanger.tools.ingest.transforms import (
 )
 from conlanger.tools.rules import DiachronicSeries
 from conlanger.utils.file_io import (
-    DEFAULT_GROUP_MAPPINGS_CSV,
-    feature_mappings_dict,
     ipa_mappings_dict,
-    load_feature_mappings,
     load_group_mappings,
     load_index_diachronica_corrections,
     load_ipa_mappings,
@@ -68,6 +64,11 @@ from conlanger.utils.parsing import (
     strip_leading_index_list_marker,
 )
 from conlanger.utils.symbols import normalize_stress_marks, normalize_symbols
+from tests.fixtures.minimal_mappings import (
+    MINIMAL_GROUP_MAPPINGS,
+    minimal_feature_mappings,
+    minimal_ipa_mappings,
+)
 
 
 def _html_fragment(html_snippet: str):
@@ -658,7 +659,7 @@ def test_parse_rule_element_medial_validate_asca():
     rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     section = {"index": "6.2.1.1.2", "section": "Proto-Agaw to Blin", "rules": rules}
     validate_asca(
-        DiachronicSeries(section, group_mappings=asca_group_mappings_dict()),
+        DiachronicSeries(section, group_mappings=MINIMAL_GROUP_MAPPINGS),
         probe_words=probe,
     )
 
@@ -678,9 +679,7 @@ def test_parse_rule_element_medial_deferred_env_exception_still_fails():
         "rules": rules,
     }
     with pytest.raises(ASCAValidationError, match="Expected '_', but received ','"):
-        validate_asca(
-            DiachronicSeries(section, group_mappings=asca_group_mappings_dict())
-        )
+        validate_asca(DiachronicSeries(section, group_mappings=MINIMAL_GROUP_MAPPINGS))
 
 
 def test_is_catch_all_else_env():
@@ -846,7 +845,7 @@ def test_parse_rule_element_stress_conditions_validate_asca():
             "rules": rules,
         }
         validate_asca(
-            DiachronicSeries(section, group_mappings=asca_group_mappings_dict()),
+            DiachronicSeries(section, group_mappings=MINIMAL_GROUP_MAPPINGS),
             probe_words=probe,
         )
 
@@ -1251,17 +1250,6 @@ def test_extract_rule_parts_sampled_html_rules(case_id, raw, expected):
     assert extract_rule_parts(normalize_symbols(raw)) == expected, case_id
 
 
-def test_load_group_mappings_default_csv():
-    assert DEFAULT_GROUP_MAPPINGS_CSV.is_file()
-    mappings = load_group_mappings()
-    abbrev = {m.grouping: m.mapping for m in mappings}
-    assert abbrev["S"] == "P"
-    assert abbrev["A"] == "O:[+delrel]"
-    assert abbrev["R"] == "[+son,-syll]"
-    assert "M" not in abbrev
-    assert all(isinstance(m, GroupMapping) for m in mappings)
-
-
 def test_parser_normalizes_symbols_and_preserves_raw(tmp_path: Path):
     html_path = tmp_path / "mapped.html"
     _write_index_diachronica_html(
@@ -1297,32 +1285,6 @@ def test_parser_class_letters_unchanged(tmp_path: Path):
     assert rule["env"] == "V_V"
 
 
-def test_load_feature_mappings_from_default_csv():
-    rows = load_feature_mappings()
-    assert rows
-    by_name = {row.index_feature: row for row in rows}
-    assert by_name["voiced"].mapping_kind == "rename"
-    assert by_name["short"].mapping_kind == "rename_invert"
-    assert by_name["short"].asca_target == "long"
-    assert by_name["glottalized"].mapping_kind == "rename_polarity"
-    assert by_name["glottalized"].asca_target == "place"
-    assert by_name["close-mid"].mapping_kind == "bundle"
-    assert by_name["close-mid"].asca_target == "-hi,-lo,+tense"
-    assert by_name["open-mid"].mapping_kind == "bundle"
-    assert by_name["dental"].mapping_kind == "bundle"
-    assert by_name["dental"].asca_target == "+cor,+anterior,+dist"
-    assert by_name["alveolar"].asca_target == "+cor,+anterior,-dist"
-    assert by_name["palatal"].asca_target == "+cor,+dist"
-    assert by_name["velar"].asca_target == "-fr,+bk,+hi,-lo"
-    assert by_name["uvular"].asca_target == "-fr,+bk,-hi,-lo"
-    assert by_name["high tone"].mapping_kind == "tone"
-    assert by_name["high tone"].asca_target == "5"
-    assert by_name["low tone"].asca_target == "1"
-    assert by_name["falling tone"].asca_target == "51"
-    assert by_name["low falling tone"].asca_target == "21"
-    assert by_name["high rising tone"].asca_target == "35"
-
-
 @pytest.mark.parametrize(
     "input, expected",
     [
@@ -1332,7 +1294,7 @@ def test_load_feature_mappings_from_default_csv():
     ],
 )
 def test_normalize_feature_matrices_in_field_rename(input, expected):
-    mappings = feature_mappings_dict()
+    mappings = minimal_feature_mappings()
     assert normalize_feature_matrices_in_field(input, mappings) == expected
 
 
@@ -1344,7 +1306,7 @@ def test_normalize_feature_matrices_in_field_rename(input, expected):
     ],
 )
 def test_normalize_feature_matrices_in_field_rename_invert(input, expected):
-    mappings = feature_mappings_dict()
+    mappings = minimal_feature_mappings()
     assert normalize_feature_matrices_in_field(input, mappings) == expected
 
 
@@ -1361,7 +1323,7 @@ def test_normalize_feature_matrices_in_field_rename_invert(input, expected):
     ],
 )
 def test_normalize_feature_matrices_in_field_rename_polarity(input, expected):
-    mappings = feature_mappings_dict()
+    mappings = minimal_feature_mappings()
     assert normalize_feature_matrices_in_field(input, mappings) == expected
 
 
@@ -1390,12 +1352,12 @@ def test_normalize_feature_matrices_in_field_rename_polarity(input, expected):
     ],
 )
 def test_normalize_feature_matrices_in_field_place_bundles(input, expected):
-    mappings = feature_mappings_dict()
+    mappings = minimal_feature_mappings()
     assert normalize_feature_matrices_in_field(input, mappings) == expected
 
 
 def test_kenyah_vowel_height_rules_validate():
-    mappings = feature_mappings_dict()
+    mappings = minimal_feature_mappings()
     rules = [
         {
             "stages": ["i u", "e o"],
@@ -1412,7 +1374,7 @@ def test_kenyah_vowel_height_rules_validate():
         "rules": rules,
     }
     validate_asca(
-        DiachronicSeries(section, "asca", group_mappings=asca_group_mappings_dict())
+        DiachronicSeries(section, "asca", group_mappings=MINIMAL_GROUP_MAPPINGS)
     )
 
 
@@ -1424,11 +1386,6 @@ def test_apply_feature_mappings():
         {"stages": ["C[+voiced]", "C[+voice]"]},
         mappings,
     ) == {"stages": ["C[+voice]", "C[+voice]"]}
-
-
-def test_load_parser_config_default_includes_high_and_medium():
-    config = load_parser_config()
-    assert config.ipa_mappings_confidence == frozenset({"high", "medium"})
 
 
 def test_load_parser_config_high_only_override(tmp_path: Path):
@@ -1610,42 +1567,29 @@ def test_parser_marks_skip_rules_from_config(tmp_path: Path):
     assert rule["raw"] == "i → j [ə?] → {e,a}"
 
 
-def test_ipa_mappings_dict_uses_config_confidence_levels():
-    default_config = load_parser_config()
-    mappings = ipa_mappings_dict(config=default_config)
-    assert mappings["ḱ"] == "kʲ"
-    assert mappings["Š"] == "ʃ"
-    assert mappings["è"] == "ɛ"
-    assert mappings["é"] == "e"
-    assert mappings["ı"] == "j"
-    assert mappings["ṽ"] == "v\u0303"
-    assert mappings["û"] == "u"
-
-
 def test_ipa_mappings_dict_high_only_config_excludes_medium(tmp_path: Path):
     config_path = tmp_path / "parser_config.yml"
+    csv_path = tmp_path / "ipa_mappings.csv"
+    csv_path.write_text(
+        "index_feature,ipa_target,confidence,notes\n"
+        "ḱ,kʲ,high,\n"
+        "è,ɛ,high,\n"
+        "é,e,medium,\n",
+        encoding="utf-8",
+    )
     config_path.write_text(
         "ipa_mappings:\n  confidence:\n    - high\n",
         encoding="utf-8",
     )
     config = load_parser_config(config_path)
-    mappings = ipa_mappings_dict(config=config)
+    mappings = ipa_mappings_dict(csv_path, config=config)
     assert mappings["ḱ"] == "kʲ"
     assert mappings["è"] == "ɛ"
     assert "é" not in mappings
 
 
-def test_load_ipa_mappings_from_default_csv():
-    rows = load_ipa_mappings()
-    assert rows
-    by_name = {row.index_feature: row for row in rows}
-    assert by_name["Š"].ipa_target == "ʃ"
-    assert by_name["Š"].confidence == "high"
-    assert by_name["é"].confidence == "medium"
-
-
 def test_normalize_ipa_in_field():
-    mappings = ipa_mappings_dict(config=load_parser_config())
+    mappings = minimal_ipa_mappings()
     assert normalize_ipa_in_field("TŠ", mappings) == "Tʃ"
     assert normalize_ipa_in_field("Š", mappings) == "ʃ"
 
@@ -1696,7 +1640,7 @@ def test_index_diachronica_parser_high_only_config_skips_medium_at_parse(
     config = load_parser_config(config_path)
     parser = default_index_parser(
         parser_config=config,
-        ipa_mappings=ipa_mappings_dict(config=config),
+        ipa_mappings={"ḱ": "kʲ", "è": "ɛ"},
     )
     el = html.fragment_fromstring(
         '<p class="schg">é → ɛ / _#</p>',
@@ -1755,7 +1699,7 @@ def test_parse_rule_element_voiced_matrix_validates_asca():
     rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     section = {"index": "17.12", "section": "Voicing", "rules": rules}
     validate_asca(
-        DiachronicSeries(section, group_mappings=asca_group_mappings_dict()),
+        DiachronicSeries(section, group_mappings=MINIMAL_GROUP_MAPPINGS),
         probe_words=Path("tests/fixtures/asca_probe_words.wsca"),
     )
 
@@ -1906,7 +1850,7 @@ def test_normalize_ipa_in_field_noop_without_mappings():
     ],
 )
 def test_normalize_ipa_in_field_near_miss_unknown_characters(text, expected):
-    mappings = ipa_mappings_dict(config=load_parser_config())
+    mappings = minimal_ipa_mappings()
     assert normalize_ipa_in_field(text, mappings) == expected
 
 
