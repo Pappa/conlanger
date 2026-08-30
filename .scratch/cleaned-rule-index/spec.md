@@ -2,186 +2,213 @@ Status: ready-for-agent
 
 # Cleaned rule index
 
-Applier-neutral YAML successor to Index Diachronica HTML as the authoritative **rule index**, with **index rules** that **compile** to valid ASCA under **historical fidelity** constraints and a scalable **class-first** correction workflow.
+Applier-neutral YAML successor to Index Diachronica HTML as the authoritative **rule index**, where **corpus rules** carry a **stages** spine and **compile** to valid ASCA under **historical fidelity** constraints, with a scalable **class-first** correction workflow.
 
-Glossary: `CONTEXT.md`. Architectural context: ADRs 0001–0006, 0010, 0013. Prior decisions: `.scratch/cleaned-rule-index/map.md`, resolved tickets 01–13 and correction passes [14–25](issues/). Ticket [10](issues/10-rule-derived-probe-synthesis.md) (rule-derived candidate generation) — **wontfix**; use ASCA directly via `validate_asca` and the baseline wordlist.
-
-Living pipeline docs: **parse → compile → validate** ([ADR-0013](../../docs/adr/0013-parse-compile-validate.md)); inventory and `uv run create_index` sit under validate, not a separate applier-neutral stage.
+Glossary: `CONTEXT.md`. Architectural context: ADRs 0001–0006, 0010–0014. Living decisions: `.scratch/cleaned-rule-index/map.md`. Operator command: `uv run create_index`. Pipeline: **parse → compile → validate** ([ADR-0013](../../docs/adr/0013-parse-compile-validate.md)).
 
 ## Problem Statement
 
-Index Diachronica HTML is the current **source of truth** for attested sound-change rules, but it is not directly executable by sound-change appliers. Provisional ASCA-flavoured YAML dumps exist, yet roughly 43% of rules fail **compile validation** under ASCA, the on-disk shape still mirrors applier syntax rather than an applier-neutral **rule index**, and there is no durable workflow to clean rules at scale while preserving **historical fidelity** and auditability back to the HTML.
+Index Diachronica HTML is the current **source of truth** for attested sound-change rules, but it is not directly executable by sound-change appliers. Early ASCA-flavoured YAML dumps mirrored applier syntax rather than an applier-neutral **rule index**, and a large share of rules still fail **compile validation** under ASCA even after years of provisional cleanup.
 
-The project needs a **cleaned rule index** — structured YAML owned by Conlanger, not ASCA or Brassica — from which **applier compilers** emit executable rules, with automated **compile validation**, grouped **failure classes** for prioritisation, and explicit **rule status** for held-out cases.
+The project needs a **cleaned rule index** — structured YAML owned by Conlanger, not ASCA or Brassica — from which **applier compilers** emit executable rules, with automated **compile validation**, grouped **failure classes** for prioritisation, explicit **rule status** for config hold-outs, and durable provenance back to the HTML. Progress must be measurable (section-completeness and ok-flip changelog), historically faithful (no valid-but-inaccurate rewrites), and scalable (class-first transforms over one-off edits).
 
 ## Solution
 
-Build an end-to-end pipeline that:
+Build and iterate an end-to-end pipeline that:
 
-1. Parses **Index Diachronica HTML** into the applier-neutral YAML schema (global and section-level **abbreviation** tables, **sound-change sections**, **index rules** with `input`/`output`/`raw`/`source` and optional `env`/`exception`/`status`/`comment`).
-2. Applies **class-first** normalisation at ingest (safe **symbol** and **feature matrix** synonym replacement; **class letter** expansion deferred to compile time via **abbreviation table** CSV).
-3. Compiles each **sound-change section** through a **DiachronicSeries** that loads package **abbreviation tables** and emits ASCA-ready strings.
-4. Runs **compile validation** per **index rule** via `validate_asca` (ASCA 0.10.2, fixed baseline wordlist `tests/fixtures/asca_probe_words.wsca`).
-5. Produces a temporary **validation report** (CSV) with **failure classes** and reason vocabulary; sets thin optional `status` on index rules (`needs-validation`, `skipped`; omit = ok).
-6. Iterates: cluster failures → implement parser/compiler fixes → regenerate YAML → grow fixtures for changed **rule status** — until adoption criteria for replacing HTML as SoT are met.
+1. **Parses** Index Diachronica HTML into applier-neutral YAML (**corpus rules** with **stages**, `raw`, `rule id`, `source`; optional `env`, `exception`, `status`, `sporadic`, `comment`).
+2. Applies **class-first** normalisation at parse and compile (symbol cleanup, IPA and feature mappings, manual mappings, section mappings, series expansions, prose env rewrites, nested-set flattening, and dozens of cluster-driven correction passes) while preserving `raw` and **historical fidelity**.
+3. **Compiles** each **sound-change section** through **DiachronicSeries** with operator config injected at the script boundary (`ParserConfig`, `CompilerConfig` — group mappings, series mappings, feature bundles, compile transforms).
+4. **Validates** each **corpus rule** post-compile via forked ASCA (`validate_asca` / `validate_asca_part` on compiled field strings; baseline probe wordlist).
+5. **Inventories** ok/fail/skipped per rule with **failure classes**, per-field **blame**, success/error CSV splits, and an append-only ok-flip changelog.
+6. **Iterates** correction passes cluster-driven from inventory until adoption criteria for promoting cleaned YAML over HTML as SoT are met.
 
 Brassica compilation remains a future parallel path behind the same index (ADR-0001); this spec delivers the ASCA path first.
+
+**Current baseline** (ASCA 0.10.2, regenerated index): **8089 / 9676 ok (83.6%)**; **373 / 714 sections all OK (52.2%)**; **975** fail; **612** skipped (config hold-outs). Success metric prioritises **sections with zero validation fails**; near-miss sections (≤3 fails) are hunted before heavy-residual sections.
 
 ## User Stories
 
 1. As a pipeline maintainer, I want Index Diachronica HTML parsed into applier-neutral YAML, so that appliers compile from a single index format rather than ad-hoc ASCA strings.
-2. As a pipeline maintainer, I want every **index rule** to carry `raw` and `source` provenance, so that I can audit any cleaned field against the HTML line.
-3. As a pipeline maintainer, I want optional `env` and `exception` fields omitted when absent, so that “any environment” and “no exception” are represented without sentinel values.
-4. As a pipeline maintainer, I want **sound-change sections** to map one-to-one with HTML `<h2>` blocks, so that section identity (index, title, citation) is preserved for compile and analysis.
-5. As a sound-change researcher, I want **historical fidelity** preferred over valid-but-inaccurate rewrites, so that the index reflects Index Diachronica claims even when ASCA cannot express them.
-6. As a sound-change researcher, I want rules that cannot be faithfully compiled marked `status: skipped` with empty `input`/`output`, so that held-out rules remain visible without silently changing phonological meaning.
-7. As a sound-change researcher, I want detailed skip/validation reasons in a **validation report**, not embedded in the long-term YAML, so that the index stays applier-neutral and lean.
-8. As an agent implementing fixes, I want **failure classes** grouped across the index, so that I can prioritise **class-first** transforms over one-off edits.
-9. As an agent implementing fixes, I want a steady-state correction loop (parse → compile → validate → regenerate → cluster → fix), so that progress is measurable and repeatable.
-10. As an agent implementing fixes, I want **class-first** transforms in the parser or compile layer, so that mechanical fixes scale across thousands of rules.
-11. As an agent implementing fixes, I want git-diffable YAML regeneration, so that I can review churn and grow regression fixtures when **rule status** changes.
-12. As a developer, I want **compile validation** after applier compile (not at YAML ingest), so that the index remains applier-neutral per ADR-0003.
-13. As a developer, I want `validate_asca(DiachronicSeries) -> True` with clear errors on failure, so that correction workflow has a concrete ASCA gate.
-14. As a developer, I want validation driven by ASCA 0.10.2 via `asca run` on the **baseline probe wordlist** (`tests/fixtures/asca_probe_words.wsca`), so that runtime structural failures are caught alongside syntax errors where probes match rule shape.
-15. As a developer, I want **DiachronicSeries** to load `group_mappings.csv` at compile time, so that **class letter** expansions apply without baking ASCA syntax into the index YAML.
-16. As a developer, I want unmapped **class letters** to pass through unchanged, so that validation surfaces unknown tokens via **failure classes** rather than silent substitution.
-17. As a developer, I want **symbol** normalisation at HTML→YAML ingest, so that Index boundary/null/stress marks become ASCA-canonical in index fields while `raw` preserves Index form.
-18. As a developer, I want **feature matrix** synonym replacement at ingest inside `[...]` only, so that Index feature names with safe 1:1 ASCA equivalents normalise via `feature_mappings.csv`.
-19. As a developer, I want unmapped feature names left as-is at ingest, so that `unknown_feature` failures drive cluster-based mapping work.
-20. As a developer, I want global and section-level **abbreviation** tables in the YAML schema, so that hierarchical shorthand resolution is representable even when section overrides are deferred.
-21. As a developer, I want multi-line `raw` preserved via YAML literal blocks, so that complex HTML rule lines remain byte-auditable.
-22. As a developer, I want lxml non-strict HTML parsing of `index_diachronica_original.html`, so that real-world markup quirks do not block ingest.
-23. As a developer, I want **compile validation** scoped per **index rule** within a section, so that one bad rule does not obscure others in the same **sound-change section**.
-24. As a developer, I want a validation report CSV with columns for section identity, rule index, ok/fail, **failure class**, reason, and description, so that pandas analysis can drive correction priorities.
-25. As a developer, I want CSV reason vocabulary (`trailing-comment`, `broken-syntax`, `asca-unrepresentable`, `valid-but-inaccurate`, `other`), so that skip decisions are filterable and consistent with ADR-0010.
-26. As a developer, I want `status: needs-validation` for rules that received structural normalisation pending re-check, so that agents can clear status on clean re-validate without owner approval.
-27. As a project owner, I want permanent **skipped** rules and rare same-intent swaps to require my approval, so that meaning-changing exceptions stay controlled.
-28. As a test author, I want fixture rows in `sound_change_rules.csv` for both HTML-extract expectations and ASCA-guess validation cases, so that parser and validator regressions share one auditable table.
-29. As a test author, I want sampled HTML rules (with recorded RNG seed) in fixtures, so that validator behaviour is grounded in real Index Diachronica lines.
-30. As a pipeline consumer, I want the cleaned YAML to replace HTML as SoT only after explicit adoption criteria are met, so that premature promotion does not lose HTML authority.
-31. As a future Brassica integrator, I want the index to remain applier-neutral, so that a Brassica **applier compiler** can be added without reshaping on-disk YAML.
-32. As a maintainer, I want edge-split policy (ADR-0005) to use interim `status: skipped` for unrepresentable one-line splits, so that provenance is kept without inventing extra authored rules.
-33. As a maintainer, I want trailing undelimited comments extracted to compile comments when safe, else skipped with reason `trailing-comment`, so that prose after rules does not break ASCA parse.
-34. As a maintainer, I want the edit ladder (formatting → token replacement → normalisation → skip) applied consistently, so that agents do not invent ad-hoc per-rule policies.
-35. As a maintainer, I want inventory metrics reproducible (rule counts, ok/fail percentages, top **failure classes**), so that progress toward a compilable index is trackable across iterations.
-36. As a maintainer, I want **series indices** and section-local prose abbreviations handled cluster-driven with hand-added mapping rows when warranted, so that hard cases are not blocked on a global prose-extraction spike.
-37. As a maintainer, I want **meta-notation** (`X0`, `Xn`, retroflex marks, repetition groups) deferred to validation clusters, so that the first delivery does not invent ASCA expansions without evidence.
-38. As a developer, I want `DiachronicSeries` / `SoundChangeRule` to render ASCA rule strings from index rule dicts, so that the ASCA **applier compiler** has a stable string emission layer.
-39. As a developer, I want skipped index rules to render as ASCA comments, so that `validate_asca` ignores held-out rules without deleting section structure.
-40. As an operator, I want a script or entry point to regenerate the full cleaned YAML from HTML and emit the validation report in one invocation, so that the correction loop is automatable by agents.
+2. As a pipeline maintainer, I want every **corpus rule** to carry `raw`, `rule id`, and `source` provenance, so that I can audit any cleaned field against the HTML line.
+3. As a pipeline maintainer, I want the change spine stored as **stages** (ordered opaque strings), so that single-step, chain, and missing-arrow rules share one schema (ADR-0011).
+4. As a pipeline maintainer, I want optional `env` and `exception` omitted when absent, so that “any environment” and “no exception” need no sentinel values.
+5. As a pipeline maintainer, I want **sound-change sections** to map one-to-one with HTML `<h2>` blocks, so that section identity (index, title, citation) is preserved for compile and analysis.
+6. As a pipeline maintainer, I want section-level `status: skipped` only from operator config (`skip_sections`), so that whole sections can be held out without editing HTML.
+7. As a sound-change researcher, I want **historical fidelity** preferred over valid-but-inaccurate rewrites, so that the index reflects Index Diachronica claims even when ASCA cannot express them (ADR-0010).
+8. As a sound-change researcher, I want rules held out via config (`skip_rules`) to render as ASCA comments, so that they remain visible without silently changing phonological meaning.
+9. As a sound-change researcher, I want detailed skip/validation reasons in a **validation report**, not embedded in the long-term YAML, so that the index stays applier-neutral and lean.
+10. As an agent implementing fixes, I want **failure classes** grouped across the index, so that I can prioritise **class-first** transforms over one-off edits.
+11. As an agent implementing fixes, I want a steady-state correction loop (parse → compile → validate → regenerate → cluster → fix), so that progress is measurable and repeatable.
+12. As an agent implementing fixes, I want **class-first** transforms in the parser or compile layer, so that mechanical fixes scale across thousands of rules.
+13. As an agent implementing fixes, I want git-diffable YAML regeneration, so that I can review churn and grow regression fixtures when outcomes change.
+14. As an agent implementing fixes, I want section-completeness as the primary success metric, so that finishing near-miss sections (≤3 fails) is prioritised over raw ok-percentage alone.
+15. As a developer, I want **compile validation** after applier compile (not at YAML ingest), so that the index remains applier-neutral per ADR-0003.
+16. As a developer, I want `validate_asca` with clear errors on failure, so that the correction workflow has a concrete ASCA gate.
+17. As a developer, I want validation driven by forked ASCA (`github.com/Pappa/asca-rust` 0.10.3) via `asca validate` and `asca run` on the baseline probe wordlist, so that syntax and runtime structural failures are caught where probes match rule shape.
+18. As a developer, I want per-field `validate_asca_part` blame in inventory, so that Tier 1–2 syntax failures attribute to input, output, env, or exception without stub rules.
+19. As a developer, I want **DiachronicSeries** to accept injected **CompilerConfig** (group mappings, series mappings), so that class-letter and correspondence-index expansion applies at compile without baking ASCA syntax into the index YAML.
+20. As a developer, I want unmapped **class letters** to pass through unchanged, so that validation surfaces unknown tokens via **failure classes** rather than silent substitution.
+21. As a developer, I want **symbol** normalisation at HTML→YAML parse, so that Index boundary/null/stress marks become ASCA-canonical in compile fields while `raw` preserves Index form.
+22. As a developer, I want **feature matrix** synonym replacement at parse inside `[...]` via operator feature mappings, so that safe 1:1 ASCA equivalents normalise without inventing bundles.
+23. As a developer, I want unmapped feature names left as-is at parse, so that `unknown_feature` failures drive cluster-based mapping work.
+24. As a developer, I want **IPA letter mappings** at parse with configurable confidence levels, so that high- and medium-confidence tokens normalise while low-confidence rows await evidence.
+25. As a developer, I want **manual mappings** applied at parse (after corrections, before other transforms), so that maintainer-authored rewrites scale without editing HTML.
+26. As a developer, I want **Index Diachronica corrections** keyed by **rule id** to replace `raw` at parse, so that owner corrections do not require editing the HTML file (ADR-0012).
+27. As a developer, I want **section mappings** at parse for section-local abbreviation expansion (e.g. Athabaskan `*D`/`*R`/`*T`), so that hierarchical shorthand resolves before compile.
+28. As a developer, I want **series expansions** (collectives, global) at parse and **series mappings** (correspondence indices) at compile, so that the four **subscript notation** uses each land at the correct stage.
+29. As a developer, I want multi-line `raw` preserved via YAML literal blocks, so that complex HTML rule lines remain byte-auditable.
+30. As a developer, I want lxml non-strict HTML parsing of the Index HTML SoT, so that real-world markup quirks do not block ingest.
+31. As a developer, I want **compile validation** scoped per **corpus rule** within a section, so that one bad rule does not obscure others in the same **sound-change section**.
+32. As a developer, I want a validation report CSV with section identity, **rule id**, ok/fail, **failure class**, reason, description, and optional **blame** / **alt_idx**, so that pandas analysis can drive correction priorities.
+33. As a developer, I want success and error filtered CSV splits plus an append-only ok-flip changelog keyed by `source`, so that regressions and wins are auditable across passes.
+34. As a developer, I want chain rules (length ≥ 3 **stages**) expanded at compile into adjacent pairs, so that one HTML line can encode multi-step changes without parse-time row splitting (ADR-0005 amended).
+35. As a developer, I want missing-arrow rules (length-1 **stages**) to compile with an empty output, so that prose-only lines inventory as fails rather than being auto-skipped.
+36. As a developer, I want **optional outputs** (unpaired output sets) compiled as **alternative outcomes** with uniform random selection and inventory validated on alternatives only (`alt_idx`), so that speaker variation is representable without structuring optional outputs in YAML (ticket 61).
+37. As a developer, I want nested bracket sets flattened at parse (env/exception and stages I/O) per researched policy, so that ASCA-parseable flat sets replace Index nesting where safe.
+38. As a developer, I want Index I/O parenthetical optionals expanded to flat cartesian `{…}` sets (not ASCA `<>` optionals), so that compile matches linguistic convention and ASCA syntax limits (ticket 100).
+39. As a developer, I want prose env **`else`** rewritten to complementary **exception** on the following rule, so that Index catch-alls become ASCA-valid without `#_` stubs.
+40. As a developer, I want prose env **`medial`** / **`medially`** rewritten to `_` env plus boundary **exception**, so that word-internal conditioning is ASCA-expressible.
+41. As a developer, I want the first semicolon on a rule line cut as **rule comment** before chain split, so that editorial prose does not break I/O parsing.
+42. As a developer, I want **sporadic** qualifiers stripped from fields and recorded as `sporadic: true`, so that uncertainty is metadata rather than ASCA syntax.
+43. As a developer, I want compile-time normalisation for length marks, ejective marks, superscript modifiers, parenthetical segment notation, labialized class letters, and group-mapping boundary rules, so that Index typography becomes ASCA-canonical without mutating `raw`.
+44. As a developer, I want per-field string transforms on **SoundChangeRule** with compiled fields joined at render, so that `.rsca` output stays byte-identical while enabling per-field validation (ADR-0014, ticket 99).
+45. As a developer, I want package library code to accept in-memory config only (empty defaults), with scripts loading operator YAML from `config/`, so that tests do not depend on production mapping drift.
+46. As a project owner, I want permanent skip decisions and rare same-intent swaps to require my approval, so that meaning-changing exceptions stay controlled.
+47. As a test author, I want fixture rows in `sound_change_rules.csv` for HTML-extract expectations and ASCA-guess validation cases, so that parser and validator regressions share one auditable table.
+48. As a test author, I want end-to-end pipeline smoke tests (HTML → parse → compile → validate), so that the highest integration seam guards the correction loop.
+49. As a pipeline consumer, I want the cleaned YAML to replace HTML as SoT only after explicit adoption criteria are met, so that premature promotion does not lose HTML authority.
+50. As a future Brassica integrator, I want the index to remain applier-neutral, so that a Brassica **applier compiler** can be added without reshaping on-disk YAML.
+51. As a maintainer, I want the edit ladder (formatting → token replacement → normalisation → config skip) applied consistently, so that agents do not invent ad-hoc per-rule policies.
+52. As a maintainer, I want inventory metrics reproducible (rule counts, ok/fail/skipped, sections all-OK, top **failure classes**), so that progress toward a compilable index is trackable across iterations.
+53. As a maintainer, I want **meta-notation** and residual prose-env clusters handled inventory-driven, so that hard cases are not blocked on premature global policies.
+54. As a maintainer, I want ASCA alias file (`asca -l`) kept complementary for lexicon romanisation only, not for class-letter expansion in rules, so that compile uses group mappings instead (grill 2026-08-10).
+55. As a maintainer, I want `legacy/` treated as read-only prior attempts, so that new implementation does not copy obsolete code or data.
+56. As an operator, I want `uv run create_index` to regenerate YAML, inventory CSVs, summary, and comment-phrase survey in one invocation, so that the correction loop is automatable by agents.
+57. As an operator, I want `--skip-validation` for ingest-only runs when ASCA is not installed, so that parse work is not blocked by the validator binary.
+58. As a developer, I want syllable-position `#U` / `U#` tails compiled via underline structures and env-set exceptions, so that Index positional notation becomes ASCA-valid without shipping `// #_%` (ticket 58).
+59. As a developer, I want inter-segment whitespace handled compile-only (Brassica spacing policy), so that the SoT stays Index-shaped while ASCA remains space-optional.
+60. As a researcher, I want **rule comment** prose captured in `comment` and section prose in section `comments`, so that editorial context is preserved without polluting compile fields.
 
 ## Implementation Decisions
 
 ### Corpus schema and source of truth
 
-- Top-level YAML: `abbreviations` (string→string) + `sections` array.
-- Each section: required `section` (title), `index` (dotted ancestry key); optional `citation`, section-level `abbreviations`, `rules`.
-- Each **index rule**: required `input`, `output`, `raw`, `source` (`index_diachronica_original.html:<line>`); optional `env`, `exception`, `status`, `sporadic`, `comment` (inline prose stripped from fields — ticket [30](issues/30-rule-comment-field-on-index-rules.md)).
-- Field values are opaque Index-shaped strings — not an ASCA AST. Empty `input`/`output` when `status: skipped`.
-- HTML (`index_diachronica_original.html`) remains current SoT until cleaned YAML meets adoption criteria; regeneration must remain traceable to HTML (ADR-0006).
-- Provisional files (`index_diachronica_ai.yml`, early XML) are migration references only.
+- Top-level YAML: `sections` array (top-level `abbreviations` retired from parse output; section-local maps live in operator config).
+- Each **sound-change section**: required `section` (title), `index` (dotted ancestry key); optional `citation`, section-level `comments`, `rules`, `status: skipped` (config hold-out only).
+- Each **corpus rule**: required **stages** (list of opaque Index-shaped strings), `raw`, `rule id`, `source` (`index_diachronica_original.html:<line>`); optional `env`, `exception`, `status`, `sporadic`, `comment`.
+- **Stages** length 2 = single change; ≥ 3 = chain (compile expands adjacent pairs); 1 = missing arrow (compile supplies empty output).
+- Field values are opaque Index-shaped strings — not an ASCA AST. Config-skipped rules carry `status: skipped` and render as ASCA comments (`#\t` + `raw`).
+- HTML remains current SoT until cleaned YAML meets adoption criteria; regeneration must remain traceable to HTML (ADR-0006). **Index Diachronica corrections** overlay `raw` by **rule id** without editing HTML (ADR-0012).
 
-### Ingest (HTML → YAML)
+### Operator config vs corpus data
 
-- Parser: `IndexDiachronicaParser` using lxml; phases cover section structure, `→` I/O split, `/ env` and `! exception` parsing, citation/comments.
-- **Symbol** normalisation at ingest to ASCA-canonical form in index fields; `raw` unchanged.
-- **Parse-time class-first transforms** (correction passes 14–25, per edit ladder): leading em-dash list markers; remaining `→` → `>` in field values; uncertainty glosses → `sporadic: true`; trailing editorial glosses → **`comment`** (ticket [31](issues/31-capture-rule-comments-at-parse-time.md)); env stress phrases (`when stressed` / `when unstressed`); smart-quote cleanup. All preserve `raw`.
-- **Correspondence-series indices** and **collective subscripts**: parse-time expansion to ASCA-parseable strings when section map exists; maps applied at parse ([27](issues/27-implement-parse-time-correspondence-series-expansion.md)); do not use `legacy/`. **Positional slots** and **identity subscripts** — not yet implemented.
-- **Feature matrix** synonym replacement at ingest inside `[...]` via `feature_mappings.csv`: **not yet implemented**; unmapped names left as-is (`unknown_feature` cluster).
-- **Class letters**: no ingest-time `str.maketrans` blind substitution; expansion at compile via **DiachronicSeries** + `group_mappings.csv`. Six letters (C, O, F, L, N, V) pass through (ASCA inbuilt). Seventeen validated rows in `group_mappings.csv`; M (diphthong) removed — cluster-driven.
-- **Series indices**, section-local prose abbreviations, **meta-notation**: cluster-driven; hand-add abbreviation rows when inventory warrants.
-- **Whitespace tokenisation** for inter-segment spacing: deferred.
-- Edge-split (ADR-0005): interim `status: skipped` for lines not yet representable as one **index rule**. Multi-step chains stay one index row; **compile-time chain expansion** ([`expand_chained_index_rule`](../../src/conlanger/tools/compile/asca/chains.py)) emits sequential ASCA steps rather than skipping.
+- **config/** — operator settings (YAML), loaded only by scripts and injected as `ParserConfig` / `CompilerConfig`. Parse: `parser_config.yml`, `manual_mappings.yml`, `ipa_mappings.yml`, `feature_mappings.yml`, `index_diachronica_corrections.yml`. Compile: `compiler_config.yml`, `group_mappings.yml`.
+- **data/** — corpus and generated artifacts: Index HTML SoT, regenerated `index_diachronica_parsed.yml`, runtime ASCA alias file, inventory outputs under `.scratch/cleaned-rule-index/inventory/`.
+- Library code under `src/conlanger` (except scripts) accepts in-memory config; empty defaults when omitted. `create_index` is the bootstrap composing real operator config.
 
-### Compile and validation
+### Parse (HTML → YAML)
 
-- One **sound-change section** → one **DiachronicSeries** (`src/conlanger/tools/phonological_ruleset.py`): runtime container delegating to `DiachronicSeries` with compile-time transforms in `SoundChangeRule`.
-- **Compile-time transforms** (correction passes): `group_mappings.csv` class-letter expansion; `normalize_asca_length_marks()`; `normalize_asca_ejective_marks()`; labialized class letters (`Kʷ`, `K(ʷ)`, …); typographic apostrophe → ejective mark. Corpus dict fields and `raw` unchanged.
-- **Applier compiler** path: index rule dict → `SoundChangeRule` → `DiachronicSeries` string → `validate_asca`.
-- `validate_asca`: ASCA 0.10.2 via `asca run` on baseline probe wordlist (`tests/fixtures/asca_probe_words.wsca`); raises `ASCAValidationError` on failure; skips commented (held-out) rules. Tier 4 runtime failures may be under-detected when probes do not match rule shape — acceptable for clustering (~98% of failures are Tier 1–2 syntax). Rule-derived probe synthesis (ticket 10) — **wontfix**.
-- Validation runs per **index rule**, not whole-section-only gate.
-- Post-compile validation only — ingest does not reject non-ASCA-shaped index fields (ADR-0003).
+- Parser: `IndexDiachronicaParser` using lxml; phases cover section structure, **stages** spine from `→` splits, `/ env` and `! exception` parsing, citation/comments, rule id from HTML `id`.
+- Transform order (representative): corrections overlay → section mappings → manual mappings → symbol/IPA/feature normalisation → class-first correction passes (em dash, arrow, glosses, sporadic, stress, smart quotes, chain-aware comment cut, prose env else/medial, parallel-column null omission, nested-set flatten, optional-output detection metadata, series expansions, section skip flags, etc.). All preserve `raw` except corrections replace it entirely.
+- **Class letters**: no ingest-time blind substitution; expansion at compile via **CompilerConfig** group mappings. Six letters (C, O, F, L, N, V) pass through (ASCA inbuilt). Mapped letters expand per boundary rules; glued sequences (`SR`, `VOR`) expand letter-by-letter when recognised.
+- **Correspondence-series indices**: compile-time series mappings (longest-prefix lookup); **collective subscripts**: parse-time series expansions from parser config.
+- **Positional slots** and **identity subscripts**: compile projection (phases 1–2 done; edge-case hold-outs remain).
+- Edge-split (ADR-0005): one **corpus rule** per HTML line; chains stay one row; compile-time chain expansion emits sequential ASCA steps.
+
+### Compile
+
+- One **sound-change section** → one **DiachronicSeries**: runtime container with **SoundChangeRule** per **corpus rule**.
+- Per-field string transforms at **SoundChangeRule** instantiation (ADR-0014); compiled `input`/`output`/`env`/`exception` strings stored on the rule and joined at `__str__` / render (ticket 99).
+- Compile pipeline (order documented in applier compile doc): representative steps include superscript normalisation, parenthetical expansion, input-optionals-to-structures, length/ejective marks, group mappings, labialized class letters, series mappings, chain expansion, optional-output alternative peers.
+- **Optional outputs**: parent rule holds alternatives; inventory validates alternatives only with `alt_idx`; parent samples one alternative via instance `Random`.
+- ASCA alias file is **not** used for class-letter rewrite in rules; group mappings at compile are authoritative.
+
+### Validate and inventory
+
+- Post-compile only (ADR-0003): `validate_asca` = `validate_asca_syntax` then `asca run` + baseline wordlist; `validate_asca_part` for per-field blame.
+- Forked ASCA 0.10.3 (`ASCA_BIN`); CLI fields `input`/`output`/`context`/`exception`.
+- One inventory row per **corpus rule**; config-skipped rules count as ok with description `held-out (commented rule)`.
+- Artifacts: full inventory CSV, success/error splits, ok-flip changelog, summary markdown, optional field-isolation/blame CSVs.
+- Tier 4 runtime failures may be under-detected when probes do not match rule shape — acceptable for clustering. Rule-derived probe synthesis (ticket 10) — **wontfix**.
 
 ### Historical fidelity and rule status
 
-- Edit ladder (ADR-0010, ticket 04): class-first safe transforms OK; meaning-changing or ASCA-unrepresentable → `status: skipped`; structural normalisation → `needs-validation` until re-validated; valid-but-inaccurate rewrites forbidden. During bulk correction (passes 14+), do **not** pre-emptively skip unmapped tokens — apply skip only after class-first work is exhausted (ticket [26](issues/26-parse-time-correspondence-series-indices.md)).
-- Corpus carries thin optional `status` only; full `reason`/`description`/validator detail live in temporary **validation report** CSV.
+- Edit ladder (ADR-0010): class-first safe transforms OK; meaning-changing or ASCA-unrepresentable → config `skip_rules` / `skip_sections` only after class-first work exhausted; valid-but-inaccurate rewrites forbidden. No auto-skip for unmapped tokens during bulk correction.
+- Corpus carries thin optional `status` only; full validator detail lives in temporary **validation report** CSV.
 - Defined transform classes: apply without per-rule approval. Permanent skip / rare swaps: project owner only.
 
-### Correction workflow
+### Correction workflow and prioritisation
 
-- Steady-state loop: parse HTML → per section/rule compile + `validate_asca` → regenerate YAML → update validation report → fixture samples for changed **rule status** → cluster **failure classes** → implement **class-first** parser/compiler fixes → repeat.
-- Entry point: `uv run create_index`.
-- Class-first transforms live in `IndexDiachronicaParser` (parse-time) and `SoundChangeRule` (compile-time). External one-off override file deferred.
-- Baseline inventory (cleaned schema + ASCA 0.10.2, after passes 14–25): **6422 / 9317 ok (68.9%)**; top failure classes: `syntax_other`, `unknown_character`, `expected_underscore`, `unknown_feature`. Provisional reference: 9721 rules, ~57% ok under ASCA 0.9.3 / `index_diachronica_ai.yml`.
+- Steady-state loop: parse HTML → compile → validate per rule → regenerate YAML + inventory → cluster **failure classes** → implement correction pass → repeat.
+- Primary metric: **sections with 0 validation fails**; hunt near-miss sections (≤3 fails) before heavy-residual sections.
+- **Current frontier** (from map): `*X` wildcards (83), matrix-suffix `ː` (79), breve `̆` (84), tone features (62), near-miss unknown_character (63), syllable-position `#U`/`U#` (98); paused grill on paren/parallel notation (71) now unblocked by I/O optionals spike (100). Group-mapping residuals (M/X/I/Y) deprioritised.
+- Class-first transforms live in parser (parse-time) and **SoundChangeRule** compile transforms. External one-off override schema deferred.
 
-### Package data
+### Adoption criteria (to define)
 
-- Abbreviation tables under `data/asca/`: `group_mappings.csv`, `feature_mappings.csv` (when added). Series maps live in `parser_config.yml` / `compiler_config.yml` (CSV path retired).
-- Brassica data path reserved; Brassica compiler out of scope for this spec.
-
-### Adoption criteria (to define during implementation)
-
-- Not yet specified in wayfinder; spec requires explicit criteria before promoting cleaned YAML over HTML as SoT (e.g. minimum compile-success rate, zero unexplained drift from `raw`, fixture coverage for changed statuses). Implementation should propose metrics and seek owner sign-off.
+- Not yet specified; requires owner sign-off before promoting cleaned YAML over HTML (e.g. minimum sections-all-OK rate, ok-percentage floor, zero unexplained drift from `raw`, fixture coverage for changed statuses).
 
 ## Testing Decisions
 
 ### Primary seam (proposed — one integration surface)
 
-**HTML file → `IndexDiachronicaParser.parse` → cleaned YAML document → per-section `DiachronicSeries` compile → `validate_asca` per active index rule.**
+**HTML file → `IndexDiachronicaParser.parse` (with injected config) → index document → per-section `DiachronicSeries` compile → `validate_asca` / `validate_index_rule` per active corpus rule.**
 
-This is the highest seam that exercises ingest, schema shape, abbreviation/feature policy, ASCA compilation, and post-compile validation together — matching the correction workflow loop (ticket 05) and ADR-0003. Tests at this seam should:
+This is the highest seam that exercises ingest, **stages** schema, config injection policy, ASCA compilation, and post-compile validation together — matching the correction workflow (ticket 05) and ADR-0003. Prior art: `tests/conlanger/tools/test_index_pipeline.py` documents and implements this seam.
 
-- Use real or minimal HTML fixtures mirroring Index Diachronica structure (`<section>`, `<h2>`, `<p class="schg">`).
-- Assert index rule fields (`input`, `output`, `raw`, `source`, optional `env`/`exception`/`status`) without asserting internal parser function names.
-- Build `DiachronicSeries` from compiled section output and call `validate_asca`; expect `True` or documented `ASCAValidationError` / expected skip for `status: skipped`.
-- Prefer parametrized cases drawn from `tests/fixtures/sound_change_rules.csv` (`html_extract` for ingest expectations; `asca_guess` for validator-aligned compile cases).
+Tests at this seam should:
 
-Rationale: lower seams (e.g. `extract_rule_parts` alone, or `validate_asca` alone) already exist and do not prove the index pipeline; higher seams (full lexicon evolution) mix unrelated concerns. One end-to-end compile-validation seam minimises cross-module test duplication.
+- Use real or minimal HTML fixtures mirroring Index Diachronica structure (`<section>`, `<h2>`, `<p class="schg">` with `id`).
+- Assert **corpus rule** fields (`stages`, `raw`, `rule id`, `source`, optional `env`/`exception`/`status`) without asserting internal parser function names.
+- Build `DiachronicSeries` with minimal injected config and call `validate_asca` or `validate_index_rule`; expect pass or documented fail for held-out rules.
+- Prefer parametrized cases from `tests/fixtures/sound_change_rules.csv` (`html_extract` for ingest; hand-curated E2E smoke for full pipeline — `asca_guess` rows are not reliable for full-pipeline expectation without re-baselining).
+
+Rationale: lower seams (rule-line splitting alone, or `validate_asca` alone) do not prove the index pipeline; higher seams (full lexicon evolution) mix unrelated concerns. One end-to-end compile-validation seam minimises cross-module test duplication.
 
 ### Supporting seams (existing — do not replace)
 
-- Parser unit/param tests on rule-line splitting and HTML element parsing — prior art: `tests/conlanger/tools/test_IndexDiachronicaParser.py` against `sound_change_rules.csv` `html_extract` rows.
-- Validator unit tests — prior art: `tests/conlanger/tools/test_asca_validator.py` against `asca_guess` fixture rows (seed 20260802; 370 expected ok, 130 expected fail).
-- Correction-pass integration tests per cluster (tickets 14–25) — parser and compile transforms with ASCA where applicable.
+- Parser unit/param tests on rule-line splitting and HTML element parsing — `tests/conlanger/tools/test_parser.py` against `sound_change_rules.csv` `html_extract` rows.
+- Validator unit tests — `tests/conlanger/tools/test_asca_validator.py` against `asca_guess` fixture rows.
+- Per-cluster correction-pass tests (tickets 14+) — parse and compile transforms with ASCA where applicable.
+- Config injection tests with `minimal_compiler_config` / empty defaults — no production config assertions in library tests (ticket 102).
 
 ### What makes a good test
 
-- Assert external behaviour: YAML shape, rendered ASCA strings, validation pass/fail, `status` on index rules — not private methods or intermediate CSV layouts unless that artifact is the public contract.
+- Assert external behaviour: YAML shape, rendered `.rsca` strings, validation pass/fail, `status` on corpus rules — not private methods or intermediate CSV layouts unless that artifact is the public contract.
 - Preserve auditability: fixture rows keep `id`, `source`, `raw` pointing at HTML lines.
-- When **rule status** or compile outcome changes intentionally, update fixtures and note the **failure class** or edit-ladder step that motivated the change.
-- Skip tests gracefully when `asca` 0.10.2 binary is absent (match existing validator test pattern).
+- When compile outcome changes intentionally, update fixtures and note the **failure class** or edit-ladder step that motivated the change.
+- Skip ASCA-dependent tests gracefully when the binary is absent (match existing `ASCA_INSTALLED` pattern).
+- Use injected minimal config in unit tests; load production config only in integration/script tests.
 
 ### Modules under test
 
-- `IndexDiachronicaParser` (ingest)
-- `DiachronicSeries` (compile)
-- `DiachronicSeries` / `SoundChangeRule` (ASCA emission + compile transforms)
-- `validate_asca` (post-compile gate; baseline probe wordlist)
+- `IndexDiachronicaParser` (parse)
+- `DiachronicSeries` / `SoundChangeRule` (compile + ASCA emission)
+- `validate_asca` / `validate_asca_part` (post-compile gate)
 - `index_inventory` / `create_index` (orchestration: YAML + validation report from HTML path)
 
 ## Out of Scope
 
-- **Generative sound-change sequences** model (GAN / next-in-sequence) — see `.scratch/sound-change-sequences/`.
-- Bundling ~100 **preset inventories** — see `.scratch/phoneme-inventories/`.
-- Automating PHOIBLE/WALS data prep — see `.scratch/data-processing-pipeline/`.
+- **Generative sound-change sequences** model — `.scratch/sound-change-sequences/`.
+- Bundling ~100 **preset inventories** — `.scratch/phoneme-inventories/`.
+- Automating PHOIBLE/WALS data prep — `.scratch/data-processing-pipeline/`.
 - Shipping a **Brassica compiler** or full Brassica adoption.
-- **Prose-environment mapping** (Index comment paragraphs → structured `env`) — no schema pretence; future spike.
-- **Whitespace tokenisation** policy for ASCA inter-segment spacing — deferred from feature-normalisation ticket.
-- **Meta-notation** global compile expansion — cluster-driven deferral.
-- **Abbreviation table authorship at scale** beyond package CSV + hand-added cluster rows.
+- **Abbreviation table authorship at scale** beyond operator config + inventory-driven hand-adds.
 - External one-off rule override schema.
 - Promoting cleaned YAML to SoT without owner-approved adoption criteria.
-- **Rule-derived probe synthesis** (ticket 10 — wontfix); baseline wordlist is the validation probe strategy.
-- Rust `ParsedRules::try_from` wrapper for Tier 1–3 word-independent gate (deferred).
-- Seeded random fuzz probe generation (optional nightly script later).
+- **Rule-derived probe synthesis** (ticket 10 — wontfix).
 - Porting ASCA's full unit-test index wholesale.
+- Copying implementation or data from `legacy/`.
+- Structured compile IR collections on **SoundChangeRule** (ticket 94 — blocked/unscheduled; condensed/parallel column IR deferred).
+- Sporadic sampling at apply time (ticket 68 — `needs-triage`).
 
 ## Further Notes
 
-- ASCA validity reference: `.scratch/cleaned-rule-index/research/asca-rule-validity.md` (0.10.2; §5 internal pipeline for Python).
-- Class letter research: `.scratch/cleaned-rule-index/research/asca-class-letter-mappings.md`.
-- Inventory baseline: `.scratch/cleaned-rule-index/inventory/` (cleaned YAML + ASCA 0.10.2; **6422 / 9317 ok** after passes 14–25).
-- Resolved wayfinder tickets 01–13 and correction passes 14–25 are incorporated above; ticket 10 (probe synthesis) is **wontfix**; other fog items remain explicitly deferred.
-- `DiachronicSeries` + compile-time transforms in `SoundChangeRule` replace parser-time `str.maketrans` for class letters.
+- Wayfinder map (living decisions, ticket frontier): `.scratch/cleaned-rule-index/map.md`.
+- ASCA validity reference: `.scratch/cleaned-rule-index/research/asca-rule-validity.md`.
+- Inventory baseline: `.scratch/cleaned-rule-index/inventory/` (**8089 ok / 9676 rows**, 83.6%).
+- Pipeline docs: `docs/index-diachronica-parser.md`, `docs/sound-change-applier.md`, `docs/validate.md`, `docs/SYSTEM.md`.
 - Re-inventory after major milestones: `uv run create_index`.
+- Grill 71 (paren/parallel set notation) paused 2026-08-29; resume from `research/io-optionals-asca-and-convention.md` after ticket 100 resolution.
+- Config layout migration (ticket 101) and compiled-fields-at-render (ticket 99) are resolved as of 2026-08-30.
