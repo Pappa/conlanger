@@ -1,12 +1,12 @@
 section_index,rule_id,error_token,rule
-14.3.1,Colloquial-Tamil-∅_2,M,"∅ > ʉ / {l,ɭ}_# if {M,V:[+long]} previously in the lexeme"
-17.5.1,Old-Irish-p-t-k-kʷ-b-d-ɡ-m-n-l-r-s,M,"p t k kʷ b d ɡ m n l r s > f θ x xʷ v ð ɣ M N L [+son,-syll] h / V(#)_{[+son,-syll],V}"
-17.7.2.3,Standard-German-∅,M,∅ > ə / M_r$
-17.11.1,Polish-Cʲ_2,M,"C:[+cor,+dist] > C in select words due to prestige influence of Czech in the Middle O:[+delrel]ges"
-29.1.1.1.8,"Dena’ina-TŠ,TŠʷ",I,P:[-voice]ʃ > P:[-voice]P in %pper Inlet dialect)
-32.2,Tlapanec-Yt-Ynt-Ys,Y,Yt Ynt Ys > tʃ dʒ ʃ
-33.2.1,Nomlaki-VrV,M,VrV > M
-41.5.2.3,"Gadsup-D,Y",Y,"{P:[+voice],Y} > ∅ / _n"
-41.5.2.3,Gadsup-YO+-voice-YO-voice,Y,YO[+ voice] YO[- voice] > Y t
-42.1,Pre-Finnic-a,X,"a > æ / {a,aX,e,eX,e,eX,i,iX,y,yX}(C)(C)_ when unstressed"
-47.2,"List-2:-Conditional-or-complex-consonant-changes-t,k",M,"{t,k} > ∅ / V_V (Marathi) probably with voiced stops as intermediates, since they also became silent"
+14.3.1,Colloquial-Tamil-∅_2,M,"∅ > ʉ / {l,ɭ}_# if {M,V:[+long]} previously in the lexeme | ^ @ Rule 1, Line 1"
+17.5.1,Old-Irish-p-t-k-kʷ-b-d-ɡ-m-n-l-r-s,M,"p t k kʷ b d ɡ m n l r s > f θ x xʷ v ð ɣ M N L [+son,-syll] h / V(#)_{[+son,-syll],V} | ^ @ Rule 1, Line 1"
+17.7.2.3,Standard-German-∅,M,"∅ > ə / M_r$ | ^ @ Rule 1, Line 1"
+17.11.1,Polish-Cʲ_2,M,"C:[+cor,+dist] > C in select words due to prestige influence of Czech in the Middle O:[+delrel]ges | ^ @ Rule 1, Line 1"
+29.1.1.1.8,"Dena’ina-TŠ,TŠʷ",I,"P:[-voice]ʃ > P:[-voice]P in %pper Inlet dialect) | ^ @ Rule 1, Line 2"
+32.2,Tlapanec-Yt-Ynt-Ys,Y,"Yt Ynt Ys > tʃ dʒ ʃ | ^ @ Rule 1, Line 1"
+33.2.1,Nomlaki-VrV,M,"VrV > M | ^ @ Rule 1, Line 1"
+41.5.2.3,"Gadsup-D,Y",Y,"{P:[+voice],Y} > ∅ / _n | ^ @ Rule 1, Line 1"
+41.5.2.3,Gadsup-YO+-voice-YO-voice,Y,"YO[+ voice] YO[- voice] > Y t | ^ @ Rule 1, Line 1"
+42.1,Pre-Finnic-a,X,"a > æ / {a,aX,e,eX,e,eX,i,iX,y,yX}(C)(C)_ when unstressed | ^ @ Rule 1, Line 1"
+47.2,"List-2:-Conditional-or-complex-consonant-changes-t,k",M,"{t,k} > ∅ / V_V (Marathi) probably with voiced stops as intermediates, since they also became silent | ^ @ Rule 1, Line 1"

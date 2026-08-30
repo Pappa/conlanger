@@ -21,8 +21,8 @@
 
 | count | failure_class |
 |------:|---------------|
-| 330 | `syntax_other` |
-| 193 | `expected_underscore` |
+| 329 | `syntax_other` |
+| 194 | `expected_underscore` |
 | 134 | `runtime_other` |
 | 129 | `unknown_character` |
 | 37 | `expected_number` |
