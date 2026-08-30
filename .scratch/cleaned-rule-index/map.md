@@ -97,7 +97,7 @@ A **cleaned rule index** (applier-neutral YAML SoT) derived from **Index Diachro
 - [Docs: parse → compile → validate](issues/91-three-stage-pipeline-docs.md) — Q7 / [ADR-0013](../../docs/adr/0013-parse-compile-validate.md); inventory under validate.
 - [Grill: pydantic compile models](issues/92-grill-pydantic-compile-refactor.md) — **resolved** (2026-08-21): keep **`DiachronicSeries`**; per-field compile at instantiation; alternatives stay on `SoundChangeRule`. [ADR-0014](../../docs/adr/0014-per-field-asca-compile.md).
 - [Refactor compile classes to pydantic](issues/93-pydantic-compile-refactor.md) — **resolved** (2026-08-29): per-field **string** transforms; `.rsca` byte-identical. Compiled field attributes / join-at-`__str__` → [99](issues/99-compiled-fields-join-at-render.md). [ADR-0014](../../docs/adr/0014-per-field-asca-compile.md).
-- [Store compiled ASCA fields; join at render](issues/99-compiled-fields-join-at-render.md) — 93 leftover: `input`/`output`/`env`/`exception` compiled at init; join only at `__str__`. Unblocks [94](issues/94-grill-structured-soundchangerule-ir.md).
+- [Store compiled ASCA fields; join at render](issues/99-compiled-fields-join-at-render.md) — **resolved** (2026-08-30): compiled field strings on `SoundChangeRule`; join at `__str__`; inventory alternatives wrap peers. Unblocks [94](issues/94-grill-structured-soundchangerule-ir.md).
 - [Grill: structured compile IR on SoundChangeRule](issues/94-grill-structured-soundchangerule-ir.md) — collections for condensed/parallel columns and sets; **blocked by 99**; not in 93.
 
 
