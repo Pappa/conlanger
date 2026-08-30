@@ -49,3 +49,13 @@ def dump_cleaned_index(doc: dict[str, Any]) -> str:
 def write_cleaned_index(doc: dict[str, Any], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(dump_cleaned_index(doc), encoding="utf-8")
+
+
+def read_cleaned_index(path: Path) -> dict[str, Any]:
+    """Load a cleaned index document written by ``write_cleaned_index``."""
+    text = path.read_text(encoding="utf-8")
+    loaded = yaml.safe_load(text)
+    if not isinstance(loaded, dict):
+        msg = f"expected mapping at root of {path}"
+        raise TypeError(msg)
+    return loaded

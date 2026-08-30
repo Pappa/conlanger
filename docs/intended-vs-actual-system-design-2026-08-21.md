@@ -101,7 +101,7 @@ Placement in the four-stage pipeline ([SYSTEM.md](docs/SYSTEM.md)):
     - Then `resolve_catch_all_else_rules(rules)` for that section
     - Then `skipped: true` if `index` is in `skip_sections`
     - `abbreviations()` → `{}`
-    - Write YAML via `write_cleaned_index`; then inventory unless `--skip-validation`
+    - Write YAML via `write_cleaned_index` (`uv run create_index`); inventory via `uv run validate_rules`
   - **Transformation** (`parse_rule_element`, actual order)
     - `extract_text_with_subs` → initial `raw`
     - Corrections overlay replaces `raw` when `rule_id` hits

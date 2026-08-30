@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: done
 
 # Split `create_index` and `validate_rules` operator commands
 

@@ -12,11 +12,14 @@ After [Index Diachronica parse](./index-diachronica-parser.md) and [applier comp
 
 ## Steady-state workflow
 
-The correction loop is driven by a single command:
+The correction loop is driven by two commands:
 
 ```bash
-uv run create_index
+uv run create_index && uv run validate_rules
 ```
+
+- **Parse-only** (YAML + parse diagnostics): `uv run create_index`
+- **Compile + validate** (inventory from existing YAML): `uv run validate_rules`
 
 ```mermaid
 flowchart TD
@@ -43,23 +46,25 @@ flowchart TD
 | Output | Path |
 | --- | --- |
 | Cleaned YAML | `data/diachronica/index_diachronica_parsed.yml` |
+| Parse diagnostics | `.scratch/cleaned-rule-index/parse/` |
 | Inventory dir | `.scratch/cleaned-rule-index/inventory/` |
-| Comment phrase survey | `.scratch/cleaned-rule-index/rule-comment-phrases.md` |
+| Comment phrase survey | `.scratch/cleaned-rule-index/parse/rule-comment-phrases.md` |
 | Probe wordlist | `tests/fixtures/asca_probe_words.wsca` |
 
-**Flags:** `--skip-validation` (ingest only), `--limit N` (smoke), `--html`, `--yaml-out`, `--inventory-dir`, `--probe-words`.
+**`validate_rules` flags:** `--limit N` (smoke), `--yaml-in`, `--inventory-dir`, `--probe-words`, `--field-isolation`, `--use-asca-fork`, `--reset-changelog`.
 
-Ingest-only (no `asca` on PATH): `uv run create_index --skip-validation`.
+**`create_index` flags:** `--html`, `--yaml-out`, `--parse-dir`.
 
 **Steady-state loop** ([ticket 05](../.scratch/cleaned-rule-index/issues/05-correction-workflow-invalid-rules.md)):
 
-1. Parse HTML → compile → validate per rule
-2. Regenerate YAML + validation report
-3. Git-diff YAML for churn control
-4. Grow fixtures for changed **rule status**
-5. Cluster **failure classes** (pandas on CSV)
-6. File/implement correction pass
-7. Repeat
+1. Parse HTML → write YAML (`uv run create_index`)
+2. Compile → validate per rule (`uv run validate_rules`)
+3. Regenerate YAML and/or validation report as needed
+4. Git-diff YAML for churn control
+5. Grow fixtures for changed **rule status**
+6. Cluster **failure classes** (pandas on CSV)
+7. File/implement correction pass
+8. Repeat
 
 ---
 
@@ -204,7 +209,7 @@ Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` e
 
 1. Name target **failure class** / `error_token` cluster from inventory summary or CSV.
 2. Implement transform per **edit ladder** ([ticket 04](../.scratch/cleaned-rule-index/issues/04-historical-fidelity-vs-validity.md), [ADR-0010](./adr/0010-historical-fidelity-class-first-status.md)).
-3. Re-run `uv run create_index`.
+3. Re-run `uv run create_index && uv run validate_rules`.
 4. Record before/after ok/fail and residual cluster size in ticket **Answer**.
 5. Update fixtures when **rule status** or validation outcome changes intentionally.
 
@@ -232,9 +237,10 @@ Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` e
 
 | Path | Role |
 | --- | --- |
-| [`create_index.py`](../src/conlanger/scripts/create_index.py) | Orchestration entry point |
+| [`create_index.py`](../src/conlanger/scripts/create_index.py) | Parse HTML → YAML + parse diagnostics |
+| [`validate_rules.py`](../src/conlanger/scripts/validate_rules.py) | Load YAML → compile in memory → inventory |
 | [`index_inventory.py`](../src/conlanger/tools/index_inventory.py) | Per-rule validation, CSV/changelog/summary |
-| [`index_io.py`](../src/conlanger/tools/index_io.py) | Write cleaned YAML |
+| [`index_io.py`](../src/conlanger/tools/index_io.py) | Read/write cleaned YAML |
 | [`parsers.py`](../src/conlanger/tools/parsers.py) | `IndexDiachronicaParser` |
 | [`rules.py`](../src/conlanger/tools/rules.py) | Section compile (`DiachronicSeries`) |
 | [`asca_validator.py`](../src/conlanger/tools/asca_validator.py) | `validate_asca` |

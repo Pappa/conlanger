@@ -1,6 +1,10 @@
 from pathlib import Path
 
-from conlanger.tools.index_io import dump_cleaned_index, write_cleaned_index
+from conlanger.tools.index_io import (
+    dump_cleaned_index,
+    read_cleaned_index,
+    write_cleaned_index,
+)
 
 
 def test_dump_cleaned_index_uses_literal_block_for_multiline_raw():
@@ -68,3 +72,25 @@ def test_write_cleaned_index(tmp_path: Path):
     text = out.read_text(encoding="utf-8")
     assert "raw: a → b" in text
     assert out.is_file()
+
+
+def test_read_cleaned_index_round_trip(tmp_path: Path):
+    doc = {
+        "sections": [
+            {
+                "section": "Test",
+                "index": "1.0",
+                "rules": [
+                    {
+                        "stages": ["a", "b"],
+                        "raw": "line one\nline two",
+                        "source": "sample.html:10",
+                    }
+                ],
+            }
+        ],
+    }
+    path = tmp_path / "index.yml"
+    write_cleaned_index(doc, path)
+    loaded = read_cleaned_index(path)
+    assert loaded == doc
