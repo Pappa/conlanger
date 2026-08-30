@@ -211,6 +211,7 @@ def test_create_index_errors_when_asca_missing_on_path(
 @patch.object(regen, "_asca_version", return_value="asca-test-0.10")
 @patch.object(regen, "append_ok_flip_changelog", return_value=2)
 @patch.object(regen, "write_field_isolation_csvs")
+@patch.object(regen, "write_error_cluster_csvs")
 @patch.object(regen, "write_filtered_inventory_csvs")
 @patch.object(regen, "ok_flip_changelog_rows")
 @patch.object(regen, "load_inventory_csv", return_value=None)
@@ -226,6 +227,7 @@ def test_create_index_writes_validation_inventory(
     _mock_load_inventory,
     mock_flip_rows,
     _mock_write_filtered,
+    _mock_write_error_clusters,
     mock_write_field_isolation,
     _mock_append_changelog,
     _mock_asca_version,
@@ -328,6 +330,7 @@ def test_create_index_writes_validation_inventory(
 @patch.object(regen, "_asca_version", return_value="asca-test-0.10")
 @patch.object(regen, "append_ok_flip_changelog", return_value=1)
 @patch.object(regen, "write_field_isolation_csvs")
+@patch.object(regen, "write_error_cluster_csvs")
 @patch.object(regen, "write_filtered_inventory_csvs")
 @patch.object(regen, "ok_flip_changelog_rows")
 @patch.object(regen, "load_inventory_csv", return_value=None)
@@ -343,6 +346,7 @@ def test_create_index_reset_changelog_overwrites_existing(
     _mock_load_inventory,
     mock_flip_rows,
     _mock_write_filtered,
+    _mock_write_error_clusters,
     _mock_write_field_isolation,
     mock_append_changelog,
     _mock_asca_version,

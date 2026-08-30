@@ -715,6 +715,9 @@ def test_summarize_inventory():
     assert "asca-rule-inventory-error.csv" in text
     assert "asca-rule-inventory-changelog.csv" in text
     assert "asca-rule-inventory.csv" not in text
+    assert "grouping_errors.csv" in text
+    assert "character_errors.csv" in text
+    assert "underscore_errors.csv" in text
 
 
 def test_summarize_inventory_empty():

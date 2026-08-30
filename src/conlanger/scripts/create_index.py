@@ -27,6 +27,7 @@ from conlanger.tools.index_inventory import (
     INVENTORY_ERROR_CSV_NAME,
     INVENTORY_SUCCESS_CSV_NAME,
     append_ok_flip_changelog,
+    filter_inventory_by_ok,
     iter_inventory_with_field_isolation,
     load_inventory_csv,
     ok_flip_changelog_rows,
@@ -40,6 +41,7 @@ from conlanger.tools.ingest import (
     IndexDiachronicaParser,
     write_rule_comment_phrase_summary,
 )
+from conlanger.tools.inventory_error_clusters import write_error_cluster_csvs
 from conlanger.utils.file_io import (
     MANUAL_MAPPINGS_MATCHED_CSV_NAME,
     write_manual_mappings_matched_csv,
@@ -93,6 +95,7 @@ def main() -> int:
             "writes asca-rule-inventory-success.csv / -error.csv, "
             "asca-field-isolation-success.csv / -error.csv (when --field-isolation), "
             "asca-rule-inventory-changelog.csv, "
+            "grouping_errors.csv, character_errors.csv, underscore_errors.csv, "
             "manual_mappings_matched_rules.csv, and asca-rule-inventory-summary.md"
         ),
     )
@@ -230,6 +233,8 @@ def main() -> int:
     flips = ok_flip_changelog_rows(previous, current_df, timestamp=run_timestamp)
 
     write_filtered_inventory_csvs(current_df, args.inventory_dir)
+    error_df = filter_inventory_by_ok(current_df, ok=False)
+    write_error_cluster_csvs(error_df, args.inventory_dir)
     if args.field_isolation:
         write_field_isolation_csvs(field_rows, args.inventory_dir)
     if args.reset_changelog and changelog_path.is_file():

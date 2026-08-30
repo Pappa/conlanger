@@ -97,3 +97,6 @@
 - `ok` flips (append-only): [asca-rule-inventory-changelog.csv](asca-rule-inventory-changelog.csv)
 - Field blame OK rows: [asca-field-isolation-success.csv](asca-field-isolation-success.csv)
 - Field blame fail rows: [asca-field-isolation-error.csv](asca-field-isolation-error.csv)
+- Grouping errors: [grouping_errors.csv](grouping_errors.csv)
+- Character errors: [character_errors.csv](character_errors.csv)
+- Underscore errors: [underscore_errors.csv](underscore_errors.csv)

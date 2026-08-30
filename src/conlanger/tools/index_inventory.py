@@ -24,6 +24,11 @@ from conlanger.appliers.asca import (
     validate_asca,
     validate_asca_part,
 )
+from conlanger.tools.inventory_error_clusters import (
+    CHARACTER_ERRORS_CSV_NAME,
+    GROUPING_ERRORS_CSV_NAME,
+    UNDERSCORE_ERRORS_CSV_NAME,
+)
 from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
 from conlanger.utils.mappings import CompilerConfig
 
@@ -1252,6 +1257,18 @@ def summarize_inventory(
             (
                 f"- Field blame fail rows: "
                 f"[{FIELD_ISOLATION_ERROR_CSV_NAME}]({FIELD_ISOLATION_ERROR_CSV_NAME})"
+            ),
+            (
+                f"- Grouping errors: "
+                f"[{GROUPING_ERRORS_CSV_NAME}]({GROUPING_ERRORS_CSV_NAME})"
+            ),
+            (
+                f"- Character errors: "
+                f"[{CHARACTER_ERRORS_CSV_NAME}]({CHARACTER_ERRORS_CSV_NAME})"
+            ),
+            (
+                f"- Underscore errors: "
+                f"[{UNDERSCORE_ERRORS_CSV_NAME}]({UNDERSCORE_ERRORS_CSV_NAME})"
             ),
             "",
         ]
