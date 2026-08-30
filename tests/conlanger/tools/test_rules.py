@@ -3,6 +3,7 @@ from pathlib import Path
 
 import pytest
 
+from conlanger.tools.compile.asca.structures import join_asca_rule_fields
 from conlanger.tools.rules import (
     DiachronicSeries,
     RuleCitation,
@@ -308,6 +309,29 @@ def test_RuleComment(value, expected):
 def test_SoundChangeRule(fields, expected):
     rule = SoundChangeRule(**fields)
     assert str(rule) == expected
+
+
+def test_sound_change_rule_stores_compiled_fields_after_construction():
+    """Ticket 99: field attributes hold compiled ASCA strings, not Index-raw."""
+    rule = SoundChangeRule(input="a(ː)", output="e(ː)")
+    assert rule.input == "a:[+long]"
+    assert rule.output == "e:[+long]"
+    assert str(rule) == "\ta:[+long] > e:[+long]"
+
+
+def test_sound_change_rule_str_joins_compiled_fields():
+    """Ticket 99: render joins compiled fields; value mirrors join for compat."""
+    rule = SoundChangeRule(input="a", output="e", env="V_V")
+    joined = join_asca_rule_fields(rule.input, rule.output, rule.env, rule.exception)
+    assert str(rule) == f"\t{joined}"
+    assert rule.value == joined
+
+
+def test_sound_change_rule_skipped_keeps_index_raw_fields():
+    rule = SoundChangeRule(status="skipped", raw="a → b", input="a", output="b")
+    assert rule.input == "a"
+    assert rule.output == "b"
+    assert str(rule) == "#\ta → b"
 
 
 @pytest.mark.parametrize(

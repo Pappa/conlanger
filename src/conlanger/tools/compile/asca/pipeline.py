@@ -71,7 +71,7 @@ def compile_asca_field_post_subscript(text: str) -> str:
     return expand_meta_notation(text)
 
 
-def compile_asca_rule_fields(
+def compile_asca_rule_field_strings(
     inp: str,
     output: str,
     env: str | None = None,
@@ -79,8 +79,8 @@ def compile_asca_rule_fields(
     *,
     section_index: str = "",
     compiler_config: CompilerConfig | None = None,
-) -> str:
-    """Compile four rule fields separately, expand cross-field subscripts, then join."""
+) -> tuple[str, str, str | None, str | None]:
+    """Compile four rule fields separately and expand cross-field subscripts."""
     inp = drop_mixed_parallel_null_columns(inp)
     output = drop_mixed_parallel_null_columns(output)
     compile_kwargs = {
@@ -117,9 +117,26 @@ def compile_asca_rule_fields(
         compiled_exception = compile_asca_field_post_subscript(compiled_exception)
         if is_whole_field_set(compiled_exception):
             compiled_exception = convert_set_to_environment_set(compiled_exception)
+    return compiled_input, compiled_output, compiled_env, compiled_exception
+
+
+def compile_asca_rule_fields(
+    inp: str,
+    output: str,
+    env: str | None = None,
+    exception: str | None = None,
+    *,
+    section_index: str = "",
+    compiler_config: CompilerConfig | None = None,
+) -> str:
+    """Compile four rule fields separately, expand cross-field subscripts, then join."""
     return join_asca_rule_fields(
-        compiled_input,
-        compiled_output,
-        compiled_env,
-        compiled_exception,
+        *compile_asca_rule_field_strings(
+            inp,
+            output,
+            env,
+            exception,
+            section_index=section_index,
+            compiler_config=compiler_config,
+        )
     )

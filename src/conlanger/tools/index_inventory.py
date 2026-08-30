@@ -29,7 +29,7 @@ from conlanger.tools.inventory_error_clusters import (
     GROUPING_ERRORS_CSV_NAME,
     UNDERSCORE_ERRORS_CSV_NAME,
 )
-from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
+from conlanger.tools.rules import DiachronicSeries, RuleTitle, SoundChangeRule
 from conlanger.utils.mappings import CompilerConfig
 
 ERROR_CLASS_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
@@ -848,18 +848,16 @@ def _series_for_alternative(
     alternative: SoundChangeRule,
     compiler_config: CompilerConfig | None,
 ) -> DiachronicSeries:
-    """Build a standalone series for one optional-output alternative."""
-    alt_rule: dict[str, Any] = {
-        "stages": [alternative.input, alternative.output],
-        "raw": rule.get("raw", ""),
-        "source": rule.get("source", ""),
-    }
-    if alternative.env:
-        alt_rule["env"] = alternative.env
-    if alternative.exception:
-        alt_rule["exception"] = alternative.exception
-    mini = _mini_section(section, alt_rule, rule_id)
-    return DiachronicSeries(mini, compiler_config=compiler_config)
+    """Build a standalone series for one already-compiled alternative."""
+    del rule, compiler_config  # alternative carries compiled fields; no re-parse
+    section_index = str(section.get("index", ""))
+    section_name = f"{section.get('section', '')}#{rule_id}"
+    return DiachronicSeries.from_parts(
+        [
+            RuleTitle(section_index, section_name),
+            alternative,
+        ]
+    )
 
 
 def _asca_validation_row(

@@ -2,7 +2,11 @@
 
 import pytest
 
-from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
+from conlanger.tools.compile.asca.pipeline import (
+    compile_asca_rule_field_strings,
+    compile_asca_rule_fields,
+)
+from conlanger.tools.compile.asca.structures import join_asca_rule_fields
 from conlanger.utils.mappings import CompilerConfig
 
 
@@ -62,3 +66,21 @@ def test_compile_applies_compiler_config_series_mappings(
         compiler_config=compiler_config,
     )
     assert compiled == expected
+
+
+def test_compile_asca_rule_field_strings_matches_joined_compile():
+    inp, output, env, exception = "eh₂", "a", None, None
+    field_strings = compile_asca_rule_field_strings(
+        inp,
+        output,
+        env,
+        exception,
+        compiler_config=CompilerConfig(series_mappings_global={"h₂": "ʔ"}),
+    )
+    assert join_asca_rule_fields(*field_strings) == compile_asca_rule_fields(
+        inp,
+        output,
+        env,
+        exception,
+        compiler_config=CompilerConfig(series_mappings_global={"h₂": "ʔ"}),
+    )

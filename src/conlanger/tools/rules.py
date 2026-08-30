@@ -7,11 +7,12 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 from conlanger.tools.compile.asca.chains import expand_chained_index_rule
 from conlanger.tools.compile.asca.parallel import expand_parallel_output_null_branches
-from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
+from conlanger.tools.compile.asca.pipeline import compile_asca_rule_field_strings
 from conlanger.tools.compile.asca.sets import (
     is_whole_field_set,
     split_braced_set_members,
 )
+from conlanger.tools.compile.asca.structures import join_asca_rule_fields
 from conlanger.tools.compile.asca.tilde import normalize_index_rule_tilde_fields
 from conlanger.utils.mappings import CompilerConfig
 
@@ -91,10 +92,21 @@ class SoundChangeRule(RulePartBase):
             self.alternatives = alternatives
             if alternatives:
                 chosen = alternatives[self.rng.randrange(len(alternatives))]
-                self.value = chosen.value
+                self.input = chosen.input
+                self.output = chosen.output
+                self.env = chosen.env
+                self.exception = chosen.exception
+                self.value = join_asca_rule_fields(
+                    self.input, self.output, self.env, self.exception
+                )
                 return self
 
-        self.value = compile_asca_rule_fields(
+        (
+            self.input,
+            self.output,
+            self.env,
+            self.exception,
+        ) = compile_asca_rule_field_strings(
             self.input,
             self.output,
             self.env,
@@ -102,11 +114,16 @@ class SoundChangeRule(RulePartBase):
             section_index=self.section_index,
             compiler_config=self.compiler_config,
         )
+        self.value = join_asca_rule_fields(
+            self.input, self.output, self.env, self.exception
+        )
         return self
 
     def __str__(self) -> str:
         prefix = self.skip_prefix if self.status == "skipped" else self.prefix
-        return f"{prefix}{self.value}"
+        if self.status == "skipped":
+            return f"{prefix}{self.raw}"
+        return f"{prefix}{join_asca_rule_fields(self.input, self.output, self.env, self.exception)}"
 
     def _build_alternatives(self) -> list[SoundChangeRule]:
         """Build peer alternatives for optional outputs or parallel ``∅`` output sets."""
@@ -201,6 +218,11 @@ class DiachronicSeries(BaseModel):
     @property
     def _parts(self) -> list[RulePartBase]:
         return self.parts
+
+    @classmethod
+    def from_parts(cls, parts: list[RulePartBase]) -> Self:
+        """Wrap pre-built parts without re-parsing index YAML."""
+        return cls.model_construct(parts=parts)
 
     def __str__(self) -> str:
         return "\n".join(str(part) for part in self.parts) + "\n"

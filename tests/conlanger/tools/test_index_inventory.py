@@ -10,6 +10,7 @@ from conlanger.tools.index_inventory import (
     SECTION_SKIPPED_FAILURE_CLASS,
     FieldIsolationRow,
     ValidationRow,
+    _series_for_alternative,
     append_ok_flip_changelog,
     build_field_isolation_row,
     classify_error,
@@ -325,6 +326,18 @@ def test_validate_index_rule_emits_alternative_rows(_mock_validate):
     assert all(row.ok for row in rows)
     assert all(row.source == "s:1" for row in rows)
     assert _mock_validate.call_count == 2
+
+
+def test_series_for_alternative_wraps_compiled_rule_without_reparse():
+    """Ticket 99: inventory alternatives reuse compiled peers, not index stages."""
+    alternative = SoundChangeRule(
+        input="d", output="∅", env="V_V", detect_alternatives=False
+    )
+    series = _series_for_alternative(_SECTION, {}, "r0", alternative, None)
+    rule_parts = [part for part in series.parts if isinstance(part, SoundChangeRule)]
+    assert len(rule_parts) == 1
+    assert rule_parts[0] is alternative
+    assert str(series).endswith("d > ∅ / V_V\n")
 
 
 @patch("conlanger.tools.index_inventory.validate_asca", return_value=True)

@@ -1,6 +1,5 @@
 Type: task
-Status: ready-for-agent
-Blocked by: None
+Status: resolved
 
 # Store compiled ASCA fields on SoundChangeRule; join at render
 
@@ -27,12 +26,12 @@ After 93:
 
 ## Acceptance criteria
 
-- [ ] After construction, `input` / `output` / `env` / `exception` are compiled ASCA field strings (Index-raw only for skipped rules)
-- [ ] `__str__` joins those fields; no join-then-store as the compile SoT
-- [ ] Alternative peers still detected from **raw** I/O before field compile
-- [ ] Field isolation `validate_asca_part` fragments match the compiled fields whole-rule validation used
-- [ ] Reconstructing an alternative for inventory does not run the compile pipeline twice on the same text
-- [ ] Full gate: `uv run pytest`; `uv run ruff check --fix`; `uv run ruff format && uv run ruff format --check`
+- [x] After construction, `input` / `output` / `env` / `exception` are compiled ASCA field strings (Index-raw only for skipped rules)
+- [x] `__str__` joins those fields; no join-then-store as the compile SoT
+- [x] Alternative peers still detected from **raw** I/O before field compile
+- [x] Field isolation `validate_asca_part` fragments match the compiled fields whole-rule validation used
+- [x] Reconstructing an alternative for inventory does not run the compile pipeline twice on the same text
+- [x] Full gate: `uv run pytest`; `uv run ruff check --fix`; `uv run ruff format && uv run ruff format --check`
 
 ## Out of scope
 
@@ -59,14 +58,20 @@ After alternative detection on raw I/O (or when there are no alternatives), the 
 - Inventory: `validate_asca_part` fragments are the compiled fields; alternative fan-out still starts from raw I/O members
 
 **Acceptance criteria:**
-- [ ] Constructed non-skipped rule exposes compiled field strings on the four attributes
-- [ ] `str(rule)` equals join of those attributes (plus the usual tab / skip prefix)
-- [ ] `_build_alternatives` (or equivalent) still inspects raw I/O, not compiled fields
-- [ ] Field isolation uses compiled fragments; no second compile of already-compiled alternative text via `stages`
-- [ ] Existing `.rsca` unit-test renders stay byte-identical, or each change is listed in **Answer**
-- [ ] Full gate green
+- [x] Constructed non-skipped rule exposes compiled field strings on the four attributes
+- [x] `str(rule)` equals join of those attributes (plus the usual tab / skip prefix)
+- [x] `_build_alternatives` (or equivalent) still inspects raw I/O, not compiled fields
+- [x] Field isolation uses compiled fragments; no second compile of already-compiled alternative text via `stages`
+- [x] Existing `.rsca` unit-test renders stay byte-identical, or each change is listed in **Answer**
+- [x] Full gate green
 
 **Out of scope:**
 - Ticket 94 structured IR
 - Index YAML schema
 - Brassica compiler
+
+## Answer
+
+**Render changes:** None. All existing `DiachronicSeries` / `SoundChangeRule` unit-test render strings remain byte-identical (1157 tests pass).
+
+**Note:** `value` is still populated as a join mirror for backward compatibility with callers that read `.value`; compiled field attributes are the source of truth and `__str__` joins from them directly.
