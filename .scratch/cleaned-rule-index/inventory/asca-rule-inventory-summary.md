@@ -3,25 +3,39 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
-- Rows: **50** (one per index rule)
+- Rows: **9676** (one per index rule)
 
 ## Rules
-- OK: **49** (98.0%)
-- Fail: **1** (2.0%)
-- Skipped: **0** (0.0%)
+- OK: **8089** (83.6%)
+- Fail: **975** (10.1%)
+- Skipped: **612** (6.3%)
 
 ## Sections
 
-- All OK: **3 / 4** (75.0%)
-- Some OK: **1 / 4** (25.0%)
-- None OK: **0 / 4** (0.0%)
-- Sections skipped: **0 / 4** (0.0%)
+- All OK: **373 / 714** (52.2%)
+- Some OK: **311 / 714** (43.6%)
+- None OK: **5 / 714** (0.7%)
+- Sections skipped: **25 / 714** (3.5%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 1 | `unknown_character` |
+| 330 | `syntax_other` |
+| 193 | `expected_underscore` |
+| 134 | `runtime_other` |
+| 129 | `unknown_character` |
+| 37 | `expected_number` |
+| 33 | `prose_or_expected_arrow` |
+| 32 | `diacritic_prereq` |
+| 31 | `unknown_feature` |
+| 22 | `nested_brackets` |
+| 14 | `stuff_after_word_bound` |
+| 11 | `unknown_grouping` |
+| 3 | `panic_other` |
+| 2 | `format_error` |
+| 2 | `runtime_delete_only_segment` |
+| 2 | `other` |
 
 ## Common Errors
 
@@ -29,26 +43,51 @@
 
 | count | error_token |
 |------:|-------------|
-| 1 | `+` |
+| 22 | `̣` |
+| 13 | `₂` |
+| 11 | `̊` |
+| 10 | `ː` |
+| 6 | `ŕ` |
 
 ### unknown_feature
 
 | count | error_token | suggested |
 |------:|-------------|-----------|
-| — | _(none)_ | — |
+| 8 | `samePOA` | `lateral` |
+| 5 | `weak` | `man` |
+| 3 | `initial` | `nasal` |
+| 3 | `palatalized` | `latrl` |
+| 2 | `fricative` | `rhotic` |
+| 1 | `lowpitch` | `voice` |
+| 1 | `highpitch` | `high` |
+| 1 | `posttonic` | `sonor` |
+| 1 | `ejective` | `contin` |
+| 1 | `alveolopalatal` | `consonantal` |
+| 1 | `intertonic` | `anterior` |
+| 1 | `tonic` | `cons` |
+| 1 | `glide` | `click` |
+| 1 | `accent` | `cont` |
+| 1 | `labiovelar` | `labiodental` |
 
 ### unknown_grouping
 
 | count | error_token |
 |------:|-------------|
-| — | _(none)_ |
+| 6 | `M` |
+| 3 | `Y` |
+| 1 | `I` |
+| 1 | `X` |
 
 
 ## Field isolation blame (error rows)
 
 | count | blame |
 |------:|-------|
-| 1 | `env` |
+| 338 | `env` |
+| 234 | `input` |
+| 214 | `output` |
+| 187 | `multi` |
+| 110 | `exception` |
 
 ## Notes
 
