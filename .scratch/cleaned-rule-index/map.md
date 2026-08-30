@@ -98,12 +98,13 @@ A **cleaned rule index** (applier-neutral YAML SoT) derived from **Index Diachro
 - [Grill: pydantic compile models](issues/92-grill-pydantic-compile-refactor.md) — **resolved** (2026-08-21): keep **`DiachronicSeries`**; per-field compile at instantiation; alternatives stay on `SoundChangeRule`. [ADR-0014](../../docs/adr/0014-per-field-asca-compile.md).
 - [Refactor compile classes to pydantic](issues/93-pydantic-compile-refactor.md) — **resolved** (2026-08-29): per-field **string** transforms; `.rsca` byte-identical. Compiled field attributes / join-at-`__str__` → [99](issues/99-compiled-fields-join-at-render.md). [ADR-0014](../../docs/adr/0014-per-field-asca-compile.md).
 - [Store compiled ASCA fields; join at render](issues/99-compiled-fields-join-at-render.md) — **resolved** (2026-08-30): compiled field strings on `SoundChangeRule`; join at `__str__`; inventory alternatives wrap peers. Unblocks [94](issues/94-grill-structured-soundchangerule-ir.md).
+- [Split `create_index` and `validate_rules`](issues/103-split-create-index-and-validate-rules.md) — grill 2026-08-30: parse-only `create_index`; `validate_rules` loads parsed YAML, compiles in memory, writes inventory; parse diagnostics under `.scratch/cleaned-rule-index/parse/`; steady state `create_index && validate_rules`; no compiled artifacts on disk.
 - [Grill: structured compile IR on SoundChangeRule](issues/94-grill-structured-soundchangerule-ir.md) — collections for condensed/parallel columns and sets; **blocked by 99**; not in 93.
 
 
 ## Pipeline documentation (grill 2026-08-07)
 
-**Runtime:** parse once → correction loop; each pass runs applier compile → compile validation per rule (ADR-0003). Operator command: `uv run create_index` (rename deferred).
+**Runtime:** parse once → correction loop; each pass runs applier compile → compile validation per rule (ADR-0003). Operator commands (grill 2026-08-30): `uv run create_index` (parse) then `uv run validate_rules` (in-memory compile + inventory) — [103 implement split](issues/103-split-create-index-and-validate-rules.md).
 
 **Docs (two processing steps, ad hoc — no ticket):**
 
