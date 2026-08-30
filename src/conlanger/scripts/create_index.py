@@ -21,11 +21,9 @@ sys.path.insert(0, str(ROOT / "src"))
 from conlanger.appliers.asca import asca_supports_validate, resolve_asca_bin
 from conlanger.scripts.config_loaders import load_compiler_config, load_parser_config
 from conlanger.tools.index_inventory import (
-    FIELD_ISOLATION_CSV_NAME,
     FIELD_ISOLATION_ERROR_CSV_NAME,
     FIELD_ISOLATION_SUCCESS_CSV_NAME,
     INVENTORY_CHANGELOG_CSV_NAME,
-    INVENTORY_CSV_NAME,
     INVENTORY_ERROR_CSV_NAME,
     INVENTORY_SUCCESS_CSV_NAME,
     append_ok_flip_changelog,
@@ -36,7 +34,6 @@ from conlanger.tools.index_inventory import (
     validation_rows_to_dataframe,
     write_field_isolation_csvs,
     write_filtered_inventory_csvs,
-    write_validation_csv,
 )
 from conlanger.tools.index_io import write_cleaned_index
 from conlanger.tools.ingest import (
@@ -93,8 +90,8 @@ def main() -> int:
         type=Path,
         default=DEFAULT_INVENTORY_DIR,
         help=(
-            "writes asca-rule-inventory.csv (+ success/error splits), "
-            "asca-field-isolation.csv (+ success/error splits), "
+            "writes asca-rule-inventory-success.csv / -error.csv, "
+            "asca-field-isolation-success.csv / -error.csv (when --field-isolation), "
             "asca-rule-inventory-changelog.csv, "
             "manual_mappings_matched_rules.csv, and asca-rule-inventory-summary.md"
         ),
@@ -104,14 +101,6 @@ def main() -> int:
         type=bool,
         default=False,
         help=("run asca-field-isolation (default: False)"),
-    )
-    ap.add_argument(
-        "--field-isolation-all",
-        action="store_true",
-        help=(
-            "write all rows to asca-field-isolation.csv (default: failing whole_ok "
-            "rows only; success/error splits always include their filter)"
-        ),
     )
     ap.add_argument("--probe-words", type=Path, default=DEFAULT_PROBE)
     ap.add_argument(
@@ -228,28 +217,21 @@ def main() -> int:
         rows = rows[: args.limit]
         field_rows = field_rows[: args.limit]
 
-    csv_path = args.inventory_dir / INVENTORY_CSV_NAME
     success_path = args.inventory_dir / INVENTORY_SUCCESS_CSV_NAME
     error_path = args.inventory_dir / INVENTORY_ERROR_CSV_NAME
-    field_path = args.inventory_dir / FIELD_ISOLATION_CSV_NAME
     field_success_path = args.inventory_dir / FIELD_ISOLATION_SUCCESS_CSV_NAME
     field_error_path = args.inventory_dir / FIELD_ISOLATION_ERROR_CSV_NAME
     changelog_path = args.inventory_dir / INVENTORY_CHANGELOG_CSV_NAME
     summary_path = args.inventory_dir / "asca-rule-inventory-summary.md"
 
-    previous = load_inventory_csv(csv_path)
+    previous = load_inventory_csv(args.inventory_dir)
     current_df = validation_rows_to_dataframe(rows)
     run_timestamp = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
     flips = ok_flip_changelog_rows(previous, current_df, timestamp=run_timestamp)
 
-    write_validation_csv(rows, csv_path)
     write_filtered_inventory_csvs(current_df, args.inventory_dir)
     if args.field_isolation:
-        write_field_isolation_csvs(
-            field_rows,
-            args.inventory_dir,
-            include_all=args.field_isolation_all,
-        )
+        write_field_isolation_csvs(field_rows, args.inventory_dir)
     if args.reset_changelog and changelog_path.is_file():
         changelog_path.unlink()
     flip_n = append_ok_flip_changelog(flips, changelog_path)
@@ -269,18 +251,27 @@ def main() -> int:
     fail_n = len(rows) - ok_n
     field_ok_n = sum(1 for row in field_rows if row.whole_ok)
     field_fail_n = len(field_rows) - field_ok_n
-    field_main_n = len(field_rows) if args.field_isolation_all else field_fail_n
-    print(
-        f"wrote {csv_path} rows={len(rows)} ok={ok_n} fail={fail_n}\n"
-        f"wrote {success_path} rows={ok_n}\n"
-        f"wrote {error_path} rows={fail_n}\n"
-        f"wrote {field_path} rows={field_main_n}\n"
-        f"wrote {field_success_path} rows={field_ok_n}\n"
-        f"wrote {field_error_path} rows={field_fail_n}\n"
-        f"{changelog_action} {changelog_path} flips={flip_n} "
-        f"timestamp={run_timestamp}\n"
-        f"wrote {summary_path}"
+    lines = [
+        f"wrote {success_path} rows={ok_n}",
+        f"wrote {error_path} rows={fail_n}",
+    ]
+    if args.field_isolation:
+        lines.extend(
+            [
+                f"wrote {field_success_path} rows={field_ok_n}",
+                f"wrote {field_error_path} rows={field_fail_n}",
+            ]
+        )
+    lines.extend(
+        [
+            (
+                f"{changelog_action} {changelog_path} flips={flip_n} "
+                f"timestamp={run_timestamp}"
+            ),
+            f"wrote {summary_path}",
+        ]
     )
+    print("\n".join(lines))
     return 0
 
 

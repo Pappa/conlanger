@@ -665,10 +665,10 @@ def test_summarize_inventory():
     assert "Sections skipped: **0 / 1** (0.0%)" in text
     assert "| 2 | `syntax_other` |" in text
     assert "## Common Errors" in text
-    assert "asca-rule-inventory.csv" in text
     assert "asca-rule-inventory-success.csv" in text
     assert "asca-rule-inventory-error.csv" in text
     assert "asca-rule-inventory-changelog.csv" in text
+    assert "asca-rule-inventory.csv" not in text
 
 
 def test_summarize_inventory_empty():
@@ -862,20 +862,34 @@ def test_ok_flip_changelog_rows_empty_without_previous_inventory():
 
 
 def test_load_inventory_csv_returns_none_when_missing(tmp_path: Path):
-    assert load_inventory_csv(tmp_path / "missing.csv") is None
+    assert load_inventory_csv(tmp_path) is None
 
 
-def test_load_inventory_csv_reads_existing_file(tmp_path: Path):
-    path = tmp_path / "inventory.csv"
-    write_validation_csv(
-        [
-            ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
-        ],
-        path,
+def test_load_inventory_csv_reads_success_and_error_splits(tmp_path: Path):
+    write_filtered_inventory_csvs(
+        validation_rows_to_dataframe(
+            [
+                ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
+                ValidationRow(
+                    "1",
+                    "A",
+                    1,
+                    "s:2",
+                    False,
+                    "syntax_other",
+                    "broken-syntax",
+                    "",
+                    "",
+                    "err",
+                ),
+            ]
+        ),
+        tmp_path,
     )
-    loaded = load_inventory_csv(path)
+    loaded = load_inventory_csv(tmp_path)
     assert loaded is not None
-    assert len(loaded) == 1
+    assert len(loaded) == 2
+    assert set(loaded["source"]) == {"s:1", "s:2"}
 
 
 def test_write_filtered_inventory_csvs(tmp_path: Path):
@@ -1100,7 +1114,7 @@ def test_build_field_isolation_row_without_field_rule():
     assert row.blame == "multi"
 
 
-def test_write_field_isolation_csvs_default_fails_only(tmp_path: Path):
+def test_write_field_isolation_csvs_writes_success_and_error_only(tmp_path: Path):
     rows = [
         FieldIsolationRow(
             "1",
@@ -1144,13 +1158,11 @@ def test_write_field_isolation_csvs_default_fails_only(tmp_path: Path):
         ),
     ]
     write_field_isolation_csvs(rows, tmp_path)
-    main = list(csv.DictReader((tmp_path / "asca-field-isolation.csv").open()))
     success = list(
         csv.DictReader((tmp_path / "asca-field-isolation-success.csv").open())
     )
     error = list(csv.DictReader((tmp_path / "asca-field-isolation-error.csv").open()))
-    assert len(main) == 1
-    assert main[0]["source"] == "s:2"
+    assert not (tmp_path / "asca-field-isolation.csv").exists()
     assert len(success) == 1
     assert success[0]["source"] == "s:1"
     assert len(error) == 1
@@ -1189,9 +1201,9 @@ def test_summarize_inventory_links_field_isolation_csvs():
         probe_words="probe.wsca",
         field_isolation_rows=field_rows,
     )
-    assert "asca-field-isolation.csv" in text
     assert "asca-field-isolation-success.csv" in text
     assert "asca-field-isolation-error.csv" in text
+    assert "asca-field-isolation.csv" not in text
     assert "## Field isolation blame (error rows)" in text
     assert "| 1 | `input` |" in text
 

@@ -101,11 +101,9 @@ CHANGELOG_CSV_COLUMNS = [
     "timestamp",
 ]
 
-INVENTORY_CSV_NAME = "asca-rule-inventory.csv"
 INVENTORY_SUCCESS_CSV_NAME = "asca-rule-inventory-success.csv"
 INVENTORY_ERROR_CSV_NAME = "asca-rule-inventory-error.csv"
 INVENTORY_CHANGELOG_CSV_NAME = "asca-rule-inventory-changelog.csv"
-FIELD_ISOLATION_CSV_NAME = "asca-field-isolation.csv"
 FIELD_ISOLATION_SUCCESS_CSV_NAME = "asca-field-isolation-success.csv"
 FIELD_ISOLATION_ERROR_CSV_NAME = "asca-field-isolation-error.csv"
 SECTION_SKIPPED_FAILURE_CLASS = "section_skipped"
@@ -782,21 +780,16 @@ def field_isolation_rows_to_dataframe(rows: list[FieldIsolationRow]) -> pd.DataF
 def write_field_isolation_csvs(
     rows: list[FieldIsolationRow],
     inventory_dir: Path,
-    *,
-    include_all: bool = False,
 ) -> None:
-    """Write field-isolation CSVs (full/success/error) under ``inventory_dir``."""
+    """Write field-isolation success/error CSVs under ``inventory_dir``."""
     inventory_dir.mkdir(parents=True, exist_ok=True)
     df = field_isolation_rows_to_dataframe(rows)
     filter_field_isolation_success(df).to_csv(
         inventory_dir / FIELD_ISOLATION_SUCCESS_CSV_NAME, index=False
     )
-    error_df = filter_field_isolation_error(df)
-    error_df.to_csv(inventory_dir / FIELD_ISOLATION_ERROR_CSV_NAME, index=False)
-    main_df = (
-        df if include_all else filter_field_isolation_by_whole_ok(df, whole_ok=False)
+    filter_field_isolation_error(df).to_csv(
+        inventory_dir / FIELD_ISOLATION_ERROR_CSV_NAME, index=False
     )
-    main_df.to_csv(inventory_dir / FIELD_ISOLATION_CSV_NAME, index=False)
 
 
 def count_field_blame_categories(df: pd.DataFrame) -> Counter[str]:
@@ -1059,11 +1052,19 @@ def write_validation_csv(rows: list[ValidationRow], path: Path) -> None:
     validation_rows_to_dataframe(rows).to_csv(path, index=False)
 
 
-def load_inventory_csv(path: Path) -> pd.DataFrame | None:
-    """Load a prior inventory CSV, or ``None`` when the file is absent."""
-    if not path.is_file():
+def load_inventory_csv(inventory_dir: Path) -> pd.DataFrame | None:
+    """Load prior inventory rows from success/error split CSVs.
+
+    Returns ``None`` when neither split file exists (first-run behaviour).
+    """
+    frames: list[pd.DataFrame] = []
+    for name in (INVENTORY_SUCCESS_CSV_NAME, INVENTORY_ERROR_CSV_NAME):
+        path = inventory_dir / name
+        if path.is_file():
+            frames.append(pd.read_csv(path))
+    if not frames:
         return None
-    return pd.read_csv(path)
+    return pd.concat(frames, ignore_index=True)
 
 
 def write_filtered_inventory_csvs(df: pd.DataFrame, inventory_dir: Path) -> None:
@@ -1188,16 +1189,11 @@ def summarize_inventory(
             "## Notes",
             "",
             "- Inventory runs per index rule via `DiachronicSeries` + `validate_asca`.",
-            f"- Full rows: [{INVENTORY_CSV_NAME}]({INVENTORY_CSV_NAME})",
             f"- OK rows: [{INVENTORY_SUCCESS_CSV_NAME}]({INVENTORY_SUCCESS_CSV_NAME})",
             f"- Fail rows: [{INVENTORY_ERROR_CSV_NAME}]({INVENTORY_ERROR_CSV_NAME})",
             (
                 f"- `ok` flips (append-only): "
                 f"[{INVENTORY_CHANGELOG_CSV_NAME}]({INVENTORY_CHANGELOG_CSV_NAME})"
-            ),
-            (
-                f"- Field blame (fails-only default): "
-                f"[{FIELD_ISOLATION_CSV_NAME}]({FIELD_ISOLATION_CSV_NAME})"
             ),
             (
                 f"- Field blame OK rows: "

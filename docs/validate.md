@@ -26,7 +26,6 @@ flowchart TD
   CommentSummary[rule-comment-phrases.md]
   Compile[DiachronicSeries compile]
   Inv[iter_validation_rows]
-  CSV[asca-rule-inventory.csv]
   Split[success / error CSVs]
   Changelog[ok-flip changelog]
   Summary[asca-rule-inventory-summary.md]
@@ -34,8 +33,8 @@ flowchart TD
   HTML --> Parse --> YAML
   Parse --> CommentSummary
   YAML --> Compile --> Inv
-  Inv --> CSV --> Split
-  CSV --> Changelog
+  Inv --> Split
+  Split --> Changelog
   Inv --> Summary
 ```
 
@@ -102,14 +101,12 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](./ad
 
 | File | Role | Ticket |
 | --- | --- | --- |
-| `asca-rule-inventory.csv` | Full per-rule report (rewritten each regen) | [12](../.scratch/cleaned-rule-index/issues/12-full-index-validation-inventory.md) |
 | `asca-rule-inventory-success.csv` | Filtered `ok=True` | [34](../.scratch/cleaned-rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
 | `asca-rule-inventory-error.csv` | Filtered `ok=False` | [34](../.scratch/cleaned-rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
-| `asca-rule-inventory-changelog.csv` | Append-only **ok flips** matched by `(source, alt_idx)` (HTML `file:line` + optional-output alternative). Pass `--reset-changelog` to overwrite after a column-schema change. | [34](../.scratch/cleaned-rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
+| `asca-rule-inventory-changelog.csv` | Append-only **ok flips** matched by `(source, alt_idx)` (HTML `file:line` + optional-output alternative). Prior `ok` is read from the success/error split CSVs. Pass `--reset-changelog` to overwrite after a column-schema change. | [34](../.scratch/cleaned-rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
 | `asca-rule-inventory-summary.md` | Counts, percentages, top failure classes, common `error_token`s | [12](../.scratch/cleaned-rule-index/issues/12-full-index-validation-inventory.md) |
-| `asca-field-isolation.csv` | per-field `blame`; default fails-only (`whole_ok == false`) | [36](../.scratch/cleaned-rule-index/issues/36-per-field-asca-blame-in-inventory.md) |
-| `asca-field-isolation-success.csv` | filtered `whole_ok == true` | [36](../.scratch/cleaned-rule-index/issues/36-per-field-asca-blame-in-inventory.md) |
-| `asca-field-isolation-error.csv` | filtered `whole_ok == false` | [36](../.scratch/cleaned-rule-index/issues/36-per-field-asca-blame-in-inventory.md) |
+| `asca-field-isolation-success.csv` | filtered `whole_ok == true` (and per-field clean) | [36](../.scratch/cleaned-rule-index/issues/36-per-field-asca-blame-in-inventory.md) |
+| `asca-field-isolation-error.csv` | filtered `whole_ok == false` or per-field fail | [36](../.scratch/cleaned-rule-index/issues/36-per-field-asca-blame-in-inventory.md) |
 
 **CSV columns** (`VALIDATION_CSV_COLUMNS` in `index_inventory.py`):
 
@@ -121,7 +118,7 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](./ad
 
 **Failure classes** (regex-matched from ASCA stderr): include `syntax_other`, `unknown_character`, `unknown_feature`, `unknown_grouping`, `expected_underscore`, `nested_brackets`, `prose_or_expected_arrow`, `runtime_*`, `panic_other`, etc. — full list in `ERROR_CLASS_PATTERNS` (`index_inventory.py`).
 
-**Changelog behaviour:** First run (no prior CSV) emits no flip rows; subsequent runs append only when `ok` changes for the same `source`, with shared UTC `timestamp` per run.
+**Changelog behaviour:** First run (no prior success/error split CSVs) emits no flip rows; subsequent runs append only when `ok` changes for the same `source`, with shared UTC `timestamp` per run. The prior inventory is reconstructed by concatenating the success and error split CSVs from the last regen.
 
 ---
 

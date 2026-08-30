@@ -14,10 +14,10 @@
 
 | count | failure_class |
 |------:|---------------|
-| 329 | `syntax_other` |
-| 194 | `expected_underscore` |
+| 331 | `syntax_other` |
+| 193 | `expected_underscore` |
 | 134 | `runtime_other` |
-| 129 | `unknown_character` |
+| 128 | `unknown_character` |
 | 37 | `expected_number` |
 | 33 | `prose_or_expected_arrow` |
 | 32 | `diacritic_prereq` |
@@ -74,10 +74,8 @@
 ## Notes
 
 - Inventory runs per index rule via `DiachronicSeries` + `validate_asca`.
-- Full rows: [asca-rule-inventory.csv](asca-rule-inventory.csv)
 - OK rows: [asca-rule-inventory-success.csv](asca-rule-inventory-success.csv)
 - Fail rows: [asca-rule-inventory-error.csv](asca-rule-inventory-error.csv)
 - `ok` flips (append-only): [asca-rule-inventory-changelog.csv](asca-rule-inventory-changelog.csv)
-- Field blame (fails-only default): [asca-field-isolation.csv](asca-field-isolation.csv)
 - Field blame OK rows: [asca-field-isolation-success.csv](asca-field-isolation-success.csv)
 - Field blame fail rows: [asca-field-isolation-error.csv](asca-field-isolation-error.csv)
