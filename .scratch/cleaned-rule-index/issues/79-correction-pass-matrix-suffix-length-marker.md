@@ -34,9 +34,11 @@ Prototype (2026-08-19): extend compile pass with `Matrix]ː` → `Matrix, +long]
 Extended `normalize_asca_length_marks()` in `length_marks.py`:
 
 - `Matrix]ː` → `Matrix, +long]` (matrix-suffix length; stress/tone env+I/O)
-- `Matrix](ː)` → `Matrix, +long]` (matrix + parenthesized optional length)
-- `Vn(ː)` → `Vn:[+long]` (Salish template positional vowels)
 - `(?!:)` guard on grouping/segment length so `Vː:[+stress]` Iroquoian hold-outs stay literal
+
+**Deferred (2026-08-30 rework):** parenthesized optional length `(ː)` on matrices/templates
+(`V:[+front](ː)`, `V3(ː)`) — wrong to collapse here; belongs to optional-length /
+parenthetical policy (tickets 15/48/71), not matrix-suffix `]ː`.
 
 Unit + ASCA smoke tests in `tests/conlanger/tools/compile/asca/test_length_marks.py` (matrix-suffix cases moved from `test_tools_compile_asca.py`).
 
@@ -44,14 +46,13 @@ Unit + ASCA smoke tests in `tests/conlanger/tools/compile/asca/test_length_marks
 
 Baseline: **8089 / 9676** ok; **10** rules with `unknown_character` / error_token `ː`; **373 / 714** sections all-OK.
 
-Re-run (`uv run validate_rules`):
+Re-run (`uv run validate_rules`) after scoped matrix-suffix pass:
 
-- **8090 / 9676** ok (**+1**)
-- `ː` unknown_character **10 → 5** (remainder: NW Caucasian `seg(mod)ː`, Iroquoian `ː2`, Pre-Finnic `ɤː?`)
-- **unknown_character** total **128 → 124** (−4; Salish `V3(ː)` rows flip to `runtime_other`)
+- **8089 / 9676** ok (unchanged — matrix-suffix `]ː` rows were already handled; no false ok-flips from `(ː)` collapse)
+- `ː` unknown_character **10** (unchanged; Salish `V3(ː)`, Tocharian `V:[+front](ː)` remain deferred)
 - Sections all-OK **373 / 714** (unchanged)
 
-Ok-flip: Proto-Tocharian `{t,dʱ} > tʲ / _V:[+front](ː)` (17.13).
+**Rework note:** initial commit incorrectly collapsed `](ː)` and `Vn(ː)` like matrix-suffix; reverted those rules after review showed `(ː)` is optional-length notation, not `]ː`.
 
 ## Acceptance criteria
 

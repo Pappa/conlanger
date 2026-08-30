@@ -37,9 +37,6 @@ from conlanger.tools.rules import DiachronicSeries
         ),
         ("Vː[tone: 51]", "V:[+long][tone: 51]"),
         ("%ː", "%:[+long]"),
-        ("V3(ː)ʔ", "V3:[+long]ʔ"),
-        ("V3(ː)", "V3:[+long]"),
-        ("_V:[+front](ː)", "_V:[+front, +long]"),
         ("V:[+stress] > V:[+stress]ː", "V:[+stress] > V:[+stress, +long]"),
         ("P[- voice]ː", "P[- voice, +long]"),
         ("a", "a"),
@@ -50,7 +47,11 @@ def test_normalize_asca_length_marks(text, expected):
     assert normalize_asca_length_marks(text) == expected
 
 
-def test_normalize_asca_length_marks_leaves_iroquoian_meta_holdouts():
+def test_normalize_asca_length_marks_leaves_deferred_shapes():
+    """Parenthetical optional ``(ː)`` and Iroquoian meta are out of scope for ticket 79."""
+    assert normalize_asca_length_marks("V3(ː)ʔ") == "V3(ː)ʔ"
+    assert normalize_asca_length_marks("V3(ː)") == "V3(ː)"
+    assert normalize_asca_length_marks("_V:[+front](ː)") == "_V:[+front](ː)"
     assert normalize_asca_length_marks("1:[+stress] ː2") == "1:[+stress] ː2"
     assert (
         normalize_asca_length_marks(
@@ -76,28 +77,8 @@ def test_validate_asca_matrix_suffix_length_smoke():
     validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
 
 
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_validate_asca_template_optional_length_smoke():
-    from conlanger.appliers.asca import validate_asca_part
-
-    validate_asca_part("output", "V3:[+long]ʔ")
-    validate_asca_part("output", "V3:[+long]")
-    validate_asca_part("env", "_V:[+front, +long]")
-
-
 def test_compile_matrix_suffix_length_in_rule():
     assert (
         compile_asca_rule_fields("V:[+stress]ː[tone: 51]", "V")
         == "V:[+stress, +long, tone: 51] > V"
-    )
-
-
-def test_compile_template_optional_length_in_rule():
-    assert compile_asca_rule_fields("V3ʔ", "V3(ː)ʔ", "_#") == "V3ʔ > V3:[+long]ʔ / _#"
-
-
-def test_compile_matrix_optional_length_in_env():
-    assert (
-        compile_asca_rule_fields("{t,dʱ}", "tʲ", "_V:[+front](ː)")
-        == "{t,dʱ} > tʲ / _V:[+front, +long]"
     )
