@@ -98,7 +98,7 @@ def main() -> int:
     )
     ap.add_argument(
         "--field-isolation",
-        type=bool,
+        action=argparse.BooleanOptionalAction,
         default=False,
         help=("run asca-field-isolation (default: False)"),
     )

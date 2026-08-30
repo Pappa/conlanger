@@ -3,7 +3,7 @@ section_index,rule_id,error_token,rule
 6.2.2.1.8,Coastal-Hadhrami-Arabic-aː,‘,"a:[+long] > e:[+long] / Form VI (tafa:[+long]‘ala) verbs, though these apparently coexist with forms having the original vowel as well, with semantic distinctions"
 6.2.2.1.9,Wādı̄-Hadhrami-Arabic-aː,‘,"a:[+long] > e:[+long] / Form VI (tafa:[+long]‘ala) verbs, though these apparently coexist with forms having the original vowel as well, with semantic distinctions"
 6.2.2.1.18,Biblical-Hebrew-—-a_4,_,a > _$$$(…)
-8.5.2,"Sakha-aɡ̌ɯ,b-oɡ̌,b,aɡ̌u-uɡ̌,b",̌,"a{ɡ̌,ɡ̌ɯ,b} {o{ɡ̌,b},aɡ̌u} u{ɡ̌,b} > ɰa wo u:[+long]"
+8.5.2,"Sakha-aɡ̌ɯ,b-oɡ̌,b,aɡ̌u-uɡ̌,b",̌,"a{ɡ̌,ɡ̌ɯ,b} {oɡ̌,ob,aɡ̌u} u{ɡ̌,b} > ɰa wo u:[+long]"
 8.5.2,Sakha-iɡ̌,̌,iɡ̌ > ɯ:[+long]
 9.1.1,"Muong-Khen-n̥j,nj,ɲ̊j,ɲj",̊,"{n̥j,nj,ɲ̊j,ɲj} > ɲ j"
 10.2.6.2.1,"Òma-Lóngh-p,t-n",̚,"{p,t} n > c̚ ɲ / {i,ɛ}_#"
@@ -82,7 +82,7 @@ section_index,rule_id,error_token,rule
 36.2,Guānhuà-yʔ_5,̣,"yʔ > ɥʔ / C̣, in -juət-types"
 36.2,Guānhuà-yʔ_5,̣,"yʔ > yʔ / C̣, in -juət-types"
 36.2,Guānhuà-yʔ_5,̣,"yʔ > uʔ / C̣, in -juət-types"
-36.2,Guānhuà-yʔ_6,̣,"yʔ > oʔ / C̣_, in -k-types"
+36.2,Guānhuà-yʔ_6,̣,"oʔ > ʊʔ?) / C̣_, in -k-types"
 36.2,Guānhuà-yn,̣,yn > un / C̣_
 36.2,Guānhuà-je-jeʔ-yeʔ,̣,je jeʔ yeʔ > ɛ ɛʔ uɛʔ / C̣_
 36.2,Guānhuà-jew,̣,"jew > au / :{C̣_,C̣C_}:"

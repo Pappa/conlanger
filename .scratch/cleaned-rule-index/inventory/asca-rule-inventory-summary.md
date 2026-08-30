@@ -22,12 +22,12 @@
 | count | failure_class |
 |------:|---------------|
 | 330 | `syntax_other` |
-| 194 | `expected_underscore` |
+| 193 | `expected_underscore` |
 | 134 | `runtime_other` |
 | 129 | `unknown_character` |
 | 37 | `expected_number` |
+| 33 | `prose_or_expected_arrow` |
 | 32 | `diacritic_prereq` |
-| 32 | `prose_or_expected_arrow` |
 | 31 | `unknown_feature` |
 | 22 | `nested_brackets` |
 | 14 | `stuff_after_word_bound` |
@@ -77,6 +77,17 @@
 | 3 | `Y` |
 | 1 | `I` |
 | 1 | `X` |
+
+
+## Field isolation blame (error rows)
+
+| count | blame |
+|------:|-------|
+| 362 | `env` |
+| 347 | `input` |
+| 324 | `output` |
+| 166 | `multi` |
+| 110 | `exception` |
 
 ## Notes
 
