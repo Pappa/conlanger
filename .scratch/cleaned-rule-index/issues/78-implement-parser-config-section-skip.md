@@ -81,7 +81,7 @@ Rules in **`skipped: true`** sections:
 
 ### 6. Docs
 
-- `docs/index-diachronica-parser.md` — `skip_sections` config + `skipped` section field.
+- `docs/system/index-diachronica-parser.md` — `skip_sections` config + `skipped` section field.
 - `CONTEXT.md` or schema ticket cross-link if section `skipped` amends the index schema (optional field on section objects).
 
 ### Regen

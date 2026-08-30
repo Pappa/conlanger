@@ -27,7 +27,7 @@ After **Manual mapping** and `is_quoted_prose_paragraph` (unchanged), **before**
 
 ### Docs
 
-Update [docs/index-diachronica-parser.md](../../docs/index-diachronica-parser.md): insert the first-`;` peel **before** Phase C structural split; note remainder-only symbol norm; note that field-level env/exception `;` capture is retired.
+Update [docs/system/index-diachronica-parser.md](../../docs/system/index-diachronica-parser.md): insert the first-`;` peel **before** Phase C structural split; note remainder-only symbol norm; note that field-level env/exception `;` capture is retired.
 
 ### Tests (minimum)
 

@@ -36,7 +36,7 @@ After the normal pass, expand any **remaining** mapped uppercase letter when the
 
 ## What to build
 
-1. Extend `_CLASS_BEFORE` / `_CLASS_AFTER` (and labialized variant) per table above; keep named constants + module comment ([docs/sound-change-applier.md](../../../docs/sound-change-applier.md) § Class-letter expansion boundaries).
+1. Extend `_CLASS_BEFORE` / `_CLASS_AFTER` (and labialized variant) per table above; keep named constants + module comment ([docs/system/sound-change-applier.md](../../../docs/system/sound-change-applier.md) § Class-letter expansion boundaries).
 2. Add **unglued** pass after optional-labial / suffix-labial / bare passes (ticket 43 option 2, now mandatory).
 3. Unit tests in `tests/conlanger/tools/test_group_mappings.py` — fixtures from [grouping_errors.csv](../inventory/grouping_errors.csv) in-scope rows (minimum: digit-ref **R**, ellipsis **U**, `_%U(`, `çT`, `rK`, `sTP`, `nQ`, `hR`, `Eβu`, `Bʱ`, `{D,Dʱ}` first member).
 4. Full inventory re-run (`uv run create_index`); refresh `grouping_errors.csv`; record before/after in **Answer**.

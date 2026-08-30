@@ -56,7 +56,7 @@ Owner confirmed (2026-08-18). Policy (amends ticket 30 extraction **order** only
 2. **Pass order.** Quoted-prose skip (unchanged) → peel that `;` tail from `working` → `normalize_symbols` + `extract_rule_parts` on the **remainder only**. The tail never becomes **stages**. One **index rule**, one **rule comment** for the whole spine.
 3. **Empty remainder.** No `→` after the cut → `status: skipped`, `stages: []`, **rule comment** = the tail. `raw` unchanged.
 4. **Comment vs remainder.** Tail stored as-is (no symbol/feature/IPA/series). Remainder keeps today’s sporadic / gloss / stress / medial / mappings. No second `;` pass on remainder. Detectors **do not** scan **rule comment**. Uncertainty that should set `sporadic: true` stays **before** `;`.
-5. **Docs / ADRs.** Update [docs/index-diachronica-parser.md](../../docs/index-diachronica-parser.md) in the implement ticket. **No** ADR-0012 change. No new ADR. Ticket 30 “comment after `→` split” is amended by (2). Still do **not** emit index **rule comment** as ASCA `;;`.
+5. **Docs / ADRs.** Update [docs/system/index-diachronica-parser.md](../../docs/system/index-diachronica-parser.md) in the implement ticket. **No** ADR-0012 change. No new ADR. Ticket 30 “comment after `→` split” is amended by (2). Still do **not** emit index **rule comment** as ASCA `;;`.
 6. **Out of scope.** Detector-on-comment; field-source telemetry in the inventory summary; bracket-aware `;`; unifying on `;;`.
 7. **Acceptance watch.** Regen changelog `ok` flips; Archi chain corruption and `malformed_comment` / `trailing-comment` should move. New fails → a later ticket, not a different cut.
 
@@ -79,7 +79,7 @@ Follow-on: [77 — Implement first-`;` comment cut before chain split](77-implem
 - `src/conlanger/tools/ingest/transforms.py` — `apply_semicolon_field_comments`, `join_rule_comment`
 - `src/conlanger/utils/gloss.py` — `extract_semicolon_prose_from_field`
 - `src/conlanger/utils/parsing.py` — `extract_rule_parts`, `build_stages_from_spine`
-- [docs/index-diachronica-parser.md](../../docs/index-diachronica-parser.md) (update in [77](77-implement-first-semicolon-comment-cut.md))
+- [docs/system/index-diachronica-parser.md](../../docs/system/index-diachronica-parser.md) (update in [77](77-implement-first-semicolon-comment-cut.md))
 
 ## Comments
 

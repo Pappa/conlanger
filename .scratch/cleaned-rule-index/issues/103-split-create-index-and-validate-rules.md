@@ -50,7 +50,7 @@ After [ticket 101](101-refactor-config-layout-and-injection.md), scripts are the
 
 - [ADR-0013](../../../docs/adr/0013-parse-compile-validate.md) — consequence bullets: steady-state operator commands.
 - [docs/validate.md](../../../docs/validate.md) — workflow starts at YAML; command `uv run validate_rules`.
-- [docs/index-diachronica-parser.md](../../../docs/index-diachronica-parser.md) — parse command `uv run create_index`.
+- [docs/system/index-diachronica-parser.md](../../../docs/system/index-diachronica-parser.md) — parse command `uv run create_index`.
 - [docs/SYSTEM.md](../../../docs/SYSTEM.md) — operator commands column if present.
 - [map.md](../map.md) — runtime / operator-command notes.
 - Grep-update doc/ticket references that say `uv run create_index` for **validation/inventory** (parse references stay).

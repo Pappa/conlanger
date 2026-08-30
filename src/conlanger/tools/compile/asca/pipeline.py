@@ -1,4 +1,4 @@
-"""Documented ASCA per-rule compile pipeline (``docs/sound-change-applier.md``)."""
+"""Documented ASCA per-rule compile pipeline (``docs/system/sound-change-applier.md``)."""
 
 from __future__ import annotations
 

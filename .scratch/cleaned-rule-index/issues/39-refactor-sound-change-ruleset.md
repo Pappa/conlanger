@@ -21,7 +21,7 @@ Current pain: `rules.py` mixes applier formatting (`RuleTitle`, `RuleCitation`, 
 - `src/conlanger/tools/asca_compile/` package: one module per transform + `pipeline.py` with `ASCA_COMPILE_STEP_NAMES` and `compile_asca_rule_string`.
 - `rules.py` retains section assembly classes; re-exports transform helpers for existing callers/tests.
 - No-op placeholders for planned steps 3, 4, 10 (`planned.py`) wired in documented order ([spike 38](../research/asca-compile-transform-order.md)).
-- `docs/sound-change-applier.md` updated to reference pipeline module and order integers.
+- `docs/system/sound-change-applier.md` updated to reference pipeline module and order integers.
 
 **Out of scope (unchanged):**
 

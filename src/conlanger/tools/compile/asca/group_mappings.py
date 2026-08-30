@@ -5,7 +5,7 @@ import re
 from conlanger.utils.features import apply_features_to_token
 
 # Class-letter boundary policy (compile-time tokenisation).
-# See docs/sound-change-applier.md — "Class-letter expansion boundaries".
+# See docs/system/sound-change-applier.md — "Class-letter expansion boundaries".
 #
 # A mapped uppercase letter expands when both lookarounds succeed:
 # - BEFORE: start of (non-matrix) segment, or after delimiter / peer class /

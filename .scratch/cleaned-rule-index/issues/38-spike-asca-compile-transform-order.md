@@ -25,7 +25,7 @@ Investigate and assign slot numbers for **all** of the following (expand list if
 | Section-local abbreviations (e.g. Athabaskan `TŠ`) | [06-resolve-applier-unsupported-abbreviations.md](06-resolve-applier-unsupported-abbreviations.md); cluster-driven |
 | Meta-notation (retroflex `X̣`, `(…X)` repetition, tone superscripts, …) | [subscript-notation-index-asca-brassica.md](../research/subscript-notation-index-asca-brassica.md); no global expansion yet |
 
-**Out of scope:** Brassica compile path; parse-time transforms (documented in `docs/index-diachronica-parser.md`).
+**Out of scope:** Brassica compile path; parse-time transforms (documented in `docs/system/index-diachronica-parser.md`).
 
 ## What to investigate
 
@@ -42,7 +42,7 @@ Findings markdown under `.scratch/cleaned-rule-index/research/` (e.g. `asca-comp
 - Explicit “rejected orderings” notes where alternatives were tried.
 - Open questions suitable for follow-on **task** tickets (implementation), not more ordering spikes.
 
-Update `docs/sound-change-applier.md` TBD rows if ticket 37 has landed (otherwise leave findings for 37 follow-up edit).
+Update `docs/system/sound-change-applier.md` TBD rows if ticket 37 has landed (otherwise leave findings for 37 follow-up edit).
 
 ## Acceptance criteria
 
@@ -56,6 +56,6 @@ Update `docs/sound-change-applier.md` TBD rows if ticket 37 has landed (otherwis
 
 Findings: [research/asca-compile-transform-order.md](../research/asca-compile-transform-order.md)
 
-Renumbered ASCA compile pipeline (10 steps): insert **Order 3** `expand_index_subscript_references` (positional + identity) and **Order 4** `apply_section_local_abbreviations` before existing group mappings; **Order 10** `expand_meta_notation` (cluster-driven, last). Section-local before group mappings is **mandatory** (`TS > ts` probe). Refs before length marks is **mandatory** (extend length pass for `\dː`). Ticket 37 can paste the §6 table fragment into `docs/sound-change-applier.md`.
+Renumbered ASCA compile pipeline (10 steps): insert **Order 3** `expand_index_subscript_references` (positional + identity) and **Order 4** `apply_section_local_abbreviations` before existing group mappings; **Order 10** `expand_meta_notation` (cluster-driven, last). Section-local before group mappings is **mandatory** (`TS > ts` probe). Refs before length marks is **mandatory** (extend length pass for `\dː`). Ticket 37 can paste the §6 table fragment into `docs/system/sound-change-applier.md`.
 
 ## Comments

@@ -79,7 +79,7 @@ Stop emitting the document-level `abbreviations` key from `IndexDiachronicaParse
 
 ### 5. Docs
 
-- `docs/index-diachronica-parser.md` — new pipeline step (between corrections and Manual mapping); `section_mappings` row in config table; remove / update global `abbreviations` planned row.
+- `docs/system/index-diachronica-parser.md` — new pipeline step (between corrections and Manual mapping); `section_mappings` row in config table; remove / update global `abbreviations` planned row.
 - Cross-link from map Notes / [ADR-0004](../../../docs/adr/0004-series-indices-per-section-maps.md) if section-scoped parse policy should be recorded (optional).
 
 ### Regen

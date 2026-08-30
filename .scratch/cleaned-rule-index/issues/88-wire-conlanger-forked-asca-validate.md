@@ -41,4 +41,4 @@ Grill 2026-08-19: **Q3 A** — do not redefine `ok`.
 
 ## Answer
 
-**Gist:** `resolve_asca_bin()` (`ASCA_BIN` then PATH) shared by `validate_asca`, `run_asca`, `validate_asca_syntax`, `validate_asca_part`. `validate_asca` runs `asca validate -r` then `asca run` + probes when validate exists. Part wrapper maps index `env` → ASCA `context`. Tests in `tests/conlanger/appliers/test_asca.py`; docs in [DEV.md](../../../docs/DEV.md) and [sound-change-applier.md](../../../docs/sound-change-applier.md). Unblocks native [Per-field ASCA blame in inventory](36-per-field-asca-blame-in-inventory.md).
+**Gist:** `resolve_asca_bin()` (`ASCA_BIN` then PATH) shared by `validate_asca`, `run_asca`, `validate_asca_syntax`, `validate_asca_part`. `validate_asca` runs `asca validate -r` then `asca run` + probes when validate exists. Part wrapper maps index `env` → ASCA `context`. Tests in `tests/conlanger/appliers/test_asca.py`; docs in [DEV.md](../../../docs/DEV.md) and [sound-change-applier.md](../../../docs/system/sound-change-applier.md). Unblocks native [Per-field ASCA blame in inventory](36-per-field-asca-blame-in-inventory.md).

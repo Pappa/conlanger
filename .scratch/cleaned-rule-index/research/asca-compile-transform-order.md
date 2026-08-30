@@ -144,7 +144,7 @@ Per [`CONTEXT.md`](../../../CONTEXT.md) (**Meta-notation**): retroflex `X̣`, to
 
 **Evidence:**
 
-1. **Regex boundary (defensive):** `apply_asca_group_mappings_to_string` does not expand `C` in `C₁` — subscript is not in the **after** boundary ([`group_mappings.py`](../../../src/conlanger/tools/compile/asca/group_mappings.py)). Probes: `C₁`, `S₁`, `C=1`, `S=1` unchanged by group mappings alone. **Glued clusters** (`SR`, `VOR`, `VːR`) and env literals (`_Ra`) expand when **before** / **after** rules allow — see [sound-change-applier.md](../../../docs/sound-change-applier.md) § Class-letter expansion boundaries.
+1. **Regex boundary (defensive):** `apply_asca_group_mappings_to_string` does not expand `C` in `C₁` — subscript is not in the **after** boundary ([`group_mappings.py`](../../../src/conlanger/tools/compile/asca/group_mappings.py)). Probes: `C₁`, `S₁`, `C=1`, `S=1` unchanged by group mappings alone. **Glued clusters** (`SR`, `VOR`, `VːR`) and env literals (`_Ra`) expand when **before** / **after** rules allow — see [sound-change-applier.md](../../../docs/system/sound-change-applier.md) § Class-letter expansion boundaries.
 2. **Semantic clarity:** `S₁ → S=1` preserves the Index class letter on the declaration; `S → P` mapping must not apply to positional slots even if boundary rules change.
 3. **No observed case** where refs-after-group differs on validated happy-path rules — but ordering refs first is cost-free and matches [positional-slots research §7 Q6](./positional-slots-and-identity-subscripts.md).
 
@@ -216,7 +216,7 @@ For `C₁ C₂ > C₂`, `V₀ V₀ > V₀`, `S₁ S₂ > S₂`: all of `refs-bef
 
 ---
 
-## 6. Pipeline table fragment (for docs/sound-change-applier.md)
+## 6. Pipeline table fragment (for docs/system/sound-change-applier.md)
 
 Copy-ready fragment for [ticket 37](../issues/37-document-sound-change-pipeline.md) when that doc is written:
 
