@@ -37,8 +37,7 @@ Extended `normalize_asca_length_marks()` in `length_marks.py`:
 - `(?!:)` guard on grouping/segment length so `Vː:[+stress]` Iroquoian hold-outs stay literal
 
 **Deferred (2026-08-30 rework):** parenthesized optional length `(ː)` on matrices/templates
-(`V:[+front](ː)`, `V3(ː)`) — wrong to collapse here; belongs to optional-length /
-parenthetical policy (tickets 15/48/71), not matrix-suffix `]ː`.
+(`V:[+front](ː)`, `V3(ː)`) — wrong to collapse here; follow-on [104](104-correction-pass-parenthesized-optional-length-marker.md) (**blocked by [94](94-grill-structured-soundchangerule-ir.md)**).
 
 Unit + ASCA smoke tests in `tests/conlanger/tools/compile/asca/test_length_marks.py` (matrix-suffix cases moved from `test_tools_compile_asca.py`).
 

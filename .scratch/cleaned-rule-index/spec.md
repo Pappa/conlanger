@@ -142,7 +142,7 @@ Brassica compilation remains a future parallel path behind the same index (ADR-0
 
 - Steady-state loop: parse HTML → compile → validate per rule → regenerate YAML + inventory → cluster **failure classes** → implement correction pass → repeat.
 - Primary metric: **sections with 0 validation fails**; hunt near-miss sections (≤3 fails) before heavy-residual sections.
-- **Current frontier** (from map): `*X` wildcards (83), matrix-suffix `ː` (79), breve `̆` (84), tone features (62), near-miss unknown_character (63), syllable-position `#U`/`U#` (98); paused grill on paren/parallel notation (71) now unblocked by I/O optionals spike (100). Group-mapping residuals (M/X/I/Y) deprioritised.
+- **Current frontier** (from map): `*X` wildcards (83), parenthesized optional length `(ː)` (104, blocked by grill 94), breve `̆` (84), tone features (62), near-miss unknown_character (63), syllable-position `#U`/`U#` (98); paused grill on paren/parallel notation (71) now unblocked by I/O optionals spike (100). Group-mapping residuals (M/X/I/Y) deprioritised.
 - Class-first transforms live in parser (parse-time) and **SoundChangeRule** compile transforms. External one-off override schema deferred.
 
 ### Adoption criteria (to define)
