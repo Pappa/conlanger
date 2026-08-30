@@ -6,7 +6,11 @@ from conlanger.appliers.asca import validate_asca
 from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
 from conlanger.tools.compile.asca.tone_matrices import normalize_asca_tone_matrices
 from conlanger.tools.rules import DiachronicSeries
-from conlanger.utils.mappings import FeatureMapping, normalize_feature_matrices_in_field
+from conlanger.utils.mappings import (
+    CompilerConfig,
+    FeatureMapping,
+    normalize_feature_matrices_in_field,
+)
 
 
 def _tone_feature_mappings() -> dict[str, FeatureMapping]:
@@ -45,7 +49,7 @@ def test_length_then_tone_merge_for_index_length_mark():
 
 def test_compile_stress_length_tone_merges():
     assert (
-        compile_asca_rule_fields("V:[+stress]ː[tone: 51]", "V", group_mappings={})
+        compile_asca_rule_fields("V:[+stress]ː[tone: 51]", "V")
         == "V:[+stress, +long, tone: 51] > V"
     )
 
@@ -61,4 +65,4 @@ def test_cherokee_low_falling_tone_rule_validates():
         "section": "Proto-Iroquoian to Cherokee",
         "rules": [{"stages": ["Vʔ", stage], "env": "_C"}],
     }
-    validate_asca(DiachronicSeries(section, "asca", group_mappings={}))
+    validate_asca(DiachronicSeries(section, "asca", compiler_config=CompilerConfig()))

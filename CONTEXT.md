@@ -114,7 +114,7 @@ Index Diachronica notational shorthand whose expansion is defined for compile �
 _Avoid_: “alias”, “mapping”, “grouping” as the glossary term for these symbols
 
 **Class letter**:
-A capital-letter class abbreviation from the Index key (`C`, `V`, `S`, `A`, …) denoting a phonological class. Expanded at compile from `group_mappings.csv` where Index meaning diverges from ASCA inbuilt groupings; unmapped letters stay in the rule string. **Glued class-letter sequences** (e.g. `SR`, `VOR`) are consecutive class letters without delimiters — each letter expands when compile boundary rules recognise it (see applier compile doc). A mapped uppercase class letter in a rule segment expands regardless of a lowercase IPA prefix (`rK` → velar class + `r`, same as `Kr`).
+A capital-letter class abbreviation from the Index key (`C`, `V`, `S`, `A`, …) denoting a phonological class. Expanded at compile from `CompilerConfig.group_mappings` (loaded from `config/compile/asca/group_mappings.yml`) where Index meaning diverges from ASCA inbuilt groupings; unmapped letters stay in the rule string. **Glued class-letter sequences** (e.g. `SR`, `VOR`) are consecutive class letters without delimiters — each letter expands when compile boundary rules recognise it (see applier compile doc). A mapped uppercase class letter in a rule segment expands regardless of a lowercase IPA prefix (`rK` → velar class + `r`, same as `Kr`).
 _Avoid_: treating every capital letter in a rule as a class letter; single-character blind substitution at ingest; preserving lowercase-glued uppercase class letters as literal digraphs when the uppercase letter is a mapped Index class
 
 **Symbol**:
@@ -126,7 +126,7 @@ Index Diachronica’s use of Unicode subscripts (from HTML `<sub>`) attached to 
 _Avoid_: “subscript decoration”; treating every subscript as a correspondence-series index; silent stripping of subscripts
 
 **Correspondence-series index**:
-An ordinal subscript on a **concrete segment** (IPA letter or spelled segment such as `s`, `x`, `eh`) selecting the *n*th member of a **correspondence series** for that sound-change section (Index key: `Xₙ` on segments; e.g. `s₁`, `x₂`, `eh₂`). Corpus fields keep the Index-shaped token at HTML→YAML parse. **Series mapping** at compile (`data/compiler_config.yml`, hierarchical section + `global`) expands mapped indices to ASCA-parseable segments; unmapped stay literal and surface via validation clusters.
+An ordinal subscript on a **concrete segment** (IPA letter or spelled segment such as `s`, `x`, `eh`) selecting the *n*th member of a **correspondence series** for that sound-change section (Index key: `Xₙ` on segments; e.g. `s₁`, `x₂`, `eh₂`). Corpus fields keep the Index-shaped token at HTML→YAML parse. **Series mapping** at compile (`config/compile/asca/compiler_config.yml`, hierarchical section + `global`) expands mapped indices to ASCA-parseable segments; unmapped stay literal and surface via validation clusters.
 _Avoid_: treating `s₁` as identical to `s`; parse-time index→IPA substitution; applying global segment→IPA substitution without section scope
 
 **Correspondence series**:
@@ -142,7 +142,7 @@ Subscript `₀` on any base, meaning “the same instance as other tokens bearin
 _Avoid_: treating `V₀` as “zeroth vowel of a series”; stripping `₀` to normalize; conflating with ASCA optional `(C,0)` zero-or-more syntax
 
 **Collective subscript**:
-Subscript `ₓ` (or `x`), meaning all members of a sequence or series (Index key: `Xₓ`; e.g. `{Hₓ,m̩,n̩} → a`). Quantifies over a class or series rather than picking one member. At parse, **series expansion** in `data/parser_config.yml` fans out collectives to member **correspondence-series indices** in index fields (flatten inside sets; `raw` unchanged). **Series mapping** at compile resolves those indices to segments.
+Subscript `ₓ` (or `x`), meaning all members of a sequence or series (Index key: `Xₓ`; e.g. `{Hₓ,m̩,n̩} → a`). Quantifies over a class or series rather than picking one member. At parse, **series expansion** in `config/parser/parser_config.yml` fans out collectives to member **correspondence-series indices** in index fields (flatten inside sets; `raw` unchanged). **Series mapping** at compile resolves those indices to segments.
 _Avoid_: treating `Hₓ` as a single segment; conflating with correspondence-series index `H₁`; nested sets after collective expansion; inventing a second on-disk set notation before Brassica is adopted
 
 **Section-local abbreviation**:
@@ -150,7 +150,7 @@ Multi-letter or prose shorthand defined only for one sound-change section (or fa
 _Avoid_: “series index” for `TŠ`; global `group_mappings.csv` rows for section-only labels
 
 **Feature matrix**:
-A distinctive-feature bundle written in brackets on a segment or alone in a rule string (e.g. `[+voice]`, `C:[+strident]`). At HTML→YAML ingest, Index feature names are normalised inside `[...]` via `feature_mappings.csv`: 1:1 renames where safe, or multi-feature bundle expansion where one Index token maps to several ASCA features. Unmapped names are left as-is. `raw` preserves the original HTML form.
+A distinctive-feature bundle written in brackets on a segment or alone in a rule string (e.g. `[+voice]`, `C:[+strident]`). At HTML→YAML ingest, Index feature names are normalised inside `[...]` via `config/parser/feature_mappings.yml`: 1:1 renames where safe, or multi-feature bundle expansion where one Index token maps to several ASCA features. Unmapped names are left as-is. `raw` preserves the original HTML form.
 _Avoid_: listing individual ASCA feature names or shorthands in this glossary; “features” when meaning phoneme-inventory dimensions
 
 **Meta-notation**:
@@ -168,7 +168,7 @@ A runtime container for one sound-change section: its index rules, abbreviation 
 _Avoid_: assuming mappings are baked into the index YAML
 
 **Abbreviation table**:
-Runtime mapping from Index shorthand to applier strings, loaded from package CSV (e.g. `data/asca/group_mappings.csv`) and passed into a `DiachronicSeries`. Apply known rows; unmapped tokens stay in the rule string. Section-specific overrides are deferred — handle high-volume failures via validation clusters and hand-authored rows.
+Runtime mapping from Index shorthand to applier strings, held in `CompilerConfig.group_mappings` and passed into a `DiachronicSeries`. Apply known rows; unmapped tokens stay in the rule string. Section-specific overrides are deferred — handle high-volume failures via validation clusters and hand-authored rows.
 _Avoid_: “mapping”, “series map”, “alias table”; global one-size alphabet substitution without section scope; assuming structured per-section abbreviation tables exist in the HTML
 
 **Compile validation**:

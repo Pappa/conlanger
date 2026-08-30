@@ -9,7 +9,11 @@ from pathlib import Path
 
 import pytest
 from helpers import default_index_parser
-from tests.fixtures.minimal_mappings import MINIMAL_GROUP_MAPPINGS
+
+from tests.fixtures.minimal_mappings import (
+    MINIMAL_GROUP_MAPPINGS,
+    minimal_compiler_config,
+)
 
 __all__ = [
     "ASCA_INSTALLED",
@@ -49,6 +53,11 @@ def mock_env_vars(mocker):
 @pytest.fixture
 def fx_sample_group_mappings():
     return MINIMAL_GROUP_MAPPINGS
+
+
+@pytest.fixture
+def fx_sample_compiler_config():
+    return minimal_compiler_config()
 
 
 # Evaluated at collection time for ``skipif`` (before autouse fixtures run).

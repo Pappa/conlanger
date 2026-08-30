@@ -97,7 +97,7 @@ def test_expand_subscript_references_without_arrow_expands_input_only():
 
 def test_compile_pipeline_applies_subscript_expansion_before_group_mappings():
     inp, output = "C₁C₂", "C₂"
-    assert compile_asca_rule_fields(inp, output, group_mappings={}) == (
+    assert compile_asca_rule_fields(inp, output) == (
         _expand_joined_subscripts(f"{inp} > {output}")
     )
 
@@ -150,10 +150,7 @@ def test_expand_subscript_references_identity_compounds():
 
 def test_expand_subscript_references_optional_positional():
     assert _expand_joined_subscripts("C₁C₂C₃C₄ > (C₃)C₄") == "C=1 C=2 C=3 C=4 > {3}4"
-    assert (
-        compile_asca_rule_fields("C₁C₂C₃C₄", "(C₃)C₄", group_mappings={})
-        == "C=1 C=2 C=3 C=4 > {3}4"
-    )
+    assert compile_asca_rule_fields("C₁C₂C₃C₄", "(C₃)C₄") == "C=1 C=2 C=3 C=4 > {3}4"
 
 
 def test_expand_subscript_references_leaves_prose_env_and_exception():

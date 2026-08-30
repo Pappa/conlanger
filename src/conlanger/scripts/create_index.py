@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "src"))
 
 from conlanger.appliers.asca import asca_supports_validate, resolve_asca_bin
-from conlanger.tools.compile.asca.group_mappings import asca_group_mappings_dict
+from conlanger.scripts.config_loaders import load_compiler_config, load_parser_config
 from conlanger.tools.index_inventory import (
     FIELD_ISOLATION_CSV_NAME,
     FIELD_ISOLATION_ERROR_CSV_NAME,
@@ -45,7 +45,6 @@ from conlanger.tools.ingest import (
 )
 from conlanger.utils.file_io import (
     MANUAL_MAPPINGS_MATCHED_CSV_NAME,
-    load_default_ingest_tables,
     write_manual_mappings_matched_csv,
 )
 
@@ -144,14 +143,9 @@ def main() -> int:
         print(f"ERROR: HTML not found at {args.html}", file=sys.stderr)
         return 1
 
-    tables = load_default_ingest_tables()
-    parser = IndexDiachronicaParser(
-        manual_mappings=tables.manual_mappings,
-        parser_config=tables.parser_config,
-        feature_mappings=tables.feature_mappings,
-        ipa_mappings=tables.ipa_mappings,
-        corrections=tables.corrections,
-    )
+    parser_config = load_parser_config()
+    compiler_config = load_compiler_config()
+    parser = IndexDiachronicaParser(parser_config)
     doc = parser.parse(args.html)
     write_cleaned_index(doc, args.yaml_out)
     n_with_comment = write_rule_comment_phrase_summary(doc, DEFAULT_COMMENT_SUMMARY)
@@ -223,12 +217,11 @@ def main() -> int:
         )
         return 1
 
-    group_mappings = asca_group_mappings_dict()
     rows, field_rows = iter_inventory_with_field_isolation(
         doc,
         field_isolation=args.field_isolation,
         probe_words=args.probe_words,
-        group_mappings=group_mappings,
+        compiler_config=compiler_config,
         asca_bin=asca_command,
     )
     if args.limit:

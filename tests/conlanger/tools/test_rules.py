@@ -12,7 +12,7 @@ from conlanger.tools.rules import (
 from conlanger.utils.mappings import CompilerConfig
 
 
-def test_diachronic_series_does_not_mutate_index_rules(fx_sample_group_mappings):
+def test_diachronic_series_does_not_mutate_index_rules(fx_sample_compiler_config):
     section = {
         "index": "1.0",
         "section": "Test",
@@ -26,11 +26,13 @@ def test_diachronic_series_does_not_mutate_index_rules(fx_sample_group_mappings)
         ],
     }
     assert section["rules"][0]["env"] == "#_V{Z,C[-voice],r}"
-    rendered = str(DiachronicSeries(section, group_mappings=fx_sample_group_mappings))
+    rendered = str(DiachronicSeries(section, compiler_config=fx_sample_compiler_config))
     assert "[+cont]" in rendered
 
 
-def test_sound_change_ruleset_applies_group_mappings_for_asca(fx_sample_group_mappings):
+def test_sound_change_ruleset_applies_group_mappings_for_asca(
+    fx_sample_compiler_config,
+):
     section = {
         "index": "1.0",
         "section": "Test",
@@ -43,14 +45,14 @@ def test_sound_change_ruleset_applies_group_mappings_for_asca(fx_sample_group_ma
             }
         ],
     }
-    rendered = str(DiachronicSeries(section, group_mappings=fx_sample_group_mappings))
+    rendered = str(DiachronicSeries(section, compiler_config=fx_sample_compiler_config))
     assert "[+cont]" in rendered
     assert "\tf > p / #_V{[+cont],C[-voice],r}" in rendered
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
 def test_phonological_ruleset_validates_labialized_class_letter_fixtures(
-    fx_sample_group_mappings,
+    fx_sample_compiler_config,
 ):
     section = {
         "index": "17.10",
@@ -74,14 +76,14 @@ def test_phonological_ruleset_validates_labialized_class_letter_fixtures(
     from conlanger.appliers.asca import validate_asca
 
     validate_asca(
-        DiachronicSeries(section, group_mappings=fx_sample_group_mappings),
+        DiachronicSeries(section, compiler_config=fx_sample_compiler_config),
         probe_words=probe,
     )
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
 def test_diachronic_series_validates_known_unknown_grouping_fixtures(
-    fx_sample_group_mappings,
+    fx_sample_compiler_config,
 ):
     section = {
         "index": "6.2.2.1.2",
@@ -106,7 +108,7 @@ def test_diachronic_series_validates_known_unknown_grouping_fixtures(
     from conlanger.appliers.asca import validate_asca
 
     validate_asca(
-        DiachronicSeries(section, group_mappings=fx_sample_group_mappings),
+        DiachronicSeries(section, compiler_config=fx_sample_compiler_config),
         probe_words=probe,
     )
 

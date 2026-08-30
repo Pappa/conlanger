@@ -13,7 +13,6 @@ from conlanger.tools.compile.asca.sets import (
     split_braced_set_members,
 )
 from conlanger.tools.compile.asca.tilde import normalize_index_rule_tilde_fields
-from conlanger.utils.file_io import load_compiler_config
 from conlanger.utils.mappings import CompilerConfig
 
 _SUPPORTED_FORMATS = frozenset({"asca"})
@@ -64,11 +63,8 @@ class SoundChangeRule(RulePartBase):
     raw: str = ""
 
     alternatives: list[SoundChangeRule] = Field(default_factory=list)
-    group_mappings: dict[str, str] = Field(
-        default_factory=dict, exclude=True, repr=False
-    )
-    compiler_config: CompilerConfig | None = Field(
-        default=None, exclude=True, repr=False
+    compiler_config: CompilerConfig = Field(
+        default_factory=CompilerConfig, exclude=True, repr=False
     )
     section_index: str = Field(default="", exclude=True, repr=False)
     rng: random.Random = Field(default_factory=random.Random, exclude=True, repr=False)
@@ -103,7 +99,6 @@ class SoundChangeRule(RulePartBase):
             self.output,
             self.env,
             self.exception,
-            group_mappings=self.group_mappings,
             section_index=self.section_index,
             compiler_config=self.compiler_config,
         )
@@ -133,7 +128,6 @@ class SoundChangeRule(RulePartBase):
                 output=member,
                 env=self.env,
                 exception=self.exception,
-                group_mappings=self.group_mappings,
                 section_index=self.section_index,
                 compiler_config=self.compiler_config,
                 detect_alternatives=False,
@@ -152,7 +146,6 @@ class SoundChangeRule(RulePartBase):
                 output=branch_output,
                 env=self.env,
                 exception=self.exception,
-                group_mappings=self.group_mappings,
                 section_index=self.section_index,
                 compiler_config=self.compiler_config,
                 detect_alternatives=False,
@@ -171,14 +164,12 @@ class DiachronicSeries(BaseModel):
         section: dict,
         format: str = "asca",
         *,
-        group_mappings: dict[str, str] | None = None,
         compiler_config: CompilerConfig | None = None,
     ) -> None:
         if format not in _SUPPORTED_FORMATS:
             raise ValueError(f"Unsupported format: {format}")
 
-        mappings = {} if group_mappings is None else group_mappings
-        config = load_compiler_config() if compiler_config is None else compiler_config
+        config = compiler_config or CompilerConfig()
         section_index = str(section.get("index", ""))
         parts: list[RulePartBase] = [RuleTitle(section["index"], section["section"])]
         if section.get("citation"):
@@ -191,7 +182,6 @@ class DiachronicSeries(BaseModel):
                     parts.append(
                         SoundChangeRule(
                             **rule,
-                            group_mappings=mappings,
                             section_index=section_index,
                             compiler_config=config,
                         )
@@ -202,7 +192,6 @@ class DiachronicSeries(BaseModel):
                     parts.append(
                         SoundChangeRule(
                             **step,
-                            group_mappings=mappings,
                             section_index=section_index,
                             compiler_config=config,
                         )

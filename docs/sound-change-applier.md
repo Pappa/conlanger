@@ -70,7 +70,7 @@ Per-field transforms run on `input`, `output`, `env`, and `exception` separately
 
 **Blocked (intentionally):** subscript digits (`C₁`, `S₁` unchanged). **Mapped uppercase class letters** in a rule segment expand even after a lowercase IPA prefix (`rK`, `sTP`, `nQ`) — the uppercase letter is always the class, not part of a literal digraph. Labialized forms (`Kʷ`, `K(ʷ)`) use separate passes before bare expansion.
 
-Unmapped uppercase letters that pass both boundaries but are not in `group_mappings.csv` and are not ASCA-native groupings (`C`, `O`, `S`, `P`, `F`, `L`, `N`, `G`, `V`) stay literal.
+Unmapped uppercase letters that pass both boundaries but are not in `CompilerConfig.group_mappings` and are not ASCA-native groupings (`C`, `O`, `S`, `P`, `F`, `L`, `N`, `G`, `V`) stay literal.
 
 ---
 

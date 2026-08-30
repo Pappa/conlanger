@@ -1,0 +1,191 @@
+Š:
+  ipa_target: ʃ
+  confidence: high
+  notes: Latin capital S-caron; same target as š
+ã:
+  ipa_target: ã
+  confidence: high
+  notes: Precomposed a-tilde → a + combining tilde; Tamil/French nasal vowel rules
+    (n=34)
+ẽ:
+  ipa_target: ẽ
+  confidence: high
+  notes: Precomposed e-tilde → e + combining tilde (n=33)
+ı:
+  ipa_target: j
+  confidence: medium
+  notes: Dotless i marks glide in French aı̃/eı̃ and Tupí ı̃; ASCA rejects ı (n=46)
+ḱ:
+  ipa_target: kʲ
+  confidence: high
+  notes: PIE palatovelar (Leiden); ASCA accepts kʲ; sections 17.x Albanian/Anatolian/Armenian
+    (n=28)
+Ṽ:
+  ipa_target: ṽ
+  confidence: high
+  notes: Capital V-tilde; ASCA rejects precomposed ṽ/Ṽ; decompose to v+combining tilde
+    (n=27)
+ṽ:
+  ipa_target: ṽ
+  confidence: high
+  notes: Precomposed nasal v; ASCA accepts decomposed ṽ only (n=27)
+õ:
+  ipa_target: õ
+  confidence: high
+  notes: Precomposed o-tilde → o + combining tilde (n=26)
+ь:
+  ipa_target: ɪ
+  confidence: medium
+  notes: Front yer (ь); reduced high front vowel in Slavic notation (n=20)
+î:
+  ipa_target: i
+  confidence: medium
+  notes: Tariku raised i; ASCA rejects î; rules iC>î (n=18)
+û:
+  ipa_target: u
+  confidence: medium
+  notes: Tariku raised u; ASCA rejects û; parallel to î>i (n=9)
+ũ:
+  ipa_target: ũ
+  confidence: high
+  notes: Precomposed u-tilde → u + combining tilde (n=11)
+ó:
+  ipa_target: o
+  confidence: medium
+  notes: Acute o phoneme letter (n=7)
+ŕ:
+  ipa_target: r
+  confidence: low
+  notes: Acute r orthography (7 rows); likely plain /r/ (n=7)
+ŭ:
+  ipa_target: u
+  confidence: medium
+  notes: Breve u; ASCA rejects ŭ (n=6)
+ъ:
+  ipa_target: ɤ
+  confidence: medium
+  notes: Back yer (ъ); reduced high back vowel; ASCA accepts ɤ (n=6)
+Ṣ:
+  ipa_target: ʂ
+  confidence: high
+  notes: S with dot below (retroflex); ASCA accepts ʂ (n=6)
+ȵ:
+  ipa_target: ɲ
+  confidence: high
+  notes: n-curl = palatal nasal in Polish rules (n=5)
+è:
+  ipa_target: ɛ
+  confidence: high
+  notes: French close-mid front; rules show è>ɛ (n=4)
+é:
+  ipa_target: e
+  confidence: medium
+  notes: French /e/ phoneme symbol; outputs often ɛ/ɛi by env (n=3)
+ê:
+  ipa_target: e
+  confidence: medium
+  notes: Circumflex e as phoneme letter (n=3)
+ò:
+  ipa_target: o
+  confidence: medium
+  notes: Grave o phoneme letter (n=3)
+ā:
+  ipa_target: aː
+  confidence: high
+  notes: Macron a = long a (n=3)
+Ł:
+  ipa_target: ɬ
+  confidence: medium
+  notes: Athabaskan TŁ lateral series component; not Polish ł>w (n=3)
+ś:
+  ipa_target: ɕ
+  confidence: medium
+  notes: Polish palatalized s; ASCA accepts ɕ; some sections may intend ʃ (n=3)
+ɚ:
+  ipa_target: ə
+  confidence: medium
+  notes: Rhotacized schwa; ASCA rejects ɚ; Naxi rules—ə or ɜ cluster review (n=3)
+Ω:
+  ipa_target: ɤ
+  confidence: medium
+  notes: Middle Vietnamese author placeholder - usually ɤ
+å:
+  ipa_target: ɔ
+  confidence: low
+  notes: Ring-a; section-specific (2 rows) (n=2)
+ŏ:
+  ipa_target: ɑ
+  confidence: medium
+  notes: https://en.wiktionary.org/wiki/%C5%8F
+š:
+  ipa_target: ʃ
+  confidence: high
+  notes: Latin s-caron; same target as Š in ipa_mappings.csv (n=2)
+â:
+  ipa_target: ɑ
+  confidence: medium
+  notes: French a-circumflex often open back /ɑ/ (n=1)
+ë:
+  ipa_target: e
+  confidence: low
+  notes: Diaeresis e; rare (1 row) (n=1)
+ô:
+  ipa_target: o
+  confidence: medium
+  notes: Circumflex o phoneme letter (n=1)
+ú:
+  ipa_target: u
+  confidence: medium
+  notes: Acute u phoneme letter (n=1)
+ē:
+  ipa_target: eː
+  confidence: high
+  notes: Macron e = long e (n=1)
+ǵ:
+  ipa_target: ɡʲ
+  confidence: high
+  notes: PIE voiced palatovelar; parallel to ḱ (n=1)
+ɿ:
+  ipa_target: ɻ
+  confidence: low
+  notes: Apical vowel (1 row); nearest accepted retroflex approximant (n=1)
+ʅ:
+  ipa_target: ʂ
+  confidence: low
+  notes: Squat reversed esh (1 row); Americanist rare glyph (n=1)
+ḛ:
+  ipa_target: e
+  confidence: low
+  notes: e-tilde-below; Totonacan creaky vowel mark (1 row) (n=1)
+Ṭ:
+  ipa_target: ʈ
+  confidence: high
+  notes: T with dot below (retroflex); Chinese / Indic notation (n=1)
+ṵ:
+  ipa_target: u
+  confidence: low
+  notes: u-tilde-below (1 row) (n=1)
+Ạ:
+  ipa_target: a
+  confidence: low
+  notes: A-dot-below; Late MC notation (1 row); may be register mark not vowel (n=1)
+ỹ:
+  ipa_target: ỹ
+  confidence: medium
+  notes: y-tilde; French ỹ>œ̃; ASCA accepts ỹ (n=1)
+ð:
+  ipa_target: ð
+  confidence: defer
+  notes: ASCA accepts as segment; 1 inventory hits are prose/env not mapping (n=1)
+ŋ:
+  ipa_target: ŋ
+  confidence: defer
+  notes: ASCA accepts as segment; 1 inventory hits are prose/env not mapping (n=1)
+ɛ:
+  ipa_target: ɛ
+  confidence: defer
+  notes: ASCA accepts as segment; 1 inventory hits are prose/env not mapping (n=1)
+ʝ:
+  ipa_target: ʝ
+  confidence: defer
+  notes: ASCA accepts as segment; 1 inventory hits are prose/env not mapping (n=1)

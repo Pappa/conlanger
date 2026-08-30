@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass, field
+from dataclasses import dataclass
+
+from pydantic import BaseModel, ConfigDict, Field
 
 from conlanger.utils.series import section_index_prefixes
 
@@ -21,17 +23,18 @@ class GroupMapping:
 class IpaMapping:
     index_feature: str
     ipa_target: str
-    confidence: str = ""
+    confidence: str | None = None
     notes: str = ""
 
 
 @dataclass(frozen=True)
 class ManualMapping:
-    """One owner-authored substring rewrite from ``manual_mappings.csv``."""
+    """One owner-authored substring rewrite from ``manual_mappings``."""
 
     from_text: str
     to_text: str
     reason: str = ""
+    use_regex: bool = False
 
 
 @dataclass(frozen=True)
@@ -63,14 +66,35 @@ class FeatureMapping:
     notes: str = ""
 
 
-@dataclass(frozen=True)
-class ParserConfig:
-    ipa_mappings_confidence: frozenset[str]
-    series_expansions: dict[str, tuple[str, ...]] = field(default_factory=dict)
-    section_mappings_sections: dict[str, dict[str, str]] = field(default_factory=dict)
-    skip_section_ids: frozenset[str] = field(default_factory=frozenset)
-    skip_rule_ids: frozenset[str] = field(default_factory=frozenset)
-    skip_rule_comments: dict[str, str] = field(default_factory=dict)
+class ParserConfig(BaseModel):
+    """Fat parse-time config: mapping tables plus runtime parser settings."""
+
+    model_config = ConfigDict(frozen=True, arbitrary_types_allowed=True)
+
+    manual_mappings: list[ManualMapping] = Field(default_factory=list)
+    ipa_mappings: tuple[IpaMapping, ...] = Field(default_factory=tuple)
+    ipa_mappings_confidence: frozenset[str] | None = None
+    feature_mappings: dict[str, FeatureMapping] = Field(default_factory=dict)
+    corrections: dict[str, str] = Field(default_factory=dict)
+    series_expansions: dict[str, tuple[str, ...]] = Field(default_factory=dict)
+    section_mappings_sections: dict[str, dict[str, str]] = Field(default_factory=dict)
+    skip_section_ids: frozenset[str] = Field(default_factory=frozenset)
+    skip_rule_ids: frozenset[str] = Field(default_factory=frozenset)
+    skip_rule_comments: dict[str, str] = Field(default_factory=dict)
+
+    def resolved_ipa_mappings(self) -> dict[str, str]:
+        """Return IPA char → target map, optionally filtered by confidence."""
+        if self.ipa_mappings_confidence is None:
+            return {
+                row.index_feature: row.ipa_target
+                for row in self.ipa_mappings
+                if row.ipa_target
+            }
+        return {
+            row.index_feature: row.ipa_target
+            for row in self.ipa_mappings
+            if row.confidence in self.ipa_mappings_confidence and row.ipa_target
+        }
 
     def resolved_section_mappings(self, section_index: str) -> dict[str, str]:
         """Merge section rows via longest-prefix ancestry; child overrides parent."""
@@ -84,12 +108,14 @@ class ParserConfig:
         return result
 
 
-@dataclass(frozen=True)
-class CompilerConfig:
-    """Compile-time settings from ``compiler_config.yml`` (ticket 75)."""
+class CompilerConfig(BaseModel):
+    """Fat compile-time config: group mappings plus series token maps."""
 
-    series_mappings_global: dict[str, str] = field(default_factory=dict)
-    series_mappings_sections: dict[str, dict[str, str]] = field(default_factory=dict)
+    model_config = ConfigDict(frozen=True)
+
+    group_mappings: dict[str, str] = Field(default_factory=dict)
+    series_mappings_global: dict[str, str] = Field(default_factory=dict)
+    series_mappings_sections: dict[str, dict[str, str]] = Field(default_factory=dict)
 
     def resolved_series_mappings(self, section_index: str) -> dict[str, str]:
         """Global token map with longest-prefix section rows overlaid."""
@@ -215,7 +241,7 @@ def apply_manual_mappings(
 
     Mappings are applied longest-``from`` first so a shorter pattern cannot steal
     a longer match when both would apply. Relative order among equal-length
-    ``from`` keys follows CSV order (stable sort).
+    ``from`` keys follows list order (stable sort).
     """
     if not text or not mappings:
         return text, []

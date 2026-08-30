@@ -19,8 +19,8 @@ Placement in the four-stage pipeline ([SYSTEM.md](docs/SYSTEM.md)):
 - **Index Diachronica parse** (HTML → applier-neutral **rule index** YAML; [ADR-0002](docs/adr/0002-applier-neutral-yaml-rule-index.md), [ADR-0006](docs/adr/0006-html-source-of-truth-yaml-successor.md))
   - **Ingest**
     - Read `data/diachronica/index_diachronica_original.html` as **source of truth** for each rule line unless an **Index Diachronica correction** replaces it ([ADR-0012](docs/adr/0012-index-diachronica-corrections-overlay.md))
-    - Read overlay `data/diachronica/index_diachronica_corrections.yml` (keyed by **rule id**)
-    - Read parse tables: `data/common/manual_mappings.csv`, `data/parser_config.yml` (`series_expansions`, IPA confidence, `skip_sections`), `data/asca/feature_mappings.csv`, `data/common/ipa_mappings.csv`
+    - Load `config/parser/` and `config/compile/asca/` via `config_loaders.py` into fat `ParserConfig` + `CompilerConfig`
+    - Read overlay `config/parser/index_diachronica_corrections.yml` (keyed by **rule id**)
     - Parse HTML non-strictly (lxml)
   - **Processing**
     - Discover each **sound-change section** (`<section id>` + first `<h2>`)
@@ -41,9 +41,9 @@ Placement in the four-stage pipeline ([SYSTEM.md](docs/SYSTEM.md)):
     - Uncertainty glosses → `sporadic: true` + `comment`
     - Trailing/embedded editorial glosses → `comment`
     - Env stress prose (`when stressed` / `when unstressed`) → ASCA-shaped env with `_`
-    - Feature-matrix names inside `[...]` via `feature_mappings.csv` (unmapped left literal)
+    - Feature-matrix names inside `[...]` via `ParserConfig.feature_mappings` (unmapped left literal)
     - ⚠️ **Collective subscripts** (`Xₓ`) fan out from `parser_config.yml` `series_expansions` into member **correspondence-series indices**; docs put this *after* feature mappings — code runs it *immediately after the field split*
-    - IPA character maps from `ipa_mappings.csv` (confidence-gated) on stages / env / exception
+    - IPA character maps from `ParserConfig.resolved_ipa_mappings()` on stages / env / exception
     - **Correspondence-series indices** (`h₁`, `s₁`) stay literal until compile ([ADR-0004](docs/adr/0004-series-indices-per-section-maps.md) amendment)
     - **Positional slots** / **identity subscripts** stay Index-shaped at parse
     - **Class letters** are *not* expanded at parse
@@ -57,7 +57,7 @@ Placement in the four-stage pipeline ([SYSTEM.md](docs/SYSTEM.md)):
 - **Applier compile** (index section → ASCA `.rsca` string; index YAML is never mutated)
   - **Ingest**
     - One **sound-change section** dict (`index`, `section`, optional `citation` / `comment` / `skipped`, `rules`)
-    - Compile tables: `data/asca/group_mappings.csv` (**abbreviation table**), `data/compiler_config.yml` (**series mappings**, hierarchical section + `global`)
+    - Compile tables: `CompilerConfig.group_mappings` (**abbreviation table**), `CompilerConfig` series mappings (**series mappings**, hierarchical section + `global`)
   - **Processing** (`DiachronicSeries` then `SoundChangeRule`)
     - One section → one `DiachronicSeries` (the runtime compile unit)
     - Assemble parts in order: title (`@ {index} - {section}`), optional citation, optional comment
@@ -74,7 +74,7 @@ Placement in the four-stage pipeline ([SYSTEM.md](docs/SYSTEM.md)):
     - **Series mapping**: correspondence-series indices → segments from `compiler_config.yml` (**before** positional/identity rewrite, so `h₁` is not treated as a slot)
     - ⚠️ **Positional slots** and **identity subscripts** → ASCA refs (`C=1`, bare `2`, `V=0`) — stage doc still says *planned*; this is intended compile-time work that should not live in the YAML
     - ⚠️ **Section-local abbreviations** (`TŠ`, `TS`) — planned, before group mappings so `TS` is not split into `T`+`S`
-    - **Class letters** via `group_mappings.csv`; unmapped letters stay literal
+    - **Class letters** via `CompilerConfig.group_mappings`; unmapped letters stay literal
     - Length `ː` / `(ː)` → `:[+long]`
     - Merge adjacent `[tone: N]` into the prior matrix
     - Typographic apostrophe → ejective `ʼ`

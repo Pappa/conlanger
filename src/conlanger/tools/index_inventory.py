@@ -25,6 +25,7 @@ from conlanger.appliers.asca import (
     validate_asca_part,
 )
 from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
+from conlanger.utils.mappings import CompilerConfig
 
 ERROR_CLASS_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     ("nested_brackets", re.compile(r"nested brackets", re.IGNORECASE)),
@@ -563,12 +564,12 @@ def _resolve_inventory_targets(
     rule: dict[str, Any],
     rule_id: str,
     *,
-    group_mappings: dict[str, str] | None = None,
+    compiler_config: CompilerConfig | None = None,
 ) -> list[_InventoryTarget]:
     """Compile paths shared by whole-rule inventory and field isolation."""
     mini = _mini_section(section, rule, rule_id)
     try:
-        scr = DiachronicSeries(mini, group_mappings=group_mappings)
+        scr = DiachronicSeries(mini, compiler_config=compiler_config)
     except (KeyError, ValueError) as exc:
         return [
             _InventoryTarget(
@@ -597,7 +598,7 @@ def _resolve_inventory_targets(
             _InventoryTarget(
                 alt_idx,
                 _series_for_alternative(
-                    section, rule, rule_id, alternative, group_mappings
+                    section, rule, rule_id, alternative, compiler_config
                 ),
                 alternative,
             )
@@ -847,7 +848,7 @@ def _series_for_alternative(
     rule: dict[str, Any],
     rule_id: str,
     alternative: SoundChangeRule,
-    group_mappings: dict[str, str] | None,
+    compiler_config: CompilerConfig | None,
 ) -> DiachronicSeries:
     """Build a standalone series for one optional-output alternative."""
     alt_rule: dict[str, Any] = {
@@ -860,7 +861,7 @@ def _series_for_alternative(
     if alternative.exception:
         alt_rule["exception"] = alternative.exception
     mini = _mini_section(section, alt_rule, rule_id)
-    return DiachronicSeries(mini, group_mappings=group_mappings)
+    return DiachronicSeries(mini, compiler_config=compiler_config)
 
 
 def _asca_validation_row(
@@ -916,7 +917,7 @@ def validate_index_rule_with_targets(
     rule_id: str,
     *,
     probe_words: Path | None,
-    group_mappings: dict[str, str] | None = None,
+    compiler_config: CompilerConfig | None = None,
     asca_bin: str | None = None,
 ) -> tuple[list[ValidationRow], list[_InventoryTarget]]:
     """Validate one index rule and return inventory rows with compile targets."""
@@ -955,7 +956,7 @@ def validate_index_rule_with_targets(
         return [row], [_InventoryTarget(None, None, None)]
 
     targets = _resolve_inventory_targets(
-        section, rule, rule_id, group_mappings=group_mappings
+        section, rule, rule_id, compiler_config=compiler_config
     )
     rows: list[ValidationRow] = []
     for target in targets:
@@ -1001,7 +1002,7 @@ def validate_index_rule(
     rule_id: str,
     *,
     probe_words: Path | None,
-    group_mappings: dict[str, str] | None = None,
+    compiler_config: CompilerConfig | None = None,
     asca_bin: str | None = None,
 ) -> list[ValidationRow]:
     """Validate one index rule.
@@ -1014,7 +1015,7 @@ def validate_index_rule(
         rule,
         rule_id,
         probe_words=probe_words,
-        group_mappings=group_mappings,
+        compiler_config=compiler_config,
         asca_bin=asca_bin,
     )
     return rows
@@ -1025,7 +1026,7 @@ def iter_inventory_with_field_isolation(
     *,
     field_isolation: bool = False,
     probe_words: Path | None,
-    group_mappings: dict[str, str] | None = None,
+    compiler_config: CompilerConfig | None = None,
     asca_bin: str | None = None,
 ) -> tuple[list[ValidationRow], list[FieldIsolationRow]]:
     """Validate the index and build matching field-isolation sidecar rows."""
@@ -1040,7 +1041,7 @@ def iter_inventory_with_field_isolation(
                 rule,
                 rule_id,
                 probe_words=probe_words,
-                group_mappings=group_mappings,
+                compiler_config=compiler_config,
                 asca_bin=asca_bin,
             )
             validation_rows.extend(rows)

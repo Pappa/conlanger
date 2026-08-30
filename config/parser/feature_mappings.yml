@@ -1,0 +1,150 @@
+voiced:
+  mapping_kind: rename
+  asca_target: voice
+  confidence: high
+  notes: Index [±voiced] → ASCA voice (LARYNG node)
+stressed:
+  mapping_kind: rename
+  asca_target: stress
+  confidence: high
+  notes: Index [±stressed] → ASCA stress suprasegmental
+sibilant:
+  mapping_kind: rename
+  asca_target: strident
+  confidence: high
+  notes: Sibilant manner → strident (MANNER); not sonorant
+rounded:
+  mapping_kind: rename
+  asca_target: round
+  confidence: high
+  notes: '[+rounded] vowel rounding'
+short:
+  mapping_kind: rename_invert
+  asca_target: long
+  confidence: medium
+  notes: Index [+short] = ASCA [-long]; polarity inverted per spike 29
+glottalized:
+  mapping_kind: rename_polarity
+  asca_target: place
+  confidence: medium
+  notes: Index [±glottalized] → ASCA place with polarity invert (cf. glottal in spike
+    29)
+glottal:
+  mapping_kind: rename_polarity
+  asca_target: place
+  confidence: medium
+  notes: Index [±glottal] → ASCA place with polarity invert (cf. glottal in spike
+    29)
+close-mid:
+  mapping_kind: bundle
+  asca_target: -hi,-lo,+tense
+  confidence: high
+  notes: Index [+close-mid] vowel height; ASCA mid row +tense per vowel-space table
+    (0.10.2)
+open-mid:
+  mapping_kind: bundle
+  asca_target: -hi,-lo,-tense
+  confidence: high
+  notes: Index [+open-mid] vowel height; ASCA mid row -tense per vowel-space table
+    (0.10.2)
+closed:
+  mapping_kind: rename
+  asca_target: hi
+  confidence: high
+  notes: Index [+closed] → ASCA [+hi]
+open:
+  mapping_kind: rename
+  asca_target: lo
+  confidence: high
+  notes: Index [+open] → ASCA [+lo]
+mid:
+  mapping_kind: bundle
+  asca_target: -hi,-lo
+  confidence: high
+  notes: Index [+mid] → ASCA [-hi, -lo]
+dental:
+  mapping_kind: bundle
+  asca_target: +cor,+anterior,+dist
+  confidence: high
+  host: C
+  notes: Coronal dental; cf. diacritics.json denti-alveolar (spike 29)
+alveolar:
+  mapping_kind: bundle
+  asca_target: +cor,+anterior,-dist
+  confidence: high
+  host: C
+  notes: Coronal alveolar (spike 29)
+palatal:
+  mapping_kind: bundle
+  asca_target: +cor,+dist
+  confidence: medium
+  host: C
+  notes: Coronal palatal/post-palatal (spike 29)
+velar:
+  mapping_kind: bundle
+  asca_target: -fr,+bk,+hi,-lo
+  confidence: high
+  host: C
+  notes: Dorsal velar; matches group_mappings K (spike 29)
+uvular:
+  mapping_kind: bundle
+  asca_target: -fr,+bk,-hi,-lo
+  confidence: high
+  host: C
+  notes: Dorsal uvular; matches group_mappings Q uvular branch (spike 29)
+creaky voice:
+  mapping_kind: bundle
+  asca_target: +voice, -sg, +cg
+  confidence: high
+  notes: Index [+creaky voice] → ASCA [+voice, -sg, +cg]
+aspirated:
+  mapping_kind: bundle
+  asca_target: -voice, +sg, -cg
+  confidence: high
+  notes: Index [+aspirated] → ASCA [-voice, +sg, -cg]
+guttural:
+  mapping_kind: rename
+  asca_target: laryngeal
+  confidence: high
+  notes: Index [±guttural] → ASCA laryngeal
+high tone:
+  mapping_kind: tone
+  asca_target: '5'
+  confidence: high
+  notes: 'Index [+high tone] → ASCA [tone: 5] (Chinese-style default; ticket 62)'
+low tone:
+  mapping_kind: tone
+  asca_target: '1'
+  confidence: high
+  notes: 'Index [+low tone] → ASCA [tone: 1]'
+falling tone:
+  mapping_kind: tone
+  asca_target: '51'
+  confidence: high
+  notes: 'Index [+falling tone] → ASCA [tone: 51]'
+low falling tone:
+  mapping_kind: tone
+  asca_target: '21'
+  confidence: high
+  notes: 'Index [+low falling tone] → ASCA [tone: 21]'
+high rising tone:
+  mapping_kind: tone
+  asca_target: '35'
+  confidence: high
+  notes: 'Index [+high rising tone] → ASCA [tone: 35]'
+emphatic:
+  mapping_kind: rename
+  asca_target: rtr
+  confidence: high
+  notes: 'Index [±emphatic] → ASCA rtr (note: emphatic is not present in the Index
+    - the feature is created in manual_mappings'
+fortis:
+  mapping_kind: rename
+  asca_target: tense
+  confidence: medium
+  notes: Index [+fortis] = ASCA [+tense]
+lenis:
+  mapping_kind: rename_invert
+  asca_target: tense
+  confidence: medium
+  notes: Index [+lenis] = ASCA [-tense]

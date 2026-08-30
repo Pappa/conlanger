@@ -2,7 +2,7 @@
 
 Parse-time transforms turn Index Diachronica HTML into an **applier-neutral** rule index YAML. This stage normalizes Index notation toward ASCA-parseable form in index fields (`input`, `output`, `env`, `exception`) while preserving the original HTML line in `raw` for audit ([ADR-0006](./adr/0006-html-source-of-truth-yaml-successor.md), [ADR-0010](./adr/0010-historical-fidelity-class-first-status.md)).
 
-**Primary code:** [`src/conlanger/tools/ingest/parser.py`](../src/conlanger/tools/ingest/parser.py) (`IndexDiachronicaParser`). **Collective subscript expansion:** [`src/conlanger/utils/series.py`](../src/conlanger/utils/series.py) (`apply_series_expansions` from `data/parser_config.yml`). **Correspondence-series indices** stay Index-shaped at parse and expand at [compile](./sound-change-applier.md) via `data/compiler_config.yml`. **Orchestration:** `uv run create_index` → [`create_index.py`](../src/conlanger/scripts/create_index.py).
+**Primary code:** [`src/conlanger/tools/ingest/parser.py`](../src/conlanger/tools/ingest/parser.py) (`IndexDiachronicaParser(parser_config)`). **Collective subscript expansion:** [`src/conlanger/utils/series.py`](../src/conlanger/utils/series.py) (`apply_series_expansions` from `ParserConfig.series_expansions`). **Correspondence-series indices** stay Index-shaped at parse and expand at [compile](./sound-change-applier.md) via `CompilerConfig`. **Config I/O:** [`config_loaders.py`](../src/conlanger/scripts/config_loaders.py) reads `config/parser/` and `config/compile/asca/`; **orchestration:** `uv run create_index` → [`create_index.py`](../src/conlanger/scripts/create_index.py).
 
 **Scope:** parse-time only. Class-letter expansion, length marks, ejectives, laryngeal aliases, and multi-step **chain expansion** run at [applier compile](./sound-change-applier.md). Compile validation runs in [validate](./validate.md) ([ADR-0003](./adr/0003-validate-after-applier-compile.md)).
 
@@ -40,9 +40,9 @@ Applied to a **working copy** of the extracted line; **`raw` is stored before an
 
 | Step | Status | Order | Rationale | Code |
 | --- | --- | ---: | --- | --- |
-| Index Diachronica correction overlay (by rule id) | implemented | A½1 | Owner-authored Unicode line fixes from `index_diachronica_corrections.yml`; replaces extracted text when the HTML **rule id** matches. | `parse_rule_element` |
-| Section mapping (`section_mappings`) | implemented | A½2 | Section-scoped token rewrites from `data/parser_config.yml` (e.g. Austronesian `*D` → class letter `D`); ancestry merge via `section_index_prefixes` ([ticket 97](../.scratch/cleaned-rule-index/issues/97-implement-parser-config-section-mappings.md)). | `apply_section_mappings` |
-| Manual mapping (`manual_mappings.csv`) | implemented | A½3 | Owner-authored substring rewrites on the working line; longest `from` first. | `apply_manual_mappings` |
+| Index Diachronica correction overlay (by rule id) | implemented | A½1 | Owner-authored Unicode line fixes from `config/parser/index_diachronica_corrections.yml`; replaces extracted text when the HTML **rule id** matches. | `parse_rule_element` |
+| Section mapping (`section_mappings`) | implemented | A½2 | Section-scoped token rewrites from `config/parser/parser_config.yml` (e.g. Austronesian `*D` → class letter `D`); ancestry merge via `section_index_prefixes` ([ticket 97](../.scratch/cleaned-rule-index/issues/97-implement-parser-config-section-mappings.md)). | `apply_section_mappings` |
+| Manual mapping (`manual_mappings.yml`) | implemented | A½3 | Owner-authored substring rewrites on the working line; longest `from` first. | `apply_manual_mappings` |
 | Quoted-prose detection | implemented | A½4 | Whole-line editorial prose → empty `stages` + `comment`; no further transforms. | `is_quoted_prose_paragraph` |
 
 ---
@@ -86,8 +86,8 @@ After **Manual mapping** and quoted-prose detection; **before** symbol normaliza
 | Uncertainty gloss → `sporadic: true` + `comment` | implemented | D1 | `sporadic`/`sometimes`/`occasionally` are editorial qualifiers, not ASCA syntax ([pass 19](../.scratch/cleaned-rule-index/issues/19-correction-pass-sporadic-qualifier.md)). Stripped prose captured, not discarded. Runs on remainder only (not **rule comment** seeded at B½). | `apply_sporadic_qualifier` |
 | Trailing / embedded editorial gloss strip → `comment` | implemented | D2 | Prose in quotes, parens, semicolon tails breaks ASCA; capture-not-discard ([passes 21, 24, 31, 82](../.scratch/cleaned-rule-index/map.md)). Internal order: embedded quotes → trailing quotes → trailing parens (including unclosed `(prose…` and `= /ə/` pronunciation glosses; set/matrix parentheticals stay in stages) → semicolon prose. Field-level `;` capture retired (B½). Unclosed strip is stages-only so env/exception can still pair a gloss Index split across `!`. | `apply_trailing_glosses` |
 | Env stress phrase normalization (`when stressed` / `when unstressed`) | implemented | D3 | Index env prose → ASCA env with `_` focus prefix ([pass 22](../.scratch/cleaned-rule-index/issues/22-correction-pass-stress-conditions.md)). | `apply_stress_conditions` |
-| Feature matrix synonym replacement (inside `[...]` only) | implemented | D4 | Index→ASCA renames / bundles / **tone** via `data/asca/feature_mappings.csv` (`mapping_kind` includes `tone` → `[tone: N]`; [pass 62](../.scratch/cleaned-rule-index/issues/62-correction-pass-tone-features.md)). Unmapped names left literal for `unknown_feature` clustering. | `apply_feature_mappings` |
-| Collective subscript expansion (`series_expansions`) | implemented | D5 | Fan out `Xₓ` collectives from `data/parser_config.yml` ([grill 73](../.scratch/cleaned-rule-index/issues/73-grill-series-mapping-config-sot.md)). Correspondence-series indices (`h₁`, `s₁`, …) stay literal until compile. | `apply_series_expansions` |
+| Feature matrix synonym replacement (inside `[...]` only) | implemented | D4 | Index→ASCA renames / bundles / **tone** via `config/parser/feature_mappings.yml` (`mapping_kind` includes `tone` → `[tone: N]`; [pass 62](../.scratch/cleaned-rule-index/issues/62-correction-pass-tone-features.md)). Unmapped names left literal for `unknown_feature` clustering. | `apply_feature_mappings` |
+| Collective subscript expansion (`series_expansions`) | implemented | D5 | Fan out `Xₓ` collectives from `config/parser/parser_config.yml` ([grill 73](../.scratch/cleaned-rule-index/issues/73-grill-series-mapping-config-sot.md)). Correspondence-series indices (`h₁`, `s₁`, …) stay literal until compile. | `apply_series_expansions` |
 
 ### Phase E — Rule assembly (post-transform)
 
@@ -107,11 +107,11 @@ After **Manual mapping** and quoted-prose detection; **before** symbol normaliza
 
 ---
 
-## `data/parser_config.yml`
+## `config/parser/parser_config.yml`
 
 | Key | Purpose |
 | --- | --- |
-| `ipa_mappings.confidence` | Which `ipa_mappings.csv` confidence levels apply at parse |
+| `ipa_mappings.confidence` | Which `config/parser/ipa_mappings.yml` confidence levels apply at parse (`None` = all rows) |
 | `series_expansions` | Collective subscript fan-out (`Hₓ` → `h₁, h₂, h₃`, …) |
 | `section_mappings` | Section-scoped token rewrites (`"10.1": {"*D": "D", …}`); applies to matching section and all descendants; child row overrides ancestor for the same `from` key ([ticket 97](../.scratch/cleaned-rule-index/issues/97-implement-parser-config-section-mappings.md)) |
 | `skip_sections` | List of `{id, reason}` — `id` matches section `index`; `reason` is operator documentation only. Listed sections gain `status: skipped` in parsed YAML. |
@@ -134,7 +134,7 @@ After **Manual mapping** and quoted-prose detection; **before** symbol normaliza
 | Edge-split / parse-time auto-skip for unrepresentable lines | removed | — | `status: skipped` is config-only ([ticket 89](../.scratch/cleaned-rule-index/issues/89-unify-status-skipped.md)); missing-arrow / gloss-only lines stay in parse → compile → validate. |
 | Prose-environment mapping (comment paragraphs → structured `env`) | planned (spike) | TBD | `comment` field captures qualifiers; structured env from prose not specified. |
 | Dedicated smart-quote normalizer | partial | TBD | Embedded/trailing `"`/`"` stripped as glosses at parse ([pass 24](../.scratch/cleaned-rule-index/issues/24-correction-pass-smart-quotes.md)); typographic apostrophe `'` → ejective at **compile**. |
-| Correspondence-series index mappings | compile-time | TBD | Section-scoped rows authored in `data/compiler_config.yml` ([ticket 75](../.scratch/cleaned-rule-index/issues/75-implement-compiler-config-series-mappings.md)); PIE laryngeals seeded in `global`. |
+| Correspondence-series index mappings | compile-time | TBD | Section-scoped rows authored in `config/compile/asca/compiler_config.yml` ([ticket 75](../.scratch/cleaned-rule-index/issues/75-implement-compiler-config-series-mappings.md)); PIE laryngeals seeded in `global`. |
 
 ---
 

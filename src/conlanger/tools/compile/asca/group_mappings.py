@@ -1,10 +1,8 @@
-"""Index class letters → ASCA groupings from ``group_mappings.csv``."""
+"""Index class letters → ASCA groupings."""
 
 import re
-from functools import lru_cache
 
 from conlanger.utils.features import apply_features_to_token
-from conlanger.utils.file_io import load_group_mappings
 
 # Class-letter boundary policy (compile-time tokenisation).
 # See docs/sound-change-applier.md — "Class-letter expansion boundaries".
@@ -47,12 +45,6 @@ _CLASS_AFTER_LABIALIZED = (
 
 _LABIAL = "\u02b7"
 _ASCA_NATIVE_GROUPINGS = frozenset("COSPFLNGV")
-
-
-@lru_cache(maxsize=1)
-def asca_group_mappings_dict() -> dict[str, str]:
-    """Load Index→ASCA class-letter mappings from package CSV."""
-    return {row.grouping: row.mapping for row in load_group_mappings()}
 
 
 def _labialize_mapping(mapping: str) -> str:

@@ -1,6 +1,6 @@
 # Index Diachronica corrections overlay keyed by rule id
 
-Maintainers can replace individual Index rule lines without editing `index_diachronica_original.html`. Overrides live in `data/diachronica/index_diachronica_corrections.yml` as a `rules` list of entries with `rule.id`, `rule.content` (Unicode Index rule string, no `<sub>` markup), and optional `rule.reason`.
+Maintainers can replace individual Index rule lines without editing `index_diachronica_original.html`. Overrides live in `config/parser/index_diachronica_corrections.yml` as a `rules` list of entries with `rule.id`, `rule.content` (Unicode Index rule string, no `<sub>` markup), and optional `rule.reason`.
 
 When a correction exists for a rule id, that string is the rule’s **`raw`** after HTML text extraction — an updated phonological claim while provenance **`source`** still points at the original HTML line. The HTML file remains the published artifact; corrections are project overlays for known errata.
 

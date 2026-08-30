@@ -7,6 +7,7 @@ from helpers import default_index_parser
 from lxml import html
 
 from conlanger.appliers.asca import ASCAValidationError, validate_asca
+from conlanger.scripts.config_loaders import load_parser_config
 from conlanger.tools.ingest import (
     write_rule_comment_phrase_summary,
 )
@@ -28,18 +29,10 @@ from conlanger.tools.ingest.transforms import (
     split_line_semicolon_comment,
 )
 from conlanger.tools.rules import DiachronicSeries
-from conlanger.utils.file_io import (
-    ipa_mappings_dict,
-    load_group_mappings,
-    load_index_diachronica_corrections,
-    load_ipa_mappings,
-    load_manual_mappings,
-    load_parser_config,
-    write_manual_mappings_matched_csv,
-)
+from conlanger.utils.file_io import write_manual_mappings_matched_csv
 from conlanger.utils.mappings import (
     FeatureMapping,
-    GroupMapping,
+    IpaMapping,
     ManualMapping,
     ParserConfig,
     apply_feature_mappings,
@@ -65,7 +58,7 @@ from conlanger.utils.parsing import (
 )
 from conlanger.utils.symbols import normalize_stress_marks, normalize_symbols
 from tests.fixtures.minimal_mappings import (
-    MINIMAL_GROUP_MAPPINGS,
+    minimal_compiler_config,
     minimal_feature_mappings,
     minimal_ipa_mappings,
 )
@@ -218,20 +211,6 @@ def test_extract_text_with_subs_tail_after_sub():
 def test_extract_text_with_subs_no_tail_after_sub():
     el = _html_fragment("<p>before<sub>2</sub></p>")
     assert extract_text_with_subs(el) == "before₂"
-
-
-def test_load_group_mappings_missing_columns(tmp_path: Path):
-    bad_csv = tmp_path / "bad.csv"
-    bad_csv.write_text("grouping\nS\n", encoding="utf-8")
-    with pytest.raises(ValueError, match="missing required columns"):
-        load_group_mappings(bad_csv)
-
-
-def test_load_group_mappings_without_comment_column(tmp_path: Path):
-    csv_path = tmp_path / "minimal.csv"
-    csv_path.write_text("grouping,mapping\nS,P\n", encoding="utf-8")
-    mappings = load_group_mappings(csv_path)
-    assert mappings == [GroupMapping("S", "P", "")]
 
 
 @pytest.mark.parametrize(
@@ -659,7 +638,7 @@ def test_parse_rule_element_medial_validate_asca():
     rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     section = {"index": "6.2.1.1.2", "section": "Proto-Agaw to Blin", "rules": rules}
     validate_asca(
-        DiachronicSeries(section, group_mappings=MINIMAL_GROUP_MAPPINGS),
+        DiachronicSeries(section, compiler_config=minimal_compiler_config()),
         probe_words=probe,
     )
 
@@ -679,7 +658,9 @@ def test_parse_rule_element_medial_deferred_env_exception_still_fails():
         "rules": rules,
     }
     with pytest.raises(ASCAValidationError, match="Expected '_', but received ','"):
-        validate_asca(DiachronicSeries(section, group_mappings=MINIMAL_GROUP_MAPPINGS))
+        validate_asca(
+            DiachronicSeries(section, compiler_config=minimal_compiler_config())
+        )
 
 
 def test_is_catch_all_else_env():
@@ -845,7 +826,7 @@ def test_parse_rule_element_stress_conditions_validate_asca():
             "rules": rules,
         }
         validate_asca(
-            DiachronicSeries(section, group_mappings=MINIMAL_GROUP_MAPPINGS),
+            DiachronicSeries(section, compiler_config=minimal_compiler_config()),
             probe_words=probe,
         )
 
@@ -934,6 +915,13 @@ def test_parser_marks_skip_sections_from_config(tmp_path: Path):
         '    reason: "test skip"\n',
         encoding="utf-8",
     )
+    for name, content in [
+        ("ipa_mappings.yml", "{}\n"),
+        ("manual_mappings.yml", "[]\n"),
+        ("feature_mappings.yml", "{}\n"),
+        ("index_diachronica_corrections.yml", "rules: []\n"),
+    ]:
+        (tmp_path / name).write_text(content, encoding="utf-8")
     _write_index_diachronica_html(
         html_path,
         section_id="SkipMe",
@@ -1374,7 +1362,7 @@ def test_kenyah_vowel_height_rules_validate():
         "rules": rules,
     }
     validate_asca(
-        DiachronicSeries(section, "asca", group_mappings=MINIMAL_GROUP_MAPPINGS)
+        DiachronicSeries(section, "asca", compiler_config=minimal_compiler_config())
     )
 
 
@@ -1386,83 +1374,6 @@ def test_apply_feature_mappings():
         {"stages": ["C[+voiced]", "C[+voice]"]},
         mappings,
     ) == {"stages": ["C[+voice]", "C[+voice]"]}
-
-
-def test_load_parser_config_high_only_override(tmp_path: Path):
-    path = tmp_path / "parser_config.yml"
-    path.write_text(
-        "ipa_mappings:\n  confidence:\n    - high\n",
-        encoding="utf-8",
-    )
-    config = load_parser_config(path)
-    assert config.ipa_mappings_confidence == frozenset({"high"})
-
-
-def test_load_parser_config_ignores_non_list_series_expansion_entries(tmp_path: Path):
-    path = tmp_path / "parser_config.yml"
-    path.write_text(
-        "ipa_mappings:\n  confidence: [high]\nseries_expansions:\n  Hₓ: not-a-list\n",
-        encoding="utf-8",
-    )
-    config = load_parser_config(path)
-    assert config.series_expansions == {}
-
-
-def test_load_parser_config_defaults_confidence_to_high_when_missing(tmp_path: Path):
-    path = tmp_path / "parser_config.yml"
-    path.write_text("ipa_mappings: {}\n", encoding="utf-8")
-    config = load_parser_config(path)
-    assert config.ipa_mappings_confidence == frozenset({"high"})
-
-
-def test_load_parser_config_skip_sections(tmp_path: Path):
-    path = tmp_path / "parser_config.yml"
-    path.write_text(
-        "ipa_mappings:\n  confidence: [high]\n"
-        "skip_sections:\n"
-        '  - id: "37.1.2.4.2"\n'
-        '    reason: "bad source"\n',
-        encoding="utf-8",
-    )
-    config = load_parser_config(path)
-    assert config.skip_section_ids == frozenset({"37.1.2.4.2"})
-
-
-def test_load_parser_config_skip_sections_ignores_malformed_entries(tmp_path: Path):
-    path = tmp_path / "parser_config.yml"
-    path.write_text(
-        "ipa_mappings:\n  confidence: [high]\n"
-        "skip_sections:\n"
-        "  - not-a-mapping\n"
-        "  - id: ''\n",
-        encoding="utf-8",
-    )
-    config = load_parser_config(path)
-    assert config.skip_section_ids == frozenset()
-
-
-def test_load_parser_config_section_mappings(tmp_path: Path):
-    path = tmp_path / "parser_config.yml"
-    path.write_text(
-        "ipa_mappings:\n  confidence: [high]\n"
-        "section_mappings:\n"
-        '  "10.1":\n'
-        '    "*D": "D"\n'
-        '    "*R": "R"\n'
-        '    "*T": "T"\n',
-        encoding="utf-8",
-    )
-    config = load_parser_config(path)
-    assert config.section_mappings_sections == {
-        "10.1": {"*D": "D", "*R": "R", "*T": "T"},
-    }
-
-
-def test_load_parser_config_section_mappings_empty_or_absent(tmp_path: Path):
-    path = tmp_path / "parser_config.yml"
-    path.write_text("ipa_mappings:\n  confidence: [high]\n", encoding="utf-8")
-    config = load_parser_config(path)
-    assert config.section_mappings_sections == {}
 
 
 def test_parser_config_resolved_section_mappings_ancestry_and_override():
@@ -1526,22 +1437,6 @@ def test_parse_order_correction_then_section_then_manual():
     assert rules[0]["stages"] == ["D", "manual"]
 
 
-def test_load_parser_config_skip_rules(tmp_path: Path):
-    path = tmp_path / "parser_config.yml"
-    path.write_text(
-        "ipa_mappings:\n  confidence: [high]\n"
-        "skip_rules:\n"
-        "  - id: Pre-Slavic-Vowel-Changes-i\n"
-        '    reason: "structural hold-out"\n',
-        encoding="utf-8",
-    )
-    config = load_parser_config(path)
-    assert config.skip_rule_ids == frozenset({"Pre-Slavic-Vowel-Changes-i"})
-    assert (
-        config.skip_rule_comments["Pre-Slavic-Vowel-Changes-i"] == "structural hold-out"
-    )
-
-
 def test_parser_marks_skip_rules_from_config(tmp_path: Path):
     html_path = tmp_path / "skip_rule.html"
     config_path = tmp_path / "parser_config.yml"
@@ -1552,6 +1447,13 @@ def test_parser_marks_skip_rules_from_config(tmp_path: Path):
         '    reason: "unrepresentable chain"\n',
         encoding="utf-8",
     )
+    for name, content in [
+        ("ipa_mappings.yml", "{}\n"),
+        ("manual_mappings.yml", "[]\n"),
+        ("feature_mappings.yml", "{}\n"),
+        ("index_diachronica_corrections.yml", "rules: []\n"),
+    ]:
+        (tmp_path / name).write_text(content, encoding="utf-8")
     _write_index_diachronica_html(
         html_path,
         section_id="SkipRule",
@@ -1565,27 +1467,6 @@ def test_parser_marks_skip_rules_from_config(tmp_path: Path):
     assert rule["stages"] == []
     assert rule["comment"] == "unrepresentable chain"
     assert rule["raw"] == "i → j [ə?] → {e,a}"
-
-
-def test_ipa_mappings_dict_high_only_config_excludes_medium(tmp_path: Path):
-    config_path = tmp_path / "parser_config.yml"
-    csv_path = tmp_path / "ipa_mappings.csv"
-    csv_path.write_text(
-        "index_feature,ipa_target,confidence,notes\n"
-        "ḱ,kʲ,high,\n"
-        "è,ɛ,high,\n"
-        "é,e,medium,\n",
-        encoding="utf-8",
-    )
-    config_path.write_text(
-        "ipa_mappings:\n  confidence:\n    - high\n",
-        encoding="utf-8",
-    )
-    config = load_parser_config(config_path)
-    mappings = ipa_mappings_dict(csv_path, config=config)
-    assert mappings["ḱ"] == "kʲ"
-    assert mappings["è"] == "ɛ"
-    assert "é" not in mappings
 
 
 def test_normalize_ipa_in_field():
@@ -1629,19 +1510,16 @@ def test_parse_rule_element_applies_configured_ipa_confidence_levels():
     assert "é" in rules2[0]["raw"]
 
 
-def test_index_diachronica_parser_high_only_config_skips_medium_at_parse(
-    tmp_path: Path,
-):
-    config_path = tmp_path / "parser_config.yml"
-    config_path.write_text(
-        "ipa_mappings:\n  confidence:\n    - high\n",
-        encoding="utf-8",
+def test_index_diachronica_parser_high_only_config_skips_medium_at_parse():
+    config = ParserConfig(
+        ipa_mappings_confidence=frozenset({"high"}),
+        ipa_mappings=(
+            IpaMapping("ḱ", "kʲ", confidence="high"),
+            IpaMapping("è", "ɛ", confidence="high"),
+            IpaMapping("é", "e", confidence="medium"),
+        ),
     )
-    config = load_parser_config(config_path)
-    parser = default_index_parser(
-        parser_config=config,
-        ipa_mappings={"ḱ": "kʲ", "è": "ɛ"},
-    )
+    parser = default_index_parser(parser_config=config)
     el = html.fragment_fromstring(
         '<p class="schg">é → ɛ / _#</p>',
         create_parent=False,
@@ -1699,7 +1577,7 @@ def test_parse_rule_element_voiced_matrix_validates_asca():
     rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
     section = {"index": "17.12", "section": "Voicing", "rules": rules}
     validate_asca(
-        DiachronicSeries(section, group_mappings=MINIMAL_GROUP_MAPPINGS),
+        DiachronicSeries(section, compiler_config=minimal_compiler_config()),
         probe_words=Path("tests/fixtures/asca_probe_words.wsca"),
     )
 
@@ -1819,17 +1697,6 @@ def test_parse_rule_element_captures_short_only_paren_in_env():
     assert "when stressed" in rules[0]["comment"]
 
 
-def test_load_ipa_mappings_returns_empty_when_file_missing(tmp_path: Path):
-    assert load_ipa_mappings(tmp_path / "missing.csv") == []
-
-
-def test_load_ipa_mappings_requires_columns(tmp_path: Path):
-    path = tmp_path / "ipa.csv"
-    path.write_text("index_feature,ipa_target\nŠ,ʃ\n", encoding="utf-8")
-    with pytest.raises(ValueError, match="missing required columns"):
-        load_ipa_mappings(path)
-
-
 def test_apply_ipa_mappings_noop_when_mappings_empty():
     parts = {"stages": ["Š", "TS"]}
     assert apply_ipa_mappings(parts, {}) == parts
@@ -1879,27 +1746,6 @@ def test_parse_rule_element_normalizes_near_miss_unknown_characters(
 def test_index_diachronica_parser_accepts_custom_corrections():
     parser = default_index_parser(corrections={"Test-id": "a → b"})
     assert parser._corrections == {"Test-id": "a → b"}
-
-
-def test_load_manual_mappings_returns_empty_when_file_missing(tmp_path: Path):
-    assert load_manual_mappings(tmp_path / "missing.csv") == []
-
-
-def test_load_manual_mappings_requires_columns(tmp_path: Path):
-    path = tmp_path / "manual.csv"
-    path.write_text("from,reason\nx,y\n", encoding="utf-8")
-    with pytest.raises(ValueError, match="missing required columns"):
-        load_manual_mappings(path)
-
-
-def test_load_manual_mappings_rejects_duplicate_from(tmp_path: Path):
-    path = tmp_path / "manual.csv"
-    path.write_text(
-        "from,to,reason\na → b,a → c,first\na → b,a → d,dup\n",
-        encoding="utf-8",
-    )
-    with pytest.raises(ValueError, match="duplicate"):
-        load_manual_mappings(path)
 
 
 def test_apply_manual_mappings_miss_leaves_text_unchanged():
@@ -2024,80 +1870,6 @@ def test_parse_records_manual_mapping_matches_and_unmatched(tmp_path: Path):
     assert match.manual_mapping == fixed
     unmatched = parser.unmatched_manual_mappings()
     assert [row.from_text for row in unmatched] == ["never-hits"]
-
-
-@pytest.mark.parametrize(
-    ("case_id", "yaml_content"),
-    [
-        ("non_dict_rule_block", "rules:\n  - rule: not-a-dict\n"),
-        (
-            "entry_without_id",
-            "rules:\n  - rule:\n      content: a → b\n      reason: no id\n",
-        ),
-        (
-            "whitespace_only_content",
-            (
-                "rules:\n"
-                "  - rule:\n"
-                "      id: blank\n"
-                "      content: '   '\n"
-                "      reason: skip\n"
-            ),
-        ),
-        ("rules_not_a_list", "rules: not-a-list\n"),
-        ("missing_rules_list", "other: {}\n"),
-        ("non_dict_yaml", "- not a dict\n"),
-    ],
-)
-def test_load_index_diachronica_corrections_returns_empty(
-    case_id: str, yaml_content: str, tmp_path: Path
-):
-    path = tmp_path / "corrections.yml"
-    path.write_text(yaml_content, encoding="utf-8")
-    assert load_index_diachronica_corrections(path) == {}
-
-
-def test_load_index_diachronica_corrections_missing_file(tmp_path: Path):
-    assert load_index_diachronica_corrections(tmp_path / "missing.yml") == {}
-
-
-def test_load_index_diachronica_corrections_skips_empty_content(tmp_path: Path):
-    path = tmp_path / "corrections.yml"
-    path.write_text(
-        "rules:\n"
-        "  - rule:\n"
-        "      id: good\n"
-        "      content: a → b\n"
-        "      reason: ok\n"
-        "  - rule:\n"
-        "      id: empty\n"
-        "      content:\n"
-        "      reason: skip\n",
-        encoding="utf-8",
-    )
-    assert load_index_diachronica_corrections(path) == {"good": "a → b"}
-
-
-def test_load_index_diachronica_corrections_reads_rules_list_schema(tmp_path: Path):
-    path = tmp_path / "corrections.yml"
-    path.write_text(
-        "rules:\n"
-        "  - rule:\n"
-        "      id: Test-id\n"
-        "      content: x → y\n"
-        "      reason: author note\n",
-        encoding="utf-8",
-    )
-    assert load_index_diachronica_corrections(path) == {"Test-id": "x → y"}
-
-
-def test_load_index_diachronica_corrections_skips_malformed_entries(tmp_path: Path):
-    path = tmp_path / "corrections.yml"
-    path.write_text(
-        "rules:\n  - not-a-rule\n  - rule:\n      id: ok\n      content: a → b\n",
-        encoding="utf-8",
-    )
-    assert load_index_diachronica_corrections(path) == {"ok": "a → b"}
 
 
 def test_unmatched_corrections_reports_unused_rule_ids(tmp_path: Path):

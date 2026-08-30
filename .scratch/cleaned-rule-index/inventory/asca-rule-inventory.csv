@@ -1789,7 +1789,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-*R,0,index_diachronica_original.html:3422,True,,,,,
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-*R,1,index_diachronica_original.html:3422,True,,,,,
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-ɲ-c-*j,,index_diachronica_original.html:3423,True,,,,,
-10.3.8,Proto-Oceanic to Tolomako,Tolomako-m-b,,index_diachronica_original.html:3424,False,unknown_character,asca-unrepresentable,̼,,"Syntax Error: Unknown character '̼' | n̼ t̼ > n t / _{a,e,i} | ^ @ Rule 1, Line 2"
+10.3.8,Proto-Oceanic to Tolomako,Tolomako-m-b,,index_diachronica_original.html:3424,False,unknown_character,asca-unrepresentable,̼,,"Syntax Error: Unknown character '̼' | m b > n̼ t̼ / _{a,e,i} | ^ @ Rule 1, Line 1"
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-pʷ-k,,index_diachronica_original.html:3425,True,,,,,
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-mʷ-bʷ-vʷ,,index_diachronica_original.html:3426,True,,,,,
 10.3.8,Proto-Oceanic to Tolomako,Tolomako-d-ɡ,,index_diachronica_original.html:3427,True,,,,,
@@ -3684,7 +3684,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-a_2,,index_diachronica_original.html:6046,True,,,,,
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-uː,,index_diachronica_original.html:6047,True,,,,,
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-uː_2,,index_diachronica_original.html:6048,True,,,,,
-17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-uː_3,,index_diachronica_original.html:6049,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received ')'. Did you forget a '/' between the output and environment? | u:[+long] > ʉ:[+long] / _V) | ^ @ Rule 1, Line 1"
+17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-uː_3,,index_diachronica_original.html:6049,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received ')'. Did you forget a '/' between the output and environment? | ʉ:[+long] > ʉw / _V) | ^ @ Rule 1, Line 2"
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-ei-ou,,index_diachronica_original.html:6050,True,,,,,
 17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-uː,,index_diachronica_original.html:6055,True,,,,,
 17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-iu,,index_diachronica_original.html:6056,True,,,,,
@@ -4951,7 +4951,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.12.1.1.3,Latin to French,French-è,,index_diachronica_original.html:7486,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | ɛ > iɛ / %[+lo] | ^ @ Rule 1, Line 1"
 17.12.1.1.3,Latin to French,French-è_2,,index_diachronica_original.html:7487,True,,,,,
 17.12.1.1.3,Latin to French,French-è_3,,index_diachronica_original.html:7488,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | ɛ > ɛ / %[+hi] | ^ @ Rule 1, Line 1"
-17.12.1.1.3,Latin to French,French-ò,,index_diachronica_original.html:7489,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '//' | o > uo / %[+lo] // _N | ^^ @ Rule 1, Line 1"
+17.12.1.1.3,Latin to French,French-ò,,index_diachronica_original.html:7489,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '//' | uo > uɛ / %[+lo] // _N | ^^ @ Rule 1, Line 2"
 17.12.1.1.3,Latin to French,French-ò_2,,index_diachronica_original.html:7490,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | o > ɔ / %[+hi] | ^ @ Rule 1, Line 1"
 17.12.1.1.3,Latin to French,French-dj,,index_diachronica_original.html:7491,True,,,,,
 17.12.1.1.3,Latin to French,French-d,,index_diachronica_original.html:7492,True,,,,,
@@ -5482,7 +5482,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 17.12.1.1.8,Latin to Romanian,"Romanian-sc,st",,index_diachronica_original.html:8054,True,,,,,
 17.12.1.1.8,Latin to Romanian,Romanian-s_2,,index_diachronica_original.html:8055,True,,,,,
 17.12.1.1.8,Latin to Romanian,Romanian-c_2,,index_diachronica_original.html:8056,True,,,,,
-17.12.1.1.8,Latin to Romanian,Romanian-kj-ɡj,,index_diachronica_original.html:8057,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '∅' | kj ɡj > tʃ {j,∅} (ɡj | ^ @ Rule 1, Line 1"
+17.12.1.1.8,Latin to Romanian,Romanian-kj-ɡj,,index_diachronica_original.html:8057,False,syntax_other,broken-syntax,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '∅' | tʃ {j,∅} (ɡj > is rare) | ^ @ Rule 1, Line 2"
 17.12.1.1.8,Latin to Romanian,Romanian-Pj,,index_diachronica_original.html:8058,True,,,,,
 17.12.1.1.8,Latin to Romanian,"Romanian-sj,stj,sːj",,index_diachronica_original.html:8059,True,,,,,
 17.12.1.1.8,Latin to Romanian,Romanian-j,,index_diachronica_original.html:8060,True,,,,,
@@ -9607,7 +9607,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 46.13,Old Norse to Faroese Vowel Shift,"Faroese-Vowel-Shift-a,æː",,index_diachronica_original.html:14418,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | {a,æ:[+long]} > ɛa / a | ^ @ Rule 1, Line 1"
 46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-aː,,index_diachronica_original.html:14419,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received ')'. Did you forget a '/' between the output and environment? | ɔa > a:[+long]):[+stress] / ɔ | ^ @ Rule 1, Line 2"
 46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-e,,index_diachronica_original.html:14420,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | e > e:[+long] / ɛ | ^ @ Rule 1, Line 1"
-46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-eː,,index_diachronica_original.html:14421,False,syntax_other,broken-syntax,,,"Syntax Error: Expected end of line, received ')'. Did you forget a '/' between the output and environment? | ɛa > e:[+long]):[+stress] / a | ^ @ Rule 1, Line 2"
+46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-eː,,index_diachronica_original.html:14421,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | e:[+long] > ɛa / a | ^ @ Rule 1, Line 1"
 46.13,Old Norse to Faroese Vowel Shift,"Faroese-Vowel-Shift-i,y",,index_diachronica_original.html:14422,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | {i,y} > i:[+long] / ɪ | ^ @ Rule 1, Line 1"
 46.13,Old Norse to Faroese Vowel Shift,"Faroese-Vowel-Shift-iː,yː",,index_diachronica_original.html:14423,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | {i:[+long],y:[+long]} > ʊi / ʊ | ^ @ Rule 1, Line 1"
 46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-o,,index_diachronica_original.html:14424,False,expected_underscore,asca-unrepresentable,,,"Syntax Error: Expected '_', but received '' | o > o:[+long] / ɔ | ^ @ Rule 1, Line 1"
@@ -9627,7 +9627,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-aj,0,index_diachronica_original.html:14441,False,unknown_character,asca-unrepresentable,₂,,"Syntax Error: Unknown character '₂' | aj > æ₂ | ^ @ Rule 1, Line 1"
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-aj,1,index_diachronica_original.html:14441,False,unknown_character,asca-unrepresentable,₂,,"Syntax Error: Unknown character '₂' | aj > i₂ | ^ @ Rule 1, Line 1"
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-aw,,index_diachronica_original.html:14442,True,,,,,
-46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-u,,index_diachronica_original.html:14443,False,unknown_character,asca-unrepresentable,ɤ,,"Syntax Error: Unknown character 'ɤ' | u [ɤ?] > {e,o,ɤ,a} (strong)/∅ | ^ @ Rule 1, Line 2"
+46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-u,,index_diachronica_original.html:14443,False,unknown_character,asca-unrepresentable,ɤ,,"Syntax Error: Unknown character 'ɤ' | u > u [ɤ?] | ^ @ Rule 1, Line 1"
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-uː,,index_diachronica_original.html:14444,True,,,,,
 46.15,Proto-Japanese to Old Japanese Vowel Shift,Old-Japanese-Vowel-Shift-e-o,,index_diachronica_original.html:14449,True,,,,,
 46.15,Proto-Japanese to Old Japanese Vowel Shift,Old-Japanese-Vowel-Shift-e-o_2,,index_diachronica_original.html:14450,True,,,,,

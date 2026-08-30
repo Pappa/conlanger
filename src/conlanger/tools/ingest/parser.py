@@ -47,7 +47,6 @@ from conlanger.utils.gloss import (
     is_quoted_prose_paragraph,
 )
 from conlanger.utils.mappings import (
-    FeatureMapping,
     ManualMapping,
     ManualMappingMatch,
     ParserConfig,
@@ -81,20 +80,12 @@ def note_from_element(el, *, source_file: str) -> dict[str, Any]:
 class IndexDiachronicaParser:
     """Parse Index Diachronica HTML into applier-neutral cleaned-index YAML."""
 
-    def __init__(
-        self,
-        *,
-        manual_mappings: list[ManualMapping],
-        parser_config: ParserConfig,
-        feature_mappings: dict[str, FeatureMapping],
-        ipa_mappings: dict[str, str],
-        corrections: dict[str, str] | None = None,
-    ) -> None:
-        self._manual_mappings = manual_mappings
-        self._parser_config = parser_config
-        self._feature_mappings = feature_mappings
-        self._ipa_mappings = ipa_mappings
-        self._corrections = corrections or {}
+    def __init__(self, parser_config: ParserConfig | None = None) -> None:
+        self._parser_config = parser_config or ParserConfig()
+        self._manual_mappings = self._parser_config.manual_mappings
+        self._feature_mappings = self._parser_config.feature_mappings
+        self._ipa_mappings = self._parser_config.resolved_ipa_mappings()
+        self._corrections = self._parser_config.corrections
         self.manual_mapping_matches: list[ManualMappingMatch] = []
         self._matched_manual_froms: set[str] = set()
         self._matched_correction_ids: set[str] = set()

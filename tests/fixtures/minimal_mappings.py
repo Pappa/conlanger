@@ -1,11 +1,17 @@
 """Stable inline mapping fixtures for tests (ticket 102).
 
-Owned by tests only — not read from production ``data/`` paths.
+Owned by tests only — not read from production ``config/`` paths.
 """
 
 from __future__ import annotations
 
-from conlanger.utils.mappings import FeatureMapping, ManualMapping, ParserConfig
+from conlanger.utils.mappings import (
+    CompilerConfig,
+    FeatureMapping,
+    IpaMapping,
+    ManualMapping,
+    ParserConfig,
+)
 
 MINIMAL_GROUP_MAPPINGS: dict[str, str] = {
     "A": "O:[+delrel]",
@@ -27,9 +33,41 @@ MINIMAL_GROUP_MAPPINGS: dict[str, str] = {
 }
 
 
+def minimal_compiler_config() -> CompilerConfig:
+    return CompilerConfig(
+        group_mappings=MINIMAL_GROUP_MAPPINGS,
+        series_mappings_sections={
+            "6": {"s₁": "F", "s₂": "F", "s₃": "F"},
+        },
+    )
+
+
 def minimal_parser_config() -> ParserConfig:
+    ipa_rows = tuple(
+        IpaMapping(index_feature=char, ipa_target=target, confidence="high")
+        for char, target in {
+            "Š": "ʃ",
+            "ḱ": "kʲ",
+            "è": "ɛ",
+            "é": "e",
+            "ı": "j",
+            "ṽ": "v\u0303",
+            "Ṽ": "v\u0303",
+            "û": "u",
+            "î": "i",
+            "oı̃": "oj\u0303",
+            "iı̃": "ij\u0303",
+            "eı̃": "ej\u0303",
+            "ɛ̃": "ɛ\u0303",
+            "wɛ̃": "wɛ\u0303",
+        }.items()
+    )
     return ParserConfig(
+        manual_mappings=minimal_manual_mappings(),
+        ipa_mappings=ipa_rows,
         ipa_mappings_confidence=frozenset({"high", "medium"}),
+        feature_mappings=minimal_feature_mappings(),
+        corrections={},
         series_expansions={
             "sₓ": ("s₁", "s₂", "s₃"),
             "Hₓ": ("h₁", "h₂", "h₃"),
@@ -71,19 +109,5 @@ def minimal_manual_mappings() -> list[ManualMapping]:
 
 
 def minimal_ipa_mappings() -> dict[str, str]:
-    return {
-        "Š": "ʃ",
-        "ḱ": "kʲ",
-        "è": "ɛ",
-        "é": "e",
-        "ı": "j",
-        "ṽ": "v\u0303",
-        "Ṽ": "v\u0303",
-        "û": "u",
-        "î": "i",
-        "oı̃": "oj\u0303",
-        "iı̃": "ij\u0303",
-        "eı̃": "ej\u0303",
-        "ɛ̃": "ɛ\u0303",
-        "wɛ̃": "wɛ\u0303",
-    }
+    """Resolved IPA dict for tests that still pass explicit mapping overrides."""
+    return minimal_parser_config().resolved_ipa_mappings()

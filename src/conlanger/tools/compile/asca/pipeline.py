@@ -30,38 +30,29 @@ from conlanger.tools.compile.asca.superscript_modifiers import (
     normalize_asca_superscript_modifiers,
 )
 from conlanger.tools.compile.asca.tone_matrices import normalize_asca_tone_matrices
-from conlanger.utils.file_io import load_compiler_config
 from conlanger.utils.mappings import CompilerConfig
 
 
-def _compile_kwargs(
-    *,
-    group_mappings: dict[str, str],
-    section_index: str,
+def _resolve_compiler_config(
     compiler_config: CompilerConfig | None,
-) -> tuple[dict[str, str], str, CompilerConfig]:
-    config = compiler_config if compiler_config is not None else load_compiler_config()
-    return group_mappings, section_index, config
+) -> CompilerConfig:
+    return compiler_config or CompilerConfig()
 
 
 def compile_asca_field_pre_subscript(
     text: str,
     *,
-    group_mappings: dict[str, str],
     section_index: str = "",
     compiler_config: CompilerConfig | None = None,
 ) -> str:
     """Run per-field transforms through group mappings (spike 38 orders 2–5)."""
     if not text:
         return text
-    mappings, index, config = _compile_kwargs(
-        group_mappings=group_mappings,
-        section_index=section_index,
-        compiler_config=compiler_config,
-    )
+    config = _resolve_compiler_config(compiler_config)
+    mappings = config.group_mappings
     text = normalize_asca_optional_grouping_ellipsis(text)
     text = apply_compiler_series_mappings(
-        text, section_index=index, compiler_config=config
+        text, section_index=section_index, compiler_config=config
     )
     text = apply_section_local_abbreviations(text)
     text = normalize_asca_superscript_modifiers(text, mappings)
@@ -86,7 +77,6 @@ def compile_asca_rule_fields(
     env: str | None = None,
     exception: str | None = None,
     *,
-    group_mappings: dict[str, str],
     section_index: str = "",
     compiler_config: CompilerConfig | None = None,
 ) -> str:
@@ -94,7 +84,6 @@ def compile_asca_rule_fields(
     inp = drop_mixed_parallel_null_columns(inp)
     output = drop_mixed_parallel_null_columns(output)
     compile_kwargs = {
-        "group_mappings": group_mappings,
         "section_index": section_index,
         "compiler_config": compiler_config,
     }

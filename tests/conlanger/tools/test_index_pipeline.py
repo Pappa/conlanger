@@ -16,7 +16,7 @@ from conlanger.appliers.asca import validate_asca
 from conlanger.tools.index_inventory import validate_index_rule
 from conlanger.tools.rules import DiachronicSeries
 from tests.conftest import ASCA_INSTALLED
-from tests.fixtures.minimal_mappings import MINIMAL_GROUP_MAPPINGS
+from tests.fixtures.minimal_mappings import minimal_compiler_config
 
 _PROBE = Path(__file__).resolve().parents[2] / "fixtures" / "asca_probe_words.wsca"
 
@@ -173,7 +173,7 @@ def test_e2e_minimal_html_fixture_compile_and_validate(tmp_path: Path):
                 rule,
                 rule_id,
                 probe_words=_PROBE,
-                group_mappings=MINIMAL_GROUP_MAPPINGS,
+                compiler_config=minimal_compiler_config(),
             )
         )
 
@@ -183,7 +183,7 @@ def test_e2e_minimal_html_fixture_compile_and_validate(tmp_path: Path):
     assert rows[0].reason == ""
 
     validate_asca(
-        DiachronicSeries(section, group_mappings=MINIMAL_GROUP_MAPPINGS),
+        DiachronicSeries(section, compiler_config=minimal_compiler_config()),
         probe_words=_PROBE,
     )
 
@@ -256,7 +256,7 @@ def test_e2e_smoke_pipeline_validate(
             rule,
             str(rule.get("rule_id", "")),
             probe_words=_PROBE,
-            group_mappings=MINIMAL_GROUP_MAPPINGS,
+            compiler_config=minimal_compiler_config(),
         )
     ]
 

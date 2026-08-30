@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 
 # Refactor config layout, YAML migration, and dependency injection
 
@@ -105,12 +105,12 @@ Update living docs: `map.md`, `docs/*.md`, `CONTEXT.md` path references, ADR-001
 
 ## Acceptance criteria
 
-- [ ] All seven config artifacts under `config/` as YAML; legacy mapping CSVs and top-level `data/parser_config.yml` / `data/compiler_config.yml` removed.
-- [ ] No config file loading under `src/conlanger` outside `scripts/`.
-- [ ] `IndexDiachronicaParser` / compile pipeline run with empty configs without disk I/O.
-- [ ] Full `uv run create_index` inventory-equivalent to pre-refactor baseline.
-- [ ] Loader tests in `tests/conlanger/scripts/test_config_loaders.py`; no production config assertions in package tests.
-- [ ] Full quality gate passes.
+- [x] All seven config artifacts under `config/` as YAML; legacy mapping CSVs and top-level `data/parser_config.yml` / `data/compiler_config.yml` removed.
+- [x] No config file loading under `src/conlanger` outside `scripts/`.
+- [x] `IndexDiachronicaParser` / compile pipeline run with empty configs without disk I/O.
+- [x] Full `uv run create_index` inventory-equivalent to pre-refactor baseline.
+- [x] Loader tests in `tests/conlanger/scripts/test_config_loaders.py`; no production config assertions in package tests.
+- [x] Full quality gate passes.
 
 ## Related
 

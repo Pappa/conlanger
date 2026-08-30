@@ -73,23 +73,25 @@ def test_normalize_asca_superscript_modifiers_leaves_boundaries_and_ipa_literals
     ],
 )
 def test_superscript_inventory_representatives_validate(
-    inp, out, env, fx_sample_group_mappings
+    inp, out, env, fx_sample_compiler_config
 ):
     rule = {"stages": [inp, out]}
     if env:
         rule["env"] = env
     section = {"index": "1", "section": "superscript", "rules": [rule]}
     validate_asca(
-        DiachronicSeries(section, "asca", group_mappings=fx_sample_group_mappings)
+        DiachronicSeries(section, "asca", compiler_config=fx_sample_compiler_config)
     )
 
 
-def test_superscript_s_aspirated_rule_compiles_via_pipeline(fx_sample_group_mappings):
+def test_superscript_s_aspirated_rule_compiles_via_pipeline(fx_sample_compiler_config):
     section = {
         "index": "1",
         "section": "superscript",
         "rules": [{"stages": ["Sʰ", "S"], "env": "#v_V"}],
     }
-    ruleset = DiachronicSeries(section, "asca", group_mappings=fx_sample_group_mappings)
+    ruleset = DiachronicSeries(
+        section, "asca", compiler_config=fx_sample_compiler_config
+    )
     assert ruleset._parts[-1].value == "C:[+labial][+spread] > P / #v_V"
     validate_asca(ruleset)

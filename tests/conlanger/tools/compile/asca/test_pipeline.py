@@ -34,7 +34,14 @@ from conlanger.utils.mappings import CompilerConfig
             "_h₁",
             "a > e // _h",
         ),
-        (None, "eh₂", "a", None, None, "ex > a"),
+        (
+            CompilerConfig(series_mappings_global={"h₂": "x"}),
+            "eh₂",
+            "a",
+            None,
+            None,
+            "ex > a",
+        ),
     ],
     ids=[
         "custom_global_mapping",
@@ -52,7 +59,6 @@ def test_compile_applies_compiler_config_series_mappings(
         output,
         env,
         exception,
-        group_mappings={},
         compiler_config=compiler_config,
     )
     assert compiled == expected
