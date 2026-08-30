@@ -14,10 +14,10 @@
 
 | count | failure_class |
 |------:|---------------|
-| 331 | `syntax_other` |
+| 330 | `syntax_other` |
 | 193 | `expected_underscore` |
 | 134 | `runtime_other` |
-| 128 | `unknown_character` |
+| 129 | `unknown_character` |
 | 37 | `expected_number` |
 | 33 | `prose_or_expected_arrow` |
 | 32 | `diacritic_prereq` |
