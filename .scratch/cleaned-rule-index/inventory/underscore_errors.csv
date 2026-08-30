@@ -93,7 +93,7 @@ section_index,rule_id,error_token,rule
 17.12.1.1.3,French-t_3,,"t > ∅ / :{ʃ,s}: | ^ @ Rule 1, Line 1"
 17.12.1.1.3,French-é,,"e > ɛi / %[+lo] | ^ @ Rule 1, Line 1"
 17.12.1.1.3,French-é_2,,"e > ɛ / %[+hi] | ^ @ Rule 1, Line 1"
-17.12.1.1.3,French-ó,,"ou > ɛu / %[+lo] | ^ @ Rule 1, Line 2"
+17.12.1.1.3,French-ó,,"o > ou / %[+lo] | ^ @ Rule 1, Line 1"
 17.12.1.1.3,French-ó_3,,"o > ou / %[+hi] | ^ @ Rule 1, Line 1"
 17.12.1.1.3,French-a_3,,"a > ɛ / %[+lo] | ^ @ Rule 1, Line 1"
 17.12.1.1.3,"French-ei,ɔi",,"{ei,ɔi} > oi / C[-nas] | ^ @ Rule 1, Line 1"

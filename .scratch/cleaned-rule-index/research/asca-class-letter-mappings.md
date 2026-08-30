@@ -1,7 +1,7 @@
 # ASCA feature-matrix expansions for Index class letters
 
 Spike for [09-spike-asca-class-letter-feature-matrices](../issues/09-spike-asca-class-letter-feature-matrices.md).  
-Primary sources: **ASCA 0.10.2** ([`doc/doc.md`](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md), [`CHANGELOG.md`](https://github.com/Girv98/asca-rust/blob/0.10.2/CHANGELOG.md)), Index Diachronica Key to Abbreviations ([`data/diachronica/sound_change_abbreviations.txt`](../../../data/diachronica/sound_change_abbreviations.txt), [HTML §5](../../../src/conlanger/data/diachronica/index_diachronica_original.html#Abbreviations)), current [`data/asca/group_mappings.csv`](../../../data/asca/group_mappings.csv), and [`asca-rule-validity.md`](./asca-rule-validity.md).
+Primary sources: **ASCA 0.10.2** ([`doc/doc.md`](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md), [`CHANGELOG.md`](https://github.com/Girv98/asca-rust/blob/0.10.2/CHANGELOG.md)), Index Diachronica Key to Abbreviations ([`.scratch/cleaned-rule-index/research/_spike09/sound_change_abbreviations.txt`](_spike09/sound_change_abbreviations.txt), [HTML §5](../../../src/conlanger/data/diachronica/index_diachronica_original.html#Abbreviations)), current [`data/asca/group_mappings.csv`](../../../data/asca/group_mappings.csv), and [`asca-rule-validity.md`](./asca-rule-validity.md).
 
 **Runtime constraint:** `IndexDiachronicaParser.apply_group_mappings` uses `str.maketrans` (single-character keys → replacement strings). Expansions must be valid ASCA tokens once substituted; nested Index letters inside a replacement (e.g. `{S,G}`) are **not** re-translated in the same pass (verified locally).
 
@@ -71,7 +71,7 @@ ASCA inbuilt groupings ([Groupings](https://github.com/Girv98/asca-rust/blob/0.1
 
 ### Letters aligned with ASCA (no CSV row)
 
-**C, O, F, L, N, V** — Index definitions match ASCA groupings ([Key to Abbreviations](../../../data/diachronica/sound_change_abbreviations.txt), [doc.md Groupings](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#groupings)). Do **not** add rows: extra mappings would break rules that rely on ASCA-native semantics (especially **C** post-0.10.0).
+**C, O, F, L, N, V** — Index definitions match ASCA groupings ([Key to Abbreviations](_spike09/sound_change_abbreviations.txt), [doc.md Groupings](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#groupings)). Do **not** add rows: extra mappings would break rules that rely on ASCA-native semantics (especially **C** post-0.10.0).
 
 **C caveat:** Index “consonant” in prose sometimes includes semivowels; ASCA **C** excludes glides. Section-specific `{C,G}` overrides belong in validation clusters, not the global CSV.
 
@@ -79,7 +79,7 @@ ASCA inbuilt groupings ([Groupings](https://github.com/Girv98/asca-rust/blob/0.1
 
 ### A — Affricate
 
-- **Index:** `A = Affricate` ([sound_change_abbreviations.txt L13](../../../data/diachronica/sound_change_abbreviations.txt)).
+- **Index:** `A = Affricate` ([sound_change_abbreviations.txt L13](_spike09/sound_change_abbreviations.txt)).
 - **ASCA:** No affricate grouping. Plosives **P** require `-delrel`; affricates are obstruents with `+delrel` ([Groupings](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#groupings)).
 - **Current:** `[+delrel]` — valid but matches any segment with delayed release without obstruent scope.
 - **Recommended:** `O:[+delrel]` — obstruent affricates (matches `t͡s`, `d͡ʒ`, etc.).
@@ -221,7 +221,7 @@ From [`.scratch/cleaned-rule-index/inventory/asca-rule-inventory.csv`](../invent
 | Grouping | Typical cause | CSV / cluster action |
 |----------|---------------|----------------------|
 | **M** | Diphthong | **Unmapped** — cluster (see above) |
-| **X** | Meta-variable “any segment” ([Key `(…X)`](../../../data/diachronica/sound_change_abbreviations.txt)) | Not a class letter — validation cluster |
+| **X** | Meta-variable “any segment” ([Key `(…X)`](_spike09/sound_change_abbreviations.txt)) | Not a class letter — validation cluster |
 | **Y**, **I** | Section-local series (Tlapanec, Finnic, Salish) | Not in Key — cluster / section overrides |
 | **M** in `V_V (Marathi)` | Prose paren, not grouping | Parser/fog fix, not CSV |
 
@@ -272,7 +272,7 @@ Z,[+cont],Index continuant; includes vowels — use {F L G} or O:[+cont] in clus
 
 | Claim | Primary source |
 |-------|----------------|
-| Index class letter definitions | [`data/diachronica/sound_change_abbreviations.txt`](../../../data/diachronica/sound_change_abbreviations.txt); [HTML §5 Key to Abbreviations](../../../src/conlanger/data/diachronica/index_diachronica_original.html#Abbreviations) |
+| Index class letter definitions | [`.scratch/cleaned-rule-index/research/_spike09/sound_change_abbreviations.txt`](_spike09/sound_change_abbreviations.txt); [HTML §5 Key to Abbreviations](../../../src/conlanger/data/diachronica/index_diachronica_original.html#Abbreviations) |
 | ASCA grouping matrices | [doc.md § Groupings](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#groupings); [`src/rule/parser.rs` `get_group`](https://github.com/Girv98/asca-rust/blob/0.10.2/src/rule/parser.rs) |
 | C = `[+cons,-syll]` breaking change | [CHANGELOG 0.10.0](https://github.com/Girv98/asca-rust/blob/0.10.2/CHANGELOG.md) |
 | Place/laryngeal subnodes | [doc.md § Matching a subnode](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#matching-a-subnode) |

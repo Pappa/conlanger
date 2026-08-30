@@ -12,7 +12,7 @@ Which Index Diachronica abbreviations (class letters, series indices, other shor
 
 - Skills: `/research` for ASCA/Brassica support surfaces; `/grill-with-docs` (or grilling + domain-modeling) for which expansions / `skipped` treatments to adopt.
 - Honor [Historical fidelity vs valid-but-inaccurate fallback](04-historical-fidelity-vs-validity.md).
-- Evidence: `data/diachronica/sound_change_abbreviations.txt`, `index_diachronica_original.html`, [01-valid-asca-rule-string](01-valid-asca-rule-string.md).
+- Evidence: `.scratch/cleaned-rule-index/research/_spike09/sound_change_abbreviations.txt`, `index_diachronica_original.html`, [01-valid-asca-rule-string](01-valid-asca-rule-string.md).
 
 ## Answer
 
