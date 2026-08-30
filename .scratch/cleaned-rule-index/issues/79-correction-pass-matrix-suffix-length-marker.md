@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by:
 
 # Correction pass: matrix-suffix length marker `ː`
@@ -29,17 +29,41 @@ Prototype (2026-08-19): extend compile pass with `Matrix]ː` → `Matrix, +long]
 3. Full inventory re-run; record before/after for `ː` and sections-all-OK.
 4. Do **not** tackle Iroquoian `ː2` / stress-meta shapes in this pass — defer to meta-notation / ticket 64 follow-ons.
 
+## What was built
+
+Extended `normalize_asca_length_marks()` in `length_marks.py`:
+
+- `Matrix]ː` → `Matrix, +long]` (matrix-suffix length; stress/tone env+I/O)
+- `Matrix](ː)` → `Matrix, +long]` (matrix + parenthesized optional length)
+- `Vn(ː)` → `Vn:[+long]` (Salish template positional vowels)
+- `(?!:)` guard on grouping/segment length so `Vː:[+stress]` Iroquoian hold-outs stay literal
+
+Unit + ASCA smoke tests in `tests/conlanger/tools/compile/asca/test_length_marks.py` (matrix-suffix cases moved from `test_tools_compile_asca.py`).
+
+## Answer (before/after)
+
+Baseline: **8089 / 9676** ok; **10** rules with `unknown_character` / error_token `ː`; **373 / 714** sections all-OK.
+
+Re-run (`uv run validate_rules`):
+
+- **8090 / 9676** ok (**+1**)
+- `ː` unknown_character **10 → 5** (remainder: NW Caucasian `seg(mod)ː`, Iroquoian `ː2`, Pre-Finnic `ɤː?`)
+- **unknown_character** total **128 → 124** (−4; Salish `V3(ː)` rows flip to `runtime_other`)
+- Sections all-OK **373 / 714** (unchanged)
+
+Ok-flip: Proto-Tocharian `{t,dʱ} > tʲ / _V:[+front](ː)` (17.13).
+
+## Acceptance criteria
+
+- [x] Matrix-suffix `ː` patterns documented with ASCA smoke examples
+- [x] `normalize_asca_length_marks()` extended; Iroquoian meta hold-outs listed
+- [x] Full inventory re-run; before/after ok + `ː` residual count in **Answer**
+- [x] Fixtures updated where validation outcomes change (no `sound_change_rules.csv` rows for affected rules; inventory CSVs regenerated)
+
 ## Policy
 
 - Compile-layer fix only; index YAML `raw` unchanged (ADR-0010).
 - Class-first mechanical transform — same edit ladder as tickets 15/25.
-
-## Acceptance criteria
-
-- [ ] Matrix-suffix `ː` patterns documented with ASCA smoke examples
-- [ ] `normalize_asca_length_marks()` extended; Iroquoian meta hold-outs listed
-- [ ] Full inventory re-run; before/after ok + `ː` residual count in **Answer**
-- [ ] Fixtures updated where validation outcomes change
 
 ## References
 

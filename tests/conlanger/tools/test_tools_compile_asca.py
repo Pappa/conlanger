@@ -5,42 +5,6 @@ from conlanger.tools.compile.asca.ejectives import normalize_asca_ejective_marks
 from conlanger.tools.compile.asca.ellipsis import (
     normalize_asca_optional_grouping_ellipsis,
 )
-from conlanger.tools.compile.asca.length_marks import normalize_asca_length_marks
-
-
-@pytest.mark.parametrize(
-    ("text", "expected"),
-    [
-        ("aː", "a:[+long]"),
-        ("Vː", "V:[+long]"),
-        ("e(ː)", "e:[+long]"),
-        ("tsː", "ts:[+long]"),
-        ("_{i,e(ː),a}", "_{i,e:[+long],a}"),
-        ("VNC > VːC[+voiced]", "VNC > V:[+long]C[+voiced]"),
-        ("tʷː", "tʷ:[+long]"),
-        ("æː", "æ:[+long]"),
-        ("{e,ɤ}ː", "{e,ɤ}:[+long]"),
-        ("C_C{ː,C}V", "C_C{V:[+long],C}V"),
-        ("e(ː,j)", "{e:[+long],ej}"),
-        ("{o,u}(ː)", "{o,u}:[+long]"),
-        ("s:[+long]ː", "s:[+long]"),
-        ("aj aw > e(ː,j) o(ː,w)", "aj aw > {e:[+long],ej} {o:[+long],ow}"),
-        ("a", "a"),
-        ("", ""),
-        ("0ː", "0:[+long]"),
-        ("C=0 V0 > 0ː", "C=0 V0 > 0:[+long]"),
-        ("V:[+stress]ː[tone: 51]", "V:[+stress, +long][tone: 51]"),
-        ("V:[+stress]ː[-falling tone]", "V:[+stress, +long][-falling tone]"),
-        (
-            "S:[- voice]ː S:[+ voice]ː → hS S:[- voice]ː",
-            "S:[- voice, +long] S:[+ voice, +long] → hS S:[- voice, +long]",
-        ),
-        ("Vː[tone: 51]", "V:[+long][tone: 51]"),
-        ("%ː", "%:[+long]"),
-    ],
-)
-def test_normalize_asca_length_marks(text, expected):
-    assert normalize_asca_length_marks(text) == expected
 
 
 @pytest.mark.parametrize(
