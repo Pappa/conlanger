@@ -23,9 +23,9 @@ Sound-change rule index processing — parse → compile → validate:
 
 | Stage | Doc | Operator command |
 | --- | --- | --- |
-| Index Diachronica parse | [index-diachronica-parser.md](./index-diachronica-parser.md) | `uv run create_index` |
-| Applier compile | [sound-change-applier.md](./sound-change-applier.md) | (in-memory inside `validate_rules`) |
-| Validate | [validate.md](./validate.md) | `uv run validate_rules` |
+| Index Diachronica parse | [index-diachronica-parser.md](./system/index-diachronica-parser.md) | `uv run create_index` |
+| Applier compile | [sound-change-applier.md](./system/sound-change-applier.md) | (in-memory inside `validate_rules`) |
+| Validate | [validate.md](./system/validate.md) | `uv run validate_rules` |
 
 ## Exploratory / out of pipeline
 

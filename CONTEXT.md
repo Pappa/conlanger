@@ -8,7 +8,7 @@ Automatic and assisted conlang tooling: phoneme inventories, morphology/grammar 
 - [System map](docs/SYSTEM.md) — parse → compile → validate for the rule index
 - [Index Diachronica parse](docs/system/index-diachronica-parser.md)
 - [Applier compile](docs/system/sound-change-applier.md)
-- [Validate](docs/validate.md) — inventory, correction loop, compile validation
+- [Validate](docs/system/validate.md) — inventory, correction loop, compile validation
 - [Architectural decisions](docs/adr/)
 
 ## Language

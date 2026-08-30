@@ -208,7 +208,7 @@ Rationale: lower seams (rule-line splitting alone, or `validate_asca` alone) do 
 - Wayfinder map (living decisions, ticket frontier): `.scratch/cleaned-rule-index/map.md`.
 - ASCA validity reference: `.scratch/cleaned-rule-index/research/asca-rule-validity.md`.
 - Inventory baseline: `.scratch/cleaned-rule-index/inventory/` (**8089 ok / 9676 rows**, 83.6%).
-- Pipeline docs: `docs/system/index-diachronica-parser.md`, `docs/system/sound-change-applier.md`, `docs/validate.md`, `docs/SYSTEM.md`.
+- Pipeline docs: `docs/system/index-diachronica-parser.md`, `docs/system/sound-change-applier.md`, `docs/system/validate.md`, `docs/SYSTEM.md`.
 - Re-inventory after major milestones: `uv run create_index`.
 - Grill 71 (paren/parallel set notation) paused 2026-08-29; resume from `research/io-optionals-asca-and-convention.md` after ticket 100 resolution.
 - Config layout migration (ticket 101) and compiled-fields-at-render (ticket 99) are resolved as of 2026-08-30.
