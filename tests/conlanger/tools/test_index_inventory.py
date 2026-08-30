@@ -25,6 +25,7 @@ from conlanger.tools.index_inventory import (
     parse_unknown_token_error,
     reason_for_failure,
     section_all_ok_stats,
+    section_outcome_stats,
     summarize_inventory,
     top_error_tokens,
     top_error_tokens_with_suggested_from_dataframe,
@@ -561,6 +562,47 @@ def test_top_error_tokens_unlimited():
     assert len(top_error_tokens(rows, "unknown_grouping", limit=None)) == 6
 
 
+def test_section_outcome_stats():
+    rows = [
+        ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
+        ValidationRow("1", "A", "r1", "s:2", True, "", "", "", "", ""),
+        ValidationRow("2", "B", "r0", "s:3", True, "", "", "", "", ""),
+        ValidationRow(
+            "2", "B", 1, "s:4", False, "syntax_other", "broken-syntax", "", "", ""
+        ),
+        ValidationRow(
+            "3", "C", 0, "s:5", False, "syntax_other", "broken-syntax", "", "", ""
+        ),
+        ValidationRow(
+            "9.9.9",
+            "Skipped",
+            "r0",
+            "s:6",
+            True,
+            SECTION_SKIPPED_FAILURE_CLASS,
+            "",
+            "",
+            "",
+            "section skipped",
+        ),
+    ]
+    outcomes = section_outcome_stats(rows)
+    assert outcomes.total == 4
+    assert outcomes.all_ok == 1
+    assert outcomes.some_ok == 1
+    assert outcomes.none_ok == 1
+    assert outcomes.skipped == 1
+
+
+def test_section_outcome_stats_empty():
+    outcomes = section_outcome_stats([])
+    assert outcomes.total == 0
+    assert outcomes.all_ok == 0
+    assert outcomes.some_ok == 0
+    assert outcomes.none_ok == 0
+    assert outcomes.skipped == 0
+
+
 def test_section_all_ok_stats():
     rows = [
         ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
@@ -658,10 +700,14 @@ def test_summarize_inventory():
         asca_version="0.10.x",
     )
     assert "Rows: **3**" in text
+    assert "## Rules" in text
     assert "OK: **1** (33.3%)" in text
     assert "Fail: **2** (66.7%)" in text
     assert "Skipped: **0** (0.0%)" in text
-    assert "Sections all OK: **0 / 1** (0.0%)" in text
+    assert "## Sections" in text
+    assert "All OK: **0 / 1** (0.0%)" in text
+    assert "Some OK: **1 / 1** (100.0%)" in text
+    assert "None OK: **0 / 1** (0.0%)" in text
     assert "Sections skipped: **0 / 1** (0.0%)" in text
     assert "| 2 | `syntax_other` |" in text
     assert "## Common Errors" in text
@@ -680,7 +726,9 @@ def test_summarize_inventory_empty():
     assert "Rows: **0**" in text
     assert "OK: **0** (0.0%)" in text
     assert "Skipped: **0** (0.0%)" in text
-    assert "Sections all OK: **0 / 0** (0.0%)" in text
+    assert "All OK: **0 / 0** (0.0%)" in text
+    assert "Some OK: **0 / 0** (0.0%)" in text
+    assert "None OK: **0 / 0** (0.0%)" in text
     assert "Sections skipped: **0 / 0** (0.0%)" in text
     assert "### unknown_character" in text
     assert "| — | _(none)_ |" in text
@@ -723,7 +771,9 @@ def test_summarize_inventory_section_skipped():
     assert "OK: **1** (33.3%)" in text
     assert "Fail: **1** (33.3%)" in text
     assert "Skipped: **1** (33.3%)" in text
-    assert "Sections all OK: **0 / 1** (0.0%)" in text
+    assert "All OK: **0 / 2** (0.0%)" in text
+    assert "Some OK: **1 / 2** (50.0%)" in text
+    assert "None OK: **0 / 2** (0.0%)" in text
     assert "Sections skipped: **1 / 2** (50.0%)" in text
 
 

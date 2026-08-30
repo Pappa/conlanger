@@ -1088,49 +1088,77 @@ def append_ok_flip_changelog(flips: pd.DataFrame, path: Path) -> int:
     return len(flips)
 
 
-def section_all_ok_stats(rows: list[ValidationRow]) -> tuple[int, int, float]:
-    """Return count of sections with every rule ok, total sections, and percentage.
+@dataclass(frozen=True)
+class SectionOutcomeStats:
+    """Per-section outcome counts (mutually exclusive buckets)."""
 
-    Sections with ``status: skipped`` are excluded from the denominator.
-    """
+    total: int
+    all_ok: int
+    some_ok: int
+    none_ok: int
+    skipped: int
+
+
+def _rows_by_section(
+    rows: list[ValidationRow],
+) -> dict[tuple[str, str], list[ValidationRow]]:
     by_section: dict[tuple[str, str], list[ValidationRow]] = {}
     for row in rows:
         key = (row.section_index, row.section_name)
         by_section.setdefault(key, []).append(row)
-    active_sections = {
-        key
-        for key, section_rows in by_section.items()
-        if not any(
+    return by_section
+
+
+def section_outcome_stats(rows: list[ValidationRow]) -> SectionOutcomeStats:
+    """Return mutually exclusive section outcome counts.
+
+    - **skipped** — every rule in the section has ``failure_class=section_skipped``.
+    - **all_ok** — not skipped; every rule has ``ok=True``.
+    - **none_ok** — not skipped; every rule has ``ok=False``.
+    - **some_ok** — not skipped; mix of ``ok`` true and false.
+    """
+    by_section = _rows_by_section(rows)
+    all_ok = some_ok = none_ok = skipped = 0
+    for section_rows in by_section.values():
+        if not section_rows:
+            continue
+        if all(
             row.failure_class == SECTION_SKIPPED_FAILURE_CLASS for row in section_rows
-        )
-    }
-    total_sections = len(active_sections)
-    sections_all_ok = sum(
-        1
-        for key in active_sections
-        if by_section[key] and all(row.ok for row in by_section[key])
+        ):
+            skipped += 1
+            continue
+        oks = [row.ok for row in section_rows]
+        if all(oks):
+            all_ok += 1
+        elif not any(oks):
+            none_ok += 1
+        else:
+            some_ok += 1
+    return SectionOutcomeStats(
+        total=len(by_section),
+        all_ok=all_ok,
+        some_ok=some_ok,
+        none_ok=none_ok,
+        skipped=skipped,
     )
-    pct = (100.0 * sections_all_ok / total_sections) if total_sections else 0.0
-    return sections_all_ok, total_sections, pct
+
+
+def section_all_ok_stats(rows: list[ValidationRow]) -> tuple[int, int, float]:
+    """Return count of sections with every rule ok, active total, and percentage.
+
+    Sections with ``status: skipped`` are excluded from the denominator.
+    """
+    outcomes = section_outcome_stats(rows)
+    active_total = outcomes.total - outcomes.skipped
+    pct = (100.0 * outcomes.all_ok / active_total) if active_total else 0.0
+    return outcomes.all_ok, active_total, pct
 
 
 def section_skip_stats(rows: list[ValidationRow]) -> tuple[int, int, float]:
     """Return skipped section count, total sections (including skipped), and pct."""
-    by_section: dict[tuple[str, str], list[ValidationRow]] = {}
-    for row in rows:
-        key = (row.section_index, row.section_name)
-        by_section.setdefault(key, []).append(row)
-    total_sections = len(by_section)
-    skipped_sections = sum(
-        1
-        for section_rows in by_section.values()
-        if section_rows
-        and all(
-            row.failure_class == SECTION_SKIPPED_FAILURE_CLASS for row in section_rows
-        )
-    )
-    pct = (100.0 * skipped_sections / total_sections) if total_sections else 0.0
-    return skipped_sections, total_sections, pct
+    outcomes = section_outcome_stats(rows)
+    pct = (100.0 * outcomes.skipped / outcomes.total) if outcomes.total else 0.0
+    return outcomes.skipped, outcomes.total, pct
 
 
 def summarize_inventory(
@@ -1154,8 +1182,11 @@ def summarize_inventory(
     ok_pct = (100.0 * ok_n / total) if total else 0.0
     fail_pct = (100.0 * fail_n / total) if total else 0.0
     skipped_pct = (100.0 * skipped_n / total) if total else 0.0
-    sections_all_ok, section_total, section_ok_pct = section_all_ok_stats(rows)
-    sections_skipped, section_grand_total, section_skip_pct = section_skip_stats(rows)
+    section_outcomes = section_outcome_stats(rows)
+    section_total = section_outcomes.total
+
+    def _section_pct(count: int) -> float:
+        return (100.0 * count / section_total) if section_total else 0.0
 
     class_counts = Counter(
         row.failure_class for row in rows if not row.ok and row.failure_class
@@ -1168,11 +1199,30 @@ def summarize_inventory(
         f"- Probe words: `{probe_words}`",
         f"- Checker: `validate_asca` / asca **{asca_version}**",
         f"- Rows: **{total}** (one per index rule)",
+        "",
+        "## Rules",
         f"- OK: **{ok_n}** ({ok_pct:.1f}%)",
         f"- Fail: **{fail_n}** ({fail_pct:.1f}%)",
         f"- Skipped: **{skipped_n}** ({skipped_pct:.1f}%)",
-        f"- Sections all OK: **{sections_all_ok} / {section_total}** ({section_ok_pct:.1f}%)",
-        f"- Sections skipped: **{sections_skipped} / {section_grand_total}** ({section_skip_pct:.1f}%)",
+        "",
+        "## Sections",
+        "",
+        (
+            f"- All OK: **{section_outcomes.all_ok} / {section_total}** "
+            f"({_section_pct(section_outcomes.all_ok):.1f}%)"
+        ),
+        (
+            f"- Some OK: **{section_outcomes.some_ok} / {section_total}** "
+            f"({_section_pct(section_outcomes.some_ok):.1f}%)"
+        ),
+        (
+            f"- None OK: **{section_outcomes.none_ok} / {section_total}** "
+            f"({_section_pct(section_outcomes.none_ok):.1f}%)"
+        ),
+        (
+            f"- Sections skipped: **{section_outcomes.skipped} / {section_total}** "
+            f"({_section_pct(section_outcomes.skipped):.1f}%)"
+        ),
         "",
         "## Failure classes",
         "",
