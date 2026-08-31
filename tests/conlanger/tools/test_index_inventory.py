@@ -382,8 +382,6 @@ def test_ok_flip_changelog_rows_keys_on_source_and_alt_idx():
     assert list(flips["source"]) == ["file:1"]
     assert list(flips["alt_idx"]) == ["1"]
     assert list(flips["ok"]) == ["False"]
-    assert list(flips["prev_ok"]) == ["True"]
-    assert list(flips["failure_class"]) == ["syntax_other"]
 
 
 def test_write_validation_csv(tmp_path: Path):

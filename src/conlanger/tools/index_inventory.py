@@ -103,9 +103,7 @@ CHANGELOG_CSV_COLUMNS = [
     "rule_id",
     "alt_idx",
     "source",
-    "prev_ok",
     "ok",
-    "failure_class",
     "timestamp",
 ]
 
@@ -221,17 +219,16 @@ def ok_flip_changelog_rows(
     prev = prev.set_index(["source", "_alt_key"])["ok"]
     cur = current.loc[
         :,
-        ["section_index", "rule_id", "alt_idx", "source", "ok", "failure_class"],
+        ["section_index", "rule_id", "alt_idx", "source", "ok"],
     ].copy()
     cur["_alt_key"] = _alt_idx_key(cur["alt_idx"])
     cur["ok"] = _ok_as_bool(cur["ok"])
     cur = cur.drop_duplicates(subset=["source", "_alt_key"], keep="last")
-    merged = cur.join(prev.rename("prev_ok"), on=["source", "_alt_key"], how="inner")
-    flipped = merged.loc[merged["ok"] != merged["prev_ok"]].copy()
+    merged = cur.join(prev.rename("_prev_ok"), on=["source", "_alt_key"], how="inner")
+    flipped = merged.loc[merged["ok"] != merged["_prev_ok"]].copy()
     if flipped.empty:
         return empty
     flipped["alt_idx"] = _alt_idx_key(flipped["alt_idx"])
-    flipped["prev_ok"] = flipped["prev_ok"].map({True: "True", False: "False"})
     flipped["ok"] = flipped["ok"].map({True: "True", False: "False"})
     flipped["timestamp"] = timestamp
     return flipped.loc[:, CHANGELOG_CSV_COLUMNS].reset_index(drop=True)
