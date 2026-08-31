@@ -1,12 +1,12 @@
 # conlanger
 
-An experiment in automatic Conlang creation. 
+An experiment in automatic [conlang](https://en.wikipedia.org/wiki/Constructed_language) creation. 
 
-I am a novice Conlanger, currently enjoying the view from the peak of Mount Stupid, so this may go nowhere useful. I'm mostly hoping it goes somewhere dumb and ridiculous.
+I am a novice conlanger, currently enjoying the view from the peak of Mount Stupid, so this may go nowhere useful. I'm mostly hoping it goes somewhere dumb and ridiculous.
 
 ![Peak of Mount Stupid](./assets/dunning-kruger.png)
 
-## Why?
+## Why automatic conlang creation?
 
 A few years ago, I experimented building a [GAN](https://en.wikipedia.org/wiki/Generative_adversarial_network) (generative adversarial network) to generate fake Joan Miró paintings. The result, [MiroBot](https://github.com/Pappa/MiroBot), wasn't very good at creating a convincing Miró, but it did pretty well when I fed it Mark Rothko paintings instead.
 
@@ -33,11 +33,11 @@ I started reading about conlanging and a couple of things stood out.
 
 | IPA Vowels | IPA Plumonic Consonants |
 |------|---------------|
-| ![IPA Vowel Chart](./assets/ipa/IPA_vowel_chart.svg) | ![IPA Plumonic Consonants](./assets/ipa/pulmonic_consonants_wikipedia.png) |
+| ![IPA Vowel Chart](./assets/ipa/ipa_vowel_chart.png) | ![IPA Plumonic Consonants](./assets/ipa/pulmonic_consonants_wikipedia.png) |
 
 2. There's a ton of [cldf](https://cldf.clld.org/) data available on the properties and characteristics of the world's languages, and it can all be presented in tabular form. 
 
-So, I can represent the phone inventory of any language as a very simple 2d image:
+So, I can represent the phoneme inventory of any language as a very simple 2d image:
 
 ![IPA phoneme inventory](./assets/2d_data/language_data_table.png)
 
@@ -62,16 +62,19 @@ but plausible skeleton languages, including a phoneme inventory and other charac
 ### Language Evolution
 
 It's all well and good generating a fake but plausible language based on the properties of existing languages, but a good 
-conlang should have a history. It should evolve form a proto-language.
+conlang should have a history. It should evolve from a proto-language.
+
 
 In the distant past of the internet, some mad bastard compiled the [Index Diachronica](https://web.archive.org/web/20260722074750/https://chridd.nfshost.com/diachronica/all), a set of sound change rules for ~6000 languages, gathered from the published literature. The rules 
 encode how the sounds in a language change over time (typically as an ancestor language evolves into a descendent).
+
 
 Sound change rules have widely used syntax conventions, like:
 
 `a → e / _j ! l_` - a changes to e when it preceeds j, but not if it follws l.
 
-I discovered that there are some sound change appliers, like [ASCA](https://github.com/Girv98/asca-rust) and [Brassica](https://github.com/bradrn/brassica) that can apply sound changes programmatically, so I thought, _"cool I'll just parse the Index Diachronica html file and convert it to a format that can be read by ASCA or Brassica"_. The end goal would be to create a set of random but plausible sound change rules to apply to the newly generated language, to mimic the evolution of real languages from their proto-languages.
+I discovered that there are some sound change appliers, like [ASCA](https://github.com/Girv98/asca-rust) and [Brassica](https://github.com/bradrn/brassica) to apply sound changes programmatically, so I thought, _"cool I'll just parse the Index Diachronica html file and convert it to a format that can be read by ASCA or Brassica"_. The end goal would be to create a set of random but plausible sound change rules to apply to the newly generated language, to mimic the evolution of real languages from their proto-languages.
+
 
 Unfortunately, linguists aren't particularly consistent in their use of sound change rule conventions and often fall back to text descriptions to handle edge cases. As a result, Index Diachronica has a lot of rules like:
 
@@ -83,12 +86,49 @@ Unfortunately, linguists aren't particularly consistent in their use of sound ch
 
 So, I've spent the past 2 years (on and off) trying to parse Index Diachronica programatically.
 
+
 My first attempt got me to about a 60% success rate (meaning 60% of rules being run using ASCA without throwing an error).
+
 
 After a hiatus of a few months, I decided to let AI take a stab at it. I vibe-coded a solution with Cursor. The result was about 60% success, and the resulting code was unreadable with lots of incorrect transformations. I ditched the AI version and took another break.
 
-I've taken a more systematic approach, using AI to help me research the domain, define the requirements and implement and test the syatem. 
+
+I've taken a more systematic approach, using AI to help me research the domain, define the requirements and implement and test the system incrementally. 
+
+
 This has been far more successful so far, with > 80% of rules validated. There are definitely bugs and incorrect bits and pieces in the current implementation, but it's probably getting close to _"good enough"_ for what I need.
+
+## The end goal for this project
+
+I want to press a button and watch a fully developed conlang appear before my eyes, complete with a written grammar, translations and sample audio of the language being spoken.
+
+
+The implementation will consist of 2 parts:
+
+### 1. Model Training
+
+- Ingest data
+  - IPA data
+  - CLDF data (Phoible, WALS, etc.)
+  - Parsable Index Diachronica sound change rules
+- Train GANs
+
+### 2. Generate a conlang on demand
+
+- Create the proto-language
+  - Generate a phoneme inventory
+  - Determine phonotactics
+  - Generate root words
+  - Determine basic grammar characteristics
+  - Create proto-language lexicon
+- Evolve the language
+  - Generate plausible sound-change sequences
+  - Apply generated sound change rules to the proto-language
+  - Evolve/update the grammar
+- Publish conlang artefacts
+  - Generate sample translations
+  - Generate HTML/PDF language grammar document
+  - Generate sample audio files
 
 ## Implemented so far
 
@@ -97,6 +137,7 @@ Most of the early work was done in Jupyter notebooks. This will be ported over t
 ### Data Preperation
 
 Language [phoneme data](https://raw.githubusercontent.com/phoible/dev/v2.0/data/phoible.csv) from [phoible.org](https://phoible.org/) was used to create a dataset suitable for ML. One dialect phoneme inventory from each language was selected and prepared as a 4d Numpy array.
+
 
 Data on morphology and grammar from [WALS](https://wals.info/) was prepared in a similar way.
 
@@ -138,15 +179,3 @@ change rules to the lexicon. I'm hoping this will result in a set of proto-langu
 
 - Word list creation notebook: [03_01_word_list.ipynb](../notebooks/03_01_word_list.ipynb)
 - Lexicon generation notebook: [03_02_generate_lexicon.ipynb](../notebooks/03_02_generate_lexicon.ipynb)
-
-## Next steps
-
-- Determine phonotactics
-- Generate root words using the phoneme inventory
-- Determine basic grammar
-- Create proto-language lexicon
-- Generate plausible sound-change sequences
-- Apply generated sound change rules to the proto-language
-- Generate sample translations
-- Generate HTML/PDF language grammar document
-- Generate sample audio files
