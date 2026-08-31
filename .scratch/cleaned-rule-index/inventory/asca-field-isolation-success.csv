@@ -297,7 +297,6 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 6.2.2.1.13,Classical Arabic to Western Libyan Arabic,Western-Libyan-Arabic-aj-aw,,index_diachronica_original.html:1461,True,,True,True,,,,,,,,,,,none
 6.2.2.1.15,Classical Arabic to Sa‘idi Arabic,Sa‘idi-Arabic-q-x-ɣ,,index_diachronica_original.html:1490,True,,True,True,,,,,,,,,,,none
 6.2.2.1.16,Classical Arabic to Sudanese Arabic,Sudanese-Arabic-dʒ-q,,index_diachronica_original.html:1495,True,,True,True,,,,,,,,,,,none
-6.2.2.1.16,Classical Arabic to Sudanese Arabic,Sudanese-Arabic-uː,,index_diachronica_original.html:1496,True,,True,True,,,,,,,,,,,none
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-a,,index_diachronica_original.html:1501,True,,True,True,True,,,,,,,,,,none
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-a_2,,index_diachronica_original.html:1502,True,,True,True,,,,,,,,,,,none
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-dˤ-q,,index_diachronica_original.html:1503,True,,True,True,,,,,,,,,,,none
@@ -2381,6 +2380,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-ə_2,,index_diachronica_original.html:4723,True,,True,True,,,,,,,,,,,none
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-i,,index_diachronica_original.html:4724,True,,True,True,True,,,,,,,,,,none
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-F+voice,,index_diachronica_original.html:4725,True,,True,True,True,,,,,,,,,,none
+15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-F+voice_2,,index_diachronica_original.html:4726,True,,True,True,True,,,,,,,,,,none
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-t,,index_diachronica_original.html:4727,True,,True,True,True,,,,,,,,,,none
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-ə_3,,index_diachronica_original.html:4729,True,,True,True,True,,,,,,,,,,none
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-v,,index_diachronica_original.html:4730,True,,True,True,True,,,,,,,,,,none
@@ -3196,7 +3196,6 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.7.3.1,Proto-Norse to Old Norse,Old-Norse-a_6,,index_diachronica_original.html:6324,True,,True,True,True,,,,,,,,,,none
 17.7.3.1,Proto-Norse to Old Norse,Old-Norse-ɪʊ,,index_diachronica_original.html:6325,True,,True,True,,,,,,,,,,,none
 17.7.3.1,Proto-Norse to Old Norse,Old-Norse-ø-øː,,index_diachronica_original.html:6326,True,,True,True,,,,,,,,,,,none
-17.7.3.1,Proto-Norse to Old Norse,"Old-Norse-eːB,iː",,index_diachronica_original.html:6327,True,,True,True,True,,,,,,,,,,none
 17.7.3.1,Proto-Norse to Old Norse,"Old-Norse-eːBː,iː",,index_diachronica_original.html:6328,True,,True,True,True,,,,,,,,,,none
 17.7.3.1,Proto-Norse to Old Norse,"Old-Norse-eːBː,iː_2",,index_diachronica_original.html:6329,True,,True,True,,,,,,,,,,,none
 17.7.3.1,Proto-Norse to Old Norse,Old-Norse-Nː-k-kː-Nːɡ-ɡː-ɣ,,index_diachronica_original.html:6331,True,,True,True,True,,,,,,,,,,none
@@ -3224,7 +3223,6 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.7.3.1.1,Old Norse to Early Icelandic,Early-Icelandic-u-o-a-øː-eː-y-i,,index_diachronica_original.html:6358,True,,True,True,True,,,,,,,,,,none
 17.7.3.1.1,Old Norse to Early Icelandic,Early-Icelandic-aː,,index_diachronica_original.html:6359,True,,True,True,True,,,,,,,,,,none
 17.7.3.1.1,Old Norse to Early Icelandic,Early-Icelandic-e,,index_diachronica_original.html:6360,True,,True,True,True,,,,,,,,,,none
-17.7.3.1.1,Old Norse to Early Icelandic,Early-Icelandic-O,,index_diachronica_original.html:6361,True,,True,True,True,,,,,,,,,,none
 17.7.3.1.1,Old Norse to Early Icelandic,Early-Icelandic-S,,index_diachronica_original.html:6362,True,,True,True,True,,,,,,,,,,none
 17.7.3.1.1,Old Norse to Early Icelandic,"Early-Icelandic-lː,rl",,index_diachronica_original.html:6363,True,,True,True,True,,,,,,,,,,none
 17.7.3.1.1,Old Norse to Early Icelandic,Early-Icelandic-N,,index_diachronica_original.html:6364,True,,True,True,True,,,,,,,,,,none
@@ -3702,7 +3700,6 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.11,Proto-Indo-European to Proto-Slavic,"Proto-Slavic-bʱ-dʱ-ɡʱ,ɡ́ʱ-ɡʷʱ",,index_diachronica_original.html:6983,True,,True,True,,,,,,,,,,,none
 17.11,Proto-Indo-European to Proto-Slavic,Proto-Slavic-Kʷ-ḱ-ɡ́,,index_diachronica_original.html:6984,True,,True,True,,,,,,,,,,,none
 17.11,Proto-Indo-European to Proto-Slavic,Proto-Slavic-s,,index_diachronica_original.html:6985,True,,True,True,True,,,,,,,,,,none
-17.11,Proto-Indo-European to Proto-Slavic,Proto-Slavic-k-ɡ-x,,index_diachronica_original.html:6986,True,,True,True,True,,,,,,,,,,none
 17.11,Proto-Indo-European to Proto-Slavic,"Proto-Slavic-a,o,ə",,index_diachronica_original.html:6987,True,,True,True,True,,,,,,,,,,none
 17.11,Proto-Indo-European to Proto-Slavic,"Proto-Slavic-a,o,ə_2",,index_diachronica_original.html:6988,True,,True,True,,,,,,,,,,,none
 17.11,Proto-Indo-European to Proto-Slavic,Proto-Slavic-i-u,,index_diachronica_original.html:6989,True,,True,True,,,,,,,,,,,none
@@ -4714,6 +4711,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.13,Proto-Indo-European to Proto-Tocharian,Proto-Tocharian-dz_2,,index_diachronica_original.html:8253,True,,True,True,,,,,,,,,,,none
 17.13,Proto-Indo-European to Proto-Tocharian,Proto-Tocharian-Kʷ_2,,index_diachronica_original.html:8255,True,,True,True,True,,,,,,,,,,none
 17.13,Proto-Indo-European to Proto-Tocharian,Proto-Tocharian-Kʷy,,index_diachronica_original.html:8256,True,,True,True,,,,,,,,,,,none
+17.13,Proto-Indo-European to Proto-Tocharian,"Proto-Tocharian-t,dʱ",,index_diachronica_original.html:8258,True,,True,True,True,,,,,,,,,,none
 17.13,Proto-Indo-European to Proto-Tocharian,"Proto-Tocharian-t,dʱ_2",,index_diachronica_original.html:8259,True,,True,True,True,,,,,,,,,,none
 17.13,Proto-Indo-European to Proto-Tocharian,Proto-Tocharian-n̩,,index_diachronica_original.html:8261,True,,,,,,,,,,,,,,none
 17.13,Proto-Indo-European to Proto-Tocharian,Proto-Tocharian-R-H,,index_diachronica_original.html:8262,True,,True,True,True,,,,,,,,,,none
@@ -5803,6 +5801,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 30.1.1.1,Proto-Bantu to Sebirwa,Sebirwa-i-u-VS,,index_diachronica_original.html:10469,True,,True,True,True,,,,,,,,,,none
 30.1.1.1,Proto-Bantu to Sebirwa,Sebirwa-V+high-+ATR,,index_diachronica_original.html:10471,True,,True,True,,,,,,,,,,,none
 30.1.1.1,Proto-Bantu to Sebirwa,Sebirwa-NC,,index_diachronica_original.html:10472,True,,True,True,True,,,,,,,,,,none
+30.1.1.1,Proto-Bantu to Sebirwa,Sebirwa-NC_2,,index_diachronica_original.html:10473,True,,True,True,True,,,,,,,,,,none
 30.1.1.1,Proto-Bantu to Sebirwa,Sebirwa-t-d-l,,index_diachronica_original.html:10474,True,,True,True,,,,,,,,,,,none
 30.1.1.1,Proto-Bantu to Sebirwa,Sebirwa-p-t-d-c-ɟ-k-ɡ,0,index_diachronica_original.html:10475,True,,True,True,,,,,,,,,,,none
 30.1.1.1,Proto-Bantu to Sebirwa,Sebirwa-p-t-d-c-ɟ-k-ɡ,1,index_diachronica_original.html:10475,True,,True,True,,,,,,,,,,,none
@@ -6404,6 +6403,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 35.1.15,Proto-Central Salish to Twana,Twana-ʔ_2,,index_diachronica_original.html:11693,True,,True,True,True,,,,,,,,,,none
 35.1.15,Proto-Central Salish to Twana,Twana-u3-u1,,index_diachronica_original.html:11694,True,,True,True,,,,,,,,,,,none
 35.2.1,Proto-Interior Salish to Columbian and Okanagan Nasal-to-Vowel Shifts,Vowel-Shifts-nˀ,,index_diachronica_original.html:11708,True,,True,True,True,,,,,,,,,,none
+35.2.2,Proto-Interior Salish to Thompson Nasal-to-Vowel Shifts,Vowel-Shifts_2-N-glottalized,,index_diachronica_original.html:11713,True,,True,True,True,,,,,,,,,,none
 35.3,Shuswap to Eastern Shuswap Nasal-to-Vowel Shifts,Vowel-Shifts_3-em-emˀ,,index_diachronica_original.html:11719,True,,True,True,True,,,,,,,,,,none
 35.4,Shuswap to Spokane-Kalispel Shuswap Nasal-to-Vowel Shifts,Vowel-Shifts_4-n-nˀ,,index_diachronica_original.html:11727,True,,True,True,True,,,,,,,,,,none
 35.4,Shuswap to Spokane-Kalispel Shuswap Nasal-to-Vowel Shifts,Vowel-Shifts_4-n-nˀ_2,,index_diachronica_original.html:11728,True,,True,True,True,,,,,,,,,,none
@@ -6748,7 +6748,6 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 37.1.1,Proto-Iroquoian to Cherokee,Cherokee-V,,index_diachronica_original.html:12351,True,,True,True,True,,,,,,,,,,none
 37.1.1,Proto-Iroquoian to Cherokee,Cherokee-Vʔ,,index_diachronica_original.html:12352,True,,True,True,True,,,,,,,,,,none
 37.1.1,Proto-Iroquoian to Cherokee,"Cherokee-Vh,Vʔ",,index_diachronica_original.html:12353,True,,True,True,True,,,,,,,,,,none
-37.1.1,Proto-Iroquoian to Cherokee,Cherokee-aːwẽː,,index_diachronica_original.html:12354,True,,True,True,,,,,,,,,,,none
 37.1.1,Proto-Iroquoian to Cherokee,Cherokee-V+nas,,index_diachronica_original.html:12355,True,,True,True,,,,,,,,,,,none
 37.1.1,Proto-Iroquoian to Cherokee,Cherokee-iji,,index_diachronica_original.html:12357,True,,True,True,,,,,,,,,,,none
 37.1.1,Proto-Iroquoian to Cherokee,Cherokee-tsn,,index_diachronica_original.html:12358,True,,True,True,,,,,,,,,,,none
@@ -7539,6 +7538,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 41.4,Proto-Trans New Guinea to Kaeti,Kaeti-ⁿd-ᵑɡ,,index_diachronica_original.html:13567,True,,True,True,,,,,,,,,,,none
 41.4,Proto-Trans New Guinea to Kaeti,Kaeti-u-a,,index_diachronica_original.html:13568,True,,True,True,,,,,,,,,,,none
 41.5.1.1,Proto-Gorokan to Asaro,Asaro-Nl,,index_diachronica_original.html:13579,True,,True,True,,,,,,,,,,,none
+41.5.1.1,Proto-Gorokan to Asaro,Asaro-N,,index_diachronica_original.html:13580,True,,True,True,True,,,,,,,,,,none
 41.5.1.1,Proto-Gorokan to Asaro,"Asaro-ʔl,d-ʔɡ",,index_diachronica_original.html:13581,True,,True,True,,,,,,,,,,,none
 41.5.1.2,Proto-Gorokan to North Fore,North-Fore-N,,index_diachronica_original.html:13586,True,,True,True,True,,,,,,,,,,none
 41.5.1.2,Proto-Gorokan to North Fore,North-Fore-N_2,,index_diachronica_original.html:13587,True,,True,True,True,,,,,,,,,,none
@@ -7560,6 +7560,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 41.5.1.9,Proto-Gorokan to Siane,"Siane-N,r",,index_diachronica_original.html:13633,True,,True,True,True,,,,,,,,,,none
 41.5.1.9,Proto-Gorokan to Siane,Siane-ʔŋɡ-ʔd,,index_diachronica_original.html:13634,True,,True,True,,,,,,,,,,,none
 41.5.1.10,Proto-Gorokan to Yagaria,Yagaria-ʔv-ʔm-ʔɡ-ʔr-ʔh,,index_diachronica_original.html:13639,True,,True,True,,,,,,,,,,,none
+41.5.2.1,Proto-Kainantu to Auyana,Auyana-N,,index_diachronica_original.html:13647,True,,True,True,True,,,,,,,,,,none
 41.5.2.1,Proto-Kainantu to Auyana,"Auyana-Nw,d,r-nj",,index_diachronica_original.html:13648,True,,True,True,,,,,,,,,,,none
 41.5.2.1,Proto-Kainantu to Auyana,Auyana-N_2,,index_diachronica_original.html:13649,True,,True,True,True,,,,,,,,,,none
 41.5.2.1,Proto-Kainantu to Auyana,Auyana-r,,index_diachronica_original.html:13650,True,,True,True,True,,,,,,,,,,none
@@ -7570,6 +7571,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 41.5.2.2,Proto-Kainantu to Awa,Awa-ʔ,,index_diachronica_original.html:13659,True,,True,True,True,,,,,,,,,,none
 41.5.2.2,Proto-Kainantu to Awa,Awa-ʔw-ʔb-ʔd-ʔɡ,,index_diachronica_original.html:13660,True,,True,True,,,,,,,,,,,none
 41.5.2.3,Proto-Kainantu to Gadsup,Gadsup-N,,index_diachronica_original.html:13665,True,,True,True,True,,,,,,,,,,none
+41.5.2.3,Proto-Kainantu to Gadsup,Gadsup-N_2,,index_diachronica_original.html:13666,True,,True,True,True,,,,,,,,,,none
 41.5.2.3,Proto-Kainantu to Gadsup,Gadsup-nw-nr,,index_diachronica_original.html:13667,True,,True,True,,,,,,,,,,,none
 41.5.2.3,Proto-Kainantu to Gadsup,Gadsup-DO+-voice-DO-voice,,index_diachronica_original.html:13670,True,,True,True,,,,,,,,,,,none
 41.5.2.4,Proto-Kainantu to Usarufa,Usarufa-N1N2,,index_diachronica_original.html:13675,True,,True,True,,,,,,,,,,,none
@@ -7627,7 +7629,6 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 42.1.1.1,Proto-Finnic to Proto-Finnish,Proto-Finnish-Vː,,index_diachronica_original.html:13840,True,,True,True,True,,,,,,,,,,none
 42.1.1.1,Proto-Finnic to Proto-Finnish,"Proto-Finnish-kt,pt-kts,pts",,index_diachronica_original.html:13841,True,,True,True,,,,,,,,,,,none
 42.1.1.1,Proto-Finnic to Proto-Finnish,Proto-Finnish-xk,,index_diachronica_original.html:13842,True,,True,True,,,,,,,,,,,none
-42.1.1.1,Proto-Finnic to Proto-Finnish,Proto-Finnish-tːsn-kxtx-rn-ln,,index_diachronica_original.html:13843,True,,True,True,,,,,,,,,,,none
 42.1.1.1,Proto-Finnic to Proto-Finnish,"Proto-Finnish-p,t,kp,t,kn-p,t,kp,t,km",,index_diachronica_original.html:13844,True,,True,True,,,,,,,,,,,none
 42.1.1.1,Proto-Finnic to Proto-Finnish,"Proto-Finnish-p,t,k",,index_diachronica_original.html:13845,True,,True,True,True,,,,,,,,,,none
 42.1.1.1,Proto-Finnic to Proto-Finnish,"Proto-Finnish-ks,nts-nt",,index_diachronica_original.html:13846,True,,True,True,True,,,,,,,,,,none
@@ -7733,6 +7734,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 44.1,Proto-Vasconic to Aquitanian,Aquitanian-s,,index_diachronica_original.html:14092,True,,True,True,True,,,,,,,,,,none
 44.1,Proto-Vasconic to Aquitanian,Aquitanian-n+-fortis,,index_diachronica_original.html:14095,True,,True,True,True,,,,,,,,,,none
 44.1,Proto-Vasconic to Aquitanian,Aquitanian-n-fortis-n+-fortis,,index_diachronica_original.html:14096,True,,True,True,,,,,,,,,,,none
+44.1,Proto-Vasconic to Aquitanian,Aquitanian-N,,index_diachronica_original.html:14097,True,,True,True,True,,,,,,,,,,none
 44.1,Proto-Vasconic to Aquitanian,Aquitanian-r+-fortis,,index_diachronica_original.html:14098,True,,True,True,True,,,,,,,,,,none
 44.1,Proto-Vasconic to Aquitanian,Aquitanian-r+-fortis_2,,index_diachronica_original.html:14099,True,,True,True,,,,,,,,,,,none
 44.1,Proto-Vasconic to Aquitanian,Aquitanian-ɡ,,index_diachronica_original.html:14101,True,,True,True,True,,,,,,,,,,none
@@ -7743,6 +7745,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 44.2,Proto-Basque to Basque,Basque-n_2,,index_diachronica_original.html:14122,True,,True,True,True,,,,,,,,,,none
 44.2,Proto-Basque to Basque,Basque-n_3,,index_diachronica_original.html:14123,True,,True,True,True,,,,,,,,,,none
 44.2,Proto-Basque to Basque,Basque-nb,,index_diachronica_original.html:14124,True,,,,,,,,,,,,,,none
+44.2,Proto-Basque to Basque,Basque-N,,index_diachronica_original.html:14125,True,,True,True,True,,,,,,,,,,none
 44.2,Proto-Basque to Basque,Basque-b,,index_diachronica_original.html:14126,True,,True,True,True,,,,,,,,,,none
 44.2,Proto-Basque to Basque,"Basque-ɾ,r",,index_diachronica_original.html:14127,True,,True,True,True,,,,,,,,,,none
 44.2,Proto-Basque to Basque,Basque-l,,index_diachronica_original.html:14128,True,,True,True,True,,,,,,,,,,none
