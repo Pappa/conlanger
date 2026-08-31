@@ -6,14 +6,14 @@
 - Rows: **9676** (one per index rule)
 
 ## Rules
-- OK: **8086** (83.6%)
-- Fail: **978** (10.1%)
+- OK: **8089** (83.6%)
+- Fail: **975** (10.1%)
 - Skipped: **612** (6.3%)
 
 ## Sections
 
-- All OK: **370 / 714** (51.8%)
-- Some OK: **315 / 714** (44.1%)
+- All OK: **371 / 714** (52.0%)
+- Some OK: **314 / 714** (44.0%)
 - None OK: **4 / 714** (0.6%)
 - Sections skipped: **25 / 714** (3.5%)
 
@@ -29,7 +29,7 @@
 | 33 | `prose_or_expected_arrow` |
 | 32 | `diacritic_prereq` |
 | 28 | `nested_brackets` |
-| 28 | `unknown_feature` |
+| 25 | `unknown_feature` |
 | 14 | `stuff_after_word_bound` |
 | 11 | `unknown_grouping` |
 | 3 | `panic_other` |
@@ -54,10 +54,10 @@
 | count | error_token | suggested |
 |------:|-------------|-----------|
 | 5 | `weak` | `man` |
-| 5 | `samePOA` | `lateral` |
 | 3 | `initial` | `nasal` |
 | 3 | `palatalized` | `latrl` |
 | 2 | `fricative` | `rhotic` |
+| 2 | `samePOA` | `lateral` |
 | 1 | `lowpitch` | `voice` |
 | 1 | `highpitch` | `high` |
 | 1 | `intertonic` | `anterior` |

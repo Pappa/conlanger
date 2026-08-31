@@ -193,18 +193,27 @@ rules:
                   reason: |
                           Removing intermediate steps - original:
                           p k tʃ b ɡ β j → b ɡ i {b,u,u→y→i} ∅ {u,u→y→i} i / _r
-
         - rule:
                   id: Asaro-N
                   content: "N → [α PLACE] / _S:[α PLACE]"
                   reason: "Using asca syntax - unsure how else to represent POA"
-
+        - rule:
+                  id: Auyana-N
+                  content: "N → [α PLACE] / _C:[α PLACE]"
+                  reason: "Using asca syntax - unsure how else to represent POA"
+        - rule:
+                  id: Gadsup-N_2
+                  content: "N → [α PLACE] / _C:[α PLACE]"
+                  reason: "Using asca syntax - unsure how else to represent POA"
+        - rule:
+                  id: Basque-N
+                  content: "N → [α PLACE] / _C:[α PLACE]"
+                  reason: "Using asca syntax - unsure how else to represent POA"
         - rule:
                   id: Kuskokwim-Yup’ik-F+voice_2
-                  content: "F[+voice, α PLACE] → S[α PLACE] / l̥_"
+                  content: "F:[+voice, α PLACE] → S:[α PLACE] / l̥_"
                   reason: "Using asca syntax - unsure how else to represent POA"
-
         - rule:
                   id: Vowel-Shifts_2-N-glottalized
-                  content: "N[-place, α PLACE] → e / _O[α PLACE] ; “‘in primary forms’” "
+                  content: "N:[-place, α PLACE] → e / _O:[α PLACE] ; “‘in primary forms’” "
                   reason: "I think this is probably wrong"

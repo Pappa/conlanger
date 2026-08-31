@@ -18852,10 +18852,10 @@ sections:
     source: index_diachronica_original.html:4725
     rule_id: Kuskokwim-Yup’ik-F+voice
   - stages:
-    - F[+voice, α PLACE]
-    - S[α PLACE]
+    - F:[+voice, α PLACE]
+    - S:[α PLACE]
     env: l̥_
-    raw: F[+voice, α PLACE] → S[α PLACE] / l̥_
+    raw: F:[+voice, α PLACE] → S:[α PLACE] / l̥_
     source: index_diachronica_original.html:4726
     rule_id: Kuskokwim-Yup’ik-F+voice_2
   - stages:
@@ -54898,10 +54898,10 @@ sections:
   rules:
   - comment: “‘in primary forms’”
     stages:
-    - N[-place, α PLACE]
+    - N:[-place, α PLACE]
     - e
-    env: _O[α PLACE]
-    raw: N[-place, α PLACE] → e / _O[α PLACE] ; “‘in primary forms’”
+    env: _O:[α PLACE]
+    raw: N:[-place, α PLACE] → e / _O:[α PLACE] ; “‘in primary forms’”
     source: index_diachronica_original.html:11713
     rule_id: Vowel-Shifts_2-N-glottalized
   - comment: the paper is not being very clear here)
@@ -64969,9 +64969,9 @@ sections:
   rules:
   - stages:
     - N
-    - '[+ same POA]'
-    env: _C
-    raw: N → [+ same POA] / _C
+    - '[α PLACE]'
+    env: _C:[α PLACE]
+    raw: N → [α PLACE] / _C:[α PLACE]
     source: index_diachronica_original.html:13647
     rule_id: Auyana-N
   - stages:
@@ -65064,9 +65064,9 @@ sections:
     rule_id: Gadsup-N
   - stages:
     - N
-    - '[+ same POA]'
-    env: _C
-    raw: N → [+ same POA] / _C
+    - '[α PLACE]'
+    env: _C:[α PLACE]
+    raw: N → [α PLACE] / _C:[α PLACE]
     source: index_diachronica_original.html:13666
     rule_id: Gadsup-N_2
   - stages:
@@ -67352,9 +67352,9 @@ sections:
     rule_id: Basque-nb
   - stages:
     - N
-    - '[+ same POA]'
-    env: _C
-    raw: N → [+ same POA] / _C
+    - '[α PLACE]'
+    env: _C:[α PLACE]
+    raw: N → [α PLACE] / _C:[α PLACE]
     source: index_diachronica_original.html:14125
     rule_id: Basque-N
   - stages:

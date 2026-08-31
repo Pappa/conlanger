@@ -13,6 +13,7 @@ section_mappings:
     "*T": "T"
     "*Z": "Z"
     "*j": "j"
+    "*r": "r"
 skip_sections:
   - id: "6.2.2.1.1"
     reason: "Need to refer to the cited source to determine the correct rule syntax"
