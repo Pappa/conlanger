@@ -1,6 +1,6 @@
 Type: task
-Status: needs-triage
-Blocked by: 94
+Status: ready-for-agent
+Blocked by: 105
 
 # Correction pass: parenthesized optional length marker `(ː)`
 
@@ -30,19 +30,20 @@ Index uses `(ː)` for **optional length** on a segment, matrix, or template toke
 
 ## What to build
 
-**Blocked by [grill 94](94-grill-structured-soundchangerule-ir.md)** — implementation must follow IR / transform-order decisions from that session (optional-length may belong in parenthetical IR, a dedicated optional-length pass, or reordered string transforms).
+**Policy (locked [grill 94 Q6](94-grill-structured-soundchangerule-ir.md)):** expand parenthesized optional length to ordered alternation `{segment, segment:[+long]}` (matrix/template analogues). Represent as an **optional-length node** in the compile-field intermediate representation, evaluated before suffix `length_marks`. Ticket 15 collapse for bare `e(ː)` is superseded for this notation.
+
+**Blocked by [105](105-implement-compile-field-intermediate-representation.md)** — optional-length node lands with field-token types ([ADR-0015](../../../docs/adr/0015-compile-field-intermediate-representation.md)).
 
 When unblocked:
 
-1. Lock policy for parenthesized optional length: collapse to `:[+long]` vs expand to `{segment, segment:[+long]}` (and matrix/template analogues).
-2. Implement at the agreed compile layer (`parenthetical.py`, `length_marks.py` order, or IR walk) — not matrix-suffix regex in `length_marks`.
-3. Unit tests in `tests/conlanger/tools/compile/asca/`; ASCA smoke on representative rows (Tocharian env, Salish `V3(ː)`).
-4. Full inventory re-run; record before/after for `ː` residual and ok-flips.
-5. Hold out Iroquoian `ː2` / stress-meta shapes (ticket 64 follow-ons).
+1. Implement optional-length node per ADR 0015 / grill 94 (not matrix-suffix regex in `length_marks`).
+2. Unit tests in `tests/conlanger/tools/compile/asca/`; ASCA smoke on representative rows (Tocharian env, Salish `V3(ː)`).
+3. Full inventory re-run; record before/after for `ː` residual and ok-flips.
+4. Hold out Iroquoian `ː2` / stress-meta shapes (ticket 64 follow-ons).
 
 ## Acceptance criteria
 
-- [ ] Policy for `(ː)` optional length recorded (link from grill 94 Answer)
+- [x] Policy for `(ː)` optional length recorded — [grill 94](94-grill-structured-soundchangerule-ir.md), [ADR-0015](../../../docs/adr/0015-compile-field-intermediate-representation.md)
 - [ ] Parenthesized optional-length shapes compile without `unknown_character` `ː` where policy allows
 - [ ] `e(ː)` and `e(ː,j)` handled consistently per locked policy
 - [ ] Full inventory re-run; before/after metrics in **Answer**
@@ -55,5 +56,6 @@ When unblocked:
 - [Correction pass: parenthetical segment notation](48-correction-pass-parenthetical-segment-notation.md)
 - [Grill: parenthetical + parallel-set notation](71-grill-paren-and-parallel-set-notation.md)
 - [Spike: Index I/O optionals vs ASCA](100-spike-io-optionals-asca-and-convention.md)
-- [Grill: structured compile IR on SoundChangeRule](94-grill-structured-soundchangerule-ir.md)
+- [Grill: structured compile intermediate representation](94-grill-structured-soundchangerule-ir.md)
+- [Implement compile-field intermediate representation](105-implement-compile-field-intermediate-representation.md)
 - `src/conlanger/tools/compile/asca/length_marks.py`, `parenthetical.py`, `pipeline.py`
