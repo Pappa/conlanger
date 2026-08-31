@@ -272,7 +272,7 @@ def test_RuleComment(value, expected):
             {"input": "{O:[+delrel],O\u2019}", "output": "F", "env": "_$"},
             "\t{O:[+delrel],O:[+cg]} > F / _$",
         ),
-        ({"input": "a(ː)", "output": "e(ː)"}, "\ta:[+long] > e:[+long]"),
+        ({"input": "a(ː)", "output": "e(ː)"}, "\t{a,a:[+long]} > {e,e:[+long]}"),
         ({"input": "o", "output": "u", "env": "_(C…)i"}, "\to > u / _(C,0)i"),
         ({"input": "dʒ", "output": "tʃ > ʃ"}, "\tdʒ > tʃ > ʃ"),
         ({"input": "c ɲ", "output": "∅ n"}, "\tc ɲ > n"),
@@ -314,9 +314,9 @@ def test_SoundChangeRule(fields, expected):
 def test_sound_change_rule_stores_compiled_fields_after_construction():
     """Ticket 99: field attributes hold compiled ASCA strings, not Index-raw."""
     rule = SoundChangeRule(input="a(ː)", output="e(ː)")
-    assert rule.input == "a:[+long]"
-    assert rule.output == "e:[+long]"
-    assert str(rule) == "\ta:[+long] > e:[+long]"
+    assert rule.input == "{a,a:[+long]}"
+    assert rule.output == "{e,e:[+long]}"
+    assert str(rule) == "\t{a,a:[+long]} > {e,e:[+long]}"
 
 
 def test_sound_change_rule_str_joins_compiled_fields():

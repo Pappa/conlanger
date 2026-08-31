@@ -100,7 +100,7 @@ A **cleaned rule index** (applier-neutral YAML SoT) derived from **Index Diachro
 - [Store compiled ASCA fields; join at render](issues/99-compiled-fields-join-at-render.md) — **resolved** (2026-08-30): compiled field strings on `SoundChangeRule`; join at `__str__`; inventory alternatives wrap peers. Unblocks [94](issues/94-grill-structured-soundchangerule-ir.md).
 - [Split `create_index` and `validate_rules`](issues/103-split-create-index-and-validate-rules.md) — grill 2026-08-30: parse-only `create_index`; `validate_rules` loads parsed YAML, compiles in memory, writes inventory; parse diagnostics under `.scratch/cleaned-rule-index/parse/`; steady state `create_index && validate_rules`; no compiled artifacts on disk.
 - [Grill: structured compile IR on SoundChangeRule](issues/94-grill-structured-soundchangerule-ir.md) — collections for condensed/parallel columns and sets; **blocked by 99** (resolved); review [104 optional-length `(ː)`](issues/104-correction-pass-parenthesized-optional-length-marker.md) during grill; not in 93.
-- [Correction pass: parenthesized optional length `(ː)`](issues/104-correction-pass-parenthesized-optional-length-marker.md) — **blocked by 94**; spawned from [79](issues/79-correction-pass-matrix-suffix-length-marker.md) rework (2026-08-30).
+- [Correction pass: parenthesized optional length `(ː)`](issues/104-correction-pass-parenthesized-optional-length-marker.md) — **resolved** (2026-08-31): `OptionalLengthNode` + `expand_optional_length_in_text` before `length_marks`; `{short, long}` alternation; `ː` unknown_character **10 → 0**; ticket 15 collapse superseded for `(ː)`.
 
 
 ## Pipeline documentation (grill 2026-08-07)

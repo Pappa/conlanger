@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: 105
 
 # Correction pass: parenthesized optional length marker `(ː)`
@@ -44,10 +44,10 @@ When unblocked:
 ## Acceptance criteria
 
 - [x] Policy for `(ː)` optional length recorded — [grill 94](94-grill-structured-soundchangerule-ir.md), [ADR-0015](../../../docs/adr/0015-compile-field-intermediate-representation.md)
-- [ ] Parenthesized optional-length shapes compile without `unknown_character` `ː` where policy allows
-- [ ] `e(ː)` and `e(ː,j)` handled consistently per locked policy
-- [ ] Full inventory re-run; before/after metrics in **Answer**
-- [ ] Fixtures updated where validation outcomes change
+- [x] Parenthesized optional-length shapes compile without `unknown_character` `ː` where policy allows
+- [x] `e(ː)` and `e(ː,j)` handled consistently per locked policy
+- [x] Full inventory re-run; before/after metrics in **Answer**
+- [x] Fixtures updated where validation outcomes change
 
 ## References
 
@@ -58,4 +58,25 @@ When unblocked:
 - [Spike: Index I/O optionals vs ASCA](100-spike-io-optionals-asca-and-convention.md)
 - [Grill: structured compile intermediate representation](94-grill-structured-soundchangerule-ir.md)
 - [Implement compile-field intermediate representation](105-implement-compile-field-intermediate-representation.md)
-- `src/conlanger/tools/compile/asca/length_marks.py`, `parenthetical.py`, `pipeline.py`
+- `src/conlanger/tools/compile/asca/optional_length.py`, `length_marks.py`, `parenthetical.py`, `pipeline.py`
+
+## Answer (before/after)
+
+Baseline (pre-pass): **8089 / 9676** ok; **10** rules with `unknown_character` / error_token `ː`; sections all-OK **373 / 714**.
+
+Re-run (`uv run validate_rules`) after optional-length expansion (`expand_optional_length_in_text` / `OptionalLengthNode` before `length_marks`):
+
+- **8023 / 9676** ok (−66 vs baseline — alternation expansion surfaces nested-set / template limits that collapse-only had masked; ADR-0010 fidelity)
+- `ː` unknown_character top-error count **10 → 0** (5 residual `ː` rows in error CSV are suffix/meta hold-outs, not `(ː)`)
+- Sections all-OK **365 / 714** (−8)
+- Target cluster: Tocharian `V:[+front](ː)` env rule **now ok**; Salish `V3(ː)` outputs compile past `ː` but remain fail (`Unknown reference '3'` — template notation, out of scope)
+
+Policy examples:
+
+| Input | Compiled |
+|---|---|
+| `e(ː)` | `{e,e:[+long]}` |
+| `e(ː,j)` | `{e,ej,e:[+long],e:[+long]j}` |
+| `V:[+front](ː)` | `{V:[+front],V:[+front, +long]}` |
+| `V3(ː)ʔ` | `{V3ʔ,V3:[+long]ʔ}` |
+| `{o,u}(ː)` | `{{o,u},{o:[+long],u:[+long]}}` |

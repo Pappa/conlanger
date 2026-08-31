@@ -10,6 +10,7 @@ from conlanger.tools.compile.asca.parallel import (
     drop_mixed_parallel_null_columns_tokens,
     expand_parallel_output_null_branches_from_tokens,
 )
+from conlanger.tools.compile.asca.optional_length import expand_optional_length_tokens
 from conlanger.tools.compile.compile_fields import RuleInput, RuleOutput
 from conlanger.tools.compile.field_tokens import (
     OptionalLengthNode,
@@ -80,11 +81,11 @@ def test_expand_parallel_null_branches_from_tokens():
 def test_rule_input_holds_raw_tokens_and_compiled():
     rule = SoundChangeRule(input="a(ː)", output="e(ː)")
     assert isinstance(rule.input, RuleInput)
-    assert rule.input.raw == "a(ː)"
-    assert rule.input.tokens == ("a(ː)",)
-    assert rule.input.compiled == "a:[+long]"
+    assert rule.input.raw == "{a,a:[+long]}"
+    assert rule.input.tokens == (("a", "a:[+long]"),)
+    assert rule.input.compiled == "{a,a:[+long]}"
     assert isinstance(rule.output, RuleOutput)
-    assert rule.output.compiled == "e:[+long]"
+    assert rule.output.compiled == "{e,e:[+long]}"
 
 
 def test_rule_field_equality_hash_and_render():

@@ -12,6 +12,10 @@ from conlanger.tools.compile.asca.group_mappings import (
     apply_asca_group_mappings_to_string,
 )
 from conlanger.tools.compile.asca.length_marks import normalize_asca_length_marks
+from conlanger.tools.compile.asca.optional_length import (
+    expand_optional_length_in_text,
+    expand_optional_length_tokens,
+)
 from conlanger.tools.compile.asca.parallel import (
     drop_mixed_parallel_null_columns,
     drop_mixed_parallel_null_columns_tokens,
@@ -67,6 +71,7 @@ def compile_asca_field_post_subscript(text: str) -> str:
     """Run per-field transforms after cross-field subscripts (spike 38 orders 6–10)."""
     if not text:
         return text
+    text = expand_optional_length_in_text(text)
     text = normalize_asca_length_marks(text)
     text = normalize_asca_tone_matrices(text)
     text = normalize_typographic_apostrophes(text)
@@ -136,6 +141,14 @@ def compile_asca_rule_compile_fields(
     """Compile four pydantic compile-field objects; write compiled ASCA on each."""
     inp = inp.with_tokens(drop_mixed_parallel_null_columns_tokens(inp.tokens))
     output = output.with_tokens(drop_mixed_parallel_null_columns_tokens(output.tokens))
+    inp = inp.with_tokens(expand_optional_length_tokens(inp.tokens))
+    output = output.with_tokens(expand_optional_length_tokens(output.tokens))
+    if env is not None:
+        env = env.with_tokens(expand_optional_length_tokens(env.tokens))
+    if exception is not None:
+        exception = exception.with_tokens(
+            expand_optional_length_tokens(exception.tokens)
+        )
     compiled_input, compiled_output, compiled_env, compiled_exception = (
         compile_asca_rule_field_strings(
             inp.raw,

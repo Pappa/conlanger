@@ -1,5 +1,5 @@
 section_index,rule_id,error_token,rule
-6.2.2.1.17,Tunisian-Arabic-Vː_2,,"V:[+long] > V:[+long] / accented or stressed monosyllables | ^ @ Rule 1, Line 1"
+6.2.2.1.17,Tunisian-Arabic-Vː_2,,"{V,V:[+long]} > V:[+long] / accented or stressed monosyllables | ^ @ Rule 1, Line 1"
 6.2.2.1.18,Biblical-Hebrew-p-b-t-d-k-ɡ,,"p b t d k ɡ > b v θ ð x ɣ / non-intial singletons | ^ @ Rule 1, Line 1"
 6.2.2.1.19,Modern-Israeli-Hebrew-ʔ,,"ʔ > ∅ // onset of %[+stress] | ^ @ Rule 1, Line 1"
 7.3.2,Gros-Ventre-j,,"j > ∅ / :{ʃ,θ}: | ^ @ Rule 1, Line 1"
@@ -156,7 +156,7 @@ section_index,rule_id,error_token,rule
 36.3.2.1,bTshan-La-w,,"w > ʔ / something to do with either back vowels or prefixes | ^ @ Rule 1, Line 1"
 37.1,Proto-Iroquoian-p_2,,"p > kʷ / else | ^ @ Rule 1, Line 1"
 37.1.2.2.1,Wyandot-w-j,,"w j > m ɲ / between two vowels of unlike nasality | ^ @ Rule 1, Line 1"
-37.1.2.5,Seneca-aː_2,,"a:[+long] > ẽ:[+long] / adjacent to a nasal vowel | ^ @ Rule 1, Line 1"
+37.1.2.5,Seneca-aː_2,,"{a,a:[+long]} > {ẽ,ẽ:[+long]} / adjacent to a nasal vowel | ^ @ Rule 1, Line 1"
 37.2.1,Catawba-tʲ,,"tʲ > ʃ / %:[+stress] | ^ @ Rule 1, Line 1"
 37.2.1,Catawba-tʲ_2,,"tʲ > ʒ // %:[+stress] | ^ @ Rule 1, Line 1"
 37.2.2,Dakota-tʲ,,"tʲ > ʃ / %:[+stress] | ^ @ Rule 1, Line 1"
@@ -184,6 +184,7 @@ section_index,rule_id,error_token,rule
 44.2,"Basque-u-o,e",,"u {o,e} > a / _#, in disyllables | ^ @ Rule 1, Line 1"
 46.13,"Faroese-Vowel-Shift-a,æː",,"{a,æ:[+long]} > ɛa / a | ^ @ Rule 1, Line 1"
 46.13,Faroese-Vowel-Shift-e,,"e > e:[+long] / ɛ | ^ @ Rule 1, Line 1"
+46.13,Faroese-Vowel-Shift-eː,,"e:[+long] > ɛa / a | ^ @ Rule 1, Line 1"
 46.13,"Faroese-Vowel-Shift-i,y",,"{i,y} > i:[+long] / ɪ | ^ @ Rule 1, Line 1"
 46.13,"Faroese-Vowel-Shift-iː,yː",,"{i:[+long],y:[+long]} > ʊi / ʊ | ^ @ Rule 1, Line 1"
 46.13,Faroese-Vowel-Shift-o,,"o > o:[+long] / ɔ | ^ @ Rule 1, Line 1"

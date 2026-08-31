@@ -16,6 +16,9 @@ class OptionalLengthNode:
     """Parenthesized optional length ``(ː)`` — expands before suffix length marks (ticket 104)."""
 
     segment: str
+    suffix: str = ""
+    comma_alt: str | None = None
+    set_members: tuple[str, ...] | None = None
 
 
 FieldToken = str | tuple[str, ...] | OptionalLengthNode
@@ -40,12 +43,17 @@ def token_to_raw_string(token: FieldToken) -> str:
         members = token
         return "{" + ",".join(members) + "}"
     if is_optional_length_token(token):
-        return f"{token.segment}(ː)"
+        if token.comma_alt is not None:
+            return f"{token.segment}(ː,{token.comma_alt}){token.suffix}"
+        return f"{token.segment}(ː){token.suffix}"
     return token
 
 
 def parse_field_tokens(raw: str) -> tuple[FieldToken, ...]:
     """Parse Index-raw compile text into an ordered field-token tuple."""
+    # Lazy import: optional_length imports field_tokens types (circular at module load).
+    from conlanger.tools.compile.asca.optional_length import parse_optional_length_part
+
     if not raw or not raw.strip():
         return ()
     tokens: list[FieldToken] = []
@@ -53,7 +61,7 @@ def parse_field_tokens(raw: str) -> tuple[FieldToken, ...]:
         if is_whole_field_set(part):
             tokens.append(tuple(split_braced_set_members(part)))
         else:
-            tokens.append(part)
+            tokens.append(parse_optional_length_part(part))
     return tuple(tokens)
 
 
