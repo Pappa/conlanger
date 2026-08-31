@@ -2,387 +2,293 @@
     “The PIE rules for the voicing of s → z, as in [nizdos] for *nisdos, are assumed
     to apply”
   to: s → z / C[+voice]_
-  use_regex: false
   reason: "*nisdos > nizdos"
 - from: “In contrast, Romanian exhibits
   to: ; “In contrast, Romanian exhibits
-  use_regex: false
   reason: comment
 - from: ew (→ øj) → yj
   to: ew → øj → yj
-  use_regex: false
   reason: chaining
 - from: (→ ʕ)
   to: → ʕ
-  use_regex: false
   reason: chaining
 - from: bw mw → ɡw ŋw (→ ɡ ŋ / _V[+ rounded])
   to: bw mw → ɡw ŋw → ɡ ŋ / _V[+ rounded]
-  use_regex: false
   reason: chaining
 - from: "q (→ kw ?) → v "
   to: "q → kw → v "
-  use_regex: false
   reason: chaining
 - from: w (→ v?) → f
   to: w → v → f
-  use_regex: false
   reason: chaining
 - from: ɛː → ɛi (→ əi?)
   to: ɛː → ɛi → əi
-  use_regex: false
   reason: chaining
 - from: a → ɒ? (→ o)
   to: a → ɒ → o
-  use_regex: false
   reason: chaining
 - from: nd ld (→ nː lː ?)
   to: nd ld → nː lː
-  use_regex: false
   reason: chaining
 - from: ɣ → q (more likely, *ɢ → q instead of → ɣ)
   to: ɣ → q ; (more likely, *ɢ → q instead of → ɣ)
-  use_regex: false
   reason: comment
 - from: " / at word boundaries"
   to: " / #_, _#"
-  use_regex: false
   reason: replace prose
 - from: " ! at word boundaries"
   to: " ! #_, _#"
-  use_regex: false
   reason: replace prose
 - from: " / unstressed"
   to: " / _[-stress]"
-  use_regex: false
   reason: replace prose
 - from: " / stressed"
   to: " / _[+stress]"
-  use_regex: false
   reason: replace prose
 - from: " / adjacent to short u"
   to: " / u[-long]_, _u[-long]"
-  use_regex: false
   reason: replace prose
 - from: " / unless adjacent to another consonant"
   to: " / ! C_,_C ; unless adjacent to another consonant"
-  use_regex: false
   reason: replace prose
 - from: " / adjacent to {"
   to: " / _,{"
-  use_regex: false
   reason: replace prose
 - from: " ! adjacent to {"
   to: " ! _,{"
-  use_regex: false
   reason: replace prose
 - from: " / adjacent to a vowel"
   to: " / V_, _V ; adjacent to a vowel"
-  use_regex: false
   reason: replace prose
 - from: " / near emphatics"
   to: " / _[+ emphatic], [+ emphatic]_ ; near emphatics"
-  use_regex: false
   reason: replace prose
 - from: " / near consonants"
   to: " / C_, _C ; near consonants"
-  use_regex: false
   reason: replace prose
 - from: " / near nasals"
   to: " / [+nasal]_, _[+nasal] ; near nasals"
-  use_regex: false
   reason: replace prose
 - from: " / when not near emphatics"
   to: " / ! _[+ emphatic], [+ emphatic]_"
-  use_regex: false
   reason: replace prose
 - from: " / in Mentasta Ahtna"
   to: " / sporadic ; in Mentasta Ahtna"
-  use_regex: false
   reason: replace prose
 - from: " / in certain situations"
   to: " / sporadic ; in certain situations"
-  use_regex: false
   reason: replace prose
 - from: " / in some dialects"
   to: " / sporadic ; in some dialects"
-  use_regex: false
   reason: replace prose
 - from: " / in some northern"
   to: " / sporadic ; in some northern"
-  use_regex: false
   reason: replace prose
 - from: " / in northern dialects"
   to: " / sporadic ; in northern dialects"
-  use_regex: false
   reason: replace prose
 - from: " / in southern regions"
   to: " / sporadic ; in southern regions"
-  use_regex: false
   reason: replace prose
 - from: " / in southern dialects"
   to: " / sporadic ; in southern dialects"
-  use_regex: false
   reason: replace prose
 - from: " (in southern dialects"
   to: " sporadic ; (in southern dialects"
-  use_regex: false
   reason: replace prose
 - from: " (in some regions"
   to: " sporadic ; (in some regions"
-  use_regex: false
   reason: replace prose
 - from: " (some dialects"
   to: " sporadic ; (some dialects"
-  use_regex: false
   reason: replace prose
 - from: " (most dialects"
   to: " ; (most dialects"
-  use_regex: false
   reason: replace prose
 - from: " / “in some positions”"
   to: " / sporadic ; “in some positions”"
-  use_regex: false
   reason: replace prose
 - from: " ! in Ware Sekani"
   to: " sporadic ; not in Ware Sekani"
-  use_regex: false
   reason: replace prose
 - from: " ! in Queensland"
   to: " sporadic ; not in Queensland"
-  use_regex: false
   reason: replace prose
 - from: " / depending on the environment"
   to: " / sporadic ; depending on the environment"
-  use_regex: false
   reason: replace prose
 - from: " / (“when in unstressed penult"
   to: " / sporadic ; (“when in unstressed penult"
-  use_regex: false
   reason: replace prose
 - from: " / some sequences"
   to: " / sporadic ; some sequences"
-  use_regex: false
   reason: replace prose
 - from: " (some exceptions"
   to: " ; sporadic (some exceptions"
-  use_regex: false
   reason: replace prose
 - from: ", in the feminine ending"
   to: " sporadic ; in the feminine ending"
-  use_regex: false
   reason: replace prose
 - from: " / _Ra (short a only)"
   to: " / _Ra sporadic ; (short a only)"
-  use_regex: false
   reason: replace prose
 - from: " / “[b]etween the last two vowels of a proparoxytone”"
   to: " / sporadic ; “[b]etween the last two vowels of a proparoxytone”"
-  use_regex: false
   reason: replace prose
 - from: There seems to ahve been some stuff going on
   to: " ; There seems to ahve been some stuff going on"
-  use_regex: false
+- from: (Do  not necessarily
+  to: " ;  (Do  not necessarily"
   reason: comment
 - from: " (“[a]rchaic relic”)"
   to: " ; (“[a]rchaic relic”)"
-  use_regex: false
   reason: comment
 - from: " / when stem-final"
   to: " / _%# ; when stem-final"
-  use_regex: false
   reason: replace prose - this is an approximation and may be wrong
 - from: " / when-stem final"
   to: " / _%# ; when-stem final"
-  use_regex: false
   reason: replace prose - this is an approximation and may be wrong
 - from: " (→ yː sometimes)"
   to: " → yː / sporadic ; (→ yː sometimes)"
-  use_regex: false
   reason: workaround - we can't handle different envs for chained rules
 - from: " (→ i in most descendants"
   to: " → i / sporadic ; (→ i in most descendants"
-  use_regex: false
   reason: workaround - we can't handle different envs for chained rules
 - from: " (not sure what "
   to: " ; (not sure what "
-  use_regex: false
   reason: comment
 - from: " “(before a prefix; "
   to: " ; “(before a prefix; "
-  use_regex: false
   reason: comment
 - from: " (note that PAn might "
   to: " ; (note that PAn might "
-  use_regex: false
   reason: comment
 - from: " (again, "
   to: " ; (again, "
-  use_regex: false
   reason: comment
 - from: " (Blevins "
   to: " ; (Blevins "
-  use_regex: false
   reason: comment
 - from: " (first change marked "
   to: " ; (first change marked "
-  use_regex: false
   reason: comment
 - from: " (?; included here based on "
-  to: "; ; (?; included here based on "
-  use_regex: false
+  to: " ; (?; included here based on "
   reason: comment
 - from: " (at least one instance of "
   to: " ; (at least one instance of "
-  use_regex: false
   reason: comment
 - from: " (conditioning unclear)"
   to: ' " / sporadic ; (conditioning unclear)"'
-  use_regex: false
   reason: comment
 - from: " / syllable-initially (h → ɦ?)"
   to: " / $_ ; (h → ɦ?)"
-  use_regex: false
   reason: replace prose
 - from: " / syllable-initially"
   to: " / $_ "
-  use_regex: false
   reason: "replace "
 - from: " / if short and unstressed"
   to: " / _[-long, -stress]"
-  use_regex: false
   reason: replace prose
 - from: "k ʃk → k* kː / V_V "
   to: "ʃk → kː / V_V ; k ʃk → k* kː / V_V "
-  use_regex: false
   reason: unresolvable symbol
 - from: w (→ b?) → m
   to: w → b → m
-  use_regex: false
   reason: chaining
 - from: VN → V[+nasal] → V → (?)
   to: VN → V[+nasal] → V
-  use_regex: false
   reason: unresolvable symbol
 - from: " (→ b seems more common)"
   to: " ; (→ b seems more common)"
-  use_regex: false
   reason: replace prose
 - from: (kʷ → ɡʷ → ɡ ?)
   to: kʷ → ɡʷ → ɡ / sporadic ; (kʷ → ɡʷ → ɡ ?)
-  use_regex: false
   reason: workaround
 - from: C[+ affricate]
   to: O:[+delrel]
-  use_regex: false
   reason: asca syntax replacement
 - from: " (velar fricative is conjectured"
   to: " ; (velar fricative is conjectured"
-  use_regex: false
   reason: comment
 - from: " (fricative changes to approximant)"
   to: " ; (fricative changes to approximant)"
-  use_regex: false
   reason: comment
 - from: " (Whimemsz says"
   to: " ; (Whimemsz says"
-  use_regex: false
   reason: comment
 - from: "*L"
   to: L
-  use_regex: false
   reason: liquids - may be too broad
 - from: " ʰS "
   to: " Sʰ "
-  use_regex: false
   reason:
     I have no idea what ʰS  is supposed to represent - I'm assuming it's a typo
     for Sʰ
 - from: + A POA
   to: α place
-  use_regex: false
   reason: Point of articulation - asca syntax alpha notation
 - from: + B POA
   to: β place
-  use_regex: false
   reason: Point of articulation - asca syntax alpha notation
 - from: ATR
   to: atr
-  use_regex: false
   reason: Lowercase feature name
 - from: RTR
   to: rtr
-  use_regex: false
   reason: Lowercase feature name
 - from: " / only when short, ! "
   to: " / _[-long] ! "
-  use_regex: false
   reason: replace prose
 - from: " / short only, _#"
   to: " / _[-long]#"
-  use_regex: false
   reason: replace prose
 - from: " _%, when stressed (short only)"
   to: " _[+stress, -long]%"
-  use_regex: false
   reason: replace prose
 - from: " / near gutturals"
   to: " / _[+laryngeal], [+laryngeal]_"
-  use_regex: false
   reason: replace prose
 - from: " / in two cases cited"
   to: " / sporadic ; in two cases cited"
-  use_regex: false
   reason: replace prose
 - from: " / in some "
   to: " / sporadic ; in some "
-  use_regex: false
   reason: replace prose
 - from: " / in inland varieties"
   to: " / sporadic ; in inland varieties"
-  use_regex: false
   reason: replace prose
 - from: " / in diminutives"
   to: " / sporadic ; diminutives"
-  use_regex: false
   reason: replace prose
 - from: " / in nominal suffixes"
   to: " / sporadic ; nominal suffixes"
-  use_regex: false
   reason: replace prose
 - from: " / in nouns"
   to: " / sporadic ; in nouns"
-  use_regex: false
   reason: replace prose
 - from: ", in some words"
   to: " sporadic ; in some words"
-  use_regex: false
   reason: replace prose
 - from: " / in coda"
   to: " / :{ _#, _% }: ; in coda"
-  use_regex: false
   reason: replace prose
 - from: " / possible exception"
   to: " / sporadic ; possible exception"
-  use_regex: false
   reason: replace prose
 - from: " / unclear conditioning"
   to: " / sporadic ; unclear conditioning"
-  use_regex: false
   reason: replace prose
 - from: " (seems to be a sporadic change"
   to: " ; (seems to be a sporadic change"
-  use_regex: false
   reason: comment
 - from: " / in "
   to: " / "
-  use_regex: false
   reason: replace prose
 - from: " ! in "
   to: " ! "
-  use_regex: false
   reason: replace prose
 - from: " (*)"
   to: " ; (*)"
-  use_regex: false
   reason: ambiguous symbol
