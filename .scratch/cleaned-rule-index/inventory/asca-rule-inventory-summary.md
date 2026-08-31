@@ -6,8 +6,8 @@
 - Rows: **9676** (one per index rule)
 
 ## Rules
-- OK: **8089** (83.6%)
-- Fail: **975** (10.1%)
+- OK: **8091** (83.6%)
+- Fail: **973** (10.1%)
 - Skipped: **612** (6.3%)
 
 ## Sections
@@ -29,7 +29,7 @@
 | 33 | `prose_or_expected_arrow` |
 | 32 | `diacritic_prereq` |
 | 28 | `nested_brackets` |
-| 25 | `unknown_feature` |
+| 23 | `unknown_feature` |
 | 14 | `stuff_after_word_bound` |
 | 11 | `unknown_grouping` |
 | 3 | `panic_other` |
@@ -57,13 +57,12 @@
 | 3 | `initial` | `nasal` |
 | 3 | `palatalized` | `latrl` |
 | 2 | `fricative` | `rhotic` |
-| 2 | `samePOA` | `lateral` |
-| 1 | `lowpitch` | `voice` |
 | 1 | `highpitch` | `high` |
-| 1 | `intertonic` | `anterior` |
+| 1 | `lowpitch` | `voice` |
 | 1 | `posttonic` | `sonor` |
 | 1 | `ejective` | `contin` |
 | 1 | `alveolopalatal` | `consonantal` |
+| 1 | `intertonic` | `anterior` |
 | 1 | `tonic` | `cons` |
 | 1 | `glide` | `click` |
 | 1 | `accent` | `cont` |

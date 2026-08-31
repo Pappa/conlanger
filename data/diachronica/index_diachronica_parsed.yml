@@ -49436,12 +49436,12 @@ sections:
     raw: 'NC → C[-voiced] / #_ (in nouns)'
     source: index_diachronica_original.html:10472
     rule_id: Sebirwa-NC
-  - stages:
-    - NC
-    - N[+same POA]C
+  - comment: sporadic (in verbs)
+    stages:
+    - NC:[α PLACE]
+    - N:[α PLACE]C
     env: '#_'
-    comment: (in verbs)
-    raw: 'NC → N[+same POA]C / #_ (in verbs)'
+    raw: 'NC:[α PLACE] → N:[α PLACE]C / #_ ; sporadic (in verbs)'
     source: index_diachronica_original.html:10473
     rule_id: Sebirwa-NC_2
   - stages:
@@ -67148,9 +67148,9 @@ sections:
     rule_id: Aquitanian-n-fortis-n+-fortis
   - stages:
     - N
-    - '[+ same POA]'
-    env: _S
-    raw: N → [+ same POA] / _S
+    - '[α PLACE]'
+    env: _S:[α PLACE]
+    raw: N → [α PLACE] / _S:[α PLACE]
     source: index_diachronica_original.html:14097
     rule_id: Aquitanian-N
   - stages:

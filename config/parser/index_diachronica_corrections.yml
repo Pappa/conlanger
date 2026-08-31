@@ -217,3 +217,11 @@ rules:
                   id: Vowel-Shifts_2-N-glottalized
                   content: "N:[-place, α PLACE] → e / _O:[α PLACE] ; “‘in primary forms’” "
                   reason: "I think this is probably wrong"
+        - rule:
+                  id: Sebirwa-NC_2
+                  content: "NC:[α PLACE] → N:[α PLACE]C / #_ ; sporadic (in verbs)"
+                  reason: "Bit of a guess"
+        - rule:
+                  id: Aquitanian-N
+                  content: "N → [α PLACE] / _S:[α PLACE]"
+                  reason: "Using asca syntax - unsure how else to represent POA"
