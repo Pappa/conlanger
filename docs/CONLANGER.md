@@ -31,11 +31,11 @@ I started reading about conlanging and a couple of things stood out.
 
 1. The full inventory of IPA phonemes can be represented using a few tables (_which are 2d matrices, right?_).
 
-![IPA Vowel Chart](./assets/ipa/IPA_vowel_chart.svg)
+| IPA Vowels | IPA Plumonic Consonants |
+|------|---------------|
+| ![IPA Vowel Chart](./assets/ipa/IPA_vowel_chart.svg) | ![IPA Plumonic Consonants](./assets/ipa/pulmonic_consonants_wikipedia.png) |
 
-![IPA Plumonic Consonants](./assets/ipa/pulmonic_consonants_wikipedia.png)
-
-1. There's a ton of [cldf](https://cldf.clld.org/) data available on the properties and characteristics of the world's languages, and it can all be presented in tabular form. 
+2. There's a ton of [cldf](https://cldf.clld.org/) data available on the properties and characteristics of the world's languages, and it can all be presented in tabular form. 
 
 So, I can represent the phone inventory of any language as a very simple 2d image:
 
