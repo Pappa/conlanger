@@ -3,17 +3,21 @@ from __future__ import annotations
 import random
 from typing import ClassVar, Self
 
-from pydantic import BaseModel, ConfigDict, Field, model_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 from conlanger.tools.compile.asca.chains import expand_chained_index_rule
-from conlanger.tools.compile.asca.parallel import expand_parallel_output_null_branches
-from conlanger.tools.compile.asca.pipeline import compile_asca_rule_field_strings
-from conlanger.tools.compile.asca.sets import (
-    is_whole_field_set,
-    split_braced_set_members,
+from conlanger.tools.compile.asca.parallel import (
+    expand_parallel_output_null_branches_from_tokens,
 )
+from conlanger.tools.compile.asca.pipeline import compile_asca_rule_compile_fields
 from conlanger.tools.compile.asca.structures import join_asca_rule_fields
 from conlanger.tools.compile.asca.tilde import normalize_index_rule_tilde_fields
+from conlanger.tools.compile.compile_fields import RuleEnv, RuleInput, RuleOutput
+from conlanger.tools.compile.field_tokens import (
+    is_optional_output_shape,
+    render_field_tokens,
+    set_token_members,
+)
 from conlanger.utils.mappings import CompilerConfig
 
 _SUPPORTED_FORMATS = frozenset({"asca"})
@@ -56,10 +60,10 @@ class SoundChangeRule(RulePartBase):
     prefix: ClassVar[str] = "\t"
     skip_prefix: ClassVar[str] = "#\t"
 
-    input: str = ""
-    output: str = ""
-    env: str | None = None
-    exception: str | None = None
+    input: RuleInput = Field(default_factory=RuleInput)
+    output: RuleOutput = Field(default_factory=RuleOutput)
+    env: RuleEnv | None = None
+    exception: RuleEnv | None = None
     status: str | None = None
     raw: str = ""
 
@@ -70,6 +74,29 @@ class SoundChangeRule(RulePartBase):
     section_index: str = Field(default="", exclude=True, repr=False)
     rng: random.Random = Field(default_factory=random.Random, exclude=True, repr=False)
     detect_alternatives: bool = Field(default=True, exclude=True, repr=False)
+
+    @field_validator("input", mode="before")
+    @classmethod
+    def coerce_input(cls, value: object) -> object:
+        if isinstance(value, str):
+            return RuleInput.from_raw(value)
+        return value
+
+    @field_validator("output", mode="before")
+    @classmethod
+    def coerce_output(cls, value: object) -> object:
+        if isinstance(value, str):
+            return RuleOutput.from_raw(value)
+        return value
+
+    @field_validator("env", "exception", mode="before")
+    @classmethod
+    def coerce_env(cls, value: object) -> object:
+        if value is None:
+            return None
+        if isinstance(value, str):
+            return RuleEnv.from_raw(value)
+        return value
 
     @model_validator(mode="before")
     @classmethod
@@ -96,34 +123,35 @@ class SoundChangeRule(RulePartBase):
                 self.output = chosen.output
                 self.env = chosen.env
                 self.exception = chosen.exception
-                self.value = join_asca_rule_fields(
-                    self.input, self.output, self.env, self.exception
-                )
+                self.value = self._join_compiled_fields()
                 return self
 
-        (
-            self.input,
-            self.output,
-            self.env,
-            self.exception,
-        ) = compile_asca_rule_field_strings(
-            self.input,
-            self.output,
-            self.env,
-            self.exception,
-            section_index=self.section_index,
-            compiler_config=self.compiler_config,
+        self.input, self.output, self.env, self.exception = (
+            compile_asca_rule_compile_fields(
+                self.input,
+                self.output,
+                self.env,
+                self.exception,
+                section_index=self.section_index,
+                compiler_config=self.compiler_config,
+            )
         )
-        self.value = join_asca_rule_fields(
-            self.input, self.output, self.env, self.exception
-        )
+        self.value = self._join_compiled_fields()
         return self
+
+    def _join_compiled_fields(self) -> str:
+        return join_asca_rule_fields(
+            self.input.compiled,
+            self.output.compiled,
+            self.env.compiled if self.env is not None else None,
+            self.exception.compiled if self.exception is not None else None,
+        )
 
     def __str__(self) -> str:
         prefix = self.skip_prefix if self.status == "skipped" else self.prefix
         if self.status == "skipped":
             return f"{prefix}{self.raw}"
-        return f"{prefix}{join_asca_rule_fields(self.input, self.output, self.env, self.exception)}"
+        return f"{prefix}{self._join_compiled_fields()}"
 
     def _build_alternatives(self) -> list[SoundChangeRule]:
         """Build peer alternatives for optional outputs or parallel ``∅`` output sets."""
@@ -134,15 +162,13 @@ class SoundChangeRule(RulePartBase):
 
     def _build_optional_output_alternatives(self) -> list[SoundChangeRule]:
         """Whole-field output set with unpaired input (ticket 66)."""
-        if not (is_whole_field_set(self.output) and not is_whole_field_set(self.input)):
+        if not is_optional_output_shape(self.input.tokens, self.output.tokens):
             return []
-        members = split_braced_set_members(self.output)
-        if not members or any(not member or "{" in member for member in members):
-            return []
+        members = set_token_members(self.output.tokens[0])
         return [
             SoundChangeRule(
                 input=self.input,
-                output=member,
+                output=RuleOutput.from_raw(member),
                 env=self.env,
                 exception=self.exception,
                 section_index=self.section_index,
@@ -154,13 +180,16 @@ class SoundChangeRule(RulePartBase):
 
     def _build_parallel_null_set_alternatives(self) -> list[SoundChangeRule]:
         """Paired parallel columns with ``∅`` inside output sets (ticket 81)."""
-        branches = expand_parallel_output_null_branches(self.input, self.output)
+        branches = expand_parallel_output_null_branches_from_tokens(
+            self.input.tokens,
+            self.output.tokens,
+        )
         if branches is None:
             return []
         return [
             SoundChangeRule(
-                input=branch_input,
-                output=branch_output,
+                input=RuleInput.from_raw(render_field_tokens(branch_input)),
+                output=RuleOutput.from_raw(render_field_tokens(branch_output)),
                 env=self.env,
                 exception=self.exception,
                 section_index=self.section_index,

@@ -19,11 +19,15 @@ Whole-field unpaired optional outputs (``d > {∅,ð}``) remain ticket 66.
 
 from __future__ import annotations
 
-from conlanger.tools.compile.asca.sets import (
-    is_whole_field_set,
-    split_braced_set_members,
+from conlanger.tools.compile.field_tokens import (
+    FieldToken,
+    is_set_token,
+    is_whole_field_set_tokens,
+    parse_field_tokens,
+    render_field_tokens,
+    set_contains_null_member,
+    token_to_raw_string,
 )
-from conlanger.tools.compile.asca.structures import split_outside_groupers
 
 _NULL_TOKENS = frozenset({"∅", "Ø", "0", "*"})
 
@@ -32,50 +36,57 @@ def _is_null_column_token(token: str) -> bool:
     return token in _NULL_TOKENS
 
 
+def drop_mixed_parallel_null_columns_tokens(
+    tokens: tuple[FieldToken, ...],
+) -> tuple[FieldToken, ...]:
+    """Drop singleton null field tokens when mixed with other parallel tokens."""
+    if not tokens:
+        return tokens
+    null_count = sum(
+        1 for token in tokens if isinstance(token, str) and _is_null_column_token(token)
+    )
+    if null_count == 0 or null_count == len(tokens):
+        return tokens
+    return tuple(
+        token
+        for token in tokens
+        if not (isinstance(token, str) and _is_null_column_token(token))
+    )
+
+
 def drop_mixed_parallel_null_columns(side: str) -> str:
     """Drop top-level ``∅``/``*`` tokens when mixed with other segments on one side."""
     if not side or not side.strip():
         return side
-    tokens = split_outside_groupers(side.strip())
+    tokens = parse_field_tokens(side.strip())
     if not tokens:
         return side
-    null_count = sum(1 for token in tokens if _is_null_column_token(token))
-    if null_count == 0:
-        return side
-    if null_count == len(tokens):
-        return side
-    kept = [token for token in tokens if not _is_null_column_token(token)]
-    return " ".join(kept)
+    dropped = drop_mixed_parallel_null_columns_tokens(tokens)
+    return render_field_tokens(dropped)
 
 
-def _set_contains_null_member(token: str) -> bool:
-    if not is_whole_field_set(token):
+def _output_tokens_contain_null_in_set(output_tokens: tuple[FieldToken, ...]) -> bool:
+    if not output_tokens:
         return False
-    return any(member in _NULL_TOKENS for member in split_braced_set_members(token))
-
-
-def _output_contains_null_in_set(output: str) -> bool:
-    if not output or not output.strip():
-        return False
-    if is_whole_field_set(output.strip()) and _set_contains_null_member(output):
+    if is_whole_field_set_tokens(output_tokens) and set_contains_null_member(
+        output_tokens[0]
+    ):
         return True
-    return any(
-        _set_contains_null_member(token) for token in split_outside_groupers(output)
-    )
+    return any(set_contains_null_member(token) for token in output_tokens)
 
 
-def _column_branch_pairs(
-    input_col: str, output_col: str
+def _column_branch_pairs_tokens(
+    input_col: FieldToken, output_col: FieldToken
 ) -> list[tuple[str, str]] | None:
     in_members = (
-        split_braced_set_members(input_col)
-        if is_whole_field_set(input_col)
-        else [input_col.strip()]
+        list(input_col)
+        if is_set_token(input_col)
+        else [token_to_raw_string(input_col).strip()]
     )
     out_members = (
-        split_braced_set_members(output_col)
-        if is_whole_field_set(output_col)
-        else [output_col.strip()]
+        list(output_col)
+        if is_set_token(output_col)
+        else [token_to_raw_string(output_col).strip()]
     )
     if not in_members or not out_members:
         return None
@@ -90,35 +101,104 @@ def _column_branch_pairs(
     return None
 
 
-def _finalize_branch_io(input_text: str, output_text: str) -> tuple[str, str]:
-    input_text = drop_mixed_parallel_null_columns(input_text)
-    output_text = drop_mixed_parallel_null_columns(output_text)
-    out_tokens = split_outside_groupers(output_text.strip())
-    if out_tokens and all(token in _NULL_TOKENS for token in out_tokens):
-        output_text = "∅"
-    return input_text, output_text
-
-
-def _expand_uneven_input_set_to_output_set(
-    input_cols: list[str], output_cols: list[str]
+def _column_branch_pairs(
+    input_col: str, output_col: str
 ) -> list[tuple[str, str]] | None:
-    """``{b,k} r > {r,∅}`` — input set + trailing segment, single output set."""
+    input_tokens = parse_field_tokens(input_col.strip())
+    output_tokens = parse_field_tokens(output_col.strip())
+    if not input_tokens or not output_tokens:
+        return None
+    return _column_branch_pairs_tokens(input_tokens[0], output_tokens[0])
+
+
+def _finalize_branch_io_tokens(
+    input_tokens: tuple[FieldToken, ...],
+    output_tokens: tuple[FieldToken, ...],
+) -> tuple[tuple[FieldToken, ...], tuple[FieldToken, ...]]:
+    input_tokens = drop_mixed_parallel_null_columns_tokens(input_tokens)
+    output_tokens = drop_mixed_parallel_null_columns_tokens(output_tokens)
+    if output_tokens and all(
+        isinstance(token, str) and token in _NULL_TOKENS for token in output_tokens
+    ):
+        return input_tokens, ("∅",)
+    return input_tokens, output_tokens
+
+
+def _expand_uneven_input_set_to_output_set_tokens(
+    input_cols: tuple[FieldToken, ...],
+    output_cols: tuple[FieldToken, ...],
+) -> list[tuple[tuple[FieldToken, ...], tuple[FieldToken, ...]]] | None:
     if len(input_cols) != 2 or len(output_cols) != 1:
         return None
-    if not is_whole_field_set(input_cols[0]) or not is_whole_field_set(output_cols[0]):
+    if not is_set_token(input_cols[0]) or not is_set_token(output_cols[0]):
         return None
-    pairs = _column_branch_pairs(input_cols[0], output_cols[0])
+    pairs = _column_branch_pairs_tokens(input_cols[0], output_cols[0])
     if pairs is None:
         return None
-    trailing_input = input_cols[1].strip()
-    branches: list[tuple[str, str]] = []
+    trailing_input = token_to_raw_string(input_cols[1]).strip()
+    branches: list[tuple[tuple[FieldToken, ...], tuple[FieldToken, ...]]] = []
     for in_member, out_member in pairs:
-        input_branch = f"{in_member} {trailing_input}"
+        input_branch = parse_field_tokens(f"{in_member} {trailing_input}")
         if out_member in _NULL_TOKENS:
-            output_branch = "∅"
+            output_branch: tuple[FieldToken, ...] = ("∅",)
         else:
-            output_branch = out_member
-        branches.append(_finalize_branch_io(input_branch, output_branch))
+            output_branch = parse_field_tokens(out_member)
+        branches.append(_finalize_branch_io_tokens(input_branch, output_branch))
+    return branches
+
+
+def expand_parallel_output_null_branches_from_tokens(
+    input_tokens: tuple[FieldToken, ...],
+    output_tokens: tuple[FieldToken, ...],
+) -> list[tuple[tuple[FieldToken, ...], tuple[FieldToken, ...]]] | None:
+    """Return zipped branch token pairs when output sets contain ``∅``."""
+    if not _output_tokens_contain_null_in_set(output_tokens):
+        return None
+    if not input_tokens or not output_tokens:
+        return None
+
+    # Whole-field unpaired optional outputs are handled in ``SoundChangeRule`` (ticket 66).
+    if (
+        len(input_tokens) == 1
+        and not is_set_token(input_tokens[0])
+        and len(output_tokens) == 1
+        and is_set_token(output_tokens[0])
+    ):
+        return None
+
+    if len(input_tokens) != len(output_tokens):
+        uneven = _expand_uneven_input_set_to_output_set_tokens(
+            input_tokens, output_tokens
+        )
+        if uneven is not None:
+            return uneven
+        return None
+
+    column_pairs: list[list[tuple[str, str]]] = []
+    for input_col, output_col in zip(input_tokens, output_tokens, strict=True):
+        pairs = _column_branch_pairs_tokens(input_col, output_col)
+        if pairs is None:
+            return None
+        column_pairs.append(pairs)
+
+    branch_count = max(len(pairs) for pairs in column_pairs)
+    for pairs in column_pairs:
+        if len(pairs) != 1 and len(pairs) != branch_count:
+            return None
+
+    branches: list[tuple[tuple[FieldToken, ...], tuple[FieldToken, ...]]] = []
+    for branch_idx in range(branch_count):
+        in_parts: list[str] = []
+        out_parts: list[str] = []
+        for pairs in column_pairs:
+            pair = pairs[branch_idx] if len(pairs) == branch_count else pairs[0]
+            in_parts.append(pair[0])
+            out_parts.append(pair[1])
+        finalized = _finalize_branch_io_tokens(
+            parse_field_tokens(" ".join(in_parts)),
+            parse_field_tokens(" ".join(out_parts)),
+        )
+        branches.append(finalized)
     return branches
 
 
@@ -129,48 +209,13 @@ def expand_parallel_output_null_branches(
 
     Returns ``None`` when the rule is out of scope or cannot be expanded uniformly.
     """
-    if not _output_contains_null_in_set(output_text):
+    branches = expand_parallel_output_null_branches_from_tokens(
+        parse_field_tokens(input_text.strip()),
+        parse_field_tokens(output_text.strip()),
+    )
+    if branches is None:
         return None
-
-    input_cols = split_outside_groupers(input_text.strip())
-    output_cols = split_outside_groupers(output_text.strip())
-    if not input_cols or not output_cols:
-        return None
-
-    # Whole-field unpaired optional outputs are handled in ``SoundChangeRule`` (ticket 66).
-    if (
-        len(input_cols) == 1
-        and not is_whole_field_set(input_text)
-        and is_whole_field_set(output_text)
-    ):
-        return None
-
-    if len(input_cols) != len(output_cols):
-        uneven = _expand_uneven_input_set_to_output_set(input_cols, output_cols)
-        if uneven is not None:
-            return uneven
-        return None
-
-    column_pairs: list[list[tuple[str, str]]] = []
-    for input_col, output_col in zip(input_cols, output_cols, strict=True):
-        pairs = _column_branch_pairs(input_col, output_col)
-        if pairs is None:
-            return None
-        column_pairs.append(pairs)
-
-    branch_count = max(len(pairs) for pairs in column_pairs)
-    for pairs in column_pairs:
-        if len(pairs) != 1 and len(pairs) != branch_count:
-            return None
-
-    branches: list[tuple[str, str]] = []
-    for branch_idx in range(branch_count):
-        in_parts: list[str] = []
-        out_parts: list[str] = []
-        for pairs in column_pairs:
-            pair = pairs[branch_idx] if len(pairs) == branch_count else pairs[0]
-            in_parts.append(pair[0])
-            out_parts.append(pair[1])
-        finalized = _finalize_branch_io(" ".join(in_parts), " ".join(out_parts))
-        branches.append(finalized)
-    return branches
+    return [
+        (render_field_tokens(input_tokens), render_field_tokens(output_tokens))
+        for input_tokens, output_tokens in branches
+    ]

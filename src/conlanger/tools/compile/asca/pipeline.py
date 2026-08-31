@@ -12,7 +12,10 @@ from conlanger.tools.compile.asca.group_mappings import (
     apply_asca_group_mappings_to_string,
 )
 from conlanger.tools.compile.asca.length_marks import normalize_asca_length_marks
-from conlanger.tools.compile.asca.parallel import drop_mixed_parallel_null_columns
+from conlanger.tools.compile.asca.parallel import (
+    drop_mixed_parallel_null_columns,
+    drop_mixed_parallel_null_columns_tokens,
+)
 from conlanger.tools.compile.asca.planned import (
     apply_section_local_abbreviations,
     expand_meta_notation,
@@ -30,6 +33,7 @@ from conlanger.tools.compile.asca.superscript_modifiers import (
     normalize_asca_superscript_modifiers,
 )
 from conlanger.tools.compile.asca.tone_matrices import normalize_asca_tone_matrices
+from conlanger.tools.compile.compile_fields import RuleEnv, RuleInput, RuleOutput
 from conlanger.utils.mappings import CompilerConfig
 
 
@@ -118,6 +122,36 @@ def compile_asca_rule_field_strings(
         if is_whole_field_set(compiled_exception):
             compiled_exception = convert_set_to_environment_set(compiled_exception)
     return compiled_input, compiled_output, compiled_env, compiled_exception
+
+
+def compile_asca_rule_compile_fields(
+    inp: RuleInput,
+    output: RuleOutput,
+    env: RuleEnv | None = None,
+    exception: RuleEnv | None = None,
+    *,
+    section_index: str = "",
+    compiler_config: CompilerConfig | None = None,
+) -> tuple[RuleInput, RuleOutput, RuleEnv | None, RuleEnv | None]:
+    """Compile four pydantic compile-field objects; write compiled ASCA on each."""
+    inp = inp.with_tokens(drop_mixed_parallel_null_columns_tokens(inp.tokens))
+    output = output.with_tokens(drop_mixed_parallel_null_columns_tokens(output.tokens))
+    compiled_input, compiled_output, compiled_env, compiled_exception = (
+        compile_asca_rule_field_strings(
+            inp.raw,
+            output.raw,
+            env.raw if env is not None else None,
+            exception.raw if exception is not None else None,
+            section_index=section_index,
+            compiler_config=compiler_config,
+        )
+    )
+    return (
+        inp.with_compiled(compiled_input),
+        output.with_compiled(compiled_output),
+        env.with_compiled(compiled_env) if env is not None else None,
+        exception.with_compiled(compiled_exception) if exception is not None else None,
+    )
 
 
 def compile_asca_rule_fields(

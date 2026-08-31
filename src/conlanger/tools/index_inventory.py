@@ -651,6 +651,8 @@ def _field_isolation_checks(
         if fragment is None:
             results[part] = (None, "", "")
             continue
+        if hasattr(fragment, "compiled"):
+            fragment = fragment.compiled or fragment.raw
         ok, failure_class, description = _validate_field_part(
             part, fragment, asca_bin=asca_bin
         )

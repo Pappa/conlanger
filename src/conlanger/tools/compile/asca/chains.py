@@ -13,7 +13,7 @@ def expand_chained_index_rule(rule: dict[str, str]) -> list[dict[str, str]]:
     stage compiles to one rule with empty output. Empty ``stages`` emit nothing.
     """
     stages = rule.get("stages", [])
-    non_empty = [stage.strip() for stage in stages if stage and stage.strip()]
+    non_empty = [str(stage).strip() for stage in stages if stage and str(stage).strip()]
     meta = {key: rule[key] for key in _CHAIN_META_KEYS if key in rule}
     if len(non_empty) == 0:
         return []

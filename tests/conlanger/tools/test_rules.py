@@ -322,7 +322,12 @@ def test_sound_change_rule_stores_compiled_fields_after_construction():
 def test_sound_change_rule_str_joins_compiled_fields():
     """Ticket 99: render joins compiled fields; value mirrors join for compat."""
     rule = SoundChangeRule(input="a", output="e", env="V_V")
-    joined = join_asca_rule_fields(rule.input, rule.output, rule.env, rule.exception)
+    joined = join_asca_rule_fields(
+        rule.input.compiled,
+        rule.output.compiled,
+        rule.env.compiled if rule.env is not None else None,
+        rule.exception.compiled if rule.exception is not None else None,
+    )
     assert str(rule) == f"\t{joined}"
     assert rule.value == joined
 
