@@ -27,6 +27,7 @@ from conlanger.appliers.asca import (
 from conlanger.tools.inventory_error_clusters import (
     CHARACTER_ERRORS_CSV_NAME,
     GROUPING_ERRORS_CSV_NAME,
+    NESTED_BRACKETS_ERRORS_CSV_NAME,
     UNDERSCORE_ERRORS_CSV_NAME,
 )
 from conlanger.tools.rules import DiachronicSeries, RuleTitle, SoundChangeRule
@@ -102,7 +103,9 @@ CHANGELOG_CSV_COLUMNS = [
     "rule_id",
     "alt_idx",
     "source",
+    "prev_ok",
     "ok",
+    "failure_class",
     "timestamp",
 ]
 
@@ -216,7 +219,10 @@ def ok_flip_changelog_rows(
     prev["ok"] = _ok_as_bool(prev["ok"])
     prev = prev.drop_duplicates(subset=["source", "_alt_key"], keep="last")
     prev = prev.set_index(["source", "_alt_key"])["ok"]
-    cur = current.loc[:, ["section_index", "rule_id", "alt_idx", "source", "ok"]].copy()
+    cur = current.loc[
+        :,
+        ["section_index", "rule_id", "alt_idx", "source", "ok", "failure_class"],
+    ].copy()
     cur["_alt_key"] = _alt_idx_key(cur["alt_idx"])
     cur["ok"] = _ok_as_bool(cur["ok"])
     cur = cur.drop_duplicates(subset=["source", "_alt_key"], keep="last")
@@ -225,6 +231,8 @@ def ok_flip_changelog_rows(
     if flipped.empty:
         return empty
     flipped["alt_idx"] = _alt_idx_key(flipped["alt_idx"])
+    flipped["prev_ok"] = flipped["prev_ok"].map({True: "True", False: "False"})
+    flipped["ok"] = flipped["ok"].map({True: "True", False: "False"})
     flipped["timestamp"] = timestamp
     return flipped.loc[:, CHANGELOG_CSV_COLUMNS].reset_index(drop=True)
 
@@ -1269,6 +1277,10 @@ def summarize_inventory(
             (
                 f"- Underscore errors: "
                 f"[{UNDERSCORE_ERRORS_CSV_NAME}]({UNDERSCORE_ERRORS_CSV_NAME})"
+            ),
+            (
+                f"- Nested-bracket errors: "
+                f"[{NESTED_BRACKETS_ERRORS_CSV_NAME}]({NESTED_BRACKETS_ERRORS_CSV_NAME})"
             ),
             "",
         ]

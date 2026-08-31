@@ -6,30 +6,30 @@
 - Rows: **9676** (one per index rule)
 
 ## Rules
-- OK: **8023** (82.9%)
-- Fail: **1041** (10.8%)
+- OK: **8084** (83.5%)
+- Fail: **980** (10.1%)
 - Skipped: **612** (6.3%)
 
 ## Sections
 
-- All OK: **365 / 714** (51.1%)
-- Some OK: **318 / 714** (44.5%)
-- None OK: **6 / 714** (0.8%)
+- All OK: **369 / 714** (51.7%)
+- Some OK: **315 / 714** (44.1%)
+- None OK: **5 / 714** (0.7%)
 - Sections skipped: **25 / 714** (3.5%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 330 | `syntax_other` |
-| 194 | `expected_underscore` |
-| 138 | `runtime_other` |
+| 331 | `syntax_other` |
+| 193 | `expected_underscore` |
+| 139 | `runtime_other` |
 | 124 | `unknown_character` |
-| 89 | `nested_brackets` |
 | 36 | `expected_number` |
-| 33 | `prose_or_expected_arrow` |
 | 32 | `diacritic_prereq` |
+| 32 | `prose_or_expected_arrow` |
 | 31 | `unknown_feature` |
+| 28 | `nested_brackets` |
 | 14 | `stuff_after_word_bound` |
 | 11 | `unknown_grouping` |
 | 3 | `panic_other` |
@@ -89,3 +89,4 @@
 - Grouping errors: [grouping_errors.csv](grouping_errors.csv)
 - Character errors: [character_errors.csv](character_errors.csv)
 - Underscore errors: [underscore_errors.csv](underscore_errors.csv)
+- Nested-bracket errors: [nested_brackets_errors.csv](nested_brackets_errors.csv)

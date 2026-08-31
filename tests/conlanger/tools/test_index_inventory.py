@@ -381,7 +381,9 @@ def test_ok_flip_changelog_rows_keys_on_source_and_alt_idx():
     assert list(flips.columns) == CHANGELOG_CSV_COLUMNS
     assert list(flips["source"]) == ["file:1"]
     assert list(flips["alt_idx"]) == ["1"]
-    assert list(flips["ok"]) == [False]
+    assert list(flips["ok"]) == ["False"]
+    assert list(flips["prev_ok"]) == ["True"]
+    assert list(flips["failure_class"]) == ["syntax_other"]
 
 
 def test_write_validation_csv(tmp_path: Path):
@@ -860,7 +862,7 @@ def test_ok_flip_changelog_rows_emits_flips_by_source():
     flips = ok_flip_changelog_rows(previous, current, timestamp="2026-08-06T12:00:00Z")
     assert list(flips.columns) == CHANGELOG_CSV_COLUMNS
     assert list(flips["source"]) == ["file:1", "file:2"]
-    assert list(flips["ok"]) == [False, True]
+    assert list(flips["ok"]) == ["False", "True"]
     assert list(flips["rule_id"]) == ["r5", "r6"]
     assert list(flips["timestamp"]) == [
         "2026-08-06T12:00:00Z",
@@ -892,7 +894,7 @@ def test_ok_flip_changelog_rows_tolerates_previous_without_alt_idx():
     flips = ok_flip_changelog_rows(previous, current, timestamp="2026-08-12T00:00:00Z")
     assert list(flips.columns) == CHANGELOG_CSV_COLUMNS
     assert list(flips["source"]) == ["file:1"]
-    assert list(flips["ok"]) == [False]
+    assert list(flips["ok"]) == ["False"]
 
 
 def test_ok_flip_changelog_rows_empty_when_ok_unchanged():

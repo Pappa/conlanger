@@ -10,10 +10,13 @@ GROUPING_ERRORS_CSV_NAME = "grouping_errors.csv"
 CHARACTER_ERRORS_CSV_NAME = "character_errors.csv"
 UNDERSCORE_ERRORS_CSV_NAME = "underscore_errors.csv"
 
+NESTED_BRACKETS_ERRORS_CSV_NAME = "nested_brackets_errors.csv"
+
 CLUSTER_CSV_BY_FAILURE_CLASS: dict[str, str] = {
     "unknown_grouping": GROUPING_ERRORS_CSV_NAME,
     "unknown_character": CHARACTER_ERRORS_CSV_NAME,
     "expected_underscore": UNDERSCORE_ERRORS_CSV_NAME,
+    "nested_brackets": NESTED_BRACKETS_ERRORS_CSV_NAME,
 }
 
 CLUSTER_SOURCE_COLUMNS = [

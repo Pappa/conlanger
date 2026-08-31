@@ -46,9 +46,11 @@ _CLASS_OPT_LEN_COMMA_INLINE_RE = re.compile(
 _SET_SUFFIX_OPT_LEN_INLINE_RE = re.compile(rf"({_SET})\(({_LENGTH})\)")
 _MATRIX_OPT_LEN_INLINE_RE = re.compile(rf"({_MATRIX})\(({_LENGTH})\)")
 _CLASS_OPT_LEN_INLINE_RE = re.compile(
-    rf"({_CLASS_OR_TEMPLATE})\(({_LENGTH})\)([^\s{{]*)"
+    rf"(?<!\()({_CLASS_OR_TEMPLATE})\(({_LENGTH})\)([^\s{{)]*)"
 )
-_SEGMENT_OPT_LEN_INLINE_RE = re.compile(rf"({IPA_SEGMENT})\(({_LENGTH})\)([^\s{{]*)")
+_SEGMENT_OPT_LEN_INLINE_RE = re.compile(
+    rf"(?<!\()({IPA_SEGMENT})\(({_LENGTH})\)([^\s{{)]*)"
+)
 
 
 def _add_long_feature(segment: str) -> str:
@@ -71,10 +73,16 @@ def _optional_length_members(node: OptionalLengthNode) -> tuple[str, ...]:
 
 def _set_optional_length_members(set_text: str) -> tuple[str, ...]:
     members = split_braced_set_members(set_text)
-    short = "{" + ",".join(members) + "}"
     long_members = [_add_long_feature(member) for member in members]
-    long_form = "{" + ",".join(long_members) + "}"
-    return (short, long_form)
+    return tuple(members + long_members)
+
+
+def _member_alternates(member: str) -> list[str]:
+    """Expand optional length in one set member; flatten into parent set."""
+    expanded = _expand_optional_length_member(member)
+    if expanded != member and expanded.startswith("{") and expanded.endswith("}"):
+        return split_braced_set_members(expanded)
+    return [expanded]
 
 
 def parse_optional_length_part(part: str) -> FieldToken:
@@ -113,9 +121,23 @@ def parse_optional_length_part(part: str) -> FieldToken:
 def expand_optional_length_token(token: FieldToken) -> FieldToken:
     """Expand optional-length nodes to ordered brace-set field tokens."""
     if is_optional_length_token(token):
-        if token.set_members is not None:
-            return token.set_members
-        return _optional_length_members(token)
+        env_tail = ""
+        node = token
+        if token.suffix.startswith("_"):
+            env_tail = token.suffix
+            node = OptionalLengthNode(
+                segment=token.segment,
+                suffix="",
+                comma_alt=token.comma_alt,
+                set_members=token.set_members,
+            )
+        if node.set_members is not None:
+            expanded: FieldToken = node.set_members
+        else:
+            expanded = _optional_length_members(node)
+        if env_tail:
+            return token_to_raw_string(expanded) + env_tail
+        return expanded
     if is_set_token(token):
         expanded_members: list[str] = []
         for member in token:
@@ -164,8 +186,15 @@ def _expand_optional_length_member(member: str) -> str:
         )
 
     def suffix_repl(match: re.Match[str]) -> str:
+        segment = match.group(1)
+        suffix = match.group(3) or ""
+        if suffix.startswith("_"):
+            return (
+                _render_optional_length_node(OptionalLengthNode(segment=segment))
+                + suffix
+            )
         return _render_optional_length_node(
-            OptionalLengthNode(segment=match.group(1), suffix=match.group(3) or "")
+            OptionalLengthNode(segment=segment, suffix=suffix)
         )
 
     member = _SEGMENT_OPT_LEN_COMMA_INLINE_RE.sub(comma_repl, member)
@@ -183,9 +212,9 @@ def _expand_optional_length_member(member: str) -> str:
 
 def _expand_sets_in_text(text: str) -> str:
     def repl(match: re.Match[str]) -> str:
-        members = [
-            _expand_optional_length_member(m) for m in split_set_members(match.group(1))
-        ]
+        members: list[str] = []
+        for member in split_set_members(match.group(1)):
+            members.extend(_member_alternates(member))
         return "{" + ",".join(members) + "}"
 
     return SET_BODY_RE.sub(repl, text)

@@ -26,9 +26,10 @@ from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
         ("V3(ː)", "{V3,V3:[+long]}"),
         ("V3(ː)ʔ", "{V3ʔ,V3:[+long]ʔ}"),
         ("V:[+front](ː)", "{V:[+front],V:[+front, +long]}"),
-        ("{o,u}(ː)", "{{o,u},{o:[+long],u:[+long]}}"),
+        ("{o,u}(ː)", "{o,u,o:[+long],u:[+long]}"),
         ("e(ː,j)", "{e,ej,e:[+long],e:[+long]j}"),
-        ("_{i,e(ː),a}", "_{i,{e,e:[+long]},a}"),
+        ("_{i,e(ː),a}", "_{i,e,e:[+long],a}"),
+        ("{l(ː),n}", "{l,l:[+long],n}"),
         ("aː", "aː"),
     ],
 )
