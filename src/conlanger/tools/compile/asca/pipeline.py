@@ -36,6 +36,9 @@ from conlanger.tools.compile.asca.subscript_references import (
 from conlanger.tools.compile.asca.superscript_modifiers import (
     normalize_asca_superscript_modifiers,
 )
+from conlanger.tools.compile.asca.syllable_position import (
+    apply_syllable_position_compiled_overrides,
+)
 from conlanger.tools.compile.asca.tone_matrices import normalize_asca_tone_matrices
 from conlanger.tools.compile.compile_fields import RuleEnv, RuleInput, RuleOutput
 from conlanger.utils.mappings import CompilerConfig
@@ -126,6 +129,12 @@ def compile_asca_rule_field_strings(
         compiled_exception = compile_asca_field_post_subscript(compiled_exception)
         if is_whole_field_set(compiled_exception):
             compiled_exception = convert_set_to_environment_set(compiled_exception)
+    compiled_env, compiled_exception = apply_syllable_position_compiled_overrides(
+        env,
+        exception,
+        compiled_env,
+        compiled_exception,
+    )
     return compiled_input, compiled_output, compiled_env, compiled_exception
 
 

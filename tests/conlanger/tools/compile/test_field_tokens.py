@@ -10,7 +10,6 @@ from conlanger.tools.compile.asca.parallel import (
     drop_mixed_parallel_null_columns_tokens,
     expand_parallel_output_null_branches_from_tokens,
 )
-from conlanger.tools.compile.asca.optional_length import expand_optional_length_tokens
 from conlanger.tools.compile.compile_fields import RuleInput, RuleOutput
 from conlanger.tools.compile.field_tokens import (
     OptionalLengthNode,

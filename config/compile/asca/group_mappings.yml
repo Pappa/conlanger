@@ -41,7 +41,8 @@ T:
   comment: Index voiceless plosive
 U:
   mapping: '%'
-  comment: Index syllable ≈ ASCA whole-syllable % (Index % boundary → ASCA $ separately)
+  comment: Index syllable class letter → ASCA whole-syllable %; ``#U`` / ``U#`` word-edge
+    position markers compile via underline-structure rewrite (ticket 98), not this row
 W:
   mapping: G
   comment: Index semivowel ≈ ASCA glides G

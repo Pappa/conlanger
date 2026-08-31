@@ -6,14 +6,14 @@
 - Rows: **9677** (one per index rule)
 
 ## Rules
-- OK: **8093** (83.6%)
-- Fail: **972** (10.0%)
+- OK: **8121** (83.9%)
+- Fail: **944** (9.8%)
 - Skipped: **612** (6.3%)
 
 ## Sections
 
-- All OK: **372 / 714** (52.1%)
-- Some OK: **313 / 714** (43.8%)
+- All OK: **377 / 714** (52.8%)
+- Some OK: **308 / 714** (43.1%)
 - None OK: **4 / 714** (0.6%)
 - Sections skipped: **25 / 714** (3.5%)
 
@@ -21,8 +21,8 @@
 
 | count | failure_class |
 |------:|---------------|
-| 331 | `syntax_other` |
-| 194 | `expected_underscore` |
+| 318 | `syntax_other` |
+| 179 | `expected_underscore` |
 | 139 | `runtime_other` |
 | 122 | `unknown_character` |
 | 36 | `expected_number` |

@@ -40,6 +40,7 @@ from conlanger.tools.ingest.transforms import (
     apply_medial_env_conditions,
     apply_sporadic_qualifier,
     apply_stress_conditions,
+    apply_syllable_position_editorial_strip,
     apply_trailing_glosses,
     split_line_semicolon_comment,
 )
@@ -158,6 +159,7 @@ class IndexDiachronicaParser:
         parts = apply_trailing_glosses(parts)
         parts = apply_stress_conditions(parts)
         parts = apply_medial_env_conditions(parts)
+        parts = apply_syllable_position_editorial_strip(parts)
         parts = apply_feature_mappings(parts, self._feature_mappings)
         parts = apply_ipa_mappings(parts, self._ipa_mappings)
         parts = finalize_stages_shape(parts)

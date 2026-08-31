@@ -5,6 +5,9 @@ from __future__ import annotations
 import re
 from typing import Any
 
+from conlanger.tools.compile.asca.syllable_position import (
+    strip_editorial_in_before_syllable_position,
+)
 from conlanger.utils.gloss import (
     extract_field_wrapped_quoted_gloss_from_field,
     extract_trailing_gloss_from_field,
@@ -195,6 +198,15 @@ def normalize_medial_env_field(text: str) -> tuple[str, bool]:
     if match:
         return stripped[: match.start()].rstrip(), True
     return text, False
+
+
+def apply_syllable_position_editorial_strip(parts: dict[str, Any]) -> dict[str, Any]:
+    """Normalize mechanical ``in #U`` / ``in U#`` tails on env and exception fields."""
+    result: dict[str, Any] = dict(parts)
+    for key in _CORPUS_CONTEXT_FIELD_KEYS:
+        if result.get(key):
+            result[key] = strip_editorial_in_before_syllable_position(result[key])
+    return result
 
 
 def apply_medial_env_conditions(parts: dict[str, Any]) -> dict[str, Any]:
