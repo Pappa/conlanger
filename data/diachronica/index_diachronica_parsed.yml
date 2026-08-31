@@ -9351,7 +9351,7 @@ sections:
     source: index_diachronica_original.html:2769
     rule_id: Waray-r
   - stages:
-    - '*c'
+    - c
     - s
     raw: '*c → s'
     source: index_diachronica_original.html:2770
@@ -18789,7 +18789,7 @@ sections:
     - C
     - Cː
     env: _V(…V)
-    exception: 'in #U'
+    exception: '#U'
     raw: 'C → Cː / _V(…V) except in #U'
     source: index_diachronica_original.html:4717
     rule_id: Kuskokwim-Yup’ik-C
@@ -18923,7 +18923,7 @@ sections:
     - ə
     - ∅
     env: _dʒ{a,u}
-    exception: 'in #U'
+    exception: '#U'
     raw: 'ə → ∅ / _dʒ{a,u}, except in #U'
     source: index_diachronica_original.html:4736
     rule_id: Kuskokwim-Yup’ik-ə_4
@@ -18931,7 +18931,7 @@ sections:
     - a
     - ∅
     env: _dʒa
-    exception: 'in #U'
+    exception: '#U'
     raw: 'a → ∅ / _dʒa, except in #U'
     source: index_diachronica_original.html:4737
     rule_id: Kuskokwim-Yup’ik-a
@@ -18963,7 +18963,7 @@ sections:
     - C
     - Cː
     env: _V(…V)
-    exception: 'in #U'
+    exception: '#U'
     raw: 'C → Cː / _V(…V) except in #U'
     source: index_diachronica_original.html:4744
     rule_id: Nunivak-Yup’ik-C
@@ -19112,7 +19112,7 @@ sections:
     - ə
     - ∅
     env: _dʒ{a,u}
-    exception: 'in #U'
+    exception: '#U'
     raw: 'ə → ∅ / _dʒ{a,u} except in #U'
     source: index_diachronica_original.html:4766
     rule_id: Nunivak-Yup’ik-ə_4
@@ -19292,7 +19292,7 @@ sections:
     - ə
     - ∅
     env: _dʒ{a,u}
-    exception: 'in #U'
+    exception: '#U'
     raw: 'ə → ∅ / _dʒ{a,u} except in #U'
     source: index_diachronica_original.html:4794
     rule_id: Siberian-Yup’ik-ə_4
@@ -19470,7 +19470,7 @@ sections:
     - ə
     - ∅
     env: _dʒ{a,u}
-    exception: 'in #U'
+    exception: '#U'
     raw: 'ə → ∅ / _dʒ{a,u} except in #U'
     source: index_diachronica_original.html:4822
     rule_id: Unaaliq-Yup’ik-ə_4

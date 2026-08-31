@@ -1151,6 +1151,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 10.1.2.10,Proto-Philippine to Waray,Waray-*j_2,,index_diachronica_original.html:2767,True,,,,,
 10.1.2.10,Proto-Philippine to Waray,Waray-*R,,index_diachronica_original.html:2768,True,,,,,
 10.1.2.10,Proto-Philippine to Waray,Waray-r,,index_diachronica_original.html:2769,True,,,,,
+10.1.2.10,Proto-Philippine to Waray,Waray-*c,,index_diachronica_original.html:2770,True,,,,,
 10.1.2.10,Proto-Philippine to Waray,Waray-q,,index_diachronica_original.html:2771,True,,,,,
 10.1.2.10,Proto-Philippine to Waray,Waray-iw,,index_diachronica_original.html:2772,True,,,,,
 10.2,Proto-Austronesian to Proto-Batak,Proto-Batak-w,,index_diachronica_original.html:2778,True,,,,,
