@@ -54,7 +54,7 @@ And represent other characteristics of any language as 2d images.
 The upshot of all this is that I realised I can use this data to train a GAN (or use some other method like SMOTE) to generate random, 
 but plausible skeleton languages, including a phoneme inventory and other characteristics of the language.
 
-<div style="text-align:center">
+<div style="text-align:center; width:100%">
   <img src="./assets/Awesome_Face.svg" />
 </div>
 
