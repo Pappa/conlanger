@@ -3,10 +3,10 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
-- Rows: **9676** (one per index rule)
+- Rows: **9677** (one per index rule)
 
 ## Rules
-- OK: **8091** (83.6%)
+- OK: **8092** (83.6%)
 - Fail: **973** (10.1%)
 - Skipped: **612** (6.3%)
 
@@ -21,8 +21,8 @@
 
 | count | failure_class |
 |------:|---------------|
-| 333 | `syntax_other` |
-| 193 | `expected_underscore` |
+| 332 | `syntax_other` |
+| 194 | `expected_underscore` |
 | 139 | `runtime_other` |
 | 123 | `unknown_character` |
 | 36 | `expected_number` |
@@ -76,17 +76,6 @@
 | 3 | `Y` |
 | 1 | `I` |
 | 1 | `X` |
-
-
-## Field isolation blame (error rows)
-
-| count | blame |
-|------:|-------|
-| 338 | `env` |
-| 239 | `input` |
-| 206 | `output` |
-| 191 | `multi` |
-| 110 | `exception` |
 
 ## Notes
 

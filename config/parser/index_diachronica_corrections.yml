@@ -57,11 +57,11 @@ rules:
                   reason: "Replacing with IPA symbols"
         - rule:
                   id: Yemsa-kʼ
-                  content: "kʼ → k / #_"
+                  content: "kʼ → k / #_, _#"
                   reason: "This is a guess, it could be _# or _,#"
         - rule:
                   id: Proto-Mongolic-tʃ_2
-                  content: "tʃ → d / #_"
+                  content: "tʃ → d / #_, _#"
                   reason: "This is a guess, it could be _# or _,#"
         - rule:
                   id: Old-Japanese-Vowel-Shift-u,ɨi-,a,i-ɨi,ia,ə-uɨ,a,ə
@@ -145,27 +145,27 @@ rules:
                   reason: "Corrected from original source: https://www.ethnologue.com/language/erohttps://www.researchgate.net/publication/306887303_The_Linguistic_History_of_Southern_Vanuatu"
         - rule:
                   id: Early-Icelandic-O
-                  content: "O[α PLACE] → ∅ / {F[- α PLACE],r,l}_O"
+                  content: "O:[α PLACE] → ∅ / {F:[- α PLACE],r,l}_O"
                   reason: "Using asca syntax - unsure how else to represent POA"
         - rule:
                   id: Early-Icelandic-S
-                  content: "S[α PLACE] → ∅ / N[α PLACE]_S"
+                  content: "S:[α PLACE] → ∅ / N:[α PLACE]_S"
                   reason: "Using asca syntax - unsure how else to represent POA"
         - rule:
                   id: Egyptian-Arabic-i,u
-                  content: "{i,u} → ∅ / VC_[-stress, -long]CV"
+                  content: "{i,u} → ∅ / VC_:[-stress, -long]CV"
                   reason: "Replacing prose"
         - rule:
                   id: Moroccan-Arabic-a,i
-                  content: "{a,i} → ə / _[-long]"
+                  content: "{a,i} → ə / _:[-long]"
                   reason: "Replacing prose"
         - rule:
                   id: Moroccan-Arabic-u
-                  content: "u → ə / _[-long]"
+                  content: "u → ə / _:[-long]"
                   reason: "Replacing prose"
         - rule:
                   id: Moroccan-Arabic-u_2
-                  content: "u → ʊ / _[-long]"
+                  content: "u → ʊ / _:[-long]"
                   reason: "Replacing prose"
         - rule:
                   id: Proto-Slavic-bʱ-dʱ-ɡʱ,ɡ́ʱ-ɡʷʱ
@@ -181,7 +181,7 @@ rules:
                   reason: "Typo? - ə → ∅ / {i,ɨ}_{p,m.w}"
         - rule:
                   id: Blackfoot-ket
-                  content: "ket → tː → sː"
+                  content: "ket → {tː, sː}"
                   reason: "Allowing for possible alternative output"
         - rule:
                   id: Cheyenne-W

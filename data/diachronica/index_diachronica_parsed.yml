@@ -941,8 +941,8 @@ sections:
   - stages:
     - kʼ
     - k
-    env: '#_'
-    raw: 'kʼ → k / #_'
+    env: '#_, _#'
+    raw: 'kʼ → k / #_, _#'
     source: index_diachronica_original.html:1110
     rule_id: Yemsa-kʼ
   - stages:
@@ -2389,8 +2389,8 @@ sections:
   - stages:
     - '{i,u}'
     - ∅
-    env: VC_[-stress, -long]CV
-    raw: '{i,u} → ∅ / VC_[-stress, -long]CV'
+    env: VC_:[-stress, -long]CV
+    raw: '{i,u} → ∅ / VC_:[-stress, -long]CV'
     source: index_diachronica_original.html:1388
     rule_id: Egyptian-Arabic-i,u
   - stages:
@@ -2738,15 +2738,15 @@ sections:
   - stages:
     - '{a,i}'
     - ə
-    env: _[-long]
-    raw: '{a,i} → ə / _[-long]'
+    env: _:[-long]
+    raw: '{a,i} → ə / _:[-long]'
     source: index_diachronica_original.html:1468
     rule_id: Moroccan-Arabic-a,i
   - stages:
     - u
     - ə
-    env: _[-long]
-    raw: u → ə / _[-long]
+    env: _:[-long]
+    raw: u → ə / _:[-long]
     source: index_diachronica_original.html:1469
     rule_id: Moroccan-Arabic-u
   - stages:
@@ -2788,8 +2788,8 @@ sections:
   - stages:
     - u
     - ʊ
-    env: _[-long]
-    raw: u → ʊ / _[-long]
+    env: _:[-long]
+    raw: u → ʊ / _:[-long]
     source: index_diachronica_original.html:1475
     rule_id: Moroccan-Arabic-u_2
   - comment: near emphatics
@@ -4259,9 +4259,8 @@ sections:
     rule_id: Blackfoot-tem-k,pen
   - stages:
     - ket
-    - tː
-    - sː
-    raw: ket → tː → sː
+    - '{tː, sː}'
+    raw: ket → {tː, sː}
     source: index_diachronica_original.html:1755
     rule_id: Blackfoot-ket
   - stages:
@@ -6739,8 +6738,8 @@ sections:
   - stages:
     - tʃ
     - d
-    env: '#_'
-    raw: 'tʃ → d / #_'
+    env: '#_, _#'
+    raw: 'tʃ → d / #_, _#'
     source: index_diachronica_original.html:2193
     rule_id: Proto-Mongolic-tʃ_2
   - stages:
@@ -28509,17 +28508,17 @@ sections:
     source: index_diachronica_original.html:6360
     rule_id: Early-Icelandic-e
   - stages:
-    - O[α PLACE]
+    - O:[α PLACE]
     - ∅
-    env: '{F[- α PLACE],r,l}_O'
-    raw: O[α PLACE] → ∅ / {F[- α PLACE],r,l}_O
+    env: '{F:[- α PLACE],r,l}_O'
+    raw: O:[α PLACE] → ∅ / {F:[- α PLACE],r,l}_O
     source: index_diachronica_original.html:6361
     rule_id: Early-Icelandic-O
   - stages:
-    - S[α PLACE]
+    - S:[α PLACE]
     - ∅
-    env: N[α PLACE]_S
-    raw: S[α PLACE] → ∅ / N[α PLACE]_S
+    env: N:[α PLACE]_S
+    raw: S:[α PLACE] → ∅ / N:[α PLACE]_S
     source: index_diachronica_original.html:6362
     rule_id: Early-Icelandic-S
   - stages:

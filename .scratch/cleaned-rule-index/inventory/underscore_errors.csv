@@ -191,4 +191,5 @@ section_index,rule_id,error_token,rule
 46.13,Faroese-Vowel-Shift-oː,,"o:[+long] > ɛu / œ | ^ @ Rule 1, Line 1"
 46.13,Faroese-Vowel-Shift-oː,,"o:[+long] > œu / œ | ^ @ Rule 1, Line 1"
 46.13,Faroese-Vowel-Shift-uː,,"u:[+long] > ʉu / ʏ | ^ @ Rule 1, Line 1"
+46.13,"Faroese-Vowel-Shift-œ,ɔ",,"{œ,ɔ} > ø:[+long]/œ | ^ @ Rule 1, Line 1"
 46.19,Southern-United-States-Shift-English-aɪ_4,,"aɪ > a:[+long] / else | ^ @ Rule 1, Line 1"
