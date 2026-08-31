@@ -29,6 +29,7 @@ from conlanger.tools.inventory_error_clusters import (
     GROUPING_ERRORS_CSV_NAME,
     NESTED_BRACKETS_ERRORS_CSV_NAME,
     UNDERSCORE_ERRORS_CSV_NAME,
+    UNKNOWN_FEATURES_CSV_NAME,
 )
 from conlanger.tools.rules import DiachronicSeries, RuleTitle, SoundChangeRule
 from conlanger.utils.mappings import CompilerConfig
@@ -1278,6 +1279,10 @@ def summarize_inventory(
             (
                 f"- Nested-bracket errors: "
                 f"[{NESTED_BRACKETS_ERRORS_CSV_NAME}]({NESTED_BRACKETS_ERRORS_CSV_NAME})"
+            ),
+            (
+                f"- Unknown features: "
+                f"[{UNKNOWN_FEATURES_CSV_NAME}]({UNKNOWN_FEATURES_CSV_NAME})"
             ),
             "",
         ]

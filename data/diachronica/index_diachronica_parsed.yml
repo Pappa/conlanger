@@ -18852,10 +18852,10 @@ sections:
     source: index_diachronica_original.html:4725
     rule_id: Kuskokwim-Yup’ik-F+voice
   - stages:
-    - F[+voice]
-    - S[+same POA]
+    - F[+voice, α PLACE]
+    - S[α PLACE]
     env: l̥_
-    raw: F[+voice] → S[+same POA] / l̥_
+    raw: F[+voice, α PLACE] → S[α PLACE] / l̥_
     source: index_diachronica_original.html:4726
     rule_id: Kuskokwim-Yup’ik-F+voice_2
   - stages:
@@ -28509,17 +28509,17 @@ sections:
     source: index_diachronica_original.html:6360
     rule_id: Early-Icelandic-e
   - stages:
-    - O
+    - O[α PLACE]
     - ∅
-    env: '{F,r,l}_O'
-    raw: O → ∅ / {F,r,l}_O
+    env: '{F[- α PLACE],r,l}_O'
+    raw: O[α PLACE] → ∅ / {F[- α PLACE],r,l}_O
     source: index_diachronica_original.html:6361
     rule_id: Early-Icelandic-O
   - stages:
-    - S
+    - S[α PLACE]
     - ∅
-    env: N_S
-    raw: S → ∅ / N_S
+    env: N[α PLACE]_S
+    raw: S[α PLACE] → ∅ / N[α PLACE]_S
     source: index_diachronica_original.html:6362
     rule_id: Early-Icelandic-S
   - stages:
@@ -54896,12 +54896,12 @@ sections:
   citation: Pogostick Man, from Kinkade, Dale M. “Shifts of Nasals to Vowels in Interior
     Salish”
   rules:
-  - stages:
-    - N[+place]
+  - comment: “‘in primary forms’”
+    stages:
+    - N[-place, α PLACE]
     - e
-    env: _O[+ same POA]
-    comment: “‘in primary forms’”
-    raw: N[- glottalized] → e / _O[+ same POA] “‘in primary forms’”
+    env: _O[α PLACE]
+    raw: N[-place, α PLACE] → e / _O[α PLACE] ; “‘in primary forms’”
     source: index_diachronica_original.html:11713
     rule_id: Vowel-Shifts_2-N-glottalized
   - comment: the paper is not being very clear here)
@@ -64706,9 +64706,9 @@ sections:
     rule_id: Asaro-Nl
   - stages:
     - N
-    - N[+ same POA]
-    env: _S
-    raw: N → N[+ same POA] / _S
+    - '[α PLACE]'
+    env: _S:[α PLACE]
+    raw: N → [α PLACE] / _S:[α PLACE]
     source: index_diachronica_original.html:13580
     rule_id: Asaro-N
   - stages:

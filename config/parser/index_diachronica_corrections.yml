@@ -145,12 +145,12 @@ rules:
                   reason: "Corrected from original source: https://www.ethnologue.com/language/erohttps://www.researchgate.net/publication/306887303_The_Linguistic_History_of_Southern_Vanuatu"
         - rule:
                   id: Early-Icelandic-O
-                  content: "O → ∅ / {F,r,l}_O"
-                  reason: "Can't find any reference to POA in original source. Same POA as what exactly?: http://www.kunstsprachen.de/s17/rules.sch"
+                  content: "O[α PLACE] → ∅ / {F[- α PLACE],r,l}_O"
+                  reason: "Using asca syntax - unsure how else to represent POA"
         - rule:
                   id: Early-Icelandic-S
-                  content: "S → ∅ / N_S"
-                  reason: "Can't find any reference to POA in original source. Same POA as what exactly?: http://www.kunstsprachen.de/s17/rules.sch"
+                  content: "S[α PLACE] → ∅ / N[α PLACE]_S"
+                  reason: "Using asca syntax - unsure how else to represent POA"
         - rule:
                   id: Egyptian-Arabic-i,u
                   content: "{i,u} → ∅ / VC_[-stress, -long]CV"
@@ -193,3 +193,18 @@ rules:
                   reason: |
                           Removing intermediate steps - original:
                           p k tʃ b ɡ β j → b ɡ i {b,u,u→y→i} ∅ {u,u→y→i} i / _r
+
+        - rule:
+                  id: Asaro-N
+                  content: "N → [α PLACE] / _S:[α PLACE]"
+                  reason: "Using asca syntax - unsure how else to represent POA"
+
+        - rule:
+                  id: Kuskokwim-Yup’ik-F+voice_2
+                  content: "F[+voice, α PLACE] → S[α PLACE] / l̥_"
+                  reason: "Using asca syntax - unsure how else to represent POA"
+
+        - rule:
+                  id: Vowel-Shifts_2-N-glottalized
+                  content: "N[-place, α PLACE] → e / _O[α PLACE] ; “‘in primary forms’” "
+                  reason: "I think this is probably wrong"

@@ -6,30 +6,30 @@
 - Rows: **9676** (one per index rule)
 
 ## Rules
-- OK: **8084** (83.5%)
-- Fail: **980** (10.1%)
+- OK: **8086** (83.6%)
+- Fail: **978** (10.1%)
 - Skipped: **612** (6.3%)
 
 ## Sections
 
-- All OK: **369 / 714** (51.7%)
+- All OK: **370 / 714** (51.8%)
 - Some OK: **315 / 714** (44.1%)
-- None OK: **5 / 714** (0.7%)
+- None OK: **4 / 714** (0.6%)
 - Sections skipped: **25 / 714** (3.5%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 331 | `syntax_other` |
+| 332 | `syntax_other` |
 | 193 | `expected_underscore` |
 | 139 | `runtime_other` |
-| 124 | `unknown_character` |
+| 123 | `unknown_character` |
 | 36 | `expected_number` |
+| 33 | `prose_or_expected_arrow` |
 | 32 | `diacritic_prereq` |
-| 32 | `prose_or_expected_arrow` |
-| 31 | `unknown_feature` |
 | 28 | `nested_brackets` |
+| 28 | `unknown_feature` |
 | 14 | `stuff_after_word_bound` |
 | 11 | `unknown_grouping` |
 | 3 | `panic_other` |
@@ -46,24 +46,24 @@
 | 22 | `̣` |
 | 13 | `₂` |
 | 11 | `̊` |
-| 6 | `̺` |
 | 6 | `ŕ` |
+| 6 | `̺` |
 
 ### unknown_feature
 
 | count | error_token | suggested |
 |------:|-------------|-----------|
-| 8 | `samePOA` | `lateral` |
 | 5 | `weak` | `man` |
+| 5 | `samePOA` | `lateral` |
 | 3 | `initial` | `nasal` |
 | 3 | `palatalized` | `latrl` |
 | 2 | `fricative` | `rhotic` |
 | 1 | `lowpitch` | `voice` |
 | 1 | `highpitch` | `high` |
+| 1 | `intertonic` | `anterior` |
 | 1 | `posttonic` | `sonor` |
 | 1 | `ejective` | `contin` |
 | 1 | `alveolopalatal` | `consonantal` |
-| 1 | `intertonic` | `anterior` |
 | 1 | `tonic` | `cons` |
 | 1 | `glide` | `click` |
 | 1 | `accent` | `cont` |
@@ -90,3 +90,4 @@
 - Character errors: [character_errors.csv](character_errors.csv)
 - Underscore errors: [underscore_errors.csv](underscore_errors.csv)
 - Nested-bracket errors: [nested_brackets_errors.csv](nested_brackets_errors.csv)
+- Unknown features: [unknown_features.csv](unknown_features.csv)

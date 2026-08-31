@@ -731,6 +731,7 @@ def test_summarize_inventory():
     assert "grouping_errors.csv" in text
     assert "character_errors.csv" in text
     assert "underscore_errors.csv" in text
+    assert "unknown_features.csv" in text
 
 
 def test_summarize_inventory_empty():
