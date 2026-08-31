@@ -11,7 +11,7 @@ I am a novice Conlanger, currently enjoying the view from the peak of Mount Stup
 A few years ago, I experimented building a [GAN](https://en.wikipedia.org/wiki/Generative_adversarial_network) (generative adversarial network) to generate fake Joan Miró paintings. The result, [MiroBot](https://github.com/Pappa/MiroBot), wasn't very good at creating a convincing Miró, but it did pretty well when I fed it Mark Rothko paintings instead.
 
 | Fake Mirós | Fake Rothkos |
-|------:|---------------|
+|------|---------------|
 | ![Fake Mirós](./assets/MiroBot/fake_miros.png) | ![Fake Rothkos](./assets/MiroBot/fake_rothkos.png) |
 
 Given a 2d image of random noise as input, the trained model spits out a Rothko.
