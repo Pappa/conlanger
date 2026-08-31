@@ -1,5 +1,5 @@
 Type: task
-Status: done
+Status: resolved
 
 # Split `create_index` and `validate_rules` operator commands
 

@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: None
 
 # Implement compile-field intermediate representation (field tokens)
@@ -29,16 +29,29 @@ Replace string-gated alternative detection and ad-hoc splits with an ordered **f
 
 ## Acceptance criteria
 
-- [ ] `RuleInput` / `RuleOutput` / `RuleEnv` with raw + tokens + compiled
-- [ ] Alternative detection uses field-token gates (66, 81)
-- [ ] Parallel null drop (60) operates on field tokens
-- [ ] Optional-length node policy per grill 94 Q6 (or filed as follow-on blocked only on types landing)
-- [ ] Golden `.rsca` unchanged except documented cases in **Answer**
-- [ ] Structure tests for token shape and fan-out
-- [ ] Full gate: `uv run pytest`; `uv run per_file_coverage_gate`; ruff
+- [x] `RuleInput` / `RuleOutput` / `RuleEnv` with raw + tokens + compiled
+- [x] Alternative detection uses field-token gates (66, 81)
+- [x] Parallel null drop (60) operates on field tokens
+- [x] Optional-length node policy per grill 94 Q6 (landed with [104](104-correction-pass-parenthesized-optional-length-marker.md))
+- [x] Golden `.rsca` unchanged except documented cases in **Answer**
+- [x] Structure tests for token shape and fan-out
+- [x] Full gate: `uv run pytest`; `uv run per_file_coverage_gate`; ruff
 
 ## References
 
 - [Grill: structured compile intermediate representation](94-grill-structured-soundchangerule-ir.md)
 - [Store compiled fields; join at render](99-compiled-fields-join-at-render.md)
 - [Correction pass: parenthesized optional length `(ː)`](104-correction-pass-parenthesized-optional-length-marker.md)
+
+## Answer
+
+Field-token IR shipped per [ADR-0015](../../../docs/adr/0015-compile-field-intermediate-representation.md):
+
+- `src/conlanger/tools/compile/field_tokens.py` — `FieldToken`, `OptionalLengthNode`, parse/render, optional-output shape gate
+- `src/conlanger/tools/compile/compile_fields.py` — `RuleInput` / `RuleOutput` / `RuleEnv` (raw + tokens + compiled)
+- `src/conlanger/tools/rules.py` — alternatives and parallel fan-out read field tokens
+- `src/conlanger/tools/compile/asca/parallel.py` — parallel null drop and branch expansion on tokens
+- `src/conlanger/tools/compile/asca/optional_length.py` — optional-length node expansion (consumed by [104](104-correction-pass-parenthesized-optional-length-marker.md))
+- `tests/conlanger/tools/compile/test_field_tokens.py` — structure, fan-out, and optional-output gate tests
+
+**Render changes:** None beyond [104](104-correction-pass-parenthesized-optional-length-marker.md) optional-length policy (documented there).

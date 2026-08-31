@@ -38,7 +38,7 @@ What is the compile-time internal representation of a `SoundChangeRule`’s inpu
 
 ## Answer
 
-Owner confirmed full design (2026-08-31). ADR [0015](../../../docs/adr/0015-compile-field-intermediate-representation.md). Implementation: [105 — Implement compile-field intermediate representation](105-implement-compile-field-intermediate-representation.md) (`ready-for-agent`). Unblocks [104](104-correction-pass-parenthesized-optional-length-marker.md) optional-length policy.
+Owner confirmed full design (2026-08-31). ADR [0015](../../../docs/adr/0015-compile-field-intermediate-representation.md). Implementation: [105 — Implement compile-field intermediate representation](105-implement-compile-field-intermediate-representation.md) (**resolved**). Unblocked [104](104-correction-pass-parenthesized-optional-length-marker.md) optional-length policy.
 
 ## Session summaries
 
