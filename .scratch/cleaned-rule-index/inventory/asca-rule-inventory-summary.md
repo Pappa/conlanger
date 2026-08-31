@@ -6,14 +6,14 @@
 - Rows: **9677** (one per index rule)
 
 ## Rules
-- OK: **8122** (83.9%)
-- Fail: **943** (9.7%)
+- OK: **8123** (83.9%)
+- Fail: **942** (9.7%)
 - Skipped: **612** (6.3%)
 
 ## Sections
 
-- All OK: **378 / 714** (52.9%)
-- Some OK: **307 / 714** (43.0%)
+- All OK: **379 / 714** (53.1%)
+- Some OK: **306 / 714** (42.9%)
 - None OK: **4 / 714** (0.6%)
 - Sections skipped: **25 / 714** (3.5%)
 
@@ -21,13 +21,13 @@
 
 | count | failure_class |
 |------:|---------------|
-| 318 | `syntax_other` |
-| 180 | `expected_underscore` |
+| 316 | `syntax_other` |
+| 179 | `expected_underscore` |
 | 139 | `runtime_other` |
-| 122 | `unknown_character` |
+| 123 | `unknown_character` |
 | 36 | `expected_number` |
 | 32 | `diacritic_prereq` |
-| 31 | `prose_or_expected_arrow` |
+| 32 | `prose_or_expected_arrow` |
 | 28 | `nested_brackets` |
 | 23 | `unknown_feature` |
 | 14 | `stuff_after_word_bound` |
@@ -46,8 +46,8 @@
 | 22 | `̣` |
 | 13 | `₂` |
 | 11 | `̊` |
-| 6 | `̺` |
 | 6 | `ŕ` |
+| 6 | `̺` |
 
 ### unknown_feature
 

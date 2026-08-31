@@ -68293,11 +68293,12 @@ sections:
     7-to-5 Vowel Merger in Bantu”. In Sound Change, M. Dominicy and D. Demolin (Eds.),
     Amsterdam: John Benjamins, 1995.'
   rules:
-  - comment: in some cases, the phones go to null or to /l/)
+  - comment: (Do not necessarily have to be fricatives at the same POA; in some cases,
+      the phones go to null or to /l/)
     stages:
     - S
     - F
-    env: _{i,u} (Do not necessarily have to be fricatives at the same POA
+    env: _{i,u}
     raw: S → F / _{i,u} (Do not necessarily have to be fricatives at the same POA;
       in some cases, the phones go to null or to /l/)
     source: index_diachronica_original.html:14293

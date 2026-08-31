@@ -137,8 +137,8 @@
   reason: replace prose
 - from: There seems to ahve been some stuff going on
   to: " ; There seems to ahve been some stuff going on"
-- from: (Do  not necessarily
-  to: " ;  (Do  not necessarily"
+- from: (Do not necessarily
+  to: " ;  (Do not necessarily"
   reason: comment
 - from: " (“[a]rchaic relic”)"
   to: " ; (“[a]rchaic relic”)"
