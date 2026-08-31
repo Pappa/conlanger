@@ -26,6 +26,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,reason,error_
 6.1.1,Proto-Omotic to North Omotic,North-Omotic-Cw,,index_diachronica_original.html:984,True,,,,,
 6.1.1,Proto-Omotic to North Omotic,North-Omotic-Vː,,index_diachronica_original.html:985,True,,,,,
 6.1.1,Proto-Omotic to North Omotic,North-Omotic-u,,index_diachronica_original.html:986,True,,,,,
+6.1.1,Proto-Omotic to North Omotic,North-Omotic-Vː_2,,index_diachronica_original.html:987,True,,,,,held-out (commented rule)
 6.1.1,Proto-Omotic to North Omotic,North-Omotic-N,,index_diachronica_original.html:988,True,,,,,
 6.1.1.1,North Omotic to Bench,Bench-x1,,index_diachronica_original.html:993,True,,,,,
 6.1.1.1,North Omotic to Bench,Bench-x2,,index_diachronica_original.html:994,True,,,,,

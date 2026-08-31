@@ -272,13 +272,12 @@ sections:
     raw: 'u → uː / #S[+voice]_P[-voice]'
     source: index_diachronica_original.html:986
     rule_id: North-Omotic-u
-  - stages:
-    - Vː
-    - V
-    env: '#C_C$ + $(V)C$ suffix'
+  - stages: []
     raw: 'Vː → V / #C_C$ + $(V)C$ suffix'
     source: index_diachronica_original.html:987
+    status: skipped
     rule_id: North-Omotic-Vː_2
+    comment: I can't figure out the rule even afer reading the source material
   - stages:
     - N
     - ∅
@@ -14805,8 +14804,8 @@ sections:
       an error)
     source: index_diachronica_original.html:3787
     rule_id: Proto-Ongan-h
-  - comment: ; (?; included here based on a comment earlier in the paper, but not
-      listed on the correspondence list)
+  - comment: (?; included here based on a comment earlier in the paper, but not listed
+      on the correspondence list)
     stages:
     - e
     - ə

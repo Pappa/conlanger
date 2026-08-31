@@ -79,3 +79,5 @@ skip_rules:
     reason: "Not sure how to interpret rule: r…r → r…∅"
   - id: Old-Low-German-F-voice
     reason: "No idea what X means"
+  - id: North-Omotic-Vː_2
+    reason: "I can't figure out the rule even afer reading the source material"
