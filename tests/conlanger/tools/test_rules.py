@@ -354,11 +354,16 @@ def test_sound_change_rule_skipped_keeps_index_raw_fields():
             {"input": "d", "output": "{∅,ð}", "env": "V_V"},
             ["d > ∅ / V_V", "d > ð / V_V"],
         ),
+        (
+            {"input": "ŋ", "output": "{∅,n} #_ else"},
+            ["ŋ > ∅ / #_ else", "ŋ > n / #_ else"],
+        ),
     ],
     ids=[
         "paired_null_set",
         "multi_column_null_set",
         "optional_output_over_parallel_null",
+        "embedded_env_optional_output",
     ],
 )
 def test_sound_change_rule_parallel_null_alternatives(fields, expected_values):

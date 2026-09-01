@@ -3,17 +3,17 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
-- Rows: **9677** (one per index rule)
+- Rows: **9840** (one per index rule)
 
 ## Rules
-- OK: **8184** (84.6%)
-- Fail: **881** (9.1%)
-- Skipped: **612** (6.3%)
+- OK: **8358** (84.9%)
+- Fail: **870** (8.8%)
+- Skipped: **612** (6.2%)
 
 ## Sections
 
-- All OK: **399 / 714** (55.9%)
-- Some OK: **286 / 714** (40.1%)
+- All OK: **408 / 714** (57.1%)
+- Some OK: **277 / 714** (38.8%)
 - None OK: **4 / 714** (0.6%)
 - Sections skipped: **25 / 714** (3.5%)
 
@@ -21,10 +21,10 @@
 
 | count | failure_class |
 |------:|---------------|
-| 319 | `syntax_other` |
+| 309 | `syntax_other` |
 | 139 | `runtime_other` |
 | 123 | `unknown_character` |
-| 115 | `expected_underscore` |
+| 114 | `expected_underscore` |
 | 35 | `expected_number` |
 | 33 | `prose_or_expected_arrow` |
 | 32 | `diacritic_prereq` |

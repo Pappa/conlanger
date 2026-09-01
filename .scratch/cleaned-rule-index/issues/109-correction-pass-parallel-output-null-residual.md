@@ -31,10 +31,37 @@ Concentrated in sections **18.4.1** (Akwára), **21.2.3.x** (Deirate / Faia / Fa
 
 ## Acceptance criteria
 
-- [ ] Residual shapes classified vs ticket 81 coverage
-- [ ] Compile transforms; `raw` unchanged
-- [ ] Full inventory re-run; metrics in **Answer**
-- [ ] Unit tests for each new shape
+- [x] Residual shapes classified vs ticket 81 coverage
+- [x] Compile transforms; `raw` unchanged
+- [x] Full inventory re-run; metrics in **Answer**
+- [x] Unit tests for each new shape
+
+## Answer
+
+Implemented 2026-09-01.
+
+### Residual shapes vs ticket 81
+
+| Shape | Index example | Ticket 81 | Ticket 109 |
+|-------|---------------|-----------|------------|
+| Uniform-width zip | `{m,ɲ} n > {ɲ,∅} {ŋ,∅}` | zip by index | unchanged |
+| Uneven branch counts | `k b r > {ŋ,∅} {w,m} {n,r,t}` | out of scope | Cartesian product (12 branches) |
+| Uneven 2/3/4 widths | `b d k > {b,β} {ɾ,l,∅} {k,x,ɡ,ɣ}` | out of scope | Cartesian product (24 branches) |
+| Fixed + branching cols | `m n h j > b {n,r,∅} {h,∅} {j,∅}` | out of scope | Cartesian product (12 branches) |
+| Env glued to output set | `ŋ > {∅,n} #_ else` | peel deferred | `peel_embedded_output_env` → optional-output branches |
+
+### Code
+
+- `expand_parallel_output_null_branches_from_tokens`: Cartesian fallback when column branch widths differ (ticket 109)
+- `peel_embedded_output_env` in `field_tokens.py`; wired in `SoundChangeRule._build_alternatives`
+
+### Inventory
+
+Before: **8184 / 9677 ok (84.6%)**; **881** fail; **399 / 714** sections all-OK.
+
+After: **8358 / 9840 ok (84.9%)**; **870** fail; **408 / 714** sections all-OK (**+9** section-complete).
+
+`null_in_parallel_output_set` near-miss cluster: **10 / 10** rule_ids now validate on all alternative rows (was **0 / 10** after ticket 81 residuals). Extra inventory rows from `alt_idx` expansion (+163 rows total).
 
 ## References
 

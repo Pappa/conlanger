@@ -14,7 +14,9 @@ from conlanger.tools.compile.asca.structures import join_asca_rule_fields
 from conlanger.tools.compile.asca.tilde import normalize_index_rule_tilde_fields
 from conlanger.tools.compile.compile_fields import RuleEnv, RuleInput, RuleOutput
 from conlanger.tools.compile.field_tokens import (
+    FieldToken,
     is_optional_output_shape,
+    peel_embedded_output_env,
     render_field_tokens,
     set_token_members,
 )
@@ -155,21 +157,29 @@ class SoundChangeRule(RulePartBase):
 
     def _build_alternatives(self) -> list[SoundChangeRule]:
         """Build peer alternatives for optional outputs or parallel ``∅`` output sets."""
-        optional = self._build_optional_output_alternatives()
+        output_tokens, peeled_env = peel_embedded_output_env(self.output.tokens)
+        env = self.env
+        if env is None and peeled_env is not None:
+            env = RuleEnv.from_raw(peeled_env)
+        optional = self._build_optional_output_alternatives(output_tokens, env)
         if optional:
             return optional
-        return self._build_parallel_null_set_alternatives()
+        return self._build_parallel_null_set_alternatives(output_tokens, env)
 
-    def _build_optional_output_alternatives(self) -> list[SoundChangeRule]:
+    def _build_optional_output_alternatives(
+        self,
+        output_tokens: tuple[FieldToken, ...],
+        env: RuleEnv | None,
+    ) -> list[SoundChangeRule]:
         """Whole-field output set with unpaired input (ticket 66)."""
-        if not is_optional_output_shape(self.input.tokens, self.output.tokens):
+        if not is_optional_output_shape(self.input.tokens, output_tokens):
             return []
-        members = set_token_members(self.output.tokens[0])
+        members = set_token_members(output_tokens[0])
         return [
             SoundChangeRule(
                 input=self.input,
                 output=RuleOutput.from_raw(member),
-                env=self.env,
+                env=env,
                 exception=self.exception,
                 section_index=self.section_index,
                 compiler_config=self.compiler_config,
@@ -178,11 +188,15 @@ class SoundChangeRule(RulePartBase):
             for member in members
         ]
 
-    def _build_parallel_null_set_alternatives(self) -> list[SoundChangeRule]:
+    def _build_parallel_null_set_alternatives(
+        self,
+        output_tokens: tuple[FieldToken, ...],
+        env: RuleEnv | None,
+    ) -> list[SoundChangeRule]:
         """Paired parallel columns with ``∅`` inside output sets (ticket 81)."""
         branches = expand_parallel_output_null_branches_from_tokens(
             self.input.tokens,
-            self.output.tokens,
+            output_tokens,
         )
         if branches is None:
             return []
@@ -190,7 +204,7 @@ class SoundChangeRule(RulePartBase):
             SoundChangeRule(
                 input=RuleInput.from_raw(render_field_tokens(branch_input)),
                 output=RuleOutput.from_raw(render_field_tokens(branch_output)),
-                env=self.env,
+                env=env,
                 exception=self.exception,
                 section_index=self.section_index,
                 compiler_config=self.compiler_config,

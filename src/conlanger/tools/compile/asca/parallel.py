@@ -1,4 +1,4 @@
-"""Parallel-column null handling for ASCA compile (tickets 60 and 81).
+"""Parallel-column null handling for ASCA compile (tickets 60, 81, and 109).
 
 Index multi-segment rules may use ``∅``, ``*``, ``Ø``, or ``0`` as a parallel-column null alongside
 other segments (e.g. ``c ɲ > ∅ n``). ASCA treats bare ``∅``/``*`` as pure
@@ -15,9 +15,15 @@ Pure deletion/insertion (``x > ∅``, ``∅ > x``) is unchanged. Null inside set
 (e.g. ``{j,∅}``) is not stripped — only space-separated top-level tokens.
 
 Whole-field unpaired optional outputs (``d > {∅,ð}``) remain ticket 66.
+
+When parallel columns have **uneven** branch counts (e.g. ``k b r > {ŋ,∅} {w,m}
+{n,r,t}``), expand via Cartesian product across columns (ticket 109). Uniform
+widths still zip by branch index (ticket 81).
 """
 
 from __future__ import annotations
+
+import itertools
 
 from conlanger.tools.compile.field_tokens import (
     FieldToken,
@@ -73,6 +79,49 @@ def _output_tokens_contain_null_in_set(output_tokens: tuple[FieldToken, ...]) ->
     ):
         return True
     return any(set_contains_null_member(token) for token in output_tokens)
+
+
+def _needs_cartesian_expansion(column_pairs: list[list[tuple[str, str]]]) -> bool:
+    """True when branching columns have more than one distinct width above 1."""
+    widths = {len(pairs) for pairs in column_pairs if len(pairs) > 1}
+    return len(widths) > 1
+
+
+def _expand_cartesian_branches_from_column_pairs(
+    column_pairs: list[list[tuple[str, str]]],
+) -> list[tuple[tuple[FieldToken, ...], tuple[FieldToken, ...]]]:
+    branches: list[tuple[tuple[FieldToken, ...], tuple[FieldToken, ...]]] = []
+    for combo in itertools.product(*column_pairs):
+        in_parts = [pair[0] for pair in combo]
+        out_parts = [pair[1] for pair in combo]
+        branches.append(
+            _finalize_branch_io_tokens(
+                parse_field_tokens(" ".join(in_parts)),
+                parse_field_tokens(" ".join(out_parts)),
+            )
+        )
+    return branches
+
+
+def _expand_zipped_branches_from_column_pairs(
+    column_pairs: list[list[tuple[str, str]]],
+) -> list[tuple[tuple[FieldToken, ...], tuple[FieldToken, ...]]]:
+    branch_count = max(len(pairs) for pairs in column_pairs)
+    branches: list[tuple[tuple[FieldToken, ...], tuple[FieldToken, ...]]] = []
+    for branch_idx in range(branch_count):
+        in_parts: list[str] = []
+        out_parts: list[str] = []
+        for pairs in column_pairs:
+            pair = pairs[branch_idx] if len(pairs) == branch_count else pairs[0]
+            in_parts.append(pair[0])
+            out_parts.append(pair[1])
+        branches.append(
+            _finalize_branch_io_tokens(
+                parse_field_tokens(" ".join(in_parts)),
+                parse_field_tokens(" ".join(out_parts)),
+            )
+        )
+    return branches
 
 
 def _column_branch_pairs_tokens(
@@ -181,25 +230,15 @@ def expand_parallel_output_null_branches_from_tokens(
             return None
         column_pairs.append(pairs)
 
+    if _needs_cartesian_expansion(column_pairs):
+        return _expand_cartesian_branches_from_column_pairs(column_pairs)
+
     branch_count = max(len(pairs) for pairs in column_pairs)
     for pairs in column_pairs:
         if len(pairs) != 1 and len(pairs) != branch_count:
             return None
 
-    branches: list[tuple[tuple[FieldToken, ...], tuple[FieldToken, ...]]] = []
-    for branch_idx in range(branch_count):
-        in_parts: list[str] = []
-        out_parts: list[str] = []
-        for pairs in column_pairs:
-            pair = pairs[branch_idx] if len(pairs) == branch_count else pairs[0]
-            in_parts.append(pair[0])
-            out_parts.append(pair[1])
-        finalized = _finalize_branch_io_tokens(
-            parse_field_tokens(" ".join(in_parts)),
-            parse_field_tokens(" ".join(out_parts)),
-        )
-        branches.append(finalized)
-    return branches
+    return _expand_zipped_branches_from_column_pairs(column_pairs)
 
 
 def expand_parallel_output_null_branches(
@@ -207,7 +246,8 @@ def expand_parallel_output_null_branches(
 ) -> list[tuple[str, str]] | None:
     """Return zipped branch ``(input, output)`` pairs when output sets contain ``∅``.
 
-    Returns ``None`` when the rule is out of scope or cannot be expanded uniformly.
+    Returns ``None`` when the rule is out of scope. Uniform-width columns zip by
+    index; uneven widths use a Cartesian product (ticket 109).
     """
     branches = expand_parallel_output_null_branches_from_tokens(
         parse_field_tokens(input_text.strip()),

@@ -50,6 +50,64 @@ def test_drop_mixed_parallel_null_columns_proto_star_token_unchanged():
         ("p k", "ɸ {∅,k}", [("p k", "ɸ"), ("p k", "ɸ k")]),
         ("{tʰ,d} {k,ɡ}", "r {h,∅}", [("tʰ k", "r h"), ("d ɡ", "r")]),
         ("{b,k} r", "{r,∅}", [("b r", "r"), ("k r", "∅")]),
+        (
+            "k b r",
+            "{ŋ,∅} {w,m} {n,r,t}",
+            [
+                ("k b r", "ŋ w n"),
+                ("k b r", "ŋ w r"),
+                ("k b r", "ŋ w t"),
+                ("k b r", "ŋ m n"),
+                ("k b r", "ŋ m r"),
+                ("k b r", "ŋ m t"),
+                ("k b r", "w n"),
+                ("k b r", "w r"),
+                ("k b r", "w t"),
+                ("k b r", "m n"),
+                ("k b r", "m r"),
+                ("k b r", "m t"),
+            ],
+        ),
+        (
+            "b d k",
+            "{b,β} {ɾ,∅} {k,x,ɡ,ɣ}",
+            [
+                ("b d k", "b ɾ k"),
+                ("b d k", "b ɾ x"),
+                ("b d k", "b ɾ ɡ"),
+                ("b d k", "b ɾ ɣ"),
+                ("b d k", "b k"),
+                ("b d k", "b x"),
+                ("b d k", "b ɡ"),
+                ("b d k", "b ɣ"),
+                ("b d k", "β ɾ k"),
+                ("b d k", "β ɾ x"),
+                ("b d k", "β ɾ ɡ"),
+                ("b d k", "β ɾ ɣ"),
+                ("b d k", "β k"),
+                ("b d k", "β x"),
+                ("b d k", "β ɡ"),
+                ("b d k", "β ɣ"),
+            ],
+        ),
+        (
+            "m n h j",
+            "b {n,r,∅} {h,∅} {j,∅}",
+            [
+                ("m n h j", "b n h j"),
+                ("m n h j", "b n h"),
+                ("m n h j", "b n j"),
+                ("m n h j", "b n"),
+                ("m n h j", "b r h j"),
+                ("m n h j", "b r h"),
+                ("m n h j", "b r j"),
+                ("m n h j", "b r"),
+                ("m n h j", "b h j"),
+                ("m n h j", "b h"),
+                ("m n h j", "b j"),
+                ("m n h j", "b"),
+            ],
+        ),
     ],
 )
 def test_expand_parallel_output_null_branches(
@@ -62,9 +120,22 @@ def test_expand_parallel_output_null_branches(
 
 
 @pytest.mark.parametrize(
+    ("input_text", "output_text", "expected_count"),
+    [
+        ("b d k", "{b,β} {ɾ,l,∅} {k,x,ɡ,ɣ}", 24),
+    ],
+)
+def test_expand_parallel_output_null_branches_uneven_width_counts(
+    input_text, output_text, expected_count
+):
+    branches = expand_parallel_output_null_branches(input_text, output_text)
+    assert branches is not None
+    assert len(branches) == expected_count
+
+
+@pytest.mark.parametrize(
     ("input_text", "output_text"),
     [
-        ("k b r", "{ŋ,∅} {w,m} {n,r,t}"),  # uneven branch counts across columns
         ("d", "{∅,ð}"),  # optional-output shape — expander returns None
         ("c ɲ", "∅ n"),  # top-level column null — ticket 60
         ("", "{∅,a}"),  # empty input columns after split

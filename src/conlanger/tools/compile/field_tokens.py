@@ -92,6 +92,22 @@ def is_optional_output_shape(
     return bool(members) and all(member and "{" not in member for member in members)
 
 
+def peel_embedded_output_env(
+    output_tokens: tuple[FieldToken, ...],
+) -> tuple[tuple[FieldToken, ...], str | None]:
+    """Peel a space-separated env glued after a leading output set (ticket 109).
+
+    Index sometimes leaves env on the output stage (``{∅,n} #_ else``) when the
+    rule spine has no ``/`` delimiter. Returns peeled output tokens and env text.
+    """
+    if len(output_tokens) < 2 or not is_set_token(output_tokens[0]):
+        return output_tokens, None
+    tail = render_field_tokens(output_tokens[1:])
+    if not tail or tail[0] not in "#_!":
+        return output_tokens, None
+    return (output_tokens[0],), tail
+
+
 def set_contains_null_member(token: FieldToken) -> bool:
     null_tokens = frozenset({"∅", "Ø", "0", "*"})
     if is_set_token(token):
