@@ -6,10 +6,16 @@ import pytest
 from helpers import default_index_parser
 from lxml import html
 
-from conlanger.appliers.asca import ASCAValidationError, validate_asca
+from conlanger.appliers.asca import validate_asca
 from conlanger.scripts.config_loaders import load_parser_config
 from conlanger.tools.ingest import (
     write_rule_comment_phrase_summary,
+)
+from conlanger.tools.ingest.double_slash_env import (
+    apply_double_slash_env_conditions,
+    normalize_prose_env_head,
+    normalize_prose_exception_or_env_tail,
+    split_embedded_double_slash,
 )
 from conlanger.tools.ingest.parser import parse_rule_element
 from conlanger.tools.ingest.prose_position_env import (
@@ -712,6 +718,178 @@ def test_apply_prose_position_env_conditions_structural_monosyllable_qualifier()
     }
 
 
+def test_split_embedded_double_slash():
+    assert split_embedded_double_slash("odd syllables // _{w,j,H}") == (
+        "odd syllables",
+        "_{w,j,H}",
+    )
+    assert split_embedded_double_slash("#_e") == ("#_e", None)
+
+
+def test_normalize_prose_exception_adjacent_to_another_consonant():
+    env, captures, flags = normalize_prose_exception_or_env_tail(
+        "adjacent to another consonant"
+    )
+    assert env == "C_,_C"
+    assert captures == ["adjacent to another consonant"]
+    assert flags == {}
+
+
+def test_normalize_prose_exception_adjacent_to_single_segment():
+    env, captures, _ = normalize_prose_exception_or_env_tail("adjacent to S")
+    assert env == "_,S"
+    assert captures == ["adjacent to S"]
+
+
+def test_normalize_prose_exception_dialect_comment():
+    env, captures, _ = normalize_prose_exception_or_env_tail("Logudorese")
+    assert env == ""
+    assert captures == ["Logudorese"]
+
+
+def test_normalize_prose_env_head_strips_typically():
+    env, captures, _ = normalize_prose_env_head("{a,ɛ}_, typically")
+    assert env == "{a,ɛ}_"
+    assert captures == ["typically"]
+
+
+def test_normalize_prose_env_head_bare_percent_feature():
+    env, captures, _ = normalize_prose_env_head("%[-stress]")
+    assert env == "_ %[-stress]"
+    assert captures == ["%[-stress]"]
+
+
+def test_apply_double_slash_env_conditions_javanese_adjacent():
+    assert apply_double_slash_env_conditions(
+        {
+            "stages": ["b", "w"],
+            "exception": "adjacent to another consonant",
+        }
+    ) == {
+        "stages": ["b", "w"],
+        "exception": "C_,_C",
+        "comment": "adjacent to another consonant",
+    }
+
+
+def test_apply_double_slash_env_conditions_sardinian_dialect():
+    assert apply_double_slash_env_conditions(
+        {
+            "stages": ["r", "ur:[+long]"],
+            "env": "#_e",
+            "exception": "Logudorese",
+        }
+    ) == {
+        "stages": ["r", "ur:[+long]"],
+        "env": "#_e",
+        "comment": "Logudorese",
+    }
+
+
+def test_apply_double_slash_env_conditions_menominee_odd_syllables():
+    assert apply_double_slash_env_conditions(
+        {
+            "stages": ["æ", "e"],
+            "env": "odd syllables",
+            "exception": "_{w,j,H}",
+        }
+    ) == {
+        "stages": ["æ", "e"],
+        "env": "_",
+        "exception": "_{w,j,H}",
+        "comment": "odd syllables",
+    }
+
+
+def test_apply_double_slash_env_conditions_void_env():
+    assert apply_double_slash_env_conditions(
+        {
+            "stages": ["{d,j}", "j"],
+            "env": "∅",
+            "exception": "_#",
+        }
+    ) == {
+        "stages": ["{d,j}", "j"],
+        "exception": "_#",
+    }
+
+
+def test_normalize_prose_exception_onset_of_stress():
+    env, captures, _ = normalize_prose_exception_or_env_tail("onset of U[+stress]")
+    assert env == "#_U[+stress]"
+    assert captures == ["onset of U[+stress]"]
+
+
+def test_normalize_prose_exception_penult():
+    env, captures, _ = normalize_prose_exception_or_env_tail("penult")
+    assert env == "%_"
+    assert captures == ["penult"]
+
+
+def test_apply_double_slash_env_conditions_onset_exception():
+    assert apply_double_slash_env_conditions(
+        {
+            "stages": ["ʔ", "∅"],
+            "exception": "onset of U[+stress]",
+        }
+    ) == {
+        "stages": ["ʔ", "∅"],
+        "exception": "#_U[+stress]",
+        "comment": "onset of U[+stress]",
+    }
+
+
+def test_apply_double_slash_env_conditions_before_identical_vowel():
+    assert apply_double_slash_env_conditions(
+        {
+            "stages": ["iC aC uC", "Cj Ca Cw"],
+            "env": "#_",
+            "exception": "before an identical vowel",
+        }
+    ) == {
+        "stages": ["iC aC uC", "Cj Ca Cw"],
+        "env": "#_",
+        "exception": "V_V",
+        "comment": "before an identical vowel",
+    }
+
+
+def test_apply_double_slash_env_conditions_maybe_strips_question_mark():
+    assert apply_double_slash_env_conditions(
+        {
+            "stages": ["tʃ", "s"],
+            "env": "maybe",
+            "exception": "_#?",
+        }
+    ) == {
+        "stages": ["tʃ", "s"],
+        "env": "_",
+        "exception": "_#",
+        "comment": "maybe",
+        "sporadic": True,
+    }
+
+
+@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
+def test_parse_rule_element_double_slash_adjacent_validate_asca():
+    probe = Path("tests/fixtures/asca_probe_words.wsca")
+    el = html.fragment_fromstring(
+        '<p class="schg">b → w / ! adjacent to another consonant</p>',
+        create_parent=False,
+    )
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["exception"] == "C_,_C"
+    section = {
+        "index": "10.2.4.1",
+        "section": "Proto-Malayo-Javanic to Javanese",
+        "rules": rules,
+    }
+    validate_asca(
+        DiachronicSeries(section, compiler_config=minimal_compiler_config()),
+        probe_words=probe,
+    )
+
+
 def test_apply_prose_position_env_conditions_deferred_when_exception_present():
     parts = {
         "stages": ["V", "V:[+long]"],
@@ -784,23 +962,15 @@ def test_parse_rule_element_medial_validate_asca():
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_parse_rule_element_medial_deferred_env_exception_still_fails():
+def test_parse_rule_element_medial_with_exception_env_normalized():
     el = html.fragment_fromstring(
         '<p class="schg">b → h / medially, ! {r(ʲ),l(ʲ)}_ or _ɡ</p>',
         create_parent=False,
     )
     rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
-    assert rules[0]["env"] == "medially,"
+    assert rules[0]["env"] == "_"
     assert rules[0]["exception"] == "{r(ʲ),l(ʲ)}_ or _ɡ"
-    section = {
-        "index": "8.3",
-        "section": "Proto-Altaic to Proto-Mongolic",
-        "rules": rules,
-    }
-    with pytest.raises(ASCAValidationError, match="Expected '_', but received ','"):
-        validate_asca(
-            DiachronicSeries(section, compiler_config=minimal_compiler_config())
-        )
+    assert "medially" in rules[0]["comment"]
 
 
 def test_is_catch_all_else_env():
