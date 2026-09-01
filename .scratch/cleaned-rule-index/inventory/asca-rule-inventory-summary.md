@@ -6,14 +6,14 @@
 - Rows: **9840** (one per index rule)
 
 ## Rules
-- OK: **8358** (84.9%)
-- Fail: **870** (8.8%)
+- OK: **8380** (85.2%)
+- Fail: **848** (8.6%)
 - Skipped: **612** (6.2%)
 
 ## Sections
 
-- All OK: **408 / 714** (57.1%)
-- Some OK: **277 / 714** (38.8%)
+- All OK: **414 / 714** (58.0%)
+- Some OK: **271 / 714** (38.0%)
 - None OK: **4 / 714** (0.6%)
 - Sections skipped: **25 / 714** (3.5%)
 
@@ -24,14 +24,14 @@
 | 309 | `syntax_other` |
 | 139 | `runtime_other` |
 | 123 | `unknown_character` |
-| 114 | `expected_underscore` |
+| 115 | `expected_underscore` |
 | 35 | `expected_number` |
 | 33 | `prose_or_expected_arrow` |
-| 32 | `diacritic_prereq` |
 | 28 | `nested_brackets` |
 | 23 | `unknown_feature` |
 | 14 | `stuff_after_word_bound` |
 | 11 | `unknown_grouping` |
+| 9 | `diacritic_prereq` |
 | 3 | `panic_other` |
 | 2 | `format_error` |
 | 2 | `runtime_delete_only_segment` |

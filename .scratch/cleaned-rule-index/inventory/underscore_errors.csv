@@ -8,6 +8,7 @@ section_index,rule_id,error_token,rule
 10.3.5.3,Nemi-Pije-Fwai-ONV,,"ONV > C:[+labial][+spread]ṽ / C:[+labial]ije and Fwai | ^ @ Rule 1, Line 1"
 10.3.5.3,Nemi-Pije-Fwai-f,,"f > ɸ / C:[+labial]ije and Fwai | ^ @ Rule 1, Line 1"
 10.3.5.4.1,Nixumwak-Nêlêmwa-V,,"V > ∅ / _#, often | ^ @ Rule 1, Line 1"
+10.3.5.4.1,Nixumwak-Nêlêmwa-pwʰ-pʰ-tʰ-kʰ,,"pʷʰ pʰ tʰ kʰ > fw f r:[+spread,+voice] x / Nelemwa | ^ @ Rule 1, Line 1"
 14.3.1,Colloquial-Tamil-∅_3,,"∅ > ɨ / to break up clusters | ^ @ Rule 1, Line 1"
 14.3.1,Colloquial-Tamil-∅_3,,"∅ > ʉ / to break up clusters | ^ @ Rule 1, Line 1"
 15.2.7,Siberian-Yup’ik-ə,,"ə > a / | ^ @ Rule 1, Line 1"

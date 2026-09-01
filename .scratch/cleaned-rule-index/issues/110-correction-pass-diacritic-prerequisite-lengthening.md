@@ -26,10 +26,37 @@ Concentrated in **10.3.5.x** (Caaàc / Jawé) and **10.2.4.2** (Madurese).
 
 ## Acceptance criteria
 
-- [ ] Target cluster sized at claim time
-- [ ] Compile transforms; `raw` unchanged
-- [ ] Full inventory re-run; metrics in **Answer**
-- [ ] Unit tests per segment class
+- [x] Target cluster sized at claim time
+- [x] Compile transforms; `raw` unchanged
+- [x] Full inventory re-run; metrics in **Answer**
+- [x] Unit tests per segment class
+
+## Answer
+
+Implemented 2026-09-01.
+
+### Segment shapes
+
+| Shape | Example | Compile rewrite |
+|-------|---------|-----------------|
+| Voiced / sonorant + `ʰ` | `jʰ`, `bʰ`, `lʰ`, `rʰ` | `segment:[+spread,+voice]` |
+| Modulated voiced aspirate | `ɡʲʰ`, `gʷʰ`, `ɢʷʰ` | `segment:[+spread,+voice]` |
+| Voiceless stop + `w` + `ʰ` | `pwʰ`, `twʰ` | `stopʷʰ` |
+| Input lengthening (ticket 25) | `pː` | `p:[+long]` — already in `length_marks` |
+
+Residual `diacritic_prereq` (**9** rules): Polish `r̝` fricative — `Must be [-sonorant]` (out of scope).
+
+### Code
+
+- `normalize_asca_voice_prerequisite_diacritics()` in `voice_prerequisite_diacritics.py`; wired in `compile_asca_field_post_subscript` after `length_marks` / `breve_marks`.
+
+### Inventory
+
+Before: **8358 / 9840 ok (84.9%)**; **870** fail; **408 / 714** sections all-OK; **`diacritic_prereq` 32**.
+
+After: **8380 / 9840 ok (85.2%)**; **848** fail; **414 / 714** sections all-OK (**+6** section-complete).
+
+`voice_prerequisite_diacritic` near-miss cluster: **10 / 10** target rules now OK; **+22** total `diacritic_prereq` recoveries including Proto-Italic / Abazgi / Latino-Falsican voiced aspirates.
 
 ## References
 

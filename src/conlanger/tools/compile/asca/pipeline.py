@@ -40,6 +40,9 @@ from conlanger.tools.compile.asca.syllable_position import (
     apply_syllable_position_compiled_overrides,
 )
 from conlanger.tools.compile.asca.tone_matrices import normalize_asca_tone_matrices
+from conlanger.tools.compile.asca.voice_prerequisite_diacritics import (
+    normalize_asca_voice_prerequisite_diacritics,
+)
 from conlanger.tools.compile.compile_fields import RuleEnv, RuleInput, RuleOutput
 from conlanger.utils.mappings import CompilerConfig
 
@@ -80,6 +83,7 @@ def compile_asca_field_post_subscript(text: str) -> str:
     text = normalize_typographic_apostrophes(text)
     text = normalize_asca_ejective_marks(text)
     text = normalize_asca_breve_marks(text)
+    text = normalize_asca_voice_prerequisite_diacritics(text)
     return expand_meta_notation(text)
 
 
