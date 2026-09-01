@@ -12,6 +12,11 @@ from conlanger.tools.ingest import (
     write_rule_comment_phrase_summary,
 )
 from conlanger.tools.ingest.parser import parse_rule_element
+from conlanger.tools.ingest.prose_position_env import (
+    apply_prose_position_env_conditions,
+    normalize_bare_prose_position_env,
+    strip_trailing_position_qualifiers,
+)
 from conlanger.tools.ingest.section_policy import (
     is_catch_all_else_env,
     resolve_catch_all_else_rules,
@@ -614,6 +619,141 @@ def test_apply_medial_env_conditions_deferred_env_and_exception():
         "exception": "{r(ʲ),l(ʲ)}_ or _ɡ",
     }
     assert apply_medial_env_conditions(parts) == parts
+
+
+@pytest.mark.parametrize(
+    ("text", "expected_env", "expected_captures"),
+    [
+        ("final syllables", "U#", ["final syllables"]),
+        ("in final syllables", "U#", ["in final syllables"]),
+        ("syllable-finally", "U#", ["syllable-finally"]),
+        ("syllable-final", "U#", ["syllable-final"]),
+        ("next to {S,s,l̥}", "_,{S,s,l̥}", ["next to {S,s,l̥}"]),
+        ("adjacent to {P,t}", "_,{P,t}", ["adjacent to {P,t}"]),
+        (
+            "adjacent to a nasal vowel",
+            "_V[+nasal], V[+nasal]_",
+            ["adjacent to a nasal vowel"],
+        ),
+        ("unstressed syllables", "_ %[-stress]", ["unstressed syllables"]),
+        (
+            "accented or stressed monosyllables",
+            "#_[+stress]",
+            ["accented or stressed monosyllables"],
+        ),
+        (
+            "in accented or stressed monosyllables",
+            "#_[+stress]",
+            ["in accented or stressed monosyllables"],
+        ),
+        ("typically near *u", "_,u", ["typically near *u"]),
+        (
+            "between two vowels of unlike nasality",
+            "V_V",
+            ["between two vowels of unlike nasality"],
+        ),
+        ("not universal?", "_", ["not universal?"]),
+        ("monosyllables", "#_#", ["monosyllables"]),
+        ("_k", "_k", []),
+    ],
+)
+def test_normalize_bare_prose_position_env(text, expected_env, expected_captures):
+    env, captures, flags = normalize_bare_prose_position_env(text)
+    assert env == expected_env
+    assert captures == expected_captures
+    if text == "not universal?":
+        assert flags == {"sporadic": True}
+    else:
+        assert flags == {}
+
+
+@pytest.mark.parametrize(
+    ("text", "expected_env", "expected_captures"),
+    [
+        ("j_#, in monosyllables", "j_#", ["in monosyllables"]),
+        ("_#, in polysyllables", "_#", ["in polysyllables"]),
+        ("#_, in nouns", "#_", ["in nouns"]),
+        ("_ʔ#, in monosyllables", "_ʔ#", ["in monosyllables"]),
+    ],
+)
+def test_strip_trailing_position_qualifiers(text, expected_env, expected_captures):
+    env, captures = strip_trailing_position_qualifiers(text)
+    assert env == expected_env
+    assert captures == expected_captures
+
+
+def test_apply_prose_position_env_conditions_final_syllables():
+    assert apply_prose_position_env_conditions(
+        {"stages": ["a V", "e"], "env": "final syllables"}
+    ) == {
+        "stages": ["a V", "e"],
+        "env": "U#",
+        "comment": "final syllables",
+    }
+
+
+def test_apply_prose_position_env_conditions_next_to_set():
+    assert apply_prose_position_env_conditions(
+        {"stages": ["C[+voice]", "C[-voice]"], "env": "next to {S,s,l̥}"}
+    ) == {
+        "stages": ["C[+voice]", "C[-voice]"],
+        "env": "_,{S,s,l̥}",
+        "comment": "next to {S,s,l̥}",
+    }
+
+
+def test_apply_prose_position_env_conditions_structural_monosyllable_qualifier():
+    assert apply_prose_position_env_conditions(
+        {"stages": ["ɛ", "e"], "env": "_ʔ#, in monosyllables"}
+    ) == {
+        "stages": ["ɛ", "e"],
+        "env": "_ʔ#",
+        "comment": "in monosyllables",
+    }
+
+
+def test_apply_prose_position_env_conditions_deferred_when_exception_present():
+    parts = {
+        "stages": ["V", "V:[+long]"],
+        "env": "final syllables",
+        "exception": "#U",
+    }
+    assert apply_prose_position_env_conditions(parts) == parts
+
+
+def test_apply_prose_position_env_conditions_strips_qualifier_with_exception():
+    assert apply_prose_position_env_conditions(
+        {
+            "stages": ["V", "V:[+long]"],
+            "env": "_(C)#, in monosyllables",
+            "exception": "#U",
+        }
+    ) == {
+        "stages": ["V", "V:[+long]"],
+        "env": "_(C)#",
+        "exception": "#U",
+        "comment": "in monosyllables",
+    }
+
+
+@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
+def test_parse_rule_element_prose_position_env_validate_asca():
+    probe = Path("tests/fixtures/asca_probe_words.wsca")
+    el = html.fragment_fromstring(
+        '<p class="schg">C[+voice] → C[-voice] / next to {S,s,l̥}</p>',
+        create_parent=False,
+    )
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["env"] == "_,{S,s,l̥}"
+    section = {
+        "index": "15.2.7",
+        "section": "Proto-Eskimo to Siberian Yup’ik",
+        "rules": rules,
+    }
+    validate_asca(
+        DiachronicSeries(section, compiler_config=minimal_compiler_config()),
+        probe_words=probe,
+    )
 
 
 def test_parse_rule_element_proto_italic_medial_comment_unchanged():

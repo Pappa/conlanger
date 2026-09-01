@@ -21,6 +21,8 @@ and recorded as ``sporadic: true``. **Feature matrix** synonym replacement insid
 rule: the first ``;`` on the working line is peeled before structural split, then
 field-level glosses and env qualifiers. Index word-internal ``medial`` / ``medially`` env
 prose becomes ``env: _`` with boundary ``exception: :{#_, _#}:`` (``apply_medial_env_conditions``).
+Index prose **position** env phrases (``final syllables``, ``next to {X}``, ``syllable-final``,
+trailing ``, in monosyllables`` qualifiers, …) normalize via ``apply_prose_position_env_conditions``.
 After catch-all ``else`` resolution, nested ``{}`` in ``env`` / ``exception`` /
 ``stages`` are flattened (``flatten_nested_sets``; ``raw`` unchanged). Class-letter
 expansion is deferred to compile time
@@ -34,6 +36,9 @@ from typing import Any
 
 from conlanger.tools.ingest.flatten_nested_sets import (
     flatten_nested_sets_in_section_rules,
+)
+from conlanger.tools.ingest.prose_position_env import (
+    apply_prose_position_env_conditions,
 )
 from conlanger.tools.ingest.section_policy import resolve_catch_all_else_rules
 from conlanger.tools.ingest.transforms import (
@@ -159,6 +164,7 @@ class IndexDiachronicaParser:
         parts = apply_trailing_glosses(parts)
         parts = apply_stress_conditions(parts)
         parts = apply_medial_env_conditions(parts)
+        parts = apply_prose_position_env_conditions(parts)
         parts = apply_syllable_position_editorial_strip(parts)
         parts = apply_feature_mappings(parts, self._feature_mappings)
         parts = apply_ipa_mappings(parts, self._ipa_mappings)

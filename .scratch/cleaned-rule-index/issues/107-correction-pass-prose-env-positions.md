@@ -1,4 +1,5 @@
 Type: task
+Status: resolved
 Blocked by:
 
 # Correction pass: prose env positions
@@ -28,10 +29,25 @@ Distinct from [55 medial](55-correction-pass-prose-env-medial.md) (word-internal
 
 ## Acceptance criteria
 
-- [ ] Target cluster sized at claim time from current inventory
-- [ ] Class-first parse transforms; no silent meaning change
-- [ ] Full inventory re-run; metrics in **Answer**
-- [ ] Unit tests for each supported prose shape
+- [x] Target cluster sized at claim time from current inventory
+- [x] Class-first parse transforms; no silent meaning change
+- [x] Full inventory re-run; metrics in **Answer**
+- [x] Unit tests for each supported prose shape
+
+## Answer
+
+Baseline (before): **8123 / 9677** ok (84.0%); **179** `expected_underscore` failures; target cluster **50** near-miss rows in `missing_underscore_other` + `prose_position_env` buckets (41 rules cited at spawn included overlap with non-position residuals).
+
+Full inventory re-run (2026-09-01):
+
+- **8143 / 9677** ok (**+20** rules, **84.1%**)
+- Sections all OK: **379 → 385** (**+6**)
+- `expected_underscore` failure class: **179 → 161** (−18)
+- Implementation: `apply_prose_position_env_conditions` in `prose_position_env.py`, wired after `apply_medial_env_conditions` in `parse_rule_element`
+
+**Shapes normalized:** bare `final syllables` / `syllable-final(ly)` → `U#`; `next to {X}` / `adjacent to {X}` → `_,{X}`; `adjacent to a nasal vowel` → `_V[+nasal], V[+nasal]_`; `unstressed syllables` → `_ %[-stress]`; `accented or stressed monosyllables` → `#_[+stress]`; bare `monosyllables` → `#_#`; `typically near *u` → `_,u`; `between two vowels…` → `V_V`; `not universal?` → `_` + `sporadic`; trailing `, in monosyllables|polysyllables|nouns` stripped from structural envs into `comment`.
+
+**Deferred / out of scope (ticket 108+):** `//` exception prose (`adjacent to another consonant`, …); complex multi-clause env (`when pretonic and immediately adjacent to…`); bare `polysyllables`; `%:[+stress]`-only env failures miscounted in near-miss bucket; `before modal suffixes`.
 
 ## References
 

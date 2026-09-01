@@ -2932,7 +2932,8 @@ sections:
   - stages:
     - V(ː)
     - Vː
-    env: accented or stressed monosyllables
+    env: '#_[+stress]'
+    comment: accented or stressed monosyllables
     raw: V(ː) → Vː / in accented or stressed monosyllables
     source: index_diachronica_original.html:1507
     rule_id: Tunisian-Arabic-Vː_2
@@ -5635,10 +5636,11 @@ sections:
   - stages:
     - VNs VNʃ
     - V[+nas]z V[+nas]ʒ
-    env: not universal?
+    env: _
+    sporadic: true
+    comment: not universal?
     raw: VNs VNʃ → V[+nas]z V[+nas]ʒ / not universal?
     source: index_diachronica_original.html:1982
-    sporadic: true
     rule_id: Miami-Illinois-VNs-VNʃ
   - comment: (sporadic)
     stages:
@@ -7415,7 +7417,8 @@ sections:
   - stages:
     - ŋ
     - ɡ
-    env: syllable-final
+    env: U#
+    comment: syllable-final
     raw: ŋ → ɡ / syllable-final
     source: index_diachronica_original.html:2305
     rule_id: Proto-Kypchak-ŋ
@@ -11233,7 +11236,8 @@ sections:
   - stages:
     - β b m
     - βʷ bʷ mʷ
-    env: typically near *u
+    env: _,u
+    comment: typically near *u
     raw: β b m → βʷ bʷ mʷ / typically near *u
     source: index_diachronica_original.html:3109
     rule_id: Hiw-β-b-m
@@ -12461,7 +12465,8 @@ sections:
   - stages:
     - u i
     - o e
-    env: monosyllables
+    env: '#_#'
+    comment: monosyllables
     raw: u i → o e / in monosyllables
     source: index_diachronica_original.html:3336
     rule_id: Proto-Yunaga-u-i
@@ -13345,7 +13350,8 @@ sections:
   - stages:
     - t
     - l
-    env: '#_, in nouns'
+    env: '#_'
+    comment: in nouns
     raw: 't → l / #_, in nouns'
     source: index_diachronica_original.html:3519
     rule_id: Vano-t
@@ -19163,7 +19169,8 @@ sections:
   - stages:
     - C[+voice]
     - C[-voice]
-    env: next to {S,s,l̥}
+    env: _,{S,s,l̥}
+    comment: next to {S,s,l̥}
     raw: C[+voice] → C[-voice] / next to {S,s,l̥}
     source: index_diachronica_original.html:4776
     rule_id: Siberian-Yup’ik-C+voice
@@ -19349,7 +19356,8 @@ sections:
   - stages:
     - C[+voice]
     - C[-voice]
-    env: next to {S,s,l̥}
+    env: _,{S,s,l̥}
+    comment: next to {S,s,l̥}
     raw: C[+voice] → C[-voice] / next to {S,s,l̥}
     source: index_diachronica_original.html:4805
     rule_id: Unaaliq-Yup’ik-C+voice
@@ -21525,14 +21533,16 @@ sections:
     - VN
     - V[+nasal]
     - V
-    env: _#, in polysyllables
+    env: _#
+    comment: in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5208
     rule_id: Artsakh-Armenian-VN
   - stages:
     - N
     - n
-    env: _#, in monosyllables
+    env: _#
+    comment: in monosyllables
     raw: N → n / _#, in monosyllables
     source: index_diachronica_original.html:5209
     rule_id: Artsakh-Armenian-N_2
@@ -21757,14 +21767,16 @@ sections:
     - VN
     - V[+nasal]
     - V
-    env: _#, in polysyllables
+    env: _#
+    comment: in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5245
     rule_id: Erevan-Armenian-VN
   - stages:
     - N
     - n
-    env: _#, in monosyllables
+    env: _#
+    comment: in monosyllables
     raw: N → n / _#, in monosyllables
     source: index_diachronica_original.html:5246
     rule_id: Erevan-Armenian-N_2
@@ -21988,14 +22000,16 @@ sections:
     - VN
     - V[+nasal]
     - V
-    env: _#, in polysyllables
+    env: _#
+    comment: in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5282
     rule_id: Istanbul-Armenian-VN
   - stages:
     - N
     - n
-    env: _#, in monosyllables
+    env: _#
+    comment: in monosyllables
     raw: N → n / _#, in monosyllables
     source: index_diachronica_original.html:5283
     rule_id: Istanbul-Armenian-N_2
@@ -22220,14 +22234,16 @@ sections:
     - VN
     - V[+nasal]
     - V
-    env: _#, in polysyllables
+    env: _#
+    comment: in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5319
     rule_id: Kharpert-Armenian-VN
   - stages:
     - N
     - n
-    env: _#, in monosyllables
+    env: _#
+    comment: in monosyllables
     raw: N → n / _#, in monosyllables
     source: index_diachronica_original.html:5320
     rule_id: Kharpert-Armenian-N_2
@@ -22446,14 +22462,16 @@ sections:
     - VN
     - V[+nasal]
     - V
-    env: _#, in polysyllables
+    env: _#
+    comment: in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5355
     rule_id: Sebastia-Armenian-VN
   - stages:
     - N
     - n
-    env: _#, in monosyllables
+    env: _#
+    comment: in monosyllables
     raw: N → n / _#, in monosyllables
     source: index_diachronica_original.html:5356
     rule_id: Sebastia-Armenian-N_2
@@ -22692,14 +22710,16 @@ sections:
     - VN
     - V[+nasal]
     - V
-    env: _#, in polysyllables
+    env: _#
+    comment: in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5394
     rule_id: Southeast-Armenian-VN
   - stages:
     - N
     - n
-    env: _#, in monosyllables
+    env: _#
+    comment: in monosyllables
     raw: N → n / _#, in monosyllables
     source: index_diachronica_original.html:5395
     rule_id: Southeast-Armenian-N_2
@@ -22931,14 +22951,16 @@ sections:
     - VN
     - V[+nasal]
     - V
-    env: _#, in polysyllables
+    env: _#
+    comment: in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5432
     rule_id: Southwest-Armenian-VN
   - stages:
     - N
     - n
-    env: _#, in monosyllables
+    env: _#
+    comment: in monosyllables
     raw: N → n / _#, in monosyllables
     source: index_diachronica_original.html:5433
     rule_id: Southwest-Armenian-N_2
@@ -25113,7 +25135,8 @@ sections:
   - stages:
     - ɜːɹ ɑːɹ ɔːɹ eːɹ oːɹ iːɹ uːɹ
     - ɜː ɑː ɔː ɛə ɔə ɪə ʊə
-    env: syllable-finally
+    env: U#
+    comment: syllable-finally
     raw: ɜːɹ ɑːɹ ɔːɹ eːɹ oːɹ iːɹ uːɹ → ɜː ɑː ɔː ɛə ɔə ɪə ʊə / syllable-finally
     source: index_diachronica_original.html:5811
     rule_id: Australian-English-ɜːɹ-ɑːɹ-ɔːɹ-eːɹ-oːɹ-iːɹ-uːɹ
@@ -25341,7 +25364,8 @@ sections:
   - stages:
     - ɜːɹ ɑːɹ ɔːɹ eːɹ oːɹ iːɹ uːɹ
     - ɜː ɑː ɔː ɛə ɔə ɪə ʊə
-    env: syllable-finally
+    env: U#
+    comment: syllable-finally
     raw: ɜːɹ ɑːɹ ɔːɹ eːɹ oːɹ iːɹ uːɹ → ɜː ɑː ɔː ɛə ɔə ɪə ʊə / syllable-finally
     source: index_diachronica_original.html:5845
     rule_id: British-English-ɜːɹ-ɑːɹ-ɔːɹ-eːɹ-oːɹ-iːɹ-uːɹ
@@ -25508,7 +25532,8 @@ sections:
   - stages:
     - ʃ
     - s
-    env: unstressed syllables
+    env: _ %[-stress]
+    comment: unstressed syllables
     raw: ʃ → s / in unstressed syllables
     source: index_diachronica_original.html:5873
     rule_id: Northern-Middle-English-ʃ
@@ -28626,7 +28651,8 @@ sections:
   - stages:
     - V
     - Vː
-    env: _(C)#, in monosyllables
+    env: _(C)#
+    comment: in monosyllables
     raw: V → Vː / _(C)#, in monosyllables
     source: index_diachronica_original.html:6378
     rule_id: Early-Icelandic-V
@@ -37530,7 +37556,8 @@ sections:
   - stages:
     - N
     - ∅
-    env: _#, in polysyllables
+    env: _#
+    comment: in polysyllables
     raw: N → ∅ / _#, in polysyllables
     source: index_diachronica_original.html:7808
     rule_id: Old-Provençal-N
@@ -38819,8 +38846,8 @@ sections:
   - stages:
     - a V
     - e ∅
-    env: final syllables
-    comment: (= /ə/?); (though Friulian preserves the ending -is)
+    env: U#
+    comment: (= /ə/?); (though Friulian preserves the ending -is); final syllables
     raw: a V → e (= /ə/?) ∅ / in final syllables (though Friulian preserves the ending
       -is)
     source: index_diachronica_original.html:7994
@@ -41582,14 +41609,16 @@ sections:
   - stages:
     - ∅
     - i
-    env: j_#, in monosyllables
+    env: j_#
+    comment: in monosyllables
     raw: ∅ → i / j_#, in monosyllables
     source: index_diachronica_original.html:8503
     rule_id: Cocama-∅
   - stages:
     - j
     - i
-    env: _#, in polysyllables
+    env: _#
+    comment: in polysyllables
     raw: j → i / _#, in polysyllables
     source: index_diachronica_original.html:8504
     rule_id: Cocama-j
@@ -50909,7 +50938,8 @@ sections:
   - stages:
     - ɛ
     - e
-    env: _ʔ#, in monosyllables
+    env: _ʔ#
+    comment: in monosyllables
     raw: ɛ → e / _ʔ#, in monosyllables
     source: index_diachronica_original.html:10830
     rule_id: Tataltepec-Chatino-ɛ_3
@@ -51042,7 +51072,8 @@ sections:
   - stages:
     - ʃ
     - ts
-    env: _i, in monosyllables
+    env: _i
+    comment: in monosyllables
     raw: ʃ → ts / _i, in monosyllables
     source: index_diachronica_original.html:10853
     rule_id: Yaitepec-Chatino-ʃ_2
@@ -59171,7 +59202,8 @@ sections:
   - stages:
     - w j
     - m ɲ
-    env: between two vowels of unlike nasality
+    env: V_V
+    comment: between two vowels of unlike nasality
     raw: w j → m ɲ / between two vowels of unlike nasality
     source: index_diachronica_original.html:12490
     rule_id: Wyandot-w-j
@@ -60148,7 +60180,8 @@ sections:
   - stages:
     - a(ː)
     - ẽ(ː)
-    env: adjacent to a nasal vowel
+    env: _V[+nasal], V[+nasal]_
+    comment: adjacent to a nasal vowel
     raw: a(ː) → ẽ(ː) / adjacent to a nasal vowel
     source: index_diachronica_original.html:12656
     rule_id: Seneca-aː_2
