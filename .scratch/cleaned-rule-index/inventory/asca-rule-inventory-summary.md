@@ -21,10 +21,10 @@
 
 | count | failure_class |
 |------:|---------------|
-| 320 | `syntax_other` |
+| 319 | `syntax_other` |
 | 139 | `runtime_other` |
 | 123 | `unknown_character` |
-| 114 | `expected_underscore` |
+| 115 | `expected_underscore` |
 | 35 | `expected_number` |
 | 33 | `prose_or_expected_arrow` |
 | 32 | `diacritic_prereq` |
