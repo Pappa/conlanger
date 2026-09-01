@@ -1,4 +1,5 @@
 Type: spike
+Status: resolved
 Blocked by:
 
 # Spike: near-miss correction-pass prioritisation (post-104 baseline)
@@ -47,10 +48,18 @@ Mono-class near-miss sections: **176** (largest: `syntax_other` 56, `expected_un
 
 ## Acceptance criteria
 
-- [ ] Findings under `.scratch/cleaned-rule-index/research/` (markdown + CSV + scan script if new)
-- [ ] Ranked subcluster table with section-complete impact on **current** inventory
-- [ ] Follow-on correction-pass tickets filed **or** explicit defer/skip/manual recommendation
-- [ ] Map Notes / implementation plan updated with the chosen next queue
+- [x] Findings under `.scratch/cleaned-rule-index/research/` (markdown + CSV + scan script if new)
+- [x] Ranked subcluster table with section-complete impact on **current** inventory
+- [x] Follow-on correction-pass tickets filed **or** explicit defer/skip/manual recommendation
+- [x] Map Notes / implementation plan updated with the chosen next queue
+
+## Answer
+
+**2026-09-01** — Findings: [near-miss-correction-prioritization.md](../research/near-miss-correction-prioritization.md). Scan: [scan_near_miss_all_classes.py](../research/scan_near_miss_all_classes.py) → [near-miss-all-classes.csv](../research/near-miss-all-classes.csv).
+
+Baseline confirmed: **8123 / 942 / 612** rules; **379 / 689** sections all-OK; **240** near-miss sections; **375** near-miss failing rules (vs spawn **412**).
+
+Filed correction passes [107](../issues/107-correction-pass-prose-env-positions.md)–[110](../issues/110-correction-pass-diacritic-prerequisite-lengthening.md). Defer: Athabaskan `Vˀ` (manual/skip), nested I/O ([71](../issues/71-grill-paren-and-parallel-set-notation.md)), Khoisan clicks.
 
 ## References
 
