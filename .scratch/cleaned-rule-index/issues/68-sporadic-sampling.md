@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: None
 
 # Sporadic sampling (apply vs skip) on shared instance RNG
@@ -35,10 +35,31 @@ Spawned from [grill 61](61-grill-optional-outputs.md). Ticket 19 already strips 
 
 - [x] Triage decisions recorded (rate, inventory, draw order, skip render)
 - [x] Inventory always applies sporadic rules (no skip branch)
-- [ ] Sporadic apply/skip uses instance `Random` from 66’s plumbing (render path)
-- [ ] `alternatives` remains optional-outputs-only
-- [ ] One unit test confirms sporadic skip via injected `rng`; all other tests always apply
-- [ ] Unit + inventory behavior documented in **Answer**
+- [x] Sporadic apply/skip uses instance `Random` from 66’s plumbing (render path)
+- [x] `alternatives` remains optional-outputs-only
+- [x] One unit test confirms sporadic skip via injected `rng`; all other tests always apply
+- [x] Unit + inventory behavior documented in **Answer**
+
+## Answer
+
+Implemented 2026-09-01.
+
+### `SoundChangeRule` (`src/conlanger/tools/rules.py`)
+- Added `sporadic: bool`, frozen `sporadic_skipped: bool`, and render-only `sample_sporadic` gate (default `False` on direct construction; `DiachronicSeries` sets `True` for `.rsca` emission).
+- Sporadic apply/skip draws `rng.random() >= 0.5` → skip **before** optional-output `randrange` when both apply; skip compiles fields without alternative pick and renders `#\t` + compiled join (not Index `raw`).
+- Instance `Random` only (`seed` / caller `rng`); shared across chained steps in one `DiachronicSeries`.
+
+### Inventory (`src/conlanger/tools/index_inventory.py`)
+- `_resolve_inventory_targets` builds `DiachronicSeries(..., sample_sporadic=False)` so sporadic rules always validate as applied; no `sporadic_idx` column or skip-branch rows.
+
+### Tests (`tests/conlanger/tools/test_sporadic_sampling.py`)
+- One skip test (`test_sporadic_skip_renders_commented_compiled_fields`) with injected rng; all other sporadic tests force apply via `sample_sporadic=False` or apply-path rng.
+- Draw-order test confirms sporadic gate before optional-output `randrange`.
+
+### `CONTEXT.md`
+- Added **Sporadic** glossary entry; updated **Optional outputs** cross-reference.
+
+Full gate green: `uv run pytest` → **1318 passed**, coverage ≥95%; ruff clean.
 
 ## References
 

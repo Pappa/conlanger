@@ -23,6 +23,7 @@ from conlanger.tools.compile.field_tokens import (
 from conlanger.utils.mappings import CompilerConfig
 
 _SUPPORTED_FORMATS = frozenset({"asca"})
+_SPORADIC_APPLY_PROBABILITY = 0.5
 
 
 class RulePartBase(BaseModel):
@@ -67,6 +68,8 @@ class SoundChangeRule(RulePartBase):
     env: RuleEnv | None = None
     exception: RuleEnv | None = None
     status: str | None = None
+    sporadic: bool = False
+    sporadic_skipped: bool = False
     raw: str = ""
 
     alternatives: list[SoundChangeRule] = Field(default_factory=list)
@@ -76,6 +79,7 @@ class SoundChangeRule(RulePartBase):
     section_index: str = Field(default="", exclude=True, repr=False)
     rng: random.Random = Field(default_factory=random.Random, exclude=True, repr=False)
     detect_alternatives: bool = Field(default=True, exclude=True, repr=False)
+    sample_sporadic: bool = Field(default=False, exclude=True, repr=False)
 
     @field_validator("input", mode="before")
     @classmethod
@@ -116,6 +120,27 @@ class SoundChangeRule(RulePartBase):
             self.value = self.raw
             return self
 
+        if (
+            self.sporadic
+            and self.sample_sporadic
+            and self.rng.random() >= _SPORADIC_APPLY_PROBABILITY
+        ):
+            self.sporadic_skipped = True
+
+        if self.sporadic_skipped:
+            self.input, self.output, self.env, self.exception = (
+                compile_asca_rule_compile_fields(
+                    self.input,
+                    self.output,
+                    self.env,
+                    self.exception,
+                    section_index=self.section_index,
+                    compiler_config=self.compiler_config,
+                )
+            )
+            self.value = self._join_compiled_fields()
+            return self
+
         if self.detect_alternatives:
             alternatives = self._build_alternatives()
             self.alternatives = alternatives
@@ -150,10 +175,11 @@ class SoundChangeRule(RulePartBase):
         )
 
     def __str__(self) -> str:
-        prefix = self.skip_prefix if self.status == "skipped" else self.prefix
         if self.status == "skipped":
-            return f"{prefix}{self.raw}"
-        return f"{prefix}{self._join_compiled_fields()}"
+            return f"{self.skip_prefix}{self.raw}"
+        if self.sporadic_skipped:
+            return f"{self.skip_prefix}{self._join_compiled_fields()}"
+        return f"{self.prefix}{self._join_compiled_fields()}"
 
     def _build_alternatives(self) -> list[SoundChangeRule]:
         """Build peer alternatives for optional outputs or parallel ``∅`` output sets."""
@@ -225,12 +251,15 @@ class DiachronicSeries(BaseModel):
         format: str = "asca",
         *,
         compiler_config: CompilerConfig | None = None,
+        sample_sporadic: bool = True,
+        rng: random.Random | None = None,
     ) -> None:
         if format not in _SUPPORTED_FORMATS:
             raise ValueError(f"Unsupported format: {format}")
 
         config = compiler_config or CompilerConfig()
         section_index = str(section.get("index", ""))
+        series_rng = rng or random.Random()
         parts: list[RulePartBase] = [RuleTitle(section["index"], section["section"])]
         if section.get("citation"):
             parts.append(RuleCitation(section["citation"]))
@@ -254,6 +283,8 @@ class DiachronicSeries(BaseModel):
                             **step,
                             section_index=section_index,
                             compiler_config=config,
+                            sample_sporadic=sample_sporadic,
+                            rng=series_rng,
                         )
                     )
         super().__init__(parts=parts)

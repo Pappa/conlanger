@@ -578,7 +578,11 @@ def _resolve_inventory_targets(
     """Compile paths shared by whole-rule inventory and field isolation."""
     mini = _mini_section(section, rule, rule_id)
     try:
-        scr = DiachronicSeries(mini, compiler_config=compiler_config)
+        scr = DiachronicSeries(
+            mini,
+            compiler_config=compiler_config,
+            sample_sporadic=False,
+        )
     except (KeyError, ValueError) as exc:
         return [
             _InventoryTarget(
