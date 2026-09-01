@@ -106,7 +106,6 @@ section_index,rule_id,error_token,rule
 43.3,Luiseño-k_2,ₙ,"k > q / aₙ_ | ^ @ Rule 1, Line 1"
 43.4,Nahuatl-p,ₛ,"p > ∅ / {#,Vₛ}_ | ^ @ Rule 1, Line 1"
 43.6,Tohono-O’odham-p,ₛ,"p > w / {#,Vₛ}_ | ^ @ Rule 1, Line 1"
-44.1,Aquitanian-S+-fortis,〈,"{t,t:[+long]} {k,,k:[+long],} both of the tokens with optional length suffixes and *aP:[-voice]a > 〈atta〉, so I:[+cg]m extrapolating) | ^ @ Rule 1, Line 3"
 44.2,Basque-u-ũ_2,̻,"u ũ > y ỹ / _{s̻,ts̺,ts̻} | ^ @ Rule 1, Line 1"
 44.2,Basque-∅_3,̺,"∅ > e / #_{s̺,s̻}C | ^ @ Rule 1, Line 1"
 44.2,Basque-a-o-e,ɛ,"a o e > ɛ u i / {i,iC,0,u,uC,0}_ (this [ɛ] is tentatively marked as such | ^ @ Rule 1, Line 1"
