@@ -50,6 +50,8 @@ from conlanger.utils.gloss import (
         ("ː", False),
         ("kʷ", False),
         ("@", False),
+        ("a", False),
+        ("ʱ", False),
     ],
 )
 def test_paren_inner_is_gloss_classifies_prose_vs_phonology(inner, expected):
@@ -155,6 +157,7 @@ def test_extract_embedded_quoted_gloss_from_field(
             "V[+high +ATR](C(V[+high -ATR]))",
             [],
         ),
+        ("a{i,j}(a) a{u,w}(a)", "a{i,j}(a) a{u,w}(a)", []),
     ],
 )
 def test_extract_trailing_paren_glosses_from_field(

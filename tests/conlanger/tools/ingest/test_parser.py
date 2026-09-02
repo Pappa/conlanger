@@ -2217,3 +2217,20 @@ def test_parse_rule_element_sets_rule_id_on_quoted_prose():
     )
     assert rules[0]["rule_id"] == "Test-prose"
     assert "status" not in rules[0]
+
+
+def test_parse_rule_element_indo_aryan_chain_retains_optional_segments():
+    """Regression: trailing ``(a)`` on second spine token is phonology, not gloss."""
+    el = _html_fragment(
+        '<p class="schg" id="Central-Middle-Indo-Aryan-ai,ja-au,wa">'
+        "a{i,j}(a) a{u,w}(a) → e o</p>"
+    )
+    rules = default_index_parser().parse_rule_element(
+        el,
+        source_file="index_diachronica_original.html",
+        rule_id="Central-Middle-Indo-Aryan-ai,ja-au,wa",
+    )
+    assert len(rules) == 1
+    assert rules[0]["stages"] == ["a{i,j}(a) a{u,w}(a)", "e o"]
+    assert rules[0]["raw"] == "a{i,j}(a) a{u,w}(a) → e o"
+    assert "comment" not in rules[0]

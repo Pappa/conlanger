@@ -70,6 +70,15 @@ def paren_inner_is_gloss(inner: str) -> bool:
         return True
     if re.fullmatch(r"[A-Z][a-zA-Z\u00C0-\u024F\-]+", text):
         return True
+    # Short optional-segment tokens (e.g. ``(a)`` in ``a{i,j}(a)``) are phonology, not
+    # prose glosses like ``(xyz)`` — check before the single-word Latin heuristic.
+    if (
+        " " not in text
+        and len(text) <= 4
+        and _PHONOLOGICAL_PAREN_INNER_RE.fullmatch(text)
+        and not re.search(r"[a-z]{3,}", text)
+    ):
+        return False
     if (
         " " not in text
         and re.fullmatch(r"[\u0041-\u024F\u1E00-\u1EFF]+", text)
