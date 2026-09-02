@@ -1,4 +1,5 @@
 Type: task
+Status: resolved
 Blocked by:
 
 # Correction pass: parallel output ∅ residuals
