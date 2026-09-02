@@ -1,4 +1,5 @@
 Type: task
+Status: resolved
 Blocked by:
 
 # Correction pass: syllable position `#U` / `U#` (compile-time)
