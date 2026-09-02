@@ -1,5 +1,5 @@
 Type: task
-Status: needs-triage
+Status: resolved
 Blocked by: None
 
 # Correction pass: cartesian I/O optionals (grill 71 successor)
@@ -52,11 +52,11 @@ Ticket [48](48-correction-pass-parenthetical-segment-notation.md) cartesian-expa
 
 ## Acceptance criteria
 
-- [ ] New pass (or 48 extension) emits flat Family A sets and adjacent Family B sets
-- [ ] 51 re-scoped per §What to build; `(V[-long])N` and `({C,#}V)ʔ` no longer auto-expanded
-- [ ] Unit tests with shape-faithful apply probes on corpus rows above
-- [ ] Full inventory re-baseline; `nested_brackets` bucket D rows recovered; metrics in **Answer**
-- [ ] No `<>` emission on I/O in this pass
+- [x] New pass (or 48 extension) emits flat Family A sets and adjacent Family B sets
+- [x] 51 re-scoped per §What to build; `(V[-long])N` and `({C,#}V)ʔ` no longer auto-expanded
+- [x] Unit tests with shape-faithful apply probes on corpus rows above
+- [x] Full inventory re-baseline; `nested_brackets` bucket D rows recovered; metrics in **Answer**
+- [x] No `<>` emission on I/O in this pass
 
 ## References
 
@@ -68,3 +68,28 @@ Ticket [48](48-correction-pass-parenthetical-segment-notation.md) cartesian-expa
 ## Comments
 
 > 2026-09-02: Filed from closed grill 71. Owner confirmed spike 100 Q5″/Q6/Q10 and Round 2–3 decisions.
+
+## Answer
+
+**Shipped 2026-09-02.** New compile pass `flatten_cartesian_io_optionals` runs after ticket 48 parenthetical expansion and before re-scoped ticket 51 input optionals (`planned.expand_meta_notation`).
+
+### Implementation
+
+- **Family A:** `{hə{p,b},ə{p,b}}` → `{həp,həb,əp,əb}`; same for `(j){u,ʌ}`, `e(C){V[…]}`.
+- **Family B:** `{k{r,j},kʰ{r,j}}` → `{k,kʰ}{r,j}` adjacent sets.
+- **51 re-scope:** `a{i,j}(a)` → `a{i,j,ia,ja}`; deferred `(V[-long])N` and `({C,#}V)ʔ` (→ [113](113-human-review-io-optional-residuals.md)).
+- **Tests:** shape-faithful apply probes for Muong-Khen, Scots, Naxi, Amdo corpus rows.
+
+### Inventory
+
+Pre-pass summary: **8380 / 9840 ok (85.2%)**; `nested_brackets` **28**.
+
+| Metric | Before | After | Δ |
+|--------|-------:|------:|--:|
+| OK / total | 8380 / 9840 (85.2%) | **8385 / 9840 (85.2%)** | **+5 ok** |
+| Fail | 848 | **843** | **−5** |
+| `nested_brackets` | 28 | **20** | **−8** |
+
+**ok flips (+7):** `:2398` Muong-Khen, `:3124` Hiw, `:3737` Vera'a, `:5900` Scots, `:6327` Old Norse, `:12290` Amdo, `:14327` Scots Vowel Shifts.
+
+**Expected ok→fail (−2):** `:1684` Arapaho, `:1704` Gros Ventre — `(V[-long])N` no longer auto-expanded (deferred to [113](113-human-review-io-optional-residuals.md)).

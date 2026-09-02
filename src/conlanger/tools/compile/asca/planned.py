@@ -1,5 +1,8 @@
 """Planned ASCA compile transforms (spike 38 orders 4, 10)."""
 
+from conlanger.tools.compile.asca.cartesian_io_optionals import (
+    flatten_cartesian_io_optionals,
+)
 from conlanger.tools.compile.asca.input_optionals import (
     expand_input_optionals_to_structures,
 )
@@ -26,5 +29,6 @@ def expand_meta_notation(text: str) -> str:
     """Cluster-driven meta-notation handlers."""
     text = expand_index_tilde_notation(text)
     text = expand_index_parenthetical_notation(text)
+    text = flatten_cartesian_io_optionals(text)
     text = expand_input_optionals_to_structures(text)
     return drop_concatenated_deletion_column(text)

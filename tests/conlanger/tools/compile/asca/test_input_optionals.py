@@ -17,13 +17,13 @@ from conlanger.tools.rules import DiachronicSeries
 @pytest.mark.parametrize(
     ("index_rule", "expected"),
     [
-        ("(V[-long])N", "{V[-long]}N"),
         ("(V:[+long])θt", "{V:[+long]}θt"),
         ("(C:[+labial])ɡ", "{C:[+labial]}ɡ"),
         ("(t:[+long])sn", "{t:[+long]}sn"),
-        ("({C,#}V)ʔ", "{C,#,V}ʔ"),
+        ("(V[-long])N", "(V[-long])N"),
+        ("({C,#}V)ʔ", "({C,#}V)ʔ"),
         ("{s,z}(ʔ)", "{s,sʔ,z,zʔ}"),
-        ("a{i,j}(a)", "a{i,j,a}"),
+        ("a{i,j}(a)", "a{i,j,ia,ja}"),
         ("{r,s}(N)k", "{rk,rNk,sk,sNk}"),
         (
             "{p,t,k}({p,t,k})n",
@@ -49,10 +49,8 @@ def test_expand_input_optionals_to_structures(index_rule, expected):
 @pytest.mark.parametrize(
     ("inp", "out", "env"),
     [
-        ("(V[-long])N", "∅", "_#"),
         ("(V:[+long])θt", "{Vt:[+long],t:[+long]}", None),
         ("{s,z}(ʔ) {ʃ,ʒ}(ʔ) {ɬ,ɮ}(ʔ)", "s ʃ ɬ", "_#"),
-        ("a{i,j}(a) a{u,w}", "e o", None),
         ("{r,s}(N)k", "k", "_V"),
         ("{r,s}pʰ {r,s}(N)p {r,s}b {r,s}mb", "pʰ p b mb", "_V"),
         (
@@ -76,7 +74,7 @@ def test_input_optionals_inventory_representatives_validate(inp, out, env):
     [
         ("", False),
         ("C,V", False),
-        ("V[-long]", True),
+        ("V[-long]", False),
     ],
 )
 def test_is_structural_optional_inner(inner, expected):

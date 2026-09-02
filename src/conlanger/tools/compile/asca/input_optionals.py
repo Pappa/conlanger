@@ -5,13 +5,11 @@ Taxonomy
 
 | Pattern | Example | Expansion |
 |---------|---------|-----------|
-| Prefix feature matrix | ``(V[-long])N`` | ``{V[-long]}N`` |
 | Prefix segment features | ``(V:[+long])θt``, ``(t:[+long])sn`` | ``{V:[+long]}θt`` |
 | Prefix class features | ``(C:[+labial])ɡ`` | ``{C:[+labial]}ɡ`` |
-| Prefix grouped class | ``({C,#}V)ʔ`` | ``{C,#,V}ʔ`` |
-| Set suffix optional | ``{s,z}(ʔ)`` | ``{s,z,sʔ,zʔ}`` |
-| Literal + set + optional | ``a{i,j}(a)`` | ``a{i,j,a}`` |
-| Set + class optional + tail | ``{r,s}(N)k`` | ``{r,s,N}k`` |
+| Set suffix optional | ``{s,z}(ʔ)`` | ``{s,sʔ,z,zʔ}`` |
+| Literal + set + optional | ``a{i,j}(a)`` | ``a{i,j,ia,ja}`` |
+| Set + class optional + tail | ``{r,s}(N)k`` | ``{rk,rNk,sk,sNk}`` |
 | Set cross optional | ``{p,t,k}({p,t,k})n`` | cross-product members + suffix |
 
 ASCA env/structure optionals like ``(C,V)`` and ``(C,0)`` are left unchanged.
@@ -40,11 +38,18 @@ _CLASS_OR_GROUP_INNER_RE = re.compile(
     r")$"
 )
 _BRACED_GROUP_PREFIX_RE = re.compile(r"^\((\{[^{}]+\}[^)]*)\)(.+)$")
+_DEFERRED_STRUCTURAL_OPTIONAL_RE = re.compile(r"^(?:V\[-long\]|\{C,#\}V)$")
+
+
+def _is_deferred_structural_optional(inner: str) -> bool:
+    return bool(_DEFERRED_STRUCTURAL_OPTIONAL_RE.fullmatch(inner.strip()))
 
 
 def _is_structural_optional_inner(inner: str) -> bool:
     text = inner.strip()
     if not text or ASCA_ENV_OPTIONAL_RE.fullmatch(f"({text})"):
+        return False
+    if _is_deferred_structural_optional(text):
         return False
     return bool(_CLASS_OR_GROUP_INNER_RE.fullmatch(text))
 
@@ -96,9 +101,14 @@ def _expand_literal_set_optionals(text: str) -> str:
         literal = match.group(1)
         members = split_set_members(match.group(2))
         optional = match.group(3)
-        if optional not in members:
-            members.append(optional)
-        return f"{literal}{{{','.join(members)}}}"
+        if optional in members:
+            return f"{literal}{{{','.join(members)}}}"
+        expanded = list(members)
+        for member in members:
+            candidate = f"{member}{optional}"
+            if candidate not in expanded:
+                expanded.append(candidate)
+        return f"{literal}{{{','.join(expanded)}}}"
 
     return re.sub(
         rf"({IPA_SEGMENT})\{{([^{{}}]+)\}}\(([^)]+)\)",
@@ -111,6 +121,8 @@ def _expand_prefix_structure_optional(token: str) -> str:
     braced = _BRACED_GROUP_PREFIX_RE.fullmatch(token)
     if braced:
         inner = braced.group(1).strip()
+        if _is_deferred_structural_optional(inner):
+            return token
         rest = braced.group(2)
         set_match = re.fullmatch(r"\{([^{}]+)\}(.+)", inner)
         if set_match:

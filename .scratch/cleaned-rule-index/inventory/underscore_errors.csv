@@ -105,6 +105,7 @@ section_index,rule_id,error_token,rule
 44.2,Basque-i_3,,"i > ∅ / _#, in disyllables | ^ @ Rule 1, Line 1"
 44.2,"Basque-u-o,e",,"u {o,e} > a / _#, in disyllables | ^ @ Rule 1, Line 1"
 46.13,"Faroese-Vowel-Shift-a,æː",,"{a,æ:[+long]} > ɛa / a | ^ @ Rule 1, Line 1"
+46.13,Faroese-Vowel-Shift-aː,,"a:[+long] > ɔa / ɔ | ^ @ Rule 1, Line 1"
 46.13,Faroese-Vowel-Shift-e,,"e > e:[+long] / ɛ | ^ @ Rule 1, Line 1"
 46.13,"Faroese-Vowel-Shift-i,y",,"{i,y} > i:[+long] / ɪ | ^ @ Rule 1, Line 1"
 46.13,"Faroese-Vowel-Shift-iː,yː",,"{i:[+long],y:[+long]} > ʊi / ʊ | ^ @ Rule 1, Line 1"
