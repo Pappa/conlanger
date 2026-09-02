@@ -3,9 +3,9 @@ from pathlib import Path
 import pandas as pd
 
 from conlanger.tools.inventory_error_clusters import (
-    CHARACTER_ERRORS_CSV_NAME,
-    GROUPING_ERRORS_CSV_NAME,
-    UNDERSCORE_ERRORS_CSV_NAME,
+    UNKNOWN_CHARACTER_ERRORS_CSV_NAME,
+    UNKNOWN_GROUPING_ERRORS_CSV_NAME,
+    EXPECTED_UNDERSCORE_ERRORS_CSV_NAME,
     cluster_errors_dataframe,
     filter_errors_by_failure_class,
     write_error_cluster_csvs,
@@ -85,9 +85,9 @@ def test_write_error_cluster_csvs(tmp_path: Path):
         ]
     )
     write_error_cluster_csvs(df, tmp_path)
-    assert (tmp_path / GROUPING_ERRORS_CSV_NAME).is_file()
-    assert (tmp_path / CHARACTER_ERRORS_CSV_NAME).is_file()
-    assert (tmp_path / UNDERSCORE_ERRORS_CSV_NAME).is_file()
-    grouping = pd.read_csv(tmp_path / GROUPING_ERRORS_CSV_NAME)
+    assert (tmp_path / UNKNOWN_GROUPING_ERRORS_CSV_NAME).is_file()
+    assert (tmp_path / UNKNOWN_CHARACTER_ERRORS_CSV_NAME).is_file()
+    assert (tmp_path / EXPECTED_UNDERSCORE_ERRORS_CSV_NAME).is_file()
+    grouping = pd.read_csv(tmp_path / UNKNOWN_GROUPING_ERRORS_CSV_NAME)
     assert len(grouping) == 1
     assert grouping.iloc[0]["rule"] == "a > b / _"

@@ -4,9 +4,9 @@ Blocked by: 95
 
 # Correction pass: group-mapping residuals (post-boundaries)
 
-Target cluster: `unknown_grouping` — **mapped** class letters still literal after [ticket 95](95-correction-pass-group-mapping-boundaries-unglued.md) boundary + unglued pass. Expected **~10** in-scope rows (~15% of the 68 CSV-native rows in [grouping_errors.csv](../inventory/grouping_errors.csv)); exact set depends on 95 outcome.
+Target cluster: `unknown_grouping` — **mapped** class letters still literal after [ticket 95](95-correction-pass-group-mapping-boundaries-unglued.md) boundary + unglued pass. Expected **~10** in-scope rows (~15% of the 68 CSV-native rows in [unknown_grouping_errors.csv](../inventory/unknown_grouping_errors.csv)); exact set depends on 95 outcome.
 
-Spawned from grouping-errors investigation (2026-08-27). Follow-on only — do not start until 95 is **resolved** and `grouping_errors.csv` is refreshed.
+Spawned from grouping-errors investigation (2026-08-27). Follow-on only — do not start until 95 is **resolved** and `unknown_grouping_errors.csv` is refreshed.
 
 ## Problem
 
@@ -24,7 +24,7 @@ After 95, remaining in-scope failures are likely **not** solvable by another glo
 
 ## What to build
 
-1. Re-extract in-scope rows from post-95 inventory into `grouping_errors.csv` (or equivalent filter).
+1. Re-extract in-scope rows from post-95 inventory into `unknown_grouping_errors.csv` (or equivalent filter).
 2. Bucket each residual row by root cause (multi-field, punctuation edge, false positive in error_token, needs targeted regex, unfixable).
 3. Implement **minimal** fixes — targeted tests per bucket; avoid a third global regex widening without spike evidence.
 4. Full inventory re-run; record before/after in **Answer**.
@@ -68,10 +68,10 @@ Compile-layer only (`group_mappings.py`, `length_marks.py`). **After** boundary 
 
 Cleared rule_ids: `Luwian-D-R`, `Old-Norse-EːBː-Eːaː`, `Old-Norse-Eːu,oː-Eːaː`, `Old-Norse-BːB-aːo,a,æ,e-æ,eːæ,eː-æ,eːi-iːEː`, `Old-Norse-eːBː,iː`, `Old-Norse-eːBː,iː_2`, `bTshan-La-k-sk-kr-ɡ-Pɡ-sɡ-Nɡ-sɡr-çK-rK-Kç`, `lCog-Rtse-Nkj-sɡr-Kç-kr-skr-ɡr`. `Standard-Finnish-iU-OU` no longer `unknown_grouping` (`U`); residual `syntax_other` (ASCA syllable parameter) — not group_mappings.
 
-`grouping_errors.csv` regenerated (21 rows, all M/X/I/Y).
+`unknown_grouping_errors.csv` regenerated (21 rows, all M/X/I/Y).
 
 ## References
 
 - [95 boundaries + unglued pass](95-correction-pass-group-mapping-boundaries-unglued.md)
-- [grouping_errors.csv](../inventory/grouping_errors.csv)
+- [unknown_grouping_errors.csv](../inventory/unknown_grouping_errors.csv)
 - [Correction pass template](13-correction-pass-template.md)

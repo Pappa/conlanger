@@ -4,7 +4,7 @@ Blocked by: 12
 
 # Correction pass: group-mapping boundaries + unglued class letters
 
-Target cluster: `unknown_grouping` — **mapped** Index class letters from `data/asca/group_mappings.csv` that remain literal in compiled rules because `apply_asca_group_mappings_to_string` boundary regexes miss the token context. Baseline artifact: [grouping_errors.csv](../inventory/grouping_errors.csv) (**89** rows total; **68** in scope for CSV/native letters; **21** out of scope — **M**, **X**, **I**, **Y** — ignore).
+Target cluster: `unknown_grouping` — **mapped** Index class letters from `data/asca/group_mappings.csv` that remain literal in compiled rules because `apply_asca_group_mappings_to_string` boundary regexes miss the token context. Baseline artifact: [unknown_grouping_errors.csv](../inventory/unknown_grouping_errors.csv) (**89** rows total; **68** in scope for CSV/native letters; **21** out of scope — **M**, **X**, **I**, **Y** — ignore).
 
 Spawned from grouping-errors investigation (2026-08-27). Supersedes ticket [43](43-correction-pass-unknown-grouping-t.md) **Phase 2** policy: lowercase-glued uppercase class letters (**`rK`**, **`sTP`**, **`nQ`**, **`hR`**) **must expand** — a mapped uppercase letter in a rule segment is always the class, not part of a literal digraph with the neighbouring lowercase IPA segment.
 
@@ -38,8 +38,8 @@ After the normal pass, expand any **remaining** mapped uppercase letter when the
 
 1. Extend `_CLASS_BEFORE` / `_CLASS_AFTER` (and labialized variant) per table above; keep named constants + module comment ([docs/system/sound-change-applier.md](../../../docs/system/sound-change-applier.md) § Class-letter expansion boundaries).
 2. Add **unglued** pass after optional-labial / suffix-labial / bare passes (ticket 43 option 2, now mandatory).
-3. Unit tests in `tests/conlanger/tools/test_group_mappings.py` — fixtures from [grouping_errors.csv](../inventory/grouping_errors.csv) in-scope rows (minimum: digit-ref **R**, ellipsis **U**, `_%U(`, `çT`, `rK`, `sTP`, `nQ`, `hR`, `Eβu`, `Bʱ`, `{D,Dʱ}` first member).
-4. Full inventory re-run (`uv run create_index`); refresh `grouping_errors.csv`; record before/after in **Answer**.
+3. Unit tests in `tests/conlanger/tools/test_group_mappings.py` — fixtures from [unknown_grouping_errors.csv](../inventory/unknown_grouping_errors.csv) in-scope rows (minimum: digit-ref **R**, ellipsis **U**, `_%U(`, `çT`, `rK`, `sTP`, `nQ`, `hR`, `Eβu`, `Bʱ`, `{D,Dʱ}` first member).
+4. Full inventory re-run (`uv run create_index`); refresh `unknown_grouping_errors.csv`; record before/after in **Answer**.
 
 ## Out of scope
 
@@ -59,7 +59,7 @@ After the normal pass, expand any **remaining** mapped uppercase letter when the
 - [x] `C₁`, `S₁` regressions unchanged
 - [x] Ticket 23 labialization regressions unchanged (`Kʷ`, `K(ʷ)`, …)
 - [x] Full inventory re-run; in-scope `unknown_grouping` count in **Answer** (target **~55–58 / 68** in-scope rows cleared, ~**85%**)
-- [x] `grouping_errors.csv` regenerated or diff noted
+- [x] `unknown_grouping_errors.csv` regenerated or diff noted
 
 ## Answer
 
@@ -79,7 +79,7 @@ In-scope tokens cleared: **R** 26→0, **T** 8→0, **H** 4→0, **Q** 1→0, **
 
 12 of the 59 token-clears still fail under other classes (47 ok-flips). Residual 9 in-scope rows (ticket 96): Old-Norse/Luwian class letter before `ː` (not in After at mapping time); rGyalrongic `Kç` (`ç` in Before only); Finnish output `Uː`.
 
-`grouping_errors.csv` regenerated (30 rows).
+`unknown_grouping_errors.csv` regenerated (30 rows).
 
 ## References
 
@@ -87,5 +87,5 @@ In-scope tokens cleared: **R** 26→0, **T** 8→0, **H** 4→0, **Q** 1→0, **
 - [Correction pass: unknown_grouping](14-correction-pass-unknown-grouping.md)
 - [Correction pass: residual `T`](43-correction-pass-unknown-grouping-t.md) — Phase 1 shipped; Phase 2 policy superseded here
 - [Correction pass: labialized class letters](23-correction-pass-labialized-class-letters.md)
-- [grouping_errors.csv](../inventory/grouping_errors.csv)
+- [unknown_grouping_errors.csv](../inventory/unknown_grouping_errors.csv)
 - [asca-class-letter-mappings research](../research/asca-class-letter-mappings.md)

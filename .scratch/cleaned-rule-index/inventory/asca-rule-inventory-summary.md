@@ -21,10 +21,10 @@
 
 | count | failure_class |
 |------:|---------------|
-| 312 | `syntax_other` |
+| 313 | `syntax_other` |
 | 138 | `runtime_other` |
 | 122 | `unknown_character` |
-| 116 | `expected_underscore` |
+| 115 | `expected_underscore` |
 | 36 | `expected_number` |
 | 33 | `prose_or_expected_arrow` |
 | 23 | `unknown_feature` |
@@ -85,8 +85,8 @@
 - `ok` flips (append-only): [asca-rule-inventory-changelog.csv](asca-rule-inventory-changelog.csv)
 - Field blame OK rows: [asca-field-isolation-success.csv](asca-field-isolation-success.csv)
 - Field blame fail rows: [asca-field-isolation-error.csv](asca-field-isolation-error.csv)
-- Grouping errors: [grouping_errors.csv](grouping_errors.csv)
-- Character errors: [character_errors.csv](character_errors.csv)
-- Underscore errors: [underscore_errors.csv](underscore_errors.csv)
+- Grouping errors: [unknown_grouping_errors.csv](unknown_grouping_errors.csv)
+- Character errors: [unknown_character_errors.csv](unknown_character_errors.csv)
+- Underscore errors: [expected_underscore_errors.csv](expected_underscore_errors.csv)
 - Nested-bracket errors: [nested_brackets_errors.csv](nested_brackets_errors.csv)
-- Unknown features: [unknown_features.csv](unknown_features.csv)
+- Unknown features: [unknown_features_errors.csv](unknown_features_errors.csv)

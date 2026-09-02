@@ -247,7 +247,7 @@ def main() -> int:
         ("section_index", "rule_id", "alt_idx"),
     )
     underscore_lookup = _load_lookup(
-        "underscore_errors.csv",
+        "expected_underscore_errors.csv",
         ("section_index", "rule_id"),
     )
     nested_lookup = _load_lookup(
@@ -255,11 +255,11 @@ def main() -> int:
         ("section_index", "rule_id"),
     )
     character_lookup = _load_lookup(
-        "character_errors.csv",
+        "unknown_character_errors.csv",
         ("section_index", "rule_id"),
     )
     feature_lookup = _load_lookup(
-        "unknown_features.csv",
+        "unknown_features_errors.csv",
         ("section_index", "rule_id"),
     )
 

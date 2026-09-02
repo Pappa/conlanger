@@ -848,8 +848,7 @@ sections:
   - stages:
     - s
     - s₃
-    env: V_
-    comment: (V)
+    env: V_(V)
     raw: s → s₃ / V_(V)
     source: index_diachronica_original.html:1093
     rule_id: Wolaytta-s
@@ -1667,18 +1666,16 @@ sections:
     source: index_diachronica_original.html:1267
     rule_id: Egypto-Berber-ɡwVq
   - stages:
-    - k
+    - k(w)
     - tʃ
     env: '#_Vt'
-    comment: (w)
     raw: 'k(w) → tʃ / #_Vt'
     source: index_diachronica_original.html:1268
     rule_id: Egypto-Berber-kw
   - stages:
-    - ɡ
+    - ɡ(w)
     - dʒ
     env: '#_Vd'
-    comment: (w)
     raw: 'ɡ(w) → dʒ / #_Vd'
     source: index_diachronica_original.html:1269
     rule_id: Egypto-Berber-ɡw
@@ -1916,18 +1913,16 @@ sections:
     source: index_diachronica_original.html:1309
     rule_id: Proto-Semitic-ɣ
   - stages:
-    - ɣ
+    - ɣ(w)
     - ɡ
     env: '#_Vx'
-    comment: (w)
     raw: 'ɣ(w) → ɡ / #_Vx'
     source: index_diachronica_original.html:1310
     rule_id: Proto-Semitic-ɣw
   - stages:
-    - kʼ
+    - kʼ(w)
     - k
     env: '#dlV_'
-    comment: (w)
     raw: 'kʼ(w) → k / #dlV_'
     source: index_diachronica_original.html:1311
     rule_id: Proto-Semitic-kʼw
@@ -4265,9 +4260,8 @@ sections:
     source: index_diachronica_original.html:1755
     rule_id: Blackfoot-ket
   - stages:
-    - ke
+    - ke(h)
     - tː ?
-    comment: (h)
     raw: ke(h) → tː ?
     source: index_diachronica_original.html:1756
     sporadic: true
@@ -8317,10 +8311,10 @@ sections:
     raw: iw ow ej → i o e / _#
     source: index_diachronica_original.html:2557
     rule_id: Sasak-iw-ow-ej
-  - comment: (again, might’ve been a retention?); (h); (q)
+  - comment: (again, might’ve been a retention?)
     stages:
-    - V
-    - V
+    - V(h)
+    - V(q)
     env: _#
     raw: V(h) → V(q) / _# (again, might’ve been a retention?)
     source: index_diachronica_original.html:2559
@@ -8394,10 +8388,10 @@ sections:
     source: index_diachronica_original.html:2571
     sporadic: true
     rule_id: Sumbawan-u-i
-  - comment: (again, might’ve been a retention?); (h); (q)
+  - comment: (again, might’ve been a retention?)
     stages:
-    - V
-    - V
+    - V(h)
+    - V(q)
     env: _#
     raw: V(h) → V(q) / _# (again, might’ve been a retention?)
     source: index_diachronica_original.html:2572
@@ -14504,8 +14498,7 @@ sections:
     rule_id: Vera’a-mʷ
   - stages:
     - i(C)V[+ high]
-    - i
-    comment: (C)
+    - i(C)
     raw: i(C)V[+ high] → i(C)
     source: index_diachronica_original.html:3732
     rule_id: Vera’a-iCV+-high
@@ -14517,8 +14510,7 @@ sections:
     rule_id: Vera’a-iCV-high
   - stages:
     - e(C)V[- low]
-    - e
-    comment: (C)
+    - e(C)
     raw: e(C)V[- low] → e(C)
     source: index_diachronica_original.html:3734
     rule_id: Vera’a-eCV-low
@@ -14530,15 +14522,13 @@ sections:
     rule_id: Vera’a-eCV+-low
   - stages:
     - a(C)i a(C)u
-    - '{a,ɛ}(C) {ɔ,a,ɛ}'
-    comment: (C)
+    - '{a,ɛ}(C) {ɔ,a,ɛ}(C)'
     raw: a(C)i a(C)u → {a,ɛ}(C) {ɔ,a,ɛ}(C)
     source: index_diachronica_original.html:3736
     rule_id: Vera’a-aCi-aCu
   - stages:
     - a(C){o,e}
-    - a
-    comment: (C)
+    - a(C)
     raw: a(C){o,e} → a(C)
     source: index_diachronica_original.html:3737
     rule_id: Vera’a-aCo,e
@@ -23087,10 +23077,9 @@ sections:
     source: index_diachronica_original.html:5456
     rule_id: Avestan_2-o-oː
   - stages:
-    - h
+    - h(j)
     - ŋh
     env: a_a
-    comment: (j)
     raw: h(j) → ŋh / a_a
     source: index_diachronica_original.html:5457
     rule_id: Avestan_2-hj
@@ -25843,9 +25832,8 @@ sections:
     source: index_diachronica_original.html:5923
     rule_id: Scots_2-ø
   - stages:
-    - æː(ɑ) eː
+    - æː(ɑ) eː(o)
     - ɛ iː
-    comment: (o)
     raw: æː(ɑ) eː(o) → ɛ iː
     source: index_diachronica_original.html:5924
     rule_id: Scots_2-æːɑ-eːo
@@ -25884,9 +25872,8 @@ sections:
     source: index_diachronica_original.html:5929
     rule_id: Scots_2-ɪ
   - stages:
-    - e
+    - e(o)
     - ɛ
-    comment: (o)
     raw: e(o) → ɛ
     source: index_diachronica_original.html:5930
     rule_id: Scots_2-eo
@@ -29521,8 +29508,7 @@ sections:
     rule_id: Shetland-Norn-n-l
   - stages:
     - nː
-    - ɲ
-    comment: (d)
+    - ɲ(d)
     raw: nː → ɲ(d)
     source: index_diachronica_original.html:6509
     rule_id: Shetland-Norn-nː
@@ -29618,9 +29604,8 @@ sections:
     rule_id: Shetland-Norn-aː
   - stages:
     - aː
-    - ɔ
+    - ɔ(u)
     env: _{l,r}
-    comment: (u)
     raw: aː → ɔ(u) / _{l,r}
     source: index_diachronica_original.html:6524
     rule_id: Shetland-Norn-aː_2
@@ -29986,9 +29971,8 @@ sections:
     source: index_diachronica_original.html:6592
     rule_id: Attic-Greek-w
   - stages:
-    - u(ː)
-    - y(ː)
-    comment: (j); (j)
+    - u(ː)(j)
+    - y(ː)(j)
     raw: u(ː)(j) → y(ː)(j)
     source: index_diachronica_original.html:6595
     rule_id: Attic-Greek-uːj
@@ -30856,9 +30840,8 @@ sections:
     source: index_diachronica_original.html:6746
     rule_id: Ionic-Greek-ej-ow
   - stages:
-    - u(ː)
-    - y(ː)
-    comment: (j); (j)
+    - u(ː)(j)
+    - y(ː)(j)
     raw: u(ː)(j) → y(ː)(j)
     source: index_diachronica_original.html:6748
     rule_id: Ionic-Greek-uːj
@@ -31567,10 +31550,9 @@ sections:
     Historical Linguistics II:391-401.
   rules:
   - stages:
-    - C
+    - C(C)
     - ∅
     env: C_#
-    comment: (C)
     raw: C(C) → ∅ / C_#
     source: index_diachronica_original.html:6873
     rule_id: Central-Middle-Indo-Aryan-CC
@@ -31582,9 +31564,8 @@ sections:
     source: index_diachronica_original.html:6874
     rule_id: Central-Middle-Indo-Aryan-VN-VC-nas
   - stages:
-    - a{i,j}(a) a{u,w}
+    - a{i,j}(a) a{u,w}(a)
     - e o
-    comment: (a)
     raw: a{i,j}(a) a{u,w}(a) → e o
     source: index_diachronica_original.html:6875
     rule_id: Central-Middle-Indo-Aryan-ai,ja-au,wa
@@ -31692,10 +31673,9 @@ sections:
     Historical Linguistics II:391-401.
   rules:
   - stages:
-    - C
+    - C(C)
     - ∅
     env: C_#
-    comment: (C)
     raw: C(C) → ∅ / C_#
     source: index_diachronica_original.html:6894
     rule_id: Eastern-Middle-Indo-Aryan-CC
@@ -31707,9 +31687,8 @@ sections:
     source: index_diachronica_original.html:6895
     rule_id: Eastern-Middle-Indo-Aryan-VN-VC-nas
   - stages:
-    - a{i,j}(a) a{u,w}
+    - a{i,j}(a) a{u,w}(a)
     - e o
-    comment: (a)
     raw: a{i,j}(a) a{u,w}(a) → e o
     source: index_diachronica_original.html:6896
     rule_id: Eastern-Middle-Indo-Aryan-ai,ja-au,wa
@@ -31829,10 +31808,9 @@ sections:
     Historical Linguistics II:391-401.
   rules:
   - stages:
-    - C
+    - C(C)
     - ∅
     env: C_#
-    comment: (C)
     raw: C(C) → ∅ / C_#
     source: index_diachronica_original.html:6917
     rule_id: Northwestern-Middle-Indo-Aryan-CC
@@ -31844,9 +31822,8 @@ sections:
     source: index_diachronica_original.html:6918
     rule_id: Northwestern-Middle-Indo-Aryan-VN-VC-nas
   - stages:
-    - a{i,j}(a) a{u,w}
+    - a{i,j}(a) a{u,w}(a)
     - e o
-    comment: (a)
     raw: a{i,j}(a) a{u,w}(a) → e o
     source: index_diachronica_original.html:6919
     rule_id: Northwestern-Middle-Indo-Aryan-ai,ja-au,wa
@@ -31959,10 +31936,9 @@ sections:
     Historical Linguistics II:391-401.
   rules:
   - stages:
-    - C
+    - C(C)
     - ∅
     env: C_#
-    comment: (C)
     raw: C(C) → ∅ / C_#
     source: index_diachronica_original.html:6939
     rule_id: Western-Middle-Indo-Aryan-CC
@@ -31974,9 +31950,8 @@ sections:
     source: index_diachronica_original.html:6940
     rule_id: Western-Middle-Indo-Aryan-VN-VC-nas
   - stages:
-    - a{i,j}(a) a{u,w}
+    - a{i,j}(a) a{u,w}(a)
     - e o
-    comment: (a)
     raw: a{i,j}(a) a{u,w}(a) → e o
     source: index_diachronica_original.html:6941
     rule_id: Western-Middle-Indo-Aryan-ai,ja-au,wa
@@ -41703,9 +41678,8 @@ sections:
     rule_id: Cocama-e
   - stages:
     - o
-    - u
+    - u(a)
     exception: o(C…)_(C…)#
-    comment: (a)
     raw: o → u(a) / ! o(C…)_(C…)#
     source: index_diachronica_original.html:8512
     rule_id: Cocama-o
@@ -42591,9 +42565,8 @@ sections:
     In Botswana Notes and Records 16:19 – 35.
   rules:
   - stages:
-    - ǀ̃
+    - ǀ̃(n)
     - ǂ̃n
-    comment: (n)
     raw: ǀ̃(n) → ǂ̃n
     source: index_diachronica_original.html:8726
     rule_id: "Ç\x81̬Ana-ǀ̃n"
@@ -42616,9 +42589,8 @@ sections:
     source: index_diachronica_original.html:8729
     rule_id: "Ç\x81̬Ana-!̬"
   - stages:
-    - '!̃'
+    - '!̃(n)'
     - ŋ
-    comment: (n)
     raw: '!̃(n) → ŋ'
     source: index_diachronica_original.html:8730
     rule_id: "Ç\x81̬Ana-!̃n"
@@ -42642,9 +42614,8 @@ sections:
     In Botswana Notes and Records 16:19 – 35.
   rules:
   - stages:
-    - ǀ̃
+    - ǀ̃(n)
     - ǂ̃n
-    comment: (n)
     raw: ǀ̃(n) → ǂ̃n
     source: index_diachronica_original.html:8737
     rule_id: "Ç\x81Ani-ǀ̃n"
@@ -42686,9 +42657,8 @@ sections:
     In Botswana Notes and Records 16:19 – 35.
   rules:
   - stages:
-    - ǀ̃
+    - ǀ̃(n)
     - ǂ̃
-    comment: (n)
     raw: ǀ̃(n) → ǂ̃
     source: index_diachronica_original.html:8747
     rule_id: Buga-ǀ̃n
@@ -42729,9 +42699,8 @@ sections:
     In Botswana Notes and Records 16:19 – 35.
   rules:
   - stages:
-    - '!̃'
+    - '!̃(n)'
     - ǂ̃
-    comment: (n)
     raw: '!̃(n) → ǂ̃'
     source: index_diachronica_original.html:8757
     rule_id: Kxoe-!̃n
@@ -42784,9 +42753,8 @@ sections:
     source: index_diachronica_original.html:8768
     rule_id: Nama-ǀˀ,ǀxʼ
   - stages:
-    - ǀ̃
+    - ǀ̃(n)
     - '{ǂ̃,ǂ}'
-    comment: (n)
     raw: ǀ̃(n) → {ǂ̃,ǂ}
     source: index_diachronica_original.html:8769
     rule_id: Nama-ǀ̃n
@@ -42821,9 +42789,8 @@ sections:
     In Botswana Notes and Records 16:19 – 35.
   rules:
   - stages:
-    - ǀ̃
+    - ǀ̃(n)
     - ǂ̃
-    comment: (n)
     raw: ǀ̃(n) → ǂ̃
     source: index_diachronica_original.html:8778
     rule_id: Naro-ǀ̃n
@@ -42846,9 +42813,8 @@ sections:
     In Botswana Notes and Records 16:19 – 35.
   rules:
   - stages:
-    - ǀ̃
+    - ǀ̃(n)
     - ǂ̃
-    comment: (n)
     raw: ǀ̃(n) → ǂ̃
     source: index_diachronica_original.html:8785
     rule_id: '!Ora-ǀ̃n'
@@ -42883,9 +42849,8 @@ sections:
     In Botswana Notes and Records 16:19 – 35.
   rules:
   - stages:
-    - ǀ̃
+    - ǀ̃(n)
     - j
-    comment: (n)
     raw: ǀ̃(n) → j
     source: index_diachronica_original.html:8794
     rule_id: Teti-ǀ̃n
@@ -42982,9 +42947,8 @@ sections:
     In Botswana Notes and Records 16:19 – 35.
   rules:
   - stages:
-    - ǀ̃
+    - ǀ̃(n)
     - ǂ̃n
-    comment: (n)
     raw: ǀ̃(n) → ǂ̃n
     source: index_diachronica_original.html:8816
     rule_id: "Ç\x80̬Ui-ǀ̃n"
@@ -45206,8 +45170,7 @@ sections:
     rule_id: Tunebo-dVs,nVj-nVs
   - stages:
     - d(V)j
-    - r
-    comment: (V)
+    - r(V)
     raw: d(V)j → r(V)
     source: index_diachronica_original.html:9354
     rule_id: Tunebo-dVj
@@ -51234,8 +51197,7 @@ sections:
     rule_id: Tlapanec-n
   - stages:
     - j
-    - l
-    comment: (V)
+    - l(V)
     raw: j → l(V)
     source: index_diachronica_original.html:10879
     rule_id: Tlapanec-j
@@ -52982,9 +52944,8 @@ sections:
     sporadic: true
     rule_id: Santiago-k
   - stages:
-    - ts
+    - ts(h)
     - tʃ
-    comment: (h)
     raw: ts(h) → tʃ
     source: index_diachronica_original.html:11327
     rule_id: Santiago-tsh
@@ -53084,9 +53045,8 @@ sections:
     Language 44(3):528 – 555
   rules:
   - stages:
-    - q
+    - q(h)
     - k
-    comment: (h)
     raw: q(h) → k
     source: index_diachronica_original.html:11345
     rule_id: Tena-qh
@@ -55274,8 +55234,7 @@ sections:
   - stages:
     - ŋ
     - n
-    env: n_Cʲa
-    comment: (ta)
+    env: n_Cʲa(ta)
     raw: ŋ → n / n_Cʲa(ta)
     source: index_diachronica_original.html:11773
     rule_id: Old-Mandarin-ŋ
@@ -55283,8 +55242,7 @@ sections:
     - ŋ
     - ∅
     env: '#_'
-    exception: '#_o'
-    comment: (w)
+    exception: '#_o(w)'
     raw: 'ŋ → ∅ / #_ ! #_o(w)'
     source: index_diachronica_original.html:11774
     rule_id: Old-Mandarin-ŋ_2
@@ -57115,9 +57073,8 @@ sections:
     source: index_diachronica_original.html:12087
     rule_id: Kham-To-p-b-pr-br-çp
   - stages:
-    - d
+    - d(r)
     - t
-    comment: (r)
     raw: d(r) → t
     source: index_diachronica_original.html:12088
     rule_id: Kham-To-dr
@@ -57620,8 +57577,7 @@ sections:
     rule_id: Trung-un
   - stages:
     - an
-    - a
-    comment: (i)
+    - a(i)
     raw: an → a(i)
     source: index_diachronica_original.html:12185
     rule_id: Trung-an
@@ -57771,10 +57727,9 @@ sections:
     source: index_diachronica_original.html:12212
     rule_id: Tsa-Ku-Nao-om
   - stages:
-    - a
+    - a(t)
     - ɛ
     env: _#
-    comment: (t)
     raw: a(t) → ɛ / _#
     source: index_diachronica_original.html:12213
     rule_id: Tsa-Ku-Nao-at
@@ -57937,9 +57892,8 @@ sections:
     source: index_diachronica_original.html:12241
     rule_id: Tzu-Ta-ç
   - stages:
-    - ŋ
-    - ɲ
-    comment: (w); (wj)
+    - ŋ(w)
+    - ɲ(wj)
     raw: ŋ(w) → ȵ(wj)
     source: index_diachronica_original.html:12242
     rule_id: Tzu-Ta-ŋw
@@ -57980,8 +57934,7 @@ sections:
   - stages:
     - a
     - e
-    env: _
-    comment: (p)
+    env: _(p)
     raw: a → e / _(p)
     source: index_diachronica_original.html:12249
     rule_id: Tzu-Ta-a
@@ -59936,10 +59889,9 @@ sections:
     source: index_diachronica_original.html:12605
     rule_id: Oneida-—-∅_3
   - stages:
-    - 'Vː[tone: 51]C(C)V'
+    - 'Vː[tone: 51]C(C)V(H)'
     - 'V̊ː[tone: 51]C̊(C̊)V̊(H̊)'
     env: _#
-    comment: (H)
     raw: — Vː[+falling tone]C(C)V(H) → V̊ː[+falling tone]C̊(C̊)V̊(H̊) / _#
     source: index_diachronica_original.html:12606
     rule_id: Oneida-—-Vː+falling-toneCCVH
@@ -62549,8 +62501,7 @@ sections:
     rule_id: Ahom-ɣ
   - stages:
     - ɡl
-    - k
-    comment: (w)
+    - k(w)
     raw: ɡl → k(w)
     source: index_diachronica_original.html:13084
     rule_id: Ahom-ɡl
@@ -65452,11 +65403,11 @@ sections:
     raw: ŋ → n / _# else
     source: index_diachronica_original.html:13763
     rule_id: Pre-Finnic-ŋ_2
-  - comment: (*); (C)
+  - comment: (*)
     stages:
     - iw ow
     - y uː
-    env: _
+    env: _(C)
     raw: iw ow → y uː / _(C) (*)
     source: index_diachronica_original.html:13764
     rule_id: Pre-Finnic-iw-ow
@@ -67012,8 +66963,7 @@ sections:
     rule_id: Mono-ɨ
   - stages:
     - uV
-    - u
-    comment: (i)
+    - u(i)
     raw: uV → u(i)
     source: index_diachronica_original.html:14044
     rule_id: Mono-uV
@@ -68125,9 +68075,8 @@ sections:
     rule_id: Basque-its̺
   - stages:
     - oa ea
-    - u(e) i
+    - u(e) i(e)
     env: _#
-    comment: (e)
     raw: oa ea → u(e) i(e) / _#
     source: index_diachronica_original.html:14229
     rule_id: Basque-oa-ea
@@ -68947,8 +68896,7 @@ sections:
   - stages:
     - '{iː,yː}'
     - ʊi
-    env: ʊ
-    comment: (i)
+    env: ʊ(i)
     raw: '{iː,yː} → ʊi / ʊ(i)'
     source: index_diachronica_original.html:14423
     rule_id: Faroese-Vowel-Shift-iː,yː

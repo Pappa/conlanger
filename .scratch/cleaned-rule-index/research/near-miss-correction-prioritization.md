@@ -6,7 +6,7 @@ Research for spike [106](../issues/106-spike-near-miss-correction-prioritization
 
 - Inventory regen: `uv run create_index && uv run validate_rules` → [`asca-rule-inventory-summary.md`](../inventory/asca-rule-inventory-summary.md), [`asca-rule-inventory-success.csv`](../inventory/asca-rule-inventory-success.csv), [`asca-rule-inventory-error.csv`](../inventory/asca-rule-inventory-error.csv)
 - Scan: [`scan_near_miss_all_classes.py`](./scan_near_miss_all_classes.py) → [`near-miss-all-classes.csv`](./near-miss-all-classes.csv)
-- Auxiliary CSVs: [`underscore_errors.csv`](../inventory/underscore_errors.csv), [`nested_brackets_errors.csv`](../inventory/nested_brackets_errors.csv), [`character_errors.csv`](../inventory/character_errors.csv), [`unknown_features.csv`](../inventory/unknown_features.csv), [`asca-field-isolation-error.csv`](../inventory/asca-field-isolation-error.csv)
+- Auxiliary CSVs: [`expected_underscore_errors.csv`](../inventory/expected_underscore_errors.csv), [`nested_brackets_errors.csv`](../inventory/nested_brackets_errors.csv), [`unknown_character_errors.csv`](../inventory/unknown_character_errors.csv), [`unknown_features_errors.csv`](../inventory/unknown_features_errors.csv), [`asca-field-isolation-error.csv`](../inventory/asca-field-isolation-error.csv)
 - Prior spike: [`syntax-other-near-miss-sections.md`](./syntax-other-near-miss-sections.md) (spike 64)
 
 ---

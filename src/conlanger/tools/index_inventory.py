@@ -25,11 +25,11 @@ from conlanger.appliers.asca import (
     validate_asca_part,
 )
 from conlanger.tools.inventory_error_clusters import (
-    CHARACTER_ERRORS_CSV_NAME,
-    GROUPING_ERRORS_CSV_NAME,
+    UNKNOWN_CHARACTER_ERRORS_CSV_NAME,
+    UNKNOWN_GROUPING_ERRORS_CSV_NAME,
     NESTED_BRACKETS_ERRORS_CSV_NAME,
-    UNDERSCORE_ERRORS_CSV_NAME,
-    UNKNOWN_FEATURES_CSV_NAME,
+    EXPECTED_UNDERSCORE_ERRORS_CSV_NAME,
+    UNKNOWN_FEATURES_ERRORS_CSV_NAME,
 )
 from conlanger.tools.rules import DiachronicSeries, RuleTitle, SoundChangeRule
 from conlanger.utils.mappings import CompilerConfig
@@ -1270,15 +1270,15 @@ def summarize_inventory(
             ),
             (
                 f"- Grouping errors: "
-                f"[{GROUPING_ERRORS_CSV_NAME}]({GROUPING_ERRORS_CSV_NAME})"
+                f"[{UNKNOWN_GROUPING_ERRORS_CSV_NAME}]({UNKNOWN_GROUPING_ERRORS_CSV_NAME})"
             ),
             (
                 f"- Character errors: "
-                f"[{CHARACTER_ERRORS_CSV_NAME}]({CHARACTER_ERRORS_CSV_NAME})"
+                f"[{UNKNOWN_CHARACTER_ERRORS_CSV_NAME}]({UNKNOWN_CHARACTER_ERRORS_CSV_NAME})"
             ),
             (
                 f"- Underscore errors: "
-                f"[{UNDERSCORE_ERRORS_CSV_NAME}]({UNDERSCORE_ERRORS_CSV_NAME})"
+                f"[{EXPECTED_UNDERSCORE_ERRORS_CSV_NAME}]({EXPECTED_UNDERSCORE_ERRORS_CSV_NAME})"
             ),
             (
                 f"- Nested-bracket errors: "
@@ -1286,7 +1286,7 @@ def summarize_inventory(
             ),
             (
                 f"- Unknown features: "
-                f"[{UNKNOWN_FEATURES_CSV_NAME}]({UNKNOWN_FEATURES_CSV_NAME})"
+                f"[{UNKNOWN_FEATURES_ERRORS_CSV_NAME}]({UNKNOWN_FEATURES_ERRORS_CSV_NAME})"
             ),
             "",
         ]

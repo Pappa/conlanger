@@ -1,7 +1,7 @@
 # Rule comment phrase summary
 
-- Corpus rules with **`comment`**: **1319**
-- Comments containing ``; `` (semicolon tails): **196**
+- Corpus rules with **`comment`**: **1267**
+- Comments containing ``; `` (semicolon tails): **190**
 
 ## Qualifier phrases
 
@@ -21,12 +21,12 @@
 ## Sample comments (first 10)
 
 - I can't figure out the rule even afer reading the source material
-- (V)
 - “(This last rule turned all VC roots into CV)”
 - “when another sibilant is in the word nearby”; “noun-stem final”
 - “in nominals”
-- (w)
-- (w)
 - (sporadic)
-- (w)
-- (w)
+- “anaphora and certain derivational prefixes. . .[t]his is common to many other Semitic languages as well”
+- “in certain contexts, notably in the nunation”
+- some sequences; sporadic
+- in the feminine ending; sporadic
+- “usually in numbers or cases where a short vowel has been deleted and it’s in contact with another stop, e.g. CA/MSA kaˈθiːr > EA ktiːr”

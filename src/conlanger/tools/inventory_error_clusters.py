@@ -6,18 +6,18 @@ from pathlib import Path
 
 import pandas as pd
 
-GROUPING_ERRORS_CSV_NAME = "grouping_errors.csv"
-CHARACTER_ERRORS_CSV_NAME = "character_errors.csv"
-UNDERSCORE_ERRORS_CSV_NAME = "underscore_errors.csv"
+UNKNOWN_GROUPING_ERRORS_CSV_NAME = "unknown_grouping_errors.csv"
+UNKNOWN_CHARACTER_ERRORS_CSV_NAME = "unknown_character_errors.csv"
+EXPECTED_UNDERSCORE_ERRORS_CSV_NAME = "expected_underscore_errors.csv"
 NESTED_BRACKETS_ERRORS_CSV_NAME = "nested_brackets_errors.csv"
-UNKNOWN_FEATURES_CSV_NAME = "unknown_features.csv"
+UNKNOWN_FEATURES_ERRORS_CSV_NAME = "unknown_features_errors.csv"
 
 CLUSTER_CSV_BY_FAILURE_CLASS: dict[str, str] = {
-    "unknown_grouping": GROUPING_ERRORS_CSV_NAME,
-    "unknown_character": CHARACTER_ERRORS_CSV_NAME,
-    "expected_underscore": UNDERSCORE_ERRORS_CSV_NAME,
+    "unknown_grouping": UNKNOWN_GROUPING_ERRORS_CSV_NAME,
+    "unknown_character": UNKNOWN_CHARACTER_ERRORS_CSV_NAME,
+    "expected_underscore": EXPECTED_UNDERSCORE_ERRORS_CSV_NAME,
     "nested_brackets": NESTED_BRACKETS_ERRORS_CSV_NAME,
-    "unknown_feature": UNKNOWN_FEATURES_CSV_NAME,
+    "unknown_feature": UNKNOWN_FEATURES_ERRORS_CSV_NAME,
 }
 
 CLUSTER_SOURCE_COLUMNS = [

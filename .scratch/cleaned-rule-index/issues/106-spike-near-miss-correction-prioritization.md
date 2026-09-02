@@ -40,7 +40,7 @@ Mono-class near-miss sections: **176** (largest: `syntax_other` 56, `expected_un
 
 1. Re-run `uv run create_index && uv run validate_rules`; confirm baseline matches or note drift.
 2. Filter **all** failure classes in sections with `fail_count ≤ 3` (not `syntax_other` only).
-3. Bucket by shape / error message / field blame — reuse and extend [`scan_syntax_other_near_miss.py`](../research/scan_syntax_other_near_miss.py) pattern; pull from [`underscore_errors.csv`](../inventory/underscore_errors.csv), [`nested_brackets_errors.csv`](../inventory/nested_brackets_errors.csv), [`character_errors.csv`](../inventory/character_errors.csv), [`asca-field-isolation-error.csv`](../inventory/asca-field-isolation-error.csv) where useful.
+3. Bucket by shape / error message / field blame — reuse and extend [`scan_syntax_other_near_miss.py`](../research/scan_syntax_other_near_miss.py) pattern; pull from [`expected_underscore_errors.csv`](../inventory/expected_underscore_errors.csv), [`nested_brackets_errors.csv`](../inventory/nested_brackets_errors.csv), [`unknown_character_errors.csv`](../inventory/unknown_character_errors.csv), [`asca-field-isolation-error.csv`](../inventory/asca-field-isolation-error.csv) where useful.
 4. Rank buckets by **sections completed if cleared** (primary), rule-ok delta (secondary).
 5. Cross-check against **resolved** spike-64 levers (81–83, 97 superseding 83) — mark stale recommendations.
 6. Note dependencies on open decisions: [Grill: parenthetical + parallel-set notation](71-grill-paren-and-parallel-set-notation.md) (owner confirm → 48/51 re-scope), [Grill: inter-segment whitespace placement](45-grill-inter-segment-whitespace-placement.md).

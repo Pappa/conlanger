@@ -80,7 +80,7 @@ def main() -> int:
             "writes asca-rule-inventory-success.csv / -error.csv, "
             "asca-field-isolation-success.csv / -error.csv (when --field-isolation), "
             "asca-rule-inventory-changelog.csv, "
-            "grouping_errors.csv, character_errors.csv, underscore_errors.csv, unknown_features.csv, "
+            "unknown_grouping_errors.csv, unknown_character_errors.csv, expected_underscore_errors.csv, unknown_features_errors.csv, "
             "nested_brackets_errors.csv, "
             "and asca-rule-inventory-summary.md"
         ),
