@@ -21,9 +21,9 @@
 
 | count | failure_class |
 |------:|---------------|
-| 311 | `syntax_other` |
+| 312 | `syntax_other` |
 | 138 | `runtime_other` |
-| 123 | `unknown_character` |
+| 122 | `unknown_character` |
 | 116 | `expected_underscore` |
 | 36 | `expected_number` |
 | 33 | `prose_or_expected_arrow` |
@@ -46,8 +46,8 @@
 | 22 | `̣` |
 | 13 | `₂` |
 | 11 | `̊` |
-| 6 | `ŕ` |
 | 6 | `̺` |
+| 6 | `ŕ` |
 
 ### unknown_feature
 
