@@ -11,13 +11,21 @@ UNKNOWN_CHARACTER_ERRORS_CSV_NAME = "unknown_character_errors.csv"
 EXPECTED_UNDERSCORE_ERRORS_CSV_NAME = "expected_underscore_errors.csv"
 NESTED_BRACKETS_ERRORS_CSV_NAME = "nested_brackets_errors.csv"
 UNKNOWN_FEATURES_ERRORS_CSV_NAME = "unknown_features_errors.csv"
+SYNTAX_OTHER_ERRORS_CSV_NAME = "syntax_other_errors.csv"
+RUNTIME_OTHER_ERRORS_CSV_NAME = "runtime_other_errors.csv"
+EXPECTED_NUMBER_ERRORS_CSV_NAME = "expected_number_errors.csv"
+PROSE_OR_EXPECTED_ARROW_ERRORS_CSV_NAME = "prose_or_expected_arrow_errors.csv"
 
 CLUSTER_CSV_BY_FAILURE_CLASS: dict[str, str] = {
-    "unknown_grouping": UNKNOWN_GROUPING_ERRORS_CSV_NAME,
+    "syntax_other": SYNTAX_OTHER_ERRORS_CSV_NAME,
+    "runtime_other": RUNTIME_OTHER_ERRORS_CSV_NAME,
     "unknown_character": UNKNOWN_CHARACTER_ERRORS_CSV_NAME,
+    "unknown_grouping": UNKNOWN_GROUPING_ERRORS_CSV_NAME,
     "expected_underscore": EXPECTED_UNDERSCORE_ERRORS_CSV_NAME,
     "nested_brackets": NESTED_BRACKETS_ERRORS_CSV_NAME,
     "unknown_feature": UNKNOWN_FEATURES_ERRORS_CSV_NAME,
+    "expected_number": EXPECTED_NUMBER_ERRORS_CSV_NAME,
+    "prose_or_expected_arrow": PROSE_OR_EXPECTED_ARROW_ERRORS_CSV_NAME,
 }
 
 CLUSTER_SOURCE_COLUMNS = [

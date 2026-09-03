@@ -119,8 +119,6 @@ def _load_ipa_mappings(path: Path) -> tuple[IpaMapping, ...]:
     if not path.is_file():
         return ()
     raw = _load_yaml(path)
-    if not isinstance(raw, dict):
-        return ()
     out: list[IpaMapping] = []
     for index_feature, entry in raw.items():
         if isinstance(entry, str):
@@ -244,9 +242,6 @@ def load_parser_config(path: Path | None = None) -> ParserConfig:
     parser_yaml = _DEFAULT_PARSER_CONFIG if path is None else Path(path)
 
     raw = _load_yaml(parser_yaml)
-    if not isinstance(raw, dict):
-        raw = {}
-
     confidence_raw = raw.get("ipa_mappings", {})
     if isinstance(confidence_raw, dict) and "confidence" in confidence_raw:
         confidence_list = confidence_raw["confidence"]
@@ -287,9 +282,6 @@ def load_compiler_config(path: Path | None = None) -> CompilerConfig:
     compiler_yaml = _DEFAULT_COMPILER_CONFIG if path is None else Path(path)
 
     raw = _load_yaml(compiler_yaml)
-    if not isinstance(raw, dict):
-        raw = {}
-
     global_map, sections = _load_compiler_series(raw)
     group_path = config_root / "group_mappings.yml"
 

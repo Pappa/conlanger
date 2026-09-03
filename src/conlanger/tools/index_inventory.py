@@ -25,11 +25,7 @@ from conlanger.appliers.asca import (
     validate_asca_part,
 )
 from conlanger.tools.inventory_error_clusters import (
-    UNKNOWN_CHARACTER_ERRORS_CSV_NAME,
-    UNKNOWN_GROUPING_ERRORS_CSV_NAME,
-    NESTED_BRACKETS_ERRORS_CSV_NAME,
-    EXPECTED_UNDERSCORE_ERRORS_CSV_NAME,
-    UNKNOWN_FEATURES_ERRORS_CSV_NAME,
+    CLUSTER_CSV_BY_FAILURE_CLASS,
 )
 from conlanger.tools.rules import DiachronicSeries, RuleTitle, SoundChangeRule
 from conlanger.utils.mappings import CompilerConfig
@@ -63,6 +59,7 @@ ERROR_CLASS_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     ("malformed_comment", re.compile(r"Malformed Comment", re.IGNORECASE)),
     ("missing_arrow", re.compile(r"missing separator", re.IGNORECASE)),
     ("format_error", re.compile(r"format_error", re.IGNORECASE)),
+    ("invalid_ipa", re.compile(r"Could not get value of IPA", re.IGNORECASE)),
 ]
 
 REASON_VOCABULARY = (
@@ -77,14 +74,12 @@ _UNKNOWN_TOKEN_RE = re.compile(
     r"Unknown (?:feature|grouping|character) '([^']+)'",
     re.IGNORECASE,
 )
-_DID_YOU_MEAN_RE = re.compile(r"Did you mean ([^?]+)\?", re.IGNORECASE)
-
-COMMON_ERROR_CLASSES = (
-    "unknown_character",
-    "unknown_feature",
-    "unknown_grouping",
+_EXPEXTED_BUT_RECEIVED_RE = re.compile(
+    r"Expected(?: an)? ((?:')(.)(?:')|(.+)),(?: but)? received (('')|(?:')(.)(?:')|(.))(?: \||\.)",
+    re.IGNORECASE,
 )
-
+_DID_YOU_MEAN_RE = re.compile(r"Did you mean ([^?]+)\?", re.IGNORECASE)
+_THREAD_PANICKED_RE = re.compile(r"^(thread) .+ (panicked at [^.]+\.rs)", re.IGNORECASE)
 VALIDATION_CSV_COLUMNS = [
     "section_index",
     "section_name",
@@ -96,6 +91,8 @@ VALIDATION_CSV_COLUMNS = [
     "reason",
     "error_token",
     "suggested",
+    "expected",
+    "received",
     "description",
 ]
 
@@ -114,7 +111,6 @@ INVENTORY_CHANGELOG_CSV_NAME = "asca-rule-inventory-changelog.csv"
 FIELD_ISOLATION_SUCCESS_CSV_NAME = "asca-field-isolation-success.csv"
 FIELD_ISOLATION_ERROR_CSV_NAME = "asca-field-isolation-error.csv"
 SECTION_SKIPPED_FAILURE_CLASS = "section_skipped"
-OMITTED_DESCRIPTIONS = {"panic_other"}
 
 BLAME_FIELD_ORDER: tuple[ASCARulePart, ...] = ("input", "output", "env", "exception")
 
@@ -253,7 +249,7 @@ def top_error_tokens_from_dataframe(
     df: pd.DataFrame,
     failure_class: str,
     *,
-    limit: int | None = 5,
+    limit: int | None = 10,
 ) -> list[tuple[str, int]]:
     """Return the most frequent ``error_token`` values for a failure class."""
     if df.empty:
@@ -263,18 +259,44 @@ def top_error_tokens_from_dataframe(
         "error_token",
     ]
     if tokens.empty:
-        return []
+        tokens = df.loc[
+            (df["failure_class"] == failure_class) & (df["received"].astype(str) != ""),
+            "received",
+        ]
+        if tokens.empty:
+            return []
     counts = tokens.value_counts()
     if limit is not None:
         counts = counts.head(limit)
     return [(str(token), int(count)) for token, count in counts.items()]
 
 
+def top_error_descriptions_from_dataframe(
+    df: pd.DataFrame,
+    failure_class: str,
+    *,
+    limit: int | None = 10,
+) -> list[tuple[str, int]]:
+    """Return top ``description`` counts for a failure class."""
+    if df.empty:
+        return []
+    descriptions = df.loc[
+        (df["failure_class"] == failure_class) & (df["error_token"].astype(str) == ""),
+        "description",
+    ]
+    if descriptions.empty:
+        return []
+    counts = descriptions.value_counts()
+    if limit is not None:
+        counts = counts.head(limit)
+    return [(str(description), int(count)) for description, count in counts.items()]
+
+
 def top_error_tokens_with_suggested_from_dataframe(
     df: pd.DataFrame,
     failure_class: str,
     *,
-    limit: int | None = 5,
+    limit: int | None = 10,
 ) -> list[tuple[str, int, str]]:
     """Return top ``error_token`` counts with the modal ASCA ``suggested`` hint."""
     if df.empty:
@@ -300,9 +322,7 @@ def format_common_errors_section(rows: list[ValidationRow]) -> list[str]:
     """Markdown lines for top ``error_token`` counts per unknown-token failure class."""
     df = validation_rows_to_dataframe(rows)
     lines = ["", "## Common Errors", ""]
-    for failure_class in COMMON_ERROR_CLASSES:
-        show_all = failure_class in {"unknown_feature", "unknown_grouping"}
-        token_limit = None if show_all else 5
+    for failure_class in CLUSTER_CSV_BY_FAILURE_CLASS:
         if failure_class == "unknown_feature":
             lines.extend(
                 [
@@ -312,9 +332,7 @@ def format_common_errors_section(rows: list[ValidationRow]) -> list[str]:
                     "|------:|-------------|-----------|",
                 ]
             )
-            top = top_error_tokens_with_suggested_from_dataframe(
-                df, failure_class, limit=token_limit
-            )
+            top = top_error_tokens_with_suggested_from_dataframe(df, failure_class)
             if top:
                 for token, count, suggested in top:
                     suggested_cell = f"`{suggested}`" if suggested else "—"
@@ -322,31 +340,56 @@ def format_common_errors_section(rows: list[ValidationRow]) -> list[str]:
             else:
                 lines.append("| — | _(none)_ | — |")
         else:
+            title = "error_token"
+            top = top_error_tokens_from_dataframe(df, failure_class)
+            if not top:
+                title = "description"
+                top = top_error_descriptions_from_dataframe(df, failure_class)
             lines.extend(
                 [
                     f"### {failure_class}",
                     "",
-                    "| count | error_token |",
+                    f"| count | {title} |",
                     "|------:|-------------|",
                 ]
             )
-            top = top_error_tokens_from_dataframe(df, failure_class, limit=token_limit)
             if top:
-                for token, count in top:
-                    lines.append(f"| {count} | `{token}` |")
+                for value, count in top:
+                    lines.append(f"| {count} | `{value}` |")
             else:
                 lines.append("| — | _(none)_ |")
         lines.append("")
     return lines
 
 
-def parse_unknown_token_error(error: str) -> tuple[str, str]:
+def parse_unknown_token_error(error: str) -> tuple[str, str, str, str]:
     """Extract unknown token and ASCA suggestion from a validation error string."""
     token_match = _UNKNOWN_TOKEN_RE.search(error)
-    error_token = token_match.group(1) if token_match else ""
     suggest_match = _DID_YOU_MEAN_RE.search(error)
+    expected_but_received_match = _EXPEXTED_BUT_RECEIVED_RE.search(error)
+    error_token = token_match.group(1) if token_match else ""
     suggested = suggest_match.group(1).strip() if suggest_match else ""
-    return error_token, suggested
+    expected = (
+        expected_but_received_match.group(2) or expected_but_received_match.group(3)
+        if expected_but_received_match
+        else ""
+    )
+    received = (
+        expected_but_received_match.group(6) or expected_but_received_match.group(4)
+        if expected_but_received_match
+        else ""
+    )
+    return error_token, suggested, expected, received
+
+
+def parse_error_description(error: str, failure_class: str) -> str:
+    """Extract description from a validation error string."""
+    if failure_class == "panic_other":
+        match = _THREAD_PANICKED_RE.search(error)
+        if match:
+            return f"{match.group(1)} {match.group(2)}"
+        return "panicked"
+    return error
 
 
 def classify_error(error: str) -> str:
@@ -368,15 +411,16 @@ def classify_error(error: str) -> str:
 def reason_for_failure(failure_class: str, error: str) -> str:
     if failure_class in {"malformed_comment", "trailing-comment"}:
         return "trailing-comment"
-    if failure_class in {"missing_arrow", "format_error"}:
+    if failure_class in {"missing_arrow", "format_error"} or failure_class.startswith(
+        ("syntax_", "runtime_", "panic_", "other")
+    ):
         return "broken-syntax"
-    if failure_class in {"prose_or_expected_arrow", "unknown_character"}:
-        return "asca-unrepresentable"
     if failure_class == "valid-but-inaccurate":
         return "valid-but-inaccurate"
-    if failure_class.startswith(("syntax_", "runtime_", "panic_", "other")):
-        return "broken-syntax"
     if failure_class in {
+        "prose_or_expected_arrow",
+        "unknown_character",
+        "invalid_ipa",
         "unknown_feature",
         "unknown_grouping",
         "nested_brackets",
@@ -398,11 +442,13 @@ class ValidationRow:
     rule_id: str
     source: str
     ok: bool
-    failure_class: str
-    reason: str
-    error_token: str
-    suggested: str
-    description: str
+    failure_class: str = ""
+    reason: str = ""
+    error_token: str = ""
+    suggested: str = ""
+    expected: str = ""
+    received: str = ""
+    description: str = ""
     alt_idx: int | None = None
 
     def as_csv_dict(self) -> dict[str, str | int | bool]:
@@ -417,9 +463,9 @@ class ValidationRow:
             "reason": self.reason,
             "error_token": self.error_token,
             "suggested": self.suggested,
-            "description": "thread panicked"
-            if self.failure_class in OMITTED_DESCRIPTIONS
-            else self.description,
+            "expected": self.expected,
+            "received": self.received,
+            "description": self.description,
         }
 
 
@@ -889,7 +935,7 @@ def _asca_validation_row(
     except ASCAValidationError as exc:
         err = str(exc)
         failure_class = classify_error(err)
-        error_token, suggested = parse_unknown_token_error(err)
+        error_token, suggested, expected, received = parse_unknown_token_error(err)
         return ValidationRow(
             section_index=section_index,
             section_name=section_name,
@@ -901,7 +947,9 @@ def _asca_validation_row(
             reason=reason_for_failure(failure_class, err),
             error_token=error_token,
             suggested=suggested,
-            description=err,
+            expected=expected,
+            received=received,
+            description=parse_error_description(err, failure_class),
         )
 
     return ValidationRow(
@@ -911,11 +959,6 @@ def _asca_validation_row(
         alt_idx=alt_idx,
         source=source,
         ok=True,
-        failure_class="",
-        reason="",
-        error_token="",
-        suggested="",
-        description="",
     )
 
 
@@ -941,9 +984,6 @@ def validate_index_rule_with_targets(
             source=source,
             ok=True,
             failure_class=SECTION_SKIPPED_FAILURE_CLASS,
-            reason="",
-            error_token="",
-            suggested="",
             description="section skipped at compile (parser_config skip_sections)",
         )
         return [row], [_InventoryTarget(None, None, None)]
@@ -955,10 +995,6 @@ def validate_index_rule_with_targets(
             rule_id=rule_id,
             source=source,
             ok=True,
-            failure_class="",
-            reason="",
-            error_token="",
-            suggested="",
             description="held-out (commented rule)",
         )
         return [row], [_InventoryTarget(None, None, None)]
@@ -971,7 +1007,7 @@ def validate_index_rule_with_targets(
         if target.format_error is not None:
             err = target.format_error
             failure_class = "format_error"
-            error_token, suggested = parse_unknown_token_error(err)
+            error_token, suggested, expected, received = parse_unknown_token_error(err)
             rows.append(
                 ValidationRow(
                     section_index=section_index,
@@ -983,6 +1019,8 @@ def validate_index_rule_with_targets(
                     reason=reason_for_failure(failure_class, err),
                     error_token=error_token,
                     suggested=suggested,
+                    expected=expected,
+                    received=received,
                     description=err,
                 )
             )
@@ -1268,27 +1306,13 @@ def summarize_inventory(
                 f"- Field blame fail rows: "
                 f"[{FIELD_ISOLATION_ERROR_CSV_NAME}]({FIELD_ISOLATION_ERROR_CSV_NAME})"
             ),
-            (
-                f"- Grouping errors: "
-                f"[{UNKNOWN_GROUPING_ERRORS_CSV_NAME}]({UNKNOWN_GROUPING_ERRORS_CSV_NAME})"
-            ),
-            (
-                f"- Character errors: "
-                f"[{UNKNOWN_CHARACTER_ERRORS_CSV_NAME}]({UNKNOWN_CHARACTER_ERRORS_CSV_NAME})"
-            ),
-            (
-                f"- Underscore errors: "
-                f"[{EXPECTED_UNDERSCORE_ERRORS_CSV_NAME}]({EXPECTED_UNDERSCORE_ERRORS_CSV_NAME})"
-            ),
-            (
-                f"- Nested-bracket errors: "
-                f"[{NESTED_BRACKETS_ERRORS_CSV_NAME}]({NESTED_BRACKETS_ERRORS_CSV_NAME})"
-            ),
-            (
-                f"- Unknown features: "
-                f"[{UNKNOWN_FEATURES_ERRORS_CSV_NAME}]({UNKNOWN_FEATURES_ERRORS_CSV_NAME})"
-            ),
-            "",
         ]
     )
+    lines.extend(
+        [
+            f"- {failure_class}: [{csv_name}]({csv_name})"
+            for failure_class, csv_name in CLUSTER_CSV_BY_FAILURE_CLASS.items()
+        ]
+    )
+    lines.append("")
     return "\n".join(lines)
