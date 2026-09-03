@@ -72,35 +72,47 @@ def test_classify_error(error, expected):
 
 
 @pytest.mark.parametrize(
-    ("error", "expected_token", "expected_suggested"),
+    ("error", "expected_token", "expected_suggested", "expected", "received"),
     [
-        ("", "", ""),
+        ("", "", "", "", ""),
         (
             "Syntax Error: Unknown character '₁' | dz ʃ tʃ > ʒ s₁ s₂",
             "₁",
+            "",
+            "",
             "",
         ),
         (
             "Syntax Error: Unknown grouping 'Z'. Known groupings are (C)onsonant",
             "Z",
             "",
+            "",
+            "",
         ),
         (
             "Syntax Error: Unknown feature 'voiced'. Did you mean voice? | e > i",
             "voiced",
             "voice",
+            "",
+            "",
         ),
         (
             "Syntax Error: Expected '_'",
             "",
             "",
+            "",
+            "",
         ),
     ],
 )
-def test_parse_unknown_token_error(error, expected_token, expected_suggested):
+def test_parse_unknown_token_error(
+    error, expected_token, expected_suggested, expected, received
+):
     assert parse_unknown_token_error(error) == (
         expected_token,
         expected_suggested,
+        expected,
+        received,
     )
 
 
@@ -151,6 +163,8 @@ def test_validation_row_as_csv_dict():
         "reason": "broken-syntax",
         "error_token": "",
         "suggested": "",
+        "expected": "",
+        "received": "",
         "description": "Syntax Error: …",
     }
 
@@ -354,26 +368,24 @@ def test_validate_index_rule_non_optional_has_empty_alt_idx(_mock_validate):
 def test_ok_flip_changelog_rows_keys_on_source_and_alt_idx():
     previous = validation_rows_to_dataframe(
         [
-            ValidationRow("1", "A", "r0", "file:1", True, "", "", "", "", "", 0),
-            ValidationRow("1", "A", "r0", "file:1", True, "", "", "", "", "", 1),
+            ValidationRow("1", "A", "r0", "file:1", True, alt_idx=0),
+            ValidationRow("1", "A", "r0", "file:1", True, alt_idx=1),
         ]
     )
     # alt_idx 0 unchanged; alt_idx 1 flips to failing under the same source
     current = validation_rows_to_dataframe(
         [
-            ValidationRow("1", "A", "r0", "file:1", True, "", "", "", "", "", 0),
+            ValidationRow("1", "A", "r0", "file:1", True, alt_idx=0),
             ValidationRow(
                 "1",
                 "A",
-                0,
+                "r0",
                 "file:1",
                 False,
-                "syntax_other",
-                "broken-syntax",
-                "",
-                "",
-                "err",
-                1,
+                failure_class="syntax_other",
+                reason="broken-syntax",
+                description="err",
+                alt_idx=1,
             ),
         ]
     )
@@ -728,10 +740,15 @@ def test_summarize_inventory():
     assert "asca-rule-inventory-error.csv" in text
     assert "asca-rule-inventory-changelog.csv" in text
     assert "asca-rule-inventory.csv" not in text
-    assert "unknown_grouping_errors.csv" in text
+    assert "syntax_other_errors.csv" in text
+    assert "runtime_other_errors.csv" in text
     assert "unknown_character_errors.csv" in text
+    assert "unknown_grouping_errors.csv" in text
     assert "expected_underscore_errors.csv" in text
+    assert "nested_brackets_errors.csv" in text
     assert "unknown_features_errors.csv" in text
+    assert "expected_number_errors.csv" in text
+    assert "prose_or_expected_arrow_errors.csv" in text
 
 
 def test_summarize_inventory_empty():
