@@ -225,3 +225,7 @@ rules:
                   id: Aquitanian-N
                   content: "N → [α PLACE] / _S:[α PLACE]"
                   reason: "Using asca syntax - unsure how else to represent POA"
+        - rule:
+                  id: American-English-æ
+                  content: "æ → {æː,ɑː} / _{F[-voiced],N[-voiced]} ; (“words which change vary between dialects”)"
+                  reason: "Prose"

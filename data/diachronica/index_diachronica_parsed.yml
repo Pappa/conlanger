@@ -25006,13 +25006,13 @@ sections:
       /ə/ in #U (ongoing)'
     source: index_diachronica_original.html:5805
   rules:
-  - stages:
+  - comment: (“words which change vary between dialects”)
+    stages:
     - æ
-    - æː (e.g., NYC) or ɑː
+    - '{æː,ɑː}'
     env: _{F[-voice],N[-voice]}
-    comment: (e.g., Boston); “words which change vary between dialects”; ()
-    raw: æ → æː (e.g., NYC) or ɑː (e.g., Boston) / _{F[-voiced],N[-voiced]} (“words
-      which change vary between dialects”)
+    raw: æ → {æː,ɑː} / _{F[-voiced],N[-voiced]} ; (“words which change vary between
+      dialects”)
     source: index_diachronica_original.html:5788
     rule_id: American-English-æ
   - stages:
@@ -53249,8 +53249,8 @@ sections:
     source: index_diachronica_original.html:11398
     rule_id: Comox-w-j
   - stages:
-    - V3ʔ
-    - V3(ː)ʔ
+    - 'V[tone: 55]ʔ'
+    - 'V[tone: 55](ː)ʔ'
     env: _#
     raw: V3ʔ → V3(ː)ʔ / _#
     source: index_diachronica_original.html:11399
@@ -53264,7 +53264,7 @@ sections:
     rule_id: Comox-ʔ
   - stages:
     - ʔ
-    - ∅ V3R_V
+    - '∅ V[tone: 55]R_V'
     raw: ʔ → ∅ V3R_V
     source: index_diachronica_original.html:11401
     rule_id: Comox-ʔ_2
@@ -53336,15 +53336,15 @@ sections:
     source: index_diachronica_original.html:11415
     rule_id: Chilliwack-Halkomelem-lʲ
   - stages:
-    - V3h
-    - V3ː
+    - 'V[tone: 55]h'
+    - 'V[tone: 55]ː'
     env: _C
     raw: V3h → V3ː / _C
     source: index_diachronica_original.html:11416
     rule_id: Chilliwack-Halkomelem-V3h
   - stages:
-    - V3ʔ
-    - V3(ː)
+    - 'V[tone: 55]ʔ'
+    - 'V[tone: 55](ː)'
     env: _#
     raw: V3ʔ → V3(ː) / _#
     source: index_diachronica_original.html:11417
@@ -53352,13 +53352,13 @@ sections:
   - stages:
     - ʔ
     - ∅
-    env: V1_#
+    env: 'V[tone: 11]_#'
     raw: ʔ → ∅ / V1_#
     source: index_diachronica_original.html:11418
     rule_id: Chilliwack-Halkomelem-ʔ
   - stages:
-    - V3ʔ
-    - V3ː
+    - 'V[tone: 55]ʔ'
+    - 'V[tone: 55]ː'
     env: _O
     raw: V3ʔ → V3ː / _O
     source: index_diachronica_original.html:11419
@@ -53371,29 +53371,29 @@ sections:
     source: index_diachronica_original.html:11420
     rule_id: Chilliwack-Halkomelem-∅
   - stages:
-    - V3ʔR
-    - V3ːR
+    - 'V[tone: 55]ʔR'
+    - 'V[tone: 55]ːR'
     raw: V3ʔR → V3ːR
     source: index_diachronica_original.html:11421
     rule_id: Chilliwack-Halkomelem-V3ʔR
   - stages:
     - ʔ
     - ∅
-    env: VR_V3
+    env: 'VR_V[tone: 55]'
     raw: ʔ → ∅ / VR_V3
     source: index_diachronica_original.html:11422
     rule_id: Chilliwack-Halkomelem-ʔ_2
   - stages:
     - lʔn
     - lː
-    env: V3_V
+    env: 'V[tone: 55]_V'
     raw: lʔn → lː / V3_V
     source: index_diachronica_original.html:11423
     rule_id: Chilliwack-Halkomelem-lʔn
   - stages:
     - ʔ
     - ∅
-    env: V1_#
+    env: 'V[tone: 11]_#'
     raw: ʔ → ∅ / V1_#
     source: index_diachronica_original.html:11424
     rule_id: Chilliwack-Halkomelem-ʔ_3
@@ -53465,8 +53465,8 @@ sections:
     source: index_diachronica_original.html:11438
     rule_id: Cowichan-Halkomelem-xʲ
   - stages:
-    - V3h
-    - V3ː
+    - 'V[tone: 55]h'
+    - 'V[tone: 55]ː'
     env: _C
     raw: V3h → V3ː / _C
     source: index_diachronica_original.html:11439
@@ -53478,8 +53478,8 @@ sections:
     source: index_diachronica_original.html:11440
     rule_id: Cowichan-Halkomelem-V03ʔV0
   - stages:
-    - V3ʔR
-    - '{V3ʔR,V3ːRʔ}'
+    - 'V[tone: 55]ʔR'
+    - '{V[tone: 55]ʔR,V[tone: 55]ːRʔ}'
     env: _V
     raw: V3ʔR → {V3ʔR,V3ːRʔ} / _V
     source: index_diachronica_original.html:11441
@@ -53552,28 +53552,28 @@ sections:
     source: index_diachronica_original.html:11455
     rule_id: Musqueam-Halkomelem-lʲ
   - stages:
-    - V3h
-    - V3ː
+    - 'V[tone: 55]h'
+    - 'V[tone: 55]ː'
     env: _C
     raw: V3h → V3ː / _C
     source: index_diachronica_original.html:11456
     rule_id: Musqueam-Halkomelem-V3h
   - stages:
-    - V3ʔ
-    - V3{ː,ʔ}
+    - 'V[tone: 55]ʔ'
+    - 'V[tone: 55]{ː,ʔ}'
     env: _O
     raw: V3ʔ → V3{ː,ʔ} / _O
     source: index_diachronica_original.html:11457
     rule_id: Musqueam-Halkomelem-V3ʔ
   - stages:
     - V₀3ʔV₀
-    - '{V3ː,V₀3ʔV₀}'
+    - '{V[tone: 55]ː,V₀3ʔV₀}'
     raw: V₀3ʔV₀ → {V3ː,V₀3ʔV₀}
     source: index_diachronica_original.html:11458
     rule_id: Musqueam-Halkomelem-V03ʔV0
   - stages:
-    - V3ʔR
-    - '{V3ʔR,V3ːRʔ}'
+    - 'V[tone: 55]ʔR'
+    - '{V[tone: 55]ʔR,V[tone: 55]ːRʔ}'
     env: _V
     raw: V3ʔR → {V3ʔR,V3ːRʔ} / _V
     source: index_diachronica_original.html:11459
@@ -53798,15 +53798,15 @@ sections:
     source: index_diachronica_original.html:11500
     rule_id: Lushootseed-w-j
   - stages:
-    - V3h
-    - V3{ː,ʔ}
+    - 'V[tone: 55]h'
+    - 'V[tone: 55]{ː,ʔ}'
     env: _C
     raw: V3h → V3{ː,ʔ} / _C
     source: index_diachronica_original.html:11501
     rule_id: Lushootseed-V3h
   - stages:
-    - V3ʔ
-    - V3(ʔ)
+    - 'V[tone: 55]ʔ'
+    - 'V[tone: 55](ʔ)'
     env: _O
     raw: V3ʔ → V3(ʔ) / _O
     source: index_diachronica_original.html:11502
@@ -53814,7 +53814,7 @@ sections:
   - stages:
     - Rʔ
     - ʔR
-    env: V3C
+    env: 'V[tone: 55]C'
     raw: Rʔ → ʔR / V3C
     source: index_diachronica_original.html:11503
     rule_id: Lushootseed-Rʔ
@@ -53909,35 +53909,35 @@ sections:
   - stages:
     - ʔR
     - '{ʔS,R}'
-    env: V3_V
+    env: 'V[tone: 55]_V'
     raw: ʔR → {ʔS,R} / V3_V
     source: index_diachronica_original.html:11521
     rule_id: Nooksack-ʔR
   - stages:
     - ʔ
     - ∅
-    env: VR_V3
+    env: 'VR_V[tone: 55]'
     raw: ʔ → ∅ / VR_V3
     source: index_diachronica_original.html:11522
     rule_id: Nooksack-ʔ
   - stages:
     - ʔ
     - ∅
-    env: V3R_{C,#}
+    env: 'V[tone: 55]R_{C,#}'
     raw: ʔ → ∅ / V3R_{C,#}
     source: index_diachronica_original.html:11523
     rule_id: Nooksack-ʔ_2
   - stages:
     - ʔ
     - ∅
-    env: V1R_#
+    env: 'V[tone: 11]R_#'
     raw: ʔ → ∅ / V1R_#
     source: index_diachronica_original.html:11524
     rule_id: Nooksack-ʔ_3
   - stages:
     - ʔ
     - ∅
-    env: V1_#
+    env: 'V[tone: 11]_#'
     raw: ʔ → ∅ / V1_#
     source: index_diachronica_original.html:11525
     rule_id: Nooksack-ʔ_4
@@ -54074,14 +54074,14 @@ sections:
   - stages:
     - ʔ
     - ∅
-    env: V3l_nV
+    env: 'V[tone: 55]l_nV'
     raw: ʔ → ∅ / V3l_nV
     source: index_diachronica_original.html:11549
     rule_id: Lummi-Northern-Straits-ʔ
   - stages:
     - ʔ
     - '{∅,ʔ}'
-    env: V3R_{C,#}
+    env: 'V[tone: 55]R_{C,#}'
     raw: ʔ → {∅,ʔ} / V3R_{C,#}
     source: index_diachronica_original.html:11550
     rule_id: Lummi-Northern-Straits-ʔ_2
@@ -54226,8 +54226,8 @@ sections:
     source: index_diachronica_original.html:11575
     rule_id: Saanich-Northern-Straits-j-w
   - stages:
-    - V3h
-    - V3(ː)
+    - 'V[tone: 55]h'
+    - 'V[tone: 55](ː)'
     env: _C
     raw: V3h → V3(ː) / _C
     source: index_diachronica_original.html:11576
@@ -54235,7 +54235,7 @@ sections:
   - stages:
     - ʔR
     - Rʔ
-    env: V3_V
+    env: 'V[tone: 55]_V'
     raw: ʔR → Rʔ / V3_V
     source: index_diachronica_original.html:11577
     rule_id: Saanich-Northern-Straits-ʔR
@@ -54355,8 +54355,8 @@ sections:
     source: index_diachronica_original.html:11598
     rule_id: Songish-Northern-Straits-j-w
   - stages:
-    - V3h
-    - V3ː
+    - 'V[tone: 55]h'
+    - 'V[tone: 55]ː'
     env: _C
     raw: V3h → V3ː / _C
     source: index_diachronica_original.html:11599
@@ -54582,14 +54582,14 @@ sections:
   - stages:
     - ʔ
     - ∅
-    env: V3_O
+    env: 'V[tone: 55]_O'
     raw: ʔ → ∅ / V3_O
     source: index_diachronica_original.html:11641
     rule_id: Pentlatch-ʔ
   - stages:
     - ʔ
     - ∅
-    env: V3R_{V,#}
+    env: 'V[tone: 55]R_{V,#}'
     raw: ʔ → ∅ / V3R_{V,#}
     source: index_diachronica_original.html:11642
     rule_id: Pentlatch-ʔ_2
@@ -54657,14 +54657,14 @@ sections:
   - stages:
     - ʔ
     - ∅
-    env: V_V3
+    env: 'V_V[tone: 55]'
     raw: ʔ → ∅ / V_V3
     source: index_diachronica_original.html:11656
     rule_id: Sechelt-ʔ_2
   - stages:
     - ʔ
     - ∅
-    env: V1_#
+    env: 'V[tone: 11]_#'
     raw: ʔ → ∅ / V1_#
     source: index_diachronica_original.html:11657
     rule_id: Sechelt-ʔ_3
@@ -54744,7 +54744,7 @@ sections:
   - stages:
     - ʔR
     - Rʔ
-    env: V3_V
+    env: 'V[tone: 55]_V'
     raw: ʔR → Rʔ / V3_V
     source: index_diachronica_original.html:11673
     rule_id: Sqamish-ʔR
@@ -54830,28 +54830,28 @@ sections:
   - stages:
     - ʔR
     - ʔ{R,b}
-    env: V3_V
+    env: 'V[tone: 55]_V'
     raw: ʔR → ʔ{R,b} / V3_V
     source: index_diachronica_original.html:11690
     rule_id: Twana-ʔR
   - stages:
     - Rʔ
     - ʔR
-    env: V3_#
+    env: 'V[tone: 55]_#'
     raw: Rʔ → ʔR / V3_#
     source: index_diachronica_original.html:11691
     rule_id: Twana-Rʔ
   - stages:
     - ʔ
     - ∅
-    env: V1R_#
+    env: 'V[tone: 11]R_#'
     raw: ʔ → ∅ / V1R_#
     source: index_diachronica_original.html:11692
     rule_id: Twana-ʔ
   - stages:
     - ʔ
     - ∅
-    env: V3R_C
+    env: 'V[tone: 55]R_C'
     raw: ʔ → ∅ / V3R_C
     source: index_diachronica_original.html:11693
     rule_id: Twana-ʔ_2

@@ -72,13 +72,12 @@ def test_classify_error(error, expected):
 
 
 @pytest.mark.parametrize(
-    ("error", "expected_token", "expected_suggested", "expected", "received"),
+    ("error", "expected_token", "expected_suggested", "expected"),
     [
-        ("", "", "", "", ""),
+        ("", "", "", ""),
         (
             "Syntax Error: Unknown character '₁' | dz ʃ tʃ > ʒ s₁ s₂",
             "₁",
-            "",
             "",
             "",
         ),
@@ -87,13 +86,11 @@ def test_classify_error(error, expected):
             "Z",
             "",
             "",
-            "",
         ),
         (
             "Syntax Error: Unknown feature 'voiced'. Did you mean voice? | e > i",
             "voiced",
             "voice",
-            "",
             "",
         ),
         (
@@ -101,18 +98,14 @@ def test_classify_error(error, expected):
             "",
             "",
             "",
-            "",
         ),
     ],
 )
-def test_parse_unknown_token_error(
-    error, expected_token, expected_suggested, expected, received
-):
+def test_parse_unknown_token_error(error, expected_token, expected_suggested, expected):
     assert parse_unknown_token_error(error) == (
         expected_token,
         expected_suggested,
         expected,
-        received,
     )
 
 
@@ -164,7 +157,6 @@ def test_validation_row_as_csv_dict():
         "error_token": "",
         "suggested": "",
         "expected": "",
-        "received": "",
         "description": "Syntax Error: …",
     }
 

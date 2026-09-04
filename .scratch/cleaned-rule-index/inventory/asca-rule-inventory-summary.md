@@ -3,11 +3,11 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
-- Rows: **9840** (one per index rule)
+- Rows: **9841** (one per index rule)
 
 ## Rules
-- OK: **8385** (85.2%)
-- Fail: **843** (8.6%)
+- OK: **8400** (85.4%)
+- Fail: **829** (8.4%)
 - Skipped: **612** (6.2%)
 
 ## Sections
@@ -21,13 +21,13 @@
 
 | count | failure_class |
 |------:|---------------|
-| 256 | `syntax_other` |
-| 138 | `runtime_other` |
-| 122 | `unknown_character` |
+| 253 | `syntax_other` |
+| 125 | `unknown_character` |
+| 123 | `runtime_other` |
 | 115 | `expected_underscore` |
 | 58 | `invalid_ipa` |
 | 36 | `expected_number` |
-| 32 | `prose_or_expected_arrow` |
+| 33 | `prose_or_expected_arrow` |
 | 23 | `unknown_feature` |
 | 20 | `nested_brackets` |
 | 14 | `stuff_after_word_bound` |
@@ -46,29 +46,43 @@
 |------:|-------------|
 | 20 | `)` |
 | 18 | `ʷ` |
-| 17 | `(` |
+| 16 | `(` |
+| 12 | ` ` |
 | 10 | `:` |
 | 9 | `''` |
 | 8 | `/` |
-| 6 | `>` |
 | 6 | `∅` |
+| 6 | `>` |
 | 6 | `ʼ` |
-| 5 | `_` |
+### syntax_other
 
+| count | description |
+|------:|-------------|
+| 14 | `Floating diacritic. Diacritics can only be used to modify IPA Segments` |
+| 8 | `Cannot have segments before the beginning of a word` |
+| 8 | `The output of a deletion rule must only contain `*` or `∅`` |
+| 8 | `Cannot have multiple underlines in an environment` |
+| 6 | `Expected an IPA character, Primative or Matrix, but received '//'` |
+| 6 | `Feature 'anything' has no modifier` |
+| 4 | `Output cannot be empty. Use `*` or '∅' to indicate deletion` |
+| 3 | `Options can only be used in Environments or Structures` |
+| 3 | `The input of an insertion rule must only contain `*` or `∅`` |
+| 3 | `Feature 'alveolar' has no modifier` |
+
+### runtime_other
+
+| count | error_token |
+|------:|-------------|
+| 75 | `3` |
+| 32 | `1` |
 ### runtime_other
 
 | count | description |
 |------:|-------------|
-| 8 | `Runtime Error: Unknown reference '3' | {i3,ə1} > ə1 | ^ @ Rule 1, Line 1` |
-| 7 | `Runtime Error: Unknown reference '3' | {a3,ə3} > ə3 | ^ @ Rule 1, Line 1` |
-| 7 | `Runtime Error: Unknown reference '1' | {i1,ə1} > ə1 | ^ @ Rule 1, Line 1` |
-| 7 | `Runtime Error: Unknown reference '3' | {i3,e3} > {ə3,i3} | ^ @ Rule 1, Line 1` |
-| 5 | `Runtime Error: Unknown reference '1' | {a1,i1} > ə1 | ^ @ Rule 1, Line 1` |
-| 5 | `Runtime Error: Unknown reference '3' | {u3,ə3} > ə3 | ^ @ Rule 1, Line 1` |
-| 5 | `Runtime Error: Unknown reference '3' | {a3,i3} > ə3 | ^ @ Rule 1, Line 1` |
-| 5 | `Runtime Error: Unknown reference '1' | a1 > ə1 | ^ @ Rule 1, Line 1` |
-| 4 | `Runtime Error: Unknown reference '3' | V3h > V3:[+long] / _C | ^ @ Rule 1, Line 1` |
-| 4 | `Runtime Error: Unknown reference '3' | {i3,ə1} > i3 | ^ @ Rule 1, Line 1` |
+| 11 | `An incomplete matrix cannot be inserted` |
+| 2 | `Grouped Environments cannot (yet) be used in insertion rules` |
+| 2 | `Two matched sets must have the same number of elements` |
+| 1 | `Word Boundaries cannot be in the input or output` |
 
 ### unknown_character
 
@@ -77,13 +91,18 @@
 | 22 | `̣` |
 | 13 | `₂` |
 | 11 | `̊` |
-| 6 | `̺` |
+| 8 | `ː` |
 | 6 | `ŕ` |
-| 5 | `ː` |
+| 6 | `̺` |
 | 5 | `͜` |
 | 5 | `ₙ` |
 | 4 | `̂` |
 | 4 | `̻` |
+### unknown_character
+
+| count | description |
+|------:|-------------|
+| — | _(none)_ |
 
 ### unknown_grouping
 
@@ -93,6 +112,11 @@
 | 3 | `Y` |
 | 1 | `I` |
 | 1 | `X` |
+### unknown_grouping
+
+| count | description |
+|------:|-------------|
+| — | _(none)_ |
 
 ### expected_underscore
 
@@ -104,51 +128,48 @@
 | 2 | `*` |
 | 2 | `ʷ` |
 | 1 | `:` |
+### expected_underscore
 
+| count | description |
+|------:|-------------|
+| 4 | `Expected '_', but received '//'` |
+
+### nested_brackets
+
+| count | error_token |
+|------:|-------------|
+| — | _(none)_ |
 ### nested_brackets
 
 | count | description |
 |------:|-------------|
-| 2 | `Syntax Error: Cannot have nested brackets of the same type | {V:[+stress](C)CaCV,VC:[+stress](C)CaCV} > {V:[+stress]((C)CaCV,VC:[+stress]((C)CaCV} / _# | ^ @ Rule 1, Line 1` |
-| 1 | `Syntax Error: Cannot have nested brackets of the same type | e o u æ ø y > {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i} / _Ca | ^ @ Rule 1, Line 1` |
-| 1 | `Syntax Error: Cannot have nested brackets of the same type | {{ɣ, ɣʷ, xʷ},x} > ɡ | ^ @ Rule 1, Line 1` |
-| 1 | `Syntax Error: Cannot have nested brackets of the same type | m n ŋ t {{ɣ,ʁ} > {k,q}} / _# | ^ @ Rule 1, Line 1` |
-| 1 | `Syntax Error: Cannot have nested brackets of the same type | V > ∅ / #%%(_)%(%(_)%) // _[-stress] | ^ @ Rule 1, Line 1` |
-| 1 | `Syntax Error: Cannot have nested brackets of the same type | {æ,e}:[+long](w(a)) > a:[+long] | ^ @ Rule 1, Line 1` |
-| 1 | `Syntax Error: Cannot have nested brackets of the same type | w > ∅ / C_ɹ for some C (toward(s), quart(er), sword) | ^ @ Rule 1, Line 1` |
-| 1 | `Syntax Error: Cannot have nested brackets of the same type | ʃ > is (except in the west or extreme east, where the outcome was some flavor of (i)(t)ʃ) | ^ @ Rule 1, Line 2` |
-| 1 | `Syntax Error: Cannot have nested brackets of the same type | nVs dVs > n(V(s)) {ʒ,ʒVʒ} | ^ @ Rule 1, Line 1` |
-| 1 | `Syntax Error: Cannot have nested brackets of the same type | V=1 kV=2 > 2:[+long] / #((C)V(C))(C)_# | ^ @ Rule 1, Line 1` |
+| 20 | `Cannot have nested brackets of the same type` |
 
 ### unknown_feature
 
 | count | error_token | suggested |
 |------:|-------------|-----------|
-| 5 | `weak` | `man` |
-| 3 | `initial` | `nasal` |
-| 3 | `palatalized` | `latrl` |
-| 2 | `fricative` | `rhotic` |
-| 1 | `highpitch` | `high` |
-| 1 | `lowpitch` | `voice` |
-| 1 | `posttonic` | `sonor` |
-| 1 | `ejective` | `contin` |
-| 1 | `alveolopalatal` | `consonantal` |
-| 1 | `intertonic` | `anterior` |
+| 5 | `weak` | man |
+| 3 | `initial` | nasal |
+| 3 | `palatalized` | latrl |
+| 2 | `fricative` | rhotic |
+| 1 | `alveolopalatal` | consonantal |
+| 1 | `accent` | cont |
+| 1 | `highpitch` | high |
+| 1 | `glide` | click |
+| 1 | `ejective` | contin |
+| 1 | `intertonic` | anterior |
 
 ### expected_number
 
 | count | error_token |
 |------:|-------------|
-| 4 | `d` |
-| 3 | `{` |
-| 3 | `j` |
-| 3 | `ɒ` |
-| 3 | `r` |
-| 2 | `N` |
-| 2 | `C` |
-| 2 | `s` |
-| 2 | `a` |
-| 2 | `u` |
+| — | _(none)_ |
+### expected_number
+
+| count | description |
+|------:|-------------|
+| — | _(none)_ |
 
 ### prose_or_expected_arrow
 
@@ -156,13 +177,18 @@
 |------:|-------------|
 | 21 | `ˀ` |
 | 2 | `*` |
-| 2 | `)` |
 | 2 | `/` |
-| 1 | `}` |
+| 2 | `̥` |
+| 2 | `)` |
 | 1 | `ʱ` |
 | 1 | `:` |
-| 1 | `̥` |
+| 1 | `}` |
 | 1 | `ʷ` |
+### prose_or_expected_arrow
+
+| count | description |
+|------:|-------------|
+| — | _(none)_ |
 
 ## Notes
 

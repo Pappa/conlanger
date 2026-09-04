@@ -62,20 +62,16 @@ ERROR_CLASS_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     ("invalid_ipa", re.compile(r"Could not get value of IPA", re.IGNORECASE)),
 ]
 
-REASON_VOCABULARY = (
-    "trailing-comment",
-    "broken-syntax",
-    "asca-unrepresentable",
-    "valid-but-inaccurate",
-    "other",
-)
-
 _UNKNOWN_TOKEN_RE = re.compile(
-    r"Unknown (?:feature|grouping|character) '([^']+)'",
+    r"Unknown (?:feature|grouping|character|reference) '([^']+)'",
     re.IGNORECASE,
 )
-_EXPEXTED_BUT_RECEIVED_RE = re.compile(
-    r"Expected(?: an)? ((?:')(.)(?:')|(.+)),(?: but)? received (('')|(?:')(.)(?:')|(.))(?: \||\.)",
+_EXPEXTED_RE = re.compile(
+    r"Expected(?: an)? ((?:')(.)(?:')|(.+)),(?: but)? received",
+    re.IGNORECASE,
+)
+_RECEIVED_RE = re.compile(
+    r"Expected (?:.+),(?: but)? received (?:\.)?(('')|(?:')(.)(?:')|(.))(?: \||\.)",
     re.IGNORECASE,
 )
 _DID_YOU_MEAN_RE = re.compile(r"Did you mean ([^?]+)\?", re.IGNORECASE)
@@ -92,7 +88,6 @@ VALIDATION_CSV_COLUMNS = [
     "error_token",
     "suggested",
     "expected",
-    "received",
     "description",
 ]
 
@@ -259,12 +254,7 @@ def top_error_tokens_from_dataframe(
         "error_token",
     ]
     if tokens.empty:
-        tokens = df.loc[
-            (df["failure_class"] == failure_class) & (df["received"].astype(str) != ""),
-            "received",
-        ]
-        if tokens.empty:
-            return []
+        return []
     counts = tokens.value_counts()
     if limit is not None:
         counts = counts.head(limit)
@@ -280,10 +270,16 @@ def top_error_descriptions_from_dataframe(
     """Return top ``description`` counts for a failure class."""
     if df.empty:
         return []
-    descriptions = df.loc[
-        (df["failure_class"] == failure_class) & (df["error_token"].astype(str) == ""),
-        "description",
-    ]
+    descriptions = (
+        df.loc[
+            (df["failure_class"] == failure_class)
+            & (df["error_token"].astype(str) == ""),
+            "description",
+        ]
+        .str.replace(r"(?:Syntax|Runtime) Error: ", "", regex=True)
+        .str.split(" | ", n=1, regex=False)
+        .str[0]
+    )
     if descriptions.empty:
         return []
     counts = descriptions.value_counts()
@@ -301,21 +297,24 @@ def top_error_tokens_with_suggested_from_dataframe(
     """Return top ``error_token`` counts with the modal ASCA ``suggested`` hint."""
     if df.empty:
         return []
-    subset = df.loc[
-        (df["failure_class"] == failure_class) & (df["error_token"].astype(str) != "")
-    ]
-    if subset.empty:
-        return []
-    counts = subset["error_token"].value_counts()
+    modal_suggested = (
+        df.loc[
+            (df["failure_class"] == failure_class)
+            & (df["error_token"].astype(str) != "")
+        ][["error_token", "suggested"]]
+        .groupby(["error_token", "suggested"])
+        .agg({"error_token": "count"})
+        .rename(columns={"error_token": "count"})
+        .sort_values("count", ascending=False)
+        .reset_index()
+    )
     if limit is not None:
-        counts = counts.head(limit)
-    results: list[tuple[str, int, str]] = []
-    for token, count in counts.items():
-        suggested = subset.loc[subset["error_token"] == token, "suggested"]
-        modal = suggested.mode()
-        suggestion = str(modal.iloc[0]) if not modal.empty else ""
-        results.append((str(token), int(count), suggestion))
-    return results
+        modal_suggested = modal_suggested.head(limit)
+
+    return [
+        (str(token), int(count), str(suggested))
+        for token, suggested, count in modal_suggested.itertuples(index=False)
+    ]
 
 
 def format_common_errors_section(rows: list[ValidationRow]) -> list[str]:
@@ -332,54 +331,68 @@ def format_common_errors_section(rows: list[ValidationRow]) -> list[str]:
                     "|------:|-------------|-----------|",
                 ]
             )
-            top = top_error_tokens_with_suggested_from_dataframe(df, failure_class)
-            if top:
-                for token, count, suggested in top:
-                    suggested_cell = f"`{suggested}`" if suggested else "—"
-                    lines.append(f"| {count} | `{token}` | {suggested_cell} |")
+            top_errors_with_suggested = top_error_tokens_with_suggested_from_dataframe(
+                df, failure_class
+            )
+            if top_errors_with_suggested:
+                for token, count, suggested in top_errors_with_suggested:
+                    lines.append(f"| {count} | `{token}` | {suggested} |")
             else:
                 lines.append("| — | _(none)_ | — |")
         else:
-            title = "error_token"
-            top = top_error_tokens_from_dataframe(df, failure_class)
-            if not top:
-                title = "description"
-                top = top_error_descriptions_from_dataframe(df, failure_class)
             lines.extend(
                 [
                     f"### {failure_class}",
                     "",
-                    f"| count | {title} |",
+                    "| count | error_token |",
                     "|------:|-------------|",
                 ]
             )
-            if top:
-                for value, count in top:
+            top_errors = top_error_tokens_from_dataframe(df, failure_class)
+            if top_errors:
+                for value, count in top_errors:
                     lines.append(f"| {count} | `{value}` |")
+            else:
+                lines.append("| — | _(none)_ |")
+
+            top_errors_with_description = top_error_descriptions_from_dataframe(
+                df, failure_class
+            )
+            lines.extend(
+                [
+                    f"### {failure_class}",
+                    "",
+                    "| count | description |",
+                    "|------:|-------------|",
+                ]
+            )
+            if top_errors_with_description:
+                for description, count in top_errors_with_description:
+                    lines.append(f"| {count} | `{description}` |")
             else:
                 lines.append("| — | _(none)_ |")
         lines.append("")
     return lines
 
 
-def parse_unknown_token_error(error: str) -> tuple[str, str, str, str]:
+def parse_unknown_token_error(error: str) -> tuple[str, str, str]:
     """Extract unknown token and ASCA suggestion from a validation error string."""
-    token_match = _UNKNOWN_TOKEN_RE.search(error)
+    unknown_token_match = _UNKNOWN_TOKEN_RE.search(error)
     suggest_match = _DID_YOU_MEAN_RE.search(error)
-    expected_but_received_match = _EXPEXTED_BUT_RECEIVED_RE.search(error)
-    error_token = token_match.group(1) if token_match else ""
+    expected_match = _EXPEXTED_RE.search(error)
+    received_match = _RECEIVED_RE.search(error)
+    unknown_token = unknown_token_match.group(1) if unknown_token_match else ""
     suggested = suggest_match.group(1).strip() if suggest_match else ""
     expected = (
-        expected_but_received_match.group(2) or expected_but_received_match.group(3)
-        if expected_but_received_match
-        else ""
+        expected_match.group(2) or expected_match.group(3) if expected_match else ""
     )
     received = (
-        expected_but_received_match.group(6) or expected_but_received_match.group(4)
-        if expected_but_received_match
-        else ""
+        received_match.group(3) or received_match.group(2) if received_match else ""
     )
-    return error_token, suggested, expected, received
+
+    error_token = unknown_token or received
+
+    return error_token, suggested, expected
 
 
 def parse_error_description(error: str, failure_class: str) -> str:
@@ -447,7 +460,6 @@ class ValidationRow:
     error_token: str = ""
     suggested: str = ""
     expected: str = ""
-    received: str = ""
     description: str = ""
     alt_idx: int | None = None
 
@@ -464,7 +476,6 @@ class ValidationRow:
             "error_token": self.error_token,
             "suggested": self.suggested,
             "expected": self.expected,
-            "received": self.received,
             "description": self.description,
         }
 
@@ -935,7 +946,9 @@ def _asca_validation_row(
     except ASCAValidationError as exc:
         err = str(exc)
         failure_class = classify_error(err)
-        error_token, suggested, expected, received = parse_unknown_token_error(err)
+        error_token, suggested, expected = parse_unknown_token_error(err)
+        description = parse_error_description(err, failure_class)
+
         return ValidationRow(
             section_index=section_index,
             section_name=section_name,
@@ -948,8 +961,7 @@ def _asca_validation_row(
             error_token=error_token,
             suggested=suggested,
             expected=expected,
-            received=received,
-            description=parse_error_description(err, failure_class),
+            description=description,
         )
 
     return ValidationRow(
@@ -1007,7 +1019,7 @@ def validate_index_rule_with_targets(
         if target.format_error is not None:
             err = target.format_error
             failure_class = "format_error"
-            error_token, suggested, expected, received = parse_unknown_token_error(err)
+            error_token, suggested, expected = parse_unknown_token_error(err)
             rows.append(
                 ValidationRow(
                     section_index=section_index,
@@ -1020,7 +1032,6 @@ def validate_index_rule_with_targets(
                     error_token=error_token,
                     suggested=suggested,
                     expected=expected,
-                    received=received,
                     description=err,
                 )
             )

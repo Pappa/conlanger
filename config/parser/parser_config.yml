@@ -16,6 +16,10 @@ section_mappings:
     "*r": "r"
     "*c": "c"
     # "*J": "J"
+  "35":
+    "V1": "V[tone: 11]"
+    "V2": "V[tone: 33]"
+    "V3": "V[tone: 55]"
 skip_sections:
   - id: "6.2.2.1.1"
     reason: "Need to refer to the cited source to determine the correct rule syntax"
