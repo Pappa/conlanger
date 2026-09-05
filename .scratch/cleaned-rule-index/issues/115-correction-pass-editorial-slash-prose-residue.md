@@ -1,5 +1,6 @@
 Type: task
-Blocked by:
+Status: ready-for-agent
+Blocked by: None
 
 # Correction pass: editorial slash and prose residue in compile fields
 

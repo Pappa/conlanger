@@ -1,5 +1,6 @@
 Type: task
-Blocked by:
+Status: ready-for-agent
+Blocked by: None
 
 # Correction pass: parenthetical optional segment modifiers
 
