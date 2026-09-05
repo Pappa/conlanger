@@ -16,6 +16,8 @@ section_index,rule_id,error_token,rule
 17.7.3.1,"Old-Norse-B,E",ɒ,"{V:[+back],V:[+front]} > ∅ / CC_{ʀ,s,t,θ}# // V:[+back] = ɒ | ^ @ Rule 1, Line 1"
 17.7.3.1,"Old-Norse-B,E_2",ɒ,"{V:[+back],V:[+front]} > ∅ / CC_%# // V:[+back] = ɒ | ^ @ Rule 1, Line 1"
 17.7.3.1,"Old-Norse-B,E_3",ɒ,"{V:[+back],V:[+front]} > ∅ / _%# // V:[+back] = ɒ | ^ @ Rule 1, Line 1"
+17.7.3.1.3,Shetland-Norn-a_2,w,"a > o / _{C:[-front,+back,+hi,-lo],r} // C:[-front,+back,+hi,-lo] = w ?) | ^ @ Rule 1, Line 1"
+17.7.3.1.3,Shetland-Norn-a_2,w,"a > ɔ / _{C:[-front,+back,+hi,-lo],r} // C:[-front,+back,+hi,-lo] = w ?) | ^ @ Rule 1, Line 1"
 17.10.1.1,Central-Middle-Indo-Aryan-Cn,d,"Cn > CC / V_V // C = dʒ | ^ @ Rule 1, Line 1"
 17.10.1.2,Eastern-Middle-Indo-Aryan-Cn,d,"Cn > CC / V_V // C = dʒ | ^ @ Rule 1, Line 1"
 17.10.1.3,Northwestern-Middle-Indo-Aryan-Cn,d,"Cn > CC / V_V // C = dʒ | ^ @ Rule 1, Line 1"

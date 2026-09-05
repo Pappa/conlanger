@@ -1,6 +1,6 @@
 section_index,rule_id,error_token,rule
 10.2.2,Chamorro-i-u_2,,"i u > e o / CC# | ^ @ Rule 1, Line 1"
-10.5.1,Jarawa-∅,,"∅ > a / h#_ (that:[+cg]s not a typo | ^ @ Rule 1, Line 1"
+10.5.1,Jarawa-∅,,"∅ > a / h#_ | ^ @ Rule 1, Line 1"
 15.2.8,Unaaliq-Yup’ik-C,,"C > C:[+long] / _V(..)V, after #% | ^ @ Rule 1, Line 1"
 17.5.1,Old-Irish-p-t-k-kʷ-b-d-ɡ-∅,,"p t k kʷ b d ɡ > b d ɡ ɡʷ mb nd ŋɡ n / n#_V:[+stress] | ^ @ Rule 1, Line 1"
 17.7.3.1,Old-Norse-waː-naː,,"wa:[+long] na:[+long] > o:[+long] no:[+long] / $u in #% | ^ @ Rule 1, Line 1"

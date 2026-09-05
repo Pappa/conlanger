@@ -4,6 +4,9 @@ from __future__ import annotations
 
 from conlanger.tools.compile.asca.apostrophes import normalize_typographic_apostrophes
 from conlanger.tools.compile.asca.breve_marks import normalize_asca_breve_marks
+from conlanger.tools.compile.asca.editorial_slash_gloss import (
+    normalize_editorial_slash_gloss_residue,
+)
 from conlanger.tools.compile.asca.ejectives import normalize_asca_ejective_marks
 from conlanger.tools.compile.asca.ellipsis import (
     normalize_asca_optional_grouping_ellipsis,
@@ -64,6 +67,7 @@ def compile_asca_field_pre_subscript(
         return text
     config = _resolve_compiler_config(compiler_config)
     mappings = config.group_mappings
+    text = normalize_editorial_slash_gloss_residue(text)
     text = normalize_asca_optional_grouping_ellipsis(text)
     text = apply_compiler_series_mappings(
         text, section_index=section_index, compiler_config=config
