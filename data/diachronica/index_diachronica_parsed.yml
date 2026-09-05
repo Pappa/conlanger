@@ -3767,13 +3767,12 @@ sections:
     raw: hʔ → ʔh
     source: index_diachronica_original.html:1675
     rule_id: Arapaho-hʔ
-  - stages:
-    - ({C,#}V)ʔ
-    - ({C,#}Vː)∅
-    env: _C
+  - stages: []
     raw: ({C,#}V)ʔ → ({C,#}Vː)∅ / _C
     source: index_diachronica_original.html:1676
+    status: skipped
     rule_id: Arapaho-C,#Vʔ
+    comment: I can't figure out the rule even afer reading the source material
   - stages:
     - i(ː)
     - u(ː)
@@ -3886,13 +3885,12 @@ sections:
     raw: hʔ → ʔh
     source: index_diachronica_original.html:1697
     rule_id: Gros-Ventre-hʔ
-  - stages:
-    - ({C,#}V[-long])ʔ
-    - '({C,#}Vː[tone: 51])∅'
-    env: _C
+  - stages: []
     raw: ({C,#}V[-long])ʔ → ({C,#}Vː[+falling tone])∅ / _C
     source: index_diachronica_original.html:1698
+    status: skipped
     rule_id: Gros-Ventre-C,#V-longʔ
+    comment: I can't figure out the rule even afer reading the source material
   - stages:
     - j
     - ∅
@@ -47505,7 +47503,7 @@ sections:
     rule_id: Beaver-ɑ
   - stages:
     - Vˀ
-    - 'V[tone: 5]'
+    - 'V[tone: 55]'
     raw: Vˀ → V[+high tone]
     source: index_diachronica_original.html:10001
     rule_id: Beaver-Vˀ
@@ -47539,7 +47537,7 @@ sections:
     rule_id: Chilcotin-e-ɑ,ə
   - stages:
     - Vˀ
-    - 'V[tone: 5]'
+    - 'V[tone: 55]'
     raw: Vˀ → V[+high tone]
     source: index_diachronica_original.html:10011
     rule_id: Chilcotin-Vˀ
@@ -47576,7 +47574,7 @@ sections:
     rule_id: Chipewyan-ɑ-ʊ
   - stages:
     - Vˀ
-    - 'V[tone: 5]'
+    - 'V[tone: 55]'
     raw: Vˀ → V[+high tone]
     source: index_diachronica_original.html:10020
     rule_id: Chipewyan-Vˀ
@@ -47797,7 +47795,7 @@ sections:
     rule_id: Easter-Gwich’in-a-u-ɑ,ə-ʊ
   - stages:
     - Vˀ
-    - 'V[tone: 1]'
+    - 'V[tone: 11]'
     raw: Vˀ → V[+low tone]
     source: index_diachronica_original.html:10070
     rule_id: Easter-Gwich’in-Vˀ
@@ -47842,7 +47840,7 @@ sections:
     rule_id: Han-a-ɑ-ə-ʊ
   - stages:
     - Vˀ
-    - 'V[tone: 1]'
+    - 'V[tone: 11]'
     raw: Vˀ → V[+low tone]
     source: index_diachronica_original.html:10082
     rule_id: Han-Vˀ
@@ -47885,7 +47883,7 @@ sections:
     rule_id: Holikachuk-C’
   - stages:
     - Vˀ
-    - 'V[tone: 1]'
+    - 'V[tone: 11]'
     raw: Vˀ → V[+low tone]
     source: index_diachronica_original.html:10093
     rule_id: Holikachuk-Vˀ
@@ -47975,7 +47973,7 @@ sections:
     rule_id: Lower-Koyukon-C’
   - stages:
     - Vˀ
-    - 'V[tone: 1]'
+    - 'V[tone: 11]'
     raw: Vˀ → V[+low tone]
     source: index_diachronica_original.html:10114
     rule_id: Lower-Koyukon-Vˀ
@@ -48028,7 +48026,7 @@ sections:
     rule_id: Upper-Koyukon-C’
   - stages:
     - Vˀ
-    - 'V[tone: 1]'
+    - 'V[tone: 11]'
     - V[-tone]
     raw: Vˀ → V[+low tone] → V[-tone]
     source: index_diachronica_original.html:10126
@@ -48096,7 +48094,7 @@ sections:
     rule_id: Sarcee-e,ə-ʊ
   - stages:
     - Vˀ
-    - 'V[tone: 1]'
+    - 'V[tone: 11]'
     raw: Vˀ → V[+low tone]
     source: index_diachronica_original.html:10143
     rule_id: Sarcee-Vˀ
@@ -48136,7 +48134,7 @@ sections:
     rule_id: Sekani-ʊ
   - stages:
     - Vˀ
-    - 'V[tone: 5]'
+    - 'V[tone: 55]'
     raw: Vˀ → V[+high tone]
     source: index_diachronica_original.html:10152
     rule_id: Sekani-Vˀ
@@ -48757,7 +48755,7 @@ sections:
   rules:
   - stages:
     - Vˀ
-    - 'V[tone: 5]'
+    - 'V[tone: 55]'
     raw: Vˀ → V[+high tone]
     source: index_diachronica_original.html:10298
     rule_id: Kaska-Vˀ
@@ -48828,7 +48826,7 @@ sections:
     rule_id: Tanacross-S’
   - stages:
     - Vˀ
-    - 'V[tone: 5]'
+    - 'V[tone: 55]'
     raw: Vˀ → V[+high tone]
     source: index_diachronica_original.html:10318
     rule_id: Tanacross-Vˀ
@@ -48899,7 +48897,7 @@ sections:
     rule_id: Lower-Tanana-S’
   - stages:
     - Vˀ
-    - 'V[tone: 1]'
+    - 'V[tone: 11]'
     comment: “since then partially neutralized in noun and verb stems, but ‘still
       clear in verbal prefixes’”; ()
     raw: Vˀ → V[+low tone] (“since then partially neutralized in noun and verb stems,
@@ -48992,7 +48990,7 @@ sections:
     rule_id: Upper-Tanana-ə
   - stages:
     - Vˀ
-    - 'V[tone: 1]'
+    - 'V[tone: 11]'
     - V[-tone] in)
     comment: (; “young speakers by 1980”
     raw: Vˀ → V[+low tone] (→ V[-tone] in “young speakers by 1980”)
@@ -49073,7 +49071,7 @@ sections:
     rule_id: Northern-Tutchone-ɑ,ə,ʊ
   - stages:
     - Vˀ
-    - 'V[tone: 5]'
+    - 'V[tone: 55]'
     raw: Vˀ → V[+high tone]
     source: index_diachronica_original.html:10370
     rule_id: Northern-Tutchone-Vˀ
@@ -49121,7 +49119,7 @@ sections:
     rule_id: Southern-Tutchone-ɑ,ə,ʊ
   - stages:
     - Vˀ
-    - 'V[tone: 1]'
+    - 'V[tone: 11]'
     raw: Vˀ → V[+low tone]
     source: index_diachronica_original.html:10383
     rule_id: Southern-Tutchone-Vˀ
@@ -58422,13 +58420,13 @@ sections:
     rule_id: Cherokee-aːwẽː
   - stages:
     - V[+nas]
-    - 'aː[tone: 35]'
+    - 'aː[tone: 45]'
     raw: V[+nas] → aː[+high rising tone]
     source: index_diachronica_original.html:12355
     rule_id: Cherokee-V+nas
   - stages:
     - ∅
-    - 'Vː[tone: 35]'
+    - 'Vː[tone: 45]'
     env: C_#
     comment: “usually one of [/aː iː ʌ̃ː/ with this tone], the conditions are unclear”;
       ()
@@ -59402,7 +59400,7 @@ sections:
     rule_id: Onondaga-V_2
   - stages:
     - V
-    - 'V[tone: 5]'
+    - 'V[tone: 55]'
     env: _$V:[+stress]
     raw: V → V[+high tone] / _$”V
     source: index_diachronica_original.html:12522
@@ -64928,16 +64926,16 @@ sections:
     source: index_diachronica_original.html:13625
     rule_id: Move-ʔv-ʔm-ʔɡ-ʔr-ʔh
   - stages:
-    - 'V[tone: 1]'
+    - 'V[tone: 11]'
     - ∅
-    env: 'C_hV[tone: 5]'
+    env: 'C_hV[tone: 55]'
     raw: V[+ low tone] → ∅ / C_hV[+ high tone]
     source: index_diachronica_original.html:13626
     rule_id: Move-V+-low-tone
   - stages:
-    - 'V[tone: 1]'
+    - 'V[tone: 11]'
     - ∅
-    env: 'C_CV[tone: 5] if both vowels are the same'
+    env: 'C_CV[tone: 55] if both vowels are the same'
     raw: V[+ low tone] → ∅ / C_CV[+ high tone] if both vowels are the same
     source: index_diachronica_original.html:13627
     rule_id: Move-V+-low-tone_2

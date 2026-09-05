@@ -17,9 +17,9 @@ section_mappings:
     "*c": "c"
     # "*J": "J"
   "35":
-    "V1": "V[tone: 11]"
-    "V2": "V[tone: 33]"
-    "V3": "V[tone: 55]"
+    "V1": "V[+low tone]"
+    "V2": "V[+mid tone]"
+    "V3": "V[+high tone]"
 skip_sections:
   - id: "6.2.2.1.1"
     reason: "Need to refer to the cited source to determine the correct rule syntax"
@@ -107,4 +107,8 @@ skip_rules:
   - id: Old-Low-German-F-voice
     reason: "No idea what X means"
   - id: North-Omotic-Vː_2
+    reason: "I can't figure out the rule even afer reading the source material"
+  - id: Arapaho-C,#Vʔ
+    reason: "I can't figure out the rule even afer reading the source material"
+  - id: Gros-Ventre-C,#V-longʔ
     reason: "I can't figure out the rule even afer reading the source material"

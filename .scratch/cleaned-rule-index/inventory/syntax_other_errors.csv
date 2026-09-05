@@ -1,5 +1,4 @@
 section_index,rule_id,error_token,rule
-7.3.1,"Arapaho-C,#Vʔ",,"({C,#}V)ʔ > {C,#,V:[+long]} / _C | ^^^^^^^^ @ Rule 1, Line 1"
 7.3.1,Arapaho-V-longN,,"(V[-long])N > ∅ / _# | ^^^^^^^^^^ @ Rule 1, Line 1"
 7.3.2,Gros-Ventre-V-longN,,"(V[-long])N > ∅ / _# | ^^^^^^^^^^ @ Rule 1, Line 1"
 7.15,"Ojibwe-j,wV-long",,"{j,w}V[-long] > ∅ / C_# in disyllables with V:[+long] or in tri(-plus-)syllables | ^^ @ Rule 1, Line 1"
@@ -26,8 +25,8 @@ section_index,rule_id,error_token,rule
 17.12.1.1.10,"Spanish-s̪,s",,"{s̪,s} > s [s̪] | ^ @ Rule 1, Line 1"
 17.12.1.1.10,"Spanish-s̪,s_4",],"{s̪,s} > θ [θ] | ^ @ Rule 1, Line 1"
 17.13,"Proto-Tocharian-p-ts,kʷ-m-n-l-r-y",:,"p {ts,k,kʷ} m n l r y > pj sʲ ʂ mj ɲ lj rj wj / _{V:[+front],V::[+front],y} | ^ @ Rule 1, Line 1"
-29.1.1.1.15,Upper-Koyukon-Vˀ,,"V:[tone: 1] > V[-tone] | ^ @ Rule 1, Line 2"
-29.1.1.1.39,Upper-Tanana-Vˀ,,"V:[tone: 1] > V[-tone] in) | ^ @ Rule 1, Line 2"
+29.1.1.1.15,Upper-Koyukon-Vˀ,,"V:[tone: 11] > V[-tone] | ^ @ Rule 1, Line 2"
+29.1.1.1.39,Upper-Tanana-Vˀ,,"V:[tone: 11] > V[-tone] in) | ^ @ Rule 1, Line 2"
 30.2,"Proto-Potou-Akanic-V+nasʋ̃,l̃",l,"V[+nas](ʋ̃,l̃) > V[-nas](m,n) / #{L,G}[+voice]_ | ^ @ Rule 1, Line 1"
 36.2,Guānhuà-i,,"i > [long-tail vowel thing] / C̣_ | ^^^^ @ Rule 1, Line 1"
 36.2,Guānhuà-iʔ,,"ieʔ > i[truncated vowel-thing]ʔ?) | ^^^^^^^^^ @ Rule 1, Line 2"

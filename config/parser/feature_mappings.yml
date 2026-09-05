@@ -17,7 +17,7 @@ rounded:
   mapping_kind: rename
   asca_target: round
   confidence: high
-  notes: '[+rounded] vowel rounding'
+  notes: "[+rounded] vowel rounding"
 short:
   mapping_kind: rename_invert
   asca_target: long
@@ -27,25 +27,29 @@ glottalized:
   mapping_kind: rename_polarity
   asca_target: place
   confidence: medium
-  notes: Index [±glottalized] → ASCA place with polarity invert (cf. glottal in spike
+  notes:
+    Index [±glottalized] → ASCA place with polarity invert (cf. glottal in spike
     29)
 glottal:
   mapping_kind: rename_polarity
   asca_target: place
   confidence: medium
-  notes: Index [±glottal] → ASCA place with polarity invert (cf. glottal in spike
+  notes:
+    Index [±glottal] → ASCA place with polarity invert (cf. glottal in spike
     29)
 close-mid:
   mapping_kind: bundle
   asca_target: -hi,-lo,+tense
   confidence: high
-  notes: Index [+close-mid] vowel height; ASCA mid row +tense per vowel-space table
+  notes:
+    Index [+close-mid] vowel height; ASCA mid row +tense per vowel-space table
     (0.10.2)
 open-mid:
   mapping_kind: bundle
   asca_target: -hi,-lo,-tense
   confidence: high
-  notes: Index [+open-mid] vowel height; ASCA mid row -tense per vowel-space table
+  notes:
+    Index [+open-mid] vowel height; ASCA mid row -tense per vowel-space table
     (0.10.2)
 closed:
   mapping_kind: rename
@@ -107,37 +111,68 @@ guttural:
   asca_target: laryngeal
   confidence: high
   notes: Index [±guttural] → ASCA laryngeal
-high tone:
-  mapping_kind: tone
-  asca_target: '5'
-  confidence: high
-  notes: 'Index [+high tone] → ASCA [tone: 5] (Chinese-style default; ticket 62)'
 low tone:
   mapping_kind: tone
-  asca_target: '1'
+  asca_target: "11"
   confidence: high
-  notes: 'Index [+low tone] → ASCA [tone: 1]'
-falling tone:
+  notes: "Index [+low tone] → ASCA [tone: 11]"
+low rising tone:
   mapping_kind: tone
-  asca_target: '51'
+  asca_target: "13"
   confidence: high
-  notes: 'Index [+falling tone] → ASCA [tone: 51]'
+  notes: "Index [+low rising tone] → ASCA [tone: 13]"
 low falling tone:
   mapping_kind: tone
-  asca_target: '21'
+  asca_target: "21"
   confidence: high
-  notes: 'Index [+low falling tone] → ASCA [tone: 21]'
+  notes: "Index [+low falling tone] → ASCA [tone: 21]"
+mid dipping tone:
+  mapping_kind: tone
+  asca_target: "214"
+  confidence: high
+  notes: "Index [+mid dipping tone] → ASCA [tone: 214]"
+mid falling tone:
+  mapping_kind: tone
+  asca_target: "31"
+  confidence: high
+  notes: "Index [+mid falling tone] → ASCA [tone: 31]"
+mid tone:
+  mapping_kind: tone
+  asca_target: "33"
+  confidence: high
+  notes: "Index [+mid tone] → ASCA [tone: 33]"
+mid rising tone:
+  mapping_kind: tone
+  asca_target: "35"
+  confidence: high
+  notes: "Index [+mid rising tone] → ASCA [tone: 35]"
 high rising tone:
   mapping_kind: tone
-  asca_target: '35'
+  asca_target: "45"
   confidence: high
-  notes: 'Index [+high rising tone] → ASCA [tone: 35]'
+  notes: "Index [+high rising tone] → ASCA [tone: 45]"
+falling tone:
+  mapping_kind: tone
+  asca_target: "51"
+  confidence: high
+  notes: "Index [+falling tone] → ASCA [tone: 51]"
+high falling tone:
+  mapping_kind: tone
+  asca_target: "51"
+  confidence: high
+  notes: "Index [+high falling tone] → ASCA [tone: 51]"
+high tone:
+  mapping_kind: tone
+  asca_target: "55"
+  confidence: high
+  notes: "Index [+high tone] → ASCA [tone: 55]"
 emphatic:
   mapping_kind: rename
   asca_target: rtr
   confidence: high
-  notes: 'Index [±emphatic] → ASCA rtr (note: emphatic is not present in the Index
-    - the feature is created in manual_mappings'
+  notes:
+    "Index [±emphatic] → ASCA rtr (note: emphatic is not present in the Index
+    - the feature is created in manual_mappings"
 fortis:
   mapping_kind: rename
   asca_target: tense
