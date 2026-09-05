@@ -192,7 +192,7 @@
   to: " / $_ "
   reason: "replace "
 - from: " / if short and unstressed"
-  to: " / _[-long, -stress]"
+  to: " / [-long, -stress]"
   reason: replace prose
 - from: "k ʃk → k* kː / V_V "
   to: "ʃk → kː / V_V ; k ʃk → k* kː / V_V "
@@ -242,13 +242,13 @@
   to: rtr
   reason: Lowercase feature name
 - from: " / only when short, ! "
-  to: " / _[-long] ! "
+  to: " / [-long] ! "
   reason: replace prose
 - from: " / short only, _#"
-  to: " / _[-long]#"
+  to: " / _:[-long]#"
   reason: replace prose
 - from: " _%, when stressed (short only)"
-  to: " _[+stress, -long]%"
+  to: " _:[+stress, -long]%"
   reason: replace prose
 - from: " / near gutturals"
   to: " / _[+laryngeal], [+laryngeal]_"

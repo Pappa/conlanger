@@ -43,6 +43,7 @@ section_index,rule_id,error_token,rule
 17.7.2.1.12,Southern-Middle-English-ɑ-e-o,/,"ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / _ %[+lo] // #% with the following % containing i:[+long] or ending in one of /m n r l/ | ^ @ Rule 1, Line 1"
 17.7.2.1.12,Southern-Middle-English-Vː_2,,"V:[+long] > V[-long] / #% before a % with i:[+long] | ^ @ Rule 1, Line 1"
 17.7.2.1.12,Southern-Middle-English-e,,"e > ∅ / if another e one syllable previous | ^ @ Rule 1, Line 1"
+17.7.2.2.1,Middle-Dutch-V,,"V > ə / [-long, -stress] | ^ @ Rule 1, Line 1"
 17.7.2.2.1,Middle-Dutch-V-long-+stress,,"V[-long +stress] > V:[+long] / open syllables | ^ @ Rule 1, Line 1"
 17.7.2.3,Standard-German-uː-yː-iː,",","u:[+long] y:[+long] i:[+long] > ou øy ei // in certain unstressed endings and monosyllables, _C{C,V,#} , and Low German borrowings | ^ @ Rule 1, Line 1"
 17.7.2.3,Standard-German-V_4,,"V > V:[+long] / by analogy in some cases | ^ @ Rule 1, Line 1"

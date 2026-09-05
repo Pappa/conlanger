@@ -2211,7 +2211,7 @@ sections:
   - stages:
     - '{u,a,i}'
     - ∅
-    env: _[+stress, -long]$
+    env: _:[+stress, -long]$
     raw: '{u,a,i} → ∅ / _%, when stressed (short only)'
     source: index_diachronica_original.html:1362
     rule_id: Cypriot-Arabic-u,a,i
@@ -2340,7 +2340,7 @@ sections:
   - stages:
     - i u
     - e o
-    env: _[-long]
+    env: '[-long]'
     exception: _#
     raw: i u → e o / only when short, ! _#
     source: index_diachronica_original.html:1382
@@ -2348,7 +2348,7 @@ sections:
   - stages:
     - u
     - '{o,u}'
-    env: _[-long]#
+    env: _:[-long]#
     raw: u → {o,u} / short only, _#
     source: index_diachronica_original.html:1383
     rule_id: Egyptian-Arabic-u
@@ -26654,7 +26654,7 @@ sections:
   - stages:
     - V
     - ə
-    env: _[-long, -stress]
+    env: '[-long, -stress]'
     raw: V → ə / if short and unstressed
     source: index_diachronica_original.html:6062
     rule_id: Middle-Dutch-V

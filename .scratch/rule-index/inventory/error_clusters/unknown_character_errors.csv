@@ -110,5 +110,5 @@ section_index,rule_id,error_token,rule
 44.2,Basque-s̺_2,̺,"s̺ > ʃ̺according to Campbell | ^ @ Rule 1, Line 1"
 46.14,Pre-Slavic-Vowel-Changes-aj,₂,"aj > æ₂ | ^ @ Rule 1, Line 1"
 46.14,Pre-Slavic-Vowel-Changes-aj,₂,"aj > i₂ | ^ @ Rule 1, Line 1"
-46.14,Pre-Slavic-Vowel-Changes-u,ɤ,"u [ɤ?] > {e,o,ɤ,a} (strong)/∅ | ^ @ Rule 1, Line 2"
+46.14,Pre-Slavic-Vowel-Changes-u,ɤ,"u > u [ɤ?] | ^ @ Rule 1, Line 1"
 47.1,List-1:-Simple-Consonant-Changes-b,#,"b > #c, -nc- | ^ @ Rule 1, Line 1"
