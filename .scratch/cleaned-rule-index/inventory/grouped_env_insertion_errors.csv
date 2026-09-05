@@ -1,0 +1,3 @@
+section_index,rule_id,error_token,rule
+6.2.2.1.13,Western-Libyan-Arabic-∅,,"∅ > ə / :{CCVC_C,CCVVC_C,CCV:[+long]C_C,CCV:[+long]VC_C}: | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ @ Rule 1, Line 1"
+42.1.2,Livonian-∅,,"∅ > ʔ / :{CV_CV,V_CV}: | ^^^^^^^^^^^^^^ @ Rule 1, Line 1"

@@ -1,0 +1,10 @@
+section_index,rule_id,error_token,rule
+17.11.1,Polish-r̝,,"r̝ > ʂ / C[-voice]_ | ^^ @ Rule 1, Line 1"
+17.11.1,Polish-r̝_2,,"r̝ > ʂ / _C[+voice] | ^^ @ Rule 1, Line 1"
+17.11.1,Polish-tɕts-ʑr̝,,"tɕts ʑr̝ > jts jr̝ | ^^ @ Rule 1, Line 1"
+17.11.1,Polish-v-r̝,,"v r̝ > f r̥ / C[-voice]_ | ^^ @ Rule 1, Line 1"
+17.11.1,Polish-v-r̝_2,,"v r̝ > f r̥ / _{C[-voice],#} | ^^ @ Rule 1, Line 1"
+17.11.1,Polish-r̝_3,,"r̝ > r / {ɕ,ʑ}_ | ^^ @ Rule 1, Line 1"
+17.11.1,Polish-ɕr̝-ʑr̝,,"ɕr̝ ʑr̝ > ʂr ʐr / , respectively | ^^ @ Rule 1, Line 1"
+17.11.1,Polish-ʈʂ,,"ʈʂ > t / _r̝ | ^^ @ Rule 1, Line 1"
+17.11.1,Polish-ɕ,,"ɕ > ∅ / tr̝_tɕ | ^^ @ Rule 1, Line 1"
