@@ -5,22 +5,22 @@ compile validation only, and writes inventory CSVs and summary markdown.
 """
 
 import argparse
-import logging
-import subprocess
 import sys
 from datetime import UTC, datetime
 from pathlib import Path
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
-
-from conlanger.appliers.asca import asca_supports_validate, resolve_asca_bin
+from conlanger.appliers.asca import asca_supports_validate
 from conlanger.scripts.config_loaders import load_compiler_config
 from conlanger.scripts.pipeline_defaults import (
     DEFAULT_INVENTORY_DIR,
     DEFAULT_PROBE,
     DEFAULT_YAML,
     ROOT,
+)
+from conlanger.scripts.validation_cli import (
+    asca_version,
+    fork_asca_command,
+    validation_asca_command,
 )
 from conlanger.tools.index_inventory import (
     FIELD_ISOLATION_ERROR_CSV_NAME,
@@ -42,33 +42,6 @@ from conlanger.tools.index_io import read_cleaned_index
 from conlanger.tools.inventory_error_clusters import write_error_cluster_csvs
 
 
-def _fork_asca_command(*, repo_root: Path = ROOT) -> Path:
-    return repo_root / "bin" / "bin" / "asca"
-
-
-def _validation_asca_command(*, use_fork: bool, repo_root: Path = ROOT) -> str | None:
-    """Return the asca executable path for inventory validation."""
-    if use_fork:
-        fork = _fork_asca_command(repo_root=repo_root)
-        return str(fork) if fork.is_file() else None
-    return resolve_asca_bin()
-
-
-def _asca_version(asca_bin: str) -> str:
-    try:
-        proc = subprocess.run(  # noqa: PLW1510
-            [asca_bin, "--version"],
-            capture_output=True,
-            text=True,
-            timeout=5,
-        )
-        if proc.stdout.strip():
-            return proc.stdout.strip()
-    except (OSError, subprocess.TimeoutExpired):
-        pass
-    return "0.10.x"
-
-
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--yaml-in", type=Path, default=DEFAULT_YAML)
@@ -80,7 +53,7 @@ def main() -> int:
             "writes asca-rule-inventory-success.csv / -error.csv, "
             "asca-field-isolation-success.csv / -error.csv (when --field-isolation), "
             "asca-rule-inventory-changelog.csv, "
-            "error cluser csvs, "
+            "error cluster CSVs, "
             "and asca-rule-inventory-summary.md"
         ),
     )
@@ -119,12 +92,12 @@ def main() -> int:
         print(f"ERROR: probe wordlist not found at {args.probe_words}", file=sys.stderr)
         return 1
 
-    asca_command = _validation_asca_command(
+    asca_command = validation_asca_command(
         use_fork=args.use_asca_fork,
         repo_root=ROOT,
     )
     if args.use_asca_fork and asca_command is None:
-        fork = _fork_asca_command(repo_root=ROOT)
+        fork = fork_asca_command(repo_root=ROOT)
         print(
             f"ERROR: asca fork not found at {fork} "
             "(install with cargo per docs/DEV.md, or pass --no-use-asca-fork)",
@@ -187,7 +160,7 @@ def main() -> int:
         rows,
         source_yaml=str(args.yaml_in.relative_to(ROOT)),
         probe_words=str(args.probe_words.relative_to(ROOT)),
-        asca_version=_asca_version(asca_command),
+        asca_version=asca_version(asca_command),
         field_isolation_rows=field_rows,
     )
     summary_path.parent.mkdir(parents=True, exist_ok=True)

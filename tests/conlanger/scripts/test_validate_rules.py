@@ -7,6 +7,7 @@ from pathlib import Path
 from unittest.mock import MagicMock, patch
 
 from conlanger.scripts import validate_rules as validate
+from conlanger.scripts import validation_cli
 from conlanger.tools.index_inventory import FieldIsolationRow, ValidationRow
 
 
@@ -94,7 +95,7 @@ def test_validate_rules_errors_when_asca_missing_on_path(tmp_path: Path):
 
     with (
         patch.object(validate, "ROOT", tmp_path),
-        patch.object(validate, "_validation_asca_command", return_value=None),
+        patch.object(validate, "validation_asca_command", return_value=None),
         patch.object(
             sys,
             "argv",
@@ -113,7 +114,7 @@ def test_validate_rules_errors_when_asca_missing_on_path(tmp_path: Path):
         assert validate.main() == 1
 
 
-@patch.object(validate, "_asca_version", return_value="asca-test-0.10")
+@patch.object(validate, "asca_version", return_value="asca-test-0.10")
 @patch.object(validate, "append_ok_flip_changelog", return_value=2)
 @patch.object(validate, "write_field_isolation_csvs")
 @patch.object(validate, "write_error_cluster_csvs")
@@ -225,7 +226,7 @@ def test_validate_rules_writes_validation_inventory(
     assert "asca-test-0.10" in summary_path.read_text(encoding="utf-8")
 
 
-@patch.object(validate, "_asca_version", return_value="asca-test-0.10")
+@patch.object(validate, "asca_version", return_value="asca-test-0.10")
 @patch.object(validate, "append_ok_flip_changelog", return_value=1)
 @patch.object(validate, "write_field_isolation_csvs")
 @patch.object(validate, "write_error_cluster_csvs")
@@ -323,22 +324,22 @@ def test_validate_rules_reset_changelog_overwrites_existing(
 
 def test_asca_version_reads_stdout():
     proc = MagicMock(stdout="asca 0.10.5\n", returncode=0)
-    with patch.object(validate.subprocess, "run", return_value=proc):
-        assert validate._asca_version("/usr/bin/asca") == "asca 0.10.5"
+    with patch.object(validation_cli.subprocess, "run", return_value=proc):
+        assert validation_cli.asca_version("/usr/bin/asca") == "asca 0.10.5"
 
 
 def test_asca_version_falls_back_on_subprocess_error():
-    with patch.object(validate.subprocess, "run", side_effect=OSError("boom")):
-        assert validate._asca_version("/usr/bin/asca") == "0.10.x"
+    with patch.object(validation_cli.subprocess, "run", side_effect=OSError("boom")):
+        assert validation_cli.asca_version("/usr/bin/asca") == "0.10.x"
 
 
 def test_validation_asca_command_uses_fork_or_path(tmp_path: Path):
-    fork = validate._fork_asca_command(repo_root=tmp_path)
+    fork = validation_cli.fork_asca_command(repo_root=tmp_path)
     _write_fake_fork(tmp_path)
-    assert validate._validation_asca_command(use_fork=True, repo_root=tmp_path) == str(
-        fork
-    )
-    with patch.object(validate, "resolve_asca_bin", return_value="/usr/bin/asca"):
-        assert validate._validation_asca_command(
+    assert validation_cli.validation_asca_command(
+        use_fork=True, repo_root=tmp_path
+    ) == str(fork)
+    with patch.object(validation_cli, "resolve_asca_bin", return_value="/usr/bin/asca"):
+        assert validation_cli.validation_asca_command(
             use_fork=False, repo_root=tmp_path
         ) == ("/usr/bin/asca")

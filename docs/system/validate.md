@@ -75,9 +75,9 @@ flowchart TD
 | Step | What happens | Code / artifact |
 | --- | --- | --- |
 | 1 | Parse HTML → applier-neutral YAML | `IndexDiachronicaParser` → `data/diachronica/index_diachronica_parsed.yml` |
-| 2 | For each index rule in each section | `iter_validation_rows()` in `index_inventory.py` |
+| 2 | For each index rule in each section | `iter_inventory_with_field_isolation()` in `index_inventory.py` |
 | 3 | Build mini-section (one rule) | `_mini_section()` |
-| 4 | Compile | `DiachronicSeries(mini, group_mappings=…)` |
+| 4 | Compile | `DiachronicSeries(mini, compiler_config=…)` |
 | 5 | Validate | `validate_asca(..., probe_words=tests/fixtures/asca_probe_words.wsca)` |
 | 6 | Classify failure | `classify_error()`, `reason_for_failure()`, `parse_unknown_token_error()` |
 | 7 | Emit artifacts | See [Validation report](#validation-report) below |
@@ -90,9 +90,11 @@ flowchart TD
 | --- | ---: | ---: | --- |
 | Provisional AI YAML + asca 0.9.3 | 9721 | 57.1% | [Ticket 02](../.scratch/cleaned-rule-index/issues/02-inventory-valid-vs-invalid-rules.md) |
 | Cleaned schema + passes 14–25 | 9317 | 68.9% | [Ticket 12](../.scratch/cleaned-rule-index/issues/12-full-index-validation-inventory.md) |
-| Current on-disk summary | 9317 | **70.4%** (6561 ok) | [inventory summary](../.scratch/cleaned-rule-index/inventory/asca-rule-inventory-summary.md) |
+| Current on-disk summary | 9841 | **85.4%** (8400 ok) | [inventory summary](../.scratch/cleaned-rule-index/inventory/asca-rule-inventory-summary.md) |
 
-**Top failure classes (current):** `syntax_other`, `unknown_character`, `expected_underscore`, `unknown_feature`.
+**Section outcomes (current):** 417 / 714 sections all OK (58.4%); 268 some OK; 4 none OK; 25 sections skipped. See **Sections** in the summary markdown.
+
+**Top failure classes (current):** `syntax_other`, `unknown_character`, `runtime_other`, `expected_underscore`.
 
 **Limitations (accepted):** Tier 4 runtime failures may be under-detected when the fixed baseline wordlist does not match rule shape (~98% of failures are Tier 1–2 syntax). Rule-derived probe synthesis — [ticket 10](../.scratch/cleaned-rule-index/issues/10-rule-derived-probe-synthesis.md) — **wontfix**.
 
@@ -109,15 +111,34 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](./ad
 | `asca-rule-inventory-success.csv` | Filtered `ok=True` | [34](../.scratch/cleaned-rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
 | `asca-rule-inventory-error.csv` | Filtered `ok=False` | [34](../.scratch/cleaned-rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
 | `asca-rule-inventory-changelog.csv` | Append-only **ok flips** matched by `(source, alt_idx)` (HTML `file:line` + optional-output alternative). Prior `ok` is read from the success/error split CSVs. Pass `--reset-changelog` to overwrite after a column-schema change. | [34](../.scratch/cleaned-rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
-| `asca-rule-inventory-summary.md` | Counts, percentages, top failure classes, common `error_token`s | [12](../.scratch/cleaned-rule-index/issues/12-full-index-validation-inventory.md) |
+| `asca-rule-inventory-summary.md` | Rule/section counts, failure-class table, **Common Errors** (top `error_token` and description clusters per failure class), field-isolation blame | [12](../.scratch/cleaned-rule-index/issues/12-full-index-validation-inventory.md) |
 | `asca-field-isolation-success.csv` | filtered `whole_ok == true` (and per-field clean) | [36](../.scratch/cleaned-rule-index/issues/36-per-field-asca-blame-in-inventory.md) |
 | `asca-field-isolation-error.csv` | filtered `whole_ok == false` or per-field fail | [36](../.scratch/cleaned-rule-index/issues/36-per-field-asca-blame-in-inventory.md) |
+| `unknown_grouping_errors.csv` | `unknown_grouping` cluster rows | error-cluster tooling |
+| `unknown_character_errors.csv` | `unknown_character` cluster rows | error-cluster tooling |
+| `expected_underscore_errors.csv` | `expected_underscore` cluster rows | error-cluster tooling |
+| `nested_brackets_errors.csv` | `nested_brackets` cluster rows | error-cluster tooling |
+| `unknown_features_errors.csv` | `unknown_feature` cluster rows | error-cluster tooling |
+| `syntax_other_errors.csv` | `syntax_other` cluster rows | error-cluster tooling |
+| `runtime_other_errors.csv` | `runtime_other` cluster rows | error-cluster tooling |
+| `expected_number_errors.csv` | `expected_number` cluster rows | error-cluster tooling |
+| `prose_or_expected_arrow_errors.csv` | `prose_or_expected_arrow` cluster rows | error-cluster tooling |
 
 **CSV columns** (`VALIDATION_CSV_COLUMNS` in `index_inventory.py`):
 
-`section_index`, `section_name`, `rule_id`, `alt_idx`, `source`, `ok`, `failure_class`, `reason`, `error_token`, `suggested`, `description`
+`section_index`, `section_name`, `rule_id`, `alt_idx`, `source`, `ok`, `failure_class`, `reason`, `error_token`, `suggested`, `expected`, `description`
 
 `alt_idx` is the 0-based optional-output alternative index (e.g. `d → {∅,ð}` emits one row per alternative and never the parent's random pick); it is empty for rules without alternatives.
+
+**Summary markdown (`asca-rule-inventory-summary.md`):**
+
+- **Rules** — ok / fail / skipped counts (section-skipped rules excluded from ok/fail percentages).
+- **Sections** — mutually exclusive buckets: all OK, some OK, none OK, sections skipped (correction-pass prioritisation metric).
+- **Failure classes** — full-class counts from error rows.
+- **Common Errors** — for each failure class with a cluster CSV, top `error_token` rows plus (when token-less messages dominate) top normalised `description` rows; headings use `{failure_class} (error_token)` and `{failure_class} (description)`.
+- **Field isolation blame** — when `--field-isolation` is on, per-field blame counts on whole-rule failure rows.
+
+Inventory row count can exceed index rule count when optional-output alternatives emit multiple validated rows (`alt_idx`).
 
 **Reason vocabulary** (filterable skip decisions): `trailing-comment`, `broken-syntax`, `asca-unrepresentable`, `valid-but-inaccurate`, `other`
 
@@ -239,6 +260,7 @@ Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` e
 | --- | --- |
 | [`create_index.py`](../src/conlanger/scripts/create_index.py) | Parse HTML → YAML + parse diagnostics |
 | [`validate_rules.py`](../src/conlanger/scripts/validate_rules.py) | Load YAML → compile in memory → inventory |
+| [`validation_cli.py`](../src/conlanger/scripts/validation_cli.py) | Shared ASCA fork/PATH resolution and `--version` probe |
 | [`index_inventory.py`](../src/conlanger/tools/index_inventory.py) | Per-rule validation, CSV/changelog/summary |
 | [`index_io.py`](../src/conlanger/tools/index_io.py) | Read/write cleaned YAML |
 | [`parsers.py`](../src/conlanger/tools/parsers.py) | `IndexDiachronicaParser` |

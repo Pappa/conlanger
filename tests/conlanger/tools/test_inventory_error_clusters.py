@@ -3,9 +3,9 @@ from pathlib import Path
 import pandas as pd
 
 from conlanger.tools.inventory_error_clusters import (
+    EXPECTED_UNDERSCORE_ERRORS_CSV_NAME,
     UNKNOWN_CHARACTER_ERRORS_CSV_NAME,
     UNKNOWN_GROUPING_ERRORS_CSV_NAME,
-    EXPECTED_UNDERSCORE_ERRORS_CSV_NAME,
     cluster_errors_dataframe,
     filter_errors_by_failure_class,
     write_error_cluster_csvs,

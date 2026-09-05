@@ -66,7 +66,7 @@ _UNKNOWN_TOKEN_RE = re.compile(
     r"Unknown (?:feature|grouping|character|reference) '([^']+)'",
     re.IGNORECASE,
 )
-_EXPEXTED_RE = re.compile(
+_EXPECTED_RE = re.compile(
     r"Expected(?: an)? ((?:')(.)(?:')|(.+)),(?: but)? received",
     re.IGNORECASE,
 )
@@ -297,24 +297,21 @@ def top_error_tokens_with_suggested_from_dataframe(
     """Return top ``error_token`` counts with the modal ASCA ``suggested`` hint."""
     if df.empty:
         return []
-    modal_suggested = (
-        df.loc[
-            (df["failure_class"] == failure_class)
-            & (df["error_token"].astype(str) != "")
-        ][["error_token", "suggested"]]
-        .groupby(["error_token", "suggested"])
-        .agg({"error_token": "count"})
-        .rename(columns={"error_token": "count"})
-        .sort_values("count", ascending=False)
-        .reset_index()
-    )
-    if limit is not None:
-        modal_suggested = modal_suggested.head(limit)
-
-    return [
-        (str(token), int(count), str(suggested))
-        for token, suggested, count in modal_suggested.itertuples(index=False)
+    subset = df.loc[
+        (df["failure_class"] == failure_class) & (df["error_token"].astype(str) != "")
     ]
+    if subset.empty:
+        return []
+    counts = subset["error_token"].value_counts()
+    if limit is not None:
+        counts = counts.head(limit)
+    results: list[tuple[str, int, str]] = []
+    for token, count in counts.items():
+        suggested = subset.loc[subset["error_token"] == token, "suggested"]
+        modal = suggested.mode()
+        suggestion = str(modal.iloc[0]) if not modal.empty else ""
+        results.append((str(token), int(count), suggestion))
+    return results
 
 
 def format_common_errors_section(rows: list[ValidationRow]) -> list[str]:
@@ -325,7 +322,7 @@ def format_common_errors_section(rows: list[ValidationRow]) -> list[str]:
         if failure_class == "unknown_feature":
             lines.extend(
                 [
-                    f"### {failure_class}",
+                    f"### {failure_class} (error_token)",
                     "",
                     "| count | error_token | suggested |",
                     "|------:|-------------|-----------|",
@@ -336,13 +333,14 @@ def format_common_errors_section(rows: list[ValidationRow]) -> list[str]:
             )
             if top_errors_with_suggested:
                 for token, count, suggested in top_errors_with_suggested:
-                    lines.append(f"| {count} | `{token}` | {suggested} |")
+                    suggested_cell = f"`{suggested}`" if suggested else "—"
+                    lines.append(f"| {count} | `{token}` | {suggested_cell} |")
             else:
                 lines.append("| — | _(none)_ | — |")
         else:
             lines.extend(
                 [
-                    f"### {failure_class}",
+                    f"### {failure_class} (error_token)",
                     "",
                     "| count | error_token |",
                     "|------:|-------------|",
@@ -360,7 +358,7 @@ def format_common_errors_section(rows: list[ValidationRow]) -> list[str]:
             )
             lines.extend(
                 [
-                    f"### {failure_class}",
+                    f"### {failure_class} (description)",
                     "",
                     "| count | description |",
                     "|------:|-------------|",
@@ -379,7 +377,7 @@ def parse_unknown_token_error(error: str) -> tuple[str, str, str]:
     """Extract unknown token and ASCA suggestion from a validation error string."""
     unknown_token_match = _UNKNOWN_TOKEN_RE.search(error)
     suggest_match = _DID_YOU_MEAN_RE.search(error)
-    expected_match = _EXPEXTED_RE.search(error)
+    expected_match = _EXPECTED_RE.search(error)
     received_match = _RECEIVED_RE.search(error)
     unknown_token = unknown_token_match.group(1) if unknown_token_match else ""
     suggested = suggest_match.group(1).strip() if suggest_match else ""
@@ -1262,7 +1260,10 @@ def summarize_inventory(
         f"- Source YAML: `{source_yaml}`",
         f"- Probe words: `{probe_words}`",
         f"- Checker: `validate_asca` / asca **{asca_version}**",
-        f"- Rows: **{total}** (one per index rule)",
+        (
+            f"- Rows: **{total}** (one per inventory row; optional-output "
+            "alternatives emit extra rows with distinct `alt_idx`)"
+        ),
         "",
         "## Rules",
         f"- OK: **{ok_n}** ({ok_pct:.1f}%)",

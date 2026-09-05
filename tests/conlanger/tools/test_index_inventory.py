@@ -23,11 +23,13 @@ from conlanger.tools.index_inventory import (
     filter_inventory_by_ok,
     load_inventory_csv,
     ok_flip_changelog_rows,
+    parse_error_description,
     parse_unknown_token_error,
     reason_for_failure,
     section_all_ok_stats,
     section_outcome_stats,
     summarize_inventory,
+    top_error_descriptions_from_dataframe,
     top_error_tokens,
     top_error_tokens_with_suggested_from_dataframe,
     validate_index_rule,
@@ -553,6 +555,116 @@ def test_top_error_tokens_with_suggested_from_dataframe():
     ]
 
 
+def test_top_error_tokens_with_suggested_uses_modal_suggestion():
+    df = validation_rows_to_dataframe(
+        [
+            ValidationRow(
+                "1",
+                "A",
+                0,
+                "s:1",
+                False,
+                "unknown_feature",
+                "asca-unrepresentable",
+                "voiced",
+                "voice",
+                "err",
+            ),
+            ValidationRow(
+                "1",
+                "A",
+                1,
+                "s:2",
+                False,
+                "unknown_feature",
+                "asca-unrepresentable",
+                "voiced",
+                "voice",
+                "err",
+            ),
+            ValidationRow(
+                "1",
+                "A",
+                2,
+                "s:3",
+                False,
+                "unknown_feature",
+                "asca-unrepresentable",
+                "voiced",
+                "voicedness",
+                "err",
+            ),
+        ]
+    )
+    assert top_error_tokens_with_suggested_from_dataframe(df, "unknown_feature") == [
+        ("voiced", 3, "voice"),
+    ]
+
+
+def test_top_error_descriptions_from_dataframe():
+    df = validation_rows_to_dataframe(
+        [
+            ValidationRow(
+                "1",
+                "A",
+                "r0",
+                "s:1",
+                False,
+                "syntax_other",
+                "broken-syntax",
+                "",
+                "",
+                "",
+                "Syntax Error: Floating diacritic | a > b",
+            ),
+            ValidationRow(
+                "1",
+                "A",
+                "r1",
+                "s:2",
+                False,
+                "syntax_other",
+                "broken-syntax",
+                "",
+                "",
+                "",
+                "Runtime Error: Floating diacritic | c > d",
+            ),
+            ValidationRow(
+                "1",
+                "A",
+                "r2",
+                "s:3",
+                False,
+                "syntax_other",
+                "broken-syntax",
+                "",
+                "",
+                "",
+                "Syntax Error: Floating diacritic | e > f",
+            ),
+        ]
+    )
+    assert top_error_descriptions_from_dataframe(df, "syntax_other") == [
+        ("Floating diacritic", 3),
+    ]
+
+
+@pytest.mark.parametrize(
+    ("error", "failure_class", "expected"),
+    [
+        (
+            "thread 'main' panicked at src/foo.rs",
+            "panic_other",
+            "thread panicked at src/foo.rs",
+        ),
+        ("Syntax Error: bad token", "syntax_other", "Syntax Error: bad token"),
+    ],
+)
+def test_parse_error_description(error, failure_class, expected):
+    assert parse_error_description(error, failure_class) == expected
+
+
 def test_top_error_tokens_unlimited():
     rows = [
         ValidationRow(
@@ -672,11 +784,11 @@ def test_summarize_inventory_common_errors():
         probe_words="probe.wsca",
     )
     assert "## Common Errors" in text
-    assert "### unknown_character" in text
+    assert "### unknown_character (error_token)" in text
     assert "| 1 | `→` |" in text
-    assert "### unknown_feature" in text
+    assert "### unknown_feature (error_token)" in text
     assert "| 1 | `voiced` | `voice` |" in text
-    assert "### unknown_grouping" in text
+    assert "### unknown_grouping (error_token)" in text
     assert "| — | _(none)_ |" in text
     assert text.index("## Failure classes") < text.index("## Common Errors")
     assert text.index("## Common Errors") < text.index("## Notes")
@@ -756,7 +868,7 @@ def test_summarize_inventory_empty():
     assert "Some OK: **0 / 0** (0.0%)" in text
     assert "None OK: **0 / 0** (0.0%)" in text
     assert "Sections skipped: **0 / 0** (0.0%)" in text
-    assert "### unknown_character" in text
+    assert "### unknown_character (error_token)" in text
     assert "| — | _(none)_ |" in text
 
 

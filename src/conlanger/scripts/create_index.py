@@ -51,6 +51,7 @@ def main() -> int:
     parser = IndexDiachronicaParser(parser_config)
     doc = parser.parse(args.html)
     write_cleaned_index(doc, args.yaml_out)
+    args.parse_dir.mkdir(parents=True, exist_ok=True)
     comment_summary_path = args.parse_dir / DEFAULT_COMMENT_SUMMARY.name
     n_with_comment = write_rule_comment_phrase_summary(doc, comment_summary_path)
 
