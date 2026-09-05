@@ -1549,14 +1549,15 @@ sections:
     raw: 'h → ħ / #_Vs'
     source: index_diachronica_original.html:1247
     rule_id: Proto-Boreafrasian-h
-  - stages:
+  - comment: “when another sibilant is in the word nearby” and (word-finally?) when
+      “noun-stem final”; sporadic
+    stages:
     - z
     - d
-    env: and (word-finally?) when
-    comment: “when another sibilant is in the word nearby”; “noun-stem final”
-    raw: z → d / “when another sibilant is in the word nearby” and (word-finally?)
+    raw: z → d / sporadic ; “when another sibilant is in the word nearby” and (word-finally?)
       when “noun-stem final”
     source: index_diachronica_original.html:1248
+    sporadic: true
     rule_id: Proto-Boreafrasian-z
   - stages:
     - '{ɲ,ŋw}'
@@ -1579,7 +1580,6 @@ sections:
     raw: 'ŋ → ∅ / #_CV'
     source: index_diachronica_original.html:1251
     rule_id: Proto-Boreafrasian-ŋ
-  status: skipped
 - section: Proto-Boreafrasian to Egypto-Berber
   index: 6.2.2.1.2
   citation: 'Mecislau, from Ehret, Christopher (1995), Reconstructing Proto-Afroasiatic
@@ -2074,13 +2074,17 @@ sections:
     raw: '{l,n}j → jː'
     source: index_diachronica_original.html:1341
     rule_id: Cypriot-Arabic-l,nj
-  - stages:
-    - j
-    - c
-    env: '{O,r}'
+  - stages: []
     raw: j → c / {O,r}
     source: index_diachronica_original.html:1342
+    status: skipped
     rule_id: Cypriot-Arabic-j
+    comment: 'I can''t find the rule in the source, which also uses /y/ where the
+      index uses /j/.
+
+      The source explicitly refers to /y/ as a palatal glide.
+
+      '
   - stages:
     - j
     - ∅
@@ -2279,7 +2283,6 @@ sections:
     raw: aː → a / {Cˤ,w}_#
     source: index_diachronica_original.html:1372
     rule_id: Cypriot-Arabic-aː_2
-  status: skipped
 - section: Classical Arabic to Egyptian Arabic
   index: 6.2.2.1.7
   citation: 'Pogostick Man, from Brustad, Kristen, Mahmoud Al-Batal, and Abbas Al-Tonsi
@@ -2447,7 +2450,6 @@ sections:
     raw: h → ∅ / in coda
     source: index_diachronica_original.html:1401
     rule_id: Egyptian-Arabic-h
-  status: skipped
 - section: Classical Arabic to Coastal Hadhrami Arabic
   index: 6.2.2.1.8
   citation: Pogostick Man, from Wikipedia Contributors (2013), “Hadhrami Arabic”.
@@ -2851,7 +2853,6 @@ sections:
     raw: z → ʒ / if ʒ is somewhere in the stem after it
     source: index_diachronica_original.html:1484
     rule_id: Moroccan-Arabic-z
-  status: skipped
 - section: Classical Arabic to Sa‘idi Arabic
   index: 6.2.2.1.15
   citation: Pogostick Man, from http://en.wikipedia.org/wiki/Sa%27idi_Arabic
@@ -7885,7 +7886,6 @@ sections:
     raw: a ɔ → ɨə uə
     source: index_diachronica_original.html:2425
     rule_id: Middle-Vietnamese-a-ɔ
-  status: skipped
 - section: Middle Vietnamese to Hanoi Vietnamese
   index: 9.1.2.1
   citation: Pogostick Man, from Thompson, Laurence C. (1976), “Proto-Viet-Muong Phonology”.
@@ -20255,7 +20255,6 @@ sections:
     raw: c ɟ → tʃ dʒ (for most speakers)
     source: index_diachronica_original.html:4992
     rule_id: Gheg-Albanian-c-ɟ
-  status: skipped
 - section: Proto-Indo-European to Tosk Albanian
   index: 17.1.2
   citation: Pogostick Man, from Wikipedia contributors (2013), “Albanian language”.
@@ -20498,7 +20497,6 @@ sections:
     raw: c ɟ → tʃ dʒ (much less widespread than in Gheg)
     source: index_diachronica_original.html:5030
     rule_id: Tosk-Albanian-c-ɟ
-  status: skipped
 - section: Proto-Indo-European to Common Anatolian
   index: '17.2'
   citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
@@ -21056,7 +21054,6 @@ sections:
     raw: a → e / _U[+e,i]
     source: index_diachronica_original.html:5123
     rule_id: Lycian-a
-  status: skipped
 - section: Common Anatolian to Lydian
   index: 17.2.4
   citation: Alces, from http://www.unc.edu/~melchert/anathistphon.pdf (link is dead)
@@ -21570,7 +21567,6 @@ sections:
     source: index_diachronica_original.html:5212
     sporadic: true
     rule_id: Artsakh-Armenian-V
-  status: skipped
 - section: Proto-Indo-European to Erevan Armenian
   index: 17.3.2
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -21804,7 +21800,6 @@ sections:
     source: index_diachronica_original.html:5249
     sporadic: true
     rule_id: Erevan-Armenian-V
-  status: skipped
 - section: Proto-Indo-European to Istanbul Armenian
   index: 17.3.3
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -22037,7 +22032,6 @@ sections:
     source: index_diachronica_original.html:5286
     sporadic: true
     rule_id: Istanbul-Armenian-V
-  status: skipped
 - section: Proto-Indo-European to Kharpert Armenian
   index: 17.3.4
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -22271,7 +22265,6 @@ sections:
     source: index_diachronica_original.html:5323
     sporadic: true
     rule_id: Kharpert-Armenian-V
-  status: skipped
 - section: Proto-Indo-European to Sebastia Armenian
   index: 17.3.5
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -22499,7 +22492,6 @@ sections:
     source: index_diachronica_original.html:5359
     sporadic: true
     rule_id: Sebastia-Armenian-V
-  status: skipped
 - section: Proto-Indo-European to Southeast Armenian
   index: 17.3.6
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -22747,7 +22739,6 @@ sections:
     source: index_diachronica_original.html:5398
     sporadic: true
     rule_id: Southeast-Armenian-V
-  status: skipped
 - section: Proto-Indo-European to Southwest Armenian
   index: 17.3.7
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -22988,7 +22979,6 @@ sections:
     source: index_diachronica_original.html:5436
     sporadic: true
     rule_id: Southwest-Armenian-V
-  status: skipped
 - section: Avestan
   index: '17.4'
 - section: Proto-Indo-European to Avestan
@@ -23103,7 +23093,6 @@ sections:
     raw: hₓ → ∅
     source: index_diachronica_original.html:5460
     rule_id: Avestan_2-hx
-  status: skipped
 - section: Proto-Indo-European to Proto-Celtic
   index: '17.5'
   citation: dhokarena56, from Matasović (2009), Etymological Dictionary of Proto-Celtic
@@ -24100,7 +24089,6 @@ sections:
     source: index_diachronica_original.html:5626
     rule_id: Dacian-kʷ,kw-ɡʷ,ɡw_2
     exception: _E
-  status: skipped
 - section: Proto-Indo-European to Common Germanic
   index: '17.7'
   citation: Siride
@@ -31229,7 +31217,6 @@ sections:
     raw: — e(ː) → a(ː) / “when unstressed?”
     source: index_diachronica_original.html:6815
     rule_id: Hittite_2-—-eː_2
-  status: skipped
 - section: Proto-Indo-European to Proto-Indo-Iranian
   index: '17.10'
   citation: Tropylium, from Kobayashi, Masato (2004), Historical Phonology of Old
@@ -33976,12 +33963,12 @@ sections:
     raw: dʱ → d
     source: index_diachronica_original.html:7269
     rule_id: Latin-dʱ_5
-  - stages: []
+  - stages:
+    - kʲ ɡ́
+    - k ɡ
     raw: ḱ ɡ́ → k ɡ
     source: index_diachronica_original.html:7270
-    status: skipped
     rule_id: Latin-ḱ-ɡ́
-    comment: Not really sure what to do with ɡ́
   - stages:
     - ɡʱ
     - ɡ
@@ -40340,7 +40327,6 @@ sections:
     raw: eu → ou
     source: index_diachronica_original.html:8232
     rule_id: Proto-Sibellian-eu
-  status: skipped
 - section: Proto-Sibellian to Oscan
   index: 17.12.2.1
   citation: Pogostick Man, from http://gillesquentel.org/docs/PIE_to_Italic_C.pdf

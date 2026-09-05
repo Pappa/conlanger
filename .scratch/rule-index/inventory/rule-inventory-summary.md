@@ -3,43 +3,43 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
-- Rows: **9827** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
+- Rows: **9839** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8438** (85.9%)
-- Fail: **617** (6.3%)
-- Skipped: **772** (7.9%)
+- OK: **8825** (89.7%)
+- Fail: **706** (7.2%)
+- Skipped: **308** (3.1%)
 
 ## Sections
 
 - All OK: **441 / 714** (61.8%)
-- Some OK: **235 / 714** (32.9%)
+- Some OK: **254 / 714** (35.6%)
 - None OK: **3 / 714** (0.4%)
-- Sections skipped: **35 / 714** (4.9%)
+- Sections skipped: **16 / 714** (2.2%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 142 | `expected_underscore` |
-| 113 | `unknown_character` |
+| 155 | `expected_underscore` |
+| 149 | `unknown_character` |
+| 52 | `missing_slash_output_env` |
 | 47 | `invalid_ipa` |
-| 45 | `missing_slash_output_env` |
+| 41 | `prose_or_expected_arrow` |
+| 38 | `syntax_other` |
+| 37 | `expected_ipa` |
 | 35 | `expected_number` |
-| 33 | `expected_ipa` |
-| 32 | `prose_or_expected_arrow` |
-| 28 | `syntax_other` |
+| 23 | `nested_brackets` |
 | 23 | `unknown_feature` |
-| 21 | `nested_brackets` |
+| 16 | `unknown_grouping` |
 | 14 | `stuff_after_word_bound` |
 | 14 | `floating_diacritic` |
+| 13 | `incomplete_matrix` |
 | 11 | `empty_io_panic` |
-| 11 | `unknown_grouping` |
-| 11 | `incomplete_matrix` |
 | 9 | `diacritic_prereq` |
 | 8 | `segments_before_word` |
 | 7 | `multiple_underlines_env` |
-| 3 | `panic_other` |
+| 4 | `panic_other` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
 | 2 | `format_error` |
@@ -52,6 +52,7 @@
 
 | count | error_token |
 |------:|-------------|
+| 2 | `,` |
 | 1 | `{` |
 | 1 | `α` |
 | 1 | `End Of Line` |
@@ -63,16 +64,16 @@
 
 | count | description |
 |------:|-------------|
-| 3 | `Output cannot be empty. Use `*` or '∅' to indicate deletion` |
-| 3 | `Feature 'alveolar' has no modifier` |
+| 10 | `Output cannot be empty. Use `*` or '∅' to indicate deletion` |
 | 3 | `Negation cannot be used in the output` |
+| 3 | `Feature 'alveolar' has no modifier` |
+| 2 | `Only a segment, matrix, group, or reference can be negated` |
 | 2 | `Options can only be used in Environments or Structures` |
 | 2 | `Tones cannot be ±; they can only be used with numeric values.` |
-| 2 | `Only a segment, matrix, group, or reference can be negated` |
+| 1 | `/ cannot be placed inside a matrix. An element inside `[]` must a distinctive feature` |
 | 1 | `Feature 'er' has no modifier` |
 | 1 | `Feature 'lost' has no modifier` |
 | 1 | `Feature 'b' has no modifier` |
-| 1 | `Feature 's' has no modifier` |
 
 ### runtime_other (error_token)
 
@@ -89,16 +90,16 @@
 
 | count | error_token |
 |------:|-------------|
+| 35 | `́` |
 | 22 | `̣` |
 | 13 | `₂` |
 | 8 | `̊` |
 | 7 | `ː` |
-| 6 | `̺` |
+| 6 | `͜` |
 | 6 | `ŕ` |
+| 6 | `̺` |
 | 5 | `ₙ` |
-| 5 | `͜` |
 | 4 | `̻` |
-| 4 | `̂` |
 ### unknown_character (description)
 
 | count | description |
@@ -109,7 +110,8 @@
 
 | count | error_token |
 |------:|-------------|
-| 6 | `M` |
+| 7 | `M` |
+| 4 | `B` |
 | 3 | `Y` |
 | 1 | `I` |
 | 1 | `X` |
@@ -134,17 +136,18 @@
 
 | count | error_token |
 |------:|-------------|
-| 18 | `,` |
-| 8 | `//` |
+| 21 | `,` |
+| 9 | `//` |
 | 7 | `/` |
 | 3 | `:` |
 | 2 | `*` |
+| 1 | `ˤ` |
 | 1 | `)` |
 ### expected_underscore (description)
 
 | count | description |
 |------:|-------------|
-| 103 | `Expected '_', but received ''` |
+| 111 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -155,7 +158,7 @@
 
 | count | description |
 |------:|-------------|
-| 21 | `Cannot have nested brackets of the same type` |
+| 23 | `Cannot have nested brackets of the same type` |
 
 ### unknown_feature (error_token)
 
@@ -202,14 +205,15 @@
 | count | description |
 |------:|-------------|
 | 21 | `Expected '>', '->' or '=>', but received 'ˀ'` |
-| 2 | `Expected '>', '->' or '=>', but received '*'` |
-| 2 | `Expected '>', '->' or '=>', but received ')'` |
+| 7 | `Expected '>', '->' or '=>', but received '̩'` |
+| 3 | `Expected '>', '->' or '=>', but received '*'` |
 | 2 | `Expected '>', '->' or '=>', but received '̥'` |
+| 2 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
+| 1 | `Expected '>', '->' or '=>', but received 'ˤ'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
 | 1 | `Expected '>', '->' or '=>', but received ':'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
-| 1 | `Expected '>', '->' or '=>', but received '/'` |
 
 ### invalid_ipa (error_token)
 
@@ -229,16 +233,16 @@
 
 | count | error_token |
 |------:|-------------|
-| 6 | `(` |
+| 8 | `(` |
 | 6 | `∅` |
 | 5 | `>` |
+| 3 | `*` |
 | 3 | `ʷ` |
 | 3 | `…` |
 | 2 | `ʲ` |
-| 2 | `*` |
 | 2 | `_` |
+| 1 | `ˤ` |
 | 1 | `//` |
-| 1 | `,` |
 ### expected_ipa (description)
 
 | count | description |
@@ -260,16 +264,16 @@
 
 | count | error_token |
 |------:|-------------|
-| 20 | `)` |
-| 9 | `:` |
+| 21 | `)` |
+| 14 | `:` |
 | 6 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
+| 1 | `ˤ` |
 | 1 | `&` |
 | 1 | `*` |
 | 1 | `#` |
 | 1 | `ˀ` |
-| 1 | `̥` |
 ### missing_slash_output_env (description)
 
 | count | description |
@@ -352,7 +356,7 @@
 
 | count | description |
 |------:|-------------|
-| 11 | `An incomplete matrix cannot be inserted` |
+| 13 | `An incomplete matrix cannot be inserted` |
 
 ### grouped_env_insertion (error_token)
 
@@ -392,11 +396,11 @@
 
 | count | blame |
 |------:|-------|
-| 250 | `env` |
-| 197 | `input` |
-| 127 | `output` |
-| 79 | `exception` |
-| 59 | `multi` |
+| 275 | `env` |
+| 246 | `input` |
+| 138 | `output` |
+| 83 | `exception` |
+| 62 | `multi` |
 
 ## Notes
 

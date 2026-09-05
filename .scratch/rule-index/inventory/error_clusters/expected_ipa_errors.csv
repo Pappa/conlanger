@@ -1,8 +1,12 @@
 section_index,rule_id,error_token,rule
+6.2.2.1.6,Cypriot-Arabic-aː_2,ˤ,"a:[+long] > a / {Cˤ,w}_# | ^ @ Rule 1, Line 1"
+9.1.2,"Middle-Vietnamese-bʱ-tʰ,dʱ-t*ʰ,d*ʱ-kʰ,ɡʱ",*,"bʱ {tʰ,dʱ} {t*ʰ,d*ʱ} {kʰ,ɡʱ} > pʰ t tʰ kʰ | ^ @ Rule 1, Line 1"
 10.1.1,Proto-Bali-Sasak-Sumbawan-HəS,(,"[-place]əP > {hə(N)P,ə(N)P} / #_ | ^ @ Rule 1, Line 1"
 10.5,"Proto-Ongan-c,*C,s,*S",*,"{c,*C,s,*P} > c | ^ @ Rule 1, Line 1"
 10.8,"Proto-Tsouic-*C,d-j-*R",*,"{*C,d} j [+son,-syll] > c z r | ^ @ Rule 1, Line 1"
 11.5.1,Agul-tɬ-tɬː-tɬʼ-tɬːʼ-dɮ,",","tɬ tɬ:[+long] tɬ:[+cg] tɬ:[+long,+cg] dɮ > xʲ x k:[+cg] k:[+long] {,j,xʲ} | ^ @ Rule 1, Line 1"
+17.4.1,Avestan_2-kʷ-ɡʷʱ,(,"{k,kʷ} {ɡ(ʱ),ɡʷ(ʱ)} > tʃ dʒ / _V:[+front] | ^ @ Rule 1, Line 1"
+17.4.1,Avestan_2-k-kʷ-ɡʷʱ,(,"k kʷ {ɡ(ʱ),ɡʷ(ʱ)} > x k ɡ // _V:[+front] | ^ @ Rule 1, Line 1"
 17.5.1,Old-Irish-—-o,(,"o > a / _{(C,0),u}# | ^ @ Rule 1, Line 1"
 17.7.2.1.6,Australian-English-æ_2,//,"æ > æ:[+long] / _{n,m,ɡ,ɫ$ // _n,m,ɡ,ɫ}${j,w} or a form of a strong verb | ^^ @ Rule 1, Line 1"
 17.7.3.1.1,"Early-Icelandic-n̥n,nn̥",>,"{n̥n,nn̥ > tn̥ / V_ | ^ @ Rule 1, Line 1"

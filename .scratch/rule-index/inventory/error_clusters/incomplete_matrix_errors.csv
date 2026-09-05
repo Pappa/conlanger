@@ -1,4 +1,6 @@
 section_index,rule_id,error_token,rule
+6.2.2.1.6,Cypriot-Arabic-∅,,"∅ > F / N_{O,r} // m_f | ^ @ Rule 1, Line 1"
+17.2.3,Lycian-D_2,,"P:[+voice] > F[+voice] | ^^^^^^^^ @ Rule 1, Line 1"
 17.10.1.1,Central-Middle-Indo-Aryan-C,,"C > C[+voice] / V_V | ^^^^^^^^ @ Rule 1, Line 1"
 17.10.1.2,Eastern-Middle-Indo-Aryan-C,,"C > C[+voice] / V_V | ^^^^^^^^ @ Rule 1, Line 1"
 17.10.1.3,Northwestern-Middle-Indo-Aryan-C,,"C > C[+voice] / V_V | ^^^^^^^^ @ Rule 1, Line 1"

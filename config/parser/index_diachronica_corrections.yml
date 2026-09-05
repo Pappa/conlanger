@@ -239,3 +239,7 @@ rules:
                   id: Spanish-—-e
                   content: "e → i / _Cj ! _p ; C = p"
                   reason: "Variable value for C"
+        - rule:
+                  id: Proto-Boreafrasian-z
+                  content: "z → d / sporadic ; “when another sibilant is in the word nearby” and (word-finally?) when “noun-stem final”"
+                  reason: "Too complex to parse"

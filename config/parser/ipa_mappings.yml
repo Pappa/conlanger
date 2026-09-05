@@ -176,22 +176,22 @@
   ipa_target: ỹ
   confidence: medium
   notes: y-tilde; French ỹ>œ̃; ASCA accepts ỹ (n=1)
-ð:
-  ipa_target: ð
-  confidence: defer
-  notes: ASCA accepts as segment; 1 inventory hits are prose/env not mapping (n=1)
-ŋ:
-  ipa_target: ŋ
-  confidence: defer
-  notes: ASCA accepts as segment; 1 inventory hits are prose/env not mapping (n=1)
-ɛ:
-  ipa_target: ɛ
-  confidence: defer
-  notes: ASCA accepts as segment; 1 inventory hits are prose/env not mapping (n=1)
-ʝ:
-  ipa_target: ʝ
-  confidence: defer
-  notes: ASCA accepts as segment; 1 inventory hits are prose/env not mapping (n=1)
+# ð:
+#   ipa_target: ð
+#   confidence: defer
+#   notes: ASCA accepts as segment; 1 inventory hits are prose/env not mapping (n=1)
+# ŋ:
+#   ipa_target: ŋ
+#   confidence: defer
+#   notes: ASCA accepts as segment; 1 inventory hits are prose/env not mapping (n=1)
+# ɛ:
+#   ipa_target: ɛ
+#   confidence: defer
+#   notes: ASCA accepts as segment; 1 inventory hits are prose/env not mapping (n=1)
+# ʝ:
+#   ipa_target: ʝ
+#   confidence: defer
+#   notes: ASCA accepts as segment; 1 inventory hits are prose/env not mapping (n=1)
 ɡ̌:
   ipa_target: ɢ
   confidence: medium
