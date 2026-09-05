@@ -161,7 +161,6 @@ def test_validate_rules_writes_validation_inventory(
             "s:2",
             False,
             "syntax_other",
-            "broken-syntax",
             "",
             "",
             "err",

@@ -87,7 +87,7 @@ def main() -> int:
     rows = list(csv.DictReader(INVENTORY_PATH.open(encoding="utf-8")))
     section_rules: dict[str, list[dict[str, str]]] = defaultdict(list)
     for row in rows:
-        if row.get("reason") == "skipped":
+        if row.get("failure_class") == "section_skipped":
             continue
         section_rules[row["section_index"]].append(row)
 

@@ -26,7 +26,6 @@ def _error_row(
         "source": "file:1",
         "ok": "False",
         "failure_class": failure_class,
-        "reason": "asca-unrepresentable",
         "error_token": error_token,
         "suggested": "",
         "description": description,

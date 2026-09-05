@@ -79,7 +79,7 @@ flowchart TD
 | 3 | Build mini-section (one rule) | `_mini_section()` |
 | 4 | Compile | `DiachronicSeries(mini, compiler_config=…)` |
 | 5 | Validate | `validate_asca(..., probe_words=tests/fixtures/asca_probe_words.wsca)` |
-| 6 | Classify failure | `classify_error()`, `reason_for_failure()`, `parse_unknown_token_error()` |
+| 6 | Classify failure | `classify_error()`, `parse_unknown_token_error()` |
 | 7 | Emit artifacts | See [Validation report](#validation-report) below |
 
 **Scope:** One row per **index rule** (not whole-section-only). Config hold-outs (`status: skipped` from `skip_rules` / `skip_sections`, rendered as ASCA comments) validate as ok with description `held-out (commented rule)`. Missing-`→` and other unlisted parse failures inventory as `ok=False` through compile validation.
@@ -126,7 +126,7 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](./ad
 
 **CSV columns** (`VALIDATION_CSV_COLUMNS` in `index_inventory.py`):
 
-`section_index`, `section_name`, `rule_id`, `alt_idx`, `source`, `ok`, `failure_class`, `reason`, `error_token`, `suggested`, `expected`, `description`
+`section_index`, `section_name`, `rule_id`, `alt_idx`, `source`, `ok`, `failure_class`, `error_token`, `suggested`, `expected`, `description`
 
 `alt_idx` is the 0-based optional-output alternative index (e.g. `d → {∅,ð}` emits one row per alternative and never the parent's random pick); it is empty for rules without alternatives.
 
@@ -140,9 +140,7 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](./ad
 
 Inventory row count can exceed index rule count when optional-output alternatives emit multiple validated rows (`alt_idx`).
 
-**Reason vocabulary** (filterable skip decisions): `trailing-comment`, `broken-syntax`, `asca-unrepresentable`, `valid-but-inaccurate`, `other`
-
-**Failure classes** (regex-matched from ASCA stderr): include `syntax_other`, `unknown_character`, `unknown_feature`, `unknown_grouping`, `expected_underscore`, `nested_brackets`, `prose_or_expected_arrow`, `runtime_*`, `panic_other`, etc. — full list in `ERROR_CLASS_PATTERNS` (`index_inventory.py`).
+**Failure classes** (regex-matched from ASCA stderr): include `syntax_other`, `runtime_other`, `unknown_character`, `unknown_reference`, `expected_ipa`, `expected_range_dots`, `invalid_ipa`, and others — full ordered list in `ERROR_CLASS_PATTERNS` (`index_inventory.py`). Dedicated cluster CSVs exist for each class in `CLUSTER_CSV_BY_FAILURE_CLASS`.
 
 **Changelog behaviour:** First run (no prior success/error split CSVs) emits no flip rows; subsequent runs append only when `ok` changes for the same `source`, with shared UTC `timestamp` per run. The prior inventory is reconstructed by concatenating the success and error split CSVs from the last regen.
 
@@ -243,7 +241,7 @@ Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` e
 
 **Policy highlights:**
 
-- Prefer **historical fidelity** over valid-but-inaccurate rewrites → `status: skipped`, CSV reason `valid-but-inaccurate`.
+- Prefer **historical fidelity** over valid-but-inaccurate rewrites → `status: skipped` on the index rule.
 - Structural normalisation → `status: needs-validation`; agent clears on clean re-validate.
 - During bulk correction, do **not** pre-emptively skip unmapped tokens ([ticket 26](../.scratch/cleaned-rule-index/issues/26-parse-time-correspondence-series-indices.md)).
 - Permanent skip / rare same-intent swaps → **project owner only**.

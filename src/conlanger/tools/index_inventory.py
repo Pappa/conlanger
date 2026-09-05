@@ -34,11 +34,42 @@ ERROR_CLASS_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     ("nested_brackets", re.compile(r"nested brackets", re.IGNORECASE)),
     ("unknown_feature", re.compile(r"Unknown feature", re.IGNORECASE)),
     ("unknown_grouping", re.compile(r"Unknown grouping", re.IGNORECASE)),
+    ("unknown_reference", re.compile(r"Unknown reference", re.IGNORECASE)),
+    ("invalid_ipa", re.compile(r"Could not get value of IPA", re.IGNORECASE)),
+    ("unknown_character", re.compile(r"Unknown character", re.IGNORECASE)),
     (
         "prose_or_expected_arrow",
-        re.compile(r"Expected '>|Expected '->'|Expected '=>'", re.IGNORECASE),
+        re.compile(
+            r"Expected '>'|Expected '->'|Expected '=>'",
+            re.IGNORECASE,
+        ),
     ),
     ("expected_underscore", re.compile(r"Expected '_'", re.IGNORECASE)),
+    ("expected_number", re.compile(r"Expected number", re.IGNORECASE)),
+    (
+        "expected_ipa",
+        re.compile(
+            r"Expected an IPA character|Primative or Matrix, but received",
+            re.IGNORECASE,
+        ),
+    ),
+    ("expected_range_dots", re.compile(r"Expected '\.\.'", re.IGNORECASE)),
+    (
+        "missing_slash_output_env",
+        re.compile(r"forget a '/' between the output and environment", re.IGNORECASE),
+    ),
+    (
+        "floating_diacritic",
+        re.compile(r"Floating diacritic", re.IGNORECASE),
+    ),
+    (
+        "multiple_underlines_env",
+        re.compile(r"Cannot have multiple underlines in an environment", re.IGNORECASE),
+    ),
+    (
+        "segments_before_word",
+        re.compile(r"before the beginning of a word", re.IGNORECASE),
+    ),
     ("stuff_after_word_bound", re.compile(r"after the end of a word", re.IGNORECASE)),
     (
         "diacritic_prereq",
@@ -47,31 +78,79 @@ ERROR_CLASS_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     (
         "empty_io_panic",
         re.compile(
-            r"Output is not empty|Input is empty|Output is empty", re.IGNORECASE
+            r"Output is not empty|Input is empty|Output is empty|"
+            r"deletion rule must only contain|insertion rule must only contain",
+            re.IGNORECASE,
         ),
     ),
     (
         "runtime_delete_only_segment",
         re.compile(r"Can't delete a word's only segment", re.IGNORECASE),
     ),
-    ("expected_number", re.compile(r"Expected number", re.IGNORECASE)),
-    ("unknown_character", re.compile(r"Unknown character", re.IGNORECASE)),
+    (
+        "incomplete_matrix",
+        re.compile(r"An incomplete matrix cannot be inserted", re.IGNORECASE),
+    ),
+    (
+        "grouped_env_insertion",
+        re.compile(
+            r"Grouped Environments cannot \(yet\) be used in insertion rules",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "uneven_parallel_sets",
+        re.compile(
+            r"Two matched sets must have the same number of elements",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "word_boundary_in_io",
+        re.compile(
+            r"Word Boundaries cannot be in the input or output",
+            re.IGNORECASE,
+        ),
+    ),
     ("malformed_comment", re.compile(r"Malformed Comment", re.IGNORECASE)),
     ("missing_arrow", re.compile(r"missing separator", re.IGNORECASE)),
     ("format_error", re.compile(r"format_error", re.IGNORECASE)),
-    ("invalid_ipa", re.compile(r"Could not get value of IPA", re.IGNORECASE)),
 ]
 
 _UNKNOWN_TOKEN_RE = re.compile(
     r"Unknown (?:feature|grouping|character|reference) '([^']+)'",
     re.IGNORECASE,
 )
-_EXPECTED_RE = re.compile(
-    r"Expected(?: an)? ((?:')(.)(?:')|(.+)),(?: but)? received",
+_EXPECTED_IPA_RECEIVED_RE = re.compile(
+    r"Expected an IPA character.*?but received (?:\.)?'([^']*)'",
     re.IGNORECASE,
 )
-_RECEIVED_RE = re.compile(
-    r"Expected (?:.+),(?: but)? received (?:\.)?(('')|(?:')(.)(?:')|(.))(?: \||\.)",
+_EXPECTED_NUMBER_RECEIVED_RE = re.compile(
+    r"Expected number, but received (\S)",
+    re.IGNORECASE,
+)
+_EXPECTED_END_OF_LINE_RECEIVED_RE = re.compile(
+    r"Expected end of line, received '([^']*)'",
+    re.IGNORECASE,
+)
+_EXPECTED_RANGE_DOTS_RECEIVED_RE = re.compile(
+    r"Expected '\.\.', but received \.'([^']*)'",
+    re.IGNORECASE,
+)
+_EXPECTED_QUOTED_RECEIVED_RE = re.compile(
+    r"Expected '([^']*)', but received '([^']*)'",
+    re.IGNORECASE,
+)
+_EXPECTED_QUOTED_UNQUOTED_RECEIVED_RE = re.compile(
+    r"Expected '([^']*)', but received (\S)",
+    re.IGNORECASE,
+)
+_EXPECTED_UNQUOTED_RECEIVED_RE = re.compile(
+    r"Expected ([^,]+), but received (?:\.)?'([^']*)'",
+    re.IGNORECASE,
+)
+_EXPECTED_UNQUOTED_UNQUOTED_RECEIVED_RE = re.compile(
+    r"Expected ([^,]+), but received (\S)",
     re.IGNORECASE,
 )
 _DID_YOU_MEAN_RE = re.compile(r"Did you mean ([^?]+)\?", re.IGNORECASE)
@@ -84,7 +163,6 @@ VALIDATION_CSV_COLUMNS = [
     "source",
     "ok",
     "failure_class",
-    "reason",
     "error_token",
     "suggested",
     "expected",
@@ -374,23 +452,47 @@ def format_common_errors_section(rows: list[ValidationRow]) -> list[str]:
 
 
 def parse_unknown_token_error(error: str) -> tuple[str, str, str]:
-    """Extract unknown token and ASCA suggestion from a validation error string."""
-    unknown_token_match = _UNKNOWN_TOKEN_RE.search(error)
+    """Extract received token, ASCA suggestion, and expected token from an error."""
     suggest_match = _DID_YOU_MEAN_RE.search(error)
-    expected_match = _EXPECTED_RE.search(error)
-    received_match = _RECEIVED_RE.search(error)
-    unknown_token = unknown_token_match.group(1) if unknown_token_match else ""
     suggested = suggest_match.group(1).strip() if suggest_match else ""
-    expected = (
-        expected_match.group(2) or expected_match.group(3) if expected_match else ""
-    )
-    received = (
-        received_match.group(3) or received_match.group(2) if received_match else ""
-    )
 
-    error_token = unknown_token or received
+    unknown_token_match = _UNKNOWN_TOKEN_RE.search(error)
+    if unknown_token_match:
+        return unknown_token_match.group(1), suggested, ""
 
-    return error_token, suggested, expected
+    match = _EXPECTED_IPA_RECEIVED_RE.search(error)
+    if match:
+        return match.group(1), suggested, "IPA character"
+
+    match = _EXPECTED_NUMBER_RECEIVED_RE.search(error)
+    if match:
+        return match.group(1), suggested, "number"
+
+    match = _EXPECTED_END_OF_LINE_RECEIVED_RE.search(error)
+    if match:
+        return match.group(1), suggested, "end of line"
+
+    match = _EXPECTED_RANGE_DOTS_RECEIVED_RE.search(error)
+    if match:
+        return match.group(1), suggested, ".."
+
+    match = _EXPECTED_QUOTED_RECEIVED_RE.search(error)
+    if match:
+        return match.group(2), suggested, match.group(1)
+
+    match = _EXPECTED_QUOTED_UNQUOTED_RECEIVED_RE.search(error)
+    if match:
+        return match.group(2), suggested, match.group(1)
+
+    match = _EXPECTED_UNQUOTED_RECEIVED_RE.search(error)
+    if match:
+        return match.group(2), suggested, match.group(1).strip()
+
+    match = _EXPECTED_UNQUOTED_UNQUOTED_RECEIVED_RE.search(error)
+    if match:
+        return match.group(2), suggested, match.group(1).strip()
+
+    return "", suggested, ""
 
 
 def parse_error_description(error: str, failure_class: str) -> str:
@@ -419,33 +521,6 @@ def classify_error(error: str) -> str:
     return "other"
 
 
-def reason_for_failure(failure_class: str, error: str) -> str:
-    if failure_class in {"malformed_comment", "trailing-comment"}:
-        return "trailing-comment"
-    if failure_class in {"missing_arrow", "format_error"} or failure_class.startswith(
-        ("syntax_", "runtime_", "panic_", "other")
-    ):
-        return "broken-syntax"
-    if failure_class == "valid-but-inaccurate":
-        return "valid-but-inaccurate"
-    if failure_class in {
-        "prose_or_expected_arrow",
-        "unknown_character",
-        "invalid_ipa",
-        "unknown_feature",
-        "unknown_grouping",
-        "nested_brackets",
-        "expected_underscore",
-        "stuff_after_word_bound",
-        "diacritic_prereq",
-        "empty_io_panic",
-        "runtime_delete_only_segment",
-        "expected_number",
-    }:
-        return "asca-unrepresentable"
-    return "other"
-
-
 @dataclass(frozen=True)
 class ValidationRow:
     section_index: str
@@ -454,7 +529,6 @@ class ValidationRow:
     source: str
     ok: bool
     failure_class: str = ""
-    reason: str = ""
     error_token: str = ""
     suggested: str = ""
     expected: str = ""
@@ -470,7 +544,6 @@ class ValidationRow:
             "source": self.source,
             "ok": self.ok,
             "failure_class": self.failure_class,
-            "reason": self.reason,
             "error_token": self.error_token,
             "suggested": self.suggested,
             "expected": self.expected,
@@ -955,7 +1028,6 @@ def _asca_validation_row(
             source=source,
             ok=False,
             failure_class=failure_class,
-            reason=reason_for_failure(failure_class, err),
             error_token=error_token,
             suggested=suggested,
             expected=expected,
@@ -1026,7 +1098,6 @@ def validate_index_rule_with_targets(
                     source=source,
                     ok=False,
                     failure_class=failure_class,
-                    reason=reason_for_failure(failure_class, err),
                     error_token=error_token,
                     suggested=suggested,
                     expected=expected,

@@ -25,7 +25,6 @@ from conlanger.tools.index_inventory import (
     ok_flip_changelog_rows,
     parse_error_description,
     parse_unknown_token_error,
-    reason_for_failure,
     section_all_ok_stats,
     section_outcome_stats,
     summarize_inventory,
@@ -59,6 +58,20 @@ _SECTION = {"index": "1.0", "section": "Test Section"}
         ("Input is empty", "empty_io_panic"),
         ("Can't delete a word's only segment", "runtime_delete_only_segment"),
         ("Expected number", "expected_number"),
+        ("Unknown reference '3'", "unknown_reference"),
+        (
+            "Expected an IPA character, Primative or Matrix, but received '('",
+            "expected_ipa",
+        ),
+        ("Expected '..', but received .'ʃ'", "expected_range_dots"),
+        ("forget a '/' between the output and environment", "missing_slash_output_env"),
+        ("Floating diacritic", "floating_diacritic"),
+        (
+            "Cannot have multiple underlines in an environment",
+            "multiple_underlines_env",
+        ),
+        ("before the beginning of a word", "segments_before_word"),
+        ("An incomplete matrix cannot be inserted", "incomplete_matrix"),
         ("Unknown character x", "unknown_character"),
         ("Malformed Comment: bad", "malformed_comment"),
         ("missing separator '→'", "missing_arrow"),
@@ -96,6 +109,30 @@ def test_classify_error(error, expected):
             "",
         ),
         (
+            "Syntax Error: Expected '_', but received '' | p > x",
+            "",
+            "",
+            "_",
+        ),
+        (
+            "Syntax Error: Expected number, but received ɡ | CVʕ > ħʔ",
+            "ɡ",
+            "",
+            "number",
+        ),
+        (
+            "Syntax Error: Expected an IPA character, Primative or Matrix, but received '(' | a > b",
+            "(",
+            "",
+            "IPA character",
+        ),
+        (
+            "Syntax Error: Expected '..', but received .'ʃ' | ttʃ > t.ʃ",
+            "ʃ",
+            "",
+            "..",
+        ),
+        (
             "Syntax Error: Expected '_'",
             "",
             "",
@@ -111,29 +148,6 @@ def test_parse_unknown_token_error(error, expected_token, expected_suggested, ex
     )
 
 
-@pytest.mark.parametrize(
-    ("failure_class", "expected_reason"),
-    [
-        ("malformed_comment", "trailing-comment"),
-        ("trailing-comment", "trailing-comment"),
-        ("missing_arrow", "broken-syntax"),
-        ("format_error", "broken-syntax"),
-        ("prose_or_expected_arrow", "asca-unrepresentable"),
-        ("unknown_character", "asca-unrepresentable"),
-        ("valid-but-inaccurate", "valid-but-inaccurate"),
-        ("syntax_other", "broken-syntax"),
-        ("runtime_other", "broken-syntax"),
-        ("panic_other", "broken-syntax"),
-        ("other", "broken-syntax"),
-        ("unknown_feature", "asca-unrepresentable"),
-        ("nested_brackets", "asca-unrepresentable"),
-        ("weird_unmapped_class", "other"),
-    ],
-)
-def test_reason_for_failure(failure_class, expected_reason):
-    assert reason_for_failure(failure_class, "detail") == expected_reason
-
-
 def test_validation_row_as_csv_dict():
     row = ValidationRow(
         section_index="1.0",
@@ -142,7 +156,6 @@ def test_validation_row_as_csv_dict():
         source="sample.html:10",
         ok=False,
         failure_class="syntax_other",
-        reason="broken-syntax",
         error_token="",
         suggested="",
         description="Syntax Error: …",
@@ -155,7 +168,6 @@ def test_validation_row_as_csv_dict():
         "source": "sample.html:10",
         "ok": False,
         "failure_class": "syntax_other",
-        "reason": "broken-syntax",
         "error_token": "",
         "suggested": "",
         "expected": "",
@@ -289,7 +301,6 @@ def test_validate_index_rule_asca_failure(_mock_validate):
     )
     assert row.ok is False
     assert row.failure_class == "expected_underscore"
-    assert row.reason == "asca-unrepresentable"
     assert row.error_token == ""
     assert row.suggested == ""
 
@@ -377,7 +388,6 @@ def test_ok_flip_changelog_rows_keys_on_source_and_alt_idx():
                 "file:1",
                 False,
                 failure_class="syntax_other",
-                reason="broken-syntax",
                 description="err",
                 alt_idx=1,
             ),
@@ -399,7 +409,6 @@ def test_write_validation_csv(tmp_path: Path):
             source="s:1",
             ok=True,
             failure_class="",
-            reason="",
             error_token="",
             suggested="",
             description="",
@@ -411,7 +420,6 @@ def test_write_validation_csv(tmp_path: Path):
             source="s:2",
             ok=False,
             failure_class="unknown_feature",
-            reason="asca-unrepresentable",
             error_token="voiced",
             suggested="voice",
             description="Syntax Error: Unknown feature 'voiced'. Did you mean voice?",
@@ -437,7 +445,6 @@ def test_top_error_tokens():
             "s:1",
             False,
             "unknown_character",
-            "asca-unrepresentable",
             "→",
             "",
             "err",
@@ -449,7 +456,6 @@ def test_top_error_tokens():
             "s:2",
             False,
             "unknown_character",
-            "asca-unrepresentable",
             "→",
             "",
             "err",
@@ -461,7 +467,6 @@ def test_top_error_tokens():
             "s:3",
             False,
             "unknown_character",
-            "asca-unrepresentable",
             "ː",
             "",
             "err",
@@ -473,7 +478,6 @@ def test_top_error_tokens():
             "s:4",
             False,
             "unknown_feature",
-            "asca-unrepresentable",
             "voiced",
             "voice",
             "err",
@@ -485,7 +489,6 @@ def test_top_error_tokens():
             "s:5",
             False,
             "unknown_feature",
-            "asca-unrepresentable",
             "voiced",
             "voice",
             "err",
@@ -497,7 +500,6 @@ def test_top_error_tokens():
             "s:6",
             False,
             "unknown_feature",
-            "asca-unrepresentable",
             "sibilant",
             "sonorant",
             "err",
@@ -518,7 +520,6 @@ def test_top_error_tokens_with_suggested_from_dataframe():
                 "s:1",
                 False,
                 "unknown_feature",
-                "asca-unrepresentable",
                 "voiced",
                 "voice",
                 "err",
@@ -530,7 +531,6 @@ def test_top_error_tokens_with_suggested_from_dataframe():
                 "s:2",
                 False,
                 "unknown_feature",
-                "asca-unrepresentable",
                 "voiced",
                 "voice",
                 "err",
@@ -542,7 +542,6 @@ def test_top_error_tokens_with_suggested_from_dataframe():
                 "s:3",
                 False,
                 "unknown_feature",
-                "asca-unrepresentable",
                 "sibilant",
                 "sonorant",
                 "err",
@@ -565,7 +564,6 @@ def test_top_error_tokens_with_suggested_uses_modal_suggestion():
                 "s:1",
                 False,
                 "unknown_feature",
-                "asca-unrepresentable",
                 "voiced",
                 "voice",
                 "err",
@@ -577,7 +575,6 @@ def test_top_error_tokens_with_suggested_uses_modal_suggestion():
                 "s:2",
                 False,
                 "unknown_feature",
-                "asca-unrepresentable",
                 "voiced",
                 "voice",
                 "err",
@@ -589,7 +586,6 @@ def test_top_error_tokens_with_suggested_uses_modal_suggestion():
                 "s:3",
                 False,
                 "unknown_feature",
-                "asca-unrepresentable",
                 "voiced",
                 "voicedness",
                 "err",
@@ -611,7 +607,6 @@ def test_top_error_descriptions_from_dataframe():
                 "s:1",
                 False,
                 "syntax_other",
-                "broken-syntax",
                 "",
                 "",
                 "",
@@ -624,7 +619,6 @@ def test_top_error_descriptions_from_dataframe():
                 "s:2",
                 False,
                 "syntax_other",
-                "broken-syntax",
                 "",
                 "",
                 "",
@@ -637,7 +631,6 @@ def test_top_error_descriptions_from_dataframe():
                 "s:3",
                 False,
                 "syntax_other",
-                "broken-syntax",
                 "",
                 "",
                 "",
@@ -674,7 +667,6 @@ def test_top_error_tokens_unlimited():
             f"s:{i}",
             False,
             "unknown_grouping",
-            "asca-unrepresentable",
             token,
             "",
             "err",
@@ -696,12 +688,8 @@ def test_section_outcome_stats():
         ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
         ValidationRow("1", "A", "r1", "s:2", True, "", "", "", "", ""),
         ValidationRow("2", "B", "r0", "s:3", True, "", "", "", "", ""),
-        ValidationRow(
-            "2", "B", 1, "s:4", False, "syntax_other", "broken-syntax", "", "", ""
-        ),
-        ValidationRow(
-            "3", "C", 0, "s:5", False, "syntax_other", "broken-syntax", "", "", ""
-        ),
+        ValidationRow("2", "B", 1, "s:4", False, "syntax_other", "", "", ""),
+        ValidationRow("3", "C", 0, "s:5", False, "syntax_other", "", "", ""),
         ValidationRow(
             "9.9.9",
             "Skipped",
@@ -737,12 +725,8 @@ def test_section_all_ok_stats():
         ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
         ValidationRow("1", "A", "r1", "s:2", True, "", "", "", "", ""),
         ValidationRow("2", "B", "r0", "s:3", True, "", "", "", "", ""),
-        ValidationRow(
-            "2", "B", 1, "s:4", False, "syntax_other", "broken-syntax", "", "", ""
-        ),
-        ValidationRow(
-            "3", "C", 0, "s:5", False, "syntax_other", "broken-syntax", "", "", ""
-        ),
+        ValidationRow("2", "B", 1, "s:4", False, "syntax_other", "", "", ""),
+        ValidationRow("3", "C", 0, "s:5", False, "syntax_other", "", "", ""),
     ]
     assert section_all_ok_stats(rows) == (1, 3, 100.0 / 3)
 
@@ -760,7 +744,6 @@ def test_summarize_inventory_common_errors():
             "s:1",
             False,
             "unknown_character",
-            "asca-unrepresentable",
             "→",
             "",
             "err",
@@ -772,7 +755,6 @@ def test_summarize_inventory_common_errors():
             "s:2",
             False,
             "unknown_feature",
-            "asca-unrepresentable",
             "voiced",
             "voice",
             "err",
@@ -804,7 +786,6 @@ def test_summarize_inventory():
             "s:2",
             False,
             "syntax_other",
-            "broken-syntax",
             "",
             "",
             "err",
@@ -816,7 +797,6 @@ def test_summarize_inventory():
             "s:3",
             False,
             "syntax_other",
-            "broken-syntax",
             "",
             "",
             "err",
@@ -853,6 +833,8 @@ def test_summarize_inventory():
     assert "unknown_features_errors.csv" in text
     assert "expected_number_errors.csv" in text
     assert "prose_or_expected_arrow_errors.csv" in text
+    assert "expected_ipa_errors.csv" in text
+    assert "unknown_reference_errors.csv" in text
 
 
 def test_summarize_inventory_empty():
@@ -894,7 +876,6 @@ def test_summarize_inventory_section_skipped():
             "s:3",
             False,
             "syntax_other",
-            "broken-syntax",
             "",
             "",
             "err",
@@ -925,7 +906,6 @@ def test_filter_inventory_by_ok_splits_success_and_error():
             "file:2",
             False,
             "syntax_other",
-            "broken-syntax",
             "",
             "",
             "err",
@@ -952,7 +932,6 @@ def test_ok_flip_changelog_rows_emits_flips_by_source():
                 "file:2",
                 False,
                 "syntax_other",
-                "broken-syntax",
                 "",
                 "",
                 "err",
@@ -970,7 +949,6 @@ def test_ok_flip_changelog_rows_emits_flips_by_source():
                 "file:1",
                 False,
                 "syntax_other",
-                "broken-syntax",
                 "",
                 "",
                 "err",
@@ -1004,7 +982,6 @@ def test_ok_flip_changelog_rows_tolerates_previous_without_alt_idx():
                 "file:1",
                 False,
                 "syntax_other",
-                "broken-syntax",
                 "",
                 "",
                 "err",
@@ -1028,7 +1005,6 @@ def test_ok_flip_changelog_rows_empty_when_ok_unchanged():
                 "file:2",
                 False,
                 "syntax_other",
-                "broken-syntax",
                 "",
                 "",
                 "err",
@@ -1065,7 +1041,6 @@ def test_load_inventory_csv_reads_success_and_error_splits(tmp_path: Path):
                     "s:2",
                     False,
                     "syntax_other",
-                    "broken-syntax",
                     "",
                     "",
                     "err",
@@ -1091,7 +1066,6 @@ def test_write_filtered_inventory_csvs(tmp_path: Path):
                 "s:2",
                 False,
                 "syntax_other",
-                "broken-syntax",
                 "",
                 "",
                 "err",
@@ -1129,7 +1103,6 @@ def test_append_ok_flip_changelog_writes_and_appends(tmp_path: Path):
                     "s:1",
                     False,
                     "syntax_other",
-                    "broken-syntax",
                     "",
                     "",
                     "err",
@@ -1291,7 +1264,6 @@ def test_build_field_isolation_row_without_field_rule():
         "s:1",
         False,
         "format_error",
-        "broken-syntax",
         "",
         "",
         "bad",
@@ -1548,7 +1520,6 @@ def test_build_field_isolation_row_unknown_feature_on_input(mock_validate_part):
         "s:1",
         False,
         "unknown_feature",
-        "asca-unrepresentable",
         "voiced",
         "voice",
         "whole fail",
@@ -1577,7 +1548,6 @@ def test_build_field_isolation_row_missing_underscore_on_env(mock_validate_part)
         "s:1",
         False,
         "expected_underscore",
-        "asca-unrepresentable",
         "",
         "",
         "whole fail",
@@ -1607,7 +1577,6 @@ def test_build_field_isolation_row_two_fields_fail(mock_validate_part):
         "s:1",
         False,
         "syntax_other",
-        "broken-syntax",
         "",
         "",
         "whole fail",
@@ -1625,7 +1594,6 @@ def test_field_isolation_integration_multi_blame():
         "s:1",
         False,
         "runtime_other",
-        "broken-syntax",
         "",
         "",
         "uneven set",

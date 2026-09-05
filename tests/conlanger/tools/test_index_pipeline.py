@@ -180,7 +180,7 @@ def test_e2e_minimal_html_fixture_compile_and_validate(tmp_path: Path):
     assert len(rows) == 2
     assert all(row.ok for row in rows)
     assert rows[0].failure_class == ""
-    assert rows[0].reason == ""
+    assert rows[0].failure_class == ""
 
     validate_asca(
         DiachronicSeries(section, compiler_config=minimal_compiler_config()),
