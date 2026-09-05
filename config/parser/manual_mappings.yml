@@ -129,6 +129,9 @@
 - from: ", in the feminine ending"
   to: " sporadic ; in the feminine ending"
   reason: replace prose
+- from: " / in Form VI"
+  to: " / sporadic ; in Form VI"
+  reason: replace prose
 - from: " / _Ra (short a only)"
   to: " / _Ra sporadic ; (short a only)"
   reason: replace prose
@@ -297,7 +300,4 @@
   reason: Use asca syntax for a wildcard symbol
 - from: "_ or when _"
   to: "_,_"
-  reason: replace prose
-- from: " / Form VI"
-  to: " / sporadic ; Form VI"
   reason: replace prose

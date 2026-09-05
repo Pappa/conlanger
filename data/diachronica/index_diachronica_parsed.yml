@@ -2475,14 +2475,15 @@ sections:
     raw: q → ɡ
     source: index_diachronica_original.html:1408
     rule_id: Coastal-Hadhrami-Arabic-q
-  - stages:
+  - comment: in Form VI (tafā‘ala) verbs, though these apparently coexist with forms
+      having the original vowel as well, with semantic distinctions; sporadic
+    stages:
     - aː
     - eː
-    env: Form VI (tafaː‘ala) verbs, though these apparently coexist with forms having
-      the original vowel as well, with semantic distinctions
     raw: aː → eː / in Form VI (tafā‘ala) verbs, though these apparently coexist with
       forms having the original vowel as well, with semantic distinctions
     source: index_diachronica_original.html:1409
+    sporadic: true
     rule_id: Coastal-Hadhrami-Arabic-aː
   - stages:
     - aː
@@ -2527,14 +2528,15 @@ sections:
     raw: dˤ q → ðˤ ɡ
     source: index_diachronica_original.html:1419
     rule_id: Wādı̄-Hadhrami-Arabic-dˤ-q
-  - stages:
+  - comment: in Form VI (tafā‘ala) verbs, though these apparently coexist with forms
+      having the original vowel as well, with semantic distinctions; sporadic
+    stages:
     - aː
     - eː
-    env: Form VI (tafaː‘ala) verbs, though these apparently coexist with forms having
-      the original vowel as well, with semantic distinctions
     raw: aː → eː / in Form VI (tafā‘ala) verbs, though these apparently coexist with
       forms having the original vowel as well, with semantic distinctions
     source: index_diachronica_original.html:1420
+    sporadic: true
     rule_id: Wādı̄-Hadhrami-Arabic-aː
   - stages:
     - aː
@@ -3152,7 +3154,7 @@ sections:
     stages:
     - p b t d k ɡ
     - b v θ ð x ɣ
-    raw: p b t d k ɡ → b v θ ð x ɣ / sporadic ;non-intial singletons
+    raw: p b t d k ɡ → b v θ ð x ɣ / sporadic ; non-intial singletons
     source: index_diachronica_original.html:1546
     sporadic: true
     rule_id: Biblical-Hebrew-p-b-t-d-k-ɡ

@@ -1,13 +1,13 @@
 # Rule comment phrase summary
 
-- Corpus rules with **`comment`**: **1270**
-- Comments containing ``; `` (semicolon tails): **190**
+- Corpus rules with **`comment`**: **1272**
+- Comments containing ``; `` (semicolon tails): **192**
 
 ## Qualifier phrases
 
 | phrase | rules |
 | --- | ---: |
-| `sporadic` | 176 |
+| `sporadic` | 178 |
 | `sometimes` | 56 |
 | `unstressed` | 27 |
 | `not sure` | 15 |
