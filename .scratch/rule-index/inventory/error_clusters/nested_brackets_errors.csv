@@ -4,7 +4,7 @@ section_index,rule_id,error_token,rule
 12.1.2,Tapanta-Abaza-tɕʷʼ-dʑʷ,,"{tɕʷ:[+cg],tɕʷ} dʑʷ > {{tɕ:[+cg],tɕ},{tɕʷ:[+cg],tɕʷ},tʃʷ:[+cg],tʃʷ} {dʑ,dʑʷ,dʒʷ} | ^ @ Rule 1, Line 1"
 12.1.2,"Tapanta-Abaza-tʷʼ,dʷ",,"{tʷ:[+cg],tʷ,dʷ} > {{tɕ:[+cg],tɕ},{tɕʷ:[+cg],tɕʷ},{tʃ:[+cg],tʃ},{tʃʷ:[+cg],tʃʷ}} {dʒ,dʒʷ,dʑ,dʑʷ} | ^ @ Rule 1, Line 1"
 15.2.2,"Greenlandic-Iñupiaq-m-n-ŋ-t-ɣ,ʁ«",,"m n ŋ t {{ɣ,ʁ} > {k,q}} / _# | ^ @ Rule 1, Line 1"
-17.5.1,Old-Irish-V_3,,"V > ∅ / #%%(_)%(%(_)%) // _[-stress] | ^ @ Rule 1, Line 1"
+17.5.1,Old-Irish-V_3,,"V > ∅ / #%%(_)%(%(_)%) // [-stress] | ^ @ Rule 1, Line 1"
 17.7.3,"Proto-Norse-æ,eːwa",,"{æ,e}:[+long](w(a)) > a:[+long] | ^ @ Rule 1, Line 1"
 17.11,Proto-Slavic-k-ɡ-x,,"k ɡ x > tʃ ʒ ʃ / _{{e(i,e:[+long](i}),i,i:[+long]} | ^ @ Rule 1, Line 1"
 17.12.1.1.6,"Old-Provençal-sːj,stʃj,stj",,"ʃ > is (except in the west or extreme east, where the outcome was some flavor of (i)(t)ʃ) | ^ @ Rule 1, Line 2"

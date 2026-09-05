@@ -6,14 +6,14 @@
 - Rows: **9827** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8471** (86.2%)
-- Fail: **584** (5.9%)
+- OK: **8439** (85.9%)
+- Fail: **616** (6.3%)
 - Skipped: **772** (7.9%)
 
 ## Sections
 
-- All OK: **451 / 714** (63.2%)
-- Some OK: **225 / 714** (31.5%)
+- All OK: **441 / 714** (61.8%)
+- Some OK: **235 / 714** (32.9%)
 - None OK: **3 / 714** (0.4%)
 - Sections skipped: **35 / 714** (4.9%)
 
@@ -21,11 +21,11 @@
 
 | count | failure_class |
 |------:|---------------|
+| 141 | `expected_underscore` |
 | 113 | `unknown_character` |
-| 106 | `expected_underscore` |
 | 47 | `invalid_ipa` |
 | 45 | `missing_slash_output_env` |
-| 37 | `expected_number` |
+| 35 | `expected_number` |
 | 33 | `expected_ipa` |
 | 32 | `prose_or_expected_arrow` |
 | 28 | `syntax_other` |
@@ -37,8 +37,8 @@
 | 11 | `unknown_grouping` |
 | 11 | `incomplete_matrix` |
 | 9 | `diacritic_prereq` |
-| 8 | `multiple_underlines_env` |
 | 8 | `segments_before_word` |
+| 7 | `multiple_underlines_env` |
 | 3 | `panic_other` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
@@ -134,9 +134,9 @@
 
 | count | error_token |
 |------:|-------------|
-| 16 | `,` |
+| 18 | `,` |
+| 8 | `//` |
 | 7 | `/` |
-| 4 | `//` |
 | 3 | `:` |
 | 2 | `*` |
 | 1 | `)` |
@@ -144,7 +144,7 @@
 
 | count | description |
 |------:|-------------|
-| 73 | `Expected '_', but received ''` |
+| 102 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -177,15 +177,15 @@
 | count | error_token |
 |------:|-------------|
 | 4 | `d` |
-| 3 | `{` |
 | 3 | `j` |
+| 3 | `{` |
 | 3 | `ɒ` |
 | 3 | `r` |
 | 2 | `s` |
 | 2 | `C` |
-| 2 | `a` |
-| 2 | `N` |
 | 2 | `u` |
+| 2 | `w` |
+| 2 | `N` |
 ### expected_number (description)
 
 | count | description |
@@ -296,7 +296,7 @@
 
 | count | description |
 |------:|-------------|
-| 8 | `Cannot have multiple underlines in an environment` |
+| 7 | `Cannot have multiple underlines in an environment` |
 
 ### segments_before_word (error_token)
 

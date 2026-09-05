@@ -87,7 +87,7 @@ section_index,rule_id,error_token,rule
 38.1.1.1,Ahom-ŋ̊,̊,"ŋ̊ > h | ^ @ Rule 1, Line 1"
 40.2,Proto-Totonacan-o-o̰,ṵ,"o o̰ > u ṵ | ^ @ Rule 1, Line 1"
 40.2,"Proto-Totonacan-e,ɨ-ḛ-ɨ̰",ḛ,"{e,ɨ} {ḛ ɨ̰} > i ḭ | ^ @ Rule 1, Line 1"
-42.1,Pre-Finnic-ɤː?-ɑː-æː,ː,"{ɤ,ɤː} ɑ:[+long] æ:[+long] > {ɑ,ɑː} o:[+long] e:[+long] / _[+stress] | ^ @ Rule 1, Line 1"
+42.1,Pre-Finnic-ɤː?-ɑː-æː,ː,"{ɤ,ɤː} ɑ:[+long] æ:[+long] > {ɑ,ɑː} o:[+long] e:[+long] / [+stress] | ^ @ Rule 1, Line 1"
 42.1.1.1,Proto-Finnish-pː-tː-tsː-kː,ˑ,"p:[+long] t:[+long] ts:[+long] k:[+long] > pˑ tˑ tsˑ kˑ | ^ @ Rule 1, Line 1"
 42.1.1.1,Proto-Finnish-ts-tsˑ-tsː,ˑ,"ts tsˑ ts:[+long] > s θˑ θ:[+long] | ^ @ Rule 1, Line 1"
 43.1,Comanche-∅,ᵤ,"∅ > h / Vᵤ_k | ^ @ Rule 1, Line 1"

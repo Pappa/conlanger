@@ -40,10 +40,10 @@
   to: " ! #_, _#"
   reason: replace prose
 - from: " / unstressed"
-  to: " / _[-stress]"
+  to: " / [-stress]"
   reason: replace prose
 - from: " / stressed"
-  to: " / _[+stress]"
+  to: " / [+stress]"
   reason: replace prose
 - from: " / adjacent to short u"
   to: " / u[-long]_, _u[-long]"

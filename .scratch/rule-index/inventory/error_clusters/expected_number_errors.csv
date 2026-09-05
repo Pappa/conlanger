@@ -25,7 +25,6 @@ section_index,rule_id,error_token,rule
 17.12.1.1.3,French-V_3,a,"V > ∅ / _# // V = a | ^ @ Rule 1, Line 1"
 17.12.1.1.5,Portuguese-N,P,"N > ∅ / V[+nas]_$C // C = P | ^ @ Rule 1, Line 1"
 17.12.1.1.5,Portuguese-C0C0,r,"C=0 0 > 0 // C = r | ^ @ Rule 1, Line 1"
-17.12.1.1.10,Spanish-V_5,a,"V > ∅ / _[-stress] // V = a | ^ @ Rule 1, Line 1"
 17.13,Proto-Tocharian-Kʷ,s,"C:[-front,+back,+hi,-lo,+round] > C:[-front,+back,+hi,-lo] / _{C,o,a} // C = syllabic | ^ @ Rule 1, Line 1"
 17.13,Proto-Tocharian-H,s,"[-place] > ɛ / _[+son,-syll], when [+son,-syll] = syllabic | ^ @ Rule 1, Line 1"
 17.13.1,Tocharian-A-V,V,"V > j / V_nʲtʲ // V = V:[+front] | ^ @ Rule 1, Line 1"
@@ -35,4 +34,3 @@ section_index,rule_id,error_token,rule
 36.1.1,Old-Mandarin-∅_2,{,"∅ > w / C_o# // C = {C:[-front,+back,+hi,-lo],C[+pharyngeal]} | ^ @ Rule 1, Line 1"
 36.1.1.1,Modern-Pekingese-î,r,"i > e / _C# // C = r | ^ @ Rule 1, Line 1"
 37.1.2.4.1,Mohawk-—-s_2,j,"s > z / {#,V}_{V,[+son,-syll]} // [+son,-syll] = j | ^ @ Rule 1, Line 1"
-42.1.2,Livonian-V,ɑ,"V > ə / _[-stress] // V = ɑ | ^ @ Rule 1, Line 1"

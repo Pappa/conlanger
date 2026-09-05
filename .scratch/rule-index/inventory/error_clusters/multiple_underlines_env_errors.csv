@@ -1,7 +1,6 @@
 section_index,rule_id,error_token,rule
 8.3,Proto-Mongolic-b,,"b > h / _ // {r,rʲ,l,lʲ}_ or _ɡ | ^ @ Rule 1, Line 1"
 17.12.1.1.2,Catalan-ɛ,,"ɛ > e // _{r:[+long],l,rC[-labial],nr} or _ ? w# | ^ @ Rule 1, Line 1"
-17.12.1.1.4,Italian-ɔ,,"ɔ > uo / _[+stress] // j_ or _{dʒ,L} | ^ @ Rule 1, Line 1"
 17.12.1.1.8,Romanian-a-o,,"a o > ə u / _ %:[+stress]…_# | ^ @ Rule 1, Line 1"
 17.12.1.1.8,Romanian-e_2,,"e > ə / _ %:[+stress]…C:[+labial]_(C,0)V# // V = i | ^ @ Rule 1, Line 1"
 33.1.1,Proto-Costanoan-Ohlone-l,,"l > ɾ // _$ or o_ | ^ @ Rule 1, Line 1"

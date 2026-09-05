@@ -53,8 +53,8 @@ section_index,section_name,rule_id,source,manual_mapping
 10.2,Proto-Austronesian to Proto-Batak,Proto-Batak-z,index_diachronica_original.html:2783, ; (fricative changes to approximant)
 10.2.3,Proto-Malayo-Polynesian to Proto-Malayic,Proto-Malayic-C+-A-POAC+-B-POA,index_diachronica_original.html:2846,α place
 10.2.3,Proto-Malayo-Polynesian to Proto-Malayic,Proto-Malayic-C+-A-POAC+-B-POA,index_diachronica_original.html:2846,β place
-10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-ə_2,index_diachronica_original.html:2926, / _[+stress]
-10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-V,index_diachronica_original.html:2929, / _[-stress]
+10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-ə_2,index_diachronica_original.html:2926, / [+stress]
+10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-V,index_diachronica_original.html:2929, / [-stress]
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-q,index_diachronica_original.html:2951,→ ʕ
 10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-ə,index_diachronica_original.html:2962," / V_, _V ; adjacent to a vowel"
 10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-bː-dː-dzː-ɡː,index_diachronica_original.html:2970, ; (Whimemsz says
@@ -94,7 +94,7 @@ section_index,section_name,rule_id,source,manual_mapping
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-F+voice,index_diachronica_original.html:4782," / _,{"
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-s,index_diachronica_original.html:4804, / sporadic ; in certain situations
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-F+voice,index_diachronica_original.html:4812," / _,{"
-16.1.5,Proto-Tabla-Sentani to Tabla,Tabla-e,index_diachronica_original.html:4924, / _[-stress]
+16.1.5,Proto-Tabla-Sentani to Tabla,Tabla-e,index_diachronica_original.html:4924, / [-stress]
 17.1.1,Proto-Indo-European to Gheg Albanian,Gheg-Albanian-ḱ_3,index_diachronica_original.html:4962, ; (“[a]rchaic relic”)
 17.1.2,Proto-Indo-European to Tosk Albanian,Tosk-Albanian-ḱ_3,index_diachronica_original.html:5001, ; (“[a]rchaic relic”)
 17.2.1,Common Anatolian to Hittite,Hittite-V,index_diachronica_original.html:5057, / 
@@ -128,12 +128,12 @@ section_index,section_name,rule_id,source,manual_mapping
 17.5.1,Proto-Indo-European to Old Irish,"Old-Irish-—-l,hl-l,hr-lp,s,n-rp,s-ln",index_diachronica_original.html:5555,[]
 17.5.1,Proto-Indo-European to Old Irish,Old-Irish-oː_3,index_diachronica_original.html:5561,[]
 17.5.1,Proto-Indo-European to Old Irish,"Old-Irish-—-e,o",index_diachronica_original.html:5567,[]
-17.5.1,Proto-Indo-European to Old Irish,Old-Irish-V_3,index_diachronica_original.html:5570, / _[-stress]
+17.5.1,Proto-Indo-European to Old Irish,Old-Irish-V_3,index_diachronica_original.html:5570, / [-stress]
 17.6,Proto-Indo-European to Dacian,Dacian-e,index_diachronica_original.html:5618, / 
 17.6,Proto-Indo-European to Dacian,Dacian-e_2,index_diachronica_original.html:5619, / 
 17.7.1,Common Germanic to Gothic,Gothic-s_2,index_diachronica_original.html:5685, / 
 17.7.1,Common Germanic to Gothic,Gothic-s_3,index_diachronica_original.html:5686, / 
-17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-i-o,index_diachronica_original.html:5708, / _[-stress]
+17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-i-o,index_diachronica_original.html:5708, / [-stress]
 17.7.2.1.2,Old English to Kentish Middle English,Kentish-Middle-English-ɑ-e-o,index_diachronica_original.html:5738, / 
 17.7.2.1.2,Old English to Kentish Middle English,Kentish-Middle-English-ɑ-e-o,index_diachronica_original.html:5738, ! 
 17.7.2.1.2,Old English to Kentish Middle English,Kentish-Middle-English-Vː_2,index_diachronica_original.html:5740, / 
@@ -142,7 +142,7 @@ section_index,section_name,rule_id,source,manual_mapping
 17.7.2.1.3,Old English to Midlands Middle English,Midlands-Middle-English-Vː_2,index_diachronica_original.html:5761, / 
 17.7.2.1.5,Early Modern English to American English,American-English-o-ɔ,index_diachronica_original.html:5796, ; (most dialects
 17.7.2.1.6,Early Modern English to Australian English,Australian-English-uː,index_diachronica_original.html:5819, sporadic ; not in Queensland
-17.7.2.1.6,Early Modern English to Australian English,Australian-English-ɪ_3,index_diachronica_original.html:5824, / _[-stress]
+17.7.2.1.6,Early Modern English to Australian English,Australian-English-ɪ_3,index_diachronica_original.html:5824, / [-stress]
 17.7.2.1.8,Old English to Northern Middle English,Northern-Middle-English-ɑ-e-o,index_diachronica_original.html:5868, / 
 17.7.2.1.8,Old English to Northern Middle English,Northern-Middle-English-ɑ-e-o,index_diachronica_original.html:5868, ! 
 17.7.2.1.8,Old English to Northern Middle English,Northern-Middle-English-Vː_2,index_diachronica_original.html:5870, / 
@@ -166,7 +166,7 @@ section_index,section_name,rule_id,source,manual_mapping
 17.7.2.3,Middle High German to Standard German,Standard-German-Vː,index_diachronica_original.html:6114, ; sporadic (some exceptions
 17.7.2.3,Middle High German to Standard German,Standard-German-Vː_2,index_diachronica_original.html:6115, ; sporadic (some exceptions
 17.7.2.3,Middle High German to Standard German,Standard-German-V_3,index_diachronica_original.html:6118, / sporadic ; in some 
-17.7.2.3,Middle High German to Standard German,Standard-German-ə,index_diachronica_original.html:6120, / _[-stress]
+17.7.2.3,Middle High German to Standard German,Standard-German-ə,index_diachronica_original.html:6120, / [-stress]
 17.7.2.5,West Germanic to Old Low German,Old-Low-German-f-θ-s,index_diachronica_original.html:6146, / $_ 
 17.7.3,Common Germanic to Proto-Norse,Proto-Norse-i,index_diachronica_original.html:6168, ! 
 17.7.3.1,Proto-Norse to Old Norse,Old-Norse-VN,index_diachronica_original.html:6195, ! 
@@ -177,21 +177,21 @@ section_index,section_name,rule_id,source,manual_mapping
 17.7.3.1.1,Old Norse to Early Icelandic,Early-Icelandic-S-voiceː-S+-voiceː,index_diachronica_original.html:6369, Sʰ 
 17.7.3.1.1,Old Norse to Early Icelandic,Early-Icelandic-S-voice,index_diachronica_original.html:6370, Sʰ 
 17.7.3.1.3,Old Norse to Shetland Norn,Shetland-Norn-nd-ld,index_diachronica_original.html:6481,nd ld → nː lː
-17.7.4,Common Germanic to Vandalic,Vandalic-eː,index_diachronica_original.html:6541, / _[-stress]
+17.7.4,Common Germanic to Vandalic,Vandalic-eː,index_diachronica_original.html:6541, / [-stress]
 17.8.2,Proto-Indo-European to Attic Greek,Attic-Greek-oj,index_diachronica_original.html:6604, → yː / sporadic ; (→ yː sometimes)
 17.8.8,Proto-Indo-European to Ionic Greek,Ionic-Greek-oj,index_diachronica_original.html:6755, → yː / sporadic ; (→ yː sometimes)
 17.11.1,Proto-Slavic to Polish,"Polish-—-ь,ъ_2",index_diachronica_original.html:7028, / 
-17.11.1,Proto-Slavic to Polish,Polish-V,index_diachronica_original.html:7057, / _[-stress]
+17.11.1,Proto-Slavic to Polish,Polish-V,index_diachronica_original.html:7057, / [-stress]
 17.11.1,Proto-Slavic to Polish,Polish-ɔ̃_2,index_diachronica_original.html:7088, sporadic ; (in some regions
 17.11.1,Proto-Slavic to Polish,Polish-trk,index_diachronica_original.html:7144, / 
 17.12.1.1.1,Classical Latin vs. Vulgar Latin,"Classical-Latin-vs.-Vulgar-Latin-uː-ɔ,oː-eː-iː",index_diachronica_original.html:7338,"; “In contrast, Romanian exhibits"
 17.12.1.1.2,Latin to Catalan,Catalan-u,index_diachronica_original.html:7350, / sporadic ; (“when in unstressed penult
-17.12.1.1.2,Latin to Catalan,Catalan-iː,index_diachronica_original.html:7351, / _[+stress]
-17.12.1.1.2,Latin to Catalan,"Catalan-i,eː-e",index_diachronica_original.html:7353, / _[+stress]
-17.12.1.1.2,Latin to Catalan,Catalan-uː,index_diachronica_original.html:7356, / _[+stress]
-17.12.1.1.2,Latin to Catalan,"Catalan-u,oː-o",index_diachronica_original.html:7359, / _[+stress]
-17.12.1.1.2,Latin to Catalan,Catalan-ae-au,index_diachronica_original.html:7365, / _[+stress]
-17.12.1.1.2,Latin to Catalan,Catalan-ɛj-ɔj,index_diachronica_original.html:7447, / _[+stress]
+17.12.1.1.2,Latin to Catalan,Catalan-iː,index_diachronica_original.html:7351, / [+stress]
+17.12.1.1.2,Latin to Catalan,"Catalan-i,eː-e",index_diachronica_original.html:7353, / [+stress]
+17.12.1.1.2,Latin to Catalan,Catalan-uː,index_diachronica_original.html:7356, / [+stress]
+17.12.1.1.2,Latin to Catalan,"Catalan-u,oː-o",index_diachronica_original.html:7359, / [+stress]
+17.12.1.1.2,Latin to Catalan,Catalan-ae-au,index_diachronica_original.html:7365, / [+stress]
+17.12.1.1.2,Latin to Catalan,Catalan-ɛj-ɔj,index_diachronica_original.html:7447, / [+stress]
 17.12.1.1.3,Latin to French,French-è,index_diachronica_original.html:7486, / 
 17.12.1.1.3,Latin to French,French-è_3,index_diachronica_original.html:7488, / 
 17.12.1.1.3,Latin to French,French-ò,index_diachronica_original.html:7489, / 
@@ -202,23 +202,23 @@ section_index,section_name,rule_id,source,manual_mapping
 17.12.1.1.3,Latin to French,French-ó,index_diachronica_original.html:7547, / 
 17.12.1.1.3,Latin to French,French-ó_3,index_diachronica_original.html:7549, / 
 17.12.1.1.3,Latin to French,French-a_3,index_diachronica_original.html:7554, / 
-17.12.1.1.4,Vulgar Latin to Italian,Italian-tVk,index_diachronica_original.html:7594, / _[-stress]
-17.12.1.1.4,Vulgar Latin to Italian,Italian-kVl,index_diachronica_original.html:7598, / _[-stress]
-17.12.1.1.4,Vulgar Latin to Italian,Italian-ɛ,index_diachronica_original.html:7600, / _[-stress]
-17.12.1.1.4,Vulgar Latin to Italian,Italian-ɔ,index_diachronica_original.html:7605, / _[+stress]
-17.12.1.1.5,Latin to Portuguese,"Portuguese-iː-i,eː-e",index_diachronica_original.html:7634, / _[+stress]
-17.12.1.1.5,Latin to Portuguese,"Portuguese-u,oː-o",index_diachronica_original.html:7640, / _[+stress]
-17.12.1.1.5,Latin to Portuguese,Portuguese-ae,index_diachronica_original.html:7644, / _[+stress]
-17.12.1.1.5,Latin to Portuguese,Portuguese-V+nas,index_diachronica_original.html:7659, / _[-stress]
+17.12.1.1.4,Vulgar Latin to Italian,Italian-tVk,index_diachronica_original.html:7594, / [-stress]
+17.12.1.1.4,Vulgar Latin to Italian,Italian-kVl,index_diachronica_original.html:7598, / [-stress]
+17.12.1.1.4,Vulgar Latin to Italian,Italian-ɛ,index_diachronica_original.html:7600, / [-stress]
+17.12.1.1.4,Vulgar Latin to Italian,Italian-ɔ,index_diachronica_original.html:7605, / [+stress]
+17.12.1.1.5,Latin to Portuguese,"Portuguese-iː-i,eː-e",index_diachronica_original.html:7634, / [+stress]
+17.12.1.1.5,Latin to Portuguese,"Portuguese-u,oː-o",index_diachronica_original.html:7640, / [+stress]
+17.12.1.1.5,Latin to Portuguese,Portuguese-ae,index_diachronica_original.html:7644, / [+stress]
+17.12.1.1.5,Latin to Portuguese,Portuguese-V+nas,index_diachronica_original.html:7659, / [-stress]
 17.12.1.1.5,Latin to Portuguese,Portuguese-V+nas_2,index_diachronica_original.html:7660, / 
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-ɔ_4,index_diachronica_original.html:7746, sporadic ; (in southern dialects
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-V_3,index_diachronica_original.html:7774," ; (again, "
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-ɡ_6,index_diachronica_original.html:7872, / sporadic ; “[b]etween the last two vowels of a proparoxytone”
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-kʷ,index_diachronica_original.html:7892,kʷ → ɡʷ → ɡ / sporadic ; (kʷ → ɡʷ → ɡ ?)
-17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,Rhaeto-Romance-a,index_diachronica_original.html:7992, / _[+stress]
+17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,Rhaeto-Romance-a,index_diachronica_original.html:7992, / [+stress]
 17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,Rhaeto-Romance-uː,index_diachronica_original.html:7993, → i / sporadic ; (→ i in most descendants
 17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,Rhaeto-Romance-a-V,index_diachronica_original.html:7994, / 
-17.12.1.1.10,Vulgar Latin to Spanish,Spanish-V_5,index_diachronica_original.html:8163, / _[-stress]
+17.12.1.1.10,Vulgar Latin to Spanish,Spanish-V_5,index_diachronica_original.html:8163, / [-stress]
 18.3.2,Proto-Tuparí to Mekens,Mekens-k,index_diachronica_original.html:8424, / 
 18.3.4,Proto-Tuparí to Wayoró,Wayoró-k,index_diachronica_original.html:8465, / 
 24.1.1,Proto-Paman to AritinÅitiÉ£,AritinÅitiÉ£-Vː,index_diachronica_original.html:9415, / 
@@ -254,7 +254,7 @@ section_index,section_name,rule_id,source,manual_mapping
 30.2.1,Proto-Potou-Akanic to Proto-Akanic,Proto-Akanic-V+high-+ATRCV+high-ATR,index_diachronica_original.html:10564,atr
 32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-e_3,index_diachronica_original.html:10804, / 
 32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-ẽ_3,index_diachronica_original.html:10807, / 
-33.3.1.3,Buena Vista Yokuts to Tulamni,Tulamni-Vʔ,index_diachronica_original.html:11077, / _[+stress]
+33.3.1.3,Buena Vista Yokuts to Tulamni,Tulamni-Vʔ,index_diachronica_original.html:11077, / [+stress]
 35.1.7,Proto-Central Salish to Nooksack,Nooksack-ə1_3,index_diachronica_original.html:11529, / sporadic ; in some 
 35.1.9,Proto-Central Salish to Saanich Northern Straits,Saanich-Northern-Straits-a3,index_diachronica_original.html:11579,"_,_"
 35.3,Shuswap to Eastern Shuswap Nasal-to-Vowel Shifts,Vowel-Shifts_3-em-emˀ_2,index_diachronica_original.html:11720, / 
@@ -284,39 +284,39 @@ section_index,section_name,rule_id,source,manual_mapping
 37.2.6,Proto-Siouan to Proto-Dhegiha,Proto-Dhegiha-u,index_diachronica_original.html:12928, / 
 37.2.6.1,Proto-Dhegiha to Kansa,Kansa-r-Lʲ,index_diachronica_original.html:12939, ; (*)
 37.2.6.1,Proto-Dhegiha to Kansa,Kansa-L,index_diachronica_original.html:12940, ; (*)
-37.2.6.1,Proto-Dhegiha to Kansa,Kansa-ũ,index_diachronica_original.html:12943, / _[+stress]
-37.2.6.2,Proto-Dhegiha to Omaha-Ponca,Omaha-Ponca-ũ,index_diachronica_original.html:12959, / _[+stress]
+37.2.6.1,Proto-Dhegiha to Kansa,Kansa-ũ,index_diachronica_original.html:12943, / [+stress]
+37.2.6.2,Proto-Dhegiha to Omaha-Ponca,Omaha-Ponca-ũ,index_diachronica_original.html:12959, / [+stress]
 37.2.6.4,Proto-Dhegiha to Quapaw,Quapaw-x,index_diachronica_original.html:12996, ; (*)
 37.2.6.4,Proto-Dhegiha to Quapaw,Quapaw-Lʲ,index_diachronica_original.html:12997, ; (*)
 37.2.6.4,Proto-Dhegiha to Quapaw,Quapaw-Lʲ_2,index_diachronica_original.html:12998, ; (*)
 37.2.6.4,Proto-Dhegiha to Quapaw,Quapaw-ã,index_diachronica_original.html:12999, ; (*)
-37.2.6.4,Proto-Dhegiha to Quapaw,Quapaw-ũ,index_diachronica_original.html:13000, / _[+stress]
+37.2.6.4,Proto-Dhegiha to Quapaw,Quapaw-ũ,index_diachronica_original.html:13000, / [+stress]
 37.2.6.4,Proto-Dhegiha to Quapaw,Quapaw-ũ,index_diachronica_original.html:13000, ; (*)
 37.2.6.4,Proto-Dhegiha to Quapaw,Quapaw-m,index_diachronica_original.html:13001, ; (*)
 42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-iw-ow,index_diachronica_original.html:13764, ; (*)
-42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-ɤː?-ɑː-æː,index_diachronica_original.html:13767, / _[+stress]
-42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-Aw,index_diachronica_original.html:13769, / _[-stress]
-42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-iw,index_diachronica_original.html:13771, / _[-stress]
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ej,index_diachronica_original.html:13780, / _[-stress]
+42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-ɤː?-ɑː-æː,index_diachronica_original.html:13767, / [+stress]
+42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-Aw,index_diachronica_original.html:13769, / [-stress]
+42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-iw,index_diachronica_original.html:13771, / [-stress]
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ej,index_diachronica_original.html:13780, / [-stress]
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-uwa,index_diachronica_original.html:13796, ; (*)
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-w,index_diachronica_original.html:13812, ; (*)
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tk,index_diachronica_original.html:13815, / 
 42.1.1.1,Proto-Finnic to Proto-Finnish,Proto-Finnish-j,index_diachronica_original.html:13837, ; (*)
-42.1.1.1,Proto-Finnic to Proto-Finnish,Proto-Finnish-oi,index_diachronica_original.html:13839, / _[-stress]
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-AO,index_diachronica_original.html:13881, / _[-stress]
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-Ue,index_diachronica_original.html:13883, / _[-stress]
-42.1.1.1.2,Standard Finnish to Modern Standard Finnish,Modern-Standard-Finnish-Va,index_diachronica_original.html:13897, / _[-stress]
-42.1.2,Proto-Finnic to Livonian,Livonian-æ,index_diachronica_original.html:13906, / _[-stress]
-42.1.2,Proto-Finnic to Livonian,Livonian-V,index_diachronica_original.html:13910, / _[-stress]
+42.1.1.1,Proto-Finnic to Proto-Finnish,Proto-Finnish-oi,index_diachronica_original.html:13839, / [-stress]
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-AO,index_diachronica_original.html:13881, / [-stress]
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-Ue,index_diachronica_original.html:13883, / [-stress]
+42.1.1.1.2,Standard Finnish to Modern Standard Finnish,Modern-Standard-Finnish-Va,index_diachronica_original.html:13897, / [-stress]
+42.1.2,Proto-Finnic to Livonian,Livonian-æ,index_diachronica_original.html:13906, / [-stress]
+42.1.2,Proto-Finnic to Livonian,Livonian-V,index_diachronica_original.html:13910, / [-stress]
 42.1.2,Proto-Finnic to Livonian,Livonian-Cː,index_diachronica_original.html:13924, ! 
 44.2,Proto-Basque to Basque,Basque-*L,index_diachronica_original.html:14134,L
 44.2,Proto-Basque to Basque,Basque-C+-sibilant,index_diachronica_original.html:14224,O:[+delrel]
-45.1.2,Proto-Pai to Paipai,Paipai-i,index_diachronica_original.html:14268, / _[-stress]
-45.1.3,Proto-Pai to Tipai,Tipai-i,index_diachronica_original.html:14278, / _[-stress]
+45.1.2,Proto-Pai to Paipai,Paipai-i,index_diachronica_original.html:14268, / [-stress]
+45.1.3,Proto-Pai to Tipai,Tipai-i,index_diachronica_original.html:14278, / [-stress]
 46.1,7-to-5 Vowel Merger (Bantu),5-Vowel-Merger-Bantu-S,index_diachronica_original.html:14293, ;  (Do not necessarily
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-ai,index_diachronica_original.html:14323, / _%# ; when stem-final
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-uː,index_diachronica_original.html:14324, / _%# ; when-stem final
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-ɛː,index_diachronica_original.html:14332, / sporadic ; in some northern
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-ɛː,index_diachronica_original.html:14332,ɛː → ɛi → əi
-46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-u,index_diachronica_original.html:14426, / _[-stress]
+46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-u,index_diachronica_original.html:14426, / [-stress]
 47.2,List 2: Conditional or complex consonant changes,List-2:-Conditional-or-complex-consonant-changes-b-d-ɡ,index_diachronica_original.html:14532, sporadic ; (some dialects
