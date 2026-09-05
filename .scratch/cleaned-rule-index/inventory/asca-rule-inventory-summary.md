@@ -21,10 +21,10 @@
 
 | count | failure_class |
 |------:|---------------|
-| 253 | `syntax_other` |
-| 125 | `unknown_character` |
+| 251 | `syntax_other` |
+| 126 | `unknown_character` |
 | 123 | `runtime_other` |
-| 115 | `expected_underscore` |
+| 116 | `expected_underscore` |
 | 58 | `invalid_ipa` |
 | 36 | `expected_number` |
 | 33 | `prose_or_expected_arrow` |
@@ -44,16 +44,16 @@
 
 | count | error_token |
 |------:|-------------|
-| 21 | `)` |
+| 19 | `)` |
 | 18 | `ʷ` |
-| 16 | `(` |
+| 15 | `(` |
 | 12 | ` ` |
 | 10 | `:` |
 | 9 | `''` |
 | 8 | `/` |
+| 6 | `∅` |
 | 6 | `>` |
 | 6 | `ʼ` |
-| 5 | `t` |
 ### syntax_other
 
 | count | description |
@@ -96,8 +96,8 @@
 | 6 | `̺` |
 | 5 | `͜` |
 | 5 | `ₙ` |
-| 4 | `̂` |
 | 4 | `̻` |
+| 4 | `̂` |
 ### unknown_character
 
 | count | description |
@@ -122,7 +122,7 @@
 
 | count | error_token |
 |------:|-------------|
-| 72 | `''` |
+| 73 | `''` |
 | 17 | `,` |
 | 17 | `/` |
 | 2 | `*` |
@@ -189,6 +189,17 @@
 | count | description |
 |------:|-------------|
 | — | _(none)_ |
+
+
+## Field isolation blame (error rows)
+
+| count | blame |
+|------:|-------|
+| 268 | `env` |
+| 220 | `input` |
+| 183 | `output` |
+| 172 | `multi` |
+| 82 | `exception` |
 
 ## Notes
 
