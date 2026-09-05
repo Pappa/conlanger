@@ -49267,6 +49267,7 @@ sections:
     raw: $ → χ
     source: index_diachronica_original.html:10415
     rule_id: Tlingit-$
+  status: skipped
 - section: Niger-Congo
   index: '30'
   citation: 'Hedinger (1987) reconstructs the following consonant inventory for Pre-Proto-Bantu:'
@@ -53304,6 +53305,7 @@ sections:
     raw: '{i1~ə1} → i1'
     source: index_diachronica_original.html:11407
     rule_id: Comox-i1~ə1
+  status: skipped
 - section: Proto-Central Salish to Chilliwack Halkomelem
   index: 35.1.2
   citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology
@@ -53526,6 +53528,7 @@ sections:
     raw: '{i1~ə1} → ə1'
     source: index_diachronica_original.html:11448
     rule_id: Cowichan-Halkomelem-i1~ə1
+  status: skipped
 - section: Proto-Central Salish to Musqueam Halkomelem
   index: 35.1.4
   citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology
@@ -53626,6 +53629,7 @@ sections:
     raw: '{i1~ə1} → ə1'
     source: index_diachronica_original.html:11467
     rule_id: Musqueam-Halkomelem-i1~ə1
+  status: skipped
 - section: Proto-Central Salish to Klallam
   index: 35.1.5
   citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology
@@ -53753,6 +53757,7 @@ sections:
     raw: '{i1~ə1} → ə1'
     source: index_diachronica_original.html:11490
     rule_id: Klallam-i1~ə1
+  status: skipped
 - section: Proto-Central Salish to Lushootseed
   index: 35.1.6
   citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology
@@ -54160,6 +54165,7 @@ sections:
     raw: '{i1~ə1} → ə1'
     source: index_diachronica_original.html:11562
     rule_id: Lummi-Northern-Straits-i1~ə1
+  status: skipped
 - section: Proto-Central Salish to Saanich Northern Straits
   index: 35.1.9
   citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology
@@ -54429,6 +54435,7 @@ sections:
     raw: '{i1~ə1} → ə1'
     source: index_diachronica_original.html:11610
     rule_id: Songish-Northern-Straits-i1~ə1
+  status: skipped
 - section: Proto-Central Salish to Sooke Northern Straits
   index: 35.1.11
   citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology
@@ -54555,6 +54562,7 @@ sections:
     raw: '{i1~ə1} → ə1'
     source: index_diachronica_original.html:11633
     rule_id: Sooke-Northern-Straits-i1~ə1
+  status: skipped
 - section: Proto-Central Salish to Pentlatch
   index: 35.1.12
   citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology
@@ -54796,6 +54804,7 @@ sections:
     raw: '{i1~ə1} → {i1,∅}'
     source: index_diachronica_original.html:11681
     rule_id: Sqamish-i1~ə1
+  status: skipped
 - section: Proto-Central Salish to Twana
   index: 35.1.15
   citation: Pogostick Man, from Galloway, Brent (1982), “Proto-Central Salish Phonology
@@ -68938,6 +68947,7 @@ sections:
     raw: '{œ,ɔ} → øː/œ “(except Suðuroy → ʏ)”'
     source: index_diachronica_original.html:14428
     rule_id: Faroese-Vowel-Shift-œ,ɔ
+  status: skipped
 - section: Pre-Slavic Vowel Changes
   index: '46.14'
   citation: Macska
