@@ -197,3 +197,8 @@
   confidence: medium
   notes: |
     https://wiki.firespeaker.org/Turkic_sound_changes
+ɲ̊:
+  ipa_target: ɲ:[-voice]
+  confidence: medium
+  notes: |
+    https://en.wikipedia.org/wiki/Voiceless_palatal_nasal

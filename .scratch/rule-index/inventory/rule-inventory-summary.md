@@ -6,14 +6,14 @@
 - Rows: **9827** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8467** (86.2%)
-- Fail: **588** (6.0%)
+- OK: **8470** (86.2%)
+- Fail: **585** (6.0%)
 - Skipped: **772** (7.9%)
 
 ## Sections
 
-- All OK: **449 / 714** (62.9%)
-- Some OK: **227 / 714** (31.8%)
+- All OK: **451 / 714** (63.2%)
+- Some OK: **225 / 714** (31.5%)
 - None OK: **3 / 714** (0.4%)
 - Sections skipped: **35 / 714** (4.9%)
 
@@ -21,10 +21,10 @@
 
 | count | failure_class |
 |------:|---------------|
-| 117 | `unknown_character` |
+| 113 | `unknown_character` |
 | 106 | `expected_underscore` |
 | 47 | `invalid_ipa` |
-| 44 | `missing_slash_output_env` |
+| 45 | `missing_slash_output_env` |
 | 38 | `expected_number` |
 | 33 | `expected_ipa` |
 | 32 | `prose_or_expected_arrow` |
@@ -91,14 +91,14 @@
 |------:|-------------|
 | 22 | `̣` |
 | 13 | `₂` |
-| 11 | `̊` |
+| 8 | `̊` |
 | 7 | `ː` |
-| 6 | `ŕ` |
 | 6 | `̺` |
-| 5 | `͜` |
+| 6 | `ŕ` |
 | 5 | `ₙ` |
-| 4 | `̂` |
+| 5 | `͜` |
 | 4 | `̻` |
+| 4 | `̂` |
 ### unknown_character (description)
 
 | count | description |
@@ -262,7 +262,7 @@
 |------:|-------------|
 | 20 | `)` |
 | 9 | `:` |
-| 5 | `(` |
+| 6 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
 | 1 | `&` |
@@ -386,17 +386,6 @@
 | count | description |
 |------:|-------------|
 | — | _(none)_ |
-
-
-## Field isolation blame (error rows)
-
-| count | blame |
-|------:|-------|
-| 213 | `env` |
-| 199 | `input` |
-| 128 | `output` |
-| 78 | `exception` |
-| 59 | `multi` |
 
 ## Notes
 
