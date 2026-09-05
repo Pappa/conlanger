@@ -2382,10 +2382,10 @@ sections:
     source: index_diachronica_original.html:1387
     rule_id: Egyptian-Arabic-V_2
   - stages:
-    - '{i,u}'
+    - '{i,u}:[-stress, -long]'
     - ∅
-    env: VC_:[-stress, -long]CV
-    raw: '{i,u} → ∅ / VC_:[-stress, -long]CV'
+    env: VC_CV
+    raw: '{i,u}:[-stress, -long] → ∅ / VC_CV'
     source: index_diachronica_original.html:1388
     rule_id: Egyptian-Arabic-i,u
   - stages:
@@ -2733,17 +2733,17 @@ sections:
     source: index_diachronica_original.html:1467
     rule_id: Moroccan-Arabic-t
   - stages:
-    - '{a,i}'
+    - '{a,i}:[-long]'
     - ə
-    env: _:[-long]
-    raw: '{a,i} → ə / _:[-long]'
+    env: _
+    raw: '{a,i}:[-long] → ə / _'
     source: index_diachronica_original.html:1468
     rule_id: Moroccan-Arabic-a,i
   - stages:
-    - u
+    - u:[-long]
     - ə
-    env: _:[-long]
-    raw: u → ə / _:[-long]
+    env: _
+    raw: u:[-long] → ə / _
     source: index_diachronica_original.html:1469
     rule_id: Moroccan-Arabic-u
   - stages:
@@ -2783,10 +2783,10 @@ sections:
     rule_id: Moroccan-Arabic-ə_3
     exception: _[+rtr], [+rtr]_
   - stages:
-    - u
+    - u:[-long]
     - ʊ
-    env: _:[-long]
-    raw: u → ʊ / _:[-long]
+    env: _
+    raw: u:[-long] → ʊ / _
     source: index_diachronica_original.html:1475
     rule_id: Moroccan-Arabic-u_2
   - comment: near emphatics
