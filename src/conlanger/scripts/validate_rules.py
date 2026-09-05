@@ -50,18 +50,18 @@ def main() -> int:
         type=Path,
         default=DEFAULT_INVENTORY_DIR,
         help=(
-            "writes asca-rule-inventory-success.csv / -error.csv, "
-            "asca-field-isolation-success.csv / -error.csv (when --field-isolation), "
-            "asca-rule-inventory-changelog.csv, "
+            "writes rule-inventory-success.csv / -error.csv, "
+            "field-isolation-success.csv / -error.csv (when --field-isolation), "
+            "rule-inventory-changelog.csv, "
             "error cluster CSVs, "
-            "and asca-rule-inventory-summary.md"
+            "and rule-inventory-summary.md"
         ),
     )
     ap.add_argument(
         "--field-isolation",
         action=argparse.BooleanOptionalAction,
         default=False,
-        help=("run asca-field-isolation (default: False)"),
+        help=("run field-isolation (default: False)"),
     )
     ap.add_argument("--probe-words", type=Path, default=DEFAULT_PROBE)
     ap.add_argument(
@@ -78,7 +78,7 @@ def main() -> int:
         "--reset-changelog",
         action="store_true",
         help=(
-            "overwrite asca-rule-inventory-changelog.csv instead of appending "
+            "overwrite rule-inventory-changelog.csv instead of appending "
             "(use after a column-schema change)"
         ),
     )
@@ -139,7 +139,9 @@ def main() -> int:
     field_success_path = args.inventory_dir / FIELD_ISOLATION_SUCCESS_CSV_NAME
     field_error_path = args.inventory_dir / FIELD_ISOLATION_ERROR_CSV_NAME
     changelog_path = args.inventory_dir / INVENTORY_CHANGELOG_CSV_NAME
-    summary_path = args.inventory_dir / "asca-rule-inventory-summary.md"
+    summary_path = args.inventory_dir / "rule-inventory-summary.md"
+    error_cluster_dir = args.inventory_dir / "error_clusters"
+    field_isolation_dir = args.inventory_dir / "field_isolation"
 
     previous = load_inventory_csv(args.inventory_dir)
     current_df = validation_rows_to_dataframe(rows)
@@ -148,9 +150,9 @@ def main() -> int:
 
     write_filtered_inventory_csvs(current_df, args.inventory_dir)
     error_df = filter_inventory_by_ok(current_df, ok=False)
-    write_error_cluster_csvs(error_df, args.inventory_dir)
+    write_error_cluster_csvs(error_df, error_cluster_dir)
     if args.field_isolation:
-        write_field_isolation_csvs(field_rows, args.inventory_dir)
+        write_field_isolation_csvs(field_rows, field_isolation_dir)
     if args.reset_changelog and changelog_path.is_file():
         changelog_path.unlink()
     flip_n = append_ok_flip_changelog(flips, changelog_path)

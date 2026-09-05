@@ -4,8 +4,8 @@ Stage 3 of the sound-change rule pipeline: **parse → compile → validate** ([
 
 After [Index Diachronica parse](./index-diachronica-parser.md) and [applier compile](./sound-change-applier.md), validate runs the applier checker and records inventory. This stage is the **correction loop** — it exercises compile + **compile validation** per rule to measure whether the **applier-neutral index** ([ADR-0002](./adr/0002-applier-neutral-yaml-rule-index.md)) produces valid ASCA, clusters failures for **class-first** correction, and iterates until adoption criteria are met. It is **not** ingest-time validation ([ADR-0003](./adr/0003-validate-after-applier-compile.md)): index fields may remain Index-shaped; the gate is post-compile `validate_asca`.
 
-**Spec:** [.scratch/cleaned-rule-index/spec.md](../.scratch/cleaned-rule-index/spec.md)  
-**Wayfinder map:** [.scratch/cleaned-rule-index/map.md](../.scratch/cleaned-rule-index/map.md)  
+**Spec:** [.scratch/rule-index/spec.md](../.scratch/rule-index/spec.md)  
+**Wayfinder map:** [.scratch/rule-index/map.md](../.scratch/rule-index/map.md)  
 **Glossary:** [CONTEXT.md](../CONTEXT.md) — *Corpus rule*, *Failure class*, *Validation report*, *Rule status*, *Class-first*, *Historical fidelity*
 
 ---
@@ -31,7 +31,7 @@ flowchart TD
   Inv[iter_validation_rows]
   Split[success / error CSVs]
   Changelog[ok-flip changelog]
-  Summary[asca-rule-inventory-summary.md]
+  Summary[rule-inventory-summary.md]
 
   HTML --> Parse --> YAML
   Parse --> CommentSummary
@@ -46,16 +46,16 @@ flowchart TD
 | Output | Path |
 | --- | --- |
 | Cleaned YAML | `data/diachronica/index_diachronica_parsed.yml` |
-| Parse diagnostics | `.scratch/cleaned-rule-index/parse/` |
-| Inventory dir | `.scratch/cleaned-rule-index/inventory/` |
-| Comment phrase survey | `.scratch/cleaned-rule-index/parse/rule-comment-phrases.md` |
+| Parse diagnostics | `.scratch/rule-index/parse/` |
+| Inventory dir | `.scratch/rule-index/inventory/` |
+| Comment phrase survey | `.scratch/rule-index/parse/rule-comment-phrases.md` |
 | Probe wordlist | `tests/fixtures/asca_probe_words.wsca` |
 
 **`validate_rules` flags:** `--limit N` (smoke), `--yaml-in`, `--inventory-dir`, `--probe-words`, `--field-isolation`, `--use-asca-fork`, `--reset-changelog`.
 
 **`create_index` flags:** `--html`, `--yaml-out`, `--parse-dir`.
 
-**Steady-state loop** ([ticket 05](../.scratch/cleaned-rule-index/issues/05-correction-workflow-invalid-rules.md)):
+**Steady-state loop** ([ticket 05](../.scratch/rule-index/issues/05-correction-workflow-invalid-rules.md)):
 
 1. Parse HTML → write YAML (`uv run create_index`)
 2. Compile → validate per rule (`uv run validate_rules`)
@@ -88,15 +88,15 @@ flowchart TD
 
 | Era | Rules | OK | Notes |
 | --- | ---: | ---: | --- |
-| Provisional AI YAML + asca 0.9.3 | 9721 | 57.1% | [Ticket 02](../.scratch/cleaned-rule-index/issues/02-inventory-valid-vs-invalid-rules.md) |
-| Cleaned schema + passes 14–25 | 9317 | 68.9% | [Ticket 12](../.scratch/cleaned-rule-index/issues/12-full-index-validation-inventory.md) |
-| Current on-disk summary | 9841 | **85.4%** (8400 ok) | [inventory summary](../.scratch/cleaned-rule-index/inventory/asca-rule-inventory-summary.md) |
+| Provisional AI YAML + asca 0.9.3 | 9721 | 57.1% | [Ticket 02](../.scratch/rule-index/issues/02-inventory-valid-vs-invalid-rules.md) |
+| Cleaned schema + passes 14–25 | 9317 | 68.9% | [Ticket 12](../.scratch/rule-index/issues/12-full-index-validation-inventory.md) |
+| Current on-disk summary | 9841 | **85.4%** (8400 ok) | [inventory summary](../.scratch/rule-index/inventory/rule-inventory-summary.md) |
 
 **Section outcomes (current):** 417 / 714 sections all OK (58.4%); 268 some OK; 4 none OK; 25 sections skipped. See **Sections** in the summary markdown.
 
 **Top failure classes (current):** `syntax_other`, `unknown_character`, `runtime_other`, `expected_underscore`.
 
-**Limitations (accepted):** Tier 4 runtime failures may be under-detected when the fixed baseline wordlist does not match rule shape (~98% of failures are Tier 1–2 syntax). Rule-derived probe synthesis — [ticket 10](../.scratch/cleaned-rule-index/issues/10-rule-derived-probe-synthesis.md) — **wontfix**.
+**Limitations (accepted):** Tier 4 runtime failures may be under-detected when the fixed baseline wordlist does not match rule shape (~98% of failures are Tier 1–2 syntax). Rule-derived probe synthesis — [ticket 10](../.scratch/rule-index/issues/10-rule-derived-probe-synthesis.md) — **wontfix**.
 
 ---
 
@@ -104,16 +104,16 @@ flowchart TD
 
 Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](./adr/0010-historical-fidelity-class-first-status.md)). Corpus YAML carries thin optional `status` only (`needs-validation` | `skipped`; omit = ok).
 
-**Artifacts** (under `.scratch/cleaned-rule-index/inventory/`):
+**Artifacts** (under `.scratch/rule-index/inventory/`):
 
 | File | Role | Ticket |
 | --- | --- | --- |
-| `asca-rule-inventory-success.csv` | Filtered `ok=True` | [34](../.scratch/cleaned-rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
-| `asca-rule-inventory-error.csv` | Filtered `ok=False` | [34](../.scratch/cleaned-rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
-| `asca-rule-inventory-changelog.csv` | Append-only **ok flips** matched by `(source, alt_idx)` (HTML `file:line` + optional-output alternative). Prior `ok` is read from the success/error split CSVs. Pass `--reset-changelog` to overwrite after a column-schema change. | [34](../.scratch/cleaned-rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
-| `asca-rule-inventory-summary.md` | Rule/section counts, failure-class table, **Common Errors** (top `error_token` and description clusters per failure class), field-isolation blame | [12](../.scratch/cleaned-rule-index/issues/12-full-index-validation-inventory.md) |
-| `asca-field-isolation-success.csv` | filtered `whole_ok == true` (and per-field clean) | [36](../.scratch/cleaned-rule-index/issues/36-per-field-asca-blame-in-inventory.md) |
-| `asca-field-isolation-error.csv` | filtered `whole_ok == false` or per-field fail | [36](../.scratch/cleaned-rule-index/issues/36-per-field-asca-blame-in-inventory.md) |
+| `rule-inventory-success.csv` | Filtered `ok=True` | [34](../.scratch/rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
+| `rule-inventory-error.csv` | Filtered `ok=False` | [34](../.scratch/rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
+| `rule-inventory-changelog.csv` | Append-only **ok flips** matched by `(source, alt_idx)` (HTML `file:line` + optional-output alternative). Prior `ok` is read from the success/error split CSVs. Pass `--reset-changelog` to overwrite after a column-schema change. | [34](../.scratch/rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
+| `rule-inventory-summary.md` | Rule/section counts, failure-class table, **Common Errors** (top `error_token` and description clusters per failure class), field-isolation blame | [12](../.scratch/rule-index/issues/12-full-index-validation-inventory.md) |
+| `field-isolation-success.csv` | filtered `whole_ok == true` (and per-field clean) | [36](../.scratch/rule-index/issues/36-per-field-asca-blame-in-inventory.md) |
+| `field-isolation-error.csv` | filtered `whole_ok == false` or per-field fail | [36](../.scratch/rule-index/issues/36-per-field-asca-blame-in-inventory.md) |
 | `unknown_grouping_errors.csv` | `unknown_grouping` cluster rows | error-cluster tooling |
 | `unknown_character_errors.csv` | `unknown_character` cluster rows | error-cluster tooling |
 | `expected_underscore_errors.csv` | `expected_underscore` cluster rows | error-cluster tooling |
@@ -130,7 +130,7 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](./ad
 
 `alt_idx` is the 0-based optional-output alternative index (e.g. `d → {∅,ð}` emits one row per alternative and never the parent's random pick); it is empty for rules without alternatives.
 
-**Summary markdown (`asca-rule-inventory-summary.md`):**
+**Summary markdown (`rule-inventory-summary.md`):**
 
 - **Rules** — ok / fail / skipped counts (section-skipped rules excluded from ok/fail percentages).
 - **Sections** — mutually exclusive buckets: all OK, some OK, none OK, sections skipped (correction-pass prioritisation metric).
@@ -198,14 +198,14 @@ resolve_asca_bin() -> str | None  # ASCA_BIN env, then PATH
 
 **Purpose:** `asca run` exercises parse **and** apply (Tier 1–4 in validity research). Not parse-only.
 
-**Limits** ([ticket 10](../.scratch/cleaned-rule-index/issues/10-rule-derived-probe-synthesis.md) wontfix):
+**Limits** ([ticket 10](../.scratch/rule-index/issues/10-rule-derived-probe-synthesis.md) wontfix):
 
 - ~98% of inventory failures are Tier 1–2 syntax — baseline probes suffice for clustering.
 - Tier 4 runtime errors (lonely sets, insertion+env, deletion-only-segment) may be **under-detected** when probes don't match rule shape — acceptable for correction-loop clustering.
 
 ### ASCA validation tiers
 
-See [asca-rule-validity.md](../.scratch/cleaned-rule-index/research/asca-rule-validity.md) §5 for ASCA constraint detail:
+See [asca-rule-validity.md](../.scratch/rule-index/research/asca-rule-validity.md) §5 for ASCA constraint detail:
 
 | Tier | Stage | Caught by `validate_asca`? |
 | --- | --- | --- |
@@ -216,7 +216,7 @@ See [asca-rule-validity.md](../.scratch/cleaned-rule-index/research/asca-rule-va
 
 ### Skipped rules
 
-Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` excludes them; inventory marks `ok=True`, description `"held-out (commented rule)"`. Hold-out policy: `status: skipped` only from `skip_sections` / `skip_rules` in `parser_config.yml` — not boolean `skip: true` / `skipped: true`, and not parse-time auto-skip ([ADR-0010](./adr/0010-historical-fidelity-class-first-status.md), [ticket 89](../.scratch/cleaned-rule-index/issues/89-unify-status-skipped.md)).
+Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` excludes them; inventory marks `ok=True`, description `"held-out (commented rule)"`. Hold-out policy: `status: skipped` only from `skip_sections` / `skip_rules` in `parser_config.yml` — not boolean `skip: true` / `skipped: true`, and not parse-time auto-skip ([ADR-0010](./adr/0010-historical-fidelity-class-first-status.md), [ticket 89](../.scratch/rule-index/issues/89-unify-status-skipped.md)).
 
 ---
 
@@ -224,10 +224,10 @@ Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` e
 
 **Goal:** Reduce failure clusters via **class-first** transforms — parser (parse-time) or compiler (`SoundChangeRule`, compile-time) — without meaning-changing rewrites unless owner-approved.
 
-**Standing recipe** — [ticket 13](../.scratch/cleaned-rule-index/issues/13-correction-pass-template.md):
+**Standing recipe** — [ticket 13](../.scratch/rule-index/issues/13-correction-pass-template.md):
 
 1. Name target **failure class** / `error_token` cluster from inventory summary or CSV.
-2. Implement transform per **edit ladder** ([ticket 04](../.scratch/cleaned-rule-index/issues/04-historical-fidelity-vs-validity.md), [ADR-0010](./adr/0010-historical-fidelity-class-first-status.md)).
+2. Implement transform per **edit ladder** ([ticket 04](../.scratch/rule-index/issues/04-historical-fidelity-vs-validity.md), [ADR-0010](./adr/0010-historical-fidelity-class-first-status.md)).
 3. Re-run `uv run create_index && uv run validate_rules`.
 4. Record before/after ok/fail and residual cluster size in ticket **Answer**.
 5. Update fixtures when **rule status** or validation outcome changes intentionally.
@@ -236,19 +236,19 @@ Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` e
 
 | Layer | Module | Examples (tickets 14–25) |
 | --- | --- | --- |
-| Parse-time | `IndexDiachronicaParser` / `parsers.py` | em dash [16](../.scratch/cleaned-rule-index/issues/16-correction-pass-em-dash.md), arrow [17](../.scratch/cleaned-rule-index/issues/17-correction-pass-arrow.md), sporadic [19](../.scratch/cleaned-rule-index/issues/19-correction-pass-sporadic-qualifier.md), glosses [21](../.scratch/cleaned-rule-index/issues/21-correction-pass-trailing-glosses.md), stress [22](../.scratch/cleaned-rule-index/issues/22-correction-pass-stress-conditions.md), smart quotes [24](../.scratch/cleaned-rule-index/issues/24-correction-pass-smart-quotes.md) |
-| Compile-time | `SoundChangeRule` in `rules.py` | class letters [14](../.scratch/cleaned-rule-index/issues/14-correction-pass-unknown-grouping.md), length marks [15](../.scratch/cleaned-rule-index/issues/15-correction-pass-length-marker.md), [25](../.scratch/cleaned-rule-index/issues/25-correction-pass-bare-length-marker.md), ejectives [20](../.scratch/cleaned-rule-index/issues/20-correction-pass-ejective-marks.md), labialized letters [23](../.scratch/cleaned-rule-index/issues/23-correction-pass-labialized-class-letters.md), chain expansion [compile-time chains](../src/conlanger/tools/compile/asca/chains.py) |
+| Parse-time | `IndexDiachronicaParser` / `parsers.py` | em dash [16](../.scratch/rule-index/issues/16-correction-pass-em-dash.md), arrow [17](../.scratch/rule-index/issues/17-correction-pass-arrow.md), sporadic [19](../.scratch/rule-index/issues/19-correction-pass-sporadic-qualifier.md), glosses [21](../.scratch/rule-index/issues/21-correction-pass-trailing-glosses.md), stress [22](../.scratch/rule-index/issues/22-correction-pass-stress-conditions.md), smart quotes [24](../.scratch/rule-index/issues/24-correction-pass-smart-quotes.md) |
+| Compile-time | `SoundChangeRule` in `rules.py` | class letters [14](../.scratch/rule-index/issues/14-correction-pass-unknown-grouping.md), length marks [15](../.scratch/rule-index/issues/15-correction-pass-length-marker.md), [25](../.scratch/rule-index/issues/25-correction-pass-bare-length-marker.md), ejectives [20](../.scratch/rule-index/issues/20-correction-pass-ejective-marks.md), labialized letters [23](../.scratch/rule-index/issues/23-correction-pass-labialized-class-letters.md), chain expansion [compile-time chains](../src/conlanger/tools/compile/asca/chains.py) |
 
 **Policy highlights:**
 
 - Prefer **historical fidelity** over valid-but-inaccurate rewrites → `status: skipped` on the index rule.
 - Structural normalisation → `status: needs-validation`; agent clears on clean re-validate.
-- During bulk correction, do **not** pre-emptively skip unmapped tokens ([ticket 26](../.scratch/cleaned-rule-index/issues/26-parse-time-correspondence-series-indices.md)).
+- During bulk correction, do **not** pre-emptively skip unmapped tokens ([ticket 26](../.scratch/rule-index/issues/26-parse-time-correspondence-series-indices.md)).
 - Permanent skip / rare same-intent swaps → **project owner only**.
 
 **Resolved correction passes (14–25):** unknown_grouping, length marker ː, em dash, arrow →, compile-time chain expansion, sporadic glosses, ejective ʼ, trailing glosses, stress env, labialized class letters, smart quotes, bare length marker.
 
-**Follow-on cluster work:** correspondence-series [26–28](../.scratch/cleaned-rule-index/issues/26-parse-time-correspondence-series-indices.md), unknown_feature [32](../.scratch/cleaned-rule-index/issues/32-correction-pass-unknown-feature.md), positional/identity subscripts (planned compile-time, [spike 38](../.scratch/cleaned-rule-index/issues/38-spike-asca-compile-transform-order.md)). (`samePOA` and other deferred unknown_feature leftovers: inventory-driven; no dedicated ticket.)
+**Follow-on cluster work:** correspondence-series [26–28](../.scratch/rule-index/issues/26-parse-time-correspondence-series-indices.md), unknown_feature [32](../.scratch/rule-index/issues/32-correction-pass-unknown-feature.md), positional/identity subscripts (planned compile-time, [spike 38](../.scratch/rule-index/issues/38-spike-asca-compile-transform-order.md)). (`samePOA` and other deferred unknown_feature leftovers: inventory-driven; no dedicated ticket.)
 
 ---
 

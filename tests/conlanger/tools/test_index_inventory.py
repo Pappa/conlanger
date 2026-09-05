@@ -820,10 +820,10 @@ def test_summarize_inventory():
     assert "Sections skipped: **0 / 1** (0.0%)" in text
     assert "| 2 | `syntax_other` |" in text
     assert "## Common Errors" in text
-    assert "asca-rule-inventory-success.csv" in text
-    assert "asca-rule-inventory-error.csv" in text
-    assert "asca-rule-inventory-changelog.csv" in text
-    assert "asca-rule-inventory.csv" not in text
+    assert "rule-inventory-success.csv" in text
+    assert "rule-inventory-error.csv" in text
+    assert "rule-inventory-changelog.csv" in text
+    assert "rule-inventory.csv" not in text
     assert "syntax_other_errors.csv" in text
     assert "runtime_other_errors.csv" in text
     assert "unknown_character_errors.csv" in text
@@ -1073,8 +1073,8 @@ def test_write_filtered_inventory_csvs(tmp_path: Path):
         ]
     )
     write_filtered_inventory_csvs(df, tmp_path)
-    success = tmp_path / "asca-rule-inventory-success.csv"
-    error = tmp_path / "asca-rule-inventory-error.csv"
+    success = tmp_path / "rule-inventory-success.csv"
+    error = tmp_path / "rule-inventory-error.csv"
     assert success.is_file()
     assert error.is_file()
 
@@ -1318,11 +1318,9 @@ def test_write_field_isolation_csvs_writes_success_and_error_only(tmp_path: Path
         ),
     ]
     write_field_isolation_csvs(rows, tmp_path)
-    success = list(
-        csv.DictReader((tmp_path / "asca-field-isolation-success.csv").open())
-    )
-    error = list(csv.DictReader((tmp_path / "asca-field-isolation-error.csv").open()))
-    assert not (tmp_path / "asca-field-isolation.csv").exists()
+    success = list(csv.DictReader((tmp_path / "field-isolation-success.csv").open()))
+    error = list(csv.DictReader((tmp_path / "field-isolation-error.csv").open()))
+    assert not (tmp_path / "field-isolation.csv").exists()
     assert len(success) == 1
     assert success[0]["source"] == "s:1"
     assert len(error) == 1
@@ -1361,9 +1359,9 @@ def test_summarize_inventory_links_field_isolation_csvs():
         probe_words="probe.wsca",
         field_isolation_rows=field_rows,
     )
-    assert "asca-field-isolation-success.csv" in text
-    assert "asca-field-isolation-error.csv" in text
-    assert "asca-field-isolation.csv" not in text
+    assert "field-isolation-success.csv" in text
+    assert "field-isolation-error.csv" in text
+    assert "field-isolation.csv" not in text
     assert "## Field isolation blame (error rows)" in text
     assert "| 1 | `input` |" in text
 

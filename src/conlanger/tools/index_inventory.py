@@ -178,11 +178,11 @@ CHANGELOG_CSV_COLUMNS = [
     "timestamp",
 ]
 
-INVENTORY_SUCCESS_CSV_NAME = "asca-rule-inventory-success.csv"
-INVENTORY_ERROR_CSV_NAME = "asca-rule-inventory-error.csv"
-INVENTORY_CHANGELOG_CSV_NAME = "asca-rule-inventory-changelog.csv"
-FIELD_ISOLATION_SUCCESS_CSV_NAME = "asca-field-isolation-success.csv"
-FIELD_ISOLATION_ERROR_CSV_NAME = "asca-field-isolation-error.csv"
+INVENTORY_SUCCESS_CSV_NAME = "rule-inventory-success.csv"
+INVENTORY_ERROR_CSV_NAME = "rule-inventory-error.csv"
+INVENTORY_CHANGELOG_CSV_NAME = "rule-inventory-changelog.csv"
+FIELD_ISOLATION_SUCCESS_CSV_NAME = "field-isolation-success.csv"
+FIELD_ISOLATION_ERROR_CSV_NAME = "field-isolation-error.csv"
 SECTION_SKIPPED_FAILURE_CLASS = "section_skipped"
 
 BLAME_FIELD_ORDER: tuple[ASCARulePart, ...] = ("input", "output", "env", "exception")

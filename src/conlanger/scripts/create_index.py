@@ -1,7 +1,7 @@
 """Parse Index Diachronica HTML into applier-neutral YAML and parse diagnostics.
 
 Parse-only: writes cleaned YAML and parse-time artifacts under
-``.scratch/cleaned-rule-index/parse/``. For compile validation and inventory,
+``.scratch/rule-index/parse/``. For compile validation and inventory,
 run ``validate_rules`` on the parsed YAML.
 """
 

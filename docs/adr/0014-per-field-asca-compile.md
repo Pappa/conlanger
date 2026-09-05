@@ -1,6 +1,6 @@
 # ASCA compile transforms run per field at SoundChangeRule construction
 
-The applier-neutral index stays Index-shaped YAML (**stages**, optional env/exception). The ASCA **applier compiler** applies string transforms to **input**, **output**, **env**, and **exception** separately when constructing `SoundChangeRule`, then joins those already-compiled fields only when rendering `.rsca` text. That replaces join-then-rewrite on a single rule string. Grill: [ticket 92](../../.scratch/cleaned-rule-index/issues/92-grill-pydantic-compile-refactor.md). Implementation: [ticket 93](../../.scratch/cleaned-rule-index/issues/93-pydantic-compile-refactor.md).
+The applier-neutral index stays Index-shaped YAML (**stages**, optional env/exception). The ASCA **applier compiler** applies string transforms to **input**, **output**, **env**, and **exception** separately when constructing `SoundChangeRule`, then joins those already-compiled fields only when rendering `.rsca` text. That replaces join-then-rewrite on a single rule string. Grill: [ticket 92](../../.scratch/rule-index/issues/92-grill-pydantic-compile-refactor.md). Implementation: [ticket 93](../../.scratch/rule-index/issues/93-pydantic-compile-refactor.md).
 
 ## Considered Options
 

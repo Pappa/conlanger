@@ -55,7 +55,7 @@ Per-field transforms run on `input`, `output`, `env`, and `exception` separately
 | Per-field post-subscript transforms | implemented | 6–10 | Each field: length → tone → apostrophe → ejective → breve → meta notation. | Length/tone/ejective order unchanged from spike 38. |
 | Join compiled fields | implemented | render | `input > output / env // exception` into `SoundChangeRule.value`. | Join is render-only; no join-then-rewrite pipeline. |
 
-**Research:** [positional-slots-and-identity-subscripts.md](../.scratch/cleaned-rule-index/research/positional-slots-and-identity-subscripts.md), [subscript-notation-index-asca-brassica.md](../.scratch/cleaned-rule-index/research/subscript-notation-index-asca-brassica.md).
+**Research:** [positional-slots-and-identity-subscripts.md](../.scratch/rule-index/research/positional-slots-and-identity-subscripts.md), [subscript-notation-index-asca-brassica.md](../.scratch/rule-index/research/subscript-notation-index-asca-brassica.md).
 
 ### Class-letter expansion boundaries
 

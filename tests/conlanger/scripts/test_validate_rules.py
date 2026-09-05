@@ -220,7 +220,7 @@ def test_validate_rules_writes_validation_inventory(
         tmp_path / "bin" / "bin" / "asca"
     )
     mock_flip_rows.assert_called_once()
-    summary_path = inventory_dir / "asca-rule-inventory-summary.md"
+    summary_path = inventory_dir / "rule-inventory-summary.md"
     assert summary_path.is_file()
     assert "asca-test-0.10" in summary_path.read_text(encoding="utf-8")
 
@@ -255,7 +255,7 @@ def test_validate_rules_reset_changelog_overwrites_existing(
     probe.write_text("probe", encoding="utf-8")
     inventory_dir = work / "inventory"
     inventory_dir.mkdir()
-    changelog_path = inventory_dir / "asca-rule-inventory-changelog.csv"
+    changelog_path = inventory_dir / "rule-inventory-changelog.csv"
     changelog_path.write_text(
         "section_index,rule_id,source,ok,timestamp\nold,r0,s:0,True,old\n",
         encoding="utf-8",

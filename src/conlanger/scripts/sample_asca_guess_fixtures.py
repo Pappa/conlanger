@@ -1,6 +1,6 @@
 """Sample HTML rules and append heuristic ASCA-guess fixture rows.
 
-Evidence ticket: .scratch/cleaned-rule-index/issues/08-asca-validator.md
+Evidence ticket: .scratch/rule-index/issues/08-asca-validator.md
 RNG seed is fixed (default 20260802) and recorded beside the fixture.
 """
 

@@ -26,11 +26,11 @@ Wayfinder session on **subscript notation** (`CONTEXT.md`) and owner clarificati
 
 ### Amendment (2026-08-18)
 
-Grill [72](.scratch/cleaned-rule-index/issues/72-grill-series-mapping-manual-sot.md) retired parse-time `series_mappings.csv` expansion:
+Grill [72](.scratch/rule-index/issues/72-grill-series-mapping-manual-sot.md) retired parse-time `series_mappings.csv` expansion:
 
 - **No parse-time series CSV** — I/O-inferred rows conflated sound changes with notation definitions and could collapse multi-step rules to identity.
-- Corpus **stages** / env / exception keep Index-shaped **correspondence-series indices** until compile mapping; **collective subscripts** fan out to member indices at parse via `parser_config.yml` `series_expansions` ([ticket 73](.scratch/cleaned-rule-index/issues/73-grill-series-mapping-config-sot.md)).
-- **Series mappings** (index → segment) live in `config/compile/asca/compiler_config.yml` at compile ([ticket 75](.scratch/cleaned-rule-index/issues/75-implement-compiler-config-series-mappings.md)); replaces `PIE_LARYNGEAL_ALIASES` Python.
+- Corpus **stages** / env / exception keep Index-shaped **correspondence-series indices** until compile mapping; **collective subscripts** fan out to member indices at parse via `parser_config.yml` `series_expansions` ([ticket 73](.scratch/rule-index/issues/73-grill-series-mapping-config-sot.md)).
+- **Series mappings** (index → segment) live in `config/compile/asca/compiler_config.yml` at compile ([ticket 75](.scratch/rule-index/issues/75-implement-compiler-config-series-mappings.md)); replaces `PIE_LARYNGEAL_ALIASES` Python.
 - `section_abbreviations.yml` is advisory only; not regenerated from extract tooling.
 - Inventory `ok` may drop when incorrect parse expansions are removed; that regression is accepted.
 
