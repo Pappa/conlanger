@@ -958,6 +958,8 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 8.5.1.2,Proto-Kypchak to Kyrgyz,Kyrgyz-e_2,,index_diachronica_original.html:2329,True,,,,,
 8.5.2,Proto-Turkic to Sakha,"Sakha-e,ɤː",,index_diachronica_original.html:2334,True,,,,,
 8.5.2,Proto-Turkic to Sakha,Sakha-o-oɡ-ø-øɡ-iɡ,,index_diachronica_original.html:2335,True,,,,,
+8.5.2,Proto-Turkic to Sakha,"Sakha-aɡ̌ɯ,b-oɡ̌,b,aɡ̌u-uɡ̌,b",,index_diachronica_original.html:2336,True,,,,,
+8.5.2,Proto-Turkic to Sakha,Sakha-iɡ̌,,index_diachronica_original.html:2337,True,,,,,
 8.5.2,Proto-Turkic to Sakha,Sakha-eɡ,0,index_diachronica_original.html:2338,True,,,,,
 8.5.2,Proto-Turkic to Sakha,Sakha-eɡ,1,index_diachronica_original.html:2338,True,,,,,
 8.5.2,Proto-Turkic to Sakha,Sakha-eɡ,2,index_diachronica_original.html:2338,True,,,,,
@@ -4500,6 +4502,8 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-ɔ_4,1,index_diachronica_original.html:7746,True,,,,,
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-ɔ_4,2,index_diachronica_original.html:7746,True,,,,,
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-a,,index_diachronica_original.html:7747,True,,,,,
+17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-a_3,,index_diachronica_original.html:7749,True,,,,,held-out (commented rule)
+17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-å-ɛ-ɔ,,index_diachronica_original.html:7750,True,,,,,held-out (commented rule)
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-ɛ-ɔ,,index_diachronica_original.html:7751,True,,,,,
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-e,,index_diachronica_original.html:7752,True,,,,,
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-ɛ,,index_diachronica_original.html:7754,True,,,,,

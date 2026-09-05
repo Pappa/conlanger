@@ -7566,13 +7566,13 @@ sections:
     source: index_diachronica_original.html:2335
     rule_id: Sakha-o-oɡ-ø-øɡ-iɡ
   - stages:
-    - a{ɡ̌(ɯ),b} {oɡ̌,ob,aɡ̌u} u{ɡ̌,b}
+    - a{ɢ(ɯ),b} {oɢ,ob,aɢu} u{ɢ,b}
     - ɰa wo uː
     raw: a{ɡ̌(ɯ),b} {o{ɡ̌,b},aɡ̌u} u{ɡ̌,b} → ɰa wo uː
     source: index_diachronica_original.html:2336
     rule_id: Sakha-aɡ̌ɯ,b-oɡ̌,b,aɡ̌u-uɡ̌,b
   - stages:
-    - iɡ̌
+    - iɢ
     - ɯː
     - iː
     comment: (but original ɯː unaffected?)
@@ -37238,30 +37238,23 @@ sections:
       Dauphiné)
     source: index_diachronica_original.html:7748
     rule_id: Old-Provençal-—-a_2
-  - stages:
-    - a
-    - å
-    comment: (I have no idea what is going on here. Grandgent seems to distinguish
-      an open and close /a/, and I have listed his open a as /å/, which seems to have
-      been distinct from /ɔ/, but beyond this section it doesn’t really seem to matter
-      very much)
+  - stages: []
     raw: — a → å (I have no idea what is going on here. Grandgent seems to distinguish
       an open and close /a/, and I have listed his open a as /å/, which seems to have
       been distinct from /ɔ/, but beyond this section it doesn’t really seem to matter
       very much)
     source: index_diachronica_original.html:7749
+    status: skipped
     rule_id: Old-Provençal-—-a_3
-  - stages:
-    - å ɛ ɔ
-    - a e o
-    env: _N
-    comment: (in Limousin and neighboring regions, the last two particularly in Limousin,
-      Languedoc, and Gascon, though when _ɲ this change may have been blocked)
+    comment: 'Can''t esolve  å '
+  - stages: []
     raw: — å ɛ ɔ → a e o / _N (in Limousin and neighboring regions, the last two particularly
       in Limousin, Languedoc, and Gascon, though when _ɲ this change may have been
       blocked)
     source: index_diachronica_original.html:7750
+    status: skipped
     rule_id: Old-Provençal-—-å-ɛ-ɔ
+    comment: 'Can''t esolve  å '
   - stages:
     - ɛ ɔ
     - jɛ wɔ

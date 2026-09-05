@@ -6,14 +6,14 @@
 - Rows: **9827** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8463** (86.1%)
-- Fail: **592** (6.0%)
+- OK: **8467** (86.2%)
+- Fail: **588** (6.0%)
 - Skipped: **772** (7.9%)
 
 ## Sections
 
-- All OK: **448 / 714** (62.7%)
-- Some OK: **228 / 714** (31.9%)
+- All OK: **449 / 714** (62.9%)
+- Some OK: **227 / 714** (31.8%)
 - None OK: **3 / 714** (0.4%)
 - Sections skipped: **35 / 714** (4.9%)
 
@@ -21,13 +21,13 @@
 
 | count | failure_class |
 |------:|---------------|
-| 120 | `unknown_character` |
+| 117 | `unknown_character` |
 | 106 | `expected_underscore` |
 | 47 | `invalid_ipa` |
-| 46 | `missing_slash_output_env` |
+| 44 | `missing_slash_output_env` |
 | 38 | `expected_number` |
 | 33 | `expected_ipa` |
-| 31 | `prose_or_expected_arrow` |
+| 32 | `prose_or_expected_arrow` |
 | 28 | `syntax_other` |
 | 23 | `unknown_feature` |
 | 21 | `nested_brackets` |
@@ -93,12 +93,12 @@
 | 13 | `₂` |
 | 11 | `̊` |
 | 7 | `ː` |
-| 6 | `̺` |
 | 6 | `ŕ` |
-| 5 | `ₙ` |
+| 6 | `̺` |
 | 5 | `͜` |
-| 4 | `̻` |
+| 5 | `ₙ` |
 | 4 | `̂` |
+| 4 | `̻` |
 ### unknown_character (description)
 
 | count | description |
@@ -204,10 +204,10 @@
 | 21 | `Expected '>', '->' or '=>', but received 'ˀ'` |
 | 2 | `Expected '>', '->' or '=>', but received '*'` |
 | 2 | `Expected '>', '->' or '=>', but received ')'` |
-| 1 | `Expected '>', '->' or '=>', but received ':'` |
+| 2 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
-| 1 | `Expected '>', '->' or '=>', but received '̥'` |
+| 1 | `Expected '>', '->' or '=>', but received ':'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
@@ -262,14 +262,14 @@
 |------:|-------------|
 | 20 | `)` |
 | 9 | `:` |
-| 6 | `(` |
+| 5 | `(` |
 | 3 | `ʲ` |
-| 2 | `̥` |
 | 2 | `_` |
 | 1 | `&` |
 | 1 | `*` |
 | 1 | `#` |
 | 1 | `ˀ` |
+| 1 | `̥` |
 ### missing_slash_output_env (description)
 
 | count | description |
@@ -393,10 +393,10 @@
 | count | blame |
 |------:|-------|
 | 213 | `env` |
-| 201 | `input` |
-| 129 | `output` |
+| 199 | `input` |
+| 128 | `output` |
 | 78 | `exception` |
-| 60 | `multi` |
+| 59 | `multi` |
 
 ## Notes
 

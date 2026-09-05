@@ -5,7 +5,8 @@
 ã:
   ipa_target: ã
   confidence: high
-  notes: Precomposed a-tilde → a + combining tilde; Tamil/French nasal vowel rules
+  notes:
+    Precomposed a-tilde → a + combining tilde; Tamil/French nasal vowel rules
     (n=34)
 ẽ:
   ipa_target: ẽ
@@ -18,12 +19,14 @@
 ḱ:
   ipa_target: kʲ
   confidence: high
-  notes: PIE palatovelar (Leiden); ASCA accepts kʲ; sections 17.x Albanian/Anatolian/Armenian
+  notes: |
+    PIE palatovelar (Leiden); ASCA accepts kʲ; sections 17.x Albanian/Anatolian/Armenian
     (n=28)
 Ṽ:
   ipa_target: ṽ
   confidence: high
-  notes: Capital V-tilde; ASCA rejects precomposed ṽ/Ṽ; decompose to v+combining tilde
+  notes: |
+    Capital V-tilde; ASCA rejects precomposed ṽ/Ṽ; decompose to v+combining tilde
     (n=27)
 ṽ:
   ipa_target: ṽ
@@ -189,3 +192,8 @@
   ipa_target: ʝ
   confidence: defer
   notes: ASCA accepts as segment; 1 inventory hits are prose/env not mapping (n=1)
+ɡ̌:
+  ipa_target: ɢ
+  confidence: medium
+  notes: |
+    https://wiki.firespeaker.org/Turkic_sound_changes
