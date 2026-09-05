@@ -25,7 +25,6 @@ section_index,rule_id,error_token,rule
 17.12.1.1.3,French-V_3,a,"V > ∅ / _# // V = a | ^ @ Rule 1, Line 1"
 17.12.1.1.5,Portuguese-N,P,"N > ∅ / V[+nas]_$C // C = P | ^ @ Rule 1, Line 1"
 17.12.1.1.5,Portuguese-C0C0,r,"C=0 0 > 0 // C = r | ^ @ Rule 1, Line 1"
-17.12.1.1.10,Spanish-—-e,p,"e > i / _Cj // C = p | ^ @ Rule 1, Line 1"
 17.12.1.1.10,Spanish-V_5,a,"V > ∅ / _[-stress] // V = a | ^ @ Rule 1, Line 1"
 17.13,Proto-Tocharian-Kʷ,s,"C:[-front,+back,+hi,-lo,+round] > C:[-front,+back,+hi,-lo] / _{C,o,a} // C = syllabic | ^ @ Rule 1, Line 1"
 17.13,Proto-Tocharian-H,s,"[-place] > ɛ / _[+son,-syll], when [+son,-syll] = syllabic | ^ @ Rule 1, Line 1"

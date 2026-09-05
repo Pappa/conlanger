@@ -4841,7 +4841,8 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-mb-mn,,index_diachronica_original.html:8140,True,,,,,
 17.12.1.1.10,Vulgar Latin to Spanish,"Spanish-jl,lj-jn,nj-jɡ,ɡj",,index_diachronica_original.html:8141,True,,,,,
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-bj,,index_diachronica_original.html:8142,True,,,,,
-17.12.1.1.10,Vulgar Latin to Spanish,"Spanish-e-ɛ,a-ɔ-o",,index_diachronica_original.html:8143,True,,,,,
+17.12.1.1.10,Vulgar Latin to Spanish,"Spanish-e-ɛ,a-ɔ-o",,index_diachronica_original.html:8143,True,,,,,held-out (commented rule)
+17.12.1.1.10,Vulgar Latin to Spanish,Spanish-—-e,,index_diachronica_original.html:8144,True,,,,,
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-—-ɛ-ɔ-u,,index_diachronica_original.html:8145,True,,,,,
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-—-a,,index_diachronica_original.html:8146,True,,,,,
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-oj,,index_diachronica_original.html:8147,True,,,,,

@@ -118,3 +118,5 @@ skip_rules:
     reason: "Can't esolve  å "
   - id: Old-Provençal-—-å-ɛ-ɔ
     reason: "Can't esolve  å "
+  - id: Spanish-e-ɛ,a-ɔ-o
+    reason: "This is really a comment"

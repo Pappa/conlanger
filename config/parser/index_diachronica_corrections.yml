@@ -235,3 +235,7 @@ rules:
                   reason: |
                           The source doesn't seem to clarify anything for me:
                           https://www.adath-shalom.ca/history_of_hebrew.htm
+        - rule:
+                  id: Spanish-—-e
+                  content: "e → i / _Cj ! _p ; C = p"
+                  reason: "Variable value for C"

@@ -6,8 +6,8 @@
 - Rows: **9827** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8470** (86.2%)
-- Fail: **585** (6.0%)
+- OK: **8471** (86.2%)
+- Fail: **584** (5.9%)
 - Skipped: **772** (7.9%)
 
 ## Sections
@@ -25,7 +25,7 @@
 | 106 | `expected_underscore` |
 | 47 | `invalid_ipa` |
 | 45 | `missing_slash_output_env` |
-| 38 | `expected_number` |
+| 37 | `expected_number` |
 | 33 | `expected_ipa` |
 | 32 | `prose_or_expected_arrow` |
 | 28 | `syntax_other` |
@@ -177,15 +177,15 @@
 | count | error_token |
 |------:|-------------|
 | 4 | `d` |
-| 3 | `r` |
-| 3 | `ɒ` |
-| 3 | `j` |
 | 3 | `{` |
+| 3 | `j` |
+| 3 | `ɒ` |
+| 3 | `r` |
 | 2 | `s` |
-| 2 | `N` |
-| 2 | `a` |
 | 2 | `C` |
-| 2 | `w` |
+| 2 | `a` |
+| 2 | `N` |
+| 2 | `u` |
 ### expected_number (description)
 
 | count | description |

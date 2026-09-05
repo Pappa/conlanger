@@ -39803,19 +39803,19 @@ sections:
     source: index_diachronica_original.html:8142
     sporadic: true
     rule_id: Spanish-bj
-  - comment: 'near j, in particular environments:'
-    stages:
-    - Raising of e {ɛ,a} ɔ o
-    - i e o u
+  - stages: []
     raw: 'Raising of e {ɛ,a} ɔ o → i e o u; near j, in particular environments:'
     source: index_diachronica_original.html:8143
+    status: skipped
     rule_id: Spanish-e-ɛ,a-ɔ-o
-  - stages:
+    comment: This is really a comment
+  - comment: C = p
+    stages:
     - e
     - i
     env: _Cj
-    exception: C = p
-    raw: — e → i / _Cj ! C = p
+    exception: _p
+    raw: e → i / _Cj ! _p ; C = p
     source: index_diachronica_original.html:8144
     rule_id: Spanish-—-e
   - stages:
