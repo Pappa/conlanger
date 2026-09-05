@@ -62,6 +62,54 @@ def test_expand_index_parenthetical_notation_leaves_bracket_matrices_untouched()
 
 
 @pytest.mark.parametrize(
+    ("index_rule", "expected"),
+    [
+        ("ɸ(ʼ,ʰ)", "{ɸ,ɸʰ,ɸ:[+cg],ɸʰ:[+cg]}"),
+        ("_V:[+front]k(ʷ)", "_V:[+front]{k,kʷ}"),
+        ("_nk(ʷ)", "_{nk,nkʷ}"),
+        ("_k(ʷ)", "_{k,kʷ}"),
+        ("n_k(ʷ)", "n_{k,kʷ}"),
+        ("(ˀ)t", "{ʔt,t}"),
+        ("{k,kʷ,(ˀ)t}", "{k,kʷ,ʔt,t}"),
+        ("m(ˀ)", "{m,mˀ}"),
+        ("{ts:[+cg],ts,s,j(ˀ)}", "{ts:[+cg],ts,s,j,jˀ}"),
+        ("{p:[+cg],p,m(ˀ)}", "{p:[+cg],p,m,mˀ}"),
+    ],
+)
+def test_expand_paren_optional_modifiers_ticket_116(index_rule, expected):
+    assert expand_index_parenthetical_notation(index_rule) == expected
+
+
+@pytest.mark.parametrize(
+    ("inp", "out", "env"),
+    [
+        ("ɸ(ʼ,ʰ)", "p", None),
+        ("k", "tʃ", "_V:[+front]k(ʷ)"),
+        ("ʔ", "∅", "_nk(ʷ)"),
+        ("n", "t", "_k(ʷ)"),
+        ("∅", "e", "n_k(ʷ)"),
+        (
+            "{tʷ:[+cg],tʷ,dʷ}",
+            "{tɕ(ʼ),tɕʷ(ʼ),tʃ(ʼ),tʃʷ(ʼ)}",
+            None,
+        ),
+        (
+            "V:[+stress]",
+            "V:[+stress, +long]",
+            "_{k,kʷ,ʔt,t}{s,[+son,-syll],[-place]}",
+        ),
+        ("en enˀ", "i iʔ", "{ts:[+cg],ts,s,j(ˀ)}_ in %[-stress]"),
+    ],
+)
+def test_paren_optional_modifier_inventory_rows_validate(inp, out, env):
+    rule = {"stages": [inp, out]}
+    if env is not None:
+        rule["env"] = env
+    section = {"index": "1", "section": "paren116", "rules": [rule]}
+    validate_asca(DiachronicSeries(section, "asca"))
+
+
+@pytest.mark.parametrize(
     ("inp", "out", "env"),
     [
         ("z dz ɡ", "ɡ {z,dz} ɡ(ʷ)", None),

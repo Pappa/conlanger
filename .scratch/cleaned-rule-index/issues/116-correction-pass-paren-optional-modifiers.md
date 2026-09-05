@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: None
 
 # Correction pass: parenthetical optional segment modifiers
@@ -30,10 +30,38 @@ Extends [48 parenthetical notation](../issues/48-correction-pass-parenthetical-s
 
 ## Acceptance criteria
 
-- [ ] Target cluster sized at claim time from current inventory
-- [ ] Class-first compile transforms; `raw` unchanged
-- [ ] Full inventory re-run; metrics in **Answer**
-- [ ] Unit tests per modifier family (labialization, ejective/aspiration, glottal)
+- [x] Target cluster sized at claim time from current inventory
+- [x] Class-first compile transforms; `raw` unchanged
+- [x] Full inventory re-run; metrics in **Answer**
+- [x] Unit tests per modifier family (labialization, ejective/aspiration, glottal)
+
+## Answer
+
+**Shipped 2026-09-05.** Extended ticket 48 `expand_index_parenthetical_notation` in `src/conlanger/tools/compile/asca/parenthetical.py` (wired via `expand_meta_notation`).
+
+### Implementation
+
+- **Comma-separated modifiers:** `ɸ(ʼ,ʰ)` → `{ɸ,ɸʰ,ɸ:[+cg],ɸʰ:[+cg]}` (independent optional modifiers; aspiration before `[+cg]` for ASCA legality).
+- **Embedded env suffix:** `_k(ʷ)`, `_nk(ʷ)`, `_V:[+front]k(ʷ)`, `n_k(ʷ)` → labialization alternates in place.
+- **Glottal modifier:** `m(ˀ)` → `{m,mˀ}`; prefix `(ˀ)t` → `{ʔt,t}` (ASCA rejects leading `ˀ` in env sets).
+- **Set members:** `{j(ˀ),…}`, `{p:[+cg],p,m(ˀ)}`, output `{tɕ(ʼ),…}` unchanged path via existing set expansion.
+- **Regression guard:** do not short-circuit tokens containing `{` before prefix/infix expansion (preserves ticket 111 `(h)ə{p,b}` cartesian path).
+
+### Inventory
+
+Pre-pass summary: **8340 / 9827 ok (84.9%)**; `expected_ipa` **54**; `paren_optional_modifier` cluster **21** rules / **8** mono-class sections.
+
+| Metric | Before | After | Δ |
+|--------|-------:|------:|--:|
+| OK / total | 8340 / 9827 (84.9%) | **8361 / 9827 (85.1%)** | **+21 ok** |
+| Fail | 715 | **694** | **−21** |
+| All-OK sections | 424 / 714 | **431 / 714** | **+7** |
+| `expected_ipa` | 54 | **33** | **−21** |
+| `paren_optional_modifier` | 21 | **0** | **−21** |
+
+**ok flips (+21):** Quechumaran `ɸ(ʼ,ʰ)` ×5 (§34.1, §34.4, §34.5, §34.8, §34.9); Shuswap `m(ˀ)`/`j(ˀ)`/`n(ˀ)`/`l(ˀ)` ×3 (§35.3); Yaitepec `k(ʷ)` env (§32.1.3); Laze `{r,s}p(ʰ)` (§36.3.1.1); Iroquoian `_k(ʷ)`/`_nk(ʷ)`/`n_k(ʷ)` ×9 (§37.1.2.1–§37.1.2.6); Huron/Seneca mono-class (§37.1.2.2, §37.1.2.5).
+
+**Residual:** `paren_optional_io` (2 mono-class sections — overlap tickets 48/111, deferred per prioritisation spike).
 
 ## References
 

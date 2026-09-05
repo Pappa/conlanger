@@ -1,5 +1,4 @@
 sections_complete,sections_touched,rules,failure_class,subcluster,near_miss_sections,heavy_sections,complete_section_ids
-8,14,21,expected_ipa,paren_optional_modifier,11,0,12.1.2;34.1;34.4;34.5;34.9;35.3;37.1.2.2;37.1.2.5
 6,9,11,invalid_ipa,prenasal_prefix,9,0,10.3.5;10.3.5.1;10.3.5.5;10.3.5.8;24.1.5;7.13
 3,9,35,expected_range_dots,european_dot_affricate,4,0,36.3.2.1.1;36.3.2.1.2;36.3.2.2.7
 2,4,6,expected_ipa,paren_optional_io,2,0,10.1.1;31.1
@@ -10,11 +9,10 @@ sections_complete,sections_touched,rules,failure_class,subcluster,near_miss_sect
 1,1,1,expected_ipa,comma_in_segment,1,0,11.5.1
 1,1,1,expected_ipa,optional_modifier_unwrapped,1,0,37.2.5
 1,1,1,expected_ipa,ipa_received_other:@,1,0,38.1.1.4.2
-0,7,12,expected_ipa,editorial_slash_gloss,4,0,
+0,7,12,expected_ipa,editorial_slash_gloss,3,0,
 0,4,6,invalid_ipa,khoisan_click:ǁ,0,0,
 0,5,5,invalid_ipa,khoisan_click:ǂ,1,0,
+0,4,4,expected_ipa,prose_double_slash_env,2,0,
 0,3,4,expected_ipa,malformed_chain_or_prose,2,0,
-0,3,3,expected_ipa,prose_double_slash_env,2,0,
 0,1,1,expected_ipa,null_in_io_residual,0,0,
 0,1,1,expected_ipa,ipa_received_other:ʱ,0,0,
-0,1,1,expected_ipa,underscore_in_segment,1,0,

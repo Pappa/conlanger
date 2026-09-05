@@ -1,5 +1,5 @@
 section_index,rule_id,error_token,rule
-6.2.2.1.3,Coptic-r,,"r > l / #(C)_c(C)# ? | ^ @ Rule 1, Line 1"
+6.2.2.1.3,Coptic-r,,"r > l / #(C)_{c,cC}# ? | ^ @ Rule 1, Line 1"
 7.4,Blackfoot-e_2,,"e > ∅ / O_ in #% | ^ @ Rule 1, Line 1"
 14.3.1,Colloquial-Tamil-l-ɭ,,"l ɭ > l:[+long]ʉ ɭ:[+long]ʉ / _#(C)V[-long] | ^ @ Rule 1, Line 1"
 17.7.3.1.2,Orkney-Norn-l_3,,"l > ∅ / _# ? | ^ @ Rule 1, Line 1"
