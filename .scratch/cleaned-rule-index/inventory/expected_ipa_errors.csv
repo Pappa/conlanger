@@ -14,7 +14,7 @@ section_index,rule_id,error_token,rule
 17.12.1.1.6,Old-Provençal-—-e_2,(,"e > i / _(C,0)i{C(C,0)V,#} | ^ @ Rule 1, Line 1"
 17.12.1.1.6,Old-Provençal-sj,(,"ʒ > {i(d)ʒ,(d)ʒ} | ^ @ Rule 1, Line 2"
 17.12.1.1.6,Old-Provençal-stʃ_2,(,"stʃ > {i(t)ʃ,(t)ʃ} | ^ @ Rule 1, Line 1"
-17.12.1.1.8,Romanian-kj-ɡj,∅,"tʃ {j,∅} (ɡj > is rare) | ^ @ Rule 1, Line 2"
+17.12.1.1.8,Romanian-kj-ɡj,∅,"kj ɡj > tʃ {j,∅} (ɡj | ^ @ Rule 1, Line 1"
 17.13,Proto-Tocharian-Dʱ,ʱ,"{P:[+voice],Pʱ:[+voice]} > P:[-voice] | ^ @ Rule 1, Line 1"
 22.6,"Sorowahá-tʰ,ɗ",>,"{tʰ,ɗ > t | ^ @ Rule 1, Line 1"
 31.1,Bardi-V0,(,"V=0 > ∅ / {V(C)0,VC(C)0} {C(C)_#,(C)_#} | ^ @ Rule 1, Line 1"

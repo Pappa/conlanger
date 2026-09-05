@@ -27,6 +27,7 @@ from conlanger.tools.compile.asca.planned import (
     apply_section_local_abbreviations,
     expand_meta_notation,
 )
+from conlanger.tools.compile.asca.prenasal_prefix import normalize_prenasal_prefix
 from conlanger.tools.compile.asca.series_mappings import apply_compiler_series_mappings
 from conlanger.tools.compile.asca.sets import (
     convert_set_to_environment_set,
@@ -88,6 +89,7 @@ def compile_asca_field_post_subscript(text: str) -> str:
     text = normalize_asca_ejective_marks(text)
     text = normalize_asca_breve_marks(text)
     text = normalize_asca_voice_prerequisite_diacritics(text)
+    text = normalize_prenasal_prefix(text)
     return expand_meta_notation(text)
 
 
