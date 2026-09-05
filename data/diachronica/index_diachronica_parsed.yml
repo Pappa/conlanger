@@ -23625,14 +23625,14 @@ sections:
   - stages:
     - s
     - ∅
-    env: '[anything]{l,r}_O'
+    env: '[]{l,r}_O'
     raw: — s → ∅ / [anything]{l,r}_O
     source: index_diachronica_original.html:5551
     rule_id: Old-Irish-—-s
   - stages:
     - hn hm
     - nː mː
-    env: '[anything]_'
+    env: '[]_'
     comment: “[t]his change is a bit speculative”; ()
     raw: — hn hm → nː mː / [anything]_ (“[t]his change is a bit speculative”)
     source: index_diachronica_original.html:5552
@@ -23640,14 +23640,14 @@ sections:
   - stages:
     - st zd
     - sː dː
-    env: '[anything]_'
+    env: '[]_'
     raw: — st zd → sː dː / [anything]_
     source: index_diachronica_original.html:5554
     rule_id: Old-Irish-—-st-zd
   - stages:
     - '{l,h}l {l,h}r l{p,s,n} r{p,s} ln'
     - lː rː lː rː (lː?)
-    env: '[anything]_'
+    env: '[]_'
     raw: — {l,h}l {l,h}r l{p,s,n} r{p,s} ln → lː rː lː rː (lː?) / [anything]_
     source: index_diachronica_original.html:5555
     rule_id: Old-Irish-—-l,hl-l,hr-lp,s,n-rp,s-ln
@@ -23691,7 +23691,7 @@ sections:
   - stages:
     - oː
     - ua
-    env: _[anything] when stressed
+    env: _[] when stressed
     raw: oː → ua / _[anything], when stressed
     source: index_diachronica_original.html:5561
     rule_id: Old-Irish-oː_3
@@ -23727,7 +23727,7 @@ sections:
   - stages:
     - '{e,o}'
     - a
-    env: _[anything]
+    env: _[]
     raw: — {e,o} → a / _[anything]
     source: index_diachronica_original.html:5567
     rule_id: Old-Irish-—-e,o

@@ -292,3 +292,6 @@
 - from: " (*)"
   to: " ; (*)"
   reason: ambiguous symbol
+- from: "[anything]"
+  to: "[]"
+  reason: Use asca syntax for a wildcard symbol
