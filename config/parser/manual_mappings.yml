@@ -298,3 +298,6 @@
 - from: "_ or when _"
   to: "_,_"
   reason: replace prose
+- from: " / Form VI"
+  to: " / sporadic ; Form VI"
+  reason: replace prose

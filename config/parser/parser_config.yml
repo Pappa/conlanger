@@ -112,3 +112,5 @@ skip_rules:
     reason: "I can't figure out the rule even afer reading the source material"
   - id: Gros-Ventre-C,#V-longʔ
     reason: "I can't figure out the rule even afer reading the source material"
+  - id: Biblical-Hebrew-—-a_4
+    reason: "No idea what this rule means: a → _$%%(…)”"

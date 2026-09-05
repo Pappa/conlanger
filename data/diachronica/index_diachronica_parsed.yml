@@ -3058,13 +3058,12 @@ sections:
     raw: — a → ∅ / _#
     source: index_diachronica_original.html:1532
     rule_id: Biblical-Hebrew-—-a_3
-  - stages:
-    - a
-    - _$$$(…)
-    comment: ”
+  - stages: []
     raw: — a → _$%%(…)”
     source: index_diachronica_original.html:1533
+    status: skipped
     rule_id: Biblical-Hebrew-—-a_4
+    comment: 'No idea what this rule means: a → _$%%(…)”'
   - stages:
     - a
     - ə
@@ -3149,12 +3148,13 @@ sections:
     raw: — aj aw → eː oː
     source: index_diachronica_original.html:1545
     rule_id: Biblical-Hebrew-—-aj-aw
-  - stages:
+  - comment: non-intial singletons; sporadic
+    stages:
     - p b t d k ɡ
     - b v θ ð x ɣ
-    env: non-intial singletons
-    raw: p b t d k ɡ → b v θ ð x ɣ / non-intial singletons
+    raw: p b t d k ɡ → b v θ ð x ɣ / sporadic ;non-intial singletons
     source: index_diachronica_original.html:1546
+    sporadic: true
     rule_id: Biblical-Hebrew-p-b-t-d-k-ɡ
   - stages:
     - ʕ

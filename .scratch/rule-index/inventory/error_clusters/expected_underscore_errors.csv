@@ -1,5 +1,4 @@
 section_index,rule_id,error_token,rule
-6.2.2.1.18,Biblical-Hebrew-p-b-t-d-k-ɡ,,"p b t d k ɡ > b v θ ð x ɣ / non-intial singletons | ^ @ Rule 1, Line 1"
 7.3.2,Gros-Ventre-j,",","j > ∅ / :{ʃ,θ}: | ^ @ Rule 1, Line 1"
 7.4,Blackfoot-aː_2,,"a:[+long] > a / else | ^ @ Rule 1, Line 1"
 7.9,Swampy-Cree-ʃ,,"ʃ > s / Gest Pwampy Cree | ^ @ Rule 1, Line 1"

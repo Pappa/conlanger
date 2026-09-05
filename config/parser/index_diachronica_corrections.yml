@@ -229,3 +229,9 @@ rules:
                   id: American-English-æ
                   content: "æ → {æː,ɑː} / _{F[-voiced],N[-voiced]} ; (“words which change vary between dialects”)"
                   reason: "Prose"
+        - rule:
+                  id: Biblical-Hebrew-p-b-t-d-k-ɡ
+                  content: "p b t d k ɡ → b v θ ð x ɣ / sporadic ; non-intial singletons"
+                  reason: |
+                          The source doesn't seem to clarify anything for me:
+                          https://www.adath-shalom.ca/history_of_hebrew.htm
