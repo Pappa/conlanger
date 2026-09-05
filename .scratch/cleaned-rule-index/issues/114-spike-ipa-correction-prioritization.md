@@ -1,4 +1,5 @@
 Type: spike
+Status: resolved
 Blocked by:
 
 # Spike: IPA-shape correction-pass prioritisation (post-110 baseline)
@@ -59,10 +60,22 @@ Preliminary `expected_range_dots`: Yup'ik-style `V.V` geminate/dot ranges (§24.
 
 ## Acceptance criteria
 
-- [ ] Findings under `.scratch/cleaned-rule-index/research/` (markdown + CSV + scan script if new)
-- [ ] Ranked subcluster table with section-complete impact on **current** inventory
-- [ ] Follow-on correction-pass tickets filed **or** explicit defer/skip/manual recommendation
-- [ ] Map Notes / implementation plan updated with the chosen next queue
+- [x] Findings under `.scratch/cleaned-rule-index/research/` (markdown + CSV + scan script if new)
+- [x] Ranked subcluster table with section-complete impact on **current** inventory
+- [x] Follow-on correction-pass tickets filed **or** explicit defer/skip/manual recommendation
+- [x] Map Notes / implementation plan updated with the chosen next queue
+
+## Answer
+
+**2026-09-05** — Findings: [ipa-correction-prioritization.md](../research/ipa-correction-prioritization.md). Scan: [scan_ipa_correction_classes.py](../research/scan_ipa_correction_classes.py) → [ipa-correction-classes.csv](../research/ipa-correction-classes.csv), [ipa-correction-buckets.csv](../research/ipa-correction-buckets.csv).
+
+Baseline confirmed: **8321 / 734 / 772** rules; **417 / 714** sections all-OK — no drift from spawn. Near-miss failing rules **326** (+4 vs spawn 322).
+
+**Top mono-class levers:** `expected_ipa` editorial slash (**8** sections) → [115](../issues/115-correction-pass-editorial-slash-prose-residue.md); `expected_ipa` paren modifiers (**8**) → [116](../issues/116-correction-pass-paren-optional-modifiers.md); `invalid_ipa` prenasal `ⁿ` (**6**) → [117](../issues/117-correction-pass-prenasal-prefix.md); `expected_range_dots` dot-affricate (**3**) → [118](../issues/118-correction-pass-dot-affricate-notation.md).
+
+**Defer:** Khoisan §20.x clicks (47 rules, spike-64 policy); `prose_double_slash_env` env-paren `//` (2 mono-class, distinct from resolved 108); Yup'ik `V.V` geminate (0 `expected_range_dots` rows — failures are `//` + `ⁿ` instead).
+
+**Map updated** with 115→118 queue.
 
 ## References
 
