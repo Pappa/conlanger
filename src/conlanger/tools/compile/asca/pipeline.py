@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from conlanger.tools.compile.asca.apostrophes import normalize_typographic_apostrophes
 from conlanger.tools.compile.asca.breve_marks import normalize_asca_breve_marks
+from conlanger.tools.compile.asca.dot_affricate import normalize_dot_affricate_notation
 from conlanger.tools.compile.asca.editorial_slash_gloss import (
     normalize_editorial_slash_gloss_residue,
 )
@@ -90,6 +91,7 @@ def compile_asca_field_post_subscript(text: str) -> str:
     text = normalize_asca_breve_marks(text)
     text = normalize_asca_voice_prerequisite_diacritics(text)
     text = normalize_prenasal_prefix(text)
+    text = normalize_dot_affricate_notation(text)
     return expand_meta_notation(text)
 
 
