@@ -26,8 +26,8 @@
 | 47 | `invalid_ipa` |
 | 45 | `missing_slash_output_env` |
 | 38 | `expected_number` |
-| 34 | `expected_ipa` |
-| 31 | `prose_or_expected_arrow` |
+| 33 | `expected_ipa` |
+| 32 | `prose_or_expected_arrow` |
 | 28 | `syntax_other` |
 | 23 | `unknown_feature` |
 | 21 | `nested_brackets` |
@@ -203,12 +203,12 @@
 |------:|-------------|
 | 21 | `Expected '>', '->' or '=>', but received 'ˀ'` |
 | 2 | `Expected '>', '->' or '=>', but received '*'` |
+| 2 | `Expected '>', '->' or '=>', but received ')'` |
 | 2 | `Expected '>', '->' or '=>', but received '̥'` |
-| 1 | `Expected '>', '->' or '=>', but received ':'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
+| 1 | `Expected '>', '->' or '=>', but received ':'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
-| 1 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
 ### invalid_ipa (error_token)
@@ -243,7 +243,7 @@
 
 | count | description |
 |------:|-------------|
-| 1 | `Expected an IPA character, Primative or Matrix, but received ''` |
+| — | _(none)_ |
 
 ### expected_range_dots (error_token)
 

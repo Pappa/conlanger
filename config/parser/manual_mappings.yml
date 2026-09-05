@@ -295,3 +295,6 @@
 - from: "[anything]"
   to: "[]"
   reason: Use asca syntax for a wildcard symbol
+- from: "_ or when _"
+  to: "_,_"
+  reason: replace prose

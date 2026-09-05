@@ -105,6 +105,5 @@ def write_error_cluster_csvs(error_df: pd.DataFrame, inventory_dir: Path) -> Non
     """Write failure-class cluster CSVs under ``inventory_dir``."""
     inventory_dir.mkdir(parents=True, exist_ok=True)
     for failure_class, filename in CLUSTER_CSV_BY_FAILURE_CLASS.items():
-        cluster_errors_dataframe(error_df, failure_class).to_csv(
-            inventory_dir / filename, index=False
-        )
+        failures_df = cluster_errors_dataframe(error_df, failure_class)
+        failures_df.to_csv(inventory_dir / filename, index=False)

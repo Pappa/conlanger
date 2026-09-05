@@ -53268,38 +53268,38 @@ sections:
     source: index_diachronica_original.html:11401
     rule_id: Comox-ʔ_2
   - stages:
-    - '{a3~ə3}'
-    - '{ə3,a3}'
+    - '{a[tone: 55]~ə[tone: 55]}'
+    - '{ə[tone: 55],a[tone: 55]}'
     raw: '{a3~ə3} → {ə3,a3}'
     source: index_diachronica_original.html:11402
     rule_id: Comox-a3~ə3
   - stages:
-    - '{a3~i3}'
-    - i3
+    - '{a[tone: 55]~i[tone: 55]}'
+    - 'i[tone: 55]'
     raw: '{a3~i3} → i3'
     source: index_diachronica_original.html:11403
     rule_id: Comox-a3~i3
   - stages:
-    - '{a1~i1}'
-    - '{a1,ə1}'
+    - '{a[tone: 11]~i[tone: 11]}'
+    - '{a[tone: 11],ə[tone: 11]}'
     raw: '{a1~i1} → {a1,ə1}'
     source: index_diachronica_original.html:11404
     rule_id: Comox-a1~i1
   - stages:
-    - '{i3~ə3}'
-    - ə3
+    - '{i[tone: 55]~ə[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{i3~ə3} → ə3'
     source: index_diachronica_original.html:11405
     rule_id: Comox-i3~ə3
   - stages:
-    - '{i3~ə1}'
-    - '{ə1,i1,i3}'
+    - '{i[tone: 55]~ə[tone: 11]}'
+    - '{ə[tone: 11],i[tone: 11],i[tone: 55]}'
     raw: '{i3~ə1} → {ə1,i1,i3}'
     source: index_diachronica_original.html:11406
     rule_id: Comox-i3~ə1
   - stages:
-    - '{i1~ə1}'
-    - i1
+    - '{i[tone: 11]~ə[tone: 11]}'
+    - 'i[tone: 11]'
     raw: '{i1~ə1} → i1'
     source: index_diachronica_original.html:11407
     rule_id: Comox-i1~ə1
@@ -53366,7 +53366,7 @@ sections:
   - stages:
     - ∅
     - V₀
-    env: V:[+stress]₀3_
+    env: 'V:[+stress]₀[tone: 55]_'
     raw: ∅ → V₀ / ”V₀3_
     source: index_diachronica_original.html:11420
     rule_id: Chilliwack-Halkomelem-∅
@@ -53398,44 +53398,44 @@ sections:
     source: index_diachronica_original.html:11424
     rule_id: Chilliwack-Halkomelem-ʔ_3
   - stages:
-    - u3 {u1,a1} a3 i1
-    - a3 ə1 ɛ3 {i1,ə1}
+    - 'u[tone: 55] {u[tone: 11],a[tone: 11]} a[tone: 55] i[tone: 11]'
+    - 'a[tone: 55] ə[tone: 11] ɛ[tone: 55] {i[tone: 11],ə[tone: 11]}'
     raw: u3 {u1,a1} a3 i1 → a3 ə1 ɛ3 {i1,ə1}
     source: index_diachronica_original.html:11425
     rule_id: Chilliwack-Halkomelem-u3-u1,a1-a3-i1
   - stages:
-    - '{u3~ə3}'
-    - '{o3,ə3,a3}'
+    - '{u[tone: 55]~ə[tone: 55]}'
+    - '{o[tone: 55],ə[tone: 55],a[tone: 55]}'
     raw: '{u3~ə3} → {o3,ə3,a3}'
     source: index_diachronica_original.html:11426
     rule_id: Chilliwack-Halkomelem-u3~ə3
   - stages:
-    - '{a3~ə3}'
-    - '{ɛ3,ə3}'
+    - '{a[tone: 55]~ə[tone: 55]}'
+    - '{ɛ[tone: 55],ə[tone: 55]}'
     raw: '{a3~ə3} → {ɛ3,ə3}'
     source: index_diachronica_original.html:11427
     rule_id: Chilliwack-Halkomelem-a3~ə3
   - stages:
-    - '{a3~i3}'
-    - ɛ3
+    - '{a[tone: 55]~i[tone: 55]}'
+    - 'ɛ[tone: 55]'
     raw: '{a3~i3} → ɛ3'
     source: index_diachronica_original.html:11428
     rule_id: Chilliwack-Halkomelem-a3~i3
   - stages:
-    - '{i3~e3}'
-    - '{ə3,i3}'
+    - '{i[tone: 55]~e[tone: 55]}'
+    - '{ə[tone: 55],i[tone: 55]}'
     raw: '{i3~e3} → {ə3,i3}'
     source: index_diachronica_original.html:11429
     rule_id: Chilliwack-Halkomelem-i3~e3
   - stages:
-    - '{i3~ə1}'
-    - ə1
+    - '{i[tone: 55]~ə[tone: 11]}'
+    - 'ə[tone: 11]'
     raw: '{i3~ə1} → ə1'
     source: index_diachronica_original.html:11430
     rule_id: Chilliwack-Halkomelem-i3~ə1
   - stages:
-    - '{i1~ə1}'
-    - ə1
+    - '{i[tone: 11]~ə[tone: 11]}'
+    - 'ə[tone: 11]'
     raw: '{i1~ə1} → ə1'
     source: index_diachronica_original.html:11431
     rule_id: Chilliwack-Halkomelem-i1~ə1
@@ -53472,8 +53472,8 @@ sections:
     source: index_diachronica_original.html:11439
     rule_id: Cowichan-Halkomelem-V3h
   - stages:
-    - V₀3ʔ(V₀)
-    - '{V₀3ː,V₀3ʔV₀}'
+    - 'V₀[tone: 55]ʔ(V₀)'
+    - '{V₀[tone: 55]ː,V₀[tone: 55]ʔV₀}'
     raw: V₀3ʔ(V₀) → {V₀3ː,V₀3ʔV₀}
     source: index_diachronica_original.html:11440
     rule_id: Cowichan-Halkomelem-V03ʔV0
@@ -53485,44 +53485,44 @@ sections:
     source: index_diachronica_original.html:11441
     rule_id: Cowichan-Halkomelem-V3ʔR
   - stages:
-    - a3 u3 {a1,u1} i1
-    - ɛ3 a3 ə1 {i1,ə1}
+    - 'a[tone: 55] u[tone: 55] {a[tone: 11],u[tone: 11]} i[tone: 11]'
+    - 'ɛ[tone: 55] a[tone: 55] ə[tone: 11] {i[tone: 11],ə[tone: 11]}'
     raw: a3 u3 {a1,u1} i1 → ɛ3 a3 ə1 {i1,ə1}
     source: index_diachronica_original.html:11442
     rule_id: Cowichan-Halkomelem-a3-u3-a1,u1-i1
   - stages:
-    - '{a3~ə3}'
-    - ə3
+    - '{a[tone: 55]~ə[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{a3~ə3} → ə3'
     source: index_diachronica_original.html:11443
     rule_id: Cowichan-Halkomelem-a3~ə3
   - stages:
-    - '{a3~i3}'
-    - a3
+    - '{a[tone: 55]~i[tone: 55]}'
+    - 'a[tone: 55]'
     raw: '{a3~i3} → a3'
     source: index_diachronica_original.html:11444
     rule_id: Cowichan-Halkomelem-a3~i3
   - stages:
-    - '{a1~i1}'
-    - ə1
+    - '{a[tone: 11]~i[tone: 11]}'
+    - 'ə[tone: 11]'
     raw: '{a1~i1} → ə1'
     source: index_diachronica_original.html:11445
     rule_id: Cowichan-Halkomelem-a1~i1
   - stages:
-    - '{i3~e3}'
-    - '{ə3,i3}'
+    - '{i[tone: 55]~e[tone: 55]}'
+    - '{ə[tone: 55],i[tone: 55]}'
     raw: '{i3~e3} → {ə3,i3}'
     source: index_diachronica_original.html:11446
     rule_id: Cowichan-Halkomelem-i3~e3
   - stages:
-    - '{i3~ə1}'
-    - ə1
+    - '{i[tone: 55]~ə[tone: 11]}'
+    - 'ə[tone: 11]'
     raw: '{i3~ə1} → ə1'
     source: index_diachronica_original.html:11447
     rule_id: Cowichan-Halkomelem-i3~ə1
   - stages:
-    - '{i1~ə1}'
-    - ə1
+    - '{i[tone: 11]~ə[tone: 11]}'
+    - 'ə[tone: 11]'
     raw: '{i1~ə1} → ə1'
     source: index_diachronica_original.html:11448
     rule_id: Cowichan-Halkomelem-i1~ə1
@@ -53567,8 +53567,8 @@ sections:
     source: index_diachronica_original.html:11457
     rule_id: Musqueam-Halkomelem-V3ʔ
   - stages:
-    - V₀3ʔV₀
-    - '{V[tone: 55]ː,V₀3ʔV₀}'
+    - 'V₀[tone: 55]ʔV₀'
+    - '{V[tone: 55]ː,V₀[tone: 55]ʔV₀}'
     raw: V₀3ʔV₀ → {V3ː,V₀3ʔV₀}
     source: index_diachronica_original.html:11458
     rule_id: Musqueam-Halkomelem-V03ʔV0
@@ -53580,50 +53580,50 @@ sections:
     source: index_diachronica_original.html:11459
     rule_id: Musqueam-Halkomelem-V3ʔR
   - stages:
-    - u3 {u1,a1} a3 i1
-    - a3 ə1 ɛ3 {i1,ə1}
+    - 'u[tone: 55] {u[tone: 11],a[tone: 11]} a[tone: 55] i[tone: 11]'
+    - 'a[tone: 55] ə[tone: 11] ɛ[tone: 55] {i[tone: 11],ə[tone: 11]}'
     raw: u3 {u1,a1} a3 i1 → a3 ə1 ɛ3 {i1,ə1}
     source: index_diachronica_original.html:11460
     rule_id: Musqueam-Halkomelem-u3-u1,a1-a3-i1
   - stages:
-    - '{u3~ə3}'
-    - ə3
+    - '{u[tone: 55]~ə[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{u3~ə3} → ə3'
     source: index_diachronica_original.html:11461
     rule_id: Musqueam-Halkomelem-u3~ə3
   - stages:
-    - '{a3~ə3}'
-    - '{ɛ3,ə3}'
+    - '{a[tone: 55]~ə[tone: 55]}'
+    - '{ɛ[tone: 55],ə[tone: 55]}'
     raw: '{a3~ə3} → {ɛ3,ə3}'
     source: index_diachronica_original.html:11462
     rule_id: Musqueam-Halkomelem-a3~ə3
   - stages:
-    - '{a3~i3}'
-    - '{a3,ɛ3}'
+    - '{a[tone: 55]~i[tone: 55]}'
+    - '{a[tone: 55],ɛ[tone: 55]}'
     raw: '{a3~i3} → {a3,ɛ3}'
     source: index_diachronica_original.html:11463
     rule_id: Musqueam-Halkomelem-a3~i3
   - stages:
-    - '{a1~i1}'
-    - '{ə1,ɛ1}'
+    - '{a[tone: 11]~i[tone: 11]}'
+    - '{ə[tone: 11],ɛ[tone: 11]}'
     raw: '{a1~i1} → {ə1,ɛ1}'
     source: index_diachronica_original.html:11464
     rule_id: Musqueam-Halkomelem-a1~i1
   - stages:
-    - '{i3~e3}'
-    - '{ə3,i3}'
+    - '{i[tone: 55]~e[tone: 55]}'
+    - '{ə[tone: 55],i[tone: 55]}'
     raw: '{i3~e3} → {ə3,i3}'
     source: index_diachronica_original.html:11465
     rule_id: Musqueam-Halkomelem-i3~e3
   - stages:
-    - '{i3~ə1}'
-    - ə1
+    - '{i[tone: 55]~ə[tone: 11]}'
+    - 'ə[tone: 11]'
     raw: '{i3~ə1} → ə1'
     source: index_diachronica_original.html:11466
     rule_id: Musqueam-Halkomelem-i3~ə1
   - stages:
-    - '{i1~ə1}'
-    - ə1
+    - '{i[tone: 11]~ə[tone: 11]}'
+    - 'ə[tone: 11]'
     raw: '{i1~ə1} → ə1'
     source: index_diachronica_original.html:11467
     rule_id: Musqueam-Halkomelem-i1~ə1
@@ -53682,76 +53682,76 @@ sections:
     source: index_diachronica_original.html:11478
     rule_id: Klallam-w-j
   - stages:
-    - V₀3ʔ(V₀)
-    - V₀3ʔV₀
+    - 'V₀[tone: 55]ʔ(V₀)'
+    - 'V₀[tone: 55]ʔV₀'
     raw: V₀3ʔ(V₀) → V₀3ʔV₀
     source: index_diachronica_original.html:11479
     rule_id: Klallam-V03ʔV0
   - stages:
-    - u1
-    - ə1
+    - 'u[tone: 11]'
+    - 'ə[tone: 11]'
     raw: u1 → ə1
     source: index_diachronica_original.html:11480
     rule_id: Klallam-u1
   - stages:
-    - a3
-    - u3
+    - 'a[tone: 55]'
+    - 'u[tone: 55]'
     env: '{Cʷ[-fr,+bk,-hi,-lo],Kʷ,w}'
     raw: a3 → u3 / {Cʷ[+uvular],Kʷ,w}
     source: index_diachronica_original.html:11481
     rule_id: Klallam-a3
   - stages:
-    - a3
-    - u3
+    - 'a[tone: 55]'
+    - 'u[tone: 55]'
     env: _{Cu,Cʷ[-fr,+bk,-hi,-lo],w}
     raw: a3 → u3 / _{Cu,Cʷ[+uvular],w}
     source: index_diachronica_original.html:11482
     rule_id: Klallam-a3_2
   - stages:
-    - a1
-    - ə1
+    - 'a[tone: 11]'
+    - 'ə[tone: 11]'
     raw: a1 → ə1
     source: index_diachronica_original.html:11483
     rule_id: Klallam-a1
   - stages:
-    - '{u3~ə3}'
-    - ə3
+    - '{u[tone: 55]~ə[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{u3~ə3} → ə3'
     source: index_diachronica_original.html:11484
     rule_id: Klallam-u3~ə3
   - stages:
-    - '{a3~ə3}'
-    - ə3
+    - '{a[tone: 55]~ə[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{a3~ə3} → ə3'
     source: index_diachronica_original.html:11485
     rule_id: Klallam-a3~ə3
   - stages:
-    - '{a3~i3}'
-    - ə3
+    - '{a[tone: 55]~i[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{a3~i3} → ə3'
     source: index_diachronica_original.html:11486
     rule_id: Klallam-a3~i3
   - stages:
-    - '{a1~i1}'
-    - ə1
+    - '{a[tone: 11]~i[tone: 11]}'
+    - 'ə[tone: 11]'
     raw: '{a1~i1} → ə1'
     source: index_diachronica_original.html:11487
     rule_id: Klallam-a1~i1
   - stages:
-    - '{i3~ə3}'
-    - ə3
+    - '{i[tone: 55]~ə[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{i3~ə3} → ə3'
     source: index_diachronica_original.html:11488
     rule_id: Klallam-i3~ə3
   - stages:
-    - '{i3~ə1}'
-    - ə1
+    - '{i[tone: 55]~ə[tone: 11]}'
+    - 'ə[tone: 11]'
     raw: '{i3~ə1} → ə1'
     source: index_diachronica_original.html:11489
     rule_id: Klallam-i3~ə1
   - stages:
-    - '{i1~ə1}'
-    - ə1
+    - '{i[tone: 11]~ə[tone: 11]}'
+    - 'ə[tone: 11]'
     raw: '{i1~ə1} → ə1'
     source: index_diachronica_original.html:11490
     rule_id: Klallam-i1~ə1
@@ -53822,44 +53822,44 @@ sections:
     source: index_diachronica_original.html:11503
     rule_id: Lushootseed-Rʔ
   - stages:
-    - i1
-    - '{i1,ə1}'
+    - 'i[tone: 11]'
+    - '{i[tone: 11],ə[tone: 11]}'
     raw: i1 → {i1,ə1}
     source: index_diachronica_original.html:11504
     rule_id: Lushootseed-i1
   - stages:
-    - '{u3~ə3}'
-    - a3
+    - '{u[tone: 55]~ə[tone: 55]}'
+    - 'a[tone: 55]'
     raw: '{u3~ə3} → a3'
     source: index_diachronica_original.html:11505
     rule_id: Lushootseed-u3~ə3
   - stages:
-    - '{a3~ə3}'
-    - '{ə3,a3}'
+    - '{a[tone: 55]~ə[tone: 55]}'
+    - '{ə[tone: 55],a[tone: 55]}'
     raw: '{a3~ə3} → {ə3,a3}'
     source: index_diachronica_original.html:11506
     rule_id: Lushootseed-a3~ə3
   - stages:
-    - '{a1~i1}'
-    - i1
+    - '{a[tone: 11]~i[tone: 11]}'
+    - 'i[tone: 11]'
     raw: '{a1~i1} → i1'
     source: index_diachronica_original.html:11507
     rule_id: Lushootseed-a1~i1
   - stages:
-    - '{i3~ə3}'
-    - '{i1,ə1}'
+    - '{i[tone: 55]~ə[tone: 55]}'
+    - '{i[tone: 11],ə[tone: 11]}'
     raw: '{i3~ə3} → {i1,ə1}'
     source: index_diachronica_original.html:11508
     rule_id: Lushootseed-i3~ə3
   - stages:
-    - '{i3~ə1}'
-    - '{i3,i1}'
+    - '{i[tone: 55]~ə[tone: 11]}'
+    - '{i[tone: 55],i[tone: 11]}'
     raw: '{i3~ə1} → {i3,i1}'
     source: index_diachronica_original.html:11509
     rule_id: Lushootseed-i3~ə1
   - stages:
-    - '{i1~ə1}'
-    - '{ə1,i1}'
+    - '{i[tone: 11]~ə[tone: 11]}'
+    - '{ə[tone: 11],i[tone: 11]}'
     raw: '{i1~ə1} → {ə1,i1}'
     source: index_diachronica_original.html:11510
     rule_id: Lushootseed-i1~ə1
@@ -53905,7 +53905,7 @@ sections:
   - stages:
     - ∅
     - V₀
-    env: V:[+stress]₀3ʔ_
+    env: 'V:[+stress]₀[tone: 55]ʔ_'
     raw: ∅ → V₀ / ”V₀3ʔ_
     source: index_diachronica_original.html:11520
     rule_id: Nooksack-∅
@@ -53945,72 +53945,72 @@ sections:
     source: index_diachronica_original.html:11525
     rule_id: Nooksack-ʔ_4
   - stages:
-    - a1 u3 u1 i1
-    - æ2 o3 o1 i2
+    - 'a[tone: 11] u[tone: 55] u[tone: 11] i[tone: 11]'
+    - 'æ[tone: 33] o[tone: 55] o[tone: 11] i[tone: 33]'
     raw: a1 u3 u1 i1 → æ2 o3 o1 i2
     source: index_diachronica_original.html:11526
     rule_id: Nooksack-a1-u3-u1-i1
   - stages:
-    - ə1
-    - æ2
-    env: a3C(C)_
+    - 'ə[tone: 11]'
+    - 'æ[tone: 33]'
+    env: 'a[tone: 55]C(C)_'
     raw: ə1 → æ2 / a3C(C)_
     source: index_diachronica_original.html:11527
     rule_id: Nooksack-ə1
   - stages:
-    - ə1
-    - æ2
-    env: _C(C)a3
+    - 'ə[tone: 11]'
+    - 'æ[tone: 33]'
+    env: '_C(C)a[tone: 55]'
     raw: ə1 → æ2 / _C(C)a3
     source: index_diachronica_original.html:11528
     rule_id: Nooksack-ə1_2
   - comment: in some other unspecified circumstances; sporadic
     stages:
-    - ə1
-    - æ2
+    - 'ə[tone: 11]'
+    - 'æ[tone: 33]'
     raw: ə1 → æ2 / in some other unspecified circumstances
     source: index_diachronica_original.html:11529
     sporadic: true
     rule_id: Nooksack-ə1_3
   - stages:
-    - '{u3~ə3}'
-    - o3
+    - '{u[tone: 55]~ə[tone: 55]}'
+    - 'o[tone: 55]'
     raw: '{u3~ə3} → o3'
     source: index_diachronica_original.html:11530
     rule_id: Nooksack-u3~ə3
   - stages:
-    - '{a3~ə3}'
-    - æ3
+    - '{a[tone: 55]~ə[tone: 55]}'
+    - 'æ[tone: 55]'
     raw: '{a3~ə3} → æ3'
     source: index_diachronica_original.html:11531
     rule_id: Nooksack-a3~ə3
   - stages:
-    - '{a3~i3}'
-    - æ3
+    - '{a[tone: 55]~i[tone: 55]}'
+    - 'æ[tone: 55]'
     raw: '{a3~i3} → æ3'
     source: index_diachronica_original.html:11532
     rule_id: Nooksack-a3~i3
   - stages:
-    - '{a1~i1}'
-    - æ2
+    - '{a[tone: 11]~i[tone: 11]}'
+    - 'æ[tone: 33]'
     raw: '{a1~i1} → æ2'
     source: index_diachronica_original.html:11533
     rule_id: Nooksack-a1~i1
   - stages:
-    - '{i3~e3}'
-    - '{i3.ə3}'
+    - '{i[tone: 55]~e[tone: 55]}'
+    - '{i[tone: 55].ə[tone: 55]}'
     raw: '{i3~e3} → {i3.ə3}'
     source: index_diachronica_original.html:11534
     rule_id: Nooksack-i3~e3
   - stages:
-    - '{i3~ə1}'
-    - i3
+    - '{i[tone: 55]~ə[tone: 11]}'
+    - 'i[tone: 55]'
     raw: '{i3~ə1} → i3'
     source: index_diachronica_original.html:11535
     rule_id: Nooksack-i3~ə1
   - stages:
-    - '{i1~ə1}'
-    - '{i2,ə1}'
+    - '{i[tone: 11]~ə[tone: 11]}'
+    - '{i[tone: 33],ə[tone: 11]}'
     raw: '{i1~ə1} → {i2,ə1}'
     source: index_diachronica_original.html:11536
     rule_id: Nooksack-i1~ə1
@@ -54089,77 +54089,77 @@ sections:
     source: index_diachronica_original.html:11550
     rule_id: Lummi-Northern-Straits-ʔ_2
   - stages:
-    - u3 u1
-    - o3 ə1
+    - 'u[tone: 55] u[tone: 11]'
+    - 'o[tone: 55] ə[tone: 11]'
     raw: u3 u1 → o3 ə1
     source: index_diachronica_original.html:11551
     rule_id: Lummi-Northern-Straits-u3-u1
   - stages:
-    - a3
-    - o3
+    - 'a[tone: 55]'
+    - 'o[tone: 55]'
     env: '{C[-fr,+bk,-hi,-lo]ʷ,Kʷ,w}_'
     raw: a3 → o3 / {{C[+ uvular],K}ʷ,w}_
     source: index_diachronica_original.html:11552
     rule_id: Lummi-Northern-Straits-a3
   - stages:
-    - a3
-    - o3
+    - 'a[tone: 55]'
+    - 'o[tone: 55]'
     env: _{Cu,C[-fr,+bk,-hi,-lo]ʷ,w}
     raw: a3 → o3 / _{Cu,C[+ uvular]ʷ,w}
     source: index_diachronica_original.html:11553
     rule_id: Lummi-Northern-Straits-a3_2
   - stages:
-    - a3
-    - e3
+    - 'a[tone: 55]'
+    - 'e[tone: 55]'
     raw: a3 → e3 / else
     source: index_diachronica_original.html:11554
     rule_id: Lummi-Northern-Straits-a3_3
     exception: _{Cu,C[-fr,+bk,-hi,-lo]ʷ,w}
   - stages:
-    - a1
-    - ə1
+    - 'a[tone: 11]'
+    - 'ə[tone: 11]'
     raw: a1 → ə1
     source: index_diachronica_original.html:11555
     rule_id: Lummi-Northern-Straits-a1
   - stages:
-    - '{u3~ə3}'
-    - ə1
+    - '{u[tone: 55]~ə[tone: 55]}'
+    - 'ə[tone: 11]'
     raw: '{u3~ə3} → ə1'
     source: index_diachronica_original.html:11556
     rule_id: Lummi-Northern-Straits-u3~ə3
   - stages:
-    - '{a3~ə3}'
-    - ə3
+    - '{a[tone: 55]~ə[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{a3~ə3} → ə3'
     source: index_diachronica_original.html:11557
     rule_id: Lummi-Northern-Straits-a3~ə3
   - stages:
-    - '{a3~i3}'
-    - ə3
+    - '{a[tone: 55]~i[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{a3~i3} → ə3'
     source: index_diachronica_original.html:11558
     rule_id: Lummi-Northern-Straits-a3~i3
   - stages:
-    - '{a1~i1}'
-    - ə1
+    - '{a[tone: 11]~i[tone: 11]}'
+    - 'ə[tone: 11]'
     raw: '{a1~i1} → ə1'
     source: index_diachronica_original.html:11559
     rule_id: Lummi-Northern-Straits-a1~i1
   - stages:
-    - '{i3~e3}'
-    - ə3
+    - '{i[tone: 55]~e[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{i3~e3} → ə3'
     source: index_diachronica_original.html:11560
     rule_id: Lummi-Northern-Straits-i3~e3
   - stages:
-    - '{i3~ə1}'
-    - ə1
+    - '{i[tone: 55]~ə[tone: 11]}'
+    - 'ə[tone: 11]'
     raw: '{i3~ə1} → ə1'
     source: index_diachronica_original.html:11561
     rule_id: Lummi-Northern-Straits-i3~ə1
   - stages:
-    - '{i1~ə1}'
-    - ə1
+    - '{i[tone: 11]~ə[tone: 11]}'
+    - 'ə[tone: 11]'
     raw: '{i1~ə1} → ə1'
     source: index_diachronica_original.html:11562
     rule_id: Lummi-Northern-Straits-i1~ə1
@@ -54244,57 +54244,57 @@ sections:
     source: index_diachronica_original.html:11577
     rule_id: Saanich-Northern-Straits-ʔR
   - stages:
-    - u3 u1
-    - a3 ə1
+    - 'u[tone: 55] u[tone: 11]'
+    - 'a[tone: 55] ə[tone: 11]'
     raw: u3 u1 → a3 ə1
     source: index_diachronica_original.html:11578
     rule_id: Saanich-Northern-Straits-u3-u1
   - stages:
-    - a3
-    - e3
-    exception: '{C[-fr,+bk,-hi,-lo]ʷ,Kʷ,w}_ or when _{Cu,C[-fr,+bk,-hi,-lo]ʷ,w}'
+    - 'a[tone: 55]'
+    - 'e[tone: 55]'
+    exception: '{C[-fr,+bk,-hi,-lo]ʷ,Kʷ,w}_,_{Cu,C[-fr,+bk,-hi,-lo]ʷ,w}'
     raw: a3 → e3 / ! {{C[+ uvular],K}ʷ,w}_ or when _{Cu,C[+ uvular]ʷ,w}
     source: index_diachronica_original.html:11579
     rule_id: Saanich-Northern-Straits-a3
   - stages:
-    - a1
-    - ə1
+    - 'a[tone: 11]'
+    - 'ə[tone: 11]'
     raw: a1 → ə1
     source: index_diachronica_original.html:11580
     rule_id: Saanich-Northern-Straits-a1
   - stages:
-    - '{a3~ə3}'
-    - '{ə3,e3}'
+    - '{a[tone: 55]~ə[tone: 55]}'
+    - '{ə[tone: 55],e[tone: 55]}'
     raw: '{a3~ə3} → {ə3,e3}'
     source: index_diachronica_original.html:11581
     rule_id: Saanich-Northern-Straits-a3~ə3
   - stages:
-    - '{a3~i3}'
-    - ə3
+    - '{a[tone: 55]~i[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{a3~i3} → ə3'
     source: index_diachronica_original.html:11582
     rule_id: Saanich-Northern-Straits-a3~i3
   - stages:
-    - '{a1~i1}'
-    - ə1
+    - '{a[tone: 11]~i[tone: 11]}'
+    - 'ə[tone: 11]'
     raw: '{a1~i1} → ə1'
     source: index_diachronica_original.html:11583
     rule_id: Saanich-Northern-Straits-a1~i1
   - stages:
-    - '{i3~e3}'
-    - '{ə3,i3}'
+    - '{i[tone: 55]~e[tone: 55]}'
+    - '{ə[tone: 55],i[tone: 55]}'
     raw: '{i3~e3} → {ə3,i3}'
     source: index_diachronica_original.html:11584
     rule_id: Saanich-Northern-Straits-i3~e3
   - stages:
-    - '{i3~ə1}'
-    - ə1
+    - '{i[tone: 55]~ə[tone: 11]}'
+    - 'ə[tone: 11]'
     raw: '{i3~ə1} → ə1'
     source: index_diachronica_original.html:11585
     rule_id: Saanich-Northern-Straits-i3~ə1
   - stages:
-    - '{i1~ə1}'
-    - '{ə1,i1}'
+    - '{i[tone: 11]~ə[tone: 11]}'
+    - '{ə[tone: 11],i[tone: 11]}'
     raw: '{i1~ə1} → {ə1,i1}'
     source: index_diachronica_original.html:11586
     rule_id: Saanich-Northern-Straits-i1~ə1
@@ -54366,70 +54366,70 @@ sections:
     source: index_diachronica_original.html:11599
     rule_id: Songish-Northern-Straits-V3h
   - stages:
-    - u3 u1
-    - a3 ə1
+    - 'u[tone: 55] u[tone: 11]'
+    - 'a[tone: 55] ə[tone: 11]'
     raw: u3 u1 → a3 ə1
     source: index_diachronica_original.html:11600
     rule_id: Songish-Northern-Straits-u3-u1
   - stages:
-    - a3
-    - a3
+    - 'a[tone: 55]'
+    - 'a[tone: 55]'
     env: '{C[-fr,+bk,-hi,-lo]ʷ,Kʷ,w}_'
     raw: a3 → a3 / {{C[+ uvular],K}ʷ,w}_
     source: index_diachronica_original.html:11601
     rule_id: Songish-Northern-Straits-a3
   - stages:
-    - a3
-    - a3
+    - 'a[tone: 55]'
+    - 'a[tone: 55]'
     env: _{Cu,C[-fr,+bk,-hi,-lo]ʷ,w}
     raw: a3 → a3 / _{Cu,C[+ uvular]ʷ,w}
     source: index_diachronica_original.html:11602
     rule_id: Songish-Northern-Straits-a3_2
   - stages:
-    - a1
-    - ə1
+    - 'a[tone: 11]'
+    - 'ə[tone: 11]'
     raw: a1 → ə1
     source: index_diachronica_original.html:11603
     rule_id: Songish-Northern-Straits-a1
   - stages:
-    - '{u3~ə3}'
-    - ə3
+    - '{u[tone: 55]~ə[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{u3~ə3} → ə3'
     source: index_diachronica_original.html:11604
     rule_id: Songish-Northern-Straits-u3~ə3
   - stages:
-    - '{a3~ə3}'
-    - ə3
+    - '{a[tone: 55]~ə[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{a3~ə3} → ə3'
     source: index_diachronica_original.html:11605
     rule_id: Songish-Northern-Straits-a3~ə3
   - stages:
-    - '{a3~i3}'
-    - ə3
+    - '{a[tone: 55]~i[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{a3~i3} → ə3'
     source: index_diachronica_original.html:11606
     rule_id: Songish-Northern-Straits-a3~i3
   - stages:
-    - '{a1~i1}'
-    - '{ə1,e1}'
+    - '{a[tone: 11]~i[tone: 11]}'
+    - '{ə[tone: 11],e[tone: 11]}'
     raw: '{a1~i1} → {ə1,e1}'
     source: index_diachronica_original.html:11607
     rule_id: Songish-Northern-Straits-a1~i1
   - stages:
-    - '{i3~e3}'
-    - ə3
+    - '{i[tone: 55]~e[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{i3~e3} → ə3'
     source: index_diachronica_original.html:11608
     rule_id: Songish-Northern-Straits-i3~e3
   - stages:
-    - '{i3~ə1}'
-    - ə1
+    - '{i[tone: 55]~ə[tone: 11]}'
+    - 'ə[tone: 11]'
     raw: '{i3~ə1} → ə1'
     source: index_diachronica_original.html:11609
     rule_id: Songish-Northern-Straits-i3~ə1
   - stages:
-    - '{i1~ə1}'
-    - ə1
+    - '{i[tone: 11]~ə[tone: 11]}'
+    - 'ə[tone: 11]'
     raw: '{i1~ə1} → ə1'
     source: index_diachronica_original.html:11610
     rule_id: Songish-Northern-Straits-i1~ə1
@@ -54494,69 +54494,69 @@ sections:
     source: index_diachronica_original.html:11622
     rule_id: Sooke-Northern-Straits-j-w
   - stages:
-    - u3 u1
-    - a3 ə1
+    - 'u[tone: 55] u[tone: 11]'
+    - 'a[tone: 55] ə[tone: 11]'
     raw: u3 u1 → a3 ə1
     source: index_diachronica_original.html:11623
     rule_id: Sooke-Northern-Straits-u3-u1
   - stages:
-    - a3
-    - '{a3,o3}'
+    - 'a[tone: 55]'
+    - '{a[tone: 55],o[tone: 55]}'
     env: '{C[-fr,+bk,-hi,-lo]ʷ,Kʷ,w}_'
     raw: a3 → {a3,o3} / {{C[+ uvular],K}ʷ,w}_
     source: index_diachronica_original.html:11624
     rule_id: Sooke-Northern-Straits-a3
   - stages:
-    - a3
-    - e3
+    - 'a[tone: 55]'
+    - 'e[tone: 55]'
     raw: a3 → e3
     source: index_diachronica_original.html:11625
     rule_id: Sooke-Northern-Straits-a3_2
   - stages:
-    - a1
-    - ə1
+    - 'a[tone: 11]'
+    - 'ə[tone: 11]'
     raw: a1 → ə1
     source: index_diachronica_original.html:11626
     rule_id: Sooke-Northern-Straits-a1
   - stages:
-    - '{u3~ə3}'
-    - ə3
+    - '{u[tone: 55]~ə[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{u3~ə3} → ə3'
     source: index_diachronica_original.html:11627
     rule_id: Sooke-Northern-Straits-u3~ə3
   - stages:
-    - '{a3~ə3}'
-    - ə3
+    - '{a[tone: 55]~ə[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{a3~ə3} → ə3'
     source: index_diachronica_original.html:11628
     rule_id: Sooke-Northern-Straits-a3~ə3
   - stages:
-    - '{a3~i3}'
-    - ə3
+    - '{a[tone: 55]~i[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{a3~i3} → ə3'
     source: index_diachronica_original.html:11629
     rule_id: Sooke-Northern-Straits-a3~i3
   - stages:
-    - '{a1~i1}'
-    - ə1
+    - '{a[tone: 11]~i[tone: 11]}'
+    - 'ə[tone: 11]'
     raw: '{a1~i1} → ə1'
     source: index_diachronica_original.html:11630
     rule_id: Sooke-Northern-Straits-a1~i1
   - stages:
-    - '{i3~e3}'
-    - ə3
+    - '{i[tone: 55]~e[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{i3~e3} → ə3'
     source: index_diachronica_original.html:11631
     rule_id: Sooke-Northern-Straits-i3~e3
   - stages:
-    - '{i3~ə1}'
-    - ə1
+    - '{i[tone: 55]~ə[tone: 11]}'
+    - 'ə[tone: 11]'
     raw: '{i3~ə1} → ə1'
     source: index_diachronica_original.html:11632
     rule_id: Sooke-Northern-Straits-i3~ə1
   - stages:
-    - '{i1~ə1}'
-    - ə1
+    - '{i[tone: 11]~ə[tone: 11]}'
+    - 'ə[tone: 11]'
     raw: '{i1~ə1} → ə1'
     source: index_diachronica_original.html:11633
     rule_id: Sooke-Northern-Straits-i1~ə1
@@ -54600,38 +54600,38 @@ sections:
     source: index_diachronica_original.html:11642
     rule_id: Pentlatch-ʔ_2
   - stages:
-    - i1
-    - ə1
+    - 'i[tone: 11]'
+    - 'ə[tone: 11]'
     raw: i1 → ə1
     source: index_diachronica_original.html:11643
     rule_id: Pentlatch-i1
   - stages:
-    - '{a3~ə3}'
-    - ə3
+    - '{a[tone: 55]~ə[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{a3~ə3} → ə3'
     source: index_diachronica_original.html:11644
     rule_id: Pentlatch-a3~ə3
   - stages:
-    - '{a1~i1}'
-    - '{i1,ə1}'
+    - '{a[tone: 11]~i[tone: 11]}'
+    - '{i[tone: 11],ə[tone: 11]}'
     raw: '{a1~i1} → {i1,ə1}'
     source: index_diachronica_original.html:11645
     rule_id: Pentlatch-a1~i1
   - stages:
-    - '{i3~e3}'
-    - '{ə3,i3}'
+    - '{i[tone: 55]~e[tone: 55]}'
+    - '{ə[tone: 55],i[tone: 55]}'
     raw: '{i3~e3} → {ə3,i3}'
     source: index_diachronica_original.html:11646
     rule_id: Pentlatch-i3~e3
   - stages:
-    - '{i3~ə1}'
-    - i3
+    - '{i[tone: 55]~ə[tone: 11]}'
+    - 'i[tone: 55]'
     raw: '{i3~ə1} → i3'
     source: index_diachronica_original.html:11647
     rule_id: Pentlatch-i3~ə1
   - stages:
-    - '{i1~ə1}'
-    - '{i1,∅}'
+    - '{i[tone: 11]~ə[tone: 11]}'
+    - '{i[tone: 11],∅}'
     raw: '{i1~ə1} → {i1,∅}'
     source: index_diachronica_original.html:11648
     rule_id: Pentlatch-i1~ə1
@@ -54675,50 +54675,50 @@ sections:
     source: index_diachronica_original.html:11657
     rule_id: Sechelt-ʔ_3
   - stages:
-    - i1
-    - '{i1,ə1j}'
+    - 'i[tone: 11]'
+    - '{i[tone: 11],ə[tone: 11]j}'
     raw: i1 → {i1,ə1j}
     source: index_diachronica_original.html:11658
     rule_id: Sechelt-i1
   - stages:
-    - '{u3~ə3}'
-    - u3
+    - '{u[tone: 55]~ə[tone: 55]}'
+    - 'u[tone: 55]'
     raw: '{u3~ə3} → u3'
     source: index_diachronica_original.html:11659
     rule_id: Sechelt-u3~ə3
   - stages:
-    - '{a3~ə3}'
-    - ə3
+    - '{a[tone: 55]~ə[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{a3~ə3} → ə3'
     source: index_diachronica_original.html:11660
     rule_id: Sechelt-a3~ə3
   - stages:
-    - '{a3~i3}'
-    - i3
+    - '{a[tone: 55]~i[tone: 55]}'
+    - 'i[tone: 55]'
     raw: '{a3~i3} → i3'
     source: index_diachronica_original.html:11661
     rule_id: Sechelt-a3~i3
   - stages:
-    - '{a1~i1}'
-    - '{i1,ə1}'
+    - '{a[tone: 11]~i[tone: 11]}'
+    - '{i[tone: 11],ə[tone: 11]}'
     raw: '{a1~i1} → {i1,ə1}'
     source: index_diachronica_original.html:11662
     rule_id: Sechelt-a1~i1
   - stages:
-    - '{i3~e3}'
-    - '{ə3,i3}'
+    - '{i[tone: 55]~e[tone: 55]}'
+    - '{ə[tone: 55],i[tone: 55]}'
     raw: '{i3~e3} → {ə3,i3}'
     source: index_diachronica_original.html:11663
     rule_id: Sechelt-i3~e3
   - stages:
-    - '{i3~ə1}'
-    - i3
+    - '{i[tone: 55]~ə[tone: 11]}'
+    - 'i[tone: 55]'
     raw: '{i3~ə1} → i3'
     source: index_diachronica_original.html:11664
     rule_id: Sechelt-i3~ə1
   - stages:
-    - '{i1~ə1}'
-    - '{i1,∅}'
+    - '{i[tone: 11]~ə[tone: 11]}'
+    - '{i[tone: 11],∅}'
     raw: '{i1~ə1} → {i1,∅}'
     source: index_diachronica_original.html:11665
     rule_id: Sechelt-i1~ə1
@@ -54755,50 +54755,50 @@ sections:
     source: index_diachronica_original.html:11673
     rule_id: Sqamish-ʔR
   - stages:
-    - u1
-    - '{u1,ə1}'
+    - 'u[tone: 11]'
+    - '{u[tone: 11],ə[tone: 11]}'
     raw: u1 → {u1,ə1}
     source: index_diachronica_original.html:11674
     rule_id: Sqamish-u1
   - stages:
-    - '{u3~ə3}'
-    - ə3
+    - '{u[tone: 55]~ə[tone: 55]}'
+    - 'ə[tone: 55]'
     raw: '{u3~ə3} → ə3'
     source: index_diachronica_original.html:11675
     rule_id: Sqamish-u3~ə3
   - stages:
-    - '{a3~ə3}'
-    - '{a3,ə3}'
+    - '{a[tone: 55]~ə[tone: 55]}'
+    - '{a[tone: 55],ə[tone: 55]}'
     raw: '{a3~ə3} → {a3,ə3}'
     source: index_diachronica_original.html:11676
     rule_id: Sqamish-a3~ə3
   - stages:
-    - '{a3~i3}'
-    - i3
+    - '{a[tone: 55]~i[tone: 55]}'
+    - 'i[tone: 55]'
     raw: '{a3~i3} → i3'
     source: index_diachronica_original.html:11677
     rule_id: Sqamish-a3~i3
   - stages:
-    - '{a1~i1}'
-    - i1
+    - '{a[tone: 11]~i[tone: 11]}'
+    - 'i[tone: 11]'
     raw: '{a1~i1} → i1'
     source: index_diachronica_original.html:11678
     rule_id: Sqamish-a1~i1
   - stages:
-    - '{i3~e3}'
-    - '{ə3,i3}'
+    - '{i[tone: 55]~e[tone: 55]}'
+    - '{ə[tone: 55],i[tone: 55]}'
     raw: '{i3~e3} → {ə3,i3}'
     source: index_diachronica_original.html:11679
     rule_id: Sqamish-i3~e3
   - stages:
-    - '{i3~ə1}'
-    - i3
+    - '{i[tone: 55]~ə[tone: 11]}'
+    - 'i[tone: 55]'
     raw: '{i3~ə1} → i3'
     source: index_diachronica_original.html:11680
     rule_id: Sqamish-i3~ə1
   - stages:
-    - '{i1~ə1}'
-    - '{i1,∅}'
+    - '{i[tone: 11]~ə[tone: 11]}'
+    - '{i[tone: 11],∅}'
     raw: '{i1~ə1} → {i1,∅}'
     source: index_diachronica_original.html:11681
     rule_id: Sqamish-i1~ə1
@@ -54863,44 +54863,44 @@ sections:
     source: index_diachronica_original.html:11693
     rule_id: Twana-ʔ_2
   - stages:
-    - u3 u1
-    - o3 ə1
+    - 'u[tone: 55] u[tone: 11]'
+    - 'o[tone: 55] ə[tone: 11]'
     raw: u3 u1 → o3 ə1
     source: index_diachronica_original.html:11694
     rule_id: Twana-u3-u1
   - stages:
-    - '{a3~ə3}'
-    - '{ə3,a3}'
+    - '{a[tone: 55]~ə[tone: 55]}'
+    - '{ə[tone: 55],a[tone: 55]}'
     raw: '{a3~ə3} → {ə3,a3}'
     source: index_diachronica_original.html:11695
     rule_id: Twana-a3~ə3
   - stages:
-    - '{a3~i3}'
-    - a3
+    - '{a[tone: 55]~i[tone: 55]}'
+    - 'a[tone: 55]'
     raw: '{a3~i3} → a3'
     source: index_diachronica_original.html:11696
     rule_id: Twana-a3~i3
   - stages:
-    - '{a1~i1}'
-    - '{i1,ə1}'
+    - '{a[tone: 11]~i[tone: 11]}'
+    - '{i[tone: 11],ə[tone: 11]}'
     raw: '{a1~i1} → {i1,ə1}'
     source: index_diachronica_original.html:11697
     rule_id: Twana-a1~i1
   - stages:
-    - '{i3~e3}'
-    - '{i3,ə3}'
+    - '{i[tone: 55]~e[tone: 55]}'
+    - '{i[tone: 55],ə[tone: 55]}'
     raw: '{i3~e3} → {i3,ə3}'
     source: index_diachronica_original.html:11698
     rule_id: Twana-i3~e3
   - stages:
-    - '{i3~ə1}'
-    - '{i3,i1}'
+    - '{i[tone: 55]~ə[tone: 11]}'
+    - '{i[tone: 55],i[tone: 11]}'
     raw: '{i3~ə1} → {i3,i1}'
     source: index_diachronica_original.html:11699
     rule_id: Twana-i3~ə1
   - stages:
-    - '{i1~ə1}'
-    - i1
+    - '{i[tone: 11]~ə[tone: 11]}'
+    - 'i[tone: 11]'
     raw: '{i1~ə1} → i1'
     source: index_diachronica_original.html:11700
     rule_id: Twana-i1~ə1

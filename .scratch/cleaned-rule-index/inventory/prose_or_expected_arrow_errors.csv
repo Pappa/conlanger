@@ -5,6 +5,7 @@ section_index,rule_id,error_token,rule
 13.1,Barbareño-R-glottalizedVˀR,,"[+son,-syll][+place]Vˀ[+son,-syll] > ˀ[+son,-syll]V[+son,-syll][+place] / _$ | ^ @ Rule 1, Line 1"
 17.2,Common-Anatolian-Dʱ,,"C:[+labial]:[+voice,+spread] > P:[+voice] | ^ @ Rule 1, Line 1"
 17.10,Proto-Indo-Iranian-BʱBʱ,,"V:[+back,+spread,+voice]V:[+back]ʱ > V:[+back]V:[+back,+spread,+voice] | ^ @ Rule 1, Line 1"
+17.12.1.1.6,Old-Provençal-ndt-ndtʃ-ntʃ-nkt-nf,,"nz),ndʒ} n(t)s {ɲ,int,nt,ntʃ} {nf,f:[+long] > f)} | ^ @ Rule 1, Line 3"
 29.1.1.1.1,Ahtna-Vˀ,,"Vˀ > V[+place] | ^ @ Rule 1, Line 1"
 29.1.1.1.2,Babine-Vˀ,,"Vˀ > V[+place] | ^ @ Rule 1, Line 1"
 29.1.1.1.3,Beaver-Vˀ,,"Vˀ > V:[tone: 55] | ^ @ Rule 1, Line 1"
