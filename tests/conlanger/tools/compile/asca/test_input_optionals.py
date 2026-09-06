@@ -96,12 +96,20 @@ def test_braced_prefix_wraps_unparsed_inner_without_brace_strip(monkeypatch):
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_arapaho_v_long_n_apply_probe(tmp_path: Path):
+@pytest.mark.parametrize(
+    ("index", "section"),
+    [
+        ("Arapaho", "Proto-Arapaho-Atsina to Arapaho"),
+        ("Gros Ventre", "Proto-Arapaho-Atsina to Gros Ventre"),
+    ],
+)
+def test_v_long_n_apply_probe(tmp_path: Path, index: str, section: str):
+    """Arapaho-V-longN / Gros-Ventre-V-longN: (V[-long])N → ∅ / _# on kaN, kN."""
     probe = tmp_path / "probe.wsca"
     probe.write_text("kaN\nkiN\nkN\n", encoding="utf-8")
-    section = {
-        "index": "Arapaho",
-        "section": "Proto-Arapaho-Atsina to Arapaho",
+    series = {
+        "index": index,
+        "section": section,
         "rules": [{"stages": ["(V[-long])N", "∅"], "env": "_#"}],
     }
-    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
+    validate_asca(DiachronicSeries(series, "asca"), probe_words=probe)
