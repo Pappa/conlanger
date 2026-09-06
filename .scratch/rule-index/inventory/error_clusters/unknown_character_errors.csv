@@ -3,7 +3,7 @@ section_index,rule_id,error_token,rule
 6.2.2.1.14,Moroccan-Arabic-t,͜,"t > t͜s / plain t only, distinguishable from the sequence ts | ^ @ Rule 1, Line 1"
 10.2.6.2.1,"Òma-Lóngh-p,t-n",̚,"{p,t} n > c̚ ɲ / {i,ɛ}_# | ^ @ Rule 1, Line 1"
 10.2.6.2.1,Òma-Lóngh-ŋ,̊,"ŋ > ŋ̊ / _# | ^ @ Rule 1, Line 1"
-10.3.8,Tolomako-m-b,̼,"n̼ t̼ > n t / _{a,e,i} | ^ @ Rule 1, Line 2"
+10.3.8,Tolomako-m-b,̼,"m b > n̼ t̼ / _{a,e,i} | ^ @ Rule 1, Line 1"
 10.4.1,"Marshallese-ç,s-x",ᵚ,"{ç,s} x > tᵚ | ^ @ Rule 1, Line 1"
 10.7,"Proto-Rukai-t1,c-d1,z-d3",₁,"{t₁,c} {d₁,z} d₃ > t d ɖ | ^ @ Rule 1, Line 1"
 10.7,Proto-Rukai-S1-s-d2-*C,₂,"S=1 s d₂ *C > s θ ð ts | ^ @ Rule 1, Line 1"

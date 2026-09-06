@@ -252,4 +252,10 @@ rules:
                           The source says: 
                                   "*? is lost before a true consonant, with compensatory 
                                   lengthening of a preceding nonpostvocal"
-                          I think it may be necessary to split this into multiple rules,
+                          I think it may be necessary to split this into multiple rules.
+        - rule:
+                  id: Gros-Ventre-C,#V-longʔ
+                  content: "{V[-long]ʔ,ʔ} → {V[+falling tone]∅,∅} / #_C, C_C, _C"
+                  reason: |
+                          TODO: resolve this one properly.
+                          Original rule: ({C,#}V[-long])ʔ → ({C,#}Vː[+falling tone])∅ / _C

@@ -3890,7 +3890,7 @@ sections:
     source: index_diachronica_original.html:1697
     rule_id: Gros-Ventre-hʔ
   - stages: []
-    raw: ({C,#}V[-long])ʔ → ({C,#}Vː[+falling tone])∅ / _C
+    raw: '{V[-long]ʔ,ʔ} → {V[+falling tone]∅,∅} / #_C, C_C, _C'
     source: index_diachronica_original.html:1698
     status: skipped
     rule_id: Gros-Ventre-C,#V-longʔ
