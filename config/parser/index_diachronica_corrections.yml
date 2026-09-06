@@ -243,3 +243,13 @@ rules:
                   id: Proto-Boreafrasian-z
                   content: "z → d / sporadic ; “when another sibilant is in the word nearby” and (word-finally?) when “noun-stem final”"
                   reason: "Too complex to parse"
+        - rule:
+                  id: Arapaho-C,#Vʔ
+                  content: "{Vʔ,ʔ} → {Vː∅,∅} / #_C, C_C, _C"
+                  reason: |
+                          TODO: resolve this one properly.
+                          Original rule: ({C,#}V)ʔ → ({C,#}Vː)∅ / _C
+                          The source says: 
+                                  "*? is lost before a true consonant, with compensatory 
+                                  lengthening of a preceding nonpostvocal"
+                          I think it may be necessary to split this into multiple rules,

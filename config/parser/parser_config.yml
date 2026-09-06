@@ -108,8 +108,8 @@ skip_rules:
     reason: "No idea what X means"
   - id: North-Omotic-Vː_2
     reason: "I can't figure out the rule even afer reading the source material"
-  - id: Arapaho-C,#Vʔ
-    reason: "I can't figure out the rule even afer reading the source material"
+  # - id: Arapaho-C,#Vʔ
+  #   reason: "I can't figure out the rule even afer reading the source material"
   - id: Gros-Ventre-C,#V-longʔ
     reason: "I can't figure out the rule even afer reading the source material"
   - id: Biblical-Hebrew-—-a_4

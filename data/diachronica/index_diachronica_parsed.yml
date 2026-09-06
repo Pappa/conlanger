@@ -3770,12 +3770,13 @@ sections:
     raw: hʔ → ʔh
     source: index_diachronica_original.html:1675
     rule_id: Arapaho-hʔ
-  - stages: []
-    raw: ({C,#}V)ʔ → ({C,#}Vː)∅ / _C
+  - stages:
+    - '{Vʔ,ʔ}'
+    - '{Vː∅,∅}'
+    env: '#_C, C_C, _C'
+    raw: '{Vʔ,ʔ} → {Vː∅,∅} / #_C, C_C, _C'
     source: index_diachronica_original.html:1676
-    status: skipped
     rule_id: Arapaho-C,#Vʔ
-    comment: I can't figure out the rule even afer reading the source material
   - stages:
     - i(ː)
     - u(ː)

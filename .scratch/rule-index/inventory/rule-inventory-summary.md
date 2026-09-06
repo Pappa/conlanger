@@ -3,10 +3,10 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
-- Rows: **9839** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
+- Rows: **9840** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8837** (89.8%)
+- OK: **8838** (89.8%)
 - Fail: **694** (7.1%)
 - Skipped: **308** (3.1%)
 
@@ -23,9 +23,9 @@
 |------:|---------------|
 | 155 | `expected_underscore` |
 | 149 | `unknown_character` |
-| 53 | `missing_slash_output_env` |
+| 52 | `missing_slash_output_env` |
 | 47 | `invalid_ipa` |
-| 40 | `prose_or_expected_arrow` |
+| 41 | `prose_or_expected_arrow` |
 | 37 | `expected_ipa` |
 | 36 | `syntax_other` |
 | 35 | `expected_number` |
@@ -208,11 +208,11 @@
 | 7 | `Expected '>', '->' or '=>', but received '̩'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
 | 2 | `Expected '>', '->' or '=>', but received '̥'` |
-| 1 | `Expected '>', '->' or '=>', but received 'ˤ'` |
+| 2 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
-| 1 | `Expected '>', '->' or '=>', but received ':'` |
+| 1 | `Expected '>', '->' or '=>', but received 'ˤ'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
-| 1 | `Expected '>', '->' or '=>', but received ')'` |
+| 1 | `Expected '>', '->' or '=>', but received ':'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 
 ### invalid_ipa (error_token)
@@ -264,7 +264,7 @@
 
 | count | error_token |
 |------:|-------------|
-| 22 | `)` |
+| 21 | `)` |
 | 14 | `:` |
 | 6 | `(` |
 | 3 | `ʲ` |

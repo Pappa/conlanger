@@ -491,7 +491,8 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 7.3,Proto-Algonquian to Proto-Arapaho-Atsina,Proto-Arapaho-Atsina-Vː,,index_diachronica_original.html:1667,True,,,,,
 7.3,Proto-Algonquian to Proto-Arapaho-Atsina,Proto-Arapaho-Atsina-aː,,index_diachronica_original.html:1668,True,,,,,
 7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-hʔ,,index_diachronica_original.html:1675,True,,,,,
-7.3.1,Proto-Arapaho-Atsina to Arapaho,"Arapaho-C,#Vʔ",,index_diachronica_original.html:1676,True,,,,,held-out (commented rule)
+7.3.1,Proto-Arapaho-Atsina to Arapaho,"Arapaho-C,#Vʔ",0,index_diachronica_original.html:1676,True,,,,,
+7.3.1,Proto-Arapaho-Atsina to Arapaho,"Arapaho-C,#Vʔ",1,index_diachronica_original.html:1676,True,,,,,
 7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-iː,,index_diachronica_original.html:1677,True,,,,,
 7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-∅,,index_diachronica_original.html:1678,True,,,,,
 7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-ʃ-m,,index_diachronica_original.html:1679,True,,,,,
