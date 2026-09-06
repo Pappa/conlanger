@@ -12,6 +12,6 @@ section_index,rule_id,error_token,rule
 32.2,Tlapanec-Yt-Ynt-Ys,Y,"Yt Ynt Ys > tʃ dʒ ʃ | ^ @ Rule 1, Line 1"
 33.2.1,Nomlaki-VrV,M,"VrV > M | ^ @ Rule 1, Line 1"
 41.5.2.3,"Gadsup-D,Y",Y,"{P:[+voice],Y} > ∅ / _n | ^ @ Rule 1, Line 1"
-41.5.2.3,Gadsup-YO+-voice-YO-voice,Y,"YO[+ voice] YO[- voice] > Y t | ^ @ Rule 1, Line 1"
+41.5.2.3,Gadsup-YO+-voice-YO-voice,Y,"YO:[+ voice] YO:[- voice] > Y t | ^ @ Rule 1, Line 1"
 42.1,Pre-Finnic-a,X,"a > æ / {a,aX,e,eX,e,eX,i,iX,y,yX}(C)(C)_ when unstressed | ^ @ Rule 1, Line 1"
 47.2,"List-2:-Conditional-or-complex-consonant-changes-t,k",M,"{t,k} > ∅ / V_V (Marathi) probably with voiced stops as intermediates, since they also became silent | ^ @ Rule 1, Line 1"

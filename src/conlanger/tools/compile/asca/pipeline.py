@@ -15,6 +15,9 @@ from conlanger.tools.compile.asca.ellipsis import (
 from conlanger.tools.compile.asca.group_mappings import (
     apply_asca_group_mappings_to_string,
 )
+from conlanger.tools.compile.asca.host_bracket_matrices import (
+    normalize_asca_host_bracket_matrices,
+)
 from conlanger.tools.compile.asca.length_marks import normalize_asca_length_marks
 from conlanger.tools.compile.asca.optional_length import (
     expand_optional_length_in_text,
@@ -133,6 +136,8 @@ def compile_asca_rule_field_strings(
     )
     compiled_input = compile_asca_field_post_subscript(compiled_input)
     compiled_output = compile_asca_field_post_subscript(compiled_output)
+    compiled_input = normalize_asca_host_bracket_matrices(compiled_input)
+    compiled_output = normalize_asca_host_bracket_matrices(compiled_output)
     if compiled_env is not None:
         compiled_env = compile_asca_field_post_subscript(compiled_env)
         if is_whole_field_set(compiled_env):

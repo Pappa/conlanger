@@ -46,7 +46,7 @@ def test_normalize_prenasal_prefix(text, expected):
             "N[-tense] N[+tense]",
             "N[+tense] ⁿP",
             "_ C=2 position",
-            "N[-tense] N[+tense] > N[+tense] N P / _ C=2 position",
+            "N:[-tense] N:[+tense] > N:[+tense] N P / _ C=2 position",
         ),
     ],
 )

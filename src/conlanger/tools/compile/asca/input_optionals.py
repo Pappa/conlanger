@@ -23,6 +23,9 @@ from __future__ import annotations
 import re
 
 from conlanger.tools.compile.asca._patterns import ASCA_ENV_OPTIONAL_RE, IPA_SEGMENT
+from conlanger.tools.compile.asca.host_bracket_matrices import (
+    host_bracket_matrix_to_colon,
+)
 from conlanger.tools.compile.asca.sets import split_set_members
 from conlanger.tools.compile.asca.structures import split_outside_groupers
 
@@ -41,7 +44,6 @@ _CLASS_OR_GROUP_INNER_RE = re.compile(
 )
 _BRACED_GROUP_PREFIX_RE = re.compile(r"^\((\{[^{}]+\}[^)]*)\)(.+)$")
 _DEFERRED_STRUCTURAL_OPTIONAL_RE = re.compile(r"^\{C,#\}V$")
-_HOST_BRACKET_MATRIX_RE = re.compile(r"^([A-Z])(\[[^\]]+\])$")
 _CARTESIAN_OPTIONAL_PREFIX_INNER_RE = re.compile(
     r"^(?:"
     r"[A-Z]"
@@ -52,17 +54,9 @@ _CARTESIAN_OPTIONAL_PREFIX_INNER_RE = re.compile(
 )
 
 
-def _host_bracket_matrix_to_colon(text: str) -> str:
-    """Rewrite Index postfix class matrix ``V[-long]`` to ASCA ``V:[-long]``."""
-    match = _HOST_BRACKET_MATRIX_RE.fullmatch(text.strip())
-    if match is None:
-        return text
-    return f"{match.group(1)}:{match.group(2)}"
-
-
 def _cartesian_optional_prefix(inner: str, rest: str) -> str:
     """Zero-or-one optional prefix → flat ``{prefix+rest, rest}`` set."""
-    normalized = _host_bracket_matrix_to_colon(inner)
+    normalized = host_bracket_matrix_to_colon(inner)
     with_prefix = f"{normalized}{rest}"
     return f"{{{with_prefix},{rest}}}"
 

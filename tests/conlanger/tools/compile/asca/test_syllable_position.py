@@ -98,10 +98,10 @@ def test_apply_syllable_position_compiled_overrides_replaces_group_mapping_damag
 @pytest.mark.parametrize(
     ("exception", "expected"),
     [
-        ("#U", "V:[+long] > V[-long] // :{#_#, #<.._>}:"),
-        ("in #U", "V:[+long] > V[-long] // :{#_#, #<.._>}:"),
-        ("U#", "V:[+long] > V[-long] // :{#_#, <.._>#}:"),
-        ("#U, U#", "V:[+long] > V[-long] // :{#_#, #<.._>, <.._>#}:"),
+        ("#U", "V:[+long] > V:[-long] // :{#_#, #<.._>}:"),
+        ("in #U", "V:[+long] > V:[-long] // :{#_#, #<.._>}:"),
+        ("U#", "V:[+long] > V:[-long] // :{#_#, <.._>#}:"),
+        ("#U, U#", "V:[+long] > V:[-long] // :{#_#, #<.._>, <.._>#}:"),
     ],
 )
 def test_compile_asca_rule_fields_syllable_position_exceptions(exception, expected):
@@ -111,10 +111,10 @@ def test_compile_asca_rule_fields_syllable_position_exceptions(exception, expect
 @pytest.mark.parametrize(
     ("env", "expected"),
     [
-        ("#U", "V:[+long] > V[-long] / #<.._>"),
-        ("in #U", "V:[+long] > V[-long] / #<.._>"),
-        ("U#", "V:[+long] > V[-long] / <.._>#"),
-        ("in U#", "V:[+long] > V[-long] / <.._>#"),
+        ("#U", "V:[+long] > V:[-long] / #<.._>"),
+        ("in #U", "V:[+long] > V:[-long] / #<.._>"),
+        ("U#", "V:[+long] > V:[-long] / <.._>#"),
+        ("in U#", "V:[+long] > V:[-long] / <.._>#"),
     ],
 )
 def test_compile_asca_rule_fields_syllable_position_env(env, expected):
@@ -130,7 +130,7 @@ def test_sound_change_rule_preserves_raw():
         detect_alternatives=False,
     )
     assert rule.raw == "Vː → V[-long] / ! in #U"
-    assert rule.value == "V:[+long] > V[-long] // :{#_#, #<.._>}:"
+    assert rule.value == "V:[+long] > V:[-long] // :{#_#, #<.._>}:"
 
 
 def test_apply_syllable_position_editorial_strip_on_rule_parts():

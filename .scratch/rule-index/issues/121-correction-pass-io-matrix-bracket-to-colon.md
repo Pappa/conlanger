@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: [120](120-correction-pass-optional-prefix-cartesian.md)
 
 # Correction pass: I/O host+bracket matrices → ASCA colon form
@@ -35,10 +35,17 @@ Ticket [120](120-correction-pass-optional-prefix-cartesian.md) colon-normalizes 
 
 ## Acceptance criteria
 
-- [ ] Pass runs on I/O compile fields after [120](120-correction-pass-optional-prefix-cartesian.md) optional-prefix work lands
-- [ ] `V[-long]` → `V:[-long]` on I/O; `raw` / **stages** unchanged
-- [ ] Apply probes for input matching and output substitution
-- [ ] Inventory metrics in **Answer**; `incomplete_matrix` cluster reduced where bracket-output was root cause
+- [x] Pass runs on I/O compile fields after [120](120-correction-pass-optional-prefix-cartesian.md) optional-prefix work lands
+- [x] `V[-long]` → `V:[-long]` on I/O; `raw` / **stages** unchanged
+- [x] Apply probes for input matching and output substitution
+- [x] Inventory metrics in **Answer**; `incomplete_matrix` cluster reduced where bracket-output was root cause
+
+## Answer
+
+**Shipped 2026-09-06.** `normalize_asca_host_bracket_matrices` rewrites host+bracket matrices (`V[-long]`, `C[+voice]`, `a[+nas]`, …) to colon form on **compiled input/output only** (after `expand_meta_notation`; env/exception unchanged). Skips Oceanic `aCV[+ high]`-style templates (`(?<![aeiou]C)[A-Z][` guard + no-uppercase IPA hosts). Shared `host_bracket_matrix_to_colon` also used by optional-prefix cartesian ([120](120-correction-pass-optional-prefix-cartesian.md)).
+
+- **Inventory:** OK **8825 → 8837 (+12)**; fail **706 → 694 (−12)**; sections all-OK **441 → 442 / 714**. `incomplete_matrix` **13 → 3 (−10)** — Indo-Aryan `C[+voice]` output, Creek `P[+voice]`, Chilcotin `V[+rtr]`, Adángbe/Kansa `V[+nas]`, Basque `P[+voice]`, Lycian `F[+voice]` output recovered; residual 3 are unrelated insertion/runtime shapes.
+- **Apply probes:** `Vː > V[-long]` substitutes long→short; `V[-long] > x` matches short vowels (ASCA 0.10.2).
 
 ## References
 

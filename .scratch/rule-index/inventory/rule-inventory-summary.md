@@ -6,14 +6,14 @@
 - Rows: **9839** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8825** (89.7%)
-- Fail: **706** (7.2%)
+- OK: **8837** (89.8%)
+- Fail: **694** (7.1%)
 - Skipped: **308** (3.1%)
 
 ## Sections
 
-- All OK: **441 / 714** (61.8%)
-- Some OK: **254 / 714** (35.6%)
+- All OK: **442 / 714** (61.9%)
+- Some OK: **253 / 714** (35.4%)
 - None OK: **3 / 714** (0.4%)
 - Sections skipped: **16 / 714** (2.2%)
 
@@ -23,23 +23,23 @@
 |------:|---------------|
 | 155 | `expected_underscore` |
 | 149 | `unknown_character` |
-| 52 | `missing_slash_output_env` |
+| 53 | `missing_slash_output_env` |
 | 47 | `invalid_ipa` |
-| 41 | `prose_or_expected_arrow` |
-| 38 | `syntax_other` |
+| 40 | `prose_or_expected_arrow` |
 | 37 | `expected_ipa` |
+| 36 | `syntax_other` |
 | 35 | `expected_number` |
 | 23 | `nested_brackets` |
 | 23 | `unknown_feature` |
 | 16 | `unknown_grouping` |
 | 14 | `stuff_after_word_bound` |
 | 14 | `floating_diacritic` |
-| 13 | `incomplete_matrix` |
 | 11 | `empty_io_panic` |
 | 9 | `diacritic_prereq` |
 | 8 | `segments_before_word` |
 | 7 | `multiple_underlines_env` |
 | 4 | `panic_other` |
+| 3 | `incomplete_matrix` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
 | 2 | `format_error` |
@@ -65,15 +65,15 @@
 | count | description |
 |------:|-------------|
 | 10 | `Output cannot be empty. Use `*` or '∅' to indicate deletion` |
-| 3 | `Negation cannot be used in the output` |
 | 3 | `Feature 'alveolar' has no modifier` |
+| 3 | `Negation cannot be used in the output` |
 | 2 | `Only a segment, matrix, group, or reference can be negated` |
-| 2 | `Options can only be used in Environments or Structures` |
 | 2 | `Tones cannot be ±; they can only be used with numeric values.` |
 | 1 | `/ cannot be placed inside a matrix. An element inside `[]` must a distinctive feature` |
 | 1 | `Feature 'er' has no modifier` |
 | 1 | `Feature 'lost' has no modifier` |
 | 1 | `Feature 'b' has no modifier` |
+| 1 | `Feature 's' has no modifier` |
 
 ### runtime_other (error_token)
 
@@ -208,11 +208,11 @@
 | 7 | `Expected '>', '->' or '=>', but received '̩'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
 | 2 | `Expected '>', '->' or '=>', but received '̥'` |
-| 2 | `Expected '>', '->' or '=>', but received ')'` |
-| 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ˤ'` |
-| 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
+| 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received ':'` |
+| 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
+| 1 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 
 ### invalid_ipa (error_token)
@@ -264,7 +264,7 @@
 
 | count | error_token |
 |------:|-------------|
-| 21 | `)` |
+| 22 | `)` |
 | 14 | `:` |
 | 6 | `(` |
 | 3 | `ʲ` |
@@ -356,7 +356,7 @@
 
 | count | description |
 |------:|-------------|
-| 13 | `An incomplete matrix cannot be inserted` |
+| 3 | `An incomplete matrix cannot be inserted` |
 
 ### grouped_env_insertion (error_token)
 
@@ -390,17 +390,6 @@
 | count | description |
 |------:|-------------|
 | — | _(none)_ |
-
-
-## Field isolation blame (error rows)
-
-| count | blame |
-|------:|-------|
-| 275 | `env` |
-| 246 | `input` |
-| 138 | `output` |
-| 83 | `exception` |
-| 62 | `multi` |
 
 ## Notes
 
