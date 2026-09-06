@@ -145,27 +145,27 @@ rules:
                   reason: "Corrected from original source: https://www.ethnologue.com/language/erohttps://www.researchgate.net/publication/306887303_The_Linguistic_History_of_Southern_Vanuatu"
         - rule:
                   id: Early-Icelandic-O
-                  content: "O:[α PLACE] → ∅ / {F:[- α PLACE],r,l}_O"
+                  content: "O[α PLACE] → ∅ / {F[- α PLACE],r,l}_O"
                   reason: "Using asca syntax - unsure how else to represent POA"
         - rule:
                   id: Early-Icelandic-S
-                  content: "S:[α PLACE] → ∅ / N:[α PLACE]_S"
+                  content: "S[α PLACE] → ∅ / N[α PLACE]_S"
                   reason: "Using asca syntax - unsure how else to represent POA"
         - rule:
                   id: Egyptian-Arabic-i,u
-                  content: "{i,u}:[-stress, -long] → ∅ / VC_CV"
+                  content: "{i,u}[-stress, -long] → ∅ / VC_CV"
                   reason: "Replacing prose"
         - rule:
                   id: Moroccan-Arabic-a,i
-                  content: "{a,i}:[-long] → ə / _"
+                  content: "{a,i}[-long] → ə / _"
                   reason: "Replacing prose"
         - rule:
                   id: Moroccan-Arabic-u
-                  content: "u:[-long] → ə / _"
+                  content: "u[-long] → ə / _"
                   reason: "Replacing prose"
         - rule:
                   id: Moroccan-Arabic-u_2
-                  content: "u:[-long] → ʊ / _"
+                  content: "u[-long] → ʊ / _"
                   reason: "Replacing prose"
         - rule:
                   id: Proto-Slavic-bʱ-dʱ-ɡʱ,ɡ́ʱ-ɡʷʱ
@@ -195,35 +195,35 @@ rules:
                           p k tʃ b ɡ β j → b ɡ i {b,u,u→y→i} ∅ {u,u→y→i} i / _r
         - rule:
                   id: Asaro-N
-                  content: "N → [α PLACE] / _S:[α PLACE]"
+                  content: "N → [α PLACE] / _S[α PLACE]"
                   reason: "Using asca syntax - unsure how else to represent POA"
         - rule:
                   id: Auyana-N
-                  content: "N → [α PLACE] / _C:[α PLACE]"
+                  content: "N → [α PLACE] / _C[α PLACE]"
                   reason: "Using asca syntax - unsure how else to represent POA"
         - rule:
                   id: Gadsup-N_2
-                  content: "N → [α PLACE] / _C:[α PLACE]"
+                  content: "N → [α PLACE] / _C[α PLACE]"
                   reason: "Using asca syntax - unsure how else to represent POA"
         - rule:
                   id: Basque-N
-                  content: "N → [α PLACE] / _C:[α PLACE]"
+                  content: "N → [α PLACE] / _C[α PLACE]"
                   reason: "Using asca syntax - unsure how else to represent POA"
         - rule:
                   id: Kuskokwim-Yup’ik-F+voice_2
-                  content: "F:[+voice, α PLACE] → S:[α PLACE] / l̥_"
+                  content: "F[+voice, α PLACE] → S[α PLACE] / l̥_"
                   reason: "Using asca syntax - unsure how else to represent POA"
         - rule:
                   id: Vowel-Shifts_2-N-glottalized
-                  content: "N:[-place, α PLACE] → e / _O:[α PLACE] ; “‘in primary forms’” "
+                  content: "N[-place, α PLACE] → e / _O[α PLACE] ; “‘in primary forms’” "
                   reason: "I think this is probably wrong"
         - rule:
                   id: Sebirwa-NC_2
-                  content: "NC:[α PLACE] → N:[α PLACE]C / #_ ; sporadic (in verbs)"
+                  content: "NC[α PLACE] → N[α PLACE]C / #_ ; sporadic (in verbs)"
                   reason: "Bit of a guess"
         - rule:
                   id: Aquitanian-N
-                  content: "N → [α PLACE] / _S:[α PLACE]"
+                  content: "N → [α PLACE] / _S[α PLACE]"
                   reason: "Using asca syntax - unsure how else to represent POA"
         - rule:
                   id: American-English-æ

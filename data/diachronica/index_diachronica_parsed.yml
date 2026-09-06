@@ -2385,10 +2385,10 @@ sections:
     source: index_diachronica_original.html:1387
     rule_id: Egyptian-Arabic-V_2
   - stages:
-    - '{i,u}:[-stress, -long]'
+    - '{i,u}[-stress, -long]'
     - ∅
     env: VC_CV
-    raw: '{i,u}:[-stress, -long] → ∅ / VC_CV'
+    raw: '{i,u}[-stress, -long] → ∅ / VC_CV'
     source: index_diachronica_original.html:1388
     rule_id: Egyptian-Arabic-i,u
   - stages:
@@ -2735,17 +2735,17 @@ sections:
     source: index_diachronica_original.html:1467
     rule_id: Moroccan-Arabic-t
   - stages:
-    - '{a,i}:[-long]'
+    - '{a,i}[-long]'
     - ə
     env: _
-    raw: '{a,i}:[-long] → ə / _'
+    raw: '{a,i}[-long] → ə / _'
     source: index_diachronica_original.html:1468
     rule_id: Moroccan-Arabic-a,i
   - stages:
-    - u:[-long]
+    - u[-long]
     - ə
     env: _
-    raw: u:[-long] → ə / _
+    raw: u[-long] → ə / _
     source: index_diachronica_original.html:1469
     rule_id: Moroccan-Arabic-u
   - stages:
@@ -2785,10 +2785,10 @@ sections:
     rule_id: Moroccan-Arabic-ə_3
     exception: _[+rtr], [+rtr]_
   - stages:
-    - u:[-long]
+    - u[-long]
     - ʊ
     env: _
-    raw: u:[-long] → ʊ / _
+    raw: u[-long] → ʊ / _
     source: index_diachronica_original.html:1475
     rule_id: Moroccan-Arabic-u_2
   - comment: near emphatics
@@ -18854,10 +18854,10 @@ sections:
     source: index_diachronica_original.html:4725
     rule_id: Kuskokwim-Yup’ik-F+voice
   - stages:
-    - F:[+voice, α PLACE]
-    - S:[α PLACE]
+    - F[+voice, α PLACE]
+    - S[α PLACE]
     env: l̥_
-    raw: F:[+voice, α PLACE] → S:[α PLACE] / l̥_
+    raw: F[+voice, α PLACE] → S[α PLACE] / l̥_
     source: index_diachronica_original.html:4726
     rule_id: Kuskokwim-Yup’ik-F+voice_2
   - stages:
@@ -28526,17 +28526,17 @@ sections:
     source: index_diachronica_original.html:6360
     rule_id: Early-Icelandic-e
   - stages:
-    - O:[α PLACE]
+    - O[α PLACE]
     - ∅
-    env: '{F:[- α PLACE],r,l}_O'
-    raw: O:[α PLACE] → ∅ / {F:[- α PLACE],r,l}_O
+    env: '{F[- α PLACE],r,l}_O'
+    raw: O[α PLACE] → ∅ / {F[- α PLACE],r,l}_O
     source: index_diachronica_original.html:6361
     rule_id: Early-Icelandic-O
   - stages:
-    - S:[α PLACE]
+    - S[α PLACE]
     - ∅
-    env: N:[α PLACE]_S
-    raw: S:[α PLACE] → ∅ / N:[α PLACE]_S
+    env: N[α PLACE]_S
+    raw: S[α PLACE] → ∅ / N[α PLACE]_S
     source: index_diachronica_original.html:6362
     rule_id: Early-Icelandic-S
   - stages:
@@ -49440,10 +49440,10 @@ sections:
     rule_id: Sebirwa-NC
   - comment: sporadic (in verbs)
     stages:
-    - NC:[α PLACE]
-    - N:[α PLACE]C
+    - NC[α PLACE]
+    - N[α PLACE]C
     env: '#_'
-    raw: 'NC:[α PLACE] → N:[α PLACE]C / #_ ; sporadic (in verbs)'
+    raw: 'NC[α PLACE] → N[α PLACE]C / #_ ; sporadic (in verbs)'
     source: index_diachronica_original.html:10473
     rule_id: Sebirwa-NC_2
   - stages:
@@ -54908,10 +54908,10 @@ sections:
   rules:
   - comment: “‘in primary forms’”
     stages:
-    - N:[-place, α PLACE]
+    - N[-place, α PLACE]
     - e
-    env: _O:[α PLACE]
-    raw: N:[-place, α PLACE] → e / _O:[α PLACE] ; “‘in primary forms’”
+    env: _O[α PLACE]
+    raw: N[-place, α PLACE] → e / _O[α PLACE] ; “‘in primary forms’”
     source: index_diachronica_original.html:11713
     rule_id: Vowel-Shifts_2-N-glottalized
   - comment: the paper is not being very clear here)
@@ -64719,8 +64719,8 @@ sections:
   - stages:
     - N
     - '[α PLACE]'
-    env: _S:[α PLACE]
-    raw: N → [α PLACE] / _S:[α PLACE]
+    env: _S[α PLACE]
+    raw: N → [α PLACE] / _S[α PLACE]
     source: index_diachronica_original.html:13580
     rule_id: Asaro-N
   - stages:
@@ -64982,8 +64982,8 @@ sections:
   - stages:
     - N
     - '[α PLACE]'
-    env: _C:[α PLACE]
-    raw: N → [α PLACE] / _C:[α PLACE]
+    env: _C[α PLACE]
+    raw: N → [α PLACE] / _C[α PLACE]
     source: index_diachronica_original.html:13647
     rule_id: Auyana-N
   - stages:
@@ -65077,8 +65077,8 @@ sections:
   - stages:
     - N
     - '[α PLACE]'
-    env: _C:[α PLACE]
-    raw: N → [α PLACE] / _C:[α PLACE]
+    env: _C[α PLACE]
+    raw: N → [α PLACE] / _C[α PLACE]
     source: index_diachronica_original.html:13666
     rule_id: Gadsup-N_2
   - stages:
@@ -67160,8 +67160,8 @@ sections:
   - stages:
     - N
     - '[α PLACE]'
-    env: _S:[α PLACE]
-    raw: N → [α PLACE] / _S:[α PLACE]
+    env: _S[α PLACE]
+    raw: N → [α PLACE] / _S[α PLACE]
     source: index_diachronica_original.html:14097
     rule_id: Aquitanian-N
   - stages:
@@ -67364,8 +67364,8 @@ sections:
   - stages:
     - N
     - '[α PLACE]'
-    env: _C:[α PLACE]
-    raw: N → [α PLACE] / _C:[α PLACE]
+    env: _C[α PLACE]
+    raw: N → [α PLACE] / _C[α PLACE]
     source: index_diachronica_original.html:14125
     rule_id: Basque-N
   - stages:
