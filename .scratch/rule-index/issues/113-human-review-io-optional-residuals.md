@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-human
+Status: resolved
 Blocked by: None
 
 # Human review: `#`-in-I/O optional-prefix residuals
@@ -37,9 +37,9 @@ For the two **Pending** rows only:
 ## Acceptance criteria
 
 - [x] `Arapaho-V-longN` / `Gros-Ventre-V-longN` — compile encoding documented ([120](120-correction-pass-optional-prefix-cartesian.md))
-- [ ] `Arapaho-C,#Vʔ` / `Gros-Ventre-C,#V-longʔ` — documented owner decision
-- [ ] Corrections / manual mappings keyed by **rule id** (if chosen for `#` rows)
-- [ ] Inventory reflects decision for `#` rows (ok, skipped, or documented residual)
+- [x] `Arapaho-C,#Vʔ` / `Gros-Ventre-C,#V-longʔ` — documented owner decision
+- [x] Corrections / manual mappings keyed by **rule id** (if chosen for `#` rows)
+- [x] Inventory reflects decision for `#` rows (ok, skipped, or documented residual)
 - [x] [111](111-correction-pass-cartesian-io-optionals.md) no longer emits unfaithful wraps for these patterns
 
 ## Answer
