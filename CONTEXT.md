@@ -85,7 +85,11 @@ _Avoid_: “column” for this unit (conflicts with inventory/spreadsheet sense)
 
 **Parallel tokens**:
 Index notation where one **compile field** lists several **field tokens** separated by spaces outside groupers, each aligned with the corresponding field token on the other side of the change (e.g. `c ɲ > ∅ n`; `{r,h} > {∅,h}` is one field token per side, each an ordered set). Project tickets sometimes call this “condensed”; that word is not a glossary term here.
-_Avoid_: conflating parallel tokens with comma-separated set members inside `{…}`; calling brace sets “parallel” when only one field token is present
+_Avoid_: conflating parallel tokens with comma-separated set members inside `{…}`; calling brace sets “parallel” when only one field token is present; treating parallel Index spaces as inter-segment phoneme boundaries
+
+**Inter-segment whitespace**:
+Spaces between phoneme or grapheme units in applier syntax. Brassica requires them between lexemes; ASCA 0.10.2 treats them as optional. YAML **stages** stay Index-shaped — no parse-time insertion. Brassica inter-segment spacing is an **applier compiler** transform when Brassica is supported; Index ASCII spaces in I/O are **parallel tokens**, not phoneme boundaries. Design: [ticket 45](.scratch/rule-index/issues/45-grill-inter-segment-whitespace-placement.md).
+_Avoid_: parse-time SoT mutation with Brassica-style spaced strings; conflating inter-segment spaces with parallel tokens; assuming ASCA requires space-separated phonemes
 
 **Optional outputs**:
 An Index output written as a set while the matching input is **not** a set (e.g. `d → {∅,ð}`), encoding speaker variation among alternative results (including null). Detection gate: whole-field output `{…}` and input not a whole-field set — not unequal paired-set arity. Uneven set↔set and nested sets are out of scope for this resolution path. The YAML SoT keeps the set opaque in **stages**. At compile, every member becomes an **alternative outcome** (full compiled peer rule, no further children); the parent picks one uniformly at random via an instance `Random` (unseeded if omitted) as its emitted outcome. Inventory validates **only** those alternatives (column **`alt_idx`**, empty when there are no alternatives)—never the parent’s sample. Design recorded in [ticket 61](.scratch/rule-index/issues/61-grill-optional-outputs.md). Distinct from **Sporadic** (whether to apply the rule at all).

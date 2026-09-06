@@ -120,7 +120,7 @@ This aligns with the prior spike’s **compile-only Brassica spacing** recommend
 
 ---
 
-## 6. Open questions (feed [Grill: inter-segment whitespace placement](../issues/45-grill-inter-segment-whitespace-placement.md))
+## 6. Open questions (resolved by [Grill: inter-segment whitespace placement](../issues/45-grill-inter-segment-whitespace-placement.md) 2026-09-06)
 
 1. After seeing parallel `·` collisions, confirm reject ASCII-space SoT mutation — or require a non-space parallel encoding first?
 2. Parallel Index spaces → ASCA commas: parse or compile? (Unblocks cleaner Kind A spacing later.)

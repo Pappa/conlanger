@@ -124,9 +124,9 @@ From [`syntax-other-near-miss-sections.md`](./syntax-other-near-miss-sections.md
 
 Blocks **9** mono-class `nested_brackets` near-miss sections and follow-on taxonomy for [48](../issues/48-correction-pass-parenthetical-segment-notation.md) / [51](../issues/51-correction-pass-input-optionals-to-env.md). Spike [100](../issues/100-spike-io-optionals-asca-and-convention.md) resolved Q2/Q4/Q9; grill awaits **owner confirm** before filing implementation tickets. Near-miss scan shows `other_nested` (6 sections), `optional_prefix_parallel_column`, `segment_template_parallel_set` — do not file correction passes until 71 closes.
 
-### [45 — inter-segment whitespace placement](../issues/45-grill-inter-segment-whitespace-placement.md) (ready-for-human)
+### [45 — inter-segment whitespace placement](../issues/45-grill-inter-segment-whitespace-placement.md) (**resolved** 2026-09-06)
 
-Compile-only Brassica spacing policy from [spike 44](../issues/44-spike-inter-segment-whitespace.md). Prototype [46](../issues/46-prototype-parse-time-inter-segment-whitespace.md) leans no-go on parse-time SoT mutation. Not a near-miss top lever today, but whitespace-sensitive parallel sets in `nested_brackets` rows may need this decision before mechanical flatten passes.
+Compile-only Brassica spacing; Index-shaped SoT; parallel Index spaces = **field tokens** at compile ([ADR-0015](../../../docs/adr/0015-compile-field-intermediate-representation.md)). No longer blocks near-miss work.
 
 ---
 

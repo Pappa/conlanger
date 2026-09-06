@@ -57,4 +57,4 @@ Findings: [research/inter-segment-whitespace-phoneme-boundaries.md](../research/
 5. Kind B `[+high tone]` spacing — schedule under feature ingest?
 6. Future structured `segments: […]` IR?
 
-No implementation ticket filed; Brassica spacing ticket only after grill + Brassica compiler work.
+No implementation ticket filed; Brassica spacing ticket only after Brassica compiler work. Placement grill [45](45-grill-inter-segment-whitespace-placement.md) **resolved** 2026-09-06 (compile-only; parallel spaces = field tokens).

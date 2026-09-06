@@ -54,5 +54,5 @@ Cheap, throwaway experiment (via `/prototype`) that:
 - Findings (spike-style): [research/parse-time-whitespace-prototype-results.md](../research/parse-time-whitespace-prototype-results.md)
 - CSV: [research/parse-time-whitespace-prototype-results.csv](../research/parse-time-whitespace-prototype-results.csv)
 
-**Verdict (provisional, for grill):** segmentiser sketch is **go-with-limits**; shipping parse-time ASCII-space SoT mutation leans **no-go** until parallel vs phoneme spaces, class+matrix attachment, and Kind B bracket spaces are solved. Placement policy still owned by [Grill: inter-segment whitespace placement](45-grill-inter-segment-whitespace-placement.md).
+**Verdict (provisional, for grill):** segmentiser sketch is **go-with-limits**; shipping parse-time ASCII-space SoT mutation leans **no-go** until parallel vs phoneme spaces, class+matrix attachment, and Kind B bracket spaces are solved. Placement policy locked by [Grill: inter-segment whitespace placement](45-grill-inter-segment-whitespace-placement.md) (**resolved** 2026-09-06): compile-only; parallel spaces = field tokens at compile.
 
