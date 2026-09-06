@@ -5,8 +5,9 @@ Taxonomy
 
 | Pattern | Example | Expansion |
 |---------|---------|-----------|
-| Prefix segment features | ``(V:[+long])θt``, ``(t:[+long])sn`` | ``{V:[+long]}θt`` |
-| Prefix class features | ``(C:[+labial])ɡ`` | ``{C:[+labial]}ɡ`` |
+| Prefix segment features | ``(V:[+long])θt``, ``(t:[+long])sn`` | ``{V:[+long]θt,θt}`` |
+| Prefix class features | ``(C:[+labial])ɡ`` | ``{C:[+labial]ɡ,ɡ}`` |
+| Prefix class Index brackets | ``(V[-long])N`` | ``{V:[-long]N,N}`` |
 | Set suffix optional | ``{s,z}(ʔ)`` | ``{s,sʔ,z,zʔ}`` |
 | Literal + set + optional | ``a{i,j}(a)`` | ``a{i,j,ia,ja}`` |
 | Set + class optional + tail | ``{r,s}(N)k`` | ``{rk,rNk,sk,sNk}`` |
@@ -28,7 +29,8 @@ from conlanger.tools.compile.asca.structures import split_outside_groupers
 _CLASS_OR_GROUP_INNER_RE = re.compile(
     r"^(?:"
     r"[A-Z]"  # class letter
-    r"|[A-Z]:\[[^\]]+\]"  # class with features
+    r"|[A-Z]:\[[^\]]+\]"  # class with colon features
+    r"|[A-Z]\[[^\]]+\]"  # class with Index bracket features
     rf"|{IPA_SEGMENT}\[[^\]]+\]"  # segment feature matrix
     rf"|{IPA_SEGMENT}:\[[^\]]+\]"  # segment with colon features
     r"|\{[^{}]+\}[A-Z$%#]?"  # braced group with optional trailing class/segment
@@ -38,7 +40,31 @@ _CLASS_OR_GROUP_INNER_RE = re.compile(
     r")$"
 )
 _BRACED_GROUP_PREFIX_RE = re.compile(r"^\((\{[^{}]+\}[^)]*)\)(.+)$")
-_DEFERRED_STRUCTURAL_OPTIONAL_RE = re.compile(r"^(?:V\[-long\]|\{C,#\}V)$")
+_DEFERRED_STRUCTURAL_OPTIONAL_RE = re.compile(r"^\{C,#\}V$")
+_HOST_BRACKET_MATRIX_RE = re.compile(r"^([A-Z])(\[[^\]]+\])$")
+_CARTESIAN_OPTIONAL_PREFIX_INNER_RE = re.compile(
+    r"^(?:"
+    r"[A-Z]"
+    r"|[A-Z]:\[[^\]]+\]"
+    r"|[A-Z]\[[^\]]+\]"
+    rf"|{IPA_SEGMENT}:\[[^\]]+\]"
+    r")$"
+)
+
+
+def _host_bracket_matrix_to_colon(text: str) -> str:
+    """Rewrite Index postfix class matrix ``V[-long]`` to ASCA ``V:[-long]``."""
+    match = _HOST_BRACKET_MATRIX_RE.fullmatch(text.strip())
+    if match is None:
+        return text
+    return f"{match.group(1)}:{match.group(2)}"
+
+
+def _cartesian_optional_prefix(inner: str, rest: str) -> str:
+    """Zero-or-one optional prefix → flat ``{prefix+rest, rest}`` set."""
+    normalized = _host_bracket_matrix_to_colon(inner)
+    with_prefix = f"{normalized}{rest}"
+    return f"{{{with_prefix},{rest}}}"
 
 
 def _is_deferred_structural_optional(inner: str) -> bool:
@@ -140,6 +166,8 @@ def _expand_prefix_structure_optional(token: str) -> str:
     rest = match.group(2)
     if inner.startswith("{") and inner.endswith("}"):
         inner = inner[1:-1]
+    if _CARTESIAN_OPTIONAL_PREFIX_INNER_RE.fullmatch(inner):
+        return _cartesian_optional_prefix(inner, rest)
     return f"{{{inner}}}{rest}"
 
 

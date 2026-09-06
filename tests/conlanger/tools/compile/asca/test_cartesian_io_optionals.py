@@ -79,7 +79,7 @@ def test_flatten_cartesian_io_optionals_edge_cases(text, expected):
         ("{s,z}(ʔ)", "{s,sʔ,z,zʔ}"),
         ("{r,s}(N)k", "{rk,rNk,sk,sNk}"),
         ("a{i,j}(a)", "a{i,j,ia,ja}"),
-        ("(V[-long])N", "(V[-long])N"),
+        ("(V[-long])N", "{V:[-long]N,N}"),
         ("({C,#}V)ʔ", "({C,#}V)ʔ"),
     ],
 )

@@ -1,6 +1,8 @@
 """Tests for Index input-side optionals → ASCA structure optionals (ticket 51)."""
 
 import re
+import shutil
+from pathlib import Path
 
 import pytest
 
@@ -17,10 +19,10 @@ from conlanger.tools.rules import DiachronicSeries
 @pytest.mark.parametrize(
     ("index_rule", "expected"),
     [
-        ("(V:[+long])θt", "{V:[+long]}θt"),
-        ("(C:[+labial])ɡ", "{C:[+labial]}ɡ"),
-        ("(t:[+long])sn", "{t:[+long]}sn"),
-        ("(V[-long])N", "(V[-long])N"),
+        ("(V:[+long])θt", "{V:[+long]θt,θt}"),
+        ("(C:[+labial])ɡ", "{C:[+labial]ɡ,ɡ}"),
+        ("(t:[+long])sn", "{t:[+long]sn,sn}"),
+        ("(V[-long])N", "{V:[-long]N,N}"),
         ("({C,#}V)ʔ", "({C,#}V)ʔ"),
         ("{s,z}(ʔ)", "{s,sʔ,z,zʔ}"),
         ("a{i,j}(a)", "a{i,j,ia,ja}"),
@@ -74,7 +76,7 @@ def test_input_optionals_inventory_representatives_validate(inp, out, env):
     [
         ("", False),
         ("C,V", False),
-        ("V[-long]", False),
+        ("V[-long]", True),
     ],
 )
 def test_is_structural_optional_inner(inner, expected):
@@ -91,3 +93,15 @@ def test_braced_prefix_wraps_unparsed_inner_without_brace_strip(monkeypatch):
 
     monkeypatch.setattr(io.re, "fullmatch", fake_fullmatch)
     assert _expand_prefix_structure_optional("({C}V)ʔ") == "{{C}V}ʔ"
+
+
+@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
+def test_arapaho_v_long_n_apply_probe(tmp_path: Path):
+    probe = tmp_path / "probe.wsca"
+    probe.write_text("kaN\nkiN\nkN\n", encoding="utf-8")
+    section = {
+        "index": "Arapaho",
+        "section": "Proto-Arapaho-Atsina to Arapaho",
+        "rules": [{"stages": ["(V[-long])N", "∅"], "env": "_#"}],
+    }
+    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)

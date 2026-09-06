@@ -19,8 +19,8 @@ Two Index optional-prefix shapes cannot be solved by cartesian flatten alone:
 
 | Rule id | HTML line | Index `raw` |
 |---------|-----------|-------------|
-| `Arapaho-V-longN` | 1684 | `(V[-long])N → ∅ / _#` |
-| `Gros-Ventre-V-longN` | 1704 | `(V[-long])N → ∅ / _#` |
+| `Arapaho-V-longN` | 1684 | `(V[-long])N → ∅ / _#` | **Resolved** — [120](120-correction-pass-optional-prefix-cartesian.md) |
+| `Gros-Ventre-V-longN` | 1704 | `(V[-long])N → ∅ / _#` | **Resolved** — [120](120-correction-pass-optional-prefix-cartesian.md) |
 | `Arapaho-C,#Vʔ` | 1676 | `({C,#}V)ʔ → ({C,#}Vː)∅ / _C` |
 | `Gros-Ventre-C,#V-longʔ` | 1698 | `({C,#}V[-long])ʔ → ({C,#}Vː[+falling tone])∅ / _C` |
 
