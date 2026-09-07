@@ -26,7 +26,6 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 6.1.1,Proto-Omotic to North Omotic,North-Omotic-Cw,,index_diachronica_original.html:984,True,,True,True,,,,,,,,,,,none
 6.1.1,Proto-Omotic to North Omotic,North-Omotic-Vː,,index_diachronica_original.html:985,True,,True,True,True,,,,,,,,,,none
 6.1.1,Proto-Omotic to North Omotic,North-Omotic-u,,index_diachronica_original.html:986,True,,True,True,True,,,,,,,,,,none
-6.1.1,Proto-Omotic to North Omotic,North-Omotic-Vː_2,,index_diachronica_original.html:987,True,,,,,,,,,,,,,,none
 6.1.1,Proto-Omotic to North Omotic,North-Omotic-N,,index_diachronica_original.html:988,True,,True,True,True,,,,,,,,,,none
 6.1.1.1,North Omotic to Bench,Bench-x1,,index_diachronica_original.html:993,True,,True,True,,,,,,,,,,,none
 6.1.1.1,North Omotic to Bench,Bench-x2,,index_diachronica_original.html:994,True,,True,True,True,,,,,,,,,,none
@@ -278,7 +277,6 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-f-θ,,index_diachronica_original.html:1339,True,,True,True,True,,,,,,,,,,none
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-k-x,,index_diachronica_original.html:1340,True,,True,True,True,,,,,,,,,,none
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,"Cypriot-Arabic-l,nj",,index_diachronica_original.html:1341,True,,True,True,,,,,,,,,,,none
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-j,,index_diachronica_original.html:1342,True,,,,,,,,,,,,,,none
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-j_2,,index_diachronica_original.html:1343,True,,True,True,True,,,,,,,,,,none
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-nx,,index_diachronica_original.html:1344,True,,True,True,,,,,,,,,,,none
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,"Cypriot-Arabic-ðˤ,dˤ",,index_diachronica_original.html:1346,True,,True,True,,,,,,,,,,,none
@@ -393,7 +391,6 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,"Biblical-Hebrew-—-o,uː",,index_diachronica_original.html:1530,True,,True,True,True,,,,,,,,,,none
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-oː,,index_diachronica_original.html:1531,True,,True,True,,,,,,,,,,,none
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-a_3,,index_diachronica_original.html:1532,True,,True,True,True,,,,,,,,,,none
-6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-a_4,,index_diachronica_original.html:1533,True,,,,,,,,,,,,,,none
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-a_5,,index_diachronica_original.html:1534,True,,True,True,True,,,,,,,,,,none
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-a_6,,index_diachronica_original.html:1535,True,,True,True,True,,,,,,,,,,none
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-i_2,,index_diachronica_original.html:1536,True,,True,True,True,,,,,,,,,,none
@@ -488,24 +485,26 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 7.3,Proto-Algonquian to Proto-Arapaho-Atsina,Proto-Arapaho-Atsina-Vː,,index_diachronica_original.html:1667,True,,True,True,True,,,,,,,,,,none
 7.3,Proto-Algonquian to Proto-Arapaho-Atsina,Proto-Arapaho-Atsina-aː,,index_diachronica_original.html:1668,True,,True,True,,,,,,,,,,,none
 7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-hʔ,,index_diachronica_original.html:1675,True,,True,True,,,,,,,,,,,none
-7.3.1,Proto-Arapaho-Atsina to Arapaho,"Arapaho-C,#Vʔ",,index_diachronica_original.html:1676,True,,,,,,,,,,,,,,none
+7.3.1,Proto-Arapaho-Atsina to Arapaho,"Arapaho-C,#Vʔ",0,index_diachronica_original.html:1676,True,,True,True,True,,,,,,,,,,none
+7.3.1,Proto-Arapaho-Atsina to Arapaho,"Arapaho-C,#Vʔ",1,index_diachronica_original.html:1676,True,,True,True,True,,,,,,,,,,none
 7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-iː,,index_diachronica_original.html:1677,True,,True,True,True,,,,,,,,,,none
 7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-ʃ-m,,index_diachronica_original.html:1679,True,,True,True,True,,,,,,,,,,none
 7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-ʃ-m_2,,index_diachronica_original.html:1680,True,,True,True,True,,,,,,,,,,none
 7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-ʃ-m_3,,index_diachronica_original.html:1681,True,,True,True,True,,,,,,,,,,none
 7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-ʃ-k-m,,index_diachronica_original.html:1682,True,,True,True,True,,,,,,,,,,none
 7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-ʃ-k-m_2,,index_diachronica_original.html:1683,True,,True,True,True,,,,,,,,,,none
+7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-V-longN,,index_diachronica_original.html:1684,True,,True,True,True,,,,,,,,,,none
 7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-eː,,index_diachronica_original.html:1686,True,,True,True,True,,,,,,,,,,none
 7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-oː,,index_diachronica_original.html:1687,True,,True,True,True,,,,,,,,,,none
 7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-n,,index_diachronica_original.html:1688,True,,True,True,True,,,,,,,,,,none
 7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-j,,index_diachronica_original.html:1689,True,,True,True,True,,,,,,,,,,none
 7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-h,,index_diachronica_original.html:1690,True,,True,True,True,,,,,,,,,,none
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,Gros-Ventre-hʔ,,index_diachronica_original.html:1697,True,,True,True,,,,,,,,,,,none
-7.3.2,Proto-Arapaho-Atsina to Gros Ventre,"Gros-Ventre-C,#V-longʔ",,index_diachronica_original.html:1698,True,,,,,,,,,,,,,,none
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,Gros-Ventre-i,,index_diachronica_original.html:1700,True,,True,True,True,,,,,,,,,,none
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,Gros-Ventre-ʃ-θ-m,,index_diachronica_original.html:1701,True,,True,True,True,,,,,,,,,,none
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,Gros-Ventre-ʃ-θ-m-k,,index_diachronica_original.html:1702,True,,True,True,True,,,,,,,,,,none
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,"Gros-Ventre-ʃ-θ,t-m-k",,index_diachronica_original.html:1703,True,,True,True,True,,,,,,,,,,none
+7.3.2,Proto-Arapaho-Atsina to Gros Ventre,Gros-Ventre-V-longN,,index_diachronica_original.html:1704,True,,True,True,True,,,,,,,,,,none
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,Gros-Ventre-n,,index_diachronica_original.html:1706,True,,True,True,True,,,,,,,,,,none
 7.4,Proto-Algonquian to Blackfoot,"Blackfoot-θ,tʃ,ʃ,r",,index_diachronica_original.html:1711,True,,True,True,,True,,,,,,,,,none
 7.4,Proto-Algonquian to Blackfoot,Blackfoot-j,,index_diachronica_original.html:1713,True,,True,True,,True,,,,,,,,,none
@@ -2756,6 +2755,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.2.2,Common Anatolian to Luwian,Luwian-D-R,,index_diachronica_original.html:5094,True,,True,True,True,,,,,,,,,,none
 17.2.2,Common Anatolian to Luwian,"Luwian-ɛ,eː-æː",,index_diachronica_original.html:5095,True,,True,True,,,,,,,,,,,none
 17.2.3,Common Anatolian to Lycian,Lycian-D,,index_diachronica_original.html:5100,True,,True,True,True,,,,,,,,,,none
+17.2.3,Common Anatolian to Lycian,Lycian-D_2,,index_diachronica_original.html:5101,True,,True,True,,,,,,,,,,,none
 17.2.3,Common Anatolian to Lycian,"Lycian-NF+voice,T",,index_diachronica_original.html:5102,True,,True,True,,,,,,,,,,,none
 17.2.3,Common Anatolian to Lycian,Lycian-d,,index_diachronica_original.html:5103,True,,True,True,True,,,,,,,,,,none
 17.2.3,Common Anatolian to Lycian,Lycian-kʷ,,index_diachronica_original.html:5104,True,,True,True,True,,,,,,,,,,none
@@ -3491,7 +3491,6 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.7.2.5,West Germanic to Old Low German,Old-Low-German-ɡ_2,,index_diachronica_original.html:6152,True,,True,True,True,,,,,,,,,,none
 17.7.2.5,West Germanic to Old Low German,Old-Low-German-ɡ_3,,index_diachronica_original.html:6153,True,,True,True,True,,,,,,,,,,none
 17.7.2.5,West Germanic to Old Low German,Old-Low-German-ɡ_4,,index_diachronica_original.html:6154,True,,True,True,True,,,,,,,,,,none
-17.7.2.5,West Germanic to Old Low German,Old-Low-German-F-voice,,index_diachronica_original.html:6155,True,,,,,,,,,,,,,,none
 17.7.3,Common Germanic to Proto-Norse,Proto-Norse-wi,,index_diachronica_original.html:6161,True,,True,True,True,,,,,,,,,,none
 17.7.3,Common Germanic to Proto-Norse,Proto-Norse-Eβu-Eβo,,index_diachronica_original.html:6162,True,,True,True,,,,,,,,,,,none
 17.7.3,Common Germanic to Proto-Norse,"Proto-Norse-aβu,o",,index_diachronica_original.html:6163,True,,True,True,,,,,,,,,,,none
@@ -4096,6 +4095,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.10.1.1,Proto-Indo-Aryan to Central Middle Indo-Aryan,Central-Middle-Indo-Aryan-VN-VC-nas,,index_diachronica_original.html:6874,True,,True,True,True,,,,,,,,,,none
 17.10.1.1,Proto-Indo-Aryan to Central Middle Indo-Aryan,"Central-Middle-Indo-Aryan-ai,ja-au,wa",,index_diachronica_original.html:6875,True,,True,True,,,,,,,,,,,none
 17.10.1.1,Proto-Indo-Aryan to Central Middle Indo-Aryan,Central-Middle-Indo-Aryan-j-w,,index_diachronica_original.html:6876,True,,True,True,True,,,,,,,,,,none
+17.10.1.1,Proto-Indo-Aryan to Central Middle Indo-Aryan,Central-Middle-Indo-Aryan-C,,index_diachronica_original.html:6877,True,,True,True,True,,,,,,,,,,none
 17.10.1.1,Proto-Indo-Aryan to Central Middle Indo-Aryan,"Central-Middle-Indo-Aryan-bʱ,dʱ,ɡʱ-j,v",,index_diachronica_original.html:6878,True,,True,True,True,,,,,,,,,,none
 17.10.1.1,Proto-Indo-Aryan to Central Middle Indo-Aryan,Central-Middle-Indo-Aryan-Vm,,index_diachronica_original.html:6879,True,,,,,,,,,,,,,,none
 17.10.1.1,Proto-Indo-Aryan to Central Middle Indo-Aryan,Central-Middle-Indo-Aryan-e-o,,index_diachronica_original.html:6880,True,,True,True,True,,,,,,,,,,none
@@ -4111,6 +4111,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.10.1.2,Proto-Indo-Aryan to Eastern Middle Indo-Aryan,Eastern-Middle-Indo-Aryan-VN-VC-nas,,index_diachronica_original.html:6895,True,,True,True,True,,,,,,,,,,none
 17.10.1.2,Proto-Indo-Aryan to Eastern Middle Indo-Aryan,"Eastern-Middle-Indo-Aryan-ai,ja-au,wa",,index_diachronica_original.html:6896,True,,True,True,,,,,,,,,,,none
 17.10.1.2,Proto-Indo-Aryan to Eastern Middle Indo-Aryan,Eastern-Middle-Indo-Aryan-j-w,,index_diachronica_original.html:6897,True,,True,True,True,,,,,,,,,,none
+17.10.1.2,Proto-Indo-Aryan to Eastern Middle Indo-Aryan,Eastern-Middle-Indo-Aryan-C,,index_diachronica_original.html:6898,True,,True,True,True,,,,,,,,,,none
 17.10.1.2,Proto-Indo-Aryan to Eastern Middle Indo-Aryan,"Eastern-Middle-Indo-Aryan-bʱ,dʱ,ɡʱ-j,v",,index_diachronica_original.html:6899,True,,True,True,True,,,,,,,,,,none
 17.10.1.2,Proto-Indo-Aryan to Eastern Middle Indo-Aryan,"Eastern-Middle-Indo-Aryan-b-d,dʒ,ɡ",,index_diachronica_original.html:6900,True,,True,True,True,,,,,,,,,,none
 17.10.1.2,Proto-Indo-Aryan to Eastern Middle Indo-Aryan,Eastern-Middle-Indo-Aryan-Vm,,index_diachronica_original.html:6901,True,,,,,,,,,,,,,,none
@@ -4128,6 +4129,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.10.1.3,Proto-Indo-Aryan to Northwestern Middle Indo-Aryan,Northwestern-Middle-Indo-Aryan-VN-VC-nas,,index_diachronica_original.html:6918,True,,True,True,True,,,,,,,,,,none
 17.10.1.3,Proto-Indo-Aryan to Northwestern Middle Indo-Aryan,"Northwestern-Middle-Indo-Aryan-ai,ja-au,wa",,index_diachronica_original.html:6919,True,,True,True,,,,,,,,,,,none
 17.10.1.3,Proto-Indo-Aryan to Northwestern Middle Indo-Aryan,Northwestern-Middle-Indo-Aryan-j-w,,index_diachronica_original.html:6920,True,,True,True,True,,,,,,,,,,none
+17.10.1.3,Proto-Indo-Aryan to Northwestern Middle Indo-Aryan,Northwestern-Middle-Indo-Aryan-C,,index_diachronica_original.html:6921,True,,True,True,True,,,,,,,,,,none
 17.10.1.3,Proto-Indo-Aryan to Northwestern Middle Indo-Aryan,"Northwestern-Middle-Indo-Aryan-bʱ,dʱ,ɡʱ-j,v",,index_diachronica_original.html:6922,True,,True,True,True,,,,,,,,,,none
 17.10.1.3,Proto-Indo-Aryan to Northwestern Middle Indo-Aryan,Northwestern-Middle-Indo-Aryan-Vm,,index_diachronica_original.html:6923,True,,,,,,,,,,,,,,none
 17.10.1.3,Proto-Indo-Aryan to Northwestern Middle Indo-Aryan,Northwestern-Middle-Indo-Aryan-e-o,,index_diachronica_original.html:6924,True,,True,True,True,,,,,,,,,,none
@@ -4144,6 +4146,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.10.1.4,Proto-Indo-Aryan to Western Middle Indo-Aryan,Western-Middle-Indo-Aryan-VN-VC-nas,,index_diachronica_original.html:6940,True,,True,True,True,,,,,,,,,,none
 17.10.1.4,Proto-Indo-Aryan to Western Middle Indo-Aryan,"Western-Middle-Indo-Aryan-ai,ja-au,wa",,index_diachronica_original.html:6941,True,,True,True,,,,,,,,,,,none
 17.10.1.4,Proto-Indo-Aryan to Western Middle Indo-Aryan,Western-Middle-Indo-Aryan-j-w,,index_diachronica_original.html:6942,True,,True,True,True,,,,,,,,,,none
+17.10.1.4,Proto-Indo-Aryan to Western Middle Indo-Aryan,Western-Middle-Indo-Aryan-C,,index_diachronica_original.html:6943,True,,True,True,True,,,,,,,,,,none
 17.10.1.4,Proto-Indo-Aryan to Western Middle Indo-Aryan,"Western-Middle-Indo-Aryan-bʱ,dʱ,ɡʱ-j,v",,index_diachronica_original.html:6944,True,,True,True,True,,,,,,,,,,none
 17.10.1.4,Proto-Indo-Aryan to Western Middle Indo-Aryan,Western-Middle-Indo-Aryan-Vm,,index_diachronica_original.html:6945,True,,,,,,,,,,,,,,none
 17.10.1.4,Proto-Indo-Aryan to Western Middle Indo-Aryan,Western-Middle-Indo-Aryan-e-o,,index_diachronica_original.html:6946,True,,True,True,True,,,,,,,,,,none
@@ -4428,7 +4431,6 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.12.1.1,Proto-Indo-European to Latin,Latin-sː_2,,index_diachronica_original.html:7309,True,,True,True,True,,,,,,,,,,none
 17.12.1.1,Proto-Indo-European to Latin,Latin-l,,index_diachronica_original.html:7310,True,,True,True,True,,,,,,,,,,none
 17.12.1.1,Proto-Indo-European to Latin,Latin-l_2,,index_diachronica_original.html:7311,True,,True,True,True,,,,,,,,,,none
-17.12.1.1,Proto-Indo-European to Latin,Latin-r…r,,index_diachronica_original.html:7312,True,,,,,,,,,,,,,,none
 17.12.1.1,Proto-Indo-European to Latin,"Latin-n,d…r",,index_diachronica_original.html:7313,True,,True,True,,,,,,,,,,,none
 17.12.1.1,Proto-Indo-European to Latin,Latin-Vː_3,,index_diachronica_original.html:7314,True,,True,True,True,,,,,,,,,,none
 17.12.1.1,Proto-Indo-European to Latin,Latin-V_9,0,index_diachronica_original.html:7315,True,,True,True,True,,,,,,,,,,none
@@ -4797,8 +4799,6 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-ɔ_4,1,index_diachronica_original.html:7746,True,,True,True,True,,,,,,,,,,none
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-ɔ_4,2,index_diachronica_original.html:7746,True,,True,True,True,,,,,,,,,,none
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-a,,index_diachronica_original.html:7747,True,,True,True,True,,,,,,,,,,none
-17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-a_3,,index_diachronica_original.html:7749,True,,,,,,,,,,,,,,none
-17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-å-ɛ-ɔ,,index_diachronica_original.html:7750,True,,,,,,,,,,,,,,none
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-ɛ-ɔ,,index_diachronica_original.html:7751,True,,True,True,,,,,,,,,,,none
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-e,,index_diachronica_original.html:7752,True,,True,True,True,,,,,,,,,,none
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-ɛ,,index_diachronica_original.html:7754,True,,True,True,True,,,,,,,,,,none
@@ -5126,7 +5126,6 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-mb-mn,,index_diachronica_original.html:8140,True,,True,True,,,,,,,,,,,none
 17.12.1.1.10,Vulgar Latin to Spanish,"Spanish-jl,lj-jn,nj-jɡ,ɡj",,index_diachronica_original.html:8141,True,,True,True,,,,,,,,,,,none
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-bj,,index_diachronica_original.html:8142,True,,True,True,,,,,,,,,,,none
-17.12.1.1.10,Vulgar Latin to Spanish,"Spanish-e-ɛ,a-ɔ-o",,index_diachronica_original.html:8143,True,,,,,,,,,,,,,,none
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-—-e,,index_diachronica_original.html:8144,True,,True,True,True,True,,,,,,,,,none
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-—-ɛ-ɔ-u,,index_diachronica_original.html:8145,True,,True,True,True,,,,,,,,,,none
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-—-a,,index_diachronica_original.html:8146,True,,True,True,True,,,,,,,,,,none
@@ -6215,6 +6214,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 28.1.2,Proto-Eastern Muskogean to Creek,Creek-ʃ,,index_diachronica_original.html:9844,True,,True,True,,,,,,,,,,,none
 28.1.2,Proto-Eastern Muskogean to Creek,Creek-kʷ,,index_diachronica_original.html:9845,True,,True,True,True,,,,,,,,,,none
 28.1.2,Proto-Eastern Muskogean to Creek,Creek-kʷ_2,,index_diachronica_original.html:9846,True,,True,True,,,,,,,,,,,none
+28.1.2,Proto-Eastern Muskogean to Creek,Creek-S,,index_diachronica_original.html:9847,True,,True,True,True,,,,,,,,,,none
 28.1.2,Proto-Eastern Muskogean to Creek,Creek-h,,index_diachronica_original.html:9848,True,,True,True,True,,,,,,,,,,none
 28.1.2,Proto-Eastern Muskogean to Creek,Creek-V0xV0,,index_diachronica_original.html:9849,True,,True,True,,,,,,,,,,,none
 28.1.2,Proto-Eastern Muskogean to Creek,Creek-x,,index_diachronica_original.html:9851,True,,True,True,True,,,,,,,,,,none
@@ -6279,6 +6279,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 29.1.1.1.3,Proto-Athabaskan to Beaver,Beaver-K-Q,,index_diachronica_original.html:9997,True,,True,True,,,,,,,,,,,none
 29.1.1.1.3,Proto-Athabaskan to Beaver,"Beaver-n,ɲ",,index_diachronica_original.html:9999,True,,True,True,True,,,,,,,,,,none
 29.1.1.1.3,Proto-Athabaskan to Beaver,Beaver-ɑ,,index_diachronica_original.html:10000,True,,True,True,,,,,,,,,,,none
+29.1.1.1.4,Proto-Athabaskan to Chilcotin,Chilcotin-V,1,index_diachronica_original.html:10007,True,,True,True,,,,,,,,,,,none
 29.1.1.1.4,Proto-Athabaskan to Chilcotin,"Chilcotin-TŠ,TŠʷ-K",,index_diachronica_original.html:10008,True,,True,True,,,,,,,,,,,none
 29.1.1.1.4,Proto-Athabaskan to Chilcotin,"Chilcotin-e-ɑ,ə",,index_diachronica_original.html:10010,True,,True,True,,,,,,,,,,,none
 29.1.1.1.5,Proto-Athabaskan to Chipewyan,"Chipewyan-TS-TŠ,TŠʷ-K-Q",,index_diachronica_original.html:10016,True,,True,True,,,,,,,,,,,none
@@ -6572,6 +6573,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 30.3.1.1.7,Proto-Gbe to Proto-Vhe,Proto-Vhe-w_2,0,index_diachronica_original.html:10658,True,,True,True,,,,,,,,,,,none
 30.3.1.1.7,Proto-Gbe to Proto-Vhe,Proto-Vhe-w_2,1,index_diachronica_original.html:10658,True,,True,True,,,,,,,,,,,none
 30.3.1.1.7,Proto-Gbe to Proto-Vhe,Proto-Vhe-j,,index_diachronica_original.html:10659,True,,True,True,True,,,,,,,,,,none
+30.3.1.1.8,Proto-Vhe to Adángbe,Adángbe-V,,index_diachronica_original.html:10664,True,,True,True,True,,,,,,,,,,none
 30.3.1.1.8,Proto-Vhe to Adángbe,Adángbe-ts-dz,,index_diachronica_original.html:10666,True,,True,True,,,,,,,,,,,none
 30.3.1.1.8,Proto-Vhe to Adángbe,Adángbe-k-ɡ,,index_diachronica_original.html:10667,True,,True,True,True,,,,,,,,,,none
 30.3.1.1.9,Proto-Vhe to Avéno,Avéno-ə,,index_diachronica_original.html:10672,True,,True,True,True,,,,,,,,,,none
@@ -7845,6 +7847,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 37.2.6.1,Proto-Dhegiha to Kansa,Kansa-p,3,index_diachronica_original.html:12937,True,,True,True,True,,,,,,,,,,none
 37.2.6.1,Proto-Dhegiha to Kansa,Kansa-w,,index_diachronica_original.html:12938,True,,True,True,True,,,,,,,,,,none
 37.2.6.1,Proto-Dhegiha to Kansa,Kansa-L,,index_diachronica_original.html:12940,True,,True,True,True,,,,,,,,,,none
+37.2.6.1,Proto-Dhegiha to Kansa,Kansa-V,,index_diachronica_original.html:12941,True,,True,True,True,,,,,,,,,,none
 37.2.6.1,Proto-Dhegiha to Kansa,Kansa-N,,index_diachronica_original.html:12942,True,,True,True,True,,,,,,,,,,none
 37.2.6.1,Proto-Dhegiha to Kansa,Kansa-t,,index_diachronica_original.html:12944,True,,True,True,True,,,,,,,,,,none
 37.2.6.1,Proto-Dhegiha to Kansa,Kansa-tʲr-kr,,index_diachronica_original.html:12945,True,,True,True,,,,,,,,,,,none
@@ -8467,6 +8470,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 44.1,Proto-Vasconic to Aquitanian,Aquitanian-r+-fortis,,index_diachronica_original.html:14098,True,,True,True,True,,,,,,,,,,none
 44.1,Proto-Vasconic to Aquitanian,Aquitanian-r+-fortis_2,,index_diachronica_original.html:14099,True,,True,True,,,,,,,,,,,none
 44.1,Proto-Vasconic to Aquitanian,Aquitanian-ɡ,,index_diachronica_original.html:14101,True,,True,True,True,,,,,,,,,,none
+44.2,Proto-Basque to Basque,Basque-S,,index_diachronica_original.html:14115,True,,True,True,True,,,,,,,,,,none
 44.2,Proto-Basque to Basque,Basque-Vn_2,,index_diachronica_original.html:14118,True,,True,True,True,,,,,,,,,,none
 44.2,Proto-Basque to Basque,Basque-V,,index_diachronica_original.html:14119,True,,True,True,True,,,,,,,,,,none
 44.2,Proto-Basque to Basque,Basque-d,,index_diachronica_original.html:14120,True,,True,True,True,,,,,,,,,,none
@@ -8642,7 +8646,6 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-en-an,,index_diachronica_original.html:14435,True,,True,True,,,,,,,,,,,none
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-ej,,index_diachronica_original.html:14436,True,,True,True,,,,,,,,,,,none
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-ew,,index_diachronica_original.html:14437,True,,True,True,,,,,,,,,,,none
-46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-i,,index_diachronica_original.html:14438,True,,,,,,,,,,,,,,none
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-iː,,index_diachronica_original.html:14439,True,,True,True,,,,,,,,,,,none
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-a-aː,,index_diachronica_original.html:14440,True,,True,True,,,,,,,,,,,none
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-aw,,index_diachronica_original.html:14442,True,,True,True,,,,,,,,,,,none

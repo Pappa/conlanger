@@ -6,14 +6,14 @@
 - Rows: **9840** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8838** (89.8%)
+- OK: **8828** (89.7%)
 - Fail: **694** (7.1%)
-- Skipped: **308** (3.1%)
+- Skipped: **318** (3.2%)
 
 ## Sections
 
-- All OK: **442 / 714** (61.9%)
-- Some OK: **253 / 714** (35.4%)
+- All OK: **439 / 714** (61.5%)
+- Some OK: **256 / 714** (35.9%)
 - None OK: **3 / 714** (0.4%)
 - Sections skipped: **16 / 714** (2.2%)
 
@@ -22,8 +22,8 @@
 | count | failure_class |
 |------:|---------------|
 | 155 | `expected_underscore` |
-| 149 | `unknown_character` |
-| 52 | `missing_slash_output_env` |
+| 150 | `unknown_character` |
+| 51 | `missing_slash_output_env` |
 | 47 | `invalid_ipa` |
 | 41 | `prose_or_expected_arrow` |
 | 37 | `expected_ipa` |
@@ -95,11 +95,11 @@
 | 13 | `₂` |
 | 8 | `̊` |
 | 7 | `ː` |
-| 6 | `͜` |
 | 6 | `ŕ` |
+| 6 | `͜` |
 | 6 | `̺` |
 | 5 | `ₙ` |
-| 4 | `̻` |
+| 4 | `̂` |
 ### unknown_character (description)
 
 | count | description |
@@ -266,7 +266,7 @@
 |------:|-------------|
 | 21 | `)` |
 | 14 | `:` |
-| 6 | `(` |
+| 5 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
 | 1 | `ˤ` |
@@ -391,14 +391,27 @@
 |------:|-------------|
 | — | _(none)_ |
 
+
+## Field isolation blame (error rows)
+
+| count | blame |
+|------:|-------|
+| 275 | `env` |
+| 244 | `input` |
+| 138 | `output` |
+| 83 | `exception` |
+| 52 | `multi` |
+
 ## Notes
 
 - Inventory runs per index rule via `DiachronicSeries` + `validate_asca`.
 - OK rows: [rule-inventory-success.csv](rule-inventory-success.csv)
 - Fail rows: [rule-inventory-error.csv](rule-inventory-error.csv)
+- Skipped rows: [rule-inventory-skipped.csv](rule-inventory-skipped.csv)
 - `ok` flips (append-only): [rule-inventory-changelog.csv](rule-inventory-changelog.csv)
 - Field blame OK rows: [field-isolation-success.csv](field-isolation-success.csv)
 - Field blame fail rows: [field-isolation-error.csv](field-isolation-error.csv)
+- Field blame skipped rows: [field-isolation-skipped.csv](field-isolation-skipped.csv)
 - syntax_other: [syntax_other_errors.csv](syntax_other_errors.csv)
 - runtime_other: [runtime_other_errors.csv](runtime_other_errors.csv)
 - unknown_character: [unknown_character_errors.csv](unknown_character_errors.csv)

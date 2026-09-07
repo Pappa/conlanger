@@ -26,7 +26,6 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 6.1.1,Proto-Omotic to North Omotic,North-Omotic-Cw,,index_diachronica_original.html:984,True,,,,,
 6.1.1,Proto-Omotic to North Omotic,North-Omotic-Vː,,index_diachronica_original.html:985,True,,,,,
 6.1.1,Proto-Omotic to North Omotic,North-Omotic-u,,index_diachronica_original.html:986,True,,,,,
-6.1.1,Proto-Omotic to North Omotic,North-Omotic-Vː_2,,index_diachronica_original.html:987,True,,,,,held-out (commented rule)
 6.1.1,Proto-Omotic to North Omotic,North-Omotic-N,,index_diachronica_original.html:988,True,,,,,
 6.1.1.1,North Omotic to Bench,Bench-x1,,index_diachronica_original.html:993,True,,,,,
 6.1.1.1,North Omotic to Bench,Bench-x2,,index_diachronica_original.html:994,True,,,,,
@@ -278,7 +277,6 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-f-θ,,index_diachronica_original.html:1339,True,,,,,
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-k-x,,index_diachronica_original.html:1340,True,,,,,
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,"Cypriot-Arabic-l,nj",,index_diachronica_original.html:1341,True,,,,,
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-j,,index_diachronica_original.html:1342,True,,,,,held-out (commented rule)
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-j_2,,index_diachronica_original.html:1343,True,,,,,
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-nx,,index_diachronica_original.html:1344,True,,,,,
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,"Cypriot-Arabic-ðˤ,dˤ",,index_diachronica_original.html:1346,True,,,,,
@@ -396,7 +394,6 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,"Biblical-Hebrew-—-o,uː",,index_diachronica_original.html:1530,True,,,,,
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-oː,,index_diachronica_original.html:1531,True,,,,,
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-a_3,,index_diachronica_original.html:1532,True,,,,,
-6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-a_4,,index_diachronica_original.html:1533,True,,,,,held-out (commented rule)
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-a_5,,index_diachronica_original.html:1534,True,,,,,
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-a_6,,index_diachronica_original.html:1535,True,,,,,
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-i_2,,index_diachronica_original.html:1536,True,,,,,
@@ -508,7 +505,6 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-j,,index_diachronica_original.html:1689,True,,,,,
 7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-h,,index_diachronica_original.html:1690,True,,,,,
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,Gros-Ventre-hʔ,,index_diachronica_original.html:1697,True,,,,,
-7.3.2,Proto-Arapaho-Atsina to Gros Ventre,"Gros-Ventre-C,#V-longʔ",,index_diachronica_original.html:1698,True,,,,,held-out (commented rule)
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,Gros-Ventre-i,,index_diachronica_original.html:1700,True,,,,,
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,Gros-Ventre-ʃ-θ-m,,index_diachronica_original.html:1701,True,,,,,
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,Gros-Ventre-ʃ-θ-m-k,,index_diachronica_original.html:1702,True,,,,,
@@ -3543,7 +3539,6 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 17.7.2.5,West Germanic to Old Low German,Old-Low-German-ɡ_2,,index_diachronica_original.html:6152,True,,,,,
 17.7.2.5,West Germanic to Old Low German,Old-Low-German-ɡ_3,,index_diachronica_original.html:6153,True,,,,,
 17.7.2.5,West Germanic to Old Low German,Old-Low-German-ɡ_4,,index_diachronica_original.html:6154,True,,,,,
-17.7.2.5,West Germanic to Old Low German,Old-Low-German-F-voice,,index_diachronica_original.html:6155,True,,,,,held-out (commented rule)
 17.7.3,Common Germanic to Proto-Norse,Proto-Norse-wi,,index_diachronica_original.html:6161,True,,,,,
 17.7.3,Common Germanic to Proto-Norse,Proto-Norse-Eβu-Eβo,,index_diachronica_original.html:6162,True,,,,,
 17.7.3,Common Germanic to Proto-Norse,"Proto-Norse-aβu,o",,index_diachronica_original.html:6163,True,,,,,
@@ -4496,7 +4491,6 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 17.12.1.1,Proto-Indo-European to Latin,Latin-sː_2,,index_diachronica_original.html:7309,True,,,,,
 17.12.1.1,Proto-Indo-European to Latin,Latin-l,,index_diachronica_original.html:7310,True,,,,,
 17.12.1.1,Proto-Indo-European to Latin,Latin-l_2,,index_diachronica_original.html:7311,True,,,,,
-17.12.1.1,Proto-Indo-European to Latin,Latin-r…r,,index_diachronica_original.html:7312,True,,,,,held-out (commented rule)
 17.12.1.1,Proto-Indo-European to Latin,"Latin-n,d…r",,index_diachronica_original.html:7313,True,,,,,
 17.12.1.1,Proto-Indo-European to Latin,Latin-Vː_3,,index_diachronica_original.html:7314,True,,,,,
 17.12.1.1,Proto-Indo-European to Latin,Latin-V_9,0,index_diachronica_original.html:7315,True,,,,,
@@ -4875,8 +4869,6 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-ɔ_4,1,index_diachronica_original.html:7746,True,,,,,
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-ɔ_4,2,index_diachronica_original.html:7746,True,,,,,
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-a,,index_diachronica_original.html:7747,True,,,,,
-17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-a_3,,index_diachronica_original.html:7749,True,,,,,held-out (commented rule)
-17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-å-ɛ-ɔ,,index_diachronica_original.html:7750,True,,,,,held-out (commented rule)
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-ɛ-ɔ,,index_diachronica_original.html:7751,True,,,,,
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-e,,index_diachronica_original.html:7752,True,,,,,
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-ɛ,,index_diachronica_original.html:7754,True,,,,,
@@ -5211,7 +5203,6 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-mb-mn,,index_diachronica_original.html:8140,True,,,,,
 17.12.1.1.10,Vulgar Latin to Spanish,"Spanish-jl,lj-jn,nj-jɡ,ɡj",,index_diachronica_original.html:8141,True,,,,,
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-bj,,index_diachronica_original.html:8142,True,,,,,
-17.12.1.1.10,Vulgar Latin to Spanish,"Spanish-e-ɛ,a-ɔ-o",,index_diachronica_original.html:8143,True,,,,,held-out (commented rule)
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-—-e,,index_diachronica_original.html:8144,True,,,,,
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-—-ɛ-ɔ-u,,index_diachronica_original.html:8145,True,,,,,
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-—-a,,index_diachronica_original.html:8146,True,,,,,
@@ -8793,7 +8784,6 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-en-an,,index_diachronica_original.html:14435,True,,,,,
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-ej,,index_diachronica_original.html:14436,True,,,,,
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-ew,,index_diachronica_original.html:14437,True,,,,,
-46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-i,,index_diachronica_original.html:14438,True,,,,,held-out (commented rule)
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-iː,,index_diachronica_original.html:14439,True,,,,,
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-a-aː,,index_diachronica_original.html:14440,True,,,,,
 46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-aw,,index_diachronica_original.html:14442,True,,,,,
