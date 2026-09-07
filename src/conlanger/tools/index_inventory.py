@@ -180,10 +180,16 @@ CHANGELOG_CSV_COLUMNS = [
 
 INVENTORY_SUCCESS_CSV_NAME = "rule-inventory-success.csv"
 INVENTORY_ERROR_CSV_NAME = "rule-inventory-error.csv"
+INVENTORY_SKIPPED_CSV_NAME = "rule-inventory-skipped.csv"
 INVENTORY_CHANGELOG_CSV_NAME = "rule-inventory-changelog.csv"
 FIELD_ISOLATION_SUCCESS_CSV_NAME = "field-isolation-success.csv"
 FIELD_ISOLATION_ERROR_CSV_NAME = "field-isolation-error.csv"
+FIELD_ISOLATION_SKIPPED_CSV_NAME = "field-isolation-skipped.csv"
 SECTION_SKIPPED_FAILURE_CLASS = "section_skipped"
+RULE_SKIPPED_FAILURE_CLASS = "rule_skipped"
+SKIPPED_FAILURE_CLASSES = frozenset(
+    {SECTION_SKIPPED_FAILURE_CLASS, RULE_SKIPPED_FAILURE_CLASS}
+)
 
 BLAME_FIELD_ORDER: tuple[ASCARulePart, ...] = ("input", "output", "env", "exception")
 
@@ -211,9 +217,39 @@ FIELD_ISOLATION_CSV_COLUMNS = [
 ]
 
 
-def _ok_as_bool(series: pd.Series) -> pd.Series:
-    """Normalize inventory ``ok`` values (bool or CSV strings) to bool."""
-    return series.astype(str).str.lower().isin({"true", "1"})
+def _coerce_ok_value(value: object) -> bool:
+    """Map a cell value to ``True``, ``False``, or ``pd.NA`` (skipped)."""
+    if value is None or value is pd.NA:
+        return pd.NA  # type: ignore[return-value]
+    if isinstance(value, float) and pd.isna(value):
+        return pd.NA  # type: ignore[return-value]
+    if isinstance(value, bool):
+        return value
+    text = str(value).strip().lower()
+    if text in {"", "nan", "none"}:
+        return pd.NA  # type: ignore[return-value]
+    if text in {"true", "1"}:
+        return True
+    if text in {"false", "0"}:
+        return False
+    return pd.NA  # type: ignore[return-value]
+
+
+def _coerce_ok_column(series: pd.Series) -> pd.Series:
+    """Return a nullable-boolean series for inventory ``ok`` / ``whole_ok`` columns."""
+    return series.map(_coerce_ok_value).astype("boolean")
+
+
+def _ok_compare_keys(series: pd.Series) -> pd.Series:
+    """Stable int keys for NA-aware ``ok`` comparisons (True=1, False=0, skipped=-1)."""
+    coerced = _coerce_ok_column(series)
+    return coerced.map({True: 1, False: 0}).fillna(-1).astype("int8")
+
+
+def _ok_for_changelog_csv(value: object) -> str:
+    if value is pd.NA or (isinstance(value, float) and pd.isna(value)):
+        return ""
+    return "True" if value else "False"
 
 
 def _alt_idx_key(series: pd.Series) -> pd.Series:
@@ -237,30 +273,32 @@ def _alt_idx_key(series: pd.Series) -> pd.Series:
 def validation_rows_to_dataframe(rows: list[ValidationRow]) -> pd.DataFrame:
     """Return validation rows as a DataFrame with a stable column order."""
     if not rows:
-        return pd.DataFrame(columns=VALIDATION_CSV_COLUMNS)
-    return pd.DataFrame(
+        df = pd.DataFrame(columns=VALIDATION_CSV_COLUMNS)
+        df["ok"] = pd.Series(dtype="boolean")
+        return df
+    df = pd.DataFrame(
         [row.as_csv_dict() for row in rows], columns=VALIDATION_CSV_COLUMNS
     )
+    df["ok"] = _coerce_ok_column(df["ok"])
+    return df
 
 
 def filter_inventory_by_ok(df: pd.DataFrame, *, ok: bool) -> pd.DataFrame:
     """Return inventory rows whose ``ok`` column matches ``ok``.
 
-    Section-skipped rows (``failure_class=section_skipped``) are excluded from
-    both success and error filtered CSVs.
+    Skipped rows (empty ``ok``) are excluded from both success and error CSVs.
     """
     if df.empty:
         return df.copy()
-    is_ok = _ok_as_bool(df["ok"])
-    if "failure_class" in df.columns:
-        is_skipped = df["failure_class"].astype(str) == SECTION_SKIPPED_FAILURE_CLASS
-    else:
-        is_skipped = pd.Series(False, index=df.index)
-    if ok:
-        mask = is_ok & ~is_skipped
-    else:
-        mask = ~is_ok & ~is_skipped
-    return df.loc[mask].reset_index(drop=True)
+    column = _coerce_ok_column(df["ok"])
+    return df.loc[column.eq(ok)].reset_index(drop=True)
+
+
+def filter_inventory_skipped(df: pd.DataFrame) -> pd.DataFrame:
+    """Return config hold-out rows (empty ``ok``) for the skipped inventory CSV."""
+    if df.empty:
+        return df.copy()
+    return df.loc[_coerce_ok_column(df["ok"]).isna()].reset_index(drop=True)
 
 
 def ok_flip_changelog_rows(
@@ -284,7 +322,7 @@ def ok_flip_changelog_rows(
     )
     prev = previous.loc[:, ["source", "alt_idx", "ok"]].copy()
     prev["_alt_key"] = _alt_idx_key(prev["alt_idx"])
-    prev["ok"] = _ok_as_bool(prev["ok"])
+    prev["ok"] = _coerce_ok_column(prev["ok"])
     prev = prev.drop_duplicates(subset=["source", "_alt_key"], keep="last")
     prev = prev.set_index(["source", "_alt_key"])["ok"]
     cur = current.loc[
@@ -292,14 +330,16 @@ def ok_flip_changelog_rows(
         ["section_index", "rule_id", "alt_idx", "source", "ok"],
     ].copy()
     cur["_alt_key"] = _alt_idx_key(cur["alt_idx"])
-    cur["ok"] = _ok_as_bool(cur["ok"])
+    cur["ok"] = _coerce_ok_column(cur["ok"])
     cur = cur.drop_duplicates(subset=["source", "_alt_key"], keep="last")
     merged = cur.join(prev.rename("_prev_ok"), on=["source", "_alt_key"], how="inner")
-    flipped = merged.loc[merged["ok"] != merged["_prev_ok"]].copy()
+    flipped = merged.loc[
+        _ok_compare_keys(merged["ok"]) != _ok_compare_keys(merged["_prev_ok"])
+    ].copy()
     if flipped.empty:
         return empty
     flipped["alt_idx"] = _alt_idx_key(flipped["alt_idx"])
-    flipped["ok"] = flipped["ok"].map({True: "True", False: "False"})
+    flipped["ok"] = flipped["ok"].map(_ok_for_changelog_csv)
     flipped["timestamp"] = timestamp
     return flipped.loc[:, CHANGELOG_CSV_COLUMNS].reset_index(drop=True)
 
@@ -527,7 +567,7 @@ class ValidationRow:
     section_name: str
     rule_id: str
     source: str
-    ok: bool
+    ok: bool | None
     failure_class: str = ""
     error_token: str = ""
     suggested: str = ""
@@ -542,7 +582,7 @@ class ValidationRow:
             "rule_id": self.rule_id,
             "alt_idx": "" if self.alt_idx is None else self.alt_idx,
             "source": self.source,
-            "ok": self.ok,
+            "ok": "" if self.ok is None else self.ok,
             "failure_class": self.failure_class,
             "error_token": self.error_token,
             "suggested": self.suggested,
@@ -557,7 +597,7 @@ class FieldIsolationRow:
     section_name: str
     rule_id: str
     source: str
-    whole_ok: bool
+    whole_ok: bool | None
     input_ok: bool | None
     output_ok: bool | None
     env_ok: bool | None
@@ -586,7 +626,7 @@ class FieldIsolationRow:
             "rule_id": self.rule_id,
             "alt_idx": "" if self.alt_idx is None else self.alt_idx,
             "source": self.source,
-            "whole_ok": self.whole_ok,
+            "whole_ok": "" if self.whole_ok is None else self.whole_ok,
             "failure_class": self.failure_class,
             "input_ok": _field(self.input_ok),
             "output_ok": _field(self.output_ok),
@@ -605,7 +645,7 @@ class FieldIsolationRow:
 
 
 def derive_blame(
-    whole_ok: bool,
+    whole_ok: bool | None,
     *,
     input_ok: bool | None,
     output_ok: bool | None,
@@ -613,6 +653,8 @@ def derive_blame(
     exception_ok: bool | None,
 ) -> str:
     """Derive the ``blame`` column from whole-rule and per-field ok flags."""
+    if whole_ok is None:
+        return "none"
     field_ok: dict[ASCARulePart, bool | None] = {
         "input": input_ok,
         "output": output_ok,
@@ -627,12 +669,6 @@ def derive_blame(
     return "multi"
 
 
-def _field_isolation_skipped_mask(df: pd.DataFrame) -> pd.Series:
-    if "failure_class" not in df.columns:
-        return pd.Series(False, index=df.index)
-    return df["failure_class"].astype(str) == SECTION_SKIPPED_FAILURE_CLASS
-
-
 def _field_isolation_field_failure_mask(df: pd.DataFrame) -> pd.Series:
     mask = pd.Series(False, index=df.index)
     for column in ("input_ok", "output_ok", "env_ok", "exception_ok"):
@@ -641,23 +677,30 @@ def _field_isolation_field_failure_mask(df: pd.DataFrame) -> pd.Series:
 
 
 def filter_field_isolation_success(df: pd.DataFrame) -> pd.DataFrame:
-    """Return clean field-isolation rows (whole ok, fields ok, not section-skipped)."""
+    """Return clean field-isolation rows (whole ok, fields ok, not skipped)."""
     if df.empty:
         return df.copy()
-    whole_ok = _ok_as_bool(df["whole_ok"])
-    skipped = _field_isolation_skipped_mask(df)
+    whole_ok = _coerce_ok_column(df["whole_ok"])
     field_fail = _field_isolation_field_failure_mask(df)
-    return df.loc[whole_ok & ~skipped & ~field_fail].reset_index(drop=True)
+    return df.loc[whole_ok.eq(True) & ~field_fail].reset_index(drop=True)
 
 
 def filter_field_isolation_error(df: pd.DataFrame) -> pd.DataFrame:
-    """Return field-isolation error rows (whole fail or field fail, not section-skipped)."""
+    """Return field-isolation error rows (whole fail or field fail, not skipped)."""
     if df.empty:
         return df.copy()
-    whole_ok = _ok_as_bool(df["whole_ok"])
-    skipped = _field_isolation_skipped_mask(df)
+    whole_ok = _coerce_ok_column(df["whole_ok"])
     field_fail = _field_isolation_field_failure_mask(df)
-    return df.loc[(~whole_ok | field_fail) & ~skipped].reset_index(drop=True)
+    return df.loc[(whole_ok.eq(False) | field_fail) & whole_ok.notna()].reset_index(
+        drop=True
+    )
+
+
+def filter_field_isolation_skipped(df: pd.DataFrame) -> pd.DataFrame:
+    """Return field-isolation rows for config hold-outs (empty ``whole_ok``)."""
+    if df.empty:
+        return df.copy()
+    return df.loc[_coerce_ok_column(df["whole_ok"]).isna()].reset_index(drop=True)
 
 
 def filter_field_isolation_by_whole_ok(
@@ -665,19 +708,14 @@ def filter_field_isolation_by_whole_ok(
 ) -> pd.DataFrame:
     """Return field-isolation rows whose ``whole_ok`` column matches ``whole_ok``.
 
-    Section-skipped rows are excluded from both outcomes (mirror ticket 34).
+    Skipped rows (empty ``whole_ok``) are excluded from both outcomes.
     Prefer :func:`filter_field_isolation_success` / :func:`filter_field_isolation_error`
     for the regen sidecar splits.
     """
     if df.empty:
         return df.copy()
-    is_ok = _ok_as_bool(df["whole_ok"])
-    skipped = _field_isolation_skipped_mask(df)
-    if whole_ok:
-        mask = is_ok & ~skipped
-    else:
-        mask = ~is_ok & ~skipped
-    return df.loc[mask].reset_index(drop=True)
+    column = _coerce_ok_column(df["whole_ok"])
+    return df.loc[column.eq(whole_ok)].reset_index(drop=True)
 
 
 def _field_rule_from_series(scr: DiachronicSeries) -> SoundChangeRule | None:
@@ -916,17 +954,21 @@ def field_isolation_rows_for_validation_rows(
 def field_isolation_rows_to_dataframe(rows: list[FieldIsolationRow]) -> pd.DataFrame:
     """Return field-isolation rows as a DataFrame with stable column order."""
     if not rows:
-        return pd.DataFrame(columns=FIELD_ISOLATION_CSV_COLUMNS)
-    return pd.DataFrame(
+        df = pd.DataFrame(columns=FIELD_ISOLATION_CSV_COLUMNS)
+        df["whole_ok"] = pd.Series(dtype="boolean")
+        return df
+    df = pd.DataFrame(
         [row.as_csv_dict() for row in rows], columns=FIELD_ISOLATION_CSV_COLUMNS
     )
+    df["whole_ok"] = _coerce_ok_column(df["whole_ok"])
+    return df
 
 
 def write_field_isolation_csvs(
     rows: list[FieldIsolationRow],
     inventory_dir: Path,
 ) -> None:
-    """Write field-isolation success/error CSVs under ``inventory_dir``."""
+    """Write field-isolation success/error/skipped CSVs under ``inventory_dir``."""
     inventory_dir.mkdir(parents=True, exist_ok=True)
     df = field_isolation_rows_to_dataframe(rows)
     filter_field_isolation_success(df).to_csv(
@@ -934,6 +976,9 @@ def write_field_isolation_csvs(
     )
     filter_field_isolation_error(df).to_csv(
         inventory_dir / FIELD_ISOLATION_ERROR_CSV_NAME, index=False
+    )
+    filter_field_isolation_skipped(df).to_csv(
+        inventory_dir / FIELD_ISOLATION_SKIPPED_CSV_NAME, index=False
     )
 
 
@@ -1064,7 +1109,7 @@ def validate_index_rule_with_targets(
             section_name=section_name,
             rule_id=rule_id,
             source=source,
-            ok=True,
+            ok=None,
             failure_class=SECTION_SKIPPED_FAILURE_CLASS,
             description="section skipped at compile (parser_config skip_sections)",
         )
@@ -1076,7 +1121,8 @@ def validate_index_rule_with_targets(
             section_name=section_name,
             rule_id=rule_id,
             source=source,
-            ok=True,
+            ok=None,
+            failure_class=RULE_SKIPPED_FAILURE_CLASS,
             description="held-out (commented rule)",
         )
         return [row], [_InventoryTarget(None, None, None)]
@@ -1186,28 +1232,37 @@ def write_validation_csv(rows: list[ValidationRow], path: Path) -> None:
 
 
 def load_inventory_csv(inventory_dir: Path) -> pd.DataFrame | None:
-    """Load prior inventory rows from success/error split CSVs.
+    """Load prior inventory rows from success/error/skipped split CSVs.
 
-    Returns ``None`` when neither split file exists (first-run behaviour).
+    Returns ``None`` when no split file exists (first-run behaviour).
     """
     frames: list[pd.DataFrame] = []
-    for name in (INVENTORY_SUCCESS_CSV_NAME, INVENTORY_ERROR_CSV_NAME):
+    for name in (
+        INVENTORY_SUCCESS_CSV_NAME,
+        INVENTORY_ERROR_CSV_NAME,
+        INVENTORY_SKIPPED_CSV_NAME,
+    ):
         path = inventory_dir / name
         if path.is_file():
             frames.append(pd.read_csv(path))
     if not frames:
         return None
-    return pd.concat(frames, ignore_index=True)
+    df = pd.concat(frames, ignore_index=True)
+    df["ok"] = _coerce_ok_column(df["ok"])
+    return df
 
 
 def write_filtered_inventory_csvs(df: pd.DataFrame, inventory_dir: Path) -> None:
-    """Rewrite success/error filtered inventory CSVs under ``inventory_dir``."""
+    """Rewrite success/error/skipped filtered inventory CSVs under ``inventory_dir``."""
     inventory_dir.mkdir(parents=True, exist_ok=True)
     filter_inventory_by_ok(df, ok=True).to_csv(
         inventory_dir / INVENTORY_SUCCESS_CSV_NAME, index=False
     )
     filter_inventory_by_ok(df, ok=False).to_csv(
         inventory_dir / INVENTORY_ERROR_CSV_NAME, index=False
+    )
+    filter_inventory_skipped(df).to_csv(
+        inventory_dir / INVENTORY_SKIPPED_CSV_NAME, index=False
     )
 
 
@@ -1246,9 +1301,9 @@ def section_outcome_stats(rows: list[ValidationRow]) -> SectionOutcomeStats:
     """Return mutually exclusive section outcome counts.
 
     - **skipped** — every rule in the section has ``failure_class=section_skipped``.
-    - **all_ok** — not skipped; every rule has ``ok=True``.
-    - **none_ok** — not skipped; every rule has ``ok=False``.
-    - **some_ok** — not skipped; mix of ``ok`` true and false.
+    - **all_ok** — not skipped; every rule has ``ok is True``.
+    - **none_ok** — not skipped; every rule has ``ok is False``.
+    - **some_ok** — not skipped; mix of validated outcomes.
     """
     by_section = _rows_by_section(rows)
     all_ok = some_ok = none_ok = skipped = 0
@@ -1260,10 +1315,9 @@ def section_outcome_stats(rows: list[ValidationRow]) -> SectionOutcomeStats:
         ):
             skipped += 1
             continue
-        oks = [row.ok for row in section_rows]
-        if all(oks):
+        if all(row.ok is True for row in section_rows):
             all_ok += 1
-        elif not any(oks):
+        elif all(row.ok is False for row in section_rows):
             none_ok += 1
         else:
             some_ok += 1
@@ -1303,15 +1357,9 @@ def summarize_inventory(
     field_isolation_rows: list[FieldIsolationRow] | None = None,
 ) -> str:
     total = len(rows)
-    skipped_n = sum(
-        1 for row in rows if row.failure_class == SECTION_SKIPPED_FAILURE_CLASS
-    )
-    ok_n = sum(
-        1
-        for row in rows
-        if row.ok and row.failure_class != SECTION_SKIPPED_FAILURE_CLASS
-    )
-    fail_n = total - ok_n - skipped_n
+    skipped_n = sum(1 for row in rows if row.ok is None)
+    ok_n = sum(1 for row in rows if row.ok is True)
+    fail_n = sum(1 for row in rows if row.ok is False)
     ok_pct = (100.0 * ok_n / total) if total else 0.0
     fail_pct = (100.0 * fail_n / total) if total else 0.0
     skipped_pct = (100.0 * skipped_n / total) if total else 0.0
@@ -1322,7 +1370,7 @@ def summarize_inventory(
         return (100.0 * count / section_total) if section_total else 0.0
 
     class_counts = Counter(
-        row.failure_class for row in rows if not row.ok and row.failure_class
+        row.failure_class for row in rows if row.ok is False and row.failure_class
     )
 
     lines = [
@@ -1378,6 +1426,10 @@ def summarize_inventory(
             f"- OK rows: [{INVENTORY_SUCCESS_CSV_NAME}]({INVENTORY_SUCCESS_CSV_NAME})",
             f"- Fail rows: [{INVENTORY_ERROR_CSV_NAME}]({INVENTORY_ERROR_CSV_NAME})",
             (
+                f"- Skipped rows: "
+                f"[{INVENTORY_SKIPPED_CSV_NAME}]({INVENTORY_SKIPPED_CSV_NAME})"
+            ),
+            (
                 f"- `ok` flips (append-only): "
                 f"[{INVENTORY_CHANGELOG_CSV_NAME}]({INVENTORY_CHANGELOG_CSV_NAME})"
             ),
@@ -1388,6 +1440,11 @@ def summarize_inventory(
             (
                 f"- Field blame fail rows: "
                 f"[{FIELD_ISOLATION_ERROR_CSV_NAME}]({FIELD_ISOLATION_ERROR_CSV_NAME})"
+            ),
+            (
+                f"- Field blame skipped rows: "
+                f"[{FIELD_ISOLATION_SKIPPED_CSV_NAME}]"
+                f"({FIELD_ISOLATION_SKIPPED_CSV_NAME})"
             ),
         ]
     )

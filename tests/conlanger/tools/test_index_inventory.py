@@ -7,6 +7,7 @@ import pytest
 from conlanger.appliers.asca import ASCAValidationError
 from conlanger.tools.index_inventory import (
     CHANGELOG_CSV_COLUMNS,
+    RULE_SKIPPED_FAILURE_CLASS,
     SECTION_SKIPPED_FAILURE_CLASS,
     FieldIsolationRow,
     ValidationRow,
@@ -19,8 +20,10 @@ from conlanger.tools.index_inventory import (
     field_isolation_rows_for_validation_rows,
     field_isolation_rows_to_dataframe,
     filter_field_isolation_error,
+    filter_field_isolation_skipped,
     filter_field_isolation_success,
     filter_inventory_by_ok,
+    filter_inventory_skipped,
     load_inventory_csv,
     ok_flip_changelog_rows,
     parse_error_description,
@@ -185,7 +188,7 @@ def test_validate_index_rule_skipped_section():
             probe_words=None,
         )
     mock_series.assert_not_called()
-    assert row.ok is True
+    assert row.ok is None
     assert row.failure_class == SECTION_SKIPPED_FAILURE_CLASS
 
 
@@ -272,7 +275,8 @@ def test_validate_index_rule_skipped_is_held_out_comment():
         "r2",
         probe_words=None,
     )
-    assert row.ok is True
+    assert row.ok is None
+    assert row.failure_class == RULE_SKIPPED_FAILURE_CLASS
     assert row.description == "held-out (commented rule)"
 
 
@@ -695,7 +699,7 @@ def test_section_outcome_stats():
             "Skipped",
             "r0",
             "s:6",
-            True,
+            None,
             SECTION_SKIPPED_FAILURE_CLASS,
             "",
             "",
@@ -822,6 +826,7 @@ def test_summarize_inventory():
     assert "## Common Errors" in text
     assert "rule-inventory-success.csv" in text
     assert "rule-inventory-error.csv" in text
+    assert "rule-inventory-skipped.csv" in text
     assert "rule-inventory-changelog.csv" in text
     assert "rule-inventory.csv" not in text
     assert "syntax_other_errors.csv" in text
@@ -861,7 +866,7 @@ def test_summarize_inventory_section_skipped():
             "Skipped",
             "r0",
             "s:1",
-            True,
+            None,
             SECTION_SKIPPED_FAILURE_CLASS,
             "",
             "",
@@ -911,14 +916,41 @@ def test_filter_inventory_by_ok_splits_success_and_error():
             "err",
         ),
         ValidationRow("1", "A", "r2", "file:3", True, "", "", "", "", ""),
+        ValidationRow(
+            "9.9.9",
+            "Skipped",
+            "r3",
+            "file:4",
+            None,
+            SECTION_SKIPPED_FAILURE_CLASS,
+            "",
+            "",
+            "",
+            "section skipped",
+        ),
+        ValidationRow(
+            "1",
+            "A",
+            "r4",
+            "file:5",
+            None,
+            RULE_SKIPPED_FAILURE_CLASS,
+            "",
+            "",
+            "",
+            "held-out (commented rule)",
+        ),
     ]
     df = validation_rows_to_dataframe(rows)
     success = filter_inventory_by_ok(df, ok=True)
     error = filter_inventory_by_ok(df, ok=False)
+    skipped = filter_inventory_skipped(df)
     assert list(success["source"]) == ["file:1", "file:3"]
     assert list(error["source"]) == ["file:2"]
+    assert set(skipped["source"]) == {"file:4", "file:5"}
     assert list(success.columns) == list(df.columns)
     assert list(error.columns) == list(df.columns)
+    assert list(skipped.columns) == list(df.columns)
 
 
 def test_ok_flip_changelog_rows_emits_flips_by_source():
@@ -1029,7 +1061,7 @@ def test_load_inventory_csv_returns_none_when_missing(tmp_path: Path):
     assert load_inventory_csv(tmp_path) is None
 
 
-def test_load_inventory_csv_reads_success_and_error_splits(tmp_path: Path):
+def test_load_inventory_csv_reads_success_error_and_skipped_splits(tmp_path: Path):
     write_filtered_inventory_csvs(
         validation_rows_to_dataframe(
             [
@@ -1045,14 +1077,26 @@ def test_load_inventory_csv_reads_success_and_error_splits(tmp_path: Path):
                     "",
                     "err",
                 ),
+                ValidationRow(
+                    "9.9.9",
+                    "Skipped",
+                    "r2",
+                    "s:3",
+                    None,
+                    SECTION_SKIPPED_FAILURE_CLASS,
+                    "",
+                    "",
+                    "",
+                    "section skipped",
+                ),
             ]
         ),
         tmp_path,
     )
     loaded = load_inventory_csv(tmp_path)
     assert loaded is not None
-    assert len(loaded) == 2
-    assert set(loaded["source"]) == {"s:1", "s:2"}
+    assert len(loaded) == 3
+    assert set(loaded["source"]) == {"s:1", "s:2", "s:3"}
 
 
 def test_write_filtered_inventory_csvs(tmp_path: Path):
@@ -1070,13 +1114,32 @@ def test_write_filtered_inventory_csvs(tmp_path: Path):
                 "",
                 "err",
             ),
+            ValidationRow(
+                "1",
+                "A",
+                "r2",
+                "s:3",
+                None,
+                RULE_SKIPPED_FAILURE_CLASS,
+                "",
+                "",
+                "",
+                "held-out (commented rule)",
+            ),
         ]
     )
     write_filtered_inventory_csvs(df, tmp_path)
     success = tmp_path / "rule-inventory-success.csv"
     error = tmp_path / "rule-inventory-error.csv"
+    skipped = tmp_path / "rule-inventory-skipped.csv"
     assert success.is_file()
     assert error.is_file()
+    assert skipped.is_file()
+    assert len(list(csv.DictReader(success.open()))) == 1
+    assert len(list(csv.DictReader(error.open()))) == 1
+    skipped_rows = list(csv.DictReader(skipped.open()))
+    assert len(skipped_rows) == 1
+    assert skipped_rows[0]["ok"] == ""
 
 
 def test_append_ok_flip_changelog_writes_and_appends(tmp_path: Path):
@@ -1112,6 +1175,31 @@ def test_append_ok_flip_changelog_writes_and_appends(tmp_path: Path):
         timestamp="2026-08-06T13:00:00Z",
     )
     assert append_ok_flip_changelog(flips, path) == 1
+
+
+def test_ok_flip_changelog_rows_emits_flip_to_skipped():
+    previous = validation_rows_to_dataframe(
+        [ValidationRow("1", "A", "r0", "file:1", True, "", "", "", "", "")]
+    )
+    current = validation_rows_to_dataframe(
+        [
+            ValidationRow(
+                "1",
+                "A",
+                "r0",
+                "file:1",
+                None,
+                RULE_SKIPPED_FAILURE_CLASS,
+                "",
+                "",
+                "",
+                "held-out (commented rule)",
+            )
+        ]
+    )
+    flips = ok_flip_changelog_rows(previous, current, timestamp="2026-08-06T14:00:00Z")
+    assert len(flips) == 1
+    assert flips.iloc[0]["ok"] == ""
 
 
 def test_filter_inventory_by_ok_empty_dataframe():
@@ -1230,7 +1318,7 @@ def test_filter_field_isolation_splits_success_and_error():
             "Skipped",
             "r3",
             "s:4",
-            True,
+            None,
             None,
             None,
             None,
@@ -1250,9 +1338,10 @@ def test_filter_field_isolation_splits_success_and_error():
     df = field_isolation_rows_to_dataframe(rows)
     success = filter_field_isolation_success(df)
     error = filter_field_isolation_error(df)
+    skipped = filter_field_isolation_skipped(df)
     assert list(success["source"]) == ["s:1"]
     assert set(error["source"]) == {"s:2", "s:3"}
-    assert "s:4" not in set(success["source"]) | set(error["source"])
+    assert list(skipped["source"]) == ["s:4"]
     assert list(success.columns) == list(df.columns)
 
 
@@ -1274,7 +1363,7 @@ def test_build_field_isolation_row_without_field_rule():
     assert row.blame == "multi"
 
 
-def test_write_field_isolation_csvs_writes_success_and_error_only(tmp_path: Path):
+def test_write_field_isolation_csvs_writes_success_error_and_skipped(tmp_path: Path):
     rows = [
         FieldIsolationRow(
             "1",
@@ -1316,15 +1405,40 @@ def test_write_field_isolation_csvs_writes_success_and_error_only(tmp_path: Path
             "",
             "input",
         ),
+        FieldIsolationRow(
+            "9",
+            "Skipped",
+            "r2",
+            "s:3",
+            None,
+            None,
+            None,
+            None,
+            None,
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "none",
+            failure_class=SECTION_SKIPPED_FAILURE_CLASS,
+        ),
     ]
     write_field_isolation_csvs(rows, tmp_path)
     success = list(csv.DictReader((tmp_path / "field-isolation-success.csv").open()))
     error = list(csv.DictReader((tmp_path / "field-isolation-error.csv").open()))
+    skipped = list(csv.DictReader((tmp_path / "field-isolation-skipped.csv").open()))
     assert not (tmp_path / "field-isolation.csv").exists()
     assert len(success) == 1
     assert success[0]["source"] == "s:1"
     assert len(error) == 1
     assert error[0]["source"] == "s:2"
+    assert len(skipped) == 1
+    assert skipped[0]["source"] == "s:3"
+    assert skipped[0]["whole_ok"] == ""
 
 
 def test_summarize_inventory_links_field_isolation_csvs():
@@ -1361,6 +1475,8 @@ def test_summarize_inventory_links_field_isolation_csvs():
     )
     assert "field-isolation-success.csv" in text
     assert "field-isolation-error.csv" in text
+    assert "field-isolation-skipped.csv" in text
+    assert "rule-inventory-skipped.csv" in text
     assert "field-isolation.csv" not in text
     assert "## Field isolation blame (error rows)" in text
     assert "| 1 | `input` |" in text

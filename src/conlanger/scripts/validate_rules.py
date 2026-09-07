@@ -24,12 +24,19 @@ from conlanger.scripts.validation_cli import (
 )
 from conlanger.tools.index_inventory import (
     FIELD_ISOLATION_ERROR_CSV_NAME,
+    FIELD_ISOLATION_SKIPPED_CSV_NAME,
     FIELD_ISOLATION_SUCCESS_CSV_NAME,
     INVENTORY_CHANGELOG_CSV_NAME,
     INVENTORY_ERROR_CSV_NAME,
+    INVENTORY_SKIPPED_CSV_NAME,
     INVENTORY_SUCCESS_CSV_NAME,
     append_ok_flip_changelog,
+    field_isolation_rows_to_dataframe,
+    filter_field_isolation_error,
+    filter_field_isolation_skipped,
+    filter_field_isolation_success,
     filter_inventory_by_ok,
+    filter_inventory_skipped,
     iter_inventory_with_field_isolation,
     load_inventory_csv,
     ok_flip_changelog_rows,
@@ -50,8 +57,9 @@ def main() -> int:
         type=Path,
         default=DEFAULT_INVENTORY_DIR,
         help=(
-            "writes rule-inventory-success.csv / -error.csv, "
-            "field-isolation-success.csv / -error.csv (when --field-isolation), "
+            "writes rule-inventory-success.csv / -error.csv / -skipped.csv, "
+            "field-isolation-success.csv / -error.csv / -skipped.csv "
+            "(when --field-isolation), "
             "rule-inventory-changelog.csv, "
             "error cluster CSVs, "
             "and rule-inventory-summary.md"
@@ -136,12 +144,14 @@ def main() -> int:
 
     success_path = args.inventory_dir / INVENTORY_SUCCESS_CSV_NAME
     error_path = args.inventory_dir / INVENTORY_ERROR_CSV_NAME
-    field_success_path = args.inventory_dir / FIELD_ISOLATION_SUCCESS_CSV_NAME
-    field_error_path = args.inventory_dir / FIELD_ISOLATION_ERROR_CSV_NAME
+    skipped_path = args.inventory_dir / INVENTORY_SKIPPED_CSV_NAME
     changelog_path = args.inventory_dir / INVENTORY_CHANGELOG_CSV_NAME
     summary_path = args.inventory_dir / "rule-inventory-summary.md"
     error_cluster_dir = args.inventory_dir / "error_clusters"
     field_isolation_dir = args.inventory_dir / "field_isolation"
+    field_success_path = field_isolation_dir / FIELD_ISOLATION_SUCCESS_CSV_NAME
+    field_error_path = field_isolation_dir / FIELD_ISOLATION_ERROR_CSV_NAME
+    field_skipped_path = field_isolation_dir / FIELD_ISOLATION_SKIPPED_CSV_NAME
 
     previous = load_inventory_csv(args.inventory_dir)
     current_df = validation_rows_to_dataframe(rows)
@@ -168,19 +178,24 @@ def main() -> int:
     summary_path.parent.mkdir(parents=True, exist_ok=True)
     summary_path.write_text(summary, encoding="utf-8")
 
-    ok_n = sum(1 for row in rows if row.ok)
-    fail_n = len(rows) - ok_n
-    field_ok_n = sum(1 for row in field_rows if row.whole_ok)
-    field_fail_n = len(field_rows) - field_ok_n
+    ok_n = len(filter_inventory_by_ok(current_df, ok=True))
+    fail_n = len(filter_inventory_by_ok(current_df, ok=False))
+    skipped_n = len(filter_inventory_skipped(current_df))
     lines = [
         f"wrote {success_path} rows={ok_n}",
         f"wrote {error_path} rows={fail_n}",
+        f"wrote {skipped_path} rows={skipped_n}",
     ]
     if args.field_isolation:
+        field_df = field_isolation_rows_to_dataframe(field_rows)
+        field_ok_n = len(filter_field_isolation_success(field_df))
+        field_fail_n = len(filter_field_isolation_error(field_df))
+        field_skipped_n = len(filter_field_isolation_skipped(field_df))
         lines.extend(
             [
                 f"wrote {field_success_path} rows={field_ok_n}",
                 f"wrote {field_error_path} rows={field_fail_n}",
+                f"wrote {field_skipped_path} rows={field_skipped_n}",
             ]
         )
     lines.extend(
