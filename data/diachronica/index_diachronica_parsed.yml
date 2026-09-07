@@ -29552,8 +29552,8 @@ sections:
   - stages:
     - ɒ
     - ø
-    env: _O[+cor,+anterior,+dist/alveolar]
-    raw: ɒ → ø / _O[+ dental/alveolar]
+    env: _O[+cor,+anterior,+dist], _O[+cor,+anterior,-dist]
+    raw: ɒ → ø / _O[+dental], _O[+alveolar]
     source: index_diachronica_original.html:6518
     rule_id: Shetland-Norn-ɒ_2
   - stages:
@@ -29572,8 +29572,8 @@ sections:
   - stages:
     - a
     - ∅
-    env: C[+cor,+anterior,+dist/alveolar]_u
-    raw: a → ∅ / C[+ dental/alveolar]_u
+    env: C[+cor,+anterior,+dist]_u, C[+cor,+anterior,-dist]_u
+    raw: a → ∅ / C[+dental]_u, C[+alveolar]_u
     source: index_diachronica_original.html:6521
     rule_id: Shetland-Norn-a
   - stages:
@@ -29621,8 +29621,8 @@ sections:
   - stages:
     - yː
     - ø
-    env: _O[+cor,+anterior,+dist/alveolar]
-    raw: yː → ø / _O[+ dental/alveolar]
+    env: _O[+cor,+anterior,+dist], _O[+cor,+anterior,-dist]
+    raw: yː → ø / _O[+dental], _O[+alveolar]
     source: index_diachronica_original.html:6528
     rule_id: Shetland-Norn-yː
   - stages:

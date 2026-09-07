@@ -259,3 +259,21 @@ rules:
                   reason: |
                           TODO: resolve this one properly.
                           Original rule: ({C,#}V[-long])ʔ → ({C,#}Vː[+falling tone])∅ / _C
+        - rule:
+                  id: Shetland-Norn-ɒ_2
+                  content: "ɒ → ø / _O[+dental], _O[+alveolar]"
+                  reason: |
+                          Handling alternatives in distinctive feature
+                          ɒ → ø / _O[+ dental/alveolar]
+        - rule:
+                  id: Shetland-Norn-a
+                  content: "a → ∅ / C[+dental]_u, C[+alveolar]_u"
+                  reason: |
+                          Handling alternatives in distinctive feature
+                          a → ∅ / C[+ dental/alveolar]_u
+        - rule:
+                  id: Shetland-Norn-yː
+                  content: "yː → ø / _O[+dental], _O[+alveolar]"
+                  reason: |
+                          Handling alternatives in distinctive feature
+                          yː → ø / _O[+ dental/alveolar]

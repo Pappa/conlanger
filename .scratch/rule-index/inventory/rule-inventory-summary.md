@@ -6,8 +6,8 @@
 - Rows: **9840** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8828** (89.7%)
-- Fail: **694** (7.1%)
+- OK: **8831** (89.7%)
+- Fail: **691** (7.0%)
 - Skipped: **318** (3.2%)
 
 ## Sections
@@ -22,13 +22,13 @@
 | count | failure_class |
 |------:|---------------|
 | 155 | `expected_underscore` |
-| 150 | `unknown_character` |
-| 51 | `missing_slash_output_env` |
+| 149 | `unknown_character` |
+| 52 | `missing_slash_output_env` |
 | 47 | `invalid_ipa` |
 | 41 | `prose_or_expected_arrow` |
 | 37 | `expected_ipa` |
-| 36 | `syntax_other` |
 | 35 | `expected_number` |
+| 33 | `syntax_other` |
 | 23 | `nested_brackets` |
 | 23 | `unknown_feature` |
 | 16 | `unknown_grouping` |
@@ -65,7 +65,6 @@
 | count | description |
 |------:|-------------|
 | 10 | `Output cannot be empty. Use `*` or '∅' to indicate deletion` |
-| 3 | `Feature 'alveolar' has no modifier` |
 | 3 | `Negation cannot be used in the output` |
 | 2 | `Only a segment, matrix, group, or reference can be negated` |
 | 2 | `Tones cannot be ±; they can only be used with numeric values.` |
@@ -74,6 +73,7 @@
 | 1 | `Feature 'lost' has no modifier` |
 | 1 | `Feature 'b' has no modifier` |
 | 1 | `Feature 's' has no modifier` |
+| 1 | `Feature 'long' has no modifier` |
 
 ### runtime_other (error_token)
 
@@ -95,11 +95,11 @@
 | 13 | `₂` |
 | 8 | `̊` |
 | 7 | `ː` |
-| 6 | `ŕ` |
 | 6 | `͜` |
+| 6 | `ŕ` |
 | 6 | `̺` |
 | 5 | `ₙ` |
-| 4 | `̂` |
+| 4 | `̻` |
 ### unknown_character (description)
 
 | count | description |
@@ -266,7 +266,7 @@
 |------:|-------------|
 | 21 | `)` |
 | 14 | `:` |
-| 5 | `(` |
+| 6 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
 | 1 | `ˤ` |
@@ -396,7 +396,7 @@
 
 | count | blame |
 |------:|-------|
-| 275 | `env` |
+| 272 | `env` |
 | 244 | `input` |
 | 138 | `output` |
 | 83 | `exception` |
