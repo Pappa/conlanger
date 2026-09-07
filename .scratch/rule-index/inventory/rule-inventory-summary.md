@@ -3,38 +3,38 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
-- Rows: **9840** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
+- Rows: **9820** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8834** (89.8%)
-- Fail: **687** (7.0%)
-- Skipped: **319** (3.2%)
+- OK: **8614** (87.7%)
+- Fail: **668** (6.8%)
+- Skipped: **538** (5.5%)
 
 ## Sections
 
 - All OK: **439 / 714** (61.5%)
-- Some OK: **256 / 714** (35.9%)
+- Some OK: **255 / 714** (35.7%)
 - None OK: **3 / 714** (0.4%)
-- Sections skipped: **16 / 714** (2.2%)
+- Sections skipped: **17 / 714** (2.4%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 153 | `expected_underscore` |
-| 149 | `unknown_character` |
-| 51 | `missing_slash_output_env` |
+| 149 | `expected_underscore` |
+| 148 | `unknown_character` |
 | 47 | `invalid_ipa` |
-| 41 | `prose_or_expected_arrow` |
-| 37 | `expected_ipa` |
+| 46 | `missing_slash_output_env` |
+| 40 | `prose_or_expected_arrow` |
 | 35 | `expected_number` |
-| 32 | `syntax_other` |
-| 23 | `nested_brackets` |
+| 34 | `expected_ipa` |
+| 31 | `syntax_other` |
 | 23 | `unknown_feature` |
+| 22 | `nested_brackets` |
 | 16 | `unknown_grouping` |
-| 14 | `stuff_after_word_bound` |
 | 14 | `floating_diacritic` |
-| 11 | `empty_io_panic` |
+| 12 | `stuff_after_word_bound` |
+| 10 | `empty_io_panic` |
 | 9 | `diacritic_prereq` |
 | 8 | `segments_before_word` |
 | 7 | `multiple_underlines_env` |
@@ -55,7 +55,6 @@
 | 2 | `,` |
 | 1 | `{` |
 | 1 | `α` |
-| 1 | `End Of Line` |
 | 1 | `]` |
 | 1 | `:` |
 | 1 | `l` |
@@ -96,8 +95,8 @@
 | 8 | `̊` |
 | 7 | `ː` |
 | 6 | `͜` |
-| 6 | `ŕ` |
 | 6 | `̺` |
+| 6 | `ŕ` |
 | 5 | `ₙ` |
 | 4 | `̻` |
 ### unknown_character (description)
@@ -136,7 +135,7 @@
 
 | count | error_token |
 |------:|-------------|
-| 20 | `,` |
+| 18 | `,` |
 | 9 | `//` |
 | 7 | `/` |
 | 3 | `:` |
@@ -147,7 +146,7 @@
 
 | count | description |
 |------:|-------------|
-| 111 | `Expected '_', but received ''` |
+| 109 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -158,7 +157,7 @@
 
 | count | description |
 |------:|-------------|
-| 23 | `Cannot have nested brackets of the same type` |
+| 22 | `Cannot have nested brackets of the same type` |
 
 ### unknown_feature (error_token)
 
@@ -208,12 +207,12 @@
 | 7 | `Expected '>', '->' or '=>', but received '̩'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
 | 2 | `Expected '>', '->' or '=>', but received '̥'` |
-| 2 | `Expected '>', '->' or '=>', but received ')'` |
-| 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ˤ'` |
-| 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
+| 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received ':'` |
+| 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
+| 1 | `Expected '>', '->' or '=>', but received ')'` |
 
 ### invalid_ipa (error_token)
 
@@ -233,9 +232,9 @@
 
 | count | error_token |
 |------:|-------------|
-| 8 | `(` |
 | 6 | `∅` |
 | 5 | `>` |
+| 5 | `(` |
 | 3 | `*` |
 | 3 | `ʷ` |
 | 3 | `…` |
@@ -264,8 +263,8 @@
 
 | count | error_token |
 |------:|-------------|
-| 20 | `)` |
-| 14 | `:` |
+| 18 | `)` |
+| 11 | `:` |
 | 6 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
@@ -322,7 +321,7 @@
 
 | count | description |
 |------:|-------------|
-| 14 | `Cannot have segments after the end of a word` |
+| 12 | `Cannot have segments after the end of a word` |
 
 ### diacritic_prereq (error_token)
 
@@ -344,7 +343,7 @@
 
 | count | description |
 |------:|-------------|
-| 8 | `The output of a deletion rule must only contain `*` or `∅`` |
+| 7 | `The output of a deletion rule must only contain `*` or `∅`` |
 | 3 | `The input of an insertion rule must only contain `*` or `∅`` |
 
 ### incomplete_matrix (error_token)
@@ -396,11 +395,11 @@
 
 | count | blame |
 |------:|-------|
-| 270 | `env` |
+| 262 | `env` |
 | 244 | `input` |
-| 138 | `output` |
-| 81 | `exception` |
-| 51 | `multi` |
+| 136 | `output` |
+| 79 | `exception` |
+| 44 | `multi` |
 
 ## Notes
 

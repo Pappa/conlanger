@@ -33,34 +33,8 @@ skip_sections:
   #   reason: "Need to refer to the cited source to determine the correct rule syntax"
   - id: "10.6"
     reason: "It's not possible to determine how t₁, d₁, etc. should be represented"
-  # - id: "17.1.1"
-  #   reason: "Not sure what to do with ɡ́"
-  # - id: "17.1.2"
-  #   reason: "Not sure what to do with ɡ́"
-  # - id: "17.2.3"
-  #   reason: "Not sure what to do with ɡ́"
-  # - id: "17.3.1"
-  #   reason: "Not sure what to do with ɡ́"
-  # - id: "17.3.2"
-  #   reason: "Not sure what to do with ɡ́"
-  # - id: "17.3.3"
-  #   reason: "Not sure what to do with ɡ́"
-  # - id: "17.3.4"
-  #   reason: "Not sure what to do with ɡ́"
-  # - id: "17.3.5"
-  #   reason: "Not sure what to do with ɡ́"
-  # - id: "17.3.6"
-  #   reason: "Not sure what to do with ɡ́"
-  # - id: "17.3.7"
-  #   reason: "Not sure what to do with ɡ́"
-  # - id: "17.4.1"
-  #   reason: "Not sure what to do with ɡ́"
-  # - id: "17.6"
-  #   reason: "Not sure what to do with ɡ́"
-  # - id: "17.9"
-  #   reason: "Not sure what to do with ɡ́"
-  # - id: "17.12.2"
-  #   reason: "Not sure what to do with ɡ́"
+  - id: "17.12.1.1.6"
+    reason: "Too many parse errors in: Vulgar Latin to Old Provençal"
   - id: "36.1"
     reason: "Need to refer to the cited source to determine the correct rule syntax"
   - id: "36.3.1.2"
@@ -100,24 +74,16 @@ skip_sections:
 skip_rules:
   - id: Pre-Slavic-Vowel-Changes-i
     reason: chained optional multi-output; structurally unrepresentable in ASCA (ticket 84)
-  # - id: Latin-ḱ-ɡ́
-  #   reason: "Not really sure what to do with ɡ́"
   - id: Latin-r…r
     reason: "Not sure how to interpret rule: r…r → r…∅"
   - id: Old-Low-German-F-voice
     reason: "No idea what X means"
   - id: North-Omotic-Vː_2
     reason: "I can't figure out the rule even afer reading the source material"
-  # - id: Arapaho-C,#Vʔ
-  #   reason: "I can't figure out the rule even afer reading the source material"
   - id: Gros-Ventre-C,#V-longʔ
     reason: "I can't figure out the rule even afer reading the source material"
   - id: Biblical-Hebrew-—-a_4
     reason: "No idea what this rule means: a → _$%%(…)”"
-  # - id: Old-Provençal-—-a_3
-  #   reason: "Can't resolve  å "
-  # - id: Old-Provençal-—-å-ɛ-ɔ
-  #   reason: "Can't resolve  å "
   - id: Spanish-e-ɛ,a-ɔ-o
     reason: "This is really a comment"
   - id: Cypriot-Arabic-j

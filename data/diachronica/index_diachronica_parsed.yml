@@ -38791,6 +38791,7 @@ sections:
       preterits”
     source: index_diachronica_original.html:7984
     rule_id: Old-Provençal-t_3
+  status: skipped
 - section: Vulgar Latin to Rhaeto-Romance
   index: 17.12.1.1.7
   citation: Pogostick Man, from Wikipedia contributors (2014), “Rhaeto-Romance languages”.
