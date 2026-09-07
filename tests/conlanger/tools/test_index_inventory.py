@@ -7,10 +7,14 @@ import pytest
 from conlanger.appliers.asca import ASCAValidationError
 from conlanger.tools.index_inventory import (
     CHANGELOG_CSV_COLUMNS,
+    OK_FALSE,
+    OK_SKIPPED,
+    OK_TRUE,
     RULE_SKIPPED_FAILURE_CLASS,
     SECTION_SKIPPED_FAILURE_CLASS,
     FieldIsolationRow,
     ValidationRow,
+    _coerce_ok_value,
     _series_for_alternative,
     append_ok_flip_changelog,
     build_field_isolation_row,
@@ -157,7 +161,7 @@ def test_validation_row_as_csv_dict():
         section_name="Test",
         rule_id="Test-2",
         source="sample.html:10",
-        ok=False,
+        ok=OK_FALSE,
         failure_class="syntax_other",
         error_token="",
         suggested="",
@@ -169,7 +173,7 @@ def test_validation_row_as_csv_dict():
         "rule_id": "Test-2",
         "alt_idx": "",
         "source": "sample.html:10",
-        "ok": False,
+        "ok": OK_FALSE,
         "failure_class": "syntax_other",
         "error_token": "",
         "suggested": "",
@@ -188,7 +192,7 @@ def test_validate_index_rule_skipped_section():
             probe_words=None,
         )
     mock_series.assert_not_called()
-    assert row.ok is None
+    assert row.ok == OK_SKIPPED
     assert row.failure_class == SECTION_SKIPPED_FAILURE_CLASS
 
 
@@ -204,7 +208,7 @@ def test_validate_index_rule_skipped_quoted_prose_uses_comment():
         "r0",
         probe_words=None,
     )
-    assert row.ok is False
+    assert row.ok == OK_FALSE
     assert row.failure_class == "format_error"
 
 
@@ -219,7 +223,7 @@ def test_validate_index_rule_missing_arrow():
         "r0",
         probe_words=None,
     )
-    assert row.ok is False
+    assert row.ok == OK_FALSE
     assert row.failure_class != "format_error"
     assert "no compile steps" not in row.description
 
@@ -235,7 +239,7 @@ def test_validate_index_rule_diachronic_compile_format_error(_mock_prs):
         "r0",
         probe_words=None,
     )
-    assert row.ok is False
+    assert row.ok == OK_FALSE
     assert row.failure_class == "format_error"
     assert "bad compile" in row.description
 
@@ -247,7 +251,7 @@ def test_validate_index_rule_single_stage_compiles_with_empty_output():
         "r0",
         probe_words=None,
     )
-    assert row.ok is False
+    assert row.ok == OK_FALSE
     assert row.failure_class != "format_error"
     assert "no compile steps" not in row.description
 
@@ -259,7 +263,7 @@ def test_validate_index_rule_format_error():
         "r1",
         probe_words=None,
     )
-    assert row.ok is False
+    assert row.ok == OK_FALSE
     assert row.failure_class == "format_error"
 
 
@@ -275,7 +279,7 @@ def test_validate_index_rule_skipped_is_held_out_comment():
         "r2",
         probe_words=None,
     )
-    assert row.ok is None
+    assert row.ok == OK_SKIPPED
     assert row.failure_class == RULE_SKIPPED_FAILURE_CLASS
     assert row.description == "held-out (commented rule)"
 
@@ -288,7 +292,7 @@ def test_validate_index_rule_ok(_mock_validate):
         "r0",
         probe_words=Path("/probe.wsca"),
     )
-    assert row.ok is True
+    assert row.ok == OK_TRUE
     assert row.failure_class == ""
 
 
@@ -303,7 +307,7 @@ def test_validate_index_rule_asca_failure(_mock_validate):
         "r0",
         probe_words=None,
     )
-    assert row.ok is False
+    assert row.ok == OK_FALSE
     assert row.failure_class == "expected_underscore"
     assert row.error_token == ""
     assert row.suggested == ""
@@ -346,7 +350,7 @@ def test_validate_index_rule_emits_alternative_rows(_mock_validate):
         probe_words=None,
     )
     assert [row.alt_idx for row in rows] == [0, 1]
-    assert all(row.ok for row in rows)
+    assert all(row.ok == OK_TRUE for row in rows)
     assert all(row.source == "s:1" for row in rows)
     assert _mock_validate.call_count == 2
 
@@ -377,21 +381,19 @@ def test_validate_index_rule_non_optional_has_empty_alt_idx(_mock_validate):
 def test_ok_flip_changelog_rows_keys_on_source_and_alt_idx():
     previous = validation_rows_to_dataframe(
         [
-            ValidationRow("1", "A", "r0", "file:1", True, alt_idx=0),
-            ValidationRow("1", "A", "r0", "file:1", True, alt_idx=1),
+            ValidationRow("1", "A", "r0", "file:1", OK_TRUE, alt_idx=0),
+            ValidationRow("1", "A", "r0", "file:1", OK_TRUE, alt_idx=1),
         ]
     )
     # alt_idx 0 unchanged; alt_idx 1 flips to failing under the same source
     current = validation_rows_to_dataframe(
         [
-            ValidationRow("1", "A", "r0", "file:1", True, alt_idx=0),
+            ValidationRow("1", "A", "r0", "file:1", OK_TRUE, alt_idx=0),
             ValidationRow(
                 "1",
                 "A",
                 "r0",
-                "file:1",
-                False,
-                failure_class="syntax_other",
+                "file:1", OK_FALSE, failure_class="syntax_other",
                 description="err",
                 alt_idx=1,
             ),
@@ -401,7 +403,7 @@ def test_ok_flip_changelog_rows_keys_on_source_and_alt_idx():
     assert list(flips.columns) == CHANGELOG_CSV_COLUMNS
     assert list(flips["source"]) == ["file:1"]
     assert list(flips["alt_idx"]) == ["1"]
-    assert list(flips["ok"]) == ["False"]
+    assert list(flips["ok"]) == [OK_FALSE]
 
 
 def test_write_validation_csv(tmp_path: Path):
@@ -411,7 +413,7 @@ def test_write_validation_csv(tmp_path: Path):
             section_name="A",
             rule_id="r0",
             source="s:1",
-            ok=True,
+            ok=OK_TRUE,
             failure_class="",
             error_token="",
             suggested="",
@@ -422,7 +424,7 @@ def test_write_validation_csv(tmp_path: Path):
             section_name="A",
             rule_id="r1",
             source="s:2",
-            ok=False,
+            ok=OK_FALSE,
             failure_class="unknown_feature",
             error_token="voiced",
             suggested="voice",
@@ -433,7 +435,7 @@ def test_write_validation_csv(tmp_path: Path):
     write_validation_csv(rows, out)
     with out.open(encoding="utf-8") as handle:
         parsed = list(csv.DictReader(handle))
-    assert parsed[0]["ok"] == "True"
+    assert parsed[0]["ok"] == "1"
     assert parsed[0]["section_index"] == "1.0"
     assert parsed[1]["error_token"] == "voiced"
     assert parsed[1]["suggested"] == "voice"
@@ -446,9 +448,7 @@ def test_top_error_tokens():
             "1",
             "A",
             0,
-            "s:1",
-            False,
-            "unknown_character",
+            "s:1", OK_FALSE, "unknown_character",
             "→",
             "",
             "err",
@@ -457,9 +457,7 @@ def test_top_error_tokens():
             "1",
             "A",
             1,
-            "s:2",
-            False,
-            "unknown_character",
+            "s:2", OK_FALSE, "unknown_character",
             "→",
             "",
             "err",
@@ -468,9 +466,7 @@ def test_top_error_tokens():
             "1",
             "A",
             2,
-            "s:3",
-            False,
-            "unknown_character",
+            "s:3", OK_FALSE, "unknown_character",
             "ː",
             "",
             "err",
@@ -479,9 +475,7 @@ def test_top_error_tokens():
             "1",
             "A",
             3,
-            "s:4",
-            False,
-            "unknown_feature",
+            "s:4", OK_FALSE, "unknown_feature",
             "voiced",
             "voice",
             "err",
@@ -490,9 +484,7 @@ def test_top_error_tokens():
             "1",
             "A",
             4,
-            "s:5",
-            False,
-            "unknown_feature",
+            "s:5", OK_FALSE, "unknown_feature",
             "voiced",
             "voice",
             "err",
@@ -501,9 +493,7 @@ def test_top_error_tokens():
             "1",
             "A",
             5,
-            "s:6",
-            False,
-            "unknown_feature",
+            "s:6", OK_FALSE, "unknown_feature",
             "sibilant",
             "sonorant",
             "err",
@@ -521,9 +511,7 @@ def test_top_error_tokens_with_suggested_from_dataframe():
                 "1",
                 "A",
                 0,
-                "s:1",
-                False,
-                "unknown_feature",
+                "s:1", OK_FALSE, "unknown_feature",
                 "voiced",
                 "voice",
                 "err",
@@ -532,9 +520,7 @@ def test_top_error_tokens_with_suggested_from_dataframe():
                 "1",
                 "A",
                 1,
-                "s:2",
-                False,
-                "unknown_feature",
+                "s:2", OK_FALSE, "unknown_feature",
                 "voiced",
                 "voice",
                 "err",
@@ -543,9 +529,7 @@ def test_top_error_tokens_with_suggested_from_dataframe():
                 "1",
                 "A",
                 2,
-                "s:3",
-                False,
-                "unknown_feature",
+                "s:3", OK_FALSE, "unknown_feature",
                 "sibilant",
                 "sonorant",
                 "err",
@@ -565,9 +549,7 @@ def test_top_error_tokens_with_suggested_uses_modal_suggestion():
                 "1",
                 "A",
                 0,
-                "s:1",
-                False,
-                "unknown_feature",
+                "s:1", OK_FALSE, "unknown_feature",
                 "voiced",
                 "voice",
                 "err",
@@ -576,9 +558,7 @@ def test_top_error_tokens_with_suggested_uses_modal_suggestion():
                 "1",
                 "A",
                 1,
-                "s:2",
-                False,
-                "unknown_feature",
+                "s:2", OK_FALSE, "unknown_feature",
                 "voiced",
                 "voice",
                 "err",
@@ -587,9 +567,7 @@ def test_top_error_tokens_with_suggested_uses_modal_suggestion():
                 "1",
                 "A",
                 2,
-                "s:3",
-                False,
-                "unknown_feature",
+                "s:3", OK_FALSE, "unknown_feature",
                 "voiced",
                 "voicedness",
                 "err",
@@ -608,9 +586,7 @@ def test_top_error_descriptions_from_dataframe():
                 "1",
                 "A",
                 "r0",
-                "s:1",
-                False,
-                "syntax_other",
+                "s:1", OK_FALSE, "syntax_other",
                 "",
                 "",
                 "",
@@ -620,9 +596,7 @@ def test_top_error_descriptions_from_dataframe():
                 "1",
                 "A",
                 "r1",
-                "s:2",
-                False,
-                "syntax_other",
+                "s:2", OK_FALSE, "syntax_other",
                 "",
                 "",
                 "",
@@ -632,9 +606,7 @@ def test_top_error_descriptions_from_dataframe():
                 "1",
                 "A",
                 "r2",
-                "s:3",
-                False,
-                "syntax_other",
+                "s:3", OK_FALSE, "syntax_other",
                 "",
                 "",
                 "",
@@ -668,9 +640,7 @@ def test_top_error_tokens_unlimited():
             "1",
             "A",
             i,
-            f"s:{i}",
-            False,
-            "unknown_grouping",
+            f"s:{i}", OK_FALSE, "unknown_grouping",
             token,
             "",
             "err",
@@ -689,18 +659,16 @@ def test_top_error_tokens_unlimited():
 
 def test_section_outcome_stats():
     rows = [
-        ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
-        ValidationRow("1", "A", "r1", "s:2", True, "", "", "", "", ""),
-        ValidationRow("2", "B", "r0", "s:3", True, "", "", "", "", ""),
-        ValidationRow("2", "B", 1, "s:4", False, "syntax_other", "", "", ""),
-        ValidationRow("3", "C", 0, "s:5", False, "syntax_other", "", "", ""),
+        ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", ""),
+        ValidationRow("1", "A", "r1", "s:2", OK_TRUE, "", "", "", "", ""),
+        ValidationRow("2", "B", "r0", "s:3", OK_TRUE, "", "", "", "", ""),
+        ValidationRow("2", "B", 1, "s:4", OK_FALSE, "syntax_other", "", "", ""),
+        ValidationRow("3", "C", 0, "s:5", OK_FALSE, "syntax_other", "", "", ""),
         ValidationRow(
             "9.9.9",
             "Skipped",
             "r0",
-            "s:6",
-            None,
-            SECTION_SKIPPED_FAILURE_CLASS,
+            "s:6", OK_SKIPPED, SECTION_SKIPPED_FAILURE_CLASS,
             "",
             "",
             "",
@@ -726,11 +694,11 @@ def test_section_outcome_stats_empty():
 
 def test_section_all_ok_stats():
     rows = [
-        ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
-        ValidationRow("1", "A", "r1", "s:2", True, "", "", "", "", ""),
-        ValidationRow("2", "B", "r0", "s:3", True, "", "", "", "", ""),
-        ValidationRow("2", "B", 1, "s:4", False, "syntax_other", "", "", ""),
-        ValidationRow("3", "C", 0, "s:5", False, "syntax_other", "", "", ""),
+        ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", ""),
+        ValidationRow("1", "A", "r1", "s:2", OK_TRUE, "", "", "", "", ""),
+        ValidationRow("2", "B", "r0", "s:3", OK_TRUE, "", "", "", "", ""),
+        ValidationRow("2", "B", 1, "s:4", OK_FALSE, "syntax_other", "", "", ""),
+        ValidationRow("3", "C", 0, "s:5", OK_FALSE, "syntax_other", "", "", ""),
     ]
     assert section_all_ok_stats(rows) == (1, 3, 100.0 / 3)
 
@@ -745,9 +713,7 @@ def test_summarize_inventory_common_errors():
             "1",
             "A",
             0,
-            "s:1",
-            False,
-            "unknown_character",
+            "s:1", OK_FALSE, "unknown_character",
             "→",
             "",
             "err",
@@ -756,9 +722,7 @@ def test_summarize_inventory_common_errors():
             "1",
             "A",
             1,
-            "s:2",
-            False,
-            "unknown_feature",
+            "s:2", OK_FALSE, "unknown_feature",
             "voiced",
             "voice",
             "err",
@@ -782,14 +746,12 @@ def test_summarize_inventory_common_errors():
 
 def test_summarize_inventory():
     rows = [
-        ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
+        ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", ""),
         ValidationRow(
             "1",
             "A",
             1,
-            "s:2",
-            False,
-            "syntax_other",
+            "s:2", OK_FALSE, "syntax_other",
             "",
             "",
             "err",
@@ -798,9 +760,7 @@ def test_summarize_inventory():
             "1",
             "A",
             2,
-            "s:3",
-            False,
-            "syntax_other",
+            "s:3", OK_FALSE, "syntax_other",
             "",
             "",
             "err",
@@ -865,22 +825,18 @@ def test_summarize_inventory_section_skipped():
             "9.9.9",
             "Skipped",
             "r0",
-            "s:1",
-            None,
-            SECTION_SKIPPED_FAILURE_CLASS,
+            "s:1", OK_SKIPPED, SECTION_SKIPPED_FAILURE_CLASS,
             "",
             "",
             "",
             "section skipped",
         ),
-        ValidationRow("1", "A", "r0", "s:2", True, "", "", "", "", ""),
+        ValidationRow("1", "A", "r0", "s:2", OK_TRUE, "", "", "", "", ""),
         ValidationRow(
             "1",
             "A",
             1,
-            "s:3",
-            False,
-            "syntax_other",
+            "s:3", OK_FALSE, "syntax_other",
             "",
             "",
             "err",
@@ -903,26 +859,22 @@ def test_summarize_inventory_section_skipped():
 
 def test_filter_inventory_by_ok_splits_success_and_error():
     rows = [
-        ValidationRow("1", "A", "r0", "file:1", True, "", "", "", "", ""),
+        ValidationRow("1", "A", "r0", "file:1", OK_TRUE, "", "", "", "", ""),
         ValidationRow(
             "1",
             "A",
             1,
-            "file:2",
-            False,
-            "syntax_other",
+            "file:2", OK_FALSE, "syntax_other",
             "",
             "",
             "err",
         ),
-        ValidationRow("1", "A", "r2", "file:3", True, "", "", "", "", ""),
+        ValidationRow("1", "A", "r2", "file:3", OK_TRUE, "", "", "", "", ""),
         ValidationRow(
             "9.9.9",
             "Skipped",
             "r3",
-            "file:4",
-            None,
-            SECTION_SKIPPED_FAILURE_CLASS,
+            "file:4", OK_SKIPPED, SECTION_SKIPPED_FAILURE_CLASS,
             "",
             "",
             "",
@@ -933,7 +885,7 @@ def test_filter_inventory_by_ok_splits_success_and_error():
             "A",
             "r4",
             "file:5",
-            None,
+            OK_SKIPPED,
             RULE_SKIPPED_FAILURE_CLASS,
             "",
             "",
@@ -956,19 +908,17 @@ def test_filter_inventory_by_ok_splits_success_and_error():
 def test_ok_flip_changelog_rows_emits_flips_by_source():
     previous = validation_rows_to_dataframe(
         [
-            ValidationRow("1", "A", "r0", "file:1", True, "", "", "", "", ""),
+            ValidationRow("1", "A", "r0", "file:1", OK_TRUE, "", "", "", "", ""),
             ValidationRow(
                 "1",
                 "A",
                 1,
-                "file:2",
-                False,
-                "syntax_other",
+                "file:2", OK_FALSE, "syntax_other",
                 "",
                 "",
                 "err",
             ),
-            ValidationRow("1", "A", "r2", "file:3", True, "", "", "", "", ""),
+            ValidationRow("1", "A", "r2", "file:3", OK_TRUE, "", "", "", "", ""),
         ]
     )
     # rule_id changed; file:3 ok unchanged; file:1 and file:2 flip
@@ -978,21 +928,19 @@ def test_ok_flip_changelog_rows_emits_flips_by_source():
                 "1",
                 "A",
                 "r5",
-                "file:1",
-                False,
-                "syntax_other",
+                "file:1", OK_FALSE, "syntax_other",
                 "",
                 "",
                 "err",
             ),
-            ValidationRow("1", "A", "r6", "file:2", True, "", "", "", "", ""),
-            ValidationRow("1", "A", "r7", "file:3", True, "", "", "", "", ""),
+            ValidationRow("1", "A", "r6", "file:2", OK_TRUE, "", "", "", "", ""),
+            ValidationRow("1", "A", "r7", "file:3", OK_TRUE, "", "", "", "", ""),
         ]
     )
     flips = ok_flip_changelog_rows(previous, current, timestamp="2026-08-06T12:00:00Z")
     assert list(flips.columns) == CHANGELOG_CSV_COLUMNS
     assert list(flips["source"]) == ["file:1", "file:2"]
-    assert list(flips["ok"]) == ["False", "True"]
+    assert list(flips["ok"]) == [OK_FALSE, OK_TRUE]
     assert list(flips["rule_id"]) == ["r5", "r6"]
     assert list(flips["timestamp"]) == [
         "2026-08-06T12:00:00Z",
@@ -1003,7 +951,7 @@ def test_ok_flip_changelog_rows_emits_flips_by_source():
 def test_ok_flip_changelog_rows_tolerates_previous_without_alt_idx():
     # Inventories written before ticket 66 have no ``alt_idx`` column.
     previous = validation_rows_to_dataframe(
-        [ValidationRow("1", "A", "r0", "file:1", True, "", "", "", "", "")]
+        [ValidationRow("1", "A", "r0", "file:1", OK_TRUE, "", "", "", "", "")]
     ).drop(columns=["alt_idx"])
     current = validation_rows_to_dataframe(
         [
@@ -1011,9 +959,7 @@ def test_ok_flip_changelog_rows_tolerates_previous_without_alt_idx():
                 "1",
                 "A",
                 0,
-                "file:1",
-                False,
-                "syntax_other",
+                "file:1", OK_FALSE, "syntax_other",
                 "",
                 "",
                 "err",
@@ -1023,20 +969,18 @@ def test_ok_flip_changelog_rows_tolerates_previous_without_alt_idx():
     flips = ok_flip_changelog_rows(previous, current, timestamp="2026-08-12T00:00:00Z")
     assert list(flips.columns) == CHANGELOG_CSV_COLUMNS
     assert list(flips["source"]) == ["file:1"]
-    assert list(flips["ok"]) == ["False"]
+    assert list(flips["ok"]) == [OK_FALSE]
 
 
 def test_ok_flip_changelog_rows_empty_when_ok_unchanged():
     df = validation_rows_to_dataframe(
         [
-            ValidationRow("1", "A", "r0", "file:1", True, "", "", "", "", ""),
+            ValidationRow("1", "A", "r0", "file:1", OK_TRUE, "", "", "", "", ""),
             ValidationRow(
                 "1",
                 "A",
                 1,
-                "file:2",
-                False,
-                "syntax_other",
+                "file:2", OK_FALSE, "syntax_other",
                 "",
                 "",
                 "err",
@@ -1050,7 +994,7 @@ def test_ok_flip_changelog_rows_empty_when_ok_unchanged():
 
 def test_ok_flip_changelog_rows_empty_without_previous_inventory():
     current = validation_rows_to_dataframe(
-        [ValidationRow("1", "A", "r0", "file:1", True, "", "", "", "", "")]
+        [ValidationRow("1", "A", "r0", "file:1", OK_TRUE, "", "", "", "", "")]
     )
     flips = ok_flip_changelog_rows(None, current, timestamp="2026-08-06T12:00:00Z")
     assert flips.empty
@@ -1065,14 +1009,12 @@ def test_load_inventory_csv_reads_success_error_and_skipped_splits(tmp_path: Pat
     write_filtered_inventory_csvs(
         validation_rows_to_dataframe(
             [
-                ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
+                ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", ""),
                 ValidationRow(
                     "1",
                     "A",
                     1,
-                    "s:2",
-                    False,
-                    "syntax_other",
+                    "s:2", OK_FALSE, "syntax_other",
                     "",
                     "",
                     "err",
@@ -1081,9 +1023,7 @@ def test_load_inventory_csv_reads_success_error_and_skipped_splits(tmp_path: Pat
                     "9.9.9",
                     "Skipped",
                     "r2",
-                    "s:3",
-                    None,
-                    SECTION_SKIPPED_FAILURE_CLASS,
+                    "s:3", OK_SKIPPED, SECTION_SKIPPED_FAILURE_CLASS,
                     "",
                     "",
                     "",
@@ -1102,14 +1042,12 @@ def test_load_inventory_csv_reads_success_error_and_skipped_splits(tmp_path: Pat
 def test_write_filtered_inventory_csvs(tmp_path: Path):
     df = validation_rows_to_dataframe(
         [
-            ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
+            ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", ""),
             ValidationRow(
                 "1",
                 "A",
                 1,
-                "s:2",
-                False,
-                "syntax_other",
+                "s:2", OK_FALSE, "syntax_other",
                 "",
                 "",
                 "err",
@@ -1119,7 +1057,7 @@ def test_write_filtered_inventory_csvs(tmp_path: Path):
                 "A",
                 "r2",
                 "s:3",
-                None,
+                OK_SKIPPED,
                 RULE_SKIPPED_FAILURE_CLASS,
                 "",
                 "",
@@ -1139,14 +1077,14 @@ def test_write_filtered_inventory_csvs(tmp_path: Path):
     assert len(list(csv.DictReader(error.open()))) == 1
     skipped_rows = list(csv.DictReader(skipped.open()))
     assert len(skipped_rows) == 1
-    assert skipped_rows[0]["ok"] == ""
+    assert int(skipped_rows[0]["ok"]) == OK_SKIPPED
 
 
 def test_append_ok_flip_changelog_writes_and_appends(tmp_path: Path):
     flips = ok_flip_changelog_rows(
         None,
         validation_rows_to_dataframe(
-            [ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", "")]
+            [ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", "")]
         ),
         timestamp="2026-08-06T12:00:00Z",
     )
@@ -1155,7 +1093,7 @@ def test_append_ok_flip_changelog_writes_and_appends(tmp_path: Path):
 
     flips = ok_flip_changelog_rows(
         validation_rows_to_dataframe(
-            [ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", "")]
+            [ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", "")]
         ),
         validation_rows_to_dataframe(
             [
@@ -1163,9 +1101,7 @@ def test_append_ok_flip_changelog_writes_and_appends(tmp_path: Path):
                     "1",
                     "A",
                     0,
-                    "s:1",
-                    False,
-                    "syntax_other",
+                    "s:1", OK_FALSE, "syntax_other",
                     "",
                     "",
                     "err",
@@ -1179,7 +1115,7 @@ def test_append_ok_flip_changelog_writes_and_appends(tmp_path: Path):
 
 def test_ok_flip_changelog_rows_emits_flip_to_skipped():
     previous = validation_rows_to_dataframe(
-        [ValidationRow("1", "A", "r0", "file:1", True, "", "", "", "", "")]
+        [ValidationRow("1", "A", "r0", "file:1", OK_TRUE, "", "", "", "", "")]
     )
     current = validation_rows_to_dataframe(
         [
@@ -1188,7 +1124,7 @@ def test_ok_flip_changelog_rows_emits_flip_to_skipped():
                 "A",
                 "r0",
                 "file:1",
-                None,
+                OK_SKIPPED,
                 RULE_SKIPPED_FAILURE_CLASS,
                 "",
                 "",
@@ -1199,7 +1135,50 @@ def test_ok_flip_changelog_rows_emits_flip_to_skipped():
     )
     flips = ok_flip_changelog_rows(previous, current, timestamp="2026-08-06T14:00:00Z")
     assert len(flips) == 1
-    assert flips.iloc[0]["ok"] == ""
+    assert flips.iloc[0]["ok"] == OK_SKIPPED
+
+
+def test_ok_flip_changelog_rows_empty_after_inventory_csv_roundtrip(tmp_path: Path):
+    rows = [
+        ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", ""),
+        ValidationRow(
+            "1",
+            "A",
+            "r1",
+            "s:2", OK_FALSE, "syntax_other",
+            "",
+            "",
+            "err",
+        ),
+        ValidationRow(
+            "9",
+            "S",
+            "r2",
+            "s:3",
+            OK_SKIPPED,
+            RULE_SKIPPED_FAILURE_CLASS,
+            "",
+            "",
+            "",
+            "held-out (commented rule)",
+        ),
+    ]
+    current = validation_rows_to_dataframe(rows)
+    write_filtered_inventory_csvs(current, tmp_path)
+    previous = load_inventory_csv(tmp_path)
+    flips = ok_flip_changelog_rows(previous, current, timestamp="2026-08-06T15:00:00Z")
+    assert flips.empty
+
+
+def test_coerce_ok_value_maps_legacy_and_numeric_literals():
+    assert _coerce_ok_value(True) == OK_TRUE
+    assert _coerce_ok_value(False) == OK_FALSE
+    assert _coerce_ok_value(1) == OK_TRUE
+    assert _coerce_ok_value(0) == OK_FALSE
+    assert _coerce_ok_value(2) == OK_SKIPPED
+    assert _coerce_ok_value("") == OK_SKIPPED
+    assert _coerce_ok_value("True") == OK_TRUE
+    assert _coerce_ok_value("False") == OK_FALSE
 
 
 def test_filter_inventory_by_ok_empty_dataframe():
@@ -1219,16 +1198,16 @@ def test_filter_inventory_by_ok_empty_dataframe():
         "expected",
     ),
     [
-        (True, True, True, True, True, "none"),
-        (True, False, True, None, None, "input"),
-        (False, False, True, None, None, "input"),
-        (False, True, False, None, None, "output"),
-        (False, True, True, False, None, "env"),
-        (False, True, True, None, False, "exception"),
-        (False, False, False, False, False, "input|output|env|exception"),
-        (False, False, True, False, None, "input|env"),
-        (False, True, True, True, True, "multi"),
-        (False, None, None, None, None, "multi"),
+        (OK_TRUE, True, True, True, True, "none"),
+        (OK_TRUE, False, True, None, None, "input"),
+        (OK_FALSE, False, True, None, None, "input"),
+        (OK_FALSE, True, False, None, None, "output"),
+        (OK_FALSE, True, True, False, None, "env"),
+        (OK_FALSE, True, True, None, False, "exception"),
+        (OK_FALSE, False, False, False, False, "input|output|env|exception"),
+        (OK_FALSE, False, True, False, None, "input|env"),
+        (OK_FALSE, True, True, True, True, "multi"),
+        (OK_FALSE, None, None, None, None, "multi"),
     ],
 )
 def test_derive_blame(
@@ -1258,7 +1237,7 @@ def test_filter_field_isolation_splits_success_and_error():
             "A",
             "r0",
             "s:1",
-            True,
+            OK_TRUE,
             True,
             True,
             None,
@@ -1278,7 +1257,7 @@ def test_filter_field_isolation_splits_success_and_error():
             "A",
             "r1",
             "s:2",
-            False,
+            OK_FALSE,
             False,
             True,
             None,
@@ -1298,7 +1277,7 @@ def test_filter_field_isolation_splits_success_and_error():
             "A",
             "r2",
             "s:3",
-            True,
+            OK_TRUE,
             False,
             True,
             None,
@@ -1318,7 +1297,7 @@ def test_filter_field_isolation_splits_success_and_error():
             "Skipped",
             "r3",
             "s:4",
-            None,
+            OK_SKIPPED,
             None,
             None,
             None,
@@ -1350,15 +1329,13 @@ def test_build_field_isolation_row_without_field_rule():
         "1",
         "A",
         "r0",
-        "s:1",
-        False,
-        "format_error",
+        "s:1", OK_FALSE, "format_error",
         "",
         "",
         "bad",
     )
     row = build_field_isolation_row(validation_row, None)
-    assert row.whole_ok is False
+    assert row.whole_ok == OK_FALSE
     assert row.input_ok is None
     assert row.blame == "multi"
 
@@ -1370,7 +1347,7 @@ def test_write_field_isolation_csvs_writes_success_error_and_skipped(tmp_path: P
             "A",
             "r0",
             "s:1",
-            True,
+            OK_TRUE,
             True,
             True,
             None,
@@ -1390,7 +1367,7 @@ def test_write_field_isolation_csvs_writes_success_error_and_skipped(tmp_path: P
             "A",
             "r1",
             "s:2",
-            False,
+            OK_FALSE,
             False,
             True,
             None,
@@ -1410,7 +1387,7 @@ def test_write_field_isolation_csvs_writes_success_error_and_skipped(tmp_path: P
             "Skipped",
             "r2",
             "s:3",
-            None,
+            OK_SKIPPED,
             None,
             None,
             None,
@@ -1438,12 +1415,12 @@ def test_write_field_isolation_csvs_writes_success_error_and_skipped(tmp_path: P
     assert error[0]["source"] == "s:2"
     assert len(skipped) == 1
     assert skipped[0]["source"] == "s:3"
-    assert skipped[0]["whole_ok"] == ""
+    assert int(skipped[0]["whole_ok"]) == OK_SKIPPED
 
 
 def test_summarize_inventory_links_field_isolation_csvs():
     validation_rows = [
-        ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
+        ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", ""),
     ]
     field_rows = [
         FieldIsolationRow(
@@ -1451,7 +1428,7 @@ def test_summarize_inventory_links_field_isolation_csvs():
             "A",
             "r1",
             "s:2",
-            False,
+            OK_FALSE,
             False,
             True,
             None,
@@ -1484,9 +1461,9 @@ def test_summarize_inventory_links_field_isolation_csvs():
 
 def test_summarize_inventory_blame_section_counts_whole_rule_failures_only():
     validation_rows = [
-        ValidationRow("1", "A", "r0", "s:1", True, "", "", "", "", ""),
-        ValidationRow("1", "A", "r1", "s:2", False, "", "", "", "", ""),
-        ValidationRow("1", "A", "r2", "s:3", False, "", "", "", "", ""),
+        ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", ""),
+        ValidationRow("1", "A", "r1", "s:2", OK_FALSE, "", "", "", "", ""),
+        ValidationRow("1", "A", "r2", "s:3", OK_FALSE, "", "", "", "", ""),
     ]
     field_rows = [
         FieldIsolationRow(
@@ -1494,7 +1471,7 @@ def test_summarize_inventory_blame_section_counts_whole_rule_failures_only():
             "A",
             "r0",
             "s:1",
-            True,
+            OK_TRUE,
             False,
             True,
             None,
@@ -1514,7 +1491,7 @@ def test_summarize_inventory_blame_section_counts_whole_rule_failures_only():
             "A",
             "r1",
             "s:2",
-            False,
+            OK_FALSE,
             True,
             True,
             False,
@@ -1534,7 +1511,7 @@ def test_summarize_inventory_blame_section_counts_whole_rule_failures_only():
             "A",
             "r2",
             "s:3",
-            False,
+            OK_FALSE,
             True,
             True,
             None,
@@ -1573,7 +1550,7 @@ def test_count_field_blame_categories_splits_composite_blame():
             "A",
             "r0",
             "s:1",
-            False,
+            OK_FALSE,
             False,
             False,
             None,
@@ -1593,7 +1570,7 @@ def test_count_field_blame_categories_splits_composite_blame():
             "A",
             "r1",
             "s:2",
-            False,
+            OK_FALSE,
             True,
             True,
             None,
@@ -1631,9 +1608,7 @@ def test_build_field_isolation_row_unknown_feature_on_input(mock_validate_part):
         "1",
         "A",
         "r0",
-        "s:1",
-        False,
-        "unknown_feature",
+        "s:1", OK_FALSE, "unknown_feature",
         "voiced",
         "voice",
         "whole fail",
@@ -1659,9 +1634,7 @@ def test_build_field_isolation_row_missing_underscore_on_env(mock_validate_part)
         "1",
         "A",
         "r0",
-        "s:1",
-        False,
-        "expected_underscore",
+        "s:1", OK_FALSE, "expected_underscore",
         "",
         "",
         "whole fail",
@@ -1688,9 +1661,7 @@ def test_build_field_isolation_row_two_fields_fail(mock_validate_part):
         "1",
         "A",
         "r0",
-        "s:1",
-        False,
-        "syntax_other",
+        "s:1", OK_FALSE, "syntax_other",
         "",
         "",
         "whole fail",
@@ -1705,9 +1676,7 @@ def test_field_isolation_integration_multi_blame():
         "1",
         "A",
         "r0",
-        "s:1",
-        False,
-        "runtime_other",
+        "s:1", OK_FALSE, "runtime_other",
         "",
         "",
         "uneven set",
@@ -1725,6 +1694,6 @@ def test_field_isolation_integration_multi_blame():
         probe_words=None,
     )
     assert len(rows) == 1
-    assert rows[0].ok is False
+    assert rows[0].ok == OK_FALSE
     field_rows = field_isolation_rows_for_validation_rows(rows, targets)
     assert field_rows[0].blame == "multi"

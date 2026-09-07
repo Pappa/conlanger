@@ -13,7 +13,7 @@ import pytest
 from helpers import default_index_parser
 
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.index_inventory import validate_index_rule
+from conlanger.tools.index_inventory import OK_FALSE, OK_TRUE, validate_index_rule
 from conlanger.tools.rules import DiachronicSeries
 from tests.conftest import ASCA_INSTALLED
 from tests.fixtures.minimal_mappings import minimal_compiler_config
@@ -178,7 +178,7 @@ def test_e2e_minimal_html_fixture_compile_and_validate(tmp_path: Path):
         )
 
     assert len(rows) == 2
-    assert all(row.ok for row in rows)
+    assert all(row.ok == OK_TRUE for row in rows)
     assert rows[0].failure_class == ""
     assert rows[0].failure_class == ""
 
@@ -265,14 +265,14 @@ def test_e2e_smoke_pipeline_validate(
         assert rules[0]["raw"] == "sₓ → ʃ"
 
     if case_id == "held-out-parse":
-        assert not rows[0].ok
+        assert rows[0].ok == OK_FALSE
         assert rows[0].failure_class != "format_error"
         assert "no compile steps" not in rows[0].description
         return
 
     if expect_ok:
-        assert all(row.ok for row in rows), (
+        assert all(row.ok == OK_TRUE for row in rows), (
             f"{case_id}: {rows[0].description if rows else 'no rules'}"
         )
     else:
-        assert any(not row.ok for row in rows), case_id
+        assert any(row.ok == OK_FALSE for row in rows), case_id

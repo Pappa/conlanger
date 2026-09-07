@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import random
 
-from conlanger.tools.index_inventory import validate_index_rule
+from conlanger.tools.index_inventory import OK_TRUE, validate_index_rule
 from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
 
 
@@ -123,4 +123,4 @@ def test_inventory_always_applies_sporadic_rules():
         probe_words=None,
     )
     assert len(rows) == 1
-    assert rows[0].ok is True
+    assert rows[0].ok == OK_TRUE
