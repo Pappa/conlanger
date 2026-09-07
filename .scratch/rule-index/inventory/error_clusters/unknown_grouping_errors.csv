@@ -4,7 +4,6 @@ section_index,rule_id,error_token,rule
 17.1.1,Gheg-Albanian-kʷ_3,B,"kʷ > k // _B? | ^ @ Rule 1, Line 1"
 17.1.2,Tosk-Albanian-kʷ_2,B,"kʷ > c / _B? | ^ @ Rule 1, Line 1"
 17.1.2,Tosk-Albanian-kʷ_3,B,"kʷ > k // _B? | ^ @ Rule 1, Line 1"
-17.2.3,Lycian-kʷ_2,M,"kʷ > k / _V:[+front], in Milyan | ^ @ Rule 1, Line 1"
 17.5.1,Old-Irish-p-t-k-kʷ-b-d-ɡ-m-n-l-r-s,M,"p t k kʷ b d ɡ m n l r s > f θ x xʷ v ð ɣ M N L [+son,-syll] h / V(#)_{[+son,-syll],V} | ^ @ Rule 1, Line 1"
 17.7.2.3,Standard-German-∅,M,"∅ > ə / M_r$ | ^ @ Rule 1, Line 1"
 17.11.1,Polish-Cʲ_2,M,"C:[+cor,+dist] > C in select words due to prestige influence of Czech in the Middle O:[+delrel]ges | ^ @ Rule 1, Line 1"

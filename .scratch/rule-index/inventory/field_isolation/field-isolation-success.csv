@@ -2656,8 +2656,10 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.1.1,Proto-Indo-European to Gheg Albanian,Gheg-Albanian-ḱ_3,0,index_diachronica_original.html:4962,1,,True,True,,,,,,,,,,,none
 17.1.1,Proto-Indo-European to Gheg Albanian,Gheg-Albanian-ḱ_3,1,index_diachronica_original.html:4962,1,,True,True,,,,,,,,,,,none
 17.1.1,Proto-Indo-European to Gheg Albanian,Gheg-Albanian-ḱ_4,,index_diachronica_original.html:4963,1,,True,True,,,,,,,,,,,none
+17.1.1,Proto-Indo-European to Gheg Albanian,Gheg-Albanian-ɡ́ʱ,,index_diachronica_original.html:4967,1,,True,True,True,,,,,,,,,,none
 17.1.1,Proto-Indo-European to Gheg Albanian,Gheg-Albanian-ɡʷʱ,0,index_diachronica_original.html:4968,1,,True,True,,,,,,,,,,,none
 17.1.1,Proto-Indo-European to Gheg Albanian,Gheg-Albanian-ɡʷʱ,1,index_diachronica_original.html:4968,1,,True,True,,,,,,,,,,,none
+17.1.1,Proto-Indo-European to Gheg Albanian,Gheg-Albanian-bʱ-dʱ-ɡ́ʱ,,index_diachronica_original.html:4969,1,,True,True,,,,,,,,,,,none
 17.1.1,Proto-Indo-European to Gheg Albanian,Gheg-Albanian-s,,index_diachronica_original.html:4970,1,,True,True,True,,,,,,,,,,none
 17.1.1,Proto-Indo-European to Gheg Albanian,Gheg-Albanian-s_2,,index_diachronica_original.html:4971,1,,True,True,True,,,,,,,,,,none
 17.1.1,Proto-Indo-European to Gheg Albanian,Gheg-Albanian-sd,,index_diachronica_original.html:4972,1,,True,True,True,True,,,,,,,,,none
@@ -2685,8 +2687,10 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.1.2,Proto-Indo-European to Tosk Albanian,Tosk-Albanian-ḱ_3,0,index_diachronica_original.html:5001,1,,True,True,,,,,,,,,,,none
 17.1.2,Proto-Indo-European to Tosk Albanian,Tosk-Albanian-ḱ_3,1,index_diachronica_original.html:5001,1,,True,True,,,,,,,,,,,none
 17.1.2,Proto-Indo-European to Tosk Albanian,Tosk-Albanian-ḱ_4,,index_diachronica_original.html:5002,1,,True,True,,,,,,,,,,,none
+17.1.2,Proto-Indo-European to Tosk Albanian,Tosk-Albanian-ɡ́ʱ,,index_diachronica_original.html:5006,1,,True,True,True,,,,,,,,,,none
 17.1.2,Proto-Indo-European to Tosk Albanian,Tosk-Albanian-ɡʷʱ,0,index_diachronica_original.html:5007,1,,True,True,,,,,,,,,,,none
 17.1.2,Proto-Indo-European to Tosk Albanian,Tosk-Albanian-ɡʷʱ,1,index_diachronica_original.html:5007,1,,True,True,,,,,,,,,,,none
+17.1.2,Proto-Indo-European to Tosk Albanian,Tosk-Albanian-bʱ-dʱ-ɡ́ʱ,,index_diachronica_original.html:5008,1,,True,True,,,,,,,,,,,none
 17.1.2,Proto-Indo-European to Tosk Albanian,Tosk-Albanian-s,,index_diachronica_original.html:5009,1,,True,True,True,,,,,,,,,,none
 17.1.2,Proto-Indo-European to Tosk Albanian,Tosk-Albanian-s_2,,index_diachronica_original.html:5010,1,,True,True,True,,,,,,,,,,none
 17.1.2,Proto-Indo-European to Tosk Albanian,Tosk-Albanian-sd,,index_diachronica_original.html:5011,1,,True,True,True,True,,,,,,,,,none
@@ -2759,6 +2763,9 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.2.3,Common Anatolian to Lycian,"Lycian-NF+voice,T",,index_diachronica_original.html:5102,1,,True,True,,,,,,,,,,,none
 17.2.3,Common Anatolian to Lycian,Lycian-d,,index_diachronica_original.html:5103,1,,True,True,True,,,,,,,,,,none
 17.2.3,Common Anatolian to Lycian,Lycian-kʷ,,index_diachronica_original.html:5104,1,,True,True,True,,,,,,,,,,none
+17.2.3,Common Anatolian to Lycian,Lycian-kʷ_2,,index_diachronica_original.html:5105,1,,True,True,True,,,,,,,,,,none
+17.2.3,Common Anatolian to Lycian,"Lycian-ɡ́,ɡ",,index_diachronica_original.html:5106,1,,True,True,True,,,,,,,,,,none
+17.2.3,Common Anatolian to Lycian,"Lycian-ɡ́,ɡ_2",,index_diachronica_original.html:5107,1,,True,True,True,,,,,,,,,,none
 17.2.3,Common Anatolian to Lycian,Lycian-ɡ,,index_diachronica_original.html:5108,1,,True,True,True,,,,,,,,,,none
 17.2.3,Common Anatolian to Lycian,Lycian-j,,index_diachronica_original.html:5109,1,,True,True,True,,,,,,,,,,none
 17.2.3,Common Anatolian to Lycian,Lycian-s,,index_diachronica_original.html:5110,1,,True,True,True,,,,,,,,,,none
@@ -2823,7 +2830,10 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-kʷ,,index_diachronica_original.html:5192,1,,True,True,True,,,,,,,,,,none
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-t-kʷ,,index_diachronica_original.html:5193,1,,True,True,True,,,,,,,,,,none
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-p-ḱ-kʷ,,index_diachronica_original.html:5194,1,,True,True,,,,,,,,,,,none
+17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-ɡ́,,index_diachronica_original.html:5195,1,,True,True,,,,,,,,,,,none
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-b-d-ɡʷ,,index_diachronica_original.html:5196,1,,True,True,,,,,,,,,,,none
+17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʷʱ,,index_diachronica_original.html:5197,1,,True,True,True,,,,,,,,,,none
+17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʱ-ɡʷʱ,,index_diachronica_original.html:5198,1,,True,True,,,,,,,,,,,none
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-j,,index_diachronica_original.html:5199,1,,True,True,True,,,,,,,,,,none
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-j_2,,index_diachronica_original.html:5200,1,,True,True,,,,,,,,,,,none
 17.3.1,Proto-Indo-European to Artsakh Armenian,"Artsakh-Armenian-sk,ks-kj",,index_diachronica_original.html:5201,1,,True,True,,,,,,,,,,,none
@@ -2850,8 +2860,10 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-kʷ,,index_diachronica_original.html:5229,1,,True,True,True,,,,,,,,,,none
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-t-kʷ,,index_diachronica_original.html:5230,1,,True,True,True,,,,,,,,,,none
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-p-ḱ-kʷ,,index_diachronica_original.html:5231,1,,True,True,,,,,,,,,,,none
+17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-ɡ́,,index_diachronica_original.html:5232,1,,True,True,,,,,,,,,,,none
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-b-d-ɡʷ,,index_diachronica_original.html:5233,1,,True,True,,,,,,,,,,,none
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-ɡʷʱ,,index_diachronica_original.html:5234,1,,True,True,True,,,,,,,,,,none
+17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʱ-ɡʷʱ,,index_diachronica_original.html:5235,1,,True,True,,,,,,,,,,,none
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-j,,index_diachronica_original.html:5236,1,,True,True,True,,,,,,,,,,none
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-j_2,,index_diachronica_original.html:5237,1,,True,True,,,,,,,,,,,none
 17.3.2,Proto-Indo-European to Erevan Armenian,"Erevan-Armenian-sk,ks-kj",,index_diachronica_original.html:5238,1,,True,True,,,,,,,,,,,none
@@ -2877,8 +2889,11 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-kʷ,,index_diachronica_original.html:5265,1,,True,True,True,,,,,,,,,,none
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-t-kʷ,,index_diachronica_original.html:5266,1,,True,True,True,,,,,,,,,,none
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-p-ḱ-kʷ,,index_diachronica_original.html:5267,1,,True,True,,,,,,,,,,,none
+17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-ɡ́,,index_diachronica_original.html:5268,1,,True,True,,,,,,,,,,,none
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-b-d-ɡʷ,,index_diachronica_original.html:5269,1,,True,True,,,,,,,,,,,none
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-ɡʷʱ,,index_diachronica_original.html:5270,1,,True,True,True,,,,,,,,,,none
+17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-bʱ-ɡ́ʱ-ɡʷʱ,,index_diachronica_original.html:5271,1,,True,True,True,,,,,,,,,,none
+17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʱ-ɡʷʱ,,index_diachronica_original.html:5272,1,,True,True,,,,,,,,,,,none
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-j,,index_diachronica_original.html:5273,1,,True,True,True,,,,,,,,,,none
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-j_2,,index_diachronica_original.html:5274,1,,True,True,,,,,,,,,,,none
 17.3.3,Proto-Indo-European to Istanbul Armenian,"Istanbul-Armenian-sk,ks-kj",,index_diachronica_original.html:5275,1,,True,True,,,,,,,,,,,none
@@ -2905,7 +2920,10 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-kʷ,,index_diachronica_original.html:5303,1,,True,True,True,,,,,,,,,,none
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-t-kʷ,,index_diachronica_original.html:5304,1,,True,True,True,,,,,,,,,,none
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-p-ḱ-kʷ,,index_diachronica_original.html:5305,1,,True,True,,,,,,,,,,,none
+17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-ɡ́,,index_diachronica_original.html:5306,1,,True,True,,,,,,,,,,,none
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-b-d-ɡʷ,,index_diachronica_original.html:5307,1,,True,True,,,,,,,,,,,none
+17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʷʱ,,index_diachronica_original.html:5308,1,,True,True,True,,,,,,,,,,none
+17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʱ-ɡʷʱ,,index_diachronica_original.html:5309,1,,True,True,,,,,,,,,,,none
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-j,,index_diachronica_original.html:5310,1,,True,True,True,,,,,,,,,,none
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-j_2,,index_diachronica_original.html:5311,1,,True,True,,,,,,,,,,,none
 17.3.4,Proto-Indo-European to Kharpert Armenian,"Kharpert-Armenian-sk,ks-kj",,index_diachronica_original.html:5312,1,,True,True,,,,,,,,,,,none
@@ -2932,7 +2950,9 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-kʷ,,index_diachronica_original.html:5340,1,,True,True,True,,,,,,,,,,none
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-t-kʷ,,index_diachronica_original.html:5341,1,,True,True,True,,,,,,,,,,none
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-p-ḱ-kʷ,,index_diachronica_original.html:5342,1,,True,True,,,,,,,,,,,none
+17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-ɡ́,,index_diachronica_original.html:5343,1,,True,True,,,,,,,,,,,none
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-b-d-ɡʷ,,index_diachronica_original.html:5344,1,,True,True,,,,,,,,,,,none
+17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʱ-ɡʷʱ,,index_diachronica_original.html:5345,1,,True,True,,True,,,,,,,,,none
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-j,,index_diachronica_original.html:5346,1,,True,True,True,,,,,,,,,,none
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-j_2,,index_diachronica_original.html:5347,1,,True,True,,,,,,,,,,,none
 17.3.5,Proto-Indo-European to Sebastia Armenian,"Sebastia-Armenian-sk,ks-kj",,index_diachronica_original.html:5348,1,,True,True,,,,,,,,,,,none
@@ -2959,8 +2979,12 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-kʷ,,index_diachronica_original.html:5376,1,,True,True,True,,,,,,,,,,none
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-t-kʷ,,index_diachronica_original.html:5377,1,,True,True,True,,,,,,,,,,none
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-p-ḱ-kʷ,,index_diachronica_original.html:5378,1,,True,True,,,,,,,,,,,none
+17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-ɡ́,,index_diachronica_original.html:5379,1,,True,True,,,,,,,,,,,none
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-b-d-ɡʷ,,index_diachronica_original.html:5380,1,,True,True,,,,,,,,,,,none
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-ɡʷʱ,,index_diachronica_original.html:5381,1,,True,True,True,,,,,,,,,,none
+17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-bʱ-ɡ́ʱ-ɡʷʱ,,index_diachronica_original.html:5382,1,,True,True,True,,,,,,,,,,none
+17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʱ-ɡʷʱ,,index_diachronica_original.html:5383,1,,True,True,True,,,,,,,,,,none
+17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʱ-ɡʷʱ_2,,index_diachronica_original.html:5384,1,,True,True,,,,,,,,,,,none
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-j,,index_diachronica_original.html:5385,1,,True,True,True,,,,,,,,,,none
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-j_2,,index_diachronica_original.html:5386,1,,True,True,,,,,,,,,,,none
 17.3.6,Proto-Indo-European to Southeast Armenian,"Southeast-Armenian-sk,ks-kj",,index_diachronica_original.html:5387,1,,True,True,,,,,,,,,,,none
@@ -2987,8 +3011,11 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-kʷ,,index_diachronica_original.html:5415,1,,True,True,True,,,,,,,,,,none
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-t-kʷ,,index_diachronica_original.html:5416,1,,True,True,True,,,,,,,,,,none
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-p-ḱ-kʷ,,index_diachronica_original.html:5417,1,,True,True,,,,,,,,,,,none
+17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-ɡ́,,index_diachronica_original.html:5418,1,,True,True,,,,,,,,,,,none
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-b-d-ɡʷ,,index_diachronica_original.html:5419,1,,True,True,,,,,,,,,,,none
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-ɡʷʱ,,index_diachronica_original.html:5420,1,,True,True,True,,,,,,,,,,none
+17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-bʱ-ɡ́ʱ-ɡʷʱ,,index_diachronica_original.html:5421,1,,True,True,True,,,,,,,,,,none
+17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʱ-ɡʷʱ,,index_diachronica_original.html:5422,1,,True,True,,,,,,,,,,,none
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-j,,index_diachronica_original.html:5423,1,,True,True,True,,,,,,,,,,none
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-j_2,,index_diachronica_original.html:5424,1,,True,True,,,,,,,,,,,none
 17.3.7,Proto-Indo-European to Southwest Armenian,"Southwest-Armenian-sk,ks-kj",,index_diachronica_original.html:5425,1,,True,True,,,,,,,,,,,none
@@ -3001,6 +3028,8 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-VN,,index_diachronica_original.html:5432,1,,,,,,,,,,,,,,none
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-N_2,,index_diachronica_original.html:5433,1,,True,True,True,,,,,,,,,,none
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-m̩-n̩-r̩-l̩,,index_diachronica_original.html:5435,1,,True,True,,,,,,,,,,,none
+17.4.1,Proto-Indo-European to Avestan,Avestan_2-bʱ-dʱ-ɡ́ʱ,,index_diachronica_original.html:5445,1,,True,True,,,,,,,,,,,none
+17.4.1,Proto-Indo-European to Avestan,Avestan_2-ḱ-ɡ́,,index_diachronica_original.html:5446,1,,True,True,,,,,,,,,,,none
 17.4.1,Proto-Indo-European to Avestan,Avestan_2-rt,,index_diachronica_original.html:5449,1,,True,True,,,,,,,,,,,none
 17.4.1,Proto-Indo-European to Avestan,Avestan_2-s,0,index_diachronica_original.html:5450,1,,True,True,,,,,,,,,,,none
 17.4.1,Proto-Indo-European to Avestan,Avestan_2-s,1,index_diachronica_original.html:5450,1,,True,True,,,,,,,,,,,none
@@ -3129,6 +3158,8 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.6,Proto-Indo-European to Dacian,Dacian-oi-wo-wj-ow,,index_diachronica_original.html:5621,1,,True,True,,,,,,,,,,,none
 17.6,Proto-Indo-European to Dacian,Dacian-ei,0,index_diachronica_original.html:5622,1,,True,True,,,,,,,,,,,none
 17.6,Proto-Indo-European to Dacian,Dacian-ei,1,index_diachronica_original.html:5622,1,,True,True,,,,,,,,,,,none
+17.6,Proto-Indo-European to Dacian,Dacian-bʱ-dʱ-ɡ́ʱ-ɡʱ-ɡʷʱ,,index_diachronica_original.html:5623,1,,True,True,,,,,,,,,,,none
+17.6,Proto-Indo-European to Dacian,Dacian-ḱ-ɡ́,,index_diachronica_original.html:5624,1,,True,True,,,,,,,,,,,none
 17.6,Proto-Indo-European to Dacian,"Dacian-kʷ,kw-ɡʷ,ɡw_2",,index_diachronica_original.html:5626,1,,True,True,,True,,,,,,,,,none
 17.7,Proto-Indo-European to Common Germanic,Common-Germanic-bʱ-dʱ-ɡʱ,,index_diachronica_original.html:5631,1,,True,True,,,,,,,,,,,none
 17.7,Proto-Indo-European to Common Germanic,Common-Germanic-b-d-ɡ,,index_diachronica_original.html:5632,1,,True,True,,,,,,,,,,,none
@@ -4045,6 +4076,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.8.10,Proto-Indo-European to Mycenaean Greek,Mycenaean-Greek-kʷ-kʰʷ-ɡʷ_4,,index_diachronica_original.html:6789,1,,True,True,True,,,,,,,,,,none
 17.8.10,Proto-Indo-European to Mycenaean Greek,Mycenaean-Greek-ts,,index_diachronica_original.html:6790,1,,True,True,,,,,,,,,,,none
 17.8.10,Proto-Indo-European to Mycenaean Greek,Mycenaean-Greek-h,,index_diachronica_original.html:6791,1,,True,True,,,,,,,,,,,none
+17.9,Proto-Indo-European to Hittite,Hittite_2-ḱ-ɡ́-ɡ́ʱ,,index_diachronica_original.html:6796,1,,True,True,,,,,,,,,,,none
 17.9,Proto-Indo-European to Hittite,Hittite_2-bʱ-dʱ-ɡʱ,,index_diachronica_original.html:6797,1,,True,True,,,,,,,,,,,none
 17.9,Proto-Indo-European to Hittite,Hittite_2-kʷ-ɡʷ-ɡʷʱ,,index_diachronica_original.html:6798,1,,True,True,,,,,,,,,,,none
 17.9,Proto-Indo-European to Hittite,Hittite_2-t,,index_diachronica_original.html:6799,1,,True,True,True,,,,,,,,,,none
@@ -4396,6 +4428,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.12.1.1,Proto-Indo-European to Latin,Latin-dʱ_3,,index_diachronica_original.html:7267,1,,True,True,True,,,,,,,,,,none
 17.12.1.1,Proto-Indo-European to Latin,Latin-dʱ_4,,index_diachronica_original.html:7268,1,,True,True,True,,,,,,,,,,none
 17.12.1.1,Proto-Indo-European to Latin,Latin-dʱ_5,,index_diachronica_original.html:7269,1,,True,True,,,,,,,,,,,none
+17.12.1.1,Proto-Indo-European to Latin,Latin-ḱ-ɡ́,,index_diachronica_original.html:7270,1,,True,True,,,,,,,,,,,none
 17.12.1.1,Proto-Indo-European to Latin,Latin-ɡʱ,,index_diachronica_original.html:7271,1,,True,True,True,,,,,,,,,,none
 17.12.1.1,Proto-Indo-European to Latin,Latin-ɡ,,index_diachronica_original.html:7272,1,,True,True,True,,,,,,,,,,none
 17.12.1.1,Proto-Indo-European to Latin,Latin-kʷ,,index_diachronica_original.html:7273,1,,True,True,True,,,,,,,,,,none
@@ -4991,6 +5024,8 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-s,,index_diachronica_original.html:8221,1,,True,True,True,,,,,,,,,,none
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-kθ,,index_diachronica_original.html:8222,1,,True,True,,,,,,,,,,,none
 17.12.2,Proto-Italic to Proto-Sibellian,Proto-Sibellian-t,,index_diachronica_original.html:8228,1,,True,True,,,,,,,,,,,none
+17.12.2,Proto-Italic to Proto-Sibellian,Proto-Sibellian-ḱ-ɡ́-kʷ-ɡʷ,,index_diachronica_original.html:8229,1,,True,True,,,,,,,,,,,none
+17.12.2,Proto-Italic to Proto-Sibellian,"Proto-Sibellian-ɡ́ʰ,x-ɸ,θ,ɡʷʰ",,index_diachronica_original.html:8230,1,,True,True,,,,,,,,,,,none
 17.12.2,Proto-Italic to Proto-Sibellian,Proto-Sibellian-r̥,,index_diachronica_original.html:8231,1,,True,True,True,,,,,,,,,,none
 17.12.2,Proto-Italic to Proto-Sibellian,Proto-Sibellian-eu,,index_diachronica_original.html:8232,1,,True,True,,,,,,,,,,,none
 17.12.2.1,Proto-Sibellian to Oscan,Oscan-z,,index_diachronica_original.html:8238,1,,True,True,,,,,,,,,,,none

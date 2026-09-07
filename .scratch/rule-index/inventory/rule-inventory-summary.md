@@ -6,14 +6,14 @@
 - Rows: **9820** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8614** (87.7%)
-- Fail: **668** (6.8%)
+- OK: **8649** (88.1%)
+- Fail: **633** (6.4%)
 - Skipped: **538** (5.5%)
 
 ## Sections
 
-- All OK: **439 / 714** (61.5%)
-- Some OK: **255 / 714** (35.7%)
+- All OK: **441 / 714** (61.8%)
+- Some OK: **253 / 714** (35.4%)
 - None OK: **3 / 714** (0.4%)
 - Sections skipped: **17 / 714** (2.4%)
 
@@ -22,16 +22,16 @@
 | count | failure_class |
 |------:|---------------|
 | 149 | `expected_underscore` |
-| 148 | `unknown_character` |
+| 115 | `unknown_character` |
 | 47 | `invalid_ipa` |
 | 46 | `missing_slash_output_env` |
 | 40 | `prose_or_expected_arrow` |
 | 35 | `expected_number` |
-| 34 | `expected_ipa` |
+| 33 | `expected_ipa` |
 | 31 | `syntax_other` |
 | 23 | `unknown_feature` |
 | 22 | `nested_brackets` |
-| 16 | `unknown_grouping` |
+| 15 | `unknown_grouping` |
 | 14 | `floating_diacritic` |
 | 12 | `stuff_after_word_bound` |
 | 10 | `empty_io_panic` |
@@ -89,15 +89,15 @@
 
 | count | error_token |
 |------:|-------------|
-| 35 | `́` |
 | 22 | `̣` |
 | 13 | `₂` |
 | 8 | `̊` |
 | 7 | `ː` |
+| 6 | `ŕ` |
 | 6 | `͜` |
 | 6 | `̺` |
-| 6 | `ŕ` |
 | 5 | `ₙ` |
+| 4 | `̂` |
 | 4 | `̻` |
 ### unknown_character (description)
 
@@ -109,7 +109,7 @@
 
 | count | error_token |
 |------:|-------------|
-| 7 | `M` |
+| 6 | `M` |
 | 4 | `B` |
 | 3 | `Y` |
 | 1 | `I` |
@@ -232,9 +232,9 @@
 
 | count | error_token |
 |------:|-------------|
-| 6 | `∅` |
-| 5 | `>` |
 | 5 | `(` |
+| 5 | `∅` |
+| 5 | `>` |
 | 3 | `*` |
 | 3 | `ʷ` |
 | 3 | `…` |
@@ -263,9 +263,9 @@
 
 | count | error_token |
 |------:|-------------|
-| 18 | `)` |
+| 19 | `)` |
 | 11 | `:` |
-| 6 | `(` |
+| 5 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
 | 1 | `ˤ` |
@@ -395,9 +395,9 @@
 
 | count | blame |
 |------:|-------|
-| 262 | `env` |
-| 244 | `input` |
-| 136 | `output` |
+| 261 | `env` |
+| 210 | `input` |
+| 135 | `output` |
 | 79 | `exception` |
 | 44 | `multi` |
 

@@ -285,6 +285,10 @@
   reason: replace prose
 - from: " (seems to be a sporadic change"
   to: " ; (seems to be a sporadic change"
+- from: ", in Milyan"
+  to: " ; , in Milyan"
+- from: ", in Gilyan"
+  to: " ; , in Gilyan"
   reason: comment
 - from: " / in "
   to: " / "

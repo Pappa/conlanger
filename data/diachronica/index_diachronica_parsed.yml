@@ -20088,7 +20088,7 @@ sections:
     rule_id: Gheg-Albanian-kʷ_3
     exception: _B?
   - stages:
-    - ɡ́(ʱ)
+    - ɡʲ(ʱ)
     - d
     env: $_C[+strident]
     raw: ɡ́(ʱ) → d / %_C[+sibilant]
@@ -20101,7 +20101,7 @@ sections:
     source: index_diachronica_original.html:4968
     rule_id: Gheg-Albanian-ɡʷʱ
   - stages:
-    - bʱ dʱ ɡ́(ʱ)
+    - bʱ dʱ ɡʲ(ʱ)
     - b d dh
     raw: bʱ dʱ ɡ́(ʱ) → b d dh
     source: index_diachronica_original.html:4969
@@ -20331,7 +20331,7 @@ sections:
     rule_id: Tosk-Albanian-kʷ_3
     exception: _B?
   - stages:
-    - ɡ́(ʱ)
+    - ɡʲ(ʱ)
     - d
     env: $_C[+strident]
     raw: ɡ́(ʱ) → d / %_C[+sibilant]
@@ -20344,7 +20344,7 @@ sections:
     source: index_diachronica_original.html:5007
     rule_id: Tosk-Albanian-ɡʷʱ
   - stages:
-    - bʱ dʱ ɡ́(ʱ)
+    - bʱ dʱ ɡʲ(ʱ)
     - b d dh
     raw: bʱ dʱ ɡ́(ʱ) → b d dh
     source: index_diachronica_original.html:5008
@@ -20921,22 +20921,23 @@ sections:
     raw: kʷ → t / _E
     source: index_diachronica_original.html:5104
     rule_id: Lycian-kʷ
-  - stages:
+  - comment: ', in Milyan'
+    stages:
     - kʷ
     - k
-    env: _E, in Milyan
+    env: _E
     raw: kʷ → k / _E, in Milyan
     source: index_diachronica_original.html:5105
     rule_id: Lycian-kʷ_2
   - stages:
-    - '{ɡ́,ɡ}'
+    - '{ɡʲ,ɡ}'
     - j
     env: _e(ː)
     raw: '{ɡ́,ɡ} → j / _e(ː)'
     source: index_diachronica_original.html:5106
     rule_id: Lycian-ɡ́,ɡ
   - stages:
-    - '{ɡ́,ɡ}'
+    - '{ɡʲ,ɡ}'
     - ∅
     env: _i(ː)
     raw: '{ɡ́,ɡ} → ∅ / _i(ː)'
@@ -21443,7 +21444,7 @@ sections:
     rule_id: Artsakh-Armenian-p-ḱ-kʷ
   - comment: (?)
     stages:
-    - ɡ́
+    - ɡʲ
     - ts
     raw: ɡ́ → ts (?)
     source: index_diachronica_original.html:5195
@@ -21456,14 +21457,14 @@ sections:
     source: index_diachronica_original.html:5196
     rule_id: Artsakh-Armenian-b-d-ɡʷ
   - stages:
-    - bʱ dʱ ɡ́ʱ ɡʷʱ
+    - bʱ dʱ ɡʲʱ ɡʷʱ
     - p t j k
     env: '#_'
     raw: 'bʱ dʱ ɡ́ʱ ɡʷʱ → p t j k / #_'
     source: index_diachronica_original.html:5197
     rule_id: Artsakh-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʷʱ
   - stages:
-    - bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ
+    - bʱ dʱ ɡʲʱ ɡʱ ɡʷʱ
     - '{w,v} d z ɡ ʒ'
     raw: bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ → {w,v} d z ɡ ʒ
     source: index_diachronica_original.html:5198
@@ -21676,7 +21677,7 @@ sections:
     rule_id: Erevan-Armenian-p-ḱ-kʷ
   - comment: (?)
     stages:
-    - ɡ́
+    - ɡʲ
     - ts
     raw: ɡ́ → ts (?)
     source: index_diachronica_original.html:5232
@@ -21696,7 +21697,7 @@ sections:
     source: index_diachronica_original.html:5234
     rule_id: Erevan-Armenian-ɡʷʱ
   - stages:
-    - bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ
+    - bʱ dʱ ɡʲʱ ɡʱ ɡʷʱ
     - '{w,v} d z ɡ ʒ'
     raw: bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ → {w,v} d z ɡ ʒ
     source: index_diachronica_original.html:5235
@@ -21901,7 +21902,7 @@ sections:
     rule_id: Istanbul-Armenian-p-ḱ-kʷ
   - comment: (?)
     stages:
-    - ɡ́
+    - ɡʲ
     - ts
     raw: ɡ́ → ts (?)
     source: index_diachronica_original.html:5268
@@ -21921,14 +21922,14 @@ sections:
     source: index_diachronica_original.html:5270
     rule_id: Istanbul-Armenian-ɡʷʱ
   - stages:
-    - bʱ ɡ́ʱ ɡ(ʷ)ʱ
+    - bʱ ɡʲʱ ɡ(ʷ)ʱ
     - b j k
     env: '#_'
     raw: 'bʱ ɡ́ʱ ɡ(ʷ)ʱ → b j k / #_'
     source: index_diachronica_original.html:5271
     rule_id: Istanbul-Armenian-bʱ-ɡ́ʱ-ɡʷʱ
   - stages:
-    - bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ
+    - bʱ dʱ ɡʲʱ ɡʱ ɡʷʱ
     - '{w,v} d z ɡ ʒ'
     raw: bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ → {w,v} d z ɡ ʒ
     source: index_diachronica_original.html:5272
@@ -22141,7 +22142,7 @@ sections:
     rule_id: Kharpert-Armenian-p-ḱ-kʷ
   - comment: (?)
     stages:
-    - ɡ́
+    - ɡʲ
     - ts
     raw: ɡ́ → ts (?)
     source: index_diachronica_original.html:5306
@@ -22154,14 +22155,14 @@ sections:
     source: index_diachronica_original.html:5307
     rule_id: Kharpert-Armenian-b-d-ɡʷ
   - stages:
-    - bʱ dʱ ɡ́ʱ ɡ(ʷ)ʱ
+    - bʱ dʱ ɡʲʱ ɡ(ʷ)ʱ
     - p t j k
     env: '#_'
     raw: 'bʱ dʱ ɡ́ʱ ɡ(ʷ)ʱ → p t j k / #_'
     source: index_diachronica_original.html:5308
     rule_id: Kharpert-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʷʱ
   - stages:
-    - bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ
+    - bʱ dʱ ɡʲʱ ɡʱ ɡʷʱ
     - '{w,v} d z ɡ ʒ'
     raw: bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ → {w,v} d z ɡ ʒ
     source: index_diachronica_original.html:5309
@@ -22374,7 +22375,7 @@ sections:
     rule_id: Sebastia-Armenian-p-ḱ-kʷ
   - comment: (?)
     stages:
-    - ɡ́
+    - ɡʲ
     - ts
     raw: ɡ́ → ts (?)
     source: index_diachronica_original.html:5343
@@ -22387,7 +22388,7 @@ sections:
     source: index_diachronica_original.html:5344
     rule_id: Sebastia-Armenian-b-d-ɡʷ
   - stages:
-    - bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ
+    - bʱ dʱ ɡʲʱ ɡʱ ɡʷʱ
     - '{w,v} d z ɡ ʒ'
     exception: _#
     raw: bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ → {w,v} d z ɡ ʒ / ! _#
@@ -22601,7 +22602,7 @@ sections:
     rule_id: Southeast-Armenian-p-ḱ-kʷ
   - comment: (?)
     stages:
-    - ɡ́
+    - ɡʲ
     - ts
     raw: ɡ́ → ts (?)
     source: index_diachronica_original.html:5379
@@ -22621,21 +22622,21 @@ sections:
     source: index_diachronica_original.html:5381
     rule_id: Southeast-Armenian-ɡʷʱ
   - stages:
-    - bʱ ɡ́ʱ ɡʷʱ
+    - bʱ ɡʲʱ ɡʷʱ
     - b j ɡ
     env: '#_'
     raw: 'bʱ ɡ́ʱ ɡʷʱ → b j ɡ / #_'
     source: index_diachronica_original.html:5382
     rule_id: Southeast-Armenian-bʱ-ɡ́ʱ-ɡʷʱ
   - stages:
-    - bʱ dʱ ɡ́ʱ ɡʱ ɡ(ʷ)ʱ
+    - bʱ dʱ ɡʲʱ ɡʱ ɡ(ʷ)ʱ
     - p t j k
     env: '#_'
     raw: 'bʱ dʱ ɡ́ʱ ɡʱ ɡ(ʷ)ʱ → p t j k / #_'
     source: index_diachronica_original.html:5383
     rule_id: Southeast-Armenian-bʱ-dʱ-ɡ́ʱ-ɡʱ-ɡʷʱ
   - stages:
-    - bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ
+    - bʱ dʱ ɡʲʱ ɡʱ ɡʷʱ
     - '{w,v} d z ɡ ʒ'
     raw: bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ → {w,v} d z ɡ ʒ
     source: index_diachronica_original.html:5384
@@ -22848,7 +22849,7 @@ sections:
     rule_id: Southwest-Armenian-p-ḱ-kʷ
   - comment: (?)
     stages:
-    - ɡ́
+    - ɡʲ
     - ts
     raw: ɡ́ → ts (?)
     source: index_diachronica_original.html:5418
@@ -22868,14 +22869,14 @@ sections:
     source: index_diachronica_original.html:5420
     rule_id: Southwest-Armenian-ɡʷʱ
   - stages:
-    - bʱ ɡ́ʱ ɡʷʱ
+    - bʱ ɡʲʱ ɡʷʱ
     - b j ɡ
     env: '#_'
     raw: 'bʱ ɡ́ʱ ɡʷʱ → b j ɡ / #_'
     source: index_diachronica_original.html:5421
     rule_id: Southwest-Armenian-bʱ-ɡ́ʱ-ɡʷʱ
   - stages:
-    - bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ
+    - bʱ dʱ ɡʲʱ ɡʱ ɡʷʱ
     - '{w,v} d z ɡ ʒ'
     raw: bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ → {w,v} d z ɡ ʒ
     source: index_diachronica_original.html:5422
@@ -22993,13 +22994,13 @@ sections:
     source: index_diachronica_original.html:5444
   rules:
   - stages:
-    - bʱ dʱ ɡ́ʱ
+    - bʱ dʱ ɡʲʱ
     - b d z
     raw: bʱ dʱ ɡ́ʱ → b d z
     source: index_diachronica_original.html:5445
     rule_id: Avestan_2-bʱ-dʱ-ɡ́ʱ
   - stages:
-    - kʲ ɡ́
+    - kʲ ɡʲ
     - s z
     raw: ḱ ɡ́ → s z
     source: index_diachronica_original.html:5446
@@ -24063,13 +24064,13 @@ sections:
     source: index_diachronica_original.html:5622
     rule_id: Dacian-ei
   - stages:
-    - bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ
-    - b d ɡ́ ɡ ɡʷ
+    - bʱ dʱ ɡʲʱ ɡʱ ɡʷʱ
+    - b d ɡʲ ɡ ɡʷ
     raw: bʱ dʱ ɡ́ʱ ɡʱ ɡʷʱ → b d ɡ́ ɡ ɡʷ
     source: index_diachronica_original.html:5623
     rule_id: Dacian-bʱ-dʱ-ɡ́ʱ-ɡʱ-ɡʷʱ
   - stages:
-    - kʲ ɡ́
+    - kʲ ɡʲ
     - ts dz
     raw: ḱ ɡ́ → ts dz
     source: index_diachronica_original.html:5624
@@ -31082,7 +31083,7 @@ sections:
     source: index_diachronica_original.html:6811
   rules:
   - stages:
-    - kʲ ɡ́ ɡ́ʱ
+    - kʲ ɡʲ ɡʲʱ
     - k ɡ ɡʱ
     raw: ḱ ɡ́ ɡ́ʱ → k ɡ ɡʱ
     source: index_diachronica_original.html:6796
@@ -33960,7 +33961,7 @@ sections:
     source: index_diachronica_original.html:7269
     rule_id: Latin-dʱ_5
   - stages:
-    - kʲ ɡ́
+    - kʲ ɡʲ
     - k ɡ
     raw: ḱ ɡ́ → k ɡ
     source: index_diachronica_original.html:7270
@@ -40307,13 +40308,13 @@ sections:
     source: index_diachronica_original.html:8228
     rule_id: Proto-Sibellian-t
   - stages:
-    - kʲ ɡ́ kʷ ɡʷ
+    - kʲ ɡʲ kʷ ɡʷ
     - k ɡ p b
     raw: ḱ ɡ́ kʷ ɡʷ → k ɡ p b
     source: index_diachronica_original.html:8229
     rule_id: Proto-Sibellian-ḱ-ɡ́-kʷ-ɡʷ
   - stages:
-    - '{ɡ́ʰ,x} {ɸ,θ,ɡʷʰ}'
+    - '{ɡʲʰ,x} {ɸ,θ,ɡʷʰ}'
     - h f
     raw: '{ɡ́ʰ,x} {ɸ,θ,ɡʷʰ} → h f'
     source: index_diachronica_original.html:8230
