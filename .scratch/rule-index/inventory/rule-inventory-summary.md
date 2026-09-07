@@ -6,9 +6,9 @@
 - Rows: **9840** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8832** (89.8%)
+- OK: **8834** (89.8%)
 - Fail: **687** (7.0%)
-- Skipped: **321** (3.3%)
+- Skipped: **319** (3.2%)
 
 ## Sections
 

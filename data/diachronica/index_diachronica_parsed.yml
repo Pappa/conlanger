@@ -37221,23 +37221,30 @@ sections:
       Dauphiné)
     source: index_diachronica_original.html:7748
     rule_id: Old-Provençal-—-a_2
-  - stages: []
+  - stages:
+    - a
+    - ɔ
+    comment: (I have no idea what is going on here. Grandgent seems to distinguish
+      an open and close /a/, and I have listed his open a as /å/, which seems to have
+      been distinct from /ɔ/, but beyond this section it doesn’t really seem to matter
+      very much)
     raw: — a → å (I have no idea what is going on here. Grandgent seems to distinguish
       an open and close /a/, and I have listed his open a as /å/, which seems to have
       been distinct from /ɔ/, but beyond this section it doesn’t really seem to matter
       very much)
     source: index_diachronica_original.html:7749
-    status: skipped
     rule_id: Old-Provençal-—-a_3
-    comment: 'Can''t esolve  å '
-  - stages: []
+  - stages:
+    - ɔ ɛ ɔ
+    - a e o
+    env: _N
+    comment: (in Limousin and neighboring regions, the last two particularly in Limousin,
+      Languedoc, and Gascon, though when _ɲ this change may have been blocked)
     raw: — å ɛ ɔ → a e o / _N (in Limousin and neighboring regions, the last two particularly
       in Limousin, Languedoc, and Gascon, though when _ɲ this change may have been
       blocked)
     source: index_diachronica_original.html:7750
-    status: skipped
     rule_id: Old-Provençal-—-å-ɛ-ɔ
-    comment: 'Can''t esolve  å '
   - stages:
     - ɛ ɔ
     - jɛ wɔ

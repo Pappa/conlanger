@@ -114,10 +114,10 @@ skip_rules:
     reason: "I can't figure out the rule even afer reading the source material"
   - id: Biblical-Hebrew-—-a_4
     reason: "No idea what this rule means: a → _$%%(…)”"
-  - id: Old-Provençal-—-a_3
-    reason: "Can't esolve  å "
-  - id: Old-Provençal-—-å-ɛ-ɔ
-    reason: "Can't esolve  å "
+  # - id: Old-Provençal-—-a_3
+  #   reason: "Can't resolve  å "
+  # - id: Old-Provençal-—-å-ɛ-ɔ
+  #   reason: "Can't resolve  å "
   - id: Spanish-e-ɛ,a-ɔ-o
     reason: "This is really a comment"
   - id: Cypriot-Arabic-j

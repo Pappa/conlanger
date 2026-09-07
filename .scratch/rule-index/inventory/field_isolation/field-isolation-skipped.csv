@@ -1,322 +1,320 @@
 section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_ok,output_ok,env_ok,exception_ok,input_class,output_class,env_class,exception_class,input_description,output_description,env_description,exception_description,blame
-6.1.1,Proto-Omotic to North Omotic,North-Omotic-Vː_2,,index_diachronica_original.html:987,,rule_skipped,,,,,,,,,,,,,none
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-j,,index_diachronica_original.html:1342,,rule_skipped,,,,,,,,,,,,,none
-6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-a_4,,index_diachronica_original.html:1533,,rule_skipped,,,,,,,,,,,,,none
-7.3.2,Proto-Arapaho-Atsina to Gros Ventre,"Gros-Ventre-C,#V-longʔ",,index_diachronica_original.html:1698,,rule_skipped,,,,,,,,,,,,,none
-10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-t1-d1-d3-Z,,index_diachronica_original.html:3822,,section_skipped,,,,,,,,,,,,,none
-10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-l-*L,,index_diachronica_original.html:3823,,section_skipped,,,,,,,,,,,,,none
-10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-b-d2,,index_diachronica_original.html:3824,,section_skipped,,,,,,,,,,,,,none
-10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-S1-s-c,,index_diachronica_original.html:3825,,section_skipped,,,,,,,,,,,,,none
-10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-Vː,,index_diachronica_original.html:3826,,section_skipped,,,,,,,,,,,,,none
-17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-a_2,,index_diachronica_original.html:5702,,rule_skipped,,,,,,,,,,,,,none
-17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-æu,,index_diachronica_original.html:5706,,rule_skipped,,,,,,,,,,,,,none
-17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-a_3,,index_diachronica_original.html:5711,,rule_skipped,,,,,,,,,,,,,none
-17.7.2.5,West Germanic to Old Low German,Old-Low-German-F-voice,,index_diachronica_original.html:6155,,rule_skipped,,,,,,,,,,,,,none
-17.12.1.1,Proto-Indo-European to Latin,Latin-r…r,,index_diachronica_original.html:7312,,rule_skipped,,,,,,,,,,,,,none
-17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-a_3,,index_diachronica_original.html:7749,,rule_skipped,,,,,,,,,,,,,none
-17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-å-ɛ-ɔ,,index_diachronica_original.html:7750,,rule_skipped,,,,,,,,,,,,,none
-17.12.1.1.10,Vulgar Latin to Spanish,"Spanish-e-ɛ,a-ɔ-o",,index_diachronica_original.html:8143,,rule_skipped,,,,,,,,,,,,,none
-29.2,Proto-Na-Dene to Tlingit,Tlingit-s,,index_diachronica_original.html:10402,,section_skipped,,,,,,,,,,,,,none
-29.2,Proto-Na-Dene to Tlingit,Tlingit-ts,,index_diachronica_original.html:10403,,section_skipped,,,,,,,,,,,,,none
-29.2,Proto-Na-Dene to Tlingit,Tlingit-tsʼ,,index_diachronica_original.html:10404,,section_skipped,,,,,,,,,,,,,none
-29.2,Proto-Na-Dene to Tlingit,Tlingit-ʃ,,index_diachronica_original.html:10405,,section_skipped,,,,,,,,,,,,,none
-29.2,Proto-Na-Dene to Tlingit,Tlingit-tʃ,,index_diachronica_original.html:10406,,section_skipped,,,,,,,,,,,,,none
-29.2,Proto-Na-Dene to Tlingit,Tlingit-tʃʼ,,index_diachronica_original.html:10407,,section_skipped,,,,,,,,,,,,,none
-29.2,Proto-Na-Dene to Tlingit,Tlingit-kʲ-kʲʼ,,index_diachronica_original.html:10409,,section_skipped,,,,,,,,,,,,,none
-29.2,Proto-Na-Dene to Tlingit,Tlingit-xʲ,,index_diachronica_original.html:10410,,section_skipped,,,,,,,,,,,,,none
-29.2,Proto-Na-Dene to Tlingit,Tlingit-kʷʼ,,index_diachronica_original.html:10411,,section_skipped,,,,,,,,,,,,,none
-29.2,Proto-Na-Dene to Tlingit,Tlingit-xʷ,,index_diachronica_original.html:10412,,section_skipped,,,,,,,,,,,,,none
-29.2,Proto-Na-Dene to Tlingit,Tlingit-qʼ-qʷʼ,,index_diachronica_original.html:10413,,section_skipped,,,,,,,,,,,,,none
-29.2,Proto-Na-Dene to Tlingit,Tlingit-x,,index_diachronica_original.html:10414,,section_skipped,,,,,,,,,,,,,none
-29.2,Proto-Na-Dene to Tlingit,Tlingit-$,,index_diachronica_original.html:10415,,section_skipped,,,,,,,,,,,,,none
-35.1.1,Proto-Central Salish to Comox,Comox-tsʼ,,index_diachronica_original.html:11392,,section_skipped,,,,,,,,,,,,,none
-35.1.1,Proto-Central Salish to Comox,Comox-lʲ,,index_diachronica_original.html:11393,,section_skipped,,,,,,,,,,,,,none
-35.1.1,Proto-Central Salish to Comox,Comox-lʲ_2,,index_diachronica_original.html:11394,,section_skipped,,,,,,,,,,,,,none
-35.1.1,Proto-Central Salish to Comox,Comox-lʲ_3,,index_diachronica_original.html:11395,,section_skipped,,,,,,,,,,,,,none
-35.1.1,Proto-Central Salish to Comox,Comox-s,,index_diachronica_original.html:11396,,section_skipped,,,,,,,,,,,,,none
-35.1.1,Proto-Central Salish to Comox,Comox-s_2,,index_diachronica_original.html:11397,,section_skipped,,,,,,,,,,,,,none
-35.1.1,Proto-Central Salish to Comox,Comox-w-j,,index_diachronica_original.html:11398,,section_skipped,,,,,,,,,,,,,none
-35.1.1,Proto-Central Salish to Comox,Comox-V3ʔ,,index_diachronica_original.html:11399,,section_skipped,,,,,,,,,,,,,none
-35.1.1,Proto-Central Salish to Comox,Comox-ʔ,,index_diachronica_original.html:11400,,section_skipped,,,,,,,,,,,,,none
-35.1.1,Proto-Central Salish to Comox,Comox-ʔ_2,,index_diachronica_original.html:11401,,section_skipped,,,,,,,,,,,,,none
-35.1.1,Proto-Central Salish to Comox,Comox-a3~ə3,,index_diachronica_original.html:11402,,section_skipped,,,,,,,,,,,,,none
-35.1.1,Proto-Central Salish to Comox,Comox-a3~i3,,index_diachronica_original.html:11403,,section_skipped,,,,,,,,,,,,,none
-35.1.1,Proto-Central Salish to Comox,Comox-a1~i1,,index_diachronica_original.html:11404,,section_skipped,,,,,,,,,,,,,none
-35.1.1,Proto-Central Salish to Comox,Comox-i3~ə3,,index_diachronica_original.html:11405,,section_skipped,,,,,,,,,,,,,none
-35.1.1,Proto-Central Salish to Comox,Comox-i3~ə1,,index_diachronica_original.html:11406,,section_skipped,,,,,,,,,,,,,none
-35.1.1,Proto-Central Salish to Comox,Comox-i1~ə1,,index_diachronica_original.html:11407,,section_skipped,,,,,,,,,,,,,none
-35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-tsʼ-tʃʼ,,index_diachronica_original.html:11436,,section_skipped,,,,,,,,,,,,,none
-35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-s,,index_diachronica_original.html:11437,,section_skipped,,,,,,,,,,,,,none
-35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-xʲ,,index_diachronica_original.html:11438,,section_skipped,,,,,,,,,,,,,none
-35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-V3h,,index_diachronica_original.html:11439,,section_skipped,,,,,,,,,,,,,none
-35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-V03ʔV0,,index_diachronica_original.html:11440,,section_skipped,,,,,,,,,,,,,none
-35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-V3ʔR,,index_diachronica_original.html:11441,,section_skipped,,,,,,,,,,,,,none
-35.1.3,Proto-Central Salish to Cowichan Halkomelem,"Cowichan-Halkomelem-a3-u3-a1,u1-i1",,index_diachronica_original.html:11442,,section_skipped,,,,,,,,,,,,,none
-35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-a3~ə3,,index_diachronica_original.html:11443,,section_skipped,,,,,,,,,,,,,none
-35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-a3~i3,,index_diachronica_original.html:11444,,section_skipped,,,,,,,,,,,,,none
-35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-a1~i1,,index_diachronica_original.html:11445,,section_skipped,,,,,,,,,,,,,none
-35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-i3~e3,,index_diachronica_original.html:11446,,section_skipped,,,,,,,,,,,,,none
-35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-i3~ə1,,index_diachronica_original.html:11447,,section_skipped,,,,,,,,,,,,,none
-35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-i1~ə1,,index_diachronica_original.html:11448,,section_skipped,,,,,,,,,,,,,none
-35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-ʔn,,index_diachronica_original.html:11453,,section_skipped,,,,,,,,,,,,,none
-35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-tsʼ-tʃʼ,,index_diachronica_original.html:11454,,section_skipped,,,,,,,,,,,,,none
-35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-lʲ,,index_diachronica_original.html:11455,,section_skipped,,,,,,,,,,,,,none
-35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-V3h,,index_diachronica_original.html:11456,,section_skipped,,,,,,,,,,,,,none
-35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-V3ʔ,,index_diachronica_original.html:11457,,section_skipped,,,,,,,,,,,,,none
-35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-V03ʔV0,,index_diachronica_original.html:11458,,section_skipped,,,,,,,,,,,,,none
-35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-V3ʔR,,index_diachronica_original.html:11459,,section_skipped,,,,,,,,,,,,,none
-35.1.4,Proto-Central Salish to Musqueam Halkomelem,"Musqueam-Halkomelem-u3-u1,a1-a3-i1",,index_diachronica_original.html:11460,,section_skipped,,,,,,,,,,,,,none
-35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-u3~ə3,,index_diachronica_original.html:11461,,section_skipped,,,,,,,,,,,,,none
-35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-a3~ə3,,index_diachronica_original.html:11462,,section_skipped,,,,,,,,,,,,,none
-35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-a3~i3,,index_diachronica_original.html:11463,,section_skipped,,,,,,,,,,,,,none
-35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-a1~i1,,index_diachronica_original.html:11464,,section_skipped,,,,,,,,,,,,,none
-35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-i3~e3,,index_diachronica_original.html:11465,,section_skipped,,,,,,,,,,,,,none
-35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-i3~ə1,,index_diachronica_original.html:11466,,section_skipped,,,,,,,,,,,,,none
-35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-i1~ə1,,index_diachronica_original.html:11467,,section_skipped,,,,,,,,,,,,,none
-35.1.5,Proto-Central Salish to Klallam,Klallam-mʔn,,index_diachronica_original.html:11472,,section_skipped,,,,,,,,,,,,,none
-35.1.5,Proto-Central Salish to Klallam,Klallam-pʼ-m,,index_diachronica_original.html:11473,,section_skipped,,,,,,,,,,,,,none
-35.1.5,Proto-Central Salish to Klallam,Klallam-lʲ,,index_diachronica_original.html:11474,,section_skipped,,,,,,,,,,,,,none
-35.1.5,Proto-Central Salish to Klallam,Klallam-xʲ,,index_diachronica_original.html:11475,,section_skipped,,,,,,,,,,,,,none
-35.1.5,Proto-Central Salish to Klallam,Klallam-tʃ,,index_diachronica_original.html:11476,,section_skipped,,,,,,,,,,,,,none
-35.1.5,Proto-Central Salish to Klallam,Klallam-tʃʼ,,index_diachronica_original.html:11477,,section_skipped,,,,,,,,,,,,,none
-35.1.5,Proto-Central Salish to Klallam,Klallam-w-j,,index_diachronica_original.html:11478,,section_skipped,,,,,,,,,,,,,none
-35.1.5,Proto-Central Salish to Klallam,Klallam-V03ʔV0,,index_diachronica_original.html:11479,,section_skipped,,,,,,,,,,,,,none
-35.1.5,Proto-Central Salish to Klallam,Klallam-u1,,index_diachronica_original.html:11480,,section_skipped,,,,,,,,,,,,,none
-35.1.5,Proto-Central Salish to Klallam,Klallam-a3,,index_diachronica_original.html:11481,,section_skipped,,,,,,,,,,,,,none
-35.1.5,Proto-Central Salish to Klallam,Klallam-a3_2,,index_diachronica_original.html:11482,,section_skipped,,,,,,,,,,,,,none
-35.1.5,Proto-Central Salish to Klallam,Klallam-a1,,index_diachronica_original.html:11483,,section_skipped,,,,,,,,,,,,,none
-35.1.5,Proto-Central Salish to Klallam,Klallam-u3~ə3,,index_diachronica_original.html:11484,,section_skipped,,,,,,,,,,,,,none
-35.1.5,Proto-Central Salish to Klallam,Klallam-a3~ə3,,index_diachronica_original.html:11485,,section_skipped,,,,,,,,,,,,,none
-35.1.5,Proto-Central Salish to Klallam,Klallam-a3~i3,,index_diachronica_original.html:11486,,section_skipped,,,,,,,,,,,,,none
-35.1.5,Proto-Central Salish to Klallam,Klallam-a1~i1,,index_diachronica_original.html:11487,,section_skipped,,,,,,,,,,,,,none
-35.1.5,Proto-Central Salish to Klallam,Klallam-i3~ə3,,index_diachronica_original.html:11488,,section_skipped,,,,,,,,,,,,,none
-35.1.5,Proto-Central Salish to Klallam,Klallam-i3~ə1,,index_diachronica_original.html:11489,,section_skipped,,,,,,,,,,,,,none
-35.1.5,Proto-Central Salish to Klallam,Klallam-i1~ə1,,index_diachronica_original.html:11490,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-p’-m,,index_diachronica_original.html:11541,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-mʔ,,index_diachronica_original.html:11542,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-ts,,index_diachronica_original.html:11543,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-lʲ,,index_diachronica_original.html:11544,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-s,,index_diachronica_original.html:11545,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-tʃ,,index_diachronica_original.html:11546,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-tʃ’,,index_diachronica_original.html:11547,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-j,,index_diachronica_original.html:11548,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-ʔ,,index_diachronica_original.html:11549,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-ʔ_2,,index_diachronica_original.html:11550,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-u3-u1,,index_diachronica_original.html:11551,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-a3,,index_diachronica_original.html:11552,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-a3_2,,index_diachronica_original.html:11553,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-a3_3,,index_diachronica_original.html:11554,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-a1,,index_diachronica_original.html:11555,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-u3~ə3,,index_diachronica_original.html:11556,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-a3~ə3,,index_diachronica_original.html:11557,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-a3~i3,,index_diachronica_original.html:11558,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-a1~i1,,index_diachronica_original.html:11559,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-i3~e3,,index_diachronica_original.html:11560,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-i3~ə1,,index_diachronica_original.html:11561,,section_skipped,,,,,,,,,,,,,none
-35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-i1~ə1,,index_diachronica_original.html:11562,,section_skipped,,,,,,,,,,,,,none
-35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-p’-m,,index_diachronica_original.html:11591,,section_skipped,,,,,,,,,,,,,none
-35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-mʔn,,index_diachronica_original.html:11592,,section_skipped,,,,,,,,,,,,,none
-35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-ts,,index_diachronica_original.html:11593,,section_skipped,,,,,,,,,,,,,none
-35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-lʲ,,index_diachronica_original.html:11594,,section_skipped,,,,,,,,,,,,,none
-35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-s,,index_diachronica_original.html:11595,,section_skipped,,,,,,,,,,,,,none
-35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-xʲ,,index_diachronica_original.html:11596,,section_skipped,,,,,,,,,,,,,none
-35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-tʃ’,,index_diachronica_original.html:11597,,section_skipped,,,,,,,,,,,,,none
-35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-j-w,,index_diachronica_original.html:11598,,section_skipped,,,,,,,,,,,,,none
-35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-V3h,,index_diachronica_original.html:11599,,section_skipped,,,,,,,,,,,,,none
-35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-u3-u1,,index_diachronica_original.html:11600,,section_skipped,,,,,,,,,,,,,none
-35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-a3,,index_diachronica_original.html:11601,,section_skipped,,,,,,,,,,,,,none
-35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-a3_2,,index_diachronica_original.html:11602,,section_skipped,,,,,,,,,,,,,none
-35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-a1,,index_diachronica_original.html:11603,,section_skipped,,,,,,,,,,,,,none
-35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-u3~ə3,,index_diachronica_original.html:11604,,section_skipped,,,,,,,,,,,,,none
-35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-a3~ə3,,index_diachronica_original.html:11605,,section_skipped,,,,,,,,,,,,,none
-35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-a3~i3,,index_diachronica_original.html:11606,,section_skipped,,,,,,,,,,,,,none
-35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-a1~i1,,index_diachronica_original.html:11607,,section_skipped,,,,,,,,,,,,,none
-35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-i3~e3,,index_diachronica_original.html:11608,,section_skipped,,,,,,,,,,,,,none
-35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-i3~ə1,,index_diachronica_original.html:11609,,section_skipped,,,,,,,,,,,,,none
-35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-i1~ə1,,index_diachronica_original.html:11610,,section_skipped,,,,,,,,,,,,,none
-35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-p’-m,,index_diachronica_original.html:11615,,section_skipped,,,,,,,,,,,,,none
-35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-mʔn,,index_diachronica_original.html:11616,,section_skipped,,,,,,,,,,,,,none
-35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-ts,,index_diachronica_original.html:11617,,section_skipped,,,,,,,,,,,,,none
-35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-lʲ,,index_diachronica_original.html:11618,,section_skipped,,,,,,,,,,,,,none
-35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-xʲ,,index_diachronica_original.html:11619,,section_skipped,,,,,,,,,,,,,none
-35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-tʃ,,index_diachronica_original.html:11620,,section_skipped,,,,,,,,,,,,,none
-35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-tʃ’,,index_diachronica_original.html:11621,,section_skipped,,,,,,,,,,,,,none
-35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-j-w,,index_diachronica_original.html:11622,,section_skipped,,,,,,,,,,,,,none
-35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-u3-u1,,index_diachronica_original.html:11623,,section_skipped,,,,,,,,,,,,,none
-35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-a3,,index_diachronica_original.html:11624,,section_skipped,,,,,,,,,,,,,none
-35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-a3_2,,index_diachronica_original.html:11625,,section_skipped,,,,,,,,,,,,,none
-35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-a1,,index_diachronica_original.html:11626,,section_skipped,,,,,,,,,,,,,none
-35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-u3~ə3,,index_diachronica_original.html:11627,,section_skipped,,,,,,,,,,,,,none
-35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-a3~ə3,,index_diachronica_original.html:11628,,section_skipped,,,,,,,,,,,,,none
-35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-a3~i3,,index_diachronica_original.html:11629,,section_skipped,,,,,,,,,,,,,none
-35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-a1~i1,,index_diachronica_original.html:11630,,section_skipped,,,,,,,,,,,,,none
-35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-i3~e3,,index_diachronica_original.html:11631,,section_skipped,,,,,,,,,,,,,none
-35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-i3~ə1,,index_diachronica_original.html:11632,,section_skipped,,,,,,,,,,,,,none
-35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-i1~ə1,,index_diachronica_original.html:11633,,section_skipped,,,,,,,,,,,,,none
-35.1.14,Proto-Central Salish to Sqamish,Sqamish-n,,index_diachronica_original.html:11670,,section_skipped,,,,,,,,,,,,,none
-35.1.14,Proto-Central Salish to Sqamish,Sqamish-lʲ,,index_diachronica_original.html:11671,,section_skipped,,,,,,,,,,,,,none
-35.1.14,Proto-Central Salish to Sqamish,Sqamish-xʲ,,index_diachronica_original.html:11672,,section_skipped,,,,,,,,,,,,,none
-35.1.14,Proto-Central Salish to Sqamish,Sqamish-ʔR,,index_diachronica_original.html:11673,,section_skipped,,,,,,,,,,,,,none
-35.1.14,Proto-Central Salish to Sqamish,Sqamish-u1,,index_diachronica_original.html:11674,,section_skipped,,,,,,,,,,,,,none
-35.1.14,Proto-Central Salish to Sqamish,Sqamish-u3~ə3,,index_diachronica_original.html:11675,,section_skipped,,,,,,,,,,,,,none
-35.1.14,Proto-Central Salish to Sqamish,Sqamish-a3~ə3,,index_diachronica_original.html:11676,,section_skipped,,,,,,,,,,,,,none
-35.1.14,Proto-Central Salish to Sqamish,Sqamish-a3~i3,,index_diachronica_original.html:11677,,section_skipped,,,,,,,,,,,,,none
-35.1.14,Proto-Central Salish to Sqamish,Sqamish-a1~i1,,index_diachronica_original.html:11678,,section_skipped,,,,,,,,,,,,,none
-35.1.14,Proto-Central Salish to Sqamish,Sqamish-i3~e3,,index_diachronica_original.html:11679,,section_skipped,,,,,,,,,,,,,none
-35.1.14,Proto-Central Salish to Sqamish,Sqamish-i3~ə1,,index_diachronica_original.html:11680,,section_skipped,,,,,,,,,,,,,none
-35.1.14,Proto-Central Salish to Sqamish,Sqamish-i1~ə1,,index_diachronica_original.html:11681,,section_skipped,,,,,,,,,,,,,none
-36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-C-r,,index_diachronica_original.html:11737,,section_skipped,,,,,,,,,,,,,none
-36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-s-r,,index_diachronica_original.html:11738,,section_skipped,,,,,,,,,,,,,none
-36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-r,,index_diachronica_original.html:11739,,section_skipped,,,,,,,,,,,,,none
-36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-r-T,,index_diachronica_original.html:11740,,section_skipped,,,,,,,,,,,,,none
-36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-C-l,,index_diachronica_original.html:11741,,section_skipped,,,,,,,,,,,,,none
-36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-s-l,,index_diachronica_original.html:11742,,section_skipped,,,,,,,,,,,,,none
-36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-l,,index_diachronica_original.html:11743,,section_skipped,,,,,,,,,,,,,none
-36.1,Proto-Sino-Tibetan to Middle Chinese,"Middle-Chinese-m,ŋl",,index_diachronica_original.html:11744,,section_skipped,,,,,,,,,,,,,none
-36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-Cl,,index_diachronica_original.html:11745,,section_skipped,,,,,,,,,,,,,none
-36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-Kw,,index_diachronica_original.html:11746,,section_skipped,,,,,,,,,,,,,none
-36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-Kwə,,index_diachronica_original.html:11747,,section_skipped,,,,,,,,,,,,,none
-36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-w,,index_diachronica_original.html:11748,,section_skipped,,,,,,,,,,,,,none
-36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-a,,index_diachronica_original.html:11934,,section_skipped,,,,,,,,,,,,,none
-36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-a_2,,index_diachronica_original.html:11935,,section_skipped,,,,,,,,,,,,,none
-36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-a_3,,index_diachronica_original.html:11936,,section_skipped,,,,,,,,,,,,,none
-36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-iN,,index_diachronica_original.html:11937,,section_skipped,,,,,,,,,,,,,none
-36.3.1.2,Proto-Naish to Mosuo (Na),"Mosuo-Na-iN,u-i",,index_diachronica_original.html:11938,,section_skipped,,,,,,,,,,,,,none
-36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-i,,index_diachronica_original.html:11939,,section_skipped,,,,,,,,,,,,,none
-36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-i_2,,index_diachronica_original.html:11940,,section_skipped,,,,,,,,,,,,,none
-36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-u-o,,index_diachronica_original.html:11941,,section_skipped,,,,,,,,,,,,,none
-36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-B,,index_diachronica_original.html:11942,,section_skipped,,,,,,,,,,,,,none
-36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-V%,,index_diachronica_original.html:11943,,section_skipped,,,,,,,,,,,,,none
-36.3.1.2,Proto-Naish to Mosuo (Na),"Mosuo-Na-Np,mb",,index_diachronica_original.html:11944,,section_skipped,,,,,,,,,,,,,none
-36.3.1.2,Proto-Naish to Mosuo (Na),"Mosuo-Na-r,spʰ-r,sNp,mb",,index_diachronica_original.html:11945,,section_skipped,,,,,,,,,,,,,none
-36.3.1.2,Proto-Naish to Mosuo (Na),"Mosuo-Na-r,sk-r,sNk",,index_diachronica_original.html:11946,,section_skipped,,,,,,,,,,,,,none
-36.3.1.2,Proto-Naish to Mosuo (Na),"Mosuo-Na-Sb,ɡ-Sk",,index_diachronica_original.html:11947,,section_skipped,,,,,,,,,,,,,none
-36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-n̥,,index_diachronica_original.html:11948,,section_skipped,,,,,,,,,,,,,none
-36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-N̥V,,index_diachronica_original.html:11949,,section_skipped,,,,,,,,,,,,,none
-36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-l̥,,index_diachronica_original.html:11950,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-”Vː-falling-toneCV,,index_diachronica_original.html:12586,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-”V,,index_diachronica_original.html:12587,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-ʔ,,index_diachronica_original.html:12588,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-∅,,index_diachronica_original.html:12589,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-ths,,index_diachronica_original.html:12590,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-hs,,index_diachronica_original.html:12591,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-h,,index_diachronica_original.html:12592,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-h_2,,index_diachronica_original.html:12593,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-h_3,,index_diachronica_original.html:12594,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-h_4,,index_diachronica_original.html:12595,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-h_5,,index_diachronica_original.html:12596,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,"Oneida-h,ʔ",,index_diachronica_original.html:12597,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-ʔ_2,,index_diachronica_original.html:12598,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-r,,index_diachronica_original.html:12599,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-”Vː+falling-tone,,index_diachronica_original.html:12600,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-Vː,,index_diachronica_original.html:12601,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-∅,,index_diachronica_original.html:12603,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-∅_2,,index_diachronica_original.html:12604,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-∅_3,,index_diachronica_original.html:12605,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-Vː+falling-toneCCVH,,index_diachronica_original.html:12606,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-CVː+falling-tone,,index_diachronica_original.html:12607,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-CVʔ,,index_diachronica_original.html:12608,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-V-long,,index_diachronica_original.html:12609,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-OV-long,,index_diachronica_original.html:12610,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-jV,,index_diachronica_original.html:12611,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-ʔ,,index_diachronica_original.html:12612,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-R,,index_diachronica_original.html:12613,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-ts,,index_diachronica_original.html:12615,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-t-tʃ-kʷ,,index_diachronica_original.html:12616,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-s,,index_diachronica_original.html:12617,,section_skipped,,,,,,,,,,,,,none
-37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-s_2,,index_diachronica_original.html:12618,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-V,,index_diachronica_original.html:13776,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ê-ô,,index_diachronica_original.html:13777,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ê,,index_diachronica_original.html:13778,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ô,,index_diachronica_original.html:13779,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ej,,index_diachronica_original.html:13780,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-æ,,index_diachronica_original.html:13781,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ɑ,,index_diachronica_original.html:13782,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ɑ_2,,index_diachronica_original.html:13783,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ixi-uxu,,index_diachronica_original.html:13784,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-xi,,index_diachronica_original.html:13785,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-x,,index_diachronica_original.html:13786,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-x_2,,index_diachronica_original.html:13787,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-UŋA-eŋi,,index_diachronica_original.html:13788,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ŋi,,index_diachronica_original.html:13789,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ŋ,,index_diachronica_original.html:13790,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ŋ_2,,index_diachronica_original.html:13791,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ŋ_3,,index_diachronica_original.html:13792,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ŋ_4,,index_diachronica_original.html:13793,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ŋ_5,,index_diachronica_original.html:13794,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ŋ_6,,index_diachronica_original.html:13795,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-uwa,,index_diachronica_original.html:13796,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-Uwi-ewi,,index_diachronica_original.html:13797,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-i,,index_diachronica_original.html:13798,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-wI,,index_diachronica_original.html:13799,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ji,,index_diachronica_original.html:13800,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-i_2,,index_diachronica_original.html:13801,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-i_3,,index_diachronica_original.html:13802,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-j,,index_diachronica_original.html:13803,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-yje,,index_diachronica_original.html:13804,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-uw-ij,,index_diachronica_original.html:13805,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tʃ-tsʲ,,index_diachronica_original.html:13806,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ðʲ-sʲ-tsʲː-lʲ,,index_diachronica_original.html:13807,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-nʲ,,index_diachronica_original.html:13808,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-nʲ_2,,index_diachronica_original.html:13809,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-nʲ_3,,index_diachronica_original.html:13810,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-n,,index_diachronica_original.html:13811,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-w,,index_diachronica_original.html:13812,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ð,,index_diachronica_original.html:13813,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tʃ,,index_diachronica_original.html:13814,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tk,,index_diachronica_original.html:13815,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tʃ-tʃː,,index_diachronica_original.html:13816,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-t,,index_diachronica_original.html:13817,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tj,,index_diachronica_original.html:13818,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ʃ,,index_diachronica_original.html:13819,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-s,,index_diachronica_original.html:13820,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-n_2,,index_diachronica_original.html:13821,,section_skipped,,,,,,,,,,,,,none
-42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-w_2,,index_diachronica_original.html:13822,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-mb-nd-ŋɡ,,index_diachronica_original.html:13855,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-eː-øː-oː,,index_diachronica_original.html:13856,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-pˑ-tˑ-θˑ-kˑ,,index_diachronica_original.html:13857,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-j,,index_diachronica_original.html:13858,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-Vh,,index_diachronica_original.html:13859,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-sn,,index_diachronica_original.html:13860,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-V,,index_diachronica_original.html:13861,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-V_2,,index_diachronica_original.html:13862,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,"Standard-Finnish-k,x",,index_diachronica_original.html:13863,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-t,,index_diachronica_original.html:13864,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-p,,index_diachronica_original.html:13865,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-t_2,,index_diachronica_original.html:13866,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-t_3,,index_diachronica_original.html:13867,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-k,,index_diachronica_original.html:13868,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-k_2,,index_diachronica_original.html:13869,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-k_3,,index_diachronica_original.html:13870,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-β,,index_diachronica_original.html:13871,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-ʋ,,index_diachronica_original.html:13872,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-ið,,index_diachronica_original.html:13873,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-lð-rð,,index_diachronica_original.html:13874,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-ð,,index_diachronica_original.html:13875,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-ɣ,,index_diachronica_original.html:13876,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-ɣ_2,,index_diachronica_original.html:13877,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-ɣ_3,,index_diachronica_original.html:13878,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-ɣ_4,,index_diachronica_original.html:13879,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-h,,index_diachronica_original.html:13880,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-AO,,index_diachronica_original.html:13881,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-e,,index_diachronica_original.html:13882,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-Ue,,index_diachronica_original.html:13883,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-VU,,index_diachronica_original.html:13884,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-iU-OU,,index_diachronica_original.html:13885,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-æ,,index_diachronica_original.html:13886,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-e_2,,index_diachronica_original.html:13887,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-i,,index_diachronica_original.html:13888,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-i_2,,index_diachronica_original.html:13889,,section_skipped,,,,,,,,,,,,,none
-42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-θː-ð,,index_diachronica_original.html:13890,,section_skipped,,,,,,,,,,,,,none
-46.13,Old Norse to Faroese Vowel Shift,"Faroese-Vowel-Shift-a,æː",,index_diachronica_original.html:14418,,section_skipped,,,,,,,,,,,,,none
-46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-aː,,index_diachronica_original.html:14419,,section_skipped,,,,,,,,,,,,,none
-46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-e,,index_diachronica_original.html:14420,,section_skipped,,,,,,,,,,,,,none
-46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-eː,,index_diachronica_original.html:14421,,section_skipped,,,,,,,,,,,,,none
-46.13,Old Norse to Faroese Vowel Shift,"Faroese-Vowel-Shift-i,y",,index_diachronica_original.html:14422,,section_skipped,,,,,,,,,,,,,none
-46.13,Old Norse to Faroese Vowel Shift,"Faroese-Vowel-Shift-iː,yː",,index_diachronica_original.html:14423,,section_skipped,,,,,,,,,,,,,none
-46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-o,,index_diachronica_original.html:14424,,section_skipped,,,,,,,,,,,,,none
-46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-oː,,index_diachronica_original.html:14425,,section_skipped,,,,,,,,,,,,,none
-46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-u,,index_diachronica_original.html:14426,,section_skipped,,,,,,,,,,,,,none
-46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-uː,,index_diachronica_original.html:14427,,section_skipped,,,,,,,,,,,,,none
-46.13,Old Norse to Faroese Vowel Shift,"Faroese-Vowel-Shift-œ,ɔ",,index_diachronica_original.html:14428,,section_skipped,,,,,,,,,,,,,none
-46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-i,,index_diachronica_original.html:14438,,rule_skipped,,,,,,,,,,,,,none
+6.1.1,Proto-Omotic to North Omotic,North-Omotic-Vː_2,,index_diachronica_original.html:987,2,rule_skipped,,,,,,,,,,,,,none
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-j,,index_diachronica_original.html:1342,2,rule_skipped,,,,,,,,,,,,,none
+6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-a_4,,index_diachronica_original.html:1533,2,rule_skipped,,,,,,,,,,,,,none
+7.3.2,Proto-Arapaho-Atsina to Gros Ventre,"Gros-Ventre-C,#V-longʔ",,index_diachronica_original.html:1698,2,rule_skipped,,,,,,,,,,,,,none
+10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-t1-d1-d3-Z,,index_diachronica_original.html:3822,2,section_skipped,,,,,,,,,,,,,none
+10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-l-*L,,index_diachronica_original.html:3823,2,section_skipped,,,,,,,,,,,,,none
+10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-b-d2,,index_diachronica_original.html:3824,2,section_skipped,,,,,,,,,,,,,none
+10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-S1-s-c,,index_diachronica_original.html:3825,2,section_skipped,,,,,,,,,,,,,none
+10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-Vː,,index_diachronica_original.html:3826,2,section_skipped,,,,,,,,,,,,,none
+17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-a_2,,index_diachronica_original.html:5702,2,rule_skipped,,,,,,,,,,,,,none
+17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-æu,,index_diachronica_original.html:5706,2,rule_skipped,,,,,,,,,,,,,none
+17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-a_3,,index_diachronica_original.html:5711,2,rule_skipped,,,,,,,,,,,,,none
+17.7.2.5,West Germanic to Old Low German,Old-Low-German-F-voice,,index_diachronica_original.html:6155,2,rule_skipped,,,,,,,,,,,,,none
+17.12.1.1,Proto-Indo-European to Latin,Latin-r…r,,index_diachronica_original.html:7312,2,rule_skipped,,,,,,,,,,,,,none
+17.12.1.1.10,Vulgar Latin to Spanish,"Spanish-e-ɛ,a-ɔ-o",,index_diachronica_original.html:8143,2,rule_skipped,,,,,,,,,,,,,none
+29.2,Proto-Na-Dene to Tlingit,Tlingit-s,,index_diachronica_original.html:10402,2,section_skipped,,,,,,,,,,,,,none
+29.2,Proto-Na-Dene to Tlingit,Tlingit-ts,,index_diachronica_original.html:10403,2,section_skipped,,,,,,,,,,,,,none
+29.2,Proto-Na-Dene to Tlingit,Tlingit-tsʼ,,index_diachronica_original.html:10404,2,section_skipped,,,,,,,,,,,,,none
+29.2,Proto-Na-Dene to Tlingit,Tlingit-ʃ,,index_diachronica_original.html:10405,2,section_skipped,,,,,,,,,,,,,none
+29.2,Proto-Na-Dene to Tlingit,Tlingit-tʃ,,index_diachronica_original.html:10406,2,section_skipped,,,,,,,,,,,,,none
+29.2,Proto-Na-Dene to Tlingit,Tlingit-tʃʼ,,index_diachronica_original.html:10407,2,section_skipped,,,,,,,,,,,,,none
+29.2,Proto-Na-Dene to Tlingit,Tlingit-kʲ-kʲʼ,,index_diachronica_original.html:10409,2,section_skipped,,,,,,,,,,,,,none
+29.2,Proto-Na-Dene to Tlingit,Tlingit-xʲ,,index_diachronica_original.html:10410,2,section_skipped,,,,,,,,,,,,,none
+29.2,Proto-Na-Dene to Tlingit,Tlingit-kʷʼ,,index_diachronica_original.html:10411,2,section_skipped,,,,,,,,,,,,,none
+29.2,Proto-Na-Dene to Tlingit,Tlingit-xʷ,,index_diachronica_original.html:10412,2,section_skipped,,,,,,,,,,,,,none
+29.2,Proto-Na-Dene to Tlingit,Tlingit-qʼ-qʷʼ,,index_diachronica_original.html:10413,2,section_skipped,,,,,,,,,,,,,none
+29.2,Proto-Na-Dene to Tlingit,Tlingit-x,,index_diachronica_original.html:10414,2,section_skipped,,,,,,,,,,,,,none
+29.2,Proto-Na-Dene to Tlingit,Tlingit-$,,index_diachronica_original.html:10415,2,section_skipped,,,,,,,,,,,,,none
+35.1.1,Proto-Central Salish to Comox,Comox-tsʼ,,index_diachronica_original.html:11392,2,section_skipped,,,,,,,,,,,,,none
+35.1.1,Proto-Central Salish to Comox,Comox-lʲ,,index_diachronica_original.html:11393,2,section_skipped,,,,,,,,,,,,,none
+35.1.1,Proto-Central Salish to Comox,Comox-lʲ_2,,index_diachronica_original.html:11394,2,section_skipped,,,,,,,,,,,,,none
+35.1.1,Proto-Central Salish to Comox,Comox-lʲ_3,,index_diachronica_original.html:11395,2,section_skipped,,,,,,,,,,,,,none
+35.1.1,Proto-Central Salish to Comox,Comox-s,,index_diachronica_original.html:11396,2,section_skipped,,,,,,,,,,,,,none
+35.1.1,Proto-Central Salish to Comox,Comox-s_2,,index_diachronica_original.html:11397,2,section_skipped,,,,,,,,,,,,,none
+35.1.1,Proto-Central Salish to Comox,Comox-w-j,,index_diachronica_original.html:11398,2,section_skipped,,,,,,,,,,,,,none
+35.1.1,Proto-Central Salish to Comox,Comox-V3ʔ,,index_diachronica_original.html:11399,2,section_skipped,,,,,,,,,,,,,none
+35.1.1,Proto-Central Salish to Comox,Comox-ʔ,,index_diachronica_original.html:11400,2,section_skipped,,,,,,,,,,,,,none
+35.1.1,Proto-Central Salish to Comox,Comox-ʔ_2,,index_diachronica_original.html:11401,2,section_skipped,,,,,,,,,,,,,none
+35.1.1,Proto-Central Salish to Comox,Comox-a3~ə3,,index_diachronica_original.html:11402,2,section_skipped,,,,,,,,,,,,,none
+35.1.1,Proto-Central Salish to Comox,Comox-a3~i3,,index_diachronica_original.html:11403,2,section_skipped,,,,,,,,,,,,,none
+35.1.1,Proto-Central Salish to Comox,Comox-a1~i1,,index_diachronica_original.html:11404,2,section_skipped,,,,,,,,,,,,,none
+35.1.1,Proto-Central Salish to Comox,Comox-i3~ə3,,index_diachronica_original.html:11405,2,section_skipped,,,,,,,,,,,,,none
+35.1.1,Proto-Central Salish to Comox,Comox-i3~ə1,,index_diachronica_original.html:11406,2,section_skipped,,,,,,,,,,,,,none
+35.1.1,Proto-Central Salish to Comox,Comox-i1~ə1,,index_diachronica_original.html:11407,2,section_skipped,,,,,,,,,,,,,none
+35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-tsʼ-tʃʼ,,index_diachronica_original.html:11436,2,section_skipped,,,,,,,,,,,,,none
+35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-s,,index_diachronica_original.html:11437,2,section_skipped,,,,,,,,,,,,,none
+35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-xʲ,,index_diachronica_original.html:11438,2,section_skipped,,,,,,,,,,,,,none
+35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-V3h,,index_diachronica_original.html:11439,2,section_skipped,,,,,,,,,,,,,none
+35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-V03ʔV0,,index_diachronica_original.html:11440,2,section_skipped,,,,,,,,,,,,,none
+35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-V3ʔR,,index_diachronica_original.html:11441,2,section_skipped,,,,,,,,,,,,,none
+35.1.3,Proto-Central Salish to Cowichan Halkomelem,"Cowichan-Halkomelem-a3-u3-a1,u1-i1",,index_diachronica_original.html:11442,2,section_skipped,,,,,,,,,,,,,none
+35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-a3~ə3,,index_diachronica_original.html:11443,2,section_skipped,,,,,,,,,,,,,none
+35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-a3~i3,,index_diachronica_original.html:11444,2,section_skipped,,,,,,,,,,,,,none
+35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-a1~i1,,index_diachronica_original.html:11445,2,section_skipped,,,,,,,,,,,,,none
+35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-i3~e3,,index_diachronica_original.html:11446,2,section_skipped,,,,,,,,,,,,,none
+35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-i3~ə1,,index_diachronica_original.html:11447,2,section_skipped,,,,,,,,,,,,,none
+35.1.3,Proto-Central Salish to Cowichan Halkomelem,Cowichan-Halkomelem-i1~ə1,,index_diachronica_original.html:11448,2,section_skipped,,,,,,,,,,,,,none
+35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-ʔn,,index_diachronica_original.html:11453,2,section_skipped,,,,,,,,,,,,,none
+35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-tsʼ-tʃʼ,,index_diachronica_original.html:11454,2,section_skipped,,,,,,,,,,,,,none
+35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-lʲ,,index_diachronica_original.html:11455,2,section_skipped,,,,,,,,,,,,,none
+35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-V3h,,index_diachronica_original.html:11456,2,section_skipped,,,,,,,,,,,,,none
+35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-V3ʔ,,index_diachronica_original.html:11457,2,section_skipped,,,,,,,,,,,,,none
+35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-V03ʔV0,,index_diachronica_original.html:11458,2,section_skipped,,,,,,,,,,,,,none
+35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-V3ʔR,,index_diachronica_original.html:11459,2,section_skipped,,,,,,,,,,,,,none
+35.1.4,Proto-Central Salish to Musqueam Halkomelem,"Musqueam-Halkomelem-u3-u1,a1-a3-i1",,index_diachronica_original.html:11460,2,section_skipped,,,,,,,,,,,,,none
+35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-u3~ə3,,index_diachronica_original.html:11461,2,section_skipped,,,,,,,,,,,,,none
+35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-a3~ə3,,index_diachronica_original.html:11462,2,section_skipped,,,,,,,,,,,,,none
+35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-a3~i3,,index_diachronica_original.html:11463,2,section_skipped,,,,,,,,,,,,,none
+35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-a1~i1,,index_diachronica_original.html:11464,2,section_skipped,,,,,,,,,,,,,none
+35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-i3~e3,,index_diachronica_original.html:11465,2,section_skipped,,,,,,,,,,,,,none
+35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-i3~ə1,,index_diachronica_original.html:11466,2,section_skipped,,,,,,,,,,,,,none
+35.1.4,Proto-Central Salish to Musqueam Halkomelem,Musqueam-Halkomelem-i1~ə1,,index_diachronica_original.html:11467,2,section_skipped,,,,,,,,,,,,,none
+35.1.5,Proto-Central Salish to Klallam,Klallam-mʔn,,index_diachronica_original.html:11472,2,section_skipped,,,,,,,,,,,,,none
+35.1.5,Proto-Central Salish to Klallam,Klallam-pʼ-m,,index_diachronica_original.html:11473,2,section_skipped,,,,,,,,,,,,,none
+35.1.5,Proto-Central Salish to Klallam,Klallam-lʲ,,index_diachronica_original.html:11474,2,section_skipped,,,,,,,,,,,,,none
+35.1.5,Proto-Central Salish to Klallam,Klallam-xʲ,,index_diachronica_original.html:11475,2,section_skipped,,,,,,,,,,,,,none
+35.1.5,Proto-Central Salish to Klallam,Klallam-tʃ,,index_diachronica_original.html:11476,2,section_skipped,,,,,,,,,,,,,none
+35.1.5,Proto-Central Salish to Klallam,Klallam-tʃʼ,,index_diachronica_original.html:11477,2,section_skipped,,,,,,,,,,,,,none
+35.1.5,Proto-Central Salish to Klallam,Klallam-w-j,,index_diachronica_original.html:11478,2,section_skipped,,,,,,,,,,,,,none
+35.1.5,Proto-Central Salish to Klallam,Klallam-V03ʔV0,,index_diachronica_original.html:11479,2,section_skipped,,,,,,,,,,,,,none
+35.1.5,Proto-Central Salish to Klallam,Klallam-u1,,index_diachronica_original.html:11480,2,section_skipped,,,,,,,,,,,,,none
+35.1.5,Proto-Central Salish to Klallam,Klallam-a3,,index_diachronica_original.html:11481,2,section_skipped,,,,,,,,,,,,,none
+35.1.5,Proto-Central Salish to Klallam,Klallam-a3_2,,index_diachronica_original.html:11482,2,section_skipped,,,,,,,,,,,,,none
+35.1.5,Proto-Central Salish to Klallam,Klallam-a1,,index_diachronica_original.html:11483,2,section_skipped,,,,,,,,,,,,,none
+35.1.5,Proto-Central Salish to Klallam,Klallam-u3~ə3,,index_diachronica_original.html:11484,2,section_skipped,,,,,,,,,,,,,none
+35.1.5,Proto-Central Salish to Klallam,Klallam-a3~ə3,,index_diachronica_original.html:11485,2,section_skipped,,,,,,,,,,,,,none
+35.1.5,Proto-Central Salish to Klallam,Klallam-a3~i3,,index_diachronica_original.html:11486,2,section_skipped,,,,,,,,,,,,,none
+35.1.5,Proto-Central Salish to Klallam,Klallam-a1~i1,,index_diachronica_original.html:11487,2,section_skipped,,,,,,,,,,,,,none
+35.1.5,Proto-Central Salish to Klallam,Klallam-i3~ə3,,index_diachronica_original.html:11488,2,section_skipped,,,,,,,,,,,,,none
+35.1.5,Proto-Central Salish to Klallam,Klallam-i3~ə1,,index_diachronica_original.html:11489,2,section_skipped,,,,,,,,,,,,,none
+35.1.5,Proto-Central Salish to Klallam,Klallam-i1~ə1,,index_diachronica_original.html:11490,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-p’-m,,index_diachronica_original.html:11541,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-mʔ,,index_diachronica_original.html:11542,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-ts,,index_diachronica_original.html:11543,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-lʲ,,index_diachronica_original.html:11544,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-s,,index_diachronica_original.html:11545,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-tʃ,,index_diachronica_original.html:11546,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-tʃ’,,index_diachronica_original.html:11547,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-j,,index_diachronica_original.html:11548,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-ʔ,,index_diachronica_original.html:11549,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-ʔ_2,,index_diachronica_original.html:11550,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-u3-u1,,index_diachronica_original.html:11551,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-a3,,index_diachronica_original.html:11552,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-a3_2,,index_diachronica_original.html:11553,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-a3_3,,index_diachronica_original.html:11554,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-a1,,index_diachronica_original.html:11555,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-u3~ə3,,index_diachronica_original.html:11556,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-a3~ə3,,index_diachronica_original.html:11557,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-a3~i3,,index_diachronica_original.html:11558,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-a1~i1,,index_diachronica_original.html:11559,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-i3~e3,,index_diachronica_original.html:11560,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-i3~ə1,,index_diachronica_original.html:11561,2,section_skipped,,,,,,,,,,,,,none
+35.1.8,Proto-Central Salish to Lummi Northern Straits,Lummi-Northern-Straits-i1~ə1,,index_diachronica_original.html:11562,2,section_skipped,,,,,,,,,,,,,none
+35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-p’-m,,index_diachronica_original.html:11591,2,section_skipped,,,,,,,,,,,,,none
+35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-mʔn,,index_diachronica_original.html:11592,2,section_skipped,,,,,,,,,,,,,none
+35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-ts,,index_diachronica_original.html:11593,2,section_skipped,,,,,,,,,,,,,none
+35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-lʲ,,index_diachronica_original.html:11594,2,section_skipped,,,,,,,,,,,,,none
+35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-s,,index_diachronica_original.html:11595,2,section_skipped,,,,,,,,,,,,,none
+35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-xʲ,,index_diachronica_original.html:11596,2,section_skipped,,,,,,,,,,,,,none
+35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-tʃ’,,index_diachronica_original.html:11597,2,section_skipped,,,,,,,,,,,,,none
+35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-j-w,,index_diachronica_original.html:11598,2,section_skipped,,,,,,,,,,,,,none
+35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-V3h,,index_diachronica_original.html:11599,2,section_skipped,,,,,,,,,,,,,none
+35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-u3-u1,,index_diachronica_original.html:11600,2,section_skipped,,,,,,,,,,,,,none
+35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-a3,,index_diachronica_original.html:11601,2,section_skipped,,,,,,,,,,,,,none
+35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-a3_2,,index_diachronica_original.html:11602,2,section_skipped,,,,,,,,,,,,,none
+35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-a1,,index_diachronica_original.html:11603,2,section_skipped,,,,,,,,,,,,,none
+35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-u3~ə3,,index_diachronica_original.html:11604,2,section_skipped,,,,,,,,,,,,,none
+35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-a3~ə3,,index_diachronica_original.html:11605,2,section_skipped,,,,,,,,,,,,,none
+35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-a3~i3,,index_diachronica_original.html:11606,2,section_skipped,,,,,,,,,,,,,none
+35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-a1~i1,,index_diachronica_original.html:11607,2,section_skipped,,,,,,,,,,,,,none
+35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-i3~e3,,index_diachronica_original.html:11608,2,section_skipped,,,,,,,,,,,,,none
+35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-i3~ə1,,index_diachronica_original.html:11609,2,section_skipped,,,,,,,,,,,,,none
+35.1.10,Proto-Central Salish to Songish Northern Straits,Songish-Northern-Straits-i1~ə1,,index_diachronica_original.html:11610,2,section_skipped,,,,,,,,,,,,,none
+35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-p’-m,,index_diachronica_original.html:11615,2,section_skipped,,,,,,,,,,,,,none
+35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-mʔn,,index_diachronica_original.html:11616,2,section_skipped,,,,,,,,,,,,,none
+35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-ts,,index_diachronica_original.html:11617,2,section_skipped,,,,,,,,,,,,,none
+35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-lʲ,,index_diachronica_original.html:11618,2,section_skipped,,,,,,,,,,,,,none
+35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-xʲ,,index_diachronica_original.html:11619,2,section_skipped,,,,,,,,,,,,,none
+35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-tʃ,,index_diachronica_original.html:11620,2,section_skipped,,,,,,,,,,,,,none
+35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-tʃ’,,index_diachronica_original.html:11621,2,section_skipped,,,,,,,,,,,,,none
+35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-j-w,,index_diachronica_original.html:11622,2,section_skipped,,,,,,,,,,,,,none
+35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-u3-u1,,index_diachronica_original.html:11623,2,section_skipped,,,,,,,,,,,,,none
+35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-a3,,index_diachronica_original.html:11624,2,section_skipped,,,,,,,,,,,,,none
+35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-a3_2,,index_diachronica_original.html:11625,2,section_skipped,,,,,,,,,,,,,none
+35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-a1,,index_diachronica_original.html:11626,2,section_skipped,,,,,,,,,,,,,none
+35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-u3~ə3,,index_diachronica_original.html:11627,2,section_skipped,,,,,,,,,,,,,none
+35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-a3~ə3,,index_diachronica_original.html:11628,2,section_skipped,,,,,,,,,,,,,none
+35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-a3~i3,,index_diachronica_original.html:11629,2,section_skipped,,,,,,,,,,,,,none
+35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-a1~i1,,index_diachronica_original.html:11630,2,section_skipped,,,,,,,,,,,,,none
+35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-i3~e3,,index_diachronica_original.html:11631,2,section_skipped,,,,,,,,,,,,,none
+35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-i3~ə1,,index_diachronica_original.html:11632,2,section_skipped,,,,,,,,,,,,,none
+35.1.11,Proto-Central Salish to Sooke Northern Straits,Sooke-Northern-Straits-i1~ə1,,index_diachronica_original.html:11633,2,section_skipped,,,,,,,,,,,,,none
+35.1.14,Proto-Central Salish to Sqamish,Sqamish-n,,index_diachronica_original.html:11670,2,section_skipped,,,,,,,,,,,,,none
+35.1.14,Proto-Central Salish to Sqamish,Sqamish-lʲ,,index_diachronica_original.html:11671,2,section_skipped,,,,,,,,,,,,,none
+35.1.14,Proto-Central Salish to Sqamish,Sqamish-xʲ,,index_diachronica_original.html:11672,2,section_skipped,,,,,,,,,,,,,none
+35.1.14,Proto-Central Salish to Sqamish,Sqamish-ʔR,,index_diachronica_original.html:11673,2,section_skipped,,,,,,,,,,,,,none
+35.1.14,Proto-Central Salish to Sqamish,Sqamish-u1,,index_diachronica_original.html:11674,2,section_skipped,,,,,,,,,,,,,none
+35.1.14,Proto-Central Salish to Sqamish,Sqamish-u3~ə3,,index_diachronica_original.html:11675,2,section_skipped,,,,,,,,,,,,,none
+35.1.14,Proto-Central Salish to Sqamish,Sqamish-a3~ə3,,index_diachronica_original.html:11676,2,section_skipped,,,,,,,,,,,,,none
+35.1.14,Proto-Central Salish to Sqamish,Sqamish-a3~i3,,index_diachronica_original.html:11677,2,section_skipped,,,,,,,,,,,,,none
+35.1.14,Proto-Central Salish to Sqamish,Sqamish-a1~i1,,index_diachronica_original.html:11678,2,section_skipped,,,,,,,,,,,,,none
+35.1.14,Proto-Central Salish to Sqamish,Sqamish-i3~e3,,index_diachronica_original.html:11679,2,section_skipped,,,,,,,,,,,,,none
+35.1.14,Proto-Central Salish to Sqamish,Sqamish-i3~ə1,,index_diachronica_original.html:11680,2,section_skipped,,,,,,,,,,,,,none
+35.1.14,Proto-Central Salish to Sqamish,Sqamish-i1~ə1,,index_diachronica_original.html:11681,2,section_skipped,,,,,,,,,,,,,none
+36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-C-r,,index_diachronica_original.html:11737,2,section_skipped,,,,,,,,,,,,,none
+36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-s-r,,index_diachronica_original.html:11738,2,section_skipped,,,,,,,,,,,,,none
+36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-r,,index_diachronica_original.html:11739,2,section_skipped,,,,,,,,,,,,,none
+36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-r-T,,index_diachronica_original.html:11740,2,section_skipped,,,,,,,,,,,,,none
+36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-C-l,,index_diachronica_original.html:11741,2,section_skipped,,,,,,,,,,,,,none
+36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-s-l,,index_diachronica_original.html:11742,2,section_skipped,,,,,,,,,,,,,none
+36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-l,,index_diachronica_original.html:11743,2,section_skipped,,,,,,,,,,,,,none
+36.1,Proto-Sino-Tibetan to Middle Chinese,"Middle-Chinese-m,ŋl",,index_diachronica_original.html:11744,2,section_skipped,,,,,,,,,,,,,none
+36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-Cl,,index_diachronica_original.html:11745,2,section_skipped,,,,,,,,,,,,,none
+36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-Kw,,index_diachronica_original.html:11746,2,section_skipped,,,,,,,,,,,,,none
+36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-Kwə,,index_diachronica_original.html:11747,2,section_skipped,,,,,,,,,,,,,none
+36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-w,,index_diachronica_original.html:11748,2,section_skipped,,,,,,,,,,,,,none
+36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-a,,index_diachronica_original.html:11934,2,section_skipped,,,,,,,,,,,,,none
+36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-a_2,,index_diachronica_original.html:11935,2,section_skipped,,,,,,,,,,,,,none
+36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-a_3,,index_diachronica_original.html:11936,2,section_skipped,,,,,,,,,,,,,none
+36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-iN,,index_diachronica_original.html:11937,2,section_skipped,,,,,,,,,,,,,none
+36.3.1.2,Proto-Naish to Mosuo (Na),"Mosuo-Na-iN,u-i",,index_diachronica_original.html:11938,2,section_skipped,,,,,,,,,,,,,none
+36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-i,,index_diachronica_original.html:11939,2,section_skipped,,,,,,,,,,,,,none
+36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-i_2,,index_diachronica_original.html:11940,2,section_skipped,,,,,,,,,,,,,none
+36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-u-o,,index_diachronica_original.html:11941,2,section_skipped,,,,,,,,,,,,,none
+36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-B,,index_diachronica_original.html:11942,2,section_skipped,,,,,,,,,,,,,none
+36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-V%,,index_diachronica_original.html:11943,2,section_skipped,,,,,,,,,,,,,none
+36.3.1.2,Proto-Naish to Mosuo (Na),"Mosuo-Na-Np,mb",,index_diachronica_original.html:11944,2,section_skipped,,,,,,,,,,,,,none
+36.3.1.2,Proto-Naish to Mosuo (Na),"Mosuo-Na-r,spʰ-r,sNp,mb",,index_diachronica_original.html:11945,2,section_skipped,,,,,,,,,,,,,none
+36.3.1.2,Proto-Naish to Mosuo (Na),"Mosuo-Na-r,sk-r,sNk",,index_diachronica_original.html:11946,2,section_skipped,,,,,,,,,,,,,none
+36.3.1.2,Proto-Naish to Mosuo (Na),"Mosuo-Na-Sb,ɡ-Sk",,index_diachronica_original.html:11947,2,section_skipped,,,,,,,,,,,,,none
+36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-n̥,,index_diachronica_original.html:11948,2,section_skipped,,,,,,,,,,,,,none
+36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-N̥V,,index_diachronica_original.html:11949,2,section_skipped,,,,,,,,,,,,,none
+36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-l̥,,index_diachronica_original.html:11950,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-”Vː-falling-toneCV,,index_diachronica_original.html:12586,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-”V,,index_diachronica_original.html:12587,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-ʔ,,index_diachronica_original.html:12588,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-∅,,index_diachronica_original.html:12589,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-ths,,index_diachronica_original.html:12590,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-hs,,index_diachronica_original.html:12591,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-h,,index_diachronica_original.html:12592,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-h_2,,index_diachronica_original.html:12593,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-h_3,,index_diachronica_original.html:12594,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-h_4,,index_diachronica_original.html:12595,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-h_5,,index_diachronica_original.html:12596,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,"Oneida-h,ʔ",,index_diachronica_original.html:12597,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-ʔ_2,,index_diachronica_original.html:12598,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-r,,index_diachronica_original.html:12599,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-”Vː+falling-tone,,index_diachronica_original.html:12600,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-Vː,,index_diachronica_original.html:12601,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-∅,,index_diachronica_original.html:12603,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-∅_2,,index_diachronica_original.html:12604,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-∅_3,,index_diachronica_original.html:12605,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-Vː+falling-toneCCVH,,index_diachronica_original.html:12606,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-CVː+falling-tone,,index_diachronica_original.html:12607,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-CVʔ,,index_diachronica_original.html:12608,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-V-long,,index_diachronica_original.html:12609,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-OV-long,,index_diachronica_original.html:12610,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-jV,,index_diachronica_original.html:12611,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-ʔ,,index_diachronica_original.html:12612,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-—-R,,index_diachronica_original.html:12613,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-ts,,index_diachronica_original.html:12615,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-t-tʃ-kʷ,,index_diachronica_original.html:12616,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-s,,index_diachronica_original.html:12617,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-s_2,,index_diachronica_original.html:12618,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-V,,index_diachronica_original.html:13776,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ê-ô,,index_diachronica_original.html:13777,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ê,,index_diachronica_original.html:13778,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ô,,index_diachronica_original.html:13779,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ej,,index_diachronica_original.html:13780,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-æ,,index_diachronica_original.html:13781,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ɑ,,index_diachronica_original.html:13782,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ɑ_2,,index_diachronica_original.html:13783,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ixi-uxu,,index_diachronica_original.html:13784,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-xi,,index_diachronica_original.html:13785,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-x,,index_diachronica_original.html:13786,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-x_2,,index_diachronica_original.html:13787,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-UŋA-eŋi,,index_diachronica_original.html:13788,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ŋi,,index_diachronica_original.html:13789,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ŋ,,index_diachronica_original.html:13790,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ŋ_2,,index_diachronica_original.html:13791,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ŋ_3,,index_diachronica_original.html:13792,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ŋ_4,,index_diachronica_original.html:13793,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ŋ_5,,index_diachronica_original.html:13794,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ŋ_6,,index_diachronica_original.html:13795,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-uwa,,index_diachronica_original.html:13796,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-Uwi-ewi,,index_diachronica_original.html:13797,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-i,,index_diachronica_original.html:13798,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-wI,,index_diachronica_original.html:13799,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ji,,index_diachronica_original.html:13800,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-i_2,,index_diachronica_original.html:13801,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-i_3,,index_diachronica_original.html:13802,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-j,,index_diachronica_original.html:13803,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-yje,,index_diachronica_original.html:13804,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-uw-ij,,index_diachronica_original.html:13805,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tʃ-tsʲ,,index_diachronica_original.html:13806,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ðʲ-sʲ-tsʲː-lʲ,,index_diachronica_original.html:13807,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-nʲ,,index_diachronica_original.html:13808,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-nʲ_2,,index_diachronica_original.html:13809,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-nʲ_3,,index_diachronica_original.html:13810,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-n,,index_diachronica_original.html:13811,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-w,,index_diachronica_original.html:13812,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ð,,index_diachronica_original.html:13813,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tʃ,,index_diachronica_original.html:13814,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tk,,index_diachronica_original.html:13815,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tʃ-tʃː,,index_diachronica_original.html:13816,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-t,,index_diachronica_original.html:13817,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-tj,,index_diachronica_original.html:13818,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ʃ,,index_diachronica_original.html:13819,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-s,,index_diachronica_original.html:13820,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-n_2,,index_diachronica_original.html:13821,2,section_skipped,,,,,,,,,,,,,none
+42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-w_2,,index_diachronica_original.html:13822,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-mb-nd-ŋɡ,,index_diachronica_original.html:13855,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-eː-øː-oː,,index_diachronica_original.html:13856,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-pˑ-tˑ-θˑ-kˑ,,index_diachronica_original.html:13857,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-j,,index_diachronica_original.html:13858,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-Vh,,index_diachronica_original.html:13859,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-sn,,index_diachronica_original.html:13860,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-V,,index_diachronica_original.html:13861,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-V_2,,index_diachronica_original.html:13862,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,"Standard-Finnish-k,x",,index_diachronica_original.html:13863,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-t,,index_diachronica_original.html:13864,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-p,,index_diachronica_original.html:13865,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-t_2,,index_diachronica_original.html:13866,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-t_3,,index_diachronica_original.html:13867,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-k,,index_diachronica_original.html:13868,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-k_2,,index_diachronica_original.html:13869,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-k_3,,index_diachronica_original.html:13870,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-β,,index_diachronica_original.html:13871,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-ʋ,,index_diachronica_original.html:13872,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-ið,,index_diachronica_original.html:13873,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-lð-rð,,index_diachronica_original.html:13874,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-ð,,index_diachronica_original.html:13875,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-ɣ,,index_diachronica_original.html:13876,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-ɣ_2,,index_diachronica_original.html:13877,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-ɣ_3,,index_diachronica_original.html:13878,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-ɣ_4,,index_diachronica_original.html:13879,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-h,,index_diachronica_original.html:13880,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-AO,,index_diachronica_original.html:13881,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-e,,index_diachronica_original.html:13882,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-Ue,,index_diachronica_original.html:13883,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-VU,,index_diachronica_original.html:13884,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-iU-OU,,index_diachronica_original.html:13885,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-æ,,index_diachronica_original.html:13886,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-e_2,,index_diachronica_original.html:13887,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-i,,index_diachronica_original.html:13888,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-i_2,,index_diachronica_original.html:13889,2,section_skipped,,,,,,,,,,,,,none
+42.1.1.1.1,Proto-Finnish to Standard Finnish,Standard-Finnish-θː-ð,,index_diachronica_original.html:13890,2,section_skipped,,,,,,,,,,,,,none
+46.13,Old Norse to Faroese Vowel Shift,"Faroese-Vowel-Shift-a,æː",,index_diachronica_original.html:14418,2,section_skipped,,,,,,,,,,,,,none
+46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-aː,,index_diachronica_original.html:14419,2,section_skipped,,,,,,,,,,,,,none
+46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-e,,index_diachronica_original.html:14420,2,section_skipped,,,,,,,,,,,,,none
+46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-eː,,index_diachronica_original.html:14421,2,section_skipped,,,,,,,,,,,,,none
+46.13,Old Norse to Faroese Vowel Shift,"Faroese-Vowel-Shift-i,y",,index_diachronica_original.html:14422,2,section_skipped,,,,,,,,,,,,,none
+46.13,Old Norse to Faroese Vowel Shift,"Faroese-Vowel-Shift-iː,yː",,index_diachronica_original.html:14423,2,section_skipped,,,,,,,,,,,,,none
+46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-o,,index_diachronica_original.html:14424,2,section_skipped,,,,,,,,,,,,,none
+46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-oː,,index_diachronica_original.html:14425,2,section_skipped,,,,,,,,,,,,,none
+46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-u,,index_diachronica_original.html:14426,2,section_skipped,,,,,,,,,,,,,none
+46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-uː,,index_diachronica_original.html:14427,2,section_skipped,,,,,,,,,,,,,none
+46.13,Old Norse to Faroese Vowel Shift,"Faroese-Vowel-Shift-œ,ɔ",,index_diachronica_original.html:14428,2,section_skipped,,,,,,,,,,,,,none
+46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-i,,index_diachronica_original.html:14438,2,rule_skipped,,,,,,,,,,,,,none
