@@ -3183,6 +3183,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-ai-au-eu,,index_diachronica_original.html:5709,True,,True,True,,,,,,,,,,,none
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-ia-iu,,index_diachronica_original.html:5710,True,,True,True,,,,,,,,,,,none
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-h,,index_diachronica_original.html:5712,True,,True,True,True,,,,,,,,,,none
+17.7.2.1,West Germanic to Anglo-Frisian,"Anglo-Frisian-i,u",,index_diachronica_original.html:5713,True,,True,True,True,True,,,,,,,,,none
 17.7.2.1.1,Anglo-Frisian to Old English,Old-English-ɑ̃ː,,index_diachronica_original.html:5719,True,,True,True,,,,,,,,,,,none
 17.7.2.1.1,Anglo-Frisian to Old English,Old-English-V+nas,,index_diachronica_original.html:5720,True,,True,True,,,,,,,,,,,none
 17.7.2.1.1,Anglo-Frisian to Old English,"Old-English-i,u",,index_diachronica_original.html:5721,True,,True,True,True,True,,,,,,,,,none

@@ -124,3 +124,9 @@ skip_rules:
     reason: |
       I can't find the rule in the source, which also uses /y/ where the index uses /j/.
       The source explicitly refers to /y/ as a palatal glide.
+  - id: Anglo-Frisian-a_2
+    reason: "Can't resolve: in next syllable"
+  - id: Anglo-Frisian-æu
+    reason: "Can't resolve: æu → au (æ → a / _B in general?)"
+  - id: Anglo-Frisian-a_3
+    reason: "Can't resolve: in next syllable"

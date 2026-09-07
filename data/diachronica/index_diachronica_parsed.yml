@@ -24489,11 +24489,10 @@ sections:
     source: index_diachronica_original.html:5714
   rules:
   - stages:
-    - a
+    - a[-long]
     - ɑ̃
     env: _N
-    comment: (short only)
-    raw: a → ɑ̃ / _N (short only)
+    raw: a[-long] → ɑ̃ / _N
     source: index_diachronica_original.html:5700
     rule_id: Anglo-Frisian-a
   - stages:
@@ -24503,14 +24502,12 @@ sections:
     raw: VN → Ṽː / _F
     source: index_diachronica_original.html:5701
     rule_id: Anglo-Frisian-VN
-  - stages:
-    - a
-    - æː
-    env: short only, includes diphthongs
-    exception: B or *ã in next syllable
+  - stages: []
     raw: a → æː / short only, includes diphthongs ! B or *ã in next syllable
     source: index_diachronica_original.html:5702
+    status: skipped
     rule_id: Anglo-Frisian-a_2
+    comment: 'Can''t resolve: in next syllable'
   - comment: (?)
     stages:
     - k ɡ
@@ -24519,13 +24516,15 @@ sections:
     source: index_diachronica_original.html:5703
     sporadic: true
     rule_id: Anglo-Frisian-k-ɡ
-  - stages:
+  - comment: “under to [sic] the influence of neighboring consonants”, but the article
+      doesn’t elaborate; sporadic
+    stages:
     - æː
-    - aːbut the article doesn’t elaborate
-    comment: “under to [sic] the influence of neighboring consonants”,
+    - aː
     raw: æː → aː “under to [sic] the influence of neighboring consonants”, but the
       article doesn’t elaborate
     source: index_diachronica_original.html:5704
+    sporadic: true
     rule_id: Anglo-Frisian-æː
   - stages:
     - æː
@@ -24533,20 +24532,17 @@ sections:
     raw: æː → eː
     source: index_diachronica_original.html:5705
     rule_id: Anglo-Frisian-æː_2
-  - stages:
-    - æu
-    - au
-    - a
-    env: _B in general?)
-    comment: (æ
+  - stages: []
     raw: æu → au (æ → a / _B in general?)
     source: index_diachronica_original.html:5706
+    status: skipped
     rule_id: Anglo-Frisian-æu
+    comment: 'Can''t resolve: æu → au (æ → a / _B in general?)'
   - stages:
-    - aː
-    - æː
-    exception: _N or if nasalized
-    raw: aː → æː / ! _N or if nasalized
+    - a[+long, -nasal]
+    - æ[+long, -nasal]
+    exception: _N
+    raw: a[+long, -nasal] → æ[+long, -nasal] / ! _N
     source: index_diachronica_original.html:5707
     rule_id: Anglo-Frisian-aː
   - stages:
@@ -24568,13 +24564,12 @@ sections:
     raw: ia iu → jaː juː
     source: index_diachronica_original.html:5710
     rule_id: Anglo-Frisian-ia-iu
-  - stages:
-    - a
-    - æ
-    exception: _N or if nasalized, or if *B or *ã in next syllable
+  - stages: []
     raw: a → æ / ! _N or if nasalized, or if *B or *ã in next syllable
     source: index_diachronica_original.html:5711
+    status: skipped
     rule_id: Anglo-Frisian-a_3
+    comment: 'Can''t resolve: in next syllable'
   - stages:
     - h
     - ∅
@@ -24585,9 +24580,9 @@ sections:
   - stages:
     - '{i,u}'
     - ∅
-    env: -#
+    env: _#
     exception: VC_
-    raw: '{i,u} → ∅ / -# ! VC_'
+    raw: '{i,u} → ∅ / _# ! VC_'
     source: index_diachronica_original.html:5713
     rule_id: Anglo-Frisian-i,u
 - section: Anglo-Frisian to Old English

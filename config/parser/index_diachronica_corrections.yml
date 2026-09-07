@@ -277,3 +277,15 @@ rules:
                   reason: |
                           Handling alternatives in distinctive feature
                           yː → ø / _O[+ dental/alveolar]
+        - rule:
+                  id: Anglo-Frisian-a
+                  content: "a[-long] → ɑ̃ / _N"
+                  reason: "a → ɑ̃ / _N (short only)"
+        - rule:
+                  id: Anglo-Frisian-aː
+                  content: "a[+long, -nasal] → æ[+long, -nasal] / ! _N"
+                  reason: "aː → æː / ! _N or if nasalized"
+        - rule:
+                  id: Anglo-Frisian-i,u
+                  content: "{i,u} → ∅ / _# ! VC_"
+                  reason: "Typo? - {i,u} → ∅ / -# ! VC_"
