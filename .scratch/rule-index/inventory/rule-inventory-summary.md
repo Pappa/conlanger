@@ -3,18 +3,18 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
-- Rows: **9840** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
+- Rows: **9878** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8869** (90.1%)
-- Fail: **652** (6.6%)
+- OK: **8865** (89.7%)
+- Fail: **694** (7.0%)
 - Skipped: **319** (3.2%)
 
 ## Sections
 
-- All OK: **441 / 714** (61.8%)
-- Some OK: **254 / 714** (35.6%)
-- None OK: **3 / 714** (0.4%)
+- All OK: **439 / 714** (61.5%)
+- Some OK: **255 / 714** (35.7%)
+- None OK: **4 / 714** (0.6%)
 - Sections skipped: **16 / 714** (2.2%)
 
 ## Failure classes
@@ -22,14 +22,14 @@
 | count | failure_class |
 |------:|---------------|
 | 153 | `expected_underscore` |
-| 116 | `unknown_character` |
+| 137 | `unknown_character` |
+| 53 | `syntax_other` |
 | 50 | `missing_slash_output_env` |
 | 47 | `invalid_ipa` |
-| 41 | `prose_or_expected_arrow` |
-| 37 | `expected_ipa` |
+| 40 | `prose_or_expected_arrow` |
+| 38 | `expected_ipa` |
 | 35 | `expected_number` |
-| 32 | `syntax_other` |
-| 23 | `nested_brackets` |
+| 24 | `nested_brackets` |
 | 23 | `unknown_feature` |
 | 15 | `unknown_grouping` |
 | 14 | `stuff_after_word_bound` |
@@ -39,7 +39,7 @@
 | 8 | `segments_before_word` |
 | 7 | `multiple_underlines_env` |
 | 4 | `panic_other` |
-| 3 | `incomplete_matrix` |
+| 2 | `incomplete_matrix` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
 | 2 | `format_error` |
@@ -52,10 +52,11 @@
 
 | count | error_token |
 |------:|-------------|
+| 6 | `E` |
 | 2 | `,` |
 | 1 | `{` |
-| 1 | `α` |
 | 1 | `End Of Line` |
+| 1 | `α` |
 | 1 | `]` |
 | 1 | `:` |
 | 1 | `l` |
@@ -64,8 +65,8 @@
 
 | count | description |
 |------:|-------------|
+| 18 | `Negation cannot be used in the output` |
 | 10 | `Output cannot be empty. Use `*` or '∅' to indicate deletion` |
-| 3 | `Negation cannot be used in the output` |
 | 2 | `Tones cannot be ±; they can only be used with numeric values.` |
 | 1 | `Feature 'er' has no modifier` |
 | 1 | `Only a segment, matrix, group, or reference can be negated` |
@@ -90,16 +91,16 @@
 
 | count | error_token |
 |------:|-------------|
+| 22 | `+` |
 | 22 | `̣` |
 | 13 | `₂` |
 | 8 | `̊` |
 | 7 | `ː` |
+| 6 | `͜` |
 | 6 | `̺` |
 | 6 | `ŕ` |
-| 6 | `͜` |
 | 5 | `ₙ` |
 | 4 | `̂` |
-| 4 | `̻` |
 ### unknown_character (description)
 
 | count | description |
@@ -158,7 +159,7 @@
 
 | count | description |
 |------:|-------------|
-| 23 | `Cannot have nested brackets of the same type` |
+| 24 | `Cannot have nested brackets of the same type` |
 
 ### unknown_feature (error_token)
 
@@ -208,12 +209,12 @@
 | 7 | `Expected '>', '->' or '=>', but received '̩'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
 | 2 | `Expected '>', '->' or '=>', but received '̥'` |
-| 2 | `Expected '>', '->' or '=>', but received ')'` |
-| 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ˤ'` |
-| 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
+| 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received ':'` |
+| 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
+| 1 | `Expected '>', '->' or '=>', but received ')'` |
 
 ### invalid_ipa (error_token)
 
@@ -235,7 +236,7 @@
 |------:|-------------|
 | 8 | `(` |
 | 6 | `∅` |
-| 5 | `>` |
+| 6 | `>` |
 | 3 | `*` |
 | 3 | `ʷ` |
 | 3 | `…` |
@@ -356,7 +357,7 @@
 
 | count | description |
 |------:|-------------|
-| 3 | `An incomplete matrix cannot be inserted` |
+| 2 | `An incomplete matrix cannot be inserted` |
 
 ### grouped_env_insertion (error_token)
 
@@ -390,17 +391,6 @@
 | count | description |
 |------:|-------------|
 | — | _(none)_ |
-
-
-## Field isolation blame (error rows)
-
-| count | blame |
-|------:|-------|
-| 269 | `env` |
-| 210 | `input` |
-| 137 | `output` |
-| 81 | `exception` |
-| 51 | `multi` |
 
 ## Notes
 

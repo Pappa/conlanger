@@ -130,8 +130,9 @@ class IndexDiachronicaParser:
             self._matched_correction_ids.add(rule_id)
         line = getattr(el, "sourceline", None) or 0
         source = f"{source_file}:{line}"
-        working = apply_section_mappings(raw, section_index, self._parser_config)
-        working, hits = apply_manual_mappings(working, self._manual_mappings)
+
+        # apply manual mappings before section mappings to clean up the raw text
+        working, hits = apply_manual_mappings(raw, self._manual_mappings)
         for hit in hits:
             self._matched_manual_froms.add(hit.from_text)
             self.manual_mapping_matches.append(
@@ -143,6 +144,9 @@ class IndexDiachronicaParser:
                     manual_mapping=hit.to_text,
                 )
             )
+
+        working = apply_section_mappings(working, section_index, self._parser_config)
+
         if is_quoted_prose_paragraph(working):
             rule: dict[str, Any] = {
                 "stages": [],

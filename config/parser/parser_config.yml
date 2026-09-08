@@ -20,6 +20,16 @@ section_mappings:
     "1": "[+low tone]"
     "2": "[+mid tone]"
     "3": "[+high tone]"
+  "29.1.1.1":
+    # "RTR": "rtr"
+    "TŁ": "[+lateral]" # laterals
+    "TŠ": "[+cons, +dist, +fr, -bk, +hi, -lo]" # palatals
+    "TŠʷ": "[+cons, +dist, +fr, -bk, +hi, -lo, +labial]" # labialized palatals
+    "TS": "{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont, +cor, +anterior, +dist, -delrel]}" # dental affricates and fricatives
+    "K": "[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]" # front (palatalized) velars
+    "T": "[+cons, -son, -cont, +cor, +anterior, +dist]" # dental stops
+    # "Q": "uvulars"
+    # "Qʷ": "labialized uvulars"
 skip_sections:
   # - id: "6.2.2.1.1"
   #   reason: "Need to refer to the cited source to determine the correct rule syntax"
