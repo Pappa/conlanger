@@ -6,7 +6,7 @@ Blocked by: [121](121-correction-pass-io-matrix-bracket-to-colon.md)
 
 Target cluster: `incomplete_matrix` — **1** rule today ([Sebirwa-S](../inventory/error_clusters/incomplete_matrix_errors.csv)); pattern may recur wherever group expansion leaves `][` between matrices on the same host.
 
-Spawned from wayfinder session on [Cleaned rule index SoT](../map.md) (2026-09-08). Related: ticket [62 tone merge](62-correction-pass-tone-features.md) (tone-only); ticket [121 host+bracket→colon](121-correction-pass-io-matrix-bracket-to-colon.md) (bracket form, not `][` split).
+Spawned from wayfinder session on [Cleaned rule index SoT](../map.md) (2026-09-08). Related: ticket [62 tone merge](62-correction-pass-tone-features.md) (tone-only); ticket [121 host+bracket→colon](121-correction-pass-io-matrix-bracket-to-colon.md) (bracket form, not `][` split). **Out of scope:** [Cypriot-Arabic-∅](../inventory/error_clusters/incomplete_matrix_errors.csv) — env+matrix insertion interaction; see [125](125-grill-asca-grouping-insertion.md) / [126](126-correction-pass-asca-grouping-insertion.md).
 
 ## Problem
 
