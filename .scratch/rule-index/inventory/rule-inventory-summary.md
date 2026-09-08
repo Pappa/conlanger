@@ -22,12 +22,12 @@
 | count | failure_class |
 |------:|---------------|
 | 153 | `expected_underscore` |
-| 137 | `unknown_character` |
+| 136 | `unknown_character` |
 | 53 | `syntax_other` |
-| 50 | `missing_slash_output_env` |
+| 51 | `missing_slash_output_env` |
 | 47 | `invalid_ipa` |
-| 40 | `prose_or_expected_arrow` |
-| 38 | `expected_ipa` |
+| 41 | `prose_or_expected_arrow` |
+| 37 | `expected_ipa` |
 | 35 | `expected_number` |
 | 24 | `nested_brackets` |
 | 23 | `unknown_feature` |
@@ -96,11 +96,11 @@
 | 13 | `₂` |
 | 8 | `̊` |
 | 7 | `ː` |
+| 6 | `ŕ` |
 | 6 | `͜` |
 | 6 | `̺` |
-| 6 | `ŕ` |
 | 5 | `ₙ` |
-| 4 | `̂` |
+| 4 | `̻` |
 ### unknown_character (description)
 
 | count | description |
@@ -209,12 +209,12 @@
 | 7 | `Expected '>', '->' or '=>', but received '̩'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
 | 2 | `Expected '>', '->' or '=>', but received '̥'` |
-| 1 | `Expected '>', '->' or '=>', but received 'ˤ'` |
+| 2 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
-| 1 | `Expected '>', '->' or '=>', but received ':'` |
+| 1 | `Expected '>', '->' or '=>', but received 'ˤ'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
+| 1 | `Expected '>', '->' or '=>', but received ':'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
-| 1 | `Expected '>', '->' or '=>', but received ')'` |
 
 ### invalid_ipa (error_token)
 
@@ -236,7 +236,7 @@
 |------:|-------------|
 | 8 | `(` |
 | 6 | `∅` |
-| 6 | `>` |
+| 5 | `>` |
 | 3 | `*` |
 | 3 | `ʷ` |
 | 3 | `…` |
@@ -267,7 +267,7 @@
 |------:|-------------|
 | 20 | `)` |
 | 14 | `:` |
-| 5 | `(` |
+| 6 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
 | 1 | `ˤ` |
