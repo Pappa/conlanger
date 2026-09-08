@@ -47,7 +47,10 @@ from conlanger.tools.compile.asca.superscript_modifiers import (
 from conlanger.tools.compile.asca.syllable_position import (
     apply_syllable_position_compiled_overrides,
 )
-from conlanger.tools.compile.asca.tone_matrices import normalize_asca_tone_matrices
+from conlanger.tools.compile.asca.tone_matrices import (
+    normalize_asca_adjacent_feature_matrices,
+    normalize_asca_tone_matrices,
+)
 from conlanger.tools.compile.asca.voice_prerequisite_diacritics import (
     normalize_asca_voice_prerequisite_diacritics,
 )
@@ -138,6 +141,8 @@ def compile_asca_rule_field_strings(
     compiled_output = compile_asca_field_post_subscript(compiled_output)
     compiled_input = normalize_asca_host_bracket_matrices(compiled_input)
     compiled_output = normalize_asca_host_bracket_matrices(compiled_output)
+    compiled_input = normalize_asca_adjacent_feature_matrices(compiled_input)
+    compiled_output = normalize_asca_adjacent_feature_matrices(compiled_output)
     if compiled_env is not None:
         compiled_env = compile_asca_field_post_subscript(compiled_env)
         if is_whole_field_set(compiled_env):

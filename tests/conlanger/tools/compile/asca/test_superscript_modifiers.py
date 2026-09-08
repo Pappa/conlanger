@@ -93,5 +93,5 @@ def test_superscript_s_aspirated_rule_compiles_via_pipeline(fx_sample_compiler_c
     ruleset = DiachronicSeries(
         section, "asca", compiler_config=fx_sample_compiler_config
     )
-    assert ruleset._parts[-1].value == "C:[+labial][+spread] > P / #v_V"
+    assert ruleset._parts[-1].value == "C:[+labial, +spread] > P / #v_V"
     validate_asca(ruleset)

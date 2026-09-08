@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: [121](121-correction-pass-io-matrix-bracket-to-colon.md)
 
 # Correction pass: merge adjacent ASCA feature matrices
@@ -39,10 +39,17 @@ Same failure mode as [62](62-correction-pass-tone-features.md) probes (`V:[+long
 
 ## Acceptance criteria
 
-- [ ] Pass merges `C:[+labial][+spread]` → `C:[+labial,+spread]` on I/O compile fields
-- [ ] Tone merge behaviour from [62](62-correction-pass-tone-features.md) preserved (regression tests)
-- [ ] `Sebirwa-S` validates (`ok=1`) or documented hold-out with reason
-- [ ] Full inventory re-run; before/after metrics in **Answer**
+- [x] Pass merges `C:[+labial][+spread]` → `C:[+labial,+spread]` on I/O compile fields
+- [x] Tone merge behaviour from [62](62-correction-pass-tone-features.md) preserved (regression tests)
+- [x] `Sebirwa-S` validates (`ok=1`) or documented hold-out with reason
+- [x] Full inventory re-run; before/after metrics in **Answer**
+
+## Answer
+
+**Shipped 2026-09-09.** Shared `merge_adjacent_feature_matrices` in `tone_matrices.py`; `normalize_asca_adjacent_feature_matrices` runs on compiled I/O after `normalize_asca_host_bracket_matrices`. Tone pass reuses the same merge helper.
+
+- **Inventory:** OK **8865 → 8866 (+1)**; fail **694 → 693 (−1)**; sections all-OK **439 → 440 / 714**. `incomplete_matrix` **2 → 1 (−1)** — `Sebirwa-S` recovered (`P > C:[+labial, +spread]`); residual `Cypriot-Arabic-∅` out of scope ([125](125-grill-asca-grouping-insertion.md)).
+- **Apply probes:** `C:[+labial][+spread]` → merged colon form validates; tone merge regression tests unchanged.
 
 ## References
 

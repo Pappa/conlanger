@@ -34,7 +34,7 @@ section_index,rule_id,error_token,rule
 29.1.1.1.4,Chilcotin-V,ˀ,"V > Vˀ | ^ @ Rule 1, Line 1"
 29.1.1.1.7,Deg-Hit’an-TŠʷ,),"[+cons, -son, -cont, +cor, +anterior, +dist]ʂ > {[+cons,-son,-cont,+cor,+anterior,+dist,+delrel],[+cons,-son,+cont,+cor,+anterior,+dist,-delrel]} in [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]uskokwim dialect) | ^ @ Rule 1, Line 2"
 29.1.1.1.7,Deg-Hit’an-w,),"v > w in Phageluk dialect) | ^ @ Rule 1, Line 2"
-29.1.1.1.18,Sekani-TS,),"[+cons, -son, -cont, +cor, +anterior, +dist][-place] > {[+cons,-son,-cont,+cor,+anterior,+dist,+delrel],[+cons,-son,+cont,+cor,+anterior,+dist,-delrel]} again in some areas) | ^ @ Rule 1, Line 2"
+29.1.1.1.18,Sekani-TS,),"[+cons, -son, -cont, +cor, +anterior, +dist, -place] > {[+cons,-son,-cont,+cor,+anterior,+dist,+delrel],[+cons,-son,+cont,+cor,+anterior,+dist,-delrel]} again in some areas) | ^ @ Rule 1, Line 2"
 29.1.1.1.39,Upper-Tanana-ə,),"{a,ɨ} > ø in the Northway dialect) | ^ @ Rule 1, Line 2"
 36.1.1,Old-Mandarin-wʲ,ʲ,"wʲ > w / _?Cʲ | ^ @ Rule 1, Line 1"
 36.2,Guānhuà-uʔ,),"oʔ > uɛʔ?) | ^ @ Rule 1, Line 2"

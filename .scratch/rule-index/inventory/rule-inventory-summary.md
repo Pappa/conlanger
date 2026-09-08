@@ -6,14 +6,14 @@
 - Rows: **9878** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8865** (89.7%)
-- Fail: **694** (7.0%)
+- OK: **8866** (89.8%)
+- Fail: **693** (7.0%)
 - Skipped: **319** (3.2%)
 
 ## Sections
 
-- All OK: **439 / 714** (61.5%)
-- Some OK: **255 / 714** (35.7%)
+- All OK: **440 / 714** (61.6%)
+- Some OK: **254 / 714** (35.6%)
 - None OK: **4 / 714** (0.6%)
 - Sections skipped: **16 / 714** (2.2%)
 
@@ -39,12 +39,12 @@
 | 8 | `segments_before_word` |
 | 7 | `multiple_underlines_env` |
 | 4 | `panic_other` |
-| 2 | `incomplete_matrix` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
 | 2 | `format_error` |
 | 2 | `runtime_delete_only_segment` |
 | 2 | `other` |
+| 1 | `incomplete_matrix` |
 
 ## Common Errors
 
@@ -357,7 +357,7 @@
 
 | count | description |
 |------:|-------------|
-| 2 | `An incomplete matrix cannot be inserted` |
+| 1 | `An incomplete matrix cannot be inserted` |
 
 ### grouped_env_insertion (error_token)
 
