@@ -21,7 +21,6 @@ section_mappings:
     "2": "[+mid tone]"
     "3": "[+high tone]"
   "29.1.1.1":
-    # "RTR": "rtr"
     "TŁ": "[+lateral]" # laterals
     "TŠ": "[+cons, +dist, +fr, -bk, +hi, -lo]" # palatals
     "TŠʷ": "[+cons, +dist, +fr, -bk, +hi, -lo, +labial]" # labialized palatals
