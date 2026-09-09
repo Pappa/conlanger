@@ -48198,9 +48198,8 @@ sections:
   rules:
   - stages:
     - '[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]}'
-    raw: K → TS
+    - ts
+    raw: K → ts
     source: index_diachronica_original.html:10157
     rule_id: Proto-Southern-Athabaskan-K
   - comment: (→ b seems more common)

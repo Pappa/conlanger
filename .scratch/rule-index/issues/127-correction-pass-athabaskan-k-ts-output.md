@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: None
 
 # Correction pass: Athabaskan K→TS multi-segment output
@@ -35,10 +35,19 @@ Per-letter group expansion (`T` → `P:[-voice]`, `S` → `P`) glues two ASCA **
 
 ## Acceptance criteria
 
-- [ ] `Proto-Southern-Athabaskan-K` validates (`ok=1`)
-- [ ] Compiled string uses IPA (or other ASCA-legal multi-segment output), not `P:[-voice]P`
-- [ ] Apply probe on velar input → expected fricative/cluster output
-- [ ] Full inventory re-run; before/after metrics in **Answer**
+- [x] `Proto-Southern-Athabaskan-K` validates (`ok=1`)
+- [x] Compiled string uses IPA (or other ASCA-legal multi-segment output), not `P:[-voice]P`
+- [x] Apply probe on velar input → expected fricative/cluster output
+- [x] Full inventory re-run; before/after metrics in **Answer**
+
+## Answer
+
+**Shipped 2026-09-09.** Overlay `K → ts` in `index_diachronica_corrections.yml` keyed by `Proto-Southern-Athabaskan-K`. Input `K` still expands via §29.1.1.1 `section_mappings` to velar matrix; output `ts` is concrete IPA affricate /ts/ (Hoijer 1938 dental TS series), avoiding per-letter `T`/`S` group expansion (`P:[-voice]P`).
+
+- **IPA choice:** `/ts/` affricate — primary reflex of Index `TS` correspondence set in Southern Athabaskan (Hoijer 1938, §29.1.1.1.19). Alternatives `t s` and `{ts,s}` also ASCA-legal; affricate chosen as single-segment output matching common Index `→ ts` rows.
+- **Inventory:** OK **8881 → 8882 (+1)**; fail **656 → 642 (−14 inventory rows, +1 rule)**; sections all-OK **451 / 714** (unchanged). `incomplete_matrix` cluster **2 → 1** — `Proto-Southern-Athabaskan-K` recovered; residual `Cypriot-Arabic-∅` ([125](125-grill-asca-grouping-insertion.md)).
+- **Compiled:** `[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo] > ts` (not `P:[-voice]P`).
+- **Apply probe:** `C:[-front,+back,+hi,-lo] > ts` on `kaka` → `tsatsa`.
 
 ## References
 

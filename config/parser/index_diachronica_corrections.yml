@@ -289,3 +289,9 @@ rules:
                   id: Anglo-Frisian-i,u
                   content: "{i,u} → ∅ / _# ! VC_"
                   reason: "Typo? - {i,u} → ∅ / -# ! VC_"
+        - rule:
+                  id: Proto-Southern-Athabaskan-K
+                  content: "K → ts"
+                  reason: |
+                          Hoijer (1938) §29.1.1.1.19: velar K becomes dental TS series.
+                          IPA affricate /ts/ avoids per-letter T/S group expansion (P:[-voice]P).

@@ -110,6 +110,7 @@ A **cleaned rule index** (applier-neutral YAML SoT) derived from **Index Diachro
 - [Correction pass: parallel output ∅ residuals](issues/109-correction-pass-parallel-output-null-residual.md) — **resolved** (2026-09-01): Cartesian parallel branches + `peel_embedded_output_env`; **8184 → 8358 ok (+174)**; sections all-OK **399 → 408**; `null_in_parallel_output_set` cluster cleared.
 - [Correction pass: diacritic prerequisite lengthening](issues/110-correction-pass-diacritic-prerequisite-lengthening.md) — **resolved** (2026-09-01): `normalize_asca_voice_prerequisite_diacritics` at compile; **8358 → 8380 ok (+22)**; sections all-OK **408 → 414**; `voice_prerequisite_diacritic` cluster cleared.
 - [Parse fix: Indo-Aryan optional stages dropped from chain](issues/112-parse-fix-indo-aryan-optional-stages.md) — **resolved** (2026-09-02): `gloss.is_prose_gloss()` treats short parenthetical segment tokens as phonology; `a{i,j}(a) a{u,w}(a)` chain retains both `(a)` in parsed `stages` (`b258472c`). Spawned from grill 71 Q7; compile cartesian follow-on is [111](issues/111-correction-pass-cartesian-io-optionals.md).
+- [Correction pass: Athabaskan K→TS multi-segment output](issues/127-correction-pass-athabaskan-k-ts-output.md) — **resolved** (2026-09-09): overlay `K → ts` IPA; **8881 → 8882 ok (+1)**; `incomplete_matrix` **2 → 1**.
 
 
 ## Pipeline documentation (grill 2026-08-07)

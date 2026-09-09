@@ -3,11 +3,11 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
-- Rows: **9877** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
+- Rows: **9864** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8881** (89.9%)
-- Fail: **656** (6.6%)
+- OK: **8882** (90.0%)
+- Fail: **642** (6.5%)
 - Skipped: **340** (3.4%)
 
 ## Sections
@@ -22,12 +22,12 @@
 | count | failure_class |
 |------:|---------------|
 | 152 | `expected_underscore` |
-| 137 | `unknown_character` |
-| 52 | `syntax_other` |
+| 128 | `unknown_character` |
 | 47 | `invalid_ipa` |
+| 46 | `syntax_other` |
 | 46 | `missing_slash_output_env` |
+| 43 | `expected_ipa` |
 | 43 | `prose_or_expected_arrow` |
-| 42 | `expected_ipa` |
 | 24 | `nested_brackets` |
 | 22 | `unknown_feature` |
 | 15 | `unknown_grouping` |
@@ -51,7 +51,7 @@
 
 | count | error_token |
 |------:|-------------|
-| 6 | `E` |
+| 4 | `E` |
 | 2 | `,` |
 | 1 | `{` |
 | 1 | `End Of Line` |
@@ -64,7 +64,7 @@
 
 | count | description |
 |------:|-------------|
-| 18 | `Negation cannot be used in the output` |
+| 14 | `Negation cannot be used in the output` |
 | 10 | `Output cannot be empty. Use `*` or '∅' to indicate deletion` |
 | 2 | `Tones cannot be ±; they can only be used with numeric values.` |
 | 1 | `/ cannot be placed inside a matrix. An element inside `[]` must a distinctive feature` |
@@ -90,16 +90,16 @@
 
 | count | error_token |
 |------:|-------------|
-| 22 | `+` |
 | 22 | `̣` |
+| 14 | `+` |
 | 13 | `₂` |
 | 8 | `̊` |
 | 7 | `ː` |
+| 6 | `ŕ` |
 | 6 | `͜` |
 | 6 | `̺` |
-| 6 | `ŕ` |
 | 5 | `ₙ` |
-| 4 | `̂` |
+| 4 | `̻` |
 ### unknown_character (description)
 
 | count | description |
@@ -232,7 +232,7 @@
 |------:|-------------|
 | 8 | `(` |
 | 6 | `:` |
-| 5 | `∅` |
+| 6 | `∅` |
 | 5 | `>` |
 | 3 | `*` |
 | 3 | `ʷ` |
@@ -261,9 +261,9 @@
 
 | count | error_token |
 |------:|-------------|
-| 21 | `)` |
+| 20 | `)` |
 | 11 | `:` |
-| 4 | `(` |
+| 5 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
 | 1 | `&` |
