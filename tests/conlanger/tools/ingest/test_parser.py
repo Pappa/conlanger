@@ -718,246 +718,188 @@ def test_apply_prose_position_env_conditions_structural_monosyllable_qualifier()
     }
 
 
-def test_split_embedded_double_slash():
-    assert split_embedded_double_slash("odd syllables // _{w,j,H}") == (
-        "odd syllables",
-        "_{w,j,H}",
-    )
-    assert split_embedded_double_slash("#_e") == ("#_e", None)
+@pytest.mark.parametrize(
+    ("text", "expected_head", "expected_tail"),
+    [
+        ("odd syllables // _{w,j,H}", "odd syllables", "_{w,j,H}"),
+        ("#_e", "#_e", None),
+    ],
+)
+def test_split_embedded_double_slash(text, expected_head, expected_tail):
+    assert split_embedded_double_slash(text) == (expected_head, expected_tail)
 
 
-def test_normalize_prose_exception_adjacent_to_another_consonant():
-    env, captures, flags = normalize_prose_exception_or_env_tail(
-        "adjacent to another consonant"
-    )
-    assert env == "C_,_C"
-    assert captures == ["adjacent to another consonant"]
+@pytest.mark.parametrize(
+    ("text", "expected_env", "expected_captures"),
+    [
+        ("adjacent to another consonant", "C_,_C", ["adjacent to another consonant"]),
+        ("adjacent to S", "_,S", ["adjacent to S"]),
+        ("Logudorese", "", ["Logudorese"]),
+        ("onset of U[+stress]", "#_U[+stress]", ["onset of U[+stress]"]),
+        ("in onset of %[+stress]", "#_%[+stress]", ["in onset of %[+stress]"]),
+        ("penult", "%_", ["penult"]),
+        ("final syllables", "U#", ["final syllables"]),
+        (
+            "#% with the following conditions",
+            "#% with the following conditions",
+            ["#% with the following conditions"],
+        ),
+        ("_k, short only)", "_k", ["short only"]),
+        ("%[-stress]", "_ %[-stress]", ["%[-stress]"]),
+        ("", "", []),
+    ],
+)
+def test_normalize_prose_exception_or_env_tail(text, expected_env, expected_captures):
+    env, captures, flags = normalize_prose_exception_or_env_tail(text)
+    assert env == expected_env
+    assert captures == expected_captures
     assert flags == {}
 
 
-def test_normalize_prose_exception_adjacent_to_single_segment():
-    env, captures, _ = normalize_prose_exception_or_env_tail("adjacent to S")
-    assert env == "_,S"
-    assert captures == ["adjacent to S"]
-
-
-def test_normalize_prose_exception_dialect_comment():
-    env, captures, _ = normalize_prose_exception_or_env_tail("Logudorese")
-    assert env == ""
-    assert captures == ["Logudorese"]
-
-
-def test_normalize_prose_env_head_strips_typically():
-    env, captures, _ = normalize_prose_env_head("{a,ɛ}_, typically")
-    assert env == "{a,ɛ}_"
-    assert captures == ["typically"]
-
-
-def test_normalize_prose_env_head_bare_percent_feature():
-    env, captures, _ = normalize_prose_env_head("%[-stress]")
-    assert env == "_ %[-stress]"
-    assert captures == ["%[-stress]"]
-
-
-def test_apply_double_slash_env_conditions_javanese_adjacent():
-    assert apply_double_slash_env_conditions(
-        {
-            "stages": ["b", "w"],
-            "exception": "adjacent to another consonant",
-        }
-    ) == {
-        "stages": ["b", "w"],
-        "exception": "C_,_C",
-        "comment": "adjacent to another consonant",
-    }
-
-
-def test_apply_double_slash_env_conditions_sardinian_dialect():
-    assert apply_double_slash_env_conditions(
-        {
-            "stages": ["r", "ur:[+long]"],
-            "env": "#_e",
-            "exception": "Logudorese",
-        }
-    ) == {
-        "stages": ["r", "ur:[+long]"],
-        "env": "#_e",
-        "comment": "Logudorese",
-    }
-
-
-def test_apply_double_slash_env_conditions_menominee_odd_syllables():
-    assert apply_double_slash_env_conditions(
-        {
-            "stages": ["æ", "e"],
-            "env": "odd syllables",
-            "exception": "_{w,j,H}",
-        }
-    ) == {
-        "stages": ["æ", "e"],
-        "env": "_",
-        "exception": "_{w,j,H}",
-        "comment": "odd syllables",
-    }
-
-
-def test_apply_double_slash_env_conditions_void_env():
-    assert apply_double_slash_env_conditions(
-        {
-            "stages": ["{d,j}", "j"],
-            "env": "∅",
-            "exception": "_#",
-        }
-    ) == {
-        "stages": ["{d,j}", "j"],
-        "exception": "_#",
-    }
-
-
-def test_normalize_prose_exception_onset_of_stress():
-    env, captures, _ = normalize_prose_exception_or_env_tail("onset of U[+stress]")
-    assert env == "#_U[+stress]"
-    assert captures == ["onset of U[+stress]"]
-
-
-def test_normalize_prose_exception_penult():
-    env, captures, _ = normalize_prose_exception_or_env_tail("penult")
-    assert env == "%_"
-    assert captures == ["penult"]
-
-
-def test_apply_double_slash_env_conditions_onset_exception():
-    assert apply_double_slash_env_conditions(
-        {
-            "stages": ["ʔ", "∅"],
-            "exception": "onset of U[+stress]",
-        }
-    ) == {
-        "stages": ["ʔ", "∅"],
-        "exception": "#_U[+stress]",
-        "comment": "onset of U[+stress]",
-    }
-
-
-def test_apply_double_slash_env_conditions_before_identical_vowel():
-    assert apply_double_slash_env_conditions(
-        {
-            "stages": ["iC aC uC", "Cj Ca Cw"],
-            "env": "#_",
-            "exception": "before an identical vowel",
-        }
-    ) == {
-        "stages": ["iC aC uC", "Cj Ca Cw"],
-        "env": "#_",
-        "exception": "V_V",
-        "comment": "before an identical vowel",
-    }
-
-
-def test_apply_double_slash_env_conditions_maybe_strips_question_mark():
-    assert apply_double_slash_env_conditions(
-        {
-            "stages": ["tʃ", "s"],
-            "env": "maybe",
-            "exception": "_#?",
-        }
-    ) == {
-        "stages": ["tʃ", "s"],
-        "env": "_",
-        "exception": "_#",
-        "comment": "maybe",
-        "sporadic": True,
-    }
-
-
-def test_normalize_prose_exception_or_env_tail_empty():
-    assert normalize_prose_exception_or_env_tail("") == ("", [], {})
-
-
-def test_normalize_prose_env_head_empty():
-    assert normalize_prose_env_head("") == ("", [], {})
-
-
-def test_normalize_prose_exception_or_env_tail_prose_position():
-    env, captures, flags = normalize_prose_exception_or_env_tail("final syllables")
-    assert env == "U#"
-    assert captures == ["final syllables"]
+@pytest.mark.parametrize(
+    ("text", "expected_env", "expected_captures"),
+    [
+        ("{a,ɛ}_, typically", "{a,ɛ}_", ["typically"]),
+        ("%[-stress]", "_ %[-stress]", ["%[-stress]"]),
+        ("unstressed syllables", "_ %[-stress]", ["unstressed syllables"]),
+        ("", "", []),
+    ],
+)
+def test_normalize_prose_env_head(text, expected_env, expected_captures):
+    env, captures, flags = normalize_prose_env_head(text)
+    assert env == expected_env
+    assert captures == expected_captures
     assert flags == {}
 
 
-def test_normalize_prose_env_head_prose_position():
-    env, captures, flags = normalize_prose_env_head("unstressed syllables")
-    assert env == "_ %[-stress]"
-    assert captures == ["unstressed syllables"]
-    assert flags == {}
-
-
-def test_normalize_prose_exception_in_onset_of_stress():
-    env, captures, _ = normalize_prose_exception_or_env_tail("in onset of %[+stress]")
-    assert env == "#_%[+stress]"
-    assert captures == ["in onset of %[+stress]"]
-
-
-def test_normalize_prose_exception_complex_prose_passthrough():
-    text = "#% with the following conditions"
-    env, captures, _ = normalize_prose_exception_or_env_tail(text)
-    assert env == text
-    assert captures == [text]
-
-
-def test_normalize_prose_exception_broken_short_only_tail():
-    env, captures, _ = normalize_prose_exception_or_env_tail("_k, short only)")
-    assert env == "_k"
-    assert captures == ["short only"]
-
-
-def test_normalize_prose_exception_bare_percent_feature():
-    env, captures, _ = normalize_prose_exception_or_env_tail("%[-stress]")
-    assert env == "_ %[-stress]"
-    assert captures == ["%[-stress]"]
-
-
-def test_apply_double_slash_env_conditions_embedded_tail_splits_env_head():
-    result = apply_double_slash_env_conditions(
-        {
-            "stages": ["æ", "e"],
-            "env": "odd syllables // _{w,j,H}",
-        }
-    )
-    assert result == {
-        "stages": ["æ", "e"],
-        "env": "_",
-        "comment": "odd syllables",
-    }
-
-
-def test_apply_double_slash_env_conditions_embedded_tail_appends_comment():
-    assert apply_double_slash_env_conditions(
-        {
-            "stages": ["æ", "e"],
-            "env": "#_e // extra gloss",
-            "exception": "_{w,j,H}",
-        }
-    ) == {
-        "stages": ["æ", "e"],
-        "env": "#_e",
-        "exception": "_{w,j,H}",
-        "comment": "extra gloss",
-    }
-
-
-def test_apply_double_slash_env_conditions_exception_uncertainty_qualifier():
-    assert apply_double_slash_env_conditions(
-        {
-            "stages": ["t", "d"],
-            "exception": "_# (sporadic)",
-        }
-    ) == {
-        "stages": ["t", "d"],
-        "exception": "_#",
-        "comment": "(sporadic)",
-        "sporadic": True,
-    }
+@pytest.mark.parametrize(
+    ("parts", "expected"),
+    [
+        (
+            {
+                "stages": ["b", "w"],
+                "exception": "adjacent to another consonant",
+            },
+            {
+                "stages": ["b", "w"],
+                "exception": "C_,_C",
+                "comment": "adjacent to another consonant",
+            },
+        ),
+        (
+            {
+                "stages": ["r", "ur:[+long]"],
+                "env": "#_e",
+                "exception": "Logudorese",
+            },
+            {
+                "stages": ["r", "ur:[+long]"],
+                "env": "#_e",
+                "comment": "Logudorese",
+            },
+        ),
+        (
+            {
+                "stages": ["æ", "e"],
+                "env": "odd syllables",
+                "exception": "_{w,j,H}",
+            },
+            {
+                "stages": ["æ", "e"],
+                "env": "_",
+                "exception": "_{w,j,H}",
+                "comment": "odd syllables",
+            },
+        ),
+        (
+            {
+                "stages": ["{d,j}", "j"],
+                "env": "∅",
+                "exception": "_#",
+            },
+            {
+                "stages": ["{d,j}", "j"],
+                "exception": "_#",
+            },
+        ),
+        (
+            {
+                "stages": ["ʔ", "∅"],
+                "exception": "onset of U[+stress]",
+            },
+            {
+                "stages": ["ʔ", "∅"],
+                "exception": "#_U[+stress]",
+                "comment": "onset of U[+stress]",
+            },
+        ),
+        (
+            {
+                "stages": ["iC aC uC", "Cj Ca Cw"],
+                "env": "#_",
+                "exception": "before an identical vowel",
+            },
+            {
+                "stages": ["iC aC uC", "Cj Ca Cw"],
+                "env": "#_",
+                "exception": "V_V",
+                "comment": "before an identical vowel",
+            },
+        ),
+        (
+            {
+                "stages": ["tʃ", "s"],
+                "env": "maybe",
+                "exception": "_#?",
+            },
+            {
+                "stages": ["tʃ", "s"],
+                "env": "_",
+                "exception": "_#",
+                "comment": "maybe",
+                "sporadic": True,
+            },
+        ),
+        (
+            {
+                "stages": ["æ", "e"],
+                "env": "odd syllables // _{w,j,H}",
+            },
+            {
+                "stages": ["æ", "e"],
+                "env": "_",
+                "comment": "odd syllables",
+            },
+        ),
+        (
+            {
+                "stages": ["æ", "e"],
+                "env": "#_e // extra gloss",
+                "exception": "_{w,j,H}",
+            },
+            {
+                "stages": ["æ", "e"],
+                "env": "#_e",
+                "exception": "_{w,j,H}",
+                "comment": "extra gloss",
+            },
+        ),
+        (
+            {
+                "stages": ["t", "d"],
+                "exception": "_# (sporadic)",
+            },
+            {
+                "stages": ["t", "d"],
+                "exception": "_#",
+                "comment": "(sporadic)",
+                "sporadic": True,
+            },
+        ),
+    ],
+)
+def test_apply_double_slash_env_conditions(parts, expected):
+    assert apply_double_slash_env_conditions(parts) == expected
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
