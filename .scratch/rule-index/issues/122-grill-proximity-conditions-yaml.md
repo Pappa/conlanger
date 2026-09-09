@@ -34,7 +34,7 @@ Decide schema for optional `conditions` atoms, resolver config shape, interactio
 
 ### Compile resolution
 
-5. **Q5 — Resolver catalog:** What named strategies must v1 support? (e.g. `immediate_neighbor`, `same_syllable`, `same_word`, `within_segments` + distance, …) Which are required vs deferred?
+5. **Q5 — Resolver catalog:** What named strategies must v1 support? (e.g. `immediate_neighbor`, `same_syllable`, `next_syllable`, `same_word`, `within_segments` + distance, …) Which are required vs deferred?
 6. **Q6 — Default for `near`:** What is the config default when the user does not specify? (Acknowledge current `C_, _C` is a legacy stand-in, not linguistically faithful.)
 7. **Q7 — ASCA emission:** Does each strategy always emit env/exception underscore patterns (`C_, _C`), or sometimes input-side colon / structure notation (cf. ticket 119)?
 8. **Q8 — Multiple proximity atoms:** Can one rule have several `conditions` (e.g. near consonants **and** not near emphatics)? Compose how — conjunction in one env, multiple env slots, or compile fan-out?
