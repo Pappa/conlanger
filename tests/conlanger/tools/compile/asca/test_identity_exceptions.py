@@ -146,7 +146,7 @@ def test_apply_identity_exception_input_narrowing_noop_when_unmatched():
 
 
 def test_resolve_index_identity_exceptions_unchanged_when_no_match():
-    inp, output, env, exception, pending = resolve_index_identity_exceptions(
+    inp, _output, _env, exception, pending = resolve_index_identity_exceptions(
         "s",
         "z",
         "_#",
