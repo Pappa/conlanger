@@ -277,7 +277,8 @@ sections:
     source: index_diachronica_original.html:987
     status: skipped
     rule_id: North-Omotic-Vː_2
-    comment: I can't figure out the rule even afer reading the source material
+    comment: I can't figu+fr, -bk, +hi, -lore out the rule even afer reading the source
+      material
   - stages:
     - N
     - ∅
@@ -17443,6 +17444,7 @@ sections:
     raw: R[- glottalized]VOʼ → ˀRVO[- ejective] / _$
     source: index_diachronica_original.html:4438
     rule_id: Barbareño-R-glottalizedVOʼ
+  status: skipped
 - section: Proto-Chumash to Cruzeño
   index: '13.2'
   citation: CatDoom, from Klar, Kathryn (1977), Topics in Historical Chumash Grammar.
@@ -17472,6 +17474,7 @@ sections:
     raw: ˀN ˀw → N w
     source: index_diachronica_original.html:4449
     rule_id: Inseño-ˀN-ˀw
+  status: skipped
 - section: Proto-Chumash to Obispeño
   index: '13.4'
   citation: CatDoom, from Klar, Kathryn (1977), Topics in Historical Chumash Grammar.
@@ -17510,6 +17513,7 @@ sections:
     raw: ˀj → ∅
     source: index_diachronica_original.html:4458
     rule_id: Obispeño-ˀj
+  status: skipped
 - section: Proto-Chumash to Purisimeño
   index: '13.5'
   citation: CatDoom, from Klar, Kathryn (1977), Topics in Historical Chumash Grammar.
@@ -17527,6 +17531,7 @@ sections:
     raw: qʼ → q
     source: index_diachronica_original.html:4464
     rule_id: Purisimeño-qʼ
+  status: skipped
 - section: Proto-Chumash to Ventureño
   index: '13.6'
   citation: CatDoom, from Klar, Kathryn (1977), Topics in Historical Chumash Grammar.
@@ -17551,6 +17556,7 @@ sections:
     raw: ˀm ˀn ˀl ˀj → m n l j
     source: index_diachronica_original.html:4471
     rule_id: Ventureño-ˀm-ˀn-ˀl-ˀj
+  status: skipped
 - section: Elamo-Dravidian
   index: '14'
   citation: McAlpin (1974) reconstructs Proto-Elamo-Dravidian as having the following
@@ -47388,8 +47394,8 @@ sections:
   rules:
   - stages:
     - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}'
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]}'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]}'
     raw: '{TŠ,TŠʷ} → TS'
     source: index_diachronica_original.html:9979
     rule_id: Ahtna-TŠ,TŠʷ
@@ -47426,8 +47432,8 @@ sections:
   rules:
   - stages:
     - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}'
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]}'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]}'
     raw: '{TŠ,TŠʷ} → TS'
     source: index_diachronica_original.html:9988
     rule_id: Babine-TŠ,TŠʷ
@@ -47449,17 +47455,17 @@ sections:
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - stages:
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]}'
-    - '[+cons, -son, -cont, +cor, +anterior, +dist]H'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]}'
+    - '[+cons, -son, -cont, +cor,+anterior,+dist]H'
     comment: (most often back to 3, however)
     raw: TS → TH (most often back to 3, however)
     source: index_diachronica_original.html:9995
     rule_id: Beaver-TS
   - stages:
     - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}'
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]}'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]}'
     raw: '{TŠ,TŠʷ} → TS'
     source: index_diachronica_original.html:9996
     rule_id: Beaver-TŠ,TŠʷ
@@ -47471,7 +47477,7 @@ sections:
     source: index_diachronica_original.html:9997
     rule_id: Beaver-K-Q
   - stages:
-    - '[+cons, -son, -cont, +cor, +anterior, +dist]'
+    - '[+cons, -son, -cont, +cor,+anterior,+dist]'
     - '[+cons, +dist, +fr, -bk, +hi, -lo]'
     env: _{i,e,u}, in the British Columbian dialect
     raw: T → TŠ / _{i,e,u}, in the British Columbian dialect
@@ -47516,8 +47522,8 @@ sections:
   - stages:
     - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}
       [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo]'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo]'
     raw: '{TŠ,TŠʷ} K → TS TŠ'
     source: index_diachronica_original.html:10008
     rule_id: Chilcotin-TŠ,TŠʷ-K
@@ -47539,13 +47545,13 @@ sections:
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - stages:
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
       +dist, +fr, -bk, +hi, -lo, +labial]} [+cons, -son, -cont, -cor, +fr, -bk, +hi,
       -lo] Q'
-    - '[+cons, -son, -cont, +cor, +anterior, +dist]H {[+cons, -son, -cont, +cor, +anterior,
-      +dist, +delrel], [+cons, -son, +cont, +cor, +anterior, +dist, -delrel]} [+cons,
-      +dist, +fr, -bk, +hi, -lo] [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
+    - '[+cons, -son, -cont, +cor,+anterior,+dist]H {[+cons, -son, -cont, +cor,+anterior,+dist,
+      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]} [+cons, +dist,
+      +fr, -bk, +hi, -lo] [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
     raw: TS {TŠ,TŠʷ} K Q → TH TS TŠ K
     source: index_diachronica_original.html:10016
     rule_id: Chipewyan-TS-TŠ,TŠʷ-K-Q
@@ -47583,9 +47589,9 @@ sections:
   - stages:
     - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}
       [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo] Q'
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons,
-      -son, -cont, -cor, +fr, -bk, +hi, -lo]'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, -son,
+      -cont, -cor, +fr, -bk, +hi, -lo]'
     raw: '{TŠ,TŠʷ} K Q → TS TŠ K'
     source: index_diachronica_original.html:10025
     rule_id: Dakelh-TŠ,TŠʷ-K-Q
@@ -47607,18 +47613,18 @@ sections:
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - stages:
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo]'
-    - '[+cons, -son, -cont, +cor, +anterior, +dist]H {[+cons, -son, -cont, +cor, +anterior,
-      +dist, +delrel], [+cons, -son, +cont, +cor, +anterior, +dist, -delrel]}'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo]'
+    - '[+cons, -son, -cont, +cor,+anterior,+dist]H {[+cons, -son, -cont, +cor,+anterior,+dist,
+      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]}'
     raw: TS TŠ → TH TS
     source: index_diachronica_original.html:10032
     rule_id: Deg-Hit’an-TS-TŠ
   - stages:
     - '[+cons, +dist, +fr, -bk, +hi, -lo, +labial]'
-    - '[+cons, -son, -cont, +cor, +anterior, +dist]ʂ'
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} in [+cons, -son, -cont, -cor, +fr, -bk, +hi,
+    - '[+cons, -son, -cont, +cor,+anterior,+dist]ʂ'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} in [+cons, -son, -cont, -cor, +fr, -bk, +hi,
       -lo]uskokwim dialect)'
     comment: (
     raw: TŠʷ → TṢ (→ TS in Kuskokwim dialect)
@@ -47679,8 +47685,8 @@ sections:
   - stages:
     - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}'
     - '[+cons, +dist, +fr, -bk, +hi, -lo]'
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} in Upper Inlet dialect)'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} in Upper Inlet dialect)'
     comment: (
     raw: '{TŠ,TŠʷ} → TŠ (→ TS in Upper Inlet dialect)'
     source: index_diachronica_original.html:10045
@@ -47724,9 +47730,9 @@ sections:
   - stages:
     - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}
       [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo] Q'
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons,
-      -son, -cont, -cor, +fr, -bk, +hi, -lo]'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, -son,
+      -cont, -cor, +fr, -bk, +hi, -lo]'
     raw: '{TŠ,TŠʷ} K Q → TS TŠ K'
     source: index_diachronica_original.html:10055
     rule_id: Dogrib-TŠ,TŠʷ-K-Q
@@ -47749,21 +47755,18 @@ sections:
     source: index_diachronica_original.html:10071
   rules:
   - stages:
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} [+cons, -son, -cont, -cor, +fr, -bk, +hi,
-      -lo]'
-    - '[+cons, +dist, +fr, -bk, +hi, -lo] {[+cons, -son, -cont, +cor, +anterior, +dist,
-      +delrel], [+cons, -son, +cont, +cor, +anterior, +dist, -delrel]}'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
+    - '[+cons, +dist, +fr, -bk, +hi, -lo] {[+cons, -son, -cont, +cor,+anterior,+dist,
+      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]}'
     env: _E
     raw: TS K → TŠ TS / _E
     source: index_diachronica_original.html:10062
     rule_id: Easter-Gwich’in-TS-K
   - stages:
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} [+cons, -son, -cont, -cor, +fr, -bk, +hi,
-      -lo]'
-    - '[+cons, -son, -cont, +cor, +anterior, +dist]H [+cons, +dist, +fr, -bk, +hi,
-      -lo]'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
+    - '[+cons, -son, -cont, +cor,+anterior,+dist]H [+cons, +dist, +fr, -bk, +hi, -lo]'
     raw: TS K → TH TŠ / else
     source: index_diachronica_original.html:10063
     rule_id: Easter-Gwich’in-TS-K_2
@@ -47771,8 +47774,8 @@ sections:
   - stages:
     - '[+cons, +dist, +fr, -bk, +hi, -lo] [+cons, +dist, +fr, -bk, +hi, -lo, +labial]
       Q'
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} [+cons, -son, -cont, +cor, +anterior, +dist]ʂ
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} [+cons, -son, -cont, +cor,+anterior,+dist]ʂ
       [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
     raw: TŠ TŠʷ Q → TS TṢ K
     source: index_diachronica_original.html:10064
@@ -47831,14 +47834,14 @@ sections:
     source: index_diachronica_original.html:10083
   rules:
   - stages:
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons,
-      +dist, +fr, -bk, +hi, -lo, +labial] [+cons, -son, -cont, -cor, +fr, -bk, +hi,
-      -lo] Q'
-    - '[+cons, -son, -cont, +cor, +anterior, +dist]H {[+cons, -son, -cont, +cor, +anterior,
-      +dist, +delrel], [+cons, -son, +cont, +cor, +anterior, +dist, -delrel]} [+cons,
-      -son, -cont, +cor, +anterior, +dist]ʂ [+cons, +dist, +fr, -bk, +hi, -lo] [+cons,
-      -son, -cont, -cor, +fr, -bk, +hi, -lo]'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, +dist,
+      +fr, -bk, +hi, -lo, +labial] [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]
+      Q'
+    - '[+cons, -son, -cont, +cor,+anterior,+dist]H {[+cons, -son, -cont, +cor,+anterior,+dist,
+      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]} [+cons, -son,
+      -cont, +cor,+anterior,+dist]ʂ [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, -son,
+      -cont, -cor, +fr, -bk, +hi, -lo]'
     raw: TS TŠ TŠʷ K Q → TH TS TṢ TŠ K
     source: index_diachronica_original.html:10076
     rule_id: Han-TS-TŠ-TŠʷ-K-Q
@@ -47874,9 +47877,9 @@ sections:
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - stages:
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]}'
-    - '[+cons, -son, -cont, +cor, +anterior, +dist]H'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]}'
+    - '[+cons, -son, -cont, +cor,+anterior,+dist]H'
     raw: TS → TH
     source: index_diachronica_original.html:10088
     rule_id: Holikachuk-TS
@@ -47894,11 +47897,11 @@ sections:
     source: index_diachronica_original.html:10090
     rule_id: Holikachuk-i-e-a-u-ɑ,ʊ
   - stages:
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
       +dist, +fr, -bk, +hi, -lo, +labial]}'
-    - '[+lateral] {[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons,
-      -son, +cont, +cor, +anterior, +dist, -delrel]}'
+    - '[+lateral] {[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son,
+      +cont, +cor,+anterior,+dist, -delrel]}'
     raw: TS {TŠ,TŠʷ} → TŁ TS
     source: index_diachronica_original.html:10091
     rule_id: Holikachuk-TS-TŠ,TŠʷ
@@ -47987,11 +47990,11 @@ sections:
     source: index_diachronica_original.html:10111
     rule_id: Lower-Koyukon-e-a-ɑ-ʊ
   - stages:
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
       +dist, +fr, -bk, +hi, -lo, +labial]}'
-    - '[+lateral] {[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons,
-      -son, +cont, +cor, +anterior, +dist, -delrel]}'
+    - '[+lateral] {[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son,
+      +cont, +cor,+anterior,+dist, -delrel]}'
     raw: TS {TŠ,TŠʷ} → TŁ TS
     source: index_diachronica_original.html:10112
     rule_id: Lower-Koyukon-TS-TŠ,TŠʷ
@@ -48037,11 +48040,11 @@ sections:
     source: index_diachronica_original.html:10121
     rule_id: Upper-Koyukon-e-a-ɑ-ʊ
   - stages:
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
       +dist, +fr, -bk, +hi, -lo, +labial]}'
-    - '[+lateral] {[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons,
-      -son, +cont, +cor, +anterior, +dist, -delrel]}'
+    - '[+lateral] {[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son,
+      +cont, +cor,+anterior,+dist, -delrel]}'
     raw: TS {TŠ,TŠʷ} → TŁ TS
     source: index_diachronica_original.html:10122
     rule_id: Upper-Koyukon-TS-TŠ,TŠʷ
@@ -48088,8 +48091,8 @@ sections:
   - stages:
     - '[+cons, +dist, +fr, -bk, +hi, -lo] [+cons, +dist, +fr, -bk, +hi, -lo, +labial]
       [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo] Q'
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} [+cons, -son, -cont, +cor, +anterior, +dist]ʂ
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} [+cons, -son, -cont, +cor,+anterior,+dist]ʂ
       [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, -son, -cont, -cor, +fr, -bk, +hi,
       -lo]'
     raw: TŠ TŠʷ K Q → TS TṢ TŠ K
@@ -48115,9 +48118,9 @@ sections:
   - stages:
     - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}
       [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo] Q'
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons,
-      -son, -cont, -cor, +fr, -bk, +hi, -lo]'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, -son,
+      -cont, -cor, +fr, -bk, +hi, -lo]'
     raw: '{TŠ,TŠʷ} K Q → TS TŠ K'
     source: index_diachronica_original.html:10140
     rule_id: Sarcee-TŠ,TŠʷ-K-Q
@@ -48145,11 +48148,11 @@ sections:
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - stages:
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]}'
-    - '[+cons, -son, -cont, +cor, +anterior, +dist]H'
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} again in some areas)'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]}'
+    - '[+cons, -son, -cont, +cor,+anterior,+dist]H'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} again in some areas)'
     comment: (
     raw: TS → TH (→ TS again in some areas)
     source: index_diachronica_original.html:10148
@@ -48157,14 +48160,14 @@ sections:
   - stages:
     - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}
       [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo] Q'
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] Q'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] Q'
     raw: '{TŠ,TŠʷ} K Q → TS TŠ Q'
     source: index_diachronica_original.html:10149
     rule_id: Sekani-TŠ,TŠʷ-K-Q
   - comment: not in Ware Sekani; sporadic
     stages:
-    - '[+cons, -son, -cont, +cor, +anterior, +dist]'
+    - '[+cons, -son, -cont, +cor,+anterior,+dist]'
     - '[+cons, +dist, +fr, -bk, +hi, -lo]'
     env: _{i,e,u}
     raw: T → TŠ / _{i,e,u} ! in Ware Sekani
@@ -48190,8 +48193,8 @@ sections:
   rules:
   - stages:
     - '[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]}'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]}'
     raw: K → TS
     source: index_diachronica_original.html:10157
     rule_id: Proto-Southern-Athabaskan-K
@@ -48664,9 +48667,9 @@ sections:
   - stages:
     - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}
       [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo] Q'
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons,
-      -son, -cont, -cor, +fr, -bk, +hi, -lo]'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, -son,
+      -cont, -cor, +fr, -bk, +hi, -lo]'
     raw: '{TŠ,TŠʷ} K Q → TS TŠ K'
     source: index_diachronica_original.html:10260
     rule_id: Bearlake-Slavey-Hare-TŠ,TŠʷ-K-Q
@@ -48690,8 +48693,8 @@ sections:
   - stages:
     - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}
       [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo]'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo]'
     comment: (with exceptions)
     raw: '{TŠ,TŠʷ} K → TS TŠ (with exceptions)'
     source: index_diachronica_original.html:10267
@@ -48742,9 +48745,9 @@ sections:
   - stages:
     - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}
       [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo] Q'
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons,
-      -son, -cont, -cor, +fr, -bk, +hi, -lo]'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, -son,
+      -cont, -cor, +fr, -bk, +hi, -lo]'
     raw: '{TŠ,TŠʷ} K Q → TS TŠ K'
     source: index_diachronica_original.html:10278
     rule_id: Mountain-Slavey-Hare-TŠ,TŠʷ-K-Q
@@ -48775,9 +48778,9 @@ sections:
   - stages:
     - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}
       [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo] Q'
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons,
-      -son, -cont, -cor, +fr, -bk, +hi, -lo]'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, -son,
+      -cont, -cor, +fr, -bk, +hi, -lo]'
     raw: '{TŠ,TŠʷ} K Q → TS TŠ K'
     source: index_diachronica_original.html:10286
     rule_id: Slavey-Slavey-Hare-TŠ,TŠʷ-K-Q
@@ -48817,11 +48820,11 @@ sections:
     source: index_diachronica_original.html:10298
     rule_id: Kaska-Vˀ
   - stages:
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
       +dist, +fr, -bk, +hi, -lo, +labial]}'
-    - '[+cons, -son, -cont, +cor, +anterior, +dist]H {[+cons, -son, -cont, +cor, +anterior,
-      +dist, +delrel], [+cons, -son, +cont, +cor, +anterior, +dist, -delrel]}'
+    - '[+cons, -son, -cont, +cor,+anterior,+dist]H {[+cons, -son, -cont, +cor,+anterior,+dist,
+      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]}'
     raw: TS {TŠ,TŠʷ} → TH TS
     source: index_diachronica_original.html:10299
     rule_id: Kaska-TS-TŠ,TŠʷ
@@ -48839,11 +48842,11 @@ sections:
   rules:
   - stages:
     - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}
-      {[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]}'
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} {[+cons, -son, -cont, +cor, +anterior, +dist,
-      +delrel], [+cons, -son, +cont, +cor, +anterior, +dist, -delrel]}ʲ'
+      {[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont, +cor,+anterior,+dist,
+      -delrel]}'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} {[+cons, -son, -cont, +cor,+anterior,+dist,
+      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]}ʲ'
     raw: '{TŠ,TŠʷ} TS → TS TSʲ'
     source: index_diachronica_original.html:10305
     rule_id: Tagish-TŠ,TŠʷ-TS
@@ -48877,13 +48880,12 @@ sections:
     source: index_diachronica_original.html:10315
     rule_id: Tanacross-K
   - stages:
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons,
-      +dist, +fr, -bk, +hi, -lo, +labial] Q'
-    - '[+cons, -son, -cont, +cor, +anterior, +dist]H {[+cons, -son, -cont, +cor, +anterior,
-      +dist, +delrel], [+cons, -son, +cont, +cor, +anterior, +dist, -delrel]} [+cons,
-      -son, -cont, +cor, +anterior, +dist]ʂ [+cons, -son, -cont, -cor, +fr, -bk, +hi,
-      -lo]'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, +dist,
+      +fr, -bk, +hi, -lo, +labial] Q'
+    - '[+cons, -son, -cont, +cor,+anterior,+dist]H {[+cons, -son, -cont, +cor,+anterior,+dist,
+      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]} [+cons, -son,
+      -cont, +cor,+anterior,+dist]ʂ [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
     raw: TS TŠ TŠʷ Q → TH TS TṢ K
     source: index_diachronica_original.html:10316
     rule_id: Tanacross-TS-TŠ-TŠʷ-Q
@@ -48953,13 +48955,12 @@ sections:
     source: index_diachronica_original.html:10330
     rule_id: Lower-Tanana-K
   - stages:
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons,
-      +dist, +fr, -bk, +hi, -lo]ᵚ Q'
-    - '[+cons, -son, -cont, +cor, +anterior, +dist]H {[+cons, -son, -cont, +cor, +anterior,
-      +dist, +delrel], [+cons, -son, +cont, +cor, +anterior, +dist, -delrel]} [+cons,
-      -son, -cont, +cor, +anterior, +dist]ʂ [+cons, -son, -cont, -cor, +fr, -bk, +hi,
-      -lo]'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, +dist,
+      +fr, -bk, +hi, -lo]ᵚ Q'
+    - '[+cons, -son, -cont, +cor,+anterior,+dist]H {[+cons, -son, -cont, +cor,+anterior,+dist,
+      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]} [+cons, -son,
+      -cont, +cor,+anterior,+dist]ʂ [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
     raw: TS TŠ TŠᵚ Q → TH TS TṢ K
     source: index_diachronica_original.html:10331
     rule_id: Lower-Tanana-TS-TŠ-TŠᵚ-Q
@@ -49002,13 +49003,12 @@ sections:
     source: index_diachronica_original.html:10339
     rule_id: Upper-Tanana-K
   - stages:
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons,
-      +dist, +fr, -bk, +hi, -lo, +labial] Q'
-    - '[+cons, -son, -cont, +cor, +anterior, +dist]H {[+cons, -son, -cont, +cor, +anterior,
-      +dist, +delrel], [+cons, -son, +cont, +cor, +anterior, +dist, -delrel]} [+cons,
-      -son, -cont, +cor, +anterior, +dist]ʂ [+cons, -son, -cont, -cor, +fr, -bk, +hi,
-      -lo]'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, +dist,
+      +fr, -bk, +hi, -lo, +labial] Q'
+    - '[+cons, -son, -cont, +cor,+anterior,+dist]H {[+cons, -son, -cont, +cor,+anterior,+dist,
+      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]} [+cons, -son,
+      -cont, +cor,+anterior,+dist]ʂ [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
     raw: TS TŠ TŠʷ Q → TH TS TṢ K
     source: index_diachronica_original.html:10340
     rule_id: Upper-Tanana-TS-TŠ-TŠʷ-Q
@@ -49090,8 +49090,8 @@ sections:
   rules:
   - stages:
     - '[+cons, +dist, +fr, -bk, +hi, -lo]'
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]}'
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]}'
     raw: TŠ → TS
     source: index_diachronica_original.html:10356
     rule_id: Tsetsaut-TŠ
@@ -49127,11 +49127,11 @@ sections:
     source: index_diachronica_original.html:10371
   rules:
   - stages:
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
       +dist, +fr, -bk, +hi, -lo, +labial]}'
-    - '[+cons, -son, -cont, +cor, +anterior, +dist]H {[+cons, -son, -cont, +cor, +anterior,
-      +dist, +delrel], [+cons, -son, +cont, +cor, +anterior, +dist, -delrel]}'
+    - '[+cons, -son, -cont, +cor,+anterior,+dist]H {[+cons, -son, -cont, +cor,+anterior,+dist,
+      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]}'
     raw: TS {TŠ,TŠʷ} → TH TS
     source: index_diachronica_original.html:10365
     rule_id: Northern-Tutchone-TS-TŠ,TŠʷ
@@ -49172,11 +49172,11 @@ sections:
     source: index_diachronica_original.html:10384
   rules:
   - stages:
-    - '{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont,
-      +cor, +anterior, +dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
       +dist, +fr, -bk, +hi, -lo, +labial]}'
-    - '[+cons, -son, -cont, +cor, +anterior, +dist]H {[+cons, -son, -cont, +cor, +anterior,
-      +dist, +delrel], [+cons, -son, +cont, +cor, +anterior, +dist, -delrel]}'
+    - '[+cons, -son, -cont, +cor,+anterior,+dist]H {[+cons, -son, -cont, +cor,+anterior,+dist,
+      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]}'
     raw: TS {TŠ,TŠʷ} → TH TS
     source: index_diachronica_original.html:10377
     rule_id: Southern-Tutchone-TS-TŠ,TŠʷ

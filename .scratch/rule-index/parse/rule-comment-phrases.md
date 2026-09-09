@@ -20,7 +20,7 @@
 
 ## Sample comments (first 10)
 
-- I can't figure out the rule even afer reading the source material
+- I can't figu+fr, -bk, +hi, -lore out the rule even afer reading the source material
 - “(This last rule turned all VC roots into CV)”
 - “when another sibilant is in the word nearby” and (word-finally?) when “noun-stem final”; sporadic
 - “in nominals”

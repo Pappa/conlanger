@@ -4,7 +4,6 @@ section_index,rule_id,error_token,rule
 10.3.11.3,Proto-Tanna-s-c-*J,,"s c *{L,G} > {h,z} {s,z} z | ^ @ Rule 1, Line 1"
 10.5,Proto-Ongan-ɟ-ɡ-*N-*R,,"ɟ ɡ *N [+son,-syll] > {ɟ,j} {ɟ,ɡ} {l,j} {l,r} | ^ @ Rule 1, Line 1"
 12.2,"Proto-Circassian-qʲʷː-qʲʷ-ɢʲʷ,ʁʲʷ-χʲʷ",,"qʲʷ:[+long] qʲʷ ɢʲʷ,ʁʲʷ} χʲʷ > qʷ:[+long] ʔʷ ʁʷ χʷ | ^ @ Rule 1, Line 1"
-13.1,Barbareño-R-glottalizedVˀR,,"[+son,-syll, +place]Vˀ[+son,-syll] > ˀ[+son,-syll]V:[+son,-syll, +place] / _$ | ^ @ Rule 1, Line 1"
 17.2,Common-Anatolian-Dʱ,,"C:[+labial]:[+voice,+spread] > P:[+voice] | ^ @ Rule 1, Line 1"
 17.3.1,Artsakh-Armenian-N̩,,"N̩ > n / _# | ^ @ Rule 1, Line 1"
 17.3.2,Erevan-Armenian-N̩,,"N̩ > n / _# | ^ @ Rule 1, Line 1"

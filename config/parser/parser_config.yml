@@ -24,9 +24,9 @@ section_mappings:
     "TŁ": "[+lateral]" # laterals
     "TŠ": "[+cons, +dist, +fr, -bk, +hi, -lo]" # palatals
     "TŠʷ": "[+cons, +dist, +fr, -bk, +hi, -lo, +labial]" # labialized palatals
-    "TS": "{[+cons, -son, -cont, +cor, +anterior, +dist, +delrel], [+cons, -son, +cont, +cor, +anterior, +dist, -delrel]}" # dental affricates and fricatives
+    "TS": "{[+cons, -son, -cont, +dental, +delrel], [+cons, -son, +cont, +dental, -delrel]}" # dental affricates and fricatives
     "K": "[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]" # front (palatalized) velars
-    "T": "[+cons, -son, -cont, +cor, +anterior, +dist]" # dental stops
+    "T": "[+cons, -son, -cont, +dental]" # dental stops
     # "Q": "uvulars"
     # "Qʷ": "labialized uvulars"
 skip_sections:
@@ -44,6 +44,16 @@ skip_sections:
     reason: "It's not possible to determine how t₁, d₁, etc. should be represented"
   # - id: "17.12.1.1.6"
   #   reason: "Too many parse errors in: Vulgar Latin to Old Provençal"
+  - id: "13.1"
+    reason: "Onset glottal diacritic not supported"
+  - id: "13.3"
+    reason: "Onset glottal diacritic not supported"
+  - id: "13.4"
+    reason: "Onset glottal diacritic not supported"
+  - id: "13.5"
+    reason: "Onset glottal diacritic not supported"
+  - id: "13.6"
+    reason: "Onset glottal diacritic not supported"
   - id: "36.1"
     reason: "Need to refer to the cited source to determine the correct rule syntax"
   - id: "36.3.1.2"
@@ -88,7 +98,7 @@ skip_rules:
   - id: Old-Low-German-F-voice
     reason: "No idea what X means"
   - id: North-Omotic-Vː_2
-    reason: "I can't figure out the rule even afer reading the source material"
+    reason: "I can't figu+fr, -bk, +hi, -lore out the rule even afer reading the source material"
   - id: Gros-Ventre-C,#V-longʔ
     reason: "I can't figure out the rule even afer reading the source material"
   - id: Biblical-Hebrew-—-a_4

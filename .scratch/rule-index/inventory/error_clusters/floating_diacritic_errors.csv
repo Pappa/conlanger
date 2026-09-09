@@ -1,11 +1,4 @@
 section_index,rule_id,error_token,rule
-13.3,Inseño-ˀN-ˀw,,"ˀN ˀw > N w | ^ @ Rule 1, Line 1"
-13.4,"Obispeño-ˀm,ˀn",,"ˀm > ∅ | ^ @ Rule 1, Line 1"
-13.4,"Obispeño-ˀm,ˀn",,"ˀn > ʔ | ^ @ Rule 1, Line 1"
-13.4,Obispeño-ˀw,,"ˀw > w | ^ @ Rule 1, Line 1"
-13.4,Obispeño-ˀj,,"ˀj > ∅ | ^ @ Rule 1, Line 1"
-13.5,Purisimeño-ˀj,,"ˀj > ∅ | ^ @ Rule 1, Line 1"
-13.6,Ventureño-ˀm-ˀn-ˀl-ˀj,,"ˀm ˀn ˀl ˀj > m n l j | ^ @ Rule 1, Line 1"
 37.1.2.6,Tuscarora-t,,"t > ˀt | ^ @ Rule 1, Line 1"
 37.1.2.6,Tuscarora-ˀt,,"ˀt > tʔ / _ˀt | ^ @ Rule 1, Line 1"
 37.1.2.6,Tuscarora-ˀt_2,,"ˀt > ∅ / _t | ^ @ Rule 1, Line 1"

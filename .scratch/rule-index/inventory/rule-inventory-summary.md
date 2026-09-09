@@ -3,19 +3,19 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.2**
-- Rows: **9878** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
+- Rows: **9877** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8866** (89.8%)
-- Fail: **693** (7.0%)
-- Skipped: **319** (3.2%)
+- OK: **8860** (89.7%)
+- Fail: **684** (6.9%)
+- Skipped: **333** (3.4%)
 
 ## Sections
 
 - All OK: **440 / 714** (61.6%)
-- Some OK: **254 / 714** (35.6%)
-- None OK: **4 / 714** (0.6%)
-- Sections skipped: **16 / 714** (2.2%)
+- Some OK: **250 / 714** (35.0%)
+- None OK: **3 / 714** (0.4%)
+- Sections skipped: **21 / 714** (2.9%)
 
 ## Failure classes
 
@@ -26,18 +26,18 @@
 | 53 | `syntax_other` |
 | 51 | `missing_slash_output_env` |
 | 47 | `invalid_ipa` |
-| 41 | `prose_or_expected_arrow` |
+| 40 | `prose_or_expected_arrow` |
 | 37 | `expected_ipa` |
 | 35 | `expected_number` |
 | 24 | `nested_brackets` |
-| 23 | `unknown_feature` |
+| 22 | `unknown_feature` |
 | 15 | `unknown_grouping` |
 | 14 | `stuff_after_word_bound` |
-| 14 | `floating_diacritic` |
 | 11 | `empty_io_panic` |
 | 9 | `diacritic_prereq` |
 | 8 | `segments_before_word` |
 | 7 | `multiple_underlines_env` |
+| 7 | `floating_diacritic` |
 | 4 | `panic_other` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
@@ -170,11 +170,11 @@
 | 3 | `palatalized` | `latrl` |
 | 2 | `fricative` | `rhotic` |
 | 1 | `highpitch` | `high` |
-| 1 | `lowpitch` | `voice` |
 | 1 | `posttonic` | `sonor` |
-| 1 | `ejective` | `contin` |
+| 1 | `lowpitch` | `voice` |
 | 1 | `alveolopalatal` | `consonantal` |
 | 1 | `intertonic` | `anterior` |
+| 1 | `tonic` | `cons` |
 
 ### expected_number (error_token)
 
@@ -205,7 +205,7 @@
 
 | count | description |
 |------:|-------------|
-| 21 | `Expected '>', '->' or '=>', but received 'ˀ'` |
+| 20 | `Expected '>', '->' or '=>', but received 'ˀ'` |
 | 7 | `Expected '>', '->' or '=>', but received '̩'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
 | 2 | `Expected '>', '->' or '=>', but received '̥'` |
@@ -290,7 +290,7 @@
 
 | count | description |
 |------:|-------------|
-| 14 | `Floating diacritic. Diacritics can only be used to modify IPA Segments` |
+| 7 | `Floating diacritic. Diacritics can only be used to modify IPA Segments` |
 
 ### multiple_underlines_env (error_token)
 
