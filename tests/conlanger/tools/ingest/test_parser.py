@@ -870,6 +870,96 @@ def test_apply_double_slash_env_conditions_maybe_strips_question_mark():
     }
 
 
+def test_normalize_prose_exception_or_env_tail_empty():
+    assert normalize_prose_exception_or_env_tail("") == ("", [], {})
+
+
+def test_normalize_prose_env_head_empty():
+    assert normalize_prose_env_head("") == ("", [], {})
+
+
+def test_normalize_prose_exception_or_env_tail_prose_position():
+    env, captures, flags = normalize_prose_exception_or_env_tail("final syllables")
+    assert env == "U#"
+    assert captures == ["final syllables"]
+    assert flags == {}
+
+
+def test_normalize_prose_env_head_prose_position():
+    env, captures, flags = normalize_prose_env_head("unstressed syllables")
+    assert env == "_ %[-stress]"
+    assert captures == ["unstressed syllables"]
+    assert flags == {}
+
+
+def test_normalize_prose_exception_in_onset_of_stress():
+    env, captures, _ = normalize_prose_exception_or_env_tail("in onset of %[+stress]")
+    assert env == "#_%[+stress]"
+    assert captures == ["in onset of %[+stress]"]
+
+
+def test_normalize_prose_exception_complex_prose_passthrough():
+    text = "#% with the following conditions"
+    env, captures, _ = normalize_prose_exception_or_env_tail(text)
+    assert env == text
+    assert captures == [text]
+
+
+def test_normalize_prose_exception_broken_short_only_tail():
+    env, captures, _ = normalize_prose_exception_or_env_tail("_k, short only)")
+    assert env == "_k"
+    assert captures == ["short only"]
+
+
+def test_normalize_prose_exception_bare_percent_feature():
+    env, captures, _ = normalize_prose_exception_or_env_tail("%[-stress]")
+    assert env == "_ %[-stress]"
+    assert captures == ["%[-stress]"]
+
+
+def test_apply_double_slash_env_conditions_embedded_tail_splits_env_head():
+    result = apply_double_slash_env_conditions(
+        {
+            "stages": ["æ", "e"],
+            "env": "odd syllables // _{w,j,H}",
+        }
+    )
+    assert result == {
+        "stages": ["æ", "e"],
+        "env": "_",
+        "comment": "odd syllables",
+    }
+
+
+def test_apply_double_slash_env_conditions_embedded_tail_appends_comment():
+    assert apply_double_slash_env_conditions(
+        {
+            "stages": ["æ", "e"],
+            "env": "#_e // extra gloss",
+            "exception": "_{w,j,H}",
+        }
+    ) == {
+        "stages": ["æ", "e"],
+        "env": "#_e",
+        "exception": "_{w,j,H}",
+        "comment": "extra gloss",
+    }
+
+
+def test_apply_double_slash_env_conditions_exception_uncertainty_qualifier():
+    assert apply_double_slash_env_conditions(
+        {
+            "stages": ["t", "d"],
+            "exception": "_# (sporadic)",
+        }
+    ) == {
+        "stages": ["t", "d"],
+        "exception": "_#",
+        "comment": "(sporadic)",
+        "sporadic": True,
+    }
+
+
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
 def test_parse_rule_element_double_slash_adjacent_validate_asca():
     probe = Path("tests/fixtures/asca_probe_words.wsca")

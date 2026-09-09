@@ -8,6 +8,7 @@ import pytest
 
 from conlanger.appliers.asca import validate_asca
 from conlanger.tools.compile.asca.identity_exceptions import (
+    IdentityExceptionBinding,
     apply_identity_exception_input_narrowing,
     parse_index_identity_exception,
     resolve_index_identity_exceptions,
@@ -128,6 +129,33 @@ def test_resolve_index_identity_exceptions_family_a():
     assert output == "e"
     assert env == "C_#"
     assert exception == "j_#"
+    assert pending is None
+
+
+def test_parse_index_identity_exception_rejects_empty_rhs():
+    assert parse_index_identity_exception("C = ") is None
+
+
+def test_apply_identity_exception_input_narrowing_noop_when_unmatched():
+    binding = IdentityExceptionBinding(
+        host_raw="X",
+        host_expanded="X",
+        rhs="y",
+    )
+    assert apply_identity_exception_input_narrowing("abc", binding) == "abc"
+
+
+def test_resolve_index_identity_exceptions_unchanged_when_no_match():
+    inp, output, env, exception, pending = resolve_index_identity_exceptions(
+        "s",
+        "z",
+        "_#",
+        "C = j",
+        exception_raw="C = j",
+        group_mappings=minimal_compiler_config().group_mappings,
+    )
+    assert inp == "s"
+    assert exception == "C = j"
     assert pending is None
 
 
