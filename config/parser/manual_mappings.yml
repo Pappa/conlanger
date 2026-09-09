@@ -93,6 +93,12 @@
 - from: " / in southern dialects"
   to: " / sporadic ; in southern dialects"
   reason: replace prose
+- from: " / in Nelemwa"
+  to: " / sporadic ; in Nelemwa"
+  reason: replace prose
+- from: " / Pije and Fwai"
+  to: " / sporadic ; Pije and Fwai"
+  reason: replace prose
 - from: " (in southern dialects"
   to: " sporadic ; (in southern dialects"
   reason: replace prose
@@ -299,4 +305,7 @@
   reason: replace prose
 - from: "“under to [sic] the influence of neighboring consonants”"
   to: "/ sporadic ; “under to [sic] the influence of neighboring consonants”"
+  reason: replace prose
+- from: ", often"
+  to: " ; , often"
   reason: replace prose

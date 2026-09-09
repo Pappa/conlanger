@@ -11924,19 +11924,21 @@ sections:
     raw: n n̥ → ɲ ɲ̊ / _E
     source: index_diachronica_original.html:3235
     rule_id: Nemi-Pije-Fwai-n-n̥
-  - stages:
+  - comment: Pije and Fwai; sporadic
+    stages:
     - ONV
     - Sʰṽ
-    env: Pije and Fwai
     raw: ONV → SʰṼ / Pije and Fwai
     source: index_diachronica_original.html:3236
+    sporadic: true
     rule_id: Nemi-Pije-Fwai-ONV
-  - stages:
+  - comment: Pije and Fwai; sporadic
+    stages:
     - f
     - ɸ
-    env: Pije and Fwai
     raw: f → ɸ / Pije and Fwai
     source: index_diachronica_original.html:3237
+    sporadic: true
     rule_id: Nemi-Pije-Fwai-f
 - section: Proto-New Caledonia to Proto-Northern
   index: 10.3.5.4
@@ -11985,10 +11987,11 @@ sections:
   - raw: /ɨ ə/ gained
     source: index_diachronica_original.html:3270
   rules:
-  - stages:
+  - comment: ', often'
+    stages:
     - V
     - ∅
-    env: _#, often
+    env: _#
     raw: V → ∅ / _#, often
     source: index_diachronica_original.html:3251
     rule_id: Nixumwak-Nêlêmwa-V
@@ -12076,12 +12079,13 @@ sections:
     raw: SN → N[- voice]
     source: index_diachronica_original.html:3264
     rule_id: Nixumwak-Nêlêmwa-SN
-  - stages:
+  - comment: in Nelemwa; sporadic
+    stages:
     - pwʰ pʰ tʰ kʰ
     - fw f rʰ x
-    env: Nelemwa
     raw: pwʰ pʰ tʰ kʰ → fw f rʰ x / in Nelemwa
     source: index_diachronica_original.html:3265
+    sporadic: true
     rule_id: Nixumwak-Nêlêmwa-pwʰ-pʰ-tʰ-kʰ
   - stages:
     - uCu
