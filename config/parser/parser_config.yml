@@ -115,3 +115,18 @@ skip_rules:
     reason: "Can't resolve: æu → au (æ → a / _B in general?)"
   - id: Anglo-Frisian-a_3
     reason: "Can't resolve: in next syllable"
+  # Onset glottal diacritic (ˀ) — Tuscarora §37.1.2.6
+  - id: Tuscarora-t
+    reason: "Onset glottal diacritic not supported"
+  - id: Tuscarora-ˀt
+    reason: "Onset glottal diacritic not supported"
+  - id: Tuscarora-ˀt_2
+    reason: "Onset glottal diacritic not supported"
+  - id: Tuscarora-ˀt_3
+    reason: "Onset glottal diacritic not supported"
+  - id: Tuscarora-ˀt_4
+    reason: "Onset glottal diacritic not supported"
+  - id: Tuscarora-ˀt_5
+    reason: "Onset glottal diacritic not supported"
+  - id: Tuscarora-ˀt_6
+    reason: "Onset glottal diacritic not supported"

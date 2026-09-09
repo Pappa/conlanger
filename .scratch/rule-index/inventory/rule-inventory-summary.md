@@ -7,8 +7,8 @@
 
 ## Rules
 - OK: **8860** (89.7%)
-- Fail: **684** (6.9%)
-- Skipped: **333** (3.4%)
+- Fail: **677** (6.9%)
+- Skipped: **340** (3.4%)
 
 ## Sections
 
@@ -37,7 +37,6 @@
 | 9 | `diacritic_prereq` |
 | 8 | `segments_before_word` |
 | 7 | `multiple_underlines_env` |
-| 7 | `floating_diacritic` |
 | 4 | `panic_other` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
@@ -290,7 +289,7 @@
 
 | count | description |
 |------:|-------------|
-| 7 | `Floating diacritic. Diacritics can only be used to modify IPA Segments` |
+| — | _(none)_ |
 
 ### multiple_underlines_env (error_token)
 

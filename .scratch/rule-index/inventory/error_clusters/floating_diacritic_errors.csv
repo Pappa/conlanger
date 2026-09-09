@@ -1,8 +1,1 @@
 section_index,rule_id,error_token,rule
-37.1.2.6,Tuscarora-t,,"t > ˀt | ^ @ Rule 1, Line 1"
-37.1.2.6,Tuscarora-ˀt,,"ˀt > tʔ / _ˀt | ^ @ Rule 1, Line 1"
-37.1.2.6,Tuscarora-ˀt_2,,"ˀt > ∅ / _t | ^ @ Rule 1, Line 1"
-37.1.2.6,Tuscarora-ˀt_3,,"ˀt > ʔ / _r | ^ @ Rule 1, Line 1"
-37.1.2.6,Tuscarora-ˀt_4,,"ˀt > ʔn / V_{V,w,j} | ^ @ Rule 1, Line 1"
-37.1.2.6,Tuscarora-ˀt_5,,"ˀt > n / {#,C}_{V,w,j} | ^ @ Rule 1, Line 1"
-37.1.2.6,Tuscarora-ˀt_6,,"ˀt > t | ^ @ Rule 1, Line 1"

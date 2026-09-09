@@ -60425,12 +60425,12 @@ sections:
     raw: j → ∅ / tʃ_
     source: index_diachronica_original.html:12683
     rule_id: Tuscarora-j
-  - stages:
-    - t
-    - ˀt
+  - stages: []
     raw: t → ˀt
     source: index_diachronica_original.html:12684
+    status: skipped
     rule_id: Tuscarora-t
+    comment: Onset glottal diacritic not supported
   - stages:
     - V:[+stress]
     - V:[+stress]ː
@@ -60473,47 +60473,42 @@ sections:
     raw: ts → θ
     source: index_diachronica_original.html:12690
     rule_id: Tuscarora-ts_2
-  - stages:
-    - ˀt
-    - tʔ
-    env: _ˀt
+  - stages: []
     raw: ˀt → tʔ / _ˀt
     source: index_diachronica_original.html:12691
+    status: skipped
     rule_id: Tuscarora-ˀt
-  - stages:
-    - ˀt
-    - ∅
-    env: _t
+    comment: Onset glottal diacritic not supported
+  - stages: []
     raw: ˀt → ∅ / _t
     source: index_diachronica_original.html:12692
+    status: skipped
     rule_id: Tuscarora-ˀt_2
-  - stages:
-    - ˀt
-    - ʔ
-    env: _r
+    comment: Onset glottal diacritic not supported
+  - stages: []
     raw: ˀt → ʔ / _r
     source: index_diachronica_original.html:12693
+    status: skipped
     rule_id: Tuscarora-ˀt_3
-  - stages:
-    - ˀt
-    - ʔn
-    env: V_{V,w,j}
+    comment: Onset glottal diacritic not supported
+  - stages: []
     raw: ˀt → ʔn / V_{V,w,j}
     source: index_diachronica_original.html:12694
+    status: skipped
     rule_id: Tuscarora-ˀt_4
-  - stages:
-    - ˀt
-    - n
-    env: '{#,C}_{V,w,j}'
+    comment: Onset glottal diacritic not supported
+  - stages: []
     raw: ˀt → n / {#,C}_{V,w,j}
     source: index_diachronica_original.html:12695
+    status: skipped
     rule_id: Tuscarora-ˀt_5
-  - stages:
-    - ˀt
-    - t
+    comment: Onset glottal diacritic not supported
+  - stages: []
     raw: ˀt → t
     source: index_diachronica_original.html:12696
+    status: skipped
     rule_id: Tuscarora-ˀt_6
+    comment: Onset glottal diacritic not supported
   - stages:
     - h
     - ∅
