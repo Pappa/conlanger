@@ -11298,7 +11298,7 @@ sections:
     source: index_diachronica_original.html:3117
     rule_id: Hiw-r
   - stages:
-    - V:[+stress][+ high(er)]
+    - V:[+stress][+ hi]
     - ∅
     env: _CV
     raw: ”V[+ high(er)] → ∅ / _CV

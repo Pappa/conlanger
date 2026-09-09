@@ -6,14 +6,14 @@
 - Rows: **9877** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8860** (89.7%)
-- Fail: **677** (6.9%)
+- OK: **8861** (89.7%)
+- Fail: **676** (6.8%)
 - Skipped: **340** (3.4%)
 
 ## Sections
 
-- All OK: **442 / 714** (61.9%)
-- Some OK: **248 / 714** (34.7%)
+- All OK: **443 / 714** (62.0%)
+- Some OK: **247 / 714** (34.6%)
 - None OK: **3 / 714** (0.4%)
 - Sections skipped: **21 / 714** (2.9%)
 
@@ -23,7 +23,7 @@
 |------:|---------------|
 | 150 | `expected_underscore` |
 | 136 | `unknown_character` |
-| 53 | `syntax_other` |
+| 52 | `syntax_other` |
 | 47 | `invalid_ipa` |
 | 46 | `missing_slash_output_env` |
 | 43 | `prose_or_expected_arrow` |
@@ -67,13 +67,13 @@
 | 18 | `Negation cannot be used in the output` |
 | 10 | `Output cannot be empty. Use `*` or '∅' to indicate deletion` |
 | 2 | `Tones cannot be ±; they can only be used with numeric values.` |
-| 1 | `Feature 'er' has no modifier` |
-| 1 | `Only a segment, matrix, group, or reference can be negated` |
 | 1 | `/ cannot be placed inside a matrix. An element inside `[]` must a distinctive feature` |
+| 1 | `Only a segment, matrix, group, or reference can be negated` |
 | 1 | `Feature 'lost' has no modifier` |
 | 1 | `Feature 'b' has no modifier` |
 | 1 | `Feature 's' has no modifier` |
 | 1 | `Feature 'long' has no modifier` |
+| 1 | `Feature 'truncated' has no modifier` |
 
 ### runtime_other (error_token)
 

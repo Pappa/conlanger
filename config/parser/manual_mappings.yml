@@ -309,3 +309,6 @@
 - from: ", often"
   to: " ; , often"
   reason: replace prose
+- from: "high(er)"
+  to: "hi"
+  reason: ambiguous feature name
