@@ -1,4 +1,5 @@
 Type: grilling
+Status: needs-grilling
 Blocked by: None
 
 # Grill: proximity relations in structured rule conditions

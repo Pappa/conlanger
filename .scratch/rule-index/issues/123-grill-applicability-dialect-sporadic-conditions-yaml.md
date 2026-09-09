@@ -1,4 +1,5 @@
 Type: grilling
+Status: needs-grilling
 Blocked by: None
 
 # Grill: applicability, dialect scope, sporadic vs conditioning, and phased structured YAML

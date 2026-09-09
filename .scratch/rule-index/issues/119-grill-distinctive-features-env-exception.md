@@ -1,5 +1,5 @@
 Type: grilling
-Status: partially resolved
+Status: needs-grilling
 Blocked by: None
 
 # Grill: distinctive features in env and exception blocks
