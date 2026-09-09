@@ -27,6 +27,9 @@ from conlanger.tools.compile.asca.parallel import (
     drop_mixed_parallel_null_columns,
     drop_mixed_parallel_null_columns_tokens,
 )
+from conlanger.tools.compile.asca.pharyngealized_marks import (
+    normalize_asca_pharyngealized_marks,
+)
 from conlanger.tools.compile.asca.planned import (
     apply_section_local_abbreviations,
     expand_meta_notation,
@@ -93,6 +96,7 @@ def compile_asca_field_post_subscript(text: str) -> str:
     text = normalize_asca_length_marks(text)
     text = normalize_asca_tone_matrices(text)
     text = normalize_typographic_apostrophes(text)
+    text = normalize_asca_pharyngealized_marks(text)
     text = normalize_asca_ejective_marks(text)
     text = normalize_asca_breve_marks(text)
     text = normalize_asca_voice_prerequisite_diacritics(text)
