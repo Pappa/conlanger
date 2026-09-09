@@ -1,6 +1,6 @@
 # Rule comment phrase summary
 
-- Corpus rules with **`comment`**: **1281**
+- Corpus rules with **`comment`**: **1282**
 - Comments containing ``; `` (semicolon tails): **193**
 
 ## Qualifier phrases
@@ -12,7 +12,7 @@
 | `unstressed` | 27 |
 | `not sure` | 15 |
 | `when unstressed` | 11 |
-| `short only` | 7 |
+| `short only` | 8 |
 | `when stressed` | 4 |
 | `not universal` | 3 |
 | `short vowel` | 3 |
@@ -31,4 +31,4 @@
 - I can't find the rule in the source, which also uses /y/ where the index uses /j/.
 The source explicitly refers to /y/ as a palatal glide.
 
-- in the feminine ending; sporadic
+- (short only)

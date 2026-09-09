@@ -6,8 +6,8 @@
 - Rows: **9877** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8860** (89.7%)
-- Fail: **677** (6.9%)
+- OK: **8856** (89.7%)
+- Fail: **681** (6.9%)
 - Skipped: **340** (3.4%)
 
 ## Sections
@@ -21,13 +21,13 @@
 
 | count | failure_class |
 |------:|---------------|
-| 153 | `expected_underscore` |
+| 154 | `expected_underscore` |
 | 136 | `unknown_character` |
 | 53 | `syntax_other` |
-| 51 | `missing_slash_output_env` |
 | 47 | `invalid_ipa` |
-| 40 | `prose_or_expected_arrow` |
-| 37 | `expected_ipa` |
+| 46 | `missing_slash_output_env` |
+| 43 | `prose_or_expected_arrow` |
+| 42 | `expected_ipa` |
 | 35 | `expected_number` |
 | 24 | `nested_brackets` |
 | 22 | `unknown_feature` |
@@ -136,11 +136,10 @@
 
 | count | error_token |
 |------:|-------------|
-| 20 | `,` |
+| 22 | `,` |
 | 9 | `//` |
 | 7 | `/` |
 | 3 | `:` |
-| 1 | `ˤ` |
 | 1 | `*` |
 | 1 | `)` |
 ### expected_underscore (description)
@@ -206,14 +205,14 @@
 |------:|-------------|
 | 20 | `Expected '>', '->' or '=>', but received 'ˀ'` |
 | 7 | `Expected '>', '->' or '=>', but received '̩'` |
+| 5 | `Expected '>', '->' or '=>', but received ':'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
 | 2 | `Expected '>', '->' or '=>', but received '̥'` |
 | 2 | `Expected '>', '->' or '=>', but received ')'` |
-| 1 | `Expected '>', '->' or '=>', but received '}'` |
-| 1 | `Expected '>', '->' or '=>', but received 'ˤ'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
-| 1 | `Expected '>', '->' or '=>', but received ':'` |
+| 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
+| 1 | `Expected '>', '->' or '=>', but received '/'` |
 
 ### invalid_ipa (error_token)
 
@@ -234,6 +233,7 @@
 | count | error_token |
 |------:|-------------|
 | 8 | `(` |
+| 6 | `:` |
 | 6 | `∅` |
 | 5 | `>` |
 | 3 | `*` |
@@ -241,7 +241,6 @@
 | 3 | `…` |
 | 2 | `ʲ` |
 | 2 | `_` |
-| 1 | `ˤ` |
 | 1 | `//` |
 ### expected_ipa (description)
 
@@ -265,15 +264,15 @@
 | count | error_token |
 |------:|-------------|
 | 20 | `)` |
-| 14 | `:` |
-| 6 | `(` |
+| 11 | `:` |
+| 5 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
-| 1 | `ˤ` |
 | 1 | `&` |
 | 1 | `*` |
 | 1 | `#` |
 | 1 | `ˀ` |
+| 1 | `̥` |
 ### missing_slash_output_env (description)
 
 | count | description |

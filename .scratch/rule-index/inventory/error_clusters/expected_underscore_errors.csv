@@ -1,6 +1,7 @@
 section_index,rule_id,error_token,rule
-6.2.2.1.6,Cypriot-Arabic-i,ˤ,"i > a / Cˤ_{q,ɣ,ʕ} | ^ @ Rule 1, Line 1"
 6.2.2.1.7,Egyptian-Arabic-i-u,//,"i u > e o / [-long] // _# | ^^ @ Rule 1, Line 1"
+6.2.2.1.7,Egyptian-Arabic-u,",","u > o / short only, _# | ^ @ Rule 1, Line 1"
+6.2.2.1.7,Egyptian-Arabic-u,",","u > u / short only, _# | ^ @ Rule 1, Line 1"
 6.2.2.1.7,Egyptian-Arabic-aː_2,,"{a,a:[+long]} > {ɑ,ɑ:[+long]} / if {ɑ,ɑ:[+long]} is elsewhere in the word | ^ @ Rule 1, Line 1"
 6.2.2.1.7,Egyptian-Arabic-aː_3,,"{a,a:[+long]} > {æ,æ:[+long]} / else (sometimes it seems more like {ɛ,ɛ:[+long]} to me) | ^ @ Rule 1, Line 1"
 6.2.2.1.7,Egyptian-Arabic-q,",","q > ʔ // in several words, two of which are al-{C:[-front,+back,-hi,-lo],[+click]}ɑhira and musiqɑ | ^ @ Rule 1, Line 1"

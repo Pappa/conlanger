@@ -1,9 +1,12 @@
 section_index,rule_id,error_token,rule
-6.2.2.1.14,Moroccan-Arabic-Cˤ,,"Cˤ > C / {#,V}_V | ^ @ Rule 1, Line 1"
 9.1.2,Middle-Vietnamese-t*ʰ-d-ɡ,,"t*ʰ d ɡ > tʰ t k / _w | ^ @ Rule 1, Line 1"
 10.3.11.3,Proto-Tanna-s-c-*J,,"s c *{L,G} > {h,z} {s,z} z | ^ @ Rule 1, Line 1"
 10.5,Proto-Ongan-ɟ-ɡ-*N-*R,,"ɟ ɡ *N [+son,-syll] > {ɟ,j} {ɟ,ɡ} {l,j} {l,r} | ^ @ Rule 1, Line 1"
+12.1,Proto-Abazgi-qˤː-qˤʼ,,"q:[-atr,+rtr]:[+long] qʼ:[-atr,+rtr] > ʕ ħ | ^ @ Rule 1, Line 1"
+12.1,Proto-Abazgi-qˤʲ-qˤʲː-qˤʲʼ,,"qʲ:[-atr,+rtr] qʲ:[-atr,+rtr]:[+long] qʲʼ:[-atr,+rtr] > q ʔ ħ | ^ @ Rule 1, Line 1"
+12.1,Proto-Abazgi-qˤʷ-qˤʷː-qˤʷʼ-χˤʷ-ʁˤʷ,,"qʷ:[-atr,+rtr] qʷ:[-atr,+rtr]:[+long] qʷʼ:[-atr,+rtr] χʷ:[-atr,+rtr] ʁʷ:[-atr,+rtr] > ħʷ ʕʷ {qʷ:[+cg],qʷ} ħʷ (ħʷ?) | ^ @ Rule 1, Line 1"
 12.2,"Proto-Circassian-qʲʷː-qʲʷ-ɢʲʷ,ʁʲʷ-χʲʷ",,"qʲʷ:[+long] qʲʷ ɢʲʷ,ʁʲʷ} χʲʷ > qʷ:[+long] ʔʷ ʁʷ χʷ | ^ @ Rule 1, Line 1"
+12.3,Ubykh-pʷʲʼ-pˤ-pˤː-pˤʼ-bˤ,,"pʷʲ:[+cg] p:[-atr,+rtr] p:[-atr,+rtr]:[+long] pʼ:[-atr,+rtr] b:[-atr,+rtr] > tʷ:[+cg] v:[-atr,+rtr] b:[-atr,+rtr] pʼ:[-atr,+rtr] b:[-atr,+rtr] | ^ @ Rule 1, Line 1"
 17.2,Common-Anatolian-Dʱ,,"C:[+labial]:[+voice,+spread] > P:[+voice] | ^ @ Rule 1, Line 1"
 17.3.1,Artsakh-Armenian-N̩,,"N̩ > n / _# | ^ @ Rule 1, Line 1"
 17.3.2,Erevan-Armenian-N̩,,"N̩ > n / _# | ^ @ Rule 1, Line 1"

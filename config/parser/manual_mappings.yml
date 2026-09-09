@@ -244,12 +244,6 @@
 - from: " / only when short, ! "
   to: " / [-long] ! "
   reason: replace prose
-- from: " / short only, _#"
-  to: " / _:[-long]#"
-  reason: replace prose
-- from: " _%, when stressed (short only)"
-  to: " _:[+stress, -long]%"
-  reason: replace prose
 - from: " / near gutturals"
   to: " / _[+laryngeal], [+laryngeal]_"
   reason: replace prose

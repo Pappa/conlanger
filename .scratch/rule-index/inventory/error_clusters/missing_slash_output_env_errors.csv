@@ -1,12 +1,7 @@
 section_index,rule_id,error_token,rule
-6.2.2.1.6,Cypriot-Arabic-i_2,ˤ,"i > a / {q,ɣ,ʕ}_Cˤ | ^ @ Rule 1, Line 1"
-6.2.2.1.6,"Cypriot-Arabic-u,a,i",:,"{u,a,i} > ∅ / _:[+stress, -long]$ | ^ @ Rule 1, Line 1"
-6.2.2.1.7,Egyptian-Arabic-u,:,"u > o / _:[-long]# | ^ @ Rule 1, Line 1"
-6.2.2.1.7,Egyptian-Arabic-u,:,"u > u / _:[-long]# | ^ @ Rule 1, Line 1"
 8.5.1,Proto-Kypchak-ɡm-rɡ,),"mɡ ɡr > rɡ but it might be a typo) | ^ @ Rule 1, Line 2"
 10.1.2.7.2,Karamiananen-s_4,&,"s > c& _ | ^ @ Rule 1, Line 1"
 12.1,Proto-Abazgi-qʷʲʼ,(,"qʷʲ:[+cg] > ʕʷ (qʷ:[+cg]?) | ^ @ Rule 1, Line 1"
-12.1,Proto-Abazgi-qˤʷ-qˤʷː-qˤʷʼ-χˤʷ-ʁˤʷ,(,"qˤʷ qˤʷ:[+long] qˤʷ:[+cg] χˤʷ ʁˤʷ > ħʷ ʕʷ {qʷ:[+cg],qʷ} ħʷ (ħʷ?) | ^ @ Rule 1, Line 1"
 17.1.1,Gheg-Albanian-kʷ,:,"kʷ > s / _V:[+front]:[+stress]? | ^ @ Rule 1, Line 1"
 17.1.2,Tosk-Albanian-kʷ,:,"kʷ > s / _V:[+front]:[+stress]? | ^ @ Rule 1, Line 1"
 17.5.1,"Old-Irish-—-p,t_2",),"{p,t} > ∅ / #s_ // #_) | ^ @ Rule 1, Line 1"
