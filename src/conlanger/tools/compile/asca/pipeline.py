@@ -18,6 +18,10 @@ from conlanger.tools.compile.asca.group_mappings import (
 from conlanger.tools.compile.asca.host_bracket_matrices import (
     normalize_asca_host_bracket_matrices,
 )
+from conlanger.tools.compile.asca.identity_exceptions import (
+    apply_identity_exception_input_narrowing,
+    resolve_index_identity_exceptions,
+)
 from conlanger.tools.compile.asca.length_marks import normalize_asca_length_marks
 from conlanger.tools.compile.asca.optional_length import (
     expand_optional_length_in_text,
@@ -133,6 +137,21 @@ def compile_asca_rule_field_strings(
         if exception is not None
         else None
     )
+    config = _resolve_compiler_config(compiler_config)
+    (
+        compiled_input,
+        compiled_output,
+        compiled_env,
+        compiled_exception,
+        pending_identity,
+    ) = resolve_index_identity_exceptions(
+        compiled_input,
+        compiled_output,
+        compiled_env,
+        compiled_exception,
+        exception_raw=exception,
+        group_mappings=config.group_mappings,
+    )
     compiled_input, compiled_output, compiled_env, compiled_exception = (
         expand_subscript_references_across_fields(
             compiled_input,
@@ -145,6 +164,11 @@ def compile_asca_rule_field_strings(
     compiled_output = compile_asca_field_post_subscript(compiled_output)
     compiled_input = normalize_asca_host_bracket_matrices(compiled_input)
     compiled_output = normalize_asca_host_bracket_matrices(compiled_output)
+    if pending_identity is not None:
+        compiled_input = apply_identity_exception_input_narrowing(
+            compiled_input,
+            pending_identity,
+        )
     compiled_input = normalize_asca_adjacent_feature_matrices(compiled_input)
     compiled_output = normalize_asca_adjacent_feature_matrices(compiled_output)
     if compiled_env is not None:

@@ -6,14 +6,14 @@
 - Rows: **9877** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8861** (89.7%)
-- Fail: **676** (6.8%)
+- OK: **8881** (89.9%)
+- Fail: **656** (6.6%)
 - Skipped: **340** (3.4%)
 
 ## Sections
 
-- All OK: **443 / 714** (62.0%)
-- Some OK: **247 / 714** (34.6%)
+- All OK: **451 / 714** (63.2%)
+- Some OK: **239 / 714** (33.5%)
 - None OK: **3 / 714** (0.4%)
 - Sections skipped: **21 / 714** (2.9%)
 
@@ -21,18 +21,18 @@
 
 | count | failure_class |
 |------:|---------------|
-| 150 | `expected_underscore` |
-| 136 | `unknown_character` |
+| 152 | `expected_underscore` |
+| 137 | `unknown_character` |
 | 52 | `syntax_other` |
 | 47 | `invalid_ipa` |
 | 46 | `missing_slash_output_env` |
 | 43 | `prose_or_expected_arrow` |
 | 42 | `expected_ipa` |
-| 35 | `expected_number` |
 | 24 | `nested_brackets` |
 | 22 | `unknown_feature` |
 | 15 | `unknown_grouping` |
 | 14 | `stuff_after_word_bound` |
+| 12 | `expected_number` |
 | 11 | `empty_io_panic` |
 | 9 | `diacritic_prereq` |
 | 8 | `segments_before_word` |
@@ -95,11 +95,11 @@
 | 13 | `₂` |
 | 8 | `̊` |
 | 7 | `ː` |
-| 6 | `ŕ` |
 | 6 | `͜` |
 | 6 | `̺` |
+| 6 | `ŕ` |
 | 5 | `ₙ` |
-| 4 | `̻` |
+| 4 | `̂` |
 ### unknown_character (description)
 
 | count | description |
@@ -137,16 +137,16 @@
 | count | error_token |
 |------:|-------------|
 | 22 | `,` |
-| 9 | `//` |
 | 7 | `/` |
+| 6 | `//` |
+| 3 | `)` |
 | 3 | `:` |
 | 1 | `*` |
-| 1 | `)` |
 ### expected_underscore (description)
 
 | count | description |
 |------:|-------------|
-| 107 | `Expected '_', but received ''` |
+| 110 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -179,15 +179,13 @@
 | count | error_token |
 |------:|-------------|
 | 4 | `d` |
-| 3 | `j` |
-| 3 | `{` |
-| 3 | `ɒ` |
-| 3 | `r` |
-| 2 | `s` |
-| 2 | `C` |
-| 2 | `u` |
-| 2 | `w` |
-| 2 | `N` |
+| 2 | `r` |
+| 1 | `l` |
+| 1 | `ɡ` |
+| 1 | `N` |
+| 1 | `P` |
+| 1 | `s` |
+| 1 | `ʔ` |
 ### expected_number (description)
 
 | count | description |
@@ -234,14 +232,14 @@
 |------:|-------------|
 | 8 | `(` |
 | 6 | `:` |
-| 6 | `∅` |
+| 5 | `∅` |
 | 5 | `>` |
 | 3 | `*` |
 | 3 | `ʷ` |
 | 3 | `…` |
 | 2 | `ʲ` |
 | 2 | `_` |
-| 1 | `//` |
+| 1 | `/` |
 ### expected_ipa (description)
 
 | count | description |
@@ -263,9 +261,9 @@
 
 | count | error_token |
 |------:|-------------|
-| 20 | `)` |
+| 21 | `)` |
 | 11 | `:` |
-| 5 | `(` |
+| 4 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
 | 1 | `&` |

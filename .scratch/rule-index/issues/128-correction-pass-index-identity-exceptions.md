@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by:
 
 # Correction pass: Index identity exceptions (`! Host = seg`)
@@ -59,15 +59,66 @@ Index Diachronica uses `! Host = segment` (or `! Host = {set}`) for **identity /
 
 ## Acceptance criteria
 
-- [ ] Cross-field compile step at documented pipeline order
-- [ ] Family A + Family B detectors with worked examples passing `validate_asca`
-- [ ] RHS class letters expanded via `group_mappings` before emission (`K` not literal `K_`)
-- [ ] Matrix-host splice (Mohawk) and set input narrowing (Old Norse `B = ɒ`) covered
-- [ ] Index `raw` / YAML `exception` unchanged (ADR-0010)
-- [ ] Inventory re-run with before/after + list of remaining `expected_number` failures
-- [ ] Docs: one row in [sound-change-applier.md](../../../docs/system/sound-change-applier.md) compile table
-- [ ] No imports from `legacy/`
+- [x] Cross-field compile step at documented pipeline order
+- [x] Family A + Family B detectors with worked examples passing `validate_asca`
+- [x] RHS class letters expanded via `group_mappings` before emission (`K` not literal `K_`)
+- [x] Matrix-host splice (Mohawk) and set input narrowing (Old Norse `B = ɒ`) covered
+- [x] Index `raw` / YAML `exception` unchanged (ADR-0010)
+- [x] Inventory re-run with before/after + list of remaining `expected_number` failures
+- [x] Docs: one row in [sound-change-applier.md](../../../docs/system/sound-change-applier.md) compile table
+- [x] No imports from `legacy/`
 
 ## Comments
 
 - 2026-09-09: Ticket filed from `/grill-with-docs` session on Index `! Host = seg` → ASCA compile (Families A/B, pipeline step 7½, naive v1 without prose guard).
+
+## Answer
+
+Implemented `resolve_index_identity_exceptions` in `src/conlanger/tools/compile/asca/identity_exceptions.py`, wired in `pipeline.py` after per-field pre-subscript (step 7½) with deferred Family B input narrowing after `normalize_asca_host_bracket_matrices`.
+
+### Inventory re-run (`uv run create_index && uv run validate_rules`, 2026-09-09)
+
+| Metric | Before | After | Delta |
+|--------|--------|-------|-------|
+| OK rules (`rule-inventory-success.csv`) | 8,861 | 8,881 | **+20** |
+| `expected_number` cluster rows | 35 | 12 | **−23** |
+
+20 mechanical ok-flips in changelog (timestamp `2026-09-09T19:12:09Z`).
+
+### Per-rule changelog (ok flips)
+
+| section | rule_id |
+|---------|---------|
+| 6.2.2.1.2 | Egypto-Berber-r_2 |
+| 7.1 | Kennebec-River-Abenaki-w_2 |
+| 7.2 | St.-Francis-Abenaki-w_2 |
+| 10.3.7 | Shark-Bay-V |
+| 10.3.11.1 | Anejom-C |
+| 17.5.1 | Old-Irish-V |
+| 17.7.1 | Gothic-—-V-long |
+| 17.7.1 | Gothic-—-V-long_2 |
+| 17.7.2 | West-Germanic-C |
+| 17.7.2.1.13 | Yola-F |
+| 17.7.3.1 | Old-Norse-B,E |
+| 17.7.3.1 | Old-Norse-B,E_2 |
+| 17.7.3.1 | Old-Norse-B,E_3 |
+| 17.12.1.1.3 | French-V_3 |
+| 17.13 | Proto-Tocharian-Kʷ |
+| 17.13.1 | Tocharian-A-V |
+| 30.3.1.1.8 | Adángbe-V+-nas |
+| 36.1.1 | Old-Mandarin-o |
+| 36.1.1 | Old-Mandarin-∅_2 |
+| 37.1.2.4.1 | Mohawk-—-s_2 |
+
+### Remaining `expected_number` failures (12 — follow-on / out of scope)
+
+| rule_id | Reason |
+|---------|--------|
+| Egypto-Berber-CVʕ | No env; exception-only (`CVʕ > ħʔ ! C = ɡw`) |
+| Munsee-Delaware-ʔ | Prose tail (`C = l, or when reduplicated`) |
+| Proto-Norse-wuː-iː | Disjunction (`CC = NC or one C = {ʀ,j}`) |
+| Central/Eastern/Northwestern/Western-Middle-Indo-Aryan-Cn (×4) | Compound host `Cn` + env `V_V` (no C slot) |
+| Portuguese-N, Portuguese-C0C0 | Env matrix host `V[+nas]`, identity subscript `C=0` |
+| Proto-Tocharian-H | Prose (`when [+son,-syll] = syllabic`) |
+| Proto-Southern-Athabaskan-VnC | Prose (`unless C = ʔ`) |
+| Modern-Pekingese-î | No env slot for `C = r` (env `_C#`) |
