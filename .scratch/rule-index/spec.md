@@ -25,7 +25,7 @@ Build and iterate an end-to-end pipeline that:
 
 Brassica compilation remains a future parallel path behind the same index (ADR-0001); this spec delivers the ASCA path first.
 
-**Current baseline** (ASCA 0.10.2, regenerated index): **8089 / 9676 ok (83.6%)**; **373 / 714 sections all OK (52.2%)**; **975** fail; **612** skipped (config hold-outs). Success metric prioritises **sections with zero validation fails**; near-miss sections (≤3 fails) are hunted before heavy-residual sections.
+**Current baseline** (ASCA 0.10.3, regenerated index): **8089 / 9676 ok (83.6%)**; **373 / 714 sections all OK (52.2%)**; **975** fail; **612** skipped (config hold-outs). Success metric prioritises **sections with zero validation fails**; near-miss sections (≤3 fails) are hunted before heavy-residual sections.
 
 ## User Stories
 

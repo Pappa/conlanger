@@ -168,13 +168,13 @@ validate_asca_part(part: ASCARulePart, fragment: str, *, timeout: float = 15.0) 
 resolve_asca_bin() -> str | None  # ASCA_BIN env, then PATH
 ```
 
-**Binary resolution:** `ASCA_BIN` if set, else `shutil.which("asca")`. Same helper for `validate_asca`, `run_asca`, and the field helpers. Install the fork with `validate` per [DEV.md](./DEV.md#asca-sound-change-rule-validation).
+**Binary resolution:** `validate_rules` defaults to the repo fork at `bin/bin/asca` (`--use-asca-fork`). Otherwise `ASCA_BIN` if set, else `shutil.which("asca")`. Same helper for `validate_asca`, `run_asca`, and the field helpers. Inventory and field isolation require **ASCA 0.10.3** from the private fork (`validate` subcommand). Install per [DEV.md](./DEV.md#asca-sound-change-rule-validation).
 
 **Flow:**
 
 1. `_active_rule_changes(rule)` — collect `SoundChangeRule` parts whose rendered line does **not** start with `#` (skipped rules render as `#\t…`).
 2. Error if no active rules.
-3. Resolve asca binary (`ASCA_BIN` or `PATH`; expects **0.10.x**, fork **0.10.3+** for `validate`).
+3. Resolve asca binary (repo fork, `ASCA_BIN`, or `PATH`; **0.10.3** fork with `validate`).
 4. Write `str(rule)` (+ trailing newline) to temp `check.rsca`.
 5. Resolve probe wordlist (see below).
 6. When the binary supports `validate`: `subprocess.run([asca, "validate", "-r", rsca_path], …)` — fast syntax/structure fail (Tiers 1–3).
@@ -182,7 +182,7 @@ resolve_asca_bin() -> str | None  # ASCA_BIN env, then PATH
 8. Non-zero exit → `ASCAValidationError` with cleaned stderr.
 9. Also fail if stderr contains `Syntax Error` or `Runtime Error` even on exit 0.
 
-**Field helpers** (fork `validate` only; for later field isolation — inventory does **not** use these for `ok`):
+**Field helpers** (ASCA 0.10.3 `validate` only; used for field-isolation sidecar rows; whole-rule `ok` still uses `validate_asca` → `validate` + `run`):
 
 - `validate_asca_syntax("a > b / _")` → `asca validate -s …`
 - `validate_asca_part("env", "#_")` → `asca validate -s … -f context` (`env` maps to ASCA `context`)
@@ -206,7 +206,7 @@ resolve_asca_bin() -> str | None  # ASCA_BIN env, then PATH
 
 ### ASCA validation tiers
 
-See [asca-rule-validity.md](../.scratch/rule-index/research/asca-rule-validity.md) §5 for ASCA constraint detail:
+See [asca-rule-validity.md](../.scratch/rule-index/research/asca-rule-validity.md) §5 for ASCA constraint detail (research pinned to **0.10.2** prose; project validation runs **0.10.3** fork):
 
 | Tier | Stage | Caught by `validate_asca`? |
 | --- | --- | --- |

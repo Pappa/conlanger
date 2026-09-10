@@ -88,7 +88,7 @@ Index notation where one **compile field** lists several **field tokens** separa
 _Avoid_: conflating parallel tokens with comma-separated set members inside `{…}`; calling brace sets “parallel” when only one field token is present; treating parallel Index spaces as inter-segment phoneme boundaries
 
 **Inter-segment whitespace**:
-Spaces between phoneme or grapheme units in applier syntax. Brassica requires them between lexemes; ASCA 0.10.2 treats them as optional. YAML **stages** stay Index-shaped — no parse-time insertion. Brassica inter-segment spacing is an **applier compiler** transform when Brassica is supported; Index ASCII spaces in I/O are **parallel tokens**, not phoneme boundaries. Design: [ticket 45](.scratch/rule-index/issues/45-grill-inter-segment-whitespace-placement.md).
+Spaces between phoneme or grapheme units in applier syntax. Brassica requires them between lexemes; ASCA 0.10.3 treats them as optional. YAML **stages** stay Index-shaped — no parse-time insertion. Brassica inter-segment spacing is an **applier compiler** transform when Brassica is supported; Index ASCII spaces in I/O are **parallel tokens**, not phoneme boundaries. Design: [ticket 45](.scratch/rule-index/issues/45-grill-inter-segment-whitespace-placement.md).
 _Avoid_: parse-time SoT mutation with Brassica-style spaced strings; conflating inter-segment spaces with parallel tokens; assuming ASCA requires space-separated phonemes
 
 **Optional outputs**:

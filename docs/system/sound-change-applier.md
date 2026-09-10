@@ -18,8 +18,10 @@ index section dict
         ▼  DiachronicSeries(section, format="asca")
         │     holds section; assembles ASCA .rsca parts
         ▼  str(DiachronicSeries)  →  temporary .rsca
-        ▼  validate_asca(...)  →  asca run <probe.wsca> --rules <file>
+        ▼  validate_asca(...)  →  asca validate -r … ; asca run <probe.wsca> --rules <file>
 ```
+
+Requires **ASCA 0.10.3** from the private fork (`validate` + `run`). Install per [DEV.md](../DEV.md#asca-sound-change-rule-validation).
 
 Parse-time transforms are documented in [index-diachronica-parser.md](./index-diachronica-parser.md). Inventory, compile validation, and the correction loop are in [validate.md](./validate.md).
 
