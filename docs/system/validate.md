@@ -133,7 +133,7 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](./ad
 **Summary markdown (`rule-inventory-summary.md`):**
 
 - **Rules** — ok / fail / skipped counts (section-skipped rules excluded from ok/fail percentages).
-- **Corrections** — per-rule rollup for matched Index Diachronica correction overlays (`index_diachronica_corrections.yml`); orphan correction ids are excluded. Omitted when no matched corrections exist.
+- **Corrections** — per-rule rollup for matched Index Diachronica correction overlays (`index_diachronica_corrections.yml`); orphan correction ids are excluded. Lists failed rules by validation `failure_class` and skipped rules by skip reason (`rule_skipped` / `section_skipped`). Omitted when no matched corrections exist.
 - **Sections** — mutually exclusive buckets: all OK, some OK, none OK, sections skipped (correction-pass prioritisation metric).
 - **Failure classes** — full-class counts from error rows.
 - **Common Errors** — for each failure class with a cluster CSV, top `error_token` rows plus (when token-less messages dominate) top normalised `description` rows; headings use `{failure_class} (error_token)` and `{failure_class} (description)`.

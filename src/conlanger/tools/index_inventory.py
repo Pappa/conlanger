@@ -1303,6 +1303,7 @@ class CorrectionsStats:
     fail: int
     skipped: int
     failed_rules: tuple[tuple[str, str], ...]
+    skipped_rules: tuple[tuple[str, str], ...]
 
 
 def matched_correction_rule_ids(
@@ -1332,7 +1333,17 @@ def _correction_rule_bucket(
             failure_class = failing[0].failure_class or "other"
         return "fail", failure_class
     if all(row.ok == OK_SKIPPED for row in rule_rows):
-        return "skipped", ""
+        classes = [row.failure_class for row in rule_rows if row.failure_class]
+        if classes:
+            counts = Counter(classes)
+            max_count = max(counts.values())
+            modal = [cls for cls, count in counts.items() if count == max_count]
+            skip_class = (
+                modal[0] if len(modal) == 1 else (rule_rows[0].failure_class or "other")
+            )
+        else:
+            skip_class = rule_rows[0].failure_class or "other"
+        return "skipped", skip_class
     return "ok", ""
 
 
@@ -1352,6 +1363,7 @@ def corrections_outcome_stats(
         return None
     ok = fail = skipped = 0
     failed_rules: list[tuple[str, str]] = []
+    skipped_rules: list[tuple[str, str]] = []
     for rule_id in sorted(by_rule):
         bucket, failure_class = _correction_rule_bucket(by_rule[rule_id])
         if bucket == "ok":
@@ -1361,12 +1373,14 @@ def corrections_outcome_stats(
             failed_rules.append((rule_id, failure_class))
         else:
             skipped += 1
+            skipped_rules.append((rule_id, failure_class))
     return CorrectionsStats(
         total=total,
         ok=ok,
         fail=fail,
         skipped=skipped,
         failed_rules=tuple(failed_rules),
+        skipped_rules=tuple(skipped_rules),
     )
 
 
@@ -1384,6 +1398,10 @@ def format_corrections_section(stats: CorrectionsStats | None) -> list[str]:
     if stats.fail:
         lines.extend(["", "### Failed corrections", ""])
         for rule_id, failure_class in stats.failed_rules:
+            lines.append(f"- `{rule_id}` — `{failure_class}`")
+    if stats.skipped:
+        lines.extend(["", "### Skipped corrections", ""])
+        for rule_id, failure_class in stats.skipped_rules:
             lines.append(f"- `{rule_id}` — `{failure_class}`")
     lines.append("")
     return lines

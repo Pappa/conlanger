@@ -56,6 +56,11 @@ Skipped: **1/27**
 
 - `Proto-Circassian-ɡʲʷ-xʲʷ-ɣʲʷ?` — `expected_underscore`
 - `Proto-Erromango-v_2` — `syntax_other`
+
+### Skipped corrections
+
+- `Early-Icelandic-xxy` — `rule_skipped`
+- `Early-Icelandic-bbc` — `section_skipped`
 ```
 
 **Formatting rules (grill Q4-B, Q6):**
@@ -64,7 +69,9 @@ Skipped: **1/27**
 - Omit any bucket line whose count is **zero**.
 - Omit the entire `## Corrections` section when there are **no matched** correction rule ids to report.
 - Omit `### Failed corrections` heading and list when **Fail = 0**.
+- Omit `### Skipped corrections` heading and list when **Skipped = 0**.
 - Failed bullets: `` `rule_id` — `failure_class` ``. When a rule has multiple failing `alt_idx` rows, use the modal `failure_class` among failing rows (or first failing row if tied).
+- Skipped bullets: `` `rule_id` — `failure_class` `` using the inventory skip reason (`rule_skipped` or `section_skipped` from `rule-inventory-skipped.csv`; modal among `alt_idx` rows when tied).
 
 **Data source:** cross-reference inventory validation rows with correction ids loaded from `config/parser/index_diachronica_corrections.yml` (same path as `ParserConfig.corrections` / `_load_corrections`). `validate_rules` should pass matched correction ids (or a pre-built stats object) into `summarize_inventory`.
 
@@ -75,8 +82,9 @@ Skipped: **1/27**
 - [ ] Without `--reset-changelog`, zero flips does not modify an existing changelog file
 - [ ] Summary includes `## Corrections` between **Rules** and **Failure classes** when matched corrections exist
 - [ ] Per-rule rollup matches grill Q2-A / Q3-A; orphans excluded from N
-- [ ] Zero-count bucket lines omitted; `### Failed corrections` omitted when Fail = 0
+- [ ] Zero-count bucket lines omitted; `### Failed corrections` omitted when Fail = 0; `### Skipped corrections` omitted when Skipped = 0
 - [ ] Failed bullets show `rule_id` and `failure_class`
+- [ ] Skipped bullets show `rule_id` and skip `failure_class` (`rule_skipped` / `section_skipped`)
 - [ ] Tests cover reset-empty-changelog, corrections stats rollup (including multi-`alt_idx` and skipped hold-outs), and summary section formatting
 
 ## References

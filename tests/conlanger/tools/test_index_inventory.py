@@ -1314,6 +1314,7 @@ def test_corrections_outcome_stats_rollup_per_rule():
     assert stats.fail == 1
     assert stats.skipped == 1
     assert stats.failed_rules == (("r-fail", "expected_underscore"),)
+    assert stats.skipped_rules == (("r-skipped", RULE_SKIPPED_FAILURE_CLASS),)
 
 
 def test_corrections_outcome_stats_modal_failure_class_on_tie():
@@ -1389,6 +1390,48 @@ def test_summarize_inventory_corrections_section():
     assert "Skipped: **1/3**" in text
     assert "### Failed corrections" in text
     assert "- `r-fail` — `expected_underscore`" in text
+    assert "### Skipped corrections" in text
+    assert f"- `r-skipped` — `{RULE_SKIPPED_FAILURE_CLASS}`" in text
+
+
+def test_summarize_inventory_corrections_section_skipped_only():
+    rows = [
+        ValidationRow(
+            "9.9.9",
+            "Skipped",
+            "Early-Icelandic-bbc",
+            "s:1",
+            OK_SKIPPED,
+            SECTION_SKIPPED_FAILURE_CLASS,
+            "",
+            "",
+            "",
+            "section skipped",
+        ),
+        ValidationRow(
+            "1",
+            "A",
+            "Early-Icelandic-xxy",
+            "s:2",
+            OK_SKIPPED,
+            RULE_SKIPPED_FAILURE_CLASS,
+            "",
+            "",
+            "",
+            "held-out",
+        ),
+    ]
+    text = summarize_inventory(
+        rows,
+        source_yaml="out.yml",
+        probe_words="probe.wsca",
+        correction_rule_ids=frozenset({"Early-Icelandic-bbc", "Early-Icelandic-xxy"}),
+    )
+    assert "Skipped: **2/2**" in text
+    assert "### Failed corrections" not in text
+    assert "### Skipped corrections" in text
+    assert f"- `Early-Icelandic-xxy` — `{RULE_SKIPPED_FAILURE_CLASS}`" in text
+    assert f"- `Early-Icelandic-bbc` — `{SECTION_SKIPPED_FAILURE_CLASS}`" in text
 
 
 def test_summarize_inventory_corrections_omits_fail_list_when_all_ok():
@@ -1405,6 +1448,20 @@ def test_summarize_inventory_corrections_omits_fail_list_when_all_ok():
     assert "OK: **1/1**" in text
     assert "Fail:" not in text.split("## Corrections")[1].split("## Sections")[0]
     assert "### Failed corrections" not in text
+
+
+def test_summarize_inventory_corrections_omits_skipped_list_when_none_skipped():
+    rows = [
+        ValidationRow("1", "A", "r-ok", "s:1", OK_TRUE, "", "", "", "", ""),
+    ]
+    text = summarize_inventory(
+        rows,
+        source_yaml="out.yml",
+        probe_words="probe.wsca",
+        correction_rule_ids=frozenset({"r-ok"}),
+    )
+    assert "## Corrections" in text
+    assert "### Skipped corrections" not in text
 
 
 def test_summarize_inventory_omits_corrections_without_matches():
