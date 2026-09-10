@@ -19,7 +19,7 @@ from conlanger.tools.index_inventory import (
 
 
 def _write_fake_fork(root: Path) -> Path:
-    fork = root / "bin" / "bin" / "asca"
+    fork = root / "lib" / "bin" / "asca"
     fork.parent.mkdir(parents=True, exist_ok=True)
     fork.write_text("#!/bin/sh\nexit 0\n", encoding="utf-8")
     fork.chmod(0o755)
@@ -224,7 +224,7 @@ def test_validate_rules_writes_validation_inventory(
     mock_iter_rows.assert_called_once()
     assert mock_iter_rows.call_args.kwargs["probe_words"] == probe
     assert mock_iter_rows.call_args.kwargs["asca_bin"] == str(
-        tmp_path / "bin" / "bin" / "asca"
+        tmp_path / "lib" / "bin" / "asca"
     )
     mock_flip_rows.assert_called_once()
     summary_path = inventory_dir / "rule-inventory-summary.md"

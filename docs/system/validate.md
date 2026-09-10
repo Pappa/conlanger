@@ -168,7 +168,7 @@ validate_asca_part(part: ASCARulePart, fragment: str, *, timeout: float = 15.0) 
 resolve_asca_bin() -> str | None  # ASCA_BIN env, then PATH
 ```
 
-**Binary resolution:** `validate_rules` defaults to the repo fork at `bin/bin/asca` (`--use-asca-fork`). Otherwise `ASCA_BIN` if set, else `shutil.which("asca")`. Same helper for `validate_asca`, `run_asca`, and the field helpers. Inventory and field isolation require **ASCA 0.10.3** from the private fork (`validate` subcommand). Install per [DEV.md](./DEV.md#asca-sound-change-rule-validation).
+**Binary resolution:** `validate_rules` defaults to the repo fork at `lib/bin/asca` (`--use-asca-fork`). Otherwise `ASCA_BIN` if set, else `shutil.which("asca")`. Same helper for `validate_asca`, `run_asca`, and the field helpers. Inventory and field isolation require **ASCA 0.10.3** from the private fork (`validate` subcommand). Install per [DEV.md](./DEV.md#asca-sound-change-rule-validation).
 
 **Flow:**
 

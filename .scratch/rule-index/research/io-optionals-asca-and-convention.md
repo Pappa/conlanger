@@ -7,13 +7,13 @@ Primary sources:
 - Spike ticket: [100-spike-io-optionals-asca-and-convention.md](../issues/100-spike-io-optionals-asca-and-convention.md)
 - Paused grill: [71-grill-paren-and-parallel-set-notation.md](../issues/71-grill-paren-and-parallel-set-notation.md)
 - Tickets [48](../issues/48-correction-pass-parenthetical-segment-notation.md), [51](../issues/51-correction-pass-input-optionals-to-env.md)
-- ASCA **0.10.2** (project `bin/bin/asca`): [doc/doc.md](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md) — [Optionals](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#optionals), [Sets](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#sets), [Syllable Structure Matching](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#syllable-structure-matching), [Underline Structures](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#underline-structures), [Special Characters](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#special-characters)
+- ASCA **0.10.2** (project `lib/bin/asca`): [doc/doc.md](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md) — [Optionals](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#optionals), [Sets](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#sets), [Syllable Structure Matching](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#syllable-structure-matching), [Underline Structures](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#underline-structures), [Special Characters](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#special-characters)
 - Prior validity map: [asca-rule-validity.md](./asca-rule-validity.md)
 - Nested-set bucket context: [nested-sets-inventory.md](./nested-sets-inventory.md) §4.5
 - HTML SoT: [`data/diachronica/index_diachronica_original.html`](../../../data/diachronica/index_diachronica_original.html)
 - Compile: `src/conlanger/tools/compile/asca/parenthetical.py` (ticket 48), `input_optionals.py` (ticket 51)
 
-Local probes: `asca 0.10.2` at `bin/bin/asca`; scratch probes under [`.scratch/rule-index/research/_spike100/`](./_spike100/).
+Local probes: `asca 0.10.2` at `lib/bin/asca`; scratch probes under [`.scratch/rule-index/research/_spike100/`](./_spike100/).
 
 ---
 
@@ -172,7 +172,7 @@ from conlanger.tools.compile.asca.parenthetical import expand_index_parenthetica
 from conlanger.tools.compile.asca.input_optionals import expand_input_optionals_to_structures  # 51
 ```
 
-ASCA: `bin/bin/asca` 0.10.2 — `validate -s` / `trace`.
+ASCA: `lib/bin/asca` 0.10.2 — `validate -s` / `trace`.
 
 | Example | Index `raw` | 48 output | 51 output | ASCA validate (native / 48 / 51) | ASCA apply (best encoding) | Recommended encoding | Manual? |
 |---------|-------------|-----------|-----------|----------------------------------|----------------------------|----------------------|---------|

@@ -133,7 +133,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 14.3.1,Standard Tamil to Colloquial Tamil,Colloquial-Tamil-iː-eː,,index_diachronica_original.html:4557,0,unknown_character,True,True,False,,,,unknown_character,,,,"Syntax Error: Unknown character '̣' | {m,v,p}_C̣ | ^ @ Rule 1, Line 1",,env
 15.1,Proto-Eskimo-Aleut to Proto-Aleut,Proto-Aleut-∅,,index_diachronica_original.html:4602,1,,False,True,True,,empty_io_panic,,,,"Syntax Error: The input of an insertion rule must only contain `*` or `∅` | ∅ | ^ @ Rule 1, Line 1",,,,input
 15.2.2,Proto-Eskimo to Greenlandic Iñupiaq,Greenlandic-Iñupiaq-Cː,,index_diachronica_original.html:4650,0,unknown_character,True,True,,False,,,,unknown_character,,,,"Syntax Error: Unknown character '₁' | when CV_V in U₁U₂ | ^ @ Rule 1, Line 1",exception
-15.2.2,Proto-Eskimo to Greenlandic Iñupiaq,"Greenlandic-Iñupiaq-m-n-ŋ-t-ɣ,ʁ«",,index_diachronica_original.html:4654,0,expected_ipa,,,,,,,,,,,,,multi
+15.2.2,Proto-Eskimo to Greenlandic Iñupiaq,"Greenlandic-Iñupiaq-m-n-ŋ-t-ɣ,ʁ«",,index_diachronica_original.html:4654,0,prose_or_expected_arrow,,,,,,,,,,,,,multi
 15.2.2,Proto-Eskimo to Greenlandic Iñupiaq,Greenlandic-Iñupiaq-lʁ,,index_diachronica_original.html:4661,0,syntax_other,True,False,,,,syntax_other,,,,"Syntax Error: Output cannot be empty. Use `*` or '∅' to indicate deletion | | ^ @ Rule 1, Line 1",,,output
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-i-a-u,,index_diachronica_original.html:4728,0,unknown_feature,True,True,False,,,,unknown_feature,,,,"Syntax Error: Unknown feature 'initial'. Did you mean nasal? | C_ in %[+lo -initial -final] such that %[+lo]_ | ^^^^^^^^^ @ Rule 1, Line 1",,env
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-i-a-u,,index_diachronica_original.html:4758,0,unknown_feature,True,True,False,,,,unknown_feature,,,,"Syntax Error: Unknown feature 'initial'. Did you mean nasal? | C_ in %[+lo -initial -final] such that %[+lo]_ | ^^^^^^^^^ @ Rule 1, Line 1",,env
@@ -380,7 +380,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.12.1.1.6,Vulgar Latin to Old Provençal,"Old-Provençal-sːj,stʃj,stj",,index_diachronica_original.html:7926,0,nested_brackets,,,,,,,,,,,,,multi
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-sj,,index_diachronica_original.html:7927,0,expected_ipa,,,,,,,,,,,,,multi
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-tj,,index_diachronica_original.html:7932,0,unknown_character,,,,,,,,,,,,,multi
-17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-ndt-ndtʃ-ntʃ-nkt-nf,,index_diachronica_original.html:7936,0,expected_ipa,,,,,,,,,,,,,multi
+17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-ndt-ndtʃ-ntʃ-nkt-nf,,index_diachronica_original.html:7936,0,prose_or_expected_arrow,,,,,,,,,,,,,multi
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-stʃ_2,,index_diachronica_original.html:7945,0,expected_ipa,True,False,,,,expected_ipa,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '(' | {i(t)ʃ,(t)ʃ} | ^ @ Rule 1, Line 1",,,output
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-t_3,,index_diachronica_original.html:7984,0,expected_underscore,True,True,True,False,,,,expected_underscore,,,,"Syntax Error: Expected '_', but received ',' | , though it tended to drop | ^ @ Rule 1, Line 1",exception
 17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,Rhaeto-Romance-a,,index_diachronica_original.html:7992,0,expected_underscore,True,True,False,,,,expected_underscore,,,,"Syntax Error: Expected '_', but received ',' | [+stress], usually when C:[+front,+hi,-lo]_ | ^ @ Rule 1, Line 1",,env
@@ -764,7 +764,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 43.3,Proto-Uto-Aztecan to Luiseño,Luiseño-k_2,,index_diachronica_original.html:13990,0,unknown_character,True,True,False,,,,unknown_character,,,,"Syntax Error: Unknown character 'ₙ' | aₙ_ | ^ @ Rule 1, Line 1",,env
 43.4,Proto-Uto-Aztecan to Nahuatl,Nahuatl-p,,index_diachronica_original.html:14003,0,unknown_character,True,True,False,,,,unknown_character,,,,"Syntax Error: Unknown character 'ₛ' | {#,Vₛ}_ | ^ @ Rule 1, Line 1",,env
 43.6,Proto-Uto-Aztecan to Tohono O’odham,Tohono-O’odham-p,,index_diachronica_original.html:14049,0,unknown_character,True,True,False,,,,unknown_character,,,,"Syntax Error: Unknown character 'ₛ' | {#,Vₛ}_ | ^ @ Rule 1, Line 1",,env
-44.1,Proto-Vasconic to Aquitanian,Aquitanian-S+-fortis,,index_diachronica_original.html:14094,0,unknown_character,,,,,,,,,,,,,multi
+44.1,Proto-Vasconic to Aquitanian,Aquitanian-S+-fortis,,index_diachronica_original.html:14094,0,missing_slash_output_env,,,,,,,,,,,,,multi
 44.2,Proto-Basque to Basque,Basque-Sʰ,,index_diachronica_original.html:14114,0,empty_io_panic,,,,,,,,,,,,,multi
 44.2,Proto-Basque to Basque,Basque-Vn,,index_diachronica_original.html:14117,0,expected_underscore,True,True,True,False,,,,expected_underscore,,,,"Syntax Error: Expected '_', but received ')' | for Pouletin) | ^ @ Rule 1, Line 1",exception
 44.2,Proto-Basque to Basque,Basque-*L,,index_diachronica_original.html:14134,0,missing_slash_output_env,,,,,,,,,,,,,multi

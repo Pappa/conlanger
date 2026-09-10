@@ -22,15 +22,15 @@ Conlanger validates compiled rules with a **private fork** of [asca-rust](https:
 Install the fork into this repo’s `bin/` tree:
 
 ```bash
-cargo install --git https://github.com/Pappa/asca-rust --tag 0.10.3 --root ./bin
+cargo install --git https://github.com/Pappa/asca-rust --tag v0.10.3-dev-validate --root ./lib
 ```
 
 Verify:
 
 ```bash
-export ASCA_BIN="$(pwd)/bin/bin/asca"
-./bin/bin/asca --version   # asca 0.10.3
-./bin/bin/asca validate --help
+export ASCA_BIN="$(pwd)/lib/bin/asca"
+./lib/bin/asca --version   # asca 0.10.3
+./lib/bin/asca validate --help
 ```
 
-`uv run validate_rules` defaults to the repo-local binary at `bin/bin/asca` (`--use-asca-fork`, on by default). Set `ASCA_BIN` when the fork is not first on `PATH` (see `resolve_asca_bin` in [`appliers/asca.py`](../src/conlanger/appliers/asca.py)). Upstream crates.io **0.10.2** lacks `validate` and is not sufficient for inventory or field-isolation checks.
+`uv run validate_rules` defaults to the repo-local binary at `lib/bin/asca` (`--use-asca-fork`, on by default). Set `ASCA_BIN` when the fork is not first on `PATH` (see `resolve_asca_bin` in [`appliers/asca.py`](../src/conlanger/appliers/asca.py)). Upstream crates.io **0.10.2** lacks `validate` and is not sufficient for inventory or field-isolation checks.

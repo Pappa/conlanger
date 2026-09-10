@@ -2102,9 +2102,9 @@ sections:
   - stages:
     - ∅
     - F
-    env: N_O, N_r
+    env: N_{O,r}
     exception: m_f
-    raw: ∅ → F / N_O, N_r ! m_f
+    raw: ∅ → F / N_{O,r} ! m_f
     source: index_diachronica_original.html:1345
     rule_id: Cypriot-Arabic-∅
   - stages:

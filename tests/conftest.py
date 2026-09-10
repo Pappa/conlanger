@@ -23,7 +23,7 @@ __all__ = [
 ]
 
 _REPO_ROOT = Path(__file__).resolve().parents[1]
-_FORK_ASCA = _REPO_ROOT / "bin" / "bin" / "asca"
+_FORK_ASCA = _REPO_ROOT / "lib" / "bin" / "asca"
 
 
 def require_executable(name: str) -> bool:

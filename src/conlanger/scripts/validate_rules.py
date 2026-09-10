@@ -78,7 +78,7 @@ def main() -> int:
         action=argparse.BooleanOptionalAction,
         default=True,
         help=(
-            "use the repo-local asca fork at bin/bin/asca for validation "
+            "use the repo-local asca fork at lib/bin/asca for validation "
             "(default: on; off uses ASCA_BIN or PATH)"
         ),
     )

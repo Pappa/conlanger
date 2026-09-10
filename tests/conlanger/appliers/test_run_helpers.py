@@ -14,13 +14,15 @@ from conlanger.appliers.brassica import run_brassica
 def test_run_asca_success(mocker):
     proc = MagicMock()
     proc.check_returncode = MagicMock()
-    mocker.patch("conlanger.appliers.asca.resolve_asca_bin", return_value="/bin/asca")
+    mocker.patch(
+        "conlanger.appliers.asca.resolve_asca_bin", return_value="/lib/bin/asca"
+    )
     run = mocker.patch("conlanger.appliers.asca.subprocess.run", return_value=proc)
 
     result = run_asca("words.wsca", "rule.rsca", "/tmp/rules")
     assert result == {"rule": "rule.rsca", "returncode": 0, "error": ""}
     assert run.call_args.args[0] == [
-        "/bin/asca",
+        "/lib/bin/asca",
         "run",
         "words.wsca",
         "--rules",
@@ -53,7 +55,9 @@ def test_run_asca_missing_binary(mocker):
 def test_run_asca_called_process_error(mocker):
     exc = subprocess.CalledProcessError(2, "asca")
     exc.stderr = "\x1b[31mbad\x1b[0m\n"
-    mocker.patch("conlanger.appliers.asca.resolve_asca_bin", return_value="/bin/asca")
+    mocker.patch(
+        "conlanger.appliers.asca.resolve_asca_bin", return_value="/lib/bin/asca"
+    )
     mocker.patch(
         "conlanger.appliers.asca.subprocess.run",
         side_effect=exc,
@@ -65,7 +69,9 @@ def test_run_asca_called_process_error(mocker):
 
 
 def test_run_asca_timeout(mocker):
-    mocker.patch("conlanger.appliers.asca.resolve_asca_bin", return_value="/bin/asca")
+    mocker.patch(
+        "conlanger.appliers.asca.resolve_asca_bin", return_value="/lib/bin/asca"
+    )
     mocker.patch(
         "conlanger.appliers.asca.subprocess.run",
         side_effect=subprocess.TimeoutExpired("asca", 10, output=b"slow"),

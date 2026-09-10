@@ -10,6 +10,17 @@
 - Fail: **656** (6.6%)
 - Skipped: **340** (3.4%)
 
+
+## Corrections
+
+OK: **65/68**
+Fail: **1/68**
+Skipped: **2/68**
+
+### Failed corrections
+
+- `Early-Icelandic-O` — `syntax_other`
+
 ## Sections
 
 - All OK: **451 / 714** (63.2%)
@@ -22,12 +33,12 @@
 | count | failure_class |
 |------:|---------------|
 | 152 | `expected_underscore` |
-| 137 | `unknown_character` |
+| 136 | `unknown_character` |
 | 52 | `syntax_other` |
-| 51 | `expected_ipa` |
+| 49 | `expected_ipa` |
+| 47 | `missing_slash_output_env` |
 | 47 | `invalid_ipa` |
-| 46 | `missing_slash_output_env` |
-| 41 | `prose_or_expected_arrow` |
+| 43 | `prose_or_expected_arrow` |
 | 22 | `unknown_feature` |
 | 17 | `nested_brackets` |
 | 15 | `unknown_grouping` |
@@ -95,11 +106,11 @@
 | 13 | `₂` |
 | 8 | `̊` |
 | 7 | `ː` |
+| 6 | `ŕ` |
 | 6 | `͜` |
 | 6 | `̺` |
-| 6 | `ŕ` |
 | 5 | `ₙ` |
-| 4 | `̂` |
+| 4 | `̻` |
 ### unknown_character (description)
 
 | count | description |
@@ -206,8 +217,9 @@
 | 5 | `Expected '>', '->' or '=>', but received ':'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
 | 2 | `Expected '>', '->' or '=>', but received '̥'` |
+| 2 | `Expected '>', '->' or '=>', but received '}'` |
+| 1 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
-| 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
@@ -230,10 +242,10 @@
 | count | error_token |
 |------:|-------------|
 | 9 | `(` |
-| 6 | `{` |
 | 6 | `:` |
 | 6 | `∅` |
 | 5 | `>` |
+| 5 | `{` |
 | 3 | `*` |
 | 3 | `ʷ` |
 | 3 | `…` |
@@ -243,7 +255,7 @@
 
 | count | description |
 |------:|-------------|
-| 1 | `Expected an IPA character, Primative or Matrix, but received ''` |
+| — | _(none)_ |
 
 ### expected_range_dots (error_token)
 
@@ -262,7 +274,7 @@
 |------:|-------------|
 | 21 | `)` |
 | 11 | `:` |
-| 4 | `(` |
+| 5 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
 | 1 | `&` |

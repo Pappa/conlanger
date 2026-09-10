@@ -10,7 +10,7 @@ from conlanger.scripts.pipeline_defaults import ROOT
 
 
 def fork_asca_command(*, repo_root: Path = ROOT) -> Path:
-    return repo_root / "bin" / "bin" / "asca"
+    return repo_root / "lib" / "bin" / "asca"
 
 
 def validation_asca_command(*, use_fork: bool, repo_root: Path = ROOT) -> str | None:

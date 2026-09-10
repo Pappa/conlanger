@@ -169,6 +169,3 @@ cython_debug/
 
 # Cursore agents
 .agents/
-
-# Local binaries
-bin/
