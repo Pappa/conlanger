@@ -1277,6 +1277,118 @@ def append_ok_flip_changelog(flips: pd.DataFrame, path: Path) -> int:
     return len(flips)
 
 
+def write_ok_flip_changelog(
+    flips: pd.DataFrame,
+    path: Path,
+    *,
+    reset: bool = False,
+) -> int:
+    """Write changelog rows, overwriting when ``reset`` is set."""
+    if reset:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        if flips.empty:
+            pd.DataFrame(columns=CHANGELOG_CSV_COLUMNS).to_csv(path, index=False)
+            return 0
+        flips.to_csv(path, index=False)
+        return len(flips)
+    return append_ok_flip_changelog(flips, path)
+
+
+@dataclass(frozen=True)
+class CorrectionsStats:
+    """Per-rule rollup for matched Index Diachronica correction overlays."""
+
+    total: int
+    ok: int
+    fail: int
+    skipped: int
+    failed_rules: tuple[tuple[str, str], ...]
+
+
+def matched_correction_rule_ids(
+    rows: list[ValidationRow],
+    corrections: dict[str, str],
+) -> frozenset[str]:
+    """Return correction rule ids that appear in inventory rows."""
+    inventory_ids = {row.rule_id for row in rows}
+    return frozenset(rule_id for rule_id in corrections if rule_id in inventory_ids)
+
+
+def _correction_rule_bucket(
+    rule_rows: list[ValidationRow],
+) -> tuple[str, str]:
+    """Return ``(bucket, failure_class)`` for one corrected rule id."""
+    if any(row.ok == OK_FALSE for row in rule_rows):
+        failing = [row for row in rule_rows if row.ok == OK_FALSE]
+        classes = [row.failure_class for row in failing if row.failure_class]
+        if classes:
+            counts = Counter(classes)
+            max_count = max(counts.values())
+            modal = [cls for cls, count in counts.items() if count == max_count]
+            failure_class = (
+                modal[0] if len(modal) == 1 else (failing[0].failure_class or "other")
+            )
+        else:
+            failure_class = failing[0].failure_class or "other"
+        return "fail", failure_class
+    if all(row.ok == OK_SKIPPED for row in rule_rows):
+        return "skipped", ""
+    return "ok", ""
+
+
+def corrections_outcome_stats(
+    rows: list[ValidationRow],
+    correction_rule_ids: frozenset[str],
+) -> CorrectionsStats | None:
+    """Return matched correction rollup stats, or ``None`` when ``N`` is zero."""
+    if not correction_rule_ids:
+        return None
+    by_rule: dict[str, list[ValidationRow]] = {}
+    for row in rows:
+        if row.rule_id in correction_rule_ids:
+            by_rule.setdefault(row.rule_id, []).append(row)
+    total = len(by_rule)
+    if total == 0:
+        return None
+    ok = fail = skipped = 0
+    failed_rules: list[tuple[str, str]] = []
+    for rule_id in sorted(by_rule):
+        bucket, failure_class = _correction_rule_bucket(by_rule[rule_id])
+        if bucket == "ok":
+            ok += 1
+        elif bucket == "fail":
+            fail += 1
+            failed_rules.append((rule_id, failure_class))
+        else:
+            skipped += 1
+    return CorrectionsStats(
+        total=total,
+        ok=ok,
+        fail=fail,
+        skipped=skipped,
+        failed_rules=tuple(failed_rules),
+    )
+
+
+def format_corrections_section(stats: CorrectionsStats | None) -> list[str]:
+    """Markdown lines for the ``## Corrections`` summary section."""
+    if stats is None or stats.total == 0:
+        return []
+    lines = ["", "## Corrections", ""]
+    if stats.ok:
+        lines.append(f"OK: **{stats.ok}/{stats.total}**")
+    if stats.fail:
+        lines.append(f"Fail: **{stats.fail}/{stats.total}**")
+    if stats.skipped:
+        lines.append(f"Skipped: **{stats.skipped}/{stats.total}**")
+    if stats.fail:
+        lines.extend(["", "### Failed corrections", ""])
+        for rule_id, failure_class in stats.failed_rules:
+            lines.append(f"- `{rule_id}` — `{failure_class}`")
+    lines.append("")
+    return lines
+
+
 @dataclass(frozen=True)
 class SectionOutcomeStats:
     """Per-section outcome counts (mutually exclusive buckets)."""
@@ -1356,6 +1468,7 @@ def summarize_inventory(
     probe_words: str,
     asca_version: str = "0.10.x",
     field_isolation_rows: list[FieldIsolationRow] | None = None,
+    correction_rule_ids: frozenset[str] | None = None,
 ) -> str:
     total = len(rows)
     skipped_n = sum(1 for row in rows if row.ok == OK_SKIPPED)
@@ -1390,30 +1503,41 @@ def summarize_inventory(
         f"- Fail: **{fail_n}** ({fail_pct:.1f}%)",
         f"- Skipped: **{skipped_n}** ({skipped_pct:.1f}%)",
         "",
-        "## Sections",
-        "",
-        (
-            f"- All OK: **{section_outcomes.all_ok} / {section_total}** "
-            f"({_section_pct(section_outcomes.all_ok):.1f}%)"
-        ),
-        (
-            f"- Some OK: **{section_outcomes.some_ok} / {section_total}** "
-            f"({_section_pct(section_outcomes.some_ok):.1f}%)"
-        ),
-        (
-            f"- None OK: **{section_outcomes.none_ok} / {section_total}** "
-            f"({_section_pct(section_outcomes.none_ok):.1f}%)"
-        ),
-        (
-            f"- Sections skipped: **{section_outcomes.skipped} / {section_total}** "
-            f"({_section_pct(section_outcomes.skipped):.1f}%)"
-        ),
-        "",
-        "## Failure classes",
-        "",
-        "| count | failure_class |",
-        "|------:|---------------|",
     ]
+    lines.extend(
+        format_corrections_section(
+            corrections_outcome_stats(rows, correction_rule_ids)
+            if correction_rule_ids is not None
+            else None
+        )
+    )
+    lines.extend(
+        [
+            "## Sections",
+            "",
+            (
+                f"- All OK: **{section_outcomes.all_ok} / {section_total}** "
+                f"({_section_pct(section_outcomes.all_ok):.1f}%)"
+            ),
+            (
+                f"- Some OK: **{section_outcomes.some_ok} / {section_total}** "
+                f"({_section_pct(section_outcomes.some_ok):.1f}%)"
+            ),
+            (
+                f"- None OK: **{section_outcomes.none_ok} / {section_total}** "
+                f"({_section_pct(section_outcomes.none_ok):.1f}%)"
+            ),
+            (
+                f"- Sections skipped: **{section_outcomes.skipped} / {section_total}** "
+                f"({_section_pct(section_outcomes.skipped):.1f}%)"
+            ),
+            "",
+            "## Failure classes",
+            "",
+            "| count | failure_class |",
+            "|------:|---------------|",
+        ]
+    )
     for failure_class, count in class_counts.most_common():
         lines.append(f"| {count} | `{failure_class}` |")
     lines.extend(format_common_errors_section(rows))

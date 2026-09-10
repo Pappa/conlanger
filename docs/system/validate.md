@@ -110,8 +110,8 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](./ad
 | --- | --- | --- |
 | `rule-inventory-success.csv` | Filtered `ok=True` | [34](../.scratch/rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
 | `rule-inventory-error.csv` | Filtered `ok=False` | [34](../.scratch/rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
-| `rule-inventory-changelog.csv` | Append-only **ok flips** matched by `(source, alt_idx)` (HTML `file:line` + optional-output alternative). Prior `ok` is read from the success/error split CSVs. Pass `--reset-changelog` to overwrite after a column-schema change. | [34](../.scratch/rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
-| `rule-inventory-summary.md` | Rule/section counts, failure-class table, **Common Errors** (top `error_token` and description clusters per failure class), field-isolation blame | [12](../.scratch/rule-index/issues/12-full-index-validation-inventory.md) |
+| `rule-inventory-changelog.csv` | Append-only **ok flips** matched by `(source, alt_idx)` (HTML `file:line` + optional-output alternative). Prior `ok` is read from the success/error split CSVs. Pass `--reset-changelog` to overwrite after a column-schema change; with zero flips this writes a header-only CSV. | [34](../.scratch/rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
+| `rule-inventory-summary.md` | Rule/section counts, **Corrections** rollup for matched overlay rules, failure-class table, **Common Errors** (top `error_token` and description clusters per failure class), field-isolation blame | [12](../.scratch/rule-index/issues/12-full-index-validation-inventory.md) |
 | `field-isolation-success.csv` | filtered `whole_ok == true` (and per-field clean) | [36](../.scratch/rule-index/issues/36-per-field-asca-blame-in-inventory.md) |
 | `field-isolation-error.csv` | filtered `whole_ok == false` or per-field fail | [36](../.scratch/rule-index/issues/36-per-field-asca-blame-in-inventory.md) |
 | `unknown_grouping_errors.csv` | `unknown_grouping` cluster rows | error-cluster tooling |
@@ -133,6 +133,7 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](./ad
 **Summary markdown (`rule-inventory-summary.md`):**
 
 - **Rules** — ok / fail / skipped counts (section-skipped rules excluded from ok/fail percentages).
+- **Corrections** — per-rule rollup for matched Index Diachronica correction overlays (`index_diachronica_corrections.yml`); orphan correction ids are excluded. Omitted when no matched corrections exist.
 - **Sections** — mutually exclusive buckets: all OK, some OK, none OK, sections skipped (correction-pass prioritisation metric).
 - **Failure classes** — full-class counts from error rows.
 - **Common Errors** — for each failure class with a cluster CSV, top `error_token` rows plus (when token-less messages dominate) top normalised `description` rows; headings use `{failure_class} (error_token)` and `{failure_class} (description)`.
@@ -142,7 +143,7 @@ Inventory row count can exceed index rule count when optional-output alternative
 
 **Failure classes** (regex-matched from ASCA stderr): include `syntax_other`, `runtime_other`, `unknown_character`, `unknown_reference`, `expected_ipa`, `expected_range_dots`, `invalid_ipa`, and others — full ordered list in `ERROR_CLASS_PATTERNS` (`index_inventory.py`). Dedicated cluster CSVs exist for each class in `CLUSTER_CSV_BY_FAILURE_CLASS`.
 
-**Changelog behaviour:** First run (no prior success/error split CSVs) emits no flip rows; subsequent runs append only when `ok` changes for the same `source`, with shared UTC `timestamp` per run. The prior inventory is reconstructed by concatenating the success and error split CSVs from the last regen.
+**Changelog behaviour:** First run (no prior success/error split CSVs) emits no flip rows; subsequent runs append only when `ok` changes for the same `source`, with shared UTC `timestamp` per run. The prior inventory is reconstructed by concatenating the success and error split CSVs from the last regen. `--reset-changelog` overwrites the changelog; when there are zero flips it writes header-only CSV (`CHANGELOG_CSV_COLUMNS`) with no data rows.
 
 ---
 

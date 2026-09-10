@@ -2,13 +2,20 @@
 
 from __future__ import annotations
 
+import csv
 import sys
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
 from conlanger.scripts import validate_rules as validate
 from conlanger.scripts import validation_cli
-from conlanger.tools.index_inventory import FieldIsolationRow, ValidationRow
+from conlanger.tools.index_inventory import (
+    CHANGELOG_CSV_COLUMNS,
+    OK_TRUE,
+    FieldIsolationRow,
+    ValidationRow,
+    validation_rows_to_dataframe,
+)
 
 
 def _write_fake_fork(root: Path) -> Path:
@@ -115,7 +122,7 @@ def test_validate_rules_errors_when_asca_missing_on_path(tmp_path: Path):
 
 
 @patch.object(validate, "asca_version", return_value="asca-test-0.10")
-@patch.object(validate, "append_ok_flip_changelog", return_value=2)
+@patch.object(validate, "write_ok_flip_changelog", return_value=2)
 @patch.object(validate, "write_field_isolation_csvs")
 @patch.object(validate, "write_error_cluster_csvs")
 @patch.object(validate, "write_filtered_inventory_csvs")
@@ -131,7 +138,7 @@ def test_validate_rules_writes_validation_inventory(
     _mock_write_filtered,
     _mock_write_error_clusters,
     mock_write_field_isolation,
-    _mock_append_changelog,
+    mock_write_changelog,
     _mock_asca_version,
     tmp_path: Path,
 ):
@@ -226,7 +233,7 @@ def test_validate_rules_writes_validation_inventory(
 
 
 @patch.object(validate, "asca_version", return_value="asca-test-0.10")
-@patch.object(validate, "append_ok_flip_changelog", return_value=1)
+@patch.object(validate, "write_ok_flip_changelog", return_value=1)
 @patch.object(validate, "write_field_isolation_csvs")
 @patch.object(validate, "write_error_cluster_csvs")
 @patch.object(validate, "write_filtered_inventory_csvs")
@@ -242,7 +249,7 @@ def test_validate_rules_reset_changelog_overwrites_existing(
     _mock_write_filtered,
     _mock_write_error_clusters,
     _mock_write_field_isolation,
-    mock_append_changelog,
+    mock_write_changelog,
     _mock_asca_version,
     tmp_path: Path,
     capsys,
@@ -290,11 +297,11 @@ def test_validate_rules_reset_changelog_overwrites_existing(
     )
     mock_flip_rows.return_value = MagicMock()
 
-    def _assert_cleared_then_append(flips, path):
-        assert not path.is_file()
+    def _assert_reset_write(flips, path, *, reset):
+        assert reset is True
         return 1
 
-    mock_append_changelog.side_effect = _assert_cleared_then_append
+    mock_write_changelog.side_effect = _assert_reset_write
     _write_fake_fork(tmp_path)
 
     with (
@@ -317,8 +324,67 @@ def test_validate_rules_reset_changelog_overwrites_existing(
     ):
         assert validate.main() == 0
 
-    mock_append_changelog.assert_called_once()
+    mock_write_changelog.assert_called_once()
     assert "reset" in capsys.readouterr().out
+
+
+@patch.object(validate, "asca_version", return_value="asca-test-0.10")
+@patch.object(validate, "write_field_isolation_csvs")
+@patch.object(validate, "write_error_cluster_csvs")
+@patch.object(validate, "write_filtered_inventory_csvs")
+@patch.object(validate, "load_inventory_csv")
+@patch.object(validate, "iter_inventory_with_field_isolation")
+@patch.object(validate, "read_cleaned_index")
+def test_validate_rules_reset_changelog_empty_flips_writes_header_only(
+    mock_read_index,
+    mock_iter_rows,
+    mock_load_inventory,
+    _mock_write_filtered,
+    _mock_write_error_clusters,
+    _mock_write_field_isolation,
+    _mock_asca_version,
+    tmp_path: Path,
+):
+    work = tmp_path / "work"
+    work.mkdir()
+    yaml_in = work / "index.yml"
+    yaml_in.write_text("sections: []\n", encoding="utf-8")
+    probe = work / "probe.wsca"
+    probe.write_text("probe", encoding="utf-8")
+    inventory_dir = work / "inventory"
+    inventory_dir.mkdir()
+    changelog_path = inventory_dir / "rule-inventory-changelog.csv"
+    changelog_path.write_text("old,data\n", encoding="utf-8")
+    row = ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", "")
+    mock_read_index.return_value = {"sections": [{"rules": [{"stages": ["a", "b"]}]}]}
+    mock_iter_rows.return_value = ([row], [])
+    mock_load_inventory.return_value = validation_rows_to_dataframe([row])
+    _write_fake_fork(tmp_path)
+
+    with (
+        patch.object(validate, "ROOT", tmp_path),
+        patch.object(validate, "asca_supports_validate", return_value=True),
+        patch.object(
+            sys,
+            "argv",
+            [
+                "validate_rules",
+                "--yaml-in",
+                str(yaml_in),
+                "--inventory-dir",
+                str(inventory_dir),
+                "--probe-words",
+                str(probe),
+                "--reset-changelog",
+            ],
+        ),
+    ):
+        assert validate.main() == 0
+
+    rows = list(csv.DictReader(changelog_path.open(encoding="utf-8")))
+    assert rows == []
+    with changelog_path.open(encoding="utf-8") as handle:
+        assert handle.readline().strip() == ",".join(CHANGELOG_CSV_COLUMNS)
 
 
 def test_asca_version_reads_stdout():

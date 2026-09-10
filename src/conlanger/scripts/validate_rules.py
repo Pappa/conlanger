@@ -10,7 +10,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 from conlanger.appliers.asca import asca_supports_validate
-from conlanger.scripts.config_loaders import load_compiler_config
+from conlanger.scripts.config_loaders import load_compiler_config, load_parser_config
 from conlanger.scripts.pipeline_defaults import (
     DEFAULT_INVENTORY_DIR,
     DEFAULT_PROBE,
@@ -30,7 +30,6 @@ from conlanger.tools.index_inventory import (
     INVENTORY_ERROR_CSV_NAME,
     INVENTORY_SKIPPED_CSV_NAME,
     INVENTORY_SUCCESS_CSV_NAME,
-    append_ok_flip_changelog,
     field_isolation_rows_to_dataframe,
     filter_field_isolation_error,
     filter_field_isolation_skipped,
@@ -39,11 +38,13 @@ from conlanger.tools.index_inventory import (
     filter_inventory_skipped,
     iter_inventory_with_field_isolation,
     load_inventory_csv,
+    matched_correction_rule_ids,
     ok_flip_changelog_rows,
     summarize_inventory,
     validation_rows_to_dataframe,
     write_field_isolation_csvs,
     write_filtered_inventory_csvs,
+    write_ok_flip_changelog,
 )
 from conlanger.tools.index_io import read_cleaned_index
 from conlanger.tools.inventory_error_clusters import write_error_cluster_csvs
@@ -130,6 +131,7 @@ def main() -> int:
         return 1
 
     doc = read_cleaned_index(args.yaml_in)
+    parser_config = load_parser_config()
     compiler_config = load_compiler_config()
     rows, field_rows = iter_inventory_with_field_isolation(
         doc,
@@ -163,17 +165,24 @@ def main() -> int:
     write_error_cluster_csvs(error_df, error_cluster_dir)
     if args.field_isolation:
         write_field_isolation_csvs(field_rows, field_isolation_dir)
-    if args.reset_changelog and changelog_path.is_file():
-        changelog_path.unlink()
-    flip_n = append_ok_flip_changelog(flips, changelog_path)
+    flip_n = write_ok_flip_changelog(
+        flips,
+        changelog_path,
+        reset=args.reset_changelog,
+    )
     changelog_action = "reset" if args.reset_changelog else "appended"
 
+    correction_rule_ids = matched_correction_rule_ids(
+        rows,
+        parser_config.corrections,
+    )
     summary = summarize_inventory(
         rows,
         source_yaml=str(args.yaml_in.relative_to(ROOT)),
         probe_words=str(args.probe_words.relative_to(ROOT)),
         asca_version=asca_version(asca_command),
         field_isolation_rows=field_rows,
+        correction_rule_ids=correction_rule_ids,
     )
     summary_path.parent.mkdir(parents=True, exist_ok=True)
     summary_path.write_text(summary, encoding="utf-8")

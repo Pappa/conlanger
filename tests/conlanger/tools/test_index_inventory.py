@@ -19,6 +19,7 @@ from conlanger.tools.index_inventory import (
     append_ok_flip_changelog,
     build_field_isolation_row,
     classify_error,
+    corrections_outcome_stats,
     count_field_blame_categories,
     derive_blame,
     field_isolation_rows_for_validation_rows,
@@ -29,6 +30,7 @@ from conlanger.tools.index_inventory import (
     filter_inventory_by_ok,
     filter_inventory_skipped,
     load_inventory_csv,
+    matched_correction_rule_ids,
     ok_flip_changelog_rows,
     parse_error_description,
     parse_unknown_token_error,
@@ -43,6 +45,7 @@ from conlanger.tools.index_inventory import (
     validation_rows_to_dataframe,
     write_field_isolation_csvs,
     write_filtered_inventory_csvs,
+    write_ok_flip_changelog,
     write_validation_csv,
 )
 from conlanger.tools.rules import SoundChangeRule
@@ -393,7 +396,9 @@ def test_ok_flip_changelog_rows_keys_on_source_and_alt_idx():
                 "1",
                 "A",
                 "r0",
-                "file:1", OK_FALSE, failure_class="syntax_other",
+                "file:1",
+                OK_FALSE,
+                failure_class="syntax_other",
                 description="err",
                 alt_idx=1,
             ),
@@ -448,7 +453,9 @@ def test_top_error_tokens():
             "1",
             "A",
             0,
-            "s:1", OK_FALSE, "unknown_character",
+            "s:1",
+            OK_FALSE,
+            "unknown_character",
             "→",
             "",
             "err",
@@ -457,7 +464,9 @@ def test_top_error_tokens():
             "1",
             "A",
             1,
-            "s:2", OK_FALSE, "unknown_character",
+            "s:2",
+            OK_FALSE,
+            "unknown_character",
             "→",
             "",
             "err",
@@ -466,7 +475,9 @@ def test_top_error_tokens():
             "1",
             "A",
             2,
-            "s:3", OK_FALSE, "unknown_character",
+            "s:3",
+            OK_FALSE,
+            "unknown_character",
             "ː",
             "",
             "err",
@@ -475,7 +486,9 @@ def test_top_error_tokens():
             "1",
             "A",
             3,
-            "s:4", OK_FALSE, "unknown_feature",
+            "s:4",
+            OK_FALSE,
+            "unknown_feature",
             "voiced",
             "voice",
             "err",
@@ -484,7 +497,9 @@ def test_top_error_tokens():
             "1",
             "A",
             4,
-            "s:5", OK_FALSE, "unknown_feature",
+            "s:5",
+            OK_FALSE,
+            "unknown_feature",
             "voiced",
             "voice",
             "err",
@@ -493,7 +508,9 @@ def test_top_error_tokens():
             "1",
             "A",
             5,
-            "s:6", OK_FALSE, "unknown_feature",
+            "s:6",
+            OK_FALSE,
+            "unknown_feature",
             "sibilant",
             "sonorant",
             "err",
@@ -511,7 +528,9 @@ def test_top_error_tokens_with_suggested_from_dataframe():
                 "1",
                 "A",
                 0,
-                "s:1", OK_FALSE, "unknown_feature",
+                "s:1",
+                OK_FALSE,
+                "unknown_feature",
                 "voiced",
                 "voice",
                 "err",
@@ -520,7 +539,9 @@ def test_top_error_tokens_with_suggested_from_dataframe():
                 "1",
                 "A",
                 1,
-                "s:2", OK_FALSE, "unknown_feature",
+                "s:2",
+                OK_FALSE,
+                "unknown_feature",
                 "voiced",
                 "voice",
                 "err",
@@ -529,7 +550,9 @@ def test_top_error_tokens_with_suggested_from_dataframe():
                 "1",
                 "A",
                 2,
-                "s:3", OK_FALSE, "unknown_feature",
+                "s:3",
+                OK_FALSE,
+                "unknown_feature",
                 "sibilant",
                 "sonorant",
                 "err",
@@ -549,7 +572,9 @@ def test_top_error_tokens_with_suggested_uses_modal_suggestion():
                 "1",
                 "A",
                 0,
-                "s:1", OK_FALSE, "unknown_feature",
+                "s:1",
+                OK_FALSE,
+                "unknown_feature",
                 "voiced",
                 "voice",
                 "err",
@@ -558,7 +583,9 @@ def test_top_error_tokens_with_suggested_uses_modal_suggestion():
                 "1",
                 "A",
                 1,
-                "s:2", OK_FALSE, "unknown_feature",
+                "s:2",
+                OK_FALSE,
+                "unknown_feature",
                 "voiced",
                 "voice",
                 "err",
@@ -567,7 +594,9 @@ def test_top_error_tokens_with_suggested_uses_modal_suggestion():
                 "1",
                 "A",
                 2,
-                "s:3", OK_FALSE, "unknown_feature",
+                "s:3",
+                OK_FALSE,
+                "unknown_feature",
                 "voiced",
                 "voicedness",
                 "err",
@@ -586,7 +615,9 @@ def test_top_error_descriptions_from_dataframe():
                 "1",
                 "A",
                 "r0",
-                "s:1", OK_FALSE, "syntax_other",
+                "s:1",
+                OK_FALSE,
+                "syntax_other",
                 "",
                 "",
                 "",
@@ -596,7 +627,9 @@ def test_top_error_descriptions_from_dataframe():
                 "1",
                 "A",
                 "r1",
-                "s:2", OK_FALSE, "syntax_other",
+                "s:2",
+                OK_FALSE,
+                "syntax_other",
                 "",
                 "",
                 "",
@@ -606,7 +639,9 @@ def test_top_error_descriptions_from_dataframe():
                 "1",
                 "A",
                 "r2",
-                "s:3", OK_FALSE, "syntax_other",
+                "s:3",
+                OK_FALSE,
+                "syntax_other",
                 "",
                 "",
                 "",
@@ -640,7 +675,9 @@ def test_top_error_tokens_unlimited():
             "1",
             "A",
             i,
-            f"s:{i}", OK_FALSE, "unknown_grouping",
+            f"s:{i}",
+            OK_FALSE,
+            "unknown_grouping",
             token,
             "",
             "err",
@@ -668,7 +705,9 @@ def test_section_outcome_stats():
             "9.9.9",
             "Skipped",
             "r0",
-            "s:6", OK_SKIPPED, SECTION_SKIPPED_FAILURE_CLASS,
+            "s:6",
+            OK_SKIPPED,
+            SECTION_SKIPPED_FAILURE_CLASS,
             "",
             "",
             "",
@@ -713,7 +752,9 @@ def test_summarize_inventory_common_errors():
             "1",
             "A",
             0,
-            "s:1", OK_FALSE, "unknown_character",
+            "s:1",
+            OK_FALSE,
+            "unknown_character",
             "→",
             "",
             "err",
@@ -722,7 +763,9 @@ def test_summarize_inventory_common_errors():
             "1",
             "A",
             1,
-            "s:2", OK_FALSE, "unknown_feature",
+            "s:2",
+            OK_FALSE,
+            "unknown_feature",
             "voiced",
             "voice",
             "err",
@@ -751,7 +794,9 @@ def test_summarize_inventory():
             "1",
             "A",
             1,
-            "s:2", OK_FALSE, "syntax_other",
+            "s:2",
+            OK_FALSE,
+            "syntax_other",
             "",
             "",
             "err",
@@ -760,7 +805,9 @@ def test_summarize_inventory():
             "1",
             "A",
             2,
-            "s:3", OK_FALSE, "syntax_other",
+            "s:3",
+            OK_FALSE,
+            "syntax_other",
             "",
             "",
             "err",
@@ -825,7 +872,9 @@ def test_summarize_inventory_section_skipped():
             "9.9.9",
             "Skipped",
             "r0",
-            "s:1", OK_SKIPPED, SECTION_SKIPPED_FAILURE_CLASS,
+            "s:1",
+            OK_SKIPPED,
+            SECTION_SKIPPED_FAILURE_CLASS,
             "",
             "",
             "",
@@ -836,7 +885,9 @@ def test_summarize_inventory_section_skipped():
             "1",
             "A",
             1,
-            "s:3", OK_FALSE, "syntax_other",
+            "s:3",
+            OK_FALSE,
+            "syntax_other",
             "",
             "",
             "err",
@@ -864,7 +915,9 @@ def test_filter_inventory_by_ok_splits_success_and_error():
             "1",
             "A",
             1,
-            "file:2", OK_FALSE, "syntax_other",
+            "file:2",
+            OK_FALSE,
+            "syntax_other",
             "",
             "",
             "err",
@@ -874,7 +927,9 @@ def test_filter_inventory_by_ok_splits_success_and_error():
             "9.9.9",
             "Skipped",
             "r3",
-            "file:4", OK_SKIPPED, SECTION_SKIPPED_FAILURE_CLASS,
+            "file:4",
+            OK_SKIPPED,
+            SECTION_SKIPPED_FAILURE_CLASS,
             "",
             "",
             "",
@@ -913,7 +968,9 @@ def test_ok_flip_changelog_rows_emits_flips_by_source():
                 "1",
                 "A",
                 1,
-                "file:2", OK_FALSE, "syntax_other",
+                "file:2",
+                OK_FALSE,
+                "syntax_other",
                 "",
                 "",
                 "err",
@@ -928,7 +985,9 @@ def test_ok_flip_changelog_rows_emits_flips_by_source():
                 "1",
                 "A",
                 "r5",
-                "file:1", OK_FALSE, "syntax_other",
+                "file:1",
+                OK_FALSE,
+                "syntax_other",
                 "",
                 "",
                 "err",
@@ -959,7 +1018,9 @@ def test_ok_flip_changelog_rows_tolerates_previous_without_alt_idx():
                 "1",
                 "A",
                 0,
-                "file:1", OK_FALSE, "syntax_other",
+                "file:1",
+                OK_FALSE,
+                "syntax_other",
                 "",
                 "",
                 "err",
@@ -980,7 +1041,9 @@ def test_ok_flip_changelog_rows_empty_when_ok_unchanged():
                 "1",
                 "A",
                 1,
-                "file:2", OK_FALSE, "syntax_other",
+                "file:2",
+                OK_FALSE,
+                "syntax_other",
                 "",
                 "",
                 "err",
@@ -1014,7 +1077,9 @@ def test_load_inventory_csv_reads_success_error_and_skipped_splits(tmp_path: Pat
                     "1",
                     "A",
                     1,
-                    "s:2", OK_FALSE, "syntax_other",
+                    "s:2",
+                    OK_FALSE,
+                    "syntax_other",
                     "",
                     "",
                     "err",
@@ -1023,7 +1088,9 @@ def test_load_inventory_csv_reads_success_error_and_skipped_splits(tmp_path: Pat
                     "9.9.9",
                     "Skipped",
                     "r2",
-                    "s:3", OK_SKIPPED, SECTION_SKIPPED_FAILURE_CLASS,
+                    "s:3",
+                    OK_SKIPPED,
+                    SECTION_SKIPPED_FAILURE_CLASS,
                     "",
                     "",
                     "",
@@ -1047,7 +1114,9 @@ def test_write_filtered_inventory_csvs(tmp_path: Path):
                 "1",
                 "A",
                 1,
-                "s:2", OK_FALSE, "syntax_other",
+                "s:2",
+                OK_FALSE,
+                "syntax_other",
                 "",
                 "",
                 "err",
@@ -1080,6 +1149,277 @@ def test_write_filtered_inventory_csvs(tmp_path: Path):
     assert int(skipped_rows[0]["ok"]) == OK_SKIPPED
 
 
+def test_write_ok_flip_changelog_reset_empty_writes_header_only(tmp_path: Path):
+    path = tmp_path / "changelog.csv"
+    path.write_text("old,data\n", encoding="utf-8")
+    assert (
+        write_ok_flip_changelog(
+            ok_flip_changelog_rows(
+                validation_rows_to_dataframe(
+                    [ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", "")]
+                ),
+                validation_rows_to_dataframe(
+                    [ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", "")]
+                ),
+                timestamp="2026-09-10T00:00:00Z",
+            ),
+            path,
+            reset=True,
+        )
+        == 0
+    )
+    rows = list(csv.DictReader(path.open(encoding="utf-8")))
+    assert rows == []
+    with path.open(encoding="utf-8") as handle:
+        header = handle.readline().strip()
+    assert header == ",".join(CHANGELOG_CSV_COLUMNS)
+
+
+def test_write_ok_flip_changelog_reset_with_flips_overwrites(tmp_path: Path):
+    path = tmp_path / "changelog.csv"
+    path.write_text("old,data\n", encoding="utf-8")
+    flips = ok_flip_changelog_rows(
+        validation_rows_to_dataframe(
+            [ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", "")]
+        ),
+        validation_rows_to_dataframe(
+            [
+                ValidationRow(
+                    "1",
+                    "A",
+                    "r0",
+                    "s:1",
+                    OK_FALSE,
+                    "syntax_other",
+                    "",
+                    "",
+                    "err",
+                )
+            ],
+        ),
+        timestamp="2026-09-10T12:00:00Z",
+    )
+    assert write_ok_flip_changelog(flips, path, reset=True) == 1
+    rows = list(csv.DictReader(path.open(encoding="utf-8")))
+    assert len(rows) == 1
+    assert rows[0]["source"] == "s:1"
+    assert rows[0]["ok"] == str(OK_FALSE)
+
+
+def test_write_ok_flip_changelog_append_empty_leaves_existing_file(tmp_path: Path):
+    path = tmp_path / "changelog.csv"
+    path.write_text(
+        "section_index,rule_id,alt_idx,source,ok,timestamp\n1,r0,,s:1,1,old\n",
+        encoding="utf-8",
+    )
+    assert (
+        write_ok_flip_changelog(
+            ok_flip_changelog_rows(
+                validation_rows_to_dataframe(
+                    [ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", "")]
+                ),
+                validation_rows_to_dataframe(
+                    [ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", "")]
+                ),
+                timestamp="2026-09-10T00:00:00Z",
+            ),
+            path,
+            reset=False,
+        )
+        == 0
+    )
+    assert "old" in path.read_text(encoding="utf-8")
+
+
+def test_matched_correction_rule_ids_excludes_orphans():
+    rows = [
+        ValidationRow("1", "A", "matched-a", "s:1", OK_TRUE, "", "", "", "", ""),
+        ValidationRow(
+            "1", "A", "matched-b", "s:2", OK_FALSE, "syntax_other", "", "", "err"
+        ),
+    ]
+    matched = matched_correction_rule_ids(
+        rows,
+        {
+            "matched-a": "a > b",
+            "matched-b": "c > d",
+            "orphan": "x > y",
+        },
+    )
+    assert matched == frozenset({"matched-a", "matched-b"})
+
+
+def test_corrections_outcome_stats_rollup_per_rule():
+    rows = [
+        ValidationRow(
+            "1", "A", "r-multi", "s:1", OK_TRUE, "", "", "", "", "", alt_idx=0
+        ),
+        ValidationRow(
+            "1", "A", "r-multi", "s:1", OK_TRUE, "", "", "", "", "", alt_idx=1
+        ),
+        ValidationRow(
+            "1",
+            "A",
+            "r-fail",
+            "s:2",
+            OK_FALSE,
+            "expected_underscore",
+            "",
+            "",
+            "err",
+        ),
+        ValidationRow(
+            "1",
+            "A",
+            "r-mixed",
+            "s:3",
+            OK_TRUE,
+            "",
+            "",
+            "",
+            "",
+        ),
+        ValidationRow(
+            "1",
+            "A",
+            "r-mixed",
+            "s:3",
+            OK_SKIPPED,
+            RULE_SKIPPED_FAILURE_CLASS,
+            "",
+            "",
+            "",
+            "held-out",
+        ),
+        ValidationRow(
+            "1",
+            "A",
+            "r-skipped",
+            "s:4",
+            OK_SKIPPED,
+            RULE_SKIPPED_FAILURE_CLASS,
+            "",
+            "",
+            "",
+            "held-out",
+        ),
+    ]
+    stats = corrections_outcome_stats(
+        rows,
+        frozenset({"r-multi", "r-fail", "r-mixed", "r-skipped", "orphan"}),
+    )
+    assert stats is not None
+    assert stats.total == 4
+    assert stats.ok == 2
+    assert stats.fail == 1
+    assert stats.skipped == 1
+    assert stats.failed_rules == (("r-fail", "expected_underscore"),)
+
+
+def test_corrections_outcome_stats_modal_failure_class_on_tie():
+    rows = [
+        ValidationRow(
+            "1",
+            "A",
+            "r-fail",
+            "s:1",
+            OK_FALSE,
+            "expected_underscore",
+            "",
+            "",
+            "first",
+            alt_idx=0,
+        ),
+        ValidationRow(
+            "1",
+            "A",
+            "r-fail",
+            "s:1",
+            OK_FALSE,
+            "syntax_other",
+            "",
+            "",
+            "second",
+            alt_idx=1,
+        ),
+    ]
+    stats = corrections_outcome_stats(rows, frozenset({"r-fail"}))
+    assert stats is not None
+    assert stats.failed_rules == (("r-fail", "expected_underscore"),)
+
+
+def test_summarize_inventory_corrections_section():
+    rows = [
+        ValidationRow("1", "A", "r-ok", "s:1", OK_TRUE, "", "", "", "", ""),
+        ValidationRow(
+            "1",
+            "A",
+            "r-fail",
+            "s:2",
+            OK_FALSE,
+            "expected_underscore",
+            "",
+            "",
+            "err",
+        ),
+        ValidationRow(
+            "1",
+            "A",
+            "r-skipped",
+            "s:3",
+            OK_SKIPPED,
+            RULE_SKIPPED_FAILURE_CLASS,
+            "",
+            "",
+            "",
+            "held-out",
+        ),
+    ]
+    text = summarize_inventory(
+        rows,
+        source_yaml="out.yml",
+        probe_words="probe.wsca",
+        correction_rule_ids=frozenset({"r-ok", "r-fail", "r-skipped"}),
+    )
+    assert text.index("## Rules") < text.index("## Corrections")
+    assert text.index("## Corrections") < text.index("## Sections")
+    assert text.index("## Corrections") < text.index("## Failure classes")
+    assert "OK: **1/3**" in text
+    assert "Fail: **1/3**" in text
+    assert "Skipped: **1/3**" in text
+    assert "### Failed corrections" in text
+    assert "- `r-fail` — `expected_underscore`" in text
+
+
+def test_summarize_inventory_corrections_omits_fail_list_when_all_ok():
+    rows = [
+        ValidationRow("1", "A", "r-ok", "s:1", OK_TRUE, "", "", "", "", ""),
+    ]
+    text = summarize_inventory(
+        rows,
+        source_yaml="out.yml",
+        probe_words="probe.wsca",
+        correction_rule_ids=frozenset({"r-ok"}),
+    )
+    assert "## Corrections" in text
+    assert "OK: **1/1**" in text
+    assert "Fail:" not in text.split("## Corrections")[1].split("## Sections")[0]
+    assert "### Failed corrections" not in text
+
+
+def test_summarize_inventory_omits_corrections_without_matches():
+    rows = [
+        ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", ""),
+    ]
+    text = summarize_inventory(
+        rows,
+        source_yaml="out.yml",
+        probe_words="probe.wsca",
+        correction_rule_ids=frozenset({"orphan-only"}),
+    )
+    assert "## Corrections" not in text
+
+
 def test_append_ok_flip_changelog_writes_and_appends(tmp_path: Path):
     flips = ok_flip_changelog_rows(
         None,
@@ -1101,7 +1441,9 @@ def test_append_ok_flip_changelog_writes_and_appends(tmp_path: Path):
                     "1",
                     "A",
                     0,
-                    "s:1", OK_FALSE, "syntax_other",
+                    "s:1",
+                    OK_FALSE,
+                    "syntax_other",
                     "",
                     "",
                     "err",
@@ -1145,7 +1487,9 @@ def test_ok_flip_changelog_rows_empty_after_inventory_csv_roundtrip(tmp_path: Pa
             "1",
             "A",
             "r1",
-            "s:2", OK_FALSE, "syntax_other",
+            "s:2",
+            OK_FALSE,
+            "syntax_other",
             "",
             "",
             "err",
@@ -1329,7 +1673,9 @@ def test_build_field_isolation_row_without_field_rule():
         "1",
         "A",
         "r0",
-        "s:1", OK_FALSE, "format_error",
+        "s:1",
+        OK_FALSE,
+        "format_error",
         "",
         "",
         "bad",
@@ -1608,7 +1954,9 @@ def test_build_field_isolation_row_unknown_feature_on_input(mock_validate_part):
         "1",
         "A",
         "r0",
-        "s:1", OK_FALSE, "unknown_feature",
+        "s:1",
+        OK_FALSE,
+        "unknown_feature",
         "voiced",
         "voice",
         "whole fail",
@@ -1634,7 +1982,9 @@ def test_build_field_isolation_row_missing_underscore_on_env(mock_validate_part)
         "1",
         "A",
         "r0",
-        "s:1", OK_FALSE, "expected_underscore",
+        "s:1",
+        OK_FALSE,
+        "expected_underscore",
         "",
         "",
         "whole fail",
@@ -1661,7 +2011,9 @@ def test_build_field_isolation_row_two_fields_fail(mock_validate_part):
         "1",
         "A",
         "r0",
-        "s:1", OK_FALSE, "syntax_other",
+        "s:1",
+        OK_FALSE,
+        "syntax_other",
         "",
         "",
         "whole fail",
@@ -1676,7 +2028,9 @@ def test_field_isolation_integration_multi_blame():
         "1",
         "A",
         "r0",
-        "s:1", OK_FALSE, "runtime_other",
+        "s:1",
+        OK_FALSE,
+        "runtime_other",
         "",
         "",
         "uneven set",
