@@ -5209,7 +5209,7 @@ sections:
     source: index_diachronica_original.html:1916
     rule_id: Munsee-Delaware-a,ə
   - stages:
-    - ə[+weak]
+    - ə[-tense]
     - ∅
     env: '#_C'
     raw: 'ə[+weak] → ∅ / #_C'
@@ -5217,7 +5217,7 @@ sections:
     rule_id: Munsee-Delaware-ə+weak
   - comment: (sporadic)
     stages:
-    - ə[+weak]
+    - ə[-tense]
     - ∅
     env: _C[+voice]
     raw: ə[+weak] → ∅ / _C[+voiced] (sporadic)
@@ -5225,7 +5225,7 @@ sections:
     sporadic: true
     rule_id: Munsee-Delaware-ə+weak_2
   - stages:
-    - a[+weak] ə[+weak]
+    - a[-tense] ə[-tense]
     - ə ∅
     env: a_Z[+voice]
     raw: a[+weak] ə[+weak] → ə ∅ / a_Z[+voiced]
@@ -32435,7 +32435,7 @@ sections:
     stages:
     - ɛ ɛ̃ ɛː
     - ɔ ɔ̃ a
-    env: _C[-palatalized +cor,+anterior,+dist]
+    env: _C[+cor,+dist +cor,+anterior,+dist]
     raw: ɛ ɛ̃ ɛː → ɔ ɔ̃ a / _C[-palatalized +dental] (also sporadically before plain
       non-dentals)
     source: index_diachronica_original.html:7024
@@ -32500,7 +32500,7 @@ sections:
   - stages:
     - ɪl
     - ɛɫ
-    env: P_C[+cor,+anterior,+dist -palatalized]
+    env: P_C[+cor,+anterior,+dist +cor,+dist]
     raw: ьl → ɛɫ / P_C[+dental -palatalized]
     source: index_diachronica_original.html:7035
     rule_id: Polish-ьl_2
@@ -32520,7 +32520,7 @@ sections:
   - stages:
     - ɪ
     - aː
-    env: r_C[+cor,+anterior,+dist -palatalized]
+    env: r_C[+cor,+anterior,+dist +cor,+dist]
     raw: ь → aː / r_C[+dental -palatalized]
     source: index_diachronica_original.html:7038
     rule_id: Polish-ь
@@ -33281,7 +33281,7 @@ sections:
     rule_id: Polish-dz-ts
   - stages:
     - C[+strident]P
-    - C[+alveolopalatal]
+    - C[+cor,-anterior,+dist,+hi,-bk]
     env: _C[+coronal]
     raw: C[+sibilant]P → C[+alveolopalatal] / _C[+coronal]
     source: index_diachronica_original.html:7153
@@ -46890,7 +46890,7 @@ sections:
     source: index_diachronica_original.html:9828
     rule_id: Proto-Eastern-Muskogean-xʷ
   - stages:
-    - VC[+ weak]
+    - VC[-tense]
     - ∅
     env: _V#
     raw: VC[+ weak] → ∅ / _V#
@@ -47183,7 +47183,7 @@ sections:
     source: index_diachronica_original.html:9896
     rule_id: Proto-Western-Muskogean-x
   - stages:
-    - C₁[+ weak] C₂[+ weak]
+    - C₁[-tense] C₂[-tense]
     - ʔ h
     env: V_V#
     raw: C₁[+ weak] C₂[+ weak] → ʔ h / V_V#

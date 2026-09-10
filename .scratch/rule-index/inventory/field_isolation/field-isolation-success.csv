@@ -689,6 +689,9 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-i-o,,index_diachronica_original.html:1913,1,,True,True,,,,,,,,,,,none
 7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-Vː,,index_diachronica_original.html:1914,1,,True,True,True,,,,,,,,,,none
 7.11,Proto-Algonquian to Munsee Delaware,"Munsee-Delaware-a,ə",,index_diachronica_original.html:1916,1,,True,True,True,,,,,,,,,,none
+7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-ə+weak,,index_diachronica_original.html:1917,1,,True,True,True,,,,,,,,,,none
+7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-ə+weak_2,,index_diachronica_original.html:1918,1,,True,True,True,,,,,,,,,,none
+7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-a+weak-ə+weak,,index_diachronica_original.html:1919,1,,True,True,True,,,,,,,,,,none
 7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-ə,,index_diachronica_original.html:1922,1,,True,True,True,,,,,,,,,,none
 7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-ə_2,,index_diachronica_original.html:1923,1,,True,True,True,,,,,,,,,,none
 7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-ə_3,,index_diachronica_original.html:1924,1,,True,True,True,,,,,,,,,,none
@@ -4242,14 +4245,17 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.11.1,Proto-Slavic to Polish,Polish-ɔr-ɔl,,index_diachronica_original.html:7020,1,,True,True,True,,,,,,,,,,none
 17.11.1,Proto-Slavic to Polish,Polish-ɔr-ɔl_2,,index_diachronica_original.html:7021,1,,True,True,True,,,,,,,,,,none
 17.11.1,Proto-Slavic to Polish,Polish-j,,index_diachronica_original.html:7023,1,,True,True,True,,,,,,,,,,none
+17.11.1,Proto-Slavic to Polish,Polish-ɛ-ɛ̃-ɛː,,index_diachronica_original.html:7024,1,,True,True,True,,,,,,,,,,none
 17.11.1,Proto-Slavic to Polish,Polish-ɛː,,index_diachronica_original.html:7025,1,,True,True,,,,,,,,,,,none
 17.11.1,Proto-Slavic to Polish,Polish-ъ,,index_diachronica_original.html:7030,1,,True,True,True,,,,,,,,,,none
 17.11.1,Proto-Slavic to Polish,Polish-ъl,,index_diachronica_original.html:7031,1,,True,True,True,,,,,,,,,,none
 17.11.1,Proto-Slavic to Polish,Polish-ъl_2,,index_diachronica_original.html:7032,1,,True,True,True,,,,,,,,,,none
 17.11.1,Proto-Slavic to Polish,Polish-ъl_3,,index_diachronica_original.html:7033,1,,True,True,,True,,,,,,,,,none
 17.11.1,Proto-Slavic to Polish,Polish-ьl,,index_diachronica_original.html:7034,1,,True,True,True,,,,,,,,,,none
+17.11.1,Proto-Slavic to Polish,Polish-ьl_2,,index_diachronica_original.html:7035,1,,True,True,True,,,,,,,,,,none
 17.11.1,Proto-Slavic to Polish,Polish-ьl_3,,index_diachronica_original.html:7036,1,,True,True,True,,,,,,,,,,none
 17.11.1,Proto-Slavic to Polish,Polish-ьl_4,,index_diachronica_original.html:7037,1,,True,True,,,,,,,,,,,none
+17.11.1,Proto-Slavic to Polish,Polish-ь,,index_diachronica_original.html:7038,1,,True,True,True,,,,,,,,,,none
 17.11.1,Proto-Slavic to Polish,Polish-ьr,,index_diachronica_original.html:7039,1,,,,,,,,,,,,,,none
 17.11.1,Proto-Slavic to Polish,"Polish-ɛ̃,ɔ̃",,index_diachronica_original.html:7040,1,,True,True,,,,,,,,,,,none
 17.11.1,Proto-Slavic to Polish,Polish-ajɛ,,index_diachronica_original.html:7042,1,,True,True,,,,,,,,,,,none
@@ -4333,6 +4339,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.11.1,Proto-Slavic to Polish,Polish-pv,,index_diachronica_original.html:7149,1,,True,True,,,,,,,,,,,none
 17.11.1,Proto-Slavic to Polish,Polish-ʈʂ_2,,index_diachronica_original.html:7150,1,,True,True,True,,,,,,,,,,none
 17.11.1,Proto-Slavic to Polish,Polish-stʲkl,,index_diachronica_original.html:7151,1,,,,,,,,,,,,,,none
+17.11.1,Proto-Slavic to Polish,Polish-C+sibilantP,,index_diachronica_original.html:7153,1,,True,True,True,,,,,,,,,,none
 17.11.1,Proto-Slavic to Polish,Polish-C+sibilantP_2,,index_diachronica_original.html:7154,1,,True,True,,,,,,,,,,,none
 17.11.1,Proto-Slavic to Polish,Polish-w_2,,index_diachronica_original.html:7155,1,,True,True,True,,,,,,,,,,none
 17.11.1,Proto-Slavic to Polish,Polish-w_3,,index_diachronica_original.html:7156,1,,True,True,True,,,,,,,,,,none
@@ -6252,6 +6259,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 28,Muskogean,Muskogean-k,,index_diachronica_original.html:9819,1,,True,True,True,True,,,,,,,,,none
 28.1,Proto-Muskogean to Proto-Eastern Muskogean,Proto-Eastern-Muskogean-θ,,index_diachronica_original.html:9827,1,,True,True,,,,,,,,,,,none
 28.1,Proto-Muskogean to Proto-Eastern Muskogean,Proto-Eastern-Muskogean-xʷ,,index_diachronica_original.html:9828,1,,True,True,,,,,,,,,,,none
+28.1,Proto-Muskogean to Proto-Eastern Muskogean,Proto-Eastern-Muskogean-VC+-weak,,index_diachronica_original.html:9829,1,,True,True,True,,,,,,,,,,none
 28.1.1,Proto-Eastern Muskogean to Alabama,Alabama-ʃ,,index_diachronica_original.html:9834,1,,True,True,,,,,,,,,,,none
 28.1.1,Proto-Eastern Muskogean to Alabama,Alabama-kV,,index_diachronica_original.html:9835,1,,True,True,True,,,,,,,,,,none
 28.1.1,Proto-Eastern Muskogean to Alabama,Alabama-k,,index_diachronica_original.html:9836,1,,True,True,,,,,,,,,,,none
@@ -6288,6 +6296,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 28.2,Proto-Muskogean to Proto-Western Muskogean,Proto-Western-Muskogean-θ,,index_diachronica_original.html:9894,1,,True,True,,,,,,,,,,,none
 28.2,Proto-Muskogean to Proto-Western Muskogean,Proto-Western-Muskogean-s,,index_diachronica_original.html:9895,1,,True,True,,,,,,,,,,,none
 28.2,Proto-Muskogean to Proto-Western Muskogean,Proto-Western-Muskogean-x,,index_diachronica_original.html:9896,1,,True,True,,,,,,,,,,,none
+28.2,Proto-Muskogean to Proto-Western Muskogean,Proto-Western-Muskogean-C1+-weak-C2+-weak,,index_diachronica_original.html:9897,1,,True,True,True,,,,,,,,,,none
 28.2,Proto-Muskogean to Proto-Western Muskogean,Proto-Western-Muskogean-V,,index_diachronica_original.html:9898,1,,True,True,True,,,,,,,,,,none
 28.2,Proto-Muskogean to Proto-Western Muskogean,Proto-Western-Muskogean-xʷ,,index_diachronica_original.html:9899,1,,True,True,True,,,,,,,,,,none
 28.2,Proto-Muskogean to Proto-Western Muskogean,Proto-Western-Muskogean-a,,index_diachronica_original.html:9900,1,,True,True,True,,,,,,,,,,none

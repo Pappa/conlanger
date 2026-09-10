@@ -6,8 +6,8 @@
 - Rows: **9878** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8885** (89.9%)
-- Fail: **655** (6.6%)
+- OK: **8894** (90.0%)
+- Fail: **646** (6.5%)
 - Skipped: **338** (3.4%)
 
 
@@ -22,8 +22,8 @@ Skipped: **1/69**
 
 ## Sections
 
-- All OK: **452 / 714** (63.3%)
-- Some OK: **238 / 714** (33.3%)
+- All OK: **454 / 714** (63.6%)
+- Some OK: **236 / 714** (33.1%)
 - None OK: **3 / 714** (0.4%)
 - Sections skipped: **21 / 714** (2.9%)
 
@@ -38,10 +38,10 @@ Skipped: **1/69**
 | 47 | `invalid_ipa` |
 | 46 | `missing_slash_output_env` |
 | 42 | `prose_or_expected_arrow` |
-| 22 | `unknown_feature` |
 | 17 | `nested_brackets` |
 | 15 | `unknown_grouping` |
 | 14 | `stuff_after_word_bound` |
+| 13 | `unknown_feature` |
 | 12 | `expected_number` |
 | 11 | `empty_io_panic` |
 | 9 | `diacritic_prereq` |
@@ -172,16 +172,16 @@ Skipped: **1/69**
 
 | count | error_token | suggested |
 |------:|-------------|-----------|
-| 5 | `weak` | `man` |
 | 3 | `initial` | `nasal` |
-| 3 | `palatalized` | `latrl` |
 | 2 | `fricative` | `rhotic` |
-| 1 | `highpitch` | `high` |
-| 1 | `posttonic` | `sonor` |
 | 1 | `lowpitch` | `voice` |
-| 1 | `alveolopalatal` | `consonantal` |
+| 1 | `highpitch` | `high` |
 | 1 | `intertonic` | `anterior` |
+| 1 | `posttonic` | `sonor` |
 | 1 | `tonic` | `cons` |
+| 1 | `glide` | `click` |
+| 1 | `accent` | `cont` |
+| 1 | `labiovelar` | `labiodental` |
 
 ### expected_number (error_token)
 
@@ -214,10 +214,10 @@ Skipped: **1/69**
 | 7 | `Expected '>', '->' or '=>', but received '̩'` |
 | 5 | `Expected '>', '->' or '=>', but received ':'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
-| 2 | `Expected '>', '->' or '=>', but received '̥'` |
+| 2 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
-| 1 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
+| 1 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
@@ -270,16 +270,16 @@ Skipped: **1/69**
 
 | count | error_token |
 |------:|-------------|
-| 21 | `)` |
+| 20 | `)` |
 | 11 | `:` |
 | 4 | `(` |
 | 3 | `ʲ` |
+| 2 | `̥` |
 | 2 | `_` |
 | 1 | `&` |
 | 1 | `*` |
 | 1 | `#` |
 | 1 | `ˀ` |
-| 1 | `̥` |
 ### missing_slash_output_env (description)
 
 | count | description |
@@ -402,9 +402,9 @@ Skipped: **1/69**
 
 | count | blame |
 |------:|-------|
-| 259 | `env` |
-| 204 | `input` |
-| 177 | `output` |
+| 256 | `env` |
+| 199 | `input` |
+| 176 | `output` |
 | 61 | `exception` |
 | 49 | `multi` |
 

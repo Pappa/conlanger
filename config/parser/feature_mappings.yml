@@ -84,6 +84,18 @@ palatal:
   confidence: medium
   host: C
   notes: Coronal palatal/post-palatal (spike 29)
+palatalized:
+  mapping_kind: bundle
+  asca_target: +cor,+dist
+  confidence: medium
+  host: C
+  notes: Index [+palatalized] → ASCA [+cor, +dist]
+alveolopalatal:
+  mapping_kind: bundle
+  asca_target: +cor,-anterior,+dist,+hi,-bk
+  confidence: medium
+  host: C
+  notes: Index [+alveolopalatal] → ASCA [+cor, -anterior, +dist, +hi, -bk]
 velar:
   mapping_kind: bundle
   asca_target: -fr,+bk,+hi,-lo
@@ -183,3 +195,8 @@ lenis:
   asca_target: tense
   confidence: medium
   notes: Index [+lenis] = ASCA [-tense]
+weak:
+  mapping_kind: rename_invert
+  asca_target: tense
+  confidence: medium
+  notes: Index [+weak] = ASCA [-tense]
