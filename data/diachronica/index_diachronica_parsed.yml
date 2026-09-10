@@ -26899,15 +26899,15 @@ sections:
     raw: y(ː) yə ø(ː) øy → i(ː) iə e(ː) ei (intermittent)
     source: index_diachronica_original.html:6108
     rule_id: Standard-German-yː-yə-øː-øy
-  - stages:
+  - comment: ', except in certain unstressed endings and monosyllables, _C{C,V,#}
+      (“especially before /xt/”), and Low German borrowings; sporadic'
+    stages:
     - uː yː iː
     - ou øy ei
-    exception: in certain unstressed endings and monosyllables, _C{C,V,#} , and Low
-      German borrowings
-    comment: “especially before /xt/”; ()
     raw: uː yː iː → ou øy ei, except in certain unstressed endings and monosyllables,
       _C{C,V,#} (“especially before /xt/”), and Low German borrowings
     source: index_diachronica_original.html:6109
+    sporadic: true
     rule_id: Standard-German-uː-yː-iː
   - stages:
     - uə yə iə
@@ -32715,11 +32715,13 @@ sections:
     raw: aː ɔː ɛː → ɒ o e
     source: index_diachronica_original.html:7065
     rule_id: Polish-aː-ɔː-ɛː
-  - stages:
+  - comment: in certain frequently-used words; sporadic
+    stages:
     - Vː
-    - V in certain frequently-used words
+    - V
     raw: Vː → V in certain frequently-used words
     source: index_diachronica_original.html:7066
+    sporadic: true
     rule_id: Polish-Vː
   - stages:
     - '{i,ɨ}'

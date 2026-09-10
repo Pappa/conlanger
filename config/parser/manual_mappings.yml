@@ -105,6 +105,12 @@
 - from: " (in some regions"
   to: " sporadic ; (in some regions"
   reason: replace prose
+- from: " in certain frequently-used words"
+  to: " / sporadic ; in certain frequently-used words"
+  reason: replace prose
+- from: ", except in certain "
+  to: " / sporadic ;, except in certain "
+  reason: replace prose
 - from: " (some dialects"
   to: " sporadic ; (some dialects"
   reason: replace prose

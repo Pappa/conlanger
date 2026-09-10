@@ -6,8 +6,8 @@
 - Rows: **9878** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8896** (90.1%)
-- Fail: **644** (6.5%)
+- OK: **8898** (90.1%)
+- Fail: **642** (6.5%)
 - Skipped: **338** (3.4%)
 
 
@@ -33,11 +33,11 @@ Skipped: **1/71**
 |------:|---------------|
 | 152 | `expected_underscore` |
 | 136 | `unknown_character` |
-| 51 | `expected_ipa` |
-| 51 | `syntax_other` |
-| 48 | `missing_slash_output_env` |
+| 50 | `syntax_other` |
+| 49 | `expected_ipa` |
+| 47 | `missing_slash_output_env` |
 | 47 | `invalid_ipa` |
-| 40 | `prose_or_expected_arrow` |
+| 42 | `prose_or_expected_arrow` |
 | 17 | `nested_brackets` |
 | 15 | `unknown_grouping` |
 | 14 | `stuff_after_word_bound` |
@@ -73,14 +73,14 @@ Skipped: **1/71**
 
 | count | description |
 |------:|-------------|
-| 18 | `Negation cannot be used in the output` |
+| 17 | `Negation cannot be used in the output` |
 | 10 | `Output cannot be empty. Use `*` or '∅' to indicate deletion` |
 | 2 | `Tones cannot be ±; they can only be used with numeric values.` |
 | 1 | `/ cannot be placed inside a matrix. An element inside `[]` must a distinctive feature` |
 | 1 | `Only a segment, matrix, group, or reference can be negated` |
 | 1 | `Feature 'lost' has no modifier` |
-| 1 | `Feature 'b' has no modifier` |
 | 1 | `Feature 's' has no modifier` |
+| 1 | `Feature 'b' has no modifier` |
 | 1 | `Feature 'long' has no modifier` |
 | 1 | `Feature 'truncated' has no modifier` |
 
@@ -145,7 +145,7 @@ Skipped: **1/71**
 
 | count | error_token |
 |------:|-------------|
-| 22 | `,` |
+| 21 | `,` |
 | 7 | `/` |
 | 6 | `//` |
 | 3 | `)` |
@@ -155,7 +155,7 @@ Skipped: **1/71**
 
 | count | description |
 |------:|-------------|
-| 110 | `Expected '_', but received ''` |
+| 111 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -212,9 +212,10 @@ Skipped: **1/71**
 | 7 | `Expected '>', '->' or '=>', but received '̩'` |
 | 5 | `Expected '>', '->' or '=>', but received ':'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
+| 2 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
+| 1 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
-| 1 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
@@ -236,11 +237,11 @@ Skipped: **1/71**
 
 | count | error_token |
 |------:|-------------|
-| 9 | `(` |
+| 8 | `(` |
 | 6 | `{` |
 | 6 | `:` |
 | 6 | `∅` |
-| 6 | `>` |
+| 5 | `>` |
 | 3 | `*` |
 | 3 | `ʷ` |
 | 3 | `…` |
@@ -271,12 +272,12 @@ Skipped: **1/71**
 | 11 | `:` |
 | 5 | `(` |
 | 3 | `ʲ` |
-| 2 | `̥` |
 | 2 | `_` |
 | 1 | `&` |
 | 1 | `*` |
 | 1 | `#` |
 | 1 | `ˀ` |
+| 1 | `̥` |
 ### missing_slash_output_env (description)
 
 | count | description |
@@ -401,8 +402,8 @@ Skipped: **1/71**
 |------:|-------|
 | 255 | `env` |
 | 198 | `input` |
-| 176 | `output` |
-| 61 | `exception` |
+| 175 | `output` |
+| 60 | `exception` |
 | 49 | `multi` |
 
 ## Notes
