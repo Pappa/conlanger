@@ -8,6 +8,20 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-b-d2,,index_diachronica_original.html:3824,2,section_skipped,,,,,,,,,,,,,none
 10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-S1-s-c,,index_diachronica_original.html:3825,2,section_skipped,,,,,,,,,,,,,none
 10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-Vː,,index_diachronica_original.html:3826,2,section_skipped,,,,,,,,,,,,,none
+13.1,Proto-Chumash to Barbareño,Barbareño-R-glottalizedVˀR,,index_diachronica_original.html:4437,2,section_skipped,,,,,,,,,,,,,none
+13.1,Proto-Chumash to Barbareño,Barbareño-R-glottalizedVOʼ,,index_diachronica_original.html:4438,2,section_skipped,,,,,,,,,,,,,none
+13.3,Proto-Chumash to Inseño,Inseño-tʼ-qʼ,,index_diachronica_original.html:4448,2,section_skipped,,,,,,,,,,,,,none
+13.3,Proto-Chumash to Inseño,Inseño-ˀN-ˀw,,index_diachronica_original.html:4449,2,section_skipped,,,,,,,,,,,,,none
+13.4,Proto-Chumash to Obispeño,Obispeño-Sʼ,,index_diachronica_original.html:4454,2,section_skipped,,,,,,,,,,,,,none
+13.4,Proto-Chumash to Obispeño,Obispeño-q-k,,index_diachronica_original.html:4455,2,section_skipped,,,,,,,,,,,,,none
+13.4,Proto-Chumash to Obispeño,"Obispeño-ˀm,ˀn",,index_diachronica_original.html:4456,2,section_skipped,,,,,,,,,,,,,none
+13.4,Proto-Chumash to Obispeño,Obispeño-ˀw,,index_diachronica_original.html:4457,2,section_skipped,,,,,,,,,,,,,none
+13.4,Proto-Chumash to Obispeño,Obispeño-ˀj,,index_diachronica_original.html:4458,2,section_skipped,,,,,,,,,,,,,none
+13.5,Proto-Chumash to Purisimeño,Purisimeño-ˀj,,index_diachronica_original.html:4463,2,section_skipped,,,,,,,,,,,,,none
+13.5,Proto-Chumash to Purisimeño,Purisimeño-qʼ,,index_diachronica_original.html:4464,2,section_skipped,,,,,,,,,,,,,none
+13.6,Proto-Chumash to Ventureño,Ventureño-ʔ,,index_diachronica_original.html:4469,2,section_skipped,,,,,,,,,,,,,none
+13.6,Proto-Chumash to Ventureño,Ventureño-pʼ-kʼ-qʼ,,index_diachronica_original.html:4470,2,section_skipped,,,,,,,,,,,,,none
+13.6,Proto-Chumash to Ventureño,Ventureño-ˀm-ˀn-ˀl-ˀj,,index_diachronica_original.html:4471,2,section_skipped,,,,,,,,,,,,,none
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-a_2,,index_diachronica_original.html:5702,2,rule_skipped,,,,,,,,,,,,,none
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-æu,,index_diachronica_original.html:5706,2,rule_skipped,,,,,,,,,,,,,none
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-a_3,,index_diachronica_original.html:5711,2,rule_skipped,,,,,,,,,,,,,none
@@ -223,6 +237,13 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-t-tʃ-kʷ,,index_diachronica_original.html:12616,2,section_skipped,,,,,,,,,,,,,none
 37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-s,,index_diachronica_original.html:12617,2,section_skipped,,,,,,,,,,,,,none
 37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-s_2,,index_diachronica_original.html:12618,2,section_skipped,,,,,,,,,,,,,none
+37.1.2.6,Proto-Northern Iroquoian to Tuscarora,Tuscarora-t,,index_diachronica_original.html:12684,2,rule_skipped,,,,,,,,,,,,,none
+37.1.2.6,Proto-Northern Iroquoian to Tuscarora,Tuscarora-ˀt,,index_diachronica_original.html:12691,2,rule_skipped,,,,,,,,,,,,,none
+37.1.2.6,Proto-Northern Iroquoian to Tuscarora,Tuscarora-ˀt_2,,index_diachronica_original.html:12692,2,rule_skipped,,,,,,,,,,,,,none
+37.1.2.6,Proto-Northern Iroquoian to Tuscarora,Tuscarora-ˀt_3,,index_diachronica_original.html:12693,2,rule_skipped,,,,,,,,,,,,,none
+37.1.2.6,Proto-Northern Iroquoian to Tuscarora,Tuscarora-ˀt_4,,index_diachronica_original.html:12694,2,rule_skipped,,,,,,,,,,,,,none
+37.1.2.6,Proto-Northern Iroquoian to Tuscarora,Tuscarora-ˀt_5,,index_diachronica_original.html:12695,2,rule_skipped,,,,,,,,,,,,,none
+37.1.2.6,Proto-Northern Iroquoian to Tuscarora,Tuscarora-ˀt_6,,index_diachronica_original.html:12696,2,rule_skipped,,,,,,,,,,,,,none
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-V,,index_diachronica_original.html:13776,2,section_skipped,,,,,,,,,,,,,none
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ê-ô,,index_diachronica_original.html:13777,2,section_skipped,,,,,,,,,,,,,none
 42.1.1,Pre-Finnic to Proto-Finnic,Proto-Finnic-ê,,index_diachronica_original.html:13778,2,section_skipped,,,,,,,,,,,,,none

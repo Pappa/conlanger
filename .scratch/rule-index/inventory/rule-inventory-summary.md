@@ -2,12 +2,12 @@
 
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
-- Checker: `validate_asca` / asca **asca 0.10.2**
-- Rows: **9864** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
+- Checker: `validate_asca` / asca **asca 0.10.3**
+- Rows: **9877** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8882** (90.0%)
-- Fail: **642** (6.5%)
+- OK: **8881** (89.9%)
+- Fail: **656** (6.6%)
 - Skipped: **340** (3.4%)
 
 ## Sections
@@ -22,14 +22,14 @@
 | count | failure_class |
 |------:|---------------|
 | 152 | `expected_underscore` |
-| 128 | `unknown_character` |
+| 137 | `unknown_character` |
+| 52 | `syntax_other` |
+| 51 | `expected_ipa` |
 | 47 | `invalid_ipa` |
-| 46 | `syntax_other` |
 | 46 | `missing_slash_output_env` |
-| 43 | `expected_ipa` |
-| 43 | `prose_or_expected_arrow` |
-| 24 | `nested_brackets` |
+| 41 | `prose_or_expected_arrow` |
 | 22 | `unknown_feature` |
+| 17 | `nested_brackets` |
 | 15 | `unknown_grouping` |
 | 14 | `stuff_after_word_bound` |
 | 12 | `expected_number` |
@@ -51,7 +51,7 @@
 
 | count | error_token |
 |------:|-------------|
-| 4 | `E` |
+| 6 | `E` |
 | 2 | `,` |
 | 1 | `{` |
 | 1 | `End Of Line` |
@@ -64,7 +64,7 @@
 
 | count | description |
 |------:|-------------|
-| 14 | `Negation cannot be used in the output` |
+| 18 | `Negation cannot be used in the output` |
 | 10 | `Output cannot be empty. Use `*` or '∅' to indicate deletion` |
 | 2 | `Tones cannot be ±; they can only be used with numeric values.` |
 | 1 | `/ cannot be placed inside a matrix. An element inside `[]` must a distinctive feature` |
@@ -90,16 +90,16 @@
 
 | count | error_token |
 |------:|-------------|
+| 22 | `+` |
 | 22 | `̣` |
-| 14 | `+` |
 | 13 | `₂` |
 | 8 | `̊` |
 | 7 | `ː` |
-| 6 | `ŕ` |
 | 6 | `͜` |
 | 6 | `̺` |
+| 6 | `ŕ` |
 | 5 | `ₙ` |
-| 4 | `̻` |
+| 4 | `̂` |
 ### unknown_character (description)
 
 | count | description |
@@ -157,7 +157,7 @@
 
 | count | description |
 |------:|-------------|
-| 24 | `Cannot have nested brackets of the same type` |
+| 17 | `Cannot have nested brackets of the same type` |
 
 ### unknown_feature (error_token)
 
@@ -206,7 +206,6 @@
 | 5 | `Expected '>', '->' or '=>', but received ':'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
 | 2 | `Expected '>', '->' or '=>', but received '̥'` |
-| 2 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
@@ -230,7 +229,8 @@
 
 | count | error_token |
 |------:|-------------|
-| 8 | `(` |
+| 9 | `(` |
+| 6 | `{` |
 | 6 | `:` |
 | 6 | `∅` |
 | 5 | `>` |
@@ -239,12 +239,11 @@
 | 3 | `…` |
 | 2 | `ʲ` |
 | 2 | `_` |
-| 1 | `/` |
 ### expected_ipa (description)
 
 | count | description |
 |------:|-------------|
-| — | _(none)_ |
+| 1 | `Expected an IPA character, Primative or Matrix, but received ''` |
 
 ### expected_range_dots (error_token)
 
@@ -261,9 +260,9 @@
 
 | count | error_token |
 |------:|-------------|
-| 20 | `)` |
+| 21 | `)` |
 | 11 | `:` |
-| 5 | `(` |
+| 4 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
 | 1 | `&` |
@@ -387,6 +386,17 @@
 | count | description |
 |------:|-------------|
 | — | _(none)_ |
+
+
+## Field isolation blame (error rows)
+
+| count | blame |
+|------:|-------|
+| 260 | `env` |
+| 204 | `input` |
+| 177 | `output` |
+| 61 | `exception` |
+| 49 | `multi` |
 
 ## Notes
 

@@ -2102,9 +2102,9 @@ sections:
   - stages:
     - ∅
     - F
-    env: N_{O,r}
+    env: N_O, N_r
     exception: m_f
-    raw: ∅ → F / N_{O,r} ! m_f
+    raw: ∅ → F / N_O, N_r ! m_f
     source: index_diachronica_original.html:1345
     rule_id: Cypriot-Arabic-∅
   - stages:
@@ -48198,8 +48198,9 @@ sections:
   rules:
   - stages:
     - '[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
-    - ts
-    raw: K → ts
+    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
+      +cor,+anterior,+dist, -delrel]}'
+    raw: K → TS
     source: index_diachronica_original.html:10157
     rule_id: Proto-Southern-Athabaskan-K
   - comment: (→ b seems more common)

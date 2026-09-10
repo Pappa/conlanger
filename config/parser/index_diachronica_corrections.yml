@@ -289,9 +289,15 @@ rules:
                   id: Anglo-Frisian-i,u
                   content: "{i,u} → ∅ / _# ! VC_"
                   reason: "Typo? - {i,u} → ∅ / -# ! VC_"
-        - rule:
-                  id: Proto-Southern-Athabaskan-K
-                  content: "K → ts"
-                  reason: |
-                          Hoijer (1938) §29.1.1.1.19: velar K becomes dental TS series.
-                          IPA affricate /ts/ avoids per-letter T/S group expansion (P:[-voice]P).
+        # - rule:
+        #           id: Proto-Southern-Athabaskan-K
+        #           content: "K → ts"
+        #           reason: |
+        #                   Hoijer (1938) §29.1.1.1.19: velar K becomes dental TS series.
+        #                   IPA affricate /ts/ avoids per-letter T/S group expansion (P:[-voice]P).
+        # - rule:
+        #           id: Cypriot-Arabic-∅
+        #           content: "∅ → F / N_O, N_r ! m_f"
+        #           reason: |
+        #                   Workaround for asca, probably should be handled at compile time
+        #                   ∅ → F / N_{O,r} ! m_f
