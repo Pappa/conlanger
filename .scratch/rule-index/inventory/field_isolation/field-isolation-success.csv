@@ -892,6 +892,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 8.3,Proto-Altaic to Proto-Mongolic,Proto-Mongolic-pʰ,1,index_diachronica_original.html:2184,1,,True,True,True,,,,,,,,,,none
 8.3,Proto-Altaic to Proto-Mongolic,Proto-Mongolic-pʰ_2,0,index_diachronica_original.html:2185,1,,True,True,True,True,,,,,,,,,none
 8.3,Proto-Altaic to Proto-Mongolic,Proto-Mongolic-pʰ_2,1,index_diachronica_original.html:2185,1,,True,True,True,True,,,,,,,,,none
+8.3,Proto-Altaic to Proto-Mongolic,Proto-Mongolic-pʰ_3,,index_diachronica_original.html:2186,1,,True,True,True,,,,,,,,,,none
 8.3,Proto-Altaic to Proto-Mongolic,Proto-Mongolic-p,,index_diachronica_original.html:2187,1,,True,True,,,,,,,,,,,none
 8.3,Proto-Altaic to Proto-Mongolic,Proto-Mongolic-p_2,,index_diachronica_original.html:2188,1,,True,True,,,,,,,,,,,none
 8.3,Proto-Altaic to Proto-Mongolic,Proto-Mongolic-tʰ,,index_diachronica_original.html:2189,1,,True,True,True,,,,,,,,,,none
@@ -950,6 +951,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 8.4,Proto-Altaic to Proto-Tungusic,Proto-Tungusic-kʰ_2,1,index_diachronica_original.html:2238,1,,True,True,,,,,,,,,,,none
 8.4,Proto-Altaic to Proto-Tungusic,Proto-Tungusic-z,,index_diachronica_original.html:2239,1,,True,True,,,,,,,,,,,none
 8.4,Proto-Altaic to Proto-Tungusic,Proto-Tungusic-rʲ-lʲ,,index_diachronica_original.html:2240,1,,True,True,,,,,,,,,,,none
+8.4,Proto-Altaic to Proto-Tungusic,Proto-Tungusic-U-long-+low-pitch-U+long-low-pitch,,index_diachronica_original.html:2241,1,,True,True,,,,,,,,,,,none
 8.5,Proto-Altaic to Proto-Turkic,Proto-Turkic-a-ø,,index_diachronica_original.html:2247,1,,True,True,True,,,,,,,,,,none
 8.5,Proto-Altaic to Proto-Turkic,Proto-Turkic-a-e-i-u-æ-ø-y,,index_diachronica_original.html:2248,1,,True,True,True,,,,,,,,,,none
 8.5,Proto-Altaic to Proto-Turkic,Proto-Turkic-y,,index_diachronica_original.html:2249,1,,True,True,True,,,,,,,,,,none

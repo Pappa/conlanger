@@ -6692,8 +6692,8 @@ sections:
   - stages:
     - pʰ
     - b
-    env: '#_U[+high pitch]'
-    raw: 'pʰ → b / #_U[+high pitch]'
+    env: '#_U'
+    raw: 'pʰ → b / #_U'
     source: index_diachronica_original.html:2186
     rule_id: Proto-Mongolic-pʰ_3
   - comment: (sporadic)
@@ -7032,9 +7032,9 @@ sections:
     source: index_diachronica_original.html:2240
     rule_id: Proto-Tungusic-rʲ-lʲ
   - stages:
-    - U[-long +low pitch] U[+long -low pitch]
+    - U[-long] U[+long]
     - U[+long] U[-long]
-    raw: U[-long +low pitch] U[+long -low pitch] → U[+long] U[-long]
+    raw: U[-long] U[+long] → U[+long] U[-long]
     source: index_diachronica_original.html:2241
     rule_id: Proto-Tungusic-U-long-+low-pitch-U+long-low-pitch
 - section: Proto-Altaic to Proto-Turkic

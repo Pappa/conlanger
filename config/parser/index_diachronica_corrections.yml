@@ -307,3 +307,11 @@ rules:
         #           reason: |
         #                   Workaround for asca, probably should be handled at compile time
         #                   ∅ → F / N_{O,r} ! m_f
+        - rule:
+                  id: Proto-Mongolic-pʰ_3
+                  content: "pʰ → b / #_U"
+                  reason: "Disputed: pʰ → b / #_U[+high pitch]"
+        - rule:
+                  id: Proto-Tungusic-U-long-+low-pitch-U+long-low-pitch
+                  content: "U[-long] U[+long] → U[+long] U[-long]"
+                  reason: "Disputed: U[-long +low pitch] U[+long -low pitch] → U[+long] U[-long]"

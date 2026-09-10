@@ -1,6 +1,4 @@
 section_index,rule_id,error_token,rule
-8.3,Proto-Mongolic-pʰ_3,highpitch,"pʰ > b / #_%[+high pitch] | ^^^^^^^^^^^ @ Rule 1, Line 1"
-8.4,Proto-Tungusic-U-long-+low-pitch-U+long-low-pitch,lowpitch,"%[-long +low pitch] %[+long -low pitch] > %[+long] %[-long] | ^^^^^^^^^^ @ Rule 1, Line 1"
 15.2.5,Kuskokwim-Yup’ik-i-a-u,initial,"i a u > ii aa uu / C_ in %[+lo -initial -final] such that %[+lo]_ | ^^^^^^^^^ @ Rule 1, Line 1"
 15.2.6,Nunivak-Yup’ik-i-a-u,initial,"i a u > ii aa uu / C_ in %[+lo -initial -final] such that %[+lo]_ | ^^^^^^^^^ @ Rule 1, Line 1"
 15.2.8,Unaaliq-Yup’ik-i-a-u,initial,"i a u > ii aa uu / C_ in %[+lo -initial -final] such that %[+lo]_ | ^^^^^^^^^ @ Rule 1, Line 1"
