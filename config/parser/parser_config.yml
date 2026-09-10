@@ -93,14 +93,10 @@ skip_sections:
 skip_rules:
   - id: Pre-Slavic-Vowel-Changes-i
     reason: chained optional multi-output; structurally unrepresentable in ASCA (ticket 84)
-  - id: Latin-r…r
-    reason: "Not sure how to interpret rule: r…r → r…∅"
   - id: Old-Low-German-F-voice
     reason: "No idea what X means"
   - id: North-Omotic-Vː_2
     reason: "I can't figure out the rule even afer reading the source material"
-  # - id: Gros-Ventre-C,#V-longʔ
-  #   reason: "I can't figure out the rule even afer reading the source material"
   - id: Biblical-Hebrew-—-a_4
     reason: "No idea what this rule means: a → _$%%(…)”"
   - id: Spanish-e-ɛ,a-ɔ-o

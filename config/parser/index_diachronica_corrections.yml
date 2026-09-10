@@ -116,6 +116,12 @@ rules:
                   content: "l → r / _Vl"
                   reason: "Correcting env delimiter"
         - rule:
+                  id: Latin-r…r
+                  content: "r…r → r…"
+                  reason: |
+                          Workaround for asca, probably should be handled at compile time
+                          r…r → r…∅
+        - rule:
                   id: Eritai-∅
                   content: "∅ → dz / î_V"
                   reason: "Adding env delimiter"

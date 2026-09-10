@@ -34270,12 +34270,12 @@ sections:
     raw: l → r / lV_ “(in suffixes with l if root already has l)”
     source: index_diachronica_original.html:7311
     rule_id: Latin-l_2
-  - stages: []
-    raw: r…r → r…∅
+  - stages:
+    - r…r
+    - r…
+    raw: r…r → r…
     source: index_diachronica_original.html:7312
-    status: skipped
     rule_id: Latin-r…r
-    comment: 'Not sure how to interpret rule: r…r → r…∅'
   - stages:
     - '{n,d}…r'
     - r…r

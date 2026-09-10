@@ -28,7 +28,6 @@ section_index,rule_id,error_token,rule
 17.12.1.1.4,"Italian-skj,stj,sːj",>,"{skj,stj,s:[+long]j > ʃ | ^ @ Rule 1, Line 1"
 17.12.1.1.6,Old-Provençal-—-e_2,(,"e > i / _(C,0)i{C(C,0)V,#} | ^ @ Rule 1, Line 1"
 17.12.1.1.6,Old-Provençal-sj,(,"ʒ > {i(d)ʒ,(d)ʒ} | ^ @ Rule 1, Line 2"
-17.12.1.1.6,Old-Provençal-ndt-ndtʃ-ntʃ-nkt-nf,,"ndt ndtʃ ntʃ nkt nf > n{d,t} {nts,ndz | ^ @ Rule 1, Line 1"
 17.12.1.1.6,Old-Provençal-stʃ_2,(,"stʃ > {i(t)ʃ,(t)ʃ} | ^ @ Rule 1, Line 1"
 17.12.1.1.8,Romanian-kj-ɡj,∅,"tʃ {j,∅} (ɡj > is rare) | ^ @ Rule 1, Line 2"
 17.13,Proto-Tocharian-Dʱ,ʱ,"{P:[+voice],Pʱ:[+voice]} > P:[-voice] | ^ @ Rule 1, Line 1"

@@ -379,7 +379,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.12.1.1.6,Vulgar Latin to Old Provençal,"Old-Provençal-sːj,stʃj,stj",,index_diachronica_original.html:7926,0,nested_brackets,,,,,,,,,,,,,multi
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-sj,,index_diachronica_original.html:7927,0,expected_ipa,,,,,,,,,,,,,multi
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-tj,,index_diachronica_original.html:7932,0,unknown_character,,,,,,,,,,,,,multi
-17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-ndt-ndtʃ-ntʃ-nkt-nf,,index_diachronica_original.html:7936,0,expected_ipa,,,,,,,,,,,,,multi
+17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-ndt-ndtʃ-ntʃ-nkt-nf,,index_diachronica_original.html:7936,0,prose_or_expected_arrow,,,,,,,,,,,,,multi
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-stʃ_2,,index_diachronica_original.html:7945,0,expected_ipa,True,False,,,,expected_ipa,,,,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '(' | {i(t)ʃ,(t)ʃ} | ^ @ Rule 1, Line 1",,,output
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-t_3,,index_diachronica_original.html:7984,0,expected_underscore,True,True,True,False,,,,expected_underscore,,,,"Syntax Error: Expected '_', but received ',' | , though it tended to drop | ^ @ Rule 1, Line 1",exception
 17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,Rhaeto-Romance-a,,index_diachronica_original.html:7992,0,expected_underscore,True,True,False,,,,expected_underscore,,,,"Syntax Error: Expected '_', but received ',' | [+stress], usually when C:[+front,+hi,-lo]_ | ^ @ Rule 1, Line 1",,env
