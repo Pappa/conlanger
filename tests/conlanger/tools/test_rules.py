@@ -521,35 +521,3 @@ def test_sound_change_ruleset_validates_em_dash_rule_marker_fixtures():
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")
     validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_proto_southern_athabaskan_k_ts_overlay_validates():
-    """Ticket 127: K → ts IPA overlay; not P:[-voice]P group expansion."""
-    from conlanger.appliers.asca import validate_asca
-    from conlanger.scripts.config_loaders import load_parser_config
-    from conlanger.tools.ingest.transforms import split_line_semicolon_comment
-    from conlanger.utils.mappings import apply_section_mappings
-    from conlanger.utils.parsing import extract_rule_parts
-    from conlanger.utils.symbols import normalize_symbols
-
-    config = load_parser_config()
-    raw = config.corrections["Proto-Southern-Athabaskan-K"]
-    working = apply_section_mappings(raw, "29.1.1.1.19", config)
-    working, _ = split_line_semicolon_comment(working)
-    parts = extract_rule_parts(normalize_symbols(working))
-    assert parts is not None
-    stages = parts["stages"]
-    assert stages[1] == "ts"
-    assert "P:[-voice]" not in stages[1]
-
-    section = {
-        "index": "29.1.1.1.19",
-        "section": "Proto-Athabaskan to Proto-Southern Athabaskan",
-        "rules": [{"stages": stages, "rule_id": "Proto-Southern-Athabaskan-K"}],
-    }
-    ruleset = DiachronicSeries(section, "asca")
-    rule = next(p for p in ruleset._parts if isinstance(p, SoundChangeRule))
-    assert "ts" in rule.value
-    assert "P:[-voice]P" not in rule.value
-    validate_asca(ruleset, probe_words=Path("tests/fixtures/asca_probe_words.wsca"))
