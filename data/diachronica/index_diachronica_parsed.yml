@@ -277,8 +277,7 @@ sections:
     source: index_diachronica_original.html:987
     status: skipped
     rule_id: North-Omotic-Vː_2
-    comment: I can't figu+fr, -bk, +hi, -lore out the rule even afer reading the source
-      material
+    comment: I can't figure out the rule even afer reading the source material
   - stages:
     - N
     - ∅
@@ -3891,12 +3890,13 @@ sections:
     raw: hʔ → ʔh
     source: index_diachronica_original.html:1697
     rule_id: Gros-Ventre-hʔ
-  - stages: []
+  - stages:
+    - '{V[-long]ʔ,ʔ}'
+    - '{V[tone: 51]∅,∅}'
+    env: '#_C, C_C, _C'
     raw: '{V[-long]ʔ,ʔ} → {V[+falling tone]∅,∅} / #_C, C_C, _C'
     source: index_diachronica_original.html:1698
-    status: skipped
     rule_id: Gros-Ventre-C,#V-longʔ
-    comment: I can't figure out the rule even afer reading the source material
   - stages:
     - j
     - ∅
@@ -28535,8 +28535,8 @@ sections:
   - stages:
     - O[α PLACE]
     - ∅
-    env: '{F[- α PLACE],r,l}_O'
-    raw: O[α PLACE] → ∅ / {F[- α PLACE],r,l}_O
+    env: '{F[-α PLACE],r,l}_O'
+    raw: O[α PLACE] → ∅ / {F[-α PLACE],r,l}_O
     source: index_diachronica_original.html:6361
     rule_id: Early-Icelandic-O
   - stages:

@@ -2,7 +2,6 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 6.1.1,Proto-Omotic to North Omotic,North-Omotic-Vː_2,,index_diachronica_original.html:987,2,rule_skipped,,,,held-out (commented rule)
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-j,,index_diachronica_original.html:1342,2,rule_skipped,,,,held-out (commented rule)
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-a_4,,index_diachronica_original.html:1533,2,rule_skipped,,,,held-out (commented rule)
-7.3.2,Proto-Arapaho-Atsina to Gros Ventre,"Gros-Ventre-C,#V-longʔ",,index_diachronica_original.html:1698,2,rule_skipped,,,,held-out (commented rule)
 10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-t1-d1-d3-Z,,index_diachronica_original.html:3822,2,section_skipped,,,,section skipped at compile (parser_config skip_sections)
 10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-l-*L,,index_diachronica_original.html:3823,2,section_skipped,,,,section skipped at compile (parser_config skip_sections)
 10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-b-d2,,index_diachronica_original.html:3824,2,section_skipped,,,,section skipped at compile (parser_config skip_sections)

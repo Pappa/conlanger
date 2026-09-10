@@ -3,23 +3,22 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.3**
-- Rows: **9877** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
+- Rows: **9878** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8881** (89.9%)
-- Fail: **656** (6.6%)
-- Skipped: **340** (3.4%)
+- OK: **8884** (89.9%)
+- Fail: **655** (6.6%)
+- Skipped: **339** (3.4%)
 
 
 ## Corrections
 
-OK: **65/68**
-Fail: **1/68**
-Skipped: **2/68**
+OK: **67/68**
+Skipped: **1/68**
 
-### Failed corrections
+### Skipped corrections
 
-- `Early-Icelandic-O` — `syntax_other`
+- `Comox-ʔ` — `section_skipped`
 
 ## Sections
 
@@ -33,12 +32,12 @@ Skipped: **2/68**
 | count | failure_class |
 |------:|---------------|
 | 152 | `expected_underscore` |
-| 136 | `unknown_character` |
-| 52 | `syntax_other` |
-| 49 | `expected_ipa` |
-| 47 | `missing_slash_output_env` |
+| 137 | `unknown_character` |
+| 51 | `expected_ipa` |
+| 51 | `syntax_other` |
 | 47 | `invalid_ipa` |
-| 43 | `prose_or_expected_arrow` |
+| 46 | `missing_slash_output_env` |
+| 41 | `prose_or_expected_arrow` |
 | 22 | `unknown_feature` |
 | 17 | `nested_brackets` |
 | 15 | `unknown_grouping` |
@@ -64,9 +63,8 @@ Skipped: **2/68**
 |------:|-------------|
 | 6 | `E` |
 | 2 | `,` |
-| 1 | `{` |
 | 1 | `End Of Line` |
-| 1 | `α` |
+| 1 | `{` |
 | 1 | `]` |
 | 1 | `:` |
 | 1 | `l` |
@@ -106,11 +104,11 @@ Skipped: **2/68**
 | 13 | `₂` |
 | 8 | `̊` |
 | 7 | `ː` |
-| 6 | `ŕ` |
 | 6 | `͜` |
 | 6 | `̺` |
+| 6 | `ŕ` |
 | 5 | `ₙ` |
-| 4 | `̻` |
+| 4 | `̂` |
 ### unknown_character (description)
 
 | count | description |
@@ -217,9 +215,8 @@ Skipped: **2/68**
 | 5 | `Expected '>', '->' or '=>', but received ':'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
 | 2 | `Expected '>', '->' or '=>', but received '̥'` |
-| 2 | `Expected '>', '->' or '=>', but received '}'` |
-| 1 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
+| 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
@@ -242,10 +239,10 @@ Skipped: **2/68**
 | count | error_token |
 |------:|-------------|
 | 9 | `(` |
+| 6 | `{` |
 | 6 | `:` |
 | 6 | `∅` |
 | 5 | `>` |
-| 5 | `{` |
 | 3 | `*` |
 | 3 | `ʷ` |
 | 3 | `…` |
@@ -255,7 +252,7 @@ Skipped: **2/68**
 
 | count | description |
 |------:|-------------|
-| — | _(none)_ |
+| 1 | `Expected an IPA character, Primative or Matrix, but received ''` |
 
 ### expected_range_dots (error_token)
 
@@ -274,7 +271,7 @@ Skipped: **2/68**
 |------:|-------------|
 | 21 | `)` |
 | 11 | `:` |
-| 5 | `(` |
+| 4 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
 | 1 | `&` |
@@ -404,7 +401,7 @@ Skipped: **2/68**
 
 | count | blame |
 |------:|-------|
-| 260 | `env` |
+| 259 | `env` |
 | 204 | `input` |
 | 177 | `output` |
 | 61 | `exception` |

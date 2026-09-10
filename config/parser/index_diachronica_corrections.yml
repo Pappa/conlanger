@@ -145,7 +145,7 @@ rules:
                   reason: "Corrected from original source: https://www.ethnologue.com/language/erohttps://www.researchgate.net/publication/306887303_The_Linguistic_History_of_Southern_Vanuatu"
         - rule:
                   id: Early-Icelandic-O
-                  content: "O[α PLACE] → ∅ / {F[- α PLACE],r,l}_O"
+                  content: "O[α PLACE] → ∅ / {F[-α PLACE],r,l}_O"
                   reason: "Using asca syntax - unsure how else to represent POA"
         - rule:
                   id: Early-Icelandic-S

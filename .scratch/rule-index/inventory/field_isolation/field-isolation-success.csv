@@ -508,6 +508,8 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-j,,index_diachronica_original.html:1689,1,,True,True,True,,,,,,,,,,none
 7.3.1,Proto-Arapaho-Atsina to Arapaho,Arapaho-h,,index_diachronica_original.html:1690,1,,True,True,True,,,,,,,,,,none
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,Gros-Ventre-hʔ,,index_diachronica_original.html:1697,1,,True,True,,,,,,,,,,,none
+7.3.2,Proto-Arapaho-Atsina to Gros Ventre,"Gros-Ventre-C,#V-longʔ",0,index_diachronica_original.html:1698,1,,True,True,True,,,,,,,,,,none
+7.3.2,Proto-Arapaho-Atsina to Gros Ventre,"Gros-Ventre-C,#V-longʔ",1,index_diachronica_original.html:1698,1,,True,True,True,,,,,,,,,,none
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,Gros-Ventre-i,,index_diachronica_original.html:1700,1,,True,True,True,,,,,,,,,,none
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,Gros-Ventre-ʃ-θ-m,,index_diachronica_original.html:1701,1,,True,True,True,,,,,,,,,,none
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,Gros-Ventre-ʃ-θ-m-k,,index_diachronica_original.html:1702,1,,True,True,True,,,,,,,,,,none
@@ -3703,6 +3705,7 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.7.3.1.1,Old Norse to Early Icelandic,Early-Icelandic-u-o-a-øː-eː-y-i,,index_diachronica_original.html:6358,1,,True,True,True,,,,,,,,,,none
 17.7.3.1.1,Old Norse to Early Icelandic,Early-Icelandic-aː,,index_diachronica_original.html:6359,1,,True,True,True,,,,,,,,,,none
 17.7.3.1.1,Old Norse to Early Icelandic,Early-Icelandic-e,,index_diachronica_original.html:6360,1,,True,True,True,,,,,,,,,,none
+17.7.3.1.1,Old Norse to Early Icelandic,Early-Icelandic-O,,index_diachronica_original.html:6361,1,,True,True,True,,,,,,,,,,none
 17.7.3.1.1,Old Norse to Early Icelandic,Early-Icelandic-S,,index_diachronica_original.html:6362,1,,True,True,True,,,,,,,,,,none
 17.7.3.1.1,Old Norse to Early Icelandic,"Early-Icelandic-lː,rl",,index_diachronica_original.html:6363,1,,True,True,True,,,,,,,,,,none
 17.7.3.1.1,Old Norse to Early Icelandic,Early-Icelandic-N,,index_diachronica_original.html:6364,1,,True,True,True,,,,,,,,,,none

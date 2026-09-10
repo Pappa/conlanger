@@ -13,7 +13,6 @@ section_index,rule_id,error_token,rule
 17.3.6,Southeast-Armenian-V,,"V > / _(C)# | ^ @ Rule 1, Line 1"
 17.3.7,Southwest-Armenian-V,,"V > / _(C)# | ^ @ Rule 1, Line 1"
 17.7.2.1.5,American-English-w,{,"w > ∅ / C_ɹ for some C ({toward,towards}, {quart,quarter}, sword) | ^ @ Rule 1, Line 1"
-17.7.3.1.1,Early-Icelandic-O,α,"O:[α PLACE] > ∅ / {F[- α PLACE],r,l}_O | ^ @ Rule 1, Line 1"
 17.7.3.1.2,Orkney-Norn-ð_2,,"ð > /{a,V:[+front]}_ | ^ @ Rule 1, Line 1"
 17.11.1,Polish-a-ɛ-i-ɔ-u-ɨ-ã,,"a ɛ i ɔ u ɨ ã > a:[+long] ɛ:[+long] i:[+long] ɔ:[+long] u:[+long] ɨ:[+long] ã:[+long] / _{C,%}[+voice][lost yer] | ^^^^ @ Rule 1, Line 1"
 17.11.1,Polish-Vː,,"V:[+long] > V in certain frequently-used words | ^ @ Rule 1, Line 1"
