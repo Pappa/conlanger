@@ -120,6 +120,9 @@
 - from: " / “in some positions”"
   to: " / sporadic ; “in some positions”"
   reason: replace prose
+- from: " / in prefixes related to"
+  to: " sporadic ; / in prefixes related to"
+  reason: replace prose
 - from: " ! in Ware Sekani"
   to: " sporadic ; not in Ware Sekani"
   reason: replace prose

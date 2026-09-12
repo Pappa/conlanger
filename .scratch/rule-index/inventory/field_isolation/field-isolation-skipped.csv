@@ -7,6 +7,9 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-b-d2,,index_diachronica_original.html:3824,2,section_skipped,,,,,,,,,,,,,none
 10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-S1-s-c,,index_diachronica_original.html:3825,2,section_skipped,,,,,,,,,,,,,none
 10.6,Proto-Austronesian to Proto-Paiwan,Proto-Paiwan-Vː,,index_diachronica_original.html:3826,2,section_skipped,,,,,,,,,,,,,none
+10.7,Proto-Austronesian to Proto-Rukai,"Proto-Rukai-t1,c-d1,z-d3",,index_diachronica_original.html:3849,2,section_skipped,,,,,,,,,,,,,none
+10.7,Proto-Austronesian to Proto-Rukai,Proto-Rukai-R-l-L,,index_diachronica_original.html:3850,2,section_skipped,,,,,,,,,,,,,none
+10.7,Proto-Austronesian to Proto-Rukai,Proto-Rukai-S1-s-d2-*C,,index_diachronica_original.html:3851,2,section_skipped,,,,,,,,,,,,,none
 13.1,Proto-Chumash to Barbareño,Barbareño-R-glottalizedVˀR,,index_diachronica_original.html:4437,2,section_skipped,,,,,,,,,,,,,none
 13.1,Proto-Chumash to Barbareño,Barbareño-R-glottalizedVOʼ,,index_diachronica_original.html:4438,2,section_skipped,,,,,,,,,,,,,none
 13.3,Proto-Chumash to Inseño,Inseño-tʼ-qʼ,,index_diachronica_original.html:4448,2,section_skipped,,,,,,,,,,,,,none
@@ -26,6 +29,166 @@ section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_o
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-a_3,,index_diachronica_original.html:5711,2,rule_skipped,,,,,,,,,,,,,none
 17.7.2.5,West Germanic to Old Low German,Old-Low-German-F-voice,,index_diachronica_original.html:6155,2,rule_skipped,,,,,,,,,,,,,none
 17.12.1.1.10,Vulgar Latin to Spanish,"Spanish-e-ɛ,a-ɔ-o",,index_diachronica_original.html:8143,2,rule_skipped,,,,,,,,,,,,,none
+29.1.1.1.1,Proto-Athabaskan to Ahtna,"Ahtna-TŠ,TŠʷ",,index_diachronica_original.html:9979,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.1,Proto-Athabaskan to Ahtna,Ahtna-K,,index_diachronica_original.html:9980,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.1,Proto-Athabaskan to Ahtna,"Ahtna-ʃʷ,x",,index_diachronica_original.html:9981,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.1,Proto-Athabaskan to Ahtna,Ahtna-ɑ-ə-ʊ,,index_diachronica_original.html:9982,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.1,Proto-Athabaskan to Ahtna,Ahtna-Vˀ,,index_diachronica_original.html:9983,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.2,Proto-Athabaskan to Babine,"Babine-TŠ,TŠʷ",,index_diachronica_original.html:9988,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.2,Proto-Athabaskan to Babine,Babine-u-ɑ-ʊ,,index_diachronica_original.html:9989,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.2,Proto-Athabaskan to Babine,Babine-Vˀ,,index_diachronica_original.html:9990,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.3,Proto-Athabaskan to Beaver,Beaver-TS,,index_diachronica_original.html:9995,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.3,Proto-Athabaskan to Beaver,"Beaver-TŠ,TŠʷ",,index_diachronica_original.html:9996,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.3,Proto-Athabaskan to Beaver,Beaver-K-Q,,index_diachronica_original.html:9997,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.3,Proto-Athabaskan to Beaver,Beaver-T,,index_diachronica_original.html:9998,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.3,Proto-Athabaskan to Beaver,"Beaver-n,ɲ",,index_diachronica_original.html:9999,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.3,Proto-Athabaskan to Beaver,Beaver-ɑ,,index_diachronica_original.html:10000,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.3,Proto-Athabaskan to Beaver,Beaver-Vˀ,,index_diachronica_original.html:10001,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.4,Proto-Athabaskan to Chilcotin,Chilcotin-V,,index_diachronica_original.html:10007,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.4,Proto-Athabaskan to Chilcotin,"Chilcotin-TŠ,TŠʷ-K",,index_diachronica_original.html:10008,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.4,Proto-Athabaskan to Chilcotin,"Chilcotin-e-ɑ,ə",,index_diachronica_original.html:10010,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.4,Proto-Athabaskan to Chilcotin,Chilcotin-Vˀ,,index_diachronica_original.html:10011,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.5,Proto-Athabaskan to Chipewyan,"Chipewyan-TS-TŠ,TŠʷ-K-Q",,index_diachronica_original.html:10016,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.5,Proto-Athabaskan to Chipewyan,Chipewyan-t,,index_diachronica_original.html:10017,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.5,Proto-Athabaskan to Chipewyan,"Chipewyan-A,O’",,index_diachronica_original.html:10018,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.5,Proto-Athabaskan to Chipewyan,Chipewyan-ɑ-ʊ,,index_diachronica_original.html:10019,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.5,Proto-Athabaskan to Chipewyan,Chipewyan-Vˀ,,index_diachronica_original.html:10020,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.6,Proto-Athabaskan to Dakelh,"Dakelh-TŠ,TŠʷ-K-Q",,index_diachronica_original.html:10025,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.6,Proto-Athabaskan to Dakelh,"Dakelh-u-ɑ,ʊ",,index_diachronica_original.html:10026,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.6,Proto-Athabaskan to Dakelh,Dakelh-Vˀ,,index_diachronica_original.html:10027,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,Deg-Hit’an-TS-TŠ,,index_diachronica_original.html:10032,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,Deg-Hit’an-TŠʷ,,index_diachronica_original.html:10033,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,Deg-Hit’an-K,,index_diachronica_original.html:10034,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,Deg-Hit’an-w,,index_diachronica_original.html:10035,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,Deg-Hit’an-ɲ,,index_diachronica_original.html:10036,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,Deg-Hit’an-R-F,,index_diachronica_original.html:10037,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,"Deg-Hit’an-e-u-a-ɑ,ʊ",,index_diachronica_original.html:10038,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,Deg-Hit’an-C’,,index_diachronica_original.html:10039,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.7,Proto-Athabaskan to Deg Hit’an,Deg-Hit’an-Vˀ,,index_diachronica_original.html:10040,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.8,Proto-Athabaskan to Dena’ina,"Dena’ina-TŠ,TŠʷ",,index_diachronica_original.html:10045,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.8,Proto-Athabaskan to Dena’ina,"Dena’ina-e-a-u-ə,ʊ",,index_diachronica_original.html:10046,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.8,Proto-Athabaskan to Dena’ina,"Dena’ina-ʃʷ,x-z,ʒʷ,ɣ",,index_diachronica_original.html:10047,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.8,Proto-Athabaskan to Dena’ina,Dena’ina-Vˀ,,index_diachronica_original.html:10048,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.9,Proto-Athabaskan to Dogrib,Dogrib-C,,index_diachronica_original.html:10053,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.9,Proto-Athabaskan to Dogrib,Dogrib-ɑ-ə-ʊ-u,,index_diachronica_original.html:10054,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.9,Proto-Athabaskan to Dogrib,"Dogrib-TŠ,TŠʷ-K-Q",,index_diachronica_original.html:10055,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.9,Proto-Athabaskan to Dogrib,Dogrib-ts-tsʰ-tsʼ-s-z,,index_diachronica_original.html:10056,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.10,Proto-Athabaskan to Easter Gwich’in,Easter-Gwich’in-TS-K,,index_diachronica_original.html:10062,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.10,Proto-Athabaskan to Easter Gwich’in,Easter-Gwich’in-TS-K_2,,index_diachronica_original.html:10063,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.10,Proto-Athabaskan to Easter Gwich’in,Easter-Gwich’in-TŠ-TŠʷ-Q,,index_diachronica_original.html:10064,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.10,Proto-Athabaskan to Easter Gwich’in,Easter-Gwich’in-j-w,,index_diachronica_original.html:10065,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.10,Proto-Athabaskan to Easter Gwich’in,"Easter-Gwich’in-n,ɲ",,index_diachronica_original.html:10066,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.10,Proto-Athabaskan to Easter Gwich’in,"Easter-Gwich’in-n,ɲ_2",,index_diachronica_original.html:10067,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.10,Proto-Athabaskan to Easter Gwich’in,"Easter-Gwich’in-i,e",,index_diachronica_original.html:10068,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.10,Proto-Athabaskan to Easter Gwich’in,"Easter-Gwich’in-a-u-ɑ,ə-ʊ",,index_diachronica_original.html:10069,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.10,Proto-Athabaskan to Easter Gwich’in,Easter-Gwich’in-Vˀ,,index_diachronica_original.html:10070,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.11,Proto-Athabaskan to Han,Han-TS-TŠ-TŠʷ-K-Q,,index_diachronica_original.html:10076,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.11,Proto-Athabaskan to Han,Han-n,,index_diachronica_original.html:10078,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.11,Proto-Athabaskan to Han,Han-j,,index_diachronica_original.html:10079,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.11,Proto-Athabaskan to Han,Han-a-ɑ-ə-ʊ,,index_diachronica_original.html:10080,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.11,Proto-Athabaskan to Han,Han-Vˀ,,index_diachronica_original.html:10082,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.12,Proto-Athabaskan to Holikachuk,Holikachuk-TS,,index_diachronica_original.html:10088,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.12,Proto-Athabaskan to Holikachuk,Holikachuk-e,,index_diachronica_original.html:10089,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.12,Proto-Athabaskan to Holikachuk,"Holikachuk-i-e-a-u-ɑ,ʊ",,index_diachronica_original.html:10090,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.12,Proto-Athabaskan to Holikachuk,"Holikachuk-TS-TŠ,TŠʷ",,index_diachronica_original.html:10091,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.12,Proto-Athabaskan to Holikachuk,Holikachuk-C’,,index_diachronica_original.html:10092,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.12,Proto-Athabaskan to Holikachuk,Holikachuk-Vˀ,,index_diachronica_original.html:10093,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.12,Proto-Athabaskan to Holikachuk,Holikachuk-w,,index_diachronica_original.html:10094,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.12,Proto-Athabaskan to Holikachuk,Holikachuk-ə,,index_diachronica_original.html:10095,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.14,Proto-Athabaskan to Lower Koyukon,Lower-Koyukon-e-a-ɑ-ʊ,,index_diachronica_original.html:10111,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.14,Proto-Athabaskan to Lower Koyukon,"Lower-Koyukon-TS-TŠ,TŠʷ",,index_diachronica_original.html:10112,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.14,Proto-Athabaskan to Lower Koyukon,Lower-Koyukon-C’,,index_diachronica_original.html:10113,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.14,Proto-Athabaskan to Lower Koyukon,Lower-Koyukon-Vˀ,,index_diachronica_original.html:10114,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.14,Proto-Athabaskan to Lower Koyukon,Lower-Koyukon-w,,index_diachronica_original.html:10115,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.14,Proto-Athabaskan to Lower Koyukon,Lower-Koyukon-ə,,index_diachronica_original.html:10116,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.15,Proto-Athabaskan to Upper Koyukon,Upper-Koyukon-e-a-ɑ-ʊ,,index_diachronica_original.html:10121,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.15,Proto-Athabaskan to Upper Koyukon,"Upper-Koyukon-TS-TŠ,TŠʷ",,index_diachronica_original.html:10122,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.15,Proto-Athabaskan to Upper Koyukon,Upper-Koyukon-K,,index_diachronica_original.html:10124,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.15,Proto-Athabaskan to Upper Koyukon,Upper-Koyukon-C’,,index_diachronica_original.html:10125,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.15,Proto-Athabaskan to Upper Koyukon,Upper-Koyukon-Vˀ,,index_diachronica_original.html:10126,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.15,Proto-Athabaskan to Upper Koyukon,Upper-Koyukon-w,,index_diachronica_original.html:10127,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.15,Proto-Athabaskan to Upper Koyukon,Upper-Koyukon-w_2,,index_diachronica_original.html:10128,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.16,Proto-Athabaskan to Upper Kuskokwim Kolchan,Upper-Kuskokwim-Kolchan-TŠ-TŠʷ-K-Q,,index_diachronica_original.html:10133,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.16,Proto-Athabaskan to Upper Kuskokwim Kolchan,"Upper-Kuskokwim-Kolchan-e-a-ɑ,ʊ",,index_diachronica_original.html:10134,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.16,Proto-Athabaskan to Upper Kuskokwim Kolchan,Upper-Kuskokwim-Kolchan-Vˀ,,index_diachronica_original.html:10135,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.17,Proto-Athabaskan to Sarcee,"Sarcee-TŠ,TŠʷ-K-Q",,index_diachronica_original.html:10140,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.17,Proto-Athabaskan to Sarcee,Sarcee-ɑ́-ə́-ʊ́,,index_diachronica_original.html:10141,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.17,Proto-Athabaskan to Sarcee,"Sarcee-e,ə-ʊ",,index_diachronica_original.html:10142,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.17,Proto-Athabaskan to Sarcee,Sarcee-Vˀ,,index_diachronica_original.html:10143,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.18,Proto-Athabaskan to Sekani,Sekani-TS,,index_diachronica_original.html:10148,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.18,Proto-Athabaskan to Sekani,"Sekani-TŠ,TŠʷ-K-Q",,index_diachronica_original.html:10149,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.18,Proto-Athabaskan to Sekani,Sekani-T,,index_diachronica_original.html:10150,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.18,Proto-Athabaskan to Sekani,Sekani-ʊ,,index_diachronica_original.html:10151,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.18,Proto-Athabaskan to Sekani,Sekani-Vˀ,,index_diachronica_original.html:10152,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.19,Proto-Athabaskan to Proto-Southern Athabaskan,Proto-Southern-Athabaskan-K,,index_diachronica_original.html:10157,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.19,Proto-Athabaskan to Proto-Southern Athabaskan,Proto-Southern-Athabaskan-m,,index_diachronica_original.html:10158,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.19,Proto-Athabaskan to Proto-Southern Athabaskan,Proto-Southern-Athabaskan-ɣ,,index_diachronica_original.html:10159,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.19,Proto-Athabaskan to Proto-Southern Athabaskan,Proto-Southern-Athabaskan-VnC,,index_diachronica_original.html:10160,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.19,Proto-Athabaskan to Proto-Southern Athabaskan,Proto-Southern-Athabaskan-t-n-x,,index_diachronica_original.html:10161,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.29,Proto-Athabaskan to Bearlake Slavey-Hare,Bearlake-Slavey-Hare-C,,index_diachronica_original.html:10258,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.29,Proto-Athabaskan to Bearlake Slavey-Hare,Bearlake-Slavey-Hare-ɑ-ə-ʊ,,index_diachronica_original.html:10259,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.29,Proto-Athabaskan to Bearlake Slavey-Hare,"Bearlake-Slavey-Hare-TŠ,TŠʷ-K-Q",,index_diachronica_original.html:10260,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.29,Proto-Athabaskan to Bearlake Slavey-Hare,Bearlake-Slavey-Hare-ts-tsʰ-tsʼ-s-z,,index_diachronica_original.html:10261,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.30,Proto-Athabaskan to Hare Slavey-Hare,Hare-Slavey-Hare-tɬʰ-tʃʷʰ-kʰ,,index_diachronica_original.html:10266,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.30,Proto-Athabaskan to Hare Slavey-Hare,"Hare-Slavey-Hare-TŠ,TŠʷ-K",,index_diachronica_original.html:10267,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.30,Proto-Athabaskan to Hare Slavey-Hare,Hare-Slavey-Hare-Q,,index_diachronica_original.html:10268,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.30,Proto-Athabaskan to Hare Slavey-Hare,Hare-Slavey-Hare-∅,,index_diachronica_original.html:10269,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.30,Proto-Athabaskan to Hare Slavey-Hare,Hare-Slavey-Hare-ɬ,,index_diachronica_original.html:10270,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.30,Proto-Athabaskan to Hare Slavey-Hare,"Hare-Slavey-Hare-ts-tsʰ-tsʼ-s,z",,index_diachronica_original.html:10271,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.31,Proto-Athabaskan to Mountain Slavey-Hare,Mountain-Slavey-Hare-C,,index_diachronica_original.html:10276,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.31,Proto-Athabaskan to Mountain Slavey-Hare,Mountain-Slavey-Hare-ɑ-ə-ʊ,,index_diachronica_original.html:10277,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.31,Proto-Athabaskan to Mountain Slavey-Hare,"Mountain-Slavey-Hare-TŠ,TŠʷ-K-Q",,index_diachronica_original.html:10278,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.31,Proto-Athabaskan to Mountain Slavey-Hare,Mountain-Slavey-Hare-ts-tsʰ-tsʼ-s-z,,index_diachronica_original.html:10279,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.32,Proto-Athabaskan to Slavey Slavey-Hare,Slavey-Slavey-Hare-C,,index_diachronica_original.html:10284,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.32,Proto-Athabaskan to Slavey Slavey-Hare,Slavey-Slavey-Hare-ɑ-ə-ʊ,,index_diachronica_original.html:10285,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.32,Proto-Athabaskan to Slavey Slavey-Hare,"Slavey-Slavey-Hare-TŠ,TŠʷ-K-Q",,index_diachronica_original.html:10286,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.34,Tahltan-Kaska-Tagish to Kaska,Kaska-Vˀ,,index_diachronica_original.html:10298,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.34,Tahltan-Kaska-Tagish to Kaska,"Kaska-TS-TŠ,TŠʷ",,index_diachronica_original.html:10299,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.34,Tahltan-Kaska-Tagish to Kaska,Kaska-K,,index_diachronica_original.html:10300,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.35,Tahltan-Kaska-Tagish to Tagish,"Tagish-TŠ,TŠʷ-TS",,index_diachronica_original.html:10305,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.36,Tahltan-Kaska-Tagish to Tahltan,"Tahltan-TŠʷ,K",,index_diachronica_original.html:10310,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.37,Proto-Athabaskan to Tanacross,Tanacross-K,,index_diachronica_original.html:10315,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.37,Proto-Athabaskan to Tanacross,Tanacross-TS-TŠ-TŠʷ-Q,,index_diachronica_original.html:10316,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.37,Proto-Athabaskan to Tanacross,Tanacross-S’,,index_diachronica_original.html:10317,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.37,Proto-Athabaskan to Tanacross,Tanacross-Vˀ,,index_diachronica_original.html:10318,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.37,Proto-Athabaskan to Tanacross,Tanacross-Vɲ,,index_diachronica_original.html:10320,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.37,Proto-Athabaskan to Tanacross,"Tanacross-n,ɲ",,index_diachronica_original.html:10321,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.37,Proto-Athabaskan to Tanacross,Tanacross-F+voiced,,index_diachronica_original.html:10322,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.37,Proto-Athabaskan to Tanacross,Tanacross-ʃ,,index_diachronica_original.html:10323,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.37,Proto-Athabaskan to Tanacross,Tanacross-ɬ,,index_diachronica_original.html:10324,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.37,Proto-Athabaskan to Tanacross,Tanacross-ɑ-ə-ʊ,,index_diachronica_original.html:10325,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.38,Proto-Athabaskan to Lower Tanana,Lower-Tanana-K,,index_diachronica_original.html:10330,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.38,Proto-Athabaskan to Lower Tanana,Lower-Tanana-TS-TŠ-TŠᵚ-Q,,index_diachronica_original.html:10331,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.38,Proto-Athabaskan to Lower Tanana,Lower-Tanana-S’,,index_diachronica_original.html:10332,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.38,Proto-Athabaskan to Lower Tanana,Lower-Tanana-Vˀ,,index_diachronica_original.html:10333,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.38,Proto-Athabaskan to Lower Tanana,"Lower-Tanana-e-a-ɑ,ʊ",,index_diachronica_original.html:10334,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.39,Proto-Athabaskan to Upper Tanana,Upper-Tanana-K,,index_diachronica_original.html:10339,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.39,Proto-Athabaskan to Upper Tanana,Upper-Tanana-TS-TŠ-TŠʷ-Q,,index_diachronica_original.html:10340,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.39,Proto-Athabaskan to Upper Tanana,Upper-Tanana-S’,,index_diachronica_original.html:10341,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.39,Proto-Athabaskan to Upper Tanana,Upper-Tanana-Vɲ,,index_diachronica_original.html:10343,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.39,Proto-Athabaskan to Upper Tanana,"Upper-Tanana-n,ɲ",,index_diachronica_original.html:10344,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.39,Proto-Athabaskan to Upper Tanana,"Upper-Tanana-A,F",,index_diachronica_original.html:10345,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.39,Proto-Athabaskan to Upper Tanana,Upper-Tanana-ʃ,,index_diachronica_original.html:10346,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.39,Proto-Athabaskan to Upper Tanana,Upper-Tanana-ɬ,,index_diachronica_original.html:10347,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.39,Proto-Athabaskan to Upper Tanana,"Upper-Tanana-a,ɑ-e-i-u-ʊ",,index_diachronica_original.html:10348,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.39,Proto-Athabaskan to Upper Tanana,Upper-Tanana-ə,,index_diachronica_original.html:10349,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.39,Proto-Athabaskan to Upper Tanana,Upper-Tanana-Vˀ,,index_diachronica_original.html:10350,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.40,Proto-Athabaskan to Tsetsaut,Tsetsaut-TŠ,,index_diachronica_original.html:10356,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.40,Proto-Athabaskan to Tsetsaut,Tsetsaut-K-Q,,index_diachronica_original.html:10358,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.40,Proto-Athabaskan to Tsetsaut,Tsetsaut-C,,index_diachronica_original.html:10359,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.40,Proto-Athabaskan to Tsetsaut,Tsetsaut-ʊ,,index_diachronica_original.html:10360,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.41,Proto-Athabaskan to Northern Tutchone,"Northern-Tutchone-TS-TŠ,TŠʷ",,index_diachronica_original.html:10365,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.41,Proto-Athabaskan to Northern Tutchone,Northern-Tutchone-K,,index_diachronica_original.html:10366,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.41,Proto-Athabaskan to Northern Tutchone,Northern-Tutchone-Q,,index_diachronica_original.html:10367,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.41,Proto-Athabaskan to Northern Tutchone,"Northern-Tutchone-ɑ,ə,ʊ",,index_diachronica_original.html:10368,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.41,Proto-Athabaskan to Northern Tutchone,Northern-Tutchone-Vˀ,,index_diachronica_original.html:10370,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.42,Proto-Athabaskan to Southern Tutchone,"Southern-Tutchone-TS-TŠ,TŠʷ",,index_diachronica_original.html:10377,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.42,Proto-Athabaskan to Southern Tutchone,Southern-Tutchone-K,,index_diachronica_original.html:10378,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.42,Proto-Athabaskan to Southern Tutchone,Southern-Tutchone-Q,,index_diachronica_original.html:10379,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.42,Proto-Athabaskan to Southern Tutchone,Southern-Tutchone-e-a,,index_diachronica_original.html:10380,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.42,Proto-Athabaskan to Southern Tutchone,"Southern-Tutchone-ɑ,ə,ʊ",,index_diachronica_original.html:10381,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.42,Proto-Athabaskan to Southern Tutchone,Southern-Tutchone-Vˀ,,index_diachronica_original.html:10383,2,section_skipped,,,,,,,,,,,,,none
+29.1.1.1.42,Proto-Athabaskan to Southern Tutchone,Southern-Tutchone-A,,index_diachronica_original.html:10386,2,section_skipped,,,,,,,,,,,,,none
 29.2,Proto-Na-Dene to Tlingit,Tlingit-s,,index_diachronica_original.html:10402,2,section_skipped,,,,,,,,,,,,,none
 29.2,Proto-Na-Dene to Tlingit,Tlingit-ts,,index_diachronica_original.html:10403,2,section_skipped,,,,,,,,,,,,,none
 29.2,Proto-Na-Dene to Tlingit,Tlingit-tsʼ,,index_diachronica_original.html:10404,2,section_skipped,,,,,,,,,,,,,none

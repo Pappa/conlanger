@@ -9,5 +9,4 @@ section_index,rule_id,error_token,rule
 17.12.1.1.5,Portuguese-N,P,"N > ∅ / V[+nas]_$C // C = P | ^ @ Rule 1, Line 1"
 17.12.1.1.5,Portuguese-C0C0,r,"C=0 0 > 0 // C = r | ^ @ Rule 1, Line 1"
 17.13,Proto-Tocharian-H,s,"[-place] > ɛ / _[+son,-syll], when [+son,-syll] = syllabic | ^ @ Rule 1, Line 1"
-29.1.1.1.19,Proto-Southern-Athabaskan-VnC,ʔ,"VnC > V:[+ nas]C / _#, unless C = ʔ | ^ @ Rule 1, Line 1"
 36.1.1.1,Modern-Pekingese-î,r,"i > e / _C# // C = r | ^ @ Rule 1, Line 1"

@@ -15094,6 +15094,7 @@ sections:
     raw: S₁ s d₂ *C → s θ ð ts (not sure what *C stands for here)
     source: index_diachronica_original.html:3851
     rule_id: Proto-Rukai-S1-s-d2-*C
+  status: skipped
 - section: Proto-Rukai to Budai Rukai
   index: 10.7.1
   citation: 'Pogostick Man, from Chen, Chun-Mei (2006), A Comparative Study on Formosan
@@ -47400,16 +47401,15 @@ sections:
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - stages:
-    - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]}'
+    - '{Tʃ,Tʃʷ}'
+    - TS
     raw: '{TŠ,TŠʷ} → TS'
     source: index_diachronica_original.html:9979
     rule_id: Ahtna-TŠ,TŠʷ
   - comment: in Mentasta Ahtna; sporadic
     stages:
-    - '[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
-    - '[+cons, +dist, +fr, -bk, +hi, -lo]'
+    - K
+    - Tʃ
     raw: K → TŠ / in Mentasta Ahtna
     source: index_diachronica_original.html:9980
     sporadic: true
@@ -47432,15 +47432,15 @@ sections:
     raw: Vˀ → V[-glottalized]
     source: index_diachronica_original.html:9983
     rule_id: Ahtna-Vˀ
+  status: skipped
 - section: Proto-Athabaskan to Babine
   index: 29.1.1.1.2
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - stages:
-    - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]}'
+    - '{Tʃ,Tʃʷ}'
+    - TS
     raw: '{TŠ,TŠʷ} → TS'
     source: index_diachronica_original.html:9988
     rule_id: Babine-TŠ,TŠʷ
@@ -47456,36 +47456,34 @@ sections:
     raw: Vˀ → V[-glottalized]
     source: index_diachronica_original.html:9990
     rule_id: Babine-Vˀ
+  status: skipped
 - section: Proto-Athabaskan to Beaver
   index: 29.1.1.1.3
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - stages:
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]}'
-    - '[+cons, -son, -cont, +cor,+anterior,+dist]H'
+    - TS
+    - TH
     comment: (most often back to 3, however)
     raw: TS → TH (most often back to 3, however)
     source: index_diachronica_original.html:9995
     rule_id: Beaver-TS
   - stages:
-    - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]}'
+    - '{Tʃ,Tʃʷ}'
+    - TS
     raw: '{TŠ,TŠʷ} → TS'
     source: index_diachronica_original.html:9996
     rule_id: Beaver-TŠ,TŠʷ
   - stages:
-    - '[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo] Q'
-    - '[+cons, +dist, +fr, -bk, +hi, -lo] [+cons, -son, -cont, -cor, +fr, -bk, +hi,
-      -lo]'
+    - K Q
+    - Tʃ K
     raw: K Q → TŠ K
     source: index_diachronica_original.html:9997
     rule_id: Beaver-K-Q
   - stages:
-    - '[+cons, -son, -cont, +cor,+anterior,+dist]'
-    - '[+cons, +dist, +fr, -bk, +hi, -lo]'
+    - T
+    - Tʃ
     env: _{i,e,u}, in the British Columbian dialect
     raw: T → TŠ / _{i,e,u}, in the British Columbian dialect
     source: index_diachronica_original.html:9998
@@ -47510,6 +47508,7 @@ sections:
     raw: Vˀ → V[+high tone]
     source: index_diachronica_original.html:10001
     rule_id: Beaver-Vˀ
+  status: skipped
 - section: Proto-Athabaskan to Chilcotin
   index: 29.1.1.1.4
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
@@ -47527,10 +47526,8 @@ sections:
     source: index_diachronica_original.html:10007
     rule_id: Chilcotin-V
   - stages:
-    - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}
-      [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo]'
+    - '{Tʃ,Tʃʷ} K'
+    - TS Tʃ
     raw: '{TŠ,TŠʷ} K → TS TŠ'
     source: index_diachronica_original.html:10008
     rule_id: Chilcotin-TŠ,TŠʷ-K
@@ -47546,19 +47543,15 @@ sections:
     raw: Vˀ → V[+high tone]
     source: index_diachronica_original.html:10011
     rule_id: Chilcotin-Vˀ
+  status: skipped
 - section: Proto-Athabaskan to Chipewyan
   index: 29.1.1.1.5
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - stages:
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
-      +dist, +fr, -bk, +hi, -lo, +labial]} [+cons, -son, -cont, -cor, +fr, -bk, +hi,
-      -lo] Q'
-    - '[+cons, -son, -cont, +cor,+anterior,+dist]H {[+cons, -son, -cont, +cor,+anterior,+dist,
-      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]} [+cons, +dist,
-      +fr, -bk, +hi, -lo] [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
+    - TS {Tʃ,Tʃʷ} K Q
+    - TH TS Tʃ K
     raw: TS {TŠ,TŠʷ} K Q → TH TS TŠ K
     source: index_diachronica_original.html:10016
     rule_id: Chipewyan-TS-TŠ,TŠʷ-K-Q
@@ -47588,17 +47581,15 @@ sections:
     raw: Vˀ → V[+high tone]
     source: index_diachronica_original.html:10020
     rule_id: Chipewyan-Vˀ
+  status: skipped
 - section: Proto-Athabaskan to Dakelh
   index: 29.1.1.1.6
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - stages:
-    - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}
-      [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo] Q'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, -son,
-      -cont, -cor, +fr, -bk, +hi, -lo]'
+    - '{Tʃ,Tʃʷ} K Q'
+    - TS Tʃ K
     raw: '{TŠ,TŠʷ} K Q → TS TŠ K'
     source: index_diachronica_original.html:10025
     rule_id: Dakelh-TŠ,TŠʷ-K-Q
@@ -47614,33 +47605,29 @@ sections:
     raw: Vˀ → V[-glottalized]
     source: index_diachronica_original.html:10027
     rule_id: Dakelh-Vˀ
+  status: skipped
 - section: Proto-Athabaskan to Deg Hit’an
   index: 29.1.1.1.7
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - stages:
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo]'
-    - '[+cons, -son, -cont, +cor,+anterior,+dist]H {[+cons, -son, -cont, +cor,+anterior,+dist,
-      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]}'
+    - TS Tʃ
+    - TH TS
     raw: TS TŠ → TH TS
     source: index_diachronica_original.html:10032
     rule_id: Deg-Hit’an-TS-TŠ
   - stages:
-    - '[+cons, +dist, +fr, -bk, +hi, -lo, +labial]'
-    - '[+cons, -son, -cont, +cor,+anterior,+dist]ʂ'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} in [+cons, -son, -cont, -cor, +fr, -bk, +hi,
-      -lo]uskokwim dialect)'
+    - Tʃʷ
+    - Tʂ
+    - TS in Kuskokwim dialect)
     comment: (
     raw: TŠʷ → TṢ (→ TS in Kuskokwim dialect)
     source: index_diachronica_original.html:10033
     rule_id: Deg-Hit’an-TŠʷ
   - stages:
-    - '[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
-    - '{[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi,
-      -lo]}'
+    - K
+    - '{K,Tʃ}'
     raw: K → {K,TŠ}
     source: index_diachronica_original.html:10034
     rule_id: Deg-Hit’an-K
@@ -47684,16 +47671,16 @@ sections:
     raw: Vˀ → V[-glottalized]
     source: index_diachronica_original.html:10040
     rule_id: Deg-Hit’an-Vˀ
+  status: skipped
 - section: Proto-Athabaskan to Dena’ina
   index: 29.1.1.1.8
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - stages:
-    - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}'
-    - '[+cons, +dist, +fr, -bk, +hi, -lo]'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} in Upper Inlet dialect)'
+    - '{Tʃ,Tʃʷ}'
+    - Tʃ
+    - TS in Upper Inlet dialect)
     comment: (
     raw: '{TŠ,TŠʷ} → TŠ (→ TS in Upper Inlet dialect)'
     source: index_diachronica_original.html:10045
@@ -47716,6 +47703,7 @@ sections:
     raw: Vˀ → V[-glottalized]
     source: index_diachronica_original.html:10048
     rule_id: Dena’ina-Vˀ
+  status: skipped
 - section: Proto-Athabaskan to Dogrib
   index: 29.1.1.1.9
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
@@ -47735,11 +47723,8 @@ sections:
     source: index_diachronica_original.html:10054
     rule_id: Dogrib-ɑ-ə-ʊ-u
   - stages:
-    - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}
-      [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo] Q'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, -son,
-      -cont, -cor, +fr, -bk, +hi, -lo]'
+    - '{Tʃ,Tʃʷ} K Q'
+    - TS Tʃ K
     raw: '{TŠ,TŠʷ} K Q → TS TŠ K'
     source: index_diachronica_original.html:10055
     rule_id: Dogrib-TŠ,TŠʷ-K-Q
@@ -47749,6 +47734,7 @@ sections:
     raw: ts tsʰ tsʼ s z → kʷ kʷʰ kʷʼ ʍ w
     source: index_diachronica_original.html:10056
     rule_id: Dogrib-ts-tsʰ-tsʼ-s-z
+  status: skipped
 - section: Proto-Athabaskan to Easter Gwich’in
   index: 29.1.1.1.10
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
@@ -47762,28 +47748,22 @@ sections:
     source: index_diachronica_original.html:10071
   rules:
   - stages:
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
-    - '[+cons, +dist, +fr, -bk, +hi, -lo] {[+cons, -son, -cont, +cor,+anterior,+dist,
-      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]}'
+    - TS K
+    - Tʃ TS
     env: _E
     raw: TS K → TŠ TS / _E
     source: index_diachronica_original.html:10062
     rule_id: Easter-Gwich’in-TS-K
   - stages:
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
-    - '[+cons, -son, -cont, +cor,+anterior,+dist]H [+cons, +dist, +fr, -bk, +hi, -lo]'
+    - TS K
+    - TH Tʃ
     raw: TS K → TH TŠ / else
     source: index_diachronica_original.html:10063
     rule_id: Easter-Gwich’in-TS-K_2
     exception: _E
   - stages:
-    - '[+cons, +dist, +fr, -bk, +hi, -lo] [+cons, +dist, +fr, -bk, +hi, -lo, +labial]
-      Q'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} [+cons, -son, -cont, +cor,+anterior,+dist]ʂ
-      [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
+    - Tʃ Tʃʷ Q
+    - TS Tʂ K
     raw: TŠ TŠʷ Q → TS TṢ K
     source: index_diachronica_original.html:10064
     rule_id: Easter-Gwich’in-TŠ-TŠʷ-Q
@@ -47827,6 +47807,7 @@ sections:
     raw: Vˀ → V[+low tone]
     source: index_diachronica_original.html:10070
     rule_id: Easter-Gwich’in-Vˀ
+  status: skipped
 - section: Proto-Athabaskan to Han
   index: 29.1.1.1.11
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
@@ -47841,14 +47822,8 @@ sections:
     source: index_diachronica_original.html:10083
   rules:
   - stages:
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, +dist,
-      +fr, -bk, +hi, -lo, +labial] [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]
-      Q'
-    - '[+cons, -son, -cont, +cor,+anterior,+dist]H {[+cons, -son, -cont, +cor,+anterior,+dist,
-      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]} [+cons, -son,
-      -cont, +cor,+anterior,+dist]ʂ [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, -son,
-      -cont, -cor, +fr, -bk, +hi, -lo]'
+    - TS Tʃ Tʃʷ K Q
+    - TH TS Tʂ Tʃ K
     raw: TS TŠ TŠʷ K Q → TH TS TṢ TŠ K
     source: index_diachronica_original.html:10076
     rule_id: Han-TS-TŠ-TŠʷ-K-Q
@@ -47878,15 +47853,15 @@ sections:
     raw: Vˀ → V[+low tone]
     source: index_diachronica_original.html:10082
     rule_id: Han-Vˀ
+  status: skipped
 - section: Proto-Athabaskan to Holikachuk
   index: 29.1.1.1.12
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - stages:
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]}'
-    - '[+cons, -son, -cont, +cor,+anterior,+dist]H'
+    - TS
+    - TH
     raw: TS → TH
     source: index_diachronica_original.html:10088
     rule_id: Holikachuk-TS
@@ -47904,11 +47879,8 @@ sections:
     source: index_diachronica_original.html:10090
     rule_id: Holikachuk-i-e-a-u-ɑ,ʊ
   - stages:
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
-      +dist, +fr, -bk, +hi, -lo, +labial]}'
-    - '[+lateral] {[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son,
-      +cont, +cor,+anterior,+dist, -delrel]}'
+    - TS {Tʃ,Tʃʷ}
+    - Tɬ TS
     raw: TS {TŠ,TŠʷ} → TŁ TS
     source: index_diachronica_original.html:10091
     rule_id: Holikachuk-TS-TŠ,TŠʷ
@@ -47939,6 +47911,7 @@ sections:
     raw: ə → ∅ / {R,F}_#
     source: index_diachronica_original.html:10095
     rule_id: Holikachuk-ə
+  status: skipped
 - section: Proto-Athabaskan to Hupa
   index: 29.1.1.1.13
   citation: Pogostick Man, from Sapir, Edward (1936), ”Reflexes of Proto-Athabaskan
@@ -47997,11 +47970,8 @@ sections:
     source: index_diachronica_original.html:10111
     rule_id: Lower-Koyukon-e-a-ɑ-ʊ
   - stages:
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
-      +dist, +fr, -bk, +hi, -lo, +labial]}'
-    - '[+lateral] {[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son,
-      +cont, +cor,+anterior,+dist, -delrel]}'
+    - TS {Tʃ,Tʃʷ}
+    - Tɬ TS
     raw: TS {TŠ,TŠʷ} → TŁ TS
     source: index_diachronica_original.html:10112
     rule_id: Lower-Koyukon-TS-TŠ,TŠʷ
@@ -48032,6 +48002,7 @@ sections:
     raw: ə → ∅ / {R,F}_#
     source: index_diachronica_original.html:10116
     rule_id: Lower-Koyukon-ə
+  status: skipped
 - section: Proto-Athabaskan to Upper Koyukon
   index: 29.1.1.1.15
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
@@ -48047,17 +48018,14 @@ sections:
     source: index_diachronica_original.html:10121
     rule_id: Upper-Koyukon-e-a-ɑ-ʊ
   - stages:
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
-      +dist, +fr, -bk, +hi, -lo, +labial]}'
-    - '[+lateral] {[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son,
-      +cont, +cor,+anterior,+dist, -delrel]}'
+    - TS {Tʃ,Tʃʷ}
+    - Tɬ TS
     raw: TS {TŠ,TŠʷ} → TŁ TS
     source: index_diachronica_original.html:10122
     rule_id: Upper-Koyukon-TS-TŠ,TŠʷ
   - stages:
-    - '[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
-    - '[+cons, +dist, +fr, -bk, +hi, -lo]'
+    - K
+    - Tʃ
     raw: K → TŠ
     source: index_diachronica_original.html:10124
     rule_id: Upper-Koyukon-K
@@ -48090,18 +48058,15 @@ sections:
     raw: w → b
     source: index_diachronica_original.html:10128
     rule_id: Upper-Koyukon-w_2
+  status: skipped
 - section: Proto-Athabaskan to Upper Kuskokwim Kolchan
   index: 29.1.1.1.16
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - stages:
-    - '[+cons, +dist, +fr, -bk, +hi, -lo] [+cons, +dist, +fr, -bk, +hi, -lo, +labial]
-      [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo] Q'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} [+cons, -son, -cont, +cor,+anterior,+dist]ʂ
-      [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, -son, -cont, -cor, +fr, -bk, +hi,
-      -lo]'
+    - Tʃ Tʃʷ K Q
+    - TS Tʂ Tʃ K
     raw: TŠ TŠʷ K Q → TS TṢ TŠ K
     source: index_diachronica_original.html:10133
     rule_id: Upper-Kuskokwim-Kolchan-TŠ-TŠʷ-K-Q
@@ -48117,17 +48082,15 @@ sections:
     raw: Vˀ → V[-glottalized]
     source: index_diachronica_original.html:10135
     rule_id: Upper-Kuskokwim-Kolchan-Vˀ
+  status: skipped
 - section: Proto-Athabaskan to Sarcee
   index: 29.1.1.1.17
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - stages:
-    - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}
-      [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo] Q'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, -son,
-      -cont, -cor, +fr, -bk, +hi, -lo]'
+    - '{Tʃ,Tʃʷ} K Q'
+    - TS Tʃ K
     raw: '{TŠ,TŠʷ} K Q → TS TŠ K'
     source: index_diachronica_original.html:10140
     rule_id: Sarcee-TŠ,TŠʷ-K-Q
@@ -48149,33 +48112,30 @@ sections:
     raw: Vˀ → V[+low tone]
     source: index_diachronica_original.html:10143
     rule_id: Sarcee-Vˀ
+  status: skipped
 - section: Proto-Athabaskan to Sekani
   index: 29.1.1.1.18
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - stages:
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]}'
-    - '[+cons, -son, -cont, +cor,+anterior,+dist]H'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} again in some areas)'
+    - TS
+    - TH
+    - TS again in some areas)
     comment: (
     raw: TS → TH (→ TS again in some areas)
     source: index_diachronica_original.html:10148
     rule_id: Sekani-TS
   - stages:
-    - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}
-      [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo] Q'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] Q'
+    - '{Tʃ,Tʃʷ} K Q'
+    - TS Tʃ Q
     raw: '{TŠ,TŠʷ} K Q → TS TŠ Q'
     source: index_diachronica_original.html:10149
     rule_id: Sekani-TŠ,TŠʷ-K-Q
   - comment: not in Ware Sekani; sporadic
     stages:
-    - '[+cons, -son, -cont, +cor,+anterior,+dist]'
-    - '[+cons, +dist, +fr, -bk, +hi, -lo]'
+    - T
+    - Tʃ
     env: _{i,e,u}
     raw: T → TŠ / _{i,e,u} ! in Ware Sekani
     source: index_diachronica_original.html:10150
@@ -48193,15 +48153,15 @@ sections:
     raw: Vˀ → V[+high tone]
     source: index_diachronica_original.html:10152
     rule_id: Sekani-Vˀ
+  status: skipped
 - section: Proto-Athabaskan to Proto-Southern Athabaskan
   index: 29.1.1.1.19
   citation: Pogostick Man, from Hoijer, Harry (1938), “The Southern Athapaskan Languages”.
     American Anthropologist 40:75 – 87
   rules:
   - stages:
-    - '[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]}'
+    - K
+    - TS
     raw: K → TS
     source: index_diachronica_original.html:10157
     rule_id: Proto-Southern-Athabaskan-K
@@ -48233,6 +48193,7 @@ sections:
     raw: t n x → d n h / in prefixes relating to word derivation
     source: index_diachronica_original.html:10161
     rule_id: Proto-Southern-Athabaskan-t-n-x
+  status: skipped
 - section: Proto-Southern Athabaskan to Proto-Eastern Southern Athabaskan
   index: 29.1.1.1.20
   citation: Pogostick Man, from Hoijer, Harry (1938), “The Southern Athapaskan Languages”.
@@ -48560,12 +48521,13 @@ sections:
   citation: Pogostick Man, from Hoijer, Harry (1938), “The Southern Athapaskan Languages”.
     American Anthropologist 40:75 – 87
   rules:
-  - stages:
+  - comment: / prefixes related to word derivation; sporadic
+    stages:
     - '{ɣ,h}'
     - j
-    env: prefixes related to word derivation
     raw: '{ɣ,h} → j / in prefixes related to word derivation'
     source: index_diachronica_original.html:10237
+    sporadic: true
     rule_id: Navajo-ɣ,h
   - stages:
     - xʲ(ʔ) j(ʔ)
@@ -48672,11 +48634,8 @@ sections:
     source: index_diachronica_original.html:10259
     rule_id: Bearlake-Slavey-Hare-ɑ-ə-ʊ
   - stages:
-    - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}
-      [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo] Q'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, -son,
-      -cont, -cor, +fr, -bk, +hi, -lo]'
+    - '{Tʃ,Tʃʷ} K Q'
+    - TS Tʃ K
     raw: '{TŠ,TŠʷ} K Q → TS TŠ K'
     source: index_diachronica_original.html:10260
     rule_id: Bearlake-Slavey-Hare-TŠ,TŠʷ-K-Q
@@ -48686,6 +48645,7 @@ sections:
     raw: ts tsʰ tsʼ s z → kʷ kʷʰ kʷʼ ʍ w
     source: index_diachronica_original.html:10261
     rule_id: Bearlake-Slavey-Hare-ts-tsʰ-tsʼ-s-z
+  status: skipped
 - section: Proto-Athabaskan to Hare Slavey-Hare
   index: 29.1.1.1.30
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
@@ -48698,17 +48658,15 @@ sections:
     source: index_diachronica_original.html:10266
     rule_id: Hare-Slavey-Hare-tɬʰ-tʃʷʰ-kʰ
   - stages:
-    - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}
-      [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo]'
+    - '{Tʃ,Tʃʷ} K'
+    - TS Tʃ
     comment: (with exceptions)
     raw: '{TŠ,TŠʷ} K → TS TŠ (with exceptions)'
     source: index_diachronica_original.html:10267
     rule_id: Hare-Slavey-Hare-TŠ,TŠʷ-K
   - stages:
     - Q
-    - '[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
+    - K
     raw: Q → K
     source: index_diachronica_original.html:10268
     rule_id: Hare-Slavey-Hare-Q
@@ -48731,6 +48689,7 @@ sections:
     raw: ts tsʰ tsʼ {s,z} → {kʷ,p} f wˀ w
     source: index_diachronica_original.html:10271
     rule_id: Hare-Slavey-Hare-ts-tsʰ-tsʼ-s,z
+  status: skipped
 - section: Proto-Athabaskan to Mountain Slavey-Hare
   index: 29.1.1.1.31
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
@@ -48750,11 +48709,8 @@ sections:
     source: index_diachronica_original.html:10277
     rule_id: Mountain-Slavey-Hare-ɑ-ə-ʊ
   - stages:
-    - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}
-      [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo] Q'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, -son,
-      -cont, -cor, +fr, -bk, +hi, -lo]'
+    - '{Tʃ,Tʃʷ} K Q'
+    - TS Tʃ K
     raw: '{TŠ,TŠʷ} K Q → TS TŠ K'
     source: index_diachronica_original.html:10278
     rule_id: Mountain-Slavey-Hare-TŠ,TŠʷ-K-Q
@@ -48764,6 +48720,7 @@ sections:
     raw: ts tsʰ tsʼ s z → p pʰ pʼ f v
     source: index_diachronica_original.html:10279
     rule_id: Mountain-Slavey-Hare-ts-tsʰ-tsʼ-s-z
+  status: skipped
 - section: Proto-Athabaskan to Slavey Slavey-Hare
   index: 29.1.1.1.32
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
@@ -48783,14 +48740,12 @@ sections:
     source: index_diachronica_original.html:10285
     rule_id: Slavey-Slavey-Hare-ɑ-ə-ʊ
   - stages:
-    - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}
-      [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo] Q'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, -son,
-      -cont, -cor, +fr, -bk, +hi, -lo]'
+    - '{Tʃ,Tʃʷ} K Q'
+    - TS Tʃ K
     raw: '{TŠ,TŠʷ} K Q → TS TŠ K'
     source: index_diachronica_original.html:10286
     rule_id: Slavey-Slavey-Hare-TŠ,TŠʷ-K-Q
+  status: skipped
 - section: Proto-Athabaskan to Tahltan-Kaska-Tagish
   index: 29.1.1.1.33
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
@@ -48811,7 +48766,7 @@ sections:
     rule_id: Tahltan-Kaska-Tagish-C’
   - stages:
     - Q
-    - '[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
+    - K
     raw: Q → K
     source: index_diachronica_original.html:10293
     rule_id: Tahltan-Kaska-Tagish-Q
@@ -48827,49 +48782,44 @@ sections:
     source: index_diachronica_original.html:10298
     rule_id: Kaska-Vˀ
   - stages:
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
-      +dist, +fr, -bk, +hi, -lo, +labial]}'
-    - '[+cons, -son, -cont, +cor,+anterior,+dist]H {[+cons, -son, -cont, +cor,+anterior,+dist,
-      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]}'
+    - TS {Tʃ,Tʃʷ}
+    - TH TS
     raw: TS {TŠ,TŠʷ} → TH TS
     source: index_diachronica_original.html:10299
     rule_id: Kaska-TS-TŠ,TŠʷ
   - stages:
-    - '[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
-    - '[+cons, +dist, +fr, -bk, +hi, -lo]'
+    - K
+    - Tʃ
     comment: (although /xʲ/ stays as such in a few dialects)
     raw: K → TŠ (although /xʲ/ stays as such in a few dialects)
     source: index_diachronica_original.html:10300
     rule_id: Kaska-K
+  status: skipped
 - section: Tahltan-Kaska-Tagish to Tagish
   index: 29.1.1.1.35
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - stages:
-    - '{[+cons, +dist, +fr, -bk, +hi, -lo],[+cons, +dist, +fr, -bk, +hi, -lo, +labial]}
-      {[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont, +cor,+anterior,+dist,
-      -delrel]}'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} {[+cons, -son, -cont, +cor,+anterior,+dist,
-      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]}ʲ'
+    - '{Tʃ,Tʃʷ} TS'
+    - TS TSʲ
     raw: '{TŠ,TŠʷ} TS → TS TSʲ'
     source: index_diachronica_original.html:10305
     rule_id: Tagish-TŠ,TŠʷ-TS
+  status: skipped
 - section: Tahltan-Kaska-Tagish to Tahltan
   index: 29.1.1.1.36
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - stages:
-    - '{[+cons, +dist, +fr, -bk, +hi, -lo, +labial],[+cons, -son, -cont, -cor, +fr,
-      -bk, +hi, -lo]}'
-    - '[+cons, +dist, +fr, -bk, +hi, -lo]'
+    - '{Tʃʷ,K}'
+    - Tʃ
     comment: (although /xʲ/ stays as such in a few dialects)
     raw: '{TŠʷ,K} → TŠ (although /xʲ/ stays as such in a few dialects)'
     source: index_diachronica_original.html:10310
     rule_id: Tahltan-TŠʷ,K
+  status: skipped
 - section: Proto-Athabaskan to Tanacross
   index: 29.1.1.1.37
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
@@ -48880,19 +48830,15 @@ sections:
     source: index_diachronica_original.html:10319
   rules:
   - stages:
-    - '[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
-    - '[+cons, +dist, +fr, -bk, +hi, -lo]'
+    - K
+    - Tʃ
     exception: _$
     raw: K → TŠ / ! _$
     source: index_diachronica_original.html:10315
     rule_id: Tanacross-K
   - stages:
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, +dist,
-      +fr, -bk, +hi, -lo, +labial] Q'
-    - '[+cons, -son, -cont, +cor,+anterior,+dist]H {[+cons, -son, -cont, +cor,+anterior,+dist,
-      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]} [+cons, -son,
-      -cont, +cor,+anterior,+dist]ʂ [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
+    - TS Tʃ Tʃʷ Q
+    - TH TS Tʂ K
     raw: TS TŠ TŠʷ Q → TH TS TṢ K
     source: index_diachronica_original.html:10316
     rule_id: Tanacross-TS-TŠ-TŠʷ-Q
@@ -48949,25 +48895,22 @@ sections:
     raw: ɑ ə ʊ → {æ̆,ă} æ̆ ŏ
     source: index_diachronica_original.html:10325
     rule_id: Tanacross-ɑ-ə-ʊ
+  status: skipped
 - section: Proto-Athabaskan to Lower Tanana
   index: 29.1.1.1.38
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
     Languages”. Handbook of North American Indians, Vol. 6 (Subarctic), 67 – 85
   rules:
   - stages:
-    - '[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
-    - '[+cons, +dist, +fr, -bk, +hi, -lo]'
+    - K
+    - Tʃ
     exception: _$
     raw: K → TŠ / ! _$
     source: index_diachronica_original.html:10330
     rule_id: Lower-Tanana-K
   - stages:
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, +dist,
-      +fr, -bk, +hi, -lo]ᵚ Q'
-    - '[+cons, -son, -cont, +cor,+anterior,+dist]H {[+cons, -son, -cont, +cor,+anterior,+dist,
-      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]} [+cons, -son,
-      -cont, +cor,+anterior,+dist]ʂ [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
+    - TS Tʃ Tʃᵚ Q
+    - TH TS Tʂ K
     raw: TS TŠ TŠᵚ Q → TH TS TṢ K
     source: index_diachronica_original.html:10331
     rule_id: Lower-Tanana-TS-TŠ-TŠᵚ-Q
@@ -48993,6 +48936,7 @@ sections:
     raw: e a {ɑ,ʊ} → æ ɔ ŭ
     source: index_diachronica_original.html:10334
     rule_id: Lower-Tanana-e-a-ɑ,ʊ
+  status: skipped
 - section: Proto-Athabaskan to Upper Tanana
   index: 29.1.1.1.39
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
@@ -49003,19 +48947,15 @@ sections:
     source: index_diachronica_original.html:10342
   rules:
   - stages:
-    - '[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
-    - '[+cons, +dist, +fr, -bk, +hi, -lo]'
+    - K
+    - Tʃ
     exception: _$
     raw: K → TŠ / ! _$
     source: index_diachronica_original.html:10339
     rule_id: Upper-Tanana-K
   - stages:
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} [+cons, +dist, +fr, -bk, +hi, -lo] [+cons, +dist,
-      +fr, -bk, +hi, -lo, +labial] Q'
-    - '[+cons, -son, -cont, +cor,+anterior,+dist]H {[+cons, -son, -cont, +cor,+anterior,+dist,
-      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]} [+cons, -son,
-      -cont, +cor,+anterior,+dist]ʂ [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
+    - TS Tʃ Tʃʷ Q
+    - TH TS Tʂ K
     raw: TS TŠ TŠʷ Q → TH TS TṢ K
     source: index_diachronica_original.html:10340
     rule_id: Upper-Tanana-TS-TŠ-TŠʷ-Q
@@ -49083,6 +49023,7 @@ sections:
     raw: Vˀ → V[+low tone] (→ V[-tone] in “young speakers by 1980”)
     source: index_diachronica_original.html:10350
     rule_id: Upper-Tanana-Vˀ
+  status: skipped
 - section: Proto-Athabaskan to Tsetsaut
   index: 29.1.1.1.40
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
@@ -49096,16 +49037,14 @@ sections:
     source: index_diachronica_original.html:10357
   rules:
   - stages:
-    - '[+cons, +dist, +fr, -bk, +hi, -lo]'
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]}'
+    - Tʃ
+    - TS
     raw: TŠ → TS
     source: index_diachronica_original.html:10356
     rule_id: Tsetsaut-TŠ
   - stages:
-    - '[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo] Q'
-    - '[+cons, +dist, +fr, -bk, +hi, -lo] [+cons, -son, -cont, -cor, +fr, -bk, +hi,
-      -lo]'
+    - K Q
+    - Tʃ K
     raw: K Q → TŠ K
     source: index_diachronica_original.html:10358
     rule_id: Tsetsaut-K-Q
@@ -49122,6 +49061,7 @@ sections:
     raw: ʊ → o
     source: index_diachronica_original.html:10360
     rule_id: Tsetsaut-ʊ
+  status: skipped
 - section: Proto-Athabaskan to Northern Tutchone
   index: 29.1.1.1.41
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
@@ -49134,24 +49074,21 @@ sections:
     source: index_diachronica_original.html:10371
   rules:
   - stages:
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
-      +dist, +fr, -bk, +hi, -lo, +labial]}'
-    - '[+cons, -son, -cont, +cor,+anterior,+dist]H {[+cons, -son, -cont, +cor,+anterior,+dist,
-      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]}'
+    - TS {Tʃ,Tʃʷ}
+    - TH TS
     raw: TS {TŠ,TŠʷ} → TH TS
     source: index_diachronica_original.html:10365
     rule_id: Northern-Tutchone-TS-TŠ,TŠʷ
   - stages:
-    - '[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
-    - '[+cons, +dist, +fr, -bk, +hi, -lo]'
+    - K
+    - Tʃ
     comment: (although /xʲ/ remained as such in a few dialects)
     raw: K → TŠ (although /xʲ/ remained as such in a few dialects)
     source: index_diachronica_original.html:10366
     rule_id: Northern-Tutchone-K
   - stages:
     - Q
-    - '[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
+    - K
     raw: Q → K
     source: index_diachronica_original.html:10367
     rule_id: Northern-Tutchone-Q
@@ -49167,6 +49104,7 @@ sections:
     raw: Vˀ → V[+high tone]
     source: index_diachronica_original.html:10370
     rule_id: Northern-Tutchone-Vˀ
+  status: skipped
 - section: Proto-Athabaskan to Southern Tutchone
   index: 29.1.1.1.42
   citation: Whimemsz, from Krauss, Michael and Victor Golla (1981), “Northern Athapaskan
@@ -49179,24 +49117,21 @@ sections:
     source: index_diachronica_original.html:10384
   rules:
   - stages:
-    - '{[+cons, -son, -cont, +cor,+anterior,+dist, +delrel], [+cons, -son, +cont,
-      +cor,+anterior,+dist, -delrel]} {[+cons, +dist, +fr, -bk, +hi, -lo],[+cons,
-      +dist, +fr, -bk, +hi, -lo, +labial]}'
-    - '[+cons, -son, -cont, +cor,+anterior,+dist]H {[+cons, -son, -cont, +cor,+anterior,+dist,
-      +delrel], [+cons, -son, +cont, +cor,+anterior,+dist, -delrel]}'
+    - TS {Tʃ,Tʃʷ}
+    - TH TS
     raw: TS {TŠ,TŠʷ} → TH TS
     source: index_diachronica_original.html:10377
     rule_id: Southern-Tutchone-TS-TŠ,TŠʷ
   - stages:
-    - '[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
-    - '[+cons, +dist, +fr, -bk, +hi, -lo]'
+    - K
+    - Tʃ
     comment: (although /xʲ/ remained as such in a few dialects)
     raw: K → TŠ (although /xʲ/ remained as such in a few dialects)
     source: index_diachronica_original.html:10378
     rule_id: Southern-Tutchone-K
   - stages:
     - Q
-    - '[+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo]'
+    - K
     raw: Q → K
     source: index_diachronica_original.html:10379
     rule_id: Southern-Tutchone-Q
@@ -49225,6 +49160,7 @@ sections:
     raw: A → F (some slight POA changes; alveolars become dentals, for instance)
     source: index_diachronica_original.html:10386
     rule_id: Southern-Tutchone-A
+  status: skipped
 - section: Proto-Athabaskan-Eyak to Eyak
   index: 29.1.2
   citation: Pogostick Man, from Wikipedia contributors (2015), “Na-Dene languages”.

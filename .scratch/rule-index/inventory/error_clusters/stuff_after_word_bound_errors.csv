@@ -11,5 +11,4 @@ section_index,rule_id,error_token,rule
 17.12.1.1.6,Old-Provençal-—-a_2,,"a > a / _# in monosyllables and oxytones | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ @ Rule 1, Line 1"
 17.12.1.1.6,Old-Provençal-n_3,,"n > ∅ / r_(s)#? | ^ @ Rule 1, Line 1"
 17.12.1.1.8,"Romanian-m,n,s",,"{m,n,s} > ∅ / _# in polysyllables | ^^^^^^^^^^^^^^^^^ @ Rule 1, Line 1"
-29.1.1.1.7,Deg-Hit’an-R-F,,"[+son,-syll] F > [+son,-syll, -voice] F:[-voice] / _# in suffixes | ^^^^^^^^^^^^ @ Rule 1, Line 1"
 42.1,Pre-Finnic-ŋ_2,,"ŋ > n / _# else | ^^^^^ @ Rule 1, Line 1"
