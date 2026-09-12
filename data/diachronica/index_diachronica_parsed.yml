@@ -18394,12 +18394,14 @@ sections:
     raw: ə → a / a_
     source: index_diachronica_original.html:4649
     rule_id: Greenlandic-Iñupiaq-ə_2
-  - stages:
+  - comment: except when CV_V in U₁U₂; sporadic
+    stages:
     - Cː
     - C
-    exception: when CV_V in U₁U₂
+    exception: CV_V
     raw: Cː → C / except when CV_V in U₁U₂
     source: index_diachronica_original.html:4650
+    sporadic: true
     rule_id: Greenlandic-Iñupiaq-Cː
   - stages:
     - t
@@ -18426,11 +18428,10 @@ sections:
     source: index_diachronica_original.html:4653
     rule_id: Greenlandic-Iñupiaq-dʒ
   - stages:
-    - m n ŋ t {{ɣ,ʁ}
-    - '{k,q}}'
+    - m n ŋ t {ɣ,ʁ}
     - p t k n ŋ
     env: _#
-    raw: m n ŋ t {{ɣ,ʁ} → {k,q}} → p t k n ŋ / _#
+    raw: m n ŋ t {ɣ,ʁ} → p t k n ŋ / _#
     source: index_diachronica_original.html:4654
     rule_id: Greenlandic-Iñupiaq-m-n-ŋ-t-ɣ,ʁ«
   - stages:
@@ -18475,12 +18476,10 @@ sections:
     raw: S₁S₂ → F₁F₂
     source: index_diachronica_original.html:4660
     rule_id: Greenlandic-Iñupiaq-S1S2
-  - comment: the given example cited within the text is lʁ → ʁl
-    stages:
-    - Some metathesis in consonant clusters, the conditions of which are not elaborated
-      upon
-    raw: Some metathesis in consonant clusters, the conditions of which are not elaborated
-      upon; the given example cited within the text is lʁ → ʁl
+  - stages:
+    - lʁ
+    - ʁl
+    raw: lʁ → ʁl
     source: index_diachronica_original.html:4661
     rule_id: Greenlandic-Iñupiaq-lʁ
   - stages:

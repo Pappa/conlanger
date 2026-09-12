@@ -315,3 +315,12 @@ rules:
                   id: Proto-Tungusic-U-long-+low-pitch-U+long-low-pitch
                   content: "U[-long] U[+long] → U[+long] U[-long]"
                   reason: "Disputed: U[-long +low pitch] U[+long -low pitch] → U[+long] U[-long]"
+        - rule:
+                  id: Greenlandic-Iñupiaq-lʁ
+                  content: "lʁ → ʁl"
+                  reason: "Some metathesis in consonant clusters, the conditions of which are not elaborated upon; the given example cited within the text is lʁ → ʁl"
+        - rule:
+                  id: Greenlandic-Iñupiaq-m-n-ŋ-t-ɣ,ʁ«
+                  content: "m n ŋ t {ɣ,ʁ} → p t k n ŋ / _#"
+                  reason: |
+                          Corrected from original source: https://www.jstor.org/stable/1263119

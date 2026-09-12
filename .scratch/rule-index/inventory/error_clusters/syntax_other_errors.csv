@@ -1,7 +1,6 @@
 section_index,rule_id,error_token,rule
 6.2.2.1.14,"Moroccan-Arabic-C+labial,+velar",,"C:[+labial/-fr,+bk,+hi,-lo] > ʷ / u[-long]_, _u[-long] | ^ @ Rule 1, Line 1"
 7.15,"Ojibwe-j,wV-long",,"{j,w}V:[-long] > ∅ / C_# in disyllables with V:[+long] or in tri(-plus-)syllables | ^^ @ Rule 1, Line 1"
-15.2.2,Greenlandic-Iñupiaq-lʁ,,"Pome metathesis in consonant clusters, the conditions of which are not elaborated upon > | ^ @ Rule 1, Line 1"
 17.2.3,Lycian-e_2,",","e > a / _%[+u,a] | ^ @ Rule 1, Line 1"
 17.2.3,Lycian-a,",","a > e / _%[+e,i] | ^ @ Rule 1, Line 1"
 17.2.5,Palaic-hhy,,"hhy > | ^ @ Rule 1, Line 1"

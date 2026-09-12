@@ -112,7 +112,6 @@ section_index,rule_id,error_token,rule
 36.1.1,Old-Mandarin-V5_2,,"V5 > V4 / syllables with a nasal or liquid | ^ @ Rule 1, Line 1"
 36.1.1,Old-Mandarin-V5_3,,"V5 > V3 // syllables with a nasal or liquid | ^ @ Rule 1, Line 1"
 36.2,Guānhuà-yʔ,,"yʔ > yɛʔ / {l,C[+cor,+anterior,+dist +strident]}_ infinals, dialectally? | ^ @ Rule 1, Line 1"
-36.2,Guānhuà-yʔ_2,,"yʔ > oʔ / {l,C[+cor,+anterior,+dist +strident]}_, in | ^ @ Rule 1, Line 1"
 36.3.2.1,bTshan-La-w,,"w > ʔ / something to do with either back vowels or prefixes | ^ @ Rule 1, Line 1"
 37.1,Proto-Iroquoian-p_2,,"p > kʷ / else | ^ @ Rule 1, Line 1"
 37.2.6.1,Kansa-ũ,,"ũ > aN / [+stress] | ^ @ Rule 1, Line 1"

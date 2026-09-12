@@ -120,6 +120,9 @@
 - from: " / “in some positions”"
   to: " / sporadic ; “in some positions”"
   reason: replace prose
+- from: " / except when CV_V in U"
+  to: " / sporadic ! CV_V ; except when CV_V in U"
+  reason: replace prose
 - from: " / in prefixes related to"
   to: " sporadic ; / in prefixes related to"
   reason: replace prose

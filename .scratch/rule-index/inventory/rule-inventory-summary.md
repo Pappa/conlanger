@@ -6,15 +6,15 @@
 - Rows: **9834** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8779** (89.3%)
-- Fail: **554** (5.6%)
+- OK: **8782** (89.3%)
+- Fail: **551** (5.6%)
 - Skipped: **501** (5.1%)
 
 
 ## Corrections
 
-OK: **69/71**
-Skipped: **2/71**
+OK: **71/73**
+Skipped: **2/73**
 
 ### Skipped corrections
 
@@ -23,8 +23,8 @@ Skipped: **2/71**
 
 ## Sections
 
-- All OK: **450 / 714** (63.0%)
-- Some OK: **209 / 714** (29.3%)
+- All OK: **451 / 714** (63.2%)
+- Some OK: **208 / 714** (29.1%)
 - None OK: **2 / 714** (0.3%)
 - Sections skipped: **53 / 714** (7.4%)
 
@@ -32,12 +32,12 @@ Skipped: **2/71**
 
 | count | failure_class |
 |------:|---------------|
-| 143 | `expected_underscore` |
+| 142 | `expected_underscore` |
 | 109 | `unknown_character` |
-| 48 | `expected_ipa` |
+| 49 | `expected_ipa` |
 | 47 | `invalid_ipa` |
-| 42 | `missing_slash_output_env` |
-| 27 | `syntax_other` |
+| 40 | `missing_slash_output_env` |
+| 26 | `syntax_other` |
 | 23 | `prose_or_expected_arrow` |
 | 16 | `nested_brackets` |
 | 14 | `unknown_grouping` |
@@ -73,7 +73,7 @@ Skipped: **2/71**
 
 | count | description |
 |------:|-------------|
-| 10 | `Output cannot be empty. Use `*` or '∅' to indicate deletion` |
+| 9 | `Output cannot be empty. Use `*` or '∅' to indicate deletion` |
 | 2 | `Negation cannot be used in the output` |
 | 1 | `/ cannot be placed inside a matrix. An element inside `[]` must a distinctive feature` |
 | 1 | `Feature 'lost' has no modifier` |
@@ -102,9 +102,9 @@ Skipped: **2/71**
 | 12 | `₂` |
 | 8 | `̊` |
 | 7 | `ː` |
-| 6 | `͜` |
 | 6 | `ŕ` |
 | 6 | `̺` |
+| 6 | `͜` |
 | 5 | `ₙ` |
 | 4 | `̻` |
 | 4 | `̂` |
@@ -153,7 +153,7 @@ Skipped: **2/71**
 
 | count | description |
 |------:|-------------|
-| 102 | `Expected '_', but received ''` |
+| 101 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -233,11 +233,11 @@ Skipped: **2/71**
 
 | count | error_token |
 |------:|-------------|
-| 8 | `(` |
-| 6 | `{` |
+| 9 | `(` |
 | 6 | `:` |
-| 5 | `∅` |
+| 6 | `∅` |
 | 5 | `>` |
+| 5 | `{` |
 | 3 | `*` |
 | 3 | `ʷ` |
 | 3 | `…` |
@@ -264,9 +264,9 @@ Skipped: **2/71**
 
 | count | error_token |
 |------:|-------------|
-| 17 | `)` |
+| 16 | `)` |
 | 11 | `:` |
-| 5 | `(` |
+| 4 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
 | 1 | `&` |
