@@ -324,3 +324,24 @@ rules:
                   content: "m n ŋ t {ɣ,ʁ} → p t k n ŋ / _#"
                   reason: |
                           Corrected from original source: https://www.jstor.org/stable/1263119
+        - rule:
+                  id: Egyptian-Arabic-i-u
+                  content: "i[-long] u[-long] → e o / ! _#"
+                  reason: |
+                          i u → e o / only when short, ! _#
+        - rule:
+                  id: Egyptian-Arabic-u
+                  content: "u[-long] → {o,u} / _#"
+                  reason: |
+                          u → {o,u} / short only, _#
+        - rule:
+                  id: Egyptian-Arabic-i,u
+                  content: "{i[-stress, -long],u[-stress, -long]} → ∅ / VC_CV"
+                  reason: |
+                          {i,u} → ∅ / VC_CV when unstressed (short only)
+        - rule:
+                  id: Egyptian-Arabic-V_2
+                  content: "V → Vː / _#"
+                  reason: |
+                          Not sure how to represent the suffix:
+                            V → Vː / _# + suffix

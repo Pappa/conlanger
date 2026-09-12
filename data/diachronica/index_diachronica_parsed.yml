@@ -2342,18 +2342,17 @@ sections:
     source: index_diachronica_original.html:1381
     rule_id: Egyptian-Arabic-dʒ
   - stages:
-    - i u
+    - i[-long] u[-long]
     - e o
-    env: '[-long]'
     exception: _#
-    raw: i u → e o / only when short, ! _#
+    raw: i[-long] u[-long] → e o / ! _#
     source: index_diachronica_original.html:1382
     rule_id: Egyptian-Arabic-i-u
   - stages:
-    - u
+    - u[-long]
     - '{o,u}'
-    env: short only, _#
-    raw: u → {o,u} / short only, _#
+    env: _#
+    raw: u[-long] → {o,u} / _#
     source: index_diachronica_original.html:1383
     rule_id: Egyptian-Arabic-u
   - stages:
@@ -2381,15 +2380,15 @@ sections:
   - stages:
     - V
     - Vː
-    env: _# + suffix
-    raw: V → Vː / _# + suffix
+    env: _#
+    raw: V → Vː / _#
     source: index_diachronica_original.html:1387
     rule_id: Egyptian-Arabic-V_2
   - stages:
-    - '{i,u}[-stress, -long]'
+    - '{i[-stress, -long],u[-stress, -long]}'
     - ∅
     env: VC_CV
-    raw: '{i,u}[-stress, -long] → ∅ / VC_CV'
+    raw: '{i[-stress, -long],u[-stress, -long]} → ∅ / VC_CV'
     source: index_diachronica_original.html:1388
     rule_id: Egyptian-Arabic-i,u
   - stages:
@@ -2408,27 +2407,25 @@ sections:
     raw: a(ː) → ɑ(ː) / near emphatics
     source: index_diachronica_original.html:1393
     rule_id: Egyptian-Arabic-aː
-  - stages:
-    - a(ː)
-    - ɑ(ː)
-    env: if ɑ(ː) is elsewhere in the word
+  - stages: []
     raw: a(ː) → ɑ(ː) / if ɑ(ː) is elsewhere in the word
     source: index_diachronica_original.html:1394
+    status: skipped
     rule_id: Egyptian-Arabic-aː_2
-  - stages:
-    - a(ː)
-    - æ(ː)
-    env: else (sometimes it seems more like ɛ(ː) to me)
+    comment: Requises a solution for proximity prose
+  - stages: []
     raw: a(ː) → æ(ː) / else (sometimes it seems more like ɛ(ː) to me)
     source: index_diachronica_original.html:1395
-    sporadic: true
+    status: skipped
     rule_id: Egyptian-Arabic-aː_3
-  - stages:
+    comment: Requises a solution for proximity prose
+  - comment: except in several words, two of which are al-Qâhira and musîqâ; sporadic
+    stages:
     - q
     - ʔ
-    exception: in several words, two of which are al-Qɑhira and musiqɑ
     raw: q → ʔ / except in several words, two of which are al-Qâhira and musîqâ
     source: index_diachronica_original.html:1396
+    sporadic: true
     rule_id: Egyptian-Arabic-q
   - stages:
     - '{s(ˤ),z(ˤ),ʒ}ʃ'

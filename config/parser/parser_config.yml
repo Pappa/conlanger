@@ -192,3 +192,7 @@ skip_rules:
     reason: "Onset glottal diacritic not supported"
   - id: Tuscarora-ˀt_6
     reason: "Onset glottal diacritic not supported"
+  - id: Egyptian-Arabic-aː_2
+    reason: "Requises a solution for proximity prose"
+  - id: Egyptian-Arabic-aː_3
+    reason: "Requises a solution for proximity prose"
