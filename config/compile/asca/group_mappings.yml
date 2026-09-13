@@ -32,6 +32,9 @@ K:
 # M:
 #   mapping: G
 #   comment: Index diphthong ≈ ASCA G glides
+N̩:
+  mapping: N:[+syl]
+  comment: Index nasal consonant
 P:
   mapping: C:[+labial]
   comment: Index labial/bilabial; not ASCA P (plosive)
