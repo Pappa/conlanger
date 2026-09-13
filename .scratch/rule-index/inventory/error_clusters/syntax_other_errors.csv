@@ -20,6 +20,6 @@ section_index,rule_id,error_token,rule
 17.12.1.1.10,"Spanish-s̪,s_4",],"{s̪,s} > θ [θ] | ^ @ Rule 1, Line 1"
 17.13,"Proto-Tocharian-p-ts,kʷ-m-n-l-r-y",:,"p {ts,k,kʷ} m n l r y > pj sʲ ʂ mj ɲ lj rj wj / _{V:[+front],V::[+front],y} | ^ @ Rule 1, Line 1"
 30.2,"Proto-Potou-Akanic-V+nasʋ̃,l̃",l,"V:[+nas](ʋ̃,l̃) > V:[-nas](m,n) / #{L,G}[+voice]_ | ^ @ Rule 1, Line 1"
-36.2,Guānhuà-i,,"i > [long-tail vowel thing] / C̣_ | ^^^^ @ Rule 1, Line 1"
+36.2,Guānhuà-i,,"i > [long-tail vowel thing] / C:[+cons, +cor, -ant, -dist]_ | ^^^^ @ Rule 1, Line 1"
 36.2,Guānhuà-iʔ,,"ieʔ > i:[truncated vowel-thing]ʔ?) | ^^^^^^^^^ @ Rule 1, Line 2"
 36.2,Guānhuà-juŋ_2,í,"juŋ > iuŋ / _ɡ:[+píng tone] | ^ @ Rule 1, Line 1"

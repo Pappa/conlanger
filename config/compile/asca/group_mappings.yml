@@ -61,3 +61,6 @@ Z:
   comment:
     Index continuant; includes vowels — use {F L G} or O:[+cont] in clusters
     if too broad
+C̣:
+  mapping: C:[+cons, +cor, -ant, -dist]
+  comment: Index retroflex consonant
