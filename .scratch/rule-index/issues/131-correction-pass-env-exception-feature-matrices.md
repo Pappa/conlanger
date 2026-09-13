@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by:
 
 # Correction pass: env/exception feature matrices
@@ -68,13 +68,13 @@ Parsed index rules store env/exception feature constraints in applier-neutral In
 
 ## Acceptance criteria
 
-- [ ] Cross-field + per-field compile steps wired at documented pipeline order
-- [ ] Families A, B, C with ticket 119 worked examples passing `validate_asca`
-- [ ] Index YAML / **raw** unchanged (compile-only projection)
-- [ ] Reuse or extend `host_bracket_matrices.py` for Family C (no duplicated regex drift)
-- [ ] Inventory re-run with before/after metrics in **Answer**; list residual env/exception matrix failures
-- [ ] Docs: compile table row in [sound-change-applier.md](../../../docs/system/sound-change-applier.md)
-- [ ] No imports from `legacy/`
+- [x] Cross-field + per-field compile steps wired at documented pipeline order
+- [x] Families A, B, C with ticket 119 worked examples passing `validate_asca`
+- [x] Index YAML / **raw** unchanged (compile-only projection)
+- [x] Reuse or extend `host_bracket_matrices.py` for Family C (no duplicated regex drift)
+- [x] Inventory re-run with before/after metrics in **Answer**; list residual env/exception matrix failures
+- [x] Docs: compile table row in [sound-change-applier.md](../../../docs/system/sound-change-applier.md)
+- [x] No imports from `legacy/`
 
 ## References
 
@@ -85,6 +85,15 @@ Parsed index rules store env/exception feature constraints in applier-neutral In
 - `src/conlanger/tools/compile/asca/pipeline.py`
 - `.scratch/rule-index/inventory/error_clusters/expected_underscore_errors.csv`
 
+## Answer
+
+**Shipped 2026-09-13.** `resolve_bare_env_exception_feature_matrices` (Families A/B) in `env_exception_feature_matrices.py`; Family C reuses `normalize_asca_host_bracket_matrices` on env/exception after post-subscript. Pipeline order documented in `sound-change-applier.md` (step 7¾ cross-field, step 10½ env/exception colon).
+
+- **Inventory:** OK **8787 → 8822 (+35)**; fail **544 → 509 (−35)**; sections all-OK **451 → 460 (+9)**. `expected_underscore` **136 → 100 (−36)**.
+- **Worked examples:** Palauan-V, Old-Irish-s, Egypto-Berber-h,ħ,q, Egyptian-Arabic-aː now validate; Old-Irish-V_3 exception rewrite OK (residual `nested_brackets` on env template `#UU(_)U(U(_)U)` — pre-existing, out of scope).
+- **Residual env/exception matrix failures:** bare-matrix cluster largely cleared; remaining `expected_underscore` rows are prose env tails (`pretonic`, `else`, `near ħ ʕ`, …) and alpha/co-ref env shapes — separate buckets per ticket 119 Q7.
+
 ## Comments
 
 - 2026-09-13: Ticket filed from `/grill-with-docs` session on ticket 119 (round 2 closed; compile pass is follow-on implementation).
+- 2026-09-13: Implemented compile pass; inventory re-run above.

@@ -41,9 +41,7 @@ _GLOTTAL = "\u02c0"
 _PHONOLOGICAL_MODIFIER_RE = re.compile(
     r"^[\u0250-\u02AFa-zA-Z0-9:+ʼʷʲʰˀː\u02b0-\u02b8\u02bc\u02c0\u02d1\u02e4\u0300-\u036f\u02b7w]+$"
 )
-_EMBEDDED_MODIFIER_RE = re.compile(
-    rf"({IPA_SEGMENT})(:\[[^\]]+\])?\(([^)]+)\)"
-)
+_EMBEDDED_MODIFIER_RE = re.compile(rf"({IPA_SEGMENT})(:\[[^\]]+\])?\(([^)]+)\)")
 
 
 def _add_round_feature(features: str) -> str:

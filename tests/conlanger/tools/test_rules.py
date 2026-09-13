@@ -48,7 +48,7 @@ def test_sound_change_ruleset_applies_group_mappings_for_asca(
     }
     rendered = str(DiachronicSeries(section, compiler_config=fx_sample_compiler_config))
     assert "[+cont]" in rendered
-    assert "\tf > p / #_V{[+cont],C[-voice],r}" in rendered
+    assert "\tf > p / #_V{[+cont],C:[-voice],r}" in rendered
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")

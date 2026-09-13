@@ -12,6 +12,9 @@ from conlanger.tools.compile.asca.ejectives import normalize_asca_ejective_marks
 from conlanger.tools.compile.asca.ellipsis import (
     normalize_asca_optional_grouping_ellipsis,
 )
+from conlanger.tools.compile.asca.env_exception_feature_matrices import (
+    resolve_bare_env_exception_feature_matrices,
+)
 from conlanger.tools.compile.asca.group_mappings import (
     apply_asca_group_mappings_to_string,
 )
@@ -162,6 +165,16 @@ def compile_asca_rule_field_strings(
     )
     compiled_input = compile_asca_field_post_subscript(compiled_input)
     compiled_output = compile_asca_field_post_subscript(compiled_output)
+    compiled_input, compiled_output, compiled_env, compiled_exception = (
+        resolve_bare_env_exception_feature_matrices(
+            compiled_input,
+            compiled_output,
+            compiled_env,
+            compiled_exception,
+            env_raw=env,
+            exception_raw=exception,
+        )
+    )
     compiled_input = normalize_asca_host_bracket_matrices(compiled_input)
     compiled_output = normalize_asca_host_bracket_matrices(compiled_output)
     if pending_identity is not None:
@@ -173,10 +186,12 @@ def compile_asca_rule_field_strings(
     compiled_output = normalize_asca_adjacent_feature_matrices(compiled_output)
     if compiled_env is not None:
         compiled_env = compile_asca_field_post_subscript(compiled_env)
+        compiled_env = normalize_asca_host_bracket_matrices(compiled_env)
         if is_whole_field_set(compiled_env):
             compiled_env = convert_set_to_environment_set(compiled_env)
     if compiled_exception is not None:
         compiled_exception = compile_asca_field_post_subscript(compiled_exception)
+        compiled_exception = normalize_asca_host_bracket_matrices(compiled_exception)
         if is_whole_field_set(compiled_exception):
             compiled_exception = convert_set_to_environment_set(compiled_exception)
     compiled_env, compiled_exception = apply_syllable_position_compiled_overrides(
