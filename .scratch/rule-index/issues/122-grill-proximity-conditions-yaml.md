@@ -2,71 +2,280 @@ Type: grilling
 Status: needs-grilling
 Blocked by: None
 
-# Grill: proximity relations in structured rule conditions
+# Grill: position relations in the rule index YAML
 
 Spawned from agent session 2026-09-07. Background: [structured-rule-conditioning-exploration.md](../research/structured-rule-conditioning-exploration.md) (Parts 2–4.1, 5–7, 9–10 proximity items).
 
-Run `/grill-with-docs` or grilling + domain-modeling. **No code in this grill.**
+Grill started 2026-09-13 (`/grill-with-docs`). **Paused 2026-09-13** — resume to close out compile config, Phase 0 acceptance, and open questions below.
 
 ## Question
 
-How should Index **proximity** prose (`adjacent to`, `near`, `next to`, …) be represented in the **applier-neutral** rule index YAML, and how should **compile-time resolution** (user-supplied config) project those claims to ASCA env/exception — without collapsing distinct Index relations (especially **near** ≠ **adjacent**)?
+How should Index **position** prose (neighbour relations like `adjacent to` / `near`, and placement relations like `medial` / `penult`, …) be represented in the **applier-neutral** rule index YAML, and how should **compile-time resolution** project those claims to ASCA env/exception — without collapsing distinct Index relations (especially **near** ≠ **adjacent**)?
 
-Decide schema for optional `conditions` atoms, resolver config shape, interaction with existing prose-env passes ([107](107-correction-pass-prose-env-positions.md), [108](108-correction-pass-double-slash-env.md)), and migration off `manual_mappings.yml` proximity rows — **before** Phase 0 extraction or compile resolver implementation.
+Originally scoped as `conditions[]` proximity atoms; grill converged on a separate **`position`** field with a nested map schema (see **Decisions**).
 
 ## Facts (do not re-litigate without new evidence)
 
 - Today `manual_mappings.yml` rewrites e.g. ` / near consonants` → ` / C_, _C` (treating near as immediate neighbor) and ` / adjacent to short u` → ` / u[-long]_, _u[-long]` — ASCA shapes baked in at parse ([exploration doc](../research/structured-rule-conditioning-exploration.md) Part 2).
 - [prose_position_env.py](../../../src/conlanger/tools/ingest/prose_position_env.py) already normalizes some **adjacent** / **next to** phrases (`_,{set}`, `_,u` for `typically near *u`) but not the full manual-mapping set.
-- [double_slash_env.py](../../../src/conlanger/tools/ingest/double_slash_env.py) handles `adjacent to another consonant` → `C_,_C` on exception tails (ticket 108).
-- Ticket [119](119-grill-distinctive-features-env-exception.md) locks segment-at-focus feature policy for env/exception matrices; proximity targets may reference `class`, `feature`, or `segment` hosts.
-- ADR-0002 / ADR-0010: YAML stays Index-shaped claims; ASCA projection is compile; do not lose Index wording in SoT.
-- Proposed Phase 0: add `conditions` to corpus rules **without** changing `env` or compile ([exploration doc](../research/structured-rule-conditioning-exploration.md) Part 6).
+- [double_slash_env.py](../../../src/conlanger/tools/ingest/double_slash_env.py) handles `adjacent to another consonant` → `C_,_C` on exception tails (ticket 108); bare `penult` → `%_` (likely **wrong** — `%` is syllable boundary, not penultimate position).
+- Ticket [119](119-grill-distinctive-features-env-exception.md) + [131](131-correction-pass-env-exception-feature-matrices.md) lock segment-at-focus feature policy; bare matrices compile to input colon; neighbour host matrices bracket→colon in env/exception at compile.
+- Ticket [55](55-correction-pass-prose-env-medial.md) currently writes ASCA-specific `: {#_, _#}:` into `exception` at parse — **must change** (see Q1 decision).
+- ADR-0002 / ADR-0010: YAML stays Index-shaped claims; ASCA projection is compile; `raw` preserves Index wording.
+- Parser env vs exception asymmetry: `apply_medial_env_conditions` and `apply_prose_position_env_conditions` only rewrite `env` (medial pass **defers entirely** when `exception` already present — loses medial semantics e.g. `b → h / medially, ! {r(ʲ),l(ʲ)}_ or _ɡ`). `apply_double_slash_env_conditions` normalizes prose on both fields.
 
-## Grill questions
+---
 
-### Schema and SoT
+## Decisions (settled — do not re-open without new evidence)
 
-1. **Q1 — `conditions` atom shape:** Is the proposed `conditions[]` entry (`scope`, `relation: proximity`, `proximity: adjacent|near|…`, `target`, `source_text`) the right v1 atom, or should proximity be flatter/different?
-2. **Q2 — Relation vocabulary:** Which Index surface forms map to which stored `proximity` values? (`adjacent to`, `next to`, `near`, `typically near`, `unless adjacent to`, …) Are `adjacent` and `next to` synonyms in SoT?
-3. **Q3 — Target typing:** When the object is `consonants`, `emphatics`, `nasals`, `gutturals`, `short u`, `{S}`, … — use `target.kind: class|feature|segment|set`, a `lexical_targets` config indirection, or raw `prose` until mapped?
-4. **Q4 — Exception scope:** For `! near emphatics` / `unless adjacent to another consonant` — `conditions` with `scope: exception`, negated atom, or separate `polarity: block` field?
+### Concept and naming
 
-### Compile resolution
+- Unified concept: **position** (covers both neighbour proximity and syllable/word placement). Avoid separate `proximity` glossary term in schema.
+- **near** and **adjacent** remain **distinct** stored relations; compile may default `near` → same projection as `adjacent`.
+- Standardize Index surface: **`next to` → `adjacent`** at parse.
+- Drop `!` in applier-neutral form — blocking is implied by `exception` field / `position.exception` scope.
 
-5. **Q5 — Resolver catalog:** What named strategies must v1 support? (e.g. `immediate_neighbor`, `same_syllable`, `next_syllable`, `same_word`, `within_segments` + distance, …) Which are required vs deferred?
-6. **Q6 — Default for `near`:** What is the config default when the user does not specify? (Acknowledge current `C_, _C` is a legacy stand-in, not linguistically faithful.)
-7. **Q7 — ASCA emission:** Does each strategy always emit env/exception underscore patterns (`C_, _C`), or sometimes input-side colon / structure notation (cf. ticket 119)?
-8. **Q8 — Multiple proximity atoms:** Can one rule have several `conditions` (e.g. near consonants **and** not near emphatics)? Compose how — conjunction in one env, multiple env slots, or compile fan-out?
+### SoT schema — `position` field (v1)
+
+Separate optional YAML field on corpus rules. **Not** embedded in `env`/`exception` strings. **Not** `conditions[]`.
+
+```yaml
+position:
+  env: <relation>        # optional
+  exception: <relation>  # optional
+```
+
+- At most **one relation per scope** in v1 (`env` and `exception` each optional).
+- **Targets live in `env` / `exception`**, not on `position`. `position` is the relation modifier only.
+- When Index line is position-only (e.g. `t → r / medially`), **omit `env`** — compile derives structural env from `position`.
+
+**Relation enum (v1):**
+
+| Stored value | Index surface forms (normalize to stored) |
+|---|---|
+| `medial` | `medial`, `medially`, `when medial` |
+| `pretonic` | `pretonic` |
+| `posttonic` | `posttonic` |
+| `penult` | `penult`, `in the penult`, `penultimate syllables` |
+| `monosyllables` | `monosyllables`, `in monosyllables` |
+| `polysyllables` | `polysyllables`, `in polysyllables` |
+| `near` | `near`, `typically near` (see qualifiers) |
+| `adjacent` | `adjacent to`, `next to`, `unless adjacent to` (scope via field) |
+
+**Three kinds of `env` content:**
+
+| Kind | Example | `position`? |
+|---|---|---|
+| Pure structural | `_k`, `V_C`, `U#` | No |
+| Target only | `C`, `{S,s,l̥}`, `[+emphatic]` | Yes — `position.env: near` or `adjacent` |
+| Qualifier only | `[-stress]` | Yes — `position.env: penult` |
+
+Compile **derives** neighbour templates (`_,{S}`, `C_, _C`, `_[+rtr], [+rtr]_`) from `(relation, env-target)` — applier-neutral env never stores `_,` wrappers or bilateral patterns for position-modified rules.
+
+### Worked examples
+
+```yaml
+# Bare medial — t → r / medially
+stages: [t, r]
+position:
+  env: medial
+
+# Neighbour + set — C[+voice] → C[-voice] / next to {S,s,l̥}
+stages: [C[+voice], C[-voice]]
+env: {S,s,l̥}
+position:
+  env: adjacent
+
+# Near class — near consonants
+env: C
+position:
+  env: near
+# compile default → C_, _C
+
+# Near feature — near emphatics
+env: [+emphatic]
+position:
+  env: near
+# compile → _[+rtr], [+rtr]_ (feature rename at compile — see follow-on ticket)
+
+# Unstressed penult — V → ∅ / in the unstressed penult
+stages: [V, ∅]
+env: [-stress]
+position:
+  env: penult
+
+# Structural + exception position — k → ∅ / V_C ! penult
+stages: [k, ∅]
+env: V_C
+position:
+  exception: penult
+
+# Blocking neighbour — b → w / ! adjacent to another consonant
+stages: [b, w]
+exception: C
+position:
+  exception: adjacent
+
+# Structural + medial — m → β / C[-voice]_n, when medial
+stages: [m, β]
+env: C[-voice]_n
+position:
+  env: medial
+
+# Medial + opaque exception (or deferred) — b → h / medially, ! {r(ʲ),l(ʲ)}_ or _ɡ
+stages: [b, h]
+position:
+  env: medial
+exception: '{r(ʲ),l(ʲ)}_ or _ɡ'
+```
+
+### Parser vs compiler split
+
+| Layer | Handles |
+|---|---|
+| **Parser** | Extract position labels; standardize `next to` → `adjacent`; split prose into `env`/`exception` targets + `position` relations; qualifiers → `comment`; `typically` → `sporadic` + `comment` |
+| **Parser relations** | `near`, `adjacent`, `medial`, `pretonic`, `posttonic`, `penult`, `monosyllables`, `polysyllables` |
+| **Compiler (configurable)** | `near`, `adjacent` only — via `config/compile/context_resolution.yml` (proposed); default `near` strategy = same as `adjacent` (`immediate_neighbor`) |
+| **Compiler (fixed v1)** | `medial` → `_` env + `: {#_, _#}:` exception; `penult`, `monosyllables`, `polysyllables`, `pretonic`, `posttonic` → hardcoded table (TBD at implementation) |
+
+### Target resolution
+
+- **`lexical_targets.yml`** (proposed) for prose keys (`consonants`, `emphatics`, `nasals`, `gutturals`, …).
+- **Manual mappings run before** lexical_targets resolution at parse.
+- Store prose keys at parse when mapped via config; store resolved Index tokens (`C`, `[+emphatic]`, `{S,s,l̥}`) when extractor parses directly.
+
+### Ticket 55 / medial (change from current implementation)
+
+- Parser output for medial: `position.env: medial` (or `position.exception` if ever attested), **not** `exception: :{#_, _#}:` in YAML.
+- Compile projects medial to ASCA boundary env-set.
+
+### Passes to retire (after Phase 1)
+
+- [107](107-correction-pass-prose-env-positions.md) and [108](108-correction-pass-double-slash-env.md): stop ASCA rewrites for shapes that become `position` + target split.
+- [55](55-correction-pass-prose-env-medial.md): stop writing `: {#_, _#}:` at parse.
+- **Keep** structural Index rewrites that are not position labels (`U#`, `V_V`, `_ %[-stress]`, `#_#` for final syllables / between vowels / unstressed syllables / monosyllables structural encoding — **or** re-evaluate whether some become `position` labels at resume).
+
+### Qualifiers
+
+- Trailing `, in monosyllables|polysyllables|nouns` on structural env → strip to `comment`.
+- `typically` on neighbour rules → `sporadic: true` + `comment`.
+
+### Phasing (agreed direction)
+
+1. **Phase 0** — Parser extracts `position` from `raw` in parallel; does **not** change `env`/`exception`/compile; parity report vs current output.
+2. **Phase 1** — Compile reads `position`; retire parse-time ASCA rewrites for extracted shapes.
+3. **Phase 2** — Remove `manual_mappings.yml` proximity rows; re-parse corpus.
+
+---
+
+## Deferred (explicitly out of v1)
+
+- **Syllable distance:** `adjacent syllable`, `next syllable` (6 Biblical Hebrew + Anglo-Frisian skipped rules) — defer completely.
+- **`or` in exceptions:** ~15 rules with `exception: … or …` (e.g. `{r(ʲ),l(ʲ)}_ or _ɡ`) — separate ticket.
+- **`feature_mappings.yml` parse vs compile split:** e.g. `[+emphatic]` → `[+rtr]` at compile not parse — separate ticket (noted during `near emphatics` discussion).
+- **Applicability / dialect** (ticket [123](123-grill-applicability-dialect-sporadic-conditions-yaml.md)) — unchanged.
+
+---
+
+## Corpus inventory (2026-09-13 grill)
+
+### manual_mappings.yml proximity rows to retire (Phase 2)
+
+- `adjacent to short u`, `unless adjacent to another consonant`, `adjacent to {`, `! adjacent to {`, `adjacent to a vowel`
+- `near emphatics`, `near consonants`, `near nasals`, `when not near emphatics`, `near gutturals`
+
+### Rules still carrying position prose in `env` (priority extract candidates)
+
+1. `near ħ ʕ` — Moroccan-Arabic-ə
+2. Six `… in an adjacent syllable` — Biblical Hebrew (deferred)
+3. `_{m,ŋ} when posttonic … or when pretonic` — Hittite-e
+4. `_n in U[+lo +posttonic]` — Hittite-e_2
+5. `the unstressed penult` — French-V → `env: [-stress]`, `position.env: penult`
+6. `when pretonic and immediately adjacent to a back vowel` — Old-Provençal-β_6
+
+### Known bad rewrite
+
+- `penult` → `%_` in ticket 108 — `%` is Index syllable boundary (→ ASCA `$`), not penultimate position. Replace with `position.exception: penult` (Muskogean-k: `env: V_C`, `position.exception: penult`).
+
+---
+
+## Open questions (resume grill here)
+
+### Schema (mostly settled — confirm on resume)
+
+- [x] Nested `position: {env?, exception?}` map — **proposed locked; confirm on resume**
+- [x] Targets in `env`/`exception`; compile derives neighbour templates — **proposed locked**
+- [ ] Final list: which current pass-107 structural encodings (`U#`, `#_#`, `V_V`, `_ %[-stress]`) stay as structural `env` vs become `position` labels
+
+### Compile (not grilled to completion)
+
+- [ ] **Q5** — Full resolver strategy catalog beyond `immediate_neighbor` (defer all except default?)
+- [ ] **Q7** — ASCA emission edge cases (symmetric vs `_,{set}`) — document in compile table
+- [ ] **Q14** — Hold-out policy when compile cannot express Index intent
+- [ ] `penult` / `pretonic` / `posttonic` / `monosyllables` fixed compile table contents
 
 ### Parse and migration
 
-9. **Q9 — Extraction source:** Extract from `raw`, post-mapping `env`, `comment`, or all three? How to recover prose destroyed by current manual mappings during Phase 0?
-10. **Q10 — Parse order:** Confirm or reject Phase **C¾** (structured capture after split, before D transforms). Should extracted patterns suppress later string rewrites?
-11. **Q11 — Overlap with 107/108:** Which proximity patterns stay in dedicated extractors vs remain in `apply_prose_position_env_conditions` / `apply_double_slash_env_conditions`?
-12. **Q12 — Phase 0 acceptance:** What parity report threshold justifies removing a `manual_mappings.yml` proximity row?
+- [ ] **Q9** — Extraction source: `raw` first (required to recover manual_mapping-destroyed prose); confirm Phase 0 extract order relative to manual mappings
+- [ ] **Q10** — Parse order: extract `position` after split, **before** passes 55/107/108; extracted shapes suppress later ASCA rewrites
+- [ ] **Q12** — Phase 0 parity threshold for removing each manual_mapping row
+- [ ] **Q13** — Validation: position resolution affects `validate_asca` once Phase 1 lands
 
-### Validation and fidelity
+### Original grill questions — disposition
 
-13. **Q13 — Inventory:** Does proximity resolution affect `validate_asca` / per-field blame, or only render-time env strings?
-14. **Q14 — Historical fidelity:** When no resolver can express Index intent faithfully, hold out (`status: skipped`), leave opaque `env`, or emit best-effort with `comment`?
+| # | Topic | Status |
+|---|---|---|
+| Q1 | Atom shape | **Superseded** — `position` nested map, not `conditions[]` |
+| Q2 | Vocabulary | **Settled** — see relation enum table |
+| Q3 | Target typing | **Settled** — targets in env/exception; lexical_targets + manual mappings |
+| Q4 | Exception scope | **Settled** — `position.exception` + structural `exception` field |
+| Q5 | Resolver catalog | **Open** — v1 likely `immediate_neighbor` only |
+| Q6 | Default for `near` | **Settled** — same as `adjacent` |
+| Q7 | ASCA emission | **Partial** — derive templates; details open |
+| Q8 | Multiple atoms | **Settled** — one relation per scope in v1 |
+| Q9–Q12 | Parse/migration | **Open** |
+| Q13–Q14 | Validation/fidelity | **Open** |
 
-## Outcomes (fill on resolve)
+---
 
-- [ ] `conditions` proximity atom schema locked
-- [ ] `proximity` enum + Index phrase mapping table
-- [ ] Compile resolver config shape + v1 strategy set
+## Outcomes (partial — grill paused)
+
+- [x] Schema direction locked — `position` nested map (`env` / `exception` keys)
+- [x] Relation enum + Index phrase mapping table (v1)
+- [x] Parser vs compiler split (which relations where)
+- [x] `near` default = `adjacent` at compile
+- [x] Target resolution order (manual mappings → lexical_targets)
+- [x] Ticket 55 medial policy change (parse label, compile ASCA)
+- [x] Deferrals documented (syllable distance, `or`, feature_mappings split)
+- [ ] Compile resolver config shape finalized (`context_resolution.yml`)
 - [ ] Extraction source and parse-order decision
-- [ ] Migration plan off manual-mapping proximity rows
-- [ ] Follow-on tickets filed (Phase 0 extract, config stub, compile resolver, …)
+- [ ] Phase 0 acceptance criteria
+- [ ] Migration plan with per-row manual_mapping retirement checklist
+- [ ] CONTEXT.md glossary update (`position` field, retire position prose in Environment entry)
+- [ ] Follow-on tickets filed
+
+### Proposed follow-on tickets (file on close-out)
+
+1. **Phase 0** — Extract `position` from `raw`; parity report; no compile change
+2. **Phase 1 compile** — Read `position`; medial + neighbour projections; retire passes 55/107/108 rewrites
+3. **`lexical_targets.yml`** — seed rows + parser hook
+4. **`context_resolution.yml`** — `near` / `adjacent` strategies
+5. **`or` in exceptions** — disjunction parsing (~15 rules)
+6. **feature_mappings parse/compile split** — standardize vs ASCA projection
+
+---
 
 ## Related
 
 - [Grill: distinctive features in env and exception](119-grill-distinctive-features-env-exception.md)
+- [Correction pass: env/exception feature matrices](131-correction-pass-env-exception-feature-matrices.md)
+- [Correction pass: prose env medial](55-correction-pass-prose-env-medial.md)
 - [Correction pass: prose env positions](107-correction-pass-prose-env-positions.md)
 - [Correction pass: double-slash env](108-correction-pass-double-slash-env.md)
-- `config/parser/manual_mappings.yml` — proximity / near rows (~lines 48–74, 253+)
+- [Grill: applicability, dialect, sporadic](123-grill-applicability-dialect-sporadic-conditions-yaml.md)
+- `config/parser/manual_mappings.yml` — proximity / near rows (~lines 48–74, 265+)
 
 ## Comments
 
 - 2026-09-07: Ticket filed from structured-conditioning exploration session. See [research/structured-rule-conditioning-exploration.md](../research/structured-rule-conditioning-exploration.md).
+- 2026-09-13: Grill session (`/grill-with-docs`). Converged on `position` field (nested map), unified neighbour + placement concept, targets in env/exception. Paused before compile config finalization, Phase 0 acceptance, and CONTEXT.md update. Resume from **Open questions**.
