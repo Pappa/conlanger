@@ -12,6 +12,8 @@ from lxml import html
 ARROW = "→"
 ENV_SEP = " / "
 GLUED_ENV_SEP = "/ "
+SPACED_SLASH_ENV_SEP = " /"
+_ENV_START_CHARS = "#_!{"
 
 SUBSCRIPT_MAP = str.maketrans(
     {
@@ -152,13 +154,19 @@ def split_input_output(raw: str) -> tuple[str, str] | None:
     return left.strip(), right.strip()
 
 
+def _rest_looks_like_env(rest: str) -> bool:
+    return bool(rest and not rest[0].isspace() and rest[0] in _ENV_START_CHARS)
+
+
 def split_output_rest(post_arrow: str) -> tuple[str, str | None]:
     """Split post-arrow text on the first env delimiter into output and rest.
 
     Usual Index form is ``\" / \"``. A slash glued to the output (``∅/ _#``)
     is the same delimiter without the preceding space, but only when the
-    remainder looks like an environment (starts with ``_``, ``#``, or ``!``)
-    so phonemic slashes like ``/š/`` are not treated as delimiters.
+    remainder looks like an environment (starts with ``_``, ``#``, ``{``, or
+    ``!``) so phonemic slashes like ``/š/`` are not treated as delimiters.
+    Symmetrically, a spaced slash before a glued env (``∅ /{a,E}_``) splits
+    when the character after ``/`` is env-start.
     """
     text = post_arrow.strip()
     if ENV_SEP in text:
@@ -168,8 +176,18 @@ def split_output_rest(post_arrow: str) -> tuple[str, str | None]:
     if GLUED_ENV_SEP in text:
         out, rest = text.split(GLUED_ENV_SEP, 1)
         out, rest = out.strip(), rest.strip()
-        if out and rest[:1] in "#_!":
+        if out and _rest_looks_like_env(rest):
             return out, rest
+    slash_idx = 0
+    while True:
+        slash_idx = text.find(SPACED_SLASH_ENV_SEP, slash_idx)
+        if slash_idx == -1:
+            break
+        rest = text[slash_idx + len(SPACED_SLASH_ENV_SEP) :]
+        if _rest_looks_like_env(rest):
+            out = text[:slash_idx].strip()
+            return out, rest.strip() or None
+        slash_idx += len(SPACED_SLASH_ENV_SEP)
     return text, None
 
 

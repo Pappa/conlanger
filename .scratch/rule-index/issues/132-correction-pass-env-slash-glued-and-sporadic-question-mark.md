@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by:
 
 # Correction pass: env slash glued after delimiter + sporadic trailing `?`
@@ -85,12 +85,30 @@ Watch for regressions on rules that currently pass with `_Vr ?` in env (`Orkney-
 
 ## Acceptance criteria
 
-- [ ] `Orkney-Norn-ð_2` parses to `stages: [ð, ∅]`, `env: "{a,E}_"` (or equivalent after feature mapping)
-- [ ] `Orkney-Norn-l_3` parses to `env: "_#"`, `sporadic: true`, no `?` in env
-- [ ] Trailing `?` / ` ?` stripped from all 22 sporadic env/exception fields; captured in `comment` where applicable
-- [ ] No change to mid-field `?` (alternation braces, `Cʲ_?w`, etc.)
-- [ ] Full inventory re-run; before/after metrics in **Answer**
-- [ ] Parser doc updated
+- [x] `Orkney-Norn-ð_2` parses to `stages: [ð, ∅]`, `env: "{a,E}_"` (or equivalent after feature mapping)
+- [x] `Orkney-Norn-l_3` parses to `env: "_#"`, `sporadic: true`, no `?` in env
+- [x] Trailing `?` / ` ?` stripped from all 22 sporadic env/exception fields; captured in `comment` where applicable
+- [x] No change to mid-field `?` (alternation braces, `Cʲ_?w`, etc.) or lone `?` segment values (`j → ?`, `? → ∅`)
+- [x] Full inventory re-run; before/after metrics in **Answer**
+- [x] Parser doc updated
+
+## Answer
+
+**Shipped 2026-09-13.**
+
+### Inventory
+
+| | Before | After | Δ |
+|---|---:|---:|---:|
+| OK | 8865 (90.1%) | 8877 (90.2%) | **+12** |
+| Fail | 459 (4.7%) | 451 (4.6%) | **−8** |
+
+Notable ok-flips: `Orkney-Norn-ð_2`, `Orkney-Norn-l_3`, Albanian `_B?` rules (×4), `Old-Provençal-n_3`, `Coptic-r`. Lone `?` segment values (`j → ?`, `? → ∅`) preserved via `text != "?"` guard.
+
+### Changes
+
+- `split_output_rest`: third peel on ` /` when env is glued after slash (`∅ /{a,E}_`).
+- `extract_uncertainty_qualifier_from_field`: strip trailing ` ?` / `?` (not lone `?`); deduped `double_slash_env` tail strip.
 
 ## Out of scope
 

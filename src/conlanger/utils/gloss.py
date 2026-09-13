@@ -325,4 +325,11 @@ def extract_uncertainty_qualifier_from_field(text: str) -> tuple[str, list[str]]
         if match:
             captures.append(match.group(0).strip())
             text = _TRAILING_BARE_UNCERTAINTY_RE.sub("", text).strip()
+    if field_has_uncertainty_qualifier(text) and text.endswith("?") and text != "?":
+        if text.endswith(" ?"):
+            captures.append(" ?")
+            text = text[:-2].rstrip()
+        elif len(text) > 1:
+            captures.append("?")
+            text = text[:-1].rstrip()
     return text.strip(), captures

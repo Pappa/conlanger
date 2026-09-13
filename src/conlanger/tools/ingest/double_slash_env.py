@@ -206,8 +206,6 @@ def apply_double_slash_env_conditions(parts: dict[str, Any]) -> dict[str, Any]:
         if uncertainty_captures:
             comment_fragments.extend(uncertainty_captures)
             flags["sporadic"] = True
-        if flags.get("sporadic") and value.endswith("?"):
-            value = value[:-1].rstrip()
         normalized, tail_captures, tail_flags = normalize_prose_exception_or_env_tail(
             value
         )

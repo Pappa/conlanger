@@ -182,6 +182,8 @@ def test_split_input_output(raw, expected):
         ("c& _", ("c& _", None)),
         ("ej (əw)", ("ej (əw)", None)),
         ("({C,#}Vː)∅", ("({C,#}Vː)∅", None)),
+        ("∅ /{a,E}_", ("∅", "{a,E}_")),
+        ("p /#_C[+sibilant]", ("p", "#_C[+sibilant]")),
     ],
 )
 def test_split_output_rest(post_arrow, expected):
@@ -433,6 +435,36 @@ def test_parse_rule_element_marks_occasionally_sporadic_and_strips_gloss():
     assert rules[0]["sporadic"] is True
     assert "(occasionally?)" in rules[0]["comment"]
     assert rules[0]["raw"] == "l → ∅ (occasionally?)"
+
+
+def test_parse_rule_element_splits_env_glued_after_spaced_slash():
+    el = html.fragment_fromstring(
+        '<p class="schg">ð → ∅ /{a,E}_</p>', create_parent=False
+    )
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["stages"] == ["ð", "∅"]
+    assert rules[0]["env"] == "{a,E}_"
+
+
+def test_parse_rule_element_strips_trailing_question_mark_from_env():
+    el = html.fragment_fromstring(
+        '<p class="schg">l → ∅ / _# ?</p>', create_parent=False
+    )
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["stages"] == ["l", "∅"]
+    assert rules[0]["env"] == "_#"
+    assert rules[0]["sporadic"] is True
+    assert "?" in rules[0]["comment"]
+
+
+def test_parse_rule_element_strips_trailing_question_mark_from_albanian_env():
+    el = html.fragment_fromstring(
+        '<p class="schg">kʷ → c / _B?</p>', create_parent=False
+    )
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["env"] == "_B"
+    assert rules[0]["sporadic"] is True
+    assert "?" in rules[0]["comment"]
 
 
 def test_apply_trailing_glosses():
@@ -856,7 +888,7 @@ def test_normalize_prose_env_head(text, expected_env, expected_captures):
                 "stages": ["tʃ", "s"],
                 "env": "_",
                 "exception": "_#",
-                "comment": "maybe",
+                "comment": "maybe; ?",
                 "sporadic": True,
             },
         ),

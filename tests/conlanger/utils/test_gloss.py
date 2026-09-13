@@ -303,6 +303,12 @@ def test_field_has_uncertainty_qualifier(text, expected):
             ['"in Hieroglyphic Luwian, occasionally"'],
         ),
         ("sometimes in the environment", "sometimes in the environment", []),
+        ("_# ?", "_#", [" ?"]),
+        ("_B?", "_B", ["?"]),
+        ("_V:[+front]:[+stress]?", "_V:[+front]:[+stress]", ["?"]),
+        ("Cʲ_?w", "Cʲ_?w", []),
+        ("_j(w){?,ia,a(ta)}", "_j(w){?,ia,a(ta)}", []),
+        ("?", "?", []),
     ],
 )
 def test_extract_uncertainty_qualifier_from_field(
@@ -328,6 +334,11 @@ def test_extract_uncertainty_qualifier_from_field(
         ("_i, occasionally", "_i"),
         ("_C (occasionally blocked)", "_C"),
         ("a", "a"),
+        ("_# ?", "_#"),
+        ("_B?", "_B"),
+        ("_V:[+front]:[+stress]?", "_V:[+front]:[+stress]"),
+        ("Cʲ_?w", "Cʲ_?w"),
+        ("?", "?"),
     ],
 )
 def test_extract_uncertainty_qualifier_from_field_strips(text, expected):

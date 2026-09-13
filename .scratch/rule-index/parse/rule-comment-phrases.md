@@ -1,7 +1,7 @@
 # Rule comment phrase summary
 
-- Corpus rules with **`comment`**: **1292**
-- Comments containing ``; `` (semicolon tails): **201**
+- Corpus rules with **`comment`**: **1323**
+- Comments containing ``; `` (semicolon tails): **204**
 
 ## Qualifier phrases
 
@@ -25,10 +25,8 @@
 - “when another sibilant is in the word nearby” and (word-finally?) when “noun-stem final”; sporadic
 - “in nominals”
 - (sporadic)
+- ?
+- ?
 - “anaphora and certain derivational prefixes. . .[t]his is common to many other Semitic languages as well”
 - “in certain contexts, notably in the nunation”
 - some sequences; sporadic
-- I can't find the rule in the source, which also uses /y/ where the index uses /j/.
-The source explicitly refers to /y/ as a palatal glide.
-
-- (short only)
