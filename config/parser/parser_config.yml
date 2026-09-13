@@ -202,14 +202,28 @@ skip_rules:
   - id: Artsakh-Armenian-V
     reason: "Unknown output: V → (?) / _(C)#"
   - id: Erevan-Armenian-V
-    reason: "Unknown output: W → (?) / _(C)#"
+    reason: "Unknown output: V → (?) / _(C)#"
   - id: Istanbul-Armenian-V
-    reason: "Unknown output: W → (?) / _(C)#"
+    reason: "Unknown output: V → (?) / _(C)#"
   - id: Kharpert-Armenian-V
-    reason: "Unknown output: W → (?) / _(C)#"
+    reason: "Unknown output: V → (?) / _(C)#"
   - id: Sebastia-Armenian-V
-    reason: "Unknown output: W → (?) / _(C)#"
+    reason: "Unknown output: V → (?) / _(C)#"
   - id: Southeast-Armenian-V
-    reason: "Unknown output: W → (?) / _(C)#"
+    reason: "Unknown output: V → (?) / _(C)#"
   - id: Southwest-Armenian-V
-    reason: "Unknown output: W → (?) / _(C)#"
+    reason: "Unknown output: V → (?) / _(C)#"
+  - id: Artsakh-Armenian-j_2
+    reason: "Unknown output: j → ?"
+  - id: Erevan-Armenian-j_2
+    reason: "Unknown output: j → ?"
+  - id: Istanbul-Armenian-j_2
+    reason: "Unknown output: j → ?"
+  - id: Kharpert-Armenian-j_2
+    reason: "Unknown output: j → ?"
+  - id: Sebastia-Armenian-j_2
+    reason: "Unknown output: j → ?"
+  - id: Southeast-Armenian-j_2
+    reason: "Unknown output: j → ?"
+  - id: Southwest-Armenian-j_2
+    reason: "Unknown output: j → ?"

@@ -21499,13 +21499,12 @@ sections:
     raw: j → w / _o
     source: index_diachronica_original.html:5199
     rule_id: Artsakh-Armenian-j
-  - stages:
-    - j
-    - '?'
+  - stages: []
     raw: j → ?
     source: index_diachronica_original.html:5200
-    sporadic: true
+    status: skipped
     rule_id: Artsakh-Armenian-j_2
+    comment: 'Unknown output: j → ?'
   - comment: (?)
     stages:
     - '{sk,ks} kj'
@@ -21730,13 +21729,12 @@ sections:
     raw: j → w / _o
     source: index_diachronica_original.html:5236
     rule_id: Erevan-Armenian-j
-  - stages:
-    - j
-    - '?'
+  - stages: []
     raw: j → ?
     source: index_diachronica_original.html:5237
-    sporadic: true
+    status: skipped
     rule_id: Erevan-Armenian-j_2
+    comment: 'Unknown output: j → ?'
   - comment: (?)
     stages:
     - '{sk,ks} kj'
@@ -21820,7 +21818,7 @@ sections:
     source: index_diachronica_original.html:5249
     status: skipped
     rule_id: Erevan-Armenian-V
-    comment: 'Unknown output: W → (?) / _(C)#'
+    comment: 'Unknown output: V → (?) / _(C)#'
 - section: Proto-Indo-European to Istanbul Armenian
   index: 17.3.3
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -21960,13 +21958,12 @@ sections:
     raw: j → w / _o
     source: index_diachronica_original.html:5273
     rule_id: Istanbul-Armenian-j
-  - stages:
-    - j
-    - '?'
+  - stages: []
     raw: j → ?
     source: index_diachronica_original.html:5274
-    sporadic: true
+    status: skipped
     rule_id: Istanbul-Armenian-j_2
+    comment: 'Unknown output: j → ?'
   - comment: (?)
     stages:
     - '{sk,ks} kj'
@@ -22050,7 +22047,7 @@ sections:
     source: index_diachronica_original.html:5286
     status: skipped
     rule_id: Istanbul-Armenian-V
-    comment: 'Unknown output: W → (?) / _(C)#'
+    comment: 'Unknown output: V → (?) / _(C)#'
 - section: Proto-Indo-European to Kharpert Armenian
   index: 17.3.4
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -22191,13 +22188,12 @@ sections:
     raw: j → w / _o
     source: index_diachronica_original.html:5310
     rule_id: Kharpert-Armenian-j
-  - stages:
-    - j
-    - '?'
+  - stages: []
     raw: j → ?
     source: index_diachronica_original.html:5311
-    sporadic: true
+    status: skipped
     rule_id: Kharpert-Armenian-j_2
+    comment: 'Unknown output: j → ?'
   - comment: (?)
     stages:
     - '{sk,ks} kj'
@@ -22281,7 +22277,7 @@ sections:
     source: index_diachronica_original.html:5323
     status: skipped
     rule_id: Kharpert-Armenian-V
-    comment: 'Unknown output: W → (?) / _(C)#'
+    comment: 'Unknown output: V → (?) / _(C)#'
 - section: Proto-Indo-European to Sebastia Armenian
   index: 17.3.5
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -22416,13 +22412,12 @@ sections:
     raw: j → w / _o
     source: index_diachronica_original.html:5346
     rule_id: Sebastia-Armenian-j
-  - stages:
-    - j
-    - '?'
+  - stages: []
     raw: j → ?
     source: index_diachronica_original.html:5347
-    sporadic: true
+    status: skipped
     rule_id: Sebastia-Armenian-j_2
+    comment: 'Unknown output: j → ?'
   - comment: (?)
     stages:
     - '{sk,ks} kj'
@@ -22506,7 +22501,7 @@ sections:
     source: index_diachronica_original.html:5359
     status: skipped
     rule_id: Sebastia-Armenian-V
-    comment: 'Unknown output: W → (?) / _(C)#'
+    comment: 'Unknown output: V → (?) / _(C)#'
 - section: Proto-Indo-European to Southeast Armenian
   index: 17.3.6
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -22661,13 +22656,12 @@ sections:
     raw: j → w / _o
     source: index_diachronica_original.html:5385
     rule_id: Southeast-Armenian-j
-  - stages:
-    - j
-    - '?'
+  - stages: []
     raw: j → ?
     source: index_diachronica_original.html:5386
-    sporadic: true
+    status: skipped
     rule_id: Southeast-Armenian-j_2
+    comment: 'Unknown output: j → ?'
   - comment: (?)
     stages:
     - '{sk,ks} kj'
@@ -22751,7 +22745,7 @@ sections:
     source: index_diachronica_original.html:5398
     status: skipped
     rule_id: Southeast-Armenian-V
-    comment: 'Unknown output: W → (?) / _(C)#'
+    comment: 'Unknown output: V → (?) / _(C)#'
 - section: Proto-Indo-European to Southwest Armenian
   index: 17.3.7
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -22899,13 +22893,12 @@ sections:
     raw: j → w / _o
     source: index_diachronica_original.html:5423
     rule_id: Southwest-Armenian-j
-  - stages:
-    - j
-    - '?'
+  - stages: []
     raw: j → ?
     source: index_diachronica_original.html:5424
-    sporadic: true
+    status: skipped
     rule_id: Southwest-Armenian-j_2
+    comment: 'Unknown output: j → ?'
   - comment: (?)
     stages:
     - '{sk,ks} kj'
@@ -22989,7 +22982,7 @@ sections:
     source: index_diachronica_original.html:5436
     status: skipped
     rule_id: Southwest-Armenian-V
-    comment: 'Unknown output: W → (?) / _(C)#'
+    comment: 'Unknown output: V → (?) / _(C)#'
 - section: Avestan
   index: '17.4'
 - section: Proto-Indo-European to Avestan
