@@ -1,5 +1,5 @@
 Type: grilling
-Status: needs-grilling
+Status: resolved
 Blocked by: None
 
 # Grill: distinctive features in env and exception blocks
@@ -36,7 +36,7 @@ Bare **`/ unstressed`** and **`/ stressed`** (no “syllable(s)”, no `%`) are 
 
 A standalone matrix in `env` with no `_` and no neighbour template (e.g. Palauan `V → ə / unstressed` → `env: '[-stress]'`) means the **input segment at the change site** must carry that feature.
 
-**Compile target:** move the matrix to the **input** compile field with colon form (e.g. `V:[-stress] > ə`). Same policy as postfix-on-host env matrices that qualify the focus segment — bracket→colon on the relevant host at compile, not env-side `_:[+feature]`.
+**Compile target:** move the matrix to the **input** compile field with colon form (e.g. `V:[-stress] > ə`). Distinct from neighbour-host postfix in env (Q5), which stays in env with bracket→colon on that host.
 
 ### Q4 — Exception-only bare matrix meaning → **inverse polarity on input** (owner)
 
@@ -56,13 +56,52 @@ A standalone matrix in `exception` blocks when the **changed segment at `_`** ca
 
 Glossary updated: `CONTEXT.md` — **Environment**, **Exception**, **Feature matrix**.
 
-## Deferred (not grilled — follow-on session or tickets)
+### Q5 — Class-letter postfix in `env` / `exception` → **A** (grill 2026-09-13)
 
-1. **Matrices on class letters in env** — `C[+voice]_`, `V[-long]`, corrections overlay `VC_:[-stress, -long]CV`: neighbour vs focus vs template; likely postfix→colon on host at compile when matrix qualifies that neighbour.
-2. **Identity / grouping exceptions** — `! V = a`, `C = r`, `V:[+back] = ɒ`, Mohawk `// [+son,-syll] = j`: input narrowing vs env vs manual row (`expected_number` cluster).
-3. **Alpha / bundled features** — `_ %[-str]%#`, `_[+ emphatic]` from manual mappings: same segment-at-focus policy or neighbour templates?
-4. **Historical fidelity** — env/exception compile rewrites are meaning-preserving projections ([ADR-0010](../../../docs/adr/0010-historical-fidelity-class-first-status.md)); confirm no case where input-side move changes the phonological claim.
-5. **Validation split** — which env/exception shapes are valid SoT but fail ASCA until compile vs invalid SoT schema.
+When a matrix is postfix on a **class letter or segment host inside a structural env/exception** (e.g. `C[+voice]_`, `V[-long]_#`, `V[-long]C_`, `! V[-long]C_#`), the matrix qualifies **that neighbour host**, not the changed segment at `_`.
+
+**SoT:** keep Index postfix on the host (`C[+voice]_`).
+
+**Compile target:** bracket→colon on that host **in the same field** (`C[+voice]_` → `C:[+voice]_` in compiled env/exception). Do **not** move to input (unlike Q3 bare matrices).
+
+### Q6 — Bundled / neighbour-template envs → **A** (grill 2026-09-13)
+
+Multi-token env strings (`_ [+rtr], [+rtr]_`, `%`-boundary templates) are **neighbour segment predicates** on the tokens they attach to — not segment-at-focus bare matrices.
+
+**SoT:** keep Index-shaped strings unchanged (e.g. `_ [+rtr], [+rtr]_` stays `_ [+rtr], [+rtr]_` in YAML; no colon-on-`_`).
+
+**Compile target:** bracket→colon per host token where a matrix qualifies that host; positional templates that ASCA already accepts may pass through unchanged (e.g. Egyptian-Arabic-aː validates today as `_ [+rtr], [+rtr]_`).
+
+Retired `_:[+feature]` manual-mapping targets remain **invalid SoT** — separate cleanup, not a policy fork.
+
+### Q7 — Validation split → **confirmed** (grill 2026-09-13)
+
+Three pipeline stages: **Index raw** → **parsed YAML (SoT)** → **compiled ASCA**. Two validity checks: SoT schema (parse) vs applier acceptance (compile validation).
+
+| Bucket | SoT | Compile pass | Examples |
+|--------|-----|--------------|----------|
+| **Invalid SoT** | Reject at parse | — | `_:[+feature]`, ASCA colon syntax in index fields |
+| **Valid SoT; compile pass required** | Accept in YAML | Expected fail or wrong semantics until env/exception matrix pass | bare `env: '[-stress]'` → input colon; bare `exception: '[-stress]'` → inverse on input; `C[+voice]_` → `C:[+voice]_` in env for fidelity |
+| **Valid SoT; no matrix pass needed** | Accept | OK today or structural only | `VC_CV`, `_#`; neighbour templates like `_ [+rtr], [+rtr]_` when ASCA accepts as-is |
+| **Out of scope (ticket 119)** | Accept | Separate compile bucket | alpha/co-ref (`_C[α PLACE]`); identity `! Host = seg` → [128](128-correction-pass-index-identity-exceptions.md) **resolved** |
+
+**No parse-time rewrite** into ASCA shapes — only compile changes stage 3; stage 2 stays Index-shaped per Q1 ([ADR-0010](../../../docs/adr/0010-historical-fidelity-class-first-status.md): `raw` / YAML unchanged).
+
+#### Worked three-state examples (Q7)
+
+| Rule | Index raw | Parsed YAML | Compiled ASCA (target) |
+|------|-----------|-------------|------------------------|
+| Palauan-V | `V → ə / unstressed` | `env: '[-stress]'` | `V:[-stress] > ə / _` |
+| Old-Irish-s | `s → z / C[+voice]_` | `env: 'C[+voice]_'` | `s > z / C:[+voice]_` |
+| Old-Irish-V_3 | `… / unstressed` | `exception: '[-stress]'` | `V:[+stress] > ∅ / …` (inverse on input) |
+| Egyptian-Arabic-aː | `… / near emphatics` | `env: '_[+rtr], [+rtr]_'` | unchanged or minor host colons only |
+| (retired) | — | ~~`env: '_:[-long]#'~~ | **invalid SoT** — never store |
+
+## Follow-on (implementation — not grilled here)
+
+1. **Compile correction pass** — [131](131-correction-pass-env-exception-feature-matrices.md) (bare → input colon; bare exception → inverse input; host postfix → env/exception colon).
+2. **Manual-mapping / corrections cleanup** — retire `_:[+feature]` targets; replace with applier-neutral encodings before next parse regen (parse config; no ticket yet).
+3. **Alpha / co-reference env matrices** (`_C[α PLACE]`) — separate cluster; out of scope for ticket 119.
 
 ## Related tickets / artifacts
 
@@ -82,7 +121,8 @@ Glossary updated: `CONTEXT.md` — **Environment**, **Exception**, **Feature mat
 ## Comments
 
 - 2026-09-05: Ticket filed from map session (ASCA env colon semantics, Spanish-V_5, owner manual-mapping edits). Grill not yet run.
-- 2026-09-07: Grill session (one round). Owner confirmed Q1–Q3 (A); Q4 = inverse polarity on input at compile. Session ended early; core policy recorded above; edge cases 1–5 in **Deferred**. `CONTEXT.md` updated.
+- 2026-09-07: Grill session (round 1). Owner confirmed Q1–Q3 (A); Q4 = inverse polarity on input at compile. Core policy recorded; edge cases deferred to round 2. `CONTEXT.md` updated.
+- 2026-09-13: Grill session (round 2). Owner confirmed Q5–Q7 (A / A / validation split). Identity bucket closed by [128](128-correction-pass-index-identity-exceptions.md). Grill complete; follow-on compile pass + manual-mapping cleanup remain. `CONTEXT.md` updated.
 
 ## Grill session summary (2026-09-07)
 
@@ -97,4 +137,14 @@ Glossary updated: `CONTEXT.md` — **Environment**, **Exception**, **Feature mat
 
 **Owner Q4 rationale:** blocking “when stressed” is equivalent to requiring “unstressed” on the input segment — cleaner than invalid ASCA exception syntax and consistent with Q3’s input-side idiom.
 
-**Not reached:** class-letter env matrices, identity exceptions, alpha/bundled features, validation split, full historical-fidelity audit.
+**Not reached in round 1:** class-letter env matrices, identity exceptions, alpha/bundled features, validation split — all closed in round 2 (2026-09-13).
+
+## Grill session summary (2026-09-13)
+
+**Round 2** closed the deferred frontier: neighbour vs focus for class-letter postfix, neighbour-template envs, and the SoT vs compile-validation split.
+
+| Q | Topic | Owner answer | Compile consequence |
+|---|-------|--------------|---------------------|
+| Q5 | Class-letter postfix in env | **A** — neighbour qualification | Bracket→colon on host **in env/exception** (`C[+voice]_` → `C:[+voice]_`) |
+| Q6 | Neighbour templates (`_ [+rtr], …`) | **A** — per-host neighbour predicates | SoT unchanged; compile colons per host where needed |
+| Q7 | Validation split | **Yes** — A/B/C/D buckets | Invalid: `_:[+feature]`; valid SoT compile failures expected until pass; no parse-time ASCA rewrite |
