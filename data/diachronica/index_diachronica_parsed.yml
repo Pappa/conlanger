@@ -17899,19 +17899,20 @@ sections:
     source: index_diachronica_original.html:4547
     sporadic: true
     rule_id: Colloquial-Tamil-ɭ,ɽ
-  - stages:
-    - l ɭ
-    - lːʉ ɭːʉ
-    env: _#(C)V[-long]
+  - stages: []
     raw: l ɭ → lːʉ ɭːʉ / _#(C)V[-long]
     source: index_diachronica_original.html:4548
+    status: skipped
     rule_id: Colloquial-Tamil-l-ɭ
-  - stages:
+    comment: 'Stuff after word boundary: l ɭ → lːʉ ɭːʉ / _#(C)V[-long]'
+  - comment: if {M,Vː} previously in the lexeme; sporadic
+    stages:
     - ∅
     - ʉ
-    env: '{l,ɭ}_# if {M,Vː} previously in the lexeme'
+    env: '{l,ɭ}_#'
     raw: ∅ → ʉ / {l,ɭ}_# if {M,Vː} previously in the lexeme
     source: index_diachronica_original.html:4549
+    sporadic: true
     rule_id: Colloquial-Tamil-∅_2
   - stages:
     - r
@@ -17948,13 +17949,12 @@ sections:
     raw: ɨ ʉ → ∅ / ! _#
     source: index_diachronica_original.html:4554
     rule_id: Colloquial-Tamil-ɨ-ʉ
-  - stages:
-    - ∅
-    - '{ɨ,ʉ}'
-    env: to break up clusters
+  - stages: []
     raw: ∅ → {ɨ,ʉ} / to break up clusters
     source: index_diachronica_original.html:4555
+    status: skipped
     rule_id: Colloquial-Tamil-∅_3
+    comment: 'No idea: ∅ → {ɨ,ʉ} / to break up clusters'
   - stages:
     - n
     - ŋ

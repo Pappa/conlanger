@@ -227,3 +227,7 @@ skip_rules:
     reason: "Unknown output: j → ?"
   - id: Southwest-Armenian-j_2
     reason: "Unknown output: j → ?"
+  - id: Colloquial-Tamil-l-ɭ
+    reason: "Stuff after word boundary: l ɭ → lːʉ ɭːʉ / _#(C)V[-long]"
+  - id: Colloquial-Tamil-∅_3
+    reason: "No idea: ∅ → {ɨ,ʉ} / to break up clusters"

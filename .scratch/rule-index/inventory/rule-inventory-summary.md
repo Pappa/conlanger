@@ -3,12 +3,12 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.3**
-- Rows: **9838** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
+- Rows: **9837** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8870** (90.2%)
-- Fail: **451** (4.6%)
-- Skipped: **517** (5.3%)
+- OK: **8871** (90.2%)
+- Fail: **447** (4.5%)
+- Skipped: **519** (5.3%)
 
 
 ## Corrections
@@ -33,17 +33,17 @@ Skipped: **2/89**
 | count | failure_class |
 |------:|---------------|
 | 98 | `expected_underscore` |
-| 82 | `unknown_character` |
+| 83 | `unknown_character` |
 | 47 | `invalid_ipa` |
-| 45 | `missing_slash_output_env` |
 | 44 | `expected_ipa` |
+| 44 | `missing_slash_output_env` |
 | 16 | `nested_brackets` |
 | 15 | `syntax_other` |
-| 15 | `prose_or_expected_arrow` |
+| 13 | `prose_or_expected_arrow` |
 | 11 | `unknown_feature` |
 | 10 | `expected_number` |
-| 10 | `stuff_after_word_bound` |
-| 10 | `unknown_grouping` |
+| 9 | `stuff_after_word_bound` |
+| 9 | `unknown_grouping` |
 | 9 | `diacritic_prereq` |
 | 8 | `multiple_underlines_env` |
 | 8 | `segments_before_word` |
@@ -103,9 +103,9 @@ Skipped: **2/89**
 | 6 | `ŕ` |
 | 6 | `̺` |
 | 5 | `ₙ` |
-| 4 | `̻` |
 | 4 | `̂` |
-| 2 | `̚` |
+| 4 | `̻` |
+| 2 | `ˑ` |
 ### unknown_character (description)
 
 | count | description |
@@ -116,7 +116,7 @@ Skipped: **2/89**
 
 | count | error_token |
 |------:|-------------|
-| 6 | `M` |
+| 5 | `M` |
 | 3 | `Y` |
 | 1 | `X` |
 ### unknown_grouping (description)
@@ -204,10 +204,9 @@ Skipped: **2/89**
 |------:|-------------|
 | 5 | `Expected '>', '->' or '=>', but received ':'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
-| 2 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
-| 1 | `Expected '>', '->' or '=>', but received ')'` |
+| 1 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
@@ -229,7 +228,7 @@ Skipped: **2/89**
 
 | count | error_token |
 |------:|-------------|
-| 9 | `(` |
+| 8 | `(` |
 | 6 | `:` |
 | 6 | `∅` |
 | 5 | `{` |
@@ -243,7 +242,7 @@ Skipped: **2/89**
 
 | count | description |
 |------:|-------------|
-| — | _(none)_ |
+| 1 | `Expected an IPA character, Primative or Matrix, but received ''` |
 
 ### expected_range_dots (error_token)
 
@@ -260,15 +259,15 @@ Skipped: **2/89**
 
 | count | error_token |
 |------:|-------------|
-| 20 | `)` |
+| 19 | `)` |
 | 11 | `:` |
-| 5 | `(` |
+| 4 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
+| 2 | `̥` |
 | 1 | `&` |
-| 1 | `*` |
 | 1 | `#` |
-| 1 | `̥` |
+| 1 | `*` |
 ### missing_slash_output_env (description)
 
 | count | description |
@@ -317,7 +316,7 @@ Skipped: **2/89**
 
 | count | description |
 |------:|-------------|
-| 10 | `Cannot have segments after the end of a word` |
+| 9 | `Cannot have segments after the end of a word` |
 
 ### diacritic_prereq (error_token)
 

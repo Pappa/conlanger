@@ -336,3 +336,6 @@
 - from: " / posttonic"
   to: " / sporadic ; posttonic"
   reason: unhandled positional environment
+- from: " if {M,Vː} "
+  to: " / sporadic ; if {M,Vː} "
+  reason: unhandled positional environment

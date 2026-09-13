@@ -26,6 +26,8 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 13.6,Proto-Chumash to Ventureño,Ventureño-ʔ,,index_diachronica_original.html:4469,2,section_skipped,,,,section skipped at compile (parser_config skip_sections)
 13.6,Proto-Chumash to Ventureño,Ventureño-pʼ-kʼ-qʼ,,index_diachronica_original.html:4470,2,section_skipped,,,,section skipped at compile (parser_config skip_sections)
 13.6,Proto-Chumash to Ventureño,Ventureño-ˀm-ˀn-ˀl-ˀj,,index_diachronica_original.html:4471,2,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+14.3.1,Standard Tamil to Colloquial Tamil,Colloquial-Tamil-l-ɭ,,index_diachronica_original.html:4548,2,rule_skipped,,,,held-out (commented rule)
+14.3.1,Standard Tamil to Colloquial Tamil,Colloquial-Tamil-∅_3,,index_diachronica_original.html:4555,2,rule_skipped,,,,held-out (commented rule)
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-j_2,,index_diachronica_original.html:5200,2,rule_skipped,,,,held-out (commented rule)
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-V,,index_diachronica_original.html:5212,2,rule_skipped,,,,held-out (commented rule)
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-j_2,,index_diachronica_original.html:5237,2,rule_skipped,,,,held-out (commented rule)

@@ -1,6 +1,5 @@
 section_index,rule_id,error_token,rule
 7.4,Blackfoot-e_2,,"e > ∅ / O_ in #% | ^ @ Rule 1, Line 1"
-14.3.1,Colloquial-Tamil-l-ɭ,,"l ɭ > l:[+long]ʉ ɭ:[+long]ʉ / _#(C)V:[-long] | ^^^^^^^^^^^^ @ Rule 1, Line 1"
 17.10.1.5,"Vedic-Sanskrit-s,ʂ",,"{s,ʂ} > h / _#C:[- voice] | ^^^^^^^^^^^ @ Rule 1, Line 1"
 17.10.1.5,"Vedic-Sanskrit-s,ʂ_2",,"{s,ʂ} > r / _#C:[+ voice] | ^^^^^^^^^^^ @ Rule 1, Line 1"
 17.12.1.1.3,"French-—-m,n",,"{m,n} > ∅ / _# in polysyllables | ^^^^^^^^^^^^^^^^^ @ Rule 1, Line 1"
