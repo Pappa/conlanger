@@ -199,3 +199,17 @@ skip_rules:
     reason: "Requises a solution for proximity prose"
   - id: Egyptian-Arabic-aː_3
     reason: "Requises a solution for proximity prose"
+  - id: Artsakh-Armenian-V
+    reason: "Unknown output: V → (?) / _(C)#"
+  - id: Erevan-Armenian-V
+    reason: "Unknown output: W → (?) / _(C)#"
+  - id: Istanbul-Armenian-V
+    reason: "Unknown output: W → (?) / _(C)#"
+  - id: Kharpert-Armenian-V
+    reason: "Unknown output: W → (?) / _(C)#"
+  - id: Sebastia-Armenian-V
+    reason: "Unknown output: W → (?) / _(C)#"
+  - id: Southeast-Armenian-V
+    reason: "Unknown output: W → (?) / _(C)#"
+  - id: Southwest-Armenian-V
+    reason: "Unknown output: W → (?) / _(C)#"

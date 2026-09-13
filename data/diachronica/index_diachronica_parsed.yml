@@ -21572,14 +21572,12 @@ sections:
     raw: m̩ n̩ r̩ l̩ → am an ar aɫ
     source: index_diachronica_original.html:5211
     rule_id: Artsakh-Armenian-m̩-n̩-r̩-l̩
-  - comment: (?)
-    stages:
-    - V
-    env: _(C)#
+  - stages: []
     raw: V → (?) / _(C)#
     source: index_diachronica_original.html:5212
-    sporadic: true
+    status: skipped
     rule_id: Artsakh-Armenian-V
+    comment: 'Unknown output: V → (?) / _(C)#'
 - section: Proto-Indo-European to Erevan Armenian
   index: 17.3.2
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -21805,14 +21803,12 @@ sections:
     raw: m̩ n̩ r̩ l̩ → am an ar aɫ
     source: index_diachronica_original.html:5248
     rule_id: Erevan-Armenian-m̩-n̩-r̩-l̩
-  - comment: (?)
-    stages:
-    - V
-    env: _(C)#
+  - stages: []
     raw: V → (?) / _(C)#
     source: index_diachronica_original.html:5249
-    sporadic: true
+    status: skipped
     rule_id: Erevan-Armenian-V
+    comment: 'Unknown output: W → (?) / _(C)#'
 - section: Proto-Indo-European to Istanbul Armenian
   index: 17.3.3
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -22037,14 +22033,12 @@ sections:
     raw: m̩ n̩ r̩ l̩ → am an ar aɫ
     source: index_diachronica_original.html:5285
     rule_id: Istanbul-Armenian-m̩-n̩-r̩-l̩
-  - comment: (?)
-    stages:
-    - V
-    env: _(C)#
+  - stages: []
     raw: V → (?) / _(C)#
     source: index_diachronica_original.html:5286
-    sporadic: true
+    status: skipped
     rule_id: Istanbul-Armenian-V
+    comment: 'Unknown output: W → (?) / _(C)#'
 - section: Proto-Indo-European to Kharpert Armenian
   index: 17.3.4
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -22270,14 +22264,12 @@ sections:
     raw: m̩ n̩ r̩ l̩ → am an ar aɫ
     source: index_diachronica_original.html:5322
     rule_id: Kharpert-Armenian-m̩-n̩-r̩-l̩
-  - comment: (?)
-    stages:
-    - V
-    env: _(C)#
+  - stages: []
     raw: V → (?) / _(C)#
     source: index_diachronica_original.html:5323
-    sporadic: true
+    status: skipped
     rule_id: Kharpert-Armenian-V
+    comment: 'Unknown output: W → (?) / _(C)#'
 - section: Proto-Indo-European to Sebastia Armenian
   index: 17.3.5
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -22497,14 +22489,12 @@ sections:
     raw: m̩ n̩ r̩ l̩ → am an ar aɫ
     source: index_diachronica_original.html:5358
     rule_id: Sebastia-Armenian-m̩-n̩-r̩-l̩
-  - comment: (?)
-    stages:
-    - V
-    env: _(C)#
+  - stages: []
     raw: V → (?) / _(C)#
     source: index_diachronica_original.html:5359
-    sporadic: true
+    status: skipped
     rule_id: Sebastia-Armenian-V
+    comment: 'Unknown output: W → (?) / _(C)#'
 - section: Proto-Indo-European to Southeast Armenian
   index: 17.3.6
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -22744,14 +22734,12 @@ sections:
     raw: m̩ n̩ r̩ l̩ → am an ar aɫ
     source: index_diachronica_original.html:5397
     rule_id: Southeast-Armenian-m̩-n̩-r̩-l̩
-  - comment: (?)
-    stages:
-    - V
-    env: _(C)#
+  - stages: []
     raw: V → (?) / _(C)#
     source: index_diachronica_original.html:5398
-    sporadic: true
+    status: skipped
     rule_id: Southeast-Armenian-V
+    comment: 'Unknown output: W → (?) / _(C)#'
 - section: Proto-Indo-European to Southwest Armenian
   index: 17.3.7
   citation: Mecislau & Pogostick Man, the latter citing Wikipedia contributors (2013),
@@ -22984,14 +22972,12 @@ sections:
     raw: m̩ n̩ r̩ l̩ → am an ar aɫ
     source: index_diachronica_original.html:5435
     rule_id: Southwest-Armenian-m̩-n̩-r̩-l̩
-  - comment: (?)
-    stages:
-    - V
-    env: _(C)#
+  - stages: []
     raw: V → (?) / _(C)#
     source: index_diachronica_original.html:5436
-    sporadic: true
+    status: skipped
     rule_id: Southwest-Armenian-V
+    comment: 'Unknown output: W → (?) / _(C)#'
 - section: Avestan
   index: '17.4'
 - section: Proto-Indo-European to Avestan

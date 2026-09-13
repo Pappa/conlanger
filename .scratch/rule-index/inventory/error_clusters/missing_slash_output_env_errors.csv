@@ -44,3 +44,4 @@ section_index,rule_id,error_token,rule
 42.1.2,Livonian-dj-lj-rj-ɡj,ʲ,"dj lj rj ɡj > dʲ l:[+long]ʲ r:[+long]ʲ jɡ | ^ @ Rule 1, Line 1"
 44.1,Aquitanian-S+-fortis,(,"P:[+tense] > P:[- voice, +long] (specifically, the source lists t:[+tense] k:[+tense] | ^ @ Rule 1, Line 1"
 44.2,Basque-*L,(,"L > l (or *lh | ^ @ Rule 1, Line 1"
+44.2,Basque-eð,),"eð > e ?) / #_V | ^ @ Rule 1, Line 1"
