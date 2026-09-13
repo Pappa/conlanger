@@ -6,15 +6,15 @@
 - Rows: **9834** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8829** (89.8%)
-- Fail: **502** (5.1%)
+- OK: **8832** (89.8%)
+- Fail: **499** (5.1%)
 - Skipped: **503** (5.1%)
 
 
 ## Corrections
 
-OK: **78/80**
-Skipped: **2/80**
+OK: **80/82**
+Skipped: **2/82**
 
 ### Skipped corrections
 
@@ -23,9 +23,9 @@ Skipped: **2/80**
 
 ## Sections
 
-- All OK: **461 / 714** (64.6%)
+- All OK: **463 / 714** (64.8%)
 - Some OK: **198 / 714** (27.7%)
-- None OK: **2 / 714** (0.3%)
+- None OK: **0 / 714** (0.0%)
 - Sections skipped: **53 / 714** (7.4%)
 
 ## Failure classes
@@ -33,11 +33,11 @@ Skipped: **2/80**
 | count | failure_class |
 |------:|---------------|
 | 107 | `unknown_character` |
-| 98 | `expected_underscore` |
+| 97 | `expected_underscore` |
 | 47 | `expected_ipa` |
 | 47 | `invalid_ipa` |
 | 41 | `missing_slash_output_env` |
-| 26 | `syntax_other` |
+| 24 | `syntax_other` |
 | 23 | `prose_or_expected_arrow` |
 | 16 | `nested_brackets` |
 | 14 | `unknown_grouping` |
@@ -74,10 +74,9 @@ Skipped: **2/80**
 | count | description |
 |------:|-------------|
 | 9 | `Output cannot be empty. Use `*` or '∅' to indicate deletion` |
-| 2 | `Negation cannot be used in the output` |
 | 1 | `/ cannot be placed inside a matrix. An element inside `[]` must a distinctive feature` |
-| 1 | `Feature 'lost' has no modifier` |
 | 1 | `Only a segment, matrix, group, or reference can be negated` |
+| 1 | `Feature 'lost' has no modifier` |
 | 1 | `Feature 'b' has no modifier` |
 | 1 | `Feature 's' has no modifier` |
 | 1 | `Feature 'long' has no modifier` |
@@ -153,7 +152,7 @@ Skipped: **2/80**
 
 | count | description |
 |------:|-------------|
-| 65 | `Expected '_', but received ''` |
+| 64 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -233,15 +232,15 @@ Skipped: **2/80**
 
 | count | error_token |
 |------:|-------------|
-| 8 | `(` |
+| 9 | `(` |
 | 6 | `:` |
 | 6 | `∅` |
 | 5 | `{` |
 | 5 | `>` |
-| 3 | `*` |
 | 3 | `ʷ` |
 | 3 | `…` |
 | 2 | `ʲ` |
+| 2 | `*` |
 | 2 | `_` |
 ### expected_ipa (description)
 

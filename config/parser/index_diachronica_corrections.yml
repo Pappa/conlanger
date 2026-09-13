@@ -361,3 +361,11 @@ rules:
                   id: Lungchow-a
                   content: "a → aː / _{u,i}"
                   reason: "a → aː / _u,i"
+        - rule:
+                  id: Lahu-i-ip,k-it-im,ŋ-in
+                  content: "i i{p,k} it i{m,ŋ} in → i ɨʔ iʔ ɛ ɨ / _#"
+                  reason: "-i -i{p,k} -it -i{m,ŋ} -in → -i -ɨʔ -iʔ -ɛ -ɨ"
+        - rule:
+                  id: Lahu-u-up-ut-uk-um-un-uŋ
+                  content: "u up ut uk um un uŋ → u ɔʔ əʔ uʔ ɔ ə ɛ / _#"
+                  reason: "-u -up -ut -uk -um -un -uŋ → -u -ɔʔ -əʔ -uʔ -ɔ -ə -ɛ"

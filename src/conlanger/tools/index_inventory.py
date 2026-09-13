@@ -1449,6 +1449,9 @@ def section_outcome_stats(rows: list[ValidationRow]) -> SectionOutcomeStats:
         if all(row.ok == OK_TRUE for row in section_rows):
             all_ok += 1
         elif all(row.ok == OK_FALSE for row in section_rows):
+            print(
+                f"none_ok: {section_rows[0].section_index} {section_rows[0].section_name}"
+            )
             none_ok += 1
         else:
             some_ok += 1

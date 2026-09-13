@@ -14772,7 +14772,7 @@ sections:
     rule_id: Proto-Ongan-qʷ,ku,qu-qʷ-kʷ
   - comment: (again, possibly a change from POn-PAn, if it existed)
     stages:
-    - '{c,*C,s,*S}'
+    - '{c,C,s,*S}'
     - c
     raw: '{c,*C,s,*S} → c (again, possibly a change from POn-PAn, if it existed)'
     source: index_diachronica_original.html:3782
@@ -15084,9 +15084,9 @@ sections:
     raw: R l L → {r,ʔ} ɭ l
     source: index_diachronica_original.html:3850
     rule_id: Proto-Rukai-R-l-L
-  - comment: (not sure what *C stands for here)
+  - comment: (not sure what C stands for here)
     stages:
-    - S₁ s d₂ *C
+    - S₁ s d₂ C
     - s θ ð ts
     raw: S₁ s d₂ *C → s θ ð ts (not sure what *C stands for here)
     source: index_diachronica_original.html:3851
@@ -15113,7 +15113,7 @@ sections:
     Wikipedia, the Free Encyclopedia. <https://en.wikipedia.org/w/index.php?title=Tsouic_languages&oldid=602917078>
   rules:
   - stages:
-    - '{*C,d} j R'
+    - '{C,d} j R'
     - c z r
     raw: '{*C,d} j *R → c z r'
     source: index_diachronica_original.html:3863
@@ -69086,15 +69086,17 @@ sections:
     – 249, 314'
   rules:
   - stages:
-    - -i -i{p,k} -it -i{m,ŋ} -in
-    - -i -ɨʔ -iʔ -ɛ -ɨ
-    raw: -i -i{p,k} -it -i{m,ŋ} -in → -i -ɨʔ -iʔ -ɛ -ɨ
+    - i i{p,k} it i{m,ŋ} in
+    - i ɨʔ iʔ ɛ ɨ
+    env: _#
+    raw: i i{p,k} it i{m,ŋ} in → i ɨʔ iʔ ɛ ɨ / _#
     source: index_diachronica_original.html:14457
     rule_id: Lahu-i-ip,k-it-im,ŋ-in
   - stages:
-    - -u -up -ut -uk -um -un -uŋ
-    - -u -ɔʔ -əʔ -uʔ -ɔ -ə -ɛ
-    raw: -u -up -ut -uk -um -un -uŋ → -u -ɔʔ -əʔ -uʔ -ɔ -ə -ɛ
+    - u up ut uk um un uŋ
+    - u ɔʔ əʔ uʔ ɔ ə ɛ
+    env: _#
+    raw: u up ut uk um un uŋ → u ɔʔ əʔ uʔ ɔ ə ɛ / _#
     source: index_diachronica_original.html:14458
     rule_id: Lahu-u-up-ut-uk-um-un-uŋ
 - section: Proto-Maidun to Nisenian Vowel Shift
