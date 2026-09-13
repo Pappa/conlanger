@@ -128,7 +128,7 @@
   reason: replace prose
 - from: " / in prefixes related to"
   to: " sporadic ; / in prefixes related to"
-  reason: replace prose
+  reason: unhandled positional environment
 - from: " ! in Ware Sekani"
   to: " sporadic ; not in Ware Sekani"
   reason: replace prose
@@ -140,7 +140,7 @@
   reason: replace prose
 - from: " / (“when in unstressed penult"
   to: " / sporadic ; (“when in unstressed penult"
-  reason: replace prose
+  reason: unhandled positional environment
 - from: " / some sequences"
   to: " / sporadic ; some sequences"
   reason: replace prose
@@ -149,7 +149,7 @@
   reason: replace prose
 - from: ", in the feminine ending"
   to: " sporadic ; in the feminine ending"
-  reason: replace prose
+  reason: unhandled positional environment
 - from: " / in Form VI"
   to: " / sporadic ; in Form VI"
   reason: replace prose
@@ -158,7 +158,7 @@
   reason: replace prose
 - from: " / “[b]etween the last two vowels of a proparoxytone”"
   to: " / sporadic ; “[b]etween the last two vowels of a proparoxytone”"
-  reason: replace prose
+  reason: unhandled positional environment
 - from: There seems to ahve been some stuff going on
   to: " ; There seems to ahve been some stuff going on"
 - from: (Do not necessarily
@@ -169,10 +169,10 @@
   reason: comment
 - from: " / when stem-final"
   to: " / _%# ; when stem-final"
-  reason: replace prose - this is an approximation and may be wrong
+  reason: unhandled positional environment
 - from: " / when-stem final"
   to: " / _%# ; when-stem final"
-  reason: replace prose - this is an approximation and may be wrong
+  reason: unhandled positional environment
 - from: " (→ yː sometimes)"
   to: " → yː / sporadic ; (→ yː sometimes)"
   reason: workaround - we can't handle different envs for chained rules
@@ -276,19 +276,19 @@
   reason: replace prose
 - from: " / in diminutives"
   to: " / sporadic ; diminutives"
-  reason: replace prose
+  reason: unhandled positional environment
 - from: " / in nominal suffixes"
   to: " / sporadic ; nominal suffixes"
-  reason: replace prose
+  reason: unhandled positional environment
 - from: " / in nouns"
   to: " / sporadic ; in nouns"
-  reason: replace prose
+  reason: unhandled positional environment
 - from: ", in some words"
   to: " sporadic ; in some words"
   reason: replace prose
 - from: " / in coda"
   to: " / :{ _#, _% }: ; in coda"
-  reason: replace prose
+  reason: unhandled positional environment
 - from: " / possible exception"
   to: " / sporadic ; possible exception"
   reason: replace prose
@@ -330,3 +330,9 @@
 - from: " ! some monosyllables"
   to: " ; sporadic ! some monosyllables"
   reason: replace prose
+- from: " / pretonic"
+  to: " / sporadic ; pretonic"
+  reason: unhandled positional environment
+- from: " / posttonic"
+  to: " / sporadic ; posttonic"
+  reason: unhandled positional environment

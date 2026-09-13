@@ -21268,19 +21268,21 @@ sections:
     raw: V → Vː / ”U[+open]
     source: index_diachronica_original.html:5161
     rule_id: Palaic-V
-  - stages:
+  - comment: pretonic; sporadic
+    stages:
     - e
     - i
-    env: pretonic
     raw: e → i / pretonic
     source: index_diachronica_original.html:5162
+    sporadic: true
     rule_id: Palaic-e
-  - stages:
+  - comment: posttonic in U[+open]; sporadic
+    stages:
     - e
     - a
-    env: posttonic in U[+lo]
     raw: e → a / posttonic in U[+open]
     source: index_diachronica_original.html:5163
+    sporadic: true
     rule_id: Palaic-e_2
   - stages:
     - o(ː)
@@ -21312,8 +21314,8 @@ sections:
     rule_id: Palaic-ɡʷ
   - stages:
     - hhy
-    comment: “something like /ʒ/”
-    raw: hhy → “something like /ʒ/”
+    - ʒ
+    raw: hhy → ʒ
     source: index_diachronica_original.html:5168
     rule_id: Palaic-hhy
   - stages:

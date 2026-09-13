@@ -395,3 +395,7 @@ rules:
                   reason: |
                           Not sure how to represent this:
                           u → ŭ [ɤ?] → {e,o,ɤ,a} (strong)/∅ (weak) “in modern languages”
+        - rule:
+                  id: Palaic-hhy
+                  content: "hhy → ʒ"
+                  reason: "hhy → “something like /ʒ/”"
