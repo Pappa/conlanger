@@ -6,15 +6,15 @@
 - Rows: **9834** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8852** (90.0%)
-- Fail: **479** (4.9%)
+- OK: **8855** (90.0%)
+- Fail: **476** (4.8%)
 - Skipped: **503** (5.1%)
 
 
 ## Corrections
 
-OK: **84/86**
-Skipped: **2/86**
+OK: **86/88**
+Skipped: **2/88**
 
 ### Skipped corrections
 
@@ -32,11 +32,11 @@ Skipped: **2/86**
 
 | count | failure_class |
 |------:|---------------|
-| 100 | `expected_underscore` |
-| 85 | `unknown_character` |
+| 101 | `expected_underscore` |
+| 83 | `unknown_character` |
 | 47 | `invalid_ipa` |
-| 46 | `missing_slash_output_env` |
 | 44 | `expected_ipa` |
+| 44 | `missing_slash_output_env` |
 | 24 | `syntax_other` |
 | 21 | `prose_or_expected_arrow` |
 | 16 | `nested_brackets` |
@@ -97,7 +97,7 @@ Skipped: **2/86**
 
 | count | error_token |
 |------:|-------------|
-| 12 | `₂` |
+| 10 | `₂` |
 | 8 | `̊` |
 | 7 | `ː` |
 | 6 | `͜` |
@@ -153,7 +153,7 @@ Skipped: **2/86**
 
 | count | description |
 |------:|-------------|
-| 64 | `Expected '_', but received ''` |
+| 65 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -209,9 +209,9 @@ Skipped: **2/86**
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
-| 1 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
+| 1 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
 ### invalid_ipa (error_token)
@@ -232,7 +232,7 @@ Skipped: **2/86**
 
 | count | error_token |
 |------:|-------------|
-| 9 | `(` |
+| 8 | `(` |
 | 6 | `:` |
 | 6 | `∅` |
 | 5 | `{` |
@@ -246,7 +246,7 @@ Skipped: **2/86**
 
 | count | description |
 |------:|-------------|
-| — | _(none)_ |
+| 1 | `Expected an IPA character, Primative or Matrix, but received ''` |
 
 ### expected_range_dots (error_token)
 
@@ -263,9 +263,9 @@ Skipped: **2/86**
 
 | count | error_token |
 |------:|-------------|
-| 20 | `)` |
+| 19 | `)` |
 | 11 | `:` |
-| 5 | `(` |
+| 4 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
 | 2 | `̥` |

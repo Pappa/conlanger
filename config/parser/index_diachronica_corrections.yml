@@ -385,3 +385,13 @@ rules:
                   id: Munsee-Delaware-ʔ
                   content: "ʔ → h / _C ! _l ; or when reduplicated"
                   reason: "ʔ → h / _C ! C = l, or when reduplicated"
+        - rule:
+                  id: Pre-Slavic-Vowel-Changes-aj
+                  content: "aj→ {æ,i}"
+                  reason: "aj → {æ₂,i₂} “(reduced)”"
+        - rule:
+                  id: Pre-Slavic-Vowel-Changes-u
+                  content: "u → ŭ → {e,o,ɤ,a}"
+                  reason: |
+                          Not sure how to represent this:
+                          u → ŭ [ɤ?] → {e,o,ɤ,a} (strong)/∅ (weak) “in modern languages”

@@ -69023,9 +69023,8 @@ sections:
     rule_id: Pre-Slavic-Vowel-Changes-a-aː
   - stages:
     - aj
-    - '{æ₂,i₂}'
-    comment: “(reduced)”
-    raw: aj → {æ₂,i₂} “(reduced)”
+    - '{æ,i}'
+    raw: aj→ {æ,i}
     source: index_diachronica_original.html:14441
     rule_id: Pre-Slavic-Vowel-Changes-aj
   - stages:
@@ -69036,10 +69035,9 @@ sections:
     rule_id: Pre-Slavic-Vowel-Changes-aw
   - stages:
     - u
-    - u [ɤ?]
-    - '{e,o,ɤ,a} (strong)/∅'
-    comment: “in modern languages”; (weak)
-    raw: u → ŭ [ɤ?] → {e,o,ɤ,a} (strong)/∅ (weak) “in modern languages”
+    - u
+    - '{e,o,ɤ,a}'
+    raw: u → ŭ → {e,o,ɤ,a}
     source: index_diachronica_original.html:14443
     rule_id: Pre-Slavic-Vowel-Changes-u
   - stages:
