@@ -324,3 +324,9 @@
 - from: "high(er)"
   to: "hi"
   reason: ambiguous feature name
+- from: " / plain t only"
+  to: " ; plain t only"
+  reason: replace prose
+- from: " ! some monosyllables"
+  to: " ; sporadic ! some monosyllables"
+  reason: replace prose

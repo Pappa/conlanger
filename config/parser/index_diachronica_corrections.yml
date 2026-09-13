@@ -158,6 +158,18 @@ rules:
                   content: "S[α PLACE] → ∅ / N[α PLACE]_S"
                   reason: "Using asca syntax - unsure how else to represent POA"
         - rule:
+                  id: Early-Icelandic-n̥n,nn̥
+                  content: "{n̥n,nn̥} → tn̥ / V_"
+                  reason: "Typo: {n̥n,nn̥ → tn̥ / V_"
+        - rule:
+                  id: Early-Icelandic-r̥n,r̥n̥,rn̥
+                  content: "{r̥n,r̥n̥,rn̥} → tn̥"
+                  reason: "Typo: {r̥n,r̥n̥,rn̥ → tn̥"
+        - rule:
+                  id: Early-Icelandic-ɬl,ɬː
+                  content: "{ɬl,ɬː} → tɬ"
+                  reason: "{ɬl,ɬː → tɬ"
+        - rule:
                   id: Egyptian-Arabic-i,u
                   content: "{i,u}[-stress, -long] → ∅ / VC_CV"
                   reason: "Replacing prose"
@@ -369,3 +381,7 @@ rules:
                   id: Lahu-u-up-ut-uk-um-un-uŋ
                   content: "u up ut uk um un uŋ → u ɔʔ əʔ uʔ ɔ ə ɛ / _#"
                   reason: "-u -up -ut -uk -um -un -uŋ → -u -ɔʔ -əʔ -uʔ -ɔ -ə -ɛ"
+        - rule:
+                  id: Munsee-Delaware-ʔ
+                  content: "ʔ → h / _C ! _l ; or when reduplicated"
+                  reason: "ʔ → h / _C ! C = l, or when reduplicated"

@@ -2725,10 +2725,10 @@ sections:
   index: 6.2.2.1.14
   citation: Pogostick Man, from http://en.wikipedia.org/wiki/Moroccan_Arabic
   rules:
-  - stages:
+  - comment: plain t only, distinguishable from the sequence ts
+    stages:
     - t
     - t͜s
-    env: plain t only, distinguishable from the sequence ts
     raw: t → t͜s / plain t only, distinguishable from the sequence ts
     source: index_diachronica_original.html:1467
     rule_id: Moroccan-Arabic-t
@@ -5128,12 +5128,13 @@ sections:
     raw: j → ∅ / C_
     source: index_diachronica_original.html:1906
     rule_id: Munsee-Delaware-j
-  - stages:
+  - comment: or when reduplicated
+    stages:
     - ʔ
     - h
     env: _C
-    exception: C = l, or when reduplicated
-    raw: ʔ → h / _C ! C = l, or when reduplicated
+    exception: _l
+    raw: ʔ → h / _C ! _l ; or when reduplicated
     source: index_diachronica_original.html:1907
     rule_id: Munsee-Delaware-ʔ
   - stages:
@@ -5185,12 +5186,12 @@ sections:
     raw: Vː → V[-long] / _hC
     source: index_diachronica_original.html:1914
     rule_id: Munsee-Delaware-Vː
-  - stages:
+  - comment: sporadic ! some monosyllables and analogical developments, in the latter
+      of which long vowels were shortened
+    stages:
     - V
     - ∅
     env: _#
-    exception: some monosyllables and analogical developments, in the latter of which
-      long vowels were shortened
     raw: V → ∅ / _# ! some monosyllables and analogical developments, in the latter
       of which long vowels were shortened
     source: index_diachronica_original.html:1915
@@ -28663,10 +28664,10 @@ sections:
     source: index_diachronica_original.html:6379
     rule_id: Early-Icelandic-V_2
   - stages:
-    - '{n̥n,nn̥'
+    - '{n̥n,nn̥}'
     - tn̥
     env: V_
-    raw: '{n̥n,nn̥ → tn̥ / V_'
+    raw: '{n̥n,nn̥} → tn̥ / V_'
     source: index_diachronica_original.html:6380
     rule_id: Early-Icelandic-n̥n,nn̥
   - stages:
@@ -28696,9 +28697,9 @@ sections:
     source: index_diachronica_original.html:6384
     rule_id: Early-Icelandic-nː_3
   - stages:
-    - '{r̥n,r̥n̥,rn̥'
+    - '{r̥n,r̥n̥,rn̥}'
     - tn̥
-    raw: '{r̥n,r̥n̥,rn̥ → tn̥'
+    raw: '{r̥n,r̥n̥,rn̥} → tn̥'
     source: index_diachronica_original.html:6385
     rule_id: Early-Icelandic-r̥n,r̥n̥,rn̥
   - stages:
@@ -28722,9 +28723,9 @@ sections:
     source: index_diachronica_original.html:6388
     rule_id: Early-Icelandic-r,r̥,lɬ
   - stages:
-    - '{ɬl,ɬː'
+    - '{ɬl,ɬː}'
     - tɬ
-    raw: '{ɬl,ɬː → tɬ'
+    raw: '{ɬl,ɬː} → tɬ'
     source: index_diachronica_original.html:6389
     rule_id: Early-Icelandic-ɬl,ɬː
   - stages:

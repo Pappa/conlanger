@@ -206,3 +206,44 @@
   confidence: medium
   notes: |
     https://en.wikipedia.org/wiki/Voiceless_palatal_nasal
+
+# t͜s:
+#   ipa_target: t͡s
+#   confidence: high
+#   notes: Voiceless alveolar affricate
+# tʃ:
+#   ipa_target: t͡ʃ
+#   confidence: high
+#   notes: Voiceless postalveolar affricate
+# dʒ:
+#   ipa_target: d͡ʒ
+#   confidence: high
+#   notes: Voiced postalveolar affricate
+# dɬ:
+#   ipa_target: d͡ɬ
+#   confidence: high
+#   notes: Voiceless alveolar lateral affricate
+# dɮ:
+#   ipa_target: d͡ɮ
+#   confidence: high
+#   notes: Voiced alveolar lateral affricate
+# ts:
+#   ipa_target: t͡s
+#   confidence: high
+#   notes: Voiceless alveolar affricate
+# dz:
+#   ipa_target: d͡z
+#   confidence: high
+#   notes: Voiced alveolar affricate
+# tɕ:
+#   ipa_target: t͡ɕ
+#   confidence: high
+#   notes: Voiceless alveolo-palatal affricate
+# dʑ:
+#   ipa_target: d͡ʑ
+#   confidence: high
+#   notes: Voiced alveolo-palatal affricate
+# tɬ:
+#   ipa_target: t͡ɬ
+#   confidence: high
+#   notes: Voiceless alveolar lateral affricate
