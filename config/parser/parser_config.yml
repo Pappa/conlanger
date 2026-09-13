@@ -16,6 +16,8 @@ section_mappings:
     "*r": "r"
     "*c": "c"
     # "*J": "J"
+  "17":
+    "*H": "H"
   "35":
     "1": "[+low tone]"
     "2": "[+mid tone]"

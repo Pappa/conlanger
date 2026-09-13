@@ -6,15 +6,15 @@
 - Rows: **9834** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8822** (89.7%)
-- Fail: **509** (5.2%)
+- OK: **8829** (89.8%)
+- Fail: **502** (5.1%)
 - Skipped: **503** (5.1%)
 
 
 ## Corrections
 
-OK: **74/76**
-Skipped: **2/76**
+OK: **78/80**
+Skipped: **2/80**
 
 ### Skipped corrections
 
@@ -23,8 +23,8 @@ Skipped: **2/76**
 
 ## Sections
 
-- All OK: **460 / 714** (64.4%)
-- Some OK: **199 / 714** (27.9%)
+- All OK: **461 / 714** (64.6%)
+- Some OK: **198 / 714** (27.7%)
 - None OK: **2 / 714** (0.3%)
 - Sections skipped: **53 / 714** (7.4%)
 
@@ -32,22 +32,22 @@ Skipped: **2/76**
 
 | count | failure_class |
 |------:|---------------|
-| 108 | `unknown_character` |
-| 100 | `expected_underscore` |
-| 49 | `expected_ipa` |
+| 107 | `unknown_character` |
+| 98 | `expected_underscore` |
+| 47 | `expected_ipa` |
 | 47 | `invalid_ipa` |
-| 40 | `missing_slash_output_env` |
+| 41 | `missing_slash_output_env` |
 | 26 | `syntax_other` |
 | 23 | `prose_or_expected_arrow` |
 | 16 | `nested_brackets` |
 | 14 | `unknown_grouping` |
 | 13 | `stuff_after_word_bound` |
 | 11 | `expected_number` |
-| 11 | `empty_io_panic` |
 | 11 | `unknown_feature` |
 | 9 | `diacritic_prereq` |
 | 8 | `multiple_underlines_env` |
 | 8 | `segments_before_word` |
+| 8 | `empty_io_panic` |
 | 4 | `panic_other` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
@@ -106,8 +106,8 @@ Skipped: **2/76**
 | 6 | `͜` |
 | 6 | `̺` |
 | 5 | `ₙ` |
-| 4 | `̻` |
 | 4 | `̂` |
+| 4 | `̻` |
 ### unknown_character (description)
 
 | count | description |
@@ -143,7 +143,7 @@ Skipped: **2/76**
 
 | count | error_token |
 |------:|-------------|
-| 18 | `,` |
+| 17 | `,` |
 | 7 | `/` |
 | 3 | `)` |
 | 3 | `:` |
@@ -153,7 +153,7 @@ Skipped: **2/76**
 
 | count | description |
 |------:|-------------|
-| 66 | `Expected '_', but received ''` |
+| 65 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -233,11 +233,11 @@ Skipped: **2/76**
 
 | count | error_token |
 |------:|-------------|
-| 9 | `(` |
+| 8 | `(` |
 | 6 | `:` |
 | 6 | `∅` |
-| 5 | `>` |
 | 5 | `{` |
+| 5 | `>` |
 | 3 | `*` |
 | 3 | `ʷ` |
 | 3 | `…` |
@@ -266,7 +266,7 @@ Skipped: **2/76**
 |------:|-------------|
 | 16 | `)` |
 | 11 | `:` |
-| 4 | `(` |
+| 5 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
 | 1 | `&` |
@@ -343,8 +343,8 @@ Skipped: **2/76**
 
 | count | description |
 |------:|-------------|
-| 8 | `The output of a deletion rule must only contain `*` or `∅`` |
-| 3 | `The input of an insertion rule must only contain `*` or `∅`` |
+| 6 | `The output of a deletion rule must only contain `*` or `∅`` |
+| 2 | `The input of an insertion rule must only contain `*` or `∅`` |
 
 ### incomplete_matrix (error_token)
 

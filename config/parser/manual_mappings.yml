@@ -262,9 +262,6 @@
 - from: RTR
   to: rtr
   reason: Lowercase feature name
-- from: " / only when short, ! "
-  to: " / [-long] ! "
-  reason: replace prose
 - from: " / near gutturals"
   to: " / _[+laryngeal], [+laryngeal]_"
   reason: replace prose

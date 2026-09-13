@@ -345,3 +345,19 @@ rules:
                   reason: |
                           Not sure how to represent the suffix:
                             V → Vː / _# + suffix
+        - rule:
+                  id: Old-Norse-k_3
+                  content: "k → ∅ / s_{l,t}"
+                  reason: "k → ∅ / s_l,t"
+        - rule:
+                  id: Australian-English-æ_2
+                  content: "æ → æː / _{n,m,ɡ,ɫ}% ! _{n,m,ɡ,ɫ}%{j,w} ; or a form of a strong verb"
+                  reason: "æ → æː / _{n,m,ɡ,ɫ% ! _n,m,ɡ,ɫ}%{j,w} or a form of a strong verb"
+        - rule:
+                  id: Proto-Indo-Iranian-k-ɡ-ɡʱ
+                  content: "k ɡ ɡʱ → c ɟ ɟʱ / _{e,i,j}"
+                  reason: "k ɡ ɡʱ → c ɟ ɟʱ / _e,i,j"
+        - rule:
+                  id: Lungchow-a
+                  content: "a → aː / _{u,i}"
+                  reason: "a → aː / _u,i"

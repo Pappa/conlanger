@@ -25333,12 +25333,13 @@ sections:
     raw: ɔ → ɔː / “in ‘gone’ and some derivatives”
     source: index_diachronica_original.html:5838
     rule_id: Australian-English-ɔ
-  - stages:
+  - comment: or a form of a strong verb
+    stages:
     - æ
     - æː
-    env: _{n,m,ɡ,ɫ$
-    exception: _n,m,ɡ,ɫ}${j,w} or a form of a strong verb
-    raw: æ → æː / _{n,m,ɡ,ɫ% ! _n,m,ɡ,ɫ}%{j,w} or a form of a strong verb
+    env: _{n,m,ɡ,ɫ}$
+    exception: _{n,m,ɡ,ɫ}${j,w}
+    raw: æ → æː / _{n,m,ɡ,ɫ}% ! _{n,m,ɡ,ɫ}%{j,w} ; or a form of a strong verb
     source: index_diachronica_original.html:5839
     rule_id: Australian-English-æ_2
   - stages:
@@ -27735,8 +27736,8 @@ sections:
   - stages:
     - k
     - ∅
-    env: s_l,t
-    raw: k → ∅ / s_l,t
+    env: s_{l,t}
+    raw: k → ∅ / s_{l,t}
     source: index_diachronica_original.html:6241
     rule_id: Old-Norse-k_3
   - stages:
@@ -31264,12 +31265,12 @@ sections:
     rule_id: Proto-Indo-Iranian-ə
   - stages:
     - '{h₁,h₃}'
-    - '*H'
+    - H
     raw: '{h₁,h₃} → *H'
     source: index_diachronica_original.html:6825
     rule_id: Proto-Indo-Iranian-h1,h3
   - stages:
-    - '*H'
+    - H
     - ∅
     env: S_
     raw: '*H → ∅ / S_'
@@ -31342,8 +31343,8 @@ sections:
   - stages:
     - k ɡ ɡʱ
     - c ɟ ɟʱ
-    env: _e,i,j
-    raw: k ɡ ɡʱ → c ɟ ɟʱ / _e,i,j
+    env: _{e,i,j}
+    raw: k ɡ ɡʱ → c ɟ ɟʱ / _{e,i,j}
     source: index_diachronica_original.html:6837
     rule_id: Proto-Indo-Iranian-k-ɡ-ɡʱ
   - stages:
@@ -31379,7 +31380,7 @@ sections:
     rule_id: Proto-Indo-Aryan-Sh2
   - stages:
     - h₂
-    - '*H'
+    - H
     raw: h₂ → *H
     source: index_diachronica_original.html:6846
     rule_id: Proto-Indo-Aryan-h2
@@ -62945,8 +62946,8 @@ sections:
   - stages:
     - a
     - aː
-    env: _u,i
-    raw: a → aː / _u,i
+    env: _{u,i}
+    raw: a → aː / _{u,i}
     source: index_diachronica_original.html:13158
     rule_id: Lungchow-a
   - stages:
