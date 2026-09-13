@@ -32,13 +32,13 @@ Skipped: **2/82**
 
 | count | failure_class |
 |------:|---------------|
-| 101 | `expected_underscore` |
-| 85 | `unknown_character` |
-| 48 | `expected_ipa` |
+| 102 | `expected_underscore` |
+| 86 | `unknown_character` |
 | 47 | `invalid_ipa` |
-| 45 | `missing_slash_output_env` |
+| 46 | `expected_ipa` |
+| 43 | `missing_slash_output_env` |
 | 24 | `syntax_other` |
-| 21 | `prose_or_expected_arrow` |
+| 23 | `prose_or_expected_arrow` |
 | 16 | `nested_brackets` |
 | 14 | `unknown_grouping` |
 | 13 | `stuff_after_word_bound` |
@@ -100,13 +100,13 @@ Skipped: **2/82**
 | 12 | `₂` |
 | 8 | `̊` |
 | 7 | `ː` |
-| 6 | `͜` |
 | 6 | `ŕ` |
+| 6 | `͜` |
 | 6 | `̺` |
 | 5 | `ₙ` |
-| 4 | `̂` |
 | 4 | `̻` |
-| 2 | `ˑ` |
+| 4 | `̂` |
+| 2 | `͡` |
 ### unknown_character (description)
 
 | count | description |
@@ -153,7 +153,7 @@ Skipped: **2/82**
 
 | count | description |
 |------:|-------------|
-| 64 | `Expected '_', but received ''` |
+| 65 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -208,11 +208,11 @@ Skipped: **2/82**
 | 7 | `Expected '>', '->' or '=>', but received '̩'` |
 | 5 | `Expected '>', '->' or '=>', but received ':'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
-| 1 | `Expected '>', '->' or '=>', but received '}'` |
+| 2 | `Expected '>', '->' or '=>', but received '̥'` |
+| 2 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
-| 1 | `Expected '>', '->' or '=>', but received '̥'` |
+| 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
-| 1 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
 ### invalid_ipa (error_token)
@@ -233,7 +233,7 @@ Skipped: **2/82**
 
 | count | error_token |
 |------:|-------------|
-| 9 | `(` |
+| 8 | `(` |
 | 6 | `:` |
 | 6 | `∅` |
 | 5 | `{` |
@@ -247,7 +247,7 @@ Skipped: **2/82**
 
 | count | description |
 |------:|-------------|
-| 1 | `Expected an IPA character, Primative or Matrix, but received ''` |
+| — | _(none)_ |
 
 ### expected_range_dots (error_token)
 
@@ -266,13 +266,13 @@ Skipped: **2/82**
 |------:|-------------|
 | 19 | `)` |
 | 11 | `:` |
-| 5 | `(` |
+| 4 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
-| 2 | `̥` |
 | 1 | `&` |
-| 1 | `#` |
 | 1 | `*` |
+| 1 | `#` |
+| 1 | `̥` |
 ### missing_slash_output_env (description)
 
 | count | description |
