@@ -37,6 +37,7 @@ section_index,rule_id,error_token,rule
 36.2,Guānhuà-yʔ_2,(,"oʔ > {ʊʔ,(i)uʔ?) / {l,C:[+cor,+anterior,+dist +strident]}_, in | ^ @ Rule 1, Line 2"
 36.2,Guānhuà-yʔ_3,∅,"yʔ > yʔ / {∅,C:[+laryngeal]}, in -juət-types | ^ @ Rule 1, Line 1"
 36.2,Guānhuà-yʔ_3,∅,"yʔ > yɛʔ? / {∅,C:[+laryngeal]}, in -juət-types | ^ @ Rule 1, Line 1"
+36.2,Guānhuà-yʔ_4,∅,"yʔ > ioʔ / {∅,C:[+laryngeal]}_, in -k-types | ^ @ Rule 1, Line 1"
 37.1.1,Cherokee-aːwẽː,{,"{awẽ,awẽ:[+long],a:[+long]{wẽ,wẽ:[+long]}} > {ama,ama:[+long],a:[+long]{ma,ma:[+long]}} | ^ @ Rule 1, Line 1"
 37.2.5,Proto-Crow-Hidatsa-Lʲ,ʲ,"{L,Lʲ} > r | ^ @ Rule 1, Line 1"
 37.2.6.1,Kansa-r-Lʲ,ʲ,"r {L,Lʲ} > d j / #_ | ^ @ Rule 1, Line 1"

@@ -25101,12 +25101,14 @@ sections:
     raw: iə → ɪ (ongoing)
     source: index_diachronica_original.html:5802
     rule_id: American-English-iə
-  - stages:
+  - comment: sporadic ; for some C (toward(s), quart(er), sword)
+    stages:
     - w
     - ∅
-    env: C_ɹ for some C (toward(s), quart(er), sword)
+    env: C_ɹ
     raw: w → ∅ / C_ɹ for some C (toward(s), quart(er), sword)
     source: index_diachronica_original.html:5803
+    sporadic: true
     rule_id: American-English-w
   - stages:
     - t
@@ -25196,12 +25198,14 @@ sections:
     source: index_diachronica_original.html:5820
     rule_id: Australian-English-uː_2
     exception: _ɫ
-  - stages:
+  - comment: '! if one of the above vowel changes after the formation of /ɫ/ apply;
+      sporadic'
+    stages:
     - ɫ
     - əɫ
-    exception: if one of the above vowel changes after the formation of /ɫ/ apply
     raw: ɫ → əɫ / ! if one of the above vowel changes after the formation of /ɫ/ apply
     source: index_diachronica_original.html:5821
+    sporadic: true
     rule_id: Australian-English-ɫ
   - stages:
     - ɪ
@@ -25334,14 +25338,14 @@ sections:
     raw: æ → æː / _{n,m,ɡ,ɫ}% ! _{n,m,ɡ,ɫ}%{j,w} ; or a form of a strong verb
     source: index_diachronica_original.html:5839
     rule_id: Australian-English-æ_2
-  - stages:
+  - comment: (rare) ! form of a strong verb; sporadic
+    stages:
     - æ
     - æː
     env: _d
-    exception: form of a strong verb
-    comment: (rare)
     raw: æ → æː / _d (rare) ! form of a strong verb
     source: index_diachronica_original.html:5840
+    sporadic: true
     rule_id: Australian-English-æ_3
 - section: Early Modern English to British English
   index: 17.7.2.1.7

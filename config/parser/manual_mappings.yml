@@ -165,6 +165,15 @@
 - from: " / _Ra (short a only)"
   to: " / _Ra sporadic ; (short a only)"
   reason: replace prose
+- from: " for some C"
+  to: " ; sporadic ; for some C"
+  reason: replace prose
+- from: " (rare) ! form of "
+  to: " / sporadic ; (rare) ! form of "
+  reason: replace prose
+- from: " / ! if one of the above"
+  to: " / sporadic ; ! if one of the above"
+  reason: replace prose
 - from: " / “[b]etween the last two vowels of a proparoxytone”"
   to: " / sporadic ; “[b]etween the last two vowels of a proparoxytone”"
   reason: unhandled positional environment
