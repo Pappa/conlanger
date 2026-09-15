@@ -21,7 +21,19 @@ def flatten_nested_sets(text: str) -> str:
     ``(h)ə{p,b}`` is unchanged. Flat sets are not re-serialized.
     Field-level ``({set})X`` with no nested braces is left unchanged.
     """
-    return _flatten_nested_sets(text)
+    if not text or "{" not in text:
+        return text
+    if _is_unbalanced_braces(text):
+        return text
+    previous = text
+    for _ in range(_MAX_PASSES):
+        nxt = _flatten_pass(previous)
+        if nxt == previous:
+            return nxt
+        if _is_unbalanced_braces(nxt):
+            return previous
+        previous = nxt
+    return previous
 
 
 def flatten_nested_sets_in_rule_fields(rule: dict[str, Any]) -> dict[str, Any]:
@@ -46,22 +58,6 @@ def flatten_nested_sets_in_section_rules(
 ) -> list[dict[str, Any]]:
     """Flatten env/exception/stages on each rule (after else resolution)."""
     return [flatten_nested_sets_in_rule_fields(rule) for rule in rules]
-
-
-def _flatten_nested_sets(text: str) -> str:
-    if not text or "{" not in text:
-        return text
-    if _is_unbalanced_braces(text):
-        return text
-    previous = text
-    for _ in range(_MAX_PASSES):
-        nxt = _flatten_pass(previous)
-        if nxt == previous:
-            return nxt
-        if _is_unbalanced_braces(nxt):
-            return previous
-        previous = nxt
-    return previous
 
 
 def _brace_balance(text: str) -> int:

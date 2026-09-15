@@ -30,43 +30,84 @@ def _write_index_html(path: Path, *, section_id: str, section_body: str) -> None
     )
 
 
-def test_flatten_nested_sets_unions_inner_members():
-    assert flatten_nested_sets("{a,{b,c}}") == "{a,b,c}"
-
-
-def test_flatten_nested_sets_distributes_suffix_over_inner_set():
-    assert flatten_nested_sets("{{h,k,ŋ}n,w,v,l,r}_") == "{hn,kn,ŋn,w,v,l,r}_"
-
-
-def test_flatten_nested_sets_expands_parenthetical_in_set():
-    assert flatten_nested_sets("_{s,({m,j,w})V}") == "_{s,mV,jV,wV}"
-    assert flatten_nested_sets("_ə{(C){p,kʷ},m,w}") == "_ə{(C)p,(C)kʷ,m,w}"
-    assert flatten_nested_sets("{x,({a,b})V}") == "{x,aV,bV}"
-    assert flatten_nested_sets("{x,({a,b})[+voice]}") == "{x,a[+voice],b[+voice]}"
-
-
-def test_flatten_nested_sets_leaves_unbalanced_and_parallel_columns():
-    unbalanced = "e o u æ ø y → {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i}"
-    assert flatten_nested_sets(unbalanced) == unbalanced
-    assert flatten_nested_sets("}{a,b}") == "}{a,b}"
-    assert flatten_nested_sets("(h)ə{p,b}") == "(h)ə{p,b}"
-
-
-def test_flatten_nested_sets_leaves_field_level_paren_wrapped_flat_set():
-    assert flatten_nested_sets("V[+nas]({ʔ,s})w_") == "V[+nas]({ʔ,s})w_"
-    assert flatten_nested_sets("({p,t,k})n") == "({p,t,k})n"
-
-
-def test_flatten_nested_sets_flattens_feature_matrix_labialization_cluster():
-    assert (
-        flatten_nested_sets("{{C[-fr,+bk,-hi,-lo],K}ʷ,w}_")
-        == "{C[-fr,+bk,-hi,-lo]ʷ,Kʷ,w}_"
-    )
-
-
-def test_flatten_nested_sets_does_not_reserialize_flat_env_sets():
-    assert flatten_nested_sets(":{#_, _#}:") == ":{#_, _#}:"
-    assert flatten_nested_sets("{a, b, c}") == "{a, b, c}"
+@pytest.mark.parametrize(
+    "input,expected",
+    [
+        pytest.param("{a,{b,c}}", "{a,b,c}", id="unions_inner_member"),
+        pytest.param(
+            "{{h,k,ŋ}n,w,v,l,r}_",
+            "{hn,kn,ŋn,w,v,l,r}_",
+            id="distributes_suffix_over_inner_set",
+        ),
+        pytest.param(
+            "_{s,({m,j,w})V}",
+            "_{s,mV,jV,wV}",
+            id="expands_parenthetical_1",
+        ),
+        pytest.param(
+            "_ə{(C){p,kʷ},m,w}",
+            "_ə{(C)p,(C)kʷ,m,w}",
+            id="expands_parenthetical_2",
+        ),
+        pytest.param(
+            "{x,({a,b})V}",
+            "{x,aV,bV}",
+            id="expands_parenthetical_3",
+        ),
+        pytest.param(
+            "{x,({a,b})[+voice]}",
+            "{x,a[+voice],b[+voice]}",
+            id="expands_parenthetical_4",
+        ),
+        pytest.param(
+            "e o u æ ø y → {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i}",
+            "e o u æ ø y → {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i}",
+            id="leaves_unbalanced_1",
+        ),
+        pytest.param(
+            "}{a,b}",
+            "}{a,b}",
+            id="leaves_unbalanced_2",
+        ),
+        pytest.param(
+            "(h)ə{p,b}",
+            "(h)ə{p,b}",
+            id="leaves_parallel_columns",
+        ),
+        pytest.param(
+            "V[+nas]({ʔ,s})w_",
+            "V[+nas]({ʔ,s})w_",
+            id="leaves_paren_wrapped_flat_set_1",
+        ),
+        pytest.param(
+            "({p,t,k})n",
+            "({p,t,k})n",
+            id="leaves_paren_wrapped_flat_set_2",
+        ),
+        pytest.param(
+            "{{C[-fr,+bk,-hi,-lo],K}ʷ,w}_",
+            "{C[-fr,+bk,-hi,-lo]ʷ,Kʷ,w}_",
+            id="flattens_with_diacritic_marks_applied_to_sets",
+        ),
+        pytest.param(
+            ":{#_, _#}:",
+            ":{#_, _#}:",
+            id="leaves_flat_env_sets",
+        ),
+        pytest.param(
+            "{a, b, c}",
+            "{a, b, c}",
+            id="leaves_flat_sets",
+        ),
+        pytest.param(
+            "{({a,b})}",
+            "{a,b}",
+            id="flattens_paren_only_set_member",
+        ),
+    ],
+)
+def test_flatten_nested_sets(input, expected):
+    assert flatten_nested_sets(input) == expected
 
 
 @pytest.mark.parametrize(
@@ -103,10 +144,6 @@ def test_consume_segment_tail_stops_on_unclosed_or_nested_groupers(
     text, start, expected_end
 ):
     assert _consume_segment_tail(text, start) == expected_end
-
-
-def test_flatten_nested_sets_flattens_paren_only_set_member():
-    assert flatten_nested_sets("{({a,b})}") == "{a,b}"
 
 
 def test_parse_flattens_nested_env_munsee_delaware(tmp_path: Path):
