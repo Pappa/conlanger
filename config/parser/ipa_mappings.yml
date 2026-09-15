@@ -169,9 +169,11 @@
   confidence: high
   notes: T with dot below (retroflex); Chinese / Indic notation (n=1)
 ṵ:
-  ipa_target: u
-  confidence: low
-  notes: u-tilde-below (1 row) (n=1)
+  ipa_target: ʊ
+  confidence: medium
+  notes: |
+    https://en.wiktionary.org/wiki/%E1%B9%B5
+    https://en.wikipedia.org/wiki/Near-close_near-back_rounded_vowel
 Ạ:
   ipa_target: a
   confidence: low
@@ -206,6 +208,11 @@
   confidence: medium
   notes: |
     https://en.wikipedia.org/wiki/Voiceless_palatal_nasal
+ŋ̊:
+  ipa_target: ŋ[-voice]
+  confidence: medium
+  notes: |
+    https://en.wikipedia.org/wiki/Voiceless_velar_nasal
 
 # t͜s:
 #   ipa_target: t͡s

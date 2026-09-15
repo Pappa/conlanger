@@ -10973,7 +10973,7 @@ sections:
     rule_id: Òma-Lóngh-i-u_3
   - stages:
     - ŋ
-    - ŋ̊
+    - ŋ[-voice]
     env: _#
     raw: ŋ → ŋ̊ / _#
     source: index_diachronica_original.html:3057
@@ -23995,7 +23995,7 @@ sections:
     rule_id: Middle-Welsh-w
   - stages:
     - mp nt ŋk
-    - m̥ n̥ ŋ̊
+    - m̥ n̥ ŋ[-voice]
     raw: mp nt ŋk → m̥ n̥ ŋ̊
     source: index_diachronica_original.html:5609
     rule_id: Middle-Welsh-mp-nt-ŋk
@@ -62525,7 +62525,7 @@ sections:
     source: index_diachronica_original.html:13079
     rule_id: Ahom-d-ɗ
   - stages:
-    - ŋ̊
+    - ŋ[-voice]
     - h
     raw: ŋ̊ → h
     source: index_diachronica_original.html:13080
@@ -64576,7 +64576,7 @@ sections:
     rule_id: Proto-Totonacan-j
   - stages:
     - o o̰
-    - u ṵ
+    - u ʊ
     raw: o o̰ → u ṵ
     source: index_diachronica_original.html:13513
     rule_id: Proto-Totonacan-o-o̰
