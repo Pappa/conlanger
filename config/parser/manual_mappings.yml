@@ -156,6 +156,9 @@
 - from: ", in the feminine ending"
   to: " sporadic ; in the feminine ending"
   reason: unhandled positional environment
+- from: " / sometimes"
+  to: " / sporadic ; sometimes"
+  reason: replace prose
 - from: " / in Form VI"
   to: " / sporadic ; in Form VI"
   reason: replace prose

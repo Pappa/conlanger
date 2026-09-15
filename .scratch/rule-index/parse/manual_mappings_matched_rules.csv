@@ -46,6 +46,7 @@ section_index,section_name,rule_id,source,manual_mapping
 8.5.1,Proto-Turkic to Proto-Kypchak,Proto-Kypchak-ew,index_diachronica_original.html:2298,ew → øj → yj
 8.5.1.2,Proto-Kypchak to Kyrgyz,Kyrgyz-∅,index_diachronica_original.html:2327, ; (not sure what 
 10.1.1.2,Proto-Bali-Sasak-Sumbawan to Sasak,Sasak-Vh,index_diachronica_original.html:2559," ; (again, "
+10.1.1.3,Proto-Bali-Sasak-Sumbawan to Sumbawan,Sumbawan-u-i,index_diachronica_original.html:2571, / sporadic ; sometimes
 10.1.1.3,Proto-Bali-Sasak-Sumbawan to Sumbawan,Sumbawan-Vh,index_diachronica_original.html:2572," ; (again, "
 10.1.2.4,Proto-Philippine to Ibanag,Ibanag-*j,index_diachronica_original.html:2646, / sporadic ; possible exception
 10.1.2.9,Proto-Philippine to Tagalog,Tagalog-q,index_diachronica_original.html:2755, ; (not sure what 
@@ -102,7 +103,9 @@ section_index,section_name,rule_id,source,manual_mapping
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-F+voice,index_diachronica_original.html:4812," / _,{"
 16.1.5,Proto-Tabla-Sentani to Tabla,Tabla-e,index_diachronica_original.html:4924, / [-stress]
 17.1.1,Proto-Indo-European to Gheg Albanian,Gheg-Albanian-ḱ_3,index_diachronica_original.html:4962, ; (“[a]rchaic relic”)
+17.1.1,Proto-Indo-European to Gheg Albanian,Gheg-Albanian-s_3,index_diachronica_original.html:4976, / sporadic ; sometimes
 17.1.2,Proto-Indo-European to Tosk Albanian,Tosk-Albanian-ḱ_3,index_diachronica_original.html:5001, ; (“[a]rchaic relic”)
+17.1.2,Proto-Indo-European to Tosk Albanian,Tosk-Albanian-s_3,index_diachronica_original.html:5015, / sporadic ; sometimes
 17.2.1,Common Anatolian to Hittite,Hittite-V,index_diachronica_original.html:5057, / 
 17.2.1,Common Anatolian to Hittite,Hittite-e-o,index_diachronica_original.html:5058, / 
 17.2.2,Common Anatolian to Luwian,Luwian-V,index_diachronica_original.html:5085, / 
@@ -277,6 +280,7 @@ section_index,section_name,rule_id,source,manual_mapping
 36.1.1,Late Middle Chinese to Old Mandarin,Old-Mandarin-V5,index_diachronica_original.html:11762, / 
 36.1.1,Late Middle Chinese to Old Mandarin,Old-Mandarin-V5_2,index_diachronica_original.html:11763, / 
 36.2,Sin Sukchu to Guānhuà,Guānhuà-ŋ_3,index_diachronica_original.html:11833, ; There seems to ahve been some stuff going on
+36.2,Sin Sukchu to Guānhuà,"Guānhuà-jem,jen",index_diachronica_original.html:11870, / sporadic ; sometimes
 36.2,Sin Sukchu to Guānhuà,Guānhuà-ɔ,index_diachronica_original.html:11873, / sporadic ; in two cases cited
 36.3.3.1,Old Tibetan to Amdo dialects,Amdo-dialects-ʃ,index_diachronica_original.html:12289, sporadic ; (some dialects
 36.3.3.1,Old Tibetan to Amdo dialects,Amdo-dialects-d,index_diachronica_original.html:12295, sporadic ; (some dialects

@@ -6,8 +6,8 @@
 - Rows: **9837** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8878** (90.3%)
-- Fail: **438** (4.5%)
+- OK: **8881** (90.3%)
+- Fail: **435** (4.4%)
 - Skipped: **521** (5.3%)
 
 
@@ -32,14 +32,14 @@ Skipped: **2/94**
 
 | count | failure_class |
 |------:|---------------|
-| 90 | `expected_underscore` |
+| 89 | `expected_underscore` |
 | 81 | `unknown_character` |
 | 47 | `invalid_ipa` |
-| 44 | `expected_ipa` |
 | 44 | `missing_slash_output_env` |
+| 43 | `expected_ipa` |
 | 16 | `nested_brackets` |
-| 15 | `prose_or_expected_arrow` |
 | 14 | `syntax_other` |
+| 14 | `prose_or_expected_arrow` |
 | 11 | `unknown_feature` |
 | 10 | `expected_number` |
 | 9 | `stuff_after_word_bound` |
@@ -139,7 +139,7 @@ Skipped: **2/94**
 
 | count | error_token |
 |------:|-------------|
-| 18 | `,` |
+| 16 | `,` |
 | 7 | `/` |
 | 3 | `)` |
 | 3 | `:` |
@@ -150,7 +150,7 @@ Skipped: **2/94**
 
 | count | description |
 |------:|-------------|
-| 55 | `Expected '_', but received ''` |
+| 56 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -203,11 +203,11 @@ Skipped: **2/94**
 |------:|-------------|
 | 5 | `Expected '>', '->' or '=>', but received ':'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
-| 2 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
-| 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 | 1 | `Expected '>', '->' or '=>', but received ')'` |
+| 1 | `Expected '>', '->' or '=>', but received '̥'` |
+| 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
 ### invalid_ipa (error_token)
@@ -242,7 +242,7 @@ Skipped: **2/94**
 
 | count | description |
 |------:|-------------|
-| 1 | `Expected an IPA character, Primative or Matrix, but received ''` |
+| — | _(none)_ |
 
 ### expected_range_dots (error_token)
 
@@ -259,15 +259,15 @@ Skipped: **2/94**
 
 | count | error_token |
 |------:|-------------|
-| 19 | `)` |
+| 18 | `)` |
 | 11 | `:` |
 | 5 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
+| 2 | `̥` |
 | 1 | `&` |
-| 1 | `*` |
 | 1 | `#` |
-| 1 | `̥` |
+| 1 | `*` |
 ### missing_slash_output_env (description)
 
 | count | description |

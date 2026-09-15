@@ -8386,7 +8386,7 @@ sections:
     raw: ej ow → e o / _#
     source: index_diachronica_original.html:2570
     rule_id: Sumbawan-ej-ow
-  - comment: sometimes
+  - comment: sometimes; sporadic
     stages:
     - u i
     - o e
@@ -20166,11 +20166,10 @@ sections:
     raw: st → ʃt / medial
     source: index_diachronica_original.html:4975
     rule_id: Gheg-Albanian-st
-  - stages:
+  - comment: sometimes, involving “[d]issimilation with following vowel”; sporadic
+    stages:
     - s
     - θ
-    env: sometimes, involving
-    comment: “[d]issimilation with following vowel”
     raw: s → θ / sometimes, involving “[d]issimilation with following vowel”
     source: index_diachronica_original.html:4976
     sporadic: true
@@ -20413,11 +20412,10 @@ sections:
     raw: st → ʃt / medial
     source: index_diachronica_original.html:5014
     rule_id: Tosk-Albanian-st
-  - stages:
+  - comment: sometimes, involving “[d]issimilation with following vowel”; sporadic
+    stages:
     - s
     - θ
-    env: sometimes, involving
-    comment: “[d]issimilation with following vowel”
     raw: s → θ / sometimes, involving “[d]issimilation with following vowel”
     source: index_diachronica_original.html:5015
     sporadic: true
@@ -55927,12 +55925,10 @@ sections:
     source: index_diachronica_original.html:11869
     rule_id: Guānhuà-jew_2
     exception: C̣(C?)_
-  - stages:
+  - comment: sometimes after C̣_ (but ! ʐ_) (only in one variety?); sporadic
+    stages:
     - '{jem,jen}'
     - iɛn
-    env: sometimes after C̣_ (but
-    exception: ʐ_)
-    comment: (only in one variety?)
     raw: '{jem,jen} → iɛn / sometimes after C̣_ (but ! ʐ_) (only in one variety?)'
     source: index_diachronica_original.html:11870
     sporadic: true
