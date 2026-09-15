@@ -450,3 +450,9 @@ rules:
                   content: "a → {o,ɔ} / _{K,r} ! _w"
                   reason: |
                           a → {o,ɔ} / _{K,r} (! K = w ?)
+
+        - rule:
+                  id: Middle-Welsh-V_4
+                  content: "V → ∅ / %[+str]_%[+str]"
+                  reason: |
+                          V → ∅ / _[+intertonic]

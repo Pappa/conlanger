@@ -3,7 +3,6 @@ section_index,rule_id,error_token,rule
 15.2.6,Nunivak-Yup’ik-i-a-u,initial,"i a u > ii aa uu / C_ in %[+lo -initial -final] such that %[+lo]_ | ^^^^^^^^^ @ Rule 1, Line 1"
 15.2.8,Unaaliq-Yup’ik-i-a-u,initial,"i a u > ii aa uu / C_ in %[+lo -initial -final] such that %[+lo]_ | ^^^^^^^^^ @ Rule 1, Line 1"
 17.2.1,Hittite-e_2,posttonic,"e > a / _n in %[+lo +posttonic] | ^^^^^^^^^^ @ Rule 1, Line 1"
-17.5.2,Middle-Welsh-V_4,intertonic,"V > ∅ / _[+intertonic] | ^^^^^^^^^^^ @ Rule 1, Line 1"
 17.12.1.1.5,Portuguese-o_2,tonic,"o > ∅ / _{r,l} when between #% and %[+tonic] | ^^^^^^ @ Rule 1, Line 1"
 18.1.1,Eastern-Bakairi-ʔ,fricative,"ʔ > ∅ / _C:[+ fricative -voice] | ^^^^^^^^^^^^ @ Rule 1, Line 1"
 18.1.2,Western-Bakairi-C+-fricative-voiced,fricative,"C:[+ fricative -voice] > ∅ / ʔ_ | ^^^^^^^^^^^^ @ Rule 1, Line 1"

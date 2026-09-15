@@ -23929,8 +23929,8 @@ sections:
   - stages:
     - V
     - ∅
-    env: _[+intertonic]
-    raw: V → ∅ / _[+intertonic]
+    env: $[+str]_$[+str]
+    raw: V → ∅ / %[+str]_%[+str]
     source: index_diachronica_original.html:5599
     rule_id: Middle-Welsh-V_4
   - stages:
