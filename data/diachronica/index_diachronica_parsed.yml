@@ -27440,8 +27440,9 @@ sections:
     rule_id: Old-Norse-oː
   - stages:
     - ʀ
-    - r_n
-    raw: ʀ → r_n
+    - ∅
+    env: r_n
+    raw: ʀ → ∅ / r_n
     source: index_diachronica_original.html:6199
     rule_id: Old-Norse-ʀ
   - stages:

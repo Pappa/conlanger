@@ -461,3 +461,11 @@ rules:
                   reason: |
                           https://en.wikipedia.org/wiki/Dacian_language
                             {kʷ,kw} {ɡʷ,ɡw} → tʃ dʒ (→ s~z z ?) / _E
+        - rule:
+                  id: Old-Norse-ʀ
+                  content: "ʀ → ∅ / r_n"
+                  reason: |
+                          Corrected from original source:
+                          http://www.kunstsprachen.de/s17/rules.sch
+                          Original rule:
+                          ʀ → r_n
