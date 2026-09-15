@@ -1968,14 +1968,15 @@ sections:
     raw: ɡ → ɡʲ → dʒ
     source: index_diachronica_original.html:1320
     rule_id: Classical-Arabic-ɡ
-  - stages:
+  - comment: in “anaphora and certain derivational prefixes. . .[t]his is common to
+      many other Semitic languages as well”; sporadic
+    stages:
     - s
     - '{ʃ,h}'
-    comment: “anaphora and certain derivational prefixes. . .[t]his is common to many
-      other Semitic languages as well”
     raw: s → {ʃ,h} / in “anaphora and certain derivational prefixes. . .[t]his is
       common to many other Semitic languages as well”
     source: index_diachronica_original.html:1321
+    sporadic: true
     rule_id: Classical-Arabic-s
   - stages:
     - ʃ
@@ -24406,12 +24407,12 @@ sections:
     raw: ɣ → ɡ / C_V
     source: index_diachronica_original.html:5681
     rule_id: Gothic-ɣ_2
-  - stages:
+  - comment: ', though “[t]his s was dropped when it came to stand after an original
+      s through the loss of a vowel”, though it “remained when protected by a particle”'
+    stages:
     - z
     - s
-    env: _#, thoughthough it
-    comment: “[t]his s was dropped when it came to stand after an original s through
-      the loss of a vowel”,; “remained when protected by a particle”
+    env: _#
     raw: z → s / _#, though “[t]his s was dropped when it came to stand after an original
       s through the loss of a vowel”, though it “remained when protected by a particle”
     source: index_diachronica_original.html:5683
@@ -24423,21 +24424,23 @@ sections:
     raw: s → ∅ / V[- long]r_#
     source: index_diachronica_original.html:5684
     rule_id: Gothic-s
-  - stages:
+  - comment: in “[t]he prep[osition]. us…before r in compounds”; sporadic
+    stages:
     - s
     - r
-    comment: “[t]he prep[osition]. us…before r in compounds”
     raw: s → r / in “[t]he prep[osition]. us…before r in compounds”
     source: index_diachronica_original.html:5685
+    sporadic: true
     rule_id: Gothic-s_2
-  - stages:
+  - comment: in “[t]he prep[osition]. us…in compounds before st”, though this seems
+      to have been less common; sporadic
+    stages:
     - s
     - ∅
-    env: ', though this seems to have been less common'
-    comment: “[t]he prep[osition]. us…in compounds before st”
     raw: s → ∅ / in “[t]he prep[osition]. us…in compounds before st”, though this
       seems to have been less common
     source: index_diachronica_original.html:5686
+    sporadic: true
     rule_id: Gothic-s_3
 - section: Common Germanic to West Germanic
   index: 17.7.2

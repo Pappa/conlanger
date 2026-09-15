@@ -301,6 +301,9 @@
 - from: ", in some words"
   to: " sporadic ; in some words"
   reason: replace prose
+- from: " / in “"
+  to: " / sporadic ; in “"
+  reason: replace prose
 - from: " / in coda"
   to: " / :{ _#, _% }: ; in coda"
   reason: unhandled positional environment
@@ -351,6 +354,9 @@
 - from: ", also in proclitics"
   to: " ; , also in proclitics"
   reason: replace prose
+- from: "#, though "
+  to: "# ; , though "
+  reason: comment
 - from: " / pretonic"
   to: " / sporadic ; pretonic"
   reason: unhandled positional environment

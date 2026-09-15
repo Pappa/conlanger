@@ -1,13 +1,13 @@
 # Rule comment phrase summary
 
 - Corpus rules with **`comment`**: **1339**
-- Comments containing ``; `` (semicolon tails): **212**
+- Comments containing ``; `` (semicolon tails): **214**
 
 ## Qualifier phrases
 
 | phrase | rules |
 | --- | ---: |
-| `sporadic` | 200 |
+| `sporadic` | 203 |
 | `sometimes` | 58 |
 | `unstressed` | 28 |
 | `not sure` | 14 |
@@ -27,6 +27,6 @@
 - (sporadic)
 - ?
 - ?
-- “anaphora and certain derivational prefixes. . .[t]his is common to many other Semitic languages as well”
+- in “anaphora and certain derivational prefixes. . .[t]his is common to many other Semitic languages as well”; sporadic
 - “in certain contexts, notably in the nunation”
 - some sequences; sporadic
