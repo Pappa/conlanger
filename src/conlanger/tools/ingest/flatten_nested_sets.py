@@ -40,15 +40,14 @@ def flatten_nested_sets_in_rule_fields(rule: dict[str, Any]) -> dict[str, Any]:
     """Return a copy of ``rule`` with ``env`` / ``exception`` / ``stages`` flattened."""
     updated = dict(rule)
     for key in ("env", "exception"):
-        if key not in updated or updated[key] in (None, ""):
+        if key not in updated or not updated[key]:
             continue
         original = str(updated[key])
         updated[key] = flatten_nested_sets(original)
     stages = updated.get("stages")
     if stages:
         updated["stages"] = [
-            flatten_nested_sets(str(stage)) if stage not in (None, "") else stage
-            for stage in stages
+            flatten_nested_sets(stage) if stage else stage for stage in stages
         ]
     return updated
 

@@ -32,10 +32,10 @@ Skipped: **2/95**
 
 | count | failure_class |
 |------:|---------------|
-| 86 | `expected_underscore` |
+| 87 | `expected_underscore` |
 | 82 | `unknown_character` |
 | 47 | `invalid_ipa` |
-| 43 | `expected_ipa` |
+| 42 | `expected_ipa` |
 | 42 | `missing_slash_output_env` |
 | 16 | `nested_brackets` |
 | 16 | `prose_or_expected_arrow` |
@@ -149,7 +149,7 @@ Skipped: **2/95**
 
 | count | description |
 |------:|-------------|
-| 53 | `Expected '_', but received ''` |
+| 54 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -227,7 +227,7 @@ Skipped: **2/95**
 
 | count | error_token |
 |------:|-------------|
-| 9 | `(` |
+| 8 | `(` |
 | 6 | `:` |
 | 6 | `∅` |
 | 5 | `{` |
