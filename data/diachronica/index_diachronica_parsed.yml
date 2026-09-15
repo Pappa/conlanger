@@ -2751,9 +2751,9 @@ sections:
     rule_id: Moroccan-Arabic-u
   - stages:
     - '{C[+labial],C[-fr,+bk,+hi,-lo]}'
-    - '{C[+labial],C[-fr,+bk,+hi,-lo, +labial]}'
+    - '[+labial]'
     env: u[-long]_, _u[-long]
-    raw: '{C[+labial],C[+velar]} → {C[+labial],C[+velar, +labial]} / u[-long]_, _u[-long]'
+    raw: '{C[+labial],C[+velar]} → [+labial] / u[-long]_, _u[-long]'
     source: index_diachronica_original.html:1470
     rule_id: Moroccan-Arabic-C+labial,+velar
   - stages:
@@ -23803,10 +23803,11 @@ sections:
     raw: s → ∅ / V_V
     source: index_diachronica_original.html:5580
     rule_id: Middle-Welsh-s
-  - stages:
+  - comment: ', also in proclitics'
+    stages:
     - V
     - ə
-    env: _(C)#, also in proclitics
+    env: _(C)#
     raw: V → ə / _(C)#, also in proclitics
     source: index_diachronica_original.html:5581
     rule_id: Middle-Welsh-V

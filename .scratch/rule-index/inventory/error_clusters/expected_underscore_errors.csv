@@ -10,7 +10,6 @@ section_index,rule_id,error_token,rule
 17.2,Common-Anatolian-t,,"t > z / j | ^ @ Rule 1, Line 1"
 17.2.2,Luwian-V_2,,"V > V:[+long] / #%:[+stress] | ^ @ Rule 1, Line 1"
 17.5.1,Old-Irish-C…C,/,"C(..)C > ∅ / _# // /l r/ and clusters containing them | ^ @ Rule 1, Line 1"
-17.5.2,Middle-Welsh-V,,"V > ə / _(C)#, also in proclitics | ^ @ Rule 1, Line 1"
 17.7.1,Gothic-z,,"z > s / _#, thoughthough it | ^ @ Rule 1, Line 1"
 17.7.1,Gothic-s_3,",","s > ∅ / , though this seems to have been less common | ^ @ Rule 1, Line 1"
 17.7.2.1.2,Kentish-Middle-English-ɑ-e-o,/,"ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / _ %[+lo] // #% with the following % containing i:[+long] or ending in one of /m n r l/ | ^ @ Rule 1, Line 1"

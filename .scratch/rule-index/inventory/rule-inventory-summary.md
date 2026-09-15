@@ -6,8 +6,8 @@
 - Rows: **9837** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8888** (90.4%)
-- Fail: **428** (4.4%)
+- OK: **8889** (90.4%)
+- Fail: **427** (4.3%)
 - Skipped: **521** (5.3%)
 
 
@@ -32,14 +32,14 @@ Skipped: **2/97**
 
 | count | failure_class |
 |------:|---------------|
-| 82 | `expected_underscore` |
 | 81 | `unknown_character` |
+| 81 | `expected_underscore` |
 | 47 | `invalid_ipa` |
-| 45 | `missing_slash_output_env` |
-| 44 | `expected_ipa` |
+| 44 | `missing_slash_output_env` |
+| 43 | `expected_ipa` |
 | 16 | `nested_brackets` |
+| 15 | `prose_or_expected_arrow` |
 | 13 | `syntax_other` |
-| 13 | `prose_or_expected_arrow` |
 | 11 | `unknown_feature` |
 | 10 | `expected_number` |
 | 9 | `stuff_after_word_bound` |
@@ -149,7 +149,7 @@ Skipped: **2/97**
 
 | count | description |
 |------:|-------------|
-| 52 | `Expected '_', but received ''` |
+| 51 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -202,9 +202,10 @@ Skipped: **2/97**
 |------:|-------------|
 | 5 | `Expected '>', '->' or '=>', but received ':'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
+| 2 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
-| 1 | `Expected '>', '->' or '=>', but received '̥'` |
+| 1 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
@@ -240,7 +241,7 @@ Skipped: **2/97**
 
 | count | description |
 |------:|-------------|
-| 1 | `Expected an IPA character, Primative or Matrix, but received ''` |
+| — | _(none)_ |
 
 ### expected_range_dots (error_token)
 
@@ -262,10 +263,10 @@ Skipped: **2/97**
 | 5 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
-| 2 | `̥` |
 | 1 | `&` |
-| 1 | `#` |
 | 1 | `*` |
+| 1 | `#` |
+| 1 | `̥` |
 ### missing_slash_output_env (description)
 
 | count | description |

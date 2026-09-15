@@ -420,7 +420,7 @@ rules:
                             j → ∅ / {ʃ,θ}
         - rule:
                   id: Moroccan-Arabic-C+labial,+velar
-                  content: "{C[+labial],C[+velar]} → {C[+labial],C[+velar, +labial]} / u[-long]_, _u[-long]"
+                  content: "{C[+labial],C[+velar]} → [+labial] / u[-long]_, _u[-long]"
                   reason: |
                           The above rule does not seem to be correct.
                           "In positions where /ə/ was deleted, /u/ was also deleted, 

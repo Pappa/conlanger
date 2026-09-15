@@ -348,6 +348,9 @@
 - from: ", in polysyllable"
   to: " ; , in polysyllable"
   reason: replace prose
+- from: ", also in proclitics"
+  to: " ; , also in proclitics"
+  reason: replace prose
 - from: " / pretonic"
   to: " / sporadic ; pretonic"
   reason: unhandled positional environment
