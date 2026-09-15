@@ -20,11 +20,12 @@ section_index,section_name,rule_id,source,manual_mapping
 6.2.2.1.11,Classical Arabic to Iraqi Arabic,Iraqi-Arabic-ɡʲ,index_diachronica_original.html:1445, / sporadic ; in southern regions
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-t,index_diachronica_original.html:1467, ; plain t only
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,"Moroccan-Arabic-C+labial,+velar",index_diachronica_original.html:1470," / u[-long]_, _u[-long]"
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə,index_diachronica_original.html:1472," / _{ħ,ʕ}, {ħ,ʕ}_ ; near ħ ʕ"
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə_2,index_diachronica_original.html:1473," / _[+ emphatic], [+ emphatic]_ ; near emphatics"
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-aː-iː-uː,index_diachronica_original.html:1476," / _[+ emphatic], [+ emphatic]_ ; near emphatics"
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-a,index_diachronica_original.html:1501," / _[+ emphatic], [+ emphatic]_ ; near emphatics"
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-Vː_2,index_diachronica_original.html:1507, / 
-6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ə,index_diachronica_original.html:1557," / _[+laryngeal], [+laryngeal]_"
+6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ə,index_diachronica_original.html:1557," / _[+laryngeal], [+laryngeal]_ ; near gutturals"
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ʔ,index_diachronica_original.html:1564, ! 
 7.4,Proto-Algonquian to Blackfoot,"Blackfoot-θ,tʃ,ʃ,r",index_diachronica_original.html:1711," / ! C_,_C ; unless adjacent to another consonant"
 7.4,Proto-Algonquian to Blackfoot,Blackfoot-tsi,index_diachronica_original.html:1761, ; “(before a prefix; 

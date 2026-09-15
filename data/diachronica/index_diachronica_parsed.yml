@@ -2762,10 +2762,11 @@ sections:
     raw: '{u,ə} → ∅ / ! C_C(C)#'
     source: index_diachronica_original.html:1471
     rule_id: Moroccan-Arabic-u,ə
-  - stages:
+  - comment: near ħ ʕ
+    stages:
     - ə
     - a
-    env: near ħ ʕ
+    env: _{ħ,ʕ}, {ħ,ʕ}_
     raw: ə → a / near ħ ʕ
     source: index_diachronica_original.html:1472
     rule_id: Moroccan-Arabic-ə
@@ -3203,7 +3204,8 @@ sections:
     raw: Vː → V[-long]
     source: index_diachronica_original.html:1556
     rule_id: Modern-Israeli-Hebrew-Vː
-  - stages:
+  - comment: near gutturals
+    stages:
     - ə
     - a
     env: _[+laryngeal], [+laryngeal]_
@@ -23227,10 +23229,9 @@ sections:
     source: index_diachronica_original.html:5484
     rule_id: Proto-Celtic-—-Vː
   - stages:
-    - C₁C₂
-    - xC₂
-    env: if C₂ was a plosive or s
-    raw: — C₁C₂ → xC₂ / if C₂ was a plosive or s
+    - C{S,s}
+    - x{S,s}
+    raw: C{S,s} → x{S,s}
     source: index_diachronica_original.html:5485
     rule_id: Proto-Celtic-—-C1C2
   - stages:

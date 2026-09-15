@@ -400,7 +400,7 @@ rules:
                   content: "hhy → ʒ"
                   reason: "hhy → “something like /ʒ/”"
         - rule:
-                  id: Proto-Bahnaric-nProto-Celtic-—-C1C2
+                  id: Proto-Celtic-—-C1C2
                   content: "C{S,s} → x{S,s}"
                   reason: "C<sub>1</sub>C<sub>2</sub> → xC<sub>2</sub> / if C<sub>2</sub> was a plosive or s"
         - rule:

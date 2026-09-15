@@ -69,6 +69,12 @@
 - from: " / near nasals"
   to: " / [+nasal]_, _[+nasal] ; near nasals"
   reason: replace prose
+- from: " / near gutturals"
+  to: " / _[+laryngeal], [+laryngeal]_ ; near gutturals"
+  reason: replace prose
+- from: " / near ħ ʕ"
+  to: " / _{ħ,ʕ}, {ħ,ʕ}_ ; near ħ ʕ"
+  reason: replace prose
 - from: " / when not near emphatics"
   to: " / ! _[+ emphatic], [+ emphatic]_"
   reason: replace prose
@@ -265,9 +271,6 @@
 - from: RTR
   to: rtr
   reason: Lowercase feature name
-- from: " / near gutturals"
-  to: " / _[+laryngeal], [+laryngeal]_"
-  reason: replace prose
 - from: " / in two cases cited"
   to: " / sporadic ; in two cases cited"
   reason: replace prose

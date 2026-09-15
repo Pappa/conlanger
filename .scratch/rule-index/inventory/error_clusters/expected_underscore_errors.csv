@@ -1,5 +1,4 @@
 section_index,rule_id,error_token,rule
-6.2.2.1.14,Moroccan-Arabic-ə,,"ə > a / near ħ ʕ | ^ @ Rule 1, Line 1"
 6.2.2.1.14,Moroccan-Arabic-dʒ,,"dʒ > d / if s or z occur somewhere else in the word | ^ @ Rule 1, Line 1"
 6.2.2.1.14,Moroccan-Arabic-dʒ,,"dʒ > ɡ / if s or z occur somewhere else in the word | ^ @ Rule 1, Line 1"
 6.2.2.1.14,Moroccan-Arabic-dʒ_2,,"dʒ > ʒ // if s or z occur somewhere else in the word | ^ @ Rule 1, Line 1"
