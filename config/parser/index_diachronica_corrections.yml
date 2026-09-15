@@ -427,3 +427,9 @@ rules:
                           and is maintained only as labialization of the adjacent 
                           labial or velar consonant"
                             C[+labial/+velar] → ʷ / adjacent to short u
+        - rule:
+                  id: Siberian-Yup’ik-ə
+                  content: "ə → a / _#"
+                  reason: |
+                          "It generally changed to i in Yupik
+                          also, but in word-final it became a"

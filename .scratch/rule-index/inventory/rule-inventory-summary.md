@@ -6,15 +6,15 @@
 - Rows: **9837** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8877** (90.2%)
-- Fail: **439** (4.5%)
+- OK: **8878** (90.3%)
+- Fail: **438** (4.5%)
 - Skipped: **521** (5.3%)
 
 
 ## Corrections
 
-OK: **91/93**
-Skipped: **2/93**
+OK: **92/94**
+Skipped: **2/94**
 
 ### Skipped corrections
 
@@ -23,8 +23,8 @@ Skipped: **2/93**
 
 ## Sections
 
-- All OK: **470 / 714** (65.8%)
-- Some OK: **191 / 714** (26.8%)
+- All OK: **471 / 714** (66.0%)
+- Some OK: **190 / 714** (26.6%)
 - None OK: **0 / 714** (0.0%)
 - Sections skipped: **53 / 714** (7.4%)
 
@@ -32,13 +32,13 @@ Skipped: **2/93**
 
 | count | failure_class |
 |------:|---------------|
-| 91 | `expected_underscore` |
-| 82 | `unknown_character` |
+| 90 | `expected_underscore` |
+| 81 | `unknown_character` |
 | 47 | `invalid_ipa` |
-| 43 | `expected_ipa` |
-| 43 | `missing_slash_output_env` |
+| 44 | `expected_ipa` |
+| 44 | `missing_slash_output_env` |
 | 16 | `nested_brackets` |
-| 16 | `prose_or_expected_arrow` |
+| 15 | `prose_or_expected_arrow` |
 | 14 | `syntax_other` |
 | 11 | `unknown_feature` |
 | 10 | `expected_number` |
@@ -102,9 +102,9 @@ Skipped: **2/93**
 | 6 | `ŕ` |
 | 6 | `̺` |
 | 5 | `ₙ` |
-| 4 | `̂` |
 | 4 | `̻` |
-| 2 | `ˑ` |
+| 4 | `̂` |
+| 2 | `̚` |
 ### unknown_character (description)
 
 | count | description |
@@ -150,7 +150,7 @@ Skipped: **2/93**
 
 | count | description |
 |------:|-------------|
-| 56 | `Expected '_', but received ''` |
+| 55 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -204,10 +204,10 @@ Skipped: **2/93**
 | 5 | `Expected '>', '->' or '=>', but received ':'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
 | 2 | `Expected '>', '->' or '=>', but received '̥'` |
-| 2 | `Expected '>', '->' or '=>', but received ')'` |
-| 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
+| 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
+| 1 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
 ### invalid_ipa (error_token)
@@ -242,7 +242,7 @@ Skipped: **2/93**
 
 | count | description |
 |------:|-------------|
-| — | _(none)_ |
+| 1 | `Expected an IPA character, Primative or Matrix, but received ''` |
 
 ### expected_range_dots (error_token)
 
@@ -261,7 +261,7 @@ Skipped: **2/93**
 |------:|-------------|
 | 19 | `)` |
 | 11 | `:` |
-| 4 | `(` |
+| 5 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
 | 1 | `&` |

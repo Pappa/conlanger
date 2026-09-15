@@ -19191,8 +19191,9 @@ sections:
     rule_id: Siberian-Yup’ik-ɣ-ʁ
   - stages:
     - ə
-    - a /
-    raw: ə → a /
+    - a
+    env: _#
+    raw: ə → a / _#
     source: index_diachronica_original.html:4778
     rule_id: Siberian-Yup’ik-ə
   - stages:
