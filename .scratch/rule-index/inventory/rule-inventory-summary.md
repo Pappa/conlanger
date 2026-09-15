@@ -13,8 +13,8 @@
 
 ## Corrections
 
-OK: **92/94**
-Skipped: **2/94**
+OK: **93/95**
+Skipped: **2/95**
 
 ### Skipped corrections
 
@@ -32,14 +32,14 @@ Skipped: **2/94**
 
 | count | failure_class |
 |------:|---------------|
-| 89 | `expected_underscore` |
+| 88 | `expected_underscore` |
 | 81 | `unknown_character` |
 | 47 | `invalid_ipa` |
-| 44 | `missing_slash_output_env` |
-| 43 | `expected_ipa` |
+| 45 | `missing_slash_output_env` |
+| 44 | `expected_ipa` |
 | 16 | `nested_brackets` |
 | 14 | `syntax_other` |
-| 14 | `prose_or_expected_arrow` |
+| 13 | `prose_or_expected_arrow` |
 | 11 | `unknown_feature` |
 | 10 | `expected_number` |
 | 9 | `stuff_after_word_bound` |
@@ -150,7 +150,7 @@ Skipped: **2/94**
 
 | count | description |
 |------:|-------------|
-| 56 | `Expected '_', but received ''` |
+| 55 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -205,7 +205,6 @@ Skipped: **2/94**
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
-| 1 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
@@ -242,7 +241,7 @@ Skipped: **2/94**
 
 | count | description |
 |------:|-------------|
-| — | _(none)_ |
+| 1 | `Expected an IPA character, Primative or Matrix, but received ''` |
 
 ### expected_range_dots (error_token)
 
@@ -259,7 +258,7 @@ Skipped: **2/94**
 
 | count | error_token |
 |------:|-------------|
-| 18 | `)` |
+| 19 | `)` |
 | 11 | `:` |
 | 5 | `(` |
 | 3 | `ʲ` |

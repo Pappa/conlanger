@@ -433,3 +433,8 @@ rules:
                   reason: |
                           "It generally changed to i in Yupik
                           also, but in word-final it became a"
+        - rule:
+                  id: Guānhuà-jem,jen
+                  content: "{jem,jen} → iɛn / C̣_ ! ʐ_ ; sporadic"
+                  reason: |
+                          {jem,jen} → iɛn / sometimes after C̣_ (but ! ʐ_) (only in one variety?)

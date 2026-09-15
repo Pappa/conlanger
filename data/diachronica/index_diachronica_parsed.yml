@@ -55925,13 +55925,14 @@ sections:
     source: index_diachronica_original.html:11869
     rule_id: Guānhuà-jew_2
     exception: C̣(C?)_
-  - comment: sometimes after C̣_ (but ! ʐ_) (only in one variety?); sporadic
+  - comment: sporadic
     stages:
     - '{jem,jen}'
     - iɛn
-    raw: '{jem,jen} → iɛn / sometimes after C̣_ (but ! ʐ_) (only in one variety?)'
+    env: C̣_
+    exception: ʐ_
+    raw: '{jem,jen} → iɛn / C̣_ ! ʐ_ ; sporadic'
     source: index_diachronica_original.html:11870
-    sporadic: true
     rule_id: Guānhuà-jem,jen
   - stages:
     - yen
