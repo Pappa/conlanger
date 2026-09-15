@@ -2336,6 +2336,7 @@ sections:
     raw: dˤ → zˤ (seems to be a sporadic change only affecting a few words, e.g. CA/MSA
       ˈdˤaːbitˤ → EA ˈzˤaːbitˤ)
     source: index_diachronica_original.html:1380
+    sporadic: true
     rule_id: Egyptian-Arabic-dˤ
   - stages:
     - dʒ
@@ -5200,6 +5201,7 @@ sections:
     raw: V → ∅ / _# ! some monosyllables and analogical developments, in the latter
       of which long vowels were shortened
     source: index_diachronica_original.html:1915
+    sporadic: true
     rule_id: Munsee-Delaware-V
   - comment: such vowels are considered “weak”; “in the odd-numbered of any sequence
       of one or more short-vowel open syllables”
@@ -11077,6 +11079,7 @@ sections:
     exception: _#
     raw: h → ∅ / ! _# (some exceptions)
     source: index_diachronica_original.html:3074
+    sporadic: true
     rule_id: Minangkabau-h
   - stages:
     - a
@@ -26931,6 +26934,7 @@ sections:
     raw: Vː → V[- long] / _CC (some exceptions; the change was more common around
       _xt and _rC)
     source: index_diachronica_original.html:6114
+    sporadic: true
     rule_id: Standard-German-Vː
   - comment: sporadic (some exceptions)
     stages:
@@ -26939,6 +26943,7 @@ sections:
     env: _$Cə{r,l,n}#
     raw: Vː → V[- long] / _%Cə{r,l,n}# (some exceptions)
     source: index_diachronica_original.html:6115
+    sporadic: true
     rule_id: Standard-German-Vː_2
   - stages:
     - V
@@ -34097,6 +34102,7 @@ sections:
     raw: V → Vː / _S[+voiced]{S[-voiced],F[-voiced]}; “(i, e, and o sometimes bypass
       this)”
     source: index_diachronica_original.html:7288
+    sporadic: true
     rule_id: Latin-V_6
   - stages:
     - S[+voice]
@@ -45087,6 +45093,7 @@ sections:
     env: a_ (usually
     raw: i → ∅ / a_ (usually; sometimes the diphthong is retained or → aj)
     source: index_diachronica_original.html:9339
+    sporadic: true
     rule_id: Motilón-i
   - stages:
     - a
@@ -48984,6 +48991,7 @@ sections:
     env: _$
     raw: '{A,F} → ∅ / _$; diphthongs sometimes lengthen in comparison'
     source: index_diachronica_original.html:10345
+    sporadic: true
     rule_id: Upper-Tanana-A,F
   - stages:
     - ʃ
@@ -49493,6 +49501,7 @@ sections:
     env: '#_'
     raw: 'NC[α PLACE] → N[α PLACE]C / #_ ; sporadic (in verbs)'
     source: index_diachronica_original.html:10473
+    sporadic: true
     rule_id: Sebirwa-NC_2
   - stages:
     - t d l
@@ -55933,6 +55942,7 @@ sections:
     exception: ʐ_
     raw: '{jem,jen} → iɛn / C̣_ ! ʐ_ ; sporadic'
     source: index_diachronica_original.html:11870
+    sporadic: true
     rule_id: Guānhuà-jem,jen
   - stages:
     - yen

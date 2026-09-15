@@ -298,6 +298,11 @@ def field_has_uncertainty_qualifier(text: str) -> bool:
     )
 
 
+def comment_has_uncertainty_qualifier(comment: str) -> bool:
+    """Return whether ``comment`` mentions sporadic / sometimes / occasionally uncertainty."""
+    return bool(comment and (_UNCERTAINTY_WORD_RE.search(comment)))
+
+
 def extract_uncertainty_qualifier_from_field(text: str) -> tuple[str, list[str]]:
     """Remove sporadic / sometimes / occasionally glosses; return captured prose."""
     captures: list[str] = []

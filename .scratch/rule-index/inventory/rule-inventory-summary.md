@@ -36,10 +36,10 @@ Skipped: **2/95**
 | 81 | `unknown_character` |
 | 47 | `invalid_ipa` |
 | 45 | `missing_slash_output_env` |
-| 44 | `expected_ipa` |
+| 42 | `expected_ipa` |
 | 16 | `nested_brackets` |
+| 15 | `prose_or_expected_arrow` |
 | 14 | `syntax_other` |
-| 13 | `prose_or_expected_arrow` |
 | 11 | `unknown_feature` |
 | 10 | `expected_number` |
 | 9 | `stuff_after_word_bound` |
@@ -203,6 +203,7 @@ Skipped: **2/95**
 |------:|-------------|
 | 5 | `Expected '>', '->' or '=>', but received ':'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
+| 2 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
 | 1 | `Expected '>', '->' or '=>', but received '̥'` |
@@ -229,8 +230,8 @@ Skipped: **2/95**
 |------:|-------------|
 | 9 | `(` |
 | 6 | `:` |
-| 6 | `∅` |
 | 5 | `{` |
+| 5 | `∅` |
 | 3 | `…` |
 | 3 | `ʷ` |
 | 2 | `*` |
@@ -241,7 +242,7 @@ Skipped: **2/95**
 
 | count | description |
 |------:|-------------|
-| 1 | `Expected an IPA character, Primative or Matrix, but received ''` |
+| — | _(none)_ |
 
 ### expected_range_dots (error_token)
 

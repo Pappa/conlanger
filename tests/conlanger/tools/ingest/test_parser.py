@@ -2040,14 +2040,17 @@ def test_parse_rule_element_sporadic_before_semicolon_cut():
     assert rules[0]["env"] == "_#"
 
 
-def test_parse_rule_element_sporadic_after_semicolon_not_detected():
+@pytest.mark.parametrize(
+    "sporadic_qualifier", ["sporadic", "(sometimes)", "sometimes?", "occasionally?"]
+)
+def test_parse_rule_element_sporadic_after_semicolon_detected(sporadic_qualifier):
     el = html.fragment_fromstring(
-        '<p class="schg">i → yː ; (sometimes)</p>',
+        f'<p class="schg">i → yː ; {sporadic_qualifier}</p>',
         create_parent=False,
     )
     rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
-    assert "sporadic" not in rules[0]
-    assert "(sometimes)" in rules[0]["comment"]
+    assert "sporadic" in rules[0]
+    assert sporadic_qualifier in rules[0]["comment"]
 
 
 def test_parse_rule_element_comment_tail_not_symbol_normalized():

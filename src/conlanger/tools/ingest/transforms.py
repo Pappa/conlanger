@@ -9,6 +9,7 @@ from conlanger.tools.compile.asca.syllable_position import (
     strip_editorial_in_before_syllable_position,
 )
 from conlanger.utils.gloss import (
+    comment_has_uncertainty_qualifier,
     extract_field_wrapped_quoted_gloss_from_field,
     extract_trailing_gloss_from_field,
     extract_uncertainty_qualifier_from_field,
@@ -60,6 +61,8 @@ def apply_sporadic_qualifier(parts: dict[str, str]) -> dict[str, Any]:
     cleaned: dict[str, Any] = {}
     if "comment" in parts:
         cleaned["comment"] = parts["comment"]
+        if comment_has_uncertainty_qualifier(cleaned["comment"]):
+            sporadic = True
     comment_fragments: list[str] = []
     stages = parts.get("stages")
     if stages is not None:
