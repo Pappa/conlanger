@@ -6,15 +6,15 @@
 - Rows: **9837** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8898** (90.5%)
-- Fail: **418** (4.2%)
-- Skipped: **521** (5.3%)
+- OK: **8900** (90.5%)
+- Fail: **415** (4.2%)
+- Skipped: **522** (5.3%)
 
 
 ## Corrections
 
-OK: **98/100**
-Skipped: **2/100**
+OK: **100/102**
+Skipped: **2/102**
 
 ### Skipped corrections
 
@@ -23,8 +23,8 @@ Skipped: **2/100**
 
 ## Sections
 
-- All OK: **479 / 714** (67.1%)
-- Some OK: **182 / 714** (25.5%)
+- All OK: **480 / 714** (67.2%)
+- Some OK: **181 / 714** (25.4%)
 - None OK: **0 / 714** (0.0%)
 - Sections skipped: **53 / 714** (7.4%)
 
@@ -32,11 +32,11 @@ Skipped: **2/100**
 
 | count | failure_class |
 |------:|---------------|
-| 79 | `expected_underscore` |
+| 80 | `expected_underscore` |
 | 77 | `unknown_character` |
 | 47 | `invalid_ipa` |
-| 43 | `expected_ipa` |
 | 42 | `missing_slash_output_env` |
+| 41 | `expected_ipa` |
 | 16 | `nested_brackets` |
 | 15 | `prose_or_expected_arrow` |
 | 13 | `syntax_other` |
@@ -45,16 +45,16 @@ Skipped: **2/100**
 | 9 | `stuff_after_word_bound` |
 | 9 | `unknown_grouping` |
 | 9 | `diacritic_prereq` |
-| 8 | `multiple_underlines_env` |
 | 8 | `segments_before_word` |
 | 8 | `empty_io_panic` |
+| 7 | `multiple_underlines_env` |
 | 4 | `panic_other` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
-| 2 | `format_error` |
 | 2 | `runtime_delete_only_segment` |
 | 2 | `other` |
 | 1 | `incomplete_matrix` |
+| 1 | `format_error` |
 
 ## Common Errors
 
@@ -149,7 +149,7 @@ Skipped: **2/100**
 
 | count | description |
 |------:|-------------|
-| 50 | `Expected '_', but received ''` |
+| 51 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -226,7 +226,7 @@ Skipped: **2/100**
 
 | count | error_token |
 |------:|-------------|
-| 9 | `(` |
+| 8 | `(` |
 | 6 | `:` |
 | 6 | `∅` |
 | 5 | `{` |
@@ -235,7 +235,7 @@ Skipped: **2/100**
 | 2 | `*` |
 | 2 | `ʲ` |
 | 2 | `_` |
-| 2 | `>` |
+| 1 | `,` |
 ### expected_ipa (description)
 
 | count | description |
@@ -292,7 +292,7 @@ Skipped: **2/100**
 
 | count | description |
 |------:|-------------|
-| 8 | `Cannot have multiple underlines in an environment` |
+| 7 | `Cannot have multiple underlines in an environment` |
 
 ### segments_before_word (error_token)
 

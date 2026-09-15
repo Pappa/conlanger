@@ -34429,15 +34429,14 @@ sections:
     raw: j → ʝː / V_V
     source: index_diachronica_original.html:7337
     rule_id: Classical-Latin-vs.-Vulgar-Latin-j_2
-  - comment: “In contrast, Romanian exhibits u, uː → u (and ultimately also ɔ, oː
-      → o); and Sardinian and African Latin underwent a straight merger of the vowels
-      by length without considering quality (e, eː → e; i, iː → i; u, uː → u; etc.)”
-    stages: []
+  - stages: []
     raw: “In contrast, Romanian exhibits u, uː → u (and ultimately also ɔ, oː → o);
       and Sardinian and African Latin underwent a straight merger of the vowels by
       length without considering quality (e, eː → e; i, iː → i; u, uː → u; etc.)”
     source: index_diachronica_original.html:7338
+    status: skipped
     rule_id: Classical-Latin-vs.-Vulgar-Latin-uː-ɔ,oː-eː-iː
+    comment: This is really a comment
 - section: Latin to Catalan
   index: 17.12.1.1.2
   citation: Mecislau
@@ -36204,11 +36203,11 @@ sections:
     source: index_diachronica_original.html:7604
     rule_id: Italian-dj,ɡj-lj-nj,ɡn
   - stages:
-    - ɔ
+    - ɔ[+stress]
     - uo
-    env: '[+stress]'
-    exception: j_ or _{dʒ,L}
-    raw: ɔ → uo / stressed ! j_ or _{dʒ,L}
+    env: _
+    exception: j_, _{dʒ,L}
+    raw: ɔ[+stress] → uo / _ ! j_, _{dʒ,L}
     source: index_diachronica_original.html:7605
     rule_id: Italian-ɔ
   - stages:
@@ -36268,9 +36267,9 @@ sections:
     source: index_diachronica_original.html:7613
     rule_id: Italian-t-k
   - stages:
-    - '{skj,stj,sːj'
+    - '{skj,stj,sːj}'
     - ʃ
-    raw: '{skj,stj,sːj → ʃ'
+    raw: '{skj,stj,sːj} → ʃ'
     source: index_diachronica_original.html:7614
     rule_id: Italian-skj,stj,sːj
   - stages:

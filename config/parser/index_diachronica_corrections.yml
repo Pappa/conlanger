@@ -469,3 +469,13 @@ rules:
                           http://www.kunstsprachen.de/s17/rules.sch
                           Original rule:
                           ʀ → r_n
+        - rule:
+                  id: Italian-ɔ
+                  content: "ɔ[+stress] → uo / _ ! j_, _{dʒ,L}"
+                  reason: |
+                          ɔ → uo / stressed ! j_ or _{dʒ,L}
+        - rule:
+                  id: Italian-skj,stj,sːj
+                  content: "{skj,stj,sːj} → ʃ"
+                  reason: |
+                          Typo: {skj,stj,sːj → ʃ

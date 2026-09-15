@@ -170,6 +170,8 @@ skip_rules:
     reason: "No idea what this rule means: a → _$%%(…)”"
   - id: Spanish-e-ɛ,a-ɔ-o
     reason: "This is really a comment"
+  - id: Classical-Latin-vs.-Vulgar-Latin-uː-ɔ,oː-eː-iː
+    reason: "This is really a comment"
   - id: Cypriot-Arabic-j
     reason: |
       I can't find the rule in the source, which also uses /y/ where the index uses /j/.
