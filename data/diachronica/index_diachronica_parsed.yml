@@ -24080,10 +24080,9 @@ sections:
   - stages:
     - '{kʷ,kw} {ɡʷ,ɡw}'
     - tʃ dʒ
-    - s~z z ?)
+    - '{s,z} z'
     env: _E
-    comment: (
-    raw: '{kʷ,kw} {ɡʷ,ɡw} → tʃ dʒ (→ s~z z ?) / _E'
+    raw: '{kʷ,kw} {ɡʷ,ɡw} → tʃ dʒ → {s,z} z / _E'
     source: index_diachronica_original.html:5625
     rule_id: Dacian-kʷ,kw-ɡʷ,ɡw
   - stages:

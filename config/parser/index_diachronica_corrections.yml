@@ -450,9 +450,14 @@ rules:
                   content: "a → {o,ɔ} / _{K,r} ! _w"
                   reason: |
                           a → {o,ɔ} / _{K,r} (! K = w ?)
-
         - rule:
                   id: Middle-Welsh-V_4
                   content: "V → ∅ / %[+str]_%[+str]"
                   reason: |
                           V → ∅ / _[+intertonic]
+        - rule:
+                  id: Dacian-kʷ,kw-ɡʷ,ɡw
+                  content: "{kʷ,kw} {ɡʷ,ɡw} → tʃ dʒ → {s,z} z / _E"
+                  reason: |
+                          https://en.wikipedia.org/wiki/Dacian_language
+                            {kʷ,kw} {ɡʷ,ɡw} → tʃ dʒ (→ s~z z ?) / _E
