@@ -438,3 +438,15 @@ rules:
                   content: "{jem,jen} → iɛn / C̣_ ! ʐ_ ; sporadic"
                   reason: |
                           {jem,jen} → iɛn / sometimes after C̣_ (but ! ʐ_) (only in one variety?)
+        - rule:
+                  id: Early-Icelandic-r
+                  content: "r → r̥ / S[-voice]_#"
+                  reason: |
+                          Corrected from original source: http://www.kunstsprachen.de/s17/rules.sch
+                          Original rule:
+                          r → r̥ / S[- voice] / _#
+        - rule:
+                  id: Shetland-Norn-a_2
+                  content: "a → {o,ɔ} / _{K,r} ! _w"
+                  reason: |
+                          a → {o,ɔ} / _{K,r} (! K = w ?)

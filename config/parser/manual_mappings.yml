@@ -345,6 +345,9 @@
 - from: " ! some monosyllables"
   to: " ; sporadic ! some monosyllables"
   reason: replace prose
+- from: ", in polysyllable"
+  to: " ; , in polysyllable"
+  reason: replace prose
 - from: " / pretonic"
   to: " / sporadic ; pretonic"
   reason: unhandled positional environment

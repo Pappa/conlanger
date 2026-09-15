@@ -21552,12 +21552,12 @@ sections:
     raw: N → w / S_S
     source: index_diachronica_original.html:5207
     rule_id: Artsakh-Armenian-N
-  - stages:
+  - comment: ', in polysyllables'
+    stages:
     - VN
     - V[+nasal]
     - V
     env: _#
-    comment: in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5208
     rule_id: Artsakh-Armenian-VN
@@ -21782,12 +21782,12 @@ sections:
     raw: N → w / S_S
     source: index_diachronica_original.html:5244
     rule_id: Erevan-Armenian-N
-  - stages:
+  - comment: ', in polysyllables'
+    stages:
     - VN
     - V[+nasal]
     - V
     env: _#
-    comment: in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5245
     rule_id: Erevan-Armenian-VN
@@ -22011,12 +22011,12 @@ sections:
     raw: N → w / S_S
     source: index_diachronica_original.html:5281
     rule_id: Istanbul-Armenian-N
-  - stages:
+  - comment: ', in polysyllables'
+    stages:
     - VN
     - V[+nasal]
     - V
     env: _#
-    comment: in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5282
     rule_id: Istanbul-Armenian-VN
@@ -22241,12 +22241,12 @@ sections:
     raw: N → w / S_S
     source: index_diachronica_original.html:5318
     rule_id: Kharpert-Armenian-N
-  - stages:
+  - comment: ', in polysyllables'
+    stages:
     - VN
     - V[+nasal]
     - V
     env: _#
-    comment: in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5319
     rule_id: Kharpert-Armenian-VN
@@ -22465,12 +22465,12 @@ sections:
     raw: N → w / S_S
     source: index_diachronica_original.html:5354
     rule_id: Sebastia-Armenian-N
-  - stages:
+  - comment: ', in polysyllables'
+    stages:
     - VN
     - V[+nasal]
     - V
     env: _#
-    comment: in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5355
     rule_id: Sebastia-Armenian-VN
@@ -22709,12 +22709,12 @@ sections:
     raw: N → w / S_S
     source: index_diachronica_original.html:5393
     rule_id: Southeast-Armenian-N
-  - stages:
+  - comment: ', in polysyllables'
+    stages:
     - VN
     - V[+nasal]
     - V
     env: _#
-    comment: in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5394
     rule_id: Southeast-Armenian-VN
@@ -22946,12 +22946,12 @@ sections:
     raw: N → w / S_S
     source: index_diachronica_original.html:5431
     rule_id: Southwest-Armenian-N
-  - stages:
+  - comment: ', in polysyllables'
+    stages:
     - VN
     - V[+nasal]
     - V
     env: _#
-    comment: in polysyllables
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5432
     rule_id: Southwest-Armenian-VN
@@ -28566,9 +28566,8 @@ sections:
   - stages:
     - r
     - r̥
-    env: S[- voice]
-    exception: _#
-    raw: r → r̥ / S[- voice] / _#
+    env: S[-voice]_#
+    raw: r → r̥ / S[-voice]_#
     source: index_diachronica_original.html:6366
     rule_id: Early-Icelandic-r
   - stages:
@@ -28653,10 +28652,11 @@ sections:
     raw: V → Vː / _(C)#, in monosyllables
     source: index_diachronica_original.html:6378
     rule_id: Early-Icelandic-V
-  - stages:
+  - comment: ', in polysyllables'
+    stages:
     - V
     - Vː
-    exception: _CCV, in polysyllables
+    exception: _CCV
     raw: V → Vː / ! _CCV, in polysyllables
     source: index_diachronica_original.html:6379
     rule_id: Early-Icelandic-V_2
@@ -29585,9 +29585,9 @@ sections:
   - stages:
     - a
     - '{o,ɔ}'
-    env: _{K,r} (
-    exception: K = w ?)
-    raw: a → {o,ɔ} / _{K,r} (! K = w ?)
+    env: _{K,r}
+    exception: _w
+    raw: a → {o,ɔ} / _{K,r} ! _w
     source: index_diachronica_original.html:6522
     rule_id: Shetland-Norn-a_2
   - stages:
@@ -37551,11 +37551,11 @@ sections:
     raw: j → ∅ / V_”E
     source: index_diachronica_original.html:7807
     rule_id: Old-Provençal-j
-  - stages:
+  - comment: ', in polysyllables'
+    stages:
     - N
     - ∅
     env: _#
-    comment: in polysyllables
     raw: N → ∅ / _#, in polysyllables
     source: index_diachronica_original.html:7808
     rule_id: Old-Provençal-N
@@ -41618,11 +41618,11 @@ sections:
     raw: ∅ → i / j_#, in monosyllables
     source: index_diachronica_original.html:8503
     rule_id: Cocama-∅
-  - stages:
+  - comment: ', in polysyllables'
+    stages:
     - j
     - i
     env: _#
-    comment: in polysyllables
     raw: j → i / _#, in polysyllables
     source: index_diachronica_original.html:8504
     rule_id: Cocama-j
