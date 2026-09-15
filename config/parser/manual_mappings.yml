@@ -93,6 +93,9 @@
 - from: " / in southern dialects"
   to: " / sporadic ; in southern dialects"
   reason: replace prose
+- from: " / in West Swampy Cree"
+  to: " / sporadic ; in West Swampy Cree"
+  reason: replace prose
 - from: " / in Nelemwa"
   to: " / sporadic ; in Nelemwa"
   reason: replace prose

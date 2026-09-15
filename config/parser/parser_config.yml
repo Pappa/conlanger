@@ -231,3 +231,7 @@ skip_rules:
     reason: "Stuff after word boundary: l ɭ → lːʉ ɭːʉ / _#(C)V[-long]"
   - id: Colloquial-Tamil-∅_3
     reason: "No idea: ∅ → {ɨ,ʉ} / to break up clusters"
+  - id: Kiput-V+stress
+    reason: "Unsure how to represent"
+  - id: Kiput-əi̯-əu̯
+    reason: "Unsure how to represent"
