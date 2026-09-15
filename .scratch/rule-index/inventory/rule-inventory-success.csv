@@ -366,6 +366,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 6.2.2.1.13,Classical Arabic to Western Libyan Arabic,Western-Libyan-Arabic-aj-aw,,index_diachronica_original.html:1461,1,,,,,
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,"Moroccan-Arabic-a,i",,index_diachronica_original.html:1468,1,,,,,
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-u,,index_diachronica_original.html:1469,1,,,,,
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,"Moroccan-Arabic-C+labial,+velar",,index_diachronica_original.html:1470,1,,,,,
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,"Moroccan-Arabic-u,ə",,index_diachronica_original.html:1471,1,,,,,
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə,,index_diachronica_original.html:1472,1,,,,,
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə_2,,index_diachronica_original.html:1473,1,,,,,

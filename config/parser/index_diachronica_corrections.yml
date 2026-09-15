@@ -418,3 +418,12 @@ rules:
                           I assume this rule comes from:
                           "In Atsina, A-A *y is lost after A-A *s and *0"
                             j → ∅ / {ʃ,θ}
+        - rule:
+                  id: Moroccan-Arabic-C+labial,+velar
+                  content: "{C[+labial],C[+velar]} → {C[+labial],C[+velar, +labial]} / u[-long]_, _u[-long]"
+                  reason: |
+                          The above rule does not seem to be correct.
+                          "In positions where /ə/ was deleted, /u/ was also deleted, 
+                          and is maintained only as labialization of the adjacent 
+                          labial or velar consonant"
+                            C[+labial/+velar] → ʷ / adjacent to short u

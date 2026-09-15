@@ -6,15 +6,15 @@
 - Rows: **9837** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8876** (90.2%)
-- Fail: **440** (4.5%)
+- OK: **8877** (90.2%)
+- Fail: **439** (4.5%)
 - Skipped: **521** (5.3%)
 
 
 ## Corrections
 
-OK: **90/92**
-Skipped: **2/92**
+OK: **91/93**
+Skipped: **2/93**
 
 ### Skipped corrections
 
@@ -33,13 +33,13 @@ Skipped: **2/92**
 | count | failure_class |
 |------:|---------------|
 | 91 | `expected_underscore` |
-| 81 | `unknown_character` |
+| 82 | `unknown_character` |
 | 47 | `invalid_ipa` |
-| 46 | `missing_slash_output_env` |
 | 43 | `expected_ipa` |
+| 43 | `missing_slash_output_env` |
 | 16 | `nested_brackets` |
-| 15 | `syntax_other` |
-| 14 | `prose_or_expected_arrow` |
+| 16 | `prose_or_expected_arrow` |
+| 14 | `syntax_other` |
 | 11 | `unknown_feature` |
 | 10 | `expected_number` |
 | 9 | `stuff_after_word_bound` |
@@ -73,7 +73,6 @@ Skipped: **2/92**
 
 | count | description |
 |------:|-------------|
-| 1 | `/ cannot be placed inside a matrix. An element inside `[]` must a distinctive feature` |
 | 1 | `Only a segment, matrix, group, or reference can be negated` |
 | 1 | `Feature 'lost' has no modifier` |
 | 1 | `Feature 'b' has no modifier` |
@@ -103,9 +102,9 @@ Skipped: **2/92**
 | 6 | `ŕ` |
 | 6 | `̺` |
 | 5 | `ₙ` |
-| 4 | `̻` |
 | 4 | `̂` |
-| 2 | `̚` |
+| 4 | `̻` |
+| 2 | `ˑ` |
 ### unknown_character (description)
 
 | count | description |
@@ -204,10 +203,10 @@ Skipped: **2/92**
 |------:|-------------|
 | 5 | `Expected '>', '->' or '=>', but received ':'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
-| 1 | `Expected '>', '->' or '=>', but received '}'` |
+| 2 | `Expected '>', '->' or '=>', but received '̥'` |
+| 2 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
-| 1 | `Expected '>', '->' or '=>', but received ')'` |
-| 1 | `Expected '>', '->' or '=>', but received '̥'` |
+| 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
@@ -260,15 +259,15 @@ Skipped: **2/92**
 
 | count | error_token |
 |------:|-------------|
-| 20 | `)` |
+| 19 | `)` |
 | 11 | `:` |
-| 5 | `(` |
+| 4 | `(` |
 | 3 | `ʲ` |
 | 2 | `_` |
-| 2 | `̥` |
 | 1 | `&` |
-| 1 | `#` |
 | 1 | `*` |
+| 1 | `#` |
+| 1 | `̥` |
 ### missing_slash_output_env (description)
 
 | count | description |

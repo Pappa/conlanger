@@ -2749,10 +2749,10 @@ sections:
     source: index_diachronica_original.html:1469
     rule_id: Moroccan-Arabic-u
   - stages:
-    - C[+labial/-fr,+bk,+hi,-lo]
-    - ʷ
+    - '{C[+labial],C[-fr,+bk,+hi,-lo]}'
+    - '{C[+labial],C[-fr,+bk,+hi,-lo, +labial]}'
     env: u[-long]_, _u[-long]
-    raw: C[+labial/+velar] → ʷ / adjacent to short u
+    raw: '{C[+labial],C[+velar]} → {C[+labial],C[+velar, +labial]} / u[-long]_, _u[-long]'
     source: index_diachronica_original.html:1470
     rule_id: Moroccan-Arabic-C+labial,+velar
   - stages:

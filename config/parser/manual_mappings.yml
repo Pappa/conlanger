@@ -45,9 +45,6 @@
 - from: " / stressed"
   to: " / [+stress]"
   reason: replace prose
-- from: " / adjacent to short u"
-  to: " / u[-long]_, _u[-long]"
-  reason: replace prose
 - from: " / unless adjacent to another consonant"
   to: " / ! C_,_C ; unless adjacent to another consonant"
   reason: replace prose
