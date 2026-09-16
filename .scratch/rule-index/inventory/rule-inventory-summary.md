@@ -6,15 +6,15 @@
 - Rows: **9837** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8909** (90.6%)
-- Fail: **403** (4.1%)
+- OK: **8910** (90.6%)
+- Fail: **402** (4.1%)
 - Skipped: **525** (5.3%)
 
 
 ## Corrections
 
-OK: **105/107**
-Skipped: **2/107**
+OK: **106/108**
+Skipped: **2/108**
 
 ### Skipped corrections
 
@@ -32,14 +32,14 @@ Skipped: **2/107**
 
 | count | failure_class |
 |------:|---------------|
-| 76 | `expected_underscore` |
-| 74 | `unknown_character` |
+| 75 | `expected_underscore` |
+| 73 | `unknown_character` |
 | 47 | `invalid_ipa` |
-| 42 | `expected_ipa` |
 | 42 | `missing_slash_output_env` |
+| 41 | `expected_ipa` |
 | 16 | `nested_brackets` |
+| 14 | `prose_or_expected_arrow` |
 | 13 | `syntax_other` |
-| 12 | `prose_or_expected_arrow` |
 | 10 | `expected_number` |
 | 10 | `unknown_feature` |
 | 9 | `unknown_grouping` |
@@ -94,16 +94,16 @@ Skipped: **2/107**
 
 | count | error_token |
 |------:|-------------|
-| 7 | `ː` |
 | 7 | `₂` |
-| 6 | `͜` |
+| 7 | `ː` |
 | 6 | `ŕ` |
+| 6 | `͜` |
 | 6 | `̺` |
-| 5 | `ₙ` |
 | 5 | `̊` |
-| 4 | `̻` |
+| 5 | `ₙ` |
 | 4 | `̂` |
-| 2 | `̀` |
+| 4 | `̻` |
+| 2 | `̚` |
 ### unknown_character (description)
 
 | count | description |
@@ -149,7 +149,7 @@ Skipped: **2/107**
 
 | count | description |
 |------:|-------------|
-| 48 | `Expected '_', but received ''` |
+| 47 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -201,8 +201,9 @@ Skipped: **2/107**
 |------:|-------------|
 | 5 | `Expected '>', '->' or '=>', but received ':'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
+| 2 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
-| 1 | `Expected '>', '->' or '=>', but received '̥'` |
+| 1 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
@@ -224,16 +225,16 @@ Skipped: **2/107**
 
 | count | error_token |
 |------:|-------------|
-| 8 | `(` |
+| 9 | `(` |
 | 6 | `:` |
 | 6 | `∅` |
-| 5 | `{` |
+| 4 | `{` |
 | 3 | `…` |
 | 3 | `ʷ` |
 | 2 | `*` |
 | 2 | `ʲ` |
 | 2 | `_` |
-| 2 | `>` |
+| 1 | `,` |
 ### expected_ipa (description)
 
 | count | description |
@@ -257,12 +258,12 @@ Skipped: **2/107**
 |------:|-------------|
 | 18 | `)` |
 | 11 | `:` |
-| 4 | `(` |
+| 5 | `(` |
 | 3 | `ʲ` |
-| 2 | `̥` |
-| 1 | `*` |
 | 1 | `&` |
+| 1 | `*` |
 | 1 | `#` |
+| 1 | `̥` |
 | 1 | `_` |
 ### missing_slash_output_env (description)
 

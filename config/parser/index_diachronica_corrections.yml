@@ -513,3 +513,8 @@ rules:
                   reason: |
                           No idea how to represent this.
                           ɛ → e / ! _{rː,l,rC[-labial],nr} or _ ? w#
+        - rule:
+                  id: Proto-Mongolic-e-o-u-æ-ø-y
+                  content: "e o u æ ø y → {a,e} {o,u} {a,o,u a} {a,o,u} {o,u,i} / _Ca"
+                  reason: |
+                          Typo: e o u æ ø y → {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i} / _Ca

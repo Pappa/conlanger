@@ -6602,9 +6602,9 @@ sections:
     rule_id: Proto-Mongolic-a_4
   - stages:
     - e o u æ ø y
-    - '{a,e} {o,u} {a,o,u a {a,o,u} {o,u,i}'
+    - '{a,e} {o,u} {a,o,u a} {a,o,u} {o,u,i}'
     env: _Ca
-    raw: e o u æ ø y → {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i} / _Ca
+    raw: e o u æ ø y → {a,e} {o,u} {a,o,u a} {a,o,u} {o,u,i} / _Ca
     source: index_diachronica_original.html:2173
     rule_id: Proto-Mongolic-e-o-u-æ-ø-y
   - stages:
