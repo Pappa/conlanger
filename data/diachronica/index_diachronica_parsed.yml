@@ -31359,12 +31359,12 @@ sections:
     raw: o → aː / _CV, “does not affect o₂ < eh₃”
     source: index_diachronica_original.html:6838
     rule_id: Proto-Indo-Iranian-o
-  - stages:
-    - '{e,o,o₂,N̊}'
-    - a
+  - stages: []
     raw: '{e,o,o₂,N̊} → a'
     source: index_diachronica_original.html:6839
+    status: skipped
     rule_id: Proto-Indo-Iranian-e,o,o2,N̊
+    comment: I can't find this rule in the source material
 - section: Proto-Indo-Iranian to Proto-Indo-Aryan
   index: 17.10.1
   citation: Tropylium, from Kobayashi, Masato (2004), Historical Phonology of Old

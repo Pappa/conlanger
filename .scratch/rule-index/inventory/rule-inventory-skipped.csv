@@ -50,6 +50,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 17.7.2.5,West Germanic to Old Low German,Old-Low-German-F-voice,,index_diachronica_original.html:6155,2,rule_skipped,,,,held-out (commented rule)
 17.10,Proto-Indo-European to Proto-Indo-Iranian,Proto-Indo-Iranian-Bʱ1P2,,index_diachronica_original.html:6830,2,rule_skipped,,,,held-out (commented rule)
 17.10,Proto-Indo-European to Proto-Indo-Iranian,Proto-Indo-Iranian-BʱBʱ,,index_diachronica_original.html:6831,2,rule_skipped,,,,held-out (commented rule)
+17.10,Proto-Indo-European to Proto-Indo-Iranian,"Proto-Indo-Iranian-e,o,o2,N̊",,index_diachronica_original.html:6839,2,rule_skipped,,,,held-out (commented rule)
 17.12.1.1.1,Classical Latin vs. Vulgar Latin,"Classical-Latin-vs.-Vulgar-Latin-uː-ɔ,oː-eː-iː",,index_diachronica_original.html:7338,2,rule_skipped,,,,held-out (commented rule)
 17.12.1.1.10,Vulgar Latin to Spanish,"Spanish-e-ɛ,a-ɔ-o",,index_diachronica_original.html:8143,2,rule_skipped,,,,held-out (commented rule)
 29.1.1.1.1,Proto-Athabaskan to Ahtna,"Ahtna-TŠ,TŠʷ",,index_diachronica_original.html:9979,2,section_skipped,,,,section skipped at compile (parser_config skip_sections)

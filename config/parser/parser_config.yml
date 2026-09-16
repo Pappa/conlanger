@@ -241,3 +241,5 @@ skip_rules:
     reason: "Unsure how to represent"
   - id: Proto-Indo-Iranian-BʱBʱ
     reason: "Unsure how to represent"
+  - id: Proto-Indo-Iranian-e,o,o2,N̊
+    reason: "I can't find this rule in the source material"
