@@ -31290,8 +31290,8 @@ sections:
   - stages:
     - s
     - ʃ
-    env: '{u,i,l,r,K,Ḱ}'
-    raw: s → ʃ / {u,i,l,r,K,Ḱ}
+    env: '{u,i,l,r,K,Ḱ}_'
+    raw: s → ʃ / {u,i,l,r,K,Ḱ}_
     source: index_diachronica_original.html:6828
     rule_id: Proto-Indo-Iranian-s
   - stages:
@@ -31300,19 +31300,18 @@ sections:
     raw: Ḱ → TŠ
     source: index_diachronica_original.html:6829
     rule_id: Proto-Indo-Iranian-Ḱ
-  - stages:
-    - Bʱ₁P₂
-    - B₁Bʱ₂
-    comment: “includes s ʃ > zʱ ʒʱ”
+  - stages: []
     raw: Bʱ₁P₂ → B₁Bʱ₂ / “includes s ʃ > zʱ ʒʱ”
     source: index_diachronica_original.html:6830
+    status: skipped
     rule_id: Proto-Indo-Iranian-Bʱ1P2
-  - stages:
-    - BʱBʱ
-    - BBʱ
+    comment: Unsure how to represent
+  - stages: []
     raw: BʱBʱ → BBʱ
     source: index_diachronica_original.html:6831
+    status: skipped
     rule_id: Proto-Indo-Iranian-BʱBʱ
+    comment: Unsure how to represent
   - stages:
     - ptʃ
     - pʃ

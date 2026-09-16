@@ -24,7 +24,6 @@ section_index,rule_id,error_token,rule
 17.7.2.3,Standard-German-V_4,,"V > V:[+long] / by analogy in some cases | ^ @ Rule 1, Line 1"
 17.7.2.3,Standard-German-ə,",","ə > ∅ / [-stress], but not in every case | ^ @ Rule 1, Line 1"
 17.7.3.1,Old-Norse-a_4,/,"a > u / $u / // :{#_#, #<.._>}: | ^ @ Rule 1, Line 1"
-17.10,Proto-Indo-Iranian-s,",","s > ʃ / :{u,i,l,r,C:[-front,+back,+hi,-lo],C:[+front,+hi,-lo]}: | ^ @ Rule 1, Line 1"
 17.11.1,Polish-C,/,"C > C:[+cor,+dist] / _V:[+front] // /j ɕ ʑ | ^ @ Rule 1, Line 1"
 17.11.1,Polish-jь,,"jɪ > i / utterance-initially | ^ @ Rule 1, Line 1"
 17.11.1,Polish-ã,,"ã > ɛ̃ / short only | ^ @ Rule 1, Line 1"

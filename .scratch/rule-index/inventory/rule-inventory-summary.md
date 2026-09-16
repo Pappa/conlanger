@@ -6,15 +6,15 @@
 - Rows: **9837** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8900** (90.5%)
-- Fail: **415** (4.2%)
-- Skipped: **522** (5.3%)
+- OK: **8901** (90.5%)
+- Fail: **412** (4.2%)
+- Skipped: **524** (5.3%)
 
 
 ## Corrections
 
-OK: **100/102**
-Skipped: **2/102**
+OK: **101/103**
+Skipped: **2/103**
 
 ### Skipped corrections
 
@@ -32,11 +32,11 @@ Skipped: **2/102**
 
 | count | failure_class |
 |------:|---------------|
-| 80 | `expected_underscore` |
-| 77 | `unknown_character` |
+| 79 | `expected_underscore` |
+| 76 | `unknown_character` |
 | 47 | `invalid_ipa` |
-| 42 | `missing_slash_output_env` |
 | 41 | `expected_ipa` |
+| 41 | `missing_slash_output_env` |
 | 16 | `nested_brackets` |
 | 15 | `prose_or_expected_arrow` |
 | 13 | `syntax_other` |
@@ -99,10 +99,10 @@ Skipped: **2/102**
 | 6 | `͜` |
 | 6 | `ŕ` |
 | 6 | `̺` |
-| 5 | `̊` |
 | 5 | `ₙ` |
-| 4 | `̂` |
+| 5 | `̊` |
 | 4 | `̻` |
+| 4 | `̂` |
 | 2 | `̀` |
 ### unknown_character (description)
 
@@ -138,7 +138,7 @@ Skipped: **2/102**
 
 | count | error_token |
 |------:|-------------|
-| 15 | `,` |
+| 14 | `,` |
 | 7 | `/` |
 | 3 | `:` |
 | 1 | `*` |
@@ -201,10 +201,9 @@ Skipped: **2/102**
 |------:|-------------|
 | 5 | `Expected '>', '->' or '=>', but received ':'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
+| 2 | `Expected '>', '->' or '=>', but received ')'` |
 | 2 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
-| 1 | `Expected '>', '->' or '=>', but received 'ʱ'` |
-| 1 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
@@ -257,7 +256,7 @@ Skipped: **2/102**
 
 | count | error_token |
 |------:|-------------|
-| 18 | `)` |
+| 17 | `)` |
 | 11 | `:` |
 | 5 | `(` |
 | 3 | `ʲ` |

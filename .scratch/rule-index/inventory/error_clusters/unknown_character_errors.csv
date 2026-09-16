@@ -1,7 +1,7 @@
 section_index,rule_id,error_token,rule
 6.2.2.1.14,Moroccan-Arabic-t,͜,"t > t͜s | ^ @ Rule 1, Line 1"
 10.2.6.2.1,"Òma-Lóngh-p,t-n",̚,"{p,t} n > c̚ ɲ / {i,ɛ}_# | ^ @ Rule 1, Line 1"
-10.3.8,Tolomako-m-b,̼,"n̼ t̼ > n t / _{a,e,i} | ^ @ Rule 1, Line 2"
+10.3.8,Tolomako-m-b,̼,"m b > n̼ t̼ / _{a,e,i} | ^ @ Rule 1, Line 1"
 10.4.1,"Marshallese-ç,s-x",ᵚ,"{ç,s} x > tᵚ | ^ @ Rule 1, Line 1"
 12.1,"Proto-Abazgi-pʷ,pʲ-pʲː,bˤ-bʷ-pʷʲ-bʷʲ",ː,"{pʷ,pʲ} {pː,pʲː,b:[-atr,+rtr]} bʷ pʷʲ bʷʲ > p b f tsʲ dzʲ | ^ @ Rule 1, Line 1"
 12.3,Ubykh-tʷː-tʷʲʼ,ː,"{tː,tʷː} tʷʲ:[+cg] > {t,tʷ} tʷ:[+cg] | ^ @ Rule 1, Line 1"
@@ -9,7 +9,6 @@ section_index,rule_id,error_token,rule
 14.2,Achaemanid-Elamite-r̀,̀,"r̀ > r / V_{V,C} | ^ @ Rule 1, Line 1"
 14.2,Achaemanid-Elamite-ŕ,ŕ,"ŕ > r:[+long] / V_V | ^ @ Rule 1, Line 1"
 14.2,Achaemanid-Elamite-nr̀,̀,"nr̀ > nr | ^ @ Rule 1, Line 1"
-17.10,Proto-Indo-Iranian-Bʱ1P2,₁,"V:[+back]ʱ₁P=2 > B=1 V:[+back]ʱ₂ | ^ @ Rule 1, Line 1"
 17.10,"Proto-Indo-Iranian-e,o,o2,N̊",₂,"{e,o,o₂,N̊} > a | ^ @ Rule 1, Line 1"
 17.10.1,Proto-Indo-Aryan-R̊H,̊,"R̊[-place] > {u,i}[+son,-syll] / _V | ^ @ Rule 1, Line 1"
 17.10.1,Proto-Indo-Aryan-R̊H_2,̊,"R̊[-place] > {u,i}:[+long, +son,-syll] / _C | ^ @ Rule 1, Line 1"

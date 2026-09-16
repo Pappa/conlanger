@@ -237,3 +237,7 @@ skip_rules:
     reason: "Unsure how to represent"
   - id: Kiput-əi̯-əu̯
     reason: "Unsure how to represent"
+  - id: Proto-Indo-Iranian-Bʱ1P2
+    reason: "Unsure how to represent"
+  - id: Proto-Indo-Iranian-BʱBʱ
+    reason: "Unsure how to represent"

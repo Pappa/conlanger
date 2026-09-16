@@ -479,3 +479,11 @@ rules:
                   content: "{skj,stj,sːj} → ʃ"
                   reason: |
                           Typo: {skj,stj,sːj → ʃ
+        - rule:
+                  id: Proto-Indo-Iranian-s
+                  content: "s → ʃ / {u,i,l,r,K,Ḱ}_"
+                  reason: |
+                          I'm not sure if this is correct.
+                          I assume it's referring to 
+                          §40 Rise of the Sibilants and their Neutralization
+                            s → ʃ / {u,i,l,r,K,Ḱ}
