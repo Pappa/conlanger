@@ -6,8 +6,8 @@
 - Rows: **9837** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8907** (90.5%)
-- Fail: **405** (4.1%)
+- OK: **8909** (90.6%)
+- Fail: **403** (4.1%)
 - Skipped: **525** (5.3%)
 
 
@@ -32,14 +32,14 @@ Skipped: **2/107**
 
 | count | failure_class |
 |------:|---------------|
-| 79 | `expected_underscore` |
+| 76 | `expected_underscore` |
 | 74 | `unknown_character` |
 | 47 | `invalid_ipa` |
-| 41 | `expected_ipa` |
-| 40 | `missing_slash_output_env` |
+| 42 | `expected_ipa` |
+| 42 | `missing_slash_output_env` |
 | 16 | `nested_brackets` |
-| 14 | `prose_or_expected_arrow` |
 | 13 | `syntax_other` |
+| 12 | `prose_or_expected_arrow` |
 | 10 | `expected_number` |
 | 10 | `unknown_feature` |
 | 9 | `unknown_grouping` |
@@ -149,7 +149,7 @@ Skipped: **2/107**
 
 | count | description |
 |------:|-------------|
-| 51 | `Expected '_', but received ''` |
+| 48 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -201,9 +201,8 @@ Skipped: **2/107**
 |------:|-------------|
 | 5 | `Expected '>', '->' or '=>', but received ':'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
-| 2 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
-| 1 | `Expected '>', '->' or '=>', but received ')'` |
+| 1 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
@@ -234,7 +233,7 @@ Skipped: **2/107**
 | 2 | `*` |
 | 2 | `ʲ` |
 | 2 | `_` |
-| 1 | `,` |
+| 2 | `>` |
 ### expected_ipa (description)
 
 | count | description |
@@ -256,14 +255,14 @@ Skipped: **2/107**
 
 | count | error_token |
 |------:|-------------|
-| 17 | `)` |
+| 18 | `)` |
 | 11 | `:` |
 | 4 | `(` |
 | 3 | `ʲ` |
-| 1 | `&` |
+| 2 | `̥` |
 | 1 | `*` |
+| 1 | `&` |
 | 1 | `#` |
-| 1 | `̥` |
 | 1 | `_` |
 ### missing_slash_output_env (description)
 

@@ -452,7 +452,7 @@ rules:
                           a → {o,ɔ} / _{K,r} (! K = w ?)
         - rule:
                   id: Middle-Welsh-V_4
-                  content: "V → ∅ / %[+str]_%[+str]"
+                  content: "V → ∅ / intertonic"
                   reason: |
                           V → ∅ / _[+intertonic]
         - rule:

@@ -4802,6 +4802,8 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 17.12.1.1.3,Latin to French,French-t,,index_diachronica_original.html:7497,1,,,,,
 17.12.1.1.3,Latin to French,"French-ɡn,nj",,index_diachronica_original.html:7498,1,,,,,
 17.12.1.1.3,Latin to French,French-nk,,index_diachronica_original.html:7499,1,,,,,
+17.12.1.1.3,Latin to French,French-V_2,,index_diachronica_original.html:7501,1,,,,,
+17.12.1.1.3,Latin to French,French-a,,index_diachronica_original.html:7502,1,,,,,
 17.12.1.1.3,Latin to French,French-∅_2,,index_diachronica_original.html:7503,1,,,,,
 17.12.1.1.3,Latin to French,French-∅_4,,index_diachronica_original.html:7505,1,,,,,
 17.12.1.1.3,Latin to French,French-k-ɡ_2,,index_diachronica_original.html:7506,1,,,,,

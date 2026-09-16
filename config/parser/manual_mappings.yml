@@ -348,6 +348,9 @@
 - from: "high(er)"
   to: "hi"
   reason: ambiguous feature name
+- from: " / intertonic"
+  to: " / %[+str]_%[+str]"
+  reason: replace prose
 - from: " / plain t only"
   to: " ; plain t only"
   reason: replace prose

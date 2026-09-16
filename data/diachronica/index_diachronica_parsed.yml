@@ -23931,7 +23931,7 @@ sections:
     - V
     - ∅
     env: $[+str]_$[+str]
-    raw: V → ∅ / %[+str]_%[+str]
+    raw: V → ∅ / intertonic
     source: index_diachronica_original.html:5599
     rule_id: Middle-Welsh-V_4
   - stages:
@@ -35532,7 +35532,7 @@ sections:
   - stages:
     - V
     - ∅
-    env: intertonic
+    env: $[+str]_$[+str]
     exception: V = a
     raw: V → ∅ / intertonic ! V = a
     source: index_diachronica_original.html:7501
@@ -35540,7 +35540,7 @@ sections:
   - stages:
     - a
     - ə
-    env: intertonic
+    env: $[+str]_$[+str]
     raw: a → ə / intertonic
     source: index_diachronica_original.html:7502
     rule_id: French-a
