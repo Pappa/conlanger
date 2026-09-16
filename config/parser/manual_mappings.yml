@@ -301,6 +301,12 @@
 - from: ", in some words"
   to: " sporadic ; in some words"
   reason: replace prose
+- from: ", in polysyllables"
+  to: " ; in polysyllables"
+  reason: replace prose
+- from: "# in polysyllables"
+  to: "# ; in polysyllables"
+  reason: replace prose
 - from: " / in “"
   to: " / sporadic ; in “"
   reason: replace prose
@@ -347,9 +353,6 @@
   reason: replace prose
 - from: " ! some monosyllables"
   to: " ; sporadic ! some monosyllables"
-  reason: replace prose
-- from: ", in polysyllable"
-  to: " ; , in polysyllable"
   reason: replace prose
 - from: ", also in proclitics"
   to: " ; , also in proclitics"

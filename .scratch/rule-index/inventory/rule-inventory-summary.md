@@ -6,8 +6,8 @@
 - Rows: **9837** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8905** (90.5%)
-- Fail: **407** (4.1%)
+- OK: **8907** (90.5%)
+- Fail: **405** (4.1%)
 - Skipped: **525** (5.3%)
 
 
@@ -32,21 +32,21 @@ Skipped: **2/107**
 
 | count | failure_class |
 |------:|---------------|
-| 77 | `expected_underscore` |
-| 73 | `unknown_character` |
+| 79 | `expected_underscore` |
+| 74 | `unknown_character` |
 | 47 | `invalid_ipa` |
-| 42 | `expected_ipa` |
-| 41 | `missing_slash_output_env` |
+| 41 | `expected_ipa` |
+| 40 | `missing_slash_output_env` |
 | 16 | `nested_brackets` |
-| 15 | `prose_or_expected_arrow` |
+| 14 | `prose_or_expected_arrow` |
 | 13 | `syntax_other` |
 | 10 | `expected_number` |
 | 10 | `unknown_feature` |
-| 9 | `stuff_after_word_bound` |
 | 9 | `unknown_grouping` |
 | 9 | `diacritic_prereq` |
 | 8 | `segments_before_word` |
 | 8 | `empty_io_panic` |
+| 7 | `stuff_after_word_bound` |
 | 6 | `multiple_underlines_env` |
 | 4 | `panic_other` |
 | 2 | `grouped_env_insertion` |
@@ -94,16 +94,16 @@ Skipped: **2/107**
 
 | count | error_token |
 |------:|-------------|
-| 7 | `₂` |
 | 7 | `ː` |
-| 6 | `ŕ` |
+| 7 | `₂` |
 | 6 | `͜` |
+| 6 | `ŕ` |
 | 6 | `̺` |
-| 5 | `̊` |
 | 5 | `ₙ` |
-| 4 | `̂` |
+| 5 | `̊` |
 | 4 | `̻` |
-| 2 | `̚` |
+| 4 | `̂` |
+| 2 | `̀` |
 ### unknown_character (description)
 
 | count | description |
@@ -149,7 +149,7 @@ Skipped: **2/107**
 
 | count | description |
 |------:|-------------|
-| 49 | `Expected '_', but received ''` |
+| 51 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -201,9 +201,9 @@ Skipped: **2/107**
 |------:|-------------|
 | 5 | `Expected '>', '->' or '=>', but received ':'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
-| 2 | `Expected '>', '->' or '=>', but received ')'` |
 | 2 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
+| 1 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
@@ -225,7 +225,7 @@ Skipped: **2/107**
 
 | count | error_token |
 |------:|-------------|
-| 9 | `(` |
+| 8 | `(` |
 | 6 | `:` |
 | 6 | `∅` |
 | 5 | `{` |
@@ -258,7 +258,7 @@ Skipped: **2/107**
 |------:|-------------|
 | 17 | `)` |
 | 11 | `:` |
-| 5 | `(` |
+| 4 | `(` |
 | 3 | `ʲ` |
 | 1 | `&` |
 | 1 | `*` |
@@ -313,7 +313,7 @@ Skipped: **2/107**
 
 | count | description |
 |------:|-------------|
-| 9 | `Cannot have segments after the end of a word` |
+| 7 | `Cannot have segments after the end of a word` |
 
 ### diacritic_prereq (error_token)
 
