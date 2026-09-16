@@ -34798,8 +34798,8 @@ sections:
   - stages:
     - b
     - v
-    env: V̈$_j
-    raw: b → v / V̈%_j
+    env: V$_j
+    raw: b → v / V%_j
     source: index_diachronica_original.html:7392
     rule_id: Catalan-b
   - stages:
@@ -35133,9 +35133,9 @@ sections:
   - stages:
     - C
     - ∅
-    env: C₁_C₂
-    exception: C₂ = L
-    raw: C → ∅ / C₁_C₂ ! C₂ = L
+    env: C_C
+    exception: C_L
+    raw: C → ∅ / C_C ! C_L
     source: index_diachronica_original.html:7439
     rule_id: Catalan-C
   - stages:
@@ -35195,16 +35195,16 @@ sections:
   - stages:
     - ɛj ɔj
     - jɛj uei
-    env: i {u,ui}
-    exception: '[+stress]'
-    raw: ɛj ɔj → jɛj uei / i {u,ui} / stressed
+    - i {u,ui}
+    env: '[+stress]'
+    raw: ɛj ɔj → jɛj uei → i {u,ui} / stressed
     source: index_diachronica_original.html:7447
     rule_id: Catalan-ɛj-ɔj
   - stages:
     - ɛ
     - e
-    exception: _{rː,l,rC[-labial],nr} or _ ? w#
-    raw: ɛ → e / ! _{rː,l,rC[-labial],nr} or _ ? w#
+    exception: _{rː,l,rC[-labial],nr}
+    raw: ɛ → e / ! _{rː,l,rC[-labial],nr}
     source: index_diachronica_original.html:7448
     rule_id: Catalan-ɛ
   - stages:

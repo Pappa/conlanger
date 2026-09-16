@@ -487,3 +487,29 @@ rules:
                           I assume it's referring to 
                           §40 Rise of the Sibilants and their Neutralization
                             s → ʃ / {u,i,l,r,K,Ḱ}
+        - rule:
+                  id: Catalan-b
+                  content: "b → v / V%_j"
+                  reason: |
+                          Seems to be a typo, using best guess.
+                          b → v / V̈%_j
+        - rule:
+                  id: Catalan-C
+                  content: "C → ∅ / C_C ! C_L"
+                  reason: |
+                          C → ∅ / C₁_C₂ ! C₂ = L
+        - rule:
+                  id: Catalan-ɛj-ɔj
+                  content: "ɛj ɔj → jɛj uei → i {u,ui} / stressed"
+                  reason: |
+                          From Wikipedia:
+                          https://en.wikipedia.org/wiki/Phonological_history_of_Catalan
+                          "Diphthongization of /ɛ/ and /ɔ/ before palatal consonants 
+                          (with subsequent loss of middle vowel if a triphthong is produced)."
+                            ɛj ɔj → jɛj uei / i {u,ui} / stressed
+        - rule:
+                  id: Catalan-ɛ
+                  content: "ɛ → e / ! _{rː,l,rC[-labial],nr}"
+                  reason: |
+                          No idea how to represent this.
+                          ɛ → e / ! _{rː,l,rC[-labial],nr} or _ ? w#

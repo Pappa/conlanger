@@ -16,8 +16,6 @@ section_index,rule_id,error_token,rule
 17.11.1,Polish-r̝̊-r̝,̊,"r̝̊ r̝ > ʂ ʐ | ^ @ Rule 1, Line 1"
 17.11.1,Polish-dz-ts,͜,"dz ts > d͜z t͜s | ^ @ Rule 1, Line 1"
 17.11.1,Polish-rʲ,͜,"rʲ > r / _{s,t͜s,l,w,n,ɲ} | ^ @ Rule 1, Line 1"
-17.12.1.1.2,Catalan-b,̈,"b > v / V̈$_j | ^ @ Rule 1, Line 1"
-17.12.1.1.2,Catalan-C,₂,"C > ∅ / C=1 _C=2 // C₂ = L | ^ @ Rule 1, Line 1"
 17.12.1.1.3,French-C,₂,"C > ∅ / C=1 _C=2 // C₂ = {r,l} | ^ @ Rule 1, Line 1"
 17.12.1.1.5,Portuguese-C,₂,"C > ∅ / C=1 _C=2 // C₂ = L | ^ @ Rule 1, Line 1"
 17.12.1.1.5,Portuguese-k_6,₂,"k > ɡ / V=1 _V=2 // V₂ = ɔ | ^ @ Rule 1, Line 1"

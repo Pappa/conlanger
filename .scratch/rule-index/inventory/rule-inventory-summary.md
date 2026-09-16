@@ -6,15 +6,15 @@
 - Rows: **9837** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8901** (90.5%)
-- Fail: **411** (4.2%)
+- OK: **8905** (90.5%)
+- Fail: **407** (4.1%)
 - Skipped: **525** (5.3%)
 
 
 ## Corrections
 
-OK: **101/103**
-Skipped: **2/103**
+OK: **105/107**
+Skipped: **2/107**
 
 ### Skipped corrections
 
@@ -23,8 +23,8 @@ Skipped: **2/103**
 
 ## Sections
 
-- All OK: **480 / 714** (67.2%)
-- Some OK: **181 / 714** (25.4%)
+- All OK: **481 / 714** (67.4%)
+- Some OK: **180 / 714** (25.2%)
 - None OK: **0 / 714** (0.0%)
 - Sections skipped: **53 / 714** (7.4%)
 
@@ -32,14 +32,14 @@ Skipped: **2/103**
 
 | count | failure_class |
 |------:|---------------|
-| 79 | `expected_underscore` |
-| 75 | `unknown_character` |
+| 77 | `expected_underscore` |
+| 73 | `unknown_character` |
 | 47 | `invalid_ipa` |
-| 43 | `missing_slash_output_env` |
-| 41 | `expected_ipa` |
+| 42 | `expected_ipa` |
+| 41 | `missing_slash_output_env` |
 | 16 | `nested_brackets` |
+| 15 | `prose_or_expected_arrow` |
 | 13 | `syntax_other` |
-| 13 | `prose_or_expected_arrow` |
 | 10 | `expected_number` |
 | 10 | `unknown_feature` |
 | 9 | `stuff_after_word_bound` |
@@ -47,7 +47,7 @@ Skipped: **2/103**
 | 9 | `diacritic_prereq` |
 | 8 | `segments_before_word` |
 | 8 | `empty_io_panic` |
-| 7 | `multiple_underlines_env` |
+| 6 | `multiple_underlines_env` |
 | 4 | `panic_other` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
@@ -94,16 +94,16 @@ Skipped: **2/103**
 
 | count | error_token |
 |------:|-------------|
-| 8 | `₂` |
+| 7 | `₂` |
 | 7 | `ː` |
-| 6 | `͜` |
 | 6 | `ŕ` |
+| 6 | `͜` |
 | 6 | `̺` |
-| 5 | `ₙ` |
 | 5 | `̊` |
-| 4 | `̻` |
+| 5 | `ₙ` |
 | 4 | `̂` |
-| 2 | `̀` |
+| 4 | `̻` |
+| 2 | `̚` |
 ### unknown_character (description)
 
 | count | description |
@@ -149,7 +149,7 @@ Skipped: **2/103**
 
 | count | description |
 |------:|-------------|
-| 51 | `Expected '_', but received ''` |
+| 49 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -201,9 +201,9 @@ Skipped: **2/103**
 |------:|-------------|
 | 5 | `Expected '>', '->' or '=>', but received ':'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
+| 2 | `Expected '>', '->' or '=>', but received ')'` |
+| 2 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
-| 1 | `Expected '>', '->' or '=>', but received ')'` |
-| 1 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
@@ -225,7 +225,7 @@ Skipped: **2/103**
 
 | count | error_token |
 |------:|-------------|
-| 8 | `(` |
+| 9 | `(` |
 | 6 | `:` |
 | 6 | `∅` |
 | 5 | `{` |
@@ -256,14 +256,14 @@ Skipped: **2/103**
 
 | count | error_token |
 |------:|-------------|
-| 18 | `)` |
+| 17 | `)` |
 | 11 | `:` |
 | 5 | `(` |
 | 3 | `ʲ` |
-| 2 | `̥` |
-| 1 | `*` |
 | 1 | `&` |
+| 1 | `*` |
 | 1 | `#` |
+| 1 | `̥` |
 | 1 | `_` |
 ### missing_slash_output_env (description)
 
@@ -291,7 +291,7 @@ Skipped: **2/103**
 
 | count | description |
 |------:|-------------|
-| 7 | `Cannot have multiple underlines in an environment` |
+| 6 | `Cannot have multiple underlines in an environment` |
 
 ### segments_before_word (error_token)
 
