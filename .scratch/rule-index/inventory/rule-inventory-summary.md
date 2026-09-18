@@ -6,9 +6,9 @@
 - Rows: **9837** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **8910** (90.6%)
-- Fail: **402** (4.1%)
-- Skipped: **525** (5.3%)
+- OK: **8911** (90.6%)
+- Fail: **400** (4.1%)
+- Skipped: **526** (5.3%)
 
 
 ## Corrections
@@ -23,8 +23,8 @@ Skipped: **2/108**
 
 ## Sections
 
-- All OK: **481 / 714** (67.4%)
-- Some OK: **180 / 714** (25.2%)
+- All OK: **482 / 714** (67.5%)
+- Some OK: **179 / 714** (25.1%)
 - None OK: **0 / 714** (0.0%)
 - Sections skipped: **53 / 714** (7.4%)
 
@@ -32,14 +32,14 @@ Skipped: **2/108**
 
 | count | failure_class |
 |------:|---------------|
-| 76 | `expected_underscore` |
-| 74 | `unknown_character` |
+| 75 | `expected_underscore` |
+| 73 | `unknown_character` |
 | 47 | `invalid_ipa` |
+| 41 | `expected_ipa` |
 | 41 | `missing_slash_output_env` |
-| 40 | `expected_ipa` |
 | 16 | `nested_brackets` |
-| 14 | `prose_or_expected_arrow` |
 | 13 | `syntax_other` |
+| 13 | `prose_or_expected_arrow` |
 | 10 | `expected_number` |
 | 10 | `unknown_feature` |
 | 9 | `unknown_grouping` |
@@ -94,16 +94,16 @@ Skipped: **2/108**
 
 | count | error_token |
 |------:|-------------|
-| 7 | `ː` |
 | 7 | `₂` |
-| 6 | `͜` |
+| 7 | `ː` |
 | 6 | `ŕ` |
+| 6 | `͜` |
 | 6 | `̺` |
-| 5 | `ₙ` |
 | 5 | `̊` |
-| 4 | `̻` |
+| 5 | `ₙ` |
 | 4 | `̂` |
-| 2 | `̀` |
+| 4 | `̻` |
+| 2 | `̚` |
 ### unknown_character (description)
 
 | count | description |
@@ -149,7 +149,7 @@ Skipped: **2/108**
 
 | count | description |
 |------:|-------------|
-| 48 | `Expected '_', but received ''` |
+| 47 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -201,8 +201,8 @@ Skipped: **2/108**
 |------:|-------------|
 | 5 | `Expected '>', '->' or '=>', but received ':'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
-| 2 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
+| 1 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
@@ -225,7 +225,7 @@ Skipped: **2/108**
 
 | count | error_token |
 |------:|-------------|
-| 8 | `(` |
+| 9 | `(` |
 | 6 | `:` |
 | 6 | `∅` |
 | 4 | `{` |
@@ -258,11 +258,10 @@ Skipped: **2/108**
 |------:|-------------|
 | 17 | `)` |
 | 11 | `:` |
-| 4 | `(` |
+| 5 | `(` |
 | 3 | `ʲ` |
 | 2 | `̥` |
 | 1 | `*` |
-| 1 | `&` |
 | 1 | `#` |
 | 1 | `_` |
 ### missing_slash_output_env (description)

@@ -372,3 +372,6 @@
 - from: " if {M,Vː} "
   to: " / sporadic ; if {M,Vː} "
   reason: unhandled positional environment
+- from: " (this second one"
+  to: " ; (this second one"
+  reason: replace prose

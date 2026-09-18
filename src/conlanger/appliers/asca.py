@@ -164,7 +164,6 @@ def validate_asca(
     probe_words: Path | None = None,
     asca_bin: str | None = None,
     timeout: float = 15.0,
-    probe_words_chunk_size: int | None = 100,
 ) -> bool:
     """Return ``True`` if ``rule`` is valid for ASCA; otherwise raise.
 
@@ -195,23 +194,6 @@ def validate_asca(
         if not probe_words.is_file():
             raise ASCAValidationError(f"probe wordlist not found at {probe_words}")
 
-        probe_words_files = []
-
-        if probe_words_chunk_size is not None:
-            with probe_words.open("r") as f:
-                lines = f.readlines()
-                chunks = [
-                    lines[i : i + probe_words_chunk_size]
-                    for i in range(0, len(lines), probe_words_chunk_size)
-                ]
-                for chunk in chunks:
-                    with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
-                        tmp_file.write("".join(chunk).encode("utf-8"))
-                        tmp_file_path = Path(tmp_file.name)
-                        probe_words_files.append(tmp_file_path)
-        else:
-            probe_words_files.append(probe_words)
-
         if _asca_supports_validate(asca):
             proc = _run_asca_command(
                 [asca, "validate", "-r", str(rsca)],
@@ -219,30 +201,11 @@ def validate_asca(
             )
             _raise_if_asca_failed(proc)
 
-        errors = []
-
-        for idx, probe_words_file in enumerate(probe_words_files):
-            proc = _run_asca_command(
-                [asca, "run", str(probe_words_file), "--rules", str(rsca)],
-                timeout=timeout,
-            )
-            try:
-                _raise_if_asca_failed(proc)
-            except ASCAValidationError as e:
-                errors.append(
-                    (
-                        e,
-                        idx * probe_words_chunk_size + 1,
-                        (idx + 1) * probe_words_chunk_size,
-                        ",".join(probe_words_file.open("r").readlines()),
-                    )
-                )
-
-        if errors:
-            for error, start, end, words in errors:
-                print(f"\nError running asca run on words {start} - {end}: {error}")
-                print(f"Words: {words}")
-            raise errors[0][0]
+        proc = _run_asca_command(
+            [asca, "run", str(probe_words), "--rules", str(rsca)],
+            timeout=timeout,
+        )
+        _raise_if_asca_failed(proc)
 
     return True
 

@@ -7323,11 +7323,10 @@ sections:
     raw: v → w
     source: index_diachronica_original.html:2290
     rule_id: Proto-Kypchak-v
-  - stages:
+  - comment: (this second one is listed as → rɡ but it might be a typo)
+    stages:
     - ɡm rɡ
     - mɡ ɡr
-    - rɡ but it might be a typo)
-    comment: (this second one is listed as
     raw: ɡm rɡ → mɡ ɡr (this second one is listed as → rɡ but it might be a typo)
     source: index_diachronica_original.html:2291
     rule_id: Proto-Kypchak-ɡm-rɡ
@@ -9090,13 +9089,12 @@ sections:
     raw: s → t / _#
     source: index_diachronica_original.html:2715
     rule_id: Karamiananen-s_3
-  - stages:
-    - s
-    - c& _
-    comment: (the paper doesn’t explain what this represents)
+  - stages: []
     raw: s → c& _ (the paper doesn’t explain what this represents)
     source: index_diachronica_original.html:2716
+    status: skipped
     rule_id: Karamiananen-s_4
+    comment: the paper doesn’t explain what this represents
   - stages:
     - b
     - β
