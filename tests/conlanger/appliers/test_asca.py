@@ -259,7 +259,7 @@ def test_validate_asca_calls_validate_before_run_when_supported(
             {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
             format="asca",
         )
-        validate_asca(scr, probe_words=_PROBE)
+        validate_asca(scr, probe_words=_PROBE, probe_words_chunk_size=None)
 
     assert len(calls) == 2
     assert calls[0][1] == "validate"
@@ -282,7 +282,7 @@ def test_validate_asca_skips_validate_when_unsupported(
             {"index": "1", "section": "test", "rules": [{"stages": ["a", "b"]}]},
             format="asca",
         )
-        validate_asca(scr, probe_words=_PROBE)
+        validate_asca(scr, probe_words=_PROBE, probe_words_chunk_size=None)
 
     assert len(calls) == 1
     assert calls[0][1] == "run"
@@ -306,7 +306,7 @@ def test_validate_asca_validate_failure_short_circuits(
             format="asca",
         )
         with pytest.raises(ASCAValidationError, match="Syntax Error"):
-            validate_asca(scr, probe_words=_PROBE)
+            validate_asca(scr, probe_words=_PROBE, probe_words_chunk_size=None)
 
     assert len(calls) == 1
     assert calls[0][1] == "validate"

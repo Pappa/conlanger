@@ -32,11 +32,11 @@ Skipped: **2/108**
 
 | count | failure_class |
 |------:|---------------|
-| 75 | `expected_underscore` |
-| 73 | `unknown_character` |
+| 76 | `expected_underscore` |
+| 74 | `unknown_character` |
 | 47 | `invalid_ipa` |
-| 42 | `missing_slash_output_env` |
-| 41 | `expected_ipa` |
+| 41 | `missing_slash_output_env` |
+| 40 | `expected_ipa` |
 | 16 | `nested_brackets` |
 | 14 | `prose_or_expected_arrow` |
 | 13 | `syntax_other` |
@@ -94,16 +94,16 @@ Skipped: **2/108**
 
 | count | error_token |
 |------:|-------------|
-| 7 | `₂` |
 | 7 | `ː` |
-| 6 | `ŕ` |
+| 7 | `₂` |
 | 6 | `͜` |
+| 6 | `ŕ` |
 | 6 | `̺` |
-| 5 | `̊` |
 | 5 | `ₙ` |
-| 4 | `̂` |
+| 5 | `̊` |
 | 4 | `̻` |
-| 2 | `̚` |
+| 4 | `̂` |
+| 2 | `̀` |
 ### unknown_character (description)
 
 | count | description |
@@ -149,7 +149,7 @@ Skipped: **2/108**
 
 | count | description |
 |------:|-------------|
-| 47 | `Expected '_', but received ''` |
+| 48 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -201,9 +201,9 @@ Skipped: **2/108**
 |------:|-------------|
 | 5 | `Expected '>', '->' or '=>', but received ':'` |
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
-| 2 | `Expected '>', '->' or '=>', but received '̥'` |
+| 2 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
-| 1 | `Expected '>', '->' or '=>', but received ')'` |
+| 1 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
@@ -225,7 +225,7 @@ Skipped: **2/108**
 
 | count | error_token |
 |------:|-------------|
-| 9 | `(` |
+| 8 | `(` |
 | 6 | `:` |
 | 6 | `∅` |
 | 4 | `{` |
@@ -256,14 +256,14 @@ Skipped: **2/108**
 
 | count | error_token |
 |------:|-------------|
-| 18 | `)` |
+| 17 | `)` |
 | 11 | `:` |
-| 5 | `(` |
+| 4 | `(` |
 | 3 | `ʲ` |
-| 1 | `&` |
+| 2 | `̥` |
 | 1 | `*` |
+| 1 | `&` |
 | 1 | `#` |
-| 1 | `̥` |
 | 1 | `_` |
 ### missing_slash_output_env (description)
 

@@ -15,7 +15,7 @@ from strip_ansi import strip_ansi
 
 from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
 
-# Minimal probe lexicon for ``asca run`` (Tier 4 boundary). Override with ASCA_PROBE_WORDS.
+# Minimal probe lexicon for ``asca run`` (Tier 4 boundary). Override with probe_words.
 _DEFAULT_PROBE_WORDS = "a\nba\nkata\nsami\nntu\n"
 
 _ANSI_RE = re.compile(r"\x1b\[[0-9;]*m")
@@ -98,8 +98,6 @@ def _clean_asca_stderr(stderr: str) -> str:
 
 def _raise_if_asca_failed(
     proc: subprocess.CompletedProcess[str],
-    *,
-    timeout: float,
 ) -> None:
     err = _clean_asca_stderr(proc.stderr)
     if proc.returncode != 0:
@@ -156,7 +154,7 @@ def validate_asca_part(
         [asca, "validate", "-s", fragment, "-f", field],
         timeout=timeout,
     )
-    _raise_if_asca_failed(proc, timeout=timeout)
+    _raise_if_asca_failed(proc)
     return True
 
 
@@ -166,6 +164,7 @@ def validate_asca(
     probe_words: Path | None = None,
     asca_bin: str | None = None,
     timeout: float = 15.0,
+    probe_words_chunk_size: int | None = 100,
 ) -> bool:
     """Return ``True`` if ``rule`` is valid for ASCA; otherwise raise.
 
@@ -184,39 +183,66 @@ def validate_asca(
 
     body = str(rule)
 
-    words_override = probe_words or (
-        Path(os.environ["ASCA_PROBE_WORDS"])
-        if os.environ.get("ASCA_PROBE_WORDS")
-        else None
-    )
-
     with tempfile.TemporaryDirectory() as tmp:
         tmp_path = Path(tmp)
         rsca = tmp_path / "check.rsca"
         rsca.write_text(body, encoding="utf-8")
 
-        if words_override is not None:
-            if not words_override.is_file():
-                raise ASCAValidationError(
-                    f"probe wordlist not found at {words_override}"
-                )
-            words_path = words_override
+        if not probe_words:
+            probe_words = tmp_path / "probe.wsca"
+            probe_words.write_text(_DEFAULT_PROBE_WORDS, encoding="utf-8")
+
+        if not probe_words.is_file():
+            raise ASCAValidationError(f"probe wordlist not found at {probe_words}")
+
+        probe_words_files = []
+
+        if probe_words_chunk_size is not None:
+            with probe_words.open("r") as f:
+                lines = f.readlines()
+                chunks = [
+                    lines[i : i + probe_words_chunk_size]
+                    for i in range(0, len(lines), probe_words_chunk_size)
+                ]
+                for chunk in chunks:
+                    with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
+                        tmp_file.write("".join(chunk).encode("utf-8"))
+                        tmp_file_path = Path(tmp_file.name)
+                        probe_words_files.append(tmp_file_path)
         else:
-            words_path = tmp_path / "probe.wsca"
-            words_path.write_text(_DEFAULT_PROBE_WORDS, encoding="utf-8")
+            probe_words_files.append(probe_words)
 
         if _asca_supports_validate(asca):
             proc = _run_asca_command(
                 [asca, "validate", "-r", str(rsca)],
                 timeout=timeout,
             )
-            _raise_if_asca_failed(proc, timeout=timeout)
+            _raise_if_asca_failed(proc)
 
-        proc = _run_asca_command(
-            [asca, "run", str(words_path), "--rules", str(rsca)],
-            timeout=timeout,
-        )
-        _raise_if_asca_failed(proc, timeout=timeout)
+        errors = []
+
+        for idx, probe_words_file in enumerate(probe_words_files):
+            proc = _run_asca_command(
+                [asca, "run", str(probe_words_file), "--rules", str(rsca)],
+                timeout=timeout,
+            )
+            try:
+                _raise_if_asca_failed(proc)
+            except ASCAValidationError as e:
+                errors.append(
+                    (
+                        e,
+                        idx * probe_words_chunk_size + 1,
+                        (idx + 1) * probe_words_chunk_size,
+                        ",".join(probe_words_file.open("r").readlines()),
+                    )
+                )
+
+        if errors:
+            for error, start, end, words in errors:
+                print(f"\nError running asca run on words {start} - {end}: {error}")
+                print(f"Words: {words}")
+            raise errors[0][0]
 
     return True
 

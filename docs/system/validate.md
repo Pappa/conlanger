@@ -195,7 +195,7 @@ resolve_asca_bin() -> str | None  # ASCA_BIN env, then PATH
 | --- | --- |
 | Default (validator internal) | `a`, `ba`, `kata`, `sami`, `ntu` (5 words) |
 | Inventory / tests fixture | `tests/fixtures/asca_probe_words.wsca` (same 5 words) |
-| Override | `probe_words=` argument or `ASCA_PROBE_WORDS` env var |
+| Override | `probe_words=` argument |
 
 **Purpose:** `asca run` exercises parse **and** apply (Tier 1–4 in validity research). Not parse-only.
 
