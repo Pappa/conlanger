@@ -245,3 +245,5 @@ skip_rules:
     reason: "I can't find this rule in the source material"
   - id: Karamiananen-s_4
     reason: "the paper doesn’t explain what this represents"
+  - id: Old-Low-Franconian-uː_3
+    reason: "The rule doesn't seem to make sense in context, unless they're optional alternatives"

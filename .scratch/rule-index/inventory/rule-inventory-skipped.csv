@@ -48,6 +48,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-a_2,,index_diachronica_original.html:5702,2,rule_skipped,,,,held-out (commented rule)
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-æu,,index_diachronica_original.html:5706,2,rule_skipped,,,,held-out (commented rule)
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-a_3,,index_diachronica_original.html:5711,2,rule_skipped,,,,held-out (commented rule)
+17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-uː_3,,index_diachronica_original.html:6049,2,rule_skipped,,,,held-out (commented rule)
 17.7.2.5,West Germanic to Old Low German,Old-Low-German-F-voice,,index_diachronica_original.html:6155,2,rule_skipped,,,,held-out (commented rule)
 17.10,Proto-Indo-European to Proto-Indo-Iranian,Proto-Indo-Iranian-Bʱ1P2,,index_diachronica_original.html:6830,2,rule_skipped,,,,held-out (commented rule)
 17.10,Proto-Indo-European to Proto-Indo-Iranian,Proto-Indo-Iranian-BʱBʱ,,index_diachronica_original.html:6831,2,rule_skipped,,,,held-out (commented rule)

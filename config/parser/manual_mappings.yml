@@ -375,3 +375,6 @@
 - from: " (this second one"
   to: " ; (this second one"
   reason: replace prose
+- from: " / in open syllables "
+  to: " ; in open syllables "
+  reason: unhandled environment

@@ -26570,15 +26570,13 @@ sections:
       as Limburg)
     source: index_diachronica_original.html:6048
     rule_id: Old-Low-Franconian-uː_2
-  - stages:
-    - uː
-    - ʉː
-    - ʉw
-    env: _V)
-    comment: (probably, in areas with uː
+  - stages: []
     raw: uː → ʉː (probably, in areas with uː → ʉw / _V)
     source: index_diachronica_original.html:6049
+    status: skipped
     rule_id: Old-Low-Franconian-uː_3
+    comment: The rule doesn't seem to make sense in context, unless they're optional
+      alternatives
   - comment: '*ei as a result of the umlaut of *ai was not affected); (except in southeastern
       dialects'
     stages:
@@ -26679,14 +26677,14 @@ sections:
     raw: '{ol,al} {ar,er} or → ɔu aːr oːr / _C[+dental]'
     source: index_diachronica_original.html:6066
     rule_id: Middle-Dutch-ol,al-ar,er-or
-  - comment: there seem to have been qualitative differences between original long
-      vowels and long vowels resulting from this change—lengthened iː seems to have
-      become eː, but lengthened aː merged with original aː); does not affect original
-      long vowels or vowels in diphthongs
+  - comment: in open syllables (ʏ → {œː,øː} here but this is not phonemically important;
+      there seem to have been qualitative differences between original long vowels
+      and long vowels resulting from this change—lengthened iː seems to have become
+      eː, but lengthened aː merged with original aː); does not affect original long
+      vowels or vowels in diphthongs
     stages:
     - V[-long +stress]
     - Vː
-    env: open syllables (ʏ > {œː,øː} here but this is not phonemically important
     raw: V[-long +stress] → Vː / in open syllables (ʏ → {œː,øː} here but this is not
       phonemically important; there seem to have been qualitative differences between
       original long vowels and long vowels resulting from this change—lengthened iː

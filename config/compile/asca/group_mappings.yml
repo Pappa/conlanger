@@ -43,8 +43,11 @@ Q:
   comment: |
     Index uvular OR click; dual meaning — cluster disambiguation often required
 R:
-  mapping: "[+son,-syll]"
+  mapping: "[+son,-syl]"
   comment: Index resonant/sonorant ≈ ASCA S ∪ G (not ASCA S alone)
+R̊:
+  mapping: "C:[+syl]"
+  comment: syllabic (vocalic) liquid or nasal
 S:
   mapping: P
   comment: Index plosive ↔ ASCA plosive grouping P

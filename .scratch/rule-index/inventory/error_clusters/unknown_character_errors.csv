@@ -9,8 +9,6 @@ section_index,rule_id,error_token,rule
 14.2,Achaemanid-Elamite-r̀,̀,"r̀ > r / V_{V,C} | ^ @ Rule 1, Line 1"
 14.2,Achaemanid-Elamite-ŕ,ŕ,"ŕ > r:[+long] / V_V | ^ @ Rule 1, Line 1"
 14.2,Achaemanid-Elamite-nr̀,̀,"nr̀ > nr | ^ @ Rule 1, Line 1"
-17.10.1,Proto-Indo-Aryan-R̊H,̊,"R̊[-place] > {u,i}[+son,-syll] / _V | ^ @ Rule 1, Line 1"
-17.10.1,Proto-Indo-Aryan-R̊H_2,̊,"R̊[-place] > {u,i}:[+long, +son,-syll] / _C | ^ @ Rule 1, Line 1"
 17.11.1,Polish-ŕ,ŕ,"ŕ > ʐ // _C:[+voice] | ^ @ Rule 1, Line 1"
 17.11.1,Polish-ɕtɕ,͜,"ɕtɕ > js / _{t͜s,s} | ^ @ Rule 1, Line 1"
 17.11.1,Polish-r̝̊-r̝,̊,"r̝̊ r̝ > ʂ ʐ | ^ @ Rule 1, Line 1"
