@@ -5,7 +5,6 @@ from helpers import default_index_parser
 
 from conlanger.tools.ingest.flatten_nested_sets import (
     _consume_segment_tail,
-    _match_brace,
     _try_distribute,
     flatten_nested_sets,
 )
@@ -120,17 +119,6 @@ def test_flatten_nested_sets(input, expected):
 )
 def test_try_distribute_paren_wrapped_and_guard_paths(member, expected):
     assert _try_distribute(member) == expected
-
-
-@pytest.mark.parametrize(
-    ("text", "start"),
-    [
-        ("abc", 0),
-        ("{abc", 0),
-    ],
-)
-def test_match_brace_rejects_invalid_starts(text, start):
-    assert _match_brace(text, start) is None
 
 
 @pytest.mark.parametrize(

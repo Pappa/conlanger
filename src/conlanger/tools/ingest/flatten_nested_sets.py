@@ -10,6 +10,8 @@ from __future__ import annotations
 
 from typing import Any
 
+from conlanger.utils.bracket_scanner import BRACES, split_outside_brackets
+
 _MAX_PASSES = 16
 
 
@@ -23,14 +25,14 @@ def flatten_nested_sets(text: str) -> str:
     """
     if not text or "{" not in text:
         return text
-    if _is_unbalanced_braces(text):
+    if not BRACES.is_balanced(text):
         return text
     previous = text
     for _ in range(_MAX_PASSES):
         nxt = _flatten_pass(previous)
         if nxt == previous:
             return nxt
-        if _is_unbalanced_braces(nxt):
+        if not BRACES.is_balanced(nxt):
             return previous
         previous = nxt
     return previous
@@ -59,112 +61,32 @@ def flatten_nested_sets_in_section_rules(
     return [flatten_nested_sets_in_rule_fields(rule) for rule in rules]
 
 
-def _brace_balance(text: str) -> int:
-    depth = 0
-    for char in text:
-        if char == "{":
-            depth += 1
-        elif char == "}":
-            depth -= 1
-            if depth < 0:
-                return depth
-    return depth
-
-
-def _is_unbalanced_braces(text: str) -> bool:
-    return _brace_balance(text) != 0
-
-
 def _flatten_pass(text: str) -> str:
-    if _max_brace_depth(text) >= 2:
+    if BRACES.max_depth(text) >= 2:
         text = _expand_paren_wrapped_sets(text)
     return _flatten_sets_in_string(text)
 
 
-def _max_brace_depth(text: str) -> int:
-    depth = 0
-    maximum = 0
-    for char in text:
-        if char == "{":
-            depth += 1
-            maximum = max(maximum, depth)
-        elif char == "}":
-            depth -= 1
-    return maximum
-
-
-def _match_brace(text: str, start: int) -> int | None:
-    if start >= len(text) or text[start] != "{":
-        return None
-    depth = 0
-    for index in range(start, len(text)):
-        char = text[index]
-        if char == "{":
-            depth += 1
-        elif char == "}":
-            depth -= 1
-            if depth == 0:
-                return index
-    return None
-
-
 def _split_members(inner: str) -> list[str]:
-    members: list[str] = []
-    current: list[str] = []
-    depth_brace = depth_paren = depth_bracket = 0
-    for char in inner:
-        if char == "{":
-            depth_brace += 1
-        elif char == "}":
-            depth_brace -= 1
-        elif char == "(":
-            depth_paren += 1
-        elif char == ")":
-            depth_paren -= 1
-        elif char == "[":
-            depth_bracket += 1
-        elif char == "]":
-            depth_bracket -= 1
-        if char == "," and depth_brace == 0 and depth_paren == 0 and depth_bracket == 0:
-            members.append("".join(current).strip())
-            current = []
-        else:
-            current.append(char)
-    tail = "".join(current).strip()
-    if tail:
-        members.append(tail)
-    return members
+    return split_outside_brackets(
+        inner,
+        ",",
+        strip_parts=True,
+        flush_on_separator="always",
+        omit_empty_tail=True,
+    )
 
 
 def _is_whole_set(text: str) -> bool:
     stripped = text.strip()
     if len(stripped) < 2 or not stripped.startswith("{") or not stripped.endswith("}"):
         return False
-    close = _match_brace(stripped, 0)
+    close = BRACES.closing_index(stripped, 0)
     return close == len(stripped) - 1
 
 
-def _top_level_sets(text: str) -> list[tuple[int, int]]:
-    spans: list[tuple[int, int]] = []
-    index = 0
-    while index < len(text):
-        if text[index] == "{":
-            close = _match_brace(text, index)
-            if close is None:
-                return []
-            spans.append((index, close + 1))
-            index = close + 1
-        else:
-            index += 1
-    return spans
-
-
-def _paren_wraps_set(prefix: str, suffix: str) -> bool:
-    return prefix.endswith("(") and suffix.startswith(")")
-
-
 def _try_distribute(member: str) -> list[str] | None:
-    spans = _top_level_sets(member)
+    spans = BRACES.top_level_spans(member)
     if len(spans) != 1:
         return None
     start, end = spans[0]
@@ -175,7 +97,7 @@ def _try_distribute(member: str) -> list[str] | None:
     inner_members = _split_members(set_text[1:-1])
     if not inner_members:
         return None
-    if _paren_wraps_set(prefix, suffix):
+    if prefix.endswith("(") and suffix.startswith(")"):
         rest = suffix[1:]
         return [f"{item}{rest}" for item in inner_members]
     return [f"{prefix}{item}{suffix}" for item in inner_members]
@@ -186,7 +108,7 @@ def _flatten_sets_in_string(text: str) -> str:
     index = 0
     while index < len(text):
         if text[index] == "{":
-            close = _match_brace(text, index)
+            close = BRACES.closing_index(text, index)
             if close is None:
                 return text
             inner = text[index + 1 : close]
@@ -226,7 +148,7 @@ def _expand_paren_wrapped_sets(text: str) -> str:
     length = len(text)
     while index < length:
         if text.startswith("({", index):
-            close = _match_brace(text, index + 1)
+            close = BRACES.closing_index(text, index + 1)
             if close is not None and close + 1 < length and text[close + 1] == ")":
                 tail_start = close + 2
                 tail_end = _consume_segment_tail(text, tail_start)

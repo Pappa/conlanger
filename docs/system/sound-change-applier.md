@@ -4,7 +4,7 @@ Applier compile turns one **sound-change section** (index dict) into a concrete 
 
 Corpus YAML fields and `raw` are **never modified** — transforms apply only to the emitted applier string.
 
-**Primary code:** [`compile/asca/pipeline.py`](../src/conlanger/tools/compile/asca/pipeline.py) (`compile_asca_rule_fields`, `compile_asca_field_pre_subscript`, `compile_asca_field_post_subscript`), [`rules.py`](../src/conlanger/tools/rules.py) (pydantic `DiachronicSeries`, `SoundChangeRule`), [`appliers/asca.py`](../src/conlanger/appliers/asca.py) (`validate_asca`). See [ADR-0014](./adr/0014-per-field-asca-compile.md).
+**Primary code:** [`compile/asca/pipeline.py`](../src/conlanger/tools/compile/asca/pipeline.py) (`compile_asca_rule_fields`, `compile_asca_field_pre_subscript`, `compile_asca_field_post_subscript`), [`rules.py`](../src/conlanger/tools/rules.py) (pydantic `DiachronicSeries`, `SoundChangeRule`), [`appliers/asca.py`](../src/conlanger/appliers/asca.py) (`validate_asca`). **Field / set tokenization** uses [`bracket_scanner.py`](../src/conlanger/utils/bracket_scanner.py) via [`structures.py`](../src/conlanger/tools/compile/asca/structures.py) (`split_outside_groupers`) and [`sets.py`](../src/conlanger/tools/compile/asca/sets.py) (`split_set_members`, `split_braced_set_members`). See [ADR-0014](./adr/0014-per-field-asca-compile.md).
 
 **Related:** [ADR-0002](./adr/0002-applier-neutral-yaml-rule-index.md) (applier-neutral index), [ADR-0003](./adr/0003-validate-after-applier-compile.md) (validate after compile).
 
