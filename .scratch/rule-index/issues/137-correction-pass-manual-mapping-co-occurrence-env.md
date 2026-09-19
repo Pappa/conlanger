@@ -40,9 +40,27 @@ ASCA has no faithful env for “elsewhere in the word”; ticket [134](134-corre
 
 ## Acceptance criteria
 
-- [ ] Manual mapping row(s) committed with `reason` citing interim policy + link to [122](122-grill-proximity-conditions-yaml.md)
-- [ ] `raw` unchanged; Moroccan `dʒ` rules validate or documented hold-out with cause
-- [ ] Full inventory re-run; metrics in **Answer**
+- [x] Manual mapping row(s) committed with `reason` citing interim policy + link to [122](122-grill-proximity-conditions-yaml.md)
+- [x] `raw` unchanged; Moroccan `dʒ` rules validate or documented hold-out with cause
+- [x] Full inventory re-run; metrics in **Answer**
+
+## Answer
+
+**Manual mappings** (`config/parser/manual_mappings.yml`): three substring rows with `reason: interim non-local co-occurrence env until issue 122 structured conditioning`:
+
+| `from` | `to` |
+|--------|------|
+| ` / if s or z occur` | ` / sporadic ; if s or z occur` |
+| ` / if ʃ is somewhere` | ` / sporadic ; if ʃ is somewhere` |
+| ` / if ʒ is somewhere` | ` / sporadic ; if ʒ is somewhere` |
+
+**Parse outcome:** `sporadic: true`, co-occurrence prose in `comment`, no bare prose `env` (same pattern as other `sporadic ;` injections).
+
+**Inventory (2026-09-19):** **9003 / 9839** ok (**+4** vs pre-run **8999**); **`expected_underscore` 49** (−4 from **53**); sections all OK **501 / 714** (unchanged).
+
+**Hold-out:** `Moroccan-Arabic-dʒ_2` (`dʒ → ʒ / else`) — catch-all else still needs a structural `_` in the immediately previous `env` ([53](53-correction-pass-prose-env-else.md)); after this pass the conditioned branch has no `env`, so the complementary `else` row remains one `expected_underscore` failure until structured conditioning or an agreed else pairing strategy.
+
+**`expected_underscore_errors.csv` scan:** no remaining `if … occur` or `somewhere in the stem` co-occurrence phrases beyond the `dʒ_2` else hold-out.
 
 ## References
 

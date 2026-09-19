@@ -697,6 +697,26 @@ def test_parser_moroccan_dʒ_else_family(tmp_path: Path):
     assert "exception" not in resolved[1]
 
 
+def test_parse_moroccan_co_occurrence_manual_mapping_sporadic_comment():
+    co_occurrence_mapping = ManualMapping(
+        from_text=" / if s or z occur",
+        to_text=" / sporadic ; if s or z occur",
+        reason="interim non-local co-occurrence env until issue 122 structured conditioning",
+    )
+    el = html.fragment_fromstring(
+        '<p class="schg" id="Moroccan-Arabic-dʒ">dʒ → {d,ɡ} / if s or z occur somewhere else in the word</p>',
+        create_parent=False,
+    )
+    parser = default_index_parser(manual_mappings=[co_occurrence_mapping])
+    rules = parser.parse_rule_element(el, source_file="index_diachronica_original.html")
+    assert rules[0]["sporadic"] is True
+    assert "if s or z occur somewhere else in the word" in rules[0]["comment"]
+    assert rules[0]["raw"] == (
+        "dʒ → {d,ɡ} / if s or z occur somewhere else in the word"
+    )
+    assert "env" not in rules[0]
+
+
 @pytest.mark.parametrize(
     ("text", "expected_env", "expected_medial"),
     [

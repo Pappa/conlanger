@@ -230,6 +230,15 @@
 - from: " / syllable-initially"
   to: " / $_ "
   reason: "replace "
+- from: " / if s or z occur"
+  to: " / sporadic ; if s or z occur"
+  reason: interim non-local co-occurrence env until issue 122 structured conditioning
+- from: " / if ʃ is somewhere"
+  to: " / sporadic ; if ʃ is somewhere"
+  reason: interim non-local co-occurrence env until issue 122 structured conditioning
+- from: " / if ʒ is somewhere"
+  to: " / sporadic ; if ʒ is somewhere"
+  reason: interim non-local co-occurrence env until issue 122 structured conditioning
 - from: " / if short and unstressed"
   to: " / [-long, -stress]"
   reason: replace prose

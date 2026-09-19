@@ -1,9 +1,5 @@
 section_index,rule_id,error_token,rule
-6.2.2.1.14,Moroccan-Arabic-dʒ,,"dʒ > d / if s or z occur somewhere else in the word | ^ @ Rule 1, Line 1"
-6.2.2.1.14,Moroccan-Arabic-dʒ,,"dʒ > ɡ / if s or z occur somewhere else in the word | ^ @ Rule 1, Line 1"
 6.2.2.1.14,Moroccan-Arabic-dʒ_2,,"dʒ > ʒ / else | ^ @ Rule 1, Line 1"
-6.2.2.1.14,Moroccan-Arabic-s,,"s > ʃ / if ʃ is somewhere in the stem after it | ^ @ Rule 1, Line 1"
-6.2.2.1.14,Moroccan-Arabic-z,,"z > ʒ / if ʒ is somewhere in the stem after it | ^ @ Rule 1, Line 1"
 7.4,Blackfoot-aː_2,,"a:[+long] > a / else | ^ @ Rule 1, Line 1"
 10.3.11.3.1,Kwamera-ə_2,,"ə > e / else | ^ @ Rule 1, Line 1"
 17.2,Common-Anatolian-T-h2_3,,"P:[-voice] x > P:[+voice] ɣʷ / V:[+stress, +long] | ^ @ Rule 1, Line 1"

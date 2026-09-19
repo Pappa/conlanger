@@ -2828,12 +2828,13 @@ sections:
     raw: q → {q,ɡ}
     source: index_diachronica_original.html:1480
     rule_id: Moroccan-Arabic-q
-  - stages:
+  - comment: if s or z occur somewhere else in the word; sporadic
+    stages:
     - dʒ
     - '{d,ɡ}'
-    env: if s or z occur somewhere else in the word
     raw: dʒ → {d,ɡ} / if s or z occur somewhere else in the word
     source: index_diachronica_original.html:1481
+    sporadic: true
     rule_id: Moroccan-Arabic-dʒ
   - stages:
     - dʒ
@@ -2842,19 +2843,21 @@ sections:
     raw: dʒ → ʒ / else
     source: index_diachronica_original.html:1482
     rule_id: Moroccan-Arabic-dʒ_2
-  - stages:
+  - comment: if ʃ is somewhere in the stem after it; sporadic
+    stages:
     - s
     - ʃ
-    env: if ʃ is somewhere in the stem after it
     raw: s → ʃ / if ʃ is somewhere in the stem after it
     source: index_diachronica_original.html:1483
+    sporadic: true
     rule_id: Moroccan-Arabic-s
-  - stages:
+  - comment: if ʒ is somewhere in the stem after it; sporadic
+    stages:
     - z
     - ʒ
-    env: if ʒ is somewhere in the stem after it
     raw: z → ʒ / if ʒ is somewhere in the stem after it
     source: index_diachronica_original.html:1484
+    sporadic: true
     rule_id: Moroccan-Arabic-z
 - section: Classical Arabic to Sa‘idi Arabic
   index: 6.2.2.1.15
