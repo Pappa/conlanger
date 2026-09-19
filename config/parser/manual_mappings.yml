@@ -327,12 +327,6 @@
 - from: ", in Milyan"
   to: " ; , in Milyan"
   reason: comment
-- from: " / in "
-  to: " / "
-  reason: replace prose
-- from: " ! in "
-  to: " ! "
-  reason: replace prose
 - from: " (*)"
   to: " ; (*)"
   reason: ambiguous symbol
@@ -387,3 +381,20 @@
 - from: " / in open syllables "
   to: " ; in open syllables "
   reason: unhandled environment
+
+# keep these last because they are so broad
+- from: " / in "
+  to: " / "
+  reason: replace prose
+- from: " ! in "
+  to: " ! "
+  reason: replace prose
+- from: ", in "
+  to: " ; sporadic - in "
+  reason: replace prose
+- from: " “("
+  to: " ; “("
+  reason: comment
+- from: " (“"
+  to: " ; (“"
+  reason: comment
