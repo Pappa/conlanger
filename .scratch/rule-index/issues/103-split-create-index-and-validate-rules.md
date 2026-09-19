@@ -31,7 +31,7 @@ After [ticket 101](101-refactor-config-layout-and-injection.md), scripts are the
 - Read parsed YAML via new **`read_cleaned_index(path)`** in `index_io.py` (symmetric with `write_cleaned_index`).
 - Default paths (zero-arg use case), shared with `create_index`:
   - `--yaml-in` → `DEFAULT_YAML` (`data/diachronica/index_diachronica_parsed.yml`)
-  - `--inventory-dir` → `DEFAULT_INVENTORY_DIR` (`.scratch/rule-index/inventory/`)
+  - `--inventory-dir` → `DEFAULT_INVENTORY_DIR` (`inventory/`)
 - Move validate half of current `create_index.py`: `iter_inventory_with_field_isolation`, filtered CSVs, error clusters, optional `--field-isolation`, changelog, summary markdown, ASCA fork resolution, `--probe-words`, `--use-asca-fork`, `--reset-changelog`, `--limit`.
 - Docstring: loads applier-neutral index, compiles to ASCA in memory for **compile validation** only, writes inventory.
 

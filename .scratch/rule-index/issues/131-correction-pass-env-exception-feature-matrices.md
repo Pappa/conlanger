@@ -83,7 +83,7 @@ Parsed index rules store env/exception feature constraints in applier-neutral In
 - [asca-rule-validity.md](../research/asca-rule-validity.md)
 - `src/conlanger/tools/compile/asca/host_bracket_matrices.py`
 - `src/conlanger/tools/compile/asca/pipeline.py`
-- `.scratch/rule-index/inventory/error_clusters/expected_underscore_errors.csv`
+- `inventory/error_clusters/expected_underscore_errors.csv`
 
 ## Answer
 

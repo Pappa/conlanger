@@ -47,7 +47,7 @@ flowchart TD
 | --- | --- |
 | Cleaned YAML | `data/diachronica/index_diachronica_parsed.yml` |
 | Parse diagnostics | `.scratch/rule-index/parse/` |
-| Inventory dir | `.scratch/rule-index/inventory/` |
+| Inventory dir | `inventory/` |
 | Comment phrase survey | `.scratch/rule-index/parse/rule-comment-phrases.md` |
 | Probe wordlist | `tests/fixtures/asca_probe_words.wsca` |
 
@@ -90,7 +90,7 @@ flowchart TD
 | --- | ---: | ---: | --- |
 | Provisional AI YAML + asca 0.9.3 | 9721 | 57.1% | [Ticket 02](../.scratch/rule-index/issues/02-inventory-valid-vs-invalid-rules.md) |
 | Cleaned schema + passes 14–25 | 9317 | 68.9% | [Ticket 12](../.scratch/rule-index/issues/12-full-index-validation-inventory.md) |
-| Current on-disk summary | 9841 | **85.4%** (8400 ok) | [inventory summary](../.scratch/rule-index/inventory/rule-inventory-summary.md) |
+| Current on-disk summary | 9841 | **85.4%** (8400 ok) | [inventory summary](../inventory/rule-inventory-summary.md) |
 
 **Section outcomes (current):** 417 / 714 sections all OK (58.4%); 268 some OK; 4 none OK; 25 sections skipped. See **Sections** in the summary markdown.
 
@@ -104,7 +104,7 @@ flowchart TD
 
 Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](./adr/0010-historical-fidelity-class-first-status.md)). Corpus YAML carries thin optional `status` only (`needs-validation` | `skipped`; omit = ok).
 
-**Artifacts** (under `.scratch/rule-index/inventory/`):
+**Artifacts** (under `inventory/`):
 
 | File | Role | Ticket |
 | --- | --- | --- |

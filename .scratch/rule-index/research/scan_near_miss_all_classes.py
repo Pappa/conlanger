@@ -12,7 +12,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-INVENTORY_DIR = ROOT / ".scratch/rule-index/inventory"
+INVENTORY_DIR = ROOT / "inventory"
 OUT_CSV = Path(__file__).with_name("near-miss-all-classes.csv")
 
 

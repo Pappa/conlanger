@@ -216,7 +216,7 @@ ASCA inbuilt groupings ([Groupings](https://github.com/Girv98/asca-rust/blob/0.1
 
 ## Inventory: `unknown_grouping` failures
 
-From [`.scratch/rule-index/inventory/rule-inventory.csv`](../inventory/rule-inventory.csv) (16 `unknown_grouping` rows):
+From [`inventory/rule-inventory.csv`](../inventory/rule-inventory.csv) (16 `unknown_grouping` rows):
 
 | Grouping | Typical cause | CSV / cluster action |
 |----------|---------------|----------------------|

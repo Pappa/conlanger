@@ -16,7 +16,7 @@ Deliver a single invocable entry point (script or module) that takes an HTML pat
 2. Validation report CSV per **index rule**: section identity, rule index, ok/fail, **failure class**, reason, description
 3. Inventory summary (total rules, ok/fail counts and percentages, top **failure classes** ranked by count)
 
-Re-baseline against cleaned schema + ASCA 0.10.2, replacing the provisional 0.9.3 / `index_diachronica_ai.yml` inventory in `.scratch/rule-index/inventory/`.
+Re-baseline against cleaned schema + ASCA 0.10.2, replacing the provisional 0.9.3 / `index_diachronica_ai.yml` inventory in `inventory/`.
 
 ## Notes
 
@@ -34,7 +34,7 @@ Re-baseline against cleaned schema + ASCA 0.10.2, replacing the provisional 0.9.
 - [x] One command regenerates cleaned YAML + validation report CSV + summary markdown from HTML path
 - [x] CSV columns include section identity, rule index, ok/fail, failure class, reason, description
 - [x] Summary records rule counts, ok/fail percentages, and top failure classes (reproducible across runs)
-- [x] Inventory artifacts written under `.scratch/rule-index/inventory/`
+- [x] Inventory artifacts written under `inventory/`
 - [x] Per-**index rule** validation — one bad rule in a section does not obscure others
 
 ## Answer
@@ -43,6 +43,6 @@ Entry point: `uv run create_index` (`src/conlanger/scripts/create_index.py`).
 
 Inventory module: `src/conlanger/tools/index_inventory.py` — per-rule validation via `DiachronicSeries(...)` + `validate_asca` (ASCA 0.10.2, baseline `tests/fixtures/asca_probe_words.wsca`).
 
-Artifacts: `.scratch/rule-index/inventory/rule-inventory.csv` and `rule-inventory-summary.md`.
+Artifacts: `inventory/rule-inventory.csv` and `rule-inventory-summary.md`.
 
 Latest baseline (after passes 14–25): **6422 / 9317 ok (68.9%)**; top failure classes: `syntax_other`, `unknown_character`, `expected_underscore`, `unknown_feature`. Replaces provisional 0.9.3 / `index_diachronica_ai.yml` inventory.
