@@ -236,47 +236,122 @@ def test_apply_section_mappings(text, section_index, sections, expected):
 
 
 @pytest.mark.parametrize(
-    ("text", "mappings", "expected_text", "expected_hits"),
+    (
+        "input",
+        "from_text",
+        "to_text",
+        "reason",
+        "use_regex",
+        "expected_text",
+        "expected_hit_from",
+        "expected_hit_to",
+    ),
     [
         pytest.param(
             "a → b / _C",
-            [ManualMapping(from_text="zzz", to_text="Q", reason="")],
+            "zzz",
+            "Q",
+            "",
+            False,
             "a → b / _C",
-            [],
+            None,
+            None,
             id="miss-unchanged",
         ),
         pytest.param(
             "a → b",
-            [ManualMapping(from_text="a → b", to_text="x → y", reason="")],
+            "a → b",
             "x → y",
-            [ManualMappingHit(from_text="a → b", to_text="x → y")],
+            "",
+            False,
+            "x → y",
+            "a → b",
+            "x → y",
             id="literal-hit",
         ),
         pytest.param(
             "",
-            [ManualMapping(from_text="a", to_text="b", reason="")],
+            "a",
+            "b",
             "",
-            [],
+            False,
+            "",
+            None,
+            None,
             id="empty-text",
         ),
-        pytest.param("x", [], "x", [], id="empty-mapping-list"),
+        pytest.param(
+            "x",
+            None,
+            "",
+            "",
+            False,
+            "x",
+            None,
+            None,
+            id="empty-mapping-list",
+        ),
         pytest.param(
             "foo123",
-            [ManualMapping(from_text="123", to_text="N", reason="", use_regex=True)],
+            "123",
+            "N",
+            "",
+            True,
             "fooN",
-            [ManualMappingHit(from_text="123", to_text="N")],
+            "123",
+            "N",
             id="regex-hit",
         ),
         pytest.param(
+            "rewrite (\\d+) → (\\d+) on 1 → 2",
+            r"(\d+) → (\d+)",
+            r"\2 → \1",
+            "",
+            True,
+            "rewrite (\\d+) → (\\d+) on 2 → 1",
+            r"(\d+) → (\d+)",
+            r"\2 → \1",
+            id="regex-group-backreference",
+        ),
+        pytest.param(
             "keep",
-            [ManualMapping(from_text="", to_text="X", reason="")],
+            "",
+            "X",
+            "",
+            False,
             "keep",
-            [],
+            None,
+            None,
             id="skips-empty-from-text",
         ),
     ],
 )
-def test_apply_manual_mappings(text, mappings, expected_text, expected_hits):
-    working, hits = apply_manual_mappings(text, mappings)
+def test_apply_manual_mappings(
+    input,
+    from_text,
+    to_text,
+    reason,
+    use_regex,
+    expected_text,
+    expected_hit_from,
+    expected_hit_to,
+):
+    if from_text is None:
+        mappings: list[ManualMapping] = []
+    else:
+        mappings = [
+            ManualMapping(
+                from_text=from_text,
+                to_text=to_text,
+                reason=reason,
+                use_regex=use_regex,
+            )
+        ]
+    working, hits = apply_manual_mappings(input, mappings)
     assert working == expected_text
-    assert hits == expected_hits
+    if expected_hit_from is None:
+        assert hits == []
+    else:
+        assert hits == [
+            ManualMappingHit(from_text=expected_hit_from, to_text=expected_hit_to)
+        ]
