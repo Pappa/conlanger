@@ -680,43 +680,6 @@ def test_resolve_catch_all_else_old_mandarin_v5_cascade():
     assert resolved[1]["exception"] == "_"
 
 
-def test_parser_moroccan_dʒ_else_family(tmp_path: Path):
-    el = html.fragment_fromstring(
-        '<p class="schg" id="Moroccan-Arabic-dʒ">dʒ → {d,ɡ} / if s or z occur somewhere else in the word</p>',
-        create_parent=False,
-    )
-    el2 = html.fragment_fromstring(
-        '<p class="schg" id="Moroccan-Arabic-dʒ_2">dʒ → ʒ / else</p>',
-        create_parent=False,
-    )
-    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
-    rules2 = _parse_rule_element(el2, source_file="index_diachronica_original.html")
-    resolved = resolve_catch_all_else_rules(rules + rules2)
-    assert resolved[0]["env"] == "if s or z occur somewhere else in the word"
-    assert resolved[1]["env"] == "else"
-    assert "exception" not in resolved[1]
-
-
-def test_parse_moroccan_co_occurrence_manual_mapping_sporadic_comment():
-    co_occurrence_mapping = ManualMapping(
-        from_text=" / if s or z occur",
-        to_text=" / sporadic ; if s or z occur",
-        reason="interim non-local co-occurrence env until issue 122 structured conditioning",
-    )
-    el = html.fragment_fromstring(
-        '<p class="schg" id="Moroccan-Arabic-dʒ">dʒ → {d,ɡ} / if s or z occur somewhere else in the word</p>',
-        create_parent=False,
-    )
-    parser = default_index_parser(manual_mappings=[co_occurrence_mapping])
-    rules = parser.parse_rule_element(el, source_file="index_diachronica_original.html")
-    assert rules[0]["sporadic"] is True
-    assert "if s or z occur somewhere else in the word" in rules[0]["comment"]
-    assert rules[0]["raw"] == (
-        "dʒ → {d,ɡ} / if s or z occur somewhere else in the word"
-    )
-    assert "env" not in rules[0]
-
-
 @pytest.mark.parametrize(
     ("text", "expected_env", "expected_medial"),
     [

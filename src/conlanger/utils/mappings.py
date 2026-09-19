@@ -237,15 +237,13 @@ def apply_manual_mappings(
     text: str,
     mappings: list[ManualMapping],
 ) -> tuple[str, list[ManualMappingHit]]:
-    """Replace ``from`` substrings with ``to`` (all occurrences).
+    """Replace ``from_text`` substrings with ``to_text`` (all occurrences).
+    If ``use_regex`` is True, the replacement is performed using a regular expression.
 
-    Mappings are applied longest-``from`` first so a shorter pattern cannot steal
-    a longer match when both would apply. Relative order among equal-length
-    ``from`` keys follows list order (stable sort).
+    Mappings are applied in the order they are provided.
     """
     if not text or not mappings:
         return text, []
-    # ordered = sorted(mappings, key=lambda row: len(row.from_text), reverse=True)
     working = text
     hits: list[ManualMappingHit] = []
     for row in mappings:
