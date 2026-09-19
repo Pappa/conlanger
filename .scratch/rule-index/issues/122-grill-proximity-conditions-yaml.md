@@ -160,6 +160,18 @@ exception: '{r(ʲ),l(ʲ)}_ or _ɡ'
 - Trailing `, in monosyllables|polysyllables|nouns` on structural env → strip to `comment`.
 - `typically` on neighbour rules → `sporadic: true` + `comment`.
 
+### Interim — imprecise non-local conditioning (2026-09-19)
+
+This grill does **not** yet model claims like “**if s or z occur somewhere else in the word**” (co-occurrence elsewhere in the domain, not neighbour `position`).
+
+Until `position` / broader conditioning schema ships, the project uses the same **temporary** approach as dialect applicability rows in `manual_mappings.yml`:
+
+| Index substring | Manual `to` | Parse effect |
+|-----------------|-------------|--------------|
+| ` / if s or z occur` | ` / sporadic ; if s or z occur` | First `;` → rule comment; `sporadic: true`; remainder of phrase preserved in comment |
+
+Implementation ticket: [137 correction pass — co-occurrence env manual mapping](137-correction-pass-manual-mapping-co-occurrence-env.md). **Phase 2 retirement:** when structured fields express non-local conditioning, remove this row and re-parse (alongside other `sporadic ;` injections per [123](123-grill-applicability-dialect-sporadic-conditions-yaml.md) Q6).
+
 ### Phasing (agreed direction)
 
 1. **Phase 0** — Parser extracts `position` from `raw` in parallel; does **not** change `env`/`exception`/compile; parity report vs current output.
