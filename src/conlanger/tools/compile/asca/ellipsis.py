@@ -2,6 +2,8 @@
 
 import re
 
+from conlanger.utils.bracket_scanner import is_square_bracket_wrapped
+
 _ELLIPSIS = "\u2026"
 _ELLIPSIS_SRC = rf"(?:{_ELLIPSIS}|\.\.\.?)"
 # Index ``(C…)`` / ``(VC…)`` / ``(C…?)`` → ASCA ``(C,0)`` (zero-or-more).
@@ -22,7 +24,7 @@ def normalize_asca_optional_grouping_ellipsis(text: str) -> str:
     for segment in re.split(r"(\[[^\]]*\])", text):
         if not segment:
             continue
-        if segment.startswith("[") and segment.endswith("]"):
+        if is_square_bracket_wrapped(segment):
             parts.append(segment)
         else:
             segment = _TRAILING_GROUPING_ELLIPSIS_RE.sub(r"(\1,0)", segment)

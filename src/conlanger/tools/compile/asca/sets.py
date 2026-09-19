@@ -6,6 +6,7 @@ from conlanger.utils.bracket_scanner import (
     BRACES,
     BRACKETS,
     PARENS,
+    is_brace_wrapped,
     split_outside_brackets,
 )
 
@@ -13,7 +14,7 @@ from conlanger.utils.bracket_scanner import (
 def is_whole_field_set(text: str) -> bool:
     """True when ``text`` is a single ``{…}`` set spanning the whole field."""
     stripped = text.strip()
-    if len(stripped) < 2 or not stripped.startswith("{") or not stripped.endswith("}"):
+    if not is_brace_wrapped(stripped):
         return False
     close = BRACES.closing_index(stripped, 0)
     if close is None:

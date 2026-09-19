@@ -10,6 +10,7 @@ from __future__ import annotations
 import re
 
 from conlanger.tools.compile.asca._patterns import SET_BODY_RE
+from conlanger.utils.bracket_scanner import is_square_bracket_wrapped
 
 _CLICK = r"[!ǃǀǁǂʘ]"
 _REAR_ONSET = r"[kgNKŋɡq]"
@@ -64,7 +65,7 @@ def _rewrite_outside_feature_brackets(text: str) -> str:
     for segment in re.split(r"(\[[^\]]*\])", text):
         if not segment:
             continue
-        if segment.startswith("[") and segment.endswith("]"):
+        if is_square_bracket_wrapped(segment):
             parts.append(segment)
             continue
         rewritten = _rewrite_sets(segment)

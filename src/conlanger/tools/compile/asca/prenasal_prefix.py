@@ -20,6 +20,7 @@ from __future__ import annotations
 import re
 
 from conlanger.tools.compile.asca._patterns import IPA_SEGMENT
+from conlanger.utils.bracket_scanner import is_square_bracket_wrapped
 
 _PRENASAL = "\u207f"
 _VALID_PRENASAL_GRAPHEMES = frozenset({"ⁿd", "ⁿt"})
@@ -44,7 +45,7 @@ def _rewrite_outside_brackets(text: str) -> str:
     for segment in re.split(r"(\[[^\]]*\])", text):
         if not segment:
             continue
-        if segment.startswith("[") and segment.endswith("]"):
+        if is_square_bracket_wrapped(segment):
             parts.append(segment)
             continue
         segment = _CLASS_INFIX_RE.sub(r"\1 N \2", segment)

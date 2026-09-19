@@ -26,6 +26,7 @@ from conlanger.tools.compile.asca.group_mappings import (
     _grouping_letter_pattern,
     expand_grouping_letter,
 )
+from conlanger.utils.bracket_scanner import is_square_bracket_wrapped
 from conlanger.utils.features import (
     apply_features_to_token,
     merge_mapping_with_features,
@@ -138,7 +139,7 @@ def normalize_asca_superscript_modifiers(
     for segment in re.split(r"(\[[^\]]*\])", text):
         if not segment:
             continue
-        if segment.startswith("[") and segment.endswith("]"):
+        if is_square_bracket_wrapped(segment):
             parts.append(segment)
         else:
             parts.append(

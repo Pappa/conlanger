@@ -23,6 +23,7 @@ from __future__ import annotations
 import re
 
 from conlanger.tools.compile.asca._patterns import IPA_SEGMENT
+from conlanger.utils.bracket_scanner import is_square_bracket_wrapped
 from conlanger.utils.features import apply_features_to_token
 
 _ASPIRATED = "\u02b0"
@@ -68,7 +69,7 @@ def _rewrite_outside_brackets(text: str) -> str:
     for segment in re.split(r"(\[[^\]]*\])", text):
         if not segment:
             continue
-        if segment.startswith("[") and segment.endswith("]"):
+        if is_square_bracket_wrapped(segment):
             parts.append(segment)
             continue
         parts.append(

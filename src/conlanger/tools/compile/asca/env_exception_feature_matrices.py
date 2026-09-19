@@ -11,6 +11,7 @@ from conlanger.tools.compile.asca.host_bracket_matrices import (
     _SINGLE_HOST_BRACKET_RE,
 )
 from conlanger.tools.compile.asca.structures import split_outside_groupers
+from conlanger.utils.bracket_scanner import is_brace_wrapped, is_square_bracket_wrapped
 
 _BARE_MATRIX_RE = re.compile(r"^\[(?P<inner>[^\]]+)\]$")
 _FEATURE_POLARITY_RE = re.compile(r"([+-])\s*([^,+-\]]+)")
@@ -33,7 +34,7 @@ def parse_bare_feature_matrix(text: str | None) -> str | None:
 
 def flip_feature_matrix_polarity(matrix: str) -> str:
     """Flip ``+``/``-`` on each feature inside a standalone matrix."""
-    if not matrix.startswith("[") or not matrix.endswith("]"):
+    if not is_square_bracket_wrapped(matrix):
         return matrix
 
     def flip(match: re.Match[str]) -> str:
@@ -103,7 +104,7 @@ def _attach_matrix_to_token(token: str, matrix: str) -> str:
     if literal is not None:
         return literal
 
-    if text.startswith("{") and text.endswith("}"):
+    if is_brace_wrapped(text):
         members = split_outside_groupers(text[1:-1], ",")
         transformed = ",".join(
             _attach_matrix_to_token(member.strip(), matrix) for member in members

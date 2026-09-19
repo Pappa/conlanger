@@ -28,6 +28,7 @@ from conlanger.tools.compile.asca.host_bracket_matrices import (
 )
 from conlanger.tools.compile.asca.sets import split_set_members
 from conlanger.tools.compile.asca.structures import split_outside_groupers
+from conlanger.utils.bracket_scanner import is_brace_wrapped
 
 _CLASS_OR_GROUP_INNER_RE = re.compile(
     r"^(?:"
@@ -149,7 +150,7 @@ def _expand_prefix_structure_optional(token: str) -> str:
             members = split_set_members(set_match.group(1))
             members.append(set_match.group(2))
             return "{" + ",".join(members) + "}" + rest
-        if inner.startswith("{") and inner.endswith("}"):
+        if is_brace_wrapped(inner):
             inner = inner[1:-1]
         return f"{{{inner}}}{rest}"
 
@@ -158,7 +159,7 @@ def _expand_prefix_structure_optional(token: str) -> str:
         return token
     inner = match.group(1).strip()
     rest = match.group(2)
-    if inner.startswith("{") and inner.endswith("}"):
+    if is_brace_wrapped(inner):
         inner = inner[1:-1]
     if _CARTESIAN_OPTIONAL_PREFIX_INNER_RE.fullmatch(inner):
         return _cartesian_optional_prefix(inner, rest)

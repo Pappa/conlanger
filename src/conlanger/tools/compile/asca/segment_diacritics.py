@@ -7,6 +7,7 @@ import re
 from conlanger.tools.compile.asca.subscript_references import (
     _SUBSCRIPT_TO_ASCII,
 )
+from conlanger.utils.bracket_scanner import is_square_bracket_wrapped
 
 _RING_ABOVE = "\u030a"
 _NO_AUDIBLE_RELEASE = "\u031a"
@@ -93,7 +94,7 @@ def _rewrite_outside_brackets(text: str) -> str:
     for segment in re.split(r"(\[[^\]]*\])", text):
         if not segment:
             continue
-        if segment.startswith("[") and segment.endswith("]"):
+        if is_square_bracket_wrapped(segment):
             parts.append(segment)
             continue
         segment = _rewrite_combining_marks(segment)

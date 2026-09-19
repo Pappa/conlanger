@@ -2,7 +2,13 @@
 
 import pytest
 
-from conlanger.utils.bracket_scanner import BRACES, split_outside_brackets
+from conlanger.utils.bracket_scanner import (
+    BRACES,
+    BRACKETS,
+    is_brace_wrapped,
+    is_square_bracket_wrapped,
+    split_outside_brackets,
+)
 
 
 @pytest.mark.parametrize(
@@ -69,7 +75,12 @@ def test_split_outside_brackets(text, separator, expected, kwargs):
 @pytest.mark.parametrize(
     ("text", "separator", "kwargs", "match"),
     [
-        ("a b", "  ", {}, "single character"),  # test_split_rejects_multi_char_separator
+        (
+            "a b",
+            "  ",
+            {},
+            "single character",
+        ),  # test_split_rejects_multi_char_separator
         (
             "a,b",
             ",",
@@ -91,3 +102,32 @@ def test_braces_balance_and_max_depth():
 
 def test_braces_top_level_spans_unbalanced_returns_empty():
     assert BRACES.top_level_spans("{a,{b") == []
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("{a,b}", True),
+        ("{a,b", False),
+        ("", False),
+        ("{}", True),
+        ("x{a}", False),
+    ],
+)
+def test_is_brace_wrapped(text, expected):
+    assert is_brace_wrapped(text) == expected
+    assert BRACES.wraps(text) == expected
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("[+stress]", True),
+        ("[+stress", False),
+        ("", False),
+        ("[]", True),
+    ],
+)
+def test_is_square_bracket_wrapped(text, expected):
+    assert is_square_bracket_wrapped(text) == expected
+    assert BRACKETS.wraps(text) == expected

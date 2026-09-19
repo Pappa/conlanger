@@ -3,6 +3,7 @@
 import re
 
 from conlanger.tools.compile.asca._patterns import IPA_SEGMENT
+from conlanger.utils.bracket_scanner import is_square_bracket_wrapped
 from conlanger.utils.features import (
     add_features_to_matrix_body,
     apply_features_to_token,
@@ -53,7 +54,7 @@ def _rewrite_outside_brackets(text: str) -> str:
     for segment in re.split(r"(\[[^\]]*\])", text):
         if not segment:
             continue
-        if segment.startswith("[") and segment.endswith("]"):
+        if is_square_bracket_wrapped(segment):
             parts.append(segment)
             continue
         parts.append(

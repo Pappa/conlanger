@@ -2,6 +2,7 @@
 
 import re
 
+from conlanger.utils.bracket_scanner import is_brace_wrapped, is_square_bracket_wrapped
 from conlanger.utils.features import apply_features_to_token
 
 # Class-letter boundary policy (compile-time tokenisation).
@@ -48,7 +49,7 @@ _ASCA_NATIVE_GROUPINGS = frozenset("COSPFLNGV")
 
 
 def _labialize_mapping(mapping: str) -> str:
-    if mapping.startswith("{") and mapping.endswith("}"):
+    if is_brace_wrapped(mapping):
         members = [part.strip() for part in mapping[1:-1].split(",") if part.strip()]
         labialized: list[str] = []
         for member in members:
@@ -165,7 +166,7 @@ def apply_asca_group_mappings_to_string(
     for segment in re.split(r"(\[[^\]]*\])", text):
         if not segment:
             continue
-        if segment.startswith("[") and segment.endswith("]"):
+        if is_square_bracket_wrapped(segment):
             parts.append(segment)
         else:
             parts.append(_apply_asca_group_mappings_outside_brackets(segment, mappings))

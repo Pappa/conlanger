@@ -24,6 +24,7 @@ from __future__ import annotations
 import re
 
 from conlanger.tools.compile.asca._patterns import IPA_SEGMENT
+from conlanger.utils.bracket_scanner import is_square_bracket_wrapped
 
 _RANGE_DOT = "\ue000"  # placeholder while normalising single dots
 _INDEX_SEGMENT = rf"(?:{IPA_SEGMENT}|[A-Z])\d*"
@@ -51,7 +52,7 @@ def _rewrite_outside_brackets(text: str) -> str:
     for segment in re.split(r"(\[[^\]]*\])", text):
         if not segment:
             continue
-        if segment.startswith("[") and segment.endswith("]"):
+        if is_square_bracket_wrapped(segment):
             parts.append(segment)
             continue
         segment = _BEFORE_SET.sub(r"\1", segment)

@@ -15,6 +15,7 @@ from conlanger.tools.compile.asca.sets import (
     split_set_members,
 )
 from conlanger.tools.compile.asca.structures import split_outside_groupers
+from conlanger.utils.bracket_scanner import is_brace_wrapped
 from conlanger.tools.compile.field_tokens import (
     FieldToken,
     OptionalLengthNode,
@@ -80,7 +81,7 @@ def _set_optional_length_members(set_text: str) -> tuple[str, ...]:
 def _member_alternates(member: str) -> list[str]:
     """Expand optional length in one set member; flatten into parent set."""
     expanded = _expand_optional_length_member(member)
-    if expanded != member and expanded.startswith("{") and expanded.endswith("}"):
+    if expanded != member and is_brace_wrapped(expanded):
         return split_braced_set_members(expanded)
     return [expanded]
 

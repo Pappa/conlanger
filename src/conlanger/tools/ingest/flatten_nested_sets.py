@@ -10,7 +10,11 @@ from __future__ import annotations
 
 from typing import Any
 
-from conlanger.utils.bracket_scanner import BRACES, split_outside_brackets
+from conlanger.utils.bracket_scanner import (
+    BRACES,
+    is_brace_wrapped,
+    split_outside_brackets,
+)
 
 _MAX_PASSES = 16
 
@@ -79,7 +83,7 @@ def _split_members(inner: str) -> list[str]:
 
 def _is_whole_set(text: str) -> bool:
     stripped = text.strip()
-    if len(stripped) < 2 or not stripped.startswith("{") or not stripped.endswith("}"):
+    if not is_brace_wrapped(stripped):
         return False
     close = BRACES.closing_index(stripped, 0)
     return close == len(stripped) - 1

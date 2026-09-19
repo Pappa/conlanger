@@ -14,6 +14,7 @@ from conlanger.tools.compile.asca.host_bracket_matrices import (
     normalize_asca_host_bracket_matrices,
 )
 from conlanger.tools.compile.asca.structures import split_outside_groupers
+from conlanger.utils.bracket_scanner import is_brace_wrapped
 
 _IDENTITY_EXCEPTION_HOST_RE = re.compile(
     r"^\s*(?P<host>(?:\[[^\]]+\]|[A-Z](?::\[[^\]]+\])?))\s*=\s*(?P<rest>.+?)\s*$"
@@ -111,7 +112,7 @@ def _normalize_slot_host(slot: str) -> str | None:
     text = slot.strip()
     if text.startswith("[") and "]" in text:
         return text[: text.index("]") + 1]
-    inner = text[1:-1] if text.startswith("{") and text.endswith("}") else text
+    inner = text[1:-1] if is_brace_wrapped(text) else text
     for part in _split_outside_brackets(inner):
         candidate = part.strip()
         if candidate.startswith("["):
@@ -173,7 +174,7 @@ def _narrow_input_token(
     group_mappings: dict[str, str],
 ) -> str | None:
     text = input_text.strip()
-    if text.startswith("{") and text.endswith("}"):
+    if is_brace_wrapped(text):
         return f"{{{text[1:-1]},-{rhs}}}"
     if _input_token_matches_host(text, host_raw, host_expanded, group_mappings):
         normalized = normalize_asca_host_bracket_matrices(text)

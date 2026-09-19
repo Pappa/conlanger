@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import re
 
+from conlanger.utils.bracket_scanner import is_brace_wrapped
+
 
 def add_features_to_matrix_body(features: str, extra: tuple[str, ...]) -> str:
     """Append signed feature tokens to a matrix body, skipping polarity clashes."""
@@ -30,7 +32,7 @@ def apply_features_to_token(token: str, extra: tuple[str, ...]) -> str:
 def merge_mapping_with_features(mapping: str, features: str) -> str:
     """Apply comma-separated ``features`` to a mapping token or braced set."""
     extra = tuple(part.strip() for part in features.split(",") if part.strip())
-    if mapping.startswith("{") and mapping.endswith("}"):
+    if is_brace_wrapped(mapping):
         members = [part.strip() for part in mapping[1:-1].split(",") if part.strip()]
         return (
             "{"

@@ -30,6 +30,7 @@ from conlanger.tools.compile.asca._patterns import (
 from conlanger.tools.compile.asca.ejectives import _add_cg_feature
 from conlanger.tools.compile.asca.sets import split_set_members
 from conlanger.tools.compile.asca.structures import split_outside_groupers
+from conlanger.utils.bracket_scanner import is_brace_wrapped
 from conlanger.utils.gloss import paren_inner_is_gloss
 
 _CLASS_LETTER_RE = re.compile(r"^[A-Z$%#][A-Z$%#0-9]*$")
@@ -192,7 +193,7 @@ def _is_optional_modifier_tail(text: str) -> bool:
 
 def _unwrap_alternate_variants(token: str) -> list[str] | None:
     stripped = token.strip()
-    if not stripped.startswith("{") or not stripped.endswith("}"):
+    if not is_brace_wrapped(stripped):
         return None
     inner = stripped[1:-1]
     if "{" in inner or "}" in inner:

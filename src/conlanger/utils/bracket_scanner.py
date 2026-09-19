@@ -42,6 +42,12 @@ class BracketScanner:
     def is_balanced(self, text: str) -> bool:
         return self.balance(text) == 0
 
+    def wraps(self, text: str) -> bool:
+        """True when ``text`` has length ≥ 2 and starts/ends with this pair's delimiters."""
+        return (
+            len(text) >= 2 and text.startswith(self.open) and text.endswith(self.close)
+        )
+
     def max_depth(self, text: str) -> int:
         depth = 0
         maximum = 0
@@ -74,6 +80,16 @@ PARENS = BracketScanner("(", ")")
 BRACKETS = BracketScanner("[", "]")
 
 INDEX_GROUPERS: tuple[BracketScanner, ...] = (BRACES, PARENS, BRACKETS)
+
+
+def is_brace_wrapped(text: str) -> bool:
+    """True when ``text`` is wrapped in a single ``{…}`` pair (surface check only)."""
+    return BRACES.wraps(text)
+
+
+def is_square_bracket_wrapped(text: str) -> bool:
+    """True when ``text`` is wrapped in a single ``[…]`` pair (surface check only)."""
+    return BRACKETS.wraps(text)
 
 
 def split_outside_brackets(

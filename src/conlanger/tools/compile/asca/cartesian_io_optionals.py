@@ -9,6 +9,7 @@ from __future__ import annotations
 import re
 
 from conlanger.tools.compile.asca.sets import split_braced_set_members
+from conlanger.utils.bracket_scanner import is_brace_wrapped
 
 _MODIFIER_CHAR_RE = re.compile(r"[\u02B0-\u02B8\u02BC\u02D1\u02E4\u0300-\u036F]")
 _MAX_PASSES = 16
@@ -44,7 +45,7 @@ def _find_matching_open(text: str, close_index: int) -> int | None:
 
 def _is_whole_set(text: str) -> bool:
     stripped = text.strip()
-    if len(stripped) < 2 or not stripped.startswith("{") or not stripped.endswith("}"):
+    if not is_brace_wrapped(stripped):
         return False
     close = _find_matching_close(stripped, 0)
     return close == len(stripped) - 1
