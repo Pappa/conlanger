@@ -26541,13 +26541,15 @@ sections:
     raw: xs → sː
     source: index_diachronica_original.html:6041
     rule_id: Old-Low-Franconian-xs
-  - stages:
+  - comment: '?'
+    stages:
     - a
     - ɒ
     - o
     env: _ɫ
     raw: a → ɒ? (→ o) / _ɫ
     source: index_diachronica_original.html:6043
+    sporadic: true
     rule_id: Old-Low-Franconian-a
   - comment: in the case of [ʏ] at least this was not yet phonemic)
     stages:
@@ -55793,11 +55795,11 @@ sections:
     raw: uj → ui / {C[+dental],C[+sibilant]}_
     source: index_diachronica_original.html:11846
     rule_id: Guānhuà-uj_4
-  - stages:
+  - comment: dialectal
+    stages:
     - ujʔ
     - uɛʔ
-    - uɔʔ?)
-    comment: (dialectally
+    - uɔʔ
     raw: ujʔ → uɛʔ (dialectally → uɔʔ?)
     source: index_diachronica_original.html:11847
     rule_id: Guānhuà-ujʔ
@@ -55836,11 +55838,11 @@ sections:
     raw: juŋ → iuŋ / _ɡ[+píng tone]
     source: index_diachronica_original.html:11852
     rule_id: Guānhuà-juŋ_2
-  - stages:
+  - comment: dialectal
+    stages:
     - juŋ
     - uŋ
-    - oŋ dialectally?)
-    comment: (
+    - oŋ
     raw: juŋ → uŋ (→ oŋ dialectally?)
     source: index_diachronica_original.html:11853
     rule_id: Guānhuà-juŋ_3
@@ -55887,12 +55889,11 @@ sections:
     source: index_diachronica_original.html:11858
     sporadic: true
     rule_id: Guānhuà-yʔ_3
-  - comment: sporadic - in -k-types; (
+  - comment: dialectal / {∅,C[+guttural]}_ ; sporadic - in -k-types
     stages:
     - yʔ
     - ioʔ
-    - iʊʔ dialectally?)
-    env: '{∅,C[+laryngeal]}_'
+    - iʊʔ
     raw: yʔ → ioʔ (→ iʊʔ dialectally?) / {∅,C[+guttural]}_, in -k-types
     source: index_diachronica_original.html:11859
     sporadic: true
@@ -55906,11 +55907,11 @@ sections:
     source: index_diachronica_original.html:11860
     sporadic: true
     rule_id: Guānhuà-yʔ_5
-  - comment: sporadic - in -k-types; (
+  - comment: sporadic - in -k-types
     stages:
     - yʔ
     - oʔ
-    - ʊʔ?)
+    - ʊʔ
     env: C̣_
     raw: yʔ → oʔ (→ ʊʔ?) / C̣_, in -k-types
     source: index_diachronica_original.html:11861
@@ -68095,10 +68096,9 @@ sections:
     rule_id: Basque-oɪ
   - stages:
     - eð
-    - e ?)
+    - e
     - j
     env: '#_V'
-    comment: (
     raw: 'eð (→ e ?) → j / #_V'
     source: index_diachronica_original.html:14214
     rule_id: Basque-eð

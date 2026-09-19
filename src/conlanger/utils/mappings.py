@@ -247,10 +247,10 @@ def apply_manual_mappings(
     working = text
     hits: list[ManualMappingHit] = []
     for row in mappings:
-        if row.from_text and row.from_text in working:
-            if row.use_regex:
-                working = re.sub(row.from_text, row.to_text, working)
-            else:
-                working = working.replace(row.from_text, row.to_text)
+        if row.use_regex and re.search(row.from_text, working) is not None:
+            working = re.sub(row.from_text, row.to_text, working, count=1)
+            hits.append(ManualMappingHit(from_text=row.from_text, to_text=row.to_text))
+        elif row.from_text and row.from_text in working:
+            working = working.replace(row.from_text, row.to_text)
             hits.append(ManualMappingHit(from_text=row.from_text, to_text=row.to_text))
     return working, hits

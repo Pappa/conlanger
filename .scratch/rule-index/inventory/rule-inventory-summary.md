@@ -6,8 +6,8 @@
 - Rows: **9839** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **9050** (92.0%)
-- Fail: **262** (2.7%)
+- OK: **9055** (92.0%)
+- Fail: **257** (2.6%)
 - Skipped: **527** (5.4%)
 
 
@@ -33,9 +33,9 @@ Skipped: **2/121**
 | count | failure_class |
 |------:|---------------|
 | 49 | `expected_underscore` |
-| 34 | `expected_ipa` |
-| 28 | `missing_slash_output_env` |
-| 25 | `unknown_character` |
+| 33 | `expected_ipa` |
+| 25 | `missing_slash_output_env` |
+| 24 | `unknown_character` |
 | 19 | `syntax_other` |
 | 15 | `nested_brackets` |
 | 11 | `unknown_grouping` |
@@ -103,8 +103,8 @@ Skipped: **2/121**
 | 1 | `ð` |
 | 1 | `̣` |
 | 1 | `ḭ` |
-| 1 | `〈` |
 | 1 | `̺` |
+| 1 | `#` |
 ### unknown_character (description)
 
 | count | description |
@@ -226,8 +226,8 @@ Skipped: **2/121**
 |------:|-------------|
 | 9 | `(` |
 | 4 | `{` |
-| 4 | `∅` |
 | 3 | `*` |
+| 3 | `∅` |
 | 3 | `ʷ` |
 | 3 | `…` |
 | 2 | `ʲ` |
@@ -255,8 +255,8 @@ Skipped: **2/121**
 
 | count | error_token |
 |------:|-------------|
-| 12 | `)` |
-| 5 | `(` |
+| 8 | `)` |
+| 6 | `(` |
 | 3 | `:` |
 | 3 | `ʲ` |
 | 2 | `*` |

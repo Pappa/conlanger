@@ -3,29 +3,26 @@
     to apply”
   to: s → z / C[+voice]_
   reason: "*nisdos > nizdos"
+- from: \(→ (\w+) dialectally\?\)
+  to: → \1 ; dialectal
+  use_regex: True
+  reason: dialectal
+- from: \(dialectally → (\w+)\?\)
+  to: → \1 ; dialectal
+  use_regex: True
+  reason: dialectal
 - from: “In contrast, Romanian exhibits
   to: ; “In contrast, Romanian exhibits
   reason: comment
-- from: ew (→ øj) → yj
-  to: ew → øj → yj
+- from: \(→ (\w+) ?\??\)
+  to: → \1
+  use_regex: True
   reason: chaining
-- from: (→ ʕ)
-  to: → ʕ
+- from: → (?)
+  to: ""
   reason: chaining
 - from: bw mw → ɡw ŋw (→ ɡ ŋ / _V[+ rounded])
   to: bw mw → ɡw ŋw → ɡ ŋ / _V[+ rounded]
-  reason: chaining
-- from: "q (→ kw ?) → v "
-  to: "q → kw → v "
-  reason: chaining
-- from: w (→ v?) → f
-  to: w → v → f
-  reason: chaining
-- from: ɛː → ɛi (→ əi?)
-  to: ɛː → ɛi → əi
-  reason: chaining
-- from: a → ɒ? (→ o)
-  to: a → ɒ → o
   reason: chaining
 - from: nd ld (→ nː lː ?)
   to: nd ld → nː lː
@@ -244,12 +241,6 @@
   reason: replace prose
 - from: "k ʃk → k* kː / V_V "
   to: "ʃk → kː / V_V ; k ʃk → k* kː / V_V "
-  reason: unresolvable symbol
-- from: w (→ b?) → m
-  to: w → b → m
-  reason: chaining
-- from: VN → V[+nasal] → V → (?)
-  to: VN → V[+nasal] → V
   reason: unresolvable symbol
 - from: " (→ b seems more common)"
   to: " ; (→ b seems more common)"
