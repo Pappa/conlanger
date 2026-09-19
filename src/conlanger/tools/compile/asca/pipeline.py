@@ -187,11 +187,15 @@ def compile_asca_rule_field_strings(
     if compiled_env is not None:
         compiled_env = compile_asca_field_post_subscript(compiled_env)
         compiled_env = normalize_asca_host_bracket_matrices(compiled_env)
+        compiled_env = normalize_asca_adjacent_feature_matrices(compiled_env)
         if is_whole_field_set(compiled_env):
             compiled_env = convert_set_to_environment_set(compiled_env)
     if compiled_exception is not None:
         compiled_exception = compile_asca_field_post_subscript(compiled_exception)
         compiled_exception = normalize_asca_host_bracket_matrices(compiled_exception)
+        compiled_exception = normalize_asca_adjacent_feature_matrices(
+            compiled_exception
+        )
         if is_whole_field_set(compiled_exception):
             compiled_exception = convert_set_to_environment_set(compiled_exception)
     compiled_env, compiled_exception = apply_syllable_position_compiled_overrides(

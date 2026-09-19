@@ -52,10 +52,18 @@ These are **not** the `][` adjacent-matrix split fixed in ticket 124 (`C:[+labia
 
 ## Acceptance criteria
 
-- [ ] Target cluster sized at claim time from current inventory (`missing_slash_output_env` / `:`)
-- [ ] Class-first compile transform; `raw` unchanged
-- [ ] Full inventory re-run; before/after metrics in **Answer**
-- [ ] Unit tests for Albanian/Romance/Siouan env stress chains
+- [x] Target cluster sized at claim time from current inventory (`missing_slash_output_env` / `:`)
+- [x] Class-first compile transform; `raw` unchanged
+- [x] Full inventory re-run; before/after metrics in **Answer**
+- [x] Unit tests for Albanian/Romance/Siouan env stress chains
+
+## Answer
+
+**Shipped 2026-09-19.** Extended `merge_adjacent_feature_matrices` with `:[featuresA]:[featuresB]` colon-chain merge (ticket 124 helper); `normalize_asca_adjacent_feature_matrices` now runs on compiled **env** and **exception** after `normalize_asca_host_bracket_matrices` (order 10¾ in `docs/system/sound-change-applier.md`).
+
+- **Cluster `missing_slash_output_env` / `error_token` `:`:** **11 → 3 (−8)**. Remaining three are French `($,0):[+stress]` template tails (out of scope here; not colon-chained host matrices).
+- **Inventory:** OK **8900 → 8925 (+25)**; fail **410 → 385 (−25)** (`validate_rules`, 2026-09-19). Recovered Albanian `kʷ`, Romance `j` / Provençal / Romanian `dj`, Proto-Čiwere-Winnebago `t`, etc.
+- **Tests:** `test_adjacent_feature_matrices.py` — colon-chain unit cases + compile probes with `load_compiler_config()`.
 
 ## References
 

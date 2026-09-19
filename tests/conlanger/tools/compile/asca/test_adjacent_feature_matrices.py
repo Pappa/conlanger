@@ -1,4 +1,4 @@
-"""Compile-time merge of adjacent ASCA feature matrices (ticket 124)."""
+"""Compile-time merge of adjacent ASCA feature matrices (tickets 124, 133)."""
 
 import shutil
 from pathlib import Path
@@ -6,7 +6,11 @@ from pathlib import Path
 import pytest
 
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
+from conlanger.scripts.config_loaders import load_compiler_config
+from conlanger.tools.compile.asca.pipeline import (
+    compile_asca_rule_field_strings,
+    compile_asca_rule_fields,
+)
 from conlanger.tools.compile.asca.tone_matrices import (
     merge_adjacent_feature_matrices,
     normalize_asca_adjacent_feature_matrices,
@@ -24,6 +28,11 @@ from conlanger.tools.rules import DiachronicSeries
         ("V:[+long][tone: 51]", "V:[+long, tone: 51]"),
         ("b:[+spread,+voice][+long]", "b:[+spread,+voice, +long]"),
         ("[+labial][+spread]", "[+labial, +spread]"),
+        ("V:[+front]:[+stress]", "V:[+front, +stress]"),
+        ("_V:[+front]:[+stress]", "_V:[+front, +stress]"),
+        ("V_V:[+front]:[+stress]", "V_V:[+front, +stress]"),
+        ("V:[+back]:[+stress]", "V:[+back, +stress]"),
+        ("V:[+long]:[+spread]:[+stress]", "V:[+long, +spread, +stress]"),
         ("", ""),
         ("plain", "plain"),
     ],
@@ -37,6 +46,27 @@ def test_normalize_asca_adjacent_feature_matrices_alias():
         normalize_asca_adjacent_feature_matrices("C:[+labial][+spread]")
         == "C:[+labial, +spread]"
     )
+    assert (
+        normalize_asca_adjacent_feature_matrices("V:[+front]:[+stress]")
+        == "V:[+front, +stress]"
+    )
+
+
+@pytest.mark.parametrize(
+    ("inp", "output", "env", "expected_env"),
+    [
+        ("kʷ", "s", "_E:[+stress]", "_V:[+front, +stress]"),
+        ("j", "∅", "V_E:[+stress]", "V_V:[+front, +stress]"),
+        ("t", "tʃ", "_V:[+front]:[+stress]", "_V:[+front, +stress]"),
+        ("dj", "ʒ", "_V:[+back]:[+stress]", "_V:[+back, +stress]"),
+    ],
+)
+def test_compile_env_colon_chained_stress_matrices(inp, output, env, expected_env):
+    cfg = load_compiler_config()
+    compiled = compile_asca_rule_field_strings(
+        inp, output, env=env, compiler_config=cfg
+    )
+    assert compiled[2] == expected_env
 
 
 def test_compile_sebirwa_s_chain_step_merges_adjacent_matrices(
