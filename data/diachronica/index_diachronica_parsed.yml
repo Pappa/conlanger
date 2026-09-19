@@ -24909,8 +24909,10 @@ sections:
   rules:
   - stages:
     - ʊ
-    - ɤ ! P_ and _l
-    raw: ʊ → ɤ ! P_ and _l
+    - ɤ
+    env: _P
+    exception: _l
+    raw: ʊ → ɤ / _P ! _l
     source: index_diachronica_original.html:5771
     rule_id: Early-Modern-English-ʊ
   - stages:
@@ -42599,9 +42601,9 @@ sections:
     source: index_diachronica_original.html:8729
     rule_id: "Ç\x81̬Ana-!̬"
   - stages:
-    - '!̃(n)'
+    - '{!̃,!̃n}'
     - ŋ
-    raw: '!̃(n) → ŋ'
+    raw: '{!̃,!̃n} → ŋ'
     source: index_diachronica_original.html:8730
     rule_id: "Ç\x81̬Ana-!̃n"
   - stages:
@@ -42631,8 +42633,8 @@ sections:
     rule_id: "Ç\x81Ani-ǀ̃n"
   - stages:
     - '! !̬ !̃'
-    - '!~k !̬~ɡ !̃(n)~ŋɡ'
-    raw: '! !̬ !̃ → !~k !̬~ɡ !̃(n)~ŋɡ'
+    - '{!,k} {!̬,ɡ} {!̃,!̃n,ŋɡ}'
+    raw: '! !̬ !̃ → {!,k} {!̬,ɡ} {!̃,!̃n,ŋɡ}'
     source: index_diachronica_original.html:8738
     rule_id: "Ç\x81Ani-!-!̬-!̃"
   - stages:
@@ -42709,9 +42711,9 @@ sections:
     In Botswana Notes and Records 16:19 – 35.
   rules:
   - stages:
-    - '!̃(n)'
+    - '{!̃,!̃n}'
     - ǂ̃
-    raw: '!̃(n) → ǂ̃'
+    raw: '{!̃,!̃n} → ǂ̃'
     source: index_diachronica_original.html:8757
     rule_id: Kxoe-!̃n
   - stages:
@@ -42865,9 +42867,9 @@ sections:
     source: index_diachronica_original.html:8794
     rule_id: Teti-ǀ̃n
   - stages:
-    - '! !ˀ !̬ !̃(n) !x'
+    - '! !ˀ !̬ {!̃,!̃n} !x'
     - k ∅ ɡ ŋ x
-    raw: '! !ˀ !̬ !̃(n) !x → k ∅ ɡ ŋ x'
+    raw: '! !ˀ !̬ {!̃,!̃n} !x → k ∅ ɡ ŋ x'
     source: index_diachronica_original.html:8795
     rule_id: Teti-!-!ˀ-!̬-!̃n-!x
   - stages:
@@ -42914,9 +42916,9 @@ sections:
     source: index_diachronica_original.html:8805
     rule_id: "TsÊ\x94ixa-ǀ̃n-ǀxʼ"
   - stages:
-    - '! !ˀ !̬ !̃(n) !x'
+    - '! !ˀ !̬ {!̃,!̃n} !x'
     - k ∅ ɡ ŋɡ x
-    raw: '! !ˀ !̬ !̃(n) !x → k ∅ ɡ ŋɡ x'
+    raw: '! !ˀ !̬ {!̃,!̃n} !x → k ∅ ɡ ŋɡ x'
     source: index_diachronica_original.html:8806
     rule_id: "TsÊ\x94ixa-!-!ˀ-!̬-!̃n-!x"
   - stages:
@@ -42964,8 +42966,8 @@ sections:
     rule_id: "Ç\x80̬Ui-ǀ̃n"
   - stages:
     - '!̃ !x'
-    - '!̃(n) !x~x'
-    raw: '!̃ !x → !̃(n) !x~x'
+    - '{!̃,!̃n} {!x,x}'
+    raw: '!̃ !x → {!̃,!̃n} {!x,x}'
     source: index_diachronica_original.html:8817
     rule_id: "Ç\x80̬Ui-!̃-!x"
   - stages:

@@ -6,15 +6,15 @@
 - Rows: **9839** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **9003** (91.5%)
-- Fail: **309** (3.1%)
+- OK: **9050** (92.0%)
+- Fail: **262** (2.7%)
 - Skipped: **527** (5.4%)
 
 
 ## Corrections
 
-OK: **112/114**
-Skipped: **2/114**
+OK: **119/121**
+Skipped: **2/121**
 
 ### Skipped corrections
 
@@ -23,8 +23,8 @@ Skipped: **2/114**
 
 ## Sections
 
-- All OK: **501 / 714** (70.2%)
-- Some OK: **160 / 714** (22.4%)
+- All OK: **512 / 714** (71.7%)
+- Some OK: **149 / 714** (20.9%)
 - None OK: **0 / 714** (0.0%)
 - Sections skipped: **53 / 714** (7.4%)
 
@@ -33,7 +33,6 @@ Skipped: **2/114**
 | count | failure_class |
 |------:|---------------|
 | 49 | `expected_underscore` |
-| 48 | `invalid_ipa` |
 | 34 | `expected_ipa` |
 | 28 | `missing_slash_output_env` |
 | 25 | `unknown_character` |
@@ -54,6 +53,7 @@ Skipped: **2/114**
 | 2 | `runtime_delete_only_segment` |
 | 2 | `other` |
 | 1 | `incomplete_matrix` |
+| 1 | `invalid_ipa` |
 | 1 | `format_error` |
 
 ## Common Errors
@@ -218,10 +218,6 @@ Skipped: **2/114**
 
 | count | description |
 |------:|-------------|
-| 25 | `Could not get value of IPA 'ǃ'.` |
-| 11 | `Could not get value of IPA 'ǀ'.` |
-| 6 | `Could not get value of IPA 'ǁ'.` |
-| 5 | `Could not get value of IPA 'ǂ'.` |
 | 1 | `Could not get value of IPA 'k͡'.` |
 
 ### expected_ipa (error_token)

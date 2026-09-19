@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by:
 
 # Correction pass: Khoisan click notation (`invalid_ipa`)
@@ -39,9 +39,24 @@ Example:
 
 ## Acceptance criteria
 
-- [ ] Implementation matches spike **Recommendation** (record deviation in **Answer** if any)
-- [ ] Class-first or explicit skip/manual per [ADR-0010](../../../docs/adr/0010-historical-fidelity-class-first-status.md)
-- [ ] Full inventory re-run; metrics in **Answer**
+- [x] Implementation matches spike **Recommendation** (record deviation in **Answer** if any)
+- [x] Class-first or explicit skip/manual per [ADR-0010](../../../docs/adr/0010-historical-fidelity-class-first-status.md)
+- [x] Full inventory re-run; metrics in **Answer**
+
+## Answer
+
+**Baseline (before):** **9003 / 9839** ok (~91.5%); **`invalid_ipa` 47** rules (click tokens `ǃ`/`ǀ`/`ǁ`/`ǂ`; plus **1** non-click Akan affricate row in the same cluster export).
+
+**After (2026-09-19):** **9050 / 9839** ok (~92.0%); **`invalid_ipa` 1** (residual `Akan-p,ʋ̃-c-k͜p` — `k͡` tie-bar, out of scope). **+47** ok rules; **§20.x** Khoisan click rows cleared.
+
+**Implementation (spike [138](138-spike-asca-khoisan-click-representation.md) policy):**
+
+1. **`normalize_asca_index_click_segments()`** in `src/conlanger/tools/compile/asca/clicks.py` — wired on **input/output only** in `compile_asca_rule_field_strings()` (after post-subscript transforms; skips env/exception so Index `!` exception delimiter is preserved).
+2. Transforms: `!!` → `! !`; default velar onset on bare clicks; Index `ǂɡ`/`!ɡ` → `ɡǂ`/`ɡ!`; cluster `ˀ` → `:[+cg]`.
+3. **`index_diachronica_corrections.yml`** — seven manual rows: §17 `Early-Modern-English-ʊ` env split; optional `(n)` on click I/O expanded to sets for six §20.x rules.
+4. Re-parsed index (`create_index`) so corrections land in SoT YAML before inventory.
+
+**Deviations:** none from spike recommendation.
 
 ## References
 

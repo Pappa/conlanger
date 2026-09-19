@@ -550,3 +550,38 @@ rules:
                   content: "ndt ndtʃ ntʃ nkt nf → n{d,t} {nts,ndz,nz,ndʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,fː,f}"
                   reason: |
                           ndt ndtʃ ntʃ nkt nf → n{d,t} {nts,ndz(→ nz),ndʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,fː(→ f)}
+        - rule:
+                  id: Early-Modern-English-ʊ
+                  content: "ʊ → ɤ / _P ! _l"
+                  reason: |
+                          Index env/exception prose; ``!`` is not a Khoisan click (ticket 136).
+        - rule:
+                  id: "Ç\x81̬Ana-!̃n"
+                  content: "{!̃,!̃n} → ŋ"
+                  reason: |
+                          Optional ``(n)`` on click input is not ASCA-legal I/O (ticket 136).
+        - rule:
+                  id: "Ç\x81Ani-!-!̬-!̃"
+                  content: "! !̬ !̃ → {!,k} {!̬,ɡ} {!̃,!̃n,ŋɡ}"
+                  reason: |
+                          Replace ``!̃(n)`` parallel member with explicit set (ticket 136).
+        - rule:
+                  id: Kxoe-!̃n
+                  content: "{!̃,!̃n} → ǂ̃"
+                  reason: |
+                          Optional ``(n)`` on click input is not ASCA-legal I/O (ticket 136).
+        - rule:
+                  id: Teti-!-!ˀ-!̬-!̃n-!x
+                  content: "! !ˀ !̬ {!̃,!̃n} !x → k ∅ ɡ ŋ x"
+                  reason: |
+                          Optional ``(n)`` on click input is not ASCA-legal I/O (ticket 136).
+        - rule:
+                  id: "TsÊ\x94ixa-!-!ˀ-!̬-!̃n-!x"
+                  content: "! !ˀ !̬ {!̃,!̃n} !x → k ∅ ɡ ŋɡ x"
+                  reason: |
+                          Optional ``(n)`` on click input is not ASCA-legal I/O (ticket 136).
+        - rule:
+                  id: "Ç\x80̬Ui-!̃-!x"
+                  content: "!̃ !x → {!̃,!̃n} {!x,x}"
+                  reason: |
+                          Optional ``(n)`` on click output is not ASCA-legal I/O (ticket 136).

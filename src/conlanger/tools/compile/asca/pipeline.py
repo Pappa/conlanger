@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from conlanger.tools.compile.asca.apostrophes import normalize_typographic_apostrophes
 from conlanger.tools.compile.asca.breve_marks import normalize_asca_breve_marks
+from conlanger.tools.compile.asca.clicks import normalize_asca_index_click_segments
 from conlanger.tools.compile.asca.dot_affricate import normalize_dot_affricate_notation
 from conlanger.tools.compile.asca.editorial_slash_gloss import (
     normalize_editorial_slash_gloss_residue,
@@ -171,6 +172,8 @@ def compile_asca_rule_field_strings(
     )
     compiled_input = compile_asca_field_post_subscript(compiled_input)
     compiled_output = compile_asca_field_post_subscript(compiled_output)
+    compiled_input = normalize_asca_index_click_segments(compiled_input)
+    compiled_output = normalize_asca_index_click_segments(compiled_output)
     compiled_input, compiled_output, compiled_env, compiled_exception = (
         resolve_bare_env_exception_feature_matrices(
             compiled_input,
