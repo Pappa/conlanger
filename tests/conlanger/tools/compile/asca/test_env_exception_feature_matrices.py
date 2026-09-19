@@ -1,5 +1,6 @@
 """Compile-time env/exception feature matrices (ticket 131)."""
 
+import re
 import shutil
 from pathlib import Path
 from tempfile import NamedTemporaryFile
@@ -8,6 +9,9 @@ import pytest
 
 from conlanger.appliers.asca import validate_asca
 from conlanger.tools.compile.asca.env_exception_feature_matrices import (
+    _attach_matrix_to_literal_segment,
+    _attach_matrix_to_token,
+    _merge_feature_matrix_inners,
     apply_segment_at_focus_matrix_to_input,
     flip_feature_matrix_polarity,
     parse_bare_feature_matrix,
@@ -45,10 +49,56 @@ def test_parse_bare_feature_matrix(text, expected):
         ("[+stress]", "[-stress]"),
         ("[-long, -stress]", "[+long, +stress]"),
         ("[- stress]", "[+stress]"),
+        ("not-a-matrix", "not-a-matrix"),
     ],
 )
 def test_flip_feature_matrix_polarity(matrix, expected):
     assert flip_feature_matrix_polarity(matrix) == expected
+
+
+@pytest.mark.parametrize(
+    ("inner_a", "inner_b", "expected"),
+    [
+        ("", "+stress", "+stress"),
+        ("+long", "", "+long"),
+    ],
+)
+def test_merge_feature_matrix_inners(inner_a, inner_b, expected):
+    assert _merge_feature_matrix_inners(inner_a, inner_b) == expected
+
+
+@pytest.mark.parametrize(
+    ("text", "matrix", "expected"),
+    [
+        ("CV", "[-stress]", None),
+    ],
+)
+def test_attach_matrix_to_literal_segment(text, matrix, expected):
+    assert _attach_matrix_to_literal_segment(text, matrix) == expected
+
+
+@pytest.mark.parametrize(
+    ("token", "matrix", "expected", "patch_class_host_bracket"),
+    [
+        ("  ", "[-stress]", "  ", False),
+        ("#_", "[-stress]", "#_", False),
+        ("xAT[+long]y", "[-stress]", "xAT[+long]y", True),
+    ],
+)
+def test_attach_matrix_to_token(
+    token,
+    matrix,
+    expected,
+    patch_class_host_bracket,
+    mocker,
+):
+    if patch_class_host_bracket:
+        mocker.patch(
+            "conlanger.tools.compile.asca.env_exception_feature_matrices."
+            "_CLASS_HOST_BRACKET_RE",
+            re.compile(r"a^"),
+        )
+    assert _attach_matrix_to_token(token, matrix) == expected
 
 
 @pytest.mark.parametrize(
@@ -58,7 +108,12 @@ def test_flip_feature_matrix_polarity(matrix, expected):
         ("V[+nas]", "[-stress]", "V[+nas, -stress]"),
         ("V:[-long]", "[-stress]", "V:[-long, -stress]"),
         ("tVk", "[-stress]", "tV[-stress]k"),
+        ("tC[+voice]k", "[-stress]", "tC[+voice, -stress]k"),
+        ("ts[+long]", "[-stress]", "ts[+long, -stress]"),
         ("{i,eː}", "[+stress]", "{i[+stress],e[+stress]ː}"),
+        ("eː", "[+stress]", "e[+stress]ː"),
+        ("", "[-stress]", ""),
+        ("V", "", "V"),
     ],
 )
 def test_apply_segment_at_focus_matrix_to_input(input_text, matrix, expected):
