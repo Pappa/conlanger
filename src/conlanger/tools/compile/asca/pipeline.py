@@ -42,6 +42,9 @@ from conlanger.tools.compile.asca.planned import (
     expand_meta_notation,
 )
 from conlanger.tools.compile.asca.prenasal_prefix import normalize_prenasal_prefix
+from conlanger.tools.compile.asca.segment_diacritics import (
+    normalize_index_segment_diacritics,
+)
 from conlanger.tools.compile.asca.series_mappings import apply_compiler_series_mappings
 from conlanger.tools.compile.asca.sets import (
     convert_set_to_environment_set,
@@ -57,6 +60,7 @@ from conlanger.tools.compile.asca.superscript_modifiers import (
 from conlanger.tools.compile.asca.syllable_position import (
     apply_syllable_position_compiled_overrides,
 )
+from conlanger.tools.compile.asca.tie_bars import normalize_index_affricate_tie_bars
 from conlanger.tools.compile.asca.tone_matrices import (
     normalize_asca_adjacent_feature_matrices,
     normalize_asca_tone_matrices,
@@ -109,6 +113,8 @@ def compile_asca_field_post_subscript(text: str) -> str:
     text = normalize_asca_voice_prerequisite_diacritics(text)
     text = normalize_prenasal_prefix(text)
     text = normalize_dot_affricate_notation(text)
+    text = normalize_index_affricate_tie_bars(text)
+    text = normalize_index_segment_diacritics(text)
     return expand_meta_notation(text)
 
 

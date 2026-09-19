@@ -2,6 +2,14 @@
   ipa_target: ʃ
   confidence: high
   notes: Latin capital S-caron; same target as š
+ĩ:
+  ipa_target: ĩ
+  confidence: high
+  notes: Precomposed i-tilde → i + combining tilde (Sirionó; n=1)
+r̀:
+  ipa_target: r
+  confidence: medium
+  notes: Grave r (Elamite contrastive rhotic); ASCA rejects r̀ (n=2)
 ã:
   ipa_target: ã
   confidence: high
@@ -58,8 +66,8 @@
   notes: Acute o phoneme letter (n=7)
 ŕ:
   ipa_target: r
-  confidence: low
-  notes: Acute r orthography (7 rows); likely plain /r/ (n=7)
+  confidence: medium
+  notes: Acute r orthography (Elamite, Polish, Tupí); ASCA rejects ŕ (n=6)
 ŭ:
   ipa_target: u
   confidence: medium
@@ -176,8 +184,8 @@
     https://en.wikipedia.org/wiki/Near-close_near-back_rounded_vowel
 Ạ:
   ipa_target: a
-  confidence: low
-  notes: A-dot-below; Late MC notation (1 row); may be register mark not vowel (n=1)
+  confidence: medium
+  notes: A-dot-below; Late MC notation (1 row); register mark on vowel slot (n=1)
 ỹ:
   ipa_target: ỹ
   confidence: medium

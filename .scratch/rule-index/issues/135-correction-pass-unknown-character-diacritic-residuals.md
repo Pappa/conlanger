@@ -1,4 +1,5 @@
 Type: task
+Status: resolved
 Blocked by: [49](49-correction-pass-ipa-letter-mappings.md)
 
 # Correction pass: `unknown_character` diacritic and subscript residuals
@@ -34,10 +35,37 @@ Some `ː` rows may overlap [104 `(ː)`](104-correction-pass-parenthesized-option
 
 ## Acceptance criteria
 
-- [ ] Target tokens listed and sized at claim time
-- [ ] Class-first transforms only ([ADR-0010](../../../docs/adr/0010-historical-fidelity-class-first-status.md))
-- [ ] Full inventory re-run; ok + sections-all-OK before/after
-- [ ] Unit tests per token family touched
+- [x] Target tokens listed and sized at claim time
+- [x] Class-first transforms only ([ADR-0010](../../../docs/adr/0010-historical-fidelity-class-first-status.md))
+- [x] Full inventory re-run; ok + sections-all-OK before/after
+- [x] Unit tests per token family touched
+
+## Answer
+
+**Claim-time cluster (2026-09-19):** **73** `unknown_character` rows; top tokens `ː` (10), `₂` (7), `͜` (6), `ŕ` (6), `̺` (6), `ₙ` (5), combining `̂`/`̻`/`̊`/`̚`/`̀`, `ʝ` (2).
+
+**Shipped transforms**
+
+| Family | Lever | Module / config |
+|--------|--------|-----------------|
+| `͜` tie bar | `͜` → `͡`; dangling-tie cleanup | `tie_bars.py` |
+| Segment diacritics | Basque `s̺`/`s̻`, Polish `r̝`, Tuscarora voiceless ring, Obokuitai `̚`, Muskogean `V̂`, Elamite/Tupí `ŕ`/`r̀`/`*ŕ`, prose `C₂` in `//` tails | `segment_diacritics.py` |
+| `ˑ` half-length | suffix → `:[+long]` | `length_marks.py` |
+| Uto-Aztecan `Vₙ`/`Vₛ`/`Vᵤ`, `aₙ`, `ɨₙ` | section series mappings | `compiler_config.yml` §43 |
+| Bantu `d₂` | section series mapping | `compiler_config.yml` §30 |
+| IPA letters | `ŕ`, `r̀`, `ĩ`, `Ạ` confidence / targets | `ipa_mappings.yml` |
+
+**Inventory (ASCA 0.10.3, full `validate_rules`)**
+
+| Metric | Before | After | Δ |
+|--------|-------:|------:|--:|
+| OK / rows | 8950 / 9839 (91.0%) | **8999 / 9839 (91.5%)** | **+49** |
+| Sections all OK | 486 / 714 (68.1%) | **501 / 714 (70.2%)** | **+15** |
+| `unknown_character` rows | 73 | **28** | **−45** |
+
+**Residual `unknown_character` (28):** mostly `ː` stress/meta hold-outs (10), Romance `// C₂` prose slots (3), Khoisan / Pekingese dangling `͡` (3), Spanish bracket / `ʝ` (2), Tupí `*ŕ` (4), Marshallese `ᵚ`, Aquitanian `〈`, Basque prose tail `̺`, Totonacan `ḭ`, `#` list artefact (1 each). `*ŕ` left unmapped at compile (avoid `r > r` identity on Cavineña); follow parse/manual or skip. Follow-ons: length meta ([64](64-spike-syntax-other-near-miss-sections.md)), [136](136-correction-pass-khoisan-click-invalid-ipa.md), Spanish I/O brackets.
+
+**Tests:** `test_tie_bars.py`, `test_segment_diacritics.py`, `test_length_marks.py` (half-length cases).
 
 ## References
 

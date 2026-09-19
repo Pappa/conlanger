@@ -11,4 +11,11 @@ series_mappings:
     - section: "6.1"
       x₁: "{ɣ, ɣʷ, xʷ}"
       x₂: x
-     
+    - section: "30"
+      d₂: d
+    - section: "43"
+      Vₙ: "V:[+nas]"
+      Vₛ: "V:[-stress]"
+      Vᵤ: V
+      aₙ: "a:[+nas]"
+      ɨₙ: "ɨ:[+nas]"

@@ -16,6 +16,8 @@ from conlanger.tools.rules import DiachronicSeries
         ("aː", "a:[+long]"),
         ("Vː", "V:[+long]"),
         ("tsː", "ts:[+long]"),
+        ("pˑ", "p:[+long]"),
+        ("tsˑ", "ts:[+long]"),
         ("VNC > VːC[+voiced]", "VNC > V:[+long]C[+voiced]"),
         ("tʷː", "tʷ:[+long]"),
         ("æː", "æ:[+long]"),

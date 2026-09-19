@@ -12,5 +12,5 @@ section_index,rule_id,error_token,rule
 37.1.2.3,Onondaga-”VːCCVː,,"{V:[+stress](C)V:[+long],VC:[+stress](C)V:[+long],V:[+stress,+long](C)V:[+long],VC:[+stress,+long](C)V:[+long]} > V:[-long](C):[+stress]((C)CV:[-long] / _# | ^ @ Rule 1, Line 1"
 37.1.2.3,Onondaga-”VCCCaCV,,"{V:[+stress](C)CaCV,VC:[+stress](C)CaCV} > {V:[+stress]((C)CaCV,VC:[+stress]((C)CaCV} / _# | ^ @ Rule 1, Line 1"
 42.1.1.1,Proto-Finnish-tːsn-kxtx-rn-ln,,"(t(ː))sn {kx,kxtx} rn ln > s:[+long] x:[+long] r:[+long] l:[+long] | ^ @ Rule 1, Line 1"
-44.2,Basque-u-ũ,,"u ũ > y ỹ / _r(p(ʰ),β,{k,kʰ},ɣ,l,s̺,s̻,ʃ,h) | ^ @ Rule 1, Line 1"
+44.2,Basque-u-ũ,,"u ũ > y ỹ / _r(p(ʰ),β,{k,kʰ},ɣ,l,s:[+dist,+cor,+ant],s:[+dist,+cor],ʃ,h) | ^ @ Rule 1, Line 1"
 46.19,Southern-United-States-Shift-English-uʊ-oʊ,,"uʊ oʊ > ʉʊ̈ əʊ̈ (a bit of a guesstimate based upon the prose description in the article and the mean-formant-value chart cited from Labov, O:[+delrel]sh & V:[+back]obert (2006)) | ^ @ Rule 1, Line 1"
