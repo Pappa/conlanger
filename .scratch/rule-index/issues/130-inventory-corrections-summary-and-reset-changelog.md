@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: done
 Blocked by:
 
 # Inventory: corrections summary section and reset-changelog empty file
@@ -77,15 +77,15 @@ Skipped: **1/27**
 
 ## Acceptance criteria
 
-- [ ] `--reset-changelog` with zero flips writes `rule-inventory-changelog.csv` containing only the header row
-- [ ] `--reset-changelog` with flips still overwrites and writes header + flip rows
-- [ ] Without `--reset-changelog`, zero flips does not modify an existing changelog file
-- [ ] Summary includes `## Corrections` between **Rules** and **Failure classes** when matched corrections exist
-- [ ] Per-rule rollup matches grill Q2-A / Q3-A; orphans excluded from N
-- [ ] Zero-count bucket lines omitted; `### Failed corrections` omitted when Fail = 0; `### Skipped corrections` omitted when Skipped = 0
-- [ ] Failed bullets show `rule_id` and `failure_class`
-- [ ] Skipped bullets show `rule_id` and skip `failure_class` (`rule_skipped` / `section_skipped`)
-- [ ] Tests cover reset-empty-changelog, corrections stats rollup (including multi-`alt_idx` and skipped hold-outs), and summary section formatting
+- [x] `--reset-changelog` with zero flips writes `rule-inventory-changelog.csv` containing only the header row
+- [x] `--reset-changelog` with flips still overwrites and writes header + flip rows
+- [x] Without `--reset-changelog`, zero flips does not modify an existing changelog file
+- [x] Summary includes `## Corrections` between **Rules** and **Failure classes** when matched corrections exist
+- [x] Per-rule rollup matches grill Q2-A / Q3-A; orphans excluded from N
+- [x] Zero-count bucket lines omitted; `### Failed corrections` omitted when Fail = 0; `### Skipped corrections` omitted when Skipped = 0
+- [x] Failed bullets show `rule_id` and `failure_class`
+- [x] Skipped bullets show `rule_id` and skip `failure_class` (`rule_skipped` / `section_skipped`)
+- [x] Tests cover reset-empty-changelog, corrections stats rollup (including multi-`alt_idx` and skipped hold-outs), and summary section formatting
 
 ## References
 
