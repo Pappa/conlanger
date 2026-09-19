@@ -1,4 +1,5 @@
 Type: task
+Status: resolved
 Blocked by: [124](124-correction-pass-merge-adjacent-matrices.md)
 
 # Correction pass: env chained colon feature matrices (`missing_slash_output_env` / `:`)

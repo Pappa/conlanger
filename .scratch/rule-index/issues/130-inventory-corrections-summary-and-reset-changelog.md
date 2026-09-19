@@ -1,5 +1,5 @@
 Type: task
-Status: done
+Status: resolved
 Blocked by:
 
 # Inventory: corrections summary section and reset-changelog empty file
@@ -86,6 +86,10 @@ Skipped: **1/27**
 - [x] Failed bullets show `rule_id` and `failure_class`
 - [x] Skipped bullets show `rule_id` and skip `failure_class` (`rule_skipped` / `section_skipped`)
 - [x] Tests cover reset-empty-changelog, corrections stats rollup (including multi-`alt_idx` and skipped hold-outs), and summary section formatting
+
+## Answer
+
+**Shipped:** `write_ok_flip_changelog` writes header-only CSV when `--reset-changelog` and zero flips; `## Corrections` section in `rule-inventory-summary.md` with per-rule OK/Fail/Skipped rollup over matched correction ids (orphans excluded). See `index_inventory.py` and `validate_rules.py`.
 
 ## References
 

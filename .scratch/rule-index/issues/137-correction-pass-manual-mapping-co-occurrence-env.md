@@ -1,4 +1,5 @@
 Type: task
+Status: resolved
 Blocked by: [60](60-parse-time-manual-rule-mappings.md)
 
 # Correction pass: manual mapping — co-occurrence env prose (`if … occur`)
