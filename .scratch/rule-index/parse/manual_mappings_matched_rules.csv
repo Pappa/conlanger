@@ -69,7 +69,7 @@ section_index,section_name,rule_id,source,manual_mapping
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-pwʰ-pʰ-tʰ-kʰ,index_diachronica_original.html:3265, / sporadic ; in Nelemwa
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-V+-mid,index_diachronica_original.html:3267," / [+nasal]_, _[+nasal] ; near nasals"
 10.3.5.7,Proto-New Caledonia to Pwapwâ,Pwapwâ-bw-mw,index_diachronica_original.html:3321,bw mw → ɡw ŋw → ɡ ŋ / _V[+ rounded]
-10.3.5.8,Proto-New Caledonia to Proto-Yunaga,Proto-Yunaga-u-i,index_diachronica_original.html:3336, / 
+10.3.5.8,Proto-New Caledonia to Proto-Yunaga,Proto-Yunaga-u-i,index_diachronica_original.html:3336, / sporadic ; in monosyllables
 10.3.11,Proto-Oceanic to Proto-Southern Vanuatu,Proto-Southern-Vanuatu-q,index_diachronica_original.html:3541,q → kw → v 
 10.3.11.2.1,Proto-Erromango to Sye,Sye-*L,index_diachronica_original.html:3594,L
 10.3.11.2.2,Proto-Erromango to Ura,Ura-*L,index_diachronica_original.html:3616,L
@@ -121,24 +121,31 @@ section_index,section_name,rule_id,source,manual_mapping
 17.3.1,Proto-Indo-European to Artsakh Armenian,"Artsakh-Armenian-i,u",index_diachronica_original.html:5188, / sporadic ; in some 
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-VN,index_diachronica_original.html:5208,VN → V[+nasal] → V
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-VN,index_diachronica_original.html:5208, ; in polysyllables
+17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-N_2,index_diachronica_original.html:5209, / sporadic ; in monosyllables
 17.3.2,Proto-Indo-European to Erevan Armenian,"Erevan-Armenian-i,u",index_diachronica_original.html:5225, / sporadic ; in some 
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-VN,index_diachronica_original.html:5245,VN → V[+nasal] → V
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-VN,index_diachronica_original.html:5245, ; in polysyllables
+17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-N_2,index_diachronica_original.html:5246, / sporadic ; in monosyllables
 17.3.3,Proto-Indo-European to Istanbul Armenian,"Istanbul-Armenian-i,u",index_diachronica_original.html:5262, / sporadic ; in some 
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-VN,index_diachronica_original.html:5282,VN → V[+nasal] → V
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-VN,index_diachronica_original.html:5282, ; in polysyllables
+17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-N_2,index_diachronica_original.html:5283, / sporadic ; in monosyllables
 17.3.4,Proto-Indo-European to Kharpert Armenian,"Kharpert-Armenian-i,u",index_diachronica_original.html:5299, / sporadic ; in some 
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-VN,index_diachronica_original.html:5319,VN → V[+nasal] → V
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-VN,index_diachronica_original.html:5319, ; in polysyllables
+17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-N_2,index_diachronica_original.html:5320, / sporadic ; in monosyllables
 17.3.5,Proto-Indo-European to Sebastia Armenian,"Sebastia-Armenian-i,u",index_diachronica_original.html:5336, / sporadic ; in some 
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-VN,index_diachronica_original.html:5355,VN → V[+nasal] → V
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-VN,index_diachronica_original.html:5355, ; in polysyllables
+17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-N_2,index_diachronica_original.html:5356, / sporadic ; in monosyllables
 17.3.6,Proto-Indo-European to Southeast Armenian,"Southeast-Armenian-i,u",index_diachronica_original.html:5372, / sporadic ; in some 
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-VN,index_diachronica_original.html:5394,VN → V[+nasal] → V
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-VN,index_diachronica_original.html:5394, ; in polysyllables
+17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-N_2,index_diachronica_original.html:5395, / sporadic ; in monosyllables
 17.3.7,Proto-Indo-European to Southwest Armenian,"Southwest-Armenian-i,u",index_diachronica_original.html:5411, / sporadic ; in some 
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-VN,index_diachronica_original.html:5432,VN → V[+nasal] → V
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-VN,index_diachronica_original.html:5432, ; in polysyllables
+17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-N_2,index_diachronica_original.html:5433, / sporadic ; in monosyllables
 17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-e,index_diachronica_original.html:5478, / _Ra sporadic ; (short a only)
 17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-oː,index_diachronica_original.html:5483, / 
 17.5.1,Proto-Indo-European to Old Irish,Old-Irish-s,index_diachronica_original.html:5499,s → z / C[+voice]_
@@ -205,6 +212,7 @@ section_index,section_name,rule_id,source,manual_mapping
 17.7.3.1,Proto-Norse to Old Norse,"Old-Norse-o-æ,e",index_diachronica_original.html:6322, ! 
 17.7.3.1.1,Old Norse to Early Icelandic,Early-Icelandic-S-voiceː-S+-voiceː,index_diachronica_original.html:6369, Sʰ 
 17.7.3.1.1,Old Norse to Early Icelandic,Early-Icelandic-S-voice,index_diachronica_original.html:6370, Sʰ 
+17.7.3.1.1,Old Norse to Early Icelandic,Early-Icelandic-V,index_diachronica_original.html:6378, / sporadic ; in monosyllables
 17.7.3.1.1,Old Norse to Early Icelandic,Early-Icelandic-V_2,index_diachronica_original.html:6379, ; in polysyllables
 17.7.3.1.3,Old Norse to Shetland Norn,Shetland-Norn-nd-ld,index_diachronica_original.html:6481,nd ld → nː lː
 17.7.4,Common Germanic to Vandalic,Vandalic-eː,index_diachronica_original.html:6541, / [-stress]
@@ -257,6 +265,7 @@ section_index,section_name,rule_id,source,manual_mapping
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-V_5,index_diachronica_original.html:8163, / [-stress]
 18.3.2,Proto-Tuparí to Mekens,Mekens-k,index_diachronica_original.html:8424, / 
 18.3.4,Proto-Tuparí to Wayoró,Wayoró-k,index_diachronica_original.html:8465, / 
+18.4.2,Proto-Tupí-Guaraní to Cocama,Cocama-∅,index_diachronica_original.html:8503, / sporadic ; in monosyllables
 18.4.2,Proto-Tupí-Guaraní to Cocama,Cocama-j,index_diachronica_original.html:8504, ; in polysyllables
 24.1.1,Proto-Paman to AritinÅitiÉ£,AritinÅitiÉ£-Vː,index_diachronica_original.html:9415, / 
 24.1.2,Proto-Paman to AwÅtim,AwÅtim-Vː,index_diachronica_original.html:9427, / 
@@ -292,6 +301,8 @@ section_index,section_name,rule_id,source,manual_mapping
 30.2.1,Proto-Potou-Akanic to Proto-Akanic,Proto-Akanic-V+high-+ATRCV+high-ATR,index_diachronica_original.html:10564,atr
 32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-e_3,index_diachronica_original.html:10804, / 
 32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-ẽ_3,index_diachronica_original.html:10807, / 
+32.1.2,Proto-Chatino to Tataltepec Chatino,Tataltepec-Chatino-ɛ_3,index_diachronica_original.html:10830, / sporadic ; in monosyllables
+32.1.3,Proto-Chatino to Yaitepec Chatino,Yaitepec-Chatino-ʃ_2,index_diachronica_original.html:10853, / sporadic ; in monosyllables
 33.3.1.3,Buena Vista Yokuts to Tulamni,Tulamni-Vʔ,index_diachronica_original.html:11077, / [+stress]
 35.1.7,Proto-Central Salish to Nooksack,Nooksack-ə1_3,index_diachronica_original.html:11529, / sporadic ; in some 
 35.1.9,Proto-Central Salish to Saanich Northern Straits,Saanich-Northern-Straits-a3,index_diachronica_original.html:11579,"_,_"

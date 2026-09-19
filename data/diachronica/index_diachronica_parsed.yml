@@ -12470,13 +12470,13 @@ sections:
     raw: ⁿS → N / _#
     source: index_diachronica_original.html:3335
     rule_id: Proto-Yunaga-ⁿS
-  - stages:
+  - comment: in monosyllables; sporadic
+    stages:
     - u i
     - o e
-    env: '#_#'
-    comment: monosyllables
     raw: u i → o e / in monosyllables
     source: index_diachronica_original.html:3336
+    sporadic: true
     rule_id: Proto-Yunaga-u-i
   - stages:
     - au ai
@@ -21560,13 +21560,14 @@ sections:
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5208
     rule_id: Artsakh-Armenian-VN
-  - stages:
+  - comment: in monosyllables; sporadic
+    stages:
     - N
     - n
     env: _#
-    comment: in monosyllables
     raw: N → n / _#, in monosyllables
     source: index_diachronica_original.html:5209
+    sporadic: true
     rule_id: Artsakh-Armenian-N_2
   - stages:
     - N̩
@@ -21790,13 +21791,14 @@ sections:
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5245
     rule_id: Erevan-Armenian-VN
-  - stages:
+  - comment: in monosyllables; sporadic
+    stages:
     - N
     - n
     env: _#
-    comment: in monosyllables
     raw: N → n / _#, in monosyllables
     source: index_diachronica_original.html:5246
+    sporadic: true
     rule_id: Erevan-Armenian-N_2
   - stages:
     - N̩
@@ -22019,13 +22021,14 @@ sections:
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5282
     rule_id: Istanbul-Armenian-VN
-  - stages:
+  - comment: in monosyllables; sporadic
+    stages:
     - N
     - n
     env: _#
-    comment: in monosyllables
     raw: N → n / _#, in monosyllables
     source: index_diachronica_original.html:5283
+    sporadic: true
     rule_id: Istanbul-Armenian-N_2
   - stages:
     - N̩
@@ -22249,13 +22252,14 @@ sections:
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5319
     rule_id: Kharpert-Armenian-VN
-  - stages:
+  - comment: in monosyllables; sporadic
+    stages:
     - N
     - n
     env: _#
-    comment: in monosyllables
     raw: N → n / _#, in monosyllables
     source: index_diachronica_original.html:5320
+    sporadic: true
     rule_id: Kharpert-Armenian-N_2
   - stages:
     - N̩
@@ -22473,13 +22477,14 @@ sections:
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5355
     rule_id: Sebastia-Armenian-VN
-  - stages:
+  - comment: in monosyllables; sporadic
+    stages:
     - N
     - n
     env: _#
-    comment: in monosyllables
     raw: N → n / _#, in monosyllables
     source: index_diachronica_original.html:5356
+    sporadic: true
     rule_id: Sebastia-Armenian-N_2
   - stages:
     - N̩
@@ -22717,13 +22722,14 @@ sections:
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5394
     rule_id: Southeast-Armenian-VN
-  - stages:
+  - comment: in monosyllables; sporadic
+    stages:
     - N
     - n
     env: _#
-    comment: in monosyllables
     raw: N → n / _#, in monosyllables
     source: index_diachronica_original.html:5395
+    sporadic: true
     rule_id: Southeast-Armenian-N_2
   - stages:
     - N̩
@@ -22954,13 +22960,14 @@ sections:
     raw: VN → V[+nasal] → V → (?) / _#, in polysyllables
     source: index_diachronica_original.html:5432
     rule_id: Southwest-Armenian-VN
-  - stages:
+  - comment: in monosyllables; sporadic
+    stages:
     - N
     - n
     env: _#
-    comment: in monosyllables
     raw: N → n / _#, in monosyllables
     source: index_diachronica_original.html:5433
+    sporadic: true
     rule_id: Southwest-Armenian-N_2
   - stages:
     - N̩
@@ -28645,13 +28652,14 @@ sections:
     raw: w → v
     source: index_diachronica_original.html:6377
     rule_id: Early-Icelandic-w
-  - stages:
+  - comment: in monosyllables; sporadic
+    stages:
     - V
     - Vː
     env: _(C)#
-    comment: in monosyllables
     raw: V → Vː / _(C)#, in monosyllables
     source: index_diachronica_original.html:6378
+    sporadic: true
     rule_id: Early-Icelandic-V
   - comment: in polysyllables
     stages:
@@ -41598,13 +41606,14 @@ sections:
     raw: ʔ ts ŋ → ∅ {ts,tʃ} n
     source: index_diachronica_original.html:8502
     rule_id: Cocama-ʔ-ts-ŋ
-  - stages:
+  - comment: in monosyllables; sporadic
+    stages:
     - ∅
     - i
     env: j_#
-    comment: in monosyllables
     raw: ∅ → i / j_#, in monosyllables
     source: index_diachronica_original.html:8503
+    sporadic: true
     rule_id: Cocama-∅
   - comment: in polysyllables
     stages:
@@ -50961,13 +50970,14 @@ sections:
     raw: ɛ → i / n_#
     source: index_diachronica_original.html:10829
     rule_id: Tataltepec-Chatino-ɛ_2
-  - stages:
+  - comment: in monosyllables; sporadic
+    stages:
     - ɛ
     - e
     env: _ʔ#
-    comment: in monosyllables
     raw: ɛ → e / _ʔ#, in monosyllables
     source: index_diachronica_original.html:10830
+    sporadic: true
     rule_id: Tataltepec-Chatino-ɛ_3
 - section: Proto-Chatino to Yaitepec Chatino
   index: 32.1.3
@@ -51095,13 +51105,14 @@ sections:
     raw: ʃ → s / _{ik,e,ı̃,ẽ}
     source: index_diachronica_original.html:10852
     rule_id: Yaitepec-Chatino-ʃ
-  - stages:
+  - comment: in monosyllables; sporadic
+    stages:
     - ʃ
     - ts
     env: _i
-    comment: in monosyllables
     raw: ʃ → ts / _i, in monosyllables
     source: index_diachronica_original.html:10853
+    sporadic: true
     rule_id: Yaitepec-Chatino-ʃ_2
   - stages:
     - lʲ

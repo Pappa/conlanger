@@ -32,20 +32,20 @@ Skipped: **2/114**
 
 | count | failure_class |
 |------:|---------------|
-| 74 | `expected_underscore` |
+| 72 | `expected_underscore` |
 | 70 | `unknown_character` |
 | 47 | `invalid_ipa` |
-| 34 | `expected_ipa` |
-| 30 | `missing_slash_output_env` |
+| 35 | `expected_ipa` |
+| 29 | `missing_slash_output_env` |
 | 19 | `syntax_other` |
 | 15 | `nested_brackets` |
 | 11 | `unknown_grouping` |
 | 10 | `expected_number` |
 | 10 | `unknown_feature` |
+| 9 | `prose_or_expected_arrow` |
 | 9 | `diacritic_prereq` |
 | 8 | `segments_before_word` |
 | 7 | `stuff_after_word_bound` |
-| 7 | `prose_or_expected_arrow` |
 | 7 | `empty_io_panic` |
 | 6 | `multiple_underlines_env` |
 | 4 | `panic_other` |
@@ -151,7 +151,7 @@ Skipped: **2/114**
 
 | count | description |
 |------:|-------------|
-| 47 | `Expected '_', but received ''` |
+| 45 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -202,9 +202,10 @@ Skipped: **2/114**
 | count | description |
 |------:|-------------|
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
+| 2 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
-| 1 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
+| 1 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
 ### invalid_ipa (error_token)
@@ -225,7 +226,7 @@ Skipped: **2/114**
 
 | count | error_token |
 |------:|-------------|
-| 8 | `(` |
+| 9 | `(` |
 | 6 | `∅` |
 | 4 | `{` |
 | 3 | `…` |
@@ -260,9 +261,9 @@ Skipped: **2/114**
 | 6 | `(` |
 | 3 | `:` |
 | 3 | `ʲ` |
-| 2 | `̥` |
 | 1 | `*` |
 | 1 | `#` |
+| 1 | `̥` |
 | 1 | `_` |
 ### missing_slash_output_env (description)
 

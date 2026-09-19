@@ -360,6 +360,12 @@
 - from: " ! some monosyllables"
   to: " ; sporadic ! some monosyllables"
   reason: replace prose
+- from: ", in monosyllables"
+  to: " / sporadic ; in monosyllables"
+  reason: replace prose
+- from: " / in monosyllables"
+  to: " / sporadic ; in monosyllables"
+  reason: replace prose
 - from: ", also in proclitics"
   to: " ; , also in proclitics"
   reason: replace prose
