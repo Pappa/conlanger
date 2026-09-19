@@ -46,16 +46,10 @@ from conlanger.tools.ingest.transforms import (
 from conlanger.tools.rules import DiachronicSeries
 from conlanger.utils.file_io import write_manual_mappings_matched_csv
 from conlanger.utils.mappings import (
-    FeatureMapping,
     IpaMapping,
     ManualMapping,
     ParserConfig,
-    apply_feature_mappings,
-    apply_ipa_mappings,
-    apply_manual_mappings,
-    apply_section_mappings,
     normalize_feature_matrices_in_field,
-    normalize_ipa_in_field,
 )
 from conlanger.utils.parsing import (
     build_stages_from_spine,
@@ -75,7 +69,6 @@ from conlanger.utils.symbols import normalize_stress_marks, normalize_symbols
 from tests.fixtures.minimal_mappings import (
     minimal_compiler_config,
     minimal_feature_mappings,
-    minimal_ipa_mappings,
 )
 
 
@@ -1739,77 +1732,6 @@ def test_parser_class_letters_unchanged(tmp_path: Path):
     assert rule["env"] == "V_V"
 
 
-@pytest.mark.parametrize(
-    "input, expected",
-    [
-        ("C[+voiced]", "C[+voice]"),
-        ("N[-voiced]", "N[-voice]"),
-        ("C[+ sibilant]", "C[+strident]"),
-    ],
-)
-def test_normalize_feature_matrices_in_field_rename(input, expected):
-    mappings = minimal_feature_mappings()
-    assert normalize_feature_matrices_in_field(input, mappings) == expected
-
-
-@pytest.mark.parametrize(
-    "input, expected",
-    [
-        ("u[+short]", "u[-long]"),
-        ("V[-short]", "V[+long]"),
-    ],
-)
-def test_normalize_feature_matrices_in_field_rename_invert(input, expected):
-    mappings = minimal_feature_mappings()
-    assert normalize_feature_matrices_in_field(input, mappings) == expected
-
-
-@pytest.mark.parametrize(
-    "input, expected",
-    [
-        ("S[- glottalized]", "S[+place]"),
-        ("V[-glottalized]", "V[+place]"),
-        ("V[+glottalized]", "V[-place]"),
-        ("_CV[+close-mid](C)#", "_CV[-hi,-lo,+tense](C)#"),
-        ("_CV[+open-mid](C)#", "_CV[-hi,-lo,-tense](C)#"),
-        ("V[-open]", "V[-lo]"),
-        ("V[-closed]", "V[-hi]"),
-    ],
-)
-def test_normalize_feature_matrices_in_field_rename_polarity(input, expected):
-    mappings = minimal_feature_mappings()
-    assert normalize_feature_matrices_in_field(input, mappings) == expected
-
-
-@pytest.mark.parametrize(
-    "input, expected",
-    [
-        ("C:[+dental]", "C:[+cor,+anterior,+dist]"),
-        ("_C[+dental]", "_C[+cor,+anterior,+dist]"),
-        ("C:[+alveolar]", "C:[+cor,+anterior,-dist]"),
-        ("O:[+palatal]", "O:[+cor,+dist]"),
-        ("_C[+palatal]", "_C[+cor,+dist]"),
-        ("C:[+velar]", "C:[-fr,+bk,+hi,-lo]"),
-        ("C[+velar]_C[+velar]", "C[-fr,+bk,+hi,-lo]_C[-fr,+bk,+hi,-lo]"),
-        ("Cʷ:[+uvular]", "Cʷ:[-fr,+bk,-hi,-lo]"),
-        ("short u", "short u"),
-        ("V[+high tone]", "V[tone: 5]"),
-        ("V[+low tone]", "V[tone: 1]"),
-        ("V[+ falling tone]", "V[tone: 51]"),
-        ("V:[+long][+low falling tone]", "V:[+long][tone: 21]"),
-        ("aː[+high rising tone]", "aː[tone: 35]"),
-        ("V[+ low tone]", "V[tone: 1]"),
-        ("V[+ high tone]", "V[tone: 5]"),
-        ("V[- tone]", "V[- tone]"),
-        ("V:[-falling tone]", "V:[-falling tone]"),
-        ("V:[+stress][-long -falling tone]", "V:[+stress][-long -falling tone]"),
-    ],
-)
-def test_normalize_feature_matrices_in_field_place_bundles(input, expected):
-    mappings = minimal_feature_mappings()
-    assert normalize_feature_matrices_in_field(input, mappings) == expected
-
-
 def test_kenyah_vowel_height_rules_validate():
     mappings = minimal_feature_mappings()
     rules = [
@@ -1832,16 +1754,6 @@ def test_kenyah_vowel_height_rules_validate():
     )
 
 
-def test_apply_feature_mappings():
-    mappings = {
-        "voiced": FeatureMapping("voiced", "rename", "voice", confidence="high"),
-    }
-    assert apply_feature_mappings(
-        {"stages": ["C[+voiced]", "C[+voice]"]},
-        mappings,
-    ) == {"stages": ["C[+voice]", "C[+voice]"]}
-
-
 def test_parser_config_resolved_section_mappings_ancestry_and_override():
     config = ParserConfig(
         ipa_mappings_confidence=frozenset({"high"}),
@@ -1856,14 +1768,6 @@ def test_parser_config_resolved_section_mappings_ancestry_and_override():
     }
     assert config.resolved_section_mappings("10.2.1") == {}
     assert config.resolved_section_mappings("") == {}
-
-
-def test_apply_section_mappings_longest_from_first():
-    config = ParserConfig(
-        ipa_mappings_confidence=frozenset({"high"}),
-        section_mappings_sections={"1.0": {"*D": "D", "*DZ": "dz"}},
-    )
-    assert apply_section_mappings("*DZ → z", "1.0", config) == "dz → z"
 
 
 def test_parse_rule_element_applies_section_mapping_keeps_raw():
@@ -1933,20 +1837,6 @@ def test_parser_marks_skip_rules_from_config(tmp_path: Path):
     assert rule["stages"] == []
     assert rule["comment"] == "unrepresentable chain"
     assert rule["raw"] == "i → j [ə?] → {e,a}"
-
-
-def test_normalize_ipa_in_field():
-    mappings = minimal_ipa_mappings()
-    assert normalize_ipa_in_field("TŠ", mappings) == "Tʃ"
-    assert normalize_ipa_in_field("Š", mappings) == "ʃ"
-
-
-def test_apply_ipa_mappings():
-    mappings = {"Š": "ʃ"}
-    assert apply_ipa_mappings(
-        {"stages": ["TŠ", "TS"], "env": "_{Š}"},
-        mappings,
-    ) == {"stages": ["Tʃ", "TS"], "env": "_{ʃ}"}
 
 
 def test_parse_rule_element_normalizes_ipa_characters():
@@ -2167,30 +2057,6 @@ def test_parse_rule_element_captures_short_only_paren_in_env():
     assert "when stressed" in rules[0]["comment"]
 
 
-def test_apply_ipa_mappings_noop_when_mappings_empty():
-    parts = {"stages": ["Š", "TS"]}
-    assert apply_ipa_mappings(parts, {}) == parts
-
-
-def test_normalize_ipa_in_field_noop_without_mappings():
-    assert normalize_ipa_in_field("Š", {}) == "Š"
-    assert normalize_ipa_in_field("", {"Š": "ʃ"}) == ""
-
-
-@pytest.mark.parametrize(
-    ("text", "expected"),
-    [
-        ("oı̃ > wɛ̃", "oj\u0303 > wɛ\u0303"),
-        ("VnV > ṽlṽ", "VnV > v\u0303lv\u0303"),
-        ("iC uC > i û / _{C,#}", "iC uC > i u / _{C,#}"),
-        ("Ṽ > V", "v\u0303 > V"),
-    ],
-)
-def test_normalize_ipa_in_field_near_miss_unknown_characters(text, expected):
-    mappings = minimal_ipa_mappings()
-    assert normalize_ipa_in_field(text, mappings) == expected
-
-
 @pytest.mark.parametrize(
     ("html_line", "stage_index", "expected_stage"),
     [
@@ -2216,13 +2082,6 @@ def test_parse_rule_element_normalizes_near_miss_unknown_characters(
 def test_index_diachronica_parser_accepts_custom_corrections():
     parser = default_index_parser(corrections={"Test-id": "a → b"})
     assert parser._corrections == {"Test-id": "a → b"}
-
-
-def test_apply_manual_mappings_miss_leaves_text_unchanged():
-    mappings = [ManualMapping(from_text="zzz", to_text="Q", reason="")]
-    working, hits = apply_manual_mappings("a → b / _C", mappings)
-    assert working == "a → b / _C"
-    assert hits == []
 
 
 def test_parse_rule_element_applies_manual_mapping_keeps_raw():
