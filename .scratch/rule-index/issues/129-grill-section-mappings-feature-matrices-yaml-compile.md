@@ -117,7 +117,7 @@ Current **Class letter** entry covers Index key capitals (`C`, `V`, `S`). Athaba
 - Field tokens / sets: `src/conlanger/tools/compile/field_tokens.py`, `src/conlanger/tools/compile/asca/sets.py`
 - YAML I/O: `src/conlanger/tools/index_io.py`, `tests/conlanger/tools/test_index_io.py`
 - Example parsed YAML: `data/diachronica/index_diachronica_parsed.yml` §29.1.1.1.7 `Deg-Hit’an-K`
-- Error inventory rows: `inventory/rule-inventory-error.csv` (`Deg-Hit’an-K`, alt_idx 0–13)
+- Error inventory rows: `.scratch/rule-index/inventory/rule-inventory-error.csv` (`Deg-Hit’an-K`, alt_idx 0–13)
 
 ## Follow-on (after grill resolves)
 

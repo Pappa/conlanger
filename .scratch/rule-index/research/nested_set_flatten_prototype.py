@@ -48,7 +48,7 @@ from conlanger.tools.index_inventory import (
 from conlanger.tools.ingest.section_policy import resolve_catch_all_else_rules
 
 YAML_PATH = ROOT / "data/diachronica/index_diachronica_parsed.yml"
-INVENTORY_PATH = ROOT / "inventory/rule-inventory.csv"
+INVENTORY_PATH = ROOT / ".scratch/rule-index/inventory/rule-inventory.csv"
 PROBE_WORDS = ROOT / "tests/fixtures/asca_probe_words.wsca"
 OUT_CSV = Path(__file__).with_name("nested-set-flatten-prototype.csv")
 OUT_JSON = Path(__file__).with_name("nested-set-flatten-prototype-metrics.json")
