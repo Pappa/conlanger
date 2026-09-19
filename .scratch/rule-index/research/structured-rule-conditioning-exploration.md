@@ -206,7 +206,7 @@ Compile: if `conditions` present → resolve via config → build compiled env/e
 1. Document schema + `CONTEXT.md` glossary.
 2. Post-parse extractor on `raw`, `env`, `exception`, `comment` → `conditions` / `applicability`.
 3. Do **not** remove manual mappings; run in parallel.
-4. Diagnostic report: `.scratch/rule-index/parse/structured-conditions.csv` (extracted vs current env/sporadic).
+4. Diagnostic report: `diagnostics/parse/structured-conditions.csv` (extracted vs current env/sporadic).
 5. Compile/inventory ignore new fields.
 
 ### Phase 1 — Stop growing manual mappings

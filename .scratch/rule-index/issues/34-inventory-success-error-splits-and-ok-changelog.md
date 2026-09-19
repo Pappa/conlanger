@@ -10,7 +10,7 @@ How should `uv run create_index` extend the validation inventory so regressions 
 
 ## Decision (charted)
 
-Extend [Full-index validation inventory](12-full-index-validation-inventory.md) artifacts under `.scratch/rule-index/inventory/`:
+Extend [Full-index validation inventory](12-full-index-validation-inventory.md) artifacts under `diagnostics/inventory/`:
 
 1. **Filtered views** (same columns as `rule-inventory.csv`, rewritten each regen):
    - `rule-inventory-success.csv` — rows with `ok=True`

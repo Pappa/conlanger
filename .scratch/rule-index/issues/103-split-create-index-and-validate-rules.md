@@ -17,7 +17,7 @@ After [ticket 101](101-refactor-config-layout-and-injection.md), scripts are the
 
 - Load **`ParserConfig`** only (`load_parser_config()`).
 - Parse HTML → write `data/diachronica/index_diachronica_parsed.yml` (unchanged default).
-- Write parse diagnostics under **`.scratch/rule-index/parse/`**:
+- Write parse diagnostics under **`diagnostics/parse/`**:
   - `manual_mappings_matched_rules.csv` (moved out of `inventory/`)
   - `rule-comment-phrases.md` (moved from `.scratch/rule-index/rule-comment-phrases.md`)
 - Keep stderr warnings for unmatched manual mappings and corrections.
@@ -31,7 +31,7 @@ After [ticket 101](101-refactor-config-layout-and-injection.md), scripts are the
 - Read parsed YAML via new **`read_cleaned_index(path)`** in `index_io.py` (symmetric with `write_cleaned_index`).
 - Default paths (zero-arg use case), shared with `create_index`:
   - `--yaml-in` → `DEFAULT_YAML` (`data/diachronica/index_diachronica_parsed.yml`)
-  - `--inventory-dir` → `DEFAULT_INVENTORY_DIR` (`.scratch/rule-index/inventory/`)
+  - `--inventory-dir` → `DEFAULT_INVENTORY_DIR` (`diagnostics/inventory/`)
 - Move validate half of current `create_index.py`: `iter_inventory_with_field_isolation`, filtered CSVs, error clusters, optional `--field-isolation`, changelog, summary markdown, ASCA fork resolution, `--probe-words`, `--use-asca-fork`, `--reset-changelog`, `--limit`.
 - Docstring: loads applier-neutral index, compiles to ASCA in memory for **compile validation** only, writes inventory.
 
@@ -92,7 +92,7 @@ No wrapper script in scope.
 **Desired behavior:** Two CLIs with shared defaults module. Parse CLI loads parser config only. Validate CLI loads compiler config, reads YAML from disk, runs existing inventory pipeline without re-parse. Steady state is both commands in sequence.
 
 **Key interfaces:**
-- `create_index`: `IndexDiachronicaParser`, `write_cleaned_index`, parse diagnostics → `.scratch/rule-index/parse/`
+- `create_index`: `IndexDiachronicaParser`, `write_cleaned_index`, parse diagnostics → `diagnostics/parse/`
 - `validate_rules`: `read_cleaned_index`, `iter_inventory_with_field_isolation`, existing inventory writers
 - `pipeline_defaults.py`: shared path constants
 - `index_io.read_cleaned_index(path) -> dict`

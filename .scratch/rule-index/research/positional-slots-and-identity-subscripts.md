@@ -10,7 +10,7 @@ Primary sources:
 - ASCA **0.10.2**: [`doc/doc.md`](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md) — [References](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#references), [Alpha notation](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#alpha-notation)
 - Prior art: [`asca-rule-validity.md`](./asca-rule-validity.md), [`series_mappings.py`](../../../src/conlanger/tools/series_mappings.py)
 - HTML SoT: [`data/diachronica/index_diachronica_original.html`](../../../data/diachronica/index_diachronica_original.html)
-- Inventory: [`.scratch/rule-index/inventory/rule-inventory.csv`](../inventory/rule-inventory.csv) (ASCA 0.10.2, 2026-08-06)
+- Inventory: [`diagnostics/inventory/rule-inventory.csv`](../inventory/rule-inventory.csv) (ASCA 0.10.2, 2026-08-06)
 
 Local ASCA probes run with `asca 0.10.2` on `PATH`.
 
@@ -255,4 +255,4 @@ Reuse [`series_mappings.py`](../../../src/conlanger/tools/series_mappings.py) cl
 | ASCA validity / refs summary | [`.scratch/rule-index/research/asca-rule-validity.md`](./asca-rule-validity.md) |
 | ASCA 0.10.2 docs | https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md |
 | Index HTML SoT | [`data/diachronica/index_diachronica_original.html`](../../../data/diachronica/index_diachronica_original.html) |
-| Validation inventory | [`.scratch/rule-index/inventory/rule-inventory.csv`](../inventory/rule-inventory.csv) |
+| Validation inventory | [`diagnostics/inventory/rule-inventory.csv`](../inventory/rule-inventory.csv) |

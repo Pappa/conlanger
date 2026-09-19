@@ -104,7 +104,7 @@ Brassica compilation remains a future parallel path behind the same index (ADR-0
 ### Operator config vs corpus data
 
 - **config/** — operator settings (YAML), loaded only by scripts and injected as `ParserConfig` / `CompilerConfig`. Parse: `parser_config.yml`, `manual_mappings.yml`, `ipa_mappings.yml`, `feature_mappings.yml`, `index_diachronica_corrections.yml`. Compile: `compiler_config.yml`, `group_mappings.yml`.
-- **data/** — corpus and generated artifacts: Index HTML SoT, regenerated `index_diachronica_parsed.yml`, runtime ASCA alias file, inventory outputs under `.scratch/rule-index/inventory/`.
+- **data/** — corpus and generated artifacts: Index HTML SoT, regenerated `index_diachronica_parsed.yml`, runtime ASCA alias file, inventory outputs under `diagnostics/inventory/`.
 - Library code under `src/conlanger` (except scripts) accepts in-memory config; empty defaults when omitted. `create_index` is the bootstrap composing real operator config.
 
 ### Parse (HTML → YAML)
@@ -207,7 +207,7 @@ Rationale: lower seams (rule-line splitting alone, or `validate_asca` alone) do 
 
 - Wayfinder map (living decisions, ticket frontier): `.scratch/rule-index/map.md`.
 - ASCA validity reference: `.scratch/rule-index/research/asca-rule-validity.md`.
-- Inventory baseline: `.scratch/rule-index/inventory/` (**8089 ok / 9676 rows**, 83.6%).
+- Inventory baseline: `diagnostics/inventory/` (**8089 ok / 9676 rows**, 83.6%).
 - Pipeline docs: `docs/system/index-diachronica-parser.md`, `docs/system/sound-change-applier.md`, `docs/system/validate.md`, `docs/SYSTEM.md`.
 - Re-inventory after major milestones: `uv run create_index`.
 - Grill 71 (paren/parallel set notation) paused 2026-08-29; resume from `research/io-optionals-asca-and-convention.md` after ticket 100 resolution.

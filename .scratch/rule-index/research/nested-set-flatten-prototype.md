@@ -4,7 +4,7 @@ Question: if we flatten Index editorial nested `{…}` at ingest (`stages`, `env
 
 Throwaway code: [`flatten_nested_sets.py`](./flatten_nested_sets.py), [`nested_set_flatten_prototype.py`](./nested_set_flatten_prototype.py). Scan helpers: [`scan_nested_sets.py`](./scan_nested_sets.py) (`working_max_brace_depth`, `count_working_depth_ge2`). Per-rule table: [`nested-set-flatten-prototype.csv`](./nested-set-flatten-prototype.csv). Metrics dump: [`nested-set-flatten-prototype-metrics.json`](./nested-set-flatten-prototype-metrics.json).
 
-**Not merged to `main`.** Corpus YAML was loaded read-only; validation used in-memory rules + committed inventory as baseline. No writes to `data/diachronica/index_diachronica_parsed.yml` or `.scratch/rule-index/inventory/`.
+**Not merged to `main`.** Corpus YAML was loaded read-only; validation used in-memory rules + committed inventory as baseline. No writes to `data/diachronica/index_diachronica_parsed.yml` or `diagnostics/inventory/`.
 
 ---
 
@@ -30,7 +30,7 @@ Self-check (2026-08-19): `uv run python .scratch/rule-index/research/flatten_nes
 1. Load [`data/diachronica/index_diachronica_parsed.yml`](../../../data/diachronica/index_diachronica_parsed.yml) (9201 index rules; [`nested-sets-scan.json`](./nested-sets-scan.json) `total_rules_scanned`).
 2. Deep-copy; flatten `stages` / `env` / `exception` in memory (two modes).
 3. Re-validate every source that either changed or is currently `failure_class=nested_brackets` via `validate_index_rule` / `iter_validation_rows` path ([`index_inventory.py`](../../../src/conlanger/tools/index_inventory.py) `validate_index_rule`; group mappings `asca_group_mappings_dict()` as `create_index`). ASCA **0.10.2** (`asca --version`).
-4. Merge unchanged inventory rows from [`.scratch/rule-index/inventory/rule-inventory.csv`](../inventory/rule-inventory.csv). Unflattened rules cannot flip `ok`. Changelog flips are computed in memory against that CSV (`ok_flip_changelog_rows` match key `(source, alt_idx)`); **not** appended to the committed changelog.
+4. Merge unchanged inventory rows from [`diagnostics/inventory/rule-inventory.csv`](../inventory/rule-inventory.csv). Unflattened rules cannot flip `ok`. Changelog flips are computed in memory against that CSV (`ok_flip_changelog_rows` match key `(source, alt_idx)`); **not** appended to the committed changelog.
 
 Phase A on committed YAML is **P4-equivalent**: else resolution has already copied prev `env` → `exception` ([`section_policy.py`](../../../src/conlanger/tools/ingest/section_policy.py) `resolve_catch_all_else_rules`; YAML `:5510` already has `exception: _{s,({m,j,w})V}`).
 

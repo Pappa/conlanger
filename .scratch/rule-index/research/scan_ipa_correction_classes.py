@@ -14,7 +14,7 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[3]
-INVENTORY_DIR = ROOT / ".scratch/rule-index/inventory"
+INVENTORY_DIR = ROOT / "diagnostics/inventory"
 PARSER_CONFIG = ROOT / "config/parser/parser_config.yml"
 OUT_CSV = Path(__file__).with_name("ipa-correction-classes.csv")
 OUT_BUCKETS_CSV = Path(__file__).with_name("ipa-correction-buckets.csv")
