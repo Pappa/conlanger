@@ -56,6 +56,11 @@ def _merge_feature_matrix_inners(inner_a: str, inner_b: str) -> str:
     return f"{left}, {right}"
 
 
+def _token_has_class_host_bracket_matrix(text: str) -> bool:
+    """True when ``text`` contains an Index class letter + bracket matrix."""
+    return _CLASS_HOST_BRACKET_RE.search(text) is not None
+
+
 def _attach_matrix_to_literal_segment(text: str, matrix: str) -> str | None:
     if re.fullmatch(r"[A-Z]", text):
         return f"{text}{matrix}"
@@ -110,7 +115,7 @@ def _attach_matrix_to_token(token: str, matrix: str) -> str:
         merged = _merge_feature_matrix_inners(match.group("matrix"), matrix_inner)
         return f"{host}[{merged}]"
 
-    if _CLASS_HOST_BRACKET_RE.search(text):
+    if _token_has_class_host_bracket_matrix(text):
         return _CLASS_HOST_BRACKET_RE.sub(class_repl, text, count=1)
 
     def ipa_repl(match: re.Match[str]) -> str:

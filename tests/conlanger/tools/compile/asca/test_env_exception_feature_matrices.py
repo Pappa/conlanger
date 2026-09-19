@@ -1,6 +1,5 @@
 """Compile-time env/exception feature matrices (ticket 131)."""
 
-import re
 import shutil
 from pathlib import Path
 from tempfile import NamedTemporaryFile
@@ -61,6 +60,7 @@ def test_flip_feature_matrix_polarity(matrix, expected):
     [
         ("", "+stress", "+stress"),
         ("+long", "", "+long"),
+        ("+long", "+stress", "+long, +stress"),
     ],
 )
 def test_merge_feature_matrix_inners(inner_a, inner_b, expected):
@@ -78,26 +78,19 @@ def test_attach_matrix_to_literal_segment(text, matrix, expected):
 
 
 @pytest.mark.parametrize(
-    ("token", "matrix", "expected", "patch_class_host_bracket"),
+    ("token", "matrix", "expected", "has_matrix"),
     [
-        ("  ", "[-stress]", "  ", False),
-        ("#_", "[-stress]", "#_", False),
-        ("xAT[+long]y", "[-stress]", "xAT[+long]y", True),
+        ("  ", "[-stress]", "  ", True),
+        ("#_", "[-stress]", "#_", True),
+        ("xAT[+long]y", "[-stress]", "xAT[+long]y", False),
     ],
 )
-def test_attach_matrix_to_token(
-    token,
-    matrix,
-    expected,
-    patch_class_host_bracket,
-    mocker,
-):
-    if patch_class_host_bracket:
-        mocker.patch(
-            "conlanger.tools.compile.asca.env_exception_feature_matrices."
-            "_CLASS_HOST_BRACKET_RE",
-            re.compile(r"a^"),
-        )
+def test_attach_matrix_to_token(token, matrix, expected, has_matrix, mocker):
+    mocker.patch(
+        "conlanger.tools.compile.asca.env_exception_feature_matrices."
+        "_token_has_class_host_bracket_matrix",
+        return_value=has_matrix,
+    )
     assert _attach_matrix_to_token(token, matrix) == expected
 
 
