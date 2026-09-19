@@ -17781,21 +17781,21 @@ sections:
     source: index_diachronica_original.html:4525
     rule_id: Achaemanid-Elamite-ɲc
   - stages:
-    - r̀
+    - r
     - r
     env: V_{V,C}
     raw: r̀ → r / V_{V,C}
     source: index_diachronica_original.html:4526
     rule_id: Achaemanid-Elamite-r̀
   - stages:
-    - ŕ
+    - r
     - rː
     env: V_V
     raw: ŕ → rː / V_V
     source: index_diachronica_original.html:4527
     rule_id: Achaemanid-Elamite-ŕ
   - stages:
-    - nr̀
+    - nr
     - nr
     raw: nr̀ → nr
     source: index_diachronica_original.html:4528
@@ -32785,7 +32785,7 @@ sections:
     source: index_diachronica_original.html:7074
     rule_id: Polish-r̝_2
   - stages:
-    - ŕ
+    - r
     - ʐ
     raw: ŕ → ʐ / else
     source: index_diachronica_original.html:7075
@@ -42129,7 +42129,7 @@ sections:
     rule_id: Sirionó-o-u
   - stages:
     - aN eN iN ɨN uN
-    - ã ẽ j̃ {ɨ̃,ĩ} õ
+    - ã ẽ j̃ {ɨ̃,ĩ} õ
     env: _#
     raw: aN eN iN ɨN uN → ã ẽ ı̃ {ɨ̃,ĩ} õ / _#
     source: index_diachronica_original.html:8596
@@ -45707,7 +45707,7 @@ sections:
     source: index_diachronica_original.html:9499
     rule_id: Cavineña-x
   - stages:
-    - '*ŕ'
+    - '*r'
     - r
     raw: '*ŕ → r'
     source: index_diachronica_original.html:9500
@@ -45764,7 +45764,7 @@ sections:
     source: index_diachronica_original.html:9511
     rule_id: Chama-n
   - stages:
-    - '{r,*ŕ}'
+    - '{r,*r}'
     - '{∅,w,j}'
     raw: '{r,*ŕ} → {∅,w,j}'
     source: index_diachronica_original.html:9512
@@ -45815,7 +45815,7 @@ sections:
     sporadic: true
     rule_id: Reyesano-w
   - stages:
-    - '*ŕ'
+    - '*r'
     - ∅
     raw: '*ŕ → ∅'
     source: index_diachronica_original.html:9523
@@ -45900,7 +45900,7 @@ sections:
     source: index_diachronica_original.html:9538
     rule_id: Tacana-j
   - stages:
-    - '*ŕ'
+    - '*r'
     - ∅
     raw: '*ŕ → ∅'
     source: index_diachronica_original.html:9539
@@ -55184,7 +55184,7 @@ sections:
     rule_id: Old-Mandarin-xɦ
   - stages:
     - Cʲ
-    - C {Ạ,F̣}_
+    - C {a,F̣}_
     raw: Cʲ → C {Ạ,F̣}_
     source: index_diachronica_original.html:11756
     rule_id: Old-Mandarin-Cʲ

@@ -245,11 +245,14 @@ def apply_manual_mappings(
     """
     if not text or not mappings:
         return text, []
-    ordered = sorted(mappings, key=lambda row: len(row.from_text), reverse=True)
+    # ordered = sorted(mappings, key=lambda row: len(row.from_text), reverse=True)
     working = text
     hits: list[ManualMappingHit] = []
-    for row in ordered:
+    for row in mappings:
         if row.from_text and row.from_text in working:
-            working = working.replace(row.from_text, row.to_text)
+            if row.use_regex:
+                working = re.sub(row.from_text, row.to_text, working)
+            else:
+                working = working.replace(row.from_text, row.to_text)
             hits.append(ManualMappingHit(from_text=row.from_text, to_text=row.to_text))
     return working, hits

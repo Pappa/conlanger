@@ -34,18 +34,18 @@ Skipped: **2/114**
 |------:|---------------|
 | 53 | `expected_underscore` |
 | 48 | `invalid_ipa` |
-| 33 | `expected_ipa` |
+| 34 | `expected_ipa` |
 | 29 | `missing_slash_output_env` |
-| 28 | `unknown_character` |
+| 25 | `unknown_character` |
 | 19 | `syntax_other` |
 | 15 | `nested_brackets` |
 | 11 | `unknown_grouping` |
 | 10 | `expected_number` |
-| 10 | `prose_or_expected_arrow` |
+| 10 | `empty_io_panic` |
 | 10 | `unknown_feature` |
+| 9 | `prose_or_expected_arrow` |
 | 8 | `segments_before_word` |
 | 7 | `stuff_after_word_bound` |
-| 7 | `empty_io_panic` |
 | 6 | `multiple_underlines_env` |
 | 5 | `unknown_reference` |
 | 4 | `panic_other` |
@@ -96,7 +96,6 @@ Skipped: **2/114**
 | count | error_token |
 |------:|-------------|
 | 10 | `ː` |
-| 4 | `ŕ` |
 | 3 | `₂` |
 | 3 | `͡` |
 | 2 | `ʝ` |
@@ -104,6 +103,7 @@ Skipped: **2/114**
 | 1 | `ð` |
 | 1 | `̣` |
 | 1 | `ḭ` |
+| 1 | `〈` |
 | 1 | `̺` |
 ### unknown_character (description)
 
@@ -208,7 +208,6 @@ Skipped: **2/114**
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
-| 1 | `Expected '>', '->' or '=>', but received ')'` |
 
 ### invalid_ipa (error_token)
 
@@ -232,9 +231,9 @@ Skipped: **2/114**
 | 9 | `(` |
 | 4 | `{` |
 | 4 | `∅` |
-| 3 | `…` |
+| 3 | `*` |
 | 3 | `ʷ` |
-| 2 | `*` |
+| 3 | `…` |
 | 2 | `ʲ` |
 | 2 | `_` |
 | 1 | `,` |
@@ -260,8 +259,8 @@ Skipped: **2/114**
 
 | count | error_token |
 |------:|-------------|
-| 11 | `)` |
-| 6 | `(` |
+| 12 | `)` |
+| 5 | `(` |
 | 3 | `:` |
 | 3 | `ʲ` |
 | 2 | `*` |
@@ -339,7 +338,7 @@ Skipped: **2/114**
 | count | description |
 |------:|-------------|
 | 5 | `The output of a deletion rule must only contain `*` or `∅`` |
-| 2 | `The input of an insertion rule must only contain `*` or `∅`` |
+| 5 | `The input of an insertion rule must only contain `*` or `∅`` |
 
 ### incomplete_matrix (error_token)
 
