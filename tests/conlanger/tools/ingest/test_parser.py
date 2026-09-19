@@ -18,6 +18,10 @@ from conlanger.tools.ingest.double_slash_env import (
     split_embedded_double_slash,
 )
 from conlanger.tools.ingest.parser import parse_rule_element
+from conlanger.tools.ingest.prose_conditional_env import (
+    apply_prose_conditional_env_conditions,
+    normalize_prose_conditional_env_field,
+)
 from conlanger.tools.ingest.prose_position_env import (
     apply_prose_position_env_conditions,
     normalize_bare_prose_position_env,
@@ -583,6 +587,7 @@ def test_parse_rule_element_strips_embedded_quoted_env_gloss():
 @pytest.mark.parametrize(
     ("text", "expected"),
     [
+        ("V_V, when neither vowel is stressed", "V_V"),
         ("_C(C), when stressed", "_C(C) when stressed"),
         ("_$, when stressed", "_$ when stressed"),
         ("_N, when unstressed (?)", "_N when unstressed (?)"),
@@ -610,6 +615,93 @@ def test_apply_stress_conditions():
     assert apply_stress_conditions(
         {"stages": ["a", "e"], "env": "_C(C), when stressed"}
     ) == {"stages": ["a", "e"], "env": "_C(C) when stressed"}
+    cleaned = apply_stress_conditions(
+        {
+            "stages": ["ɾ", "∅"],
+            "env": "V_V, when neither vowel is stressed",
+        }
+    )
+    assert cleaned["env"] == "V_V"
+    assert "when neither vowel is stressed" in cleaned["comment"]
+
+
+@pytest.mark.parametrize(
+    ("text", "expected_env", "expected_comment_part"),
+    [
+        ("the unstressed penult", "%_", "unstressed penult"),
+        ("utterance-initially", "#_", "utterance-initially"),
+        ("before modal suffixes", "_$", "before modal suffixes"),
+        ("short only", "_", "short only"),
+        ("syllables with /ɦ/", "_", "syllables with /ɦ/"),
+        ("[-stress], but not in every case", "[-stress]", "but not in every case"),
+        ("if the *a is not stressed", "_ *a[-stress]", "if the *a is not stressed"),
+    ],
+)
+def test_normalize_prose_conditional_env_field(
+    text, expected_env, expected_comment_part
+):
+    env, captures, _flags, _matrix = normalize_prose_conditional_env_field(text)
+    assert env == expected_env
+    assert any(expected_comment_part in fragment for fragment in captures)
+
+
+def test_apply_prose_conditional_env_rhaeto_romance_stress_on_input():
+    result = apply_prose_conditional_env_conditions(
+        {
+            "stages": ["a", "e"],
+            "env": "[+stress], usually when Ḱ_",
+        }
+    )
+    assert result["stages"] == ["a:[+stress]", "e"]
+    assert result["env"] == "Ḱ_"
+    assert "[+stress]" in result["comment"]
+
+
+def test_resolve_catch_all_else_deferred_when_prev_env_is_prose():
+    rules = [
+        {
+            "stages": ["dʒ", "{d,ɡ}"],
+            "env": "if s or z occur somewhere else in the word",
+            "raw": "dʒ → {d,ɡ} / if s or z occur somewhere else in the word",
+        },
+        {"stages": ["dʒ", "ʒ"], "env": "else", "raw": "dʒ → ʒ / else"},
+    ]
+    resolved = resolve_catch_all_else_rules(rules)
+    assert resolved[1]["env"] == "else"
+    assert "exception" not in resolved[1]
+
+
+def test_resolve_catch_all_else_old_mandarin_v5_cascade():
+    rules = [
+        {
+            "stages": ["V5", "V4"],
+            "env": "syllables with a nasal or liquid",
+            "raw": "V5 → V4 / in syllables with a nasal or liquid",
+        },
+        {"stages": ["V5", "V3"], "env": "else", "raw": "V5 → V3 / else"},
+    ]
+    normalized = [apply_prose_conditional_env_conditions(rule) for rule in rules]
+    resolved = resolve_catch_all_else_rules(normalized)
+    assert resolved[0]["env"] == "_"
+    assert "env" not in resolved[1]
+    assert resolved[1]["exception"] == "_"
+
+
+def test_parser_moroccan_dʒ_else_family(tmp_path: Path):
+    el = html.fragment_fromstring(
+        '<p class="schg" id="Moroccan-Arabic-dʒ">dʒ → {d,ɡ} / if s or z occur somewhere else in the word</p>',
+        create_parent=False,
+    )
+    el2 = html.fragment_fromstring(
+        '<p class="schg" id="Moroccan-Arabic-dʒ_2">dʒ → ʒ / else</p>',
+        create_parent=False,
+    )
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
+    rules2 = _parse_rule_element(el2, source_file="index_diachronica_original.html")
+    resolved = resolve_catch_all_else_rules(rules + rules2)
+    assert resolved[0]["env"] == "if s or z occur somewhere else in the word"
+    assert resolved[1]["env"] == "else"
+    assert "exception" not in resolved[1]
 
 
 @pytest.mark.parametrize(
@@ -1091,12 +1183,12 @@ def test_resolve_catch_all_else_gloss_then_resolve():
 
 def test_resolve_catch_all_else_cascade_uses_immediate_prev_only():
     rules = [
-        {"stages": ["a", "x"], "env": "A", "raw": "a → x / A"},
-        {"stages": ["b", "y"], "env": "B", "raw": "b → y / B"},
+        {"stages": ["a", "x"], "env": "_A", "raw": "a → x / _A"},
+        {"stages": ["b", "y"], "env": "_B", "raw": "b → y / _B"},
         {"stages": ["c", "z"], "env": "else", "raw": "c → z / else"},
     ]
     resolved = resolve_catch_all_else_rules(rules)
-    assert resolved[2]["exception"] == "B"
+    assert resolved[2]["exception"] == "_B"
     assert "env" not in resolved[2]
 
 
@@ -1977,7 +2069,8 @@ def test_parse_rule_element_captures_semicolon_comment():
         create_parent=False,
     )
     rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
-    assert rules[0]["env"] == "short only"
+    assert rules[0]["env"] == "_"
+    assert "short only" in rules[0]["comment"]
     assert "blocked by following consonant" in rules[0]["comment"]
     assert "; blocked" in rules[0]["raw"]
 

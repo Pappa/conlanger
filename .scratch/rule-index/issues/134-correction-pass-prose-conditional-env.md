@@ -1,5 +1,6 @@
 Type: task
 Blocked by: [131](131-correction-pass-env-exception-feature-matrices.md)
+Status: resolved
 
 # Correction pass: prose conditional env (`expected_underscore`)
 
@@ -40,10 +41,29 @@ ASCA expects structural env with `_`; bare prose after `/` → `expected_undersc
 
 ## Acceptance criteria
 
-- [ ] Target buckets named and sized from current inventory at claim time
-- [ ] Class-first transforms; `raw` unchanged; prose captured in `comment` when stripped
-- [ ] Full inventory re-run; metrics in **Answer**
-- [ ] Unit tests for Indo-European conditional env family (representative `dʒ` rules)
+- [x] Target buckets named and sized from current inventory at claim time
+- [x] Class-first transforms; `raw` unchanged; prose captured in `comment` when stripped
+- [x] Full inventory re-run; metrics in **Answer**
+- [x] Unit tests for Indo-European conditional env family (representative `dʒ` rules)
+
+## Answer
+
+**Target buckets (claim-time inventory, 70 `expected_underscore` rows):**
+
+| Bucket | ~size | Handling |
+|--------|------:|----------|
+| Co-occurrence `if … occur` / stem | 5 | Deferred [137](137-correction-pass-manual-mapping-co-occurrence-env.md) |
+| `else` residuals | 5 | Structural prev-env gate + prose env normalize before section else pass |
+| Stress / matrix prose tails | 10 | Extended stress + prose conditional (penult, `[-stress], but…`, Rhaeto `[+stress], usually when`) |
+| `//` / position / compile matrix residuals | ~50 | Out of scope here (108, 131, 122) |
+
+**Baseline (before):** **8940 / 9839** ok (90.9%); **70** `expected_underscore`; sections all OK **484 / 714**.
+
+**After (2026-09-19):** **8950 / 9839** ok (**+10**, **91.0%**); **51** `expected_underscore` (−19); sections all OK **486 / 714** (**+2**).
+
+**Implementation:** `apply_prose_conditional_env_conditions` in `prose_conditional_env.py` (after stress, before medial); catch-all else resolution requires `_` in immediate previous `env`; stress strip for `, when neither vowel is stressed`.
+
+**Moroccan `dʒ` family:** else no longer inherits prose co-occurrence as `exception` (awaits [137](137-correction-pass-manual-mapping-co-occurrence-env.md)); unit tests cover complementary deferral + Old Mandarin V5 cascade.
 
 ## References
 

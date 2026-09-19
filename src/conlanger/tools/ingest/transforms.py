@@ -137,6 +137,10 @@ def apply_trailing_glosses(parts: dict[str, str]) -> dict[str, Any]:
 
 
 _STRESS_CONDITION_RE = re.compile(r"when (?:un)?stressed\b", re.IGNORECASE)
+_NEITHER_VOWEL_STRESSED_RE = re.compile(
+    r",\s*when neither vowel is stressed\b.*$",
+    re.IGNORECASE,
+)
 _COMMA_BEFORE_STRESS_RE = re.compile(
     r",\s*(?=when (?:un)?stressed\b)",
     re.IGNORECASE,
@@ -154,7 +158,15 @@ _PROSE_BEFORE_STRESS_RE = re.compile(
 def normalize_stress_conditions(text: str) -> tuple[str, list[str]]:
     """Normalize Index stress env prose for ASCA; capture removed trailing prose."""
     captures: list[str] = []
-    if not text or not _STRESS_CONDITION_RE.search(text):
+    if not text:
+        return text, captures
+    neither_match = _NEITHER_VOWEL_STRESSED_RE.search(text)
+    if neither_match:
+        captures.append(neither_match.group(0).strip().lstrip(","))
+        text = _NEITHER_VOWEL_STRESSED_RE.sub("", text).rstrip()
+        if text:
+            return text, captures
+    if not _STRESS_CONDITION_RE.search(text):
         return text, captures
     text = _COMMA_BEFORE_STRESS_RE.sub(" ", text)
     if "#" in text:

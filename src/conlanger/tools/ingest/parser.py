@@ -23,6 +23,9 @@ field-level glosses and env qualifiers. Index word-internal ``medial`` / ``media
 prose becomes ``env: _`` with boundary ``exception: :{#_, _#}:`` (``apply_medial_env_conditions``).
 Index prose **position** env phrases (``final syllables``, ``next to {X}``, ``syllable-final``,
 trailing ``, in monosyllables`` qualifiers, …) normalize via ``apply_prose_position_env_conditions``.
+Index prose **conditional** env phrases (``utterance-initially``, ``unstressed penult``,
+``syllables with …``, stress-matrix tails, …) normalize via
+``apply_prose_conditional_env_conditions``.
 Index ``//`` env shorthand and prose exception tails normalize via
 ``apply_double_slash_env_conditions``.
 After catch-all ``else`` resolution, nested ``{}`` in ``env`` / ``exception`` /
@@ -39,6 +42,9 @@ from typing import Any
 from conlanger.tools.ingest.double_slash_env import apply_double_slash_env_conditions
 from conlanger.tools.ingest.flatten_nested_sets import (
     flatten_nested_sets_in_section_rules,
+)
+from conlanger.tools.ingest.prose_conditional_env import (
+    apply_prose_conditional_env_conditions,
 )
 from conlanger.tools.ingest.prose_position_env import (
     apply_prose_position_env_conditions,
@@ -170,6 +176,7 @@ class IndexDiachronicaParser:
         sporadic_flag = {"sporadic": True} if sporadic else {}
         parts = apply_trailing_glosses(parts)
         parts = apply_stress_conditions(parts)
+        parts = apply_prose_conditional_env_conditions(parts)
         parts = apply_medial_env_conditions(parts)
         parts = apply_prose_position_env_conditions(parts)
         parts = apply_double_slash_env_conditions(parts)

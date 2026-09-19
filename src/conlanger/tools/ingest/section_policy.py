@@ -34,8 +34,8 @@ def resolve_catch_all_else_rules(rules: list[dict[str, Any]]) -> list[dict[str, 
     """Rewrite complementary ``/ else`` rules using the immediately preceding env.
 
     When the previous rule in the same section has ``env`` and no ``exception``,
-    the else rule omits ``env`` (any environment) and sets ``exception`` to that
-    previous ``env``. Deferred shapes (previous rule with both env and exception,
+    and that ``env`` contains ``_`` (ASCA structural focus), the else rule omits
+    ``env`` (any environment) and sets ``exception`` to that previous ``env``. Deferred shapes (previous rule with both env and exception,
     neither, or else-after-else) keep ``env: else`` / ``else?``.
     """
     if not rules:
@@ -62,6 +62,7 @@ def resolve_catch_all_else_rules(rules: list[dict[str, Any]]) -> list[dict[str, 
                         prev_env
                         and not prev_exc
                         and not is_catch_all_else_env(prev_env)
+                        and "_" in prev_env
                     ):
                         resolved = {
                             key: value
