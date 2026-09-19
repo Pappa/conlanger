@@ -1,4 +1,5 @@
 Type: spike
+Status: resolved
 Blocked by:
 
 # Spike: ASCA representation of Khoisan clicks (`invalid_ipa`)
@@ -48,12 +49,16 @@ Example compiled fail:
 
 5. **Deliverable** — findings file: [research/asca-khoisan-click-representation.md](../research/asca-khoisan-click-representation.md) with a **Recommendation** section that names the correction-pass shape for ticket 136 (or `wontfix` / skip-only if no straightforward resolution).
 
+## Answer
+
+Findings: [research/asca-khoisan-click-representation.md](../research/asca-khoisan-click-representation.md). ASCA requires **inventory click clusters** (default `k` + release) or **`[+click]`**; bare Index glyphs fail `validate`. **136:** compile-time normaliser + manual residuals (§17 `Early-Modern-English-ʊ`, optional I/O, `!!`/`ǂɡ` edge cases).
+
 ## Acceptance criteria
 
-- [ ] Findings markdown committed under `.scratch/rule-index/research/`
-- [ ] Each Index click token in the inventory cluster classified (mappable / manual-only / skip)
-- [ ] Explicit recommendation: parse vs compile vs manual vs skip (or ordered combination)
-- [ ] Ticket [136](136-correction-pass-khoisan-click-invalid-ipa.md) unblocked with a short pointer in spike **Answer** (implementation stays on 136)
+- [x] Findings markdown committed under `.scratch/rule-index/research/`
+- [x] Each Index click token in the inventory cluster classified (mappable / manual-only / skip)
+- [x] Explicit recommendation: parse vs compile vs manual vs skip (or ordered combination)
+- [x] Ticket [136](136-correction-pass-khoisan-click-invalid-ipa.md) unblocked with a short pointer in spike **Answer** (implementation stays on 136)
 
 ## References
 

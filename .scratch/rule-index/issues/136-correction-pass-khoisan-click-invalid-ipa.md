@@ -1,11 +1,12 @@
 Type: task
-Blocked by: [138](138-spike-asca-khoisan-click-representation.md)
+Status: ready-for-agent
+Blocked by:
 
 # Correction pass: Khoisan click notation (`invalid_ipa`)
 
 Target cluster: `invalid_ipa` — **47** failing rules at current inventory; IPA tokens **`ǃ`** (25), **`ǀ`** (11), **`ǁ`** (6), **`ǂ`** (5) — concentrated in **§20.x** Khoisan. Spawned from `/grill-with-docs` on [map.md](../map.md) (2026-09-19).
 
-**Policy deferred** until [138 spike — ASCA click representation](138-spike-asca-khoisan-click-representation.md) resolves. Do not choose skip vs manual vs automated mapping at claim time; implement the spike **Recommendation** only.
+**Policy** ([138](../issues/138-spike-asca-khoisan-click-representation.md) resolved): compile-time click normaliser first, then manual residuals — [research/asca-khoisan-click-representation.md](../research/asca-khoisan-click-representation.md).
 
 ## Problem
 
