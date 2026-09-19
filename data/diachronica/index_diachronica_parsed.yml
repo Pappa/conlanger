@@ -26663,12 +26663,13 @@ sections:
     raw: θ ð → t d
     source: index_diachronica_original.html:6064
     rule_id: Middle-Dutch-θ-ð
-  - stages:
+  - comment: (except in the southeast); sporadic
+    stages:
     - '{uː,uw} u'
     - ɔw o
-    comment: (except in the southeast)
     raw: '{uː,uw} u → ɔw o (except in the southeast)'
     source: index_diachronica_original.html:6065
+    sporadic: true
     rule_id: Middle-Dutch-uː,uw-u
   - stages:
     - '{ol,al} {ar,er} or'
@@ -37704,14 +37705,11 @@ sections:
     raw: β → b (in Béarn, Gascon, and Languedoc)
     source: index_diachronica_original.html:7833
     rule_id: Old-Provençal-β_2
-  - comment: sometimes; (though
-    stages:
+  - stages:
     - β
-    - v
-    - ɡw instead if analogy interfered)
-    raw: β → v (though sometimes → ɡw instead if analogy interfered)
+    - '{v,ɡw}'
+    raw: β → {v,ɡw}
     source: index_diachronica_original.html:7834
-    sporadic: true
     rule_id: Old-Provençal-β_3
   - stages:
     - kʷ ɡʷ
@@ -37895,11 +37893,12 @@ sections:
     raw: ts → s / _# (Provence, Limousin, some Languedoc and Gascon)
     source: index_diachronica_original.html:7859
     rule_id: Old-Provençal-ts_2
-  - stages:
+  - comment: pretonic
+    stages:
     - β
     - ∅
-    env: when pretonic and immediately adjacent to a back vowel
-    raw: β → ∅ / when pretonic and immediately adjacent to a back vowel
+    env: B_,_B
+    raw: β → ∅ / B_,_B ; pretonic
     source: index_diachronica_original.html:7860
     rule_id: Old-Provençal-β_6
   - stages:
@@ -37966,10 +37965,8 @@ sections:
     rule_id: Old-Provençal-ð_4
   - stages:
     - ð
-    - z
-    - ∅)
-    comment: (except in some northern and eastern dialects where
-    raw: ð → z (except in some northern and eastern dialects where → ∅)
+    - '{z,∅}'
+    raw: ð → {z,∅}
     source: index_diachronica_original.html:7869
     rule_id: Old-Provençal-ð_5
   - comment: further → dʒ in the north)
@@ -38309,9 +38306,8 @@ sections:
   - stages:
     - rtʃj
     - rts
-    - rs ?)
-    comment: (
-    raw: rtʃj → rts (→ rs ?)
+    - rs
+    raw: rtʃj → rts → rs
     source: index_diachronica_original.html:7916
     rule_id: Old-Provençal-rtʃj
   - stages:
@@ -38375,14 +38371,16 @@ sections:
     raw: rj → rʲ → r / _#
     source: index_diachronica_original.html:7925
     rule_id: Old-Provençal-rj_2
-  - stages:
+  - comment: (except in the west or extreme east, where the outcome was some flavor
+      of (i)(t)ʃ); sporadic
+    stages:
     - '{sːj,stʃj,stj}'
     - ʃ
-    - is (except in the west or extreme east, where the outcome was some flavor of
-      (i)(t)ʃ)
+    - is
     raw: '{sːj,stʃj,stj} → ʃ → is (except in the west or extreme east, where the outcome
       was some flavor of (i)(t)ʃ)'
     source: index_diachronica_original.html:7926
+    sporadic: true
     rule_id: Old-Provençal-sːj,stʃj,stj
   - stages:
     - sj
@@ -38421,20 +38419,14 @@ sections:
     raw: tːj → ts → s
     source: index_diachronica_original.html:7931
     rule_id: Old-Provençal-tːj
-  - comment: i-less forms “prevail in the literary language” and seem to have become
-      common if the dz follows the stress; (?); (in the north and west); (in the south
-      and east)
-    stages:
+  - stages:
     - tj
     - tʃ
     - dj
     - djʒ
-    - dz or idz —medial (i)dz became (i)z
-    raw: tj → tʃ → dj → djʒ (?) → dz (in the north and west) or idz (in the south
-      and east)—medial (i)dz became (i)z; i-less forms “prevail in the literary language”
-      and seem to have become common if the dz follows the stress
+    - '{dz, idz}'
+    raw: tj → tʃ → dj → djʒ → {dz, idz}
     source: index_diachronica_original.html:7932
-    sporadic: true
     rule_id: Old-Provençal-tj
   - stages:
     - l
@@ -38462,12 +38454,8 @@ sections:
     rule_id: Old-Provençal-l_5
   - stages:
     - ndt ndtʃ ntʃ nkt nf
-    - n{d,t} {nts,ndz
-    - nz),ndʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,fː
-    - f)}
-    comment: (; (
-    raw: ndt ndtʃ ntʃ nkt nf → n{d,t} {nts,ndz(→ nz),ndʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,fː(→
-      f)}
+    - n{d,t} {nts,ndz,nz,ndʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,fː,f}
+    raw: ndt ndtʃ ntʃ nkt nf → n{d,t} {nts,ndz,nz,ndʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,fː,f}
     source: index_diachronica_original.html:7936
     rule_id: Old-Provençal-ndt-ndtʃ-ntʃ-nkt-nf
   - stages:

@@ -321,6 +321,9 @@
   reason: replace prose
 - from: " (seems to be a sporadic change"
   to: " ; (seems to be a sporadic change"
+- from: " (except in the"
+  to: " / sporadic ; (except in the"
+  reason: replace prose
 - from: ", in Milyan"
   to: " ; , in Milyan"
   reason: comment

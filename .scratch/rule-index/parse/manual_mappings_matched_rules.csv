@@ -186,6 +186,7 @@ section_index,section_name,rule_id,source,manual_mapping
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-a,index_diachronica_original.html:6043,a → ɒ → o
 17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-f-θ-s,index_diachronica_original.html:6061, / $_ ; (h → ɦ?)
 17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-V,index_diachronica_original.html:6062," / [-long, -stress]"
+17.7.2.2.1,Old Low Franconian to Middle Dutch,"Middle-Dutch-uː,uw-u",index_diachronica_original.html:6065, / sporadic ; (except in the
 17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-V-long-+stress,index_diachronica_original.html:6067, ; in open syllables 
 17.7.2.2.2,Middle Dutch to Modern Dutch,Modern-Dutch-—-x-ɣ,index_diachronica_original.html:6078, / sporadic ; in northern dialects
 17.7.2.2.2,Middle Dutch to Modern Dutch,Modern-Dutch-—-x-ɣ_2,index_diachronica_original.html:6079, / sporadic ; in southern dialects
@@ -248,6 +249,7 @@ section_index,section_name,rule_id,source,manual_mapping
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-N,index_diachronica_original.html:7808, ; in polysyllables
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-ɡ_6,index_diachronica_original.html:7872, / sporadic ; “[b]etween the last two vowels of a proparoxytone”
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-kʷ,index_diachronica_original.html:7892,kʷ → ɡʷ → ɡ / sporadic ; (kʷ → ɡʷ → ɡ ?)
+17.12.1.1.6,Vulgar Latin to Old Provençal,"Old-Provençal-sːj,stʃj,stj",index_diachronica_original.html:7926, / sporadic ; (except in the
 17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,Rhaeto-Romance-a,index_diachronica_original.html:7992, / [+stress]
 17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,Rhaeto-Romance-uː,index_diachronica_original.html:7993, → i / sporadic ; (→ i in most descendants
 17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,Rhaeto-Romance-a-V,index_diachronica_original.html:7994, / 

@@ -518,3 +518,35 @@ rules:
                   content: "e o u æ ø y → {a,e} {o,u} {a,o,u a} {a,o,u} {o,u,i} / _Ca"
                   reason: |
                           Typo: e o u æ ø y → {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i} / _Ca
+        - rule:
+                  id: Old-Provençal-β_3
+                  content: "β → {v,ɡw}"
+                  reason: |
+                          β → v (though sometimes → ɡw instead if analogy interfered)
+        - rule:
+                  id: Old-Provençal-β_6
+                  content: "β → ∅ / B_,_B ; pretonic"
+                  reason: |
+                          β → ∅ / when pretonic and immediately adjacent to a back vowel
+        - rule:
+                  id: Old-Provençal-ð_5
+                  content: "ð → {z,∅}"
+                  reason: |
+                          ð → z (except in some northern and eastern dialects where → ∅)
+        - rule:
+                  id: Old-Provençal-rtʃj
+                  content: "rtʃj → rts → rs"
+                  reason: |
+                          rtʃj → rts (→ rs ?)
+        - rule:
+                  id: Old-Provençal-tj
+                  content: "tj → tʃ → dj → djʒ → {dz, idz}"
+                  reason: |
+                          tj → tʃ → dj → djʒ (?) → dz (in the north and west) or idz (in the south and east)
+                          —medial (i)dz became (i)z; i-less forms “prevail in the literary language” and seem 
+                          to have become common if the dz follows the stress
+        - rule:
+                  id: Old-Provençal-ndt-ndtʃ-ntʃ-nkt-nf
+                  content: "ndt ndtʃ ntʃ nkt nf → n{d,t} {nts,ndz,nz,ndʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,fː,f}"
+                  reason: |
+                          ndt ndtʃ ntʃ nkt nf → n{d,t} {nts,ndz(→ nz),ndʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,fː(→ f)}
