@@ -35,8 +35,8 @@ Skipped: **2/108**
 | 73 | `expected_underscore` |
 | 71 | `unknown_character` |
 | 47 | `invalid_ipa` |
-| 35 | `expected_ipa` |
-| 33 | `missing_slash_output_env` |
+| 36 | `expected_ipa` |
+| 32 | `missing_slash_output_env` |
 | 19 | `syntax_other` |
 | 16 | `nested_brackets` |
 | 11 | `unknown_grouping` |
@@ -203,9 +203,9 @@ Skipped: **2/108**
 |------:|-------------|
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
-| 1 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
+| 1 | `Expected '>', '->' or '=>', but received ')'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
 ### invalid_ipa (error_token)
@@ -240,7 +240,7 @@ Skipped: **2/108**
 
 | count | description |
 |------:|-------------|
-| — | _(none)_ |
+| 1 | `Expected an IPA character, Primative or Matrix, but received ''` |
 
 ### expected_range_dots (error_token)
 
@@ -257,7 +257,7 @@ Skipped: **2/108**
 
 | count | error_token |
 |------:|-------------|
-| 16 | `)` |
+| 15 | `)` |
 | 6 | `(` |
 | 3 | `:` |
 | 3 | `ʲ` |

@@ -3,7 +3,7 @@ section_index,rule_id,error_token,rule
 10.3.11.3,Proto-Tanna-s-c-*J,,"s c *{L,G} > {h,z} {s,z} z | ^ @ Rule 1, Line 1"
 10.5,Proto-Ongan-ɟ-ɡ-*N-*R,,"ɟ ɡ *N [+son,-syl] > {ɟ,j} {ɟ,ɡ} {l,j} {l,r} | ^ @ Rule 1, Line 1"
 12.2,"Proto-Circassian-qʲʷː-qʲʷ-ɢʲʷ,ʁʲʷ-χʲʷ",,"qʲʷ:[+long] qʲʷ ɢʲʷ,ʁʲʷ} χʲʷ > qʷ:[+long] ʔʷ ʁʷ χʷ | ^ @ Rule 1, Line 1"
-17.12.1.1.6,Old-Provençal-ndt-ndtʃ-ntʃ-nkt-nf,,"nz),ndʒ} n(t)s {ɲ,int,nt,ntʃ} {nf,f:[+long] > f)} | ^ @ Rule 1, Line 3"
 36.3.1.1,Laze-N̥V,,"N̥V > hṽ | ^ @ Rule 1, Line 1"
 38.1.1.4,"North-Tai-xr-x-x,ɣʷ",,"xr x {x,ɣ}ʷ > r̥ h {w,v,h} | ^ @ Rule 1, Line 1"
+44.2,Basque-eð,,"e ?) > j / #_V | ^ @ Rule 1, Line 2"
 46.19,Southern-United-States-Shift-English-æ/ɑː,,"æ/ɑ:[+long] > æɪ | ^ @ Rule 1, Line 1"
