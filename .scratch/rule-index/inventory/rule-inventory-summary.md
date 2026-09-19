@@ -32,18 +32,18 @@ Skipped: **2/108**
 
 | count | failure_class |
 |------:|---------------|
-| 74 | `expected_underscore` |
-| 72 | `unknown_character` |
+| 73 | `expected_underscore` |
+| 71 | `unknown_character` |
 | 47 | `invalid_ipa` |
-| 34 | `expected_ipa` |
-| 30 | `missing_slash_output_env` |
+| 35 | `expected_ipa` |
+| 33 | `missing_slash_output_env` |
 | 19 | `syntax_other` |
 | 16 | `nested_brackets` |
 | 11 | `unknown_grouping` |
 | 10 | `expected_number` |
-| 10 | `prose_or_expected_arrow` |
 | 10 | `unknown_feature` |
 | 9 | `diacritic_prereq` |
+| 8 | `prose_or_expected_arrow` |
 | 8 | `segments_before_word` |
 | 8 | `empty_io_panic` |
 | 7 | `stuff_after_word_bound` |
@@ -95,16 +95,16 @@ Skipped: **2/108**
 
 | count | error_token |
 |------:|-------------|
-| 7 | `ː` |
 | 7 | `₂` |
-| 6 | `͜` |
+| 7 | `ː` |
 | 6 | `ŕ` |
+| 6 | `͜` |
 | 6 | `̺` |
 | 5 | `ₙ` |
-| 4 | `̂` |
 | 4 | `̻` |
+| 4 | `̂` |
 | 3 | `̊` |
-| 2 | `̀` |
+| 2 | `̚` |
 ### unknown_character (description)
 
 | count | description |
@@ -151,7 +151,7 @@ Skipped: **2/108**
 
 | count | description |
 |------:|-------------|
-| 47 | `Expected '_', but received ''` |
+| 46 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -202,9 +202,9 @@ Skipped: **2/108**
 | count | description |
 |------:|-------------|
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
-| 2 | `Expected '>', '->' or '=>', but received ')'` |
-| 2 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
+| 1 | `Expected '>', '->' or '=>', but received ')'` |
+| 1 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
@@ -226,7 +226,7 @@ Skipped: **2/108**
 
 | count | error_token |
 |------:|-------------|
-| 8 | `(` |
+| 9 | `(` |
 | 6 | `∅` |
 | 4 | `{` |
 | 3 | `…` |
@@ -257,13 +257,13 @@ Skipped: **2/108**
 
 | count | error_token |
 |------:|-------------|
-| 15 | `)` |
-| 5 | `(` |
+| 16 | `)` |
+| 6 | `(` |
 | 3 | `:` |
 | 3 | `ʲ` |
+| 2 | `̥` |
 | 1 | `*` |
 | 1 | `#` |
-| 1 | `̥` |
 | 1 | `_` |
 ### missing_slash_output_env (description)
 
