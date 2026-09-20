@@ -1,10 +1,64 @@
-- from:
-    “The PIE rules for the voicing of s → z, as in [nizdos] for *nisdos, are assumed
-    to apply”
-  to: s → z / C[+voice]_
-  reason: "*nisdos > nizdos"
-- from: \(→ (\w+) dialectally\?\)
-  to: → \1 ; dialectal
+#region pre-index rule normalisation cleanup
+#endregion
+
+#region index rule normalisation
+
+#endregion
+
+# positional cleanup steps
+
+- from: " / (unless|when not) "
+  to: " / ! "
+  use_regex: True
+  reason: replace prose
+- from: " / near ħ ʕ"
+  to: " / near {ħ,ʕ}"
+
+# set replacements
+# - from: " (/|!) near \\{"
+#   to: " \\1 _,\\{"
+#   use_regex: True
+#   reason: replace prose
+
+#region class letter replacements
+- from: " (/|!) (near|adjacent to) a vowel"
+  to: " \\1 \\2 V"
+  use_regex: True
+  reason: replace prose
+
+- from: " (/|!) (near|adjacent to) (another consonant|consonants)"
+  to: " \\1 \\2 C"
+  use_regex: True
+  reason: replace prose
+- from: " (/|!) (near|adjacent to) nasals"
+  to: " \\1 \\2 N"
+  use_regex: True
+  reason: replace prose
+- from: " (/|!) (near|adjacent to) a nasal vowel"
+  to: " \\1 \\2 V[+nasal]"
+  use_regex: True
+  reason: replace prose
+#endregion
+
+#region feature replacements
+- from: " (/|!) (near|adjacent to) gutturals"
+  to: " \\1 \\2 [+laryngeal]"
+  use_regex: True
+  reason: replace prose
+- from: " (/|!) (near|adjacent to) emphatics"
+  to: " \\1 \\2 [+emphatic]"
+  use_regex: True
+  reason: replace prose
+- from: " / unstressed"
+  to: " / [-stress]"
+  reason: replace prose
+- from: " / stressed"
+  to: " / [+stress]"
+  reason: replace prose
+#endregion
+
+- from: " \\(→ (\\w+) dialectally\\?\\)"
+  to: " → \\1 ; dialectal"
   use_regex: True
   reason: dialectal
 - from: \(dialectally → (\w+)\?\)
@@ -38,48 +92,51 @@
 - from: ɣ → q (more likely, *ɢ → q instead of → ɣ)
   to: ɣ → q ; (more likely, *ɢ → q instead of → ɣ)
   reason: comment
-- from: " / at word boundaries"
-  to: " / #_, _#"
+- from: " (/|!) at word boundaries"
+  to: " \\1 #_, _#"
+  use_regex: True
   reason: replace prose
-- from: " ! at word boundaries"
-  to: " ! #_, _#"
+# - from: " (/|!) adjacent to ([A-Z])"
+#   to: " \\1 \\2_, _\\2"
+#   use_regex: True
+#   reason: replace prose
+
+#region adjacent replacements
+- from: " (/|!) adjacent to ([A-Z])"
+  to: " \\1  \\2_, _\\2"
+  use_regex: True
   reason: replace prose
-- from: " / unstressed"
-  to: " / [-stress]"
+- from: " (/|!) adjacent to (\\{[^}]+\\})"
+  to: " \\1  \\2_, _\\2"
+  use_regex: True
+- from: " (/|!) adjacent to (\\w?\\[[^]]+\\])"
+  to: " \\1  \\2_, _\\2"
+  use_regex: True
   reason: replace prose
-- from: " / stressed"
-  to: " / [+stress]"
+#endregion
+
+#region near replacements
+- from: " (/|!) near ([A-Z])"
+  to: " \\1  \\2_, _\\2"
+  use_regex: True
   reason: replace prose
-- from: " / unless adjacent to another consonant"
-  to: " / ! C_,_C ; unless adjacent to another consonant"
+- from: " (/|!) near (\\{[^}]+\\})"
+  to: " \\1  \\2_, _\\2"
+  use_regex: True
   reason: replace prose
-- from: " / adjacent to {"
-  to: " / _,{"
+- from: " (/|!) near (\\w?\\[[^]]+\\])"
+  to: " \\1  \\2_, _\\2"
+  use_regex: True
   reason: replace prose
-- from: " ! adjacent to {"
-  to: " ! _,{"
-  reason: replace prose
-- from: " / adjacent to a vowel"
-  to: " / V_, _V ; adjacent to a vowel"
-  reason: replace prose
-- from: " / near emphatics"
-  to: " / _[+ emphatic], [+ emphatic]_ ; near emphatics"
-  reason: replace prose
-- from: " / near consonants"
-  to: " / C_, _C ; near consonants"
-  reason: replace prose
-- from: " / near nasals"
-  to: " / [+nasal]_, _[+nasal] ; near nasals"
-  reason: replace prose
-- from: " / near gutturals"
-  to: " / _[+laryngeal], [+laryngeal]_ ; near gutturals"
-  reason: replace prose
-- from: " / near ħ ʕ"
-  to: " / _{ħ,ʕ}, {ħ,ʕ}_ ; near ħ ʕ"
-  reason: replace prose
-- from: " / when not near emphatics"
-  to: " / ! _[+ emphatic], [+ emphatic]_"
-  reason: replace prose
+#endregion
+
+# - from: " (/|!) near ([A-Z])"
+#   to: " \\1 \\2_, _\\2"
+#   use_regex: True
+#   reason: replace prose
+# - from: " / near nasals"
+#   to: " / _,N ;"
+#   reason: replace prose
 - from: " / in Mentasta Ahtna"
   to: " / sporadic ; in Mentasta Ahtna"
   reason: replace prose
@@ -214,15 +271,15 @@
 - from: " (again, "
   to: " ; (again, "
   reason: comment
-- from: " (Blevins "
-  to: " ; (Blevins "
-  reason: comment
+# - from: " (Blevins "
+#   to: " ; (Blevins "
+#   reason: comment
 - from: " (first change marked "
   to: " ; (first change marked "
   reason: comment
-- from: " (?; included here based on "
-  to: " ; (?; included here based on "
-  reason: comment
+# - from: " (?; included here based on "
+#   to: " ; (?; included here based on "
+#   reason: comment
 - from: " (at least one instance of "
   to: " ; (at least one instance of "
   reason: comment
@@ -257,7 +314,7 @@
   to: kʷ → ɡʷ → ɡ / sporadic ; (kʷ → ɡʷ → ɡ ?)
   reason: workaround
 - from: C[+ affricate]
-  to: O:[+delrel]
+  to: O[+delrel]
   reason: asca syntax replacement
 - from: " (velar fricative is conjectured"
   to: " ; (velar fricative is conjectured"
@@ -265,12 +322,12 @@
 - from: " (fricative changes to approximant)"
   to: " ; (fricative changes to approximant)"
   reason: comment
-- from: " (Whimemsz says"
-  to: " ; (Whimemsz says"
-  reason: comment
-- from: "*L"
-  to: L
-  reason: liquids - may be too broad
+# - from: " (Whimemsz says"
+#   to: " ; (Whimemsz says"
+#   reason: comment
+# - from: "*L"
+#   to: L
+#   reason: liquids - may be too broad
 - from: " ʰS "
   to: " Sʰ "
   reason:
@@ -391,18 +448,14 @@
   reason: unhandled environment
 
 # keep these last because they are so broad
-- from: " / in "
-  to: " / "
-  reason: replace prose
-- from: " ! in "
-  to: " ! "
+- from: " (/|!) in "
+  to: " \\1 "
+  use_regex: True
   reason: replace prose
 - from: ", in "
   to: " ; sporadic - in "
   reason: replace prose
-- from: " “("
-  to: " ; “("
-  reason: comment
-- from: " (“"
-  to: " ; (“"
+- from: " (“\\(|\\(“ \\(\\?; | \\(Whimemsz | \\(Blevins )"
+  to: " ; \\1"
+  use_regex: True
   reason: comment

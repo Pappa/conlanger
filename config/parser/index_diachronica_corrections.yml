@@ -12,6 +12,11 @@ rules:
                   content: "{ʃ(ʷ),x} {z,ʒ(ʷ),ɣ} → s j"
                   reason: "Corrected from original source: Northern Athapaskan Languages (Vol. 6), p. 73"
         - rule:
+                  id: Old-Irish-s
+                  content: "s → z / C[+voice]_"
+                  reason: |
+                          The PIE rules for the voicing of s → z, as in [nizdos] for *nisdos, are assumed to apply
+        - rule:
                   id: Old-Irish-m̩-n̩
                   content: "m̩ n̩ → am an / _{s,({m,j,w})V}"
                   reason: "Bracket fix for env set with optional grouping"
@@ -420,7 +425,7 @@ rules:
                             j → ∅ / {ʃ,θ}
         - rule:
                   id: Moroccan-Arabic-C+labial,+velar
-                  content: "{C[+labial],C[+velar]} → [+labial] / u[-long]_, _u[-long]"
+                  content: "{C[+labial],C[+velar]} → [+labial] / adjacent to u[-long]"
                   reason: |
                           The above rule does not seem to be correct.
                           "In positions where /ə/ was deleted, /u/ was also deleted, 

@@ -10,6 +10,7 @@ section_mappings:
   "10":
     "*C": "C"
     "*D": "D"
+    "*L": "L"
     "*R": "R"
     "*T": "T"
     "*Z": "Z"
@@ -26,6 +27,8 @@ section_mappings:
   "36.3.1":
     # "N̥": "{m,n,ŋ}"
     "N̥": "N[-voice]"
+  "44":
+    "*L": "L"
   # "29.1.1.1":
   #   "TŁ": "[+lateral]" # laterals
   #   "TŠ": "[+cons, +dist, +fr, -bk, +hi, -lo]" # palatals

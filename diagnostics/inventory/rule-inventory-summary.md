@@ -13,8 +13,8 @@
 
 ## Corrections
 
-OK: **119/121**
-Skipped: **2/121**
+OK: **120/122**
+Skipped: **2/122**
 
 ### Skipped corrections
 
@@ -32,18 +32,18 @@ Skipped: **2/121**
 
 | count | failure_class |
 |------:|---------------|
-| 49 | `expected_underscore` |
-| 33 | `expected_ipa` |
-| 24 | `unknown_character` |
+| 45 | `expected_underscore` |
+| 32 | `expected_ipa` |
+| 25 | `unknown_character` |
 | 23 | `missing_slash_output_env` |
 | 19 | `syntax_other` |
 | 15 | `nested_brackets` |
+| 12 | `segments_before_word` |
 | 11 | `unknown_grouping` |
 | 10 | `expected_number` |
 | 10 | `empty_io_panic` |
 | 10 | `unknown_feature` |
 | 8 | `prose_or_expected_arrow` |
-| 8 | `segments_before_word` |
 | 7 | `stuff_after_word_bound` |
 | 6 | `multiple_underlines_env` |
 | 5 | `unknown_reference` |
@@ -103,8 +103,8 @@ Skipped: **2/121**
 | 1 | `ð` |
 | 1 | `̣` |
 | 1 | `ḭ` |
+| 1 | `〈` |
 | 1 | `̺` |
-| 1 | `#` |
 ### unknown_character (description)
 
 | count | description |
@@ -143,7 +143,7 @@ Skipped: **2/121**
 | count | error_token |
 |------:|-------------|
 | 9 | `,` |
-| 7 | `/` |
+| 3 | `/` |
 | 2 | `:` |
 | 2 | `∅` |
 | 1 | `ʲ` |
@@ -228,10 +228,10 @@ Skipped: **2/121**
 | 3 | `*` |
 | 3 | `…` |
 | 3 | `ʷ` |
-| 2 | `,` |
+| 2 | `ʲ` |
 | 2 | `∅` |
 | 2 | `_` |
-| 2 | `ʲ` |
+| 1 | `,` |
 | 1 | `ʱ` |
 ### expected_ipa (description)
 
@@ -298,7 +298,7 @@ Skipped: **2/121**
 
 | count | description |
 |------:|-------------|
-| 8 | `Cannot have segments before the beginning of a word` |
+| 12 | `Cannot have segments before the beginning of a word` |
 
 ### stuff_after_word_bound (error_token)
 

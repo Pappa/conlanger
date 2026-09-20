@@ -248,7 +248,13 @@ def apply_manual_mappings(
     hits: list[ManualMappingHit] = []
     for row in mappings:
         if row.use_regex and re.search(row.from_text, working) is not None:
-            working = re.sub(row.from_text, row.to_text, working, count=1)
+            try:
+                working = re.sub(row.from_text, row.to_text, working, count=1)
+            except Exception as e:
+                print(
+                    f"Error applying manual mapping: {row.from_text} -> {row.to_text}: {e}"
+                )
+                raise
             hits.append(ManualMappingHit(from_text=row.from_text, to_text=row.to_text))
         elif row.from_text and row.from_text in working:
             working = working.replace(row.from_text, row.to_text)
