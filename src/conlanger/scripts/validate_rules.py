@@ -191,9 +191,9 @@ def main() -> int:
     fail_n = len(filter_inventory_by_ok(current_df, ok=False))
     skipped_n = len(filter_inventory_skipped(current_df))
     lines = [
-        f"wrote {success_path} rows={ok_n}",
-        f"wrote {error_path} rows={fail_n}",
-        f"wrote {skipped_path} rows={skipped_n}",
+        f"wrote {success_path.relative_to(ROOT)} rows={ok_n}",
+        f"wrote {error_path.relative_to(ROOT)} rows={fail_n}",
+        f"wrote {skipped_path.relative_to(ROOT)} rows={skipped_n}",
     ]
     if args.field_isolation:
         field_df = field_isolation_rows_to_dataframe(field_rows)
@@ -202,18 +202,18 @@ def main() -> int:
         field_skipped_n = len(filter_field_isolation_skipped(field_df))
         lines.extend(
             [
-                f"wrote {field_success_path} rows={field_ok_n}",
-                f"wrote {field_error_path} rows={field_fail_n}",
-                f"wrote {field_skipped_path} rows={field_skipped_n}",
+                f"wrote {field_success_path.relative_to(ROOT)} rows={field_ok_n}",
+                f"wrote {field_error_path.relative_to(ROOT)} rows={field_fail_n}",
+                f"wrote {field_skipped_path.relative_to(ROOT)} rows={field_skipped_n}",
             ]
         )
     lines.extend(
         [
             (
-                f"{changelog_action} {changelog_path} flips={flip_n} "
+                f"{changelog_action} {changelog_path.relative_to(ROOT)} flips={flip_n} "
                 f"timestamp={run_timestamp}"
             ),
-            f"wrote {summary_path}",
+            f"wrote {summary_path.relative_to(ROOT)}",
         ]
     )
     print("\n".join(lines))

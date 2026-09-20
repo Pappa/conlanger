@@ -19,6 +19,7 @@ from conlanger.scripts.pipeline_defaults import (
     DEFAULT_HTML,
     DEFAULT_PARSE_DIR,
     DEFAULT_YAML,
+    ROOT,
 )
 from conlanger.tools.index_io import write_cleaned_index
 from conlanger.tools.ingest import (
@@ -77,11 +78,13 @@ def main() -> int:
         if rule.get("status") == "skipped"
     )
     print(
-        f"wrote {args.yaml_out} sections={n_sections} rules={n_rules} "
+        f"wrote {args.yaml_out.relative_to(ROOT)} sections={n_sections} rules={n_rules} "
         f"parse_skipped={n_skipped} rules_with_comment={n_with_comment}"
     )
-    print(f"wrote {comment_summary_path}")
-    print(f"wrote {matched_path} matches={len(parser.manual_mapping_matches)}")
+    print(f"wrote {comment_summary_path.relative_to(ROOT)}")
+    print(
+        f"wrote {matched_path.relative_to(ROOT)} matches={len(parser.manual_mapping_matches)}"
+    )
     return 0
 
 

@@ -6,7 +6,14 @@ import sys
 from pathlib import Path
 from unittest.mock import patch
 
+import pytest
+
 from conlanger.scripts import create_index as regen
+
+
+@pytest.fixture(autouse=True)
+def tmp_root(tmp_path: Path, mocker):
+    return mocker.patch("conlanger.scripts.create_index.ROOT", tmp_path)
 
 
 def _configure_parser_mock(

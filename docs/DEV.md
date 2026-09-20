@@ -9,8 +9,10 @@ uv run pytest
 Ruff:
 
 ```bash
-uv run ruff check --fix
-uv run ruff format && uv run ruff format --check
+uv run ruff check src tests --fix && \
+   uv run ruff check src tests && \
+   uv run ruff format src tests && \
+   uv run ruff format src tests --check
 ```
 
 Coverage threshold lives in `[tool.coverage.report] fail_under` in `pyproject.toml`; full `uv run pytest` enforces it.
