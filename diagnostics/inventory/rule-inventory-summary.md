@@ -33,8 +33,8 @@ Skipped: **2/121**
 | count | failure_class |
 |------:|---------------|
 | 49 | `expected_underscore` |
-| 33 | `expected_ipa` |
-| 24 | `unknown_character` |
+| 32 | `expected_ipa` |
+| 25 | `unknown_character` |
 | 23 | `missing_slash_output_env` |
 | 19 | `syntax_other` |
 | 15 | `nested_brackets` |
@@ -103,8 +103,8 @@ Skipped: **2/121**
 | 1 | `ð` |
 | 1 | `̣` |
 | 1 | `ḭ` |
+| 1 | `〈` |
 | 1 | `̺` |
-| 1 | `#` |
 ### unknown_character (description)
 
 | count | description |
@@ -228,10 +228,10 @@ Skipped: **2/121**
 | 3 | `*` |
 | 3 | `…` |
 | 3 | `ʷ` |
-| 2 | `,` |
+| 2 | `ʲ` |
 | 2 | `∅` |
 | 2 | `_` |
-| 2 | `ʲ` |
+| 1 | `,` |
 | 1 | `ʱ` |
 ### expected_ipa (description)
 
