@@ -40,10 +40,11 @@ Applied to a **working copy** of the extracted line; **`raw` is stored before an
 
 | Step | Status | Order | Rationale | Code |
 | --- | --- | ---: | --- | --- |
-| Index Diachronica correction overlay (by rule id) | implemented | A½1 | Owner-authored Unicode line fixes from `config/parser/index_diachronica_corrections.yml`; replaces extracted text when the HTML **rule id** matches. | `parse_rule_element` |
-| Section mapping (`section_mappings`) | implemented | A½2 | Section-scoped token rewrites from `config/parser/parser_config.yml` (e.g. Austronesian `*D` → class letter `D`); ancestry merge via `section_index_prefixes` ([ticket 97](../.scratch/rule-index/issues/97-implement-parser-config-section-mappings.md)). | `apply_section_mappings` |
-| Manual mapping (`manual_mappings.yml`) | implemented | A½3 | Owner-authored substring rewrites on the working line; longest `from` first. | `apply_manual_mappings` |
-| Quoted-prose detection | implemented | A½4 | Whole-line editorial prose → empty `stages` + `comment`; no further transforms. | `is_quoted_prose_paragraph` |
+| Index Diachronica correction overlay (by rule id) | implemented | A½1 | Owner-authored Unicode line fixes from `config/parser/index_diachronica_corrections.yml` on the **working line** when the HTML **rule id** matches; **`raw`** stays HTML-only ([ADR-0016](./adr/0016-parse-pipeline-order-and-raw-semantics.md)). | `parse_rule_element` |
+| Manual mapping (`manual_mappings.yml`) | implemented | A½2 | Owner-authored substring rewrites on the working line; longest `from` first. | `apply_manual_mappings` |
+| Index rule normalisation | placeholder | A½3 | Ordered surface transforms after manual mappings; passes in [ticket 143](../.scratch/rule-index/issues/143-implement-index-rule-normalisation-passes.md) ([ADR-0016](./adr/0016-parse-pipeline-order-and-raw-semantics.md)). | `apply_index_rule_normalisation` |
+| Section mapping (`section_mappings`) | implemented | A½4 | Section-scoped token rewrites from `config/parser/parser_config.yml` (e.g. Austronesian `*D` → class letter `D`); ancestry merge via `section_index_prefixes` ([ticket 97](../.scratch/rule-index/issues/97-implement-parser-config-section-mappings.md)). | `apply_section_mappings` |
+| Quoted-prose detection | implemented | A½5 | Whole-line editorial prose → empty `stages` + `comment`; no further transforms. | `is_quoted_prose_paragraph` |
 
 ---
 
@@ -61,7 +62,7 @@ Applied to the **remainder** after the first-`;` comment peel (see Phase B½); *
 
 ### Phase B½ — First-`;` rule comment peel (before structural split)
 
-After **Manual mapping** and quoted-prose detection; **before** symbol normalization and `extract_rule_parts`. The tail is stored as index **rule comment** as-is (no symbol/feature/IPA/series transforms). Detectors (`sporadic`, trailing glosses, stress, medial) run on the remainder only — not on **rule comment**. Field-level env/exception `;` capture (`apply_semicolon_field_comments`) is retired in favour of this whole-line cut ([ticket 77](../.scratch/rule-index/issues/77-implement-first-semicolon-comment-cut.md)).
+After Phase A½ overlays (correction → manual mapping → index rule normalisation → section mapping) and quoted-prose detection; **before** symbol normalization and `extract_rule_parts`. The tail is stored as index **rule comment** as-is (no symbol/feature/IPA/series transforms). Detectors (`sporadic`, trailing glosses, stress, medial) run on the remainder only — not on **rule comment**. Field-level env/exception `;` capture (`apply_semicolon_field_comments`) is retired in favour of this whole-line cut ([ticket 77](../.scratch/rule-index/issues/77-implement-first-semicolon-comment-cut.md)).
 
 | Step | Status | Order | Rationale | Code |
 | --- | --- | ---: | --- | --- |

@@ -21,9 +21,9 @@ Amend [index-diachronica-parser.md](../../../docs/system/index-diachronica-parse
 
 ## Outcomes
 
-- [ ] New ADR (or amend ADR-0006 / ADR-0010) committed under `docs/adr/`
-- [ ] Parser doc table updated
-- [ ] `IndexDiachronicaParser.parse_rule_element` implements order (may land with [141](141-implement-indexrule-pydantic-and-yaml-schema.md))
+- [x] New ADR (or amend ADR-0006 / ADR-0010) committed under `docs/adr/` — [ADR-0016](../../docs/adr/0016-parse-pipeline-order-and-raw-semantics.md); [ADR-0012](../../docs/adr/0012-index-diachronica-corrections-overlay.md) amended
+- [x] Parser doc table updated
+- [x] `IndexDiachronicaParser.parse_rule_element` implements order (index rule normalisation placeholder; passes in [143](143-implement-index-rule-normalisation-passes.md))
 
 ## Related
 

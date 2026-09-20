@@ -1622,7 +1622,7 @@ def test_parse_applies_corrections_overlay_by_rule_id(tmp_path: Path):
     ).parse(html_path, source_file="index.html")
     rule = doc["sections"][0]["rules"][0]
     assert rule["rule_id"] == "Blackfoot-nr"
-    assert rule["raw"] == "nl → s"
+    assert rule["raw"] == "nr → s"
     assert rule["stages"] == ["nl", "s"]
 
 
@@ -1786,7 +1786,7 @@ def test_parse_order_correction_then_section_then_manual():
         section_index="10.1",
         rule_id="Test-rule",
     )
-    assert rules[0]["raw"] == "*D → mapped"
+    assert rules[0]["raw"] == "*D → d"
     assert rules[0]["stages"] == ["D", "manual"]
 
 

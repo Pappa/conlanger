@@ -37,13 +37,17 @@ sections:
 | `stages` | yes | ordered opaque Index-shaped strings; length 2 = single step; ≥ 3 = chain; `[]` + `status: skipped` = hold-out |
 | `raw` | yes | original HTML rule-line text; multi-line via `\|` literal block |
 | `source` | yes | `index_diachronica_original.html:<line>` — first line of the span |
-| `env` | no | **Environment** — absent = any |
-| `exception` | no | **Exception** — absent = none |
+| `env` | no | **Environment** — absent = any; opaque Index-shaped `str` or structured **`IndexContext`** ([ADR-0017](../../docs/adr/0017-structured-env-exception-indexcontext.md)) |
+| `exception` | no | **Exception** — absent = none; opaque Index-shaped `str` or **`IndexContext`** ([ADR-0017](../../docs/adr/0017-structured-env-exception-indexcontext.md)) |
 | `sporadic` | no | **Uncertainty** — rule application is sporadic or optional; gloss stripped from fields |
 | `comment` | no | Inline editorial prose for **this rule line** — qualifiers, semicolon tails, parenthetical notes stripped from fields; see [ticket 30](30-rule-comment-field-on-index-rules.md) |
 | `status` | no | **Rule status** — e.g. `skipped` for hold-outs; reasons in **validation report** |
 
-Field values in `stages`, `env`, and `exception` are opaque Index-shaped strings — not an ASCA AST. See **Corpus rule**, **Stages**, **Applier-neutral**, **Subscript notation**, **Rule comment** in `CONTEXT.md`. Abbreviation / feature policy: tickets 06, 07.
+Field values in `stages` are opaque Index-shaped strings — not an ASCA AST. **`env`** and **`exception`** are opaque strings or **`IndexContext`** objects until compile resolves structure to strings ([ADR-0017](../../docs/adr/0017-structured-env-exception-indexcontext.md), [ticket 144](144-implement-indexcontext-compile-resolution.md)). Existing corpus rows may keep string `env`/`exception` until regen; loader accepts both during transition. See **Corpus rule**, **Stages**, **IndexContext**, **Applier-neutral**, **Subscript notation**, **Rule comment** in `CONTEXT.md`. Abbreviation / feature policy: tickets 06, 07.
+
+### Schema amendment (2026-09)
+
+Structured **`env` / `exception`** as **`IndexContext`** ([ADR-0017](../../docs/adr/0017-structured-env-exception-indexcontext.md)) — supersedes paused [122](122-grill-proximity-conditions-yaml.md) and open [123](123-grill-applicability-dialect-sporadic-conditions-yaml.md) for YAML shape. Parse working-line order and HTML-only **`raw`**: [ADR-0016](../../docs/adr/0016-parse-pipeline-order-and-raw-semantics.md).
 
 ### Schema amendment (2026-08-09)
 

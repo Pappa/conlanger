@@ -6,10 +6,9 @@ Phase 2: optional ``/ env`` then optional ``! exception``
 (usual form ``input → output /env ! exception``). Word ``except`` and a second `` / `` are edge-case fallbacks.
 Phase 3: first ``<p>`` after ``<h2>`` → section ``citation`` (whole text, cleanup later);
 other non-``schg`` paragraphs → ``comments``.
-Phase 4: pre-lxml ``<sub>``→Unicode normalisation, then element text extract; **Index
-Diachronica correction** overlay by **rule id**; **section mapping** on working copy
-from ``parser_config.yml`` ``section_mappings`` (ancestry merge); **Manual mapping** on
-working copy (``raw`` unchanged). Then **collective subscript** expansion via
+Phase 4: pre-lxml ``<sub>``→Unicode normalisation, then element text extract (**``raw``**);
+**Index Diachronica correction** on working copy; **Manual mapping**; **index rule
+normalisation**; **section mapping** (ancestry merge). Then **collective subscript** expansion via
 ``series_expansions`` on index fields (``raw`` unchanged). **Symbol** normalization on
 index fields only. Remaining Index rule arrows (``→``) in field values become ASCA ``>``.
 Chained rules store each spine segment in ``stages``; compile-time expansion is deferred.
@@ -42,6 +41,9 @@ from typing import Any
 from conlanger.tools.ingest.double_slash_env import apply_double_slash_env_conditions
 from conlanger.tools.ingest.flatten_nested_sets import (
     flatten_nested_sets_in_section_rules,
+)
+from conlanger.tools.ingest.index_rule_normalisation import (
+    apply_index_rule_normalisation,
 )
 from conlanger.tools.ingest.prose_conditional_env import (
     apply_prose_conditional_env_conditions,
@@ -131,14 +133,14 @@ class IndexDiachronicaParser:
         rule_id: str = "",
     ) -> list[dict[str, Any]]:
         raw = extract_text_with_subs(el)
+        working = raw
         if rule_id and rule_id in self._corrections:
-            raw = self._corrections[rule_id]
+            working = self._corrections[rule_id]
             self._matched_correction_ids.add(rule_id)
         line = getattr(el, "sourceline", None) or 0
         source = f"{source_file}:{line}"
 
-        # apply manual mappings before section mappings to clean up the raw text
-        working, hits = apply_manual_mappings(raw, self._manual_mappings)
+        working, hits = apply_manual_mappings(working, self._manual_mappings)
         for hit in hits:
             self._matched_manual_froms.add(hit.from_text)
             self.manual_mapping_matches.append(
@@ -151,6 +153,7 @@ class IndexDiachronicaParser:
                 )
             )
 
+        working = apply_index_rule_normalisation(working)
         working = apply_section_mappings(working, section_index, self._parser_config)
 
         if is_quoted_prose_paragraph(working):

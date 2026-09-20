@@ -2,7 +2,7 @@
 
 Maintainers can replace individual Index rule lines without editing `index_diachronica_original.html`. Overrides live in `config/parser/index_diachronica_corrections.yml` as a `rules` list of entries with `rule.id`, `rule.content` (Unicode Index rule string, no `<sub>` markup), and optional `rule.reason`.
 
-When a correction exists for a rule id, that string is the rule’s **`raw`** after HTML text extraction — an updated phonological claim while provenance **`source`** still points at the original HTML line. The HTML file remains the published artifact; corrections are project overlays for known errata.
+When a correction exists for a rule id, that string replaces the extracted text on the parse **working line** only ([ADR-0016](0016-parse-pipeline-order-and-raw-semantics.md)). **`raw`** stays the HTML extract; provenance **`source`** still points at the original HTML line. The HTML file remains the published artifact; corrections are project overlays for known errata.
 
 ## Considered Options
 
@@ -12,6 +12,6 @@ When a correction exists for a rule id, that string is the rule’s **`raw`** af
 
 ## Consequences
 
-- Parse loads corrections after `<sub>`→Unicode normalisation and element text extract; before Manual mapping on the working copy.
+- Parse loads corrections after `<sub>`→Unicode normalisation and element text extract; on the working copy before manual mapping ([ADR-0016](0016-parse-pipeline-order-and-raw-semantics.md)).
 - Unknown correction keys warn at regen; they do not block parse.
 - Distinct from **Manual mapping** (substring rewrite on working copy, `raw` unchanged) and from correspondence-series expansion (deferred to config grill / ADR-0004 amendment).

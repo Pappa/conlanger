@@ -46,9 +46,9 @@ Amend corpus-rule schema docs ([03 yaml schema](../03-yaml-schema-rule-index.md)
 
 ## Outcomes
 
-- [ ] ADR committed
-- [ ] Glossary + schema ticket/doc updated
-- [ ] Migration note: rules with string `env`/`exception` until regen (loader accepts both during transition if needed)
+- [x] ADR committed — [ADR-0017](../../docs/adr/0017-structured-env-exception-indexcontext.md)
+- [x] Glossary + schema ticket/doc updated
+- [x] Migration note: rules with string `env`/`exception` until regen (loader accepts both during transition if needed) — in [03 yaml schema](03-yaml-schema-cleaned-rule-index.md)
 
 ## Related
 
