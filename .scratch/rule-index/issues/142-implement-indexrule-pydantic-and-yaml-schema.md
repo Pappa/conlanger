@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: ready-for-human
 Blocked by: 140, 141
 
 # Implement `IndexRule` / `IndexContext` and structured YAML emit
@@ -17,10 +17,10 @@ Introduce pydantic **`IndexRule`** (parse-time counterpart to **`SoundChangeRule
 
 ## Acceptance
 
-- [ ] `IndexContext`, `IndexRule` in `src/conlanger/tools/ingest/` (or shared models module)
-- [ ] YAML round-trip tests for example shapes from 141
-- [ ] `uv run create_index` regen: intentional schema migration (inventory run documents delta)
-- [ ] Parser doc + ADRs 140/141 landed or linked
+- [x] `IndexContext`, `IndexRule` in `src/conlanger/tools/ingest/` (or shared models module)
+- [x] YAML round-trip tests for example shapes from 141
+- [x] `uv run create_index` regen: intentional schema migration (inventory run documents delta)
+- [x] Parser doc + ADRs 140/141 landed or linked
 
 ## Related
 

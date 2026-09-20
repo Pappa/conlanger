@@ -20,6 +20,8 @@ from conlanger.tools.compile.field_tokens import (
     render_field_tokens,
     set_token_members,
 )
+from conlanger.tools.compile.index_context import env_exception_input_to_string
+from conlanger.tools.ingest.index_models import IndexContext
 from conlanger.utils.mappings import CompilerConfig
 
 _SUPPORTED_FORMATS = frozenset({"asca"})
@@ -102,6 +104,10 @@ class SoundChangeRule(RulePartBase):
             return None
         if isinstance(value, str):
             return RuleEnv.from_raw(value)
+        if isinstance(value, dict):
+            return RuleEnv.from_raw(env_exception_input_to_string(value))
+        if isinstance(value, IndexContext):
+            return RuleEnv.from_raw(env_exception_input_to_string(value))
         return value
 
     @model_validator(mode="before")

@@ -42,6 +42,7 @@ from conlanger.tools.ingest.double_slash_env import apply_double_slash_env_condi
 from conlanger.tools.ingest.flatten_nested_sets import (
     flatten_nested_sets_in_section_rules,
 )
+from conlanger.tools.ingest.index_models import IndexRule
 from conlanger.tools.ingest.index_rule_normalisation import (
     apply_index_rule_normalisation,
 )
@@ -157,15 +158,14 @@ class IndexDiachronicaParser:
         working = apply_section_mappings(working, section_index, self._parser_config)
 
         if is_quoted_prose_paragraph(working):
-            rule: dict[str, Any] = {
-                "stages": [],
-                "raw": raw,
-                "source": source,
-                "comment": raw.strip(),
-            }
-            if rule_id:
-                rule["rule_id"] = rule_id
-            return [rule]
+            quoted = IndexRule(
+                stages=[],
+                raw=raw,
+                source=source,
+                comment=raw.strip(),
+                rule_id=rule_id or None,
+            )
+            return [quoted.to_index_dict()]
         working, rule_comment = split_line_semicolon_comment(working)
         normalized = normalize_symbols(working)
         parts = extract_rule_parts(normalized)
@@ -176,7 +176,6 @@ class IndexDiachronicaParser:
         parts = apply_series_expansions(parts, self._parser_config.series_expansions)
         parts = apply_sporadic_qualifier(parts)
         sporadic = parts.pop("sporadic", False)
-        sporadic_flag = {"sporadic": True} if sporadic else {}
         parts = apply_trailing_glosses(parts)
         parts = apply_stress_conditions(parts)
         parts = apply_prose_conditional_env_conditions(parts)
@@ -188,21 +187,23 @@ class IndexDiachronicaParser:
         parts = apply_ipa_mappings(parts, self._ipa_mappings)
         parts = finalize_stages_shape(parts)
         if rule_id and rule_id in self._parser_config.skip_rule_ids:
-            skipped: dict[str, Any] = {
-                "stages": [],
-                "raw": raw,
-                "source": source,
-                "status": "skipped",
-                "rule_id": rule_id,
-            }
-            comment = self._parser_config.skip_rule_comments.get(rule_id)
-            if comment:
-                skipped["comment"] = comment
-            return [skipped]
-        rule = {**parts, "raw": raw, "source": source, **sporadic_flag}
-        if rule_id:
-            rule["rule_id"] = rule_id
-        return [rule]
+            skipped = IndexRule(
+                stages=[],
+                raw=raw,
+                source=source,
+                status="skipped",
+                rule_id=rule_id,
+                comment=self._parser_config.skip_rule_comments.get(rule_id),
+            )
+            return [skipped.to_index_dict()]
+        index_rule = IndexRule.from_parse_fields(
+            parts,
+            raw=raw,
+            source=source,
+            sporadic=sporadic,
+            rule_id=rule_id or None,
+        )
+        return [index_rule.to_index_dict()]
 
     def parse(
         self,
