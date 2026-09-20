@@ -18,9 +18,17 @@
   to: → \1
   use_regex: True
   reason: chaining
+- from: \((\w)\?\)
+  to: (\1)
+  use_regex: True
+  reason: optional
+- from: (\([^)]+ is rare\))
+  to: ; \1
+  use_regex: True
+  reason: comment
 - from: → (?)
   to: ""
-  reason: chaining
+  reason: unknown output
 - from: bw mw → ɡw ŋw (→ ɡ ŋ / _V[+ rounded])
   to: bw mw → ɡw ŋw → ɡ ŋ / _V[+ rounded]
   reason: chaining
@@ -266,7 +274,7 @@
 - from: " ʰS "
   to: " Sʰ "
   reason:
-    I have no idea what ʰS  is supposed to represent - I'm assuming it's a typo
+    I have no idea what ʰS is supposed to represent - I'm assuming it's a typo
     for Sʰ
 - from: + A POA
   to: α place

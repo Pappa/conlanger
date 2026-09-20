@@ -13,7 +13,7 @@ _GLOSS_KEYWORD_RE = re.compile(
     r"dialect|languages|Celtic|Polynesian|similarity|impossible|universal|"
     r"common|below|above|short only|long only|inland|coastal|typical|"
     r"across-the-board|across the board|not sure|not certain|not universal|"
-    r"not common|not a complete|may have|did not occur|Whimemsz"
+    r"not common|not a complete|may have|did not occur|Whimemsz|specifically"
     r")\b",
     re.IGNORECASE,
 )

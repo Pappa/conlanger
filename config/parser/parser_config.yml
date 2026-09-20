@@ -23,6 +23,9 @@ section_mappings:
     "1": "[+low tone]"
     "2": "[+mid tone]"
     "3": "[+high tone]"
+  "36.3.1":
+    # "N̥": "{m,n,ŋ}"
+    "N̥": "N[-voice]"
   # "29.1.1.1":
   #   "TŁ": "[+lateral]" # laterals
   #   "TŠ": "[+cons, +dist, +fr, -bk, +hi, -lo]" # palatals

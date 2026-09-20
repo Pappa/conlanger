@@ -3,11 +3,11 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.3**
-- Rows: **9839** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
+- Rows: **9840** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **9055** (92.0%)
-- Fail: **257** (2.6%)
+- OK: **9060** (92.1%)
+- Fail: **253** (2.6%)
 - Skipped: **527** (5.4%)
 
 
@@ -23,8 +23,8 @@ Skipped: **2/121**
 
 ## Sections
 
-- All OK: **512 / 714** (71.7%)
-- Some OK: **149 / 714** (20.9%)
+- All OK: **514 / 714** (72.0%)
+- Some OK: **147 / 714** (20.6%)
 - None OK: **0 / 714** (0.0%)
 - Sections skipped: **53 / 714** (7.4%)
 
@@ -34,15 +34,15 @@ Skipped: **2/121**
 |------:|---------------|
 | 49 | `expected_underscore` |
 | 33 | `expected_ipa` |
-| 25 | `missing_slash_output_env` |
 | 24 | `unknown_character` |
+| 23 | `missing_slash_output_env` |
 | 19 | `syntax_other` |
 | 15 | `nested_brackets` |
 | 11 | `unknown_grouping` |
 | 10 | `expected_number` |
-| 10 | `prose_or_expected_arrow` |
 | 10 | `empty_io_panic` |
 | 10 | `unknown_feature` |
+| 8 | `prose_or_expected_arrow` |
 | 8 | `segments_before_word` |
 | 7 | `stuff_after_word_bound` |
 | 6 | `multiple_underlines_env` |
@@ -205,7 +205,6 @@ Skipped: **2/121**
 |------:|-------------|
 | 3 | `Expected '>', '->' or '=>', but received '*'` |
 | 3 | `Expected '>', '->' or '=>', but received '/'` |
-| 2 | `Expected '>', '->' or '=>', but received '̥'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 
@@ -227,12 +226,12 @@ Skipped: **2/121**
 | 9 | `(` |
 | 4 | `{` |
 | 3 | `*` |
-| 3 | `∅` |
-| 3 | `ʷ` |
 | 3 | `…` |
-| 2 | `ʲ` |
+| 3 | `ʷ` |
+| 2 | `,` |
+| 2 | `∅` |
 | 2 | `_` |
-| 1 | `,` |
+| 2 | `ʲ` |
 | 1 | `ʱ` |
 ### expected_ipa (description)
 
@@ -256,12 +255,11 @@ Skipped: **2/121**
 | count | error_token |
 |------:|-------------|
 | 8 | `)` |
-| 6 | `(` |
+| 5 | `(` |
 | 3 | `:` |
 | 3 | `ʲ` |
 | 2 | `*` |
 | 1 | `#` |
-| 1 | `̥` |
 | 1 | `_` |
 ### missing_slash_output_env (description)
 

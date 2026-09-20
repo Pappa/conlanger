@@ -58,6 +58,7 @@ section_index,section_name,rule_id,source,manual_mapping
 8.5.1,Proto-Turkic to Proto-Kypchak,Proto-Kypchak-ɡm-rɡ,index_diachronica_original.html:2291, ; (this second one
 8.5.1,Proto-Turkic to Proto-Kypchak,Proto-Kypchak-ew,index_diachronica_original.html:2298,→ \1
 8.5.1.2,Proto-Kypchak to Kyrgyz,Kyrgyz-∅,index_diachronica_original.html:2327, ; (not sure what 
+9.1.2,Proto-Vietic to Middle Vietnamese,Middle-Vietnamese-s,index_diachronica_original.html:2418,(\1)
 10.1.1.2,Proto-Bali-Sasak-Sumbawan to Sasak,Sasak-Vh,index_diachronica_original.html:2559," ; (again, "
 10.1.1.3,Proto-Bali-Sasak-Sumbawan to Sumbawan,Sumbawan-u-i,index_diachronica_original.html:2571, / sporadic ; sometimes
 10.1.1.3,Proto-Bali-Sasak-Sumbawan to Sumbawan,Sumbawan-Vh,index_diachronica_original.html:2572," ; (again, "
@@ -349,6 +350,7 @@ section_index,section_name,rule_id,source,manual_mapping
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-V_3,index_diachronica_original.html:7774," ; (again, "
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-N,index_diachronica_original.html:7808, ; in polysyllables
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-w,index_diachronica_original.html:7814, ; (“
+17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-β_5,index_diachronica_original.html:7845,; \1
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-ɡ_6,index_diachronica_original.html:7872, / sporadic ; “[b]etween the last two vowels of a proparoxytone”
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-kʷ,index_diachronica_original.html:7892,kʷ → ɡʷ → ɡ / sporadic ; (kʷ → ɡʷ → ɡ ?)
 17.12.1.1.6,Vulgar Latin to Old Provençal,"Old-Provençal-sːj,stʃj,stj",index_diachronica_original.html:7926, / sporadic ; (except in the
@@ -356,12 +358,14 @@ section_index,section_name,rule_id,source,manual_mapping
 17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,Rhaeto-Romance-uː,index_diachronica_original.html:7993, → i / sporadic ; (→ i in most descendants
 17.12.1.1.7,Vulgar Latin to Rhaeto-Romance,Rhaeto-Romance-a-V,index_diachronica_original.html:7994, / 
 17.12.1.1.8,Latin to Romanian,"Romanian-m,n,s",index_diachronica_original.html:8009,# ; in polysyllables
+17.12.1.1.8,Latin to Romanian,Romanian-kj-ɡj,index_diachronica_original.html:8057,; \1
 17.12.1.1.9,Latin to Sardinian,Sardinian-∅,index_diachronica_original.html:8098, ; (“
 17.12.1.1.9,Latin to Sardinian,"Sardinian-i,j",index_diachronica_original.html:8104, ; (“
 17.12.1.1.9,Latin to Sardinian,Sardinian-kw-ɡw,index_diachronica_original.html:8107, ; (“
 17.12.1.1.9,Latin to Sardinian,"Sardinian-li,j",index_diachronica_original.html:8113, ; (“
 17.12.1.1.9,Latin to Sardinian,Sardinian-d_2,index_diachronica_original.html:8120, ; (“
 17.12.1.1.10,Vulgar Latin to Spanish,"Spanish-e-ɛ,a-ɔ-o",index_diachronica_original.html:8143, ; sporadic - in 
+17.12.1.1.10,Vulgar Latin to Spanish,Spanish-ʝ,index_diachronica_original.html:8154,; \1
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-V_5,index_diachronica_original.html:8163, / [-stress]
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-h,index_diachronica_original.html:8199, ; “(
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-ʎ_2,index_diachronica_original.html:8202, ; (“
@@ -438,6 +442,7 @@ section_index,section_name,rule_id,source,manual_mapping
 36.2,Sin Sukchu to Guānhuà,Guānhuà-yʔ_5,index_diachronica_original.html:11860, ; sporadic - in 
 36.2,Sin Sukchu to Guānhuà,Guānhuà-yʔ_6,index_diachronica_original.html:11861,→ \1
 36.2,Sin Sukchu to Guānhuà,Guānhuà-yʔ_6,index_diachronica_original.html:11861, ; sporadic - in 
+36.2,Sin Sukchu to Guānhuà,Guānhuà-jew,index_diachronica_original.html:11868,(\1)
 36.2,Sin Sukchu to Guānhuà,Guānhuà-ɔ,index_diachronica_original.html:11873, / sporadic ; in two cases cited
 36.2,Sin Sukchu to Guānhuà,Guānhuà-awʔ,index_diachronica_original.html:11884, ; (“
 36.3.3.1,Old Tibetan to Amdo dialects,Amdo-dialects-ʃ,index_diachronica_original.html:12289, sporadic ; (some dialects
@@ -478,6 +483,7 @@ section_index,section_name,rule_id,source,manual_mapping
 37.2.6.4,Proto-Dhegiha to Quapaw,Quapaw-m,index_diachronica_original.html:13001, ; (*)
 42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-ŋ,index_diachronica_original.html:13762, ; sporadic - in 
 42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-iw-ow,index_diachronica_original.html:13764, ; (*)
+42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-ɤː?-ɑː-æː,index_diachronica_original.html:13767,(\1)
 42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-ɤː?-ɑː-æː,index_diachronica_original.html:13767, / [+stress]
 42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-Aw,index_diachronica_original.html:13769, / [-stress]
 42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-iw,index_diachronica_original.html:13771, / [-stress]

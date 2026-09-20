@@ -7856,7 +7856,7 @@ sections:
     rule_id: Middle-Vietnamese-t*ʰ-d-ɡ
   - stages:
     - s
-    - t(ʰ?)
+    - t(ʰ)
     raw: s → t(ʰ?)
     source: index_diachronica_original.html:2418
     rule_id: Middle-Vietnamese-s
@@ -37805,11 +37805,11 @@ sections:
     raw: β → u / V_(s)#
     source: index_diachronica_original.html:7844
     rule_id: Old-Provençal-β_4
-  - stages:
+  - comment: (the latter is rare)
+    stages:
     - β
     - '{∅,f}'
     env: C_(s)#
-    comment: (the latter is rare)
     raw: β → {∅,f} / C_(s)# (the latter is rare)
     source: index_diachronica_original.html:7845
     rule_id: Old-Provençal-β_5
@@ -39230,10 +39230,10 @@ sections:
     raw: c → ∅ / n_t
     source: index_diachronica_original.html:8056
     rule_id: Romanian-c_2
-  - stages:
+  - comment: (ɡj → ∅ is rare)
+    stages:
     - kj ɡj
-    - tʃ {j,∅} (ɡj
-    - ∅ is rare)
+    - tʃ {j,∅}
     raw: kj ɡj → tʃ {j,∅} (ɡj → ∅ is rare)
     source: index_diachronica_original.html:8057
     rule_id: Romanian-kj-ɡj
@@ -39898,10 +39898,10 @@ sections:
     raw: ʎ → ʒ
     source: index_diachronica_original.html:8153
     rule_id: Spanish-ʎ
-  - stages:
+  - comment: (the latter is rare)
+    stages:
     - ʝ
     - '{∅,ʒ}'
-    comment: (the latter is rare)
     raw: ʝ → {∅,ʒ} (the latter is rare)
     source: index_diachronica_original.html:8154
     rule_id: Spanish-ʝ
@@ -55961,7 +55961,7 @@ sections:
   - stages:
     - jew
     - au
-    env: C̣(C?)_
+    env: C̣(C)_
     raw: jew → au / C̣(C?)_
     source: index_diachronica_original.html:11868
     rule_id: Guānhuà-jew
@@ -55971,7 +55971,7 @@ sections:
     raw: jew → iau / else
     source: index_diachronica_original.html:11869
     rule_id: Guānhuà-jew_2
-    exception: C̣(C?)_
+    exception: C̣(C)_
   - comment: sporadic
     stages:
     - '{jem,jen}'
@@ -56263,7 +56263,7 @@ sections:
     rule_id: Laze-Sb,ɡ-Sk
   - stages:
     - '{r,s}l {r,s}n'
-    - l̥ N̥
+    - l̥ N[-voice]
     env: $_V
     raw: '{r,s}l {r,s}n → l̥ N̥ / %_V'
     source: index_diachronica_original.html:11926
@@ -56276,7 +56276,7 @@ sections:
     source: index_diachronica_original.html:11927
     rule_id: Laze-n̥
   - stages:
-    - N̥V
+    - N[-voice]V
     - hṽ
     raw: N̥V → hṼ
     source: index_diachronica_original.html:11928
@@ -56400,7 +56400,7 @@ sections:
     source: index_diachronica_original.html:11948
     rule_id: Mosuo-Na-n̥
   - stages:
-    - N̥V
+    - N[-voice]V
     - hṽ
     raw: N̥V → hṼ
     source: index_diachronica_original.html:11949
@@ -56558,7 +56558,7 @@ sections:
     rule_id: Naxi-r,s
   - stages:
     - '{r,s}N'
-    - N̥
+    - N[-voice]
     - hṽ
     - hV
     raw: '{r,s}N → N̥ → hṼ → hV'
@@ -65516,7 +65516,7 @@ sections:
     source: index_diachronica_original.html:13766
     rule_id: Pre-Finnic-m
   - stages:
-    - ɤ(ː?) ɑː æː
+    - ɤ(ː) ɑː æː
     - ɑ(ː?) oː eː
     env: '[+stress]'
     raw: ɤ(ː?) ɑː æː → ɑ(ː?) oː eː / stressed
@@ -67239,9 +67239,10 @@ sections:
     rule_id: Aquitanian-s
   - stages:
     - S[+tense]
-    - S[- voice]ː (specifically, the source lists t[+tense] k[+tense]
+    - S[- voice]ː
     - t(ː) k(ː), both of the tokens with optional length suffixes and *aTa
     - 〈atta〉, so I’m extrapolating)
+    comment: (specifically, the source lists t[+ fortis] k[+ fortis]
     raw: S[+ fortis] → S[- voice]ː (specifically, the source lists t[+ fortis] k[+
       fortis] → t(ː) k(ː), both of the tokens with optional length suffixes and *aTa
       → 〈atta〉, so I’m extrapolating)
