@@ -1,6 +1,8 @@
 Type: grilling
-Status: needs-grilling
+Status: resolved
 Blocked by: None
+
+**Superseded (2026-09-20):** YAML / parse schema for position → [Grill: parse-time IndexRule model](139-grill-parse-indexrule-model-and-surface-normalization.md) + [ADR structured env/exception](141-adr-structured-env-exception-indexcontext.md). Keep corpus inventory and manual_mapping retirement lists below as input to [index rule normalisation](143-implement-index-rule-normalisation-passes.md) / [compile resolver](144-implement-indexcontext-compile-resolution.md).
 
 # Grill: position relations in the rule index YAML
 

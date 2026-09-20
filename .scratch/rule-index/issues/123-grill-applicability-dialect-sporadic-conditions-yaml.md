@@ -1,6 +1,8 @@
 Type: grilling
-Status: needs-grilling
+Status: resolved
 Blocked by: None
+
+**Superseded (2026-09-20):** Dialect on `IndexContext.dialect` only (no rule-level `applicability` v1) per [139](139-grill-parse-indexrule-model-and-surface-normalization.md). Re-open a ticket if render/inventory gating (`dialect: northern`, `on_mismatch`) is needed beyond [144 compile resolver](144-implement-indexcontext-compile-resolution.md).
 
 # Grill: applicability, dialect scope, sporadic vs conditioning, and phased structured YAML
 
