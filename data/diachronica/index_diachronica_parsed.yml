@@ -2657,7 +2657,7 @@ sections:
     - j
     raw: ɡʲ → j / in southern regions
     source: index_diachronica_original.html:1445
-    comment: in southern regions; sporadic
+    comment: in southern dialects; sporadic
     sporadic: true
     rule_id: Iraqi-Arabic-ɡʲ
   - stages:
@@ -4660,7 +4660,7 @@ sections:
     - '{ʃ,s}'
     raw: ʃ → {ʃ,s} / in inland varieties; remains /ʃ/ in coastal varieties
     source: index_diachronica_original.html:1824
-    comment: in inland varieties; remains /ʃ/ in coastal varieties; sporadic
+    comment: in inland dialects; remains /ʃ/ in coastal dialects; sporadic
     sporadic: true
     rule_id: Southern-East-Cree-ʃ
   - stages:
@@ -7295,7 +7295,7 @@ sections:
     env: '#_'
     raw: 'd → t / #_ (“kind of”, something about evidence from borrowings)'
     source: index_diachronica_original.html:2287
-    comment: “kind of”,; (something about evidence from borrowings)
+    comment: (“kind of”, something about evidence from borrowings)
     rule_id: Proto-Kypchak-d
   - stages:
     - V
@@ -10418,8 +10418,8 @@ sections:
     raw: bː dː dzː ɡː → bʱ dʱ dzʱ ɡʱ (Whimemsz says these become “voiced stops with
       voiceless releases. . .treated as unit phonemes, not clusters)”
     source: index_diachronica_original.html:2970
-    comment: “voiced stops with voiceless releases. . .treated as unit phonemes, not
-      clusters)”; (Whimemsz says these become
+    comment: (Whimemsz says these become “voiced stops with voiceless releases. .
+      .treated as unit phonemes, not clusters)”
     rule_id: Proto-North-Sarawak-bː-dː-dzː-ɡː
   - stages:
     - ə
@@ -12848,7 +12848,7 @@ sections:
     env: '#_V'
     raw: '∅ → h / #_V (“it isn’t clear if this happens unconditionally”)'
     source: index_diachronica_original.html:3414
-    comment: “it isn’t clear if this happens unconditionally”; ()
+    comment: (“it isn’t clear if this happens unconditionally”)
     rule_id: Shark-Bay-∅
 - section: Proto-Oceanic to Tolomako
   index: 10.3.8
@@ -14811,13 +14811,12 @@ sections:
     - e
     - ə
     env: _N when unstressed
-    exception: Ḱ_ (
+    exception: Ḱ_
     raw: e → ə / _N when unstressed ! Ḱ_ (?; included here based on a comment earlier
       in the paper, but not listed on the correspondence list)
     source: index_diachronica_original.html:3788
-    comment: included here based on a comment earlier in the paper, but not listed
-      on the correspondence list); ?
-    sporadic: true
+    comment: (?; included here based on a comment earlier in the paper, but not listed
+      on the correspondence list)
     rule_id: Proto-Ongan-e
   - stages:
     - '{m,ɲ} n'
@@ -20062,7 +20061,7 @@ sections:
     - '{ts,tʃ}'
     raw: ḱ → {ts,tʃ} (“[a]rchaic relic”)
     source: index_diachronica_original.html:4962
-    comment: (“[a]rchaic relic”)
+    comment: ; (“[a]rchaic relic”)
     rule_id: Gheg-Albanian-ḱ_3
   - stages:
     - kʲ
@@ -20308,7 +20307,7 @@ sections:
     - '{ts,tʃ}'
     raw: ḱ → {ts,tʃ} (“[a]rchaic relic”)
     source: index_diachronica_original.html:5001
-    comment: (“[a]rchaic relic”)
+    comment: ; (“[a]rchaic relic”)
     rule_id: Tosk-Albanian-ḱ_3
   - stages:
     - kʲ
@@ -23428,9 +23427,9 @@ sections:
       know the exact values of lenited /m n l r/. We can guess that lenited m became
       a nasalized labial continuant of some sort, but beyond that, we don’t know.”)
     source: index_diachronica_original.html:5521
-    comment: “We don’t know the exact values of lenited /m n l r/. We can guess that
+    comment: (“We don’t know the exact values of lenited /m n l r/. We can guess that
       lenited m became a nasalized labial continuant of some sort, but beyond that,
-      we don’t know.”; ()
+      we don’t know.”)
     rule_id: Old-Irish-p-t-k-kʷ-b-d-ɡ-m-n-l-r-s
   - stages:
     - k
@@ -23628,7 +23627,7 @@ sections:
     env: '[]_'
     raw: — hn hm → nː mː / [anything]_ (“[t]his change is a bit speculative”)
     source: index_diachronica_original.html:5552
-    comment: “[t]his change is a bit speculative”; ()
+    comment: (“[t]his change is a bit speculative”)
     rule_id: Old-Irish-—-hn-hm
   - stages:
     - st zd
@@ -24062,7 +24061,7 @@ sections:
     - '{ei,i}'
     raw: ei → {ei,i} (“PIE *ei evolution is not well reconstructed yet”)
     source: index_diachronica_original.html:5622
-    comment: “PIE *ei evolution is not well reconstructed yet”; ()
+    comment: (“PIE *ei evolution is not well reconstructed yet”)
     rule_id: Dacian-ei
   - stages:
     - bʱ dʱ ɡʲʱ ɡʱ ɡʷʱ
@@ -25002,7 +25001,7 @@ sections:
     raw: æ → æː (e.g., NYC) or ɑː (e.g., Boston) / _{F[-voiced],N[-voiced]} (“words
       which change vary between dialects”)
     source: index_diachronica_original.html:5788
-    comment: (“words which change vary between dialects”)
+    comment: ; (“words which change vary between dialects”)
     rule_id: American-English-æ
   - stages:
     - ɒ
@@ -25596,7 +25595,7 @@ sections:
     env: '{p,k}_#'
     raw: t → ∅ / {p,k}_# (“except in some inflected forms” for *kt)
     source: index_diachronica_original.html:5884
-    comment: “except in some inflected forms”; (for *kt)
+    comment: (“except in some inflected forms” for *kt)
     rule_id: Scots-t
   - stages:
     - d
@@ -25671,7 +25670,7 @@ sections:
     env: _$#
     raw: — uː → ʌu / when-stem final, in northern varieties
     source: index_diachronica_original.html:5897
-    comment: when-stem final ; sporadic - in northern varieties
+    comment: when-stem final ; sporadic - in northern dialects
     sporadic: true
     rule_id: Scots-—-uː
   - stages:
@@ -25703,7 +25702,7 @@ sections:
     env: _n
     raw: — a → i / _n (in northern varieties)
     source: index_diachronica_original.html:5901
-    comment: (in northern varieties)
+    comment: (in northern dialects)
     rule_id: Scots-—-a
   - stages:
     - a
@@ -25732,7 +25731,7 @@ sections:
     - əi
     raw: — ɛː → ɛi (→ əi?) / in some northern varieties
     source: index_diachronica_original.html:5905
-    comment: in some northern varieties; sporadic
+    comment: in some northern dialects; sporadic
     sporadic: true
     rule_id: Scots-—-ɛː
   - stages:
@@ -26908,7 +26907,7 @@ sections:
       _C{C,V,#} (“especially before /xt/”), and Low German borrowings
     source: index_diachronica_original.html:6109
     comment: ', except in certain unstressed endings and monosyllables, _C{C,V,#}
-      (“especially before /xt/”), and Low German borrowings; sporadic'
+      ; (“especially before /xt/”), and Low German borrowings; sporadic'
     sporadic: true
     rule_id: Standard-German-uː-yː-iː
   - stages:
@@ -32879,7 +32878,7 @@ sections:
     env: _#
     raw: ɔ̃ → ɔ / _# (in some regions or dialects)
     source: index_diachronica_original.html:7088
-    comment: (in some regions or dialects); sporadic
+    comment: (in some dialects); sporadic
     sporadic: true
     rule_id: Polish-ɔ̃_2
   - stages:
@@ -34513,7 +34512,7 @@ sections:
     raw: u → w → ∅ / (“when in unstressed penult or between first and tonic syllables;
       irregular”)
     source: index_diachronica_original.html:7350
-    comment: (“when in unstressed penult or between first and tonic syllables; irregular”);
+    comment: ; (“when in unstressed penult or between first and tonic syllables; irregular”);
       sporadic
     sporadic: true
     rule_id: Catalan-u
@@ -34647,7 +34646,7 @@ sections:
     - Vː
     raw: VV → Vː (“For outcomes of word-final vowels, see down below”)
     source: index_diachronica_original.html:7369
-    comment: “For outcomes of word-final vowels, see down below”; ()
+    comment: (“For outcomes of word-final vowels, see down below”)
     rule_id: Catalan-VV
   - stages:
     - ndj
@@ -34682,7 +34681,7 @@ sections:
     env: V_CV
     raw: l → w / V_CV (“although l was usually restored later”)
     source: index_diachronica_original.html:7374
-    comment: “although l was usually restored later”; ()
+    comment: (“although l was usually restored later”)
     rule_id: Catalan-l_2
   - stages:
     - mn
@@ -34851,10 +34850,10 @@ sections:
   - stages:
     - V
     - ∅
-    env: V:[+stress]$_(C)(C)V(C)# (
+    env: V:[+stress]$_(C)(C)V(C)#
     raw: V → ∅ / ”V%_(C)(C)V(C)# (“irregular; e is kept before n”)
     source: index_diachronica_original.html:7398
-    comment: e is kept before n”); “irregular
+    comment: (“irregular; e is kept before n”)
     rule_id: Catalan-V_5
   - stages:
     - b
@@ -37268,7 +37267,7 @@ sections:
       in Limousin, Languedoc, and Gascon, though when _ɲ this change may have been
       blocked)
     source: index_diachronica_original.html:7750
-    comment: (in Limousin and neighboring regions, the last two particularly in Limousin,
+    comment: (in Limousin and neighboring dialects, the last two particularly in Limousin,
       Languedoc, and Gascon, though when _ɲ this change may have been blocked)
     rule_id: Old-Provençal-—-å-ɛ-ɔ
   - stages:
@@ -37613,7 +37612,7 @@ sections:
     env: _u
     raw: w → v → ∅ / _u (“restored by analogy in many words”)
     source: index_diachronica_original.html:7814
-    comment: “restored by analogy in many words”; ()
+    comment: (“restored by analogy in many words”)
     rule_id: Old-Provençal-w
   - stages:
     - w
@@ -38537,7 +38536,7 @@ sections:
     - (i)(t)ʃ
     raw: stʃ → (i)(t)ʃ (for western and extreme eastern regions)
     source: index_diachronica_original.html:7945
-    comment: (for western and extreme eastern regions)
+    comment: (for western and extreme eastern dialects)
     rule_id: Old-Provençal-stʃ_2
   - stages:
     - stʃ
@@ -38861,7 +38860,7 @@ sections:
     env: _a
     raw: k ɡ → tʃ dʒ / _a (note the similarity with some varieties of Old Provençal)
     source: index_diachronica_original.html:7995
-    comment: (note the similarity with some varieties of Old Provençal)
+    comment: (note the similarity with some dialects of Old Provençal)
     rule_id: Rhaeto-Romance-k-ɡ
   - stages:
     - C[+voice]
@@ -39489,7 +39488,7 @@ sections:
     env: _s
     raw: ∅ → i / _s (“[m]ainly Logudorese”)
     source: index_diachronica_original.html:8098
-    comment: “[m]ainly Logudorese”; ()
+    comment: (“[m]ainly Logudorese”)
     rule_id: Sardinian-∅
   - stages:
     - nd {lː,ld}
@@ -39540,7 +39539,7 @@ sections:
     env: Vr_V
     raw: '{i,j} → dʒ / Vr_V (“dialectal”)'
     source: index_diachronica_original.html:8104
-    comment: “dialectal”; ()
+    comment: (“dialectal”)
     rule_id: Sardinian-i,j
   - stages:
     - v
@@ -39562,7 +39561,7 @@ sections:
     env: '#_'
     raw: 'kw ɡw → pː bː / #_ (“[o]nly Logudorese”)'
     source: index_diachronica_original.html:8107
-    comment: “[o]nly Logudorese”; ()
+    comment: (“[o]nly Logudorese”)
     rule_id: Sardinian-kw-ɡw
   - stages:
     - w
@@ -39607,7 +39606,7 @@ sections:
     - '{ts,dz,ldz,dʒ,lː}'
     raw: l{i,j} → lː → {ts,dz,ldz,dʒ,lː} (“varies”)
     source: index_diachronica_original.html:8113
-    comment: “varies”; ()
+    comment: (“varies”)
     rule_id: Sardinian-li,j
   - stages:
     - e
@@ -39656,7 +39655,7 @@ sections:
     env: V_V
     raw: d → r / V_V (“[s]ome Campidanese”)
     source: index_diachronica_original.html:8120
-    comment: “[s]ome Campidanese”; ()
+    comment: (“[s]ome Campidanese”)
     rule_id: Sardinian-d_2
   - stages:
     - b d ɡ
@@ -40176,7 +40175,7 @@ sections:
     - /ʝ/
     raw: ʎ → /ʝ/ (“merged with”)
     source: index_diachronica_original.html:8202
-    comment: “merged with”; ()
+    comment: (“merged with”)
     rule_id: Spanish-ʎ_2
   - stages:
     - ʎ
@@ -44745,7 +44744,7 @@ sections:
     - ə
     raw: ia → ə (“unspecified”)
     source: index_diachronica_original.html:9273
-    comment: “unspecified”; ()
+    comment: (“unspecified”)
     rule_id: Arhuaco-ia
   - stages:
     - i
@@ -48946,8 +48945,8 @@ sections:
     raw: Vˀ → V[+low tone] (“since then partially neutralized in noun and verb stems,
       but ‘still clear in verbal prefixes’”)
     source: index_diachronica_original.html:10333
-    comment: “since then partially neutralized in noun and verb stems, but ‘still
-      clear in verbal prefixes’”; ()
+    comment: (“since then partially neutralized in noun and verb stems, but ‘still
+      clear in verbal prefixes’”)
     rule_id: Lower-Tanana-Vˀ
   - stages:
     - e a {ɑ,ʊ}
@@ -55399,7 +55398,7 @@ sections:
     env: C̣Cʲ_?w
     raw: w → ∅ / C̣Cʲ_?w (“optional”)
     source: index_diachronica_original.html:11786
-    comment: “optional”; ()
+    comment: (“optional”)
     rule_id: Old-Mandarin-w_2
   - stages:
     - w
@@ -55734,8 +55733,8 @@ sections:
     raw: i → [long-tail vowel thing] / C̣_ (“sometimes”, in “variant readings”); when
       following /ʂ ʐ/, sometimes yields [ʂi], other times [s truncated vowel-thing]
     source: index_diachronica_original.html:11840
-    comment: sporadic - in “variant readings”); when following /ʂ ʐ/, sometimes yields
-      [ʂi], other times [s truncated vowel-thing]; (“sometimes”
+    comment: (“sometimes” ; sporadic - in “variant readings”); when following /ʂ ʐ/,
+      sometimes yields [ʂi], other times [s truncated vowel-thing]
     sporadic: true
     rule_id: Guānhuà-i
   - stages:
@@ -56066,8 +56065,8 @@ sections:
     raw: awʔ → ɔʔ (“Trigault gives a variant in -ɛʔ, which becomes general in the
       later GH varieties”)
     source: index_diachronica_original.html:11884
-    comment: “Trigault gives a variant in -ɛʔ, which becomes general in the later
-      GH varieties”; ()
+    comment: (“Trigault gives a variant in -ɛʔ, which becomes general in the later
+      GH dialects”)
     rule_id: Guānhuà-awʔ
   - stages:
     - '{jawʔ,wawʔ}'
@@ -58502,8 +58501,7 @@ sections:
     raw: ∅ → Vː[+high rising tone] / C_# (“usually one of [/aː iː ʌ̃ː/ with this tone],
       the conditions are unclear”)
     source: index_diachronica_original.html:12356
-    comment: “usually one of [/aː iː ʌ̃ː/ with this tone], the conditions are unclear”;
-      ()
+    comment: (“usually one of [/aː iː ʌ̃ː/ with this tone], the conditions are unclear”)
     rule_id: Cherokee-∅
   - stages:
     - iji
@@ -58630,7 +58628,7 @@ sections:
     exception: _hCC
     raw: i → e / ! _hCC (“short only”)
     source: index_diachronica_original.html:12380
-    comment: “short only”; ()
+    comment: (“short only”)
     rule_id: Proto-Northern-Iroquoian-i
   - stages:
     - ∅
@@ -59943,7 +59941,7 @@ sections:
     - V[-long] _C:[+stress](C)(C)V
     raw: Vː → V[-long] _”C(C)(C)V (“this change happens only in the Ontario dialect”)
     source: index_diachronica_original.html:12601
-    comment: “this change happens only in the Ontario dialect”; ()
+    comment: (“this change happens only in the Ontario dialect”)
     rule_id: Oneida-Vː
   - stages:
     - ∅
@@ -60434,7 +60432,7 @@ sections:
     env: _{k(ʷ),(ˀ)t}{s,R,H}
     raw: ”V → ”Vː / _{k(ʷ),(ˀ)t}{s,R,H} (“penultimate syllables only”)
     source: index_diachronica_original.html:12687
-    comment: “penultimate syllables only”; ()
+    comment: (“penultimate syllables only”)
     rule_id: Tuscarora-”V_2
   - stages:
     - V:[+stress]
@@ -60628,7 +60626,7 @@ sections:
     - ɨ̃(ː) ɔ(ː) u(ː)
     raw: ə̃(ː) a(ː) o(ː) → ɨ̃(ː) ɔ(ː) u(ː) (“in all positions”)
     source: index_diachronica_original.html:12724
-    comment: “in all positions”; ()
+    comment: (“in all positions”)
     rule_id: Eastern-Tuscarora-ə̃ː-aː-oː
 - section: Proto-Siouan-Iroquoian to Proto-Siouan
   index: '37.2'
@@ -67705,7 +67703,7 @@ sections:
     env: '{V,C}_r'
     raw: e → a / {V,C}_r (“mainly in the western dialects”)
     source: index_diachronica_original.html:14157
-    comment: “mainly in the western dialects”; ()
+    comment: (“mainly in the western dialects”)
     rule_id: Basque-e_4
   - stages:
     - u i
@@ -67800,7 +67798,7 @@ sections:
     - ∅…h
     raw: h…h → ∅…h (“affect[s] both the oral /h/ and the nasalized aspiration”)
     source: index_diachronica_original.html:14172
-    comment: “affect[s] both the oral /h/ and the nasalized aspiration”; ()
+    comment: (“affect[s] both the oral /h/ and the nasalized aspiration”)
     rule_id: Basque-h…h
   - stages:
     - '*-ɾ'
@@ -67837,7 +67835,7 @@ sections:
     env: '{E,j}_'
     raw: t → c / {E,j}_ (“some areas”)
     source: index_diachronica_original.html:14177
-    comment: “some areas”; ()
+    comment: (“some areas”)
     rule_id: Basque-t
   - stages:
     - t
@@ -67850,10 +67848,11 @@ sections:
   - stages:
     - d ð
     - ɟ ʝ
-    env: '{E,j}_ ?'
+    env: '{E,j}_'
     raw: d ð → ɟ ʝ / {E,j}_ ? (“some dialects”)
     source: index_diachronica_original.html:14179
-    comment: “some dialects”; ()
+    comment: (“some dialects”); ?
+    sporadic: true
     rule_id: Basque-d-ð
   - stages:
     - d ð
@@ -67876,7 +67875,7 @@ sections:
     env: '{E,j}_'
     raw: ɡ → dʒ / {E,j}_ (“in some Biscayan areas”)
     source: index_diachronica_original.html:14182
-    comment: “in some Biscayan areas”; ()
+    comment: (“in some Biscayan areas”)
     rule_id: Basque-ɡ
   - stages:
     - j
@@ -67953,8 +67952,8 @@ sections:
     raw: ʎ ɲ → jl jn (“common in Low Navarrese, Labourdin, and is even regular in
       the High Navarrese of Sakana”)
     source: index_diachronica_original.html:14191
-    comment: “common in Low Navarrese, Labourdin, and is even regular in the High
-      Navarrese of Sakana”; ()
+    comment: (“common in Low Navarrese, Labourdin, and is even regular in the High
+      Navarrese of Sakana”)
     rule_id: Basque-ʎ-ɲ
   - stages:
     - V
@@ -68139,7 +68138,7 @@ sections:
       though these latter two may be varieties of Guipuscoan)
     source: index_diachronica_original.html:14225
     comment: (Biscayan, partially in Guipuscoan, Donostia, San Sebastián, though these
-      latter two may be varieties of Guipuscoan)
+      latter two may be dialects of Guipuscoan)
     rule_id: Basque-s̻-ts̺
   - stages:
     - s̻
@@ -68436,7 +68435,7 @@ sections:
       and “a single phoneme in contrast to the nasal diphthong [ãɪ̃] of the U.S. Northeast”
       (though the article doesn’t specify what this is; maybe it’s just plain ã)
     source: index_diachronica_original.html:14299
-    comment: some speakers (esp. in southern regions) may also have pin-pen and “a
+    comment: some speakers (esp. in southern dialects) may also have pin-pen and “a
       single phoneme in contrast to the nasal diphthong [ãɪ̃] of the U.S. Northeast”
       (though the article doesn’t specify what this is; maybe it’s just plain ã)
     rule_id: California-Vowel-Shift-English-æ-ɪ
@@ -68484,7 +68483,7 @@ sections:
     - eʊ̯
     raw: oʊ̯ → eʊ̯ (“common only within certain social groups”)
     source: index_diachronica_original.html:14307
-    comment: “common only within certain social groups”; ()
+    comment: (“common only within certain social groups”)
     rule_id: California-Vowel-Shift-English-oʊ̯
 - section: Belgian and Netherlandish Dutch Monophthongization
   index: '46.3'
@@ -68539,7 +68538,7 @@ sections:
     env: _$#
     raw: uː → ʌu / when-stem final, in northern varieties
     source: index_diachronica_original.html:14324
-    comment: when-stem final ; sporadic - in northern varieties
+    comment: when-stem final ; sporadic - in northern dialects
     sporadic: true
     rule_id: Scots-Vowel-Shifts-uː
   - stages:
@@ -68571,7 +68570,7 @@ sections:
     env: _n
     raw: a → i / _n (in northern varieties)
     source: index_diachronica_original.html:14328
-    comment: (in northern varieties)
+    comment: (in northern dialects)
     rule_id: Scots-Vowel-Shifts-a
   - stages:
     - a
@@ -68600,7 +68599,7 @@ sections:
     - əi
     raw: ɛː → ɛi (→ əi?) / in some northern varieties
     source: index_diachronica_original.html:14332
-    comment: in some northern varieties; sporadic
+    comment: in some northern dialects; sporadic
     sporadic: true
     rule_id: Scots-Vowel-Shifts-ɛː
   - stages:
@@ -69257,7 +69256,7 @@ sections:
     - ɒɹ
     raw: ɑɹ → ɒɹ (“often”)
     source: index_diachronica_original.html:14484
-    comment: “often”; ()
+    comment: (“often”)
     rule_id: Southern-United-States-Shift-English-ɑɹ
   - stages:
     - z

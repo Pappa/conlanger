@@ -13,12 +13,17 @@
   reason: replace prose
 - from: " / near ħ ʕ"
   to: " / near {ħ,ʕ}"
+  reason: convert to set notation
 
-# set replacements
-# - from: " (/|!) near \\{"
-#   to: " \\1 _,\\{"
-#   use_regex: True
-#   reason: replace prose
+- from: "(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*"
+  to: "dialects"
+  use_regex: True
+  reason: align dialect text
+
+- from: "in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects"
+  to: "in\\1\\2\\3 dialects"
+  use_regex: True
+  reason: align dialect text
 
 #region class letter replacements
 - from: " (/|!) (near|adjacent to) a vowel"
@@ -96,10 +101,6 @@
   to: " \\1 #_, _#"
   use_regex: True
   reason: replace prose
-# - from: " (/|!) adjacent to ([A-Z])"
-#   to: " \\1 \\2_, _\\2"
-#   use_regex: True
-#   reason: replace prose
 
 #region adjacent replacements
 - from: " (/|!) adjacent to ([A-Z])"
@@ -152,9 +153,6 @@
 - from: " / in northern dialects"
   to: " / sporadic ; in northern dialects"
   reason: replace prose
-- from: " / in southern regions"
-  to: " / sporadic ; in southern regions"
-  reason: replace prose
 - from: " / in southern dialects"
   to: " / sporadic ; in southern dialects"
   reason: replace prose
@@ -167,11 +165,12 @@
 - from: " / Pije and Fwai"
   to: " / sporadic ; Pije and Fwai"
   reason: replace prose
+
 - from: " (in southern dialects"
   to: " sporadic ; (in southern dialects"
   reason: replace prose
-- from: " (in some regions"
-  to: " sporadic ; (in some regions"
+- from: " (in some dialects"
+  to: " sporadic ; (in some dialects"
   reason: replace prose
 - from: " in certain frequently-used words"
   to: " / sporadic ; in certain frequently-used words"
@@ -271,15 +270,15 @@
 - from: " (again, "
   to: " ; (again, "
   reason: comment
-# - from: " (Blevins "
-#   to: " ; (Blevins "
-#   reason: comment
+- from: " (Blevins "
+  to: " ; (Blevins "
+  reason: comment
 - from: " (first change marked "
   to: " ; (first change marked "
   reason: comment
-# - from: " (?; included here based on "
-#   to: " ; (?; included here based on "
-#   reason: comment
+- from: " (?; included here based on "
+  to: " ; (?; included here based on "
+  reason: comment
 - from: " (at least one instance of "
   to: " ; (at least one instance of "
   reason: comment
@@ -322,9 +321,9 @@
 - from: " (fricative changes to approximant)"
   to: " ; (fricative changes to approximant)"
   reason: comment
-# - from: " (Whimemsz says"
-#   to: " ; (Whimemsz says"
-#   reason: comment
+- from: " (Whimemsz says"
+  to: " ; (Whimemsz says"
+  reason: comment
 # - from: "*L"
 #   to: L
 #   reason: liquids - may be too broad
@@ -351,8 +350,8 @@
 - from: " / in some "
   to: " / sporadic ; in some "
   reason: replace prose
-- from: " / in inland varieties"
-  to: " / sporadic ; in inland varieties"
+- from: " / in inland dialects"
+  to: " / sporadic ; in inland dialects"
   reason: replace prose
 - from: " / in diminutives"
   to: " / sporadic ; diminutives"
@@ -448,14 +447,18 @@
   reason: unhandled environment
 
 # keep these last because they are so broad
-- from: " (/|!) in "
-  to: " \\1 "
-  use_regex: True
+- from: " / in "
+  to: " / "
+  reason: replace prose
+- from: " ! in "
+  to: " ! "
   reason: replace prose
 - from: ", in "
   to: " ; sporadic - in "
   reason: replace prose
-- from: " (“\\(|\\(“ \\(\\?; | \\(Whimemsz | \\(Blevins )"
-  to: " ; \\1"
-  use_regex: True
+- from: " “("
+  to: " ; “("
+  reason: comment
+- from: " (“"
+  to: " ; (“"
   reason: comment
