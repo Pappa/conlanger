@@ -35,6 +35,7 @@ class ManualMapping(BaseModel):
     to_text: str
     reason: str = ""
     use_regex: bool = False
+    comment: bool = False
     count: int
 
     @model_validator(mode="before")

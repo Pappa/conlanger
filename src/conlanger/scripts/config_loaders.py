@@ -100,21 +100,32 @@ def _load_manual_mappings(path: Path) -> list[ManualMapping]:
     for entry in raw:
         if not isinstance(entry, dict):
             continue
-        from_text = str(entry.get("from", ""))
-        if from_text in seen:
-            raise ValueError(f"duplicate manual mapping from key: {from_text!r}")
-        seen.add(from_text)
+        if "targets" in entry:
+            if not isinstance(entry["targets"], list):
+                raise ValueError(f"targets must be a list: {entry['targets']!r}")
+            targets = [str(target) for target in entry["targets"]]
+        else:
+            targets = [str(entry.get("from", ""))]
 
-        count = entry.get("count", None)
-        out.append(
-            ManualMapping(
-                from_text=from_text,
-                to_text=str(entry.get("to", "")),
-                reason=str(entry.get("reason", "")),
-                use_regex=bool(entry.get("use_regex", False)),
-                count=int(count) if count is not None else None,
+        for target in targets:
+            if target in seen:
+                raise ValueError(f"duplicate manual mapping target: {target!r}")
+            seen.add(target)
+
+            count = entry.get("count", None)
+            comment = entry.get("comment", False)
+            to_text = str(entry.get("to", ""))
+            if not to_text and comment:
+                to_text = f"; {target}"
+            out.append(
+                ManualMapping(
+                    from_text=target,
+                    to_text=to_text,
+                    reason=str(entry.get("reason", "comment" if comment else "")),
+                    use_regex=bool(entry.get("use_regex", False)),
+                    count=int(count) if count is not None else None,
+                )
             )
-        )
     return out
 
 

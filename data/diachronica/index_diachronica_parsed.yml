@@ -4909,7 +4909,7 @@ sections:
     - s
     raw: ʃ → s / in West Swampy Cree (remains /ʃ/ in East Swampy Cree)
     source: index_diachronica_original.html:1868
-    comment: in West Swampy Cree (remains /ʃ/ in East Swampy Cree); sporadic
+    comment: in West Swampy Cree dialects;  (remains /ʃ/ in East Swampy Cree); sporadic
     sporadic: true
     rule_id: Swampy-Cree-ʃ
   - stages:
@@ -11919,7 +11919,7 @@ sections:
     - Sʰṽ
     raw: ONV → SʰṼ / Pije and Fwai
     source: index_diachronica_original.html:3236
-    comment: Pije and Fwai; sporadic
+    comment: in Pije and Fwai dialects; sporadic
     sporadic: true
     rule_id: Nemi-Pije-Fwai-ONV
   - stages:
@@ -11927,7 +11927,7 @@ sections:
     - ɸ
     raw: f → ɸ / Pije and Fwai
     source: index_diachronica_original.html:3237
-    comment: Pije and Fwai; sporadic
+    comment: in Pije and Fwai dialects; sporadic
     sporadic: true
     rule_id: Nemi-Pije-Fwai-f
 - section: Proto-New Caledonia to Proto-Northern
@@ -12074,7 +12074,7 @@ sections:
     - fw f rʰ x
     raw: pwʰ pʰ tʰ kʰ → fw f rʰ x / in Nelemwa
     source: index_diachronica_original.html:3265
-    comment: in Nelemwa; sporadic
+    comment: in Nelemwa dialects; sporadic
     sporadic: true
     rule_id: Nixumwak-Nêlêmwa-pwʰ-pʰ-tʰ-kʰ
   - stages:
@@ -47427,7 +47427,7 @@ sections:
     - Tʃ
     raw: K → TŠ / in Mentasta Ahtna
     source: index_diachronica_original.html:9980
-    comment: in Mentasta Ahtna; sporadic
+    comment: in Mentasta Ahtna dialects; sporadic
     sporadic: true
     rule_id: Ahtna-K
   - stages:

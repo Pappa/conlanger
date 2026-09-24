@@ -209,6 +209,31 @@ def test_load_manual_mappings_preserves_use_regex(tmp_path: Path):
     ]
 
 
+def test_load_manual_mappings_handles_targets_list(tmp_path: Path):
+    path = _write_parser_fragments(
+        tmp_path,
+        parser_config="ipa_mappings:\n  confidence: [high]\n",
+        manual_mappings="- targets:\n    - a → b\n    - b → a\n  to: a → c\n",
+    )
+    config = load_parser_config(path)
+    assert config.manual_mappings == [
+        ManualMapping(from_text="a → b", to_text="a → c", use_regex=False),
+        ManualMapping(from_text="b → a", to_text="a → c", use_regex=False),
+    ]
+
+
+def test_load_manual_mappings_handles_comment(tmp_path: Path):
+    path = _write_parser_fragments(
+        tmp_path,
+        parser_config="ipa_mappings:\n  confidence: [high]\n",
+        manual_mappings="- from: foo\n  comment: true\n",
+    )
+    config = load_parser_config(path)
+    assert config.manual_mappings == [
+        ManualMapping(from_text="foo", to_text="; foo", reason="comment"),
+    ]
+
+
 @pytest.mark.parametrize(
     ("case_id", "yaml_content"),
     [

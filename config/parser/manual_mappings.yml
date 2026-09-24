@@ -138,32 +138,21 @@
 # - from: " / near nasals"
 #   to: " / _,N ;"
 #   reason: replace prose
-- from: " / in Mentasta Ahtna"
-  to: " / sporadic ; in Mentasta Ahtna"
-  reason: replace prose
+
+- targets:
+    - " in (Mentasta Ahtna)"
+    - " in (West Swampy Cree)"
+    - " in (Nelemwa)"
+    - " (Pije and Fwai)"
+  to: " in \\1 dialects"
+  use_regex: True
+  reason: dialect text
+- from: " / in ([\\w ]+) dialects"
+  to: " / sporadic ; in \\1 dialects"
+  use_regex: True
+  reason: dialect text
 - from: " / in certain situations"
   to: " / sporadic ; in certain situations"
-  reason: replace prose
-- from: " / in some dialects"
-  to: " / sporadic ; in some dialects"
-  reason: replace prose
-- from: " / in some northern"
-  to: " / sporadic ; in some northern"
-  reason: replace prose
-- from: " / in northern dialects"
-  to: " / sporadic ; in northern dialects"
-  reason: replace prose
-- from: " / in southern dialects"
-  to: " / sporadic ; in southern dialects"
-  reason: replace prose
-- from: " / in West Swampy Cree"
-  to: " / sporadic ; in West Swampy Cree"
-  reason: replace prose
-- from: " / in Nelemwa"
-  to: " / sporadic ; in Nelemwa"
-  reason: replace prose
-- from: " / Pije and Fwai"
-  to: " / sporadic ; Pije and Fwai"
   reason: replace prose
 
 - from: " (in southern dialects"
@@ -240,12 +229,23 @@
   reason: unhandled positional environment
 - from: There seems to ahve been some stuff going on
   to: " ; There seems to ahve been some stuff going on"
-- from: (Do not necessarily
-  to: " ;  (Do not necessarily"
-  reason: comment
-- from: " (“[a]rchaic relic”)"
-  to: " ; (“[a]rchaic relic”)"
-  reason: comment
+- targets:
+    - " (Do not necessarily"
+    - " (remains "
+    - " (“[a]rchaic relic”)"
+    - " (again, "
+    - " (Blevins "
+    - " (Whimemsz "
+    - " (first change marked "
+    - " (not sure what "
+    - " “(before a prefix; "
+    - " (note that "
+    - " (?; included here based on "
+    - " (at least one instance of "
+    - " (velar fricative is conjectured"
+    - " (fricative changes to approximant)"
+    - " “In contrast, "
+  comment: true
 - from: " / when stem-final"
   to: " / _%# ; when stem-final"
   reason: unhandled positional environment
@@ -258,33 +258,9 @@
 - from: " (→ i in most descendants"
   to: " → i / sporadic ; (→ i in most descendants"
   reason: workaround - we can't handle different envs for chained rules
-- from: " (not sure what "
-  to: " ; (not sure what "
-  reason: comment
-- from: " “(before a prefix; "
-  to: " ; “(before a prefix; "
-  reason: comment
-- from: " (note that PAn might "
-  to: " ; (note that PAn might "
-  reason: comment
-- from: " (again, "
-  to: " ; (again, "
-  reason: comment
-- from: " (Blevins "
-  to: " ; (Blevins "
-  reason: comment
-- from: " (first change marked "
-  to: " ; (first change marked "
-  reason: comment
-- from: " (?; included here based on "
-  to: " ; (?; included here based on "
-  reason: comment
-- from: " (at least one instance of "
-  to: " ; (at least one instance of "
-  reason: comment
 - from: " (conditioning unclear)"
   to: ' " / sporadic ; (conditioning unclear)"'
-  reason: comment
+  reason: replace prose
 - from: " / syllable-initially (h → ɦ?)"
   to: " / $_ ; (h → ɦ?)"
   reason: replace prose
@@ -315,18 +291,6 @@
 - from: C[+ affricate]
   to: O[+delrel]
   reason: asca syntax replacement
-- from: " (velar fricative is conjectured"
-  to: " ; (velar fricative is conjectured"
-  reason: comment
-- from: " (fricative changes to approximant)"
-  to: " ; (fricative changes to approximant)"
-  reason: comment
-- from: " (Whimemsz says"
-  to: " ; (Whimemsz says"
-  reason: comment
-# - from: "*L"
-#   to: L
-#   reason: liquids - may be too broad
 - from: " ʰS "
   to: " Sʰ "
   reason:
@@ -349,9 +313,6 @@
   reason: replace prose
 - from: " / in some "
   to: " / sporadic ; in some "
-  reason: replace prose
-- from: " / in inland dialects"
-  to: " / sporadic ; in inland dialects"
   reason: replace prose
 - from: " / in diminutives"
   to: " / sporadic ; diminutives"
