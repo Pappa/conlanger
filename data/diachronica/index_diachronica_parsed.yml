@@ -24709,8 +24709,8 @@ sections:
     - ɑ e o
     - ɑː ɛː oː
     env: _ U[+lo]
-    exception: 'in #U with the following U containing /iː/ or ending in one of /m
-      n r l/'
+    exception: '#U with the following U containing /iː/ or ending in one of /m n r
+      l/'
     raw: 'ɑ e o → ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/
       or ending in one of /m n r l/'
     source: index_diachronica_original.html:5738
@@ -24837,8 +24837,8 @@ sections:
     - ɑ e o
     - ɑː ɛː oː
     env: _ U[+lo]
-    exception: 'in #U with the following U containing /iː/ or ending in one of /m
-      n r l/'
+    exception: '#U with the following U containing /iː/ or ending in one of /m n r
+      l/'
     raw: 'ɑ e o → ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/
       or ending in one of /m n r l/'
     source: index_diachronica_original.html:5760
@@ -25492,8 +25492,8 @@ sections:
     - ɑ e o
     - ɑː ɛː oː
     env: _ U[+lo]
-    exception: 'in #U with the following U containing /iː/ or ending in one of /m
-      n r l/'
+    exception: '#U with the following U containing /iː/ or ending in one of /m n r
+      l/'
     raw: 'ɑ e o → ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/
       or ending in one of /m n r l/'
     source: index_diachronica_original.html:5868
@@ -26174,7 +26174,7 @@ sections:
     exception: _C
     raw: k → ç / V_# ! _C “(sometimes)”; “(except when phonemic)”
     source: index_diachronica_original.html:5976
-    comment: “(sometimes)”; “(except when phonemic)”
+    comment: “(sometimes)”; ; “(except when phonemic)”
     sporadic: true
     rule_id: Falkirk-Scots-k
   - stages:
@@ -26309,8 +26309,8 @@ sections:
     - ɑ e o
     - ɑː ɛː oː
     env: _ U[+lo]
-    exception: 'in #U with the following U containing /iː/ or ending in one of /m
-      n r l/'
+    exception: '#U with the following U containing /iː/ or ending in one of /m n r
+      l/'
     raw: 'ɑ e o → ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/
       or ending in one of /m n r l/'
     source: index_diachronica_original.html:5998
@@ -65505,7 +65505,7 @@ sections:
     rule_id: Pre-Finnic-m
   - stages:
     - ɤ(ː) ɑː æː
-    - ɑ(ː?) oː eː
+    - ɑ(ː) oː eː
     env: '[+stress]'
     raw: ɤ(ː?) ɑː æː → ɑ(ː?) oː eː / stressed
     source: index_diachronica_original.html:13767
@@ -68967,7 +68967,7 @@ sections:
     - ɛa
     raw: eː → ɛa “(except Suðuroy → eː)” / a “(except Suðuroy → ɛ)”
     source: index_diachronica_original.html:14421
-    comment: “(except Suðuroy → eː)” / a “(except Suðuroy → ɛ)”
+    comment: “(except Suðuroy → eː)” / a ; “(except Suðuroy → ɛ)”
     rule_id: Faroese-Vowel-Shift-eː
   - stages:
     - '{i,y}'

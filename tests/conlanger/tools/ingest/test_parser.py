@@ -1853,9 +1853,9 @@ def test_index_diachronica_parser_high_only_config_skips_medium_at_parse():
     config = ParserConfig(
         ipa_mappings_confidence=frozenset({"high"}),
         ipa_mappings=(
-            IpaMapping("ḱ", "kʲ", confidence="high"),
-            IpaMapping("è", "ɛ", confidence="high"),
-            IpaMapping("é", "e", confidence="medium"),
+            IpaMapping(index_feature="ḱ", ipa_target="kʲ", confidence="high"),
+            IpaMapping(index_feature="è", ipa_target="ɛ", confidence="high"),
+            IpaMapping(index_feature="é", ipa_target="e", confidence="medium"),
         ),
     )
     parser = default_index_parser(parser_config=config)
@@ -2135,7 +2135,8 @@ def test_write_manual_mappings_matched_csv(tmp_path: Path):
                 section_name="Proto-Indo-European to Old Irish",
                 rule_id="Old-Irish-mn",
                 source="index_diachronica_original.html:5509",
-                manual_mapping="m̩ n̩ → am an / _{s,({m,j,w})V}",
+                from_text="m̩ n̩ → am an / _{s,({m,j,w})V}",
+                to_text="m̩ n̩ → am an / _{s,({m,j,w})V}",
             )
         ],
         path,
@@ -2146,10 +2147,12 @@ def test_write_manual_mappings_matched_csv(tmp_path: Path):
         "section_name",
         "rule_id",
         "source",
-        "manual_mapping",
+        "from_text",
+        "to_text",
     ]
     assert df.iloc[0]["rule_id"] == "Old-Irish-mn"
-    assert "_{s,({m,j,w})V}" in df.iloc[0]["manual_mapping"]
+    assert "_{s,({m,j,w})V}" in df.iloc[0]["from_text"]
+    assert "_{s,({m,j,w})V}" in df.iloc[0]["to_text"]
 
 
 def test_parse_records_manual_mapping_matches_and_unmatched(tmp_path: Path):
@@ -2179,7 +2182,8 @@ def test_parse_records_manual_mapping_matches_and_unmatched(tmp_path: Path):
     assert match.section_index == "17.5.1"
     assert match.section_name == "Proto-Indo-European to Old Irish"
     assert match.rule_id == ""
-    assert match.manual_mapping == fixed
+    assert match.from_text == broken
+    assert match.to_text == fixed
     unmatched = parser.unmatched_manual_mappings()
     assert [row.from_text for row in unmatched] == ["never-hits"]
 

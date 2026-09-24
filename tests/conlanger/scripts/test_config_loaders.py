@@ -157,9 +157,9 @@ def test_resolved_ipa_mappings_high_only_config_excludes_medium(tmp_path: Path):
 def test_resolved_ipa_mappings_none_confidence_includes_all(tmp_path: Path):
     config = ParserConfig(
         ipa_mappings=(
-            IpaMapping("ḱ", "kʲ", confidence="high"),
-            IpaMapping("é", "e", confidence="medium"),
-            IpaMapping("x", "", confidence="low"),
+            IpaMapping(index_feature="ḱ", ipa_target="kʲ", confidence="high"),
+            IpaMapping(index_feature="é", ipa_target="e", confidence="medium"),
+            IpaMapping(index_feature="x", ipa_target="", confidence="low"),
         ),
         ipa_mappings_confidence=None,
     )

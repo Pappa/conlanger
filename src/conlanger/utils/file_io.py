@@ -13,7 +13,8 @@ MANUAL_MAPPINGS_MATCHED_CSV_COLUMNS = [
     "section_name",
     "rule_id",
     "source",
-    "manual_mapping",
+    "from_text",
+    "to_text",
 ]
 MANUAL_MAPPINGS_MATCHED_CSV_NAME = "manual_mappings_matched_rules.csv"
 
@@ -31,15 +32,6 @@ def write_manual_mappings_matched_csv(
     path: Path,
 ) -> Path:
     """Rewrite debug CSV of manual mapping hits (one row per applied pattern)."""
-    rows = [
-        {
-            "section_index": match.section_index,
-            "section_name": match.section_name,
-            "rule_id": match.rule_id,
-            "source": match.source,
-            "manual_mapping": match.manual_mapping,
-        }
-        for match in matches
-    ]
+    rows = [match.model_dump() for match in matches]
     write_csv_rows(path, rows, MANUAL_MAPPINGS_MATCHED_CSV_COLUMNS)
     return Path(path)

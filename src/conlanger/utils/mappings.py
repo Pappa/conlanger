@@ -3,61 +3,75 @@
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass
+from typing import Any
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 from conlanger.utils.series import section_index_prefixes
 
 _CORPUS_CONTEXT_FIELD_KEYS = ("env", "exception")
 
 
-@dataclass(frozen=True)
-class GroupMapping:
+class GroupMapping(BaseModel):
+    model_config = ConfigDict(frozen=True)
     grouping: str
     mapping: str
     comment: str = ""
 
 
-@dataclass(frozen=True)
-class IpaMapping:
+class IpaMapping(BaseModel):
+    model_config = ConfigDict(frozen=True)
     index_feature: str
     ipa_target: str
     confidence: str | None = None
     notes: str = ""
 
 
-@dataclass(frozen=True)
-class ManualMapping:
+class ManualMapping(BaseModel):
+    model_config = ConfigDict(frozen=True)
     """One owner-authored substring rewrite from ``manual_mappings``."""
 
     from_text: str
     to_text: str
     reason: str = ""
     use_regex: bool = False
+    count: int
+
+    @model_validator(mode="before")
+    @classmethod
+    def set_default_count(cls, values: dict[str, Any]) -> dict[str, Any]:
+        if values.get("count", None) is not None:
+            return values
+        if values.get("use_regex", False):
+            values["count"] = 0  # 0 replace all matches
+        else:
+            values["count"] = -1  # -1 replace all matches
+
+        return values
 
 
-@dataclass(frozen=True)
-class ManualMappingHit:
+class ManualMappingHit(BaseModel):
+    model_config = ConfigDict(frozen=True)
     """A single substring replace performed by ``apply_manual_mappings``."""
 
     from_text: str
     to_text: str
 
 
-@dataclass(frozen=True)
-class ManualMappingMatch:
+class ManualMappingMatch(BaseModel):
+    model_config = ConfigDict(frozen=True)
     """Debug row for a manual mapping applied during ingest."""
 
     section_index: str
     section_name: str
     rule_id: str
     source: str
-    manual_mapping: str
+    from_text: str
+    to_text: str
 
 
-@dataclass(frozen=True)
-class FeatureMapping:
+class FeatureMapping(BaseModel):
+    model_config = ConfigDict(frozen=True)
     index_feature: str
     mapping_kind: str
     asca_target: str
@@ -249,7 +263,7 @@ def apply_manual_mappings(
     for row in mappings:
         if row.use_regex and re.search(row.from_text, working) is not None:
             try:
-                working = re.sub(row.from_text, row.to_text, working, count=1)
+                working = re.sub(row.from_text, row.to_text, working, count=row.count)
             except Exception as e:
                 print(
                     f"Error applying manual mapping: {row.from_text} -> {row.to_text}: {e}"
@@ -257,6 +271,6 @@ def apply_manual_mappings(
                 raise
             hits.append(ManualMappingHit(from_text=row.from_text, to_text=row.to_text))
         elif row.from_text and row.from_text in working:
-            working = working.replace(row.from_text, row.to_text)
+            working = working.replace(row.from_text, row.to_text, row.count)
             hits.append(ManualMappingHit(from_text=row.from_text, to_text=row.to_text))
     return working, hits

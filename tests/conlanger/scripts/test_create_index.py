@@ -49,7 +49,8 @@ def test_create_index_writes_manual_mappings_matched_csv(
                 section_name="Proto-Indo-European to Old Irish",
                 rule_id="r0",
                 source="index.html:10",
-                manual_mapping="s → z / _C[+voice]",
+                from_text="s → z / _C[+voice]",
+                to_text="s → z / _C[+voice]",
             )
         ],
         unmatched=[ManualMapping(from_text="unused-from", to_text="x", reason="")],
@@ -73,7 +74,8 @@ def test_create_index_writes_manual_mappings_matched_csv(
     matched_path = parse_dir / "manual_mappings_matched_rules.csv"
     assert matched_path.is_file()
     text = matched_path.read_text(encoding="utf-8")
-    assert "manual_mapping" in text
+    assert "from_text" in text
+    assert "to_text" in text
     assert "s → z / _C[+voice]" in text
     err = capsys.readouterr().err
     assert "unused-from" in err

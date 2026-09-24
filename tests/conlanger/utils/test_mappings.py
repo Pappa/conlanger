@@ -92,7 +92,12 @@ def test_normalize_feature_matrices_in_field(text, expected):
 
 def test_normalize_feature_matrices_in_field_unknown_kind_unchanged():
     mappings = {
-        "weird": FeatureMapping("weird", "unknown_kind", "x", confidence="high"),
+        "weird": FeatureMapping(
+            index_feature="weird",
+            mapping_kind="unknown_kind",
+            asca_target="x",
+            confidence="high",
+        ),
     }
     assert normalize_feature_matrices_in_field("C[+weird]", mappings) == "C[+weird]"
 
@@ -108,13 +113,27 @@ def test_normalize_feature_matrices_in_field_unknown_kind_unchanged():
         ),
         pytest.param(
             {"stages": ["C[+voiced]", "C[+voice]"]},
-            {"voiced": FeatureMapping("voiced", "rename", "voice", confidence="high")},
+            {
+                "voiced": FeatureMapping(
+                    index_feature="voiced",
+                    mapping_kind="rename",
+                    asca_target="voice",
+                    confidence="high",
+                )
+            },
             {"stages": ["C[+voice]", "C[+voice]"]},
             id="stages",
         ),
         pytest.param(
             {"env": "C[+voiced]_", "exception": "N[-voiced]"},
-            {"voiced": FeatureMapping("voiced", "rename", "voice", confidence="high")},
+            {
+                "voiced": FeatureMapping(
+                    index_feature="voiced",
+                    mapping_kind="rename",
+                    asca_target="voice",
+                    confidence="high",
+                )
+            },
             {"env": "C[+voice]_", "exception": "N[-voice]"},
             id="env-and-exception",
         ),
@@ -126,7 +145,14 @@ def test_normalize_feature_matrices_in_field_unknown_kind_unchanged():
         ),
         pytest.param(
             {"exception": "C[+voiced]"},
-            {"voiced": FeatureMapping("voiced", "rename", "voice", confidence="high")},
+            {
+                "voiced": FeatureMapping(
+                    index_feature="voiced",
+                    mapping_kind="rename",
+                    asca_target="voice",
+                    confidence="high",
+                )
+            },
             {"exception": "C[+voice]"},
             id="exception-only-no-stages",
         ),

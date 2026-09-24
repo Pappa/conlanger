@@ -150,7 +150,8 @@ class IndexDiachronicaParser:
                     section_name=section_name,
                     rule_id=rule_id,
                     source=source,
-                    manual_mapping=hit.to_text,
+                    from_text=hit.from_text,
+                    to_text=hit.to_text,
                 )
             )
 

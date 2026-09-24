@@ -15,9 +15,17 @@ from conlanger.utils.mappings import (
 
 def _tone_feature_mappings() -> dict[str, FeatureMapping]:
     return {
-        "falling tone": FeatureMapping("falling tone", "tone", "51", confidence="high"),
+        "falling tone": FeatureMapping(
+            index_feature="falling tone",
+            mapping_kind="tone",
+            asca_target="51",
+            confidence="high",
+        ),
         "low falling tone": FeatureMapping(
-            "low falling tone", "tone", "21", confidence="high"
+            index_feature="low falling tone",
+            mapping_kind="tone",
+            asca_target="21",
+            confidence="high",
         ),
     }
 

@@ -104,12 +104,15 @@ def _load_manual_mappings(path: Path) -> list[ManualMapping]:
         if from_text in seen:
             raise ValueError(f"duplicate manual mapping from key: {from_text!r}")
         seen.add(from_text)
+
+        count = entry.get("count", None)
         out.append(
             ManualMapping(
                 from_text=from_text,
                 to_text=str(entry.get("to", "")),
                 reason=str(entry.get("reason", "")),
                 use_regex=bool(entry.get("use_regex", False)),
+                count=int(count) if count is not None else None,
             )
         )
     return out
