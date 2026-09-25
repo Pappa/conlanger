@@ -115,7 +115,6 @@ section_index,section_name,rule_id,source,from_text,to_text
 10.2.6.1,Proto-North Sarawak to Kiput,Kiput-k,index_diachronica_original.html:2980, “(, ; “(
 10.2.6.1,Proto-North Sarawak to Kiput,Kiput-ə_2,index_diachronica_original.html:2988, (/|!) (near|adjacent to) a vowel, \1 \2 V
 10.2.6.1,Proto-North Sarawak to Kiput,Kiput-ə_2,index_diachronica_original.html:2988, (/|!) adjacent to ([A-Z])," \1  \2_, _\2"
-10.2.6.1,Proto-North Sarawak to Kiput,Kiput-V+stress,index_diachronica_original.html:2989, “(, ; “(
 10.2.6.1,Proto-North Sarawak to Kiput,Kiput-u,index_diachronica_original.html:2992, “(, ; “(
 10.2.6.1,Proto-North Sarawak to Kiput,Kiput-i,index_diachronica_original.html:2993, “(, ; “(
 10.2.6.1,Proto-North Sarawak to Kiput,Kiput-ʀ_2,index_diachronica_original.html:2998, “(, ; “(
@@ -223,37 +222,30 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-VN,index_diachronica_original.html:5208,→ (?),
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-VN,index_diachronica_original.html:5208,", in polysyllables", ; in polysyllables
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-N_2,index_diachronica_original.html:5209,", in monosyllables", / sporadic ; in monosyllables
-17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-V,index_diachronica_original.html:5212,→ (?),
 17.3.2,Proto-Indo-European to Erevan Armenian,"Erevan-Armenian-i,u",index_diachronica_original.html:5225, / in some , / sporadic ; in some 
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-VN,index_diachronica_original.html:5245,→ (?),
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-VN,index_diachronica_original.html:5245,", in polysyllables", ; in polysyllables
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-N_2,index_diachronica_original.html:5246,", in monosyllables", / sporadic ; in monosyllables
-17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-V,index_diachronica_original.html:5249,→ (?),
 17.3.3,Proto-Indo-European to Istanbul Armenian,"Istanbul-Armenian-i,u",index_diachronica_original.html:5262, / in some , / sporadic ; in some 
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-VN,index_diachronica_original.html:5282,→ (?),
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-VN,index_diachronica_original.html:5282,", in polysyllables", ; in polysyllables
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-N_2,index_diachronica_original.html:5283,", in monosyllables", / sporadic ; in monosyllables
-17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-V,index_diachronica_original.html:5286,→ (?),
 17.3.4,Proto-Indo-European to Kharpert Armenian,"Kharpert-Armenian-i,u",index_diachronica_original.html:5299, / in some , / sporadic ; in some 
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-VN,index_diachronica_original.html:5319,→ (?),
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-VN,index_diachronica_original.html:5319,", in polysyllables", ; in polysyllables
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-N_2,index_diachronica_original.html:5320,", in monosyllables", / sporadic ; in monosyllables
-17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-V,index_diachronica_original.html:5323,→ (?),
 17.3.5,Proto-Indo-European to Sebastia Armenian,"Sebastia-Armenian-i,u",index_diachronica_original.html:5336, / in some , / sporadic ; in some 
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-VN,index_diachronica_original.html:5355,→ (?),
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-VN,index_diachronica_original.html:5355,", in polysyllables", ; in polysyllables
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-N_2,index_diachronica_original.html:5356,", in monosyllables", / sporadic ; in monosyllables
-17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-V,index_diachronica_original.html:5359,→ (?),
 17.3.6,Proto-Indo-European to Southeast Armenian,"Southeast-Armenian-i,u",index_diachronica_original.html:5372, / in some , / sporadic ; in some 
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-VN,index_diachronica_original.html:5394,→ (?),
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-VN,index_diachronica_original.html:5394,", in polysyllables", ; in polysyllables
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-N_2,index_diachronica_original.html:5395,", in monosyllables", / sporadic ; in monosyllables
-17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-V,index_diachronica_original.html:5398,→ (?),
 17.3.7,Proto-Indo-European to Southwest Armenian,"Southwest-Armenian-i,u",index_diachronica_original.html:5411, / in some , / sporadic ; in some 
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-VN,index_diachronica_original.html:5432,→ (?),
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-VN,index_diachronica_original.html:5432,", in polysyllables", ; in polysyllables
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-N_2,index_diachronica_original.html:5433,", in monosyllables", / sporadic ; in monosyllables
-17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-V,index_diachronica_original.html:5436,→ (?),
 17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-e,index_diachronica_original.html:5478, / _Ra (short a only), / _Ra sporadic ; (short a only)
 17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-oː,index_diachronica_original.html:5483, / in , / 
 17.5.1,Proto-Indo-European to Old Irish,Old-Irish-p-t-k-kʷ-b-d-ɡ-m-n-l-r-s,index_diachronica_original.html:5521, (“, ; (“
@@ -299,10 +291,8 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.7.2.1.8,Old English to Northern Middle English,Northern-Middle-English-Vː_2,index_diachronica_original.html:5870, / in , / 
 17.7.2.1.8,Old English to Northern Middle English,Northern-Middle-English-ʃ,index_diachronica_original.html:5873, / in , / 
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-t,index_diachronica_original.html:5884, (“, ; (“
-17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-ai,index_diachronica_original.html:5896, / when stem-final, / _%# ; when stem-final
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-uː,index_diachronica_original.html:5897,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-uː,index_diachronica_original.html:5897,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
-17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-uː,index_diachronica_original.html:5897, / when-stem final, / _%# ; when-stem final
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-uː,index_diachronica_original.html:5897,", in ", ; sporadic - in 
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-øː,index_diachronica_original.html:5898,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-øː_2,index_diachronica_original.html:5899,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
@@ -325,7 +315,6 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-a,index_diachronica_original.html:6043,\(→ (\w+) ?\??\),→ \1
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-uː,index_diachronica_original.html:6047,", in ", ; sporadic - in 
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-uː_2,index_diachronica_original.html:6048,", in ", ; sporadic - in 
-17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-uː_3,index_diachronica_original.html:6049,", in ", ; sporadic - in 
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-ei-ou,index_diachronica_original.html:6050,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-ei-ou,index_diachronica_original.html:6050,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-iu,index_diachronica_original.html:6056,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
@@ -387,8 +376,6 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.12.1.1,Proto-Indo-European to Latin,Latin-l_2,index_diachronica_original.html:7311, “(, ; “(
 17.12.1.1,Proto-Indo-European to Latin,Latin-Vː_3,index_diachronica_original.html:7314, “(, ; “(
 17.12.1.1.1,Classical Latin vs. Vulgar Latin,Classical-Latin-vs.-Vulgar-Latin-m,index_diachronica_original.html:7331, “(, ; “(
-17.12.1.1.1,Classical Latin vs. Vulgar Latin,"Classical-Latin-vs.-Vulgar-Latin-uː-ɔ,oː-eː-iː",index_diachronica_original.html:7338,"“In contrast, Romanian exhibits","; “In contrast, Romanian exhibits"
-17.12.1.1.1,Classical Latin vs. Vulgar Latin,"Classical-Latin-vs.-Vulgar-Latin-uː-ɔ,oː-eː-iː",index_diachronica_original.html:7338," “In contrast, ",";  “In contrast, "
 17.12.1.1.2,Latin to Catalan,Catalan-u,index_diachronica_original.html:7350, / (“when in unstressed penult, / sporadic ; (“when in unstressed penult
 17.12.1.1.2,Latin to Catalan,Catalan-u,index_diachronica_original.html:7350, (“, ; (“
 17.12.1.1.2,Latin to Catalan,Catalan-iː,index_diachronica_original.html:7351, / stressed, / [+stress]
@@ -485,7 +472,6 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.12.1.1.9,Latin to Sardinian,Sardinian-kw-ɡw,index_diachronica_original.html:8107, (“, ; (“
 17.12.1.1.9,Latin to Sardinian,"Sardinian-li,j",index_diachronica_original.html:8113, (“, ; (“
 17.12.1.1.9,Latin to Sardinian,Sardinian-d_2,index_diachronica_original.html:8120, (“, ; (“
-17.12.1.1.10,Vulgar Latin to Spanish,"Spanish-e-ɛ,a-ɔ-o",index_diachronica_original.html:8143,", in ", ; sporadic - in 
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-ʝ,index_diachronica_original.html:8154,(\([^)]+ is rare\)),; \1
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-V_5,index_diachronica_original.html:8163, / unstressed, / [-stress]
 17.12.1.1.10,Vulgar Latin to Spanish,Spanish-h,index_diachronica_original.html:8199, “(, ; “(
@@ -668,10 +654,8 @@ section_index,section_name,rule_id,source,from_text,to_text
 46.2,California Vowel Shift (English),California-Vowel-Shift-English-æ-ɪ,index_diachronica_original.html:14299,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 46.2,California Vowel Shift (English),California-Vowel-Shift-English-æ-ɪ,index_diachronica_original.html:14299,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 46.2,California Vowel Shift (English),California-Vowel-Shift-English-oʊ̯,index_diachronica_original.html:14307, (“, ; (“
-46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-ai,index_diachronica_original.html:14323, / when stem-final, / _%# ; when stem-final
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-uː,index_diachronica_original.html:14324,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-uː,index_diachronica_original.html:14324,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
-46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-uː,index_diachronica_original.html:14324, / when-stem final, / _%# ; when-stem final
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-uː,index_diachronica_original.html:14324,", in ", ; sporadic - in 
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-øː,index_diachronica_original.html:14325,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-øː_2,index_diachronica_original.html:14326,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects

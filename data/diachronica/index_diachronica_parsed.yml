@@ -25659,18 +25659,17 @@ sections:
     - ai
     - ɛi
     - əi
-    env: _$#
+    env: when stem-final
     raw: — ai → ɛi → əi / when stem-final
     source: index_diachronica_original.html:5896
-    comment: when stem-final
     rule_id: Scots-—-ai
   - stages:
     - uː
     - ʌu
-    env: _$#
+    env: when-stem final
     raw: — uː → ʌu / when-stem final, in northern varieties
     source: index_diachronica_original.html:5897
-    comment: when-stem final ; sporadic - in northern dialects
+    comment: sporadic - in northern dialects
     sporadic: true
     rule_id: Scots-—-uː
   - stages:
@@ -68527,18 +68526,17 @@ sections:
     - ai
     - ɛi
     - əi
-    env: _$#
+    env: when stem-final
     raw: ai → ɛi → əi / when stem-final
     source: index_diachronica_original.html:14323
-    comment: when stem-final
     rule_id: Scots-Vowel-Shifts-ai
   - stages:
     - uː
     - ʌu
-    env: _$#
+    env: when-stem final
     raw: uː → ʌu / when-stem final, in northern varieties
     source: index_diachronica_original.html:14324
-    comment: when-stem final ; sporadic - in northern dialects
+    comment: sporadic - in northern dialects
     sporadic: true
     rule_id: Scots-Vowel-Shifts-uː
   - stages:

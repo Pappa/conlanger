@@ -70,9 +70,6 @@
   to: → \1 ; dialectal
   use_regex: True
   reason: dialectal
-- from: “In contrast, Romanian exhibits
-  to: ; “In contrast, Romanian exhibits
-  reason: comment
 - from: \(→ (\w+) ?\??\)
   to: → \1
   use_regex: True
@@ -244,14 +241,14 @@
     - " (at least one instance of "
     - " (velar fricative is conjectured"
     - " (fricative changes to approximant)"
-    - " “In contrast, "
   comment: true
-- from: " / when stem-final"
-  to: " / _%# ; when stem-final"
-  reason: unhandled positional environment
-- from: " / when-stem final"
-  to: " / _%# ; when-stem final"
-  reason: unhandled positional environment
+# these are wrong
+# - from: " / when stem-final"
+#   to: " / _%# ; when stem-final"
+#   reason: unhandled positional environment
+# - from: " / when-stem final"
+#   to: " / _%# ; when-stem final"
+#   reason: unhandled positional environment
 - from: " (→ yː sometimes)"
   to: " → yː / sporadic ; (→ yː sometimes)"
   reason: workaround - we can't handle different envs for chained rules

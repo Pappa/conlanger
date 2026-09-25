@@ -47,22 +47,22 @@ def _parse_skip_section_ids(raw: object) -> frozenset[str]:
     return frozenset(ids)
 
 
-def _parse_skip_rules(raw: object) -> tuple[frozenset[str], dict[str, str]]:
-    if not isinstance(raw, list):
+def _parse_skip_rules(
+    raw: list[dict[str, str]],
+) -> tuple[frozenset[str], dict[str, str]]:
+    if not isinstance(raw, list) or len(raw) == 0:
         return frozenset(), {}
     ids: set[str] = set()
     comments: dict[str, str] = {}
     for entry in raw:
         if not isinstance(entry, dict):
-            continue
-        rule_id = entry.get("id")
+            raise TypeError(f"skip rule entry must be a dict: {entry!r}")
+        rule_id = str(entry.get("id", ""))
+        reason = str(entry.get("reason", ""))
         if not rule_id:
-            continue
-        rule_id = str(rule_id)
+            raise ValueError(f"skip rule entry must have an id: {entry!r}")
         ids.add(rule_id)
-        reason = entry.get("reason")
-        if reason:
-            comments[rule_id] = str(reason)
+        comments[rule_id] = reason
     return frozenset(ids), comments
 
 
@@ -267,7 +267,11 @@ def load_parser_config(path: Path | None = None) -> ParserConfig:
     else:
         ipa_confidence = None
 
-    skip_rule_ids, skip_rule_comments = _parse_skip_rules(raw.get("skip_rules"))
+    skip_rules = raw.get("skip_rules", [])
+    if not isinstance(skip_rules, list):
+        raise TypeError(f"skip_rules must be a list: {skip_rules!r}")
+
+    skip_rule_ids, skip_rule_comments = _parse_skip_rules(skip_rules)
 
     manual_path = config_root / "manual_mappings.yml"
     ipa_path = config_root / "ipa_mappings.yml"

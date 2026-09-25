@@ -133,13 +133,25 @@ class IndexDiachronicaParser:
         section_name: str = "",
         rule_id: str = "",
     ) -> list[dict[str, Any]]:
+        line = getattr(el, "sourceline", None) or 0
+        source = f"{source_file}:{line}"
         raw = extract_text_with_subs(el)
         working = raw
+
         if rule_id and rule_id in self._corrections:
             working = self._corrections[rule_id]
             self._matched_correction_ids.add(rule_id)
-        line = getattr(el, "sourceline", None) or 0
-        source = f"{source_file}:{line}"
+
+        if rule_id and rule_id in self._parser_config.skip_rule_ids:
+            skipped = IndexRule(
+                stages=[],
+                raw=raw,
+                source=source,
+                status="skipped",
+                rule_id=rule_id,
+                comment=self._parser_config.skip_rule_comments.get(rule_id),
+            )
+            return [skipped.to_index_dict()]
 
         working, hits = apply_manual_mappings(working, self._manual_mappings)
         for hit in hits:
@@ -187,16 +199,6 @@ class IndexDiachronicaParser:
         parts = apply_feature_mappings(parts, self._feature_mappings)
         parts = apply_ipa_mappings(parts, self._ipa_mappings)
         parts = finalize_stages_shape(parts)
-        if rule_id and rule_id in self._parser_config.skip_rule_ids:
-            skipped = IndexRule(
-                stages=[],
-                raw=raw,
-                source=source,
-                status="skipped",
-                rule_id=rule_id,
-                comment=self._parser_config.skip_rule_comments.get(rule_id),
-            )
-            return [skipped.to_index_dict()]
         index_rule = IndexRule.from_parse_fields(
             parts,
             raw=raw,

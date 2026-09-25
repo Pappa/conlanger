@@ -6,8 +6,8 @@
 - Rows: **9840** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **9061** (92.1%)
-- Fail: **252** (2.6%)
+- OK: **9057** (92.0%)
+- Fail: **256** (2.6%)
 - Skipped: **527** (5.4%)
 
 
@@ -23,8 +23,8 @@ Skipped: **2/122**
 
 ## Sections
 
-- All OK: **514 / 714** (72.0%)
-- Some OK: **147 / 714** (20.6%)
+- All OK: **512 / 714** (71.7%)
+- Some OK: **149 / 714** (20.9%)
 - None OK: **0 / 714** (0.0%)
 - Sections skipped: **53 / 714** (7.4%)
 
@@ -32,7 +32,7 @@ Skipped: **2/122**
 
 | count | failure_class |
 |------:|---------------|
-| 49 | `expected_underscore` |
+| 53 | `expected_underscore` |
 | 32 | `expected_ipa` |
 | 24 | `unknown_character` |
 | 23 | `missing_slash_output_env` |
@@ -153,7 +153,7 @@ Skipped: **2/122**
 
 | count | description |
 |------:|-------------|
-| 26 | `Expected '_', but received ''` |
+| 30 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 

@@ -235,15 +235,14 @@ def test_load_manual_mappings_handles_comment(tmp_path: Path):
 
 
 @pytest.mark.parametrize(
-    ("case_id", "yaml_content"),
+    ("yaml_content"),
     [
-        ("non_dict_rule_block", "rules:\n  - rule: not-a-dict\n"),
-        (
-            "entry_without_id",
+        pytest.param("rules:\n  - rule: not-a-dict\n", id="non_dict_rule_block"),
+        pytest.param(
             "rules:\n  - rule:\n      content: a → b\n      reason: no id\n",
+            id="entry_without_id",
         ),
-        (
-            "whitespace_only_content",
+        pytest.param(
             (
                 "rules:\n"
                 "  - rule:\n"
@@ -251,15 +250,13 @@ def test_load_manual_mappings_handles_comment(tmp_path: Path):
                 "      content: '   '\n"
                 "      reason: skip\n"
             ),
+            id="whitespace_only_content",
         ),
-        ("rules_not_a_list", "rules: not-a-list\n"),
-        ("missing_rules_list", "other: {}\n"),
-        ("non_dict_yaml", "- not a dict\n"),
+        pytest.param("rules: not-a-list\n", id="rules_not_a_list"),
+        pytest.param("rules:\n  - not-a-dict\n", id="non_dict_entry"),
     ],
 )
-def test_load_corrections_returns_empty(
-    case_id: str, yaml_content: str, tmp_path: Path
-):
+def test_load_corrections_returns_empty(yaml_content: str, tmp_path: Path):
     path = _write_parser_fragments(
         tmp_path,
         parser_config="ipa_mappings:\n  confidence: [high]\n",
