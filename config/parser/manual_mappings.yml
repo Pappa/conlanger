@@ -1,12 +1,3 @@
-#region pre-index rule normalisation cleanup
-#endregion
-
-#region index rule normalisation
-
-#endregion
-
-# positional cleanup steps
-
 - from: " / (unless|when not) "
   to: " / ! "
   use_regex: True
@@ -14,6 +5,19 @@
 - from: " / near ħ ʕ"
   to: " / near {ħ,ʕ}"
   reason: convert to set notation
+
+#region dialect text cleanup
+- targets:
+    - " in (Mentasta Ahtna)"
+    - " in (West Swampy Cree)"
+    - " in (Nelemwa)"
+    - " (Pije and Fwai)"
+    - " in (Ware Sekani)"
+    - " in (Queensland and New South Wales)"
+    # - " \\(in (Languedoc)\\)"
+  to: " in \\1 dialects"
+  use_regex: True
+  reason: dialect text
 
 - from: "(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*"
   to: "dialects"
@@ -24,6 +28,7 @@
   to: "in\\1\\2\\3 dialects"
   use_regex: True
   reason: align dialect text
+#endregion
 
 #region class letter replacements
 - from: " (/|!) (near|adjacent to) a vowel"
@@ -136,21 +141,26 @@
 #   to: " / _,N ;"
 #   reason: replace prose
 
-- targets:
-    - " in (Mentasta Ahtna)"
-    - " in (West Swampy Cree)"
-    - " in (Nelemwa)"
-    - " (Pije and Fwai)"
-  to: " in \\1 dialects"
-  use_regex: True
-  reason: dialect text
 - from: " / in ([\\w ]+) dialects"
   to: " / sporadic ; in \\1 dialects"
   use_regex: True
   reason: dialect text
-- from: " / in certain situations"
-  to: " / sporadic ; in certain situations"
-  reason: replace prose
+- targets:
+    - " / (in certain situations)"
+    - " (in certain frequently-used words)"
+    - ", (except in certain)"
+    - " / (“in some positions”)"
+    - " / (except in several)"
+    - ", (in the feminine ending)"
+    - " / (depending on the environment)"
+    - " / (\\(“when in unstressed penult)"
+    - " / (some sequences)"
+    - " / (sometimes)"
+    - " / (in Form VI)"
+    - " / (“\\[b\\]etween the last two vowels of a proparoxytone”)"
+  to: " / sporadic ; \\1"
+  use_regex: True
+  reason: sporadic environment
 
 - from: " (in southern dialects"
   to: " sporadic ; (in southern dialects"
@@ -158,23 +168,11 @@
 - from: " (in some dialects"
   to: " sporadic ; (in some dialects"
   reason: replace prose
-- from: " in certain frequently-used words"
-  to: " / sporadic ; in certain frequently-used words"
-  reason: replace prose
-- from: ", except in certain "
-  to: " / sporadic ;, except in certain "
-  reason: replace prose
 - from: " (some dialects"
   to: " sporadic ; (some dialects"
   reason: replace prose
 - from: " (most dialects"
   to: " ; (most dialects"
-  reason: replace prose
-- from: " / “in some positions”"
-  to: " / sporadic ; “in some positions”"
-  reason: replace prose
-- from: " / except in several words"
-  to: " / sporadic ; except in several words"
   reason: replace prose
 - from: " / except when CV_V in U"
   to: " / sporadic ! CV_V ; except when CV_V in U"
@@ -188,29 +186,11 @@
 - from: " ! in Queensland"
   to: " sporadic ; not in Queensland"
   reason: replace prose
-- from: " / depending on the environment"
-  to: " / sporadic ; depending on the environment"
-  reason: replace prose
-- from: " / (“when in unstressed penult"
-  to: " / sporadic ; (“when in unstressed penult"
-  reason: unhandled positional environment
-- from: " / some sequences"
-  to: " / sporadic ; some sequences"
-  reason: replace prose
 - from: " (some exceptions"
   to: " ; sporadic (some exceptions"
   reason: replace prose
-- from: ", in the feminine ending"
-  to: " sporadic ; in the feminine ending"
-  reason: unhandled positional environment
-- from: " / sometimes"
-  to: " / sporadic ; sometimes"
-  reason: replace prose
-- from: " / in Form VI"
-  to: " / sporadic ; in Form VI"
-  reason: replace prose
-- from: " / _Ra (short a only)"
-  to: " / _Ra sporadic ; (short a only)"
+- from: " / _Ra (short a only), "
+  to: " / _Ra[-long] ; sporadic ; "
   reason: replace prose
 - from: " for some C"
   to: " ; sporadic ; for some C"
@@ -221,9 +201,6 @@
 - from: " / ! if one of the above"
   to: " / sporadic ; ! if one of the above"
   reason: replace prose
-- from: " / “[b]etween the last two vowels of a proparoxytone”"
-  to: " / sporadic ; “[b]etween the last two vowels of a proparoxytone”"
-  reason: unhandled positional environment
 - from: There seems to ahve been some stuff going on
   to: " ; There seems to ahve been some stuff going on"
 - targets:
@@ -256,7 +233,7 @@
   to: " → i / sporadic ; (→ i in most descendants"
   reason: workaround - we can't handle different envs for chained rules
 - from: " (conditioning unclear)"
-  to: ' " / sporadic ; (conditioning unclear)"'
+  to: " / sporadic ; (conditioning unclear)"
   reason: replace prose
 - from: " / syllable-initially (h → ɦ?)"
   to: " / $_ ; (h → ɦ?)"

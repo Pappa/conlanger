@@ -5,24 +5,24 @@ section_index,section_name,rule_id,source,from_text,to_text
 6.2.1.1.4,Proto-Agaw to Xamtanga,"Xamtanga-xʷ,ɢʷ",index_diachronica_original.html:1218, (/|!) at word boundaries," \1 #_, _#"
 6.2.2,Proto-Erythrean to Proto-North Erythrean,Proto-North-Erythrean-$VC$,index_diachronica_original.html:1232, “(, ; “(
 6.2.2.1.5,Proto-Semitic to Classical Arabic,Classical-Arabic-s,index_diachronica_original.html:1321, / in “, / sporadic ; in “
-6.2.2.1.5,Proto-Semitic to Classical Arabic,"Classical-Arabic-Vj,wV",index_diachronica_original.html:1326, / some sequences, / sporadic ; some sequences
-6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_6,index_diachronica_original.html:1370,", in the feminine ending", sporadic ; in the feminine ending
+6.2.2.1.5,Proto-Semitic to Classical Arabic,"Classical-Arabic-Vj,wV",index_diachronica_original.html:1326, / (some sequences), / sporadic ; \1
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_6,index_diachronica_original.html:1370,", (in the feminine ending)", / sporadic ; \1
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-dˤ,index_diachronica_original.html:1380, (seems to be a sporadic change, ; (seems to be a sporadic change
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aj-aw,index_diachronica_original.html:1384, / in , / 
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː,index_diachronica_original.html:1393, (/|!) (near|adjacent to) emphatics, \1 \2 [+emphatic]
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː,index_diachronica_original.html:1393, (/|!) near (\w?\[[^]]+\])," \1  \2_, _\2"
-6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-q,index_diachronica_original.html:1396, / except in several words, / sporadic ; except in several words
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-q,index_diachronica_original.html:1396, / (except in several), / sporadic ; \1
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-h,index_diachronica_original.html:1401, / in coda," / :{ _#, _% }: ; in coda"
-6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-aː,index_diachronica_original.html:1409, / in Form VI, / sporadic ; in Form VI
+6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-aː,index_diachronica_original.html:1409, / (in Form VI), / sporadic ; \1
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-aː_2,index_diachronica_original.html:1410, / (unless|when not) , / ! 
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-aː_2,index_diachronica_original.html:1410, (/|!) (near|adjacent to) emphatics, \1 \2 [+emphatic]
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-aː_2,index_diachronica_original.html:1410, (/|!) near (\w?\[[^]]+\])," \1  \2_, _\2"
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-V-long,index_diachronica_original.html:1412,", in some words", sporadic ; in some words
-6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-aː,index_diachronica_original.html:1420, / in Form VI, / sporadic ; in Form VI
+6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-aː,index_diachronica_original.html:1420, / (in Form VI), / sporadic ; \1
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-aː_2,index_diachronica_original.html:1421, / (unless|when not) , / ! 
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-aː_2,index_diachronica_original.html:1421, (/|!) (near|adjacent to) emphatics, \1 \2 [+emphatic]
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-aː_2,index_diachronica_original.html:1421, (/|!) near (\w?\[[^]]+\])," \1  \2_, _\2"
-6.2.2.1.10,Classical Arabic to Hassāniyya Arabic,Hassāniyya-Arabic-ʔ,index_diachronica_original.html:1431, / depending on the environment, / sporadic ; depending on the environment
+6.2.2.1.10,Classical Arabic to Hassāniyya Arabic,Hassāniyya-Arabic-ʔ,index_diachronica_original.html:1431, / (depending on the environment), / sporadic ; \1
 6.2.2.1.11,Classical Arabic to Iraqi Arabic,Iraqi-Arabic-ɡʲ,index_diachronica_original.html:1445,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 6.2.2.1.11,Classical Arabic to Iraqi Arabic,Iraqi-Arabic-ɡʲ,index_diachronica_original.html:1445,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 6.2.2.1.11,Classical Arabic to Iraqi Arabic,Iraqi-Arabic-ɡʲ,index_diachronica_original.html:1445, / in ([\w ]+) dialects, / sporadic ; in \1 dialects
@@ -63,6 +63,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 7.8,Proto-Algonquian to Plains Cree,Plains-Cree-e,index_diachronica_original.html:1834,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 7.8,Proto-Algonquian to Plains Cree,Plains-Cree-e,index_diachronica_original.html:1834,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 7.9,Proto-Algonquian to Swampy Cree,Swampy-Cree-ʃ,index_diachronica_original.html:1868, in (West Swampy Cree), in \1 dialects
+7.9,Proto-Algonquian to Swampy Cree,Swampy-Cree-ʃ,index_diachronica_original.html:1868,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 7.9,Proto-Algonquian to Swampy Cree,Swampy-Cree-ʃ,index_diachronica_original.html:1868, / in ([\w ]+) dialects, / sporadic ; in \1 dialects
 7.9,Proto-Algonquian to Swampy Cree,Swampy-Cree-ʃ,index_diachronica_original.html:1868, (remains ,;  (remains 
 7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-tʃ,index_diachronica_original.html:1896, / in nouns, / sporadic ; in nouns
@@ -88,7 +89,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 9.1.2,Proto-Vietic to Middle Vietnamese,Middle-Vietnamese-tʃ,index_diachronica_original.html:2413,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 9.1.2,Proto-Vietic to Middle Vietnamese,Middle-Vietnamese-s,index_diachronica_original.html:2418,\((\w)\?\),(\1)
 10.1.1.2,Proto-Bali-Sasak-Sumbawan to Sasak,Sasak-Vh,index_diachronica_original.html:2559," (again, ",";  (again, "
-10.1.1.3,Proto-Bali-Sasak-Sumbawan to Sumbawan,Sumbawan-u-i,index_diachronica_original.html:2571, / sometimes, / sporadic ; sometimes
+10.1.1.3,Proto-Bali-Sasak-Sumbawan to Sumbawan,Sumbawan-u-i,index_diachronica_original.html:2571, / (sometimes), / sporadic ; \1
 10.1.1.3,Proto-Bali-Sasak-Sumbawan to Sumbawan,Sumbawan-Vh,index_diachronica_original.html:2572," (again, ",";  (again, "
 10.1.2.4,Proto-Philippine to Ibanag,Ibanag-*j,index_diachronica_original.html:2646, / possible exception, / sporadic ; possible exception
 10.1.2.9,Proto-Philippine to Tagalog,Tagalog-q,index_diachronica_original.html:2755, (not sure what ,;  (not sure what 
@@ -134,11 +135,17 @@ section_index,section_name,rule_id,source,from_text,to_text
 10.3.3,Proto-Oceanic to Lemerig,Lemerig-ia,index_diachronica_original.html:3154, “(, ; “(
 10.3.4,Proto-Oceanic to Mwotlap,Mwotlap-s,index_diachronica_original.html:3170, “(, ; “(
 10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-ONV,index_diachronica_original.html:3236, (Pije and Fwai), in \1 dialects
+10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-ONV,index_diachronica_original.html:3236,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
+10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-ONV,index_diachronica_original.html:3236,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-ONV,index_diachronica_original.html:3236, / in ([\w ]+) dialects, / sporadic ; in \1 dialects
 10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-f,index_diachronica_original.html:3237, (Pije and Fwai), in \1 dialects
+10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-f,index_diachronica_original.html:3237,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
+10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-f,index_diachronica_original.html:3237,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-f,index_diachronica_original.html:3237, / in ([\w ]+) dialects, / sporadic ; in \1 dialects
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-V,index_diachronica_original.html:3251,", often"," ; , often"
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-pwʰ-pʰ-tʰ-kʰ,index_diachronica_original.html:3265, in (Nelemwa), in \1 dialects
+10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-pwʰ-pʰ-tʰ-kʰ,index_diachronica_original.html:3265,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
+10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-pwʰ-pʰ-tʰ-kʰ,index_diachronica_original.html:3265,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-pwʰ-pʰ-tʰ-kʰ,index_diachronica_original.html:3265, / in ([\w ]+) dialects, / sporadic ; in \1 dialects
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-V+-mid,index_diachronica_original.html:3267, (/|!) (near|adjacent to) nasals, \1 \2 N
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-V+-mid,index_diachronica_original.html:3267, (/|!) near ([A-Z])," \1  \2_, _\2"
@@ -182,26 +189,26 @@ section_index,section_name,rule_id,source,from_text,to_text
 15.1,Proto-Eskimo-Aleut to Proto-Aleut,Proto-Aleut-dʒ_2,index_diachronica_original.html:4609,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 15.2.1,Proto-Eskimo to Barrow Iñupiaq,Barrow-Iñupiaq-ə,index_diachronica_original.html:4627, (/|!) at word boundaries," \1 #_, _#"
 15.2.2,Proto-Eskimo to Greenlandic Iñupiaq,Greenlandic-Iñupiaq-Cː,index_diachronica_original.html:4650, / except when CV_V in U, / sporadic ! CV_V ; except when CV_V in U
-15.2.4,Proto-Eskimo to Wales Iñupiaq,Wales-Iñupiaq-ɣ,index_diachronica_original.html:4693, / “in some positions”, / sporadic ; “in some positions”
-15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-s,index_diachronica_original.html:4719, / in certain situations, / sporadic ; in certain situations
+15.2.4,Proto-Eskimo to Wales Iñupiaq,Wales-Iñupiaq-ɣ,index_diachronica_original.html:4693, / (“in some positions”), / sporadic ; \1
+15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-s,index_diachronica_original.html:4719, / (in certain situations), / sporadic ; \1
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-C+voice,index_diachronica_original.html:4720, (/|!) adjacent to (\{[^}]+\})," \1  \2_, _\2"
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-F+voice,index_diachronica_original.html:4725, (/|!) adjacent to (\{[^}]+\})," \1  \2_, _\2"
-15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-s,index_diachronica_original.html:4746, / in certain situations, / sporadic ; in certain situations
+15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-s,index_diachronica_original.html:4746, / (in certain situations), / sporadic ; \1
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-C+voice,index_diachronica_original.html:4747, (/|!) adjacent to (\{[^}]+\})," \1  \2_, _\2"
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-F+voice,index_diachronica_original.html:4755, (/|!) adjacent to (\{[^}]+\})," \1  \2_, _\2"
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-s,index_diachronica_original.html:4775,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-s,index_diachronica_original.html:4775,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-s,index_diachronica_original.html:4775, / in ([\w ]+) dialects, / sporadic ; in \1 dialects
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-F+voice,index_diachronica_original.html:4782, (/|!) adjacent to (\{[^}]+\})," \1  \2_, _\2"
-15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-s,index_diachronica_original.html:4804, / in certain situations, / sporadic ; in certain situations
+15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-s,index_diachronica_original.html:4804, / (in certain situations), / sporadic ; \1
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-F+voice,index_diachronica_original.html:4812, (/|!) adjacent to (\{[^}]+\})," \1  \2_, _\2"
 16.1.5,Proto-Tabla-Sentani to Tabla,Tabla-e,index_diachronica_original.html:4924, / unstressed, / [-stress]
 17.1.1,Proto-Indo-European to Gheg Albanian,Gheg-Albanian-ḱ_3,index_diachronica_original.html:4962, (“[a]rchaic relic”),;  (“[a]rchaic relic”)
 17.1.1,Proto-Indo-European to Gheg Albanian,Gheg-Albanian-ḱ_3,index_diachronica_original.html:4962, (“, ; (“
-17.1.1,Proto-Indo-European to Gheg Albanian,Gheg-Albanian-s_3,index_diachronica_original.html:4976, / sometimes, / sporadic ; sometimes
+17.1.1,Proto-Indo-European to Gheg Albanian,Gheg-Albanian-s_3,index_diachronica_original.html:4976, / (sometimes), / sporadic ; \1
 17.1.2,Proto-Indo-European to Tosk Albanian,Tosk-Albanian-ḱ_3,index_diachronica_original.html:5001, (“[a]rchaic relic”),;  (“[a]rchaic relic”)
 17.1.2,Proto-Indo-European to Tosk Albanian,Tosk-Albanian-ḱ_3,index_diachronica_original.html:5001, (“, ; (“
-17.1.2,Proto-Indo-European to Tosk Albanian,Tosk-Albanian-s_3,index_diachronica_original.html:5015, / sometimes, / sporadic ; sometimes
+17.1.2,Proto-Indo-European to Tosk Albanian,Tosk-Albanian-s_3,index_diachronica_original.html:5015, / (sometimes), / sporadic ; \1
 17.2,Proto-Indo-European to Common Anatolian,Common-Anatolian-t,index_diachronica_original.html:5045, “(, ; “(
 17.2.1,Common Anatolian to Hittite,Hittite-V,index_diachronica_original.html:5057, / in , / 
 17.2.1,Common Anatolian to Hittite,Hittite-e-o,index_diachronica_original.html:5058, / in , / 
@@ -246,7 +253,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-VN,index_diachronica_original.html:5432,→ (?),
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-VN,index_diachronica_original.html:5432,", in polysyllables", ; in polysyllables
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-N_2,index_diachronica_original.html:5433,", in monosyllables", / sporadic ; in monosyllables
-17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-e,index_diachronica_original.html:5478, / _Ra (short a only), / _Ra sporadic ; (short a only)
+17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-e,index_diachronica_original.html:5478," / _Ra (short a only), ", / _Ra[-long] ; sporadic ; 
 17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-oː,index_diachronica_original.html:5483, / in , / 
 17.5.1,Proto-Indo-European to Old Irish,Old-Irish-p-t-k-kʷ-b-d-ɡ-m-n-l-r-s,index_diachronica_original.html:5521, (“, ; (“
 17.5.1,Proto-Indo-European to Old Irish,"Old-Irish-—-p,t_2",index_diachronica_original.html:5550, “(, ; “(
@@ -281,6 +288,8 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.7.2.1.5,Early Modern English to American English,American-English-o-ɔ,index_diachronica_original.html:5796, (most dialects, ; (most dialects
 17.7.2.1.5,Early Modern English to American English,American-English-ɒ_2,index_diachronica_original.html:5799, “(, ; “(
 17.7.2.1.5,Early Modern English to American English,American-English-w,index_diachronica_original.html:5803, for some C, ; sporadic ; for some C
+17.7.2.1.6,Early Modern English to Australian English,Australian-English-uː,index_diachronica_original.html:5819, in (Queensland and New South Wales), in \1 dialects
+17.7.2.1.6,Early Modern English to Australian English,Australian-English-uː,index_diachronica_original.html:5819,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.7.2.1.6,Early Modern English to Australian English,Australian-English-uː,index_diachronica_original.html:5819, ! in Queensland, sporadic ; not in Queensland
 17.7.2.1.6,Early Modern English to Australian English,Australian-English-ɫ,index_diachronica_original.html:5821, / ! if one of the above, / sporadic ; ! if one of the above
 17.7.2.1.6,Early Modern English to Australian English,Australian-English-ɪ_3,index_diachronica_original.html:5824, / unstressed, / [-stress]
@@ -310,7 +319,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.7.2.1.12,Old English to Southern Middle English,Southern-Middle-English-ɑ-e-o,index_diachronica_original.html:5998, / in , / 
 17.7.2.1.12,Old English to Southern Middle English,Southern-Middle-English-ɑ-e-o,index_diachronica_original.html:5998, ! in , ! 
 17.7.2.1.12,Old English to Southern Middle English,Southern-Middle-English-Vː_2,index_diachronica_original.html:6000, / in , / 
-17.7.2.1.13,Middle English to Yola,Yola-t-d,index_diachronica_original.html:6012, (conditioning unclear)," "" / sporadic ; (conditioning unclear)"""
+17.7.2.1.13,Middle English to Yola,Yola-t-d,index_diachronica_original.html:6012, (conditioning unclear), / sporadic ; (conditioning unclear)
 17.7.2.1.13,Middle English to Yola,Yola-ʍ,index_diachronica_original.html:6015, (at least one instance of ,;  (at least one instance of 
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-a,index_diachronica_original.html:6043,\(→ (\w+) ?\??\),→ \1
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-uː,index_diachronica_original.html:6047,", in ", ; sporadic - in 
@@ -332,7 +341,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.7.2.2.2,Middle Dutch to Modern Dutch,Modern-Dutch-—-x-ɣ_2,index_diachronica_original.html:6079,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 17.7.2.2.2,Middle Dutch to Modern Dutch,Modern-Dutch-—-x-ɣ_2,index_diachronica_original.html:6079, / in ([\w ]+) dialects, / sporadic ; in \1 dialects
 17.7.2.3,Middle High German to Standard German,Standard-German-eː-i,index_diachronica_original.html:6105,C[+ affricate],O[+delrel]
-17.7.2.3,Middle High German to Standard German,Standard-German-uː-yː-iː,index_diachronica_original.html:6109,", except in certain "," / sporadic ;, except in certain "
+17.7.2.3,Middle High German to Standard German,Standard-German-uː-yː-iː,index_diachronica_original.html:6109,", (except in certain)", / sporadic ; \1
 17.7.2.3,Middle High German to Standard German,Standard-German-uː-yː-iː,index_diachronica_original.html:6109, (“, ; (“
 17.7.2.3,Middle High German to Standard German,Standard-German-Vː,index_diachronica_original.html:6114, (some exceptions, ; sporadic (some exceptions
 17.7.2.3,Middle High German to Standard German,Standard-German-Vː_2,index_diachronica_original.html:6115, (some exceptions, ; sporadic (some exceptions
@@ -359,7 +368,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.9,Proto-Indo-European to Hittite,Hittite_2-h3,index_diachronica_original.html:6805, “(, ; “(
 17.11.1,Proto-Slavic to Polish,"Polish-—-ь,ъ_2",index_diachronica_original.html:7028, / in , / 
 17.11.1,Proto-Slavic to Polish,Polish-V,index_diachronica_original.html:7057, / unstressed, / [-stress]
-17.11.1,Proto-Slavic to Polish,Polish-Vː,index_diachronica_original.html:7066, in certain frequently-used words, / sporadic ; in certain frequently-used words
+17.11.1,Proto-Slavic to Polish,Polish-Vː,index_diachronica_original.html:7066, (in certain frequently-used words), / sporadic ; \1
 17.11.1,Proto-Slavic to Polish,Polish-ɔ̃_2,index_diachronica_original.html:7088,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.11.1,Proto-Slavic to Polish,Polish-ɔ̃_2,index_diachronica_original.html:7088,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 17.11.1,Proto-Slavic to Polish,Polish-ɔ̃_2,index_diachronica_original.html:7088, (in some dialects, sporadic ; (in some dialects
@@ -376,7 +385,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.12.1.1,Proto-Indo-European to Latin,Latin-l_2,index_diachronica_original.html:7311, “(, ; “(
 17.12.1.1,Proto-Indo-European to Latin,Latin-Vː_3,index_diachronica_original.html:7314, “(, ; “(
 17.12.1.1.1,Classical Latin vs. Vulgar Latin,Classical-Latin-vs.-Vulgar-Latin-m,index_diachronica_original.html:7331, “(, ; “(
-17.12.1.1.2,Latin to Catalan,Catalan-u,index_diachronica_original.html:7350, / (“when in unstressed penult, / sporadic ; (“when in unstressed penult
+17.12.1.1.2,Latin to Catalan,Catalan-u,index_diachronica_original.html:7350, / (\(“when in unstressed penult), / sporadic ; \1
 17.12.1.1.2,Latin to Catalan,Catalan-u,index_diachronica_original.html:7350, (“, ; (“
 17.12.1.1.2,Latin to Catalan,Catalan-iː,index_diachronica_original.html:7351, / stressed, / [+stress]
 17.12.1.1.2,Latin to Catalan,"Catalan-i,eː-e",index_diachronica_original.html:7353, / stressed, / [+stress]
@@ -439,7 +448,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-β_7,index_diachronica_original.html:7861,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-ɡ_6,index_diachronica_original.html:7872,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-ɡ_6,index_diachronica_original.html:7872,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
-17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-ɡ_6,index_diachronica_original.html:7872, / “[b]etween the last two vowels of a proparoxytone”, / sporadic ; “[b]etween the last two vowels of a proparoxytone”
+17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-ɡ_6,index_diachronica_original.html:7872, / (“\[b\]etween the last two vowels of a proparoxytone”), / sporadic ; \1
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-l_2,index_diachronica_original.html:7874,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-l_2,index_diachronica_original.html:7874,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-s,index_diachronica_original.html:7875,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
@@ -492,12 +501,15 @@ section_index,section_name,rule_id,source,from_text,to_text
 24.1.6,Proto-Paman to UraÃ°i,UraÃ°i-Vː,index_diachronica_original.html:9458, / in , / 
 24.1.7,Proto-Paman to Yinwum,Yinwum-Vː,index_diachronica_original.html:9470, / in , / 
 29.1.1.1.1,Proto-Athabaskan to Ahtna,Ahtna-K,index_diachronica_original.html:9980, in (Mentasta Ahtna), in \1 dialects
+29.1.1.1.1,Proto-Athabaskan to Ahtna,Ahtna-K,index_diachronica_original.html:9980,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 29.1.1.1.1,Proto-Athabaskan to Ahtna,Ahtna-K,index_diachronica_original.html:9980, / in ([\w ]+) dialects, / sporadic ; in \1 dialects
 29.1.1.1.3,Proto-Athabaskan to Beaver,Beaver-T,index_diachronica_original.html:9998,", in ", ; sporadic - in 
 29.1.1.1.4,Proto-Athabaskan to Chilcotin,Chilcotin-V,index_diachronica_original.html:10007,RTR,rtr
 29.1.1.1.12,Proto-Athabaskan to Holikachuk,Holikachuk-e,index_diachronica_original.html:10089, / in , / 
 29.1.1.1.12,Proto-Athabaskan to Holikachuk,Holikachuk-w,index_diachronica_original.html:10094,\(→ (\w+) ?\??\),→ \1
 29.1.1.1.14,Proto-Athabaskan to Lower Koyukon,Lower-Koyukon-w,index_diachronica_original.html:10115,\(→ (\w+) ?\??\),→ \1
+29.1.1.1.18,Proto-Athabaskan to Sekani,Sekani-T,index_diachronica_original.html:10150, in (Ware Sekani), in \1 dialects
+29.1.1.1.18,Proto-Athabaskan to Sekani,Sekani-T,index_diachronica_original.html:10150,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 29.1.1.1.18,Proto-Athabaskan to Sekani,Sekani-T,index_diachronica_original.html:10150, ! in Ware Sekani, sporadic ; not in Ware Sekani
 29.1.1.1.19,Proto-Athabaskan to Proto-Southern Athabaskan,Proto-Southern-Athabaskan-m,index_diachronica_original.html:10158, (→ b seems more common), ; (→ b seems more common)
 29.1.1.1.19,Proto-Athabaskan to Proto-Southern Athabaskan,Proto-Southern-Athabaskan-ɣ,index_diachronica_original.html:10159, / in , / 

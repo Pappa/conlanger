@@ -23184,10 +23184,10 @@ sections:
   - stages:
     - e
     - a
-    env: _Ra
+    env: _Ra[-long]
     raw: — e → a / _Ra (short a only), though “[t]he e was often restored by analogy”
     source: index_diachronica_original.html:5478
-    comment: (short a only), though “[t]he e was often restored by analogy”; sporadic
+    comment: sporadic ; though “[t]he e was often restored by analogy”
     sporadic: true
     rule_id: Proto-Celtic-—-e
   - stages:
@@ -25190,7 +25190,7 @@ sections:
     env: _ɫ
     raw: uː → ʊə → uː / _ɫ ! in Queensland and New South Wales
     source: index_diachronica_original.html:5819
-    comment: not in Queensland and New South Wales; sporadic
+    comment: not in Queensland and New South Wales dialects; sporadic
     sporadic: true
     rule_id: Australian-English-uː
   - stages:
@@ -26389,7 +26389,7 @@ sections:
     - θ ð
     raw: t d → θ ð (conditioning unclear)
     source: index_diachronica_original.html:6012
-    comment: (conditioning unclear)"; sporadic; "
+    comment: (conditioning unclear); sporadic
     sporadic: true
     rule_id: Yola-t-d
   - stages:
@@ -26905,8 +26905,8 @@ sections:
     raw: uː yː iː → ou øy ei, except in certain unstressed endings and monosyllables,
       _C{C,V,#} (“especially before /xt/”), and Low German borrowings
     source: index_diachronica_original.html:6109
-    comment: ', except in certain unstressed endings and monosyllables, _C{C,V,#}
-      ; (“especially before /xt/”), and Low German borrowings; sporadic'
+    comment: except in certain unstressed endings and monosyllables, _C{C,V,#} ; (“especially
+      before /xt/”), and Low German borrowings; sporadic
     sporadic: true
     rule_id: Standard-German-uː-yː-iː
   - stages:
@@ -48155,7 +48155,7 @@ sections:
     env: _{i,e,u}
     raw: T → TŠ / _{i,e,u} ! in Ware Sekani
     source: index_diachronica_original.html:10150
-    comment: not in Ware Sekani; sporadic
+    comment: not in Ware Sekani dialects; sporadic
     sporadic: true
     rule_id: Sekani-T
   - stages:
