@@ -12,12 +12,16 @@ _FINAL_SYLLABLE_RE = re.compile(
     r"^(?:in\s+)?(?:final\s+syllables?|syllable[- ]finally|syllable[- ]final)\s*$",
     re.IGNORECASE,
 )
-_NEXT_OR_ADJACENT_TO_SET_RE = re.compile(
-    r"^(?:next|adjacent)\s+to\s+(\{[^}]+\})\s*$",
+_ADJACENT_TO_SET_RE = re.compile(
+    r"^adjacent\s+to\s+(\{[^}]+\})\s*$",
     re.IGNORECASE,
 )
-_ADJACENT_NASAL_VOWEL_RE = re.compile(
-    r"^adjacent\s+to\s+a\s+nasal\s+vowel\s*$",
+_ADJACENT_TO_SINGLE_SEGMENT_RE = re.compile(
+    r"^(?:next|adjacent)\s+to\s+(\w)\s*$",
+    re.IGNORECASE,
+)
+_ADJACENT_TO_SEGMENT_WITH_FEATURE_RE = re.compile(
+    r"^adjacent\s+to\s+(\w\[[^]]+\])\s*$",
     re.IGNORECASE,
 )
 _UNSTRESSED_SYLLABLES_RE = re.compile(r"^unstressed\s+syllables?\s*$", re.IGNORECASE)
@@ -27,7 +31,7 @@ _STRESSED_MONOSYLLABLE_RE = re.compile(
 )
 _TYPICALLY_NEAR_U_RE = re.compile(r"^typically\s+near\s+\*?u\s*$", re.IGNORECASE)
 _BETWEEN_TWO_VOWELS_RE = re.compile(
-    r"^between\s+two\s+vowels(?:\s+of\s+unlike\s+nasality)?\s*$",
+    r"^between\s+two\s+vowels(?:\s+of\s+unlike\s+nasality)?\s*$",  # TODO: this is not correct
     re.IGNORECASE,
 )
 _NOT_UNIVERSAL_RE = re.compile(r"^not\s+universal\??\s*$", re.IGNORECASE)
@@ -63,12 +67,13 @@ def normalize_bare_prose_position_env(
     if _FINAL_SYLLABLE_RE.match(stripped):
         return _FINAL_SYLLABLE_ENV, [stripped], flags
 
-    match = _NEXT_OR_ADJACENT_TO_SET_RE.match(stripped)
+    match = (
+        _ADJACENT_TO_SET_RE.match(stripped)
+        or _ADJACENT_TO_SINGLE_SEGMENT_RE.match(stripped)
+        or _ADJACENT_TO_SEGMENT_WITH_FEATURE_RE.match(stripped)
+    )
     if match:
-        return f"_,{match.group(1)}", [stripped], flags
-
-    if _ADJACENT_NASAL_VOWEL_RE.match(stripped):
-        return "_V[+nasal], V[+nasal]_", [stripped], flags
+        return f"{match.group(1)}_, _{match.group(1)}", [stripped], flags
 
     if _UNSTRESSED_SYLLABLES_RE.match(stripped):
         return "_ %[-stress]", [stripped], flags
@@ -77,7 +82,7 @@ def normalize_bare_prose_position_env(
         return "#_[+stress]", [stripped], flags
 
     if _TYPICALLY_NEAR_U_RE.match(stripped):
-        return "_,u", [stripped], flags
+        return "_,u", [stripped], flags  # TODO: this is not correct
 
     if _BETWEEN_TWO_VOWELS_RE.match(stripped):
         return "V_V", [stripped], flags

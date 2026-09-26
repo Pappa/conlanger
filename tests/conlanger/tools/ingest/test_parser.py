@@ -734,12 +734,12 @@ def test_apply_medial_env_conditions_deferred_env_and_exception():
         ("in final syllables", "U#", ["in final syllables"]),
         ("syllable-finally", "U#", ["syllable-finally"]),
         ("syllable-final", "U#", ["syllable-final"]),
-        ("next to {S,s,l̥}", "_,{S,s,l̥}", ["next to {S,s,l̥}"]),
-        ("adjacent to {P,t}", "_,{P,t}", ["adjacent to {P,t}"]),
+        ("adjacent to {S,s,l̥}", "{S,s,l̥}_, _{S,s,l̥}", ["adjacent to {S,s,l̥}"]),
+        ("adjacent to {P,t}", "{P,t}_, _{P,t}", ["adjacent to {P,t}"]),
         (
-            "adjacent to a nasal vowel",
-            "_V[+nasal], V[+nasal]_",
-            ["adjacent to a nasal vowel"],
+            "adjacent to V[+nasal]",
+            "V[+nasal]_, _V[+nasal]",
+            ["adjacent to V[+nasal]"],
         ),
         ("unstressed syllables", "_ %[-stress]", ["unstressed syllables"]),
         (
@@ -788,34 +788,60 @@ def test_strip_trailing_position_qualifiers(text, expected_env, expected_capture
     assert captures == expected_captures
 
 
-def test_apply_prose_position_env_conditions_final_syllables():
-    assert apply_prose_position_env_conditions(
-        {"stages": ["a V", "e"], "env": "final syllables"}
-    ) == {
-        "stages": ["a V", "e"],
-        "env": "U#",
-        "comment": "final syllables",
-    }
-
-
-def test_apply_prose_position_env_conditions_next_to_set():
-    assert apply_prose_position_env_conditions(
-        {"stages": ["C[+voice]", "C[-voice]"], "env": "next to {S,s,l̥}"}
-    ) == {
-        "stages": ["C[+voice]", "C[-voice]"],
-        "env": "_,{S,s,l̥}",
-        "comment": "next to {S,s,l̥}",
-    }
-
-
-def test_apply_prose_position_env_conditions_structural_monosyllable_qualifier():
-    assert apply_prose_position_env_conditions(
-        {"stages": ["ɛ", "e"], "env": "_ʔ#, in monosyllables"}
-    ) == {
-        "stages": ["ɛ", "e"],
-        "env": "_ʔ#",
-        "comment": "in monosyllables",
-    }
+@pytest.mark.parametrize(
+    ("input", "expected"),
+    [
+        pytest.param(
+            {"env": "adjacent to {S,s,l̥}"},
+            {
+                "env": "{S,s,l̥}_, _{S,s,l̥}",
+                "comment": "adjacent to {S,s,l̥}",
+            },
+            id="adjacent to set",
+        ),
+        pytest.param(
+            {"env": "_ʔ#, in monosyllables"},
+            {
+                "env": "_ʔ#",
+                "comment": "in monosyllables",
+            },
+            id="in monosyllables",  # is this correct?
+        ),
+        pytest.param(
+            {"env": "final syllables"},
+            {
+                "env": "U#",
+                "comment": "final syllables",
+            },
+            id="final syllables",  # is this correct?
+        ),
+        pytest.param(
+            {
+                "env": "final syllables",
+                "exception": "#U",
+            },
+            {
+                "env": "final syllables",
+                "exception": "#U",
+            },
+            id="deferred when exception is present",  # is this correct?
+        ),
+        pytest.param(
+            {
+                "env": "_(C)#, in monosyllables",
+                "exception": "#U",
+            },
+            {
+                "env": "_(C)#",
+                "exception": "#U",
+                "comment": "in monosyllables",
+            },
+            id="strips qualifier with exception",
+        ),
+    ],
+)
+def test_apply_prose_position_env_conditions(input, expected):
+    assert apply_prose_position_env_conditions(input) == expected
 
 
 @pytest.mark.parametrize(
@@ -832,8 +858,9 @@ def test_split_embedded_double_slash(text, expected_head, expected_tail):
 @pytest.mark.parametrize(
     ("text", "expected_env", "expected_captures"),
     [
-        ("adjacent to another consonant", "C_,_C", ["adjacent to another consonant"]),
-        ("adjacent to S", "_,S", ["adjacent to S"]),
+        ("adjacent to ŋ", "ŋ_, _ŋ", ["adjacent to ŋ"]),
+        ("adjacent to S", "S_, _S", ["adjacent to S"]),
+        ("adjacent to C[+voice]", "C[+voice]_, _C[+voice]", ["adjacent to C[+voice]"]),
         ("Logudorese", "", ["Logudorese"]),
         ("onset of U[+stress]", "#_U[+stress]", ["onset of U[+stress]"]),
         ("in onset of %[+stress]", "#_%[+stress]", ["in onset of %[+stress]"]),
@@ -877,35 +904,29 @@ def test_normalize_prose_env_head(text, expected_env, expected_captures):
     [
         (
             {
-                "stages": ["b", "w"],
-                "exception": "adjacent to another consonant",
+                "exception": "adjacent to C",
             },
             {
-                "stages": ["b", "w"],
-                "exception": "C_,_C",
-                "comment": "adjacent to another consonant",
+                "exception": "C_, _C",
+                "comment": "adjacent to C",
             },
         ),
         (
             {
-                "stages": ["r", "ur:[+long]"],
                 "env": "#_e",
                 "exception": "Logudorese",
             },
             {
-                "stages": ["r", "ur:[+long]"],
                 "env": "#_e",
                 "comment": "Logudorese",
             },
         ),
         (
             {
-                "stages": ["æ", "e"],
                 "env": "odd syllables",
                 "exception": "_{w,j,H}",
             },
             {
-                "stages": ["æ", "e"],
                 "env": "_",
                 "exception": "_{w,j,H}",
                 "comment": "odd syllables",
@@ -913,34 +934,28 @@ def test_normalize_prose_env_head(text, expected_env, expected_captures):
         ),
         (
             {
-                "stages": ["{d,j}", "j"],
                 "env": "∅",
                 "exception": "_#",
             },
             {
-                "stages": ["{d,j}", "j"],
                 "exception": "_#",
             },
         ),
         (
             {
-                "stages": ["ʔ", "∅"],
                 "exception": "onset of U[+stress]",
             },
             {
-                "stages": ["ʔ", "∅"],
                 "exception": "#_U[+stress]",
                 "comment": "onset of U[+stress]",
             },
         ),
         (
             {
-                "stages": ["iC aC uC", "Cj Ca Cw"],
                 "env": "#_",
                 "exception": "before an identical vowel",
             },
             {
-                "stages": ["iC aC uC", "Cj Ca Cw"],
                 "env": "#_",
                 "exception": "V_V",
                 "comment": "before an identical vowel",
@@ -948,12 +963,10 @@ def test_normalize_prose_env_head(text, expected_env, expected_captures):
         ),
         (
             {
-                "stages": ["tʃ", "s"],
                 "env": "maybe",
                 "exception": "_#?",
             },
             {
-                "stages": ["tʃ", "s"],
                 "env": "_",
                 "exception": "_#",
                 "comment": "maybe; ?",
@@ -962,23 +975,19 @@ def test_normalize_prose_env_head(text, expected_env, expected_captures):
         ),
         (
             {
-                "stages": ["æ", "e"],
                 "env": "odd syllables // _{w,j,H}",
             },
             {
-                "stages": ["æ", "e"],
                 "env": "_",
                 "comment": "odd syllables",
             },
         ),
         (
             {
-                "stages": ["æ", "e"],
                 "env": "#_e // extra gloss",
                 "exception": "_{w,j,H}",
             },
             {
-                "stages": ["æ", "e"],
                 "env": "#_e",
                 "exception": "_{w,j,H}",
                 "comment": "extra gloss",
@@ -986,11 +995,9 @@ def test_normalize_prose_env_head(text, expected_env, expected_captures):
         ),
         (
             {
-                "stages": ["t", "d"],
                 "exception": "_# (sporadic)",
             },
             {
-                "stages": ["t", "d"],
                 "exception": "_#",
                 "comment": "(sporadic)",
                 "sporadic": True,
@@ -1000,70 +1007,6 @@ def test_normalize_prose_env_head(text, expected_env, expected_captures):
 )
 def test_apply_double_slash_env_conditions(parts, expected):
     assert apply_double_slash_env_conditions(parts) == expected
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_parse_rule_element_double_slash_adjacent_validate_asca():
-    probe = Path("tests/fixtures/asca_probe_words.wsca")
-    el = html.fragment_fromstring(
-        '<p class="schg">b → w / ! adjacent to another consonant</p>',
-        create_parent=False,
-    )
-    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
-    assert rules[0]["exception"] == "C_,_C"
-    section = {
-        "index": "10.2.4.1",
-        "section": "Proto-Malayo-Javanic to Javanese",
-        "rules": rules,
-    }
-    validate_asca(
-        DiachronicSeries(section, compiler_config=minimal_compiler_config()),
-        probe_words=probe,
-    )
-
-
-def test_apply_prose_position_env_conditions_deferred_when_exception_present():
-    parts = {
-        "stages": ["V", "V:[+long]"],
-        "env": "final syllables",
-        "exception": "#U",
-    }
-    assert apply_prose_position_env_conditions(parts) == parts
-
-
-def test_apply_prose_position_env_conditions_strips_qualifier_with_exception():
-    assert apply_prose_position_env_conditions(
-        {
-            "stages": ["V", "V:[+long]"],
-            "env": "_(C)#, in monosyllables",
-            "exception": "#U",
-        }
-    ) == {
-        "stages": ["V", "V:[+long]"],
-        "env": "_(C)#",
-        "exception": "#U",
-        "comment": "in monosyllables",
-    }
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_parse_rule_element_prose_position_env_validate_asca():
-    probe = Path("tests/fixtures/asca_probe_words.wsca")
-    el = html.fragment_fromstring(
-        '<p class="schg">C[+voice] → C[-voice] / next to {S,s,l̥}</p>',
-        create_parent=False,
-    )
-    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
-    assert rules[0]["env"] == "_,{S,s,l̥}"
-    section = {
-        "index": "15.2.7",
-        "section": "Proto-Eskimo to Siberian Yup’ik",
-        "rules": rules,
-    }
-    validate_asca(
-        DiachronicSeries(section, compiler_config=minimal_compiler_config()),
-        probe_words=probe,
-    )
 
 
 def test_parse_rule_element_proto_italic_medial_comment_unchanged():

@@ -6,6 +6,11 @@
   to: " / near {ħ,ʕ}"
   reason: convert to set notation
 
+#region align positional text
+- from: " next to "
+  to: " adjacent to "
+#endregion
+
 #region dialect text cleanup
 - targets:
     - " in (Mentasta Ahtna)"
@@ -100,17 +105,17 @@
   reason: replace prose
 
 #region adjacent replacements
-- from: " (/|!) adjacent to ([A-Z])"
-  to: " \\1  \\2_, _\\2"
-  use_regex: True
-  reason: replace prose
-- from: " (/|!) adjacent to (\\{[^}]+\\})"
-  to: " \\1  \\2_, _\\2"
-  use_regex: True
-- from: " (/|!) adjacent to (\\w?\\[[^]]+\\])"
-  to: " \\1  \\2_, _\\2"
-  use_regex: True
-  reason: replace prose
+# - from: " (/|!) adjacent to ([A-Z])"
+#   to: " \\1  \\2_, _\\2"
+#   use_regex: True
+#   reason: replace prose
+# - from: " (/|!) adjacent to (\\{[^}]+\\})"
+#   to: " \\1  \\2_, _\\2"
+#   use_regex: True
+# - from: " (/|!) adjacent to (\\w?\\[[^]]+\\])"
+#   to: " \\1  \\2_, _\\2"
+#   use_regex: True
+#   reason: replace prose
 #endregion
 
 #region near replacements

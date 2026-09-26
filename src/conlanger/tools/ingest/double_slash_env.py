@@ -14,12 +14,8 @@ from conlanger.utils.gloss import extract_uncertainty_qualifier_from_field
 
 _DOUBLE_SLASH_SEP = " // "
 
-_ADJACENT_ANOTHER_CONSONANT_RE = re.compile(
-    r"^adjacent\s+to\s+another\s+consonant\s*$",
-    re.IGNORECASE,
-)
-_ADJACENT_TO_SINGLE_RE = re.compile(
-    r"^(?:next|adjacent)\s+to\s+([^{}\s,]+)\s*$",
+_ADJACENT_TO_SINGLE_SEGMENT_RE = re.compile(
+    r"^(?:next|adjacent)\s+to\s+(\w)\s*$",
     re.IGNORECASE,
 )
 _ONSET_OF_STRESS_RE = re.compile(
@@ -74,12 +70,9 @@ def normalize_prose_exception_or_env_tail(
     flags: dict[str, Any] = {}
     captures: list[str] = []
 
-    if _ADJACENT_ANOTHER_CONSONANT_RE.match(stripped):
-        return "C_,_C", [stripped], flags
-
-    match = _ADJACENT_TO_SINGLE_RE.match(stripped)
+    match = _ADJACENT_TO_SINGLE_SEGMENT_RE.match(stripped)
     if match:
-        return f"_,{match.group(1)}", [stripped], flags
+        return f"{match.group(1)}_, _{match.group(1)}", [stripped], flags
 
     normalized, pos_captures, pos_flags = normalize_bare_prose_position_env(stripped)
     if normalized != stripped or pos_captures or pos_flags:

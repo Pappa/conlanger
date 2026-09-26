@@ -2756,6 +2756,7 @@ sections:
     env: u[-long]_, _u[-long]
     raw: C[+labial/+velar] → ʷ / adjacent to short u
     source: index_diachronica_original.html:1470
+    comment: adjacent to u[-long]
     rule_id: Moroccan-Arabic-C+labial,+velar
   - stages:
     - '{u,ə}'
@@ -3965,6 +3966,7 @@ sections:
     exception: C_, _C
     raw: '{θ,tʃ,ʃ,r} → t / unless adjacent to another consonant'
     source: index_diachronica_original.html:1711
+    comment: adjacent to C
     rule_id: Blackfoot-θ,tʃ,ʃ,r
   - stages:
     - ∅
@@ -5122,6 +5124,7 @@ sections:
     exception: '{p,m,k}_, _{p,m,k}'
     raw: we → wə → oː / ! adjacent to {p,m,k}
     source: index_diachronica_original.html:1905
+    comment: adjacent to {p,m,k}
     rule_id: Munsee-Delaware-we
   - stages:
     - j
@@ -9885,6 +9888,7 @@ sections:
     exception: C_, _C
     raw: b → w / ! adjacent to another consonant
     source: index_diachronica_original.html:2872
+    comment: adjacent to C
     rule_id: Javanese-b
   - stages:
     - ə
@@ -10224,6 +10228,7 @@ sections:
     exception: S_, _S
     raw: t → ð / ! adjacent to S
     source: index_diachronica_original.html:2937
+    comment: adjacent to S
     rule_id: Palauan-t
   - stages:
     - s
@@ -10376,6 +10381,7 @@ sections:
     env: V_, _V
     raw: ə → ∅ / adjacent to a vowel
     source: index_diachronica_original.html:2962
+    comment: adjacent to V
     rule_id: Proto-North-Sarawak-ə
   - stages:
     - a
@@ -10524,6 +10530,7 @@ sections:
     env: V_, _V
     raw: ə → ∅ / adjacent to a vowel
     source: index_diachronica_original.html:2988
+    comment: adjacent to V
     rule_id: Kiput-ə_2
   - stages: []
     raw: V[+stress] → Vː / _C# ! V = ə and/or C = h “(applies to diphthongal nuclei
@@ -18824,6 +18831,7 @@ sections:
     env: '{S,s,l̥}_, _{S,s,l̥}'
     raw: C[+voice] → C[-voice] / adjacent to {S,s,l̥}
     source: index_diachronica_original.html:4720
+    comment: adjacent to {S,s,l̥}
     rule_id: Kuskokwim-Yup’ik-C+voice
   - stages:
     - ɣ ʁ
@@ -18858,6 +18866,7 @@ sections:
     env: '{S,ts}_, _{S,ts}'
     raw: F[+voice] → F[-voice] / adjacent to {S,ts}
     source: index_diachronica_original.html:4725
+    comment: adjacent to {S,ts}
     rule_id: Kuskokwim-Yup’ik-F+voice
   - stages:
     - F[+voice, α PLACE]
@@ -18998,6 +19007,7 @@ sections:
     env: '{S,s,l̥}_, _{S,s,l̥}'
     raw: C[+voice] → C[-voice] / adjacent to {S,s,l̥}
     source: index_diachronica_original.html:4747
+    comment: adjacent to {S,s,l̥}
     rule_id: Nunivak-Yup’ik-C+voice
   - stages:
     - ɣ ʁ
@@ -19046,6 +19056,7 @@ sections:
     env: '{S,ts}_, _{S,ts}'
     raw: F[+voice] → F[-voice] / adjacent to {S,ts}
     source: index_diachronica_original.html:4755
+    comment: adjacent to {S,ts}
     rule_id: Nunivak-Yup’ik-F+voice
   - stages:
     - F[+voice]
@@ -19173,10 +19184,10 @@ sections:
   - stages:
     - C[+voice]
     - C[-voice]
-    env: _,{S,s,l̥}
+    env: '{S,s,l̥}_, _{S,s,l̥}'
     raw: C[+voice] → C[-voice] / next to {S,s,l̥}
     source: index_diachronica_original.html:4776
-    comment: next to {S,s,l̥}
+    comment: adjacent to {S,s,l̥}
     rule_id: Siberian-Yup’ik-C+voice
   - stages:
     - ɣ ʁ
@@ -19219,6 +19230,7 @@ sections:
     env: '{S,ts}_, _{S,ts}'
     raw: F[+voice] → F[-voice] / adjacent to {S,ts}
     source: index_diachronica_original.html:4782
+    comment: adjacent to {S,ts}
     rule_id: Siberian-Yup’ik-F+voice
   - stages:
     - F[+voice]
@@ -19361,10 +19373,10 @@ sections:
   - stages:
     - C[+voice]
     - C[-voice]
-    env: _,{S,s,l̥}
+    env: '{S,s,l̥}_, _{S,s,l̥}'
     raw: C[+voice] → C[-voice] / next to {S,s,l̥}
     source: index_diachronica_original.html:4805
-    comment: next to {S,s,l̥}
+    comment: adjacent to {S,s,l̥}
     rule_id: Unaaliq-Yup’ik-C+voice
   - stages:
     - ɣ ʁ
@@ -19414,6 +19426,7 @@ sections:
     env: '{S,ts}_, _{S,ts}'
     raw: F[+voice] → F[-voice] / adjacent to {S,ts}
     source: index_diachronica_original.html:4812
+    comment: adjacent to {S,ts}
     rule_id: Unaaliq-Yup’ik-F+voice
   - stages:
     - F[+voice]
@@ -60241,9 +60254,10 @@ sections:
   - stages:
     - a(ː)
     - ẽ(ː)
-    env: V_, _V[+nasal]
+    env: V[+nasal]_, _V[+nasal]
     raw: a(ː) → ẽ(ː) / adjacent to a nasal vowel
     source: index_diachronica_original.html:12656
+    comment: adjacent to V[+nasal]
     rule_id: Seneca-aː_2
   - stages:
     - ẽ(ː)
