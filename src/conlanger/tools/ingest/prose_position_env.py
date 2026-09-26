@@ -34,7 +34,7 @@ _BETWEEN_TWO_VOWELS_RE = re.compile(
     r"^between\s+two\s+vowels(?:\s+of\s+unlike\s+nasality)?\s*$",  # TODO: this is not correct
     re.IGNORECASE,
 )
-_NOT_UNIVERSAL_RE = re.compile(r"^not\s+universal\??\s*$", re.IGNORECASE)
+_NOT_UNIVERSAL_RE = re.compile(r"^\(?not\s+universal\??\)?\s*$", re.IGNORECASE)
 _MONOSYLLABLE_RE = re.compile(r"^(?:in\s+)?monosyllables?\s*$", re.IGNORECASE)
 _TRAILING_POSITION_QUALIFIER_RE = re.compile(
     r"^(?P<env>.+?),\s*in\s+(?P<qual>monosyllables?|polysyllables?|nouns)\s*$",
@@ -76,10 +76,10 @@ def normalize_bare_prose_position_env(
         return f"{match.group(1)}_, _{match.group(1)}", [stripped], flags
 
     if _UNSTRESSED_SYLLABLES_RE.match(stripped):
-        return "_ %[-stress]", [stripped], flags
+        return "_ %[-stress]", [stripped], flags  # TODO: this is not correct
 
     if _STRESSED_MONOSYLLABLE_RE.match(stripped):
-        return "#_[+stress]", [stripped], flags
+        return "#_[+stress]", [stripped], flags  # TODO: this is not correct
 
     if _TYPICALLY_NEAR_U_RE.match(stripped):
         return "_,u", [stripped], flags  # TODO: this is not correct
