@@ -92,7 +92,7 @@ def normalize_bare_prose_position_env(
         return "_", [stripped], flags
 
     if _MONOSYLLABLE_RE.match(stripped):
-        return "#_#", [stripped], flags
+        return "#_#", [stripped], flags  # TODO: this is not correct
 
     return text, captures, flags
 
