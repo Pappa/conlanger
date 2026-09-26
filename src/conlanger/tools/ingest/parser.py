@@ -136,11 +136,6 @@ class IndexDiachronicaParser:
         line = getattr(el, "sourceline", None) or 0
         source = f"{source_file}:{line}"
         raw = extract_text_with_subs(el)
-        working = raw
-
-        if rule_id and rule_id in self._corrections:
-            working = self._corrections[rule_id]
-            self._matched_correction_ids.add(rule_id)
 
         if rule_id and rule_id in self._parser_config.skip_rule_ids:
             skipped = IndexRule(
@@ -152,6 +147,14 @@ class IndexDiachronicaParser:
                 comment=self._parser_config.skip_rule_comments.get(rule_id),
             )
             return [skipped.to_index_dict()]
+
+        working = raw
+
+        if rule_id and rule_id in self._corrections:
+            working = self._corrections[rule_id]
+            self._matched_correction_ids.add(rule_id)
+
+        working = apply_index_rule_normalisation(working)
 
         working, hits = apply_manual_mappings(working, self._manual_mappings)
         for hit in hits:
@@ -167,7 +170,6 @@ class IndexDiachronicaParser:
                 )
             )
 
-        working = apply_index_rule_normalisation(working)
         working = apply_section_mappings(working, section_index, self._parser_config)
 
         if is_quoted_prose_paragraph(working):

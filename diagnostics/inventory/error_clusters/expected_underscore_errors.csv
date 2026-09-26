@@ -49,6 +49,6 @@ section_index,rule_id,error_token,rule
 42.1.2,Livonian-Vh,//,"Vh > V:[+long]ɦ / _C, except maybe // _j and/or _ʋ | ^^ @ Rule 1, Line 1"
 42.1.2,Livonian-y-ø,,"y ø > i e / else | ^ @ Rule 1, Line 1"
 44.2,Basque-Vn,),"Vn > ṽ / _# // for Pouletin) | ^ @ Rule 1, Line 1"
-46.5,Scots-Vowel-Shifts-ai,,"ai > ɛi / when stem-final | ^ @ Rule 1, Line 1"
+46.5,Scots-Vowel-Shifts-ai,,"ɛi > əi / when stem-final | ^ @ Rule 1, Line 2"
 46.5,Scots-Vowel-Shifts-uː,,"u:[+long] > ʌu / when-stem final | ^ @ Rule 1, Line 1"
 46.19,Southern-United-States-Shift-English-aɪ_4,,"aɪ > a:[+long] / else | ^ @ Rule 1, Line 1"
