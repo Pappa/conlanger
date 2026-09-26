@@ -13,8 +13,8 @@
 
 ## Corrections
 
-OK: **120/122**
-Skipped: **2/122**
+OK: **121/123**
+Skipped: **2/123**
 
 ### Skipped corrections
 

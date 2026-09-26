@@ -17604,14 +17604,12 @@ sections:
     source: index_diachronica_original.html:4496
     rule_id: Proto-Dravidian-w_2
   - stages:
-    - ʃk
-    - kː
+    - k ʃk
+    - k[-tense] kː
     env: V_V
     raw: k ʃk → k* kː / V_V (the asterisk-marked k is what McAlpin terms “weak k”,
       which tends to drop out in morphology)
     source: index_diachronica_original.html:4497
-    comment: k ʃk → k* kː / V_V (the asterisk-marked k is what McAlpin terms “weak
-      k”, which tends to drop out in morphology)
     rule_id: Proto-Dravidian-k-ʃk
   - stages:
     - t
@@ -26657,7 +26655,6 @@ sections:
     env: $_
     raw: f θ s → v ð z / syllable-initially (h → ɦ?)
     source: index_diachronica_original.html:6061
-    comment: (h → ɦ?)
     rule_id: Middle-Dutch-f-θ-s
   - stages:
     - V:[-long, -stress]
@@ -26883,7 +26880,7 @@ sections:
   - stages:
     - e(ː) i
     - ø(ː) y
-    env: _O[+delrel]
+    env: _A
     raw: e(ː) i → ø(ː) y / _C[+ affricate]
     source: index_diachronica_original.html:6105
     rule_id: Standard-German-eː-i
@@ -68139,7 +68136,7 @@ sections:
     rule_id: Basque-C-voice
   - stages:
     - C[+strident]
-    - O[+delrel]
+    - A
     env: _#
     raw: C[+ sibilant] → C[+ affricate] / _#
     source: index_diachronica_original.html:14224

@@ -5,10 +5,27 @@
 - from: " / near ħ ʕ"
   to: " / near {ħ,ʕ}"
   reason: convert to set notation
+- from: ATR
+  to: atr
+  reason: Lowercase feature name
+- from: RTR
+  to: rtr
+  reason: Lowercase feature name
+- from: (h → ɦ?)
+  to: ""
+  reason: remove ambuguous text
+- from: " ʰS "
+  to: " Sʰ "
+  reason: typo?
 
 #region align positional text
 - from: " next to "
   to: " adjacent to "
+- from: " / syllable-initially"
+  to: " / $_ "
+# - from: " / (_[\\w]+) \\(possibly only (word-)?initially\\??\\)"
+#   to: " / #\\1, \\1" # TODO: how to handle alternative, optional envs?
+#   use_regex: True
 #endregion
 
 #region dialect text cleanup
@@ -29,10 +46,6 @@
 
 - from: "in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects"
   to: "in\\1\\2\\3 dialects"
-  use_regex: True
-
-- from: " / in ([\\w ]+) dialects"
-  to: " / sporadic ; in \\1 dialects"
   use_regex: True
 #endregion
 
@@ -64,7 +77,7 @@
 - from: " / _Ra (short a only), "
   to: " / _Ra[-long] ; "
 - from: C[+ affricate]
-  to: O[+delrel]
+  to: A
 #endregion
 
 - from: " \\(→ (\\w+) dialectally\\?\\)"
@@ -133,6 +146,11 @@
   reason: replace prose
 #endregion
 
+#region sporadic - TODO: change this to attach to the environment
+- from: " / in ([\\w ]+) dialects"
+  to: " / sporadic ; in \\1 dialects"
+  use_regex: True
+
 - targets:
     - " / (in certain situations)"
     - " (in certain frequently-used words)"
@@ -186,31 +204,6 @@
 - from: " / ! if one of the above"
   to: " / sporadic ; ! if one of the above"
   reason: replace prose
-- from: There seems to ahve been some stuff going on
-  to: " ; There seems to ahve been some stuff going on"
-- targets:
-    - " (Do not necessarily"
-    - " (remains "
-    - " (“[a]rchaic relic”)"
-    - " (again, "
-    - " (Blevins "
-    - " (Whimemsz "
-    - " (first change marked "
-    - " (not sure what "
-    - " “(before a prefix; "
-    - " (note that "
-    - " (?; included here based on "
-    - " (at least one instance of "
-    - " (velar fricative is conjectured"
-    - " (fricative changes to approximant)"
-  comment: true
-# these are wrong
-# - from: " / when stem-final"
-#   to: " / _%# ; when stem-final"
-#   reason: unhandled positional environment
-# - from: " / when-stem final"
-#   to: " / _%# ; when-stem final"
-#   reason: unhandled positional environment
 - from: " (→ yː sometimes)"
   to: " → yː / sporadic ; (→ yː sometimes)"
   reason: workaround - we can't handle different envs for chained rules
@@ -220,12 +213,6 @@
 - from: " (conditioning unclear)"
   to: " / sporadic ; (conditioning unclear)"
   reason: replace prose
-- from: " / syllable-initially (h → ɦ?)"
-  to: " / $_ ; (h → ɦ?)"
-  reason: replace prose
-- from: " / syllable-initially"
-  to: " / $_ "
-  reason: "replace "
 - from: " / if s or z occur"
   to: " / sporadic ; if s or z occur"
   reason: interim non-local co-occurrence env until issue 122 structured conditioning
@@ -235,32 +222,9 @@
 - from: " / if ʒ is somewhere"
   to: " / sporadic ; if ʒ is somewhere"
   reason: interim non-local co-occurrence env until issue 122 structured conditioning
-- from: "k ʃk → k* kː / V_V "
-  to: "ʃk → kː / V_V ; k ʃk → k* kː / V_V "
-  reason: unresolvable symbol
-- from: " (→ b seems more common)"
-  to: " ; (→ b seems more common)"
-  reason: replace prose
 - from: (kʷ → ɡʷ → ɡ ?)
   to: kʷ → ɡʷ → ɡ / sporadic ; (kʷ → ɡʷ → ɡ ?)
   reason: workaround
-- from: " ʰS "
-  to: " Sʰ "
-  reason:
-    I have no idea what ʰS is supposed to represent - I'm assuming it's a typo
-    for Sʰ
-- from: + A POA
-  to: α place
-  reason: Point of articulation - asca syntax alpha notation
-- from: + B POA
-  to: β place
-  reason: Point of articulation - asca syntax alpha notation
-- from: ATR
-  to: atr
-  reason: Lowercase feature name
-- from: RTR
-  to: rtr
-  reason: Lowercase feature name
 - from: " / in two cases cited"
   to: " / sporadic ; in two cases cited"
   reason: replace prose
@@ -279,58 +243,20 @@
 - from: ", in some words"
   to: " sporadic ; in some words"
   reason: replace prose
-- from: ", in polysyllables"
-  to: " ; in polysyllables"
-  reason: replace prose
-- from: "# in polysyllables"
-  to: "# ; in polysyllables"
-  reason: replace prose
 - from: " / in “"
   to: " / sporadic ; in “"
   reason: replace prose
-- from: " / in coda"
-  to: " / :{ _#, _% }: ; in coda"
-  reason: unhandled positional environment
 - from: " / possible exception"
   to: " / sporadic ; possible exception"
   reason: replace prose
 - from: " / unclear conditioning"
   to: " / sporadic ; unclear conditioning"
   reason: replace prose
-- from: " (seems to be a sporadic change"
-  to: " ; (seems to be a sporadic change"
 - from: " (except in the"
   to: " / sporadic ; (except in the"
   reason: replace prose
-- from: ", in Milyan"
-  to: " ; , in Milyan"
-  reason: comment
-- from: " (*)"
-  to: " ; (*)"
-  reason: ambiguous symbol
-- from: "[anything]"
-  to: "[]"
-  reason: Use asca syntax for a wildcard symbol
-- from: "_ or when _"
-  to: "_,_"
-  reason: replace prose
 - from: "“under to [sic] the influence of neighboring consonants”"
   to: "/ sporadic ; “under to [sic] the influence of neighboring consonants”"
-  reason: replace prose
-- from: ", often"
-  to: " ; , often"
-  reason: replace prose
-- from: "high(er)"
-  to: "hi"
-  reason: ambiguous feature name
-- from: " / intertonic"
-  to: " / %[+str]_%[+str]"
-  reason: replace prose
-- from: " / plain t only"
-  to: " ; plain t only"
-  reason: replace prose
-- from: " ! some monosyllables"
-  to: " ; sporadic ! some monosyllables"
   reason: replace prose
 - from: ", in monosyllables"
   to: " / sporadic ; in monosyllables"
@@ -338,12 +264,6 @@
 - from: " / in monosyllables"
   to: " / sporadic ; in monosyllables"
   reason: replace prose
-- from: ", also in proclitics"
-  to: " ; , also in proclitics"
-  reason: replace prose
-- from: "#, though "
-  to: "# ; , though "
-  reason: comment
 - from: " / pretonic"
   to: " / sporadic ; pretonic"
   reason: unhandled positional environment
@@ -353,12 +273,91 @@
 - from: " if {M,Vː} "
   to: " / sporadic ; if {M,Vː} "
   reason: unhandled positional environment
+- from: " ! some monosyllables"
+  to: " ; sporadic ! some monosyllables"
+  reason: replace prose
+#endregion
+
+#region comment handling
+- from: There seems to ahve been some stuff going on
+  to: " ; There seems to ahve been some stuff going on"
+- targets:
+    - " (Do not necessarily"
+    - " (remains "
+    - " (“[a]rchaic relic”)"
+    - " (again, "
+    - " (Blevins "
+    - " (Whimemsz "
+    - " (first change marked "
+    - " (not sure what "
+    - " “(before a prefix; "
+    - " (note that "
+    - " (?; included here based on "
+    - " (at least one instance of "
+    - " (velar fricative is conjectured"
+    - " (fricative changes to approximant)"
+  comment: true
+- from: ", in polysyllables"
+  to: " ; in polysyllables"
+- from: "# in polysyllables"
+  to: "# ; in polysyllables"
+- from: " (→ b seems more common)"
+  to: " ; (→ b seems more common)"
+- from: " (seems to be a sporadic change"
+  to: " ; (seems to be a sporadic change"
+- from: ", in Milyan"
+  to: " ; , in Milyan"
+  reason: comment
+- from: " (*)"
+  to: " ; (*)"
+  reason: ambiguous symbol
+- from: ", often"
+  to: " ; , often"
+- from: " / plain t only"
+  to: " ; plain t only"
+- from: ", also in proclitics"
+  to: " ; , also in proclitics"
+- from: "#, though "
+  to: "# ; , though "
+  reason: comment
 - from: " (this second one"
   to: " ; (this second one"
-  reason: replace prose
 - from: " / in open syllables "
   to: " ; in open syllables "
   reason: unhandled environment
+#endregion
+
+# these are wrong
+# - from: " / when stem-final"
+#   to: " / _%# ; when stem-final"
+#   reason: unhandled positional environment
+# - from: " / when-stem final"
+#   to: " / _%# ; when-stem final"
+#   reason: unhandled positional environment
+# - from: "k ʃk → k* kː / V_V "
+#   to: "ʃk → kː / V_V ; k ʃk → k* kː / V_V "
+#   reason: unresolvable symbol
+- from: + A POA
+  to: α place
+  reason: Point of articulation - asca syntax alpha notation
+- from: + B POA
+  to: β place
+  reason: Point of articulation - asca syntax alpha notation
+- from: " / in coda"
+  to: " / :{ _#, _% }: ; in coda"
+  reason: unhandled positional environment
+- from: "[anything]"
+  to: "[]"
+  reason: Use asca syntax for a wildcard symbol
+- from: "_ or when _"
+  to: "_,_"
+  reason: replace prose
+- from: "high(er)"
+  to: "hi"
+  reason: ambiguous feature name
+- from: " / intertonic"
+  to: " / %[+str]_%[+str]"
+  reason: replace prose
 
 # keep these last because they are so broad
 - from: " / in "

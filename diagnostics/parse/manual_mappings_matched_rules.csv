@@ -163,7 +163,6 @@ section_index,section_name,rule_id,source,from_text,to_text
 11.5.2,Proto-Lezgic to Archi,"Archi-ɢ,ɣ",index_diachronica_original.html:3981,"ɣ → q (more likely, *ɢ → q instead of → ɣ)","ɣ → q ; (more likely, *ɢ → q instead of → ɣ)"
 11.5.3,Proto-Lezgic to Lezghi,Lezghi-ɣ,index_diachronica_original.html:3992," (again, ",";  (again, "
 13.2,Proto-Chumash to Cruzeño,Cruzeño-k,index_diachronica_original.html:4443, “(, ; “(
-14.1,Proto-Elamo-Dravidian to Proto-Dravidian,Proto-Dravidian-k-ʃk,index_diachronica_original.html:4497,k ʃk → k* kː / V_V ,ʃk → kː / V_V ; k ʃk → k* kː / V_V 
 14.3.1,Standard Tamil to Colloquial Tamil,Colloquial-Tamil-aj,index_diachronica_original.html:4538, “(, ; “(
 14.3.1,Standard Tamil to Colloquial Tamil,Colloquial-Tamil-∅_2,index_diachronica_original.html:4549," if {M,Vː} "," / sporadic ; if {M,Vː} "
 14.3.1,Standard Tamil to Colloquial Tamil,Colloquial-Tamil-r,index_diachronica_original.html:4550,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
@@ -299,8 +298,8 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-a,index_diachronica_original.html:5901,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-ɛː,index_diachronica_original.html:5905,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-ɛː,index_diachronica_original.html:5905,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
-17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-ɛː,index_diachronica_original.html:5905, / in ([\w ]+) dialects, / sporadic ; in \1 dialects
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-ɛː,index_diachronica_original.html:5905,\(→ (\w+) ?\??\),→ \1
+17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-ɛː,index_diachronica_original.html:5905, / in ([\w ]+) dialects, / sporadic ; in \1 dialects
 17.7.2.1.10,Old English to Scots,Scots_2-øː,index_diachronica_original.html:5922, “(, ; “(
 17.7.2.1.11,Scots to Falkirk Scots,Falkirk-Scots-V,index_diachronica_original.html:5974, “(, ; “(
 17.7.2.1.11,Scots to Falkirk Scots,Falkirk-Scots-k,index_diachronica_original.html:5976, “(, ; “(
@@ -317,7 +316,8 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-ei-ou,index_diachronica_original.html:6050,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-iu,index_diachronica_original.html:6056,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-iu,index_diachronica_original.html:6056,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
-17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-f-θ-s,index_diachronica_original.html:6061, / syllable-initially (h → ɦ?), / $_ ; (h → ɦ?)
+17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-f-θ-s,index_diachronica_original.html:6061,(h → ɦ?),
+17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-f-θ-s,index_diachronica_original.html:6061, / syllable-initially, / $_ 
 17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-V,index_diachronica_original.html:6062, / if short and unstressed," / [-long, -stress]"
 17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-f,index_diachronica_original.html:6063,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.7.2.2.1,Old Low Franconian to Middle Dutch,Middle-Dutch-f,index_diachronica_original.html:6063,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
@@ -329,7 +329,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.7.2.2.2,Middle Dutch to Modern Dutch,Modern-Dutch-—-x-ɣ_2,index_diachronica_original.html:6079,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.7.2.2.2,Middle Dutch to Modern Dutch,Modern-Dutch-—-x-ɣ_2,index_diachronica_original.html:6079,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 17.7.2.2.2,Middle Dutch to Modern Dutch,Modern-Dutch-—-x-ɣ_2,index_diachronica_original.html:6079, / in ([\w ]+) dialects, / sporadic ; in \1 dialects
-17.7.2.3,Middle High German to Standard German,Standard-German-eː-i,index_diachronica_original.html:6105,C[+ affricate],O[+delrel]
+17.7.2.3,Middle High German to Standard German,Standard-German-eː-i,index_diachronica_original.html:6105,C[+ affricate],A
 17.7.2.3,Middle High German to Standard German,Standard-German-uː-yː-iː,index_diachronica_original.html:6109,", (except in certain)", / sporadic ; \1
 17.7.2.3,Middle High German to Standard German,Standard-German-uː-yː-iː,index_diachronica_original.html:6109, (“, ; (“
 17.7.2.3,Middle High German to Standard German,Standard-German-Vː,index_diachronica_original.html:6114, (some exceptions, ; sporadic (some exceptions
@@ -646,7 +646,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 44.2,Proto-Basque to Basque,"Basque-u-o,e",index_diachronica_original.html:14202,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 44.2,Proto-Basque to Basque,"Basque-u-o,e",index_diachronica_original.html:14202,", in ", ; sporadic - in 
 44.2,Proto-Basque to Basque,Basque-eð,index_diachronica_original.html:14214,\(→ (\w+) ?\??\),→ \1
-44.2,Proto-Basque to Basque,Basque-C+-sibilant,index_diachronica_original.html:14224,C[+ affricate],O[+delrel]
+44.2,Proto-Basque to Basque,Basque-C+-sibilant,index_diachronica_original.html:14224,C[+ affricate],A
 44.2,Proto-Basque to Basque,Basque-s̻-ts̺,index_diachronica_original.html:14225,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 45.1.2,Proto-Pai to Paipai,Paipai-i,index_diachronica_original.html:14268, / unstressed, / [-stress]
 45.1.3,Proto-Pai to Tipai,Tipai-i,index_diachronica_original.html:14278, / unstressed, / [-stress]
@@ -664,8 +664,8 @@ section_index,section_name,rule_id,source,from_text,to_text
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-a,index_diachronica_original.html:14328,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-ɛː,index_diachronica_original.html:14332,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-ɛː,index_diachronica_original.html:14332,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
-46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-ɛː,index_diachronica_original.html:14332, / in ([\w ]+) dialects, / sporadic ; in \1 dialects
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-ɛː,index_diachronica_original.html:14332,\(→ (\w+) ?\??\),→ \1
+46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-ɛː,index_diachronica_original.html:14332, / in ([\w ]+) dialects, / sporadic ; in \1 dialects
 46.11,Middle Chinese to Cantonese Vowel Shift (“The Inner-Outer Flip”),Cantonese-Vowel-Shift-a_2,index_diachronica_original.html:14395, “(, ; “(
 46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-aː,index_diachronica_original.html:14419, “(, ; “(
 46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-eː,index_diachronica_original.html:14421, “(, ; “(

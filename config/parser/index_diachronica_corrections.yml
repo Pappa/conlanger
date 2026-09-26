@@ -590,3 +590,8 @@ rules:
                   content: "!̃ !x → {!̃,!̃n} {!x,x}"
                   reason: |
                           Optional ``(n)`` on click output is not ASCA-legal I/O (ticket 136).
+        - rule:
+                  id: Proto-Dravidian-k-ʃk
+                  content: k ʃk → k[+weak] kː / V_V
+                  reason: |
+                          k ʃk → k* kː / V_V
