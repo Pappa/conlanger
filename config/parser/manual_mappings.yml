@@ -9,62 +9,57 @@
 #region dialect text cleanup
 - targets:
     - " in (Mentasta Ahtna)"
-    - " in (West Swampy Cree)"
+    - " in ((West|East) Swampy Cree)"
     - " in (Nelemwa)"
     - " (Pije and Fwai)"
     - " in (Ware Sekani)"
-    - " in (Queensland and New South Wales)"
+    - " in (Queensland( and New South Wales)?)"
     # - " \\(in (Languedoc)\\)"
   to: " in \\1 dialects"
   use_regex: True
-  reason: dialect text
 
 - from: "(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*"
   to: "dialects"
   use_regex: True
-  reason: align dialect text
 
 - from: "in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects"
   to: "in\\1\\2\\3 dialects"
   use_regex: True
-  reason: align dialect text
+
+- from: " / in ([\\w ]+) dialects"
+  to: " / sporadic ; in \\1 dialects"
+  use_regex: True
 #endregion
 
-#region class letter replacements
+#region feature and class letter replacements
 - from: " (/|!) (near|adjacent to) a vowel"
   to: " \\1 \\2 V"
   use_regex: True
-  reason: replace prose
-
 - from: " (/|!) (near|adjacent to) (another consonant|consonants)"
   to: " \\1 \\2 C"
   use_regex: True
-  reason: replace prose
 - from: " (/|!) (near|adjacent to) nasals"
   to: " \\1 \\2 N"
   use_regex: True
-  reason: replace prose
 - from: " (/|!) (near|adjacent to) a nasal vowel"
   to: " \\1 \\2 V[+nasal]"
   use_regex: True
-  reason: replace prose
-#endregion
-
-#region feature replacements
 - from: " (/|!) (near|adjacent to) gutturals"
   to: " \\1 \\2 [+laryngeal]"
   use_regex: True
-  reason: replace prose
 - from: " (/|!) (near|adjacent to) emphatics"
   to: " \\1 \\2 [+emphatic]"
   use_regex: True
-  reason: replace prose
 - from: " / unstressed"
   to: " / [-stress]"
-  reason: replace prose
 - from: " / stressed"
   to: " / [+stress]"
-  reason: replace prose
+- from: " / if short and unstressed"
+  to: " / [-long, -stress]"
+- from: " / _Ra (short a only), "
+  to: " / _Ra[-long] ; "
+- from: C[+ affricate]
+  to: O[+delrel]
 #endregion
 
 - from: " \\(→ (\\w+) dialectally\\?\\)"
@@ -133,31 +128,19 @@
   reason: replace prose
 #endregion
 
-# - from: " (/|!) near ([A-Z])"
-#   to: " \\1 \\2_, _\\2"
-#   use_regex: True
-#   reason: replace prose
-# - from: " / near nasals"
-#   to: " / _,N ;"
-#   reason: replace prose
-
-- from: " / in ([\\w ]+) dialects"
-  to: " / sporadic ; in \\1 dialects"
-  use_regex: True
-  reason: dialect text
 - targets:
     - " / (in certain situations)"
     - " (in certain frequently-used words)"
-    - ", (except in certain)"
     - " / (“in some positions”)"
     - " / (except in several)"
-    - ", (in the feminine ending)"
     - " / (depending on the environment)"
     - " / (\\(“when in unstressed penult)"
     - " / (some sequences)"
     - " / (sometimes)"
     - " / (in Form VI)"
     - " / (“\\[b\\]etween the last two vowels of a proparoxytone”)"
+    - ", (except in certain)"
+    - ", (in the feminine ending)"
   to: " / sporadic ; \\1"
   use_regex: True
   reason: sporadic environment
@@ -188,9 +171,6 @@
   reason: replace prose
 - from: " (some exceptions"
   to: " ; sporadic (some exceptions"
-  reason: replace prose
-- from: " / _Ra (short a only), "
-  to: " / _Ra[-long] ; sporadic ; "
   reason: replace prose
 - from: " for some C"
   to: " ; sporadic ; for some C"
@@ -250,9 +230,6 @@
 - from: " / if ʒ is somewhere"
   to: " / sporadic ; if ʒ is somewhere"
   reason: interim non-local co-occurrence env until issue 122 structured conditioning
-- from: " / if short and unstressed"
-  to: " / [-long, -stress]"
-  reason: replace prose
 - from: "k ʃk → k* kː / V_V "
   to: "ʃk → kː / V_V ; k ʃk → k* kː / V_V "
   reason: unresolvable symbol
@@ -262,9 +239,6 @@
 - from: (kʷ → ɡʷ → ɡ ?)
   to: kʷ → ɡʷ → ɡ / sporadic ; (kʷ → ɡʷ → ɡ ?)
   reason: workaround
-- from: C[+ affricate]
-  to: O[+delrel]
-  reason: asca syntax replacement
 - from: " ʰS "
   to: " Sʰ "
   reason:

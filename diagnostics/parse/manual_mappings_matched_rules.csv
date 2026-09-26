@@ -62,7 +62,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 7.7,Proto-Algonquian to Southern East Cree,Southern-East-Cree-ʃ,index_diachronica_original.html:1824, / in ([\w ]+) dialects, / sporadic ; in \1 dialects
 7.8,Proto-Algonquian to Plains Cree,Plains-Cree-e,index_diachronica_original.html:1834,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 7.8,Proto-Algonquian to Plains Cree,Plains-Cree-e,index_diachronica_original.html:1834,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
-7.9,Proto-Algonquian to Swampy Cree,Swampy-Cree-ʃ,index_diachronica_original.html:1868, in (West Swampy Cree), in \1 dialects
+7.9,Proto-Algonquian to Swampy Cree,Swampy-Cree-ʃ,index_diachronica_original.html:1868, in ((West|East) Swampy Cree), in \1 dialects
 7.9,Proto-Algonquian to Swampy Cree,Swampy-Cree-ʃ,index_diachronica_original.html:1868,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 7.9,Proto-Algonquian to Swampy Cree,Swampy-Cree-ʃ,index_diachronica_original.html:1868, / in ([\w ]+) dialects, / sporadic ; in \1 dialects
 7.9,Proto-Algonquian to Swampy Cree,Swampy-Cree-ʃ,index_diachronica_original.html:1868, (remains ,;  (remains 
@@ -253,7 +253,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-VN,index_diachronica_original.html:5432,→ (?),
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-VN,index_diachronica_original.html:5432,", in polysyllables", ; in polysyllables
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-N_2,index_diachronica_original.html:5433,", in monosyllables", / sporadic ; in monosyllables
-17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-e,index_diachronica_original.html:5478," / _Ra (short a only), ", / _Ra[-long] ; sporadic ; 
+17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-e,index_diachronica_original.html:5478," / _Ra (short a only), ", / _Ra[-long] ; 
 17.5,Proto-Indo-European to Proto-Celtic,Proto-Celtic-—-oː,index_diachronica_original.html:5483, / in , / 
 17.5.1,Proto-Indo-European to Old Irish,Old-Irish-p-t-k-kʷ-b-d-ɡ-m-n-l-r-s,index_diachronica_original.html:5521, (“, ; (“
 17.5.1,Proto-Indo-European to Old Irish,"Old-Irish-—-p,t_2",index_diachronica_original.html:5550, “(, ; “(
@@ -288,7 +288,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.7.2.1.5,Early Modern English to American English,American-English-o-ɔ,index_diachronica_original.html:5796, (most dialects, ; (most dialects
 17.7.2.1.5,Early Modern English to American English,American-English-ɒ_2,index_diachronica_original.html:5799, “(, ; “(
 17.7.2.1.5,Early Modern English to American English,American-English-w,index_diachronica_original.html:5803, for some C, ; sporadic ; for some C
-17.7.2.1.6,Early Modern English to Australian English,Australian-English-uː,index_diachronica_original.html:5819, in (Queensland and New South Wales), in \1 dialects
+17.7.2.1.6,Early Modern English to Australian English,Australian-English-uː,index_diachronica_original.html:5819, in (Queensland( and New South Wales)?), in \1 dialects
 17.7.2.1.6,Early Modern English to Australian English,Australian-English-uː,index_diachronica_original.html:5819,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.7.2.1.6,Early Modern English to Australian English,Australian-English-uː,index_diachronica_original.html:5819, ! in Queensland, sporadic ; not in Queensland
 17.7.2.1.6,Early Modern English to Australian English,Australian-English-ɫ,index_diachronica_original.html:5821, / ! if one of the above, / sporadic ; ! if one of the above
@@ -310,8 +310,8 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-a,index_diachronica_original.html:5901,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-ɛː,index_diachronica_original.html:5905,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-ɛː,index_diachronica_original.html:5905,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
-17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-ɛː,index_diachronica_original.html:5905,\(→ (\w+) ?\??\),→ \1
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-ɛː,index_diachronica_original.html:5905, / in ([\w ]+) dialects, / sporadic ; in \1 dialects
+17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-ɛː,index_diachronica_original.html:5905,\(→ (\w+) ?\??\),→ \1
 17.7.2.1.10,Old English to Scots,Scots_2-øː,index_diachronica_original.html:5922, “(, ; “(
 17.7.2.1.11,Scots to Falkirk Scots,Falkirk-Scots-V,index_diachronica_original.html:5974, “(, ; “(
 17.7.2.1.11,Scots to Falkirk Scots,Falkirk-Scots-k,index_diachronica_original.html:5976, “(, ; “(
@@ -676,8 +676,8 @@ section_index,section_name,rule_id,source,from_text,to_text
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-a,index_diachronica_original.html:14328,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-ɛː,index_diachronica_original.html:14332,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-ɛː,index_diachronica_original.html:14332,in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
-46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-ɛː,index_diachronica_original.html:14332,\(→ (\w+) ?\??\),→ \1
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-ɛː,index_diachronica_original.html:14332, / in ([\w ]+) dialects, / sporadic ; in \1 dialects
+46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-ɛː,index_diachronica_original.html:14332,\(→ (\w+) ?\??\),→ \1
 46.11,Middle Chinese to Cantonese Vowel Shift (“The Inner-Outer Flip”),Cantonese-Vowel-Shift-a_2,index_diachronica_original.html:14395, “(, ; “(
 46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-aː,index_diachronica_original.html:14419, “(, ; “(
 46.13,Old Norse to Faroese Vowel Shift,Faroese-Vowel-Shift-eː,index_diachronica_original.html:14421, “(, ; “(
