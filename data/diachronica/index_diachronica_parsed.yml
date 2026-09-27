@@ -2829,18 +2829,18 @@ sections:
   - stages:
     - dʒ
     - '{d,ɡ}'
+    env: '{s,z}_, _{s,z}'
     raw: dʒ → {d,ɡ} / if s or z occur somewhere else in the word
     source: index_diachronica_original.html:1481
-    comment: if s or z occur somewhere else in the word; sporadic
-    sporadic: true
+    comment: if s or z occur somewhere else in the word
     rule_id: Moroccan-Arabic-dʒ
   - stages:
     - dʒ
     - ʒ
-    env: else
     raw: dʒ → ʒ / else
     source: index_diachronica_original.html:1482
     rule_id: Moroccan-Arabic-dʒ_2
+    exception: '{s,z}_, _{s,z}'
   - stages:
     - s
     - ʃ
@@ -45223,12 +45223,10 @@ sections:
     source: index_diachronica_original.html:9359
     rule_id: Tunebo-e
   - stages:
-    - ai
+    - a[-stress]i
     - e
-    env: _ *a[-stress]
     raw: ai → e / if the *a is not stressed
     source: index_diachronica_original.html:9360
-    comment: if the *a is not stressed
     rule_id: Tunebo-ai
   - stages:
     - a
@@ -67713,7 +67711,7 @@ sections:
     env: '{V,C}_r'
     raw: e → a / {V,C}_r (“mainly in the western dialects”)
     source: index_diachronica_original.html:14157
-    comment: (“mainly in the western dialects”)
+    comment: (“mainly in western dialects”)
     rule_id: Basque-e_4
   - stages:
     - u i

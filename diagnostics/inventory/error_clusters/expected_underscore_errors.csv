@@ -1,5 +1,4 @@
 section_index,rule_id,error_token,rule
-6.2.2.1.14,Moroccan-Arabic-dʒ_2,,"dʒ > ʒ / else | ^ @ Rule 1, Line 1"
 7.4,Blackfoot-aː_2,,"a:[+long] > a / else | ^ @ Rule 1, Line 1"
 10.3.11.3.1,Kwamera-ə_2,,"ə > e / else | ^ @ Rule 1, Line 1"
 17.2,Common-Anatolian-T-h2_3,,"P:[-voice] x > P:[+voice] ɣʷ / V:[+stress, +long] | ^ @ Rule 1, Line 1"

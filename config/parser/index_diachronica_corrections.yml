@@ -1,597 +1,601 @@
 rules:
-        - rule:
-                  id: Blackfoot-nr
-                  content: "nl → s"
-                  reason: "Corrected from original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
-        - rule:
-                  id: Blackfoot-ʔθ,ʔr
-                  content: "ʔθ, ʔr → {ʔ,j,∅}"
-                  reason: "Corrected from original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
-        - rule:
-                  id: Dena’ina-ʃʷ,x-z,ʒʷ,ɣ
-                  content: "{ʃ(ʷ),x} {z,ʒ(ʷ),ɣ} → s j"
-                  reason: "Corrected from original source: Northern Athapaskan Languages (Vol. 6), p. 73"
-        - rule:
-                  id: Old-Irish-s
-                  content: "s → z / C[+voice]_"
-                  reason: |
-                          The PIE rules for the voicing of s → z, as in [nizdos] for *nisdos, are assumed to apply
-        - rule:
-                  id: Old-Irish-m̩-n̩
-                  content: "m̩ n̩ → am an / _{s,({m,j,w})V}"
-                  reason: "Bracket fix for env set with optional grouping"
-        - rule:
-                  id: Spanish-—-Vdz
-                  content: "— Vdz → ∅ / {nts,ndz,rdz}_"
-                  reason: "Bracket fix - not confirmed from original source"
-        - rule:
-                  id: Seneca-r_3
-                  content: "r → j / C[-glottal](h)_{o(ː),õ(ː)}"
-                  reason: "Bracket fix - not confirmed from original source"
-        - rule:
-                  id: Seneca-ẽː
-                  content: "ẽ(ː) → e(ː) / _{e(ː),o(ː)}"
-                  reason: "Bracket fix - not confirmed from original source"
-        - rule:
-                  id: Zayse-Zergulla-x3
-                  content: "x₂ → ɡ / V_#"
-                  reason: "x3 does not appear in the original source, x2 is a best guess"
-        - rule:
-                  id: Proto-Dravidian-s_3
-                  content: "s → ∅ / #V_{r,ɾ,l}"
-                  reason: "Replacing with IPA symbols"
-        - rule:
-                  id: Proto-Dravidian-r̀
-                  content: "{r,ɾ} → r"
-                  reason: "Replacing with IPA symbols"
-        - rule:
-                  id: Proto-Dravidian-ŕ
-                  content: "{ɹ,ɾ} → r / V_V"
-                  reason: "Replacing with IPA symbols"
-        - rule:
-                  id: Proto-Dravidian-n-nː-rn
-                  content: "n nː rn → {n,r} n(ː) ɳ / V_V"
-                  reason: "Replacing with IPA symbols"
-        - rule:
-                  id: Proto-Dravidian-nː
-                  content: "nː → n(ː)"
-                  reason: "Replacing with IPA symbols"
-        - rule:
-                  id: Proto-Dravidian-nr̀
-                  content: "n{r,ɾ} → nr"
-                  reason: "Replacing with IPA symbols"
-        - rule:
-                  id: Yemsa-kʼ
-                  content: "kʼ → k / #_, _#"
-                  reason: "This is a guess, it could be _# or _,#"
-        - rule:
-                  id: Proto-Mongolic-tʃ_2
-                  content: "tʃ → d / #_, _#"
-                  reason: "This is a guess, it could be _# or _,#"
-        - rule:
-                  id: Old-Japanese-Vowel-Shift-u,ɨi-,a,i-ɨi,ia,ə-uɨ,a,ə
-                  content: "{u,ɨ}i {a,ə}i i{a,ə} u{ɨ,a,ə} → wi e je wo"
-                  reason: "Corrected from original source: https://conf.ling.cornell.edu/whitman/FrellWhitman.pdf"
-        - rule:
-                  id: Old-Provençal-rdʒ
-                  content: "rdʒ → {rdʒ,rz}"
-                  reason: "Skipping intermediate step"
-        - rule:
-                  id: Old-Provençal-rtVɡ
-                  content: "rtVɡ → {rdʒ,rs}"
-                  reason: "Skipping intermediate step"
-        - rule:
-                  id: Old-Provençal-rtʃ-rdtʃ
-                  content: "rtʃ rdtʃ → {rts,rs} {rz,rts,rdʒ}"
-                  reason: "Skipping intermediate step"
-        - rule:
-                  id: Proto-North-Sarawak-ə_3
-                  content: "ə → ∅ / VC_CV"
-                  reason: "Adding env delimiter"
-        - rule:
-                  id: Quito-χ
-                  content: "χ → h / #_"
-                  reason: "Adding env delimiter"
-        - rule:
-                  id: Riobamba-χ
-                  content: "χ → kʰ / #_"
-                  reason: "Adding env delimiter"
-        - rule:
-                  id: Romanian-a
-                  content: "a → ɨ / _N ! _{nː,mn}"
-                  reason: "Adding env delimiter"
-        - rule:
-                  id: Old-English-i,u
-                  content: "{i,u} → ∅ / _# ! V[-long]C_#"
-                  reason: "Correcting env delimiter"
-        - rule:
-                  id: Comox-ʔ
-                  content: "ʔ → ∅ / V₃R_V"
-                  reason: "Adding env delimiter"
-        - rule:
-                  id: Portuguese-V_3
-                  content: "V → ∅ / ”V%s_t(C)V(C)# ; (irregular)"
-                  reason: "Adding env delimiter"
-        - rule:
-                  id: Proto-Dhegiha-k_2
-                  content: "k → ∅ / #t_ ; (in morphemes)"
-                  reason: "Adding env delimiter"
-        - rule:
-                  id: Latin-l
-                  content: "l → r / _Vl"
-                  reason: "Correcting env delimiter"
-        - rule:
-                  id: Latin-r…r
-                  content: "r…r → r…"
-                  reason: |
-                          Workaround for asca, probably should be handled at compile time
-                          r…r → r…∅
-        - rule:
-                  id: Eritai-∅
-                  content: "∅ → dz / î_V"
-                  reason: "Adding env delimiter"
-        - rule:
-                  id: Old-Russian-kt-ɡd
-                  content: "kt → ɡd / _E"
-                  reason: "Correcting delimiters - this may be wrong"
-        - rule:
-                  id: Attic-Greek-ɔ
-                  content: "ɔ → ∅ / %i_n#, %i_s#"
-                  reason: "Correcting env - this may be wrong"
-        - rule:
-                  id: Proto-Circassian-ɡʲʷ-xʲʷ-ɣʲʷ?
-                  content: "ɡʲʷ xʲʷ ɣʲʷ → ɡʷ xʷ ʁʷ"
-                  reason: "Removing (?) - this may be wrong"
-        - rule:
-                  id: Proto-Erromango-r
-                  content: "r → L / sporadic"
-                  reason: "Corrected from original source: https://www.ethnologue.com/language/erohttps://www.researchgate.net/publication/306887303_The_Linguistic_History_of_Southern_Vanuatu"
-        - rule:
-                  id: Proto-Erromango-v_2
-                  content: "v → f / [+ sibilant](..)$(..)_"
-                  reason: "Corrected from original source: https://www.ethnologue.com/language/erohttps://www.researchgate.net/publication/306887303_The_Linguistic_History_of_Southern_Vanuatu"
-        - rule:
-                  id: Proto-Erromango-v_3
-                  content: "v → f / _(..)$(..)[+ sibilant]"
-                  reason: "Corrected from original source: https://www.ethnologue.com/language/erohttps://www.researchgate.net/publication/306887303_The_Linguistic_History_of_Southern_Vanuatu"
-        - rule:
-                  id: Early-Icelandic-O
-                  content: "O[α PLACE] → ∅ / {F[-α PLACE],r,l}_O"
-                  reason: "Using asca syntax - unsure how else to represent POA"
-        - rule:
-                  id: Early-Icelandic-S
-                  content: "S[α PLACE] → ∅ / N[α PLACE]_S"
-                  reason: "Using asca syntax - unsure how else to represent POA"
-        - rule:
-                  id: Early-Icelandic-n̥n,nn̥
-                  content: "{n̥n,nn̥} → tn̥ / V_"
-                  reason: "Typo: {n̥n,nn̥ → tn̥ / V_"
-        - rule:
-                  id: Early-Icelandic-r̥n,r̥n̥,rn̥
-                  content: "{r̥n,r̥n̥,rn̥} → tn̥"
-                  reason: "Typo: {r̥n,r̥n̥,rn̥ → tn̥"
-        - rule:
-                  id: Early-Icelandic-ɬl,ɬː
-                  content: "{ɬl,ɬː} → tɬ"
-                  reason: "{ɬl,ɬː → tɬ"
-        - rule:
-                  id: Egyptian-Arabic-i,u
-                  content: "{i,u}[-stress, -long] → ∅ / VC_CV"
-                  reason: "Replacing prose"
-        - rule:
-                  id: Moroccan-Arabic-a,i
-                  content: "{a,i}[-long] → ə / _"
-                  reason: "Replacing prose"
-        - rule:
-                  id: Moroccan-Arabic-u
-                  content: "u[-long] → ə / _"
-                  reason: "Replacing prose"
-        - rule:
-                  id: Moroccan-Arabic-u_2
-                  content: "u[-long] → ʊ / _"
-                  reason: "Replacing prose"
-        - rule:
-                  id: Proto-Slavic-bʱ-dʱ-ɡʱ,ɡ́ʱ-ɡʷʱ
-                  content: "bʱ dʱ ɡʱ ɡʷʱ → b d ɡ ɡʷ"
-                  reason: "Not really sure what to do with ɡ́"
-        - rule:
-                  id: Proto-Slavic-Kʷ-ḱ-ɡ́
-                  content: "Kʷ ḱ g → K s z"
-                  reason: "Not really sure what to do with ɡ́"
-        - rule:
-                  id: Saigon-Vietnamese-ə
-                  content: "ə → ∅ / {i,ɨ}_{p,m,w}"
-                  reason: "Typo? - ə → ∅ / {i,ɨ}_{p,m.w}"
-        - rule:
-                  id: Blackfoot-ket
-                  content: "ket → {tː, sː}"
-                  reason: "Allowing for possible alternative output"
-        - rule:
-                  id: Cheyenne-W
-                  content: "W → ∅ / [+nasal]_, _[+nasal], t_, _t"
-                  reason: "Prose"
-        - rule:
-                  id: Old-Provençal-p-k-tʃ-b-ɡ-β-j
-                  content: "p k tʃ b ɡ β j → b ɡ i {b,i} ∅ {u,i} i / _r"
-                  reason: |
-                          Removing intermediate steps - original:
-                          p k tʃ b ɡ β j → b ɡ i {b,u,u→y→i} ∅ {u,u→y→i} i / _r
-        - rule:
-                  id: Asaro-N
-                  content: "N → [α PLACE] / _S[α PLACE]"
-                  reason: "Using asca syntax - unsure how else to represent POA"
-        - rule:
-                  id: Auyana-N
-                  content: "N → [α PLACE] / _C[α PLACE]"
-                  reason: "Using asca syntax - unsure how else to represent POA"
-        - rule:
-                  id: Gadsup-N_2
-                  content: "N → [α PLACE] / _C[α PLACE]"
-                  reason: "Using asca syntax - unsure how else to represent POA"
-        - rule:
-                  id: Basque-N
-                  content: "N → [α PLACE] / _C[α PLACE]"
-                  reason: "Using asca syntax - unsure how else to represent POA"
-        - rule:
-                  id: Kuskokwim-Yup’ik-F+voice_2
-                  content: "F[+voice, α PLACE] → S[α PLACE] / l̥_"
-                  reason: "Using asca syntax - unsure how else to represent POA"
-        - rule:
-                  id: Vowel-Shifts_2-N-glottalized
-                  content: "N[-place, α PLACE] → e / _O[α PLACE] ; “‘in primary forms’” "
-                  reason: "I think this is probably wrong"
-        - rule:
-                  id: Sebirwa-NC_2
-                  content: "NC[α PLACE] → N[α PLACE]C / #_ ; sporadic (in verbs)"
-                  reason: "Bit of a guess"
-        - rule:
-                  id: Aquitanian-N
-                  content: "N → [α PLACE] / _S[α PLACE]"
-                  reason: "Using asca syntax - unsure how else to represent POA"
-        - rule:
-                  id: American-English-æ
-                  content: "æ → {æː,ɑː} / _{F[-voiced],N[-voiced]} ; (“words which change vary between dialects”)"
-                  reason: "Prose"
-        - rule:
-                  id: Biblical-Hebrew-p-b-t-d-k-ɡ
-                  content: "p b t d k ɡ → b v θ ð x ɣ / sporadic ; non-intial singletons"
-                  reason: |
-                          The source doesn't seem to clarify anything for me:
-                          https://www.adath-shalom.ca/history_of_hebrew.htm
-        - rule:
-                  id: Spanish-—-e
-                  content: "e → i / _Cj ! _p ; C = p"
-                  reason: "Variable value for C"
-        - rule:
-                  id: Proto-Boreafrasian-z
-                  content: "z → d / sporadic ; “when another sibilant is in the word nearby” and (word-finally?) when “noun-stem final”"
-                  reason: "Too complex to parse"
-        - rule:
-                  id: Arapaho-C,#Vʔ
-                  content: "{Vʔ,ʔ} → {Vː∅,∅} / #_C, C_C, _C"
-                  reason: |
-                          TODO: resolve this one properly.
-                          Original rule: ({C,#}V)ʔ → ({C,#}Vː)∅ / _C
-                          The source says: 
-                                  "*? is lost before a true consonant, with compensatory 
-                                  lengthening of a preceding nonpostvocal"
-                          I think it may be necessary to split this into multiple rules.
-        - rule:
-                  id: Gros-Ventre-C,#V-longʔ
-                  content: "{V[-long]ʔ,ʔ} → {V[+falling tone]∅,∅} / #_C, C_C, _C"
-                  reason: |
-                          TODO: resolve this one properly.
-                          Original rule: ({C,#}V[-long])ʔ → ({C,#}Vː[+falling tone])∅ / _C
-        - rule:
-                  id: Shetland-Norn-ɒ_2
-                  content: "ɒ → ø / _O[+dental], _O[+alveolar]"
-                  reason: |
-                          Handling alternatives in distinctive feature
-                          ɒ → ø / _O[+ dental/alveolar]
-        - rule:
-                  id: Shetland-Norn-a
-                  content: "a → ∅ / C[+dental]_u, C[+alveolar]_u"
-                  reason: |
-                          Handling alternatives in distinctive feature
-                          a → ∅ / C[+ dental/alveolar]_u
-        - rule:
-                  id: Shetland-Norn-yː
-                  content: "yː → ø / _O[+dental], _O[+alveolar]"
-                  reason: |
-                          Handling alternatives in distinctive feature
-                          yː → ø / _O[+ dental/alveolar]
-        - rule:
-                  id: Anglo-Frisian-a
-                  content: "a[-long] → ɑ̃ / _N"
-                  reason: "a → ɑ̃ / _N (short only)"
-        - rule:
-                  id: Anglo-Frisian-aː
-                  content: "a[+long, -nasal] → æ[+long, -nasal] / ! _N"
-                  reason: "aː → æː / ! _N or if nasalized"
-        - rule:
-                  id: Anglo-Frisian-i,u
-                  content: "{i,u} → ∅ / _# ! VC_"
-                  reason: "Typo? - {i,u} → ∅ / -# ! VC_"
-        # - rule:
-        #           id: Proto-Southern-Athabaskan-K
-        #           content: "K → ts"
-        #           reason: |
-        #                   Hoijer (1938) §29.1.1.1.19: velar K becomes dental TS series.
-        #                   IPA affricate /ts/ avoids per-letter T/S group expansion (P:[-voice]P).
-        # - rule:
-        #           id: Cypriot-Arabic-∅
-        #           content: "∅ → F / N_O, N_r ! m_f"
-        #           reason: |
-        #                   Workaround for asca, probably should be handled at compile time
-        #                   ∅ → F / N_{O,r} ! m_f
-        - rule:
-                  id: Proto-Mongolic-pʰ_3
-                  content: "pʰ → b / #_U"
-                  reason: "Disputed: pʰ → b / #_U[+high pitch]"
-        - rule:
-                  id: Proto-Tungusic-U-long-+low-pitch-U+long-low-pitch
-                  content: "U[-long] U[+long] → U[+long] U[-long]"
-                  reason: "Disputed: U[-long +low pitch] U[+long -low pitch] → U[+long] U[-long]"
-        - rule:
-                  id: Greenlandic-Iñupiaq-lʁ
-                  content: "lʁ → ʁl"
-                  reason: "Some metathesis in consonant clusters, the conditions of which are not elaborated upon; the given example cited within the text is lʁ → ʁl"
-        - rule:
-                  id: Greenlandic-Iñupiaq-m-n-ŋ-t-ɣ,ʁ«
-                  content: "m n ŋ t {ɣ,ʁ} → p t k n ŋ / _#"
-                  reason: |
-                          Corrected from original source: https://www.jstor.org/stable/1263119
-        - rule:
-                  id: Egyptian-Arabic-i-u
-                  content: "i[-long] u[-long] → e o / ! _#"
-                  reason: |
-                          i u → e o / only when short, ! _#
-        - rule:
-                  id: Egyptian-Arabic-u
-                  content: "u[-long] → {o,u} / _#"
-                  reason: |
-                          u → {o,u} / short only, _#
-        - rule:
-                  id: Egyptian-Arabic-i,u
-                  content: "{i[-stress, -long],u[-stress, -long]} → ∅ / VC_CV"
-                  reason: |
-                          {i,u} → ∅ / VC_CV when unstressed (short only)
-        - rule:
-                  id: Egyptian-Arabic-V_2
-                  content: "V → Vː / _#"
-                  reason: |
-                          Not sure how to represent the suffix:
-                            V → Vː / _# + suffix
-        - rule:
-                  id: Old-Norse-k_3
-                  content: "k → ∅ / s_{l,t}"
-                  reason: "k → ∅ / s_l,t"
-        - rule:
-                  id: Australian-English-æ_2
-                  content: "æ → æː / _{n,m,ɡ,ɫ}% ! _{n,m,ɡ,ɫ}%{j,w} ; or a form of a strong verb"
-                  reason: "æ → æː / _{n,m,ɡ,ɫ% ! _n,m,ɡ,ɫ}%{j,w} or a form of a strong verb"
-        - rule:
-                  id: Proto-Indo-Iranian-k-ɡ-ɡʱ
-                  content: "k ɡ ɡʱ → c ɟ ɟʱ / _{e,i,j}"
-                  reason: "k ɡ ɡʱ → c ɟ ɟʱ / _e,i,j"
-        - rule:
-                  id: Lungchow-a
-                  content: "a → aː / _{u,i}"
-                  reason: "a → aː / _u,i"
-        - rule:
-                  id: Lahu-i-ip,k-it-im,ŋ-in
-                  content: "i i{p,k} it i{m,ŋ} in → i ɨʔ iʔ ɛ ɨ / _#"
-                  reason: "-i -i{p,k} -it -i{m,ŋ} -in → -i -ɨʔ -iʔ -ɛ -ɨ"
-        - rule:
-                  id: Lahu-u-up-ut-uk-um-un-uŋ
-                  content: "u up ut uk um un uŋ → u ɔʔ əʔ uʔ ɔ ə ɛ / _#"
-                  reason: "-u -up -ut -uk -um -un -uŋ → -u -ɔʔ -əʔ -uʔ -ɔ -ə -ɛ"
-        - rule:
-                  id: Munsee-Delaware-ʔ
-                  content: "ʔ → h / _C ! _l ; or when reduplicated"
-                  reason: "ʔ → h / _C ! C = l, or when reduplicated"
-        - rule:
-                  id: Pre-Slavic-Vowel-Changes-aj
-                  content: "aj→ {æ,i}"
-                  reason: "aj → {æ₂,i₂} “(reduced)”"
-        - rule:
-                  id: Pre-Slavic-Vowel-Changes-u
-                  content: "u → ŭ → {e,o,ɤ,a}"
-                  reason: |
-                          Not sure how to represent this:
-                          u → ŭ [ɤ?] → {e,o,ɤ,a} (strong)/∅ (weak) “in modern languages”
-        - rule:
-                  id: Palaic-hhy
-                  content: "hhy → ʒ"
-                  reason: "hhy → “something like /ʒ/”"
-        - rule:
-                  id: Proto-Celtic-—-C1C2
-                  content: "C{S,s} → x{S,s}"
-                  reason: "C<sub>1</sub>C<sub>2</sub> → xC<sub>2</sub> / if C<sub>2</sub> was a plosive or s"
-        - rule:
-                  id: Proto-Celtic-—-∅_2
-                  content: "∅ → i / C{l,r}_S"
-                  reason: |
-                          Corrected from original source:
-                                  CLCstop> CLiCstop (where L = r, 1)
-                          Original rule:
-                                  ∅ → i / C{l,r}S
-        - rule:
-                  id: Gros-Ventre-j
-                  content: "j → ∅ / {ʃ,θ}_"
-                  reason: |
-                          I assume this rule comes from:
-                          "In Atsina, A-A *y is lost after A-A *s and *0"
-                            j → ∅ / {ʃ,θ}
-        - rule:
-                  id: Moroccan-Arabic-C+labial,+velar
-                  content: "{C[+labial],C[+velar]} → [+labial] / adjacent to u[-long]"
-                  reason: |
-                          The above rule does not seem to be correct.
-                          "In positions where /ə/ was deleted, /u/ was also deleted, 
-                          and is maintained only as labialization of the adjacent 
-                          labial or velar consonant"
-                            C[+labial/+velar] → ʷ / adjacent to short u
-        - rule:
-                  id: Siberian-Yup’ik-ə
-                  content: "ə → a / _#"
-                  reason: |
-                          "It generally changed to i in Yupik
-                          also, but in word-final it became a"
-        - rule:
-                  id: Guānhuà-jem,jen
-                  content: "{jem,jen} → iɛn / C̣_ ! ʐ_ ; sporadic"
-                  reason: |
-                          {jem,jen} → iɛn / sometimes after C̣_ (but ! ʐ_) (only in one variety?)
-        - rule:
-                  id: Early-Icelandic-r
-                  content: "r → r̥ / S[-voice]_#"
-                  reason: |
-                          Corrected from original source: http://www.kunstsprachen.de/s17/rules.sch
-                          Original rule:
-                          r → r̥ / S[- voice] / _#
-        - rule:
-                  id: Shetland-Norn-a_2
-                  content: "a → {o,ɔ} / _{K,r} ! _w"
-                  reason: |
-                          a → {o,ɔ} / _{K,r} (! K = w ?)
-        - rule:
-                  id: Middle-Welsh-V_4
-                  content: "V → ∅ / intertonic"
-                  reason: |
-                          V → ∅ / _[+intertonic]
-        - rule:
-                  id: Dacian-kʷ,kw-ɡʷ,ɡw
-                  content: "{kʷ,kw} {ɡʷ,ɡw} → tʃ dʒ → {s,z} z / _E"
-                  reason: |
-                          https://en.wikipedia.org/wiki/Dacian_language
-                            {kʷ,kw} {ɡʷ,ɡw} → tʃ dʒ (→ s~z z ?) / _E
-        - rule:
-                  id: Old-Norse-ʀ
-                  content: "ʀ → ∅ / r_n"
-                  reason: |
-                          Corrected from original source:
-                          http://www.kunstsprachen.de/s17/rules.sch
-                          Original rule:
-                          ʀ → r_n
-        - rule:
-                  id: Italian-ɔ
-                  content: "ɔ[+stress] → uo / _ ! j_, _{dʒ,L}"
-                  reason: |
-                          ɔ → uo / stressed ! j_ or _{dʒ,L}
-        - rule:
-                  id: Italian-skj,stj,sːj
-                  content: "{skj,stj,sːj} → ʃ"
-                  reason: |
-                          Typo: {skj,stj,sːj → ʃ
-        - rule:
-                  id: Proto-Indo-Iranian-s
-                  content: "s → ʃ / {u,i,l,r,K,Ḱ}_"
-                  reason: |
-                          I'm not sure if this is correct.
-                          I assume it's referring to 
-                          §40 Rise of the Sibilants and their Neutralization
-                            s → ʃ / {u,i,l,r,K,Ḱ}
-        - rule:
-                  id: Catalan-b
-                  content: "b → v / V%_j"
-                  reason: |
-                          Seems to be a typo, using best guess.
-                          b → v / V̈%_j
-        - rule:
-                  id: Catalan-C
-                  content: "C → ∅ / C_C ! C_L"
-                  reason: |
-                          C → ∅ / C₁_C₂ ! C₂ = L
-        - rule:
-                  id: Catalan-ɛj-ɔj
-                  content: "ɛj ɔj → jɛj uei → i {u,ui} / stressed"
-                  reason: |
-                          From Wikipedia:
-                          https://en.wikipedia.org/wiki/Phonological_history_of_Catalan
-                          "Diphthongization of /ɛ/ and /ɔ/ before palatal consonants 
-                          (with subsequent loss of middle vowel if a triphthong is produced)."
-                            ɛj ɔj → jɛj uei / i {u,ui} / stressed
-        - rule:
-                  id: Catalan-ɛ
-                  content: "ɛ → e / ! _{rː,l,rC[-labial],nr}"
-                  reason: |
-                          No idea how to represent this.
-                          ɛ → e / ! _{rː,l,rC[-labial],nr} or _ ? w#
-        - rule:
-                  id: Proto-Mongolic-e-o-u-æ-ø-y
-                  content: "e o u æ ø y → {a,e} {o,u} {a,o,u a} {a,o,u} {o,u,i} / _Ca"
-                  reason: |
-                          Typo: e o u æ ø y → {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i} / _Ca
-        - rule:
-                  id: Old-Provençal-β_3
-                  content: "β → {v,ɡw}"
-                  reason: |
-                          β → v (though sometimes → ɡw instead if analogy interfered)
-        - rule:
-                  id: Old-Provençal-β_6
-                  content: "β → ∅ / B_,_B ; pretonic"
-                  reason: |
-                          β → ∅ / when pretonic and immediately adjacent to a back vowel
-        - rule:
-                  id: Old-Provençal-ð_5
-                  content: "ð → {z,∅}"
-                  reason: |
-                          ð → z (except in some northern and eastern dialects where → ∅)
-        - rule:
-                  id: Old-Provençal-rtʃj
-                  content: "rtʃj → rts → rs"
-                  reason: |
-                          rtʃj → rts (→ rs ?)
-        - rule:
-                  id: Old-Provençal-tj
-                  content: "tj → tʃ → dj → djʒ → {dz, idz}"
-                  reason: |
-                          tj → tʃ → dj → djʒ (?) → dz (in the north and west) or idz (in the south and east)
-                          —medial (i)dz became (i)z; i-less forms “prevail in the literary language” and seem 
-                          to have become common if the dz follows the stress
-        - rule:
-                  id: Old-Provençal-ndt-ndtʃ-ntʃ-nkt-nf
-                  content: "ndt ndtʃ ntʃ nkt nf → n{d,t} {nts,ndz,nz,ndʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,fː,f}"
-                  reason: |
-                          ndt ndtʃ ntʃ nkt nf → n{d,t} {nts,ndz(→ nz),ndʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,fː(→ f)}
-        - rule:
-                  id: Early-Modern-English-ʊ
-                  content: "ʊ → ɤ / _P ! _l"
-                  reason: |
-                          Index env/exception prose; ``!`` is not a Khoisan click (ticket 136).
-        - rule:
-                  id: "Ç\x81̬Ana-!̃n"
-                  content: "{!̃,!̃n} → ŋ"
-                  reason: |
-                          Optional ``(n)`` on click input is not ASCA-legal I/O (ticket 136).
-        - rule:
-                  id: "Ç\x81Ani-!-!̬-!̃"
-                  content: "! !̬ !̃ → {!,k} {!̬,ɡ} {!̃,!̃n,ŋɡ}"
-                  reason: |
-                          Replace ``!̃(n)`` parallel member with explicit set (ticket 136).
-        - rule:
-                  id: Kxoe-!̃n
-                  content: "{!̃,!̃n} → ǂ̃"
-                  reason: |
-                          Optional ``(n)`` on click input is not ASCA-legal I/O (ticket 136).
-        - rule:
-                  id: Teti-!-!ˀ-!̬-!̃n-!x
-                  content: "! !ˀ !̬ {!̃,!̃n} !x → k ∅ ɡ ŋ x"
-                  reason: |
-                          Optional ``(n)`` on click input is not ASCA-legal I/O (ticket 136).
-        - rule:
-                  id: "TsÊ\x94ixa-!-!ˀ-!̬-!̃n-!x"
-                  content: "! !ˀ !̬ {!̃,!̃n} !x → k ∅ ɡ ŋɡ x"
-                  reason: |
-                          Optional ``(n)`` on click input is not ASCA-legal I/O (ticket 136).
-        - rule:
-                  id: "Ç\x80̬Ui-!̃-!x"
-                  content: "!̃ !x → {!̃,!̃n} {!x,x}"
-                  reason: |
-                          Optional ``(n)`` on click output is not ASCA-legal I/O (ticket 136).
-        - rule:
-                  id: Proto-Dravidian-k-ʃk
-                  content: k ʃk → k[+weak] kː / V_V
-                  reason: |
-                          k ʃk → k* kː / V_V
+  - rule:
+      id: Blackfoot-nr
+      content: "nl → s"
+      reason: "Corrected from original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
+  - rule:
+      id: Blackfoot-ʔθ,ʔr
+      content: "ʔθ, ʔr → {ʔ,j,∅}"
+      reason: "Corrected from original source: International Journal of American Linguistics, Vol. 55, No. 1, p 50"
+  - rule:
+      id: Dena’ina-ʃʷ,x-z,ʒʷ,ɣ
+      content: "{ʃ(ʷ),x} {z,ʒ(ʷ),ɣ} → s j"
+      reason: "Corrected from original source: Northern Athapaskan Languages (Vol. 6), p. 73"
+  - rule:
+      id: Old-Irish-s
+      content: "s → z / C[+voice]_"
+      reason: |
+        The PIE rules for the voicing of s → z, as in [nizdos] for *nisdos, are assumed to apply
+  - rule:
+      id: Old-Irish-m̩-n̩
+      content: "m̩ n̩ → am an / _{s,({m,j,w})V}"
+      reason: "Bracket fix for env set with optional grouping"
+  - rule:
+      id: Spanish-—-Vdz
+      content: "— Vdz → ∅ / {nts,ndz,rdz}_"
+      reason: "Bracket fix - not confirmed from original source"
+  - rule:
+      id: Seneca-r_3
+      content: "r → j / C[-glottal](h)_{o(ː),õ(ː)}"
+      reason: "Bracket fix - not confirmed from original source"
+  - rule:
+      id: Seneca-ẽː
+      content: "ẽ(ː) → e(ː) / _{e(ː),o(ː)}"
+      reason: "Bracket fix - not confirmed from original source"
+  - rule:
+      id: Zayse-Zergulla-x3
+      content: "x₂ → ɡ / V_#"
+      reason: "x3 does not appear in the original source, x2 is a best guess"
+  - rule:
+      id: Proto-Dravidian-s_3
+      content: "s → ∅ / #V_{r,ɾ,l}"
+      reason: "Replacing with IPA symbols"
+  - rule:
+      id: Proto-Dravidian-r̀
+      content: "{r,ɾ} → r"
+      reason: "Replacing with IPA symbols"
+  - rule:
+      id: Proto-Dravidian-ŕ
+      content: "{ɹ,ɾ} → r / V_V"
+      reason: "Replacing with IPA symbols"
+  - rule:
+      id: Proto-Dravidian-n-nː-rn
+      content: "n nː rn → {n,r} n(ː) ɳ / V_V"
+      reason: "Replacing with IPA symbols"
+  - rule:
+      id: Proto-Dravidian-nː
+      content: "nː → n(ː)"
+      reason: "Replacing with IPA symbols"
+  - rule:
+      id: Proto-Dravidian-nr̀
+      content: "n{r,ɾ} → nr"
+      reason: "Replacing with IPA symbols"
+  - rule:
+      id: Yemsa-kʼ
+      content: "kʼ → k / #_, _#"
+      reason: "This is a guess, it could be _# or _,#"
+  - rule:
+      id: Proto-Mongolic-tʃ_2
+      content: "tʃ → d / #_, _#"
+      reason: "This is a guess, it could be _# or _,#"
+  - rule:
+      id: Old-Japanese-Vowel-Shift-u,ɨi-,a,i-ɨi,ia,ə-uɨ,a,ə
+      content: "{u,ɨ}i {a,ə}i i{a,ə} u{ɨ,a,ə} → wi e je wo"
+      reason: "Corrected from original source: https://conf.ling.cornell.edu/whitman/FrellWhitman.pdf"
+  - rule:
+      id: Old-Provençal-rdʒ
+      content: "rdʒ → {rdʒ,rz}"
+      reason: "Skipping intermediate step"
+  - rule:
+      id: Old-Provençal-rtVɡ
+      content: "rtVɡ → {rdʒ,rs}"
+      reason: "Skipping intermediate step"
+  - rule:
+      id: Old-Provençal-rtʃ-rdtʃ
+      content: "rtʃ rdtʃ → {rts,rs} {rz,rts,rdʒ}"
+      reason: "Skipping intermediate step"
+  - rule:
+      id: Proto-North-Sarawak-ə_3
+      content: "ə → ∅ / VC_CV"
+      reason: "Adding env delimiter"
+  - rule:
+      id: Quito-χ
+      content: "χ → h / #_"
+      reason: "Adding env delimiter"
+  - rule:
+      id: Riobamba-χ
+      content: "χ → kʰ / #_"
+      reason: "Adding env delimiter"
+  - rule:
+      id: Romanian-a
+      content: "a → ɨ / _N ! _{nː,mn}"
+      reason: "Adding env delimiter"
+  - rule:
+      id: Old-English-i,u
+      content: "{i,u} → ∅ / _# ! V[-long]C_#"
+      reason: "Correcting env delimiter"
+  - rule:
+      id: Comox-ʔ
+      content: "ʔ → ∅ / V₃R_V"
+      reason: "Adding env delimiter"
+  - rule:
+      id: Portuguese-V_3
+      content: "V → ∅ / ”V%s_t(C)V(C)# ; (irregular)"
+      reason: "Adding env delimiter"
+  - rule:
+      id: Proto-Dhegiha-k_2
+      content: "k → ∅ / #t_ ; (in morphemes)"
+      reason: "Adding env delimiter"
+  - rule:
+      id: Latin-l
+      content: "l → r / _Vl"
+      reason: "Correcting env delimiter"
+  - rule:
+      id: Latin-r…r
+      content: "r…r → r…"
+      reason: |
+        Workaround for asca, probably should be handled at compile time
+        r…r → r…∅
+  - rule:
+      id: Eritai-∅
+      content: "∅ → dz / î_V"
+      reason: "Adding env delimiter"
+  - rule:
+      id: Old-Russian-kt-ɡd
+      content: "kt → ɡd / _E"
+      reason: "Correcting delimiters - this may be wrong"
+  - rule:
+      id: Attic-Greek-ɔ
+      content: "ɔ → ∅ / %i_n#, %i_s#"
+      reason: "Correcting env - this may be wrong"
+  - rule:
+      id: Proto-Circassian-ɡʲʷ-xʲʷ-ɣʲʷ?
+      content: "ɡʲʷ xʲʷ ɣʲʷ → ɡʷ xʷ ʁʷ"
+      reason: "Removing (?) - this may be wrong"
+  - rule:
+      id: Proto-Erromango-r
+      content: "r → L / sporadic"
+      reason: "Corrected from original source: https://www.ethnologue.com/language/erohttps://www.researchgate.net/publication/306887303_The_Linguistic_History_of_Southern_Vanuatu"
+  - rule:
+      id: Proto-Erromango-v_2
+      content: "v → f / [+ sibilant](..)$(..)_"
+      reason: "Corrected from original source: https://www.ethnologue.com/language/erohttps://www.researchgate.net/publication/306887303_The_Linguistic_History_of_Southern_Vanuatu"
+  - rule:
+      id: Proto-Erromango-v_3
+      content: "v → f / _(..)$(..)[+ sibilant]"
+      reason: "Corrected from original source: https://www.ethnologue.com/language/erohttps://www.researchgate.net/publication/306887303_The_Linguistic_History_of_Southern_Vanuatu"
+  - rule:
+      id: Early-Icelandic-O
+      content: "O[α PLACE] → ∅ / {F[-α PLACE],r,l}_O"
+      reason: "Using asca syntax - unsure how else to represent POA"
+  - rule:
+      id: Early-Icelandic-S
+      content: "S[α PLACE] → ∅ / N[α PLACE]_S"
+      reason: "Using asca syntax - unsure how else to represent POA"
+  - rule:
+      id: Early-Icelandic-n̥n,nn̥
+      content: "{n̥n,nn̥} → tn̥ / V_"
+      reason: "Typo: {n̥n,nn̥ → tn̥ / V_"
+  - rule:
+      id: Early-Icelandic-r̥n,r̥n̥,rn̥
+      content: "{r̥n,r̥n̥,rn̥} → tn̥"
+      reason: "Typo: {r̥n,r̥n̥,rn̥ → tn̥"
+  - rule:
+      id: Early-Icelandic-ɬl,ɬː
+      content: "{ɬl,ɬː} → tɬ"
+      reason: "{ɬl,ɬː → tɬ"
+  - rule:
+      id: Egyptian-Arabic-i,u
+      content: "{i,u}[-stress, -long] → ∅ / VC_CV"
+      reason: "Replacing prose"
+  - rule:
+      id: Moroccan-Arabic-a,i
+      content: "{a,i}[-long] → ə / _"
+      reason: "Replacing prose"
+  - rule:
+      id: Moroccan-Arabic-u
+      content: "u[-long] → ə / _"
+      reason: "Replacing prose"
+  - rule:
+      id: Moroccan-Arabic-u_2
+      content: "u[-long] → ʊ / _"
+      reason: "Replacing prose"
+  - rule:
+      id: Proto-Slavic-bʱ-dʱ-ɡʱ,ɡ́ʱ-ɡʷʱ
+      content: "bʱ dʱ ɡʱ ɡʷʱ → b d ɡ ɡʷ"
+      reason: "Not really sure what to do with ɡ́"
+  - rule:
+      id: Proto-Slavic-Kʷ-ḱ-ɡ́
+      content: "Kʷ ḱ g → K s z"
+      reason: "Not really sure what to do with ɡ́"
+  - rule:
+      id: Saigon-Vietnamese-ə
+      content: "ə → ∅ / {i,ɨ}_{p,m,w}"
+      reason: "Typo? - ə → ∅ / {i,ɨ}_{p,m.w}"
+  - rule:
+      id: Blackfoot-ket
+      content: "ket → {tː, sː}"
+      reason: "Allowing for possible alternative output"
+  - rule:
+      id: Cheyenne-W
+      content: "W → ∅ / [+nasal]_, _[+nasal], t_, _t"
+      reason: "Prose"
+  - rule:
+      id: Old-Provençal-p-k-tʃ-b-ɡ-β-j
+      content: "p k tʃ b ɡ β j → b ɡ i {b,i} ∅ {u,i} i / _r"
+      reason: |
+        Removing intermediate steps - original:
+        p k tʃ b ɡ β j → b ɡ i {b,u,u→y→i} ∅ {u,u→y→i} i / _r
+  - rule:
+      id: Asaro-N
+      content: "N → [α PLACE] / _S[α PLACE]"
+      reason: "Using asca syntax - unsure how else to represent POA"
+  - rule:
+      id: Auyana-N
+      content: "N → [α PLACE] / _C[α PLACE]"
+      reason: "Using asca syntax - unsure how else to represent POA"
+  - rule:
+      id: Gadsup-N_2
+      content: "N → [α PLACE] / _C[α PLACE]"
+      reason: "Using asca syntax - unsure how else to represent POA"
+  - rule:
+      id: Basque-N
+      content: "N → [α PLACE] / _C[α PLACE]"
+      reason: "Using asca syntax - unsure how else to represent POA"
+  - rule:
+      id: Kuskokwim-Yup’ik-F+voice_2
+      content: "F[+voice, α PLACE] → S[α PLACE] / l̥_"
+      reason: "Using asca syntax - unsure how else to represent POA"
+  - rule:
+      id: Vowel-Shifts_2-N-glottalized
+      content: "N[-place, α PLACE] → e / _O[α PLACE] ; “‘in primary forms’” "
+      reason: "I think this is probably wrong"
+  - rule:
+      id: Sebirwa-NC_2
+      content: "NC[α PLACE] → N[α PLACE]C / #_ ; sporadic (in verbs)"
+      reason: "Bit of a guess"
+  - rule:
+      id: Aquitanian-N
+      content: "N → [α PLACE] / _S[α PLACE]"
+      reason: "Using asca syntax - unsure how else to represent POA"
+  - rule:
+      id: American-English-æ
+      content: "æ → {æː,ɑː} / _{F[-voiced],N[-voiced]} ; (“words which change vary between dialects”)"
+      reason: "Prose"
+  - rule:
+      id: Biblical-Hebrew-p-b-t-d-k-ɡ
+      content: "p b t d k ɡ → b v θ ð x ɣ / sporadic ; non-intial singletons"
+      reason: |
+        The source doesn't seem to clarify anything for me:
+        https://www.adath-shalom.ca/history_of_hebrew.htm
+  - rule:
+      id: Spanish-—-e
+      content: "e → i / _Cj ! _p ; C = p"
+      reason: "Variable value for C"
+  - rule:
+      id: Proto-Boreafrasian-z
+      content: "z → d / sporadic ; “when another sibilant is in the word nearby” and (word-finally?) when “noun-stem final”"
+      reason: "Too complex to parse"
+  - rule:
+      id: Arapaho-C,#Vʔ
+      content: "{Vʔ,ʔ} → {Vː∅,∅} / #_C, C_C, _C"
+      reason: |
+        TODO: resolve this one properly.
+        Original rule: ({C,#}V)ʔ → ({C,#}Vː)∅ / _C
+        The source says: 
+                "*? is lost before a true consonant, with compensatory 
+                lengthening of a preceding nonpostvocal"
+        I think it may be necessary to split this into multiple rules.
+  - rule:
+      id: Gros-Ventre-C,#V-longʔ
+      content: "{V[-long]ʔ,ʔ} → {V[+falling tone]∅,∅} / #_C, C_C, _C"
+      reason: |
+        TODO: resolve this one properly.
+        Original rule: ({C,#}V[-long])ʔ → ({C,#}Vː[+falling tone])∅ / _C
+  - rule:
+      id: Shetland-Norn-ɒ_2
+      content: "ɒ → ø / _O[+dental], _O[+alveolar]"
+      reason: |
+        Handling alternatives in distinctive feature
+        ɒ → ø / _O[+ dental/alveolar]
+  - rule:
+      id: Shetland-Norn-a
+      content: "a → ∅ / C[+dental]_u, C[+alveolar]_u"
+      reason: |
+        Handling alternatives in distinctive feature
+        a → ∅ / C[+ dental/alveolar]_u
+  - rule:
+      id: Shetland-Norn-yː
+      content: "yː → ø / _O[+dental], _O[+alveolar]"
+      reason: |
+        Handling alternatives in distinctive feature
+        yː → ø / _O[+ dental/alveolar]
+  - rule:
+      id: Anglo-Frisian-a
+      content: "a[-long] → ɑ̃ / _N"
+      reason: "a → ɑ̃ / _N (short only)"
+  - rule:
+      id: Anglo-Frisian-aː
+      content: "a[+long, -nasal] → æ[+long, -nasal] / ! _N"
+      reason: "aː → æː / ! _N or if nasalized"
+  - rule:
+      id: Anglo-Frisian-i,u
+      content: "{i,u} → ∅ / _# ! VC_"
+      reason: "Typo? - {i,u} → ∅ / -# ! VC_"
+  # - rule:
+  #           id: Proto-Southern-Athabaskan-K
+  #           content: "K → ts"
+  #           reason: |
+  #                   Hoijer (1938) §29.1.1.1.19: velar K becomes dental TS series.
+  #                   IPA affricate /ts/ avoids per-letter T/S group expansion (P:[-voice]P).
+  # - rule:
+  #           id: Cypriot-Arabic-∅
+  #           content: "∅ → F / N_O, N_r ! m_f"
+  #           reason: |
+  #                   Workaround for asca, probably should be handled at compile time
+  #                   ∅ → F / N_{O,r} ! m_f
+  - rule:
+      id: Proto-Mongolic-pʰ_3
+      content: "pʰ → b / #_U"
+      reason: "Disputed: pʰ → b / #_U[+high pitch]"
+  - rule:
+      id: Proto-Tungusic-U-long-+low-pitch-U+long-low-pitch
+      content: "U[-long] U[+long] → U[+long] U[-long]"
+      reason: "Disputed: U[-long +low pitch] U[+long -low pitch] → U[+long] U[-long]"
+  - rule:
+      id: Greenlandic-Iñupiaq-lʁ
+      content: "lʁ → ʁl"
+      reason: "Some metathesis in consonant clusters, the conditions of which are not elaborated upon; the given example cited within the text is lʁ → ʁl"
+  - rule:
+      id: Greenlandic-Iñupiaq-m-n-ŋ-t-ɣ,ʁ«
+      content: "m n ŋ t {ɣ,ʁ} → p t k n ŋ / _#"
+      reason: |
+        Corrected from original source: https://www.jstor.org/stable/1263119
+  - rule:
+      id: Egyptian-Arabic-i-u
+      content: "i[-long] u[-long] → e o / ! _#"
+      reason: |
+        i u → e o / only when short, ! _#
+  - rule:
+      id: Egyptian-Arabic-u
+      content: "u[-long] → {o,u} / _#"
+      reason: |
+        u → {o,u} / short only, _#
+  - rule:
+      id: Egyptian-Arabic-i,u
+      content: "{i[-stress, -long],u[-stress, -long]} → ∅ / VC_CV"
+      reason: |
+        {i,u} → ∅ / VC_CV when unstressed (short only)
+  - rule:
+      id: Egyptian-Arabic-V_2
+      content: "V → Vː / _#"
+      reason: |
+        Not sure how to represent the suffix:
+          V → Vː / _# + suffix
+  - rule:
+      id: Old-Norse-k_3
+      content: "k → ∅ / s_{l,t}"
+      reason: "k → ∅ / s_l,t"
+  - rule:
+      id: Australian-English-æ_2
+      content: "æ → æː / _{n,m,ɡ,ɫ}% ! _{n,m,ɡ,ɫ}%{j,w} ; or a form of a strong verb"
+      reason: "æ → æː / _{n,m,ɡ,ɫ% ! _n,m,ɡ,ɫ}%{j,w} or a form of a strong verb"
+  - rule:
+      id: Proto-Indo-Iranian-k-ɡ-ɡʱ
+      content: "k ɡ ɡʱ → c ɟ ɟʱ / _{e,i,j}"
+      reason: "k ɡ ɡʱ → c ɟ ɟʱ / _e,i,j"
+  - rule:
+      id: Lungchow-a
+      content: "a → aː / _{u,i}"
+      reason: "a → aː / _u,i"
+  - rule:
+      id: Lahu-i-ip,k-it-im,ŋ-in
+      content: "i i{p,k} it i{m,ŋ} in → i ɨʔ iʔ ɛ ɨ / _#"
+      reason: "-i -i{p,k} -it -i{m,ŋ} -in → -i -ɨʔ -iʔ -ɛ -ɨ"
+  - rule:
+      id: Lahu-u-up-ut-uk-um-un-uŋ
+      content: "u up ut uk um un uŋ → u ɔʔ əʔ uʔ ɔ ə ɛ / _#"
+      reason: "-u -up -ut -uk -um -un -uŋ → -u -ɔʔ -əʔ -uʔ -ɔ -ə -ɛ"
+  - rule:
+      id: Munsee-Delaware-ʔ
+      content: "ʔ → h / _C ! _l ; or when reduplicated"
+      reason: "ʔ → h / _C ! C = l, or when reduplicated"
+  - rule:
+      id: Pre-Slavic-Vowel-Changes-aj
+      content: "aj→ {æ,i}"
+      reason: "aj → {æ₂,i₂} “(reduced)”"
+  - rule:
+      id: Pre-Slavic-Vowel-Changes-u
+      content: "u → ŭ → {e,o,ɤ,a}"
+      reason: |
+        Not sure how to represent this:
+        u → ŭ [ɤ?] → {e,o,ɤ,a} (strong)/∅ (weak) “in modern languages”
+  - rule:
+      id: Palaic-hhy
+      content: "hhy → ʒ"
+      reason: "hhy → “something like /ʒ/”"
+  - rule:
+      id: Proto-Celtic-—-C1C2
+      content: "C{S,s} → x{S,s}"
+      reason: "C<sub>1</sub>C<sub>2</sub> → xC<sub>2</sub> / if C<sub>2</sub> was a plosive or s"
+  - rule:
+      id: Proto-Celtic-—-∅_2
+      content: "∅ → i / C{l,r}_S"
+      reason: |
+        Corrected from original source:
+                CLCstop> CLiCstop (where L = r, 1)
+        Original rule:
+                ∅ → i / C{l,r}S
+  - rule:
+      id: Gros-Ventre-j
+      content: "j → ∅ / {ʃ,θ}_"
+      reason: |
+        I assume this rule comes from:
+        "In Atsina, A-A *y is lost after A-A *s and *0"
+          j → ∅ / {ʃ,θ}
+  - rule:
+      id: Moroccan-Arabic-C+labial,+velar
+      content: "{C[+labial],C[+velar]} → [+labial] / adjacent to u[-long]"
+      reason: |
+        The above rule does not seem to be correct.
+        "In positions where /ə/ was deleted, /u/ was also deleted, 
+        and is maintained only as labialization of the adjacent 
+        labial or velar consonant"
+          C[+labial/+velar] → ʷ / adjacent to short u
+  - rule:
+      id: Siberian-Yup’ik-ə
+      content: "ə → a / _#"
+      reason: |
+        "It generally changed to i in Yupik
+        also, but in word-final it became a"
+  - rule:
+      id: Guānhuà-jem,jen
+      content: "{jem,jen} → iɛn / C̣_ ! ʐ_ ; sporadic"
+      reason: |
+        {jem,jen} → iɛn / sometimes after C̣_ (but ! ʐ_) (only in one variety?)
+  - rule:
+      id: Early-Icelandic-r
+      content: "r → r̥ / S[-voice]_#"
+      reason: |
+        Corrected from original source: http://www.kunstsprachen.de/s17/rules.sch
+        Original rule:
+        r → r̥ / S[- voice] / _#
+  - rule:
+      id: Shetland-Norn-a_2
+      content: "a → {o,ɔ} / _{K,r} ! _w"
+      reason: |
+        a → {o,ɔ} / _{K,r} (! K = w ?)
+  - rule:
+      id: Middle-Welsh-V_4
+      content: "V → ∅ / intertonic"
+      reason: |
+        V → ∅ / _[+intertonic]
+  - rule:
+      id: Dacian-kʷ,kw-ɡʷ,ɡw
+      content: "{kʷ,kw} {ɡʷ,ɡw} → tʃ dʒ → {s,z} z / _E"
+      reason: |
+        https://en.wikipedia.org/wiki/Dacian_language
+          {kʷ,kw} {ɡʷ,ɡw} → tʃ dʒ (→ s~z z ?) / _E
+  - rule:
+      id: Old-Norse-ʀ
+      content: "ʀ → ∅ / r_n"
+      reason: |
+        Corrected from original source:
+        http://www.kunstsprachen.de/s17/rules.sch
+        Original rule:
+        ʀ → r_n
+  - rule:
+      id: Italian-ɔ
+      content: "ɔ[+stress] → uo / _ ! j_, _{dʒ,L}"
+      reason: |
+        ɔ → uo / stressed ! j_ or _{dʒ,L}
+  - rule:
+      id: Italian-skj,stj,sːj
+      content: "{skj,stj,sːj} → ʃ"
+      reason: |
+        Typo: {skj,stj,sːj → ʃ
+  - rule:
+      id: Proto-Indo-Iranian-s
+      content: "s → ʃ / {u,i,l,r,K,Ḱ}_"
+      reason: |
+        I'm not sure if this is correct.
+        I assume it's referring to 
+        §40 Rise of the Sibilants and their Neutralization
+          s → ʃ / {u,i,l,r,K,Ḱ}
+  - rule:
+      id: Catalan-b
+      content: "b → v / V%_j"
+      reason: |
+        Seems to be a typo, using best guess.
+        b → v / V̈%_j
+  - rule:
+      id: Catalan-C
+      content: "C → ∅ / C_C ! C_L"
+      reason: |
+        C → ∅ / C₁_C₂ ! C₂ = L
+  - rule:
+      id: Catalan-ɛj-ɔj
+      content: "ɛj ɔj → jɛj uei → i {u,ui} / stressed"
+      reason: |
+        From Wikipedia:
+        https://en.wikipedia.org/wiki/Phonological_history_of_Catalan
+        "Diphthongization of /ɛ/ and /ɔ/ before palatal consonants 
+        (with subsequent loss of middle vowel if a triphthong is produced)."
+          ɛj ɔj → jɛj uei / i {u,ui} / stressed
+  - rule:
+      id: Catalan-ɛ
+      content: "ɛ → e / ! _{rː,l,rC[-labial],nr}"
+      reason: |
+        No idea how to represent this.
+        ɛ → e / ! _{rː,l,rC[-labial],nr} or _ ? w#
+  - rule:
+      id: Proto-Mongolic-e-o-u-æ-ø-y
+      content: "e o u æ ø y → {a,e} {o,u} {a,o,u a} {a,o,u} {o,u,i} / _Ca"
+      reason: |
+        Typo: e o u æ ø y → {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i} / _Ca
+  - rule:
+      id: Old-Provençal-β_3
+      content: "β → {v,ɡw}"
+      reason: |
+        β → v (though sometimes → ɡw instead if analogy interfered)
+  - rule:
+      id: Old-Provençal-β_6
+      content: "β → ∅ / B_,_B ; pretonic"
+      reason: |
+        β → ∅ / when pretonic and immediately adjacent to a back vowel
+  - rule:
+      id: Old-Provençal-ð_5
+      content: "ð → {z,∅}"
+      reason: |
+        ð → z (except in some northern and eastern dialects where → ∅)
+  - rule:
+      id: Old-Provençal-rtʃj
+      content: "rtʃj → rts → rs"
+      reason: |
+        rtʃj → rts (→ rs ?)
+  - rule:
+      id: Old-Provençal-tj
+      content: "tj → tʃ → dj → djʒ → {dz, idz}"
+      reason: |
+        tj → tʃ → dj → djʒ (?) → dz (in the north and west) or idz (in the south and east)
+        —medial (i)dz became (i)z; i-less forms “prevail in the literary language” and seem 
+        to have become common if the dz follows the stress
+  - rule:
+      id: Old-Provençal-ndt-ndtʃ-ntʃ-nkt-nf
+      content: "ndt ndtʃ ntʃ nkt nf → n{d,t} {nts,ndz,nz,ndʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,fː,f}"
+      reason: |
+        ndt ndtʃ ntʃ nkt nf → n{d,t} {nts,ndz(→ nz),ndʒ} n(t)s {ɲ,(i)nt,ntʃ} {nf,fː(→ f)}
+  - rule:
+      id: Early-Modern-English-ʊ
+      content: "ʊ → ɤ / _P ! _l"
+      reason: |
+        Index env/exception prose; ``!`` is not a Khoisan click (ticket 136).
+  - rule:
+      id: "Ç\x81̬Ana-!̃n"
+      content: "{!̃,!̃n} → ŋ"
+      reason: |
+        Optional ``(n)`` on click input is not ASCA-legal I/O (ticket 136).
+  - rule:
+      id: "Ç\x81Ani-!-!̬-!̃"
+      content: "! !̬ !̃ → {!,k} {!̬,ɡ} {!̃,!̃n,ŋɡ}"
+      reason: |
+        Replace ``!̃(n)`` parallel member with explicit set (ticket 136).
+  - rule:
+      id: Kxoe-!̃n
+      content: "{!̃,!̃n} → ǂ̃"
+      reason: |
+        Optional ``(n)`` on click input is not ASCA-legal I/O (ticket 136).
+  - rule:
+      id: Teti-!-!ˀ-!̬-!̃n-!x
+      content: "! !ˀ !̬ {!̃,!̃n} !x → k ∅ ɡ ŋ x"
+      reason: |
+        Optional ``(n)`` on click input is not ASCA-legal I/O (ticket 136).
+  - rule:
+      id: "TsÊ\x94ixa-!-!ˀ-!̬-!̃n-!x"
+      content: "! !ˀ !̬ {!̃,!̃n} !x → k ∅ ɡ ŋɡ x"
+      reason: |
+        Optional ``(n)`` on click input is not ASCA-legal I/O (ticket 136).
+  - rule:
+      id: "Ç\x80̬Ui-!̃-!x"
+      content: "!̃ !x → {!̃,!̃n} {!x,x}"
+      reason: |
+        Optional ``(n)`` on click output is not ASCA-legal I/O (ticket 136).
+  - rule:
+      id: Proto-Dravidian-k-ʃk
+      content: k ʃk → k[+weak] kː / V_V
+      reason: |
+        k ʃk → k* kː / V_V
+  - rule:
+      id: Tunebo-ai
+      content: a[-stress]i → e
+      reason: ai → e / if the *a is not stressed

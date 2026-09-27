@@ -2,9 +2,6 @@
   to: " / ! "
   use_regex: True
   reason: replace prose
-- from: " / near ħ ʕ"
-  to: " / near {ħ,ʕ}"
-  reason: convert to set notation
 - from: ATR
   to: atr
   reason: Lowercase feature name
@@ -19,6 +16,10 @@
   reason: typo?
 
 #region align positional text
+- from: " / near ħ ʕ"
+  to: " / near {ħ,ʕ}"
+- from: " / if s or z occur "
+  to: " / near {s,z} ; if s or z occur "
 - from: " next to "
   to: " adjacent to "
 - from: " / syllable-initially"
@@ -26,6 +27,9 @@
 # - from: " / (_[\\w]+) \\(possibly only (word-)?initially\\??\\)"
 #   to: " / #\\1, \\1" # TODO: how to handle alternative, optional envs?
 #   use_regex: True
+- from: " / if (.+) is elsewhere in the word"
+  to: " / near \\1 ; if \\1 is elsewhere in the word"
+  use_regex: True
 #endregion
 
 #region dialect text cleanup
@@ -36,15 +40,16 @@
     - " (Pije and Fwai)"
     - " in (Ware Sekani)"
     - " in (Queensland( and New South Wales)?)"
-    # - " \\(in (Languedoc)\\)"
+    # - " \\(in (Languedoc)\\)"|varieties
   to: " in \\1 dialects"
   use_regex: True
 
+# TODO: need to handle singular cases without breaking other rules
 - from: "(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*"
   to: "dialects"
   use_regex: True
 
-- from: "in( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects"
+- from: "in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects"
   to: "in\\1\\2\\3 dialects"
   use_regex: True
 #endregion
@@ -296,21 +301,23 @@
     - " (at least one instance of "
     - " (velar fricative is conjectured"
     - " (fricative changes to approximant)"
+    - " (→ b seems more common)"
+    - " (*)"
   comment: true
 - from: ", in polysyllables"
   to: " ; in polysyllables"
 - from: "# in polysyllables"
   to: "# ; in polysyllables"
-- from: " (→ b seems more common)"
-  to: " ; (→ b seems more common)"
+# - from: " (→ b seems more common)"
+#   to: " ; (→ b seems more common)"
 - from: " (seems to be a sporadic change"
   to: " ; (seems to be a sporadic change"
 - from: ", in Milyan"
   to: " ; , in Milyan"
   reason: comment
-- from: " (*)"
-  to: " ; (*)"
-  reason: ambiguous symbol
+# - from: " (*)"
+#   to: " ; (*)"
+#   reason: ambiguous symbol
 - from: ", often"
   to: " ; , often"
 - from: " / plain t only"

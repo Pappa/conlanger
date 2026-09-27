@@ -6,15 +6,15 @@
 - Rows: **9840** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **9057** (92.0%)
-- Fail: **256** (2.6%)
+- OK: **9059** (92.1%)
+- Fail: **254** (2.6%)
 - Skipped: **527** (5.4%)
 
 
 ## Corrections
 
-OK: **121/123**
-Skipped: **2/123**
+OK: **122/124**
+Skipped: **2/124**
 
 ### Skipped corrections
 
@@ -23,8 +23,8 @@ Skipped: **2/123**
 
 ## Sections
 
-- All OK: **512 / 714** (71.7%)
-- Some OK: **149 / 714** (20.9%)
+- All OK: **514 / 714** (72.0%)
+- Some OK: **147 / 714** (20.6%)
 - None OK: **0 / 714** (0.0%)
 - Sections skipped: **53 / 714** (7.4%)
 
@@ -32,10 +32,10 @@ Skipped: **2/123**
 
 | count | failure_class |
 |------:|---------------|
-| 53 | `expected_underscore` |
+| 52 | `expected_underscore` |
 | 32 | `expected_ipa` |
 | 24 | `unknown_character` |
-| 23 | `missing_slash_output_env` |
+| 22 | `missing_slash_output_env` |
 | 19 | `syntax_other` |
 | 15 | `nested_brackets` |
 | 11 | `unknown_grouping` |
@@ -153,7 +153,7 @@ Skipped: **2/123**
 
 | count | description |
 |------:|-------------|
-| 30 | `Expected '_', but received ''` |
+| 29 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -258,7 +258,7 @@ Skipped: **2/123**
 | 5 | `(` |
 | 3 | `:` |
 | 3 | `ʲ` |
-| 2 | `*` |
+| 1 | `*` |
 | 1 | `#` |
 | 1 | `_` |
 ### missing_slash_output_env (description)
