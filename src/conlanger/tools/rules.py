@@ -28,6 +28,9 @@ _SUPPORTED_FORMATS = frozenset({"asca"})
 _SPORADIC_APPLY_PROBABILITY = 0.5
 
 
+DialectValue = bool | str | list[str]
+
+
 class RulePartBase(BaseModel):
     model_config = ConfigDict(extra="ignore")
 
@@ -72,6 +75,7 @@ class SoundChangeRule(RulePartBase):
     status: str | None = None
     sporadic: bool = False
     sporadic_skipped: bool = False
+    dialect: DialectValue = False
     raw: str = ""
 
     alternatives: list[SoundChangeRule] = Field(default_factory=list)
@@ -81,7 +85,6 @@ class SoundChangeRule(RulePartBase):
     section_index: str = Field(default="", exclude=True, repr=False)
     rng: random.Random = Field(default_factory=random.Random, exclude=True, repr=False)
     detect_alternatives: bool = Field(default=True, exclude=True, repr=False)
-    sample_sporadic: bool = Field(default=False, exclude=True, repr=False)
 
     @field_validator("input", mode="before")
     @classmethod
@@ -128,7 +131,7 @@ class SoundChangeRule(RulePartBase):
 
         if (
             self.sporadic
-            and self.sample_sporadic
+            and self.compiler_config.sample_sporadic
             and self.rng.random() >= _SPORADIC_APPLY_PROBABILITY
         ):
             self.sporadic_skipped = True
@@ -257,7 +260,6 @@ class DiachronicSeries(BaseModel):
         format: str = "asca",
         *,
         compiler_config: CompilerConfig | None = None,
-        sample_sporadic: bool = True,
         rng: random.Random | None = None,
     ) -> None:
         if format not in _SUPPORTED_FORMATS:
@@ -289,7 +291,6 @@ class DiachronicSeries(BaseModel):
                             **step,
                             section_index=section_index,
                             compiler_config=config,
-                            sample_sporadic=sample_sporadic,
                             rng=series_rng,
                         )
                     )

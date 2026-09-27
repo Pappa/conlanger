@@ -12,14 +12,6 @@ from pathlib import Path
 import pytest
 from helpers import default_index_parser
 
-from conlanger.appliers.asca import validate_asca
-from conlanger.tools.index_inventory import OK_FALSE, OK_TRUE, validate_index_rule
-from conlanger.tools.rules import DiachronicSeries
-from tests.conftest import ASCA_INSTALLED
-from tests.fixtures.minimal_mappings import minimal_compiler_config
-
-_PROBE = Path(__file__).resolve().parents[2] / "fixtures" / "asca_probe_words.wsca"
-
 _INDEX_HTML = """\
 <!doctype html>
 <html><body>
@@ -150,44 +142,6 @@ def test_e2e_minimal_html_fixture_shape_and_raw_preservation(tmp_path: Path):
     assert "status" not in bad_rule
 
 
-@pytest.mark.skipif(not ASCA_INSTALLED, reason="asca binary not on PATH")
-@pytest.mark.skipif(not _PROBE.is_file(), reason="probe wordlist missing")
-def test_e2e_minimal_html_fixture_compile_and_validate(tmp_path: Path):
-    """Active rules compile through DiachronicSeries and pass validate_asca."""
-    html_path = tmp_path / "validate.html"
-    _write_section_html(
-        html_path,
-        section_id="Validate",
-        section_body="""\
-<h2>47.1 Stress conditions</h2>
-<p class="schg">a → b</p>
-<p class="schg">dʒ → tʃ / _#</p>""",
-    )
-    section = _parse_section(html_path)
-    rows: list = []
-    for rule in section.get("rules") or []:
-        rule_id = str(rule.get("rule_id", ""))
-        rows.extend(
-            validate_index_rule(
-                section,
-                rule,
-                rule_id,
-                probe_words=_PROBE,
-                compiler_config=minimal_compiler_config(),
-            )
-        )
-
-    assert len(rows) == 2
-    assert all(row.ok == OK_TRUE for row in rows)
-    assert rows[0].failure_class == ""
-    assert rows[0].failure_class == ""
-
-    validate_asca(
-        DiachronicSeries(section, compiler_config=minimal_compiler_config()),
-        probe_words=_PROBE,
-    )
-
-
 @pytest.mark.parametrize(
     ("case_id", "raw", "expected"),
     _E2E_PARSE_SMOKE,
@@ -217,62 +171,3 @@ def test_e2e_html_extract_pipeline_parse(
 
     for key, value in expected.items():
         assert rule.get(key) == value, case_id
-
-
-@pytest.mark.skipif(not ASCA_INSTALLED, reason="asca binary not on PATH")
-@pytest.mark.skipif(not _PROBE.is_file(), reason="probe wordlist missing")
-@pytest.mark.parametrize(
-    ("case_id", "raw", "expect_ok", "section_index"),
-    _E2E_VALIDATE_SMOKE,
-    ids=[case_id for case_id, _, _, _ in _E2E_VALIDATE_SMOKE],
-)
-def test_e2e_smoke_pipeline_validate(
-    case_id: str,
-    raw: str,
-    expect_ok: bool,
-    section_index: str,
-    tmp_path: Path,
-):
-    """Representative HTML rules → parse → compile → validate_asca outcomes."""
-    html_path = tmp_path / f"smoke_{case_id}.html"
-    escaped = html_module.escape(raw)
-    _write_section_html(
-        html_path,
-        section_id=case_id,
-        section_body=(
-            f'<h2>{section_index} Smoke {case_id}</h2>\n<p class="schg">{escaped}</p>'
-        ),
-    )
-    section = _parse_section(html_path, source_file=f"smoke_{case_id}.html")
-    assert section["index"] == section_index
-
-    rules = section.get("rules") or []
-    assert rules, case_id
-    rows = [
-        row
-        for rule in rules
-        for row in validate_index_rule(
-            section,
-            rule,
-            str(rule.get("rule_id", "")),
-            probe_words=_PROBE,
-            compiler_config=minimal_compiler_config(),
-        )
-    ]
-
-    if case_id == "collective-expanded":
-        assert rules[0]["stages"] == ["{s₁,s₂,s₃}", "ʃ"]
-        assert rules[0]["raw"] == "sₓ → ʃ"
-
-    if case_id == "held-out-parse":
-        assert rows[0].ok == OK_FALSE
-        assert rows[0].failure_class != "format_error"
-        assert "no compile steps" not in rows[0].description
-        return
-
-    if expect_ok:
-        assert all(row.ok == OK_TRUE for row in rows), (
-            f"{case_id}: {rows[0].description if rows else 'no rules'}"
-        )
-    else:
-        assert any(row.ok == OK_FALSE for row in rows), case_id

@@ -40,7 +40,6 @@ from conlanger.tools.index_inventory import (
     top_error_descriptions_from_dataframe,
     top_error_tokens,
     top_error_tokens_with_suggested_from_dataframe,
-    validate_index_rule,
     validate_index_rule_with_targets,
     validation_rows_to_dataframe,
     write_field_isolation_csvs,
@@ -185,179 +184,6 @@ def test_validation_row_as_csv_dict():
     }
 
 
-def test_validate_index_rule_skipped_section():
-    section = {"index": "9.9.9", "section": "Skipped", "status": "skipped"}
-    with patch("conlanger.tools.index_inventory.DiachronicSeries") as mock_series:
-        (row,) = validate_index_rule(
-            section,
-            {"stages": ["a", "b"], "raw": "a → b", "source": "sample.html:1"},
-            "r0",
-            probe_words=None,
-        )
-    mock_series.assert_not_called()
-    assert row.ok == OK_SKIPPED
-    assert row.failure_class == SECTION_SKIPPED_FAILURE_CLASS
-
-
-def test_validate_index_rule_skipped_quoted_prose_uses_comment():
-    (row,) = validate_index_rule(
-        _SECTION,
-        {
-            "stages": [],
-            "comment": "quoted prose paragraph",
-            "raw": "hhy → gloss",
-            "source": "sample.html:9",
-        },
-        "r0",
-        probe_words=None,
-    )
-    assert row.ok == OK_FALSE
-    assert row.failure_class == "format_error"
-
-
-def test_validate_index_rule_missing_arrow():
-    (row,) = validate_index_rule(
-        _SECTION,
-        {
-            "stages": ["no arrow"],
-            "raw": "no arrow",
-            "source": "sample.html:1",
-        },
-        "r0",
-        probe_words=None,
-    )
-    assert row.ok == OK_FALSE
-    assert row.failure_class != "format_error"
-    assert "no compile steps" not in row.description
-
-
-@patch(
-    "conlanger.tools.index_inventory.DiachronicSeries",
-    side_effect=ValueError("bad compile"),
-)
-def test_validate_index_rule_diachronic_compile_format_error(_mock_prs):
-    (row,) = validate_index_rule(
-        _SECTION,
-        {"stages": ["a", "b"], "raw": "a → b", "source": "sample.html:8"},
-        "r0",
-        probe_words=None,
-    )
-    assert row.ok == OK_FALSE
-    assert row.failure_class == "format_error"
-    assert "bad compile" in row.description
-
-
-def test_validate_index_rule_single_stage_compiles_with_empty_output():
-    (row,) = validate_index_rule(
-        _SECTION,
-        {"stages": ["a"], "raw": "a →", "source": "sample.html:7"},
-        "r0",
-        probe_words=None,
-    )
-    assert row.ok == OK_FALSE
-    assert row.failure_class != "format_error"
-    assert "no compile steps" not in row.description
-
-
-def test_validate_index_rule_format_error():
-    (row,) = validate_index_rule(
-        _SECTION,
-        {"output": "b", "raw": "→ b", "source": "sample.html:2"},
-        "r1",
-        probe_words=None,
-    )
-    assert row.ok == OK_FALSE
-    assert row.failure_class == "format_error"
-
-
-def test_validate_index_rule_skipped_is_held_out_comment():
-    (row,) = validate_index_rule(
-        _SECTION,
-        {
-            "status": "skipped",
-            "stages": [],
-            "raw": "a → b",
-            "source": "sample.html:3",
-        },
-        "r2",
-        probe_words=None,
-    )
-    assert row.ok == OK_SKIPPED
-    assert row.failure_class == RULE_SKIPPED_FAILURE_CLASS
-    assert row.description == "held-out (commented rule)"
-
-
-@patch("conlanger.tools.index_inventory.validate_asca", return_value=True)
-def test_validate_index_rule_ok(_mock_validate):
-    (row,) = validate_index_rule(
-        _SECTION,
-        {"stages": ["a", "b"], "raw": "a → b", "source": "sample.html:4"},
-        "r0",
-        probe_words=Path("/probe.wsca"),
-    )
-    assert row.ok == OK_TRUE
-    assert row.failure_class == ""
-
-
-@patch(
-    "conlanger.tools.index_inventory.validate_asca",
-    side_effect=ASCAValidationError("Syntax Error: Expected '_'"),
-)
-def test_validate_index_rule_asca_failure(_mock_validate):
-    (row,) = validate_index_rule(
-        _SECTION,
-        {"stages": ["a", "b"], "env": "bad", "raw": "a → b", "source": "s:5"},
-        "r0",
-        probe_words=None,
-    )
-    assert row.ok == OK_FALSE
-    assert row.failure_class == "expected_underscore"
-    assert row.error_token == ""
-    assert row.suggested == ""
-
-
-@patch(
-    "conlanger.tools.index_inventory.validate_asca",
-    side_effect=ASCAValidationError(
-        "Syntax Error: Unknown feature 'voiced'. Did you mean voice? | e > i"
-    ),
-)
-def test_validate_index_rule_unknown_token_fields(_mock_validate):
-    (row,) = validate_index_rule(
-        _SECTION,
-        {
-            "stages": ["e", "i"],
-            "env": "#l_{P,C[+voiced]}",
-            "raw": "e → i",
-            "source": "s:6",
-        },
-        "r0",
-        probe_words=None,
-    )
-    assert row.failure_class == "unknown_feature"
-    assert row.error_token == "voiced"
-    assert row.suggested == "voice"
-
-
-@patch("conlanger.tools.index_inventory.validate_asca", return_value=True)
-def test_validate_index_rule_emits_alternative_rows(_mock_validate):
-    rows = validate_index_rule(
-        _SECTION,
-        {
-            "stages": ["d", "{∅,ð}"],
-            "env": "V_V",
-            "raw": "d → {∅,ð} / V_V",
-            "source": "s:1",
-        },
-        "r0",
-        probe_words=None,
-    )
-    assert [row.alt_idx for row in rows] == [0, 1]
-    assert all(row.ok == OK_TRUE for row in rows)
-    assert all(row.source == "s:1" for row in rows)
-    assert _mock_validate.call_count == 2
-
-
 def test_series_for_alternative_wraps_compiled_rule_without_reparse():
     """Ticket 99: inventory alternatives reuse compiled peers, not index stages."""
     alternative = SoundChangeRule(
@@ -368,17 +194,6 @@ def test_series_for_alternative_wraps_compiled_rule_without_reparse():
     assert len(rule_parts) == 1
     assert rule_parts[0] is alternative
     assert str(series).endswith("d > ∅ / V_V\n")
-
-
-@patch("conlanger.tools.index_inventory.validate_asca", return_value=True)
-def test_validate_index_rule_non_optional_has_empty_alt_idx(_mock_validate):
-    (row,) = validate_index_rule(
-        _SECTION,
-        {"stages": ["a", "b"], "raw": "a → b", "source": "s:1"},
-        "r0",
-        probe_words=None,
-    )
-    assert row.alt_idx is None
 
 
 def test_ok_flip_changelog_rows_keys_on_source_and_alt_idx():

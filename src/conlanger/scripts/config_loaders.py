@@ -307,4 +307,6 @@ def load_compiler_config(path: Path | None = None) -> CompilerConfig:
         group_mappings=_load_group_mappings(group_path),
         series_mappings_global=global_map,
         series_mappings_sections=sections,
+        sample_sporadic=raw.get("sample_sporadic", False),
+        sample_dialect=raw.get("sample_dialect", False),
     )

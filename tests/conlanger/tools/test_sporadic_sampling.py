@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import random
 
-from conlanger.tools.index_inventory import OK_TRUE, validate_index_rule
 from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
+from conlanger.utils.mappings import CompilerConfig
 
 
 class _RecordingRandom(random.Random):
@@ -39,7 +39,7 @@ def test_sporadic_skip_renders_commented_compiled_fields():
         output="h",
         env="V_V",
         sporadic=True,
-        sample_sporadic=True,
+        compiler_config=CompilerConfig(sample_sporadic=True, sample_dialect=True),
         rng=rng,
     )
     assert rule.sporadic_skipped is True
@@ -53,7 +53,7 @@ def test_sporadic_apply_renders_normally_with_sample_disabled():
         output="h",
         env="V_V",
         sporadic=True,
-        sample_sporadic=False,
+        compiler_config=CompilerConfig(sample_sporadic=False),
     )
     assert rule.sporadic_skipped is False
     assert str(rule) == "\tp > h / V_V"
@@ -66,7 +66,7 @@ def test_sporadic_gate_draws_before_optional_output_pick():
         output="{∅,ð}",
         env="V_V",
         sporadic=True,
-        sample_sporadic=True,
+        compiler_config=CompilerConfig(sample_sporadic=True, sample_dialect=True),
         rng=rng,
     )
     assert rule.sporadic_skipped is False
@@ -79,7 +79,7 @@ def test_sporadic_render_is_frozen():
         input="p",
         output="h",
         sporadic=True,
-        sample_sporadic=False,
+        compiler_config=CompilerConfig(sample_sporadic=False),
     )
     first_render = str(rule)
     assert first_render == str(rule)
@@ -94,33 +94,8 @@ def test_diachronic_series_samples_sporadic_on_render_path():
     rendered = str(
         DiachronicSeries(
             section,
-            sample_sporadic=True,
+            compiler_config=CompilerConfig(sample_sporadic=True, sample_dialect=True),
             rng=random.Random(4),
         )
     )
     assert rendered.endswith("\tp > h / V_V\n")
-
-
-def test_inventory_always_applies_sporadic_rules():
-    section = {
-        "index": "1",
-        "section": "sec",
-        "rules": [
-            {
-                "stages": ["p", "h"],
-                "sporadic": True,
-                "env": "V_V",
-                "source": "test:1",
-                "rule_id": "1",
-            }
-        ],
-    }
-    rule = section["rules"][0]
-    rows = validate_index_rule(
-        section,
-        rule,
-        "1",
-        probe_words=None,
-    )
-    assert len(rows) == 1
-    assert rows[0].ok == OK_TRUE

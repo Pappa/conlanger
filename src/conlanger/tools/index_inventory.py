@@ -748,7 +748,6 @@ def _resolve_inventory_targets(
         scr = DiachronicSeries(
             mini,
             compiler_config=compiler_config,
-            sample_sporadic=False,
         )
     except (KeyError, ValueError) as exc:
         return [
@@ -1167,31 +1166,6 @@ def validate_index_rule_with_targets(
             )
         )
     return rows, targets
-
-
-def validate_index_rule(
-    section: dict[str, Any],
-    rule: dict[str, Any],
-    rule_id: str,
-    *,
-    probe_words: Path | None,
-    compiler_config: CompilerConfig | None = None,
-    asca_bin: str | None = None,
-) -> list[ValidationRow]:
-    """Validate one index rule.
-
-    Returns one row per optional-output alternative (0-based ``alt_idx``) when the
-    rule has alternatives; otherwise a single row with an empty ``alt_idx``.
-    """
-    rows, _ = validate_index_rule_with_targets(
-        section,
-        rule,
-        rule_id,
-        probe_words=probe_words,
-        compiler_config=compiler_config,
-        asca_bin=asca_bin,
-    )
-    return rows
 
 
 def iter_inventory_with_field_isolation(

@@ -39,6 +39,8 @@ _EMBEDDED_QUOTED_GLOSS_RE = re.compile(
 _UNCLOSED_QUOTED_GLOSS_RE = re.compile(r'[\s,]*[\u201c"]([^\u201d"]{3,})\s*$')
 _ORPHAN_CLOSING_QUOTE_END_RE = re.compile(r'[\s,]*[\u201c\u201d"]\s*$')
 _ORPHAN_CLOSING_QUOTE_MID_RE = re.compile(r'[\s,]+[\u201d"]+(?=\s|$)')
+_DIALECTS_RE = re.compile(r"in ([\w ]+) dialects", re.IGNORECASE)
+_DIALECTAL_RE = re.compile(r"dialectal(\s|$)", re.IGNORECASE)
 
 
 def paren_inner_is_gloss(inner: str) -> bool:
@@ -338,3 +340,14 @@ def extract_uncertainty_qualifier_from_field(text: str) -> tuple[str, list[str]]
             captures.append("?")
             text = text[:-1].rstrip()
     return text.strip(), captures
+
+
+def extract_dialects_from_field(text: str) -> str | bool | list[str]:
+    """Extract dialects from a field."""
+    match = _DIALECTS_RE.search(text)
+    if match:
+        dialects = match.group(1).split(" and ")
+        if len(dialects) == 1:
+            return dialects[0]
+        return dialects
+    return bool(_DIALECTAL_RE.search(text))

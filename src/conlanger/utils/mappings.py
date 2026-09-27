@@ -131,6 +131,8 @@ class CompilerConfig(BaseModel):
     group_mappings: dict[str, str] = Field(default_factory=dict)
     series_mappings_global: dict[str, str] = Field(default_factory=dict)
     series_mappings_sections: dict[str, dict[str, str]] = Field(default_factory=dict)
+    sample_sporadic: bool = True
+    sample_dialect: bool = True
 
     def resolved_series_mappings(self, section_index: str) -> dict[str, str]:
         """Global token map with longest-prefix section rows overlaid."""

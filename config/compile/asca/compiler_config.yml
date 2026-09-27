@@ -1,3 +1,5 @@
+sample_sporadic: false
+sample_dialect: false
 series_mappings:
   global:
     h₁: h

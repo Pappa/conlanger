@@ -66,6 +66,7 @@ def test_peel_unclosed_paren_prose(text, expected):
         ("ɡ > j / V_ (if /j/ resulted, it dropped after /i/", "ɡ > j / V_"),
         ("_{o,u/y}", "_{o,u,y}"),
         ("Original z (/ts/?)", "Original z"),
+        ("", ""),
     ],
 )
 def test_normalize_editorial_slash_gloss_residue(text, expected):
