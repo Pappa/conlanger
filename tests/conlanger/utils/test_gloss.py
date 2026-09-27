@@ -3,6 +3,7 @@
 import pytest
 
 from conlanger.utils.gloss import (
+    apply_dialects_to_context,
     extract_embedded_quoted_gloss_from_field,
     extract_field_wrapped_quoted_gloss_from_field,
     extract_leading_quoted_gloss_from_field,
@@ -11,7 +12,6 @@ from conlanger.utils.gloss import (
     extract_trailing_paren_glosses_from_field,
     extract_trailing_quoted_gloss_from_field,
     extract_uncertainty_qualifier_from_field,
-    apply_dialects_to_context,
     field_has_uncertainty_qualifier,
     is_gloss_only_rule,
     is_quoted_prose_paragraph,

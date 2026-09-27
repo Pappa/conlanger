@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
+import pytest
 import yaml
 
-import pytest
 from conlanger.tools.ingest.index_models import IndexContext, IndexRule
 
 
