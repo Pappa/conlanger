@@ -67231,13 +67231,12 @@ sections:
   - stages:
     - S[+tense]
     - S[- voice]ː
-    - t(ː) k(ː), both of the tokens with optional length suffixes and *aTa
-    - 〈atta〉, so I’m extrapolating)
     raw: S[+ fortis] → S[- voice]ː (specifically, the source lists t[+ fortis] k[+
       fortis] → t(ː) k(ː), both of the tokens with optional length suffixes and *aTa
       → 〈atta〉, so I’m extrapolating)
     source: index_diachronica_original.html:14094
-    comment: (specifically, the source lists t[+ fortis] k[+ fortis]
+    comment: (specifically, the source lists t[+ fortis] k[+ fortis] → t(ː) k(ː),
+      both of the tokens with optional length suffixes and *aTa → 〈atta〉, so I’m extrapolating)
     rule_id: Aquitanian-S+-fortis
   - stages:
     - n[+tense]

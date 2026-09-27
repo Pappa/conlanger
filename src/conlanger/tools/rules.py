@@ -129,12 +129,7 @@ class SoundChangeRule(RulePartBase):
             self.value = self.raw
             return self
 
-        if (
-            self.sporadic
-            and self.compiler_config.sample_sporadic
-            and self.rng.random() >= _SPORADIC_APPLY_PROBABILITY
-        ):
-            self.sporadic_skipped = True
+        self.sporadic_skipped = self._skip_sporadic()
 
         if self.sporadic_skipped:
             self.input, self.output, self.env, self.exception = (
@@ -174,6 +169,12 @@ class SoundChangeRule(RulePartBase):
         )
         self.value = self._join_compiled_fields()
         return self
+
+    def _skip_sporadic(self) -> bool:
+        return (
+            (self.sporadic and self.compiler_config.sample_sporadic)
+            or (self.dialect and self.compiler_config.sample_dialect)
+        ) and self.rng.random() >= _SPORADIC_APPLY_PROBABILITY
 
     def _join_compiled_fields(self) -> str:
         return join_asca_rule_fields(

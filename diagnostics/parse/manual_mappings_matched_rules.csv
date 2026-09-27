@@ -628,6 +628,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 43.6,Proto-Uto-Aztecan to Tohono O’odham,Tohono-O’odham-l,index_diachronica_original.html:14056, “(, ; “(
 43.6,Proto-Uto-Aztecan to Tohono O’odham,Tohono-O’odham-l_3,index_diachronica_original.html:14064,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 43.6,Proto-Uto-Aztecan to Tohono O’odham,Tohono-O’odham-l_3,index_diachronica_original.html:14064,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
+44.1,Proto-Vasconic to Aquitanian,Aquitanian-S+-fortis,index_diachronica_original.html:14094, (specifically, ; (specifically
 44.2,Proto-Basque to Basque,Basque-Vn,index_diachronica_original.html:14117,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 44.2,Proto-Basque to Basque,Basque-Vn,index_diachronica_original.html:14117,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 44.2,Proto-Basque to Basque,Basque-V,index_diachronica_original.html:14119,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
