@@ -293,7 +293,7 @@
 - from: " / posttonic"
   to: " / sporadic ; posttonic"
   reason: unhandled positional environment
-- from: " if {M,Vː} "
+- from: " if {M,Vː} " # TDOD: change this to handle "previously in the word" or similar
   to: " / sporadic ; if {M,Vː} "
   reason: unhandled positional environment
 - from: " ! some monosyllables"
