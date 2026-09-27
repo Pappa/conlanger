@@ -11,6 +11,9 @@ section_index,section_name,rule_id,source,from_text,to_text
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aj-aw,index_diachronica_original.html:1384, / in , / 
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː,index_diachronica_original.html:1393, (/|!) (near|adjacent to) emphatics, \1 \2 [+emphatic]
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː,index_diachronica_original.html:1393, (/|!) near (\w?\[[^]]+\])," \1  \2_, _\2"
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː_2,index_diachronica_original.html:1394, / if ɑ(ː) is elsewhere in the word, / near ɑ(ː) ; if ɑ(ː) is elsewhere in the word
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː_2,index_diachronica_original.html:1394, (/|!) near (\w?\([^)]+\))," \1  \2_, _\2"
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː_3,index_diachronica_original.html:1395, æ(ː) / else (sometimes it seems more like ɛ(ː) to me)," {æ(ː),ɛ(ː)} / else"
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-q,index_diachronica_original.html:1396, / (except in several), / sporadic ; \1
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-h,index_diachronica_original.html:1401, / in coda," / :{ _#, _% }: ; in coda"
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-aː,index_diachronica_original.html:1409, / (in Form VI), / sporadic ; \1
@@ -350,11 +353,11 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.7.3.1.1,Old Norse to Early Icelandic,Early-Icelandic-V_2,index_diachronica_original.html:6379,", in polysyllables", ; in polysyllables
 17.7.3.1.3,Old Norse to Shetland Norn,Shetland-Norn-nd-ld,index_diachronica_original.html:6481,nd ld (→ nː lː ?),nd ld → nː lː
 17.7.4,Common Germanic to Vandalic,Vandalic-eː,index_diachronica_original.html:6541, / unstressed, / [-stress]
-17.8.2,Proto-Indo-European to Attic Greek,Attic-Greek-oj,index_diachronica_original.html:6604, (→ yː sometimes), → yː / sporadic ; (→ yː sometimes)
+17.8.2,Proto-Indo-European to Attic Greek,Attic-Greek-oj,index_diachronica_original.html:6604, yj (→ yː sometimes),"{yj,yː}"
 17.8.6,Proto-Indo-European to Doric Greek,Doric-Greek-Vns,index_diachronica_original.html:6695,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.8.6,Proto-Indo-European to Doric Greek,Doric-Greek-h_2,index_diachronica_original.html:6699,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.8.8,Proto-Indo-European to Ionic Greek,Ionic-Greek-ej-ow,index_diachronica_original.html:6746,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
-17.8.8,Proto-Indo-European to Ionic Greek,Ionic-Greek-oj,index_diachronica_original.html:6755, (→ yː sometimes), → yː / sporadic ; (→ yː sometimes)
+17.8.8,Proto-Indo-European to Ionic Greek,Ionic-Greek-oj,index_diachronica_original.html:6755, yj (→ yː sometimes),"{yj,yː}"
 17.9,Proto-Indo-European to Hittite,Hittite_2-h3,index_diachronica_original.html:6805, “(, ; “(
 17.11.1,Proto-Slavic to Polish,"Polish-—-ь,ъ_2",index_diachronica_original.html:7028, / in , / 
 17.11.1,Proto-Slavic to Polish,Polish-V,index_diachronica_original.html:7057, / unstressed, / [-stress]

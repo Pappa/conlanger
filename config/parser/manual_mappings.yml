@@ -27,9 +27,10 @@
 # - from: " / (_[\\w]+) \\(possibly only (word-)?initially\\??\\)"
 #   to: " / #\\1, \\1" # TODO: how to handle alternative, optional envs?
 #   use_regex: True
-- from: " / if (.+) is elsewhere in the word"
-  to: " / near \\1 ; if \\1 is elsewhere in the word"
-  use_regex: True
+- from: " / if ɑ(ː) is elsewhere in the word"
+  to: " / near ɑ(ː) ; if ɑ(ː) is elsewhere in the word"
+- from: " æ(ː) / else (sometimes it seems more like ɛ(ː) to me)"
+  to: " {æ(ː),ɛ(ː)} / else"
 #endregion
 
 #region dialect text cleanup
@@ -149,6 +150,10 @@
   to: " \\1  \\2_, _\\2"
   use_regex: True
   reason: replace prose
+- from: " (/|!) near (\\w?\\([^)]+\\))"
+  to: " \\1  \\2_, _\\2"
+  use_regex: True
+  reason: replace prose
 #endregion
 
 #region sporadic - TODO: change this to attach to the environment
@@ -209,18 +214,14 @@
 - from: " / ! if one of the above"
   to: " / sporadic ; ! if one of the above"
   reason: replace prose
-- from: " (→ yː sometimes)"
-  to: " → yː / sporadic ; (→ yː sometimes)"
-  reason: workaround - we can't handle different envs for chained rules
+- from: " yj (→ yː sometimes)"
+  to: "{yj,yː}"
 - from: " (→ i in most descendants"
   to: " → i / sporadic ; (→ i in most descendants"
   reason: workaround - we can't handle different envs for chained rules
 - from: " (conditioning unclear)"
   to: " / sporadic ; (conditioning unclear)"
   reason: replace prose
-- from: " / if s or z occur"
-  to: " / sporadic ; if s or z occur"
-  reason: interim non-local co-occurrence env until issue 122 structured conditioning
 - from: " / if ʃ is somewhere"
   to: " / sporadic ; if ʃ is somewhere"
   reason: interim non-local co-occurrence env until issue 122 structured conditioning

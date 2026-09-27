@@ -3,12 +3,12 @@
 - Source YAML: `data/diachronica/index_diachronica_parsed.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.3**
-- Rows: **9840** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
+- Rows: **9841** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **9059** (92.1%)
+- OK: **9062** (92.1%)
 - Fail: **254** (2.6%)
-- Skipped: **527** (5.4%)
+- Skipped: **525** (5.3%)
 
 
 ## Corrections
@@ -23,8 +23,8 @@ Skipped: **2/124**
 
 ## Sections
 
-- All OK: **514 / 714** (72.0%)
-- Some OK: **147 / 714** (20.6%)
+- All OK: **515 / 714** (72.1%)
+- Some OK: **146 / 714** (20.4%)
 - None OK: **0 / 714** (0.0%)
 - Sections skipped: **53 / 714** (7.4%)
 

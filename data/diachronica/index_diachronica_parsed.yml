@@ -2410,18 +2410,21 @@ sections:
     raw: a(ː) → ɑ(ː) / near emphatics
     source: index_diachronica_original.html:1393
     rule_id: Egyptian-Arabic-aː
-  - stages: []
+  - stages:
+    - a(ː)
+    - ɑ(ː)
+    env: ɑ(ː)_, _ɑ(ː)
     raw: a(ː) → ɑ(ː) / if ɑ(ː) is elsewhere in the word
     source: index_diachronica_original.html:1394
-    comment: Requises a solution for proximity prose
-    status: skipped
+    comment: if ɑ(ː) is elsewhere in the word
     rule_id: Egyptian-Arabic-aː_2
-  - stages: []
+  - stages:
+    - a(ː)
+    - '{æ(ː),ɛ(ː)}'
     raw: a(ː) → æ(ː) / else (sometimes it seems more like ɛ(ː) to me)
     source: index_diachronica_original.html:1395
-    comment: Requises a solution for proximity prose
-    status: skipped
     rule_id: Egyptian-Arabic-aː_3
+    exception: ɑ(ː)_, _ɑ(ː)
   - stages:
     - q
     - ʔ
@@ -30046,12 +30049,9 @@ sections:
   - stages:
     - oj
     - øj
-    - yj
-    - yː
+    - '{yj,yː}'
     raw: oj → øj → yj (→ yː sometimes)
     source: index_diachronica_original.html:6604
-    comment: (→ yː sometimes); sporadic
-    sporadic: true
     rule_id: Attic-Greek-oj
   - stages:
     - e o
@@ -30903,12 +30903,9 @@ sections:
   - stages:
     - oj
     - øj
-    - yj
-    - yː
+    - '{yj,yː}'
     raw: oj → øj → yj (→ yː sometimes)
     source: index_diachronica_original.html:6755
-    comment: (→ yː sometimes); sporadic
-    sporadic: true
     rule_id: Ionic-Greek-oj
   - stages:
     - e o
