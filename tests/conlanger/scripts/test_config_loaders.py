@@ -230,7 +230,7 @@ def test_load_manual_mappings_handles_comment(tmp_path: Path):
     )
     config = load_parser_config(path)
     assert config.manual_mappings == [
-        ManualMapping(from_text="foo", to_text="; foo", reason="comment"),
+        ManualMapping(from_text="foo", to_text=" ; foo", reason="comment"),
     ]
 
 

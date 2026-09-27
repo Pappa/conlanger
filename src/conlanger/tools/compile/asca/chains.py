@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-_CHAIN_META_KEYS = ("env", "exception", "comment", "sporadic")
+_CHAIN_META_KEYS = ("env", "exception", "comment", "sporadic", "dialect")
 
 
 def expand_chained_index_rule(rule: dict[str, str]) -> list[dict[str, str]]:
@@ -13,18 +13,21 @@ def expand_chained_index_rule(rule: dict[str, str]) -> list[dict[str, str]]:
     stage compiles to one rule with empty output. Empty ``stages`` emit nothing.
     """
     stages = rule.get("stages", [])
-    non_empty = [str(stage).strip() for stage in stages if stage and str(stage).strip()]
+    stages = [str(stage).strip() for stage in stages]
+    stages = [stage for stage in stages if stage]
+
     meta = {key: rule[key] for key in _CHAIN_META_KEYS if key in rule}
-    if len(non_empty) == 0:
+
+    if len(stages) == 0:
         return []
-    if len(non_empty) == 1:
-        return [{"input": non_empty[0], "output": "", **meta}]
+    if len(stages) == 1:
+        return [{"input": stages[0], "output": "", **meta}]
     expanded: list[dict[str, str]] = []
-    for index in range(len(non_empty) - 1):
+    for index in range(len(stages) - 1):
         expanded.append(
             {
-                "input": non_empty[index],
-                "output": non_empty[index + 1],
+                "input": stages[index],
+                "output": stages[index + 1],
                 **meta,
             }
         )
