@@ -17,7 +17,6 @@ from conlanger.tools.ingest.double_slash_env import (
     normalize_prose_exception_or_env_tail,
     split_embedded_double_slash,
 )
-from conlanger.tools.ingest.parser import parse_rule_element
 from conlanger.tools.ingest.prose_conditional_env import (
     apply_prose_conditional_env_conditions,
     normalize_prose_conditional_env_field,
@@ -82,11 +81,11 @@ def _html_fragment(html_snippet: str):
 
 def _parse_rule_element(el, *, source_file: str, section_index: str = ""):
     """Parse one rule element with package-default injected tables."""
-    return parse_rule_element(
+    parser = default_index_parser()
+    return parser.parse_rule_element(
         el,
         source_file=source_file,
         section_index=section_index,
-        parser=default_index_parser(),
     )
 
 
@@ -96,7 +95,11 @@ _SAMPLED_RULES_CSV = (
 
 _INDEX_DIACHRONICA_HTML = """\
 <!doctype html>
-<html>{head}<body>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
 <section id="{section_id}">
 {section_body}
 </section>
@@ -109,12 +112,9 @@ def _write_index_diachronica_html(
     *,
     section_id: str,
     section_body: str,
-    charset: bool = False,
 ) -> None:
-    head = '<head><meta charset="utf-8"></head>' if charset else ""
     path.write_text(
         _INDEX_DIACHRONICA_HTML.format(
-            head=head,
             section_id=section_id,
             section_body=section_body,
         ),
@@ -1507,7 +1507,6 @@ def test_first_p_is_citation_rest_comments(tmp_path: Path):
     _write_index_diachronica_html(
         html_path,
         section_id="Bench",
-        charset=True,
         section_body="""\
 <h2>6.1.1.1 North Omotic to Bench</h2>
 <p><i>Mecislau</i>, from Ehret (1995), Title</p>
@@ -1558,7 +1557,6 @@ def test_parse_applies_corrections_overlay_by_rule_id(tmp_path: Path):
             "<h2>7.4 Proto-Algonquian to Blackfoot</h2>\n"
             '<p class="schg" id="Blackfoot-nr">nr → s</p>\n'
         ),
-        charset=True,
     )
     doc = default_index_parser(
         corrections={"Blackfoot-nr": "nl → s"},
@@ -1628,7 +1626,6 @@ def test_parser_normalizes_symbols_and_preserves_raw(tmp_path: Path):
     _write_index_diachronica_html(
         html_path,
         section_id="Mapped",
-        charset=True,
         section_body="""\
 <h2>1.0 Test Section</h2>
 <p class="schg">a → b / _$%oː</p>""",
@@ -1646,7 +1643,6 @@ def test_parser_class_letters_unchanged(tmp_path: Path):
     _write_index_diachronica_html(
         html_path,
         section_id="Unmapped",
-        charset=True,
         section_body="""\
 <h2>1.0 Test Section</h2>
 <p class="schg">S → a / V_V</p>""",
@@ -2108,7 +2104,6 @@ def test_parse_records_manual_mapping_matches_and_unmatched(tmp_path: Path):
             '<p class="schg">m̩ n̩ → am an / _{s,({m,j,w)V}</p>\n'
             '<p class="schg">a → e / _C</p>\n'
         ),
-        charset=True,
     )
     broken = "m̩ n̩ → am an / _{s,({m,j,w)V}"
     fixed = "m̩ n̩ → am an / _{s,({m,j,w})V}"
@@ -2137,7 +2132,6 @@ def test_unmatched_corrections_reports_unused_rule_ids(tmp_path: Path):
         html_path,
         section_id="Test",
         section_body='<h2>1.0 Test</h2>\n<p class="schg">a → b</p>',
-        charset=True,
     )
     parser = default_index_parser(
         corrections={"unused-id": "x → y", "also-unused": "p → q"},

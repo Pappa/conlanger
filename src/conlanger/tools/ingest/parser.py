@@ -290,18 +290,3 @@ class IndexDiachronicaParser:
             sections_out.append(section_obj)
 
         return {"sections": sections_out}
-
-
-def parse_rule_element(
-    el,
-    *,
-    source_file: str,
-    section_index: str = "",
-    parser: IndexDiachronicaParser,
-) -> list[dict[str, Any]]:
-    """Delegate to an injected parser instance (callers must supply tables)."""
-    return parser.parse_rule_element(
-        el,
-        source_file=source_file,
-        section_index=section_index,
-    )
