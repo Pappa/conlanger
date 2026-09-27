@@ -62,6 +62,7 @@ from conlanger.tools.ingest.transforms import (
     split_line_semicolon_comment,
 )
 from conlanger.utils.gloss import (
+    apply_dialects_to_context,
     is_quoted_prose_paragraph,
 )
 from conlanger.utils.mappings import (
@@ -202,13 +203,10 @@ class IndexDiachronicaParser:
         parts = apply_ipa_mappings(parts, self._ipa_mappings)
         parts = finalize_stages_shape(parts)
 
-        # TODO:
-        # exception_dialect = extract_dialects_from_field(parts.get("exception"))
-        # if exception_dialect:
-        #     parts["exception"] = {
-        #         "dialect": exception_dialect,
-        #         "context": parts["exception"],
-        #     }
+        if "env" in parts:
+            parts["env"] = apply_dialects_to_context(parts["env"])
+        if "exception" in parts:
+            parts["exception"] = apply_dialects_to_context(parts["exception"])
 
         index_rule = IndexRule.from_parse_fields(
             parts,

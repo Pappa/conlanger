@@ -11,7 +11,7 @@ from conlanger.utils.gloss import (
     extract_trailing_paren_glosses_from_field,
     extract_trailing_quoted_gloss_from_field,
     extract_uncertainty_qualifier_from_field,
-    extract_dialects_from_field,
+    apply_dialects_to_context,
     field_has_uncertainty_qualifier,
     is_gloss_only_rule,
     is_quoted_prose_paragraph,
@@ -350,11 +350,19 @@ def test_extract_uncertainty_qualifier_from_field_strips(text, expected):
 @pytest.mark.parametrize(
     ("text", "expected"),
     [
-        ("in northern dialects", "northern"),
-        ("in northern and southern dialects", ["northern", "southern"]),
-        ("dialectal", True),
-        ("your mom", False),
+        (
+            "V_C in northern dialects",
+            {"dialect": "northern", "context": "V_C"},
+        ),
+        (
+            "in northern and southern dialects",
+            {
+                "dialect": ["northern", "southern"],
+            },
+        ),
+        ("dialectal", {"dialect": True}),
+        ("#_V", "#_V"),
     ],
 )
-def test_extract_dialects_from_field(text, expected):
-    assert extract_dialects_from_field(text) == expected
+def test_apply_dialects_to_context(text, expected):
+    assert apply_dialects_to_context(text) == expected

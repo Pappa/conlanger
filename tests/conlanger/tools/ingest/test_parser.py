@@ -1891,6 +1891,52 @@ def test_parse_rule_element_captures_semicolon_comment():
     assert "; blocked" in rules[0]["raw"]
 
 
+@pytest.mark.parametrize(
+    ("rule_text", "expected_env", "expected_exception"),
+    [
+        (
+            "V → ∅ / V_C in northern dialects",
+            {"dialect": "northern", "context": "V_C"},
+            None,
+        ),
+        (
+            "V → ∅ / V_C in northern dialects ! in southern dialects",
+            {"dialect": "northern", "context": "V_C"},
+            {"dialect": "southern"},
+        ),
+        (
+            "V → ∅ / in northern and southern dialects",
+            {
+                "dialect": ["northern", "southern"],
+            },
+            None,
+        ),
+        (
+            "V → ∅ / dialectal",
+            {"dialect": True},
+            None,
+        ),
+        (
+            "V → ∅ / #_V",
+            "#_V",
+            None,
+        ),
+    ],
+)
+def test_parse_rule_element_apply_dialects_to_context(
+    rule_text, expected_env, expected_exception
+):
+    el = html.fragment_fromstring(
+        f'<p class="schg">{rule_text}</p>',
+        create_parent=False,
+    )
+    rules = _parse_rule_element(el, source_file="index_diachronica_original.html")
+    if expected_env is not None:
+        assert rules[0]["env"] == expected_env
+    if expected_exception is not None:
+        assert rules[0]["exception"] == expected_exception
+
+
 def test_split_line_semicolon_comment():
     assert split_line_semicolon_comment("a → b ; tail") == ("a → b", "tail")
     assert split_line_semicolon_comment("no semicolon") == ("no semicolon", None)
