@@ -4,27 +4,30 @@ from __future__ import annotations
 
 import yaml
 
+import pytest
 from conlanger.tools.ingest.index_models import IndexContext, IndexRule
 
-_INDEX_CONTEXT_YAML_CASES = [
-    (
-        "context_position_dialect_scalar",
-        """
+
+@pytest.mark.parametrize(
+    "yaml_doc, expected",
+    [
+        pytest.param(
+            """
 env:
   context: "#_"
   position:
     adjacent_to: C
   dialect: northern
 """,
-        {
-            "context": "#_",
-            "position": {"adjacent_to": "C"},
-            "dialect": "northern",
-        },
-    ),
-    (
-        "position_lists_and_bool_dialect_list",
-        """
+            {
+                "context": "#_",
+                "position": {"adjacent_to": "C"},
+                "dialect": "northern",
+            },
+            id="context_position_dialect_scalar",
+        ),
+        pytest.param(
+            """
 env:
   position:
     adjacent_to:
@@ -35,23 +38,32 @@ env:
     - west
     - gascon
 """,
-        {
-            "position": {"adjacent_to": ["N", "V"], "medial": True},
-            "dialect": ["west", "gascon"],
-        },
-    ),
-]
-
-
-def test_index_context_yaml_round_trip():
-    for _case_id, yaml_doc, expected in _INDEX_CONTEXT_YAML_CASES:
-        loaded = yaml.safe_load(yaml_doc)
-        ctx = IndexContext.model_validate(loaded["env"])
-        assert ctx.model_dump(exclude_none=True) == expected
-        round_trip = yaml.safe_load(
-            yaml.safe_dump({"env": ctx.model_dump(exclude_none=True)})
-        )
-        assert round_trip["env"] == expected
+            {
+                "position": {"adjacent_to": ["N", "V"], "medial": True},
+                "dialect": ["west", "gascon"],
+            },
+            id="position_lists_and_dialect_list",
+        ),
+        pytest.param(
+            """
+env:
+  dialect: true
+""",
+            {
+                "dialect": True,
+            },
+            id="dialect_bool",
+        ),
+    ],
+)
+def test_index_context_yaml_round_trip(yaml_doc, expected):
+    loaded = yaml.safe_load(yaml_doc)
+    ctx = IndexContext.model_validate(loaded["env"])
+    assert ctx.model_dump(exclude_none=True) == expected
+    round_trip = yaml.safe_load(
+        yaml.safe_dump({"env": ctx.model_dump(exclude_none=True)})
+    )
+    assert round_trip["env"] == expected
 
 
 def test_index_rule_string_env_round_trip():
