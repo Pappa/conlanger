@@ -31,6 +31,12 @@
   to: " / near ɑ(ː) ; if ɑ(ː) is elsewhere in the word"
 - from: " æ(ː) / else (sometimes it seems more like ɛ(ː) to me)"
   to: " {æ(ː),ɛ(ː)} / else"
+- from: " / in coda"
+  to: " / :{ _#, _% }: ; in coda" # TODO: this is a hack to handle coda envs
+- from: "_ or when _"
+  to: "_,_"
+- from: " / intertonic"
+  to: " / %[+str]_%[+str]" # TODO: needs confirmation
 #endregion
 
 #region dialect text cleanup
@@ -84,6 +90,17 @@
   to: " / _Ra[-long] ; "
 - from: C[+ affricate]
   to: A
+- from: "high(er)"
+  to: "hi"
+- from: + A POA
+  to: α place
+  reason: Point of articulation - asca syntax alpha notation
+- from: + B POA
+  to: β place
+  reason: Point of articulation - asca syntax alpha notation
+- from: "[anything]"
+  to: "[]"
+  reason: Use asca syntax for a wildcard symbol
 #endregion
 
 - from: " \\(→ (\\w+) dialectally\\?\\)"
@@ -304,6 +321,8 @@
     - " (fricative changes to approximant)"
     - " (→ b seems more common)"
     - " (*)"
+    - " “("
+    - " (“"
   comment: true
 - from: ", in polysyllables"
   to: " ; in polysyllables"
@@ -345,27 +364,6 @@
 # - from: "k ʃk → k* kː / V_V "
 #   to: "ʃk → kː / V_V ; k ʃk → k* kː / V_V "
 #   reason: unresolvable symbol
-- from: + A POA
-  to: α place
-  reason: Point of articulation - asca syntax alpha notation
-- from: + B POA
-  to: β place
-  reason: Point of articulation - asca syntax alpha notation
-- from: " / in coda"
-  to: " / :{ _#, _% }: ; in coda"
-  reason: unhandled positional environment
-- from: "[anything]"
-  to: "[]"
-  reason: Use asca syntax for a wildcard symbol
-- from: "_ or when _"
-  to: "_,_"
-  reason: replace prose
-- from: "high(er)"
-  to: "hi"
-  reason: ambiguous feature name
-- from: " / intertonic"
-  to: " / %[+str]_%[+str]"
-  reason: replace prose
 
 # keep these last because they are so broad
 - from: " / in "
@@ -377,9 +375,9 @@
 - from: ", in "
   to: " ; sporadic - in "
   reason: replace prose
-- from: " “("
-  to: " ; “("
-  reason: comment
-- from: " (“"
-  to: " ; (“"
-  reason: comment
+# - from: " “("
+#   to: " ; “("
+#   reason: comment
+# - from: " (“"
+#   to: " ; (“"
+#   reason: comment

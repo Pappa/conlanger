@@ -116,7 +116,7 @@ def _load_manual_mappings(path: Path) -> list[ManualMapping]:
             comment = entry.get("comment", False)
             to_text = str(entry.get("to", ""))
             if not to_text and comment:
-                to_text = f"; {target}"
+                to_text = f" ; {target.lstrip()}"
             out.append(
                 ManualMapping(
                     from_text=target,
