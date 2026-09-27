@@ -201,6 +201,15 @@ class IndexDiachronicaParser:
         parts = apply_feature_mappings(parts, self._feature_mappings)
         parts = apply_ipa_mappings(parts, self._ipa_mappings)
         parts = finalize_stages_shape(parts)
+
+        # TODO:
+        # exception_dialect = extract_dialects_from_field(parts.get("exception"))
+        # if exception_dialect:
+        #     parts["exception"] = {
+        #         "dialect": exception_dialect,
+        #         "context": parts["exception"],
+        #     }
+
         index_rule = IndexRule.from_parse_fields(
             parts,
             raw=raw,

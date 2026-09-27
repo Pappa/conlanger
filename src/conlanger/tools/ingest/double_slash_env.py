@@ -11,7 +11,6 @@ from conlanger.tools.ingest.transforms import (
     normalize_medial_env_field,
 )
 from conlanger.utils.gloss import (
-    extract_dialects_from_field,
     extract_uncertainty_qualifier_from_field,
 )
 
@@ -203,8 +202,6 @@ def apply_double_slash_env_conditions(parts: dict[str, Any]) -> dict[str, Any]:
             comment_fragments.extend(uncertainty_captures)
             flags["sporadic"] = True
 
-        flags["dialect"] = extract_dialects_from_field(exception)
-
         normalized, tail_captures, tail_flags = normalize_prose_exception_or_env_tail(
             value
         )
@@ -225,7 +222,5 @@ def apply_double_slash_env_conditions(parts: dict[str, Any]) -> dict[str, Any]:
         _append_rule_comment_parts(result, comment_fragments)
     if flags.get("sporadic"):
         result["sporadic"] = True
-    if flags.get("dialect", False):
-        result["dialect"] = flags.get("dialect")
 
     return result
