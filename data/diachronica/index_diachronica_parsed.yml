@@ -11994,7 +11994,8 @@ sections:
     env: _#
     raw: V → ∅ / _#, often
     source: index_diachronica_original.html:3251
-    comment: ', often'
+    comment: sporadic - often
+    sporadic: true
     rule_id: Nixumwak-Nêlêmwa-V
   - stages:
     - k
@@ -24425,8 +24426,8 @@ sections:
     raw: z → s / _#, though “[t]his s was dropped when it came to stand after an original
       s through the loss of a vowel”, though it “remained when protected by a particle”
     source: index_diachronica_original.html:5683
-    comment: ', though “[t]his s was dropped when it came to stand after an original
-      s through the loss of a vowel”, though it “remained when protected by a particle”'
+    comment: though “[t]his s was dropped when it came to stand after an original
+      s through the loss of a vowel”, though it “remained when protected by a particle”
     rule_id: Gothic-z
   - stages:
     - s
@@ -55694,9 +55695,8 @@ sections:
       but it seems highly dialectal and I’m not entirely sure just what exactly was
       going on here
     source: index_diachronica_original.html:11833
-    comment: There seems to ahve been some stuff going on with palatalized [ŋ] → {ɲ,n}
-      but it seems highly dialectal and I’m not entirely sure just what exactly was
-      going on here
+    comment: Mostly a comment
+    status: skipped
     rule_id: Guānhuà-ŋ_3
   - stages:
     - w
@@ -67397,10 +67397,10 @@ sections:
   - stages:
     - Vn
     - ṽ
-    env: _# (seems to have been reverted in most dialects
-    exception: for Souletin)
+    env: _#
     raw: Vn → Ṽ / _# (seems to have been reverted in most dialects, except for Souletin)
     source: index_diachronica_original.html:14117
+    comment: (seems to have been reverted in most dialects, except for Souletin)
     rule_id: Basque-Vn
   - stages:
     - Vn

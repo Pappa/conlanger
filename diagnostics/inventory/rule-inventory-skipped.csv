@@ -374,6 +374,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-Kw,,index_diachronica_original.html:11746,2,section_skipped,,,,section skipped at compile (parser_config skip_sections)
 36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-Kwə,,index_diachronica_original.html:11747,2,section_skipped,,,,section skipped at compile (parser_config skip_sections)
 36.1,Proto-Sino-Tibetan to Middle Chinese,Middle-Chinese-w,,index_diachronica_original.html:11748,2,section_skipped,,,,section skipped at compile (parser_config skip_sections)
+36.2,Sin Sukchu to Guānhuà,Guānhuà-ŋ_3,,index_diachronica_original.html:11833,2,rule_skipped,,,,held-out (commented rule)
 36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-a,,index_diachronica_original.html:11934,2,section_skipped,,,,section skipped at compile (parser_config skip_sections)
 36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-a_2,,index_diachronica_original.html:11935,2,section_skipped,,,,section skipped at compile (parser_config skip_sections)
 36.3.1.2,Proto-Naish to Mosuo (Na),Mosuo-Na-a_3,,index_diachronica_original.html:11936,2,section_skipped,,,,section skipped at compile (parser_config skip_sections)

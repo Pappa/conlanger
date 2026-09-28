@@ -6,9 +6,9 @@
 - Rows: **9841** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **9063** (92.1%)
-- Fail: **253** (2.6%)
-- Skipped: **525** (5.3%)
+- OK: **9064** (92.1%)
+- Fail: **251** (2.6%)
+- Skipped: **526** (5.3%)
 
 
 ## Corrections
@@ -32,7 +32,7 @@ Skipped: **2/124**
 
 | count | failure_class |
 |------:|---------------|
-| 52 | `expected_underscore` |
+| 51 | `expected_underscore` |
 | 32 | `expected_ipa` |
 | 23 | `unknown_character` |
 | 22 | `missing_slash_output_env` |
@@ -54,7 +54,6 @@ Skipped: **2/124**
 | 2 | `other` |
 | 1 | `incomplete_matrix` |
 | 1 | `invalid_ipa` |
-| 1 | `format_error` |
 
 ## Common Errors
 
@@ -148,7 +147,6 @@ Skipped: **2/124**
 | 2 | `∅` |
 | 1 | `ʲ` |
 | 1 | `//` |
-| 1 | `)` |
 ### expected_underscore (description)
 
 | count | description |

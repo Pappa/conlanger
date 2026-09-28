@@ -197,40 +197,29 @@
 
 - from: " (in southern dialects"
   to: " sporadic ; (in southern dialects"
-  reason: replace prose
 - from: " (in some dialects"
   to: " sporadic ; (in some dialects"
-  reason: replace prose
 - from: " (some dialects"
   to: " sporadic ; (some dialects"
-  reason: replace prose
 - from: " (most dialects"
   to: " ; (most dialects"
-  reason: replace prose
 - from: " / except when CV_V in U"
   to: " / sporadic ! CV_V ; except when CV_V in U"
-  reason: replace prose
 - from: " / in prefixes related to"
   to: " sporadic ; / in prefixes related to"
   reason: unhandled positional environment
 - from: " ! in Ware Sekani"
   to: " sporadic ; not in Ware Sekani"
-  reason: replace prose
 - from: " ! in Queensland"
   to: " sporadic ; not in Queensland"
-  reason: replace prose
 - from: " (some exceptions"
   to: " ; sporadic (some exceptions"
-  reason: replace prose
 - from: " for some C"
   to: " ; sporadic ; for some C"
-  reason: replace prose
 - from: " (rare) ! form of "
   to: " / sporadic ; (rare) ! form of "
-  reason: replace prose
 - from: " / ! if one of the above"
   to: " / sporadic ; ! if one of the above"
-  reason: replace prose
 - from: " yj (→ yː sometimes)"
   to: "{yj,yː}"
 - from: " (→ i in most descendants"
@@ -238,7 +227,6 @@
   reason: workaround - we can't handle different envs for chained rules
 - from: " (conditioning unclear)"
   to: " / sporadic ; (conditioning unclear)"
-  reason: replace prose
 - from: " / if ʃ is somewhere"
   to: " / sporadic ; if ʃ is somewhere"
   reason: interim non-local co-occurrence env until issue 122 structured conditioning
@@ -250,10 +238,8 @@
   reason: workaround
 - from: " / in two cases cited"
   to: " / sporadic ; in two cases cited"
-  reason: replace prose
 - from: " / in some "
   to: " / sporadic ; in some "
-  reason: replace prose
 - from: " / in diminutives"
   to: " / sporadic ; diminutives"
   reason: unhandled positional environment
@@ -265,45 +251,36 @@
   reason: unhandled positional environment
 - from: ", in some words"
   to: " sporadic ; in some words"
-  reason: replace prose
 - from: " / in “"
   to: " / sporadic ; in “"
-  reason: replace prose
 - from: " / possible exception"
   to: " / sporadic ; possible exception"
-  reason: replace prose
 - from: " / unclear conditioning"
   to: " / sporadic ; unclear conditioning"
-  reason: replace prose
 - from: " (except in the"
   to: " / sporadic ; (except in the"
-  reason: replace prose
 - from: "“under to [sic] the influence of neighboring consonants”"
   to: "/ sporadic ; “under to [sic] the influence of neighboring consonants”"
-  reason: replace prose
 - from: ", in monosyllables"
   to: " / sporadic ; in monosyllables"
-  reason: replace prose
 - from: " / in monosyllables"
   to: " / sporadic ; in monosyllables"
-  reason: replace prose
 - from: " / pretonic"
   to: " / sporadic ; pretonic"
   reason: unhandled positional environment
 - from: " / posttonic"
   to: " / sporadic ; posttonic"
   reason: unhandled positional environment
-- from: " if {M,Vː} " # TDOD: change this to handle "previously in the word" or similar
+- from: " if {M,Vː} " # TODO: change this to handle "previously in the word" or similar
   to: " / sporadic ; if {M,Vː} "
   reason: unhandled positional environment
 - from: " ! some monosyllables"
   to: " ; sporadic ! some monosyllables"
-  reason: replace prose
+- from: ", often"
+  to: " ; sporadic - often"
 #endregion
 
 #region comment handling
-- from: There seems to ahve been some stuff going on
-  to: " ; There seems to ahve been some stuff going on"
 - targets:
     - " (Do not necessarily"
     - " (remains "
@@ -324,32 +301,25 @@
     - " (*)"
     - " “("
     - " (“"
+    - " (seems to "
+    - " (this second one"
   comment: true
+- from: "#, though "
+  to: "# ; though "
+- from: " / plain t only"
+  to: " ; plain t only"
+#endregion
+
+#region TBD
 - from: ", in polysyllables"
   to: " ; in polysyllables"
 - from: "# in polysyllables"
   to: "# ; in polysyllables"
-# - from: " (→ b seems more common)"
-#   to: " ; (→ b seems more common)"
-- from: " (seems to be a sporadic change"
-  to: " ; (seems to be a sporadic change"
 - from: ", in Milyan"
   to: " ; , in Milyan"
   reason: comment
-# - from: " (*)"
-#   to: " ; (*)"
-#   reason: ambiguous symbol
-- from: ", often"
-  to: " ; , often"
-- from: " / plain t only"
-  to: " ; plain t only"
 - from: ", also in proclitics"
   to: " ; , also in proclitics"
-- from: "#, though "
-  to: "# ; , though "
-  reason: comment
-- from: " (this second one"
-  to: " ; (this second one"
 - from: " / in open syllables "
   to: " ; in open syllables "
   reason: unhandled environment

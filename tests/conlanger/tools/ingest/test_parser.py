@@ -29,6 +29,7 @@ from conlanger.tools.ingest.prose_position_env import (
 from conlanger.tools.ingest.section_policy import (
     is_catch_all_else_env,
     resolve_catch_all_else_rules,
+    is_else_env_candidate,
 )
 from conlanger.tools.ingest.transforms import (
     MEDIAL_BOUNDARY_EXCEPTION,
@@ -1048,13 +1049,34 @@ def test_parse_rule_element_medial_with_exception_env_normalized():
     assert "medially" in rules[0]["comment"]
 
 
-def test_is_catch_all_else_env():
-    assert is_catch_all_else_env("else")
-    assert is_catch_all_else_env("else?")
-    assert is_catch_all_else_env("  else  ")
-    assert not is_catch_all_else_env("else (rarely)")
-    assert not is_catch_all_else_env("_# else")
-    assert not is_catch_all_else_env("if ɑ is elsewhere in the word")
+@pytest.mark.parametrize(
+    ("env", "expected"),
+    [
+        ("else", True),
+        ("else?", True),
+        ("  else  ", True),
+        ("else (rarely)", False),
+        ("_# else", False),
+        ("if ɑ is elsewhere in the word", False),
+    ],
+)
+def test_is_catch_all_else_env(env, expected):
+    assert is_catch_all_else_env(env) == expected
+
+
+@pytest.mark.parametrize(
+    ("env", "expected"),
+    [
+        ("else", True),
+        ("else?", True),
+        ("  else  ", True),
+        ("else (rarely)", True),
+        ("_# else", True),
+        ("if ɑ is elsewhere in the word", False),
+    ],
+)
+def test_is_else_env_candidate(env, expected):
+    assert is_else_env_candidate(env) == expected
 
 
 def test_resolve_catch_all_else_empty_rules():

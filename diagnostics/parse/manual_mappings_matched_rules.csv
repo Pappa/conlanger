@@ -7,7 +7,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 6.2.2.1.5,Proto-Semitic to Classical Arabic,Classical-Arabic-s,index_diachronica_original.html:1321, / in “, / sporadic ; in “
 6.2.2.1.5,Proto-Semitic to Classical Arabic,"Classical-Arabic-Vj,wV",index_diachronica_original.html:1326, / (some sequences), / sporadic ; \1
 6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-a_6,index_diachronica_original.html:1370,", (in the feminine ending)", / sporadic ; \1
-6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-dˤ,index_diachronica_original.html:1380, (seems to be a sporadic change, ; (seems to be a sporadic change
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-dˤ,index_diachronica_original.html:1380, (seems to , ; (seems to 
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aj-aw,index_diachronica_original.html:1384, / in , / 
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː,index_diachronica_original.html:1393, (/|!) (near|adjacent to) emphatics, \1 \2 [+emphatic]
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː,index_diachronica_original.html:1393, (/|!) near (\w?\[[^]]+\])," \1  \2_, _\2"
@@ -85,6 +85,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 8.5.1,Proto-Turkic to Proto-Kypchak,Proto-Kypchak-d,index_diachronica_original.html:2287, (“, ; (“
 8.5.1,Proto-Turkic to Proto-Kypchak,Proto-Kypchak-ɡm-rɡ,index_diachronica_original.html:2291, (this second one, ; (this second one
 8.5.1,Proto-Turkic to Proto-Kypchak,Proto-Kypchak-ew,index_diachronica_original.html:2298,\(→ (\w+) ?\??\),→ \1
+8.5.1.2,Proto-Kypchak to Kyrgyz,"Kyrgyz-æ-Vh-ʕ,h",index_diachronica_original.html:2323, (seems to , ; (seems to 
 8.5.1.2,Proto-Kypchak to Kyrgyz,Kyrgyz-∅,index_diachronica_original.html:2327, (not sure what , ; (not sure what 
 9.1.2,Proto-Vietic to Middle Vietnamese,Middle-Vietnamese-tʃ,index_diachronica_original.html:2413,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 9.1.2,Proto-Vietic to Middle Vietnamese,Middle-Vietnamese-tʃ,index_diachronica_original.html:2413,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
@@ -139,7 +140,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-f,index_diachronica_original.html:3237,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-f,index_diachronica_original.html:3237,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-f,index_diachronica_original.html:3237, / in ([\w ]+) dialects, / sporadic ; in \1 dialects
-10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-V,index_diachronica_original.html:3251,", often"," ; , often"
+10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-V,index_diachronica_original.html:3251,", often", ; sporadic - often
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-pwʰ-pʰ-tʰ-kʰ,index_diachronica_original.html:3265, in (Nelemwa), in \1 dialects
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-pwʰ-pʰ-tʰ-kʰ,index_diachronica_original.html:3265,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-pwʰ-pʰ-tʰ-kʰ,index_diachronica_original.html:3265,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
@@ -194,6 +195,10 @@ section_index,section_name,rule_id,source,from_text,to_text
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-C+voice,index_diachronica_original.html:4776, next to , adjacent to 
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-s,index_diachronica_original.html:4804, / (in certain situations), / sporadic ; \1
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-C+voice,index_diachronica_original.html:4805, next to , adjacent to 
+16.1.1,Proto-Tabla-Sentani to Nafri,Nafri-e_4,index_diachronica_original.html:4856, (seems to , ; (seems to 
+16.1.2,Proto-Tabla-Sentani to Central Sentani,Central-Sentani-e_4,index_diachronica_original.html:4874, (seems to , ; (seems to 
+16.1.3,Proto-Tabla-Sentani to Eastern Sentani,Eastern-Sentani-e_4,index_diachronica_original.html:4892, (seems to , ; (seems to 
+16.1.4,Proto-Tabla-Sentani to Western Sentani,Western-Sentani-e_4,index_diachronica_original.html:4909, (seems to , ; (seems to 
 16.1.5,Proto-Tabla-Sentani to Tabla,Tabla-e,index_diachronica_original.html:4924, / unstressed, / [-stress]
 17.1.1,Proto-Indo-European to Gheg Albanian,Gheg-Albanian-ḱ_3,index_diachronica_original.html:4962, (“[a]rchaic relic”), ; (“[a]rchaic relic”)
 17.1.1,Proto-Indo-European to Gheg Albanian,Gheg-Albanian-ḱ_3,index_diachronica_original.html:4962, (“, ; (“
@@ -263,7 +268,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.6,Proto-Indo-European to Dacian,Dacian-e_2,index_diachronica_original.html:5619, / in , / 
 17.6,Proto-Indo-European to Dacian,Dacian-ei,index_diachronica_original.html:5622, (“, ; (“
 17.7,Proto-Indo-European to Common Germanic,Common-Germanic-f-θ-s-x,index_diachronica_original.html:5634, “(, ; “(
-17.7.1,Common Germanic to Gothic,Gothic-z,index_diachronica_original.html:5683,"#, though ","# ; , though "
+17.7.1,Common Germanic to Gothic,Gothic-z,index_diachronica_original.html:5683,"#, though ",# ; though 
 17.7.1,Common Germanic to Gothic,Gothic-s_2,index_diachronica_original.html:5685, / in “, / sporadic ; in “
 17.7.1,Common Germanic to Gothic,Gothic-s_3,index_diachronica_original.html:5686, / in “, / sporadic ; in “
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-æː,index_diachronica_original.html:5704,“under to [sic] the influence of neighboring consonants”,/ sporadic ; “under to [sic] the influence of neighboring consonants”
@@ -292,6 +297,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.7.2.1.8,Old English to Northern Middle English,Northern-Middle-English-Vː_2,index_diachronica_original.html:5870, / in , / 
 17.7.2.1.8,Old English to Northern Middle English,Northern-Middle-English-ʃ,index_diachronica_original.html:5873, / in , / 
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-t,index_diachronica_original.html:5884, (“, ; (“
+17.7.2.1.9,Early Northern Middle English to Scots,"Scots-ɸ,x",index_diachronica_original.html:5890, (seems to , ; (seems to 
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-uː,index_diachronica_original.html:5897,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-uː,index_diachronica_original.html:5897,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-uː,index_diachronica_original.html:5897,", in ", ; sporadic - in 
@@ -353,6 +359,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.7.3.1.1,Old Norse to Early Icelandic,Early-Icelandic-V_2,index_diachronica_original.html:6379,", in polysyllables", ; in polysyllables
 17.7.3.1.3,Old Norse to Shetland Norn,Shetland-Norn-nd-ld,index_diachronica_original.html:6481,nd ld (→ nː lː ?),nd ld → nː lː
 17.7.4,Common Germanic to Vandalic,Vandalic-eː,index_diachronica_original.html:6541, / unstressed, / [-stress]
+17.7.4,Common Germanic to Vandalic,Vandalic-z,index_diachronica_original.html:6548, (seems to , ; (seems to 
 17.8.2,Proto-Indo-European to Attic Greek,Attic-Greek-oj,index_diachronica_original.html:6604, yj (→ yː sometimes),"{yj,yː}"
 17.8.6,Proto-Indo-European to Doric Greek,Doric-Greek-Vns,index_diachronica_original.html:6695,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.8.6,Proto-Indo-European to Doric Greek,Doric-Greek-h_2,index_diachronica_original.html:6699,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
@@ -432,6 +439,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-V_3,index_diachronica_original.html:7774," (again, "," ; (again, "
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-a_4,index_diachronica_original.html:7786,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-a_4,index_diachronica_original.html:7786,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
+17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-d,index_diachronica_original.html:7801, (seems to , ; (seems to 
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-N,index_diachronica_original.html:7808,", in polysyllables", ; in polysyllables
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-w,index_diachronica_original.html:7814, (“, ; (“
 17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-kʷ-ɡʷ_2,index_diachronica_original.html:7835,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
@@ -547,7 +555,6 @@ section_index,section_name,rule_id,source,from_text,to_text
 36.1.1,Late Middle Chinese to Old Mandarin,Old-Mandarin-V5,index_diachronica_original.html:11762, / in , / 
 36.1.1,Late Middle Chinese to Old Mandarin,Old-Mandarin-V5_2,index_diachronica_original.html:11763, / in , / 
 36.1.1,Late Middle Chinese to Old Mandarin,Old-Mandarin-w_2,index_diachronica_original.html:11786, (“, ; (“
-36.2,Sin Sukchu to Guānhuà,Guānhuà-ŋ_3,index_diachronica_original.html:11833,There seems to ahve been some stuff going on, ; There seems to ahve been some stuff going on
 36.2,Sin Sukchu to Guānhuà,Guānhuà-i,index_diachronica_original.html:11840, (“, ; (“
 36.2,Sin Sukchu to Guānhuà,Guānhuà-i,index_diachronica_original.html:11840,", in ", ; sporadic - in 
 36.2,Sin Sukchu to Guānhuà,Guānhuà-ujʔ,index_diachronica_original.html:11847,\(dialectally → (\w+)\?\),→ \1 ; dialectal
@@ -631,6 +638,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 44.1,Proto-Vasconic to Aquitanian,Aquitanian-S+-fortis,index_diachronica_original.html:14094, (specifically, ; (specifically
 44.2,Proto-Basque to Basque,Basque-Vn,index_diachronica_original.html:14117,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 44.2,Proto-Basque to Basque,Basque-Vn,index_diachronica_original.html:14117,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
+44.2,Proto-Basque to Basque,Basque-Vn,index_diachronica_original.html:14117, (seems to , ; (seems to 
 44.2,Proto-Basque to Basque,Basque-V,index_diachronica_original.html:14119,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 44.2,Proto-Basque to Basque,Basque-V,index_diachronica_original.html:14119,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 44.2,Proto-Basque to Basque,Basque-e,index_diachronica_original.html:14150,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
