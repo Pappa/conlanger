@@ -162,7 +162,6 @@ def test_parse_flattens_nested_env_and_else_copied_exception(tmp_path: Path):
     )
     rules = default_index_parser().parse(
         html_path,
-        source_file="index_diachronica_original.html",
     )["sections"][0]["rules"]
     assert rules[0]["env"] == "_{s,mV,jV,wV}"
     assert rules[1]["exception"] == "_{s,mV,jV,wV}"

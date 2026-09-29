@@ -21,26 +21,6 @@ _INDEX_HTML = """\
 </body></html>
 """
 
-# Curated rules verified through HTML ingest → compile → validate.
-# ``asca_guess`` CSV rows use hand-edited asca_* fields and are not reliable
-# for full-pipeline expectation without re-baselining from raw HTML.
-_E2E_VALIDATE_SMOKE: list[tuple[str, str, bool, str]] = [
-    # id, raw, expect_ok, section_index (for series lookup)
-    ("simple-io", "a → b", True, "1.0"),
-    ("env-boundary", "dʒ → tʃ / _#", True, "1.0"),
-    ("feature-matrix", "C[+voiced] → C[-voice] / _#", True, "1.0"),
-    ("complex-env", "r → ∅ / {ð,f}_{ɡ,ɣ}", True, "1.0"),
-    ("stress-env", "a → e / _j when stressed", True, "47.1"),
-    ("chain-split", "dʒ → tʃ → ʃ", True, "1.0"),
-    ("metathesis", "uɛ → ɛu", True, "1.0"),
-    ("group-compile", "SN → N[- voice]", True, "1.0"),
-    ("sebirwa-atr", "i u VS → j w A / _V[+high +ATR]", True, "30.1.1.1"),
-    ("prose-env-medial", "z → ð / medial", True, "1.0"),
-    ("collective-expanded", "sₓ → ʃ", True, "6.1.2.1"),
-    ("positional-literal", "C₁ → C₂", True, "10.2.1"),
-    ("held-out-parse", "no arrow here", False, "1.0"),
-]
-
 # Representative ingest cases from ``sound_change_rules.csv`` (ids for traceability).
 _E2E_PARSE_SMOKE: list[tuple[str, str, dict[str, str | None]]] = [
     (
@@ -87,12 +67,8 @@ def _write_section_html(
     )
 
 
-def _parse_section(
-    html_path: Path,
-    *,
-    source_file: str = "e2e.html",
-) -> dict:
-    doc = default_index_parser().parse(html_path, source_file=source_file)
+def _parse_section(html_path: Path) -> dict:
+    doc = default_index_parser().parse(html_path)
     assert len(doc["sections"]) == 1
     return doc["sections"][0]
 
@@ -120,7 +96,7 @@ def test_e2e_minimal_html_fixture_shape_and_raw_preservation(tmp_path: Path):
 <p>Interleaved section comment</p>
 <p class="schg">no arrow here</p>""",
     )
-    section = _parse_section(html_path, source_file="minimal.html")
+    section = _parse_section(html_path)
 
     assert section["index"] == "1.0"
     assert section["section"] == "Pipeline smoke"
@@ -132,7 +108,7 @@ def test_e2e_minimal_html_fixture_shape_and_raw_preservation(tmp_path: Path):
     _assert_index_rule_shape(ok_rule)
     assert ok_rule["stages"] == ["a", "b"]
     assert ok_rule["raw"] == "a → b"
-    assert ok_rule["source"].startswith("minimal.html:")
+    assert ok_rule["source"].startswith(html_path.name)
 
     assert feature_rule["stages"] == ["C[+voice]", "C[-voice]"]
     assert feature_rule["env"] == "_#"
@@ -163,7 +139,7 @@ def test_e2e_html_extract_pipeline_parse(
             f'<h2>99.0 Fixture {case_id}</h2>\n<p class="schg">{escaped}</p>'
         ),
     )
-    section = _parse_section(html_path, source_file=f"{case_id}.html")
+    section = _parse_section(html_path)
     assert len(section["rules"]) == 1
     rule = section["rules"][0]
     _assert_index_rule_shape(rule)

@@ -2658,10 +2658,11 @@ sections:
   - stages:
     - ɡʲ
     - j
+    env:
+      dialect: true
     raw: ɡʲ → j / in southern regions
     source: index_diachronica_original.html:1445
-    comment: in southern dialects; sporadic
-    sporadic: true
+    comment: in southern dialects
     rule_id: Iraqi-Arabic-ɡʲ
   - stages:
     - ʕ
@@ -4663,10 +4664,11 @@ sections:
   - stages:
     - ʃ
     - '{ʃ,s}'
+    env:
+      dialect: true
     raw: ʃ → {ʃ,s} / in inland varieties; remains /ʃ/ in coastal varieties
     source: index_diachronica_original.html:1824
-    comment: in inland dialects; remains /ʃ/ in coastal dialects; sporadic
-    sporadic: true
+    comment: in inland dialects; remains /ʃ/ in coastal dialects
     rule_id: Southern-East-Cree-ʃ
   - stages:
     - k
@@ -4912,11 +4914,11 @@ sections:
   - stages:
     - ʃ
     - s
+    env:
+      dialect: true
     raw: ʃ → s / in West Swampy Cree (remains /ʃ/ in East Swampy Cree)
     source: index_diachronica_original.html:1868
-    comment: in West Swampy Cree dialects ; (remains /ʃ/ in East Swampy Cree dialects);
-      sporadic
-    sporadic: true
+    comment: in West Swampy Cree dialects ; (remains /ʃ/ in East Swampy Cree dialects)
     rule_id: Swampy-Cree-ʃ
   - stages:
     - tʃ
@@ -11928,18 +11930,20 @@ sections:
   - stages:
     - ONV
     - Sʰṽ
+    env:
+      dialect: true
     raw: ONV → SʰṼ / Pije and Fwai
     source: index_diachronica_original.html:3236
-    comment: in Pije and Fwai dialects; sporadic
-    sporadic: true
+    comment: in Pije and Fwai dialects
     rule_id: Nemi-Pije-Fwai-ONV
   - stages:
     - f
     - ɸ
+    env:
+      dialect: true
     raw: f → ɸ / Pije and Fwai
     source: index_diachronica_original.html:3237
-    comment: in Pije and Fwai dialects; sporadic
-    sporadic: true
+    comment: in Pije and Fwai dialects
     rule_id: Nemi-Pije-Fwai-f
 - section: Proto-New Caledonia to Proto-Northern
   index: 10.3.5.4
@@ -12084,10 +12088,11 @@ sections:
   - stages:
     - pwʰ pʰ tʰ kʰ
     - fw f rʰ x
+    env:
+      dialect: true
     raw: pwʰ pʰ tʰ kʰ → fw f rʰ x / in Nelemwa
     source: index_diachronica_original.html:3265
-    comment: in Nelemwa dialects; sporadic
-    sporadic: true
+    comment: in Nelemwa dialects
     rule_id: Nixumwak-Nêlêmwa-pwʰ-pʰ-tʰ-kʰ
   - stages:
     - uCu
@@ -19178,10 +19183,11 @@ sections:
     - s
     - ts
     - tʃ
+    env:
+      dialect: true
     raw: s → ts → tʃ / in some dialects?
     source: index_diachronica_original.html:4775
-    comment: in some dialects?; sporadic
-    sporadic: true
+    comment: in some dialects?
     rule_id: Siberian-Yup’ik-s
   - stages:
     - C[+voice]
@@ -25203,19 +25209,20 @@ sections:
     - ʊə
     - uː
     env: _ɫ
+    exception:
+      dialect: true
     raw: uː → ʊə → uː / _ɫ ! in Queensland and New South Wales
     source: index_diachronica_original.html:5819
-    comment: not in Queensland and New South Wales dialects; sporadic
-    sporadic: true
+    comment: in Queensland and New South Wales dialects
     rule_id: Australian-English-uː
   - stages:
     - uː
     - ʊʉ
     - ʉː
+    env: else
     raw: uː → ʊʉ → ʉː / else
     source: index_diachronica_original.html:5820
     rule_id: Australian-English-uː_2
-    exception: _ɫ
   - stages:
     - ɫ
     - əɫ
@@ -25743,10 +25750,11 @@ sections:
     - ɛː
     - ɛi
     - əi
+    env:
+      dialect: true
     raw: — ɛː → ɛi (→ əi?) / in some northern varieties
     source: index_diachronica_original.html:5905
-    comment: in some northern dialects; sporadic
-    sporadic: true
+    comment: in some northern dialects
     rule_id: Scots-—-ɛː
   - stages:
     - iː eː ɛː aː oː uː {øː,yː}
@@ -26753,22 +26761,24 @@ sections:
   - stages:
     - x ɣ
     - '{x,χ} {ɣ,x,χ}'
+    env:
+      dialect: true
     raw: — x ɣ → {x,χ} {ɣ,x,χ} / in northern dialects
     source: index_diachronica_original.html:6078
-    comment: in northern dialects; sporadic
-    sporadic: true
+    comment: in northern dialects
     rule_id: Modern-Dutch-—-x-ɣ
   - stages:
     - x ɣ
     - ç ʝ
+    env:
+      dialect: true
     raw: — x ɣ → ç ʝ / in southern dialects (the articles use velar phonemes here
       but describes them as “front velar”; based on the description and on representations
       in other articles, the palatal phonemes are used here)
     source: index_diachronica_original.html:6079
     comment: in southern dialects (the articles use velar phonemes here but describes
       them as “front velar”; based on the description and on representations in other
-      articles, the palatal phonemes are used here); sporadic
-    sporadic: true
+      articles, the palatal phonemes are used here)
     rule_id: Modern-Dutch-—-x-ɣ_2
 - section: Modern Dutch to Polder Dutch Vowel Shift
   index: 17.7.2.2.3
@@ -47430,10 +47440,11 @@ sections:
   - stages:
     - K
     - Tʃ
+    env:
+      dialect: true
     raw: K → TŠ / in Mentasta Ahtna
     source: index_diachronica_original.html:9980
-    comment: in Mentasta Ahtna dialects; sporadic
-    sporadic: true
+    comment: in Mentasta Ahtna dialects
     rule_id: Ahtna-K
   - stages:
     - '{ʃ(ʷ),x}'
@@ -48159,10 +48170,11 @@ sections:
     - T
     - Tʃ
     env: _{i,e,u}
+    exception:
+      dialect: true
     raw: T → TŠ / _{i,e,u} ! in Ware Sekani
     source: index_diachronica_original.html:10150
-    comment: not in Ware Sekani dialects; sporadic
-    sporadic: true
+    comment: in Ware Sekani dialects
     rule_id: Sekani-T
   - stages:
     - ʊ
@@ -68600,10 +68612,11 @@ sections:
     - ɛː
     - ɛi
     - əi
+    env:
+      dialect: true
     raw: ɛː → ɛi (→ əi?) / in some northern varieties
     source: index_diachronica_original.html:14332
-    comment: in some northern dialects; sporadic
-    sporadic: true
+    comment: in some northern dialects
     rule_id: Scots-Vowel-Shifts-ɛː
   - stages:
     - iː eː ɛː aː oː uː {øː,yː}

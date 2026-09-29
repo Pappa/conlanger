@@ -129,7 +129,7 @@ class IndexDiachronicaParser:
         self,
         el,
         *,
-        source_file: str,
+        source_file: str = "index",
         section_index: str = "",
         section_name: str = "",
         rule_id: str = "",
@@ -220,11 +220,9 @@ class IndexDiachronicaParser:
     def parse(
         self,
         html_path: Path,
-        *,
-        source_file: str | None = None,
     ) -> dict[str, Any]:
         """Parse HTML into ``{sections: [...]}``."""
-        source_file = source_file or html_path.name
+        source_file = html_path.name
         self.manual_mapping_matches = []
         self._matched_manual_froms = set()
         self._matched_correction_ids = set()

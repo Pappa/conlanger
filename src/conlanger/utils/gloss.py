@@ -40,7 +40,7 @@ _UNCLOSED_QUOTED_GLOSS_RE = re.compile(r'[\s,]*[\u201c"]([^\u201d"]{3,})\s*$')
 _ORPHAN_CLOSING_QUOTE_END_RE = re.compile(r'[\s,]*[\u201c\u201d"]\s*$')
 _ORPHAN_CLOSING_QUOTE_MID_RE = re.compile(r'[\s,]+[\u201d"]+(?=\s|$)')
 _DIALECTS_RE = re.compile(r"(in ([\w ]+) dialects)", re.IGNORECASE)
-_DIALECTAL_RE = re.compile(r"^\s*(dialectal)(?:\s|$)", re.IGNORECASE)
+_DIALECTAL_RE = re.compile(r"^\s*(dialectal)\s*(?:;|$)", re.IGNORECASE)
 
 
 def paren_inner_is_gloss(inner: str) -> bool:
@@ -342,6 +342,8 @@ def extract_uncertainty_qualifier_from_field(text: str) -> tuple[str, list[str]]
     return text.strip(), captures
 
 
+# TODO: need to fix the "in x dialects" case
+# TODO: / else handling - see incomplete handling of Australian-English-uː_2
 def apply_dialects_to_context(text: str) -> str | dict[str, Any]:
     """Extract dialects from a field."""
     result: dict[str, Any] = {}

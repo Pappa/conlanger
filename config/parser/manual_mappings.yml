@@ -174,8 +174,8 @@
 #endregion
 
 #region sporadic - TODO: change this to attach to the environment
-- from: " / in ([\\w ]+) dialects"
-  to: " / sporadic ; in \\1 dialects"
+- from: " (/|!) in ([\\w ]+) dialects"
+  to: " \\1 dialectal ; in \\2 dialects"
   use_regex: True
 
 - targets:
@@ -208,10 +208,10 @@
 - from: " / in prefixes related to"
   to: " sporadic ; / in prefixes related to"
   reason: unhandled positional environment
-- from: " ! in Ware Sekani"
-  to: " sporadic ; not in Ware Sekani"
-- from: " ! in Queensland"
-  to: " sporadic ; not in Queensland"
+# - from: " ! in Ware Sekani"
+#   to: " sporadic ; not in Ware Sekani"
+# - from: " ! in Queensland"
+#   to: " sporadic ; not in Queensland"
 - from: " (some exceptions"
   to: " ; sporadic (some exceptions"
 - from: " for some C"
