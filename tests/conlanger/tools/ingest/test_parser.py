@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pandas as pd
 import pytest
-from helpers import default_index_parser
+from helpers import default_index_parser, write_tmp_index_html
 from lxml import html
 
 from conlanger.appliers.asca import validate_asca
@@ -21,11 +21,6 @@ from conlanger.tools.ingest.prose_position_env import (
     apply_prose_position_env_conditions,
     normalize_bare_prose_position_env,
     strip_trailing_position_qualifiers,
-)
-from conlanger.tools.ingest.section_policy import (
-    is_catch_all_else_env,
-    resolve_catch_all_else_rules,
-    is_else_env_candidate,
 )
 from conlanger.tools.ingest.transforms import (
     MEDIAL_BOUNDARY_EXCEPTION,
@@ -63,7 +58,6 @@ from conlanger.utils.parsing import (
 )
 from conlanger.utils.symbols import normalize_stress_marks, normalize_symbols
 from tests.fixtures.minimal_mappings import (
-    minimal_compiler_config,
     minimal_feature_mappings,
 )
 
@@ -77,34 +71,6 @@ def _parse_rule_element(el):
 _SAMPLED_RULES_CSV = (
     Path(__file__).resolve().parents[3] / "fixtures" / "sound_change_rules.csv"
 )
-
-_INDEX_DIACHRONICA_HTML = """\
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-</head>
-<body>
-<section id="{section_id}">
-{section_body}
-</section>
-</body></html>
-"""
-
-
-def _write_index_diachronica_html(
-    path: Path,
-    *,
-    section_id: str,
-    section_body: str,
-) -> None:
-    path.write_text(
-        _INDEX_DIACHRONICA_HTML.format(
-            section_id=section_id,
-            section_body=section_body,
-        ),
-        encoding="utf-8",
-    )
 
 
 def _extract_rule_parts_for_test(normalized: str):
@@ -586,20 +552,6 @@ def test_apply_stress_conditions():
     assert "when neither vowel is stressed" in cleaned["comment"]
 
 
-def test_resolve_catch_all_else_deferred_when_prev_env_is_prose():
-    rules = [
-        {
-            "stages": ["dʒ", "{d,ɡ}"],
-            "env": "if s or z occur somewhere else in the word",
-            "raw": "dʒ → {d,ɡ} / if s or z occur somewhere else in the word",
-        },
-        {"stages": ["dʒ", "ʒ"], "env": "else", "raw": "dʒ → ʒ / else"},
-    ]
-    resolved = resolve_catch_all_else_rules(rules)
-    assert resolved[1]["env"] == "else"
-    assert "exception" not in resolved[1]
-
-
 @pytest.mark.parametrize(
     ("text", "expected_env", "expected_medial"),
     [
@@ -941,13 +893,13 @@ def test_parse_rule_element_proto_italic_medial_comment_unchanged():
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_parse_rule_element_medial_validate_asca():
+def test_parse_rule_element_medial_validate_asca(fx_sample_compiler_config):
     probe = Path("tests/fixtures/asca_probe_words.wsca")
     el = html.fragment_fromstring('<p class="schg">t → r / medially</p>')
     rules = _parse_rule_element(el)
     section = {"index": "6.2.1.1.2", "section": "Proto-Agaw to Blin", "rules": rules}
     validate_asca(
-        DiachronicSeries(section, compiler_config=minimal_compiler_config()),
+        DiachronicSeries(section, compiler_config=fx_sample_compiler_config),
         probe_words=probe,
     )
 
@@ -963,162 +915,6 @@ def test_parse_rule_element_medial_with_exception_env_normalized():
     assert "medially" in rules[0]["comment"]
 
 
-@pytest.mark.parametrize(
-    ("env", "expected"),
-    [
-        ("else", True),
-        ("else?", True),
-        ("  else  ", True),
-        ("else (rarely)", False),
-        ("_# else", False),
-        ("if ɑ is elsewhere in the word", False),
-    ],
-)
-def test_is_catch_all_else_env(env, expected):
-    assert is_catch_all_else_env(env) == expected
-
-
-@pytest.mark.parametrize(
-    ("env", "expected"),
-    [
-        ("else", True),
-        ("else?", True),
-        ("  else  ", True),
-        ("else (rarely)", True),
-        ("_# else", True),
-        ("if ɑ is elsewhere in the word", False),
-    ],
-)
-def test_is_else_env_candidate(env, expected):
-    assert is_else_env_candidate(env) == expected
-
-
-def test_resolve_catch_all_else_empty_rules():
-    assert resolve_catch_all_else_rules([]) == []
-
-
-def test_resolve_catch_all_else_paren_gloss_only_env():
-    rules = [
-        {"stages": ["a", "b"], "env": "#_", "raw": "a → b / #_"},
-        {"stages": ["c", "d"], "env": "(else)", "raw": "c → d / (else)"},
-    ]
-    resolved = resolve_catch_all_else_rules(rules)
-    assert "env" not in resolved[1]
-    assert resolved[1]["comment"] == "(else)"
-    assert "exception" not in resolved[1]
-
-
-def test_resolve_catch_all_else_complementary_pair():
-    rules = [
-        {"stages": ["kʼ", "{χʷ,qʷ}"], "env": "#_", "raw": "kʼ → {χʷ,qʷ} / #_"},
-        {"stages": ["kʼ", "q"], "env": "else", "raw": "kʼ → q / else"},
-    ]
-    resolved = resolve_catch_all_else_rules(rules)
-    assert resolved[0]["env"] == "#_"
-    assert "exception" not in resolved[0]
-    assert "env" not in resolved[1]
-    assert resolved[1]["exception"] == "#_"
-    assert resolved[1]["raw"] == "kʼ → q / else"
-
-
-def test_resolve_catch_all_else_gloss_then_resolve():
-    rules = [
-        {"stages": ["a", "b"], "env": "#_", "raw": "a → b / #_"},
-        {
-            "stages": ["β", "f"],
-            "env": "else (rarely)",
-            "raw": "β → f / else (rarely)",
-        },
-    ]
-    resolved = resolve_catch_all_else_rules(rules)
-    assert "env" not in resolved[1]
-    assert resolved[1]["exception"] == "#_"
-    assert resolved[1]["comment"] == "(rarely)"
-
-
-def test_resolve_catch_all_else_cascade_uses_immediate_prev_only():
-    rules = [
-        {"stages": ["a", "x"], "env": "_A", "raw": "a → x / _A"},
-        {"stages": ["b", "y"], "env": "_B", "raw": "b → y / _B"},
-        {"stages": ["c", "z"], "env": "else", "raw": "c → z / else"},
-    ]
-    resolved = resolve_catch_all_else_rules(rules)
-    assert resolved[2]["exception"] == "_B"
-    assert "env" not in resolved[2]
-
-
-def test_resolve_catch_all_else_deferred_prev_env_and_exception():
-    rules = [
-        {
-            "stages": ["p", "∅"],
-            "env": "C_",
-            "exception": "s_",
-            "raw": "p → ∅ / C_ ! s_",
-        },
-        {"stages": ["p", "kʷ"], "env": "else", "raw": "p → kʷ / else"},
-    ]
-    resolved = resolve_catch_all_else_rules(rules)
-    assert resolved[1]["env"] == "else"
-    assert "exception" not in resolved[1]
-
-
-def test_resolve_catch_all_else_deferred_prev_neither():
-    rules = [
-        {"stages": ["a", "ɑː"], "raw": "a → ɑː"},
-        {"stages": ["a", "æ"], "env": "else", "raw": "a → æ / else"},
-    ]
-    resolved = resolve_catch_all_else_rules(rules)
-    assert resolved[1]["env"] == "else"
-    assert "exception" not in resolved[1]
-
-
-def test_resolve_catch_all_else_deferred_else_after_else():
-    rules = [
-        {
-            "stages": ["aɪ", "ɑeː"],
-            "env": "else",
-            "comment": "only for some speakers",
-            "raw": "aɪ → ɑeː / else (only for some speakers)",
-        },
-        {
-            "stages": ["aɪ", "aː"],
-            "env": "else",
-            "comment": "only for some speakers",
-            "raw": "aɪ → aː / else (only for some speakers)",
-        },
-    ]
-    resolved = resolve_catch_all_else_rules(rules)
-    assert resolved[1]["env"] == "else"
-    assert "exception" not in resolved[1]
-
-
-def test_resolve_catch_all_else_leaves_non_catch_all_fragments():
-    rules = [
-        {"stages": ["a", "b"], "env": "#_", "raw": "a → b / #_"},
-        {"stages": ["c", "d"], "env": "_# else", "raw": "c → d / _# else"},
-    ]
-    resolved = resolve_catch_all_else_rules(rules)
-    assert resolved[1]["env"] == "_# else"
-    assert "exception" not in resolved[1]
-
-
-def test_parser_resolves_catch_all_else_in_section(tmp_path: Path):
-    html_path = tmp_path / "else.html"
-    _write_index_diachronica_html(
-        html_path,
-        section_id="Else",
-        section_body="""\
-<h2>1.0 Test Section</h2>
-<p class="schg">kʼ → {χʷ,qʷ} / #_</p>
-<p class="schg">kʼ → q / else</p>""",
-    )
-    rules = default_index_parser().parse(html_path)["sections"][0]["rules"]
-    assert rules[0]["env"] == "#_"
-    assert "env" not in rules[1]
-    assert rules[1]["exception"] == "#_"
-    assert rules[1]["raw"] == "kʼ → q / else"
-
-
 def test_parse_rule_element_normalizes_stress_conditions():
     el = html.fragment_fromstring('<p class="schg">a → i / _C(C), when stressed</p>')
     rules = _parse_rule_element(el)
@@ -1128,7 +924,7 @@ def test_parse_rule_element_normalizes_stress_conditions():
 
 def test_parse_element_handles_dialectal_rules(tmp_path: Path):
     html_path = tmp_path / "dialectal.html"
-    _write_index_diachronica_html(
+    write_tmp_index_html(
         html_path,
         section_id="Dialectal",
         section_body="""\
@@ -1145,7 +941,7 @@ def test_parse_element_handles_dialectal_rules(tmp_path: Path):
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_parse_rule_element_stress_conditions_validate_asca():
+def test_parse_rule_element_stress_conditions_validate_asca(fx_sample_compiler_config):
     cases = [
         '<p class="schg">a → i / _C(C), when stressed</p>',
         '<p class="schg">{u,a,i} → ∅ / _%, when stressed (short only)</p>',
@@ -1162,7 +958,7 @@ def test_parse_rule_element_stress_conditions_validate_asca():
             "rules": rules,
         }
         validate_asca(
-            DiachronicSeries(section, compiler_config=minimal_compiler_config()),
+            DiachronicSeries(section, compiler_config=fx_sample_compiler_config),
             probe_words=probe,
         )
 
@@ -1177,7 +973,7 @@ def test_extract_rule_parts_with_symbol_normalization():
 
 def test_parser_preserves_class_letters(tmp_path: Path):
     html_path = tmp_path / "mapped.html"
-    _write_index_diachronica_html(
+    write_tmp_index_html(
         html_path,
         section_id="Mapped",
         section_body="""\
@@ -1191,7 +987,7 @@ def test_parser_preserves_class_letters(tmp_path: Path):
 
 def test_parser_skips_section_without_h2(tmp_path: Path):
     html_path = tmp_path / "no_h2.html"
-    _write_index_diachronica_html(
+    write_tmp_index_html(
         html_path,
         section_id="NoH2",
         section_body='<p class="schg">a → b</p>',
@@ -1201,7 +997,7 @@ def test_parser_skips_section_without_h2(tmp_path: Path):
 
 def test_parser_skips_section_with_empty_name(tmp_path: Path):
     html_path = tmp_path / "empty_name.html"
-    _write_index_diachronica_html(
+    write_tmp_index_html(
         html_path,
         section_id="Empty",
         section_body="""\
@@ -1213,7 +1009,7 @@ def test_parser_skips_section_with_empty_name(tmp_path: Path):
 
 def test_parser_skips_empty_paragraph(tmp_path: Path):
     html_path = tmp_path / "empty_p.html"
-    _write_index_diachronica_html(
+    write_tmp_index_html(
         html_path,
         section_id="EmptyP",
         section_body="""\
@@ -1229,7 +1025,7 @@ def test_parser_skips_empty_paragraph(tmp_path: Path):
 
 def test_parser_citation_only_section(tmp_path: Path):
     html_path = tmp_path / "citation_only.html"
-    _write_index_diachronica_html(
+    write_tmp_index_html(
         html_path,
         section_id="CitationOnly",
         section_body="""\
@@ -1258,7 +1054,7 @@ def test_parser_marks_skip_sections_from_config(tmp_path: Path):
         ("index_diachronica_corrections.yml", "rules: []\n"),
     ]:
         (tmp_path / name).write_text(content, encoding="utf-8")
-    _write_index_diachronica_html(
+    write_tmp_index_html(
         html_path,
         section_id="SkipMe",
         section_body="""\
@@ -1277,7 +1073,7 @@ def test_parser_marks_skip_sections_from_config(tmp_path: Path):
 
 def test_parser_unlisted_section_not_marked_skipped(tmp_path: Path):
     html_path = tmp_path / "active_section.html"
-    _write_index_diachronica_html(
+    write_tmp_index_html(
         html_path,
         section_id="Active",
         section_body="""\
@@ -1447,7 +1243,7 @@ def test_parse_rule_element_except_without_comma():
 
 def test_first_p_is_citation_rest_comments(tmp_path: Path):
     html_path = tmp_path / "sample.html"
-    _write_index_diachronica_html(
+    write_tmp_index_html(
         html_path,
         section_id="Bench",
         section_body="""\
@@ -1493,7 +1289,7 @@ def test_parse_expands_collective_series_tokens(tmp_path: Path):
 
 def test_parse_applies_corrections_overlay_by_rule_id(tmp_path: Path):
     html_path = tmp_path / "index.html"
-    _write_index_diachronica_html(
+    write_tmp_index_html(
         html_path,
         section_id="Blackfoot",
         section_body=(
@@ -1566,7 +1362,7 @@ def test_extract_rule_parts_sampled_html_rules(case_id, raw, expected):
 
 def test_parser_normalizes_symbols_and_preserves_raw(tmp_path: Path):
     html_path = tmp_path / "mapped.html"
-    _write_index_diachronica_html(
+    write_tmp_index_html(
         html_path,
         section_id="Mapped",
         section_body="""\
@@ -1583,7 +1379,7 @@ def test_parser_normalizes_symbols_and_preserves_raw(tmp_path: Path):
 
 def test_parser_class_letters_unchanged(tmp_path: Path):
     html_path = tmp_path / "unmapped.html"
-    _write_index_diachronica_html(
+    write_tmp_index_html(
         html_path,
         section_id="Unmapped",
         section_body="""\
@@ -1597,7 +1393,7 @@ def test_parser_class_letters_unchanged(tmp_path: Path):
     assert rule["env"] == "V_V"
 
 
-def test_kenyah_vowel_height_rules_validate():
+def test_kenyah_vowel_height_rules_validate(fx_sample_compiler_config):
     mappings = minimal_feature_mappings()
     rules = [
         {
@@ -1615,7 +1411,7 @@ def test_kenyah_vowel_height_rules_validate():
         "rules": rules,
     }
     validate_asca(
-        DiachronicSeries(section, "asca", compiler_config=minimal_compiler_config())
+        DiachronicSeries(section, "asca", compiler_config=fx_sample_compiler_config)
     )
 
 
@@ -1681,7 +1477,7 @@ def test_parser_marks_skip_rules_from_config(tmp_path: Path):
         ("index_diachronica_corrections.yml", "rules: []\n"),
     ]:
         (tmp_path / name).write_text(content, encoding="utf-8")
-    _write_index_diachronica_html(
+    write_tmp_index_html(
         html_path,
         section_id="SkipRule",
         section_body="""\
@@ -1760,12 +1556,12 @@ def test_parse_rule_element_normalizes_glottalized_to_place():
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_parse_rule_element_voiced_matrix_validates_asca():
+def test_parse_rule_element_voiced_matrix_validates_asca(fx_sample_compiler_config):
     el = html.fragment_fromstring('<p class="schg">s → z / _C[+voiced]</p>')
     rules = _parse_rule_element(el)
     section = {"index": "17.12", "section": "Voicing", "rules": rules}
     validate_asca(
-        DiachronicSeries(section, compiler_config=minimal_compiler_config()),
+        DiachronicSeries(section, compiler_config=fx_sample_compiler_config),
         probe_words=Path("tests/fixtures/asca_probe_words.wsca"),
     )
 
@@ -2034,7 +1830,7 @@ def test_write_manual_mappings_matched_csv(tmp_path: Path):
 
 def test_parse_records_manual_mapping_matches_and_unmatched(tmp_path: Path):
     html_path = tmp_path / "index.html"
-    _write_index_diachronica_html(
+    write_tmp_index_html(
         html_path,
         section_id="Old-Irish",
         section_body=(
@@ -2066,7 +1862,7 @@ def test_parse_records_manual_mapping_matches_and_unmatched(tmp_path: Path):
 
 def test_unmatched_corrections_reports_unused_rule_ids(tmp_path: Path):
     html_path = tmp_path / "index.html"
-    _write_index_diachronica_html(
+    write_tmp_index_html(
         html_path,
         section_id="Test",
         section_body='<h2>1.0 Test</h2>\n<p class="schg">a → b</p>',

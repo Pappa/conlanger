@@ -16,7 +16,6 @@ from conlanger.tools.compile.asca.identity_exceptions import (
 from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
 from conlanger.tools.compile.compile_fields import RuleEnv, RuleInput, RuleOutput
 from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
-from tests.fixtures.minimal_mappings import minimal_compiler_config
 
 
 @pytest.mark.parametrize(
@@ -104,26 +103,26 @@ def test_parse_index_identity_exception_returns_none(exception):
     ],
 )
 def test_compile_asca_rule_fields_identity_exceptions(
-    inp, output, env, exception, expected
+    fx_sample_compiler_config, inp, output, env, exception, expected
 ):
     compiled = compile_asca_rule_fields(
         inp,
         output,
         env,
         exception,
-        compiler_config=minimal_compiler_config(),
+        compiler_config=fx_sample_compiler_config,
     )
     assert compiled == expected
 
 
-def test_resolve_index_identity_exceptions_family_a():
+def test_resolve_index_identity_exceptions_family_a(fx_sample_compiler_config):
     inp, output, env, exception, pending = resolve_index_identity_exceptions(
         "V",
         "e",
         "C_#",
         "C = j",
         exception_raw="C = j",
-        group_mappings=minimal_compiler_config().group_mappings,
+        group_mappings=fx_sample_compiler_config.group_mappings,
     )
     assert inp == "V"
     assert output == "e"
@@ -145,28 +144,32 @@ def test_apply_identity_exception_input_narrowing_noop_when_unmatched():
     assert apply_identity_exception_input_narrowing("abc", binding) == "abc"
 
 
-def test_resolve_index_identity_exceptions_unchanged_when_no_match():
+def test_resolve_index_identity_exceptions_unchanged_when_no_match(
+    fx_sample_compiler_config,
+):
     inp, _output, _env, exception, pending = resolve_index_identity_exceptions(
         "s",
         "z",
         "_#",
         "C = j",
         exception_raw="C = j",
-        group_mappings=minimal_compiler_config().group_mappings,
+        group_mappings=fx_sample_compiler_config.group_mappings,
     )
     assert inp == "s"
     assert exception == "C = j"
     assert pending is None
 
 
-def test_resolve_index_identity_exceptions_family_b_defers_bracket_input():
+def test_resolve_index_identity_exceptions_family_b_defers_bracket_input(
+    fx_sample_compiler_config,
+):
     inp, _output, _env, exception, pending = resolve_index_identity_exceptions(
         "V[-long]",
         "∅",
         "_#",
         "V = u",
         exception_raw="V = u",
-        group_mappings=minimal_compiler_config().group_mappings,
+        group_mappings=fx_sample_compiler_config.group_mappings,
     )
     assert exception is None
     assert pending is not None
