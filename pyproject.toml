@@ -30,7 +30,6 @@ sample_asca_guess_fixtures = "conlanger.scripts.sample_asca_guess_fixtures:main"
 per_file_coverage_gate = "conlanger.scripts.per_file_coverage_gate:main"
 
 [project.optional-dependencies]
-testing = ["pytest", "pytest-cov", "pytest-mock"]
 cuda = ["tensorflow[and-cuda]"]
 
 [tool.setuptools.dynamic]
@@ -56,7 +55,6 @@ omit = ["src/conlanger/ml/models/*", "src/conlanger/ml/utils.py"]
 [tool.coverage.report]
 fail_under = 95
 skip_empty = true
-exclude_also = ["def display_rows\\("]
 
 [dependency-groups]
 dev = [
@@ -64,7 +62,6 @@ dev = [
     "pytest>=8.4.2",
     "pytest-cov>=7.0.0",
     "pytest-mock>=3.15.1",
-    "ruff>=0.16.1",
     "strip-ansi>=0.1.1",
 ]
 

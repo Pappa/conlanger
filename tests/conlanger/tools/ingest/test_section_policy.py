@@ -5,8 +5,8 @@ from helpers import default_index_parser, write_tmp_index_html
 
 from conlanger.tools.ingest.section_policy import (
     is_catch_all_else_env,
-    resolve_catch_all_else_rules,
     is_else_env_candidate,
+    resolve_catch_all_else_rules,
 )
 
 
