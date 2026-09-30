@@ -73,7 +73,7 @@ url = "https://pypi.org/simple"
 # explicit = true
 
 [tool.ruff]
-exclude = ["*.ipynb", "legacy/*", ".scratch/*"]
+exclude = ["*.ipynb", ".scratch/*"]
 
 [tool.ruff.format]
-exclude = ["*.ipynb", "legacy/*", ".scratch/*"]
+exclude = ["*.ipynb", ".scratch/*"]

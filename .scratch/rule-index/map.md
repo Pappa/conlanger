@@ -15,7 +15,7 @@ A **cleaned rule index** (applier-neutral YAML SoT) derived from **Index Diachro
 - **`config/` folder:** operator settings (YAML). Parse: `config/parser/` (`parser_config.yml`, `manual_mappings.yml`, `ipa_mappings.yml`, `feature_mappings.yml`, `index_diachronica_corrections.yml`). Compile: `config/compile/asca/` (`compiler_config.yml`, `group_mappings.yml`). Loaded only by `src/conlanger/scripts` (`config_loaders.py`); package code accepts in-memory `ParserConfig` / `CompilerConfig`.
 - **`data/` folder:** corpus and generated artifacts. Index Diachronica HTML SoT: `data/diachronica/index_diachronica_original.html`; regenerated index YAML: `data/diachronica/index_diachronica_parsed.yml`; runtime ASCA alias file: `data/asca/asca_aliases.alias` (word (de)romanisation via `asca -l` only). ~~`series_mappings.csv`~~ retired ([grill 72](issues/72-grill-series-mapping-manual-sot.md), [grill 73](issues/73-grill-series-mapping-config-sot.md)).
 - **`src/conlanger/`:** parser, compile, validation, and orchestration code.
-- **`legacy/` folder:** previous attempts only — do **not** copy code or data from `legacy/` when implementing cleaned-index work (tickets 11+).
+- **`./research/legacy/` folder:** previous attempts only — do **not** copy code or data from `./research/legacy/` when implementing cleaned-index work (tickets 11+).
 - Tracker: `docs/agents/issue-tracker.md` (Wayfinding operations).
 
 ## Decisions so far

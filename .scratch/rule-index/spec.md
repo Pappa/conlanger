@@ -83,12 +83,11 @@ Brassica compilation remains a future parallel path behind the same index (ADR-0
 52. As a maintainer, I want inventory metrics reproducible (rule counts, ok/fail/skipped, sections all-OK, top **failure classes**), so that progress toward a compilable index is trackable across iterations.
 53. As a maintainer, I want **meta-notation** and residual prose-env clusters handled inventory-driven, so that hard cases are not blocked on premature global policies.
 54. As a maintainer, I want ASCA alias file (`asca -l`) kept complementary for lexicon romanisation only, not for class-letter expansion in rules, so that compile uses group mappings instead (grill 2026-08-10).
-55. As a maintainer, I want `legacy/` treated as read-only prior attempts, so that new implementation does not copy obsolete code or data.
-56. As an operator, I want `uv run create_index` to regenerate YAML, inventory CSVs, summary, and comment-phrase survey in one invocation, so that the correction loop is automatable by agents.
-57. As an operator, I want `--skip-validation` for ingest-only runs when ASCA is not installed, so that parse work is not blocked by the validator binary.
-58. As a developer, I want syllable-position `#U` / `U#` tails compiled via underline structures and env-set exceptions, so that Index positional notation becomes ASCA-valid without shipping `// #_%` (ticket 58).
-59. As a developer, I want inter-segment whitespace handled compile-only (Brassica spacing policy), so that the SoT stays Index-shaped while ASCA remains space-optional.
-60. As a researcher, I want **rule comment** prose captured in `comment` and section prose in section `comments`, so that editorial context is preserved without polluting compile fields.
+55. As an operator, I want `uv run create_index` to regenerate YAML, inventory CSVs, summary, and comment-phrase survey in one invocation, so that the correction loop is automatable by agents.
+56. As an operator, I want `--skip-validation` for ingest-only runs when ASCA is not installed, so that parse work is not blocked by the validator binary.
+57. As a developer, I want syllable-position `#U` / `U#` tails compiled via underline structures and env-set exceptions, so that Index positional notation becomes ASCA-valid without shipping `// #_%` (ticket 58).
+58. As a developer, I want inter-segment whitespace handled compile-only (Brassica spacing policy), so that the SoT stays Index-shaped while ASCA remains space-optional.
+59. As a researcher, I want **rule comment** prose captured in `comment` and section prose in section `comments`, so that editorial context is preserved without polluting compile fields.
 
 ## Implementation Decisions
 
@@ -199,7 +198,6 @@ Rationale: lower seams (rule-line splitting alone, or `validate_asca` alone) do 
 - Promoting cleaned YAML to SoT without owner-approved adoption criteria.
 - **Rule-derived probe synthesis** (ticket 10 — wontfix).
 - Porting ASCA's full unit-test index wholesale.
-- Copying implementation or data from `legacy/`.
 - Structured compile IR collections on **SoundChangeRule** (ticket 94 — blocked/unscheduled; condensed/parallel column IR deferred).
 - Sporadic sampling at apply time (ticket 68 — `needs-triage`).
 

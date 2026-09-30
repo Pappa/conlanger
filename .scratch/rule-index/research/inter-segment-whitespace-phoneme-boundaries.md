@@ -90,7 +90,7 @@ See CSV. Highlights (substring hits in `input`/`output`):
 ### 2.3 Incidental tokenisers (not SoT policy)
 
 - [`series_mappings._tokenize_rule_side`](../../../src/conlanger/tools/series_mappings.py) — regex split for correspondence-series inference; merges subscript chars; **not** a phoneme boundary SoT.
-- Legacy [`add_affricate_ties`](../../../legacy/scripts/parse_index_diachronica.py) — documents ASCA tie requirement; **do not copy** as SoT policy (map: no `legacy/` for cleaned-index implementation). Useful as a **compile-time** candidate list only.
+- Legacy [`add_affricate_ties`](./legacy/scripts/parse_index_diachronica.py) — documents ASCA tie requirement; **do not copy** as SoT policy (map: no `legacy/` for cleaned-index implementation). Useful as a **compile-time** candidate list only.
 
 ---
 
