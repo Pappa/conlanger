@@ -200,22 +200,24 @@ wheels = [
 name = "conlanger"
 source = { editable = "." }
 dependencies = [
-    { name = "imbalanced-learn" },
-    { name = "ipykernel" },
-    { name = "keras" },
     { name = "matplotlib" },
     { name = "pandas" },
     { name = "pydantic" },
     { name = "pyyaml" },
     { name = "requests" },
-    { name = "scikit-learn" },
-    { name = "tensorflow" },
-    { name = "tqdm" },
 ]
 
 [package.optional-dependencies]
 cuda = [
     { name = "tensorflow", extra = ["and-cuda"] },
+]
+notebooks = [
+    { name = "imbalanced-learn" },
+    { name = "ipykernel" },
+    { name = "keras" },
+    { name = "scikit-learn" },
+    { name = "tensorflow" },
+    { name = "tqdm" },
 ]
 
 [package.dev-dependencies]
@@ -229,20 +231,20 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "imbalanced-learn" },
-    { name = "ipykernel" },
-    { name = "keras" },
+    { name = "imbalanced-learn", marker = "extra == 'notebooks'" },
+    { name = "ipykernel", marker = "extra == 'notebooks'" },
+    { name = "keras", marker = "extra == 'notebooks'" },
     { name = "matplotlib" },
     { name = "pandas" },
     { name = "pydantic", specifier = ">=2.13.4" },
     { name = "pyyaml", specifier = ">=6.0.3" },
     { name = "requests" },
-    { name = "scikit-learn" },
-    { name = "tensorflow" },
+    { name = "scikit-learn", marker = "extra == 'notebooks'" },
+    { name = "tensorflow", marker = "extra == 'notebooks'" },
     { name = "tensorflow", extras = ["and-cuda"], marker = "extra == 'cuda'" },
-    { name = "tqdm" },
+    { name = "tqdm", marker = "extra == 'notebooks'" },
 ]
-provides-extras = ["cuda"]
+provides-extras = ["cuda", "notebooks"]
 
 [package.metadata.requires-dev]
 dev = [

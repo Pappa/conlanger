@@ -9,16 +9,9 @@ requires-python = ">= 3.12"
 readme = "README.md"
 
 dependencies = [
-    # "cldfbench_wals @ git+https://github.com/cldf-datasets/wals.git@v2020#egg=cldfbench_wals",
-    "requests",
-    "ipykernel",
     "matplotlib",
-    "tensorflow",
-    "keras",
+    "requests",
     "pandas",
-    "scikit-learn",
-    "tqdm",
-    "imbalanced-learn",
     "pyyaml>=6.0.3",
     "pydantic>=2.13.4",
 ]
@@ -31,6 +24,15 @@ per_file_coverage_gate = "conlanger.scripts.per_file_coverage_gate:main"
 
 [project.optional-dependencies]
 cuda = ["tensorflow[and-cuda]"]
+notebooks = [
+    # "cldfbench_wals @ git+https://github.com/cldf-datasets/wals.git@v2020#egg=cldfbench_wals",
+    "ipykernel",
+    "tensorflow",
+    "keras",
+    "scikit-learn",
+    "tqdm",
+    "imbalanced-learn",
+]
 
 [tool.setuptools.dynamic]
 version = { attr = "conlanger.__VERSION__" }
@@ -50,7 +52,7 @@ addopts = ["--cov=src", "--cov-report=html", "--cov-report=json:.coverage.json"]
 [tool.coverage.run]
 branch = true
 source = ["src"]
-omit = ["src/conlanger/ml/models/*", "src/conlanger/ml/utils.py"]
+omit = ["src/conlanger/ml/models/*", "src/conlanger/ml/display.py"]
 
 [tool.coverage.report]
 fail_under = 95
