@@ -58,7 +58,7 @@ def strip_whitespace(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
-def extract_text_with_subs(el) -> str:
+def extract_element_text(el) -> str:
     """Extract text, converting <sub>...</sub> to unicode subscripts."""
     parts: list[str] = []
 
@@ -463,7 +463,7 @@ def parse_section(sec_el) -> tuple[str, str, dict[str, object]]:
     non_rule_ps = sec_el.xpath("./p[not(contains(@class,'rule'))]")
     cite_texts: list[str] = []
     for p in non_rule_ps:
-        txt = extract_text_with_subs(p)
+        txt = extract_element_text(p)
         if txt:
             cite_texts.append(txt)
     cite_combined = " ".join(cite_texts).strip()
@@ -484,7 +484,7 @@ def parse_section(sec_el) -> tuple[str, str, dict[str, object]]:
     unmapped_series: set[str] = set()
 
     for i, rp in enumerate(rule_ps):
-        raw = extract_text_with_subs(rp)
+        raw = extract_element_text(rp)
         if not raw:
             continue
         # Resolve series labels for this section BEFORE normalizations

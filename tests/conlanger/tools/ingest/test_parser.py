@@ -46,7 +46,7 @@ from conlanger.utils.parsing import (
     build_stages_from_spine,
     extract_missing_arrow_rule_parts,
     extract_rule_parts,
-    extract_text_with_subs,
+    extract_element_text,
     finalize_stages_shape,
     normalize_html_sub_tags,
     parse_section_heading,
@@ -168,16 +168,16 @@ def test_parse_section_heading_without_index(heading, expected):
     assert parse_section_heading(heading) == expected
 
 
-def test_extract_text_with_subs_tail_after_sub():
+def test_extract_element_text_tail_after_sub():
     el = html.fragment_fromstring(
         normalize_html_sub_tags("<p>before<sub>2</sub>after</p>")
     )
-    assert extract_text_with_subs(el) == "before₂after"
+    assert extract_element_text(el) == "before₂after"
 
 
-def test_extract_text_with_subs_no_tail_after_sub():
+def test_extract_element_text_no_tail_after_sub():
     el = html.fragment_fromstring(normalize_html_sub_tags("<p>before<sub>2</sub></p>"))
-    assert extract_text_with_subs(el) == "before₂"
+    assert extract_element_text(el) == "before₂"
 
 
 @pytest.mark.parametrize(

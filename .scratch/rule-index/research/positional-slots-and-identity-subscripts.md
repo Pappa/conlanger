@@ -157,7 +157,7 @@ Correspondence-series maps (`series_mappings.csv`) key on **lowercase segment + 
 
 ## 5. Inventory impact
 
-Survey (`extract_text_with_subs` + `find_subscript_tokens` + `classify_subscript_token` on full HTML):
+Survey (`extract_element_text` + `find_subscript_tokens` + `classify_subscript_token` on full HTML):
 
 | Class | Token occurrences in rules | Unique token shapes |
 |-------|---------------------------:|--------------------:|

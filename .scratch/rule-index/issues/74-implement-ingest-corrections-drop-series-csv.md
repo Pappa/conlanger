@@ -13,7 +13,7 @@ Spawned from [Grill: correspondence-series mapping source of truth (manual SoT v
 - Load HTML as an in-memory string; **never** write the file.
 - Whole-file replace `<sub>…</sub>` → Unicode via `to_subscript` before lxml parse.
 - Nested markup inside `<sub>`: skip that tag (naive policy from grill).
-- Retire subscript conversion in `extract_text_with_subs` tree walk; extract text only.
+- Retire subscript conversion in `extract_element_text` tree walk; extract text only.
 
 ### 2. Index Diachronica corrections overlay
 

@@ -78,7 +78,7 @@ from conlanger.utils.mappings import (
 from conlanger.utils.parsing import (
     extract_missing_arrow_rule_parts,
     extract_rule_parts,
-    extract_text_with_subs,
+    extract_element_text,
     finalize_stages_shape,
     load_html_document,
     parse_section_heading,
@@ -89,7 +89,7 @@ from conlanger.utils.symbols import normalize_symbols
 
 
 def note_from_element(el, *, source_file: str) -> dict[str, Any]:
-    raw = extract_text_with_subs(el)
+    raw = extract_element_text(el)
     line = getattr(el, "sourceline", None) or 0
     return {
         "raw": raw,
@@ -138,7 +138,7 @@ class IndexDiachronicaParser:
     ) -> list[dict[str, Any]]:
         line = getattr(el, "sourceline", None) or 0
         source = f"{source_file}:{line}"
-        raw = extract_text_with_subs(el)
+        raw = extract_element_text(el)
 
         if skipped_rule:
             skipped = IndexRule(
@@ -241,7 +241,7 @@ class IndexDiachronicaParser:
                 continue
             h2_text = strip_whitespace("".join(h2s[0].itertext()))
             index, name = parse_section_heading(h2_text)
-            if not name:
+            if not name or not index:
                 continue
 
             rules: list[dict[str, Any]] = []
@@ -258,7 +258,7 @@ class IndexDiachronicaParser:
                         self.parse_rule_element(
                             p,
                             source_file=source_file,
-                            section_index=index or "",
+                            section_index=index,
                             section_name=name,
                             rule_id=rule_id,
                             skipped_rule=skip_rules.get(rule_id),

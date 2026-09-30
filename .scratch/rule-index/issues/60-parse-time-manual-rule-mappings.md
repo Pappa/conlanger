@@ -57,7 +57,7 @@ One row per mapping hit (if multiple patterns match one rule in one pass, one ro
 
 ### 2. Parse-time application (first transform)
 
-In `IndexDiachronicaParser.parse_rule_element()` (or caller with section context), immediately after `raw = extract_text_with_subs(el)`:
+In `IndexDiachronicaParser.parse_rule_element()` (or caller with section context), immediately after `raw = extract_element_text(el)`:
 
 ```text
 raw          ← HTML surface (stored on index rule)

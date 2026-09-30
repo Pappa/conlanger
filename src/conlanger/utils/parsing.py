@@ -130,20 +130,9 @@ def load_html_document(html_path: Path) -> html.HtmlElement:
     return doc.getroot()
 
 
-def extract_text_with_subs(el) -> str:
+def extract_element_text(el) -> str:
     """Element text (``<sub>`` should already be Unicode from pre-parse normalisation)."""
-    parts: list[str] = []
-
-    def walk(node) -> None:
-        if node.text:
-            parts.append(node.text)
-        for child in node:
-            walk(child)
-            if child.tail:
-                parts.append(child.tail)
-
-    walk(el)
-    return strip_whitespace("".join(parts))
+    return strip_whitespace("".join(el.itertext()))
 
 
 def split_input_output(raw: str) -> tuple[str, str] | None:
