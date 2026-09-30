@@ -22,13 +22,11 @@ from conlanger.scripts.pipeline_defaults import (
     ROOT,
 )
 from conlanger.tools.index_io import write_cleaned_index
-from conlanger.tools.ingest import (
-    IndexDiachronicaParser,
-    write_rule_comment_phrase_summary,
-)
+from conlanger.tools.ingest import IndexDiachronicaParser
 from conlanger.utils.file_io import (
     MANUAL_MAPPINGS_MATCHED_CSV_NAME,
     write_manual_mappings_matched_csv,
+    write_rule_comment_phrase_summary,
 )
 
 

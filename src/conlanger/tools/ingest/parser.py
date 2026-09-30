@@ -69,16 +69,16 @@ from conlanger.utils.mappings import (
     ManualMapping,
     ManualMappingMatch,
     ParserConfig,
+    SkipRule,
     apply_feature_mappings,
     apply_ipa_mappings,
     apply_manual_mappings,
     apply_section_mappings,
-    SkipRule,
 )
 from conlanger.utils.parsing import (
+    extract_element_text,
     extract_missing_arrow_rule_parts,
     extract_rule_parts,
-    extract_element_text,
     finalize_stages_shape,
     load_html_document,
     parse_section_heading,

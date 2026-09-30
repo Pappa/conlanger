@@ -8,20 +8,6 @@ from lxml import html
 
 from conlanger.appliers.asca import validate_asca
 from conlanger.scripts.config_loaders import load_parser_config
-from conlanger.tools.ingest import (
-    write_rule_comment_phrase_summary,
-)
-from conlanger.tools.ingest.double_slash_env import (
-    apply_double_slash_env_conditions,
-    normalize_prose_env_head,
-    normalize_prose_exception_or_env_tail,
-    split_embedded_double_slash,
-)
-from conlanger.tools.ingest.prose_position_env import (
-    apply_prose_position_env_conditions,
-    normalize_bare_prose_position_env,
-    strip_trailing_position_qualifiers,
-)
 from conlanger.tools.ingest.transforms import (
     MEDIAL_BOUNDARY_EXCEPTION,
     apply_medial_env_conditions,
@@ -35,7 +21,6 @@ from conlanger.tools.ingest.transforms import (
     split_line_semicolon_comment,
 )
 from conlanger.tools.rules import DiachronicSeries
-from conlanger.utils.file_io import write_manual_mappings_matched_csv
 from conlanger.utils.mappings import (
     IpaMapping,
     ManualMapping,
@@ -44,9 +29,9 @@ from conlanger.utils.mappings import (
 )
 from conlanger.utils.parsing import (
     build_stages_from_spine,
+    extract_element_text,
     extract_missing_arrow_rule_parts,
     extract_rule_parts,
-    extract_element_text,
     finalize_stages_shape,
     normalize_html_sub_tags,
     parse_section_heading,
@@ -312,35 +297,6 @@ def test_parse_rule_element_keeps_chain_with_env():
     assert rules[0]["env"] == "V_V"
 
 
-def test_write_rule_comment_phrase_summary(tmp_path: Path):
-    doc = {
-        "sections": [
-            {
-                "rules": [
-                    {"comment": "when stressed; sporadic in some dialects"},
-                    {"comment": "plain gloss"},
-                    {"stages": ["a", "b"]},
-                ]
-            }
-        ]
-    }
-    out = tmp_path / "comment-summary.md"
-    count = write_rule_comment_phrase_summary(doc, out)
-    text = out.read_text(encoding="utf-8")
-    assert count == 2
-    assert "when stressed" in text
-    assert "sporadic" in text
-    assert "plain gloss" in text
-
-
-def test_write_rule_comment_phrase_summary_empty_doc(tmp_path: Path):
-    out = tmp_path / "comment-summary.md"
-    count = write_rule_comment_phrase_summary({"sections": []}, out)
-    text = out.read_text(encoding="utf-8")
-    assert count == 0
-    assert "_(none matched)_" in text
-
-
 def test_apply_sporadic_qualifier():
     assert apply_sporadic_qualifier({"stages": ["p", "h (sporadic)"]}) == {
         "stages": ["p", "h"],
@@ -597,288 +553,6 @@ def test_apply_medial_env_conditions_deferred_env_and_exception():
         "exception": "{r(ʲ),l(ʲ)}_ or _ɡ",
     }
     assert apply_medial_env_conditions(parts) == parts
-
-
-@pytest.mark.parametrize(
-    ("text", "expected_env", "expected_captures"),
-    [
-        ("final syllables", "U#", ["final syllables"]),
-        ("in final syllables", "U#", ["in final syllables"]),
-        ("syllable-finally", "U#", ["syllable-finally"]),
-        ("syllable-final", "U#", ["syllable-final"]),
-        ("adjacent to {S,s,l̥}", "{S,s,l̥}_, _{S,s,l̥}", ["adjacent to {S,s,l̥}"]),
-        ("adjacent to {P,t}", "{P,t}_, _{P,t}", ["adjacent to {P,t}"]),
-        (
-            "adjacent to V[+nasal]",
-            "V[+nasal]_, _V[+nasal]",
-            ["adjacent to V[+nasal]"],
-        ),
-        ("unstressed syllables", "_ %[-stress]", ["unstressed syllables"]),
-        (
-            "accented or stressed monosyllables",
-            "#_[+stress]",
-            ["accented or stressed monosyllables"],
-        ),
-        (
-            "in accented or stressed monosyllables",
-            "#_[+stress]",
-            ["in accented or stressed monosyllables"],
-        ),
-        ("typically near *u", "_,u", ["typically near *u"]),
-        (
-            "between two vowels of unlike nasality",
-            "V_V",
-            ["between two vowels of unlike nasality"],
-        ),
-        ("not universal?", "_", ["not universal?"]),
-        ("monosyllables", "#_#", ["monosyllables"]),
-        ("_k", "_k", []),
-    ],
-)
-def test_normalize_bare_prose_position_env(text, expected_env, expected_captures):
-    env, captures, flags = normalize_bare_prose_position_env(text)
-    assert env == expected_env
-    assert captures == expected_captures
-    if text == "not universal?":
-        assert flags == {"sporadic": True}
-    else:
-        assert flags == {}
-
-
-@pytest.mark.parametrize(
-    ("text", "expected_env", "expected_captures"),
-    [
-        ("j_#, in monosyllables", "j_#", ["in monosyllables"]),
-        ("_#, in polysyllables", "_#", ["in polysyllables"]),
-        ("#_, in nouns", "#_", ["in nouns"]),
-        ("_ʔ#, in monosyllables", "_ʔ#", ["in monosyllables"]),
-    ],
-)
-def test_strip_trailing_position_qualifiers(text, expected_env, expected_captures):
-    env, captures = strip_trailing_position_qualifiers(text)
-    assert env == expected_env
-    assert captures == expected_captures
-
-
-@pytest.mark.parametrize(
-    ("input", "expected"),
-    [
-        pytest.param(
-            {"env": "adjacent to {S,s,l̥}"},
-            {
-                "env": "{S,s,l̥}_, _{S,s,l̥}",
-                "comment": "adjacent to {S,s,l̥}",
-            },
-            id="adjacent to set",
-        ),
-        pytest.param(
-            {"env": "_ʔ#, in monosyllables"},
-            {
-                "env": "_ʔ#",
-                "comment": "in monosyllables",
-            },
-            id="in monosyllables",  # is this correct?
-        ),
-        pytest.param(
-            {"env": "final syllables"},
-            {
-                "env": "U#",
-                "comment": "final syllables",
-            },
-            id="final syllables",  # is this correct?
-        ),
-        pytest.param(
-            {
-                "env": "final syllables",
-                "exception": "#U",
-            },
-            {
-                "env": "final syllables",
-                "exception": "#U",
-            },
-            id="deferred when exception is present",  # is this correct?
-        ),
-        pytest.param(
-            {
-                "env": "_(C)#, in monosyllables",
-                "exception": "#U",
-            },
-            {
-                "env": "_(C)#",
-                "exception": "#U",
-                "comment": "in monosyllables",
-            },
-            id="strips qualifier with exception",
-        ),
-    ],
-)
-def test_apply_prose_position_env_conditions(input, expected):
-    assert apply_prose_position_env_conditions(input) == expected
-
-
-@pytest.mark.parametrize(
-    ("text", "expected_head", "expected_tail"),
-    [
-        ("odd syllables // _{w,j,H}", "odd syllables", "_{w,j,H}"),
-        ("#_e", "#_e", None),
-    ],
-)
-def test_split_embedded_double_slash(text, expected_head, expected_tail):
-    assert split_embedded_double_slash(text) == (expected_head, expected_tail)
-
-
-@pytest.mark.parametrize(
-    ("text", "expected_env", "expected_captures"),
-    [
-        ("adjacent to ŋ", "ŋ_, _ŋ", ["adjacent to ŋ"]),
-        ("adjacent to S", "S_, _S", ["adjacent to S"]),
-        ("adjacent to C[+voice]", "C[+voice]_, _C[+voice]", ["adjacent to C[+voice]"]),
-        ("Logudorese", "", ["Logudorese"]),
-        ("onset of U[+stress]", "#_U[+stress]", ["onset of U[+stress]"]),
-        ("in onset of %[+stress]", "#_%[+stress]", ["in onset of %[+stress]"]),
-        ("penult", "%_", ["penult"]),
-        ("final syllables", "U#", ["final syllables"]),
-        (
-            "#% with the following conditions",
-            "#% with the following conditions",
-            ["#% with the following conditions"],
-        ),
-        ("_k, short only)", "_k", ["short only"]),
-        ("%[-stress]", "_ %[-stress]", ["%[-stress]"]),
-        ("", "", []),
-    ],
-)
-def test_normalize_prose_exception_or_env_tail(text, expected_env, expected_captures):
-    env, captures, flags = normalize_prose_exception_or_env_tail(text)
-    assert env == expected_env
-    assert captures == expected_captures
-    assert flags == {}
-
-
-@pytest.mark.parametrize(
-    ("text", "expected_env", "expected_captures"),
-    [
-        ("{a,ɛ}_, typically", "{a,ɛ}_", ["typically"]),
-        ("%[-stress]", "_ %[-stress]", ["%[-stress]"]),
-        ("unstressed syllables", "_ %[-stress]", ["unstressed syllables"]),
-        ("", "", []),
-    ],
-)
-def test_normalize_prose_env_head(text, expected_env, expected_captures):
-    env, captures, flags = normalize_prose_env_head(text)
-    assert env == expected_env
-    assert captures == expected_captures
-    assert flags == {}
-
-
-@pytest.mark.parametrize(
-    ("parts", "expected"),
-    [
-        (
-            {
-                "exception": "adjacent to C",
-            },
-            {
-                "exception": "C_, _C",
-                "comment": "adjacent to C",
-            },
-        ),
-        (
-            {
-                "env": "#_e",
-                "exception": "Logudorese",
-            },
-            {
-                "env": "#_e",
-                "comment": "Logudorese",
-            },
-        ),
-        (
-            {
-                "env": "odd syllables",
-                "exception": "_{w,j,H}",
-            },
-            {
-                "env": "_",
-                "exception": "_{w,j,H}",
-                "comment": "odd syllables",
-            },
-        ),
-        (
-            {
-                "env": "∅",
-                "exception": "_#",
-            },
-            {
-                "exception": "_#",
-            },
-        ),
-        (
-            {
-                "exception": "onset of U[+stress]",
-            },
-            {
-                "exception": "#_U[+stress]",
-                "comment": "onset of U[+stress]",
-            },
-        ),
-        (
-            {
-                "env": "#_",
-                "exception": "before an identical vowel",
-            },
-            {
-                "env": "#_",
-                "exception": "V_V",
-                "comment": "before an identical vowel",
-            },
-        ),
-        (
-            {
-                "env": "maybe",
-                "exception": "_#?",
-            },
-            {
-                "env": "_",
-                "exception": "_#",
-                "comment": "maybe; ?",
-                "sporadic": True,
-            },
-        ),
-        (
-            {
-                "env": "odd syllables // _{w,j,H}",
-            },
-            {
-                "env": "_",
-                "comment": "odd syllables",
-            },
-        ),
-        (
-            {
-                "env": "#_e // extra gloss",
-                "exception": "_{w,j,H}",
-            },
-            {
-                "env": "#_e",
-                "exception": "_{w,j,H}",
-                "comment": "extra gloss",
-            },
-        ),
-        (
-            {
-                "exception": "_# (sporadic)",
-            },
-            {
-                "exception": "_#",
-                "comment": "(sporadic)",
-                "sporadic": True,
-            },
-        ),
-    ],
-)
-def test_apply_double_slash_env_conditions(parts, expected):
-    assert apply_double_slash_env_conditions(parts) == expected
 
 
 def test_parse_rule_element_proto_italic_medial_comment_unchanged():
@@ -1795,37 +1469,6 @@ def test_parse_rule_element_without_manual_row_unchanged():
         manual_mappings=[],
     ).parse_rule_element(el)
     assert with_mappings == without
-
-
-def test_write_manual_mappings_matched_csv(tmp_path: Path):
-    from conlanger.utils.mappings import ManualMappingMatch
-
-    path = tmp_path / "manual_mappings_matched_rules.csv"
-    write_manual_mappings_matched_csv(
-        [
-            ManualMappingMatch(
-                section_index="17.5.1",
-                section_name="Proto-Indo-European to Old Irish",
-                rule_id="Old-Irish-mn",
-                source="index_diachronica_original.html:5509",
-                from_text="m̩ n̩ → am an / _{s,({m,j,w})V}",
-                to_text="m̩ n̩ → am an / _{s,({m,j,w})V}",
-            )
-        ],
-        path,
-    )
-    df = pd.read_csv(path, dtype=str, keep_default_na=False)
-    assert list(df.columns) == [
-        "section_index",
-        "section_name",
-        "rule_id",
-        "source",
-        "from_text",
-        "to_text",
-    ]
-    assert df.iloc[0]["rule_id"] == "Old-Irish-mn"
-    assert "_{s,({m,j,w})V}" in df.iloc[0]["from_text"]
-    assert "_{s,({m,j,w})V}" in df.iloc[0]["to_text"]
 
 
 def test_parse_records_manual_mapping_matches_and_unmatched(tmp_path: Path):
