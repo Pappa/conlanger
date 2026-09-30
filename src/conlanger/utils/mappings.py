@@ -5,7 +5,14 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from pydantic import BaseModel, ConfigDict, Field, model_validator
+from pydantic import (
+    BaseModel,
+    ConfigDict,
+    Field,
+    computed_field,
+    field_validator,
+    model_validator,
+)
 
 from conlanger.utils.series import section_index_prefixes
 
@@ -81,6 +88,16 @@ class FeatureMapping(BaseModel):
     notes: str = ""
 
 
+class SkipSection(BaseModel):
+    id: str
+    reason: str = ""
+
+
+class SkipRule(BaseModel):
+    id: str
+    reason: str = ""
+
+
 class ParserConfig(BaseModel):
     """Fat parse-time config: mapping tables plus runtime parser settings."""
 
@@ -93,9 +110,8 @@ class ParserConfig(BaseModel):
     corrections: dict[str, str] = Field(default_factory=dict)
     series_expansions: dict[str, tuple[str, ...]] = Field(default_factory=dict)
     section_mappings_sections: dict[str, dict[str, str]] = Field(default_factory=dict)
-    skip_section_ids: frozenset[str] = Field(default_factory=frozenset)
-    skip_rule_ids: frozenset[str] = Field(default_factory=frozenset)
-    skip_rule_comments: dict[str, str] = Field(default_factory=dict)
+    skip_sections: list[SkipSection] = Field(default_factory=list)
+    skip_rules: list[SkipRule] = Field(default_factory=list)
 
     def resolved_ipa_mappings(self) -> dict[str, str]:
         """Return IPA char → target map, optionally filtered by confidence."""

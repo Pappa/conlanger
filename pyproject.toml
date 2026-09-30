@@ -61,6 +61,7 @@ skip_empty = true
 [dependency-groups]
 dev = [
     "lxml>=6.0.2",
+    "pandas-stubs>=3.0.5.260914",
     "pytest>=8.4.2",
     "pytest-cov>=7.0.0",
     "pytest-mock>=3.15.1",
@@ -76,3 +77,9 @@ exclude = ["*.ipynb", ".scratch/*"]
 
 [tool.ruff.format]
 exclude = ["*.ipynb", ".scratch/*"]
+
+[tool.ty.src]
+exclude = [
+    "src/conlanger/ml/models/*",
+    "notebooks/*",
+]

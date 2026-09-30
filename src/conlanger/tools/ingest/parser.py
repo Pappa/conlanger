@@ -73,6 +73,7 @@ from conlanger.utils.mappings import (
     apply_ipa_mappings,
     apply_manual_mappings,
     apply_section_mappings,
+    SkipRule,
 )
 from conlanger.utils.parsing import (
     extract_missing_arrow_rule_parts,
@@ -133,19 +134,20 @@ class IndexDiachronicaParser:
         section_index: str = "",
         section_name: str = "",
         rule_id: str = "",
+        skipped_rule: SkipRule | None = None,
     ) -> list[dict[str, Any]]:
         line = getattr(el, "sourceline", None) or 0
         source = f"{source_file}:{line}"
         raw = extract_text_with_subs(el)
 
-        if rule_id and rule_id in self._parser_config.skip_rule_ids:
+        if skipped_rule:
             skipped = IndexRule(
                 stages=[],
                 raw=raw,
                 source=source,
                 status="skipped",
                 rule_id=rule_id,
-                comment=self._parser_config.skip_rule_comments.get(rule_id),
+                comment=skipped_rule.reason,
             )
             return [skipped.to_index_dict()]
 
@@ -228,6 +230,10 @@ class IndexDiachronicaParser:
         self._matched_correction_ids = set()
         root = load_html_document(html_path)
         sections_out: list[dict[str, Any]] = []
+        skip_rules = {rule.id: rule for rule in self._parser_config.skip_rules}
+        skip_sections = {
+            section.id: section for section in self._parser_config.skip_sections
+        }
 
         for sec in root.xpath("//section[@id]"):
             h2s = sec.xpath("./h2")
@@ -244,10 +250,10 @@ class IndexDiachronicaParser:
             saw_first_p = False
 
             for p in sec.xpath("./p"):
-                cls = p.get("class") or ""
+                cls = p.get("class", "")
                 if "schg" in cls:
                     saw_first_p = True
-                    rule_id = p.get("id") or ""
+                    rule_id = p.get("id", "")
                     rules.extend(
                         self.parse_rule_element(
                             p,
@@ -255,6 +261,7 @@ class IndexDiachronicaParser:
                             section_index=index or "",
                             section_name=name,
                             rule_id=rule_id,
+                            skipped_rule=skip_rules.get(rule_id),
                         )
                     )
                     continue
@@ -281,7 +288,7 @@ class IndexDiachronicaParser:
                 section_obj["rules"] = flatten_nested_sets_in_section_rules(
                     resolve_catch_all_else_rules(rules)
                 )
-            if index and index in self._parser_config.skip_section_ids:
+            if index and index in skip_sections:
                 section_obj["status"] = "skipped"
             sections_out.append(section_obj)
 

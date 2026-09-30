@@ -5,7 +5,13 @@ from pathlib import Path
 import pytest
 
 from conlanger.scripts.config_loaders import load_compiler_config, load_parser_config
-from conlanger.utils.mappings import IpaMapping, ManualMapping, ParserConfig
+from conlanger.utils.mappings import (
+    IpaMapping,
+    ManualMapping,
+    ParserConfig,
+    SkipRule,
+    SkipSection,
+)
 
 
 def _write_parser_fragments(
@@ -76,7 +82,7 @@ def test_load_parser_config_skip_sections(tmp_path: Path):
         ),
     )
     config = load_parser_config(path)
-    assert config.skip_section_ids == frozenset({"37.1.2.4.2"})
+    assert config.skip_sections == [SkipSection(id="37.1.2.4.2", reason="bad source")]
 
 
 def test_load_parser_config_skip_sections_ignores_malformed_entries(tmp_path: Path):
@@ -89,8 +95,10 @@ def test_load_parser_config_skip_sections_ignores_malformed_entries(tmp_path: Pa
             "  - id: ''\n"
         ),
     )
-    config = load_parser_config(path)
-    assert config.skip_section_ids == frozenset()
+    with pytest.raises(
+        ValueError, match="Invalid skip_sections entry in parser config"
+    ):
+        load_parser_config(path)
 
 
 def test_load_parser_config_section_mappings(tmp_path: Path):
@@ -131,10 +139,9 @@ def test_load_parser_config_skip_rules(tmp_path: Path):
         ),
     )
     config = load_parser_config(path)
-    assert config.skip_rule_ids == frozenset({"Pre-Slavic-Vowel-Changes-i"})
-    assert (
-        config.skip_rule_comments["Pre-Slavic-Vowel-Changes-i"] == "structural hold-out"
-    )
+    assert config.skip_rules == [
+        SkipRule(id="Pre-Slavic-Vowel-Changes-i", reason="structural hold-out")
+    ]
 
 
 def test_resolved_ipa_mappings_high_only_config_excludes_medium(tmp_path: Path):
