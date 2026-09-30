@@ -61,6 +61,7 @@ def strip_leading_index_list_marker(text: str) -> str:
     return _LEADING_INDEX_LIST_MARKER_RE.sub("", text, count=1)
 
 
+# TODO: rename to something sensible
 def build_stages_from_spine(inp: str, out: str) -> list[str]:
     """Split a change spine into ordered opaque stage strings."""
     stages = [inp.strip()]

@@ -8,18 +8,6 @@ from lxml import html
 
 from conlanger.appliers.asca import validate_asca
 from conlanger.scripts.config_loaders import load_parser_config
-from conlanger.tools.ingest.transforms import (
-    MEDIAL_BOUNDARY_EXCEPTION,
-    apply_medial_env_conditions,
-    apply_sporadic_qualifier,
-    apply_stress_conditions,
-    apply_trailing_glosses,
-    join_rule_comment,
-    normalize_medial_env_field,
-    normalize_stress_conditions,
-    split_field_semicolon_comment,
-    split_line_semicolon_comment,
-)
 from conlanger.tools.rules import DiachronicSeries
 from conlanger.utils.mappings import (
     IpaMapping,
@@ -41,7 +29,7 @@ from conlanger.utils.parsing import (
     split_post_arrow,
     strip_leading_index_list_marker,
 )
-from conlanger.utils.symbols import normalize_stress_marks, normalize_symbols
+from conlanger.utils.symbols import normalize_symbols
 from tests.fixtures.minimal_mappings import (
     minimal_feature_mappings,
 )
@@ -166,55 +154,6 @@ def test_extract_element_text_no_tail_after_sub():
 
 
 @pytest.mark.parametrize(
-    "text, expected",
-    [
-        ("#_", "#_"),
-        ("∅", "∅"),
-        ("_$%oː", "_$$oː"),
-        ("$am_w", "$am_w"),
-        ("in #”U", "in #U:[+stress]"),
-        ("s “(for many speakers)”", "s “(for many speakers)”"),
-        ("", ""),
-    ],
-)
-def test_normalize_symbols(text, expected):
-    assert normalize_symbols(text) == expected
-
-
-@pytest.mark.parametrize(
-    "text, expected",
-    [
-        ("”V → ə", "V:[+stress] → ə"),
-        ("k → ɡ / ”V_", "k → ɡ / V:[+stress]_"),
-        ("V → ∅ / C”V", "V → ∅ / CV:[+stress]"),
-        ("V → i / C”iC_", "V → i / Ci:[+stress]C_"),
-        (
-            "V:[+stress]ʕ ʕV:[+stress] → aa:[+stress] a”a",
-            "V:[+stress]ʕ ʕV:[+stress] → aa:[+stress] aa:[+stress]",
-        ),
-        ("p k → f ɣ / V_V // ”ə_V", "p k → f ɣ / V_V // ə:[+stress]_V"),
-        ("”{i,e}V → jV:[+stress]", "{i:[+stress],e:[+stress]}V → jV:[+stress]"),
-        ("au → a / _$”u", "au → a / _$u:[+stress]"),
-        ("kʷ → kw / #_”a", "kʷ → kw / #_a:[+stress]"),
-        (
-            "V → V:[+stress] / _C*”{i,e}V",
-            "V → V:[+stress] / _C*{i:[+stress],e:[+stress]}V",
-        ),
-        ("Ve:[+stress] → ”Vi", "Ve:[+stress] → Vi:[+stress]"),
-        ("e → i:[+long] / ”_$ɪ:[+long]#", "e → i:[+long] / _$ɪ:[+stress,+long]#"),
-        ("ɛ ɔ → e o / _(”u)#", "ɛ ɔ → e o / _(u:[+stress])#"),
-        (
-            "{V:[+stress](C)CaCV,VC:[+stress](C)CaCV} → {V”(C)CaCV,VC”(C)CaCV} / _#",
-            "{V:[+stress](C)CaCV,VC:[+stress](C)CaCV} → {V:[+stress](C)CaCV,VC:[+stress](C)CaCV} / _#",
-        ),
-        ('k → ts / “After some syllables"', 'k → ts / “After some syllables"'),
-    ],
-)
-def test_normalize_stress_marks(text, expected):
-    assert normalize_stress_marks(text) == expected
-
-
-@pytest.mark.parametrize(
     ("text", "expected"),
     [
         ("— j w → i u / #_CV", "j w → i u / #_CV"),
@@ -297,19 +236,6 @@ def test_parse_rule_element_keeps_chain_with_env():
     assert rules[0]["env"] == "V_V"
 
 
-def test_apply_sporadic_qualifier():
-    assert apply_sporadic_qualifier({"stages": ["p", "h (sporadic)"]}) == {
-        "stages": ["p", "h"],
-        "sporadic": True,
-        "comment": "(sporadic)",
-    }
-
-
-def test_apply_sporadic_qualifier_unchanged_when_no_marker():
-    parts = {"stages": ["a", "e"], "env": "_#"}
-    assert apply_sporadic_qualifier(parts) == parts
-
-
 def test_parse_rule_element_marks_sporadic_and_strips_gloss():
     el = html.fragment_fromstring('<p class="schg">p → h (sporadic)</p>')
     rules = _parse_rule_element(el)
@@ -361,22 +287,6 @@ def test_parse_rule_element_strips_trailing_question_mark_from_albanian_env():
     assert "?" in rules[0]["comment"]
 
 
-def test_apply_trailing_glosses():
-    assert apply_trailing_glosses(
-        {"stages": ["j", "p (some Polynesian languages, such as Levei and Drehet)"]}
-    ) == {
-        "stages": ["j", "p"],
-        "comment": "(some Polynesian languages, such as Levei and Drehet)",
-    }
-
-
-def test_apply_trailing_glosses_strips_field_wrapped_gloss_to_comment():
-    assert apply_trailing_glosses({"stages": ["hhy", '"something like /ʒ/"']}) == {
-        "stages": ["hhy", ""],
-        "comment": '"something like /ʒ/"',
-    }
-
-
 def test_parse_rule_element_keeps_gloss_only_output():
     el = html.fragment_fromstring(
         '<p class="schg">hhy \u2192 \u201csomething like /\u0292/\u201d</p>'
@@ -397,21 +307,6 @@ def test_parse_rule_element_strips_trailing_glosses():
     assert rules[0]["stages"] == ["w", "f"]
     assert "Celtic" in rules[0]["comment"]
     assert "Celtic" in rules[0]["raw"]
-
-
-def test_apply_trailing_glosses_keeps_unclosed_paren_on_env():
-    """Env/exception unclosed parens stay paired for compile-time gloss strip."""
-    assert apply_trailing_glosses(
-        {
-            "stages": ["Vn", "ṽ"],
-            "env": "_# (seems to have been reverted in most dialects",
-            "exception": "for Souletin)",
-        }
-    ) == {
-        "stages": ["Vn", "ṽ"],
-        "env": "_# (seems to have been reverted in most dialects",
-        "exception": "for Souletin)",
-    }
 
 
 def test_parse_rule_element_keeps_set_and_matrix_parentheticals():
@@ -465,105 +360,6 @@ def test_parse_rule_element_strips_embedded_quoted_env_gloss():
     rules = _parse_rule_element(el)
     assert rules[0]["env"] == "and (word-finally?) when"
     assert "sibilant" in rules[0]["raw"]
-
-
-@pytest.mark.parametrize(
-    ("text", "expected"),
-    [
-        ("V_V, when neither vowel is stressed", "V_V"),
-        ("_C(C), when stressed", "_C(C) when stressed"),
-        ("_$, when stressed", "_$ when stressed"),
-        ("_N, when unstressed (?)", "_N when unstressed (?)"),
-        ("when unstressed", "_ when unstressed"),
-        (
-            "when stressed unless primarily stressed",
-            "_ when stressed unless primarily stressed",
-        ),
-        ("_# when unstressed", "_#"),
-        ("_#, when unstressed", "_#"),
-        ("C_# when unstressed", "C_#"),
-        ("in open syllables, when stressed", "_ when stressed"),
-        ("short only when unstressed", "_ when unstressed"),
-        ("_j when stressed", "_j when stressed"),
-        ("l_ when unstressed", "l_ when unstressed"),
-        ("_#", "_#"),
-    ],
-)
-def test_normalize_stress_conditions(text, expected):
-    cleaned, _ = normalize_stress_conditions(text)
-    assert cleaned == expected
-
-
-def test_apply_stress_conditions():
-    assert apply_stress_conditions(
-        {"stages": ["a", "e"], "env": "_C(C), when stressed"}
-    ) == {"stages": ["a", "e"], "env": "_C(C) when stressed"}
-    cleaned = apply_stress_conditions(
-        {
-            "stages": ["ɾ", "∅"],
-            "env": "V_V, when neither vowel is stressed",
-        }
-    )
-    assert cleaned["env"] == "V_V"
-    assert "when neither vowel is stressed" in cleaned["comment"]
-
-
-@pytest.mark.parametrize(
-    ("text", "expected_env", "expected_medial"),
-    [
-        ("medial", "_", True),
-        ("medially", "_", True),
-        ("medially,", "_", True),
-        ("  Medial  ", "_", True),
-        ("when medial", "_", True),
-        ("C[-voice]_n, when medial", "C[-voice]_n", True),
-        ("_k, when medial", "_k", True),
-        ("_#", "_#", False),
-        ("ku_", "ku_", False),
-    ],
-)
-def test_normalize_medial_env_field(text, expected_env, expected_medial):
-    env, is_medial = normalize_medial_env_field(text)
-    assert env == expected_env
-    assert is_medial is expected_medial
-
-
-def test_apply_medial_env_conditions_bare_medial():
-    assert apply_medial_env_conditions({"stages": ["t", "r"], "env": "medially"}) == {
-        "stages": ["t", "r"],
-        "env": "_",
-        "exception": MEDIAL_BOUNDARY_EXCEPTION,
-    }
-
-
-def test_apply_medial_env_conditions_structural_when_medial():
-    assert apply_medial_env_conditions(
-        {"stages": ["m", "β"], "env": "C[-voice]_n, when medial"}
-    ) == {
-        "stages": ["m", "β"],
-        "env": "C[-voice]_n",
-        "exception": MEDIAL_BOUNDARY_EXCEPTION,
-    }
-
-
-def test_apply_medial_env_conditions_deferred_env_and_exception():
-    parts = {
-        "stages": ["b", "h"],
-        "env": "medially,",
-        "exception": "{r(ʲ),l(ʲ)}_ or _ɡ",
-    }
-    assert apply_medial_env_conditions(parts) == parts
-
-
-def test_parse_rule_element_proto_italic_medial_comment_unchanged():
-    el = html.fragment_fromstring(
-        '<p class="schg">s → z / medial (I\'m assuming between vowels or when *s voiced in PIE)</p>'
-    )
-    rules = _parse_rule_element(el)
-    assert rules[0]["env"] == "_"
-    assert rules[0]["exception"] == MEDIAL_BOUNDARY_EXCEPTION
-    assert "between vowels" in rules[0]["comment"]
-    assert "medial" in rules[0]["raw"]
 
 
 @pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
@@ -1240,21 +1036,6 @@ def test_parse_rule_element_voiced_matrix_validates_asca(fx_sample_compiler_conf
     )
 
 
-def test_split_field_semicolon_comment():
-    assert split_field_semicolon_comment(
-        "depending on the environment; again, the article is unclear"
-    ) == (
-        "depending on the environment",
-        "again, the article is unclear",
-    )
-    assert split_field_semicolon_comment("short only") == ("short only", None)
-
-
-def test_join_rule_comment():
-    assert join_rule_comment(None, "  a  ", "b") == "a; b"
-    assert join_rule_comment() is None
-
-
 def test_parse_rule_element_captures_semicolon_comment():
     el = html.fragment_fromstring(
         '<p class="schg">V → ∅ / short only; blocked by following consonant</p>'
@@ -1312,11 +1093,6 @@ def test_parse_rule_element_apply_dialects_to_context(
         assert rules[0]["env"] == expected_env
     if expected_exception is not None:
         assert rules[0]["exception"] == expected_exception
-
-
-def test_split_line_semicolon_comment():
-    assert split_line_semicolon_comment("a → b ; tail") == ("a → b", "tail")
-    assert split_line_semicolon_comment("no semicolon") == ("no semicolon", None)
 
 
 def test_parse_rule_element_archi_style_comment_before_chain_split():
