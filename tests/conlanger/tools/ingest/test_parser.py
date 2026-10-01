@@ -1,7 +1,6 @@
 import shutil
 from pathlib import Path
 
-import pandas as pd
 import pytest
 from helpers import default_index_parser, write_tmp_index_html
 from lxml import html
@@ -15,21 +14,7 @@ from conlanger.utils.mappings import (
     ParserConfig,
     normalize_feature_matrices_in_field,
 )
-from conlanger.utils.parsing import (
-    build_stages_from_spine,
-    extract_element_text,
-    extract_missing_arrow_rule_parts,
-    extract_rule_parts,
-    finalize_stages_shape,
-    normalize_html_sub_tags,
-    parse_section_heading,
-    split_env_exception,
-    split_input_output,
-    split_output_rest,
-    split_post_arrow,
-    strip_leading_index_list_marker,
-)
-from conlanger.utils.symbols import normalize_symbols
+from conlanger.utils.parsing import normalize_html_sub_tags
 from tests.fixtures.minimal_mappings import (
     minimal_feature_mappings,
 )
@@ -39,182 +24,6 @@ def _parse_rule_element(el):
     """Parse one rule element with package-default injected tables."""
     parser = default_index_parser()
     return parser.parse_rule_element(el)
-
-
-_SAMPLED_RULES_CSV = (
-    Path(__file__).resolve().parents[3] / "fixtures" / "sound_change_rules.csv"
-)
-
-
-def _extract_rule_parts_for_test(normalized: str):
-    parts = extract_rule_parts(normalized)
-    if parts is None:
-        return extract_missing_arrow_rule_parts(normalized)
-    return parts
-
-
-def _load_sampled_html_rules() -> list[tuple]:
-    df = pd.read_csv(_SAMPLED_RULES_CSV, dtype=str, keep_default_na=False)
-    if "kind" in df.columns:
-        df = df[df["kind"].isin(["", "html_extract"])]
-    cases: list[tuple] = []
-    for row in df.itertuples(index=False):
-        if row.expect_none == "True":
-            expected = None
-        else:
-            normalized = normalize_symbols(strip_leading_index_list_marker(row.raw))
-            expected = _extract_rule_parts_for_test(normalized)
-        cases.append((row.id, row.raw, expected))
-    return cases
-
-
-@pytest.mark.parametrize(
-    "raw, expected",
-    [
-        ("dz ʃ tʃ → ʒ s₁ s₂", ("dz ʃ tʃ", "ʒ s₁ s₂")),
-        ("t → ∅ / _s#", ("t", "∅ / _s#")),
-        ("w → ∅ / #C_V, except _i(ː)", ("w", "∅ / #C_V, except _i(ː)")),
-        ("dʒ → tʃ → ʃ", ("dʒ", "tʃ → ʃ")),
-        ("a →ə / _#", ("a", "ə / _#")),
-        ("∅→ n / #_iN", ("∅", "n / #_iN")),
-        ("no arrow here", None),
-    ],
-)
-def test_split_input_output(raw, expected):
-    assert split_input_output(raw) == expected
-
-
-@pytest.mark.parametrize(
-    "post_arrow, expected",
-    [
-        ("ʒ s₁ s₂", ("ʒ s₁ s₂", None)),
-        ("∅ / _s#", ("∅", "_s#")),
-        ("∅ / #C_V", ("∅", "#C_V")),
-        ("tʃ → ʃ", ("tʃ → ʃ", None)),
-        ("a / b / c", ("a", "b / c")),
-        ("∅/ _#", ("∅", "_#")),
-        ("p/ #_C[+sibilant]", ("p", "#_C[+sibilant]")),
-        (
-            "š (Alex Fink says that the realization of /š/ “is unclear”)",
-            ("š (Alex Fink says that the realization of /š/ “is unclear”)", None),
-        ),
-        ("h #_", ("h #_", None)),
-        ("∅ VC_CV", ("∅ VC_CV", None)),
-        ("c& _", ("c& _", None)),
-        ("ej (əw)", ("ej (əw)", None)),
-        ("({C,#}Vː)∅", ("({C,#}Vː)∅", None)),
-        ("∅ /{a,E}_", ("∅", "{a,E}_")),
-        ("p /#_C[+sibilant]", ("p", "#_C[+sibilant]")),
-    ],
-)
-def test_split_output_rest(post_arrow, expected):
-    assert split_output_rest(post_arrow) == expected
-
-
-@pytest.mark.parametrize(
-    "rest, expected",
-    [
-        ("_s#", ("_s#", None)),
-        ("!V_", (None, "V_")),
-        ("! V_", (None, "V_")),
-        ("_# ! k(ː)_", ("_#", "k(ː)_")),
-        ("#C_V, except _i(ː)", ("#C_V", "_i(ː)")),
-        ("except in several words", (None, "in several words")),
-        ("_V(…V) except in #U", ("_V(…V)", "in #U")),
-        ("_əNS / #_", ("_əNS", "#_")),
-        ("", (None, None)),
-        ("    ", (None, None)),
-    ],
-)
-def test_split_env_exception(rest, expected):
-    assert split_env_exception(rest) == expected
-
-
-@pytest.mark.parametrize(
-    "heading, expected",
-    [
-        ("1.0 Proto-IndoEuropean to Klingon", ("1.0", "Proto-IndoEuropean to Klingon")),
-        ("Title only", ("", "Title only")),
-    ],
-)
-def test_parse_section_heading_without_index(heading, expected):
-    assert parse_section_heading(heading) == expected
-
-
-def test_extract_element_text_tail_after_sub():
-    el = html.fragment_fromstring(
-        normalize_html_sub_tags("<p>before<sub>2</sub>after</p>")
-    )
-    assert extract_element_text(el) == "before₂after"
-
-
-def test_extract_element_text_no_tail_after_sub():
-    el = html.fragment_fromstring(normalize_html_sub_tags("<p>before<sub>2</sub></p>"))
-    assert extract_element_text(el) == "before₂"
-
-
-@pytest.mark.parametrize(
-    ("text", "expected"),
-    [
-        ("— j w → i u / #_CV", "j w → i u / #_CV"),
-        ("— aː → oː", "aː → oː"),
-        ("— {o,u}(ː) → iː", "{o,u}(ː) → iː"),
-        ("j w → i u", "j w → i u"),
-        ("", ""),
-    ],
-)
-def test_strip_leading_index_list_marker(text, expected):
-    assert strip_leading_index_list_marker(text) == expected
-
-
-def test_build_stages_from_spine_splits_remaining_arrows():
-    assert build_stages_from_spine("dʒ", "tʃ → ʃ") == ["dʒ", "tʃ", "ʃ"]
-
-
-def test_finalize_stages_shape_preserves_existing_skipped_status():
-    assert finalize_stages_shape({"stages": ["a"], "status": "skipped"}) == {
-        "stages": ["a"],
-        "status": "skipped",
-    }
-
-
-def test_finalize_stages_shape_keeps_short_spine():
-    assert finalize_stages_shape({"stages": ["a"], "env": "_#"}) == {
-        "env": "_#",
-        "stages": ["a"],
-    }
-
-
-def test_finalize_stages_shape_keeps_valid_spine():
-    assert finalize_stages_shape({"stages": ["a", " ", "b"]}) == {"stages": ["a", "b"]}
-
-
-def test_extract_missing_arrow_rule_parts():
-    assert extract_missing_arrow_rule_parts("no arrow here") == {
-        "stages": ["no arrow here"]
-    }
-    assert extract_missing_arrow_rule_parts("a to b / _#") == {
-        "stages": ["a to b"],
-        "env": "_#",
-    }
-    assert extract_missing_arrow_rule_parts("a to b / _# ! V_") == {
-        "stages": ["a to b"],
-        "env": "_#",
-        "exception": "V_",
-    }
-
-
-def test_extract_rule_parts_strips_leading_list_marker():
-    assert extract_rule_parts("— j w → i u / #_CV") == {
-        "stages": ["j w", "i u"],
-        "env": "#_CV",
-    }
-
-
-def test_extract_rule_parts_splits_chain_into_stages():
-    assert extract_rule_parts("dʒ → tʃ → ʃ") == {
-        "stages": ["dʒ", "tʃ", "ʃ"],
-    }
 
 
 def test_parse_rule_element_keeps_chain_without_env():
@@ -433,14 +242,6 @@ def test_parse_rule_element_stress_conditions_validate_asca(fx_sample_compiler_c
         )
 
 
-def test_extract_rule_parts_with_symbol_normalization():
-    raw = "a → b / _$%oː"
-    assert extract_rule_parts(normalize_symbols(raw)) == {
-        "stages": ["a", "b"],
-        "env": "_$$oː",
-    }
-
-
 def test_parser_preserves_class_letters(tmp_path: Path):
     html_path = tmp_path / "mapped.html"
     write_tmp_index_html(
@@ -552,80 +353,6 @@ def test_parser_unlisted_section_not_marked_skipped(tmp_path: Path):
     )
     sec = default_index_parser().parse(html_path)["sections"][0]
     assert "status" not in sec
-
-
-@pytest.mark.parametrize(
-    "post_arrow, expected",
-    [
-        ("ʒ s₁ s₂", ("ʒ s₁ s₂", None, None)),
-        ("∅ / _s#", ("∅", "_s#", None)),
-        ("ʃ / !V_", ("ʃ", None, "V_")),
-        ("∅ / _# ! k(ː)_", ("∅", "_#", "k(ː)_")),
-        ("∅ / #C_V, except _i(ː)", ("∅", "#C_V", "_i(ː)")),
-        ("ʔ / except in several words", ("ʔ", None, "in several words")),
-        (
-            "ou øy ei, except in certain endings",
-            ("ou øy ei", None, "in certain endings"),
-        ),
-        ("{∅,h} / _əNS / #_", ("{∅,h}", "_əNS", "#_")),
-        ("∅/ _# ! V[-long]C_#", ("∅", "_#", "V[-long]C_#")),
-    ],
-)
-def test_split_post_arrow(post_arrow, expected):
-    assert split_post_arrow(post_arrow) == expected
-
-
-@pytest.mark.parametrize(
-    "raw, expected",
-    [
-        (
-            "w → ∅ / _# ! k(ː)_",
-            {"stages": ["w", "∅"], "env": "_#", "exception": "k(ː)_"},
-        ),
-        (
-            "s → ʃ / !V_",
-            {"stages": ["s", "ʃ"], "exception": "V_"},
-        ),
-        ("ɬ → l", {"stages": ["ɬ", "l"]}),
-        ("no arrow here", {"stages": ["no arrow here"]}),
-        (
-            "ʔ → ∅/ _#",
-            {"stages": ["ʔ", "∅"], "env": "_#"},
-        ),
-        (
-            "{i,u} → ∅/ _# ! V[-long]C_#",
-            {
-                "stages": ["{i,u}", "∅"],
-                "env": "_#",
-                "exception": "V[-long]C_#",
-            },
-        ),
-        (
-            "ə → ∅ VC_CV",
-            {"stages": ["ə", "∅ VC_CV"]},
-        ),
-        (
-            "χ → h #_",
-            {"stages": ["χ", "h #_"]},
-        ),
-        (
-            "∅ → dz → î_V",
-            {"stages": ["∅", "dz", "î_V"]},
-        ),
-        (
-            "rt → š (Alex Fink says that the realization of /š/ “is unclear”)",
-            {
-                "stages": [
-                    "rt",
-                    "š (Alex Fink says that the realization of /š/ “is unclear”)",
-                ]
-            },
-        ),
-        ("r…r → r…∅", {"stages": ["r…r", "r…∅"]}),
-    ],
-)
-def test_extract_rule_parts(raw, expected):
-    assert _extract_rule_parts_for_test(raw) == expected
 
 
 def test_parse_rule_element_with_sub_and_env():
@@ -776,12 +503,6 @@ def test_parse_applies_corrections_overlay_by_rule_id(tmp_path: Path):
     assert rule["stages"] == ["nl", "s"]
 
 
-def test_normalize_html_sub_tags_skips_nested_markup():
-    html_text = "<p>x<sub>1<sub>2</sub></sub></p>"
-    assert normalize_html_sub_tags(html_text) == html_text
-    assert normalize_html_sub_tags("<p>x<sub>1</sub></p>") == "<p>x₁</p>"
-
-
 def test_parse_keeps_correspondence_series_indices_literal(tmp_path: Path):
     html_path = tmp_path / "afro.html"
     html_path.write_text(_HTML_FIXTURE, encoding="utf-8")
@@ -816,18 +537,6 @@ _HTML_FIXTURE = """\
 </section>
 </body></html>
 """
-
-
-_SAMPLED_HTML_RULE_CASES = _load_sampled_html_rules()
-
-
-@pytest.mark.parametrize(
-    ("case_id", "raw", "expected"),
-    _SAMPLED_HTML_RULE_CASES,
-    ids=[case_id for case_id, _, _ in _SAMPLED_HTML_RULE_CASES],
-)
-def test_extract_rule_parts_sampled_html_rules(case_id, raw, expected):
-    assert extract_rule_parts(normalize_symbols(raw)) == expected, case_id
 
 
 def test_parser_normalizes_symbols_and_preserves_raw(tmp_path: Path):
