@@ -140,6 +140,20 @@ class IndexDiachronicaParser:
         source = f"{source_file}:{line}"
         raw = extract_element_text(el)
 
+        return self.parse_rule_string(
+            rule_id, section_index, section_name, source, skipped_rule, raw
+        )
+
+    def parse_rule_string(
+        self,
+        rule_id: str | None,
+        section_index: str,
+        section_name: str,
+        source: str,
+        skipped_rule: SkipRule | None,
+        raw: str = "",
+    ) -> dict[str, Any]:
+
         if skipped_rule:
             skipped = IndexRule(
                 stages=[],
