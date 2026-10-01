@@ -47,16 +47,6 @@ def _load_yaml_dict(path: Path) -> dict[str, Any]:
     return loaded
 
 
-def _parse_series_expansions(raw: object) -> dict[str, tuple[str, ...]]:
-    if not isinstance(raw, dict):
-        return {}
-    out: dict[str, tuple[str, ...]] = {}
-    for token, members in raw.items():
-        if isinstance(members, list):
-            out[str(token)] = tuple(str(m) for m in members)
-    return out
-
-
 def _parse_section_mappings(raw: object) -> dict[str, dict[str, str]]:
     if not isinstance(raw, dict):
         return {}
@@ -79,13 +69,9 @@ def _load_manual_mappings(path: Path) -> list[ManualMapping]:
     for entry in raw:
         if not isinstance(entry, dict):
             continue
-        if "targets" in entry:
-            if not isinstance(entry["targets"], list):
-                raise ValueError(f"targets must be a list: {entry['targets']!r}")
-            targets = [str(target) for target in entry["targets"]]
-        else:
-            targets = [str(entry.get("from", ""))]
-
+        targets: list[str] = [str(target) for target in entry.get("targets", [])] or [
+            str(entry.get("from", ""))
+        ]
         for target in targets:
             if target in seen:
                 raise ValueError(f"duplicate manual mapping target: {target!r}")
@@ -93,14 +79,17 @@ def _load_manual_mappings(path: Path) -> list[ManualMapping]:
 
             count = entry.get("count", None)
             comment = entry.get("comment", False)
+            reason = str(entry.get("reason", "comment" if comment else ""))
             to_text = str(entry.get("to", ""))
+
             if not to_text and comment:
-                to_text = f" ; {target.lstrip()}"
+                to_text = f" ; {target.strip()}"
+
             out.append(
                 ManualMapping(
                     from_text=target,
                     to_text=to_text,
-                    reason=str(entry.get("reason", "comment" if comment else "")),
+                    reason=reason,
                     use_regex=bool(entry.get("use_regex", False)),
                     count=int(count) if count is not None else None,
                 )
@@ -116,18 +105,15 @@ def _load_ipa_mappings(path: Path) -> tuple[IpaMapping, ...]:
     for index_feature, entry in raw.items():
         if isinstance(entry, str):
             out.append(IpaMapping(index_feature=str(index_feature), ipa_target=entry))
-            continue
-        if not isinstance(entry, dict):
-            continue
-        confidence = entry.get("confidence")
-        out.append(
-            IpaMapping(
-                index_feature=str(index_feature),
-                ipa_target=str(entry.get("ipa_target", "")),
-                confidence=str(confidence) if confidence is not None else None,
-                notes=str(entry.get("notes", "")),
+        elif isinstance(entry, dict):
+            out.append(
+                IpaMapping(
+                    index_feature=str(index_feature),
+                    ipa_target=str(entry.get("ipa_target", "")),
+                    confidence=entry.get("confidence", None),
+                    notes=str(entry.get("notes", "")),
+                )
             )
-        )
     return tuple(out)
 
 
@@ -230,20 +216,10 @@ def load_parser_config(path: Path | None = None) -> ParserConfig:
 
     raw = _load_yaml_dict(parser_yaml)
 
-    try:
-        skip_rules = [SkipRule(**entry) for entry in raw.get("skip_rules", [])]
-    except TypeError as e:
-        raise ValueError(f"Invalid skip_rules entry in parser config: {e}") from e
-
     manual_path = config_root / "manual_mappings.yml"
     ipa_path = config_root / "ipa_mappings.yml"
     feature_path = config_root / "feature_mappings.yml"
     corrections_path = config_root / "index_corrections.yml"
-
-    try:
-        skip_sections = [SkipSection(**entry) for entry in raw.get("skip_sections", [])]
-    except TypeError as e:
-        raise ValueError(f"Invalid skip_sections entry in parser config: {e}") from e
 
     return ParserConfig(
         manual_mappings=_load_manual_mappings(manual_path),
@@ -251,12 +227,12 @@ def load_parser_config(path: Path | None = None) -> ParserConfig:
         ipa_mappings_confidence=frozenset(raw.get("ipa_mappings_confidence", [])),
         feature_mappings=_load_feature_mappings(feature_path),
         corrections=_load_corrections(corrections_path),
-        series_expansions=_parse_series_expansions(raw.get("series_expansions", {})),
+        series_expansions=raw.get("series_expansions", {}),
         section_mappings_sections=_parse_section_mappings(
             raw.get("section_mappings", {})
         ),
-        skip_sections=skip_sections,
-        skip_rules=skip_rules,
+        skip_sections=raw.get("skip_sections", []),
+        skip_rules=raw.get("skip_rules", []),
     )
 
 

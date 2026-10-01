@@ -82,7 +82,10 @@ def test_section_index_prefixes_shortest_first():
     ],
 )
 def test_apply_series_expansions(input, expected):
-    expansions = {"sₓ": ("s₁", "s₂", "s₃"), "Hₓ": ("h₁", "h₂", "h₃")}
+    expansions = {
+        "sₓ": ("s₁", "s₂", "s₃"),
+        "Hₓ": ("h₁", "h₂", "h₃"),
+    }
     assert apply_series_expansions(input, expansions) == expected
 
 

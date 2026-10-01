@@ -10,9 +10,11 @@ from pydantic import (
     ConfigDict,
     Field,
     model_validator,
+    field_validator,
 )
 
 from conlanger.utils.series import section_index_prefixes
+from conlanger.models.parser import SkipSection, SkipRule
 
 _CORPUS_CONTEXT_FIELD_KEYS = ("env", "exception")
 
@@ -86,16 +88,6 @@ class FeatureMapping(BaseModel):
     notes: str = ""
 
 
-class SkipSection(BaseModel):
-    id: str
-    reason: str = ""
-
-
-class SkipRule(BaseModel):
-    id: str
-    reason: str = ""
-
-
 class ParserConfig(BaseModel):
     """Fat parse-time config: mapping tables plus runtime parser settings."""
 
@@ -110,6 +102,29 @@ class ParserConfig(BaseModel):
     section_mappings_sections: dict[str, dict[str, str]] = Field(default_factory=dict)
     skip_sections: list[SkipSection] = Field(default_factory=list)
     skip_rules: list[SkipRule] = Field(default_factory=list)
+
+    @field_validator("skip_sections", mode="before")
+    @classmethod
+    def set_skip_sections(cls, values: Any) -> list[SkipSection]:
+        if isinstance(values, list):
+            return [SkipSection(**value) for value in values]
+        raise ValueError("skip_sections must be a list of SkipSection objects")
+
+    @field_validator("skip_rules", mode="before")
+    @classmethod
+    def set_skip_rules(cls, values: Any) -> list[SkipRule]:
+        if isinstance(values, list):
+            return [SkipRule(**value) for value in values]
+        raise ValueError("skip_rules must be a list of SkipRule objects")
+
+    @field_validator("series_expansions", mode="before")
+    @classmethod
+    def set_series_expansions(cls, values: Any) -> dict[str, tuple[str, ...]]:
+        if isinstance(values, dict) and all(
+            isinstance(value, list) for value in values.values()
+        ):
+            return {str(key): tuple(value) for key, value in values.items()}
+        raise ValueError("series_expansions must be a dict of series expansion objects")
 
     def resolved_ipa_mappings(self) -> dict[str, str]:
         """Return IPA char → target map, optionally filtered by confidence."""

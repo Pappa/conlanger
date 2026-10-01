@@ -5,6 +5,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
+
 # Correspondence-series index: concrete segment base + ordinal subscript (not ₀, not ₓ).
 _CORRESPONDENCE_INDEX_RE = re.compile(r"(?<![A-Z])([a-zA-Zæøåɑɡɢ]+)([₁₂₃₄₅₆₇₈₉])")
 _POSITIONAL_SLOT_RE = re.compile(r"^[A-Z][₁₂₃₄₅₆₇₈₉]$")
@@ -68,7 +69,9 @@ def expand_collectives_in_field(
     """Fan out collective ``Xₓ`` tokens per ``parser_config`` ``series_expansions``."""
     if not text or not expansions:
         return text
-    ordered = sorted(expansions.items(), key=lambda pair: len(pair[0]), reverse=True)
+    ordered = sorted(
+        expansions.items(), key=lambda expansion: len(expansion[0]), reverse=True
+    )
     parts: list[str] = []
     index = 0
     while index < len(text):

@@ -65,12 +65,12 @@ def minimal_parser_config() -> ParserConfig:
     return ParserConfig(
         manual_mappings=minimal_manual_mappings(),
         ipa_mappings=ipa_rows,
-        ipa_mappings_confidence=frozenset({"high", "medium"}),
+        ipa_mappings_confidence=["high", "medium"],
         feature_mappings=minimal_feature_mappings(),
         corrections={},
         series_expansions={
-            "sₓ": ("s₁", "s₂", "s₃"),
-            "Hₓ": ("h₁", "h₂", "h₃"),
+            "sₓ": ["s₁", "s₂", "s₃"],
+            "Hₓ": ["h₁", "h₂", "h₃"],
         },
         section_mappings_sections={
             "10.1": {"*D": "D", "*R": "R", "*T": "T"},

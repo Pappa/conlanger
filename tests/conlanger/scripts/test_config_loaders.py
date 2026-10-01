@@ -52,15 +52,38 @@ def test_load_parser_config_high_only_override(tmp_path: Path):
     assert config.ipa_mappings_confidence == frozenset({"high"})
 
 
-def test_load_parser_config_ignores_non_list_series_expansion_entries(tmp_path: Path):
+@pytest.mark.parametrize(
+    ("yaml_content, error_message, error_type"),
+    [
+        (
+            "series_expansions:\n  Hₓ: not-a-list\n",
+            "series_expansions must be a dict of series expansion objects",
+            ValueError,
+        ),
+        (
+            "skip_sections: [not-a-mapping]\n",
+            "SkipSection",
+            TypeError,
+        ),
+        (
+            "skip_rules: [not-a-mapping]\n",
+            "SkipRule",
+            TypeError,
+        ),
+    ],
+)
+def test_load_parser_config_errors(
+    yaml_content: str,
+    error_message: str,
+    error_type: Exception,
+    tmp_path: Path,
+):
     path = _write_parser_fragments(
         tmp_path,
-        parser_config=(
-            "ipa_mappings_confidence: [high]\nseries_expansions:\n  Hₓ: not-a-list\n"
-        ),
+        parser_config=yaml_content,
     )
-    config = load_parser_config(path)
-    assert config.series_expansions == {}
+    with pytest.raises(error_type, match=error_message):
+        load_parser_config(path)
 
 
 def test_load_parser_config_omitted_confidence_is_empty(tmp_path: Path):
@@ -73,37 +96,17 @@ def test_load_parser_config_skip_sections(tmp_path: Path):
     path = _write_parser_fragments(
         tmp_path,
         parser_config=(
-            "ipa_mappings_confidence: [high]\n"
-            "skip_sections:\n"
-            '  - id: "37.1.2.4.2"\n'
-            '    reason: "bad source"\n'
+            'skip_sections:\n  - id: "37.1.2.4.2"\n    reason: "bad source"\n'
         ),
     )
     config = load_parser_config(path)
     assert config.skip_sections == [SkipSection(id="37.1.2.4.2", reason="bad source")]
 
 
-def test_load_parser_config_skip_sections_ignores_malformed_entries(tmp_path: Path):
-    path = _write_parser_fragments(
-        tmp_path,
-        parser_config=(
-            "ipa_mappings_confidence: [high]\n"
-            "skip_sections:\n"
-            "  - not-a-mapping\n"
-            "  - id: ''\n"
-        ),
-    )
-    with pytest.raises(
-        ValueError, match="Invalid skip_sections entry in parser config"
-    ):
-        load_parser_config(path)
-
-
 def test_load_parser_config_section_mappings(tmp_path: Path):
     path = _write_parser_fragments(
         tmp_path,
         parser_config=(
-            "ipa_mappings_confidence: [high]\n"
             "section_mappings:\n"
             '  "10.1":\n'
             '    "*D": "D"\n'
@@ -130,7 +133,6 @@ def test_load_parser_config_skip_rules(tmp_path: Path):
     path = _write_parser_fragments(
         tmp_path,
         parser_config=(
-            "ipa_mappings_confidence: [high]\n"
             "skip_rules:\n"
             "  - id: Pre-Slavic-Vowel-Changes-i\n"
             '    reason: "structural hold-out"\n'
