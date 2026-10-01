@@ -114,7 +114,7 @@ Notable ok-flips: `Orkney-Norn-ð_2`, `Orkney-Norn-l_3`, Albanian `_B?` rules (�
 
 - Prose env normalization for tails that remain invalid after `?` strip (`Sorowahá-ʔ`, `Muskogean-V`, `Guānhuà-yʔ`) — inventory-driven follow-on
 - Fully glued `output/env` with no space before or after `/` when env does not start with `#_!{` (0 corpus hits today)
-- Omitted `/` Index errata — `index_diachronica_corrections.yml` only
+- Omitted `/` Index errata — `index_corrections.yml` only
 
 ## References
 

@@ -102,7 +102,7 @@ Brassica compilation remains a future parallel path behind the same index (ADR-0
 
 ### Operator config vs corpus data
 
-- **config/** — operator settings (YAML), loaded only by scripts and injected as `ParserConfig` / `CompilerConfig`. Parse: `parser_config.yml`, `manual_mappings.yml`, `ipa_mappings.yml`, `feature_mappings.yml`, `index_diachronica_corrections.yml`. Compile: `compiler_config.yml`, `group_mappings.yml`.
+- **config/** — operator settings (YAML), loaded only by scripts and injected as `ParserConfig` / `CompilerConfig`. Parse: `parser_config.yml`, `manual_mappings.yml`, `ipa_mappings.yml`, `feature_mappings.yml`, `index_corrections.yml`. Compile: `compiler_config.yml`, `group_mappings.yml`.
 - **data/** — corpus and generated artifacts: Index HTML SoT, regenerated `index_diachronica_parsed.yml`, runtime ASCA alias file, inventory outputs under `diagnostics/inventory/`.
 - Library code under `src/conlanger` (except scripts) accepts in-memory config; empty defaults when omitted. `create_index` is the bootstrap composing real operator config.
 

@@ -103,7 +103,7 @@ class ParserConfig(BaseModel):
 
     manual_mappings: list[ManualMapping] = Field(default_factory=list)
     ipa_mappings: tuple[IpaMapping, ...] = Field(default_factory=tuple)
-    ipa_mappings_confidence: frozenset[str] | None = None
+    ipa_mappings_confidence: frozenset[str] = frozenset()
     feature_mappings: dict[str, FeatureMapping] = Field(default_factory=dict)
     corrections: dict[str, str] = Field(default_factory=dict)
     series_expansions: dict[str, tuple[str, ...]] = Field(default_factory=dict)
@@ -113,7 +113,7 @@ class ParserConfig(BaseModel):
 
     def resolved_ipa_mappings(self) -> dict[str, str]:
         """Return IPA char → target map, optionally filtered by confidence."""
-        if self.ipa_mappings_confidence is None:
+        if not self.ipa_mappings_confidence:
             return {
                 row.index_feature: row.ipa_target
                 for row in self.ipa_mappings

@@ -24,7 +24,7 @@ _DEFAULT_PARSER_CONFIG = _CONFIG_ROOT / "parser" / "parser_config.yml"
 _DEFAULT_MANUAL_MAPPINGS = _CONFIG_ROOT / "parser" / "manual_mappings.yml"
 _DEFAULT_IPA_MAPPINGS = _CONFIG_ROOT / "parser" / "ipa_mappings.yml"
 _DEFAULT_FEATURE_MAPPINGS = _CONFIG_ROOT / "parser" / "feature_mappings.yml"
-_DEFAULT_CORRECTIONS = _CONFIG_ROOT / "parser" / "index_diachronica_corrections.yml"
+_DEFAULT_CORRECTIONS = _CONFIG_ROOT / "parser" / "index_corrections.yml"
 _DEFAULT_COMPILER_CONFIG = _CONFIG_ROOT / "compile" / "asca" / "compiler_config.yml"
 _DEFAULT_GROUP_MAPPINGS = _CONFIG_ROOT / "compile" / "asca" / "group_mappings.yml"
 
@@ -229,16 +229,6 @@ def load_parser_config(path: Path | None = None) -> ParserConfig:
     parser_yaml = _DEFAULT_PARSER_CONFIG if path is None else Path(path)
 
     raw = _load_yaml_dict(parser_yaml)
-    confidence_raw = raw.get("ipa_mappings", {})
-    if isinstance(confidence_raw, dict) and "confidence" in confidence_raw:
-        confidence_list = confidence_raw["confidence"]
-        ipa_confidence = (
-            frozenset(str(c) for c in confidence_list)
-            if isinstance(confidence_list, list)
-            else None
-        )
-    else:
-        ipa_confidence = None
 
     try:
         skip_rules = [SkipRule(**entry) for entry in raw.get("skip_rules", [])]
@@ -248,7 +238,7 @@ def load_parser_config(path: Path | None = None) -> ParserConfig:
     manual_path = config_root / "manual_mappings.yml"
     ipa_path = config_root / "ipa_mappings.yml"
     feature_path = config_root / "feature_mappings.yml"
-    corrections_path = config_root / "index_diachronica_corrections.yml"
+    corrections_path = config_root / "index_corrections.yml"
 
     try:
         skip_sections = [SkipSection(**entry) for entry in raw.get("skip_sections", [])]
@@ -258,7 +248,7 @@ def load_parser_config(path: Path | None = None) -> ParserConfig:
     return ParserConfig(
         manual_mappings=_load_manual_mappings(manual_path),
         ipa_mappings=_load_ipa_mappings(ipa_path),
-        ipa_mappings_confidence=ipa_confidence,
+        ipa_mappings_confidence=frozenset(raw.get("ipa_mappings_confidence", [])),
         feature_mappings=_load_feature_mappings(feature_path),
         corrections=_load_corrections(corrections_path),
         series_expansions=_parse_series_expansions(raw.get("series_expansions", {})),

@@ -1,7 +1,6 @@
-ipa_mappings:
-  confidence:
-    - high
-    - medium
+ipa_mappings_confidence:
+  - high
+  - medium
 series_expansions:
   Hₓ: [h₁, h₂, h₃]
   hₓ: [h₁, h₂, h₃]

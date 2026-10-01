@@ -4,7 +4,7 @@ Blocked by: None
 
 # Grill: distinctive features in env and exception blocks
 
-Spawned from wayfinder session on [Cleaned rule index SoT](map.md) (2026-09-05). Owner is revising `config/parser/manual_mappings.yml` and `config/parser/index_diachronica_corrections.yml` before this grill runs.
+Spawned from wayfinder session on [Cleaned rule index SoT](map.md) (2026-09-05). Owner is revising `config/parser/manual_mappings.yml` and `config/parser/index_corrections.yml` before this grill runs.
 
 ## Question
 
@@ -111,7 +111,7 @@ Three pipeline stages: **Index raw** → **parsed YAML (SoT)** → **compiled AS
 - [Normalise segment feature matrices for appliers](07-normalise-segment-features.md)
 - [Correction pass: I/O matrix bracket→colon](121-correction-pass-io-matrix-bracket-to-colon.md)
 - `config/parser/manual_mappings.yml` — `/ unstressed`, `/ stressed`, `_:[-long]#`, `_:[+stress, -long]%`, `_[+ emphatic]`, …
-- `config/parser/index_diachronica_corrections.yml` — section-local env shapes (e.g. `VC_:[-stress, -long]CV`)
+- `config/parser/index_corrections.yml` — section-local env shapes (e.g. `VC_:[-stress, -long]CV`)
 
 ## Notes
 

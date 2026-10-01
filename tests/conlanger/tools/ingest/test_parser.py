@@ -511,7 +511,7 @@ def test_parser_marks_skip_sections_from_config(tmp_path: Path):
     html_path = tmp_path / "skip_section.html"
     config_path = tmp_path / "parser_config.yml"
     config_path.write_text(
-        "ipa_mappings:\n  confidence: [high]\n"
+        "ipa_mappings_confidence: [high]\n"
         "skip_sections:\n"
         '  - id: "9.9.9"\n'
         '    reason: "test skip"\n',
@@ -521,7 +521,7 @@ def test_parser_marks_skip_sections_from_config(tmp_path: Path):
         ("ipa_mappings.yml", "{}\n"),
         ("manual_mappings.yml", "[]\n"),
         ("feature_mappings.yml", "{}\n"),
-        ("index_diachronica_corrections.yml", "rules: []\n"),
+        ("index_corrections.yml", "rules: []\n"),
     ]:
         (tmp_path / name).write_text(content, encoding="utf-8")
     write_tmp_index_html(
@@ -934,7 +934,7 @@ def test_parser_marks_skip_rules_from_config(tmp_path: Path):
     html_path = tmp_path / "skip_rule.html"
     config_path = tmp_path / "parser_config.yml"
     config_path.write_text(
-        "ipa_mappings:\n  confidence: [high]\n"
+        "ipa_mappings_confidence: [high]\n"
         "skip_rules:\n"
         "  - id: Hold-out-rule\n"
         '    reason: "unrepresentable chain"\n',
@@ -944,7 +944,7 @@ def test_parser_marks_skip_rules_from_config(tmp_path: Path):
         ("ipa_mappings.yml", "{}\n"),
         ("manual_mappings.yml", "[]\n"),
         ("feature_mappings.yml", "{}\n"),
-        ("index_diachronica_corrections.yml", "rules: []\n"),
+        ("index_corrections.yml", "rules: []\n"),
     ]:
         (tmp_path / name).write_text(content, encoding="utf-8")
     write_tmp_index_html(

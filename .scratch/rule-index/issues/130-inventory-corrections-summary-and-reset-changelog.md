@@ -10,7 +10,7 @@ Grill 2026-09-10 (`/grill-with-docs` on [map](../map.md)). Extends [ticket 34](3
 
 1. **`--reset-changelog` with no flips** — `validate_rules` deletes the existing changelog, then `append_ok_flip_changelog` returns early when `flips` is empty, so no file is written. After a schema reset with unchanged `ok` values, operators lose the changelog file entirely instead of getting a header-only CSV.
 
-2. **Corrections pass rate invisible** — `config/parser/index_diachronica_corrections.yml` holds **Index Diachronica corrections** ([ADR-0012](../../../docs/adr/0012-index-diachronica-corrections-overlay.md)). The validation inventory reports global OK/Fail/Skipped but not how many corrected rules actually validate — a key signal for correction workflow quality.
+2. **Corrections pass rate invisible** — `config/parser/index_corrections.yml` holds **Index Diachronica corrections** ([ADR-0012](../../../docs/adr/0012-index-diachronica-corrections-overlay.md)). The validation inventory reports global OK/Fail/Skipped but not how many corrected rules actually validate — a key signal for correction workflow quality.
 
 ## What to build
 
@@ -73,7 +73,7 @@ Skipped: **1/27**
 - Failed bullets: `` `rule_id` — `failure_class` ``. When a rule has multiple failing `alt_idx` rows, use the modal `failure_class` among failing rows (or first failing row if tied).
 - Skipped bullets: `` `rule_id` — `failure_class` `` using the inventory skip reason (`rule_skipped` or `section_skipped` from `rule-inventory-skipped.csv`; modal among `alt_idx` rows when tied).
 
-**Data source:** cross-reference inventory validation rows with correction ids loaded from `config/parser/index_diachronica_corrections.yml` (same path as `ParserConfig.corrections` / `_load_corrections`). `validate_rules` should pass matched correction ids (or a pre-built stats object) into `summarize_inventory`.
+**Data source:** cross-reference inventory validation rows with correction ids loaded from `config/parser/index_corrections.yml` (same path as `ParserConfig.corrections` / `_load_corrections`). `validate_rules` should pass matched correction ids (or a pre-built stats object) into `summarize_inventory`.
 
 ## Acceptance criteria
 
@@ -96,6 +96,6 @@ Skipped: **1/27**
 - `src/conlanger/tools/index_inventory.py` — `summarize_inventory`, `append_ok_flip_changelog`, `CHANGELOG_CSV_COLUMNS`
 - `src/conlanger/scripts/validate_rules.py` — `--reset-changelog`
 - `src/conlanger/scripts/config_loaders.py` — `_load_corrections`
-- `config/parser/index_diachronica_corrections.yml`
+- `config/parser/index_corrections.yml`
 - [ADR-0012 Index Diachronica corrections overlay](../../../docs/adr/0012-index-diachronica-corrections-overlay.md)
 - [validate.md](../../../docs/system/validate.md) — update changelog + summary table rows when implemented

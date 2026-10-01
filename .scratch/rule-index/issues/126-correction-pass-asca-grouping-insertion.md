@@ -44,4 +44,4 @@ Fix likely requires **both** output policy (matrix vs IPA on insertion) **and** 
 - [125 grill](125-grill-asca-grouping-insertion.md)
 - [Hidatsa-∅](../inventory/rule-inventory-success.csv)
 - [incomplete_matrix_errors.csv](../inventory/error_clusters/incomplete_matrix_errors.csv)
-- `config/parser/manual_mappings.yml`, `config/parser/index_diachronica_corrections.yml`
+- `config/parser/manual_mappings.yml`, `config/parser/index_corrections.yml`

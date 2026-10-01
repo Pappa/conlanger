@@ -42,7 +42,7 @@ Example compiled fail:
 3. **Pipeline fit** — recommend one primary path (with fallbacks):
    - **Parse-time** (`ipa_mappings.yml`, `manual_mappings.yml`) when ASCA uses stable literal segments and mapping is 1:1
    - **Compile-time** normalisation when Index letters must become ASCA feature bundles or grouped click classes programmatically
-   - **Manual / overlay** (`index_diachronica_corrections.yml`, per-rule `manual_mappings`) when shapes are rule-specific or lossy
+   - **Manual / overlay** (`index_corrections.yml`, per-rule `manual_mappings`) when shapes are rule-specific or lossy
    - **Skip** (`skip_sections` / `skip_rules`) when no faithful ASCA projection exists
 
 4. **Fidelity notes** — Index vs ASCA click inventory alignment (which contrasts are preserved vs collapsed); flag rules that need human review regardless of automation.

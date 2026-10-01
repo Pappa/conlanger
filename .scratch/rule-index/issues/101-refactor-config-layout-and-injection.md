@@ -31,7 +31,7 @@ This couples the library to repo paths, makes unit tests depend on production co
 | `data/common/manual_mappings.csv` | `config/parser/manual_mappings.yml` | YAML (**list** of records — order matters) |
 | `data/common/ipa_mappings.csv` | `config/parser/ipa_mappings.yml` | YAML (dict keyed by `index_feature`) |
 | `data/parser_config.yml` | `config/parser/parser_config.yml` | YAML (schema unchanged) |
-| `data/diachronica/index_diachronica_corrections.yml` | `config/parser/index_diachronica_corrections.yml` | YAML (schema unchanged) |
+| `data/diachronica/index_corrections.yml` | `config/parser/index_corrections.yml` | YAML (schema unchanged) |
 
 **Stays in `data/`**: `index_diachronica_original.html`, regenerated `index_diachronica_parsed.yml`, `data/asca/asca_aliases.alias`, test fixtures, inventory outputs.
 
@@ -62,7 +62,7 @@ Fat config; `IndexDiachronicaParser` takes **only** `ParserConfig`.
 | `ipa_mappings` | `tuple[IpaMapping, ...]` | from `ipa_mappings.yml` |
 | `ipa_mappings_confidence` | `frozenset[str] \| None` | from `parser_config.yml`; see IPA rules below |
 | `feature_mappings` | `dict[str, FeatureMapping]` | from `feature_mappings.yml` |
-| `corrections` | `dict[str, str]` | from `index_diachronica_corrections.yml` |
+| `corrections` | `dict[str, str]` | from `index_corrections.yml` |
 | `series_expansions` | `dict[str, tuple[str, ...]]` | unchanged |
 | `section_mappings_sections` | `dict[str, dict[str, str]]` | from `section_mappings` in parser_config |
 | `skip_section_ids` / `skip_rule_ids` / `skip_rule_comments` | unchanged | |

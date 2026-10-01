@@ -17,7 +17,7 @@ Spawned from [Grill: correspondence-series mapping source of truth (manual SoT v
 
 ### 2. Index Diachronica corrections overlay
 
-- Path: `data/diachronica/index_diachronica_corrections.yml`.
+- Path: `data/diachronica/index_corrections.yml`.
 - Shape: flat YAML map `rule_id: Unicode_line` (no `<sub>` markup).
 - When a `p.schg` has an `id` and the file has that key, the correction line **is `raw`** (after text extract from the element, before Manual mapping).
 - Missing or empty file → no replacements.
@@ -80,7 +80,7 @@ Retire or gate `update_series_mappings` script and `series_extract` integration 
 ## Acceptance criteria
 
 - [x] Parse order matches grill 72: in-memory HTML → `<sub>` replace → lxml → corrections overlay → Manual mapping → rest of parse **without** series expansion.
-- [x] `index_diachronica_corrections.yml` flat `rule_id` keys; draft rows migrated.
+- [x] `index_corrections.yml` flat `rule_id` keys; draft rows migrated.
 - [x] Corpus rules include `rule_id`; inventory/debug CSVs use `rule_id`.
 - [x] Parse collective `series_expansions` from `parser_config.yml` (flatten sets; `raw` unchanged).
 - [x] No runtime dependency on `series_mappings.csv` in parse path.

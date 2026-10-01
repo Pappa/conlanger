@@ -4,7 +4,7 @@ Per-rule parse applies overlays and normalisation to a **working copy** of the e
 
 **Working-line order** (after Phase A HTML text extraction):
 
-1. **Index Diachronica correction** overlay by **rule id** (`config/parser/index_diachronica_corrections.yml`) on the working copy only.
+1. **Index Diachronica correction** overlay by **rule id** (`config/parser/index_corrections.yml`) on the working copy only.
 2. **Index rule normalisation** — ordered, policy-documented surface transforms on the working line ([ticket 143](../../.scratch/rule-index/issues/143-implement-index-rule-normalisation-passes.md); placeholder no-op until passes land).
 3. **Manual mapping** (`manual_mappings.yml`) — applied in order of definition; substring or regex rewrite on the working copy.
 4. **Section mapping** (`parser_config.yml` `section_mappings`, ancestry merge).

@@ -53,7 +53,7 @@ Example:
 
 1. **`normalize_asca_index_click_segments()`** in `src/conlanger/tools/compile/asca/clicks.py` — wired on **input/output only** in `compile_asca_rule_field_strings()` (after post-subscript transforms; skips env/exception so Index `!` exception delimiter is preserved).
 2. Transforms: `!!` → `! !`; default velar onset on bare clicks; Index `ǂɡ`/`!ɡ` → `ɡǂ`/`ɡ!`; cluster `ˀ` → `:[+cg]`.
-3. **`index_diachronica_corrections.yml`** — seven manual rows: §17 `Early-Modern-English-ʊ` env split; optional `(n)` on click I/O expanded to sets for six §20.x rules.
+3. **`index_corrections.yml`** — seven manual rows: §17 `Early-Modern-English-ʊ` env split; optional `(n)` on click I/O expanded to sets for six §20.x rules.
 4. Re-parsed index (`create_index`) so corrections land in SoT YAML before inventory.
 
 **Deviations:** none from spike recommendation.

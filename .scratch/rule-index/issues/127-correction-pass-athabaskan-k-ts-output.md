@@ -23,7 +23,7 @@ Per-letter group expansion (`T` → `P:[-voice]`, `S` → `P`) glues two ASCA **
 ## What to build
 
 1. Fix **rule id** `Proto-Southern-Athabaskan-K` (`index_diachronica_original.html:10157`, section 29.1.1.1.19) so compiled output uses **concrete IPA segments**, not letter-by-letter class expansion of `TS`.
-2. **Preferred:** `index_diachronica_corrections.yml` overlay keyed by rule id — output stage `TS` → IPA per Hoijer (1938) intent (likely /ts/ or voiceless stop + /s/; confirm against citation before locking).
+2. **Preferred:** `index_corrections.yml` overlay keyed by rule id — output stage `TS` → IPA per Hoijer (1938) intent (likely /ts/ or voiceless stop + /s/; confirm against citation before locking).
 3. **Alternative:** section-local `compiler_config.yml` mapping for `TS` → `ts` / `{t,s}` **before** `T`/`S` group-letter split, if cluster grows.
 4. **Do not** attempt to make `P:[-voice]P` valid in ASCA.
 5. ASCA apply probes + full inventory re-run; record metrics in **Answer**.
@@ -42,7 +42,7 @@ Per-letter group expansion (`T` → `P:[-voice]`, `S` → `P`) glues two ASCA **
 
 ## Answer
 
-**Shipped 2026-09-09.** Overlay `K → ts` in `index_diachronica_corrections.yml` keyed by `Proto-Southern-Athabaskan-K`. Input `K` still expands via §29.1.1.1 `section_mappings` to velar matrix; output `ts` is concrete IPA affricate /ts/ (Hoijer 1938 dental TS series), avoiding per-letter `T`/`S` group expansion (`P:[-voice]P`).
+**Shipped 2026-09-09.** Overlay `K → ts` in `index_corrections.yml` keyed by `Proto-Southern-Athabaskan-K`. Input `K` still expands via §29.1.1.1 `section_mappings` to velar matrix; output `ts` is concrete IPA affricate /ts/ (Hoijer 1938 dental TS series), avoiding per-letter `T`/`S` group expansion (`P:[-voice]P`).
 
 - **IPA choice:** `/ts/` affricate — primary reflex of Index `TS` correspondence set in Southern Athabaskan (Hoijer 1938, §29.1.1.1.19). Alternatives `t s` and `{ts,s}` also ASCA-legal; affricate chosen as single-segment output matching common Index `→ ts` rows.
 - **Inventory:** OK **8881 → 8882 (+1)**; fail **656 → 642 (−14 inventory rows, +1 rule)**; sections all-OK **451 / 714** (unchanged). `incomplete_matrix` cluster **2 → 1** — `Proto-Southern-Athabaskan-K` recovered; residual `Cypriot-Arabic-∅` ([125](125-grill-asca-grouping-insertion.md)).
@@ -52,6 +52,6 @@ Per-letter group expansion (`T` → `P:[-voice]`, `S` → `P`) glues two ASCA **
 ## References
 
 - [incomplete_matrix_errors.csv](../inventory/error_clusters/incomplete_matrix_errors.csv)
-- `config/parser/index_diachronica_corrections.yml`
+- `config/parser/index_corrections.yml`
 - `config/compile/asca/compiler_config.yml` (section mappings — if used)
 - HTML SoT: `K → TS` at `index_diachronica_original.html:10157`

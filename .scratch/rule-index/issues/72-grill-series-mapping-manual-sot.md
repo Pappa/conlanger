@@ -96,7 +96,7 @@ Series ontology (what may be a defined expansion; unknown-token policy) moved to
 1. Load HTML in memory only (never write the file).
 2. Whole-file `<sub>…</sub>` → Unicode (`to_subscript`); nested inner tags: skip that tag; tree walk extracts text only.
 3. lxml parse.
-4. For each `p.schg`, extract text. If `index_diachronica_corrections.yml` has that **rule id**, that Unicode line **is `raw`**. Missing file = no replacements. Unknown keys: warn; use HTML extract.
+4. For each `p.schg`, extract text. If `index_corrections.yml` has that **rule id**, that Unicode line **is `raw`**. Missing file = no replacements. Unknown keys: warn; use HTML extract.
 5. **Manual mapping** on working copy only (first match; `use_regex` → `from` is a pattern). `raw` unchanged.
 6. Rest of parse **without** `apply_series_mappings`.
 

@@ -11,7 +11,7 @@ Record the parse-time working-line order and audit `raw` policy decided in [Gril
 ## Answer (spec for ADR author)
 
 1. **`raw`** on every corpus rule is **always** the HTML extract (subscripts normalised); **never** the corrections overlay.
-2. **Working line** starts from `raw`, then **corrections** overlay by `rule_id` (`index_diachronica_corrections.yml`).
+2. **Working line** starts from `raw`, then **corrections** overlay by `rule_id` (`index_corrections.yml`).
 3. **Manual mappings** on working line.
 4. **Index rule normalisation** (ordered transforms).
 5. **Section mappings**.
