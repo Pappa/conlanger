@@ -35,15 +35,15 @@ _SUPPORTED_FEATURE_MAPPING_KINDS = frozenset(
 
 def _load_yaml_list(path: Path) -> list[dict[str, Any]]:
     loaded = yaml.safe_load(path.read_text(encoding="utf-8")) or []
-    if type(loaded) != list:
-        raise ValueError("Data is not the expected type: list")
+    if not isinstance(loaded, list):
+        raise TypeError("Data is not the expected type: list")
     return loaded
 
 
 def _load_yaml_dict(path: Path) -> dict[str, Any]:
     loaded = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
-    if type(loaded) != dict:
-        raise ValueError("Data is not the expected type: dict")
+    if not isinstance(loaded, dict):
+        raise TypeError("Data is not the expected type: dict")
     return loaded
 
 
@@ -83,7 +83,7 @@ def _load_manual_mappings(path: Path) -> list[ManualMapping]:
             to_text = str(entry.get("to", ""))
 
             if not to_text and comment:
-                to_text = f" ; {target.strip()}"
+                to_text = f" ; {target.lstrip()}"
 
             out.append(
                 ManualMapping(

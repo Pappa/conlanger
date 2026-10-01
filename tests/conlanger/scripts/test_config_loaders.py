@@ -4,7 +4,12 @@ from pathlib import Path
 
 import pytest
 
-from conlanger.scripts.config_loaders import load_compiler_config, load_parser_config
+from conlanger.scripts.config_loaders import (
+    load_compiler_config,
+    load_parser_config,
+    _load_yaml_list,
+    _load_yaml_dict,
+)
 from conlanger.utils.mappings import (
     IpaMapping,
     ManualMapping,
@@ -30,6 +35,22 @@ def _write_parser_fragments(
     (tmp_path / "feature_mappings.yml").write_text(feature_mappings, encoding="utf-8")
     (tmp_path / "index_corrections.yml").write_text(corrections, encoding="utf-8")
     return config_path
+
+
+def test_load_yaml_list(tmp_path: Path):
+    path = tmp_path / "list.yml"
+    path.write_text("cat: dog\n", encoding="utf-8")
+    with pytest.raises(TypeError, match="Data is not the expected type: list"):
+        print("list", _load_yaml_list(path))
+        _load_yaml_list(path)
+
+
+def test_load_yaml_dict(tmp_path: Path):
+    path = tmp_path / "dict.yml"
+    path.write_text("[cat, dog]\n", encoding="utf-8")
+    with pytest.raises(TypeError, match="Data is not the expected type: dict"):
+        print("dict", _load_yaml_dict(path))
+        _load_yaml_dict(path)
 
 
 def test_load_group_mappings_from_yaml(tmp_path: Path):
