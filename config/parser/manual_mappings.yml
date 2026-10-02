@@ -34,7 +34,9 @@
 - from: " / in coda"
   to: " / :{ _#, _% }: ; in coda" # TODO: this is a hack to handle coda envs
 - from: "_ or when _"
-  to: "_,_"
+  to: "_, _"
+- from: "_ or _"
+  to: "_, _"
 - from: " / intertonic"
   to: " / %[+str]_%[+str]" # TODO: needs confirmation
 #endregion
