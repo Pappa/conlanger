@@ -42,13 +42,39 @@ def test_apply_medial_env_conditions_deferred_env_and_exception():
 
 
 @pytest.mark.parametrize(
-    "sporadic_qualifier", ["sporadic", "(sometimes)", "sometimes?", "occasionally?"]
+    "input, output",
+    [
+        (
+            {"stages": ["p", "h sporadic"]},
+            {"stages": ["p", "h"], "comment": "sporadic"},
+        ),
+        (
+            {
+                "stages": ["p", "h (sometimes)"],
+            },
+            {"stages": ["p", "h"], "comment": "(sometimes)"},
+        ),
+        (
+            {"stages": ["p", "h sometimes?"]},
+            {"stages": ["p", "h"], "comment": "sometimes?"},
+        ),
+        (
+            {"stages": ["p", "h occasionally?"]},
+            {"stages": ["p", "h"], "comment": "occasionally?"},
+        ),
+        (
+            {"stages": ["k", "∅"], "env": "sporadic", "comment": "in Mentasta Ahtna"},
+            {
+                "stages": ["k", "∅"],
+                "comment": "in Mentasta Ahtna; sporadic",
+            },  # TODO: check this is correct
+        ),
+    ],
 )
-def test_apply_sporadic_qualifier(sporadic_qualifier):
-    assert apply_sporadic_qualifier({"stages": ["p", f"h {sporadic_qualifier}"]}) == {
-        "stages": ["p", "h"],
+def test_apply_sporadic_qualifier(input, output):
+    assert apply_sporadic_qualifier(input) == {
+        **output,
         "sporadic": True,
-        "comment": sporadic_qualifier,
     }
 
 

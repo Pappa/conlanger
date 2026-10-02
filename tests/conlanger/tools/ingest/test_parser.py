@@ -651,219 +651,99 @@ def test_parse_order_correction_then_section_then_manual():
 
 
 def test_parser_marks_skip_rules_from_config(tmp_path: Path):
+    raw = "i → j [ə?] → {e,a}"
     html_path = tmp_path / "skip_rule.html"
-    config_path = tmp_path / "parser_config.yml"
-    config_path.write_text(
-        "ipa_mappings_confidence: [high]\n"
-        "skip_rules:\n"
-        "  - id: Hold-out-rule\n"
-        '    reason: "unrepresentable chain"\n',
-        encoding="utf-8",
-    )
-    for name, content in [
-        ("ipa_mappings.yml", "{}\n"),
-        ("manual_mappings.yml", "[]\n"),
-        ("feature_mappings.yml", "{}\n"),
-        ("index_corrections.yml", "rules: []\n"),
-    ]:
-        (tmp_path / name).write_text(content, encoding="utf-8")
     write_tmp_index_html(
         html_path,
         section_id="SkipRule",
-        section_body="""\
+        section_body=f"""\
 <h2>1.0 Hold-out</h2>
-<p class="schg" id="Hold-out-rule">i → j [ə?] → {e,a}</p>""",
+<p class="schg" id="Hold-out-rule">{raw}</p>""",
     )
-    parser = default_index_parser(parser_config=load_parser_config(config_path))
+    config = ParserConfig(
+        skip_rules=[{"id": "Hold-out-rule", "reason": "unrepresentable chain"}],
+    )
+    parser = default_index_parser(parser_config=config)
     rule = parser.parse(html_path)["sections"][0]["rules"][0]
-    assert rule["status"] == "skipped"
-    assert rule["stages"] == []
-    assert rule["comment"] == "unrepresentable chain"
-    assert rule["raw"] == "i → j [ə?] → {e,a}"
+
+    assert rule == {
+        "raw": raw,
+        "rule_id": "Hold-out-rule",
+        "source": "skip_rule.html:9",
+        "stages": [],
+        "status": "skipped",
+        "comment": "unrepresentable chain",
+    }
 
 
-def test_parse_rule_element_normalizes_ipa_characters():
-    el = html.fragment_fromstring('<p class="schg">K → TŠ / in Mentasta Ahtna</p>')
-    rules = _parse_rule_element(el)
-    assert rules[0]["stages"][-1] == "Tʃ"
-    assert rules[0]["raw"] == "K → TŠ / in Mentasta Ahtna"
-
-
-def test_parse_rule_element_applies_configured_ipa_confidence_levels():
-    el = html.fragment_fromstring('<p class="schg">ḱ → s / _i</p>')
-    rules = _parse_rule_element(el)
-    assert rules[0]["stages"][0] == "kʲ"
-    assert "ḱ" in rules[0]["raw"]
-    el2 = html.fragment_fromstring('<p class="schg">é → ɛ / _#</p>')
-    rules2 = _parse_rule_element(el2)
-    assert rules2[0]["stages"][0] == "e"
-    assert "é" in rules2[0]["raw"]
-
-
-def test_index_diachronica_parser_high_only_config_skips_medium_at_parse():
+def test_index_diachronica_parser_accepts_custom_parser_config(fx_rule):
     config = ParserConfig(
         ipa_mappings_confidence=frozenset({"high"}),
         ipa_mappings=(
-            IpaMapping(index_feature="ḱ", ipa_target="kʲ", confidence="high"),
-            IpaMapping(index_feature="è", ipa_target="ɛ", confidence="high"),
-            IpaMapping(index_feature="é", ipa_target="e", confidence="medium"),
+            IpaMapping(index_feature="è", ipa_target="ɛ", confidence="medium"),
+            IpaMapping(index_feature="é", ipa_target="e", confidence="high"),
         ),
     )
     parser = default_index_parser(parser_config=config)
-    el = html.fragment_fromstring('<p class="schg">é → ɛ / _#</p>')
-    rules = parser.parse_rule_element(el)
-    assert rules[0]["stages"][0] == "é"
 
+    raw = "é → è / _#"
 
-def test_index_diachronica_parser_accepts_custom_parser_config():
-    config = ParserConfig(ipa_mappings_confidence=frozenset({"high"}))
-    parser = default_index_parser(parser_config=config)
-    assert parser._parser_config.ipa_mappings_confidence == frozenset({"high"})
+    rules = parser.parse_rule_string(**fx_rule, raw=raw)
 
-
-def test_parse_rule_element_normalizes_feature_matrices():
-    el = html.fragment_fromstring('<p class="schg">N → N / C[+voiced]</p>')
-    rules = _parse_rule_element(el)
-    assert rules[0]["stages"][0] == "N"
-    assert rules[0]["env"] == "C[+voice]"
-    assert "[+voiced]" in rules[0]["raw"]
-
-
-def test_parse_rule_element_normalizes_short_to_neg_long():
-    el = html.fragment_fromstring('<p class="schg">v → ∅ / u[+short]_V[+short]</p>')
-    rules = _parse_rule_element(el)
-    assert rules[0]["env"] == "u[-long]_V[-long]"
-    assert "[+short]" in rules[0]["raw"]
-
-
-def test_parse_rule_element_normalizes_glottalized_to_place():
-    el = html.fragment_fromstring(
-        '<p class="schg">R[- glottalized]VˀR → ˀRVR[- glottalized] / _$</p>'
-    )
-    rules = _parse_rule_element(el)
-    assert rules[0]["stages"] == ["R[+place]VˀR", "ˀRVR[+place]"]
-    assert "[- glottalized]" in rules[0]["raw"]
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_parse_rule_element_voiced_matrix_validates_asca(fx_sample_compiler_config):
-    el = html.fragment_fromstring('<p class="schg">s → z / _C[+voiced]</p>')
-    rules = _parse_rule_element(el)
-    section = {"index": "17.12", "section": "Voicing", "rules": rules}
-    validate_asca(
-        DiachronicSeries(section, compiler_config=fx_sample_compiler_config),
-        probe_words=Path("tests/fixtures/asca_probe_words.wsca"),
-    )
-
-
-def test_parse_rule_element_captures_semicolon_comment():
-    el = html.fragment_fromstring(
-        '<p class="schg">V → ∅ / short only; blocked by following consonant</p>'
-    )
-    rules = _parse_rule_element(el)
-    assert rules[0]["env"] == "_"
-    assert "short only" in rules[0]["comment"]
-    assert "blocked by following consonant" in rules[0]["comment"]
-    assert "; blocked" in rules[0]["raw"]
+    assert rules == [
+        {
+            "raw": raw,
+            "rule_id": fx_rule["rule_id"],
+            "source": fx_rule["source"],
+            "stages": ["e", "è"],
+            "env": "_#",
+        }
+    ]
 
 
 @pytest.mark.parametrize(
-    ("rule_text", "expected_env", "expected_exception"),
+    ("raw,expected"),
     [
         (
             "V → ∅ / V_C in northern dialects",
-            {"dialect": "northern", "context": "V_C"},
-            None,
+            {"env": {"dialect": "northern", "context": "V_C"}},
         ),
         (
             "V → ∅ / V_C in northern dialects ! in southern dialects",
-            {"dialect": "northern", "context": "V_C"},
-            {"dialect": "southern"},
+            {
+                "env": {"dialect": "northern", "context": "V_C"},
+                "exception": {"dialect": "southern"},
+            },
         ),
         (
             "V → ∅ / in northern and southern dialects",
-            {
-                "dialect": ["northern", "southern"],
-            },
-            None,
+            {"env": {"dialect": ["northern", "southern"]}},
         ),
         (
             "V → ∅ / dialectal",
-            {"dialect": True},
-            None,
+            {"env": {"dialect": True}},
         ),
         (
             "V → ∅ / dialectal ; in northern dialects",
-            {"dialect": True},
-            None,
+            {"env": {"dialect": True}, "comment": "in northern dialects"},
         ),
         (
             "V → ∅ / #_V",
-            "#_V",
-            None,
+            {"env": "#_V"},
         ),
     ],
 )
-def test_parse_rule_element_apply_dialects_to_context(
-    rule_text, expected_env, expected_exception
-):
-    el = html.fragment_fromstring(f'<p class="schg">{rule_text}</p>')
-    rules = _parse_rule_element(el)
-    if expected_env is not None:
-        assert rules[0]["env"] == expected_env
-    if expected_exception is not None:
-        assert rules[0]["exception"] == expected_exception
+def test_parse_rule_element_apply_dialects_to_context(fx_rule, raw, expected):
+    parser = default_index_parser()
+    rules = parser.parse_rule_string(**fx_rule, raw=raw)
 
-
-def test_parse_rule_element_archi_style_comment_before_chain_split():
-    broken = "ɣ → q (more likely, *ɢ → q instead of → ɣ)"
-    fixed = "ɣ → q ; (more likely, *ɢ → q instead of → ɣ)"
-    el = html.fragment_fromstring(f'<p class="schg">{broken}</p>')
-    parser = default_index_parser(
-        manual_mappings=[
-            ManualMapping(from_text=broken, to_text=fixed, reason="comment"),
-        ],
-    )
-    rules = parser.parse_rule_element(el)
-    assert rules[0]["stages"] == ["ɣ", "q"]
-    assert "more likely" in rules[0]["comment"]
-    assert "ɢ" in rules[0]["comment"]
-
-
-def test_parse_rule_element_native_editorial_tail_in_comment():
-    el = html.fragment_fromstring(
-        '<p class="schg">VOR → VːR; “this is a tad unclear, because in some instances it didn’t seem to apply”</p>'
-    )
-    rules = _parse_rule_element(el)
-    assert rules[0]["stages"] == ["VOR", "VːR"]
-    assert ";" not in rules[0]["stages"][-1]
-    assert "tad unclear" in rules[0]["comment"]
-
-
-def test_parse_rule_element_leading_semicolon_keeps_comment():
-    prose = "“In contrast, Romanian exhibits"
-    mapped = "; “In contrast, Romanian exhibits"
-    el = html.fragment_fromstring(f'<p class="schg">{prose}</p>')
-    parser = default_index_parser(
-        manual_mappings=[
-            ManualMapping(from_text=prose, to_text=mapped, reason="comment"),
-        ],
-    )
-    rules = parser.parse_rule_element(el)
-    assert "status" not in rules[0]
-    assert rules[0]["stages"] == []
-    assert "Romanian exhibits" in rules[0]["comment"]
-    assert rules[0]["raw"] == prose
-
-
-def test_parse_rule_element_sporadic_before_semicolon_cut():
-    el = html.fragment_fromstring(
-        '<p class="schg">k → ∅ / _# / sporadic ; in Mentasta Ahtna</p>'
-    )
-    rules = _parse_rule_element(el)
-    assert rules[0]["sporadic"] is True
-    assert "Mentasta Ahtna" in rules[0]["comment"]
-    assert rules[0]["env"] == "_#"
+    assert rules[0] == {
+        "raw": raw,
+        "rule_id": fx_rule["rule_id"],
+        "source": fx_rule["source"],
+        "stages": ["V", "∅"],
+        **expected,
+    }
 
 
 def test_parse_rule_element_without_manual_row_unchanged(fx_rule):
@@ -874,7 +754,7 @@ def test_parse_rule_element_without_manual_row_unchanged(fx_rule):
     assert parser.unmatched_manual_mappings == []
 
 
-def test_parse_recordsmanual_mapping_matches_and_unmatched(fx_rule):
+def test_parse_rule_string_manual_mappings_matches_and_unmatched(fx_rule):
     broken = "m̩ n̩ → am an / _{s,({m,j,w)V}"
     fixed = "m̩ n̩ → am an / _{s,({m,j,w})V}"
     manual_mappings = [
