@@ -21,7 +21,7 @@ section_index,rule_id,error_token,rule
 32.1.1,Papabuco-Chatino-h,…,"h > d / _a (…lolwut) | ^ @ Rule 1, Line 1"
 32.1.1,Papabuco-Chatino-h_2,…,"h > t // _a (…lolwut) | ^ @ Rule 1, Line 1"
 32.1.2,Tataltepec-Chatino-t,…,"t > tʲ / _õ (…again…lolwut) | ^ @ Rule 1, Line 1"
-35.1.9,Saanich-Northern-Straits-a3,ʷ,"a:[tone: 55] > e:[tone: 55] // {C:[-fr,+bk,-hi,-lo]ʷ,C:[-front,+back,+hi,-lo,+round],w}_,_{Cu,C:[-fr,+bk,-hi,-lo]ʷ,w} | ^ @ Rule 1, Line 1"
+35.1.9,Saanich-Northern-Straits-a3,ʷ,"a:[tone: 55] > e:[tone: 55] // {C:[-fr,+bk,-hi,-lo]ʷ,C:[-front,+back,+hi,-lo,+round],w}_, _{Cu,C:[-fr,+bk,-hi,-lo]ʷ,w} | ^ @ Rule 1, Line 1"
 36.1.1,Old-Mandarin-i,ʷ,"i > ∅ / {C,Cʷ}_a | ^ @ Rule 1, Line 1"
 36.1.1,Old-Mandarin-ia,ʷ,"ia > e // {C,Cʷ}_a | ^ @ Rule 1, Line 1"
 36.2,Guānhuà-uj_3,∅,"uj > uɛi / {C:[+labial],C:[+laryngeal],∅}_ | ^ @ Rule 1, Line 1"

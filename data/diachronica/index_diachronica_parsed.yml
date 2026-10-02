@@ -6675,7 +6675,7 @@ sections:
     - b
     - h
     env: _
-    exception: '{r(ʲ),l(ʲ)}_ or _ɡ'
+    exception: '{r(ʲ),l(ʲ)}_, _ɡ'
     raw: b → h / medially, ! {r(ʲ),l(ʲ)}_ or _ɡ
     source: index_diachronica_original.html:2183
     comment: medially,
@@ -25552,7 +25552,7 @@ sections:
     env: _ %[-stress]
     raw: ʃ → s / in unstressed syllables
     source: index_diachronica_original.html:5873
-    comment: unstressed syllables
+    comment: unstressed syllables; %[-stress]
     rule_id: Northern-Middle-English-ʃ
   - stages:
     - hn {wl,hl} hr
@@ -51424,7 +51424,7 @@ sections:
   - stages:
     - o
     - a
-    exception: o(C…)_ or _(C…){o,i}
+    exception: o(C…)_, _(C…){o,i}
     raw: o → a / ! o(C…)_ or _(C…){o,i}
     source: index_diachronica_original.html:10925
     rule_id: Proto-Costanoan-Ohlone-o
@@ -54322,7 +54322,7 @@ sections:
   - stages:
     - 'a[tone: 55]'
     - 'e[tone: 55]'
-    exception: '{C[-fr,+bk,-hi,-lo]ʷ,Kʷ,w}_,_{Cu,C[-fr,+bk,-hi,-lo]ʷ,w}'
+    exception: '{C[-fr,+bk,-hi,-lo]ʷ,Kʷ,w}_, _{Cu,C[-fr,+bk,-hi,-lo]ʷ,w}'
     raw: a3 → e3 / ! {{C[+ uvular],K}ʷ,w}_ or when _{Cu,C[+ uvular]ʷ,w}
     source: index_diachronica_original.html:11579
     rule_id: Saanich-Northern-Straits-a3

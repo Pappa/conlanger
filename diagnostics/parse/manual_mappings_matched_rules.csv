@@ -82,6 +82,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 7.17,Proto-Algonquian to Shawnee,Shawnee-e,index_diachronica_original.html:2049, “(, ; “(
 7.17,Proto-Algonquian to Shawnee,Shawnee-∅_3,index_diachronica_original.html:2068, “(, ; “(
 7.17,Proto-Algonquian to Shawnee,Shawnee-ʃ,index_diachronica_original.html:2069, “(, ; “(
+8.3,Proto-Altaic to Proto-Mongolic,Proto-Mongolic-b,index_diachronica_original.html:2183,_ or _,"_, _"
 8.5.1,Proto-Turkic to Proto-Kypchak,Proto-Kypchak-d,index_diachronica_original.html:2287, (“, ; (“
 8.5.1,Proto-Turkic to Proto-Kypchak,Proto-Kypchak-ɡm-rɡ,index_diachronica_original.html:2291, (this second one, ; (this second one
 8.5.1,Proto-Turkic to Proto-Kypchak,Proto-Kypchak-ew,index_diachronica_original.html:2298,\(→ (\w+) ?\??\),→ \1
@@ -540,6 +541,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-ẽ_3,index_diachronica_original.html:10807, / in , / 
 32.1.2,Proto-Chatino to Tataltepec Chatino,Tataltepec-Chatino-ɛ_3,index_diachronica_original.html:10830,", in monosyllables", / sporadic ; in monosyllables
 32.1.3,Proto-Chatino to Yaitepec Chatino,Yaitepec-Chatino-ʃ_2,index_diachronica_original.html:10853,", in monosyllables", / sporadic ; in monosyllables
+33.1.1,Proto-Utian to Proto-Costanoan (Ohlone),Proto-Costanoan-Ohlone-o,index_diachronica_original.html:10925,_ or _,"_, _"
 33.3.1.1,General Yokuts to Buena Vista Yokuts,Buena-Vista-Yokuts-t-tʰ-tʼ,index_diachronica_original.html:11064, “(, ; “(
 33.3.1.3,Buena Vista Yokuts to Tulamni,Tulamni-Vʔ,index_diachronica_original.html:11077, / stressed, / [+stress]
 33.3.2.1,Proto-Nim-Yokuts to Proto-Tule-Kaweah,Proto-Tule-Kaweah-t-tʰ-tʼ,index_diachronica_original.html:11088, “(, ; “(
@@ -547,7 +549,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 33.3.2.2.5,Valley Yokuts to Tachi,Tachi-ʈ-ʈʰ-ʈʼ,index_diachronica_original.html:11132, “(, ; “(
 33.3.3,Proto-Yokuts to Palewyami,Palewyami-t-tʰ-tʼ,index_diachronica_original.html:11144, “(, ; “(
 35.1.7,Proto-Central Salish to Nooksack,Nooksack-ə1_3,index_diachronica_original.html:11529, / in some , / sporadic ; in some 
-35.1.9,Proto-Central Salish to Saanich Northern Straits,Saanich-Northern-Straits-a3,index_diachronica_original.html:11579,_ or when _,"_,_"
+35.1.9,Proto-Central Salish to Saanich Northern Straits,Saanich-Northern-Straits-a3,index_diachronica_original.html:11579,_ or when _,"_, _"
 35.3,Shuswap to Eastern Shuswap Nasal-to-Vowel Shifts,Vowel-Shifts_3-em-emˀ_2,index_diachronica_original.html:11720, / in , / 
 35.3,Shuswap to Eastern Shuswap Nasal-to-Vowel Shifts,Vowel-Shifts_3-en-enˀ_2,index_diachronica_original.html:11722, / in , / 
 36.1.1,Late Middle Chinese to Old Mandarin,Old-Mandarin-V1,index_diachronica_original.html:11759, / in , / 

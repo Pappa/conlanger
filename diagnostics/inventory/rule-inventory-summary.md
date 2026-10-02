@@ -6,8 +6,8 @@
 - Rows: **9841** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **9063** (92.1%)
-- Fail: **252** (2.6%)
+- OK: **9065** (92.1%)
+- Fail: **250** (2.5%)
 - Skipped: **526** (5.3%)
 
 
@@ -23,8 +23,8 @@ Skipped: **2/124**
 
 ## Sections
 
-- All OK: **515 / 714** (72.1%)
-- Some OK: **146 / 714** (20.4%)
+- All OK: **516 / 714** (72.3%)
+- Some OK: **145 / 714** (20.3%)
 - None OK: **0 / 714** (0.0%)
 - Sections skipped: **53 / 714** (7.4%)
 
@@ -45,9 +45,9 @@ Skipped: **2/124**
 | 8 | `prose_or_expected_arrow` |
 | 8 | `segments_before_word` |
 | 7 | `stuff_after_word_bound` |
-| 6 | `multiple_underlines_env` |
 | 5 | `unknown_reference` |
 | 4 | `panic_other` |
+| 4 | `multiple_underlines_env` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
 | 2 | `runtime_delete_only_segment` |
@@ -285,7 +285,7 @@ Skipped: **2/124**
 
 | count | description |
 |------:|-------------|
-| 6 | `Cannot have multiple underlines in an environment` |
+| 4 | `Cannot have multiple underlines in an environment` |
 
 ### segments_before_word (error_token)
 

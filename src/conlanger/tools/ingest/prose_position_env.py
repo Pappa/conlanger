@@ -76,7 +76,8 @@ def normalize_bare_prose_position_env(
         return f"{match.group(1)}_, _{match.group(1)}", [stripped], flags
 
     if _UNSTRESSED_SYLLABLES_RE.match(stripped):
-        return "_ %[-stress]", [stripped], flags  # TODO: this is not correct
+        # return "_ %[-stress]", [stripped], flags  # TODO: this is not correct
+        return "%[-stress]", [stripped], flags  # TODO: this is not correct
 
     if _STRESSED_MONOSYLLABLE_RE.match(stripped):
         return "#_[+stress]", [stripped], flags  # TODO: this is not correct
