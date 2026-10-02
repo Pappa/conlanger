@@ -22,7 +22,7 @@ def _configure_parser_mock(
     mock_parser = mock_parser_cls.return_value
     mock_parser.parse.return_value = {"sections": sections or []}
     mock_parser.manual_mapping_matches = matches or []
-    mock_parser.unmatched_manual_mappings.return_value = unmatched or []
+    mock_parser.unmatched_manual_mappings = unmatched or []
     return mock_parser
 
 

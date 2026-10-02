@@ -41,11 +41,14 @@ def test_apply_medial_env_conditions_deferred_env_and_exception():
     assert apply_medial_env_conditions(parts) == parts
 
 
-def test_apply_sporadic_qualifier():
-    assert apply_sporadic_qualifier({"stages": ["p", "h (sporadic)"]}) == {
+@pytest.mark.parametrize(
+    "sporadic_qualifier", ["sporadic", "(sometimes)", "sometimes?", "occasionally?"]
+)
+def test_apply_sporadic_qualifier(sporadic_qualifier):
+    assert apply_sporadic_qualifier({"stages": ["p", f"h {sporadic_qualifier}"]}) == {
         "stages": ["p", "h"],
         "sporadic": True,
-        "comment": "(sporadic)",
+        "comment": sporadic_qualifier,
     }
 
 

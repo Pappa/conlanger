@@ -56,12 +56,12 @@ def main() -> int:
 
     matched_path = args.parse_dir / MANUAL_MAPPINGS_MATCHED_CSV_NAME
     write_manual_mappings_matched_csv(parser.manual_mapping_matches, matched_path)
-    for unused in parser.unmatched_manual_mappings():
+    for unused in parser.unmatched_manual_mappings:
         print(
             f"WARNING: unmatched manual mapping from={unused.from_text!r}",
             file=sys.stderr,
         )
-    for unused_id in parser.unmatched_corrections():
+    for unused_id in parser.unmatched_corrections:
         print(
             f"WARNING: unmatched correction rule_id={unused_id!r}",
             file=sys.stderr,

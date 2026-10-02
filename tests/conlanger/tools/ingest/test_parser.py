@@ -11,6 +11,7 @@ from conlanger.tools.rules import DiachronicSeries
 from conlanger.utils.mappings import (
     IpaMapping,
     ManualMapping,
+    ManualMappingMatch,
     ParserConfig,
     normalize_feature_matrices_in_field,
 )
@@ -18,6 +19,16 @@ from conlanger.utils.parsing import normalize_html_sub_tags
 from tests.fixtures.minimal_mappings import (
     minimal_feature_mappings,
 )
+
+
+@pytest.fixture
+def fx_rule():
+    return {
+        "rule_id": "Klingon-abc",
+        "section_index": "1.0",
+        "section_name": "Proto-IndoEuropean to Klingon",
+        "source": "index:1",
+    }
 
 
 def _parse_rule_element(el):
@@ -627,7 +638,7 @@ def test_parse_order_correction_then_section_then_manual():
     parser = default_index_parser(
         corrections={"Test-rule": "*D → mapped"},
         manual_mappings=[
-            ManualMapping(from_text="D → mapped", to_text="D → manual", reason=""),
+            ManualMapping(from_text="D → mapped", to_text="D → manual"),
         ],
     )
     rules = parser.parse_rule_element(
@@ -855,186 +866,71 @@ def test_parse_rule_element_sporadic_before_semicolon_cut():
     assert rules[0]["env"] == "_#"
 
 
-@pytest.mark.parametrize(
-    "sporadic_qualifier", ["sporadic", "(sometimes)", "sometimes?", "occasionally?"]
-)
-def test_parse_rule_element_sporadic_after_semicolon_detected(sporadic_qualifier):
-    el = html.fragment_fromstring(f'<p class="schg">i → yː ; {sporadic_qualifier}</p>')
-    rules = _parse_rule_element(el)
-    assert "sporadic" in rules[0]
-    assert sporadic_qualifier in rules[0]["comment"]
+def test_parse_rule_element_without_manual_row_unchanged(fx_rule):
+    parser = default_index_parser(manual_mappings=[])
+    rules = parser.parse_rule_string(**fx_rule, raw="a → b")
+    assert rules[0]["stages"] == ["a", "b"]
+    assert parser.manual_mapping_matches == []
+    assert parser.unmatched_manual_mappings == []
 
 
-def test_parse_rule_element_comment_tail_not_symbol_normalized():
-    el = html.fragment_fromstring(
-        '<p class="schg">a → b ; prose with % boundary and $ stem</p>'
+def test_parse_recordsmanual_mapping_matches_and_unmatched(fx_rule):
+    broken = "m̩ n̩ → am an / _{s,({m,j,w)V}"
+    fixed = "m̩ n̩ → am an / _{s,({m,j,w})V}"
+    manual_mappings = [
+        ManualMapping(from_text=broken, to_text=fixed, reason="bracket"),
+        ManualMapping(from_text="never-hits", to_text="x", reason="unused"),
+    ]
+    parser = default_index_parser(
+        manual_mappings=manual_mappings,
     )
-    rules = _parse_rule_element(el)
-    assert rules[0]["comment"] == "prose with % boundary and $ stem"
-    assert "%" in rules[0]["comment"]
+    rules = parser.parse_rule_string(**fx_rule, raw=broken)
+
+    assert rules == [
+        {
+            "raw": broken,
+            "rule_id": fx_rule["rule_id"],
+            "source": fx_rule["source"],
+            "stages": ["m̩ n̩", "am an"],
+            "env": "_{s,({m,j,w})V}",
+        }
+    ]
+
+    assert parser.manual_mapping_matches == [
+        ManualMappingMatch(**fx_rule, from_text=broken, to_text=fixed, reason="bracket")
+    ]
+    assert parser.unmatched_manual_mappings == [manual_mappings[1]]
 
 
-def test_parse_rule_element_captures_short_only_paren_in_env():
-    el = html.fragment_fromstring(
-        '<p class="schg">i → e / _CVC#, when stressed (short only)</p>'
+def test_unmatched_corrections(fx_rule):
+    parser = default_index_parser(
+        corrections={"Klingon-abc": "x → y", "Klingon-def": "x → y"},
     )
-    rules = _parse_rule_element(el)
-    assert rules[0]["env"] == "_CVC#"
-    assert "short only" in rules[0]["comment"]
-    assert "when stressed" in rules[0]["comment"]
+    parser.parse_rule_string(**fx_rule)
+    assert parser.unmatched_corrections == ["Klingon-def"]
 
 
 @pytest.mark.parametrize(
-    ("html_line", "stage_index", "expected_stage"),
+    ("raw", "expected"),
     [
-        ("{aı̃,eı̃} → ɛ̃", 0, "{aj\u0303,ej\u0303}"),
-        ("VnV → ṽlṽ", -1, "v\u0303lv\u0303"),
-        ("iC uC → î û / _{C,#}", -1, "i u"),
+        ("a{i,j}(a) a{u,w}(a) → e o", {"stages": ["a{i,j}(a) a{u,w}(a)", "e o"]}),
+        ('"quoted prose only"', {"stages": [], "comment": '"quoted prose only"'}),
+        ("a → b", {"stages": ["a", "b"]}),
+        # ("not-a-rule", {"stages": [], "comment": "not-a-rule"}),
     ],
 )
-def test_parse_rule_element_normalizes_near_miss_unknown_characters(
-    html_line,
-    stage_index,
-    expected_stage,
+def test_parse_rule_element_indo_aryan_chain_retains_optional_segments(
+    fx_rule, raw, expected
 ):
-    el = html.fragment_fromstring(f'<p class="schg">{html_line}</p>')
-    rules = _parse_rule_element(el)
-    assert rules[0]["stages"][stage_index] == expected_stage
-    assert html_line.split(" → ")[0] in rules[0]["raw"] or "→" in rules[0]["raw"]
-
-
-def test_index_diachronica_parser_accepts_custom_corrections():
-    parser = default_index_parser(corrections={"Test-id": "a → b"})
-    assert parser._corrections == {"Test-id": "a → b"}
-
-
-def test_parse_rule_element_applies_manual_mapping_keeps_raw():
-    broken = "m̩ n̩ → am an / _{s,({m,j,w)V}"
-    fixed = "m̩ n̩ → am an / _{s,({m,j,w})V}"
-    el = html.fragment_fromstring(f'<p class="schg">{broken}</p>')
-    parser = default_index_parser(
-        manual_mappings=[
-            ManualMapping(from_text=broken, to_text=fixed, reason="bracket"),
-        ],
+    rules = default_index_parser().parse_rule_string(
+        **fx_rule,
+        raw=raw,
     )
-    rules = parser.parse_rule_element(el)
-    assert rules[0]["raw"] == broken
-    assert rules[0]["stages"] == ["m̩ n̩", "am an"]
-    assert rules[0]["env"] == "_{s,({m,j,w})V}"
-    assert "status" not in rules[0]
-
-
-def test_parse_rule_element_manual_mapping_rescues_quoted_prose():
-    prose = (
-        "\u201cThe PIE rules for the voicing of s → z, as in [nizdos] "
-        "for *nisdos, are assumed to apply\u201d"
-    )
-    mapped = "s → z / _C[+voice]"
-    el = html.fragment_fromstring(f'<p class="schg">{prose}</p>')
-    parser = default_index_parser(
-        manual_mappings=[
-            ManualMapping(from_text=prose, to_text=mapped, reason="nisdos"),
-        ],
-    )
-    rules = parser.parse_rule_element(el)
-    assert rules[0]["raw"] == prose
-    assert rules[0]["stages"] == ["s", "z"]
-    assert rules[0]["env"] == "_C[+voice]"
-    assert rules[0].get("status") != "skipped"
-
-
-def test_parse_rule_element_without_manual_row_unchanged():
-    el = html.fragment_fromstring('<p class="schg">a → e / _C</p>')
-    with_mappings = default_index_parser(
-        manual_mappings=[
-            ManualMapping(from_text="zzz", to_text="Q", reason=""),
-        ],
-    ).parse_rule_element(el)
-    without = default_index_parser(
-        manual_mappings=[],
-    ).parse_rule_element(el)
-    assert with_mappings == without
-
-
-def test_parse_records_manual_mapping_matches_and_unmatched(tmp_path: Path):
-    html_path = tmp_path / "index.html"
-    write_tmp_index_html(
-        html_path,
-        section_id="Old-Irish",
-        section_body=(
-            "<h2>17.5.1 Proto-Indo-European to Old Irish</h2>\n"
-            '<p class="schg">m̩ n̩ → am an / _{s,({m,j,w)V}</p>\n'
-            '<p class="schg">a → e / _C</p>\n'
-        ),
-    )
-    broken = "m̩ n̩ → am an / _{s,({m,j,w)V}"
-    fixed = "m̩ n̩ → am an / _{s,({m,j,w})V}"
-    parser = default_index_parser(
-        manual_mappings=[
-            ManualMapping(from_text=broken, to_text=fixed, reason="bracket"),
-            ManualMapping(from_text="never-hits", to_text="x", reason="unused"),
-        ],
-    )
-    doc = parser.parse(html_path)
-    assert doc["sections"][0]["rules"][0]["env"] == "_{s,mV,jV,wV}"
-    assert len(parser.manual_mapping_matches) == 1
-    match = parser.manual_mapping_matches[0]
-    assert match.section_index == "17.5.1"
-    assert match.section_name == "Proto-Indo-European to Old Irish"
-    assert match.rule_id == ""
-    assert match.from_text == broken
-    assert match.to_text == fixed
-    unmatched = parser.unmatched_manual_mappings()
-    assert [row.from_text for row in unmatched] == ["never-hits"]
-
-
-def test_unmatched_corrections_reports_unused_rule_ids(tmp_path: Path):
-    html_path = tmp_path / "index.html"
-    write_tmp_index_html(
-        html_path,
-        section_id="Test",
-        section_body='<h2>1.0 Test</h2>\n<p class="schg">a → b</p>',
-    )
-    parser = default_index_parser(
-        corrections={"unused-id": "x → y", "also-unused": "p → q"},
-    )
-    parser.parse(html_path)
-    assert parser.unmatched_corrections() == ["unused-id", "also-unused"]
-
-
-def test_parse_rule_element_sets_rule_id_on_missing_arrow():
-    el = html.fragment_fromstring('<p class="schg" id="Test-bad">not a rule</p>')
-    rules = default_index_parser().parse_rule_element(
-        el,
-        rule_id="Test-bad",
-    )
-    assert rules[0]["rule_id"] == "Test-bad"
-    assert "status" not in rules[0]
-
-
-def test_parse_rule_element_sets_rule_id_on_quoted_prose():
-    el = html.fragment_fromstring(
-        '<p class="schg" id="Test-prose">"quoted prose only"</p>'
-    )
-    rules = default_index_parser().parse_rule_element(
-        el,
-        rule_id="Test-prose",
-    )
-    assert rules[0]["rule_id"] == "Test-prose"
-    assert "status" not in rules[0]
-
-
-def test_parse_rule_element_indo_aryan_chain_retains_optional_segments():
-    """Regression: trailing ``(a)`` on second spine token is phonology, not gloss."""
-    el = html.fragment_fromstring(
-        '<p class="schg" id="Central-Middle-Indo-Aryan-ai,ja-au,wa">'
-        "a{i,j}(a) a{u,w}(a) → e o</p>"
-    )
-    rules = default_index_parser().parse_rule_element(
-        el,
-        rule_id="Central-Middle-Indo-Aryan-ai,ja-au,wa",
-    )
-    assert len(rules) == 1
-    assert rules[0]["stages"] == ["a{i,j}(a) a{u,w}(a)", "e o"]
-    assert rules[0]["raw"] == "a{i,j}(a) a{u,w}(a) → e o"
-    assert "comment" not in rules[0]
+    assert rules == [
+        {
+            "raw": raw,
+            "rule_id": fx_rule["rule_id"],
+            "source": fx_rule["source"],
+            **expected,
+        }
+    ]

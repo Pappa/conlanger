@@ -106,20 +106,24 @@ class IndexDiachronicaParser:
         self._feature_mappings = self._parser_config.feature_mappings
         self._ipa_mappings = self._parser_config.resolved_ipa_mappings()
         self._corrections = self._parser_config.corrections
-        self.manual_mapping_matches: list[ManualMappingMatch] = []
+        self._manual_mapping_matches: list[ManualMappingMatch] = []
         self._matched_manual_froms: set[str] = set()
         self._matched_correction_ids: set[str] = set()
 
+    @property
+    def manual_mapping_matches(self) -> list[ManualMappingMatch]:
+        return self._manual_mapping_matches
+
+    @property
     def unmatched_manual_mappings(self) -> list[ManualMapping]:
-        """Return loaded mappings whose ``from`` never matched during this parse."""
         return [
             row
             for row in self._manual_mappings
             if row.from_text not in self._matched_manual_froms
         ]
 
+    @property
     def unmatched_corrections(self) -> list[str]:
-        """Return correction rule ids that matched no HTML rule during this parse."""
         return [
             rule_id
             for rule_id in self._corrections
@@ -150,7 +154,7 @@ class IndexDiachronicaParser:
         section_index: str,
         section_name: str,
         source: str,
-        skipped_rule: SkipRule | None,
+        skipped_rule: SkipRule | None = None,
         raw: str = "",
     ) -> dict[str, Any]:
 
@@ -176,7 +180,7 @@ class IndexDiachronicaParser:
         working, hits = apply_manual_mappings(working, self._manual_mappings)
         for hit in hits:
             self._matched_manual_froms.add(hit.from_text)
-            self.manual_mapping_matches.append(
+            self._manual_mapping_matches.append(
                 ManualMappingMatch(
                     section_index=section_index,
                     section_name=section_name,
@@ -239,7 +243,7 @@ class IndexDiachronicaParser:
     ) -> dict[str, Any]:
         """Parse HTML into ``{sections: [...]}``."""
         source_file = html_path.name
-        self.manual_mapping_matches = []
+        self._manual_mapping_matches = []
         self._matched_manual_froms = set()
         self._matched_correction_ids = set()
         root = load_html_document(html_path)

@@ -30,7 +30,7 @@ Prefer a small helper (e.g. `write_ok_flip_changelog`) over duplicating CSV logi
 
 Emit from `summarize_inventory` (or a dedicated formatter called by it). Placement: **after `## Rules`**, **before `## Failure classes`**.
 
-**Population scope (grill Q1-B):** denominator **N** = corrections whose `rule.id` appears in the parsed index / inventory (matched overlays only). YAML entries with no matching corpus rule (`unmatched_corrections()` orphans) are **excluded** from N and from all buckets — they stay parse-time warnings only.
+**Population scope (grill Q1-B):** denominator **N** = corrections whose `rule.id` appears in the parsed index / inventory (matched overlays only). YAML entries with no matching corpus rule (`unmatched_corrections` orphans) are **excluded** from N and from all buckets — they stay parse-time warnings only.
 
 **Per-rule rollup (grill Q2-A):** one bucket per matched `rule_id`, aggregating all `alt_idx` inventory rows for that rule:
 
