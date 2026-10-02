@@ -6,8 +6,8 @@
 - Rows: **9841** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **9065** (92.1%)
-- Fail: **250** (2.5%)
+- OK: **9035** (91.8%)
+- Fail: **280** (2.8%)
 - Skipped: **526** (5.3%)
 
 
@@ -23,8 +23,8 @@ Skipped: **2/124**
 
 ## Sections
 
-- All OK: **516 / 714** (72.3%)
-- Some OK: **145 / 714** (20.3%)
+- All OK: **506 / 714** (70.9%)
+- Some OK: **155 / 714** (21.7%)
 - None OK: **0 / 714** (0.0%)
 - Sections skipped: **53 / 714** (7.4%)
 
@@ -32,14 +32,14 @@ Skipped: **2/124**
 
 | count | failure_class |
 |------:|---------------|
-| 52 | `expected_underscore` |
+| 83 | `expected_underscore` |
 | 32 | `expected_ipa` |
 | 23 | `unknown_character` |
 | 22 | `missing_slash_output_env` |
 | 19 | `syntax_other` |
 | 15 | `nested_brackets` |
+| 11 | `expected_number` |
 | 11 | `unknown_grouping` |
-| 10 | `expected_number` |
 | 10 | `empty_io_panic` |
 | 10 | `unknown_feature` |
 | 8 | `prose_or_expected_arrow` |
@@ -47,11 +47,11 @@ Skipped: **2/124**
 | 7 | `stuff_after_word_bound` |
 | 5 | `unknown_reference` |
 | 4 | `panic_other` |
-| 4 | `multiple_underlines_env` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
 | 2 | `runtime_delete_only_segment` |
 | 2 | `other` |
+| 2 | `multiple_underlines_env` |
 | 1 | `incomplete_matrix` |
 | 1 | `invalid_ipa` |
 
@@ -142,16 +142,16 @@ Skipped: **2/124**
 | count | error_token |
 |------:|-------------|
 | 9 | `,` |
-| 7 | `/` |
+| 8 | `//` |
+| 3 | `/` |
 | 2 | `:` |
 | 2 | `∅` |
 | 1 | `ʲ` |
-| 1 | `//` |
 ### expected_underscore (description)
 
 | count | description |
 |------:|-------------|
-| 30 | `Expected '_', but received ''` |
+| 58 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -182,9 +182,10 @@ Skipped: **2/124**
 |------:|-------------|
 | 4 | `d` |
 | 2 | `r` |
-| 1 | `N` |
 | 1 | `ɡ` |
+| 1 | `N` |
 | 1 | `P` |
+| 1 | `i` |
 | 1 | `s` |
 ### expected_number (description)
 
@@ -285,7 +286,7 @@ Skipped: **2/124**
 
 | count | description |
 |------:|-------------|
-| 4 | `Cannot have multiple underlines in an environment` |
+| 2 | `Cannot have multiple underlines in an environment` |
 
 ### segments_before_word (error_token)
 

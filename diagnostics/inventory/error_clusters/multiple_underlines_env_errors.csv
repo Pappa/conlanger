@@ -1,5 +1,3 @@
 section_index,rule_id,error_token,rule
-17.12.1.1.8,Romanian-a-o,,"a o > ə u / _ %:[+stress]…_# | ^ @ Rule 1, Line 1"
-17.12.1.1.8,Romanian-e_2,,"e > ə / _ %:[+stress]…C:[+labial]_(C,0)V# // V = i | ^ @ Rule 1, Line 1"
 33.1.1,Proto-Costanoan-Ohlone-l,,"l > ɾ // _$ or o_ | ^ @ Rule 1, Line 1"
 34.8,Santiago-ʃ,,"ʃ > s // i_i or _P | ^ @ Rule 1, Line 1"

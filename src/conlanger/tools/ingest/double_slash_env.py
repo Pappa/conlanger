@@ -111,7 +111,8 @@ def normalize_prose_exception_or_env_tail(
     )
     if match:
         prefix = stripped[0]
-        return f"_ {prefix}{match.group(1)}", [stripped], flags
+        # TODO: this is not correct
+        return f"{prefix}{match.group(1)}", [stripped], flags
 
     return text, captures, flags
 
@@ -157,7 +158,8 @@ def normalize_prose_env_head(
     )
     if match:
         prefix = stripped[0]
-        return f"_ {prefix}{match.group(1)}", [stripped], flags
+        # TODO: this is not correct
+        return f"{prefix}{match.group(1)}", [stripped], flags
 
     return stripped, captures, flags
 

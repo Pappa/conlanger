@@ -122,8 +122,8 @@ def test_apply_double_slash_env_conditions(parts, expected):
     ("text", "expected_env", "expected_captures"),
     [
         ("{a,ɛ}_, typically", "{a,ɛ}_", ["typically"]),
-        ("%[-stress]", "_ %[-stress]", ["%[-stress]"]),
-        ("unstressed syllables", "_ %[-stress]", ["unstressed syllables"]),
+        ("%[-stress]", "%[-stress]", ["%[-stress]"]),
+        ("unstressed syllables", "%[-stress]", ["unstressed syllables"]),
         ("", "", []),
     ],
 )
@@ -151,7 +151,7 @@ def test_normalize_prose_env_head(text, expected_env, expected_captures):
             ["#% with the following conditions"],
         ),
         ("_k, short only)", "_k", ["short only"]),
-        ("%[-stress]", "_ %[-stress]", ["%[-stress]"]),
+        ("%[-stress]", "%[-stress]", ["%[-stress]"]),
         ("", "", []),
     ],
 )

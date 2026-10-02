@@ -77,7 +77,7 @@ def test_apply_prose_position_env_conditions(input, expected):
             "V[+nasal]_, _V[+nasal]",
             ["adjacent to V[+nasal]"],
         ),
-        ("unstressed syllables", "_ %[-stress]", ["unstressed syllables"]),
+        ("unstressed syllables", "%[-stress]", ["unstressed syllables"]),
         (
             "accented or stressed monosyllables",
             "#_[+stress]",
