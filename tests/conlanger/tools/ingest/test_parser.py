@@ -98,7 +98,6 @@ def test_parser_marks_skip_sections_from_config():
 
 def test_parser_config_resolved_section_mappings_ancestry_and_override():
     config = ParserConfig(
-        ipa_mappings_confidence=frozenset({"high"}),
         section_mappings_sections={
             "10.1": {"*D": "D", "*R": "R"},
             "10.1.2": {"*D": "d"},
