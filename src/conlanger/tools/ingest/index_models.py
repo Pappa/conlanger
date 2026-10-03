@@ -34,7 +34,7 @@ class IndexRule(BaseModel):
     raw: str
     source: str
     comment: str | None = None
-    sporadic: bool = False
+    sporadic: bool | None = None
     status: str | None = None
     rule_id: str | None = None
 
@@ -52,8 +52,6 @@ class IndexRule(BaseModel):
     def to_index_dict(self) -> dict[str, Any]:
         """Serialize for cleaned-index YAML (omit false defaults and nulls)."""
         out = self.model_dump(exclude_none=True)
-        if not self.sporadic:
-            out.pop("sporadic", None)
         return out
 
     @classmethod
@@ -63,23 +61,17 @@ class IndexRule(BaseModel):
         *,
         raw: str,
         source: str,
-        sporadic: bool = False,
         rule_id: str | None = None,
     ) -> IndexRule:
         """Build from post-transform parse field dict (``stages``, ``env``, …)."""
-        stages = list(fields.get("stages") or [])
-        env = fields.get("env")
-        exception = fields.get("exception")
-        comment = fields.get("comment")
-        status = fields.get("status")
         return cls(
-            stages=stages,
-            env=env,
-            exception=exception,
+            stages=list(fields.get("stages") or []),
+            env=fields.get("env"),
+            exception=fields.get("exception"),
             raw=raw,
             source=source,
-            comment=comment,
-            sporadic=sporadic,
-            status=status,
+            comment=fields.get("comment"),
+            sporadic=fields.get("sporadic"),
+            status=fields.get("status"),
             rule_id=rule_id,
         )

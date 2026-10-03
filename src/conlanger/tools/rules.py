@@ -73,7 +73,7 @@ class SoundChangeRule(RulePartBase):
     env: RuleEnv | None = None
     exception: RuleEnv | None = None
     status: str | None = None
-    sporadic: bool = False
+    sporadic: bool | None = None
     sporadic_skipped: bool = False
     dialect: DialectValue = False
     raw: str = ""

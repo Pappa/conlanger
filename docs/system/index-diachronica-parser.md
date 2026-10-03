@@ -89,7 +89,7 @@ After Phase A½ overlays (correction → manual mapping → index rule normalisa
 
 | Step                                                      | Status      | Order | Rationale                                                                                                                                                                    | Code                           |
 | --------------------------------------------------------- | ----------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
-| Peel first `;` on working line                            | implemented | B½1   | Editorial tails (including arrows inside gloss) must not become spurious chain stages. Naive first-`;` anywhere; owner **Manual mapping** rows plant the intended delimiter. | `split_line_semicolon_comment` |
+| Peel first `;` on working line                            | implemented | B½1   | Editorial tails (including arrows inside gloss) must not become spurious chain stages. Naive first-`;` anywhere; owner **Manual mapping** rows plant the intended delimiter. | `split_semicolon_comment` |
 | No `→` in remainder → empty `stages` + optional `comment` | implemented | B½2   | Prose-only or mapping-shaped lines with no rule spine stay in the index; compile validation may fail.                                                                        | `parse_rule_element`           |
 
 

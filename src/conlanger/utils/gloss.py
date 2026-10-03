@@ -265,13 +265,6 @@ def is_quoted_prose_paragraph(raw: str) -> bool:
     return len(text) > 40 and ARROW in text and bool(re.search(r"[a-z]{5,}", text))
 
 
-def is_gloss_only_rule(parts: dict[str, Any]) -> bool:
-    """True when gloss stripping removed all phonological stages."""
-    return len(non_empty_stages(parts.get("stages", []))) < 2 and bool(
-        parts.get("comment")
-    )
-
-
 _UNCERTAINTY_WORDS = r"sporadic(?:ally)?|sometimes|occasionally|\(\?\)"
 _UNCERTAINTY_WORD_RE = re.compile(rf"\b(?:{_UNCERTAINTY_WORDS})\b", re.IGNORECASE)
 _LONE_UNCERTAINTY_RE = re.compile(rf"^(?:{_UNCERTAINTY_WORDS})\??\.?$", re.IGNORECASE)

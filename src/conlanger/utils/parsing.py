@@ -79,8 +79,7 @@ def non_empty_stages(stages: list[str]) -> list[str]:
 
 def finalize_stages_shape(parts: dict[str, Any]) -> dict[str, Any]:
     """Drop empty stage slots; keep short spines as ordinary index rules."""
-    stages = parts.get("stages", [])
-    parts["stages"] = non_empty_stages(stages)
+    parts["stages"] = non_empty_stages(parts.get("stages", []))
     return parts
 
 

@@ -9,8 +9,7 @@ from conlanger.tools.ingest.transforms import (
     join_rule_comment,
     normalize_medial_env_field,
     normalize_stress_conditions,
-    split_field_semicolon_comment,
-    split_line_semicolon_comment,
+    split_semicolon_comment,
 )
 
 
@@ -180,16 +179,6 @@ def test_normalize_stress_conditions(text, expected):
     assert cleaned == expected
 
 
-def test_split_field_semicolon_comment():
-    assert split_field_semicolon_comment(
-        "depending on the environment; again, the article is unclear"
-    ) == (
-        "depending on the environment",
-        "again, the article is unclear",
-    )
-    assert split_field_semicolon_comment("short only") == ("short only", None)
-
-
-def test_split_line_semicolon_comment():
-    assert split_line_semicolon_comment("a → b ; tail") == ("a → b", "tail")
-    assert split_line_semicolon_comment("no semicolon") == ("no semicolon", None)
+def test_split_semicolon_comment():
+    assert split_semicolon_comment("a → b ; tail") == ("a → b", "tail")
+    assert split_semicolon_comment("no semicolon") == ("no semicolon", None)

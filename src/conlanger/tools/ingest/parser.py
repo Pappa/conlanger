@@ -60,7 +60,7 @@ from conlanger.tools.ingest.transforms import (
     apply_stress_conditions,
     apply_syllable_position_editorial_strip,
     apply_trailing_glosses,
-    split_line_semicolon_comment,
+    split_semicolon_comment,
 )
 from conlanger.utils.gloss import (
     apply_dialects_to_context,
@@ -193,7 +193,7 @@ class IndexDiachronicaParser:
                 rule_id=rule_id or None,
             )
             return [quoted.to_index_dict()]
-        working, rule_comment = split_line_semicolon_comment(working)
+        working, rule_comment = split_semicolon_comment(working)
         normalized = normalize_symbols(working)
         parts = extract_rule_parts(normalized)
         if parts is None:
@@ -202,7 +202,6 @@ class IndexDiachronicaParser:
             parts["comment"] = rule_comment
         parts = apply_series_expansions(parts, self._parser_config.series_expansions)
         parts = apply_sporadic_qualifier(parts)
-        sporadic = parts.pop("sporadic", False)
         parts = apply_trailing_glosses(parts)
         parts = apply_stress_conditions(parts)
         parts = apply_prose_conditional_env_conditions(parts)
@@ -223,7 +222,6 @@ class IndexDiachronicaParser:
             parts,
             raw=raw,
             source=source,
-            sporadic=sporadic,
             rule_id=rule_id or None,
         )
         return [index_rule.to_index_dict()]

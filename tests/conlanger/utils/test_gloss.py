@@ -13,7 +13,6 @@ from conlanger.utils.gloss import (
     extract_trailing_quoted_gloss_from_field,
     extract_uncertainty_qualifier_from_field,
     field_has_uncertainty_qualifier,
-    is_gloss_only_rule,
     is_quoted_prose_paragraph,
     paren_inner_is_gloss,
 )
@@ -256,20 +255,6 @@ def test_extract_trailing_gloss_from_field_returns_captures():
 )
 def test_is_quoted_prose_paragraph(text, expected):
     assert is_quoted_prose_paragraph(text) is expected
-
-
-@pytest.mark.parametrize(
-    ("parts", "expected"),
-    [
-        ({"stages": [], "comment": "editorial"}, True),
-        ({"stages": ["p"], "comment": "editorial"}, True),
-        ({"stages": ["p", "h"], "comment": "editorial"}, False),
-        ({"stages": [], "comment": ""}, False),
-        ({"stages": ["p", "h"]}, False),
-    ],
-)
-def test_is_gloss_only_rule(parts, expected):
-    assert is_gloss_only_rule(parts) is expected
 
 
 @pytest.mark.parametrize(

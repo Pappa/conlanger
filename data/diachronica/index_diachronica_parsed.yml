@@ -26768,6 +26768,7 @@ sections:
     raw: V → Vː / by analogy in some cases
     source: index_diachronica_original.html:6119
     comment: by analogy in some cases
+    sporadic: true
     rule_id: Standard-German-V_4
   - stages:
     - ə:[-stress]
@@ -32985,6 +32986,7 @@ sections:
     raw: trk → kr / in the name of the river “Skrwa”
     source: index_diachronica_original.html:7144
     comment: “Skrwa”; the name of the river
+    sporadic: true
     rule_id: Polish-trk
   - stages:
     - zdʲ stʲ
@@ -50430,6 +50432,7 @@ sections:
     comment: “where obscure morphological developments (in the ultimate or penultimate
       syllable) have resulted in regressive assimilation of vowel quality”; a few
       data sets
+    sporadic: true
     rule_id: Papabuco-Chatino-e_3
   - stages:
     - ẽ
@@ -50700,6 +50703,7 @@ sections:
     raw: s → ʃ / if /l/ is present in the same syllable
     source: index_diachronica_original.html:10850
     comment: if /l/ is present in the same syllable
+    sporadic: true
     rule_id: Yaitepec-Chatino-s_2
   - stages:
     - s
@@ -56249,6 +56253,7 @@ sections:
     raw: w → ʔ / something to do with either back vowels or prefixes
     source: index_diachronica_original.html:11999
     comment: something to do with either back vowels or prefixes
+    sporadic: true
     rule_id: bTshan-La-w
   - stages:
     - n

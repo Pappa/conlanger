@@ -29,19 +29,10 @@ def join_rule_comment(*fragments: str | None) -> str | None:
     return "; ".join(parts)
 
 
-def split_field_semicolon_comment(text: str) -> tuple[str, str | None]:
-    """Treat the first ``;`` and following text as ``comment`` prose in one field."""
-    return split_line_semicolon_comment(text)
-
-
-def split_line_semicolon_comment(text: str) -> tuple[str, str | None]:
+def split_semicolon_comment(text: str) -> tuple[str, str | None]:
     """Peel the first ``;`` on a working rule line into remainder and rule-comment tail."""
-    if not text or ";" not in text:
-        return text, None
-    head, _semicolon, tail = text.partition(";")
-    head = head.rstrip()
-    comment = tail.strip()
-    return head, comment or None
+    head, _, tail = text.partition(";")
+    return head.rstrip(), tail.strip() or None
 
 
 def _append_rule_comment_parts(parts: dict[str, Any], fragments: list[str]) -> None:
@@ -97,6 +88,8 @@ def apply_trailing_glosses(parts: dict[str, str]) -> dict[str, Any]:
     cleaned: dict[str, Any] = {}
     if "comment" in parts:
         cleaned["comment"] = parts["comment"]
+    if "sporadic" in parts:
+        cleaned["sporadic"] = parts["sporadic"]
     comment_fragments: list[str] = []
     stages = parts.get("stages")
     if stages is not None:
