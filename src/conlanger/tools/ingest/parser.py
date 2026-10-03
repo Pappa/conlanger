@@ -110,6 +110,10 @@ class IndexDiachronicaParser:
         self._manual_mapping_matches: list[ManualMappingMatch] = []
         self._matched_manual_froms: set[str] = set()
         self._matched_correction_ids: set[str] = set()
+        self._skipped_rules = {rule.id: rule for rule in self._parser_config.skip_rules}
+        self._skipped_sections = {
+            section.id: section for section in self._parser_config.skip_sections
+        }
 
     @property
     def manual_mapping_matches(self) -> list[ManualMappingMatch]:
@@ -139,15 +143,12 @@ class IndexDiachronicaParser:
         section_index: str = "",
         section_name: str = "",
         rule_id: str = "",
-        skipped_rule: SkipRule | None = None,
     ) -> list[dict[str, Any]]:
         line = getattr(el, "sourceline", None) or 0
         source = f"{source_file}:{line}"
         raw = extract_element_text(el)
 
-        return self.parse_rule_string(
-            rule_id, section_index, section_name, source, skipped_rule, raw
-        )
+        return self.parse_rule_string(rule_id, section_index, section_name, source, raw)
 
     def parse_rule_string(
         self,
@@ -155,18 +156,17 @@ class IndexDiachronicaParser:
         section_index: str,
         section_name: str,
         source: str,
-        skipped_rule: SkipRule | None = None,
         raw: str = "",
     ) -> dict[str, Any]:
 
-        if skipped_rule:
+        if rule_id and rule_id in self._skipped_rules:
             skipped = IndexRule(
                 stages=[],
                 raw=raw,
                 source=source,
                 status="skipped",
                 rule_id=rule_id,
-                comment=skipped_rule.reason,
+                comment=self._skipped_rules[rule_id].reason,
             )
             return [skipped.to_index_dict()]
 
@@ -249,10 +249,6 @@ class IndexDiachronicaParser:
         self._matched_manual_froms = set()
         self._matched_correction_ids = set()
         sections_out: list[dict[str, Any]] = []
-        skip_rules = {rule.id: rule for rule in self._parser_config.skip_rules}
-        skip_sections = {
-            section.id: section for section in self._parser_config.skip_sections
-        }
 
         normalised = normalize_sub_tags(doc)
 
@@ -282,7 +278,6 @@ class IndexDiachronicaParser:
                             section_index=index,
                             section_name=name,
                             rule_id=rule_id,
-                            skipped_rule=skip_rules.get(rule_id),
                         )
                     )
                     continue
@@ -309,7 +304,7 @@ class IndexDiachronicaParser:
                 section_obj["rules"] = flatten_nested_sets_in_section_rules(
                     resolve_catch_all_else_rules(rules)
                 )
-            if index and index in skip_sections:
+            if index and index in self._skipped_sections:
                 section_obj["status"] = "skipped"
             sections_out.append(section_obj)
 

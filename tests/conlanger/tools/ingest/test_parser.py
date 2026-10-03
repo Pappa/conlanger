@@ -1,10 +1,7 @@
-from pathlib import Path
-
 import pytest
 from helpers import default_index_parser
 from lxml import html
 
-from conlanger.scripts.config_loaders import load_parser_config
 from conlanger.utils.mappings import (
     IpaMapping,
     ManualMapping,
