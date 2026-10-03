@@ -10,7 +10,7 @@ from conlanger.utils.parsing import (
     extract_missing_arrow_rule_parts,
     extract_rule_parts,
     finalize_stages_shape,
-    normalize_html_sub_tags,
+    normalize_sub_tags,
     parse_section_heading,
     split_env_exception,
     split_input_output,
@@ -120,16 +120,16 @@ def test_parse_section_heading_without_index(heading, expected):
     assert parse_section_heading(heading) == expected
 
 
-def test_extract_element_text_tail_after_sub():
-    el = html.fragment_fromstring(
-        normalize_html_sub_tags("<p>before<sub>2</sub>after</p>")
-    )
-    assert extract_element_text(el) == "before₂after"
-
-
-def test_extract_element_text_no_tail_after_sub():
-    el = html.fragment_fromstring(normalize_html_sub_tags("<p>before<sub>2</sub></p>"))
-    assert extract_element_text(el) == "before₂"
+@pytest.mark.parametrize(
+    "html_text, expected",
+    [
+        ("<p>before<sub>2</sub>after</p>", "before₂after"),
+        ("<p>before<sub>2</sub></p>", "before₂"),
+    ],
+)
+def test_normalize_sub_tags(html_text, expected):
+    el = html.fragment_fromstring(html_text)
+    assert normalize_sub_tags(el).text == expected
 
 
 @pytest.mark.parametrize(
@@ -276,12 +276,6 @@ def test_split_post_arrow(post_arrow, expected):
 )
 def test_extract_rule_parts(raw, expected):
     assert _extract_rule_parts_for_test(raw) == expected
-
-
-def test_normalize_html_sub_tags_skips_nested_markup():
-    html_text = "<p>x<sub>1<sub>2</sub></sub></p>"
-    assert normalize_html_sub_tags(html_text) == html_text
-    assert normalize_html_sub_tags("<p>x<sub>1</sub></p>") == "<p>x₁</p>"
 
 
 _SAMPLED_HTML_RULE_CASES = _load_sampled_html_rules()

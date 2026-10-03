@@ -7,7 +7,7 @@ from io import BytesIO
 from pathlib import Path
 from typing import Any
 
-from lxml import html
+from lxml import etree, html
 
 ARROW = "→"
 ENV_SEP = " / "
@@ -105,30 +105,22 @@ def strip_whitespace(text: str) -> str:
     return re.sub(r"\s+", " ", text.replace("\n", " ").replace("\r", " ")).strip()
 
 
-_SUB_TAG_RE = re.compile(r"<sub>(.*?)</sub>", re.DOTALL | re.IGNORECASE)
+def normalize_sub_tags(doc: html.HtmlElement) -> html.HtmlElement:
+    for sub in doc.xpath("//sub"):
+        sub.tail = (
+            to_subscript(sub.text) + sub.tail if sub.tail else to_subscript(sub.text)
+        )
 
-
-def normalize_html_sub_tags(html_text: str) -> str:
-    """Replace ``<sub>…</sub>`` with Unicode subscripts before lxml parse.
-
-    Tags whose inner content contains nested markup are left unchanged.
-    """
-
-    def replace(match: re.Match[str]) -> str:
-        inner = match.group(1)
-        if "<" in inner or ">" in inner:
-            return match.group(0)
-        return to_subscript(inner)
-
-    return _SUB_TAG_RE.sub(replace, html_text)
+    etree.strip_elements(doc, "sub", with_tail=False)
+    return doc
 
 
 def load_html_document(html_path: Path) -> html.HtmlElement:
     """Load HTML from disk with pre-lxml ``<sub>`` normalisation (in-memory only)."""
-    text = normalize_html_sub_tags(html_path.read_text(encoding="utf-8"))
+    # text = html_path.read_text(encoding="utf-8")
     parser = html.HTMLParser(encoding="utf-8")
-    doc = html.parse(BytesIO(text.encode("utf-8")), parser=parser)
-    return doc.getroot()
+    doc = html.parse(html_path, parser=parser)
+    return normalize_sub_tags(doc.getroot())
 
 
 def extract_element_text(el) -> str:
