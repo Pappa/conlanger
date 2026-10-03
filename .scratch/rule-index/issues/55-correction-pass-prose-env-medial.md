@@ -39,8 +39,8 @@ Word-internal position requires an **environment set** on the exception — plai
 
 | Rewrite | ASCA emit |
 | --- | --- |
-| bare `medial` / `medially` | `env: _` + `exception: :{#_, _#}:` → `_ // :{#_, _#}:` |
-| structural env + `, when medial` / `when medial`, **no** existing `exception` | strip qualifier; keep env; set `exception: :{#_, _#}:` |
+| bare `medial` / `medially` | `env: _` + `exception: #_, _#` → `_ // #_, _#` |
+| structural env + `, when medial` / `when medial`, **no** existing `exception` | strip qualifier; keep env; set `exception: #_, _#` |
 | env + **existing** `exception` (e.g. Mongolic `b → h / medially, ! …`) | **defer** — leave unchanged (cf. ticket 53 env+exception deferrals; no exception-merge until designed) |
 
 Out of scope: **`comment`**-only medial qualifiers where `env` is already structural (e.g. `kʷ → ʍ / ku_ (medial)`).

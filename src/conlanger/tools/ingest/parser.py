@@ -19,7 +19,7 @@ and recorded as ``sporadic: true``. **Feature matrix** synonym replacement insid
 ``ipa_mappings.csv`` (``raw`` unchanged). Inline prose stripped for ASCA is captured in optional ``comment`` on each index
 rule: the first ``;`` on the working line is peeled before structural split, then
 field-level glosses and env qualifiers. Index word-internal ``medial`` / ``medially`` env
-prose becomes ``env: _`` with boundary ``exception: :{#_, _#}:`` (``apply_medial_env_conditions``).
+prose becomes ``env: _`` with boundary ``exception: #_, _#`` (``apply_medial_env_conditions``).
 Index prose **position** env phrases (``final syllables``, ``next to {X}``, ``syllable-final``,
 trailing ``, in monosyllables`` qualifiers, …) normalize via ``apply_prose_position_env_conditions``.
 Index prose **conditional** env phrases (``utterance-initially``, ``unstressed penult``,

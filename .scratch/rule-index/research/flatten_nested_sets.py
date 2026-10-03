@@ -228,7 +228,7 @@ def _flatten_sets_in_string(text: str, *, mode: str) -> str:
 
 def _rewrite_set_inner(inner: str, *, mode: str) -> str:
     # Do not re-serialize a flat set (preserves spacing in e.g. ASCA env-sets
-    # ``:{#_, _#}:``). Only rewrite when an inner ``{`` is present.
+    # ``#_, _#``). Only rewrite when an inner ``{`` is present.
     if "{" not in inner:
         return inner
     out: list[str] = []
@@ -314,7 +314,6 @@ _SELF_CHECKS: list[tuple[str, str, str]] = [
         "e o u æ ø y → {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i}",
     ),
     ("{{∅,∅}s,s{∅,∅}}", MODE_UNION, "{∅s,∅s,s∅,s∅}"),
-    (":{#_, _#}:", MODE_UNION, ":{#_, _#}:"),
     ("{a, b, c}", MODE_UNION, "{a, b, c}"),
 ]
 

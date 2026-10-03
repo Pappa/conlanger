@@ -1323,7 +1323,7 @@ sections:
     - t
     - r
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: t → r / medially
     source: index_diachronica_original.html:1198
     rule_id: Blin-t
@@ -1367,7 +1367,7 @@ sections:
     - t
     - j
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: t → j / medially
     source: index_diachronica_original.html:1208
     rule_id: Kemantney-t
@@ -4171,7 +4171,7 @@ sections:
     - i(ː)wi
     - iː
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: i(ː)wi → iː / medially
     source: index_diachronica_original.html:1746
     rule_id: Blackfoot-iːwi
@@ -6643,7 +6643,7 @@ sections:
     - pʰ
     - '{b,h}'
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: pʰ → {b,h} / medially
     source: index_diachronica_original.html:2185
     rule_id: Proto-Mongolic-pʰ_2
@@ -6920,7 +6920,7 @@ sections:
     - p
     - b
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: p → b / medially
     source: index_diachronica_original.html:2230
     rule_id: Proto-Tungusic-p
@@ -8254,7 +8254,7 @@ sections:
     - d
     - r
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: d → r / medial (Meno-mene and Mriak-mriku only)
     source: index_diachronica_original.html:2561
     comment: (Meno-mene and Mriak-mriku only)
@@ -8344,7 +8344,7 @@ sections:
     - b
     - ∅
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: b → ∅ / medial (sporadic)
     source: index_diachronica_original.html:2577
     comment: (sporadic)
@@ -17940,7 +17940,7 @@ sections:
     - v
     - m
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: v → m / medial
     source: index_diachronica_original.html:4598
     rule_id: Proto-Aleut-v
@@ -17984,7 +17984,7 @@ sections:
     - z
     - ð
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: z → ð / medial
     source: index_diachronica_original.html:4604
     rule_id: Proto-Aleut-z_2
@@ -18086,7 +18086,7 @@ sections:
     - l̥
     - l
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: l̥ → l / medial
     source: index_diachronica_original.html:4625
     rule_id: Barrow-Iñupiaq-l̥
@@ -19490,7 +19490,7 @@ sections:
     - d
     - l
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: d → l / medially
     source: index_diachronica_original.html:4869
     rule_id: Central-Sentani-d
@@ -19597,7 +19597,7 @@ sections:
     - d
     - l
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: d → l / medially
     source: index_diachronica_original.html:4887
     rule_id: Eastern-Sentani-d
@@ -19792,7 +19792,7 @@ sections:
     - d
     - r
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: d → r / medially
     source: index_diachronica_original.html:4920
     rule_id: Tabla-d
@@ -19970,7 +19970,7 @@ sections:
     - sd
     - θ
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: sd → θ / medial
     source: index_diachronica_original.html:4972
     rule_id: Gheg-Albanian-sd
@@ -19978,7 +19978,7 @@ sections:
     - skʲ
     - h
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: sḱ → h / medial
     source: index_diachronica_original.html:4973
     rule_id: Gheg-Albanian-sḱ
@@ -19986,7 +19986,7 @@ sections:
     - sp
     - f
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: sp → f / medial
     source: index_diachronica_original.html:4974
     rule_id: Gheg-Albanian-sp
@@ -19994,7 +19994,7 @@ sections:
     - st
     - ʃt
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: st → ʃt / medial
     source: index_diachronica_original.html:4975
     rule_id: Gheg-Albanian-st
@@ -20215,7 +20215,7 @@ sections:
     - sd
     - θ
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: sd → θ / medial
     source: index_diachronica_original.html:5011
     rule_id: Tosk-Albanian-sd
@@ -20223,7 +20223,7 @@ sections:
     - skʲ
     - h
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: sḱ → h / medial
     source: index_diachronica_original.html:5012
     rule_id: Tosk-Albanian-sḱ
@@ -20231,7 +20231,7 @@ sections:
     - sp
     - f
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: sp → f / medial
     source: index_diachronica_original.html:5013
     rule_id: Tosk-Albanian-sp
@@ -20239,7 +20239,7 @@ sections:
     - st
     - ʃt
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: st → ʃt / medial
     source: index_diachronica_original.html:5014
     rule_id: Tosk-Albanian-st
@@ -21146,7 +21146,7 @@ sections:
     - ɡʷ
     - hʷ
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: ɡʷ → hʷ / medially
     source: index_diachronica_original.html:5167
     rule_id: Palaic-ɡʷ
@@ -24147,7 +24147,7 @@ sections:
     - m
     - β
     env: C[-voice]_n
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: m → β / C[- voiced]_n, when medial
     source: index_diachronica_original.html:5673
     rule_id: Gothic-m
@@ -24155,7 +24155,7 @@ sections:
     - m
     - ɸ
     env: C[+voice]_n
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: m → ɸ / C[+ voiced]_n, when medial
     source: index_diachronica_original.html:5674
     rule_id: Gothic-m_2
@@ -29740,7 +29740,7 @@ sections:
     - tʃ
     - tː
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: tʃ → tː / medial
     source: index_diachronica_original.html:6591
     rule_id: Attic-Greek-tʃ_2
@@ -30340,7 +30340,7 @@ sections:
     - tʃ
     - tː
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: tʃ → tː / medial
     source: index_diachronica_original.html:6698
     rule_id: Doric-Greek-tʃ_2
@@ -30576,7 +30576,7 @@ sections:
     - tʃ
     - sː
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: tʃ → sː / medial
     source: index_diachronica_original.html:6740
     rule_id: Ionic-Greek-tʃ_2
@@ -33264,7 +33264,7 @@ sections:
     - s
     - z
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: s → z / medial (I’m assuming between vowels or when *s voiced in PIE)
     source: index_diachronica_original.html:7195
     comment: (I’m assuming between vowels or when *s voiced in PIE)
@@ -44012,7 +44012,7 @@ sections:
     - dz
     - s
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: dz → s / medially
     source: index_diachronica_original.html:9148
     rule_id: Arawá-dz
@@ -44038,7 +44038,7 @@ sections:
     - ɓ
     - ɸ
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: ɓ → ɸ / medially
     source: index_diachronica_original.html:9155
     rule_id: Banawá-Jamamadi-ɓ_2
@@ -44081,7 +44081,7 @@ sections:
     - e
     - a
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: e → a / medially
     source: index_diachronica_original.html:9165
     rule_id: Hypothetical-Arawán-Substrate-e
@@ -44102,7 +44102,7 @@ sections:
     - pʰ
     - h
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: pʰ → h / medially
     source: index_diachronica_original.html:9168
     rule_id: Hypothetical-Arawán-Substrate-pʰ
@@ -44128,7 +44128,7 @@ sections:
     - ɓ
     - f
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: ɓ → f / medially
     source: index_diachronica_original.html:9175
     rule_id: Jarawara-ɓ_2
@@ -44184,7 +44184,7 @@ sections:
     - ɓ
     - p
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: ɓ → p / medially
     source: index_diachronica_original.html:9187
     rule_id: Kulína-Dení-ɓ_2
@@ -44283,7 +44283,7 @@ sections:
     - e
     - a
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: e → a / medially
     source: index_diachronica_original.html:9208
     rule_id: Paumarí-e
@@ -44305,7 +44305,7 @@ sections:
     - pʰ t
     - ɸ ʔ
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: pʰ t → ɸ ʔ / medial
     source: index_diachronica_original.html:9211
     rule_id: Paumarí-pʰ-t
@@ -53313,7 +53313,7 @@ sections:
     - tʃʼ
     - tsʼ
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: tʃʼ → tsʼ / medially
     source: index_diachronica_original.html:11477
     rule_id: Klallam-tʃʼ
@@ -53706,7 +53706,7 @@ sections:
     - tʃ’
     - ts’
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: tʃ’ → ts’ / medially
     source: index_diachronica_original.html:11547
     rule_id: Lummi-Northern-Straits-tʃ’
@@ -53861,7 +53861,7 @@ sections:
     - tʃ’
     - θ’
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: tʃ’ → θ’ / medially
     source: index_diachronica_original.html:11574
     rule_id: Saanich-Northern-Straits-tʃ’
@@ -53990,7 +53990,7 @@ sections:
     - tʃ’
     - ts’
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: tʃ’ → ts’ / medially
     source: index_diachronica_original.html:11597
     rule_id: Songish-Northern-Straits-tʃ’
@@ -54125,7 +54125,7 @@ sections:
     - tʃ’
     - ts’
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: tʃ’ → ts’ / medially
     source: index_diachronica_original.html:11621
     rule_id: Sooke-Northern-Straits-tʃ’
@@ -60273,7 +60273,7 @@ sections:
     - t
     - ∅
     env: _k
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: t → ∅ / _k, when medial
     source: index_diachronica_original.html:12747
     rule_id: Catawba-t
@@ -60392,7 +60392,7 @@ sections:
     - t
     - ∅
     env: _k
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: t → ∅ / _k, when medial
     source: index_diachronica_original.html:12767
     rule_id: Dakota-t
@@ -60444,7 +60444,7 @@ sections:
     - kr
     - ɡj
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: kr → ɡj / medial
     source: index_diachronica_original.html:12778
     rule_id: Santee-Dakota-kr_2
@@ -60600,7 +60600,7 @@ sections:
     - t
     - ∅
     env: _k
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: t → ∅ / _k, when medial
     source: index_diachronica_original.html:12812
     rule_id: Mandan-t_2
@@ -60826,7 +60826,7 @@ sections:
     - tk
     - ɡ
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: tk → ɡ / when medial
     source: index_diachronica_original.html:12851
     rule_id: Čiwere-tk
@@ -60935,7 +60935,7 @@ sections:
     - t
     - ∅
     env: _k
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: t → ∅ / _k, when medial
     source: index_diachronica_original.html:12871
     rule_id: Winnebago-t_2
@@ -60993,7 +60993,7 @@ sections:
     - t
     - ∅
     env: _k
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: t → ∅ / _k, when medial
     source: index_diachronica_original.html:12884
     rule_id: Proto-Crow-Hidatsa-t
@@ -61249,7 +61249,7 @@ sections:
     - tk
     - ɡ
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: tk → ɡ / when medial
     source: index_diachronica_original.html:12930
     rule_id: Proto-Dhegiha-tk
@@ -66166,7 +66166,7 @@ sections:
     - '{w,j}'
     - ∅
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: '{w,j} → ∅ / medial'
     source: index_diachronica_original.html:13969
     rule_id: Comanche-w,j
@@ -66202,7 +66202,7 @@ sections:
     - l h
     - n ∅
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: l h → n ∅ / medially
     source: index_diachronica_original.html:13977
     rule_id: Hopi-l-h
@@ -66254,7 +66254,7 @@ sections:
     - t
     - l
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: t → l / medially
     source: index_diachronica_original.html:13987
     rule_id: Luiseño-t
@@ -66302,7 +66302,7 @@ sections:
     - l
     - n
     env: _
-    exception: ':{#_, _#}:'
+    exception: '#_, _#'
     raw: l → n / medially
     source: index_diachronica_original.html:13995
     rule_id: Luiseño-l

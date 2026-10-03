@@ -125,8 +125,6 @@ def _flatten_sets_in_string(text: str) -> str:
 
 
 def _rewrite_set_inner(inner: str) -> str:
-    # Do not re-serialize a flat set (preserves spacing in e.g. ASCA env-sets
-    # ``:{#_, _#}:``). Only rewrite when an inner ``{`` is present.
     if "{" not in inner:
         return inner
     out: list[str] = []

@@ -189,7 +189,7 @@ def apply_stress_conditions(parts: dict[str, str]) -> dict[str, Any]:
     return result
 
 
-MEDIAL_BOUNDARY_EXCEPTION = ":{#_, _#}:"
+MEDIAL_BOUNDARY_EXCEPTION = "#_, _#"
 _BARE_MEDIAL_ENV_RE = re.compile(r"^\s*medial(?:ly)?\s*,?\s*$", re.IGNORECASE)
 _BARE_WHEN_MEDIAL_ENV_RE = re.compile(r"^\s*when\s+medial(?:ly)?\s*$", re.IGNORECASE)
 _WHEN_MEDIAL_SUFFIX_RE = re.compile(r"(?:,\s*)?when\s+medial(?:ly)?\s*$", re.IGNORECASE)

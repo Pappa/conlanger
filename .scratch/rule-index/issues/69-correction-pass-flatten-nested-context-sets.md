@@ -52,7 +52,7 @@ ASCA 0.10.2 rejects nested `{}` of the same bracket type at lex time (`NestedBra
   - Union flatten + suffix distribution: `{a,{b,c}}`, `{{h,k,ŋ}n,w,v,l,r}_`
   - Parenthetical-in-set: `({m,j,w})V` → `{mV,jV,wV}`; `_ə{(C){p,kʷ},m,w}`
   - Feature-matrix nests `{{C[-fr,+bk,-hi,-lo],K}ʷ,w}_` → single-level set; **expect** some Salish rows to leave `nested_brackets` for `syntax_other` (document, do not invent group-mapping repairs here)
-- Preserve **`raw`**. Do not re-serialize flat sets (medial `:{#_, _#}:` spacing).
+- Preserve **`raw`**. Do not re-serialize flat sets (medial `#_, _#` spacing).
 - Do not expand already-ok field-level `({set})X` unless tests show no meaning change (spike saw `:12670` / `:13844` stay `ok`).
 
 **Key interfaces:**

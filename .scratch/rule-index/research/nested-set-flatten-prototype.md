@@ -19,7 +19,7 @@ Throwaway code: [`flatten_nested_sets.py`](./flatten_nested_sets.py), [`nested_s
 | Mode `union_paren`: `({m,j,w})V` → `{mV,jV,wV}`; `(C){p,kʷ}` as a **set member** → `(C)p,(C)kʷ` | Unbalanced / malformed (`2173`, `4654`, …) — returned unchanged |
 | Each **stage string** independently + **env** + **exception** | **`raw`** (never) |
 
-Unbalanced strings (`brace_balance != 0`) are left unchanged. Flat sets are not re-serialized (preserves ASCA env-set spacing `:{#_, _#}:` from medial, [`transforms.py`](../../../src/conlanger/tools/ingest/transforms.py) `apply_medial_env_conditions`).
+Unbalanced strings (`brace_balance != 0`) are left unchanged. Flat sets are not re-serialized (preserves ASCA env-set spacing `#_, _#` from medial, [`transforms.py`](../../../src/conlanger/tools/ingest/transforms.py) `apply_medial_env_conditions`).
 
 Self-check (2026-08-19): `uv run python .scratch/rule-index/research/flatten_nested_sets.py` — all fixtures pass, including `(h)ə{p,b}` unchanged in both modes and `{hə{p,b},ə{p,b}}` → `{həp,həb,əp,əb}` (compile-time D shape; see §6).
 
@@ -104,7 +104,7 @@ For `union_paren`, both slots yield `exception: _{s,mV,jV,wV}` (`exception_equal
 
 - **`series_expansions`:** `{ʔ,hₓ}` (HTML `:998` `{ʔ,h<sub>x</sub>}`) expands **inside** braces to `{ʔ,h₁,h₂,h₃}` ([`series.py`](../../../src/conlanger/utils/series.py) `_expand_collectives_inside_braces`; [`parser_config.yml`](../../../data/parser_config.yml) `hₓ: [h₁, h₂, h₃]`). Current YAML `:998` is already flat — **not** in today’s 45 `nested_brackets`. P1 vs P2 equal on this shape (`series_slot_probe`). P1-only would miss braces **introduced** after P1 (`hₓ` *outside* braces → `{h₁,h₂,h₃}`).
 - **`series.py` first-`}` matcher:** `expand_collectives_in_field` uses `text.find("}")`, not brace matching. Nested `{` before P2 can truncate the inner set. Flatten-before-series would paper over that, but P4 after series is the right *flatten* slot; the matcher bug is a separate ingest fix.
-- **Medial:** replaces env with `_` + exception `:{#_, _#}:` — no nested `{}`. Flatten must not re-serialize that env-set (fixed in the prototype after a first pass mutated spacing).
+- **Medial:** replaces env with `_` + exception `#_, _#` — no nested `{}`. Flatten must not re-serialize that env-set (fixed in the prototype after a first pass mutated spacing).
 - **Compile parentheticals (ticket 48):** `(h)ə{p,b}` stays depth-1 in YAML (`:2398` stages `(h)ə{p,b}`). `expand_index_parenthetical_notation` then emits `{hə{p,b},ə{p,b}}`, which ASCA lexes as `NestedBrackets` (inventory description for `:2398`). Parse-time flatten does **not** touch D. The same flatten **at compile after parentheticals would** rewrite that to `{həp,həb,əp,əb}` — which is why compile-only flatten is the wrong policy for #71.
 
 ### Rejected orderings

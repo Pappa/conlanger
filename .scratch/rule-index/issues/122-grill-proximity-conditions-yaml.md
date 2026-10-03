@@ -148,7 +148,7 @@ exception: '{r(ʲ),l(ʲ)}_ or _ɡ'
 
 ### Ticket 55 / medial (change from current implementation)
 
-- Parser output for medial: `position.env: medial` (or `position.exception` if ever attested), **not** `exception: :{#_, _#}:` in YAML.
+- Parser output for medial: `position.env: medial` (or `position.exception` if ever attested), **not** `exception: #_, _#` in YAML.
 - Compile projects medial to ASCA boundary env-set.
 
 ### Passes to retire (after Phase 1)

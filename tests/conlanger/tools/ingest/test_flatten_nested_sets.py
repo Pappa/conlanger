@@ -77,8 +77,8 @@ def _parse_section_html(section_id: str, section_body: str) -> list[dict]:
             id="flattens_with_diacritic_marks_applied_to_sets",
         ),
         pytest.param(
-            ":{#_, _#}:",
-            ":{#_, _#}:",
+            "#_, _#",
+            "#_, _#",
             id="leaves_flat_env_sets",
         ),
         pytest.param(
