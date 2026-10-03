@@ -6,7 +6,6 @@ from lxml import html
 
 from conlanger.utils.parsing import (
     build_stages_from_spine,
-    extract_element_text,
     extract_missing_arrow_rule_parts,
     extract_rule_parts,
     finalize_stages_shape,

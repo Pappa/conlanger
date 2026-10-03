@@ -9,12 +9,12 @@ from pydantic import (
     BaseModel,
     ConfigDict,
     Field,
-    model_validator,
     field_validator,
+    model_validator,
 )
 
+from conlanger.models.parser import SkipRule, SkipSection
 from conlanger.utils.series import section_index_prefixes
-from conlanger.models.parser import SkipSection, SkipRule
 
 _CORPUS_CONTEXT_FIELD_KEYS = ("env", "exception")
 

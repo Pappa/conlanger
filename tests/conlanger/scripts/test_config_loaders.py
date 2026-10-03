@@ -5,10 +5,10 @@ from pathlib import Path
 import pytest
 
 from conlanger.scripts.config_loaders import (
+    _load_yaml_dict,
+    _load_yaml_list,
     load_compiler_config,
     load_parser_config,
-    _load_yaml_list,
-    _load_yaml_dict,
 )
 from conlanger.utils.mappings import (
     IpaMapping,

@@ -5,7 +5,6 @@ from __future__ import annotations
 import re
 from typing import Any
 
-
 # Correspondence-series index: concrete segment base + ordinal subscript (not ₀, not ₓ).
 _CORRESPONDENCE_INDEX_RE = re.compile(r"(?<![A-Z])([a-zA-Zæøåɑɡɢ]+)([₁₂₃₄₅₆₇₈₉])")
 _POSITIONAL_SLOT_RE = re.compile(r"^[A-Z][₁₂₃₄₅₆₇₈₉]$")
