@@ -35,8 +35,9 @@ expansion is deferred to compile time
 
 from __future__ import annotations
 
-from pathlib import Path
 from typing import Any
+
+from lxml import html
 
 from conlanger.tools.ingest.double_slash_env import apply_double_slash_env_conditions
 from conlanger.tools.ingest.flatten_nested_sets import (
@@ -80,7 +81,6 @@ from conlanger.utils.parsing import (
     extract_missing_arrow_rule_parts,
     extract_rule_parts,
     finalize_stages_shape,
-    load_html_document,
     parse_section_heading,
     strip_whitespace,
 )
@@ -239,21 +239,21 @@ class IndexDiachronicaParser:
 
     def parse(
         self,
-        html_path: Path,
+        doc: html.HtmlElement,
+        *,
+        source_file: str,
     ) -> dict[str, Any]:
-        """Parse HTML into ``{sections: [...]}``."""
-        source_file = html_path.name
+        """Parse a loaded Index Diachronica HTML tree into ``{sections: [...]}``."""
         self._manual_mapping_matches = []
         self._matched_manual_froms = set()
         self._matched_correction_ids = set()
-        root = load_html_document(html_path)
         sections_out: list[dict[str, Any]] = []
         skip_rules = {rule.id: rule for rule in self._parser_config.skip_rules}
         skip_sections = {
             section.id: section for section in self._parser_config.skip_sections
         }
 
-        for sec in root.xpath("//section[@id]"):
+        for sec in doc.xpath("//section[@id]"):
             h2s = sec.xpath("./h2")
             if not h2s:
                 continue

@@ -17,12 +17,13 @@ Parse-time transforms turn Index Diachronica HTML into an **applier-neutral** ru
 
 | Step                                                        | Status      | Order | Rationale                                                                                                          | Code                                                |
 | ----------------------------------------------------------- | ----------- | ----- | ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------- |
-| HTML parse (lxml, non-strict)                               | implemented | 1     | Real-world Index markup has quirks; lxml tolerates them.                                                           | `IndexDiachronicaParser.parse`                      |
-| Section discovery (`//section[@id]`, first `<h2>`)          | implemented | 2     | One sound-change section per HTML `<h2>` block.                                                                    | `IndexDiachronicaParser.parse`                      |
-| Section heading split (`index`, section title)              | implemented | 3     | Dotted ancestry key drives hierarchical series lookup ([ADR-0004](./adr/0004-series-indices-per-section-maps.md)). | `parse_section_heading`                             |
-| Citation extraction (first `<p>` after `<h2>`, non-`schg`)  | implemented | 4     | Bibliographic provenance per section.                                                                              | `IndexDiachronicaParser.parse`                      |
-| Section comments (later non-`schg` paragraphs)              | implemented | 5     | Editorial prose preserved separately from rules.                                                                   | `IndexDiachronicaParser.parse`, `note_from_element` |
-| Rule extraction (`<p class="schg">` → `parse_rule_element`) | implemented | 6     | Sound-change rules are the index payload.                                                                          | `IndexDiachronicaParser.parse`                      |
+| HTML load + `<sub>` normalisation (lxml, non-strict)        | implemented | 1     | Real-world Index markup has quirks; lxml tolerates them; disk I/O stays in scripts.                                | `load_html_document`, `create_index`                |
+| DOM → index document                                        | implemented | 2     | Walk loaded tree; `source_file` names provenance in rule `source`.                                                 | `IndexDiachronicaParser.parse`                      |
+| Section discovery (`//section[@id]`, first `<h2>`)          | implemented | 3     | One sound-change section per HTML `<h2>` block.                                                                    | `IndexDiachronicaParser.parse`                      |
+| Section heading split (`index`, section title)              | implemented | 4     | Dotted ancestry key drives hierarchical series lookup ([ADR-0004](./adr/0004-series-indices-per-section-maps.md)). | `parse_section_heading`                             |
+| Citation extraction (first `<p>` after `<h2>`, non-`schg`)  | implemented | 5     | Bibliographic provenance per section.                                                                              | `IndexDiachronicaParser.parse`                      |
+| Section comments (later non-`schg` paragraphs)              | implemented | 6     | Editorial prose preserved separately from rules.                                                                   | `IndexDiachronicaParser.parse`, `note_from_element` |
+| Rule extraction (`<p class="schg">` → `parse_rule_element`) | implemented | 7     | Sound-change rules are the index payload.                                                                          | `IndexDiachronicaParser.parse`                      |
 
 
 ---

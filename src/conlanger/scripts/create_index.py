@@ -28,6 +28,7 @@ from conlanger.utils.file_io import (
     write_manual_mappings_matched_csv,
     write_rule_comment_phrase_summary,
 )
+from conlanger.utils.parsing import load_html_document
 
 
 def main() -> int:
@@ -48,7 +49,8 @@ def main() -> int:
 
     parser_config = load_parser_config()
     parser = IndexDiachronicaParser(parser_config)
-    doc = parser.parse(args.html)
+    html_root = load_html_document(args.html)
+    doc = parser.parse(html_root, source_file=args.html.name)
     write_cleaned_index(doc, args.yaml_out)
     args.parse_dir.mkdir(parents=True, exist_ok=True)
     comment_summary_path = args.parse_dir / DEFAULT_COMMENT_SUMMARY.name

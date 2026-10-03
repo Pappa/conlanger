@@ -1,13 +1,13 @@
-from pathlib import Path
-
 import pytest
-from helpers import default_index_parser, write_tmp_index_html
+from helpers import default_index_parser
+from lxml import html
 
 from conlanger.tools.ingest.section_policy import (
     is_catch_all_else_env,
     is_else_env_candidate,
     resolve_catch_all_else_rules,
 )
+from conlanger.utils.parsing import normalize_sub_tags
 
 
 @pytest.mark.parametrize(
@@ -163,17 +163,20 @@ def test_resolve_catch_all_else_deferred_when_prev_env_is_prose():
     assert "exception" not in resolved[1]
 
 
-def test_parser_resolves_catch_all_else_in_section(tmp_path: Path):
-    html_path = tmp_path / "else.html"
-    write_tmp_index_html(
-        html_path,
-        section_id="Else",
-        section_body="""\
+def test_parser_resolves_catch_all_else_in_section():
+    root = normalize_sub_tags(
+        html.document_fromstring(
+            """\
+<!doctype html><html><body><section id="Else">
 <h2>1.0 Test Section</h2>
 <p class="schg">kʼ → {χʷ,qʷ} / #_</p>
-<p class="schg">kʼ → q / else</p>""",
+<p class="schg">kʼ → q / else</p>
+</section></body></html>"""
+        )
     )
-    rules = default_index_parser().parse(html_path)["sections"][0]["rules"]
+    rules = default_index_parser().parse(root, source_file="else.html")["sections"][0][
+        "rules"
+    ]
     assert rules[0]["env"] == "#_"
     assert "env" not in rules[1]
     assert rules[1]["exception"] == "#_"

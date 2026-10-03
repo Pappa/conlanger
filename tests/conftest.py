@@ -8,7 +8,7 @@ import subprocess
 from pathlib import Path
 
 import pytest
-from helpers import default_index_parser, write_tmp_index_html
+from helpers import default_index_parser
 
 from tests.fixtures.minimal_mappings import (
     MINIMAL_GROUP_MAPPINGS,
@@ -20,7 +20,6 @@ __all__ = [
     "ASCA_VALIDATE_INSTALLED",
     "default_index_parser",
     "require_executable",
-    "write_tmp_index_html",
 ]
 
 _REPO_ROOT = Path(__file__).resolve().parents[1]

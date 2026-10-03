@@ -24,6 +24,7 @@ from conlanger.appliers.asca import (
 from conlanger.scripts.config_loaders import load_compiler_config, load_parser_config
 from conlanger.tools.ingest import IndexDiachronicaParser
 from conlanger.tools.rules import DiachronicSeries
+from conlanger.utils.parsing import load_html_document
 
 DEFAULT_HTML = ROOT / "data/diachronica/index_diachronica_original.html"
 DEFAULT_CSV = ROOT / "tests/fixtures/sound_change_rules.csv"
@@ -241,7 +242,10 @@ def load_existing(path: Path) -> list[dict[str, str]]:
 
 
 def collect_schg_rules(html_path: Path) -> list[dict]:
-    doc = IndexDiachronicaParser(load_parser_config()).parse(html_path)
+    html_root = load_html_document(html_path)
+    doc = IndexDiachronicaParser(load_parser_config()).parse(
+        html_root, source_file=html_path.name
+    )
     return [rule for section in doc["sections"] for rule in section.get("rules", [])]
 
 

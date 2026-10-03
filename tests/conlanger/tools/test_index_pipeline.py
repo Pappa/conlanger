@@ -7,10 +7,12 @@ DiachronicSeries compile → validate_asca per index rule.
 from __future__ import annotations
 
 import html as html_module
-from pathlib import Path
 
 import pytest
 from helpers import default_index_parser
+from lxml import html
+
+from conlanger.utils.parsing import normalize_sub_tags
 
 _INDEX_HTML = """\
 <!doctype html>
@@ -55,20 +57,18 @@ _E2E_PARSE_SMOKE: list[tuple[str, str, dict[str, str | None]]] = [
 ]
 
 
-def _write_section_html(
-    path: Path,
+def _parse_section(
     *,
     section_id: str,
     section_body: str,
-) -> None:
-    path.write_text(
-        _INDEX_HTML.format(section_id=section_id, section_body=section_body),
-        encoding="utf-8",
+    source_file: str,
+) -> dict:
+    root = normalize_sub_tags(
+        html.document_fromstring(
+            _INDEX_HTML.format(section_id=section_id, section_body=section_body)
+        )
     )
-
-
-def _parse_section(html_path: Path) -> dict:
-    doc = default_index_parser().parse(html_path)
+    doc = default_index_parser().parse(root, source_file=source_file)
     assert len(doc["sections"]) == 1
     return doc["sections"][0]
 
@@ -82,12 +82,12 @@ def _assert_index_rule_shape(rule: dict) -> None:
         assert "exception" not in rule
 
 
-def test_e2e_minimal_html_fixture_shape_and_raw_preservation(tmp_path: Path):
+def test_e2e_minimal_html_fixture_shape_and_raw_preservation():
     """Parse a minimal Index-shaped section and assert index schema + raw audit."""
-    html_path = tmp_path / "minimal.html"
-    _write_section_html(
-        html_path,
+    source_file = "minimal.html"
+    section = _parse_section(
         section_id="E2E",
+        source_file=source_file,
         section_body="""\
 <h2>1.0 Pipeline smoke</h2>
 <p><i>Fixture citation</i></p>
@@ -96,7 +96,6 @@ def test_e2e_minimal_html_fixture_shape_and_raw_preservation(tmp_path: Path):
 <p>Interleaved section comment</p>
 <p class="schg">no arrow here</p>""",
     )
-    section = _parse_section(html_path)
 
     assert section["index"] == "1.0"
     assert section["section"] == "Pipeline smoke"
@@ -108,7 +107,7 @@ def test_e2e_minimal_html_fixture_shape_and_raw_preservation(tmp_path: Path):
     _assert_index_rule_shape(ok_rule)
     assert ok_rule["stages"] == ["a", "b"]
     assert ok_rule["raw"] == "a → b"
-    assert ok_rule["source"].startswith(html_path.name)
+    assert ok_rule["source"].startswith(source_file)
 
     assert feature_rule["stages"] == ["C[+voice]", "C[-voice]"]
     assert feature_rule["env"] == "_#"
@@ -127,19 +126,16 @@ def test_e2e_html_extract_pipeline_parse(
     case_id: str,
     raw: str,
     expected: dict[str, str | None],
-    tmp_path: Path,
 ):
     """HTML rule line → parser → index fields match fixture expectations."""
-    html_path = tmp_path / f"{case_id}.html"
     escaped = html_module.escape(raw)
-    _write_section_html(
-        html_path,
+    section = _parse_section(
         section_id=case_id,
+        source_file=f"{case_id}.html",
         section_body=(
             f'<h2>99.0 Fixture {case_id}</h2>\n<p class="schg">{escaped}</p>'
         ),
     )
-    section = _parse_section(html_path)
     assert len(section["rules"]) == 1
     rule = section["rules"][0]
     _assert_index_rule_shape(rule)
