@@ -1,7 +1,7 @@
 import pytest
-from helpers import default_index_parser
 from lxml import html
 
+from conlanger.tools.ingest import IndexDiachronicaParser
 from conlanger.tools.ingest.flatten_nested_sets import (
     _consume_segment_tail,
     _try_distribute,
@@ -14,7 +14,7 @@ def _parse_section_html(section_id: str, section_body: str) -> list[dict]:
 <!doctype html><html><body><section id="{section_id}">
 {section_body}
 </section></body></html>""")
-    return default_index_parser().parse(root)["sections"]
+    return IndexDiachronicaParser().parse(root)["sections"]
 
 
 @pytest.mark.parametrize(

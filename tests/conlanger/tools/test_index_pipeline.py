@@ -9,8 +9,11 @@ from __future__ import annotations
 import html as html_module
 
 import pytest
-from helpers import default_index_parser
+from fixtures.minimal_mappings import minimal_feature_mappings
 from lxml import html
+
+from conlanger.tools.ingest import IndexDiachronicaParser
+from conlanger.utils.mappings import ParserConfig
 
 _INDEX_HTML = """\
 <!doctype html>
@@ -64,7 +67,8 @@ def _parse_section(
     root = html.document_fromstring(
         _INDEX_HTML.format(section_id=section_id, section_body=section_body)
     )
-    doc = default_index_parser().parse(root, source_file=source_file)
+    config = ParserConfig(feature_mappings=minimal_feature_mappings())
+    doc = IndexDiachronicaParser(config).parse(doc=root, source_file=source_file)
     assert len(doc["sections"]) == 1
     return doc["sections"][0]
 

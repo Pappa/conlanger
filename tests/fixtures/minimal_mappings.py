@@ -8,9 +8,7 @@ from __future__ import annotations
 from conlanger.utils.mappings import (
     CompilerConfig,
     FeatureMapping,
-    IpaMapping,
     ManualMapping,
-    ParserConfig,
 )
 
 MINIMAL_GROUP_MAPPINGS: dict[str, str] = {
@@ -38,42 +36,6 @@ def minimal_compiler_config() -> CompilerConfig:
         group_mappings=MINIMAL_GROUP_MAPPINGS,
         series_mappings_sections={
             "6": {"s₁": "F", "s₂": "F", "s₃": "F"},
-        },
-    )
-
-
-def minimal_parser_config() -> ParserConfig:
-    ipa_rows = tuple(
-        IpaMapping(index_feature=char, ipa_target=target, confidence="high")
-        for char, target in {
-            "Š": "ʃ",
-            "ḱ": "kʲ",
-            "è": "ɛ",
-            "é": "e",
-            "ı": "j",
-            "ṽ": "v\u0303",
-            "Ṽ": "v\u0303",
-            "û": "u",
-            "î": "i",
-            "oı̃": "oj\u0303",
-            "iı̃": "ij\u0303",
-            "eı̃": "ej\u0303",
-            "ɛ̃": "ɛ\u0303",
-            "wɛ̃": "wɛ\u0303",
-        }.items()
-    )
-    return ParserConfig(
-        manual_mappings=minimal_manual_mappings(),
-        ipa_mappings=ipa_rows,
-        ipa_mappings_confidence=["high", "medium"],
-        feature_mappings=minimal_feature_mappings(),
-        corrections={},
-        series_expansions={
-            "sₓ": ["s₁", "s₂", "s₃"],
-            "Hₓ": ["h₁", "h₂", "h₃"],
-        },
-        section_mappings_sections={
-            "10.1": {"*D": "D", "*R": "R", "*T": "T"},
         },
     )
 
@@ -118,4 +80,19 @@ def minimal_manual_mappings() -> list[ManualMapping]:
 
 def minimal_ipa_mappings() -> dict[str, str]:
     """Resolved IPA dict for tests that still pass explicit mapping overrides."""
-    return minimal_parser_config().resolved_ipa_mappings()
+    return {
+        "Š": "ʃ",
+        "ḱ": "kʲ",
+        "è": "ɛ",
+        "é": "e",
+        "ı": "j",
+        "ṽ": "v\u0303",
+        "Ṽ": "v\u0303",
+        "û": "u",
+        "î": "i",
+        "oı̃": "oj\u0303",
+        "iı̃": "ij\u0303",
+        "eı̃": "ej\u0303",
+        "ɛ̃": "ɛ\u0303",
+        "wɛ̃": "wɛ\u0303",
+    }

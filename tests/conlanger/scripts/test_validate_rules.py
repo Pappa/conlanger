@@ -7,6 +7,8 @@ import sys
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
+import pytest
+
 from conlanger.scripts import validate_rules as validate
 from conlanger.scripts import validation_cli
 from conlanger.tools.index_inventory import (
@@ -64,9 +66,31 @@ def test_validate_rules_errors_when_probe_missing(tmp_path: Path):
         assert validate.main() == 1
 
 
+@pytest.mark.parametrize(
+    "asca_supports_validate, asca_command, use_fork_flag, expected_error",
+    [
+        (True, None, "--use-asca-fork", "fork not found"),
+        (
+            False,
+            "/usr/bin/asca",
+            "--no-use-asca-fork",
+            "asca binary lacks the validate subcommand",
+        ),
+        (
+            True,
+            None,
+            "--no-use-asca-fork",
+            "asca binary not found",
+        ),
+    ],
+)
 def test_validate_rules_errors_when_asca_fork_missing(
     tmp_path: Path,
     capsys,
+    asca_supports_validate,
+    asca_command,
+    use_fork_flag,
+    expected_error,
 ):
     yaml_in = tmp_path / "index.yml"
     yaml_in.write_text("sections: []\n", encoding="utf-8")
@@ -75,6 +99,10 @@ def test_validate_rules_errors_when_asca_fork_missing(
 
     with (
         patch.object(validate, "ROOT", tmp_path),
+        patch.object(validate, "validation_asca_command", return_value=asca_command),
+        patch.object(
+            validate, "asca_supports_validate", return_value=asca_supports_validate
+        ),
         patch.object(
             sys,
             "argv",
@@ -86,39 +114,13 @@ def test_validate_rules_errors_when_asca_fork_missing(
                 str(tmp_path / "inventory"),
                 "--probe-words",
                 str(probe),
+                use_fork_flag,
             ],
         ),
     ):
         assert validate.main() == 1
 
-    assert "fork not found" in capsys.readouterr().err
-
-
-def test_validate_rules_errors_when_asca_missing_on_path(tmp_path: Path):
-    yaml_in = tmp_path / "index.yml"
-    yaml_in.write_text("sections: []\n", encoding="utf-8")
-    probe = tmp_path / "probe.wsca"
-    probe.write_text("probe", encoding="utf-8")
-
-    with (
-        patch.object(validate, "ROOT", tmp_path),
-        patch.object(validate, "validation_asca_command", return_value=None),
-        patch.object(
-            sys,
-            "argv",
-            [
-                "validate_rules",
-                "--yaml-in",
-                str(yaml_in),
-                "--inventory-dir",
-                str(tmp_path / "inventory"),
-                "--probe-words",
-                str(probe),
-                "--no-use-asca-fork",
-            ],
-        ),
-    ):
-        assert validate.main() == 1
+    assert expected_error in capsys.readouterr().err
 
 
 @patch.object(validate, "asca_version", return_value="asca-test-0.10")

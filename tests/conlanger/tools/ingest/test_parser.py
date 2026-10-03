@@ -1,7 +1,7 @@
 import pytest
-from helpers import default_index_parser
 from lxml import html
 
+from conlanger.tools.ingest import IndexDiachronicaParser
 from conlanger.utils.mappings import (
     IpaMapping,
     ManualMapping,
@@ -22,7 +22,8 @@ def fx_rule():
 
 def test_parse_rule_string_medial_with_exception_env_normalized(fx_rule):
     raw = "b → h / medially, ! r_"
-    rules = default_index_parser().parse_rule_string(**fx_rule, raw=raw)
+    parser = IndexDiachronicaParser()
+    rules = parser.parse_rule_string(**fx_rule, raw=raw)
     assert rules[0] == {
         "raw": raw,
         "rule_id": fx_rule["rule_id"],
@@ -44,7 +45,8 @@ def test_parse_element_handles_dialectal_rules():
 <p class="schg">a → i / dialectal</p>
 </section></body></html>"""
     )
-    doc = default_index_parser().parse(root)
+    parser = IndexDiachronicaParser()
+    doc = parser.parse(root)
     rule1 = doc["sections"][0]["rules"][0]
     rule2 = doc["sections"][0]["rules"][1]
 
@@ -60,7 +62,7 @@ def test_parse_element_handles_dialectal_rules():
     ],
 )
 def test_parse_element_handles_dialectal(fx_rule, raw, expected):
-    parser = default_index_parser()
+    parser = IndexDiachronicaParser()
     rules = parser.parse_rule_string(**fx_rule, raw=raw)
     assert rules[0]["env"] == expected
 
@@ -74,7 +76,7 @@ def test_parser_skips_section_without_h2(h2_element):
 <p class="schg">a → b</p>
 </section></body></html>"""
     )
-    assert default_index_parser().parse(root)["sections"] == []
+    assert IndexDiachronicaParser().parse(root)["sections"] == []
 
 
 def test_parser_marks_skip_sections_from_config():
@@ -85,7 +87,7 @@ def test_parser_marks_skip_sections_from_config():
 <p class="schg">a → b</p>
 </section></body></html>"""
     )
-    parser = default_index_parser(
+    parser = IndexDiachronicaParser(
         parser_config=ParserConfig(
             skip_sections=[{"id": "9.9.9", "reason": "test skip"}],
         ),
@@ -122,7 +124,7 @@ def test_parse_order_correction_then_section_then_manual(fx_rule):
             ManualMapping(from_text="D → mapped", to_text="D → manual"),
         ],
     )
-    parser = default_index_parser(parser_config=config)
+    parser = IndexDiachronicaParser(parser_config=config)
     rules = parser.parse_rule_string(**fx_rule, raw=raw)
     assert rules[0]["raw"] == raw
     assert rules[0]["stages"] == ["D", "manual"]
@@ -140,7 +142,7 @@ def test_parser_marks_skip_rules_from_config():
     config = ParserConfig(
         skip_rules=[{"id": "Hold-out-rule", "reason": "unrepresentable chain"}],
     )
-    parser = default_index_parser(parser_config=config)
+    parser = IndexDiachronicaParser(parser_config=config)
     rule = parser.parse(root)["sections"][0]["rules"][0]
 
     assert rule == {
@@ -161,7 +163,7 @@ def test_index_diachronica_parser_accepts_custom_parser_config(fx_rule):
             IpaMapping(index_feature="é", ipa_target="e", confidence="high"),
         ),
     )
-    parser = default_index_parser(parser_config=config)
+    parser = IndexDiachronicaParser(parser_config=config)
 
     raw = "é → è / _#"
 
@@ -211,7 +213,7 @@ def test_index_diachronica_parser_accepts_custom_parser_config(fx_rule):
     ],
 )
 def test_parse_rule_string_apply_dialects_to_context(fx_rule, raw, expected):
-    parser = default_index_parser()
+    parser = IndexDiachronicaParser()
     rules = parser.parse_rule_string(**fx_rule, raw=raw)
 
     assert rules[0] == {
@@ -224,7 +226,7 @@ def test_parse_rule_string_apply_dialects_to_context(fx_rule, raw, expected):
 
 
 def test_parse_rule_string_without_manual_row_unchanged(fx_rule):
-    parser = default_index_parser(manual_mappings=[])
+    parser = IndexDiachronicaParser()
     rules = parser.parse_rule_string(**fx_rule, raw="a → b")
     assert rules[0]["stages"] == ["a", "b"]
     assert parser.manual_mapping_matches == []
@@ -238,9 +240,8 @@ def test_parse_rule_string_manual_mappings_matches_and_unmatched(fx_rule):
         ManualMapping(from_text=broken, to_text=fixed, reason="bracket"),
         ManualMapping(from_text="never-hits", to_text="x", reason="unused"),
     ]
-    parser = default_index_parser(
-        manual_mappings=manual_mappings,
-    )
+    config = ParserConfig(manual_mappings=manual_mappings)
+    parser = IndexDiachronicaParser(parser_config=config)
     rules = parser.parse_rule_string(**fx_rule, raw=broken)
 
     assert rules == [
@@ -260,9 +261,8 @@ def test_parse_rule_string_manual_mappings_matches_and_unmatched(fx_rule):
 
 
 def test_unmatched_corrections(fx_rule):
-    parser = default_index_parser(
-        corrections={"Klingon-abc": "x → y", "Klingon-def": "x → y"},
-    )
+    config = ParserConfig(corrections={"Klingon-abc": "x → y", "Klingon-def": "x → y"})
+    parser = IndexDiachronicaParser(parser_config=config)
     parser.parse_rule_string(**fx_rule)
     assert parser.unmatched_corrections == ["Klingon-def"]
 
@@ -277,7 +277,8 @@ def test_unmatched_corrections(fx_rule):
     ],
 )
 def test_parse_rule_string_comment(fx_rule, raw, expected):
-    rules = default_index_parser().parse_rule_string(
+    parser = IndexDiachronicaParser()
+    rules = parser.parse_rule_string(
         **fx_rule,
         raw=raw,
     )

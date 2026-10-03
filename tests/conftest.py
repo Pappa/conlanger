@@ -4,11 +4,9 @@ from __future__ import annotations
 
 import os
 import shutil
-import subprocess
 from pathlib import Path
 
 import pytest
-from helpers import default_index_parser
 
 from tests.fixtures.minimal_mappings import (
     MINIMAL_GROUP_MAPPINGS,
@@ -18,7 +16,6 @@ from tests.fixtures.minimal_mappings import (
 __all__ = [
     "ASCA_INSTALLED",
     "ASCA_VALIDATE_INSTALLED",
-    "default_index_parser",
     "require_executable",
 ]
 
@@ -29,19 +26,6 @@ _FORK_ASCA = _REPO_ROOT / "lib" / "bin" / "asca"
 def require_executable(name: str) -> bool:
     """Return True when *name* is available on ``PATH``."""
     return shutil.which(name) is not None
-
-
-def _asca_supports_validate(asca_bin: str) -> bool:
-    try:
-        proc = subprocess.run(  # noqa: PLW1510
-            [asca_bin, "validate", "--help"],
-            capture_output=True,
-            text=True,
-            timeout=5.0,
-        )
-    except (OSError, subprocess.TimeoutExpired):
-        return False
-    return proc.returncode == 0
 
 
 @pytest.fixture(autouse=True)
