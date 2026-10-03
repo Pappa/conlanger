@@ -57,6 +57,9 @@ omit = ["src/conlanger/ml/models/*", "src/conlanger/ml/display.py"]
 [tool.coverage.report]
 fail_under = 95
 skip_empty = true
+exclude_lines = [
+    'if __name__ == "__main__":',
+]
 
 [dependency-groups]
 dev = [

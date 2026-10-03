@@ -132,7 +132,16 @@ def test_validate_rules_errors_when_asca_fork_missing(
 @patch.object(validate, "load_inventory_csv", return_value=None)
 @patch.object(validate, "iter_inventory_with_field_isolation")
 @patch.object(validate, "read_cleaned_index")
+@patch.object(validate, "filter_field_isolation_error")
+@patch.object(validate, "filter_field_isolation_success")
+@patch.object(validate, "filter_field_isolation_skipped")
+@patch.object(validate, "field_isolation_rows_to_dataframe")
+@pytest.mark.parametrize("field_isolation", [True, False])
 def test_validate_rules_writes_validation_inventory(
+    mock_field_isolation_rows_to_dataframe,
+    mock_filter_field_isolation_skipped,
+    mock_filter_field_isolation_success,
+    mock_filter_field_isolation_error,
     mock_read_index,
     mock_iter_rows,
     _mock_load_inventory,
@@ -143,6 +152,7 @@ def test_validate_rules_writes_validation_inventory(
     mock_write_changelog,
     _mock_asca_version,
     tmp_path: Path,
+    field_isolation,
 ):
     work = tmp_path / "work"
     work.mkdir()
@@ -201,6 +211,10 @@ def test_validate_rules_writes_validation_inventory(
     mock_flip_rows.return_value = MagicMock()
     _write_fake_fork(tmp_path)
 
+    field_isolation_flag = (
+        "--field-isolation" if field_isolation else "--no-field-isolation"
+    )
+
     with (
         patch.object(validate, "ROOT", tmp_path),
         patch.object(validate, "asca_supports_validate", return_value=True),
@@ -217,6 +231,7 @@ def test_validate_rules_writes_validation_inventory(
                 str(probe),
                 "--limit",
                 "1",
+                field_isolation_flag,
             ],
         ),
     ):
@@ -232,6 +247,19 @@ def test_validate_rules_writes_validation_inventory(
     summary_path = inventory_dir / "rule-inventory-summary.md"
     assert summary_path.is_file()
     assert "asca-test-0.10" in summary_path.read_text(encoding="utf-8")
+
+    if field_isolation:
+        mock_field_isolation_rows_to_dataframe.assert_called_once()
+        mock_filter_field_isolation_skipped.assert_called_once()
+        mock_filter_field_isolation_success.assert_called_once()
+        mock_filter_field_isolation_error.assert_called_once()
+        mock_write_field_isolation.assert_called_once()
+    else:
+        mock_field_isolation_rows_to_dataframe.assert_not_called()
+        mock_filter_field_isolation_skipped.assert_not_called()
+        mock_filter_field_isolation_success.assert_not_called()
+        mock_filter_field_isolation_error.assert_not_called()
+        mock_write_field_isolation.assert_not_called()
 
 
 @patch.object(validate, "asca_version", return_value="asca-test-0.10")
