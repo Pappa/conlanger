@@ -6,8 +6,6 @@ DiachronicSeries compile → validate_asca per index rule.
 
 from __future__ import annotations
 
-import html as html_module
-
 import pytest
 from fixtures.minimal_mappings import minimal_feature_mappings
 from lxml import html
@@ -100,7 +98,7 @@ def test_e2e_minimal_html_fixture_shape_and_raw_preservation():
     assert section["index"] == "1.0"
     assert section["section"] == "Pipeline smoke"
     assert section["citation"] == "Fixture citation"
-    assert [c["raw"] for c in section["comments"]] == ["Interleaved section comment"]
+    assert section["comments"][0] == "Interleaved section comment"
     assert len(section["rules"]) == 3
 
     ok_rule, feature_rule, bad_rule = section["rules"]
@@ -128,13 +126,10 @@ def test_e2e_html_extract_pipeline_parse(
     expected: dict[str, str | None],
 ):
     """HTML rule line → parser → index fields match fixture expectations."""
-    escaped = html_module.escape(raw)
     section = _parse_section(
         section_id=case_id,
         source_file=f"{case_id}.html",
-        section_body=(
-            f'<h2>99.0 Fixture {case_id}</h2>\n<p class="schg">{escaped}</p>'
-        ),
+        section_body=(f'<h2>99.0 Fixture {case_id}</h2>\n<p class="schg">{raw}</p>'),
     )
     assert len(section["rules"]) == 1
     rule = section["rules"][0]

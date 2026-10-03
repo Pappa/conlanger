@@ -113,7 +113,6 @@ _Avoid_: the English word “except” in citation prose; conflating with enviro
 
 **Rule comment**:
 Optional inline editorial prose on a **index rule** — English qualifiers, semicolon tails, parenthetical notes, and other text stripped from `stages`/`env`/`exception` at parse so compile fields stay ASCA-clean. Stored as optional field `comment`; omitted when absent. **`raw`** always preserves the full Index line. Distinct from section-level **`comments`** (non-rule `<p>` prose blocks between rules).
-_Avoid_: “comment” without qualification when section comments are meant; embedding validator skip reasons in `comment`; treating `comment` as ASCA syntax
 
 **Raw**:
 The Index rule-line string stored on a index rule for audit. It is always the HTML `<p class="schg">` text after subscript tags become Unicode characters — never rewritten by **Index Diachronica correction**, **Manual mapping**, section mapping, or later parse transforms ([ADR-0016](docs/adr/0016-parse-pipeline-order-and-raw-semantics.md)).

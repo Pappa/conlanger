@@ -88,15 +88,6 @@ from conlanger.utils.series import apply_series_expansions
 from conlanger.utils.symbols import normalize_symbols
 
 
-def note_from_element(el, *, source_file: str) -> dict[str, Any]:
-    raw = extract_element_text(el)
-    line = getattr(el, "sourceline", None) or 0
-    return {
-        "raw": raw,
-        "source": f"{source_file}:{line}",
-    }
-
-
 class IndexDiachronicaParser:
     """Parse Index Diachronica HTML into applier-neutral cleaned-index YAML."""
 
@@ -263,12 +254,10 @@ class IndexDiachronicaParser:
             rules: list[dict[str, Any]] = []
             citation: str | None = None
             comments: list[dict[str, Any]] = []
-            saw_first_p = False
 
             for p in sec.xpath("./p"):
                 cls = p.get("class", "")
                 if "schg" in cls:
-                    saw_first_p = True
                     rule_id = p.get("id", "")
                     rules.extend(
                         self.parse_rule_element(
@@ -281,15 +270,14 @@ class IndexDiachronicaParser:
                     )
                     continue
 
-                note = note_from_element(p, source_file=source_file)
-                if not note["raw"]:
+                comment = strip_whitespace(extract_element_text(p))
+                if not comment:
                     continue
 
-                if not saw_first_p:
-                    citation = note["raw"]
-                    saw_first_p = True
+                if not citation:
+                    citation = comment
                 else:
-                    comments.append(note)
+                    comments.append(comment)
 
             section_obj: dict[str, Any] = {
                 "section": name,
