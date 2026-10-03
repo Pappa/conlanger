@@ -81,6 +81,7 @@ from conlanger.utils.parsing import (
     extract_missing_arrow_rule_parts,
     extract_rule_parts,
     finalize_stages_shape,
+    normalize_sub_tags,
     parse_section_heading,
     strip_whitespace,
 )
@@ -241,7 +242,7 @@ class IndexDiachronicaParser:
         self,
         doc: html.HtmlElement,
         *,
-        source_file: str,
+        source_file: str = "index",
     ) -> dict[str, Any]:
         """Parse a loaded Index Diachronica HTML tree into ``{sections: [...]}``."""
         self._manual_mapping_matches = []
@@ -253,7 +254,9 @@ class IndexDiachronicaParser:
             section.id: section for section in self._parser_config.skip_sections
         }
 
-        for sec in doc.xpath("//section[@id]"):
+        normalised = normalize_sub_tags(doc)
+
+        for sec in normalised.xpath("//section[@id]"):
             h2s = sec.xpath("./h2")
             if not h2s:
                 continue

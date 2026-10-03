@@ -7,19 +7,14 @@ from conlanger.tools.ingest.flatten_nested_sets import (
     _try_distribute,
     flatten_nested_sets,
 )
-from conlanger.utils.parsing import normalize_sub_tags
 
 
 def _parse_section_html(section_id: str, section_body: str) -> list[dict]:
-    root = normalize_sub_tags(
-        html.document_fromstring(
-            f"""\
+    root = html.document_fromstring(f"""\
 <!doctype html><html><body><section id="{section_id}">
 {section_body}
-</section></body></html>"""
-        )
-    )
-    return default_index_parser().parse(root, source_file="index.html")["sections"]
+</section></body></html>""")
+    return default_index_parser().parse(root)["sections"]
 
 
 @pytest.mark.parametrize(

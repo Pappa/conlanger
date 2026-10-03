@@ -7,7 +7,6 @@ from conlanger.tools.ingest.section_policy import (
     is_else_env_candidate,
     resolve_catch_all_else_rules,
 )
-from conlanger.utils.parsing import normalize_sub_tags
 
 
 @pytest.mark.parametrize(
@@ -164,19 +163,15 @@ def test_resolve_catch_all_else_deferred_when_prev_env_is_prose():
 
 
 def test_parser_resolves_catch_all_else_in_section():
-    root = normalize_sub_tags(
-        html.document_fromstring(
-            """\
+    root = html.document_fromstring(
+        """\
 <!doctype html><html><body><section id="Else">
 <h2>1.0 Test Section</h2>
 <p class="schg">kʼ → {χʷ,qʷ} / #_</p>
 <p class="schg">kʼ → q / else</p>
 </section></body></html>"""
-        )
     )
-    rules = default_index_parser().parse(root, source_file="else.html")["sections"][0][
-        "rules"
-    ]
+    rules = default_index_parser().parse(root)["sections"][0]["rules"]
     assert rules[0]["env"] == "#_"
     assert "env" not in rules[1]
     assert rules[1]["exception"] == "#_"

@@ -11,7 +11,6 @@ from conlanger.utils.mappings import (
     ManualMappingMatch,
     ParserConfig,
 )
-from conlanger.utils.parsing import normalize_sub_tags
 
 
 @pytest.fixture
@@ -40,17 +39,15 @@ def test_parse_rule_string_medial_with_exception_env_normalized(fx_rule):
 
 # TODO: Replace with test_parse_element_handles_dialectal
 def test_parse_element_handles_dialectal_rules():
-    root = normalize_sub_tags(
-        html.document_fromstring(
-            """\
+    root = html.document_fromstring(
+        """\
 <!doctype html><html><body><section id="Dialectal">
 <h2>1.0 Proto-IndoEuropean to Klingon</h2>
 <p class="schg">a → i / in northern dialects</p>
 <p class="schg">a → i / dialectal</p>
 </section></body></html>"""
-        )
     )
-    doc = default_index_parser().parse(root, source_file="dialectal.html")
+    doc = default_index_parser().parse(root)
     rule1 = doc["sections"][0]["rules"][0]
     rule2 = doc["sections"][0]["rules"][1]
 
@@ -72,33 +69,24 @@ def test_parse_element_handles_dialectal(fx_rule, raw, expected):
 
 
 def test_parser_skips_section_without_h2():
-    root = normalize_sub_tags(
-        html.document_fromstring(
-            """\
+    root = html.document_fromstring(
+        """\
 <!doctype html><html><body><section id="NoH2">
 <p class="schg">a → b</p>
 </section></body></html>"""
-        )
     )
-    assert (
-        default_index_parser().parse(root, source_file="no_h2.html")["sections"] == []
-    )
+    assert default_index_parser().parse(root)["sections"] == []
 
 
 def test_parser_skips_section_with_empty_name():
-    root = normalize_sub_tags(
-        html.document_fromstring(
-            """\
+    root = html.document_fromstring(
+        """\
 <!doctype html><html><body><section id="Empty">
 <h2>   </h2>
 <p class="schg">a → b</p>
 </section></body></html>"""
-        )
     )
-    assert (
-        default_index_parser().parse(root, source_file="empty_name.html")["sections"]
-        == []
-    )
+    assert default_index_parser().parse(root)["sections"] == []
 
 
 def test_parser_marks_skip_sections_from_config(tmp_path: Path):
@@ -117,19 +105,17 @@ def test_parser_marks_skip_sections_from_config(tmp_path: Path):
         ("index_corrections.yml", "rules: []\n"),
     ]:
         (tmp_path / name).write_text(content, encoding="utf-8")
-    root = normalize_sub_tags(
-        html.document_fromstring(
-            """\
+    root = html.document_fromstring(
+        """\
 <!doctype html><html><body><section id="SkipMe">
 <h2>9.9.9 Skipped Section</h2>
 <p class="schg">a → b</p>
 </section></body></html>"""
-        )
     )
     parser = default_index_parser(
         parser_config=load_parser_config(config_path),
     )
-    sec = parser.parse(root, source_file="skip_section.html")["sections"][0]
+    sec = parser.parse(root)["sections"][0]
     assert sec["index"] == "9.9.9"
     assert sec["status"] == "skipped"
     assert sec["rules"][0]["stages"] == ["a", "b"]
@@ -171,25 +157,23 @@ def test_parse_order_correction_then_section_then_manual(fx_rule):
 
 def test_parser_marks_skip_rules_from_config():
     raw = "i → j [ə?] → {e,a}"
-    root = normalize_sub_tags(
-        html.document_fromstring(
-            f"""\
+    root = html.document_fromstring(
+        f"""\
 <!doctype html><html><body><section id="SkipRule">
 <h2>1.0 Hold-out</h2>
 <p class="schg" id="Hold-out-rule">{raw}</p>
 </section></body></html>"""
-        )
     )
     config = ParserConfig(
         skip_rules=[{"id": "Hold-out-rule", "reason": "unrepresentable chain"}],
     )
     parser = default_index_parser(parser_config=config)
-    rule = parser.parse(root, source_file="skip_rule.html")["sections"][0]["rules"][0]
+    rule = parser.parse(root)["sections"][0]["rules"][0]
 
     assert rule == {
         "raw": raw,
         "rule_id": "Hold-out-rule",
-        "source": "skip_rule.html:3",
+        "source": "index:3",
         "stages": [],
         "status": "skipped",
         "comment": "unrepresentable chain",

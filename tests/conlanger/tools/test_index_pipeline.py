@@ -12,8 +12,6 @@ import pytest
 from helpers import default_index_parser
 from lxml import html
 
-from conlanger.utils.parsing import normalize_sub_tags
-
 _INDEX_HTML = """\
 <!doctype html>
 <html><body>
@@ -63,10 +61,8 @@ def _parse_section(
     section_body: str,
     source_file: str,
 ) -> dict:
-    root = normalize_sub_tags(
-        html.document_fromstring(
-            _INDEX_HTML.format(section_id=section_id, section_body=section_body)
-        )
+    root = html.document_fromstring(
+        _INDEX_HTML.format(section_id=section_id, section_body=section_body)
     )
     doc = default_index_parser().parse(root, source_file=source_file)
     assert len(doc["sections"]) == 1

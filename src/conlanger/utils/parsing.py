@@ -119,7 +119,7 @@ def load_html_document(html_path: Path) -> html.HtmlElement:
     # text = html_path.read_text(encoding="utf-8")
     parser = html.HTMLParser(encoding="utf-8")
     doc = html.parse(html_path, parser=parser)
-    return normalize_sub_tags(doc.getroot())
+    return doc.getroot()
 
 
 def extract_element_text(el) -> str:
