@@ -70,7 +70,6 @@ from conlanger.utils.mappings import (
     ManualMapping,
     ManualMappingMatch,
     ParserConfig,
-    SkipRule,
     apply_feature_mappings,
     apply_ipa_mappings,
     apply_manual_mappings,
