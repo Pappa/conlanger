@@ -167,7 +167,7 @@ def normalize_stress_conditions(text: str) -> tuple[str, list[str]]:
         if match:
             captures.append(match.group(0).strip())
             text = _TRAILING_STRESS_AFTER_HASH_RE.sub("", text).rstrip()
-    elif re.match(r"when (?:un)?stressed\b", text, re.IGNORECASE):
+    elif _STRESS_CONDITION_RE.match(text):
         text = f"_ {text}"
     elif "_" not in text:
         match = _PROSE_BEFORE_STRESS_RE.match(text)

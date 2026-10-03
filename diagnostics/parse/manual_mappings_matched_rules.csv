@@ -133,6 +133,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 10.3.2,Proto-Oceanic to Hiw,Hiw-”V+-higher,index_diachronica_original.html:3118,high(er),hi
 10.3.3,Proto-Oceanic to Lemerig,Lemerig-ia,index_diachronica_original.html:3154, “(, ; “(
 10.3.4,Proto-Oceanic to Mwotlap,Mwotlap-s,index_diachronica_original.html:3170, “(, ; “(
+10.3.4,Proto-Oceanic to Mwotlap,Mwotlap-aCV+-high,index_diachronica_original.html:3179, / when stressed, / [+stress]
 10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-ONV,index_diachronica_original.html:3236, (Pije and Fwai), in \1 dialects
 10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-ONV,index_diachronica_original.html:3236,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-ONV,index_diachronica_original.html:3236,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
@@ -224,30 +225,37 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.2.5,Common Anatolian to Palaic,Palaic-e_2,index_diachronica_original.html:5163, / posttonic, / sporadic ; posttonic
 17.2.5,Common Anatolian to Palaic,Palaic-a-e,index_diachronica_original.html:5165, / in , / 
 17.3.1,Proto-Indo-European to Artsakh Armenian,"Artsakh-Armenian-i,u",index_diachronica_original.html:5188, / in some , / sporadic ; in some 
+17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-e-oj-ɛa,index_diachronica_original.html:5189, / when unstressed, / [-stress]
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-VN,index_diachronica_original.html:5208,→ (?),
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-VN,index_diachronica_original.html:5208,", in polysyllables", ; in polysyllables
 17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-N_2,index_diachronica_original.html:5209,", in monosyllables", / sporadic ; in monosyllables
 17.3.2,Proto-Indo-European to Erevan Armenian,"Erevan-Armenian-i,u",index_diachronica_original.html:5225, / in some , / sporadic ; in some 
+17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-e-oj-ɛa,index_diachronica_original.html:5226, / when unstressed, / [-stress]
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-VN,index_diachronica_original.html:5245,→ (?),
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-VN,index_diachronica_original.html:5245,", in polysyllables", ; in polysyllables
 17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-N_2,index_diachronica_original.html:5246,", in monosyllables", / sporadic ; in monosyllables
 17.3.3,Proto-Indo-European to Istanbul Armenian,"Istanbul-Armenian-i,u",index_diachronica_original.html:5262, / in some , / sporadic ; in some 
+17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-e-oj-ɛa,index_diachronica_original.html:5263, / when unstressed, / [-stress]
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-VN,index_diachronica_original.html:5282,→ (?),
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-VN,index_diachronica_original.html:5282,", in polysyllables", ; in polysyllables
 17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-N_2,index_diachronica_original.html:5283,", in monosyllables", / sporadic ; in monosyllables
 17.3.4,Proto-Indo-European to Kharpert Armenian,"Kharpert-Armenian-i,u",index_diachronica_original.html:5299, / in some , / sporadic ; in some 
+17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-e-oj-ɛa,index_diachronica_original.html:5300, / when unstressed, / [-stress]
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-VN,index_diachronica_original.html:5319,→ (?),
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-VN,index_diachronica_original.html:5319,", in polysyllables", ; in polysyllables
 17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-N_2,index_diachronica_original.html:5320,", in monosyllables", / sporadic ; in monosyllables
 17.3.5,Proto-Indo-European to Sebastia Armenian,"Sebastia-Armenian-i,u",index_diachronica_original.html:5336, / in some , / sporadic ; in some 
+17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-e-oj-ɛa,index_diachronica_original.html:5337, / when unstressed, / [-stress]
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-VN,index_diachronica_original.html:5355,→ (?),
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-VN,index_diachronica_original.html:5355,", in polysyllables", ; in polysyllables
 17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-N_2,index_diachronica_original.html:5356,", in monosyllables", / sporadic ; in monosyllables
 17.3.6,Proto-Indo-European to Southeast Armenian,"Southeast-Armenian-i,u",index_diachronica_original.html:5372, / in some , / sporadic ; in some 
+17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-e-oj-ɛa,index_diachronica_original.html:5373, / when unstressed, / [-stress]
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-VN,index_diachronica_original.html:5394,→ (?),
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-VN,index_diachronica_original.html:5394,", in polysyllables", ; in polysyllables
 17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-N_2,index_diachronica_original.html:5395,", in monosyllables", / sporadic ; in monosyllables
 17.3.7,Proto-Indo-European to Southwest Armenian,"Southwest-Armenian-i,u",index_diachronica_original.html:5411, / in some , / sporadic ; in some 
+17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-e-oj-ɛa,index_diachronica_original.html:5412, / when unstressed, / [-stress]
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-VN,index_diachronica_original.html:5432,→ (?),
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-VN,index_diachronica_original.html:5432,", in polysyllables", ; in polysyllables
 17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-N_2,index_diachronica_original.html:5433,", in monosyllables", / sporadic ; in monosyllables
@@ -265,6 +273,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.5.1,Proto-Indo-European to Old Irish,Old-Irish-V_3,index_diachronica_original.html:5570, / unstressed, / [-stress]
 17.5.2,Proto-Celtic to Middle Welsh,Middle-Welsh-V,index_diachronica_original.html:5581,", also in proclitics"," ; , also in proclitics"
 17.5.2,Proto-Celtic to Middle Welsh,Middle-Welsh-V_4,index_diachronica_original.html:5599, / intertonic, / %[+str]_%[+str]
+17.5.2,Proto-Celtic to Middle Welsh,Middle-Welsh-ɔː,index_diachronica_original.html:5606, / when stressed, / [+stress]
 17.6,Proto-Indo-European to Dacian,Dacian-e,index_diachronica_original.html:5618, / in , / 
 17.6,Proto-Indo-European to Dacian,Dacian-e_2,index_diachronica_original.html:5619, / in , / 
 17.6,Proto-Indo-European to Dacian,Dacian-ei,index_diachronica_original.html:5622, (“, ; (“
@@ -386,6 +395,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.12.1.1,Proto-Indo-European to Latin,Latin-l_2,index_diachronica_original.html:7311, “(, ; “(
 17.12.1.1,Proto-Indo-European to Latin,Latin-Vː_3,index_diachronica_original.html:7314, “(, ; “(
 17.12.1.1.1,Classical Latin vs. Vulgar Latin,Classical-Latin-vs.-Vulgar-Latin-m,index_diachronica_original.html:7331, “(, ; “(
+17.12.1.1.1,Classical Latin vs. Vulgar Latin,Classical-Latin-vs.-Vulgar-Latin-ɛ-ɔ,index_diachronica_original.html:7335, / when unstressed, / [-stress]
 17.12.1.1.2,Latin to Catalan,Catalan-u,index_diachronica_original.html:7350, / (\(“when in unstressed penult), / sporadic ; \1
 17.12.1.1.2,Latin to Catalan,Catalan-u,index_diachronica_original.html:7350, (“, ; (“
 17.12.1.1.2,Latin to Catalan,Catalan-iː,index_diachronica_original.html:7351, / stressed, / [+stress]
@@ -537,6 +547,9 @@ section_index,section_name,rule_id,source,from_text,to_text
 30.1.2,Pre-Proto-Bantu to Proto-Manenguba,"Proto-Manenguba-p-t-’t-’d,d2-c-k-’k",index_diachronica_original.html:10543, / in , / 
 30.1.2,Pre-Proto-Bantu to Proto-Manenguba,"Proto-Manenguba-’m-m-’n-n-’ɲ,ɲ-ŋ",index_diachronica_original.html:10544, / in , / 
 30.2.1,Proto-Potou-Akanic to Proto-Akanic,Proto-Akanic-V+high-+ATRCV+high-ATR,index_diachronica_original.html:10564,ATR,atr
+31.1,Proto-Nyulnyulan to Bardi,Bardi-aji,index_diachronica_original.html:10740, / when unstressed, / [-stress]
+31.1,Proto-Nyulnyulan to Bardi,Bardi-ubu-aba,index_diachronica_original.html:10747, / when stressed, / [+stress]
+31.1,Proto-Nyulnyulan to Bardi,Bardi-V,index_diachronica_original.html:10754, / when stressed, / [+stress]
 32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-e_3,index_diachronica_original.html:10804, / in , / 
 32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-ẽ_3,index_diachronica_original.html:10807, / in , / 
 32.1.2,Proto-Chatino to Tataltepec Chatino,Tataltepec-Chatino-ɛ_3,index_diachronica_original.html:10830,", in monosyllables", / sporadic ; in monosyllables
@@ -586,6 +599,8 @@ section_index,section_name,rule_id,source,from_text,to_text
 37.1.2.4.2,Proto-Mohawk-Oneida to Oneida,Oneida-Vː,index_diachronica_original.html:12601, (“, ; (“
 37.1.2.5,Proto-Northern Iroquoian to Seneca,Seneca-aː_2,index_diachronica_original.html:12656, (/|!) (near|adjacent to) a nasal vowel, \1 \2 V[+nasal]
 37.1.2.6,Proto-Northern Iroquoian to Tuscarora,Tuscarora-”V_2,index_diachronica_original.html:12687, (“, ; (“
+37.1.2.6,Proto-Northern Iroquoian to Tuscarora,Tuscarora-ə̃ː,index_diachronica_original.html:12707, ! “when both short and stressed”," ! [-long, +stress]"
+37.1.2.6,Proto-Northern Iroquoian to Tuscarora,Tuscarora-aː-oː,index_diachronica_original.html:12708, ! “when both short and unstressed”," ! [-long, -stress]"
 37.1.2.6.2,Tuscarora to Eastern Tuscarora,Eastern-Tuscarora-ə̃ː-aː-oː,index_diachronica_original.html:12724, (“, ; (“
 37.2.1,Proto-Siouan to Catawba,Catawba-p_2,index_diachronica_original.html:12744, (*), ; (*)
 37.2.1,Proto-Siouan to Catawba,Catawba-tʲ,index_diachronica_original.html:12745, / in , / 

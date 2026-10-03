@@ -11516,7 +11516,7 @@ sections:
   - stages:
     - aCV[+ high]
     - ɪ
-    env: _ when stressed unless primarily stressed
+    env: '[+stress] unless primarily stressed'
     raw: aCV[+ high] → ɪ / when stressed unless primarily stressed
     source: index_diachronica_original.html:3179
     rule_id: Mwotlap-aCV+-high
@@ -21249,7 +21249,7 @@ sections:
   - stages:
     - e oj ɛa
     - i u ɛ
-    env: _ when unstressed
+    env: '[-stress]'
     raw: e oj ɛa → i u ɛ / when unstressed
     source: index_diachronica_original.html:5189
     rule_id: Artsakh-Armenian-e-oj-ɛa
@@ -21478,7 +21478,7 @@ sections:
   - stages:
     - e oj ɛa
     - i u ɛ
-    env: _ when unstressed
+    env: '[-stress]'
     raw: e oj ɛa → i u ɛ / when unstressed
     source: index_diachronica_original.html:5226
     rule_id: Erevan-Armenian-e-oj-ɛa
@@ -21707,7 +21707,7 @@ sections:
   - stages:
     - e oj ɛa
     - i u ɛ
-    env: _ when unstressed
+    env: '[-stress]'
     raw: e oj ɛa → i u ɛ / when unstressed
     source: index_diachronica_original.html:5263
     rule_id: Istanbul-Armenian-e-oj-ɛa
@@ -21935,7 +21935,7 @@ sections:
   - stages:
     - e oj ɛa
     - i u ɛ
-    env: _ when unstressed
+    env: '[-stress]'
     raw: e oj ɛa → i u ɛ / when unstressed
     source: index_diachronica_original.html:5300
     rule_id: Kharpert-Armenian-e-oj-ɛa
@@ -22164,7 +22164,7 @@ sections:
   - stages:
     - e oj ɛa
     - i u ɛ
-    env: _ when unstressed
+    env: '[-stress]'
     raw: e oj ɛa → i u ɛ / when unstressed
     source: index_diachronica_original.html:5337
     rule_id: Sebastia-Armenian-e-oj-ɛa
@@ -22387,7 +22387,7 @@ sections:
   - stages:
     - e oj ɛa
     - i u ɛ
-    env: _ when unstressed
+    env: '[-stress]'
     raw: e oj ɛa → i u ɛ / when unstressed
     source: index_diachronica_original.html:5373
     rule_id: Southeast-Armenian-e-oj-ɛa
@@ -22630,7 +22630,7 @@ sections:
   - stages:
     - e oj ɛa
     - i u ɛ
-    env: _ when unstressed
+    env: '[-stress]'
     raw: e oj ɛa → i u ɛ / when unstressed
     source: index_diachronica_original.html:5412
     rule_id: Southwest-Armenian-e-oj-ɛa
@@ -23778,9 +23778,9 @@ sections:
     source: index_diachronica_original.html:5605
     rule_id: Middle-Welsh-ɛː
   - stages:
-    - ɔː
+    - ɔː:[+stress]
     - au
-    env: _ when stressed
+    env: '[+stress]'
     raw: ɔː → au / when stressed
     source: index_diachronica_original.html:5606
     rule_id: Middle-Welsh-ɔː
@@ -34167,7 +34167,7 @@ sections:
   - stages:
     - ɛ ɔ
     - e o
-    env: _ when unstressed
+    env: '[-stress]'
     raw: ɛ ɔ → e o / when unstressed
     source: index_diachronica_original.html:7335
     rule_id: Classical-Latin-vs.-Vulgar-Latin-ɛ-ɔ
@@ -50143,9 +50143,9 @@ sections:
     source: index_diachronica_original.html:10739
     rule_id: Bardi-awu
   - stages:
-    - aji
+    - aji:[-stress]
     - iː
-    env: _ when unstressed
+    env: '[-stress]'
     raw: aji → iː / when unstressed
     source: index_diachronica_original.html:10740
     rule_id: Bardi-aji
@@ -50194,7 +50194,7 @@ sections:
   - stages:
     - ubu aba
     - uː aː
-    env: _ when stressed
+    env: '[+stress]'
     raw: ubu aba → uː aː / when stressed
     source: index_diachronica_original.html:10747
     rule_id: Bardi-ubu-aba
@@ -50234,9 +50234,9 @@ sections:
     comment: (with some exceptions)
     rule_id: Bardi-V0
   - stages:
-    - V
+    - V:[+stress]
     - Vː
-    env: _ when stressed
+    env: '[+stress]'
     raw: V → Vː / when stressed ?
     source: index_diachronica_original.html:10754
     comment: '?'
@@ -60087,16 +60087,16 @@ sections:
   - stages:
     - ə̃(ː)
     - ɨ̃(ː)
+    exception: '[-long, +stress]'
     raw: ə̃(ː) → ɨ̃(ː) / ! “when both short and stressed”
     source: index_diachronica_original.html:12707
-    comment: “when both short and stressed”
     rule_id: Tuscarora-ə̃ː
   - stages:
     - a(ː) o(ː)
     - ɔ(ː) u(ː)
+    exception: '[-long, -stress]'
     raw: a(ː) o(ː) → ɔ(ː) u(ː) / ! “when both short and unstressed”
     source: index_diachronica_original.html:12708
-    comment: “when both short and unstressed”
     rule_id: Tuscarora-aː-oː
   - stages:
     - t k(ʷ)

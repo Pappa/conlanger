@@ -3,6 +3,7 @@ section_index,rule_id,error_token,rule
 12.1,"Proto-Abazgi-pʷ,pʲ-pʲː,bˤ-bʷ-pʷʲ-bʷʲ",ː,"{pʷ,pʲ} {pː,pʲː,b:[-atr,+rtr]} bʷ pʷʲ bʷʲ > p b f tsʲ dzʲ | ^ @ Rule 1, Line 1"
 12.3,Ubykh-tʷː-tʷʲʼ,ː,"{tː,tʷː} tʷʲ:[+cg] > {t,tʷ} tʷ:[+cg] | ^ @ Rule 1, Line 1"
 12.3,Ubykh-tsʲː-tsʷː-dzʲ,ː,"{tsː,tsʲː} tsʷ:[+long] dzʲ > ts tsʷ dz | ^ @ Rule 1, Line 1"
+17.5.2,Middle-Welsh-ɔː,ː,"ɔː:[+stress] > au / _ | ^ @ Rule 1, Line 1"
 17.7.4,Vandalic-eː,ː,"eː:[-stress] > i / _ | ^ @ Rule 1, Line 1"
 17.12.1.1.2,Catalan-iː,ː,"iː:[+stress] > i / _ | ^ @ Rule 1, Line 1"
 17.12.1.1.2,Catalan-uː,ː,"uː:[+stress] > u / _ | ^ @ Rule 1, Line 1"
