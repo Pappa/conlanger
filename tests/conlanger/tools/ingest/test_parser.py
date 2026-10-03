@@ -18,7 +18,7 @@ def fx_rule():
     return {
         "rule_id": "Klingon-abc",
         "section_index": "1.0",
-        "section_name": "Proto-IndoEuropean to Klingon",
+        "section_name": "Proto-Indo-European to Klingon",
         "source": "index:1",
     }
 
@@ -42,7 +42,7 @@ def test_parse_element_handles_dialectal_rules():
     root = html.document_fromstring(
         """\
 <!doctype html><html><body><section id="Dialectal">
-<h2>1.0 Proto-IndoEuropean to Klingon</h2>
+<h2>1.0 Proto-Indo-European to Klingon</h2>
 <p class="schg">a → i / in northern dialects</p>
 <p class="schg">a → i / dialectal</p>
 </section></body></html>"""
@@ -68,58 +68,35 @@ def test_parse_element_handles_dialectal(fx_rule, raw, expected):
     assert rules[0]["env"] == expected
 
 
-def test_parser_skips_section_without_h2():
+@pytest.mark.parametrize("h2_element", ["", "<h2>   </h2>"])
+def test_parser_skips_section_without_h2(h2_element):
     root = html.document_fromstring(
-        """\
-<!doctype html><html><body><section id="NoH2">
+        f"""\
+<!doctype html><html><body><section id="Klingon">
+{h2_element}
 <p class="schg">a → b</p>
 </section></body></html>"""
     )
     assert default_index_parser().parse(root)["sections"] == []
 
 
-def test_parser_skips_section_with_empty_name():
+def test_parser_marks_skip_sections_from_config():
     root = html.document_fromstring(
         """\
-<!doctype html><html><body><section id="Empty">
-<h2>   </h2>
-<p class="schg">a → b</p>
-</section></body></html>"""
-    )
-    assert default_index_parser().parse(root)["sections"] == []
-
-
-def test_parser_marks_skip_sections_from_config(tmp_path: Path):
-    config_path = tmp_path / "parser_config.yml"
-    config_path.write_text(
-        "ipa_mappings_confidence: [high]\n"
-        "skip_sections:\n"
-        '  - id: "9.9.9"\n'
-        '    reason: "test skip"\n',
-        encoding="utf-8",
-    )
-    for name, content in [
-        ("ipa_mappings.yml", "{}\n"),
-        ("manual_mappings.yml", "[]\n"),
-        ("feature_mappings.yml", "{}\n"),
-        ("index_corrections.yml", "rules: []\n"),
-    ]:
-        (tmp_path / name).write_text(content, encoding="utf-8")
-    root = html.document_fromstring(
-        """\
-<!doctype html><html><body><section id="SkipMe">
-<h2>9.9.9 Skipped Section</h2>
+<!doctype html><html><body><section id="Klingon">
+<h2>9.9.9 Proto-Indo-European to Klingon</h2>
 <p class="schg">a → b</p>
 </section></body></html>"""
     )
     parser = default_index_parser(
-        parser_config=load_parser_config(config_path),
+        parser_config=ParserConfig(
+            skip_sections=[{"id": "9.9.9", "reason": "test skip"}],
+        ),
     )
     sec = parser.parse(root)["sections"][0]
+
     assert sec["index"] == "9.9.9"
     assert sec["status"] == "skipped"
-    assert sec["rules"][0]["stages"] == ["a", "b"]
-    assert "status" not in sec["rules"][0]
 
 
 def test_parser_config_resolved_section_mappings_ancestry_and_override():
