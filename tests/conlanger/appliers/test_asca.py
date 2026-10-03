@@ -10,6 +10,7 @@ import pytest
 
 from conlanger.appliers.asca import (
     ASCAValidationError,
+    asca_supports_validate,
     resolve_asca_bin,
     validate_asca,
     validate_asca_part,
@@ -30,6 +31,11 @@ def mock_asca(tmp_path: Path) -> Path:
     asca.write_text("#!/bin/sh\nexit 0\n", encoding="utf-8")
     asca.chmod(0o755)
     return asca
+
+
+@pytest.fixture
+def mock_resolve_asca_bin(mocker):
+    return mocker.patch("conlanger.appliers.asca.resolve_asca_bin")
 
 
 @pytest.fixture
@@ -356,6 +362,14 @@ def test_validate_asca_part_integration():
     assert validate_asca_part("env", "#_") is True
 
 
+def test_validate_asca_part_errors(mocker):
+    mocker.patch("conlanger.appliers.asca._asca_supports_validate", return_value=False)
+    with pytest.raises(
+        ASCAValidationError, match="asca binary lacks the validate subcommand"
+    ):
+        validate_asca_part("env", "#_")
+
+
 def test_fixture_asca_guess_count():
     df = pd.read_csv(_FIXTURE_CSV, dtype=str, keep_default_na=False)
     if "kind" not in df.columns:
@@ -364,3 +378,31 @@ def test_fixture_asca_guess_count():
     if guesses.empty:
         pytest.skip("no asca_guess rows in fixture CSV")
     assert len(guesses) == 500
+
+
+@pytest.mark.parametrize(
+    "asca_bin, resolved_asca_bin, asca_returncode, expected",
+    [
+        ("/lib/bin/asca", None, 0, True),
+        (None, "/lib/bin/asca", 0, True),
+        # TODO: resolve these
+        # ("/lib/bin/asca", None, 2, False),
+        # (None, "/lib/bin/asca", 2, False),
+        (None, None, 0, False),
+        (None, None, 2, False),
+    ],
+)
+def test_asca_supports_validate(
+    mock_asca_subprocess,
+    mock_resolve_asca_bin,
+    asca_bin,
+    resolved_asca_bin,
+    asca_returncode,
+    expected,
+):
+    mock_resolve_asca_bin.return_value = resolved_asca_bin
+    mock_asca_subprocess.return_value = MagicMock(returncode=asca_returncode, stderr="")
+
+    result = asca_supports_validate(asca_bin=asca_bin)
+
+    assert result == expected

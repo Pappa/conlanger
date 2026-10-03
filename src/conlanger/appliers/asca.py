@@ -62,7 +62,7 @@ def _asca_supports_validate(asca_bin: str) -> bool:
 
 
 def _require_asca_bin(*, asca_bin: str | None = None) -> str:
-    asca = asca_bin if asca_bin is not None else resolve_asca_bin()
+    asca = asca_bin or resolve_asca_bin()
     if asca is None:
         raise ASCAValidationError(
             "asca binary not found (set ASCA_BIN or install asca 0.10.x on PATH)"
@@ -133,7 +133,7 @@ def _run_asca_command(
 
 def asca_supports_validate(*, asca_bin: str | None = None) -> bool:
     """Return True when the asca binary exposes ``validate``."""
-    asca = asca_bin if asca_bin is not None else resolve_asca_bin()
+    asca = asca_bin or resolve_asca_bin()
     if asca is None:
         return False
     return _asca_supports_validate(asca)
