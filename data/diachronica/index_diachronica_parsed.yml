@@ -11516,7 +11516,7 @@ sections:
   - stages:
     - aCV[+ high]
     - ɪ
-    env: '[+stress] unless primarily stressed'
+    env: '[-stress, +secondary stress]'
     raw: aCV[+ high] → ɪ / when stressed unless primarily stressed
     source: index_diachronica_original.html:3179
     rule_id: Mwotlap-aCV+-high

@@ -88,6 +88,8 @@
   to: " / [+stress]"
 - from: " / when unstressed"
   to: " / [-stress]"
+- from: " / when stressed unless primarily stressed"
+  to: " / [-stress, +secondary stress]"
 - from: " / when stressed"
   to: " / [+stress]"
 - from: " / if short and unstressed"

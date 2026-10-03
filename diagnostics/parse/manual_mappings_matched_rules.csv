@@ -133,7 +133,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 10.3.2,Proto-Oceanic to Hiw,Hiw-”V+-higher,index_diachronica_original.html:3118,high(er),hi
 10.3.3,Proto-Oceanic to Lemerig,Lemerig-ia,index_diachronica_original.html:3154, “(, ; “(
 10.3.4,Proto-Oceanic to Mwotlap,Mwotlap-s,index_diachronica_original.html:3170, “(, ; “(
-10.3.4,Proto-Oceanic to Mwotlap,Mwotlap-aCV+-high,index_diachronica_original.html:3179, / when stressed, / [+stress]
+10.3.4,Proto-Oceanic to Mwotlap,Mwotlap-aCV+-high,index_diachronica_original.html:3179, / when stressed unless primarily stressed," / [-stress, +secondary stress]"
 10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-ONV,index_diachronica_original.html:3236, (Pije and Fwai), in \1 dialects
 10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-ONV,index_diachronica_original.html:3236,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 10.3.5.3,Proto-New Caledonia to Nemi-Pije-Fwai,Nemi-Pije-Fwai-ONV,index_diachronica_original.html:3236,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
