@@ -199,6 +199,7 @@ class IndexDiachronicaParser:
                 rule_id=rule_id or None,
             )
             return [quoted.to_index_dict()]
+
         working, rule_comment = split_semicolon_comment(working)
         normalized = normalize_symbols(working)
         parts = extract_rule_parts(normalized)
