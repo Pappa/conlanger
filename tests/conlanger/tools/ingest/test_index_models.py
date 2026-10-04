@@ -8,11 +8,7 @@ import pandas as pd
 import pytest
 import yaml
 
-from conlanger.tools.ingest.index_models import (
-    IndexContext,
-    IndexRule,
-    wire_serialize_env_exception,
-)
+from conlanger.tools.ingest.index_models import IndexContext, IndexRule
 
 _SAMPLED_RULES_CSV = (
     Path(__file__).resolve().parents[3] / "fixtures" / "sound_change_rules.csv"
@@ -25,9 +21,9 @@ def _update_model_fields(raw: str) -> dict:
         "stages": rule.stages,
     }
     if rule.env is not None:
-        out["env"] = wire_serialize_env_exception(rule.env)
+        out["env"] = rule.env.model_dump(mode="python")
     if rule.exception is not None:
-        out["exception"] = wire_serialize_env_exception(rule.exception)
+        out["exception"] = rule.exception.model_dump(mode="python")
     if rule.comment is not None:
         out["comment"] = rule.comment
     return out

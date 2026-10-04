@@ -10,8 +10,9 @@ from pydantic import (
     ConfigDict,
     Field,
     PrivateAttr,
-    field_serializer,
     field_validator,
+    model_serializer,
+    SerializerFunctionWrapHandler,
 )
 
 from conlanger.utils.gloss import apply_dialects_to_context
@@ -51,12 +52,13 @@ class IndexContext(BaseModel):
     position: dict[str, PositionValue] | None = None
     dialect: DialectValue | None = None
 
-
-def wire_serialize_env_exception(ctx: IndexContext) -> str | dict[str, Any]:
-    """YAML wire shape for ``env`` / ``exception`` (scalar context vs structured object)."""
-    if ctx.position is None and ctx.dialect is None:
-        return ctx.context or ""
-    return ctx.model_dump(exclude_none=True)
+    @model_serializer(mode="wrap")
+    def serialize_model(
+        self, handler: SerializerFunctionWrapHandler
+    ) -> str | dict[str, Any]:
+        if self.position is None and self.dialect is None:
+            return self.context or ""
+        return handler(self)
 
 
 def _coerce_env_exception_value(value: object) -> IndexContext | None:
@@ -140,14 +142,6 @@ class IndexRule(BaseModel):
     def coerce_structured_env_exception(cls, value: object) -> object:
         return _coerce_env_exception_value(value)
 
-    @field_serializer("env", "exception", when_used="json")
-    def serialize_env_exception_for_json(
-        self, value: IndexContext | None
-    ) -> str | dict[str, Any] | None:
-        if value is None:
-            return None
-        return wire_serialize_env_exception(value)
-
     def merge_comment(self, *fragments: str | None) -> Self:
         """Append prose fragments to optional ``comment``."""
         merged = join_rule_comment(self.comment, *fragments)
@@ -218,9 +212,4 @@ class IndexRule(BaseModel):
 
     def to_index_dict(self) -> dict[str, Any]:
         """Serialize for cleaned-index YAML (omit false defaults and nulls)."""
-        out = self.model_dump(exclude_none=True, mode="python")
-        if self.env is not None:
-            out["env"] = wire_serialize_env_exception(self.env)
-        if self.exception is not None:
-            out["exception"] = wire_serialize_env_exception(self.exception)
-        return out
+        return self.model_dump(exclude_none=True, mode="python")
