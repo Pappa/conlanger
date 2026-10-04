@@ -20,10 +20,24 @@ def fx_rule():
     }
 
 
+def prepare_parser(
+    fx_rule: dict | None = None,
+    *,
+    parser_config: ParserConfig | None = None,
+) -> IndexDiachronicaParser:
+    parser = IndexDiachronicaParser(parser_config=parser_config)
+    if fx_rule is not None:
+        parser.update_current_section(
+            fx_rule["section_index"],
+            fx_rule["section_name"],
+        )
+    return parser
+
+
 def test_parse_rule_string_medial_with_exception_env_normalized(fx_rule):
     raw = "b → h / medially, ! r_"
-    parser = IndexDiachronicaParser()
-    rules = parser.parse_rule_string(**fx_rule, raw=raw)
+    parser = prepare_parser(fx_rule)
+    rules = parser.parse_rule_string(fx_rule["rule_id"], fx_rule["source"], raw)
     assert rules[0] == {
         "raw": raw,
         "rule_id": fx_rule["rule_id"],
@@ -62,8 +76,8 @@ def test_parse_element_handles_dialectal_rules():
     ],
 )
 def test_parse_element_handles_dialectal(fx_rule, raw, expected):
-    parser = IndexDiachronicaParser()
-    rules = parser.parse_rule_string(**fx_rule, raw=raw)
+    parser = prepare_parser(fx_rule)
+    rules = parser.parse_rule_string(fx_rule["rule_id"], fx_rule["source"], raw)
     assert rules[0]["env"] == expected
 
 
@@ -124,9 +138,8 @@ def test_parse_order_correction_then_section_then_manual(fx_rule):
             ManualMapping(from_text="D → mapped", to_text="D → manual"),
         ],
     )
-    parser = IndexDiachronicaParser(parser_config=config)
-    parser.update_current_section(fx_rule["section_index"], fx_rule["section_name"])
-    rules = parser.parse_rule_string(**fx_rule, raw=raw)
+    parser = prepare_parser(fx_rule, parser_config=config)
+    rules = parser.parse_rule_string(fx_rule["rule_id"], fx_rule["source"], raw)
     assert rules[0]["raw"] == raw
     assert rules[0]["stages"] == ["D", "manual"]
 
@@ -164,11 +177,11 @@ def test_index_diachronica_parser_accepts_custom_parser_config(fx_rule):
             IpaMapping(index_feature="é", ipa_target="e", confidence="high"),
         ),
     )
-    parser = IndexDiachronicaParser(parser_config=config)
+    parser = prepare_parser(fx_rule, parser_config=config)
 
     raw = "é → è / _#"
 
-    rules = parser.parse_rule_string(**fx_rule, raw=raw)
+    rules = parser.parse_rule_string(fx_rule["rule_id"], fx_rule["source"], raw)
 
     assert rules == [
         {
@@ -214,8 +227,8 @@ def test_index_diachronica_parser_accepts_custom_parser_config(fx_rule):
     ],
 )
 def test_parse_rule_string_apply_dialects_to_context(fx_rule, raw, expected):
-    parser = IndexDiachronicaParser()
-    rules = parser.parse_rule_string(**fx_rule, raw=raw)
+    parser = prepare_parser(fx_rule)
+    rules = parser.parse_rule_string(fx_rule["rule_id"], fx_rule["source"], raw)
 
     assert rules[0] == {
         "raw": raw,
@@ -227,8 +240,8 @@ def test_parse_rule_string_apply_dialects_to_context(fx_rule, raw, expected):
 
 
 def test_parse_rule_string_without_manual_row_unchanged(fx_rule):
-    parser = IndexDiachronicaParser()
-    rules = parser.parse_rule_string(**fx_rule, raw="a → b")
+    parser = prepare_parser(fx_rule)
+    rules = parser.parse_rule_string(fx_rule["rule_id"], fx_rule["source"], "a → b")
     assert rules[0]["stages"] == ["a", "b"]
     assert parser.manual_mapping_matches == []
     assert parser.unmatched_manual_mappings == []
@@ -242,8 +255,8 @@ def test_parse_rule_string_manual_mappings_matches_and_unmatched(fx_rule):
         ManualMapping(from_text="never-hits", to_text="x", reason="unused"),
     ]
     config = ParserConfig(manual_mappings=manual_mappings)
-    parser = IndexDiachronicaParser(parser_config=config)
-    rules = parser.parse_rule_string(**fx_rule, raw=broken)
+    parser = prepare_parser(fx_rule, parser_config=config)
+    rules = parser.parse_rule_string(fx_rule["rule_id"], fx_rule["source"], broken)
 
     assert rules == [
         {
@@ -263,8 +276,8 @@ def test_parse_rule_string_manual_mappings_matches_and_unmatched(fx_rule):
 
 def test_unmatched_corrections(fx_rule):
     config = ParserConfig(corrections={"Klingon-abc": "x → y", "Klingon-def": "x → y"})
-    parser = IndexDiachronicaParser(parser_config=config)
-    parser.parse_rule_string(**fx_rule)
+    parser = prepare_parser(fx_rule, parser_config=config)
+    parser.parse_rule_string(fx_rule["rule_id"], fx_rule["source"])
     assert parser.unmatched_corrections == ["Klingon-def"]
 
 
@@ -278,11 +291,8 @@ def test_unmatched_corrections(fx_rule):
     ],
 )
 def test_parse_rule_string_comment(fx_rule, raw, expected):
-    parser = IndexDiachronicaParser()
-    rules = parser.parse_rule_string(
-        **fx_rule,
-        raw=raw,
-    )
+    parser = prepare_parser(fx_rule)
+    rules = parser.parse_rule_string(fx_rule["rule_id"], fx_rule["source"], raw)
     assert rules == [
         {
             "raw": raw,

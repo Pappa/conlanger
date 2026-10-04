@@ -140,21 +140,17 @@ class IndexDiachronicaParser:
         el,
         *,
         source_file: str = "index",
-        section_index: str = "",
-        section_name: str = "",
         rule_id: str = "",
     ) -> list[dict[str, Any]]:
         line = getattr(el, "sourceline", None) or 0
         source = f"{source_file}:{line}"
         raw = extract_element_text(el)
 
-        return self.parse_rule_string(rule_id, section_index, section_name, source, raw)
+        return self.parse_rule_string(rule_id, source, raw)
 
     def parse_rule_string(
         self,
         rule_id: str | None,
-        section_index: str,
-        section_name: str,
         source: str,
         raw: str = "",
     ) -> dict[str, Any]:
@@ -183,8 +179,8 @@ class IndexDiachronicaParser:
             self._matched_manual_froms.add(hit.from_text)
             self._manual_mapping_matches.append(
                 ManualMappingMatch(
-                    section_index=section_index,
-                    section_name=section_name,
+                    section_index=self._current_section_index,
+                    section_name=self._current_section_name,
                     rule_id=rule_id,
                     source=source,
                     from_text=hit.from_text,
@@ -274,8 +270,6 @@ class IndexDiachronicaParser:
                         self.parse_rule_element(
                             p,
                             source_file=source_file,
-                            section_index=index,
-                            section_name=name,
                             rule_id=rule_id,
                         )
                     )
