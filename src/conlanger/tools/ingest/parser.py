@@ -107,6 +107,7 @@ class IndexDiachronicaParser:
         self._current_section_index = ""
         self._current_section_name = ""
         self._current_section_mappings: dict[str, str] = {}
+        self._source_file = "index"
 
     def update_current_section(self, index: str, name: str) -> None:
         self._current_section_index = index
@@ -139,11 +140,10 @@ class IndexDiachronicaParser:
         self,
         el,
         *,
-        source_file: str = "index",
         rule_id: str = "",
     ) -> list[dict[str, Any]]:
         line = getattr(el, "sourceline", None) or 0
-        source = f"{source_file}:{line}"
+        source = f"{self._source_file}:{line}"
         raw = extract_element_text(el)
 
         return self.parse_rule_string(rule_id, source, raw)
@@ -239,6 +239,7 @@ class IndexDiachronicaParser:
         source_file: str = "index",
     ) -> dict[str, Any]:
         """Parse a loaded Index Diachronica HTML tree into ``{sections: [...]}``."""
+        self._source_file = source_file
         self._manual_mapping_matches = []
         self._matched_manual_froms = set()
         self._matched_correction_ids = set()
@@ -269,7 +270,6 @@ class IndexDiachronicaParser:
                     rules.extend(
                         self.parse_rule_element(
                             p,
-                            source_file=source_file,
                             rule_id=rule_id,
                         )
                     )
