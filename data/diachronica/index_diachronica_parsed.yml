@@ -37135,11 +37135,12 @@ sections:
   - stages:
     - V
     - ∅
-    env: ', though /a/ often remainedprobably /ə/'
     raw: — V → ∅ / “penult of paroxytones”, though /a/ often remained “as an indistinct
       e”, probably /ə/
     source: index_diachronica_original.html:7776
-    comment: “penult of paroxytones”; “as an indistinct e”,
+    comment: “penult of paroxytones”, though /a/ often remained “as an indistinct
+      e”, probably /ə/; sporadic
+    sporadic: true
     rule_id: Old-Provençal-—-V_4
   - stages:
     - CVK

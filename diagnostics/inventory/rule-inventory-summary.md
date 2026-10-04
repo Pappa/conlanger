@@ -6,8 +6,8 @@
 - Rows: **9841** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **9034** (91.8%)
-- Fail: **281** (2.9%)
+- OK: **9035** (91.8%)
+- Fail: **280** (2.8%)
 - Skipped: **526** (5.3%)
 
 
@@ -32,7 +32,7 @@ Skipped: **2/124**
 
 | count | failure_class |
 |------:|---------------|
-| 83 | `expected_underscore` |
+| 82 | `expected_underscore` |
 | 32 | `expected_ipa` |
 | 24 | `unknown_character` |
 | 22 | `missing_slash_output_env` |
@@ -141,8 +141,8 @@ Skipped: **2/124**
 
 | count | error_token |
 |------:|-------------|
-| 9 | `,` |
 | 8 | `//` |
+| 8 | `,` |
 | 3 | `/` |
 | 2 | `:` |
 | 2 | `∅` |

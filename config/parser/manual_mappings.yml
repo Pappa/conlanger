@@ -203,6 +203,7 @@
     - " / (“\\[b\\]etween the last two vowels of a proparoxytone”)"
     - ", (except in certain)"
     - ", (in the feminine ending)"
+    - " / (“penult of )"
   to: " / sporadic ; \\1"
   use_regex: True
   reason: sporadic environment
@@ -290,6 +291,7 @@
   to: " ; sporadic ! some monosyllables"
 - from: ", often"
   to: " ; sporadic - often"
+
 #endregion
 
 #region comment handling

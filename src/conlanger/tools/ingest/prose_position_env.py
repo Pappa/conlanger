@@ -40,6 +40,7 @@ _TRAILING_POSITION_QUALIFIER_RE = re.compile(
     r"^(?P<env>.+?),\s*in\s+(?P<qual>monosyllables?|polysyllables?|nouns)\s*$",
     re.IGNORECASE,
 )
+_DIALECTS_RE = re.compile(r"^in\s+([\w\s]+)\s+dialects$", re.IGNORECASE)
 
 
 def strip_trailing_position_qualifiers(text: str) -> tuple[str, list[str]]:
@@ -111,6 +112,7 @@ def apply_prose_position_env_conditions(parts: dict[str, Any]) -> dict[str, Any]
         env = qualifier_env
         comment_fragments.extend(qualifier_captures)
 
+    # TODO: handle "in xxx dialects" here
     if result.get("exception"):
         if env != result.get("env"):
             result["env"] = env
