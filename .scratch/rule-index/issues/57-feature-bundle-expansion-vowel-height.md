@@ -10,7 +10,7 @@ Grilled 2026-08-08; unblocks [Correction pass: unknown_feature place bundles](54
 
 ## Problem
 
-Two Kenyah rules (§10.2.6.2.1) fail because ASCA does not accept Index compounds `[+close-mid]` / `[+open-mid]` — it tokenises `close` / `open` as unknown features ([inventory error CSV](../inventory/rule-inventory-error.csv), `index_diachronica_original.html:3054–3055`).
+Two Kenyah rules (§10.2.6.2.1) fail because ASCA does not accept Index compounds `[+close-mid]` / `[+open-mid]` — it tokenises `close` / `open` as unknown features ([inventory error CSV](../inventory/rule-inventory-error.csv), `index_diachronica.html:3054–3055`).
 
 Phase 1 feature renames ([ticket 32](32-correction-pass-unknown-feature.md)) only support 1:1 swaps. Spike [29](29-spike-index-feature-matrices-to-asca-targets.md) scoped **`bundle`** for place labels (#54) but the same plumbing is needed here.
 
@@ -68,7 +68,7 @@ Baseline (pre-pass): **7132 / 9201** ok (77.5%); `unknown_feature` tokens `close
 After `mapping_kind=bundle` plumbing + vowel-height seed rows:
 
 - **7134 / 9201** ok (**77.5%**, **+2**)
-- Kenyah rules `index_diachronica_original.html:3054–3055` now **ok**
+- Kenyah rules `index_diachronica.html:3054–3055` now **ok**
 - `close` / `open` residual from `[+close-mid]` / `[+open-mid]`: **1 → 0** each
 
 **Code:** `bundle` added to `_SUPPORTED_FEATURE_MAPPING_KINDS`; `normalize_feature_matrices_in_field()` inserts literal `asca_target` feature lists (index polarity ignored — Q12 deferred). Seed rows in `data/asca/feature_mappings.csv`. Tests in `test_IndexDiachronicaParser.py`.

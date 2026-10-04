@@ -4,7 +4,7 @@ Question: if we flatten Index editorial nested `{…}` at ingest (`stages`, `env
 
 Throwaway code: [`flatten_nested_sets.py`](./flatten_nested_sets.py), [`nested_set_flatten_prototype.py`](./nested_set_flatten_prototype.py). Scan helpers: [`scan_nested_sets.py`](./scan_nested_sets.py) (`working_max_brace_depth`, `count_working_depth_ge2`). Per-rule table: [`nested-set-flatten-prototype.csv`](./nested-set-flatten-prototype.csv). Metrics dump: [`nested-set-flatten-prototype-metrics.json`](./nested-set-flatten-prototype-metrics.json).
 
-**Not merged to `main`.** Corpus YAML was loaded read-only; validation used in-memory rules + committed inventory as baseline. No writes to `data/diachronica/index_diachronica_parsed.yml` or `diagnostics/inventory/`.
+**Not merged to `main`.** Corpus YAML was loaded read-only; validation used in-memory rules + committed inventory as baseline. No writes to `data/diachronica/index_diachronica.yml` or `diagnostics/inventory/`.
 
 ---
 
@@ -27,7 +27,7 @@ Self-check (2026-08-19): `uv run python .scratch/rule-index/research/flatten_nes
 
 ## 2. Method (Phase A)
 
-1. Load [`data/diachronica/index_diachronica_parsed.yml`](../../../data/diachronica/index_diachronica_parsed.yml) (9201 index rules; [`nested-sets-scan.json`](./nested-sets-scan.json) `total_rules_scanned`).
+1. Load [`data/diachronica/index_diachronica.yml`](../../../data/diachronica/index_diachronica.yml) (9201 index rules; [`nested-sets-scan.json`](./nested-sets-scan.json) `total_rules_scanned`).
 2. Deep-copy; flatten `stages` / `env` / `exception` in memory (two modes).
 3. Re-validate every source that either changed or is currently `failure_class=nested_brackets` via `validate_index_rule` / `iter_validation_rows` path ([`index_inventory.py`](../../../src/conlanger/tools/index_inventory.py) `validate_index_rule`; group mappings `asca_group_mappings_dict()` as `create_index`). ASCA **0.10.2** (`asca --version`).
 4. Merge unchanged inventory rows from [`diagnostics/inventory/rule-inventory.csv`](../inventory/rule-inventory.csv). Unflattened rules cannot flip `ok`. Changelog flips are computed in memory against that CSV (`ok_flip_changelog_rows` match key `(source, alt_idx)`); **not** appended to the committed changelog.
@@ -89,14 +89,14 @@ Candidate slots from [`parse_rule_element`](../../../src/conlanger/tools/ingest/
 
 ### Else-rule evidence (required)
 
-**Complementary pair (flatten commutativity):** HTML [`index_diachronica_original.html:5509–5510`](../../../data/diachronica/index_diachronica_original.html) `m̩ n̩ → am an / _{s,({m,j,w)V}` then `m̩ n̩ → em en / else`. Parsed YAML already resolved else ([`index_diachronica_parsed.yml`](../../../data/diachronica/index_diachronica_parsed.yml) `:5510` `exception: _{s,({m,j,w})V}`). Fixture in `run_else_fixtures()`:
+**Complementary pair (flatten commutativity):** HTML [`index_diachronica.html:5509–5510`](../../../data/diachronica/index_diachronica.html) `m̩ n̩ → am an / _{s,({m,j,w)V}` then `m̩ n̩ → em en / else`. Parsed YAML already resolved else ([`index_diachronica.yml`](../../../data/diachronica/index_diachronica.yml) `:5510` `exception: _{s,({m,j,w})V}`). Fixture in `run_else_fixtures()`:
 
 - P3: flatten prev `env`, then `resolve_catch_all_else_rules` copies that string to else `exception`.
 - P4: copy nested `env` first, then flatten both fields.
 
 For `union_paren`, both slots yield `exception: _{s,mV,jV,wV}` (`exception_equal: true` in metrics JSON). Union-only leaves the nested form in both slots (also equal). **Copy ∘ flatten = flatten ∘ copy** for this else rewrite ([`section_policy.py`](../../../src/conlanger/tools/ingest/section_policy.py) assigns `resolved["exception"] = prev_env`).
 
-**Deferred else (does not copy nested exception):** `:1762` `aː → aa / W_ ! when _{C{C,ː},#}` then `:1763` `/ else` (HTML [lines 1762–1763](../../../data/diachronica/index_diachronica_original.html)). Prev has both `env` and `exception`, so else **keeps** `env: else` (YAML `:1763`; test `test_resolve_catch_all_else_deferred_prev_env_and_exception`). Flatten P3 vs P4 does not change that copy (there is none). Flattening `:1762` `exception` is independent and recovers `ok` in both modes (CSV).
+**Deferred else (does not copy nested exception):** `:1762` `aː → aa / W_ ! when _{C{C,ː},#}` then `:1763` `/ else` (HTML [lines 1762–1763](../../../data/diachronica/index_diachronica.html)). Prev has both `env` and `exception`, so else **keeps** `env: else` (YAML `:1763`; test `test_resolve_catch_all_else_deferred_prev_env_and_exception`). Flatten P3 vs P4 does not change that copy (there is none). Flattening `:1762` `exception` is independent and recovers `ok` in both modes (CSV).
 
 **Recommendation: P4.** Same validation numbers as Phase A; runs after series / medial / stress / feature / IPA; flattens else-derived `exception` even if a future section policy copies env after `parse_rule_element`. P3 is observationally equivalent for current else code; production can implement P4-only (idempotent if both are wired).
 

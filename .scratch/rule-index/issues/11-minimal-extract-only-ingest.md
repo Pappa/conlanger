@@ -30,11 +30,11 @@ None — can start immediately.
 - [x] **Symbol** normalization runs on index fields; `raw` preserves Index form byte-for-byte
 - [x] Ingest-time class-letter `maketrans` / `group_mappings` application removed from the parser path
 - [x] `tests/conlanger/tools/test_IndexDiachronicaParser.py` passes for `html_extract` fixture rows (field splitting and provenance)
-- [x] Regenerated YAML is git-diffable from `data/diachronica/index_diachronica_original.html`
+- [x] Regenerated YAML is git-diffable from `data/diachronica/index_diachronica.html`
 
 ## Answer
 
-Delivered via `IndexDiachronicaParser` (`src/conlanger/tools/parsers.py`) and `write_cleaned_index` (`src/conlanger/tools/index_io.py`). Output: `data/diachronica/index_diachronica_parsed.yml`.
+Delivered via `IndexDiachronicaParser` (`src/conlanger/tools/parsers.py`) and `write_cleaned_index` (`src/conlanger/tools/index_io.py`). Output: `data/diachronica/index_diachronica.yml`.
 
 Core ticket scope met: four rule parts + **Symbol** normalization; class letters and feature matrices deferred. Correction passes [14–25](14-correction-pass-unknown-grouping.md) later added parse-time class-first transforms (em dash, arrows, chain split, glosses, stress, `sporadic`) per ticket [13](13-correction-pass-template.md) — beyond the original “symbol-only” milestone but consistent with the edit ladder.
 

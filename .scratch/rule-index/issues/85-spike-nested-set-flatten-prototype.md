@@ -40,7 +40,7 @@ Run **two labelled modes** if cheap: **union-only** vs **union + parenthetical-i
 
 ### 2. Phase A — in-memory YAML prototype
 
-1. Load `data/diachronica/index_diachronica_parsed.yml`.
+1. Load `data/diachronica/index_diachronica.yml`.
 2. Apply flatten to `stages` / `env` / `exception` in memory (do not commit index YAML).
 3. Run full compile validation inventory (same path as `create_index` validation).
 4. Record before/after metrics (see deliverables).
@@ -57,7 +57,7 @@ Run **two labelled modes** if cheap: **union-only** vs **union + parenthetical-i
 | P3 | After `apply_medial_env_conditions` / feature / IPA, before `finalize_stages_shape` | Post env prose normalizers |
 | P4 | After `resolve_catch_all_else_rules` (section assembly) | **else** copies prev `env` → `exception` |
 
-3. Regen to **temp YAML** (`uv run create_index --yaml-out /tmp/...`) — not `data/diachronica/index_diachronica_parsed.yml`.
+3. Regen to **temp YAML** (`uv run create_index --yaml-out /tmp/...`) — not `data/diachronica/index_diachronica.yml`.
 4. Re-validate inventory; compare to Phase A.
 
 ### 4. Source-vs-Index sample (qualitative)
@@ -114,7 +114,7 @@ Follow-ons: implement #69 (env/exception `union_paren`); #70 (stages union, `:13
 
 ## Out of scope
 
-- Committing changes to `data/diachronica/index_diachronica_parsed.yml`
+- Committing changes to `data/diachronica/index_diachronica.yml`
 - Production parser integration on `main` (follow-on task only)
 - Rule-split shapes (#71, paired nested output sets, Menominee `{CC_C{…},CCG_C{…}}`) — classify only
 - Changing optional-output / `alt_idx` behaviour (#66)
@@ -157,11 +157,11 @@ Follow-ons: implement #69 (env/exception `union_paren`); #70 (stages union, `:13
 
 | Bucket | Inv rows | Example `source` |
 |--------|--------:|------------------|
-| A — true nested I/O | 9 | `index_diachronica_original.html:998` |
-| B — nested env/exception | ~16 | `index_diachronica_original.html:1903` |
-| C — parenthetical-in-set | 6 | `index_diachronica_original.html:1903` |
-| D — parallel columns (#71) | ~10 | `index_diachronica_original.html:2398` |
-| E — prose/malformed | ~12 | `index_diachronica_original.html:2173` |
+| A — true nested I/O | 9 | `index_diachronica.html:998` |
+| B — nested env/exception | ~16 | `index_diachronica.html:1903` |
+| C — parenthetical-in-set | 6 | `index_diachronica.html:1903` |
+| D — parallel columns (#71) | ~10 | `index_diachronica.html:2398` |
+| E — prose/malformed | ~12 | `index_diachronica.html:2173` |
 
 **Acceptance criteria:** (same as ticket body)
 

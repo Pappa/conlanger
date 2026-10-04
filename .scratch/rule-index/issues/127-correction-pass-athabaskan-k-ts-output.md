@@ -22,7 +22,7 @@ Per-letter group expansion (`T` → `P:[-voice]`, `S` → `P`) glues two ASCA **
 
 ## What to build
 
-1. Fix **rule id** `Proto-Southern-Athabaskan-K` (`index_diachronica_original.html:10157`, section 29.1.1.1.19) so compiled output uses **concrete IPA segments**, not letter-by-letter class expansion of `TS`.
+1. Fix **rule id** `Proto-Southern-Athabaskan-K` (`index_diachronica.html:10157`, section 29.1.1.1.19) so compiled output uses **concrete IPA segments**, not letter-by-letter class expansion of `TS`.
 2. **Preferred:** `index_corrections.yml` overlay keyed by rule id — output stage `TS` → IPA per Hoijer (1938) intent (likely /ts/ or voiceless stop + /s/; confirm against citation before locking).
 3. **Alternative:** section-local `compiler_config.yml` mapping for `TS` → `ts` / `{t,s}` **before** `T`/`S` group-letter split, if cluster grows.
 4. **Do not** attempt to make `P:[-voice]P` valid in ASCA.
@@ -54,4 +54,4 @@ Per-letter group expansion (`T` → `P:[-voice]`, `S` → `P`) glues two ASCA **
 - [incomplete_matrix_errors.csv](../inventory/error_clusters/incomplete_matrix_errors.csv)
 - `config/parser/index_corrections.yml`
 - `config/compile/asca/compiler_config.yml` (section mappings — if used)
-- HTML SoT: `K → TS` at `index_diachronica_original.html:10157`
+- HTML SoT: `K → TS` at `index_diachronica.html:10157`

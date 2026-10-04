@@ -6,7 +6,7 @@ Blocked by: 01
 
 ## Question
 
-Against the current Index Diachronica–derived artifacts (`index_diachronica_original.html` and/or provisional YAML/XML), produce a recorded inventory of rules that **compile/validate under ASCA** vs those that **fail**, with enough section/index identity to analyse failure classes later.
+Against the current Index Diachronica–derived artifacts (`index_diachronica.html` and/or provisional YAML/XML), produce a recorded inventory of rules that **compile/validate under ASCA** vs those that **fail**, with enough section/index identity to analyse failure classes later.
 
 ## Notes
 

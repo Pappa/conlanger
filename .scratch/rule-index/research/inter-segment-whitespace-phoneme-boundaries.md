@@ -62,7 +62,7 @@ Context7: ASCA / Brassica are **not indexed**; sources below are first-party Git
 
 ## 2. Corpus survey (cleaned YAML)
 
-Corpus: `data/diachronica/index_diachronica_parsed.yml` (**9201** rules), surveyed 2026-08-08.
+Corpus: `data/diachronica/index_diachronica.yml` (**9201** rules), surveyed 2026-08-08.
 
 ### 2.1 What Index spaces usually mean
 
@@ -178,7 +178,7 @@ Preference stated in the spike: spaced segments in applier-neutral SoT “like A
 | `asca` CLI 0.10.2 probes | Spaced ≡ glued; untied vs tied; `ː` in rules |
 | https://github.com/bradrn/brassica/blob/master/docs/Writing-Sound-Changes.md | Spaces required; Multigraphs; Categories |
 | https://github.com/bradrn/brassica/blob/master/docs/Reference.md | Lexeme whitespace; word tokenisation longest-match |
-| `data/diachronica/index_diachronica_parsed.yml` | Corpus counts |
+| `data/diachronica/index_diachronica.yml` | Corpus counts |
 | `src/conlanger/tools/series_mappings.py` | Incidental tokenizer |
 | `legacy/scripts/parse_index_diachronica.py` `add_affricate_ties` | Legacy digraph list (reference only) |
 | ADR-0002 | Applier-neutral SoT constraint |

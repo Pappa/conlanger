@@ -23,9 +23,9 @@ uv run create_index && uv run validate_rules
 
 ```mermaid
 flowchart TD
-  HTML[index_diachronica_original.html]
+  HTML[index_diachronica.html]
   Parse[IndexDiachronicaParser.parse]
-  YAML[index_diachronica_parsed.yml]
+  YAML[index_diachronica.yml]
   CommentSummary[rule-comment-phrases.md]
   Compile[DiachronicSeries compile]
   Inv[iter_validation_rows]
@@ -45,7 +45,7 @@ flowchart TD
 
 | Output | Path |
 | --- | --- |
-| Cleaned YAML | `data/diachronica/index_diachronica_parsed.yml` |
+| Cleaned YAML | `data/diachronica/index_diachronica.yml` |
 | Parse diagnostics | `diagnostics/parse/` |
 | Inventory dir | `diagnostics/inventory/` |
 | Comment phrase survey | `diagnostics/parse/rule-comment-phrases.md` |
@@ -74,7 +74,7 @@ flowchart TD
 
 | Step | What happens | Code / artifact |
 | --- | --- | --- |
-| 1 | Parse HTML → applier-neutral YAML | `IndexDiachronicaParser` → `data/diachronica/index_diachronica_parsed.yml` |
+| 1 | Parse HTML → applier-neutral YAML | `IndexDiachronicaParser` → `data/diachronica/index_diachronica.yml` |
 | 2 | For each index rule in each section | `iter_inventory_with_field_isolation()` in `index_inventory.py` |
 | 3 | Build mini-section (one rule) | `_mini_section()` |
 | 4 | Compile | `DiachronicSeries(mini, compiler_config=…)` |

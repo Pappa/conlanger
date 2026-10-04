@@ -1,6 +1,6 @@
 # Cleaned rule index — ASCA validation inventory
 
-- Source YAML: `data/diachronica/index_diachronica_parsed.yml`
+- Source YAML: `data/diachronica/index_diachronica.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.3**
 - Rows: **9841** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)

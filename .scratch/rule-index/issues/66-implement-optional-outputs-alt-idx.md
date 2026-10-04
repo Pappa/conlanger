@@ -67,7 +67,7 @@ Implemented 2026-08-12.
 - Full gate green: `uv run pytest` → **916 passed**, coverage **95.19%** (≥95); `ruff check` + `ruff format --check` clean.
 
 ### Inventory before/after (optional-output subset)
-Measured over the **363** optional-output candidate rules in `data/diachronica/index_diachronica_parsed.yml` (800 alternatives; 62 with a null `∅`/`*` member):
+Measured over the **363** optional-output candidate rules in `data/diachronica/index_diachronica.yml` (800 alternatives; 62 with a null `∅`/`*` member):
 
 - **Before** — whole set compiled to ASCA (committed `rule-inventory.csv`): **234 ok / 129 fail**. The 129 failures are the set-internal `∅` / LonelySet-style rejections ASCA cannot represent (`d > {∅,ð}`).
 - **After** — per-alternative rows: **727 / 800** alternatives validate; **327 / 363** candidates have every alternative valid. The residual 73 alternative failures are unrelated ASCA issues (nested/other clusters), not the `{∅` rejection.
@@ -77,6 +77,6 @@ Net: the in-scope single-step optional-output rejection class (`{∅`) is resolv
 ## References
 
 - [Grill 61](61-grill-optional-outputs.md)
-- Spanish examples: `index_diachronica_original.html:8156–8157`
+- Spanish examples: `index_diachronica.html:8156–8157`
 - [Ticket 19](19-correction-pass-sporadic-qualifier.md) — `sporadic: true` flag only
 - [Ticket 60 parallel-column null](60-correction-pass-parallel-column-null.md)

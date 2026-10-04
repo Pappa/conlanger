@@ -14,12 +14,12 @@ Index encodes I/O alternations with nested braces (often editorial condensation,
 
 | source | YAML / Index shape | Spike 85 |
 |--------|--------------------|----------|
-| `index_diachronica_original.html:998` | HTML `{ʔ,hₓ}` → YAML `{ʔ,h₁,h₂,h₃}` (already flat via series expansions) | no-op |
-| `index_diachronica_original.html:5048` | `{{∅,∅}s,s{∅,∅}}` / `{{h₁,h₃}s,s{h₁,h₃}}` | union → **`ok`** |
-| `index_diachronica_original.html:1398` | `{{s,z}(ˤ),ʒ}ʃ` | needs **union_paren** → **`ok`** |
-| `index_diachronica_original.html:6193` | `{e,w{æ,i}}` | union → **`ok`** |
-| `index_diachronica_original.html:2398` | `(h)ə{p,b}` (depth 1) | **unchanged** — #71 |
-| `index_diachronica_original.html:1149` | `{{ɣ,ɣʷ,xʷ},x}` | **unchanged** — compile-created nesting (group mappings) |
+| `index_diachronica.html:998` | HTML `{ʔ,hₓ}` → YAML `{ʔ,h₁,h₂,h₃}` (already flat via series expansions) | no-op |
+| `index_diachronica.html:5048` | `{{∅,∅}s,s{∅,∅}}` / `{{h₁,h₃}s,s{h₁,h₃}}` | union → **`ok`** |
+| `index_diachronica.html:1398` | `{{s,z}(ˤ),ʒ}ʃ` | needs **union_paren** → **`ok`** |
+| `index_diachronica.html:6193` | `{e,w{æ,i}}` | union → **`ok`** |
+| `index_diachronica.html:2398` | `(h)ə{p,b}` (depth 1) | **unchanged** — #71 |
+| `index_diachronica.html:1149` | `{{ɣ,ɣʷ,xʷ},x}` | **unchanged** — compile-created nesting (group mappings) |
 
 ASCA 0.10.2 rejects nested `{}` of the same bracket type at lex time (`NestedBrackets`).
 

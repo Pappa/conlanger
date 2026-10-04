@@ -8,8 +8,8 @@ Primary sources:
 - `group_mappings.csv`: [`data/asca/group_mappings.csv`](../../../data/asca/group_mappings.csv) — `U` → `%` row (syllable **class** only)
 - Ticket: [58-spike-index-syllable-position-u-hash](../issues/58-spike-index-syllable-position-u-hash.md)
 - ASCA **0.10.2**: [`doc/doc.md`](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md) — [Special Characters](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#special-characters), [Environment Sets](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#environment-sets), [Syllable Structure Matching](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#syllable-structure-matching), [Underline Structures](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#underline-structures)
-- HTML SoT: [`data/diachronica/index_diachronica_original.html`](../../../data/diachronica/index_diachronica_original.html) — e.g. Old Norse line 6221, Proto-Norse 6179, Iroquoian 12384
-- Parsed YAML: [`data/diachronica/index_diachronica_parsed.yml`](../../../data/diachronica/index_diachronica_parsed.yml)
+- HTML SoT: [`data/diachronica/index_diachronica.html`](../../../data/diachronica/index_diachronica.html) — e.g. Old Norse line 6221, Proto-Norse 6179, Iroquoian 12384
+- Parsed YAML: [`data/diachronica/index_diachronica.yml`](../../../data/diachronica/index_diachronica.yml)
 
 Local ASCA probes run with `asca 0.10.2` on `PATH`. Probe files: [`.scratch/rule-index/research/probes-58/`](./probes-58/).
 
@@ -167,7 +167,7 @@ Rule: `V:[+long] > [-long] // :{#_#, <.._>#}:`
 
 ## 6. Corpus inventory
 
-Counts from `index_diachronica_parsed.yml` (2026-08-29, `rg`):
+Counts from `index_diachronica.yml` (2026-08-29, `rg`):
 
 | Slice | Count | Notes |
 |-------|------:|-------|

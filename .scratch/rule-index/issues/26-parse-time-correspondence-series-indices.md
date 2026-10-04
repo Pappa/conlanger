@@ -31,7 +31,7 @@ Rewrite index `input`/`output`/`env`/`exception` to **ASCA-parseable** phonologi
 ### Mapping source
 
 - Section **`abbreviations`** table in cleaned YAML (hierarchical: section overrides global).
-- Package CSV keyed by section index (e.g. `data/asca/series_mappings.csv`) populated by extracting definitions from **`data/diachronica/index_diachronica_original.html`** — citations, tables, and inferable rule context.
+- Package CSV keyed by section index (e.g. `data/asca/series_mappings.csv`) populated by extracting definitions from **`data/diachronica/index_diachronica.html`** — citations, tables, and inferable rule context.
 - Longest-prefix section match; optional global `*` fallback rows only where Index prose supports it.
 - Values are ASCA-valid targets (IPA segments, feature matrices, sets).
 - **Do not use `legacy/`** for map data or resolver code.

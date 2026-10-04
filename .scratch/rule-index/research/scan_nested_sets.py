@@ -19,7 +19,7 @@ from conlanger.tools.compile.asca.sets import (
 )
 
 ROOT = Path(__file__).resolve().parents[3]
-YAML_PATH = ROOT / "data/diachronica/index_diachronica_parsed.yml"
+YAML_PATH = ROOT / "data/diachronica/index_diachronica.yml"
 INVENTORY_PATH = ROOT / "diagnostics/inventory/rule-inventory.csv"
 
 # Index parenthetical segment notation (ticket 48): segment + {variants}

@@ -10,9 +10,9 @@ Spawned from [spike 67](67-spike-nested-sets.md). Findings: [nested-sets-invento
 
 Index uses **optional segment prefix + brace parallel column** and **segment-template + set** shapes that ASCA reports as `nested_brackets` but are not always true nested `{}`:
 
-- `(h)ə{p,b} → t / _l` (`index_diachronica_original.html:2398`, `Muong-Khen-həp,b`)
-- `e(C){V[- low]} → …` (`index_diachronica_original.html:3124`)
-- `(j){u,ʌ}` with env (`index_diachronica_original.html:5900`)
+- `(h)ə{p,b} → t / _l` (`index_diachronica.html:2398`, `Muong-Khen-həp,b`)
+- `e(C){V[- low]} → …` (`index_diachronica.html:3124`)
+- `(j){u,ʌ}` with env (`index_diachronica.html:5900`)
 
 How should these compile? (Original options: rule fan-out / flatten / `manual_mappings`.) Reframed as **I/O zero-or-one** vs **ASCA `<>` syllable structures** vs **ticket 48 cartesian of modifiers**.
 

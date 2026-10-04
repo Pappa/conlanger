@@ -10,7 +10,7 @@ Primary sources:
 - ASCA **0.10.2** (project `lib/bin/asca`): [doc/doc.md](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md) — [Optionals](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#optionals), [Sets](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#sets), [Syllable Structure Matching](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#syllable-structure-matching), [Underline Structures](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#underline-structures), [Special Characters](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#special-characters)
 - Prior validity map: [asca-rule-validity.md](./asca-rule-validity.md)
 - Nested-set bucket context: [nested-sets-inventory.md](./nested-sets-inventory.md) §4.5
-- HTML SoT: [`data/diachronica/index_diachronica_original.html`](../../../data/diachronica/index_diachronica_original.html)
+- HTML SoT: [`data/diachronica/index_diachronica.html`](../../../data/diachronica/index_diachronica.html)
 - Compile: `src/conlanger/tools/compile/asca/parenthetical.py` (ticket 48), `input_optionals.py` (ticket 51)
 
 Local probes: `asca 0.10.2` at `lib/bin/asca`; scratch probes under [`.scratch/rule-index/research/_spike100/`](./_spike100/).
@@ -267,8 +267,8 @@ Rules that reach **ok** without faithful optional behaviour:
 | Syllable structures | [doc.md § Syllable Structure Matching](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#syllable-structure-matching) |
 | Word boundaries | [doc.md § Special Characters](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#special-characters) |
 | Validity checklist | [asca-rule-validity.md](./asca-rule-validity.md) |
-| Muong-Khen HTML | `index_diachronica_original.html:2398` |
-| Hiw HTML | `index_diachronica_original.html:3124` |
-| Amdo HTML | `index_diachronica_original.html:12290` |
+| Muong-Khen HTML | `index_diachronica.html:2398` |
+| Hiw HTML | `index_diachronica.html:3124` |
+| Amdo HTML | `index_diachronica.html:12290` |
 | Crowley paren notation | Enggano `V (C) ___ [+nas]` ([slideserve summary](https://www.slideserve.com/kirti/commentary-on-crowley)) |
 | SPE / handbook parens | [Zuraw 200A rule notation](https://linguistics.ucla.edu/people/zuraw/200A_2004/0203RuleNotation.pdf); [Smith 531](https://brianwilliamsmith.github.io/teaching/531_2.html) |

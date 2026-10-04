@@ -32,7 +32,7 @@ Tested with `asca run` on long-vowel shortening (`V:[+long] > V:[-long]`):
 
 Root cause: Index `#U` is **syllable-tier** (“segment is inside the word-initial syllable”); segment rules with `#_%` anchor the focus at the word-onset / syllable junction, not membership in the syllable constituent.
 
-### Corpus slice (current `index_diachronica_parsed.yml`)
+### Corpus slice (current `index_diachronica.yml`)
 
 | Pattern | Approx. count | Notes |
 | --- | ---: | --- |

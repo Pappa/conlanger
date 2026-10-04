@@ -65,7 +65,7 @@ Stop emitting the document-level `abbreviations` key from `IndexDiachronicaParse
 - Remove `abbreviations()` method (or retire if only used for the stub).
 - Return `{sections: [...]}` only.
 - Update downstream loaders/tests that expect `doc["abbreviations"]` (`tests/conlanger/tools/ingest/test_parser.py`, `tests/conlanger/tools/test_index_io.py`, any inventory or IO helpers).
-- Regen drops `abbreviations: {}` from `data/diachronica/index_diachronica_parsed.yml`.
+- Regen drops `abbreviations: {}` from `data/diachronica/index_diachronica.yml`.
 
 **Do not** reintroduce per-section `abbreviations` objects in parsed YAML — section mappings are config-driven at parse, not stored tables ([ticket 74](74-implement-ingest-corrections-drop-series-csv.md), [grill 72](72-grill-series-mapping-manual-sot.md)).
 

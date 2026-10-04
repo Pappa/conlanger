@@ -95,13 +95,13 @@ def test_diachronic_series_validates_known_unknown_grouping_fixtures(
                 "output": "p",
                 "env": "#_V{Z,C[-voice],r}",
                 "raw": "f → p / #_V{Z,C[-voice],r}",
-                "source": "index_diachronica_original.html:1261",
+                "source": "index_diachronica.html:1261",
             },
             {
                 "stages": ["ʕ", "i"],
                 "env": "#_VR",
                 "raw": "ʕ → i / #_VR",
-                "source": "index_diachronica_original.html:1274",
+                "source": "index_diachronica.html:1274",
             },
         ],
     }

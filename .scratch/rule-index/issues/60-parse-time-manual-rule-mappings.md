@@ -20,7 +20,7 @@ Some Index Diachronica rule lines are malformed, editorial, or ambiguous in ways
 Today:
 
 - Row 1 parses with a broken env (`_{s,({m,j,w)V}`) — compile/validation fail.
-- Row 2 is `stages: []` / `status: skipped` as quoted prose ([`index_diachronica_parsed.yml`](../../../data/diachronica/index_diachronica_parsed.yml) ~20470).
+- Row 2 is `stages: []` / `status: skipped` as quoted prose ([`index_diachronica.yml`](../../../data/diachronica/index_diachronica.yml) ~20470).
 
 ## Decision (grill 2026-08-09)
 

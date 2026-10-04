@@ -47,7 +47,7 @@ def test_write_manual_mappings_matched_csv(tmp_path: Path):
                 section_index="17.5.1",
                 section_name="Proto-Indo-European to Old Irish",
                 rule_id="Old-Irish-mn",
-                source="index_diachronica_original.html:5509",
+                source="index_diachronica.html:5509",
                 from_text="m̩ n̩ → am an / _{s,({m,j,w})V}",
                 to_text="m̩ n̩ → am an / _{s,({m,j,w})V}",
             )

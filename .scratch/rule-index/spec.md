@@ -95,7 +95,7 @@ Brassica compilation remains a future parallel path behind the same index (ADR-0
 
 - Top-level YAML: `sections` array (top-level `abbreviations` retired from parse output; section-local maps live in operator config).
 - Each **sound-change section**: required `section` (title), `index` (dotted ancestry key); optional `citation`, section-level `comments`, `rules`, `status: skipped` (config hold-out only).
-- Each **corpus rule**: required **stages** (list of opaque Index-shaped strings), `raw`, `rule id`, `source` (`index_diachronica_original.html:<line>`); optional `env`, `exception`, `status`, `sporadic`, `comment`.
+- Each **corpus rule**: required **stages** (list of opaque Index-shaped strings), `raw`, `rule id`, `source` (`index_diachronica.html:<line>`); optional `env`, `exception`, `status`, `sporadic`, `comment`.
 - **Stages** length 2 = single change; ≥ 3 = chain (compile expands adjacent pairs); 1 = missing arrow (compile supplies empty output).
 - Field values are opaque Index-shaped strings — not an ASCA AST. Config-skipped rules carry `status: skipped` and render as ASCA comments (`#\t` + `raw`).
 - HTML remains current SoT until cleaned YAML meets adoption criteria; regeneration must remain traceable to HTML (ADR-0006). **Index Diachronica corrections** overlay `raw` by **rule id** without editing HTML (ADR-0012).
@@ -103,7 +103,7 @@ Brassica compilation remains a future parallel path behind the same index (ADR-0
 ### Operator config vs corpus data
 
 - **config/** — operator settings (YAML), loaded only by scripts and injected as `ParserConfig` / `CompilerConfig`. Parse: `parser_config.yml`, `manual_mappings.yml`, `ipa_mappings.yml`, `feature_mappings.yml`, `index_corrections.yml`. Compile: `compiler_config.yml`, `group_mappings.yml`.
-- **data/** — corpus and generated artifacts: Index HTML SoT, regenerated `index_diachronica_parsed.yml`, runtime ASCA alias file, inventory outputs under `diagnostics/inventory/`.
+- **data/** — corpus and generated artifacts: Index HTML SoT, regenerated `index_diachronica.yml`, runtime ASCA alias file, inventory outputs under `diagnostics/inventory/`.
 - Library code under `src/conlanger` (except scripts) accepts in-memory config; empty defaults when omitted. `create_index` is the bootstrap composing real operator config.
 
 ### Parse (HTML → YAML)

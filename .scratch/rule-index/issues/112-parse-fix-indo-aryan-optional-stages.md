@@ -8,7 +8,7 @@ Spawned from [grill 71](71-grill-paren-and-parallel-set-notation.md) Q7. Compile
 
 ## Problem
 
-Rule `Central-Middle-Indo-Aryan-ai,ja-au,wa` (`index_diachronica_original.html` — Indo-Aryan section):
+Rule `Central-Middle-Indo-Aryan-ai,ja-au,wa` (`index_diachronica.html` — Indo-Aryan section):
 
 ```text
 a{i,j}(a) a{u,w}(a) → e o

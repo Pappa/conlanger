@@ -33,7 +33,7 @@ Load into `ParserConfig` (extend `ParserConfig` + `load_parser_config()` in `src
 When emitting a section whose `index` is listed in `skip_sections`:
 
 1. Parse the HTML section **as today** (rules, citation, comments unchanged).
-2. Append **`skipped: true`** on the section dict in `index_diachronica_parsed.yml`.
+2. Append **`skipped: true`** on the section dict in `index_diachronica.yml`.
 3. Do **not** set `status: skipped` on individual rules inside the section.
 4. Do **not** strip or rewrite rule fields; `raw` unchanged.
 

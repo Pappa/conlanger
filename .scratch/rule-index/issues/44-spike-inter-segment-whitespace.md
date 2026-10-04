@@ -20,7 +20,7 @@ Map fog (deferred from [Normalise segment feature matrices for appliers](07-norm
 
 ## Out of scope
 
-- Shipping a correction pass or mutating `index_diachronica_parsed.yml`
+- Shipping a correction pass or mutating `index_diachronica.yml`
 - Brassica compiler implementation (ADR-0001)
 - Resolving bracket-internal feature-name spacing alone (related; note overlap, do not own as the deliverable)
 

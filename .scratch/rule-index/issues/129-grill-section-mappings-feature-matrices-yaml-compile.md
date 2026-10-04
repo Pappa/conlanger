@@ -18,13 +18,13 @@ After expanding Athabaskan §29.1.1.1 `section_mappings` (`TŠ`, `TS`, `K`, … 
 
 - `dump_cleaned_index()` (`src/conlanger/tools/index_io.py`) calls `yaml.safe_dump()` with default `width=80` and no custom representer for `stages` (only `raw` gets `_LiteralStr` `|` blocks).
 - Long braced stage strings (>~200 chars) are **folded across lines in the file** but `read_cleaned_index` / `yaml.safe_load` round-trip **without** `\n` in the loaded string.
-- Verified on regen `data/diachronica/index_diachronica_parsed.yml` (2026-09-08): **68** stages >80 chars, **0** stages with embedded `\n` after load.
+- Verified on regen `data/diachronica/index_diachronica.yml` (2026-09-08): **68** stages >80 chars, **0** stages with embedded `\n` after load.
 - Setting `width=4096` on `dump_cleaned_index` produces single-line stage scalars on disk (cosmetic only; no semantic change on load).
 - Increasing `width` on a generic `yaml.dump()` call does not change loaded strings — it only affects on-disk layout. Owner report that `width` “does nothing” likely conflated file appearance with in-memory values.
 
 ### Example inventory failure is not a newline bug
 
-**Row:** `Deg-Hit’an-K` (`29.1.1.1.7`, `index_diachronica_original.html:10034`, `alt_idx=0`):
+**Row:** `Deg-Hit’an-K` (`29.1.1.1.7`, `index_diachronica.html:10034`, `alt_idx=0`):
 
 ```text
 Syntax Error: Expected `]`, but received End of Line | [+cons, -son, -cont, -cor, +fr, -bk, +hi, -lo] > [+cons | ^ @ Rule 1, Line 1
@@ -116,7 +116,7 @@ Current **Class letter** entry covers Index key capitals (`C`, `V`, `S`). Athaba
 - Optional outputs: [61 grill optional outputs](61-grill-optional-outputs.md), [66 implement](66-implement-optional-outputs-alt-idx.md)
 - Field tokens / sets: `src/conlanger/tools/compile/field_tokens.py`, `src/conlanger/tools/compile/asca/sets.py`
 - YAML I/O: `src/conlanger/tools/index_io.py`, `tests/conlanger/tools/test_index_io.py`
-- Example parsed YAML: `data/diachronica/index_diachronica_parsed.yml` §29.1.1.1.7 `Deg-Hit’an-K`
+- Example parsed YAML: `data/diachronica/index_diachronica.yml` §29.1.1.1.7 `Deg-Hit’an-K`
 - Error inventory rows: `diagnostics/inventory/rule-inventory-error.csv` (`Deg-Hit’an-K`, alt_idx 0–13)
 
 ## Follow-on (after grill resolves)

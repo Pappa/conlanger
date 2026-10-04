@@ -1,6 +1,6 @@
 # Index Diachronica breve vowel notation (`̆`) → ASCA representation
 
-Primary sources: [ASCA 0.10.2 `doc/doc.md`](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md), `data/diachronica/index_diachronica_original.html`, local `validate_asca` smoke tests (2026-08-19), [Brassica Writing Sound Changes](https://github.com/bradrn/brassica/blob/master/docs/Writing-Sound-Changes.md).
+Primary sources: [ASCA 0.10.2 `doc/doc.md`](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md), `data/diachronica/index_diachronica.html`, local `validate_asca` smoke tests (2026-08-19), [Brassica Writing Sound Changes](https://github.com/bradrn/brassica/blob/master/docs/Writing-Sound-Changes.md).
 
 ## Summary
 

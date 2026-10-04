@@ -77,4 +77,4 @@ Full inventory re-run:
 - Grill 2026-08-09 (`/ else` complementary distribution)
 - [Correction pass template](13-correction-pass-template.md)
 - [Correction pass: stress conditions](22-correction-pass-stress-conditions.md)
-- Examples: Proto-Agaw to Xamtanga `kʼ → … / #_` then `/ else` (`index_diachronica_original.html:1222–1223`)
+- Examples: Proto-Agaw to Xamtanga `kʼ → … / #_` then `/ else` (`index_diachronica.html:1222–1223`)

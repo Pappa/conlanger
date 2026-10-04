@@ -4,8 +4,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
 
-DEFAULT_HTML = ROOT / "data" / "diachronica" / "index_diachronica_original.html"
-DEFAULT_YAML = ROOT / "data" / "diachronica" / "index_diachronica_parsed.yml"
+DEFAULT_HTML = ROOT / "data" / "diachronica" / "index_diachronica.html"
+DEFAULT_YAML = ROOT / "data" / "diachronica" / "index_diachronica.yml"
 DEFAULT_DIAGNOSTICS_DIR = ROOT / "diagnostics"
 DEFAULT_INVENTORY_DIR = ROOT / DEFAULT_DIAGNOSTICS_DIR / "inventory"
 DEFAULT_PARSE_DIR = ROOT / DEFAULT_DIAGNOSTICS_DIR / "parse"

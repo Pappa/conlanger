@@ -19,7 +19,7 @@
   "bucket_examples": {
     "A_true_nested_io": [
       {
-        "source": "index_diachronica_original.html:998",
+        "source": "index_diachronica.html:998",
         "section": "North Omotic to Bench",
         "rule_idx": 5,
         "tags": [
@@ -33,7 +33,7 @@
         "in_inventory_nested_brackets": true
       },
       {
-        "source": "index_diachronica_original.html:1398",
+        "source": "index_diachronica.html:1398",
         "section": "Classical Arabic to Egyptian Arabic",
         "rule_idx": 17,
         "tags": [
@@ -47,7 +47,7 @@
         "in_inventory_nested_brackets": true
       },
       {
-        "source": "index_diachronica_original.html:5048",
+        "source": "index_diachronica.html:5048",
         "section": "Proto-Indo-European to Common Anatolian",
         "rule_idx": 13,
         "tags": [
@@ -62,7 +62,7 @@
         "in_inventory_nested_brackets": true
       },
       {
-        "source": "index_diachronica_original.html:8439",
+        "source": "index_diachronica.html:8439",
         "section": "Proto-Tuparí to Mekens",
         "rule_idx": 17,
         "tags": [
@@ -76,7 +76,7 @@
         "in_inventory_nested_brackets": true
       },
       {
-        "source": "index_diachronica_original.html:10543",
+        "source": "index_diachronica.html:10543",
         "section": "Pre-Proto-Bantu to Proto-Manenguba",
         "rule_idx": 2,
         "tags": [
@@ -93,7 +93,7 @@
     ],
     "B_true_nested_env_exception": [
       {
-        "source": "index_diachronica_original.html:6192",
+        "source": "index_diachronica.html:6192",
         "section": "Proto-Norse to Old Norse",
         "rule_idx": 8,
         "tags": [
@@ -107,7 +107,7 @@
         "in_inventory_nested_brackets": true
       },
       {
-        "source": "index_diachronica_original.html:6225",
+        "source": "index_diachronica.html:6225",
         "section": "Proto-Norse to Old Norse",
         "rule_idx": 41,
         "tags": [
@@ -121,7 +121,7 @@
         "in_inventory_nested_brackets": true
       },
       {
-        "source": "index_diachronica_original.html:6226",
+        "source": "index_diachronica.html:6226",
         "section": "Proto-Norse to Old Norse",
         "rule_idx": 42,
         "tags": [
@@ -135,7 +135,7 @@
         "in_inventory_nested_brackets": true
       },
       {
-        "source": "index_diachronica_original.html:11552",
+        "source": "index_diachronica.html:11552",
         "section": "Proto-Central Salish to Lummi Northern Straits",
         "rule_idx": 11,
         "tags": [
@@ -149,7 +149,7 @@
         "in_inventory_nested_brackets": true
       },
       {
-        "source": "index_diachronica_original.html:11579",
+        "source": "index_diachronica.html:11579",
         "section": "Proto-Central Salish to Saanich Northern Straits",
         "rule_idx": 12,
         "tags": [
@@ -165,7 +165,7 @@
     ],
     "C_parenthetical_in_env_set": [
       {
-        "source": "index_diachronica_original.html:1762",
+        "source": "index_diachronica.html:1762",
         "section": "Proto-Algonquian to Blackfoot",
         "rule_idx": 51,
         "tags": [
@@ -179,7 +179,7 @@
         "in_inventory_nested_brackets": true
       },
       {
-        "source": "index_diachronica_original.html:1903",
+        "source": "index_diachronica.html:1903",
         "section": "Proto-Algonquian to Munsee Delaware",
         "rule_idx": 7,
         "tags": [
@@ -193,7 +193,7 @@
         "in_inventory_nested_brackets": true
       },
       {
-        "source": "index_diachronica_original.html:5510",
+        "source": "index_diachronica.html:5510",
         "section": "Proto-Indo-European to Old Irish",
         "rule_idx": 11,
         "tags": [
@@ -206,7 +206,7 @@
         "in_inventory_nested_brackets": true
       },
       {
-        "source": "index_diachronica_original.html:11518",
+        "source": "index_diachronica.html:11518",
         "section": "Proto-Central Salish to Nooksack",
         "rule_idx": 3,
         "tags": [
@@ -222,7 +222,7 @@
     ],
     "C_parenthetical_in_io_set": [
       {
-        "source": "index_diachronica_original.html:2336",
+        "source": "index_diachronica.html:2336",
         "section": "Proto-Turkic to Sakha",
         "rule_idx": 2,
         "tags": [
@@ -236,7 +236,7 @@
         "in_inventory_nested_brackets": false
       },
       {
-        "source": "index_diachronica_original.html:6193",
+        "source": "index_diachronica.html:6193",
         "section": "Proto-Norse to Old Norse",
         "rule_idx": 9,
         "tags": [
@@ -252,7 +252,7 @@
     ],
     "E_unbalanced_malformed": [
       {
-        "source": "index_diachronica_original.html:2173",
+        "source": "index_diachronica.html:2173",
         "section": "Proto-Altaic to Proto-Mongolic",
         "rule_idx": 4,
         "tags": [
@@ -267,7 +267,7 @@
         "in_inventory_nested_brackets": true
       },
       {
-        "source": "index_diachronica_original.html:4654",
+        "source": "index_diachronica.html:4654",
         "section": "Proto-Eskimo to Greenlandic Iñupiaq",
         "rule_idx": 6,
         "tags": [
@@ -282,7 +282,7 @@
         "in_inventory_nested_brackets": true
       },
       {
-        "source": "index_diachronica_original.html:5509",
+        "source": "index_diachronica.html:5509",
         "section": "Proto-Indo-European to Old Irish",
         "rule_idx": 10,
         "tags": [
@@ -297,7 +297,7 @@
         "in_inventory_nested_brackets": true
       },
       {
-        "source": "index_diachronica_original.html:5839",
+        "source": "index_diachronica.html:5839",
         "section": "Early Modern English to Australian English",
         "rule_idx": 28,
         "tags": [
@@ -311,7 +311,7 @@
         "in_inventory_nested_brackets": false
       },
       {
-        "source": "index_diachronica_original.html:6380",
+        "source": "index_diachronica.html:6380",
         "section": "Old Norse to Early Icelandic",
         "rule_idx": 33,
         "tags": [

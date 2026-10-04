@@ -9,7 +9,7 @@ Primary sources:
 - ASCA **0.10.2**: [doc/doc.md](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md) — sets in I/O and env; [asca-rule-validity.md](./asca-rule-validity.md) §2 / §6
 - Prior flatten precedent: [23-correction-pass-labialized-class-letters.md](../issues/23-correction-pass-labialized-class-letters.md) (`L(ʷ)` → `{L_labialized,L}` inside sets)
 - Manual rewrites: [60-parse-time-manual-rule-mappings.md](../issues/60-parse-time-manual-rule-mappings.md)
-- Corpus YAML: [`data/diachronica/index_diachronica_parsed.yml`](../../../data/diachronica/index_diachronica_parsed.yml)
+- Corpus YAML: [`data/diachronica/index_diachronica.yml`](../../../data/diachronica/index_diachronica.yml)
 - Inventory: [rule-inventory.csv](../inventory/rule-inventory.csv) (ASCA 0.10.2, 2026-08-12 baseline)
 
 Local scan script: [`scan_nested_sets.py`](./scan_nested_sets.py) → [`nested-sets-scan.json`](./nested-sets-scan.json). Run: `uv run python .scratch/rule-index/research/scan_nested_sets.py`.
@@ -42,7 +42,7 @@ Local scan script: [`scan_nested_sets.py`](./scan_nested_sets.py) → [`nested-s
 
 ## 2. Method
 
-1. Loaded `index_diachronica_parsed.yml` (**9201** index rules, `stages` list spine per ADR-0011).
+1. Loaded `index_diachronica.yml` (**9201** index rules, `stages` list spine per ADR-0011).
 2. For each rule, parsed `stages` into adjacent input/output pairs (same as `expand_chained_index_rule`), and scanned `stages`, `env`, `exception`, and `raw` for max `{` depth, unbalanced braces, true nested set members (comma-bounded `{` inside `{…}`), and Index parenthetical-in-set (`segment{variants}` per ticket 48).
 3. Cross-matched all **46** `nested_brackets` inventory rows (**45** unique `source` lines) to index rows by `source` (`file:line`).
 4. Classified each failure into buckets (below); spot-checked ASCA error strings in inventory `description`.
@@ -75,11 +75,11 @@ Rules with brace depth **≥ 2** or unbalanced `{` in `stages` / `env` / `except
 
 | Bucket | YAML rules | `nested_brackets` inv overlap | Example `source` |
 |--------|----------:|------------------------------:|------------------|
-| `A_true_nested_io` | 5 | 5 | `index_diachronica_original.html:998` `{ʔ,{h1,h2}}` |
-| `B_true_nested_env_exception` | 8 | 8 | `index_diachronica_original.html:6192` `{{h,k,ŋ}n,w,v,l,r}_` |
-| `C_parenthetical_in_env_set` | 4 | 4 | `index_diachronica_original.html:1903` `_ə{(C){p,kʷ},m,w}` |
-| `C_parenthetical_in_io_set` | 2 | 1 | `index_diachronica_original.html:6193` `{e,w{æ,i}}` |
-| `E_unbalanced_malformed` | 21 | 5 | `index_diachronica_original.html:2173` unbalanced chain |
+| `A_true_nested_io` | 5 | 5 | `index_diachronica.html:998` `{ʔ,{h1,h2}}` |
+| `B_true_nested_env_exception` | 8 | 8 | `index_diachronica.html:6192` `{{h,k,ŋ}n,w,v,l,r}_` |
+| `C_parenthetical_in_env_set` | 4 | 4 | `index_diachronica.html:1903` `_ə{(C){p,kʷ},m,w}` |
+| `C_parenthetical_in_io_set` | 2 | 1 | `index_diachronica.html:6193` `{e,w{æ,i}}` |
+| `E_unbalanced_malformed` | 21 | 5 | `index_diachronica.html:2173` unbalanced chain |
 
 The remaining **~6** inventory `nested_brackets` rows are depth-1 Index shapes (§4.5–4.6) or compile-time nesting not visible at YAML depth ≥ 2.
 
@@ -95,15 +95,15 @@ Brace depth > 1 in the `stages` spine (input/output side of compiled steps).
 
 | source | stages (abbrev.) |
 |--------|------------------|
-| `index_diachronica_original.html:998` | `{ʔ,{h1,h2}} → ∅` |
-| `index_diachronica_original.html:1398` | `{{s,z}(ˤ),ʒ}ʃ → ʃː` |
-| `index_diachronica_original.html:2173` | `… → {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i}` (also **unbalanced**) |
-| `index_diachronica_original.html:4654` | `m n ŋ t {{ɣ,ʁ} → {k,q}}` (chain-split artifact) |
-| `index_diachronica_original.html:5048` | `{{∅,∅}s,s{∅,∅}} → sː` |
-| `index_diachronica_original.html:3124` | `{e{V[- low]},eC{V[- low]}} → …` (paired nested output sets) |
-| `index_diachronica_original.html:3737` | `{a{o,e},aC{o,e}} → a` |
-| `index_diachronica_original.html:2398` | `(h)ə{p,b} → t` — classified here when nested inner `{p,b}` sits inside optional-prefixed parallel column (see also §4.5) |
-| `index_diachronica_original.html:2409` | four parallel `(h)ə{…}` columns → `β dʲ ɟ ɡ` |
+| `index_diachronica.html:998` | `{ʔ,{h1,h2}} → ∅` |
+| `index_diachronica.html:1398` | `{{s,z}(ˤ),ʒ}ʃ → ʃː` |
+| `index_diachronica.html:2173` | `… → {a,e} {o,u} {a,o,u a {a,o,u} {o,u,i}` (also **unbalanced**) |
+| `index_diachronica.html:4654` | `m n ŋ t {{ɣ,ʁ} → {k,q}}` (chain-split artifact) |
+| `index_diachronica.html:5048` | `{{∅,∅}s,s{∅,∅}} → sː` |
+| `index_diachronica.html:3124` | `{e{V[- low]},eC{V[- low]}} → …` (paired nested output sets) |
+| `index_diachronica.html:3737` | `{a{o,e},aC{o,e}} → a` |
+| `index_diachronica.html:2398` | `(h)ə{p,b} → t` — classified here when nested inner `{p,b}` sits inside optional-prefixed parallel column (see also §4.5) |
+| `index_diachronica.html:2409` | four parallel `(h)ə{…}` columns → `β dʲ ɟ ɡ` |
 
 **ASCA:** all `NestedBrackets` at lex time.
 
@@ -115,13 +115,13 @@ Brace depth > 1 in the `stages` spine (input/output side of compiled steps).
 
 | source | env (abbrev.) |
 |--------|---------------|
-| `index_diachronica_original.html:1903` | `_ə{(C){p,kʷ},m,w}` |
-| `index_diachronica_original.html:5509` | `_{s,({m,j,w})V}` |
-| `index_diachronica_original.html:11518` | `#_{xʲ,w{i,a},qʷa}` |
-| `index_diachronica_original.html:11552` | `{{C[-fr,+bk,-hi,-lo],K}ʷ,w}_` |
-| `index_diachronica_original.html:1954` | `{CC_C{V,#},CCG_C{V,#}}` (paired env sets on input side) |
-| `index_diachronica_original.html:1903` | (see above) |
-| `index_diachronica_original.html:1762` | env `W_` — *exception* carries nested shape; counted in §4.3 |
+| `index_diachronica.html:1903` | `_ə{(C){p,kʷ},m,w}` |
+| `index_diachronica.html:5509` | `_{s,({m,j,w})V}` |
+| `index_diachronica.html:11518` | `#_{xʲ,w{i,a},qʷa}` |
+| `index_diachronica.html:11552` | `{{C[-fr,+bk,-hi,-lo],K}ʷ,w}_` |
+| `index_diachronica.html:1954` | `{CC_C{V,#},CCG_C{V,#}}` (paired env sets on input side) |
+| `index_diachronica.html:1903` | (see above) |
+| `index_diachronica.html:1762` | env `W_` — *exception* carries nested shape; counted in §4.3 |
 
 **ASCA:** `NestedBrackets`.
 
@@ -133,11 +133,11 @@ Brace depth > 1 in the `stages` spine (input/output side of compiled steps).
 
 | source | exception (abbrev.) |
 |--------|---------------------|
-| `index_diachronica_original.html:1762` | `when _{C{C,V:[+long]},#}` |
-| `index_diachronica_original.html:5510` | `_{s,({m,j,w})V}` |
-| `index_diachronica_original.html:6192` | `{{h,k,ŋ}n,w,v,l,r}_, _{u,o,i}` |
-| `index_diachronica_original.html:6225` | `{{h,k,ŋ}n,w,v,l,r}_` |
-| `index_diachronica_original.html:6194` | (related cluster) |
+| `index_diachronica.html:1762` | `when _{C{C,V:[+long]},#}` |
+| `index_diachronica.html:5510` | `_{s,({m,j,w})V}` |
+| `index_diachronica.html:6192` | `{{h,k,ŋ}n,w,v,l,r}_, _{u,o,i}` |
+| `index_diachronica.html:6225` | `{{h,k,ŋ}n,w,v,l,r}_` |
+| `index_diachronica.html:6194` | (related cluster) |
 
 **Recommendation:** same correction pass as §4.2 ([69](../issues/69-correction-pass-flatten-nested-context-sets.md)).
 
@@ -147,8 +147,8 @@ Brace depth > 1 in the `stages` spine (input/output side of compiled steps).
 
 | source | field |
 |--------|-------|
-| `index_diachronica_original.html:1954` | `CC(G)_C{V,#}` |
-| `index_diachronica_original.html:6194` | `C(C)_{ʀ,s,t,θ}#` |
+| `index_diachronica.html:1954` | `CC(G)_C{V,#}` |
+| `index_diachronica.html:6194` | `C(C)_{ʀ,s,t,θ}#` |
 
 **ASCA:** `NestedBrackets` (paren + brace combo in env).
 
@@ -162,13 +162,13 @@ Index uses **optional segment prefix + parallel set column** notation:
 
 | source | shape |
 |--------|-------|
-| `index_diachronica_original.html:2398` | `(h)ə{p,b} → t / _l` |
-| `index_diachronica_original.html:2409` | four `(h)ə{…}` columns |
-| `index_diachronica_original.html:5454` | `{l̩,r̩} → ər(ə(r))` |
-| `index_diachronica_original.html:6165` | `{æ,e}ː(w(a))` |
-| `index_diachronica_original.html:3124` | `e(C){V[- low]}` |
-| `index_diachronica_original.html:3737` | `a(C){o,e}` |
-| `index_diachronica_original.html:5900` | `(j){u,ʌ}` |
+| `index_diachronica.html:2398` | `(h)ə{p,b} → t / _l` |
+| `index_diachronica.html:2409` | four `(h)ə{…}` columns |
+| `index_diachronica.html:5454` | `{l̩,r̩} → ər(ə(r))` |
+| `index_diachronica.html:6165` | `{æ,e}ː(w(a))` |
+| `index_diachronica.html:3124` | `e(C){V[- low]}` |
+| `index_diachronica.html:3737` | `a(C){o,e}` |
+| `index_diachronica.html:5900` | `(j){u,ʌ}` |
 
 **ASCA:** rejects; not always brace-depth > 1 but inventory classifies as `nested_brackets`.
 
@@ -180,15 +180,15 @@ Index uses **optional segment prefix + parallel set column** notation:
 
 | source | issue |
 |--------|-------|
-| `index_diachronica_original.html:2173` | unbalanced braces in stages |
-| `index_diachronica_original.html:4265` | truncated set / chain damage |
-| `index_diachronica_original.html:5839` | unbalanced `{` in env + prose exception |
-| `index_diachronica_original.html:6380` | truncated `{n̥n,nn̥ tn̥` |
-| `index_diachronica_original.html:5803` | prose env `C_ɹ for some C (toward(s)…)` |
-| `index_diachronica_original.html:5570` | `#UU(_)U(U(_)U)` |
-| `index_diachronica_original.html:2415` | `((h)ə)p d` |
-| `index_diachronica_original.html:9306` | `n(V(s)) ʒ(Vʒ)` output |
-| `index_diachronica_original.html:11857` | prose tail `oʔ (eventually` + broken set |
+| `index_diachronica.html:2173` | unbalanced braces in stages |
+| `index_diachronica.html:4265` | truncated set / chain damage |
+| `index_diachronica.html:5839` | unbalanced `{` in env + prose exception |
+| `index_diachronica.html:6380` | truncated `{n̥n,nn̥ tn̥` |
+| `index_diachronica.html:5803` | prose env `C_ɹ for some C (toward(s)…)` |
+| `index_diachronica.html:5570` | `#UU(_)U(U(_)U)` |
+| `index_diachronica.html:2415` | `((h)ə)p d` |
+| `index_diachronica.html:9306` | `n(V(s)) ʒ(Vʒ)` output |
+| `index_diachronica.html:11857` | prose tail `oʔ (eventually` + broken set |
 
 **Recommendation:** **explicit defer** — `manual_mappings.csv` where owner intent is known ([60](../issues/60-parse-time-manual-rule-mappings.md)); else `status: skipped` with `raw` preserved. Overlaps existing prose-env tickets [53](../issues/53-correction-pass-prose-env-else.md), [55](../issues/55-correction-pass-prose-env-medial.md). No cluster-wide compile path.
 

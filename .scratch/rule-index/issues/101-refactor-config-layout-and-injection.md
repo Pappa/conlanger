@@ -33,7 +33,7 @@ This couples the library to repo paths, makes unit tests depend on production co
 | `data/parser_config.yml` | `config/parser/parser_config.yml` | YAML (schema unchanged) |
 | `data/diachronica/index_corrections.yml` | `config/parser/index_corrections.yml` | YAML (schema unchanged) |
 
-**Stays in `data/`**: `index_diachronica_original.html`, regenerated `index_diachronica_parsed.yml`, `data/asca/asca_aliases.alias`, test fixtures, inventory outputs.
+**Stays in `data/`**: `index_diachronica.html`, regenerated `index_diachronica.yml`, `data/asca/asca_aliases.alias`, test fixtures, inventory outputs.
 
 **Future note (out of scope):** owner intends to split the parse/compile pipeline in two once cleaned YAML is SoT; this ticket only relocates config and enforces injection.
 

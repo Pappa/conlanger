@@ -30,7 +30,7 @@ Restate from [`CONTEXT.md`](../../../CONTEXT.md) (do not conflate):
 | **Identity subscript** | `₀` co-reference (“same instance”) (`V₀V₀ → V₀`) | [Identity subscript](../../../CONTEXT.md) |
 | **Collective subscript** | `ₓ` / `x` “all members” (`{Hₓ,m̩,n̩} → a`, `sₓ → ʃ`) | [Collective subscript](../../../CONTEXT.md) |
 
-Index HTML Key ([`index_diachronica_original.html`](../../../data/diachronica/index_diachronica_original.html) §5, lines 898–901) collapses two of these into one bullet:
+Index HTML Key ([`index_diachronica.html`](../../../data/diachronica/index_diachronica.html) §5, lines 898–901) collapses two of these into one bullet:
 
 > `Xₙ` = The *n*th X of a sequence or series  
 > `Xₓ` = All X of a sequence or series  
@@ -281,7 +281,7 @@ Tutorial example (linguistic gloss uses Index-like `V₁`):
 | [`.scratch/rule-index/series-mappings-coverage-backlog.md`](../series-mappings-coverage-backlog.md) | `Hₓ` out of series CSV |
 | [`src/conlanger/tools/series_mappings.py`](../../../src/conlanger/tools/series_mappings.py) | Token classifiers + collective row synthesis |
 | [`src/conlanger/tools/parsers.py`](../../../src/conlanger/tools/parsers.py) | `<sub>` → Unicode subscripts |
-| [`data/diachronica/index_diachronica_original.html`](../../../data/diachronica/index_diachronica_original.html) | SoT examples (Key §5; rule lines cited above) |
+| [`data/diachronica/index_diachronica.html`](../../../data/diachronica/index_diachronica.html) | SoT examples (Key §5; rule lines cited above) |
 
 ### ASCA (primary)
 

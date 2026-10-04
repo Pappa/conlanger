@@ -12,9 +12,9 @@ Spawned from [spike 67](67-spike-nested-sets.md). Findings: [nested-sets-invento
 
 Index encodes env/exception alternations with nested braces, e.g.:
 
-- `_ə{(C){p,kʷ},m,w}` (`index_diachronica_original.html:1903`)
-- `_{s,({m,j,w})V}` (`index_diachronica_original.html:5509`, `:5510` — else copies this env to exception)
-- `{{C[-fr,+bk,-hi,-lo],K}ʷ,w}_` (`index_diachronica_original.html:11552`)
+- `_ə{(C){p,kʷ},m,w}` (`index_diachronica.html:1903`)
+- `_{s,({m,j,w})V}` (`index_diachronica.html:5509`, `:5510` — else copies this env to exception)
+- `{{C[-fr,+bk,-hi,-lo],K}ʷ,w}_` (`index_diachronica.html:11552`)
 
 ASCA 0.10.2 rejects nested `{}` of the same bracket type at lex time (`NestedBrackets`).
 

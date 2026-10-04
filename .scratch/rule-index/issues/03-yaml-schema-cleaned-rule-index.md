@@ -13,7 +13,7 @@ What is the YAML schema for the cleaned, applier-neutral **rule index** — requ
 - Must respect ADRs 0002, 0004, 0005; HTML remains current SoT until cleaned index is adopted (ADR-0006).
 - Existing `index_diachronica.yml` / `index_diachronica_ai.yml` are migration references, not the schema answer by default.
 - Prose-env mapping is still fog; schema should not pretend that spike is solved.
-- HTML SoT filename: `data/diachronica/index_diachronica_original.html`; `source` uses e.g. `index_diachronica_original.html:1288`.
+- HTML SoT filename: `data/diachronica/index_diachronica.html`; `source` uses e.g. `index_diachronica.html:1288`.
 - Follow-on: [Resolve abbreviations unsupported by ASCA and Brassica](06-resolve-applier-unsupported-abbreviations.md); [Normalise segment feature matrices for appliers](07-normalise-segment-features.md).
 
 ## Answer
@@ -36,7 +36,7 @@ sections:
 |-------|----------|--------|
 | `stages` | yes | ordered opaque Index-shaped strings; length 2 = single step; ≥ 3 = chain; `[]` + `status: skipped` = hold-out |
 | `raw` | yes | original HTML rule-line text; multi-line via `\|` literal block |
-| `source` | yes | `index_diachronica_original.html:<line>` — first line of the span |
+| `source` | yes | `index_diachronica.html:<line>` — first line of the span |
 | `env` | no | **Environment** — absent = any; opaque Index-shaped `str` or structured **`IndexContext`** ([ADR-0017](../../docs/adr/0017-structured-env-exception-indexcontext.md)) |
 | `exception` | no | **Exception** — absent = none; opaque Index-shaped `str` or **`IndexContext`** ([ADR-0017](../../docs/adr/0017-structured-env-exception-indexcontext.md)) |
 | `sporadic` | no | **Uncertainty** — rule application is sporadic or optional; gloss stripped from fields |
@@ -59,7 +59,7 @@ Optional **`comment`** on index rules — [Rule comment field on index rules](30
 
 ### Ingest note
 
-Parse `index_diachronica_original.html` with **lxml** (non-strict HTML).
+Parse `index_diachronica.html` with **lxml** (non-strict HTML).
 
 ### Glossary
 

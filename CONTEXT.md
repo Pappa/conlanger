@@ -50,11 +50,11 @@ The planned authoritative applier-neutral YAML successor to relying on the raw H
 _Avoid_: calling today’s provisional YAML dumps “cleaned” or “canonical” until that effort lands
 
 **Index Diachronica**:
-The curated HTML index of attested sound-change rules being ingested into this project (`index_diachronica_original.html` and derived artifacts).
+The curated HTML index of attested sound-change rules being ingested into this project (`index_diachronica.html` and derived artifacts).
 _Avoid_: “the HTML file”, “diachronica dump” as glossary terms
 
 **Index Diachronica HTML**:
-The published HTML artifact (`data/diachronica/index_diachronica_original.html`). It is SoT for a rule line unless an **Index Diachronica correction** overrides that line; the file itself is never edited to apply owner corrections.
+The published HTML artifact (`data/diachronica/index_diachronica.html`). It is SoT for a rule line unless an **Index Diachronica correction** overrides that line; the file itself is never edited to apply owner corrections.
 _Avoid_: treating uncorrected parse dumps as overriding the HTML; using “the HTML” when a correction has already replaced the line
 
 ### Sound-change structure
@@ -131,7 +131,7 @@ A maintainer-authored rewrite of part or all of an Index rule string, keyed by a
 _Avoid_: IPA mapping, feature mapping, or correction-pass transforms; conflating with **Index Diachronica correction**
 
 **Source**:
-Provenance of a index rule as `file:line` pointing at the Index Diachronica HTML location of the original P (e.g. `index_diachronica_original.html:1288`). **Source** always locates that HTML P even when an **Index Diachronica correction** shapes the working line.
+Provenance of a index rule as `file:line` pointing at the Index Diachronica HTML location of the original P (e.g. `index_diachronica.html:1288`). **Source** always locates that HTML P even when an **Index Diachronica correction** shapes the working line.
 _Avoid_: section index alone as sufficient provenance; opaque “from HTML” notes without a locatable line
 
 ### Index Diachronica notation

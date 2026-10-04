@@ -104,14 +104,14 @@ Promoted `needs-triage` → `ready-for-agent`. Inventory verified: **13** rows, 
 
 | source | rule_id | shape |
 |--------|---------|-------|
-| `index_diachronica_original.html:13128` | Central-Tai-iə | `iə > j̆ / _C%` |
-| `index_diachronica_original.html:13142–13143` | Lungchow-ɨə, Lungchow-ɨ̆-i̯o | `ɨə > ɨ̆`, chain |
-| `index_diachronica_original.html:13228–13229` | North-Tai-iə, North-Tai-ɨ̆ | Tai reflexes |
-| `index_diachronica_original.html:13258–13268` | Po-Ai-* | 4 rules |
-| `index_diachronica_original.html:13324` | Southwest-Tai-iə | Tai |
-| `index_diachronica_original.html:5955` | Scots_2-∅ | `∅ > ə̆ / _{n,r}` |
-| `index_diachronica_original.html:10325` | Tanacross-ɑ-ə-ʊ | parallel breve outputs |
-| `index_diachronica_original.html:14438` | Pre-Slavic-Vowel-Changes-i | chained `i > j̆ [ə?]` |
+| `index_diachronica.html:13128` | Central-Tai-iə | `iə > j̆ / _C%` |
+| `index_diachronica.html:13142–13143` | Lungchow-ɨə, Lungchow-ɨ̆-i̯o | `ɨə > ɨ̆`, chain |
+| `index_diachronica.html:13228–13229` | North-Tai-iə, North-Tai-ɨ̆ | Tai reflexes |
+| `index_diachronica.html:13258–13268` | Po-Ai-* | 4 rules |
+| `index_diachronica.html:13324` | Southwest-Tai-iə | Tai |
+| `index_diachronica.html:5955` | Scots_2-∅ | `∅ > ə̆ / _{n,r}` |
+| `index_diachronica.html:10325` | Tanacross-ɑ-ə-ʊ | parallel breve outputs |
+| `index_diachronica.html:14438` | Pre-Slavic-Vowel-Changes-i | chained `i > j̆ [ə?]` |
 
 **Acceptance criteria:** (same as ticket body)
 

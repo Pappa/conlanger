@@ -39,7 +39,7 @@ See [ADR-0011](../../../docs/adr/0011-index-rule-stages.md) and glossary **Stage
 
 ## Acceptance criteria
 
-- [x] Regenerated `index_diachronica_parsed.yml` uses `stages` only (no rule `input`/`output`).
+- [x] Regenerated `index_diachronica.yml` uses `stages` only (no rule `input`/`output`).
 - [x] Chain examples compile to the same sequential ASCA steps as before (env stamped on each step).
 - [x] Inventory regen + tests green; skip-shaped rows use `stages: []`.
 - [x] Docs/ADR-0005 amendment text no longer prescribe opaque `input`/`output` as the spine.
@@ -52,7 +52,7 @@ Implemented ADR-0011 one-shot cutover:
 - **Parse:** `IndexDiachronicaParser` emits `stages` (split on every `→` after env/exception isolation); hold-outs use `stages: []` + `status: skipped`.
 - **Compile:** `expand_chained_index_rule` expands adjacent stage pairs; `normalize_index_rule_tilde_fields` normalizes per stage before pairing.
 - **Inventory:** `validate_index_rule` compiles via `DiachronicSeries` (no direct `SoundChangeRule` on index rows).
-- **Regenerated** `data/diachronica/index_diachronica_parsed.yml` with `stages` only.
+- **Regenerated** `data/diachronica/index_diachronica.yml` with `stages` only.
 - **Docs:** ticket 03 schema answer + ADR-0005 amendment synced to ADR-0011.
 
 ## References

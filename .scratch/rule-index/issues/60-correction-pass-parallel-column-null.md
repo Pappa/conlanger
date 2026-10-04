@@ -76,4 +76,4 @@ Compile-time **`drop_mixed_parallel_null_columns`** in `asca_compile/parallel_nu
 
 - ASCA 0.10.2 docs § Insertion and Deletion
 - [asca-rule-validity.md](../research/asca-rule-validity.md) §2 Output (delete = `∅` alone)
-- Example sources: `index_diachronica_original.html` (e.g. Proto-Utupua to Nebao `c ɲ → ∅ n`)
+- Example sources: `index_diachronica.html` (e.g. Proto-Utupua to Nebao `c ɲ → ∅ n`)
