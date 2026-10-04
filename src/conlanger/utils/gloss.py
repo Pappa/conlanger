@@ -256,13 +256,7 @@ def extract_trailing_gloss_from_field(
 
 def is_quoted_prose_paragraph(raw: str) -> bool:
     """True when a ``schg`` line is editorial prose wrapped in typographic quotes."""
-    text = raw.strip()
-    if not text.startswith(("\u201c", '"')):
-        return False
-    body = text[1:]
-    if _quoted_inner_is_gloss(body):
-        return True
-    return len(text) > 40 and ARROW in text and bool(re.search(r"[a-z]{5,}", text))
+    return raw.strip().startswith(("\u201c", '"'))
 
 
 _UNCERTAINTY_WORDS = r"sporadic(?:ally)?|sometimes|occasionally|\(\?\)"

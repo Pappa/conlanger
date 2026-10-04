@@ -245,12 +245,10 @@ def test_extract_trailing_gloss_from_field_returns_captures():
 @pytest.mark.parametrize(
     ("text", "expected"),
     [
-        (
-            "\u201cThe PIE rules for the voicing of s \u2192 z, as in [nizdos]\u201d",
-            True,
-        ),
+        ("“assimilation in some of the longer vowels”", True),
+        ('"?"', True),
+        ("“?”", True),
         ("a \u2192 e / _C", False),
-        ('"?"', False),
     ],
 )
 def test_is_quoted_prose_paragraph(text, expected):
