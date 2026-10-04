@@ -72,7 +72,7 @@ Derives **public** index fields from the current **`_working_line`**:
    - `strip_leading_index_list_marker`
    - `split_input_output` / `split_post_arrow` / `build_stages_from_spine` or missing-arrow path
    - [`normalize_rule_arrows`](../../../src/conlanger/utils/parsing.py) on stages and string env/exception
-4. Assign **`stages`**, **`env`**, **`exception`** on the model.
+4. Assign **`stages`**; set **`env` / `exception`** to **`IndexContext(context=…)`** or `None` (never bare strings on the model — wire-format string dump is [146](146-migrate-parse-field-transforms-to-indexrule.md)).
 
 **Does not** modify **`raw`**. May clear or retain post-peel `_working_line` after split — document choice; prefer leaving peel-only text for debugging unless tests require clear.
 
@@ -100,10 +100,10 @@ In [146](146-migrate-parse-field-transforms-to-indexrule.md), not 145.
 
 ## Acceptance
 
-- [ ] `IndexRule(raw, source, rule_id?)` initialises `_working_line` from `raw`; `update_rule`, `working_text`, `update_model` implemented.
-- [ ] Unit tests: semicolon + structural split parity; YAML round-trip unchanged (no working line in dump).
-- [ ] `extract_rule_parts` removed from public API; semicolon not peeled outside `update_model`.
-- [ ] Parser rewire is **[146](146-migrate-parse-field-transforms-to-indexrule.md)**; 145 lands with model tests only.
+- [x] `IndexRule(raw, source, rule_id?)` initialises `_working_line` from `raw`; `update_rule`, `working_text`, `update_model` implemented.
+- [x] Unit tests: semicolon + structural split parity; YAML round-trip unchanged (no working line in dump).
+- [x] Semicolon peel + structural split only via **`update_model()`** on the model (not duplicated in new code paths).
+- [x] Parser rewire deferred to **[146](146-migrate-parse-field-transforms-to-indexrule.md)** — `parse_rule_string` may still use the legacy dict path until 146 lands.
 
 ## Related
 
@@ -113,4 +113,4 @@ In [146](146-migrate-parse-field-transforms-to-indexrule.md), not 145.
 
 ## Answer
 
-Implemented `IndexRule` parse lifecycle on the model: `_working_line` (`PrivateAttr`) initialised from `raw`, `working_text()`, `update_rule()`, and `update_model()` (first-`;` peel via `split_semicolon_comment`, `normalize_symbols`, structural split via `extract_rule_parts` / `extract_missing_arrow_rule_parts`). Retired public `extract_rule_parts` and `split_semicolon_comment` (now `_`-prefixed); parser still uses the private helpers until #146. Tests ported to `test_index_models.py`; YAML/`to_index_dict()` omit working line.
+**Resolved (model slice).** [`index_models.py`](../../../src/conlanger/tools/ingest/index_models.py): `_working_line` (`PrivateAttr`) from `raw`, `working_text()`, `update_rule()`, `update_model()` (first-`;` peel, `normalize_symbols`, structural split). Coverage in [`test_index_models.py`](../../../tests/conlanger/tools/ingest/test_index_models.py) (+ semicolon via `update_model` in [`test_transforms.py`](../../../tests/conlanger/tools/ingest/test_transforms.py)). **`parse_rule_string` still on the dict pipeline** — [146](146-migrate-parse-field-transforms-to-indexrule.md) wires `update_rule` / `update_model` and retires parser-level `extract_rule_parts` / `split_semicolon_comment`.
