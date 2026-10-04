@@ -155,6 +155,15 @@ class IndexRule(BaseModel):
         self.stages = [stage for stage in self.stages if stage and stage.strip()]
         return self
 
+    def apply_dialects_to_env_fields(self) -> Self:
+        """Parse dialect prose in env/exception ``context`` into structured ``dialect``."""
+        rule = self.model_copy(deep=True)
+        if rule.env is not None:
+            rule.env = rule.env.with_dialects_extracted()
+        if rule.exception is not None:
+            rule.exception = rule.exception.with_dialects_extracted()
+        return rule
+
     def to_index_dict(self) -> dict[str, Any]:
         """Serialize for cleaned-index YAML (omit false defaults and nulls)."""
         return self.model_dump(exclude_none=True, mode="python")

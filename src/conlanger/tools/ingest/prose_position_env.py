@@ -5,6 +5,8 @@ from __future__ import annotations
 import re
 from typing import Any
 
+from conlanger.tools.ingest.index_models import IndexContext, IndexRule
+
 _FINAL_SYLLABLE_ENV = "U#"
 _FINAL_SYLLABLE_RE = re.compile(
     r"^(?:in\s+)?(?:final\s+syllables?|syllable[- ]finally|syllable[- ]final)\s*$",
@@ -95,3 +97,41 @@ def normalize_bare_prose_position_env(
         return "#_#", [stripped], flags  # TODO: this is not correct
 
     return text, captures, flags
+
+
+def _context_text(ctx: IndexContext | None) -> str | None:
+    if ctx is None:
+        return None
+    return ctx.context
+
+
+def apply_prose_position_env_conditions(rule: IndexRule) -> IndexRule:
+    """Normalize bare Index position prose in ``env`` (ticket 107)."""
+    rule = rule.model_copy(deep=True)
+    env = _context_text(rule.env)
+    if not env:
+        return rule
+
+    comment_fragments: list[str] = []
+    qualifier_env, qualifier_captures = strip_trailing_position_qualifiers(env)
+    if qualifier_captures:
+        env = qualifier_env
+        comment_fragments.extend(qualifier_captures)
+
+    if rule.exception is not None:
+        if env != _context_text(rule.env):
+            rule.env = env
+            rule.merge_comment(*comment_fragments)
+        return rule
+
+    normalized, captures, flags = normalize_bare_prose_position_env(env)
+    if normalized != env or captures or flags:
+        rule.env = normalized
+        comment_fragments.extend(captures)
+        if flags.get("sporadic"):
+            rule.sporadic = True
+        rule.merge_comment(*comment_fragments)
+    elif comment_fragments:
+        rule.env = env
+        rule.merge_comment(*comment_fragments)
+    return rule

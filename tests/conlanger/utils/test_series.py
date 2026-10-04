@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import pytest
 
+from conlanger.tools.ingest.corpus_apply import apply_series_expansions
 from conlanger.tools.ingest.index_models import IndexContext, IndexRule
-from conlanger.tools.ingest.ingest_apply import apply_series_expansions
 from conlanger.utils.series import (
     expand_collectives_in_field,
     is_collective_subscript_token,

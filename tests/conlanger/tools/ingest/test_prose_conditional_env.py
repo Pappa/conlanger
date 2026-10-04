@@ -1,8 +1,8 @@
 import pytest
 
 from conlanger.tools.ingest.index_models import IndexContext, IndexRule
-from conlanger.tools.ingest.ingest_apply import apply_prose_conditional_env_conditions
 from conlanger.tools.ingest.prose_conditional_env import (
+    apply_prose_conditional_env_conditions,
     normalize_prose_conditional_env_field,
 )
 

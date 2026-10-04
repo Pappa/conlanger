@@ -4,11 +4,11 @@ from __future__ import annotations
 
 import pytest
 
-from conlanger.tools.ingest.index_models import IndexContext, IndexRule
-from conlanger.tools.ingest.ingest_apply import (
+from conlanger.tools.ingest.corpus_apply import (
     apply_feature_mappings,
     apply_ipa_mappings,
 )
+from conlanger.tools.ingest.index_models import IndexContext, IndexRule
 from conlanger.utils.mappings import (
     FeatureMapping,
     ManualMapping,

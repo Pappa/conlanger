@@ -5,6 +5,8 @@ from __future__ import annotations
 import re
 from typing import Any
 
+from conlanger.tools.ingest.index_models import IndexContext, IndexRule
+
 _BARE_MATRIX_RE = re.compile(r"^\[(?P<inner>[^\]]+)\]$")
 _UNSTRESSED_PENULT_RE = re.compile(
     r"^(?:in\s+the\s+)?(?:the\s+)?unstressed\s+penult\s*$",
@@ -117,3 +119,43 @@ def normalize_prose_conditional_env_field(
         input_matrix = input_matrix or stripped
 
     return stripped, captures, flags, input_matrix
+
+
+def _context_text(ctx: IndexContext | None) -> str | None:
+    if ctx is None:
+        return None
+    return ctx.context
+
+
+def apply_prose_conditional_env_conditions(rule: IndexRule) -> IndexRule:
+    """Normalize prose conditional env/exception fields (ticket 134)."""
+    rule = rule.model_copy(deep=True)
+
+    env = _context_text(rule.env)
+    if env:
+        normalized, captures, flags, input_matrix = (
+            normalize_prose_conditional_env_field(env)
+        )
+        comment_fragments = list(captures)
+        if normalized != env or comment_fragments or flags or input_matrix:
+            rule.env = normalized if normalized else None
+            if input_matrix and rule.stages:
+                merged = _attach_bare_matrix_to_input_stage(rule.stages, input_matrix)
+                if merged is not None:
+                    rule.stages = merged
+            if flags.get("sporadic"):
+                rule.sporadic = True
+            rule.merge_comment(*comment_fragments)
+
+    exception = _context_text(rule.exception)
+    if exception:
+        exc_norm, exc_caps, exc_flags, _ = normalize_prose_conditional_env_field(
+            exception
+        )
+        if exc_norm != exception or exc_caps or exc_flags:
+            rule.exception = exc_norm if exc_norm else None
+            if exc_flags.get("sporadic"):
+                rule.sporadic = True
+            rule.merge_comment(*exc_caps)
+
+    return rule
