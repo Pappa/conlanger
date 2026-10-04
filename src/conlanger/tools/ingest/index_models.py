@@ -19,7 +19,6 @@ from conlanger.utils.gloss import apply_dialects_to_context
 from conlanger.utils.parsing import (
     extract_missing_arrow_rule_parts,
     extract_rule_parts,
-    non_empty_stages,
 )
 from conlanger.utils.symbols import normalize_symbols
 
@@ -121,14 +120,13 @@ class IndexRule(BaseModel):
     def coerce_env_exception(cls, value: EnvExceptionInput) -> IndexContext | None:
         return _coerce_env_exception_value(value)
 
-    def working_text(self) -> str:
-        """Current parse working line (not emitted in YAML)."""
+    @property
+    def text(self) -> str:
         return self._working_line
 
-    def update_rule(self, text: str) -> Self:
-        """Replace the working line during pre-structural parse overlays."""
-        self._working_line = text
-        return self
+    @text.setter
+    def text(self, new_text: str) -> None:
+        self._working_line = new_text
 
     def update_model(self) -> Self:
         """Peel first ``;`` comment, normalize symbols, and split into index fields."""
@@ -154,16 +152,12 @@ class IndexRule(BaseModel):
         self.comment = merged
         return self
 
-    def mark_sporadic(self) -> Self:
-        self.sporadic = True
-        return self
-
     def map_stages(self, fn: Callable[[str], str]) -> Self:
         self.stages = [fn(stage) for stage in self.stages]
         return self
 
     def finalize_stages_shape(self) -> Self:
-        self.stages = non_empty_stages(self.stages)
+        self.stages = [stage for stage in self.stages if stage and stage.strip()]
         return self
 
     def to_index_dict(self) -> dict[str, Any]:

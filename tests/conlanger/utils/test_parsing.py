@@ -4,7 +4,6 @@ from lxml import html
 from conlanger.utils.parsing import (
     build_stages_from_spine,
     extract_missing_arrow_rule_parts,
-    finalize_stages_shape,
     normalize_sub_tags,
     parse_section_heading,
     split_env_exception,
@@ -116,24 +115,6 @@ def test_strip_leading_index_list_marker(text, expected):
 
 def test_build_stages_from_spine_splits_remaining_arrows():
     assert build_stages_from_spine("dʒ", "tʃ → ʃ") == ["dʒ", "tʃ", "ʃ"]
-
-
-def test_finalize_stages_shape_preserves_existing_skipped_status():
-    assert finalize_stages_shape({"stages": ["a"], "status": "skipped"}) == {
-        "stages": ["a"],
-        "status": "skipped",
-    }
-
-
-def test_finalize_stages_shape_keeps_short_spine():
-    assert finalize_stages_shape({"stages": ["a"], "env": "_#"}) == {
-        "env": "_#",
-        "stages": ["a"],
-    }
-
-
-def test_finalize_stages_shape_keeps_valid_spine():
-    assert finalize_stages_shape({"stages": ["a", " ", "b"]}) == {"stages": ["a", "b"]}
 
 
 def test_extract_missing_arrow_rule_parts():

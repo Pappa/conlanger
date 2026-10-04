@@ -163,13 +163,13 @@ def test_index_rule_structured_env_to_index_dict():
 
 def test_index_rule_working_text_initialised_from_raw():
     rule = IndexRule(raw="a → b", source="index.html:1")
-    assert rule.working_text() == "a → b"
+    assert rule.text == "a → b"
 
 
 def test_index_rule_update_rule_replaces_working_text_not_raw():
     rule = IndexRule(raw="original", source="index.html:1")
-    rule.update_rule("a → b")
-    assert rule.working_text() == "a → b"
+    rule.text = "a → b"
+    assert rule.text == "a → b"
     assert rule.raw == "original"
 
 

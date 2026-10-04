@@ -73,16 +73,6 @@ def build_stages_from_spine(inp: str, out: str) -> list[str]:
     return stages
 
 
-def non_empty_stages(stages: list[str]) -> list[str]:
-    return [stage for stage in stages if stage and stage.strip()]
-
-
-def finalize_stages_shape(parts: dict[str, Any]) -> dict[str, Any]:
-    """Drop empty stage slots; keep short spines as ordinary index rules."""
-    parts["stages"] = non_empty_stages(parts.get("stages", []))
-    return parts
-
-
 def normalize_rule_arrows(text: str) -> str:
     """Map Index rule arrow ``→`` to ASCA ``>`` in one field value."""
     if not text or ARROW not in text:

@@ -146,21 +146,18 @@ class IndexDiachronicaParser:
         rule = IndexRule(raw=raw, source=source, rule_id=rule_id or None)
 
         if rule_id and rule_id in self._skipped_rules:
-            rule.stages = []
             rule.status = "skipped"
             rule.comment = self._skipped_rules[rule_id].reason
             return [rule.to_index_dict()]
 
         if rule_id and rule_id in self._corrections:
-            rule.update_rule(self._corrections[rule_id])
+            rule.text = self._corrections[rule_id]
             self._matched_correction_ids.add(rule_id)
 
-        rule.update_rule(apply_index_rule_normalisation(rule.working_text()))
+        rule.text = apply_index_rule_normalisation(rule.text)
 
-        working, hits = apply_manual_mappings(
-            rule.working_text(), self._manual_mappings
-        )
-        rule.update_rule(working)
+        working, hits = apply_manual_mappings(rule.text, self._manual_mappings)
+        rule.text = working
         for hit in hits:
             self._matched_manual_froms.add(hit.from_text)
             self._manual_mapping_matches.append(
@@ -174,11 +171,9 @@ class IndexDiachronicaParser:
                 )
             )
 
-        rule.update_rule(
-            apply_section_mappings(rule.working_text(), self._current_section_mappings)
-        )
+        rule.text = apply_section_mappings(rule.text, self._current_section_mappings)
 
-        if is_quoted_prose_paragraph(rule.working_text()):
+        if is_quoted_prose_paragraph(rule.text):
             rule.stages = []
             rule.comment = raw.strip()
             return [rule.to_index_dict()]
