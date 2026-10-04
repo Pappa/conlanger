@@ -249,7 +249,7 @@ def extract_missing_arrow_rule_parts(raw: str) -> dict[str, Any]:
     return _rule_parts_from_spine_text(stage_text, rest=rest)
 
 
-def _extract_rule_parts(raw: str) -> dict[str, Any] | None:
+def extract_rule_parts(raw: str) -> dict[str, Any] | None:
     """Split a raw rule string into ``stages`` and optional env/exception.
 
     Returns None if ``→`` is missing. Optional keys are omitted when absent.

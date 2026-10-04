@@ -113,4 +113,4 @@ In [146](146-migrate-parse-field-transforms-to-indexrule.md), not 145.
 
 ## Answer
 
-Implemented `IndexRule` parse lifecycle on the model: `_working_line` (`PrivateAttr`) initialised from `raw`, `working_text()`, `update_rule()`, and `update_model()` (first-`;` peel via `_split_semicolon_comment`, `normalize_symbols`, structural split via `_extract_rule_parts` / `extract_missing_arrow_rule_parts`). Retired public `extract_rule_parts` and `split_semicolon_comment` (now `_`-prefixed); parser still uses the private helpers until #146. Tests ported to `test_index_models.py`; YAML/`to_index_dict()` omit working line.
+Implemented `IndexRule` parse lifecycle on the model: `_working_line` (`PrivateAttr`) initialised from `raw`, `working_text()`, `update_rule()`, and `update_model()` (first-`;` peel via `split_semicolon_comment`, `normalize_symbols`, structural split via `extract_rule_parts` / `extract_missing_arrow_rule_parts`). Retired public `extract_rule_parts` and `split_semicolon_comment` (now `_`-prefixed); parser still uses the private helpers until #146. Tests ported to `test_index_models.py`; YAML/`to_index_dict()` omit working line.

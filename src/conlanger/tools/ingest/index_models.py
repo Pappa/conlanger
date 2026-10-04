@@ -7,11 +7,11 @@ from typing import Any, Self
 from pydantic import BaseModel, ConfigDict, Field, PrivateAttr, field_validator
 
 from conlanger.tools.ingest.transforms import (
-    _split_semicolon_comment,
+    split_semicolon_comment,
     join_rule_comment,
 )
 from conlanger.utils.parsing import (
-    _extract_rule_parts,
+    extract_rule_parts,
     extract_missing_arrow_rule_parts,
 )
 from conlanger.utils.symbols import normalize_symbols
@@ -64,12 +64,12 @@ class IndexRule(BaseModel):
 
     def update_model(self) -> Self:
         """Peel first ``;`` comment, normalize symbols, and split into index fields."""
-        self._working_line, rule_comment = _split_semicolon_comment(self._working_line)
+        self._working_line, rule_comment = split_semicolon_comment(self._working_line)
         if rule_comment:
             self.comment = join_rule_comment(self.comment, rule_comment)
 
         self._working_line = normalize_symbols(self._working_line)
-        parts = _extract_rule_parts(self._working_line)
+        parts = extract_rule_parts(self._working_line)
         if parts is None:
             parts = extract_missing_arrow_rule_parts(self._working_line)
 

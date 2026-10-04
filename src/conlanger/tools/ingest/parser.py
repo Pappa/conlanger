@@ -55,7 +55,7 @@ from conlanger.tools.ingest.prose_position_env import (
 )
 from conlanger.tools.ingest.section_policy import resolve_catch_all_else_rules
 from conlanger.tools.ingest.transforms import (
-    _split_semicolon_comment,
+    split_semicolon_comment,
     apply_medial_env_conditions,
     apply_sporadic_qualifier,
     apply_stress_conditions,
@@ -76,7 +76,7 @@ from conlanger.utils.mappings import (
     apply_section_mappings,
 )
 from conlanger.utils.parsing import (
-    _extract_rule_parts,
+    extract_rule_parts,
     extract_element_text,
     extract_missing_arrow_rule_parts,
     finalize_stages_shape,
@@ -200,9 +200,9 @@ class IndexDiachronicaParser:
             )
             return [quoted.to_index_dict()]
 
-        working, rule_comment = _split_semicolon_comment(working)
+        working, rule_comment = split_semicolon_comment(working)
         normalized = normalize_symbols(working)
-        parts = _extract_rule_parts(normalized)
+        parts = extract_rule_parts(normalized)
         if parts is None:
             parts = extract_missing_arrow_rule_parts(normalized)
         if rule_comment:

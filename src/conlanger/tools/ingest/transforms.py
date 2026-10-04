@@ -29,7 +29,7 @@ def join_rule_comment(*fragments: str | None) -> str | None:
     return "; ".join(parts)
 
 
-def _split_semicolon_comment(text: str) -> tuple[str, str | None]:
+def split_semicolon_comment(text: str) -> tuple[str, str | None]:
     """Peel the first ``;`` on a working rule line into remainder and rule-comment tail."""
     head, _, tail = text.partition(";")
     return head.rstrip(), tail.strip() or None
