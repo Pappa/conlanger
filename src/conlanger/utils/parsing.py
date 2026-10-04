@@ -53,7 +53,7 @@ LEADING_EXCEPTION_RE = re.compile(r"^(?:,\s*)?except\s+(.*)$", re.IGNORECASE)
 _LEADING_INDEX_LIST_MARKER_RE = re.compile(r"^—\s*")
 
 
-def strip_leading_index_list_marker(text: str) -> str:
+def _strip_leading_index_list_marker(text: str) -> str:
     """Remove Index list-item em dash from the start of a rule line."""
     if not text:
         return text
@@ -61,7 +61,7 @@ def strip_leading_index_list_marker(text: str) -> str:
 
 
 # TODO: rename to something sensible
-def build_stages_from_spine(inp: str, out: str) -> list[str]:
+def _build_stages_from_spine(inp: str, out: str) -> list[str]:
     """Split a change spine into ordered opaque stage strings."""
     stages = [inp.strip()]
     if ARROW in out:
@@ -243,13 +243,13 @@ def extract_rule_parts(raw: str) -> dict[str, Any]:
 
     Optional keys are omitted when absent.
     """
-    raw = strip_leading_index_list_marker(raw)
+    raw = _strip_leading_index_list_marker(raw)
     split = split_input_output(raw)
     if split is None:
         return _extract_missing_arrow_rule_parts(raw)
     inp, post_arrow = split
     out, env, exception = split_post_arrow(post_arrow)
-    stages = build_stages_from_spine(inp, out)
+    stages = _build_stages_from_spine(inp, out)
     parts: dict[str, Any] = {"stages": stages}
     if env is not None:
         parts["env"] = env

@@ -156,5 +156,3 @@ def normalize_prose_env_head(
         return f"{prefix}{match.group(1)}", [stripped], flags
 
     return stripped, captures, flags
-
-

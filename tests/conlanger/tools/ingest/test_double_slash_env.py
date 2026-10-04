@@ -1,12 +1,12 @@
 import pytest
 
-from conlanger.tools.ingest.ingest_apply import apply_double_slash_env_conditions
 from conlanger.tools.ingest.double_slash_env import (
     normalize_prose_env_head,
     normalize_prose_exception_or_env_tail,
     split_embedded_double_slash,
 )
 from conlanger.tools.ingest.index_models import IndexContext, IndexRule
+from conlanger.tools.ingest.ingest_apply import apply_double_slash_env_conditions
 
 
 def _rule_from_parts(parts: dict) -> IndexRule:

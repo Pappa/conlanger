@@ -2,16 +2,13 @@ import pytest
 from lxml import html
 
 from conlanger.utils.parsing import (
-    build_stages_from_spine,
-    # TODO: replace with tests for extract_rule_parts
-    _extract_missing_arrow_rule_parts,
+    extract_rule_parts,
     normalize_sub_tags,
     parse_section_heading,
     split_env_exception,
     split_input_output,
     split_output_rest,
     split_post_arrow,
-    strip_leading_index_list_marker,
 )
 
 
@@ -101,36 +98,19 @@ def test_normalize_sub_tags(html_text, expected):
 
 
 @pytest.mark.parametrize(
-    ("text", "expected"),
+    "input, expected",
     [
-        ("— j w → i u / #_CV", "j w → i u / #_CV"),
-        ("— aː → oː", "aː → oː"),
-        ("— {o,u}(ː) → iː", "{o,u}(ː) → iː"),
-        ("j w → i u", "j w → i u"),
-        ("", ""),
+        ("a → b / _#", {"stages": ["a", "b"], "env": "_#"}),
+        ("a → b / _# ! V_", {"stages": ["a", "b"], "env": "_#", "exception": "V_"}),
+        ("no arrow here", {"stages": ["no arrow here"]}),
+        ("a to b / _#", {"stages": ["a to b"], "env": "_#"}),
+        ("a to b / _# ! V_", {"stages": ["a to b"], "env": "_#", "exception": "V_"}),
+        ("dʒ → tʃ → ʃ", {"stages": ["dʒ", "tʃ", "ʃ"]}),
+        ("— j w → i u / #_CV", {"stages": ["j w", "i u"], "env": "#_CV"}),
     ],
 )
-def test_strip_leading_index_list_marker(text, expected):
-    assert strip_leading_index_list_marker(text) == expected
-
-
-def test_build_stages_from_spine_splits_remaining_arrows():
-    assert build_stages_from_spine("dʒ", "tʃ → ʃ") == ["dʒ", "tʃ", "ʃ"]
-
-
-def test__extract_missing_arrow_rule_parts():
-    assert _extract_missing_arrow_rule_parts("no arrow here") == {
-        "stages": ["no arrow here"]
-    }
-    assert _extract_missing_arrow_rule_parts("a to b / _#") == {
-        "stages": ["a to b"],
-        "env": "_#",
-    }
-    assert _extract_missing_arrow_rule_parts("a to b / _# ! V_") == {
-        "stages": ["a to b"],
-        "env": "_#",
-        "exception": "V_",
-    }
+def test_extract_rule_parts(input, expected):
+    assert extract_rule_parts(input) == expected
 
 
 @pytest.mark.parametrize(
