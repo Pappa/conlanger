@@ -227,9 +227,9 @@ def test_normalize_stress_conditions(text, expected):
     assert cleaned == expected
 
 
-def test_split_semicolon_comment_via_update_model():
-    rule = IndexRule(raw="a → b ; tail", source="test").update_model()
+def test_split_semicolon_comment_via_build():
+    rule = IndexRule(raw="a → b ; tail", source="test").build()
     assert rule.stages == ["a", "b"]
     assert rule.comment == "tail"
-    rule = IndexRule(raw="no semicolon", source="test").update_model()
+    rule = IndexRule(raw="no semicolon", source="test").build()
     assert rule.comment is None

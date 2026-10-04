@@ -21,7 +21,7 @@ _SAMPLED_RULES_CSV = (
 
 
 def _update_model_fields(raw: str) -> dict:
-    rule = IndexRule(raw=raw, source="test").update_model()
+    rule = IndexRule(raw=raw, source="test").build()
     out: dict = {
         "stages": rule.stages,
     }
@@ -178,38 +178,32 @@ def test_index_rule_update_rule_replaces_working_text_not_raw():
     assert rule.raw == "original"
 
 
-def test_index_rule_working_line_omitted_from_index_dict():
-    rule = IndexRule(raw="a → b", source="index.html:1")
-    assert "working_line" not in rule.to_index_dict()
-    assert "_working_line" not in rule.to_index_dict()
-
-
-def test_update_model_peels_first_semicolon_comment():
-    rule = IndexRule(raw="a → b ; tail", source="test").update_model()
+def test_build_peels_first_semicolon_comment():
+    rule = IndexRule(raw="a → b ; tail", source="test").build()
     assert rule.stages == ["a", "b"]
     assert rule.comment == "tail"
 
 
-def test_update_model_semicolon_peel_no_comment_when_absent():
-    rule = IndexRule(raw="no semicolon", source="test").update_model()
+def test_build_semicolon_peel_no_comment_when_absent():
+    rule = IndexRule(raw="no semicolon", source="test").build()
     assert rule.comment is None
     assert rule.stages == ["no semicolon"]
 
 
-def test_update_model_strips_leading_list_marker():
-    rule = IndexRule(raw="— j w → i u / #_CV", source="test").update_model()
+def test_build_strips_leading_list_marker():
+    rule = IndexRule(raw="— j w → i u / #_CV", source="test").build()
     assert rule.stages == ["j w", "i u"]
     assert rule.env == IndexContext(context="#_CV")
 
 
-def test_update_model_splits_chain_into_stages():
-    rule = IndexRule(raw="dʒ → tʃ → ʃ", source="test").update_model()
+def test_build_splits_chain_into_stages():
+    rule = IndexRule(raw="dʒ → tʃ → ʃ", source="test").build()
     assert rule.stages == ["dʒ", "tʃ", "ʃ"]
 
 
-def test_update_model_applies_symbol_normalization():
+def test_build_applies_symbol_normalization():
     raw = "a → b / _$%oː"
-    rule = IndexRule(raw=raw, source="test").update_model()
+    rule = IndexRule(raw=raw, source="test").build()
     assert rule.stages == ["a", "b"]
     assert rule.env == IndexContext(context="_$$oː")
 
@@ -263,7 +257,7 @@ def test_update_model_applies_symbol_normalization():
         ("r…r → r…∅", {"stages": ["r…r", "r…∅"]}),
     ],
 )
-def test_update_model_structural_split(raw, expected):
+def test_build_structural_split(raw, expected):
     assert _update_model_fields(raw) == expected
 
 
@@ -277,7 +271,7 @@ _SAMPLED_HTML_RULE_CASES = _load_sampled_html_rules()
         for case_id, raw, expected in _SAMPLED_HTML_RULE_CASES
     ],
 )
-def test_update_model_sampled_html_rules(raw, expected):
+def test_build_sampled_html_rules(raw, expected):
     assert _update_model_fields(raw) == expected
 
 

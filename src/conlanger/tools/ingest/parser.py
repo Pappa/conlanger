@@ -183,7 +183,7 @@ class IndexDiachronicaParser:
             rule.comment = raw.strip()
             return [rule.to_index_dict()]
 
-        rule.update_model()
+        rule.build()
 
         rule = apply_series_expansions(rule, self._parser_config.series_expansions)
         rule = apply_sporadic_qualifier(rule)

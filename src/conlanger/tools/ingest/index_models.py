@@ -103,6 +103,7 @@ class IndexRule(BaseModel):
     rule_id: str | None = None
 
     _working_line: str = PrivateAttr()
+    _initialised: bool = PrivateAttr(default=False)
 
     def model_post_init(self, __context: Any, /) -> None:
         self._working_line = self.raw
@@ -128,8 +129,10 @@ class IndexRule(BaseModel):
     def text(self, new_text: str) -> None:
         self._working_line = new_text
 
-    def update_model(self) -> Self:
+    def build(self) -> Self:
         """Peel first ``;`` comment, normalize symbols, and split into index fields."""
+        if self._initialised:
+            raise RuntimeError("IndexRule already initialised")
         self._working_line, rule_comment = split_semicolon_comment(self._working_line)
         if rule_comment:
             self.comment = join_rule_comment(self.comment, rule_comment)
@@ -140,6 +143,7 @@ class IndexRule(BaseModel):
         self.stages = list(parts.get("stages") or [])
         self.env = parts.get("env")
         self.exception = parts.get("exception")
+        self._initialised = True
         return self
 
     def merge_comment(self, *fragments: str | None) -> Self:

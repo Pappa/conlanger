@@ -33,9 +33,9 @@ Skipped: **2/124**
 | count | failure_class |
 |------:|---------------|
 | 82 | `expected_underscore` |
-| 32 | `expected_ipa` |
+| 33 | `expected_ipa` |
 | 24 | `unknown_character` |
-| 22 | `missing_slash_output_env` |
+| 21 | `missing_slash_output_env` |
 | 19 | `syntax_other` |
 | 15 | `nested_brackets` |
 | 11 | `expected_number` |
@@ -224,7 +224,7 @@ Skipped: **2/124**
 |------:|-------------|
 | 9 | `(` |
 | 4 | `{` |
-| 3 | `*` |
+| 4 | `*` |
 | 3 | `…` |
 | 3 | `ʷ` |
 | 2 | `ʲ` |
@@ -254,7 +254,7 @@ Skipped: **2/124**
 | count | error_token |
 |------:|-------------|
 | 8 | `)` |
-| 5 | `(` |
+| 4 | `(` |
 | 3 | `:` |
 | 3 | `ʲ` |
 | 1 | `*` |
