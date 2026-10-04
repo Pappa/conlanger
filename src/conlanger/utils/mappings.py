@@ -267,7 +267,9 @@ def apply_section_mappings(
     """Replace section-scoped tokens on the working line (``raw`` unchanged upstream)."""
     if not text or not section_mappings:
         return text
-    ordered = sorted(section_mappings.items(), key=lambda pair: len(pair[0]), reverse=True)
+    ordered = sorted(
+        section_mappings.items(), key=lambda pair: len(pair[0]), reverse=True
+    )
     working = text
     for from_text, to_text in ordered:
         if from_text and from_text in working:

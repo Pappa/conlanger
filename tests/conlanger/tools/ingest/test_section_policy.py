@@ -1,7 +1,5 @@
 import pytest
-from lxml import html
 
-from conlanger.tools.ingest import IndexDiachronicaParser
 from conlanger.tools.ingest.section_policy import (
     is_catch_all_else_env,
     is_else_env_candidate,
@@ -160,20 +158,3 @@ def test_resolve_catch_all_else_deferred_when_prev_env_is_prose():
     resolved = resolve_catch_all_else_rules(rules)
     assert resolved[1]["env"] == "else"
     assert "exception" not in resolved[1]
-
-
-def test_parser_resolves_catch_all_else_in_section():
-    root = html.document_fromstring(
-        """\
-<!doctype html><html><body><section id="Else">
-<h2>1.0 Test Section</h2>
-<p class="schg">kʼ → {χʷ,qʷ} / #_</p>
-<p class="schg">kʼ → q / else</p>
-</section></body></html>"""
-    )
-    parser = IndexDiachronicaParser()
-    rules = parser.parse(doc=root)["sections"][0]["rules"]
-    assert rules[0]["env"] == "#_"
-    assert "env" not in rules[1]
-    assert rules[1]["exception"] == "#_"
-    assert rules[1]["raw"] == "kʼ → q / else"

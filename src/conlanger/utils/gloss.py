@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from conlanger.utils.parsing import ARROW, non_empty_stages
+from conlanger.utils.parsing import ARROW
 
 _GLOSS_KEYWORD_RE = re.compile(
     r"\b(?:"
