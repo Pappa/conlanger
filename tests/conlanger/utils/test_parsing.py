@@ -3,7 +3,8 @@ from lxml import html
 
 from conlanger.utils.parsing import (
     build_stages_from_spine,
-    extract_missing_arrow_rule_parts,
+    # TODO: replace with tests for extract_rule_parts
+    _extract_missing_arrow_rule_parts,
     normalize_sub_tags,
     parse_section_heading,
     split_env_exception,
@@ -117,15 +118,15 @@ def test_build_stages_from_spine_splits_remaining_arrows():
     assert build_stages_from_spine("dʒ", "tʃ → ʃ") == ["dʒ", "tʃ", "ʃ"]
 
 
-def test_extract_missing_arrow_rule_parts():
-    assert extract_missing_arrow_rule_parts("no arrow here") == {
+def test__extract_missing_arrow_rule_parts():
+    assert _extract_missing_arrow_rule_parts("no arrow here") == {
         "stages": ["no arrow here"]
     }
-    assert extract_missing_arrow_rule_parts("a to b / _#") == {
+    assert _extract_missing_arrow_rule_parts("a to b / _#") == {
         "stages": ["a to b"],
         "env": "_#",
     }
-    assert extract_missing_arrow_rule_parts("a to b / _# ! V_") == {
+    assert _extract_missing_arrow_rule_parts("a to b / _# ! V_") == {
         "stages": ["a to b"],
         "env": "_#",
         "exception": "V_",

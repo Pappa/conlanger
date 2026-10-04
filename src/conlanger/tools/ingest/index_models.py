@@ -17,7 +17,6 @@ from pydantic import (
 
 from conlanger.utils.gloss import apply_dialects_to_context
 from conlanger.utils.parsing import (
-    extract_missing_arrow_rule_parts,
     extract_rule_parts,
 )
 from conlanger.utils.symbols import normalize_symbols
@@ -136,14 +135,10 @@ class IndexRule(BaseModel):
 
         self._working_line = normalize_symbols(self._working_line)
         parts = extract_rule_parts(self._working_line)
-        if parts is None:
-            parts = extract_missing_arrow_rule_parts(self._working_line)
 
         self.stages = list(parts.get("stages") or [])
-        env_str = parts.get("env")
-        exc_str = parts.get("exception")
-        self.env = env_str
-        self.exception = exc_str
+        self.env = parts.get("env")
+        self.exception = parts.get("exception")
         return self
 
     def merge_comment(self, *fragments: str | None) -> Self:

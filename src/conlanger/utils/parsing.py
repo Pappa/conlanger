@@ -232,22 +232,21 @@ def _rule_parts_from_spine_text(
     return parts
 
 
-def extract_missing_arrow_rule_parts(raw: str) -> dict[str, Any]:
+def _extract_missing_arrow_rule_parts(raw: str) -> dict[str, Any]:
     """Split a no-arrow rule string into a single input stage plus optional env/exception."""
-    raw = strip_leading_index_list_marker(raw)
     stage_text, rest = split_output_rest(raw.strip())
     return _rule_parts_from_spine_text(stage_text, rest=rest)
 
 
-def extract_rule_parts(raw: str) -> dict[str, Any] | None:
+def extract_rule_parts(raw: str) -> dict[str, Any]:
     """Split a raw rule string into ``stages`` and optional env/exception.
 
-    Returns None if ``→`` is missing. Optional keys are omitted when absent.
+    Optional keys are omitted when absent.
     """
     raw = strip_leading_index_list_marker(raw)
     split = split_input_output(raw)
     if split is None:
-        return None
+        return _extract_missing_arrow_rule_parts(raw)
     inp, post_arrow = split
     out, env, exception = split_post_arrow(post_arrow)
     stages = build_stages_from_spine(inp, out)
