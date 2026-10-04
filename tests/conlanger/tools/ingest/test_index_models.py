@@ -315,3 +315,53 @@ def test_env_exception_input_to_string(input, expected):
 )
 def test_resolve_index_context(ctx, expected):
     assert resolve_index_context_to_string(ctx) == expected
+
+
+@pytest.mark.parametrize(
+    "ctx, expected",
+    [
+        pytest.param("_#", IndexContext(context="_#"), id="string"),
+        pytest.param(
+            IndexContext(context="_#"), IndexContext(context="_#"), id="index_context"
+        ),
+        pytest.param(
+            IndexContext(position={"adjacent_to": "C"}),
+            IndexContext(position={"adjacent_to": "C"}),
+            id="position",
+        ),
+        pytest.param(
+            IndexContext(dialect="northern"),
+            IndexContext(dialect="northern"),
+            id="dialect",
+        ),
+        pytest.param({"context": "_#"}, IndexContext(context="_#"), id="dict"),
+        pytest.param(None, None, id="none"),
+    ],
+)
+def test_index_rule_set_env_exception(ctx, expected):
+    rule = IndexRule(raw="a → b", source="index.html:1")
+    try:
+        rule.env = ctx
+        rule.exception = ctx
+    except ValueError as e:
+        pytest.fail(e)
+
+    assert rule.env == expected
+    assert rule.exception == expected
+
+
+@pytest.mark.parametrize(
+    "ctx",
+    [
+        pytest.param(1, id="int"),
+        pytest.param(True, id="true"),
+        pytest.param(False, id="false"),
+        pytest.param([IndexContext(context="_#")], id="list"),
+    ],
+)
+def test_index_rule_set_env_exception_validation_error(ctx):
+    rule = IndexRule(raw="a → b", source="index.html:1")
+    with pytest.raises(ValueError, match=r"Invalid env\/exception value"):
+        rule.env = ctx
+    with pytest.raises(ValueError, match=r"Invalid env\/exception value"):
+        rule.exception = ctx

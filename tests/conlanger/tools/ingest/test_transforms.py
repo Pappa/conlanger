@@ -1,7 +1,6 @@
 import pytest
 
 from conlanger.tools.ingest.index_models import (
-    IndexContext,
     IndexRule,
     join_rule_comment,
 )
@@ -16,38 +15,13 @@ from conlanger.tools.ingest.transforms import (
 )
 
 
-def _rule_from_parts(parts: dict) -> IndexRule:
-    rule = IndexRule(
-        raw="x",
-        source="t",
-        stages=list(parts.get("stages") or []),
-        comment=parts.get("comment"),
-        sporadic=parts.get("sporadic"),
-    )
-    if "env" in parts:
-        rule.env = IndexContext(context=parts["env"])
-    if "exception" in parts:
-        rule.exception = IndexContext(context=parts["exception"])
-    return rule
-
-
-def _index_fields(rule: IndexRule) -> dict:
-    dumped = rule.to_index_dict()
-    out = {
-        key: dumped[key]
-        for key in ("stages", "env", "exception", "comment", "sporadic")
-        if key in dumped
-    }
-    if out.get("stages") == []:
-        out.pop("stages", None)
-    return out
-
-
 def test_apply_medial_env_conditions_bare_medial():
     result = apply_medial_env_conditions(
-        _rule_from_parts({"stages": ["t", "r"], "env": "medially"})
+        IndexRule(raw="x", source="t", stages=["t", "r"], env="medially")
     )
-    assert _index_fields(result) == {
+    assert result.to_index_dict() == {
+        "raw": "x",
+        "source": "t",
         "stages": ["t", "r"],
         "env": "_",
         "exception": MEDIAL_BOUNDARY_EXCEPTION,
@@ -56,9 +30,13 @@ def test_apply_medial_env_conditions_bare_medial():
 
 def test_apply_medial_env_conditions_structural_when_medial():
     result = apply_medial_env_conditions(
-        _rule_from_parts({"stages": ["m", "β"], "env": "C[-voice]_n, when medial"})
+        IndexRule(
+            raw="x", source="t", stages=["m", "β"], env="C[-voice]_n, when medial"
+        )
     )
-    assert _index_fields(result) == {
+    assert result.to_index_dict() == {
+        "raw": "x",
+        "source": "t",
         "stages": ["m", "β"],
         "env": "C[-voice]_n",
         "exception": MEDIAL_BOUNDARY_EXCEPTION,
@@ -66,13 +44,14 @@ def test_apply_medial_env_conditions_structural_when_medial():
 
 
 def test_apply_medial_env_conditions_deferred_env_and_exception():
-    parts = {
-        "stages": ["b", "h"],
-        "env": "medially,",
-        "exception": "{r(ʲ),l(ʲ)}_ or _ɡ",
-    }
-    rule = _rule_from_parts(parts)
-    assert _index_fields(apply_medial_env_conditions(rule)) == _index_fields(rule)
+    rule = IndexRule(
+        raw="x",
+        source="t",
+        stages=["b", "h"],
+        env="medially,",
+        exception="{r(ʲ),l(ʲ)}_ or _ɡ",
+    )
+    assert apply_medial_env_conditions(rule).to_index_dict() == rule.to_index_dict()
 
 
 @pytest.mark.parametrize(
@@ -106,29 +85,36 @@ def test_apply_medial_env_conditions_deferred_env_and_exception():
     ],
 )
 def test_apply_sporadic_qualifier(input, output):
-    result = apply_sporadic_qualifier(_rule_from_parts(input))
-    assert _index_fields(result) == {**output, "sporadic": True}
+    args = {
+        "raw": "x",
+        "source": "t",
+    }
+    rule = IndexRule(**args, **input)
+    result = apply_sporadic_qualifier(rule)
+    assert result.to_index_dict() == {**args, **output, "sporadic": True}
 
 
 def test_apply_sporadic_qualifier_unchanged_when_no_marker():
-    rule = _rule_from_parts({"stages": ["a", "e"], "env": "_#"})
-    assert _index_fields(apply_sporadic_qualifier(rule)) == _index_fields(rule)
+    rule = IndexRule(raw="x", source="t", stages=["a", "e"], env="_#")
+    assert apply_sporadic_qualifier(rule).to_index_dict() == rule.to_index_dict()
 
 
 def test_apply_stress_conditions():
     result = apply_stress_conditions(
-        _rule_from_parts({"stages": ["a", "e"], "env": "_C(C), when stressed"})
+        IndexRule(raw="x", source="t", stages=["a", "e"], env="_C(C), when stressed")
     )
-    assert _index_fields(result) == {
+    assert result.to_index_dict() == {
+        "raw": "x",
+        "source": "t",
         "stages": ["a", "e"],
         "env": "_C(C) when stressed",
     }
     cleaned = apply_stress_conditions(
-        _rule_from_parts(
-            {
-                "stages": ["ɾ", "∅"],
-                "env": "V_V, when neither vowel is stressed",
-            }
+        IndexRule(
+            raw="x",
+            source="t",
+            stages=["ɾ", "∅"],
+            env="V_V, when neither vowel is stressed",
         )
     )
     assert cleaned.to_index_dict()["env"] == "V_V"
@@ -137,11 +123,15 @@ def test_apply_stress_conditions():
 
 def test_apply_trailing_glosses():
     result = apply_trailing_glosses(
-        _rule_from_parts(
-            {"stages": ["j", "p (some Polynesian languages, such as Levei and Drehet)"]}
+        IndexRule(
+            raw="x",
+            source="t",
+            stages=["j", "p (some Polynesian languages, such as Levei and Drehet)"],
         )
     )
-    assert _index_fields(result) == {
+    assert result.to_index_dict() == {
+        "raw": "x",
+        "source": "t",
         "stages": ["j", "p"],
         "comment": "(some Polynesian languages, such as Levei and Drehet)",
     }
@@ -149,9 +139,12 @@ def test_apply_trailing_glosses():
 
 def test_apply_trailing_glosses_strips_field_wrapped_gloss_to_comment():
     result = apply_trailing_glosses(
-        _rule_from_parts({"stages": ["hhy", '"something like /ʒ/"']})
+        IndexRule(raw="x", source="t", stages=["hhy", '"something like /ʒ/"'])
     )
-    assert _index_fields(result) == {
+    assert result.to_index_dict() == {
+        "raw": "x",
+        "source": "t",
+        # TODO: check this is correct - seems wrong
         "stages": ["hhy", ""],
         "comment": '"something like /ʒ/"',
     }
@@ -160,15 +153,17 @@ def test_apply_trailing_glosses_strips_field_wrapped_gloss_to_comment():
 def test_apply_trailing_glosses_keeps_unclosed_paren_on_env():
     """Env/exception unclosed parens stay paired for compile-time gloss strip."""
     result = apply_trailing_glosses(
-        _rule_from_parts(
-            {
-                "stages": ["Vn", "ṽ"],
-                "env": "_# (seems to have been reverted in most dialects",
-                "exception": "for Souletin)",
-            }
+        IndexRule(
+            raw="x",
+            source="t",
+            stages=["Vn", "ṽ"],
+            env="_# (seems to have been reverted in most dialects",
+            exception="for Souletin)",
         )
     )
-    assert _index_fields(result) == {
+    assert result.to_index_dict() == {
+        "raw": "x",
+        "source": "t",
         "stages": ["Vn", "ṽ"],
         "env": "_# (seems to have been reverted in most dialects",
         "exception": "for Souletin)",

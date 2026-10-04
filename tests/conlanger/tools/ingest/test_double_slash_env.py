@@ -6,32 +6,7 @@ from conlanger.tools.ingest.double_slash_env import (
     normalize_prose_exception_or_env_tail,
     split_embedded_double_slash,
 )
-from conlanger.tools.ingest.index_models import IndexContext, IndexRule
-
-
-def _rule_from_parts(parts: dict) -> IndexRule:
-    rule = IndexRule(raw="x", source="t", stages=list(parts.get("stages") or []))
-    if "env" in parts:
-        rule.env = IndexContext(context=parts["env"])
-    if "exception" in parts:
-        rule.exception = IndexContext(context=parts["exception"])
-    if "comment" in parts:
-        rule.comment = parts["comment"]
-    if "sporadic" in parts:
-        rule.sporadic = parts["sporadic"]
-    return rule
-
-
-def _index_fields(rule: IndexRule) -> dict:
-    dumped = rule.to_index_dict()
-    out = {
-        key: dumped[key]
-        for key in ("stages", "env", "exception", "comment", "sporadic")
-        if key in dumped
-    }
-    if out.get("stages") == []:
-        out.pop("stages", None)
-    return out
+from conlanger.tools.ingest.index_models import IndexRule
 
 
 @pytest.mark.parametrize(
@@ -141,8 +116,14 @@ def _index_fields(rule: IndexRule) -> dict:
     ],
 )
 def test_apply_double_slash_env_conditions(parts, expected):
-    result = apply_double_slash_env_conditions(_rule_from_parts(parts))
-    assert _index_fields(result) == expected
+    args = {
+        "raw": "x",
+        "source": "t",
+        "stages": [],
+    }
+    rule = IndexRule(**args, **parts)
+    result = apply_double_slash_env_conditions(rule)
+    assert result.to_index_dict() == {**expected, **args}
 
 
 @pytest.mark.parametrize(

@@ -115,11 +115,9 @@ class IndexRule(BaseModel):
             return None
         if isinstance(value, str):
             return IndexContext.model_validate({"context": value.strip()})
-        if isinstance(value, IndexContext):
+        if isinstance(value, (IndexContext, dict)):
             return IndexContext.model_validate(value)
-        if isinstance(value, dict):
-            return IndexContext.model_validate(value)
-        # raise ValueError(f"Invalid env/exception value: {value}")
+        raise ValueError(f"Invalid env/exception value: {value}")
 
     @property
     def text(self) -> str:
