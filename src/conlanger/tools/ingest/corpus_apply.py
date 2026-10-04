@@ -10,8 +10,6 @@ from conlanger.utils.mappings import (
 )
 from conlanger.utils.series import expand_collectives_in_field
 
-_CORPUS_CONTEXT_FIELDS = ("env", "exception")
-
 
 def apply_series_expansions(
     rule: IndexRule,
@@ -24,7 +22,7 @@ def apply_series_expansions(
     rule.stages = [
         expand_collectives_in_field(stage, expansions) for stage in rule.stages
     ]
-    for field in _CORPUS_CONTEXT_FIELDS:
+    for field in IndexRule.context_fields:
         ctx: IndexContext | None = getattr(rule, field)
         if ctx is not None and ctx.context:
             setattr(
@@ -46,7 +44,7 @@ def apply_feature_mappings(
     rule.stages = [
         normalize_feature_matrices_in_field(stage, mappings) for stage in rule.stages
     ]
-    for field in _CORPUS_CONTEXT_FIELDS:
+    for field in IndexRule.context_fields:
         ctx: IndexContext | None = getattr(rule, field)
         if ctx is not None and ctx.context:
             setattr(
@@ -63,7 +61,7 @@ def apply_ipa_mappings(rule: IndexRule, mappings: dict[str, str]) -> IndexRule:
         return rule
     rule = rule.model_copy(deep=True)
     rule.stages = [normalize_ipa_in_field(stage, mappings) for stage in rule.stages]
-    for field in _CORPUS_CONTEXT_FIELDS:
+    for field in IndexRule.context_fields:
         ctx: IndexContext | None = getattr(rule, field)
         if ctx is not None and ctx.context:
             setattr(rule, field, normalize_ipa_in_field(ctx.context, mappings))

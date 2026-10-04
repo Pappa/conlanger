@@ -16,8 +16,6 @@ from pydantic import (
 from conlanger.models.parser import SkipRule, SkipSection
 from conlanger.utils.series import section_index_prefixes
 
-_CORPUS_CONTEXT_FIELD_KEYS = ("env", "exception")
-
 
 class GroupMapping(BaseModel):
     model_config = ConfigDict(frozen=True)

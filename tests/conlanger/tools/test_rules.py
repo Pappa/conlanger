@@ -4,6 +4,7 @@ from pathlib import Path
 import pytest
 
 from conlanger.tools.compile.asca.structures import join_asca_rule_fields
+from conlanger.tools.ingest.index_models import IndexContext
 from conlanger.tools.rules import (
     DiachronicSeries,
     RuleCitation,
@@ -521,3 +522,23 @@ def test_sound_change_ruleset_validates_em_dash_rule_marker_fixtures():
     }
     probe = Path("tests/fixtures/asca_probe_words.wsca")
     validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
+
+
+def test_sound_change_rule_accepts_structured_env_dict():
+    rule = SoundChangeRule(
+        input="a",
+        output="b",
+        env={"context": "_#"},
+    )
+    assert rule.env is not None
+    assert rule.env.raw == "_#"
+
+
+def test_sound_change_rule_accepts_index_context_instance():
+    rule = SoundChangeRule(
+        input="a",
+        output="b",
+        env=IndexContext(context="_#"),
+    )
+    assert rule.env is not None
+    assert rule.env.raw == "_#"

@@ -25,8 +25,6 @@ from conlanger.utils.gloss import (
     field_has_uncertainty_qualifier,
 )
 
-_CORPUS_CONTEXT_FIELDS = ("env", "exception")
-
 
 def _context_text(ctx: IndexContext | None) -> str | None:
     if ctx is None:
@@ -34,7 +32,7 @@ def _context_text(ctx: IndexContext | None) -> str | None:
     return ctx.context
 
 
-def _append_rule_comment_parts(parts: dict[str, Any], fragments: list[str]) -> None:
+def append_rule_comment_parts(parts: dict[str, Any], fragments: list[str]) -> None:
     """Merge newly captured prose into optional ``comment`` on serialized rule dicts."""
     addition = join_rule_comment(*fragments)
     if not addition:
@@ -48,30 +46,27 @@ def _append_rule_comment_parts(parts: dict[str, Any], fragments: list[str]) -> N
 def apply_sporadic_qualifier(rule: IndexRule) -> IndexRule:
     """Strip uncertainty glosses from rule fields; set ``sporadic: true`` when found."""
     rule = rule.model_copy(deep=True)
-    sporadic = bool(rule.sporadic)
     if rule.comment and comment_has_uncertainty_qualifier(rule.comment):
-        sporadic = True
+        rule.sporadic = True
     comment_fragments: list[str] = []
     new_stages: list[str] = []
     for stage in rule.stages:
         value = stage
         if field_has_uncertainty_qualifier(value):
-            sporadic = True
+            rule.sporadic = True
         value, captures = extract_uncertainty_qualifier_from_field(value)
         comment_fragments.extend(captures)
         new_stages.append(value)
     rule.stages = new_stages
-    for field in _CORPUS_CONTEXT_FIELDS:
+    for field in IndexRule.context_fields:
         text = _context_text(getattr(rule, field))
         if text is None:
             continue
         if field_has_uncertainty_qualifier(text):
-            sporadic = True
+            rule.sporadic = True
         value, captures = extract_uncertainty_qualifier_from_field(text)
         comment_fragments.extend(captures)
         setattr(rule, field, value if value else None)
-    if sporadic:
-        rule.sporadic = True
     rule.merge_comment(*comment_fragments)
     return rule
 
@@ -95,7 +90,7 @@ def apply_trailing_glosses(rule: IndexRule) -> IndexRule:
                 value = original
         new_stages.append(value)
     rule.stages = new_stages
-    for field in _CORPUS_CONTEXT_FIELDS:
+    for field in IndexRule.context_fields:
         original = _context_text(getattr(rule, field))
         if original is None:
             continue
@@ -119,7 +114,7 @@ def apply_stress_conditions(rule: IndexRule) -> IndexRule:
     """Normalize ``when stressed`` / ``when unstressed`` in env and exception fields."""
     rule = rule.model_copy(deep=True)
     comment_fragments: list[str] = []
-    for field in _CORPUS_CONTEXT_FIELDS:
+    for field in IndexRule.context_fields:
         text = _context_text(getattr(rule, field))
         if text is None:
             continue
@@ -133,7 +128,7 @@ def apply_stress_conditions(rule: IndexRule) -> IndexRule:
 def apply_syllable_position_editorial_strip(rule: IndexRule) -> IndexRule:
     """Normalize mechanical ``in #U`` / ``in U#`` tails on env and exception fields."""
     rule = rule.model_copy(deep=True)
-    for field in _CORPUS_CONTEXT_FIELDS:
+    for field in IndexRule.context_fields:
         text = _context_text(getattr(rule, field))
         if text:
             setattr(rule, field, strip_editorial_in_before_syllable_position(text))
@@ -158,6 +153,7 @@ def apply_medial_env_conditions(rule: IndexRule) -> IndexRule:
 
 __all__ = [
     "MEDIAL_BOUNDARY_EXCEPTION",
+    "append_rule_comment_parts",
     "apply_medial_env_conditions",
     "apply_sporadic_qualifier",
     "apply_stress_conditions",

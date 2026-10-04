@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from conlanger.tools.ingest.transforms import _append_rule_comment_parts
+from conlanger.tools.ingest.transforms import append_rule_comment_parts
 from conlanger.utils.gloss import (
     extract_trailing_gloss_from_field,
     extract_uncertainty_qualifier_from_field,
@@ -54,7 +54,7 @@ def resolve_catch_all_else_rules(rules: list[dict[str, Any]]) -> list[dict[str, 
         if env_text and is_else_env_candidate(env_text):
             env_text, gloss_captures = _strip_else_env_glosses(env_text)
             if gloss_captures:
-                _append_rule_comment_parts(resolved, gloss_captures)
+                append_rule_comment_parts(resolved, gloss_captures)
             if env_text:
                 if isinstance(env, dict):
                     env["context"] = env_text

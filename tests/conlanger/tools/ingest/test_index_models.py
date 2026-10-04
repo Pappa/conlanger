@@ -8,7 +8,12 @@ import pandas as pd
 import pytest
 import yaml
 
-from conlanger.tools.ingest.index_models import IndexContext, IndexRule
+from conlanger.tools.ingest.index_models import (
+    IndexContext,
+    IndexRule,
+    env_exception_input_to_string,
+    resolve_index_context_to_string,
+)
 
 _SAMPLED_RULES_CSV = (
     Path(__file__).resolve().parents[3] / "fixtures" / "sound_change_rules.csv"
@@ -266,13 +271,53 @@ _SAMPLED_HTML_RULE_CASES = _load_sampled_html_rules()
 
 
 @pytest.mark.parametrize(
-    ("case_id", "raw", "expected"),
-    _SAMPLED_HTML_RULE_CASES,
-    ids=[case_id for case_id, _, _ in _SAMPLED_HTML_RULE_CASES],
+    ("raw", "expected"),
+    [
+        pytest.param(raw, expected, id=case_id)
+        for case_id, raw, expected in _SAMPLED_HTML_RULE_CASES
+    ],
 )
-def test_update_model_sampled_html_rules(case_id, raw, expected):
-    fields = _update_model_fields(raw)
-    if expected is None:
-        assert fields is None or fields == {}
-    else:
-        assert fields == expected, case_id
+def test_update_model_sampled_html_rules(raw, expected):
+    assert _update_model_fields(raw) == expected
+
+
+@pytest.mark.parametrize(
+    "input, expected",
+    [
+        pytest.param("_#", "_#", id="passthrough"),
+        pytest.param(IndexContext(context="_#"), "_#", id="index_context"),
+    ],
+)
+def test_env_exception_input_to_string(input, expected):
+    assert env_exception_input_to_string(input) == expected
+
+
+@pytest.mark.parametrize(
+    "ctx, expected",
+    [
+        pytest.param(
+            IndexContext(position={"adjacent_to": "C"}),
+            "C_, _C",
+            id="adjacent_to_single_char",
+        ),
+        pytest.param(
+            IndexContext(position={"adjacent_to": ["C"]}),
+            "C_, _C",
+            id="adjacent_to_single_char_list",
+        ),
+        pytest.param(IndexContext(position={"medial": True}), "", id="medial"),
+        pytest.param(
+            IndexContext(context="#_", position={"adjacent_to": "C"}),
+            "#_",
+            id="uses_context_string",
+        ),
+        # TODO: handle multi-char adjacent_to if it appears in the index
+        pytest.param(
+            IndexContext(position={"adjacent_to": "CV"}),
+            "",
+            id="ignores_multi_char_adjacent_to",
+        ),
+    ],
+)
+def test_resolve_index_context(ctx, expected):
+    assert resolve_index_context_to_string(ctx) == expected

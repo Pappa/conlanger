@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from collections.abc import Callable
-from typing import Any, Self
+from typing import Any, ClassVar, Self
 
 from pydantic import (
     BaseModel,
@@ -58,6 +58,17 @@ class IndexContext(BaseModel):
             return self.context or ""
         return handler(self)
 
+    # def update(self, new_value: str | dict[str, Any] | IndexContext) -> Self:
+    #     if isinstance(new_value, str):
+    #         self.context = new_value
+    #         return self
+    #     if isinstance(new_value, dict):
+    #         return self.model_validate(new_value)
+    #     if isinstance(new_value, IndexContext):
+    #         self = self.model_validate(new_value)
+    #         return
+    #     raise ValueError(f"Invalid update value: {new_value}")
+
     def with_dialects_extracted(self) -> IndexContext | None:
         """Parse dialect prose in ``context`` into ``dialect`` (and trimmed ``context``)."""
         result = apply_dialects_to_context(self.context or "")
@@ -74,30 +85,12 @@ class IndexContext(BaseModel):
 EnvExceptionInput = str | dict[str, Any] | IndexContext | None
 
 
-def _coerce_env_exception_value(value: object) -> IndexContext | None:
-    if value is None:
-        return None
-    if isinstance(value, str):
-        stripped = value.strip()
-        if not stripped:
-            return None
-        return IndexContext(context=stripped)
-    if isinstance(value, IndexContext):
-        if value.context is None and value.position is None and value.dialect is None:
-            return None
-        return value
-    if isinstance(value, dict):
-        ctx = IndexContext.model_validate(value)
-        if ctx.context is None and ctx.position is None and ctx.dialect is None:
-            return None
-        return ctx
-    return value
-
-
 class IndexRule(BaseModel):
     """Parse-time counterpart to compile-time ``SoundChangeRule``."""
 
     model_config = ConfigDict(extra="forbid", validate_assignment=True)
+
+    context_fields: ClassVar[frozenset[str]] = frozenset(["env", "exception"])
 
     stages: list[str] = Field(default_factory=list)
     env: IndexContext | None = None
@@ -117,7 +110,15 @@ class IndexRule(BaseModel):
     @field_validator("env", "exception", mode="before")
     @classmethod
     def coerce_env_exception(cls, value: EnvExceptionInput) -> IndexContext | None:
-        return _coerce_env_exception_value(value)
+        if value is None:
+            return None
+        if isinstance(value, str):
+            return IndexContext.model_validate({"context": value.strip()})
+        if isinstance(value, IndexContext):
+            return IndexContext.model_validate(value)
+        if isinstance(value, dict):
+            return IndexContext.model_validate(value)
+        # raise ValueError(f"Invalid env/exception value: {value}")
 
     @property
     def text(self) -> str:
@@ -167,3 +168,31 @@ class IndexRule(BaseModel):
     def to_index_dict(self) -> dict[str, Any]:
         """Serialize for cleaned-index YAML (omit false defaults and nulls)."""
         return self.model_dump(exclude_none=True, mode="python")
+
+
+def resolve_index_context_to_string(ctx: IndexContext) -> str:
+    """Project ``IndexContext`` to a single env/exception string for compile.
+
+    Full position/dialect resolution expands in ticket 144; v1 uses ``context``
+    when present and ignores ``dialect`` until render gating is specified.
+    """
+    if ctx.context:
+        return ctx.context
+    if ctx.position:
+        adjacent = ctx.position.get("adjacent_to")
+        if isinstance(adjacent, str) and len(adjacent) == 1:
+            return f"{adjacent}_, _{adjacent}"
+        if isinstance(adjacent, list) and len(adjacent) == 1 and len(adjacent[0]) == 1:
+            char = adjacent[0]
+            return f"{char}_, _{char}"
+    return ""
+
+
+def env_exception_input_to_string(value: EnvExceptionInput) -> str:
+    """Coerce YAML ``env`` / ``exception`` field to a compile string."""
+    if isinstance(value, str):
+        return value
+    ctx = (
+        value if isinstance(value, IndexContext) else IndexContext.model_validate(value)
+    )
+    return resolve_index_context_to_string(ctx)

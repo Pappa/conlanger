@@ -20,8 +20,10 @@ from conlanger.tools.compile.field_tokens import (
     render_field_tokens,
     set_token_members,
 )
-from conlanger.tools.compile.index_context import env_exception_input_to_string
-from conlanger.tools.ingest.index_models import IndexContext
+from conlanger.tools.ingest.index_models import (
+    IndexContext,
+    env_exception_input_to_string,
+)
 from conlanger.utils.mappings import CompilerConfig
 
 _SUPPORTED_FORMATS = frozenset({"asca"})
