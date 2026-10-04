@@ -216,22 +216,20 @@ def normalize_feature_matrices_in_field(
 
 
 def apply_feature_mappings(
-    parts: dict[str, str],
+    rule: Any,
     mappings: dict[str, FeatureMapping],
-) -> dict[str, str]:
+) -> Any:
     """Normalize Index feature matrix names in rule fields; ``raw`` unchanged upstream."""
     if not mappings:
-        return parts
-    result = dict(parts)
-    stages = result.get("stages")
-    if stages is not None:
-        result["stages"] = [
-            normalize_feature_matrices_in_field(stage, mappings) for stage in stages
-        ]
-    for key in _CORPUS_CONTEXT_FIELD_KEYS:
-        if key in result:
-            result[key] = normalize_feature_matrices_in_field(result[key], mappings)
-    return result
+        return rule
+    rule = rule.model_copy(deep=True)
+    rule.stages = [
+        normalize_feature_matrices_in_field(stage, mappings) for stage in rule.stages
+    ]
+    rule.map_env_and_exception_context(
+        lambda text: normalize_feature_matrices_in_field(text, mappings)
+    )
+    return rule
 
 
 def normalize_ipa_in_field(text: str, mappings: dict[str, str]) -> str:
@@ -244,20 +242,18 @@ def normalize_ipa_in_field(text: str, mappings: dict[str, str]) -> str:
 
 
 def apply_ipa_mappings(
-    parts: dict[str, str],
+    rule: Any,
     mappings: dict[str, str],
-) -> dict[str, str]:
+) -> Any:
     """Normalize Index IPA characters in rule fields; ``raw`` unchanged upstream."""
     if not mappings:
-        return parts
-    result = dict(parts)
-    stages = result.get("stages")
-    if stages is not None:
-        result["stages"] = [normalize_ipa_in_field(stage, mappings) for stage in stages]
-    for key in _CORPUS_CONTEXT_FIELD_KEYS:
-        if key in result:
-            result[key] = normalize_ipa_in_field(result[key], mappings)
-    return result
+        return rule
+    rule = rule.model_copy(deep=True)
+    rule.stages = [normalize_ipa_in_field(stage, mappings) for stage in rule.stages]
+    rule.map_env_and_exception_context(
+        lambda text: normalize_ipa_in_field(text, mappings)
+    )
+    return rule
 
 
 def apply_section_mappings(

@@ -8,7 +8,11 @@ import pandas as pd
 import pytest
 import yaml
 
-from conlanger.tools.ingest.index_models import IndexContext, IndexRule
+from conlanger.tools.ingest.index_models import (
+    IndexContext,
+    IndexRule,
+    wire_serialize_env_exception,
+)
 
 _SAMPLED_RULES_CSV = (
     Path(__file__).resolve().parents[3] / "fixtures" / "sound_change_rules.csv"
@@ -17,10 +21,16 @@ _SAMPLED_RULES_CSV = (
 
 def _update_model_fields(raw: str) -> dict:
     rule = IndexRule(raw=raw, source="test").update_model()
-    return rule.model_dump(
-        include={"stages", "env", "exception", "comment"},
-        exclude_none=True,
-    )
+    out: dict = {
+        "stages": rule.stages,
+    }
+    if rule.env is not None:
+        out["env"] = wire_serialize_env_exception(rule.env)
+    if rule.exception is not None:
+        out["exception"] = wire_serialize_env_exception(rule.exception)
+    if rule.comment is not None:
+        out["comment"] = rule.comment
+    return out
 
 
 def _load_sampled_html_rules() -> list[tuple]:
@@ -110,6 +120,7 @@ def test_index_rule_string_env_round_trip():
         "source": "index.html:1",
     }
     restored = IndexRule.model_validate(dumped)
+    assert restored.env == IndexContext(context="_#")
     assert restored == rule
 
 
@@ -170,7 +181,7 @@ def test_update_model_semicolon_peel_no_comment_when_absent():
 def test_update_model_strips_leading_list_marker():
     rule = IndexRule(raw="— j w → i u / #_CV", source="test").update_model()
     assert rule.stages == ["j w", "i u"]
-    assert rule.env == "#_CV"
+    assert rule.env == IndexContext(context="#_CV")
 
 
 def test_update_model_splits_chain_into_stages():
@@ -182,7 +193,7 @@ def test_update_model_applies_symbol_normalization():
     raw = "a → b / _$%oː"
     rule = IndexRule(raw=raw, source="test").update_model()
     assert rule.stages == ["a", "b"]
-    assert rule.env == "_$$oː"
+    assert rule.env == IndexContext(context="_$$oː")
 
 
 @pytest.mark.parametrize(

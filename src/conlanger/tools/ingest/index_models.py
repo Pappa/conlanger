@@ -2,22 +2,44 @@
 
 from __future__ import annotations
 
+from collections.abc import Callable
 from typing import Any, Self
 
-from pydantic import BaseModel, ConfigDict, Field, PrivateAttr, field_validator
-
-from conlanger.tools.ingest.transforms import (
-    split_semicolon_comment,
-    join_rule_comment,
+from pydantic import (
+    BaseModel,
+    ConfigDict,
+    Field,
+    PrivateAttr,
+    field_serializer,
+    field_validator,
 )
+
+from conlanger.utils.gloss import apply_dialects_to_context
 from conlanger.utils.parsing import (
-    extract_rule_parts,
     extract_missing_arrow_rule_parts,
+    extract_rule_parts,
+    non_empty_stages,
 )
 from conlanger.utils.symbols import normalize_symbols
 
 PositionValue = bool | str | list[str]
 DialectValue = bool | str | list[str]
+
+
+def join_rule_comment(*fragments: str | None) -> str | None:
+    """Join captured prose fragments into one ``comment`` string."""
+    parts = [
+        fragment.strip() for fragment in fragments if fragment and fragment.strip()
+    ]
+    if not parts:
+        return None
+    return "; ".join(parts)
+
+
+def split_semicolon_comment(text: str) -> tuple[str, str | None]:
+    """Peel the first ``;`` on a working rule line into remainder and rule-comment tail."""
+    head, _, tail = text.partition(";")
+    return head.rstrip(), tail.strip() or None
 
 
 class IndexContext(BaseModel):
@@ -30,7 +52,40 @@ class IndexContext(BaseModel):
     dialect: DialectValue | None = None
 
 
-EnvExceptionField = str | IndexContext
+def wire_serialize_env_exception(ctx: IndexContext) -> str | dict[str, Any]:
+    """YAML wire shape for ``env`` / ``exception`` (scalar context vs structured object)."""
+    if ctx.position is None and ctx.dialect is None:
+        return ctx.context or ""
+    return ctx.model_dump(exclude_none=True)
+
+
+def _coerce_env_exception_value(value: object) -> IndexContext | None:
+    if value is None:
+        return None
+    if isinstance(value, IndexContext):
+        return value
+    if isinstance(value, str):
+        return IndexContext(context=value)
+    if isinstance(value, dict):
+        return IndexContext.model_validate(value)
+    return value
+
+
+def _apply_dialects_to_context_field(
+    ctx: IndexContext | None,
+) -> IndexContext | None:
+    if ctx is None:
+        return None
+    text = ctx.context or ""
+    result = apply_dialects_to_context(text)
+    if isinstance(result, str):
+        if not result:
+            return None
+        return ctx.model_copy(update={"context": result})
+    merged: dict[str, Any] = dict(result)
+    if ctx.position is not None:
+        merged["position"] = ctx.position
+    return IndexContext.model_validate(merged)
 
 
 class IndexRule(BaseModel):
@@ -39,8 +94,8 @@ class IndexRule(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     stages: list[str] = Field(default_factory=list)
-    env: EnvExceptionField | None = None
-    exception: EnvExceptionField | None = None
+    env: IndexContext | None = None
+    exception: IndexContext | None = None
     raw: str
     source: str
     comment: str | None = None
@@ -74,44 +129,98 @@ class IndexRule(BaseModel):
             parts = extract_missing_arrow_rule_parts(self._working_line)
 
         self.stages = list(parts.get("stages") or [])
-        self.env = parts.get("env")
-        self.exception = parts.get("exception")
+        env_str = parts.get("env")
+        exc_str = parts.get("exception")
+        self.env = IndexContext(context=env_str) if env_str else None
+        self.exception = IndexContext(context=exc_str) if exc_str else None
         return self
 
     @field_validator("env", "exception", mode="before")
     @classmethod
     def coerce_structured_env_exception(cls, value: object) -> object:
-        if value is None or isinstance(value, str):
-            return value
-        if isinstance(value, IndexContext):
-            return value
-        if isinstance(value, dict):
-            return IndexContext.model_validate(value)
-        return value
+        return _coerce_env_exception_value(value)
+
+    @field_serializer("env", "exception", when_used="json")
+    def serialize_env_exception_for_json(
+        self, value: IndexContext | None
+    ) -> str | dict[str, Any] | None:
+        if value is None:
+            return None
+        return wire_serialize_env_exception(value)
+
+    def merge_comment(self, *fragments: str | None) -> Self:
+        """Append prose fragments to optional ``comment``."""
+        merged = join_rule_comment(self.comment, *fragments)
+        self.comment = merged
+        return self
+
+    def mark_sporadic(self) -> Self:
+        self.sporadic = True
+        return self
+
+    def map_stages(self, fn: Callable[[str], str]) -> Self:
+        self.stages = [fn(stage) for stage in self.stages]
+        return self
+
+    def env_context(self) -> str | None:
+        if self.env is None:
+            return None
+        return self.env.context
+
+    def exception_context(self) -> str | None:
+        if self.exception is None:
+            return None
+        return self.exception.context
+
+    def set_env_context(self, value: str | None) -> Self:
+        if value is None or value == "":
+            self.env = None
+        elif self.env is None:
+            self.env = IndexContext(context=value)
+        else:
+            self.env = self.env.model_copy(update={"context": value})
+        return self
+
+    def set_exception_context(self, value: str | None) -> Self:
+        if value is None or value == "":
+            self.exception = None
+        elif self.exception is None:
+            self.exception = IndexContext(context=value)
+        else:
+            self.exception = self.exception.model_copy(update={"context": value})
+        return self
+
+    def map_env_context(self, fn: Callable[[str], str]) -> Self:
+        if self.env is None:
+            return self
+        new_text = fn(self.env.context or "")
+        return self.set_env_context(new_text if new_text else None)
+
+    def map_exception_context(self, fn: Callable[[str], str]) -> Self:
+        if self.exception is None:
+            return self
+        new_text = fn(self.exception.context or "")
+        return self.set_exception_context(new_text if new_text else None)
+
+    def map_env_and_exception_context(self, fn: Callable[[str], str]) -> Self:
+        self.map_env_context(fn)
+        self.map_exception_context(fn)
+        return self
+
+    def apply_dialects_to_env_fields(self) -> Self:
+        self.env = _apply_dialects_to_context_field(self.env)
+        self.exception = _apply_dialects_to_context_field(self.exception)
+        return self
+
+    def finalize_stages_shape(self) -> Self:
+        self.stages = non_empty_stages(self.stages)
+        return self
 
     def to_index_dict(self) -> dict[str, Any]:
         """Serialize for cleaned-index YAML (omit false defaults and nulls)."""
-        out = self.model_dump(exclude_none=True)
+        out = self.model_dump(exclude_none=True, mode="python")
+        if self.env is not None:
+            out["env"] = wire_serialize_env_exception(self.env)
+        if self.exception is not None:
+            out["exception"] = wire_serialize_env_exception(self.exception)
         return out
-
-    @classmethod
-    def from_parse_fields(
-        cls,
-        fields: dict[str, Any],
-        *,
-        raw: str,
-        source: str,
-        rule_id: str | None = None,
-    ) -> IndexRule:
-        """Build from post-transform parse field dict (``stages``, ``env``, …)."""
-        return cls(
-            stages=list(fields.get("stages") or []),
-            env=fields.get("env"),
-            exception=fields.get("exception"),
-            raw=raw,
-            source=source,
-            comment=fields.get("comment"),
-            sporadic=fields.get("sporadic"),
-            status=fields.get("status"),
-            rule_id=rule_id,
-        )

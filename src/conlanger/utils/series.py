@@ -43,22 +43,20 @@ def section_index_prefixes(section_index: str) -> list[str]:
 
 
 def apply_series_expansions(
-    parts: dict[str, Any],
+    rule: Any,
     expansions: dict[str, tuple[str, ...]],
-) -> dict[str, Any]:
+) -> Any:
     """Expand collective subscript tokens in rule fields; ``raw`` unchanged upstream."""
     if not expansions:
-        return parts
-    result = dict(parts)
-    stages = result.get("stages")
-    if stages is not None:
-        result["stages"] = [
-            expand_collectives_in_field(stage, expansions) for stage in stages
-        ]
-    for key in ("env", "exception"):
-        if key in result:
-            result[key] = expand_collectives_in_field(result[key], expansions)
-    return result
+        return rule
+    rule = rule.model_copy(deep=True)
+    rule.stages = [
+        expand_collectives_in_field(stage, expansions) for stage in rule.stages
+    ]
+    rule.map_env_and_exception_context(
+        lambda text: expand_collectives_in_field(text, expansions)
+    )
+    return rule
 
 
 def expand_collectives_in_field(

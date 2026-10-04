@@ -5,11 +5,9 @@ from __future__ import annotations
 import re
 from typing import Any
 
+from conlanger.tools.ingest.index_models import IndexRule
 from conlanger.tools.ingest.prose_position_env import normalize_bare_prose_position_env
-from conlanger.tools.ingest.transforms import (
-    _append_rule_comment_parts,
-    normalize_medial_env_field,
-)
+from conlanger.tools.ingest.transforms import normalize_medial_env_field
 from conlanger.utils.gloss import (
     extract_uncertainty_qualifier_from_field,
 )
@@ -164,14 +162,14 @@ def normalize_prose_env_head(
     return stripped, captures, flags
 
 
-def apply_double_slash_env_conditions(parts: dict[str, Any]) -> dict[str, Any]:
+def apply_double_slash_env_conditions(rule: IndexRule) -> IndexRule:
     """Rewrite Index ``//`` env shorthand and prose exception tails (``raw`` unchanged)."""
-    result: dict[str, Any] = dict(parts)
+    rule = rule.model_copy(deep=True)
     comment_fragments: list[str] = []
     flags: dict[str, Any] = {}
 
-    env = result.get("env")
-    exception = result.get("exception")
+    env = rule.env_context()
+    exception = rule.exception_context()
 
     if env:
         head, embedded_tail = split_embedded_double_slash(env)
@@ -190,10 +188,7 @@ def apply_double_slash_env_conditions(parts: dict[str, Any]) -> dict[str, Any]:
         elif embedded_tail:
             env = head
 
-        if env:
-            result["env"] = env
-        elif "env" in result:
-            del result["env"]
+        rule.set_env_context(env if env else None)
 
     if exception:
         original_exception = exception
@@ -213,16 +208,12 @@ def apply_double_slash_env_conditions(parts: dict[str, Any]) -> dict[str, Any]:
             or tail_flags
             or value != original_exception
         ):
-            if normalized:
-                result["exception"] = normalized
-            else:
-                del result["exception"]
+            rule.set_exception_context(normalized if normalized else None)
             comment_fragments.extend(tail_captures)
             flags.update(tail_flags)
 
-    if comment_fragments:
-        _append_rule_comment_parts(result, comment_fragments)
+    rule.merge_comment(*comment_fragments)
     if flags.get("sporadic"):
-        result["sporadic"] = True
+        rule.mark_sporadic()
 
-    return result
+    return rule

@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from conlanger.tools.ingest.transforms import _append_rule_comment_parts
+from conlanger.tools.ingest.index_models import IndexRule
 
 _BARE_MATRIX_RE = re.compile(r"^\[(?P<inner>[^\]]+)\]$")
 _UNSTRESSED_PENULT_RE = re.compile(
@@ -121,42 +121,34 @@ def normalize_prose_conditional_env_field(
     return stripped, captures, flags, input_matrix
 
 
-def apply_prose_conditional_env_conditions(parts: dict[str, Any]) -> dict[str, Any]:
+def apply_prose_conditional_env_conditions(rule: IndexRule) -> IndexRule:
     """Rewrite Index prose conditional env phrases on ``env`` (``raw`` unchanged)."""
-    result: dict[str, Any] = dict(parts)
-    env = result.get("env")
+    rule = rule.model_copy(deep=True)
+    env = rule.env_context()
     if env:
         normalized, captures, flags, input_matrix = (
             normalize_prose_conditional_env_field(env)
         )
         comment_fragments = list(captures)
         if normalized != env or comment_fragments or flags or input_matrix:
-            if normalized:
-                result["env"] = normalized
-            elif "env" in result:
-                del result["env"]
-            if input_matrix and result.get("stages"):
-                merged = _attach_bare_matrix_to_input_stage(
-                    result["stages"], input_matrix
-                )
+            rule.set_env_context(normalized if normalized else None)
+            if input_matrix and rule.stages:
+                merged = _attach_bare_matrix_to_input_stage(rule.stages, input_matrix)
                 if merged is not None:
-                    result["stages"] = merged
+                    rule.stages = merged
             if flags.get("sporadic"):
-                result["sporadic"] = True
-            _append_rule_comment_parts(result, comment_fragments)
+                rule.mark_sporadic()
+            rule.merge_comment(*comment_fragments)
 
-    exception = result.get("exception")
+    exception = rule.exception_context()
     if exception:
         exc_norm, exc_caps, exc_flags, _ = normalize_prose_conditional_env_field(
             exception
         )
         if exc_norm != exception or exc_caps or exc_flags:
-            if exc_norm:
-                result["exception"] = exc_norm
-            else:
-                del result["exception"]
+            rule.set_exception_context(exc_norm if exc_norm else None)
             if exc_flags.get("sporadic"):
-                result["sporadic"] = True
-            _append_rule_comment_parts(result, exc_caps)
+                rule.mark_sporadic()
+            rule.merge_comment(*exc_caps)
 
-    return result
+    return rule

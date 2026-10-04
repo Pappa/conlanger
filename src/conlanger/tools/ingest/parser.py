@@ -55,17 +55,13 @@ from conlanger.tools.ingest.prose_position_env import (
 )
 from conlanger.tools.ingest.section_policy import resolve_catch_all_else_rules
 from conlanger.tools.ingest.transforms import (
-    split_semicolon_comment,
     apply_medial_env_conditions,
     apply_sporadic_qualifier,
     apply_stress_conditions,
     apply_syllable_position_editorial_strip,
     apply_trailing_glosses,
 )
-from conlanger.utils.gloss import (
-    apply_dialects_to_context,
-    is_quoted_prose_paragraph,
-)
+from conlanger.utils.gloss import is_quoted_prose_paragraph
 from conlanger.utils.mappings import (
     ManualMapping,
     ManualMappingMatch,
@@ -76,16 +72,12 @@ from conlanger.utils.mappings import (
     apply_section_mappings,
 )
 from conlanger.utils.parsing import (
-    extract_rule_parts,
     extract_element_text,
-    extract_missing_arrow_rule_parts,
-    finalize_stages_shape,
     normalize_sub_tags,
     parse_section_heading,
     strip_whitespace,
 )
 from conlanger.utils.series import apply_series_expansions
-from conlanger.utils.symbols import normalize_symbols
 
 
 class IndexDiachronicaParser:
@@ -153,28 +145,25 @@ class IndexDiachronicaParser:
         rule_id: str | None,
         source: str,
         raw: str = "",
-    ) -> dict[str, Any]:
+    ) -> list[dict[str, Any]]:
+        rule = IndexRule(raw=raw, source=source, rule_id=rule_id or None)
 
         if rule_id and rule_id in self._skipped_rules:
-            skipped = IndexRule(
-                stages=[],
-                raw=raw,
-                source=source,
-                status="skipped",
-                rule_id=rule_id,
-                comment=self._skipped_rules[rule_id].reason,
-            )
-            return [skipped.to_index_dict()]
-
-        working = raw
+            rule.stages = []
+            rule.status = "skipped"
+            rule.comment = self._skipped_rules[rule_id].reason
+            return [rule.to_index_dict()]
 
         if rule_id and rule_id in self._corrections:
-            working = self._corrections[rule_id]
+            rule.update_rule(self._corrections[rule_id])
             self._matched_correction_ids.add(rule_id)
 
-        working = apply_index_rule_normalisation(working)
+        rule.update_rule(apply_index_rule_normalisation(rule.working_text()))
 
-        working, hits = apply_manual_mappings(working, self._manual_mappings)
+        working, hits = apply_manual_mappings(
+            rule.working_text(), self._manual_mappings
+        )
+        rule.update_rule(working)
         for hit in hits:
             self._matched_manual_froms.add(hit.from_text)
             self._manual_mapping_matches.append(
@@ -188,50 +177,32 @@ class IndexDiachronicaParser:
                 )
             )
 
-        working = apply_section_mappings(working, self._current_section_mappings)
-
-        if is_quoted_prose_paragraph(working):
-            quoted = IndexRule(
-                stages=[],
-                raw=raw,
-                source=source,
-                comment=raw.strip(),
-                rule_id=rule_id or None,
-            )
-            return [quoted.to_index_dict()]
-
-        working, rule_comment = split_semicolon_comment(working)
-        normalized = normalize_symbols(working)
-        parts = extract_rule_parts(normalized)
-        if parts is None:
-            parts = extract_missing_arrow_rule_parts(normalized)
-        if rule_comment:
-            parts["comment"] = rule_comment
-        parts = apply_series_expansions(parts, self._parser_config.series_expansions)
-        parts = apply_sporadic_qualifier(parts)
-        parts = apply_trailing_glosses(parts)
-        parts = apply_stress_conditions(parts)
-        parts = apply_prose_conditional_env_conditions(parts)
-        parts = apply_medial_env_conditions(parts)
-        parts = apply_prose_position_env_conditions(parts)
-        parts = apply_double_slash_env_conditions(parts)
-        parts = apply_syllable_position_editorial_strip(parts)
-        parts = apply_feature_mappings(parts, self._feature_mappings)
-        parts = apply_ipa_mappings(parts, self._ipa_mappings)
-        parts = finalize_stages_shape(parts)
-
-        if "env" in parts:
-            parts["env"] = apply_dialects_to_context(parts["env"])
-        if "exception" in parts:
-            parts["exception"] = apply_dialects_to_context(parts["exception"])
-
-        index_rule = IndexRule.from_parse_fields(
-            parts,
-            raw=raw,
-            source=source,
-            rule_id=rule_id or None,
+        rule.update_rule(
+            apply_section_mappings(rule.working_text(), self._current_section_mappings)
         )
-        return [index_rule.to_index_dict()]
+
+        if is_quoted_prose_paragraph(rule.working_text()):
+            rule.stages = []
+            rule.comment = raw.strip()
+            return [rule.to_index_dict()]
+
+        rule.update_model()
+
+        rule = apply_series_expansions(rule, self._parser_config.series_expansions)
+        rule = apply_sporadic_qualifier(rule)
+        rule = apply_trailing_glosses(rule)
+        rule = apply_stress_conditions(rule)
+        rule = apply_prose_conditional_env_conditions(rule)
+        rule = apply_medial_env_conditions(rule)
+        rule = apply_prose_position_env_conditions(rule)
+        rule = apply_double_slash_env_conditions(rule)
+        rule = apply_syllable_position_editorial_strip(rule)
+        rule = apply_feature_mappings(rule, self._feature_mappings)
+        rule = apply_ipa_mappings(rule, self._ipa_mappings)
+        rule = rule.finalize_stages_shape()
+        rule = rule.apply_dialects_to_env_fields()
+
+        return [rule.to_index_dict()]
 
     def parse(
         self,

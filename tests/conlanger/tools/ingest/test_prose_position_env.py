@@ -1,10 +1,32 @@
 import pytest
 
+from conlanger.tools.ingest.index_models import IndexContext, IndexRule
 from conlanger.tools.ingest.prose_position_env import (
     apply_prose_position_env_conditions,
     normalize_bare_prose_position_env,
     strip_trailing_position_qualifiers,
 )
+
+
+def _rule_from_parts(parts: dict) -> IndexRule:
+    rule = IndexRule(raw="x", source="t", stages=list(parts.get("stages") or []))
+    if "env" in parts:
+        rule.env = IndexContext(context=parts["env"])
+    if "exception" in parts:
+        rule.exception = IndexContext(context=parts["exception"])
+    return rule
+
+
+def _index_fields(rule: IndexRule) -> dict:
+    dumped = rule.to_index_dict()
+    out = {
+        key: dumped[key]
+        for key in ("stages", "env", "exception", "comment", "sporadic")
+        if key in dumped
+    }
+    if out.get("stages") == []:
+        out.pop("stages", None)
+    return out
 
 
 @pytest.mark.parametrize(
@@ -60,7 +82,8 @@ from conlanger.tools.ingest.prose_position_env import (
     ],
 )
 def test_apply_prose_position_env_conditions(input, expected):
-    assert apply_prose_position_env_conditions(input) == expected
+    result = apply_prose_position_env_conditions(_rule_from_parts(input))
+    assert _index_fields(result) == expected
 
 
 @pytest.mark.parametrize(

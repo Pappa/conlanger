@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import pytest
 
+from conlanger.tools.ingest.index_models import IndexContext, IndexRule
 from conlanger.utils.series import (
     apply_series_expansions,
     expand_collectives_in_field,
@@ -72,8 +73,25 @@ def test_section_index_prefixes_shortest_first():
     assert section_index_prefixes("6.1.2.1") == ["6", "6.1", "6.1.2", "6.1.2.1"]
 
 
+def _rule_from_field_parts(parts: dict) -> IndexRule:
+    rule = IndexRule(raw="x", source="t", stages=list(parts.get("stages") or []))
+    if "env" in parts:
+        rule.env = IndexContext(context=parts["env"])
+    if "exception" in parts:
+        rule.exception = IndexContext(context=parts["exception"])
+    return rule
+
+
+def _field_parts(rule: IndexRule) -> dict:
+    dumped = rule.to_index_dict()
+    out = {key: dumped[key] for key in ("stages", "env", "exception") if key in dumped}
+    if out.get("stages") == []:
+        out.pop("stages", None)
+    return out
+
+
 @pytest.mark.parametrize(
-    ("input", "expected"),
+    ("field_parts", "expected"),
     [
         ({"stages": ["sₓ", "ʃ"]}, {"stages": ["{s₁,s₂,s₃}", "ʃ"]}),
         ({"stages": ["{Hₓ,m̩,n̩}", "a"]}, {"stages": ["{h₁,h₂,h₃,m̩,n̩}", "a"]}),
@@ -81,12 +99,17 @@ def test_section_index_prefixes_shortest_first():
         ({"exception": "sₓ"}, {"exception": "{s₁,s₂,s₃}"}),
     ],
 )
-def test_apply_series_expansions(input, expected):
+def test_apply_series_expansions(field_parts, expected):
     expansions = {
         "sₓ": ("s₁", "s₂", "s₃"),
         "Hₓ": ("h₁", "h₂", "h₃"),
     }
-    assert apply_series_expansions(input, expansions) == expected
+    assert (
+        _field_parts(
+            apply_series_expansions(_rule_from_field_parts(field_parts), expansions)
+        )
+        == expected
+    )
 
 
 def test_expand_collectives_in_field_unclosed_brace():

@@ -1,9 +1,31 @@
 import pytest
 
+from conlanger.tools.ingest.index_models import IndexContext, IndexRule
 from conlanger.tools.ingest.prose_conditional_env import (
     apply_prose_conditional_env_conditions,
     normalize_prose_conditional_env_field,
 )
+
+
+def _rule_from_parts(parts: dict) -> IndexRule:
+    rule = IndexRule(raw="x", source="t", stages=list(parts.get("stages") or []))
+    if "env" in parts:
+        rule.env = IndexContext(context=parts["env"])
+    if "exception" in parts:
+        rule.exception = IndexContext(context=parts["exception"])
+    return rule
+
+
+def _index_fields(rule: IndexRule) -> dict:
+    dumped = rule.to_index_dict()
+    out = {
+        key: dumped[key]
+        for key in ("stages", "env", "exception", "comment", "sporadic")
+        if key in dumped
+    }
+    if out.get("stages") == []:
+        out.pop("stages", None)
+    return out
 
 
 @pytest.mark.parametrize(
@@ -60,50 +82,62 @@ def test_normalize_prose_conditional_bare_matrix_input_merge():
 
 def test_apply_prose_conditional_env_rhaeto_romance_stress_on_input():
     result = apply_prose_conditional_env_conditions(
-        {
-            "stages": ["a", "e"],
-            "env": "[+stress], usually when Ḱ_",
-        }
+        _rule_from_parts(
+            {
+                "stages": ["a", "e"],
+                "env": "[+stress], usually when Ḱ_",
+            }
+        )
     )
-    assert result["stages"] == ["a:[+stress]", "e"]
-    assert result["env"] == "Ḱ_"
-    assert "[+stress]" in result["comment"]
+    fields = _index_fields(result)
+    assert fields["stages"] == ["a:[+stress]", "e"]
+    assert fields["env"] == "Ḱ_"
+    assert "[+stress]" in result.comment
 
 
 def test_apply_prose_conditional_strips_vague_env():
     result = apply_prose_conditional_env_conditions(
-        {"stages": ["V", "Vː"], "env": "by analogy in some cases"}
+        _rule_from_parts({"stages": ["V", "Vː"], "env": "by analogy in some cases"})
     )
-    assert result["env"] == "_"
-    assert result["sporadic"] is True
-    assert "by analogy" in result["comment"]
+    fields = _index_fields(result)
+    assert fields["env"] == "_"
+    assert fields["sporadic"] is True
+    assert "by analogy" in result.comment
 
 
 def test_apply_prose_conditional_noop_on_structural_env():
-    parts = {"stages": ["t", "k"], "env": "_#"}
-    assert apply_prose_conditional_env_conditions(parts) == parts
+    rule = _rule_from_parts({"stages": ["t", "k"], "env": "_#"})
+    assert _index_fields(apply_prose_conditional_env_conditions(rule)) == _index_fields(
+        rule
+    )
 
 
 def test_apply_prose_conditional_exception_only_prose():
     result = apply_prose_conditional_env_conditions(
-        {
-            "stages": ["dʒ", "ʒ"],
-            "exception": "syllables with a nasal or liquid",
-        }
+        _rule_from_parts(
+            {
+                "stages": ["dʒ", "ʒ"],
+                "exception": "syllables with a nasal or liquid",
+            }
+        )
     )
-    assert result["exception"] == "_"
-    assert "syllables with a nasal or liquid" in result["comment"]
+    fields = _index_fields(result)
+    assert fields["exception"] == "_"
+    assert "syllables with a nasal or liquid" in result.comment
 
 
 def test_attach_bare_matrix_skips_ambiguous_input():
     result = apply_prose_conditional_env_conditions(
-        {
-            "stages": ["a b", "c"],
-            "env": "[-stress]",
-        }
+        _rule_from_parts(
+            {
+                "stages": ["a b", "c"],
+                "env": "[-stress]",
+            }
+        )
     )
-    assert result["env"] == "[-stress]"
-    assert result["stages"] == ["a b", "c"]
+    fields = _index_fields(result)
+    assert fields["env"] == "[-stress]"
+    assert fields["stages"] == ["a b", "c"]
 
 
 def test_normalize_prose_conditional_empty():

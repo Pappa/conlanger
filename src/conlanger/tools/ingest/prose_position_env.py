@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from conlanger.tools.ingest.transforms import _append_rule_comment_parts
+from conlanger.tools.ingest.index_models import IndexRule
 
 _FINAL_SYLLABLE_ENV = "U#"
 _FINAL_SYLLABLE_RE = re.compile(
@@ -99,12 +99,12 @@ def normalize_bare_prose_position_env(
     return text, captures, flags
 
 
-def apply_prose_position_env_conditions(parts: dict[str, Any]) -> dict[str, Any]:
+def apply_prose_position_env_conditions(rule: IndexRule) -> IndexRule:
     """Rewrite Index prose position env phrases on ``env`` (``raw`` unchanged)."""
-    result: dict[str, Any] = dict(parts)
-    env = result.get("env")
+    rule = rule.model_copy(deep=True)
+    env = rule.env_context()
     if not env:
-        return result
+        return rule
 
     comment_fragments: list[str] = []
     qualifier_env, qualifier_captures = strip_trailing_position_qualifiers(env)
@@ -113,21 +113,21 @@ def apply_prose_position_env_conditions(parts: dict[str, Any]) -> dict[str, Any]
         comment_fragments.extend(qualifier_captures)
 
     # TODO: handle "in xxx dialects" here
-    if result.get("exception"):
-        if env != result.get("env"):
-            result["env"] = env
-            _append_rule_comment_parts(result, comment_fragments)
-        return result
+    if rule.exception_context() is not None:
+        if env != rule.env_context():
+            rule.set_env_context(env)
+            rule.merge_comment(*comment_fragments)
+        return rule
 
     normalized, captures, flags = normalize_bare_prose_position_env(env)
     if normalized != env or captures or flags:
-        result["env"] = normalized
+        rule.set_env_context(normalized)
         comment_fragments.extend(captures)
         if flags.get("sporadic"):
-            result["sporadic"] = True
-        _append_rule_comment_parts(result, comment_fragments)
+            rule.mark_sporadic()
+        rule.merge_comment(*comment_fragments)
     elif comment_fragments:
-        result["env"] = env
-        _append_rule_comment_parts(result, comment_fragments)
+        rule.set_env_context(env)
+        rule.merge_comment(*comment_fragments)
 
-    return result
+    return rule

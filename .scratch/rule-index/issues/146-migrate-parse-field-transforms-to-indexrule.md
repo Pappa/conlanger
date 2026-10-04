@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by:
 
 # Migrate parse field transforms from `dict` to `IndexRule`
@@ -102,11 +102,11 @@ Update [`docs/system/index-diachronica-parser.md`](../../../docs/system/index-di
 
 ## Acceptance
 
-- [ ] Full pipeline on one `IndexRule`; no dict carrier on main path.
-- [ ] `env` / `exception` are `IndexContext | None` in memory; `EnvExceptionField` removed.
-- [ ] Dump: context-only → string; any `position` or `dialect` → object; load accepts both legacy string and object YAML.
-- [ ] `IndexRule.from_parse_fields` removed.
-- [ ] Quality gates + byte-identical `create_index` output (zero intentional semantic change).
+- [x] Full pipeline on one `IndexRule`; no dict carrier on main path.
+- [x] `env` / `exception` are `IndexContext | None` in memory; `EnvExceptionField` removed.
+- [x] Dump: context-only → string; any `position` or `dialect` → object; load accepts both legacy string and object YAML.
+- [x] `IndexRule.from_parse_fields` removed.
+- [x] Quality gates + byte-identical `create_index` output (zero intentional semantic change).
 
 ## Related
 

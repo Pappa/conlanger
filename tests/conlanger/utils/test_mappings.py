@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import pytest
 
+from conlanger.tools.ingest.index_models import IndexContext, IndexRule
 from conlanger.utils.mappings import (
     FeatureMapping,
     ManualMapping,
@@ -102,6 +103,23 @@ def test_normalize_feature_matrices_in_field_unknown_kind_unchanged():
     assert normalize_feature_matrices_in_field("C[+weird]", mappings) == "C[+weird]"
 
 
+def _rule_from_field_parts(parts: dict) -> IndexRule:
+    rule = IndexRule(raw="x", source="t", stages=list(parts.get("stages") or []))
+    if "env" in parts:
+        rule.env = IndexContext(context=parts["env"])
+    if "exception" in parts:
+        rule.exception = IndexContext(context=parts["exception"])
+    return rule
+
+
+def _field_parts(rule: IndexRule) -> dict:
+    dumped = rule.to_index_dict()
+    out = {key: dumped[key] for key in ("stages", "env", "exception") if key in dumped}
+    if out.get("stages") == []:
+        out.pop("stages", None)
+    return out
+
+
 @pytest.mark.parametrize(
     ("parts", "mappings", "expected"),
     [
@@ -159,7 +177,8 @@ def test_normalize_feature_matrices_in_field_unknown_kind_unchanged():
     ],
 )
 def test_apply_feature_mappings(parts, mappings, expected):
-    assert apply_feature_mappings(parts, mappings) == expected
+    result = apply_feature_mappings(_rule_from_field_parts(parts), mappings)
+    assert _field_parts(result) == expected
 
 
 @pytest.mark.parametrize(
@@ -223,7 +242,8 @@ def test_normalize_ipa_in_field(text, mappings, expected):
     ],
 )
 def test_apply_ipa_mappings(parts, mappings, expected):
-    assert apply_ipa_mappings(parts, mappings) == expected
+    result = apply_ipa_mappings(_rule_from_field_parts(parts), mappings)
+    assert _field_parts(result) == expected
 
 
 @pytest.mark.parametrize(

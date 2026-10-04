@@ -16,6 +16,7 @@ from conlanger.tools.compile.asca.syllable_position import (
     strip_editorial_in_before_syllable_position,
 )
 from conlanger.tools.compile.compile_fields import RuleEnv, RuleInput, RuleOutput
+from conlanger.tools.ingest.index_models import IndexContext, IndexRule
 from conlanger.tools.ingest.transforms import apply_syllable_position_editorial_strip
 from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
 
@@ -134,10 +135,16 @@ def test_sound_change_rule_preserves_raw():
 
 
 def test_apply_syllable_position_editorial_strip_on_rule_parts():
-    parts = apply_syllable_position_editorial_strip(
-        {"env": "in #U", "exception": "in U#"}
+    rule = IndexRule(
+        raw="x",
+        source="t",
+        env=IndexContext(context="in #U"),
+        exception=IndexContext(context="in U#"),
     )
-    assert parts == {"env": "#U", "exception": "U#"}
+    result = apply_syllable_position_editorial_strip(rule)
+    dumped = result.to_index_dict()
+    assert dumped["env"] == "#U"
+    assert dumped["exception"] == "U#"
 
 
 def _write_probe_words(words: list[str]) -> Path:

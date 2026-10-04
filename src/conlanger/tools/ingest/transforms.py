@@ -8,6 +8,7 @@ from typing import Any
 from conlanger.tools.compile.asca.syllable_position import (
     strip_editorial_in_before_syllable_position,
 )
+from conlanger.tools.ingest.index_models import IndexRule, join_rule_comment
 from conlanger.utils.gloss import (
     comment_has_uncertainty_qualifier,
     extract_field_wrapped_quoted_gloss_from_field,
@@ -19,24 +20,8 @@ from conlanger.utils.gloss import (
 _CORPUS_CONTEXT_FIELD_KEYS = ("env", "exception")
 
 
-def join_rule_comment(*fragments: str | None) -> str | None:
-    """Join captured prose fragments into one ``comment`` string."""
-    parts = [
-        fragment.strip() for fragment in fragments if fragment and fragment.strip()
-    ]
-    if not parts:
-        return None
-    return "; ".join(parts)
-
-
-def split_semicolon_comment(text: str) -> tuple[str, str | None]:
-    """Peel the first ``;`` on a working rule line into remainder and rule-comment tail."""
-    head, _, tail = text.partition(";")
-    return head.rstrip(), tail.strip() or None
-
-
 def _append_rule_comment_parts(parts: dict[str, Any], fragments: list[str]) -> None:
-    """Merge newly captured prose into optional ``comment`` on rule parts."""
+    """Merge newly captured prose into optional ``comment`` on serialized rule dicts."""
     addition = join_rule_comment(*fragments)
     if not addition:
         return
@@ -46,72 +31,63 @@ def _append_rule_comment_parts(parts: dict[str, Any], fragments: list[str]) -> N
         parts["comment"] = merged
 
 
-def apply_sporadic_qualifier(parts: dict[str, str]) -> dict[str, Any]:
+def apply_sporadic_qualifier(rule: IndexRule) -> IndexRule:
     """Strip uncertainty glosses from rule fields; set ``sporadic: true`` when found."""
+    rule = rule.model_copy(deep=True)
     sporadic = False
-    cleaned: dict[str, Any] = {}
-    if "comment" in parts:
-        cleaned["comment"] = parts["comment"]
-        if comment_has_uncertainty_qualifier(cleaned["comment"]):
-            sporadic = True
+    if rule.comment and comment_has_uncertainty_qualifier(rule.comment):
+        sporadic = True
     comment_fragments: list[str] = []
-    stages = parts.get("stages")
-    if stages is not None:
-        new_stages: list[str] = []
-        for stage in stages:
-            value = stage
-            if field_has_uncertainty_qualifier(value):
-                sporadic = True
-            value, captures = extract_uncertainty_qualifier_from_field(value)
-            comment_fragments.extend(captures)
-            new_stages.append(value)
-        cleaned["stages"] = new_stages
-    for key in _CORPUS_CONTEXT_FIELD_KEYS:
-        if key not in parts:
-            continue
-        value = parts[key]
+    new_stages: list[str] = []
+    for stage in rule.stages:
+        value = stage
         if field_has_uncertainty_qualifier(value):
             sporadic = True
         value, captures = extract_uncertainty_qualifier_from_field(value)
         comment_fragments.extend(captures)
-        if value:
-            cleaned[key] = value
-    result: dict[str, Any] = cleaned
-    if sporadic:
-        result["sporadic"] = True
-    _append_rule_comment_parts(result, comment_fragments)
-    return result
-
-
-def apply_trailing_glosses(parts: dict[str, str]) -> dict[str, Any]:
-    """Remove trailing bracket/quote glosses from rule fields; capture ``comment``."""
-    cleaned: dict[str, Any] = {}
-    if "comment" in parts:
-        cleaned["comment"] = parts["comment"]
-    if "sporadic" in parts:
-        cleaned["sporadic"] = parts["sporadic"]
-    comment_fragments: list[str] = []
-    stages = parts.get("stages")
-    if stages is not None:
-        new_stages: list[str] = []
-        for original in stages:
-            wrapped_cleaned, wrapped_caps = (
-                extract_field_wrapped_quoted_gloss_from_field(original)
-            )
-            if wrapped_caps:
-                value = wrapped_cleaned
-                comment_fragments.extend(wrapped_caps)
-            else:
-                value, captures = extract_trailing_gloss_from_field(original)
-                comment_fragments.extend(captures)
-                if not value:
-                    value = original
-            new_stages.append(value)
-        cleaned["stages"] = new_stages
+        new_stages.append(value)
+    rule.stages = new_stages
     for key in _CORPUS_CONTEXT_FIELD_KEYS:
-        if key not in parts:
+        text = getattr(rule, f"{key}_context")()
+        if text is None:
             continue
-        original = parts[key]
+        if field_has_uncertainty_qualifier(text):
+            sporadic = True
+        value, captures = extract_uncertainty_qualifier_from_field(text)
+        comment_fragments.extend(captures)
+        if value:
+            getattr(rule, f"set_{key}_context")(value)
+        else:
+            setattr(rule, key, None)
+    if sporadic:
+        rule.mark_sporadic()
+    rule.merge_comment(*comment_fragments)
+    return rule
+
+
+def apply_trailing_glosses(rule: IndexRule) -> IndexRule:
+    """Remove trailing bracket/quote glosses from rule fields; capture ``comment``."""
+    rule = rule.model_copy(deep=True)
+    comment_fragments: list[str] = []
+    new_stages: list[str] = []
+    for original in rule.stages:
+        wrapped_cleaned, wrapped_caps = extract_field_wrapped_quoted_gloss_from_field(
+            original
+        )
+        if wrapped_caps:
+            value = wrapped_cleaned
+            comment_fragments.extend(wrapped_caps)
+        else:
+            value, captures = extract_trailing_gloss_from_field(original)
+            comment_fragments.extend(captures)
+            if not value:
+                value = original
+        new_stages.append(value)
+    rule.stages = new_stages
+    for key in _CORPUS_CONTEXT_FIELD_KEYS:
+        original = getattr(rule, f"{key}_context")()
+        if original is None:
+            continue
         wrapped_cleaned, wrapped_caps = extract_field_wrapped_quoted_gloss_from_field(
             original
         )
@@ -124,9 +100,11 @@ def apply_trailing_glosses(parts: dict[str, str]) -> dict[str, Any]:
             )
             comment_fragments.extend(captures)
         if value:
-            cleaned[key] = value
-    _append_rule_comment_parts(cleaned, comment_fragments)
-    return cleaned
+            getattr(rule, f"set_{key}_context")(value)
+        else:
+            setattr(rule, key, None)
+    rule.merge_comment(*comment_fragments)
+    return rule
 
 
 _STRESS_CONDITION_RE = re.compile(r"when (?:un)?stressed\b", re.IGNORECASE)
@@ -176,17 +154,19 @@ def normalize_stress_conditions(text: str) -> tuple[str, list[str]]:
     return text.strip(), captures
 
 
-def apply_stress_conditions(parts: dict[str, str]) -> dict[str, Any]:
+def apply_stress_conditions(rule: IndexRule) -> IndexRule:
     """Normalize ``when stressed`` / ``when unstressed`` in env and exception fields."""
-    result: dict[str, Any] = dict(parts)
+    rule = rule.model_copy(deep=True)
     comment_fragments: list[str] = []
     for key in ("env", "exception"):
-        if key in result:
-            value, captures = normalize_stress_conditions(result[key])
-            result[key] = value
-            comment_fragments.extend(captures)
-    _append_rule_comment_parts(result, comment_fragments)
-    return result
+        text = getattr(rule, f"{key}_context")()
+        if text is None:
+            continue
+        value, captures = normalize_stress_conditions(text)
+        getattr(rule, f"set_{key}_context")(value if value else None)
+        comment_fragments.extend(captures)
+    rule.merge_comment(*comment_fragments)
+    return rule
 
 
 MEDIAL_BOUNDARY_EXCEPTION = "#_, _#"
@@ -208,26 +188,24 @@ def normalize_medial_env_field(text: str) -> tuple[str, bool]:
     return text, False
 
 
-def apply_syllable_position_editorial_strip(parts: dict[str, Any]) -> dict[str, Any]:
+def apply_syllable_position_editorial_strip(rule: IndexRule) -> IndexRule:
     """Normalize mechanical ``in #U`` / ``in U#`` tails on env and exception fields."""
-    result: dict[str, Any] = dict(parts)
-    for key in _CORPUS_CONTEXT_FIELD_KEYS:
-        if result.get(key):
-            result[key] = strip_editorial_in_before_syllable_position(result[key])
-    return result
+    rule = rule.model_copy(deep=True)
+    rule.map_env_and_exception_context(strip_editorial_in_before_syllable_position)
+    return rule
 
 
-def apply_medial_env_conditions(parts: dict[str, Any]) -> dict[str, Any]:
+def apply_medial_env_conditions(rule: IndexRule) -> IndexRule:
     """Rewrite Index word-internal ``medial`` env prose to ``_`` + boundary exception."""
-    result: dict[str, Any] = dict(parts)
-    if result.get("exception"):
-        return result
-    env = result.get("env")
+    rule = rule.model_copy(deep=True)
+    if rule.exception_context() is not None:
+        return rule
+    env = rule.env_context()
     if not env:
-        return result
+        return rule
     normalized, is_medial = normalize_medial_env_field(env)
     if not is_medial:
-        return result
-    result["env"] = normalized
-    result["exception"] = MEDIAL_BOUNDARY_EXCEPTION
-    return result
+        return rule
+    rule.set_env_context(normalized)
+    rule.set_exception_context(MEDIAL_BOUNDARY_EXCEPTION)
+    return rule
