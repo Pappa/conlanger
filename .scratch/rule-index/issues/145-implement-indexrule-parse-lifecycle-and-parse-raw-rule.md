@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: 140
 
 # Implement `IndexRule` working line, `update_rule()`, and `update_model()`
@@ -110,3 +110,7 @@ In [146](146-migrate-parse-field-transforms-to-indexrule.md), not 145.
 - [139 grill](139-grill-parse-indexrule-model-and-surface-normalization.md), [142](142-implement-indexrule-pydantic-and-yaml-schema.md)
 - [146 Migrate parse field transforms to `IndexRule`](146-migrate-parse-field-transforms-to-indexrule.md)
 - [77 first `;` cut](77-implement-first-semicolon-comment-cut.md)
+
+## Answer
+
+Implemented `IndexRule` parse lifecycle on the model: `_working_line` (`PrivateAttr`) initialised from `raw`, `working_text()`, `update_rule()`, and `update_model()` (first-`;` peel via `_split_semicolon_comment`, `normalize_symbols`, structural split via `_extract_rule_parts` / `extract_missing_arrow_rule_parts`). Retired public `extract_rule_parts` and `split_semicolon_comment` (now `_`-prefixed); parser still uses the private helpers until #146. Tests ported to `test_index_models.py`; YAML/`to_index_dict()` omit working line.

@@ -1,13 +1,9 @@
-from pathlib import Path
-
-import pandas as pd
 import pytest
 from lxml import html
 
 from conlanger.utils.parsing import (
     build_stages_from_spine,
     extract_missing_arrow_rule_parts,
-    extract_rule_parts,
     finalize_stages_shape,
     normalize_sub_tags,
     parse_section_heading,
@@ -17,33 +13,6 @@ from conlanger.utils.parsing import (
     split_post_arrow,
     strip_leading_index_list_marker,
 )
-from conlanger.utils.symbols import normalize_symbols
-
-_SAMPLED_RULES_CSV = (
-    Path(__file__).resolve().parents[2] / "fixtures" / "sound_change_rules.csv"
-)
-
-
-def _extract_rule_parts_for_test(normalized: str):
-    parts = extract_rule_parts(normalized)
-    if parts is None:
-        return extract_missing_arrow_rule_parts(normalized)
-    return parts
-
-
-def _load_sampled_html_rules() -> list[tuple]:
-    df = pd.read_csv(_SAMPLED_RULES_CSV, dtype=str, keep_default_na=False)
-    if "kind" in df.columns:
-        df = df[df["kind"].isin(["", "html_extract"])]
-    cases: list[tuple] = []
-    for row in df.itertuples(index=False):
-        if row.expect_none == "True":
-            expected = None
-        else:
-            normalized = normalize_symbols(strip_leading_index_list_marker(row.raw))
-            expected = _extract_rule_parts_for_test(normalized)
-        cases.append((row.id, row.raw, expected))
-    return cases
 
 
 @pytest.mark.parametrize(
@@ -182,27 +151,6 @@ def test_extract_missing_arrow_rule_parts():
     }
 
 
-def test_extract_rule_parts_strips_leading_list_marker():
-    assert extract_rule_parts("— j w → i u / #_CV") == {
-        "stages": ["j w", "i u"],
-        "env": "#_CV",
-    }
-
-
-def test_extract_rule_parts_splits_chain_into_stages():
-    assert extract_rule_parts("dʒ → tʃ → ʃ") == {
-        "stages": ["dʒ", "tʃ", "ʃ"],
-    }
-
-
-def test_extract_rule_parts_with_symbol_normalization():
-    raw = "a → b / _$%oː"
-    assert extract_rule_parts(normalize_symbols(raw)) == {
-        "stages": ["a", "b"],
-        "env": "_$$oː",
-    }
-
-
 @pytest.mark.parametrize(
     "post_arrow, expected",
     [
@@ -222,68 +170,3 @@ def test_extract_rule_parts_with_symbol_normalization():
 )
 def test_split_post_arrow(post_arrow, expected):
     assert split_post_arrow(post_arrow) == expected
-
-
-@pytest.mark.parametrize(
-    "raw, expected",
-    [
-        (
-            "w → ∅ / _# ! k(ː)_",
-            {"stages": ["w", "∅"], "env": "_#", "exception": "k(ː)_"},
-        ),
-        (
-            "s → ʃ / !V_",
-            {"stages": ["s", "ʃ"], "exception": "V_"},
-        ),
-        ("ɬ → l", {"stages": ["ɬ", "l"]}),
-        ("no arrow here", {"stages": ["no arrow here"]}),
-        (
-            "ʔ → ∅/ _#",
-            {"stages": ["ʔ", "∅"], "env": "_#"},
-        ),
-        (
-            "{i,u} → ∅/ _# ! V[-long]C_#",
-            {
-                "stages": ["{i,u}", "∅"],
-                "env": "_#",
-                "exception": "V[-long]C_#",
-            },
-        ),
-        (
-            "ə → ∅ VC_CV",
-            {"stages": ["ə", "∅ VC_CV"]},
-        ),
-        (
-            "χ → h #_",
-            {"stages": ["χ", "h #_"]},
-        ),
-        (
-            "∅ → dz → î_V",
-            {"stages": ["∅", "dz", "î_V"]},
-        ),
-        (
-            "rt → š (Alex Fink says that the realization of /š/ “is unclear”)",
-            {
-                "stages": [
-                    "rt",
-                    "š (Alex Fink says that the realization of /š/ “is unclear”)",
-                ]
-            },
-        ),
-        ("r…r → r…∅", {"stages": ["r…r", "r…∅"]}),
-    ],
-)
-def test_extract_rule_parts(raw, expected):
-    assert _extract_rule_parts_for_test(raw) == expected
-
-
-_SAMPLED_HTML_RULE_CASES = _load_sampled_html_rules()
-
-
-@pytest.mark.parametrize(
-    ("case_id", "raw", "expected"),
-    _SAMPLED_HTML_RULE_CASES,
-    ids=[case_id for case_id, _, _ in _SAMPLED_HTML_RULE_CASES],
-)
-def test_extract_rule_parts_sampled_html_rules(case_id, raw, expected):
-    assert extract_rule_parts(normalize_symbols(raw)) == expected, case_id

@@ -1,5 +1,6 @@
 import pytest
 
+from conlanger.tools.ingest.index_models import IndexRule
 from conlanger.tools.ingest.transforms import (
     MEDIAL_BOUNDARY_EXCEPTION,
     apply_medial_env_conditions,
@@ -9,7 +10,6 @@ from conlanger.tools.ingest.transforms import (
     join_rule_comment,
     normalize_medial_env_field,
     normalize_stress_conditions,
-    split_semicolon_comment,
 )
 
 
@@ -179,6 +179,9 @@ def test_normalize_stress_conditions(text, expected):
     assert cleaned == expected
 
 
-def test_split_semicolon_comment():
-    assert split_semicolon_comment("a → b ; tail") == ("a → b", "tail")
-    assert split_semicolon_comment("no semicolon") == ("no semicolon", None)
+def test_split_semicolon_comment_via_update_model():
+    rule = IndexRule(raw="a → b ; tail", source="test").update_model()
+    assert rule.stages == ["a", "b"]
+    assert rule.comment == "tail"
+    rule = IndexRule(raw="no semicolon", source="test").update_model()
+    assert rule.comment is None

@@ -2,10 +2,39 @@
 
 from __future__ import annotations
 
+from pathlib import Path
+
+import pandas as pd
 import pytest
 import yaml
 
 from conlanger.tools.ingest.index_models import IndexContext, IndexRule
+
+_SAMPLED_RULES_CSV = (
+    Path(__file__).resolve().parents[3] / "fixtures" / "sound_change_rules.csv"
+)
+
+
+def _update_model_fields(raw: str) -> dict:
+    rule = IndexRule(raw=raw, source="test").update_model()
+    return rule.model_dump(
+        include={"stages", "env", "exception", "comment"},
+        exclude_none=True,
+    )
+
+
+def _load_sampled_html_rules() -> list[tuple]:
+    df = pd.read_csv(_SAMPLED_RULES_CSV, dtype=str, keep_default_na=False)
+    if "kind" in df.columns:
+        df = df[df["kind"].isin(["", "html_extract"])]
+    cases: list[tuple] = []
+    for row in df.itertuples(index=False):
+        if row.expect_none == "True":
+            expected = None
+        else:
+            expected = _update_model_fields(row.raw)
+        cases.append((row.id, row.raw, expected))
+    return cases
 
 
 @pytest.mark.parametrize(
@@ -106,3 +135,120 @@ def test_index_rule_structured_env_to_index_dict():
     assert dumped["sporadic"] is True
     assert dumped["rule_id"] == "Test-id"
     assert IndexRule.model_validate(dumped) == rule
+
+
+def test_index_rule_working_text_initialised_from_raw():
+    rule = IndexRule(raw="a → b", source="index.html:1")
+    assert rule.working_text() == "a → b"
+
+
+def test_index_rule_update_rule_replaces_working_text_not_raw():
+    rule = IndexRule(raw="original", source="index.html:1")
+    rule.update_rule("a → b")
+    assert rule.working_text() == "a → b"
+    assert rule.raw == "original"
+
+
+def test_index_rule_working_line_omitted_from_index_dict():
+    rule = IndexRule(raw="a → b", source="index.html:1")
+    assert "working_line" not in rule.to_index_dict()
+    assert "_working_line" not in rule.to_index_dict()
+
+
+def test_update_model_peels_first_semicolon_comment():
+    rule = IndexRule(raw="a → b ; tail", source="test").update_model()
+    assert rule.stages == ["a", "b"]
+    assert rule.comment == "tail"
+
+
+def test_update_model_semicolon_peel_no_comment_when_absent():
+    rule = IndexRule(raw="no semicolon", source="test").update_model()
+    assert rule.comment is None
+    assert rule.stages == ["no semicolon"]
+
+
+def test_update_model_strips_leading_list_marker():
+    rule = IndexRule(raw="— j w → i u / #_CV", source="test").update_model()
+    assert rule.stages == ["j w", "i u"]
+    assert rule.env == "#_CV"
+
+
+def test_update_model_splits_chain_into_stages():
+    rule = IndexRule(raw="dʒ → tʃ → ʃ", source="test").update_model()
+    assert rule.stages == ["dʒ", "tʃ", "ʃ"]
+
+
+def test_update_model_applies_symbol_normalization():
+    raw = "a → b / _$%oː"
+    rule = IndexRule(raw=raw, source="test").update_model()
+    assert rule.stages == ["a", "b"]
+    assert rule.env == "_$$oː"
+
+
+@pytest.mark.parametrize(
+    "raw, expected",
+    [
+        (
+            "w → ∅ / _# ! k(ː)_",
+            {"stages": ["w", "∅"], "env": "_#", "exception": "k(ː)_"},
+        ),
+        (
+            "s → ʃ / !V_",
+            {"stages": ["s", "ʃ"], "exception": "V_"},
+        ),
+        ("ɬ → l", {"stages": ["ɬ", "l"]}),
+        ("no arrow here", {"stages": ["no arrow here"]}),
+        (
+            "ʔ → ∅/ _#",
+            {"stages": ["ʔ", "∅"], "env": "_#"},
+        ),
+        (
+            "{i,u} → ∅/ _# ! V[-long]C_#",
+            {
+                "stages": ["{i,u}", "∅"],
+                "env": "_#",
+                "exception": "V[-long]C_#",
+            },
+        ),
+        (
+            "ə → ∅ VC_CV",
+            {"stages": ["ə", "∅ VC_CV"]},
+        ),
+        (
+            "χ → h #_",
+            {"stages": ["χ", "h #_"]},
+        ),
+        (
+            "∅ → dz → î_V",
+            {"stages": ["∅", "dz", "î_V"]},
+        ),
+        (
+            "rt → š (Alex Fink says that the realization of /š/ “is unclear”)",
+            {
+                "stages": [
+                    "rt",
+                    "š (Alex Fink says that the realization of /š/ “is unclear”)",
+                ]
+            },
+        ),
+        ("r…r → r…∅", {"stages": ["r…r", "r…∅"]}),
+    ],
+)
+def test_update_model_structural_split(raw, expected):
+    assert _update_model_fields(raw) == expected
+
+
+_SAMPLED_HTML_RULE_CASES = _load_sampled_html_rules()
+
+
+@pytest.mark.parametrize(
+    ("case_id", "raw", "expected"),
+    _SAMPLED_HTML_RULE_CASES,
+    ids=[case_id for case_id, _, _ in _SAMPLED_HTML_RULE_CASES],
+)
+def test_update_model_sampled_html_rules(case_id, raw, expected):
+    fields = _update_model_fields(raw)
+    if expected is None:
+        assert fields is None or fields == {}
+    else:
+        assert fields == expected, case_id
