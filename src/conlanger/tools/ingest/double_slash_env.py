@@ -5,12 +5,8 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from conlanger.tools.ingest.index_models import IndexRule
 from conlanger.tools.ingest.prose_position_env import normalize_bare_prose_position_env
-from conlanger.tools.ingest.transforms import normalize_medial_env_field
-from conlanger.utils.gloss import (
-    extract_uncertainty_qualifier_from_field,
-)
+from conlanger.tools.ingest.transform_fields import normalize_medial_env_field
 
 _DOUBLE_SLASH_SEP = " // "
 
@@ -162,58 +158,3 @@ def normalize_prose_env_head(
     return stripped, captures, flags
 
 
-def apply_double_slash_env_conditions(rule: IndexRule) -> IndexRule:
-    """Rewrite Index ``//`` env shorthand and prose exception tails (``raw`` unchanged)."""
-    rule = rule.model_copy(deep=True)
-    comment_fragments: list[str] = []
-    flags: dict[str, Any] = {}
-
-    env = rule.env_context()
-    exception = rule.exception_context()
-
-    if env:
-        head, embedded_tail = split_embedded_double_slash(env)
-        if embedded_tail:
-            env = head
-            if exception:
-                comment_fragments.append(embedded_tail)
-            else:
-                exception = embedded_tail
-
-        normalized_head, head_captures, head_flags = normalize_prose_env_head(env)
-        if normalized_head != env or head_captures or head_flags:
-            env = normalized_head
-            comment_fragments.extend(head_captures)
-            flags.update(head_flags)
-        elif embedded_tail:
-            env = head
-
-        rule.set_env_context(env if env else None)
-
-    if exception:
-        original_exception = exception
-        value, uncertainty_captures = extract_uncertainty_qualifier_from_field(
-            exception
-        )
-        if uncertainty_captures:
-            comment_fragments.extend(uncertainty_captures)
-            flags["sporadic"] = True
-
-        normalized, tail_captures, tail_flags = normalize_prose_exception_or_env_tail(
-            value
-        )
-        if (
-            normalized != original_exception
-            or tail_captures
-            or tail_flags
-            or value != original_exception
-        ):
-            rule.set_exception_context(normalized if normalized else None)
-            comment_fragments.extend(tail_captures)
-            flags.update(tail_flags)
-
-    rule.merge_comment(*comment_fragments)
-    if flags.get("sporadic"):
-        rule.mark_sporadic()
-
-    return rule

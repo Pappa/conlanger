@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import re
-from typing import Any
 
 # Correspondence-series index: concrete segment base + ordinal subscript (not ₀, not ₓ).
 _CORRESPONDENCE_INDEX_RE = re.compile(r"(?<![A-Z])([a-zA-Zæøåɑɡɢ]+)([₁₂₃₄₅₆₇₈₉])")
@@ -40,23 +39,6 @@ def is_correspondence_series_token(token: str) -> bool:
 def section_index_prefixes(section_index: str) -> list[str]:
     parts = [part for part in section_index.split(".") if part]
     return [".".join(parts[:index]) for index in range(1, len(parts) + 1)]
-
-
-def apply_series_expansions(
-    rule: Any,
-    expansions: dict[str, tuple[str, ...]],
-) -> Any:
-    """Expand collective subscript tokens in rule fields; ``raw`` unchanged upstream."""
-    if not expansions:
-        return rule
-    rule = rule.model_copy(deep=True)
-    rule.stages = [
-        expand_collectives_in_field(stage, expansions) for stage in rule.stages
-    ]
-    rule.map_env_and_exception_context(
-        lambda text: expand_collectives_in_field(text, expansions)
-    )
-    return rule
 
 
 def expand_collectives_in_field(

@@ -1,8 +1,8 @@
 import pytest
 
 from conlanger.tools.ingest.index_models import IndexContext, IndexRule
+from conlanger.tools.ingest.ingest_apply import apply_prose_position_env_conditions
 from conlanger.tools.ingest.prose_position_env import (
-    apply_prose_position_env_conditions,
     normalize_bare_prose_position_env,
     strip_trailing_position_qualifiers,
 )

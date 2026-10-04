@@ -5,13 +5,15 @@ from __future__ import annotations
 import pytest
 
 from conlanger.tools.ingest.index_models import IndexContext, IndexRule
+from conlanger.tools.ingest.ingest_apply import (
+    apply_feature_mappings,
+    apply_ipa_mappings,
+)
 from conlanger.utils.mappings import (
     FeatureMapping,
     ManualMapping,
     ManualMappingHit,
     ParserConfig,
-    apply_feature_mappings,
-    apply_ipa_mappings,
     apply_manual_mappings,
     apply_section_mappings,
     normalize_feature_matrices_in_field,

@@ -215,23 +215,6 @@ def normalize_feature_matrices_in_field(
     return re.sub(r"\[([^\]]*)\]", replace_bracket_inner, text)
 
 
-def apply_feature_mappings(
-    rule: Any,
-    mappings: dict[str, FeatureMapping],
-) -> Any:
-    """Normalize Index feature matrix names in rule fields; ``raw`` unchanged upstream."""
-    if not mappings:
-        return rule
-    rule = rule.model_copy(deep=True)
-    rule.stages = [
-        normalize_feature_matrices_in_field(stage, mappings) for stage in rule.stages
-    ]
-    rule.map_env_and_exception_context(
-        lambda text: normalize_feature_matrices_in_field(text, mappings)
-    )
-    return rule
-
-
 def normalize_ipa_in_field(text: str, mappings: dict[str, str]) -> str:
     """Replace Index IPA characters in one rule field with ASCA targets."""
     if not text or not mappings:
@@ -239,21 +222,6 @@ def normalize_ipa_in_field(text: str, mappings: dict[str, str]) -> str:
     for source in sorted(mappings.keys(), key=len, reverse=True):
         text = text.replace(source, mappings[source])
     return text
-
-
-def apply_ipa_mappings(
-    rule: Any,
-    mappings: dict[str, str],
-) -> Any:
-    """Normalize Index IPA characters in rule fields; ``raw`` unchanged upstream."""
-    if not mappings:
-        return rule
-    rule = rule.model_copy(deep=True)
-    rule.stages = [normalize_ipa_in_field(stage, mappings) for stage in rule.stages]
-    rule.map_env_and_exception_context(
-        lambda text: normalize_ipa_in_field(text, mappings)
-    )
-    return rule
 
 
 def apply_section_mappings(

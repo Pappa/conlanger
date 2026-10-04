@@ -1,7 +1,7 @@
 import pytest
 
+from conlanger.tools.ingest.ingest_apply import apply_double_slash_env_conditions
 from conlanger.tools.ingest.double_slash_env import (
-    apply_double_slash_env_conditions,
     normalize_prose_env_head,
     normalize_prose_exception_or_env_tail,
     split_embedded_double_slash,

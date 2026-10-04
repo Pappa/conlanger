@@ -101,6 +101,23 @@ def test_index_context_yaml_round_trip(yaml_doc, expected):
     assert round_trip["env"] == expected
 
 
+def test_index_context_with_dialects_extracted_bare_dialectal():
+    ctx = IndexContext(context="dialectal").with_dialects_extracted()
+    assert ctx == IndexContext(dialect=True)
+    assert ctx.model_dump(exclude_none=True, mode="python") == {"dialect": True}
+
+
+def test_index_context_with_dialects_extracted_preserves_position():
+    ctx = IndexContext(
+        context="in northern dialects",
+        position={"adjacent_to": "C"},
+    ).with_dialects_extracted()
+    assert ctx == IndexContext(
+        position={"adjacent_to": "C"},
+        dialect="northern",
+    )
+
+
 def test_index_rule_string_env_round_trip():
     rule = IndexRule(
         stages=["a", "b"],

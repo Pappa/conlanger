@@ -39,7 +39,6 @@ from typing import Any
 
 from lxml import html
 
-from conlanger.tools.ingest.double_slash_env import apply_double_slash_env_conditions
 from conlanger.tools.ingest.flatten_nested_sets import (
     flatten_nested_sets_in_section_rules,
 )
@@ -47,27 +46,26 @@ from conlanger.tools.ingest.index_models import IndexRule
 from conlanger.tools.ingest.index_rule_normalisation import (
     apply_index_rule_normalisation,
 )
-from conlanger.tools.ingest.prose_conditional_env import (
-    apply_prose_conditional_env_conditions,
-)
-from conlanger.tools.ingest.prose_position_env import (
-    apply_prose_position_env_conditions,
-)
-from conlanger.tools.ingest.section_policy import resolve_catch_all_else_rules
-from conlanger.tools.ingest.transforms import (
+from conlanger.tools.ingest.ingest_apply import (
+    apply_double_slash_env_conditions,
+    apply_feature_mappings,
+    apply_ipa_mappings,
     apply_medial_env_conditions,
+    apply_prose_conditional_env_conditions,
+    apply_prose_position_env_conditions,
+    apply_series_expansions,
     apply_sporadic_qualifier,
     apply_stress_conditions,
     apply_syllable_position_editorial_strip,
     apply_trailing_glosses,
 )
+from conlanger.tools.ingest.ingest_parse_pass import with_ingest_pass
+from conlanger.tools.ingest.section_policy import resolve_catch_all_else_rules
 from conlanger.utils.gloss import is_quoted_prose_paragraph
 from conlanger.utils.mappings import (
     ManualMapping,
     ManualMappingMatch,
     ParserConfig,
-    apply_feature_mappings,
-    apply_ipa_mappings,
     apply_manual_mappings,
     apply_section_mappings,
 )
@@ -77,7 +75,6 @@ from conlanger.utils.parsing import (
     parse_section_heading,
     strip_whitespace,
 )
-from conlanger.utils.series import apply_series_expansions
 
 
 class IndexDiachronicaParser:
@@ -200,7 +197,7 @@ class IndexDiachronicaParser:
         rule = apply_feature_mappings(rule, self._feature_mappings)
         rule = apply_ipa_mappings(rule, self._ipa_mappings)
         rule = rule.finalize_stages_shape()
-        rule = rule.apply_dialects_to_env_fields()
+        rule = with_ingest_pass("dialects", rule)
 
         return [rule.to_index_dict()]
 
