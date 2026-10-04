@@ -19,12 +19,7 @@ _REPO_ROOT = Path(__file__).resolve().parents[3]
 _CONFIG_ROOT = _REPO_ROOT / "config"
 
 _DEFAULT_PARSER_CONFIG = _CONFIG_ROOT / "parser" / "parser_config.yml"
-_DEFAULT_MANUAL_MAPPINGS = _CONFIG_ROOT / "parser" / "manual_mappings.yml"
-_DEFAULT_IPA_MAPPINGS = _CONFIG_ROOT / "parser" / "ipa_mappings.yml"
-_DEFAULT_FEATURE_MAPPINGS = _CONFIG_ROOT / "parser" / "feature_mappings.yml"
-_DEFAULT_CORRECTIONS = _CONFIG_ROOT / "parser" / "index_corrections.yml"
 _DEFAULT_COMPILER_CONFIG = _CONFIG_ROOT / "compile" / "asca" / "compiler_config.yml"
-_DEFAULT_GROUP_MAPPINGS = _CONFIG_ROOT / "compile" / "asca" / "group_mappings.yml"
 
 _SUPPORTED_FEATURE_MAPPING_KINDS = frozenset(
     {"rename", "rename_invert", "rename_polarity", "bundle", "tone"}
@@ -43,19 +38,6 @@ def _load_yaml_dict(path: Path) -> dict[str, Any]:
     if not isinstance(loaded, dict):
         raise TypeError("Data is not the expected type: dict")
     return loaded
-
-
-def _parse_section_mappings(raw: object) -> dict[str, dict[str, str]]:
-    if not isinstance(raw, dict):
-        return {}
-    out: dict[str, dict[str, str]] = {}
-    for section_key, token_map in raw.items():
-        if not isinstance(token_map, dict):
-            continue
-        out[str(section_key)] = {
-            str(token): str(target) for token, target in token_map.items()
-        }
-    return out
 
 
 def _load_manual_mappings(path: Path) -> list[ManualMapping]:
@@ -226,9 +208,7 @@ def load_parser_config(path: Path | None = None) -> ParserConfig:
         feature_mappings=_load_feature_mappings(feature_path),
         corrections=_load_corrections(corrections_path),
         series_expansions=raw.get("series_expansions", {}),
-        section_mappings_sections=_parse_section_mappings(
-            raw.get("section_mappings", {})
-        ),
+        section_mappings_sections=raw.get("section_mappings", {}),
         skip_sections=raw.get("skip_sections", []),
         skip_rules=raw.get("skip_rules", []),
     )
