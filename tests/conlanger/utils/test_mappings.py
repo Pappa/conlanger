@@ -258,7 +258,8 @@ def test_apply_section_mappings(text, section_index, sections, expected):
         ipa_mappings_confidence=frozenset({"high"}),
         section_mappings_sections=sections,
     )
-    assert apply_section_mappings(text, section_index, config) == expected
+    mappings = config.resolved_section_mappings(section_index)
+    assert apply_section_mappings(text, mappings) == expected
 
 
 @pytest.mark.parametrize(

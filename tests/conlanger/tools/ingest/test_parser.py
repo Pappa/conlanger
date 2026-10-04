@@ -125,6 +125,7 @@ def test_parse_order_correction_then_section_then_manual(fx_rule):
         ],
     )
     parser = IndexDiachronicaParser(parser_config=config)
+    parser.update_current_section(fx_rule["section_index"], fx_rule["section_name"])
     rules = parser.parse_rule_string(**fx_rule, raw=raw)
     assert rules[0]["raw"] == raw
     assert rules[0]["stages"] == ["D", "manual"]

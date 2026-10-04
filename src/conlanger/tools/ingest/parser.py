@@ -104,6 +104,16 @@ class IndexDiachronicaParser:
         self._skipped_sections = {
             section.id: section for section in self._parser_config.skip_sections
         }
+        self._current_section_index = ""
+        self._current_section_name = ""
+        self._current_section_mappings: dict[str, str] = {}
+
+    def update_current_section(self, index: str, name: str) -> None:
+        self._current_section_index = index
+        self._current_section_name = name
+        self._current_section_mappings = self._parser_config.resolved_section_mappings(
+            index
+        )
 
     @property
     def manual_mapping_matches(self) -> list[ManualMappingMatch]:
@@ -182,7 +192,7 @@ class IndexDiachronicaParser:
                 )
             )
 
-        working = apply_section_mappings(working, section_index, self._parser_config)
+        working = apply_section_mappings(working, self._current_section_mappings)
 
         if is_quoted_prose_paragraph(working):
             quoted = IndexRule(
@@ -236,6 +246,7 @@ class IndexDiachronicaParser:
         self._manual_mapping_matches = []
         self._matched_manual_froms = set()
         self._matched_correction_ids = set()
+        self.update_current_section("", "")
         sections_out: list[dict[str, Any]] = []
 
         normalised = normalize_sub_tags(doc)
@@ -248,6 +259,8 @@ class IndexDiachronicaParser:
             index, name = parse_section_heading(h2_text)
             if not name or not index:
                 continue
+
+            self.update_current_section(index, name)
 
             rules: list[dict[str, Any]] = []
             citation: str | None = None
