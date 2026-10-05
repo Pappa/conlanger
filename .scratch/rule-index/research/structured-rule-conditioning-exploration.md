@@ -232,7 +232,7 @@ Remove proximity/dialect rows from `manual_mappings.yml`; shrink prose env passe
 **Phase 1:** New Phase **C¾** after structural split, before D transforms:
 
 ```
-B½  comment peel
+B½  comment partition
 C   structural split
 C¾  structured constraint extraction  ← NEW
 D   existing transforms (skip already-extracted patterns)

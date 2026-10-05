@@ -10,7 +10,7 @@ Grill 2026-08-21 Q6: If the Index line has **no `→`**, parse still emits a ind
 
 ### Parse
 
-- After comment peel and env/exception isolation, if there is no `→`: `stages: ["<pre-env text>"]` (stripped working remainder before `/` env, `!`/`except`/second-`/` exception, already-peeled comment).
+- After comment partition and env/exception isolation, if there is no `→`: `stages: ["<pre-env text>"]` (stripped working remainder before `/` env, `!`/`except`/second-`/` exception, already-partitioned comment).
 - Do **not** use `status: skipped` for this case.
 - Keep `raw` / `source` / `rule_id` / optional `env` / `exception` / `comment` as for any other rule.
 

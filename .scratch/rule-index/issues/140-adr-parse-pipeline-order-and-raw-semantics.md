@@ -15,7 +15,7 @@ Record the parse-time working-line order and audit `raw` policy decided in [Gril
 3. **Manual mappings** on working line.
 4. **Index rule normalisation** (ordered transforms).
 5. **Section mappings**.
-6. First **`;`** comment peel, then symbol normalisation, structural split, field transforms (detail in parser doc).
+6. First **`;`** comment partition, then symbol normalisation, structural split, field transforms (detail in parser doc).
 
 Amend [index-diachronica-parser.md](../../../docs/system/index-diachronica-parser.md) Phase A½ table to match code after implementation.
 

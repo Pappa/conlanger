@@ -48,7 +48,7 @@ Residual output/environment boundary failures after [48 parenthetical](48-correc
 |---------|---------------|-----------|
 | Unclosed paren gloss on output | `d ɡ → t k (may have been part of a more sweeping merger` | parse: strip to `comment` |
 | Pronunciation gloss | `e (= /ə/?)` | parse: strip `(= …)` |
-| Missing `/` before env | `χ → h #_`, `ə → ∅ VC_CV`, `l → r → _Vl` | **overlay** in `index_corrections.yml` (not a parse peel) |
+| Missing `/` before env | `χ → h #_`, `ə → ∅ VC_CV`, `l → r → _Vl` | **overlay** in `index_corrections.yml` (not a parse partition) |
 | Glued `/` without preceding space | `{i,u} → ∅/ _#` | parse: treat `"/ "` as the env delimiter |
 | Spaced parallel parenthetical | `eː ow → ej (əw)` | compile: unwrap `(əw)` → `əw` |
 | Concatenated deletion column | `{C}∅` | compile: drop glued `}∅` (ticket 60 mixed-null policy) |
@@ -73,7 +73,7 @@ Claim baseline: **8186 / 9685 ok (84.5%)**; sections all OK **310 / 712**; `forg
 
 No `asca_guess` fixture updates — tests assert guess-row count only; html_extract outcomes for those rows unchanged.
 
-**2026-08-19 follow-up:** omitted-`/` Index errata moved to `index_corrections.yml`. Parse no longer peels a missing slash (`ə → ∅ VC_CV` stays unsplit unless overlayed). Glued `"/ "` remains, gated so phonemic `/š/` is not a delimiter. After overlay + peel revert: **8224 / 9689 ok**; `Comox-ʔ` overlay `V3R_V` fails ASCA unknown grouping `R`.
+**2026-08-19 follow-up:** omitted-`/` Index errata moved to `index_corrections.yml`. Parse no longer partitions a missing slash (`ə → ∅ VC_CV` stays unsplit unless overlayed). Glued `"/ "` remains, gated so phonemic `/š/` is not a delimiter. After overlay + partition revert: **8224 / 9689 ok**; `Comox-ʔ` overlay `V3R_V` fails ASCA unknown grouping `R`.
 
 **Code:** glued `"/ "` env delimiter in `parsing.py`; unclosed/`=` glosses in `gloss.py`; `drop_concatenated_deletion_column` in `slash_boundary.py`; spaced `(əw)` unwrap in `parenthetical.py`. Omitted-`/` Index errata live in `data/diachronica/index_corrections.yml`.
 

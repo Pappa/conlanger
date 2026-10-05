@@ -37,7 +37,7 @@ Before (or interleaved with) today's heavy `extract_rule_parts` / prose passes, 
 - Today `parse_rule_element` threads a `dict` from `extract_rule_parts` through ~15 transforms ([`parser.py`](../../../src/conlanger/tools/ingest/parser.py)); compile uses pydantic `SoundChangeRule` + per-field compile ([ADR-0014](../../../docs/adr/0014-per-field-asca-compile.md)).
 - [122](122-grill-proximity-conditions-yaml.md) (paused): YAML `position: {env?, exception?}` relation map; targets stay in `env`/`exception` **strings**; parser extracts from `raw` with open **Q9/Q10** (manual mappings vs extract order).
 - [123](123-grill-applicability-dialect-sporadic-conditions-yaml.md) (open): `applicability` object; retire `sporadic ;` manual injections; Phase 0 additive fields.
-- Docs order A½: corrections → section_mappings → manual_mappings → B½ semicolon peel → B symbols → C split ([`index-diachronica-parser.md`](../../../docs/system/index-diachronica-parser.md)).
+- Docs order A½: corrections → section_mappings → manual_mappings → B½ semicolon partition → B symbols → C split ([`index-diachronica-parser.md`](../../../docs/system/index-diachronica-parser.md)).
 - `manual_mappings` runs **before** section_mappings in current code (comment in `parser.py` says manual before section; doc table says section before manual — **code wins**: manual first).
 
 ## Decisions (2026-09-20 grill — partial)
@@ -59,7 +59,7 @@ Before (or interleaved with) today's heavy `extract_rule_parts` / prose passes, 
 3. **Manual mappings**
 4. **Index rule normalisation**
 5. **Section mappings**
-6. First **`;`** comment peel
+6. First **`;`** comment partition
 7. … (symbol norm, structural split, field transforms — to confirm)
 
 **Not settled:** whether corrections run before manual mappings on **HTML `raw`** only vs corrected working line; whether stored `raw` stays HTML-only while corrections apply only to working copy.
@@ -113,7 +113,7 @@ Inclusive vs exclusive dialect/position semantics: determined by whether the obj
 3. Manual mappings  
 4. **Index rule normalisation**  
 5. Section mappings  
-6. First `;` peel → symbols → split → field transforms  
+6. First `;` partition → symbols → split → field transforms  
 
 Requires ADR + parser doc update ([140](140-adr-parse-pipeline-order-and-raw-semantics.md)).
 

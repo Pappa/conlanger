@@ -40,7 +40,7 @@ Two small gaps in **Phase C** (`split_output_rest`) and **Phase D1** (`apply_spo
 
 ### Fix 1 — `split_output_rest` (`src/conlanger/utils/parsing.py`)
 
-After existing `ENV_SEP` (` / `) and `GLUED_ENV_SEP` (`/ `) checks, add a third peel:
+After existing `ENV_SEP` (` / `) and `GLUED_ENV_SEP` (`/ `) checks, add a third partition:
 
 - Split on ` /` (space + slash) when the character immediately after `/` is **non-whitespace** and **env-start** (`#`, `_`, `{`, `!` — same guard family as ticket 82).
 - Do **not** split editorial phonemic slashes in output glosses (the env-start gate prevents most false positives; `Orkney-Norn-ð_2` is the only corpus hit).
@@ -107,7 +107,7 @@ Notable ok-flips: `Orkney-Norn-ð_2`, `Orkney-Norn-l_3`, Albanian `_B?` rules (�
 
 ### Changes
 
-- `split_output_rest`: third peel on ` /` when env is glued after slash (`∅ /{a,E}_`).
+- `split_output_rest`: third partition on ` /` when env is glued after slash (`∅ /{a,E}_`).
 - `extract_uncertainty_qualifier_from_field`: strip trailing ` ?` / `?` (not lone `?`); deduped `double_slash_env` tail strip.
 
 ## Out of scope

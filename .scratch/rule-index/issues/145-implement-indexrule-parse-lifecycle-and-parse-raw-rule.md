@@ -66,7 +66,7 @@ Renamed from `parse_raw_rule`. Called **once** after quoted-prose check fails (t
 
 Derives **public** index fields from the current **`_working_line`**:
 
-1. **First-`;` comment peel** (today [`split_semicolon_comment`](../../../src/conlanger/tools/ingest/transforms.py)): partition on first `;`; head → `_working_line` (`.rstrip()`); tail → merge into `comment` via [`join_rule_comment`](../../../src/conlanger/tools/ingest/transforms.py). Behaviour must match [`test_split_semicolon_comment`](../../../tests/conlanger/tools/ingest/test_transforms.py).
+1. **First-`;` comment partition** (today [`split_semicolon_comment`](../../../src/conlanger/tools/ingest/transforms.py)): partition on first `;`; head → `_working_line` (`.rstrip()`); tail → merge into `comment` via [`join_rule_comment`](../../../src/conlanger/tools/ingest/transforms.py). Behaviour must match [`test_split_semicolon_comment`](../../../tests/conlanger/tools/ingest/test_transforms.py).
 2. **`normalize_symbols`** on `_working_line` ([`normalize_symbols`](../../../src/conlanger/utils/symbols.py)).
 3. Structural split — move logic from [`extract_rule_parts`](../../../src/conlanger/utils/parsing.py) / [`extract_missing_arrow_rule_parts`](../../../src/conlanger/utils/parsing.py):
    - `strip_leading_index_list_marker`
@@ -74,7 +74,7 @@ Derives **public** index fields from the current **`_working_line`**:
    - [`normalize_rule_arrows`](../../../src/conlanger/utils/parsing.py) on stages and string env/exception
 4. Assign **`stages`**; set **`env` / `exception`** to **`IndexContext(context=…)`** or `None` (never bare strings on the model — wire-format string dump is [146](146-migrate-parse-field-transforms-to-indexrule.md)).
 
-**Does not** modify **`raw`**. May clear or retain post-peel `_working_line` after split — document choice; prefer leaving peel-only text for debugging unless tests require clear.
+**Does not** modify **`raw`**. May clear or retain post-partition `_working_line` after split — document choice; prefer leaving partition-only text for debugging unless tests require clear.
 
 Subsequent field transforms ([146](146-migrate-parse-field-transforms-to-indexrule.md)) mutate **`stages` / `env` / `exception` / `comment` / `sporadic`** via the model interface — not by re-parsing `_working_line`.
 
@@ -102,7 +102,7 @@ In [146](146-migrate-parse-field-transforms-to-indexrule.md), not 145.
 
 - [x] `IndexRule(raw, source, rule_id?)` initialises `_working_line` from `raw`; `update_rule`, `working_text`, `update_model` implemented.
 - [x] Unit tests: semicolon + structural split parity; YAML round-trip unchanged (no working line in dump).
-- [x] Semicolon peel + structural split only via **`update_model()`** on the model (not duplicated in new code paths).
+- [x] Semicolon partition + structural split only via **`update_model()`** on the model (not duplicated in new code paths).
 - [x] Parser rewire deferred to **[146](146-migrate-parse-field-transforms-to-indexrule.md)** — `parse_rule_string` may still use the legacy dict path until 146 lands.
 
 ## Related
@@ -113,4 +113,4 @@ In [146](146-migrate-parse-field-transforms-to-indexrule.md), not 145.
 
 ## Answer
 
-**Resolved (model slice).** [`index_models.py`](../../../src/conlanger/tools/ingest/index_models.py): `_working_line` (`PrivateAttr`) from `raw`, `working_text()`, `update_rule()`, `update_model()` (first-`;` peel, `normalize_symbols`, structural split). Coverage in [`test_index_models.py`](../../../tests/conlanger/tools/ingest/test_index_models.py) (+ semicolon via `update_model` in [`test_transforms.py`](../../../tests/conlanger/tools/ingest/test_transforms.py)). **`parse_rule_string` still on the dict pipeline** — [146](146-migrate-parse-field-transforms-to-indexrule.md) wires `update_rule` / `update_model` and retires parser-level `extract_rule_parts` / `split_semicolon_comment`.
+**Resolved (model slice).** [`index_models.py`](../../../src/conlanger/tools/ingest/index_models.py): `_working_line` (`PrivateAttr`) from `raw`, `working_text()`, `update_rule()`, `update_model()` (first-`;` partition, `normalize_symbols`, structural split). Coverage in [`test_index_models.py`](../../../tests/conlanger/tools/ingest/test_index_models.py) (+ semicolon via `update_model` in [`test_transforms.py`](../../../tests/conlanger/tools/ingest/test_transforms.py)). **`parse_rule_string` still on the dict pipeline** — [146](146-migrate-parse-field-transforms-to-indexrule.md) wires `update_rule` / `update_model` and retires parser-level `extract_rule_parts` / `split_semicolon_comment`.

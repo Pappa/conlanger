@@ -44,7 +44,7 @@ Decide policy **before** implementation (details and edge cases TBD in this gril
 
 ## Settled (grill closed 2026-08-18; owner confirmed)
 
-Delimiter is the **first `;`** on the working line (after **Manual mapping**), not `;;`. Naive cut (including inside parens/quotes). Peel **before** `extract_rule_parts`. Tail is **rule comment** as-is; detectors do **not** read it. Owner mappings plant the intended `;` first and plant `sporadic` before `;`.
+Delimiter is the **first `;`** on the working line (after **Manual mapping**), not `;;`. Naive cut (including inside parens/quotes). Partition **before** `extract_rule_parts`. Tail is **rule comment** as-is; detectors do **not** read it. Owner mappings plant the intended `;` first and plant `sporadic` before `;`.
 
 Full policy in **Answer**. Implementation: [77](77-implement-first-semicolon-comment-cut.md).
 
@@ -53,7 +53,7 @@ Full policy in **Answer**. Implementation: [77](77-implement-first-semicolon-com
 Owner confirmed (2026-08-18). Policy (amends ticket 30 extraction **order** only; schema unchanged):
 
 1. **Delimiter.** First `;` on the working line after **Manual mapping**. Trim whitespace on both sides of the cut. Not `;;`. Naive — first `;` anywhere, including inside parens/quotes. Owner adds **Manual mapping** rows so the *intended* `;` is first (CSV already rewrote `;;` → `;`; Kyrgyz/Blackfoot/Greek sporadic convention rows present).
-2. **Pass order.** Quoted-prose skip (unchanged) → peel that `;` tail from `working` → `normalize_symbols` + `extract_rule_parts` on the **remainder only**. The tail never becomes **stages**. One **index rule**, one **rule comment** for the whole spine.
+2. **Pass order.** Quoted-prose skip (unchanged) → partition that `;` tail from `working` → `normalize_symbols` + `extract_rule_parts` on the **remainder only**. The tail never becomes **stages**. One **index rule**, one **rule comment** for the whole spine.
 3. **Empty remainder.** No `→` after the cut → `status: skipped`, `stages: []`, **rule comment** = the tail. `raw` unchanged.
 4. **Comment vs remainder.** Tail stored as-is (no symbol/feature/IPA/series). Remainder keeps today’s sporadic / gloss / stress / medial / mappings. No second `;` pass on remainder. Detectors **do not** scan **rule comment**. Uncertainty that should set `sporadic: true` stays **before** `;`.
 5. **Docs / ADRs.** Update [docs/system/index-diachronica-parser.md](../../docs/system/index-diachronica-parser.md) in the implement ticket. **No** ADR-0012 change. No new ADR. Ticket 30 “comment after `→` split” is amended by (2). Still do **not** emit index **rule comment** as ASCA `;;`.

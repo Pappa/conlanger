@@ -14,7 +14,7 @@ Rule `Central-Middle-Indo-Aryan-ai,ja-au,wa` (`index_diachronica.html` — Indo-
 a{i,j}(a) a{u,w}(a) → e o
 ```
 
-**`raw`** preserves both optionals. **YAML `stages`** drop the second `(a)` on the second spine segment — a parse bug, not a glossary `comment` peel.
+**`raw`** preserves both optionals. **YAML `stages`** drop the second `(a)` on the second spine segment — a parse bug, not a glossary `comment` partition.
 
 After [111](111-correction-pass-cartesian-io-optionals.md), the first segment should compile toward `a{i,j,ia,ja}` (owner preference) or equivalent flat cartesian; the second segment needs correct stages before compile.
 
@@ -38,7 +38,7 @@ After [111](111-correction-pass-cartesian-io-optionals.md), the first segment sh
 
 ## Answer
 
-**Resolved 2026-09-02** (`b258472c`): trailing `(a)` on chain spine segments was peeled into `comment` by gloss detection. `is_prose_gloss()` in `src/conlanger/utils/gloss.py` now treats short parenthetical segment tokens (e.g. `(a)` in `a{i,j}(a)`) as phonology, not prose.
+**Resolved 2026-09-02** (`b258472c`): trailing `(a)` on chain spine segments was partitioned into `comment` by gloss detection. `is_prose_gloss()` in `src/conlanger/utils/gloss.py` now treats short parenthetical segment tokens (e.g. `(a)` in `a{i,j}(a)`) as phonology, not prose.
 
 - Parsed `stages` for `Central-Middle-Indo-Aryan-ai,ja-au,wa`: `["a{i,j}(a) a{u,w}(a)", "e o"]` — both `(a)` optionals retained; `raw` unchanged.
 - Regression: `tests/conlanger/tools/ingest/test_parser.py::test_parse_rule_element_indo_aryan_chain_retains_optional_segments`

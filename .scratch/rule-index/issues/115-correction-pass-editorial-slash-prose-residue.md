@@ -26,7 +26,7 @@ Distinct from [108 double-slash env](../issues/108-correction-pass-double-slash-
 1. Classify shapes in `editorial_slash_gloss` bucket ([ipa-correction-classes.csv](../research/ipa-correction-classes.csv)).
 2. Compile normalisation:
    - Strip editorial `/phoneme/` glosses to `comment` (preserve `raw`).
-   - Peel unclosed `(` prose tails from env/I/O into `comment`.
+   - Partition unclosed `(` prose tails from env/I/O into `comment`.
    - Expand structural `{a/e}` vowel alternation → `{a,e}` (Tupi §18.3.x).
 3. Defer `ipa_mappings` hold-outs (`*`, `@`) and malformed chains (§17.7.3.1.1).
 4. Full inventory re-run; before/after in **Answer**.
@@ -48,9 +48,9 @@ Implemented 2026-09-05.
 |-------|---------|-----------------|
 | Set vowel alternation | `{a/e}`, `{o,u/y}` | `{a,e}`, `{o,u,y}` |
 | Editorial phoneme slash | `/j/`, `/ts/?`, `(/ts/?)` | strip slashes / remove paren gloss |
-| Unclosed paren prose tail | `V_ (if /j/ resulted…`, `_n{C,#} (Souletin` | peel trailing `(…` gloss |
+| Unclosed paren prose tail | `V_ (if /j/ resulted…`, `_n{C,#} (Souletin` | partition trailing `(…` gloss |
 
-Compile strips prose from fields only; index `raw` unchanged (ADR-0010). Prose often already captured in parse-time `comment` (ticket 30/31); compile peel complements parse-time `include_unclosed_paren=False` on env/exception (ticket 82).
+Compile strips prose from fields only; index `raw` unchanged (ADR-0010). Prose often already captured in parse-time `comment` (ticket 30/31); compile partition complements parse-time `include_unclosed_paren=False` on env/exception (ticket 82).
 
 ### Code
 

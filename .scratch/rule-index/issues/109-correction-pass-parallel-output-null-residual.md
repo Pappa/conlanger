@@ -49,12 +49,12 @@ Implemented 2026-09-01.
 | Uneven branch counts | `k b r > {ŋ,∅} {w,m} {n,r,t}` | out of scope | Cartesian product (12 branches) |
 | Uneven 2/3/4 widths | `b d k > {b,β} {ɾ,l,∅} {k,x,ɡ,ɣ}` | out of scope | Cartesian product (24 branches) |
 | Fixed + branching cols | `m n h j > b {n,r,∅} {h,∅} {j,∅}` | out of scope | Cartesian product (12 branches) |
-| Env glued to output set | `ŋ > {∅,n} #_ else` | peel deferred | `peel_embedded_output_env` → optional-output branches |
+| Env glued to output set | `ŋ > {∅,n} #_ else` | partition deferred | `partition_embedded_output_env` → optional-output branches |
 
 ### Code
 
 - `expand_parallel_output_null_branches_from_tokens`: Cartesian fallback when column branch widths differ (ticket 109)
-- `peel_embedded_output_env` in `field_tokens.py`; wired in `SoundChangeRule._build_alternatives`
+- `partition_embedded_output_env` in `field_tokens.py`; wired in `SoundChangeRule._build_alternatives`
 
 ### Inventory
 

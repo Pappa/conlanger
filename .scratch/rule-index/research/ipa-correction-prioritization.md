@@ -81,7 +81,7 @@ Primary metric: active sections where **all** fails fall in the bucket. Secondar
 | 1 | 2 | 2 | `expected_ipa` | `ipa_received_other:*` | 2 / 0 / 0 | `ipa_mappings` / manual |
 | 0 | 4 | 6 | `invalid_ipa` | `khoisan_click:ǁ` | 0 / 0 / 4 | **defer** — manual/skip |
 | 0 | 5 | 5 | `invalid_ipa` | `khoisan_click:ǂ` | 1 / 0 / 4 | **defer** — manual/skip |
-| 0 | 3 | 4 | `expected_ipa` | `malformed_chain_or_prose` | 2 / 0 / 1 | manual / comment peel |
+| 0 | 3 | 4 | `expected_ipa` | `malformed_chain_or_prose` | 2 / 0 / 1 | manual / comment partition |
 | 0 | 1 | 1 | `expected_ipa` | `null_in_io_residual` | 0 / 0 / 1 | defer — [109](../issues/109-correction-pass-parallel-output-null-residual.md) family |
 
 Full row-level data: [`ipa-correction-classes.csv`](./ipa-correction-classes.csv) (176 rows). Bucket summary: [`ipa-correction-buckets.csv`](./ipa-correction-buckets.csv).
@@ -94,9 +94,9 @@ Full row-level data: [`ipa-correction-classes.csv`](./ipa-correction-classes.csv
 
 | Subcluster | Shape | Field blame | Class-first path? | Hold-out? |
 |------------|-------|-------------|-------------------|-----------|
-| `editorial_slash_gloss` | `/ts/?`, `/j/`, `(Pouletin` prose tails | env / mixed | **yes** — strip editorial `/…/` to `comment`; peel unclosed `(` prose | `{a/e}` alternation (§18.3.x) → expand to `{a,e}` at compile (structural, not gloss) |
+| `editorial_slash_gloss` | `/ts/?`, `/j/`, `(Pouletin` prose tails | env / mixed | **yes** — strip editorial `/…/` to `comment`; partition unclosed `(` prose | `{a/e}` alternation (§18.3.x) → expand to `{a,e}` at compile (structural, not gloss) |
 | `paren_optional_modifier` | `k(ʷ)`, `ɸ(ʼ,ʰ)`, `(ˀ)t` | input / output | **yes** — unwrap modifier optionals per [111](../issues/111-correction-pass-cartesian-io-optionals.md) Family B | Salish `(ˀ)` in §37.1.2.6 — already near-miss, not skipped |
-| `prose_double_slash_env` | `#_ ( // _a?)` | env\|exception | **yes** — peel paren tail after env focus; distinct from [108](../issues/108-correction-pass-double-slash-env.md) | — |
+| `prose_double_slash_env` | `#_ ( // _a?)` | env\|exception | **yes** — partition paren tail after env focus; distinct from [108](../issues/108-correction-pass-double-slash-env.md) | — |
 | `paren_optional_io` | `V=0`, `(N)P` | input | partial — [48](../issues/48-correction-pass-parenthetical-segment-notation.md) residual | §10.1.1, §31.1 |
 | `ipa_received_other:*` | correspondence `*C` | input | **no** — `ipa_mappings` or section map | §10.8 |
 | `malformed_chain_or_prose` | `{n̥n,nn̥ >` missing `/` | input | manual / ingest overlay | §17.7.3.1.1 |

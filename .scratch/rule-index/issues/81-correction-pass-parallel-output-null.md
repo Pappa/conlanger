@@ -60,7 +60,7 @@ Implemented 2026-08-19.
 
 - `expand_parallel_output_null_branches` in `src/conlanger/tools/compile/asca/parallel_output_null.py`
 - `SoundChangeRule._build_parallel_null_set_alternatives` (ticket 81) after optional-output detection (ticket 66)
-- `_peel_trailing_env_from_output` for stages that embed env after set output (`ŋ > {∅,n} #_ else`)
+- `_partition_trailing_env_from_output` for stages that embed env after set output (`ŋ > {∅,n} #_ else`)
 - Exported `split_outside_groupers` from `parallel_null_columns.py`
 
 ### Inventory

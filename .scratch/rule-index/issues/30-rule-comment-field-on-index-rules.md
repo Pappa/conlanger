@@ -64,7 +64,7 @@ Extracted **`comment`** values are an explicit index artifact for iterative revi
 
 ## Amendment (grill 76, 2026-08-18)
 
-Extraction **order** only: the first `;` on the working line is peeled **before** `extract_rule_parts` / chain split ([76](76-grill-double-semicolon-rule-comment-delimiter.md), implement [77](77-implement-first-semicolon-comment-cut.md)). Schema, capture-not-discard, and “do not emit `comment` into ASCA” are unchanged. Detectors still do not scan **rule comment**; uncertainty keywords belong before `;`.
+Extraction **order** only: the first `;` on the working line is partitioned **before** `extract_rule_parts` / chain split ([76](76-grill-double-semicolon-rule-comment-delimiter.md), implement [77](77-implement-first-semicolon-comment-cut.md)). Schema, capture-not-discard, and “do not emit `comment` into ASCA” are unchanged. Detectors still do not scan **rule comment**; uncertainty keywords belong before `;`.
 
 ## Comments
 

@@ -8,7 +8,7 @@ Spawned from [grill 76](76-grill-double-semicolon-rule-comment-delimiter.md) (ow
 
 ## Problem
 
-`extract_rule_parts` splits every `→` on the working line **before** comment capture. Editorial tails that contain arrows (Archi `ɣ → q ; (more likely, *ɢ → q instead of → ɣ)`) become spurious **stages**. Leftover `;` in stages also feeds ASCA `malformed_comment` / `trailing-comment`. Grill 76: peel the first `;` **before** that split.
+`extract_rule_parts` splits every `→` on the working line **before** comment capture. Editorial tails that contain arrows (Archi `ɣ → q ; (more likely, *ɢ → q instead of → ɣ)`) become spurious **stages**. Leftover `;` in stages also feeds ASCA `malformed_comment` / `trailing-comment`. Grill 76: partition the first `;` **before** that split.
 
 ## What to build
 
@@ -27,7 +27,7 @@ After **Manual mapping** and `is_quoted_prose_paragraph` (unchanged), **before**
 
 ### Docs
 
-Update [docs/system/index-diachronica-parser.md](../../docs/system/index-diachronica-parser.md): insert the first-`;` peel **before** Phase C structural split; note remainder-only symbol norm; note that field-level env/exception `;` capture is retired.
+Update [docs/system/index-diachronica-parser.md](../../docs/system/index-diachronica-parser.md): insert the first-`;` partition **before** Phase C structural split; note remainder-only symbol norm; note that field-level env/exception `;` capture is retired.
 
 ### Tests (minimum)
 
@@ -53,7 +53,7 @@ Update [docs/system/index-diachronica-parser.md](../../docs/system/index-diachro
 
 ## Acceptance criteria
 
-- [x] First `;` peeled from working line after mappings / quoted-prose skip, before `extract_rule_parts`
+- [x] First `;` partitioned from working line after mappings / quoted-prose skip, before `extract_rule_parts`
 - [x] Remainder-only symbol norm + structural split; tail is **rule comment** as-is
 - [x] No-`→` remainder → skipped with `comment` = tail
 - [x] `apply_semicolon_field_comments` no longer runs
@@ -64,7 +64,7 @@ Update [docs/system/index-diachronica-parser.md](../../docs/system/index-diachro
 
 ## Answer
 
-Implemented 2026-08-18. `split_line_semicolon_comment` peels the first `;` in `parse_rule_element` after manual mapping / quoted-prose skip, before `normalize_symbols` / `extract_rule_parts`. Tail seeds `comment`; remainder-only pipeline unchanged except `apply_semicolon_field_comments` removed from the call chain.
+Implemented 2026-08-18. `split_line_semicolon_comment` partitions the first `;` in `parse_rule_element` after manual mapping / quoted-prose skip, before `normalize_symbols` / `extract_rule_parts`. Tail seeds `comment`; remainder-only pipeline unchanged except `apply_semicolon_field_comments` removed from the call chain.
 
 **Regen (`uv run create_index`):** OK **7941** (82.4%, was 7953). **16** changelog flips: **3** false→true (incl. **Archi-ɢ,ɣ**), **13** true→false (naive in-paren `;` cuts — spec-accepted). **`malformed_comment` cluster eliminated** (7→0). **Old-Irish-VOR** no longer `malformed_comment` / `trailing-comment` (now `unknown_grouping` for `R`). **rules_with_comment** 1100.
 
