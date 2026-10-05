@@ -13,12 +13,13 @@ from conlanger.utils.series import expand_collectives_in_field
 
 def apply_series_expansions(
     rule: IndexRule,
-    expansions: dict[str, tuple[str, ...]],
+    series_expansions: dict[str, tuple[str, ...]],
 ) -> IndexRule:
     """Expand collective subscript tokens on stages and env/exception context."""
-    if not expansions:
+    if not series_expansions:
         return rule
     rule = rule.model_copy(deep=True)
+    expansions = list(series_expansions.items())
     rule.stages = [
         expand_collectives_in_field(stage, expansions) for stage in rule.stages
     ]

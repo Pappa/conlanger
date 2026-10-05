@@ -8,7 +8,7 @@ from conlanger.tools.ingest.corpus_apply import (
     apply_feature_mappings,
     apply_ipa_mappings,
 )
-from conlanger.tools.ingest.index_models import IndexContext, IndexRule
+from conlanger.tools.ingest.index_models import IndexRule
 from conlanger.utils.mappings import (
     FeatureMapping,
     ManualMapping,
@@ -105,23 +105,6 @@ def test_normalize_feature_matrices_in_field_unknown_kind_unchanged():
     assert normalize_feature_matrices_in_field("C[+weird]", mappings) == "C[+weird]"
 
 
-def _rule_from_field_parts(parts: dict) -> IndexRule:
-    rule = IndexRule(raw="x", source="t", stages=list(parts.get("stages") or []))
-    if "env" in parts:
-        rule.env = IndexContext(context=parts["env"])
-    if "exception" in parts:
-        rule.exception = IndexContext(context=parts["exception"])
-    return rule
-
-
-def _field_parts(rule: IndexRule) -> dict:
-    dumped = rule.to_index_dict()
-    out = {key: dumped[key] for key in ("stages", "env", "exception") if key in dumped}
-    if out.get("stages") == []:
-        out.pop("stages", None)
-    return out
-
-
 @pytest.mark.parametrize(
     ("parts", "mappings", "expected"),
     [
@@ -179,8 +162,9 @@ def _field_parts(rule: IndexRule) -> dict:
     ],
 )
 def test_apply_feature_mappings(parts, mappings, expected):
-    result = apply_feature_mappings(_rule_from_field_parts(parts), mappings)
-    assert _field_parts(result) == expected
+    rule = IndexRule(raw="x", source="t", **parts)
+    expected_rule = IndexRule(raw="x", source="t", **expected)
+    assert apply_feature_mappings(rule, mappings) == expected_rule
 
 
 @pytest.mark.parametrize(
@@ -244,8 +228,9 @@ def test_normalize_ipa_in_field(text, mappings, expected):
     ],
 )
 def test_apply_ipa_mappings(parts, mappings, expected):
-    result = apply_ipa_mappings(_rule_from_field_parts(parts), mappings)
-    assert _field_parts(result) == expected
+    rule = IndexRule(raw="x", source="t", **parts)
+    expected_rule = IndexRule(raw="x", source="t", **expected)
+    assert apply_ipa_mappings(rule, mappings) == expected_rule
 
 
 @pytest.mark.parametrize(

@@ -43,32 +43,35 @@ def section_index_prefixes(section_index: str) -> list[str]:
 
 def expand_collectives_in_field(
     text: str,
-    expansions: dict[str, tuple[str, ...]],
+    expansions: list[tuple[str, tuple[str, ...]]],
 ) -> str:
     """Fan out collective ``Xₓ`` tokens per ``parser_config`` ``series_expansions``."""
     if not text or not expansions:
         return text
-    ordered = sorted(
-        expansions.items(), key=lambda expansion: len(expansion[0]), reverse=True
-    )
     parts: list[str] = []
     index = 0
     while index < len(text):
         if text[index] == "{":
             close = text.find("}", index)
             if close == -1:
-                parts.append(_expand_collectives_outside_braces(text[index:], ordered))
+                parts.append(
+                    _expand_collectives_outside_braces(text[index:], expansions)
+                )
                 break
             inner = text[index + 1 : close]
-            parts.append("{" + _expand_collectives_inside_braces(inner, ordered) + "}")
+            parts.append(
+                "{" + _expand_collectives_inside_braces(inner, expansions) + "}"
+            )
             index = close + 1
         else:
             next_brace = text.find("{", index)
             if next_brace == -1:
-                parts.append(_expand_collectives_outside_braces(text[index:], ordered))
+                parts.append(
+                    _expand_collectives_outside_braces(text[index:], expansions)
+                )
                 break
             parts.append(
-                _expand_collectives_outside_braces(text[index:next_brace], ordered)
+                _expand_collectives_outside_braces(text[index:next_brace], expansions)
             )
             index = next_brace
     return "".join(parts)
@@ -76,10 +79,10 @@ def expand_collectives_in_field(
 
 def _expand_collectives_inside_braces(
     inner: str,
-    ordered: list[tuple[str, tuple[str, ...]]],
+    expansions: list[tuple[str, tuple[str, ...]]],
 ) -> str:
     result = inner
-    for token, members in ordered:
+    for token, members in expansions:
         if token in result:
             result = result.replace(token, ",".join(members))
     return result
@@ -87,10 +90,10 @@ def _expand_collectives_inside_braces(
 
 def _expand_collectives_outside_braces(
     segment: str,
-    ordered: list[tuple[str, tuple[str, ...]]],
+    expansions: list[tuple[str, tuple[str, ...]]],
 ) -> str:
     result = segment
-    for token, members in ordered:
+    for token, members in expansions:
         if token in result:
             result = result.replace(token, "{" + ",".join(members) + "}")
     return result
