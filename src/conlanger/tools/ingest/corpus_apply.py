@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from conlanger.tools.ingest.index_models import IndexContext, IndexRule
+from conlanger.tools.ingest.index_models import IndexRule
 from conlanger.utils.mappings import (
     FeatureMapping,
     normalize_feature_matrices_in_field,
@@ -18,19 +18,13 @@ def apply_series_expansions(
     """Expand collective subscript tokens on stages and env/exception context."""
     if not series_expansions:
         return rule
-    rule = rule.model_copy(deep=True)
     expansions = list(series_expansions.items())
     rule.stages = [
         expand_collectives_in_field(stage, expansions) for stage in rule.stages
     ]
-    for field in IndexRule.context_fields:
-        ctx: IndexContext | None = getattr(rule, field)
-        if ctx is not None and ctx.context:
-            setattr(
-                rule,
-                field,
-                expand_collectives_in_field(ctx.context, expansions),
-            )
+    for ctx in rule.contexts:
+        if ctx.context:
+            ctx.context = expand_collectives_in_field(ctx.context, expansions)
     return rule
 
 
@@ -41,18 +35,12 @@ def apply_feature_mappings(
     """Normalize feature matrices on stages and env/exception context."""
     if not mappings:
         return rule
-    rule = rule.model_copy(deep=True)
     rule.stages = [
         normalize_feature_matrices_in_field(stage, mappings) for stage in rule.stages
     ]
-    for field in IndexRule.context_fields:
-        ctx: IndexContext | None = getattr(rule, field)
-        if ctx is not None and ctx.context:
-            setattr(
-                rule,
-                field,
-                normalize_feature_matrices_in_field(ctx.context, mappings),
-            )
+    for ctx in rule.contexts:
+        if ctx.context:
+            ctx.context = normalize_feature_matrices_in_field(ctx.context, mappings)
     return rule
 
 
@@ -60,10 +48,8 @@ def apply_ipa_mappings(rule: IndexRule, mappings: dict[str, str]) -> IndexRule:
     """Normalize IPA on stages and env/exception context."""
     if not mappings:
         return rule
-    rule = rule.model_copy(deep=True)
     rule.stages = [normalize_ipa_in_field(stage, mappings) for stage in rule.stages]
-    for field in IndexRule.context_fields:
-        ctx: IndexContext | None = getattr(rule, field)
-        if ctx is not None and ctx.context:
-            setattr(rule, field, normalize_ipa_in_field(ctx.context, mappings))
+    for ctx in rule.contexts:
+        if ctx.context:
+            ctx.context = normalize_ipa_in_field(ctx.context, mappings)
     return rule

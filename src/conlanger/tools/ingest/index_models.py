@@ -55,7 +55,7 @@ class IndexContext(BaseModel):
         self, handler: SerializerFunctionWrapHandler
     ) -> str | dict[str, Any]:
         if self.position is None and self.dialect is None:
-            return self.context or ""
+            return self.context if self.context else None
         return handler(self)
 
     def with_dialects_extracted(self) -> IndexContext | None:
@@ -78,8 +78,6 @@ class IndexRule(BaseModel):
     """Parse-time counterpart to compile-time ``SoundChangeRule``."""
 
     model_config = ConfigDict(extra="forbid", validate_assignment=True)
-
-    context_fields: ClassVar[frozenset[str]] = frozenset(["env", "exception"])
 
     stages: list[str] = Field(default_factory=list)
     env: IndexContext | None = None
@@ -115,6 +113,12 @@ class IndexRule(BaseModel):
     @text.setter
     def text(self, new_text: str) -> None:
         self._working_line = new_text
+
+    @property
+    def contexts(self) -> tuple[IndexContext, ...]:
+        return tuple(
+            context for context in (self.env, self.exception) if context is not None
+        )
 
     def init(self) -> Self:
         if self._initialised:

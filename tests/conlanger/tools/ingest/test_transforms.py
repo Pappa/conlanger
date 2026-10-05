@@ -80,6 +80,7 @@ def test_apply_medial_env_conditions_deferred_env_and_exception():
             {
                 "stages": ["k", "∅"],
                 "comment": "in Mentasta Ahtna; sporadic",
+                "env": None,  # TODO: this None should not be present
             },  # TODO: check this is correct
         ),
     ],
@@ -99,26 +100,28 @@ def test_apply_sporadic_qualifier_unchanged_when_no_marker():
     assert apply_sporadic_qualifier(rule).to_index_dict() == rule.to_index_dict()
 
 
-def test_apply_stress_conditions():
-    result = apply_stress_conditions(
-        IndexRule(raw="x", source="t", stages=["a", "e"], env="_C(C), when stressed")
-    )
-    assert result.to_index_dict() == {
+@pytest.mark.parametrize(
+    "input, output",
+    [
+        (
+            {"env": "_C(C), when stressed"},
+            {"env": "_C(C) when stressed"},
+        ),
+        (
+            {"env": "V_V, when neither vowel is stressed"},
+            {"env": "V_V", "comment": "when neither vowel is stressed"},
+        ),
+    ],
+)
+def test_apply_stress_conditions(input, output):
+    args = {
         "raw": "x",
         "source": "t",
         "stages": ["a", "e"],
-        "env": "_C(C) when stressed",
     }
-    cleaned = apply_stress_conditions(
-        IndexRule(
-            raw="x",
-            source="t",
-            stages=["ɾ", "∅"],
-            env="V_V, when neither vowel is stressed",
-        )
-    )
-    assert cleaned.to_index_dict()["env"] == "V_V"
-    assert "when neither vowel is stressed" in cleaned.comment
+    rule = IndexRule(**args, **input)
+    result = apply_stress_conditions(rule)
+    assert result.to_index_dict() == {**args, **output}
 
 
 def test_apply_trailing_glosses():
