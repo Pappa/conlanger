@@ -16,7 +16,7 @@ from conlanger.tools.compile.compile_fields import RuleEnv, RuleInput, RuleOutpu
 from conlanger.tools.compile.field_tokens import (
     FieldToken,
     is_optional_output_shape,
-    peel_embedded_output_env,
+    partition_embedded_output_env,
     render_field_tokens,
     set_token_members,
 )
@@ -195,10 +195,12 @@ class SoundChangeRule(RulePartBase):
 
     def _build_alternatives(self) -> list[SoundChangeRule]:
         """Build peer alternatives for optional outputs or parallel ``∅`` output sets."""
-        output_tokens, peeled_env = peel_embedded_output_env(self.output.tokens)
+        output_tokens, partitioned_env = partition_embedded_output_env(
+            self.output.tokens
+        )
         env = self.env
-        if env is None and peeled_env is not None:
-            env = RuleEnv.from_raw(peeled_env)
+        if env is None and partitioned_env is not None:
+            env = RuleEnv.from_raw(partitioned_env)
         optional = self._build_optional_output_alternatives(output_tokens, env)
         if optional:
             return optional

@@ -17,7 +17,7 @@ Uncertainty glosses
 and recorded as ``sporadic: true``. **Feature matrix** synonym replacement inside ``[...]`` via
 ``feature_mappings.csv`` (``raw`` unchanged). **IPA character** substitution via
 ``ipa_mappings.csv`` (``raw`` unchanged). Inline prose stripped for ASCA is captured in optional ``comment`` on each index
-rule: the first ``;`` on the working line is peeled before structural split, then
+rule: the first ``;`` on the working line is partitioned before structural split, then
 field-level glosses and env qualifiers. Index word-internal ``medial`` / ``medially`` env
 prose becomes ``env: _`` with boundary ``exception: #_, _#`` (``apply_medial_env_conditions``).
 Index prose **position** env phrases (``final syllables``, ``next to {X}``, ``syllable-final``,
@@ -183,7 +183,7 @@ class IndexDiachronicaParser:
             rule.comment = raw.strip()
             return [rule.to_index_dict()]
 
-        rule.build()
+        rule.init()
 
         rule = apply_series_expansions(rule, self._parser_config.series_expansions)
         rule = apply_sporadic_qualifier(rule)

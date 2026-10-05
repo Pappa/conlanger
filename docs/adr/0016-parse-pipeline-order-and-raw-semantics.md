@@ -8,7 +8,7 @@ Per-rule parse applies overlays and normalisation to a **working copy** of the e
 2. **Index rule normalisation** — ordered, policy-documented surface transforms on the working line ([ticket 143](../../.scratch/rule-index/issues/143-implement-index-rule-normalisation-passes.md); placeholder no-op until passes land).
 3. **Manual mapping** (`manual_mappings.yml`) — applied in order of definition; substring or regex rewrite on the working copy.
 4. **Section mapping** (`parser_config.yml` `section_mappings`, ancestry merge).
-5. Quoted-prose short-circuit, then first-`;` comment peel, symbol normalisation, structural split, and class-first field transforms (detail in [index-diachronica-parser](../system/index-diachronica-parser.md)).
+5. Quoted-prose short-circuit, then first-`;` comment partition, symbol normalisation, structural split, and class-first field transforms (detail in [index-diachronica-parser](../system/index-diachronica-parser.md)).
 
 Grill and audit: [ticket 139](../../.scratch/rule-index/issues/139-grill-parse-indexrule-model-and-surface-normalization.md).
 

@@ -40,11 +40,10 @@ _TRAILING_POSITION_QUALIFIER_RE = re.compile(
     r"^(?P<env>.+?),\s*in\s+(?P<qual>monosyllables?|polysyllables?|nouns)\s*$",
     re.IGNORECASE,
 )
-_DIALECTS_RE = re.compile(r"^in\s+([\w\s]+)\s+dialects$", re.IGNORECASE)
 
 
 def strip_trailing_position_qualifiers(text: str) -> tuple[str, list[str]]:
-    """Peel `, in monosyllables` / `polysyllables` / `nouns` tails from structural envs."""
+    """Partition `, in monosyllables` / `polysyllables` / `nouns` tails from structural envs."""
     if not text:
         return text, []
     stripped = text.strip()

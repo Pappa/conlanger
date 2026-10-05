@@ -6,7 +6,7 @@ Transforms (compile layer only; index ``raw`` unchanged per ADR-0010):
 |---------|---------|-----------|
 | Set vowel alternation | ``{a/e}``, ``{o,u/y}`` | ``{a,e}``, ``{o,u,y}`` |
 | Editorial phoneme slash | ``/j/``, ``/ts/?``, ``/i/`` | ``j``, ``ts?``, ``i`` |
-| Unclosed paren prose tail | ``V_ (if /j/ resulted…`` | ``V_`` (prose peeled) |
+| Unclosed paren prose tail | ``V_ (if /j/ resulted…`` | ``V_`` (prose partitioned) |
 """
 
 from __future__ import annotations
@@ -47,8 +47,8 @@ def strip_editorial_slash_glosses(text: str) -> str:
     return _EDITORIAL_SLASH_GLOSS_RE.sub(r"\1", text).rstrip()
 
 
-def peel_unclosed_paren_prose(text: str) -> str:
-    """Peel unclosed trailing parenthetical prose glosses from a compile field."""
+def partition_unclosed_paren_prose(text: str) -> str:
+    """Partition unclosed trailing parenthetical prose glosses from a compile field."""
     if "(" not in text:
         return text
     cleaned, _captures = extract_trailing_paren_glosses_from_field(
@@ -63,13 +63,13 @@ def normalize_editorial_slash_gloss_residue(text: str) -> str:
         return text
     text = expand_set_vowel_alternation_slashes(text)
     text = strip_editorial_slash_glosses(text)
-    text = peel_unclosed_paren_prose(text)
+    text = partition_unclosed_paren_prose(text)
     return text.rstrip()
 
 
 __all__ = [
     "expand_set_vowel_alternation_slashes",
     "normalize_editorial_slash_gloss_residue",
-    "peel_unclosed_paren_prose",
+    "partition_unclosed_paren_prose",
     "strip_editorial_slash_glosses",
 ]

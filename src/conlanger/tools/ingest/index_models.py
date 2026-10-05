@@ -36,7 +36,7 @@ def join_rule_comment(*fragments: str | None) -> str | None:
 
 
 def split_semicolon_comment(text: str) -> tuple[str, str | None]:
-    """Peel the first ``;`` on a working rule line into remainder and rule-comment tail."""
+    """Partition the first ``;`` on a working rule line into remainder and rule-comment tail."""
     head, _, tail = text.partition(";")
     return head.rstrip(), tail.strip() or None
 
@@ -57,17 +57,6 @@ class IndexContext(BaseModel):
         if self.position is None and self.dialect is None:
             return self.context or ""
         return handler(self)
-
-    # def update(self, new_value: str | dict[str, Any] | IndexContext) -> Self:
-    #     if isinstance(new_value, str):
-    #         self.context = new_value
-    #         return self
-    #     if isinstance(new_value, dict):
-    #         return self.model_validate(new_value)
-    #     if isinstance(new_value, IndexContext):
-    #         self = self.model_validate(new_value)
-    #         return
-    #     raise ValueError(f"Invalid update value: {new_value}")
 
     def with_dialects_extracted(self) -> IndexContext | None:
         """Parse dialect prose in ``context`` into ``dialect`` (and trimmed ``context``)."""
@@ -127,8 +116,7 @@ class IndexRule(BaseModel):
     def text(self, new_text: str) -> None:
         self._working_line = new_text
 
-    def build(self) -> Self:
-        """Peel first ``;`` comment, normalize symbols, and split into index fields."""
+    def init(self) -> Self:
         if self._initialised:
             raise RuntimeError("IndexRule already initialised")
         self._working_line, rule_comment = split_semicolon_comment(self._working_line)

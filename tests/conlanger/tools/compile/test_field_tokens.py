@@ -16,7 +16,7 @@ from conlanger.tools.compile.field_tokens import (
     is_optional_output_shape,
     is_whole_field_set_tokens,
     parse_field_tokens,
-    peel_embedded_output_env,
+    partition_embedded_output_env,
     render_field_tokens,
 )
 from conlanger.tools.rules import SoundChangeRule
@@ -78,16 +78,16 @@ def test_expand_parallel_null_branches_from_tokens():
     assert [render_field_tokens(out) for _, out in branches] == ["∅", "h"]
 
 
-def test_peel_embedded_output_env():
+def test_partition_embedded_output_env():
     tokens = parse_field_tokens("{∅,n} #_ else")
-    peeled, env = peel_embedded_output_env(tokens)
-    assert peeled == (("∅", "n"),)
+    partitioned, env = partition_embedded_output_env(tokens)
+    assert partitioned == (("∅", "n"),)
     assert env == "#_ else"
 
 
-def test_peel_embedded_output_env_leaves_plain_output():
+def test_partition_embedded_output_env_leaves_plain_output():
     tokens = parse_field_tokens("b {n,r,∅}")
-    assert peel_embedded_output_env(tokens) == (tokens, None)
+    assert partition_embedded_output_env(tokens) == (tokens, None)
 
 
 def test_rule_input_holds_raw_tokens_and_compiled():

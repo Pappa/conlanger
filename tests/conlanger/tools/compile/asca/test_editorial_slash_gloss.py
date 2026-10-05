@@ -6,7 +6,7 @@ from conlanger.appliers.asca import validate_asca
 from conlanger.tools.compile.asca.editorial_slash_gloss import (
     expand_set_vowel_alternation_slashes,
     normalize_editorial_slash_gloss_residue,
-    peel_unclosed_paren_prose,
+    partition_unclosed_paren_prose,
     strip_editorial_slash_glosses,
 )
 from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
@@ -55,8 +55,8 @@ def test_strip_editorial_slash_glosses(text, expected):
         ("_{C,#} (not sure how this plays in", "_{C,#}"),
     ],
 )
-def test_peel_unclosed_paren_prose(text, expected):
-    assert peel_unclosed_paren_prose(text) == expected
+def test_partition_unclosed_paren_prose(text, expected):
+    assert partition_unclosed_paren_prose(text) == expected
 
 
 @pytest.mark.parametrize(

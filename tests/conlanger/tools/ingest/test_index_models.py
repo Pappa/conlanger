@@ -21,7 +21,7 @@ _SAMPLED_RULES_CSV = (
 
 
 def _update_model_fields(raw: str) -> dict:
-    rule = IndexRule(raw=raw, source="test").build()
+    rule = IndexRule(raw=raw, source="test").init()
     out: dict = {
         "stages": rule.stages,
     }
@@ -178,32 +178,32 @@ def test_index_rule_update_rule_replaces_working_text_not_raw():
     assert rule.raw == "original"
 
 
-def test_build_peels_first_semicolon_comment():
-    rule = IndexRule(raw="a → b ; tail", source="test").build()
+def test_init_partitions_first_semicolon_comment():
+    rule = IndexRule(raw="a → b ; tail", source="test").init()
     assert rule.stages == ["a", "b"]
     assert rule.comment == "tail"
 
 
-def test_build_semicolon_peel_no_comment_when_absent():
-    rule = IndexRule(raw="no semicolon", source="test").build()
+def test_init_semicolon_partition_no_comment_when_absent():
+    rule = IndexRule(raw="no semicolon", source="test").init()
     assert rule.comment is None
     assert rule.stages == ["no semicolon"]
 
 
-def test_build_strips_leading_list_marker():
-    rule = IndexRule(raw="— j w → i u / #_CV", source="test").build()
+def test_init_strips_leading_list_marker():
+    rule = IndexRule(raw="— j w → i u / #_CV", source="test").init()
     assert rule.stages == ["j w", "i u"]
     assert rule.env == IndexContext(context="#_CV")
 
 
-def test_build_splits_chain_into_stages():
-    rule = IndexRule(raw="dʒ → tʃ → ʃ", source="test").build()
+def test_init_splits_chain_into_stages():
+    rule = IndexRule(raw="dʒ → tʃ → ʃ", source="test").init()
     assert rule.stages == ["dʒ", "tʃ", "ʃ"]
 
 
-def test_build_applies_symbol_normalization():
+def test_init_applies_symbol_normalization():
     raw = "a → b / _$%oː"
-    rule = IndexRule(raw=raw, source="test").build()
+    rule = IndexRule(raw=raw, source="test").init()
     assert rule.stages == ["a", "b"]
     assert rule.env == IndexContext(context="_$$oː")
 
@@ -257,7 +257,7 @@ def test_build_applies_symbol_normalization():
         ("r…r → r…∅", {"stages": ["r…r", "r…∅"]}),
     ],
 )
-def test_build_structural_split(raw, expected):
+def test_init_structural_split(raw, expected):
     assert _update_model_fields(raw) == expected
 
 
@@ -271,7 +271,7 @@ _SAMPLED_HTML_RULE_CASES = _load_sampled_html_rules()
         for case_id, raw, expected in _SAMPLED_HTML_RULE_CASES
     ],
 )
-def test_build_sampled_html_rules(raw, expected):
+def test_init_sampled_html_rules(raw, expected):
     assert _update_model_fields(raw) == expected
 
 
