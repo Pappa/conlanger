@@ -44,16 +44,10 @@ def flatten_nested_sets(text: str) -> str:
 def flatten_nested_sets_in_rule_fields(rule: IndexRule) -> IndexRule:
     """Return a copy of ``rule`` with ``env`` / ``exception`` / ``stages`` flattened."""
     updated = rule.model_copy(deep=True)
-    for field_name in ("env", "exception"):
-        ctx = getattr(updated, field_name)
-        if ctx is None or not ctx.context:
+    for ctx in updated.contexts:
+        if not ctx.context:
             continue
-        flattened = flatten_nested_sets(ctx.context)
-        setattr(
-            updated,
-            field_name,
-            ctx.model_copy(update={"context": flattened}),
-        )
+        ctx.context = flatten_nested_sets(ctx.context)
     if updated.stages:
         updated.stages = [
             flatten_nested_sets(stage) if stage else stage for stage in updated.stages
