@@ -236,7 +236,7 @@ Counts from `index_diachronica.yml` (2026-08-29, `rg`):
 |--------|----------|
 | Spike ticket | [58-spike-index-syllable-position-u-hash](../issues/58-spike-index-syllable-position-u-hash.md) |
 | `group_mappings.csv` | [`data/asca/group_mappings.csv`](../../../data/asca/group_mappings.csv) |
-| Compile pipeline | [`src/conlanger/tools/compile/asca/pipeline.py`](../../../src/conlanger/tools/compile/asca/pipeline.py) |
+| Compile pipeline | [`src/conlanger/compile/tools/asca/pipeline.py`](../../../src/conlanger/compile/tools/asca/pipeline.py) |
 | Env/exception parse | [`src/conlanger/utils/parsing.py`](../../../src/conlanger/utils/parsing.py) — `split_env_exception()` |
 | ASCA 0.10.2 docs | https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md |
 | Empirical probes | [`.scratch/rule-index/research/probes-58/`](./probes-58/) |

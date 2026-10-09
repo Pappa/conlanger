@@ -6,11 +6,11 @@ from pathlib import Path
 import pytest
 
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
-from conlanger.tools.compile.asca.voice_prerequisite_diacritics import (
+from conlanger.compile.models.rules import DiachronicSeries
+from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
+from conlanger.compile.tools.asca.voice_prerequisite_diacritics import (
     normalize_asca_voice_prerequisite_diacritics,
 )
-from conlanger.compile.models.rules import DiachronicSeries
 
 
 @pytest.mark.parametrize(

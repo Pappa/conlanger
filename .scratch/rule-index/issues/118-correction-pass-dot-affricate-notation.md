@@ -37,7 +37,7 @@ Concentrated in §17.10 (Indo-Iranian affricates) and §36.3.2.x (Tibeto-Burman 
 
 ## Answer
 
-**Shipped 2026-09-05.** Added `normalize_dot_affricate_notation()` in `src/conlanger/tools/compile/asca/dot_affricate.py` (wired in `compile_asca_field_post_subscript`).
+**Shipped 2026-09-05.** Added `normalize_dot_affricate_notation()` in `src/conlanger/compile/tools/asca/dot_affricate.py` (wired in `compile_asca_field_post_subscript`).
 
 ### Implementation
 

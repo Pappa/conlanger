@@ -10,7 +10,7 @@ Throwaway code: [`flatten_nested_sets.py`](./flatten_nested_sets.py), [`nested_s
 
 ## 1. Algorithm scope
 
-`flatten_nested_sets(text, mode=…)` — [`flatten_nested_sets.py`](./flatten_nested_sets.py). Prior art only: compile `_expand_sets` in [`src/conlanger/tools/compile/asca/parenthetical.py`](../../../src/conlanger/tools/compile/asca/parenthetical.py) (ticket 48 parentheticals; `_SET_RE` matches `{([^{}]*)}` so it cannot un-nest).
+`flatten_nested_sets(text, mode=…)` — [`flatten_nested_sets.py`](./flatten_nested_sets.py). Prior art only: compile `_expand_sets` in [`src/conlanger/compile/tools/asca/parenthetical.py`](../../../src/conlanger/compile/tools/asca/parenthetical.py) (ticket 48 parentheticals; `_SET_RE` matches `{([^{}]*)}` so it cannot un-nest).
 
 | In scope | Out of scope |
 |----------|--------------|

@@ -67,7 +67,7 @@ Seed `global` PIE laryngeals; section overrides only where Index prose requires.
 
 - [Grill 73 answer](73-grill-series-mapping-config-sot.md)
 - ADR-0004 (amended 2026-08-18)
-- `src/conlanger/tools/compile/asca/pipeline.py`
+- `src/conlanger/compile/tools/asca/pipeline.py`
 
 ## Answer
 

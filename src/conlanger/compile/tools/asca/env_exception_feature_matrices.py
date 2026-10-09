@@ -4,13 +4,13 @@ from __future__ import annotations
 
 import re
 
-from conlanger.tools.compile.asca._patterns import IPA_SEGMENT
-from conlanger.tools.compile.asca.host_bracket_matrices import (
+from conlanger.compile.tools.asca._patterns import IPA_SEGMENT
+from conlanger.compile.tools.asca.host_bracket_matrices import (
     _CLASS_HOST_BRACKET_RE,
     _IPA_HOST_BRACKET_RE,
     _SINGLE_HOST_BRACKET_RE,
 )
-from conlanger.tools.compile.asca.structures import split_outside_groupers
+from conlanger.compile.tools.asca.structures import split_outside_groupers
 from conlanger.utils.bracket_scanner import is_brace_wrapped, is_square_bracket_wrapped
 
 _BARE_MATRIX_RE = re.compile(r"^\[(?P<inner>[^\]]+)\]$")

@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import re
 
-from conlanger.tools.compile.asca._patterns import SET_BODY_RE
+from conlanger.compile.tools.asca._patterns import SET_BODY_RE
 from conlanger.utils.bracket_scanner import is_square_bracket_wrapped
 
 _CLICK = r"[!ǃǀǁǂʘ]"

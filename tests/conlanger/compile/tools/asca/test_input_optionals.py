@@ -7,13 +7,13 @@ from pathlib import Path
 import pytest
 
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.compile.asca import input_optionals as io
-from conlanger.tools.compile.asca.input_optionals import (
+from conlanger.compile.models.rules import DiachronicSeries
+from conlanger.compile.tools.asca import input_optionals as io
+from conlanger.compile.tools.asca.input_optionals import (
     _expand_prefix_structure_optional,
     _is_structural_optional_inner,
     expand_input_optionals_to_structures,
 )
-from conlanger.compile.models.rules import DiachronicSeries
 
 
 @pytest.mark.parametrize(

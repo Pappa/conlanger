@@ -23,7 +23,7 @@ from __future__ import annotations
 
 import re
 
-from conlanger.tools.compile.asca._patterns import IPA_SEGMENT
+from conlanger.compile.tools.asca._patterns import IPA_SEGMENT
 from conlanger.utils.bracket_scanner import is_square_bracket_wrapped
 
 _RANGE_DOT = "\ue000"  # placeholder while normalising single dots

@@ -37,7 +37,7 @@ Index uses `(ː)` for **optional length** on a segment, matrix, or template toke
 When unblocked:
 
 1. Implement optional-length node per ADR 0015 / grill 94 (not matrix-suffix regex in `length_marks`).
-2. Unit tests in `tests/conlanger/tools/compile/asca/`; ASCA smoke on representative rows (Tocharian env, Salish `V3(ː)`).
+2. Unit tests in `tests/conlanger/compile/tools/asca/`; ASCA smoke on representative rows (Tocharian env, Salish `V3(ː)`).
 3. Full inventory re-run; record before/after for `ː` residual and ok-flips.
 4. Hold out Iroquoian `ː2` / stress-meta shapes (ticket 64 follow-ons).
 
@@ -58,7 +58,7 @@ When unblocked:
 - [Spike: Index I/O optionals vs ASCA](100-spike-io-optionals-asca-and-convention.md)
 - [Grill: structured compile intermediate representation](94-grill-structured-soundchangerule-ir.md)
 - [Implement compile-field intermediate representation](105-implement-compile-field-intermediate-representation.md)
-- `src/conlanger/tools/compile/asca/optional_length.py`, `length_marks.py`, `parenthetical.py`, `pipeline.py`
+- `src/conlanger/compile/tools/asca/optional_length.py`, `length_marks.py`, `parenthetical.py`, `pipeline.py`
 
 ## Answer (before/after)
 

@@ -2,74 +2,74 @@
 
 from __future__ import annotations
 
-from conlanger.tools.compile.asca.apostrophes import normalize_typographic_apostrophes
-from conlanger.tools.compile.asca.breve_marks import normalize_asca_breve_marks
-from conlanger.tools.compile.asca.clicks import normalize_asca_index_click_segments
-from conlanger.tools.compile.asca.dot_affricate import normalize_dot_affricate_notation
-from conlanger.tools.compile.asca.editorial_slash_gloss import (
+from conlanger.compile.models.compile_fields import RuleEnv, RuleInput, RuleOutput
+from conlanger.compile.tools.asca.apostrophes import normalize_typographic_apostrophes
+from conlanger.compile.tools.asca.breve_marks import normalize_asca_breve_marks
+from conlanger.compile.tools.asca.clicks import normalize_asca_index_click_segments
+from conlanger.compile.tools.asca.dot_affricate import normalize_dot_affricate_notation
+from conlanger.compile.tools.asca.editorial_slash_gloss import (
     normalize_editorial_slash_gloss_residue,
 )
-from conlanger.tools.compile.asca.ejectives import normalize_asca_ejective_marks
-from conlanger.tools.compile.asca.ellipsis import (
+from conlanger.compile.tools.asca.ejectives import normalize_asca_ejective_marks
+from conlanger.compile.tools.asca.ellipsis import (
     normalize_asca_optional_grouping_ellipsis,
 )
-from conlanger.tools.compile.asca.env_exception_feature_matrices import (
+from conlanger.compile.tools.asca.env_exception_feature_matrices import (
     resolve_bare_env_exception_feature_matrices,
 )
-from conlanger.tools.compile.asca.group_mappings import (
+from conlanger.compile.tools.asca.group_mappings import (
     apply_asca_group_mappings_to_string,
 )
-from conlanger.tools.compile.asca.host_bracket_matrices import (
+from conlanger.compile.tools.asca.host_bracket_matrices import (
     normalize_asca_host_bracket_matrices,
 )
-from conlanger.tools.compile.asca.identity_exceptions import (
+from conlanger.compile.tools.asca.identity_exceptions import (
     apply_identity_exception_input_narrowing,
     resolve_index_identity_exceptions,
 )
-from conlanger.tools.compile.asca.length_marks import normalize_asca_length_marks
-from conlanger.tools.compile.asca.optional_length import (
+from conlanger.compile.tools.asca.length_marks import normalize_asca_length_marks
+from conlanger.compile.tools.asca.optional_length import (
     expand_optional_length_in_text,
     expand_optional_length_tokens,
 )
-from conlanger.tools.compile.asca.parallel import (
+from conlanger.compile.tools.asca.parallel import (
     drop_mixed_parallel_null_columns,
     drop_mixed_parallel_null_columns_tokens,
 )
-from conlanger.tools.compile.asca.pharyngealized_marks import (
+from conlanger.compile.tools.asca.pharyngealized_marks import (
     normalize_asca_pharyngealized_marks,
 )
-from conlanger.tools.compile.asca.planned import (
+from conlanger.compile.tools.asca.planned import (
     apply_section_local_abbreviations,
     expand_meta_notation,
 )
-from conlanger.tools.compile.asca.prenasal_prefix import normalize_prenasal_prefix
-from conlanger.tools.compile.asca.segment_diacritics import (
+from conlanger.compile.tools.asca.prenasal_prefix import normalize_prenasal_prefix
+from conlanger.compile.tools.asca.segment_diacritics import (
     normalize_index_segment_diacritics,
 )
-from conlanger.tools.compile.asca.series_mappings import apply_compiler_series_mappings
-from conlanger.tools.compile.asca.sets import (
+from conlanger.compile.tools.asca.series_mappings import apply_compiler_series_mappings
+from conlanger.compile.tools.asca.sets import (
     convert_set_to_environment_set,
     is_whole_field_set,
 )
-from conlanger.tools.compile.asca.structures import join_asca_rule_fields
-from conlanger.tools.compile.asca.subscript_references import (
+from conlanger.compile.tools.asca.structures import join_asca_rule_fields
+from conlanger.compile.tools.asca.subscript_references import (
     expand_subscript_references_across_fields,
 )
-from conlanger.tools.compile.asca.superscript_modifiers import (
+from conlanger.compile.tools.asca.superscript_modifiers import (
     normalize_asca_superscript_modifiers,
 )
-from conlanger.tools.compile.asca.syllable_position import (
+from conlanger.compile.tools.asca.syllable_position import (
     apply_syllable_position_compiled_overrides,
 )
-from conlanger.tools.compile.asca.tie_bars import normalize_index_affricate_tie_bars
-from conlanger.tools.compile.asca.tone_matrices import (
+from conlanger.compile.tools.asca.tie_bars import normalize_index_affricate_tie_bars
+from conlanger.compile.tools.asca.tone_matrices import (
     normalize_asca_adjacent_feature_matrices,
     normalize_asca_tone_matrices,
 )
-from conlanger.tools.compile.asca.voice_prerequisite_diacritics import (
+from conlanger.compile.tools.asca.voice_prerequisite_diacritics import (
     normalize_asca_voice_prerequisite_diacritics,
 )
-from conlanger.compile.models.compile_fields import RuleEnv, RuleInput, RuleOutput
 from conlanger.ingest.models.mappings import CompilerConfig
 
 

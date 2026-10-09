@@ -13,7 +13,7 @@ from pathlib import Path
 
 import yaml
 
-from conlanger.tools.compile.asca.sets import (
+from conlanger.compile.tools.asca.sets import (
     is_whole_field_set,
     split_braced_set_members,
 )

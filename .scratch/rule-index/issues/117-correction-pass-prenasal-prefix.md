@@ -38,7 +38,7 @@ Distinct from Khoisan click notation (§20.x — defer per [spike 64](../researc
 
 ## Answer
 
-**Shipped 2026-09-05.** Added `normalize_prenasal_prefix()` in `src/conlanger/tools/compile/asca/prenasal_prefix.py` (wired in `compile_asca_field_post_subscript`).
+**Shipped 2026-09-05.** Added `normalize_prenasal_prefix()` in `src/conlanger/compile/tools/asca/prenasal_prefix.py` (wired in `compile_asca_field_post_subscript`).
 
 ### Implementation
 

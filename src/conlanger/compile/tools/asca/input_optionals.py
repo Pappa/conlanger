@@ -22,12 +22,12 @@ from __future__ import annotations
 
 import re
 
-from conlanger.tools.compile.asca._patterns import ASCA_ENV_OPTIONAL_RE, IPA_SEGMENT
-from conlanger.tools.compile.asca.host_bracket_matrices import (
+from conlanger.compile.tools.asca._patterns import ASCA_ENV_OPTIONAL_RE, IPA_SEGMENT
+from conlanger.compile.tools.asca.host_bracket_matrices import (
     host_bracket_matrix_to_colon,
 )
-from conlanger.tools.compile.asca.sets import split_set_members
-from conlanger.tools.compile.asca.structures import split_outside_groupers
+from conlanger.compile.tools.asca.sets import split_set_members
+from conlanger.compile.tools.asca.structures import split_outside_groupers
 from conlanger.utils.bracket_scanner import is_brace_wrapped
 
 _CLASS_OR_GROUP_INNER_RE = re.compile(

@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import re
 
-from conlanger.tools.compile.asca._patterns import IPA_SEGMENT
+from conlanger.compile.tools.asca._patterns import IPA_SEGMENT
 
 _INDEX_AFFRICATE_TIE = "\u035c"
 _ASCA_AFFRICATE_TIE = "\u0361"

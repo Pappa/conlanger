@@ -6,7 +6,8 @@ from pathlib import Path
 import pytest
 
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.compile.asca.cartesian_io_optionals import (
+from conlanger.compile.models.rules import DiachronicSeries
+from conlanger.compile.tools.asca.cartesian_io_optionals import (
     _bases_are_modifier_variants,
     _find_matching_close,
     _find_matching_open,
@@ -14,8 +15,7 @@ from conlanger.tools.compile.asca.cartesian_io_optionals import (
     _split_trailing_set,
     flatten_cartesian_io_optionals,
 )
-from conlanger.tools.compile.asca.planned import expand_meta_notation
-from conlanger.compile.models.rules import DiachronicSeries
+from conlanger.compile.tools.asca.planned import expand_meta_notation
 
 
 @pytest.mark.parametrize(

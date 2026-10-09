@@ -73,8 +73,8 @@ Index uses `~` for optional segments, repetition, and output-chain glue. ASCA 0.
 
 ### Implementation
 
-- `src/conlanger/tools/asca_compile/tilde.py` — `expand_index_tilde_notation`, `normalize_index_rule_tilde_fields`
-- `src/conlanger/tools/asca_compile/planned.py` — `expand_meta_notation` delegates to tilde expander
+- `src/conlanger/compile/tools/asca/tilde.py` — `expand_index_tilde_notation`, `normalize_index_rule_tilde_fields`
+- `src/conlanger/compile/tools/asca/planned.py` — `expand_meta_notation` delegates to tilde expander
 - `src/conlanger/compile/models/rules.py` — tilde field normalize before chain expansion
 - Tests: `tests/conlanger/tools/test_asca_compile_tilde.py`, `test_sound_change_ruleset_validates_tilde_notation_fixtures` in `test_SoundChangeRule.py`
 

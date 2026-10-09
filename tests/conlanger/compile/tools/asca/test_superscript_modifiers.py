@@ -3,13 +3,13 @@
 import pytest
 
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.compile.asca.group_mappings import (
+from conlanger.compile.models.rules import DiachronicSeries
+from conlanger.compile.tools.asca.group_mappings import (
     apply_asca_group_mappings_to_string,
 )
-from conlanger.tools.compile.asca.superscript_modifiers import (
+from conlanger.compile.tools.asca.superscript_modifiers import (
     normalize_asca_superscript_modifiers,
 )
-from conlanger.compile.models.rules import DiachronicSeries
 
 
 @pytest.mark.parametrize(

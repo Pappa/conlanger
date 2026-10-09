@@ -2,7 +2,7 @@
 
 import pytest
 
-from conlanger.tools.compile.asca.parallel import (
+from conlanger.compile.tools.asca.parallel import (
     _column_branch_pairs,
     drop_mixed_parallel_null_columns,
     expand_parallel_output_null_branches,

@@ -5,6 +5,7 @@ from unittest.mock import patch
 import pytest
 
 from conlanger.appliers.asca import ASCAValidationError
+from conlanger.compile.models.rules import SoundChangeRule
 from conlanger.tools.index_inventory import (
     CHANGELOG_CSV_COLUMNS,
     OK_FALSE,
@@ -47,7 +48,6 @@ from conlanger.tools.index_inventory import (
     write_ok_flip_changelog,
     write_validation_csv,
 )
-from conlanger.compile.models.rules import SoundChangeRule
 from tests.conftest import ASCA_VALIDATE_INSTALLED
 
 _SECTION = {"index": "1.0", "section": "Test Section"}

@@ -10,7 +10,7 @@ Spawned from grouping-errors investigation (2026-08-27). Supersedes ticket [43](
 
 ## Problem
 
-CSV rows and expansion targets are correct ([spike 09](../issues/09-spike-asca-class-letter-feature-matrices.md), [research](../research/asca-class-letter-mappings.md)). Failures are **boundary recognition** in [`group_mappings.py`](../../../src/conlanger/tools/compile/asca/group_mappings.py).
+CSV rows and expansion targets are correct ([spike 09](../issues/09-spike-asca-class-letter-feature-matrices.md), [research](../research/asca-class-letter-mappings.md)). Failures are **boundary recognition** in [`group_mappings.py`](../../../src/conlanger/compile/tools/asca/group_mappings.py).
 
 In-scope error tokens at baseline: **R** (26), **U** (11), **T** (8), **E** (6), **B** (5), **K** (5), **H** (4), **D** (2), **Q** (1).
 

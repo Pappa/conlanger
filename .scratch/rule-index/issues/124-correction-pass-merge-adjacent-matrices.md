@@ -54,6 +54,6 @@ Same failure mode as [62](62-correction-pass-tone-features.md) probes (`V:[+long
 ## References
 
 - [incomplete_matrix_errors.csv](../inventory/error_clusters/incomplete_matrix_errors.csv)
-- `src/conlanger/tools/compile/asca/tone_matrices.py`
-- `src/conlanger/tools/compile/asca/pipeline.py`
+- `src/conlanger/compile/tools/asca/tone_matrices.py`
+- `src/conlanger/compile/tools/asca/pipeline.py`
 - ASCA 0.10.2 grouping / matrix docs ([Groupings](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#groupings))

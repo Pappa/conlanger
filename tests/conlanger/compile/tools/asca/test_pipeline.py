@@ -2,11 +2,11 @@
 
 import pytest
 
-from conlanger.tools.compile.asca.pipeline import (
+from conlanger.compile.tools.asca.pipeline import (
     compile_asca_rule_field_strings,
     compile_asca_rule_fields,
 )
-from conlanger.tools.compile.asca.structures import join_asca_rule_fields
+from conlanger.compile.tools.asca.structures import join_asca_rule_fields
 from conlanger.ingest.models.mappings import CompilerConfig
 
 

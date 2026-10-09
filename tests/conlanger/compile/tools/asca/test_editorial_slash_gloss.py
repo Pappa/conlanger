@@ -3,14 +3,14 @@
 import pytest
 
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.compile.asca.editorial_slash_gloss import (
+from conlanger.compile.models.rules import DiachronicSeries
+from conlanger.compile.tools.asca.editorial_slash_gloss import (
     expand_set_vowel_alternation_slashes,
     normalize_editorial_slash_gloss_residue,
     partition_unclosed_paren_prose,
     strip_editorial_slash_glosses,
 )
-from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
-from conlanger.compile.models.rules import DiachronicSeries
+from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
 
 
 @pytest.mark.parametrize(

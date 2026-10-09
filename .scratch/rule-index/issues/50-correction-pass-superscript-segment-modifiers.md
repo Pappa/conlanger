@@ -43,7 +43,7 @@ After `normalize_asca_superscript_modifiers` (pipeline step 4, before `apply_asc
 - **7218 / 9201** ok (**78.4%**, **+40** vs pre-pass baseline)
 - `syntax_other` **638 → 618** (−20)
 - Residual `received 'ʷ'/'ʲ'/'ʰ'/'ʱ'` parse errors: **ʷ 11**, **ʲ 5**, **ʰ 1**, **ʱ 0** (17 total; mostly IPA-literal suffixes, env-adjacent `k(ʷ)` parentheticals, and prose-adjacent tokens out of scope)
-- Taxonomy and compile examples: module docstring in `src/conlanger/tools/asca_compile/superscript_modifiers.py`
+- Taxonomy and compile examples: module docstring in `src/conlanger/compile/tools/asca/superscript_modifiers.py`
 
 ## Acceptance criteria
 

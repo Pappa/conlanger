@@ -1,6 +1,6 @@
 import pytest
 
-from conlanger.tools.compile.asca.pharyngealized_marks import (
+from conlanger.compile.tools.asca.pharyngealized_marks import (
     normalize_asca_pharyngealized_marks,
 )
 

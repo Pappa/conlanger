@@ -4,18 +4,18 @@ from pathlib import Path
 
 import pytest
 
-from conlanger.scripts.config_loaders import (
-    _load_yaml_dict,
-    _load_yaml_list,
-    load_compiler_config,
-    load_parser_config,
-)
 from conlanger.ingest.models.mappings import (
     IpaMapping,
     ManualMapping,
     ParserConfig,
     SkipRule,
     SkipSection,
+)
+from conlanger.scripts.config_loaders import (
+    _load_yaml_dict,
+    _load_yaml_list,
+    load_compiler_config,
+    load_parser_config,
 )
 
 

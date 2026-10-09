@@ -25,7 +25,7 @@ ASCA accepts `∅` as a segment (deletion) but not as a member of a parallel cor
 1. Classify shapes: single-branch deletion in set, multi-column parallel outputs, chained sets.
 2. Compile rewrite — expand to ASCA-legal deletion syntax (split rules, `∅` output column, or env-qualified branches) without silent meaning change.
 3. Full inventory re-run; record before/after for `syntax_other` rows whose description contains `received '∅'` in the IPA-character bucket.
-4. Unit tests in `tests/conlanger/tools/compile/asca/`.
+4. Unit tests in `tests/conlanger/compile/tools/asca/`.
 
 ## Policy
 
@@ -58,7 +58,7 @@ Implemented 2026-08-19.
 
 ### Code
 
-- `expand_parallel_output_null_branches` in `src/conlanger/tools/compile/asca/parallel_output_null.py`
+- `expand_parallel_output_null_branches` in `src/conlanger/compile/tools/asca/parallel_output_null.py`
 - `SoundChangeRule._build_parallel_null_set_alternatives` (ticket 81) after optional-output detection (ticket 66)
 - `_partition_trailing_env_from_output` for stages that embed env after set output (`ŋ > {∅,n} #_ else`)
 - Exported `split_outside_groupers` from `parallel_null_columns.py`

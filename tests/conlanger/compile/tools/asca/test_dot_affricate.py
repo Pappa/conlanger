@@ -6,9 +6,9 @@ from pathlib import Path
 import pytest
 
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.compile.asca.dot_affricate import normalize_dot_affricate_notation
-from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
 from conlanger.compile.models.rules import DiachronicSeries
+from conlanger.compile.tools.asca.dot_affricate import normalize_dot_affricate_notation
+from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
 
 
 @pytest.mark.parametrize(

@@ -37,7 +37,7 @@ Extends [48 parenthetical notation](../issues/48-correction-pass-parenthetical-s
 
 ## Answer
 
-**Shipped 2026-09-05.** Extended ticket 48 `expand_index_parenthetical_notation` in `src/conlanger/tools/compile/asca/parenthetical.py` (wired via `expand_meta_notation`).
+**Shipped 2026-09-05.** Extended ticket 48 `expand_index_parenthetical_notation` in `src/conlanger/compile/tools/asca/parenthetical.py` (wired via `expand_meta_notation`).
 
 ### Implementation
 

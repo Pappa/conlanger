@@ -5,8 +5,8 @@ from pathlib import Path
 
 import pytest
 
-from conlanger.tools.compile.asca.breve_marks import normalize_asca_breve_marks
 from conlanger.compile.models.rules import DiachronicSeries
+from conlanger.compile.tools.asca.breve_marks import normalize_asca_breve_marks
 
 
 @pytest.mark.parametrize(

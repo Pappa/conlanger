@@ -6,13 +6,13 @@ from pathlib import Path
 import pytest
 
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.compile.asca.host_bracket_matrices import (
+from conlanger.compile.models.compile_fields import RuleInput, RuleOutput
+from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
+from conlanger.compile.tools.asca.host_bracket_matrices import (
     host_bracket_matrix_to_colon,
     normalize_asca_host_bracket_matrices,
 )
-from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
-from conlanger.compile.models.compile_fields import RuleInput, RuleOutput
-from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
+from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
 
 
 @pytest.mark.parametrize(

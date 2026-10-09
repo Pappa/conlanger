@@ -22,14 +22,14 @@ from __future__ import annotations
 
 import re
 
-from conlanger.tools.compile.asca._patterns import (
+from conlanger.compile.tools.asca._patterns import (
     ASCA_ENV_OPTIONAL_RE,
     IPA_SEGMENT,
     SET_BODY_RE,
 )
-from conlanger.tools.compile.asca.ejectives import _add_cg_feature
-from conlanger.tools.compile.asca.sets import split_set_members
-from conlanger.tools.compile.asca.structures import split_outside_groupers
+from conlanger.compile.tools.asca.ejectives import _add_cg_feature
+from conlanger.compile.tools.asca.sets import split_set_members
+from conlanger.compile.tools.asca.structures import split_outside_groupers
 from conlanger.utils.bracket_scanner import is_brace_wrapped
 from conlanger.utils.gloss import paren_inner_is_gloss
 

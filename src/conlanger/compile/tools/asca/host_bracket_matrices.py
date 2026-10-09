@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import re
 
-from conlanger.tools.compile.asca._patterns import IPA_SEGMENT
+from conlanger.compile.tools.asca._patterns import IPA_SEGMENT
 
 _SINGLE_HOST_BRACKET_RE = re.compile(rf"^((?:[A-Z]|{IPA_SEGMENT}))\[([^\]]+)\]$")
 _CLASS_HOST_BRACKET_RE = re.compile(

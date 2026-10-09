@@ -11,7 +11,7 @@ Primary sources:
 - Prior validity map: [asca-rule-validity.md](./asca-rule-validity.md)
 - Nested-set bucket context: [nested-sets-inventory.md](./nested-sets-inventory.md) §4.5
 - HTML SoT: [`data/diachronica/index_diachronica.html`](../../../data/diachronica/index_diachronica.html)
-- Compile: `src/conlanger/tools/compile/asca/parenthetical.py` (ticket 48), `input_optionals.py` (ticket 51)
+- Compile: `src/conlanger/compile/tools/asca/parenthetical.py` (ticket 48), `input_optionals.py` (ticket 51)
 
 Local probes: `asca 0.10.2` at `lib/bin/asca`; scratch probes under [`.scratch/rule-index/research/_spike100/`](./_spike100/).
 
@@ -168,8 +168,8 @@ Cartesian flat sets avoid this class of error.
 Compile functions (current code):
 
 ```python
-from conlanger.tools.compile.asca.parenthetical import expand_index_parenthetical_notation  # 48
-from conlanger.tools.compile.asca.input_optionals import expand_input_optionals_to_structures  # 51
+from conlanger.compile.tools.asca.parenthetical import expand_index_parenthetical_notation  # 48
+from conlanger.compile.tools.asca.input_optionals import expand_input_optionals_to_structures  # 51
 ```
 
 ASCA: `lib/bin/asca` 0.10.2 — `validate -s` / `trace`.

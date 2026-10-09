@@ -6,12 +6,12 @@ from pathlib import Path
 import pytest
 
 from conlanger.appliers.asca import validate_asca
-from conlanger.scripts.config_loaders import load_compiler_config
-from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
-from conlanger.tools.compile.asca.segment_diacritics import (
+from conlanger.compile.models.rules import DiachronicSeries
+from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
+from conlanger.compile.tools.asca.segment_diacritics import (
     normalize_index_segment_diacritics,
 )
-from conlanger.compile.models.rules import DiachronicSeries
+from conlanger.scripts.config_loaders import load_compiler_config
 
 
 @pytest.mark.parametrize(

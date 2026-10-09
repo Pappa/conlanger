@@ -4,10 +4,6 @@ from __future__ import annotations
 
 import pytest
 
-from conlanger.tools.ingest.corpus_apply import (
-    apply_feature_mappings,
-    apply_ipa_mappings,
-)
 from conlanger.ingest.models.index_models import IndexRule
 from conlanger.ingest.models.mappings import (
     FeatureMapping,
@@ -18,6 +14,10 @@ from conlanger.ingest.models.mappings import (
     apply_section_mappings,
     normalize_feature_matrices_in_field,
     normalize_ipa_in_field,
+)
+from conlanger.tools.ingest.corpus_apply import (
+    apply_feature_mappings,
+    apply_ipa_mappings,
 )
 from tests.fixtures.minimal_mappings import (
     minimal_feature_mappings,

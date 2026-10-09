@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import re
 
-from conlanger.tools.compile.asca.sets import split_braced_set_members
+from conlanger.compile.tools.asca.sets import split_braced_set_members
 from conlanger.utils.bracket_scanner import is_brace_wrapped
 
 _MODIFIER_CHAR_RE = re.compile(r"[\u02B0-\u02B8\u02BC\u02D1\u02E4\u0300-\u036F]")

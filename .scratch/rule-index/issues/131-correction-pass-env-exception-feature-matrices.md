@@ -31,14 +31,14 @@ Parsed index rules store env/exception feature constraints in applier-neutral In
 
 ## What to build
 
-1. **Cross-field compile transform** (name TBD) in `src/conlanger/tools/compile/asca/` — detect bare env/exception matrices and segment-at-focus vs neighbour-host shapes on the **raw** field strings (or early compiled strings before env post-subscript finishes).
+1. **Cross-field compile transform** (name TBD) in `src/conlanger/compile/tools/asca/` — detect bare env/exception matrices and segment-at-focus vs neighbour-host shapes on the **raw** field strings (or early compiled strings before env post-subscript finishes).
 
 2. **Three rewrite families:**
    - **A — bare env matrix → input colon:** when entire `env` (trimmed) is a standalone `[…]` matrix, merge feature onto input host with colon; set compiled env to `_` or empty structural env as appropriate.
    - **B — bare exception matrix → inverse input:** when entire `exception` (trimmed) is standalone `[…]`, flip polarity features onto input; set `compiled_exception = None`.
    - **C — neighbour host postfix → env/exception colon:** apply `normalize_asca_host_bracket_matrices` (or shared `host_bracket_matrix_to_colon`) to **env** and **exception** compile fields — same helper as ticket 121, extended scope.
 
-3. **Pipeline order** in [`pipeline.py`](../../../src/conlanger/tools/compile/asca/pipeline.py):
+3. **Pipeline order** in [`pipeline.py`](../../../src/conlanger/compile/tools/asca/pipeline.py):
    - Family **A/B**: cross-field step — after identity exceptions ([128](128-correction-pass-index-identity-exceptions.md)), **before** or coordinated with I/O `normalize_asca_host_bracket_matrices` (Family B may need input already colon-normalized for host narrowing consistency).
    - Family **C**: on env/exception after per-field post-subscript (alongside set wrapping / syllable-position overrides) — mirror ticket 121 placement but on env/exception strings.
    - Document final order in [sound-change-applier.md](../../../docs/system/sound-change-applier.md) compile table.
@@ -81,8 +81,8 @@ Parsed index rules store env/exception feature constraints in applier-neutral In
 - [119 — grill policy](119-grill-distinctive-features-env-exception.md)
 - [CONTEXT.md](../../../CONTEXT.md) — **Environment**, **Exception**, **Feature matrix**
 - [asca-rule-validity.md](../research/asca-rule-validity.md)
-- `src/conlanger/tools/compile/asca/host_bracket_matrices.py`
-- `src/conlanger/tools/compile/asca/pipeline.py`
+- `src/conlanger/compile/tools/asca/host_bracket_matrices.py`
+- `src/conlanger/compile/tools/asca/pipeline.py`
 - `diagnostics/inventory/error_clusters/expected_underscore_errors.csv`
 
 ## Answer

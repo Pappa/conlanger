@@ -213,6 +213,6 @@ Output `{æ̆,ă}` may still need **nested-set flattening** (inventory also repo
 - [Spike ticket #80](../issues/80-spike-breve-vowel-notation.md)
 - [Correction pass: near-miss unknown_character #63](../issues/63-correction-pass-near-miss-unknown-character.md)
 - [ASCA ejective notation research](./asca-ejective-notation.md) — compile-transform seam precedent
-- [ASCA length marks](../../src/conlanger/tools/compile/asca/length_marks.py)
+- [ASCA length marks](../../src/conlanger/compile/tools/asca/length_marks.py)
 - Li, Fang Kuei (1977). *A Handbook of Comparative Tai*. Oceanic Linguistics Special Publications 15.
 - Krauss, Michael & Victor Golla (1981). "Northern Athapaskan Languages". *Handbook of North American Indians* Vol. 6.

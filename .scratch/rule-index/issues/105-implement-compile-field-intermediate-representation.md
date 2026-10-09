@@ -47,11 +47,11 @@ Replace string-gated alternative detection and ad-hoc splits with an ordered **f
 
 Field-token IR shipped per [ADR-0015](../../../docs/adr/0015-compile-field-intermediate-representation.md):
 
-- `src/conlanger/tools/compile/field_tokens.py` — `FieldToken`, `OptionalLengthNode`, parse/render, optional-output shape gate
+- `src/conlanger/compile/tools/field_tokens.py` — `FieldToken`, `OptionalLengthNode`, parse/render, optional-output shape gate
 - `src/conlanger/compile/models/compile_fields.py` — `RuleInput` / `RuleOutput` / `RuleEnv` (raw + tokens + compiled)
 - `src/conlanger/compile/models/rules.py` — alternatives and parallel fan-out read field tokens
-- `src/conlanger/tools/compile/asca/parallel.py` — parallel null drop and branch expansion on tokens
-- `src/conlanger/tools/compile/asca/optional_length.py` — optional-length node expansion (consumed by [104](104-correction-pass-parenthesized-optional-length-marker.md))
-- `tests/conlanger/tools/compile/test_field_tokens.py` — structure, fan-out, and optional-output gate tests
+- `src/conlanger/compile/tools/asca/parallel.py` — parallel null drop and branch expansion on tokens
+- `src/conlanger/compile/tools/asca/optional_length.py` — optional-length node expansion (consumed by [104](104-correction-pass-parenthesized-optional-length-marker.md))
+- `tests/conlanger/compile/tools/test_field_tokens.py` — structure, fan-out, and optional-output gate tests
 
 **Render changes:** None beyond [104](104-correction-pass-parenthesized-optional-length-marker.md) optional-length policy (documented there).

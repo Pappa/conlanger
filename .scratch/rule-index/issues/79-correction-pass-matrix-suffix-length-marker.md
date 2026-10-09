@@ -10,7 +10,7 @@ Spawned from sizing after [63 near-miss unknown_character](63-correction-pass-ne
 
 ## Context
 
-`normalize_asca_length_marks()` in `src/conlanger/tools/compile/asca/length_marks.py` already handles segment+length (`pː` → `p:[+long]`), set suffixes, ref digits (`2ː`), and inter-matrix `]ː[`. **Residual** `ː` hits are mostly **matrix-suffix** forms ASCA never sees:
+`normalize_asca_length_marks()` in `src/conlanger/compile/tools/asca/length_marks.py` already handles segment+length (`pː` → `p:[+long]`), set suffixes, ref digits (`2ː`), and inter-matrix `]ː[`. **Residual** `ː` hits are mostly **matrix-suffix** forms ASCA never sees:
 
 | Subcluster | rows (approx.) | Example |
 |---|---:|---|
@@ -25,7 +25,7 @@ Prototype (2026-08-19): extend compile pass with `Matrix]ː` → `Matrix, +long]
 ## What to build
 
 1. Extend `normalize_asca_length_marks()` for matrix-suffix `ː` (and `Vn(ː)` template optional length if cheap).
-2. Unit tests in `tests/conlanger/tools/compile/asca/` mirroring ticket 25 style.
+2. Unit tests in `tests/conlanger/compile/tools/asca/` mirroring ticket 25 style.
 3. Full inventory re-run; record before/after for `ː` and sections-all-OK.
 4. Do **not** tackle Iroquoian `ː2` / stress-meta shapes in this pass — defer to meta-notation / ticket 64 follow-ons.
 
@@ -39,7 +39,7 @@ Extended `normalize_asca_length_marks()` in `length_marks.py`:
 **Deferred (2026-08-30 rework):** parenthesized optional length `(ː)` on matrices/templates
 (`V:[+front](ː)`, `V3(ː)`) — wrong to collapse here; follow-on [104](104-correction-pass-parenthesized-optional-length-marker.md) (**blocked by [94](94-grill-structured-soundchangerule-ir.md)**).
 
-Unit + ASCA smoke tests in `tests/conlanger/tools/compile/asca/test_length_marks.py` (matrix-suffix cases moved from `test_tools_compile_asca.py`).
+Unit + ASCA smoke tests in `tests/conlanger/compile/tools/asca/test_length_marks.py` (matrix-suffix cases moved from `test_tools_compile_asca.py`).
 
 ## Answer (before/after)
 

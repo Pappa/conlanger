@@ -2,7 +2,7 @@
 
 import re
 
-from conlanger.tools.compile.asca._patterns import IPA_SEGMENT
+from conlanger.compile.tools.asca._patterns import IPA_SEGMENT
 
 _EJECTIVE = "\u02bc"
 _CLASS_OR_IPA = rf"({IPA_SEGMENT}|[A-Z])"

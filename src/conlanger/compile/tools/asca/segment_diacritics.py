@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import re
 
-from conlanger.tools.compile.asca.subscript_references import (
+from conlanger.compile.tools.asca.subscript_references import (
     _SUBSCRIPT_TO_ASCII,
 )
 from conlanger.utils.bracket_scanner import is_square_bracket_wrapped

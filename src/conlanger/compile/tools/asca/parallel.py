@@ -25,7 +25,7 @@ from __future__ import annotations
 
 import itertools
 
-from conlanger.tools.compile.field_tokens import (
+from conlanger.compile.tools.field_tokens import (
     FieldToken,
     is_set_token,
     is_whole_field_set_tokens,

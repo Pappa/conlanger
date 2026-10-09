@@ -1,18 +1,18 @@
 """Planned ASCA compile transforms (spike 38 orders 4, 10)."""
 
-from conlanger.tools.compile.asca.cartesian_io_optionals import (
+from conlanger.compile.tools.asca.cartesian_io_optionals import (
     flatten_cartesian_io_optionals,
 )
-from conlanger.tools.compile.asca.input_optionals import (
+from conlanger.compile.tools.asca.input_optionals import (
     expand_input_optionals_to_structures,
 )
-from conlanger.tools.compile.asca.parenthetical import (
+from conlanger.compile.tools.asca.parenthetical import (
     expand_index_parenthetical_notation,
 )
-from conlanger.tools.compile.asca.slash_boundary import (
+from conlanger.compile.tools.asca.slash_boundary import (
     drop_concatenated_deletion_column,
 )
-from conlanger.tools.compile.asca.tilde import expand_index_tilde_notation
+from conlanger.compile.tools.asca.tilde import expand_index_tilde_notation
 
 __all__ = [
     "apply_section_local_abbreviations",

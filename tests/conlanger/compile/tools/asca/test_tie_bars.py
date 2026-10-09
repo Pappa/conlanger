@@ -6,9 +6,9 @@ from pathlib import Path
 import pytest
 
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
-from conlanger.tools.compile.asca.tie_bars import normalize_index_affricate_tie_bars
 from conlanger.compile.models.rules import DiachronicSeries
+from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
+from conlanger.compile.tools.asca.tie_bars import normalize_index_affricate_tie_bars
 
 _INDEX_TIE = "\u035c"
 _ASCA_TIE = "\u0361"

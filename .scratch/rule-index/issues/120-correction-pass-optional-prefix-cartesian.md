@@ -34,5 +34,5 @@ Ticket [51](51-correction-pass-input-optionals-to-env.md) `_expand_prefix_struct
 ## References
 
 - [io-optionals research §5](../research/io-optionals-asca-and-convention.md)
-- `src/conlanger/tools/compile/asca/input_optionals.py`
+- `src/conlanger/compile/tools/asca/input_optionals.py`
 - Grill session 2026-09-06 (feature-matrix convention)

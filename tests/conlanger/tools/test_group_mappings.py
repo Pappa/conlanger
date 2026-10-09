@@ -1,6 +1,6 @@
 import pytest
 
-from conlanger.tools.compile.asca.group_mappings import (
+from conlanger.compile.tools.asca.group_mappings import (
     apply_asca_group_mappings_to_string,
     expand_grouping_letter,
 )

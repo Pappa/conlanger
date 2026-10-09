@@ -122,7 +122,7 @@ Rules that change accompaniment (e.g. `! !ˀ !̬ !̃ > k ɡ ŋɡ`) need the norm
 | Stage | Verdict |
 |-------|---------|
 | **Parse-time** `ipa_mappings.yml` | **Insufficient** — single-char map to `kǃ` does not handle `!!`, sets, `ˀ`, `!x`, or output-side glyphs; breaks if applied to non-click `!` |
-| **Compile-time** normalisation | **Primary** — mirror `normalize_asca_ejective_marks()` in [`pipeline.py`](../../../src/conlanger/tools/compile/asca/pipeline.py) (`compile_asca_field_post_subscript`): token-aware `k` onset, `!!` → `ǃ ǃ`, `ˀ` on clicks → `:[+cg]`, apply to input/output (and env/exception only when whole-field segmentiser agrees) |
+| **Compile-time** normalisation | **Primary** — mirror `normalize_asca_ejective_marks()` in [`pipeline.py`](../../../src/conlanger/compile/tools/asca/pipeline.py) (`compile_asca_field_post_subscript`): token-aware `k` onset, `!!` → `ǃ ǃ`, `ˀ` on clicks → `:[+cg]`, apply to input/output (and env/exception only when whole-field segmentiser agrees) |
 | **Manual** `manual_mappings.yml` / `index_corrections.yml` | **Secondary** — §17 row, optional `(n)` on clicks, rows where default `k` onset is wrong |
 | **`skip_sections` / `skip_rules`** | **Last resort** — not recommended for bulk §20.x; spike 64 deferral superseded for `invalid_ipa` by this policy |
 

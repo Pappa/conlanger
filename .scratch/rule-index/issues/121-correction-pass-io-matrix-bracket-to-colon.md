@@ -51,4 +51,4 @@ Ticket [120](120-correction-pass-optional-prefix-cartesian.md) colon-normalizes 
 
 - [index-feature-matrices research](../research/index-feature-matrices-to-asca-targets.md)
 - [asca-rule-validity.md](../research/asca-rule-validity.md) §2 (segment+matrix colon syntax)
-- `src/conlanger/tools/compile/asca/pipeline.py`
+- `src/conlanger/compile/tools/asca/pipeline.py`

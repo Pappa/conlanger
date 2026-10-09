@@ -17,7 +17,7 @@ Examples of production-content coupling:
 | `tests/conlanger/tools/ingest/test_parser.py` | `load_group_mappings()`, `load_feature_mappings()`, `load_ipa_mappings()`, `load_parser_config()` without `tmp_path` → assert seed rows |
 | `tests/conlanger/tools/ingest/test_parser.py` | `feature_mappings_dict()`, `ipa_mappings_dict(config=load_parser_config())` in transform tests |
 | `tests/conlanger/tools/test_group_mappings.py` | `test_asca_group_mappings_dict_loads_package_csv` |
-| `tests/conlanger/tools/compile/asca/test_tone_matrices.py` | `feature_mappings_dict()` for tone rows |
+| `tests/conlanger/compile/tools/asca/test_tone_matrices.py` | `feature_mappings_dict()` for tone rows |
 | `tests/helpers.py` | `default_index_parser()` caches `load_default_ingest_tables()` (production tables) |
 
 Behavioral tests (parser/compile integration) may still need mapping data — but it must come from **inline fixtures** or `tmp_path` YAML/CSV owned by the test, not from asserting the live `data/` tree.

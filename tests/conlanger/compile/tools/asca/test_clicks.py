@@ -6,9 +6,9 @@ from pathlib import Path
 import pytest
 
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.compile.asca.clicks import normalize_asca_index_click_segments
-from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
 from conlanger.compile.models.rules import DiachronicSeries
+from conlanger.compile.tools.asca.clicks import normalize_asca_index_click_segments
+from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
 
 
 @pytest.mark.parametrize(

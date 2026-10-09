@@ -3,14 +3,14 @@ from pathlib import Path
 
 import pytest
 
-from conlanger.tools.compile.asca.structures import join_asca_rule_fields
-from conlanger.ingest.models.index_models import IndexContext
 from conlanger.compile.models.rules import (
     DiachronicSeries,
     RuleCitation,
     RuleComment,
     SoundChangeRule,
 )
+from conlanger.compile.tools.asca.structures import join_asca_rule_fields
+from conlanger.ingest.models.index_models import IndexContext
 from conlanger.ingest.models.mappings import CompilerConfig
 
 

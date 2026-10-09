@@ -13,8 +13,8 @@ from __future__ import annotations
 
 import re
 
-from conlanger.tools.compile.asca._patterns import SET_BODY_RE
-from conlanger.tools.compile.asca.sets import split_set_members
+from conlanger.compile.tools.asca._patterns import SET_BODY_RE
+from conlanger.compile.tools.asca.sets import split_set_members
 from conlanger.utils.gloss import extract_trailing_paren_glosses_from_field
 
 _VOWEL_ALTERNATION_MEMBER_RE = re.compile(

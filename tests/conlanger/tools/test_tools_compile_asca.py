@@ -1,8 +1,8 @@
 import pytest
 
-from conlanger.tools.compile.asca.apostrophes import normalize_typographic_apostrophes
-from conlanger.tools.compile.asca.ejectives import normalize_asca_ejective_marks
-from conlanger.tools.compile.asca.ellipsis import (
+from conlanger.compile.tools.asca.apostrophes import normalize_typographic_apostrophes
+from conlanger.compile.tools.asca.ejectives import normalize_asca_ejective_marks
+from conlanger.compile.tools.asca.ellipsis import (
     normalize_asca_optional_grouping_ellipsis,
 )
 

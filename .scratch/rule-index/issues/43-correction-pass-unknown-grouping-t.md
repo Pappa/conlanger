@@ -47,7 +47,7 @@ Contrast: `TS > TH` **does** expand `T` (and `S`, `H`, `P`) because `T` is follo
 
 Class-letter expansion uses paired lookaround regexes:
 
-```8:12:src/conlanger/tools/asca_compile/group_mappings.py
+```8:12:src/conlanger/compile/tools/asca/group_mappings.py
 _GROUPING_PREC = r"(?:^|(?<=[\{\[\s/,>_A-Z#$%|!\(-]))"
 _GROUPING_FOLLOW = r"(?=[:,\[\]\{\}\s/>_#$%|!\)-]|$|[A-Z])"
 _GROUPING_FOLLOW_LABIALIZED = (
@@ -101,7 +101,7 @@ Recommend **Phase 1 immediately**; file Phase 2 as a sub-task if inventory still
 
 ## What to build
 
-1. Phase 1 code change in `src/conlanger/tools/asca_compile/group_mappings.py` (+ unit tests on Athabaskan fixtures above).
+1. Phase 1 code change in `src/conlanger/compile/tools/asca/group_mappings.py` (+ unit tests on Athabaskan fixtures above).
 2. Full inventory re-run (`uv run create_index`); record before/after for `unknown_grouping` / `T` token.
 3. Phase 2 only if residual `T` cluster remains.
 
@@ -137,5 +137,5 @@ Residual **5** `T` failures are all §36.3.2 rGyalrongic glued clusters (`sTP`, 
 - [Correction pass template](13-correction-pass-template.md)
 - [Correction pass: unknown_grouping (class letters)](14-correction-pass-unknown-grouping.md)
 - [Correction pass: labialized class letters](23-correction-pass-labialized-class-letters.md) — boundary regression fixtures
-- [`group_mappings.py`](../../../src/conlanger/tools/asca_compile/group_mappings.py)
+- [`group_mappings.py`](../../../src/conlanger/compile/tools/asca/group_mappings.py)
 - [`data/asca/group_mappings.csv`](../../../data/asca/group_mappings.csv)

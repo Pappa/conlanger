@@ -53,6 +53,6 @@ Index `#U` / `U#` mark syllable-tier membership (segment anywhere in word-initia
 - **Parse:** `apply_syllable_position_editorial_strip` strips editorial `in` before mechanical `#U` / `U#` on env/exception (`raw` unchanged).
 - **Config:** `group_mappings.yml` `U` row comment clarifies `#U`/`U#` position markers compile via structure rewrite, not `U`→`%`.
 - **Inventory:** OK **8093 → 8121 (+28)**; sections all-OK **372 → 377 / 714**. Changelog flips match mechanical exception/env cluster (Old Norse `Vː`, Proto-Norse `Vː`/`i`, Iroquoian `Vː`, Papuan positive `#U` env, Yupik `in #U` exceptions, Kwamera `U#` env, …).
-- **Tests:** `tests/conlanger/tools/compile/asca/test_syllable_position.py` — unit mapping + `validate_asca` on probe words from research §5.2–5.4.
+- **Tests:** `tests/conlanger/compile/tools/asca/test_syllable_position.py` — unit mapping + `validate_asca` on probe words from research §5.2–5.4.
 
 ## Comments

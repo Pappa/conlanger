@@ -5,9 +5,9 @@ from pathlib import Path
 
 import pytest
 
-from conlanger.tools.compile.asca.length_marks import normalize_asca_length_marks
-from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
 from conlanger.compile.models.rules import DiachronicSeries
+from conlanger.compile.tools.asca.length_marks import normalize_asca_length_marks
+from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
 
 
 @pytest.mark.parametrize(
@@ -46,7 +46,7 @@ def test_normalize_asca_length_marks(text, expected):
 
 def test_normalize_asca_length_marks_leaves_parenthesized_to_optional_length_pass():
     """Bare ``(ː)`` is expanded in ``optional_length`` before this pass runs."""
-    from conlanger.tools.compile.asca.optional_length import (
+    from conlanger.compile.tools.asca.optional_length import (
         expand_optional_length_in_text,
     )
 

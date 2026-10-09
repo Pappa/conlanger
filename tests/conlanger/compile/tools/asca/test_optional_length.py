@@ -5,18 +5,18 @@ from pathlib import Path
 
 import pytest
 
-from conlanger.tools.compile.asca.optional_length import (
+from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
+from conlanger.compile.tools.asca.optional_length import (
     expand_optional_length_in_text,
     expand_optional_length_tokens,
     parse_optional_length_part,
 )
-from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
-from conlanger.tools.compile.field_tokens import (
+from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
+from conlanger.compile.tools.field_tokens import (
     OptionalLengthNode,
     parse_field_tokens,
     render_field_tokens,
 )
-from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
 
 
 @pytest.mark.parametrize(

@@ -69,6 +69,6 @@ These are **not** the `][` adjacent-matrix split fixed in ticket 124 (`C:[+labia
 ## References
 
 - [missing_slash_output_env_errors.csv](../inventory/error_clusters/missing_slash_output_env_errors.csv)
-- `src/conlanger/tools/compile/asca/tone_matrices.py`
-- `src/conlanger/tools/compile/asca/pipeline.py`
+- `src/conlanger/compile/tools/asca/tone_matrices.py`
+- `src/conlanger/compile/tools/asca/pipeline.py`
 - [Correction pass template](13-correction-pass-template.md)

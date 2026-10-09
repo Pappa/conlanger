@@ -8,17 +8,17 @@ from pathlib import Path
 import pytest
 
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
-from conlanger.tools.compile.asca.structures import (
+from conlanger.compile.models.rules import DiachronicSeries
+from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
+from conlanger.compile.tools.asca.structures import (
     ENV_SEPARATOR,
     EXCEPTION_SEPARATOR,
     OUTPUT_SEPARATOR,
     join_asca_rule_fields,
 )
-from conlanger.tools.compile.asca.subscript_references import (
+from conlanger.compile.tools.asca.subscript_references import (
     expand_subscript_references_across_fields,
 )
-from conlanger.compile.models.rules import DiachronicSeries
 
 
 def _split_joined_rule(text: str) -> tuple[str, str, str | None, str | None]:

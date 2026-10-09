@@ -36,7 +36,7 @@ Spike for replacing compile-time `group_mappings.csv` expansion with an ASCA `.a
 | [`asca-0.10.2/src/alias/parser.rs`](https://github.com/Girv98/asca-rust/blob/0.10.2/src/alias/parser.rs) | Alias `@into` output grammar: IPA segments, group+matrix (`C:[…]`), bare `[…]` matrices — **not** rule-level set unions `{…}` |
 | [`research/asca-class-letter-mappings.md`](./asca-class-letter-mappings.md) | Seventeen validated Index→ASCA expansions; several use `{L,G}`, `{C:[…],[+click]}` |
 | [`data/asca/group_mappings.csv`](../../../data/asca/group_mappings.csv) | Current compile-time mapping source |
-| [`src/conlanger/tools/asca_compile/group_mappings.py`](../../../src/conlanger/tools/asca_compile/group_mappings.py) | Bracket-safe expansion, labialized class letters (`Kʷ`), optional `(ʷ)`, positional-slot protection (`C₁`) |
+| [`src/conlanger/compile/tools/asca/group_mappings.py`](../../../src/conlanger/compile/tools/asca/group_mappings.py) | Bracket-safe expansion, labialized class letters (`Kʷ`), optional `(ʷ)`, positional-slot protection (`C₁`) |
 
 ---
 
@@ -155,7 +155,7 @@ asca run w.wsca --rules s.rsca -l m.alias    # sami => saᵐb̝i (Sonorant S)
 
 # Compile expansion (project)
 uv run python -c "
-from conlanger.tools.asca_compile.group_mappings import apply_asca_group_mappings_to_string, asca_group_mappings_dict
+from conlanger.compile.tools.asca.group_mappings import apply_asca_group_mappings_to_string, asca_group_mappings_dict
 print(apply_asca_group_mappings_to_string('S > F', asca_group_mappings_dict()))
 "   # P > F
 ```

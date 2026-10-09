@@ -6,7 +6,7 @@ from typing import Self
 
 from pydantic import BaseModel, ConfigDict, field_validator, model_validator
 
-from conlanger.tools.compile.field_tokens import (
+from conlanger.compile.tools.field_tokens import (
     FieldToken,
     parse_field_tokens,
     render_field_tokens,

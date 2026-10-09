@@ -72,7 +72,7 @@ ASCA [Optionals](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md#opti
 
 - [51](51-correction-pass-input-optionals-to-env.md), [48](48-correction-pass-parenthetical-segment-notation.md), [100](100-spike-io-optionals-asca-and-convention.md)
 - [research/io-optionals-asca-and-convention.md](../research/io-optionals-asca-and-convention.md)
-- Compile: `src/conlanger/tools/compile/asca/parenthetical.py`, `input_optionals.py`
+- Compile: `src/conlanger/compile/tools/asca/parenthetical.py`, `input_optionals.py`
 
 ## Answer
 

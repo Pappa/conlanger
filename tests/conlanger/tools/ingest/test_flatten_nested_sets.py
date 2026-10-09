@@ -1,5 +1,6 @@
 import pytest
 
+from conlanger.ingest.models.index_models import IndexRule
 from conlanger.tools.ingest.flatten_nested_sets import (
     _consume_segment_tail,
     _try_distribute,
@@ -7,7 +8,6 @@ from conlanger.tools.ingest.flatten_nested_sets import (
     flatten_nested_sets_in_rule_fields,
     flatten_nested_sets_in_section_rules,
 )
-from conlanger.ingest.models.index_models import IndexRule
 
 
 def _rule(data: dict) -> IndexRule:

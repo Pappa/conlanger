@@ -5,15 +5,15 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
-from conlanger.tools.compile.asca.group_mappings import (
+from conlanger.compile.tools.asca.group_mappings import (
     apply_asca_group_mappings_to_string,
     expand_grouping_letter,
 )
-from conlanger.tools.compile.asca.host_bracket_matrices import (
+from conlanger.compile.tools.asca.host_bracket_matrices import (
     _SINGLE_HOST_BRACKET_RE,
     normalize_asca_host_bracket_matrices,
 )
-from conlanger.tools.compile.asca.structures import split_outside_groupers
+from conlanger.compile.tools.asca.structures import split_outside_groupers
 from conlanger.utils.bracket_scanner import is_brace_wrapped
 
 _IDENTITY_EXCEPTION_HOST_RE = re.compile(

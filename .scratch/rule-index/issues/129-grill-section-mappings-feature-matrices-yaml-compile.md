@@ -43,7 +43,7 @@ Loaded stages: single-line, `newlines=0`.
 
 **Root cause:** compile-time field-token parsing, not YAML.
 
-`parse_field_tokens` → `split_braced_set_members` (`src/conlanger/tools/compile/asca/sets.py`) splits `{…}` members on commas tracking only `{}` depth — **not** `[]` or `()`. Output set `{[matrix1],[matrix2]}` is split into 14 comma fragments instead of 2 matrices:
+`parse_field_tokens` → `split_braced_set_members` (`src/conlanger/compile/tools/asca/sets.py`) splits `{…}` members on commas tracking only `{}` depth — **not** `[]` or `()`. Output set `{[matrix1],[matrix2]}` is split into 14 comma fragments instead of 2 matrices:
 
 ```text
 tokens: (('[+cons', '-son', …, '-lo]', '[+cons', '+dist', …, '-lo]'),)
@@ -114,7 +114,7 @@ Current **Class letter** entry covers Index key capitals (`C`, `V`, `S`). Athaba
 
 - Parse mechanism: [97 implement section_mappings](97-implement-parser-config-section-mappings.md)
 - Optional outputs: [61 grill optional outputs](61-grill-optional-outputs.md), [66 implement](66-implement-optional-outputs-alt-idx.md)
-- Field tokens / sets: `src/conlanger/tools/compile/field_tokens.py`, `src/conlanger/tools/compile/asca/sets.py`
+- Field tokens / sets: `src/conlanger/compile/tools/field_tokens.py`, `src/conlanger/compile/tools/asca/sets.py`
 - YAML I/O: `src/conlanger/tools/index_io.py`, `tests/conlanger/tools/test_index_io.py`
 - Example parsed YAML: `data/diachronica/index_diachronica.yml` §29.1.1.1.7 `Deg-Hit’an-K`
 - Error inventory rows: `diagnostics/inventory/rule-inventory-error.csv` (`Deg-Hit’an-K`, alt_idx 0–13)

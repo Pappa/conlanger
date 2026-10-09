@@ -4,14 +4,15 @@ from __future__ import annotations
 
 import pytest
 
-from conlanger.tools.compile.asca.parallel import (
+from conlanger.compile.models.compile_fields import RuleInput, RuleOutput
+from conlanger.compile.models.rules import SoundChangeRule
+from conlanger.compile.tools.asca.parallel import (
     _column_branch_pairs,
     drop_mixed_parallel_null_columns,
     drop_mixed_parallel_null_columns_tokens,
     expand_parallel_output_null_branches_from_tokens,
 )
-from conlanger.compile.models.compile_fields import RuleInput, RuleOutput
-from conlanger.tools.compile.field_tokens import (
+from conlanger.compile.tools.field_tokens import (
     OptionalLengthNode,
     is_optional_output_shape,
     is_whole_field_set_tokens,
@@ -19,7 +20,6 @@ from conlanger.tools.compile.field_tokens import (
     partition_embedded_output_env,
     render_field_tokens,
 )
-from conlanger.compile.models.rules import SoundChangeRule
 
 
 @pytest.mark.parametrize(

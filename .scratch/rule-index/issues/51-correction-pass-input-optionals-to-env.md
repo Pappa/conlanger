@@ -42,7 +42,7 @@ After `expand_input_optionals_to_structures()` wired in `expand_meta_notation()`
 - Cluster: **18 → 0** (100% of syntax cluster cleared)
 - **17** rules newly pass validation; **1** rule (Klallam `V=0 3ʔ(0 )`) reclassified from `syntax_other` → `runtime_other` (`Unknown reference '3'` — subscript phase 2)
 
-**Pattern taxonomy** (module docstring in `src/conlanger/tools/asca_compile/input_optionals.py`):
+**Pattern taxonomy** (module docstring in `src/conlanger/compile/tools/asca/input_optionals.py`):
 
 | Pattern | Example | Expansion |
 |---------|---------|-----------|

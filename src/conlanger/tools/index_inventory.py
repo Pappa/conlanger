@@ -24,11 +24,11 @@ from conlanger.appliers.asca import (
     validate_asca,
     validate_asca_part,
 )
+from conlanger.compile.models.rules import DiachronicSeries, RuleTitle, SoundChangeRule
+from conlanger.ingest.models.mappings import CompilerConfig
 from conlanger.tools.inventory_error_clusters import (
     CLUSTER_CSV_BY_FAILURE_CLASS,
 )
-from conlanger.compile.models.rules import DiachronicSeries, RuleTitle, SoundChangeRule
-from conlanger.ingest.models.mappings import CompilerConfig
 
 ERROR_CLASS_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     ("nested_brackets", re.compile(r"nested brackets", re.IGNORECASE)),

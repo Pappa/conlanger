@@ -4,11 +4,11 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from conlanger.tools.compile.asca.sets import (
+from conlanger.compile.tools.asca.sets import (
     is_whole_field_set,
     split_braced_set_members,
 )
-from conlanger.tools.compile.asca.structures import split_outside_groupers
+from conlanger.compile.tools.asca.structures import split_outside_groupers
 
 
 @dataclass(frozen=True, slots=True)
@@ -52,7 +52,7 @@ def token_to_raw_string(token: FieldToken) -> str:
 def parse_field_tokens(raw: str) -> tuple[FieldToken, ...]:
     """Parse Index-raw compile text into an ordered field-token tuple."""
     # Lazy import: optional_length imports field_tokens types (circular at module load).
-    from conlanger.tools.compile.asca.optional_length import parse_optional_length_part
+    from conlanger.compile.tools.asca.optional_length import parse_optional_length_part
 
     if not raw or not raw.strip():
         return ()

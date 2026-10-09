@@ -63,7 +63,7 @@ Ticket [48](48-correction-pass-parenthetical-segment-notation.md) cartesian-expa
 - [Grill 71 Answer](71-grill-paren-and-parallel-set-notation.md)
 - [Parse fix Indo-Aryan](112-parse-fix-indo-aryan-optional-stages.md) — separate ticket
 - [Human-review residuals](113-human-review-io-optional-residuals.md)
-- `src/conlanger/tools/compile/asca/parenthetical.py`, `input_optionals.py`, `planned.py`
+- `src/conlanger/compile/tools/asca/parenthetical.py`, `input_optionals.py`, `planned.py`
 
 ## Comments
 

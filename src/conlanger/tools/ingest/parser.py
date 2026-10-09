@@ -39,6 +39,14 @@ from typing import Any
 
 from lxml import html
 
+from conlanger.ingest.models.index_models import Index, IndexRule, IndexSection
+from conlanger.ingest.models.mappings import (
+    ManualMapping,
+    ManualMappingMatch,
+    ParserConfig,
+    apply_manual_mappings,
+    apply_section_mappings,
+)
 from conlanger.tools.ingest.corpus_apply import (
     apply_feature_mappings,
     apply_ipa_mappings,
@@ -48,7 +56,6 @@ from conlanger.tools.ingest.double_slash_env import apply_double_slash_env_condi
 from conlanger.tools.ingest.flatten_nested_sets import (
     flatten_nested_sets_in_section_rules,
 )
-from conlanger.ingest.models.index_models import Index, IndexRule, IndexSection
 from conlanger.tools.ingest.index_rule_normalisation import (
     apply_index_rule_normalisation,
 )
@@ -67,13 +74,6 @@ from conlanger.tools.ingest.transforms import (
     apply_trailing_glosses,
 )
 from conlanger.utils.gloss import is_quoted_prose_paragraph
-from conlanger.ingest.models.mappings import (
-    ManualMapping,
-    ManualMappingMatch,
-    ParserConfig,
-    apply_manual_mappings,
-    apply_section_mappings,
-)
 from conlanger.utils.parsing import (
     extract_element_text,
     normalize_sub_tags,

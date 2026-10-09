@@ -7,7 +7,8 @@ from tempfile import NamedTemporaryFile
 import pytest
 
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.compile.asca.env_exception_feature_matrices import (
+from conlanger.compile.models.rules import DiachronicSeries
+from conlanger.compile.tools.asca.env_exception_feature_matrices import (
     _attach_matrix_to_literal_segment,
     _attach_matrix_to_token,
     _merge_feature_matrix_inners,
@@ -16,11 +17,10 @@ from conlanger.tools.compile.asca.env_exception_feature_matrices import (
     parse_bare_feature_matrix,
     resolve_bare_env_exception_feature_matrices,
 )
-from conlanger.tools.compile.asca.host_bracket_matrices import (
+from conlanger.compile.tools.asca.host_bracket_matrices import (
     normalize_asca_host_bracket_matrices,
 )
-from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
-from conlanger.compile.models.rules import DiachronicSeries
+from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
 
 
 @pytest.mark.parametrize(
@@ -87,7 +87,7 @@ def test_attach_matrix_to_literal_segment(text, matrix, expected):
 )
 def test_attach_matrix_to_token(token, matrix, expected, has_matrix, mocker):
     mocker.patch(
-        "conlanger.tools.compile.asca.env_exception_feature_matrices."
+        "conlanger.compile.tools.asca.env_exception_feature_matrices."
         "_token_has_class_host_bracket_matrix",
         return_value=has_matrix,
     )

@@ -7,15 +7,15 @@ from tempfile import NamedTemporaryFile
 import pytest
 
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.compile.asca.identity_exceptions import (
+from conlanger.compile.models.compile_fields import RuleEnv, RuleInput, RuleOutput
+from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
+from conlanger.compile.tools.asca.identity_exceptions import (
     IdentityExceptionBinding,
     apply_identity_exception_input_narrowing,
     parse_index_identity_exception,
     resolve_index_identity_exceptions,
 )
-from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
-from conlanger.compile.models.compile_fields import RuleEnv, RuleInput, RuleOutput
-from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
+from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
 
 
 @pytest.mark.parametrize(

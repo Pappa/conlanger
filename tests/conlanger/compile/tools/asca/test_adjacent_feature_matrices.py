@@ -6,16 +6,16 @@ from pathlib import Path
 import pytest
 
 from conlanger.appliers.asca import validate_asca
-from conlanger.scripts.config_loaders import load_compiler_config
-from conlanger.tools.compile.asca.pipeline import (
+from conlanger.compile.models.rules import DiachronicSeries
+from conlanger.compile.tools.asca.pipeline import (
     compile_asca_rule_field_strings,
     compile_asca_rule_fields,
 )
-from conlanger.tools.compile.asca.tone_matrices import (
+from conlanger.compile.tools.asca.tone_matrices import (
     merge_adjacent_feature_matrices,
     normalize_asca_adjacent_feature_matrices,
 )
-from conlanger.compile.models.rules import DiachronicSeries
+from conlanger.scripts.config_loaders import load_compiler_config
 
 
 @pytest.mark.parametrize(

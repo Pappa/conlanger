@@ -18,7 +18,7 @@ Hold-outs (Iroquoian stress meta — defer to ticket 64 follow-ons):
 
 import re
 
-from conlanger.tools.compile.asca._patterns import IPA_SEGMENT
+from conlanger.compile.tools.asca._patterns import IPA_SEGMENT
 
 _LENGTH = "\u02d0"
 _HALF_LENGTH = "\u02d1"

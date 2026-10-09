@@ -9,13 +9,13 @@ from __future__ import annotations
 
 import re
 
-from conlanger.tools.compile.asca._patterns import IPA_SEGMENT, SET_BODY_RE
-from conlanger.tools.compile.asca.sets import (
+from conlanger.compile.tools.asca._patterns import IPA_SEGMENT, SET_BODY_RE
+from conlanger.compile.tools.asca.sets import (
     split_braced_set_members,
     split_set_members,
 )
-from conlanger.tools.compile.asca.structures import split_outside_groupers
-from conlanger.tools.compile.field_tokens import (
+from conlanger.compile.tools.asca.structures import split_outside_groupers
+from conlanger.compile.tools.field_tokens import (
     FieldToken,
     OptionalLengthNode,
     is_optional_length_token,

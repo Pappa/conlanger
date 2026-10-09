@@ -41,7 +41,7 @@ Index Diachronica uses `! Host = segment` (or `! Host = {set}`) for **identity /
 
 ## What to build
 
-1. **Compile transform** `resolve_index_identity_exceptions` (name TBD) in `src/conlanger/tools/compile/asca/` — cross-field, wired in [`pipeline.py`](../../../src/conlanger/tools/compile/asca/pipeline.py).
+1. **Compile transform** `resolve_index_identity_exceptions` (name TBD) in `src/conlanger/compile/tools/asca/` — cross-field, wired in [`pipeline.py`](../../../src/conlanger/compile/tools/asca/pipeline.py).
 2. **Pipeline order:** after per-field **pre-subscript** (ellipsis → series → abbreviations → superscripts → **group mappings** on all four fields), **before** `expand_subscript_references_across_fields`. Family B may need a second input touch **after** `normalize_asca_host_bracket_matrices` if narrowing runs on bracket form first.
 3. **Detector (v1 — naive):** parse exception field for `Host = RHS` (optional whitespace around `=`). `Host` = class letter or postfix matrix host (`V:[+back]`, `[+son,-syll]`). `RHS` = segment literal, braced set, or class letter (expand via group mappings before splice/narrow). **No prose guard in v1** — attempt transform on all matches; record validation outcomes in **Answer**.
 4. **Family A:** find env field token whose host matches exception LHS; splice RHS (+ inherited suffix) → `compiled_exception`; leave `compiled_env` as-is.
@@ -74,7 +74,7 @@ Index Diachronica uses `! Host = segment` (or `! Host = {set}`) for **identity /
 
 ## Answer
 
-Implemented `resolve_index_identity_exceptions` in `src/conlanger/tools/compile/asca/identity_exceptions.py`, wired in `pipeline.py` after per-field pre-subscript (step 7½) with deferred Family B input narrowing after `normalize_asca_host_bracket_matrices`.
+Implemented `resolve_index_identity_exceptions` in `src/conlanger/compile/tools/asca/identity_exceptions.py`, wired in `pipeline.py` after per-field pre-subscript (step 7½) with deferred Family B input narrowing after `normalize_asca_host_bracket_matrices`.
 
 ### Inventory re-run (`uv run create_index && uv run validate_rules`, 2026-09-09)
 

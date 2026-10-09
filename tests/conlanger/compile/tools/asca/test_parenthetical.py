@@ -3,10 +3,10 @@
 import pytest
 
 from conlanger.appliers.asca import validate_asca
-from conlanger.tools.compile.asca.parenthetical import (
+from conlanger.compile.models.rules import DiachronicSeries
+from conlanger.compile.tools.asca.parenthetical import (
     expand_index_parenthetical_notation,
 )
-from conlanger.compile.models.rules import DiachronicSeries
 
 
 @pytest.mark.parametrize(

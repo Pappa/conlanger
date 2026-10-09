@@ -23,11 +23,11 @@ ASCA 0.10.2 rejects combining breve U+0306 and precomposed breve vowels (`ă`, `
 
 ## What to build
 
-1. Add `normalize_asca_breve_marks()` in `src/conlanger/tools/compile/asca/` (new module or extend pipeline); register in `ASCA_COMPILE_STEP_NAMES` **after** IPA letter normalisation, **before** `validate_asca`.
+1. Add `normalize_asca_breve_marks()` in `src/conlanger/compile/tools/asca/` (new module or extend pipeline); register in `ASCA_COMPILE_STEP_NAMES` **after** IPA letter normalisation, **before** `validate_asca`.
 2. Decompose NFC precomposed breve vowels (`ă`, `ŏ`, `ŭ`) before stripping/appending `[-long]`.
 3. Policy: glide outputs (`j̆`) → bare `j`; vowel breve → strip or `:[-long]` per research (prefer strip for Tai, `[-long]` for Scots/Tanacross).
 4. Hold out `Pre-Slavic-Vowel-Changes-i` (§46.14) as `status: skipped`.
-5. Unit tests in `tests/conlanger/tools/compile/asca/`; full inventory re-run.
+5. Unit tests in `tests/conlanger/compile/tools/asca/`; full inventory re-run.
 
 ## Out of scope
 
@@ -60,11 +60,11 @@ ASCA 0.10.2 rejects combining breve U+0306 and precomposed breve vowels (`ă`, `
 
 **Held out:** `Pre-Slavic-Vowel-Changes-i` (§46.14) via `parser_config.yml` `skip_rules` → `status: skipped` at parse.
 
-**Code:** `src/conlanger/tools/compile/asca/breve_marks.py`; pipeline step after ejective marks; `data/parser_config.yml` `skip_rules`; tests in `test_breve_marks.py`.
+**Code:** `src/conlanger/compile/tools/asca/breve_marks.py`; pipeline step after ejective marks; `data/parser_config.yml` `skip_rules`; tests in `test_breve_marks.py`.
 
 ## References
 
 - [Research: breve vowel notation](../research/breve-vowel-notation.md)
 - [ASCA ejective notation research](../research/asca-ejective-notation.md) — compile-transform precedent
 - [Correction pass template](13-correction-pass-template.md)
-- [length_marks.py](../../../src/conlanger/tools/compile/asca/length_marks.py)
+- [length_marks.py](../../../src/conlanger/compile/tools/asca/length_marks.py)

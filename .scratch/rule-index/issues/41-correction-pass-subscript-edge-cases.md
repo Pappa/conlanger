@@ -32,7 +32,7 @@ Target cluster: residual `unknown_character` / `syntax_other` rules that still c
 
 **Phase 2 — 2026-08-12**
 
-Extended `expand_index_subscript_references()` in `src/conlanger/tools/compile/asca/subscript_references.py`; ref length `0ː` → `0:[+long]` in `length_marks.py`. Field bind order is now input → env → exception → output (ASCA ref order).
+Extended `expand_index_subscript_references()` in `src/conlanger/compile/tools/asca/subscript_references.py`; ref length `0ː` → `0:[+long]` in `length_marks.py`. Field bind order is now input → env → exception → output (ASCA ref order).
 
 | Sub-pattern | Disposition |
 | --- | --- |

@@ -41,7 +41,7 @@ from scan_nested_sets import (
     count_working_depth_ge2,
 )
 
-from conlanger.tools.compile.asca.group_mappings import asca_group_mappings_dict
+from conlanger.compile.tools.asca.group_mappings import asca_group_mappings_dict
 from conlanger.tools.index_inventory import (
     validate_index_rule,
 )

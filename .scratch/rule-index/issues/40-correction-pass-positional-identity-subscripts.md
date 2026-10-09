@@ -37,7 +37,7 @@ Implement **`expand_index_subscript_references`** at **compile time** per [posit
 
 **Phase 1 (easy wins) — 2026-08-07**
 
-- `expand_index_subscript_references()` in `src/conlanger/tools/asca_compile/subscript_references.py`; wired via `planned.py` / compile pipeline order 3.
+- `expand_index_subscript_references()` in `src/conlanger/compile/tools/asca/subscript_references.py`; wired via `planned.py` / compile pipeline order 3.
 - Whole-rule pass: input → output → env → exception; shared declared-ref set; prepend `_ ` to env when refs expanded and no focus present.
 - Bracket interiors `[...]` left untouched (matrix-attached subscripts deferred).
 

@@ -49,7 +49,7 @@ After parenthetical compile handler (`expand_index_parenthetical_notation`, wire
 - `received '('` cluster: **144 → 35** (**109** recovered, **75.7%** recoverability; expected ~64 at ~45%)
 - Residual 35: editorial prose tails (`(Whimemsz says…)`, `(rare?)`), multi-modifier nests (`{tɕ(ʼ),tɕʷ(ʼ),…}`), `(C)` class-letter optionals in output (`{u,i}(C)`), ASCA env-structure parens (`(C,0)`), and output-side identity alternations (`k > {k(ʼ),q}`)
 
-Taxonomy and compile examples: module docstring in `src/conlanger/tools/asca_compile/parenthetical.py`.
+Taxonomy and compile examples: module docstring in `src/conlanger/compile/tools/asca/parenthetical.py`.
 
 ## References
 
