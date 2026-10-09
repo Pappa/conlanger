@@ -2,7 +2,7 @@
 
 import pytest
 
-from conlanger.utils.bracket_scanner import (
+from conlanger.compile.tools.bracket_scanner import (
     BRACES,
     BRACKETS,
     is_brace_wrapped,

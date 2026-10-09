@@ -2,7 +2,7 @@
 
 import re
 
-from conlanger.utils.bracket_scanner import is_square_bracket_wrapped
+from conlanger.compile.tools.bracket_scanner import is_square_bracket_wrapped
 
 _ELLIPSIS = "\u2026"
 _ELLIPSIS_SRC = rf"(?:{_ELLIPSIS}|\.\.\.?)"

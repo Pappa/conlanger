@@ -20,7 +20,7 @@ from __future__ import annotations
 import re
 
 from conlanger.compile.tools.asca._patterns import IPA_SEGMENT
-from conlanger.utils.bracket_scanner import is_square_bracket_wrapped
+from conlanger.compile.tools.bracket_scanner import is_square_bracket_wrapped
 
 _PRENASAL = "\u207f"
 _VALID_PRENASAL_GRAPHEMES = frozenset({"ⁿd", "ⁿt"})

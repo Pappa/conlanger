@@ -14,7 +14,7 @@ from conlanger.compile.tools.asca.host_bracket_matrices import (
     normalize_asca_host_bracket_matrices,
 )
 from conlanger.compile.tools.asca.structures import split_outside_groupers
-from conlanger.utils.bracket_scanner import is_brace_wrapped
+from conlanger.compile.tools.bracket_scanner import is_brace_wrapped
 
 _IDENTITY_EXCEPTION_HOST_RE = re.compile(
     r"^\s*(?P<host>(?:\[[^\]]+\]|[A-Z](?::\[[^\]]+\])?))\s*=\s*(?P<rest>.+?)\s*$"

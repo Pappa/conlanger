@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from conlanger.utils.bracket_scanner import split_outside_brackets
+from conlanger.compile.tools.bracket_scanner import split_outside_brackets
 
 OUTPUT_SEPARATOR = " > "
 ENV_SEPARATOR = " / "

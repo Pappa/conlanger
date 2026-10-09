@@ -30,7 +30,7 @@ from conlanger.compile.tools.asca._patterns import (
 from conlanger.compile.tools.asca.ejectives import _add_cg_feature
 from conlanger.compile.tools.asca.sets import split_set_members
 from conlanger.compile.tools.asca.structures import split_outside_groupers
-from conlanger.utils.bracket_scanner import is_brace_wrapped
+from conlanger.compile.tools.bracket_scanner import is_brace_wrapped
 from conlanger.utils.gloss import paren_inner_is_gloss
 
 _CLASS_LETTER_RE = re.compile(r"^[A-Z$%#][A-Z$%#0-9]*$")

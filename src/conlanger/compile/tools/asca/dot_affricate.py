@@ -24,7 +24,7 @@ from __future__ import annotations
 import re
 
 from conlanger.compile.tools.asca._patterns import IPA_SEGMENT
-from conlanger.utils.bracket_scanner import is_square_bracket_wrapped
+from conlanger.compile.tools.bracket_scanner import is_square_bracket_wrapped
 
 _RANGE_DOT = "\ue000"  # placeholder while normalising single dots
 _INDEX_SEGMENT = rf"(?:{IPA_SEGMENT}|[A-Z])\d*"

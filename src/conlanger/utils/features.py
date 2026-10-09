@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import re
 
-from conlanger.utils.bracket_scanner import is_brace_wrapped
+from conlanger.compile.tools.bracket_scanner import is_brace_wrapped
 
 
 def add_features_to_matrix_body(features: str, extra: tuple[str, ...]) -> str:

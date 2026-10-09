@@ -28,7 +28,7 @@ from conlanger.compile.tools.asca.host_bracket_matrices import (
 )
 from conlanger.compile.tools.asca.sets import split_set_members
 from conlanger.compile.tools.asca.structures import split_outside_groupers
-from conlanger.utils.bracket_scanner import is_brace_wrapped
+from conlanger.compile.tools.bracket_scanner import is_brace_wrapped
 
 _CLASS_OR_GROUP_INNER_RE = re.compile(
     r"^(?:"

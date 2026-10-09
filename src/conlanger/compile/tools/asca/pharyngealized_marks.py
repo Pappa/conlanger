@@ -3,7 +3,7 @@
 import re
 
 from conlanger.compile.tools.asca._patterns import IPA_SEGMENT
-from conlanger.utils.bracket_scanner import is_square_bracket_wrapped
+from conlanger.compile.tools.bracket_scanner import is_square_bracket_wrapped
 from conlanger.utils.features import (
     add_features_to_matrix_body,
     apply_features_to_token,

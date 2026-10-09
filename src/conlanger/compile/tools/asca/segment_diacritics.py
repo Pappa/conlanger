@@ -7,7 +7,7 @@ import re
 from conlanger.compile.tools.asca.subscript_references import (
     _SUBSCRIPT_TO_ASCII,
 )
-from conlanger.utils.bracket_scanner import is_square_bracket_wrapped
+from conlanger.compile.tools.bracket_scanner import is_square_bracket_wrapped
 
 _RING_ABOVE = "\u030a"
 _NO_AUDIBLE_RELEASE = "\u031a"
