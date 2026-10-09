@@ -8,7 +8,6 @@ from conlanger.tools.compile.asca.syllable_position import (
 from conlanger.tools.ingest.index_models import (
     IndexContext,
     IndexRule,
-    join_rule_comment,
 )
 from conlanger.tools.ingest.transform_fields import (
     MEDIAL_BOUNDARY_EXCEPTION,
