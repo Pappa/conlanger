@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from conlanger.utils.features import (
+from conlanger.compile.tools.features import (
     add_features_to_matrix_body,
     apply_features_to_token,
     merge_mapping_with_features,

@@ -27,7 +27,7 @@ from conlanger.compile.tools.asca.group_mappings import (
     expand_grouping_letter,
 )
 from conlanger.compile.tools.bracket_scanner import is_square_bracket_wrapped
-from conlanger.utils.features import (
+from conlanger.compile.tools.features import (
     apply_features_to_token,
     merge_mapping_with_features,
 )

@@ -6,7 +6,7 @@ from conlanger.compile.tools.bracket_scanner import (
     is_brace_wrapped,
     is_square_bracket_wrapped,
 )
-from conlanger.utils.features import apply_features_to_token
+from conlanger.compile.tools.features import apply_features_to_token
 
 # Class-letter boundary policy (compile-time tokenisation).
 # See docs/system/sound-change-applier.md — "Class-letter expansion boundaries".
