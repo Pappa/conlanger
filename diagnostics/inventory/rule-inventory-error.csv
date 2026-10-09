@@ -112,7 +112,7 @@ section_index,section_name,rule_id,alt_idx,source,ok,failure_class,error_token,s
 17.12.1.1.3,Latin to French,French-j_3,,index_diachronica.html:7539,0,expected_ipa,_,,IPA character,"Syntax Error: Expected an IPA character, Primative or Matrix, but received '_' | j > ∅ / s_ (s:[+long]_?) | ^ @ Rule 1, Line 1"
 17.12.1.1.3,Latin to French,French-é,,index_diachronica.html:7545,0,expected_underscore,,,_,"Syntax Error: Expected '_', but received '' | e > ɛi / %[+lo] | ^ @ Rule 1, Line 1"
 17.12.1.1.3,Latin to French,French-é_2,,index_diachronica.html:7546,0,expected_underscore,,,_,"Syntax Error: Expected '_', but received '' | e > ɛ / %[+hi] | ^ @ Rule 1, Line 1"
-17.12.1.1.3,Latin to French,French-ó,,index_diachronica.html:7547,0,expected_underscore,,,_,"Syntax Error: Expected '_', but received '' | ou > ɛu / %[+lo] | ^ @ Rule 1, Line 2"
+17.12.1.1.3,Latin to French,French-ó,,index_diachronica.html:7547,0,expected_underscore,,,_,"Syntax Error: Expected '_', but received '' | o > ou / %[+lo] | ^ @ Rule 1, Line 1"
 17.12.1.1.3,Latin to French,French-ó_3,,index_diachronica.html:7549,0,expected_underscore,,,_,"Syntax Error: Expected '_', but received '' | o > ou / %[+hi] | ^ @ Rule 1, Line 1"
 17.12.1.1.3,Latin to French,French-e,,index_diachronica.html:7550,0,missing_slash_output_env,:,,end of line,"Syntax Error: Expected end of line, received ':'. Did you forget a '/' between the output and environment? | e > ə / #(C,0)_($,0):[+stress] in %[+lo] | ^ @ Rule 1, Line 1"
 17.12.1.1.3,Latin to French,French-e_2,,index_diachronica.html:7551,0,missing_slash_output_env,:,,end of line,"Syntax Error: Expected end of line, received ':'. Did you forget a '/' between the output and environment? | e > ɛ / #(C,0)_($,0):[+stress] in %[+hi] or _V | ^ @ Rule 1, Line 1"

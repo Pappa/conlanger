@@ -142,10 +142,6 @@ class IndexRule(BaseModel):
         self.comment = merged
         return self
 
-    def finalize_stages_shape(self) -> Self:
-        self.stages = [stage for stage in self.stages if stage and stage.strip()]
-        return self
-
     def apply_dialects_to_env_fields(self) -> Self:
         """Parse dialect prose in env/exception ``context`` into structured ``dialect``."""
         rule = self.model_copy(deep=True)

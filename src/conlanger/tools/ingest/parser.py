@@ -196,7 +196,6 @@ class IndexDiachronicaParser:
         rule = apply_syllable_position_editorial_strip(rule)
         rule = apply_feature_mappings(rule, self._feature_mappings)
         rule = apply_ipa_mappings(rule, self._ipa_mappings)
-        rule = rule.finalize_stages_shape()
         rule = rule.apply_dialects_to_env_fields()
 
         return [rule]
