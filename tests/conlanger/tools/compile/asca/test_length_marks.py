@@ -7,7 +7,7 @@ import pytest
 
 from conlanger.tools.compile.asca.length_marks import normalize_asca_length_marks
 from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
-from conlanger.tools.rules import DiachronicSeries
+from conlanger.models.compile.rules import DiachronicSeries
 
 
 @pytest.mark.parametrize(

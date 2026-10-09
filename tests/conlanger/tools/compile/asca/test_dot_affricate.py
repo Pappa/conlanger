@@ -8,7 +8,7 @@ import pytest
 from conlanger.appliers.asca import validate_asca
 from conlanger.tools.compile.asca.dot_affricate import normalize_dot_affricate_notation
 from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
-from conlanger.tools.rules import DiachronicSeries
+from conlanger.models.compile.rules import DiachronicSeries
 
 
 @pytest.mark.parametrize(

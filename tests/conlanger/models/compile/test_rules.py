@@ -5,7 +5,7 @@ import pytest
 
 from conlanger.tools.compile.asca.structures import join_asca_rule_fields
 from conlanger.tools.ingest.index_models import IndexContext
-from conlanger.tools.rules import (
+from conlanger.models.compile.rules import (
     DiachronicSeries,
     RuleCitation,
     RuleComment,

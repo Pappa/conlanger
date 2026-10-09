@@ -10,7 +10,7 @@ from conlanger.tools.compile.asca.editorial_slash_gloss import (
     strip_editorial_slash_glosses,
 )
 from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
-from conlanger.tools.rules import DiachronicSeries
+from conlanger.models.compile.rules import DiachronicSeries
 
 
 @pytest.mark.parametrize(

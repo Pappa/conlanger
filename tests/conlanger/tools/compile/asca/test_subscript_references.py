@@ -18,7 +18,7 @@ from conlanger.tools.compile.asca.structures import (
 from conlanger.tools.compile.asca.subscript_references import (
     expand_subscript_references_across_fields,
 )
-from conlanger.tools.rules import DiachronicSeries
+from conlanger.models.compile.rules import DiachronicSeries
 
 
 def _split_joined_rule(text: str) -> tuple[str, str, str | None, str | None]:

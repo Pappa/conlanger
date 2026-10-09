@@ -15,7 +15,7 @@ from conlanger.appliers.asca import (
     validate_asca,
     validate_asca_part,
 )
-from conlanger.tools.rules import DiachronicSeries
+from conlanger.models.compile.rules import DiachronicSeries
 from tests.conftest import ASCA_INSTALLED, ASCA_VALIDATE_INSTALLED
 
 _FIXTURE_CSV = (

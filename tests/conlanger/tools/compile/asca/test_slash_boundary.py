@@ -8,7 +8,7 @@ import pytest
 from conlanger.tools.compile.asca.slash_boundary import (
     drop_concatenated_deletion_column,
 )
-from conlanger.tools.rules import DiachronicSeries
+from conlanger.models.compile.rules import DiachronicSeries
 
 
 @pytest.mark.parametrize(

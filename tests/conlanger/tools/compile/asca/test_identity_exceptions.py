@@ -15,7 +15,7 @@ from conlanger.tools.compile.asca.identity_exceptions import (
 )
 from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
 from conlanger.tools.compile.compile_fields import RuleEnv, RuleInput, RuleOutput
-from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
+from conlanger.models.compile.rules import DiachronicSeries, SoundChangeRule
 
 
 @pytest.mark.parametrize(

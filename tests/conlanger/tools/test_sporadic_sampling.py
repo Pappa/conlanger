@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import random
 
-from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
+from conlanger.models.compile.rules import DiachronicSeries, SoundChangeRule
 from conlanger.utils.mappings import CompilerConfig
 
 

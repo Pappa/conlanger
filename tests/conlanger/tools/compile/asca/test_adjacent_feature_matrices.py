@@ -15,7 +15,7 @@ from conlanger.tools.compile.asca.tone_matrices import (
     merge_adjacent_feature_matrices,
     normalize_asca_adjacent_feature_matrices,
 )
-from conlanger.tools.rules import DiachronicSeries
+from conlanger.models.compile.rules import DiachronicSeries
 
 
 @pytest.mark.parametrize(

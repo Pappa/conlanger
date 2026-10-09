@@ -47,7 +47,7 @@ from conlanger.tools.index_inventory import (
     write_ok_flip_changelog,
     write_validation_csv,
 )
-from conlanger.tools.rules import SoundChangeRule
+from conlanger.models.compile.rules import SoundChangeRule
 from tests.conftest import ASCA_VALIDATE_INSTALLED
 
 _SECTION = {"index": "1.0", "section": "Test Section"}

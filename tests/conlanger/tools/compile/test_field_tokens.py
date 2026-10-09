@@ -19,7 +19,7 @@ from conlanger.tools.compile.field_tokens import (
     partition_embedded_output_env,
     render_field_tokens,
 )
-from conlanger.tools.rules import SoundChangeRule
+from conlanger.models.compile.rules import SoundChangeRule
 
 
 @pytest.mark.parametrize(

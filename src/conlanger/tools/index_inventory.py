@@ -27,7 +27,7 @@ from conlanger.appliers.asca import (
 from conlanger.tools.inventory_error_clusters import (
     CLUSTER_CSV_BY_FAILURE_CLASS,
 )
-from conlanger.tools.rules import DiachronicSeries, RuleTitle, SoundChangeRule
+from conlanger.models.compile.rules import DiachronicSeries, RuleTitle, SoundChangeRule
 from conlanger.utils.mappings import CompilerConfig
 
 ERROR_CLASS_PATTERNS: list[tuple[str, re.Pattern[str]]] = [

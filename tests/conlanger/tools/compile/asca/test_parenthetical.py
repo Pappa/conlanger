@@ -6,7 +6,7 @@ from conlanger.appliers.asca import validate_asca
 from conlanger.tools.compile.asca.parenthetical import (
     expand_index_parenthetical_notation,
 )
-from conlanger.tools.rules import DiachronicSeries
+from conlanger.models.compile.rules import DiachronicSeries
 
 
 @pytest.mark.parametrize(

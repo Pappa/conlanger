@@ -5,7 +5,7 @@ import pytest
 from conlanger.appliers.asca import validate_asca
 from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
 from conlanger.tools.compile.asca.tone_matrices import normalize_asca_tone_matrices
-from conlanger.tools.rules import DiachronicSeries
+from conlanger.models.compile.rules import DiachronicSeries
 from conlanger.utils.mappings import (
     CompilerConfig,
     FeatureMapping,

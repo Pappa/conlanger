@@ -18,7 +18,7 @@ from conlanger.tools.compile.asca.syllable_position import (
 from conlanger.tools.compile.compile_fields import RuleEnv, RuleInput, RuleOutput
 from conlanger.tools.ingest.index_models import IndexContext, IndexRule
 from conlanger.tools.ingest.transforms import apply_syllable_position_editorial_strip
-from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
+from conlanger.models.compile.rules import DiachronicSeries, SoundChangeRule
 
 
 @pytest.mark.parametrize(

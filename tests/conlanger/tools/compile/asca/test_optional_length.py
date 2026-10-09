@@ -16,7 +16,7 @@ from conlanger.tools.compile.field_tokens import (
     parse_field_tokens,
     render_field_tokens,
 )
-from conlanger.tools.rules import DiachronicSeries, SoundChangeRule
+from conlanger.models.compile.rules import DiachronicSeries, SoundChangeRule
 
 
 @pytest.mark.parametrize(
