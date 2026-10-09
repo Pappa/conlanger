@@ -79,15 +79,15 @@ class IndexRule(BaseModel):
 
     model_config = ConfigDict(extra="forbid", validate_assignment=True)
 
+    rule_id: str | None = None
+    source: str
+    raw: str
     stages: list[str] = Field(default_factory=list)
     env: IndexContext | None = None
     exception: IndexContext | None = None
-    raw: str
-    source: str
     comment: str | None = None
     sporadic: bool | None = None
     status: str | None = None
-    rule_id: str | None = None
 
     _working_line: str = PrivateAttr()
     _initialised: bool = PrivateAttr(default=False)
@@ -172,7 +172,7 @@ class IndexSection(BaseModel):
     section: str
     index: str
     citation: str | None = None
-    comments: list[str] = Field(default_factory=list)
+    comments: list[str] | None = None
     rules: list[IndexRule] | None = None
     status: str | None = None
 
