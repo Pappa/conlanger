@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-from typing import Any
-
 from conlanger.tools.compile.asca.syllable_position import (
     strip_editorial_in_before_syllable_position,
 )
@@ -30,17 +28,6 @@ def _context_text(ctx: IndexContext | None) -> str | None:
     if ctx is None:
         return None
     return ctx.context
-
-
-def append_rule_comment_parts(parts: dict[str, Any], fragments: list[str]) -> None:
-    """Merge newly captured prose into optional ``comment`` on serialized rule dicts."""
-    addition = join_rule_comment(*fragments)
-    if not addition:
-        return
-    existing = parts.get("comment")
-    merged = join_rule_comment(existing, addition)
-    if merged:
-        parts["comment"] = merged
 
 
 def apply_sporadic_qualifier(rule: IndexRule) -> IndexRule:
@@ -145,7 +132,6 @@ def apply_medial_env_conditions(rule: IndexRule) -> IndexRule:
 
 __all__ = [
     "MEDIAL_BOUNDARY_EXCEPTION",
-    "append_rule_comment_parts",
     "apply_medial_env_conditions",
     "apply_sporadic_qualifier",
     "apply_stress_conditions",

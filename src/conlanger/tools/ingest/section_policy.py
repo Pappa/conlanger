@@ -3,9 +3,8 @@
 from __future__ import annotations
 
 import re
-from typing import Any
 
-from conlanger.tools.ingest.transforms import append_rule_comment_parts
+from conlanger.tools.ingest.index_models import IndexContext, IndexRule
 from conlanger.utils.gloss import (
     extract_trailing_gloss_from_field,
     extract_uncertainty_qualifier_from_field,
@@ -35,7 +34,13 @@ def _strip_else_env_glosses(env: str) -> tuple[str, list[str]]:
     return value.strip(), captures
 
 
-def resolve_catch_all_else_rules(rules: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def _resolve_env_text(env: IndexContext | None) -> str | None:
+    if env is None:
+        return None
+    return env.context
+
+
+def resolve_catch_all_else_rules(rules: list[IndexRule]) -> list[IndexRule]:
     """Rewrite complementary ``/ else`` rules using the immediately preceding env.
 
     When the previous rule in the same section has ``env`` and no ``exception``,
@@ -46,48 +51,38 @@ def resolve_catch_all_else_rules(rules: list[dict[str, Any]]) -> list[dict[str, 
     """
     if not rules:
         return rules
-    resolved_rules: list[dict[str, Any]] = []
+    resolved_rules: list[IndexRule] = []
     for rule in rules:
-        resolved = dict(rule)
-        env = resolved.get("env")
-        env_text = _resolve_env_text(env)
+        resolved = rule.model_copy(deep=True)
+        env_ctx = resolved.env
+        env_text = _resolve_env_text(env_ctx)
         if env_text and is_else_env_candidate(env_text):
             env_text, gloss_captures = _strip_else_env_glosses(env_text)
             if gloss_captures:
-                append_rule_comment_parts(resolved, gloss_captures)
+                resolved.merge_comment(*gloss_captures)
             if env_text:
-                if isinstance(env, dict):
-                    env["context"] = env_text
-                    resolved["env"] = env
+                if env_ctx is not None:
+                    resolved.env = env_ctx.model_copy(update={"context": env_text})
                 else:
-                    resolved["env"] = env_text
-            elif "env" in resolved:
-                del resolved["env"]
+                    resolved.env = IndexContext(context=env_text)
+            else:
+                resolved.env = None
 
             if is_catch_all_else_env(env_text):
                 prev = resolved_rules[-1] if resolved_rules else None
                 if prev:
-                    prev_env = prev.get("env")
+                    prev_env = prev.env
                     prev_env_text = _resolve_env_text(prev_env)
-                    prev_exc = prev.get("exception")
+                    prev_exc = prev.exception
 
                     if (
-                        prev_env
-                        and not prev_exc
-                        and not is_catch_all_else_env(prev_env_text)
-                        and "_" in prev_env
+                        prev_env is not None
+                        and prev_exc is None
+                        and not is_catch_all_else_env(prev_env_text or "")
+                        and prev_env_text
+                        and "_" in prev_env_text
                     ):
-                        resolved = {
-                            key: value
-                            for key, value in resolved.items()
-                            if key != "env"
-                        }
-                        resolved["exception"] = prev_env
+                        resolved.env = None
+                        resolved.exception = prev_env.model_copy(deep=True)
         resolved_rules.append(resolved)
     return resolved_rules
-
-
-def _resolve_env_text(env: str | dict[str, Any] | None) -> str | None:
-    if env and isinstance(env, dict):
-        return env.get("context")
-    return env

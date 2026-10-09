@@ -8,8 +8,7 @@ unchanged. ``raw`` is never mutated (callers apply this to working fields).
 
 from __future__ import annotations
 
-from typing import Any
-
+from conlanger.tools.ingest.index_models import IndexRule
 from conlanger.utils.bracket_scanner import (
     BRACES,
     is_brace_wrapped,
@@ -42,25 +41,29 @@ def flatten_nested_sets(text: str) -> str:
     return previous
 
 
-def flatten_nested_sets_in_rule_fields(rule: dict[str, Any]) -> dict[str, Any]:
+def flatten_nested_sets_in_rule_fields(rule: IndexRule) -> IndexRule:
     """Return a copy of ``rule`` with ``env`` / ``exception`` / ``stages`` flattened."""
-    updated = dict(rule)
-    for key in ("env", "exception"):
-        if key not in updated or not updated[key]:
+    updated = rule.model_copy(deep=True)
+    for field_name in ("env", "exception"):
+        ctx = getattr(updated, field_name)
+        if ctx is None or not ctx.context:
             continue
-        original = updated[key]
-        updated[key] = flatten_nested_sets(original)
-    stages = updated.get("stages")
-    if stages:
-        updated["stages"] = [
-            flatten_nested_sets(stage) if stage else stage for stage in stages
+        flattened = flatten_nested_sets(ctx.context)
+        setattr(
+            updated,
+            field_name,
+            ctx.model_copy(update={"context": flattened}),
+        )
+    if updated.stages:
+        updated.stages = [
+            flatten_nested_sets(stage) if stage else stage for stage in updated.stages
         ]
     return updated
 
 
 def flatten_nested_sets_in_section_rules(
-    rules: list[dict[str, Any]],
-) -> list[dict[str, Any]]:
+    rules: list[IndexRule],
+) -> list[IndexRule]:
     """Flatten env/exception/stages on each rule (after else resolution)."""
     return [flatten_nested_sets_in_rule_fields(rule) for rule in rules]
 

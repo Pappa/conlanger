@@ -7,6 +7,13 @@ from conlanger.tools.ingest.flatten_nested_sets import (
     flatten_nested_sets_in_rule_fields,
     flatten_nested_sets_in_section_rules,
 )
+from conlanger.tools.ingest.index_models import IndexRule
+
+
+def _rule(data: dict) -> IndexRule:
+    return IndexRule.model_validate(
+        {"source": "t", "raw": data.get("raw", "rule"), **data}
+    )
 
 
 @pytest.mark.parametrize(
@@ -202,9 +209,10 @@ def test_consume_segment_tail_stops_on_unclosed_or_nested_groupers(
     ],
 )
 def test_flatten_nested_sets_in_rule_fields(rule_in, expected):
-    rule = flatten_nested_sets_in_rule_fields(rule_in)
+    rule = flatten_nested_sets_in_rule_fields(_rule(rule_in))
+    dumped = rule.model_dump(exclude_none=True, mode="python")
     for key, value in expected.items():
-        assert rule[key] == value
+        assert dumped[key] == value
 
 
 @pytest.mark.parametrize(
@@ -288,7 +296,9 @@ def test_flatten_nested_sets_in_rule_fields(rule_in, expected):
     ],
 )
 def test_flatten_nested_sets_in_section_rules(rules_in, expected):
-    rules = flatten_nested_sets_in_section_rules(rules_in)
+    rules = flatten_nested_sets_in_section_rules([_rule(r) for r in rules_in])
     assert len(rules) == len(expected)
     for rule, exp in zip(rules, expected, strict=True):
-        assert rule == exp
+        dumped = rule.model_dump(exclude_none=True, mode="python")
+        for key, value in exp.items():
+            assert dumped[key] == value

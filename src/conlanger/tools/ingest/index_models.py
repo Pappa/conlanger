@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from collections.abc import Callable
-from typing import Any, ClassVar, Self
+from typing import Any, Self
 
 from pydantic import (
     BaseModel,
@@ -162,6 +162,31 @@ class IndexRule(BaseModel):
     def to_index_dict(self) -> dict[str, Any]:
         """Serialize for cleaned-index YAML (omit false defaults and nulls)."""
         return self.model_dump(exclude_none=True, mode="python")
+
+
+class IndexSection(BaseModel):
+    """One sound-change section in a parsed Index Diachronica document."""
+
+    model_config = ConfigDict(extra="forbid", validate_assignment=True)
+
+    section: str
+    index: str
+    citation: str | None = None
+    comments: list[str] = Field(default_factory=list)
+    rules: list[IndexRule] | None = None
+    status: str | None = None
+
+
+class Index(BaseModel):
+    """Parsed Index Diachronica document (cleaned-index YAML root)."""
+
+    model_config = ConfigDict(extra="forbid", validate_assignment=True)
+
+    name: str
+    sections: list[IndexSection] = Field(default_factory=list)
+
+    def add_section(self, section: IndexSection) -> None:
+        self.sections.append(section)
 
 
 def resolve_index_context_to_string(ctx: IndexContext) -> str:

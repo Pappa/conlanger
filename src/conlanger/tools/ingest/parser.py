@@ -48,7 +48,7 @@ from conlanger.tools.ingest.double_slash_env import apply_double_slash_env_condi
 from conlanger.tools.ingest.flatten_nested_sets import (
     flatten_nested_sets_in_section_rules,
 )
-from conlanger.tools.ingest.index_models import IndexRule
+from conlanger.tools.ingest.index_models import Index, IndexRule, IndexSection
 from conlanger.tools.ingest.index_rule_normalisation import (
     apply_index_rule_normalisation,
 )
@@ -135,7 +135,7 @@ class IndexDiachronicaParser:
         el,
         *,
         rule_id: str = "",
-    ) -> list[dict[str, Any]]:
+    ) -> list[IndexRule]:
         line = getattr(el, "sourceline", None) or 0
         source = f"{self._source_file}:{line}"
         raw = extract_element_text(el)
@@ -147,13 +147,13 @@ class IndexDiachronicaParser:
         rule_id: str | None,
         source: str,
         raw: str = "",
-    ) -> list[dict[str, Any]]:
+    ) -> list[IndexRule]:
         rule = IndexRule(raw=raw, source=source, rule_id=rule_id or None)
 
         if rule_id and rule_id in self._skipped_rules:
             rule.status = "skipped"
             rule.comment = self._skipped_rules[rule_id].reason
-            return [rule.to_index_dict()]
+            return [rule]
 
         if rule_id and rule_id in self._corrections:
             rule.text = self._corrections[rule_id]
@@ -181,7 +181,7 @@ class IndexDiachronicaParser:
         if is_quoted_prose_paragraph(rule.text):
             rule.stages = []
             rule.comment = raw.strip()
-            return [rule.to_index_dict()]
+            return [rule]
 
         rule.init()
 
@@ -199,7 +199,7 @@ class IndexDiachronicaParser:
         rule = rule.finalize_stages_shape()
         rule = rule.apply_dialects_to_env_fields()
 
-        return [rule.to_index_dict()]
+        return [rule]
 
     def parse(
         self,
@@ -207,13 +207,17 @@ class IndexDiachronicaParser:
         *,
         source_file: str = "index",
     ) -> dict[str, Any]:
-        """Parse a loaded Index Diachronica HTML tree into ``{sections: [...]}``."""
+        """Parse a loaded Index Diachronica HTML tree into a document mapping.
+
+        Root keys: ``name`` (``"Index Diachronica"``) and ``sections`` (sound-change
+        sections with nested ``IndexRule`` rows serialized to mappings).
+        """
         self._source_file = source_file
         self._manual_mapping_matches = []
         self._matched_manual_froms = set()
         self._matched_correction_ids = set()
         self.update_current_section("", "")
-        sections_out: list[dict[str, Any]] = []
+        index = Index(name="Index Diachronica")
 
         normalised = normalize_sub_tags(doc)
 
@@ -222,15 +226,15 @@ class IndexDiachronicaParser:
             if not h2s:
                 continue
             h2_text = strip_whitespace("".join(h2s[0].itertext()))
-            index, name = parse_section_heading(h2_text)
-            if not name or not index:
+            section_index, name = parse_section_heading(h2_text)
+            if not name or not section_index:
                 continue
 
-            self.update_current_section(index, name)
+            self.update_current_section(section_index, name)
 
-            rules: list[dict[str, Any]] = []
+            rules: list[IndexRule] = []
             citation: str | None = None
-            comments: list[dict[str, Any]] = []
+            comments: list[str] = []
 
             for p in sec.xpath("./p"):
                 cls = p.get("class", "")
@@ -253,20 +257,17 @@ class IndexDiachronicaParser:
                 else:
                     comments.append(comment)
 
-            section_obj: dict[str, Any] = {
-                "section": name,
-                "index": index,
-            }
+            section = IndexSection(section=name, index=section_index)
             if citation is not None:
-                section_obj["citation"] = citation
+                section.citation = citation
             if comments:
-                section_obj["comments"] = comments
+                section.comments = comments
             if rules:
-                section_obj["rules"] = flatten_nested_sets_in_section_rules(
+                section.rules = flatten_nested_sets_in_section_rules(
                     resolve_catch_all_else_rules(rules)
                 )
-            if index and index in self._skipped_sections:
-                section_obj["status"] = "skipped"
-            sections_out.append(section_obj)
+            if section_index and section_index in self._skipped_sections:
+                section.status = "skipped"
+            index.add_section(section)
 
-        return {"sections": sections_out}
+        return index.model_dump(exclude_none=True, mode="python")

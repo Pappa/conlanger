@@ -1,7 +1,7 @@
 import pytest
 from lxml import html
 
-from conlanger.tools.ingest import IndexDiachronicaParser
+from conlanger.tools.ingest import Index, IndexDiachronicaParser, IndexRule
 from conlanger.utils.mappings import (
     IpaMapping,
     ManualMapping,
@@ -18,6 +18,10 @@ def fx_rule():
         "section_name": "Proto-Indo-European to Klingon",
         "source": "index:1",
     }
+
+
+def _rule_dump(rule: IndexRule) -> dict:
+    return rule.model_dump(exclude_none=True, mode="python")
 
 
 def prepare_parser(
@@ -38,7 +42,7 @@ def test_parse_rule_string_medial_with_exception_env_normalized(fx_rule):
     raw = "b → h / medially, ! r_"
     parser = prepare_parser(fx_rule)
     rules = parser.parse_rule_string(fx_rule["rule_id"], fx_rule["source"], raw)
-    assert rules[0] == {
+    assert _rule_dump(rules[0]) == {
         "raw": raw,
         "rule_id": fx_rule["rule_id"],
         "source": fx_rule["source"],
@@ -61,6 +65,7 @@ def test_parse_element_handles_dialectal_rules():
     )
     parser = IndexDiachronicaParser()
     doc = parser.parse(root)
+    assert doc["name"] == "Index Diachronica"
     rule1 = doc["sections"][0]["rules"][0]
     rule2 = doc["sections"][0]["rules"][1]
 
@@ -78,7 +83,7 @@ def test_parse_element_handles_dialectal_rules():
 def test_parse_element_handles_dialectal(fx_rule, raw, expected):
     parser = prepare_parser(fx_rule)
     rules = parser.parse_rule_string(fx_rule["rule_id"], fx_rule["source"], raw)
-    assert rules[0]["env"] == expected
+    assert _rule_dump(rules[0])["env"] == expected
 
 
 @pytest.mark.parametrize("h2_element", ["", "<h2>   </h2>"])
@@ -140,8 +145,9 @@ def test_parse_order_correction_then_section_then_manual(fx_rule):
     )
     parser = prepare_parser(fx_rule, parser_config=config)
     rules = parser.parse_rule_string(fx_rule["rule_id"], fx_rule["source"], raw)
-    assert rules[0]["raw"] == raw
-    assert rules[0]["stages"] == ["D", "manual"]
+    dumped = _rule_dump(rules[0])
+    assert dumped["raw"] == raw
+    assert dumped["stages"] == ["D", "manual"]
 
 
 def test_parser_marks_skip_rules_from_config():
@@ -183,7 +189,7 @@ def test_index_diachronica_parser_accepts_custom_parser_config(fx_rule):
 
     rules = parser.parse_rule_string(fx_rule["rule_id"], fx_rule["source"], raw)
 
-    assert rules == [
+    assert [_rule_dump(rule) for rule in rules] == [
         {
             "raw": raw,
             "rule_id": fx_rule["rule_id"],
@@ -230,7 +236,7 @@ def test_parse_rule_string_apply_dialects_to_context(fx_rule, raw, expected):
     parser = prepare_parser(fx_rule)
     rules = parser.parse_rule_string(fx_rule["rule_id"], fx_rule["source"], raw)
 
-    assert rules[0] == {
+    assert _rule_dump(rules[0]) == {
         "raw": raw,
         "rule_id": fx_rule["rule_id"],
         "source": fx_rule["source"],
@@ -242,7 +248,7 @@ def test_parse_rule_string_apply_dialects_to_context(fx_rule, raw, expected):
 def test_parse_rule_string_without_manual_row_unchanged(fx_rule):
     parser = prepare_parser(fx_rule)
     rules = parser.parse_rule_string(fx_rule["rule_id"], fx_rule["source"], "a → b")
-    assert rules[0]["stages"] == ["a", "b"]
+    assert _rule_dump(rules[0])["stages"] == ["a", "b"]
     assert parser.manual_mapping_matches == []
     assert parser.unmatched_manual_mappings == []
 
@@ -258,7 +264,7 @@ def test_parse_rule_string_manual_mappings_matches_and_unmatched(fx_rule):
     parser = prepare_parser(fx_rule, parser_config=config)
     rules = parser.parse_rule_string(fx_rule["rule_id"], fx_rule["source"], broken)
 
-    assert rules == [
+    assert [_rule_dump(rule) for rule in rules] == [
         {
             "raw": broken,
             "rule_id": fx_rule["rule_id"],
@@ -293,7 +299,7 @@ def test_unmatched_corrections(fx_rule):
 def test_parse_rule_string_comment(fx_rule, raw, expected):
     parser = prepare_parser(fx_rule)
     rules = parser.parse_rule_string(fx_rule["rule_id"], fx_rule["source"], raw)
-    assert rules == [
+    assert [_rule_dump(rule) for rule in rules] == [
         {
             "raw": raw,
             "rule_id": fx_rule["rule_id"],
@@ -301,3 +307,30 @@ def test_parse_rule_string_comment(fx_rule, raw, expected):
             **expected,
         }
     ]
+
+
+def test_parse_return_round_trips_through_index_model(fx_rule):
+    root = html.document_fromstring(
+        """\
+<!doctype html><html><body><section id="Golden">
+<h2>1.0 Proto-Indo-European to Klingon</h2>
+<p class="schg" id="golden-rule">a → b / _#</p>
+</section></body></html>"""
+    )
+    doc = prepare_parser(fx_rule).parse(root, source_file="golden.html")
+    assert doc == Index.model_validate(doc).model_dump(exclude_none=True, mode="python")
+    assert doc["name"] == "Index Diachronica"
+    assert doc["sections"][0]["rules"][0]["source"] == "golden.html:3"
+
+
+def test_parse_returns_index_document_with_name_and_structured_env(fx_rule):
+    root = html.document_fromstring(
+        """\
+<!doctype html><html><body><section id="Dialectal">
+<h2>1.0 Proto-Indo-European to Klingon</h2>
+<p class="schg">a → i / in northern dialects</p>
+</section></body></html>"""
+    )
+    doc = prepare_parser(fx_rule).parse(root)
+    assert doc["name"] == "Index Diachronica"
+    assert doc["sections"][0]["rules"][0]["env"] == {"dialect": "northern"}
