@@ -47,26 +47,26 @@ from conlanger.ingest.models.mappings import (
     apply_manual_mappings,
     apply_section_mappings,
 )
-from conlanger.tools.ingest.corpus_apply import (
+from conlanger.ingest.utils.corpus_apply import (
     apply_feature_mappings,
     apply_ipa_mappings,
     apply_series_expansions,
 )
-from conlanger.tools.ingest.double_slash_env import apply_double_slash_env_conditions
-from conlanger.tools.ingest.flatten_nested_sets import (
+from conlanger.ingest.utils.double_slash_env import apply_double_slash_env_conditions
+from conlanger.ingest.utils.flatten_nested_sets import (
     flatten_nested_sets_in_section_rules,
 )
-from conlanger.tools.ingest.index_rule_normalisation import (
+from conlanger.ingest.utils.index_rule_normalisation import (
     apply_index_rule_normalisation,
 )
-from conlanger.tools.ingest.prose_conditional_env import (
+from conlanger.ingest.utils.prose_conditional_env import (
     apply_prose_conditional_env_conditions,
 )
-from conlanger.tools.ingest.prose_position_env import (
+from conlanger.ingest.utils.prose_position_env import (
     apply_prose_position_env_conditions,
 )
-from conlanger.tools.ingest.section_policy import resolve_catch_all_else_rules
-from conlanger.tools.ingest.transforms import (
+from conlanger.ingest.utils.section_policy import resolve_catch_all_else_rules
+from conlanger.ingest.utils.transforms import (
     apply_medial_env_conditions,
     apply_sporadic_qualifier,
     apply_stress_conditions,

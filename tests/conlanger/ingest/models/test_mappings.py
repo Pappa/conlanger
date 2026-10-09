@@ -15,7 +15,7 @@ from conlanger.ingest.models.mappings import (
     normalize_feature_matrices_in_field,
     normalize_ipa_in_field,
 )
-from conlanger.tools.ingest.corpus_apply import (
+from conlanger.ingest.utils.corpus_apply import (
     apply_feature_mappings,
     apply_ipa_mappings,
 )

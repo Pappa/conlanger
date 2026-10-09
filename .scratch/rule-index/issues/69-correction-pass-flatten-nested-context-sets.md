@@ -56,8 +56,8 @@ ASCA 0.10.2 rejects nested `{}` of the same bracket type at lex time (`NestedBra
 - Do not expand already-ok field-level `({set})X` unless tests show no meaning change (spike saw `:12670` / `:13844` stay `ok`).
 
 **Key interfaces:**
-- `src/conlanger/tools/ingest/parser.py` — `parse()` after else resolution; optionally `parse_rule_element` is **not** sufficient alone (else copies env afterward).
-- `src/conlanger/tools/ingest/section_policy.py` — `resolve_catch_all_else_rules`.
+- `src/conlanger/ingest/parser.py` — `parse()` after else resolution; optionally `parse_rule_element` is **not** sufficient alone (else copies env afterward).
+- `src/conlanger/ingest/utils/section_policy.py` — `resolve_catch_all_else_rules`.
 - Tests: `tests/conlanger/tools/ingest/` — TDD on HTML `source` lines `:1903`, `:5509`/`:5510`, `:6192`, `:1762`, `:11518`. Do **not** put the handler under compile `pipeline.py`.
 
 **Acceptance criteria:** (same as ticket body)

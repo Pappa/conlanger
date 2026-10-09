@@ -115,7 +115,7 @@ Regen (`uv run create_index`): **ok +18** for §10.x `*D`/`*R`/`*T` rules (18 ch
 ## References
 
 - [`data/parser_config.yml`](../../../data/parser_config.yml) — seed `10.1` rows
-- [`src/conlanger/tools/ingest/parser.py`](../../../src/conlanger/tools/ingest/parser.py) — `parse_rule_element` ordering
+- [`src/conlanger/ingest/parser.py`](../../../src/conlanger/ingest/parser.py) — `parse_rule_element` ordering
 - [`src/conlanger/ingest/models/mappings.py`](../../../src/conlanger/ingest/models/mappings.py) — `apply_manual_mappings`, `CompilerConfig.resolved_series_mappings`
 - [`src/conlanger/utils/series.py`](../../../src/conlanger/utils/series.py) — `section_index_prefixes`
 - [Parse-time manual rule mappings](60-parse-time-manual-rule-mappings.md) — manual mapping runs after section mappings (order amended by this ticket)

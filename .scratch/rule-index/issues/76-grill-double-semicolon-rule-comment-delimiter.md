@@ -75,8 +75,8 @@ Follow-on: [77 — Implement first-`;` comment cut before chain split](77-implem
 
 ## References
 
-- `src/conlanger/tools/ingest/parser.py` — `parse_rule_element` pass order
-- `src/conlanger/tools/ingest/transforms.py` — `apply_semicolon_field_comments`, `join_rule_comment`
+- `src/conlanger/ingest/parser.py` — `parse_rule_element` pass order
+- `src/conlanger/ingest/utils/transforms.py` — `apply_semicolon_field_comments`, `join_rule_comment`
 - `src/conlanger/utils/gloss.py` — `extract_semicolon_prose_from_field`
 - `src/conlanger/utils/parsing.py` — `extract_rule_parts`, `build_stages_from_spine`
 - [docs/system/index-diachronica-parser.md](../../docs/system/index-diachronica-parser.md) (update in [77](77-implement-first-semicolon-comment-cut.md))

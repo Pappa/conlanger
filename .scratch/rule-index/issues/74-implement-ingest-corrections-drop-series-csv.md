@@ -104,4 +104,4 @@ Retire or gate `update_series_mappings` script and `series_extract` integration 
 - `CONTEXT.md` — **Index Diachronica correction**, **Rule id**, **Correspondence-series index**, **Collective subscript**
 - ADR-0004 (amended 2026-08-18), ADR-0012 (corrections overlay)
 - [Parse-time manual rule mappings](60-parse-time-manual-rule-mappings.md)
-- `src/conlanger/tools/ingest/parser.py`, `src/conlanger/tools/index_inventory.py`, `src/conlanger/utils/file_io.py`
+- `src/conlanger/ingest/parser.py`, `src/conlanger/tools/index_inventory.py`, `src/conlanger/utils/file_io.py`

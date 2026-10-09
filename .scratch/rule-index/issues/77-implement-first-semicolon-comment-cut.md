@@ -72,6 +72,6 @@ Implemented 2026-08-18. `split_line_semicolon_comment` partitions the first `;` 
 
 - [Grill 76](76-grill-double-semicolon-rule-comment-delimiter.md)
 - [Ticket 30](30-rule-comment-field-on-index-rules.md) (order amended)
-- `src/conlanger/tools/ingest/parser.py` — `parse_rule_element`
-- `src/conlanger/tools/ingest/transforms.py` — `apply_semicolon_field_comments`, `join_rule_comment`
+- `src/conlanger/ingest/parser.py` — `parse_rule_element`
+- `src/conlanger/ingest/utils/transforms.py` — `apply_semicolon_field_comments`, `join_rule_comment`
 - `data/common/manual_mappings.csv`

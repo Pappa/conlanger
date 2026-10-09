@@ -6,7 +6,7 @@ Blocked by:
 
 ## Question
 
-Rewire [`parse_rule_string`](../../../src/conlanger/tools/ingest/parser.py) so the rule is a single **`IndexRule`** from line ~157 through return. **[145](145-implement-indexrule-parse-lifecycle-and-parse-raw-rule.md) is resolved** (`update_rule` / `update_model` on the model); this ticket completes parser + transform migration — **no** `parts: dict[str, Any]`.
+Rewire [`parse_rule_string`](../../../src/conlanger/ingest/parser.py) so the rule is a single **`IndexRule`** from line ~157 through return. **[145](145-implement-indexrule-parse-lifecycle-and-parse-raw-rule.md) is resolved** (`update_rule` / `update_model` on the model); this ticket completes parser + transform migration — **no** `parts: dict[str, Any]`.
 
 ## Target `parse_rule_string` shape
 

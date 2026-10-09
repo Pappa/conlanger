@@ -17,7 +17,7 @@ Introduce pydantic **`IndexRule`** (parse-time counterpart to **`SoundChangeRule
 
 ## Acceptance
 
-- [x] `IndexContext`, `IndexRule` in `src/conlanger/tools/ingest/` (or shared models module)
+- [x] `IndexContext`, `IndexRule` in `src/conlanger/ingest/utils/` (or shared models module)
 - [x] YAML round-trip tests for example shapes from 141
 - [x] `uv run create_index` regen: intentional schema migration (inventory run documents delta)
 - [x] Parser doc + ADRs 140/141 landed or linked

@@ -18,11 +18,11 @@ Also decide **Phase 0** rollout (additive YAML fields, no compile change), **`le
 
 ## Facts (do not re-litigate without new evidence)
 
-- `manual_mappings.yml` injects `sporadic ;` before dialect/region phrases so [apply_sporadic_qualifier](../../../src/conlanger/tools/ingest/transforms.py) sets `sporadic: true` — conflates dialect conditioning with uncertainty ([exploration doc](../research/structured-rule-conditioning-exploration.md) Part 2).
+- `manual_mappings.yml` injects `sporadic ;` before dialect/region phrases so [apply_sporadic_qualifier](../../../src/conlanger/ingest/utils/transforms.py) sets `sporadic: true` — conflates dialect conditioning with uncertainty ([exploration doc](../research/structured-rule-conditioning-exploration.md) Part 2).
 - `_UNCERTAINTY_WORDS` in [gloss.py](../../../src/conlanger/utils/gloss.py): `sporadic`, `sometimes`, `occasionally`, `(?)` — not dialect phrases.
 - [Ticket 68](68-sporadic-sampling.md): `sporadic: true` → 50% apply/skip at **render** via instance `Random`; inventory **always applies**. Distinct from optional outputs ([61](61-grill-optional-outputs.md)).
-- [prose_position_env.py](../../../src/conlanger/tools/ingest/prose_position_env.py): `not universal` → `sporadic: true`; trailing `, in monosyllables` → `comment` (ticket 107).
-- [double_slash_env.py](../../../src/conlanger/tools/ingest/double_slash_env.py): dialect names in `//` env often → `comment` (ticket 108).
+- [prose_position_env.py](../../../src/conlanger/ingest/utils/prose_position_env.py): `not universal` → `sporadic: true`; trailing `, in monosyllables` → `comment` (ticket 107).
+- [double_slash_env.py](../../../src/conlanger/ingest/utils/double_slash_env.py): dialect names in `//` env often → `comment` (ticket 108).
 - **Sporadic** vs **optional outputs** vs **applicability** are three gates in glossary [CONTEXT.md](../../../CONTEXT.md).
 - Proposed fields: `applicability` (dialect/region/morphology/uncertainty), optional `conditions` for non-proximity env atoms, `lexical_targets` in parser config ([exploration doc](../research/structured-rule-conditioning-exploration.md) Parts 4–6).
 

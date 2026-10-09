@@ -1,7 +1,7 @@
 import pytest
 
 from conlanger.ingest.models.index_models import IndexRule
-from conlanger.tools.ingest.flatten_nested_sets import (
+from conlanger.ingest.utils.flatten_nested_sets import (
     _consume_segment_tail,
     _try_distribute,
     flatten_nested_sets,

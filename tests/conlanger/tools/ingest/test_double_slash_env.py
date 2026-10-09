@@ -1,7 +1,7 @@
 import pytest
 
 from conlanger.ingest.models.index_models import IndexRule
-from conlanger.tools.ingest.double_slash_env import (
+from conlanger.ingest.utils.double_slash_env import (
     apply_double_slash_env_conditions,
     normalize_prose_env_head,
     normalize_prose_exception_or_env_tail,

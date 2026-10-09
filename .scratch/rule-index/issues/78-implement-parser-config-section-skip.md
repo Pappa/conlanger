@@ -124,7 +124,7 @@ Implemented 2026-08-18.
 ## References
 
 - [`data/parser_config.yml`](../../../data/parser_config.yml)
-- [`src/conlanger/tools/ingest/parser.py`](../../../src/conlanger/tools/ingest/parser.py) — section emission
+- [`src/conlanger/ingest/parser.py`](../../../src/conlanger/ingest/parser.py) — section emission
 - [`src/conlanger/tools/index_inventory.py`](../../../src/conlanger/tools/index_inventory.py) — `validate_index_rule`, `summarize_inventory`
 - [`src/conlanger/compile/models/rules.py`](../../../src/conlanger/compile/models/rules.py) — `DiachronicSeries`
 - [Corpus rule `stages` schema / rule `status: skipped`](59-index-rule-stages-schema.md)

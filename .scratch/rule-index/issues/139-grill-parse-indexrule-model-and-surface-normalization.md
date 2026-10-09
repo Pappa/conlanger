@@ -34,7 +34,7 @@ Before (or interleaved with) today's heavy `extract_rule_parts` / prose passes, 
 
 ## Facts (do not re-litigate without new evidence)
 
-- Today `parse_rule_element` threads a `dict` from `extract_rule_parts` through ~15 transforms ([`parser.py`](../../../src/conlanger/tools/ingest/parser.py)); compile uses pydantic `SoundChangeRule` + per-field compile ([ADR-0014](../../../docs/adr/0014-per-field-asca-compile.md)).
+- Today `parse_rule_element` threads a `dict` from `extract_rule_parts` through ~15 transforms ([`parser.py`](../../../src/conlanger/ingest/parser.py)); compile uses pydantic `SoundChangeRule` + per-field compile ([ADR-0014](../../../docs/adr/0014-per-field-asca-compile.md)).
 - [122](122-grill-proximity-conditions-yaml.md) (paused): YAML `position: {env?, exception?}` relation map; targets stay in `env`/`exception` **strings**; parser extracts from `raw` with open **Q9/Q10** (manual mappings vs extract order).
 - [123](123-grill-applicability-dialect-sporadic-conditions-yaml.md) (open): `applicability` object; retire `sporadic ;` manual injections; Phase 0 additive fields.
 - Docs order A½: corrections → section_mappings → manual_mappings → B½ semicolon partition → B symbols → C split ([`index-diachronica-parser.md`](../../../docs/system/index-diachronica-parser.md)).

@@ -45,7 +45,7 @@ from conlanger.compile.tools.asca.group_mappings import asca_group_mappings_dict
 from conlanger.tools.index_inventory import (
     validate_index_rule,
 )
-from conlanger.tools.ingest.section_policy import resolve_catch_all_else_rules
+from conlanger.ingest.utils.section_policy import resolve_catch_all_else_rules
 
 YAML_PATH = ROOT / "data/diachronica/index_diachronica.yml"
 INVENTORY_PATH = ROOT / "diagnostics/inventory/rule-inventory.csv"

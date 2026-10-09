@@ -8,12 +8,12 @@ unchanged. ``raw`` is never mutated (callers apply this to working fields).
 
 from __future__ import annotations
 
-from conlanger.ingest.models.index_models import IndexRule
 from conlanger.compile.tools.bracket_scanner import (
     BRACES,
     is_brace_wrapped,
     split_outside_brackets,
 )
+from conlanger.ingest.models.index_models import IndexRule
 
 _MAX_PASSES = 16
 

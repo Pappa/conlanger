@@ -26,7 +26,7 @@ This ticket completes the parse **document** layer: typed Pydantic models end-to
 
 ### 1. `parse_rule_string` and `parse_rule_element`
 
-**File:** [`src/conlanger/tools/ingest/parser.py`](../../../src/conlanger/tools/ingest/parser.py)
+**File:** [`src/conlanger/ingest/parser.py`](../../../src/conlanger/ingest/parser.py)
 
 - Change return type to **`list[IndexRule]`** (all exit paths).
 - Replace every **`return [rule.to_index_dict()]`** with **`return [rule]`** (including skip-rules, quoted-prose, and fully transformed paths).
@@ -40,9 +40,9 @@ Refactor these modules to accept and return **`IndexRule`** (and **`list[IndexRu
 
 | Function | File |
 | --- | --- |
-| `flatten_nested_sets_in_section_rules` | [`flatten_nested_sets.py`](../../../src/conlanger/tools/ingest/flatten_nested_sets.py) |
+| `flatten_nested_sets_in_section_rules` | [`flatten_nested_sets.py`](../../../src/conlanger/ingest/utils/flatten_nested_sets.py) |
 | `flatten_nested_sets_in_rule_fields` | same |
-| `resolve_catch_all_else_rules` | [`section_policy.py`](../../../src/conlanger/tools/ingest/section_policy.py) |
+| `resolve_catch_all_else_rules` | [`section_policy.py`](../../../src/conlanger/ingest/utils/section_policy.py) |
 
 **`flatten_nested_sets_in_rule_fields(rule: IndexRule) -> IndexRule`:**
 
@@ -53,7 +53,7 @@ Refactor these modules to accept and return **`IndexRule`** (and **`list[IndexRu
 
 **`resolve_catch_all_else_rules(rules: list[IndexRule]) -> list[IndexRule]`:**
 
-- Preserve current complementary-`else` logic ([`section_policy.py`](../../../src/conlanger/tools/ingest/section_policy.py)).
+- Preserve current complementary-`else` logic ([`section_policy.py`](../../../src/conlanger/ingest/utils/section_policy.py)).
 - Replace **`append_rule_comment_parts(dict, …)`** with **`IndexRule.merge_comment`** (or equivalent on the model). Refactor **`append_rule_comment_parts`** only if it becomes unused; prefer **`merge_comment`** on the model as the single API.
 - Env text resolution must use **`IndexContext`** (e.g. read/write **`context`** on the model), not bare strings on **`env`/`exception`** attributes — consistent with [146](146-migrate-parse-field-transforms-to-indexrule.md).
 - When copying the previous rule’s env onto an else rule’s **exception**, assign the **`IndexContext`** object (deep copy), not a dict snapshot.
@@ -106,7 +106,7 @@ class Index(BaseModel):
 
 ### 5. Public exports and docs
 
-- Export **`Index`**, **`IndexSection`** from [`src/conlanger/tools/ingest/__init__.py`](../../../src/conlanger/tools/ingest/__init__.py) alongside **`IndexRule`**, **`IndexContext`**.
+- Export **`Index`**, **`IndexSection`** from [`src/conlanger/ingest/__init__.py`](../../../src/conlanger/ingest/__init__.py) alongside **`IndexRule`**, **`IndexContext`**.
 - Update [`docs/system/index-diachronica-parser.md`](../../../docs/system/index-diachronica-parser.md): parse output is built from **`Index`** / **`IndexSection`** / **`IndexRule`**; note new top-level **`name`** on written YAML.
 
 ## Tests

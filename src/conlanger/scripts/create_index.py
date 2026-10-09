@@ -13,6 +13,7 @@ from pathlib import Path
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
+from conlanger.ingest import IndexDiachronicaParser
 from conlanger.scripts.config_loaders import load_parser_config
 from conlanger.scripts.pipeline_defaults import (
     DEFAULT_COMMENT_SUMMARY,
@@ -22,7 +23,6 @@ from conlanger.scripts.pipeline_defaults import (
     ROOT,
 )
 from conlanger.tools.index_io import write_cleaned_index
-from conlanger.tools.ingest import IndexDiachronicaParser
 from conlanger.utils.file_io import (
     MANUAL_MAPPINGS_MATCHED_CSV_NAME,
     write_manual_mappings_matched_csv,

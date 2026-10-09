@@ -6,7 +6,7 @@ from conlanger.ingest.models.index_models import (
     IndexRule,
     IndexSection,
 )
-from conlanger.tools.ingest.parser import IndexDiachronicaParser
+from conlanger.ingest.parser import IndexDiachronicaParser
 
 __all__ = [
     "Index",

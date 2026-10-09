@@ -19,7 +19,7 @@ Throwaway code: [`flatten_nested_sets.py`](./flatten_nested_sets.py), [`nested_s
 | Mode `union_paren`: `({m,j,w})V` → `{mV,jV,wV}`; `(C){p,kʷ}` as a **set member** → `(C)p,(C)kʷ` | Unbalanced / malformed (`2173`, `4654`, …) — returned unchanged |
 | Each **stage string** independently + **env** + **exception** | **`raw`** (never) |
 
-Unbalanced strings (`brace_balance != 0`) are left unchanged. Flat sets are not re-serialized (preserves ASCA env-set spacing `#_, _#` from medial, [`transforms.py`](../../../src/conlanger/tools/ingest/transforms.py) `apply_medial_env_conditions`).
+Unbalanced strings (`brace_balance != 0`) are left unchanged. Flat sets are not re-serialized (preserves ASCA env-set spacing `#_, _#` from medial, [`transforms.py`](../../../src/conlanger/ingest/utils/transforms.py) `apply_medial_env_conditions`).
 
 Self-check (2026-08-19): `uv run python .scratch/rule-index/research/flatten_nested_sets.py` — all fixtures pass, including `(h)ə{p,b}` unchanged in both modes and `{hə{p,b},ə{p,b}}` → `{həp,həb,əp,əb}` (compile-time D shape; see §6).
 
@@ -32,7 +32,7 @@ Self-check (2026-08-19): `uv run python .scratch/rule-index/research/flatten_nes
 3. Re-validate every source that either changed or is currently `failure_class=nested_brackets` via `validate_index_rule` / `iter_validation_rows` path ([`index_inventory.py`](../../../src/conlanger/tools/index_inventory.py) `validate_index_rule`; group mappings `asca_group_mappings_dict()` as `create_index`). ASCA **0.10.2** (`asca --version`).
 4. Merge unchanged inventory rows from [`diagnostics/inventory/rule-inventory.csv`](../inventory/rule-inventory.csv). Unflattened rules cannot flip `ok`. Changelog flips are computed in memory against that CSV (`ok_flip_changelog_rows` match key `(source, alt_idx)`); **not** appended to the committed changelog.
 
-Phase A on committed YAML is **P4-equivalent**: else resolution has already copied prev `env` → `exception` ([`section_policy.py`](../../../src/conlanger/tools/ingest/section_policy.py) `resolve_catch_all_else_rules`; YAML `:5510` already has `exception: _{s,({m,j,w})V}`).
+Phase A on committed YAML is **P4-equivalent**: else resolution has already copied prev `env` → `exception` ([`section_policy.py`](../../../src/conlanger/ingest/utils/section_policy.py) `resolve_catch_all_else_rules`; YAML `:5510` already has `exception: _{s,({m,j,w})V}`).
 
 ---
 
@@ -78,7 +78,7 @@ No `ok` True→False in either mode. Mode 2 can still rewrite already-ok fields 
 
 ## 4. Parse insertion (Phase B)
 
-Candidate slots from [`parse_rule_element`](../../../src/conlanger/tools/ingest/parser.py) / `IndexDiachronicaParser.parse`:
+Candidate slots from [`parse_rule_element`](../../../src/conlanger/ingest/parser.py) / `IndexDiachronicaParser.parse`:
 
 | Slot | Location | Verdict |
 |------|----------|---------|
@@ -94,7 +94,7 @@ Candidate slots from [`parse_rule_element`](../../../src/conlanger/tools/ingest/
 - P3: flatten prev `env`, then `resolve_catch_all_else_rules` copies that string to else `exception`.
 - P4: copy nested `env` first, then flatten both fields.
 
-For `union_paren`, both slots yield `exception: _{s,mV,jV,wV}` (`exception_equal: true` in metrics JSON). Union-only leaves the nested form in both slots (also equal). **Copy ∘ flatten = flatten ∘ copy** for this else rewrite ([`section_policy.py`](../../../src/conlanger/tools/ingest/section_policy.py) assigns `resolved["exception"] = prev_env`).
+For `union_paren`, both slots yield `exception: _{s,mV,jV,wV}` (`exception_equal: true` in metrics JSON). Union-only leaves the nested form in both slots (also equal). **Copy ∘ flatten = flatten ∘ copy** for this else rewrite ([`section_policy.py`](../../../src/conlanger/ingest/utils/section_policy.py) assigns `resolved["exception"] = prev_env`).
 
 **Deferred else (does not copy nested exception):** `:1762` `aː → aa / W_ ! when _{C{C,ː},#}` then `:1763` `/ else` (HTML [lines 1762–1763](../../../data/diachronica/index_diachronica.html)). Prev has both `env` and `exception`, so else **keeps** `env: else` (YAML `:1763`; test `test_resolve_catch_all_else_deferred_prev_env_and_exception`). Flatten P3 vs P4 does not change that copy (there is none). Flattening `:1762` `exception` is independent and recovers `ok` in both modes (CSV).
 
@@ -112,7 +112,7 @@ For `union_paren`, both slots yield `exception: _{s,mV,jV,wV}` (`exception_equal
 | Ordering | Why rejected |
 |----------|----------------|
 | P1-only | `series_expansions` can still introduce `{…}` afterward; flatten would miss them. |
-| P2-only | Stress/medial/feature/IPA still rewrite env after series ([`parser.py`](../../../src/conlanger/tools/ingest/parser.py) lines 187–190). Canonical flatten should see post-normalizer strings. |
+| P2-only | Stress/medial/feature/IPA still rewrite env after series ([`parser.py`](../../../src/conlanger/ingest/parser.py) lines 187–190). Canonical flatten should see post-normalizer strings. |
 | P3-only | Equivalent for today’s else copy, but else-derived `exception` is created **after** `parse_rule_element`. P4 is the slot that matches “flatten all derived context fields.” |
 | Compile-only flatten after `expand_meta_notation` / parentheticals | Would “fix” bucket D (`{hə{p,b},ə{p,b}}`) and mix #71 into #69/#70. Also leaves nested `{}` in applier-neutral YAML (ADR-0002). |
 | Compile-only flatten *before* parentheticals | Same as parse-time on YAML fields for true nests, but env normalizers (medial, else, series) already live at parse — splitting flatten to compile fights that class. |
@@ -145,7 +145,7 @@ Index nested form is often **authorial condensation**, not a transcription of th
 
 **Parse-time flatten at P4** (union on stages + env + exception; **union_paren** for env/exception and for I/O members like `:1398`). Preserve `raw`.
 
-- ADR-0010: class-first mechanical de-condensation; `raw` remains the Index audit trail. Same class as medial, else, stress, feature/IPA, `series_expansions` ([`parser.py`](../../../src/conlanger/tools/ingest/parser.py) module docstring).
+- ADR-0010: class-first mechanical de-condensation; `raw` remains the Index audit trail. Same class as medial, else, stress, feature/IPA, `series_expansions` ([`parser.py`](../../../src/conlanger/ingest/parser.py) module docstring).
 - ADR-0002: YAML should not store nested `{…}` that **no** applier accepts. ASCA 0.10.2: `NestedBrackets` — “Cannot have nested brackets of the same type” ([`syntax.rs`](https://github.com/Girv98/asca-rust/blob/0.10.2/src/error/syntax.rs); [doc/doc.md Sets](https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md); [asca-rule-validity.md](./asca-rule-validity.md) §2 / §6). Brassica categories are also non-nested ([#67 findings](./nested-sets-inventory.md) §1).
 - Compile-only (as #69/#70 were written) would either (a) leave nested YAML, or (b) if run after ticket-48 parentheticals, flatten D and violate the #71 boundary (self-check `{hə{p,b},ə{p,b}}` → `{həp,həb,əp,əb}`).
 

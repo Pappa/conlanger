@@ -11,7 +11,7 @@ from fixtures.minimal_mappings import minimal_feature_mappings
 from lxml import html
 
 from conlanger.ingest.models.mappings import ParserConfig
-from conlanger.tools.ingest import IndexDiachronicaParser
+from conlanger.ingest import IndexDiachronicaParser
 
 _INDEX_HTML = """\
 <!doctype html>

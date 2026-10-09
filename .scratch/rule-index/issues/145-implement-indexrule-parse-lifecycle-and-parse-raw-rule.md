@@ -12,7 +12,7 @@ How should **`IndexRule`** carry the parse working line from entry through overl
 
 ### Construction at parser entry (~line 157)
 
-In [`parse_rule_string`](../../../src/conlanger/tools/ingest/parser.py), create **`IndexRule` immediately** at the start of the function body (before skip/correction branches). Constructor requires only corpus identity fields:
+In [`parse_rule_string`](../../../src/conlanger/ingest/parser.py), create **`IndexRule` immediately** at the start of the function body (before skip/correction branches). Constructor requires only corpus identity fields:
 
 ```python
 rule = IndexRule(raw=raw, source=source, rule_id=rule_id or None)
@@ -66,7 +66,7 @@ Renamed from `parse_raw_rule`. Called **once** after quoted-prose check fails (t
 
 Derives **public** index fields from the current **`_working_line`**:
 
-1. **First-`;` comment partition** (today [`split_semicolon_comment`](../../../src/conlanger/tools/ingest/transforms.py)): partition on first `;`; head → `_working_line` (`.rstrip()`); tail → merge into `comment` via [`join_rule_comment`](../../../src/conlanger/tools/ingest/transforms.py). Behaviour must match [`test_split_semicolon_comment`](../../../tests/conlanger/tools/ingest/test_transforms.py).
+1. **First-`;` comment partition** (today [`split_semicolon_comment`](../../../src/conlanger/ingest/utils/transforms.py)): partition on first `;`; head → `_working_line` (`.rstrip()`); tail → merge into `comment` via [`join_rule_comment`](../../../src/conlanger/ingest/utils/transforms.py). Behaviour must match [`test_split_semicolon_comment`](../../../tests/conlanger/tools/ingest/test_transforms.py).
 2. **`normalize_symbols`** on `_working_line` ([`normalize_symbols`](../../../src/conlanger/utils/symbols.py)).
 3. Structural split — move logic from [`extract_rule_parts`](../../../src/conlanger/utils/parsing.py) / [`extract_missing_arrow_rule_parts`](../../../src/conlanger/utils/parsing.py):
    - `strip_leading_index_list_marker`

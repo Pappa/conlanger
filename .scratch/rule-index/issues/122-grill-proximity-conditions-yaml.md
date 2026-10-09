@@ -19,8 +19,8 @@ Originally scoped as `conditions[]` proximity atoms; grill converged on a separa
 ## Facts (do not re-litigate without new evidence)
 
 - Today `manual_mappings.yml` rewrites e.g. ` / near consonants` → ` / C_, _C` (treating near as immediate neighbor) and ` / adjacent to short u` → ` / u[-long]_, _u[-long]` — ASCA shapes baked in at parse ([exploration doc](../research/structured-rule-conditioning-exploration.md) Part 2).
-- [prose_position_env.py](../../../src/conlanger/tools/ingest/prose_position_env.py) already normalizes some **adjacent** / **next to** phrases (`_,{set}`, `_,u` for `typically near *u`) but not the full manual-mapping set.
-- [double_slash_env.py](../../../src/conlanger/tools/ingest/double_slash_env.py) handles `adjacent to another consonant` → `C_,_C` on exception tails (ticket 108); bare `penult` → `%_` (likely **wrong** — `%` is syllable boundary, not penultimate position).
+- [prose_position_env.py](../../../src/conlanger/ingest/utils/prose_position_env.py) already normalizes some **adjacent** / **next to** phrases (`_,{set}`, `_,u` for `typically near *u`) but not the full manual-mapping set.
+- [double_slash_env.py](../../../src/conlanger/ingest/utils/double_slash_env.py) handles `adjacent to another consonant` → `C_,_C` on exception tails (ticket 108); bare `penult` → `%_` (likely **wrong** — `%` is syllable boundary, not penultimate position).
 - Ticket [119](119-grill-distinctive-features-env-exception.md) + [131](131-correction-pass-env-exception-feature-matrices.md) lock segment-at-focus feature policy; bare matrices compile to input colon; neighbour host matrices bracket→colon in env/exception at compile.
 - Ticket [55](55-correction-pass-prose-env-medial.md) currently writes ASCA-specific `: {#_, _#}:` into `exception` at parse — **must change** (see Q1 decision).
 - ADR-0002 / ADR-0010: YAML stays Index-shaped claims; ASCA projection is compile; `raw` preserves Index wording.

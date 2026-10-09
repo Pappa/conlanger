@@ -4,7 +4,7 @@ from conlanger.ingest.models.index_models import (
     IndexRule,
     join_rule_comment,
 )
-from conlanger.tools.ingest.transforms import (
+from conlanger.ingest.utils.transforms import (
     MEDIAL_BOUNDARY_EXCEPTION,
     apply_medial_env_conditions,
     apply_sporadic_qualifier,

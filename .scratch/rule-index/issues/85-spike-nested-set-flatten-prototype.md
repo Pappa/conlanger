@@ -130,8 +130,8 @@ Follow-ons: implement #69 (env/exception `union_paren`); #70 (stages union, `:13
 - [Grill: paren and parallel set notation](71-grill-paren-and-parallel-set-notation.md)
 - [ADR-0010 Historical fidelity](../../docs/adr/0010-historical-fidelity-class-first-status.md)
 - [ADR-0002 Applier-neutral YAML](../../docs/adr/0002-applier-neutral-yaml-rule-index.md)
-- `src/conlanger/tools/ingest/parser.py` — `parse_rule_element` transform order
-- `src/conlanger/tools/ingest/section_policy.py` — `resolve_catch_all_else_rules`
+- `src/conlanger/ingest/parser.py` — `parse_rule_element` transform order
+- `src/conlanger/ingest/utils/section_policy.py` — `resolve_catch_all_else_rules`
 
 ## Agent Brief
 

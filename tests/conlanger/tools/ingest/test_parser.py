@@ -1,13 +1,13 @@
 import pytest
 from lxml import html
 
+from conlanger.ingest import Index, IndexDiachronicaParser, IndexRule
 from conlanger.ingest.models.mappings import (
     IpaMapping,
     ManualMapping,
     ManualMappingMatch,
     ParserConfig,
 )
-from conlanger.tools.ingest import Index, IndexDiachronicaParser, IndexRule
 
 _FX_SECTION_INDEX = "1.0"
 _FX_SECTION_NAME = "Proto-Indo-European to Klingon"
