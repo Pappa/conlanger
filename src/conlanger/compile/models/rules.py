@@ -12,7 +12,7 @@ from conlanger.tools.compile.asca.parallel import (
 from conlanger.tools.compile.asca.pipeline import compile_asca_rule_compile_fields
 from conlanger.tools.compile.asca.structures import join_asca_rule_fields
 from conlanger.tools.compile.asca.tilde import normalize_index_rule_tilde_fields
-from conlanger.tools.compile.compile_fields import RuleEnv, RuleInput, RuleOutput
+from conlanger.compile.models.compile_fields import RuleEnv, RuleInput, RuleOutput
 from conlanger.tools.compile.field_tokens import (
     FieldToken,
     is_optional_output_shape,
@@ -20,11 +20,11 @@ from conlanger.tools.compile.field_tokens import (
     render_field_tokens,
     set_token_members,
 )
-from conlanger.tools.ingest.index_models import (
+from conlanger.ingest.models.index_models import (
     IndexContext,
     env_exception_input_to_string,
 )
-from conlanger.utils.mappings import CompilerConfig
+from conlanger.ingest.models.mappings import CompilerConfig
 
 _SUPPORTED_FORMATS = frozenset({"asca"})
 _SPORADIC_APPLY_PROBABILITY = 0.5

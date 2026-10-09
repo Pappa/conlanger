@@ -187,7 +187,7 @@ Baseline before this work: **6518 / 9317 ok (70.0%)** ([inventory summary](../in
 
 ### 6.1 Where
 
-**`SoundChangeRule`** in [`src/conlanger/tools/rules.py`](../../../src/conlanger/tools/rules.py) — new function e.g. `expand_index_subscript_references(text: str) -> str`, called when rendering ASCA strings (after or before `group_mappings`, order TBD: likely **after** group expansion so `C` is still a grouping letter).
+**`SoundChangeRule`** in [`src/conlanger/compile/models/rules.py`](../../../src/conlanger/compile/models/rules.py) — new function e.g. `expand_index_subscript_references(text: str) -> str`, called when rendering ASCA strings (after or before `group_mappings`, order TBD: likely **after** group expansion so `C` is still a grouping letter).
 
 **Not** in `IndexDiachronicaParser` — index fields and `raw` stay Index-shaped.
 

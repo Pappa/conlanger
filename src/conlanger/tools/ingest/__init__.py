@@ -1,6 +1,6 @@
 """Index Diachronica HTML → cleaned index YAML (ingest)."""
 
-from conlanger.tools.ingest.index_models import (
+from conlanger.ingest.models.index_models import (
     Index,
     IndexContext,
     IndexRule,

@@ -15,7 +15,7 @@ from conlanger.tools.compile.asca.cartesian_io_optionals import (
     flatten_cartesian_io_optionals,
 )
 from conlanger.tools.compile.asca.planned import expand_meta_notation
-from conlanger.models.compile.rules import DiachronicSeries
+from conlanger.compile.models.rules import DiachronicSeries
 
 
 @pytest.mark.parametrize(

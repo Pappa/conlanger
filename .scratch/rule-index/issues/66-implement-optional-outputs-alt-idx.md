@@ -51,7 +51,7 @@ Index rules like `d → {∅,ð} / V_V` keep an opaque set in **stages**. ASCA r
 
 Implemented 2026-08-12.
 
-### `SoundChangeRule` (`src/conlanger/tools/rules.py`)
+### `SoundChangeRule` (`src/conlanger/compile/models/rules.py`)
 - Optional-output detection via `_is_whole_field_set`: whole-field `{…}` output + input **not** a whole-field set. Paired `{a,b} → {c,d}`, nested sets, and empty members yield **no** alternatives (out of scope → [67](67-spike-nested-sets.md)).
 - `alternatives: list[SoundChangeRule]` built as full leaf peers (Index/set order; each leaf `alternatives == []`).
 - Instance RNG only: optional ctor `seed` / `rng`, falling back to `random.Random(seed)`; process-global `random.seed` is never touched. Parent freezes one uniform `randrange` pick as its `value`; `str()` re-renders that frozen choice (no re-sample).

@@ -263,7 +263,7 @@ Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` e
 | [`index_inventory.py`](../src/conlanger/tools/index_inventory.py) | Per-rule validation, CSV/changelog/summary |
 | [`index_io.py`](../src/conlanger/tools/index_io.py) | Read/write cleaned YAML |
 | [`parsers.py`](../src/conlanger/tools/parsers.py) | `IndexDiachronicaParser` |
-| [`rules.py`](../src/conlanger/tools/rules.py) | Section compile (`DiachronicSeries`) |
+| [`rules.py`](../src/conlanger/compile/models/rules.py) | Section compile (`DiachronicSeries`) |
 | [`asca_validator.py`](../src/conlanger/tools/asca_validator.py) | `validate_asca` |
 
 **Primary integration seam (tests):** `tests/conlanger/tools/test_index_pipeline.py` — HTML → parse → `DiachronicSeries` → `validate_asca`.

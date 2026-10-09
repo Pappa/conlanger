@@ -6,7 +6,7 @@ Blocked by:
 
 ## Question
 
-Refactor `DiachronicSeries`, `SoundChangeRule`, and related compile helpers in `src/conlanger/tools/rules.py` so the code structure mirrors the documented applier compile pipeline — without changing observable compile output unless a documented ordering fix requires it.
+Refactor `DiachronicSeries`, `SoundChangeRule`, and related compile helpers in `src/conlanger/compile/models/rules.py` so the code structure mirrors the documented applier compile pipeline — without changing observable compile output unless a documented ordering fix requires it.
 
 ## Context
 

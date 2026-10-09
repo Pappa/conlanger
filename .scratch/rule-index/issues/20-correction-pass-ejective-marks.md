@@ -12,7 +12,7 @@ Index Diachronica places ejective `ʼ` **after** feature matrices and sets (`ts:
 
 ## What was built
 
-- `normalize_asca_ejective_marks()` in `src/conlanger/tools/rules.py` — ASCA compile transform:
+- `normalize_asca_ejective_marks()` in `src/conlanger/compile/models/rules.py` — ASCA compile transform:
   1. `segment:[features]ʼ` → `segment:[features,+cg]`
   2. `{members}ʼ` → `{member:[+cg],…}` per set member
   3. bare `segmentʼ` → `segment:[+cg]` (voiced ejectives + normalize voiceless)

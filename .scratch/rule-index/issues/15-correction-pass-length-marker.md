@@ -8,7 +8,7 @@ Target cluster: `unknown_character` — error_token `ː` (1251 rules at baseline
 
 ## What was built
 
-- `normalize_asca_length_marks()` in `src/conlanger/tools/rules.py` — ASCA compile transform (not ingest):
+- `normalize_asca_length_marks()` in `src/conlanger/compile/models/rules.py` — ASCA compile transform (not ingest):
   1. `segment(ː)` → `segment:[+long]`
   2. `Groupingː` → `Grouping:[+long]`
   3. `segmentː` → `segment:[+long]`

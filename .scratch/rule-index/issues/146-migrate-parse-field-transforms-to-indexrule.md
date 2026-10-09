@@ -36,7 +36,7 @@ Field-transform order unchanged from current `parser.py` (~210–226).
 
 ## `env` / `exception`: `IndexContext` only
 
-On **`IndexRule`**, **`env`** and **`exception`** are typed **`IndexContext | None`** only. Remove **`EnvExceptionField`** and the `str | IndexContext` union from [`index_models.py`](../../../src/conlanger/tools/ingest/index_models.py). Parse-time code must not store bare strings on those attributes.
+On **`IndexRule`**, **`env`** and **`exception`** are typed **`IndexContext | None`** only. Remove **`EnvExceptionField`** and the `str | IndexContext` union from [`index_models.py`](../../../src/conlanger/ingest/models/index_models.py). Parse-time code must not store bare strings on those attributes.
 
 ### Construction and `update_model()`
 

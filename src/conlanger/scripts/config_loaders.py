@@ -7,7 +7,7 @@ from typing import Any
 
 import yaml
 
-from conlanger.utils.mappings import (
+from conlanger.ingest.models.mappings import (
     CompilerConfig,
     FeatureMapping,
     IpaMapping,

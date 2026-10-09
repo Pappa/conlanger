@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import re
 
-from conlanger.tools.ingest.index_models import IndexContext, IndexRule
+from conlanger.ingest.models.index_models import IndexContext, IndexRule
 from conlanger.utils.gloss import (
     extract_trailing_gloss_from_field,
     extract_uncertainty_qualifier_from_field,

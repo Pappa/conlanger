@@ -38,7 +38,7 @@ def test_write_rule_comment_phrase_summary_empty_doc(tmp_path: Path):
 
 
 def test_write_manual_mappings_matched_csv(tmp_path: Path):
-    from conlanger.utils.mappings import ManualMappingMatch
+    from conlanger.ingest.models.mappings import ManualMappingMatch
 
     path = tmp_path / "manual_mappings_matched_rules.csv"
     write_manual_mappings_matched_csv(

@@ -6,7 +6,7 @@ Blocked by: None
 
 Spec: [ticket 92 Answer](92-grill-pydantic-compile-refactor.md). ADR: [0014](../../../docs/adr/0014-per-field-asca-compile.md).
 
-Re-implement `src/conlanger/tools/rules.py` as **pydantic** `BaseModel`s (**latest** pydantic 2.x — `uv add pydantic` when claiming; owner approved). Keep the name **`DiachronicSeries`**. Transforms run on **input / output / env / exception separately at instantiation**; join is render-time.
+Re-implement `src/conlanger/compile/models/rules.py` as **pydantic** `BaseModel`s (**latest** pydantic 2.x — `uv add pydantic` when claiming; owner approved). Keep the name **`DiachronicSeries`**. Transforms run on **input / output / env / exception separately at instantiation**; join is render-time.
 
 ## Spec (grill 92)
 

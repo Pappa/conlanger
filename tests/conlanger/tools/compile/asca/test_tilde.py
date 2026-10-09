@@ -7,7 +7,7 @@ from conlanger.tools.compile.asca.tilde import (
     expand_index_tilde_notation,
     normalize_index_rule_tilde_fields,
 )
-from conlanger.models.compile.rules import DiachronicSeries, SoundChangeRule
+from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
 
 
 @pytest.mark.parametrize(

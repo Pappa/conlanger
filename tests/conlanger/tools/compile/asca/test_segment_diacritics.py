@@ -11,7 +11,7 @@ from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
 from conlanger.tools.compile.asca.segment_diacritics import (
     normalize_index_segment_diacritics,
 )
-from conlanger.models.compile.rules import DiachronicSeries
+from conlanger.compile.models.rules import DiachronicSeries
 
 
 @pytest.mark.parametrize(

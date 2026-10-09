@@ -36,7 +36,7 @@ def test_create_index_writes_manual_mappings_matched_csv(
     tmp_path: Path,
     capsys,
 ):
-    from conlanger.utils.mappings import ManualMapping, ManualMappingMatch
+    from conlanger.ingest.models.mappings import ManualMapping, ManualMappingMatch
 
     html_path = tmp_path / "index.html"
     html_path.write_text("<html><body></body></html>", encoding="utf-8")

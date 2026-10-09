@@ -4,14 +4,14 @@ from pathlib import Path
 import pytest
 
 from conlanger.tools.compile.asca.structures import join_asca_rule_fields
-from conlanger.tools.ingest.index_models import IndexContext
-from conlanger.models.compile.rules import (
+from conlanger.ingest.models.index_models import IndexContext
+from conlanger.compile.models.rules import (
     DiachronicSeries,
     RuleCitation,
     RuleComment,
     SoundChangeRule,
 )
-from conlanger.utils.mappings import CompilerConfig
+from conlanger.ingest.models.mappings import CompilerConfig
 
 
 def test_diachronic_series_does_not_mutate_index_rules(fx_sample_compiler_config):

@@ -8,7 +8,7 @@ import pandas as pd
 import pytest
 import yaml
 
-from conlanger.tools.ingest.index_models import (
+from conlanger.ingest.models.index_models import (
     IndexContext,
     IndexRule,
     env_exception_input_to_string,

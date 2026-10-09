@@ -69,8 +69,8 @@ from conlanger.tools.compile.asca.tone_matrices import (
 from conlanger.tools.compile.asca.voice_prerequisite_diacritics import (
     normalize_asca_voice_prerequisite_diacritics,
 )
-from conlanger.tools.compile.compile_fields import RuleEnv, RuleInput, RuleOutput
-from conlanger.utils.mappings import CompilerConfig
+from conlanger.compile.models.compile_fields import RuleEnv, RuleInput, RuleOutput
+from conlanger.ingest.models.mappings import CompilerConfig
 
 
 def _resolve_compiler_config(

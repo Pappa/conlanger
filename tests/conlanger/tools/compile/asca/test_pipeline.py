@@ -7,7 +7,7 @@ from conlanger.tools.compile.asca.pipeline import (
     compile_asca_rule_fields,
 )
 from conlanger.tools.compile.asca.structures import join_asca_rule_fields
-from conlanger.utils.mappings import CompilerConfig
+from conlanger.ingest.models.mappings import CompilerConfig
 
 
 @pytest.mark.parametrize(

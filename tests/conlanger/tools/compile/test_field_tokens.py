@@ -10,7 +10,7 @@ from conlanger.tools.compile.asca.parallel import (
     drop_mixed_parallel_null_columns_tokens,
     expand_parallel_output_null_branches_from_tokens,
 )
-from conlanger.tools.compile.compile_fields import RuleInput, RuleOutput
+from conlanger.compile.models.compile_fields import RuleInput, RuleOutput
 from conlanger.tools.compile.field_tokens import (
     OptionalLengthNode,
     is_optional_output_shape,
@@ -19,7 +19,7 @@ from conlanger.tools.compile.field_tokens import (
     partition_embedded_output_env,
     render_field_tokens,
 )
-from conlanger.models.compile.rules import SoundChangeRule
+from conlanger.compile.models.rules import SoundChangeRule
 
 
 @pytest.mark.parametrize(

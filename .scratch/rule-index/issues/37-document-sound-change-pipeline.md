@@ -42,7 +42,7 @@ Grill session (2026-08-07): compile transform order must be clearly defined and 
 - **Compile validation** section (stage 4): `validate_asca`, probe wordlist, relationship to ADR-0003; link to `.scratch/.../research/asca-rule-validity.md` for ASCA constraint detail.
 - **Brassica:** section title + one sentence stating future functionality only.
 
-Primary code references: `src/conlanger/tools/rules.py`, `phonological_ruleset.py`, `asca_validator.py`.
+Primary code references: `src/conlanger/compile/models/rules.py`, `phonological_ruleset.py`, `asca_validator.py`.
 
 ### 4. `docs/SYSTEM.md`
 
@@ -56,7 +56,7 @@ Primary code references: `src/conlanger/tools/rules.py`, `phonological_ruleset.p
   | Applier compile | [sound-change-applier.md](../system/sound-change-applier.md) |
   | Compile validation | [sound-change-applier.md](../system/sound-change-applier.md#compile-validation) (anchor in applier doc) |
 
-- Fix stale link: `DiachronicSeries` lives in `src/conlanger/tools/rules.py`, not `DiachronicSeries.py`.
+- Fix stale link: `DiachronicSeries` lives in `src/conlanger/compile/models/rules.py`, not `DiachronicSeries.py`.
 
 ## Notes
 

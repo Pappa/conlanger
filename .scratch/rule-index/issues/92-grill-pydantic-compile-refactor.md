@@ -8,7 +8,7 @@ Owner (2026-08-21 Q8): refactor rule compilation so **`SoundChangeRule` (and the
 
 ## Question
 
-How should compile-time classes in `src/conlanger/tools/rules.py` be reshaped — pydantic model boundaries, validator vs pure-function split, per-field vs cross-field transforms, join/`__str__`, alternatives, chain expansion, skip comments — so ticket 93 can implement without inventing policy?
+How should compile-time classes in `src/conlanger/compile/models/rules.py` be reshaped — pydantic model boundaries, validator vs pure-function split, per-field vs cross-field transforms, join/`__str__`, alternatives, chain expansion, skip comments — so ticket 93 can implement without inventing policy?
 
 ## Answer
 

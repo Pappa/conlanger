@@ -71,7 +71,7 @@ if rules:
 
 ### 3. `IndexSection` model
 
-**File:** [`src/conlanger/tools/ingest/index_models.py`](../../../src/conlanger/tools/ingest/index_models.py)
+**File:** [`src/conlanger/ingest/models/index_models.py`](../../../src/conlanger/ingest/models/index_models.py)
 
 Add **`IndexSection`** with fields aligned to today’s section YAML mapping (glossary: **sound-change section**):
 

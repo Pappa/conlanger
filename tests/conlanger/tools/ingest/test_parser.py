@@ -2,7 +2,7 @@ import pytest
 from lxml import html
 
 from conlanger.tools.ingest import Index, IndexDiachronicaParser, IndexRule
-from conlanger.utils.mappings import (
+from conlanger.ingest.models.mappings import (
     IpaMapping,
     ManualMapping,
     ManualMappingMatch,

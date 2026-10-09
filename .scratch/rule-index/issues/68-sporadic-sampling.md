@@ -44,7 +44,7 @@ Spawned from [grill 61](61-grill-optional-outputs.md). Ticket 19 already strips 
 
 Implemented 2026-09-01.
 
-### `SoundChangeRule` (`src/conlanger/tools/rules.py`)
+### `SoundChangeRule` (`src/conlanger/compile/models/rules.py`)
 - Added `sporadic: bool`, frozen `sporadic_skipped: bool`, and render-only `sample_sporadic` gate (default `False` on direct construction; `DiachronicSeries` sets `True` for `.rsca` emission).
 - Sporadic apply/skip draws `rng.random() >= 0.5` → skip **before** optional-output `randrange` when both apply; skip compiles fields without alternative pick and renders `#\t` + compiled join (not Index `raw`).
 - Instance `Random` only (`seed` / caller `rng`); shared across chained steps in one `DiachronicSeries`.

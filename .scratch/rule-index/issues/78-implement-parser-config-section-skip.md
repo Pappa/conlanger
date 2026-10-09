@@ -26,7 +26,7 @@ skip_sections:
 - **`id`**: matches section **`index`** in parsed YAML (dotted ancestry key from `<h2>` heading).
 - **`reason`**: operator documentation only; not required on the index section object.
 
-Load into `ParserConfig` (extend `ParserConfig` + `load_parser_config()` in `src/conlanger/utils/mappings.py` / `file_io.py`).
+Load into `ParserConfig` (extend `ParserConfig` + `load_parser_config()` in `src/conlanger/ingest/models/mappings.py` / `file_io.py`).
 
 ### 2. Parse-time — `IndexDiachronicaParser`
 
@@ -126,6 +126,6 @@ Implemented 2026-08-18.
 - [`data/parser_config.yml`](../../../data/parser_config.yml)
 - [`src/conlanger/tools/ingest/parser.py`](../../../src/conlanger/tools/ingest/parser.py) — section emission
 - [`src/conlanger/tools/index_inventory.py`](../../../src/conlanger/tools/index_inventory.py) — `validate_index_rule`, `summarize_inventory`
-- [`src/conlanger/tools/rules.py`](../../../src/conlanger/tools/rules.py) — `DiachronicSeries`
+- [`src/conlanger/compile/models/rules.py`](../../../src/conlanger/compile/models/rules.py) — `DiachronicSeries`
 - [Corpus rule `stages` schema / rule `status: skipped`](59-index-rule-stages-schema.md)
 - [Parse-time correspondence-series indices (no pre-emptive rule skip)](26-parse-time-correspondence-series-indices.md)

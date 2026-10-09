@@ -13,7 +13,7 @@ from conlanger.tools.compile.asca.input_optionals import (
     _is_structural_optional_inner,
     expand_input_optionals_to_structures,
 )
-from conlanger.models.compile.rules import DiachronicSeries
+from conlanger.compile.models.rules import DiachronicSeries
 
 
 @pytest.mark.parametrize(

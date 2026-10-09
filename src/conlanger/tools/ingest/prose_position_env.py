@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from conlanger.tools.ingest.index_models import IndexContext, IndexRule
+from conlanger.ingest.models.index_models import IndexContext, IndexRule
 
 _FINAL_SYLLABLE_ENV = "U#"
 _FINAL_SYLLABLE_RE = re.compile(

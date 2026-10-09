@@ -1,6 +1,6 @@
 import pytest
 
-from conlanger.tools.ingest.index_models import (
+from conlanger.ingest.models.index_models import (
     IndexRule,
     join_rule_comment,
 )

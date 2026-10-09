@@ -5,7 +5,7 @@ from __future__ import annotations
 from conlanger.tools.compile.asca.syllable_position import (
     strip_editorial_in_before_syllable_position,
 )
-from conlanger.tools.ingest.index_models import (
+from conlanger.ingest.models.index_models import (
     IndexContext,
     IndexRule,
 )

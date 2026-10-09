@@ -13,7 +13,7 @@ from typing import Literal
 
 from strip_ansi import strip_ansi
 
-from conlanger.models.compile.rules import DiachronicSeries, SoundChangeRule
+from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
 
 # Minimal probe lexicon for ``asca run`` (Tier 4 boundary). Override with probe_words.
 _DEFAULT_PROBE_WORDS = "a\nba\nkata\nsami\nntu\n"

@@ -13,7 +13,7 @@ from pydantic import (
     model_validator,
 )
 
-from conlanger.models.parser import SkipRule, SkipSection
+from conlanger.ingest.models.parser import SkipRule, SkipSection
 from conlanger.utils.series import section_index_prefixes
 
 

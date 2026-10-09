@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from conlanger.tools.ingest.index_models import IndexRule
-from conlanger.utils.mappings import (
+from conlanger.ingest.models.index_models import IndexRule
+from conlanger.ingest.models.mappings import (
     FeatureMapping,
     normalize_feature_matrices_in_field,
     normalize_ipa_in_field,

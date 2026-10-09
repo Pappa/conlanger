@@ -5,7 +5,7 @@ Owned by tests only — not read from production ``config/`` paths.
 
 from __future__ import annotations
 
-from conlanger.utils.mappings import (
+from conlanger.ingest.models.mappings import (
     CompilerConfig,
     FeatureMapping,
     ManualMapping,

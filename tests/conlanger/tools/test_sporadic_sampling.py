@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import random
 
-from conlanger.models.compile.rules import DiachronicSeries, SoundChangeRule
-from conlanger.utils.mappings import CompilerConfig
+from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
+from conlanger.ingest.models.mappings import CompilerConfig
 
 
 class _RecordingRandom(random.Random):

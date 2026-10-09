@@ -7,7 +7,7 @@ from typing import Any
 
 import pandas as pd
 
-from conlanger.utils.mappings import ManualMappingMatch
+from conlanger.ingest.models.mappings import ManualMappingMatch
 
 MANUAL_MAPPINGS_MATCHED_CSV_COLUMNS = [
     "section_index",

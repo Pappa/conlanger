@@ -47,7 +47,7 @@ ASCA insertion rules require input `*` or `∅` only; `*R` is a correspondence-s
 
 ## Answer
 
-**Wontfix — already implemented** (triage 2026-08-31). The planned compile/parse correction pass is superseded by parse-time **`section_mappings`** ([ticket 97](97-implement-parser-config-section-mappings.md)) plus config expansion in [`config/parser/parser_config.yml`](../../../config/parser/parser_config.yml) (section **`10`**: `*D`, `*R`, `*T`, `*Z`, `*j`, `*r`, `*c` → class letters). Applied via `apply_section_mappings()` in [`src/conlanger/utils/mappings.py`](../../../src/conlanger/utils/mappings.py) during ingest.
+**Wontfix — already implemented** (triage 2026-08-31). The planned compile/parse correction pass is superseded by parse-time **`section_mappings`** ([ticket 97](97-implement-parser-config-section-mappings.md)) plus config expansion in [`config/parser/parser_config.yml`](../../../config/parser/parser_config.yml) (section **`10`**: `*D`, `*R`, `*T`, `*Z`, `*j`, `*r`, `*c` → class letters). Applied via `apply_section_mappings()` in [`src/conlanger/ingest/models/mappings.py`](../../../src/conlanger/ingest/models/mappings.py) during ingest.
 
 **Inventory check (current `rule-inventory-error.csv`):** no remaining failures matching ticket 83 subclusters (`insertion_wildcard_input`, `wildcard_in_correspondence_set`). §10.x `*R`/`*D`/`*Z`/`*j` rules are **ok** in success CSV. Residual `*X` errors are out of scope:
 

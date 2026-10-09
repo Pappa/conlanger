@@ -151,6 +151,6 @@ Field isolation is a **diagnostic lens** on syntax/shape, not a Tier 4 coverage 
 | `.rsca` `#` description lines | asca-rust 0.10.2 `src/cli/parse.rs` (`parse_rsca`) |
 | Parse pipeline / tiers | crate `parser.rs`, `mod.rs` (`split_into_subrules`), `error/syntax.rs`, `error/runtime.rs`; [asca-rule-validity.md](asca-rule-validity.md) |
 | UnevenSet / LonelySet / InsertionNoEnv | `subrule/substitution.rs`, `subrule/insertion.rs` |
-| Local compile + validate | `src/conlanger/tools/rules.py`, `phonological_ruleset.py`, `asca_validator.py`, `index_inventory.py` |
+| Local compile + validate | `src/conlanger/compile/models/rules.py`, `phonological_ruleset.py`, `asca_validator.py`, `index_inventory.py` |
 | Whole-rule inventory policy | [ticket 12](../issues/12-full-index-validation-inventory.md), [ticket 10](../issues/10-rule-derived-probe-synthesis.md) |
 | CLI probes | local `asca 0.10.2` + `tests/fixtures/asca_probe_words.wsca` (temp under `.scratch/rule-index/tmp-*`, deleted after) |

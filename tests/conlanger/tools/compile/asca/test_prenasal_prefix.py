@@ -8,7 +8,7 @@ import pytest
 from conlanger.appliers.asca import validate_asca
 from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
 from conlanger.tools.compile.asca.prenasal_prefix import normalize_prenasal_prefix
-from conlanger.models.compile.rules import DiachronicSeries
+from conlanger.compile.models.rules import DiachronicSeries
 
 
 @pytest.mark.parametrize(

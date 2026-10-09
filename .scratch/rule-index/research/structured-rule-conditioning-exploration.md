@@ -59,7 +59,7 @@ Compile is separate from YAML. YAML `stages` expand into compile fields; transfo
 | Per-field compile | [docs/adr/0014-per-field-asca-compile.md](../../docs/adr/0014-per-field-asca-compile.md) | 1–16 |
 | Field-token IR | [docs/adr/0015-compile-field-intermediate-representation.md](../../docs/adr/0015-compile-field-intermediate-representation.md) | 1–25 |
 | Glossary | [CONTEXT.md](../../CONTEXT.md) | 74–88, 190–192 |
-| Implementation | `src/conlanger/tools/rules.py`, `compile/compile_fields.py`, `compile/field_tokens.py` | — |
+| Implementation | `src/conlanger/compile/models/rules.py`, `compile/compile_fields.py`, `compile/field_tokens.py` | — |
 
 ### Future richer representations (tickets 92, 94)
 

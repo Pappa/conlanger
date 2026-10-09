@@ -15,10 +15,10 @@ from conlanger.tools.compile.asca.syllable_position import (
     normalize_syllable_position_marker,
     strip_editorial_in_before_syllable_position,
 )
-from conlanger.tools.compile.compile_fields import RuleEnv, RuleInput, RuleOutput
-from conlanger.tools.ingest.index_models import IndexContext, IndexRule
+from conlanger.compile.models.compile_fields import RuleEnv, RuleInput, RuleOutput
+from conlanger.ingest.models.index_models import IndexContext, IndexRule
 from conlanger.tools.ingest.transforms import apply_syllable_position_editorial_strip
-from conlanger.models.compile.rules import DiachronicSeries, SoundChangeRule
+from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
 
 
 @pytest.mark.parametrize(

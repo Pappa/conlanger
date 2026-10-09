@@ -1,6 +1,6 @@
 import pytest
 
-from conlanger.tools.ingest.index_models import IndexRule
+from conlanger.ingest.models.index_models import IndexRule
 from conlanger.tools.ingest.section_policy import (
     is_catch_all_else_env,
     is_else_env_candidate,

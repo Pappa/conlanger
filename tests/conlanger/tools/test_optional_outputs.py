@@ -7,7 +7,7 @@ import shutil
 
 import pytest
 
-from conlanger.models.compile.rules import DiachronicSeries, SoundChangeRule
+from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
 
 
 def _rule(**overrides):

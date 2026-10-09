@@ -1,4 +1,4 @@
-"""Unit tests for parse-time mapping helpers in ``conlanger.utils.mappings``."""
+"""Unit tests for parse-time mapping helpers in ``conlanger.ingest.models.mappings``."""
 
 from __future__ import annotations
 
@@ -8,8 +8,8 @@ from conlanger.tools.ingest.corpus_apply import (
     apply_feature_mappings,
     apply_ipa_mappings,
 )
-from conlanger.tools.ingest.index_models import IndexRule
-from conlanger.utils.mappings import (
+from conlanger.ingest.models.index_models import IndexRule
+from conlanger.ingest.models.mappings import (
     FeatureMapping,
     ManualMapping,
     ManualMappingHit,

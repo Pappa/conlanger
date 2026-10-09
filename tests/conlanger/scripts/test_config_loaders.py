@@ -10,7 +10,7 @@ from conlanger.scripts.config_loaders import (
     load_compiler_config,
     load_parser_config,
 )
-from conlanger.utils.mappings import (
+from conlanger.ingest.models.mappings import (
     IpaMapping,
     ManualMapping,
     ParserConfig,

@@ -48,7 +48,7 @@ from conlanger.tools.ingest.double_slash_env import apply_double_slash_env_condi
 from conlanger.tools.ingest.flatten_nested_sets import (
     flatten_nested_sets_in_section_rules,
 )
-from conlanger.tools.ingest.index_models import Index, IndexRule, IndexSection
+from conlanger.ingest.models.index_models import Index, IndexRule, IndexSection
 from conlanger.tools.ingest.index_rule_normalisation import (
     apply_index_rule_normalisation,
 )
@@ -67,7 +67,7 @@ from conlanger.tools.ingest.transforms import (
     apply_trailing_glosses,
 )
 from conlanger.utils.gloss import is_quoted_prose_paragraph
-from conlanger.utils.mappings import (
+from conlanger.ingest.models.mappings import (
     ManualMapping,
     ManualMappingMatch,
     ParserConfig,

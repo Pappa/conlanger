@@ -20,7 +20,7 @@ from conlanger.tools.compile.asca.host_bracket_matrices import (
     normalize_asca_host_bracket_matrices,
 )
 from conlanger.tools.compile.asca.pipeline import compile_asca_rule_fields
-from conlanger.models.compile.rules import DiachronicSeries
+from conlanger.compile.models.rules import DiachronicSeries
 
 
 @pytest.mark.parametrize(

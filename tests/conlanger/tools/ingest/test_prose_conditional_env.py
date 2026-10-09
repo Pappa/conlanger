@@ -1,6 +1,6 @@
 import pytest
 
-from conlanger.tools.ingest.index_models import IndexRule
+from conlanger.ingest.models.index_models import IndexRule
 from conlanger.tools.ingest.prose_conditional_env import (
     apply_prose_conditional_env_conditions,
     normalize_prose_conditional_env_field,

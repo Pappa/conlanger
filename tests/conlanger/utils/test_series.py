@@ -5,7 +5,7 @@ from __future__ import annotations
 import pytest
 
 from conlanger.tools.ingest.corpus_apply import apply_series_expansions
-from conlanger.tools.ingest.index_models import IndexRule
+from conlanger.ingest.models.index_models import IndexRule
 from conlanger.utils.series import (
     is_collective_subscript_token,
     is_correspondence_series_token,
