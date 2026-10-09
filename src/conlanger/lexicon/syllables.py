@@ -3,7 +3,7 @@ from dataclasses import dataclass, field
 
 import numpy as np
 
-from conlanger.phonology import SYLLABLE_STRUCTURE
+from conlanger.lexicon.phonology import SYLLABLE_STRUCTURE
 
 ALL_STRUCTURES = np.array(SYLLABLE_STRUCTURE)
 

@@ -1,7 +1,7 @@
 import random
 from dataclasses import dataclass
 
-from conlanger.tools.syllables import SyllableStructure
+from conlanger.lexicon.syllables import SyllableStructure
 
 
 @dataclass

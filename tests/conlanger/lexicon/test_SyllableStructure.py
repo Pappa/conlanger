@@ -1,6 +1,6 @@
 import pytest
 
-from conlanger.tools.syllables import (
+from conlanger.lexicon.syllables import (
     SyllableStructure,
     SyllableStructures,
     SyllableToken,

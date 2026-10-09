@@ -1,6 +1,6 @@
 import pytest
 
-from conlanger.tools.words import Lexicon
+from conlanger.lexicon.words import Lexicon
 
 
 @pytest.mark.parametrize(
