@@ -142,10 +142,6 @@ class IndexRule(BaseModel):
         self.comment = merged
         return self
 
-    def map_stages(self, fn: Callable[[str], str]) -> Self:
-        self.stages = [fn(stage) for stage in self.stages]
-        return self
-
     def finalize_stages_shape(self) -> Self:
         self.stages = [stage for stage in self.stages if stage and stage.strip()]
         return self
