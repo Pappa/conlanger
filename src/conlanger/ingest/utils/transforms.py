@@ -6,7 +6,6 @@ from conlanger.compile.tools.asca.syllable_position import (
     strip_editorial_in_before_syllable_position,
 )
 from conlanger.ingest.models.index_models import (
-    IndexContext,
     IndexRule,
 )
 from conlanger.ingest.utils.transform_fields import (

@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from conlanger.ingest.models.index_models import IndexContext, IndexRule
+from conlanger.ingest.models.index_models import IndexRule
 from conlanger.ingest.utils.prose_position_env import normalize_bare_prose_position_env
 from conlanger.ingest.utils.transform_fields import normalize_medial_env_field
 from conlanger.utils.gloss import extract_uncertainty_qualifier_from_field

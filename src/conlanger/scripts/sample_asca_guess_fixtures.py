@@ -22,8 +22,8 @@ from conlanger.appliers.asca import (
     validate_asca,
 )
 from conlanger.compile.models.rules import DiachronicSeries
-from conlanger.scripts.config_loaders import load_compiler_config, load_parser_config
 from conlanger.ingest import IndexDiachronicaParser
+from conlanger.scripts.config_loaders import load_compiler_config, load_parser_config
 from conlanger.utils.parsing import load_html_document
 
 DEFAULT_HTML = ROOT / "data/diachronica/index_diachronica.html"
