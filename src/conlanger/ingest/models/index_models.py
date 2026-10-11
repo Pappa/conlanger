@@ -187,14 +187,20 @@ def resolve_index_context_to_string(ctx: IndexContext) -> str:
     when present and ignores ``dialect`` until render gating is specified.
     """
     if ctx.context:
+        # TODO: figure out how to handle context + position
+        # does not (currently) happen in the wild
         return ctx.context
     if ctx.position:
-        adjacent = ctx.position.get("adjacent_to")
-        if isinstance(adjacent, str) and len(adjacent) == 1:
-            return f"{adjacent}_, _{adjacent}"
-        if isinstance(adjacent, list) and len(adjacent) == 1 and len(adjacent[0]) == 1:
-            char = adjacent[0]
-            return f"{char}_, _{char}"
+        for p in ("adjacent_to", "near"):
+            value = ctx.position.get(p)
+            if isinstance(value, list) and isinstance(value[0], str):
+                value = value[0]
+            if isinstance(value, str) and value.isalpha():
+                if p == "adjacent_to":
+                    return f"{value}_, _{value}"
+                elif p == "near":
+                    # TODO: implement this based on compiler config choice
+                    return f"{value}_, _{value}"
     return ""
 
 

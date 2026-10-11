@@ -305,11 +305,15 @@ def test_env_exception_input_to_string(input, expected):
             "#_",
             id="uses_context_string",
         ),
-        # TODO: handle multi-char adjacent_to if it appears in the index
         pytest.param(
             IndexContext(position={"adjacent_to": "CV"}),
-            "",
+            "CV_, _CV",
             id="ignores_multi_char_adjacent_to",
+        ),
+        pytest.param(
+            IndexContext(position={"near": "u"}),
+            "u_, _u",  # TODO: implement this based on compiler config choice
+            id="near_u",
         ),
     ],
 )
