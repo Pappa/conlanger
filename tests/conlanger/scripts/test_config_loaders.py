@@ -375,6 +375,15 @@ def test_section_row_beats_global_on_longest_prefix(tmp_path: Path):
     assert config.lookup_series_mapping("17.10", "s₂") is None
 
 
+def test_load_compiler_config_null_position_templates_uses_defaults(tmp_path: Path):
+    path = tmp_path / "compiler_config.yml"
+    path.write_text("position_templates: null\n", encoding="utf-8")
+    (tmp_path / "group_mappings.yml").write_text("{}\n", encoding="utf-8")
+    config = load_compiler_config(path)
+    assert config.position_templates.near == "{v}_, _{v}"
+    assert config.position_templates.adjacent_to == "{v}_, _{v}"
+
+
 def test_load_compiler_config_merges_partial_position_templates(tmp_path: Path):
     path = tmp_path / "compiler_config.yml"
     path.write_text(

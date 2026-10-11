@@ -6,10 +6,12 @@ import pytest
 
 from conlanger.ingest.models.index_models import IndexRule
 from conlanger.ingest.models.mappings import (
+    CompilerConfig,
     FeatureMapping,
     ManualMapping,
     ManualMappingHit,
     ParserConfig,
+    PositionTemplates,
     apply_manual_mappings,
     apply_section_mappings,
     normalize_feature_matrices_in_field,
@@ -389,3 +391,14 @@ def test_apply_manual_mappings(
         assert hits == [
             ManualMappingHit(from_text=expected_hit_from, to_text=expected_hit_to)
         ]
+
+
+def test_compiler_config_coerces_null_position_templates():
+    config = CompilerConfig(position_templates=None)
+    assert config.position_templates == PositionTemplates()
+
+
+def test_position_templates_accepts_partial_mapping():
+    templates = PositionTemplates.model_validate({"adjacent_to": "_{v}"})
+    assert templates.adjacent_to == "_{v}"
+    assert templates.near == "{v}_, _{v}"
