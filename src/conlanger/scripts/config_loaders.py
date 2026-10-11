@@ -225,10 +225,18 @@ def load_compiler_config(path: Path | None = None) -> CompilerConfig:
     global_map, sections = _load_compiler_series(raw)
     group_path = config_root / "group_mappings.yml"
 
+    position_templates = raw.get("position_templates")
+    if not isinstance(position_templates, dict):
+        position_templates = {
+            "adjacent_to": "{v}_, _{v}",
+            "near": "{v}_, _{v}",
+        }
+
     return CompilerConfig(
         group_mappings=_load_group_mappings(group_path),
         series_mappings_global=global_map,
         series_mappings_sections=sections,
         sample_sporadic=raw.get("sample_sporadic", False),
         sample_dialect=raw.get("sample_dialect", False),
+        position_templates=position_templates,
     )

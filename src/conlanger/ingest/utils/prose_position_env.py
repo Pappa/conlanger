@@ -12,18 +12,6 @@ _FINAL_SYLLABLE_RE = re.compile(
     r"^(?:in\s+)?(?:final\s+syllables?|syllable[- ]finally|syllable[- ]final)\s*$",
     re.IGNORECASE,
 )
-_ADJACENT_TO_SET_RE = re.compile(
-    r"^adjacent\s+to\s+(\{[^}]+\})\s*$",
-    re.IGNORECASE,
-)
-_ADJACENT_TO_SINGLE_SEGMENT_RE = re.compile(
-    r"^(?:next|adjacent)\s+to\s+(\w)\s*$",
-    re.IGNORECASE,
-)
-_ADJACENT_TO_SEGMENT_WITH_FEATURE_RE = re.compile(
-    r"^adjacent\s+to\s+(\w\[[^]]+\])\s*$",
-    re.IGNORECASE,
-)
 _UNSTRESSED_SYLLABLES_RE = re.compile(r"^unstressed\s+syllables?\s*$", re.IGNORECASE)
 _STRESSED_MONOSYLLABLE_RE = re.compile(
     r"^(?:in\s+)?accented\s+or\s+stressed\s+monosyllables?\s*$",
@@ -48,14 +36,6 @@ def normalize_bare_prose_position_env(
 
     if _FINAL_SYLLABLE_RE.match(stripped):
         return _FINAL_SYLLABLE_ENV, [stripped], flags
-
-    match = (
-        _ADJACENT_TO_SET_RE.match(stripped)
-        or _ADJACENT_TO_SINGLE_SEGMENT_RE.match(stripped)
-        or _ADJACENT_TO_SEGMENT_WITH_FEATURE_RE.match(stripped)
-    )
-    if match:
-        return f"{match.group(1)}_, _{match.group(1)}", [stripped], flags
 
     if _UNSTRESSED_SYLLABLES_RE.match(stripped):
         # return "_ %[-stress]", [stripped], flags  # TODO: this is not correct

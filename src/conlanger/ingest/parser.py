@@ -18,9 +18,9 @@ and recorded as ``sporadic: true``. **Feature matrix** synonym replacement insid
 ``feature_mappings.csv`` (``raw`` unchanged). **IPA character** substitution via
 ``ipa_mappings.csv`` (``raw`` unchanged). Inline prose stripped for ASCA is captured in optional ``comment`` on each index
 rule: the first ``;`` on the working line is partitioned before structural split, then
-field-level glosses and env qualifiers. Index word-internal ``medial`` / ``medially`` env
-prose becomes ``env: _`` with boundary ``exception: #_, _#`` (``apply_medial_env_conditions``).
-Index prose **position** env phrases (``final syllables``, ``next to {X}``, ``syllable-final``,
+field-level glosses and env qualifiers. Neighbour and medial relations extract structured
+``IndexContext.position`` (``apply_index_context_position_extraction``); compile projects
+to ASCA (ticket 144). Index prose **position** env phrases (``final syllables``, ``syllable-final``,
 trailing ``, in monosyllables`` qualifiers, …) normalize via ``apply_prose_position_env_conditions``.
 Index prose **conditional** env phrases (``utterance-initially``, ``unstressed penult``,
 ``syllables with …``, stress-matrix tails, …) normalize via
@@ -56,6 +56,9 @@ from conlanger.ingest.utils.double_slash_env import apply_double_slash_env_condi
 from conlanger.ingest.utils.flatten_nested_sets import (
     flatten_nested_sets_in_section_rules,
 )
+from conlanger.ingest.utils.index_context_position import (
+    apply_index_context_position_extraction,
+)
 from conlanger.ingest.utils.prose_conditional_env import (
     apply_prose_conditional_env_conditions,
 )
@@ -64,7 +67,6 @@ from conlanger.ingest.utils.prose_position_env import (
 )
 from conlanger.ingest.utils.section_policy import resolve_catch_all_else_rules
 from conlanger.ingest.utils.transforms import (
-    apply_medial_env_conditions,
     apply_sporadic_qualifier,
     apply_stress_conditions,
     apply_syllable_position_editorial_strip,
@@ -185,9 +187,9 @@ class IndexDiachronicaParser:
         rule = apply_trailing_glosses(rule)
         rule = apply_stress_conditions(rule)
         rule = apply_prose_conditional_env_conditions(rule)
-        rule = apply_medial_env_conditions(rule)
         rule = apply_prose_position_env_conditions(rule)
         rule = apply_double_slash_env_conditions(rule)
+        rule = apply_index_context_position_extraction(rule)
         rule = apply_syllable_position_editorial_strip(rule)
         rule = apply_feature_mappings(rule, self._feature_mappings)
         rule = apply_ipa_mappings(rule, self._ipa_mappings)

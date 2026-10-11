@@ -7,6 +7,9 @@ from conlanger.ingest.utils.double_slash_env import (
     normalize_prose_exception_or_env_tail,
     split_embedded_double_slash,
 )
+from conlanger.ingest.utils.index_context_position import (
+    apply_index_context_position_extraction,
+)
 
 
 @pytest.mark.parametrize(
@@ -17,8 +20,7 @@ from conlanger.ingest.utils.double_slash_env import (
                 "exception": "adjacent to C",
             },
             {
-                "exception": "C_, _C",
-                "comment": "adjacent to C",
+                "exception": {"position": {"adjacent_to": "C"}},
             },
         ),
         (
@@ -122,7 +124,9 @@ def test_apply_double_slash_env_conditions(parts, expected):
         "stages": [],
     }
     rule = IndexRule(**args, **parts)
-    result = apply_double_slash_env_conditions(rule)
+    result = apply_index_context_position_extraction(
+        apply_double_slash_env_conditions(rule)
+    )
     assert result.to_index_dict() == {**expected, **args}
 
 
@@ -145,9 +149,9 @@ def test_normalize_prose_env_head(text, expected_env, expected_captures):
 @pytest.mark.parametrize(
     ("text", "expected_env", "expected_captures"),
     [
-        ("adjacent to ŋ", "ŋ_, _ŋ", ["adjacent to ŋ"]),
-        ("adjacent to S", "S_, _S", ["adjacent to S"]),
-        ("adjacent to C[+voice]", "C[+voice]_, _C[+voice]", ["adjacent to C[+voice]"]),
+        ("adjacent to ŋ", "adjacent to ŋ", []),
+        ("adjacent to S", "adjacent to S", []),
+        ("adjacent to C[+voice]", "adjacent to C[+voice]", []),
         ("Logudorese", "", ["Logudorese"]),
         ("onset of U[+stress]", "#_U[+stress]", ["onset of U[+stress]"]),
         ("in onset of %[+stress]", "#_%[+stress]", ["in onset of %[+stress]"]),

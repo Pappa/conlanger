@@ -8,12 +8,15 @@ import pandas as pd
 import pytest
 import yaml
 
+from conlanger.compile.models.rules import SoundChangeRule
 from conlanger.ingest.models.index_models import (
     IndexContext,
     IndexRule,
     env_exception_input_to_string,
     resolve_index_context_to_string,
+    resolve_rule_env_exception_for_compile,
 )
+from conlanger.ingest.utils.transform_fields import MEDIAL_BOUNDARY_EXCEPTION
 
 _SAMPLED_RULES_CSV = (
     Path(__file__).resolve().parents[3] / "fixtures" / "sound_change_rules.csv"
@@ -319,6 +322,51 @@ def test_env_exception_input_to_string(input, expected):
 )
 def test_resolve_index_context(ctx, expected):
     assert resolve_index_context_to_string(ctx) == expected
+
+
+@pytest.mark.parametrize(
+    ("env", "exception", "expected_env", "expected_exc"),
+    [
+        (
+            {"position": {"medial": True}},
+            None,
+            "_",
+            MEDIAL_BOUNDARY_EXCEPTION,
+        ),
+        (
+            {"context": "C[-voice]_n", "position": {"medial": True}},
+            None,
+            "C[-voice]_n",
+            MEDIAL_BOUNDARY_EXCEPTION,
+        ),
+        (
+            {"position": {"near": "u"}},
+            None,
+            "u_, _u",
+            None,
+        ),
+    ],
+)
+def test_resolve_rule_env_exception_for_compile(
+    env, exception, expected_env, expected_exc
+):
+    assert resolve_rule_env_exception_for_compile(env, exception) == (
+        expected_env,
+        expected_exc,
+    )
+
+
+def test_sound_change_rule_compiles_medial_position():
+    rule = SoundChangeRule(
+        input="t",
+        output="r",
+        env={"position": {"medial": True}},
+        raw="t → r / medially",
+    )
+    assert rule.env is not None
+    assert str(rule.env) == "_"
+    assert rule.exception is not None
+    assert str(rule.exception) == MEDIAL_BOUNDARY_EXCEPTION
 
 
 @pytest.mark.parametrize(

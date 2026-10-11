@@ -160,6 +160,12 @@ class CompilerConfig(BaseModel):
     series_mappings_sections: dict[str, dict[str, str]] = Field(default_factory=dict)
     sample_sporadic: bool = True
     sample_dialect: bool = True
+    position_templates: dict[str, str] = Field(
+        default_factory=lambda: {
+            "adjacent_to": "{v}_, _{v}",
+            "near": "{v}_, _{v}",
+        }
+    )
 
     def resolved_series_mappings(self, section_index: str) -> dict[str, str]:
         """Global token map with longest-prefix section rows overlaid."""

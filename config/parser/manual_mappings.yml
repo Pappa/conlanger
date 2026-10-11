@@ -166,24 +166,24 @@
 #   reason: replace prose
 #endregion
 
-#region near replacements
-- from: " (/|!) near ([A-Z])"
-  to: " \\1  \\2_, _\\2"
-  use_regex: True
-  reason: replace prose
-- from: " (/|!) near (\\{[^}]+\\})"
-  to: " \\1  \\2_, _\\2"
-  use_regex: True
-  reason: replace prose
-- from: " (/|!) near (\\w?\\[[^]]+\\])"
-  to: " \\1  \\2_, _\\2"
-  use_regex: True
-  reason: replace prose
-- from: " (/|!) near (\\w?\\([^)]+\\))"
-  to: " \\1  \\2_, _\\2"
-  use_regex: True
-  reason: replace prose
-#endregion
+# #region near replacements — commented out: parse extracts IndexContext.position (ticket 143)
+# - from: " (/|!) near ([A-Z])"
+#   to: " \\1  \\2_, _\\2"
+#   use_regex: True
+#   reason: replace prose
+# - from: " (/|!) near (\\{[^}]+\\})"
+#   to: " \\1  \\2_, _\\2"
+#   use_regex: True
+#   reason: replace prose
+# - from: " (/|!) near (\\w?\\[[^]]+\\])"
+#   to: " \\1  \\2_, _\\2"
+#   use_regex: True
+#   reason: replace prose
+# - from: " (/|!) near (\\w?\\([^)]+\\))"
+#   to: " \\1  \\2_, _\\2"
+#   use_regex: True
+#   reason: replace prose
+# #endregion
 
 #region sporadic - TODO: change this to attach to the environment
 - from: " (/|!) in ([\\w ]+) dialects"

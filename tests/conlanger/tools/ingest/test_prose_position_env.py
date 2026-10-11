@@ -11,14 +11,6 @@ from conlanger.ingest.utils.prose_position_env import (
     ("input", "expected"),
     [
         pytest.param(
-            {"env": "adjacent to {S,s,l̥}"},
-            {
-                "env": "{S,s,l̥}_, _{S,s,l̥}",
-                "comment": "adjacent to {S,s,l̥}",
-            },
-            id="adjacent to set",
-        ),
-        pytest.param(
             {"env": "final syllables"},
             {
                 "env": "U#",
@@ -56,13 +48,6 @@ def test_apply_prose_position_env_conditions(input, expected):
         ("in final syllables", "U#", ["in final syllables"]),
         ("syllable-finally", "U#", ["syllable-finally"]),
         ("syllable-final", "U#", ["syllable-final"]),
-        ("adjacent to {S,s,l̥}", "{S,s,l̥}_, _{S,s,l̥}", ["adjacent to {S,s,l̥}"]),
-        ("adjacent to {P,t}", "{P,t}_, _{P,t}", ["adjacent to {P,t}"]),
-        (
-            "adjacent to V[+nasal]",
-            "V[+nasal]_, _V[+nasal]",
-            ["adjacent to V[+nasal]"],
-        ),
         ("unstressed syllables", "%[-stress]", ["unstressed syllables"]),
         (
             "accented or stressed monosyllables",

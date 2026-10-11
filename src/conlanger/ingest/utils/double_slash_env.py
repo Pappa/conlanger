@@ -7,15 +7,10 @@ from typing import Any
 
 from conlanger.ingest.models.index_models import IndexRule
 from conlanger.ingest.utils.prose_position_env import normalize_bare_prose_position_env
-from conlanger.ingest.utils.transform_fields import normalize_medial_env_field
 from conlanger.utils.gloss import extract_uncertainty_qualifier_from_field
 
 _DOUBLE_SLASH_SEP = " // "
 
-_ADJACENT_TO_SINGLE_SEGMENT_RE = re.compile(
-    r"^(?:next|adjacent)\s+to\s+(\w)\s*$",
-    re.IGNORECASE,
-)
 _ONSET_OF_STRESS_RE = re.compile(
     r"^in\s+onset\s+of\s+(%|U)\[\+stress\]\s*$",
     re.IGNORECASE,
@@ -67,10 +62,6 @@ def normalize_prose_exception_or_env_tail(
     stripped = text.strip()
     flags: dict[str, Any] = {}
     captures: list[str] = []
-
-    match = _ADJACENT_TO_SINGLE_SEGMENT_RE.match(stripped)
-    if match:
-        return f"{match.group(1)}_, _{match.group(1)}", [stripped], flags
 
     normalized, pos_captures, pos_flags = normalize_bare_prose_position_env(stripped)
     if normalized != stripped or pos_captures or pos_flags:
@@ -183,11 +174,6 @@ def normalize_prose_env_head(
     if match:
         captures.append("typically")
         stripped = stripped[: match.start()].rstrip()
-
-    normalized, is_medial = normalize_medial_env_field(stripped)
-    if is_medial:
-        captures.append(stripped)
-        stripped = normalized
 
     if _MAYBE_ENV_RE.match(stripped):
         flags["sporadic"] = True

@@ -4,32 +4,32 @@ from conlanger.ingest.models.index_models import (
     IndexRule,
     join_rule_comment,
 )
+from conlanger.ingest.utils.index_context_position import (
+    apply_index_context_position_extraction,
+)
+from conlanger.ingest.utils.transform_fields import normalize_medial_env_field
 from conlanger.ingest.utils.transforms import (
-    MEDIAL_BOUNDARY_EXCEPTION,
-    apply_medial_env_conditions,
     apply_sporadic_qualifier,
     apply_stress_conditions,
     apply_trailing_glosses,
-    normalize_medial_env_field,
     normalize_stress_conditions,
 )
 
 
-def test_apply_medial_env_conditions_bare_medial():
-    result = apply_medial_env_conditions(
+def test_apply_index_context_position_extraction_bare_medial():
+    result = apply_index_context_position_extraction(
         IndexRule(raw="x", source="t", stages=["t", "r"], env="medially")
     )
     assert result.to_index_dict() == {
         "raw": "x",
         "source": "t",
         "stages": ["t", "r"],
-        "env": "_",
-        "exception": MEDIAL_BOUNDARY_EXCEPTION,
+        "env": {"position": {"medial": True}},
     }
 
 
-def test_apply_medial_env_conditions_structural_when_medial():
-    result = apply_medial_env_conditions(
+def test_apply_index_context_position_extraction_structural_when_medial():
+    result = apply_index_context_position_extraction(
         IndexRule(
             raw="x", source="t", stages=["m", "β"], env="C[-voice]_n, when medial"
         )
@@ -38,12 +38,14 @@ def test_apply_medial_env_conditions_structural_when_medial():
         "raw": "x",
         "source": "t",
         "stages": ["m", "β"],
-        "env": "C[-voice]_n",
-        "exception": MEDIAL_BOUNDARY_EXCEPTION,
+        "env": {
+            "context": "C[-voice]_n",
+            "position": {"medial": True},
+        },
     }
 
 
-def test_apply_medial_env_conditions_deferred_env_and_exception():
+def test_apply_index_context_position_extraction_keeps_exception_when_present():
     rule = IndexRule(
         raw="x",
         source="t",
@@ -51,7 +53,14 @@ def test_apply_medial_env_conditions_deferred_env_and_exception():
         env="medially,",
         exception="{r(ʲ),l(ʲ)}_ or _ɡ",
     )
-    assert apply_medial_env_conditions(rule).to_index_dict() == rule.to_index_dict()
+    result = apply_index_context_position_extraction(rule)
+    assert result.to_index_dict() == {
+        "raw": "x",
+        "source": "t",
+        "stages": ["b", "h"],
+        "env": {"position": {"medial": True}},
+        "exception": "{r(ʲ),l(ʲ)}_ or _ɡ",
+    }
 
 
 @pytest.mark.parametrize(

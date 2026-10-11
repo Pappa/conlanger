@@ -47,10 +47,10 @@ After `manual_mappings` and structural split, how should parse represent Index *
 ## Acceptance
 
 - [x] `apply_index_rule_normalisation` removed; docs + ADR-0016 updated (A½: corrections → manual → section only).
-- [ ] Post-split extraction for `adjacent_to`, `near`, `medial` on `env` and `exception` where applicable.
-- [ ] Legacy medial pass removed; YAML no longer carries medial boundary exception strings from parse (compile adds via [144](144-implement-indexcontext-compile-resolution.md)).
-- [ ] `#region near replacements` manual regex rows commented out with a one-line reason pointer to this ticket.
-- [ ] Tests: ADR-0017-style round-trips + rule-id fixtures from inventory for the three relations.
+- [x] Post-split extraction for `adjacent_to`, `near`, `medial` on `env` and `exception` where applicable.
+- [x] Legacy medial pass removed; YAML no longer carries medial boundary exception strings from parse (compile adds via [144](144-implement-indexcontext-compile-resolution.md)).
+- [x] `#region near replacements` manual regex rows commented out with a one-line reason pointer to this ticket.
+- [x] Tests: ADR-0017-style round-trips + rule-id fixtures from inventory for the three relations.
 - [ ] `uv run create_index` regen documented; **`uv run validate_rules` ok count must not regress** (compile resolver must be sufficient — coordinate with [144](144-implement-indexcontext-compile-resolution.md) if split across PRs).
 
 ## Related

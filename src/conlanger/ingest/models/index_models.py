@@ -14,6 +14,7 @@ from pydantic import (
     model_serializer,
 )
 
+from conlanger.ingest.utils.transform_fields import MEDIAL_BOUNDARY_EXCEPTION
 from conlanger.utils.gloss import apply_dialects_to_context
 from conlanger.utils.parsing import (
     extract_rule_parts,
@@ -62,6 +63,8 @@ class IndexContext(BaseModel):
         result = apply_dialects_to_context(self.context or "")
         if isinstance(result, str):
             if not result:
+                if self.position is not None or self.dialect is not None:
+                    return self.model_copy(update={"context": None})
                 return None
             return self.model_copy(update={"context": result})
         merged: dict[str, Any] = dict(result)
@@ -180,35 +183,110 @@ class Index(BaseModel):
         self.sections.append(section)
 
 
-def resolve_index_context_to_string(ctx: IndexContext) -> str:
-    """Project ``IndexContext`` to a single env/exception string for compile.
+DEFAULT_POSITION_TEMPLATES: dict[str, str] = {
+    "adjacent_to": "{v}_, _{v}",
+    "near": "{v}_, _{v}",
+}
 
-    Full position/dialect resolution expands in ticket 144; v1 uses ``context``
-    when present and ignores ``dialect`` until render gating is specified.
-    """
+
+def _position_target_value(value: PositionValue) -> str | None:
+    if isinstance(value, list):
+        if not value:
+            return None
+        value = value[0]
+    if isinstance(value, str) and value:
+        return value
+    return None
+
+
+def _project_position_relation(
+    ctx: IndexContext,
+    relation: str,
+    templates: dict[str, str],
+) -> str | None:
+    if not ctx.position:
+        return None
+    target = _position_target_value(ctx.position.get(relation))
+    if target is None:
+        return None
+    template = templates.get(relation) or templates.get("adjacent_to", "{v}_, _{v}")
+    return template.format(v=target)
+
+
+def resolve_index_context_to_string(
+    ctx: IndexContext,
+    position_templates: dict[str, str] | None = None,
+) -> str:
+    """Project ``IndexContext`` to a single env/exception string for compile."""
+    templates = position_templates or DEFAULT_POSITION_TEMPLATES
     if ctx.context:
-        # TODO: figure out how to handle context + position
-        # does not (currently) happen in the wild
         return ctx.context
-    if ctx.position:
-        for p in ("adjacent_to", "near"):
-            value = ctx.position.get(p)
-            if isinstance(value, list) and isinstance(value[0], str):
-                value = value[0]
-            if isinstance(value, str) and value.isalpha():
-                if p == "adjacent_to":
-                    return f"{value}_, _{value}"
-                elif p == "near":
-                    # TODO: implement this based on compiler config choice
-                    return f"{value}_, _{value}"
+    for relation in ("adjacent_to", "near"):
+        projected = _project_position_relation(ctx, relation, templates)
+        if projected is not None:
+            return projected
     return ""
 
 
-def env_exception_input_to_string(value: EnvExceptionInput) -> str:
+def _coerce_optional_index_context(
+    value: EnvExceptionInput | None,
+) -> IndexContext | None:
+    if value is None:
+        return None
+    if isinstance(value, IndexContext):
+        return value
+    if isinstance(value, str):
+        return IndexContext.model_validate({"context": value})
+    if isinstance(value, dict):
+        return IndexContext.model_validate(value)
+    raise TypeError(f"Invalid env/exception value: {value!r}")
+
+
+def resolve_rule_env_exception_for_compile(
+    env: EnvExceptionInput | None,
+    exception: EnvExceptionInput | None,
+    *,
+    position_templates: dict[str, str] | None = None,
+) -> tuple[str | None, str | None]:
+    """Project rule-level ``env`` / ``exception`` to compile strings (ticket 144)."""
+    env_ctx = _coerce_optional_index_context(env)
+    exc_ctx = _coerce_optional_index_context(exception)
+
+    env_str: str | None = None
+    exc_str: str | None = None
+
+    if env_ctx is not None:
+        env_str = resolve_index_context_to_string(env_ctx, position_templates) or None
+        if (
+            env_ctx.position
+            and env_ctx.position.get("medial")
+            and exc_ctx is None
+            and not env_str
+        ):
+            env_str = "_"
+    if exc_ctx is not None:
+        exc_str = resolve_index_context_to_string(exc_ctx, position_templates) or None
+
+    if (
+        env_ctx is not None
+        and env_ctx.position
+        and env_ctx.position.get("medial")
+        and exc_ctx is None
+    ):
+        exc_str = MEDIAL_BOUNDARY_EXCEPTION
+
+    return env_str, exc_str
+
+
+def env_exception_input_to_string(
+    value: EnvExceptionInput,
+    *,
+    position_templates: dict[str, str] | None = None,
+) -> str:
     """Coerce YAML ``env`` / ``exception`` field to a compile string."""
     if isinstance(value, str):
         return value
     ctx = (
         value if isinstance(value, IndexContext) else IndexContext.model_validate(value)
     )
-    return resolve_index_context_to_string(ctx)
+    return resolve_index_context_to_string(ctx, position_templates)

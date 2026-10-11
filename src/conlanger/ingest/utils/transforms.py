@@ -8,11 +8,7 @@ from conlanger.compile.tools.asca.syllable_position import (
 from conlanger.ingest.models.index_models import (
     IndexRule,
 )
-from conlanger.ingest.utils.transform_fields import (
-    MEDIAL_BOUNDARY_EXCEPTION,
-    normalize_medial_env_field,
-    normalize_stress_conditions,
-)
+from conlanger.ingest.utils.transform_fields import normalize_stress_conditions
 from conlanger.utils.gloss import (
     comment_has_uncertainty_qualifier,
     extract_field_wrapped_quoted_gloss_from_field,
@@ -107,28 +103,10 @@ def apply_syllable_position_editorial_strip(rule: IndexRule) -> IndexRule:
     return rule
 
 
-def apply_medial_env_conditions(rule: IndexRule) -> IndexRule:
-    """Rewrite Index word-internal ``medial`` env prose to ``_`` + boundary exception."""
-    if rule.exception is not None:
-        return rule
-    env = rule.env.context if rule.env else None
-    if not env:
-        return rule
-    normalized, is_medial = normalize_medial_env_field(env)
-    if not is_medial:
-        return rule
-    rule.env = normalized
-    rule.exception = MEDIAL_BOUNDARY_EXCEPTION
-    return rule
-
-
 __all__ = [
-    "MEDIAL_BOUNDARY_EXCEPTION",
-    "apply_medial_env_conditions",
     "apply_sporadic_qualifier",
     "apply_stress_conditions",
     "apply_syllable_position_editorial_strip",
     "apply_trailing_glosses",
-    "normalize_medial_env_field",
     "normalize_stress_conditions",
 ]

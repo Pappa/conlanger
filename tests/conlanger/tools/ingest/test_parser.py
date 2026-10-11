@@ -46,9 +46,8 @@ def test_parse_rule_string_medial_with_exception_env_normalized(fx_rule):
         "rule_id": fx_rule.rule_id,
         "source": fx_rule.source,
         "stages": ["b", "h"],
-        "env": "_",
+        "env": {"position": {"medial": True}},
         "exception": "r_",
-        "comment": "medially,",
     }
 
 
