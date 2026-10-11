@@ -150,6 +150,15 @@ class ParserConfig(BaseModel):
         return result
 
 
+class PositionTemplates(BaseModel):
+    """Relation-keyed ASCA projection templates for ``IndexContext.position``."""
+
+    model_config = ConfigDict(frozen=True)
+
+    adjacent_to: str = "{v}_, _{v}"
+    near: str = "{v}_, _{v}"
+
+
 class CompilerConfig(BaseModel):
     """Fat compile-time config: group mappings plus series token maps."""
 
@@ -160,12 +169,14 @@ class CompilerConfig(BaseModel):
     series_mappings_sections: dict[str, dict[str, str]] = Field(default_factory=dict)
     sample_sporadic: bool = True
     sample_dialect: bool = True
-    position_templates: dict[str, str] = Field(
-        default_factory=lambda: {
-            "adjacent_to": "{v}_, _{v}",
-            "near": "{v}_, _{v}",
-        }
-    )
+    position_templates: PositionTemplates = Field(default_factory=PositionTemplates)
+
+    @field_validator("position_templates", mode="before")
+    @classmethod
+    def _coerce_position_templates(cls, value: object) -> object:
+        if value is None:
+            return {}
+        return value
 
     def resolved_series_mappings(self, section_index: str) -> dict[str, str]:
         """Global token map with longest-prefix section rows overlaid."""

@@ -14,6 +14,7 @@ from pydantic import (
     model_serializer,
 )
 
+from conlanger.ingest.models.mappings import PositionTemplates
 from conlanger.ingest.utils.transform_fields import MEDIAL_BOUNDARY_EXCEPTION
 from conlanger.utils.gloss import apply_dialects_to_context
 from conlanger.utils.parsing import (
@@ -183,10 +184,7 @@ class Index(BaseModel):
         self.sections.append(section)
 
 
-DEFAULT_POSITION_TEMPLATES: dict[str, str] = {
-    "adjacent_to": "{v}_, _{v}",
-    "near": "{v}_, _{v}",
-}
+DEFAULT_POSITION_TEMPLATES: dict[str, str] = PositionTemplates().model_dump()
 
 
 def _position_target_value(value: PositionValue) -> str | None:

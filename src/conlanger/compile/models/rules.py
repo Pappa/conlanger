@@ -102,7 +102,9 @@ class SoundChangeRule(RulePartBase):
             return data
         config = data.get("compiler_config")
         templates = (
-            config.position_templates if isinstance(config, CompilerConfig) else None
+            config.position_templates.model_dump()
+            if isinstance(config, CompilerConfig)
+            else None
         )
         env_str, exc_str = resolve_rule_env_exception_for_compile(
             env, exception, position_templates=templates
