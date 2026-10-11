@@ -42,11 +42,11 @@ Loader continues to accept scalar `env` / `exception` during transition.
 
 ## Acceptance
 
-- [ ] `position_templates` (or equivalent) in `compiler_config.yml` with defaults above; overridable per relation key.
-- [ ] Resolver tests: `adjacent_to: C` → `C_, _C`; `near: C` → same by default; `medial: true` → env `_` + exception `#_, _#` per policy.
-- [ ] `context` + `position` merge covered by tests aligned with [143](143-implement-index-rule-normalisation-passes.md) examples.
-- [ ] `uv run validate_rules` with regen index: no ok-count regression vs pre-143/144 baseline for the migrated relation set.
-- [ ] Document resolver in [sound-change-applier.md](../../../docs/system/sound-change-applier.md).
+- [x] `position_templates` (or equivalent) in `compiler_config.yml` with defaults above; overridable per relation key.
+- [x] Resolver tests: `adjacent_to: C` → `C_, _C`; `near: C` → same by default; `medial: true` → env `_` + exception `#_, _#` per policy.
+- [x] `context` + `position` merge covered by tests aligned with [143](143-implement-index-rule-normalisation-passes.md) examples.
+- [x] `uv run validate_rules` with regen index: no ok-count regression vs pre-143/144 baseline for the migrated relation set.
+- [x] Document resolver in [sound-change-applier.md](../../../docs/system/sound-change-applier.md).
 
 ## Related
 

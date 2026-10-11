@@ -215,15 +215,22 @@ def resolve_index_context_to_string(
     ctx: IndexContext,
     position_templates: dict[str, str] | None = None,
 ) -> str:
-    """Project ``IndexContext`` to a single env/exception string for compile."""
+    """Project ``IndexContext`` to a compile env/exception string.
+
+    Joins structural ``context`` with the first projected neighbour relation
+    (``adjacent_to``, then ``near``) using comma separation. Medial boundary
+    pairing is applied at rule level in ``resolve_rule_env_exception_for_compile``.
+    """
     templates = position_templates or DEFAULT_POSITION_TEMPLATES
+    parts: list[str] = []
     if ctx.context:
-        return ctx.context
+        parts.append(ctx.context)
     for relation in ("adjacent_to", "near"):
         projected = _project_position_relation(ctx, relation, templates)
         if projected is not None:
-            return projected
-    return ""
+            parts.append(projected)
+            break
+    return ", ".join(parts)
 
 
 def _coerce_optional_index_context(

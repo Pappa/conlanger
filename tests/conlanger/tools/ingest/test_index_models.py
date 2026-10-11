@@ -305,8 +305,21 @@ def test_env_exception_input_to_string(input, expected):
         pytest.param(IndexContext(position={"medial": True}), "", id="medial"),
         pytest.param(
             IndexContext(context="#_", position={"adjacent_to": "C"}),
-            "#_",
-            id="uses_context_string",
+            "#_, C_, _C",
+            id="merges_context_with_adjacent_to",
+        ),
+        pytest.param(
+            IndexContext(context="V_C", position={"near": "u"}),
+            "V_C, u_, _u",
+            id="merges_context_with_near",
+        ),
+        pytest.param(
+            IndexContext(
+                context="C[-voice]_n",
+                position={"medial": True},
+            ),
+            "C[-voice]_n",
+            id="structural_context_with_medial_position",
         ),
         pytest.param(
             IndexContext(position={"adjacent_to": "CV"}),
@@ -315,7 +328,7 @@ def test_env_exception_input_to_string(input, expected):
         ),
         pytest.param(
             IndexContext(position={"near": "u"}),
-            "u_, _u",  # TODO: implement this based on compiler config choice
+            "u_, _u",
             id="near_u",
         ),
     ],

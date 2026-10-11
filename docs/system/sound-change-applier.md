@@ -44,6 +44,22 @@ Parse-time transforms are documented in [index-diachronica-parser.md](./index-di
 
 ---
 
+## Structured `env` / `exception` (`IndexContext`)
+
+Corpus rules may carry structured **`IndexContext`** on `env` or `exception` ([ADR-0017](./adr/0017-structured-env-exception-indexcontext.md)) instead of a bare Index-shaped string. At **`SoundChangeRule`** construction, `resolve_structured_env_exception` projects each field to the compile strings the ASCA pipeline already expects.
+
+| Input | Compile projection |
+| --- | --- |
+| Legacy scalar string | Passthrough unchanged |
+| `position.adjacent_to` / `position.near` only | Relation-keyed template from [`config/compile/asca/compiler_config.yml`](../config/compile/asca/compiler_config.yml) `position_templates` (`{v}_, _{v}` by default; if `near` is omitted in config, `adjacent_to` is used) |
+| `context` + neighbour `position` | Comma-joined: structural `context`, then projected neighbour template |
+| `position.medial` on **env**, no `exception` | Env `_` when there is no structural `context`; **exception** `#_, _#` (`MEDIAL_BOUNDARY_EXCEPTION`). Structural `context` on env is kept; medial boundary still applies on exception. Existing **exception** `IndexContext` is left to owner semantics (no silent medial drop). |
+| `dialect` | Preserved in YAML only in v1 (no compile gating) |
+
+Implementation: [`resolve_index_context_to_string`](../src/conlanger/ingest/models/index_models.py), [`resolve_rule_env_exception_for_compile`](../src/conlanger/ingest/models/index_models.py) (rule-level medial pairing).
+
+---
+
 ## Per-rule ASCA compile pipeline
 
 Per-field transforms run on `input`, `output`, `env`, and `exception` separately at `SoundChangeRule` construction; cross-field subscript expansion shares a `declared` set (output last); fields join only when building `value` ([`compile_asca_rule_fields`](../src/conlanger/compile/tools/asca/pipeline.py), [`SoundChangeRule`](../src/conlanger/compile/models/rules.py)).
