@@ -1326,8 +1326,9 @@ sections:
     stages:
     - t
     - r
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
 - section: Proto-Agaw to Kemantney
   index: 6.2.1.1.3
   citation: 'Pogostick Man, from Fallon, Paul D. (2009), “The Velar Ejective in Proto-Agaw”.
@@ -1370,8 +1371,9 @@ sections:
     stages:
     - t
     - j
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Kemantney-kʼ
     source: index_diachronica.html:1209
     raw: 'kʼ → χʷ / #_'
@@ -2389,14 +2391,18 @@ sections:
     stages:
     - a(ː)
     - ɑ(ː)
-    env: '[+rtr]_, _[+rtr]'
+    env:
+      position:
+        near: '[+emphatic]'
   - rule_id: Egyptian-Arabic-aː_2
     source: index_diachronica.html:1394
     raw: a(ː) → ɑ(ː) / if ɑ(ː) is elsewhere in the word
     stages:
     - a(ː)
     - ɑ(ː)
-    env: ɑ(ː)_, _ɑ(ː)
+    env:
+      position:
+        near: ɑ(ː)
     comment: if ɑ(ː) is elsewhere in the word
   - rule_id: Egyptian-Arabic-aː_3
     source: index_diachronica.html:1395
@@ -2404,7 +2410,7 @@ sections:
     stages:
     - a(ː)
     - '{æ(ː),ɛ(ː)}'
-    exception: ɑ(ː)_, _ɑ(ː)
+    env: else
   - rule_id: Egyptian-Arabic-q
     source: index_diachronica.html:1396
     raw: q → ʔ / except in several words, two of which are al-Qâhira and musîqâ
@@ -2476,7 +2482,9 @@ sections:
     stages:
     - aː
     - æː
-    exception: '[+rtr]_, _[+rtr]'
+    exception:
+      position:
+        near: '[+emphatic]'
   - rule_id: Coastal-Hadhrami-Arabic-V-long
     source: index_diachronica.html:1412
     raw: 'V[-long] → ∅ / #C_C, in some words'
@@ -2528,7 +2536,9 @@ sections:
     stages:
     - aː
     - æː
-    exception: '[+rtr]_, _[+rtr]'
+    exception:
+      position:
+        near: '[+emphatic]'
   - rule_id: Wādı̄-Hadhrami-Arabic-V-long
     source: index_diachronica.html:1423
     raw: 'V[-long] → ∅ / #C_C (sporadic?)'
@@ -2735,8 +2745,9 @@ sections:
     stages:
     - '{C[+labial],C[-fr,+bk,+hi,-lo]}'
     - '[+labial]'
-    env: u[-long]_, _u[-long]
-    comment: adjacent to u[-long]
+    env:
+      position:
+        adjacent_to: u[-long]
   - rule_id: Moroccan-Arabic-u,ə
     source: index_diachronica.html:1471
     raw: '{u,ə} → ∅ / ! C_C(C)#'
@@ -2750,21 +2761,25 @@ sections:
     stages:
     - ə
     - a
-    env: '{ħ,ʕ}_, _{ħ,ʕ}'
+    env:
+      position:
+        near: '{ħ,ʕ}'
   - rule_id: Moroccan-Arabic-ə_2
     source: index_diachronica.html:1473
     raw: ə → ɐ / near emphatics
     stages:
     - ə
     - ɐ
-    env: '[+rtr]_, _[+rtr]'
+    env:
+      position:
+        near: '[+emphatic]'
   - rule_id: Moroccan-Arabic-ə_3
     source: index_diachronica.html:1474
     raw: ə → ɪ / else
     stages:
     - ə
     - ɪ
-    exception: '[+rtr]_, _[+rtr]'
+    env: else
   - rule_id: Moroccan-Arabic-u_2
     source: index_diachronica.html:1475
     raw: u → ʊ / short only
@@ -2778,14 +2793,16 @@ sections:
     stages:
     - aː iː uː
     - ɑː eː oː
-    env: '[+rtr]_, _[+rtr]'
+    env:
+      position:
+        near: '[+emphatic]'
   - rule_id: Moroccan-Arabic-aː
     source: index_diachronica.html:1477
     raw: aː → æː / else
     stages:
     - aː
     - æː
-    exception: '[+rtr]_, _[+rtr]'
+    env: else
   - rule_id: Moroccan-Arabic-C1ˤC2
     source: index_diachronica.html:1478
     raw: C₁ˤC₂ → C₁C₂ˤ
@@ -2811,7 +2828,9 @@ sections:
     stages:
     - dʒ
     - '{d,ɡ}'
-    env: '{s,z}_, _{s,z}'
+    env:
+      position:
+        near: '{s,z}'
     comment: if s or z occur somewhere else in the word
   - rule_id: Moroccan-Arabic-dʒ_2
     source: index_diachronica.html:1482
@@ -2819,7 +2838,7 @@ sections:
     stages:
     - dʒ
     - ʒ
-    exception: '{s,z}_, _{s,z}'
+    env: else
   - rule_id: Moroccan-Arabic-s
     source: index_diachronica.html:1483
     raw: s → ʃ / if ʃ is somewhere in the stem after it
@@ -2874,7 +2893,9 @@ sections:
     stages:
     - a
     - ɑ
-    env: '[+rtr]_, _[+rtr]'
+    env:
+      position:
+        near: '[+emphatic]'
   - rule_id: Tunisian-Arabic-a_2
     source: index_diachronica.html:1502
     raw: a → ɛ (sometimes)
@@ -3184,7 +3205,9 @@ sections:
     stages:
     - ə
     - a
-    env: '[+laryngeal]_, _[+laryngeal]'
+    env:
+      position:
+        near: '[+laryngeal]'
   - rule_id: Modern-Israeli-Hebrew-ə_2
     source: index_diachronica.html:1558
     raw: 'ə → ɛ / #R_C or when breaking up what would otherwise be a three-consonant
@@ -3936,8 +3959,9 @@ sections:
     stages:
     - '{θ,tʃ,ʃ,r}'
     - t
-    exception: C_, _C
-    comment: adjacent to C
+    exception:
+      position:
+        adjacent_to: C
   - rule_id: Blackfoot-∅
     source: index_diachronica.html:1712
     raw: ∅ → x / _s ! _C{C,#}
@@ -4174,8 +4198,9 @@ sections:
     stages:
     - i(ː)wi
     - iː
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Blackfoot-iːwi_2
     source: index_diachronica.html:1747
     raw: i(ː)wi → i / _#
@@ -4381,21 +4406,27 @@ sections:
     stages:
     - C[- nasal]
     - ∅
-    env: N_, _N
+    env:
+      position:
+        near: N
   - rule_id: Cheyenne-m
     source: index_diachronica.html:1781
     raw: m → ∅ / near nasals
     stages:
     - m
     - ∅
-    env: N_, _N
+    env:
+      position:
+        near: N
   - rule_id: Cheyenne-p
     source: index_diachronica.html:1782
     raw: p → {t,∅} / near consonants
     stages:
     - p
     - '{t,∅}'
-    env: C_, _C
+    env:
+      position:
+        near: C
   - rule_id: Cheyenne-W
     source: index_diachronica.html:1783
     raw: W → ∅ / near nasals or t
@@ -5093,8 +5124,9 @@ sections:
     - we
     - wə
     - oː
-    exception: '{p,m,k}_, _{p,m,k}'
-    comment: adjacent to {p,m,k}
+    exception:
+      position:
+        adjacent_to: '{p,m,k}'
   - rule_id: Munsee-Delaware-j
     source: index_diachronica.html:1906
     raw: j → ∅ / C_
@@ -6630,9 +6662,10 @@ sections:
     stages:
     - b
     - h
-    env: _
+    env:
+      position:
+        medial: true
     exception: '{r(ʲ),l(ʲ)}_, _ɡ'
-    comment: medially,
   - rule_id: Proto-Mongolic-pʰ
     source: index_diachronica.html:2184
     raw: 'pʰ → {h,j} / #_'
@@ -6646,8 +6679,9 @@ sections:
     stages:
     - pʰ
     - '{b,h}'
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Proto-Mongolic-pʰ_3
     source: index_diachronica.html:2186
     raw: 'pʰ → b / #_U[+high pitch]'
@@ -6923,8 +6957,9 @@ sections:
     stages:
     - p
     - b
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Proto-Tungusic-pʰ
     source: index_diachronica.html:2231
     raw: pʰ → p
@@ -8257,8 +8292,9 @@ sections:
     stages:
     - d
     - r
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
     comment: (Meno-mene and Mriak-mriku only)
   - rule_id: Sasak-r
     source: index_diachronica.html:2562
@@ -8347,8 +8383,9 @@ sections:
     stages:
     - b
     - ∅
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
     comment: (sporadic)
     sporadic: true
 - section: Polynesian
@@ -9788,8 +9825,9 @@ sections:
     stages:
     - b
     - w
-    exception: C_, _C
-    comment: adjacent to C
+    exception:
+      position:
+        adjacent_to: C
   - rule_id: Javanese-ə
     source: index_diachronica.html:2873
     raw: ə → u / _h#
@@ -10124,8 +10162,9 @@ sections:
     stages:
     - t
     - ð
-    exception: S_, _S
-    comment: adjacent to S
+    exception:
+      position:
+        adjacent_to: S
   - rule_id: Palauan-s
     source: index_diachronica.html:2938
     raw: s → t
@@ -10276,8 +10315,9 @@ sections:
     stages:
     - ə
     - ∅
-    env: V_, _V
-    comment: adjacent to V
+    env:
+      position:
+        adjacent_to: V
   - rule_id: Proto-North-Sarawak-a
     source: index_diachronica.html:2963
     raw: a → ə / _UU(U…)#
@@ -10423,8 +10463,9 @@ sections:
     stages:
     - ə
     - ∅
-    env: V_, _V
-    comment: adjacent to V
+    env:
+      position:
+        adjacent_to: V
   - rule_id: Kiput-V+stress
     source: index_diachronica.html:2989
     raw: V[+stress] → Vː / _C# ! V = ə and/or C = h “(applies to diphthongal nuclei
@@ -11129,7 +11170,9 @@ sections:
     stages:
     - β b m
     - βʷ bʷ mʷ
-    env: near u
+    env:
+      position:
+        near: u
     comment: typically
     sporadic: true
   - rule_id: Hiw-dr-*r
@@ -11985,7 +12028,9 @@ sections:
     stages:
     - V[-hi,-lo]
     - a
-    env: N_, _N
+    env:
+      position:
+        near: N
     comment: '?'
     sporadic: true
   - rule_id: Nixumwak-Nêlêmwa-u-i
@@ -17945,8 +17990,9 @@ sections:
     stages:
     - v
     - m
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Proto-Aleut-v_2
     source: index_diachronica.html:4599
     raw: v → w / a_a (in eastern dialects)
@@ -17989,8 +18035,9 @@ sections:
     stages:
     - z
     - ð
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Proto-Aleut-l̥
     source: index_diachronica.html:4605
     raw: l̥ → l
@@ -18091,8 +18138,9 @@ sections:
     stages:
     - l̥
     - l
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Barrow-Iñupiaq-t
     source: index_diachronica.html:4626
     raw: t → s / i_
@@ -18668,8 +18716,9 @@ sections:
     stages:
     - C[+voice]
     - C[-voice]
-    env: '{S,s,l̥}_, _{S,s,l̥}'
-    comment: adjacent to {S,s,l̥}
+    env:
+      position:
+        adjacent_to: '{S,s,l̥}'
   - rule_id: Kuskokwim-Yup’ik-ɣ-ʁ
     source: index_diachronica.html:4721
     raw: ɣ ʁ → k q / _#
@@ -18703,8 +18752,9 @@ sections:
     stages:
     - F[+voice]
     - F[-voice]
-    env: '{S,ts}_, _{S,ts}'
-    comment: adjacent to {S,ts}
+    env:
+      position:
+        adjacent_to: '{S,ts}'
   - rule_id: Kuskokwim-Yup’ik-F+voice_2
     source: index_diachronica.html:4726
     raw: F[+voice] → S[+same POA] / l̥_
@@ -18843,8 +18893,9 @@ sections:
     stages:
     - C[+voice]
     - C[-voice]
-    env: '{S,s,l̥}_, _{S,s,l̥}'
-    comment: adjacent to {S,s,l̥}
+    env:
+      position:
+        adjacent_to: '{S,s,l̥}'
   - rule_id: Nunivak-Yup’ik-ɣ-ʁ
     source: index_diachronica.html:4748
     raw: ɣ ʁ → x χ / _#
@@ -18892,8 +18943,9 @@ sections:
     stages:
     - F[+voice]
     - F[-voice]
-    env: '{S,ts}_, _{S,ts}'
-    comment: adjacent to {S,ts}
+    env:
+      position:
+        adjacent_to: '{S,ts}'
   - rule_id: Nunivak-Yup’ik-F+voice_2
     source: index_diachronica.html:4756
     raw: F[+voice] → S / l̥_
@@ -19024,8 +19076,9 @@ sections:
     stages:
     - C[+voice]
     - C[-voice]
-    env: '{S,s,l̥}_, _{S,s,l̥}'
-    comment: adjacent to {S,s,l̥}
+    env:
+      position:
+        adjacent_to: '{S,s,l̥}'
   - rule_id: Siberian-Yup’ik-ɣ-ʁ
     source: index_diachronica.html:4777
     raw: ɣ ʁ → k q / _#
@@ -19067,8 +19120,9 @@ sections:
     stages:
     - F[+voice]
     - F[-voice]
-    env: '{S,ts}_, _{S,ts}'
-    comment: adjacent to {S,ts}
+    env:
+      position:
+        adjacent_to: '{S,ts}'
   - rule_id: Siberian-Yup’ik-F+voice_2
     source: index_diachronica.html:4783
     raw: F[+voice] → S / l̥_
@@ -19213,8 +19267,9 @@ sections:
     stages:
     - C[+voice]
     - C[-voice]
-    env: '{S,s,l̥}_, _{S,s,l̥}'
-    comment: adjacent to {S,s,l̥}
+    env:
+      position:
+        adjacent_to: '{S,s,l̥}'
   - rule_id: Unaaliq-Yup’ik-ɣ-ʁ
     source: index_diachronica.html:4806
     raw: ɣ ʁ → k q / _#
@@ -19263,8 +19318,9 @@ sections:
     stages:
     - F[+voice]
     - F[-voice]
-    env: '{S,ts}_, _{S,ts}'
-    comment: adjacent to {S,ts}
+    env:
+      position:
+        adjacent_to: '{S,ts}'
   - rule_id: Unaaliq-Yup’ik-F+voice_2
     source: index_diachronica.html:4813
     raw: F[+voice] → S / l̥_
@@ -19495,8 +19551,9 @@ sections:
     stages:
     - d
     - l
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Central-Sentani-N
     source: index_diachronica.html:4870
     raw: N → m / _#
@@ -19602,8 +19659,9 @@ sections:
     stages:
     - d
     - l
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Eastern-Sentani-N
     source: index_diachronica.html:4888
     raw: N → m / _#
@@ -19797,8 +19855,9 @@ sections:
     stages:
     - d
     - r
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Tabla-N
     source: index_diachronica.html:4921
     raw: N → ŋ / _#
@@ -19975,32 +20034,36 @@ sections:
     stages:
     - sd
     - θ
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Gheg-Albanian-sḱ
     source: index_diachronica.html:4973
     raw: sḱ → h / medial
     stages:
     - skʲ
     - h
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Gheg-Albanian-sp
     source: index_diachronica.html:4974
     raw: sp → f / medial
     stages:
     - sp
     - f
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Gheg-Albanian-st
     source: index_diachronica.html:4975
     raw: st → ʃt / medial
     stages:
     - st
     - ʃt
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Gheg-Albanian-s_3
     source: index_diachronica.html:4976
     raw: s → θ / sometimes, involving “[d]issimilation with following vowel”
@@ -20220,32 +20283,36 @@ sections:
     stages:
     - sd
     - θ
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Tosk-Albanian-sḱ
     source: index_diachronica.html:5012
     raw: sḱ → h / medial
     stages:
     - skʲ
     - h
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Tosk-Albanian-sp
     source: index_diachronica.html:5013
     raw: sp → f / medial
     stages:
     - sp
     - f
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Tosk-Albanian-st
     source: index_diachronica.html:5014
     raw: st → ʃt / medial
     stages:
     - st
     - ʃt
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Tosk-Albanian-s_3
     source: index_diachronica.html:5015
     raw: s → θ / sometimes, involving “[d]issimilation with following vowel”
@@ -21151,8 +21218,9 @@ sections:
     stages:
     - ɡʷ
     - hʷ
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Palaic-hhy
     source: index_diachronica.html:5168
     raw: hhy → “something like /ʒ/”
@@ -24152,16 +24220,20 @@ sections:
     stages:
     - m
     - β
-    env: C[-voice]_n
-    exception: '#_, _#'
+    env:
+      context: C[-voice]_n
+      position:
+        medial: true
   - rule_id: Gothic-m_2
     source: index_diachronica.html:5674
     raw: m → ɸ / C[+ voiced]_n, when medial
     stages:
     - m
     - ɸ
-    env: C[+voice]_n
-    exception: '#_, _#'
+    env:
+      context: C[+voice]_n
+      position:
+        medial: true
   - rule_id: Gothic-nː
     source: index_diachronica.html:5675
     raw: nː → n / _C ! _j
@@ -29747,8 +29819,9 @@ sections:
     stages:
     - tʃ
     - tː
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Attic-Greek-w
     source: index_diachronica.html:6592
     raw: w → ∅
@@ -30347,8 +30420,9 @@ sections:
     stages:
     - tʃ
     - tː
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Doric-Greek-h_2
     source: index_diachronica.html:6699
     raw: h → ∅ (in those “dialects of the western fringe of Asia Minor and the near-by
@@ -30583,8 +30657,9 @@ sections:
     stages:
     - tʃ
     - sː
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Ionic-Greek-VCw
     source: index_diachronica.html:6741
     raw: VCw → VːC
@@ -33271,8 +33346,9 @@ sections:
     stages:
     - s
     - z
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
     comment: (I’m assuming between vowels or when *s voiced in PIE)
   - rule_id: Proto-Italic-eu
     source: index_diachronica.html:7196
@@ -44020,8 +44096,9 @@ sections:
     stages:
     - dz
     - s
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Arawá-tsʰ
     source: index_diachronica.html:9149
     raw: tsʰ → s
@@ -44046,8 +44123,9 @@ sections:
     stages:
     - ɓ
     - ɸ
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Banawá-Jamamadi-pʰ
     source: index_diachronica.html:9156
     raw: p(ʰ) → ɸ
@@ -44089,8 +44167,9 @@ sections:
     stages:
     - e
     - a
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Hypothetical-Arawán-Substrate-e_2
     source: index_diachronica.html:9166
     raw: 'e → i / #_'
@@ -44110,8 +44189,9 @@ sections:
     stages:
     - pʰ
     - h
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Hypothetical-Arawán-Substrate-dz
     source: index_diachronica.html:9169
     raw: dz → s
@@ -44136,8 +44216,9 @@ sections:
     stages:
     - ɓ
     - f
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Jarawara-ɗ
     source: index_diachronica.html:9176
     raw: ɗ → t
@@ -44192,8 +44273,9 @@ sections:
     stages:
     - ɓ
     - p
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Kulína-Dení-ɗ
     source: index_diachronica.html:9188
     raw: ɗ → t
@@ -44291,8 +44373,9 @@ sections:
     stages:
     - e
     - a
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Paumarí-e_2
     source: index_diachronica.html:9209
     raw: 'e → {a,i} / #_'
@@ -44313,8 +44396,9 @@ sections:
     stages:
     - pʰ t
     - ɸ ʔ
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Paumarí-tsʰ
     source: index_diachronica.html:9212
     raw: ts(ʰ) → s
@@ -53321,8 +53405,9 @@ sections:
     stages:
     - tʃʼ
     - tsʼ
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Klallam-w-j
     source: index_diachronica.html:11478
     raw: w j → kʷ tʃ / _V
@@ -53714,8 +53799,9 @@ sections:
     stages:
     - tʃ’
     - ts’
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Lummi-Northern-Straits-j
     source: index_diachronica.html:11548
     raw: j → tʃ / _V
@@ -53869,8 +53955,9 @@ sections:
     stages:
     - tʃ’
     - θ’
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Saanich-Northern-Straits-j-w
     source: index_diachronica.html:11575
     raw: j w → tʃ kʷ / _V
@@ -53998,8 +54085,9 @@ sections:
     stages:
     - tʃ’
     - ts’
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Songish-Northern-Straits-j-w
     source: index_diachronica.html:11598
     raw: j w → tʃ kʷ / _V
@@ -54133,8 +54221,9 @@ sections:
     stages:
     - tʃ’
     - ts’
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Sooke-Northern-Straits-j-w
     source: index_diachronica.html:11622
     raw: j w → tʃ kʷ / _V
@@ -59784,8 +59873,9 @@ sections:
     stages:
     - a(ː)
     - ẽ(ː)
-    env: V[+nasal]_, _V[+nasal]
-    comment: adjacent to V[+nasal]
+    env:
+      position:
+        adjacent_to: V[+nasal]
   - rule_id: Seneca-ẽː
     source: index_diachronica.html:12657
     raw: ẽ(ː) → e(ː) / _{e(ː),o(ː)
@@ -60281,8 +60371,10 @@ sections:
     stages:
     - t
     - ∅
-    env: _k
-    exception: '#_, _#'
+    env:
+      context: _k
+      position:
+        medial: true
   - rule_id: Catawba-”V+nas
     source: index_diachronica.html:12748
     raw: ”V[+nas] → Vn (*)
@@ -60400,8 +60492,10 @@ sections:
     stages:
     - t
     - ∅
-    env: _k
-    exception: '#_, _#'
+    env:
+      context: _k
+      position:
+        medial: true
   - rule_id: Dakota-hk
     source: index_diachronica.html:12768
     raw: hk →tʃ
@@ -60452,8 +60546,9 @@ sections:
     stages:
     - kr
     - ɡj
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
 - section: Dakota to Teton Dakota
   index: 37.2.2.2
   citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International
@@ -60608,8 +60703,10 @@ sections:
     stages:
     - t
     - ∅
-    env: _k
-    exception: '#_, _#'
+    env:
+      context: _k
+      position:
+        medial: true
   - rule_id: Mandan-sk
     source: index_diachronica.html:12813
     raw: sk → ʃ / _”V
@@ -60834,8 +60931,9 @@ sections:
     stages:
     - tk
     - ɡ
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Čiwere-x
     source: index_diachronica.html:12852
     raw: x → ∅ / _k
@@ -60943,8 +61041,10 @@ sections:
     stages:
     - t
     - ∅
-    env: _k
-    exception: '#_, _#'
+    env:
+      context: _k
+      position:
+        medial: true
   - rule_id: Winnebago-xk
     source: index_diachronica.html:12872
     raw: xk → ɡ
@@ -61001,8 +61101,10 @@ sections:
     stages:
     - t
     - ∅
-    env: _k
-    exception: '#_, _#'
+    env:
+      context: _k
+      position:
+        medial: true
 - section: Proto-Crow-Hidatsa to Crow
   index: 37.2.5.1
   citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International
@@ -61257,8 +61359,9 @@ sections:
     stages:
     - tk
     - ɡ
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
 - section: Proto-Dhegiha to Kansa
   index: 37.2.6.1
   citation: Pogostick Man, from Wolff, Hans (1950), “Comparative Siouan I”. International
@@ -66174,8 +66277,9 @@ sections:
     stages:
     - '{w,j}'
     - ∅
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
 - section: Proto-Uto-Aztecan to Hopi
   index: '43.2'
   citation: 'Radius Solis, from from Voegelin, Charles F., Florence M. Voegelin, &
@@ -66210,8 +66314,9 @@ sections:
     stages:
     - l h
     - n ∅
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Hopi-w
     source: index_diachronica.html:13978
     raw: w → l / {#,V[+low]}_V[+low]
@@ -66262,8 +66367,9 @@ sections:
     stages:
     - t
     - l
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Luiseño-ts
     source: index_diachronica.html:13988
     raw: ts → tʃ
@@ -66310,8 +66416,9 @@ sections:
     stages:
     - l
     - n
-    env: _
-    exception: '#_, _#'
+    env:
+      position:
+        medial: true
   - rule_id: Luiseño-o-ɨ
     source: index_diachronica.html:13996
     raw: o ɨ → e o

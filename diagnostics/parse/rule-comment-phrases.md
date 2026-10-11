@@ -1,6 +1,6 @@
 # Rule comment phrase summary
 
-- Corpus rules with **`comment`**: **1357**
+- Corpus rules with **`comment`**: **1340**
 - Comments containing ``; `` (semicolon tails): **186**
 
 ## Qualifier phrases

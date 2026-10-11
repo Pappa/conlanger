@@ -10,41 +10,31 @@ section_index,section_name,rule_id,source,from_text,to_text
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-dˤ,index_diachronica.html:1380, (seems to , ; (seems to 
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aj-aw,index_diachronica.html:1384, / in , / 
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː,index_diachronica.html:1393, (/|!) (near|adjacent to) emphatics, \1 \2 [+emphatic]
-6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː,index_diachronica.html:1393, (/|!) near (\w?\[[^]]+\])," \1  \2_, _\2"
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː_2,index_diachronica.html:1394, / if ɑ(ː) is elsewhere in the word, / near ɑ(ː) ; if ɑ(ː) is elsewhere in the word
-6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː_2,index_diachronica.html:1394, (/|!) near (\w?\([^)]+\))," \1  \2_, _\2"
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː_3,index_diachronica.html:1395, æ(ː) / else (sometimes it seems more like ɛ(ː) to me)," {æ(ː),ɛ(ː)} / else"
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-q,index_diachronica.html:1396, / (except in several), / sporadic ; \1
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-h,index_diachronica.html:1401, / in coda," / :{ _#, _% }: ; in coda"
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-aː,index_diachronica.html:1409, / (in Form VI), / sporadic ; \1
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-aː_2,index_diachronica.html:1410, / (unless|when not) , / ! 
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-aː_2,index_diachronica.html:1410, (/|!) (near|adjacent to) emphatics, \1 \2 [+emphatic]
-6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-aː_2,index_diachronica.html:1410, (/|!) near (\w?\[[^]]+\])," \1  \2_, _\2"
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-V-long,index_diachronica.html:1412,", in some words", sporadic ; in some words
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-aː,index_diachronica.html:1420, / (in Form VI), / sporadic ; \1
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-aː_2,index_diachronica.html:1421, / (unless|when not) , / ! 
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-aː_2,index_diachronica.html:1421, (/|!) (near|adjacent to) emphatics, \1 \2 [+emphatic]
-6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-aː_2,index_diachronica.html:1421, (/|!) near (\w?\[[^]]+\])," \1  \2_, _\2"
 6.2.2.1.10,Classical Arabic to Hassāniyya Arabic,Hassāniyya-Arabic-ʔ,index_diachronica.html:1431, / (depending on the environment), / sporadic ; \1
 6.2.2.1.11,Classical Arabic to Iraqi Arabic,Iraqi-Arabic-ɡʲ,index_diachronica.html:1445,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 6.2.2.1.11,Classical Arabic to Iraqi Arabic,Iraqi-Arabic-ɡʲ,index_diachronica.html:1445,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 6.2.2.1.11,Classical Arabic to Iraqi Arabic,Iraqi-Arabic-ɡʲ,index_diachronica.html:1445, (/|!) in ([\w ]+) dialects, \1 dialectal ; in \2 dialects
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-t,index_diachronica.html:1467, / plain t only, ; plain t only
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə,index_diachronica.html:1472, / near ħ ʕ," / near {ħ,ʕ}"
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə,index_diachronica.html:1472, (/|!) near (\{[^}]+\})," \1  \2_, _\2"
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə_2,index_diachronica.html:1473, (/|!) (near|adjacent to) emphatics, \1 \2 [+emphatic]
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə_2,index_diachronica.html:1473, (/|!) near (\w?\[[^]]+\])," \1  \2_, _\2"
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-aː-iː-uː,index_diachronica.html:1476, (/|!) (near|adjacent to) emphatics, \1 \2 [+emphatic]
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-aː-iː-uː,index_diachronica.html:1476, (/|!) near (\w?\[[^]]+\])," \1  \2_, _\2"
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-dʒ,index_diachronica.html:1481, / if s or z occur ," / near {s,z} ; if s or z occur "
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-dʒ,index_diachronica.html:1481, (/|!) near (\{[^}]+\})," \1  \2_, _\2"
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-s,index_diachronica.html:1483, / if ʃ is somewhere, / sporadic ; if ʃ is somewhere
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-z,index_diachronica.html:1484, / if ʒ is somewhere, / sporadic ; if ʒ is somewhere
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-a,index_diachronica.html:1501, (/|!) (near|adjacent to) emphatics, \1 \2 [+emphatic]
-6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-a,index_diachronica.html:1501, (/|!) near (\w?\[[^]]+\])," \1  \2_, _\2"
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-Vː_2,index_diachronica.html:1507, / in , / 
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ə,index_diachronica.html:1557, (/|!) (near|adjacent to) gutturals, \1 \2 [+laryngeal]
-6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ə,index_diachronica.html:1557, (/|!) near (\w?\[[^]]+\])," \1  \2_, _\2"
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ʔ,index_diachronica.html:1564, ! in , ! 
 7.4,Proto-Algonquian to Blackfoot,"Blackfoot-θ,tʃ,ʃ,r",index_diachronica.html:1711, / (unless|when not) , / ! 
 7.4,Proto-Algonquian to Blackfoot,"Blackfoot-θ,tʃ,ʃ,r",index_diachronica.html:1711, (/|!) (near|adjacent to) (another consonant|consonants), \1 \2 C
@@ -53,11 +43,8 @@ section_index,section_name,rule_id,source,from_text,to_text
 7.4,Proto-Algonquian to Blackfoot,Blackfoot-tsi,index_diachronica.html:1761, “(, ; “(
 7.4,Proto-Algonquian to Blackfoot,Blackfoot-a_2,index_diachronica.html:1765, (/|!) at word boundaries," \1 #_, _#"
 7.5,Proto-Algonquian to Cheyenne,Cheyenne-C-nasal,index_diachronica.html:1780, (/|!) (near|adjacent to) nasals, \1 \2 N
-7.5,Proto-Algonquian to Cheyenne,Cheyenne-C-nasal,index_diachronica.html:1780, (/|!) near ([A-Z])," \1  \2_, _\2"
 7.5,Proto-Algonquian to Cheyenne,Cheyenne-m,index_diachronica.html:1781, (/|!) (near|adjacent to) nasals, \1 \2 N
-7.5,Proto-Algonquian to Cheyenne,Cheyenne-m,index_diachronica.html:1781, (/|!) near ([A-Z])," \1  \2_, _\2"
 7.5,Proto-Algonquian to Cheyenne,Cheyenne-p,index_diachronica.html:1782, (/|!) (near|adjacent to) (another consonant|consonants), \1 \2 C
-7.5,Proto-Algonquian to Cheyenne,Cheyenne-p,index_diachronica.html:1782, (/|!) near ([A-Z])," \1  \2_, _\2"
 7.6,Proto-Algonquian to Northern East Cree,Northern-East-Cree-a,index_diachronica.html:1803, / in some , / sporadic ; in some 
 7.7,Proto-Algonquian to Southern East Cree,Southern-East-Cree-ʃ,index_diachronica.html:1824,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 7.7,Proto-Algonquian to Southern East Cree,Southern-East-Cree-ʃ,index_diachronica.html:1824,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
@@ -149,7 +136,6 @@ section_index,section_name,rule_id,source,from_text,to_text
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-pwʰ-pʰ-tʰ-kʰ,index_diachronica.html:3265,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-pwʰ-pʰ-tʰ-kʰ,index_diachronica.html:3265, (/|!) in ([\w ]+) dialects, \1 dialectal ; in \2 dialects
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-V+-mid,index_diachronica.html:3267, (/|!) (near|adjacent to) nasals, \1 \2 N
-10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-V+-mid,index_diachronica.html:3267, (/|!) near ([A-Z])," \1  \2_, _\2"
 10.3.5.7,Proto-New Caledonia to Pwapwâ,Pwapwâ-bw-mw,index_diachronica.html:3321,bw mw → ɡw ŋw (→ ɡ ŋ / _V[+ rounded]),bw mw → ɡw ŋw → ɡ ŋ / _V[+ rounded]
 10.3.5.8,Proto-New Caledonia to Proto-Yunaga,Proto-Yunaga-u-i,index_diachronica.html:3336, / in monosyllables, / sporadic ; in monosyllables
 10.3.7,Proto-Oceanic to Shark Bay,Shark-Bay-∅,index_diachronica.html:3414, (“, ; (“
