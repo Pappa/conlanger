@@ -2,12 +2,14 @@ import pytest
 from lxml import html
 
 from conlanger.ingest import Index, IndexDiachronicaParser, IndexRule
+from conlanger.ingest.models.index_models import IndexContext
 from conlanger.ingest.models.mappings import (
     IpaMapping,
     ManualMapping,
     ManualMappingMatch,
     ParserConfig,
 )
+from conlanger.scripts.config_loaders import load_parser_config
 
 _FX_SECTION_INDEX = "1.0"
 _FX_SECTION_NAME = "Proto-Indo-European to Klingon"
@@ -35,6 +37,14 @@ def prepare_parser(
     if fx_rule is not None:
         parser.update_current_section(_FX_SECTION_INDEX, _FX_SECTION_NAME)
     return parser
+
+
+def test_parse_rule_string_near_emphatics_maps_position_features(fx_rule):
+    raw = "a(ː) → ɑ(ː) / near [+emphatic]"
+    parser = IndexDiachronicaParser(parser_config=load_parser_config())
+    parser.update_current_section(_FX_SECTION_INDEX, _FX_SECTION_NAME)
+    rules = parser.parse_rule_string("Egyptian-Arabic-aː", fx_rule.source, raw)
+    assert rules[0].env == IndexContext(position={"near": "[+rtr]"})
 
 
 def test_parse_rule_string_medial_with_exception_env_normalized(fx_rule):

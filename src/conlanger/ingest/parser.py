@@ -14,13 +14,14 @@ index fields only. Remaining Index rule arrows (``→``) in field values become 
 Chained rules store each spine segment in ``stages``; compile-time expansion is deferred.
 Uncertainty glosses
 (``sporadic``, ``sometimes``, ``occasionally``, …) are stripped from field values
-and recorded as ``sporadic: true``. **Feature matrix** synonym replacement inside ``[...]`` via
-``feature_mappings.csv`` (``raw`` unchanged). **IPA character** substitution via
-``ipa_mappings.csv`` (``raw`` unchanged). Inline prose stripped for ASCA is captured in optional ``comment`` on each index
-rule: the first ``;`` on the working line is partitioned before structural split, then
+and recorded as ``sporadic: true``. **Feature matrix** and **IPA** mapping run on env /
+exception ``context`` strings (and ``stages``) **before**
+``apply_index_context_position_extraction`` so targets such as ``near [+emphatic]`` are
+ASCA-normalized while still prose; structured ``position`` is filled on the next pass.
+Inline prose stripped for ASCA is captured in optional ``comment`` on each index rule:
+the first ``;`` on the working line is partitioned before structural split, then
 field-level glosses and env qualifiers. Neighbour and medial relations extract structured
-``IndexContext.position`` (``apply_index_context_position_extraction``); compile projects
-to ASCA (ticket 144). Index prose **position** env phrases (``final syllables``, ``syllable-final``,
+``IndexContext.position``; compile projects to ASCA (ticket 144). Index prose **position** env phrases (``final syllables``, ``syllable-final``,
 trailing ``, in monosyllables`` qualifiers, …) normalize via ``apply_prose_position_env_conditions``.
 Index prose **conditional** env phrases (``utterance-initially``, ``unstressed penult``,
 ``syllables with …``, stress-matrix tails, …) normalize via
@@ -189,10 +190,11 @@ class IndexDiachronicaParser:
         rule = apply_prose_conditional_env_conditions(rule)
         rule = apply_prose_position_env_conditions(rule)
         rule = apply_double_slash_env_conditions(rule)
-        rule = apply_index_context_position_extraction(rule)
         rule = apply_syllable_position_editorial_strip(rule)
+        # Feature/IPA: context strings only; must run before position extraction (see corpus_apply).
         rule = apply_feature_mappings(rule, self._feature_mappings)
         rule = apply_ipa_mappings(rule, self._ipa_mappings)
+        rule = apply_index_context_position_extraction(rule)
         rule = rule.apply_dialects_to_env_fields()
 
         return [rule]

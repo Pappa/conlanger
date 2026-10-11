@@ -1,4 +1,11 @@
-"""Apply corpus-level mapping helpers to ``IndexRule`` (stages + env/exception)."""
+"""Apply corpus-level mapping helpers to ``IndexRule`` (stages + env/exception).
+
+Feature and IPA passes normalize ``IndexContext.context`` strings (and ``stages``)
+only — not ``position`` keys. In ``IndexDiachronicaParser.parse_rule_string`` they run
+**before** ``apply_index_context_position_extraction`` so neighbour targets still in
+env prose (e.g. ``near [+emphatic]``) are mapped first; extraction then copies the
+normalized material into structured ``position``.
+"""
 
 from __future__ import annotations
 
@@ -32,7 +39,7 @@ def apply_feature_mappings(
     rule: IndexRule,
     mappings: dict[str, FeatureMapping],
 ) -> IndexRule:
-    """Normalize feature matrices on stages and env/exception context."""
+    """Normalize feature matrices on stages and env/exception ``context``."""
     if not mappings:
         return rule
     rule.stages = [
@@ -45,7 +52,7 @@ def apply_feature_mappings(
 
 
 def apply_ipa_mappings(rule: IndexRule, mappings: dict[str, str]) -> IndexRule:
-    """Normalize IPA on stages and env/exception context."""
+    """Normalize IPA on stages and env/exception ``context``."""
     if not mappings:
         return rule
     rule.stages = [normalize_ipa_in_field(stage, mappings) for stage in rule.stages]
