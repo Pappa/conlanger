@@ -2410,7 +2410,9 @@ sections:
     stages:
     - a(ː)
     - '{æ(ː),ɛ(ː)}'
-    env: else
+    exception:
+      position:
+        near: ɑ(ː)
   - rule_id: Egyptian-Arabic-q
     source: index_diachronica.html:1396
     raw: q → ʔ / except in several words, two of which are al-Qâhira and musîqâ
@@ -2779,7 +2781,9 @@ sections:
     stages:
     - ə
     - ɪ
-    env: else
+    exception:
+      position:
+        near: '[+rtr]'
   - rule_id: Moroccan-Arabic-u_2
     source: index_diachronica.html:1475
     raw: u → ʊ / short only
@@ -2802,7 +2806,9 @@ sections:
     stages:
     - aː
     - æː
-    env: else
+    exception:
+      position:
+        near: '[+rtr]'
   - rule_id: Moroccan-Arabic-C1ˤC2
     source: index_diachronica.html:1478
     raw: C₁ˤC₂ → C₁C₂ˤ
@@ -2838,7 +2844,9 @@ sections:
     stages:
     - dʒ
     - ʒ
-    env: else
+    exception:
+      position:
+        near: '{s,z}'
   - rule_id: Moroccan-Arabic-s
     source: index_diachronica.html:1483
     raw: s → ʃ / if ʃ is somewhere in the stem after it

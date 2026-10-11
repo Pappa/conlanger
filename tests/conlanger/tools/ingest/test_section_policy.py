@@ -64,6 +64,23 @@ def test_resolve_catch_all_else_paren_gloss_only_env():
     assert "exception" not in dumped
 
 
+def test_resolve_catch_all_else_complementary_pair_with_position_only_prev_env():
+    rules = [
+        _rule(
+            {
+                "stages": ["a", "ɑ"],
+                "env": {"position": {"near": "[+rtr]"}},
+                "raw": "a → ɑ / near emphatics",
+            }
+        ),
+        _rule({"stages": ["a", "æ"], "env": "else", "raw": "a → æ / else"}),
+    ]
+    resolved = resolve_catch_all_else_rules(rules)
+    dumped_else = _rule_dump(resolved[1])
+    assert "env" not in dumped_else
+    assert dumped_else["exception"] == {"position": {"near": "[+rtr]"}}
+
+
 def test_resolve_catch_all_else_complementary_pair():
     rules = [
         _rule(
