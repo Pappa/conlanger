@@ -1,10 +1,4 @@
 section_index,rule_id,error_token,rule
-6.2.2.1.7,Egyptian-Arabic-aː,emphatic,"{a,a:[+long]} > {ɑ,ɑ:[+long]} / [+emphatic]_, _[+emphatic] | ^^^^^^^^^ @ Rule 1, Line 1"
-6.2.2.1.8,Coastal-Hadhrami-Arabic-aː_2,emphatic,"a:[+long] > æ:[+long] // [+emphatic]_, _[+emphatic] | ^^^^^^^^^ @ Rule 1, Line 1"
-6.2.2.1.9,Wādı̄-Hadhrami-Arabic-aː_2,emphatic,"a:[+long] > æ:[+long] // [+emphatic]_, _[+emphatic] | ^^^^^^^^^ @ Rule 1, Line 1"
-6.2.2.1.14,Moroccan-Arabic-ə_2,emphatic,"ə > ɐ / [+emphatic]_, _[+emphatic] | ^^^^^^^^^ @ Rule 1, Line 1"
-6.2.2.1.14,Moroccan-Arabic-aː-iː-uː,emphatic,"a:[+long] i:[+long] u:[+long] > ɑ:[+long] e:[+long] o:[+long] / [+emphatic]_, _[+emphatic] | ^^^^^^^^^ @ Rule 1, Line 1"
-6.2.2.1.17,Tunisian-Arabic-a,emphatic,"a > ɑ / [+emphatic]_, _[+emphatic] | ^^^^^^^^^ @ Rule 1, Line 1"
 15.2.5,Kuskokwim-Yup’ik-i-a-u,initial,"i a u > ii aa uu / C_ in %[+lo -initial -final] such that %[+lo]_ | ^^^^^^^^^ @ Rule 1, Line 1"
 15.2.6,Nunivak-Yup’ik-i-a-u,initial,"i a u > ii aa uu / C_ in %[+lo -initial -final] such that %[+lo]_ | ^^^^^^^^^ @ Rule 1, Line 1"
 15.2.8,Unaaliq-Yup’ik-i-a-u,initial,"i a u > ii aa uu / C_ in %[+lo -initial -final] such that %[+lo]_ | ^^^^^^^^^ @ Rule 1, Line 1"

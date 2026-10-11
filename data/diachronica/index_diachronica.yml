@@ -2393,7 +2393,7 @@ sections:
     - ɑ(ː)
     env:
       position:
-        near: '[+emphatic]'
+        near: '[+rtr]'
   - rule_id: Egyptian-Arabic-aː_2
     source: index_diachronica.html:1394
     raw: a(ː) → ɑ(ː) / if ɑ(ː) is elsewhere in the word
@@ -2484,7 +2484,7 @@ sections:
     - æː
     exception:
       position:
-        near: '[+emphatic]'
+        near: '[+rtr]'
   - rule_id: Coastal-Hadhrami-Arabic-V-long
     source: index_diachronica.html:1412
     raw: 'V[-long] → ∅ / #C_C, in some words'
@@ -2538,7 +2538,7 @@ sections:
     - æː
     exception:
       position:
-        near: '[+emphatic]'
+        near: '[+rtr]'
   - rule_id: Wādı̄-Hadhrami-Arabic-V-long
     source: index_diachronica.html:1423
     raw: 'V[-long] → ∅ / #C_C (sporadic?)'
@@ -2772,7 +2772,7 @@ sections:
     - ɐ
     env:
       position:
-        near: '[+emphatic]'
+        near: '[+rtr]'
   - rule_id: Moroccan-Arabic-ə_3
     source: index_diachronica.html:1474
     raw: ə → ɪ / else
@@ -2795,7 +2795,7 @@ sections:
     - ɑː eː oː
     env:
       position:
-        near: '[+emphatic]'
+        near: '[+rtr]'
   - rule_id: Moroccan-Arabic-aː
     source: index_diachronica.html:1477
     raw: aː → æː / else
@@ -2895,7 +2895,7 @@ sections:
     - ɑ
     env:
       position:
-        near: '[+emphatic]'
+        near: '[+rtr]'
   - rule_id: Tunisian-Arabic-a_2
     source: index_diachronica.html:1502
     raw: a → ɛ (sometimes)

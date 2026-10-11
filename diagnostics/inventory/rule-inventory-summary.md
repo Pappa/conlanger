@@ -6,8 +6,8 @@
 - Rows: **9841** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **9024** (91.7%)
-- Fail: **291** (3.0%)
+- OK: **9030** (91.8%)
+- Fail: **285** (2.9%)
 - Skipped: **526** (5.3%)
 
 
@@ -23,8 +23,8 @@ Skipped: **2/124**
 
 ## Sections
 
-- All OK: **501 / 714** (70.2%)
-- Some OK: **160 / 714** (22.4%)
+- All OK: **504 / 714** (70.6%)
+- Some OK: **157 / 714** (22.0%)
 - None OK: **0 / 714** (0.0%)
 - Sections skipped: **53 / 714** (7.4%)
 
@@ -37,11 +37,11 @@ Skipped: **2/124**
 | 24 | `unknown_character` |
 | 22 | `missing_slash_output_env` |
 | 19 | `syntax_other` |
-| 16 | `unknown_feature` |
 | 15 | `nested_brackets` |
 | 11 | `expected_number` |
 | 11 | `unknown_grouping` |
 | 10 | `empty_io_panic` |
+| 10 | `unknown_feature` |
 | 8 | `prose_or_expected_arrow` |
 | 8 | `segments_before_word` |
 | 7 | `stuff_after_word_bound` |
@@ -168,7 +168,6 @@ Skipped: **2/124**
 
 | count | error_token | suggested |
 |------:|-------------|-----------|
-| 6 | `emphatic` | `rhotic` |
 | 3 | `initial` | `nasal` |
 | 2 | `fricative` | `rhotic` |
 | 1 | `posttonic` | `sonor` |
