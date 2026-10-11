@@ -7,8 +7,8 @@ Phase 2: optional ``/ env`` then optional ``! exception``
 Phase 3: first ``<p>`` after ``<h2>`` → section ``citation`` (whole text, cleanup later);
 other non-``schg`` paragraphs → ``comments``.
 Phase 4: pre-lxml ``<sub>``→Unicode normalisation, then element text extract (**``raw``**);
-**Index Diachronica correction** on working copy; **Manual mapping**; **index rule
-normalisation**; **section mapping** (ancestry merge). Then **collective subscript** expansion via
+**Index Diachronica correction** on working copy; **Manual mapping**; **section mapping**
+(ancestry merge). Then **collective subscript** expansion via
 ``series_expansions`` on index fields (``raw`` unchanged). **Symbol** normalization on
 index fields only. Remaining Index rule arrows (``→``) in field values become ASCA ``>``.
 Chained rules store each spine segment in ``stages``; compile-time expansion is deferred.
@@ -55,9 +55,6 @@ from conlanger.ingest.utils.corpus_apply import (
 from conlanger.ingest.utils.double_slash_env import apply_double_slash_env_conditions
 from conlanger.ingest.utils.flatten_nested_sets import (
     flatten_nested_sets_in_section_rules,
-)
-from conlanger.ingest.utils.index_rule_normalisation import (
-    apply_index_rule_normalisation,
 )
 from conlanger.ingest.utils.prose_conditional_env import (
     apply_prose_conditional_env_conditions,
@@ -158,8 +155,6 @@ class IndexDiachronicaParser:
         if rule_id and rule_id in self._corrections:
             rule.text = self._corrections[rule_id]
             self._matched_correction_ids.add(rule_id)
-
-        rule.text = apply_index_rule_normalisation(rule.text)
 
         working, hits = apply_manual_mappings(rule.text, self._manual_mappings)
         rule.text = working
