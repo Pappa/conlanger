@@ -14,7 +14,7 @@ from pydantic import (
 )
 
 from conlanger.ingest.models.parser import SkipRule, SkipSection
-from conlanger.utils.series import section_index_prefixes
+from conlanger.ingest.utils.series import section_index_prefixes
 
 
 class GroupMapping(BaseModel):

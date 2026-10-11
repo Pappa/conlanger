@@ -15,7 +15,7 @@ from conlanger.ingest.models.mappings import (
     normalize_feature_matrices_in_field,
     normalize_ipa_in_field,
 )
-from conlanger.utils.series import expand_collectives_in_field
+from conlanger.ingest.utils.series import expand_collectives_in_field
 
 
 def apply_series_expansions(

@@ -6,7 +6,7 @@ import pytest
 
 from conlanger.ingest.models.index_models import IndexRule
 from conlanger.ingest.utils.corpus_apply import apply_series_expansions
-from conlanger.utils.series import (
+from conlanger.ingest.utils.series import (
     is_collective_subscript_token,
     is_correspondence_series_token,
     is_identity_subscript_token,

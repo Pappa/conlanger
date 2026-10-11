@@ -453,7 +453,7 @@ def run_else_fixtures() -> dict[str, Any]:
 
 def run_series_slot_probe() -> dict[str, Any]:
     """P1 vs P2: series_expansions can splice collectives inside braces."""
-    from conlanger.utils.series import apply_series_expansions
+    from conlanger.ingest.utils.series import apply_series_expansions
 
     expansions = {"hₓ": ("h₁", "h₂", "h₃")}
     before_series = {"stages": ["{ʔ,hₓ}"], "raw": "{ʔ,hₓ} → ∅"}

@@ -34,7 +34,7 @@ section_mappings:
 - **Values**: flat `from → to` string maps (token / substring replacements).
 - Load into `ParserConfig` (extend dataclass + `load_parser_config()` in `src/conlanger/utils/file_io.py`).
 
-**Section ancestry:** a mapping for section `10.1` applies to that section **and every descendant** (`10.1.2`, `10.1.2.1`, …). Reuse `section_index_prefixes()` from `src/conlanger/utils/series.py`.
+**Section ancestry:** a mapping for section `10.1` applies to that section **and every descendant** (`10.1.2`, `10.1.2.1`, …). Reuse `section_index_prefixes()` from `src/conlanger/ingest/utils/series.py`.
 
 **Merge policy:** same as compile `CompilerConfig.resolved_series_mappings()` — start empty, walk prefixes in order, `update()` each matching section row so **more specific section ids override** ancestor rows for the same `from` key.
 
@@ -117,6 +117,6 @@ Regen (`uv run create_index`): **ok +18** for §10.x `*D`/`*R`/`*T` rules (18 ch
 - [`data/parser_config.yml`](../../../data/parser_config.yml) — seed `10.1` rows
 - [`src/conlanger/ingest/parser.py`](../../../src/conlanger/ingest/parser.py) — `parse_rule_element` ordering
 - [`src/conlanger/ingest/models/mappings.py`](../../../src/conlanger/ingest/models/mappings.py) — `apply_manual_mappings`, `CompilerConfig.resolved_series_mappings`
-- [`src/conlanger/utils/series.py`](../../../src/conlanger/utils/series.py) — `section_index_prefixes`
+- [`src/conlanger/ingest/utils/series.py`](../../../src/conlanger/ingest/utils/series.py) — `section_index_prefixes`
 - [Parse-time manual rule mappings](60-parse-time-manual-rule-mappings.md) — manual mapping runs after section mappings (order amended by this ticket)
 - [Implement ingest corrections overlay](74-implement-ingest-corrections-drop-series-csv.md) — corrections before both
