@@ -4,7 +4,6 @@ from conlanger.ingest.models.index_models import IndexRule
 from conlanger.ingest.utils.prose_position_env import (
     apply_prose_position_env_conditions,
     normalize_bare_prose_position_env,
-    strip_trailing_position_qualifiers,
 )
 
 
@@ -18,14 +17,6 @@ from conlanger.ingest.utils.prose_position_env import (
                 "comment": "adjacent to {S,s,l̥}",
             },
             id="adjacent to set",
-        ),
-        pytest.param(
-            {"env": "_ʔ#, in monosyllables"},
-            {
-                "env": "_ʔ#",
-                "comment": "in monosyllables",
-            },
-            id="in monosyllables",  # is this correct?
         ),
         pytest.param(
             {"env": "final syllables"},
@@ -45,18 +36,6 @@ from conlanger.ingest.utils.prose_position_env import (
                 "exception": "#U",
             },
             id="deferred when exception is present",  # is this correct?
-        ),
-        pytest.param(
-            {
-                "env": "_(C)#, in monosyllables",
-                "exception": "#U",
-            },
-            {
-                "env": "_(C)#",
-                "exception": "#U",
-                "comment": "in monosyllables",
-            },
-            id="strips qualifier with exception",
         ),
     ],
 )
@@ -87,22 +66,20 @@ def test_apply_prose_position_env_conditions(input, expected):
         ("unstressed syllables", "%[-stress]", ["unstressed syllables"]),
         (
             "accented or stressed monosyllables",
-            "#_[+stress]",
+            "#_[+stress]",  # TODO: this is not correct
             ["accented or stressed monosyllables"],
         ),
         (
             "in accented or stressed monosyllables",
-            "#_[+stress]",
+            "#_[+stress]",  # TODO: this is not correct
             ["in accented or stressed monosyllables"],
         ),
-        ("typically near *u", "_,u", ["typically near *u"]),
         (
             "between two vowels of unlike nasality",
-            "V_V",
+            "V_V",  # TODO: this is not correct
             ["between two vowels of unlike nasality"],
         ),
         ("not universal?", "_", ["not universal?"]),
-        ("monosyllables", "#_#", ["monosyllables"]),
         ("_k", "_k", []),
     ],
 )
@@ -114,18 +91,3 @@ def test_normalize_bare_prose_position_env(text, expected_env, expected_captures
         assert flags == {"sporadic": True}
     else:
         assert flags == {}
-
-
-@pytest.mark.parametrize(
-    ("text", "expected_env", "expected_captures"),
-    [
-        ("j_#, in monosyllables", "j_#", ["in monosyllables"]),
-        ("_#, in polysyllables", "_#", ["in polysyllables"]),
-        ("#_, in nouns", "#_", ["in nouns"]),
-        ("_ʔ#, in monosyllables", "_ʔ#", ["in monosyllables"]),
-    ],
-)
-def test_strip_trailing_position_qualifiers(text, expected_env, expected_captures):
-    env, captures = strip_trailing_position_qualifiers(text)
-    assert env == expected_env
-    assert captures == expected_captures

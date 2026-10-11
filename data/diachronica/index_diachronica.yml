@@ -5597,7 +5597,7 @@ sections:
     - hs hʃ
     - sː ʃː
     env: '{#,V[+front]}_'
-    comment: sporadic, usually
+    comment: sporadic
     sporadic: true
   - rule_id: Miami-Illinois-C-voiced
     source: index_diachronica.html:1981
@@ -11129,8 +11129,9 @@ sections:
     stages:
     - β b m
     - βʷ bʷ mʷ
-    env: _,u
-    comment: typically near *u
+    env: near u
+    comment: typically
+    sporadic: true
   - rule_id: Hiw-dr-*r
     source: index_diachronica.html:3110
     raw: dr *r → d r
@@ -11689,6 +11690,7 @@ sections:
     - u
     - i
     comment: (typical)
+    sporadic: true
   - rule_id: Caaàc-u-i
     source: index_diachronica.html:3212
     raw: u i → o e (not always)
@@ -26010,7 +26012,8 @@ sections:
     - ʊ
     env: '{a,ɛ}_'
     exception: _V
-    comment: typically
+    comment: ', typically'
+    sporadic: true
 - section: Old English to Southern Middle English
   index: 17.7.2.1.12
   citation: Pogostick Man, from Moore, Samuel (1919), Historical Outlines of English
@@ -26410,6 +26413,7 @@ sections:
     - iu
     - '{yː,io}'
     comment: the former seems more typical); (outcome varies depending upon dialect
+    sporadic: true
   - rule_id: Middle-Dutch-iw
     source: index_diachronica.html:6058
     raw: iw → yw (dialectal)
@@ -67364,6 +67368,7 @@ sections:
     - ʝ
     - ɟ
     comment: (typical of Low Navarrese)
+    sporadic: true
   - rule_id: Basque-j_5
     source: index_diachronica.html:14187
     raw: j → ʝ → ʒ → dʒ (northwestern Biscayan)

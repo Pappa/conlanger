@@ -16,6 +16,8 @@ section_mappings:
     "*j": "j"
     "*r": "r"
     "*c": "c"
+    "*u": "u"
+    "*i": "i"
     # "*J": "J"
   "17":
     "*H": "H"

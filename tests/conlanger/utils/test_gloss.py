@@ -274,7 +274,6 @@ def test_field_has_uncertainty_qualifier(text, expected):
         ("", "", []),
         ("sometimes", "", ["sometimes"]),
         ("occasionally", "", ["occasionally"]),
-        ("sporadic, usually {#,V[+front]}_", "{#,V[+front]}_", ["sporadic, usually"]),
         ("h (sometimes uncertain)", "h", ["(sometimes uncertain)"]),
         ("h sometimes", "h", ["sometimes"]),
         ('h "sometimes"', "h", ['"sometimes"']),
@@ -308,7 +307,6 @@ def test_extract_uncertainty_qualifier_from_field(
     [
         ("h (sporadic)", "h"),
         ("_{f,s} (sporadic)", "_{f,s}"),
-        ("sporadic, usually {#,V[+front]}_", "{#,V[+front]}_"),
         ("sometimes", ""),
         ('∅ "(sporadic)"', "∅"),
         ("ɛ (sometimes)", "ɛ"),

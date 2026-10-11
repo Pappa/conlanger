@@ -29,29 +29,11 @@ _STRESSED_MONOSYLLABLE_RE = re.compile(
     r"^(?:in\s+)?accented\s+or\s+stressed\s+monosyllables?\s*$",
     re.IGNORECASE,
 )
-_TYPICALLY_NEAR_U_RE = re.compile(r"^typically\s+near\s+\*?u\s*$", re.IGNORECASE)
 _BETWEEN_TWO_VOWELS_RE = re.compile(
     r"^between\s+two\s+vowels(?:\s+of\s+unlike\s+nasality)?\s*$",  # TODO: this is not correct
     re.IGNORECASE,
 )
 _NOT_UNIVERSAL_RE = re.compile(r"^\(?not\s+universal\??\)?\s*$", re.IGNORECASE)
-_MONOSYLLABLE_RE = re.compile(r"^(?:in\s+)?monosyllables?\s*$", re.IGNORECASE)
-_TRAILING_POSITION_QUALIFIER_RE = re.compile(
-    r"^(?P<env>.+?),\s*in\s+(?P<qual>monosyllables?|polysyllables?|nouns)\s*$",
-    re.IGNORECASE,
-)
-
-
-def strip_trailing_position_qualifiers(text: str) -> tuple[str, list[str]]:
-    """Partition `, in monosyllables` / `polysyllables` / `nouns` tails from structural envs."""
-    if not text:
-        return text, []
-    stripped = text.strip()
-    match = _TRAILING_POSITION_QUALIFIER_RE.match(stripped)
-    if not match:
-        return text, []
-    qualifier = match.group("qual").lower()
-    return match.group("env").rstrip(), [f"in {qualifier}"]
 
 
 def normalize_bare_prose_position_env(
@@ -82,18 +64,12 @@ def normalize_bare_prose_position_env(
     if _STRESSED_MONOSYLLABLE_RE.match(stripped):
         return "#_[+stress]", [stripped], flags  # TODO: this is not correct
 
-    if _TYPICALLY_NEAR_U_RE.match(stripped):
-        return "_,u", [stripped], flags  # TODO: this is not correct
-
     if _BETWEEN_TWO_VOWELS_RE.match(stripped):
         return "V_V", [stripped], flags
 
     if _NOT_UNIVERSAL_RE.match(stripped):
         flags["sporadic"] = True
         return "_", [stripped], flags
-
-    if _MONOSYLLABLE_RE.match(stripped):
-        return "#_#", [stripped], flags  # TODO: this is not correct
 
     return text, captures, flags
 
@@ -112,10 +88,6 @@ def apply_prose_position_env_conditions(rule: IndexRule) -> IndexRule:
         return rule
 
     comment_fragments: list[str] = []
-    qualifier_env, qualifier_captures = strip_trailing_position_qualifiers(env)
-    if qualifier_captures:
-        env = qualifier_env
-        comment_fragments.extend(qualifier_captures)
 
     if rule.exception is not None:
         if env != _context_text(rule.env):

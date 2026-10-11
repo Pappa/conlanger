@@ -257,11 +257,11 @@ def is_quoted_prose_paragraph(raw: str) -> bool:
     return raw.strip().startswith(("\u201c", '"'))
 
 
-_UNCERTAINTY_WORDS = r"sporadic(?:ally)?|sometimes|occasionally|\(\?\)"
+_UNCERTAINTY_WORDS = r"sporadic(?:ally)?|sometimes|occasionally|typical(?:ly)?|\(\?\)"
 _UNCERTAINTY_WORD_RE = re.compile(rf"\b(?:{_UNCERTAINTY_WORDS})\b", re.IGNORECASE)
 _LONE_UNCERTAINTY_RE = re.compile(rf"^(?:{_UNCERTAINTY_WORDS})\??\.?$", re.IGNORECASE)
 _ENV_UNCERTAINTY_PREFIX_RE = re.compile(
-    r"^sporadic(?:ally)?(?:,\s*usually)?\s*,?\s*",
+    r"^(sporadic(?:ally)?|typical(?:ly)?)\s*,?\s*",
     re.IGNORECASE,
 )
 _TRAILING_PAREN_WITH_UNCERTAINTY_RE = re.compile(

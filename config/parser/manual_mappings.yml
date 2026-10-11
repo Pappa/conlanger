@@ -291,6 +291,8 @@
   to: " ; sporadic ! some monosyllables"
 - from: ", often"
   to: " ; sporadic - often"
+- from: " / sporadic, usually"
+  to: " / sporadic"
 
 #endregion
 
