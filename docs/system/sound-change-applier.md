@@ -46,7 +46,7 @@ Parse-time transforms are documented in [index-diachronica-parser.md](./index-di
 
 ## Structured `env` / `exception` (`IndexContext`)
 
-Corpus rules may carry structured **`IndexContext`** on `env` or `exception` ([ADR-0017](./adr/0017-structured-env-exception-indexcontext.md)) instead of a bare Index-shaped string. At **`SoundChangeRule`** construction, `resolve_structured_env_exception` projects each field to the compile strings the ASCA pipeline already expects.
+Corpus rules may carry structured **`IndexContext`**-shaped mappings on `env` or `exception` in YAML ([ADR-0017](./adr/0017-structured-env-exception-indexcontext.md)) instead of a bare Index-shaped string. **`DiachronicSeries`** materializes those fields to compile strings via [`materialize_index_rule_env_exception`](../src/conlanger/compile/resolve_index_rule.py) before constructing **`SoundChangeRule`** (compile-time model; it accepts string env/exception only).
 
 | Input | Compile projection |
 | --- | --- |

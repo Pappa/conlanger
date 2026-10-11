@@ -6,6 +6,7 @@ from typing import ClassVar, Self
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 from conlanger.compile.models.compile_fields import RuleEnv, RuleInput, RuleOutput
+from conlanger.compile.resolve_index_rule import materialize_index_rule_env_exception
 from conlanger.compile.tools.asca.chains import expand_chained_index_rule
 from conlanger.compile.tools.asca.parallel import (
     expand_parallel_output_null_branches_from_tokens,
@@ -19,11 +20,6 @@ from conlanger.compile.tools.field_tokens import (
     partition_embedded_output_env,
     render_field_tokens,
     set_token_members,
-)
-from conlanger.ingest.models.index_models import (
-    IndexContext,
-    env_exception_input_to_string,
-    resolve_rule_env_exception_for_compile,
 )
 from conlanger.ingest.models.mappings import CompilerConfig
 
@@ -89,33 +85,6 @@ class SoundChangeRule(RulePartBase):
     rng: random.Random = Field(default_factory=random.Random, exclude=True, repr=False)
     detect_alternatives: bool = Field(default=True, exclude=True, repr=False)
 
-    @model_validator(mode="before")
-    @classmethod
-    def resolve_structured_env_exception(cls, data: object) -> object:
-        if not isinstance(data, dict):
-            return data
-        env = data.get("env")
-        exception = data.get("exception")
-        if not isinstance(env, (dict, IndexContext)) and not isinstance(
-            exception, (dict, IndexContext)
-        ):
-            return data
-        config = data.get("compiler_config")
-        templates = (
-            config.position_templates.model_dump()
-            if isinstance(config, CompilerConfig)
-            else None
-        )
-        env_str, exc_str = resolve_rule_env_exception_for_compile(
-            env, exception, position_templates=templates
-        )
-        updated = dict(data)
-        if isinstance(env, (dict, IndexContext)):
-            updated["env"] = env_str
-        if isinstance(exception, (dict, IndexContext)) or exc_str is not None:
-            updated["exception"] = exc_str
-        return updated
-
     @field_validator("input", mode="before")
     @classmethod
     def coerce_input(cls, value: object) -> object:
@@ -137,10 +106,8 @@ class SoundChangeRule(RulePartBase):
             return None
         if isinstance(value, str):
             return RuleEnv.from_raw(value)
-        if isinstance(value, dict):
-            return RuleEnv.from_raw(env_exception_input_to_string(value))
-        if isinstance(value, IndexContext):
-            return RuleEnv.from_raw(env_exception_input_to_string(value))
+        if isinstance(value, RuleEnv):
+            return value
         return value
 
     @model_validator(mode="before")
@@ -318,7 +285,10 @@ class DiachronicSeries(BaseModel):
                     )
                     continue
                 normalized = normalize_index_rule_tilde_fields(rule)
-                for step in expand_chained_index_rule(normalized):
+                materialized = materialize_index_rule_env_exception(
+                    normalized, compiler_config=config
+                )
+                for step in expand_chained_index_rule(materialized):
                     parts.append(
                         SoundChangeRule(
                             **step,

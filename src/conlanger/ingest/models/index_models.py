@@ -219,7 +219,8 @@ def resolve_index_context_to_string(
 
     Joins structural ``context`` with the first projected neighbour relation
     (``adjacent_to``, then ``near``) using comma separation. Medial boundary
-    pairing is applied at rule level in ``resolve_rule_env_exception_for_compile``.
+    Rule-level medial pairing is applied in ``resolve_rule_env_exception_for_compile``
+    (called from compile ``materialize_index_rule_env_exception``, not ``SoundChangeRule``).
     """
     templates = position_templates or DEFAULT_POSITION_TEMPLATES
     parts: list[str] = []

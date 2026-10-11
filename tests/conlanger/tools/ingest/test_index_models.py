@@ -8,7 +8,6 @@ import pandas as pd
 import pytest
 import yaml
 
-from conlanger.compile.models.rules import SoundChangeRule
 from conlanger.ingest.models.index_models import (
     IndexContext,
     IndexRule,
@@ -367,19 +366,6 @@ def test_resolve_rule_env_exception_for_compile(
         expected_env,
         expected_exc,
     )
-
-
-def test_sound_change_rule_compiles_medial_position():
-    rule = SoundChangeRule(
-        input="t",
-        output="r",
-        env={"position": {"medial": True}},
-        raw="t → r / medially",
-    )
-    assert rule.env is not None
-    assert str(rule.env) == "_"
-    assert rule.exception is not None
-    assert str(rule.exception) == MEDIAL_BOUNDARY_EXCEPTION
 
 
 @pytest.mark.parametrize(

@@ -10,8 +10,8 @@ from conlanger.compile.models.rules import (
     SoundChangeRule,
 )
 from conlanger.compile.tools.asca.structures import join_asca_rule_fields
-from conlanger.ingest.models.index_models import IndexContext
 from conlanger.ingest.models.mappings import CompilerConfig
+from conlanger.ingest.utils.transform_fields import MEDIAL_BOUNDARY_EXCEPTION
 
 
 def test_diachronic_series_does_not_mutate_index_rules(fx_sample_compiler_config):
@@ -524,21 +524,39 @@ def test_sound_change_ruleset_validates_em_dash_rule_marker_fixtures():
     validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
 
 
-def test_sound_change_rule_accepts_structured_env_dict():
-    rule = SoundChangeRule(
-        input="a",
-        output="b",
-        env={"context": "_#"},
-    )
+def test_diachronic_series_materializes_structured_env(fx_sample_compiler_config):
+    section = {
+        "index": "6.2.2.1.7",
+        "section": "Arabic",
+        "rules": [
+            {
+                "stages": ["a", "ɑ"],
+                "env": {"context": "_#"},
+                "raw": "a → ɑ / _#",
+            }
+        ],
+    }
+    series = DiachronicSeries(section, compiler_config=fx_sample_compiler_config)
+    rule = next(p for p in series.parts if isinstance(p, SoundChangeRule))
     assert rule.env is not None
     assert rule.env.raw == "_#"
 
 
-def test_sound_change_rule_accepts_index_context_instance():
-    rule = SoundChangeRule(
-        input="a",
-        output="b",
-        env=IndexContext(context="_#"),
-    )
+def test_diachronic_series_materializes_medial_position(fx_sample_compiler_config):
+    section = {
+        "index": "1.0",
+        "section": "Test",
+        "rules": [
+            {
+                "stages": ["t", "r"],
+                "env": {"position": {"medial": True}},
+                "raw": "t → r / medially",
+            }
+        ],
+    }
+    series = DiachronicSeries(section, compiler_config=fx_sample_compiler_config)
+    rule = next(p for p in series.parts if isinstance(p, SoundChangeRule))
     assert rule.env is not None
-    assert rule.env.raw == "_#"
+    assert str(rule.env) == "_"
+    assert rule.exception is not None
+    assert str(rule.exception) == MEDIAL_BOUNDARY_EXCEPTION
