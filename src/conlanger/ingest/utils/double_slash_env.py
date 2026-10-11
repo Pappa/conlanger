@@ -113,20 +113,14 @@ def normalize_prose_exception_or_env_tail(
     return text, captures, flags
 
 
-def _context_text(ctx: IndexContext | None) -> str | None:
-    if ctx is None:
-        return None
-    return ctx.context
-
-
 def apply_double_slash_env_conditions(rule: IndexRule) -> IndexRule:
     """Normalize Index ``//`` env shorthand and prose exceptions (ticket 108)."""
     rule = rule.model_copy(deep=True)
     comment_fragments: list[str] = []
     flags: dict[str, Any] = {}
 
-    env = _context_text(rule.env)
-    exception = _context_text(rule.exception)
+    env = rule.env.context if rule.env else None
+    exception = rule.exception.context if rule.exception else None
 
     if env:
         head, embedded_tail = split_embedded_double_slash(env)

@@ -121,17 +121,11 @@ def normalize_prose_conditional_env_field(
     return stripped, captures, flags, input_matrix
 
 
-def _context_text(ctx: IndexContext | None) -> str | None:
-    if ctx is None:
-        return None
-    return ctx.context
-
-
 def apply_prose_conditional_env_conditions(rule: IndexRule) -> IndexRule:
     """Normalize prose conditional env/exception fields (ticket 134)."""
     rule = rule.model_copy(deep=True)
 
-    env = _context_text(rule.env)
+    env = rule.env.context if rule.env else None
     if env:
         normalized, captures, flags, input_matrix = (
             normalize_prose_conditional_env_field(env)
@@ -147,7 +141,7 @@ def apply_prose_conditional_env_conditions(rule: IndexRule) -> IndexRule:
                 rule.sporadic = True
             rule.merge_comment(*comment_fragments)
 
-    exception = _context_text(rule.exception)
+    exception = rule.exception.context if rule.exception else None
     if exception:
         exc_norm, exc_caps, exc_flags, _ = normalize_prose_conditional_env_field(
             exception

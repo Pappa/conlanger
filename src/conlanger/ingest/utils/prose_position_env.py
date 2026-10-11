@@ -74,25 +74,16 @@ def normalize_bare_prose_position_env(
     return text, captures, flags
 
 
-def _context_text(ctx: IndexContext | None) -> str | None:
-    if ctx is None:
-        return None
-    return ctx.context
-
-
 def apply_prose_position_env_conditions(rule: IndexRule) -> IndexRule:
     """Normalize bare Index position prose in ``env`` (ticket 107)."""
     rule = rule.model_copy(deep=True)
-    env = _context_text(rule.env)
+    env = rule.env.context if rule.env else None
     if not env:
         return rule
 
     comment_fragments: list[str] = []
 
     if rule.exception is not None:
-        if env != _context_text(rule.env):
-            rule.env = env
-            rule.merge_comment(*comment_fragments)
         return rule
 
     normalized, captures, flags = normalize_bare_prose_position_env(env)

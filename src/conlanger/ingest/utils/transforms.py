@@ -23,12 +23,6 @@ from conlanger.utils.gloss import (
 )
 
 
-def _context_text(ctx: IndexContext | None) -> str | None:
-    if ctx is None:
-        return None
-    return ctx.context
-
-
 def apply_sporadic_qualifier(rule: IndexRule) -> IndexRule:
     """Strip uncertainty glosses from rule fields; set ``sporadic: true`` when found."""
     if rule.comment and comment_has_uncertainty_qualifier(rule.comment):
@@ -118,7 +112,7 @@ def apply_medial_env_conditions(rule: IndexRule) -> IndexRule:
     """Rewrite Index word-internal ``medial`` env prose to ``_`` + boundary exception."""
     if rule.exception is not None:
         return rule
-    env = _context_text(rule.env)
+    env = rule.env.context if rule.env else None
     if not env:
         return rule
     normalized, is_medial = normalize_medial_env_field(env)
