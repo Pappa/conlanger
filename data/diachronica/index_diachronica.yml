@@ -7871,6 +7871,7 @@ sections:
     stages:
     - a ɔ
     - ɨə uə
+  status: skipped
 - section: Middle Vietnamese to Hanoi Vietnamese
   index: 9.1.2.1
   citation: Pogostick Man, from Thompson, Laurence C. (1976), “Proto-Viet-Muong Phonology”.

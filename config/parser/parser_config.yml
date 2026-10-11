@@ -50,6 +50,8 @@ skip_sections:
   #   reason: "Need to refer to the cited source to determine the correct rule syntax"
   # - id: "9.1.2"
   #   reason: "Need to refer to the cited source to determine the correct rule syntax"
+  - id: "9.1.2"
+    reason: "Can't resolve proto-language phonemes"
   - id: "10.6"
     reason: "It's not possible to determine how t₁, d₁, etc. should be represented"
   - id: "10.7"

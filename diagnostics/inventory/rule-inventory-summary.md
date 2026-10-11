@@ -6,9 +6,9 @@
 - Rows: **9841** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **9035** (91.8%)
-- Fail: **280** (2.8%)
-- Skipped: **526** (5.3%)
+- OK: **9023** (91.7%)
+- Fail: **276** (2.8%)
+- Skipped: **542** (5.5%)
 
 
 ## Corrections
@@ -24,29 +24,29 @@ Skipped: **2/124**
 ## Sections
 
 - All OK: **505 / 714** (70.7%)
-- Some OK: **156 / 714** (21.8%)
+- Some OK: **155 / 714** (21.7%)
 - None OK: **0 / 714** (0.0%)
-- Sections skipped: **53 / 714** (7.4%)
+- Sections skipped: **54 / 714** (7.6%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
 | 82 | `expected_underscore` |
-| 32 | `expected_ipa` |
+| 31 | `expected_ipa` |
 | 24 | `unknown_character` |
 | 22 | `missing_slash_output_env` |
 | 19 | `syntax_other` |
-| 15 | `nested_brackets` |
+| 14 | `nested_brackets` |
 | 11 | `expected_number` |
 | 11 | `unknown_grouping` |
 | 10 | `empty_io_panic` |
 | 10 | `unknown_feature` |
-| 8 | `prose_or_expected_arrow` |
 | 8 | `segments_before_word` |
 | 7 | `stuff_after_word_bound` |
+| 7 | `prose_or_expected_arrow` |
 | 5 | `unknown_reference` |
-| 4 | `panic_other` |
+| 3 | `panic_other` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
 | 2 | `runtime_delete_only_segment` |
@@ -162,7 +162,7 @@ Skipped: **2/124**
 
 | count | description |
 |------:|-------------|
-| 15 | `Cannot have nested brackets of the same type` |
+| 14 | `Cannot have nested brackets of the same type` |
 
 ### unknown_feature (error_token)
 
@@ -202,8 +202,8 @@ Skipped: **2/124**
 
 | count | description |
 |------:|-------------|
-| 3 | `Expected '>', '->' or '=>', but received '*'` |
 | 3 | `Expected '>', '->' or '=>', but received '/'` |
+| 2 | `Expected '>', '->' or '=>', but received '*'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 
@@ -224,10 +224,10 @@ Skipped: **2/124**
 |------:|-------------|
 | 9 | `(` |
 | 4 | `{` |
-| 3 | `*` |
-| 3 | `…` |
 | 3 | `ʷ` |
+| 3 | `…` |
 | 2 | `ʲ` |
+| 2 | `*` |
 | 2 | `∅` |
 | 2 | `_` |
 | 1 | `,` |
