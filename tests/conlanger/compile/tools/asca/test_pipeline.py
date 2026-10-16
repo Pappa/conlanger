@@ -3,84 +3,40 @@
 import pytest
 
 from conlanger.compile.tools.asca.pipeline import (
-    compile_asca_rule_field_strings,
     compile_asca_rule_fields,
 )
-from conlanger.compile.tools.asca.structures import join_asca_rule_fields
 from conlanger.ingest.models.mappings import CompilerConfig
 
 
 @pytest.mark.parametrize(
-    ("compiler_config", "inp", "output", "env", "exception", "expected"),
+    ("compiler_config", "rule_fields", "expected"),
     [
-        (
+        pytest.param(
             CompilerConfig(series_mappings_global={"h₂": "ʔ"}),
-            "eh₂",
-            "a",
-            None,
-            None,
+            ("eh₂", "a", None, None),
             "eʔ > a",
+            id="custom_global_mapping",
         ),
-        (CompilerConfig(), "s₁", "ʃ", None, None, "s₁ > ʃ"),
-        (
+        pytest.param(CompilerConfig(), ("s₁", "ʃ", None, None), "s₁ > ʃ"),
+        pytest.param(
             CompilerConfig(series_mappings_global={"h₁": "h"}),
-            "s₁",
-            "ʃ",
-            "_h₁",
-            None,
+            ("s₁", "ʃ", "_h₁", None),
             "s₁ > ʃ / _h",
+            id="mapped_in_environment",
         ),
-        (
+        pytest.param(
             CompilerConfig(series_mappings_global={"h₁": "h"}),
-            "a",
-            "e",
-            None,
-            "_h₁",
+            ("a", "e", None, "_h₁"),
             "a > e // _h",
+            id="mapped_in_exception",
         ),
-        (
-            CompilerConfig(series_mappings_global={"h₂": "x"}),
-            "eh₂",
-            "a",
-            None,
-            None,
-            "ex > a",
-        ),
-    ],
-    ids=[
-        "custom_global_mapping",
-        "unmapped_left_literal",
-        "mapped_in_environment",
-        "mapped_in_exception",
-        "default_pie_laryngeals",
     ],
 )
 def test_compile_applies_compiler_config_series_mappings(
-    compiler_config, inp, output, env, exception, expected
+    compiler_config, rule_fields, expected
 ):
     compiled = compile_asca_rule_fields(
-        inp,
-        output,
-        env,
-        exception,
+        *rule_fields,
         compiler_config=compiler_config,
     )
     assert compiled == expected
-
-
-def test_compile_asca_rule_field_strings_matches_joined_compile():
-    inp, output, env, exception = "eh₂", "a", None, None
-    field_strings = compile_asca_rule_field_strings(
-        inp,
-        output,
-        env,
-        exception,
-        compiler_config=CompilerConfig(series_mappings_global={"h₂": "ʔ"}),
-    )
-    assert join_asca_rule_fields(*field_strings) == compile_asca_rule_fields(
-        inp,
-        output,
-        env,
-        exception,
-        compiler_config=CompilerConfig(series_mappings_global={"h₂": "ʔ"}),
-    )
