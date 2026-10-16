@@ -8,52 +8,45 @@ from typing import Any
 from conlanger.ingest.models.index_models import IndexContext, IndexRule, PositionValue
 from conlanger.ingest.utils.transform_fields import normalize_medial_env_field
 
-_ADJACENT_TO_SET_RE = re.compile(
-    r"^adjacent\s+to\s+(\{[^}]+\})\s*$",
-    re.IGNORECASE,
+_SET_RE = r"\{[^}]+\}"
+_SEGMENT_RE = r"\S+"
+_SEGMENT_WITH_FEATURE_RE = r"\w\[[^]]+\]"
+_PAREN_SEGMENT_RE = r"\w?\([^)]+\)"
+_SYLLABLE_RE = r"(#U|U#)"
+
+_ADJACENT_TO_RE = r"adjacent\s+to"
+_NEAR_RE = r"near"
+_IN_RE = r"in"
+
+_NEIGHBOUR_TARGETS = (
+    _SET_RE,
+    _SEGMENT_WITH_FEATURE_RE,
+    _PAREN_SEGMENT_RE,
+    _SEGMENT_RE,
+    _SYLLABLE_RE,
 )
-_ADJACENT_TO_SINGLE_SEGMENT_RE = re.compile(
-    r"^adjacent\s+to\s+(\S+)\s*$",
-    re.IGNORECASE,
-)
-_ADJACENT_TO_SEGMENT_WITH_FEATURE_RE = re.compile(
-    r"^adjacent\s+to\s+(\w\[[^]]+\])\s*$",
-    re.IGNORECASE,
-)
-_ADJACENT_TO_PAREN_SEGMENT_RE = re.compile(
-    r"^adjacent\s+to\s+(\w?\([^)]+\))\s*$", re.IGNORECASE
+_NEIGHBOUR_RELATIONS = (
+    ("adjacent_to", _ADJACENT_TO_RE),
+    ("near", _NEAR_RE),
+    ("in", _IN_RE),
 )
 
-_NEAR_SET_RE = re.compile(r"^near\s+(\{[^}]+\})\s*$", re.IGNORECASE)
-_NEAR_SINGLE_SEGMENT_RE = re.compile(r"^near\s+(\S+)\s*$", re.IGNORECASE)
-_NEAR_SEGMENT_WITH_FEATURE_RE = re.compile(
-    r"^near\s+(\w\[[^]]+\])\s*$",
-    re.IGNORECASE,
-)
-_NEAR_PAREN_SEGMENT_RE = re.compile(r"^near\s+(\w?\([^)]+\))\s*$", re.IGNORECASE)
+
+def _compile_patterns_for_neighbour_targets():
+    return [
+        (
+            relation,
+            [
+                re.compile(rf"^{relation_pattern}\s+({pattern})\s*$", re.IGNORECASE)
+                for pattern in _NEIGHBOUR_TARGETS
+            ],
+        )
+        for relation, relation_pattern in _NEIGHBOUR_RELATIONS
+    ]
 
 
 def _extract_neighbour_target(stripped: str) -> tuple[str, str] | None:
-    for relation, patterns in (
-        (
-            "adjacent_to",
-            (
-                _ADJACENT_TO_SET_RE,
-                _ADJACENT_TO_SEGMENT_WITH_FEATURE_RE,
-                _ADJACENT_TO_PAREN_SEGMENT_RE,
-                _ADJACENT_TO_SINGLE_SEGMENT_RE,
-            ),
-        ),
-        (
-            "near",
-            (
-                _NEAR_SET_RE,
-                _NEAR_SEGMENT_WITH_FEATURE_RE,
-                _NEAR_PAREN_SEGMENT_RE,
-                _NEAR_SINGLE_SEGMENT_RE,
-            ),
-        ),
-    ):
+    for relation, patterns in _compile_patterns_for_neighbour_targets():
         for pattern in patterns:
             match = pattern.match(stripped)
             if match:
