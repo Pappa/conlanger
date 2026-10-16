@@ -136,10 +136,10 @@ def test_apply_segment_at_focus_matrix_to_input(input_text, matrix, expected):
         (
             "V",
             "∅",
-            "#UU(_)U(U(_)U)",
+            "C_",
             "[-stress]",
             "V[+stress]",
-            "#UU(_)U(U(_)U)",
+            "C_",
             None,
         ),
     ],
