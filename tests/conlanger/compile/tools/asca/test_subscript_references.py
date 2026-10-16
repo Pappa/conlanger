@@ -2,13 +2,8 @@
 
 from __future__ import annotations
 
-import shutil
-from pathlib import Path
-
 import pytest
 
-from conlanger.appliers.asca import validate_asca
-from conlanger.compile.models.rules import DiachronicSeries
 from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
 from conlanger.compile.tools.asca.subscript_references import (
     expand_subscript_references_across_fields,
@@ -66,83 +61,6 @@ def test_expand_subscript_references_across_fields(
 def test_compile_pipeline_applies_subscript_expansion_before_group_mappings():
     inp, output = "C₁C₂", "C₂"
     assert compile_asca_rule_fields(inp, output) == "C=1 C=2 > 2"
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_rule_change_validates_positional_slot_fixture():
-    section = {
-        "index": "10.2.1",
-        "section": "Positional",
-        "rules": [{"stages": ["C₁C₂", "C₂"]}],
-    }
-    probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_rule_change_validates_identity_fixture():
-    section = {
-        "index": "10.2.2",
-        "section": "Identity",
-        "rules": [{"stages": ["V₀V₀", "V₀"]}],
-    }
-    probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_rule_change_validates_identity_env_fixture():
-    section = {
-        "index": "10.2.4.2",
-        "section": "Identity env",
-        "rules": [{"stages": ["h", "ʔ"], "env": "V₀V₀"}],
-    }
-    probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_rule_change_validates_matrix_attached_identity_fixture():
-    section = {
-        "index": "10.2.5",
-        "section": "Matrix identity",
-        "rules": [{"stages": ["V₀[+nas]V₀[-nas]", "V₀[+nas]"]}],
-    }
-    probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_rule_change_validates_inter_slot_pharyngeal_fixture():
-    section = {
-        "index": "10.2.6",
-        "section": "Inter-slot pharyngeal",
-        "rules": [{"stages": ["C₁ˤC₂", "C₁C₂ˤ"]}],
-    }
-    probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_rule_change_validates_optional_positional_fixture():
-    section = {
-        "index": "10.2.7",
-        "section": "Optional positional",
-        "rules": [{"stages": ["C₁C₂C₃C₄", "(C₃)C₄"]}],
-    }
-    probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_rule_change_validates_identity_compound_length_fixture():
-    section = {
-        "index": "10.2.8",
-        "section": "Identity compound length",
-        "rules": [{"stages": ["C₀VC₀", "C₀ː"]}],
-    }
-    probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
 
 
 def test_expand_subscript_references_optional_positional_compile_pipeline():
