@@ -13,13 +13,17 @@ _ADJACENT_TO_SET_RE = re.compile(
     re.IGNORECASE,
 )
 _ADJACENT_TO_SINGLE_SEGMENT_RE = re.compile(
-    r"^(?:next|adjacent)\s+to\s+(\S+)\s*$",
+    r"^adjacent\s+to\s+(\S+)\s*$",
     re.IGNORECASE,
 )
 _ADJACENT_TO_SEGMENT_WITH_FEATURE_RE = re.compile(
     r"^adjacent\s+to\s+(\w\[[^]]+\])\s*$",
     re.IGNORECASE,
 )
+_ADJACENT_TO_PAREN_SEGMENT_RE = re.compile(
+    r"^adjacent\s+to\s+(\w?\([^)]+\))\s*$", re.IGNORECASE
+)
+
 _NEAR_SET_RE = re.compile(r"^near\s+(\{[^}]+\})\s*$", re.IGNORECASE)
 _NEAR_SINGLE_SEGMENT_RE = re.compile(r"^near\s+(\S+)\s*$", re.IGNORECASE)
 _NEAR_SEGMENT_WITH_FEATURE_RE = re.compile(
@@ -31,21 +35,29 @@ _NEAR_PAREN_SEGMENT_RE = re.compile(r"^near\s+(\w?\([^)]+\))\s*$", re.IGNORECASE
 
 def _extract_neighbour_target(stripped: str) -> tuple[str, str] | None:
     for relation, patterns in (
-        ("adjacent_to", (_ADJACENT_TO_SET_RE, _ADJACENT_TO_SEGMENT_WITH_FEATURE_RE)),
-        ("near", (_NEAR_SET_RE, _NEAR_SEGMENT_WITH_FEATURE_RE, _NEAR_PAREN_SEGMENT_RE)),
+        (
+            "adjacent_to",
+            (
+                _ADJACENT_TO_SET_RE,
+                _ADJACENT_TO_SEGMENT_WITH_FEATURE_RE,
+                _ADJACENT_TO_PAREN_SEGMENT_RE,
+                _ADJACENT_TO_SINGLE_SEGMENT_RE,
+            ),
+        ),
+        (
+            "near",
+            (
+                _NEAR_SET_RE,
+                _NEAR_SEGMENT_WITH_FEATURE_RE,
+                _NEAR_PAREN_SEGMENT_RE,
+                _NEAR_SINGLE_SEGMENT_RE,
+            ),
+        ),
     ):
         for pattern in patterns:
             match = pattern.match(stripped)
             if match:
                 return relation, match.group(1)
-        single = (
-            _ADJACENT_TO_SINGLE_SEGMENT_RE
-            if relation == "adjacent_to"
-            else _NEAR_SINGLE_SEGMENT_RE
-        )
-        match = single.match(stripped)
-        if match:
-            return relation, match.group(1)
     return None
 
 

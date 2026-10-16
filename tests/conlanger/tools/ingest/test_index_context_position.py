@@ -14,7 +14,7 @@ from conlanger.ingest.utils.index_context_position import (
         ("adjacent to C", None, {"adjacent_to": "C"}),
         ("adjacent to {s,z}", None, {"adjacent_to": "{s,z}"}),
         ("adjacent to V[+nasal]", None, {"adjacent_to": "V[+nasal]"}),
-        ("next to ŋ", None, {"adjacent_to": "ŋ"}),
+        ("adjacent to ŋ", None, {"adjacent_to": "ŋ"}),
         ("near u", None, {"near": "u"}),
         ("near {ħ,ʕ}", None, {"near": "{ħ,ʕ}"}),
         ("medially", None, {"medial": True}),
