@@ -6,8 +6,8 @@
 - Rows: **9841** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
 
 ## Rules
-- OK: **9023** (91.7%)
-- Fail: **276** (2.8%)
+- OK: **9045** (91.9%)
+- Fail: **254** (2.6%)
 - Skipped: **542** (5.5%)
 
 
@@ -23,8 +23,8 @@ Skipped: **2/124**
 
 ## Sections
 
-- All OK: **505 / 714** (70.7%)
-- Some OK: **155 / 714** (21.7%)
+- All OK: **512 / 714** (71.7%)
+- Some OK: **148 / 714** (20.7%)
 - None OK: **0 / 714** (0.0%)
 - Sections skipped: **54 / 714** (7.6%)
 
@@ -32,20 +32,19 @@ Skipped: **2/124**
 
 | count | failure_class |
 |------:|---------------|
-| 82 | `expected_underscore` |
-| 31 | `expected_ipa` |
+| 59 | `expected_underscore` |
+| 32 | `expected_ipa` |
 | 24 | `unknown_character` |
 | 22 | `missing_slash_output_env` |
-| 19 | `syntax_other` |
+| 16 | `syntax_other` |
+| 16 | `segments_before_word` |
 | 14 | `nested_brackets` |
 | 11 | `expected_number` |
 | 11 | `unknown_grouping` |
 | 10 | `empty_io_panic` |
 | 10 | `unknown_feature` |
-| 8 | `segments_before_word` |
 | 7 | `stuff_after_word_bound` |
 | 7 | `prose_or_expected_arrow` |
-| 5 | `unknown_reference` |
 | 3 | `panic_other` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
@@ -71,7 +70,7 @@ Skipped: **2/124**
 
 | count | description |
 |------:|-------------|
-| 6 | `A syllable can only have parameters stress and tone` |
+| 3 | `A syllable can only have parameters stress and tone` |
 | 1 | `Only a segment, matrix, group, or reference can be negated` |
 | 1 | `Feature 'lost' has no modifier` |
 | 1 | `Feature 'b' has no modifier` |
@@ -128,9 +127,7 @@ Skipped: **2/124**
 
 | count | error_token |
 |------:|-------------|
-| 3 | `5` |
-| 1 | `1` |
-| 1 | `3` |
+| — | _(none)_ |
 ### unknown_reference (description)
 
 | count | description |
@@ -141,17 +138,16 @@ Skipped: **2/124**
 
 | count | error_token |
 |------:|-------------|
-| 8 | `//` |
-| 8 | `,` |
+| 14 | `,` |
 | 3 | `/` |
 | 2 | `:` |
-| 2 | `∅` |
 | 1 | `ʲ` |
+| 1 | `//` |
 ### expected_underscore (description)
 
 | count | description |
 |------:|-------------|
-| 58 | `Expected '_', but received ''` |
+| 38 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -222,13 +218,13 @@ Skipped: **2/124**
 
 | count | error_token |
 |------:|-------------|
-| 9 | `(` |
+| 8 | `(` |
 | 4 | `{` |
-| 3 | `ʷ` |
+| 4 | `∅` |
 | 3 | `…` |
-| 2 | `ʲ` |
+| 3 | `ʷ` |
 | 2 | `*` |
-| 2 | `∅` |
+| 2 | `ʲ` |
 | 2 | `_` |
 | 1 | `,` |
 | 1 | `ʱ` |
@@ -297,7 +293,7 @@ Skipped: **2/124**
 
 | count | description |
 |------:|-------------|
-| 8 | `Cannot have segments before the beginning of a word` |
+| 16 | `Cannot have segments before the beginning of a word` |
 
 ### stuff_after_word_bound (error_token)
 

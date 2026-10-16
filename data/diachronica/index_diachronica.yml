@@ -2347,8 +2347,9 @@ sections:
     stages:
     - aj aw
     - eː oː
-    env: U[+hi]
-    comment: U[+closed]
+    env:
+      position:
+        in: U[+hi]
   - rule_id: Egyptian-Arabic-Vː
     source: index_diachronica.html:1385
     raw: Vː → V / C_C{ː,C}V
@@ -2945,7 +2946,7 @@ sections:
     - V(ː)
     - Vː
     env: '#_[+stress]'
-    comment: accented or stressed monosyllables
+    comment: in accented or stressed monosyllables
 - section: Proto-Semitic to Biblical Hebrew
   index: 6.2.2.1.18
   citation: Maknas, from http://www.adath-shalom.ca/history_of_hebrew.htm “and other
@@ -3267,7 +3268,7 @@ sections:
     - ʔ
     - ∅
     exception: '#_U[+stress]'
-    comment: (colloquial); onset of U[+stress]
+    comment: (colloquial); in onset of U[+stress]
   - rule_id: Modern-Israeli-Hebrew-h_2
     source: index_diachronica.html:1565
     raw: h → ∅ (colloquial)
@@ -5170,8 +5171,8 @@ sections:
     stages:
     - k
     - ∅
-    env: h_ (sometimes restored via analogy, e.g.
-    comment: sporadic - in verbs)
+    env: h_
+    comment: (sometimes restored via analogy, e.g., in verbs)
     sporadic: true
   - rule_id: Munsee-Delaware-θ-ʃ-x
     source: index_diachronica.html:1911
@@ -5208,8 +5209,8 @@ sections:
     - V
     - ∅
     env: _#
-    comment: sporadic ! some monosyllables and analogical developments ; sporadic
-      - in the latter of which long vowels were shortened
+    comment: sporadic ! some monosyllables and analogical developments, in the latter
+      of which long vowels were shortened
     sporadic: true
   - rule_id: Munsee-Delaware-a,ə
     source: index_diachronica.html:1916
@@ -5513,7 +5514,7 @@ sections:
     - e
     env: _
     exception: _{w,j,H}
-    comment: odd syllables
+    comment: in odd syllables
   - rule_id: Menominee-r
     source: index_diachronica.html:1961
     raw: r → n
@@ -10379,8 +10380,7 @@ sections:
     - ə
     - ∅
     env: '#_UU(U…)#'
-    comment: “(i.e. ; sporadic - in word-initial position in prepenultimate syllables)
-    sporadic: true
+    comment: “(i.e., in word-initial position in prepenultimate syllables)
   - rule_id: Proto-North-Sarawak-pː-tː-cː-kː
     source: index_diachronica.html:2972
     raw: pː tː cː kː → p t c k
@@ -13298,9 +13298,7 @@ sections:
     stages:
     - t
     - l
-    env: '#_'
-    comment: sporadic - in nouns
-    sporadic: true
+    env: '#_, in nouns'
   - rule_id: Vano-t_2
     source: index_diachronica.html:3520
     raw: t → s / _{u,i}
@@ -20562,16 +20560,18 @@ sections:
     stages:
     - V
     - Vː
-    env: U:[+stress][+lo]
-    comment: U:[+stress][+open]
+    env:
+      position:
+        in: U:[+stress][+lo]
   - rule_id: Hittite-e-o
     source: index_diachronica.html:5058
     raw: e o → eː oː / in ”U[+stress]
     stages:
     - e o
     - eː oː
-    env: U:[+stress][+stress]
-    comment: U:[+stress][+stress]
+    env:
+      position:
+        in: U:[+stress][+stress]
   - rule_id: Hittite-oː-æː
     source: index_diachronica.html:5059
     raw: o(ː) æː → a(ː) eː
@@ -20734,15 +20734,18 @@ sections:
     stages:
     - V
     - Vː
-    env: U:[+stress][+lo]
-    comment: U:[+stress][+open]
+    env:
+      position:
+        in: U:[+stress][+lo]
   - rule_id: Luwian-V_2
     source: index_diachronica.html:5086
     raw: 'V → Vː / in #”U'
     stages:
     - V
     - Vː
-    env: '#U:[+stress]'
+    env:
+      position:
+        in: '#U:[+stress]'
   - rule_id: Luwian-oː
     source: index_diachronica.html:5087
     raw: o(ː) → a(ː)
@@ -20854,8 +20857,7 @@ sections:
     - kʷ
     - k
     env: _E
-    comment: ; sporadic - in Milyan
-    sporadic: true
+    comment: ', in Milyan'
   - rule_id: Lycian-ɡ́,ɡ
     source: index_diachronica.html:5106
     raw: '{ɡ́,ɡ} → j / _e(ː)'
@@ -21126,8 +21128,9 @@ sections:
     stages:
     - '{e,o}'
     - a
-    env: U[-stress]
-    comment: U[-stress]
+    env:
+      position:
+        in: U[-stress]
   - rule_id: Lydian-n
     source: index_diachronica.html:5149
     raw: n → ∅ / _P “(leaves nasalization on the previous vowel)”
@@ -21213,8 +21216,9 @@ sections:
     stages:
     - a e
     - aː eː
-    env: U:[+stress][+hi]
-    comment: U:[+stress][+closed]
+    env:
+      position:
+        in: U:[+stress][+hi]
   - rule_id: Palaic-æː
     source: index_diachronica.html:5166
     raw: æː → eː
@@ -24591,17 +24595,18 @@ sections:
     stages:
     - ɑ e o
     - ɑː ɛː oː
-    env: U[+lo]
-    exception: '#U with the following U containing /iː/ or ending in one of /m n r
-      l/'
-    comment: U[+open]
+    env:
+      position:
+        in: U[+lo]
+    exception: 'in #U with the following U containing /iː/ or ending in one of /m
+      n r l/'
   - rule_id: Kentish-Middle-English-Vː_2
     source: index_diachronica.html:5740
     raw: 'Vː → V[-long] / in #U before a U with /iː/'
     stages:
     - Vː
     - V[-long]
-    env: '#U before a U with /iː/'
+    env: 'in #U before a U with /iː/'
   - rule_id: Kentish-Middle-English-m
     source: index_diachronica.html:5741
     raw: m → n → ∅ / _# when unstressed
@@ -24719,17 +24724,18 @@ sections:
     stages:
     - ɑ e o
     - ɑː ɛː oː
-    env: U[+lo]
-    exception: '#U with the following U containing /iː/ or ending in one of /m n r
-      l/'
-    comment: U[+open]
+    env:
+      position:
+        in: U[+lo]
+    exception: 'in #U with the following U containing /iː/ or ending in one of /m
+      n r l/'
   - rule_id: Midlands-Middle-English-Vː_2
     source: index_diachronica.html:5761
     raw: 'Vː → V[-long] / in #U before a U with /iː/'
     stages:
     - Vː
     - V[-long]
-    env: '#U before a U with /iː/'
+    env: 'in #U before a U with /iː/'
   - rule_id: Midlands-Middle-English-m
     source: index_diachronica.html:5762
     raw: m → n → ∅ / _# when unstressed
@@ -25370,10 +25376,11 @@ sections:
     stages:
     - ɑ e o
     - ɑː ɛː oː
-    env: U[+lo]
-    exception: '#U with the following U containing /iː/ or ending in one of /m n r
-      l/'
-    comment: U[+open]
+    env:
+      position:
+        in: U[+lo]
+    exception: 'in #U with the following U containing /iː/ or ending in one of /m
+      n r l/'
   - rule_id: Northern-Middle-English-yː
     source: index_diachronica.html:5869
     raw: y(ː) → i(ː)
@@ -25386,7 +25393,7 @@ sections:
     stages:
     - Vː
     - V[-long]
-    env: '#U before a U with /iː/'
+    env: 'in #U before a U with /iː/'
   - rule_id: Northern-Middle-English-n
     source: index_diachronica.html:5871
     raw: n → ∅ / _# when unstressed (not clear as to whether m → n beforehand in this
@@ -25409,8 +25416,7 @@ sections:
     stages:
     - ʃ
     - s
-    env: '%[-stress]'
-    comment: unstressed syllables; %[-stress]
+    env: in unstressed syllables
   - rule_id: Northern-Middle-English-hn-wl,hl-hr
     source: index_diachronica.html:5875
     raw: hn {wl,hl} hr → w l r
@@ -25541,9 +25547,9 @@ sections:
     stages:
     - uː
     - ʌu
-    env: when-stem final
-    comment: sporadic - in northern dialects
-    sporadic: true
+    env:
+      context: when-stem final,
+      dialect: northern
   - rule_id: Scots-—-øː
     source: index_diachronica.html:5898
     raw: — øː → wi / {k,ɡ}_ (in Mid Northern dialects)
@@ -26183,10 +26189,11 @@ sections:
     stages:
     - ɑ e o
     - ɑː ɛː oː
-    env: U[+lo]
-    exception: '#U with the following U containing /iː/ or ending in one of /m n r
-      l/'
-    comment: U[+open]
+    env:
+      position:
+        in: U[+lo]
+    exception: 'in #U with the following U containing /iː/ or ending in one of /m
+      n r l/'
   - rule_id: Southern-Middle-English-yː
     source: index_diachronica.html:5999
     raw: y(ː) → i(ː)
@@ -26199,7 +26206,7 @@ sections:
     stages:
     - Vː
     - V[-long]
-    env: '#U before a U with /iː/'
+    env: 'in #U before a U with /iː/'
   - rule_id: Southern-Middle-English-m
     source: index_diachronica.html:6001
     raw: m → n → ∅ / _# when unstressed
@@ -26433,9 +26440,8 @@ sections:
     stages:
     - uː
     - ʉw
-    env: _V (probably
-    comment: sporadic - in most areas)
-    sporadic: true
+    env: _V
+    comment: (probably, in most areas)
   - rule_id: Old-Low-Franconian-uː_2
     source: index_diachronica.html:6048
     raw: uː → ʊw / _V (probably, in areas that did not undergo the above change, such
@@ -26443,9 +26449,8 @@ sections:
     stages:
     - uː
     - ʊw
-    env: _V (probably
-    comment: sporadic - in areas that did not undergo the above change, such as Limburg)
-    sporadic: true
+    env: _V
+    comment: (probably, in areas that did not undergo the above change, such as Limburg)
   - rule_id: Old-Low-Franconian-uː_3
     source: index_diachronica.html:6049
     raw: uː → ʉː (probably, in areas with uː → ʉw / _V)
@@ -32310,7 +32315,8 @@ sections:
     stages:
     - '{ɪ,ɤ}'
     - ∅]
-    env: even syllables counting iambic from U# or a syllable not containing a yer
+    env: in even syllables counting iambic from U# or a syllable not containing a
+      yer
   - rule_id: Polish-ъ
     source: index_diachronica.html:7030
     raw: ъ → aː / _r
@@ -33074,9 +33080,8 @@ sections:
     stages:
     - trk
     - kr
-    env: _
-    comment: “Skrwa”; the name of the river
-    sporadic: true
+    env: in the name of the river
+    comment: “Skrwa”
   - rule_id: Polish-zdʲ-stʲ
     source: index_diachronica.html:7145
     raw: zdʲ stʲ → {ʑ,ɕ} {s,ɕ} / _n
@@ -35259,8 +35264,9 @@ sections:
     stages:
     - ɛ
     - iɛ
-    env: U[+lo]
-    comment: U[+open]
+    env:
+      position:
+        in: U[+lo]
   - rule_id: French-è_2
     source: index_diachronica.html:7487
     raw: è → iɛ / _C#
@@ -35274,8 +35280,9 @@ sections:
     stages:
     - ɛ
     - ɛ
-    env: U[+hi]
-    comment: U[+closed]
+    env:
+      position:
+        in: U[+hi]
   - rule_id: French-ò
     source: index_diachronica.html:7489
     raw: ò → uo → uɛ / in U[+open] ! _N
@@ -35283,17 +35290,19 @@ sections:
     - o
     - uo
     - uɛ
-    env: U[+lo]
+    env:
+      position:
+        in: U[+lo]
     exception: _N
-    comment: U[+open]
   - rule_id: French-ò_2
     source: index_diachronica.html:7490
     raw: ò → ɔ / in U[+closed]
     stages:
     - o
     - ɔ
-    env: U[+hi]
-    comment: U[+closed]
+    env:
+      position:
+        in: U[+hi]
   - rule_id: French-dj
     source: index_diachronica.html:7491
     raw: dj → dʒ / r_
@@ -35364,7 +35373,7 @@ sections:
     - V
     - ∅
     env: '%_'
-    comment: the unstressed penult
+    comment: in the unstressed penult
   - rule_id: French-V_2
     source: index_diachronica.html:7501
     raw: V → ∅ / intertonic ! V = a
@@ -35661,16 +35670,18 @@ sections:
     stages:
     - e
     - ɛi
-    env: U[+lo]
-    comment: U[+open]
+    env:
+      position:
+        in: U[+lo]
   - rule_id: French-é_2
     source: index_diachronica.html:7546
     raw: é → ɛ / in U[+closed]
     stages:
     - e
     - ɛ
-    env: U[+hi]
-    comment: U[+closed]
+    env:
+      position:
+        in: U[+hi]
   - rule_id: French-ó
     source: index_diachronica.html:7547
     raw: ó → ou → ɛu / in U[+open]
@@ -35678,8 +35689,9 @@ sections:
     - o
     - ou
     - ɛu
-    env: U[+lo]
-    comment: U[+open]
+    env:
+      position:
+        in: U[+lo]
   - rule_id: French-ó_2
     source: index_diachronica.html:7548
     raw: ó → ɔ / _N
@@ -35693,8 +35705,9 @@ sections:
     stages:
     - o
     - ou
-    env: U[+hi]
-    comment: U[+closed]
+    env:
+      position:
+        in: U[+hi]
   - rule_id: French-e
     source: index_diachronica.html:7550
     raw: 'e → ə / #(C…)_(%…)” in U[+open]'
@@ -35733,8 +35746,10 @@ sections:
     stages:
     - a
     - ɛ
-    env: U[+lo]
-    comment: “(but a following ʎ creates a [closed] syllable)”; U[+open]
+    env:
+      position:
+        in: U[+lo]
+    comment: “(but a following ʎ creates a [closed] syllable)”
   - rule_id: French-kʷ-ɡʷ
     source: index_diachronica.html:7555
     raw: kʷ ɡʷ → k ɡ
@@ -38653,7 +38668,7 @@ sections:
     - a V
     - e ∅
     env: U#
-    comment: (= /ə/?); (though Friulian preserves the ending -is); final syllables
+    comment: (= /ə/?); (though Friulian preserves the ending -is); in final syllables
   - rule_id: Rhaeto-Romance-k-ɡ
     source: index_diachronica.html:7995
     raw: k ɡ → tʃ dʒ / _a (note the similarity with some varieties of Old Provençal)
@@ -40962,8 +40977,9 @@ sections:
     stages:
     - k
     - ɡ
-    env: U[+stress]
-    comment: U[+stress]
+    env:
+      position:
+        in: U[+stress]
   - rule_id: Mekens-ɡʷ
     source: index_diachronica.html:8425
     raw: ɡʷ → k / _o
@@ -41204,8 +41220,9 @@ sections:
     stages:
     - k
     - ɡ
-    env: U[+stress]
-    comment: U[+stress]
+    env:
+      position:
+        in: U[+stress]
   - rule_id: Wayoró-b
     source: index_diachronica.html:8466
     raw: b → ∅ / V_V
@@ -47244,9 +47261,7 @@ sections:
     stages:
     - T
     - Tʃ
-    env: _{i,e,u}
-    comment: sporadic - in the British Columbian dialect
-    sporadic: true
+    env: _{i,e,u}, in the British Columbian dialect
   - rule_id: Beaver-n,ɲ
     source: index_diachronica.html:9999
     raw: '{n,ɲ} → d / $_V[-nas] (→ dʒ in the British Columbian dialect)'
@@ -47623,7 +47638,9 @@ sections:
     stages:
     - e
     - a
-    env: prefixes
+    env:
+      position:
+        in: prefixes
   - rule_id: Holikachuk-i-e-a-u-ɑ,ʊ
     source: index_diachronica.html:10090
     raw: i e a u {ɑ,ʊ} → e a ɔ o ŭ
@@ -47929,7 +47946,7 @@ sections:
     stages:
     - ɣ
     - h
-    env: prefixes relating to word derivation
+    env: in prefixes relating to word derivation
   - rule_id: Proto-Southern-Athabaskan-VnC
     source: index_diachronica.html:10160
     raw: VnC → V[+ nas]C / _#, unless C = ʔ
@@ -47943,7 +47960,7 @@ sections:
     stages:
     - t n x
     - d n h
-    env: prefixes relating to word derivation
+    env: in prefixes relating to word derivation
   status: skipped
 - section: Proto-Southern Athabaskan to Proto-Eastern Southern Athabaskan
   index: 29.1.1.1.20
@@ -48277,7 +48294,7 @@ sections:
     stages:
     - '{ɣ,h}'
     - j
-    comment: / prefixes related to word derivation; sporadic
+    comment: / in prefixes related to word derivation; sporadic
     sporadic: true
   - rule_id: Navajo-xʲʔ-jʔ
     source: index_diachronica.html:10238
@@ -48629,7 +48646,9 @@ sections:
     stages:
     - ʃ
     - h
-    env: the
+    env:
+      position:
+        in: the
     comment: “1sg subject prefix”
   - rule_id: Tanacross-ɬ
     source: index_diachronica.html:10324
@@ -48637,7 +48656,7 @@ sections:
     stages:
     - ɬ
     - h
-    env: the grammatical classifier
+    env: in the grammatical classifier
   - rule_id: Tanacross-ɑ-ə-ʊ
     source: index_diachronica.html:10325
     raw: ɑ ə ʊ → {æ̆,ă} æ̆ ŏ
@@ -48740,7 +48759,9 @@ sections:
     stages:
     - ʃ
     - h
-    env: the
+    env:
+      position:
+        in: the
     comment: “1sg subject prefix”
   - rule_id: Upper-Tanana-ɬ
     source: index_diachronica.html:10347
@@ -48748,7 +48769,7 @@ sections:
     stages:
     - ɬ
     - h
-    env: the grammatical classifier
+    env: in the grammatical classifier
   - rule_id: Upper-Tanana-a,ɑ-e-i-u-ʊ
     source: index_diachronica.html:10348
     raw: '{a,ɑ} e i u ʊ → e(a) {i,ea} ju {a,ɨ} o'
@@ -49172,21 +49193,21 @@ sections:
     stages:
     - S[-tense] N[-tense]
     - S[+tense] N[+tense]
-    env: C₁ position
+    env: in C₁ position
   - rule_id: Proto-Bantu_2-N+-lenis-N-lenis
     source: index_diachronica.html:10463
     raw: N[+ lenis] N[-lenis] → N[- lenis] ⁿS / in C₂ position
     stages:
     - N[-tense] N[+tense]
     - N[+tense] ⁿS
-    env: C₂ position
+    env: in C₂ position
   - rule_id: Proto-Bantu_2-d2
     source: index_diachronica.html:10464
     raw: d₂ → d / in C₂ position
     stages:
     - d₂
     - d
-    env: C₂ position
+    env: in C₂ position
 - section: Proto-Bantu to Sebirwa
   index: 30.1.1.1
   citation: 'Pogostick Man, from Chebanne, A. (2000), “The Sebirwa language: a synchronic
@@ -49461,28 +49482,28 @@ sections:
     stages:
     - ’p ’t ’d/d₂ c {’ɟ} ’k ɡ
     - f l ɟ s ∅ {w,∅} {k,w}
-    env: C₁ position
+    env: in C₁ position
   - rule_id: Proto-Manenguba-N+-lenis
     source: index_diachronica.html:10542
     raw: N[+ lenis] → N[- lenis] / in C₁ position
     stages:
     - N[-tense]
     - N[+tense]
-    env: C₁ position
+    env: in C₁ position
   - rule_id: Proto-Manenguba-p-t-’t-’d,d2-c-k-’k
     source: index_diachronica.html:10543
     raw: p t ’t {’d,d₂} c k ’k → b d l {l,∅} ɟ ɡ ∅ / in C₂ position
     stages:
     - p t ’t {’d,d₂} c k ’k
     - b d l {l,∅} ɟ ɡ ∅
-    env: C₂ position
+    env: in C₂ position
   - rule_id: Proto-Manenguba-’m-m-’n-n-’ɲ,ɲ-ŋ
     source: index_diachronica.html:10544
     raw: ’m m ’n n {’ɲ,ɲ} ŋ → m {ᵐb,m} n {ⁿd,n} ɲ {ᵑɡ,ŋ} / in C₂ position
     stages:
     - ’m m ’n n {’ɲ,ɲ} ŋ
     - m {ᵐb,m} n {ⁿd,n} ɲ {ᵑɡ,ŋ}
-    env: C₂ position
+    env: in C₂ position
   - rule_id: Proto-Manenguba-u,o-ɛ,e,i
     source: index_diachronica.html:10545
     raw: '{u,o} {ɛ,e,i} → w j / C_a in noun roots'
@@ -50528,11 +50549,9 @@ sections:
     stages:
     - e
     - i
-    env: _
+    env: in a few data sets
     comment: “where obscure morphological developments (in the ultimate or penultimate
-      syllable) have resulted in regressive assimilation of vowel quality”; a few
-      data sets
-    sporadic: true
+      syllable) have resulted in regressive assimilation of vowel quality”
   - rule_id: Papabuco-Chatino-ẽ
     source: index_diachronica.html:10805
     raw: ẽ → a / tʲ_
@@ -50553,8 +50572,9 @@ sections:
     stages:
     - ẽ
     - i
-    env: U[+long -stress]
-    comment: U[+long -stress]
+    env:
+      position:
+        in: U[+long -stress]
   - rule_id: Papabuco-Chatino-ẽ_4
     source: index_diachronica.html:10808
     raw: ẽ → e / else
@@ -54706,9 +54726,10 @@ sections:
     stages:
     - em emˀ
     - a aʔ
-    env: U[-stress]
+    env:
+      position:
+        in: U[-stress]
     exception: '{p(’),m(ˀ)}_'
-    comment: U[- stressed]
   - rule_id: Vowel-Shifts_3-en-enˀ
     source: index_diachronica.html:11721
     raw: en enˀ → i iʔ / {ts(’),s,j(ˀ)}_ in U[- stressed]
@@ -54722,9 +54743,10 @@ sections:
     stages:
     - en enˀ
     - a ʔ
-    env: U[-stress]
+    env:
+      position:
+        in: U[-stress]
     exception: '{t(’),lʲ,n(ˀ),l(ˀ)}_'
-    comment: U[- stressed]
 - section: Shuswap to Spokane-Kalispel Shuswap Nasal-to-Vowel Shifts
   index: '35.4'
   citation: Pogostick Man, from Kinkade, Dale M. “Shifts of Nasals to Vowels in Interior
@@ -54890,16 +54912,14 @@ sections:
     stages:
     - V1
     - V2
-    env: _
-    comment: syllables with /ɦ/, a nasal, or a liquid
+    env: in syllables with /ɦ/, a nasal, or a liquid
   - rule_id: Old-Mandarin-V3
     source: index_diachronica.html:11760
     raw: V3 → V4 / in syllables with /ɦ/
     stages:
     - V3
     - V4
-    env: _
-    comment: syllables with /ɦ/
+    env: in syllables with /ɦ/
   - rule_id: Old-Mandarin-?
     source: index_diachronica.html:11761
     raw: '? → ∅'
@@ -54913,23 +54933,21 @@ sections:
     stages:
     - V5
     - V2
-    env: _
-    comment: syllables with /ɦ/
+    env: in syllables with /ɦ/
   - rule_id: Old-Mandarin-V5_2
     source: index_diachronica.html:11763
     raw: V5 → V4 / in syllables with a nasal or liquid
     stages:
     - V5
     - V4
-    env: _
-    comment: syllables with a nasal or liquid
+    env: in syllables with a nasal or liquid
   - rule_id: Old-Mandarin-V5_3
     source: index_diachronica.html:11764
     raw: V5 → V3 / else
     stages:
     - V5
     - V3
-    exception: _
+    env: else
   - rule_id: Old-Mandarin-ɦ
     source: index_diachronica.html:11765
     raw: ɦ → h / S_V2
@@ -55414,8 +55432,8 @@ sections:
     - i
     - '[long-tail vowel thing]'
     env: C̣_
-    comment: (“sometimes” ; sporadic - in “variant readings”); when following /ʂ ʐ/,
-      sometimes yields [ʂi], other times [s truncated vowel-thing]
+    comment: (“sometimes”, in “variant readings”); when following /ʂ ʐ/, sometimes
+      yields [ʂi], other times [s truncated vowel-thing]
     sporadic: true
   - rule_id: Guānhuà-iʔ-iw
     source: index_diachronica.html:11841
@@ -55545,18 +55563,15 @@ sections:
     - yʔ
     - oʔ
     - '{ʊʔ,(i)uʔ?)'
-    env: '{l,C[+cor,+anterior,+dist +strident]}_'
-    comment: sporadic - in “QYS -k-types”; (eventually
-    sporadic: true
+    env: '{l,C[+cor,+anterior,+dist +strident]}_, in'
+    comment: (eventually; “QYS -k-types”
   - rule_id: Guānhuà-yʔ_3
     source: index_diachronica.html:11858
     raw: yʔ → yʔ(~yɛʔ?) / {∅,C[+guttural]}, in -juət-types
     stages:
     - yʔ
     - yʔ(~yɛʔ?)
-    env: '{∅,C[+laryngeal]}'
-    comment: sporadic - in -juət-types
-    sporadic: true
+    env: '{∅,C[+laryngeal]}, in -juət-types'
   - rule_id: Guānhuà-yʔ_4
     source: index_diachronica.html:11859
     raw: yʔ → ioʔ (→ iʊʔ dialectally?) / {∅,C[+guttural]}_, in -k-types
@@ -55564,17 +55579,14 @@ sections:
     - yʔ
     - ioʔ
     - iʊʔ
-    comment: dialectal / {∅,C[+guttural]}_ ; sporadic - in -k-types
-    sporadic: true
+    comment: dialectal / {∅,C[+guttural]}_, in -k-types
   - rule_id: Guānhuà-yʔ_5
     source: index_diachronica.html:11860
     raw: yʔ → {ɥʔ,yʔ,uʔ} / C̣, in -juət-types
     stages:
     - yʔ
     - '{ɥʔ,yʔ,uʔ}'
-    env: C̣
-    comment: sporadic - in -juət-types
-    sporadic: true
+    env: C̣, in -juət-types
   - rule_id: Guānhuà-yʔ_6
     source: index_diachronica.html:11861
     raw: yʔ → oʔ (→ ʊʔ?) / C̣_, in -k-types
@@ -55582,9 +55594,7 @@ sections:
     - yʔ
     - oʔ
     - ʊʔ
-    env: C̣_
-    comment: sporadic - in -k-types
-    sporadic: true
+    env: C̣_, in -k-types
   - rule_id: Guānhuà-yjʔ
     source: index_diachronica.html:11862
     raw: yjʔ → yʔ
@@ -60365,8 +60375,9 @@ sections:
     stages:
     - tʲ
     - ʃ
-    env: U:[+stress]
-    comment: U:[+stress]
+    env:
+      position:
+        in: U:[+stress]
   - rule_id: Catawba-tʲ_2
     source: index_diachronica.html:12746
     raw: tʲ → ʒ / else
@@ -60431,8 +60442,9 @@ sections:
     stages:
     - tʲ
     - ʃ
-    env: U:[+stress]
-    comment: U:[+stress]
+    env:
+      position:
+        in: U:[+stress]
   - rule_id: Dakota-tʲ_2
     source: index_diachronica.html:12758
     raw: tʲ → ʒ / else
@@ -60446,8 +60458,9 @@ sections:
     stages:
     - s
     - z
-    env: U[-stress]
-    comment: U[-stress]
+    env:
+      position:
+        in: U[-stress]
   - rule_id: Dakota-s_2
     source: index_diachronica.html:12760
     raw: s → z / V_V
@@ -60651,8 +60664,10 @@ sections:
     stages:
     - ã
     - a
-    env: U:[+stress]
-    comment: (sporadic); U:[+stress]
+    env:
+      position:
+        in: U:[+stress]
+    comment: (sporadic)
     sporadic: true
   - rule_id: Mandan-tʲ
     source: index_diachronica.html:12804
@@ -60775,16 +60790,18 @@ sections:
     stages:
     - tʲ
     - ʃ
-    env: U:[+stress]
-    comment: U:[+stress]
+    env:
+      position:
+        in: U:[+stress]
   - rule_id: Proto-Čiwere-Winnebago-tʲ-s
     source: index_diachronica.html:12825
     raw: tʲ s → ʒ z / in U[-stress]
     stages:
     - tʲ s
     - ʒ z
-    env: U[-stress]
-    comment: U[-stress]
+    env:
+      position:
+        in: U[-stress]
   - rule_id: Proto-Čiwere-Winnebago-k
     source: index_diachronica.html:12826
     raw: k → ɡ / V[+nas]_ ! _#
@@ -61299,16 +61316,18 @@ sections:
     stages:
     - t tʲ s
     - d ʒ z
-    env: U[-stress]
-    comment: U[-stress]
+    env:
+      position:
+        in: U[-stress]
   - rule_id: Proto-Dhegiha-tʲ
     source: index_diachronica.html:12922
     raw: tʲ → ʃ / in ”U
     stages:
     - tʲ
     - ʃ
-    env: U:[+stress]
-    comment: U:[+stress]
+    env:
+      position:
+        in: U:[+stress]
   - rule_id: Proto-Dhegiha-k
     source: index_diachronica.html:12923
     raw: k → ɡ / ”V_
@@ -61351,8 +61370,10 @@ sections:
     stages:
     - u
     - i
-    env: U:[+stress]
-    comment: (sporadic); U:[+stress]
+    env:
+      position:
+        in: U:[+stress]
+    comment: (sporadic)
     sporadic: true
   - rule_id: Proto-Dhegiha-k_2
     source: index_diachronica.html:12929
@@ -65075,9 +65096,7 @@ sections:
     stages:
     - ŋ
     - k
-    env: _#
-    comment: sporadic - in latives
-    sporadic: true
+    env: _#, in latives
   - rule_id: Pre-Finnic-ŋ_2
     source: index_diachronica.html:13763
     raw: ŋ → n / _# else
@@ -65426,16 +65445,16 @@ sections:
     stages:
     - tʃ
     - ts
-    env: _k
-    comment: sporadic - in South Estonian
-    sporadic: true
+    env: _k, in South Estonian
   - rule_id: Proto-Finnic-tk
     source: index_diachronica.html:13815
     raw: tk → k / in Pre-Livonian (?)
     stages:
     - tk
     - k
-    env: Pre-Livonian
+    env:
+      position:
+        in: Pre-Livonian
     comment: (?)
     sporadic: true
   - rule_id: Proto-Finnic-tʃ-tʃː
@@ -65925,8 +65944,8 @@ sections:
     stages:
     - θ(ː) ð
     - ts d
-    comment: additionally ; sporadic - in some dialects these may become {t(ː),h~t}
-      and {r,∅}, respectively); (this latter does have some highly sporadic exceptions
+    comment: additionally, in some dialects these may become {t(ː),h~t} and {r,∅},
+      respectively); (this latter does have some highly sporadic exceptions
     sporadic: true
   status: skipped
 - section: Standard Finnish to Modern Standard Finnish
@@ -66129,7 +66148,7 @@ sections:
     stages:
     - Cː
     - C[- long]
-    exception: verbal forms when V_ə
+    exception: in verbal forms when V_ə
   - rule_id: Livonian-ɑː-au
     source: index_diachronica.html:13925
     raw: ɑː au → ɔː ɔu (though sometimes ɑː develops, apparently at least partially
@@ -67583,27 +67602,22 @@ sections:
     stages:
     - V
     - ∅
-    env: _#
-    comment: sporadic - in trisyllables
-    sporadic: true
+    env: _#, in trisyllables
   - rule_id: Basque-i_3
     source: index_diachronica.html:14201
     raw: i → ∅ / _#, in disyllables
     stages:
     - i
     - ∅
-    env: _#
-    comment: sporadic - in disyllables
-    sporadic: true
+    env: _#, in disyllables
   - rule_id: Basque-u-o,e
     source: index_diachronica.html:14202
     raw: u {o,e} → ∅ a / _#, in disyllables (eastern dialects)
     stages:
     - u {o,e}
     - ∅ a
-    env: _#
-    comment: sporadic - in disyllables (eastern dialects)
-    sporadic: true
+    env: _#, in disyllables
+    comment: (eastern dialects)
   - rule_id: Basque-hu-hi
     source: index_diachronica.html:14205
     raw: hu hi → ʊ ɪ / {o,e}_ (also happened with /a/ sometimes, but usually such
@@ -68109,9 +68123,9 @@ sections:
     stages:
     - uː
     - ʌu
-    env: when-stem final
-    comment: sporadic - in northern dialects
-    sporadic: true
+    env:
+      context: when-stem final,
+      dialect: northern
   - rule_id: Scots-Vowel-Shifts-øː
     source: index_diachronica.html:14325
     raw: øː → wi / {k,ɡ}_ (in Mid Northern dialects)

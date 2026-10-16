@@ -353,15 +353,15 @@
 #   reason: unresolvable symbol
 
 # keep these last because they are so broad
-- from: " / in "
-  to: " / "
-  reason: replace prose
-- from: " ! in "
-  to: " ! "
-  reason: replace prose
-- from: ", in "
-  to: " ; sporadic - in "
-  reason: replace prose
+# - from: " / in "
+#   to: " / "
+#   reason: replace prose
+# - from: " ! in "
+#   to: " ! "
+#   reason: replace prose
+# - from: ", in "
+#   to: " ; sporadic - in "
+#   reason: replace prose
 # - from: " “("
 #   to: " ; “("
 #   reason: comment
