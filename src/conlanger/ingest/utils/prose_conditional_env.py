@@ -123,8 +123,6 @@ def normalize_prose_conditional_env_field(
 
 def apply_prose_conditional_env_conditions(rule: IndexRule) -> IndexRule:
     """Normalize prose conditional env/exception fields (ticket 134)."""
-    rule = rule.model_copy(deep=True)
-
     env = rule.env.context if rule.env else None
     if env:
         normalized, captures, flags, input_matrix = (

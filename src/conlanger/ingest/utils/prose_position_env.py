@@ -56,7 +56,6 @@ def normalize_bare_prose_position_env(
 
 def apply_prose_position_env_conditions(rule: IndexRule) -> IndexRule:
     """Normalize bare Index position prose in ``env`` (ticket 107)."""
-    rule = rule.model_copy(deep=True)
     env = rule.env.context if rule.env else None
     if not env:
         return rule

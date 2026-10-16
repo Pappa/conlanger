@@ -11,6 +11,7 @@ from conlanger.utils.gloss import extract_uncertainty_qualifier_from_field
 
 _DOUBLE_SLASH_SEP = " // "
 
+# TODO: these regexes need looking into more carefully
 _ONSET_OF_STRESS_RE = re.compile(
     r"^in\s+onset\s+of\s+(%|U)\[\+stress\]\s*$",
     re.IGNORECASE,
@@ -106,7 +107,6 @@ def normalize_prose_exception_or_env_tail(
 
 def apply_double_slash_env_conditions(rule: IndexRule) -> IndexRule:
     """Normalize Index ``//`` env shorthand and prose exceptions (ticket 108)."""
-    rule = rule.model_copy(deep=True)
     comment_fragments: list[str] = []
     flags: dict[str, Any] = {}
 

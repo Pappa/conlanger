@@ -104,7 +104,6 @@ def apply_position_extraction_to_context(ctx: IndexContext) -> IndexContext | No
 
 def apply_index_context_position_extraction(rule: IndexRule) -> IndexRule:
     """Extract ``adjacent_to``, ``near``, and ``medial`` onto env / exception contexts."""
-    rule = rule.model_copy(deep=True)
     if rule.env is not None:
         rule.env = apply_position_extraction_to_context(rule.env)
     if rule.exception is not None:
