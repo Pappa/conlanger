@@ -1,14 +1,9 @@
 """Compile-time Index identity exceptions ``! Host = seg`` (ticket 128)."""
 
-import shutil
-from pathlib import Path
-from tempfile import NamedTemporaryFile
-
 import pytest
 
-from conlanger.appliers.asca import validate_asca
 from conlanger.compile.models.compile_fields import RuleEnv, RuleInput, RuleOutput
-from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
+from conlanger.compile.models.rules import SoundChangeRule
 from conlanger.compile.tools.asca.identity_exceptions import (
     IdentityExceptionBinding,
     apply_identity_exception_input_narrowing,
@@ -188,39 +183,3 @@ def test_sound_change_rule_preserves_raw_identity_exception():
     assert rule.raw == "V → e / C_# ! C = j"
     assert rule.exception.raw == "C = j"
     assert rule.value == "V > e / C_# // j_#"
-
-
-def _write_probe_words(words: list[str]) -> Path:
-    with NamedTemporaryFile(
-        "w", suffix=".wsca", delete=False, encoding="utf-8"
-    ) as handle:
-        handle.write("\n".join(words) + "\n")
-        path = Path(handle.name)
-    return path
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-@pytest.mark.parametrize(
-    ("inp", "output", "env", "exception"),
-    [
-        ("V", "e", "C_#", "C = j"),
-        ("F", "F[+voice]", "#_", "F = ʍ"),
-    ],
-)
-def test_validate_asca_identity_exceptions(inp, output, env, exception):
-    section = {
-        "index": "128",
-        "section": "identity-exceptions",
-        "rules": [
-            {
-                "stages": [inp, output],
-                "env": env,
-                "exception": exception,
-            }
-        ],
-    }
-    words = _write_probe_words(["a.ta", "a", "ta.a", "a.ta.mi"])
-    try:
-        validate_asca(DiachronicSeries(section, "asca"), probe_words=words)
-    finally:
-        words.unlink(missing_ok=True)

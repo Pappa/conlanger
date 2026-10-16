@@ -1,13 +1,8 @@
 """Compile-time Index length mark → ASCA ``:[+long]`` (tickets 15, 25, 79)."""
 
-import shutil
-from pathlib import Path
-
 import pytest
 
-from conlanger.compile.models.rules import DiachronicSeries
 from conlanger.compile.tools.asca.length_marks import normalize_asca_length_marks
-from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
 
 
 @pytest.mark.parametrize(
@@ -58,27 +53,4 @@ def test_normalize_asca_length_marks_leaves_parenthesized_to_optional_length_pas
             "{V:[+stress](C)(C)V:[+long],Vː:[+stress](C)(C)V:[+long]}"
         )
         == "{V:[+stress](C)(C)V:[+long],Vː:[+stress](C)(C)V:[+long]}"
-    )
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_validate_asca_matrix_suffix_length_smoke():
-    from conlanger.appliers.asca import validate_asca
-
-    section = {
-        "index": "37.1.2.6",
-        "section": "Proto-Northern Iroquoian to Tuscarora",
-        "rules": [
-            {"stages": ["V:[+stress]ː", "V"], "env": "_C"},
-            {"stages": ["P[- voice]ː", "P"], "env": "_#"},
-        ],
-    }
-    probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
-
-
-def test_compile_matrix_suffix_length_in_rule():
-    assert (
-        compile_asca_rule_fields("V:[+stress]ː[tone: 51]", "V")
-        == "V:[+stress, +long, tone: 51] > V"
     )

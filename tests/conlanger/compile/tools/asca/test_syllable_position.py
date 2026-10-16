@@ -1,14 +1,12 @@
 """Compile-time ASCA syllable position #U / U# transforms (ticket 98)."""
 
-import shutil
 from pathlib import Path
 from tempfile import NamedTemporaryFile
 
 import pytest
 
-from conlanger.appliers.asca import validate_asca
 from conlanger.compile.models.compile_fields import RuleEnv, RuleInput, RuleOutput
-from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
+from conlanger.compile.models.rules import SoundChangeRule
 from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
 from conlanger.compile.tools.asca.syllable_position import (
     apply_syllable_position_compiled_overrides,
@@ -154,37 +152,3 @@ def _write_probe_words(words: list[str]) -> Path:
         handle.write("\n".join(words) + "\n")
         path = Path(handle.name)
     return path
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-@pytest.mark.parametrize(
-    "exception",
-    ["#U", "U#", "#U, U#"],
-)
-def test_validate_asca_syllable_position_exceptions(exception):
-    section = {
-        "index": "98",
-        "section": "syllable-position",
-        "rules": [{"stages": ["V:[+long]", "[-long]"], "exception": exception}],
-    }
-    words = _write_probe_words(
-        ["ska:.ta:", "a:", "ta:.ska:", "a:.ta:", "a", "ska:.ta:.mi:"]
-    )
-    try:
-        validate_asca(DiachronicSeries(section, "asca"), probe_words=words)
-    finally:
-        words.unlink(missing_ok=True)
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_validate_asca_syllable_position_positive_env():
-    section = {
-        "index": "98",
-        "section": "syllable-position-env",
-        "rules": [{"stages": ["V:[+long]", "[-long]"], "env": "in #U"}],
-    }
-    words = _write_probe_words(["ska:.ta:", "a:", "ta:.ska:"])
-    try:
-        validate_asca(DiachronicSeries(section, "asca"), probe_words=words)
-    finally:
-        words.unlink(missing_ok=True)

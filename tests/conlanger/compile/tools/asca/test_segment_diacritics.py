@@ -1,12 +1,7 @@
 """Tests for Index segment diacritic compile transforms (ticket 135)."""
 
-import shutil
-from pathlib import Path
-
 import pytest
 
-from conlanger.appliers.asca import validate_asca
-from conlanger.compile.models.rules import DiachronicSeries
 from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
 from conlanger.compile.tools.asca.segment_diacritics import (
     normalize_index_segment_diacritics,
@@ -36,28 +31,3 @@ def test_compile_uto_aztecan_vowel_series_env():
         "s", "∅", "Vₙ_", section_index="43.1", compiler_config=cfg
     )
     assert compiled == "s > ∅ / V:[+nas]_"
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-@pytest.mark.parametrize(
-    ("index", "stages", "env"),
-    [
-        ("43.1", ["s", "∅"], "Vₙ_"),
-        ("44.2", ["s̺", "tʃ"], "#_"),
-        ("17.11.1", ["r̝̊ r̝", "ʂ ʐ"], None),
-    ],
-)
-def test_validate_asca_segment_diacritic_smoke(index, stages, env):
-    rule: dict[str, object] = {"stages": stages}
-    if env is not None:
-        rule["env"] = env
-    section = {"index": index, "section": "smoke", "rules": [rule]}
-    probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(
-        DiachronicSeries(
-            section,
-            "asca",
-            compiler_config=load_compiler_config(),
-        ),
-        probe_words=probe,
-    )

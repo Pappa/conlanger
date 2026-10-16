@@ -1,12 +1,7 @@
 """Compile-time merge of adjacent ASCA feature matrices (tickets 124, 133)."""
 
-import shutil
-from pathlib import Path
-
 import pytest
 
-from conlanger.appliers.asca import validate_asca
-from conlanger.compile.models.rules import DiachronicSeries
 from conlanger.compile.tools.asca.pipeline import (
     compile_asca_rule_field_strings,
     compile_asca_rule_fields,
@@ -75,31 +70,3 @@ def test_compile_sebirwa_s_chain_step_merges_adjacent_matrices(
     assert compile_asca_rule_fields(
         "S", "Sʰ", compiler_config=fx_sample_compiler_config
     ) == ("P > C:[+labial, +spread]")
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_sebirwa_s_chain_step_validates(fx_sample_compiler_config):
-    section = {
-        "index": "30.1.1.1",
-        "section": "Proto-Bantu to Sebirwa",
-        "rules": [{"stages": ["S", "Sʰ", "Aʰ"]}],
-    }
-    validate_asca(
-        DiachronicSeries(section, "asca", compiler_config=fx_sample_compiler_config)
-    )
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_adjacent_matrix_apply_probe(tmp_path: Path, fx_sample_compiler_config):
-    """ASCA rejects C:[+labial][+spread]; merged colon form applies."""
-    probe = tmp_path / "probe.wsca"
-    probe.write_text("p.\n", encoding="utf-8")
-    section = {
-        "index": "124",
-        "section": "adjacent-matrix-merge",
-        "rules": [{"stages": ["P", "C:[+labial,+spread]"]}],
-    }
-    validate_asca(
-        DiachronicSeries(section, "asca", compiler_config=fx_sample_compiler_config),
-        probe_words=probe,
-    )

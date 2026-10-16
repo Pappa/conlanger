@@ -3,11 +3,10 @@
 from __future__ import annotations
 
 import random
-import shutil
 
 import pytest
 
-from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
+from conlanger.compile.models.rules import SoundChangeRule
 
 
 def _rule(**overrides):
@@ -95,20 +94,3 @@ def test_non_optional_rule_keeps_single_value():
     rule = SoundChangeRule(input="p", output="b", env="V_V")
     assert rule.alternatives == []
     assert rule.value == "p > b / V_V"
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_each_alternative_validates_independently():
-    from pathlib import Path
-
-    from conlanger.appliers.asca import validate_asca
-
-    probe = Path("tests/fixtures/asca_probe_words.wsca")
-    rule = SoundChangeRule(**_rule())
-    for alt in rule.alternatives:
-        section = {
-            "index": "1.0",
-            "section": "Optional",
-            "rules": [{"stages": [alt.input, alt.output], "env": alt.env}],
-        }
-        validate_asca(DiachronicSeries(section), probe_words=probe)

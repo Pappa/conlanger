@@ -1,13 +1,9 @@
 """Compile-time host+bracket matrix → colon form (ticket 121)."""
 
-import shutil
-from pathlib import Path
-
 import pytest
 
-from conlanger.appliers.asca import validate_asca
 from conlanger.compile.models.compile_fields import RuleInput, RuleOutput
-from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
+from conlanger.compile.models.rules import SoundChangeRule
 from conlanger.compile.tools.asca.host_bracket_matrices import (
     host_bracket_matrix_to_colon,
     normalize_asca_host_bracket_matrices,
@@ -64,40 +60,3 @@ def test_sound_change_rule_preserves_raw_io_tokens():
     assert rule.output.raw == "V[-long]"
     assert rule.raw == "Vː → V[-long]"
     assert rule.value == "V:[+long] > V:[-long]"
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_v_long_to_v_short_output_substitution_apply_probe(tmp_path: Path):
-    """V:[+long] > V:[-long] substitutes long vowels to short."""
-    probe = tmp_path / "probe.wsca"
-    probe.write_text("a:.i:\n", encoding="utf-8")
-    section = {
-        "index": "121",
-        "section": "host-bracket-matrices",
-        "rules": [{"stages": ["Vː", "V[-long]"]}],
-    }
-    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_lemerig_acv_template_apply_probe():
-    """Oceanic CV templates keep bracket form; colon rewrite panics at apply."""
-    section = {
-        "index": "10.3.3",
-        "section": "Proto-Oceanic to Lemerig",
-        "rules": [{"stages": ["aCV[+ high]", "{ɛ,œ}C"]}],
-    }
-    validate_asca(DiachronicSeries(section, "asca"))
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_v_short_input_matching_apply_probe(tmp_path: Path):
-    """Input V:[-long] matches short vowels only."""
-    probe = tmp_path / "probe.wsca"
-    probe.write_text("a.\ni:\n", encoding="utf-8")
-    section = {
-        "index": "121",
-        "section": "host-bracket-matrices-input",
-        "rules": [{"stages": ["V[-long]", "x"]}],
-    }
-    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)

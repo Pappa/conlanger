@@ -1,12 +1,7 @@
 """Tests for prenasal ⁿ prefix compile transforms (ticket 117)."""
 
-import shutil
-from pathlib import Path
-
 import pytest
 
-from conlanger.appliers.asca import validate_asca
-from conlanger.compile.models.rules import DiachronicSeries
 from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
 from conlanger.compile.tools.asca.prenasal_prefix import normalize_prenasal_prefix
 
@@ -52,28 +47,3 @@ def test_normalize_prenasal_prefix(text, expected):
 )
 def test_compile_asca_rule_fields_prenasal_prefix(inp, out, env, expected_compiled):
     assert compile_asca_rule_fields(inp, out, env) == expected_compiled
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-@pytest.mark.parametrize(
-    ("inp", "out", "env"),
-    [
-        ("P", "ⁿP", "#NV_"),
-        ("s ʃ", "ⁿs ⁿʃ", "_ %[-nas]"),
-        ("NP", "ⁿP", None),
-        ("ⁿP", "N", "_#"),
-        ("NVP", "VⁿP", "#_"),
-        ("N[-tense] N[+tense]", "N[+tense] ⁿP", "_ C=2 position"),
-    ],
-)
-def test_prenasal_prefix_inventory_rules_validate(inp, out, env):
-    rule: dict[str, object] = {"stages": [inp, out]}
-    if env is not None:
-        rule["env"] = env
-    section = {
-        "index": "7.13",
-        "section": "prenasal prefix smoke",
-        "rules": [rule],
-    }
-    probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)

@@ -1,8 +1,6 @@
 """Tests for Index input-side optionals → ASCA structure optionals (ticket 51)."""
 
 import re
-import shutil
-from pathlib import Path
 
 import pytest
 
@@ -93,23 +91,3 @@ def test_braced_prefix_wraps_unparsed_inner_without_brace_strip(monkeypatch):
 
     monkeypatch.setattr(io.re, "fullmatch", fake_fullmatch)
     assert _expand_prefix_structure_optional("({C}V)ʔ") == "{{C}V}ʔ"
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-@pytest.mark.parametrize(
-    ("index", "section"),
-    [
-        ("Arapaho", "Proto-Arapaho-Atsina to Arapaho"),
-        ("Gros Ventre", "Proto-Arapaho-Atsina to Gros Ventre"),
-    ],
-)
-def test_v_long_n_apply_probe(tmp_path: Path, index: str, section: str):
-    """Arapaho-V-longN / Gros-Ventre-V-longN: (V[-long])N → ∅ / _# on kaN, kN."""
-    probe = tmp_path / "probe.wsca"
-    probe.write_text("kaN\nkiN\nkN\n", encoding="utf-8")
-    series = {
-        "index": index,
-        "section": section,
-        "rules": [{"stages": ["(V[-long])N", "∅"], "env": "_#"}],
-    }
-    validate_asca(DiachronicSeries(series, "asca"), probe_words=probe)

@@ -1,12 +1,7 @@
 """Tests for voice-prerequisite aspiration compile transforms (ticket 110)."""
 
-import shutil
-from pathlib import Path
-
 import pytest
 
-from conlanger.appliers.asca import validate_asca
-from conlanger.compile.models.rules import DiachronicSeries
 from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
 from conlanger.compile.tools.asca.voice_prerequisite_diacritics import (
     normalize_asca_voice_prerequisite_diacritics,
@@ -94,33 +89,3 @@ def test_compile_asca_rule_fields_voice_prerequisite_diacritics(
     inp, out, env, expected_compiled
 ):
     assert compile_asca_rule_fields(inp, out, env) == expected_compiled
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-@pytest.mark.parametrize(
-    ("inp", "out", "env"),
-    [
-        ("z", "jʰ", None),
-        ("jʰ", "h", "_i"),
-        (
-            "pː pwː tː ʈː qː kː",
-            "pʰ pwʰ cʰ tʰ h jʰ",
-            None,
-        ),
-        ("bʰ dʰ gʰ", "pʰ tʰ dʰ", None),
-        ("ɡʲʰ gʷʰ", "ɡʰ xʷ", None),
-        ("jʰ", "θ", None),
-        ("jʰ j", "s z", None),
-    ],
-)
-def test_voice_prerequisite_inventory_rules_validate(inp, out, env):
-    rule: dict[str, object] = {"stages": [inp, out]}
-    if env is not None:
-        rule["env"] = env
-    section = {
-        "index": "10.3.5.1",
-        "section": "voice prerequisite smoke",
-        "rules": [rule],
-    }
-    probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)

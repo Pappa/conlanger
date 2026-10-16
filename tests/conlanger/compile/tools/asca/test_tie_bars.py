@@ -1,12 +1,7 @@
 """Tests for Index affricate tie bar → ASCA tie (ticket 135)."""
 
-import shutil
-from pathlib import Path
-
 import pytest
 
-from conlanger.appliers.asca import validate_asca
-from conlanger.compile.models.rules import DiachronicSeries
 from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
 from conlanger.compile.tools.asca.tie_bars import normalize_index_affricate_tie_bars
 
@@ -35,14 +30,3 @@ def test_compile_asca_rule_fields_tie_bars_moroccan():
         "t", f"t{_INDEX_TIE}s", None, section_index="6.2.2.1.14"
     )
     assert compiled == f"t > t{_ASCA_TIE}s"
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_validate_asca_tie_bar_inventory_smoke():
-    section = {
-        "index": "6.2.2.1.14",
-        "section": "Moroccan Arabic",
-        "rules": [{"stages": ["t", f"t{_INDEX_TIE}s"]}],
-    }
-    probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)

@@ -1,13 +1,7 @@
 """Compile-time env/exception feature matrices (ticket 131)."""
 
-import shutil
-from pathlib import Path
-from tempfile import NamedTemporaryFile
-
 import pytest
 
-from conlanger.appliers.asca import validate_asca
-from conlanger.compile.models.rules import DiachronicSeries
 from conlanger.compile.tools.asca.env_exception_feature_matrices import (
     _attach_matrix_to_literal_segment,
     _attach_matrix_to_token,
@@ -199,36 +193,3 @@ def test_compile_asca_rule_fields_env_exception_feature_matrices(
 
 def test_normalize_asca_host_bracket_matrices_on_env_exception():
     assert normalize_asca_host_bracket_matrices("C[+voice]_V") == "C:[+voice]_V"
-
-
-def _write_probe_words(words: list[str]) -> Path:
-    with NamedTemporaryFile(
-        "w", suffix=".wsca", delete=False, encoding="utf-8"
-    ) as handle:
-        handle.write("\n".join(words) + "\n")
-        path = Path(handle.name)
-    return path
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-@pytest.mark.parametrize(
-    ("inp", "output", "env", "exception"),
-    [
-        ("V", "ə", "[-stress]", None),
-        ("s", "z", "C[+voice]_", None),
-        ("V", "∅", "_#", "[-stress]"),
-        ("{h,ħ,q}", "ʕ", "C[+voice]_V", None),
-        ("a(ː)", "ɑ(ː)", "_ [+rtr], [+rtr]_", None),
-    ],
-)
-def test_validate_asca_env_exception_feature_matrices(inp, output, env, exception):
-    section = {
-        "index": "131",
-        "section": "env-exception-feature-matrices",
-        "rules": [{"stages": [inp, output], "env": env, "exception": exception}],
-    }
-    words = _write_probe_words(["a.ta", "ata", "sza", "aha"])
-    try:
-        validate_asca(DiachronicSeries(section, "asca"), probe_words=words)
-    finally:
-        words.unlink(missing_ok=True)

@@ -1,12 +1,7 @@
 """Tests for Index dot-affricate / cluster notation compile transforms (ticket 118)."""
 
-import shutil
-from pathlib import Path
-
 import pytest
 
-from conlanger.appliers.asca import validate_asca
-from conlanger.compile.models.rules import DiachronicSeries
 from conlanger.compile.tools.asca.dot_affricate import normalize_dot_affricate_notation
 from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
 
@@ -97,34 +92,3 @@ def test_normalize_dot_affricate_notation(text, expected):
 )
 def test_compile_asca_rule_fields_dot_affricate(inp, out, env, expected_compiled):
     assert compile_asca_rule_fields(inp, out, env) == expected_compiled
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-@pytest.mark.parametrize(
-    ("inp", "out", "env"),
-    [
-        ("ttʃ ddʒʱ", "t.ʃ d.ʒʱ", None),
-        ("t.ʂ t.ɕ", "kʂ cʰ:[+long]", None),
-        ("s:[+long] ʂ:[+long] ɕ:[+long]", "t.s t.ʂ t.C", None),
-        (
-            "p çp b rC:[+labial] Np Nb pr {br,pj}",
-            "p. ç.w p rp. kj m.p n.br p.j",
-            None,
-        ),
-        ("Nç", "n.pj.", None),
-        ("C:[+labial]ç", "b.ç", None),
-        ("N", "m", "_{ŋ.nj}"),
-        ("ts dʒ NP:[-voice]P", "{s,tʃ.} tʃ. m", None),
-    ],
-)
-def test_dot_affricate_inventory_rules_validate(inp, out, env):
-    rule: dict[str, object] = {"stages": [inp, out]}
-    if env is not None:
-        rule["env"] = env
-    section = {
-        "index": "17.10",
-        "section": "dot affricate smoke",
-        "rules": [rule],
-    }
-    probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)

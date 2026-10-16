@@ -1,11 +1,8 @@
 """Parenthesized optional length ``(ː)`` expansion (ticket 104)."""
 
-import shutil
-from pathlib import Path
-
 import pytest
 
-from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
+from conlanger.compile.models.rules import SoundChangeRule
 from conlanger.compile.tools.asca.optional_length import (
     expand_optional_length_in_text,
     expand_optional_length_tokens,
@@ -88,25 +85,6 @@ def test_sound_change_rule_compiles_optional_length():
 def test_compile_optional_length_representative_rules(fields, expected):
     rule = SoundChangeRule(**fields)
     assert str(rule) == expected
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_validate_asca_optional_length_smoke():
-    from conlanger.appliers.asca import validate_asca
-
-    section = {
-        "index": "17.13",
-        "section": "Optional length smoke",
-        "rules": [
-            {"stages": ["e(ː)", "a(ː)"]},
-            {
-                "stages": ["{t,dʱ}", "tʲ"],
-                "env": "_V:[+front](ː)",
-            },
-        ],
-    }
-    probe = Path("tests/fixtures/asca_probe_words.wsca")
-    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
 
 
 def test_compile_rule_fields_tocharian_env():

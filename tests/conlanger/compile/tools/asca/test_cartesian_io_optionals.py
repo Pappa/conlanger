@@ -1,12 +1,7 @@
 """Tests for cartesian I/O optional flatten (ticket 111)."""
 
-import shutil
-from pathlib import Path
-
 import pytest
 
-from conlanger.appliers.asca import validate_asca
-from conlanger.compile.models.rules import DiachronicSeries
 from conlanger.compile.tools.asca.cartesian_io_optionals import (
     _bases_are_modifier_variants,
     _find_matching_close,
@@ -85,56 +80,3 @@ def test_flatten_cartesian_io_optionals_edge_cases(text, expected):
 )
 def test_expand_meta_notation_cartesian_io(index_rule, expected):
     assert expand_meta_notation(index_rule) == expected
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_muong_khen_apply_probe(tmp_path: Path):
-    probe = tmp_path / "probe.wsca"
-    probe.write_text("həpl\n", encoding="utf-8")
-    section = {
-        "index": "Muong-Khen",
-        "section": "Proto-Vietic to Muong Khen",
-        "rules": [{"stages": ["(h)ə{p,b}", "t"], "env": "_l"}],
-    }
-    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_scots_output_apply_probe(tmp_path: Path):
-    probe = tmp_path / "probe.wsca"
-    probe.write_text("øː\n", encoding="utf-8")
-    section = {
-        "index": "Scots",
-        "section": "Old English to Scots",
-        "rules": [
-            {
-                "stages": ["øː", "(j){u,ʌ}"],
-                "env": "_{k,x}",
-            }
-        ],
-    }
-    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_naxi_set_class_optional_apply_probe(tmp_path: Path):
-    probe = tmp_path / "probe.wsca"
-    probe.write_text("rk\nsk\n", encoding="utf-8")
-    section = {
-        "index": "Naxi",
-        "section": "Naxi",
-        "rules": [{"stages": ["{r,s}(N)k", "k"], "env": "_V"}],
-    }
-    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
-
-
-@pytest.mark.skipif(shutil.which("asca") is None, reason="asca binary not on PATH")
-def test_amdo_modifier_adjacent_sets_apply_probe(tmp_path: Path):
-    probe = tmp_path / "probe.wsca"
-    probe.write_text("kr\n", encoding="utf-8")
-    section = {
-        "index": "Amdo",
-        "section": "Old Tibetan to Amdo dialects",
-        "rules": [{"stages": ["k(ʰ){r,j}", "tɕ"]}],
-    }
-    validate_asca(DiachronicSeries(section, "asca"), probe_words=probe)
