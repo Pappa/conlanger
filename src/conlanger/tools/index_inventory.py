@@ -162,6 +162,7 @@ VALIDATION_CSV_COLUMNS = [
     "alt_idx",
     "source",
     "ok",
+    "rule",
     "failure_class",
     "error_token",
     "suggested",
@@ -566,6 +567,7 @@ class ValidationRow:
     rule_id: str
     source: str
     ok: int
+    rule: str = ""
     failure_class: str = ""
     error_token: str = ""
     suggested: str = ""
@@ -581,6 +583,7 @@ class ValidationRow:
             "alt_idx": "" if self.alt_idx is None else self.alt_idx,
             "source": self.source,
             "ok": self.ok,
+            "rule": self.rule,
             "failure_class": self.failure_class,
             "error_token": self.error_token,
             "suggested": self.suggested,
@@ -1057,6 +1060,11 @@ def _asca_validation_row(
     asca_bin: str | None = None,
 ) -> ValidationRow:
     """Validate an already-compiled series and build its ``ValidationRow``."""
+
+    rules = [
+        str(part).strip() for part in scr.parts if isinstance(part, SoundChangeRule)
+    ]
+
     try:
         validate_asca(scr, probe_words=probe_words, asca_bin=asca_bin)
     except ASCAValidationError as exc:
@@ -1072,6 +1080,7 @@ def _asca_validation_row(
             alt_idx=alt_idx,
             source=source,
             ok=OK_FALSE,
+            rule=rules[0] if rules else "",
             failure_class=failure_class,
             error_token=error_token,
             suggested=suggested,
@@ -1086,6 +1095,7 @@ def _asca_validation_row(
         alt_idx=alt_idx,
         source=source,
         ok=OK_TRUE,
+        rule=rules[0] if rules else "",
     )
 
 

@@ -176,6 +176,7 @@ def test_validation_row_as_csv_dict():
         "alt_idx": "",
         "source": "sample.html:10",
         "ok": OK_FALSE,
+        "rule": "",
         "failure_class": "syntax_other",
         "error_token": "",
         "suggested": "",
@@ -265,70 +266,70 @@ def test_write_validation_csv(tmp_path: Path):
 def test_top_error_tokens():
     rows = [
         ValidationRow(
-            "1",
-            "A",
-            0,
-            "s:1",
-            OK_FALSE,
-            "unknown_character",
-            "→",
-            "",
-            "err",
+            section_index="1",
+            section_name="A",
+            rule_id=0,
+            source="s:1",
+            ok=OK_FALSE,
+            failure_class="unknown_character",
+            error_token="→",
+            suggested="",
+            description="err",
         ),
         ValidationRow(
-            "1",
-            "A",
-            1,
-            "s:2",
-            OK_FALSE,
-            "unknown_character",
-            "→",
-            "",
-            "err",
+            section_index="1",
+            section_name="A",
+            rule_id=1,
+            source="s:2",
+            ok=OK_FALSE,
+            failure_class="unknown_character",
+            error_token="→",
+            suggested="",
+            description="err",
         ),
         ValidationRow(
-            "1",
-            "A",
-            2,
-            "s:3",
-            OK_FALSE,
-            "unknown_character",
-            "ː",
-            "",
-            "err",
+            section_index="1",
+            section_name="A",
+            rule_id=2,
+            source="s:3",
+            ok=OK_FALSE,
+            failure_class="unknown_character",
+            error_token="ː",
+            suggested="",
+            description="err",
         ),
         ValidationRow(
-            "1",
-            "A",
-            3,
-            "s:4",
-            OK_FALSE,
-            "unknown_feature",
-            "voiced",
-            "voice",
-            "err",
+            section_index="1",
+            section_name="A",
+            rule_id=3,
+            source="s:4",
+            ok=OK_FALSE,
+            failure_class="unknown_feature",
+            error_token="voiced",
+            suggested="voice",
+            description="err",
         ),
         ValidationRow(
-            "1",
-            "A",
-            4,
-            "s:5",
-            OK_FALSE,
-            "unknown_feature",
-            "voiced",
-            "voice",
-            "err",
+            section_index="1",
+            section_name="A",
+            rule_id=4,
+            source="s:5",
+            ok=OK_FALSE,
+            failure_class="unknown_feature",
+            error_token="voiced",
+            suggested="voice",
+            description="err",
         ),
         ValidationRow(
-            "1",
-            "A",
-            5,
-            "s:6",
-            OK_FALSE,
-            "unknown_feature",
-            "sibilant",
-            "sonorant",
-            "err",
+            section_index="1",
+            section_name="A",
+            rule_id=5,
+            source="s:6",
+            ok=OK_FALSE,
+            failure_class="unknown_feature",
+            error_token="sibilant",
+            suggested="sonorant",
+            description="err",
         ),
     ]
     assert top_error_tokens(rows, "unknown_character") == [("→", 2), ("ː", 1)]
@@ -340,37 +341,37 @@ def test_top_error_tokens_with_suggested_from_dataframe():
     df = validation_rows_to_dataframe(
         [
             ValidationRow(
-                "1",
-                "A",
-                0,
-                "s:1",
-                OK_FALSE,
-                "unknown_feature",
-                "voiced",
-                "voice",
-                "err",
+                section_index="1",
+                section_name="A",
+                rule_id=0,
+                source="s:1",
+                ok=OK_FALSE,
+                failure_class="unknown_feature",
+                error_token="voiced",
+                suggested="voice",
+                description="err",
             ),
             ValidationRow(
-                "1",
-                "A",
-                1,
-                "s:2",
-                OK_FALSE,
-                "unknown_feature",
-                "voiced",
-                "voice",
-                "err",
+                section_index="1",
+                section_name="A",
+                rule_id=1,
+                source="s:2",
+                ok=OK_FALSE,
+                failure_class="unknown_feature",
+                error_token="voiced",
+                suggested="voice",
+                description="err",
             ),
             ValidationRow(
-                "1",
-                "A",
-                2,
-                "s:3",
-                OK_FALSE,
-                "unknown_feature",
-                "sibilant",
-                "sonorant",
-                "err",
+                section_index="1",
+                section_name="A",
+                rule_id=2,
+                source="s:3",
+                ok=OK_FALSE,
+                failure_class="unknown_feature",
+                error_token="sibilant",
+                suggested="sonorant",
+                description="err",
             ),
         ]
     )
@@ -384,37 +385,37 @@ def test_top_error_tokens_with_suggested_uses_modal_suggestion():
     df = validation_rows_to_dataframe(
         [
             ValidationRow(
-                "1",
-                "A",
-                0,
-                "s:1",
-                OK_FALSE,
-                "unknown_feature",
-                "voiced",
-                "voice",
-                "err",
+                section_index="1",
+                section_name="A",
+                rule_id=0,
+                source="s:1",
+                ok=OK_FALSE,
+                failure_class="unknown_feature",
+                error_token="voiced",
+                suggested="voice",
+                description="err",
             ),
             ValidationRow(
-                "1",
-                "A",
-                1,
-                "s:2",
-                OK_FALSE,
-                "unknown_feature",
-                "voiced",
-                "voice",
-                "err",
+                section_index="1",
+                section_name="A",
+                rule_id=1,
+                source="s:2",
+                ok=OK_FALSE,
+                failure_class="unknown_feature",
+                error_token="voiced",
+                suggested="voice",
+                description="err",
             ),
             ValidationRow(
-                "1",
-                "A",
-                2,
-                "s:3",
-                OK_FALSE,
-                "unknown_feature",
-                "voiced",
-                "voicedness",
-                "err",
+                section_index="1",
+                section_name="A",
+                rule_id=2,
+                source="s:3",
+                ok=OK_FALSE,
+                failure_class="unknown_feature",
+                error_token="voiced",
+                suggested="voice",
+                description="err",
             ),
         ]
     )
@@ -427,40 +428,37 @@ def test_top_error_descriptions_from_dataframe():
     df = validation_rows_to_dataframe(
         [
             ValidationRow(
-                "1",
-                "A",
-                "r0",
-                "s:1",
-                OK_FALSE,
-                "syntax_other",
-                "",
-                "",
-                "",
-                "Syntax Error: Floating diacritic | a > b",
+                section_index="1",
+                section_name="A",
+                rule_id="r0",
+                source="s:1",
+                ok=OK_FALSE,
+                failure_class="syntax_other",
+                error_token="",
+                suggested="",
+                description="Syntax Error: Floating diacritic | a > b",
             ),
             ValidationRow(
-                "1",
-                "A",
-                "r1",
-                "s:2",
-                OK_FALSE,
-                "syntax_other",
-                "",
-                "",
-                "",
-                "Runtime Error: Floating diacritic | c > d",
+                section_index="1",
+                section_name="A",
+                rule_id="r1",
+                source="s:2",
+                ok=OK_FALSE,
+                failure_class="syntax_other",
+                error_token="",
+                suggested="",
+                description="Runtime Error: Floating diacritic | c > d",
             ),
             ValidationRow(
-                "1",
-                "A",
-                "r2",
-                "s:3",
-                OK_FALSE,
-                "syntax_other",
-                "",
-                "",
-                "",
-                "Syntax Error: Floating diacritic | e > f",
+                section_index="1",
+                section_name="A",
+                rule_id="r2",
+                source="s:3",
+                ok=OK_FALSE,
+                failure_class="syntax_other",
+                error_token="",
+                suggested="",
+                description="Syntax Error: Floating diacritic | e > f",
             ),
         ]
     )
@@ -487,17 +485,16 @@ def test_parse_error_description(error, failure_class, expected):
 def test_top_error_tokens_unlimited():
     rows = [
         ValidationRow(
-            "1",
-            "A",
-            i,
-            f"s:{i}",
-            OK_FALSE,
-            "unknown_grouping",
-            token,
-            "",
-            "err",
+            section_index="1",
+            section_name="A",
+            rule_id=index,
+            source=f"s:{index}",
+            ok=OK_FALSE,
+            failure_class="unknown_grouping",
+            error_token=token,
+            description="err",
         )
-        for i, token in enumerate(("R", "E", "U", "H", "B", "X"))
+        for index, token in enumerate(("R", "E", "U", "H", "B", "X"))
     ]
     assert top_error_tokens(rows, "unknown_grouping", limit=5) == [
         ("R", 1),
@@ -510,24 +507,38 @@ def test_top_error_tokens_unlimited():
 
 
 def test_section_outcome_stats():
-    rows = [
-        ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", ""),
-        ValidationRow("1", "A", "r1", "s:2", OK_TRUE, "", "", "", "", ""),
-        ValidationRow("2", "B", "r0", "s:3", OK_TRUE, "", "", "", "", ""),
-        ValidationRow("2", "B", 1, "s:4", OK_FALSE, "syntax_other", "", "", ""),
-        ValidationRow("3", "C", 0, "s:5", OK_FALSE, "syntax_other", "", "", ""),
-        ValidationRow(
+    validation_rows = [
+        ("1", "A", "r0", "s:1", OK_TRUE, ""),
+        ("1", "A", "r1", "s:2", OK_TRUE, ""),
+        ("2", "B", "r0", "s:3", OK_TRUE, ""),
+        ("2", "B", 1, "s:4", OK_FALSE, "syntax_other"),
+        ("3", "C", 0, "s:5", OK_FALSE, "syntax_other"),
+        (
             "9.9.9",
             "Skipped",
             "r0",
             "s:6",
             OK_SKIPPED,
             SECTION_SKIPPED_FAILURE_CLASS,
-            "",
-            "",
-            "",
-            "section skipped",
         ),
+    ]
+    rows = [
+        ValidationRow(
+            section_index=section_index,
+            section_name=section_name,
+            rule_id=rule_id,
+            source=source,
+            ok=ok,
+            failure_class=failure_class,
+        )
+        for (
+            section_index,
+            section_name,
+            rule_id,
+            source,
+            ok,
+            failure_class,
+        ) in validation_rows
     ]
     outcomes = section_outcome_stats(rows)
     assert outcomes.total == 4
@@ -562,29 +573,31 @@ def test_section_all_ok_stats_empty():
 
 
 def test_summarize_inventory_common_errors():
+    validation_rows = [
+        ("1", "A", 0, "s:1", OK_FALSE, "unknown_character", "→", ""),
+        ("1", "A", 1, "s:2", OK_FALSE, "unknown_feature", "voiced", "voice"),
+    ]
     rows = [
         ValidationRow(
-            "1",
-            "A",
-            0,
-            "s:1",
-            OK_FALSE,
-            "unknown_character",
-            "→",
-            "",
-            "err",
-        ),
-        ValidationRow(
-            "1",
-            "A",
-            1,
-            "s:2",
-            OK_FALSE,
-            "unknown_feature",
-            "voiced",
-            "voice",
-            "err",
-        ),
+            section_index=section_index,
+            section_name=section_name,
+            rule_id=rule_id,
+            source=source,
+            ok=ok,
+            failure_class=failure_class,
+            error_token=error_token,
+            suggested=suggested,
+        )
+        for (
+            section_index,
+            section_name,
+            rule_id,
+            source,
+            ok,
+            failure_class,
+            error_token,
+            suggested,
+        ) in validation_rows
     ]
     text = summarize_inventory(
         rows,
@@ -603,30 +616,28 @@ def test_summarize_inventory_common_errors():
 
 
 def test_summarize_inventory():
+    validation_rows = [
+        ("1", "A", 0, "s:1", OK_TRUE, ""),
+        ("1", "A", 1, "s:2", OK_FALSE, "syntax_other"),
+        ("1", "A", 2, "s:3", OK_FALSE, "syntax_other"),
+    ]
     rows = [
-        ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", ""),
         ValidationRow(
-            "1",
-            "A",
-            1,
-            "s:2",
-            OK_FALSE,
-            "syntax_other",
-            "",
-            "",
-            "err",
-        ),
-        ValidationRow(
-            "1",
-            "A",
-            2,
-            "s:3",
-            OK_FALSE,
-            "syntax_other",
-            "",
-            "",
-            "err",
-        ),
+            section_index=section_index,
+            section_name=section_name,
+            rule_id=rule_id,
+            source=source,
+            ok=ok,
+            failure_class=failure_class,
+        )
+        for (
+            section_index,
+            section_name,
+            rule_id,
+            source,
+            ok,
+            failure_class,
+        ) in validation_rows
     ]
     text = summarize_inventory(
         rows,
@@ -682,31 +693,35 @@ def test_summarize_inventory_empty():
 
 
 def test_summarize_inventory_section_skipped():
-    rows = [
-        ValidationRow(
+    validation_rows = [
+        (
             "9.9.9",
             "Skipped",
             "r0",
             "s:1",
             OK_SKIPPED,
             SECTION_SKIPPED_FAILURE_CLASS,
-            "",
-            "",
-            "",
-            "section skipped",
         ),
-        ValidationRow("1", "A", "r0", "s:2", OK_TRUE, "", "", "", "", ""),
+        ("1", "A", "r0", "s:2", OK_TRUE, ""),
+        ("1", "A", 1, "s:3", OK_FALSE, "syntax_other"),
+    ]
+    rows = [
         ValidationRow(
-            "1",
-            "A",
-            1,
-            "s:3",
-            OK_FALSE,
-            "syntax_other",
-            "",
-            "",
-            "err",
-        ),
+            section_index=section_index,
+            section_name=section_name,
+            rule_id=rule_id,
+            source=source,
+            ok=ok,
+            failure_class=failure_class,
+        )
+        for (
+            section_index,
+            section_name,
+            rule_id,
+            source,
+            ok,
+            failure_class,
+        ) in validation_rows
     ]
     text = summarize_inventory(
         rows,
@@ -1065,59 +1080,33 @@ def test_matched_correction_rule_ids_excludes_orphans():
 
 
 def test_corrections_outcome_stats_rollup_per_rule():
+    validation_rows = [
+        ("1", "A", "r-multi", "s:1", OK_TRUE, "", 0),
+        ("1", "A", "r-multi", "s:1", OK_TRUE, "", 1),
+        ("1", "A", "r-fail", "s:2", OK_FALSE, "expected_underscore", None),
+        ("1", "A", "r-mixed", "s:3", OK_TRUE, "", None),
+        ("1", "A", "r-mixed", "s:3", OK_SKIPPED, RULE_SKIPPED_FAILURE_CLASS, None),
+        ("1", "A", "r-skipped", "s:4", OK_SKIPPED, RULE_SKIPPED_FAILURE_CLASS, None),
+    ]
     rows = [
         ValidationRow(
-            "1", "A", "r-multi", "s:1", OK_TRUE, "", "", "", "", "", alt_idx=0
-        ),
-        ValidationRow(
-            "1", "A", "r-multi", "s:1", OK_TRUE, "", "", "", "", "", alt_idx=1
-        ),
-        ValidationRow(
-            "1",
-            "A",
-            "r-fail",
-            "s:2",
-            OK_FALSE,
-            "expected_underscore",
-            "",
-            "",
-            "err",
-        ),
-        ValidationRow(
-            "1",
-            "A",
-            "r-mixed",
-            "s:3",
-            OK_TRUE,
-            "",
-            "",
-            "",
-            "",
-        ),
-        ValidationRow(
-            "1",
-            "A",
-            "r-mixed",
-            "s:3",
-            OK_SKIPPED,
-            RULE_SKIPPED_FAILURE_CLASS,
-            "",
-            "",
-            "",
-            "held-out",
-        ),
-        ValidationRow(
-            "1",
-            "A",
-            "r-skipped",
-            "s:4",
-            OK_SKIPPED,
-            RULE_SKIPPED_FAILURE_CLASS,
-            "",
-            "",
-            "",
-            "held-out",
-        ),
+            section_index=section_index,
+            section_name=section_name,
+            rule_id=rule_id,
+            source=source,
+            ok=ok,
+            failure_class=failure_class,
+            alt_idx=alt_idx,
+        )
+        for (
+            section_index,
+            section_name,
+            rule_id,
+            source,
+            ok,
+            failure_class,
+            alt_idx,
+        ) in validation_rows
     ]
     stats = corrections_outcome_stats(
         rows,
@@ -1133,63 +1122,50 @@ def test_corrections_outcome_stats_rollup_per_rule():
 
 
 def test_corrections_outcome_stats_modal_failure_class_on_tie():
+    validation_rows = [
+        ("expected_underscore", 0),
+        ("syntax_other", 1),
+    ]
     rows = [
         ValidationRow(
-            "1",
-            "A",
-            "r-fail",
-            "s:1",
-            OK_FALSE,
-            "expected_underscore",
-            "",
-            "",
-            "first",
-            alt_idx=0,
-        ),
-        ValidationRow(
-            "1",
-            "A",
-            "r-fail",
-            "s:1",
-            OK_FALSE,
-            "syntax_other",
-            "",
-            "",
-            "second",
-            alt_idx=1,
-        ),
+            section_index="1",
+            section_name="A",
+            rule_id="r-fail",
+            source="s:1",
+            ok=OK_FALSE,
+            failure_class=failure_class,
+            alt_idx=alt_idx,
+        )
+        for (
+            failure_class,
+            alt_idx,
+        ) in validation_rows
     ]
     stats = corrections_outcome_stats(rows, frozenset({"r-fail"}))
-    assert stats is not None
     assert stats.failed_rules == (("r-fail", "expected_underscore"),)
 
 
 def test_summarize_inventory_corrections_section():
+    validation_rows = [
+        ("r-ok", "s:1", OK_TRUE, ""),
+        ("r-fail", "s:2", OK_FALSE, "expected_underscore"),
+        ("r-skipped", "s:3", OK_SKIPPED, "rule_skipped"),
+    ]
     rows = [
-        ValidationRow("1", "A", "r-ok", "s:1", OK_TRUE, "", "", "", "", ""),
         ValidationRow(
-            "1",
-            "A",
-            "r-fail",
-            "s:2",
-            OK_FALSE,
-            "expected_underscore",
-            "",
-            "",
-            "err",
-        ),
-        ValidationRow(
-            "1",
-            "A",
-            "r-skipped",
-            "s:3",
-            OK_SKIPPED,
-            RULE_SKIPPED_FAILURE_CLASS,
-            "",
-            "",
-            "",
-            "held-out",
-        ),
+            section_index="1",
+            section_name="A",
+            rule_id=rule_id,
+            source=source,
+            ok=ok,
+            failure_class=failure_class,
+        )
+        for (
+            rule_id,
+            source,
+            ok,
+            failure_class,
+        ) in validation_rows
     ]
     text = summarize_inventory(
         rows,
@@ -1210,31 +1186,41 @@ def test_summarize_inventory_corrections_section():
 
 
 def test_summarize_inventory_corrections_section_skipped_only():
-    rows = [
-        ValidationRow(
+    validation_rows = [
+        (
             "9.9.9",
             "Skipped",
             "Early-Icelandic-bbc",
             "s:1",
             OK_SKIPPED,
             SECTION_SKIPPED_FAILURE_CLASS,
-            "",
-            "",
-            "",
-            "section skipped",
         ),
-        ValidationRow(
+        (
             "1",
             "A",
             "Early-Icelandic-xxy",
             "s:2",
             OK_SKIPPED,
             RULE_SKIPPED_FAILURE_CLASS,
-            "",
-            "",
-            "",
-            "held-out",
         ),
+    ]
+    rows = [
+        ValidationRow(
+            section_index=section_index,
+            section_name=section_name,
+            rule_id=rule_id,
+            source=source,
+            ok=ok,
+            failure_class=failure_class,
+        )
+        for (
+            section_index,
+            section_name,
+            rule_id,
+            source,
+            ok,
+            failure_class,
+        ) in validation_rows
     ]
     text = summarize_inventory(
         rows,
