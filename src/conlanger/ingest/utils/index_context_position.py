@@ -45,13 +45,13 @@ def _compile_patterns_for_neighbour_targets():
     ]
 
 
-def _extract_neighbour_target(stripped: str) -> tuple[str, str] | None:
+def _extract_neighbour_target(stripped: str) -> tuple[str, str] | tuple[None, None]:
     for relation, patterns in _compile_patterns_for_neighbour_targets():
         for pattern in patterns:
             match = pattern.match(stripped)
             if match:
                 return relation, match.group(1)
-    return None
+    return None, None
 
 
 def extract_position_from_context(
@@ -66,13 +66,10 @@ def extract_position_from_context(
 
     normalized, is_medial = normalize_medial_env_field(stripped)
     if is_medial:
-        if normalized == "_":
-            return None, {"medial": True}
         return normalized or None, {"medial": True}
 
-    neighbour = _extract_neighbour_target(stripped)
-    if neighbour:
-        relation, target = neighbour
+    relation, target = _extract_neighbour_target(stripped)
+    if relation and target:
         return None, {relation: target}
 
     return text, {}

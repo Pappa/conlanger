@@ -16,50 +16,42 @@ from conlanger.ingest.utils.transforms import (
 )
 
 
-def test_apply_index_context_position_extraction_bare_medial():
-    result = apply_index_context_position_extraction(
-        IndexRule(raw="x", source="t", stages=["t", "r"], env="medially")
-    )
-    assert result.to_index_dict() == {
-        "raw": "x",
-        "source": "t",
-        "stages": ["t", "r"],
-        "env": {"position": {"medial": True}},
-    }
-
-
-def test_apply_index_context_position_extraction_structural_when_medial():
-    result = apply_index_context_position_extraction(
-        IndexRule(
-            raw="x", source="t", stages=["m", "β"], env="C[-voice]_n, when medial"
-        )
-    )
-    assert result.to_index_dict() == {
-        "raw": "x",
-        "source": "t",
-        "stages": ["m", "β"],
-        "env": {
-            "context": "C[-voice]_n",
-            "position": {"medial": True},
-        },
-    }
-
-
-def test_apply_index_context_position_extraction_keeps_exception_when_present():
+@pytest.mark.parametrize(
+    "env, exception, expected",
+    [
+        pytest.param("in U#", None, {"env": {"position": {"in": "U#"}}}, id="in U#"),
+        pytest.param(
+            "medially", None, {"env": {"position": {"medial": True}}}, id="medially"
+        ),
+        pytest.param(
+            "C[-voice]_n, when medial",
+            None,
+            {
+                "env": {
+                    "context": "C[-voice]_n",
+                    "position": {"medial": True},
+                }
+            },
+            id="structural_when_medial",
+        ),
+        pytest.param(
+            "medially,",
+            "_ɡ",
+            {"env": {"position": {"medial": True}}, "exception": "_ɡ"},
+            id="keeps_exception_when_present",
+        ),
+    ],
+)
+def test_apply_index_context_position_extraction(env, exception, expected):
     rule = IndexRule(
-        raw="x",
-        source="t",
-        stages=["b", "h"],
-        env="medially,",
-        exception="{r(ʲ),l(ʲ)}_ or _ɡ",
+        raw="x", source="t", stages=["t", "r"], env=env, exception=exception
     )
     result = apply_index_context_position_extraction(rule)
     assert result.to_index_dict() == {
         "raw": "x",
         "source": "t",
-        "stages": ["b", "h"],
-        "env": {"position": {"medial": True}},
-        "exception": "{r(ʲ),l(ʲ)}_ or _ɡ",
+        "stages": ["t", "r"],
+        **expected,
     }
 
 
@@ -190,11 +182,11 @@ def test_join_rule_comment():
 @pytest.mark.parametrize(
     ("text", "expected_env", "expected_medial"),
     [
-        ("medial", "_", True),
-        ("medially", "_", True),
-        ("medially,", "_", True),
-        ("  Medial  ", "_", True),
-        ("when medial", "_", True),
+        ("medial", "", True),
+        ("medially", "", True),
+        ("medially,", "", True),
+        ("  Medial  ", "", True),
+        ("when medial", "", True),
         ("C[-voice]_n, when medial", "C[-voice]_n", True),
         ("_k, when medial", "_k", True),
         ("_#", "_#", False),

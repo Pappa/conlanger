@@ -62,7 +62,7 @@ def normalize_medial_env_field(text: str) -> tuple[str, bool]:
         return text, False
     stripped = text.strip()
     if _BARE_MEDIAL_ENV_RE.match(stripped) or _BARE_WHEN_MEDIAL_ENV_RE.match(stripped):
-        return "_", True
+        return "", True
     match = _WHEN_MEDIAL_SUFFIX_RE.search(stripped)
     if match:
         return stripped[: match.start()].rstrip(), True
