@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: [162](162-grill-syllable-structure-env-resolution.md)
 
 # Task: structured double-slash env/exception (ticket 108) at parse + ASCA at compile
@@ -12,10 +12,16 @@ Refactor `double_slash_env.py` so parse **splits** Index ` // ` into structured 
 
 ## Acceptance
 
-- [ ] `apply_double_slash_env_conditions` persists structured `env` / `exception` (`context`, `position`, `dialect` per [144](144-implement-indexcontext-compile-resolution.md)); no Tier C ASCA literals written at parse.
-- [ ] Compile projection reproduces today’s compiled lines for a representative fixture set (smoke + prior **108** inventory examples).
-- [ ] Tests: `test_double_slash_env.py` updated; compile round-trip tests added or extended.
-- [ ] Regen inventory delta documented.
+- [x] `apply_double_slash_env_conditions` persists structured `env` / `exception` (`context`, `position`, `dialect` per [144](144-implement-indexcontext-compile-resolution.md)); no Tier C ASCA literals written at parse.
+- [x] Compile projection reproduces today’s compiled lines for a representative fixture set (smoke + prior **108** inventory examples).
+- [x] Tests: `test_double_slash_env.py` updated; compile round-trip tests added or extended.
+- [x] Regen inventory delta documented.
+
+## Answer (2026-10-17)
+
+- **Parse:** `double_slash_env.py` merges updates into `IndexContext` (`onset_of_stress`, `penult` under `position`; structural `V_V` in `context`). Fixes `//` tail assignment when env head normalizes. Embedded `//` tails become `exception` context when absent.
+- **Compile:** `_project_double_slash_position` in `project_index_context.py` → `#_U[+stress]` / `%_` (ticket 108 ASCA tails).
+- **Inventory** (`create_index && compile_rules && validate_rules`): **9260** OK (unchanged); **0** ok-flips. YAML: `Modern-Israeli-Hebrew-ʔ` exception `onset_of_stress`; `Muskogean-k` exception `penult: true` (replaces `#_U[+stress]` / `%_` in SoT).
 
 ## Out of scope
 

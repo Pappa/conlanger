@@ -1,5 +1,8 @@
 import pytest
 
+from conlanger.compile.project_index_context import (
+    resolve_rule_env_exception_for_compile,
+)
 from conlanger.ingest.models.index_models import IndexRule
 from conlanger.ingest.utils.double_slash_env import (
     apply_double_slash_env_conditions,
@@ -58,7 +61,7 @@ from conlanger.ingest.utils.index_context_position import (
                 "exception": "onset of U[+stress]",
             },
             {
-                "exception": "#_U[+stress]",
+                "exception": {"position": {"onset_of_stress": "U[+stress]"}},
                 "comment": "onset of U[+stress]",
             },
         ),
@@ -91,6 +94,7 @@ from conlanger.ingest.utils.index_context_position import (
             },
             {
                 "env": "_",
+                "exception": "_{w,j,H}",
                 "comment": "odd syllables",
             },
         ),
@@ -147,29 +151,47 @@ def test_normalize_prose_env_head(text, expected_env, expected_captures):
 
 
 @pytest.mark.parametrize(
-    ("text", "expected_env", "expected_captures"),
+    ("text", "expected_context", "expected_position", "expected_captures"),
     [
-        ("adjacent to ŋ", "adjacent to ŋ", []),
-        ("adjacent to S", "adjacent to S", []),
-        ("adjacent to C[+voice]", "adjacent to C[+voice]", []),
-        ("Logudorese", "", ["Logudorese"]),
-        ("onset of U[+stress]", "#_U[+stress]", ["onset of U[+stress]"]),
-        ("in onset of %[+stress]", "#_%[+stress]", ["in onset of %[+stress]"]),
-        ("penult", "%_", ["penult"]),
-        ("final syllables", "U#", ["final syllables"]),
+        ("adjacent to ŋ", "adjacent to ŋ", None, []),
+        ("adjacent to S", "adjacent to S", None, []),
+        ("adjacent to C[+voice]", "adjacent to C[+voice]", None, []),
+        ("Logudorese", None, None, ["Logudorese"]),
+        (
+            "onset of U[+stress]",
+            None,
+            {"onset_of_stress": "U[+stress]"},
+            ["onset of U[+stress]"],
+        ),
+        (
+            "in onset of %[+stress]",
+            None,
+            {"onset_of_stress": "%[+stress]"},
+            ["in onset of %[+stress]"],
+        ),
+        ("penult", None, {"penult": True}, ["penult"]),
+        ("final syllables", "U#", None, ["final syllables"]),
         (
             "#% with the following conditions",
             "#% with the following conditions",
+            None,
             ["#% with the following conditions"],
         ),
-        ("_k, short only)", "_k", ["short only"]),
-        ("%[-stress]", "%[-stress]", ["%[-stress]"]),
-        ("", "", []),
+        ("_k, short only)", "_k", None, ["short only"]),
+        ("%[-stress]", "%[-stress]", None, ["%[-stress]"]),
+        ("", None, None, []),
     ],
 )
-def test_normalize_prose_exception_or_env_tail(text, expected_env, expected_captures):
-    env, captures, flags = normalize_prose_exception_or_env_tail(text)
-    assert env == expected_env
+def test_normalize_prose_exception_or_env_tail(
+    text, expected_context, expected_position, expected_captures
+):
+    ctx, captures, flags = normalize_prose_exception_or_env_tail(text)
+    if expected_context is None and expected_position is None:
+        assert ctx is None
+    else:
+        assert ctx is not None
+        assert ctx.context == expected_context
+        assert ctx.position == expected_position
     assert captures == expected_captures
     assert flags == {}
 
@@ -183,3 +205,48 @@ def test_normalize_prose_exception_or_env_tail(text, expected_env, expected_capt
 )
 def test_split_embedded_double_slash(text, expected_head, expected_tail):
     assert split_embedded_double_slash(text) == (expected_head, expected_tail)
+
+
+@pytest.mark.parametrize(
+    ("env", "exception", "expected_env", "expected_exc"),
+    [
+        (None, {"position": {"onset_of_stress": "U[+stress]"}}, None, "#_U[+stress]"),
+        (
+            {"context": "V_C"},
+            {"position": {"penult": True}},
+            "V_C",
+            "%_",
+        ),
+        (
+            {"context": "#_"},
+            {"context": "V_V"},
+            "#_",
+            "V_V",
+        ),
+    ],
+)
+def test_double_slash_compile_round_trip(env, exception, expected_env, expected_exc):
+    assert resolve_rule_env_exception_for_compile(env, exception) == (
+        expected_env,
+        expected_exc,
+    )
+
+
+def test_normalize_prose_exception_voice_earlier_unchanged():
+    ctx, captures, flags = normalize_prose_exception_or_env_tail(
+        "O[+voice] earlier in the word"
+    )
+    assert ctx is not None
+    assert ctx.context == "O[+voice] earlier in the word"
+    assert captures == ["O[+voice] earlier in the word"]
+    assert flags == {}
+
+
+def test_normalize_prose_exception_complex_prose_unchanged():
+    ctx, captures, flags = normalize_prose_exception_or_env_tail(
+        "#% with the following conditions"
+    )
+    assert ctx is not None
+    assert ctx.context == "#% with the following conditions"
+    assert captures == ["#% with the following conditions"]
+    assert flags == {}

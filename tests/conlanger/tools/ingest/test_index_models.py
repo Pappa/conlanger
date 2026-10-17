@@ -344,6 +344,21 @@ def test_env_exception_input_to_string(input, expected):
             "C_CV, in U[-stress]",
             id="merges_context_with_in",
         ),
+        pytest.param(
+            IndexContext(position={"penult": True}),
+            "%_",
+            id="penult_position",
+        ),
+        pytest.param(
+            IndexContext(position={"onset_of_stress": "U[+stress]"}),
+            "#_U[+stress]",
+            id="onset_of_stress_position",
+        ),
+        pytest.param(
+            IndexContext(context="V_C", position={"penult": True}),
+            "V_C, %_",
+            id="penult_with_structural_context",
+        ),
     ],
 )
 def test_resolve_index_context(ctx, expected):
@@ -399,6 +414,37 @@ def test_resolve_rule_env_exception_for_compile(
     assert resolve_rule_env_exception_for_compile(env, exception) == (
         expected_env,
         expected_exc,
+    )
+
+
+def test_resolve_rule_env_exception_accepts_index_context_instances():
+    env_ctx = IndexContext(context="V_C")
+    exc_ctx = IndexContext(position={"penult": True})
+    assert resolve_rule_env_exception_for_compile(env_ctx, exc_ctx) == (
+        "V_C",
+        "%_",
+    )
+
+
+def test_merge_medial_boundary_exception_is_idempotent():
+    from conlanger.compile.project_index_context import merge_medial_boundary_exception
+
+    assert merge_medial_boundary_exception(MEDIAL_BOUNDARY_EXCEPTION) == (
+        MEDIAL_BOUNDARY_EXCEPTION
+    )
+
+
+def test_coerce_optional_index_context_rejects_invalid_type():
+    from conlanger.compile.project_index_context import _coerce_optional_index_context
+
+    with pytest.raises(TypeError, match="Invalid env/exception"):
+        _coerce_optional_index_context(1)
+
+
+def test_resolve_index_context_empty_adjacent_list():
+    assert (
+        resolve_index_context_to_string(IndexContext(position={"adjacent_to": []}))
+        == ""
     )
 
 

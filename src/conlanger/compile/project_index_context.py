@@ -25,6 +25,18 @@ def _position_target_value(value: PositionValue) -> str | None:
     return None
 
 
+def _project_double_slash_position(ctx: IndexContext) -> str | None:
+    """Project ticket-108 structured ``position`` keys to ASCA exception/env tails."""
+    if not ctx.position:
+        return None
+    if ctx.position.get("penult"):
+        return "%_"
+    onset = ctx.position.get("onset_of_stress")
+    if isinstance(onset, str) and onset.strip():
+        return f"#_{onset.strip()}"
+    return None
+
+
 def _project_position_relation(
     ctx: IndexContext,
     relation: str,
@@ -54,6 +66,10 @@ def resolve_index_context_to_string(
     parts: list[str] = []
     if ctx.context:
         parts.append(ctx.context)
+    double_slash = _project_double_slash_position(ctx)
+    if double_slash is not None:
+        parts.append(double_slash)
+        return ", ".join(parts)
     for relation in ("adjacent_to", "near", "in"):
         projected = _project_position_relation(ctx, relation, templates)
         if projected is not None:

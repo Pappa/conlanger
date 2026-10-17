@@ -3266,7 +3266,9 @@ sections:
     stages:
     - ʔ
     - ∅
-    exception: '#_U[+stress]'
+    exception:
+      position:
+        onset_of_stress: U[+stress]
     comment: (colloquial); in onset of U[+stress]
   - rule_id: Modern-Israeli-Hebrew-h_2
     source: index_diachronica.html:1565
@@ -46642,7 +46644,9 @@ sections:
     - k
     - ∅
     env: V_C
-    exception: '%_'
+    exception:
+      position:
+        penult: true
     comment: penult
   - rule_id: Muskogean-V
     source: index_diachronica.html:9820
