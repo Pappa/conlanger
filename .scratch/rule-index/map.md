@@ -17,6 +17,7 @@ A **cleaned rule index** (applier-neutral YAML SoT) derived from **Index Diachro
 - **`src/conlanger/`:** parser, compile, validation, and orchestration code.
 - **`./research/legacy/` folder:** previous attempts only — do **not** copy code or data from `./research/legacy/` when implementing cleaned-index work (tickets 11+).
 - Tracker: `docs/agents/issue-tracker.md` (Wayfinding operations).
+- **Parse/compile hygiene (charted 2026-10-17):** ASCA-shaped syntax in applier-neutral YAML, parse-time env rewrites, package seams, compile diagnostic YAML, inventory `ok` strings. Frontier: [Grill: ASCA-shaped syntax in the applier-neutral rule index](issues/148-grill-asca-shaped-syntax-in-applier-neutral-sot.md) → [149](issues/149-grill-parse-time-asca-env-rewrites-vs-structured-indexcontext.md) / [150](issues/150-grill-parse-compile-module-seams.md); parallel [151](issues/151-grill-validate-rules-asca-rules-yaml-diagnostic.md), [152](issues/152-grill-inventory-ok-column-string-enum.md).
 
 ## Decisions so far
 
