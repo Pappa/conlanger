@@ -29,9 +29,9 @@ K:
 Ḱ:
   mapping: C:[+front,+hi,-lo]
   comment: Index palatovelar approx; overlaps palatals — medium fidelity
-# M:
-#   mapping: G
-#   comment: Index diphthong ≈ ASCA G glides
+M:
+  mapping: G
+  comment: Index diphthong ≈ ASCA G glides
 N̩:
   mapping: N:[+syl]
   comment: Index nasal consonant

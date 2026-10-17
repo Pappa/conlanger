@@ -1,0 +1,37 @@
+Key to Abbreviations
+
+” = Stress 
+! = Except when…
+(…X) = For any number of X remaining 
+X₀ = The same/an identical X 
+Xⁿ = X with a given tone
+Xₙ = The nth X of a sequence or series 
+Xₓ = All X of a sequence or series
+X̣ = Retroflex/emphatic X 
+# = Word boundary 
+$ = Stem boundary 
+% = Syllable boundary (or if X is one syllable away, or just representing a syllable in some changes from KneeQuickie or the ZBB) 
+∅ = Nothing/Null/Zero 
+A = Affricate 
+B = Back vowel 
+C = Consonant 
+D = Voiced plosive 
+E = Front vowel 
+F = Fricative 
+H = Laryngeal 
+J = Approximant 
+K = Velar 
+Ḱ = Palatovelar 
+L = Liquid 
+M = Diphthong 
+N = Nasal 
+O = Obstruent 
+P = Labial/Bilabial 
+Q = Uvular consonant; click consonant (Khoisan) 
+R = Resonant/Sonorant 
+S = Plosive 
+T = Voiceless plosive 
+U = Syllable 
+V = Vowel 
+W = Semivowel 
+Z = Continuant 

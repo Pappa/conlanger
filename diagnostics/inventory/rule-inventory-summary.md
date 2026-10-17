@@ -6,8 +6,8 @@
 - Rows: **9584** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9259** (96.6%)
-- Fail: **283** (3.0%)
+- OK: **9264** (96.7%)
+- Fail: **278** (2.9%)
 - Skipped: **42** (0.4%)
 
 
@@ -22,8 +22,8 @@ Fail: **1/125**
 
 ## Sections
 
-- All OK: **508 / 660** (77.0%)
-- Some OK: **152 / 660** (23.0%)
+- All OK: **511 / 660** (77.4%)
+- Some OK: **149 / 660** (22.6%)
 - None OK: **0 / 660** (0.0%)
 - Sections skipped: **0 / 660** (0.0%)
 
@@ -38,12 +38,12 @@ Fail: **1/125**
 | 19 | `syntax_other` |
 | 14 | `nested_brackets` |
 | 13 | `segments_before_word` |
-| 11 | `unknown_grouping` |
 | 10 | `empty_io_panic` |
 | 10 | `unknown_feature` |
 | 10 | `expected_number` |
 | 7 | `stuff_after_word_bound` |
 | 7 | `prose_or_expected_arrow` |
+| 6 | `unknown_grouping` |
 | 3 | `panic_other` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
@@ -112,7 +112,6 @@ Fail: **1/125**
 
 | count | error_token |
 |------:|-------------|
-| 5 | `M` |
 | 3 | `Y` |
 | 2 | `H` |
 | 1 | `X` |
@@ -370,13 +369,6 @@ Fail: **1/125**
 | count | description |
 |------:|-------------|
 | — | _(none)_ |
-
-
-## Field isolation blame (error rows)
-
-| count | blame |
-|------:|-------|
-| 283 | `multi` |
 
 ## Notes
 

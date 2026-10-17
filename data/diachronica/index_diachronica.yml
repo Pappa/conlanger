@@ -32781,13 +32781,18 @@ sections:
     raw: Cʲ → C in select words due to prestige influence of Czech in the Middle Ages
     stages:
     - Cʲ
-    - C in select words due to prestige influence of Czech in the Middle Ages
+    - C
+    comment: in select words due to prestige influence of Czech in the Middle Ages;
+      sporadic
+    sporadic: true
   - rule_id: Polish-Cʲ_3
     source: index_diachronica.html:7098
     raw: Cʲ → C in select words otherwise, possibly by analogy
     stages:
     - Cʲ
-    - C in select words otherwise, possibly by analogy
+    - C
+    comment: in select words otherwise, possibly by analogy; sporadic
+    sporadic: true
   - rule_id: Polish-t
     source: index_diachronica.html:7099
     raw: t → r / tV_
@@ -69009,7 +69014,8 @@ sections:
     stages:
     - '{t,k}'
     - ∅
-    env: V_V (Marathi) probably with voiced stops as intermediates, since they also
+    env: V_V
+    comment: (Marathi) probably with voiced stops as intermediates, since they also
       became silent
   - rule_id: List-2:-Conditional-or-complex-consonant-changes-p
     source: index_diachronica.html:14531

@@ -204,6 +204,7 @@
     - ", (except in certain)"
     - ", (in the feminine ending)"
     - " / (“penult of )"
+    - " (in select words)"
   to: " / sporadic ; \\1"
   use_regex: True
   reason: sporadic environment
@@ -319,6 +320,7 @@
     - " (“"
     - " (seems to "
     - " (this second one"
+    - " (Marathi)"
   comment: true
 - from: "#, though "
   to: "# ; though "

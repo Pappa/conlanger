@@ -10396,7 +10396,7 @@ sections:
     rule: ɡʷ > ɡ
   - rule_id: Old-Irish-p-t-k-kʷ-b-d-ɡ-m-n-l-r-s
     source: index_diachronica.html:5521
-    rule: p t k kʷ b d ɡ m n l r s > f θ x xʷ v ð ɣ M N L [+son,-syl] h / V(#)_{[+son,-syl],V}
+    rule: p t k kʷ b d ɡ m n l r s > f θ x xʷ v ð ɣ G N L [+son,-syl] h / V(#)_{[+son,-syl],V}
   - rule_id: Old-Irish-k
     source: index_diachronica.html:5522
     rule: k > x / V_t
@@ -11933,7 +11933,7 @@ sections:
     rule: ə:[-stress, -stress] > ∅ / _
   - rule_id: Standard-German-∅
     source: index_diachronica.html:6121
-    rule: ∅ > ə / M_r$
+    rule: ∅ > ə / G_r$
 - section: High German Cosonant Shift and Umlaut
   index: 17.7.2.4
   rules:
@@ -14613,11 +14613,10 @@ sections:
       in ablaut environments
   - rule_id: Polish-Cʲ_2
     source: index_diachronica.html:7097
-    rule: C:[+cor,+dist] > C in select words due to prestige influence of Czech in
-      the Middle O:[+delrel]ges
+    rule: C:[+cor,+dist] > C
   - rule_id: Polish-Cʲ_3
     source: index_diachronica.html:7098
-    rule: C:[+cor,+dist] > C in select words otherwise, possibly by analogy
+    rule: C:[+cor,+dist] > C
   - rule_id: Polish-t
     source: index_diachronica.html:7099
     rule: t > r / tV_
@@ -22805,7 +22804,7 @@ sections:
     source: index_diachronica.html:11003
     alternatives:
     - VrV > V:[+long]
-    - VrV > M
+    - VrV > G
   - rule_id: Nomlaki-r
     source: index_diachronica.html:11004
     rule: r > j / _#
@@ -29745,8 +29744,7 @@ sections:
     rule: m > n / _i
   - rule_id: List-2:-Conditional-or-complex-consonant-changes-t,k
     source: index_diachronica.html:14530
-    rule: '{t,k} > ∅ / V_V (Marathi) probably with voiced stops as intermediates,
-      since they also became silent'
+    rule: '{t,k} > ∅ / V_V'
   - rule_id: List-2:-Conditional-or-complex-consonant-changes-p
     source: index_diachronica.html:14531
     rule: p > w / V_V

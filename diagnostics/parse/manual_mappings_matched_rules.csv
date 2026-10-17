@@ -325,6 +325,8 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.11.1,Proto-Slavic to Polish,Polish-ɔ̃_2,index_diachronica.html:7088,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.11.1,Proto-Slavic to Polish,Polish-ɔ̃_2,index_diachronica.html:7088,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 17.11.1,Proto-Slavic to Polish,Polish-ɔ̃_2,index_diachronica.html:7088, (in some dialects, sporadic ; (in some dialects
+17.11.1,Proto-Slavic to Polish,Polish-Cʲ_2,index_diachronica.html:7097, (in select words), / sporadic ; \1
+17.11.1,Proto-Slavic to Polish,Polish-Cʲ_3,index_diachronica.html:7098, (in select words), / sporadic ; \1
 17.12.1.1,Proto-Indo-European to Latin,Latin-aj,index_diachronica.html:7223,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.12.1.1,Proto-Indo-European to Latin,Latin-aj,index_diachronica.html:7223,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 17.12.1.1,Proto-Indo-European to Latin,Latin-aw,index_diachronica.html:7226,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
@@ -577,6 +579,8 @@ section_index,section_name,rule_id,source,from_text,to_text
 46.13,Old Norse to Faroese Vowel Shift,"Faroese-Vowel-Shift-œ,ɔ",index_diachronica.html:14428, “(, ; “(
 46.19,Southern [United States] Shift (English),Southern-United-States-Shift-English-ɑɹ,index_diachronica.html:14484, (“, ; (“
 47.1,List 1: Simple Consonant Changes,List-1:-Simple-Consonant-Changes-pʲ,index_diachronica.html:14511,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
+47.2,List 2: Conditional or complex consonant changes,"List-2:-Conditional-or-complex-consonant-changes-t,k",index_diachronica.html:14530, (Marathi), ; (Marathi)
+47.2,List 2: Conditional or complex consonant changes,List-2:-Conditional-or-complex-consonant-changes-p,index_diachronica.html:14531, (Marathi), ; (Marathi)
 47.2,List 2: Conditional or complex consonant changes,List-2:-Conditional-or-complex-consonant-changes-b-d-ɡ,index_diachronica.html:14532,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 47.2,List 2: Conditional or complex consonant changes,List-2:-Conditional-or-complex-consonant-changes-b-d-ɡ,index_diachronica.html:14532, (some dialects, sporadic ; (some dialects
 47.3,List 3: Vowels,List-3:-Vowels-y,index_diachronica.html:14538,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
