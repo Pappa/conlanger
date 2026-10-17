@@ -4,7 +4,7 @@ Status: ready-for-agent
 
 Applier-neutral YAML successor to Index Diachronica HTML as the authoritative **rule index**, where **corpus rules** carry a **stages** spine and **compile** to valid ASCA under **historical fidelity** constraints, with a scalable **class-first** correction workflow.
 
-Glossary: `CONTEXT.md`. Architectural context: ADRs 0001–0006, 0010–0014. Living decisions: `.scratch/rule-index/map.md`. Operator command: `uv run create_index`. Pipeline: **parse → compile → validate** ([ADR-0013](../../docs/adr/0013-parse-compile-validate.md)).
+Glossary: [GLOSSARY.md](../../GLOSSARY.md). Overview: [CONTEXT.md](../../CONTEXT.md). Architectural context: ADRs 0001–0006, 0010–0017. Living decisions: `.scratch/rule-index/map.md`. Operator command: `uv run create_index`. Pipeline: **parse → compile → validate** ([ADR-0013](../../docs/adr/0013-parse-compile-validate.md)).
 
 ## Problem Statement
 

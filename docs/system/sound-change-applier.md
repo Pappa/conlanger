@@ -1,12 +1,12 @@
 # Sound-change applier compile
 
-Applier compile turns one **sound-change section** (index dict) into a concrete backend string. ASCA is the first backend; Brassica is deferred ([ADR-0001](./adr/0001-sound-change-applier-backends.md)).
+Applier compile turns one **sound-change section** (index dict) into a concrete backend string. ASCA is the first backend; Brassica is deferred ([ADR-0001](../adr/0001-sound-change-applier-backends.md)).
 
-Corpus YAML fields and `raw` are **never modified** — transforms apply only to the emitted applier string.
+Compile reads each **corpus rule**’s **`stages`** spine (adjacent-pair expansion for chains), materialised **`env`** / **`exception`**, then builds compile-time **`input`**, **`output`**, **`env`**, and **`exception`** on `SoundChangeRule` — those four names are **not** YAML keys on the index ([ADR-0011](../adr/0011-index-rule-stages.md)). Corpus YAML and **`raw`** are **never modified**; transforms apply only to emitted applier strings.
 
-**Primary code:** [`compile/asca/pipeline.py`](../src/conlanger/compile/tools/asca/pipeline.py) (`compile_asca_rule_fields`, `compile_asca_field_pre_subscript`, `compile_asca_field_post_subscript`), [`rules.py`](../src/conlanger/compile/models/rules.py) (pydantic `DiachronicSeries`, `SoundChangeRule`), [`appliers/asca.py`](../src/conlanger/appliers/asca.py) (`validate_asca`). **Field / set tokenization** uses [`bracket_scanner.py`](../src/conlanger/compile/tools/bracket_scanner.py) via [`structures.py`](../src/conlanger/compile/tools/asca/structures.py) (`split_outside_groupers`) and [`sets.py`](../src/conlanger/compile/tools/asca/sets.py) (`split_set_members`, `split_braced_set_members`). See [ADR-0014](./adr/0014-per-field-asca-compile.md).
+**Primary code:** [`compile/asca/pipeline.py`](../src/conlanger/compile/tools/asca/pipeline.py) (`compile_asca_rule_fields`, `compile_asca_field_pre_subscript`, `compile_asca_field_post_subscript`), [`rules.py`](../src/conlanger/compile/models/rules.py) (pydantic `DiachronicSeries`, `SoundChangeRule`), [`appliers/asca.py`](../src/conlanger/appliers/asca.py) (`validate_asca`). **Field / set tokenization** uses [`bracket_scanner.py`](../src/conlanger/compile/tools/bracket_scanner.py) via [`structures.py`](../src/conlanger/compile/tools/asca/structures.py) (`split_outside_groupers`) and [`sets.py`](../src/conlanger/compile/tools/asca/sets.py) (`split_set_members`, `split_braced_set_members`). See [ADR-0014](../adr/0014-per-field-asca-compile.md).
 
-**Related:** [ADR-0002](./adr/0002-applier-neutral-yaml-rule-index.md) (applier-neutral index), [ADR-0003](./adr/0003-validate-after-applier-compile.md) (validate after compile).
+**Related:** [ADR-0002](../adr/0002-applier-neutral-yaml-rule-index.md) (applier-neutral index), [ADR-0003](../adr/0003-validate-after-applier-compile.md) (validate after compile).
 
 ---
 
@@ -40,13 +40,13 @@ Parse-time transforms are documented in [index-diachronica-parser.md](./index-di
 
 `str(DiachronicSeries)` joins parts with newlines → `.rsca` body shape.
 
-`SoundChangeRule` requires `input`, `output`; optional `env`, `exception`. Corpus rules with `status: skipped` render as commented ASCA lines (`#\t` + `raw`); excluded from `_active_rule_changes`. Boolean `skip` / `skipped` are not compile flags. Compiled text is stored in `value` at construction via per-field compile ([ADR-0014](./adr/0014-per-field-asca-compile.md)).
+`SoundChangeRule` requires compile fields `input` and `output` (derived from **stages**); optional `env`, `exception`. Corpus rules with `status: skipped` render as commented ASCA lines (`#\t` + `raw`); excluded from `_active_rule_changes`. Boolean `skip` / `skipped` are not compile flags. Compiled text is stored in `value` at construction via per-field compile ([ADR-0014](../adr/0014-per-field-asca-compile.md)).
 
 ---
 
 ## Structured `env` / `exception` (`IndexContext`)
 
-Corpus rules may carry structured **`IndexContext`**-shaped mappings on `env` or `exception` in YAML ([ADR-0017](./adr/0017-structured-env-exception-indexcontext.md)) instead of a bare Index-shaped string. **`DiachronicSeries`** materializes those fields to compile strings via [`materialize_index_rule_env_exception`](../src/conlanger/compile/resolve_index_rule.py) before constructing **`SoundChangeRule`** (compile-time model; it accepts string env/exception only).
+Corpus rules may carry structured **`IndexContext`**-shaped mappings on `env` or `exception` in YAML ([ADR-0017](../adr/0017-structured-env-exception-indexcontext.md)) instead of a bare Index-shaped string. **`DiachronicSeries`** materializes those fields to compile strings via [`materialize_index_rule_env_exception`](../src/conlanger/compile/resolve_index_rule.py) before constructing **`SoundChangeRule`** (compile-time model; it accepts string env/exception only).
 
 | Input | Compile projection |
 | --- | --- |
@@ -99,13 +99,13 @@ Unmapped uppercase letters that pass both boundaries but are not in `CompilerCon
 
 ## Brassica
 
-Future backend; compile transforms and validation will mirror the [ADR-0003](./adr/0003-validate-after-applier-compile.md) pattern.
+Future backend; compile transforms and validation will mirror the [ADR-0003](../adr/0003-validate-after-applier-compile.md) pattern.
 
 ---
 
 ## Compile validation
 
-Compile validation is part of the **validate** stage ([validate.md — Compile validation](./validate.md#compile-validation)). It runs **after** applier compile, not at HTML→YAML ingest ([ADR-0003](./adr/0003-validate-after-applier-compile.md)).
+Compile validation is part of the **validate** stage ([validate.md — Compile validation](./validate.md#compile-validation)). It runs **after** applier compile, not at HTML→YAML ingest ([ADR-0003](../adr/0003-validate-after-applier-compile.md)).
 
 Corpus `status: skipped` → `#\t{raw}` in ASCA output; `_active_rule_changes` excludes them from validation. See [validate.md](./validate.md) for `validate_asca` API, probe wordlists, validation tiers, and inventory integration.
 

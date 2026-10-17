@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: 154
 
 # Task: glossary migration and documentation improvements
@@ -24,3 +24,7 @@ Implement the documentation improvements **approved** from [Spike: agent-oriente
 ## Out of scope
 
 - Implementing [153](153-task-atomic-syllable-symbol-compile-migration.md) or feature-config code splits (link from docs only).
+
+## Answer
+
+**Resolved 2026-10-17.** Created [GLOSSARY.md](../../../GLOSSARY.md); slimmed [CONTEXT.md](../../../CONTEXT.md); fixed `docs/system/*` ADR links; updated pipeline docs, [AGENTS.md](../../../AGENTS.md), [docs/agents/domain.md](../../../docs/agents/domain.md), [SYSTEM.md](../../../docs/SYSTEM.md), [spec](spec.md), [CONLANGER.md](../../../docs/CONLANGER.md). Spike **should** items 12 (redirect comment on applier-neutral-index-validation) and 8–11 done; **nice** items 13–16 deferred (map hygiene, per-ADR agent one-liners).

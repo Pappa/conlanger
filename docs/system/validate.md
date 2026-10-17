@@ -1,12 +1,12 @@
 # Validate
 
-Stage 3 of the sound-change rule pipeline: **parse → compile → validate** ([ADR-0013](./adr/0013-parse-compile-validate.md)).
+Stage 3 of the sound-change rule pipeline: **parse → compile → validate** ([ADR-0013](../adr/0013-parse-compile-validate.md)).
 
-After [Index Diachronica parse](./index-diachronica-parser.md) and [applier compile](./sound-change-applier.md), validate runs the applier checker and records inventory. This stage is the **correction loop** — it exercises compile + **compile validation** per rule to measure whether the **applier-neutral index** ([ADR-0002](./adr/0002-applier-neutral-yaml-rule-index.md)) produces valid ASCA, clusters failures for **class-first** correction, and iterates until adoption criteria are met. It is **not** ingest-time validation ([ADR-0003](./adr/0003-validate-after-applier-compile.md)): index fields may remain Index-shaped; the gate is post-compile `validate_asca`.
+After [Index Diachronica parse](./index-diachronica-parser.md) and [applier compile](./sound-change-applier.md), validate runs the applier checker and records inventory. This stage is the **correction loop** — it exercises compile + **compile validation** per rule to measure whether the **applier-neutral index** ([ADR-0002](../adr/0002-applier-neutral-yaml-rule-index.md)) produces valid ASCA, clusters failures for **class-first** correction, and iterates until adoption criteria are met. It is **not** ingest-time validation ([ADR-0003](../adr/0003-validate-after-applier-compile.md)): index fields may remain Index-shaped; the gate is post-compile `validate_asca`.
 
 **Spec:** [.scratch/rule-index/spec.md](../.scratch/rule-index/spec.md)  
 **Wayfinder map:** [.scratch/rule-index/map.md](../.scratch/rule-index/map.md)  
-**Glossary:** [CONTEXT.md](../CONTEXT.md) — *Corpus rule*, *Failure class*, *Validation report*, *Rule status*, *Class-first*, *Historical fidelity*
+**Glossary:** [GLOSSARY.md](../../GLOSSARY.md) — *Corpus rule*, *Failure class*, *Validation report*, *Status*, *Class-first*, *Historical fidelity*
 
 ---
 
@@ -102,7 +102,7 @@ flowchart TD
 
 ## Validation report
 
-Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](./adr/0010-historical-fidelity-class-first-status.md)). Corpus YAML carries thin optional `status` only (`needs-validation` | `skipped`; omit = ok).
+Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](../adr/0010-historical-fidelity-class-first-status.md)). Corpus YAML carries thin optional `status` only (`needs-validation` | `skipped`; omit = ok).
 
 **Artifacts** (under `diagnostics/inventory/`):
 
@@ -149,7 +149,7 @@ Inventory row count can exceed index rule count when optional-output alternative
 
 ## Compile validation
 
-Compile validation is part of **validate** (not a separate pipeline stage). It runs **after** applier compile, not at HTML→YAML ingest ([ADR-0003](./adr/0003-validate-after-applier-compile.md)).
+Compile validation is part of **validate** (not a separate pipeline stage). It runs **after** applier compile, not at HTML→YAML ingest ([ADR-0003](../adr/0003-validate-after-applier-compile.md)).
 
 ### `validate_asca`
 
@@ -217,7 +217,7 @@ See [asca-rule-validity.md](../.scratch/rule-index/research/asca-rule-validity.m
 
 ### Skipped rules
 
-Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` excludes them; inventory marks `ok=True`, description `"held-out (commented rule)"`. Hold-out policy: `status: skipped` only from `skip_sections` / `skip_rules` in `parser_config.yml` — not boolean `skip: true` / `skipped: true`, and not parse-time auto-skip ([ADR-0010](./adr/0010-historical-fidelity-class-first-status.md), [ticket 89](../.scratch/rule-index/issues/89-unify-status-skipped.md)).
+Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` excludes them; inventory marks `ok=True`, description `"held-out (commented rule)"`. Hold-out policy: `status: skipped` only from `skip_sections` / `skip_rules` in `parser_config.yml` — not boolean `skip: true` / `skipped: true`, and not parse-time auto-skip ([ADR-0010](../adr/0010-historical-fidelity-class-first-status.md), [ticket 89](../.scratch/rule-index/issues/89-unify-status-skipped.md)).
 
 ---
 
@@ -228,7 +228,7 @@ Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` e
 **Standing recipe** — [ticket 13](../.scratch/rule-index/issues/13-correction-pass-template.md):
 
 1. Name target **failure class** / `error_token` cluster from inventory summary or CSV.
-2. Implement transform per **edit ladder** ([ticket 04](../.scratch/rule-index/issues/04-historical-fidelity-vs-validity.md), [ADR-0010](./adr/0010-historical-fidelity-class-first-status.md)).
+2. Implement transform per **edit ladder** ([ticket 04](../.scratch/rule-index/issues/04-historical-fidelity-vs-validity.md), [ADR-0010](../adr/0010-historical-fidelity-class-first-status.md)).
 3. Re-run `uv run create_index && uv run validate_rules`.
 4. Record before/after ok/fail and residual cluster size in ticket **Answer**.
 5. Update fixtures when **rule status** or validation outcome changes intentionally.
@@ -274,11 +274,11 @@ Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` e
 
 | ADR | Relevance |
 | --- | --- |
-| [0002](./adr/0002-applier-neutral-yaml-rule-index.md) | Corpus is applier-neutral; validation report stays out of YAML |
-| [0003](./adr/0003-validate-after-applier-compile.md) | Inventory runs post-compile, not at ingest |
-| [0006](./adr/0006-html-source-of-truth-yaml-successor.md) | HTML source of truth until adoption criteria met |
-| [0010](./adr/0010-historical-fidelity-class-first-status.md) | Class-first ladder; skip vs needs-validation |
-| [0013](./adr/0013-parse-compile-validate.md) | Three pipeline stages; inventory under validate |
+| [0002](../adr/0002-applier-neutral-yaml-rule-index.md) | Corpus is applier-neutral; validation report stays out of YAML |
+| [0003](../adr/0003-validate-after-applier-compile.md) | Inventory runs post-compile, not at ingest |
+| [0006](../adr/0006-html-source-of-truth-yaml-successor.md) | HTML source of truth until adoption criteria met |
+| [0010](../adr/0010-historical-fidelity-class-first-status.md) | Class-first ladder; skip vs needs-validation |
+| [0013](../adr/0013-parse-compile-validate.md) | Three pipeline stages; inventory under validate |
 
 ---
 

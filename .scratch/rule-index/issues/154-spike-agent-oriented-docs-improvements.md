@@ -1,5 +1,5 @@
 Type: spike
-Status: ready-for-agent
+Status: resolved
 Blocked by: None
 
 # Spike: agent-oriented improvements to project documentation
@@ -29,3 +29,9 @@ Findings markdown under `.scratch/rule-index/research/agent-oriented-docs-improv
 ## Resolve with
 
 `/research` skill; close with answer + link on ticket.
+
+## Answer
+
+**Resolved 2026-10-17.** Prioritised agent doc improvements: extract **`GLOSSARY.md`** from `CONTEXT.md` (definitions only); slim `CONTEXT.md` to overview + doc map; fix **`docs/system/*` ADR links** (`../adr/` not `./adr/`); align pipeline docs with **`stages`** corpus schema and **148** SoT tiers (Symbol, Environment, Feature matrix); add **rule-index read order** to `AGENTS.md` and update `docs/agents/domain.md`. Implement on [155](155-task-glossary-migration-and-docs-improvements.md).
+
+Findings: [research/agent-oriented-docs-improvements.md](../research/agent-oriented-docs-improvements.md).

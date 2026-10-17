@@ -7,6 +7,7 @@ This is a personal project that may go nowhere useful, but the aim is a full aut
 ## Documentation
 
 - [Project overview & goals](docs/CONLANGER.md)
-- [Domain glossary](CONTEXT.md) — canonical terminology for agents
+- [Domain glossary](GLOSSARY.md) — canonical terminology for agents
+- [Project context](CONTEXT.md) — overview and documentation map
 - [System](docs/SYSTEM.md) — pipeline stages, current code locations, target artifacts
 - [Architectural decisions](docs/adr/) — ADRs

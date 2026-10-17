@@ -4,9 +4,11 @@ How the engineering skills should consume this repo's domain documentation when 
 
 ## Before exploring, read these
 
-- **`CONTEXT.md`** at the repo root (glossary and doc map), or
+- **`GLOSSARY.md`** at the repo root (domain vocabulary), and
+- **`CONTEXT.md`** at the repo root (project overview and doc map), or
 - **`CONTEXT-MAP.md`** at the repo root if it exists — it points at one `CONTEXT.md` per context. Read each one relevant to the topic.
 - **`docs/SYSTEM.md`** — pipeline stages, current implementation locations, and target artifacts.
+- **`docs/DEV.md`** — pytest, ruff, and ASCA fork setup for validation work.
 - **`docs/adr/`** — read ADRs that touch the area you're about to work in. In multi-context repos, also check `src/<context>/docs/adr/` for context-scoped decisions.
 
 If any of these files don't exist, **proceed silently**. Don't flag their absence; don't suggest creating them upfront. The `/domain-modeling` skill (reached via `/grill-with-docs` and `/improve-codebase-architecture`) creates them lazily when terms or decisions actually get resolved.
@@ -17,6 +19,7 @@ Single-context repo (most repos):
 
 ```
 /
+├── GLOSSARY.md
 ├── CONTEXT.md
 ├── docs/adr/
 │   ├── 0001-event-sourced-orders.md
@@ -41,7 +44,7 @@ Multi-context repo (presence of `CONTEXT-MAP.md` at the root):
 
 ## Use the glossary's vocabulary
 
-When your output names a domain concept (in an issue title, a refactor proposal, a hypothesis, a test name), use the term as defined in `CONTEXT.md`. Don't drift to synonyms the glossary explicitly avoids.
+When your output names a domain concept (in an issue title, a refactor proposal, a hypothesis, a test name), use the term as defined in `GLOSSARY.md`. Don't drift to synonyms the glossary explicitly avoids.
 
 If the concept you need isn't in the glossary yet, that's a signal — either you're inventing language the project doesn't use (reconsider) or there's a real gap (note it for `/domain-modeling`).
 

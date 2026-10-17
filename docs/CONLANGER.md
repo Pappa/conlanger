@@ -1,5 +1,7 @@
 # conlanger
 
+> **Rule index pipeline:** see [SYSTEM.md](./SYSTEM.md) and [GLOSSARY.md](../GLOSSARY.md). This page is the notebook narrative and generative-pipeline background.
+
 An experiment in automatic [conlang](https://en.wikipedia.org/wiki/Constructed_language) creation. 
 
 I am a novice conlanger, currently enjoying the view from the peak of Mount Stupid, so this may go nowhere useful. I'm mostly hoping it goes somewhere dumb and ridiculous.

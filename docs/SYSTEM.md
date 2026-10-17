@@ -14,6 +14,8 @@ Sound-change rule index processing — parse → compile → validate:
 | Applier compile | [sound-change-applier.md](./system/sound-change-applier.md) | (in-memory inside `validate_rules`) |
 | Validate | [validate.md](./system/validate.md) | `uv run validate_rules` |
 
+Corpus rules in YAML use an ordered **`stages`** list on each rule ([ADR-0011](./adr/0011-index-rule-stages.md)), not legacy `input`/`output` keys. Compile-time `input`/`output` exist only on the applier compile model after **stages** expansion.
+
 ## Pipeline stages (legacy)
 
 | Stage | Current implementation | Target artifacts |
@@ -30,5 +32,6 @@ Sound-change rule index processing — parse → compile → validate:
 ## Related docs
 
 - [CONLANGER.md](./CONLANGER.md) — narrative background and notebook walkthrough
-- [CONTEXT.md](../CONTEXT.md) — domain glossary
+- [GLOSSARY.md](../GLOSSARY.md) — domain vocabulary
+- [CONTEXT.md](../CONTEXT.md) — project overview and doc map
 - [docs/adr/](./adr/) — architectural decisions
