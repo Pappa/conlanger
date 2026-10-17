@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: None
 
 # Parse: extract `IndexContext.position` for neighbour and medial relations
@@ -51,7 +51,13 @@ After `manual_mappings` and structural split, how should parse represent Index *
 - [x] Legacy medial pass removed; YAML no longer carries medial boundary exception strings from parse (compile adds via [144](144-implement-indexcontext-compile-resolution.md)).
 - [x] `#region near replacements` manual regex rows commented out with a one-line reason pointer to this ticket.
 - [x] Tests: ADR-0017-style round-trips + rule-id fixtures from inventory for the three relations.
-- [ ] `uv run create_index` regen documented; **`uv run validate_rules` ok count must not regress** (compile resolver must be sufficient — coordinate with [144](144-implement-indexcontext-compile-resolution.md) if split across PRs).
+- [x] `uv run create_index` regen documented; **`uv run validate_rules` ok count must not regress** (compile resolver must be sufficient — coordinate with [144](144-implement-indexcontext-compile-resolution.md) if split across PRs).
+
+### Resolution (2026-10-17)
+
+- **Code:** `apply_index_context_position_extraction` in [`index_context_position.py`](../../../src/conlanger/ingest/utils/index_context_position.py); wired in [`parser.py`](../../../src/conlanger/ingest/parser.py) after feature/IPA on `context` (parser doc D6).
+- **Regen:** structured `position` on corpus rules in `data/diachronica/index_diachronica.yml`.
+- **Validation:** `uv run validate_rules` (2026-10-17) — **9045** ok / **254** fail / **542** skipped; **0** ok-flips in changelog (compile [144](144-implement-indexcontext-compile-resolution.md) sufficient).
 
 ## Related
 
