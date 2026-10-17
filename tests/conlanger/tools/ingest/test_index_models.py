@@ -351,6 +351,14 @@ def test_resolve_index_context(ctx, expected):
     assert resolve_index_context_to_string(ctx) == expected
 
 
+def test_resolve_index_context_skips_relation_without_template():
+    ctx = IndexContext(position={"in": "U#"})
+    assert (
+        resolve_index_context_to_string(ctx, {"adjacent_to": "{v}_", "near": "_{v}"})
+        == ""
+    )
+
+
 @pytest.mark.parametrize(
     ("env", "exception", "expected_env", "expected_exc"),
     [

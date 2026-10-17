@@ -209,10 +209,9 @@ def _project_position_relation(
     target = _position_target_value(ctx.position.get(relation))
     if target is None:
         return None
-    if relation == "in":
-        template = templates.get(relation) or "in {v}"
-    else:
-        template = templates.get(relation) or templates.get("adjacent_to", "{v}_, _{v}")
+    template = templates.get(relation)
+    if template is None:
+        return None
     return template.format(v=target)
 
 
