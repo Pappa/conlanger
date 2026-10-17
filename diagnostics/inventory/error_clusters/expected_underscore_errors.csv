@@ -39,7 +39,7 @@ section_index,rule_id,error_token,rule
 36.2,Guānhuà-yʔ_5,",","yʔ > ɥʔ / C:[+cons, +cor, -ant, -dist], in -juət-types | ^ @ Rule 1, Line 1"
 36.2,Guānhuà-yʔ_5,",","yʔ > yʔ / C:[+cons, +cor, -ant, -dist], in -juət-types | ^ @ Rule 1, Line 1"
 36.2,Guānhuà-yʔ_5,",","yʔ > uʔ / C:[+cons, +cor, -ant, -dist], in -juət-types | ^ @ Rule 1, Line 1"
-36.2,Guānhuà-yʔ_6,,"yʔ > oʔ / C:[+cons, +cor, -ant, -dist]_, in -k-types | ^ @ Rule 1, Line 1"
+36.2,Guānhuà-yʔ_6,,"oʔ > ʊʔ / C:[+cons, +cor, -ant, -dist]_, in -k-types | ^ @ Rule 1, Line 2"
 37.1,Proto-Iroquoian-p_2,,"p > kʷ / else | ^ @ Rule 1, Line 1"
 37.2.1,Catawba-tʲ_2,,"tʲ > ʒ / else | ^ @ Rule 1, Line 1"
 37.2.2,Dakota-tʲ_2,,"tʲ > ʒ / else | ^ @ Rule 1, Line 1"

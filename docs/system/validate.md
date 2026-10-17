@@ -82,7 +82,7 @@ flowchart TD
 | 6 | Classify failure | `classify_error()`, `parse_unknown_token_error()` |
 | 7 | Emit artifacts | See [Validation report](#validation-report) below |
 
-**Scope:** One row per **index rule** (not whole-section-only). Config hold-outs (`status: skipped` from `skip_rules` / `skip_sections`, rendered as ASCA comments) validate as ok with description `held-out (commented rule)`. Missing-`→` and other unlisted parse failures inventory as `ok=False` through compile validation.
+**Scope:** One row per **index rule** (not whole-section-only). Config hold-outs (`status: skipped` from `skip_rules` / `skip_sections`, rendered as ASCA comments) inventory as `ok=SKIPPED` with description `held-out (commented rule)`. Missing-`→` and other unlisted parse failures inventory as `ok=FAILED` through compile validation.
 
 **Baseline metrics** (re-run after each correction pass):
 
@@ -108,12 +108,12 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](../a
 
 | File | Role | Ticket |
 | --- | --- | --- |
-| `rule-inventory-success.csv` | Filtered `ok=True` | [34](../.scratch/rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
-| `rule-inventory-error.csv` | Filtered `ok=False` | [34](../.scratch/rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
+| `rule-inventory-success.csv` | Filtered `ok=OK` | [34](../.scratch/rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
+| `rule-inventory-error.csv` | Filtered `ok=FAILED` | [34](../.scratch/rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
 | `rule-inventory-changelog.csv` | Append-only **ok flips** matched by `(source, alt_idx)` (HTML `file:line` + optional-output alternative). Prior `ok` is read from the success/error split CSVs. Pass `--reset-changelog` to overwrite after a column-schema change; with zero flips this writes a header-only CSV. | [34](../.scratch/rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
 | `rule-inventory-summary.md` | Rule/section counts, **Corrections** rollup for matched overlay rules, failure-class table, **Common Errors** (top `error_token` and description clusters per failure class), field-isolation blame | [12](../.scratch/rule-index/issues/12-full-index-validation-inventory.md) |
-| `field-isolation-success.csv` | filtered `whole_ok == true` (and per-field clean) | [36](../.scratch/rule-index/issues/36-per-field-asca-blame-in-inventory.md) |
-| `field-isolation-error.csv` | filtered `whole_ok == false` or per-field fail | [36](../.scratch/rule-index/issues/36-per-field-asca-blame-in-inventory.md) |
+| `field-isolation-success.csv` | filtered `whole_ok=OK` (and per-field clean) | [36](../.scratch/rule-index/issues/36-per-field-asca-blame-in-inventory.md) |
+| `field-isolation-error.csv` | filtered `whole_ok=FAILED` or per-field fail | [36](../.scratch/rule-index/issues/36-per-field-asca-blame-in-inventory.md) |
 | `unknown_grouping_errors.csv` | `unknown_grouping` cluster rows | error-cluster tooling |
 | `unknown_character_errors.csv` | `unknown_character` cluster rows | error-cluster tooling |
 | `expected_underscore_errors.csv` | `expected_underscore` cluster rows | error-cluster tooling |
@@ -129,6 +129,8 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](../a
 `section_index`, `section_name`, `rule_id`, `alt_idx`, `source`, `ok`, `failure_class`, `error_token`, `suggested`, `expected`, `description`
 
 `alt_idx` is the 0-based optional-output alternative index (e.g. `d → {∅,ð}` emits one row per alternative and never the parent's random pick); it is empty for rules without alternatives.
+
+**`ok` / `whole_ok` values** (`InventoryOk` in `index_inventory.py`): `FAILED`, `OK`, `SKIPPED`. New inventory CSVs write these strings only. Changelog flip detection and `load_inventory_csv` coerce legacy numeric cells (`0` / `1` / `2`) and boolean-ish strings when reading older files.
 
 **Summary markdown (`rule-inventory-summary.md`):**
 
@@ -217,7 +219,7 @@ See [asca-rule-validity.md](../.scratch/rule-index/research/asca-rule-validity.m
 
 ### Skipped rules
 
-Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` excludes them; inventory marks `ok=True`, description `"held-out (commented rule)"`. Hold-out policy: `status: skipped` only from `skip_sections` / `skip_rules` in `parser_config.yml` — not boolean `skip: true` / `skipped: true`, and not parse-time auto-skip ([ADR-0010](../adr/0010-historical-fidelity-class-first-status.md), [ticket 89](../.scratch/rule-index/issues/89-unify-status-skipped.md)).
+Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` excludes them; inventory marks `ok=SKIPPED`, description `"held-out (commented rule)"`. Hold-out policy: `status: skipped` only from `skip_sections` / `skip_rules` in `parser_config.yml` — not boolean `skip: true` / `skipped: true`, and not parse-time auto-skip ([ADR-0010](../adr/0010-historical-fidelity-class-first-status.md), [ticket 89](../.scratch/rule-index/issues/89-unify-status-skipped.md)).
 
 ---
 

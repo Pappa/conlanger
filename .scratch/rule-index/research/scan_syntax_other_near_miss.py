@@ -92,21 +92,21 @@ def main() -> int:
         section_rules[row["section_index"]].append(row)
 
     section_fail_count = {
-        sec: sum(1 for r in rs if r["ok"] == "False")
+        sec: sum(1 for r in rs if r["ok"] in ("False", "0", "FAILED"))
         for sec, rs in section_rules.items()
     }
     near_miss = {s for s, c in section_fail_count.items() if 1 <= c <= 3}
 
     mono_class: set[str] = set()
     for sec in near_miss:
-        classes = [r["failure_class"] for r in section_rules[sec] if r["ok"] == "False"]
+        classes = [r["failure_class"] for r in section_rules[sec] if r["ok"] in ("False", "0", "FAILED")]
         if classes and all(c == "syntax_other" for c in classes):
             mono_class.add(sec)
 
     classified: list[Row] = []
     for sec in sorted(near_miss):
         for r in section_rules[sec]:
-            if r["ok"] == "False" and r["failure_class"] == "syntax_other":
+            if r["ok"] in ("False", "0", "FAILED") and r["failure_class"] == "syntax_other":
                 classified.append(
                     Row(
                         section_index=r["section_index"],
@@ -121,7 +121,7 @@ def main() -> int:
     def sections_complete_if(subcluster: str) -> set[str]:
         completed: set[str] = set()
         for sec in near_miss:
-            fails = [r for r in section_rules[sec] if r["ok"] == "False"]
+            fails = [r for r in section_rules[sec] if r["ok"] in ("False", "0", "FAILED")]
             sub = [
                 r
                 for r in fails

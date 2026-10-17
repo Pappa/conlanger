@@ -256,7 +256,7 @@ def test_write_validation_csv(tmp_path: Path):
     write_validation_csv(rows, out)
     with out.open(encoding="utf-8") as handle:
         parsed = list(csv.DictReader(handle))
-    assert parsed[0]["ok"] == "1"
+    assert parsed[0]["ok"] == "OK"
     assert parsed[0]["section_index"] == "1.0"
     assert parsed[1]["error_token"] == "voiced"
     assert parsed[1]["suggested"] == "voice"
@@ -976,7 +976,7 @@ def test_write_filtered_inventory_csvs(tmp_path: Path):
     assert len(list(csv.DictReader(error.open()))) == 1
     skipped_rows = list(csv.DictReader(skipped.open()))
     assert len(skipped_rows) == 1
-    assert int(skipped_rows[0]["ok"]) == OK_SKIPPED
+    assert skipped_rows[0]["ok"] == OK_SKIPPED
 
 
 def test_write_ok_flip_changelog_reset_empty_writes_header_only(tmp_path: Path):
@@ -1033,7 +1033,7 @@ def test_write_ok_flip_changelog_reset_with_flips_overwrites(tmp_path: Path):
     rows = list(csv.DictReader(path.open(encoding="utf-8")))
     assert len(rows) == 1
     assert rows[0]["source"] == "s:1"
-    assert rows[0]["ok"] == str(OK_FALSE)
+    assert rows[0]["ok"] == OK_FALSE
 
 
 def test_write_ok_flip_changelog_append_empty_leaves_existing_file(tmp_path: Path):
@@ -1381,6 +1381,43 @@ def test_coerce_ok_value_maps_legacy_and_numeric_literals():
     assert _coerce_ok_value("") == OK_SKIPPED
     assert _coerce_ok_value("True") == OK_TRUE
     assert _coerce_ok_value("False") == OK_FALSE
+    assert _coerce_ok_value("OK") == OK_TRUE
+    assert _coerce_ok_value("FAILED") == OK_FALSE
+    assert _coerce_ok_value("SKIPPED") == OK_SKIPPED
+
+
+def test_ok_flip_changelog_rows_reads_legacy_numeric_previous():
+    import pandas as pd
+
+    previous = pd.DataFrame(
+        [
+            {
+                "section_index": "1",
+                "rule_id": "r0",
+                "alt_idx": "",
+                "source": "s:1",
+                "ok": 1,
+            }
+        ]
+    )
+    current = validation_rows_to_dataframe(
+        [
+            ValidationRow(
+                "1",
+                "A",
+                "r0",
+                "s:1",
+                OK_FALSE,
+                "syntax_other",
+                "",
+                "",
+                "err",
+            )
+        ]
+    )
+    flips = ok_flip_changelog_rows(previous, current, timestamp="2026-10-17T12:00:00Z")
+    assert len(flips) == 1
+    assert flips.iloc[0]["ok"] == OK_FALSE
 
 
 def test_filter_inventory_by_ok_empty_dataframe():
@@ -1619,7 +1656,7 @@ def test_write_field_isolation_csvs_writes_success_error_and_skipped(tmp_path: P
     assert error[0]["source"] == "s:2"
     assert len(skipped) == 1
     assert skipped[0]["source"] == "s:3"
-    assert int(skipped[0]["whole_ok"]) == OK_SKIPPED
+    assert skipped[0]["whole_ok"] == OK_SKIPPED
 
 
 def test_summarize_inventory_links_field_isolation_csvs():

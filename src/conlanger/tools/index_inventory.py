@@ -13,6 +13,7 @@ from __future__ import annotations
 import re
 from collections import Counter
 from dataclasses import dataclass
+from enum import StrEnum
 from pathlib import Path
 from typing import Any
 
@@ -192,9 +193,18 @@ SKIPPED_FAILURE_CLASSES = frozenset(
     {SECTION_SKIPPED_FAILURE_CLASS, RULE_SKIPPED_FAILURE_CLASS}
 )
 
-OK_FALSE = 0
-OK_TRUE = 1
-OK_SKIPPED = 2
+
+class InventoryOk(StrEnum):
+    """Per-rule validation outcome for inventory ``ok`` / ``whole_ok`` columns."""
+
+    FAILED = "FAILED"
+    OK = "OK"
+    SKIPPED = "SKIPPED"
+
+
+OK_FALSE = InventoryOk.FAILED
+OK_TRUE = InventoryOk.OK
+OK_SKIPPED = InventoryOk.SKIPPED
 
 BLAME_FIELD_ORDER: tuple[ASCARulePart, ...] = ("input", "output", "env", "exception")
 
@@ -222,35 +232,35 @@ FIELD_ISOLATION_CSV_COLUMNS = [
 ]
 
 
-def _coerce_ok_value(value: object) -> int:
-    """Map a cell value to ``OK_FALSE`` (0), ``OK_TRUE`` (1), or ``OK_SKIPPED`` (2)."""
-    if value in (OK_SKIPPED, 2, 2.0, "2"):
-        return OK_SKIPPED
+def _coerce_ok_value(value: object) -> InventoryOk:
+    """Map a cell value to :class:`InventoryOk` (legacy ``0``/``1``/``2`` accepted)."""
+    if value in (InventoryOk.SKIPPED, OK_SKIPPED, 2, 2.0, "2"):
+        return InventoryOk.SKIPPED
     if value is None or value is pd.NA:
-        return OK_SKIPPED
+        return InventoryOk.SKIPPED
     if isinstance(value, bool):
-        return OK_TRUE if value else OK_FALSE
+        return InventoryOk.OK if value else InventoryOk.FAILED
     if isinstance(value, float) and pd.isna(value):
-        return OK_SKIPPED
-    if value in (OK_TRUE, 1, 1.0):
-        return OK_TRUE
-    if value in (OK_FALSE, 0, 0.0):
-        return OK_FALSE
+        return InventoryOk.SKIPPED
+    if value in (InventoryOk.OK, OK_TRUE, 1, 1.0):
+        return InventoryOk.OK
+    if value in (InventoryOk.FAILED, OK_FALSE, 0, 0.0):
+        return InventoryOk.FAILED
     text = str(value).strip().lower()
     if text in {"", "nan", "none"}:
-        return OK_SKIPPED
-    if text in {"true", "1"}:
-        return OK_TRUE
-    if text in {"false", "0"}:
-        return OK_FALSE
-    if text == "2":
-        return OK_SKIPPED
-    return OK_SKIPPED
+        return InventoryOk.SKIPPED
+    if text in {"true", "1", "ok"}:
+        return InventoryOk.OK
+    if text in {"false", "0", "failed"}:
+        return InventoryOk.FAILED
+    if text in {"2", "skipped"}:
+        return InventoryOk.SKIPPED
+    return InventoryOk.SKIPPED
 
 
 def _coerce_ok_column(series: pd.Series) -> pd.Series:
-    """Return an int8 series for inventory ``ok`` / ``whole_ok`` columns."""
-    return series.map(_coerce_ok_value).astype("int8")
+    """Return a string series of :class:`InventoryOk` values for ``ok`` / ``whole_ok``."""
+    return series.map(_coerce_ok_value).astype("string")
 
 
 def _alt_idx_key(series: pd.Series) -> pd.Series:
@@ -275,7 +285,7 @@ def validation_rows_to_dataframe(rows: list[ValidationRow]) -> pd.DataFrame:
     """Return validation rows as a DataFrame with a stable column order."""
     if not rows:
         df = pd.DataFrame(columns=VALIDATION_CSV_COLUMNS)
-        df["ok"] = pd.Series(dtype="int8")
+        df["ok"] = pd.Series(dtype="string")
         return df
     df = pd.DataFrame(
         [row.as_csv_dict() for row in rows], columns=VALIDATION_CSV_COLUMNS
@@ -287,7 +297,7 @@ def validation_rows_to_dataframe(rows: list[ValidationRow]) -> pd.DataFrame:
 def filter_inventory_by_ok(df: pd.DataFrame, *, ok: bool) -> pd.DataFrame:
     """Return inventory rows whose ``ok`` column matches ``ok``.
 
-    Skipped rows (``ok=2``) are excluded from both success and error filtered CSVs.
+    Skipped rows (``ok=SKIPPED``) are excluded from both success and error filtered CSVs.
     """
     if df.empty:
         return df.copy()
@@ -297,7 +307,7 @@ def filter_inventory_by_ok(df: pd.DataFrame, *, ok: bool) -> pd.DataFrame:
 
 
 def filter_inventory_skipped(df: pd.DataFrame) -> pd.DataFrame:
-    """Return config hold-out rows (``ok=2``) for the skipped inventory CSV."""
+    """Return config hold-out rows (``ok=SKIPPED``) for the skipped inventory CSV."""
     if df.empty:
         return df.copy()
     return df.loc[_coerce_ok_column(df["ok"]) == OK_SKIPPED].reset_index(drop=True)
@@ -566,7 +576,7 @@ class ValidationRow:
     section_name: str
     rule_id: str
     source: str
-    ok: int
+    ok: InventoryOk
     rule: str = ""
     failure_class: str = ""
     error_token: str = ""
@@ -598,7 +608,7 @@ class FieldIsolationRow:
     section_name: str
     rule_id: str
     source: str
-    whole_ok: int
+    whole_ok: InventoryOk
     input_ok: bool | None
     output_ok: bool | None
     env_ok: bool | None
@@ -646,7 +656,7 @@ class FieldIsolationRow:
 
 
 def derive_blame(
-    whole_ok: int,
+    whole_ok: InventoryOk,
     *,
     input_ok: bool | None,
     output_ok: bool | None,
@@ -698,7 +708,7 @@ def filter_field_isolation_error(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def filter_field_isolation_skipped(df: pd.DataFrame) -> pd.DataFrame:
-    """Return field-isolation rows for config hold-outs (``whole_ok=2``)."""
+    """Return field-isolation rows for config hold-outs (``whole_ok=SKIPPED``)."""
     if df.empty:
         return df.copy()
     return df.loc[_coerce_ok_column(df["whole_ok"]) == OK_SKIPPED].reset_index(
@@ -711,7 +721,7 @@ def filter_field_isolation_by_whole_ok(
 ) -> pd.DataFrame:
     """Return field-isolation rows whose ``whole_ok`` column matches ``whole_ok``.
 
-    Skipped rows (``whole_ok=2``) are excluded from both outcomes.
+    Skipped rows (``whole_ok=SKIPPED``) are excluded from both outcomes.
     Prefer :func:`filter_field_isolation_success` / :func:`filter_field_isolation_error`
     for the regen sidecar splits.
     """
@@ -958,7 +968,7 @@ def field_isolation_rows_to_dataframe(rows: list[FieldIsolationRow]) -> pd.DataF
     """Return field-isolation rows as a DataFrame with stable column order."""
     if not rows:
         df = pd.DataFrame(columns=FIELD_ISOLATION_CSV_COLUMNS)
-        df["whole_ok"] = pd.Series(dtype="int8")
+        df["whole_ok"] = pd.Series(dtype="string")
         return df
     df = pd.DataFrame(
         [row.as_csv_dict() for row in rows], columns=FIELD_ISOLATION_CSV_COLUMNS

@@ -227,7 +227,7 @@ def main() -> int:
         section_rules[row["section_index"]].append(row)
 
     section_fail_count = {
-        sec: sum(1 for rule in rules if rule["ok"] == "False")
+        sec: sum(1 for rule in rules if rule["ok"] in ("False", "0", "FAILED"))
         for sec, rules in section_rules.items()
     }
     section_rule_count = {sec: len(rules) for sec, rules in section_rules.items()}
@@ -242,7 +242,7 @@ def main() -> int:
     def mono_class_sections_for(target: tuple[str, str]) -> set[str]:
         completed: set[str] = set()
         for sec in active_sections:
-            fails = [rule for rule in section_rules[sec] if rule["ok"] == "False"]
+            fails = [rule for rule in section_rules[sec] if rule["ok"] in ("False", "0", "FAILED")]
             if not fails:
                 continue
             keys = set()
@@ -287,7 +287,7 @@ def main() -> int:
     classified: list[Row] = []
     for row in rows:
         failure_class = row.get("failure_class", "")
-        if failure_class not in TARGET_CLASSES or row.get("ok") != "False":
+        if failure_class not in TARGET_CLASSES or row.get("ok") not in ("False", "0", "FAILED"):
             continue
         sec = row["section_index"]
         key = (row["section_index"], row["rule_id"], row.get("alt_idx", ""))
@@ -337,7 +337,7 @@ def main() -> int:
 
     mono_class_all: set[str] = set()
     for sec in active_sections:
-        fails = [rule for rule in section_rules[sec] if rule["ok"] == "False"]
+        fails = [rule for rule in section_rules[sec] if rule["ok"] in ("False", "0", "FAILED")]
         if not fails:
             continue
         classes = {rule["failure_class"] for rule in fails}
@@ -437,7 +437,7 @@ def main() -> int:
 
     mono_by_class: dict[str, int] = defaultdict(int)
     for sec in mono_class_all:
-        fails = [r for r in section_rules[sec] if r["ok"] == "False"]
+        fails = [r for r in section_rules[sec] if r["ok"] in ("False", "0", "FAILED")]
         if fails:
             mono_by_class[fails[0]["failure_class"]] += 1
 

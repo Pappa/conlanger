@@ -270,7 +270,7 @@ def main() -> int:
         section_rules[row["section_index"]].append(row)
 
     section_fail_count = {
-        sec: sum(1 for rule in rules if rule["ok"] == "False")
+        sec: sum(1 for rule in rules if rule["ok"] in ("False", "0", "FAILED"))
         for sec, rules in section_rules.items()
     }
     near_miss = {sec for sec, count in section_fail_count.items() if 1 <= count <= 3}
@@ -280,7 +280,7 @@ def main() -> int:
         classes = [
             rule["failure_class"]
             for rule in section_rules[sec]
-            if rule["ok"] == "False"
+            if rule["ok"] in ("False", "0", "FAILED")
         ]
         if classes and len(set(classes)) == 1:
             mono_class.add(sec)
@@ -288,7 +288,7 @@ def main() -> int:
     classified: list[Row] = []
     for sec in sorted(near_miss):
         for rule in section_rules[sec]:
-            if rule["ok"] != "False":
+            if rule["ok"] not in ("False", "0", "FAILED"):
                 continue
             failure_class = rule.get("failure_class", "")
             key = (rule["section_index"], rule["rule_id"], rule.get("alt_idx", ""))
@@ -327,7 +327,7 @@ def main() -> int:
     def sections_complete_if(target: tuple[str, str]) -> set[str]:
         completed: set[str] = set()
         for sec in near_miss:
-            fails = [rule for rule in section_rules[sec] if rule["ok"] == "False"]
+            fails = [rule for rule in section_rules[sec] if rule["ok"] in ("False", "0", "FAILED")]
             if not fails:
                 continue
             keys = {

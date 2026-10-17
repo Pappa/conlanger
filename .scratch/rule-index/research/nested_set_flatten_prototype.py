@@ -150,7 +150,7 @@ def _bucket_for(source: str) -> str:
 def _ok_bool(value: Any) -> bool:
     if isinstance(value, bool):
         return value
-    return str(value).strip().lower() in {"true", "1", "yes"}
+    return str(value).strip().lower() in {"true", "1", "yes", "ok"}
 
 
 def load_index() -> dict[str, Any]:
