@@ -3,12 +3,12 @@
 - Source YAML: `data/diachronica/index_diachronica.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.3**
-- Rows: **9841** (one per inventory row; optional-output alternatives emit extra rows with distinct `alt_idx`)
+- Rows: **10071** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9045** (91.9%)
-- Fail: **254** (2.6%)
-- Skipped: **542** (5.5%)
+- OK: **9269** (92.0%)
+- Fail: **260** (2.6%)
+- Skipped: **542** (5.4%)
 
 
 ## Corrections
@@ -32,8 +32,8 @@ Skipped: **2/124**
 
 | count | failure_class |
 |------:|---------------|
-| 58 | `expected_underscore` |
-| 33 | `expected_ipa` |
+| 63 | `expected_underscore` |
+| 34 | `expected_ipa` |
 | 24 | `unknown_character` |
 | 22 | `missing_slash_output_env` |
 | 16 | `syntax_other` |
@@ -147,7 +147,7 @@ Skipped: **2/124**
 
 | count | description |
 |------:|-------------|
-| 37 | `Expected '_', but received ''` |
+| 42 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -221,9 +221,9 @@ Skipped: **2/124**
 | 9 | `(` |
 | 4 | `{` |
 | 4 | `∅` |
-| 3 | `…` |
+| 3 | `*` |
 | 3 | `ʷ` |
-| 2 | `*` |
+| 3 | `…` |
 | 2 | `ʲ` |
 | 2 | `_` |
 | 1 | `,` |
