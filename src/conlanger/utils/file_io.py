@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from pathlib import Path
 from typing import Any
 
@@ -26,13 +27,21 @@ _RULE_COMMENT_QUALIFIER_PHRASES = (
     "when unstressed",
     "when stressed",
     "except as below",
-    "sporadic",
+    "sporadic(ally)?",
     "sometimes",
+    "occasional(ly)?",
+    "typical(ly)?",
+    "rare(ly)?",
+    "usual(ly)?",
     "not sure",
     "not universal",
-    "short vowel",
     "unstressed",
+    "stressed",
 )
+_RULE_COMMENT_QUALIFIER_PHRASES_RE = [
+    re.compile(rf"\b{phrase}\b", re.IGNORECASE)
+    for phrase in _RULE_COMMENT_QUALIFIER_PHRASES
+]
 
 
 def write_rule_comment_phrase_summary(doc: dict[str, Any], path: Path) -> int:
@@ -45,10 +54,14 @@ def write_rule_comment_phrase_summary(doc: dict[str, Any], path: Path) -> int:
                 comments.append(str(comment))
 
     phrase_counts: dict[str, int] = {}
-    for phrase in _RULE_COMMENT_QUALIFIER_PHRASES:
-        count = sum(1 for comment in comments if phrase.lower() in comment.lower())
-        if count:
-            phrase_counts[phrase] = count
+    for comment in comments:
+        for idx, phrase_re in enumerate(_RULE_COMMENT_QUALIFIER_PHRASES_RE):
+            if phrase_re.search(comment.lower()):
+                phrase = _RULE_COMMENT_QUALIFIER_PHRASES[idx].replace("?", "")
+                if phrase not in phrase_counts:
+                    phrase_counts[phrase] = 0
+                phrase_counts[phrase] += 1
+                break
 
     semicolon_count = sum(1 for comment in comments if ";" in comment)
 

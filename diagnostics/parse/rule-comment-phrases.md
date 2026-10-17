@@ -7,15 +7,19 @@
 
 | phrase | rules |
 | --- | ---: |
-| `sporadic` | 204 |
-| `sometimes` | 55 |
-| `unstressed` | 28 |
+| `sporadic(ally)` | 203 |
+| `sometimes` | 52 |
+| `rare(ly)` | 26 |
 | `not sure` | 14 |
+| `occasional(ly)` | 12 |
 | `when unstressed` | 11 |
 | `short only` | 9 |
-| `when stressed` | 4 |
+| `unstressed` | 8 |
+| `usual(ly)` | 8 |
+| `typical(ly)` | 5 |
+| `stressed` | 4 |
 | `not universal` | 3 |
-| `short vowel` | 3 |
+| `when stressed` | 2 |
 | `except as below` | 1 |
 
 ## Sample comments (first 10)
