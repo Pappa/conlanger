@@ -1,6 +1,6 @@
 Type: task
 Status: ready-for-agent
-Blocked by: 142
+Blocked by: None
 
 # Parse: extract `IndexContext.position` for neighbour and medial relations
 

@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: None
 
 # ADR: parse pipeline order, `raw` semantics, and index rule normalisation placement

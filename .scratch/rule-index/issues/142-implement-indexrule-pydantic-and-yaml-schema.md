@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-human
+Status: resolved
 Blocked by: 140, 141
 
 # Implement `IndexRule` / `IndexContext` and structured YAML emit
