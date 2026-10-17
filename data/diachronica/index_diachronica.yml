@@ -2945,7 +2945,7 @@ sections:
     stages:
     - V(ː)
     - Vː
-    env: '#_[+stress]'
+    env: '#U[+stress]#'
     comment: in accented or stressed monosyllables
 - section: Proto-Semitic to Biblical Hebrew
   index: 6.2.2.1.18
@@ -25416,7 +25416,8 @@ sections:
     stages:
     - ʃ
     - s
-    env: in unstressed syllables
+    env: U[-stress]
+    comment: in unstressed syllables; U[-stress]
   - rule_id: Northern-Middle-English-hn-wl,hl-hr
     source: index_diachronica.html:5875
     raw: hn {wl,hl} hr → w l r

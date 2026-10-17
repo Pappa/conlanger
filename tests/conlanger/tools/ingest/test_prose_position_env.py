@@ -48,20 +48,23 @@ def test_apply_prose_position_env_conditions(input, expected):
         ("in final syllables", "U#", ["in final syllables"]),
         ("syllable-finally", "U#", ["syllable-finally"]),
         ("syllable-final", "U#", ["syllable-final"]),
-        ("unstressed syllables", "%[-stress]", ["unstressed syllables"]),
+        ("unstressed syllables", "U[-stress]", ["unstressed syllables"]),
+        ("in unstressed syllables", "U[-stress]", ["in unstressed syllables"]),
+        ("stressed syllables", "U[+stress]", ["stressed syllables"]),
+        ("in stressed syllables", "U[+stress]", ["in stressed syllables"]),
         (
             "accented or stressed monosyllables",
-            "#_[+stress]",  # TODO: this is not correct
+            "#U[+stress]#",
             ["accented or stressed monosyllables"],
         ),
         (
             "in accented or stressed monosyllables",
-            "#_[+stress]",  # TODO: this is not correct
+            "#U[+stress]#",
             ["in accented or stressed monosyllables"],
         ),
         (
             "between two vowels of unlike nasality",
-            "V_V",  # TODO: this is not correct
+            "V_V",
             ["between two vowels of unlike nasality"],
         ),
         ("not universal?", "_", ["not universal?"]),

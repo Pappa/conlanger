@@ -135,7 +135,7 @@ def test_apply_double_slash_env_conditions(parts, expected):
     [
         ("{a,ɛ}_, typically", "{a,ɛ}_", ["typically"]),
         ("%[-stress]", "%[-stress]", ["%[-stress]"]),
-        ("unstressed syllables", "%[-stress]", ["unstressed syllables"]),
+        ("unstressed syllables", "U[-stress]", ["unstressed syllables"]),
         ("", "", []),
     ],
 )

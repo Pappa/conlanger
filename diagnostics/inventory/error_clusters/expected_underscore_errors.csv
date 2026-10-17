@@ -7,7 +7,6 @@ section_index,rule_id,error_token,rule
 17.7.2.1.4,Early-Modern-English-a_2,,"a > æ / else | ^ @ Rule 1, Line 1"
 17.7.2.1.6,Australian-English-uː_2,,"u:[+long] > ʊʉ / else | ^ @ Rule 1, Line 1"
 17.7.2.1.6,Australian-English-uː_2,,"ʊʉ > ʉ:[+long] / else | ^ @ Rule 1, Line 1"
-17.7.2.1.8,Northern-Middle-English-ʃ,,"ʃ > s / in unstressed syllables | ^ @ Rule 1, Line 1"
 17.7.2.1.9,Scots-—-ai,,"ai > ɛi / when stem-final | ^ @ Rule 1, Line 1"
 17.7.2.1.9,Scots-—-ai,,"ɛi > əi / when stem-final | ^ @ Rule 1, Line 1"
 17.7.2.1.9,Scots-—-uː,",","u:[+long] > ʌu / when-stem final, | ^ @ Rule 1, Line 1"

@@ -12,13 +12,20 @@ _FINAL_SYLLABLE_RE = re.compile(
     r"^(?:in\s+)?(?:final\s+syllables?|syllable[- ]finally|syllable[- ]final)\s*$",
     re.IGNORECASE,
 )
-_UNSTRESSED_SYLLABLES_RE = re.compile(r"^unstressed\s+syllables?\s*$", re.IGNORECASE)
+_UNSTRESSED_SYLLABLES_RE = re.compile(
+    r"^(?:in\s+)?unstressed\s+syllables?\s*$",
+    re.IGNORECASE,
+)
+_STRESSED_SYLLABLES_RE = re.compile(
+    r"^(?:in\s+)?stressed\s+syllables?\s*$",
+    re.IGNORECASE,
+)
 _STRESSED_MONOSYLLABLE_RE = re.compile(
     r"^(?:in\s+)?accented\s+or\s+stressed\s+monosyllables?\s*$",
     re.IGNORECASE,
 )
 _BETWEEN_TWO_VOWELS_RE = re.compile(
-    r"^between\s+two\s+vowels(?:\s+of\s+unlike\s+nasality)?\s*$",  # TODO: this is not correct
+    r"^between\s+two\s+vowels(?:\s+of\s+unlike\s+nasality)?\s*$",
     re.IGNORECASE,
 )
 _NOT_UNIVERSAL_RE = re.compile(r"^\(?not\s+universal\??\)?\s*$", re.IGNORECASE)
@@ -27,7 +34,7 @@ _NOT_UNIVERSAL_RE = re.compile(r"^\(?not\s+universal\??\)?\s*$", re.IGNORECASE)
 def normalize_bare_prose_position_env(
     text: str,
 ) -> tuple[str, list[str], dict[str, Any]]:
-    """Normalize bare Index position prose env phrases for ASCA focus/env encoding."""
+    """Normalize bare Index position prose env phrases to Index project env strings."""
     if not text:
         return text, [], {}
     stripped = text.strip()
@@ -38,11 +45,13 @@ def normalize_bare_prose_position_env(
         return _FINAL_SYLLABLE_ENV, [stripped], flags
 
     if _UNSTRESSED_SYLLABLES_RE.match(stripped):
-        # return "_ %[-stress]", [stripped], flags  # TODO: this is not correct
-        return "%[-stress]", [stripped], flags  # TODO: this is not correct
+        return "U[-stress]", [stripped], flags
+
+    if _STRESSED_SYLLABLES_RE.match(stripped):
+        return "U[+stress]", [stripped], flags
 
     if _STRESSED_MONOSYLLABLE_RE.match(stripped):
-        return "#_[+stress]", [stripped], flags  # TODO: this is not correct
+        return "#U[+stress]#", [stripped], flags
 
     if _BETWEEN_TWO_VOWELS_RE.match(stripped):
         return "V_V", [stripped], flags

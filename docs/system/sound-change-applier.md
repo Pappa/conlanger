@@ -54,7 +54,8 @@ Corpus rules may carry structured **`IndexContext`**-shaped mappings on `env` or
 | `position.adjacent_to` / `position.near` only | Relation-keyed template from [`config/compile/asca/compiler_config.yml`](../config/compile/asca/compiler_config.yml) `position_templates` (`{v}_, _{v}` by default per relation; missing keys do not project) |
 | `position.in` only | `position_templates.in` (`in {v}` by default). Mechanical `#U` / `U#` targets compile to ASCA underline env via the syllable-position override in the per-rule pipeline (same as legacy `in #U` / `in U#` strings). |
 | `context` + neighbour / `in` `position` | Comma-joined: structural `context`, then projected relation template |
-| `position.medial` on **env**, no `exception` | Env `_` when there is no structural `context`; **exception** `#_, _#` (`MEDIAL_BOUNDARY_EXCEPTION`). Structural `context` on env is kept; medial boundary still applies on exception. Existing **exception** `IndexContext` is left to owner semantics (no silent medial drop). |
+| `position.medial` on **env** | Env `_` when there is no structural `context` and no `exception` field; **exception** always gains medial boundary `#_, _#` (`MEDIAL_BOUNDARY_EXCEPTION`), merged with any existing exception string (comma-separated). Structural `context` on env is kept. |
+| Index syllable-stress env (`U[-stress]`, `U[+stress]`, `#U[+stress]#`, …) | Compile projects to ASCA with segment focus (`_ $[±stress]`, `#_[+stress]`, …) via syllable-position override; `position.in` tails use `context in $[±stress]` not `, in …`. |
 | `dialect` | Preserved in YAML only in v1 (no compile gating) |
 
 Implementation: [`resolve_index_context_to_string`](../src/conlanger/ingest/models/index_models.py), [`resolve_rule_env_exception_for_compile`](../src/conlanger/ingest/models/index_models.py) (rule-level medial pairing).

@@ -13,6 +13,7 @@ from conlanger.compile.tools.asca.syllable_position import (
     compile_syllable_position_env,
     compile_syllable_position_exception,
     normalize_syllable_position_marker,
+    project_syllable_stress_compiled_env,
     strip_editorial_in_before_syllable_position,
 )
 from conlanger.ingest.models.index_models import IndexContext, IndexRule
@@ -81,6 +82,32 @@ def test_compile_syllable_position_exception(raw, expected):
 )
 def test_compile_syllable_position_env(raw, expected):
     assert compile_syllable_position_env(raw) == expected
+
+
+@pytest.mark.parametrize(
+    ("env_raw", "compiled_before", "expected"),
+    [
+        ("U[-stress]", "%[-stress]", "_ $[-stress]"),
+        ("in U[+stress]", "in %[+stress]", "_ $[+stress]"),
+        ("#U[+stress]#", "#%[+stress]#", "#_[+stress]"),
+        (None, "C_CV, in %[-stress]", "C_CV in $[-stress]"),
+        (None, "_V", "_V"),
+    ],
+)
+def test_project_syllable_stress_compiled_env(env_raw, compiled_before, expected):
+    assert project_syllable_stress_compiled_env(env_raw, compiled_before) == expected
+
+
+@pytest.mark.parametrize(
+    ("env", "expected"),
+    [
+        ("U[-stress]", "V:[+long] > V:[-long] / _ $[-stress]"),
+        ("in U[+stress]", "V:[+long] > V:[-long] / _ $[+stress]"),
+        ("#U[+stress]#", "V:[+long] > V:[-long] / #_[+stress]"),
+    ],
+)
+def test_compile_asca_rule_fields_syllable_stress_env(env, expected):
+    assert compile_asca_rule_fields("Vː", "V[-long]", env=env) == expected
 
 
 def test_apply_syllable_position_compiled_overrides_replaces_group_mapping_damage():

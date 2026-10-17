@@ -386,6 +386,12 @@ def test_resolve_index_context_skips_relation_without_template():
             "in U[-stress]",
             None,
         ),
+        (
+            {"position": {"medial": True}},
+            {"context": "_ɡ"},
+            None,
+            "_ɡ, #_, _#",
+        ),
     ],
 )
 def test_resolve_rule_env_exception_for_compile(

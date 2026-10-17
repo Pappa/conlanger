@@ -13625,9 +13625,9 @@ sections:
             - Vː
             compiled: V:[+long]
           env:
-            raw: '#_[+stress]'
+            raw: '#U[+stress]#'
             tokens:
-            - '#_[+stress]'
+            - '#U[+stress]#'
             compiled: '#_[+stress]'
           exception: null
           status: null
@@ -31808,13 +31808,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: b > h // {r,rʲ,l,lʲ}_, _ɡ
+      rule: 'b > h // {r,rʲ,l,lʲ}_, _ɡ, #_, _#'
       series:
         parts:
         - type: title
           index: '8.3'
           section: Proto-Altaic to Proto-Mongolic#Proto-Mongolic-b
-        - value: b > h // {r,rʲ,l,lʲ}_, _ɡ
+        - value: 'b > h // {r,rʲ,l,lʲ}_, _ɡ, #_, _#'
           input:
             raw: b
             tokens:
@@ -31827,11 +31827,13 @@ sections:
             compiled: h
           env: null
           exception:
-            raw: '{r(ʲ),l(ʲ)}_, _ɡ'
+            raw: '{r(ʲ),l(ʲ)}_, _ɡ, #_, _#'
             tokens:
             - '{r(ʲ),l(ʲ)}_,'
-            - _ɡ
-            compiled: '{r,rʲ,l,lʲ}_, _ɡ'
+            - _ɡ,
+            - '#_,'
+            - _#
+            compiled: '{r,rʲ,l,lʲ}_, _ɡ, #_, _#'
           status: null
           sporadic: null
           sporadic_skipped: false
@@ -99435,13 +99437,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: '{e,o} > a / in %[-stress]'
+      rule: '{e,o} > a / _ $[-stress]'
       series:
         parts:
         - type: title
           index: 17.2.4
           section: Common Anatolian to Lydian#Lydian-e,o
-        - value: '{e,o} > a / in %[-stress]'
+        - value: '{e,o} > a / _ $[-stress]'
           input:
             raw: '{e,o}'
             tokens:
@@ -99458,7 +99460,7 @@ sections:
             tokens:
             - in
             - U[-stress]
-            compiled: in %[-stress]
+            compiled: _ $[-stress]
           exception: null
           status: null
           sporadic: null
@@ -119485,13 +119487,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: ʃ > s / in unstressed syllables
+      rule: ʃ > s / _ $[-stress]
       series:
         parts:
         - type: title
           index: 17.7.2.1.8
           section: Old English to Northern Middle English#Northern-Middle-English-ʃ
-        - value: ʃ > s / in unstressed syllables
+        - value: ʃ > s / _ $[-stress]
           input:
             raw: ʃ
             tokens:
@@ -119503,12 +119505,10 @@ sections:
             - s
             compiled: s
           env:
-            raw: in unstressed syllables
+            raw: U[-stress]
             tokens:
-            - in
-            - unstressed
-            - syllables
-            compiled: in unstressed syllables
+            - U[-stress]
+            compiled: _ $[-stress]
           exception: null
           status: null
           sporadic: null
@@ -198422,13 +198422,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: k > ɡ / in %[+stress]
+      rule: k > ɡ / _ $[+stress]
       series:
         parts:
         - type: title
           index: 18.3.2
           section: Proto-Tuparí to Mekens#Mekens-k
-        - value: k > ɡ / in %[+stress]
+        - value: k > ɡ / _ $[+stress]
           input:
             raw: k
             tokens:
@@ -198444,7 +198444,7 @@ sections:
             tokens:
             - in
             - U[+stress]
-            compiled: in %[+stress]
+            compiled: _ $[+stress]
           exception: null
           status: null
           sporadic: null
@@ -199549,13 +199549,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: k > ɡ / in %[+stress]
+      rule: k > ɡ / _ $[+stress]
       series:
         parts:
         - type: title
           index: 18.3.4
           section: Proto-Tuparí to Wayoró#Wayoró-k
-        - value: k > ɡ / in %[+stress]
+        - value: k > ɡ / _ $[+stress]
           input:
             raw: k
             tokens:
@@ -199571,7 +199571,7 @@ sections:
             tokens:
             - in
             - U[+stress]
-            compiled: in %[+stress]
+            compiled: _ $[+stress]
           exception: null
           status: null
           sporadic: null
@@ -257853,13 +257853,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: em emˀ > a aʔ / in %[-stress] // {p:[+cg],p,m,mˀ}_
+      rule: em emˀ > a aʔ / _ $[-stress] // {p:[+cg],p,m,mˀ}_
       series:
         parts:
         - type: title
           index: '35.3'
           section: Shuswap to Eastern Shuswap Nasal-to-Vowel Shifts#Vowel-Shifts_3-em-emˀ_2
-        - value: em emˀ > a aʔ / in %[-stress] // {p:[+cg],p,m,mˀ}_
+        - value: em emˀ > a aʔ / _ $[-stress] // {p:[+cg],p,m,mˀ}_
           input:
             raw: em emˀ
             tokens:
@@ -257877,7 +257877,7 @@ sections:
             tokens:
             - in
             - U[-stress]
-            compiled: in %[-stress]
+            compiled: _ $[-stress]
           exception:
             raw: '{p(’),m(ˀ)}_'
             tokens:
@@ -257932,13 +257932,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: en enˀ > a ʔ / in %[-stress] // {t:[+cg],t,lʲ,n,nˀ,l,lˀ}_
+      rule: en enˀ > a ʔ / _ $[-stress] // {t:[+cg],t,lʲ,n,nˀ,l,lˀ}_
       series:
         parts:
         - type: title
           index: '35.3'
           section: Shuswap to Eastern Shuswap Nasal-to-Vowel Shifts#Vowel-Shifts_3-en-enˀ_2
-        - value: en enˀ > a ʔ / in %[-stress] // {t:[+cg],t,lʲ,n,nˀ,l,lˀ}_
+        - value: en enˀ > a ʔ / _ $[-stress] // {t:[+cg],t,lʲ,n,nˀ,l,lˀ}_
           input:
             raw: en enˀ
             tokens:
@@ -257956,7 +257956,7 @@ sections:
             tokens:
             - in
             - U[-stress]
-            compiled: in %[-stress]
+            compiled: _ $[-stress]
           exception:
             raw: '{t(’),lʲ,n(ˀ),l(ˀ)}_'
             tokens:
@@ -282995,13 +282995,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: s > z / in %[-stress]
+      rule: s > z / _ $[-stress]
       series:
         parts:
         - type: title
           index: 37.2.2
           section: Proto-Siouan to Dakota#Dakota-s
-        - value: s > z / in %[-stress]
+        - value: s > z / _ $[-stress]
           input:
             raw: s
             tokens:
@@ -283017,7 +283017,7 @@ sections:
             tokens:
             - in
             - U[-stress]
-            compiled: in %[-stress]
+            compiled: _ $[-stress]
           exception: null
           status: null
           sporadic: null
@@ -284474,13 +284474,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: tʲ s > ʒ z / in %[-stress]
+      rule: tʲ s > ʒ z / _ $[-stress]
       series:
         parts:
         - type: title
           index: 37.2.4
           section: Proto-Siouan to Proto-Čiwere-Winnebago#Proto-Čiwere-Winnebago-tʲ-s
-        - value: tʲ s > ʒ z / in %[-stress]
+        - value: tʲ s > ʒ z / _ $[-stress]
           input:
             raw: tʲ s
             tokens:
@@ -284498,7 +284498,7 @@ sections:
             tokens:
             - in
             - U[-stress]
-            compiled: in %[-stress]
+            compiled: _ $[-stress]
           exception: null
           status: null
           sporadic: null
@@ -286995,13 +286995,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: t tʲ s > d ʒ z / in %[-stress]
+      rule: t tʲ s > d ʒ z / _ $[-stress]
       series:
         parts:
         - type: title
           index: 37.2.6
           section: Proto-Siouan to Proto-Dhegiha#Proto-Dhegiha-t-tʲ-s
-        - value: t tʲ s > d ʒ z / in %[-stress]
+        - value: t tʲ s > d ʒ z / _ $[-stress]
           input:
             raw: t tʲ s
             tokens:
@@ -287021,7 +287021,7 @@ sections:
             tokens:
             - in
             - U[-stress]
-            compiled: in %[-stress]
+            compiled: _ $[-stress]
           exception: null
           status: null
           sporadic: null

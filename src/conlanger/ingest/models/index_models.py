@@ -250,6 +250,15 @@ def _coerce_optional_index_context(
     raise TypeError(f"Invalid env/exception value: {value!r}")
 
 
+def merge_medial_boundary_exception(exc_str: str | None) -> str:
+    """Combine compile exception text with medial boundary ``#_, _#`` (ticket 149 Q5)."""
+    if not exc_str:
+        return MEDIAL_BOUNDARY_EXCEPTION
+    if MEDIAL_BOUNDARY_EXCEPTION in exc_str:
+        return exc_str
+    return f"{exc_str}, {MEDIAL_BOUNDARY_EXCEPTION}"
+
+
 def resolve_rule_env_exception_for_compile(
     env: EnvExceptionInput | None,
     exception: EnvExceptionInput | None,
@@ -275,13 +284,8 @@ def resolve_rule_env_exception_for_compile(
     if exc_ctx is not None:
         exc_str = resolve_index_context_to_string(exc_ctx, position_templates) or None
 
-    if (
-        env_ctx is not None
-        and env_ctx.position
-        and env_ctx.position.get("medial")
-        and exc_ctx is None
-    ):
-        exc_str = MEDIAL_BOUNDARY_EXCEPTION
+    if env_ctx is not None and env_ctx.position and env_ctx.position.get("medial"):
+        exc_str = merge_medial_boundary_exception(exc_str)
 
     return env_str, exc_str
 

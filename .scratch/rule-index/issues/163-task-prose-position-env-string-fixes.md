@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: [162](162-grill-syllable-structure-env-resolution.md)
 
 # Task: prose position env string fixes (ticket 107) + compile projection
@@ -30,9 +30,16 @@ Update `tests/conlanger/tools/ingest/test_prose_position_env.py` (remove TODOs w
 
 ## Acceptance
 
-- [ ] `normalize_bare_prose_position_env` / `apply_prose_position_env_conditions` emit target SoT strings.
-- [ ] Compile + `validate_rules` behaviour documented in tests; inventory delta summarized after `create_index && compile_rules && validate_rules`.
-- [ ] `raw` unchanged; ADR-0010 hold-outs respected.
+- [x] `normalize_bare_prose_position_env` / `apply_prose_position_env_conditions` emit target SoT strings.
+- [x] Compile + `validate_rules` behaviour documented in tests; inventory delta summarized after `create_index && compile_rules && validate_rules`.
+- [x] `raw` unchanged; ADR-0010 hold-outs respected.
+
+## Answer (2026-10-17)
+
+- **Parse:** `prose_position_env.py` — `U[-stress]`, `U[+stress]`, `#U[+stress]#`; optional leading `in` on unstressed/stressed syllable phrases.
+- **Compile:** `syllable_position.project_syllable_stress_compiled_env` — whole-field → `_ $[±stress]` / `#_[+stress]`; `position.in` comma tails → `context in $[±stress]`.
+- **Medial:** `merge_medial_boundary_exception` in `resolve_rule_env_exception_for_compile` (149 Q5).
+- **Inventory** (`create_index && compile_rules && validate_rules`): **8281** OK (**+9** vs pre-regen **8272** on same asca 0.10.3); **9** ok-flips in changelog (e.g. `Northern-Middle-English-ʃ`, `Lydian-e,o`, `Mekens-k`, `Tunisian-Arabic-Vː_2`). `expected_underscore` −1; `unknown_grouping` U-host cluster −4.
 
 ## Out of scope
 

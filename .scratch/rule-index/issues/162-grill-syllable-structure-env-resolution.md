@@ -1,5 +1,5 @@
 Type: grilling
-Status: needs-grilling
+Status: resolved
 Blocked by: None
 
 # Grill: syllable-structure env resolution
@@ -28,3 +28,9 @@ For **syllable-level** and **word-boundary** env strings in the applier-neutral 
 ## Deliverable
 
 Policy + examples for parse vs compile; acceptance criteria for a follow-on **task** (fix 107 mappings + compile projection). Do **not** implement until this grill is **resolved**.
+
+## Answer (2026-10-17)
+
+- **SoT (parse):** Index project strings `U[-stress]`, `U[+stress]`, `#U[+stress]#`, `U#`, … in `env.context` — no injected `_` at parse.
+- **Compile:** Syllable-stress whole env projects to ASCA `_ $[±stress]` (segment focus + syllable stress after `U`→`%`→`$`). Stressed monosyllable `#U[+stress]#` → `#_[+stress]`. Embedded `position.in` tails use `context in $[±stress]` (not comma-before-`in`). Mechanical `#U`/`U#` unchanged (ticket 98).
+- **Implemented in:** [163](163-task-prose-position-env-string-fixes.md).

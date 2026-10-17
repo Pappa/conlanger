@@ -6,8 +6,8 @@
 - Rows: **9570** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **8272** (86.4%)
-- Fail: **1257** (13.1%)
+- OK: **8281** (86.5%)
+- Fail: **1248** (13.0%)
 - Skipped: **41** (0.4%)
 
 
@@ -35,19 +35,19 @@ Fail: **14/122**
 
 ## Sections
 
-- All OK: **287 / 660** (43.5%)
-- Some OK: **368 / 660** (55.8%)
-- None OK: **5 / 660** (0.8%)
+- All OK: **289 / 660** (43.8%)
+- Some OK: **367 / 660** (55.6%)
+- None OK: **4 / 660** (0.6%)
 - Sections skipped: **0 / 660** (0.0%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 493 | `unknown_grouping` |
+| 485 | `unknown_grouping` |
 | 378 | `other` |
 | 188 | `unknown_character` |
-| 51 | `expected_underscore` |
+| 50 | `expected_underscore` |
 | 32 | `expected_ipa` |
 | 25 | `prose_or_expected_arrow` |
 | 19 | `missing_slash_output_env` |
@@ -124,7 +124,7 @@ Fail: **14/122**
 |------:|-------------|
 | 125 | `R` |
 | 115 | `E` |
-| 87 | `U` |
+| 79 | `U` |
 | 41 | `B` |
 | 35 | `T` |
 | 31 | `H` |
@@ -162,7 +162,7 @@ Fail: **14/122**
 
 | count | description |
 |------:|-------------|
-| 33 | `Expected '_', but received ''` |
+| 32 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
