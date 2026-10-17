@@ -207,10 +207,8 @@ def _project_position_relation(
     if not ctx.position:
         return None
     target = _position_target_value(ctx.position.get(relation))
-    if target is None:
-        return None
     template = templates.get(relation)
-    if template is None:
+    if target is None or template is None:
         return None
     return template.format(v=target)
 
