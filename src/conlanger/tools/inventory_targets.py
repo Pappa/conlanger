@@ -7,8 +7,8 @@ from typing import Any
 
 from pydantic import BaseModel, ConfigDict
 
+from conlanger.compile.models.config import CompilerConfig
 from conlanger.compile.models.rules import DiachronicSeries, RuleTitle, SoundChangeRule
-from conlanger.ingest.models.mappings import CompilerConfig
 
 # Fixed seed for inventory compile (optional-output / sporadic RNG); ticket 158.
 INVENTORY_COMPILE_RNG_SEED = 0

@@ -5,11 +5,8 @@ Owned by tests only — not read from production ``config/`` paths.
 
 from __future__ import annotations
 
-from conlanger.ingest.models.mappings import (
-    CompilerConfig,
-    FeatureMapping,
-    ManualMapping,
-)
+from conlanger.compile.models.config import CompilerConfig
+from conlanger.ingest.models.mappings import FeatureMapping, ManualMapping
 
 MINIMAL_GROUP_MAPPINGS: dict[str, str] = {
     "A": "O:[+delrel]",

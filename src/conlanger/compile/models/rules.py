@@ -6,6 +6,7 @@ from typing import ClassVar, Self
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 from conlanger.compile.models.compile_fields import RuleEnv, RuleInput, RuleOutput
+from conlanger.compile.models.config import CompilerConfig
 from conlanger.compile.resolve_index_rule import materialize_index_rule_env_exception
 from conlanger.compile.tools.asca.chains import expand_chained_index_rule
 from conlanger.compile.tools.asca.parallel import (
@@ -21,7 +22,6 @@ from conlanger.compile.tools.field_tokens import (
     render_field_tokens,
     set_token_members,
 )
-from conlanger.ingest.models.mappings import CompilerConfig
 
 _SUPPORTED_FORMATS = frozenset({"asca"})
 _SPORADIC_APPLY_PROBABILITY = 0.5

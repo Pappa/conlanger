@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from conlanger.compile.models.compile_fields import RuleEnv, RuleInput, RuleOutput
+from conlanger.compile.models.config import CompilerConfig
 from conlanger.compile.tools.asca.apostrophes import normalize_typographic_apostrophes
 from conlanger.compile.tools.asca.breve_marks import normalize_asca_breve_marks
 from conlanger.compile.tools.asca.clicks import normalize_asca_index_click_segments
@@ -70,7 +71,6 @@ from conlanger.compile.tools.asca.tone_matrices import (
 from conlanger.compile.tools.asca.voice_prerequisite_diacritics import (
     normalize_asca_voice_prerequisite_diacritics,
 )
-from conlanger.ingest.models.mappings import CompilerConfig
 from conlanger.utils.symbols import project_index_syllable_stem_symbols
 
 

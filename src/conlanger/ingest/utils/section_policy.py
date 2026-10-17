@@ -4,11 +4,8 @@ from __future__ import annotations
 
 import re
 
-from conlanger.ingest.models.index_models import (
-    IndexContext,
-    IndexRule,
-    resolve_index_context_to_string,
-)
+from conlanger.ingest.models.index_models import IndexContext, IndexRule
+from conlanger.ingest.utils.index_context_project import project_index_context
 from conlanger.utils.gloss import (
     extract_trailing_gloss_from_field,
     extract_uncertainty_qualifier_from_field,
@@ -30,7 +27,7 @@ def is_else_env_candidate(env: str) -> bool:
 
 def _effective_env_material(env: IndexContext) -> str:
     """Env string used for catch-all ``else`` eligibility (context + position)."""
-    projected = resolve_index_context_to_string(env)
+    projected = project_index_context(env)
     if projected:
         return projected
     if env.position and env.position.get("medial"):

@@ -6,6 +6,7 @@ import random
 from typing import Any
 
 from conlanger.compile.models.compile_fields import RuleEnv, RuleInput, RuleOutput
+from conlanger.compile.models.config import CompilerConfig
 from conlanger.compile.models.rules import (
     DiachronicSeries,
     RuleCitation,
@@ -14,7 +15,6 @@ from conlanger.compile.models.rules import (
     RuleTitle,
     SoundChangeRule,
 )
-from conlanger.ingest.models.mappings import CompilerConfig
 from conlanger.tools.inventory_targets import InventoryTarget
 
 

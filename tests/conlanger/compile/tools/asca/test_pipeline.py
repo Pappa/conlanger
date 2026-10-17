@@ -2,10 +2,10 @@
 
 import pytest
 
+from conlanger.compile.models.config import CompilerConfig
 from conlanger.compile.tools.asca.pipeline import (
     compile_asca_rule_fields,
 )
-from conlanger.ingest.models.mappings import CompilerConfig
 
 
 @pytest.mark.parametrize(

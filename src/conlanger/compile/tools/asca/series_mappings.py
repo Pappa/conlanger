@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from conlanger.ingest.models.mappings import CompilerConfig
+from conlanger.compile.models.config import CompilerConfig
 
 
 def apply_compiler_series_mappings(

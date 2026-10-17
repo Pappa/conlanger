@@ -8,13 +8,12 @@ import pandas as pd
 import pytest
 import yaml
 
-from conlanger.ingest.models.index_models import (
-    IndexContext,
-    IndexRule,
+from conlanger.compile.project_index_context import (
     env_exception_input_to_string,
     resolve_index_context_to_string,
     resolve_rule_env_exception_for_compile,
 )
+from conlanger.ingest.models.index_models import IndexContext, IndexRule
 from conlanger.ingest.utils.transform_fields import MEDIAL_BOUNDARY_EXCEPTION
 
 _SAMPLED_RULES_CSV = (

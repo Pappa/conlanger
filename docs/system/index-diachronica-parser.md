@@ -8,6 +8,8 @@ Parse-time transforms turn Index Diachronica HTML into an **applier-neutral** ru
 
 **Related:** [spec](../.scratch/rule-index/spec.md) (Ingest section), [wayfinder map](../.scratch/rule-index/map.md), [ADR-0004](../adr/0004-series-indices-per-section-maps.md) (correspondence-series indices), [GLOSSARY.md](../../GLOSSARY.md).
 
+**Package imports:** `ingest` may import `utils` only (not `compile`); `compile` may import `ingest` and `utils`; shared helpers such as [`bracket_scanner.py`](../src/conlanger/utils/bracket_scanner.py) live under `utils`. Applier-neutral position projection for parse policies: [`index_context_project.py`](../src/conlanger/ingest/utils/index_context_project.py).
+
 ### Feature name mappings (parse vs compile)
 
 Distinctive-feature **names** inside postfix `[...]` matrices may be normalised at parse to **canonical cleaned-index** names (`config/parser/feature_mappings.yml`). **ASCA** feature geometry, tone rows, and polarity inverts live at compile (`config/compile/asca/feature_mappings.yml` — planned split per [ticket 148](../../.scratch/rule-index/issues/148-grill-asca-shaped-syntax-in-applier-neutral-sot.md)). Bracket syntax stays applier-neutral in YAML; colon host matrices are compile-only. Index `%` / `$` and stress marks follow the same tier policy (Index symbols in SoT; atomic `%`/`$` compile migration in [ticket 153](../../.scratch/rule-index/issues/153-task-atomic-syllable-symbol-compile-migration.md)).

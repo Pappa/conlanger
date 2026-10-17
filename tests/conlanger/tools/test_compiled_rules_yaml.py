@@ -7,8 +7,8 @@ from pathlib import Path
 import pytest
 import yaml
 
+from conlanger.compile.models.config import CompilerConfig
 from conlanger.compile.models.rules import SoundChangeRule
-from conlanger.ingest.models.mappings import CompilerConfig
 from conlanger.tools.compiled_rules_yaml import (
     COMPILED_RULES_SCHEMA_VERSION,
     COMPILED_RULES_YAML_NAME,

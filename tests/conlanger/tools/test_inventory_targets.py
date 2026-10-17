@@ -51,8 +51,8 @@ def test_inventory_target_is_frozen_pydantic_model():
 
 
 def test_series_for_sound_change_rule_builds_mini_series():
+    from conlanger.compile.models.config import CompilerConfig
     from conlanger.compile.models.rules import SoundChangeRule
-    from conlanger.ingest.models.mappings import CompilerConfig
 
     rule = SoundChangeRule(
         input="a",

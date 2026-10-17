@@ -11,7 +11,7 @@ from conlanger.compile.tools.asca.host_bracket_matrices import (
     _SINGLE_HOST_BRACKET_RE,
 )
 from conlanger.compile.tools.asca.structures import split_outside_groupers
-from conlanger.compile.tools.bracket_scanner import (
+from conlanger.utils.bracket_scanner import (
     is_brace_wrapped,
     is_square_bracket_wrapped,
 )

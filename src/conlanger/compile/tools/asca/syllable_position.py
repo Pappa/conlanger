@@ -4,6 +4,9 @@ from __future__ import annotations
 
 import re
 
+from conlanger.ingest.utils.syllable_position import (
+    strip_editorial_in_before_syllable_position,
+)
 from conlanger.utils.symbols import project_index_syllable_stem_symbols
 
 _MECHANICAL_EXCEPTION_ASCA = {
@@ -17,10 +20,6 @@ _MECHANICAL_ENV_ASCA = {
     "U#": "<.._>#",
 }
 
-_EDITORIAL_IN_RE = re.compile(
-    r"^in\s+(#U(?:\s*,\s*U#)?|U#)\s*$",
-    re.IGNORECASE,
-)
 _COMMA_U_HASH_RE = re.compile(r"^#U\s*,\s*U#$")
 
 _SYLLABLE_STRESS_ENV_RAW = {
@@ -35,18 +34,6 @@ _STRESSED_MONOSYLLABLE_ENV_COMPILED = "#_[+stress]"
 _IN_STRESS_COMMA_RE = re.compile(
     r",\s+in\s+(?:%\[(\+stress|-stress)\]|\$\[(\+stress|-stress)\])",
 )
-
-
-def strip_editorial_in_before_syllable_position(text: str) -> str:
-    """Strip Index editorial ``in`` before mechanical ``#U`` / ``U#`` markers."""
-    stripped = text.strip()
-    match = _EDITORIAL_IN_RE.match(stripped)
-    if not match:
-        return text
-    marker = match.group(1)
-    if _COMMA_U_HASH_RE.fullmatch(marker):
-        return "#U, U#"
-    return marker
 
 
 def normalize_syllable_position_marker(text: str) -> str | None:

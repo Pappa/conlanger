@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
+from conlanger.compile.models.config import CompilerConfig
 from conlanger.compile.resolve_index_rule import materialize_index_rule_env_exception
-from conlanger.ingest.models.mappings import CompilerConfig
 
 
 def test_materialize_position_in_from_inventory_rule_shape():

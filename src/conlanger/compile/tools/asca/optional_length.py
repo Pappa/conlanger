@@ -15,7 +15,6 @@ from conlanger.compile.tools.asca.sets import (
     split_set_members,
 )
 from conlanger.compile.tools.asca.structures import split_outside_groupers
-from conlanger.compile.tools.bracket_scanner import is_brace_wrapped
 from conlanger.compile.tools.field_tokens import (
     FieldToken,
     OptionalLengthNode,
@@ -23,6 +22,7 @@ from conlanger.compile.tools.field_tokens import (
     is_set_token,
     token_to_raw_string,
 )
+from conlanger.utils.bracket_scanner import is_brace_wrapped
 
 _LENGTH = "\u02d0"
 _CLASS_OR_TEMPLATE = r"[A-Z]\d*"

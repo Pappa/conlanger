@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import pytest
 
+from conlanger.compile.models.config import CompilerConfig
 from conlanger.compile.models.rules import (
     DiachronicSeries,
     RuleCitation,
@@ -11,7 +12,6 @@ from conlanger.compile.models.rules import (
     RuleTitle,
     SoundChangeRule,
 )
-from conlanger.ingest.models.mappings import CompilerConfig
 from conlanger.tools.compiled_target_serde import (
     _deserialize_rule_part,
     _serialize_rule_part,

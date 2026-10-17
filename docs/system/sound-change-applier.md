@@ -4,7 +4,7 @@ Applier compile turns one **sound-change section** (index dict) into a concrete 
 
 Compile reads each **corpus rule**’s **`stages`** spine (adjacent-pair expansion for chains), materialised **`env`** / **`exception`**, then builds compile-time **`input`**, **`output`**, **`env`**, and **`exception`** on `SoundChangeRule` — those four names are **not** YAML keys on the index ([ADR-0011](../adr/0011-index-rule-stages.md)). Corpus YAML and **`raw`** are **never modified**; transforms apply only to emitted applier strings.
 
-**Primary code:** [`compile/asca/pipeline.py`](../src/conlanger/compile/tools/asca/pipeline.py) (`compile_asca_rule_fields`, `compile_asca_field_pre_subscript`, `compile_asca_field_post_subscript`), [`rules.py`](../src/conlanger/compile/models/rules.py) (pydantic `DiachronicSeries`, `SoundChangeRule`), [`appliers/asca.py`](../src/conlanger/appliers/asca.py) (`validate_asca`). **Field / set tokenization** uses [`bracket_scanner.py`](../src/conlanger/compile/tools/bracket_scanner.py) via [`structures.py`](../src/conlanger/compile/tools/asca/structures.py) (`split_outside_groupers`) and [`sets.py`](../src/conlanger/compile/tools/asca/sets.py) (`split_set_members`, `split_braced_set_members`). See [ADR-0014](../adr/0014-per-field-asca-compile.md).
+**Primary code:** [`compile/asca/pipeline.py`](../src/conlanger/compile/tools/asca/pipeline.py) (`compile_asca_rule_fields`, `compile_asca_field_pre_subscript`, `compile_asca_field_post_subscript`), [`rules.py`](../src/conlanger/compile/models/rules.py) (pydantic `DiachronicSeries`, `SoundChangeRule`), [`appliers/asca.py`](../src/conlanger/appliers/asca.py) (`validate_asca`). **Field / set tokenization** uses [`bracket_scanner.py`](../src/conlanger/utils/bracket_scanner.py) via [`structures.py`](../src/conlanger/compile/tools/asca/structures.py) (`split_outside_groupers`) and [`sets.py`](../src/conlanger/compile/tools/asca/sets.py) (`split_set_members`, `split_braced_set_members`). **Package imports:** `compile` may use `ingest` models and `utils`; `ingest` must not import `compile`. See [parse doc](./index-diachronica-parser.md). See [ADR-0014](../adr/0014-per-field-asca-compile.md).
 
 **Related:** [ADR-0002](../adr/0002-applier-neutral-yaml-rule-index.md) (applier-neutral index), [ADR-0003](../adr/0003-validate-after-applier-compile.md) (validate after compile).
 
@@ -58,7 +58,7 @@ Corpus rules may carry structured **`IndexContext`**-shaped mappings on `env` or
 | Index syllable-stress env (`U[-stress]`, `U[+stress]`, `#U[+stress]#`, …) | Compile projects to ASCA with segment focus (`_ $[±stress]`, `#_[+stress]`, …) via syllable-position override; `position.in` tails use `context in $[±stress]` not `, in …`. |
 | `dialect` | Preserved in YAML only in v1 (no compile gating) |
 
-Implementation: [`resolve_index_context_to_string`](../src/conlanger/ingest/models/index_models.py), [`resolve_rule_env_exception_for_compile`](../src/conlanger/ingest/models/index_models.py) (rule-level medial pairing).
+Implementation: [`project_index_context.py`](../src/conlanger/compile/project_index_context.py) (`resolve_index_context_to_string`, `resolve_rule_env_exception_for_compile`; rule-level medial pairing).
 
 ---
 

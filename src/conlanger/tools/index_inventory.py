@@ -26,8 +26,8 @@ from conlanger.appliers.asca import (
     validate_asca,
     validate_asca_part,
 )
+from conlanger.compile.models.config import CompilerConfig
 from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
-from conlanger.ingest.models.mappings import CompilerConfig
 from conlanger.tools.compiled_target_serde import inventory_target_from_yaml
 from conlanger.tools.inventory_error_clusters import (
     CLUSTER_CSV_BY_FAILURE_CLASS,

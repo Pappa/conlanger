@@ -3,11 +3,11 @@
 import pytest
 
 from conlanger.appliers.asca import validate_asca
+from conlanger.compile.models.config import CompilerConfig
 from conlanger.compile.models.rules import DiachronicSeries
 from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
 from conlanger.compile.tools.asca.tone_matrices import normalize_asca_tone_matrices
 from conlanger.ingest.models.mappings import (
-    CompilerConfig,
     FeatureMapping,
     normalize_feature_matrices_in_field,
 )

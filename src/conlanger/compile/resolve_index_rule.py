@@ -4,8 +4,10 @@ from __future__ import annotations
 
 from typing import Any
 
-from conlanger.ingest.models.index_models import resolve_rule_env_exception_for_compile
-from conlanger.ingest.models.mappings import CompilerConfig
+from conlanger.compile.models.config import CompilerConfig
+from conlanger.compile.project_index_context import (
+    resolve_rule_env_exception_for_compile,
+)
 
 
 def materialize_index_rule_env_exception(

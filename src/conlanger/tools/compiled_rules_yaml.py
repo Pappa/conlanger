@@ -9,8 +9,8 @@ from typing import Any, Protocol
 import yaml
 
 import conlanger.tools.index_io as _index_io  # noqa: F401 — registers YAML string representer
+from conlanger.compile.models.config import CompilerConfig
 from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
-from conlanger.ingest.models.mappings import CompilerConfig
 from conlanger.tools.compiled_target_serde import (
     deserialize_series,
     inventory_target_from_yaml,

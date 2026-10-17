@@ -26,11 +26,11 @@ from conlanger.compile.tools.asca.group_mappings import (
     _grouping_letter_pattern,
     expand_grouping_letter,
 )
-from conlanger.compile.tools.bracket_scanner import is_square_bracket_wrapped
 from conlanger.compile.tools.features import (
     apply_features_to_token,
     merge_mapping_with_features,
 )
+from conlanger.utils.bracket_scanner import is_square_bracket_wrapped
 
 _GROUPING_PREC = r"(?:^|(?<=[\{\[\s/,>_A-Z#$%|!\(-]))"
 _GROUPING_FOLLOW = r"(?=[:,\[\]\{\}\s/>_#$%|!\)-]|$|[A-Z]|[a-z\u0250-\u02AF])"

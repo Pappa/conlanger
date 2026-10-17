@@ -1,5 +1,6 @@
 import pytest
 
+from conlanger.compile.models.config import CompilerConfig
 from conlanger.compile.models.rules import (
     DiachronicSeries,
     RuleCitation,
@@ -7,7 +8,6 @@ from conlanger.compile.models.rules import (
     SoundChangeRule,
 )
 from conlanger.compile.tools.asca.structures import join_asca_rule_fields
-from conlanger.ingest.models.mappings import CompilerConfig
 from conlanger.ingest.utils.transform_fields import MEDIAL_BOUNDARY_EXCEPTION
 
 

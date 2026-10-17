@@ -4,14 +4,13 @@ from __future__ import annotations
 
 import pytest
 
+from conlanger.compile.models.config import CompilerConfig, PositionTemplates
 from conlanger.ingest.models.index_models import IndexRule
 from conlanger.ingest.models.mappings import (
-    CompilerConfig,
     FeatureMapping,
     ManualMapping,
     ManualMappingHit,
     ParserConfig,
-    PositionTemplates,
     apply_manual_mappings,
     apply_section_mappings,
     normalize_feature_matrices_in_field,

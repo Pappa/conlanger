@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from conlanger.compile.tools.bracket_scanner import (
+from conlanger.utils.bracket_scanner import (
     BRACES,
     BRACKETS,
     PARENS,

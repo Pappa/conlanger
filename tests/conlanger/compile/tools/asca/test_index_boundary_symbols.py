@@ -2,8 +2,8 @@
 
 import pytest
 
+from conlanger.compile.models.config import CompilerConfig
 from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
-from conlanger.ingest.models.mappings import CompilerConfig
 from conlanger.utils.symbols import project_index_syllable_stem_symbols
 from tests.conftest import MINIMAL_GROUP_MAPPINGS
 
