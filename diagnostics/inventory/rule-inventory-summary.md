@@ -1,57 +1,69 @@
 # Cleaned rule index — ASCA validation inventory
 
-- Source YAML: `data/diachronica/index_diachronica.yml`
+- Source YAML: `diagnostics/compile/asca_rules.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.3**
-- Rows: **10071** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
+- Rows: **9570** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9269** (92.0%)
-- Fail: **260** (2.6%)
-- Skipped: **542** (5.4%)
+- OK: **8272** (86.4%)
+- Fail: **1257** (13.1%)
+- Skipped: **41** (0.4%)
 
 
 ## Corrections
 
-OK: **122/124**
-Skipped: **2/124**
+OK: **108/122**
+Fail: **14/122**
 
-### Skipped corrections
+### Failed corrections
 
-- `Comox-ʔ` — `section_skipped`
-- `Dena’ina-ʃʷ,x-z,ʒʷ,ɣ` — `section_skipped`
+- `Biblical-Hebrew-p-b-t-d-k-ɡ` — `other`
+- `Cheyenne-W` — `unknown_grouping`
+- `Dacian-kʷ,kw-ɡʷ,ɡw` — `unknown_grouping`
+- `Guānhuà-jem,jen` — `other`
+- `Old-Provençal-β_6` — `unknown_grouping`
+- `Old-Russian-kt-ɡd` — `unknown_grouping`
+- `Proto-Boreafrasian-z` — `other`
+- `Proto-Erromango-r` — `other`
+- `Proto-Indo-Iranian-s` — `unknown_character`
+- `Proto-Mongolic-pʰ_3` — `unknown_grouping`
+- `Proto-Slavic-Kʷ-ḱ-ɡ́` — `prose_or_expected_arrow`
+- `Proto-Tungusic-U-long-+low-pitch-U+long-low-pitch` — `unknown_grouping`
+- `Sebirwa-NC_2` — `other`
+- `Zayse-Zergulla-x3` — `unknown_character`
 
 ## Sections
 
-- All OK: **512 / 714** (71.7%)
-- Some OK: **148 / 714** (20.7%)
-- None OK: **0 / 714** (0.0%)
-- Sections skipped: **54 / 714** (7.6%)
+- All OK: **287 / 660** (43.5%)
+- Some OK: **368 / 660** (55.8%)
+- None OK: **5 / 660** (0.8%)
+- Sections skipped: **0 / 660** (0.0%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 63 | `expected_underscore` |
-| 34 | `expected_ipa` |
-| 24 | `unknown_character` |
-| 22 | `missing_slash_output_env` |
-| 16 | `syntax_other` |
-| 16 | `segments_before_word` |
+| 493 | `unknown_grouping` |
+| 378 | `other` |
+| 188 | `unknown_character` |
+| 51 | `expected_underscore` |
+| 32 | `expected_ipa` |
+| 25 | `prose_or_expected_arrow` |
+| 19 | `missing_slash_output_env` |
 | 14 | `nested_brackets` |
-| 11 | `expected_number` |
-| 11 | `unknown_grouping` |
-| 10 | `empty_io_panic` |
+| 11 | `syntax_other` |
 | 10 | `unknown_feature` |
-| 7 | `stuff_after_word_bound` |
-| 7 | `prose_or_expected_arrow` |
-| 3 | `panic_other` |
+| 9 | `expected_number` |
+| 9 | `empty_io_panic` |
+| 4 | `stuff_after_word_bound` |
+| 3 | `segments_before_word` |
+| 2 | `panic_other` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
-| 2 | `runtime_delete_only_segment` |
-| 2 | `other` |
 | 2 | `multiple_underlines_env` |
 | 1 | `incomplete_matrix` |
+| 1 | `runtime_delete_only_segment` |
 | 1 | `invalid_ipa` |
 
 ## Common Errors
@@ -63,19 +75,16 @@ Skipped: **2/124**
 | 2 | `,` |
 | 1 | `End Of Line` |
 | 1 | `]` |
-| 1 | `:` |
 | 1 | `l` |
 | 1 | `í` |
 ### syntax_other (description)
 
 | count | description |
 |------:|-------------|
-| 3 | `A syllable can only have parameters stress and tone` |
 | 1 | `Only a segment, matrix, group, or reference can be negated` |
 | 1 | `Feature 'lost' has no modifier` |
 | 1 | `Feature 'b' has no modifier` |
 | 1 | `Feature 's' has no modifier` |
-| 1 | `Feature 'long' has no modifier` |
 | 1 | `Feature 'truncated' has no modifier` |
 
 ### runtime_other (error_token)
@@ -93,16 +102,16 @@ Skipped: **2/124**
 
 | count | error_token |
 |------:|-------------|
+| 57 | `₂` |
+| 45 | `₁` |
+| 24 | `̣` |
+| 17 | `Ḱ` |
+| 16 | `₃` |
 | 10 | `ː` |
-| 3 | `₂` |
+| 4 | `ₙ` |
 | 3 | `͡` |
 | 2 | `ʝ` |
-| 1 | `ᵚ` |
-| 1 | `ð` |
-| 1 | `̣` |
-| 1 | `ḭ` |
-| 1 | `̺` |
-| 1 | `#` |
+| 2 | `ₛ` |
 ### unknown_character (description)
 
 | count | description |
@@ -113,10 +122,16 @@ Skipped: **2/124**
 
 | count | error_token |
 |------:|-------------|
-| 5 | `M` |
-| 3 | `Y` |
-| 2 | `H` |
-| 1 | `X` |
+| 125 | `R` |
+| 115 | `E` |
+| 87 | `U` |
+| 41 | `B` |
+| 35 | `T` |
+| 31 | `H` |
+| 22 | `D` |
+| 11 | `W` |
+| 10 | `A` |
+| 8 | `Z` |
 ### unknown_grouping (description)
 
 | count | description |
@@ -138,16 +153,16 @@ Skipped: **2/124**
 
 | count | error_token |
 |------:|-------------|
-| 14 | `,` |
-| 3 | `/` |
+| 11 | `,` |
+| 2 | `/` |
+| 2 | `ʷ` |
 | 2 | `:` |
-| 1 | `ʲ` |
 | 1 | `//` |
 ### expected_underscore (description)
 
 | count | description |
 |------:|-------------|
-| 42 | `Expected '_', but received ''` |
+| 33 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -180,9 +195,7 @@ Skipped: **2/124**
 | 2 | `r` |
 | 1 | `ɡ` |
 | 1 | `N` |
-| 1 | `P` |
-| 1 | `i` |
-| 1 | `s` |
+| 1 | `S` |
 ### expected_number (description)
 
 | count | description |
@@ -198,10 +211,11 @@ Skipped: **2/124**
 
 | count | description |
 |------:|-------------|
-| 3 | `Expected '>', '->' or '=>', but received '/'` |
+| 14 | `Expected '>', '->' or '=>', but received 'ʷ'` |
+| 7 | `Expected '>', '->' or '=>', but received '̩'` |
 | 2 | `Expected '>', '->' or '=>', but received '*'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
-| 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
+| 1 | `Expected '>', '->' or '=>', but received '/'` |
 
 ### invalid_ipa (error_token)
 
@@ -218,16 +232,16 @@ Skipped: **2/124**
 
 | count | error_token |
 |------:|-------------|
-| 9 | `(` |
-| 4 | `{` |
+| 8 | `(` |
+| 4 | `ʷ` |
 | 4 | `∅` |
 | 3 | `*` |
-| 3 | `ʷ` |
+| 3 | `{` |
 | 3 | `…` |
 | 2 | `ʲ` |
 | 2 | `_` |
 | 1 | `,` |
-| 1 | `ʱ` |
+| 1 | `>` |
 ### expected_ipa (description)
 
 | count | description |
@@ -249,10 +263,11 @@ Skipped: **2/124**
 
 | count | error_token |
 |------:|-------------|
-| 8 | `)` |
-| 5 | `(` |
-| 3 | `:` |
+| 4 | `(` |
+| 4 | `)` |
 | 3 | `ʲ` |
+| 3 | `ʷ` |
+| 2 | `:` |
 | 1 | `*` |
 | 1 | `#` |
 | 1 | `_` |
@@ -293,7 +308,7 @@ Skipped: **2/124**
 
 | count | description |
 |------:|-------------|
-| 16 | `Cannot have segments before the beginning of a word` |
+| 3 | `Cannot have segments before the beginning of a word` |
 
 ### stuff_after_word_bound (error_token)
 
@@ -304,7 +319,7 @@ Skipped: **2/124**
 
 | count | description |
 |------:|-------------|
-| 7 | `Cannot have segments after the end of a word` |
+| 4 | `Cannot have segments after the end of a word` |
 
 ### diacritic_prereq (error_token)
 
@@ -326,8 +341,8 @@ Skipped: **2/124**
 
 | count | description |
 |------:|-------------|
-| 5 | `The output of a deletion rule must only contain `*` or `∅`` |
 | 5 | `The input of an insertion rule must only contain `*` or `∅`` |
+| 4 | `The output of a deletion rule must only contain `*` or `∅`` |
 
 ### incomplete_matrix (error_token)
 

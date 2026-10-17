@@ -402,3 +402,10 @@ def test_position_templates_accepts_partial_mapping():
     templates = PositionTemplates.model_validate({"adjacent_to": "_{v}"})
     assert templates.adjacent_to == "_{v}"
     assert templates.near == "{v}_, _{v}"
+    assert templates.in_ == "in {v}"
+
+
+def test_position_templates_in_alias_round_trip():
+    templates = PositionTemplates.model_validate({"in": "within {v}"})
+    assert templates.in_ == "within {v}"
+    assert templates.model_dump(by_alias=True)["in"] == "within {v}"

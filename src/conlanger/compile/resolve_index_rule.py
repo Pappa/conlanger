@@ -19,7 +19,7 @@ def materialize_index_rule_env_exception(
     if not isinstance(env, dict) and not isinstance(exception, dict):
         return rule
 
-    templates = compiler_config.position_templates.model_dump()
+    templates = compiler_config.position_templates.model_dump(by_alias=True)
     env_str, exc_str = resolve_rule_env_exception_for_compile(
         env, exception, position_templates=templates
     )

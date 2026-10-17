@@ -9795,9 +9795,9 @@ sections:
             - v
             compiled: v
           env:
-            raw: _$
+            raw: _%
             tokens:
-            - _$
+            - _%
             compiled: _$
           exception: null
           status: null
@@ -10140,9 +10140,9 @@ sections:
             - ∅
             compiled: ∅
           env:
-            raw: _$ when stressed
+            raw: _% when stressed
             tokens:
-            - _$
+            - _%
             - when
             - stressed
             compiled: _$ when stressed
@@ -10784,13 +10784,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: aj aw > e:[+long] o:[+long]
+      rule: aj aw > e:[+long] o:[+long] / in %[+hi]
       series:
         parts:
         - type: title
           index: 6.2.2.1.7
           section: Classical Arabic to Egyptian Arabic#Egyptian-Arabic-aj-aw
-        - value: aj aw > e:[+long] o:[+long]
+        - value: aj aw > e:[+long] o:[+long] / in %[+hi]
           input:
             raw: aj aw
             tokens:
@@ -10803,7 +10803,12 @@ sections:
             - eː
             - oː
             compiled: e:[+long] o:[+long]
-          env: null
+          env:
+            raw: in U[+hi]
+            tokens:
+            - in
+            - U[+hi]
+            compiled: in %[+hi]
           exception: null
           status: null
           sporadic: null
@@ -11279,9 +11284,9 @@ sections:
             - ∅
             compiled: ∅
           env:
-            raw: ':{ _#, _$ }:'
+            raw: ':{ _#, _% }:'
             tokens:
-            - ':{ _#, _$ }:'
+            - ':{ _#, _% }:'
             compiled: ':{_#,_$}:'
           exception: null
           status: null
@@ -14136,9 +14141,9 @@ sections:
             - iː
             compiled: i:[+long]
           env:
-            raw: _$$oː
+            raw: _$%oː
             tokens:
-            - _$$oː
+            - _$%oː
             compiled: _$$o:[+long]
           exception: null
           status: null
@@ -14564,9 +14569,9 @@ sections:
             - eː
             compiled: a:[+long] e:[+long]
           env:
-            raw: _$
+            raw: _%
             tokens:
-            - _$
+            - _%
             compiled: _$
           exception: null
           status: null
@@ -25467,9 +25472,9 @@ sections:
             - i
             compiled: i
           env:
-            raw: Vː$_
+            raw: Vː%_
             tokens:
-            - Vː$_
+            - Vː%_
             compiled: V:[+long]$_
           exception:
             raw: _H
@@ -59867,13 +59872,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: ɣ s d > {j dr} / _#
+      rule: ɣ s d > j dr / _#
       series:
         parts:
         - type: title
           index: 10.3.7
           section: Proto-Oceanic to Shark Bay#Shark-Bay-ɣ-s-d
-        - value: ɣ s d > {j dr} / _#
+        - value: ɣ s d > j dr / _#
           input:
             raw: ɣ s d
             tokens:
@@ -59882,10 +59887,11 @@ sections:
             - d
             compiled: ɣ s d
           output:
-            raw: '{j dr}'
+            raw: j dr
             tokens:
-            - - j dr
-            compiled: '{j dr}'
+            - j
+            - dr
+            compiled: j dr
           env:
             raw: _#
             tokens:
@@ -59903,13 +59909,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: ɣ s d > {j dr}
+      rule: ɣ s d > j dr
       series:
         parts:
         - type: title
           index: 10.3.7
           section: Proto-Oceanic to Shark Bay#Shark-Bay-ɣ-s-d_2
-        - value: ɣ s d > {j dr}
+        - value: ɣ s d > j dr
           input:
             raw: ɣ s d
             tokens:
@@ -59918,10 +59924,11 @@ sections:
             - d
             compiled: ɣ s d
           output:
-            raw: '{j dr}'
+            raw: j dr
             tokens:
-            - - j dr
-            compiled: '{j dr}'
+            - j
+            - dr
+            compiled: j dr
           env: null
           exception: null
           status: null
@@ -60758,13 +60765,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: c ɲ > {ɲ,j}
+      rule: c ɲ > j
       series:
         parts:
         - type: title
           index: 10.3.9.1
           section: Proto-Utupua to Asuboa#Asuboa-c-ɲ
-        - value: c ɲ > {ɲ,j}
+        - value: c ɲ > j
           input:
             raw: c ɲ
             tokens:
@@ -60772,11 +60779,10 @@ sections:
             - ɲ
             compiled: c ɲ
           output:
-            raw: '{ɲ,j}'
+            raw: j
             tokens:
-            - - ɲ
-              - j
-            compiled: '{ɲ,j}'
+            - j
+            compiled: j
           env: null
           exception: null
           status: null
@@ -62210,13 +62216,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: p q > {v,p}
+      rule: p q > p
       series:
         parts:
         - type: title
           index: 10.3.10
           section: Proto-Oceanic to Proto-Vanikoro#Proto-Vanikoro-p-q
-        - value: p q > {v,p}
+        - value: p q > p
           input:
             raw: p q
             tokens:
@@ -62224,11 +62230,10 @@ sections:
             - q
             compiled: p q
           output:
-            raw: '{v,p}'
+            raw: p
             tokens:
-            - - v
-              - p
-            compiled: '{v,p}'
+            - p
+            compiled: p
           env: null
           exception: null
           status: null
@@ -62348,13 +62353,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: p t > {s,k} / _u
+      rule: p t > k / _u
       series:
         parts:
         - type: title
           index: 10.3.10.1
           section: Proto-Vanikoro to Buma#Buma-p-t
-        - value: p t > {s,k} / _u
+        - value: p t > k / _u
           input:
             raw: p t
             tokens:
@@ -62362,11 +62367,10 @@ sections:
             - t
             compiled: p t
           output:
-            raw: '{s,k}'
+            raw: k
             tokens:
-            - - s
-              - k
-            compiled: '{s,k}'
+            - k
+            compiled: k
           env:
             raw: _u
             tokens:
@@ -83453,24 +83457,23 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: n:[+long] > {n,n:[+long]}
+      rule: n:[+long] > n:[+long]
       series:
         parts:
         - type: title
           index: '14.1'
           section: Proto-Elamo-Dravidian to Proto-Dravidian#Proto-Dravidian-nː
-        - value: n:[+long] > {n,n:[+long]}
+        - value: n:[+long] > n:[+long]
           input:
             raw: nː
             tokens:
             - nː
             compiled: n:[+long]
           output:
-            raw: '{n,n:[+long]}'
+            raw: n:[+long]
             tokens:
-            - - n
-              - n:[+long]
-            compiled: '{n,n:[+long]}'
+            - n:[+long]
+            compiled: n:[+long]
           env: null
           exception: null
           status: null
@@ -83761,24 +83764,23 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: mp > {p,p:[+long]} / V_V
+      rule: mp > p:[+long] / V_V
       series:
         parts:
         - type: title
           index: '14.2'
           section: Proto-Elamo-Dravidian to Achaemanid Elamite#Achaemanid-Elamite-mp
-        - value: mp > {p,p:[+long]} / V_V
+        - value: mp > p:[+long] / V_V
           input:
             raw: mp
             tokens:
             - mp
             compiled: mp
           output:
-            raw: '{p,p:[+long]}'
+            raw: p:[+long]
             tokens:
-            - - p
-              - p:[+long]
-            compiled: '{p,p:[+long]}'
+            - p:[+long]
+            compiled: p:[+long]
           env:
             raw: V_V
             tokens:
@@ -94135,9 +94137,9 @@ sections:
             - d
             compiled: d
           env:
-            raw: $_C[+strident]
+            raw: '%_C[+strident]'
             tokens:
-            - $_C[+strident]
+            - '%_C[+strident]'
             compiled: $_C:[+strident]
           exception: null
           status: null
@@ -95319,9 +95321,9 @@ sections:
             - d
             compiled: d
           env:
-            raw: $_C[+strident]
+            raw: '%_C[+strident]'
             tokens:
-            - $_C[+strident]
+            - '%_C[+strident]'
             compiled: $_C:[+strident]
           exception: null
           status: null
@@ -96752,13 +96754,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: V > V:[+long]
+      rule: V > V:[+long] / in %:[+stress, +lo]
       series:
         parts:
         - type: title
           index: 17.2.1
           section: Common Anatolian to Hittite#Hittite-V
-        - value: V > V:[+long]
+        - value: V > V:[+long] / in %:[+stress, +lo]
           input:
             raw: V
             tokens:
@@ -96769,7 +96771,12 @@ sections:
             tokens:
             - Vː
             compiled: V:[+long]
-          env: null
+          env:
+            raw: in U:[+stress][+lo]
+            tokens:
+            - in
+            - U:[+stress][+lo]
+            compiled: in %:[+stress, +lo]
           exception: null
           status: null
           sporadic: null
@@ -96782,13 +96789,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: e o > e:[+long] o:[+long]
+      rule: e o > e:[+long] o:[+long] / in %:[+stress, +stress]
       series:
         parts:
         - type: title
           index: 17.2.1
           section: Common Anatolian to Hittite#Hittite-e-o
-        - value: e o > e:[+long] o:[+long]
+        - value: e o > e:[+long] o:[+long] / in %:[+stress, +stress]
           input:
             raw: e o
             tokens:
@@ -96801,7 +96808,12 @@ sections:
             - eː
             - oː
             compiled: e:[+long] o:[+long]
-          env: null
+          env:
+            raw: in U:[+stress][+stress]
+            tokens:
+            - in
+            - U:[+stress][+stress]
+            compiled: in %:[+stress, +stress]
           exception: null
           status: null
           sporadic: null
@@ -97564,13 +97576,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: V > V:[+long]
+      rule: V > V:[+long] / in %:[+stress, +lo]
       series:
         parts:
         - type: title
           index: 17.2.2
           section: Common Anatolian to Luwian#Luwian-V
-        - value: V > V:[+long]
+        - value: V > V:[+long] / in %:[+stress, +lo]
           input:
             raw: V
             tokens:
@@ -97581,7 +97593,12 @@ sections:
             tokens:
             - Vː
             compiled: V:[+long]
-          env: null
+          env:
+            raw: in U:[+stress][+lo]
+            tokens:
+            - in
+            - U:[+stress][+lo]
+            compiled: in %:[+stress, +lo]
           exception: null
           status: null
           sporadic: null
@@ -97594,13 +97611,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: V > V:[+long]
+      rule: 'V > V:[+long] / in #%:[+stress]'
       series:
         parts:
         - type: title
           index: 17.2.2
           section: Common Anatolian to Luwian#Luwian-V_2
-        - value: V > V:[+long]
+        - value: 'V > V:[+long] / in #%:[+stress]'
           input:
             raw: V
             tokens:
@@ -97611,7 +97628,12 @@ sections:
             tokens:
             - Vː
             compiled: V:[+long]
-          env: null
+          env:
+            raw: 'in #U:[+stress]'
+            tokens:
+            - in
+            - '#U:[+stress]'
+            compiled: 'in #%:[+stress]'
           exception: null
           status: null
           sporadic: null
@@ -99413,13 +99435,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: '{e,o} > a'
+      rule: '{e,o} > a / in %[-stress]'
       series:
         parts:
         - type: title
           index: 17.2.4
           section: Common Anatolian to Lydian#Lydian-e,o
-        - value: '{e,o} > a'
+        - value: '{e,o} > a / in %[-stress]'
           input:
             raw: '{e,o}'
             tokens:
@@ -99431,7 +99453,12 @@ sections:
             tokens:
             - a
             compiled: a
-          env: null
+          env:
+            raw: in U[-stress]
+            tokens:
+            - in
+            - U[-stress]
+            compiled: in %[-stress]
           exception: null
           status: null
           sporadic: null
@@ -99803,13 +99830,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: a e > a:[+long] e:[+long]
+      rule: a e > a:[+long] e:[+long] / in %:[+stress, +hi]
       series:
         parts:
         - type: title
           index: 17.2.5
           section: Common Anatolian to Palaic#Palaic-a-e
-        - value: a e > a:[+long] e:[+long]
+        - value: a e > a:[+long] e:[+long] / in %:[+stress, +hi]
           input:
             raw: a e
             tokens:
@@ -99822,7 +99849,12 @@ sections:
             - aː
             - eː
             compiled: a:[+long] e:[+long]
-          env: null
+          env:
+            raw: in U:[+stress][+hi]
+            tokens:
+            - in
+            - U:[+stress][+hi]
+            compiled: in %:[+stress, +hi]
           exception: null
           status: null
           sporadic: null
@@ -111848,9 +111880,9 @@ sections:
             - ∅
             compiled: ∅
           env:
-            raw: $[+str]_$[+str]
+            raw: '%[+str]_%[+str]'
             tokens:
-            - $[+str]_$[+str]
+            - '%[+str]_%[+str]'
             compiled: $[+str]_$[+str]
           exception: null
           status: null
@@ -114374,9 +114406,9 @@ sections:
             - o
             compiled: e o
           env:
-            raw: _${a,o}
+            raw: _%{a,o}
             tokens:
-            - _${a,o}
+            - _%{a,o}
             compiled: _${a,o}
           exception: null
           status: null
@@ -115357,15 +115389,15 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] // in #% with the following % containing
-        i:[+long] or ending in one of /m n r l/'
+      rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / in %[+lo] // in #% with the following
+        % containing i:[+long] or ending in one of /m n r l/'
       series:
         parts:
         - type: title
           index: 17.7.2.1.2
           section: Old English to Kentish Middle English#Kentish-Middle-English-ɑ-e-o
-        - value: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] // in #% with the following
-            % containing i:[+long] or ending in one of /m n r l/'
+        - value: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / in %[+lo] // in #% with
+            the following % containing i:[+long] or ending in one of /m n r l/'
           input:
             raw: ɑ e o
             tokens:
@@ -115380,7 +115412,12 @@ sections:
             - ɛː
             - oː
             compiled: ɑ:[+long] ɛ:[+long] o:[+long]
-          env: null
+          env:
+            raw: in U[+lo]
+            tokens:
+            - in
+            - U[+lo]
+            compiled: in %[+lo]
           exception:
             raw: 'in #U with the following U containing /iː/ or ending in one of /m
               n r l/'
@@ -116035,15 +116072,15 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] // in #% with the following % containing
-        i:[+long] or ending in one of /m n r l/'
+      rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / in %[+lo] // in #% with the following
+        % containing i:[+long] or ending in one of /m n r l/'
       series:
         parts:
         - type: title
           index: 17.7.2.1.3
           section: Old English to Midlands Middle English#Midlands-Middle-English-ɑ-e-o
-        - value: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] // in #% with the following
-            % containing i:[+long] or ending in one of /m n r l/'
+        - value: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / in %[+lo] // in #% with
+            the following % containing i:[+long] or ending in one of /m n r l/'
           input:
             raw: ɑ e o
             tokens:
@@ -116058,7 +116095,12 @@ sections:
             - ɛː
             - oː
             compiled: ɑ:[+long] ɛ:[+long] o:[+long]
-          env: null
+          env:
+            raw: in U[+lo]
+            tokens:
+            - in
+            - U[+lo]
+            compiled: in %[+lo]
           exception:
             raw: 'in #U with the following U containing /iː/ or ending in one of /m
               n r l/'
@@ -118275,9 +118317,9 @@ sections:
             - ∅
             compiled: ∅
           env:
-            raw: ${θ,s,z,l}_V:[+stress]
+            raw: '%{θ,s,z,l}_V:[+stress]'
             tokens:
-            - ${θ,s,z,l}_V:[+stress]
+            - '%{θ,s,z,l}_V:[+stress]'
             compiled: ${θ,s,z,l}_V:[+stress]
           exception: null
           status: null
@@ -118315,9 +118357,9 @@ sections:
             compiled: ʃ ʒ {j,ɫj}
           env: null
           exception:
-            raw: ${θ,s,z,l}_V:[+stress]
+            raw: '%{θ,s,z,l}_V:[+stress]'
             tokens:
-            - ${θ,s,z,l}_V:[+stress]
+            - '%{θ,s,z,l}_V:[+stress]'
             compiled: ${θ,s,z,l}_V:[+stress]
           status: null
           sporadic: null
@@ -118508,14 +118550,14 @@ sections:
             - æː
             compiled: æ:[+long]
           env:
-            raw: _{n,m,ɡ,ɫ}$
+            raw: _{n,m,ɡ,ɫ}%
             tokens:
-            - _{n,m,ɡ,ɫ}$
+            - _{n,m,ɡ,ɫ}%
             compiled: _{n,m,ɡ,ɫ}$
           exception:
-            raw: _{n,m,ɡ,ɫ}${j,w}
+            raw: _{n,m,ɡ,ɫ}%{j,w}
             tokens:
-            - _{n,m,ɡ,ɫ}${j,w}
+            - _{n,m,ɡ,ɫ}%{j,w}
             compiled: _{n,m,ɡ,ɫ}${j,w}
           status: null
           sporadic: null
@@ -119242,15 +119284,15 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] // in #% with the following % containing
-        i:[+long] or ending in one of /m n r l/'
+      rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / in %[+lo] // in #% with the following
+        % containing i:[+long] or ending in one of /m n r l/'
       series:
         parts:
         - type: title
           index: 17.7.2.1.8
           section: Old English to Northern Middle English#Northern-Middle-English-ɑ-e-o
-        - value: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] // in #% with the following
-            % containing i:[+long] or ending in one of /m n r l/'
+        - value: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / in %[+lo] // in #% with
+            the following % containing i:[+long] or ending in one of /m n r l/'
           input:
             raw: ɑ e o
             tokens:
@@ -119265,7 +119307,12 @@ sections:
             - ɛː
             - oː
             compiled: ɑ:[+long] ɛ:[+long] o:[+long]
-          env: null
+          env:
+            raw: in U[+lo]
+            tokens:
+            - in
+            - U[+lo]
+            compiled: in %[+lo]
           exception:
             raw: 'in #U with the following U containing /iː/ or ending in one of /m
               n r l/'
@@ -121465,9 +121512,9 @@ sections:
             - _C
             compiled: _C
           exception:
-            raw: _$C
+            raw: _%C
             tokens:
-            - _$C
+            - _%C
             compiled: _$C
           status: null
           sporadic: null
@@ -123186,15 +123233,15 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] // in #% with the following % containing
-        i:[+long] or ending in one of /m n r l/'
+      rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / in %[+lo] // in #% with the following
+        % containing i:[+long] or ending in one of /m n r l/'
       series:
         parts:
         - type: title
           index: 17.7.2.1.12
           section: Old English to Southern Middle English#Southern-Middle-English-ɑ-e-o
-        - value: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] // in #% with the following
-            % containing i:[+long] or ending in one of /m n r l/'
+        - value: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / in %[+lo] // in #% with
+            the following % containing i:[+long] or ending in one of /m n r l/'
           input:
             raw: ɑ e o
             tokens:
@@ -123209,7 +123256,12 @@ sections:
             - ɛː
             - oː
             compiled: ɑ:[+long] ɛ:[+long] o:[+long]
-          env: null
+          env:
+            raw: in U[+lo]
+            tokens:
+            - in
+            - U[+lo]
+            compiled: in %[+lo]
           exception:
             raw: 'in #U with the following U containing /iː/ or ending in one of /m
               n r l/'
@@ -123586,9 +123638,9 @@ sections:
             - ∅
             compiled: ∅
           env:
-            raw: C_$
+            raw: C_%
             tokens:
-            - C_$
+            - C_%
             compiled: C_$
           exception: null
           status: null
@@ -125945,9 +125997,9 @@ sections:
             - V[- long]
             compiled: V:[- long]
           env:
-            raw: _$Cə{r,l,n}#
+            raw: _%Cə{r,l,n}#
             tokens:
-            - _$Cə{r,l,n}#
+            - _%Cə{r,l,n}#
             compiled: _$Cə{r,l,n}#
           exception: null
           status: null
@@ -125979,9 +126031,9 @@ sections:
             - Vː
             compiled: V:[+long]
           env:
-            raw: _$ when stressed
+            raw: _% when stressed
             tokens:
-            - _$
+            - _%
             - when
             - stressed
             compiled: _$ when stressed
@@ -126147,9 +126199,9 @@ sections:
             - ə
             compiled: ə
           env:
-            raw: M_r$
+            raw: M_r%
             tokens:
-            - M_r$
+            - M_r%
             compiled: M_r$
           exception: null
           status: null
@@ -127221,9 +127273,9 @@ sections:
             - a
             compiled: a
           env:
-            raw: _n$
+            raw: _n%
             tokens:
-            - _n$
+            - _n%
             compiled: _n$
           exception: null
           status: null
@@ -128450,9 +128502,9 @@ sections:
             - u
             compiled: u
           env:
-            raw: $u /
+            raw: '%u /'
             tokens:
-            - $u
+            - '%u'
             - /
             compiled: $u /
           exception:
@@ -128491,9 +128543,9 @@ sections:
             - noː
             compiled: o:[+long] no:[+long]
           env:
-            raw: '$u in #U'
+            raw: '%u in #U'
             tokens:
-            - $u
+            - '%u'
             - in
             - '#U'
             compiled: '$u in #%'
@@ -131420,9 +131472,9 @@ sections:
             - h
             compiled: f h
           env:
-            raw: _$
+            raw: _%
             tokens:
-            - _$
+            - _%
             compiled: _$
           exception: null
           status: null
@@ -131864,9 +131916,9 @@ sections:
             - V[- long]
             compiled: wo wøje V:[- long]
           env:
-            raw: _$
+            raw: _%
             tokens:
-            - _$
+            - _%
             compiled: _$
           exception: null
           status: null
@@ -136541,24 +136593,23 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: o:[+long] > {u,u:[+long]}
+      rule: o:[+long] > u:[+long]
       series:
         parts:
         - type: title
           index: 17.7.3.1.2
           section: Old Norse to Orkney Norn#Orkney-Norn-oː_2
-        - value: o:[+long] > {u,u:[+long]}
+        - value: o:[+long] > u:[+long]
           input:
             raw: oː
             tokens:
             - oː
             compiled: o:[+long]
           output:
-            raw: '{u,u:[+long]}'
+            raw: u:[+long]
             tokens:
-            - - u
-              - u:[+long]
-            compiled: '{u,u:[+long]}'
+            - u:[+long]
+            compiled: u:[+long]
           env: null
           exception: null
           status: null
@@ -141984,10 +142035,10 @@ sections:
             - ∅
             compiled: ∅
           env:
-            raw: $i_n#, $i_s#
+            raw: '%i_n#, %i_s#'
             tokens:
-            - $i_n#,
-            - $i_s#
+            - '%i_n#,'
+            - '%i_s#'
             compiled: $i_n#, $i_s#
           exception: null
           status: null
@@ -144189,24 +144240,23 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: Vns > {Vs,V:[+long]s}
+      rule: Vns > V:[+long]s
       series:
         parts:
         - type: title
           index: 17.8.6
           section: Proto-Indo-European to Doric Greek#Doric-Greek-Vns
-        - value: Vns > {Vs,V:[+long]s}
+        - value: Vns > V:[+long]s
           input:
             raw: Vns
             tokens:
             - Vns
             compiled: Vns
           output:
-            raw: '{Vs,V:[+long]s}'
+            raw: V:[+long]s
             tokens:
-            - - Vs
-              - V:[+long]s
-            compiled: '{Vs,V:[+long]s}'
+            - V:[+long]s
+            compiled: V:[+long]s
           env: null
           exception: null
           status: null
@@ -153404,24 +153454,23 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: ɤl > {ɔɫ,ɔ:[+long]ɫ} / C:[+labial]_
+      rule: ɤl > ɔ:[+long]ɫ / C:[+labial]_
       series:
         parts:
         - type: title
           index: 17.11.1
           section: Proto-Slavic to Polish#Polish-ъl
-        - value: ɤl > {ɔɫ,ɔ:[+long]ɫ} / C:[+labial]_
+        - value: ɤl > ɔ:[+long]ɫ / C:[+labial]_
           input:
             raw: ɤl
             tokens:
             - ɤl
             compiled: ɤl
           output:
-            raw: '{ɔɫ,ɔ:[+long]ɫ}'
+            raw: ɔ:[+long]ɫ
             tokens:
-            - - ɔɫ
-              - ɔ:[+long]ɫ
-            compiled: '{ɔɫ,ɔ:[+long]ɫ}'
+            - ɔ:[+long]ɫ
+            compiled: ɔ:[+long]ɫ
           env:
             raw: P_
             tokens:
@@ -153609,24 +153658,23 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: ɪl > {ɔɫ,ɔ:[+long]ɫ}
+      rule: ɪl > ɔ:[+long]ɫ
       series:
         parts:
         - type: title
           index: 17.11.1
           section: Proto-Slavic to Polish#Polish-ьl_4
-        - value: ɪl > {ɔɫ,ɔ:[+long]ɫ}
+        - value: ɪl > ɔ:[+long]ɫ
           input:
             raw: ɪl
             tokens:
             - ɪl
             compiled: ɪl
           output:
-            raw: '{ɔɫ,ɔ:[+long]ɫ}'
+            raw: ɔ:[+long]ɫ
             tokens:
-            - - ɔɫ
-              - ɔ:[+long]ɫ
-            compiled: '{ɔɫ,ɔ:[+long]ɫ}'
+            - ɔ:[+long]ɫ
+            compiled: ɔ:[+long]ɫ
           env: null
           exception: null
           status: null
@@ -153674,24 +153722,23 @@ sections:
     targets:
     - step_idx: 0
       alt_idx: null
-      rule: ɪr > {iʐ,i:[+long]ʐ}
+      rule: ɪr > i:[+long]ʐ
       series:
         parts:
         - type: title
           index: 17.11.1
           section: Proto-Slavic to Polish#Polish-ьr
-        - value: ɪr > {iʐ,i:[+long]ʐ}
+        - value: ɪr > i:[+long]ʐ
           input:
             raw: ɪr
             tokens:
             - ɪr
             compiled: ɪr
           output:
-            raw: '{iʐ,i:[+long]ʐ}'
+            raw: i:[+long]ʐ
             tokens:
-            - - iʐ
-              - i:[+long]ʐ
-            compiled: '{iʐ,i:[+long]ʐ}'
+            - i:[+long]ʐ
+            compiled: i:[+long]ʐ
           env: null
           exception: null
           status: null
@@ -159651,9 +159698,9 @@ sections:
             - i
             compiled: i
           env:
-            raw: $(C)(C)_$ when unstressed
+            raw: '%(C)(C)_% when unstressed'
             tokens:
-            - $(C)(C)_$
+            - '%(C)(C)_%'
             - when
             - unstressed
             compiled: $(C)(C)_$ when unstressed
@@ -159687,9 +159734,9 @@ sections:
             - o
             compiled: o
           env:
-            raw: $(C)(C)V_$ when unstressed
+            raw: '%(C)(C)V_% when unstressed'
             tokens:
-            - $(C)(C)V_$
+            - '%(C)(C)V_%'
             - when
             - unstressed
             compiled: $(C)(C)V_$ when unstressed
@@ -159723,9 +159770,9 @@ sections:
             - e
             compiled: e
           env:
-            raw: $(C)(C)_$r when unstressed
+            raw: '%(C)(C)_%r when unstressed'
             tokens:
-            - $(C)(C)_$r
+            - '%(C)(C)_%r'
             - when
             - unstressed
             compiled: $(C)(C)_$r when unstressed
@@ -159759,9 +159806,9 @@ sections:
             - i
             compiled: i
           env:
-            raw: $(C)(C)_$P when unstressed
+            raw: '%(C)(C)_%P when unstressed'
             tokens:
-            - $(C)(C)_$P
+            - '%(C)(C)_%P'
             - when
             - unstressed
             compiled: $(C)(C)_$C:[+labial] when unstressed
@@ -159792,9 +159839,9 @@ sections:
             - u
             compiled: u
           env:
-            raw: $(C)(C)_$P when unstressed
+            raw: '%(C)(C)_%P when unstressed'
             tokens:
-            - $(C)(C)_$P
+            - '%(C)(C)_%P'
             - when
             - unstressed
             compiled: $(C)(C)_$C:[+labial] when unstressed
@@ -159830,9 +159877,9 @@ sections:
             - u
             compiled: e u
           env:
-            raw: $(C)(C)_C(C)$ when unstressed
+            raw: '%(C)(C)_C(C)% when unstressed'
             tokens:
-            - $(C)(C)_C(C)$
+            - '%(C)(C)_C(C)%'
             - when
             - unstressed
             compiled: $(C)(C)_{C,CC}$ when unstressed
@@ -159866,9 +159913,9 @@ sections:
             - e
             compiled: e
           env:
-            raw: $(C)(C)_ŋ when unstressed
+            raw: '%(C)(C)_ŋ when unstressed'
             tokens:
-            - $(C)(C)_ŋ
+            - '%(C)(C)_ŋ'
             - when
             - unstressed
             compiled: $(C)(C)_ŋ when unstressed
@@ -159899,9 +159946,9 @@ sections:
             - i
             compiled: i
           env:
-            raw: $(C)(C)_ŋ when unstressed
+            raw: '%(C)(C)_ŋ when unstressed'
             tokens:
-            - $(C)(C)_ŋ
+            - '%(C)(C)_ŋ'
             - when
             - unstressed
             compiled: $(C)(C)_ŋ when unstressed
@@ -159935,9 +159982,9 @@ sections:
             - e
             compiled: e
           env:
-            raw: $(C)(C)_ɫ when unstressed
+            raw: '%(C)(C)_ɫ when unstressed'
             tokens:
-            - $(C)(C)_ɫ
+            - '%(C)(C)_ɫ'
             - when
             - unstressed
             compiled: $(C)(C)_ɫ when unstressed
@@ -159968,9 +160015,9 @@ sections:
             - u
             compiled: u
           env:
-            raw: $(C)(C)_ɫ when unstressed
+            raw: '%(C)(C)_ɫ when unstressed'
             tokens:
-            - $(C)(C)_ɫ
+            - '%(C)(C)_ɫ'
             - when
             - unstressed
             compiled: $(C)(C)_ɫ when unstressed
@@ -160004,9 +160051,9 @@ sections:
             - u
             compiled: u
           env:
-            raw: $(C)(C)_ɫ when unstressed
+            raw: '%(C)(C)_ɫ when unstressed'
             tokens:
-            - $(C)(C)_ɫ
+            - '%(C)(C)_ɫ'
             - when
             - unstressed
             compiled: $(C)(C)_ɫ when unstressed
@@ -160040,9 +160087,9 @@ sections:
             - ei
             compiled: ei
           env:
-            raw: $(C)(C)_ when unstressed
+            raw: '%(C)(C)_ when unstressed'
             tokens:
-            - $(C)(C)_
+            - '%(C)(C)_'
             - when
             - unstressed
             compiled: $(C)(C)_ when unstressed
@@ -160073,9 +160120,9 @@ sections:
             - iː
             compiled: i:[+long]
           env:
-            raw: $(C)(C)_ when unstressed
+            raw: '%(C)(C)_ when unstressed'
             tokens:
-            - $(C)(C)_
+            - '%(C)(C)_'
             - when
             - unstressed
             compiled: $(C)(C)_ when unstressed
@@ -160113,9 +160160,9 @@ sections:
             - uː
             compiled: i:[+long] e:[+long] u:[+long]
           env:
-            raw: $(C)(C)_ when unstressed
+            raw: '%(C)(C)_ when unstressed'
             tokens:
-            - $(C)(C)_
+            - '%(C)(C)_'
             - when
             - unstressed
             compiled: $(C)(C)_ when unstressed
@@ -163676,9 +163723,9 @@ sections:
             - ∅
             compiled: ∅
           env:
-            raw: V:[+stress]$C_L(C)V(C)#
+            raw: V:[+stress]%C_L(C)V(C)#
             tokens:
-            - V:[+stress]$C_L(C)V(C)#
+            - V:[+stress]%C_L(C)V(C)#
             compiled: V:[+stress]$C_L(C){V,VC}#
           exception: null
           status: null
@@ -163710,9 +163757,9 @@ sections:
             - ∅
             compiled: ∅
           env:
-            raw: V:[+stress]$L_C(C)V(C)#
+            raw: V:[+stress]%L_C(C)V(C)#
             tokens:
-            - V:[+stress]$L_C(C)V(C)#
+            - V:[+stress]%L_C(C)V(C)#
             compiled: V:[+stress]$L_C(C){V,VC}#
           exception: null
           status: null
@@ -163744,9 +163791,9 @@ sections:
             - ∅
             compiled: ∅
           env:
-            raw: V:[+stress]$s_t(C)V(C)#
+            raw: V:[+stress]%s_t(C)V(C)#
             tokens:
-            - V:[+stress]$s_t(C)V(C)#
+            - V:[+stress]%s_t(C)V(C)#
             compiled: V:[+stress]$s_t(C){V,VC}#
           exception: null
           status: null
@@ -163869,9 +163916,9 @@ sections:
             - i
             compiled: i
           env:
-            raw: _$V:[+stress]
+            raw: _%V:[+stress]
             tokens:
-            - _$V:[+stress]
+            - _%V:[+stress]
             compiled: _$V:[+stress]
           exception: null
           status: null
@@ -163944,9 +163991,9 @@ sections:
             - e
             compiled: e
           env:
-            raw: _$V:[+stress]
+            raw: _%V:[+stress]
             tokens:
-            - _$V:[+stress]
+            - _%V:[+stress]
             compiled: _$V:[+stress]
           exception: null
           status: null
@@ -164046,9 +164093,9 @@ sections:
             - u
             compiled: u
           env:
-            raw: _$V:[+stress]
+            raw: _%V:[+stress]
             tokens:
-            - _$V:[+stress]
+            - _%V:[+stress]
             compiled: _$V:[+stress]
           exception: null
           status: null
@@ -164080,9 +164127,9 @@ sections:
             - a
             compiled: a
           env:
-            raw: _$u:[+stress]
+            raw: _%u:[+stress]
             tokens:
-            - _$u:[+stress]
+            - _%u:[+stress]
             compiled: _$u:[+stress]
           exception: null
           status: null
@@ -164152,9 +164199,9 @@ sections:
             - u
             compiled: u
           env:
-            raw: _$V:[+stress] in East Catalan
+            raw: _%V:[+stress] in East Catalan
             tokens:
-            - _$V:[+stress]
+            - _%V:[+stress]
             - in
             - East
             - Catalan
@@ -164190,9 +164237,9 @@ sections:
             - o
             compiled: o
           env:
-            raw: _$V:[+stress] else
+            raw: _%V:[+stress] else
             tokens:
-            - _$V:[+stress]
+            - _%V:[+stress]
             - else
             compiled: _$V:[+stress] else
           exception: null
@@ -164384,9 +164431,9 @@ sections:
             - o
             compiled: e o
           env:
-            raw: _$V:[+stress]
+            raw: _%V:[+stress]
             tokens:
-            - _$V:[+stress]
+            - _%V:[+stress]
             compiled: _$V:[+stress]
           exception: null
           status: null
@@ -164452,9 +164499,9 @@ sections:
             - u
             compiled: u
           env:
-            raw: _$V:[+stress]
+            raw: _%V:[+stress]
             tokens:
-            - _$V:[+stress]
+            - _%V:[+stress]
             compiled: _$V:[+stress]
           exception: null
           status: null
@@ -165760,9 +165807,9 @@ sections:
             - wʒ
             compiled: wʒ
           env:
-            raw: _$V:[+stress]
+            raw: _%V:[+stress]
             tokens:
-            - _$V:[+stress]
+            - _%V:[+stress]
             compiled: _$V:[+stress]
           exception: null
           status: null
@@ -165794,9 +165841,9 @@ sections:
             - v
             compiled: v
           env:
-            raw: V$_j
+            raw: V%_j
             tokens:
-            - V$_j
+            - V%_j
             compiled: V$_j
           exception: null
           status: null
@@ -165862,9 +165909,9 @@ sections:
             - ∅
             compiled: ∅
           env:
-            raw: _$V:[+stress]
+            raw: _%V:[+stress]
             tokens:
-            - _$V:[+stress]
+            - _%V:[+stress]
             compiled: _$V:[+stress]
           exception: null
           status: null
@@ -166056,9 +166103,9 @@ sections:
             - ∅
             compiled: ∅
           env:
-            raw: V:[+stress]$_(C)(C)V(C)#
+            raw: V:[+stress]%_(C)(C)V(C)#
             tokens:
-            - V:[+stress]$_(C)(C)V(C)#
+            - V:[+stress]%_(C)(C)V(C)#
             compiled: V:[+stress]$_(C)(C){V,VC}#
           exception: null
           status: null
@@ -166194,9 +166241,9 @@ sections:
             - z
             compiled: z
           env:
-            raw: V:[+stress]$V_V
+            raw: V:[+stress]%V_V
             tokens:
-            - V:[+stress]$V_V
+            - V:[+stress]%V_V
             compiled: V:[+stress]$V_V
           exception: null
           status: null
@@ -166228,9 +166275,9 @@ sections:
             - ∅
             compiled: ∅
           env:
-            raw: V_V$V:[+stress]
+            raw: V_V%V:[+stress]
             tokens:
-            - V_V$V:[+stress]
+            - V_V%V:[+stress]
             compiled: V_V$V:[+stress]
           exception: null
           status: null
@@ -166329,9 +166376,9 @@ sections:
             - ∅
             compiled: ∅
           env:
-            raw: V_V$V:[+stress]
+            raw: V_V%V:[+stress]
             tokens:
-            - V_V$V:[+stress]
+            - V_V%V:[+stress]
             compiled: V_V$V:[+stress]
           exception: null
           status: null
@@ -167113,9 +167160,9 @@ sections:
             - k
             compiled: k
           env:
-            raw: '#_a$V:[+stress]'
+            raw: '#_a%V:[+stress]'
             tokens:
-            - '#_a$V:[+stress]'
+            - '#_a%V:[+stress]'
             compiled: '#_a$V:[+stress]'
           exception: null
           status: null
@@ -168940,13 +168987,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: ɛ > iɛ
+      rule: ɛ > iɛ / in %[+lo]
       series:
         parts:
         - type: title
           index: 17.12.1.1.3
           section: Latin to French#French-è
-        - value: ɛ > iɛ
+        - value: ɛ > iɛ / in %[+lo]
           input:
             raw: ɛ
             tokens:
@@ -168957,7 +169004,12 @@ sections:
             tokens:
             - iɛ
             compiled: iɛ
-          env: null
+          env:
+            raw: in U[+lo]
+            tokens:
+            - in
+            - U[+lo]
+            compiled: in %[+lo]
           exception: null
           status: null
           sporadic: null
@@ -169004,13 +169056,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: ɛ > ɛ
+      rule: ɛ > ɛ / in %[+hi]
       series:
         parts:
         - type: title
           index: 17.12.1.1.3
           section: Latin to French#French-è_3
-        - value: ɛ > ɛ
+        - value: ɛ > ɛ / in %[+hi]
           input:
             raw: ɛ
             tokens:
@@ -169021,7 +169073,12 @@ sections:
             tokens:
             - ɛ
             compiled: ɛ
-          env: null
+          env:
+            raw: in U[+hi]
+            tokens:
+            - in
+            - U[+hi]
+            compiled: in %[+hi]
           exception: null
           status: null
           sporadic: null
@@ -169034,13 +169091,13 @@ sections:
     targets:
     - step_idx: 0
       alt_idx: null
-      rule: o > uo // _N
+      rule: o > uo / in %[+lo] // _N
       series:
         parts:
         - type: title
           index: 17.12.1.1.3
           section: Latin to French#French-ò
-        - value: o > uo // _N
+        - value: o > uo / in %[+lo] // _N
           input:
             raw: o
             tokens:
@@ -169051,7 +169108,12 @@ sections:
             tokens:
             - uo
             compiled: uo
-          env: null
+          env:
+            raw: in U[+lo]
+            tokens:
+            - in
+            - U[+lo]
+            compiled: in %[+lo]
           exception:
             raw: _N
             tokens:
@@ -169065,13 +169127,13 @@ sections:
           type: sound_change_rule
     - step_idx: 1
       alt_idx: null
-      rule: uo > uɛ // _N
+      rule: uo > uɛ / in %[+lo] // _N
       series:
         parts:
         - type: title
           index: 17.12.1.1.3
           section: Latin to French#French-ò
-        - value: uo > uɛ // _N
+        - value: uo > uɛ / in %[+lo] // _N
           input:
             raw: uo
             tokens:
@@ -169082,7 +169144,12 @@ sections:
             tokens:
             - uɛ
             compiled: uɛ
-          env: null
+          env:
+            raw: in U[+lo]
+            tokens:
+            - in
+            - U[+lo]
+            compiled: in %[+lo]
           exception:
             raw: _N
             tokens:
@@ -169099,13 +169166,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: o > ɔ
+      rule: o > ɔ / in %[+hi]
       series:
         parts:
         - type: title
           index: 17.12.1.1.3
           section: Latin to French#French-ò_2
-        - value: o > ɔ
+        - value: o > ɔ / in %[+hi]
           input:
             raw: o
             tokens:
@@ -169116,7 +169183,12 @@ sections:
             tokens:
             - ɔ
             compiled: ɔ
-          env: null
+          env:
+            raw: in U[+hi]
+            tokens:
+            - in
+            - U[+hi]
+            compiled: in %[+hi]
           exception: null
           status: null
           sporadic: null
@@ -169434,13 +169506,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: V > ∅ / %_
+      rule: V > ∅ / $_
       series:
         parts:
         - type: title
           index: 17.12.1.1.3
           section: Latin to French#French-V
-        - value: V > ∅ / %_
+        - value: V > ∅ / $_
           input:
             raw: V
             tokens:
@@ -169455,7 +169527,7 @@ sections:
             raw: '%_'
             tokens:
             - '%_'
-            compiled: '%_'
+            compiled: $_
           exception: null
           status: null
           sporadic: null
@@ -169486,9 +169558,9 @@ sections:
             - ∅
             compiled: ∅
           env:
-            raw: $[+str]_$[+str]
+            raw: '%[+str]_%[+str]'
             tokens:
-            - $[+str]_$[+str]
+            - '%[+str]_%[+str]'
             compiled: $[+str]_$[+str]
           exception:
             raw: V = a
@@ -169526,9 +169598,9 @@ sections:
             - ə
             compiled: ə
           env:
-            raw: $[+str]_$[+str]
+            raw: '%[+str]_%[+str]'
             tokens:
-            - $[+str]_$[+str]
+            - '%[+str]_%[+str]'
             compiled: $[+str]_$[+str]
           exception: null
           status: null
@@ -170928,13 +171000,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: e > ɛi
+      rule: e > ɛi / in %[+lo]
       series:
         parts:
         - type: title
           index: 17.12.1.1.3
           section: Latin to French#French-é
-        - value: e > ɛi
+        - value: e > ɛi / in %[+lo]
           input:
             raw: e
             tokens:
@@ -170945,7 +171017,12 @@ sections:
             tokens:
             - ɛi
             compiled: ɛi
-          env: null
+          env:
+            raw: in U[+lo]
+            tokens:
+            - in
+            - U[+lo]
+            compiled: in %[+lo]
           exception: null
           status: null
           sporadic: null
@@ -170958,13 +171035,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: e > ɛ
+      rule: e > ɛ / in %[+hi]
       series:
         parts:
         - type: title
           index: 17.12.1.1.3
           section: Latin to French#French-é_2
-        - value: e > ɛ
+        - value: e > ɛ / in %[+hi]
           input:
             raw: e
             tokens:
@@ -170975,7 +171052,12 @@ sections:
             tokens:
             - ɛ
             compiled: ɛ
-          env: null
+          env:
+            raw: in U[+hi]
+            tokens:
+            - in
+            - U[+hi]
+            compiled: in %[+hi]
           exception: null
           status: null
           sporadic: null
@@ -170988,13 +171070,13 @@ sections:
     targets:
     - step_idx: 0
       alt_idx: null
-      rule: o > ou
+      rule: o > ou / in %[+lo]
       series:
         parts:
         - type: title
           index: 17.12.1.1.3
           section: Latin to French#French-ó
-        - value: o > ou
+        - value: o > ou / in %[+lo]
           input:
             raw: o
             tokens:
@@ -171005,7 +171087,12 @@ sections:
             tokens:
             - ou
             compiled: ou
-          env: null
+          env:
+            raw: in U[+lo]
+            tokens:
+            - in
+            - U[+lo]
+            compiled: in %[+lo]
           exception: null
           status: null
           sporadic: null
@@ -171015,13 +171102,13 @@ sections:
           type: sound_change_rule
     - step_idx: 1
       alt_idx: null
-      rule: ou > ɛu
+      rule: ou > ɛu / in %[+lo]
       series:
         parts:
         - type: title
           index: 17.12.1.1.3
           section: Latin to French#French-ó
-        - value: ou > ɛu
+        - value: ou > ɛu / in %[+lo]
           input:
             raw: ou
             tokens:
@@ -171032,7 +171119,12 @@ sections:
             tokens:
             - ɛu
             compiled: ɛu
-          env: null
+          env:
+            raw: in U[+lo]
+            tokens:
+            - in
+            - U[+lo]
+            compiled: in %[+lo]
           exception: null
           status: null
           sporadic: null
@@ -171079,13 +171171,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: o > ou
+      rule: o > ou / in %[+hi]
       series:
         parts:
         - type: title
           index: 17.12.1.1.3
           section: Latin to French#French-ó_3
-        - value: o > ou
+        - value: o > ou / in %[+hi]
           input:
             raw: o
             tokens:
@@ -171096,7 +171188,12 @@ sections:
             tokens:
             - ou
             compiled: ou
-          env: null
+          env:
+            raw: in U[+hi]
+            tokens:
+            - in
+            - U[+hi]
+            compiled: in %[+hi]
           exception: null
           status: null
           sporadic: null
@@ -171127,9 +171224,9 @@ sections:
             - ə
             compiled: ə
           env:
-            raw: '#(C…)_($…):[+stress] in U[+lo]'
+            raw: '#(C…)_(%…):[+stress] in U[+lo]'
             tokens:
-            - '#(C…)_($…):[+stress]'
+            - '#(C…)_(%…):[+stress]'
             - in
             - U[+lo]
             compiled: '#(C,0)_($,0):[+stress] in %[+lo]'
@@ -171163,9 +171260,9 @@ sections:
             - ɛ
             compiled: ɛ
           env:
-            raw: '#(C…)_($…):[+stress] in U[+hi] or _V'
+            raw: '#(C…)_(%…):[+stress] in U[+hi] or _V'
             tokens:
-            - '#(C…)_($…):[+stress]'
+            - '#(C…)_(%…):[+stress]'
             - in
             - U[+hi]
             - or
@@ -171258,9 +171355,9 @@ sections:
             - ə
             compiled: ə
           env:
-            raw: '#{tʃ,dʒ}_($…):[+stress] in U[+lo]'
+            raw: '#{tʃ,dʒ}_(%…):[+stress] in U[+lo]'
             tokens:
-            - '#{tʃ,dʒ}_($…):[+stress]'
+            - '#{tʃ,dʒ}_(%…):[+stress]'
             - in
             - U[+lo]
             compiled: '#{tʃ,dʒ}_($,0):[+stress] in %[+lo]'
@@ -171276,13 +171373,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: a > ɛ
+      rule: a > ɛ / in %[+lo]
       series:
         parts:
         - type: title
           index: 17.12.1.1.3
           section: Latin to French#French-a_3
-        - value: a > ɛ
+        - value: a > ɛ / in %[+lo]
           input:
             raw: a
             tokens:
@@ -171293,7 +171390,12 @@ sections:
             tokens:
             - ɛ
             compiled: ɛ
-          env: null
+          env:
+            raw: in U[+lo]
+            tokens:
+            - in
+            - U[+lo]
+            compiled: in %[+lo]
           exception: null
           status: null
           sporadic: null
@@ -173323,9 +173425,9 @@ sections:
             - ∅
             compiled: ∅
           env:
-            raw: V:[+stress]$L(C)(C)V(C)#
+            raw: V:[+stress]%L(C)(C)V(C)#
             tokens:
-            - V:[+stress]$L(C)(C)V(C)#
+            - V:[+stress]%L(C)(C)V(C)#
             compiled: V:[+stress]$L(C)(C){V,VC}#
           exception: null
           status: null
@@ -173391,9 +173493,9 @@ sections:
             - ∅
             compiled: ∅
           env:
-            raw: V:[+stress]$s_t(C)V(C)#
+            raw: V:[+stress]%s_t(C)V(C)#
             tokens:
-            - V:[+stress]$s_t(C)V(C)#
+            - V:[+stress]%s_t(C)V(C)#
             compiled: V:[+stress]$s_t(C){V,VC}#
           exception: null
           status: null
@@ -173527,9 +173629,9 @@ sections:
             - a
             compiled: a
           env:
-            raw: _$u:[+stress]
+            raw: _%u:[+stress]
             tokens:
-            - _$u:[+stress]
+            - _%u:[+stress]
             compiled: _$u:[+stress]
           exception: null
           status: null
@@ -173573,13 +173675,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: e > i:[+long] / _$ɪ:[+stress, +long]#
+      rule: e > i:[+long] / ”_$ɪ:[+long]#
       series:
         parts:
         - type: title
           index: 17.12.1.1.5
           section: Latin to Portuguese#Portuguese-e
-        - value: e > i:[+long] / _$ɪ:[+stress, +long]#
+        - value: e > i:[+long] / ”_$ɪ:[+long]#
           input:
             raw: e
             tokens:
@@ -173591,10 +173693,10 @@ sections:
             - iː
             compiled: i:[+long]
           env:
-            raw: _$ɪ:[+stress]ː#
+            raw: ”_%ɪː#
             tokens:
-            - _$ɪ:[+stress]ː#
-            compiled: _$ɪ:[+stress, +long]#
+            - ”_%ɪː#
+            compiled: ”_$ɪ:[+long]#
           exception: null
           status: null
           sporadic: null
@@ -173669,9 +173771,9 @@ sections:
             - e
             compiled: i e
           env:
-            raw: _$V:[+stress]
+            raw: _%V:[+stress]
             tokens:
-            - _$V:[+stress]
+            - _%V:[+stress]
             compiled: _$V:[+stress]
           exception: null
           status: null
@@ -173875,9 +173977,9 @@ sections:
             - o
             compiled: o
           env:
-            raw: _$V:[+stress]
+            raw: _%V:[+stress]
             tokens:
-            - _$V:[+stress]
+            - _%V:[+stress]
             compiled: _$V:[+stress]
           exception: null
           status: null
@@ -196333,9 +196435,9 @@ sections:
             - ∅
             compiled: ∅
           env:
-            raw: _$
+            raw: _%
             tokens:
-            - _$
+            - _%
             compiled: _$
           exception: null
           status: null
@@ -196666,9 +196768,9 @@ sections:
             - ∅
             compiled: ∅
           env:
-            raw: _$ when unstressed
+            raw: _% when unstressed
             tokens:
-            - _$
+            - _%
             - when
             - unstressed
             compiled: _$ when unstressed
@@ -198320,13 +198422,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: k > ɡ
+      rule: k > ɡ / in %[+stress]
       series:
         parts:
         - type: title
           index: 18.3.2
           section: Proto-Tuparí to Mekens#Mekens-k
-        - value: k > ɡ
+        - value: k > ɡ / in %[+stress]
           input:
             raw: k
             tokens:
@@ -198337,7 +198439,12 @@ sections:
             tokens:
             - ɡ
             compiled: ɡ
-          env: null
+          env:
+            raw: in U[+stress]
+            tokens:
+            - in
+            - U[+stress]
+            compiled: in %[+stress]
           exception: null
           status: null
           sporadic: null
@@ -199069,13 +199176,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: β ð > {s,h} / _i
+      rule: β ð > h / _i
       series:
         parts:
         - type: title
           index: 18.3.3
           section: Proto-Tuparí to Tuparí#Tuparí_2-β-ð
-        - value: β ð > {s,h} / _i
+        - value: β ð > h / _i
           input:
             raw: β ð
             tokens:
@@ -199083,11 +199190,10 @@ sections:
             - ð
             compiled: β ð
           output:
-            raw: '{s,h}'
+            raw: h
             tokens:
-            - - s
-              - h
-            compiled: '{s,h}'
+            - h
+            compiled: h
           env:
             raw: _i
             tokens:
@@ -199443,13 +199549,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: k > ɡ
+      rule: k > ɡ / in %[+stress]
       series:
         parts:
         - type: title
           index: 18.3.4
           section: Proto-Tuparí to Wayoró#Wayoró-k
-        - value: k > ɡ
+        - value: k > ɡ / in %[+stress]
           input:
             raw: k
             tokens:
@@ -199460,7 +199566,12 @@ sections:
             tokens:
             - ɡ
             compiled: ɡ
-          env: null
+          env:
+            raw: in U[+stress]
+            tokens:
+            - in
+            - U[+stress]
+            compiled: in %[+stress]
           exception: null
           status: null
           sporadic: null
@@ -203118,13 +203229,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: ʔ ts > {s,ʃ}
+      rule: ʔ ts > ʃ
       series:
         parts:
         - type: title
           index: 18.4.8
           section: Proto-Tupí-Guaraní to Sirionó#Sirionó-ʔ-ts
-        - value: ʔ ts > {s,ʃ}
+        - value: ʔ ts > ʃ
           input:
             raw: ʔ ts
             tokens:
@@ -203132,11 +203243,10 @@ sections:
             - ts
             compiled: ʔ ts
           output:
-            raw: '{s,ʃ}'
+            raw: ʃ
             tokens:
-            - - s
-              - ʃ
-            compiled: '{s,ʃ}'
+            - ʃ
+            compiled: ʃ
           env: null
           exception: null
           status: null
@@ -204680,13 +204790,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: j b > {j,i} / _#
+      rule: j b > i / _#
       series:
         parts:
         - type: title
           index: 18.4.10
           section: Proto-Tupí-Guaraní to Urubu#Urubu-j-b
-        - value: j b > {j,i} / _#
+        - value: j b > i / _#
           input:
             raw: j b
             tokens:
@@ -204694,11 +204804,10 @@ sections:
             - b
             compiled: j b
           output:
-            raw: '{j,i}'
+            raw: i
             tokens:
-            - - j
-              - i
-            compiled: '{j,i}'
+            - i
+            compiled: i
           env:
             raw: _#
             tokens:
@@ -210725,13 +210834,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: 'b k > {m,b} / #_'
+      rule: 'b k > b / #_'
       series:
         parts:
         - type: title
           index: 21.2.1.1
           section: Proto-Central Tariku to Edopi#Edopi-b-k
-        - value: 'b k > {m,b} / #_'
+        - value: 'b k > b / #_'
           input:
             raw: b k
             tokens:
@@ -210739,11 +210848,10 @@ sections:
             - k
             compiled: b k
           output:
-            raw: '{m,b}'
+            raw: b
             tokens:
-            - - m
-              - b
-            compiled: '{m,b}'
+            - b
+            compiled: b
           env:
             raw: '#_'
             tokens:
@@ -211106,13 +211214,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: 'b k > {m,b} / #_'
+      rule: 'b k > b / #_'
       series:
         parts:
         - type: title
           index: 21.2.1.2
           section: Proto-Central Tariku to Iau#Iau-b-k
-        - value: 'b k > {m,b} / #_'
+        - value: 'b k > b / #_'
           input:
             raw: b k
             tokens:
@@ -211120,11 +211228,10 @@ sections:
             - k
             compiled: b k
           output:
-            raw: '{m,b}'
+            raw: b
             tokens:
-            - - m
-              - b
-            compiled: '{m,b}'
+            - b
+            compiled: b
           env:
             raw: '#_'
             tokens:
@@ -230968,13 +231075,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: k > ∅ / V_C // %_
+      rule: k > ∅ / V_C // $_
       series:
         parts:
         - type: title
           index: '28'
           section: Muskogean#Muskogean-k
-        - value: k > ∅ / V_C // %_
+        - value: k > ∅ / V_C // $_
           input:
             raw: k
             tokens:
@@ -230994,7 +231101,7 @@ sections:
             raw: '%_'
             tokens:
             - '%_'
-            compiled: '%_'
+            compiled: $_
           status: null
           sporadic: null
           sporadic_skipped: false
@@ -231489,9 +231596,9 @@ sections:
             - x
             compiled: x
           env:
-            raw: _$
+            raw: _%
             tokens:
-            - _$
+            - _%
             compiled: _$
           exception: null
           status: null
@@ -232434,9 +232541,9 @@ sections:
             - h
             compiled: h
           env:
-            raw: $_{o,i}(C)#
+            raw: '%_{o,i}(C)#'
             tokens:
-            - $_{o,i}(C)#
+            - '%_{o,i}(C)#'
             compiled: $_{o,i}(C)#
           exception: null
           status: null
@@ -242611,13 +242718,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: ẽ > i
+      rule: ẽ > i / in %[+long -stress]
       series:
         parts:
         - type: title
           index: 32.1.1
           section: Proto-Chatino to Papabuco Chatino#Papabuco-Chatino-ẽ_3
-        - value: ẽ > i
+        - value: ẽ > i / in %[+long -stress]
           input:
             raw: ẽ
             tokens:
@@ -242628,7 +242735,12 @@ sections:
             tokens:
             - i
             compiled: i
-          env: null
+          env:
+            raw: in U[+long -stress]
+            tokens:
+            - in
+            - U[+long -stress]
+            compiled: in %[+long -stress]
           exception: null
           status: null
           sporadic: null
@@ -252775,9 +252887,9 @@ sections:
             - m
             compiled: m
           env:
-            raw: _$N
+            raw: _%N
             tokens:
-            - _$N
+            - _%N
             compiled: _$N
           exception: null
           status: null
@@ -257741,13 +257853,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: em emˀ > a aʔ // {p:[+cg],p,m,mˀ}_
+      rule: em emˀ > a aʔ / in %[-stress] // {p:[+cg],p,m,mˀ}_
       series:
         parts:
         - type: title
           index: '35.3'
           section: Shuswap to Eastern Shuswap Nasal-to-Vowel Shifts#Vowel-Shifts_3-em-emˀ_2
-        - value: em emˀ > a aʔ // {p:[+cg],p,m,mˀ}_
+        - value: em emˀ > a aʔ / in %[-stress] // {p:[+cg],p,m,mˀ}_
           input:
             raw: em emˀ
             tokens:
@@ -257760,7 +257872,12 @@ sections:
             - a
             - aʔ
             compiled: a aʔ
-          env: null
+          env:
+            raw: in U[-stress]
+            tokens:
+            - in
+            - U[-stress]
+            compiled: in %[-stress]
           exception:
             raw: '{p(’),m(ˀ)}_'
             tokens:
@@ -257815,13 +257932,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: en enˀ > a ʔ // {t:[+cg],t,lʲ,n,nˀ,l,lˀ}_
+      rule: en enˀ > a ʔ / in %[-stress] // {t:[+cg],t,lʲ,n,nˀ,l,lˀ}_
       series:
         parts:
         - type: title
           index: '35.3'
           section: Shuswap to Eastern Shuswap Nasal-to-Vowel Shifts#Vowel-Shifts_3-en-enˀ_2
-        - value: en enˀ > a ʔ // {t:[+cg],t,lʲ,n,nˀ,l,lˀ}_
+        - value: en enˀ > a ʔ / in %[-stress] // {t:[+cg],t,lʲ,n,nˀ,l,lˀ}_
           input:
             raw: en enˀ
             tokens:
@@ -257834,7 +257951,12 @@ sections:
             - a
             - ʔ
             compiled: a ʔ
-          env: null
+          env:
+            raw: in U[-stress]
+            tokens:
+            - in
+            - U[-stress]
+            compiled: in %[-stress]
           exception:
             raw: '{t(’),lʲ,n(ˀ),l(ˀ)}_'
             tokens:
@@ -262805,9 +262927,9 @@ sections:
             - i
             compiled: e y ɯ i
           env:
-            raw: T_$
+            raw: T_%
             tokens:
-            - T_$
+            - T_%
             compiled: P:[-voice]_$
           exception: null
           status: null
@@ -262839,9 +262961,9 @@ sections:
             - i
             compiled: i
           env:
-            raw: '{ŋ,w}_$'
+            raw: '{ŋ,w}_%'
             tokens:
-            - '{ŋ,w}_$'
+            - '{ŋ,w}_%'
             compiled: '{ŋ,w}_$'
           exception: null
           status: null
@@ -262873,9 +262995,9 @@ sections:
             - wɤ
             compiled: wɤ
           env:
-            raw: '{K,ŋ}w_$'
+            raw: '{K,ŋ}w_%'
             tokens:
-            - '{K,ŋ}w_$'
+            - '{K,ŋ}w_%'
             compiled: '{C:[-front,+back,+hi,-lo],ŋ}w_$'
           exception: null
           status: null
@@ -262908,9 +263030,9 @@ sections:
             - ɯ
             compiled: ɯ
           env:
-            raw: R_$
+            raw: R_%
             tokens:
-            - R_$
+            - R_%
             compiled: '[+son,-syl]_$'
           exception: null
           status: null
@@ -262943,9 +263065,9 @@ sections:
             compiled: ie
           env: null
           exception:
-            raw: K_$
+            raw: K_%
             tokens:
-            - K_$
+            - K_%
             compiled: C:[-front,+back,+hi,-lo]_$
           status: null
           sporadic: null
@@ -263009,9 +263131,9 @@ sections:
             - æ
             compiled: æ
           env:
-            raw: '{P,C}r_$'
+            raw: '{P,C}r_%'
             tokens:
-            - '{P,C}r_$'
+            - '{P,C}r_%'
             compiled: '{C:[+labial],C}r_$'
           exception: null
           status: null
@@ -263043,9 +263165,9 @@ sections:
             - v̩
             compiled: v̩
           env:
-            raw: m_$
+            raw: m_%
             tokens:
-            - m_$
+            - m_%
             compiled: m_$
           exception: null
           status: null
@@ -263133,9 +263255,9 @@ sections:
           section: Proto-Naish to Laze#Laze-V%
         - value: V$ > low tone
           input:
-            raw: V$
+            raw: V%
             tokens:
-            - V$
+            - V%
             compiled: V$
           output:
             raw: low tone
@@ -263319,9 +263441,9 @@ sections:
             - N[-voice]
             compiled: l̥ N:[-voice]
           env:
-            raw: $_V
+            raw: '%_V'
             tokens:
-            - $_V
+            - '%_V'
             compiled: $_V
           exception: null
           status: null
@@ -263353,9 +263475,9 @@ sections:
             - l̥
             compiled: l̥
           env:
-            raw: $_V
+            raw: '%_V'
             tokens:
-            - $_V
+            - '%_V'
             compiled: $_V
           exception: null
           status: null
@@ -263417,9 +263539,9 @@ sections:
             - ɬ
             compiled: ɬ
           env:
-            raw: $_V
+            raw: '%_V'
             tokens:
-            - $_V
+            - '%_V'
             compiled: $_V
           exception: null
           status: null
@@ -263458,9 +263580,9 @@ sections:
             - əɯ
             compiled: e əɯ
           env:
-            raw: T_$
+            raw: T_%
             tokens:
-            - T_$
+            - T_%
             compiled: P:[-voice]_$
           exception: null
           status: null
@@ -263492,9 +263614,9 @@ sections:
             - i
             compiled: i
           env:
-            raw: ŋ_$
+            raw: ŋ_%
             tokens:
-            - ŋ_$
+            - ŋ_%
             compiled: ŋ_$
           exception: null
           status: null
@@ -263526,9 +263648,9 @@ sections:
             - ɯ
             compiled: ɯ
           env:
-            raw: '{R,w}_$'
+            raw: '{R,w}_%'
             tokens:
-            - '{R,w}_$'
+            - '{R,w}_%'
             compiled: '{[+son,-syl],w}_$'
           exception: null
           status: null
@@ -263560,9 +263682,9 @@ sections:
             - wa
             compiled: wa
           env:
-            raw: '{K,ŋ}w_$'
+            raw: '{K,ŋ}w_%'
             tokens:
-            - '{K,ŋ}w_$'
+            - '{K,ŋ}w_%'
             compiled: '{C:[-front,+back,+hi,-lo],ŋ}w_$'
           exception: null
           status: null
@@ -263595,9 +263717,9 @@ sections:
             compiled: e
           env: null
           exception:
-            raw: K_$
+            raw: K_%
             tokens:
-            - K_$
+            - K_%
             compiled: C:[-front,+back,+hi,-lo]_$
           status: null
           sporadic: null
@@ -263631,9 +263753,9 @@ sections:
               - o
             compiled: ɑ {ɑ,o}
           env:
-            raw: _$
+            raw: _%
             tokens:
-            - _$
+            - _%
             compiled: _$
           exception: null
           status: null
@@ -263665,9 +263787,9 @@ sections:
             - ə
             compiled: ə
           env:
-            raw: '{P,C}r_$'
+            raw: '{P,C}r_%'
             tokens:
-            - '{P,C}r_$'
+            - '{P,C}r_%'
             compiled: '{C:[+labial],C}r_$'
           exception: null
           status: null
@@ -263699,9 +263821,9 @@ sections:
             - ɯ
             compiled: ɯ
           env:
-            raw: '{R,kr}_$'
+            raw: '{R,kr}_%'
             tokens:
-            - '{R,kr}_$'
+            - '{R,kr}_%'
             compiled: '{[+son,-syl],kr}_$'
           exception: null
           status: null
@@ -263733,9 +263855,9 @@ sections:
             - ə
             compiled: ə
           env:
-            raw: Pr_$
+            raw: Pr_%
             tokens:
-            - Pr_$
+            - Pr_%
             compiled: C:[+labial]r_$
           exception: null
           status: null
@@ -263823,9 +263945,9 @@ sections:
           section: Proto-Naish to Naxi#Naxi-V%
         - value: V$ > mid tone / C_ru
           input:
-            raw: V$
+            raw: V%
             tokens:
-            - V$
+            - V%
             compiled: V$
           output:
             raw: mid tone
@@ -263858,9 +263980,9 @@ sections:
           section: Proto-Naish to Naxi#Naxi-V%_2
         - value: V$ > high tone // C_ru
           input:
-            raw: V$
+            raw: V%
             tokens:
-            - V$
+            - V%
             compiled: V$
           output:
             raw: high tone
@@ -264049,9 +264171,9 @@ sections:
             - l̥
             compiled: l̥
           env:
-            raw: $_V
+            raw: '%_V'
             tokens:
-            - $_V
+            - '%_V'
             compiled: $_V
           exception: null
           status: null
@@ -264080,9 +264202,9 @@ sections:
             - h
             compiled: h
           env:
-            raw: $_V
+            raw: '%_V'
             tokens:
-            - $_V
+            - '%_V'
             compiled: $_V
           exception: null
           status: null
@@ -264115,9 +264237,9 @@ sections:
             - ∅
             compiled: ∅
           env:
-            raw: $_V
+            raw: '%_V'
             tokens:
-            - $_V
+            - '%_V'
             compiled: $_V
           exception: null
           status: null
@@ -273998,24 +274120,23 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: '∅ > {i,i:[+long]} / #_(C)(C)CVC(C)(C)#'
+      rule: '∅ > i:[+long] / #_(C)(C)CVC(C)(C)#'
       series:
         parts:
         - type: title
           index: 37.1.2
           section: Proto-Iroquoian to Proto-Northern Iroquoian#Proto-Northern-Iroquoian-∅
-        - value: '∅ > {i,i:[+long]} / #_(C)(C)CVC(C)(C)#'
+        - value: '∅ > i:[+long] / #_(C)(C)CVC(C)(C)#'
           input:
             raw: ∅
             tokens:
             - ∅
             compiled: ∅
           output:
-            raw: '{i,i:[+long]}'
+            raw: i:[+long]
             tokens:
-            - - i
-              - i:[+long]
-            compiled: '{i,i:[+long]}'
+            - i:[+long]
+            compiled: i:[+long]
           env:
             raw: '#_(C)(C)CVC(C)(C)#'
             tokens:
@@ -282486,13 +282607,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: tʲ > ʃ
+      rule: tʲ > ʃ / in %:[+stress]
       series:
         parts:
         - type: title
           index: 37.2.1
           section: Proto-Siouan to Catawba#Catawba-tʲ
-        - value: tʲ > ʃ
+        - value: tʲ > ʃ / in %:[+stress]
           input:
             raw: tʲ
             tokens:
@@ -282503,7 +282624,12 @@ sections:
             tokens:
             - ʃ
             compiled: ʃ
-          env: null
+          env:
+            raw: in U:[+stress]
+            tokens:
+            - in
+            - U:[+stress]
+            compiled: in %:[+stress]
           exception: null
           status: null
           sporadic: null
@@ -282800,13 +282926,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: tʲ > ʃ
+      rule: tʲ > ʃ / in %:[+stress]
       series:
         parts:
         - type: title
           index: 37.2.2
           section: Proto-Siouan to Dakota#Dakota-tʲ
-        - value: tʲ > ʃ
+        - value: tʲ > ʃ / in %:[+stress]
           input:
             raw: tʲ
             tokens:
@@ -282817,7 +282943,12 @@ sections:
             tokens:
             - ʃ
             compiled: ʃ
-          env: null
+          env:
+            raw: in U:[+stress]
+            tokens:
+            - in
+            - U:[+stress]
+            compiled: in %:[+stress]
           exception: null
           status: null
           sporadic: null
@@ -282864,13 +282995,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: s > z
+      rule: s > z / in %[-stress]
       series:
         parts:
         - type: title
           index: 37.2.2
           section: Proto-Siouan to Dakota#Dakota-s
-        - value: s > z
+        - value: s > z / in %[-stress]
           input:
             raw: s
             tokens:
@@ -282881,7 +283012,12 @@ sections:
             tokens:
             - z
             compiled: z
-          env: null
+          env:
+            raw: in U[-stress]
+            tokens:
+            - in
+            - U[-stress]
+            compiled: in %[-stress]
           exception: null
           status: null
           sporadic: null
@@ -283663,13 +283799,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: ã > a
+      rule: ã > a / in %:[+stress]
       series:
         parts:
         - type: title
           index: 37.2.3
           section: Proto-Siouan to Mandan#Mandan-ã
-        - value: ã > a
+        - value: ã > a / in %:[+stress]
           input:
             raw: ã
             tokens:
@@ -283680,7 +283816,12 @@ sections:
             tokens:
             - a
             compiled: a
-          env: null
+          env:
+            raw: in U:[+stress]
+            tokens:
+            - in
+            - U:[+stress]
+            compiled: in %:[+stress]
           exception: null
           status: null
           sporadic: true
@@ -284298,13 +284439,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: tʲ > ʃ
+      rule: tʲ > ʃ / in %:[+stress]
       series:
         parts:
         - type: title
           index: 37.2.4
           section: Proto-Siouan to Proto-Čiwere-Winnebago#Proto-Čiwere-Winnebago-tʲ
-        - value: tʲ > ʃ
+        - value: tʲ > ʃ / in %:[+stress]
           input:
             raw: tʲ
             tokens:
@@ -284315,7 +284456,12 @@ sections:
             tokens:
             - ʃ
             compiled: ʃ
-          env: null
+          env:
+            raw: in U:[+stress]
+            tokens:
+            - in
+            - U:[+stress]
+            compiled: in %:[+stress]
           exception: null
           status: null
           sporadic: null
@@ -284328,13 +284474,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: tʲ s > ʒ z
+      rule: tʲ s > ʒ z / in %[-stress]
       series:
         parts:
         - type: title
           index: 37.2.4
           section: Proto-Siouan to Proto-Čiwere-Winnebago#Proto-Čiwere-Winnebago-tʲ-s
-        - value: tʲ s > ʒ z
+        - value: tʲ s > ʒ z / in %[-stress]
           input:
             raw: tʲ s
             tokens:
@@ -284347,7 +284493,12 @@ sections:
             - ʒ
             - z
             compiled: ʒ z
-          env: null
+          env:
+            raw: in U[-stress]
+            tokens:
+            - in
+            - U[-stress]
+            compiled: in %[-stress]
           exception: null
           status: null
           sporadic: null
@@ -286844,13 +286995,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: t tʲ s > d ʒ z
+      rule: t tʲ s > d ʒ z / in %[-stress]
       series:
         parts:
         - type: title
           index: 37.2.6
           section: Proto-Siouan to Proto-Dhegiha#Proto-Dhegiha-t-tʲ-s
-        - value: t tʲ s > d ʒ z
+        - value: t tʲ s > d ʒ z / in %[-stress]
           input:
             raw: t tʲ s
             tokens:
@@ -286865,7 +287016,12 @@ sections:
             - ʒ
             - z
             compiled: d ʒ z
-          env: null
+          env:
+            raw: in U[-stress]
+            tokens:
+            - in
+            - U[-stress]
+            compiled: in %[-stress]
           exception: null
           status: null
           sporadic: null
@@ -286878,13 +287034,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: tʲ > ʃ
+      rule: tʲ > ʃ / in %:[+stress]
       series:
         parts:
         - type: title
           index: 37.2.6
           section: Proto-Siouan to Proto-Dhegiha#Proto-Dhegiha-tʲ
-        - value: tʲ > ʃ
+        - value: tʲ > ʃ / in %:[+stress]
           input:
             raw: tʲ
             tokens:
@@ -286895,7 +287051,12 @@ sections:
             tokens:
             - ʃ
             compiled: ʃ
-          env: null
+          env:
+            raw: in U:[+stress]
+            tokens:
+            - in
+            - U:[+stress]
+            compiled: in %:[+stress]
           exception: null
           status: null
           sporadic: null
@@ -287077,13 +287238,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: u > i
+      rule: u > i / in %:[+stress]
       series:
         parts:
         - type: title
           index: 37.2.6
           section: Proto-Siouan to Proto-Dhegiha#Proto-Dhegiha-u
-        - value: u > i
+        - value: u > i / in %:[+stress]
           input:
             raw: u
             tokens:
@@ -287094,7 +287255,12 @@ sections:
             tokens:
             - i
             compiled: i
-          env: null
+          env:
+            raw: in U:[+stress]
+            tokens:
+            - in
+            - U:[+stress]
+            compiled: in %:[+stress]
           exception: null
           status: null
           sporadic: true
@@ -291472,9 +291638,9 @@ sections:
             - Vː
             compiled: V:[+long]
           env:
-            raw: _$
+            raw: _%
             tokens:
-            - _$
+            - _%
             compiled: _$
           exception: null
           status: null
@@ -291902,9 +292068,9 @@ sections:
             - Vː
             compiled: V:[+long]
           env:
-            raw: _$
+            raw: _%
             tokens:
-            - _$
+            - _%
             compiled: _$
           exception: null
           status: null
@@ -292494,9 +292660,9 @@ sections:
             - Vː
             compiled: V:[+long]
           env:
-            raw: _$
+            raw: _%
             tokens:
-            - _$
+            - _%
             compiled: _$
           exception: null
           status: null
@@ -292528,9 +292694,9 @@ sections:
             - j̆
             compiled: j
           env:
-            raw: _C$
+            raw: _C%
             tokens:
-            - _C$
+            - _C%
             compiled: _C$
           exception: null
           status: null
@@ -292851,9 +293017,9 @@ sections:
             - ɨ̆
             compiled: ɨ
           env:
-            raw: _C$
+            raw: _C%
             tokens:
-            - _C$
+            - _C%
             compiled: _C$
           exception: null
           status: null
@@ -292983,9 +293149,9 @@ sections:
             - u
             compiled: '{u,u:[+long]} u'
           env:
-            raw: _C$
+            raw: _C%
             tokens:
-            - _C$
+            - _C%
             compiled: _C$
           exception: null
           status: null
@@ -293081,9 +293247,9 @@ sections:
             - i
             compiled: i
           env:
-            raw: _C$
+            raw: _C%
             tokens:
-            - _C$
+            - _C%
             compiled: _C$
           exception: null
           status: null
@@ -295016,9 +295182,9 @@ sections:
             - Vː
             compiled: V:[+long]
           env:
-            raw: _$
+            raw: _%
             tokens:
-            - _$
+            - _%
             compiled: _$
           exception: null
           status: null
@@ -295050,9 +295216,9 @@ sections:
             - j̆
             compiled: j
           env:
-            raw: _C$
+            raw: _C%
             tokens:
-            - _C$
+            - _C%
             compiled: _C$
           exception: null
           status: null
@@ -295150,9 +295316,9 @@ sections:
               - ɨa̯
             compiled: '{ɨə̯,ɨa̯}'
           env:
-            raw: _$
+            raw: _%
             tokens:
-            - _$
+            - _%
             compiled: _$
           exception: null
           status: null
@@ -295305,9 +295471,9 @@ sections:
             - uu
             compiled: uu
           env:
-            raw: _$
+            raw: _%
             tokens:
-            - _$
+            - _%
             compiled: _$
           exception: null
           status: null
@@ -295336,9 +295502,9 @@ sections:
             - u
             compiled: u
           env:
-            raw: _$
+            raw: _%
             tokens:
-            - _$
+            - _%
             compiled: _$
           exception: null
           status: null
@@ -295870,9 +296036,9 @@ sections:
             - ɨ̆
             compiled: ɨ
           env:
-            raw: _C$
+            raw: _C%
             tokens:
-            - _C$
+            - _C%
             compiled: _C$
           exception: null
           status: null
@@ -296029,9 +296195,9 @@ sections:
             - ɨː
             compiled: ɨ:[+long]
           env:
-            raw: _$
+            raw: _%
             tokens:
-            - _$
+            - _%
             compiled: _$
           exception: null
           status: null
@@ -296064,9 +296230,9 @@ sections:
             - ɨ
             compiled: ɨ
           env:
-            raw: _C$
+            raw: _C%
             tokens:
-            - _C$
+            - _C%
             compiled: _C$
           exception: null
           status: null
@@ -296128,9 +296294,9 @@ sections:
             - o
             compiled: o
           env:
-            raw: _{m,p}$
+            raw: _{m,p}%
             tokens:
-            - _{m,p}$
+            - _{m,p}%
             compiled: _{m,p}$
           exception: null
           status: null
@@ -296162,9 +296328,9 @@ sections:
             - ɛ
             compiled: ɛ
           env:
-            raw: _C$
+            raw: _C%
             tokens:
-            - _C$
+            - _C%
             compiled: _C$
           exception: null
           status: null
@@ -296651,9 +296817,9 @@ sections:
             - ɨ
             compiled: ɨ
           env:
-            raw: _C$
+            raw: _C%
             tokens:
-            - _C$
+            - _C%
             compiled: _C$
           exception: null
           status: null
@@ -296716,9 +296882,9 @@ sections:
             - u
             compiled: u
           env:
-            raw: _C$
+            raw: _C%
             tokens:
-            - _C$
+            - _C%
             compiled: _C$
           exception: null
           status: null
@@ -297207,9 +297373,9 @@ sections:
             - i
             compiled: i
           env:
-            raw: _$
+            raw: _%
             tokens:
-            - _$
+            - _%
             compiled: _$
           exception: null
           status: null
@@ -297238,9 +297404,9 @@ sections:
             - oi
             compiled: oi
           env:
-            raw: _$
+            raw: _%
             tokens:
-            - _$
+            - _%
             compiled: _$
           exception: null
           status: null
@@ -297784,9 +297950,9 @@ sections:
             - Vː
             compiled: V:[+long]
           env:
-            raw: _$
+            raw: _%
             tokens:
-            - _$
+            - _%
             compiled: _$
           exception: null
           status: null
@@ -297848,9 +298014,9 @@ sections:
             - j̆
             compiled: j
           env:
-            raw: _C$
+            raw: _C%
             tokens:
-            - _C$
+            - _C%
             compiled: _C$
           exception: null
           status: null
@@ -298551,9 +298717,9 @@ sections:
             - i
             compiled: i
           env:
-            raw: _N$
+            raw: _N%
             tokens:
-            - _N$
+            - _N%
             compiled: _N$
           exception: null
           status: null
@@ -299263,9 +299429,9 @@ sections:
             - o
             compiled: o
           env:
-            raw: _{m,p}$
+            raw: _{m,p}%
             tokens:
-            - _{m,p}$
+            - _{m,p}%
             compiled: _{m,p}$
           exception: null
           status: null
@@ -300097,9 +300263,9 @@ sections:
             - i
             compiled: i
           env:
-            raw: _N$
+            raw: _N%
             tokens:
-            - _N$
+            - _N%
             compiled: _N$
           exception: null
           status: null
@@ -301585,13 +301751,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: 'k s > {t,s} / #_'
+      rule: 'k s > s / #_'
       series:
         parts:
         - type: title
           index: '41.2'
           section: Proto-Trans New Guinea to Asmat#Asmat-k-s
-        - value: 'k s > {t,s} / #_'
+        - value: 'k s > s / #_'
           input:
             raw: k s
             tokens:
@@ -301599,11 +301765,10 @@ sections:
             - s
             compiled: k s
           output:
-            raw: '{t,s}'
+            raw: s
             tokens:
-            - - t
-              - s
-            compiled: '{t,s}'
+            - s
+            compiled: s
           env:
             raw: '#_'
             tokens:
@@ -305190,9 +305355,9 @@ sections:
             - ∅
             compiled: ∅
           env:
-            raw: C[+coronal]_$
+            raw: C[+coronal]_%
             tokens:
-            - C[+coronal]_$
+            - C[+coronal]_%
             compiled: C:[+coronal]_$
           exception: null
           status: null
@@ -309765,24 +309930,23 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: n:[+tense] > {n,n:[+long]} / V_V
+      rule: n:[+tense] > n:[+long] / V_V
       series:
         parts:
         - type: title
           index: '44.1'
           section: Proto-Vasconic to Aquitanian#Aquitanian-n+-fortis
-        - value: n:[+tense] > {n,n:[+long]} / V_V
+        - value: n:[+tense] > n:[+long] / V_V
           input:
             raw: n[+tense]
             tokens:
             - n[+tense]
             compiled: n:[+tense]
           output:
-            raw: '{n,n:[+long]}'
+            raw: n:[+long]
             tokens:
-            - - n
-              - n:[+long]
-            compiled: '{n,n:[+long]}'
+            - n:[+long]
+            compiled: n:[+long]
           env:
             raw: V_V
             tokens:

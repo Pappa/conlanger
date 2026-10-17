@@ -52,7 +52,8 @@ Corpus rules may carry structured **`IndexContext`**-shaped mappings on `env` or
 | --- | --- |
 | Legacy scalar string | Passthrough unchanged |
 | `position.adjacent_to` / `position.near` only | Relation-keyed template from [`config/compile/asca/compiler_config.yml`](../config/compile/asca/compiler_config.yml) `position_templates` (`{v}_, _{v}` by default; if `near` is omitted in config, `adjacent_to` is used) |
-| `context` + neighbour `position` | Comma-joined: structural `context`, then projected neighbour template |
+| `position.in` only | `position_templates.in` (`in {v}` by default). Mechanical `#U` / `U#` targets compile to ASCA underline env via the syllable-position override in the per-rule pipeline (same as legacy `in #U` / `in U#` strings). |
+| `context` + neighbour / `in` `position` | Comma-joined: structural `context`, then projected relation template |
 | `position.medial` on **env**, no `exception` | Env `_` when there is no structural `context`; **exception** `#_, _#` (`MEDIAL_BOUNDARY_EXCEPTION`). Structural `context` on env is kept; medial boundary still applies on exception. Existing **exception** `IndexContext` is left to owner semantics (no silent medial drop). |
 | `dialect` | Preserved in YAML only in v1 (no compile gating) |
 

@@ -330,6 +330,21 @@ def test_env_exception_input_to_string(input, expected):
             "u_, _u",
             id="near_u",
         ),
+        pytest.param(
+            IndexContext(position={"in": "U#"}),
+            "in U#",
+            id="in_u_hash",
+        ),
+        pytest.param(
+            IndexContext(position={"in": "U[+hi]"}),
+            "in U[+hi]",
+            id="in_u_feature_matrix",
+        ),
+        pytest.param(
+            IndexContext(context="C_CV", position={"in": "U[-stress]"}),
+            "C_CV, in U[-stress]",
+            id="merges_context_with_in",
+        ),
     ],
 )
 def test_resolve_index_context(ctx, expected):
@@ -355,6 +370,12 @@ def test_resolve_index_context(ctx, expected):
             {"position": {"near": "u"}},
             None,
             "u_, _u",
+            None,
+        ),
+        (
+            {"position": {"in": "U[-stress]"}},
+            None,
+            "in U[-stress]",
             None,
         ),
     ],

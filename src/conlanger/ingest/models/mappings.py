@@ -153,10 +153,11 @@ class ParserConfig(BaseModel):
 class PositionTemplates(BaseModel):
     """Relation-keyed ASCA projection templates for ``IndexContext.position``."""
 
-    model_config = ConfigDict(frozen=True)
+    model_config = ConfigDict(frozen=True, populate_by_name=True)
 
     adjacent_to: str = "{v}_, _{v}"
     near: str = "{v}_, _{v}"
+    in_: str = Field(alias="in", default="in {v}")
 
 
 class CompilerConfig(BaseModel):

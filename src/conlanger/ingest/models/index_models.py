@@ -184,7 +184,9 @@ class Index(BaseModel):
         self.sections.append(section)
 
 
-DEFAULT_POSITION_TEMPLATES: dict[str, str] = PositionTemplates().model_dump()
+DEFAULT_POSITION_TEMPLATES: dict[str, str] = PositionTemplates().model_dump(
+    by_alias=True
+)
 
 
 def _position_target_value(value: PositionValue) -> str | None:
@@ -207,7 +209,10 @@ def _project_position_relation(
     target = _position_target_value(ctx.position.get(relation))
     if target is None:
         return None
-    template = templates.get(relation) or templates.get("adjacent_to", "{v}_, _{v}")
+    if relation == "in":
+        template = templates.get(relation) or "in {v}"
+    else:
+        template = templates.get(relation) or templates.get("adjacent_to", "{v}_, _{v}")
     return template.format(v=target)
 
 
@@ -217,8 +222,8 @@ def resolve_index_context_to_string(
 ) -> str:
     """Project ``IndexContext`` to a compile env/exception string.
 
-    Joins structural ``context`` with the first projected neighbour relation
-    (``adjacent_to``, then ``near``) using comma separation. Medial boundary
+    Joins structural ``context`` with the first projected position relation
+    (``adjacent_to``, then ``near``, then ``in``) using comma separation. Medial boundary
     Rule-level medial pairing is applied in ``resolve_rule_env_exception_for_compile``
     (called from compile ``materialize_index_rule_env_exception``, not ``SoundChangeRule``).
     """
@@ -226,7 +231,7 @@ def resolve_index_context_to_string(
     parts: list[str] = []
     if ctx.context:
         parts.append(ctx.context)
-    for relation in ("adjacent_to", "near"):
+    for relation in ("adjacent_to", "near", "in"):
         projected = _project_position_relation(ctx, relation, templates)
         if projected is not None:
             parts.append(projected)

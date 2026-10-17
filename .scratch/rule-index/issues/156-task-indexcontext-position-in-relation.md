@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: None
 
 # Task: compile projection for `IndexContext.position.in`
@@ -32,11 +32,16 @@ Index env prose **`in <target>`** (syllable position, feature matrix, segment se
 
 ## Acceptance
 
-- [ ] `resolve_index_context_to_string` / `resolve_rule_env_exception_for_compile` project `position.in` (and `context` + `in` together) to ASCA env strings.
-- [ ] `position_templates` (or documented syllable delegate) in `compiler_config.yml`; loader tests updated.
-- [ ] Unit tests: at least `in U#`, `in U[+hi]`, and `context` + `in` merge; inventory rule-id fixture if available.
-- [ ] `docs/system/sound-change-applier.md` compile projection table includes `position.in`.
-- [ ] `uv run validate_rules`: no ok-count regression vs current baseline; changelog note if regen required.
+- [x] `resolve_index_context_to_string` / `resolve_rule_env_exception_for_compile` project `position.in` (and `context` + `in` together) to ASCA env strings.
+- [x] `position_templates` (or documented syllable delegate) in `compiler_config.yml`; loader tests updated.
+- [x] Unit tests: at least `in U#`, `in U[+hi]`, and `context` + `in` merge; inventory rule-id fixture if available.
+- [x] `docs/system/sound-change-applier.md` compile projection table includes `position.in`.
+- [x] `uv run compile_rules && uv run validate_rules` (2026-10-17): **8272** ok (−30 vs pre-change **8302** on compiled YAML); **30** ok-flips are `position.in`-only rows that previously dropped env at materialize (false OK). Changelog appended.
+
+### Resolution (2026-10-17)
+
+- Default template `in: "in {v}"` in [`compiler_config.yml`](../../../config/compile/asca/compiler_config.yml) and [`PositionTemplates`](../../../src/conlanger/ingest/models/mappings.py); resolver order `adjacent_to` → `near` → `in`.
+- Mechanical `#U` / `U#` materialize as `in {v}` for syllable-position pipeline override (ticket 98).
 
 ## Out of scope
 
