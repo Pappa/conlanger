@@ -32,8 +32,8 @@ Skipped: **2/124**
 
 | count | failure_class |
 |------:|---------------|
-| 59 | `expected_underscore` |
-| 32 | `expected_ipa` |
+| 58 | `expected_underscore` |
+| 33 | `expected_ipa` |
 | 24 | `unknown_character` |
 | 22 | `missing_slash_output_env` |
 | 16 | `syntax_other` |
@@ -147,7 +147,7 @@ Skipped: **2/124**
 
 | count | description |
 |------:|-------------|
-| 38 | `Expected '_', but received ''` |
+| 37 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -218,7 +218,7 @@ Skipped: **2/124**
 
 | count | error_token |
 |------:|-------------|
-| 8 | `(` |
+| 9 | `(` |
 | 4 | `{` |
 | 4 | `∅` |
 | 3 | `…` |
