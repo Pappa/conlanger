@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by:
 
 # Refactor parser output to `Index` / `IndexSection` / `IndexRule` (no dict carriers)
@@ -119,10 +119,18 @@ class Index(BaseModel):
 
 ## Acceptance criteria
 
-- [ ] No `list[dict[str, Any]]` for rules in `parser.py` parse loop or in the three section-level pass functions’ public signatures.
-- [ ] `parse()` return equals `Index(...).model_dump(exclude_none=True, mode="python")` with stable section/rule shape for a golden snippet.
-- [ ] `create_index` / `write_cleaned_index` path still works; regenerated YAML includes document **`name`** at root.
-- [ ] Behaviour unchanged for nested-set flatten and catch-all else (existing parametrized tests updated, not deleted).
+- [x] No `list[dict[str, Any]]` for rules in `parser.py` parse loop or in the three section-level pass functions’ public signatures.
+- [x] `parse()` return equals `Index(...).model_dump(exclude_none=True, mode="python")` with stable section/rule shape for a golden snippet.
+- [x] `create_index` / `write_cleaned_index` path still works; regenerated YAML includes document **`name`** at root.
+- [x] Behaviour unchanged for nested-set flatten and catch-all else (existing parametrized tests updated, not deleted).
+
+### Resolution (2026-10-17)
+
+- **Models:** `Index`, `IndexSection` in [`index_models.py`](../../../src/conlanger/ingest/models/index_models.py); exported from [`ingest/__init__.py`](../../../src/conlanger/ingest/__init__.py).
+- **Parser:** `parse_rule_string` / `parse_rule_element` → `list[IndexRule]`; `parse()` builds `Index(name="Index Diachronica")` and returns `model_dump(exclude_none=True, mode="python")`.
+- **Section passes:** `flatten_nested_sets_in_section_rules`, `resolve_catch_all_else_rules` on `IndexRule` ([`flatten_nested_sets.py`](../../../src/conlanger/ingest/utils/flatten_nested_sets.py), [`section_policy.py`](../../../src/conlanger/ingest/utils/section_policy.py)).
+- **Corpus:** root `name:` in `data/diachronica/index_diachronica.yml`.
+- **Tests:** `test_parser.py`, `test_flatten_nested_sets.py`, `test_section_policy.py` (79 passed, 2026-10-17).
 
 ## References
 
