@@ -1,7 +1,7 @@
 id,source,raw,input,output,env,exception,expect_none,kind,asca_input,asca_output,asca_env,asca_exception,asca_expect_ok
 e1e33459,index_diachronica.html:6251,"r → ∅ / {ð,f}_{ɡ,ɣ}",r,∅,"{ð,f}_{ɡ,ɣ}",,False,html_extract,,,,,
 effec0b5,index_diachronica.html:14213,oɪ → uɪ (rare),oɪ,uɪ (rare),,,False,html_extract,,,,,
-2ef656de,index_diachronica.html:1530,"— {o,u}(ː) → iː / _$%oː","{o,u}(ː)",iː,_$$oː,,False,html_extract,,,,,
+2ef656de,index_diachronica.html:1530,"— {o,u}(ː) → iː / _$%oː","{o,u}(ː)",iː,_$%oː,,False,html_extract,,,,,
 9eabee5d,index_diachronica.html:5671,iji → iː / U[+ long + closed]_ in the stem,iji,iː,U[+ long + closed]_ in the stem,,False,html_extract,,,,,
 4335174c,index_diachronica.html:5946,dʒ → tʃ / _#,dʒ,tʃ,_#,,False,html_extract,,,,,
 4f873820,index_diachronica.html:7729,a → e / _j when stressed,a,e,_j when stressed,,False,html_extract,,,,,

@@ -71,6 +71,7 @@ from conlanger.compile.tools.asca.voice_prerequisite_diacritics import (
     normalize_asca_voice_prerequisite_diacritics,
 )
 from conlanger.ingest.models.mappings import CompilerConfig
+from conlanger.utils.symbols import project_index_syllable_stem_symbols
 
 
 def _resolve_compiler_config(
@@ -90,6 +91,7 @@ def compile_asca_field_pre_subscript(
         return text
     config = _resolve_compiler_config(compiler_config)
     mappings = config.group_mappings
+    text = project_index_syllable_stem_symbols(text)
     text = normalize_editorial_slash_gloss_residue(text)
     text = normalize_asca_optional_grouping_ellipsis(text)
     text = apply_compiler_series_mappings(

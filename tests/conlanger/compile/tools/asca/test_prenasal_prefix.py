@@ -33,7 +33,7 @@ def test_normalize_prenasal_prefix(text, expected):
     ("inp", "out", "env", "expected_compiled"),
     [
         ("P", "ⁿP", "#NV_", "P > N P / #NV_"),
-        ("s ʃ", "ⁿs ⁿʃ", "_ %[-nas]", "s ʃ > N s N ʃ / _ %[-nas]"),
+        ("s ʃ", "ⁿs ⁿʃ", "_ %[-nas]", "s ʃ > N s N ʃ / _ $[-nas]"),
         ("NP", "ⁿP", None, "NP > N P"),
         ("ⁿP", "N", "_#", "N P > N / _#"),
         ("NVP", "VⁿP", "#_", "NVP > V N P / #_"),

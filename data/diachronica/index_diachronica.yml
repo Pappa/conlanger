@@ -2138,7 +2138,7 @@ sections:
     stages:
     - w
     - v
-    env: _$
+    env: _%
   - rule_id: Cypriot-Arabic-wː
     source: index_diachronica.html:1353
     raw: wː → v
@@ -2207,7 +2207,7 @@ sections:
     stages:
     - '{u,a,i}'
     - ∅
-    env: _$ when stressed
+    env: _% when stressed
     comment: (short only)
   - rule_id: Cypriot-Arabic-uː-iː_3
     source: index_diachronica.html:1364
@@ -2441,7 +2441,7 @@ sections:
     stages:
     - h
     - ∅
-    env: ':{ _#, _$ }:'
+    env: ':{ _#, _% }:'
     comment: in coda
 - section: Classical Arabic to Coastal Hadhrami Arabic
   index: 6.2.2.1.8
@@ -3053,7 +3053,7 @@ sections:
     stages:
     - '{o,u}(ː)'
     - iː
-    env: _$$oː
+    env: _$%oː
   - rule_id: Biblical-Hebrew-—-oː
     source: index_diachronica.html:1531
     raw: — oː → uː
@@ -3135,7 +3135,7 @@ sections:
     stages:
     - a i
     - aː eː
-    env: _$
+    env: _%
     comment: ”
   - rule_id: Biblical-Hebrew-—-u_3
     source: index_diachronica.html:1543
@@ -5404,7 +5404,7 @@ sections:
     stages:
     - e
     - i
-    env: Vː$_
+    env: Vː%_
     exception: _H
   - rule_id: Menominee-N
     source: index_diachronica.html:1947
@@ -20008,7 +20008,7 @@ sections:
     stages:
     - ɡʲ(ʱ)
     - d
-    env: $_C[+strident]
+    env: '%_C[+strident]'
   - rule_id: Gheg-Albanian-ɡʷʱ
     source: index_diachronica.html:4968
     raw: ɡʷ(ʱ) → {ɡ,z}
@@ -20257,7 +20257,7 @@ sections:
     stages:
     - ɡʲ(ʱ)
     - d
-    env: $_C[+strident]
+    env: '%_C[+strident]'
   - rule_id: Tosk-Albanian-ɡʷʱ
     source: index_diachronica.html:5007
     raw: ɡʷ(ʱ) → {ɡ,z}
@@ -23821,7 +23821,7 @@ sections:
     stages:
     - V
     - ∅
-    env: $[+str]_$[+str]
+    env: '%[+str]_%[+str]'
   - rule_id: Middle-Welsh-pː-tː-kː
     source: index_diachronica.html:5600
     raw: pː tː kː → f θ x
@@ -24356,7 +24356,7 @@ sections:
     stages:
     - i u
     - e o
-    env: _${a,o}
+    env: _%{a,o}
   - rule_id: West-Germanic-oː
     source: index_diachronica.html:5695
     raw: oː → uː / _#
@@ -25173,14 +25173,14 @@ sections:
     stages:
     - j
     - ∅
-    env: ${θ,s,z,l}_V:[+stress]
+    env: '%{θ,s,z,l}_V:[+stress]'
   - rule_id: Australian-English-sj-zj-lj
     source: index_diachronica.html:5833
     raw: sj zj lj → ʃ ʒ j~ɫj / else “(j~ɫj fluctuation is formality)”
     stages:
     - sj zj lj
     - ʃ ʒ j~ɫj
-    exception: ${θ,s,z,l}_V:[+stress]
+    exception: '%{θ,s,z,l}_V:[+stress]'
     comment: “(j~ɫj fluctuation is formality)”
   - rule_id: Australian-English-ɫj
     source: index_diachronica.html:5834
@@ -25223,8 +25223,8 @@ sections:
     stages:
     - æ
     - æː
-    env: _{n,m,ɡ,ɫ}$
-    exception: _{n,m,ɡ,ɫ}${j,w}
+    env: _{n,m,ɡ,ɫ}%
+    exception: _{n,m,ɡ,ɫ}%{j,w}
     comment: or a form of a strong verb
   - rule_id: Australian-English-æ_3
     source: index_diachronica.html:5840
@@ -25817,7 +25817,7 @@ sections:
     - N
     - ∅
     env: _C
-    exception: _$C
+    exception: _%C
   - rule_id: Scots_2-xw
     source: index_diachronica.html:5941
     raw: xw → ʍ
@@ -26263,7 +26263,7 @@ sections:
     stages:
     - C
     - ∅
-    env: C_$
+    env: C_%
   - rule_id: Yola-t-d
     source: index_diachronica.html:6012
     raw: t d → θ ð (conditioning unclear)
@@ -26825,7 +26825,7 @@ sections:
     stages:
     - Vː
     - V[- long]
-    env: _$Cə{r,l,n}#
+    env: _%Cə{r,l,n}#
     comment: sporadic (some exceptions)
     sporadic: true
   - rule_id: Standard-German-V
@@ -26834,7 +26834,7 @@ sections:
     stages:
     - V
     - Vː
-    env: _$ when stressed
+    env: _% when stressed
     comment: (except for /ə/?)
   - rule_id: Standard-German-V_2
     source: index_diachronica.html:6117
@@ -26875,7 +26875,7 @@ sections:
     stages:
     - ∅
     - ə
-    env: M_r$
+    env: M_r%
     comment: (I don’t know what Mr. Ciupak means by 〈M〉)
 - section: High German Cosonant Shift and Umlaut
   index: 17.7.2.4
@@ -27116,7 +27116,7 @@ sections:
     stages:
     - oː
     - a
-    env: _n$
+    env: _n%
   - rule_id: Proto-Norse-z-x
     source: index_diachronica.html:6167
     raw: z x → ʀ h
@@ -27356,7 +27356,7 @@ sections:
     stages:
     - a
     - u
-    env: $u /
+    env: '%u /'
     exception: '#U'
   - rule_id: Old-Norse-waː-naː
     source: index_diachronica.html:6205
@@ -27364,7 +27364,7 @@ sections:
     stages:
     - waː naː
     - oː noː
-    env: '$u in #U'
+    env: '%u in #U'
   - rule_id: Old-Norse-aː-ae
     source: index_diachronica.html:6206
     raw: 'a(ː) ae → o(ː) ɒø / #(C)(C)(C)_(C)(C)(C)u'
@@ -27936,7 +27936,7 @@ sections:
     stages:
     - β ɣ
     - f h
-    env: _$
+    env: _%
   - rule_id: Old-Norse-ɣ_2
     source: index_diachronica.html:6288
     raw: ɣ → ɡ / _{E,j}
@@ -28023,7 +28023,7 @@ sections:
     stages:
     - woː wøː jæː Vː
     - wo wøje V[- long]
-    env: _$
+    env: _%
   - rule_id: Old-Norse-NS-voice
     source: index_diachronica.html:6301
     raw: NS[- voice] → S[- voice]ː
@@ -29956,7 +29956,7 @@ sections:
     stages:
     - ɔ
     - ∅
-    env: $i_n#, $i_s#
+    env: '%i_n#, %i_s#'
   - rule_id: Attic-Greek-n_2
     source: index_diachronica.html:6614
     raw: n → ∅ / _#
@@ -33542,21 +33542,21 @@ sections:
     stages:
     - V
     - i
-    env: $(C)(C)_$ when unstressed
+    env: '%(C)(C)_% when unstressed'
   - rule_id: Latin-V_2
     source: index_diachronica.html:7230
     raw: V → o / %(C)(C)V_% when unstressed
     stages:
     - V
     - o
-    env: $(C)(C)V_$ when unstressed
+    env: '%(C)(C)V_% when unstressed'
   - rule_id: Latin-V_3
     source: index_diachronica.html:7231
     raw: V → e / %(C)(C)_%r when unstressed (with some exceptions)
     stages:
     - V
     - e
-    env: $(C)(C)_$r when unstressed
+    env: '%(C)(C)_%r when unstressed'
     comment: (with some exceptions)
   - rule_id: Latin-V_4
     source: index_diachronica.html:7232
@@ -33564,14 +33564,14 @@ sections:
     stages:
     - V
     - '{i,u}'
-    env: $(C)(C)_$P when unstressed
+    env: '%(C)(C)_%P when unstressed'
   - rule_id: Latin-a-o
     source: index_diachronica.html:7233
     raw: a o → e u / %(C)(C)_C(C)% when unstressed
     stages:
     - a o
     - e u
-    env: $(C)(C)_C(C)$ when unstressed
+    env: '%(C)(C)_C(C)% when unstressed'
   - rule_id: Latin-a
     source: index_diachronica.html:7234
     raw: a → e → i / %(C)(C)_ŋ when unstressed
@@ -33579,7 +33579,7 @@ sections:
     - a
     - e
     - i
-    env: $(C)(C)_ŋ when unstressed
+    env: '%(C)(C)_ŋ when unstressed'
   - rule_id: Latin-a_2
     source: index_diachronica.html:7235
     raw: a → e → u / %(C)(C)_ɫ when unstressed
@@ -33587,14 +33587,14 @@ sections:
     - a
     - e
     - u
-    env: $(C)(C)_ɫ when unstressed
+    env: '%(C)(C)_ɫ when unstressed'
   - rule_id: Latin-e_2
     source: index_diachronica.html:7236
     raw: e → u / %(C)(C)_ɫ when unstressed
     stages:
     - e
     - u
-    env: $(C)(C)_ɫ when unstressed
+    env: '%(C)(C)_ɫ when unstressed'
   - rule_id: Latin-ai
     source: index_diachronica.html:7237
     raw: ai → ei → iː / %(C)(C)_ when unstressed
@@ -33602,14 +33602,14 @@ sections:
     - ai
     - ei
     - iː
-    env: $(C)(C)_ when unstressed
+    env: '%(C)(C)_ when unstressed'
   - rule_id: Latin-ei-oi-ou
     source: index_diachronica.html:7238
     raw: ei oi ou → iː eː uː / %(C)(C)_ when unstressed
     stages:
     - ei oi ou
     - iː eː uː
-    env: $(C)(C)_ when unstressed
+    env: '%(C)(C)_ when unstressed'
   - rule_id: Latin-i,o
     source: index_diachronica.html:7239
     raw: '{i,o} → e / _#'
@@ -34329,7 +34329,7 @@ sections:
     stages:
     - V
     - ∅
-    env: V:[+stress]$C_L(C)V(C)#
+    env: V:[+stress]%C_L(C)V(C)#
     comment: (irregular)
   - rule_id: Catalan-V_2
     source: index_diachronica.html:7348
@@ -34337,7 +34337,7 @@ sections:
     stages:
     - V
     - ∅
-    env: V:[+stress]$L_C(C)V(C)#
+    env: V:[+stress]%L_C(C)V(C)#
     comment: (irregular)
   - rule_id: Catalan-V_3
     source: index_diachronica.html:7349
@@ -34345,7 +34345,7 @@ sections:
     stages:
     - V
     - ∅
-    env: V:[+stress]$s_t(C)V(C)#
+    env: V:[+stress]%s_t(C)V(C)#
     comment: (irregular)
   - rule_id: Catalan-u
     source: index_diachronica.html:7350
@@ -34371,7 +34371,7 @@ sections:
     stages:
     - iː
     - i
-    env: _$V:[+stress]
+    env: _%V:[+stress]
   - rule_id: Catalan-i,eː-e
     source: index_diachronica.html:7353
     raw: '{i,eː} e → {e,ɛ} {ɛ,e} / stressed'
@@ -34385,7 +34385,7 @@ sections:
     stages:
     - '{i,eː,e}'
     - e
-    env: _$V:[+stress]
+    env: _%V:[+stress]
   - rule_id: Catalan-i
     source: index_diachronica.html:7355
     raw: i → j / ”V_#
@@ -34406,14 +34406,14 @@ sections:
     stages:
     - uː
     - u
-    env: _$V:[+stress]
+    env: _%V:[+stress]
   - rule_id: Catalan-au
     source: index_diachronica.html:7358
     raw: au → a / _%”u
     stages:
     - au
     - a
-    env: _$u:[+stress]
+    env: _%u:[+stress]
   - rule_id: Catalan-u,oː-o
     source: index_diachronica.html:7359
     raw: '{u,oː} o → o ɔ / stressed'
@@ -34427,14 +34427,14 @@ sections:
     stages:
     - '{u,o(ː)}'
     - u
-    env: _$V:[+stress] in East Catalan
+    env: _%V:[+stress] in East Catalan
   - rule_id: Catalan-u,oː_2
     source: index_diachronica.html:7361
     raw: '{u,o(ː)} → o / _%”V else'
     stages:
     - '{u,o(ː)}'
     - o
-    env: _$V:[+stress] else
+    env: _%V:[+stress] else
   - rule_id: Catalan-u_2
     source: index_diachronica.html:7362
     raw: u → w / ”ɛ_#
@@ -34467,7 +34467,7 @@ sections:
     stages:
     - ae au
     - e o
-    env: _$V:[+stress]
+    env: _%V:[+stress]
   - rule_id: Catalan-o
     source: index_diachronica.html:7367
     raw: o → u / _a
@@ -34481,7 +34481,7 @@ sections:
     stages:
     - o
     - u
-    env: _$V:[+stress]
+    env: _%V:[+stress]
     comment: (irregular)
   - rule_id: Catalan-VV
     source: index_diachronica.html:7369
@@ -34644,14 +34644,14 @@ sections:
     stages:
     - '{bj,vj}'
     - wʒ
-    env: _$V:[+stress]
+    env: _%V:[+stress]
   - rule_id: Catalan-b
     source: index_diachronica.html:7392
     raw: b → v / V̈%_j
     stages:
     - b
     - v
-    env: V$_j
+    env: V%_j
   - rule_id: Catalan-ja
     source: index_diachronica.html:7393
     raw: 'ja → je / #_ (irregular)'
@@ -34666,7 +34666,7 @@ sections:
     stages:
     - V
     - ∅
-    env: _$V:[+stress]
+    env: _%V:[+stress]
     comment: (rare)
   - rule_id: Catalan-∅_2
     source: index_diachronica.html:7395
@@ -34695,7 +34695,7 @@ sections:
     stages:
     - V
     - ∅
-    env: V:[+stress]$_(C)(C)V(C)#
+    env: V:[+stress]%_(C)(C)V(C)#
     comment: (“irregular; e is kept before n”)
   - rule_id: Catalan-b_2
     source: index_diachronica.html:7399
@@ -34725,14 +34725,14 @@ sections:
     stages:
     - s
     - z
-    env: V:[+stress]$V_V
+    env: V:[+stress]%V_V
   - rule_id: Catalan-s_2
     source: index_diachronica.html:7403
     raw: s → ∅ / V_V%”V
     stages:
     - s
     - ∅
-    env: V_V$V:[+stress]
+    env: V_V%V:[+stress]
   - rule_id: Catalan-k-ɡ
     source: index_diachronica.html:7404
     raw: k ɡ → ∅ {∅,ʒ} / V_{i,e} (ɡ → ʒ is learned)
@@ -34747,7 +34747,7 @@ sections:
     stages:
     - ɡ
     - ∅
-    env: V_V$V:[+stress]
+    env: V_V%V:[+stress]
   - rule_id: Catalan-k-j
     source: index_diachronica.html:7406
     raw: k j → ɡ ʒ / V_V
@@ -34894,7 +34894,7 @@ sections:
     stages:
     - kʷ
     - k
-    env: '#_a$V:[+stress]'
+    env: '#_a%V:[+stress]'
   - rule_id: Catalan-kʷ_4
     source: index_diachronica.html:7427
     raw: kʷ → ɡw / V_a
@@ -35380,7 +35380,7 @@ sections:
     stages:
     - V
     - ∅
-    env: $[+str]_$[+str]
+    env: '%[+str]_%[+str]'
     exception: V = a
   - rule_id: French-a
     source: index_diachronica.html:7502
@@ -35388,7 +35388,7 @@ sections:
     stages:
     - a
     - ə
-    env: $[+str]_$[+str]
+    env: '%[+str]_%[+str]'
   - rule_id: French-∅_2
     source: index_diachronica.html:7503
     raw: ∅ → b / m_{r,l}
@@ -35714,14 +35714,14 @@ sections:
     stages:
     - e
     - ə
-    env: '#(C…)_($…):[+stress] in U[+lo]'
+    env: '#(C…)_(%…):[+stress] in U[+lo]'
   - rule_id: French-e_2
     source: index_diachronica.html:7551
     raw: 'e → ɛ / #(C…)_(%…)” in U[+closed] or _V (?)'
     stages:
     - e
     - ɛ
-    env: '#(C…)_($…):[+stress] in U[+hi] or _V'
+    env: '#(C…)_(%…):[+stress] in U[+hi] or _V'
     comment: (?)
     sporadic: true
   - rule_id: French-o
@@ -35739,7 +35739,7 @@ sections:
     stages:
     - a
     - ə
-    env: '#{tʃ,dʒ}_($…):[+stress] in U[+lo]'
+    env: '#{tʃ,dʒ}_(%…):[+stress] in U[+lo]'
   - rule_id: French-a_3
     source: index_diachronica.html:7554
     raw: a → ɛ / in U[+open] “(but a following ʎ creates a [closed] syllable)”
@@ -36172,7 +36172,7 @@ sections:
     stages:
     - V
     - ∅
-    env: V:[+stress]$L(C)(C)V(C)#
+    env: V:[+stress]%L(C)(C)V(C)#
     comment: (irregular)
   - rule_id: Portuguese-V_2
     source: index_diachronica.html:7626
@@ -36188,7 +36188,7 @@ sections:
     stages:
     - V
     - ∅
-    env: V:[+stress]$s_t(C)V(C)#
+    env: V:[+stress]%s_t(C)V(C)#
     comment: (irregular)
   - rule_id: Portuguese-u
     source: index_diachronica.html:7628
@@ -36218,7 +36218,7 @@ sections:
     stages:
     - au
     - a
-    env: _$u:[+stress]
+    env: _%u:[+stress]
   - rule_id: Portuguese-au_2
     source: index_diachronica.html:7632
     raw: au → o
@@ -36231,7 +36231,7 @@ sections:
     stages:
     - e
     - iː
-    env: _$ɪ:[+stress]ː#
+    env: ”_%ɪː#
   - rule_id: Portuguese-iː-i,eː-e
     source: index_diachronica.html:7634
     raw: iː {i,eː} e → i e ɛ / stressed
@@ -36245,7 +36245,7 @@ sections:
     stages:
     - iː {i,e(ː)}
     - i e
-    env: _$V:[+stress]
+    env: _%V:[+stress]
   - rule_id: Portuguese-iː
     source: index_diachronica.html:7636
     raw: iː → ∅ / {k,s}_#
@@ -36286,7 +36286,7 @@ sections:
     stages:
     - '{u,o(ː)}'
     - o
-    env: _$V:[+stress]
+    env: _%V:[+stress]
   - rule_id: Portuguese-uː,oː
     source: index_diachronica.html:7642
     raw: '{u(ː),o(ː)} → o → u / _#'
@@ -40533,7 +40533,7 @@ sections:
     stages:
     - ə
     - ∅
-    env: _$
+    env: _%
   - rule_id: Tocharian-A-V_3
     source: index_diachronica.html:8305
     raw: V → ∅ / _#
@@ -40608,7 +40608,7 @@ sections:
     stages:
     - ə
     - ∅
-    env: _$ when unstressed
+    env: _% when unstressed
 - section: Je-Tupı́-Carib
   index: '18'
 - section: Cariban
@@ -46765,7 +46765,7 @@ sections:
     stages:
     - h
     - x
-    env: _$
+    env: _%
   - rule_id: Creek-V0xV0
     source: index_diachronica.html:9849
     raw: V₀xV₀ → V₀ː
@@ -46982,7 +46982,7 @@ sections:
     stages:
     - xʷ
     - h
-    env: $_{o,i}(C)#
+    env: '%_{o,i}(C)#'
   - rule_id: Proto-Western-Muskogean-a
     source: index_diachronica.html:9900
     raw: a → o / xʷ_#
@@ -52787,7 +52787,7 @@ sections:
     stages:
     - w
     - m
-    env: _$N
+    env: _%N
   - rule_id: Santiago-j
     source: index_diachronica.html:11339
     raw: j → ∅ / i_{a,u}
@@ -55839,35 +55839,35 @@ sections:
     stages:
     - a u i iN
     - e y ɯ i
-    env: T_$
+    env: T_%
   - rule_id: Laze-a
     source: index_diachronica.html:11912
     raw: a → i / {ŋ,w}_%
     stages:
     - a
     - i
-    env: '{ŋ,w}_$'
+    env: '{ŋ,w}_%'
   - rule_id: Laze-a_2
     source: index_diachronica.html:11913
     raw: a → wɤ / {K,ŋ}w_%
     stages:
     - a
     - wɤ
-    env: '{K,ŋ}w_$'
+    env: '{K,ŋ}w_%'
   - rule_id: Laze-a,i
     source: index_diachronica.html:11914
     raw: '{a,i} → ɯ / R_%'
     stages:
     - '{a,i}'
     - ɯ
-    env: R_$
+    env: R_%
   - rule_id: Laze-a_3
     source: index_diachronica.html:11915
     raw: a → ie / ! K_%
     stages:
     - a
     - ie
-    exception: K_$
+    exception: K_%
   - rule_id: Laze-a-aS
     source: index_diachronica.html:11916
     raw: a aS → ɑ {ɑ,u}
@@ -55880,14 +55880,14 @@ sections:
     stages:
     - iN
     - æ
-    env: '{P,C}r_$'
+    env: '{P,C}r_%'
   - rule_id: Laze-i
     source: index_diachronica.html:11918
     raw: i → v̩ / m_%
     stages:
     - i
     - v̩
-    env: m_$
+    env: m_%
   - rule_id: Laze-u-o
     source: index_diachronica.html:11919
     raw: u o → v̩ u
@@ -55905,7 +55905,7 @@ sections:
     source: index_diachronica.html:11921
     raw: V% → low tone
     stages:
-    - V$
+    - V%
     - low tone
   - rule_id: Laze-Np,mb
     source: index_diachronica.html:11922
@@ -55945,14 +55945,14 @@ sections:
     stages:
     - '{r,s}l {r,s}n'
     - l̥ N[-voice]
-    env: $_V
+    env: '%_V'
   - rule_id: Laze-n̥
     source: index_diachronica.html:11927
     raw: n̥ → l̥ / %_V
     stages:
     - n̥
     - l̥
-    env: $_V
+    env: '%_V'
   - rule_id: Laze-N̥V
     source: index_diachronica.html:11928
     raw: N̥V → hṼ
@@ -55965,7 +55965,7 @@ sections:
     stages:
     - l̥
     - ɬ
-    env: $_V
+    env: '%_V'
 - section: Proto-Naish to Mosuo (Na)
   index: 36.3.1.2
   citation: 'Pogostick Man, from Jacques, Guillaume, and Alexis Michaud (2011), “Approaching
@@ -55978,21 +55978,21 @@ sections:
     stages:
     - a
     - e
-    env: '{R,T}_$'
+    env: '{R,T}_%'
   - rule_id: Mosuo-Na-a_2
     source: index_diachronica.html:11935
     raw: a → wɤ / {K,ŋ}w_%
     stages:
     - a
     - wɤ
-    env: '{K,ŋ}w_$'
+    env: '{K,ŋ}w_%'
   - rule_id: Mosuo-Na-a_3
     source: index_diachronica.html:11936
     raw: a → i / ! K_%
     stages:
     - a
     - i
-    exception: K_$
+    exception: K_%
   - rule_id: Mosuo-Na-iN
     source: index_diachronica.html:11937
     raw: iN → æ / {P,C}r_
@@ -56038,7 +56038,7 @@ sections:
     source: index_diachronica.html:11943
     raw: V% → high rising
     stages:
-    - V$
+    - V%
     - high rising
   - rule_id: Mosuo-Na-Np,mb
     source: index_diachronica.html:11944
@@ -56076,7 +56076,7 @@ sections:
     stages:
     - n̥
     - l̥
-    env: $_V
+    env: '%_V'
   - rule_id: Mosuo-Na-N̥V
     source: index_diachronica.html:11949
     raw: N̥V → hṼ
@@ -56089,7 +56089,7 @@ sections:
     stages:
     - l̥
     - ɬ
-    env: $_V
+    env: '%_V'
   status: skipped
 - section: Proto-Naish to Naxi
   index: 36.3.1.3
@@ -56103,63 +56103,63 @@ sections:
     stages:
     - a iN {i,u}
     - e əɯ
-    env: T_$
+    env: T_%
   - rule_id: Naxi-a
     source: index_diachronica.html:11956
     raw: a → i / ŋ_%
     stages:
     - a
     - i
-    env: ŋ_$
+    env: ŋ_%
   - rule_id: Naxi-a_2
     source: index_diachronica.html:11957
     raw: a → ɯ / {R,w}_%
     stages:
     - a
     - ɯ
-    env: '{R,w}_$'
+    env: '{R,w}_%'
   - rule_id: Naxi-a_3
     source: index_diachronica.html:11958
     raw: a → wa / {K,ŋ}w_%
     stages:
     - a
     - wa
-    env: '{K,ŋ}w_$'
+    env: '{K,ŋ}w_%'
   - rule_id: Naxi-a_4
     source: index_diachronica.html:11959
     raw: a → e / ! K_%
     stages:
     - a
     - e
-    exception: K_$
+    exception: K_%
   - rule_id: Naxi-a-aS
     source: index_diachronica.html:11960
     raw: a aS → ɑ {ɑ,o} / _%
     stages:
     - a aS
     - ɑ {ɑ,o}
-    env: _$
+    env: _%
   - rule_id: Naxi-iN
     source: index_diachronica.html:11961
     raw: iN → ɚ / {P,C}r_%
     stages:
     - iN
     - ə
-    env: '{P,C}r_$'
+    env: '{P,C}r_%'
   - rule_id: Naxi-i
     source: index_diachronica.html:11962
     raw: i → ɯ / {R,kr}_%
     stages:
     - i
     - ɯ
-    env: '{R,kr}_$'
+    env: '{R,kr}_%'
   - rule_id: Naxi-u
     source: index_diachronica.html:11963
     raw: u → ɚ / Pr_%
     stages:
     - u
     - ə
-    env: Pr_$
+    env: Pr_%
   - rule_id: Naxi-u-o
     source: index_diachronica.html:11964
     raw: u o → v̩ u
@@ -56178,14 +56178,14 @@ sections:
     source: index_diachronica.html:11966
     raw: V% → mid tone / C_ru
     stages:
-    - V$
+    - V%
     - mid tone
     env: C_ru
   - rule_id: Naxi-V%_2
     source: index_diachronica.html:11967
     raw: V% → high tone / else
     stages:
-    - V$
+    - V%
     - high tone
     exception: C_ru
   - rule_id: Naxi-N
@@ -56226,14 +56226,14 @@ sections:
     - n̥
     - l̥
     - h
-    env: $_V
+    env: '%_V'
   - rule_id: Naxi-r,s
     source: index_diachronica.html:11973
     raw: '{r,s} → ∅ / %_V'
     stages:
     - '{r,s}'
     - ∅
-    env: $_V
+    env: '%_V'
   - rule_id: Naxi-r,sN
     source: index_diachronica.html:11974
     raw: '{r,s}N → N̥ → hṼ → hV'
@@ -62243,7 +62243,7 @@ sections:
     stages:
     - V
     - Vː
-    env: _$
+    env: _%
 - section: Proto-Tai to Saek
   index: 38.1.1.2
   citation: Pogostick Man, from Li, Fang Kuei (1977). “A Handbook of Comparative Tai”.
@@ -62327,7 +62327,7 @@ sections:
     stages:
     - V
     - Vː
-    env: _$
+    env: _%
 - section: Proto-Tai to Central Tai
   index: 38.1.1.3
   citation: Pogostick Man, from Li, Fang Kuei (1977). “A Handbook of Comparative Tai”.
@@ -62449,14 +62449,14 @@ sections:
     stages:
     - V
     - Vː
-    env: _$
+    env: _%
   - rule_id: Central-Tai-iə
     source: index_diachronica.html:13128
     raw: iə → ı̆ / _C%
     stages:
     - iə
     - j̆
-    env: _C$
+    env: _C%
   - rule_id: Central-Tai-ɨ̯a
     source: index_diachronica.html:13129
     raw: ɨ̯a → aː
@@ -62524,7 +62524,7 @@ sections:
     stages:
     - ɨə
     - ɨ̆
-    env: _C$
+    env: _C%
   - rule_id: Lungchow-ɨ̆-i̯o
     source: index_diachronica.html:13143
     raw: ɨ̆ i̯o → u ə
@@ -62549,7 +62549,7 @@ sections:
     stages:
     - uo ɨ̯u
     - u(ː) u
-    env: _C$
+    env: _C%
   - rule_id: Lungchow-ɨ̯u
     source: index_diachronica.html:13147
     raw: ɨ̯u → uː
@@ -62568,7 +62568,7 @@ sections:
     stages:
     - e
     - i
-    env: _C$
+    env: _C%
   - rule_id: Lungchow-i̯e
     source: index_diachronica.html:13150
     raw: i̯e → i
@@ -62955,14 +62955,14 @@ sections:
     stages:
     - V
     - Vː
-    env: _$
+    env: _%
   - rule_id: North-Tai-iə
     source: index_diachronica.html:13228
     raw: iə → ı̆ / _C%
     stages:
     - iə
     - j̆
-    env: _C$
+    env: _C%
   - rule_id: North-Tai-ɨ̆
     source: index_diachronica.html:13229
     raw: ɨ̆ → a / _K
@@ -62982,7 +62982,7 @@ sections:
     stages:
     - '{ɨ̯u,i̯ɛ}'
     - ɨə̯~ɨa̯
-    env: _$
+    env: _%
   - rule_id: North-Tai-u̯o-i̯o
     source: index_diachronica.html:13232
     raw: u̯o i̯o → u o
@@ -63008,7 +63008,7 @@ sections:
     - uo
     - uu
     - u
-    env: _$
+    env: _%
   - rule_id: North-Tai-ɨ̯ɔ
     source: index_diachronica.html:13236
     raw: ɨ̯ɔ → ɨa~ɨə
@@ -63114,7 +63114,7 @@ sections:
     stages:
     - ɨ̆ə
     - ɨ̆
-    env: _C$
+    env: _C%
   - rule_id: Po-Ai-ɨ̆
     source: index_diachronica.html:13259
     raw: ɨ̆ → a / _K
@@ -63146,14 +63146,14 @@ sections:
     stages:
     - ɨə̯~ɨa̯
     - ɨː
-    env: _$
+    env: _%
   - rule_id: Po-Ai-ɨə̯~ɨa̯_2
     source: index_diachronica.html:13264
     raw: ɨə̯~ɨa̯ → ɨ / _C%
     stages:
     - ɨə̯~ɨa̯
     - ɨ
-    env: _C$
+    env: _C%
   - rule_id: Po-Ai-i̯o
     source: index_diachronica.html:13265
     raw: i̯o → o
@@ -63166,14 +63166,14 @@ sections:
     stages:
     - e
     - o
-    env: _{m,p}$
+    env: _{m,p}%
   - rule_id: Po-Ai-e_2
     source: index_diachronica.html:13267
     raw: e → ɛ / _C%
     stages:
     - e
     - ɛ
-    env: _C$
+    env: _C%
   - rule_id: Po-Ai-ɛ-iɛ
     source: index_diachronica.html:13268
     raw: ɛ iɛ → eː ı̆
@@ -63256,7 +63256,7 @@ sections:
     stages:
     - ɨɔ
     - ɨ
-    env: _C$
+    env: _C%
   - rule_id: Po-Ai-ɨ̯a~ɨə
     source: index_diachronica.html:13281
     raw: ɨ̯a~ɨə → ɨː
@@ -63269,7 +63269,7 @@ sections:
     stages:
     - ue̯
     - u
-    env: _C$
+    env: _C%
   - rule_id: Po-Ai-ue̯_2
     source: index_diachronica.html:13283
     raw: ue̯ → uː
@@ -63368,7 +63368,7 @@ sections:
     stages:
     - i
     - '{i,oi}'
-    env: _$
+    env: _%
   - rule_id: Wu-Ming-u
     source: index_diachronica.html:13302
     raw: u → aʊ̯
@@ -63482,7 +63482,7 @@ sections:
     stages:
     - V
     - Vː
-    env: _$
+    env: _%
   - rule_id: Southwest-Tai-ɨə
     source: index_diachronica.html:13323
     raw: ɨə → ɨː
@@ -63495,7 +63495,7 @@ sections:
     stages:
     - iə
     - j̆
-    env: _C$
+    env: _C%
     comment: (not in all languages)
   - rule_id: Southwest-Tai-ɨ̯a
     source: index_diachronica.html:13325
@@ -63643,7 +63643,7 @@ sections:
     stages:
     - e
     - i
-    env: _N$
+    env: _N%
   - rule_id: Lü-uɨ̯,ua̯,ue̯-ɨa̯,ɨe̯-ie̯
     source: index_diachronica.html:13355
     raw: '{uɨ̯,ua̯,ue̯} {ɨa̯,ɨe̯} ie̯ → o ə e'
@@ -63787,7 +63787,7 @@ sections:
     stages:
     - e
     - o
-    env: _{m,p}$
+    env: _{m,p}%
   - rule_id: Siamese-i̯e
     source: index_diachronica.html:13385
     raw: i̯e → e
@@ -63958,7 +63958,7 @@ sections:
     stages:
     - e
     - i
-    env: _N$
+    env: _N%
   - rule_id: White-Tai-uɨ̯,ua̯,ue̯-ɨa̯,ɨe̯-ie̯
     source: index_diachronica.html:13419
     raw: '{uɨ̯,ua̯,ue̯} {ɨa̯,ɨe̯} ie̯ → o ə e'
@@ -65537,7 +65537,7 @@ sections:
     stages:
     - e
     - ∅
-    env: C[+coronal]_$
+    env: C[+coronal]_%
   - rule_id: Proto-Finnish-pː-tː-tsː-kː
     source: index_diachronica.html:13830
     raw: pː tː tsː kː → pˑ tˑ tsˑ kˑ

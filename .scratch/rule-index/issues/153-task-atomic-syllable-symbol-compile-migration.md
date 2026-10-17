@@ -1,6 +1,12 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: None
+
+## Resolution (2026-10-17)
+
+- Parse `normalize_symbols` now only rewrites Index stress (`”` → postfix `[+stress]`); `%` / stem `$` stay in SoT.
+- ASCA compile runs `project_index_syllable_stem_symbols` at the start of `compile_asca_field_pre_subscript` (before group mappings; `%ː` held for `normalize_asca_length_marks`).
+- Regen: `uv run create_index` — env/stages with syllable `%` no longer pre-normalized to ASCA `$` in YAML (e.g. `_$%oː` not `_$$oː`). Compiled ASCA unchanged for those rules. Re-run `compile_rules` / `validate_rules` when refreshing inventory.
 
 # Task: atomic migration of syllable/stem symbols to ASCA compile
 

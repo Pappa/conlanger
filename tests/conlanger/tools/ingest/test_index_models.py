@@ -203,11 +203,11 @@ def test_init_splits_chain_into_stages():
     assert rule.stages == ["dʒ", "tʃ", "ʃ"]
 
 
-def test_init_applies_symbol_normalization():
+def test_init_keeps_index_syllable_stem_symbols_in_env():
     raw = "a → b / _$%oː"
     rule = IndexRule(raw=raw, source="test").init()
     assert rule.stages == ["a", "b"]
-    assert rule.env == IndexContext(context="_$$oː")
+    assert rule.env == IndexContext(context="_$%oː")
 
 
 @pytest.mark.parametrize(

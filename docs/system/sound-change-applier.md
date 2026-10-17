@@ -66,6 +66,7 @@ Per-field transforms run on `input`, `output`, `env`, and `exception` separately
 
 | Step | Status | Order | Rationale | What breaks if reordered |
 | --- | --- | ---: | --- | --- |
+| Index `%` / stem `$` → ASCA `$` | implemented | 1 | `project_index_syllable_stem_symbols` on each field before group mappings; stem `$` preserved; `%ː` held for length pass. | **Before pre-subscript group mappings** — U→`%` must see boundary `%` already projected to `$`. |
 | Drop mixed parallel null columns | implemented | 0 | Index parallel-column `∅`/`*` beside other segments → omit null tokens before join (`c ɲ > ∅ n` → `c ɲ > n`). Pure `x > ∅` unchanged. | Must run on separate `input`/`output` fields **before** compile — ASCA deletion/insertion rules require bare null sides. |
 | Expand parallel output null branches | implemented | 0b | `∅` inside output correspondence sets (`{r,h} > {∅,h}`, `{m,ɲ} n > {ɲ,∅} {ŋ,∅}`) → `SoundChangeRule.alternatives` with per-branch compiled rules; inventory `alt_idx`. Uneven multi-column branch counts out of scope. | Runs via `_build_parallel_null_set_alternatives` after optional-output detection (ticket 66). |
 | Per-field pre-subscript transforms | implemented | 2–5 | Each field: ellipsis → series mappings → section-local abbreviations → superscript modifiers → group mappings. | Cross-field subscripts must see expanded class letters per field before shared `declared` binding. |

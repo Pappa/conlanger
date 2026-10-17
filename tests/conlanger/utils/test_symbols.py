@@ -8,7 +8,7 @@ from conlanger.utils.symbols import normalize_stress_marks, normalize_symbols
     [
         ("#_", "#_"),
         ("∅", "∅"),
-        ("_$%oː", "_$$oː"),
+        ("_$%oː", "_$%oː"),
         ("$am_w", "$am_w"),
         ("in #”U", "in #U:[+stress]"),
     ],

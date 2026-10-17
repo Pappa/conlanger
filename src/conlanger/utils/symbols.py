@@ -6,6 +6,9 @@ import re
 
 # Protect Index stem ``$`` while remapping syllable-boundary ``%`` → ASCA ``$``.
 _STEM_BOUNDARY_PLACEHOLDER = "\ue000"
+# Protect ``%ː`` until ``normalize_asca_length_marks`` (compile) runs.
+_SYLLABLE_LENGTH_BOUNDARY_PLACEHOLDER = "\ue001"
+_LENGTH_MARK = "\u02d0"
 
 # Index Diachronica stress mark (Key to Abbreviations: ” = Stress).
 _INDEX_STRESS = "\u201d"
@@ -153,16 +156,30 @@ def normalize_stress_marks(text: str) -> str:
     return text
 
 
-def normalize_symbols(text: str) -> str:
-    """Map Index **Symbol** marks to ASCA-canonical form before rule parsing.
+def project_index_syllable_stem_symbols(text: str) -> str:
+    """Map Index ``%`` / ``$`` to ASCA boundary ``$`` at compile time.
 
-    Applied to the full rule line (not the stored ``raw``). Index ``%`` (syllable
-    boundary) → ASCA ``$``; Index ``$`` (stem boundary) is preserved. ``#`` and ``∅``
-    pass through unchanged. Index stress ``”`` → ``segment:[+stress]``.
+    Index ``%`` (syllable boundary) → ASCA ``$``; Index ``$`` (stem boundary) is
+    preserved. ``%ː`` is left for ``normalize_asca_length_marks`` (→ ``%:[+long]``).
     """
     if not text:
         return text
+    syllable_length = f"%{_LENGTH_MARK}"
+    text = text.replace(syllable_length, _SYLLABLE_LENGTH_BOUNDARY_PLACEHOLDER)
     text = text.replace("$", _STEM_BOUNDARY_PLACEHOLDER)
     text = text.replace("%", "$")
     text = text.replace(_STEM_BOUNDARY_PLACEHOLDER, "$")
+    text = text.replace(_SYLLABLE_LENGTH_BOUNDARY_PLACEHOLDER, syllable_length)
+    return text
+
+
+def normalize_symbols(text: str) -> str:
+    """Map Index stress ``”`` to postfix ``segment[+stress]`` before rule parsing.
+
+    Applied to the full rule line (not the stored ``raw``). Index ``%``, ``$``, ``#``,
+    and ``∅`` stay Index-shaped in the SoT; syllable/stem ``%``/``$`` → ASCA ``$`` at
+    compile (``project_index_syllable_stem_symbols``).
+    """
+    if not text:
+        return text
     return normalize_stress_marks(text)

@@ -78,8 +78,7 @@ Applied to the **remainder** after the first-`;` comment partition (see Phase B�
 
 | Step                                                 | Status      | Order | Rationale                                                                                                                           | Code                                               |
 | ---------------------------------------------------- | ----------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| Stem boundary `$` preservation                       | implemented | B1    | Index `$` (stem) and `%` (syllable) both map to ASCA `$`; placeholder prevents `%→$` from clobbering stem `$`.                      | `normalize_symbols`                                |
-| Syllable boundary `%` → ASCA `$`                     | implemented | B2    | Index `%` is syllable boundary; ASCA uses `$`.                                                                                      | `normalize_symbols`                                |
+| Index `%` / stem `$` in SoT                          | implemented | B1–B2 | Syllable boundary `%` and stem `$` stay Index-shaped in parsed YAML; ASCA `$` projection runs at compile ([sound-change-applier.md](./sound-change-applier.md)). | —                                                  |
 | Index stress mark `"` (U+201D) → `segment:[+stress]` | implemented | B3    | Index stress notation is phonological, not prose quotes; must become ASCA feature syntax. Prose curly quotes in env are left alone. | `normalize_stress_marks` (via `normalize_symbols`) |
 
 
