@@ -82,7 +82,9 @@ flowchart TD
 | 6 | Classify failure | `classify_error()`, `parse_unknown_token_error()` |
 | 7 | Emit artifacts | See [Validation report](#validation-report) below |
 
-**Scope:** One row per **index rule** (not whole-section-only). Config hold-outs (`status: skipped` from `skip_rules` / `skip_sections`, rendered as ASCA comments) inventory as `ok=SKIPPED` with description `held-out (commented rule)`. Missing-`→` and other unlisted parse failures inventory as `ok=FAILED` through compile validation.
+**Scope:** One inventory row per **compile-expanded validation target** (not whole-section-only). A single index rule may emit multiple rows when compile fans out optional-output **alternatives** (`alt_idx`) or adjacent **stages** chain steps (`step_idx`). Each row runs `validate_asca` on a one-rule mini-series; the `rule` column is that target’s compiled ASCA line (not a stochastic parent pick). Compile uses a fixed inventory RNG seed (`INVENTORY_COMPILE_RNG_SEED` in `index_inventory.py`) so optional-output and sporadic plumbing does not flip `ok` across regen. Config hold-outs (`status: skipped` from `skip_rules` / `skip_sections`, rendered as ASCA comments) inventory as `ok=SKIPPED` with description `held-out (commented rule)`. Missing-`→` and other unlisted parse failures inventory as `ok=FAILED` through compile validation.
+
+**Per index rule `ok` semantics (correction rollups):** a rule id is **OK** only when every emitted row for that id is `ok=OK`; **FAILED** when any row fails; **SKIPPED** only when all rows are skipped. Changelog `ok` flips match prior inventory on `(source, alt_idx, step_idx)`.
 
 **Baseline metrics** (re-run after each correction pass):
 
@@ -110,7 +112,7 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](../a
 | --- | --- | --- |
 | `rule-inventory-success.csv` | Filtered `ok=OK` | [34](../.scratch/rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
 | `rule-inventory-error.csv` | Filtered `ok=FAILED` | [34](../.scratch/rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
-| `rule-inventory-changelog.csv` | Append-only **ok flips** matched by `(source, alt_idx)` (HTML `file:line` + optional-output alternative). Prior `ok` is read from the success/error split CSVs. Pass `--reset-changelog` to overwrite after a column-schema change; with zero flips this writes a header-only CSV. | [34](../.scratch/rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
+| `rule-inventory-changelog.csv` | Append-only **ok flips** matched by `(source, alt_idx, step_idx)` (HTML `file:line` + optional-output alternative + chain step). Prior `ok` is read from the success/error split CSVs. Pass `--reset-changelog` to overwrite after a column-schema change; with zero flips this writes a header-only CSV. | [34](../.scratch/rule-index/issues/34-inventory-success-error-splits-and-ok-changelog.md) |
 | `rule-inventory-summary.md` | Rule/section counts, **Corrections** rollup for matched overlay rules, failure-class table, **Common Errors** (top `error_token` and description clusters per failure class), field-isolation blame | [12](../.scratch/rule-index/issues/12-full-index-validation-inventory.md) |
 | `field-isolation-success.csv` | filtered `whole_ok=OK` (and per-field clean) | [36](../.scratch/rule-index/issues/36-per-field-asca-blame-in-inventory.md) |
 | `field-isolation-error.csv` | filtered `whole_ok=FAILED` or per-field fail | [36](../.scratch/rule-index/issues/36-per-field-asca-blame-in-inventory.md) |
@@ -126,9 +128,9 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](../a
 
 **CSV columns** (`VALIDATION_CSV_COLUMNS` in `index_inventory.py`):
 
-`section_index`, `section_name`, `rule_id`, `alt_idx`, `source`, `ok`, `failure_class`, `error_token`, `suggested`, `expected`, `description`
+`section_index`, `section_name`, `rule_id`, `alt_idx`, `step_idx`, `source`, `ok`, `failure_class`, `error_token`, `suggested`, `expected`, `description`
 
-`alt_idx` is the 0-based optional-output alternative index (e.g. `d → {∅,ð}` emits one row per alternative and never the parent's random pick); it is empty for rules without alternatives.
+`alt_idx` is the 0-based optional-output alternative index (e.g. `d → {∅,ð}` emits one row per alternative and never the parent's random pick); it is empty when the target is not an alternative branch. `step_idx` is the 0-based chain step from `expand_chained_index_rule` (empty for single-step rules). See [ticket 158](../.scratch/rule-index/issues/158-task-inventory-validate-all-compile-targets.md).
 
 **`ok` / `whole_ok` values** (`InventoryOk` in `index_inventory.py`): `FAILED`, `OK`, `SKIPPED`. New inventory CSVs write these strings only. Changelog flip detection and `load_inventory_csv` coerce legacy numeric cells (`0` / `1` / `2`) and boolean-ish strings when reading older files.
 
@@ -141,7 +143,7 @@ Temporary **analysis artifacts**, not long-term source of truth ([ADR-0010](../a
 - **Common Errors** — for each failure class with a cluster CSV, top `error_token` rows plus (when token-less messages dominate) top normalised `description` rows; headings use `{failure_class} (error_token)` and `{failure_class} (description)`.
 - **Field isolation blame** — when `--field-isolation` is on, per-field blame counts on whole-rule failure rows.
 
-Inventory row count can exceed index rule count when optional-output alternatives emit multiple validated rows (`alt_idx`).
+Inventory row count can exceed index rule count when optional-output alternatives (`alt_idx`) or multi-stage chains (`step_idx`) emit multiple validated rows.
 
 **Failure classes** (regex-matched from ASCA stderr): include `syntax_other`, `runtime_other`, `unknown_character`, `unknown_reference`, `expected_ipa`, `expected_range_dots`, `invalid_ipa`, and others — full ordered list in `ERROR_CLASS_PATTERNS` (`index_inventory.py`). Dedicated cluster CSVs exist for each class in `CLUSTER_CSV_BY_FAILURE_CLASS`.
 
@@ -189,7 +191,7 @@ resolve_asca_bin() -> str | None  # ASCA_BIN env, then PATH
 - `validate_asca_syntax("a > b / _")` → `asca validate -s …`
 - `validate_asca_part("env", "#_")` → `asca validate -s … -f context` (`env` maps to ASCA `context`)
 
-**Inventory integration** (`index_inventory.py`): each index rule → `_mini_section` → `DiachronicSeries(mini, group_mappings=…)` → `validate_asca(..., probe_words=fixture)`.
+**Inventory integration** (`index_inventory.py`): each index rule → `_resolve_inventory_targets` (fixed compile RNG; fan-out per alternative and per chain step) → `validate_asca` on each one-rule mini-series (`probe_words=tests/fixtures/asca_probe_words.wsca` by default).
 
 ### Probe wordlist
 

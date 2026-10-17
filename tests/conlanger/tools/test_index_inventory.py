@@ -174,6 +174,7 @@ def test_validation_row_as_csv_dict():
         "section_name": "Test",
         "rule_id": "Test-2",
         "alt_idx": "",
+        "step_idx": "",
         "source": "sample.html:10",
         "ok": OK_FALSE,
         "rule": "",
@@ -1039,7 +1040,8 @@ def test_write_ok_flip_changelog_reset_with_flips_overwrites(tmp_path: Path):
 def test_write_ok_flip_changelog_append_empty_leaves_existing_file(tmp_path: Path):
     path = tmp_path / "changelog.csv"
     path.write_text(
-        "section_index,rule_id,alt_idx,source,ok,timestamp\n1,r0,,s:1,1,old\n",
+        "section_index,rule_id,alt_idx,step_idx,source,ok,timestamp\n"
+        "1,r0,,,s:1,1,old\n",
         encoding="utf-8",
     )
     assert (
@@ -1918,6 +1920,80 @@ def test_build_field_isolation_row_two_fields_fail(mock_validate_part):
 
 
 @pytest.mark.skipif(not ASCA_VALIDATE_INSTALLED, reason="asca validate not available")
+@patch("conlanger.tools.index_inventory.validate_asca", return_value=True)
+def test_validate_index_rule_chain_emits_one_row_per_step(mock_validate):
+    rule = {
+        "stages": ["p", "t", "k"],
+        "raw": "p → t → k",
+        "source": "chain:1",
+    }
+    rows, targets = validate_index_rule_with_targets(
+        _SECTION,
+        rule,
+        "chain-r0",
+        probe_words=None,
+    )
+    assert len(rows) == 2
+    assert [row.step_idx for row in rows] == [0, 1]
+    assert all(row.alt_idx is None for row in rows)
+    assert mock_validate.call_count == 2
+    for row, target in zip(rows, targets, strict=True):
+        series_rules = [
+            part for part in target.series.parts if isinstance(part, SoundChangeRule)
+        ]
+        assert len(series_rules) == 1
+        assert row.rule == str(series_rules[0]).strip()
+
+
+@patch("conlanger.tools.index_inventory.validate_asca", return_value=True)
+def test_validate_index_rule_optional_output_is_stable_across_calls(mock_validate):
+    rule = {
+        "stages": ["d", "{∅,ð}"],
+        "env": "V_V",
+        "raw": "d → {∅,ð} / V_V",
+        "source": "opt:1",
+    }
+    first_rows, _ = validate_index_rule_with_targets(
+        _SECTION, rule, "opt-r0", probe_words=None
+    )
+    second_rows, _ = validate_index_rule_with_targets(
+        _SECTION, rule, "opt-r0", probe_words=None
+    )
+    assert len(first_rows) == 2
+    assert [(r.alt_idx, r.ok, r.rule) for r in first_rows] == [
+        (r.alt_idx, r.ok, r.rule) for r in second_rows
+    ]
+    assert mock_validate.call_count == 4
+
+
+def test_ok_flip_changelog_rows_keys_on_step_idx():
+    previous = validation_rows_to_dataframe(
+        [
+            ValidationRow("1", "A", "r0", "chain:1", OK_TRUE, step_idx=0),
+            ValidationRow("1", "A", "r0", "chain:1", OK_TRUE, step_idx=1),
+        ]
+    )
+    current = validation_rows_to_dataframe(
+        [
+            ValidationRow("1", "A", "r0", "chain:1", OK_TRUE, step_idx=0),
+            ValidationRow(
+                "1",
+                "A",
+                "r0",
+                "chain:1",
+                OK_FALSE,
+                failure_class="syntax_other",
+                description="err",
+                step_idx=1,
+            ),
+        ]
+    )
+    flips = ok_flip_changelog_rows(previous, current, timestamp="2026-10-17T12:00:00Z")
+    assert list(flips["source"]) == ["chain:1"]
+    assert list(flips["step_idx"]) == ["1"]
+    assert list(flips["ok"]) == [OK_FALSE]
+
+
 def test_field_isolation_integration_multi_blame():
     validation_row = ValidationRow(
         "1",

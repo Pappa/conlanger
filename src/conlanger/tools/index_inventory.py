@@ -10,6 +10,7 @@ of scope.
 
 from __future__ import annotations
 
+import random
 import re
 from collections import Counter
 from dataclasses import dataclass
@@ -156,11 +157,16 @@ _EXPECTED_UNQUOTED_UNQUOTED_RECEIVED_RE = re.compile(
 )
 _DID_YOU_MEAN_RE = re.compile(r"Did you mean ([^?]+)\?", re.IGNORECASE)
 _THREAD_PANICKED_RE = re.compile(r"^(thread) .+ (panicked at [^.]+\.rs)", re.IGNORECASE)
+
+# Fixed seed for inventory compile (optional-output / sporadic RNG); ticket 158.
+INVENTORY_COMPILE_RNG_SEED = 0
+
 VALIDATION_CSV_COLUMNS = [
     "section_index",
     "section_name",
     "rule_id",
     "alt_idx",
+    "step_idx",
     "source",
     "ok",
     "rule",
@@ -175,6 +181,7 @@ CHANGELOG_CSV_COLUMNS = [
     "section_index",
     "rule_id",
     "alt_idx",
+    "step_idx",
     "source",
     "ok",
     "timestamp",
@@ -265,6 +272,16 @@ def _coerce_ok_column(series: pd.Series) -> pd.Series:
 
 def _alt_idx_key(series: pd.Series) -> pd.Series:
     """Normalize ``alt_idx`` (int / empty / NaN / CSV float) into a string key."""
+    return _inventory_branch_key(series)
+
+
+def _step_idx_key(series: pd.Series) -> pd.Series:
+    """Normalize ``step_idx`` (int / empty / NaN / CSV float) into a string key."""
+    return _inventory_branch_key(series)
+
+
+def _inventory_branch_key(series: pd.Series) -> pd.Series:
+    """Normalize inventory branch index columns for stable joins."""
 
     def _norm(value: object) -> str:
         if (
@@ -321,34 +338,45 @@ def ok_flip_changelog_rows(
 ) -> pd.DataFrame:
     """Return changelog rows for rules whose ``ok`` flipped vs ``previous``.
 
-    Matching is by ``(source, alt_idx)`` so optional-output alternatives are
-    tracked independently. When ``previous`` is missing or empty, no flips are
-    emitted (first-run behaviour). ``timestamp`` is copied onto every row.
+    Matching is by ``(source, alt_idx, step_idx)`` so optional-output
+    alternatives and multi-stage chain steps are tracked independently. When
+    ``previous`` is missing or empty, no flips are emitted (first-run
+    behaviour). ``timestamp`` is copied onto every row.
     """
     empty = pd.DataFrame(columns=CHANGELOG_CSV_COLUMNS)
     if previous is None or previous.empty or current.empty:
         return empty
-    # Prior inventories predating ``alt_idx`` have no such column — treat as empty.
+    # Prior inventories predating branch columns — treat missing keys as empty.
     previous = (
         previous if "alt_idx" in previous.columns else previous.assign(alt_idx="")
     )
-    prev = previous.loc[:, ["source", "alt_idx", "ok"]].copy()
+    previous = (
+        previous if "step_idx" in previous.columns else previous.assign(step_idx="")
+    )
+    prev = previous.loc[:, ["source", "alt_idx", "step_idx", "ok"]].copy()
     prev["_alt_key"] = _alt_idx_key(prev["alt_idx"])
+    prev["_step_key"] = _step_idx_key(prev["step_idx"])
     prev["ok"] = _coerce_ok_column(prev["ok"])
-    prev = prev.drop_duplicates(subset=["source", "_alt_key"], keep="last")
-    prev = prev.set_index(["source", "_alt_key"])["ok"]
+    prev = prev.drop_duplicates(subset=["source", "_alt_key", "_step_key"], keep="last")
+    prev = prev.set_index(["source", "_alt_key", "_step_key"])["ok"]
     cur = current.loc[
         :,
-        ["section_index", "rule_id", "alt_idx", "source", "ok"],
+        ["section_index", "rule_id", "alt_idx", "step_idx", "source", "ok"],
     ].copy()
     cur["_alt_key"] = _alt_idx_key(cur["alt_idx"])
+    cur["_step_key"] = _step_idx_key(cur["step_idx"])
     cur["ok"] = _coerce_ok_column(cur["ok"])
-    cur = cur.drop_duplicates(subset=["source", "_alt_key"], keep="last")
-    merged = cur.join(prev.rename("_prev_ok"), on=["source", "_alt_key"], how="inner")
+    cur = cur.drop_duplicates(subset=["source", "_alt_key", "_step_key"], keep="last")
+    merged = cur.join(
+        prev.rename("_prev_ok"),
+        on=["source", "_alt_key", "_step_key"],
+        how="inner",
+    )
     flipped = merged.loc[merged["ok"] != merged["_prev_ok"]].copy()
     if flipped.empty:
         return empty
     flipped["alt_idx"] = _alt_idx_key(flipped["alt_idx"])
+    flipped["step_idx"] = _step_idx_key(flipped["step_idx"])
     flipped["timestamp"] = timestamp
     return flipped.loc[:, CHANGELOG_CSV_COLUMNS].reset_index(drop=True)
 
@@ -584,6 +612,7 @@ class ValidationRow:
     expected: str = ""
     description: str = ""
     alt_idx: int | None = None
+    step_idx: int | None = None
 
     def as_csv_dict(self) -> dict[str, str | int | bool]:
         return {
@@ -591,6 +620,7 @@ class ValidationRow:
             "section_name": self.section_name,
             "rule_id": self.rule_id,
             "alt_idx": "" if self.alt_idx is None else self.alt_idx,
+            "step_idx": "" if self.step_idx is None else self.step_idx,
             "source": self.source,
             "ok": self.ok,
             "rule": self.rule,
@@ -732,19 +762,12 @@ def filter_field_isolation_by_whole_ok(
     return df.loc[column == target].reset_index(drop=True)
 
 
-def _field_rule_from_series(scr: DiachronicSeries) -> SoundChangeRule | None:
-    """Return the sole ``SoundChangeRule`` in *scr*, or ``None`` for chains."""
-    parts = [part for part in scr._parts if isinstance(part, SoundChangeRule)]
-    if len(parts) == 1:
-        return parts[0]
-    return None
-
-
 @dataclass(frozen=True)
 class _InventoryTarget:
     alt_idx: int | None
     series: DiachronicSeries | None
     field_rule: SoundChangeRule | None
+    step_idx: int | None = None
     format_error: str | None = None
 
 
@@ -761,6 +784,7 @@ def _resolve_inventory_targets(
         scr = DiachronicSeries(
             mini,
             compiler_config=compiler_config,
+            rng=random.Random(INVENTORY_COMPILE_RNG_SEED),
         )
     except (KeyError, ValueError) as exc:
         return [
@@ -785,19 +809,30 @@ def _resolve_inventory_targets(
             )
         ]
 
-    if len(sound_change_parts) == 1 and sound_change_parts[0].alternatives:
-        return [
+    multi_step = len(sound_change_parts) > 1
+    targets: list[_InventoryTarget] = []
+    for step_index, part in enumerate(sound_change_parts):
+        step_idx = step_index if multi_step else None
+        if part.alternatives:
+            for alt_idx, alternative in enumerate(part.alternatives):
+                targets.append(
+                    _InventoryTarget(
+                        alt_idx,
+                        _series_for_sound_change_rule(section, rule_id, alternative),
+                        alternative,
+                        step_idx=step_idx,
+                    )
+                )
+            continue
+        targets.append(
             _InventoryTarget(
-                alt_idx,
-                _series_for_alternative(
-                    section, rule, rule_id, alternative, compiler_config
-                ),
-                alternative,
+                None,
+                _series_for_sound_change_rule(section, rule_id, part),
+                part,
+                step_idx=step_idx,
             )
-            for alt_idx, alternative in enumerate(sound_change_parts[0].alternatives)
-        ]
-
-    return [_InventoryTarget(None, scr, _field_rule_from_series(scr))]
+        )
+    return targets
 
 
 def _validate_field_part(
@@ -1039,6 +1074,22 @@ def _mini_section(
     }
 
 
+def _series_for_sound_change_rule(
+    section: dict[str, Any],
+    rule_id: str,
+    sound_change_rule: SoundChangeRule,
+) -> DiachronicSeries:
+    """Build a standalone series for one compiled inventory validation target."""
+    section_index = str(section.get("index", ""))
+    section_name = f"{section.get('section', '')}#{rule_id}"
+    return DiachronicSeries.from_parts(
+        [
+            RuleTitle(section_index, section_name),
+            sound_change_rule,
+        ]
+    )
+
+
 def _series_for_alternative(
     section: dict[str, Any],
     rule: dict[str, Any],
@@ -1047,15 +1098,8 @@ def _series_for_alternative(
     compiler_config: CompilerConfig | None,
 ) -> DiachronicSeries:
     """Build a standalone series for one already-compiled alternative."""
-    del rule, compiler_config  # alternative carries compiled fields; no re-parse
-    section_index = str(section.get("index", ""))
-    section_name = f"{section.get('section', '')}#{rule_id}"
-    return DiachronicSeries.from_parts(
-        [
-            RuleTitle(section_index, section_name),
-            alternative,
-        ]
-    )
+    del rule, compiler_config
+    return _series_for_sound_change_rule(section, rule_id, alternative)
 
 
 def _asca_validation_row(
@@ -1065,6 +1109,7 @@ def _asca_validation_row(
     section_name: str,
     rule_id: str,
     alt_idx: int | None,
+    step_idx: int | None,
     source: str,
     probe_words: Path | None,
     asca_bin: str | None = None,
@@ -1074,6 +1119,7 @@ def _asca_validation_row(
     rules = [
         str(part).strip() for part in scr.parts if isinstance(part, SoundChangeRule)
     ]
+    compiled_rule = rules[0] if rules else ""
 
     try:
         validate_asca(scr, probe_words=probe_words, asca_bin=asca_bin)
@@ -1088,9 +1134,10 @@ def _asca_validation_row(
             section_name=section_name,
             rule_id=rule_id,
             alt_idx=alt_idx,
+            step_idx=step_idx,
             source=source,
             ok=OK_FALSE,
-            rule=rules[0] if rules else "",
+            rule=compiled_rule,
             failure_class=failure_class,
             error_token=error_token,
             suggested=suggested,
@@ -1103,9 +1150,10 @@ def _asca_validation_row(
         section_name=section_name,
         rule_id=rule_id,
         alt_idx=alt_idx,
+        step_idx=step_idx,
         source=source,
         ok=OK_TRUE,
-        rule=rules[0] if rules else "",
+        rule=compiled_rule,
     )
 
 
@@ -1161,6 +1209,8 @@ def validate_index_rule_with_targets(
                     section_index=section_index,
                     section_name=section_name,
                     rule_id=rule_id,
+                    alt_idx=target.alt_idx,
+                    step_idx=target.step_idx,
                     source=source,
                     ok=OK_FALSE,
                     failure_class=failure_class,
@@ -1180,6 +1230,7 @@ def validate_index_rule_with_targets(
                 section_name=section_name,
                 rule_id=rule_id,
                 alt_idx=target.alt_idx,
+                step_idx=target.step_idx,
                 source=source,
                 probe_words=probe_words,
                 asca_bin=asca_bin,
@@ -1506,8 +1557,8 @@ def summarize_inventory(
         f"- Probe words: `{probe_words}`",
         f"- Checker: `validate_asca` / asca **{asca_version}**",
         (
-            f"- Rows: **{total}** (one per inventory row; optional-output "
-            "alternatives emit extra rows with distinct `alt_idx`)"
+            f"- Rows: **{total}** (one per compile-expanded validation target; "
+            "optional outputs use `alt_idx`, multi-stage chains use `step_idx`)"
         ),
         "",
         "## Rules",
