@@ -57,6 +57,32 @@ def test_inventory_target_from_yaml_round_trip():
     assert restored.step_idx == target.step_idx
 
 
+def test_inventory_target_from_yaml_preserves_group_mapped_env(
+    fx_sample_compiler_config,
+):
+    section = {"index": "6.2.2.1.2", "section": "Test"}
+    rule = {
+        "stages": ["f", "p"],
+        "env": "#_V{Z,C[-voice],r}",
+        "source": "s:1",
+    }
+    target = resolve_inventory_targets(
+        section,
+        rule,
+        "r0",
+        compiler_config=fx_sample_compiler_config,
+    )[0]
+    assert target.field_rule is not None
+    yaml_target = inventory_target_to_yaml(target)
+    assert "[+cont]" in yaml_target["rule"]
+    assert "Z" not in yaml_target["rule"]
+
+    restored = inventory_target_from_yaml(yaml_target)
+    assert str(restored.field_rule).strip() == yaml_target["rule"]
+    assert restored.field_rule.env is not None
+    assert "[+cont]" in restored.field_rule.env.compiled
+
+
 def test_series_round_trip_matches_rule_line():
     rule = {"stages": ["a", "b"], "source": "s:1"}
     target = resolve_inventory_targets(_SECTION, rule, "r0")[0]

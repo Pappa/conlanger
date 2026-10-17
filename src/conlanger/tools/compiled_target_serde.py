@@ -114,7 +114,7 @@ def inventory_target_to_yaml(target: InventoryTarget) -> dict[str, Any]:
 def inventory_target_from_yaml(data: dict[str, Any]) -> InventoryTarget:
     series = deserialize_series(data["series"])
     field_rule = sound_change_rule_from_series(series)
-    return InventoryTarget(
+    return InventoryTarget.model_construct(
         alt_idx=data.get("alt_idx"),
         series=series,
         field_rule=field_rule,
