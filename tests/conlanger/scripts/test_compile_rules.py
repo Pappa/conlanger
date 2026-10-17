@@ -24,7 +24,7 @@ def test_compile_rules_errors_when_yaml_missing(tmp_path: Path):
         assert compile_script.main() == 1
 
 
-def test_compile_rules_smoke_writes_v1_yaml(tmp_path: Path):
+def test_compile_rules_smoke_writes_v3_yaml(tmp_path: Path):
     yaml_in = tmp_path / "index.yml"
     yaml_in.write_text(
         """
@@ -57,10 +57,10 @@ sections:
         assert compile_script.main() == 0
 
     loaded = yaml.safe_load(compiled_out.read_text(encoding="utf-8"))
-    assert loaded["schema_version"] == 2
+    assert loaded["schema_version"] == 3
     rule = loaded["sections"][0]["rules"][0]
     assert rule["rule_id"] == "r0"
-    assert rule["targets"][0]["rule"] == "a > b"
+    assert rule["rule"] == "a > b"
 
 
 def test_compile_rules_limit(tmp_path: Path):

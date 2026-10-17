@@ -103,6 +103,47 @@ def _expand_cartesian_branches_from_column_pairs(
     return branches
 
 
+def _supplement_single_column_null_deletion_branches(
+    branches: list[tuple[tuple[FieldToken, ...], tuple[FieldToken, ...]]],
+    input_tokens: tuple[FieldToken, ...],
+    output_tokens: tuple[FieldToken, ...],
+) -> list[tuple[tuple[FieldToken, ...], tuple[FieldToken, ...]]]:
+    """Add ``in > ∅`` peers when ``in`` already maps to a non-null in a zipped set.
+
+    For ``{r,h} > {∅,h}``, zip yields ``r > ∅`` and ``h > h``; ``h`` may also delete
+    to ``∅`` because ``∅`` is a member of the output set (chained rules like Balinese-r).
+    """
+    if len(input_tokens) != 1 or len(output_tokens) != 1:
+        return branches
+    if not is_set_token(input_tokens[0]) or not is_set_token(output_tokens[0]):
+        return branches
+    if not set_contains_null_member(output_tokens[0]):
+        return branches
+
+    def branch_key(
+        branch: tuple[tuple[FieldToken, ...], tuple[FieldToken, ...]],
+    ) -> tuple[str, str]:
+        inp, out = branch
+        return (
+            render_field_tokens(inp).strip(),
+            render_field_tokens(out).strip(),
+        )
+
+    existing = {branch_key(branch) for branch in branches}
+    extras: list[tuple[tuple[FieldToken, ...], tuple[FieldToken, ...]]] = []
+    for inp, out in branches:
+        in_text = render_field_tokens(inp).strip()
+        out_text = render_field_tokens(out).strip()
+        if out_text in _NULL_TOKENS or out_text != in_text:
+            continue
+        key = (in_text, "∅")
+        if key in existing:
+            continue
+        extras.append((inp, ("∅",)))
+        existing.add(key)
+    return branches + extras
+
+
 def _expand_zipped_branches_from_column_pairs(
     column_pairs: list[list[tuple[str, str]]],
 ) -> list[tuple[tuple[FieldToken, ...], tuple[FieldToken, ...]]]:
@@ -238,7 +279,10 @@ def expand_parallel_output_null_branches_from_tokens(
         if len(pairs) != 1 and len(pairs) != branch_count:
             return None
 
-    return _expand_zipped_branches_from_column_pairs(column_pairs)
+    zipped = _expand_zipped_branches_from_column_pairs(column_pairs)
+    return _supplement_single_column_null_deletion_branches(
+        zipped, input_tokens, output_tokens
+    )
 
 
 def expand_parallel_output_null_branches(

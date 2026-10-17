@@ -29,7 +29,7 @@ from conlanger.appliers.asca import (
 )
 from conlanger.compile.models.config import CompilerConfig
 from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
-from conlanger.tools.compiled_target_serde import inventory_target_from_yaml
+from conlanger.tools.compiled_rule_shape import compiled_rule_validation_specs
 from conlanger.tools.inventory_error_clusters import (
     CLUSTER_CSV_BY_FAILURE_CLASS,
 )
@@ -1256,53 +1256,40 @@ def _validation_rows_for_compiled_rule_entry(
         )
         return [row], [target]
 
-    yaml_targets = rule_entry.get("targets") or []
-    targets = [inventory_target_from_yaml(target) for target in yaml_targets]
+    try:
+        specs = compiled_rule_validation_specs(rule_entry)
+    except (TypeError, ValueError) as exc:
+        err = f"format_error: {exc}"
+        target = InventoryTarget(format_error=err)
+        row = ValidationRow(
+            section_index=section_index,
+            section_name=section_name,
+            rule_id=rule_id,
+            source=source,
+            ok=OK_FALSE,
+            failure_class="format_error",
+            description=err,
+        )
+        return [row], [target]
+
+    targets = [
+        InventoryTarget.model_construct(
+            alt_idx=alt_idx,
+            step_idx=step_idx,
+            asca_rule=line,
+        )
+        for line, step_idx, alt_idx in specs
+    ]
     rows: list[ValidationRow] = []
-    for target in targets:
-        if target.format_error is not None:
-            err = target.format_error
-            rows.append(
-                ValidationRow(
-                    section_index=section_index,
-                    section_name=section_name,
-                    rule_id=rule_id,
-                    alt_idx=target.alt_idx,
-                    step_idx=target.step_idx,
-                    source=source,
-                    ok=OK_FALSE,
-                    failure_class="format_error",
-                    description=err,
-                )
-            )
-            continue
-
-        rule_line = (target.asca_rule or "").strip()
-        if not rule_line:
-            err = "format_error: compiled target missing rule line"
-            rows.append(
-                ValidationRow(
-                    section_index=section_index,
-                    section_name=section_name,
-                    rule_id=rule_id,
-                    alt_idx=target.alt_idx,
-                    step_idx=target.step_idx,
-                    source=source,
-                    ok=OK_FALSE,
-                    failure_class="format_error",
-                    description=err,
-                )
-            )
-            continue
-
+    for line, step_idx, alt_idx in specs:
         rows.append(
             _asca_validation_row(
-                rule_line,
+                line,
                 section_index=section_index,
                 section_name=section_name,
                 rule_id=rule_id,
-                alt_idx=target.alt_idx,
-                step_idx=target.step_idx,
+                alt_idx=alt_idx,
+                step_idx=step_idx,
                 source=source,
                 probe_words=probe_words,
                 asca_bin=asca_bin,

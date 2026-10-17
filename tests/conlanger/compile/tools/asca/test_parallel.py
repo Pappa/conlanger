@@ -35,6 +35,16 @@ def test_drop_mixed_parallel_null_columns_side(side, expected):
         assert drop_mixed_parallel_null_columns(side) == expected
 
 
+def test_paired_null_set_supplements_identity_branch_deletion_only():
+    branches = expand_parallel_output_null_branches("{r,h}", "{∅,h}")
+    assert branches is not None
+    assert ("h", "∅") in branches
+    assert expand_parallel_output_null_branches("{pʰ,ŋ}", "{∅,j}") == [
+        ("pʰ", "∅"),
+        ("ŋ", "j"),
+    ]
+
+
 def test_drop_mixed_parallel_null_columns_proto_star_token_unchanged():
     assert drop_mixed_parallel_null_columns("*T") == "*T"
     assert drop_mixed_parallel_null_columns("*L") == "*L"
@@ -43,7 +53,7 @@ def test_drop_mixed_parallel_null_columns_proto_star_token_unchanged():
 @pytest.mark.parametrize(
     ("input_text", "output_text", "expected_branches"),
     [
-        ("{r,h}", "{∅,h}", [("r", "∅"), ("h", "h")]),
+        ("{r,h}", "{∅,h}", [("r", "∅"), ("h", "h"), ("h", "∅")]),
         ("{pʰ,ŋ}", "{∅,j}", [("pʰ", "∅"), ("ŋ", "j")]),
         ("{m,ɲ} n", "{ɲ,∅} {ŋ,∅}", [("m n", "ɲ ŋ"), ("ɲ n", "∅")]),
         ("m l", "{m,n} {l,∅}", [("m l", "m l"), ("m l", "n")]),

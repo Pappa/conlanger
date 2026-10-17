@@ -1,4 +1,4 @@
-"""Compiled rules YAML v2 (`diagnostics/compile/asca_rules.yml`, tickets 159/161/169)."""
+"""Compiled rules YAML v3 (`diagnostics/compile/asca_rules.yml`, tickets 159/161/169)."""
 
 from __future__ import annotations
 
@@ -11,6 +11,7 @@ import yaml
 import conlanger.tools.index_io as _index_io  # noqa: F401 — registers YAML string representer
 from conlanger.compile.models.config import CompilerConfig
 from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
+from conlanger.tools.compiled_rule_shape import inventory_targets_to_compiled_fields
 from conlanger.tools.compiled_target_serde import (
     deserialize_series,
     inventory_target_from_yaml,
@@ -25,8 +26,8 @@ from conlanger.tools.inventory_targets import (
 )
 
 COMPILED_RULES_YAML_NAME = "asca_rules.yml"
-COMPILED_RULES_SCHEMA_VERSION = 2
-SUPPORTED_COMPILED_RULES_SCHEMA_VERSIONS = frozenset({1, 2})
+COMPILED_RULES_SCHEMA_VERSION = 3
+SUPPORTED_COMPILED_RULES_SCHEMA_VERSIONS = frozenset({1, 2, 3})
 
 
 class _CompileRuleBundle(Protocol):
@@ -67,7 +68,7 @@ def compiled_rule_entry(
     section: dict[str, Any],
     compiler_config: CompilerConfig | None = None,
 ) -> dict[str, Any]:
-    """Build one ``rules`` entry for ``asca_rules.yml`` v2."""
+    """Build one ``rules`` entry for ``asca_rules.yml`` v3."""
     entry: dict[str, Any] = {"rule_id": rule_id, "source": source}
 
     if rule.get("status") == "skipped":
@@ -93,19 +94,16 @@ def compiled_rule_entry(
         entry["rule"] = str(target.field_rule).strip()
         return entry
 
-    compiled_targets: list[dict[str, Any]] = []
-    for compile_target in targets:
-        if compile_target.format_error is not None:
-            continue
-        if compile_target.series is None or compile_target.field_rule is None:
-            continue
-        compiled_targets.append(inventory_target_to_yaml(compile_target))
-
-    if not compiled_targets:
+    ok_targets = [
+        t
+        for t in targets
+        if t.format_error is None and t.field_rule is not None and t.series is not None
+    ]
+    if not ok_targets:
         entry["compile_error"] = "no compiled targets"
         return entry
 
-    entry["targets"] = compiled_targets
+    entry.update(inventory_targets_to_compiled_fields(ok_targets))
     return entry
 
 
@@ -114,7 +112,7 @@ def build_asca_rules_document(
     *,
     compiler_config: CompilerConfig | None = None,
 ) -> dict[str, Any]:
-    """Assemble v2 ``asca_rules.yml`` from compile targets (not validation rows)."""
+    """Assemble v3 ``asca_rules.yml`` from compile targets (not validation rows)."""
     sections_out: list[dict[str, Any]] = []
     current_key: tuple[str, str] | None = None
     current_section: dict[str, Any] | None = None

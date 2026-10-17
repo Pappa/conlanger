@@ -2122,7 +2122,7 @@ def test_iter_compiled_inventory_bundles_from_v1_document(mock_validate):
 @patch("conlanger.tools.index_inventory.validate_asca_body", return_value=True)
 def test_compiled_validation_uses_rule_line_without_series_round_trip(mock_body):
     compiled = {
-        "schema_version": 2,
+        "schema_version": 3,
         "sections": [
             {
                 "index": "17.7.2",
@@ -2131,18 +2131,12 @@ def test_compiled_validation_uses_rule_line_without_series_round_trip(mock_body)
                     {
                         "rule_id": "West-Germanic-C",
                         "source": "index_diachronica.html:5693",
-                        "targets": [
-                            {"rule": "{C,-r} > C:[+long] / _j"},
-                        ],
+                        "rule": "{C,-r} > C:[+long] / _j",
                     },
                     {
                         "rule_id": "Tocharian-A-V",
                         "source": "index_diachronica.html:8297",
-                        "targets": [
-                            {
-                                "rule": "V:[+front] > j / V:[+front]_nʲtʲ // V:[+front]_E"
-                            },
-                        ],
+                        "rule": "V:[+front] > j / V:[+front]_nʲtʲ // V:[+front]_E",
                     },
                 ],
             }
@@ -2159,9 +2153,32 @@ def test_compiled_validation_uses_rule_line_without_series_round_trip(mock_body)
     assert bundles[1].rows[0].ok == OK_TRUE
 
 
+def test_iter_compiled_inventory_rejects_ambiguous_rule_shape():
+    compiled = {
+        "schema_version": 3,
+        "sections": [
+            {
+                "index": "1",
+                "section": "A",
+                "rules": [
+                    {
+                        "rule_id": "bad",
+                        "source": "s:1",
+                        "rule": "a > b",
+                        "alternatives": ["a > b"],
+                    },
+                ],
+            }
+        ],
+    }
+    bundles = iter_compiled_inventory_bundles(compiled, probe_words=None)
+    assert bundles[0].rows[0].ok == OK_FALSE
+    assert bundles[0].rows[0].failure_class == "format_error"
+
+
 def test_iter_compiled_inventory_handles_skipped_and_compile_error():
     compiled = {
-        "schema_version": 2,
+        "schema_version": 3,
         "sections": [
             {
                 "index": "1",

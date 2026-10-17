@@ -279,7 +279,7 @@ def test_sound_change_rule_skipped_keeps_index_raw_fields():
     [
         (
             {"input": "{r,h}", "output": "{∅,h}"},
-            ["r > ∅", "h > h"],
+            ["r > ∅", "h > h", "h > ∅"],
         ),
         (
             {"input": "{m,ɲ} n", "output": "{ɲ,∅} {ŋ,∅}", "env": "_#"},

@@ -74,8 +74,8 @@ def test_expand_parallel_null_branches_from_tokens():
         parse_field_tokens("{∅,h}"),
     )
     assert branches is not None
-    assert [render_field_tokens(inp) for inp, _ in branches] == ["r", "h"]
-    assert [render_field_tokens(out) for _, out in branches] == ["∅", "h"]
+    assert [render_field_tokens(inp) for inp, _ in branches] == ["r", "h", "h"]
+    assert [render_field_tokens(out) for _, out in branches] == ["∅", "h", "∅"]
 
 
 def test_partition_embedded_output_env():

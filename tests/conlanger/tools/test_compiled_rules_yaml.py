@@ -56,8 +56,8 @@ def test_compiled_rule_entry_single_target():
     )
     assert entry["rule_id"] == "r0"
     assert entry["source"] == "s:1"
-    assert len(entry["targets"]) == 1
-    assert entry["targets"][0]["rule"] == "a > b"
+    assert entry["rule"] == "a > b"
+    assert "targets" not in entry
     assert "valid" not in entry
 
 
@@ -70,9 +70,7 @@ def test_compiled_rule_entry_alternatives_and_steps():
         targets=resolve_inventory_targets(_SECTION, alt_rule, "opt"),
         section=_SECTION,
     )
-    assert len(alt_entry["targets"]) == 2
-    assert alt_entry["targets"][0]["alt_idx"] == 0
-    assert alt_entry["targets"][1]["alt_idx"] == 1
+    assert alt_entry["alternatives"] == ["d > ∅ / V_V", "d > ð / V_V"]
 
     chain_rule = {"stages": ["p", "t", "k"], "source": "s:2"}
     chain_entry = compiled_rule_entry(
@@ -82,9 +80,7 @@ def test_compiled_rule_entry_alternatives_and_steps():
         targets=resolve_inventory_targets(_SECTION, chain_rule, "chain"),
         section=_SECTION,
     )
-    assert len(chain_entry["targets"]) == 2
-    assert chain_entry["targets"][0]["step_idx"] == 0
-    assert chain_entry["targets"][1]["step_idx"] == 1
+    assert chain_entry["steps"] == ["p > t", "t > k"]
 
 
 def test_compiled_rule_entry_skipped_rule_line():
@@ -217,9 +213,9 @@ def test_write_compiled_rules_yaml_smoke(tmp_path: Path):
     write_compiled_rules_yaml(doc, path)
     loaded = yaml.safe_load(path.read_text(encoding="utf-8"))
     assert loaded["schema_version"] == COMPILED_RULES_SCHEMA_VERSION
-    target = loaded["sections"][0]["rules"][0]["targets"][0]
-    assert target["rule"] == "a > b"
-    assert "series" not in target
+    rule_entry = loaded["sections"][0]["rules"][0]
+    assert rule_entry["rule"] == "a > b"
+    assert "targets" not in rule_entry
 
 
 def test_read_compiled_rules_yaml_rejects_bad_document(tmp_path: Path):

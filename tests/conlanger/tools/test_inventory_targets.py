@@ -44,10 +44,52 @@ def test_resolve_inventory_targets_format_error():
     assert targets[0].format_error is not None
 
 
+def test_resolve_inventory_targets_no_composed_chain_paths():
+    from conlanger.compile.models.config import CompilerConfig
+    from conlanger.compile.models.rules import SoundChangeRule
+    from conlanger.tools.inventory_targets import _enumerate_composed_chain_paths
+
+    config = CompilerConfig()
+    first = SoundChangeRule(
+        input="a",
+        output="b",
+        detect_alternatives=False,
+        compiler_config=config,
+    )
+    second = SoundChangeRule(
+        input="c",
+        output="d",
+        detect_alternatives=False,
+        compiler_config=config,
+    )
+    assert _enumerate_composed_chain_paths([first, second]) == []
+
+
 def test_inventory_target_is_frozen_pydantic_model():
     target = InventoryTarget()
     with pytest.raises(ValidationError):
         target.alt_idx = 1  # type: ignore[misc]
+
+
+def test_resolve_inventory_targets_composes_balinese_r_paths():
+    rule = {
+        "stages": ["r", "{r,h}", "{∅,h}"],
+        "source": "s:1",
+    }
+    targets = resolve_inventory_targets(_SECTION, rule, "Balinese-r")
+    assert len(targets) == 6
+    paths: dict[int, list[str]] = {}
+    for alt_idx in {t.alt_idx for t in targets}:
+        paths[alt_idx] = [
+            str(t.field_rule).strip()
+            for t in sorted(
+                [t for t in targets if t.alt_idx == alt_idx],
+                key=lambda t: t.step_idx or 0,
+            )
+        ]
+    assert paths[0] == ["r > r", "r > ∅"]
+    assert paths[1] == ["r > h", "h > h"]
+    assert paths[2] == ["r > h", "h > ∅"]
 
 
 def test_series_for_sound_change_rule_builds_mini_series():

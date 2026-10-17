@@ -1,4 +1,4 @@
-"""Serialize compiled inventory targets for ``asca_rules.yml`` v2."""
+"""Legacy v2 target maps and in-memory ``DiachronicSeries`` serde helpers."""
 
 from __future__ import annotations
 

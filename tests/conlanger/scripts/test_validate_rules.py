@@ -47,7 +47,7 @@ def _write_fake_fork(root: Path) -> Path:
 
 def _write_min_compiled_yaml(path: Path) -> None:
     path.write_text(
-        "schema_version: 2\nsections: []\n",
+        "schema_version: 3\nsections: []\n",
         encoding="utf-8",
     )
 
