@@ -58,7 +58,7 @@ Resolution comment with: chosen paths, YAML schema sketch (one example section +
 
 ## Answer
 
-**Resolved 2026-10-17** (owner grill; initial proposal + **grill round 1** confirmations below). Compile output moves to a dedicated **`compile_rules`** command; **`validate_rules`** is validation + inventory only. Supersedes **103** steady-state “compile in validate” and **151**/**159** use of `valid` on compiled YAML. Implementation: [Task: `compile_rules` script and validation-only `validate_rules`](161-task-split-compile-rules-and-validate-compiled-yaml.md).
+**Resolved 2026-10-17** (owner grill; initial proposal + **grill round 1** confirmations below). Compile output moves to a dedicated **`compile_rules`** command; **`validate_rules`** is validation + inventory only. Supersedes **103** steady-state “compile in validate” and **151**/**159** use of `valid` on compiled YAML. Implementation: ~~[Task: `compile_rules` script and validation-only `validate_rules`](161-task-split-compile-rules-and-validate-compiled-yaml.md)~~ **resolved** (2026-10-17).
 
 ### Owner-confirmed (grill round 1)
 

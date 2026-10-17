@@ -24,7 +24,7 @@ Grill closed 2026-10-17 (owner agreed to all frontier questions).
 | 6 | **`SKIPPED`** replaces numeric `2`; `rule_skipped` / `section_skipped` failure classes unchanged. |
 | 7 | **`ValidationRow.ok`** (and related code) use string enum end-to-end; ints only at CSV read coercion. |
 
-**Implementation:** [157 task](157-task-inventory-ok-column-string-enum.md).
+**Implementation:** ~~[157 task](157-task-inventory-ok-column-string-enum.md)~~ **resolved** (2026-10-17).
 
 ## Topics
 

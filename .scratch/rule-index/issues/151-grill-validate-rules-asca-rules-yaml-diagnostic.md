@@ -39,7 +39,7 @@ Locked YAML schema + operator doc blurb; implementation can be a follow-on **tas
 
 ## Answer
 
-**Resolved 2026-10-17** (owner grill). Compile-stage **debug/monitoring** artifact — **not** SoT ([148](148-grill-asca-shaped-syntax-in-applier-neutral-sot.md)). Implementation: [159](159-task-write-compile-asca-rules-yml.md). Validation stability: [158](158-task-inventory-validate-all-compile-targets.md).
+**Resolved 2026-10-17** (owner grill). Compile-stage **debug/monitoring** artifact — **not** SoT ([148](148-grill-asca-shaped-syntax-in-applier-neutral-sot.md)). Implementation: ~~[159](159-task-write-compile-asca-rules-yml.md)~~ **resolved**. Validation stability: ~~[158](158-task-inventory-validate-all-compile-targets.md)~~ **resolved**. Steady-state pipeline: [160](160-grill-split-compile-rules-and-compiled-yaml-pipeline.md) → ~~[161](161-task-split-compile-rules-and-validate-compiled-yaml.md)~~ **resolved** (2026-10-17).
 
 ### Purpose and lifecycle
 
@@ -141,5 +141,5 @@ Same order as parsed YAML: `sections` order, `rules` order within section. `inde
 
 ### Follow-on tasks
 
-- [159](159-task-write-compile-asca-rules-yml.md) — implement writer + doc blurb.
+- ~~[159](159-task-write-compile-asca-rules-yml.md)~~ — writer + doc blurb (**resolved**); v1 split → ~~[161](161-task-split-compile-rules-and-validate-compiled-yaml.md)~~ **resolved**.
 - [158](158-task-inventory-validate-all-compile-targets.md) — deterministic validation for all compile-expanded targets (owner: alternative `ok` flip-flop).

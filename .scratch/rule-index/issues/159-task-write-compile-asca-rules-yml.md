@@ -27,9 +27,13 @@ Implement the compile diagnostic YAML contract locked in grill **151** and wire 
 
 ## Acceptance
 
-- `uv run validate_rules` writes YAML; `--no-write-compiled-rules` skips it.
-- Blurb in `docs/system/validate.md` under default paths table.
-- Tests: smoke write + one `steps` block + one `alternatives` block (per-branch `valid`) + skipped rule line shape.
+- [x] `uv run validate_rules` writes YAML; `--no-write-compiled-rules` skips it.
+- [x] Blurb in `docs/system/validate.md` under default paths table.
+- [x] Tests: smoke write + one `steps` block + one `alternatives` block (per-branch `valid`) + skipped rule line shape.
+
+## Answer
+
+**Resolved 2026-10-17** (151 contract: `valid` on compiled YAML branches, validate-time write). Steady-state operator pipeline and v1 `targets` + `series` schema (no `valid` on disk): **[160](160-grill-split-compile-rules-and-compiled-yaml-pipeline.md)** / ~~**[161](161-task-split-compile-rules-and-validate-compiled-yaml.md)**~~ **resolved** (2026-10-17) — `compile_rules` writes `diagnostics/compile/asca_rules.yml`; `validate_rules` reads compiled YAML only.
 
 ## Related
 

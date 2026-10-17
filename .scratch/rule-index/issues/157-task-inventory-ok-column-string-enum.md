@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: None
 
 # Task: inventory `ok` / `whole_ok` string enum (`FAILED` / `OK` / `SKIPPED`)
@@ -24,12 +24,16 @@ Implement the inventory outcome contract locked in grill 152: replace numeric **
 
 ## Acceptance
 
-- [ ] `index_inventory.py`: rename/replace `OK_FALSE`/`OK_TRUE`/`OK_SKIPPED` with string constants; update `_coerce_ok_value`, filters, summary counts, field-isolation blame.
-- [ ] Regenerated `diagnostics/inventory/*.csv` use string `ok` / `whole_ok`; run `uv run validate_rules` after change.
-- [ ] Changelog flip detection works against prior numeric **or** string CSVs (read coercion).
-- [ ] Tests in `tests/conlanger/tools/test_index_inventory.py`, `test_validate_rules.py` updated.
-- [ ] `docs/system/validate.md` documents string enum (not `ok=True`/`False` prose for CSV cells).
-- [ ] Audit `.scratch/rule-index/research/scan_*.py` (and any other inventory consumers) for `ok` assumptions; fix or note in ticket Answer.
+- [x] `index_inventory.py`: rename/replace `OK_FALSE`/`OK_TRUE`/`OK_SKIPPED` with string constants; update `_coerce_ok_value`, filters, summary counts, field-isolation blame.
+- [x] Regenerated `diagnostics/inventory/*.csv` use string `ok` / `whole_ok`; run `uv run validate_rules` after change.
+- [x] Changelog flip detection works against prior numeric **or** string CSVs (read coercion).
+- [x] Tests in `tests/conlanger/tools/test_index_inventory.py`, `test_validate_rules.py` updated.
+- [x] `docs/system/validate.md` documents string enum (not `ok=True`/`False` prose for CSV cells).
+- [x] Audit `.scratch/rule-index/research/scan_*.py` (and any other inventory consumers) for `ok` assumptions; fix or note in ticket Answer.
+
+## Answer
+
+**Resolved 2026-10-17.** `InventoryOk` / `FAILED` / `OK` / `SKIPPED` in `index_inventory.py`; emitted inventory CSVs and changelog use string literals; read path coerces legacy numeric cells.
 
 ## Related
 
