@@ -20,4 +20,4 @@ Move Index **`%`** (syllable boundary) and stem **`$`** handling out of parse-ti
 ## Out of scope
 
 - Stress mark rewrite (separate: postfix `[+stress]` at parse).
-- `position.in: U#` structured env (separate implementation ticket under [149](149-grill-parse-time-asca-env-rewrites-vs-structured-indexcontext.md)).
+- `position.in` compile projection ([156](156-task-indexcontext-position-in-relation.md)); broader parse-time ASCA env cleanup → [149](149-grill-parse-time-asca-env-rewrites-vs-structured-indexcontext.md).

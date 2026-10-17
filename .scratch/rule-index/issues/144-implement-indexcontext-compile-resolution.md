@@ -1,6 +1,6 @@
 Type: task
-Status: ready-for-agent
-Blocked by: 143
+Status: resolved
+Blocked by: None
 
 # Compile: resolve `IndexContext` to ASCA env/exception strings
 
@@ -47,6 +47,12 @@ Loader continues to accept scalar `env` / `exception` during transition.
 - [x] `context` + `position` merge covered by tests aligned with [143](143-implement-index-rule-normalisation-passes.md) examples.
 - [x] `uv run validate_rules` with regen index: no ok-count regression vs pre-143/144 baseline for the migrated relation set.
 - [x] Document resolver in [sound-change-applier.md](../../../docs/system/sound-change-applier.md).
+
+### Resolution (2026-10-17)
+
+- **Code:** `resolve_index_context_to_string` / `resolve_rule_env_exception_for_compile` in [`index_models.py`](../../../src/conlanger/ingest/models/index_models.py); choke point at compile via [`materialize_index_rule_env_exception`](../../../src/conlanger/compile/resolve_index_rule.py) (`SoundChangeRule` construction).
+- **Config:** `position_templates` in [`config/compile/asca/compiler_config.yml`](../../../config/compile/asca/compiler_config.yml).
+- **Validation:** `uv run validate_rules` (2026-10-17) — **9045** ok / **254** fail / **542** skipped; **0** ok-flips (paired with [143](143-implement-index-rule-normalisation-passes.md)).
 
 ## Related
 
