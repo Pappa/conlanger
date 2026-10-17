@@ -18609,7 +18609,7 @@ sections:
     - v ɣ ʁ
     - p k q
     env: _C
-    comment: (except if C = /l dʒ m n ŋ/)
+    exception: _{l,dʒ,m,n,ŋ}
   - rule_id: Wales-Iñupiaq-p,v-t-k,ɣ
     source: index_diachronica.html:4702
     raw: '{p,v} t {k,ɣ} → m n ŋ / _N'

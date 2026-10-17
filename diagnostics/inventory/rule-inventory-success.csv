@@ -2596,7 +2596,7 @@ section_index,section_name,rule_id,alt_idx,step_idx,source,ok,rule,failure_class
 15.2.4,Proto-Eskimo to Wales Iñupiaq,Wales-Iñupiaq-l̥,,,index_diachronica.html:4698,OK,l̥ > t / C_,,,,,
 15.2.4,Proto-Eskimo to Wales Iñupiaq,Wales-Iñupiaq-v_2,,,index_diachronica.html:4699,OK,v > p / _s,,,,,
 15.2.4,Proto-Eskimo to Wales Iñupiaq,Wales-Iñupiaq-v-ʁ,,,index_diachronica.html:4700,OK,v ʁ > p q / P_,,,,,
-15.2.4,Proto-Eskimo to Wales Iñupiaq,Wales-Iñupiaq-v-ɣ-ʁ,,,index_diachronica.html:4701,OK,v ɣ ʁ > p k q / _C,,,,,
+15.2.4,Proto-Eskimo to Wales Iñupiaq,Wales-Iñupiaq-v-ɣ-ʁ,,,index_diachronica.html:4701,OK,"v ɣ ʁ > p k q / _C // _{l,dʒ,m,n,ŋ}",,,,,
 15.2.4,Proto-Eskimo to Wales Iñupiaq,"Wales-Iñupiaq-p,v-t-k,ɣ",,,index_diachronica.html:4702,OK,"{p,v} t {k,ɣ} > m n ŋ / _N",,,,,
 15.2.4,Proto-Eskimo to Wales Iñupiaq,Wales-Iñupiaq-v_3,,,index_diachronica.html:4703,OK,v > u / V_V,,,,,
 15.2.4,Proto-Eskimo to Wales Iñupiaq,Wales-Iñupiaq-v_4,,,index_diachronica.html:4704,OK,v > ∅ / u_V,,,,,

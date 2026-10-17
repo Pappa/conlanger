@@ -87970,13 +87970,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: v ɣ ʁ > p k q / _C
+      rule: v ɣ ʁ > p k q / _C // _{l,dʒ,m,n,ŋ}
       series:
         parts:
         - type: title
           index: 15.2.4
           section: Proto-Eskimo to Wales Iñupiaq#Wales-Iñupiaq-v-ɣ-ʁ
-        - value: v ɣ ʁ > p k q / _C
+        - value: v ɣ ʁ > p k q / _C // _{l,dʒ,m,n,ŋ}
           input:
             raw: v ɣ ʁ
             tokens:
@@ -87996,7 +87996,11 @@ sections:
             tokens:
             - _C
             compiled: _C
-          exception: null
+          exception:
+            raw: _{l,dʒ,m,n,ŋ}
+            tokens:
+            - _{l,dʒ,m,n,ŋ}
+            compiled: _{l,dʒ,m,n,ŋ}
           status: null
           sporadic: null
           sporadic_skipped: false
