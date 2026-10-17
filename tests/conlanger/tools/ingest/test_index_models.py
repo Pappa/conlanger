@@ -350,11 +350,6 @@ def test_env_exception_input_to_string(input, expected):
             id="penult_position",
         ),
         pytest.param(
-            IndexContext(position={"onset_of_stress": "U[+stress]"}),
-            "#_U[+stress]",
-            id="onset_of_stress_position",
-        ),
-        pytest.param(
             IndexContext(context="V_C", position={"penult": True}),
             "V_C, %_",
             id="penult_with_structural_context",
@@ -446,6 +441,10 @@ def test_resolve_index_context_empty_adjacent_list():
         resolve_index_context_to_string(IndexContext(position={"adjacent_to": []}))
         == ""
     )
+
+
+def test_resolve_index_context_ignores_unknown_position_keys():
+    assert resolve_index_context_to_string(IndexContext(position={"other": True})) == ""
 
 
 @pytest.mark.parametrize(

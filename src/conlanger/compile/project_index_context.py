@@ -31,9 +31,6 @@ def _project_double_slash_position(ctx: IndexContext) -> str | None:
         return None
     if ctx.position.get("penult"):
         return "%_"
-    onset = ctx.position.get("onset_of_stress")
-    if isinstance(onset, str) and onset.strip():
-        return f"#_{onset.strip()}"
     return None
 
 

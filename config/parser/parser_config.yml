@@ -191,6 +191,8 @@ skip_rules:
     reason: "Can't resolve: æu → au (æ → a / _B in general?)"
   - id: Anglo-Frisian-a_3
     reason: "Can't resolve: in next syllable"
+  - id: Modern-Israeli-Hebrew-ʔ
+    reason: "Exception prose (onset of U[+stress]); not auto-normalized (ticket 164)"
   # Onset glottal diacritic (ˀ) — Tuscarora §37.1.2.6
   - id: Tuscarora-t
     reason: "Onset glottal diacritic not supported"

@@ -19,9 +19,9 @@ Refactor `double_slash_env.py` so parse **splits** Index ` // ` into structured 
 
 ## Answer (2026-10-17)
 
-- **Parse:** `double_slash_env.py` merges updates into `IndexContext` (`onset_of_stress`, `penult` under `position`; structural `V_V` in `context`). Fixes `//` tail assignment when env head normalizes. Embedded `//` tails become `exception` context when absent.
-- **Compile:** `_project_double_slash_position` in `project_index_context.py` → `#_U[+stress]` / `%_` (ticket 108 ASCA tails).
-- **Inventory** (`create_index && compile_rules && validate_rules`): **9260** OK (unchanged); **0** ok-flips. YAML: `Modern-Israeli-Hebrew-ʔ` exception `onset_of_stress`; `Muskogean-k` exception `penult: true` (replaces `#_U[+stress]` / `%_` in SoT).
+- **Parse:** `double_slash_env.py` merges updates into `IndexContext` (`penult` under `position`; structural `V_V` in `context`). Fixes `//` tail assignment when env head normalizes. Embedded `//` tails become `exception` context when absent. `onset of U[+stress]` prose is not auto-normalized — `Modern-Israeli-Hebrew-ʔ` is in `parser_config.yml` `skip_rules`.
+- **Compile:** `_project_double_slash_position` in `project_index_context.py` → `%_` for `penult`.
+- **Inventory** (`create_index && compile_rules && validate_rules`): **9260** OK (unchanged); **0** ok-flips. YAML: `Muskogean-k` exception `penult: true` (replaces `%_` in SoT).
 
 ## Out of scope
 

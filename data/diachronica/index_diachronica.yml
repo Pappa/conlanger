@@ -3263,13 +3263,9 @@ sections:
   - rule_id: Modern-Israeli-Hebrew-ʔ
     source: index_diachronica.html:1564
     raw: ʔ → ∅ / ! in onset of U[+stress] (colloquial)
-    stages:
-    - ʔ
-    - ∅
-    exception:
-      position:
-        onset_of_stress: U[+stress]
-    comment: (colloquial); in onset of U[+stress]
+    stages: []
+    comment: Exception prose (onset of U[+stress]); not auto-normalized (ticket 164)
+    status: skipped
   - rule_id: Modern-Israeli-Hebrew-h_2
     source: index_diachronica.html:1565
     raw: h → ∅ (colloquial)

@@ -3,8 +3,9 @@ import pytest
 from conlanger.compile.project_index_context import (
     resolve_rule_env_exception_for_compile,
 )
-from conlanger.ingest.models.index_models import IndexRule
+from conlanger.ingest.models.index_models import IndexContext, IndexRule
 from conlanger.ingest.utils.double_slash_env import (
+    _merge_position,
     apply_double_slash_env_conditions,
     normalize_prose_env_head,
     normalize_prose_exception_or_env_tail,
@@ -61,8 +62,7 @@ from conlanger.ingest.utils.index_context_position import (
                 "exception": "onset of U[+stress]",
             },
             {
-                "exception": {"position": {"onset_of_stress": "U[+stress]"}},
-                "comment": "onset of U[+stress]",
+                "exception": "onset of U[+stress]",
             },
         ),
         (
@@ -157,18 +157,7 @@ def test_normalize_prose_env_head(text, expected_env, expected_captures):
         ("adjacent to S", "adjacent to S", None, []),
         ("adjacent to C[+voice]", "adjacent to C[+voice]", None, []),
         ("Logudorese", None, None, ["Logudorese"]),
-        (
-            "onset of U[+stress]",
-            None,
-            {"onset_of_stress": "U[+stress]"},
-            ["onset of U[+stress]"],
-        ),
-        (
-            "in onset of %[+stress]",
-            None,
-            {"onset_of_stress": "%[+stress]"},
-            ["in onset of %[+stress]"],
-        ),
+        ("onset of U[+stress]", "onset of U[+stress]", None, []),
         ("penult", None, {"penult": True}, ["penult"]),
         ("final syllables", "U#", None, ["final syllables"]),
         (
@@ -210,7 +199,6 @@ def test_split_embedded_double_slash(text, expected_head, expected_tail):
 @pytest.mark.parametrize(
     ("env", "exception", "expected_env", "expected_exc"),
     [
-        (None, {"position": {"onset_of_stress": "U[+stress]"}}, None, "#_U[+stress]"),
         (
             {"context": "V_C"},
             {"position": {"penult": True}},
@@ -230,6 +218,21 @@ def test_double_slash_compile_round_trip(env, exception, expected_env, expected_
         expected_env,
         expected_exc,
     )
+
+
+def test_merge_position_no_inputs_returns_none():
+    assert _merge_position(None) is None
+
+
+def test_apply_skips_exception_without_context_string():
+    rule = IndexRule(
+        raw="x",
+        source="t",
+        stages=[],
+        exception={"position": {"penult": True}},
+    )
+    result = apply_double_slash_env_conditions(rule)
+    assert result.exception == IndexContext(position={"penult": True})
 
 
 def test_normalize_prose_exception_voice_earlier_unchanged():

@@ -11,15 +11,6 @@ from conlanger.utils.gloss import extract_uncertainty_qualifier_from_field
 
 _DOUBLE_SLASH_SEP = " // "
 
-# TODO: these regexes need looking into more carefully
-_ONSET_OF_STRESS_RE = re.compile(
-    r"^in\s+onset\s+of\s+(%|U)\[\+stress\]\s*$",
-    re.IGNORECASE,
-)
-_BARE_ONSET_OF_STRESS_RE = re.compile(
-    r"^onset\s+of\s+(%|U)\[\+stress\]\s*$",
-    re.IGNORECASE,
-)
 _BEFORE_IDENTICAL_VOWEL_RE = re.compile(
     r"^before\s+an?\s+identical\s+vowel\s*$",
     re.IGNORECASE,
@@ -98,17 +89,6 @@ def normalize_prose_exception_or_env_tail(
         captures.extend(pos_captures)
         flags.update(pos_flags)
         return IndexContext(context=normalized), captures, flags
-
-    match = _ONSET_OF_STRESS_RE.match(stripped) or _BARE_ONSET_OF_STRESS_RE.match(
-        stripped
-    )
-    if match:
-        host = f"{match.group(1)}[+stress]"
-        return (
-            IndexContext(position={"onset_of_stress": host}),
-            [stripped],
-            flags,
-        )
 
     if _BEFORE_IDENTICAL_VOWEL_RE.match(stripped):
         return IndexContext(context="V_V"), [stripped], flags

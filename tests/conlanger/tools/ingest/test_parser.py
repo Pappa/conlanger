@@ -352,3 +352,13 @@ def test_parse_returns_index_document_with_name_and_structured_env(fx_rule):
     doc = prepare_parser(fx_rule).parse(root)
     assert doc["name"] == "Index Diachronica"
     assert doc["sections"][0]["rules"][0]["env"] == {"dialect": "northern"}
+
+
+def test_parse_modern_israeli_hebrew_glottal_stop_skipped_from_config(fx_rule):
+    raw = "ʔ → ∅ / ! in onset of U[+stress] (colloquial)"
+    parser = IndexDiachronicaParser(parser_config=load_parser_config())
+    parser.update_current_section(_FX_SECTION_INDEX, _FX_SECTION_NAME)
+    rules = parser.parse_rule_string("Modern-Israeli-Hebrew-ʔ", fx_rule.source, raw)
+    assert rules[0].status == "skipped"
+    assert rules[0].stages == []
+    assert "onset of U[+stress]" in (rules[0].comment or "")
