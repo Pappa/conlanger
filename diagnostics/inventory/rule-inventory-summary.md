@@ -6,19 +6,19 @@
 - Rows: **9570** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9231** (96.5%)
-- Fail: **298** (3.1%)
+- OK: **9232** (96.5%)
+- Fail: **297** (3.1%)
 - Skipped: **41** (0.4%)
 
 
 ## Corrections
 
-OK: **123/123**
+OK: **125/125**
 
 ## Sections
 
-- All OK: **503 / 660** (76.2%)
-- Some OK: **157 / 660** (23.8%)
+- All OK: **504 / 660** (76.4%)
+- Some OK: **156 / 660** (23.6%)
 - None OK: **0 / 660** (0.0%)
 - Sections skipped: **0 / 660** (0.0%)
 
@@ -30,8 +30,8 @@ OK: **123/123**
 | 34 | `expected_ipa` |
 | 25 | `unknown_character` |
 | 22 | `missing_slash_output_env` |
-| 20 | `expected_number` |
 | 19 | `syntax_other` |
+| 19 | `expected_number` |
 | 14 | `nested_brackets` |
 | 14 | `unknown_grouping` |
 | 13 | `segments_before_word` |
@@ -173,14 +173,14 @@ OK: **123/123**
 |------:|-------------|
 | 4 | `d` |
 | 3 | `r` |
-| 2 | `a` |
 | 2 | `u` |
 | 2 | `s` |
+| 2 | `a` |
 | 1 | `t` |
-| 1 | `ɡ` |
 | 1 | `N` |
 | 1 | `ʍ` |
 | 1 | `P` |
+| 1 | `i` |
 ### expected_number (description)
 
 | count | description |

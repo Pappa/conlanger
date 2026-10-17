@@ -7502,31 +7502,25 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: CVʕ > ħʔ // C = ɡw
+      rule: '{C,-ɡʷ}Vʕ > ħʔ'
       series:
         parts:
         - type: title
           index: 6.2.2.1.2
           section: Proto-Boreafrasian to Egypto-Berber#Egypto-Berber-CVʕ
-        - value: CVʕ > ħʔ // C = ɡw
+        - value: '{C,-ɡʷ}Vʕ > ħʔ'
           input:
-            raw: CVʕ
+            raw: '{C,-ɡʷ}Vʕ'
             tokens:
-            - CVʕ
-            compiled: CVʕ
+            - '{C,-ɡʷ}Vʕ'
+            compiled: '{C,-ɡʷ}Vʕ'
           output:
             raw: ħʔ
             tokens:
             - ħʔ
             compiled: ħʔ
           env: null
-          exception:
-            raw: C = ɡw
-            tokens:
-            - C
-            - '='
-            - ɡw
-            compiled: C = ɡw
+          exception: null
           status: null
           sporadic: null
           sporadic_skipped: false
@@ -8171,13 +8165,13 @@ sections:
     targets:
     - step_idx: null
       alt_idx: null
-      rule: r > ʔ / C_{t,w,j}# // {ɡ,m,n,r,w,ʃ,x}_{t,w,j}#
+      rule: r > ʔ / C_{t,w,j}# // {ɡ,m,n,r,w,ʃ,x}_
       series:
         parts:
         - type: title
           index: 6.2.2.1.2
           section: Proto-Boreafrasian to Egypto-Berber#Egypto-Berber-r_2
-        - value: r > ʔ / C_{t,w,j}# // {ɡ,m,n,r,w,ʃ,x}_{t,w,j}#
+        - value: r > ʔ / C_{t,w,j}# // {ɡ,m,n,r,w,ʃ,x}_
           input:
             raw: r
             tokens:
@@ -8194,18 +8188,10 @@ sections:
             - C_{t,w,j}#
             compiled: C_{t,w,j}#
           exception:
-            raw: C = {ɡ,m,n,r,w,ʃ,x}
+            raw: '{ɡ,m,n,r,w,ʃ,x}_'
             tokens:
-            - C
-            - '='
-            - - ɡ
-              - m
-              - n
-              - r
-              - w
-              - ʃ
-              - x
-            compiled: '{ɡ,m,n,r,w,ʃ,x}_{t,w,j}#'
+            - '{ɡ,m,n,r,w,ʃ,x}_'
+            compiled: '{ɡ,m,n,r,w,ʃ,x}_'
           status: null
           sporadic: null
           sporadic_skipped: false

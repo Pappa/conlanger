@@ -1649,9 +1649,8 @@ sections:
     source: index_diachronica.html:1266
     raw: CVʕ → ħʔ / ! C = ɡw
     stages:
-    - CVʕ
+    - '{C,-ɡʷ}Vʕ'
     - ħʔ
-    exception: C = ɡw
   - rule_id: Egypto-Berber-ɡwVq
     source: index_diachronica.html:1267
     raw: ɡwVq → ʕ
@@ -1790,7 +1789,7 @@ sections:
     - r
     - ʔ
     env: C_{t,w,j}#
-    exception: C = {ɡ,m,n,r,w,ʃ,x}
+    exception: '{ɡ,m,n,r,w,ʃ,x}_'
   - rule_id: Egypto-Berber-l_2
     source: index_diachronica.html:1287
     raw: 'l → j / #_iC ?'

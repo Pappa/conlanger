@@ -1,5 +1,4 @@
 section_index,rule_id,error_token,rule
-6.2.2.1.2,Egypto-Berber-CVʕ,ɡ,"CVʕ > ħʔ // C = ɡw | ^ @ Rule 1, Line 1"
 10.3.11.1,Anejom-C,t,"{C,-t} > ∅ / _# // C = t | ^ @ Rule 1, Line 1"
 17.7.1,Gothic-—-V-long,u,"{V:[- long],-u} > ∅ / _# // V = u | ^ @ Rule 1, Line 1"
 17.7.1,Gothic-—-V-long_2,u,"{V:[- long],-u} > ∅ / %_C# // V = u | ^ @ Rule 1, Line 1"
