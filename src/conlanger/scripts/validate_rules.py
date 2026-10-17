@@ -12,6 +12,7 @@ from pathlib import Path
 from conlanger.appliers.asca import asca_supports_validate
 from conlanger.scripts.config_loaders import load_compiler_config, load_parser_config
 from conlanger.scripts.pipeline_defaults import (
+    DEFAULT_COMPILE_DIR,
     DEFAULT_INVENTORY_DIR,
     DEFAULT_PROBE,
     DEFAULT_YAML,
@@ -22,6 +23,12 @@ from conlanger.scripts.validation_cli import (
     fork_asca_command,
     validation_asca_command,
 )
+from conlanger.tools.compiled_rules_yaml import (
+    COMPILED_RULES_YAML_NAME,
+    build_asca_rules_document,
+    bundles_for_row_prefix,
+    write_compiled_rules_yaml,
+)
 from conlanger.tools.index_inventory import (
     FIELD_ISOLATION_ERROR_CSV_NAME,
     FIELD_ISOLATION_SKIPPED_CSV_NAME,
@@ -30,13 +37,15 @@ from conlanger.tools.index_inventory import (
     INVENTORY_ERROR_CSV_NAME,
     INVENTORY_SKIPPED_CSV_NAME,
     INVENTORY_SUCCESS_CSV_NAME,
+    IndexRuleInventoryBundle,
+    field_isolation_rows_for_validation_rows,
     field_isolation_rows_to_dataframe,
     filter_field_isolation_error,
     filter_field_isolation_skipped,
     filter_field_isolation_success,
     filter_inventory_by_ok,
     filter_inventory_skipped,
-    iter_inventory_with_field_isolation,
+    iter_index_rule_inventory_bundles,
     load_inventory_csv,
     matched_correction_rule_ids,
     ok_flip_changelog_rows,
@@ -91,6 +100,17 @@ def main() -> int:
             "(use after a column-schema change)"
         ),
     )
+    ap.add_argument(
+        "--compile-dir",
+        type=Path,
+        default=DEFAULT_COMPILE_DIR,
+        help=f"writes {COMPILED_RULES_YAML_NAME} (default: diagnostics/compile/)",
+    )
+    ap.add_argument(
+        "--no-write-compiled-rules",
+        action="store_true",
+        help=f"skip writing {COMPILED_RULES_YAML_NAME}",
+    )
     args = ap.parse_args()
 
     if not args.yaml_in.is_file():
@@ -133,16 +153,25 @@ def main() -> int:
     doc = read_cleaned_index(args.yaml_in)
     parser_config = load_parser_config()
     compiler_config = load_compiler_config()
-    rows, field_rows = iter_inventory_with_field_isolation(
+    bundles: list[IndexRuleInventoryBundle] = iter_index_rule_inventory_bundles(
         doc,
-        field_isolation=args.field_isolation,
         probe_words=args.probe_words,
         compiler_config=compiler_config,
         asca_bin=asca_command,
     )
+    rows = [row for bundle in bundles for row in bundle.rows]
+    field_rows: list = []
+    if args.field_isolation:
+        for bundle in bundles:
+            field_rows.extend(
+                field_isolation_rows_for_validation_rows(
+                    bundle.rows, bundle.targets, asca_bin=asca_command
+                )
+            )
     if args.limit:
         rows = rows[: args.limit]
         field_rows = field_rows[: args.limit]
+        bundles = bundles_for_row_prefix(bundles, rows)
 
     success_path = args.inventory_dir / INVENTORY_SUCCESS_CSV_NAME
     error_path = args.inventory_dir / INVENTORY_ERROR_CSV_NAME
@@ -187,6 +216,13 @@ def main() -> int:
     summary_path.parent.mkdir(parents=True, exist_ok=True)
     summary_path.write_text(summary, encoding="utf-8")
 
+    compiled_rules_path = args.compile_dir / COMPILED_RULES_YAML_NAME
+    if not args.no_write_compiled_rules:
+        write_compiled_rules_yaml(
+            build_asca_rules_document(bundles, compiler_config=compiler_config),
+            compiled_rules_path,
+        )
+
     ok_n = len(filter_inventory_by_ok(current_df, ok=True))
     fail_n = len(filter_inventory_by_ok(current_df, ok=False))
     skipped_n = len(filter_inventory_skipped(current_df))
@@ -216,6 +252,8 @@ def main() -> int:
             f"wrote {summary_path.relative_to(ROOT)}",
         ]
     )
+    if not args.no_write_compiled_rules:
+        lines.append(f"wrote {compiled_rules_path.relative_to(ROOT)}")
     print("\n".join(lines))
     return 0
 

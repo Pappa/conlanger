@@ -15,9 +15,26 @@ from conlanger.tools.index_inventory import (
     CHANGELOG_CSV_COLUMNS,
     OK_TRUE,
     FieldIsolationRow,
+    IndexRuleInventoryBundle,
     ValidationRow,
+    _InventoryTarget,
     validation_rows_to_dataframe,
 )
+
+
+def _bundle(
+    section: dict,
+    rule: dict,
+    rule_id: str,
+    rows: list[ValidationRow],
+) -> IndexRuleInventoryBundle:
+    return IndexRuleInventoryBundle(
+        section=section,
+        rule=rule,
+        rule_id=rule_id,
+        rows=rows,
+        targets=[_InventoryTarget(None, None, None)],
+    )
 
 
 def _write_fake_fork(root: Path) -> Path:
@@ -130,7 +147,8 @@ def test_validate_rules_errors_when_asca_fork_missing(
 @patch.object(validate, "write_filtered_inventory_csvs")
 @patch.object(validate, "ok_flip_changelog_rows")
 @patch.object(validate, "load_inventory_csv", return_value=None)
-@patch.object(validate, "iter_inventory_with_field_isolation")
+@patch.object(validate, "write_compiled_rules_yaml")
+@patch.object(validate, "iter_index_rule_inventory_bundles")
 @patch.object(validate, "read_cleaned_index")
 @patch.object(validate, "filter_field_isolation_error")
 @patch.object(validate, "filter_field_isolation_success")
@@ -143,7 +161,8 @@ def test_validate_rules_writes_validation_inventory(
     mock_filter_field_isolation_success,
     mock_filter_field_isolation_error,
     mock_read_index,
-    mock_iter_rows,
+    mock_iter_bundles,
+    _mock_write_compiled_rules,
     _mock_load_inventory,
     mock_flip_rows,
     _mock_write_filtered,
@@ -161,16 +180,15 @@ def test_validate_rules_writes_validation_inventory(
     probe = work / "probe.wsca"
     probe.write_text("probe", encoding="utf-8")
     inventory_dir = work / "inventory"
-    mock_read_index.return_value = {
-        "sections": [
-            {
-                "rules": [
-                    {"stages": ["a", "b"]},
-                    {"stages": [], "status": "skipped"},
-                ]
-            }
+    section = {
+        "index": "1",
+        "section": "A",
+        "rules": [
+            {"stages": ["a", "b"]},
+            {"stages": [], "status": "skipped"},
         ],
     }
+    mock_read_index.return_value = {"sections": [section]}
     rows = [
         ValidationRow(
             section_index="1",
@@ -213,7 +231,10 @@ def test_validate_rules_writes_validation_inventory(
             blame="none",
         ),
     ]
-    mock_iter_rows.return_value = (rows[:1], field_rows[:1])
+    mock_iter_bundles.return_value = [
+        _bundle(section, section["rules"][0], "0", [rows[0]]),
+        _bundle(section, section["rules"][1], "1", [rows[1]]),
+    ]
     mock_flip_rows.return_value = MagicMock()
     _write_fake_fork(tmp_path)
 
@@ -225,6 +246,11 @@ def test_validate_rules_writes_validation_inventory(
         patch.object(validate, "ROOT", tmp_path),
         patch.object(validate, "asca_supports_validate", return_value=True),
         patch.object(
+            validate,
+            "field_isolation_rows_for_validation_rows",
+            return_value=field_rows[:1],
+        ),
+        patch.object(
             sys,
             "argv",
             [
@@ -233,6 +259,8 @@ def test_validate_rules_writes_validation_inventory(
                 str(yaml_in),
                 "--inventory-dir",
                 str(inventory_dir),
+                "--compile-dir",
+                str(work / "compile"),
                 "--probe-words",
                 str(probe),
                 "--limit",
@@ -244,11 +272,12 @@ def test_validate_rules_writes_validation_inventory(
         assert validate.main() == 0
 
     mock_read_index.assert_called_once_with(yaml_in)
-    mock_iter_rows.assert_called_once()
-    assert mock_iter_rows.call_args.kwargs["probe_words"] == probe
-    assert mock_iter_rows.call_args.kwargs["asca_bin"] == str(
+    mock_iter_bundles.assert_called_once()
+    assert mock_iter_bundles.call_args.kwargs["probe_words"] == probe
+    assert mock_iter_bundles.call_args.kwargs["asca_bin"] == str(
         tmp_path / "lib" / "bin" / "asca"
     )
+    _mock_write_compiled_rules.assert_called_once()
     mock_flip_rows.assert_called_once()
     summary_path = inventory_dir / "rule-inventory-summary.md"
     assert summary_path.is_file()
@@ -275,11 +304,13 @@ def test_validate_rules_writes_validation_inventory(
 @patch.object(validate, "write_filtered_inventory_csvs")
 @patch.object(validate, "ok_flip_changelog_rows")
 @patch.object(validate, "load_inventory_csv", return_value=None)
-@patch.object(validate, "iter_inventory_with_field_isolation")
+@patch.object(validate, "write_compiled_rules_yaml")
+@patch.object(validate, "iter_index_rule_inventory_bundles")
 @patch.object(validate, "read_cleaned_index")
 def test_validate_rules_reset_changelog_overwrites_existing(
     mock_read_index,
-    mock_iter_rows,
+    mock_iter_bundles,
+    _mock_write_compiled_rules,
     _mock_load_inventory,
     mock_flip_rows,
     _mock_write_filtered,
@@ -303,34 +334,10 @@ def test_validate_rules_reset_changelog_overwrites_existing(
         "section_index,rule_id,source,ok,timestamp\nold,r0,s:0,True,old\n",
         encoding="utf-8",
     )
-    mock_read_index.return_value = {
-        "sections": [{"rules": [{"stages": ["a", "b"]}]}],
-    }
-    mock_iter_rows.return_value = (
-        [ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", "")],
-        [
-            FieldIsolationRow(
-                "1",
-                "A",
-                0,
-                "s:1",
-                True,
-                True,
-                True,
-                None,
-                None,
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "none",
-            )
-        ],
-    )
+    section = {"index": "1", "section": "A", "rules": [{"stages": ["a", "b"]}]}
+    mock_read_index.return_value = {"sections": [section]}
+    row = ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", "")
+    mock_iter_bundles.return_value = [_bundle(section, section["rules"][0], "0", [row])]
     mock_flip_rows.return_value = MagicMock()
 
     def _assert_reset_write(flips, path, *, reset):
@@ -352,6 +359,8 @@ def test_validate_rules_reset_changelog_overwrites_existing(
                 str(yaml_in),
                 "--inventory-dir",
                 str(inventory_dir),
+                "--compile-dir",
+                str(work / "compile"),
                 "--probe-words",
                 str(probe),
                 "--reset-changelog",
@@ -369,11 +378,13 @@ def test_validate_rules_reset_changelog_overwrites_existing(
 @patch.object(validate, "write_error_cluster_csvs")
 @patch.object(validate, "write_filtered_inventory_csvs")
 @patch.object(validate, "load_inventory_csv")
-@patch.object(validate, "iter_inventory_with_field_isolation")
+@patch.object(validate, "write_compiled_rules_yaml")
+@patch.object(validate, "iter_index_rule_inventory_bundles")
 @patch.object(validate, "read_cleaned_index")
 def test_validate_rules_reset_changelog_empty_flips_writes_header_only(
     mock_read_index,
-    mock_iter_rows,
+    mock_iter_bundles,
+    _mock_write_compiled_rules,
     mock_load_inventory,
     _mock_write_filtered,
     _mock_write_error_clusters,
@@ -392,8 +403,11 @@ def test_validate_rules_reset_changelog_empty_flips_writes_header_only(
     changelog_path = inventory_dir / "rule-inventory-changelog.csv"
     changelog_path.write_text("old,data\n", encoding="utf-8")
     row = ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", "")
-    mock_read_index.return_value = {"sections": [{"rules": [{"stages": ["a", "b"]}]}]}
-    mock_iter_rows.return_value = ([row], [])
+    section = {"index": "1", "section": "A", "rules": [{"stages": ["a", "b"]}]}
+    mock_read_index.return_value = {"sections": [section]}
+    mock_iter_bundles.return_value = [
+        _bundle(section, section["rules"][0], "r0", [row]),
+    ]
     mock_load_inventory.return_value = validation_rows_to_dataframe([row])
     _write_fake_fork(tmp_path)
 
@@ -409,6 +423,8 @@ def test_validate_rules_reset_changelog_empty_flips_writes_header_only(
                 str(yaml_in),
                 "--inventory-dir",
                 str(inventory_dir),
+                "--compile-dir",
+                str(work / "compile"),
                 "--probe-words",
                 str(probe),
                 "--reset-changelog",
@@ -432,6 +448,56 @@ def test_asca_version_reads_stdout():
 def test_asca_version_falls_back_on_subprocess_error():
     with patch.object(validation_cli.subprocess, "run", side_effect=OSError("boom")):
         assert validation_cli.asca_version("/usr/bin/asca") == "0.10.x"
+
+
+@patch.object(validate, "write_ok_flip_changelog", return_value=0)
+@patch.object(validate, "write_error_cluster_csvs")
+@patch.object(validate, "write_filtered_inventory_csvs")
+@patch.object(validate, "ok_flip_changelog_rows")
+@patch.object(validate, "load_inventory_csv", return_value=None)
+@patch.object(validate, "write_compiled_rules_yaml")
+@patch.object(validate, "iter_index_rule_inventory_bundles", return_value=[])
+@patch.object(validate, "read_cleaned_index", return_value={"sections": []})
+def test_validate_rules_no_write_compiled_rules_skips_yaml(
+    _mock_read_index,
+    _mock_iter_bundles,
+    mock_write_compiled_rules,
+    _mock_load_inventory,
+    _mock_flip_rows,
+    _mock_write_filtered,
+    _mock_write_error_clusters,
+    _mock_write_changelog,
+    tmp_path: Path,
+):
+    work = tmp_path / "work"
+    work.mkdir()
+    yaml_in = work / "index.yml"
+    yaml_in.write_text("sections: []\n", encoding="utf-8")
+    probe = work / "probe.wsca"
+    probe.write_text("probe", encoding="utf-8")
+    _write_fake_fork(tmp_path)
+
+    with (
+        patch.object(validate, "ROOT", tmp_path),
+        patch.object(validate, "asca_supports_validate", return_value=True),
+        patch.object(
+            sys,
+            "argv",
+            [
+                "validate_rules",
+                "--yaml-in",
+                str(yaml_in),
+                "--inventory-dir",
+                str(work / "inventory"),
+                "--probe-words",
+                str(probe),
+                "--no-write-compiled-rules",
+            ],
+        ),
+    ):
+        assert validate.main() == 0
+
+    mock_write_compiled_rules.assert_not_called()
 
 
 def test_validation_asca_command_uses_fork_or_path(tmp_path: Path):

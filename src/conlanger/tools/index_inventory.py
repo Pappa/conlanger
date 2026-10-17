@@ -1239,17 +1239,26 @@ def validate_index_rule_with_targets(
     return rows, targets
 
 
-def iter_inventory_with_field_isolation(
+@dataclass(frozen=True)
+class IndexRuleInventoryBundle:
+    """Per index rule: validation rows and compile targets (ticket 159)."""
+
+    section: dict[str, Any]
+    rule: dict[str, Any]
+    rule_id: str
+    rows: list[ValidationRow]
+    targets: list[_InventoryTarget]
+
+
+def iter_index_rule_inventory_bundles(
     doc: dict[str, Any],
     *,
-    field_isolation: bool = False,
     probe_words: Path | None,
     compiler_config: CompilerConfig | None = None,
     asca_bin: str | None = None,
-) -> tuple[list[ValidationRow], list[FieldIsolationRow]]:
-    """Validate the index and build matching field-isolation sidecar rows."""
-    validation_rows: list[ValidationRow] = []
-    field_rows: list[FieldIsolationRow] = []
+) -> list[IndexRuleInventoryBundle]:
+    """Validate the index and return one bundle per index rule in document order."""
+    bundles: list[IndexRuleInventoryBundle] = []
     for section in doc.get("sections") or []:
         rules = section.get("rules") or []
         for rule in rules:
@@ -1262,13 +1271,42 @@ def iter_inventory_with_field_isolation(
                 compiler_config=compiler_config,
                 asca_bin=asca_bin,
             )
-            validation_rows.extend(rows)
-            if field_isolation:
-                field_rows.extend(
-                    field_isolation_rows_for_validation_rows(
-                        rows, targets, asca_bin=asca_bin
-                    )
+            bundles.append(
+                IndexRuleInventoryBundle(
+                    section=section,
+                    rule=rule,
+                    rule_id=rule_id,
+                    rows=rows,
+                    targets=targets,
                 )
+            )
+    return bundles
+
+
+def iter_inventory_with_field_isolation(
+    doc: dict[str, Any],
+    *,
+    field_isolation: bool = False,
+    probe_words: Path | None,
+    compiler_config: CompilerConfig | None = None,
+    asca_bin: str | None = None,
+) -> tuple[list[ValidationRow], list[FieldIsolationRow]]:
+    """Validate the index and build matching field-isolation sidecar rows."""
+    validation_rows: list[ValidationRow] = []
+    field_rows: list[FieldIsolationRow] = []
+    for bundle in iter_index_rule_inventory_bundles(
+        doc,
+        probe_words=probe_words,
+        compiler_config=compiler_config,
+        asca_bin=asca_bin,
+    ):
+        validation_rows.extend(bundle.rows)
+        if field_isolation:
+            field_rows.extend(
+                field_isolation_rows_for_validation_rows(
+                    bundle.rows, bundle.targets, asca_bin=asca_bin
+                )
+            )
     return validation_rows, field_rows
 
 

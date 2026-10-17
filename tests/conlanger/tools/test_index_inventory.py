@@ -30,6 +30,7 @@ from conlanger.tools.index_inventory import (
     filter_field_isolation_success,
     filter_inventory_by_ok,
     filter_inventory_skipped,
+    iter_index_rule_inventory_bundles,
     load_inventory_csv,
     matched_correction_rule_ids,
     ok_flip_changelog_rows,
@@ -1920,6 +1921,26 @@ def test_build_field_isolation_row_two_fields_fail(mock_validate_part):
 
 
 @pytest.mark.skipif(not ASCA_VALIDATE_INSTALLED, reason="asca validate not available")
+@patch("conlanger.tools.index_inventory.validate_asca", return_value=True)
+def test_iter_index_rule_inventory_bundles_one_per_rule(mock_validate):
+    doc = {
+        "sections": [
+            {
+                "index": "1",
+                "section": "A",
+                "rules": [
+                    {"stages": ["a", "b"], "rule_id": "r0", "source": "s:1"},
+                    {"stages": ["c", "d"], "rule_id": "r1", "source": "s:2"},
+                ],
+            }
+        ]
+    }
+    bundles = iter_index_rule_inventory_bundles(doc, probe_words=None)
+    assert len(bundles) == 2
+    assert [bundle.rule_id for bundle in bundles] == ["r0", "r1"]
+    assert len(bundles[0].rows) == 1
+
+
 @patch("conlanger.tools.index_inventory.validate_asca", return_value=True)
 def test_validate_index_rule_chain_emits_one_row_per_step(mock_validate):
     rule = {

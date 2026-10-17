@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: None
 
 # Task: write `diagnostics/compile/asca_rules.yml` from `validate_rules`

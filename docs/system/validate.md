@@ -48,10 +48,11 @@ flowchart TD
 | Cleaned YAML | `data/diachronica/index_diachronica.yml` |
 | Parse diagnostics | `diagnostics/parse/` |
 | Inventory dir | `diagnostics/inventory/` |
+| Compile diagnostic YAML | `diagnostics/compile/asca_rules.yml` (per-rule compiled ASCA + `valid`; skip with `--no-write-compiled-rules`) |
 | Comment phrase survey | `diagnostics/parse/rule-comment-phrases.md` |
 | Probe wordlist | `tests/fixtures/asca_probe_words.wsca` |
 
-**`validate_rules` flags:** `--limit N` (smoke), `--yaml-in`, `--inventory-dir`, `--probe-words`, `--field-isolation`, `--use-asca-fork`, `--reset-changelog`.
+**`validate_rules` flags:** `--limit N` (smoke), `--yaml-in`, `--inventory-dir`, `--compile-dir`, `--no-write-compiled-rules`, `--probe-words`, `--field-isolation`, `--use-asca-fork`, `--reset-changelog`.
 
 **`create_index` flags:** `--html`, `--yaml-out`, `--parse-dir`.
 
