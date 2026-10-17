@@ -1,0 +1,284 @@
+section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_ok,output_ok,env_ok,exception_ok,input_class,output_class,env_class,exception_class,input_description,output_description,env_description,exception_description,blame
+6.1.2.1,South Omotic to Aari,"Aari-x1,x2",,index_diachronica.html:1149,FAILED,expected_ipa,,,,,,,,,,,,,multi
+6.2.1.1.4,Proto-Agaw to Xamtanga,Xamtanga-k,0,index_diachronica.html:1221,FAILED,panic_other,,,,,,,,,,,,,multi
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-∅,,index_diachronica.html:1345,FAILED,incomplete_matrix,,,,,,,,,,,,,multi
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aj-aw,,index_diachronica.html:1384,FAILED,expected_underscore,,,,,,,,,,,,,multi
+6.2.2.1.13,Classical Arabic to Western Libyan Arabic,Western-Libyan-Arabic-∅,,index_diachronica.html:1462,FAILED,grouped_env_insertion,,,,,,,,,,,,,multi
+6.2.2.1.16,Classical Arabic to Sudanese Arabic,Sudanese-Arabic-uː,,index_diachronica.html:1496,FAILED,uneven_parallel_sets,,,,,,,,,,,,,multi
+7.4,Proto-Algonquian to Blackfoot,Blackfoot-e_2,,index_diachronica.html:1758,FAILED,stuff_after_word_bound,,,,,,,,,,,,,multi
+7.4,Proto-Algonquian to Blackfoot,Blackfoot-aː_2,,index_diachronica.html:1763,FAILED,expected_underscore,,,,,,,,,,,,,multi
+7.13,Proto-Algonquian to Miami-Illinois,Miami-Illinois-s-ʃ,,index_diachronica.html:1984,FAILED,expected_underscore,,,,,,,,,,,,,multi
+7.15,Proto-Algonquian to Ojibwe,"Ojibwe-j,wV-long",,index_diachronica.html:2021,FAILED,syntax_other,,,,,,,,,,,,,multi
+10.1.1,Proto-Malayo-Polynesian to Proto-Bali-Sasak-Sumbawan,Proto-Bali-Sasak-Sumbawan-HəS,,index_diachronica.html:2540,FAILED,expected_ipa,,,,,,,,,,,,,multi
+10.2.2,Proto-Malayo-Polynesian to Chamorro,Chamorro-i-u_2,,index_diachronica.html:2808,FAILED,segments_before_word,,,,,,,,,,,,,multi
+10.3.3,Proto-Oceanic to Lemerig,Lemerig-—-aCa,,index_diachronica.html:3148,FAILED,panic_other,,,,,,,,,,,,,multi
+10.3.9.3,Proto-Utupua to Tanibili,"Tanibili-r,l",,index_diachronica.html:3481,FAILED,empty_io_panic,,,,,,,,,,,,,multi
+10.3.10.3,Proto-Vanikoro to Vano,Vano-t,,index_diachronica.html:3519,FAILED,expected_underscore,,,,,,,,,,,,,multi
+10.3.11.3,Proto-Southern Vanuatu to Proto-Tanna,Proto-Tanna-s-c-*J,,index_diachronica.html:3632,FAILED,prose_or_expected_arrow,,,,,,,,,,,,,multi
+10.3.11.3.1,Proto-Tanna to Kwamera,Kwamera-ə_2,,index_diachronica.html:3653,FAILED,expected_underscore,,,,,,,,,,,,,multi
+10.4.1,Proto-Micronesian to Marshallese,"Marshallese-ç,s-x",,index_diachronica.html:3770,FAILED,unknown_character,,,,,,,,,,,,,multi
+10.5,Proto-Austronesian to Proto-Ongan,"Proto-Ongan-c,*C,s,*S",,index_diachronica.html:3782,FAILED,expected_ipa,,,,,,,,,,,,,multi
+10.5,Proto-Austronesian to Proto-Ongan,Proto-Ongan-ɟ-ɡ-*N-*R,,index_diachronica.html:3785,FAILED,prose_or_expected_arrow,,,,,,,,,,,,,multi
+10.5.1,Proto-Ongan to Jarawa,Jarawa-∅,,index_diachronica.html:3798,FAILED,segments_before_word,,,,,,,,,,,,,multi
+11.5.1,Proto-Lezgic to Agul,Agul-tɬ-tɬː-tɬʼ-tɬːʼ-dɮ,,index_diachronica.html:3967,FAILED,expected_ipa,,,,,,,,,,,,,multi
+11.5.6,Proto-Lezgic to Udi,Udi-q-qʼ-qːʼ-ɢ,,index_diachronica.html:4027,FAILED,empty_io_panic,,,,,,,,,,,,,multi
+12.1,Proto-Northwest Caucasian to Proto-Abazgi,"Proto-Abazgi-pʷ,pʲ-pʲː,bˤ-bʷ-pʷʲ-bʷʲ",,index_diachronica.html:4110,FAILED,unknown_character,,,,,,,,,,,,,multi
+12.1,Proto-Northwest Caucasian to Proto-Abazgi,Proto-Abazgi-qʷʲʼ,,index_diachronica.html:4146,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+12.1,Proto-Northwest Caucasian to Proto-Abazgi,Proto-Abazgi-qˤʷ-qˤʷː-qˤʷʼ-χˤʷ-ʁˤʷ,,index_diachronica.html:4152,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+12.1.2,Proto-Abazgi to Tapanta Abaza,Tapanta-Abaza-tɕʷʼ-dʑʷ,,index_diachronica.html:4168,FAILED,expected_ipa,,,,,,,,,,,,,multi
+12.1.2,Proto-Abazgi to Tapanta Abaza,"Tapanta-Abaza-tʷʼ,dʷ",,index_diachronica.html:4171,FAILED,expected_ipa,,,,,,,,,,,,,multi
+12.2,Proto-Northwest Caucasian to Proto-Circassian,"Proto-Circassian-qʲʷː-qʲʷ-ɢʲʷ,ʁʲʷ-χʲʷ",,index_diachronica.html:4265,FAILED,prose_or_expected_arrow,,,,,,,,,,,,,multi
+12.3,Proto-Northwest Caucasian to Ubykh,Ubykh-tʷː-tʷʲʼ,,index_diachronica.html:4379,FAILED,unknown_character,,,,,,,,,,,,,multi
+12.3,Proto-Northwest Caucasian to Ubykh,Ubykh-tsʲː-tsʷː-dzʲ,,index_diachronica.html:4383,FAILED,unknown_character,,,,,,,,,,,,,multi
+15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-i-a-u,,index_diachronica.html:4728,FAILED,unknown_feature,,,,,,,,,,,,,multi
+15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-i-a-u,,index_diachronica.html:4758,FAILED,unknown_feature,,,,,,,,,,,,,multi
+15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-C,,index_diachronica.html:4802,FAILED,segments_before_word,,,,,,,,,,,,,multi
+15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-i-a-u,,index_diachronica.html:4815,FAILED,unknown_feature,,,,,,,,,,,,,multi
+17.2,Proto-Indo-European to Common Anatolian,Common-Anatolian-T-h2_3,,index_diachronica.html:5043,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.2,Proto-Indo-European to Common Anatolian,Common-Anatolian-T-h2_4,,index_diachronica.html:5044,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.2,Proto-Indo-European to Common Anatolian,Common-Anatolian-t,,index_diachronica.html:5045,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.2.1,Common Anatolian to Hittite,Hittite-V,,index_diachronica.html:5057,FAILED,syntax_other,,,,,,,,,,,,,multi
+17.2.1,Common Anatolian to Hittite,Hittite-e-o,,index_diachronica.html:5058,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.2.1,Common Anatolian to Hittite,Hittite-e_2,,index_diachronica.html:5061,FAILED,unknown_feature,,,,,,,,,,,,,multi
+17.2.2,Common Anatolian to Luwian,Luwian-V,,index_diachronica.html:5085,FAILED,syntax_other,,,,,,,,,,,,,multi
+17.2.2,Common Anatolian to Luwian,Luwian-V_2,,index_diachronica.html:5086,FAILED,segments_before_word,,,,,,,,,,,,,multi
+17.2.3,Common Anatolian to Lycian,Lycian-e_2,,index_diachronica.html:5122,FAILED,syntax_other,,,,,,,,,,,,,multi
+17.2.3,Common Anatolian to Lycian,Lycian-a,,index_diachronica.html:5123,FAILED,syntax_other,,,,,,,,,,,,,multi
+17.2.4,Common Anatolian to Lydian,"Lydian-e,a,o",,index_diachronica.html:5146,FAILED,syntax_other,,,,,,,,,,,,,multi
+17.2.4,Common Anatolian to Lydian,"Lydian-e,a,o_2",,index_diachronica.html:5147,FAILED,syntax_other,,,,,,,,,,,,,multi
+17.2.5,Common Anatolian to Palaic,Palaic-V,,index_diachronica.html:5161,FAILED,syntax_other,,,,,,,,,,,,,multi
+17.2.5,Common Anatolian to Palaic,Palaic-a-e,,index_diachronica.html:5165,FAILED,syntax_other,,,,,,,,,,,,,multi
+17.4.1,Proto-Indo-European to Avestan,Avestan_2-kʷ-ɡʷʱ,,index_diachronica.html:5447,FAILED,expected_ipa,,,,,,,,,,,,,multi
+17.4.1,Proto-Indo-European to Avestan,Avestan_2-k-kʷ-ɡʷʱ,,index_diachronica.html:5448,FAILED,expected_ipa,,,,,,,,,,,,,multi
+17.4.1,Proto-Indo-European to Avestan,"Avestan_2-l̩,r̩",,index_diachronica.html:5454,FAILED,nested_brackets,,,,,,,,,,,,,multi
+17.5.1,Proto-Indo-European to Old Irish,Old-Irish-p-t-k-kʷ-b-d-ɡ-m-n-l-r-s,,index_diachronica.html:5521,FAILED,unknown_grouping,,,,,,,,,,,,,multi
+17.5.1,Proto-Indo-European to Old Irish,Old-Irish-p-t-k-kʷ-b-d-ɡ-∅,,index_diachronica.html:5525,FAILED,segments_before_word,,,,,,,,,,,,,multi
+17.5.1,Proto-Indo-European to Old Irish,Old-Irish-—-o,,index_diachronica.html:5532,FAILED,expected_ipa,,,,,,,,,,,,,multi
+17.5.1,Proto-Indo-European to Old Irish,"Old-Irish-—-l,hl-l,hr-lp,s,n-rp,s-ln",,index_diachronica.html:5555,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+17.5.1,Proto-Indo-European to Old Irish,Old-Irish-C…C,,index_diachronica.html:5558,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.5.1,Proto-Indo-European to Old Irish,Old-Irish-V_3,,index_diachronica.html:5570,FAILED,nested_brackets,,,,,,,,,,,,,multi
+17.5.2,Proto-Celtic to Middle Welsh,Middle-Welsh-ɔː,,index_diachronica.html:5606,FAILED,unknown_character,,,,,,,,,,,,,multi
+17.7.2.1.2,Old English to Kentish Middle English,Kentish-Middle-English-ɑ-e-o,,index_diachronica.html:5738,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.7.2.1.2,Old English to Kentish Middle English,Kentish-Middle-English-Vː_2,,index_diachronica.html:5740,FAILED,segments_before_word,,,,,,,,,,,,,multi
+17.7.2.1.3,Old English to Midlands Middle English,Midlands-Middle-English-ɑ-e-o,,index_diachronica.html:5760,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.7.2.1.3,Old English to Midlands Middle English,Midlands-Middle-English-Vː_2,,index_diachronica.html:5761,FAILED,segments_before_word,,,,,,,,,,,,,multi
+17.7.2.1.4,Midlands Middle English to Early Modern English,Early-Modern-English-a_2,,index_diachronica.html:5780,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.7.2.1.6,Early Modern English to Australian English,Australian-English-uː_2,,index_diachronica.html:5820,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.7.2.1.6,Early Modern English to Australian English,Australian-English-uː_2,,index_diachronica.html:5820,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.7.2.1.8,Old English to Northern Middle English,Northern-Middle-English-ɑ-e-o,,index_diachronica.html:5868,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.7.2.1.8,Old English to Northern Middle English,Northern-Middle-English-Vː_2,,index_diachronica.html:5870,FAILED,segments_before_word,,,,,,,,,,,,,multi
+17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-ai,,index_diachronica.html:5896,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-ai,,index_diachronica.html:5896,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-uː,,index_diachronica.html:5897,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.7.2.1.12,Old English to Southern Middle English,Southern-Middle-English-ɑ-e-o,,index_diachronica.html:5998,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.7.2.1.12,Old English to Southern Middle English,Southern-Middle-English-Vː_2,,index_diachronica.html:6000,FAILED,segments_before_word,,,,,,,,,,,,,multi
+17.7.2.1.12,Old English to Southern Middle English,Southern-Middle-English-e,,index_diachronica.html:6006,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.7.2.3,Middle High German to Standard German,Standard-German-∅,,index_diachronica.html:6121,FAILED,unknown_grouping,,,,,,,,,,,,,multi
+17.7.3,Common Germanic to Proto-Norse,"Proto-Norse-æ,eːwa",,index_diachronica.html:6165,FAILED,nested_brackets,,,,,,,,,,,,,multi
+17.7.3,Common Germanic to Proto-Norse,Proto-Norse-wuː-iː,,index_diachronica.html:6172,FAILED,expected_number,,,,,,,,,,,,,multi
+17.7.3.1,Proto-Norse to Old Norse,Old-Norse-a_4,,index_diachronica.html:6204,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.7.3.1,Proto-Norse to Old Norse,Old-Norse-waː-naː,,index_diachronica.html:6205,FAILED,segments_before_word,,,,,,,,,,,,,multi
+17.7.4,Common Germanic to Vandalic,Vandalic-eː,,index_diachronica.html:6541,FAILED,unknown_character,,,,,,,,,,,,,multi
+17.10.1,Proto-Indo-Iranian to Proto-Indo-Aryan,Proto-Indo-Aryan-R̊H,,index_diachronica.html:6848,FAILED,unknown_grouping,,,,,,,,,,,,,multi
+17.10.1,Proto-Indo-Iranian to Proto-Indo-Aryan,Proto-Indo-Aryan-R̊H_2,,index_diachronica.html:6849,FAILED,unknown_grouping,,,,,,,,,,,,,multi
+17.10.1.1,Proto-Indo-Aryan to Central Middle Indo-Aryan,Central-Middle-Indo-Aryan-Cn,,index_diachronica.html:6888,FAILED,expected_number,,,,,,,,,,,,,multi
+17.10.1.2,Proto-Indo-Aryan to Eastern Middle Indo-Aryan,Eastern-Middle-Indo-Aryan-Cn,,index_diachronica.html:6911,FAILED,expected_number,,,,,,,,,,,,,multi
+17.10.1.3,Proto-Indo-Aryan to Northwestern Middle Indo-Aryan,Northwestern-Middle-Indo-Aryan-Cn,,index_diachronica.html:6933,FAILED,expected_number,,,,,,,,,,,,,multi
+17.10.1.4,Proto-Indo-Aryan to Western Middle Indo-Aryan,Western-Middle-Indo-Aryan-Cn,,index_diachronica.html:6954,FAILED,expected_number,,,,,,,,,,,,,multi
+17.10.1.5,Proto-Indo-Aryan to Vedic Sanskrit,"Vedic-Sanskrit-s,ʂ",,index_diachronica.html:6960,FAILED,stuff_after_word_bound,,,,,,,,,,,,,multi
+17.10.1.5,Proto-Indo-Aryan to Vedic Sanskrit,"Vedic-Sanskrit-s,ʂ_2",,index_diachronica.html:6961,FAILED,stuff_after_word_bound,,,,,,,,,,,,,multi
+17.11,Proto-Indo-European to Proto-Slavic,Proto-Slavic-k-ɡ-x,,index_diachronica.html:6986,FAILED,nested_brackets,,,,,,,,,,,,,multi
+17.11.1,Proto-Slavic to Polish,Polish-ɛl,,index_diachronica.html:7018,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+17.11.1,Proto-Slavic to Polish,Polish-C,,index_diachronica.html:7022,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.11.1,Proto-Slavic to Polish,"Polish-—-ь,ъ",,index_diachronica.html:7027,FAILED,segments_before_word,,,,,,,,,,,,,multi
+17.11.1,Proto-Slavic to Polish,"Polish-—-ь,ъ_2",,index_diachronica.html:7028,FAILED,empty_io_panic,,,,,,,,,,,,,multi
+17.11.1,Proto-Slavic to Polish,Polish-ьr,,index_diachronica.html:7039,FAILED,format_error,,,,,,,,,,,,,multi
+17.11.1,Proto-Slavic to Polish,Polish-a-ɛ-i-ɔ-u-ɨ-ã,,index_diachronica.html:7041,FAILED,syntax_other,,,,,,,,,,,,,multi
+17.11.1,Proto-Slavic to Polish,Polish-Cʲ_2,,index_diachronica.html:7097,FAILED,unknown_grouping,,,,,,,,,,,,,multi
+17.11.1,Proto-Slavic to Polish,Polish-ɕr̝-ʑr̝,,index_diachronica.html:7129,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.11.1,Proto-Slavic to Polish,Polish-trk,,index_diachronica.html:7144,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.12.1.1.2,Latin to Catalan,Catalan-iː,,index_diachronica.html:7351,FAILED,unknown_character,,,,,,,,,,,,,multi
+17.12.1.1.2,Latin to Catalan,Catalan-uː,,index_diachronica.html:7356,FAILED,unknown_character,,,,,,,,,,,,,multi
+17.12.1.1.2,Latin to Catalan,Catalan-ɛj-ɔj,,index_diachronica.html:7447,FAILED,format_error,,,,,,,,,,,,,multi
+17.12.1.1.3,Latin to French,French-—-V_2,,index_diachronica.html:7465,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+17.12.1.1.3,Latin to French,French-è,,index_diachronica.html:7486,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.12.1.1.3,Latin to French,French-è_3,,index_diachronica.html:7488,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.12.1.1.3,Latin to French,French-ò,,index_diachronica.html:7489,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.12.1.1.3,Latin to French,French-ò,,index_diachronica.html:7489,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.12.1.1.3,Latin to French,French-ò_2,,index_diachronica.html:7490,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.12.1.1.3,Latin to French,French-∅_3,,index_diachronica.html:7504,FAILED,expected_ipa,,,,,,,,,,,,,multi
+17.12.1.1.3,Latin to French,French-C,,index_diachronica.html:7509,FAILED,unknown_character,,,,,,,,,,,,,multi
+17.12.1.1.3,Latin to French,French-t_3,,index_diachronica.html:7534,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.12.1.1.3,Latin to French,French-j_3,,index_diachronica.html:7539,FAILED,expected_ipa,,,,,,,,,,,,,multi
+17.12.1.1.3,Latin to French,French-é,,index_diachronica.html:7545,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.12.1.1.3,Latin to French,French-é_2,,index_diachronica.html:7546,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.12.1.1.3,Latin to French,French-ó,,index_diachronica.html:7547,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.12.1.1.3,Latin to French,French-ó,,index_diachronica.html:7547,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.12.1.1.3,Latin to French,French-ó_3,,index_diachronica.html:7549,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.12.1.1.3,Latin to French,French-e,,index_diachronica.html:7550,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+17.12.1.1.3,Latin to French,French-e_2,,index_diachronica.html:7551,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+17.12.1.1.3,Latin to French,French-a_2,,index_diachronica.html:7553,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+17.12.1.1.3,Latin to French,French-a_3,,index_diachronica.html:7554,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.12.1.1.3,Latin to French,"French-ei,ɔi",,index_diachronica.html:7571,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.12.1.1.5,Latin to Portuguese,Portuguese-V,,index_diachronica.html:7625,FAILED,segments_before_word,,,,,,,,,,,,,multi
+17.12.1.1.5,Latin to Portuguese,Portuguese-e,,index_diachronica.html:7633,FAILED,unknown_character,,,,,,,,,,,,,multi
+17.12.1.1.5,Latin to Portuguese,Portuguese-N,,index_diachronica.html:7654,FAILED,expected_number,,,,,,,,,,,,,multi
+17.12.1.1.5,Latin to Portuguese,"Portuguese-e,i",,index_diachronica.html:7669,FAILED,stuff_after_word_bound,,,,,,,,,,,,,multi
+17.12.1.1.5,Latin to Portuguese,"Portuguese-e,i_2",,index_diachronica.html:7670,FAILED,stuff_after_word_bound,,,,,,,,,,,,,multi
+17.12.1.1.5,Latin to Portuguese,Portuguese-o_2,,index_diachronica.html:7671,FAILED,unknown_feature,,,,,,,,,,,,,multi
+17.12.1.1.5,Latin to Portuguese,Portuguese-C0C0,,index_diachronica.html:7715,FAILED,expected_number,,,,,,,,,,,,,multi
+17.12.1.1.5,Latin to Portuguese,Portuguese-C,,index_diachronica.html:7716,FAILED,unknown_character,,,,,,,,,,,,,multi
+17.12.1.1.5,Latin to Portuguese,Portuguese-k_6,,index_diachronica.html:7722,FAILED,unknown_character,,,,,,,,,,,,,multi
+17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-a_2,,index_diachronica.html:7748,FAILED,stuff_after_word_bound,,,,,,,,,,,,,multi
+17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-e_2,,index_diachronica.html:7753,FAILED,expected_ipa,,,,,,,,,,,,,multi
+17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-a_4,,index_diachronica.html:7786,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-—-V_7,,index_diachronica.html:7792,FAILED,syntax_other,,,,,,,,,,,,,multi
+17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-sj,,index_diachronica.html:7927,FAILED,expected_ipa,,,,,,,,,,,,,multi
+17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-stʃ_2,,index_diachronica.html:7945,FAILED,expected_ipa,,,,,,,,,,,,,multi
+17.12.1.1.6,Vulgar Latin to Old Provençal,Old-Provençal-t_3,,index_diachronica.html:7984,FAILED,expected_underscore,,,,,,,,,,,,,multi
+17.12.1.1.8,Latin to Romanian,Romanian-e_2,,index_diachronica.html:8071,FAILED,expected_number,,,,,,,,,,,,,multi
+17.12.1.1.8,Latin to Romanian,Romanian-a_4,,index_diachronica.html:8083,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+17.12.1.1.10,Vulgar Latin to Spanish,"Spanish-/b/-b,",,index_diachronica.html:8192,FAILED,syntax_other,,,,,,,,,,,,,multi
+17.12.1.1.10,Vulgar Latin to Spanish,Spanish-/dɾ/-ðɾ,,index_diachronica.html:8201,FAILED,unknown_character,,,,,,,,,,,,,multi
+17.12.1.1.10,Vulgar Latin to Spanish,Spanish-/ʝ/-ʝ~dʒ,0,index_diachronica.html:8204,FAILED,unknown_character,,,,,,,,,,,,,multi
+17.12.1.1.10,Vulgar Latin to Spanish,Spanish-/ʝ/-ʝ~dʒ,1,index_diachronica.html:8204,FAILED,unknown_character,,,,,,,,,,,,,multi
+17.12.1.1.10,Vulgar Latin to Spanish,"Spanish-s̪,s",,index_diachronica.html:8206,FAILED,syntax_other,,,,,,,,,,,,,multi
+17.12.1.1.10,Vulgar Latin to Spanish,"Spanish-s̪,s_4",,index_diachronica.html:8210,FAILED,syntax_other,,,,,,,,,,,,,multi
+17.13,Proto-Indo-European to Proto-Tocharian,"Proto-Tocharian-p-ts,kʷ-m-n-l-r-y",,index_diachronica.html:8257,FAILED,syntax_other,,,,,,,,,,,,,multi
+17.13,Proto-Indo-European to Proto-Tocharian,Proto-Tocharian-Dʱ,,index_diachronica.html:8260,FAILED,expected_ipa,,,,,,,,,,,,,multi
+17.13,Proto-Indo-European to Proto-Tocharian,Proto-Tocharian-H,,index_diachronica.html:8264,FAILED,expected_number,,,,,,,,,,,,,multi
+17.13.1,Proto-Tocharian to Tocharian A,Tocharian-A-Cʲj,,index_diachronica.html:8295,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+18.1.1,Pre-Bakairi to Eastern Bakairi,Eastern-Bakairi-ʔ,,index_diachronica.html:8333,FAILED,unknown_feature,,,,,,,,,,,,,multi
+18.1.2,Pre-Bakairi to Western Bakairi,Western-Bakairi-C+-fricative-voiced,,index_diachronica.html:8342,FAILED,unknown_feature,,,,,,,,,,,,,multi
+18.4.3,Proto-Tupí-Guaraní to Guajajara,Guajajara-a_2,,index_diachronica.html:8527,FAILED,segments_before_word,,,,,,,,,,,,,multi
+20.2.1,Proto-Kx’a to ÇHoan,ÇHoan-ⁿQʰ-Q͡ɢ,,index_diachronica.html:8838,FAILED,unknown_character,,,,,,,,,,,,,multi
+20.2.3,Proto-Kx’a to Southeastern !Xun,"Southeastern-!Xun-ⁿQʰ-ǀʰ͜q,ǀʰ͜ɢ-Q͡q",,index_diachronica.html:8875,FAILED,unknown_character,,,,,,,,,,,,,multi
+21.1,Proto-Lakes Plain to Proto-Far West,Proto-Far-West-CV,,index_diachronica.html:8901,FAILED,runtime_delete_only_segment,,,,,,,,,,,,,multi
+21.2.1.2,Proto-Central Tariku to Iau,Iau-CV,,index_diachronica.html:8963,FAILED,runtime_delete_only_segment,,,,,,,,,,,,,multi
+21.2.2.5,Proto-East Tariku to Obokuitai,Obokuitai-∅,,index_diachronica.html:9026,FAILED,expected_underscore,,,,,,,,,,,,,multi
+22.6,Proto-Arawá to Sorowahá,"Sorowahá-tʰ,ɗ",,index_diachronica.html:9200,FAILED,expected_ipa,,,,,,,,,,,,,multi
+22.6,Proto-Arawá to Sorowahá,Sorowahá-ʔ,,index_diachronica.html:9203,FAILED,expected_underscore,,,,,,,,,,,,,multi
+23.1.1.1.3,Proto-Chibchan to Kogi,Kogi-nVs-dVs,,index_diachronica.html:9306,FAILED,nested_brackets,,,,,,,,,,,,,multi
+24.1.1,Proto-Paman to AritinÅitiÉ£,AritinÅitiÉ£-a-longC,,index_diachronica.html:9413,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+24.1.4,Proto-Paman to Mbiywom,Mbiywom-a-longC,,index_diachronica.html:9443,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+25.1.1,Proto-Tacanan to Cavineña,Cavineña-*ŕ,,index_diachronica.html:9500,FAILED,empty_io_panic,,,,,,,,,,,,,multi
+25.1.2,Proto-Tacanan to Chama,"Chama-r,*ŕ",,index_diachronica.html:9512,FAILED,expected_ipa,,,,,,,,,,,,,multi
+25.1.3,Proto-Tacanan to Reyesano,Reyesano-*ŕ,,index_diachronica.html:9523,FAILED,empty_io_panic,,,,,,,,,,,,,multi
+25.1.4,Proto-Tacanan to Tacana,Tacana-*ŕ,,index_diachronica.html:9539,FAILED,empty_io_panic,,,,,,,,,,,,,multi
+27.3,Proto-Mayan to Huastecan,Huastecan-kV+roundC+glide,,index_diachronica.html:9737,FAILED,unknown_feature,,,,,,,,,,,,,multi
+28,Muskogean,Muskogean-V,,index_diachronica.html:9820,FAILED,expected_underscore,,,,,,,,,,,,,multi
+28.1.2,Proto-Eastern Muskogean to Creek,Creek-V1kV2,,index_diachronica.html:9842,FAILED,nested_brackets,,,,,,,,,,,,,multi
+30.1.2,Pre-Proto-Bantu to Proto-Manenguba,Proto-Manenguba-’p-’t-’d/d2-c-’ɟ-’k-ɡ,0,index_diachronica.html:10541,FAILED,prose_or_expected_arrow,,,,,,,,,,,,,multi
+30.1.2,Pre-Proto-Bantu to Proto-Manenguba,Proto-Manenguba-’p-’t-’d/d2-c-’ɟ-’k-ɡ,1,index_diachronica.html:10541,FAILED,prose_or_expected_arrow,,,,,,,,,,,,,multi
+30.2,Proto-Potou-Akanic-Bantu to Proto-Potou-Akanic,Proto-Potou-Akanic-C_2,,index_diachronica.html:10555,FAILED,panic_other,,,,,,,,,,,,,multi
+30.2,Proto-Potou-Akanic-Bantu to Proto-Potou-Akanic,"Proto-Potou-Akanic-V+nasʋ̃,l̃",,index_diachronica.html:10559,FAILED,syntax_other,,,,,,,,,,,,,multi
+30.2.1,Proto-Potou-Akanic to Proto-Akanic,Proto-Akanic-V+high-+ATRCV+high-ATR,,index_diachronica.html:10564,FAILED,nested_brackets,,,,,,,,,,,,,multi
+30.2.1.1,Proto-Akanic to Akan,"Akan-p,ʋ̃-c-k͜p",,index_diachronica.html:10582,FAILED,invalid_ipa,,,,,,,,,,,,,multi
+31.1,Proto-Nyulnyulan to Bardi,Bardi-V0,,index_diachronica.html:10752,FAILED,expected_ipa,,,,,,,,,,,,,multi
+32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-h,,index_diachronica.html:10797,FAILED,expected_ipa,,,,,,,,,,,,,multi
+32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-h_2,,index_diachronica.html:10798,FAILED,expected_ipa,,,,,,,,,,,,,multi
+32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-e_3,,index_diachronica.html:10804,FAILED,expected_underscore,,,,,,,,,,,,,multi
+32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-ẽ_3,,index_diachronica.html:10807,FAILED,expected_underscore,,,,,,,,,,,,,multi
+32.1.1,Proto-Chatino to Papabuco Chatino,Papabuco-Chatino-ẽ_4,,index_diachronica.html:10808,FAILED,expected_underscore,,,,,,,,,,,,,multi
+32.1.2,Proto-Chatino to Tataltepec Chatino,Tataltepec-Chatino-t,,index_diachronica.html:10814,FAILED,expected_ipa,,,,,,,,,,,,,multi
+32.1.2,Proto-Chatino to Tataltepec Chatino,Tataltepec-Chatino-ç,,index_diachronica.html:10824,FAILED,nested_brackets,,,,,,,,,,,,,multi
+32.2,Proto-Oto-Manguean to Tlapanec,Tlapanec-Yt-Ynt-Ys,,index_diachronica.html:10880,FAILED,unknown_grouping,,,,,,,,,,,,,multi
+33.1.1,Proto-Utian to Proto-Costanoan (Ohlone),Proto-Costanoan-Ohlone-l,,index_diachronica.html:10923,FAILED,multiple_underlines_env,,,,,,,,,,,,,multi
+33.2.1,Proto-Wintuan to Nomlaki,Nomlaki-VrV,1,index_diachronica.html:11003,FAILED,unknown_grouping,,,,,,,,,,,,,multi
+34.8,Proto-Quechumaran to Santiago,Santiago-ʃ,,index_diachronica.html:11332,FAILED,multiple_underlines_env,,,,,,,,,,,,,multi
+35.1.2,Proto-Central Salish to Chilliwack Halkomelem,Chilliwack-Halkomelem-V3ʔ,,index_diachronica.html:11417,FAILED,unknown_character,,,,,,,,,,,,,multi
+35.1.2,Proto-Central Salish to Chilliwack Halkomelem,Chilliwack-Halkomelem-∅,,index_diachronica.html:11420,FAILED,expected_underscore,,,,,,,,,,,,,multi
+35.1.6,Proto-Central Salish to Lushootseed,Lushootseed-Rʔ,,index_diachronica.html:11503,FAILED,expected_underscore,,,,,,,,,,,,,multi
+35.1.7,Proto-Central Salish to Nooksack,Nooksack-∅,,index_diachronica.html:11520,FAILED,expected_underscore,,,,,,,,,,,,,multi
+35.1.9,Proto-Central Salish to Saanich Northern Straits,Saanich-Northern-Straits-V3h,,index_diachronica.html:11576,FAILED,unknown_character,,,,,,,,,,,,,multi
+35.1.9,Proto-Central Salish to Saanich Northern Straits,Saanich-Northern-Straits-a3,,index_diachronica.html:11579,FAILED,expected_ipa,,,,,,,,,,,,,multi
+36.1.1,Late Middle Chinese to Old Mandarin,Old-Mandarin-Cʲ,,index_diachronica.html:11756,FAILED,unknown_character,,,,,,,,,,,,,multi
+36.1.1,Late Middle Chinese to Old Mandarin,Old-Mandarin-V1,,index_diachronica.html:11759,FAILED,expected_underscore,,,,,,,,,,,,,multi
+36.1.1,Late Middle Chinese to Old Mandarin,Old-Mandarin-V3,,index_diachronica.html:11760,FAILED,expected_underscore,,,,,,,,,,,,,multi
+36.1.1,Late Middle Chinese to Old Mandarin,Old-Mandarin-V5,,index_diachronica.html:11762,FAILED,expected_underscore,,,,,,,,,,,,,multi
+36.1.1,Late Middle Chinese to Old Mandarin,Old-Mandarin-V5_2,,index_diachronica.html:11763,FAILED,expected_underscore,,,,,,,,,,,,,multi
+36.1.1,Late Middle Chinese to Old Mandarin,Old-Mandarin-V5_3,,index_diachronica.html:11764,FAILED,expected_underscore,,,,,,,,,,,,,multi
+36.1.1,Late Middle Chinese to Old Mandarin,Old-Mandarin-i,,index_diachronica.html:11769,FAILED,expected_ipa,,,,,,,,,,,,,multi
+36.1.1,Late Middle Chinese to Old Mandarin,Old-Mandarin-ia,,index_diachronica.html:11770,FAILED,expected_ipa,,,,,,,,,,,,,multi
+36.1.1,Late Middle Chinese to Old Mandarin,Old-Mandarin-w_2,,index_diachronica.html:11786,FAILED,expected_underscore,,,,,,,,,,,,,multi
+36.1.1,Late Middle Chinese to Old Mandarin,Old-Mandarin-wʲ,,index_diachronica.html:11790,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+36.1.1.1,Old Mandarin to Modern Pekingese,Modern-Pekingese-î,,index_diachronica.html:11810,FAILED,expected_number,,,,,,,,,,,,,multi
+36.1.1.1,Old Mandarin to Modern Pekingese,Modern-Pekingese-kʰ-h,,index_diachronica.html:11812,FAILED,unknown_character,,,,,,,,,,,,,multi
+36.2,Sin Sukchu to Guānhuà,Guānhuà-i,,index_diachronica.html:11840,FAILED,syntax_other,,,,,,,,,,,,,multi
+36.2,Sin Sukchu to Guānhuà,Guānhuà-iʔ,,index_diachronica.html:11842,FAILED,syntax_other,,,,,,,,,,,,,multi
+36.2,Sin Sukchu to Guānhuà,Guānhuà-uʔ,,index_diachronica.html:11843,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+36.2,Sin Sukchu to Guānhuà,Guānhuà-uj_3,,index_diachronica.html:11845,FAILED,expected_ipa,,,,,,,,,,,,,multi
+36.2,Sin Sukchu to Guānhuà,Guānhuà-juŋ,,index_diachronica.html:11851,FAILED,expected_ipa,,,,,,,,,,,,,multi
+36.2,Sin Sukchu to Guānhuà,Guānhuà-juŋ_2,,index_diachronica.html:11852,FAILED,syntax_other,,,,,,,,,,,,,multi
+36.2,Sin Sukchu to Guānhuà,Guānhuà-y,,index_diachronica.html:11855,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+36.2,Sin Sukchu to Guānhuà,Guānhuà-yʔ,,index_diachronica.html:11856,FAILED,expected_underscore,,,,,,,,,,,,,multi
+36.2,Sin Sukchu to Guānhuà,Guānhuà-yʔ_2,,index_diachronica.html:11857,FAILED,expected_underscore,,,,,,,,,,,,,multi
+36.2,Sin Sukchu to Guānhuà,Guānhuà-yʔ_2,,index_diachronica.html:11857,FAILED,expected_ipa,,,,,,,,,,,,,multi
+36.2,Sin Sukchu to Guānhuà,Guānhuà-yʔ_3,0,index_diachronica.html:11858,FAILED,expected_ipa,,,,,,,,,,,,,multi
+36.2,Sin Sukchu to Guānhuà,Guānhuà-yʔ_3,1,index_diachronica.html:11858,FAILED,expected_ipa,,,,,,,,,,,,,multi
+36.2,Sin Sukchu to Guānhuà,Guānhuà-yʔ_5,0,index_diachronica.html:11860,FAILED,expected_underscore,,,,,,,,,,,,,multi
+36.2,Sin Sukchu to Guānhuà,Guānhuà-yʔ_5,1,index_diachronica.html:11860,FAILED,expected_underscore,,,,,,,,,,,,,multi
+36.2,Sin Sukchu to Guānhuà,Guānhuà-yʔ_5,2,index_diachronica.html:11860,FAILED,expected_underscore,,,,,,,,,,,,,multi
+36.2,Sin Sukchu to Guānhuà,Guānhuà-yʔ_6,,index_diachronica.html:11861,FAILED,expected_underscore,,,,,,,,,,,,,multi
+36.2,Sin Sukchu to Guānhuà,Guānhuà-yʔ_6,,index_diachronica.html:11861,FAILED,expected_underscore,,,,,,,,,,,,,multi
+36.2,Sin Sukchu to Guānhuà,Guānhuà-yeʔ,,index_diachronica.html:11866,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+36.2,Sin Sukchu to Guānhuà,Guānhuà-wɔ,,index_diachronica.html:11874,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+36.3.2.1.1,Proto-rGyalrongic to Chos Kia,Chos-Kia-t-st-tr-d-sd-çdr-Nt-çT-KT,,index_diachronica.html:12018,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+36.3.2.2.2,Proto-rGyalrongic to lCog Rtse,lCog-Rtse-*w,,index_diachronica.html:12128,FAILED,empty_io_panic,,,,,,,,,,,,,multi
+36.3.2.2.4,Proto-rGyalrongic to Suo Mo,Suo-Mo-ɡj,,index_diachronica.html:12154,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+36.3.3.1,Old Tibetan to Amdo dialects,"Amdo-dialects-d,ɡ,s,l,r",,index_diachronica.html:12288,FAILED,uneven_parallel_sets,,,,,,,,,,,,,multi
+37.1,Proto-Siouan-Iroquoian to Proto-Iroquoian,Proto-Iroquoian-p_2,,index_diachronica.html:12335,FAILED,expected_underscore,,,,,,,,,,,,,multi
+37.1.1,Proto-Iroquoian to Cherokee,Cherokee-aːwẽː,,index_diachronica.html:12354,FAILED,expected_ipa,,,,,,,,,,,,,multi
+37.1.2.1,Proto-Northern Iroquoian to Cayuga,Cayuga-”VCCCaCV,,index_diachronica.html:12394,FAILED,nested_brackets,,,,,,,,,,,,,multi
+37.1.2.1,Proto-Northern Iroquoian to Cayuga,Cayuga-V1”V2-”V1ːV2,,index_diachronica.html:12414,FAILED,unknown_character,,,,,,,,,,,,,multi
+37.1.2.1,Proto-Northern Iroquoian to Cayuga,Cayuga-”V0V0,,index_diachronica.html:12417,FAILED,unknown_feature,,,,,,,,,,,,,multi
+37.1.2.3,Proto-Northern Iroquoian to Onondaga,Onondaga-”VːCCVː,,index_diachronica.html:12508,FAILED,nested_brackets,,,,,,,,,,,,,multi
+37.1.2.3,Proto-Northern Iroquoian to Onondaga,Onondaga-”VCCCaCV,,index_diachronica.html:12512,FAILED,nested_brackets,,,,,,,,,,,,,multi
+37.2.1,Proto-Siouan to Catawba,Catawba-tʲ,,index_diachronica.html:12745,FAILED,expected_underscore,,,,,,,,,,,,,multi
+37.2.1,Proto-Siouan to Catawba,Catawba-tʲ_2,,index_diachronica.html:12746,FAILED,expected_underscore,,,,,,,,,,,,,multi
+37.2.2,Proto-Siouan to Dakota,Dakota-tʲ,,index_diachronica.html:12757,FAILED,expected_underscore,,,,,,,,,,,,,multi
+37.2.2,Proto-Siouan to Dakota,Dakota-tʲ_2,,index_diachronica.html:12758,FAILED,expected_underscore,,,,,,,,,,,,,multi
+37.2.3,Proto-Siouan to Mandan,Mandan-ã,,index_diachronica.html:12802,FAILED,expected_underscore,,,,,,,,,,,,,multi
+37.2.4,Proto-Siouan to Proto-Čiwere-Winnebago,Proto-Čiwere-Winnebago-tʲ,,index_diachronica.html:12824,FAILED,expected_underscore,,,,,,,,,,,,,multi
+37.2.5,Proto-Siouan to Proto-Crow-Hidatsa,Proto-Crow-Hidatsa-Lʲ,,index_diachronica.html:12880,FAILED,expected_ipa,,,,,,,,,,,,,multi
+37.2.6,Proto-Siouan to Proto-Dhegiha,Proto-Dhegiha-tʲ,,index_diachronica.html:12922,FAILED,expected_underscore,,,,,,,,,,,,,multi
+37.2.6,Proto-Siouan to Proto-Dhegiha,Proto-Dhegiha-u,,index_diachronica.html:12928,FAILED,expected_underscore,,,,,,,,,,,,,multi
+37.2.6.1,Proto-Dhegiha to Kansa,Kansa-r-Lʲ,,index_diachronica.html:12939,FAILED,expected_ipa,,,,,,,,,,,,,multi
+37.2.7.1,Proto-Ohio-Valley to Biloxi,Biloxi-p_2,,index_diachronica.html:13017,FAILED,expected_underscore,,,,,,,,,,,,,multi
+38.1.1.3,Proto-Tai to Central Tai,"Central-Tai-l,r",,index_diachronica.html:13111,FAILED,expected_underscore,,,,,,,,,,,,,multi
+38.1.1.3,Proto-Tai to Central Tai,Central-Tai-tr,,index_diachronica.html:13119,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+38.1.1.4,Proto-Tai to North Tai,North-Tai-l,,index_diachronica.html:13215,FAILED,expected_underscore,,,,,,,,,,,,,multi
+38.1.1.4,Proto-Tai to North Tai,North-Tai-l_2,,index_diachronica.html:13216,FAILED,expected_underscore,,,,,,,,,,,,,multi
+38.1.1.4,Proto-Tai to North Tai,"North-Tai-xr-x-x,ɣʷ",,index_diachronica.html:13226,FAILED,prose_or_expected_arrow,,,,,,,,,,,,,multi
+38.1.1.4.2,North Tai to Po-Ai,Po-Ai-ua~u@̯,,index_diachronica.html:13279,FAILED,expected_ipa,,,,,,,,,,,,,multi
+38.1.1.5,Proto-Tai to Southwest Tai,"Southwest-Tai-l,r",,index_diachronica.html:13315,FAILED,expected_underscore,,,,,,,,,,,,,multi
+40.2,Proto-Totozoquean to Proto-Totonacan,"Proto-Totonacan-e,ɨ-ḛ-ɨ̰",,index_diachronica.html:13515,FAILED,unknown_character,,,,,,,,,,,,,multi
+41.5.2.3,Proto-Kainantu to Gadsup,"Gadsup-D,Y",,index_diachronica.html:13668,FAILED,unknown_grouping,,,,,,,,,,,,,multi
+41.5.2.3,Proto-Kainantu to Gadsup,Gadsup-YO+-voice-YO-voice,,index_diachronica.html:13669,FAILED,unknown_grouping,,,,,,,,,,,,,multi
+42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-ŋ,,index_diachronica.html:13762,FAILED,expected_underscore,,,,,,,,,,,,,multi
+42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-ŋ_2,,index_diachronica.html:13763,FAILED,stuff_after_word_bound,,,,,,,,,,,,,multi
+42.1,Proto-Uralic to Pre-Finnic,Pre-Finnic-a,,index_diachronica.html:13768,FAILED,unknown_grouping,,,,,,,,,,,,,multi
+42.1.1.1,Proto-Finnic to Proto-Finnish,Proto-Finnish-tːsn-kxtx-rn-ln,,index_diachronica.html:13843,FAILED,nested_brackets,,,,,,,,,,,,,multi
+42.1.2,Proto-Finnic to Livonian,Livonian-Vh,,index_diachronica.html:13912,FAILED,expected_underscore,,,,,,,,,,,,,multi
+42.1.2,Proto-Finnic to Livonian,Livonian-∅,,index_diachronica.html:13915,FAILED,grouped_env_insertion,,,,,,,,,,,,,multi
+42.1.2,Proto-Finnic to Livonian,Livonian-dj-lj-rj-ɡj,,index_diachronica.html:13919,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+42.1.2,Proto-Finnic to Livonian,Livonian-y-ø,,index_diachronica.html:13930,FAILED,expected_underscore,,,,,,,,,,,,,multi
+44.2,Proto-Basque to Basque,Basque-Sʰ,,index_diachronica.html:14114,FAILED,empty_io_panic,,,,,,,,,,,,,multi
+44.2,Proto-Basque to Basque,Basque-*L,,index_diachronica.html:14134,FAILED,missing_slash_output_env,,,,,,,,,,,,,multi
+44.2,Proto-Basque to Basque,Basque-*L,,index_diachronica.html:14134,FAILED,expected_ipa,,,,,,,,,,,,,multi
+44.2,Proto-Basque to Basque,Basque-u-ũ,,index_diachronica.html:14142,FAILED,nested_brackets,,,,,,,,,,,,,multi
+44.2,Proto-Basque to Basque,Basque-h…h,,index_diachronica.html:14172,FAILED,empty_io_panic,,,,,,,,,,,,,multi
+44.2,Proto-Basque to Basque,Basque-*-ɾ,,index_diachronica.html:14173,FAILED,empty_io_panic,,,,,,,,,,,,,multi
+44.2,Proto-Basque to Basque,Basque-V_3,,index_diachronica.html:14200,FAILED,expected_underscore,,,,,,,,,,,,,multi
+44.2,Proto-Basque to Basque,Basque-i_3,,index_diachronica.html:14201,FAILED,expected_underscore,,,,,,,,,,,,,multi
+44.2,Proto-Basque to Basque,"Basque-u-o,e",,index_diachronica.html:14202,FAILED,expected_underscore,,,,,,,,,,,,,multi
+44.2,Proto-Basque to Basque,Basque-s̺_2,,index_diachronica.html:14232,FAILED,unknown_character,,,,,,,,,,,,,multi
+46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-ai,,index_diachronica.html:14323,FAILED,expected_underscore,,,,,,,,,,,,,multi
+46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-ai,,index_diachronica.html:14323,FAILED,expected_underscore,,,,,,,,,,,,,multi
+46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-uː,,index_diachronica.html:14324,FAILED,expected_underscore,,,,,,,,,,,,,multi
+46.11,Middle Chinese to Cantonese Vowel Shift (“The Inner-Outer Flip”),Cantonese-Vowel-Shift-∅,,index_diachronica.html:14390,FAILED,unknown_feature,,,,,,,,,,,,,multi
+46.19,Southern [United States] Shift (English),Southern-United-States-Shift-English-aɪ_4,,index_diachronica.html:14479,FAILED,expected_underscore,,,,,,,,,,,,,multi
+46.19,Southern [United States] Shift (English),Southern-United-States-Shift-English-uʊ-oʊ,,index_diachronica.html:14482,FAILED,nested_brackets,,,,,,,,,,,,,multi
+46.19,Southern [United States] Shift (English),Southern-United-States-Shift-English-æ/ɑː,,index_diachronica.html:14490,FAILED,prose_or_expected_arrow,,,,,,,,,,,,,multi
+47.1,List 1: Simple Consonant Changes,List-1:-Simple-Consonant-Changes-b,,index_diachronica.html:14516,FAILED,unknown_character,,,,,,,,,,,,,multi
+47.2,List 2: Conditional or complex consonant changes,"List-2:-Conditional-or-complex-consonant-changes-t,k",,index_diachronica.html:14530,FAILED,unknown_grouping,,,,,,,,,,,,,multi

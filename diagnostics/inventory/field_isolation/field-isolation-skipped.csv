@@ -1,0 +1,43 @@
+section_index,section_name,rule_id,alt_idx,source,whole_ok,failure_class,input_ok,output_ok,env_ok,exception_ok,input_class,output_class,env_class,exception_class,input_description,output_description,env_description,exception_description,blame
+6.1.1,Proto-Omotic to North Omotic,North-Omotic-Vː_2,,index_diachronica.html:987,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+6.2.2.1.6,Classical Arabic to Cypriot Arabic,Cypriot-Arabic-j,,index_diachronica.html:1342,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-a_4,,index_diachronica.html:1533,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ʔ,,index_diachronica.html:1564,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+10.1.2.7.2,Proto-Kalamian to Karamiananen,Karamiananen-s_4,,index_diachronica.html:2716,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+10.2.6.1,Proto-North Sarawak to Kiput,Kiput-V+stress,,index_diachronica.html:2989,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+10.2.6.1,Proto-North Sarawak to Kiput,Kiput-əi̯-əu̯,,index_diachronica.html:3002,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+14.3.1,Standard Tamil to Colloquial Tamil,Colloquial-Tamil-l-ɭ,,index_diachronica.html:4548,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+14.3.1,Standard Tamil to Colloquial Tamil,Colloquial-Tamil-∅_3,,index_diachronica.html:4555,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-j_2,,index_diachronica.html:5200,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.3.1,Proto-Indo-European to Artsakh Armenian,Artsakh-Armenian-V,,index_diachronica.html:5212,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-j_2,,index_diachronica.html:5237,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.3.2,Proto-Indo-European to Erevan Armenian,Erevan-Armenian-V,,index_diachronica.html:5249,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-j_2,,index_diachronica.html:5274,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.3.3,Proto-Indo-European to Istanbul Armenian,Istanbul-Armenian-V,,index_diachronica.html:5286,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-j_2,,index_diachronica.html:5311,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.3.4,Proto-Indo-European to Kharpert Armenian,Kharpert-Armenian-V,,index_diachronica.html:5323,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-j_2,,index_diachronica.html:5347,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.3.5,Proto-Indo-European to Sebastia Armenian,Sebastia-Armenian-V,,index_diachronica.html:5359,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-j_2,,index_diachronica.html:5386,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.3.6,Proto-Indo-European to Southeast Armenian,Southeast-Armenian-V,,index_diachronica.html:5398,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-j_2,,index_diachronica.html:5424,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.3.7,Proto-Indo-European to Southwest Armenian,Southwest-Armenian-V,,index_diachronica.html:5436,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-a_2,,index_diachronica.html:5702,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-æu,,index_diachronica.html:5706,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-a_3,,index_diachronica.html:5711,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-uː_3,,index_diachronica.html:6049,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.7.2.5,West Germanic to Old Low German,Old-Low-German-F-voice,,index_diachronica.html:6155,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.10,Proto-Indo-European to Proto-Indo-Iranian,Proto-Indo-Iranian-Bʱ1P2,,index_diachronica.html:6830,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.10,Proto-Indo-European to Proto-Indo-Iranian,Proto-Indo-Iranian-BʱBʱ,,index_diachronica.html:6831,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.10,Proto-Indo-European to Proto-Indo-Iranian,"Proto-Indo-Iranian-e,o,o2,N̊",,index_diachronica.html:6839,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.12.1.1.1,Classical Latin vs. Vulgar Latin,"Classical-Latin-vs.-Vulgar-Latin-uː-ɔ,oː-eː-iː",,index_diachronica.html:7338,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+17.12.1.1.10,Vulgar Latin to Spanish,"Spanish-e-ɛ,a-ɔ-o",,index_diachronica.html:8143,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+36.2,Sin Sukchu to Guānhuà,Guānhuà-ŋ_3,,index_diachronica.html:11833,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+37.1.2.6,Proto-Northern Iroquoian to Tuscarora,Tuscarora-t,,index_diachronica.html:12684,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+37.1.2.6,Proto-Northern Iroquoian to Tuscarora,Tuscarora-ˀt,,index_diachronica.html:12691,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+37.1.2.6,Proto-Northern Iroquoian to Tuscarora,Tuscarora-ˀt_2,,index_diachronica.html:12692,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+37.1.2.6,Proto-Northern Iroquoian to Tuscarora,Tuscarora-ˀt_3,,index_diachronica.html:12693,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+37.1.2.6,Proto-Northern Iroquoian to Tuscarora,Tuscarora-ˀt_4,,index_diachronica.html:12694,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+37.1.2.6,Proto-Northern Iroquoian to Tuscarora,Tuscarora-ˀt_5,,index_diachronica.html:12695,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+37.1.2.6,Proto-Northern Iroquoian to Tuscarora,Tuscarora-ˀt_6,,index_diachronica.html:12696,SKIPPED,rule_skipped,,,,,,,,,,,,,none
+46.14,Pre-Slavic Vowel Changes,Pre-Slavic-Vowel-Changes-i,,index_diachronica.html:14438,SKIPPED,rule_skipped,,,,,,,,,,,,,none
