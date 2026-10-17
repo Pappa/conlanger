@@ -2,7 +2,7 @@
 
 Parse-only: writes cleaned YAML and parse-time artifacts under
 ``diagnostics/parse/``. For compile validation and inventory,
-run ``validate_rules`` on the parsed YAML.
+run ``compile_rules`` then ``validate_rules`` on the parsed YAML.
 """
 
 import argparse

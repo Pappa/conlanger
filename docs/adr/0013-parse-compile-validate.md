@@ -11,6 +11,6 @@ This does not change [ADR-0003](0003-validate-after-applier-compile.md): the aut
 
 ## Consequences
 
-- `docs/SYSTEM.md` and stage docs list three rows. Inventory, failure-class CSVs, and the correction-loop commands (`uv run create_index` then `uv run validate_rules`) are documented under validate.
+- `docs/SYSTEM.md` and stage docs list three rows with operator commands: `uv run create_index`, `uv run compile_rules`, `uv run validate_rules`. Compile writes `diagnostics/compile/asca_rules.yml` ([ADR-0018](0018-compiled-asca-rules-yaml.md)); inventory, failure-class CSVs, and the correction loop are documented under validate.
 - `docs/system/applier-neutral-index-validation.md` is not a pipeline stage; fold or redirect it into the validate doc.
 - Hold-out policy is [ADR-0010](0010-historical-fidelity-class-first-status.md) as amended: `status: skipped` only from `skip_sections` / `skip_rules`.

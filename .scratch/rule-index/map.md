@@ -131,7 +131,7 @@ A **cleaned rule index** (applier-neutral YAML SoT) derived from **Index Diachro
 
 ## Pipeline documentation (grill 2026-08-07)
 
-**Runtime:** parse once → correction loop; each pass runs applier compile → compile validation per rule (ADR-0003). Operator commands (post-[161](issues/161-task-split-compile-rules-and-validate-compiled-yaml.md)): `uv run create_index && uv run compile_rules && uv run validate_rules` — [160 grill](issues/160-grill-split-compile-rules-and-compiled-yaml-pipeline.md) **resolved**. Until 161 lands: `create_index && validate_rules` ([103](issues/103-split-create-index-and-validate-rules.md)).
+**Runtime:** parse once → correction loop; compile writes `asca_rules.yml`, then validate runs ASCA per compiled target (ADR-0003, [ADR-0018](../../docs/adr/0018-compiled-asca-rules-yaml.md)). Operator commands: `uv run create_index && uv run compile_rules && uv run validate_rules` — [160 grill](issues/160-grill-split-compile-rules-and-compiled-yaml-pipeline.md) / [161](issues/161-task-split-compile-rules-and-validate-compiled-yaml.md).
 
 **Docs (two processing steps, ad hoc — no ticket):**
 

@@ -11,8 +11,8 @@ Sound-change rule index processing — parse → compile → validate:
 | Stage | Doc | Operator command |
 | --- | --- | --- |
 | Index Diachronica parse | [index-diachronica-parser.md](./system/index-diachronica-parser.md) | `uv run create_index` |
-| Applier compile | [sound-change-applier.md](./system/sound-change-applier.md) | (in-memory inside `validate_rules`) |
-| Validate | [validate.md](./system/validate.md) | `uv run validate_rules` |
+| Applier compile | [sound-change-applier.md](./system/sound-change-applier.md) · [compile-rules.md](./system/compile-rules.md) | `uv run compile_rules` → `diagnostics/compile/asca_rules.yml` |
+| Validate | [validate.md](./system/validate.md) | `uv run validate_rules` (reads compiled YAML only) |
 
 Corpus rules in YAML use an ordered **`stages`** list on each rule ([ADR-0011](./adr/0011-index-rule-stages.md)), not legacy `input`/`output` keys. Compile-time `input`/`output` exist only on the applier compile model after **stages** expansion.
 

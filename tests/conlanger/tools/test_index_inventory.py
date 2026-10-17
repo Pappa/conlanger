@@ -14,11 +14,12 @@ from conlanger.tools.index_inventory import (
     RULE_SKIPPED_FAILURE_CLASS,
     SECTION_SKIPPED_FAILURE_CLASS,
     FieldIsolationRow,
+    IndexRuleInventoryBundle,
     ValidationRow,
     _coerce_ok_value,
-    _series_for_alternative,
     append_ok_flip_changelog,
     build_field_isolation_row,
+    bundles_for_row_prefix,
     classify_error,
     corrections_outcome_stats,
     count_field_blame_categories,
@@ -30,6 +31,8 @@ from conlanger.tools.index_inventory import (
     filter_field_isolation_success,
     filter_inventory_by_ok,
     filter_inventory_skipped,
+    iter_compiled_inventory_bundles,
+    iter_index_compile_bundles,
     iter_index_rule_inventory_bundles,
     load_inventory_csv,
     matched_correction_rule_ids,
@@ -48,6 +51,10 @@ from conlanger.tools.index_inventory import (
     write_filtered_inventory_csvs,
     write_ok_flip_changelog,
     write_validation_csv,
+)
+from conlanger.tools.inventory_targets import (
+    _series_for_alternative,
+    resolve_inventory_targets,
 )
 from tests.conftest import ASCA_VALIDATE_INSTALLED
 
@@ -2043,3 +2050,105 @@ def test_field_isolation_integration_multi_blame():
     assert rows[0].ok == OK_FALSE
     field_rows = field_isolation_rows_for_validation_rows(rows, targets)
     assert field_rows[0].blame == "multi"
+
+
+def test_bundles_for_row_prefix_truncates_mid_rule():
+    section = {"index": "1", "section": "A"}
+    rule = {"stages": ["a", "b", "c"], "source": "s:1"}
+    targets = resolve_inventory_targets(section, rule, "chain")
+    rows = [
+        ValidationRow("1", "A", "chain", "s:1", OK_TRUE, rule="a > b", step_idx=0),
+        ValidationRow("1", "A", "chain", "s:1", OK_TRUE, rule="b > c", step_idx=1),
+    ]
+    bundles = [
+        IndexRuleInventoryBundle(
+            section=section,
+            rule=rule,
+            rule_id="chain",
+            rows=rows,
+            targets=targets,
+        )
+    ]
+    trimmed = bundles_for_row_prefix(bundles, rows[:1])
+    assert len(trimmed) == 1
+    assert len(trimmed[0].rows) == 1
+    assert bundles_for_row_prefix(bundles, []) == []
+
+
+def test_iter_index_compile_bundles_skips_section_status():
+    doc = {
+        "sections": [
+            {"index": "9", "section": "Skip", "status": "skipped", "rules": []},
+            {
+                "index": "1",
+                "section": "A",
+                "rules": [{"stages": ["a", "b"], "rule_id": "r0"}],
+            },
+        ]
+    }
+    bundles = iter_index_compile_bundles(doc)
+    assert len(bundles) == 1
+    assert bundles[0].rule_id == "r0"
+    assert bundles[0].rows == []
+
+
+@patch("conlanger.tools.index_inventory.validate_asca", return_value=True)
+def test_iter_compiled_inventory_bundles_from_v1_document(mock_validate):
+    from conlanger.tools.compiled_rules_yaml import build_asca_rules_document
+
+    doc = {
+        "sections": [
+            {
+                "index": "1",
+                "section": "A",
+                "rules": [
+                    {
+                        "stages": ["a", "b"],
+                        "rule_id": "r0",
+                        "source": "s:1",
+                    }
+                ],
+            }
+        ]
+    }
+    compile_bundles = iter_index_compile_bundles(doc)
+    compiled = build_asca_rules_document(compile_bundles)
+    bundles = iter_compiled_inventory_bundles(compiled, probe_words=None)
+    assert len(bundles) == 1
+    assert bundles[0].rows[0].ok == OK_TRUE
+    assert bundles[0].rows[0].rule == "a > b"
+
+
+def test_iter_compiled_inventory_handles_skipped_and_compile_error():
+    compiled = {
+        "schema_version": 1,
+        "sections": [
+            {
+                "index": "1",
+                "section": "A",
+                "rules": [
+                    {
+                        "rule_id": "hold",
+                        "source": "s:1",
+                        "status": "skipped",
+                        "rule": "#\tx",
+                    },
+                    {
+                        "rule_id": "bad",
+                        "source": "s:2",
+                        "compile_error": "missing stages",
+                    },
+                    {
+                        "rule_id": "sp",
+                        "source": "s:3",
+                        "status": "compile_skipped",
+                        "rule": "#\tp > h",
+                    },
+                ],
+            }
+        ],
+    }
+    bundles = iter_compiled_inventory_bundles(compiled, probe_words=None)
+    assert bundles[0].rows[0].ok == OK_SKIPPED
+    assert bundles[1].rows[0].failure_class == "format_error"
+    assert bundles[2].rows[0].ok == OK_TRUE

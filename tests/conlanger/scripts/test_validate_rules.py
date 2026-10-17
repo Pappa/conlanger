@@ -17,9 +17,9 @@ from conlanger.tools.index_inventory import (
     FieldIsolationRow,
     IndexRuleInventoryBundle,
     ValidationRow,
-    _InventoryTarget,
     validation_rows_to_dataframe,
 )
+from conlanger.tools.inventory_targets import InventoryTarget
 
 
 def _bundle(
@@ -33,7 +33,7 @@ def _bundle(
         rule=rule,
         rule_id=rule_id,
         rows=rows,
-        targets=[_InventoryTarget(None, None, None)],
+        targets=[InventoryTarget()],
     )
 
 
@@ -45,13 +45,20 @@ def _write_fake_fork(root: Path) -> Path:
     return fork
 
 
-def test_validate_rules_errors_when_yaml_missing(tmp_path: Path):
+def _write_min_compiled_yaml(path: Path) -> None:
+    path.write_text(
+        "schema_version: 1\nsections: []\n",
+        encoding="utf-8",
+    )
+
+
+def test_validate_rules_errors_when_compiled_yaml_missing(tmp_path: Path):
     with patch.object(
         sys,
         "argv",
         [
             "validate_rules",
-            "--yaml-in",
+            "--compiled-in",
             str(tmp_path / "missing.yml"),
         ],
     ):
@@ -59,8 +66,8 @@ def test_validate_rules_errors_when_yaml_missing(tmp_path: Path):
 
 
 def test_validate_rules_errors_when_probe_missing(tmp_path: Path):
-    yaml_in = tmp_path / "index.yml"
-    yaml_in.write_text("sections: []\n", encoding="utf-8")
+    compiled_in = tmp_path / "asca_rules.yml"
+    _write_min_compiled_yaml(compiled_in)
     _write_fake_fork(tmp_path)
 
     with (
@@ -71,8 +78,8 @@ def test_validate_rules_errors_when_probe_missing(tmp_path: Path):
             "argv",
             [
                 "validate_rules",
-                "--yaml-in",
-                str(yaml_in),
+                "--compiled-in",
+                str(compiled_in),
                 "--inventory-dir",
                 str(tmp_path / "inventory"),
                 "--probe-words",
@@ -109,8 +116,8 @@ def test_validate_rules_errors_when_asca_fork_missing(
     use_fork_flag,
     expected_error,
 ):
-    yaml_in = tmp_path / "index.yml"
-    yaml_in.write_text("sections: []\n", encoding="utf-8")
+    compiled_in = tmp_path / "asca_rules.yml"
+    _write_min_compiled_yaml(compiled_in)
     probe = tmp_path / "probe.wsca"
     probe.write_text("probe", encoding="utf-8")
 
@@ -125,8 +132,8 @@ def test_validate_rules_errors_when_asca_fork_missing(
             "argv",
             [
                 "validate_rules",
-                "--yaml-in",
-                str(yaml_in),
+                "--compiled-in",
+                str(compiled_in),
                 "--inventory-dir",
                 str(tmp_path / "inventory"),
                 "--probe-words",
@@ -147,9 +154,8 @@ def test_validate_rules_errors_when_asca_fork_missing(
 @patch.object(validate, "write_filtered_inventory_csvs")
 @patch.object(validate, "ok_flip_changelog_rows")
 @patch.object(validate, "load_inventory_csv", return_value=None)
-@patch.object(validate, "write_compiled_rules_yaml")
-@patch.object(validate, "iter_index_rule_inventory_bundles")
-@patch.object(validate, "read_cleaned_index")
+@patch.object(validate, "iter_compiled_inventory_bundles")
+@patch.object(validate, "read_compiled_rules_yaml")
 @patch.object(validate, "filter_field_isolation_error")
 @patch.object(validate, "filter_field_isolation_success")
 @patch.object(validate, "filter_field_isolation_skipped")
@@ -160,9 +166,8 @@ def test_validate_rules_writes_validation_inventory(
     mock_filter_field_isolation_skipped,
     mock_filter_field_isolation_success,
     mock_filter_field_isolation_error,
-    mock_read_index,
+    mock_read_compiled,
     mock_iter_bundles,
-    _mock_write_compiled_rules,
     _mock_load_inventory,
     mock_flip_rows,
     _mock_write_filtered,
@@ -175,8 +180,8 @@ def test_validate_rules_writes_validation_inventory(
 ):
     work = tmp_path / "work"
     work.mkdir()
-    yaml_in = work / "index.yml"
-    yaml_in.write_text("sections: []\n", encoding="utf-8")
+    compiled_in = work / "asca_rules.yml"
+    _write_min_compiled_yaml(compiled_in)
     probe = work / "probe.wsca"
     probe.write_text("probe", encoding="utf-8")
     inventory_dir = work / "inventory"
@@ -188,7 +193,7 @@ def test_validate_rules_writes_validation_inventory(
             {"stages": [], "status": "skipped"},
         ],
     }
-    mock_read_index.return_value = {"sections": [section]}
+    mock_read_compiled.return_value = {"schema_version": 1, "sections": [section]}
     rows = [
         ValidationRow(
             section_index="1",
@@ -255,12 +260,10 @@ def test_validate_rules_writes_validation_inventory(
             "argv",
             [
                 "validate_rules",
-                "--yaml-in",
-                str(yaml_in),
+                "--compiled-in",
+                str(compiled_in),
                 "--inventory-dir",
                 str(inventory_dir),
-                "--compile-dir",
-                str(work / "compile"),
                 "--probe-words",
                 str(probe),
                 "--limit",
@@ -271,13 +274,12 @@ def test_validate_rules_writes_validation_inventory(
     ):
         assert validate.main() == 0
 
-    mock_read_index.assert_called_once_with(yaml_in)
+    mock_read_compiled.assert_called_once_with(compiled_in)
     mock_iter_bundles.assert_called_once()
     assert mock_iter_bundles.call_args.kwargs["probe_words"] == probe
     assert mock_iter_bundles.call_args.kwargs["asca_bin"] == str(
         tmp_path / "lib" / "bin" / "asca"
     )
-    _mock_write_compiled_rules.assert_called_once()
     mock_flip_rows.assert_called_once()
     summary_path = inventory_dir / "rule-inventory-summary.md"
     assert summary_path.is_file()
@@ -304,13 +306,11 @@ def test_validate_rules_writes_validation_inventory(
 @patch.object(validate, "write_filtered_inventory_csvs")
 @patch.object(validate, "ok_flip_changelog_rows")
 @patch.object(validate, "load_inventory_csv", return_value=None)
-@patch.object(validate, "write_compiled_rules_yaml")
-@patch.object(validate, "iter_index_rule_inventory_bundles")
-@patch.object(validate, "read_cleaned_index")
+@patch.object(validate, "iter_compiled_inventory_bundles")
+@patch.object(validate, "read_compiled_rules_yaml")
 def test_validate_rules_reset_changelog_overwrites_existing(
-    mock_read_index,
+    mock_read_compiled,
     mock_iter_bundles,
-    _mock_write_compiled_rules,
     _mock_load_inventory,
     mock_flip_rows,
     _mock_write_filtered,
@@ -323,8 +323,8 @@ def test_validate_rules_reset_changelog_overwrites_existing(
 ):
     work = tmp_path / "work"
     work.mkdir()
-    yaml_in = work / "index.yml"
-    yaml_in.write_text("sections: []\n", encoding="utf-8")
+    compiled_in = work / "asca_rules.yml"
+    _write_min_compiled_yaml(compiled_in)
     probe = work / "probe.wsca"
     probe.write_text("probe", encoding="utf-8")
     inventory_dir = work / "inventory"
@@ -335,7 +335,7 @@ def test_validate_rules_reset_changelog_overwrites_existing(
         encoding="utf-8",
     )
     section = {"index": "1", "section": "A", "rules": [{"stages": ["a", "b"]}]}
-    mock_read_index.return_value = {"sections": [section]}
+    mock_read_compiled.return_value = {"schema_version": 1, "sections": [section]}
     row = ValidationRow("1", "A", 0, "s:1", True, "", "", "", "", "")
     mock_iter_bundles.return_value = [_bundle(section, section["rules"][0], "0", [row])]
     mock_flip_rows.return_value = MagicMock()
@@ -355,12 +355,10 @@ def test_validate_rules_reset_changelog_overwrites_existing(
             "argv",
             [
                 "validate_rules",
-                "--yaml-in",
-                str(yaml_in),
+                "--compiled-in",
+                str(compiled_in),
                 "--inventory-dir",
                 str(inventory_dir),
-                "--compile-dir",
-                str(work / "compile"),
                 "--probe-words",
                 str(probe),
                 "--reset-changelog",
@@ -378,13 +376,11 @@ def test_validate_rules_reset_changelog_overwrites_existing(
 @patch.object(validate, "write_error_cluster_csvs")
 @patch.object(validate, "write_filtered_inventory_csvs")
 @patch.object(validate, "load_inventory_csv")
-@patch.object(validate, "write_compiled_rules_yaml")
-@patch.object(validate, "iter_index_rule_inventory_bundles")
-@patch.object(validate, "read_cleaned_index")
+@patch.object(validate, "iter_compiled_inventory_bundles")
+@patch.object(validate, "read_compiled_rules_yaml")
 def test_validate_rules_reset_changelog_empty_flips_writes_header_only(
-    mock_read_index,
+    mock_read_compiled,
     mock_iter_bundles,
-    _mock_write_compiled_rules,
     mock_load_inventory,
     _mock_write_filtered,
     _mock_write_error_clusters,
@@ -394,8 +390,8 @@ def test_validate_rules_reset_changelog_empty_flips_writes_header_only(
 ):
     work = tmp_path / "work"
     work.mkdir()
-    yaml_in = work / "index.yml"
-    yaml_in.write_text("sections: []\n", encoding="utf-8")
+    compiled_in = work / "asca_rules.yml"
+    _write_min_compiled_yaml(compiled_in)
     probe = work / "probe.wsca"
     probe.write_text("probe", encoding="utf-8")
     inventory_dir = work / "inventory"
@@ -404,7 +400,7 @@ def test_validate_rules_reset_changelog_empty_flips_writes_header_only(
     changelog_path.write_text("old,data\n", encoding="utf-8")
     row = ValidationRow("1", "A", "r0", "s:1", OK_TRUE, "", "", "", "", "")
     section = {"index": "1", "section": "A", "rules": [{"stages": ["a", "b"]}]}
-    mock_read_index.return_value = {"sections": [section]}
+    mock_read_compiled.return_value = {"schema_version": 1, "sections": [section]}
     mock_iter_bundles.return_value = [
         _bundle(section, section["rules"][0], "r0", [row]),
     ]
@@ -419,12 +415,10 @@ def test_validate_rules_reset_changelog_empty_flips_writes_header_only(
             "argv",
             [
                 "validate_rules",
-                "--yaml-in",
-                str(yaml_in),
+                "--compiled-in",
+                str(compiled_in),
                 "--inventory-dir",
                 str(inventory_dir),
-                "--compile-dir",
-                str(work / "compile"),
                 "--probe-words",
                 str(probe),
                 "--reset-changelog",
@@ -448,56 +442,6 @@ def test_asca_version_reads_stdout():
 def test_asca_version_falls_back_on_subprocess_error():
     with patch.object(validation_cli.subprocess, "run", side_effect=OSError("boom")):
         assert validation_cli.asca_version("/usr/bin/asca") == "0.10.x"
-
-
-@patch.object(validate, "write_ok_flip_changelog", return_value=0)
-@patch.object(validate, "write_error_cluster_csvs")
-@patch.object(validate, "write_filtered_inventory_csvs")
-@patch.object(validate, "ok_flip_changelog_rows")
-@patch.object(validate, "load_inventory_csv", return_value=None)
-@patch.object(validate, "write_compiled_rules_yaml")
-@patch.object(validate, "iter_index_rule_inventory_bundles", return_value=[])
-@patch.object(validate, "read_cleaned_index", return_value={"sections": []})
-def test_validate_rules_no_write_compiled_rules_skips_yaml(
-    _mock_read_index,
-    _mock_iter_bundles,
-    mock_write_compiled_rules,
-    _mock_load_inventory,
-    _mock_flip_rows,
-    _mock_write_filtered,
-    _mock_write_error_clusters,
-    _mock_write_changelog,
-    tmp_path: Path,
-):
-    work = tmp_path / "work"
-    work.mkdir()
-    yaml_in = work / "index.yml"
-    yaml_in.write_text("sections: []\n", encoding="utf-8")
-    probe = work / "probe.wsca"
-    probe.write_text("probe", encoding="utf-8")
-    _write_fake_fork(tmp_path)
-
-    with (
-        patch.object(validate, "ROOT", tmp_path),
-        patch.object(validate, "asca_supports_validate", return_value=True),
-        patch.object(
-            sys,
-            "argv",
-            [
-                "validate_rules",
-                "--yaml-in",
-                str(yaml_in),
-                "--inventory-dir",
-                str(work / "inventory"),
-                "--probe-words",
-                str(probe),
-                "--no-write-compiled-rules",
-            ],
-        ),
-    ):
-        assert validate.main() == 0
-
-    mock_write_compiled_rules.assert_not_called()
 
 
 def test_validation_asca_command_uses_fork_or_path(tmp_path: Path):

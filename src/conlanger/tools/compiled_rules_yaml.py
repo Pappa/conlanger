@@ -1,41 +1,38 @@
-"""Compile diagnostic YAML (`diagnostics/compile/asca_rules.yml`, ticket 159)."""
+"""Compiled rules YAML v1 (`diagnostics/compile/asca_rules.yml`, tickets 159/161)."""
 
 from __future__ import annotations
 
 import random
 from pathlib import Path
-from typing import Any
+from typing import Any, Protocol
 
 import yaml
 
 import conlanger.tools.index_io as _index_io  # noqa: F401 — registers YAML string representer
 from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
 from conlanger.ingest.models.mappings import CompilerConfig
-from conlanger.tools.index_inventory import (
+from conlanger.tools.compiled_target_serde import (
+    deserialize_series,
+    inventory_target_from_yaml,
+    inventory_target_to_yaml,
+    serialize_series,
+    sound_change_rule_from_series,
+)
+from conlanger.tools.inventory_targets import (
     INVENTORY_COMPILE_RNG_SEED,
-    OK_SKIPPED,
-    OK_TRUE,
-    RULE_SKIPPED_FAILURE_CLASS,
-    IndexRuleInventoryBundle,
-    ValidationRow,
-    _mini_section,
+    InventoryTarget,
+    mini_section,
 )
 
 COMPILED_RULES_YAML_NAME = "asca_rules.yml"
+COMPILED_RULES_SCHEMA_VERSION = 1
 
 
-def _row_valid(row: ValidationRow) -> bool:
-    return row.ok == OK_TRUE
-
-
-def _compile_error_message(rows: list[ValidationRow]) -> str:
-    if rows and rows[0].description:
-        text = rows[0].description
-        prefix = "format_error: "
-        if text.startswith(prefix):
-            return text[len(prefix) :]
-        return text
-    return "compile failed"
+class _CompileRuleBundle(Protocol):
+    section: dict[str, Any]
+    rule: dict[str, Any]
+    rule_id: str
+    targets: list[InventoryTarget]
 
 
 def _skipped_rule_line(
@@ -48,7 +45,7 @@ def _skipped_rule_line(
     if rule.get("status") == "skipped":
         return f"#\t{rule.get('raw', '')}"
 
-    mini = _mini_section(section, rule, rule_id)
+    mini = mini_section(section, rule, rule_id)
     series = DiachronicSeries(
         mini,
         compiler_config=compiler_config,
@@ -60,51 +57,17 @@ def _skipped_rule_line(
     return f"#\t{rule.get('raw', '')}"
 
 
-def _payload_from_validation_rows(rows: list[ValidationRow]) -> dict[str, Any]:
-    if not rows:
-        return {"valid": False, "compile_error": "no validation rows"}
-
-    if len(rows) == 1 and rows[0].alt_idx is None and rows[0].step_idx is None:
-        return {"valid": _row_valid(rows[0]), "rule": rows[0].rule}
-
-    has_steps = any(row.step_idx is not None for row in rows)
-    has_alts = any(row.alt_idx is not None for row in rows)
-
-    if has_steps and not has_alts:
-        ordered = sorted(rows, key=lambda row: row.step_idx or 0)
-        steps = [{"rule": row.rule, "valid": _row_valid(row)} for row in ordered]
-        return {"valid": all(step["valid"] for step in steps), "steps": steps}
-
-    if has_alts:
-        ordered = sorted(
-            rows,
-            key=lambda row: (row.step_idx or 0, row.alt_idx or 0),
-        )
-        alternatives = [{"rule": row.rule, "valid": _row_valid(row)} for row in ordered]
-        return {
-            "valid": all(alt["valid"] for alt in alternatives),
-            "alternatives": alternatives,
-        }
-
-    branches = [{"rule": row.rule, "valid": _row_valid(row)} for row in rows]
-    return {
-        "valid": all(branch["valid"] for branch in branches),
-        "steps": branches,
-    }
-
-
-def compiled_rule_entry_from_rows(
+def compiled_rule_entry(
     rule: dict[str, Any],
-    rows: list[ValidationRow],
     *,
-    section: dict[str, Any],
     rule_id: str,
+    source: str,
+    targets: list[InventoryTarget],
+    section: dict[str, Any],
     compiler_config: CompilerConfig | None = None,
-    sporadic_skipped_line: str | None = None,
-    compile_error: str | None = None,
 ) -> dict[str, Any]:
-    """Build one ``rules`` entry for ``asca_rules.yml``."""
-    entry: dict[str, Any] = {"rule_id": rule_id}
+    """Build one ``rules`` entry for ``asca_rules.yml`` v1."""
+    entry: dict[str, Any] = {"rule_id": rule_id, "source": source}
 
     if rule.get("status") == "skipped":
         entry["status"] = "skipped"
@@ -113,44 +76,44 @@ def compiled_rule_entry_from_rows(
         )
         return entry
 
-    if sporadic_skipped_line is not None:
-        entry["status"] = "compile_skipped"
-        entry["rule"] = sporadic_skipped_line
+    if not targets:
+        entry["compile_error"] = "no compile targets"
         return entry
 
-    if compile_error is not None:
-        entry["valid"] = False
-        text = compile_error
+    target = targets[0]
+    if target.format_error is not None:
+        text = target.format_error
         prefix = "format_error: "
         entry["compile_error"] = text.removeprefix(prefix)
         return entry
 
-    if (
-        len(rows) == 1
-        and rows[0].ok == OK_SKIPPED
-        and rows[0].failure_class == RULE_SKIPPED_FAILURE_CLASS
-    ):
-        entry["status"] = "skipped"
-        entry["rule"] = _skipped_rule_line(
-            section, rule, rule_id, compiler_config=compiler_config
-        )
+    if target.field_rule is not None and target.field_rule.sporadic_skipped:
+        entry["status"] = "compile_skipped"
+        entry["rule"] = str(target.field_rule).strip()
         return entry
 
-    if rows and rows[0].failure_class == "format_error":
-        entry["valid"] = False
-        entry["compile_error"] = _compile_error_message(rows)
+    compiled_targets: list[dict[str, Any]] = []
+    for compile_target in targets:
+        if compile_target.format_error is not None:
+            continue
+        if compile_target.series is None or compile_target.field_rule is None:
+            continue
+        compiled_targets.append(inventory_target_to_yaml(compile_target))
+
+    if not compiled_targets:
+        entry["compile_error"] = "no compiled targets"
         return entry
 
-    entry.update(_payload_from_validation_rows(rows))
+    entry["targets"] = compiled_targets
     return entry
 
 
 def build_asca_rules_document(
-    bundles: list[IndexRuleInventoryBundle],
+    bundles: list[_CompileRuleBundle],
     *,
     compiler_config: CompilerConfig | None = None,
 ) -> dict[str, Any]:
-    """Assemble the top-level ``sections`` document for ``asca_rules.yml``."""
+    """Assemble v1 ``asca_rules.yml`` from compile targets (not validation rows)."""
     sections_out: list[dict[str, Any]] = []
     current_key: tuple[str, str] | None = None
     current_section: dict[str, Any] | None = None
@@ -175,60 +138,38 @@ def build_asca_rules_document(
             }
             rules_out = []
 
-        sporadic_line: str | None = None
-        target_error: str | None = None
-        if bundle.targets:
-            target = bundle.targets[0]
-            if target.format_error is not None:
-                target_error = target.format_error
-            elif target.field_rule is not None and target.field_rule.sporadic_skipped:
-                sporadic_line = str(target.field_rule).strip()
-
+        source = str(bundle.rule.get("source", ""))
         rules_out.append(
-            compiled_rule_entry_from_rows(
+            compiled_rule_entry(
                 bundle.rule,
-                bundle.rows,
-                section=section,
                 rule_id=bundle.rule_id,
+                source=source,
+                targets=bundle.targets,
+                section=section,
                 compiler_config=compiler_config,
-                sporadic_skipped_line=sporadic_line,
-                compile_error=target_error,
             )
         )
 
     if current_section is not None:
         sections_out.append({**current_section, "rules": rules_out})
 
-    return {"sections": sections_out}
+    return {"schema_version": COMPILED_RULES_SCHEMA_VERSION, "sections": sections_out}
 
 
-def bundles_for_row_prefix(
-    bundles: list[IndexRuleInventoryBundle],
-    rows: list[ValidationRow],
-) -> list[IndexRuleInventoryBundle]:
-    """Return bundles whose rows are a prefix of ``rows`` (for ``--limit``)."""
-    if not rows:
-        return []
-    remaining = list(rows)
-    trimmed: list[IndexRuleInventoryBundle] = []
-    for bundle in bundles:
-        bundle_rows = bundle.rows
-        if len(bundle_rows) > len(remaining):
-            trimmed.append(
-                IndexRuleInventoryBundle(
-                    section=bundle.section,
-                    rule=bundle.rule,
-                    rule_id=bundle.rule_id,
-                    rows=remaining,
-                    targets=bundle.targets[: len(remaining)],
-                )
-            )
-            break
-        trimmed.append(bundle)
-        remaining = remaining[len(bundle_rows) :]
-        if not remaining:
-            break
-    return trimmed
+def read_compiled_rules_yaml(path: Path) -> dict[str, Any]:
+    with path.open(encoding="utf-8") as handle:
+        document = yaml.safe_load(handle)
+    if not isinstance(document, dict):
+        msg = f"compiled rules YAML must be a mapping: {path}"
+        raise TypeError(msg)
+    version = document.get("schema_version")
+    if version != COMPILED_RULES_SCHEMA_VERSION:
+        msg = (
+            f"unsupported compiled rules schema_version {version!r} "
+            f"(expected {COMPILED_RULES_SCHEMA_VERSION})"
+        )
+        raise ValueError(msg)
+    return document
 
 
 def write_compiled_rules_yaml(document: dict[str, Any], path: Path) -> None:
@@ -242,3 +183,18 @@ def write_compiled_rules_yaml(document: dict[str, Any], path: Path) -> None:
             sort_keys=False,
             indent=2,
         )
+
+
+__all__ = [
+    "COMPILED_RULES_SCHEMA_VERSION",
+    "COMPILED_RULES_YAML_NAME",
+    "build_asca_rules_document",
+    "compiled_rule_entry",
+    "deserialize_series",
+    "inventory_target_from_yaml",
+    "inventory_target_to_yaml",
+    "read_compiled_rules_yaml",
+    "serialize_series",
+    "sound_change_rule_from_series",
+    "write_compiled_rules_yaml",
+]

@@ -23,7 +23,7 @@ index section dict
 
 Requires **ASCA 0.10.3** from the private fork (`validate` + `run`). Install per [DEV.md](../DEV.md#asca-sound-change-rule-validation).
 
-Parse-time transforms are documented in [index-diachronica-parser.md](./index-diachronica-parser.md). Inventory, compile validation, and the correction loop are in [validate.md](./validate.md).
+Parse-time transforms are documented in [index-diachronica-parser.md](./index-diachronica-parser.md). Operator compile output is [compile-rules.md](./compile-rules.md) (`uv run compile_rules`). Inventory and compile validation are in [validate.md](./validate.md).
 
 ---
 

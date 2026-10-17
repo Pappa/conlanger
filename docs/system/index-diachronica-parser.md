@@ -195,9 +195,9 @@ After Phase A½ overlays (correction → manual mapping → section mapping) and
 
 | Stage                                   | Doc                                                  |
 | --------------------------------------- | ---------------------------------------------------- |
-| **Index Diachronica parse** (this page) | —                                                    |
-| Applier compile                         | [sound-change-applier.md](./sound-change-applier.md) |
-| Validate                                | [validate.md](./validate.md)                         |
+| **Index Diachronica parse** (this page) | `uv run create_index`                                |
+| Applier compile                         | [compile-rules.md](./compile-rules.md) (`uv run compile_rules`) |
+| Validate                                | [validate.md](./validate.md) (`uv run validate_rules`) |
 
 
 See also [SYSTEM.md](./SYSTEM.md#pipeline-stages-new).

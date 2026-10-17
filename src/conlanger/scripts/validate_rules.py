@@ -1,7 +1,7 @@
-"""Compile and validate parsed index YAML; write ASCA validation inventory.
+"""Validate compiled rules YAML; write ASCA validation inventory.
 
-Loads applier-neutral index from disk, compiles each rule to ASCA in memory for
-compile validation only, and writes inventory CSVs and summary markdown.
+Loads ``asca_rules.yml`` from disk and runs ASCA validation per compiled target.
+Does not read the applier-neutral index or re-compile rules.
 """
 
 import argparse
@@ -10,12 +10,11 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 from conlanger.appliers.asca import asca_supports_validate
-from conlanger.scripts.config_loaders import load_compiler_config, load_parser_config
+from conlanger.scripts.config_loaders import load_parser_config
 from conlanger.scripts.pipeline_defaults import (
-    DEFAULT_COMPILE_DIR,
+    DEFAULT_COMPILED_YAML,
     DEFAULT_INVENTORY_DIR,
     DEFAULT_PROBE,
-    DEFAULT_YAML,
     ROOT,
 )
 from conlanger.scripts.validation_cli import (
@@ -23,12 +22,7 @@ from conlanger.scripts.validation_cli import (
     fork_asca_command,
     validation_asca_command,
 )
-from conlanger.tools.compiled_rules_yaml import (
-    COMPILED_RULES_YAML_NAME,
-    build_asca_rules_document,
-    bundles_for_row_prefix,
-    write_compiled_rules_yaml,
-)
+from conlanger.tools.compiled_rules_yaml import read_compiled_rules_yaml
 from conlanger.tools.index_inventory import (
     FIELD_ISOLATION_ERROR_CSV_NAME,
     FIELD_ISOLATION_SKIPPED_CSV_NAME,
@@ -38,6 +32,7 @@ from conlanger.tools.index_inventory import (
     INVENTORY_SKIPPED_CSV_NAME,
     INVENTORY_SUCCESS_CSV_NAME,
     IndexRuleInventoryBundle,
+    bundles_for_row_prefix,
     field_isolation_rows_for_validation_rows,
     field_isolation_rows_to_dataframe,
     filter_field_isolation_error,
@@ -45,7 +40,7 @@ from conlanger.tools.index_inventory import (
     filter_field_isolation_success,
     filter_inventory_by_ok,
     filter_inventory_skipped,
-    iter_index_rule_inventory_bundles,
+    iter_compiled_inventory_bundles,
     load_inventory_csv,
     matched_correction_rule_ids,
     ok_flip_changelog_rows,
@@ -55,13 +50,12 @@ from conlanger.tools.index_inventory import (
     write_filtered_inventory_csvs,
     write_ok_flip_changelog,
 )
-from conlanger.tools.index_io import read_cleaned_index
 from conlanger.tools.inventory_error_clusters import write_error_cluster_csvs
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--yaml-in", type=Path, default=DEFAULT_YAML)
+    ap.add_argument("--compiled-in", type=Path, default=DEFAULT_COMPILED_YAML)
     ap.add_argument(
         "--inventory-dir",
         type=Path,
@@ -100,21 +94,13 @@ def main() -> int:
             "(use after a column-schema change)"
         ),
     )
-    ap.add_argument(
-        "--compile-dir",
-        type=Path,
-        default=DEFAULT_COMPILE_DIR,
-        help=f"writes {COMPILED_RULES_YAML_NAME} (default: diagnostics/compile/)",
-    )
-    ap.add_argument(
-        "--no-write-compiled-rules",
-        action="store_true",
-        help=f"skip writing {COMPILED_RULES_YAML_NAME}",
-    )
     args = ap.parse_args()
 
-    if not args.yaml_in.is_file():
-        print(f"ERROR: parsed YAML not found at {args.yaml_in}", file=sys.stderr)
+    if not args.compiled_in.is_file():
+        print(
+            f"ERROR: compiled rules YAML not found at {args.compiled_in}",
+            file=sys.stderr,
+        )
         return 1
 
     if not args.probe_words.is_file():
@@ -150,13 +136,11 @@ def main() -> int:
         )
         return 1
 
-    doc = read_cleaned_index(args.yaml_in)
+    compiled_doc = read_compiled_rules_yaml(args.compiled_in)
     parser_config = load_parser_config()
-    compiler_config = load_compiler_config()
-    bundles: list[IndexRuleInventoryBundle] = iter_index_rule_inventory_bundles(
-        doc,
+    bundles: list[IndexRuleInventoryBundle] = iter_compiled_inventory_bundles(
+        compiled_doc,
         probe_words=args.probe_words,
-        compiler_config=compiler_config,
         asca_bin=asca_command,
     )
     rows = [row for bundle in bundles for row in bundle.rows]
@@ -207,7 +191,7 @@ def main() -> int:
     )
     summary = summarize_inventory(
         rows,
-        source_yaml=str(args.yaml_in.relative_to(ROOT)),
+        source_yaml=str(args.compiled_in.relative_to(ROOT)),
         probe_words=str(args.probe_words.relative_to(ROOT)),
         asca_version=asca_version(asca_command),
         field_isolation_rows=field_rows,
@@ -215,13 +199,6 @@ def main() -> int:
     )
     summary_path.parent.mkdir(parents=True, exist_ok=True)
     summary_path.write_text(summary, encoding="utf-8")
-
-    compiled_rules_path = args.compile_dir / COMPILED_RULES_YAML_NAME
-    if not args.no_write_compiled_rules:
-        write_compiled_rules_yaml(
-            build_asca_rules_document(bundles, compiler_config=compiler_config),
-            compiled_rules_path,
-        )
 
     ok_n = len(filter_inventory_by_ok(current_df, ok=True))
     fail_n = len(filter_inventory_by_ok(current_df, ok=False))
@@ -252,8 +229,6 @@ def main() -> int:
             f"wrote {summary_path.relative_to(ROOT)}",
         ]
     )
-    if not args.no_write_compiled_rules:
-        lines.append(f"wrote {compiled_rules_path.relative_to(ROOT)}")
     print("\n".join(lines))
     return 0
 

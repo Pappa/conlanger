@@ -11,5 +11,6 @@ Automated validity checks run **after** an applier compiler turns the YAML rule 
 ## Consequences
 
 - ASCA CLI / library checks belong in the ASCA compiler and its tests, not as a hard requirement of every YAML field at ingest time.
+- Operator **validate** reads compiled rules from `asca_rules.yml` (written by `compile_rules`); the automated gate is still **after** applier compile, not at parse time.
 - Metrics like `asca_errors.csv` from the transcript era are compiler/test feedback, not proof that the YAML schema is wrong.
 - Brassica gains the same pattern later: compile, then validate with Brassica’s own checker.

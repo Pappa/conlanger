@@ -19,7 +19,7 @@ Coverage threshold lives in `[tool.coverage.report] fail_under` in `pyproject.to
 
 # ASCA sound change rule validation
 
-Conlanger validates compiled rules with a **private fork** of [asca-rust](https://github.com/Pappa/asca-rust) at **0.10.3**. That release adds the `validate` subcommand (whole-rule and per-field checks) used by `validate_asca` and the validation inventory.
+Conlanger validates compiled rules with a **private fork** of [asca-rust](https://github.com/Pappa/asca-rust) at **0.10.3**. That release adds the `validate` subcommand (whole-rule and per-field checks) used by `validate_asca` and the validation inventory. **`uv run compile_rules`** does not need the ASCA binary; only **`uv run validate_rules`** does.
 
 Install the fork into this repo’s `bin/` tree:
 

@@ -2,7 +2,9 @@
 
 Stage 3 of the sound-change rule pipeline: **parse → compile → validate** ([ADR-0013](../adr/0013-parse-compile-validate.md)).
 
-After [Index Diachronica parse](./index-diachronica-parser.md) and [applier compile](./sound-change-applier.md), validate runs the applier checker and records inventory. This stage is the **correction loop** — it exercises compile + **compile validation** per rule to measure whether the **applier-neutral index** ([ADR-0002](../adr/0002-applier-neutral-yaml-rule-index.md)) produces valid ASCA, clusters failures for **class-first** correction, and iterates until adoption criteria are met. It is **not** ingest-time validation ([ADR-0003](../adr/0003-validate-after-applier-compile.md)): index fields may remain Index-shaped; the gate is post-compile `validate_asca`.
+After [Index Diachronica parse](./index-diachronica-parser.md) and [compile_rules](./compile-rules.md) (on-disk `asca_rules.yml`), validate runs the applier checker and records inventory. This stage is the **correction loop** — **compile validation** per compiled target measures whether the **applier-neutral index** ([ADR-0002](../adr/0002-applier-neutral-yaml-rule-index.md)) produces valid ASCA, clusters failures for **class-first** correction, and iterates until adoption criteria are met. It is **not** ingest-time validation ([ADR-0003](../adr/0003-validate-after-applier-compile.md)): index fields may remain Index-shaped; the gate is post-compile `validate_asca`.
+
+**Stale compile:** v1 `asca_rules.yml` has no index fingerprint. After changing `index_diachronica.yml`, run `uv run compile_rules` before `uv run validate_rules` ([ADR-0018](../adr/0018-compiled-asca-rules-yaml.md)).
 
 **Spec:** [.scratch/rule-index/spec.md](../.scratch/rule-index/spec.md)  
 **Wayfinder map:** [.scratch/rule-index/map.md](../.scratch/rule-index/map.md)  
@@ -12,14 +14,15 @@ After [Index Diachronica parse](./index-diachronica-parser.md) and [applier comp
 
 ## Steady-state workflow
 
-The correction loop is driven by two commands:
+The correction loop is driven by three commands:
 
 ```bash
-uv run create_index && uv run validate_rules
+uv run create_index && uv run compile_rules && uv run validate_rules
 ```
 
 - **Parse-only** (YAML + parse diagnostics): `uv run create_index`
-- **Compile + validate** (inventory from existing YAML): `uv run validate_rules`
+- **Compile-only** (regenerate `asca_rules.yml`): `uv run compile_rules`
+- **Validate-only** (inventory from compiled YAML): `uv run validate_rules`
 
 ```mermaid
 flowchart TD
@@ -27,15 +30,16 @@ flowchart TD
   Parse[IndexDiachronicaParser.parse]
   YAML[index_diachronica.yml]
   CommentSummary[rule-comment-phrases.md]
-  Compile[DiachronicSeries compile]
-  Inv[iter_validation_rows]
+  Compile[compile_rules]
+  ASCA_Y[asca_rules.yml]
+  Inv[iter_compiled_inventory_bundles]
   Split[success / error CSVs]
   Changelog[ok-flip changelog]
   Summary[rule-inventory-summary.md]
 
   HTML --> Parse --> YAML
   Parse --> CommentSummary
-  YAML --> Compile --> Inv
+  YAML --> Compile --> ASCA_Y --> Inv
   Inv --> Split
   Split --> Changelog
   Inv --> Summary
@@ -48,24 +52,25 @@ flowchart TD
 | Cleaned YAML | `data/diachronica/index_diachronica.yml` |
 | Parse diagnostics | `diagnostics/parse/` |
 | Inventory dir | `diagnostics/inventory/` |
-| Compile diagnostic YAML | `diagnostics/compile/asca_rules.yml` (per-rule compiled ASCA + `valid`; skip with `--no-write-compiled-rules`) |
+| Compiled rules YAML | `diagnostics/compile/asca_rules.yml` (written by `compile_rules`; read by `validate_rules`) |
 | Comment phrase survey | `diagnostics/parse/rule-comment-phrases.md` |
 | Probe wordlist | `tests/fixtures/asca_probe_words.wsca` |
 
-**`validate_rules` flags:** `--limit N` (smoke), `--yaml-in`, `--inventory-dir`, `--compile-dir`, `--no-write-compiled-rules`, `--probe-words`, `--field-isolation`, `--use-asca-fork`, `--reset-changelog`.
+**`validate_rules` flags:** `--limit N` (smoke), `--compiled-in`, `--inventory-dir`, `--probe-words`, `--field-isolation`, `--use-asca-fork`, `--reset-changelog`.
 
 **`create_index` flags:** `--html`, `--yaml-out`, `--parse-dir`.
 
 **Steady-state loop** ([ticket 05](../.scratch/rule-index/issues/05-correction-workflow-invalid-rules.md)):
 
 1. Parse HTML → write YAML (`uv run create_index`)
-2. Compile → validate per rule (`uv run validate_rules`)
-3. Regenerate YAML and/or validation report as needed
-4. Git-diff YAML for churn control
-5. Grow fixtures for changed **rule status**
-6. Cluster **failure classes** (pandas on CSV)
-7. File/implement correction pass
-8. Repeat
+2. Compile index → write `asca_rules.yml` (`uv run compile_rules`)
+3. Validate compiled targets → inventory (`uv run validate_rules`)
+4. Regenerate YAML and/or validation report as needed
+5. Git-diff YAML for churn control
+6. Grow fixtures for changed **rule status**
+7. Cluster **failure classes** (pandas on CSV)
+8. File/implement correction pass
+9. Repeat
 
 ---
 
@@ -83,7 +88,7 @@ flowchart TD
 | 6 | Classify failure | `classify_error()`, `parse_unknown_token_error()` |
 | 7 | Emit artifacts | See [Validation report](#validation-report) below |
 
-**Scope:** One inventory row per **compile-expanded validation target** (not whole-section-only). A single index rule may emit multiple rows when compile fans out optional-output **alternatives** (`alt_idx`) or adjacent **stages** chain steps (`step_idx`). Each row runs `validate_asca` on a one-rule mini-series; the `rule` column is that target’s compiled ASCA line (not a stochastic parent pick). Compile uses a fixed inventory RNG seed (`INVENTORY_COMPILE_RNG_SEED` in `index_inventory.py`) so optional-output and sporadic plumbing does not flip `ok` across regen. Config hold-outs (`status: skipped` from `skip_rules` / `skip_sections`, rendered as ASCA comments) inventory as `ok=SKIPPED` with description `held-out (commented rule)`. Missing-`→` and other unlisted parse failures inventory as `ok=FAILED` through compile validation.
+**Scope:** One inventory row per **compile-expanded validation target** (not whole-section-only). A single index rule may emit multiple rows when compile fans out optional-output **alternatives** (`alt_idx`) or adjacent **stages** chain steps (`step_idx`). Each row runs `validate_asca` on a one-rule mini-series; the `rule` column is that target’s compiled ASCA line (not a stochastic parent pick). Compile uses a fixed inventory RNG seed (`INVENTORY_COMPILE_RNG_SEED` in `inventory_targets.py`) so optional-output and sporadic plumbing does not flip `ok` across regen. Config hold-outs (`status: skipped` from `skip_rules` / `skip_sections`, rendered as ASCA comments) inventory as `ok=SKIPPED` with description `held-out (commented rule)`. Missing-`→` and other unlisted parse failures inventory as `ok=FAILED` through compile validation.
 
 **Per index rule `ok` semantics (correction rollups):** a rule id is **OK** only when every emitted row for that id is `ok=OK`; **FAILED** when any row fails; **SKIPPED** only when all rows are skipped. Changelog `ok` flips match prior inventory on `(source, alt_idx, step_idx)`.
 
@@ -192,7 +197,7 @@ resolve_asca_bin() -> str | None  # ASCA_BIN env, then PATH
 - `validate_asca_syntax("a > b / _")` → `asca validate -s …`
 - `validate_asca_part("env", "#_")` → `asca validate -s … -f context` (`env` maps to ASCA `context`)
 
-**Inventory integration** (`index_inventory.py`): each index rule → `_resolve_inventory_targets` (fixed compile RNG; fan-out per alternative and per chain step) → `validate_asca` on each one-rule mini-series (`probe_words=tests/fixtures/asca_probe_words.wsca` by default).
+**Inventory integration** (`index_inventory.py`): `validate_rules` loads `asca_rules.yml` → `iter_compiled_inventory_bundles` deserialises each target’s `series` → `validate_asca` on each one-rule mini-series (`probe_words=tests/fixtures/asca_probe_words.wsca` by default). Compile-time target resolution (`resolve_inventory_targets`) runs only in `compile_rules`.
 
 ### Probe wordlist
 
@@ -234,7 +239,7 @@ Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` e
 
 1. Name target **failure class** / `error_token` cluster from inventory summary or CSV.
 2. Implement transform per **edit ladder** ([ticket 04](../.scratch/rule-index/issues/04-historical-fidelity-vs-validity.md), [ADR-0010](../adr/0010-historical-fidelity-class-first-status.md)).
-3. Re-run `uv run create_index && uv run validate_rules`.
+3. Re-run `uv run create_index && uv run compile_rules && uv run validate_rules`.
 4. Record before/after ok/fail and residual cluster size in ticket **Answer**.
 5. Update fixtures when **rule status** or validation outcome changes intentionally.
 
@@ -263,7 +268,8 @@ Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` e
 | Path | Role |
 | --- | --- |
 | [`create_index.py`](../src/conlanger/scripts/create_index.py) | Parse HTML → YAML + parse diagnostics |
-| [`validate_rules.py`](../src/conlanger/scripts/validate_rules.py) | Load YAML → compile in memory → inventory |
+| [`compile_rules.py`](../src/conlanger/scripts/compile_rules.py) | Load index YAML → write `asca_rules.yml` |
+| [`validate_rules.py`](../src/conlanger/scripts/validate_rules.py) | Load compiled YAML → inventory |
 | [`validation_cli.py`](../src/conlanger/scripts/validation_cli.py) | Shared ASCA fork/PATH resolution and `--version` probe |
 | [`index_inventory.py`](../src/conlanger/tools/index_inventory.py) | Per-rule validation, CSV/changelog/summary |
 | [`index_io.py`](../src/conlanger/tools/index_io.py) | Read/write cleaned YAML |

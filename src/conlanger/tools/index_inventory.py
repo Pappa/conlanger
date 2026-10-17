@@ -10,7 +10,6 @@ of scope.
 
 from __future__ import annotations
 
-import random
 import re
 from collections import Counter
 from dataclasses import dataclass
@@ -19,6 +18,7 @@ from pathlib import Path
 from typing import Any
 
 import pandas as pd
+from pydantic import BaseModel, ConfigDict
 
 from conlanger.appliers.asca import (
     ASCARulePart,
@@ -26,10 +26,16 @@ from conlanger.appliers.asca import (
     validate_asca,
     validate_asca_part,
 )
-from conlanger.compile.models.rules import DiachronicSeries, RuleTitle, SoundChangeRule
+from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
 from conlanger.ingest.models.mappings import CompilerConfig
+from conlanger.tools.compiled_target_serde import inventory_target_from_yaml
 from conlanger.tools.inventory_error_clusters import (
     CLUSTER_CSV_BY_FAILURE_CLASS,
+)
+from conlanger.tools.inventory_targets import (
+    InventoryTarget,
+    _InventoryTarget,
+    resolve_inventory_targets,
 )
 
 ERROR_CLASS_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
@@ -157,9 +163,6 @@ _EXPECTED_UNQUOTED_UNQUOTED_RECEIVED_RE = re.compile(
 )
 _DID_YOU_MEAN_RE = re.compile(r"Did you mean ([^?]+)\?", re.IGNORECASE)
 _THREAD_PANICKED_RE = re.compile(r"^(thread) .+ (panicked at [^.]+\.rs)", re.IGNORECASE)
-
-# Fixed seed for inventory compile (optional-output / sporadic RNG); ticket 158.
-INVENTORY_COMPILE_RNG_SEED = 0
 
 VALIDATION_CSV_COLUMNS = [
     "section_index",
@@ -762,79 +765,6 @@ def filter_field_isolation_by_whole_ok(
     return df.loc[column == target].reset_index(drop=True)
 
 
-@dataclass(frozen=True)
-class _InventoryTarget:
-    alt_idx: int | None
-    series: DiachronicSeries | None
-    field_rule: SoundChangeRule | None
-    step_idx: int | None = None
-    format_error: str | None = None
-
-
-def _resolve_inventory_targets(
-    section: dict[str, Any],
-    rule: dict[str, Any],
-    rule_id: str,
-    *,
-    compiler_config: CompilerConfig | None = None,
-) -> list[_InventoryTarget]:
-    """Compile paths shared by whole-rule inventory and field isolation."""
-    mini = _mini_section(section, rule, rule_id)
-    try:
-        scr = DiachronicSeries(
-            mini,
-            compiler_config=compiler_config,
-            rng=random.Random(INVENTORY_COMPILE_RNG_SEED),
-        )
-    except (KeyError, ValueError) as exc:
-        return [
-            _InventoryTarget(
-                None,
-                None,
-                None,
-                format_error=f"format_error: {exc}",
-            )
-        ]
-
-    sound_change_parts = [
-        part for part in scr._parts if isinstance(part, SoundChangeRule)
-    ]
-    if not sound_change_parts:
-        return [
-            _InventoryTarget(
-                None,
-                None,
-                None,
-                format_error="format_error: no compile steps from stages",
-            )
-        ]
-
-    multi_step = len(sound_change_parts) > 1
-    targets: list[_InventoryTarget] = []
-    for step_index, part in enumerate(sound_change_parts):
-        step_idx = step_index if multi_step else None
-        if part.alternatives:
-            for alt_idx, alternative in enumerate(part.alternatives):
-                targets.append(
-                    _InventoryTarget(
-                        alt_idx,
-                        _series_for_sound_change_rule(section, rule_id, alternative),
-                        alternative,
-                        step_idx=step_idx,
-                    )
-                )
-            continue
-        targets.append(
-            _InventoryTarget(
-                None,
-                _series_for_sound_change_rule(section, rule_id, part),
-                part,
-                step_idx=step_idx,
-            )
-        )
-    return targets
-
-
 def _validate_field_part(
     part: ASCARulePart,
     fragment: str,
@@ -1064,44 +994,6 @@ def format_field_isolation_blame_section(rows: list[FieldIsolationRow]) -> list[
     return lines
 
 
-def _mini_section(
-    section: dict[str, Any], rule: dict[str, Any], rule_id: str
-) -> dict[str, Any]:
-    return {
-        "index": section.get("index", ""),
-        "section": f"{section.get('section', '')}#{rule_id}",
-        "rules": [rule],
-    }
-
-
-def _series_for_sound_change_rule(
-    section: dict[str, Any],
-    rule_id: str,
-    sound_change_rule: SoundChangeRule,
-) -> DiachronicSeries:
-    """Build a standalone series for one compiled inventory validation target."""
-    section_index = str(section.get("index", ""))
-    section_name = f"{section.get('section', '')}#{rule_id}"
-    return DiachronicSeries.from_parts(
-        [
-            RuleTitle(section_index, section_name),
-            sound_change_rule,
-        ]
-    )
-
-
-def _series_for_alternative(
-    section: dict[str, Any],
-    rule: dict[str, Any],
-    rule_id: str,
-    alternative: SoundChangeRule,
-    compiler_config: CompilerConfig | None,
-) -> DiachronicSeries:
-    """Build a standalone series for one already-compiled alternative."""
-    del rule, compiler_config
-    return _series_for_sound_change_rule(section, rule_id, alternative)
-
-
 def _asca_validation_row(
     scr: DiachronicSeries,
     *,
@@ -1181,7 +1073,7 @@ def validate_index_rule_with_targets(
             failure_class=SECTION_SKIPPED_FAILURE_CLASS,
             description="section skipped at compile (parser_config skip_sections)",
         )
-        return [row], [_InventoryTarget(None, None, None)]
+        return [row], [InventoryTarget()]
 
     if rule.get("status") == "skipped":
         row = ValidationRow(
@@ -1193,9 +1085,9 @@ def validate_index_rule_with_targets(
             failure_class=RULE_SKIPPED_FAILURE_CLASS,
             description="held-out (commented rule)",
         )
-        return [row], [_InventoryTarget(None, None, None)]
+        return [row], [InventoryTarget()]
 
-    targets = _resolve_inventory_targets(
+    targets = resolve_inventory_targets(
         section, rule, rule_id, compiler_config=compiler_config
     )
     rows: list[ValidationRow] = []
@@ -1239,15 +1131,219 @@ def validate_index_rule_with_targets(
     return rows, targets
 
 
-@dataclass(frozen=True)
-class IndexRuleInventoryBundle:
+class IndexRuleInventoryBundle(BaseModel):
     """Per index rule: validation rows and compile targets (ticket 159)."""
+
+    model_config = ConfigDict(frozen=True, arbitrary_types_allowed=True)
 
     section: dict[str, Any]
     rule: dict[str, Any]
     rule_id: str
     rows: list[ValidationRow]
-    targets: list[_InventoryTarget]
+    targets: list[InventoryTarget]
+
+
+def compile_index_rule_bundle(
+    section: dict[str, Any],
+    rule: dict[str, Any],
+    rule_id: str,
+    *,
+    compiler_config: CompilerConfig | None = None,
+) -> IndexRuleInventoryBundle:
+    """Compile one index rule to inventory targets (no ASCA validation)."""
+    if rule.get("status") == "skipped":
+        return IndexRuleInventoryBundle(
+            section=section,
+            rule=rule,
+            rule_id=rule_id,
+            rows=[],
+            targets=[InventoryTarget()],
+        )
+
+    targets = resolve_inventory_targets(
+        section, rule, rule_id, compiler_config=compiler_config
+    )
+    return IndexRuleInventoryBundle(
+        section=section,
+        rule=rule,
+        rule_id=rule_id,
+        rows=[],
+        targets=targets,
+    )
+
+
+def iter_index_compile_bundles(
+    doc: dict[str, Any],
+    *,
+    compiler_config: CompilerConfig | None = None,
+) -> list[IndexRuleInventoryBundle]:
+    """Compile every index rule and return bundles without ASCA validation."""
+    bundles: list[IndexRuleInventoryBundle] = []
+    for section in doc.get("sections") or []:
+        if section.get("status") == "skipped":
+            continue
+        for rule in section.get("rules") or []:
+            rule_id = str(rule.get("rule_id", ""))
+            bundles.append(
+                compile_index_rule_bundle(
+                    section,
+                    rule,
+                    rule_id,
+                    compiler_config=compiler_config,
+                )
+            )
+    return bundles
+
+
+def _validation_rows_for_compiled_rule_entry(
+    section_index: str,
+    section_name: str,
+    rule_entry: dict[str, Any],
+    *,
+    probe_words: Path | None,
+    asca_bin: str | None = None,
+) -> tuple[list[ValidationRow], list[_InventoryTarget]]:
+    rule_id = str(rule_entry.get("rule_id", ""))
+    source = str(rule_entry.get("source", ""))
+
+    if rule_entry.get("status") == "skipped":
+        row = ValidationRow(
+            section_index=section_index,
+            section_name=section_name,
+            rule_id=rule_id,
+            source=source,
+            ok=OK_SKIPPED,
+            failure_class=RULE_SKIPPED_FAILURE_CLASS,
+            description="held-out (commented rule)",
+        )
+        return [row], [InventoryTarget()]
+
+    if rule_entry.get("status") == "compile_skipped":
+        rule_line = str(rule_entry.get("rule", "")).strip()
+        inventory_rule = rule_line.removeprefix("#\t").strip()
+        row = ValidationRow(
+            section_index=section_index,
+            section_name=section_name,
+            rule_id=rule_id,
+            source=source,
+            ok=OK_TRUE,
+            rule=inventory_rule,
+        )
+        return [row], [InventoryTarget()]
+
+    if rule_entry.get("compile_error") is not None:
+        err = f"format_error: {rule_entry['compile_error']}"
+        target = InventoryTarget(format_error=err)
+        row = ValidationRow(
+            section_index=section_index,
+            section_name=section_name,
+            rule_id=rule_id,
+            source=source,
+            ok=OK_FALSE,
+            failure_class="format_error",
+            description=err,
+        )
+        return [row], [target]
+
+    yaml_targets = rule_entry.get("targets") or []
+    targets = [inventory_target_from_yaml(target) for target in yaml_targets]
+    rows: list[ValidationRow] = []
+    for target in targets:
+        if target.format_error is not None:
+            err = target.format_error
+            rows.append(
+                ValidationRow(
+                    section_index=section_index,
+                    section_name=section_name,
+                    rule_id=rule_id,
+                    alt_idx=target.alt_idx,
+                    step_idx=target.step_idx,
+                    source=source,
+                    ok=OK_FALSE,
+                    failure_class="format_error",
+                    description=err,
+                )
+            )
+            continue
+
+        assert target.series is not None
+        rows.append(
+            _asca_validation_row(
+                target.series,
+                section_index=section_index,
+                section_name=section_name,
+                rule_id=rule_id,
+                alt_idx=target.alt_idx,
+                step_idx=target.step_idx,
+                source=source,
+                probe_words=probe_words,
+                asca_bin=asca_bin,
+            )
+        )
+    return rows, targets
+
+
+def iter_compiled_inventory_bundles(
+    compiled_doc: dict[str, Any],
+    *,
+    probe_words: Path | None,
+    asca_bin: str | None = None,
+) -> list[IndexRuleInventoryBundle]:
+    """Validate compiled ``asca_rules.yml`` and return inventory bundles."""
+    bundles: list[IndexRuleInventoryBundle] = []
+    for section in compiled_doc.get("sections") or []:
+        section_index = str(section.get("index", ""))
+        section_name = str(section.get("section", ""))
+        section_dict = {"index": section_index, "section": section_name}
+        for rule_entry in section.get("rules") or []:
+            rule_id = str(rule_entry.get("rule_id", ""))
+            source = str(rule_entry.get("source", ""))
+            rows, targets = _validation_rows_for_compiled_rule_entry(
+                section_index,
+                section_name,
+                rule_entry,
+                probe_words=probe_words,
+                asca_bin=asca_bin,
+            )
+            bundles.append(
+                IndexRuleInventoryBundle(
+                    section=section_dict,
+                    rule={"source": source},
+                    rule_id=rule_id,
+                    rows=rows,
+                    targets=targets,
+                )
+            )
+    return bundles
+
+
+def bundles_for_row_prefix(
+    bundles: list[IndexRuleInventoryBundle],
+    rows: list[ValidationRow],
+) -> list[IndexRuleInventoryBundle]:
+    """Return bundles whose rows are a prefix of ``rows`` (for ``--limit``)."""
+    if not rows:
+        return []
+    remaining = list(rows)
+    trimmed: list[IndexRuleInventoryBundle] = []
+    for bundle in bundles:
+        bundle_rows = bundle.rows
+        if len(bundle_rows) > len(remaining):
+            trimmed.append(
+                IndexRuleInventoryBundle(
+                    section=bundle.section,
+                    rule=bundle.rule,
+                    rule_id=bundle.rule_id,
+                    rows=remaining,
+                    targets=bundle.targets[: len(remaining)],
+                )
+            )
+            break
+        trimmed.append(bundle)
+        remaining = remaining[len(bundle_rows) :]
+        if not remaining:
+            break
+    return trimmed
 
 
 def iter_index_rule_inventory_bundles(
