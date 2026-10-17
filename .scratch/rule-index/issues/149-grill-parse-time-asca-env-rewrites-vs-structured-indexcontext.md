@@ -105,10 +105,10 @@ Per-pass **keep at parse / defer to compile / retire** with target schema; order
 | Order | Ticket | Type | Scope |
 | --- | --- | --- | --- |
 | 1 | **[162](162-grill-syllable-structure-env-resolution.md)** | grilling | `_` / focus / valid ASCA for `U[-stress]`, `U[+stress]`, `#U[+stress]#`, `U#`; parse vs compile split. **Blocks** 107 mapping implementation. |
-| 2 | *Task (file after 162)* | task | Implement owner 107 string targets + tests; regen inventory delta. |
-| 3 | *Task (file after 162 or parallel)* | task | **108** structured split + compile projection (Q3). |
-| 4 | *Task* | task | **Parser reorder** (Q4): single ordered env pipeline; no Tier C ASCA at parse. |
-| 5 | **[156](156-task-indexcontext-position-in-relation.md)** | task (existing) | `position.in` compile; overlaps syllable env — coordinate with **162**. |
+| 2 | **[163](163-task-prose-position-env-string-fixes.md)** | task | **107** string targets + compile projection + medial merge (149 Q2/Q5). `ready-for-agent`; blocked by **162**. |
+| 3 | **[164](164-task-structured-double-slash-env-parse-compile.md)** | task | **108** structured parse + compile ASCA (Q3). `ready-for-agent`; blocked by **162**. |
+| 4 | **[165](165-task-parser-env-pipeline-reorder.md)** | task | Parser env pipeline reorder (Q4). `ready-for-agent`; blocked by **163**, **164**. |
+| 5 | **[156](156-task-indexcontext-position-in-relation.md)** | task (existing) | `position.in` compile — **resolved**; coordinate with **162**/**163** on syllable env. |
 
 **Not in this wave:** **153** (`%`/`$`), **150** (package seams — unblocked now that **149** is resolved).
 
