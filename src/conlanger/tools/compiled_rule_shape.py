@@ -63,7 +63,9 @@ def _is_correlated_branch_chain(step_groups: list[list[InventoryTarget]]) -> boo
     return True
 
 
-def _correlated_branches_yaml(step_groups: list[list[InventoryTarget]]) -> dict[str, Any]:
+def _correlated_branches_yaml(
+    step_groups: list[list[InventoryTarget]],
+) -> dict[str, Any]:
     branch_count = len(step_groups[0])
     branches: list[dict[str, list[str]]] = []
     for branch_idx in range(branch_count):

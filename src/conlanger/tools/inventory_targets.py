@@ -96,7 +96,9 @@ def _enumerate_composed_chain_paths(
     """Enumerate valid stage sequences where each step's input matches prior output."""
     if not parts:
         return []
-    paths: list[list[SoundChangeRule]] = [[choice] for choice in _part_choices(parts[0])]
+    paths: list[list[SoundChangeRule]] = [
+        [choice] for choice in _part_choices(parts[0])
+    ]
     for part in parts[1:]:
         extended: list[list[SoundChangeRule]] = []
         for path in paths:
@@ -158,9 +160,7 @@ def resolve_inventory_targets(
             targets.append(
                 InventoryTarget(
                     alt_idx=alt_idx,
-                    series=series_for_sound_change_rule(
-                        section, rule_id, step_rule
-                    ),
+                    series=series_for_sound_change_rule(section, rule_id, step_rule),
                     field_rule=step_rule,
                     step_idx=step_idx,
                 )

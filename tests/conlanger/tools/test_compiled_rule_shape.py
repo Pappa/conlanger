@@ -78,16 +78,12 @@ def test_inventory_targets_late_chain_stage_alternatives_use_steps():
             assert fields["alternatives"] == [
                 {
                     "steps": [
-                        str(t.field_rule).strip()
-                        for t in targets
-                        if t.alt_idx == 0
+                        str(t.field_rule).strip() for t in targets if t.alt_idx == 0
                     ],
                 },
                 {
                     "steps": [
-                        str(t.field_rule).strip()
-                        for t in targets
-                        if t.alt_idx == 1
+                        str(t.field_rule).strip() for t in targets if t.alt_idx == 1
                     ],
                 },
             ]
@@ -113,9 +109,12 @@ def test_target_rule_line_requires_content():
 
 def test_inventory_targets_to_compiled_fields_empty():
     assert inventory_targets_to_compiled_fields([]) == {}
-    assert inventory_targets_to_compiled_fields(
-        [InventoryTarget(format_error="format_error: x")]
-    ) == {}
+    assert (
+        inventory_targets_to_compiled_fields(
+            [InventoryTarget(format_error="format_error: x")]
+        )
+        == {}
+    )
 
 
 def test_compiled_rule_validation_specs_rejects_ambiguous_keys():
