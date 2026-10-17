@@ -24,6 +24,7 @@ class InventoryTarget(BaseModel):
     field_rule: SoundChangeRule | None = None
     step_idx: int | None = None
     format_error: str | None = None
+    asca_rule: str | None = None
 
 
 # Back-compat alias for internal and test imports.

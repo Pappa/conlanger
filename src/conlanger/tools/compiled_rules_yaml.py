@@ -1,4 +1,4 @@
-"""Compiled rules YAML v1 (`diagnostics/compile/asca_rules.yml`, tickets 159/161)."""
+"""Compiled rules YAML v2 (`diagnostics/compile/asca_rules.yml`, tickets 159/161/169)."""
 
 from __future__ import annotations
 
@@ -25,7 +25,8 @@ from conlanger.tools.inventory_targets import (
 )
 
 COMPILED_RULES_YAML_NAME = "asca_rules.yml"
-COMPILED_RULES_SCHEMA_VERSION = 1
+COMPILED_RULES_SCHEMA_VERSION = 2
+SUPPORTED_COMPILED_RULES_SCHEMA_VERSIONS = frozenset({1, 2})
 
 
 class _CompileRuleBundle(Protocol):
@@ -66,7 +67,7 @@ def compiled_rule_entry(
     section: dict[str, Any],
     compiler_config: CompilerConfig | None = None,
 ) -> dict[str, Any]:
-    """Build one ``rules`` entry for ``asca_rules.yml`` v1."""
+    """Build one ``rules`` entry for ``asca_rules.yml`` v2."""
     entry: dict[str, Any] = {"rule_id": rule_id, "source": source}
 
     if rule.get("status") == "skipped":
@@ -113,7 +114,7 @@ def build_asca_rules_document(
     *,
     compiler_config: CompilerConfig | None = None,
 ) -> dict[str, Any]:
-    """Assemble v1 ``asca_rules.yml`` from compile targets (not validation rows)."""
+    """Assemble v2 ``asca_rules.yml`` from compile targets (not validation rows)."""
     sections_out: list[dict[str, Any]] = []
     current_key: tuple[str, str] | None = None
     current_section: dict[str, Any] | None = None
@@ -163,10 +164,13 @@ def read_compiled_rules_yaml(path: Path) -> dict[str, Any]:
         msg = f"compiled rules YAML must be a mapping: {path}"
         raise TypeError(msg)
     version = document.get("schema_version")
-    if version != COMPILED_RULES_SCHEMA_VERSION:
+    if version not in SUPPORTED_COMPILED_RULES_SCHEMA_VERSIONS:
+        supported = ", ".join(
+            str(v) for v in sorted(SUPPORTED_COMPILED_RULES_SCHEMA_VERSIONS)
+        )
         msg = (
             f"unsupported compiled rules schema_version {version!r} "
-            f"(expected {COMPILED_RULES_SCHEMA_VERSION})"
+            f"(expected one of {supported})"
         )
         raise ValueError(msg)
     return document

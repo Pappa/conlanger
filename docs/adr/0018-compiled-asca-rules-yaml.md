@@ -11,6 +11,6 @@ The operator pipeline exposes compile as its own stage. **`compile_rules`** read
 
 - **Not source of truth:** Index YAML remains SoT for Index-shaped fields ([ADR-0002](0002-applier-neutral-yaml-rule-index.md)). Compiled YAML is operational output for inspect + validate.
 - **Path:** `diagnostics/compile/asca_rules.yml` (`DEFAULT_COMPILED_YAML` in `pipeline_defaults.py`).
-- **Schema:** `schema_version: 1` — see [compile-rules.md](../system/compile-rules.md). No index fingerprint in v1; operators re-run `compile_rules` after index changes before `validate_rules`.
+- **Schema:** `schema_version: 2` — see [compile-rules.md](../system/compile-rules.md). Each compile target stores the ASCA `rule` line only (no `DiachronicSeries` round-trip on disk). `validate_rules` validates that string directly. v1 (with per-target `series`) is still readable for transition. No index fingerprint; operators re-run `compile_rules` after index changes before `validate_rules`.
 - **Inventory:** Pass/fail stays in `diagnostics/inventory/` CSVs only — no `valid` flags on compiled YAML ([grill 160](../.scratch/rule-index/issues/160-grill-split-compile-rules-and-compiled-yaml-pipeline.md)).
 - **Regeneration:** `uv run compile_rules` overwrites the file; commit regenerated YAML in PRs that change parse/compile behaviour (same policy as inventory outputs).

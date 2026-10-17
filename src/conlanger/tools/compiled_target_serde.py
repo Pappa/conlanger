@@ -1,4 +1,4 @@
-"""Serialize and deserialize compiled inventory targets for ``asca_rules.yml`` v1."""
+"""Serialize compiled inventory targets for ``asca_rules.yml`` v2."""
 
 from __future__ import annotations
 
@@ -59,11 +59,6 @@ def _deserialize_rule_part(data: dict[str, Any]) -> RulePartBase:
             if field_value is None:
                 return
             if isinstance(field_value, dict):
-                if field_value.get("compiled") is None:
-                    field_value = {
-                        **field_value,
-                        "compiled": field_value.get("raw") or "",
-                    }
                 part_data[name] = cls.model_validate(field_value)
 
         _field_model("input", RuleInput)
@@ -99,24 +94,21 @@ def sound_change_rule_from_series(series: DiachronicSeries) -> SoundChangeRule |
 
 
 def inventory_target_to_yaml(target: InventoryTarget) -> dict[str, Any]:
-    if target.series is None or target.field_rule is None:
-        msg = "compile target missing series or field rule"
+    if target.field_rule is None and not target.asca_rule:
+        msg = "compile target missing ASCA rule line"
         raise ValueError(msg)
-    rule_line = str(target.field_rule).strip()
+    rule_line = (target.asca_rule or str(target.field_rule)).strip()
     return {
         "step_idx": target.step_idx,
         "alt_idx": target.alt_idx,
         "rule": rule_line,
-        "series": serialize_series(target.series),
     }
 
 
 def inventory_target_from_yaml(data: dict[str, Any]) -> InventoryTarget:
-    series = deserialize_series(data["series"])
-    field_rule = sound_change_rule_from_series(series)
+    rule_line = str(data.get("rule", "")).strip()
     return InventoryTarget.model_construct(
         alt_idx=data.get("alt_idx"),
-        series=series,
-        field_rule=field_rule,
         step_idx=data.get("step_idx"),
+        asca_rule=rule_line,
     )

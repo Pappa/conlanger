@@ -13,16 +13,16 @@ uv run create_index && uv run compile_rules && uv run validate_rules
 | Flag | Default | Role |
 | --- | --- | --- |
 | `--yaml-in` | `data/diachronica/index_diachronica.yml` | Applier-neutral index |
-| `--compiled-out` | `diagnostics/compile/asca_rules.yml` | Compiled rules v1 output |
+| `--compiled-out` | `diagnostics/compile/asca_rules.yml` | Compiled rules v2 output |
 | `--limit N` | off | Smoke cap (first N rules) |
 
 Compile logic lives in `inventory_targets.resolve_inventory_targets` and `DiachronicSeries` / `SoundChangeRule` ([sound-change-applier.md](./sound-change-applier.md)).
 
-## `asca_rules.yml` v1 (summary)
+## `asca_rules.yml` v2 (summary)
 
 | Top-level | Value |
 | --- | --- |
-| `schema_version` | `1` |
+| `schema_version` | `2` |
 | `sections` | Mirrors index section headers (`index`, `section`); omits `status: skipped` sections |
 
 Per rule:
@@ -34,6 +34,8 @@ Per rule:
 | Sporadic compile skip | `status: compile_skipped`, `rule` |
 | Compile failure | `compile_error` (no `targets`) |
 
-Each `targets[]` entry: `step_idx`, `alt_idx`, `rule` (ASCA line string), `series` (`parts` round-trip via `DiachronicSeries.from_parts` for `validate_asca`). No `valid` flags — inventory CSVs hold pass/fail.
+Each `targets[]` entry: `step_idx`, `alt_idx`, `rule` (ASCA line string recorded at compile time). `validate_rules` runs ASCA on that line only — no pydantic compile-model deserialization from disk. Compile still uses `DiachronicSeries` in memory inside `compile_rules`. No `valid` flags — inventory CSVs hold pass/fail.
+
+v1 files (with `series` on each target) remain readable; re-run `compile_rules` to shrink on-disk artifacts.
 
 **Entrypoint:** [`compile_rules.py`](../../src/conlanger/scripts/compile_rules.py) · **IO:** [`compiled_rules_yaml.py`](../../src/conlanger/tools/compiled_rules_yaml.py)

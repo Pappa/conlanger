@@ -24,6 +24,7 @@ from conlanger.appliers.asca import (
     ASCARulePart,
     ASCAValidationError,
     validate_asca,
+    validate_asca_body,
     validate_asca_part,
 )
 from conlanger.compile.models.config import CompilerConfig
@@ -995,8 +996,9 @@ def format_field_isolation_blame_section(rows: list[FieldIsolationRow]) -> list[
 
 
 def _asca_validation_row(
-    scr: DiachronicSeries,
+    compiled_rule: str,
     *,
+    series: DiachronicSeries | None = None,
     section_index: str,
     section_name: str,
     rule_id: str,
@@ -1006,15 +1008,17 @@ def _asca_validation_row(
     probe_words: Path | None,
     asca_bin: str | None = None,
 ) -> ValidationRow:
-    """Validate an already-compiled series and build its ``ValidationRow``."""
-
-    rules = [
-        str(part).strip() for part in scr.parts if isinstance(part, SoundChangeRule)
-    ]
-    compiled_rule = rules[0] if rules else ""
+    """Validate a compiled ASCA rule line and build its ``ValidationRow``."""
 
     try:
-        validate_asca(scr, probe_words=probe_words, asca_bin=asca_bin)
+        if series is not None:
+            validate_asca(series, probe_words=probe_words, asca_bin=asca_bin)
+        else:
+            validate_asca_body(
+                compiled_rule,
+                probe_words=probe_words,
+                asca_bin=asca_bin,
+            )
     except ASCAValidationError as exc:
         err = str(exc)
         failure_class = classify_error(err)
@@ -1115,9 +1119,16 @@ def validate_index_rule_with_targets(
             continue
 
         assert target.series is not None
+        rules = [
+            str(part).strip()
+            for part in target.series.parts
+            if isinstance(part, SoundChangeRule)
+        ]
+        compiled_rule = rules[0] if rules else ""
         rows.append(
             _asca_validation_row(
-                target.series,
+                compiled_rule,
+                series=target.series,
                 section_index=section_index,
                 section_name=section_name,
                 rule_id=rule_id,
@@ -1266,10 +1277,27 @@ def _validation_rows_for_compiled_rule_entry(
             )
             continue
 
-        assert target.series is not None
+        rule_line = (target.asca_rule or "").strip()
+        if not rule_line:
+            err = "format_error: compiled target missing rule line"
+            rows.append(
+                ValidationRow(
+                    section_index=section_index,
+                    section_name=section_name,
+                    rule_id=rule_id,
+                    alt_idx=target.alt_idx,
+                    step_idx=target.step_idx,
+                    source=source,
+                    ok=OK_FALSE,
+                    failure_class="format_error",
+                    description=err,
+                )
+            )
+            continue
+
         rows.append(
             _asca_validation_row(
-                target.series,
+                rule_line,
                 section_index=section_index,
                 section_name=section_name,
                 rule_id=rule_id,

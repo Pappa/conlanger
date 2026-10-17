@@ -13,6 +13,7 @@ from conlanger.appliers.asca import (
     asca_supports_validate,
     resolve_asca_bin,
     validate_asca,
+    validate_asca_body,
     validate_asca_part,
 )
 from conlanger.compile.models.rules import DiachronicSeries
@@ -61,6 +62,11 @@ def test_validate_asca_smoke_with_installed_binary():
         format="asca",
     )
     assert validate_asca(scr, probe_words=_PROBE) is True
+
+
+def test_validate_asca_body_rejects_empty():
+    with pytest.raises(ASCAValidationError, match="empty"):
+        validate_asca_body("   ")
 
 
 def test_validate_asca_returns_true_when_subprocess_succeeds(

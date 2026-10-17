@@ -57,7 +57,7 @@ sections:
         assert compile_script.main() == 0
 
     loaded = yaml.safe_load(compiled_out.read_text(encoding="utf-8"))
-    assert loaded["schema_version"] == 1
+    assert loaded["schema_version"] == 2
     rule = loaded["sections"][0]["rules"][0]
     assert rule["rule_id"] == "r0"
     assert rule["targets"][0]["rule"] == "a > b"

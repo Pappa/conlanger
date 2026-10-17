@@ -216,8 +216,10 @@ def test_write_compiled_rules_yaml_smoke(tmp_path: Path):
     path = tmp_path / COMPILED_RULES_YAML_NAME
     write_compiled_rules_yaml(doc, path)
     loaded = yaml.safe_load(path.read_text(encoding="utf-8"))
-    assert loaded["schema_version"] == 1
-    assert loaded["sections"][0]["rules"][0]["targets"][0]["rule"] == "a > b"
+    assert loaded["schema_version"] == COMPILED_RULES_SCHEMA_VERSION
+    target = loaded["sections"][0]["rules"][0]["targets"][0]
+    assert target["rule"] == "a > b"
+    assert "series" not in target
 
 
 def test_read_compiled_rules_yaml_rejects_bad_document(tmp_path: Path):
@@ -226,7 +228,7 @@ def test_read_compiled_rules_yaml_rejects_bad_document(tmp_path: Path):
     with pytest.raises(TypeError, match="mapping"):
         read_compiled_rules_yaml(path)
 
-    path.write_text("schema_version: 2\nsections: []\n", encoding="utf-8")
+    path.write_text("schema_version: 99\nsections: []\n", encoding="utf-8")
     with pytest.raises(ValueError, match="schema_version"):
         read_compiled_rules_yaml(path)
 

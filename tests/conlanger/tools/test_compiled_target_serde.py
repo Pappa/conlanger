@@ -44,17 +44,20 @@ def test_deserialize_rule_part_rejects_unknown_type():
         _deserialize_rule_part({"type": "nope"})
 
 
-def test_inventory_target_to_yaml_requires_series():
-    with pytest.raises(ValueError, match="missing series"):
+def test_inventory_target_to_yaml_requires_rule_line():
+    with pytest.raises(ValueError, match="missing ASCA rule"):
         inventory_target_to_yaml(InventoryTarget())
 
 
 def test_inventory_target_from_yaml_round_trip():
     rule = {"stages": ["a", "b"], "source": "s:1"}
     target = resolve_inventory_targets(_SECTION, rule, "r0")[0]
-    restored = inventory_target_from_yaml(inventory_target_to_yaml(target))
+    yaml_target = inventory_target_to_yaml(target)
+    assert "series" not in yaml_target
+    restored = inventory_target_from_yaml(yaml_target)
     assert restored.alt_idx == target.alt_idx
     assert restored.step_idx == target.step_idx
+    assert restored.asca_rule == yaml_target["rule"]
 
 
 def test_inventory_target_from_yaml_preserves_group_mapped_env(
@@ -78,17 +81,16 @@ def test_inventory_target_from_yaml_preserves_group_mapped_env(
     assert "Z" not in yaml_target["rule"]
 
     restored = inventory_target_from_yaml(yaml_target)
-    assert str(restored.field_rule).strip() == yaml_target["rule"]
-    assert restored.field_rule.env is not None
-    assert "[+cont]" in restored.field_rule.env.compiled
+    assert restored.asca_rule == yaml_target["rule"]
+    assert "[+cont]" in restored.asca_rule
 
 
-def test_series_round_trip_matches_rule_line():
+def test_serialize_series_matches_compile_rule_line():
     rule = {"stages": ["a", "b"], "source": "s:1"}
     target = resolve_inventory_targets(_SECTION, rule, "r0")[0]
     assert target.series is not None
     yaml_target = inventory_target_to_yaml(target)
-    restored = deserialize_series(yaml_target["series"])
+    restored = deserialize_series(serialize_series(target.series))
     field_rule = sound_change_rule_from_series(restored)
     assert field_rule is not None
     assert str(field_rule).strip() == yaml_target["rule"]

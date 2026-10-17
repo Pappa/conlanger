@@ -6,8 +6,8 @@
 - Rows: **9570** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9232** (96.5%)
-- Fail: **297** (3.1%)
+- OK: **9248** (96.6%)
+- Fail: **281** (2.9%)
 - Skipped: **41** (0.4%)
 
 
@@ -17,8 +17,8 @@ OK: **125/125**
 
 ## Sections
 
-- All OK: **504 / 660** (76.4%)
-- Some OK: **156 / 660** (23.6%)
+- All OK: **509 / 660** (77.1%)
+- Some OK: **151 / 660** (22.9%)
 - None OK: **0 / 660** (0.0%)
 - Sections skipped: **0 / 660** (0.0%)
 
@@ -26,24 +26,23 @@ OK: **125/125**
 
 | count | failure_class |
 |------:|---------------|
-| 88 | `expected_underscore` |
+| 86 | `expected_underscore` |
 | 34 | `expected_ipa` |
 | 25 | `unknown_character` |
 | 22 | `missing_slash_output_env` |
 | 19 | `syntax_other` |
-| 19 | `expected_number` |
 | 14 | `nested_brackets` |
-| 14 | `unknown_grouping` |
 | 13 | `segments_before_word` |
+| 11 | `unknown_grouping` |
 | 10 | `empty_io_panic` |
 | 10 | `unknown_feature` |
+| 10 | `expected_number` |
 | 7 | `stuff_after_word_bound` |
 | 7 | `prose_or_expected_arrow` |
 | 3 | `panic_other` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
 | 2 | `runtime_delete_only_segment` |
-| 2 | `other` |
 | 2 | `multiple_underlines_env` |
 | 1 | `incomplete_matrix` |
 | 1 | `invalid_ipa` |
@@ -108,7 +107,6 @@ OK: **125/125**
 | count | error_token |
 |------:|-------------|
 | 5 | `M` |
-| 3 | `B` |
 | 3 | `Y` |
 | 2 | `H` |
 | 1 | `X` |
@@ -142,7 +140,7 @@ OK: **125/125**
 
 | count | description |
 |------:|-------------|
-| 61 | `Expected '_', but received ''` |
+| 59 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -172,15 +170,11 @@ OK: **125/125**
 | count | error_token |
 |------:|-------------|
 | 4 | `d` |
-| 3 | `r` |
-| 2 | `u` |
-| 2 | `s` |
-| 2 | `a` |
-| 1 | `t` |
+| 2 | `r` |
 | 1 | `N` |
-| 1 | `ʍ` |
 | 1 | `P` |
 | 1 | `i` |
+| 1 | `s` |
 ### expected_number (description)
 
 | count | description |

@@ -158,34 +158,24 @@ def validate_asca_part(
     return True
 
 
-def validate_asca(
-    rule: DiachronicSeries,
+def validate_asca_body(
+    body: str,
     *,
     probe_words: Path | None = None,
     asca_bin: str | None = None,
     timeout: float = 15.0,
 ) -> bool:
-    """Return ``True`` if ``rule`` is valid for ASCA; otherwise raise.
-
-    When the asca binary supports ``validate``, runs ``asca validate -r`` on the
-    rendered rule file first (Tiers 1–3), then ``asca run`` with probe words
-    (Tier 4). Inventory ``ok`` still requires a successful ``run`` pass.
-
-    Requires ``asca`` 0.10.x to be installed (``ASCA_BIN`` or ``PATH``).
-    """
-    if not _active_rule_changes(rule):
-        raise ASCAValidationError(
-            "DiachronicSeries has no active SoundChangeRule lines to validate"
-        )
+    """Validate rendered ``.rsca`` text with ASCA (``validate`` then ``run``)."""
+    text = body if body.endswith("\n") else f"{body.rstrip()}\n"
+    if not text.strip():
+        raise ASCAValidationError("empty ASCA rule body")
 
     asca = _require_asca_bin(asca_bin=asca_bin)
-
-    body = str(rule)
 
     with tempfile.TemporaryDirectory() as tmp:
         tmp_path = Path(tmp)
         rsca = tmp_path / "check.rsca"
-        rsca.write_text(body, encoding="utf-8")
+        rsca.write_text(text, encoding="utf-8")
 
         if not probe_words:
             probe_words = tmp_path / "probe.wsca"
@@ -208,6 +198,34 @@ def validate_asca(
         _raise_if_asca_failed(proc)
 
     return True
+
+
+def validate_asca(
+    rule: DiachronicSeries,
+    *,
+    probe_words: Path | None = None,
+    asca_bin: str | None = None,
+    timeout: float = 15.0,
+) -> bool:
+    """Return ``True`` if ``rule`` is valid for ASCA; otherwise raise.
+
+    When the asca binary supports ``validate``, runs ``asca validate -r`` on the
+    rendered rule file first (Tiers 1–3), then ``asca run`` with probe words
+    (Tier 4). Inventory ``ok`` still requires a successful ``run`` pass.
+
+    Requires ``asca`` 0.10.x to be installed (``ASCA_BIN`` or ``PATH``).
+    """
+    if not _active_rule_changes(rule):
+        raise ASCAValidationError(
+            "DiachronicSeries has no active SoundChangeRule lines to validate"
+        )
+
+    return validate_asca_body(
+        str(rule),
+        probe_words=probe_words,
+        asca_bin=asca_bin,
+        timeout=timeout,
+    )
 
 
 def run_asca(asca_word_file, rule_file, rule_path):
