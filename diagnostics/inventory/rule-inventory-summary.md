@@ -3,17 +3,22 @@
 - Source YAML: `diagnostics/compile/asca_rules.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.3**
-- Rows: **9570** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
+- Rows: **9584** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9248** (96.6%)
-- Fail: **281** (2.9%)
+- OK: **9260** (96.6%)
+- Fail: **283** (3.0%)
 - Skipped: **41** (0.4%)
 
 
 ## Corrections
 
-OK: **125/125**
+OK: **124/125**
+Fail: **1/125**
+
+### Failed corrections
+
+- `Catalan-ɛj-ɔj` — `format_error`
 
 ## Sections
 
@@ -42,6 +47,7 @@ OK: **125/125**
 | 3 | `panic_other` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
+| 2 | `format_error` |
 | 2 | `runtime_delete_only_segment` |
 | 2 | `multiple_underlines_env` |
 | 1 | `incomplete_matrix` |
