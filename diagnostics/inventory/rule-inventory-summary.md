@@ -6,9 +6,9 @@
 - Rows: **9584** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9260** (96.6%)
+- OK: **9259** (96.6%)
 - Fail: **283** (3.0%)
-- Skipped: **41** (0.4%)
+- Skipped: **42** (0.4%)
 
 
 ## Corrections
@@ -22,8 +22,8 @@ Fail: **1/125**
 
 ## Sections
 
-- All OK: **509 / 660** (77.1%)
-- Some OK: **151 / 660** (22.9%)
+- All OK: **508 / 660** (77.0%)
+- Some OK: **152 / 660** (23.0%)
 - None OK: **0 / 660** (0.0%)
 - Sections skipped: **0 / 660** (0.0%)
 
@@ -370,6 +370,13 @@ Fail: **1/125**
 | count | description |
 |------:|-------------|
 | — | _(none)_ |
+
+
+## Field isolation blame (error rows)
+
+| count | blame |
+|------:|-------|
+| 283 | `multi` |
 
 ## Notes
 

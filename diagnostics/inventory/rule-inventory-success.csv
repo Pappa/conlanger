@@ -447,7 +447,6 @@ section_index,section_name,rule_id,alt_idx,step_idx,source,ok,rule,failure_class
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-x-ʕ,,,index_diachronica.html:1561,OK,x ʕ > χ ʔ,,,,,
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-sˤ-tˤ-ħ-q,,,index_diachronica.html:1562,OK,"s:[-atr,+rtr] t:[-atr,+rtr] ħ q > s t χ k",,,,,
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-h,,,index_diachronica.html:1563,OK,h > ∅ / _#,,,,,
-6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ʔ,,,index_diachronica.html:1564,OK,ʔ > ∅ // #_%[+stress],,,,,
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-h_2,,,index_diachronica.html:1565,OK,h > ∅,,,,,
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-Cː,,,index_diachronica.html:1566,OK,C:[+long] > C:[-long],,,,,
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-r,,,index_diachronica.html:1567,OK,r > ʁ,,,,,

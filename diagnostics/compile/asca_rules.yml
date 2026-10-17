@@ -1461,7 +1461,8 @@ sections:
     rule: h > ∅ / _#
   - rule_id: Modern-Israeli-Hebrew-ʔ
     source: index_diachronica.html:1564
-    rule: 'ʔ > ∅ // #_%[+stress]'
+    status: skipped
+    rule: "#\tʔ → ∅ / ! in onset of U[+stress] (colloquial)"
   - rule_id: Modern-Israeli-Hebrew-h_2
     source: index_diachronica.html:1565
     rule: h > ∅
