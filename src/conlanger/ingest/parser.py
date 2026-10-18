@@ -14,21 +14,29 @@ index fields only. Remaining Index rule arrows (``→``) in field values become 
 Chained rules store each spine segment in ``stages``; compile-time expansion is deferred.
 Uncertainty glosses
 (``sporadic``, ``sometimes``, ``occasionally``, …) are stripped from field values
-and recorded as ``sporadic: true``. **Feature matrix** and **IPA** mapping run on env /
-exception ``context`` strings (and ``stages``) **before**
-``apply_index_context_position_extraction`` so targets such as ``near [+emphatic]`` are
-ASCA-normalized while still prose; structured ``position`` is filled on the next pass.
-Inline prose stripped for ASCA is captured in optional ``comment`` on each index rule:
-the first ``;`` on the working line is partitioned before structural split, then
-field-level glosses and env qualifiers. Neighbour and medial relations extract structured
-``IndexContext.position``; compile projects to ASCA (ticket 144). Index prose **position** env phrases (``final syllables``, ``syllable-final``,
-trailing ``, in monosyllables`` qualifiers, …) normalize via ``apply_prose_position_env_conditions``.
-Index prose **conditional** env phrases (``utterance-initially``, ``unstressed penult``,
-``syllables with …``, stress-matrix tails, …) normalize via
-``apply_prose_conditional_env_conditions``.
-Index ``//`` env shorthand and prose exception tails normalize via
-``apply_double_slash_env_conditions``.
-After catch-all ``else`` resolution, nested ``{}`` in ``env`` / ``exception`` /
+and recorded as ``sporadic: true``. Inline prose stripped for ASCA is captured in
+optional ``comment`` on each index rule: the first ``;`` on the working line is
+partitioned before structural split, then field-level glosses and env qualifiers.
+
+**Env pipeline** (post-``init()``, after stress ticket 22 and prose conditional 134;
+ticket 165 / grill 149 Q4): no pass after structured capture re-introduces Tier C ASCA
+env literals (``%[-stress]``, ``#_[+stress]``, ASCA ``//`` tails, colon host matrices in
+``context``).
+
+1. **Prose position (107)** — Index/project env strings (``U#``, ``U[±stress]``, …) via
+   ``apply_prose_position_env_conditions``; no Tier C rewrites at parse.
+2. **Double-slash (108)** — mechanical `` // `` split into structured ``IndexContext``
+   env/exception via ``apply_double_slash_env_conditions``.
+3. **Syllable editorial strip (98)** — ``in #U`` / ``in U#`` on env/exception ``context``
+   only (`ingest.utils.syllable_position`; runs after 107/108, before feature/IPA).
+4. **Feature matrix and IPA (119)** on env/exception ``context`` (and ``stages``).
+5. **Position extraction (143)** — neighbour / medial / ``in`` → ``IndexContext.position``
+   via ``apply_index_context_position_extraction`` (after feature/IPA so e.g.
+   ``near [+emphatic]`` is normalized first).
+6. **Dialect prose** — ``apply_dialects_to_env_fields`` on ``context`` strings.
+
+Compile projects structured fields and Index env strings to ASCA (ticket 144). After
+catch-all ``else`` resolution, nested ``{}`` in ``env`` / ``exception`` /
 ``stages`` are flattened (``flatten_nested_sets``; ``raw`` unchanged). Class-letter
 expansion is deferred to compile time
 (``DiachronicSeries`` + ``group_mappings.csv``).
@@ -187,11 +195,11 @@ class IndexDiachronicaParser:
         rule = apply_sporadic_qualifier(rule)
         rule = apply_trailing_glosses(rule)
         rule = apply_stress_conditions(rule)
+        # Env pipeline (165): conditional → 107 → 108 → syllable strip → 119 → 143 → dialects.
         rule = apply_prose_conditional_env_conditions(rule)
         rule = apply_prose_position_env_conditions(rule)
         rule = apply_double_slash_env_conditions(rule)
         rule = apply_syllable_position_editorial_strip(rule)
-        # Feature/IPA: context strings only; must run before position extraction (see corpus_apply).
         rule = apply_feature_mappings(rule, self._feature_mappings)
         rule = apply_ipa_mappings(rule, self._ipa_mappings)
         rule = apply_index_context_position_extraction(rule)

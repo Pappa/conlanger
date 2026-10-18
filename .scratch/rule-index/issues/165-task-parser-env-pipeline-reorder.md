@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: [163](163-task-prose-position-env-string-fixes.md), [164](164-task-structured-double-slash-env-parse-compile.md)
 
 # Task: parser env pipeline reorder (149 Q4)
@@ -24,9 +24,16 @@ Document final order in `parser.py` module docstring and, if needed, `docs/syste
 
 ## Acceptance
 
-- [ ] `parser.py` pass order matches policy; grep confirms no parse module writes Tier C ASCA env strings post-reorder.
-- [ ] Full test suite + `uv run create_index && uv run compile_rules && uv run validate_rules` with no unexpected inventory regression beyond documented deltas from **163**/**164**.
-- [ ] Syllable editorial strip (`apply_syllable_position_editorial_strip`) placement justified or moved per [150](150-grill-parse-compile-module-seams.md) (optional note in PR; full seam grill not required to close).
+- [x] `parser.py` pass order matches policy; grep confirms no parse module writes Tier C ASCA env strings post-reorder.
+- [x] Full test suite + `uv run create_index && uv run compile_rules && uv run validate_rules` with no unexpected inventory regression beyond documented deltas from **163**/**164**.
+- [x] Syllable editorial strip (`apply_syllable_position_editorial_strip`) placement justified or moved per [150](150-grill-parse-compile-module-seams.md) (optional note in PR; full seam grill not required to close).
+
+## Answer (2026-10-18)
+
+- **Order:** After `init()`, series (D0) and D1–D3 (sporadic, glosses, stress), env block is conditional **134** → prose position **107** → double-slash **108** → syllable editorial strip **98** → feature/IPA **119** → position extraction **143** → dialects. Documented in `parser.py` module docstring and Phase D table in `docs/system/index-diachronica-parser.md`.
+- **Tier C:** No parse-time writers for `%[-stress]`, `#_[+stress]`, or ASCA `//` tails in env modules after **163**/**164**; passthrough of HTML literals unchanged.
+- **Syllable strip:** Stays immediately after **107**/**108**, before feature/IPA — normalizes mechanical `in #U`/`in U#` on final `context` strings without importing compile ([150](../issues/150-grill-parse-compile-module-seams.md)).
+- **Inventory:** Regen unchanged vs **164** baseline (9260 OK).
 
 ## Related
 
