@@ -1057,7 +1057,7 @@ sections:
     rule: V:[+long] > V / C_C{V:[+long],C}V
   - rule_id: Egyptian-Arabic-V
     source: index_diachronica.html:1386
-    rule: V > V:[+long] / C_CV in %[-stress]
+    rule: V > V:[+long] / C_CV in $[-stress]
   - rule_id: Egyptian-Arabic-V_2
     source: index_diachronica.html:1387
     rule: V > V:[+long] / _#
@@ -9178,10 +9178,10 @@ sections:
     rule: C:[+front,+hi,-lo] > C:[-front,+back,+hi,-lo]
   - rule_id: Hittite-V
     source: index_diachronica.html:5057
-    rule: V > V:[+long] / in %:[+stress, +lo]
+    rule: V > V:[+long] / _ %[+stress][+lo]
   - rule_id: Hittite-e-o
     source: index_diachronica.html:5058
-    rule: e o > e:[+long] o:[+long] / in %:[+stress, +stress]
+    rule: e o > e:[+long] o:[+long] / _ %[+stress][+stress]
   - rule_id: Hittite-oː-æː
     source: index_diachronica.html:5059
     rule: '{o,o:[+long]} æ:[+long] > {a,a:[+long]} e:[+long]'
@@ -9253,7 +9253,7 @@ sections:
     rule: e > a
   - rule_id: Luwian-V
     source: index_diachronica.html:5085
-    rule: V > V:[+long] / in %:[+stress, +lo]
+    rule: V > V:[+long] / _ %[+stress][+lo]
   - rule_id: Luwian-V_2
     source: index_diachronica.html:5086
     rule: 'V > V:[+long] / in #%:[+stress]'
@@ -9463,7 +9463,7 @@ sections:
     rule: '{o,o:[+long]} > {a,a:[+long]}'
   - rule_id: Palaic-a-e
     source: index_diachronica.html:5165
-    rule: a e > a:[+long] e:[+long] / in %:[+stress, +hi]
+    rule: a e > a:[+long] e:[+long] / _ %[+stress][+hi]
   - rule_id: Palaic-æː
     source: index_diachronica.html:5166
     rule: æ:[+long] > e:[+long]
@@ -22469,7 +22469,7 @@ sections:
     rule: ç > ʔ (? Not sure if I:[+cg]m reading the phone(me)s right on this one)
   - rule_id: Tataltepec-Chatino-e
     source: index_diachronica.html:10825
-    rule: e > a / _ʔ in %[-stress]
+    rule: e > a / _ʔ in $[-stress]
   - rule_id: Tataltepec-Chatino-et-el-en
     source: index_diachronica.html:10826
     rule: et el en > itʲ elʲ enʲ
@@ -23906,13 +23906,13 @@ sections:
   rules:
   - rule_id: Vowel-Shifts_3-em-emˀ
     source: index_diachronica.html:11719
-    rule: em emˀ > u uʔ / w_ in %[-stress]
+    rule: em emˀ > u uʔ / w_ in $[-stress]
   - rule_id: Vowel-Shifts_3-em-emˀ_2
     source: index_diachronica.html:11720
     rule: em emˀ > a aʔ / _ $[-stress] // {p:[+cg],p,m,mˀ}_
   - rule_id: Vowel-Shifts_3-en-enˀ
     source: index_diachronica.html:11721
-    rule: en enˀ > i iʔ / {ts:[+cg],ts,s,j,jˀ}_ in %[-stress]
+    rule: en enˀ > i iʔ / {ts:[+cg],ts,s,j,jˀ}_ in $[-stress]
   - rule_id: Vowel-Shifts_3-en-enˀ_2
     source: index_diachronica.html:11722
     rule: en enˀ > a ʔ / _ $[-stress] // {t:[+cg],t,lʲ,n,nˀ,l,lˀ}_
@@ -26233,7 +26233,7 @@ sections:
     rule: p > b / V_V
   - rule_id: Catawba-tʲ
     source: index_diachronica.html:12745
-    rule: tʲ > ʃ / in %:[+stress]
+    rule: tʲ > ʃ / _ %[+stress]
   - rule_id: Catawba-tʲ_2
     source: index_diachronica.html:12746
     rule: tʲ > ʒ / else
@@ -26261,7 +26261,7 @@ sections:
     - p > w
   - rule_id: Dakota-tʲ
     source: index_diachronica.html:12757
-    rule: tʲ > ʃ / in %:[+stress]
+    rule: tʲ > ʃ / _ %[+stress]
   - rule_id: Dakota-tʲ_2
     source: index_diachronica.html:12758
     rule: tʲ > ʒ / else
@@ -26350,7 +26350,7 @@ sections:
     rule: L > r / _V:[-nas]
   - rule_id: Mandan-ã
     source: index_diachronica.html:12802
-    rule: ã > a / in %:[+stress]
+    rule: ã > a / _ %[+stress]
   - rule_id: Mandan-tʲ
     source: index_diachronica.html:12804
     rule: tʲ > s / _ʔV
@@ -26407,7 +26407,7 @@ sections:
     rule: t > dʒ / _V:[+front, -stress]
   - rule_id: Proto-Čiwere-Winnebago-tʲ
     source: index_diachronica.html:12824
-    rule: tʲ > ʃ / in %:[+stress]
+    rule: tʲ > ʃ / _ %[+stress]
   - rule_id: Proto-Čiwere-Winnebago-tʲ-s
     source: index_diachronica.html:12825
     rule: tʲ s > ʒ z / _ $[-stress]
@@ -26641,7 +26641,7 @@ sections:
     rule: t tʲ s > d ʒ z / _ $[-stress]
   - rule_id: Proto-Dhegiha-tʲ
     source: index_diachronica.html:12922
-    rule: tʲ > ʃ / in %:[+stress]
+    rule: tʲ > ʃ / _ %[+stress]
   - rule_id: Proto-Dhegiha-k
     source: index_diachronica.html:12923
     rule: k > ɡ / V:[+stress]_
@@ -26659,7 +26659,7 @@ sections:
     rule: w > β
   - rule_id: Proto-Dhegiha-u
     source: index_diachronica.html:12928
-    rule: u > i / in %:[+stress]
+    rule: u > i / _ %[+stress]
   - rule_id: Proto-Dhegiha-k_2
     source: index_diachronica.html:12929
     rule: 'k > ∅ / #t_'

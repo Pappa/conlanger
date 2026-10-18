@@ -3,6 +3,10 @@
 from __future__ import annotations
 
 from conlanger.compile.models.config import PositionTemplates
+from conlanger.compile.position_in_projection import (
+    materialize_position_in_asca,
+    project_position_in_target,
+)
 from conlanger.ingest.models.index_models import (
     EnvExceptionInput,
     IndexContext,
@@ -68,7 +72,21 @@ def resolve_index_context_to_string(
         parts.append(double_slash)
         return ", ".join(parts)
     for relation in ("adjacent_to", "near", "in"):
-        projected = _project_position_relation(ctx, relation, templates)
+        if relation == "in":
+            target = _position_target_value(
+                ctx.position.get("in") if ctx.position else None
+            )
+            if target is None or templates.get("in") is None:
+                continue
+            classified = project_position_in_target(target)
+            if classified is not None:
+                return materialize_position_in_asca(
+                    classified,
+                    structural_context=ctx.context or None,
+                )
+            projected = templates["in"].format(v=target)
+        else:
+            projected = _project_position_relation(ctx, relation, templates)
         if projected is not None:
             parts.append(projected)
             break

@@ -15,5 +15,5 @@ def test_materialize_position_in_from_inventory_rule_shape():
     result = materialize_index_rule_env_exception(
         rule, compiler_config=CompilerConfig()
     )
-    assert result["env"] == "in U[-stress]"
+    assert result["env"] == "_ $[-stress]"
     assert result["exception"] == "{p(’),m(ˀ)}_"

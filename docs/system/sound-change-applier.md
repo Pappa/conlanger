@@ -52,10 +52,10 @@ Corpus rules may carry structured **`IndexContext`**-shaped mappings on `env` or
 | --- | --- |
 | Legacy scalar string | Passthrough unchanged |
 | `position.adjacent_to` / `position.near` only | Relation-keyed template from [`config/compile/asca/compiler_config.yml`](../config/compile/asca/compiler_config.yml) `position_templates` (`{v}_, _{v}` by default per relation; missing keys do not project) |
-| `position.in` only | `position_templates.in` (`in {v}` by default). Mechanical `#U` / `U#` targets compile to ASCA underline env via the syllable-position override in the per-rule pipeline (same as legacy `in #U` / `in U#` strings). |
+| `position.in` only | Classified targets map in [`position_in_projection.py`](../src/conlanger/compile/position_in_projection.py) at materialize (`resolve_index_context_to_string`) to ASCA env fragments (`#<.._>`, `_ $[±stress]`, `_ %[+stress]…`); unclassified targets use `position_templates.in` (`in {v}`). `context` + classified `in` joins as `context in $[±stress]` (not comma-before-`in`). Legacy **string** envs still use the syllable-position pipeline pass for embedded `… in U…` tails (ticket 98/174). |
 | `context` + neighbour / `in` `position` | Comma-joined: structural `context`, then projected relation template |
 | `position.medial` on **env** | Env `_` when there is no structural `context` and no `exception` field; **exception** always gains medial boundary `#_, _#` (`MEDIAL_BOUNDARY_EXCEPTION`), merged with any existing exception string (comma-separated). Structural `context` on env is kept. |
-| Index syllable-stress env (`U[-stress]`, `U[+stress]`, `#U[+stress]#`, …) | Compile projects to ASCA with segment focus (`_ $[±stress]`, `#_[+stress]`, …) via syllable-position override; `position.in` tails use `context in $[±stress]` not `, in …`. |
+| Index syllable-stress env (`U[-stress]`, `U[+stress]`, `#U[+stress]#`, …) | Same syllable-position pass: whole-field `_ $[±stress]` / `#_[+stress]`; materialized `context, in U[±stress]` → `context in $[±stress]`; colon matrix `in U:[+stress]…` → `_ %[+stress]…` ([`syllable_position.py`](../src/conlanger/compile/tools/asca/syllable_position.py)). |
 | `dialect` | Preserved in YAML only in v1 (no compile gating) |
 
 Implementation: [`project_index_context.py`](../src/conlanger/compile/project_index_context.py) (`resolve_index_context_to_string`, `resolve_rule_env_exception_for_compile`; rule-level medial pairing).

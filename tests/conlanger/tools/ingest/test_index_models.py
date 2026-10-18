@@ -331,8 +331,23 @@ def test_env_exception_input_to_string(input, expected):
         ),
         pytest.param(
             IndexContext(position={"in": "U#"}),
-            "in U#",
+            "<.._>#",
             id="in_u_hash",
+        ),
+        pytest.param(
+            IndexContext(position={"in": "#U"}),
+            "#<.._>",
+            id="in_hash_u",
+        ),
+        pytest.param(
+            IndexContext(position={"in": "U[-stress]"}),
+            "_ $[-stress]",
+            id="in_u_minus_stress",
+        ),
+        pytest.param(
+            IndexContext(position={"in": "U:[+stress]"}),
+            "_ %[+stress]",
+            id="in_u_colon_stress_matrix",
         ),
         pytest.param(
             IndexContext(position={"in": "U[+hi]"}),
@@ -341,7 +356,7 @@ def test_env_exception_input_to_string(input, expected):
         ),
         pytest.param(
             IndexContext(context="C_CV", position={"in": "U[-stress]"}),
-            "C_CV, in U[-stress]",
+            "C_CV in $[-stress]",
             id="merges_context_with_in",
         ),
         pytest.param(
@@ -392,7 +407,7 @@ def test_resolve_index_context_skips_relation_without_template():
         (
             {"position": {"in": "U[-stress]"}},
             None,
-            "in U[-stress]",
+            "_ $[-stress]",
             None,
         ),
         (

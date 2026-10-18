@@ -18,6 +18,7 @@ from conlanger.compile.tools.asca.syllable_position import (
 )
 from conlanger.ingest.models.index_models import IndexContext, IndexRule
 from conlanger.ingest.utils.transforms import apply_syllable_position_editorial_strip
+from conlanger.scripts.config_loaders import load_compiler_config
 
 
 @pytest.mark.parametrize(
@@ -104,9 +105,54 @@ def test_project_syllable_stress_compiled_env(env_raw, compiled_before, expected
         ("U[-stress]", "V:[+long] > V:[-long] / _ $[-stress]"),
         ("in U[+stress]", "V:[+long] > V:[-long] / _ $[+stress]"),
         ("#U[+stress]#", "V:[+long] > V:[-long] / #_[+stress]"),
+        ("C_CV in U[-stress]", "V:[+long] > V:[-long] / C_CV in $[-stress]"),
+        ("C_CV, in U[-stress]", "V:[+long] > V:[-long] / C_CV in $[-stress]"),
+        ("w_ in U[-stress]", "V:[+long] > V:[-long] / w_ in $[-stress]"),
+        ("in U:[+stress]", "V:[+long] > V:[-long] / _ %[+stress]"),
+        (
+            "in U:[+stress][+lo]",
+            "V:[+long] > V:[-long] / _ %[+stress][+lo]",
+        ),
+        ("%u in #U", "V:[+long] > V:[-long] / $u  #<.._>"),
     ],
 )
 def test_compile_asca_rule_fields_syllable_stress_env(env, expected):
+    assert compile_asca_rule_fields("Vː", "V[-long]", env=env) == expected
+
+
+def test_compile_asca_rule_fields_position_in_with_compiler_config():
+    config = load_compiler_config()
+    assert (
+        compile_asca_rule_fields(
+            "V",
+            "V:[+long]",
+            env="C_CV in U[-stress]",
+            compiler_config=config,
+        )
+        == "V > V:[+long] / C_CV in $[-stress]"
+    )
+    assert (
+        compile_asca_rule_fields(
+            "V",
+            "V:[+long]",
+            env="in U:[+stress]",
+            compiler_config=config,
+        )
+        == "V > V:[+long] / _ %[+stress]"
+    )
+
+
+@pytest.mark.parametrize(
+    ("env", "expected"),
+    [
+        (
+            "in #U before a U with /iː/",
+            "V:[+long] > V:[-long] / in #U before a U with i:[+long]",
+        ),
+        ("e_ in U:[+lo]", "V:[+long] > V:[-long] / e_ in U:[+lo]"),
+    ],
+)
+def test_compile_asca_rule_fields_position_in_deferred_targets(env, expected):
     assert compile_asca_rule_fields("Vː", "V[-long]", env=env) == expected
 
 
