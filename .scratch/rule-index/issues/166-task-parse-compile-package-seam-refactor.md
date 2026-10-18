@@ -1,5 +1,5 @@
 Type: task
-Status: done
+Status: resolved
 Blocked by: 150
 
 # Task: refactor parse vs compile package seams (grill 150)
@@ -23,3 +23,8 @@ Align `src/conlanger/` imports with the four top-level areas: **ingest** (parse)
 
 - Behaviour changes to env projection (162/163/164/165 own that).
 - Splitting `tools/` beyond import fixes tied to this seam work.
+
+## Answer (2026-10-17)
+
+- Package layout matches [150](150-grill-parse-compile-module-seams.md): **`ingest` / `compile` / `utils` / `tools`**; **ingest ↛ compile**; `compile/project_index_context.py`, `compile/models/config.py`, `utils/bracket_scanner.py`, ingest `index_context_project` + `syllable_position`; docs note allowed import directions.
+- Full quality gate passed at land time; no inventory behaviour change from seam moves alone.

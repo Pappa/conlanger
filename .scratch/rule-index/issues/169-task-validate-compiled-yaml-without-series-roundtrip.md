@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by:
 
 # Task: validate compiled rules from ASCA lines only (drop `DiachronicSeries` YAML round-trip)
@@ -30,10 +30,16 @@ How should `asca_rules.yml` and `validate_rules` change so validation uses the *
 
 ## Acceptance
 
-- [ ] `uv run compile_rules && uv run validate_rules` — West-Germanic-C (and other Family B identity rows previously failing with `// Host = RHS` in error CSV) **OK** when compile output is correct.
-- [ ] No validation code path sets `exception.compiled` from `exception.raw` for join purposes.
-- [ ] `asca_rules.yml` on disk materially smaller (no per-rule full `SoundChangeRule` dump) per agreed v2 schema.
-- [ ] Full test suite + quality gates; inventory regen with documented ok delta (expect identity `expected_number` cluster shrink without compile logic changes).
+- [x] `uv run compile_rules && uv run validate_rules` — West-Germanic-C (and other Family B identity rows previously failing with `// Host = RHS` in error CSV) **OK** when compile output is correct.
+- [x] No validation code path sets `exception.compiled` from `exception.raw` for join purposes.
+- [x] `asca_rules.yml` on disk materially smaller (no per-rule full `SoundChangeRule` dump) per agreed v3 schema.
+- [x] Full test suite + quality gates; inventory regen with documented ok delta (expect identity `expected_number` cluster shrink without compile logic changes).
+
+## Answer (2026-10-17)
+
+- **`asca_rules.yml` v3** (`schema_version: 3`): per-rule `rule` / `steps` / `alternatives` ASCA lines only; `compile_rules` writes via `compiled_rule_shape.py`; v1/v2 `series` / `targets[]` still readable for transition ([ADR-0018](../../../docs/adr/0018-compiled-asca-rules-yaml.md), [compile-rules.md](../../../docs/system/compile-rules.md)).
+- **`validate_rules`:** `iter_compiled_inventory_bundles` validates recorded `rule` strings directly (`inventory_target_from_yaml`); no `deserialize_series` → `SoundChangeRule.__str__` round-trip on the steady-state path.
+- **Inventory:** West-Germanic-C and related identity rows flip **FAILED → OK** in changelog (2026-10-17); `expected_number` cluster shrinks without compile transform changes. Regression: `test_compiled_validation_uses_rule_line_without_series_round_trip` in `test_index_inventory.py`.
 
 ## Related
 
