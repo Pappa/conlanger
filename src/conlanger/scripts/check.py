@@ -14,8 +14,10 @@ def main() -> int:
     steps: list[list[str]] = [
         ["uv", "run", "pytest"],
         ["uv", "run", "per_file_coverage_gate"],
-        ["uvx", "ruff", "check", "src", "tests"],
+        ["uvx", "ruff", "format", "src", "tests"],
         ["uvx", "ruff", "format", "src", "tests", "--check"],
+        ["uvx", "ruff", "check", "src", "tests", "--fix"],
+        ["uvx", "ruff", "check", "src", "tests"],
         ["uv", "run", "lint-imports"],
     ]
     for command in steps:
