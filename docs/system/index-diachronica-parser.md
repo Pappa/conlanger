@@ -6,7 +6,7 @@ Parse-time transforms turn Index Diachronica HTML into an **applier-neutral** ru
 
 **Scope:** parse-time only. Class-letter expansion, length marks, ejectives, laryngeal aliases, and multi-step **chain expansion** run at [applier compile](./sound-change-applier.md). Compile validation runs in [validate](./validate.md) ([ADR-0003](../adr/0003-validate-after-applier-compile.md)).
 
-**Related:** [spec](../.scratch/rule-index/spec.md) (Ingest section), [wayfinder map](../.scratch/rule-index/map.md), [ADR-0004](../adr/0004-series-indices-per-section-maps.md) (correspondence-series indices), [GLOSSARY.md](../../GLOSSARY.md).
+**Related:** [wayfinder map](../.scratch/rule-index/map.md) (+ `issues/`), [ADR-0004](../adr/0004-series-indices-per-section-maps.md) (correspondence-series indices), [GLOSSARY.md](../../GLOSSARY.md).
 
 **Package imports:** `ingest` may import `utils` only (not `compile`); `compile` may import `ingest` and `utils`; shared helpers such as [`bracket_scanner.py`](../src/conlanger/utils/bracket_scanner.py) live under `utils`. Applier-neutral position projection for parse policies: [`index_context_project.py`](../src/conlanger/ingest/utils/index_context_project.py).
 

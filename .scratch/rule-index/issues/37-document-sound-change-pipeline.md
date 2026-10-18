@@ -24,7 +24,7 @@ Grill session (2026-08-07): compile transform order must be clearly defined and 
 
 - Document stage **Applier-neutral index validation** (inventory, correction pass, regen workflow, validation report — sub-steps may evolve).
 - Same table format where ordering applies; prose OK for workflow that is not a strict transform pipeline.
-- Cross-link `.scratch/rule-index/spec.md` and relevant correction-pass tickets; this doc is the stable `docs/` entry point.
+- Cross-link `.scratch/rule-index/map.md` (+ `issues/`) and relevant correction-pass tickets; this doc is the stable `docs/` entry point.
 
 ### 3. `docs/system/sound-change-applier.md`
 

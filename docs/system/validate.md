@@ -6,8 +6,7 @@ After [Index Diachronica parse](./index-diachronica-parser.md) and [compile_rule
 
 **Stale compile:** v1 `asca_rules.yml` has no index fingerprint. After changing `index_diachronica.yml`, run `uv run compile_rules` before `uv run validate_rules` ([ADR-0018](../adr/0018-compiled-asca-rules-yaml.md)).
 
-**Spec:** [.scratch/rule-index/spec.md](../.scratch/rule-index/spec.md)  
-**Wayfinder map:** [.scratch/rule-index/map.md](../.scratch/rule-index/map.md)  
+**Wayfinder map:** [.scratch/rule-index/map.md](../.scratch/rule-index/map.md) (+ `issues/` tickets)  
 **Glossary:** [GLOSSARY.md](../../GLOSSARY.md) — *Corpus rule*, *Failure class*, *Validation report*, *Status*, *Class-first*, *Historical fidelity*
 
 ---

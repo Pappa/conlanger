@@ -32,7 +32,7 @@ The parse-time model is an **applier-neutral rule index**: opaque Index-shaped s
 | Topic | File | Lines |
 |-------|------|-------|
 | Full schema table (corpus rule fields) | [issues/03-yaml-schema-cleaned-rule-index.md](../issues/03-yaml-schema-cleaned-rule-index.md) | 33–46 |
-| Spec “Corpus schema and source of truth” | [spec.md](../spec.md) | 95–107 |
+| Corpus schema and source of truth (historical spec; deleted) | [map.md](../map.md) + ADR-0011 | — |
 | `stages` replaces `input`/`output` | [docs/adr/0011-index-rule-stages.md](../../docs/adr/0011-index-rule-stages.md) | 1–15 |
 | Applier-neutral principle | [docs/adr/0002-applier-neutral-yaml-rule-index.md](../../docs/adr/0002-applier-neutral-yaml-rule-index.md) | 1–18 |
 | Glossary: Corpus rule, Stages | [CONTEXT.md](../../CONTEXT.md) | 66–72 |

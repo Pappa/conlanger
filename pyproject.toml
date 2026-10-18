@@ -22,6 +22,7 @@ compile_rules = "conlanger.scripts.compile_rules:main"
 validate_rules = "conlanger.scripts.validate_rules:main"
 sample_asca_guess_fixtures = "conlanger.scripts.sample_asca_guess_fixtures:main"
 per_file_coverage_gate = "conlanger.scripts.per_file_coverage_gate:main"
+check = "conlanger.scripts.check:main"
 
 [project.optional-dependencies]
 cuda = ["tensorflow[and-cuda]"]
@@ -64,8 +65,10 @@ exclude_lines = [
 
 [dependency-groups]
 dev = [
+    "import-linter>=2.15",
     "lxml>=6.0.2",
     "pandas-stubs>=3.0.5.260914",
+    "pre-commit>=4.7.0",
     "pytest>=8.4.2",
     "pytest-cov>=7.0.0",
     "pytest-mock>=3.15.1",
@@ -87,3 +90,12 @@ exclude = [
     "src/conlanger/ml/models/*",
     "notebooks/*",
 ]
+
+[tool.importlinter]
+root_package = "conlanger"
+
+[[tool.importlinter.contracts]]
+name = "Ingest must not import compile"
+type = "forbidden"
+source_modules = ["conlanger.ingest"]
+forbidden_modules = ["conlanger.compile"]

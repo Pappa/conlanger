@@ -2,7 +2,7 @@
 
 ### Issue tracker
 
-Issues live as markdown files under `.scratch/<feature>/`. See `docs/agents/issue-tracker.md`.
+Issues live as markdown files under `.scratch/<feature>/`. See `docs/agents/issue-tracker.md`. When closing a ticket, follow [docs/agents/implement-closure.md](docs/agents/implement-closure.md).
 
 ### Triage labels
 
@@ -19,11 +19,11 @@ When working on parse, compile, validate, or correction passes:
 1. [GLOSSARY.md](GLOSSARY.md)
 2. [docs/SYSTEM.md](docs/SYSTEM.md) — parse → compile → validate table
 3. [docs/adr/0013-parse-compile-validate.md](docs/adr/0013-parse-compile-validate.md) — stage boundaries
-4. [.scratch/rule-index/spec.md](.scratch/rule-index/spec.md) — effort spec
+4. [.scratch/rule-index/map.md](.scratch/rule-index/map.md) + linked `issues/` tickets — effort decisions and open work
 
-The wayfinder [.scratch/rule-index/map.md](.scratch/rule-index/map.md) indexes **closed decisions**; zoom the linked ticket for detail. Do not treat map **Notes** as glossary or as the only spec.
+The wayfinder map indexes **closed decisions**; zoom the linked ticket for detail. Do not treat map **Notes** as glossary or as the only spec. Package layout: `ingest` (parse), `compile` (applier compile), `utils` (shared) — [index-diachronica-parser.md](docs/system/index-diachronica-parser.md) § Package imports.
 
-Local dev (pytest, ruff, ASCA fork): [docs/DEV.md](docs/DEV.md).
+Local dev (gate, pytest, ruff, ASCA fork): [docs/DEV.md](docs/DEV.md). Review standards: [docs/agents/coding-standards.md](docs/agents/coding-standards.md).
 
 ### Wayfinder ticket types
 

@@ -10,7 +10,7 @@ Grill 2026-08-21 Q7 / [ADR-0013](../../../docs/adr/0013-parse-compile-validate.m
 
 - `docs/SYSTEM.md` **Pipeline stages (new)**: three rows — parse, compile, validate. Fix the current `parse → validate → compile` wording.
 - Stage docs: keep parse and compile pages; fold [applier-neutral-index-validation.md](../../../docs/system/applier-neutral-index-validation.md) into the validate section (redirect or merge). Inventory, correction loop, CSVs live there.
-- Cross-links in parser/compile docs, `CONTEXT.md` documentation list if needed, `.scratch/rule-index/spec.md` stage count (do not rewrite the whole spec).
+- Cross-links in parser/compile docs, `CONTEXT.md` documentation list if needed, `.scratch/rule-index/map.md` / ADR-0013 stage count (do not rewrite the whole map).
 - Skip field names: `status: skipped` only; no `skip: true` / `skipped: true`. Compile-time chain expansion only (no living parse-time chain-split).
 - History of `input`/`output` → **stages** stays in [ADR-0011](../../../docs/adr/0011-index-rule-stages.md) / [ticket 59](59-index-rule-stages-schema.md).
 

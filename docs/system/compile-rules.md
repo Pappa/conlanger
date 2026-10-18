@@ -20,6 +20,8 @@ Compile logic lives in `inventory_targets.resolve_inventory_targets` and `Diachr
 
 ## `asca_rules.yml` v3 (summary)
 
+Full field reference: [asca-rules-yaml-schema.md](./asca-rules-yaml-schema.md).
+
 | Top-level | Value |
 | --- | --- |
 | `schema_version` | `3` |

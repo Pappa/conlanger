@@ -128,6 +128,14 @@ _Avoid_: section index alone as sufficient provenance; opaque “from HTML” no
 
 ## Index Diachronica notation
 
+**LHS** (left-hand side):
+The input (change-from) side of a sound-change rule before the change arrow — segments, class letters, sets, and matrices that undergo the change. In ASCA compile output this becomes the rule’s input field; in **stages** it is the left member of each adjacent pair.
+_Avoid_: “input” alone when the applier-neutral **stages** spine or Index HTML line is meant
+
+**RHS** (right-hand side):
+The output (change-to) side after the change arrow — what the LHS becomes (including `∅` deletion and parallel outputs). In ASCA compile output this becomes the rule’s output field; in **stages** it is the right member of each adjacent pair.
+_Avoid_: “output” alone when the applier-neutral index shape or raw HTML is meant
+
 **Abbreviation**:
 Index Diachronica notational shorthand whose expansion is defined for compile — including class letters, symbols, section-local tokens, and subscript-marked slots. See **Class letter**, **Symbol**, and the four subscript uses under **Subscript notation**.
 _Avoid_: “alias”, “mapping”, “grouping” as the glossary term for these symbols

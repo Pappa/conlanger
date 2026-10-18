@@ -1,5 +1,5 @@
 Type: task
-Status: ready-for-agent
+Status: resolved
 Blocked by: 171
 
 # Task: agent environment improvements (Oct 2026 retro)
@@ -83,3 +83,7 @@ Implement decisions from [171 grill](171-grill-agent-environment-retro-oct-2026.
 - GitHub Actions (deferred; grill chose pre-commit only).
 - `check_scratch_sync` automation.
 - Upstream mattpocock/skills changes.
+
+## Answer
+
+**Resolved 2026-10-18.** Added `uv run check`, `.pre-commit-config.yaml`, import-linter ingest↛compile contract, [implement-closure.md](../../../docs/agents/implement-closure.md), [coding-standards.md](../../../docs/agents/coding-standards.md), [asca-rules-yaml-schema.md](../../../docs/system/asca-rules-yaml-schema.md); deleted `.scratch/rule-index/spec.md`; updated SYSTEM.md, AGENTS.md, DEV.md, GLOSSARY (**LHS**/**RHS**).

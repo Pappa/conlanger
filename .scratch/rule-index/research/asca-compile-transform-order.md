@@ -120,7 +120,7 @@ TS > ts
 
 ### 3.3 Meta-notation → `expand_meta_notation` (Order **10**, cluster-driven)
 
-Per [`CONTEXT.md`](../../../CONTEXT.md) (**Meta-notation**): retroflex `X̣`, tone superscripts `V³`, repetition groups beyond step-2 ellipsis, etc. No global expansion policy yet ([spec.md](../spec.md) story 37).
+Per [`CONTEXT.md`](../../../CONTEXT.md) (**Meta-notation**): retroflex `X̣`, tone superscripts `V³`, repetition groups beyond step-2 ellipsis, etc. No global expansion policy yet ([map.md](../map.md) / ticket 37 story).
 
 | Pattern | Current handling | Recommended order when implemented |
 |---------|------------------|-----------------------------------|

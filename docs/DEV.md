@@ -1,21 +1,30 @@
 # Local Development
 
-Run Pytest via uv:
+## Quality gate
+
+Single entrypoint (pytest, per-file coverage, ruff, import-linter):
 
 ```bash
-uv run pytest
+uv run check
 ```
 
-Ruff:
+Install git hooks once per clone (runs the same gate on commit):
 
 ```bash
-uvx ruff check src tests --fix && \
-   uvx ruff check src tests && \
-   uvx ruff format src tests && \
-   uvx ruff format src tests --check
+uv run pre-commit install
+uv run pre-commit run --all-files   # optional smoke
 ```
 
-Coverage threshold lives in `[tool.coverage.report] fail_under` in `pyproject.toml`; full `uv run pytest` enforces it.
+Coverage threshold lives in `[tool.coverage.report] fail_under` in `pyproject.toml`; `uv run check` runs full `uv run pytest` first.
+
+During edits, targeted commands:
+
+```bash
+uv run pytest <paths> --no-cov
+uvx ruff check src tests --fix && uvx ruff format src tests
+```
+
+Run `uv run check` before push even when hooks are not installed. See [implement-closure.md](agents/implement-closure.md) when closing `.scratch/` tickets.
 
 # ASCA sound change rule validation
 
@@ -35,4 +44,4 @@ export ASCA_BIN="$(pwd)/lib/bin/asca"
 ./lib/bin/asca validate --help
 ```
 
-`uv run validate_rules` defaults to the repo-local binary at `lib/bin/asca` (`--use-asca-fork`, on by default). Set `ASCA_BIN` when the fork is not first on `PATH` (see `resolve_asca_bin` in [`appliers/asca.py`](../src/conlanger/appliers/asca.py)). Upstream crates.io **0.10.2** lacks `validate` and is not sufficient for inventory or field-isolation checks.
+`uv run validate_rules` defaults to the repo-local binary at `lib/bin/asca` (`--use-asca-fork`, on by default). Set `ASCA_BIN` when the fork is not first on `PATH` (see `resolve_asca_bin` in [`appliers/asca.py`](../src/conlanger/appliers/asca.py)). If validate fails because `lib/bin/asca` is missing, run the **Install the fork** block above. Upstream crates.io **0.10.2** lacks `validate` and is not sufficient for inventory or field-isolation checks.

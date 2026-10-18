@@ -22,11 +22,12 @@ uvx ruff check <changed paths> --fix
 
 ## Before finishing
 
-Run the full **gate** sequence. A step is done when its command exits 0.
+Run **`uv run check`** (or the same steps manually). A step is done when its command exits 0.
 
 1. **Tests and coverage** — `uv run pytest`. Coverage must meet `[tool.coverage.report] fail_under` in `pyproject.toml` (enforced by pytest addopts).
 2. **Individual coverage per file** - `uv run per_file_coverage_gate`. Should be at least 85%; resolve any exceptions. Check file details via the `.coverage.json` pytest output. 
 3. **Lint** — `uvx ruff check src tests --fix && uvx ruff check src tests`; resolve anything `--fix` cannot.
 4. **Format** — `uvx ruff format src tests && uvx ruff format src tests --check`.
+5. **Import layers** — `uv run lint-imports` (ingest must not import compile).
 
 Fix failures you introduce. If a pre-existing failure blocks verification, say so explicitly.
