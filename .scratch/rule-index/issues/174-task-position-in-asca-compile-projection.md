@@ -1,0 +1,37 @@
+Type: task
+Status: ready-for-agent
+Blocked by: 173
+
+# Task: compile-time ASCA projection for `position.in` and `in <target>` env tails
+
+Spawned from `/grill-with-docs` on [map.md](../map.md) (2026-10-18). Implements spike [173](173-spike-position-in-asca-compile-projection.md). **Compile only** — do not change ingest/parser passes.
+
+## Question
+
+Implement the compile projection chosen in [173](173-spike-position-in-asca-compile-projection.md) so Index **`position.in`** and string env/exception tails **`in <target>`** (including `#U`, `U#`, syllable stress matrices) become **valid ASCA** at compile time, consistently with **`context`** and other **`position`** relations.
+
+## Constraints (owner 2026-10-18)
+
+- **No parse-time code changes** for this ticket.
+- Prefer special handling **in or around** [`materialize_index_rule_env_exception`](../../../src/conlanger/compile/resolve_index_rule.py) **or** a dedicated **additional compile-time** env/exception transform (spike picks B1 vs B2).
+- Reuse ASCA targets from [98](98-correction-pass-syllable-position-u-hash.md) / [`syllable_position.py`](../../../src/conlanger/compile/tools/asca/syllable_position.py) as shared helpers; avoid duplicating `#<.._>` / `<.._>#` tables.
+- Do not regress mechanical `#U` / `U#` behaviour resolved in [98](98-correction-pass-syllable-position-u-hash.md).
+
+## Acceptance
+
+- [ ] Compile projection matches [173](173-spike-position-in-asca-compile-projection.md) findings for all in-scope target classes.
+- [ ] Structured `env` / `exception` with `position.in` round-trip through `uv run compile_rules` to ASCA that passes `validate_rules` (or documented defer for spike-excluded rows).
+- [ ] String env/exception fields with embedded `in <target>` (no YAML restructure) compile per spike table.
+- [ ] `context` + `in` composition covered when spike specifies ASCA (future-shaped tests even if corpus has zero rows today).
+- [ ] Unit tests on compile module(s) touched; update [`docs/system/sound-change-applier.md`](../../../docs/system/sound-change-applier.md) projection table.
+- [ ] `uv run compile_rules && uv run validate_rules`; record ok delta and ok-changelog if flips; follow [implement-closure.md](../../../docs/agents/implement-closure.md).
+
+## Out of scope
+
+- Parse extraction of `C_CV in U[-stress]` → structured `context` + `position.in`.
+- Retiring [`apply_syllable_position_compiled_overrides`](../../../src/conlanger/compile/tools/asca/syllable_position.py) unless spike requires consolidating duplicate logic (if so, keep behaviour byte-identical for ticket 98 fixtures).
+
+## Related
+
+- [156](156-task-indexcontext-position-in-relation.md) (v1 materialize `in {v}`)
+- [173](173-spike-position-in-asca-compile-projection.md) (blocked)
