@@ -1,5 +1,5 @@
 Type: spike
-Status: ready-for-agent
+Status: resolved
 Blocked by: None
 
 # Spike: ASCA compile projection for `IndexContext.position.in`
@@ -48,13 +48,20 @@ Today: structured `in` → `in {v}` at [`materialize_index_rule_env_exception`](
 
 Findings markdown under [`.scratch/rule-index/research/`](../research/) (suggested name: `position-in-asca-compile-projection.md`) with inventory appendix or CSV, probe references, and a **recommended option B1 vs B2** for [174](174-task-position-in-asca-compile-projection.md).
 
+## Answer (2026-10-18)
+
+- **Findings:** [position-in-asca-compile-projection.md](../research/position-in-asca-compile-projection.md) + [inventory CSV](../research/position-in-asca-compile-projection.csv) (**68** rows: **38** structured `position.in`, **30** embedded phonological `in` tails; **15** manual/defer).
+- **ASCA:** Editorial Index `in …` is **never** valid ASCA; compile must rewrite (probed on fork 0.10.3).
+- **Placement:** **B2** — post-materialize env/exception rewriter in the ASCA field pipeline (extend [`syllable_position.py`](../../../src/conlanger/compile/tools/asca/syllable_position.py)); keep [`materialize_index_rule_env_exception`](../../../src/conlanger/compile/resolve_index_rule.py) applier-neutral (`in {v}` per [156](156-task-indexcontext-position-in-relation.md)).
+- **Defer (174 out of automated scope):** Middle English / Yupik prose `#U` tails; Blackfoot `O_ in #U` prefix+edge; Chatino `U[+long -stress]`; morpho `in prefixes` / `in the` / `Pre-Livonian`; open/closed `U[+lo]` until ASCA feature policy is locked.
+
 ## Acceptance
 
-- [ ] Findings file committed under `research/`
-- [ ] Every structured `position.in` row has a proposed compile outcome or explicit defer
-- [ ] Embedded string env `in <target>` patterns covered in the same mapping table
-- [ ] ASCA doc citations + minimal `asca validate` probes for non-obvious classes
-- [ ] Clear handoff: implementation checklist for [174](174-task-position-in-asca-compile-projection.md)
+- [x] Findings file committed under `research/` — [position-in-asca-compile-projection.md](../research/position-in-asca-compile-projection.md) (+ [CSV](../research/position-in-asca-compile-projection.csv))
+- [x] Every structured `position.in` row has a proposed compile outcome or explicit defer
+- [x] Embedded string env `in <target>` patterns covered in the same mapping table
+- [x] ASCA doc citations + minimal `asca validate` probes for non-obvious classes
+- [x] Clear handoff: implementation checklist for [174](174-task-position-in-asca-compile-projection.md)
 
 ## Out of scope
 

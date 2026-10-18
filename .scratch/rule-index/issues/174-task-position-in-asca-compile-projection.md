@@ -1,6 +1,6 @@
 Type: task
 Status: ready-for-agent
-Blocked by: 173
+Blocked by: None
 
 # Task: compile-time ASCA projection for `position.in` and `in <target>` env tails
 
@@ -13,9 +13,10 @@ Implement the compile projection chosen in [173](173-spike-position-in-asca-comp
 ## Constraints (owner 2026-10-18)
 
 - **No parse-time code changes** for this ticket.
-- Prefer special handling **in or around** [`materialize_index_rule_env_exception`](../../../src/conlanger/compile/resolve_index_rule.py) **or** a dedicated **additional compile-time** env/exception transform (spike picks B1 vs B2).
+- **Spike [173](173-spike-position-in-asca-compile-projection.md) chose B2:** one post-materialize env/exception transform in the ASCA field pipeline ([`compile_asca_rule_fields`](../../../src/conlanger/compile/tools/asca/pipeline.py)), implemented by extending [`syllable_position.py`](../../../src/conlanger/compile/tools/asca/syllable_position.py). Do **not** emit ASCA from [`project_index_context.py`](../../../src/conlanger/compile/project_index_context.py) / materialize.
 - Reuse ASCA targets from [98](98-correction-pass-syllable-position-u-hash.md) / [`syllable_position.py`](../../../src/conlanger/compile/tools/asca/syllable_position.py) as shared helpers; avoid duplicating `#<.._>` / `<.._>#` tables.
 - Do not regress mechanical `#U` / `U#` behaviour resolved in [98](98-correction-pass-syllable-position-u-hash.md).
+- **Documented defer / manual** (inventory `defer_or_manual`): see [173 Answer](173-spike-position-in-asca-compile-projection.md#answer-2026-10-18) and findings §3.4–3.6.
 
 ## Acceptance
 
@@ -34,4 +35,4 @@ Implement the compile projection chosen in [173](173-spike-position-in-asca-comp
 ## Related
 
 - [156](156-task-indexcontext-position-in-relation.md) (v1 materialize `in {v}`)
-- [173](173-spike-position-in-asca-compile-projection.md) (blocked)
+- [173](173-spike-position-in-asca-compile-projection.md) (resolved) · [findings](../research/position-in-asca-compile-projection.md)
