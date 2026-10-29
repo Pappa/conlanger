@@ -1,5 +1,5 @@
 Type: task
-Status: ready
+Status: resolved
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Populate plan 0003 from `.scratch/rule-index/` using the pipeline-stage merge policy in decision 0006.
 Blocked by:
@@ -19,7 +19,7 @@ Execute the migration policy in [0006-decision-wayfinder-ticket-migration-policy
    - **Open frontier** wayfinder tickets (`claimed`, `ready-for-agent`, `needs-grilling`) — **one backlog task each**, not merged with closed work;
    - Merged **closed** stage buckets that still need explicit acceptance criteria for regression or documentation.
 5. Each new or updated backlog item includes **problem**, **outcome**, **acceptance criteria**, and a **source list** (links to merged `.scratch/rule-index/issues/NN-*.md` files).
-6. Leave plan **0003** **Spikes** table **empty** until [0007](../items/0007-decision-wayfinder-spike-migration-policy.md) resolves; link `.scratch/.../research/` from summaries when useful.
+6. Leave plan **0003** **Spikes** table **empty** until [0007](../items/0007-decision-wayfinder-spike-migration-policy.md) resolves; link `.scratch/.../research/` from merged summaries when useful.
 7. **Do not** move, rename, or delete `.scratch/` files; `.scratch/` remains archaeology and interim authority until a later cutover decision.
 
 ## Notes
@@ -36,12 +36,16 @@ Execute the migration policy in [0006-decision-wayfinder-ticket-migration-policy
 
 ## Acceptance Criteria
 
-- [ ] Plan **0003** **Decisions so far** lists **12–16** bullets; each links to detail or merged backlog items and cites merged wayfinder issue numbers in the child item or gist text.
-- [ ] **≤25** total indexed outcomes on **0003** (count **Decisions so far** lines + rows in **Tasks** + **Spikes**); **Spikes** remains empty.
-- [ ] **6–9** new **`Type: task`** files exist under `.backlog/items/` with `Plan:` **0003**, each satisfying the merged-item content bar (problem, outcome, acceptance criteria, source list).
-- [ ] Every open-frontier wayfinder ticket listed in **Notes** (or current equivalent after status scan) has its **own** **`Type: task`** on `.backlog/` unless terminal or superseded under **0006**.
-- [ ] No `.backlog/` item corresponds to a **`wontfix`** / out-of-scope wayfinder ticket or a superseded-only ticket per **0006** Q2–Q3.
-- [ ] Plan **0003** **Tasks** table lists all new task items with accurate **Overview** and **Status** (`ready` or `needs-detail` as appropriate).
-- [ ] `.scratch/rule-index/` tree is unchanged aside from optional comment pointers agents may add later (no file moves/deletes in this task).
+- [x] Plan **0003** **Decisions so far** lists **12–16** bullets; each links to detail or merged backlog items and cites merged wayfinder issue numbers in the child item or gist text.
+- [x] **≤25** total indexed outcomes on **0003** (count **Decisions so far** lines + rows in **Tasks** + **Spikes**); **Spikes** remains empty.
+- [x] **6–9** new **`Type: task`** files exist under `.backlog/items/` with `Plan:` **0003**, each satisfying the merged-item content bar (problem, outcome, acceptance criteria, source list).
+- [x] Every open-frontier wayfinder ticket listed in **Notes** (or current equivalent after status scan) has its **own** **`Type: task`** on `.backlog/` unless terminal or superseded under **0006**.
+- [x] No `.backlog/` item corresponds to a **`wontfix`** / out-of-scope wayfinder ticket or a superseded-only ticket per **0006** Q2–Q3.
+- [x] Plan **0003** **Tasks** table lists all new task items with accurate **Overview** and **Status** (`ready` or `needs-detail` as appropriate).
+- [x] `.scratch/rule-index/` tree is unchanged aside from optional comment pointers agents may add later (no file moves/deletes in this task).
+
+## Answer
+
+Migration executed 2026-10-29: **15** self-contained **Decisions so far** gists on plan **0003**; **6** open-frontier tasks **0009–0014**; **22** total indexed outcomes. Revised same day: removed legacy wayfinder path links from **Decisions so far** and child tasks—decision text lives on the backlog only.
 
 ## Comments

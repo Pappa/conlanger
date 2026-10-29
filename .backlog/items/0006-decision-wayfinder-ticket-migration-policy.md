@@ -47,7 +47,7 @@ Similar **correction-pass** tickets in the same stage bucket **should** merge ev
 
 - **Identify** via map strike-through, explicit “supersedes”, “wontfix (superseded by …)”, or a later ticket that replaces the implementation.
 - **Do not** migrate superseded tickets as standalone `.backlog/` children.
-- **Decisions so far** on **0003**: include a **one-line merged gist** only when the **underlying decision** still constrains current work; otherwise omit from `.backlog/` entirely (archaeology in `.scratch/` only).
+- **Decisions so far** on **0003**: include a **one-line merged gist** only when the **underlying decision** still constrains current work; otherwise omit from `.backlog/` entirely. Gists must be **self-contained** (no links into the legacy wayfinder tree); cite ADRs and `docs/` only.
 
 ### Spikes (Q4) — **deferred**
 
