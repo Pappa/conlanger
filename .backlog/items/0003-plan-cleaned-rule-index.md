@@ -1,5 +1,5 @@
 Type: epic-duck:plan
-Status: needs-detail
+Status: in-progress
 
 ## Destination
 
@@ -16,7 +16,6 @@ A **cleaned rule index** (applier-neutral YAML source of truth) derived from **I
 
 ## Not yet specified
 
-- Executing the **0006** migration (author merged backlog items on **0003**).
 - Cutover policy for `.scratch/rule-index/` vs `.backlog/` for **new** tickets after migration.
 
 ## Out of scope
@@ -33,7 +32,7 @@ A **cleaned rule index** (applier-neutral YAML source of truth) derived from **I
 
 | Task | Overview | Status |
 |------|----------|--------|
-| | | |
+| [0008-task-execute-wayfinder-rule-index-migration.md](0008-task-execute-wayfinder-rule-index-migration.md) | Populate **0003** from `.scratch/rule-index/` per decision **0006**. | ready |
 
 ## Spikes
 
