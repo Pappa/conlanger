@@ -2,7 +2,7 @@
 
 Index uses bare click letters (``!`` / ``ǃ`` / ``ǀ`` / ``ǁ`` / ``ǂ`` / ``ʘ``).
 ASCA accepts clicks only with an explicit rear onset (``kǃ``, ``ɡǂ``, …) or
-``[+click]``. See ``.scratch/rule-index/research/asca-khoisan-click-representation.md``.
+``[+click]``. See ``.backlog/spike/0035-asca-khoisan-click-representation.md``.
 """
 
 from __future__ import annotations

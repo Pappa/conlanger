@@ -64,10 +64,22 @@ A **cleaned rule index** (applier-neutral YAML source of truth) derived from **I
 | Task | Overview | Status |
 |------|----------|--------|
 | [0012-task-correction-pass-asca-grouping-insertion.md](0012-task-correction-pass-asca-grouping-insertion.md) | Correction pass: grouping on insertion rules after **0011**. | needs-detail |
-| [0031-task-execute-wayfinder-spike-migration.md](0031-task-execute-wayfinder-spike-migration.md) | Migrate 13 curated spike findings per **0007**. | ready |
+| [0031-task-execute-wayfinder-spike-migration.md](0031-task-execute-wayfinder-spike-migration.md) | Migrate 13 curated spike findings per **0007**. | resolved |
 
 ## Spikes
 
 | Spike | Overview | Status |
 |-------|----------|--------|
-| | (empty until **0031** executes) | |
+| [0032-spike-asca-rule-validity.md](0032-spike-asca-rule-validity.md) | ASCA rule string validity checklist and parse pipeline (0.10.2). | resolved |
+| [0033-spike-positional-slots-and-identity-subscripts.md](0033-spike-positional-slots-and-identity-subscripts.md) | Index positional/identity subscripts → ASCA reference syntax. | resolved |
+| [0034-spike-subscript-notation-index-asca-brassica.md](0034-spike-subscript-notation-index-asca-brassica.md) | Index subscript uses vs ASCA and Brassica surface syntax. | resolved |
+| [0035-spike-asca-khoisan-click-representation.md](0035-spike-asca-khoisan-click-representation.md) | ASCA representation of Khoisan click segments. | resolved |
+| [0036-spike-asca-class-letter-mappings.md](0036-spike-asca-class-letter-mappings.md) | Index class letters → ASCA group_mappings. | resolved |
+| [0037-spike-asca-ejective-notation.md](0037-spike-asca-ejective-notation.md) | Index post-matrix ejective marks vs ASCA `[+cg]` / diacritic rules. | resolved |
+| [0038-spike-index-feature-matrices-to-asca-targets.md](0038-spike-index-feature-matrices-to-asca-targets.md) | feature_mappings.csv schema and Index matrix → ASCA targets. | resolved |
+| [0039-spike-index-syllable-position-u-hash.md](0039-spike-index-syllable-position-u-hash.md) | Index `#U` / `U#` syllable position → ASCA env structures. | resolved |
+| [0040-spike-inter-segment-whitespace-phoneme-boundaries.md](0040-spike-inter-segment-whitespace-phoneme-boundaries.md) | Inter-segment whitespace and phoneme boundaries (ASCA/Brassica). | resolved |
+| [0041-spike-io-optionals-asca-and-convention.md](0041-spike-io-optionals-asca-and-convention.md) | Index I/O optionals vs ASCA structures and convention. | resolved |
+| [0042-spike-breve-vowel-notation.md](0042-spike-breve-vowel-notation.md) | Index breve vowel notation (`̆`) → ASCA representation. | resolved |
+| [0043-spike-field-isolation-compile-validation.md](0043-spike-field-isolation-compile-validation.md) | Field-isolation compile validation (go-with-limits). | resolved |
+| [0044-spike-asca-native-per-field-validation.md](0044-spike-asca-native-per-field-validation.md) | Native ASCA per-field validation fork effort sizing. | resolved |

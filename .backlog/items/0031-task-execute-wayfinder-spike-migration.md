@@ -1,5 +1,5 @@
 Type: task
-Status: ready
+Status: resolved
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Copy 13 curated spike findings to `.backlog/spike/` and add resolved `Type: spike` items on plan 0003 per decision 0007.
 Blocked by:
@@ -21,12 +21,12 @@ Execute the **Answer** in [0007-decision-wayfinder-spike-migration-policy.md](..
 
 ## Acceptance Criteria
 
-- [ ] Thirteen files exist under `.backlog/spike/` matching the curated list in **0007** (filenames use backlog `NNNN` slugs).
-- [ ] Thirteen **`Type: spike`** items exist under `.backlog/items/`, each with **`Plan:`** **0003**, **`Result:`** link, and **`Status: resolved`**.
-- [ ] Copied findings contain no references that require unmigrated artefacts (probe paths, `scan_*.py`, CSV appendices) unless rewritten as prose-only.
-- [ ] `docs/system/index-diachronica-parser.md`, `docs/system/sound-change-applier.md`, `docs/system/validate.md`, and `src/conlanger/compile/tools/asca/clicks.py` link to `.backlog/spike/` for the migrated topics they currently cite from `.scratch`.
-- [ ] Plan **0003** **Spikes** table lists all thirteen items with synced **Overview** and **Status**.
-- [ ] `.scratch/` content is unchanged except as incidental to read-only copy source.
+- [x] Thirteen files exist under `.backlog/spike/` matching the curated list in **0007** (filenames use backlog `NNNN` slugs).
+- [x] Thirteen **`Type: spike`** items exist under `.backlog/items/`, each with **`Plan:`** **0003**, **`Result:`** link, and **`Status: resolved`**.
+- [x] Copied findings contain no references that require unmigrated artefacts (probe paths, `scan_*.py`, CSV appendices) unless rewritten as prose-only.
+- [x] `docs/system/index-diachronica-parser.md`, `docs/system/sound-change-applier.md`, `docs/system/validate.md`, and `src/conlanger/compile/tools/asca/clicks.py` link to `.backlog/spike/` for the migrated topics they currently cite from `.scratch`.
+- [x] Plan **0003** **Spikes** table lists all thirteen items with synced **Overview** and **Status**.
+- [x] `.scratch/` content is unchanged except as incidental to read-only copy source.
 
 ## Notes
 

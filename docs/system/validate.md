@@ -215,7 +215,7 @@ resolve_asca_bin() -> str | None  # ASCA_BIN env, then PATH
 
 ### ASCA validation tiers
 
-See [asca-rule-validity.md](../.scratch/rule-index/research/asca-rule-validity.md) §5 for ASCA constraint detail (research pinned to **0.10.2** prose; project validation runs **0.10.3** fork):
+See [asca-rule-validity.md](../../.backlog/spike/0032-asca-rule-validity.md) §5 for ASCA constraint detail (research pinned to **0.10.2** prose; project validation runs **0.10.3** fork):
 
 | Tier | Stage | Caught by `validate_asca`? |
 | --- | --- | --- |
