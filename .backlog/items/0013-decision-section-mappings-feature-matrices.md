@@ -13,7 +13,3 @@ Decide root cause, correct fix layer, and whether section-local class labels →
 Wayfinder source: `.scratch/rule-index/issues/129-grill-section-mappings-feature-matrices-yaml-compile.md`.
 
 ## Answer
-
-## Comments
-
-- Retyped from **`Type: task`** per [0030](0030-task-retype-open-grill-frontier-as-decisions.md) (2026-10-29).

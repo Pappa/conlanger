@@ -13,7 +13,3 @@ Lock applier-neutral representation and compile behavior for ASCA grouping on in
 Wayfinder source: `.scratch/rule-index/issues/125-grill-asca-grouping-insertion.md`.
 
 ## Answer
-
-## Comments
-
-- Retyped from **`Type: task`** per [0030](0030-task-retype-open-grill-frontier-as-decisions.md) (2026-10-29).

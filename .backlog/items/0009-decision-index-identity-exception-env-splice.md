@@ -13,7 +13,3 @@ Decide when full env-slot suffix copy is required versus `// RHS_` (or `// {set}
 Wayfinder source: `.scratch/rule-index/issues/167-grill-index-identity-exception-env-splice.md`.
 
 ## Answer
-
-## Comments
-
-- Retyped from **`Type: task`** per [0030](0030-task-retype-open-grill-frontier-as-decisions.md) (2026-10-29).

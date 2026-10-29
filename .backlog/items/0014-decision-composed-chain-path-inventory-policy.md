@@ -13,7 +13,3 @@ Decide inventory policy: strict per-step equality vs allowed merged sets, and wh
 Wayfinder source: `.scratch/rule-index/issues/170-grill-composed-chain-path-inventory-policy.md`.
 
 ## Answer
-
-## Comments
-
-- Retyped from **`Type: task`** per [0030](0030-task-retype-open-grill-frontier-as-decisions.md) (2026-10-29).
