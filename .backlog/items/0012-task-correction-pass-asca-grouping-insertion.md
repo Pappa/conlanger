@@ -16,6 +16,6 @@ Implement the correction pass per resolved policy on [0011](0011-decision-asca-g
 
 - [ ] Target cluster rules compile or are explicitly held out with documented reason in **Answer**.
 - [ ] Inventory ok delta recorded in **Answer**.
-- [ ] **`Status: resolved`** per implement-closure.
+- [ ] **`Status: resolved`**; sync plan table; `uv run check` ([backlog.md](../../docs/agents/backlog.md) § Closing a backlog item).
 
 ## Comments

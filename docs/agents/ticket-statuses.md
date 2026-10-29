@@ -19,16 +19,3 @@ Edit this table only when the duck workflow model changes (record rationale in `
 ## Matt Pocock triage roles (GitHub / generic skills)
 
 Some upstream skills speak in triage **roles** rather than these `Status:` strings. Map roles using [triage-labels.md](./triage-labels.md) (`needs-info`, `ready-for-agent`, etc.). That file is for label vocabulary, not for `.backlog/` item workflow.
-
-## Wayfinder (`.scratch/` only)
-
-Wayfinder tickets under `.scratch/<effort>/issues/` use **`Status:`** on their own vocabulary. They are **not** required to use the duck table above. See [issue-tracker.md](./issue-tracker.md) and the wayfinder subsection in [triage-labels.md](./triage-labels.md).
-
-| Status in `.scratch/` | Typical meaning |
-| --------------------- | ---------------- |
-| `needs-grilling` | Grill session needed before the ticket is ready for an agent or merge |
-| `claimed` | Owner is actively working the ticket |
-| `resolved` | Done; answer under `## Answer` |
-| `partially resolved` | Legacy — prefer `needs-grilling` when deferred grill work remains |
-
-When **epic-duck** and **wayfinder** both appear in one conversation, use the tracker named by the skill or path the user gave — do not assume statuses are interchangeable without mapping.

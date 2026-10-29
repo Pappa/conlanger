@@ -42,7 +42,7 @@ The project uses **duck-skills** (`epic-duck`, `rubber-duck`, and related skills
 | [0002-task-seed-wayfinder-epic-duck-features.md](0002-task-seed-wayfinder-epic-duck-features.md) | Add three minimal feature plans on `.backlog/` for the wayfinder-managed efforts. | resolved |
 | [0008-task-execute-wayfinder-rule-index-migration.md](0008-task-execute-wayfinder-rule-index-migration.md) | First migration pass: merged **Decisions so far** and open tasks on **0003**. | resolved |
 | [0031-task-execute-wayfinder-spike-migration.md](0031-task-execute-wayfinder-spike-migration.md) | Migrate 13 spike findings and items per **0007**. | resolved |
-| [0046-task-align-agent-docs-post-cutover.md](0046-task-align-agent-docs-post-cutover.md) | Agent entrypaths per 0045; retire issue-tracker; delete implement-closure and doc-migration tests. | needs-detail |
+| [0046-task-align-agent-docs-post-cutover.md](0046-task-align-agent-docs-post-cutover.md) | Agent entrypaths per 0045; retire issue-tracker; delete implement-closure and doc-migration tests. | resolved |
 | [0047-task-remove-scratch-links-from-living-tree.md](0047-task-remove-scratch-links-from-living-tree.md) | Strip or retarget all `.scratch/` paths in living tree. | needs-detail |
 | [0048-task-delete-scratch-directory.md](0048-task-delete-scratch-directory.md) | Remove `.scratch/` after 0046 and 0047. | needs-detail |
 

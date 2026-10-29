@@ -24,7 +24,7 @@ uv run pytest <paths> --no-cov
 uvx ruff check src tests --fix && uvx ruff format src tests
 ```
 
-Run `uv run check` before push even when hooks are not installed. See [implement-closure.md](agents/implement-closure.md) when closing `.scratch/` tickets.
+Run `uv run check` before push even when hooks are not installed. When closing a `.backlog/` item, follow [backlog.md](agents/backlog.md) § Closing a backlog item.
 
 # ASCA sound change rule validation
 

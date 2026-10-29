@@ -12,7 +12,7 @@ Where should **agents** read vocabulary, pipeline stages, and ticket closure exp
 
 Read order: **[GLOSSARY.md](../../GLOSSARY.md)** → **[docs/SYSTEM.md](../../docs/SYSTEM.md)** (parse → compile → validate) → relevant **ADRs** → this **backlog plan** and linked **decision** tickets (not legacy map Notes as glossary).
 
-Close implementation with **`Status: resolved`**, **`## Answer`** where applicable, **`uv run check`**, and [implement-closure.md](../../docs/agents/implement-closure.md).
+Close implementation with **`Status: resolved`**, **`## Answer`** where applicable, **`uv run check`**, and [backlog.md](../../docs/agents/backlog.md) § Closing a backlog item.
 
 ## Comments
 

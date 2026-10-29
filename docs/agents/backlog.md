@@ -2,8 +2,6 @@
 
 Plans, decisions, tasks, and spikes for **duck-skills** (`epic-duck`, `rubber-duck`, `spike-duck`, etc.) live under `.backlog/`.
 
-**Separate tracker:** rule-index and **wayfinder** work stays in `.scratch/` — see [issue-tracker.md](./issue-tracker.md). Do not move or merge those trees unless the team explicitly decides to.
-
 ## Conventions
 
 ### Index
@@ -81,6 +79,14 @@ See the **setup-duck-skills** seed (`backlog-local.md`) for full templates: deci
 ### Thread
 
 Append discussion under `## Comments` on decisions, tasks, and spikes.
+
+## Closing a backlog item
+
+When finishing **`Type: task`**, **`Type: spike`**, or resolving a child under a feature plan:
+
+1. Set **`Status: resolved`** on the item file (decisions: record **`## Answer`** when applicable).
+2. Update the parent plan **Decisions** / **Tasks** / **Spikes** table and **`features.md`** when the plan’s status changes.
+3. Run **`uv run check`** on a clean tree before push ([DEV.md](../DEV.md)).
 
 ## When a skill says "publish to the backlog"
 

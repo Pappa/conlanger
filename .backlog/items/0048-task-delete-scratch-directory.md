@@ -2,7 +2,7 @@ Type: epic-duck:task
 Status: needs-detail
 Plan: [0001-plan-migrate-project-to-duck-skills.md](0001-plan-migrate-project-to-duck-skills.md)
 Overview: Remove `.scratch/` from the repo after 0046 and 0047; tidy pyproject excludes.
-Blocked by: 0046, 0047
+Blocked by: 0047
 
 ## Question
 

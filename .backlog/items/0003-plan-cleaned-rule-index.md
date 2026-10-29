@@ -26,11 +26,11 @@ A **cleaned rule index** (applier-neutral YAML source of truth) derived from **I
 - [IndexRule / IndexContext model](0026-decision-indexrule-indexcontext-model.md): typed parse lifecycle ([ADR-0016](../../docs/adr/0016-parse-pipeline-order-and-raw-semantics.md), [ADR-0017](../../docs/adr/0017-structured-env-exception-indexcontext.md)).
 - [Parse / compile package hygiene](0027-decision-parse-compile-package-hygiene.md): import seams; compile vs validate split; `asca_rules.yml`; position.in.
 - [Inventory ok semantics](0028-decision-inventory-ok-semantics.md): `FAILED` / `OK` / `SKIPPED`; validate all targets.
-- [Agent documentation](0029-decision-agent-documentation.md): GLOSSARY + SYSTEM + implement-closure; plan indexes decisions.
+- [Agent documentation](0029-decision-agent-documentation.md): GLOSSARY + SYSTEM + backlog closure checklist; plan indexes decisions.
 
 ## Not yet specified
 
-- Cutover policy for `.scratch/rule-index/` vs `.backlog/` for **new** tickets after migration.
+- _(empty — new rule-index work is **`.backlog/` only** per [0045](../items/0045-decision-duck-skills-cutover-agent-docs-and-scratch.md).)_
 
 ## Out of scope
 
