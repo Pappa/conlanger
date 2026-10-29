@@ -1,5 +1,5 @@
 Type: task
-Status: ready
+Status: resolved
 Plan: [0001-plan-migrate-project-to-duck-skills.md](0001-plan-migrate-project-to-duck-skills.md)
 Overview: Retype open wayfinder grill backlog items as epic-duck decisions on plan 0003.
 Blocked by:
@@ -55,12 +55,17 @@ Optional hygiene (same PR/session if small):
 
 ## Acceptance Criteria
 
-- [ ] **0009**, **0011**, **0013**, and **0014** exist as **`Type: epic-duck:decision`** files named **`<NNNN>-decision-*.md`** with **`Plan:`** **0003** and a **`## Question`** section; no **`Type: task`** grill duplicates remain under those numbers.
-- [ ] Plan **0003** **Decisions** table lists all four; **Tasks** table lists only implementation follow-ons (**0010**, **0012**, etc.) plus any non-grill tasks.
-- [ ] **0010** **`Blocked by:`** still blocks on **0009**; **0012** on **0011** (by number or correct renamed path).
-- [ ] Plan **0003** indexed outcome count stays **≤25** per **0006** (re-table only; no new scope).
-- [ ] Plan **0001** **Tasks** row for **0030** shows **`Status: resolved`** when complete.
+- [x] **0009**, **0011**, **0013**, and **0014** exist as **`Type: epic-duck:decision`** files named **`<NNNN>-decision-*.md`** with **`Plan:`** **0003** and a **`## Question`** section; no **`Type: task`** grill duplicates remain under those numbers.
+- [x] Plan **0003** **Decisions** table lists all four; **Tasks** table lists only implementation follow-ons (**0010**, **0012**, etc.) plus any non-grill tasks.
+- [x] **0010** **`Blocked by:`** still blocks on **0009**; **0012** on **0011** (by number or correct renamed path).
+- [x] Plan **0003** indexed outcome count stays **≤25** per **0006** (re-table only; no new scope).
+- [x] Plan **0001** **Tasks** row for **0030** shows **`Status: resolved`** when complete.
+
+## Answer
+
+Retyped **0009**, **0011**, **0013**, **0014** to **`epic-duck:decision`** on plan **0003** (2026-10-29). Plan **0003** **Tasks** now holds **0010** / **0012** plus resolved **0008**; **Decisions** table lists four open frontier decisions. **0006** Comments amended.
 
 ## Comments
 
 - 2026-10-29: Filed after epic-duck review — grill frontier mis-typed during **0008** execution.
+- 2026-10-29: Executed via dev-duck.

@@ -10,7 +10,7 @@ The `incomplete_matrix` cluster includes insertion rules blocked until grouping-
 
 ## Description
 
-Implement the correction pass per resolved policy on [0011](0011-task-grill-asca-grouping-insertion.md).
+Implement the correction pass per resolved policy on [0011](0011-decision-asca-grouping-insertion.md).
 
 ## Acceptance Criteria
 

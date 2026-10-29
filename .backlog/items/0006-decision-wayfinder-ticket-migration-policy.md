@@ -71,3 +71,4 @@ Apply the same exclusions (Q2, Q3) and merge-by-stage where multiple `.scratch` 
 
 - 2026-10-29: Owner input when filing — prefer **fewer** backlog tickets via **merge + heavy summarization**; **exclude** out-of-scope, wontfix, and superseded/overwritten work; **spikes** only when still valuable; rule-index map migration target **~20–25** items from **~174** wayfinder issues.
 - 2026-10-29: Resolved — Q2 **A**, Q3 **B**, Q1 **pipeline stage (Approach 2)**, Q5 **yes** (cap 25, split 12–16 / 6–9 / 0 spikes pending **0007**), Q4 → **0007**.
+- 2026-10-29: Open frontier **grilling** wayfinder tickets migrate as **`Type: epic-duck:decision`** on plan **0003**, not rubber-duck **`Type: task`** (see **0030**).
