@@ -8,25 +8,25 @@ A **cleaned rule index** (applier-neutral YAML source of truth) derived from **I
 ## Notes
 
 - **Agent entry:** [GLOSSARY.md](../../GLOSSARY.md), [docs/SYSTEM.md](../../docs/SYSTEM.md), ADRs under `docs/adr/` (especially parse → compile → validate).
-- **Migration policy (plan 0001):** [0006](../items/0006-decision-wayfinder-ticket-migration-policy.md) — merged summaries live on this plan and child tasks only; **Decisions so far** entries are self-contained (no links into the legacy wayfinder tree). **≤25** indexed outcomes; spikes deferred to [0007](../items/0007-decision-wayfinder-spike-migration-policy.md).
+- **Migration policy (plan 0001):** [0006](../items/0006-decision-wayfinder-ticket-migration-policy.md) — closed decisions are **`epic-duck:decision`** tickets with **`## Answer`**; this plan **Decisions so far** indexes them (one line + link). **≤25** indexed outcomes; spikes deferred to [0007](../items/0007-decision-wayfinder-spike-migration-policy.md).
 
 ## Decisions so far
 
-- **Valid ASCA rule strings:** A rule string is `input > output [/env] [|exception]` with non-empty input/output (including `*`, `∅`, metathesis); env uses a single `_` focus and `#` only env-peripheral. Prefer ASCA `ParsedRules::try_from` for validation ([docs/system/sound-change-applier.md](../../docs/system/sound-change-applier.md)).
-- **YAML SoT shape:** Top-level `abbreviations` and `sections`; each rule carries a uniform **`stages`** list plus `raw`, `source`, and optional metadata ([ADR-0011](../../docs/adr/0011-index-rule-stages.md)). Index Diachronica HTML is ingest source; cleaned YAML is the working SoT.
-- **Historical fidelity vs validity:** Prefer edits that preserve attested Index meaning; separate **rule status** / hold-outs from compile validation failures; run correction passes by failure cluster ([ADR-0010](../../docs/adr/0010-historical-fidelity-class-first-status.md)).
-- **Abbreviations and class letters:** Normalize feature matrices at ingest; expand DiachronicSeries and class letters at **compile** via `group_mappings`. ASCA `.alias` (`-l`) is for word (de)romanisation only—not a substitute for compile-time class-letter expansion.
-- **Extract-only ingest:** `IndexDiachronicaParser` emits applier-neutral YAML with parse-time surface normalisation (arrows, glosses, chain split, sporadic flags); do not push ASCA-only surface into SoT unless applier-agnostic.
-- **Validation inventory:** Regenerate YAML, run `uv run create_index && uv run validate_rules`; keep per-rule CSV, summary, success/error splits, and ok-flip changelog for correction prioritisation ([docs/system/validate.md](../../docs/system/validate.md)).
-- **Parse-time correction cluster:** Standing recipe: typographic cleanup, chain expansion, gloss/stress/sporadic handling, smart quotes, editorial slashes—applied at parse before compile ([docs/system/index-diachronica-parser.md](../../docs/system/index-diachronica-parser.md)).
-- **Series and section mappings:** Expand correspondence-series indices at parse when section maps exist; retire CSV `series_mappings`; use `parser_config` **section_mappings** and **skip_sections** for heavy/deferred families.
-- **Optional outputs and nested sets:** Support optional stage outputs (alt idx) and parse-time flattening of nested context/I/O sets where fidelity allows; cartesian IO optionals and human-review hold-outs documented when attested forms cannot compile mechanically.
-- **Compile-time segment transforms:** Pipeline applies group mappings, length and ejective normalisation, parenthetical/meta expansion, superscripts, IPA letter mappings, tone matrices, Khoisan click defaults, and related segment fixes at **compile**, not in SoT YAML literals.
-- **Env and prose conditions:** Prose env phrases, double-slash env, parallel `∅` outputs, syllable `#U` tails, and env-bound **`! Host =`** identity exclusions (Family A compile substitution) are handled via structured **IndexContext** where possible ([ADR-0017](../../docs/adr/0017-structured-env-exception-indexcontext.md)).
-- **IndexRule / IndexContext model:** Typed parse lifecycle (`IndexRule`), normalisation passes, and compile resolution from structured env/exception—not ASCA env literals stored in applier-neutral fields ([ADR-0016](../../docs/adr/0016-parse-pipeline-order-and-raw-semantics.md)).
-- **Parse / compile package hygiene (2026):** Enforce ingest vs compile import boundaries; reorder env pipeline; split operator **compile_rules** vs **validate_rules** on compiled YAML; emit monitoring `asca_rules.yml`; compile **position.in** relation projection.
-- **Inventory and ok semantics:** Inventory **`ok`** uses `FAILED` / `OK` / `SKIPPED`; validate all compile targets; optional per-field blame; forked ASCA `validate` wired for compile checks.
-- **Agent documentation:** Domain terms in [GLOSSARY.md](../../GLOSSARY.md); pipeline table in [docs/SYSTEM.md](../../docs/SYSTEM.md); closure via [implement-closure.md](../../docs/agents/implement-closure.md) and `uv run check`—this backlog plan indexes decisions, not legacy map **Notes**.
+- [Valid ASCA rule strings](0015-decision-valid-asca-rule-strings.md): `input > output [/env] [|exception]`; validate via ASCA parse pipeline.
+- [YAML SoT shape](0016-decision-yaml-sot-shape.md): `abbreviations` + `sections`; uniform **`stages`** spine ([ADR-0011](../../docs/adr/0011-index-rule-stages.md)).
+- [Historical fidelity vs validity](0017-decision-historical-fidelity-vs-validity.md): fidelity-first edits; cluster correction passes ([ADR-0010](../../docs/adr/0010-historical-fidelity-class-first-status.md)).
+- [Abbreviations and class letters](0018-decision-abbreviations-and-class-letters.md): features at ingest; **`group_mappings`** at compile—not `.alias` `-l`.
+- [Extract-only ingest](0019-decision-extract-only-ingest.md): applier-neutral YAML from HTML; parse-time surface norm bounds.
+- [Validation inventory](0020-decision-validation-inventory.md): `create_index` + `validate_rules`; CSV splits and ok changelog.
+- [Parse-time correction cluster](0021-decision-parse-time-correction-cluster.md): standing parse correction recipe before compile.
+- [Series and section mappings](0022-decision-series-and-section-mappings.md): parse expansion; **`section_mappings`** / **`skip_sections`** config.
+- [Optional outputs and nested sets](0023-decision-optional-outputs-nested-sets.md): alt idx, flatten nested sets, IO optional hold-outs.
+- [Compile segment transforms](0024-decision-compile-segment-transforms.md): grouping, IPA, tone, clicks, etc. at compile.
+- [Env and prose conditions](0025-decision-env-and-prose-conditions.md): IndexContext-first; Family A `! Host =`; open Family B in **0009–0010**.
+- [IndexRule / IndexContext model](0026-decision-indexrule-indexcontext-model.md): typed parse lifecycle ([ADR-0016](../../docs/adr/0016-parse-pipeline-order-and-raw-semantics.md), [ADR-0017](../../docs/adr/0017-structured-env-exception-indexcontext.md)).
+- [Parse / compile package hygiene](0027-decision-parse-compile-package-hygiene.md): import seams; compile vs validate split; `asca_rules.yml`; position.in.
+- [Inventory ok semantics](0028-decision-inventory-ok-semantics.md): `FAILED` / `OK` / `SKIPPED`; validate all targets.
+- [Agent documentation](0029-decision-agent-documentation.md): GLOSSARY + SYSTEM + implement-closure; plan indexes decisions.
 
 ## Not yet specified
 
@@ -40,7 +40,21 @@ A **cleaned rule index** (applier-neutral YAML source of truth) derived from **I
 
 | Decision | Overview | Status |
 |----------|----------|--------|
-| | | |
+| [0015-decision-valid-asca-rule-strings.md](0015-decision-valid-asca-rule-strings.md) | Valid ASCA rule string shape and validation. | resolved |
+| [0016-decision-yaml-sot-shape.md](0016-decision-yaml-sot-shape.md) | YAML SoT schema and **stages** spine. | resolved |
+| [0017-decision-historical-fidelity-vs-validity.md](0017-decision-historical-fidelity-vs-validity.md) | Fidelity vs validity and correction workflow. | resolved |
+| [0018-decision-abbreviations-and-class-letters.md](0018-decision-abbreviations-and-class-letters.md) | Abbreviations, features, class letters at compile. | resolved |
+| [0019-decision-extract-only-ingest.md](0019-decision-extract-only-ingest.md) | Minimal HTML→YAML ingest bounds. | resolved |
+| [0020-decision-validation-inventory.md](0020-decision-validation-inventory.md) | Full-index inventory and tracking. | resolved |
+| [0021-decision-parse-time-correction-cluster.md](0021-decision-parse-time-correction-cluster.md) | Parse-time correction-pass cluster. | resolved |
+| [0022-decision-series-and-section-mappings.md](0022-decision-series-and-section-mappings.md) | Series and **section_mappings** policy. | resolved |
+| [0023-decision-optional-outputs-nested-sets.md](0023-decision-optional-outputs-nested-sets.md) | Optional outputs and nested sets. | resolved |
+| [0024-decision-compile-segment-transforms.md](0024-decision-compile-segment-transforms.md) | Compile-time segment transforms. | resolved |
+| [0025-decision-env-and-prose-conditions.md](0025-decision-env-and-prose-conditions.md) | Env, prose, identity exceptions (Family A). | resolved |
+| [0026-decision-indexrule-indexcontext-model.md](0026-decision-indexrule-indexcontext-model.md) | IndexRule / IndexContext model. | resolved |
+| [0027-decision-parse-compile-package-hygiene.md](0027-decision-parse-compile-package-hygiene.md) | Package seams and operator split (2026). | resolved |
+| [0028-decision-inventory-ok-semantics.md](0028-decision-inventory-ok-semantics.md) | Inventory **ok** enum and validate targets. | resolved |
+| [0029-decision-agent-documentation.md](0029-decision-agent-documentation.md) | Agent doc entry and closure. | resolved |
 
 ## Tasks
 
