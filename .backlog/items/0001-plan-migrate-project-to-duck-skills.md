@@ -40,6 +40,7 @@ The project uses **duck-skills** (`epic-duck`, `rubber-duck`, and related skills
 |------|----------|--------|
 | [0002-task-seed-wayfinder-epic-duck-features.md](0002-task-seed-wayfinder-epic-duck-features.md) | Add three minimal feature plans on `.backlog/` for the wayfinder-managed efforts. | resolved |
 | [0008-task-execute-wayfinder-rule-index-migration.md](0008-task-execute-wayfinder-rule-index-migration.md) | Rule-index wayfinder → **0003** backlog migration (see **0006**); owned on plan **0003**. | resolved |
+| [0030-task-retype-open-grill-frontier-as-decisions.md](0030-task-retype-open-grill-frontier-as-decisions.md) | Retype open grill items **0009** / **0011** / **0013** / **0014** as **`epic-duck:decision`** on **0003**. | ready |
 
 ## Spikes
 
