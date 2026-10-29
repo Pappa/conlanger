@@ -22,7 +22,7 @@ A **cleaned rule index** (applier-neutral YAML source of truth) derived from **I
 - [Series and section mappings](0022-decision-series-and-section-mappings.md): parse expansion; **`section_mappings`** / **`skip_sections`** config.
 - [Optional outputs and nested sets](0023-decision-optional-outputs-nested-sets.md): alt idx, flatten nested sets, IO optional hold-outs.
 - [Compile segment transforms](0024-decision-compile-segment-transforms.md): grouping, IPA, tone, clicks, etc. at compile.
-- [Env and prose conditions](0025-decision-env-and-prose-conditions.md): IndexContext-first; Family A `! Host =`; open Family B in decision **0009** and task **0010**.
+- [Env and prose conditions](0025-decision-env-and-prose-conditions.md): IndexContext-first; Family A `! Host =`.
 - [IndexRule / IndexContext model](0026-decision-indexrule-indexcontext-model.md): typed parse lifecycle ([ADR-0016](../../docs/adr/0016-parse-pipeline-order-and-raw-semantics.md), [ADR-0017](../../docs/adr/0017-structured-env-exception-indexcontext.md)).
 - [Parse / compile package hygiene](0027-decision-parse-compile-package-hygiene.md): import seams; compile vs validate split; `asca_rules.yml`; position.in.
 - [Inventory ok semantics](0028-decision-inventory-ok-semantics.md): `FAILED` / `OK` / `SKIPPED`; validate all targets.
@@ -55,7 +55,6 @@ A **cleaned rule index** (applier-neutral YAML source of truth) derived from **I
 | [0027-decision-parse-compile-package-hygiene.md](0027-decision-parse-compile-package-hygiene.md) | Package seams and operator split (2026). | resolved |
 | [0028-decision-inventory-ok-semantics.md](0028-decision-inventory-ok-semantics.md) | Inventory **ok** enum and validate targets. | resolved |
 | [0029-decision-agent-documentation.md](0029-decision-agent-documentation.md) | Agent doc entry and closure. | resolved |
-| [0009-decision-index-identity-exception-env-splice.md](0009-decision-index-identity-exception-env-splice.md) | `! Host =` env-slot exception compile policy (Family B). | in-progress |
 | [0011-decision-asca-grouping-insertion.md](0011-decision-asca-grouping-insertion.md) | Grouping letters on insertion rules. | ready |
 | [0013-decision-section-mappings-feature-matrices.md](0013-decision-section-mappings-feature-matrices.md) | **section_mappings** feature matrices and YAML compile. | ready |
 | [0014-decision-composed-chain-path-inventory-policy.md](0014-decision-composed-chain-path-inventory-policy.md) | Composed chain path inventory policy. | ready |
@@ -65,7 +64,6 @@ A **cleaned rule index** (applier-neutral YAML source of truth) derived from **I
 | Task | Overview | Status |
 |------|----------|--------|
 | [0008-task-execute-wayfinder-rule-index-migration.md](0008-task-execute-wayfinder-rule-index-migration.md) | First migration pass: merged **Decisions so far** and open tasks on **0003**. | resolved |
-| [0010-task-index-identity-exception-residuals.md](0010-task-index-identity-exception-residuals.md) | Compile fix for identity exception residuals after **0009**. | ready |
 | [0012-task-correction-pass-asca-grouping-insertion.md](0012-task-correction-pass-asca-grouping-insertion.md) | Correction pass: grouping on insertion rules after **0011**. | needs-detail |
 
 ## Spikes

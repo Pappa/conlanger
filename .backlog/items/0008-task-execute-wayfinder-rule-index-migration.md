@@ -46,6 +46,6 @@ Execute the migration policy in [0006-decision-wayfinder-ticket-migration-policy
 
 ## Answer
 
-Migration executed 2026-10-29: **15** self-contained **Decisions so far** gists on plan **0003**; **6** open-frontier tasks **0009–0014**; **22** total indexed outcomes. Revised same day: removed legacy wayfinder path links from **Decisions so far** and child tasks—decision text lives on the backlog only.
+Migration executed 2026-10-29: **15** self-contained **Decisions so far** gists on plan **0003**; **4** open-frontier tasks **0011–0014**; **22** total indexed outcomes. Revised same day: removed legacy wayfinder path links from **Decisions so far** and child tasks—decision text lives on the backlog only.
 
 ## Comments
