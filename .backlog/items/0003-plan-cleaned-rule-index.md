@@ -8,7 +8,7 @@ A **cleaned rule index** (applier-neutral YAML source of truth) derived from **I
 ## Notes
 
 - **Agent entry:** [GLOSSARY.md](../../GLOSSARY.md), [docs/SYSTEM.md](../../docs/SYSTEM.md), ADRs under `docs/adr/` (especially parse → compile → validate).
-- **Migration policy (plan 0001):** [0006](../items/0006-decision-wayfinder-ticket-migration-policy.md) — closed decisions are **`epic-duck:decision`** tickets with **`## Answer`**; this plan **Decisions so far** indexes them (one line + link). **≤25** indexed outcomes; spikes deferred to [0007](../items/0007-decision-wayfinder-spike-migration-policy.md).
+- **Migration policy (plan 0001):** [0006](../items/0006-decision-wayfinder-ticket-migration-policy.md) — closed decisions are **`epic-duck:decision`** tickets with **`## Answer`**; this plan **Decisions so far** indexes them (one line + link). **≤25** indexed outcomes for decisions + tasks; **`Type: spike`** rows counted separately ([0007](../items/0007-decision-wayfinder-spike-migration-policy.md)). Execute spikes via [0031](../items/0031-task-execute-wayfinder-spike-migration.md).
 
 ## Decisions so far
 
@@ -64,9 +64,10 @@ A **cleaned rule index** (applier-neutral YAML source of truth) derived from **I
 | Task | Overview | Status |
 |------|----------|--------|
 | [0012-task-correction-pass-asca-grouping-insertion.md](0012-task-correction-pass-asca-grouping-insertion.md) | Correction pass: grouping on insertion rules after **0011**. | needs-detail |
+| [0031-task-execute-wayfinder-spike-migration.md](0031-task-execute-wayfinder-spike-migration.md) | Migrate 13 curated spike findings per **0007**. | ready |
 
 ## Spikes
 
 | Spike | Overview | Status |
 |-------|----------|--------|
-| | | |
+| | (empty until **0031** executes) | |

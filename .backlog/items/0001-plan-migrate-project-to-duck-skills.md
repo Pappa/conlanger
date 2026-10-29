@@ -15,13 +15,13 @@ The project uses **duck-skills** (`epic-duck`, `rubber-duck`, and related skills
 ## Decisions so far
 
 - [Seed minimal epic-duck features for the three wayfinder efforts](0002-task-seed-wayfinder-epic-duck-features.md): three `epic-duck:plan` rows in `features.md` (cleaned rule index, data processing pipeline, sound-change generative model) with destinations only—no copy of `.scratch/rule-index/map.md` issue rows.
-- [Wayfinder ticket migration policy](0006-decision-wayfinder-ticket-migration-policy.md): merge by **pipeline stage**; exclude `wontfix`/out-of-scope and superseded tickets from `.backlog/`; cap rule-index migration at **≤25** outcomes on **0003**; spikes deferred to [0007](0007-decision-wayfinder-spike-migration-policy.md).
+- [Wayfinder ticket migration policy](0006-decision-wayfinder-ticket-migration-policy.md): merge by **pipeline stage**; exclude `wontfix`/out-of-scope and superseded tickets from `.backlog/`; cap rule-index migration at **≤25** outcomes on **0003** (decisions + tasks); spikes deferred to [0007](0007-decision-wayfinder-spike-migration-policy.md).
+- [Wayfinder spike migration policy](0007-decision-wayfinder-spike-migration-policy.md): **13** curated findings → `.backlog/spike/`; **`Type: spike`** on **0003** counted **separately** from the ≤25 cap; execution [0031](0031-task-execute-wayfinder-spike-migration.md).
 
 ## Not yet specified
 
 - Per-effort policy: dual-write vs cutover from `.scratch/` to `.backlog/` children.
 - Doc updates (`AGENTS.md`, `CONTEXT.md`, agent entrypaths) once migration execution starts on **0003**.
-- Spike copy rules ([0007](0007-decision-wayfinder-spike-migration-policy.md)).
 
 ## Out of scope
 
@@ -32,7 +32,7 @@ The project uses **duck-skills** (`epic-duck`, `rubber-duck`, and related skills
 | Decision | Overview | Status |
 |----------|----------|--------|
 | [0006-decision-wayfinder-ticket-migration-policy.md](0006-decision-wayfinder-ticket-migration-policy.md) | Merge by pipeline stage, exclude dead tickets, cap rule-index at ≤25 outcomes. | resolved |
-| [0007-decision-wayfinder-spike-migration-policy.md](0007-decision-wayfinder-spike-migration-policy.md) | Which wayfinder spikes become `.backlog/` spike items and findings locations. | ready |
+| [0007-decision-wayfinder-spike-migration-policy.md](0007-decision-wayfinder-spike-migration-policy.md) | Curated 13 spike findings; copy md only; spikes cap separate from ≤25. | resolved |
 
 ## Tasks
 
@@ -40,6 +40,7 @@ The project uses **duck-skills** (`epic-duck`, `rubber-duck`, and related skills
 |------|----------|--------|
 | [0002-task-seed-wayfinder-epic-duck-features.md](0002-task-seed-wayfinder-epic-duck-features.md) | Add three minimal feature plans on `.backlog/` for the wayfinder-managed efforts. | resolved |
 | [0008-task-execute-wayfinder-rule-index-migration.md](0008-task-execute-wayfinder-rule-index-migration.md) | First migration pass: merged **Decisions so far** and open tasks on **0003**. | resolved |
+| [0031-task-execute-wayfinder-spike-migration.md](0031-task-execute-wayfinder-spike-migration.md) | Migrate 13 spike findings and items per **0007**. | ready |
 
 ## Spikes
 
