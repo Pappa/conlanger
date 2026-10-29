@@ -24,7 +24,7 @@ The project uses **duck-skills** (`epic-duck`, `rubber-duck`, and related skills
 
 ## Out of scope
 
-- 1:1 import of all legacy wayfinder issues from the rule-index map (use merged summaries per **0006** on plan **0003** instead).
+- _(empty.)_
 
 ## Decisions
 
