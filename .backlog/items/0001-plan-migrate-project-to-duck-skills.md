@@ -18,8 +18,8 @@ The project uses **duck-skills** (`epic-duck`, `rubber-duck`, and related skills
 
 ## Not yet specified
 
-- Per-effort policy: dual-write vs cutover from `.scratch/` to `.backlog/` children.
-- Whether to migrate open wayfinder tickets as `epic-duck:*` planning items or rubber-duck `Type: task` / `Type: spike` implementation items.
+- Per-effort policy: dual-write vs cutover from `.scratch/` to `.backlog/` children (after [wayfinder ticket migration policy](0006-decision-wayfinder-ticket-migration-policy.md) is resolved).
+- Whether surviving migrated work lands as `epic-duck:*` planning items or rubber-duck `Type: task` / `Type: spike` implementation items (may partially follow from decision **0006**).
 - Doc updates (`AGENTS.md`, `CONTEXT.md`, agent entrypaths) once migration phases are decided.
 
 ## Out of scope
@@ -30,7 +30,7 @@ The project uses **duck-skills** (`epic-duck`, `rubber-duck`, and related skills
 
 | Decision | Overview | Status |
 |----------|----------|--------|
-| | | |
+| [0006-decision-wayfinder-ticket-migration-policy.md](0006-decision-wayfinder-ticket-migration-policy.md) | Merge/summarize related tasks, exclude dead tickets, spike filter, rule-index map ~20–25 items. | ready |
 
 ## Tasks
 
