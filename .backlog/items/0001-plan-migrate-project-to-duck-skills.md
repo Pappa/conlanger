@@ -15,22 +15,24 @@ The project uses **duck-skills** (`epic-duck`, `rubber-duck`, and related skills
 ## Decisions so far
 
 - [Seed minimal epic-duck features for the three wayfinder efforts](0002-task-seed-wayfinder-epic-duck-features.md): three `epic-duck:plan` rows in `features.md` (cleaned rule index, data processing pipeline, sound-change generative model) with destinations only—no copy of `.scratch/rule-index/map.md` issue rows.
+- [Wayfinder ticket migration policy](0006-decision-wayfinder-ticket-migration-policy.md): merge by **pipeline stage**; exclude `wontfix`/out-of-scope and superseded tickets from `.backlog/`; cap rule-index migration at **≤25** outcomes on **0003**; spikes deferred to [0007](0007-decision-wayfinder-spike-migration-policy.md).
 
 ## Not yet specified
 
-- Per-effort policy: dual-write vs cutover from `.scratch/` to `.backlog/` children (after [wayfinder ticket migration policy](0006-decision-wayfinder-ticket-migration-policy.md) is resolved).
-- Whether surviving migrated work lands as `epic-duck:*` planning items or rubber-duck `Type: task` / `Type: spike` implementation items (may partially follow from decision **0006**).
-- Doc updates (`AGENTS.md`, `CONTEXT.md`, agent entrypaths) once migration phases are decided.
+- Per-effort policy: dual-write vs cutover from `.scratch/` to `.backlog/` children.
+- Doc updates (`AGENTS.md`, `CONTEXT.md`, agent entrypaths) once migration execution starts on **0003**.
+- Spike copy rules ([0007](0007-decision-wayfinder-spike-migration-policy.md)).
 
 ## Out of scope
 
-- Bulk import of individual tickets from [.scratch/rule-index/map.md](../../.scratch/rule-index/map.md) or other `.scratch/*/issues/` files (handled under each product feature plan later).
+- 1:1 import of all wayfinder issues from [.scratch/rule-index/map.md](../../.scratch/rule-index/map.md) (use merged summaries per **0006** on plan **0003** instead).
 
 ## Decisions
 
 | Decision | Overview | Status |
 |----------|----------|--------|
-| [0006-decision-wayfinder-ticket-migration-policy.md](0006-decision-wayfinder-ticket-migration-policy.md) | Merge/summarize related tasks, exclude dead tickets, spike filter, rule-index map ~20–25 items. | ready |
+| [0006-decision-wayfinder-ticket-migration-policy.md](0006-decision-wayfinder-ticket-migration-policy.md) | Merge by pipeline stage, exclude dead tickets, cap rule-index at ≤25 outcomes. | resolved |
+| [0007-decision-wayfinder-spike-migration-policy.md](0007-decision-wayfinder-spike-migration-policy.md) | Which wayfinder spikes become `.backlog/` spike items and findings locations. | ready |
 
 ## Tasks
 
