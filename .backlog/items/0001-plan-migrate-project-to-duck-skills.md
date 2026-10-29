@@ -39,7 +39,7 @@ The project uses **duck-skills** (`epic-duck`, `rubber-duck`, and related skills
 | Task | Overview | Status |
 |------|----------|--------|
 | [0002-task-seed-wayfinder-epic-duck-features.md](0002-task-seed-wayfinder-epic-duck-features.md) | Add three minimal feature plans on `.backlog/` for the wayfinder-managed efforts. | resolved |
-| [0008-task-execute-wayfinder-rule-index-migration.md](0008-task-execute-wayfinder-rule-index-migration.md) | Rule-index wayfinder → **0003** backlog migration (see **0006**); owned on plan **0003**. | resolved |
+| [0008-task-execute-wayfinder-rule-index-migration.md](0008-task-execute-wayfinder-rule-index-migration.md) | First migration pass: merged **Decisions so far** and open tasks on **0003**. | resolved |
 
 ## Spikes
 
