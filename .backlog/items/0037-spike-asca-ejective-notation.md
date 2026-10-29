@@ -15,5 +15,5 @@ Migrated findings: [0037-asca-ejective-notation.md](../spike/0037-asca-ejective-
 
 ## Source list
 
-- `.scratch/rule-index/issues/20-correction-pass-ejective-marks.md`
-- `.scratch/rule-index/issues/84-correction-pass-breve-vowel-notation.md`
+- `legacy wayfinder rule-index issue 20-correction-pass-ejective-marks.md`
+- `legacy wayfinder rule-index issue 84-correction-pass-breve-vowel-notation.md`

@@ -1,6 +1,6 @@
 # Structured `env` and `exception` as `IndexContext` in the rule index
 
-Rule-level **environment** and **exception** in the applier-neutral index may be represented as structured **`IndexContext`** objects in YAML and in the parse-time **`IndexRule`** model ([ticket 142](../../.scratch/rule-index/issues/142-implement-indexrule-pydantic-and-yaml-schema.md)), not only as opaque Index-shaped strings.
+Rule-level **environment** and **exception** in the applier-neutral index may be represented as structured **`IndexContext`** objects in YAML and in the parse-time **`IndexRule`** model (ticket 142), not only as opaque Index-shaped strings.
 
 Each of `env` and `exception` is either **absent** or an **`IndexContext`**:
 
@@ -12,7 +12,7 @@ Each of `env` and `exception` is either **absent** or an **`IndexContext`**:
 
 Inclusive vs exclusive semantics for position and dialect come from **whether the object is on `env` or `exception`**, not from extra flags on `IndexContext`.
 
-**Compile (option A from grill 139):** YAML stays structured; at **compile** (or a dedicated resolver when constructing `SoundChangeRule`) `position`, `dialect`, and `context` project to applier env/exception **strings** ([ticket 144](../../.scratch/rule-index/issues/144-implement-indexcontext-compile-resolution.md)). Neighbour templates (e.g. `C_, _C`) are not the only YAML representation.
+**Compile (option A from grill 139):** YAML stays structured; at **compile** (or a dedicated resolver when constructing `SoundChangeRule`) `position`, `dialect`, and `context` project to applier env/exception **strings** (ticket 144). Neighbour templates (e.g. `C_, _C`) are not the only YAML representation.
 
 Illustrative YAML:
 
@@ -34,7 +34,7 @@ env:
     - gascon
 ```
 
-Supersedes paused [ticket 122](../../.scratch/rule-index/issues/122-grill-proximity-conditions-yaml.md) top-level `position` map plus opaque env strings for schema shape. Supersedes rule-level `applicability` from [ticket 123](../../.scratch/rule-index/issues/123-grill-applicability-dialect-sporadic-conditions-yaml.md) for dialect (dialect lives on `IndexContext` only). Corpus inventory lists in those tickets remain input to normalisation and compile work.
+Supersedes paused ticket 122 top-level `position` map plus opaque env strings for schema shape. Supersedes rule-level `applicability` from ticket 123 for dialect (dialect lives on `IndexContext` only). Corpus inventory lists in those tickets remain input to normalisation and compile work.
 
 ## Considered Options
 

@@ -17,4 +17,4 @@ Findings: [research/asca-khoisan-click-representation.md](../spike/asca-khoisan-
 
 ## Source list
 
-- `.scratch/rule-index/issues/138-spike-asca-khoisan-click-representation.md`
+- `legacy wayfinder rule-index issue 138-spike-asca-khoisan-click-representation.md`

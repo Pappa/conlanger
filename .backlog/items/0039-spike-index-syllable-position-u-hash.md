@@ -21,4 +21,4 @@ Findings: [research/index-syllable-position-u-hash.md](../spike/index-syllable-p
 
 ## Source list
 
-- `.scratch/rule-index/issues/58-spike-index-syllable-position-u-hash.md`
+- `legacy wayfinder rule-index issue 58-spike-index-syllable-position-u-hash.md`

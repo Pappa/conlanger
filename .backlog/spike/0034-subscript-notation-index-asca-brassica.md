@@ -274,11 +274,9 @@ Tutorial example (linguistic gloss uses Index-like `V₁`):
 | [`docs/adr/0003-validate-after-applier-compile.md`](../../../docs/adr/0003-validate-after-applier-compile.md) | Post-compile validation |
 | [`docs/adr/0004-series-indices-per-section-maps.md`](../../../docs/adr/0004-series-indices-per-section-maps.md) | Series/collective parse-time; positional/identity out of scope |
 | [`docs/adr/0010-historical-fidelity-class-first-status.md`](../../../docs/adr/0010-historical-fidelity-class-first-status.md) | Fidelity / class-first ladder |
-| [`.scratch/rule-index/issues/26-parse-time-correspondence-series-indices.md`](../issues/26-parse-time-correspondence-series-indices.md) | Parse-time policy for series + collective |
 | [`./0033-positional-slots-and-identity-subscripts.md`](./0033-positional-slots-and-identity-subscripts.md) | ASCA ref probes for slots/identity |
 | [`./0032-asca-rule-validity.md`](./0032-asca-rule-validity.md) | ASCA validity / refs / IPACannotBeRefd |
 | [`./0036-asca-class-letter-mappings.md`](./0036-asca-class-letter-mappings.md) | Class letter ↔ ASCA groupings |
-| [`.scratch/rule-index/series-mappings-coverage-backlog.md`](../series-mappings-coverage-backlog.md) | `Hₓ` out of series CSV |
 | [`src/conlanger/tools/series_mappings.py`](../../../src/conlanger/tools/series_mappings.py) | Token classifiers + collective row synthesis |
 | [`src/conlanger/tools/parsers.py`](../../../src/conlanger/tools/parsers.py) | `<sub>` → Unicode subscripts |
 | [`data/diachronica/index_diachronica.html`](../../../data/diachronica/index_diachronica.html) | SoT examples (Key §5; rule lines cited above) |

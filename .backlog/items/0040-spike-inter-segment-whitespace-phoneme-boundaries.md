@@ -17,4 +17,4 @@ Findings: [research/inter-segment-whitespace-phoneme-boundaries.md](../spike/int
 
 ## Source list
 
-- `.scratch/rule-index/issues/44-spike-inter-segment-whitespace.md`
+- `legacy wayfinder rule-index issue 44-spike-inter-segment-whitespace.md`

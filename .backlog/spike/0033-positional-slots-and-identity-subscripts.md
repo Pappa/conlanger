@@ -250,7 +250,6 @@ Reuse [`series_mappings.py`](../../../src/conlanger/tools/series_mappings.py) cl
 | Glossary (positional, identity, subscript notation) | [`CONTEXT.md`](../../../CONTEXT.md) |
 | ADR-0004 (correspondence vs positional) | [`docs/adr/0004-series-indices-per-section-maps.md`](../../../docs/adr/0004-series-indices-per-section-maps.md) |
 | ADR-0010 (edit ladder) | [`docs/adr/0010-historical-fidelity-class-first-status.md`](../../../docs/adr/0010-historical-fidelity-class-first-status.md) |
-| Ticket 26 (parse-time policy) | [`.scratch/rule-index/issues/26-parse-time-correspondence-series-indices.md`](../issues/26-parse-time-correspondence-series-indices.md) |
 | Token classification | [`src/conlanger/tools/series_mappings.py`](../../../src/conlanger/tools/series_mappings.py) |
 | ASCA validity / refs summary | [`./0032-asca-rule-validity.md`](./0032-asca-rule-validity.md) |
 | ASCA 0.10.2 docs | https://github.com/Girv98/asca-rust/blob/0.10.2/doc/doc.md |

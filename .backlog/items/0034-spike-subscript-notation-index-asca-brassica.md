@@ -15,4 +15,4 @@ Migrated findings: [0034-subscript-notation-index-asca-brassica.md](../spike/003
 
 ## Source list
 
-- `.scratch/rule-index/issues/38-spike-asca-compile-transform-order.md`
+- `legacy wayfinder rule-index issue 38-spike-asca-compile-transform-order.md`

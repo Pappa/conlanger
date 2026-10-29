@@ -15,4 +15,4 @@ Findings: [research/asca-class-letter-mappings.md](../spike/asca-class-letter-ma
 
 ## Source list
 
-- `.scratch/rule-index/issues/09-spike-asca-class-letter-feature-matrices.md`
+- `legacy wayfinder rule-index issue 09-spike-asca-class-letter-feature-matrices.md`

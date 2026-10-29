@@ -27,4 +27,4 @@ Findings: [breve-vowel-notation.md](../spike/breve-vowel-notation.md), [breve-vo
 
 ## Source list
 
-- `.scratch/rule-index/issues/80-spike-breve-vowel-notation.md`
+- `legacy wayfinder rule-index issue 80-spike-breve-vowel-notation.md`

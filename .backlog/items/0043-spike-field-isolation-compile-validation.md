@@ -17,4 +17,4 @@ Findings: [research/field-isolation-compile-validation.md](../spike/field-isolat
 
 ## Source list
 
-- `.scratch/rule-index/issues/35-spike-field-isolation-compile-validation.md`
+- `legacy wayfinder rule-index issue 35-spike-field-isolation-compile-validation.md`

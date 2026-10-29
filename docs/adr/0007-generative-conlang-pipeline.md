@@ -16,4 +16,4 @@ Sound-change ingestion and appliers (ADRs 0001–0006) implement the evolution s
 
 - Specs and wayfinder maps should orient to inventory → lexicon → sound-change evolution → outputs.
 - Do not treat `01_01_prepare_phoible_data.ipynb` / `01_02_prepare_wals_data.ipynb` as the long-term data platform.
-- See `.scratch/data-processing-pipeline/issues/01-automate-phoible-wals-prep.md` for the follow-up build.
+- See `legacy wayfinder data-pipeline issue 01-automate-phoible-wals-prep.md` for the follow-up build.

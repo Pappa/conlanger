@@ -33,6 +33,6 @@ Every entry includes `rule_id` and `source` (`file:line` provenance).
 | Sporadic compile skip | `status: compile_skipped`, `rule: …` | Compiler policy skip |
 | Compile failure | `compile_error: <message>` | No `rule` / `steps` / `alternatives` |
 
-On successful rows, exactly one of `rule`, `alternatives`, or `steps` is present. Inventory CSVs hold pass/fail — not `valid` flags on this file ([ticket 160/161](../../.scratch/rule-index/issues/160-grill-split-compile-rules-and-compiled-yaml-pipeline.md)).
+On successful rows, exactly one of `rule`, `alternatives`, or `steps` is present. Inventory CSVs hold pass/fail — not `valid` flags on this file (ticket 160/161).
 
 `validate_rules` validates each recorded ASCA line; list position supplies `step_idx` / `alt_idx` where needed.

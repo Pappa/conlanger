@@ -15,8 +15,8 @@ From asca-rust primary docs, what makes a rule string valid for input/output/env
 
 **Findings:** [0032-asca-rule-validity.md](../spike/0032-asca-rule-validity.md).
 
-**Context pointer (for parent wayfinder / later tickets):** Use that file’s per-field checklists, §5 pipeline tiers, and §6 ID failure patterns when inventoring/fixing Index Diachronica–derived rules and when implementing [Create an ASCA validator for DiachronicSeries](08-asca-validator.md).
+**Context pointer:** Use that file’s per-field checklists, §5 pipeline tiers, and §6 ID failure patterns when inventoring/fixing Index Diachronica–derived rules.
 
 ## Source list
 
-- `.scratch/rule-index/issues/01-valid-asca-rule-string.md`
+- `legacy wayfinder rule-index issue 01-valid-asca-rule-string.md`

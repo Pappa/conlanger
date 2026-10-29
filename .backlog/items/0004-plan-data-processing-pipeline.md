@@ -7,10 +7,8 @@ Replace the temporary manual notebook data-preparation flow for PHOIBLE and WALS
 
 ## Notes
 
-- **Wayfinder seed (authoritative until migrated):** [.scratch/data-processing-pipeline/issues/01-automate-phoible-wals-prep.md](../../.scratch/data-processing-pipeline/issues/01-automate-phoible-wals-prep.md).
 - Today: one dialect phoneme inventory per language from PHOIBLE; WALS morphology/grammar parameters prepared similarly (see [docs/CONLANGER.md](../../docs/CONLANGER.md)).
 - ADR-0007 excludes today’s notebook prep from architecture; this effort brings that work into a real pipeline.
-- No wayfinder map for this feature — only the seed issue under `.scratch/data-processing-pipeline/`.
 
 ## Decisions so far
 

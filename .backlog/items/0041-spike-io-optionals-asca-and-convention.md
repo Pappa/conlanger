@@ -22,4 +22,4 @@ Findings: [research/io-optionals-asca-and-convention.md](../spike/io-optionals-a
 
 ## Source list
 
-- `.scratch/rule-index/issues/100-spike-io-optionals-asca-and-convention.md`
+- `legacy wayfinder rule-index issue 100-spike-io-optionals-asca-and-convention.md`

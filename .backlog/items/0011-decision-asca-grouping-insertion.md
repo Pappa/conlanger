@@ -10,6 +10,6 @@ Insertion rules (`∅ → …`) with grouping letters or bare matrices on output
 
 Lock applier-neutral representation and compile behavior for ASCA grouping on insertions before any correction pass. Distinguish env-driven failures from output-class failures using documented contrast examples. Unblocks [0012](0012-task-correction-pass-asca-grouping-insertion.md).
 
-Wayfinder source: `.scratch/rule-index/issues/125-grill-asca-grouping-insertion.md`.
+Wayfinder source: `legacy wayfinder rule-index issue 125-grill-asca-grouping-insertion.md`.
 
 ## Answer

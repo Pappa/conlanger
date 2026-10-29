@@ -15,5 +15,5 @@ Migrated findings: [0033-positional-slots-and-identity-subscripts.md](../spike/0
 
 ## Source list
 
-- `.scratch/rule-index/issues/38-spike-asca-compile-transform-order.md`
-- `.scratch/rule-index/issues/40-correction-pass-positional-identity-subscripts.md`
+- `legacy wayfinder rule-index issue 38-spike-asca-compile-transform-order.md`
+- `legacy wayfinder rule-index issue 40-correction-pass-positional-identity-subscripts.md`

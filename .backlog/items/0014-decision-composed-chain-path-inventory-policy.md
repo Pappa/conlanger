@@ -10,6 +10,6 @@ Multi-stage rules fail inventory when no composed chain path matches: each stepâ
 
 Decide inventory policy: strict per-step equality vs allowed merged sets, and whether fixes belong in code, SoT edits, or documented hold-outs (`status: skipped` / comments per historical-fidelity policy).
 
-Wayfinder source: `.scratch/rule-index/issues/170-grill-composed-chain-path-inventory-policy.md`.
+Wayfinder source: `legacy wayfinder rule-index issue 170-grill-composed-chain-path-inventory-policy.md`.
 
 ## Answer

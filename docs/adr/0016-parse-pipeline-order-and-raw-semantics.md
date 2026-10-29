@@ -9,9 +9,9 @@ Per-rule parse applies overlays to a **working copy** of the extracted Index lin
 3. **Section mapping** (`parser_config.yml` `section_mappings`, ancestry merge).
 4. Quoted-prose short-circuit, then first-`;` comment partition, symbol normalisation, structural split, and class-first field transforms (detail in [index-diachronica-parser](../system/index-diachronica-parser.md)).
 
-Structured **`IndexContext.position`** extraction ([ticket 143](../../.scratch/rule-index/issues/143-implement-index-rule-normalisation-passes.md)) runs **after** structural split, not on the whole working line.
+Structured **`IndexContext.position`** extraction (ticket 143) runs **after** structural split, not on the whole working line.
 
-Grill and audit: [ticket 139](../../.scratch/rule-index/issues/139-grill-parse-indexrule-model-and-surface-normalization.md).
+Grill and audit: ticket 139.
 
 ## Considered Options
 

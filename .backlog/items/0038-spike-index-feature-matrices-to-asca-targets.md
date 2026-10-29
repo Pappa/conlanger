@@ -19,4 +19,4 @@ Findings: [research/index-feature-matrices-to-asca-targets.md](../spike/index-fe
 
 ## Source list
 
-- `.scratch/rule-index/issues/29-spike-index-feature-matrices-to-asca-targets.md`
+- `legacy wayfinder rule-index issue 29-spike-index-feature-matrices-to-asca-targets.md`

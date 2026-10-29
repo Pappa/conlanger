@@ -19,4 +19,4 @@ Findings: [research/asca-native-per-field-validation.md](../spike/asca-native-pe
 
 ## Source list
 
-- `.scratch/rule-index/issues/86-spike-asca-native-per-field-validation.md`
+- `legacy wayfinder rule-index issue 86-spike-asca-native-per-field-validation.md`
