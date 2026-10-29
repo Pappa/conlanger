@@ -1,10 +1,11 @@
-# Domain Docs
+# Domain docs
 
-How the engineering skills should consume this repo's domain documentation when exploring the codebase.
+How planning and engineering skills consume domain documentation in this repo.
 
 ## Before exploring, read these
 
-- **`GLOSSARY.md`** at the repo root (domain vocabulary), and
+- **`GLOSSARY.md`** at the repo root (domain vocabulary), or
+- **`GLOSSARY-MAP.md`** when present — follow it to the relevant per-context `GLOSSARY.md` files.
 - **`CONTEXT.md`** at the repo root (project overview and doc map), or
 - **`CONTEXT-MAP.md`** at the repo root if it exists — it points at one `CONTEXT.md` per context. Read each one relevant to the topic.
 - **`docs/SYSTEM.md`** — pipeline stages, current implementation locations, and target artifacts.
@@ -46,7 +47,7 @@ Multi-context repo (presence of `CONTEXT-MAP.md` at the root):
 
 When your output names a domain concept (in an issue title, a refactor proposal, a hypothesis, a test name), use the term as defined in `GLOSSARY.md`. Don't drift to synonyms the glossary explicitly avoids.
 
-If the concept you need isn't in the glossary yet, that's a signal — either you're inventing language the project doesn't use (reconsider) or there's a real gap (note it for `/domain-modeling`).
+If the concept you need isn't in the glossary yet, that's a signal — either you're inventing language the project doesn't use (reconsider) or there's a real gap (note it for **architect-duck** or `/domain-modeling`).
 
 ## Flag ADR conflicts
 

@@ -1,12 +1,16 @@
 ## Agent skills
 
-### Issue tracker
+### Backlog
 
-Issues live as markdown files under `.scratch/<feature>/`. See `docs/agents/issue-tracker.md`. When closing a ticket, follow [docs/agents/implement-closure.md](docs/agents/implement-closure.md).
+Duck-skills planning and implementation items live under **`.backlog/`**. Rule-index and wayfinder work stays in **`.scratch/`** (unchanged). See `docs/agents/backlog.md`.
 
-### Triage labels
+### Ticket status
 
-Default vocabulary: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
+**`.backlog/`** items use duck **`Status:`** strings (`needs-triage` through `out-of-scope`). Wayfinder **`.scratch/`** tickets and Matt Pocock triage roles are documented separately. See `docs/agents/ticket-statuses.md` and `docs/agents/triage-labels.md`.
+
+### Issue tracker (`.scratch/` / wayfinder)
+
+Issues for rule-index and wayfinder live as markdown under `.scratch/<feature>/`. See `docs/agents/issue-tracker.md`. When closing a ticket, follow [docs/agents/implement-closure.md](docs/agents/implement-closure.md).
 
 ### Domain docs
 
