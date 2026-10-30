@@ -2,7 +2,7 @@ Type: spike
 Status: resolved
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Index class letters → ASCA group_mappings.
-Result: [0036-asca-class-letter-mappings.md](../spike/0036-asca-class-letter-mappings.md)
+Result: [0036-asca-class-letter-mappings.md](../spikes/0036-asca-class-letter-mappings.md)
 Blocked by:
 
 ## Question
@@ -11,7 +11,7 @@ For Index class letters whose meaning diverges from ASCA inbuilt groupings (e.g.
 
 ## Answer
 
-Findings: [research/asca-class-letter-mappings.md](../spike/asca-class-letter-mappings.md)
+Findings: [research/asca-class-letter-mappings.md](../spikes/asca-class-letter-mappings.md)
 
 ## Source list
 

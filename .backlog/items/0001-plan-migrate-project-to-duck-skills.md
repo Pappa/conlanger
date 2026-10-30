@@ -15,7 +15,7 @@ The project uses **duck-skills** (`epic-duck`, `rubber-duck`, and related skills
 
 - [Seed minimal epic-duck features for the three wayfinder efforts](0002-task-seed-wayfinder-epic-duck-features.md): three `epic-duck:plan` rows in `features.md` (cleaned rule index, data processing pipeline, sound-change generative model) with destinations only—no copy of the legacy rule-index map issue rows.
 - [Wayfinder ticket migration policy](0006-decision-wayfinder-ticket-migration-policy.md): merge by **pipeline stage**; exclude `wontfix`/out-of-scope and superseded tickets from `.backlog/`; cap rule-index migration at **≤25** outcomes on **0003** (decisions + tasks); spikes deferred to [0007](0007-decision-wayfinder-spike-migration-policy.md).
-- [Wayfinder spike migration policy](0007-decision-wayfinder-spike-migration-policy.md): **13** curated findings → `.backlog/spike/`; **`Type: spike`** on **0003** counted **separately** from the ≤25 cap; execution [0031](0031-task-execute-wayfinder-spike-migration.md).
+- [Wayfinder spike migration policy](0007-decision-wayfinder-spike-migration-policy.md): **13** curated findings → `.backlog/spikes/`; **`Type: spike`** on **0003** counted **separately** from the ≤25 cap; execution [0031](0031-task-execute-wayfinder-spike-migration.md).
 - [Duck-skills cutover and legacy tree retirement](0045-decision-duck-skills-cutover-agent-docs-and-scratch.md): **`.backlog/` only** for new work; legacy wayfinder tree deleted; agent docs per `setup-duck-skills`.
 
 ## Not yet specified

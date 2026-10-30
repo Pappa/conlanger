@@ -2,7 +2,7 @@ Type: spike
 Status: resolved
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Inter-segment whitespace and phoneme boundaries (ASCA/Brassica).
-Result: [0040-inter-segment-whitespace-phoneme-boundaries.md](../spike/0040-inter-segment-whitespace-phoneme-boundaries.md)
+Result: [0040-inter-segment-whitespace-phoneme-boundaries.md](../spikes/0040-inter-segment-whitespace-phoneme-boundaries.md)
 Blocked by:
 
 ## Question
@@ -13,7 +13,7 @@ How should Index Diachronica rule fields gain **inter-segment whitespace** so th
 
 **Compile-only for Brassica inter-segment spaces; keep Index-shaped SoT.** ASCA 0.10.2 does **not** require space-separated phonemes (IPA trie + optional whitespace); Brassica does. Index I/O spaces mostly mean **parallel condensed parts**, not phoneme boundaries. Digraph problem for ASCA is **ties** (`t͡ʃ`), not spaces.
 
-Findings: [research/inter-segment-whitespace-phoneme-boundaries.md](../spike/inter-segment-whitespace-phoneme-boundaries.md) · examples: [research/inter-segment-whitespace-examples.csv](../spike/inter-segment-whitespace-examples.csv).
+Findings: [research/inter-segment-whitespace-phoneme-boundaries.md](../spikes/inter-segment-whitespace-phoneme-boundaries.md) · examples: [research/inter-segment-whitespace-examples.csv](../spikes/inter-segment-whitespace-examples.csv).
 
 ## Source list
 

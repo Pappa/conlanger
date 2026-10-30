@@ -15,7 +15,3 @@ Every **`.backlog/`** item (plans, decisions, tasks, spike items) uses one workf
 When a skill says **“set ready”**, set **`Status: ready`** after requirements pass **amigo-duck** where that gate applies.
 
 Edit this table only when the duck workflow model changes (record rationale in `docs/adr/`).
-
-## Matt Pocock triage roles (GitHub / generic skills)
-
-Some upstream skills speak in triage **roles** rather than these `Status:` strings. Map roles using [triage-labels.md](./triage-labels.md) (`needs-info`, `ready-for-agent`, etc.). That file is for label vocabulary, not for `.backlog/` item workflow.

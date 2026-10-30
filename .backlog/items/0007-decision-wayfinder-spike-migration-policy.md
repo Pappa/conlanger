@@ -8,7 +8,7 @@ Blocked by:
 
 When migrating wayfinder **spike** tickets from the legacy wayfinder tree into duck-skills, which spikes get a `.backlog/` **`Type: spike`** (or linked findings), and where do findings files live?
 
-Define **“still valuable”** (feeds open backlog work, documents constraints not captured in ADR/docs/GLOSSARY, etc.), whether to copy findings to `.backlog/spike/` or link legacy wayfinder research paths only, and how this applies to plan **0003** (~18 legacy spike files under `legacy wayfinder rule-index/`).
+Define **“still valuable”** (feeds open backlog work, documents constraints not captured in ADR/docs/GLOSSARY, etc.), whether to copy findings to `.backlog/spikes/` or link legacy wayfinder research paths only, and how this applies to plan **0003** (~18 legacy spike files under `legacy wayfinder rule-index/`).
 
 Deferred from [wayfinder ticket migration policy](0006-decision-wayfinder-ticket-migration-policy.md) item 4.
 
@@ -42,15 +42,15 @@ Use the **curated-set** rule above for rule-index. For other `legacy wayfinder` 
 
 ### Findings location and artefacts
 
-- **Copy** each migrated findings **`.md`** into [`.backlog/spike/`](../spike/) as `<NNNN>-<slug>.md`, matching the new backlog spike item number ([backlog.md](../../docs/agents/backlog.md)).
+- **Copy** each migrated findings **`.md`** into [`.backlog/spikes/`](../spikes/) as `<NNNN>-<slug>.md`, matching the new backlog spike item number ([backlog.md](../../docs/agents/backlog.md)).
 - **Do not** copy CSVs, scripts, probe directories, or other artefacts; **edit** the copied markdown to remove or rewrite passages that depend on those artefacts (probes, regenerate commands, appendix CSVs).
 - **Do not** update links inside files under the legacy wayfinder tree (the legacy wayfinder tree is retired when plan **0001** completes).
-- **Do** update **living** links in `docs/` and `src/` to point at `.backlog/spike/…`.
+- **Do** update **living** links in `docs/` and `src/` to point at `.backlog/spikes/…`.
 
 ### Spike backlog items
 
 - **`Type: spike`** (rubber-duck), **`Plan:`** [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md), **`Status: resolved`** after migration (historical research).
-- **`Result:`** → migrated file under `.backlog/spike/` ([backlog.md](../../docs/agents/backlog.md)).
+- **`Result:`** → migrated file under `.backlog/spikes/` ([backlog.md](../../docs/agents/backlog.md)).
 - **10 conversions:** reshape wayfinder spike tickets into duck-skills spike item shape (Question / Answer or equivalent summary, **source list** of wayfinder issue paths).
 - **3 retroactive items** (positional, subscript, ejective): **best-effort** bodies summarising question, outcome, and source list — no requirement to recover a lost wayfinder spike file verbatim.
 

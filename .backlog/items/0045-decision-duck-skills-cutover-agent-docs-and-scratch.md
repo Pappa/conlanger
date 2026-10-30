@@ -18,7 +18,7 @@ Plan **0001** can close only after the repo has a single **operational** tracker
 
 4. **Retention** — Keep the legacy wayfinder tree in the working tree as read-only archive, **delete** it from the repo, or keep only selected subtrees (which)?
 5. **Archaeology links** — [0006](0006-decision-wayfinder-ticket-migration-policy.md) allowed merged backlog items to cite the legacy wayfinder tree in **source lists**. After cutover, may living docs and **`.backlog/`** items still link into the legacy wayfinder tree, or must links point only to `.backlog/`, `docs/`, and ADRs?
-6. **Non-ticket assets** — Spike scripts, CSVs, probe fixtures under `legacy wayfinder rule-index research/` (not copied to `.backlog/spike/`): move into `src/`, `tests/`, or `docs/`, drop, or stay only if the legacy wayfinder tree is kept?
+6. **Non-ticket assets** — Spike scripts, CSVs, probe fixtures under `legacy wayfinder rule-index research/` (not copied to `.backlog/spikes/`): move into `src/`, `tests/`, or `docs/`, drop, or stay only if the legacy wayfinder tree is kept?
 
 ### Agent documentation (setup-duck-skills alignment)
 

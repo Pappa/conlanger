@@ -2,7 +2,7 @@ Type: spike
 Status: resolved
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: ASCA representation of Khoisan click segments.
-Result: [0035-asca-khoisan-click-representation.md](../spike/0035-asca-khoisan-click-representation.md)
+Result: [0035-asca-khoisan-click-representation.md](../spikes/0035-asca-khoisan-click-representation.md)
 Blocked by:
 
 ## Question
@@ -13,7 +13,7 @@ How does **ASCA** (fork **0.10.3**, `github.com/Pappa/asca-rust`) represent **cl
 
 ## Answer
 
-Findings: [research/asca-khoisan-click-representation.md](../spike/asca-khoisan-click-representation.md). ASCA requires **inventory click clusters** (default `k` + release) or **`[+click]`**; bare Index glyphs fail `validate`. **136:** compile-time normaliser + manual residuals (§17 `Early-Modern-English-ʊ`, optional I/O, `!!`/`ǂɡ` edge cases).
+Findings: [research/asca-khoisan-click-representation.md](../spikes/asca-khoisan-click-representation.md). ASCA requires **inventory click clusters** (default `k` + release) or **`[+click]`**; bare Index glyphs fail `validate`. **136:** compile-time normaliser + manual residuals (§17 `Early-Modern-English-ʊ`, optional I/O, `!!`/`ǂɡ` edge cases).
 
 ## Source list
 

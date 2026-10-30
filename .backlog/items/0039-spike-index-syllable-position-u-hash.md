@@ -2,7 +2,7 @@ Type: spike
 Status: resolved
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Index `#U` / `U#` syllable position → ASCA env structures.
-Result: [0039-index-syllable-position-u-hash.md](../spike/0039-index-syllable-position-u-hash.md)
+Result: [0039-index-syllable-position-u-hash.md](../spikes/0039-index-syllable-position-u-hash.md)
 Blocked by:
 
 ## Question
@@ -11,7 +11,7 @@ How should Index Diachronica **syllable-position** tokens (`#U` = word-initial s
 
 ## Answer
 
-Findings: [research/index-syllable-position-u-hash.md](../spike/index-syllable-position-u-hash.md). Probes: [research/probes-58/](./research/probes-58/).
+Findings: [research/index-syllable-position-u-hash.md](../spikes/index-syllable-position-u-hash.md). Probes: [research/probes-58/](./research/probes-58/).
 
 - **Partial pass** — faithful ASCA encodings exist for **mechanical** `#U` / `U#` tails using underline structures + env-set exceptions; do **not** ship `// #_%` or naive `U`→`%` on boundary tokens.
 - **Recommended rewrites:** `! in #U` → `// :{#_#, #<.._>}:`; `! in U#` → `// :{#_#, <.._>#}:`; `! #U, U#` → `// :{#_#, #<.._>, <.._>#}:`; positive `in #U` / `in U#` → `/ #<.._>` / `/ <.._>#`. Env-set **member order** matters (`{#_#}` before structure).

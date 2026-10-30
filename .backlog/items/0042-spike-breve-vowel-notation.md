@@ -2,7 +2,7 @@ Type: spike
 Status: resolved
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Index breve vowel notation (`̆`) → ASCA representation.
-Result: [0042-breve-vowel-notation.md](../spike/0042-breve-vowel-notation.md)
+Result: [0042-breve-vowel-notation.md](../spikes/0042-breve-vowel-notation.md)
 Blocked by:
 
 ## Question
@@ -15,7 +15,7 @@ Spawned from sizing after [63 near-miss unknown_character](63-correction-pass-ne
 
 **Resolved 2026-08-19.**
 
-Findings: [breve-vowel-notation.md](../spike/breve-vowel-notation.md), [breve-vowel-notation.csv](../spike/breve-vowel-notation.csv).
+Findings: [breve-vowel-notation.md](../spikes/breve-vowel-notation.md), [breve-vowel-notation.csv](../spikes/breve-vowel-notation.csv).
 
 **ASCA:** Breve glyphs (`j̆`, `ɨ̆`, `ə̆`, `ă`, `æ̆`, `ŭ`, `ŏ`) all reject. `segment:[-long]` and bare-segment stripping validate. `[+short]` rejects. `@{Breve}` is romanisation-only.
 

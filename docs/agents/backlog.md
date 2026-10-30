@@ -23,7 +23,7 @@ All backlog items share one counter under `.backlog/items/`. Next number = one g
 | Planning spike (item) | `.backlog/items/<NNNN>-spike-<slug>.md` | `epic-duck:spike` | epic-duck |
 | Implementation task | `.backlog/items/<NNNN>-task-<slug>.md` | `task` | rubber-duck |
 | Implementation spike (item) | `.backlog/items/<NNNN>-spike-<slug>.md` | `spike` | rubber-duck |
-| Spike (findings) | `.backlog/spike/<NNNN>-<slug>.md` | (none) | spike-duck |
+| Spike (findings) | `.backlog/spikes/<NNNN>-<slug>.md` | (none) | spike-duck |
 
 **Planning** items (`epic-duck:*`) support feature charting and refinement. **Implementation** items (`task`, `spike`) are for development work from **rubber-duck** sessions. Same **NNNN** counter for all rows.
 
@@ -61,11 +61,11 @@ Section order:
 7. **Tasks** — table: **Task**, **Overview**, **Status**
 8. **Spikes** — table: **Spike**, **Overview**, **Status**
 
-Plan, decision, task, and spike item files all live in `.backlog/items/`. Link children from the feature file with same-directory paths, e.g. `[0004-decision-login-flow.md](0004-decision-login-flow.md)`. Link spike results with `[0006-oauth.md](../spike/0006-oauth.md)`.
+Plan, decision, task, and spike item files all live in `.backlog/items/`. Link children from the feature file with same-directory paths, e.g. `[0004-decision-login-flow.md](0004-decision-login-flow.md)`. Link spike results with `[0006-oauth.md](../spikes/0006-oauth.md)`.
 
 ### Decision, task, and spike shapes
 
-See the **setup-duck-skills** seed (`backlog-local.md`) for full templates: decision and planning-task **Question** bodies; deliverable tasks with **Problem Statement**, **Description**, and **Acceptance Criteria** after **amigo-duck**; implementation `Type: task` / `Type: spike` with optional `Plan: (unanchored)`; spike findings under `.backlog/spike/`.
+See the **setup-duck-skills** seed (`backlog-local.md`) for full templates: decision and planning-task **Question** bodies; deliverable tasks with **Problem Statement**, **Description**, and **Acceptance Criteria** after **amigo-duck**; implementation `Type: task` / `Type: spike` with optional `Plan: (unanchored)`; spike findings under `.backlog/spikes/`.
 
 ### Blocking
 
@@ -103,7 +103,7 @@ Used by **epic-duck**. A **feature plan** is the planning artifact; **decisions*
 - **Plan file**: `.backlog/items/<NNNN>-plan-<slug>.md` with `Type: epic-duck:plan`.
 - **Child decision**: `Type: epic-duck:decision`, `Plan:` backlink, `Status:`.
 - **Child task**: `Type: epic-duck:task`, `Plan:` backlink, `Status:`.
-- **Child spike**: `Type: epic-duck:spike`, result under `.backlog/spike/`.
+- **Child spike**: `Type: epic-duck:spike`, result under `.backlog/spikes/`.
 - **Resolve decision**: `## Answer`, `Status: resolved`, one bullet under feature **Decisions so far**, blocker sweep, refresh tables.
 - **Resolve spike**: result file written, spike item `Status: resolved`, update **Spikes** table and **Decisions so far** when appropriate.
 - **Unanchored implementation items**: `Plan: (unanchored)` + `needs-triage` until **epic-duck** sets a feature plan link.

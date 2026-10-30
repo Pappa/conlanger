@@ -81,7 +81,7 @@ Per-field transforms run on `input`, `output`, `env`, and `exception` separately
 | Env/exception merge adjacent / colon-chained matrices | implemented | 10¾ | `normalize_asca_adjacent_feature_matrices` on compiled env/exception after host-bracket colon pass (tickets 124, 133). | **After env/exception `normalize_asca_host_bracket_matrices`, before set wrapping** — merges `][` and `:[a]:[b]` on one host (e.g. class expansion + stress). |
 | Join compiled fields | implemented | render | `input > output / env // exception` into `SoundChangeRule.value`. | Join is render-only; no join-then-rewrite pipeline. |
 
-**Research:** [positional-slots-and-identity-subscripts.md](../../.backlog/spike/0033-positional-slots-and-identity-subscripts.md), [subscript-notation-index-asca-brassica.md](../../.backlog/spike/0034-subscript-notation-index-asca-brassica.md).
+**Research:** [positional-slots-and-identity-subscripts.md](../../.backlog/spikes/0033-positional-slots-and-identity-subscripts.md), [subscript-notation-index-asca-brassica.md](../../.backlog/spikes/0034-subscript-notation-index-asca-brassica.md).
 
 ### Class-letter expansion boundaries
 

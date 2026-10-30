@@ -2,7 +2,7 @@ Type: spike
 Status: resolved
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Index I/O optionals vs ASCA structures and convention.
-Result: [0041-io-optionals-asca-and-convention.md](../spike/0041-io-optionals-asca-and-convention.md)
+Result: [0041-io-optionals-asca-and-convention.md](../spikes/0041-io-optionals-asca-and-convention.md)
 Blocked by:
 
 ## Question
@@ -11,7 +11,7 @@ For Index parentheticals on **input/output** (zero-or-one segments, optional pre
 
 ## Answer
 
-Findings: [research/io-optionals-asca-and-convention.md](../spike/io-optionals-asca-and-convention.md)
+Findings: [research/io-optionals-asca-and-convention.md](../spikes/io-optionals-asca-and-convention.md)
 
 **Headline recommendations (resume grill 71):**
 
