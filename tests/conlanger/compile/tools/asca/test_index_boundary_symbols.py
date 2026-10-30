@@ -17,6 +17,7 @@ from tests.conftest import MINIMAL_GROUP_MAPPINGS
         ("$am_w", "$am_w"),
         ("_%U(%,0)#", "_$U($,0)#"),
         ("%ː", "%ː"),
+        ("", ""),
     ],
 )
 def test_project_index_syllable_stem_symbols(text, expected):

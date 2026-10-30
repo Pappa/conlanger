@@ -21,7 +21,7 @@ from conlanger.appliers.asca import (
     validate_asca,
 )
 from conlanger.compile.models.rules import DiachronicSeries
-from conlanger.ingest import IndexDiachronicaParser
+from conlanger.ingest.parser import IndexDiachronicaParser
 from conlanger.scripts.config_loaders import load_compiler_config, load_parser_config
 from conlanger.utils.parsing import load_html_document
 

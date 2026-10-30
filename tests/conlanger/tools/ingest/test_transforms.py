@@ -7,13 +7,13 @@ from conlanger.ingest.models.index_models import (
 from conlanger.ingest.utils.index_context_position import (
     apply_index_context_position_extraction,
 )
-from conlanger.ingest.utils.transform_fields import normalize_medial_env_field
 from conlanger.ingest.utils.transforms import (
     apply_sporadic_qualifier,
     apply_stress_conditions,
     apply_trailing_glosses,
     normalize_stress_conditions,
 )
+from conlanger.utils.transform_fields import normalize_medial_env_field
 
 
 @pytest.mark.parametrize(

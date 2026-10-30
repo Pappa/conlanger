@@ -13,7 +13,7 @@ from pathlib import Path
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-from conlanger.ingest import IndexDiachronicaParser
+from conlanger.ingest.parser import IndexDiachronicaParser
 from conlanger.scripts.config_loaders import load_parser_config
 from conlanger.scripts.pipeline_defaults import (
     DEFAULT_COMMENT_SUMMARY,

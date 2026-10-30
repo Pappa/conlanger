@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
-from conlanger.ingest.utils.syllable_position import (
+from conlanger.utils.syllable_position import (
     strip_editorial_in_before_syllable_position,
 )
 

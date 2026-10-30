@@ -8,7 +8,7 @@ from conlanger.compile.models.rules import (
     SoundChangeRule,
 )
 from conlanger.compile.tools.asca.structures import join_asca_rule_fields
-from conlanger.ingest.utils.transform_fields import MEDIAL_BOUNDARY_EXCEPTION
+from conlanger.utils.transform_fields import MEDIAL_BOUNDARY_EXCEPTION
 
 
 def test_diachronic_series_does_not_mutate_index_rules(fx_sample_compiler_config):

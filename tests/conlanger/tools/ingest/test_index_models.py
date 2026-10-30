@@ -14,7 +14,7 @@ from conlanger.compile.project_index_context import (
     resolve_rule_env_exception_for_compile,
 )
 from conlanger.ingest.models.index_models import IndexContext, IndexRule
-from conlanger.ingest.utils.transform_fields import MEDIAL_BOUNDARY_EXCEPTION
+from conlanger.utils.transform_fields import MEDIAL_BOUNDARY_EXCEPTION
 
 _SAMPLED_RULES_CSV = (
     Path(__file__).resolve().parents[3] / "fixtures" / "sound_change_rules.csv"

@@ -95,10 +95,12 @@ exclude = [
 ]
 
 [tool.importlinter]
-root_package = "conlanger"
+root_packages = ["conlanger"]
 
 [[tool.importlinter.contracts]]
-name = "Ingest must not import compile"
-type = "forbidden"
-source_modules = ["conlanger.ingest"]
-forbidden_modules = ["conlanger.compile"]
+name = "Conlanger module independence contract"
+type = "independence"
+modules = [
+    "conlanger.ingest",
+    "conlanger.compile",
+]

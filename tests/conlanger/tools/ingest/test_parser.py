@@ -1,14 +1,14 @@
 import pytest
 from lxml import html
 
-from conlanger.ingest import Index, IndexDiachronicaParser, IndexRule
-from conlanger.ingest.models.index_models import IndexContext
+from conlanger.ingest.models.index_models import Index, IndexContext, IndexRule
 from conlanger.ingest.models.mappings import (
     IpaMapping,
     ManualMapping,
     ManualMappingMatch,
     ParserConfig,
 )
+from conlanger.ingest.parser import IndexDiachronicaParser
 from conlanger.scripts.config_loaders import load_parser_config
 
 _FX_SECTION_INDEX = "1.0"

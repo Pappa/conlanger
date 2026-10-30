@@ -8,7 +8,7 @@ Parse-time transforms turn Index Diachronica HTML into an **applier-neutral** ru
 
 **Related:** [ADR-0004](../adr/0004-series-indices-per-section-maps.md) (correspondence-series indices), [GLOSSARY.md](../../GLOSSARY.md).
 
-**Package imports:** `ingest` may import `utils` only (not `compile`); `compile` may import `ingest` and `utils`; shared helpers such as [`bracket_scanner.py`](../src/conlanger/utils/bracket_scanner.py) live under `utils`. Applier-neutral position projection for parse policies: [`index_context_project.py`](../src/conlanger/ingest/utils/index_context_project.py).
+**Package imports:** `ingest` may import `utils` only (not `compile`); shared helpers such as [`bracket_scanner.py`](../src/conlanger/utils/bracket_scanner.py) live under `utils`. Applier-neutral position projection for parse policies: [`index_context_project.py`](../src/conlanger/ingest/utils/index_context_project.py).
 
 ### Feature name mappings (parse vs compile)
 

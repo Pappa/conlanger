@@ -7,7 +7,7 @@ import re
 from conlanger.compile.position_in_projection import (
     env_is_projected_position_in_compile_string,
 )
-from conlanger.ingest.utils.syllable_position import (
+from conlanger.utils.syllable_position import (
     strip_editorial_in_before_syllable_position,
 )
 from conlanger.utils.symbols import project_index_syllable_stem_symbols

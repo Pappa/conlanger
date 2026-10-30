@@ -12,7 +12,7 @@ from conlanger.ingest.models.index_models import (
     IndexContext,
     PositionValue,
 )
-from conlanger.ingest.utils.transform_fields import MEDIAL_BOUNDARY_EXCEPTION
+from conlanger.utils.transform_fields import MEDIAL_BOUNDARY_EXCEPTION
 
 DEFAULT_POSITION_TEMPLATES: dict[str, str] = PositionTemplates().model_dump(
     by_alias=True

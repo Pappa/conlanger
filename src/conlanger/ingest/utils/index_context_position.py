@@ -6,7 +6,7 @@ import re
 from typing import Any
 
 from conlanger.ingest.models.index_models import IndexContext, IndexRule, PositionValue
-from conlanger.ingest.utils.transform_fields import normalize_medial_env_field
+from conlanger.utils.transform_fields import normalize_medial_env_field
 
 _SET_RE = r"\{[^}]+\}"
 _SEGMENT_RE = r"\S+"

@@ -5,10 +5,6 @@ from __future__ import annotations
 from conlanger.ingest.models.index_models import (
     IndexRule,
 )
-from conlanger.ingest.utils.syllable_position import (
-    strip_editorial_in_before_syllable_position,
-)
-from conlanger.ingest.utils.transform_fields import normalize_stress_conditions
 from conlanger.utils.gloss import (
     comment_has_uncertainty_qualifier,
     extract_field_wrapped_quoted_gloss_from_field,
@@ -16,6 +12,10 @@ from conlanger.utils.gloss import (
     extract_uncertainty_qualifier_from_field,
     field_has_uncertainty_qualifier,
 )
+from conlanger.utils.syllable_position import (
+    strip_editorial_in_before_syllable_position,
+)
+from conlanger.utils.transform_fields import normalize_stress_conditions
 
 
 def apply_sporadic_qualifier(rule: IndexRule) -> IndexRule:

@@ -1,7 +1,7 @@
 import pytest
 
-from conlanger.ingest import IndexDiachronicaParser, IndexRule
-from conlanger.ingest.models.index_models import IndexContext
+from conlanger.ingest.models.index_models import IndexContext, IndexRule
+from conlanger.ingest.parser import IndexDiachronicaParser
 from conlanger.ingest.utils.index_context_position import (
     apply_index_context_position_extraction,
     extract_position_from_context,
