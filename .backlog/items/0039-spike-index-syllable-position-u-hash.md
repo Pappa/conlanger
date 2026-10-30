@@ -11,7 +11,7 @@ How should Index Diachronica **syllable-position** tokens (`#U` = word-initial s
 
 ## Answer
 
-Findings: [research/index-syllable-position-u-hash.md](../spikes/index-syllable-position-u-hash.md). Probes: [research/probes-58/](./research/probes-58/).
+Findings: [research/index-syllable-position-u-hash.md](../spikes/index-syllable-position-u-hash.md).
 
 - **Partial pass** — faithful ASCA encodings exist for **mechanical** `#U` / `U#` tails using underline structures + env-set exceptions; do **not** ship `// #_%` or naive `U`→`%` on boundary tokens.
 - **Recommended rewrites:** `! in #U` → `// :{#_#, #<.._>}:`; `! in U#` → `// :{#_#, <.._>#}:`; `! #U, U#` → `// :{#_#, #<.._>, <.._>#}:`; positive `in #U` / `in U#` → `/ #<.._>` / `/ <.._>#`. Env-set **member order** matters (`{#_#}` before structure).

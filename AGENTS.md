@@ -25,6 +25,6 @@ When working on parse, compile, validate, or correction passes:
 
 Package layout: `ingest` (parse), `compile` (applier compile), `utils` (shared) — [index-diachronica-parser.md](docs/system/index-diachronica-parser.md) § Package imports.
 
-**Spikes:** backlog **`Type: spike`** items; findings under `.backlog/spikes/`. Resolve with **`/research`** (upstream name for spike/research).
+**Spikes:** backlog **`Type: spike`** items; findings under `.backlog/spikes/`. Resolve with **`/spike-duck`**.
 
 Local dev (gate, pytest, ruff, ASCA fork): [docs/DEV.md](docs/DEV.md). Review standards: [docs/agents/coding-standards.md](docs/agents/coding-standards.md).
