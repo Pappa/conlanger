@@ -24,7 +24,3 @@ Findings: [breve-vowel-notation.md](../spikes/breve-vowel-notation.md), [breve-v
 **Impact:** 13 rows / 8 sections; **+1** section all-OK if cleared (Scots 17.7.2.1.10 only). Low near-miss leverage.
 
 **Follow-on:** [84 correction pass: breve vowel notation](84-correction-pass-breve-vowel-notation.md).
-
-## Source list
-
-- `legacy wayfinder rule-index issue 80-spike-breve-vowel-notation.md`

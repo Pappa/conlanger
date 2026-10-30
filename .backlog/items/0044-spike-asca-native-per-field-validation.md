@@ -16,7 +16,3 @@ How much work would it take to modify **asca-rust** so it can validate a rule â€
 Findings: [research/asca-native-per-field-validation.md](../spikes/asca-native-per-field-validation.md).
 
 **Ticket 36:** if this path is taken, retarget [Per-field ASCA blame in inventory](36-per-field-asca-blame-in-inventory.md) at asca per-field calls and drop the stub engine; if declined, implement 36 as written.
-
-## Source list
-
-- `legacy wayfinder rule-index issue 86-spike-asca-native-per-field-validation.md`

@@ -19,7 +19,3 @@ Findings: [research/io-optionals-asca-and-convention.md](../spikes/io-optionals-
 - **Q10:** **(a) Never emit `<>` on I/O** in the 48/51 pass — `<>` is syllable-structure matching and fails apply-faithful optional semantics; reserve for env syllable-position ([58](../issues/58-spike-index-syllable-position-u-hash.md)) or manual rows.
 - **Q6:** **Family A** (`(h)ə{p,b}`, `e(C){…}`, `(j){u,ʌ}`, `(G)V`) → cartesian then **one flat set** (fix 48 nesting). **Family B** (`k(ʰ){r,j}`) → `{k,kʰ}{r,j}` **adjacent sets** after modifier expansion. Re-scope ticket 51: unfaithful wraps (`{V[-long]}N`, `a{i,j,a}`, `{C,#,V}ʔ`) → cartesian or manual/skip.
 - **Q2/Q4/Q9 / inventory trap:** all **confirmed** as in paused grill 71.
-
-## Source list
-
-- `legacy wayfinder rule-index issue 100-spike-io-optionals-asca-and-convention.md`

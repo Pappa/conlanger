@@ -16,7 +16,3 @@ Findings: [research/index-feature-matrices-to-asca-targets.md](../spikes/index-f
 - **~32%** of failures (`voiced`, `stressed`, `sibilant→strident`) are high-confidence **rename** rows; **~32%** are **place bundles** (`dental`, `alveolar`, `palatal`, `velar`, `uvular`); **~35%** **defer** (tone, lenis/fortis, syllable open/closed, `sameC`, `AP`, etc.).
 - **`feature_mappings.csv`** lives at `data/asca/feature_mappings.csv` (not `src/conlanger/data/asca/`). Schema extends ticket 07 with `mapping_kind`, optional `host`, `confidence`; **`asca_target` may be a multi-feature bundle**.
 - Seed CSV block (10 rows) in findings; correction pass should start with `voiced` only per prior assessment, then add bundle support before place labels.
-
-## Source list
-
-- `legacy wayfinder rule-index issue 29-spike-index-feature-matrices-to-asca-targets.md`

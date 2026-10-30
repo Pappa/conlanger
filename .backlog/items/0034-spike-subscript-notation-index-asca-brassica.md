@@ -12,7 +12,3 @@ Index subscript uses vs ASCA and Brassica surface syntax.
 ## Answer
 
 Migrated findings: [0034-subscript-notation-index-asca-brassica.md](../spikes/0034-subscript-notation-index-asca-brassica.md).
-
-## Source list
-
-- `legacy wayfinder rule-index issue 38-spike-asca-compile-transform-order.md`

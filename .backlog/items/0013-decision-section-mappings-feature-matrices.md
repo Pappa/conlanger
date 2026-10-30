@@ -10,6 +10,4 @@ Expanding Athabaskan §29.1.1.1 **section_mappings** (class labels to feature ma
 
 Decide root cause, correct fix layer, and whether section-local class labels → feature matrices belong in applier-neutral SoT. Validate on §29.1.1.1 sample rules.
 
-Wayfinder source: `legacy wayfinder rule-index issue 129-grill-section-mappings-feature-matrices-yaml-compile.md`.
-
 ## Answer

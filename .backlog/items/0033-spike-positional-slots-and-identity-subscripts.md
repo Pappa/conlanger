@@ -12,8 +12,3 @@ Index positional/identity subscripts → ASCA reference syntax.
 ## Answer
 
 Migrated findings: [0033-positional-slots-and-identity-subscripts.md](../spikes/0033-positional-slots-and-identity-subscripts.md).
-
-## Source list
-
-- `legacy wayfinder rule-index issue 38-spike-asca-compile-transform-order.md`
-- `legacy wayfinder rule-index issue 40-correction-pass-positional-identity-subscripts.md`

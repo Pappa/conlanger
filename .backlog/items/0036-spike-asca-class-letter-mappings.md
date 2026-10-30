@@ -12,7 +12,3 @@ For Index class letters whose meaning diverges from ASCA inbuilt groupings (e.g.
 ## Answer
 
 Findings: [research/asca-class-letter-mappings.md](../spikes/asca-class-letter-mappings.md)
-
-## Source list
-
-- `legacy wayfinder rule-index issue 09-spike-asca-class-letter-feature-matrices.md`

@@ -14,7 +14,3 @@ Can we raise confidence in **compile validation** by validating **individual ind
 **go-with-limits.** Field isolation with canned stubs + existing `validate_asca` / baseline wordlist can attribute most Tier 1–2 syntax failures to a field; it must not replace whole-rule `ok`, and cross-field cases (sets, condensed balance, insertion+env, deletion-vs-lexicon) will disagree. Stay inside ticket 10: no probe synthesis — only fixed/shape-aware stubs. Record as a fails-only sidecar CSV with a derived `blame` column.
 
 Findings: [research/field-isolation-compile-validation.md](../spikes/field-isolation-compile-validation.md).
-
-## Source list
-
-- `legacy wayfinder rule-index issue 35-spike-field-isolation-compile-validation.md`

@@ -12,8 +12,3 @@ Index post-matrix ejective marks vs ASCA `[+cg]` / diacritic rules.
 ## Answer
 
 Migrated findings: [0037-asca-ejective-notation.md](../spikes/0037-asca-ejective-notation.md).
-
-## Source list
-
-- `legacy wayfinder rule-index issue 20-correction-pass-ejective-marks.md`
-- `legacy wayfinder rule-index issue 84-correction-pass-breve-vowel-notation.md`

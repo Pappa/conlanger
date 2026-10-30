@@ -14,7 +14,3 @@ How does **ASCA** (fork **0.10.3**, `github.com/Pappa/asca-rust`) represent **cl
 ## Answer
 
 Findings: [research/asca-khoisan-click-representation.md](../spikes/asca-khoisan-click-representation.md). ASCA requires **inventory click clusters** (default `k` + release) or **`[+click]`**; bare Index glyphs fail `validate`. **136:** compile-time normaliser + manual residuals (§17 `Early-Modern-English-ʊ`, optional I/O, `!!`/`ǂɡ` edge cases).
-
-## Source list
-
-- `legacy wayfinder rule-index issue 138-spike-asca-khoisan-click-representation.md`

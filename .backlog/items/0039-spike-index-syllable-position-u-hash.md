@@ -18,7 +18,3 @@ Findings: [research/index-syllable-position-u-hash.md](../spikes/index-syllable-
 - **~29 rules** uplift (16 mechanical exceptions + ~13 simple positive env); **~60+** prose/comment/complex tails defer.
 - **Parse-only:** strip `in` before `#U`/`U#`; **amend** `group_mappings.csv` comment — `U`→`%` is class letter only, not `#U`/`U#` position markers.
 - **Follow-on:** correction-pass ticket for compile rewrite; separate defer tickets for ME / Portuguese prose clusters.
-
-## Source list
-
-- `legacy wayfinder rule-index issue 58-spike-index-syllable-position-u-hash.md`
