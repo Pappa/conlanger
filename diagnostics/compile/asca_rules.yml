@@ -22603,7 +22603,7 @@ sections:
     rule: j > {l,lV}
   - rule_id: Tlapanec-Yt-Ynt-Ys
     source: index_diachronica.html:10880
-    rule: Yt Ynt Ys > tʃ dʒ ʃ
+    rule: C:[+cor,+dist]t C:[+cor,+dist]nt C:[+cor,+dist]s > tʃ dʒ ʃ
   - rule_id: Tlapanec-ns,nt-nkʷ-nj-nw
     source: index_diachronica.html:10881
     rule: '{ns,nt} nkʷ nj nw > {nd,d} {mb,b} r m'
@@ -28401,7 +28401,8 @@ sections:
       > {ɑ,ɑ:[+long]} o:[+long] e:[+long] / _'
   - rule_id: Pre-Finnic-a
     source: index_diachronica.html:13768
-    rule: a > æ / {a,aX,e,eX,e,eX,i,iX,y,yX}(C)(C)_ when unstressed
+    status: skipped
+    rule: "#\ta → æ / {a,e,ê,i,y}(X)(C)(C)_, when unstressed"
   - rule_id: Pre-Finnic-Aw
     source: index_diachronica.html:13769
     rule: O:[+delrel, -stress]w:[-stress] > o / _

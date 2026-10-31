@@ -6,9 +6,9 @@
 - Rows: **9584** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9285** (96.9%)
-- Fail: **254** (2.7%)
-- Skipped: **45** (0.5%)
+- OK: **9286** (96.9%)
+- Fail: **252** (2.6%)
+- Skipped: **46** (0.5%)
 
 
 ## Corrections
@@ -22,8 +22,8 @@ Fail: **1/126**
 
 ## Sections
 
-- All OK: **517 / 660** (78.3%)
-- Some OK: **143 / 660** (21.7%)
+- All OK: **518 / 660** (78.5%)
+- Some OK: **142 / 660** (21.5%)
 - None OK: **0 / 660** (0.0%)
 - Sections skipped: **0 / 660** (0.0%)
 
@@ -43,13 +43,13 @@ Fail: **1/126**
 | 10 | `expected_number` |
 | 7 | `stuff_after_word_bound` |
 | 7 | `prose_or_expected_arrow` |
-| 4 | `unknown_grouping` |
 | 3 | `panic_other` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
 | 2 | `format_error` |
 | 2 | `runtime_delete_only_segment` |
 | 2 | `multiple_underlines_env` |
+| 2 | `unknown_grouping` |
 | 1 | `incomplete_matrix` |
 | 1 | `invalid_ipa` |
 
@@ -112,8 +112,7 @@ Fail: **1/126**
 
 | count | error_token |
 |------:|-------------|
-| 3 | `Y` |
-| 1 | `X` |
+| 2 | `Y` |
 ### unknown_grouping (description)
 
 | count | description |

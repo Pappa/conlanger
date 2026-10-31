@@ -7123,6 +7123,7 @@ section_index,section_name,rule_id,alt_idx,step_idx,source,ok,rule,failure_class
 32.2,Proto-Oto-Manguean to Tlapanec,Tlapanec-n,0,,index_diachronica.html:10878,OK,n > n,,,,,
 32.2,Proto-Oto-Manguean to Tlapanec,Tlapanec-n,1,,index_diachronica.html:10878,OK,n > ɲ,,,,,
 32.2,Proto-Oto-Manguean to Tlapanec,Tlapanec-j,,,index_diachronica.html:10879,OK,"j > {l,lV}",,,,,
+32.2,Proto-Oto-Manguean to Tlapanec,Tlapanec-Yt-Ynt-Ys,,,index_diachronica.html:10880,OK,"C:[+cor,+dist]t C:[+cor,+dist]nt C:[+cor,+dist]s > tʃ dʒ ʃ",,,,,
 32.2,Proto-Oto-Manguean to Tlapanec,"Tlapanec-ns,nt-nkʷ-nj-nw",,,index_diachronica.html:10881,OK,"{ns,nt} nkʷ nj nw > {nd,d} {mb,b} r m",,,,,
 32.2,Proto-Oto-Manguean to Tlapanec,Tlapanec-nk,0,,index_diachronica.html:10882,OK,nk > ɡ,,,,,
 32.2,Proto-Oto-Manguean to Tlapanec,Tlapanec-nk,1,,index_diachronica.html:10882,OK,nk > ŋ,,,,,

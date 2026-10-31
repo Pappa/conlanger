@@ -23,6 +23,8 @@ section_mappings:
     "*H": "H"
   "17.10.1":
     "H": "C[+laryngeal]"
+  "32.2":
+    "Y": "C[+palatal]"
   "35":
     "1": "[+low tone]"
     "2": "[+mid tone]"
@@ -266,3 +268,5 @@ skip_rules:
     reason: "Not a valid environment"
   - id: Common-Anatolian-T-h2_4
     reason: "Not a valid environment"
+  - id: Pre-Finnic-a
+    reason: "Unsure how to represent 2nd mora"
