@@ -16,7 +16,7 @@ Subscript digits and letters on segments in Index Diachronica (e.g. `x₂`) are 
 
 ## Amendment (2026-08)
 
-Wayfinder session on **subscript notation** (`CONTEXT.md`) and owner clarification:
+**subscript notation** (`CONTEXT.md`) and owner clarification:
 
 ### Interim (current correction phase)
 

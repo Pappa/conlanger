@@ -17,7 +17,6 @@ Design and implement a model that proposes **plausible ordered sequences of soun
 ## Not yet specified
 
 - Model family and training data strategy.
-- When to chart implementation tasks on `.backlog/` vs continue wayfinder-style the legacy wayfinder tree tickets.
 
 ## Out of scope
 

@@ -2,7 +2,7 @@
 
 For ingestion today, **`index_diachronica.html` is the ultimate source of truth**. Hand-edited XML/YAML samples guide structure and regressions only; when they disagree with the HTML (or with post-compile applier checks), the HTML and the compilers win.
 
-A **new cleaned YAML rule index** is the intended long-term source of truth (aligned with ADR-0002). Planning that migration — including schema and cleanup spikes — is deferred to a `/wayfinder` effort, not decided in detail here.
+A **new cleaned YAML rule index** is the intended long-term source of truth (aligned with ADR-0002). Planning that migration — including schema and cleanup spikes — is deferred to an `/epic-duck` decision, not decided in detail here.
 
 ## Considered Options
 
@@ -13,5 +13,5 @@ A **new cleaned YAML rule index** is the intended long-term source of truth (ali
 ## Consequences
 
 - Do not treat `index_diachronica.xml` / early AI YAML dumps as canonical when they conflict with the HTML.
-- Wayfinder owns the route to the cleaned YAML SoT (including unresolved items such as prose-environment mapping).
+- `/epic-duck` owns the route to the cleaned YAML SoT (including unresolved items such as prose-environment mapping).
 - Until that index exists and is adopted, regenerations should be traceable back to the HTML.

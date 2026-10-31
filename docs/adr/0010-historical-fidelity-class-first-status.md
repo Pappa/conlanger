@@ -13,7 +13,7 @@ When cleaning Index Diachronica rules toward ASCA-valid **index rules**, prefer 
 
 - Corpus field is thin optional `status` (`needs-validation` \| `skipped`); the older `skipped` reason-string field is superseded.
 - Validation reports are analysis artifacts (e.g. pandas), not long-term SoT.
-- Correction workflow, abbreviation, and feature-normalisation work follow this ladder and authority split (see wayfinder ticket *Historical fidelity vs valid-but-inaccurate fallback*).
+- Correction workflow, abbreviation, and feature-normalisation work follow this ladder and authority split (see [Historical fidelity vs validity](0017-decision-historical-fidelity-vs-validity.md)).
 
 ## Amendment (2026-08-21)
 

@@ -4,7 +4,7 @@ Spike for [ticket 86](../issues/86-spike-asca-native-per-field-validation.md).
 **ASCA version:** 0.10.2 (local crate `~/.cargo/registry/src/…/asca-0.10.2/`, `asca --version`).  
 **Context7:** asca / asca-rust not indexed — claims cite crate source, CLI docs, GitHub.
 
-Recovers and extends the 2026-08-04 wayfinder discussion: validation is staged; `asca run` is word-dependent at Tier 4; `ParsedRules::try_from` exists but there is no `validate` CLI.
+Validation is staged; `asca run` is word-dependent at Tier 4; `ParsedRules::try_from` exists but there is no `validate` CLI.
 
 Related: [asca-rule-validity.md]./0032-asca-rule-validity.md, [field-isolation-compile-validation.md]./0043-field-isolation-compile-validation.md, [Per-field ASCA blame in inventory](../issues/36-per-field-asca-blame-in-inventory.md).
 
