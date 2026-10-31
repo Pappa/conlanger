@@ -21,6 +21,8 @@ section_mappings:
     # "*J": "J"
   "17":
     "*H": "H"
+  "17.10.1":
+    "H": "C[+laryngeal]"
   "35":
     "1": "[+low tone]"
     "2": "[+mid tone]"

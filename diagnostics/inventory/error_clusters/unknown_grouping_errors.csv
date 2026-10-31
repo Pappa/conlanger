@@ -1,6 +1,4 @@
 section_index,rule_id,error_token,rule
-17.10.1,Proto-Indo-Aryan-R̊H,H,"C:[+syl]H > {u,i}[+son,-syl] / _V | ^ @ Rule 1, Line 1"
-17.10.1,Proto-Indo-Aryan-R̊H_2,H,"C:[+syl]H > {u,i}:[+long, +son,-syl] / _C | ^ @ Rule 1, Line 1"
 32.2,Tlapanec-Yt-Ynt-Ys,Y,"Yt Ynt Ys > tʃ dʒ ʃ | ^ @ Rule 1, Line 1"
 41.5.2.3,"Gadsup-D,Y",Y,"{P:[+voice],Y} > ∅ / _n | ^ @ Rule 1, Line 1"
 41.5.2.3,Gadsup-YO+-voice-YO-voice,Y,"YO:[+ voice] YO:[- voice] > Y t | ^ @ Rule 1, Line 1"

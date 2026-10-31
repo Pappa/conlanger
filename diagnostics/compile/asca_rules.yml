@@ -13940,16 +13940,16 @@ sections:
     rule: Px > P:[-voice, +sg, -cg]
   - rule_id: Proto-Indo-Aryan-h2
     source: index_diachronica.html:6846
-    rule: x > [-place]
+    rule: x > C:[+laryngeal]
   - rule_id: Proto-Indo-Aryan-VH
     source: index_diachronica.html:6847
-    rule: V:[-place] > V:[+long] / _{C,#}
+    rule: VC:[+laryngeal] > V:[+long] / _{C,#}
   - rule_id: Proto-Indo-Aryan-R̊H
     source: index_diachronica.html:6848
-    rule: C:[+syl]H > {u,i}[+son,-syl] / _V
+    rule: C:[+syl]C:[+laryngeal] > {u,i}[+son,-syl] / _V
   - rule_id: Proto-Indo-Aryan-R̊H_2
     source: index_diachronica.html:6849
-    rule: C:[+syl]H > {u,i}:[+long, +son,-syl] / _C
+    rule: C:[+syl]C:[+laryngeal] > {u,i}:[+long, +son,-syl] / _C
   - rule_id: Proto-Indo-Aryan-ʃ-ʒ
     source: index_diachronica.html:6850
     rule: ʃ ʒ > ʂ ʐ
@@ -14283,7 +14283,7 @@ sections:
     rule: '{ɭ,ɭʱ} > {ɖ,ɖʱ}'
   - rule_id: Classical-Sanskrit-H
     source: index_diachronica.html:6975
-    rule: '[-place] > ∅'
+    rule: C:[+laryngeal] > ∅
   - rule_id: Classical-Sanskrit-au-aːu-ai-aːi
     source: index_diachronica.html:6976
     rule: au a:[+long]u ai a:[+long]i > au o:[+long] ai e:[+long] // _V

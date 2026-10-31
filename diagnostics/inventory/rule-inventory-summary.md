@@ -6,8 +6,8 @@
 - Rows: **9584** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9283** (96.9%)
-- Fail: **256** (2.7%)
+- OK: **9285** (96.9%)
+- Fail: **254** (2.7%)
 - Skipped: **45** (0.5%)
 
 
@@ -22,8 +22,8 @@ Fail: **1/126**
 
 ## Sections
 
-- All OK: **516 / 660** (78.2%)
-- Some OK: **144 / 660** (21.8%)
+- All OK: **517 / 660** (78.3%)
+- Some OK: **143 / 660** (21.7%)
 - None OK: **0 / 660** (0.0%)
 - Sections skipped: **0 / 660** (0.0%)
 
@@ -43,7 +43,7 @@ Fail: **1/126**
 | 10 | `expected_number` |
 | 7 | `stuff_after_word_bound` |
 | 7 | `prose_or_expected_arrow` |
-| 6 | `unknown_grouping` |
+| 4 | `unknown_grouping` |
 | 3 | `panic_other` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
@@ -113,7 +113,6 @@ Fail: **1/126**
 | count | error_token |
 |------:|-------------|
 | 3 | `Y` |
-| 2 | `H` |
 | 1 | `X` |
 ### unknown_grouping (description)
 

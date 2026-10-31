@@ -31255,19 +31255,19 @@ sections:
     raw: h₂ → *H
     stages:
     - h₂
-    - H
+    - C[+laryngeal]
   - rule_id: Proto-Indo-Aryan-VH
     source: index_diachronica.html:6847
     raw: VH → Vː / _{C,#}
     stages:
-    - VH
+    - VC[+laryngeal]
     - Vː
     env: _{C,#}
   - rule_id: Proto-Indo-Aryan-R̊H
     source: index_diachronica.html:6848
     raw: R̊H → {u,i}R / _V (sporadic)
     stages:
-    - R̊H
+    - R̊C[+laryngeal]
     - '{u,i}R'
     env: _V
     comment: (sporadic)
@@ -31276,7 +31276,7 @@ sections:
     source: index_diachronica.html:6849
     raw: R̊H → {u,i}ːR / _C
     stages:
-    - R̊H
+    - R̊C[+laryngeal]
     - '{u,i}ːR'
     env: _C
   - rule_id: Proto-Indo-Aryan-ʃ-ʒ
@@ -31998,7 +31998,7 @@ sections:
     source: index_diachronica.html:6975
     raw: H → ∅
     stages:
-    - H
+    - C[+laryngeal]
     - ∅
   - rule_id: Classical-Sanskrit-au-aːu-ai-aːi
     source: index_diachronica.html:6976
