@@ -1051,7 +1051,7 @@ sections:
     - u:[-long] > u / _#
   - rule_id: Egyptian-Arabic-aj-aw
     source: index_diachronica.html:1384
-    rule: aj aw > e:[+long] o:[+long] / in %[+hi]
+    rule: aj aw > e:[+long] o:[+long] / %[+hi]
   - rule_id: Egyptian-Arabic-Vː
     source: index_diachronica.html:1385
     rule: V:[+long] > V / C_C{V:[+long],C}V
@@ -9259,7 +9259,7 @@ sections:
     rule: V > V:[+long] / _ %[+stress][+lo]
   - rule_id: Luwian-V_2
     source: index_diachronica.html:5086
-    rule: 'V > V:[+long] / in #%:[+stress]'
+    rule: 'V > V:[+long] / #%:[+stress]'
   - rule_id: Luwian-oː
     source: index_diachronica.html:5087
     rule: '{o,o:[+long]} > {a,a:[+long]}'
@@ -10948,7 +10948,7 @@ sections:
     rule: ɑ:[+long] {y,y:[+long]} > ɔ:[+long] {e,e:[+long]}
   - rule_id: Kentish-Middle-English-ɑ-e-o
     source: index_diachronica.html:5738
-    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / in %[+lo] // in #% with the following
+    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / %[+lo] // in #% with the following
       % containing i:[+long] or ending in one of /m n r l/'
   - rule_id: Kentish-Middle-English-Vː_2
     source: index_diachronica.html:5740
@@ -11008,7 +11008,7 @@ sections:
     rule: ɑ:[+long] {y,y:[+long]} > ɔ:[+long] {i,i:[+long]}
   - rule_id: Midlands-Middle-English-ɑ-e-o
     source: index_diachronica.html:5760
-    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / in %[+lo] // in #% with the following
+    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / %[+lo] // in #% with the following
       % containing i:[+long] or ending in one of /m n r l/'
   - rule_id: Midlands-Middle-English-Vː_2
     source: index_diachronica.html:5761
@@ -11298,7 +11298,7 @@ sections:
     rule: '{ɑ:[+long]ht,oht,o:[+long]ht} > ow'
   - rule_id: Northern-Middle-English-ɑ-e-o
     source: index_diachronica.html:5868
-    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / in %[+lo] // in #% with the following
+    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / %[+lo] // in #% with the following
       % containing i:[+long] or ending in one of /m n r l/'
   - rule_id: Northern-Middle-English-yː
     source: index_diachronica.html:5869
@@ -11655,7 +11655,7 @@ sections:
     rule: ɑ:[+long] > ɔ:[+long]
   - rule_id: Southern-Middle-English-ɑ-e-o
     source: index_diachronica.html:5998
-    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / in %[+lo] // in #% with the following
+    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / %[+lo] // in #% with the following
       % containing i:[+long] or ending in one of /m n r l/'
   - rule_id: Southern-Middle-English-yː
     source: index_diachronica.html:5999
@@ -15759,21 +15759,21 @@ sections:
     rule: k ɡ > tj dj / _V:[+front]
   - rule_id: French-è
     source: index_diachronica.html:7486
-    rule: ɛ > iɛ / in %[+lo]
+    rule: ɛ > iɛ / %[+lo]
   - rule_id: French-è_2
     source: index_diachronica.html:7487
     rule: ɛ > iɛ / _C#
   - rule_id: French-è_3
     source: index_diachronica.html:7488
-    rule: ɛ > ɛ / in %[+hi]
+    rule: ɛ > ɛ / %[+hi]
   - rule_id: French-ò
     source: index_diachronica.html:7489
     steps:
-    - o > uo / in %[+lo] // _N
-    - uo > uɛ / in %[+lo] // _N
+    - o > uo / %[+lo] // _N
+    - uo > uɛ / %[+lo] // _N
   - rule_id: French-ò_2
     source: index_diachronica.html:7490
-    rule: o > ɔ / in %[+hi]
+    rule: o > ɔ / %[+hi]
   - rule_id: French-dj
     source: index_diachronica.html:7491
     rule: dj > dʒ / r_
@@ -15934,21 +15934,21 @@ sections:
     rule: '{ɛau,au} > ɔ'
   - rule_id: French-é
     source: index_diachronica.html:7545
-    rule: e > ɛi / in %[+lo]
+    rule: e > ɛi / %[+lo]
   - rule_id: French-é_2
     source: index_diachronica.html:7546
-    rule: e > ɛ / in %[+hi]
+    rule: e > ɛ / %[+hi]
   - rule_id: French-ó
     source: index_diachronica.html:7547
     steps:
-    - o > ou / in %[+lo]
-    - ou > ɛu / in %[+lo]
+    - o > ou / %[+lo]
+    - ou > ɛu / %[+lo]
   - rule_id: French-ó_2
     source: index_diachronica.html:7548
     rule: o > ɔ / _N
   - rule_id: French-ó_3
     source: index_diachronica.html:7549
-    rule: o > ou / in %[+hi]
+    rule: o > ou / %[+hi]
   - rule_id: French-e
     source: index_diachronica.html:7550
     rule: 'e > ə / #(C,0)_($,0):[+stress] in %[+lo]'
@@ -15965,7 +15965,7 @@ sections:
     rule: 'a > ə / #{tʃ,dʒ}_($,0):[+stress] in %[+lo]'
   - rule_id: French-a_3
     source: index_diachronica.html:7554
-    rule: a > ɛ / in %[+lo]
+    rule: a > ɛ / %[+lo]
   - rule_id: French-kʷ-ɡʷ
     source: index_diachronica.html:7555
     rule: kʷ ɡʷ > k ɡ
@@ -22425,7 +22425,7 @@ sections:
     rule: ẽ > i / h_
   - rule_id: Papabuco-Chatino-ẽ_3
     source: index_diachronica.html:10807
-    rule: ẽ > i / in %[+long -stress]
+    rule: ẽ > i / %[+long -stress]
   - rule_id: Papabuco-Chatino-ẽ_4
     source: index_diachronica.html:10808
     rule: ẽ > e / else

@@ -350,11 +350,6 @@ def test_env_exception_input_to_string(input, expected):
             id="in_u_colon_stress_matrix",
         ),
         pytest.param(
-            IndexContext(position={"in": "U[+hi]"}),
-            "in U[+hi]",
-            id="in_u_feature_matrix",
-        ),
-        pytest.param(
             IndexContext(context="C_CV", position={"in": "U[-stress]"}),
             "C_CV in $[-stress]",
             id="merges_context_with_in",

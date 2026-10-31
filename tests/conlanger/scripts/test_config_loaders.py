@@ -382,7 +382,7 @@ def test_load_compiler_config_null_position_templates_uses_defaults(tmp_path: Pa
     config = load_compiler_config(path)
     assert config.position_templates.near == "{v}_, _{v}"
     assert config.position_templates.adjacent_to == "{v}_, _{v}"
-    assert config.position_templates.in_ == "in {v}"
+    assert config.position_templates.in_ == "{v}"
 
 
 def test_load_compiler_config_merges_partial_position_templates(tmp_path: Path):
@@ -395,7 +395,7 @@ def test_load_compiler_config_merges_partial_position_templates(tmp_path: Path):
     config = load_compiler_config(path)
     assert config.position_templates.near == "near_{v}"
     assert config.position_templates.adjacent_to == "{v}_, _{v}"
-    assert config.position_templates.in_ == "in {v}"
+    assert config.position_templates.in_ == "{v}"
 
 
 def test_load_compiler_config_skips_malformed_section_rows(tmp_path: Path):

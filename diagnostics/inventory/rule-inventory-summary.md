@@ -31,13 +31,13 @@ Fail: **1/126**
 
 | count | failure_class |
 |------:|---------------|
-| 68 | `expected_underscore` |
+| 69 | `expected_underscore` |
 | 34 | `expected_ipa` |
 | 24 | `unknown_character` |
 | 22 | `missing_slash_output_env` |
 | 16 | `syntax_other` |
 | 14 | `nested_brackets` |
-| 13 | `segments_before_word` |
+| 12 | `segments_before_word` |
 | 10 | `empty_io_panic` |
 | 10 | `unknown_feature` |
 | 10 | `expected_number` |
@@ -143,7 +143,7 @@ Fail: **1/126**
 
 | count | description |
 |------:|-------------|
-| 41 | `Expected '_', but received ''` |
+| 42 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -288,7 +288,7 @@ Fail: **1/126**
 
 | count | description |
 |------:|-------------|
-| 13 | `Cannot have segments before the beginning of a word` |
+| 12 | `Cannot have segments before the beginning of a word` |
 
 ### stuff_after_word_bound (error_token)
 

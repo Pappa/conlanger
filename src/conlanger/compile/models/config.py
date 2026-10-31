@@ -14,7 +14,7 @@ class PositionTemplates(BaseModel):
 
     adjacent_to: str = "{v}_, _{v}"
     near: str = "{v}_, _{v}"
-    in_: str = Field(alias="in", default="in {v}")
+    in_: str = Field(alias="in", default="{v}")
 
 
 class CompilerConfig(BaseModel):

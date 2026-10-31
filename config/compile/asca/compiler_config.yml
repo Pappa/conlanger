@@ -3,7 +3,7 @@ sample_dialect: false
 position_templates:
   adjacent_to: "{v}_, _{v}"
   near: "{v}_, _{v}"
-  in: "in {v}"
+  in: "{v}"
 series_mappings:
   global:
     h₁: h
