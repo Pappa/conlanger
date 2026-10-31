@@ -258,3 +258,9 @@ skip_rules:
     reason: "The rule doesn't seem to make sense in context, unless they're optional alternatives"
   - id: Guānhuà-ŋ_3
     reason: "Mostly a comment"
+  - id: Common-Anatolian-t
+    reason: "Not a valid environment"
+  - id: Common-Anatolian-T-h2_3
+    reason: "Not a valid environment"
+  - id: Common-Anatolian-T-h2_4
+    reason: "Not a valid environment"

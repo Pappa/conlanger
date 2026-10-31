@@ -13295,7 +13295,9 @@ sections:
     stages:
     - t
     - l
-    env: '#_, in nouns'
+    env: '#_'
+    comment: in nouns; sporadic
+    sporadic: true
   - rule_id: Vano-t_2
     source: index_diachronica.html:3520
     raw: t → s / _{u,i}
@@ -20480,25 +20482,21 @@ sections:
   - rule_id: Common-Anatolian-T-h2_3
     source: index_diachronica.html:5043
     raw: T h₂ → D h₃ / ”Vː
-    stages:
-    - T h₂
-    - D h₃
-    env: V:[+stress]ː
+    stages: []
+    comment: Not a valid environment
+    status: skipped
   - rule_id: Common-Anatolian-T-h2_4
     source: index_diachronica.html:5044
     raw: T h₂ → D h₃ / ”W
-    stages:
-    - T h₂
-    - D h₃
-    env: W:[+stress]
+    stages: []
+    comment: Not a valid environment
+    status: skipped
   - rule_id: Common-Anatolian-t
     source: index_diachronica.html:5045
     raw: t → z / j “(allophonic)”
-    stages:
-    - t
-    - z
-    env: j
-    comment: “(allophonic)”
+    stages: []
+    comment: Not a valid environment
+    status: skipped
   - rule_id: Common-Anatolian-r
     source: index_diachronica.html:5046
     raw: 'r → ∅ / #_ (unclear)'
@@ -21466,7 +21464,8 @@ sections:
     - V[+nasal]
     - V
     env: _#
-    comment: in polysyllables
+    comment: sporadic ; in polysyllables
+    sporadic: true
   - rule_id: Artsakh-Armenian-N_2
     source: index_diachronica.html:5209
     raw: N → n / _#, in monosyllables
@@ -21474,7 +21473,7 @@ sections:
     - N
     - n
     env: _#
-    comment: in monosyllables; sporadic
+    comment: sporadic ; in monosyllables
     sporadic: true
   - rule_id: Artsakh-Armenian-N̩
     source: index_diachronica.html:5210
@@ -21695,7 +21694,8 @@ sections:
     - V[+nasal]
     - V
     env: _#
-    comment: in polysyllables
+    comment: sporadic ; in polysyllables
+    sporadic: true
   - rule_id: Erevan-Armenian-N_2
     source: index_diachronica.html:5246
     raw: N → n / _#, in monosyllables
@@ -21703,7 +21703,7 @@ sections:
     - N
     - n
     env: _#
-    comment: in monosyllables; sporadic
+    comment: sporadic ; in monosyllables
     sporadic: true
   - rule_id: Erevan-Armenian-N̩
     source: index_diachronica.html:5247
@@ -21923,7 +21923,8 @@ sections:
     - V[+nasal]
     - V
     env: _#
-    comment: in polysyllables
+    comment: sporadic ; in polysyllables
+    sporadic: true
   - rule_id: Istanbul-Armenian-N_2
     source: index_diachronica.html:5283
     raw: N → n / _#, in monosyllables
@@ -21931,7 +21932,7 @@ sections:
     - N
     - n
     env: _#
-    comment: in monosyllables; sporadic
+    comment: sporadic ; in monosyllables
     sporadic: true
   - rule_id: Istanbul-Armenian-N̩
     source: index_diachronica.html:5284
@@ -22152,7 +22153,8 @@ sections:
     - V[+nasal]
     - V
     env: _#
-    comment: in polysyllables
+    comment: sporadic ; in polysyllables
+    sporadic: true
   - rule_id: Kharpert-Armenian-N_2
     source: index_diachronica.html:5320
     raw: N → n / _#, in monosyllables
@@ -22160,7 +22162,7 @@ sections:
     - N
     - n
     env: _#
-    comment: in monosyllables; sporadic
+    comment: sporadic ; in monosyllables
     sporadic: true
   - rule_id: Kharpert-Armenian-N̩
     source: index_diachronica.html:5321
@@ -22375,7 +22377,8 @@ sections:
     - V[+nasal]
     - V
     env: _#
-    comment: in polysyllables
+    comment: sporadic ; in polysyllables
+    sporadic: true
   - rule_id: Sebastia-Armenian-N_2
     source: index_diachronica.html:5356
     raw: N → n / _#, in monosyllables
@@ -22383,7 +22386,7 @@ sections:
     - N
     - n
     env: _#
-    comment: in monosyllables; sporadic
+    comment: sporadic ; in monosyllables
     sporadic: true
   - rule_id: Sebastia-Armenian-N̩
     source: index_diachronica.html:5357
@@ -22618,7 +22621,8 @@ sections:
     - V[+nasal]
     - V
     env: _#
-    comment: in polysyllables
+    comment: sporadic ; in polysyllables
+    sporadic: true
   - rule_id: Southeast-Armenian-N_2
     source: index_diachronica.html:5395
     raw: N → n / _#, in monosyllables
@@ -22626,7 +22630,7 @@ sections:
     - N
     - n
     env: _#
-    comment: in monosyllables; sporadic
+    comment: sporadic ; in monosyllables
     sporadic: true
   - rule_id: Southeast-Armenian-N̩
     source: index_diachronica.html:5396
@@ -22854,7 +22858,8 @@ sections:
     - V[+nasal]
     - V
     env: _#
-    comment: in polysyllables
+    comment: sporadic ; in polysyllables
+    sporadic: true
   - rule_id: Southwest-Armenian-N_2
     source: index_diachronica.html:5433
     raw: N → n / _#, in monosyllables
@@ -22862,7 +22867,7 @@ sections:
     - N
     - n
     env: _#
-    comment: in monosyllables; sporadic
+    comment: sporadic ; in monosyllables
     sporadic: true
   - rule_id: Southwest-Armenian-N̩
     source: index_diachronica.html:5434
@@ -23862,9 +23867,8 @@ sections:
     source: index_diachronica.html:5606
     raw: ɔː → au / when stressed
     stages:
-    - ɔː:[+stress]
+    - ɔ[+stress, +long]
     - au
-    env: '[+stress]'
   - rule_id: Middle-Welsh-l
     source: index_diachronica.html:5607
     raw: l → ɬ / _t
@@ -25538,7 +25542,8 @@ sections:
     - ai
     - ɛi
     - əi
-    env: when stem-final
+    comment: when stem-final; sporadic
+    sporadic: true
   - rule_id: Scots-—-uː
     source: index_diachronica.html:5897
     raw: — uː → ʌu / when-stem final, in northern varieties
@@ -28531,7 +28536,7 @@ sections:
     - V
     - Vː
     env: _(C)#
-    comment: in monosyllables; sporadic
+    comment: sporadic ; in monosyllables
     sporadic: true
   - rule_id: Early-Icelandic-V_2
     source: index_diachronica.html:6379
@@ -28540,7 +28545,8 @@ sections:
     - V
     - Vː
     exception: _CCV
-    comment: in polysyllables
+    comment: sporadic ; in polysyllables
+    sporadic: true
   - rule_id: Early-Icelandic-n̥n,nn̥
     source: index_diachronica.html:6380
     raw: '{n̥n,nn̥ → tn̥ / V_'
@@ -37391,7 +37397,8 @@ sections:
     - N
     - ∅
     env: _#
-    comment: in polysyllables
+    comment: sporadic ; in polysyllables
+    sporadic: true
   - rule_id: Old-Provençal-kʷ-ɡʷ
     source: index_diachronica.html:7809
     raw: kʷ ɡʷ → k ɡ / _B
@@ -41422,7 +41429,7 @@ sections:
     - ∅
     - i
     env: j_#
-    comment: in monosyllables; sporadic
+    comment: sporadic ; in monosyllables
     sporadic: true
   - rule_id: Cocama-j
     source: index_diachronica.html:8504
@@ -41431,7 +41438,8 @@ sections:
     - j
     - i
     env: _#
-    comment: in polysyllables
+    comment: sporadic ; in polysyllables
+    sporadic: true
   - rule_id: Cocama-b
     source: index_diachronica.html:8505
     raw: b → ∅ / _#
@@ -50714,7 +50722,7 @@ sections:
     - ɛ
     - e
     env: _ʔ#
-    comment: in monosyllables; sporadic
+    comment: sporadic ; in monosyllables
     sporadic: true
 - section: Proto-Chatino to Yaitepec Chatino
   index: 32.1.3
@@ -50850,7 +50858,7 @@ sections:
     - ʃ
     - ts
     env: _i
-    comment: in monosyllables; sporadic
+    comment: sporadic ; in monosyllables
     sporadic: true
   - rule_id: Yaitepec-Chatino-lʲ
     source: index_diachronica.html:10854
@@ -67607,22 +67615,27 @@ sections:
     stages:
     - V
     - ∅
-    env: _#, in trisyllables
+    env: _#
+    comment: sporadic ; in trisyllables
+    sporadic: true
   - rule_id: Basque-i_3
     source: index_diachronica.html:14201
     raw: i → ∅ / _#, in disyllables
     stages:
     - i
     - ∅
-    env: _#, in disyllables
+    env: _#
+    comment: sporadic ; in disyllables
+    sporadic: true
   - rule_id: Basque-u-o,e
     source: index_diachronica.html:14202
     raw: u {o,e} → ∅ a / _#, in disyllables (eastern dialects)
     stages:
     - u {o,e}
     - ∅ a
-    env: _#, in disyllables
-    comment: (eastern dialects)
+    env: _#
+    comment: sporadic ; in disyllables (eastern dialects)
+    sporadic: true
   - rule_id: Basque-hu-hi
     source: index_diachronica.html:14205
     raw: hu hi → ʊ ɪ / {o,e}_ (also happened with /a/ sometimes, but usually such
@@ -68121,7 +68134,8 @@ sections:
     - ai
     - ɛi
     - əi
-    env: when stem-final
+    comment: when stem-final; sporadic
+    sporadic: true
   - rule_id: Scots-Vowel-Shifts-uː
     source: index_diachronica.html:14324
     raw: uː → ʌu / when-stem final, in northern varieties

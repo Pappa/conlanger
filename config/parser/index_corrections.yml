@@ -614,3 +614,8 @@ rules:
       content: "r → ʔ / C_{t,w,j}# ! {ɡ,m,n,r,w,ʃ,x}_"
       reason: |
         r → ʔ / C_{t,w,j}# ! C = {ɡ,m,n,r,w,ʃ,x}
+  - rule:
+      id: Middle-Welsh-ɔː
+      content: "ɔ[+stress, +long] → au"
+      reason: |
+        ɔː → au / when stressed

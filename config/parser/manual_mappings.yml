@@ -205,9 +205,22 @@
     - ", (in the feminine ending)"
     - " / (“penult of )"
     - " (in select words)"
+    - ", (in nouns)"
+    # TODO: handle these properly
+    - " / (when stem-final)"
   to: " / sporadic ; \\1"
   use_regex: True
   reason: sporadic environment
+
+- targets:
+    # TODO: handle these properly
+    - ", (in trisyllables)"
+    - ", (in disyllables)"
+    - ", (in monosyllables)"
+    - ", (in polysyllables)"
+  to: " ; sporadic ; \\1"
+  use_regex: True
+  reason: sporadic comment
 
 - from: " (in southern dialects"
   to: " sporadic ; (in southern dialects"
@@ -275,8 +288,6 @@
   to: " / sporadic ; (except in the"
 - from: "“under to [sic] the influence of neighboring consonants”"
   to: "/ sporadic ; “under to [sic] the influence of neighboring consonants”"
-- from: ", in monosyllables"
-  to: " / sporadic ; in monosyllables"
 - from: " / in monosyllables"
   to: " / sporadic ; in monosyllables"
 - from: " / pretonic"
@@ -329,8 +340,6 @@
 #endregion
 
 #region TBD
-- from: ", in polysyllables"
-  to: " ; in polysyllables"
 - from: "# in polysyllables"
   to: "# ; in polysyllables"
 - from: ", in Milyan"

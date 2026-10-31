@@ -5966,7 +5966,7 @@ sections:
     rule: pʷ mʷ > p m
   - rule_id: Vano-t
     source: index_diachronica.html:3519
-    rule: 't > l / #_, in nouns'
+    rule: 't > l / #_'
   - rule_id: Vano-t_2
     source: index_diachronica.html:3520
     rule: t > s / _{u,i}
@@ -9145,13 +9145,16 @@ sections:
     rule: P:[-voice] x > P:[+voice] ɣʷ / V:[-stress]_V:[-stress]
   - rule_id: Common-Anatolian-T-h2_3
     source: index_diachronica.html:5043
-    rule: P:[-voice] x > P:[+voice] ɣʷ / V:[+stress, +long]
+    status: skipped
+    rule: "#\tT h₂ → D h₃ / ”Vː"
   - rule_id: Common-Anatolian-T-h2_4
     source: index_diachronica.html:5044
-    rule: P:[-voice] x > P:[+voice] ɣʷ / G:[+stress]
+    status: skipped
+    rule: "#\tT h₂ → D h₃ / ”W"
   - rule_id: Common-Anatolian-t
     source: index_diachronica.html:5045
-    rule: t > z / j
+    status: skipped
+    rule: "#\tt → z / j “(allophonic)”"
   - rule_id: Common-Anatolian-r
     source: index_diachronica.html:5046
     rule: 'r > ∅ / #_'
@@ -10627,7 +10630,7 @@ sections:
     rule: ɛ:[+long] > ui
   - rule_id: Middle-Welsh-ɔː
     source: index_diachronica.html:5606
-    rule: ɔː:[+stress] > au / _
+    rule: ɔ:[+stress, +long] > au
   - rule_id: Middle-Welsh-l
     source: index_diachronica.html:5607
     rule: l > ɬ / _t
@@ -11364,8 +11367,8 @@ sections:
   - rule_id: Scots-—-ai
     source: index_diachronica.html:5896
     steps:
-    - ai > ɛi / when stem-final
-    - ɛi > əi / when stem-final
+    - ai > ɛi
+    - ɛi > əi
   - rule_id: Scots-—-uː
     source: index_diachronica.html:5897
     rule: u:[+long] > ʌu / when-stem final,
@@ -29141,13 +29144,13 @@ sections:
     rule: a > ∅ / V_#
   - rule_id: Basque-V_3
     source: index_diachronica.html:14200
-    rule: V > ∅ / _#, in trisyllables
+    rule: V > ∅ / _#
   - rule_id: Basque-i_3
     source: index_diachronica.html:14201
-    rule: i > ∅ / _#, in disyllables
+    rule: i > ∅ / _#
   - rule_id: Basque-u-o,e
     source: index_diachronica.html:14202
-    rule: u {o,e} > a / _#, in disyllables
+    rule: u {o,e} > a / _#
   - rule_id: Basque-hu-hi
     source: index_diachronica.html:14205
     rule: hu hi > ʊ ɪ / {o,e}_
@@ -29366,8 +29369,8 @@ sections:
   - rule_id: Scots-Vowel-Shifts-ai
     source: index_diachronica.html:14323
     steps:
-    - ai > ɛi / when stem-final
-    - ɛi > əi / when stem-final
+    - ai > ɛi
+    - ɛi > əi
   - rule_id: Scots-Vowel-Shifts-uː
     source: index_diachronica.html:14324
     rule: u:[+long] > ʌu / when-stem final,
