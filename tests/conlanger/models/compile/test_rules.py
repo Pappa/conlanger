@@ -155,6 +155,19 @@ def test_diachronic_series_applies_section_series_mappings():
     assert "ʔ > a" in rendered
 
 
+def test_diachronic_series_applies_section_series_mappings_without_nested_sets():
+    config = CompilerConfig(
+        series_mappings_sections={"6.1": {"x₁": "{ɣ, ɣʷ, xʷ}", "x₂": "x"}},
+    )
+    section = {
+        "index": "6.1",
+        "section": "test",
+        "rules": [{"stages": ["{x₁,x₂}", "ɡ"], "raw": "{x₁,x₂} → ɡ", "source": "t:1"}],
+    }
+    rendered = str(DiachronicSeries(section, compiler_config=config))
+    assert "{ɣ,ɣʷ,xʷ,x} > ɡ" in rendered
+
+
 @pytest.mark.parametrize(
     "section, format",
     [

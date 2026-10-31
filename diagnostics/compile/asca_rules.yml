@@ -502,7 +502,7 @@ sections:
     - z > z / V_
   - rule_id: Aari-x1,x2
     source: index_diachronica.html:1149
-    rule: '{{ɣ, ɣʷ, xʷ},x} > ɡ'
+    rule: '{ɣ,ɣʷ,xʷ,x} > ɡ'
   - rule_id: Aari-kʼ
     source: index_diachronica.html:1150
     rule: k:[+cg] > q
@@ -12523,8 +12523,8 @@ sections:
     rule: ø ø:[+long] > e æ:[+long]
   - rule_id: Old-Norse-eːB,iː
     source: index_diachronica.html:6327
-    rule: '{eV:[+back],ei,ei:[+long],e:[+long]V:[+back],e:[+long]i,e:[+long]i:[+long]}
-      > {eu,e:[+long]u} / {v,w}_'
+    rule: '{eV:[+back],ei,ei:[+long],e:[+long]V:[+back],e:[+long]{i,i:[+long]}} >
+      {eu,e:[+long]u} / {v,w}_'
   - rule_id: Old-Norse-eːBː,iː
     source: index_diachronica.html:6328
     rule: e:[+long]{V:[+back, +long],i,i:[+long]} > jo:[+long] / _C:[+cor,+anterior,-dist]#

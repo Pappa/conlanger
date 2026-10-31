@@ -104,3 +104,6 @@ modules = [
     "conlanger.ingest",
     "conlanger.compile",
 ]
+ignore_imports = [
+    "conlanger.compile.tools.asca.series_mappings -> conlanger.ingest.utils.flatten_nested_sets",
+]

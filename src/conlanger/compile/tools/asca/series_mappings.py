@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from conlanger.compile.models.config import CompilerConfig
+from conlanger.ingest.utils.flatten_nested_sets import flatten_nested_sets
 
 
 def apply_compiler_series_mappings(
@@ -19,4 +20,7 @@ def apply_compiler_series_mappings(
     for token in sorted(mapping, key=len, reverse=True):
         if token:
             result = result.replace(token, mapping[token])
+
+    # todo: understand why this fixes Aari-x1,x2 but breaks Old-Norse-eːB,iː
+    result = flatten_nested_sets(result)
     return result
