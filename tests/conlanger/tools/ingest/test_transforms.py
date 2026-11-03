@@ -96,9 +96,16 @@ def test_apply_sporadic_qualifier(input, output):
     assert result.to_index_dict() == {**args, **output, "sporadic": True}
 
 
-def test_apply_sporadic_qualifier_unchanged_when_no_marker():
-    rule = IndexRule(raw="x", source="t", stages=["a", "e"], env="_#")
-    assert apply_sporadic_qualifier(rule).to_index_dict() == rule.to_index_dict()
+@pytest.mark.parametrize(
+    "rule, sporadic",
+    [
+        (IndexRule(raw="x", source="t", stages=["a", "e"], env="_#"), None),
+        (IndexRule(raw="x", source="t", stages=["a", "e"], comment="sporadic"), True),
+    ],
+)
+def test_apply_sporadic_qualifier_unchanged_when_no_marker(rule, sporadic):
+    result = apply_sporadic_qualifier(rule)
+    assert result.sporadic == sporadic
 
 
 @pytest.mark.parametrize(
