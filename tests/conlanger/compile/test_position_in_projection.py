@@ -3,7 +3,6 @@
 import pytest
 
 from conlanger.compile.position_in_projection import (
-    PositionInAsca,
     env_is_projected_position_in_compile_string,
     materialize_position_in_asca,
     project_position_in_target,
@@ -13,18 +12,33 @@ from conlanger.compile.position_in_projection import (
 @pytest.mark.parametrize(
     ("target", "expected"),
     [
-        ("#U", PositionInAsca("#<(..)_(..)>", "#<(..)_(..)>")),
-        ("U#", PositionInAsca("<(..)_(..)>#", "<(..)_(..)>#")),
-        ("U[-stress]", PositionInAsca("_ $[-stress]", "$[-stress]")),
-        ("U[+stress]", PositionInAsca("_ $[+stress]", "$[+stress]")),
-        ("U:[+stress]", PositionInAsca("_ %[+stress]", "%[+stress]")),
+        ("#U", "#<(..)_(..)>"),
+        ("U#", "<(..)_(..)>#"),
+        (
+            "U[-stress]",
+            "<(..)_(..)>:[-stress]",
+        ),
+        (
+            "U[+stress]",
+            "<(..)_(..)>:[+stress]",
+        ),
+        (
+            "U:[+stress]",
+            "<(..)_(..)>:[+stress]",
+        ),
         (
             "U:[+stress][+lo]",
-            PositionInAsca("_ %[+stress][+lo]", "%[+stress][+lo]"),
+            "<(..)_(..)>:[+stress][+lo]",
         ),
-        ("#U[+stress]#", PositionInAsca("#_[+stress]", "#_[+stress]")),
-        ("in #U", PositionInAsca("#<(..)_(..)>", "#<(..)_(..)>")),
-        ("U:[+stress, +lo]", PositionInAsca("_ %[+stress][+lo]", "%[+stress][+lo]")),
+        (
+            "#U[+stress]#",
+            "#<(..)_(..)>:[+stress]#",
+        ),
+        ("in #U", "#<(..)_(..)>"),
+        (
+            "U:[+stress, +lo]",
+            "<(..)_(..)>:[+stress][+lo]",
+        ),
     ],
 )
 def test_project_position_in_target_classified(target, expected):
@@ -40,13 +54,14 @@ def test_project_position_in_target_unclassified(target):
 
 
 def test_materialize_position_in_asca():
-    stress = PositionInAsca("_ $[-stress]", "$[-stress]")
+    stress = "<(..)_(..)>:[-stress]"
     assert (
-        materialize_position_in_asca(stress, structural_context=None) == "_ $[-stress]"
+        materialize_position_in_asca(stress, structural_context=None)
+        == "<(..)_(..)>:[-stress]"
     )
     assert (
         materialize_position_in_asca(stress, structural_context="C_CV")
-        == "C_CV in $[-stress]"
+        == "C_CV in <(..)_(..)>:[-stress]"
     )
 
 

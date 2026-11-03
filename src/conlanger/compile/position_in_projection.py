@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass
 
 from conlanger.utils.syllable_position import (
     strip_editorial_in_before_syllable_position,
@@ -16,7 +15,7 @@ _MECHANICAL_ENV_ASCA = {
 _COMMA_U_HASH_RE = re.compile(r"^#U\s*,\s*U#$")
 
 _STRESSED_MONOSYLLABLE_TARGET = "#U[+stress]#"
-_STRESSED_MONOSYLLABLE_ASCA = "#_[+stress]"
+_STRESSED_MONOSYLLABLE_ASCA = "#<(..)_(..)>:[+stress]#"
 
 _POSITION_IN_CONTEXT_STRESS_RE = re.compile(
     r"^.+ in \$[\[(](?:\+stress|-stress)\]$",
@@ -26,14 +25,6 @@ _WHOLE_POSITION_IN_STRESS_RE = re.compile(r"^_\s*\$[\[(](?:\+stress|-stress)\]$"
 _WHOLE_POSITION_IN_MATRIX_RE = re.compile(
     r"^_\s*%\[\+stress\](?:\[[^\]]+\])*$",
 )
-
-
-@dataclass(frozen=True, slots=True)
-class PositionInAsca:
-    """ASCA env from a classified ``position.in`` **target** (never editorial ``in``)."""
-
-    alone: str
-    beside_context: str
 
 
 def _normalize_position_in_target(target: str) -> str:
@@ -63,7 +54,7 @@ def _matrix_brackets_from_u_colon_target(target: str) -> str | None:
     return "".join(f"[{feature}]" for feature in features)
 
 
-def project_position_in_target(target: str) -> PositionInAsca | None:
+def project_position_in_target(target: str) -> str | None:
     """Map a ``position.in`` target value to ASCA, or ``None`` for ``in {{v}}`` fallback."""
     normalized = _normalize_position_in_target(target)
     if not normalized:
@@ -71,36 +62,33 @@ def project_position_in_target(target: str) -> PositionInAsca | None:
 
     mechanical_asca = _mechanical_position_in_env(normalized)
     if mechanical_asca is not None:
-        return PositionInAsca(alone=mechanical_asca, beside_context=mechanical_asca)
+        return mechanical_asca
 
     if normalized == _STRESSED_MONOSYLLABLE_TARGET:
-        return PositionInAsca(
-            alone=_STRESSED_MONOSYLLABLE_ASCA,
-            beside_context=_STRESSED_MONOSYLLABLE_ASCA,
-        )
+        return _STRESSED_MONOSYLLABLE_ASCA
 
     if normalized in ("U[-stress]", "U[+stress]"):
         feature = "[-stress]" if normalized == "U[-stress]" else "[+stress]"
-        scope = f"${feature}"
-        return PositionInAsca(alone=f"_ {scope}", beside_context=scope)
+        scope = f"<(..)_(..)>:{feature}"
+        return scope
 
     matrix_tail = _matrix_brackets_from_u_colon_target(normalized)
     if matrix_tail is not None:
-        scope = f"%{matrix_tail}"
-        return PositionInAsca(alone=f"_ {scope}", beside_context=scope)
+        scope = f"<(..)_(..)>:{matrix_tail}"
+        return scope
 
     return None
 
 
 def materialize_position_in_asca(
-    projection: PositionInAsca,
+    projection: str,
     *,
     structural_context: str | None,
 ) -> str:
     """Join structural ``context`` with classified ``in`` scope (ticket 163 ``context in $…``)."""
     if structural_context:
-        return f"{structural_context} in {projection.beside_context}"
-    return projection.alone
+        return f"{structural_context} in {projection}"
+    return projection
 
 
 def env_is_projected_position_in_compile_string(raw: str | None) -> bool:

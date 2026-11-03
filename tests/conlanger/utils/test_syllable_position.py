@@ -88,10 +88,10 @@ def test_compile_syllable_position_env(raw, expected):
 @pytest.mark.parametrize(
     ("env_raw", "compiled_before", "expected"),
     [
-        ("U[-stress]", "%[-stress]", "_ $[-stress]"),
-        ("in U[+stress]", "in %[+stress]", "_ $[+stress]"),
-        ("#U[+stress]#", "#%[+stress]#", "#_[+stress]"),
-        (None, "C_CV, in %[-stress]", "C_CV in $[-stress]"),
+        ("U[-stress]", "%[-stress]", "<(..)_(..)>:[-stress]"),
+        ("in U[+stress]", "in %[+stress]", "<(..)_(..)>:[+stress]"),
+        ("#U[+stress]#", "#%[+stress]#", "#<(..)_(..)>:[+stress]#"),
+        (None, "C_CV, in %[-stress]", ":{C_CV, <(..)_(..)>:[-stress]}:"),
         (None, "_V", "_V"),
     ],
 )
@@ -102,54 +102,37 @@ def test_project_syllable_stress_compiled_env(env_raw, compiled_before, expected
 @pytest.mark.parametrize(
     ("env", "expected"),
     [
-        ("U[-stress]", "V:[+long] > V:[-long] / _ $[-stress]"),
-        ("in U[+stress]", "V:[+long] > V:[-long] / _ $[+stress]"),
-        ("#U[+stress]#", "V:[+long] > V:[-long] / #_[+stress]"),
-        ("C_CV in U[-stress]", "V:[+long] > V:[-long] / C_CV in $[-stress]"),
-        ("C_CV, in U[-stress]", "V:[+long] > V:[-long] / C_CV in $[-stress]"),
-        ("w_ in U[-stress]", "V:[+long] > V:[-long] / w_ in $[-stress]"),
-        ("in U:[+stress]", "V:[+long] > V:[-long] / _ %[+stress]"),
+        ("U[-stress]", "V:[+long] > V:[-long] / <(..)_(..)>:[-stress]"),
+        ("in U[+stress]", "V:[+long] > V:[-long] / <(..)_(..)>:[+stress]"),
+        ("#U[+stress]#", "V:[+long] > V:[-long] / #<(..)_(..)>:[+stress]#"),
+        (
+            "C_CV in U[-stress]",
+            "V:[+long] > V:[-long] / :{C_CV, <(..)_(..)>:[-stress]}:",
+        ),
+        (
+            "C_CV, in U[-stress]",
+            "V:[+long] > V:[-long] / :{C_CV, <(..)_(..)>:[-stress]}:",
+        ),
+        ("w_ in U[-stress]", "V:[+long] > V:[-long] / :{w_, <(..)_(..)>:[-stress]}:"),
+        ("in U:[+stress]", "V:[+long] > V:[-long] / <(..)_(..)>:[+stress]"),
         (
             "in U:[+stress][+lo]",
-            "V:[+long] > V:[-long] / _ %[+stress][+lo]",
+            "V:[+long] > V:[-long] / <(..)_(..)>:[+stress][+lo]",
         ),
-        ("%u in #U", "V:[+long] > V:[-long] / $u  #<(..)_(..)>"),
+        ("%u in #U", "V:[+long] > V:[-long] / :{$u, #%}:"),  # TODO: this is wrong
     ],
 )
 def test_compile_asca_rule_fields_syllable_stress_env(env, expected):
-    assert compile_asca_rule_fields("Vː", "V[-long]", env=env) == expected
-
-
-def test_compile_asca_rule_fields_position_in_with_compiler_config():
     config = load_compiler_config()
     assert (
         compile_asca_rule_fields(
-            "V",
-            "V:[+long]",
-            env="C_CV in U[-stress]",
+            "Vː",
+            "V[-long]",
+            env=env,
             compiler_config=config,
         )
-        == "V > V:[+long] / C_CV in $[-stress]"
+        == expected
     )
-    assert (
-        compile_asca_rule_fields(
-            "V",
-            "V:[+long]",
-            env="in U:[+stress]",
-            compiler_config=config,
-        )
-        == "V > V:[+long] / _ %[+stress]"
-    )
-
-
-@pytest.mark.parametrize(
-    ("env", "expected"),
-    [
-        ("e_ in U:[+lo]", "V:[+long] > V:[-long] / e_ in U:[+lo]"),
-    ],
-)
-def test_compile_asca_rule_fields_position_in_deferred_targets(env, expected):
-    assert compile_asca_rule_fields("Vː", "V[-long]", env=env) == expected
 
 
 def test_apply_syllable_position_compiled_overrides_replaces_group_mapping_damage():

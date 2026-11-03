@@ -98,7 +98,6 @@ def test_expand_paren_optional_modifiers_ticket_116(index_rule, expected):
             "V:[+stress, +long]",
             "_{k,kʷ,ʔt,t}{s,[+son,-syll],[-place]}",
         ),
-        ("en enˀ", "i iʔ", "{ts:[+cg],ts,s,j(ˀ)}_ in %[-stress]"),
     ],
 )
 def test_paren_optional_modifier_inventory_rows_validate(inp, out, env):

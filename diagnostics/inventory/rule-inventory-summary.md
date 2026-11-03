@@ -6,8 +6,8 @@
 - Rows: **9584** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9286** (96.9%)
-- Fail: **252** (2.6%)
+- OK: **9251** (96.5%)
+- Fail: **287** (3.0%)
 - Skipped: **46** (0.5%)
 
 
@@ -22,27 +22,27 @@ Fail: **1/126**
 
 ## Sections
 
-- All OK: **519 / 660** (78.6%)
-- Some OK: **141 / 660** (21.4%)
-- None OK: **0 / 660** (0.0%)
+- All OK: **514 / 660** (77.9%)
+- Some OK: **145 / 660** (22.0%)
+- None OK: **1 / 660** (0.2%)
 - Sections skipped: **0 / 660** (0.0%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 69 | `expected_underscore` |
+| 105 | `expected_underscore` |
 | 34 | `expected_ipa` |
 | 24 | `unknown_character` |
-| 22 | `missing_slash_output_env` |
-| 16 | `syntax_other` |
+| 22 | `syntax_other` |
+| 19 | `missing_slash_output_env` |
 | 14 | `nested_brackets` |
-| 12 | `segments_before_word` |
+| 10 | `segments_before_word` |
 | 10 | `empty_io_panic` |
 | 10 | `unknown_feature` |
 | 10 | `expected_number` |
-| 7 | `stuff_after_word_bound` |
 | 7 | `prose_or_expected_arrow` |
+| 5 | `stuff_after_word_bound` |
 | 3 | `panic_other` |
 | 2 | `grouped_env_insertion` |
 | 2 | `uneven_parallel_sets` |
@@ -59,17 +59,17 @@ Fail: **1/126**
 
 | count | error_token |
 |------:|-------------|
+| 4 | `:` |
 | 2 | `,` |
 | 1 | `End Of Line` |
 | 1 | `]` |
-| 1 | `:` |
 | 1 | `l` |
 | 1 | `í` |
 ### syntax_other (description)
 
 | count | description |
 |------:|-------------|
-| 3 | `A syllable can only have parameters stress and tone` |
+| 6 | `A syllable can only have parameters stress and tone` |
 | 1 | `Only a segment, matrix, group, or reference can be negated` |
 | 1 | `Feature 'lost' has no modifier` |
 | 1 | `Feature 'b' has no modifier` |
@@ -134,7 +134,8 @@ Fail: **1/126**
 
 | count | error_token |
 |------:|-------------|
-| 14 | `,` |
+| 34 | `}:` |
+| 19 | `,` |
 | 7 | `//` |
 | 3 | `/` |
 | 2 | `:` |
@@ -143,7 +144,7 @@ Fail: **1/126**
 
 | count | description |
 |------:|-------------|
-| 42 | `Expected '_', but received ''` |
+| 39 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -246,7 +247,6 @@ Fail: **1/126**
 |------:|-------------|
 | 8 | `)` |
 | 5 | `(` |
-| 3 | `:` |
 | 3 | `ʲ` |
 | 1 | `*` |
 | 1 | `#` |
@@ -288,7 +288,7 @@ Fail: **1/126**
 
 | count | description |
 |------:|-------------|
-| 12 | `Cannot have segments before the beginning of a word` |
+| 10 | `Cannot have segments before the beginning of a word` |
 
 ### stuff_after_word_bound (error_token)
 
@@ -299,7 +299,7 @@ Fail: **1/126**
 
 | count | description |
 |------:|-------------|
-| 7 | `Cannot have segments after the end of a word` |
+| 5 | `Cannot have segments after the end of a word` |
 
 ### diacritic_prereq (error_token)
 

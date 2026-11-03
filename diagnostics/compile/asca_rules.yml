@@ -1057,7 +1057,7 @@ sections:
     rule: V:[+long] > V / C_C{V:[+long],C}V
   - rule_id: Egyptian-Arabic-V
     source: index_diachronica.html:1386
-    rule: V > V:[+long] / C_CV in $[-stress]
+    rule: 'V > V:[+long] / :{C_CV, <(..)_(..)>:[-stress]}:'
   - rule_id: Egyptian-Arabic-V_2
     source: index_diachronica.html:1387
     rule: V > V:[+long] / _#
@@ -1321,7 +1321,7 @@ sections:
     rule: V:[+long] > V:[-long] / _#
   - rule_id: Tunisian-Arabic-Vː_2
     source: index_diachronica.html:1507
-    rule: '{V,V:[+long]} > V:[+long] / #_[+stress]'
+    rule: '{V,V:[+long]} > V:[+long] / #<(..)_(..)>:[+stress]#'
 - section: Proto-Semitic to Biblical Hebrew
   index: 6.2.2.1.18
   rules:
@@ -1381,22 +1381,22 @@ sections:
     rule: "#\t— a → _$%%(…)”"
   - rule_id: Biblical-Hebrew-—-a_5
     source: index_diachronica.html:1534
-    rule: a > ə / _[+son,-syl] if ə in an adjacent syllable
+    rule: 'a > ə / :{_[+son,-syl] if ə, an adjacent syllable}:'
   - rule_id: Biblical-Hebrew-—-a_6
     source: index_diachronica.html:1535
-    rule: a > ə / [+son,-syl]_ if ə in an adjacent syllable
+    rule: 'a > ə / :{[+son,-syl]_ if ə, an adjacent syllable}:'
   - rule_id: Biblical-Hebrew-—-i_2
     source: index_diachronica.html:1536
-    rule: i > ə / _[+son,-syl] if a frontal allophone of ə in an adjacent syllable
+    rule: 'i > ə / :{_[+son,-syl] if a frontal allophone of ə, an adjacent syllable}:'
   - rule_id: Biblical-Hebrew-—-i_3
     source: index_diachronica.html:1537
-    rule: i > ə / [+son,-syl]_ if a frontal allophone of ə in an adjacent syllable
+    rule: 'i > ə / :{[+son,-syl]_ if a frontal allophone of ə, an adjacent syllable}:'
   - rule_id: Biblical-Hebrew-—-u
     source: index_diachronica.html:1538
-    rule: u > ə / _[+son,-syl] if a backed allophone of ə in an adjacent syllable
+    rule: 'u > ə / :{_[+son,-syl] if a backed allophone of ə, an adjacent syllable}:'
   - rule_id: Biblical-Hebrew-—-u_2
     source: index_diachronica.html:1539
-    rule: u > ə / [+son,-syl]_ if a backed allophone of ə in an adjacent syllable
+    rule: 'u > ə / :{[+son,-syl]_ if a backed allophone of ə, an adjacent syllable}:'
   - rule_id: Biblical-Hebrew-—-i_4
     source: index_diachronica.html:1540
     rule: i > a / _[+son,-syl]
@@ -1919,7 +1919,7 @@ sections:
     rule: '{kes,kʷes,keθ} > s:[+long]'
   - rule_id: Blackfoot-e_2
     source: index_diachronica.html:1758
-    rule: 'e > ∅ / O_ in #%'
+    rule: 'e > ∅ / :{O_, #%}:'
   - rule_id: Blackfoot-me,ne
     source: index_diachronica.html:1759
     rule: '{me,ne} > ∅ / #_O'
@@ -2444,10 +2444,10 @@ sections:
     rule: V:[+long] > V:[-long] / {CC,CCG}_C{V,#}
   - rule_id: Menominee-V_2
     source: index_diachronica.html:1955
-    rule: V > V:[+long] / _CC in even syllables
+    rule: 'V > V:[+long] / :{_CC, even syllables}:'
   - rule_id: Menominee-Vː_2
     source: index_diachronica.html:1956
-    rule: V:[+long] > V:[-long] / _C{V,#} in even syllables
+    rule: 'V:[+long] > V:[-long] / :{_C{V,#}, even syllables}:'
   - rule_id: Menominee-eː-i
     source: index_diachronica.html:1957
     rule: '{e,e:[+long]} i > {æ,æ:[+long]} e'
@@ -8445,7 +8445,7 @@ sections:
     rule: t > s / _{k,q}
   - rule_id: Kuskokwim-Yup’ik-i-a-u
     source: index_diachronica.html:4728
-    rule: i a u > ii aa uu / C_ in %[+lo -initial -final] such that %[+lo]_
+    rule: 'i a u > ii aa uu / :{C_, %[+lo -initial -final] such that %[+lo]_}:'
   - rule_id: Kuskokwim-Yup’ik-ə_3
     source: index_diachronica.html:4729
     rule: ə > i / u_
@@ -8523,7 +8523,7 @@ sections:
     rule: t > s / _{k,q}
   - rule_id: Nunivak-Yup’ik-i-a-u
     source: index_diachronica.html:4758
-    rule: i a u > ii aa uu / C_ in %[+lo -initial -final] such that %[+lo]_
+    rule: 'i a u > ii aa uu / :{C_, %[+lo -initial -final] such that %[+lo]_}:'
   - rule_id: Nunivak-Yup’ik-ə_3
     source: index_diachronica.html:4759
     rule: ə > i / {u,a}_
@@ -8678,7 +8678,7 @@ sections:
     rule: t > s / _{k,q}
   - rule_id: Unaaliq-Yup’ik-i-a-u
     source: index_diachronica.html:4815
-    rule: i a u > ii aa uu / C_ in %[+lo -initial -final] such that %[+lo]_
+    rule: 'i a u > ii aa uu / :{C_, %[+lo -initial -final] such that %[+lo]_}:'
   - rule_id: Unaaliq-Yup’ik-ə_3
     source: index_diachronica.html:4816
     rule: ə > i / {u,a}_
@@ -9181,19 +9181,19 @@ sections:
     rule: C:[+front,+hi,-lo] > C:[-front,+back,+hi,-lo]
   - rule_id: Hittite-V
     source: index_diachronica.html:5057
-    rule: V > V:[+long] / _ %[+stress][+lo]
+    rule: V > V:[+long] / <(..)_(..)>:[+stress, +lo]
   - rule_id: Hittite-e-o
     source: index_diachronica.html:5058
-    rule: e o > e:[+long] o:[+long] / _ %[+stress][+stress]
+    rule: e o > e:[+long] o:[+long] / <(..)_(..)>:[+stress, +stress]
   - rule_id: Hittite-oː-æː
     source: index_diachronica.html:5059
     rule: '{o,o:[+long]} æ:[+long] > {a,a:[+long]} e:[+long]'
   - rule_id: Hittite-e
     source: index_diachronica.html:5060
-    rule: e > i / _{m,ŋ} when posttonic in %[+hi] or when pretonic
+    rule: 'e > i / :{_{m,ŋ} when posttonic, %[+hi] or when pretonic}:'
   - rule_id: Hittite-e_2
     source: index_diachronica.html:5061
-    rule: e > a / _n in %[+lo +posttonic]
+    rule: 'e > a / :{_n, %[+lo +posttonic]}:'
   - rule_id: Hittite-e_3
     source: index_diachronica.html:5062
     rule: e > a / _{r,l}
@@ -9256,7 +9256,7 @@ sections:
     rule: e > a
   - rule_id: Luwian-V
     source: index_diachronica.html:5085
-    rule: V > V:[+long] / _ %[+stress][+lo]
+    rule: V > V:[+long] / <(..)_(..)>:[+stress, +lo]
   - rule_id: Luwian-V_2
     source: index_diachronica.html:5086
     rule: 'V > V:[+long] / #%:[+stress]'
@@ -9283,8 +9283,8 @@ sections:
     rule: hh > ∅ / _{w,m,n,r,l}
   - rule_id: Luwian-D-R
     source: index_diachronica.html:5094
-    rule: P:[+voice] [+son,-syl] > P:[+voice, +long] [+son,-syl, +long] / e:[+stress]_
-      in %[+lo]
+    rule: 'P:[+voice] [+son,-syl] > P:[+voice, +long] [+son,-syl, +long] / :{e:[+stress]_,
+      %[+lo]}:'
   - rule_id: Luwian-ɛ,eː-æː
     source: index_diachronica.html:5095
     rule: '{ɛ,e}:[+long] æ:[+long] > i:[+long] a:[+long]'
@@ -9421,13 +9421,13 @@ sections:
     rule: e > i / j_
   - rule_id: Lydian-e,a,o
     source: index_diachronica.html:5146
-    rule: '{e,a,o} > e:[+long] / _N in %:[+stress, +hi]'
+    rule: '{e,a,o} > e:[+long] / :{_N, %:[+stress, +hi]}:'
   - rule_id: Lydian-e,a,o_2
     source: index_diachronica.html:5147
-    rule: '{e,a,o} > a:[+long] / _N in %:[+stress, +lo]'
+    rule: '{e,a,o} > a:[+long] / :{_N, %:[+stress, +lo]}:'
   - rule_id: Lydian-e,o
     source: index_diachronica.html:5148
-    rule: '{e,o} > a / _ $[-stress]'
+    rule: '{e,o} > a / <(..)_(..)>:[-stress]'
   - rule_id: Lydian-n
     source: index_diachronica.html:5149
     rule: n > ∅ / _C:[+labial]
@@ -9466,7 +9466,7 @@ sections:
     rule: '{o,o:[+long]} > {a,a:[+long]}'
   - rule_id: Palaic-a-e
     source: index_diachronica.html:5165
-    rule: a e > a:[+long] e:[+long] / _ %[+stress][+hi]
+    rule: a e > a:[+long] e:[+long] / <(..)_(..)>:[+stress, +hi]
   - rule_id: Palaic-æː
     source: index_diachronica.html:5166
     rule: æ:[+long] > e:[+long]
@@ -10784,7 +10784,7 @@ sections:
     rule: iji > i:[+long] / %[- stress](C,0)_
   - rule_id: Gothic-iji_2
     source: index_diachronica.html:5671
-    rule: iji > i:[+long] / %[+ long +hi]_ in the stem
+    rule: 'iji > i:[+long] / :{%[+ long +hi]_, the stem}:'
   - rule_id: Gothic-i
     source: index_diachronica.html:5672
     rule: i > ∅ / _ji
@@ -10912,8 +10912,8 @@ sections:
   rules:
   - rule_id: Kentish-Middle-English-Vː
     source: index_diachronica.html:5727
-    rule: V:[+long] > V:[-long] / _C{V:[+long],C} // _st{#,V} or when preceding a
-      cluster which had triggered a vowel to become long in Old V:[+front]nglish
+    rule: 'V:[+long] > V:[-long] / _C{V:[+long],C} // :{_st{#,V} or when preceding
+      a cluster which had triggered a vowel to become long, Old V:[+front]nglish}:'
   - rule_id: Kentish-Middle-English-eɑ-eːɑ-eo-eːo
     source: index_diachronica.html:5728
     rule: eɑ e:[+long]ɑ eo e:[+long]o > ɑ ɛ:[+long] e e:[+long]
@@ -10948,8 +10948,8 @@ sections:
     rule: ɑ:[+long] {y,y:[+long]} > ɔ:[+long] {e,e:[+long]}
   - rule_id: Kentish-Middle-English-ɑ-e-o
     source: index_diachronica.html:5738
-    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / %[+lo] // in #% with the following
-      % containing i:[+long] or ending in one of /m n r l/'
+    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / %[+lo] // :{in #% with the following
+      % containing i:[+long] or ending, one of /m n r l/}:'
   - rule_id: Kentish-Middle-English-Vː_2
     source: index_diachronica.html:5740
     rule: 'V:[+long] > V:[-long] / in #% before a % with i:[+long]'
@@ -10972,8 +10972,8 @@ sections:
   rules:
   - rule_id: Midlands-Middle-English-Vː
     source: index_diachronica.html:5749
-    rule: V:[+long] > V:[-long] / _C{V:[+long],C} // _st{#,V} or when preceding a
-      cluster which had triggered a vowel to become long in Old V:[+front]nglish
+    rule: 'V:[+long] > V:[-long] / _C{V:[+long],C} // :{_st{#,V} or when preceding
+      a cluster which had triggered a vowel to become long, Old V:[+front]nglish}:'
   - rule_id: Midlands-Middle-English-eɑ-eːɑ-eo-eːo
     source: index_diachronica.html:5750
     rule: eɑ e:[+long]ɑ eo e:[+long]o > ɑ ɛ:[+long] e e:[+long]
@@ -11008,8 +11008,8 @@ sections:
     rule: ɑ:[+long] {y,y:[+long]} > ɔ:[+long] {i,i:[+long]}
   - rule_id: Midlands-Middle-English-ɑ-e-o
     source: index_diachronica.html:5760
-    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / %[+lo] // in #% with the following
-      % containing i:[+long] or ending in one of /m n r l/'
+    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / %[+lo] // :{in #% with the following
+      % containing i:[+long] or ending, one of /m n r l/}:'
   - rule_id: Midlands-Middle-English-Vː_2
     source: index_diachronica.html:5761
     rule: 'V:[+long] > V:[-long] / in #% before a % with i:[+long]'
@@ -11110,7 +11110,7 @@ sections:
     rule: æ > ɛ / _ɹ
   - rule_id: American-English-j
     source: index_diachronica.html:5798
-    rule: j > ∅ / {θ,s,z,l,n,t,d}_ when in onset position
+    rule: 'j > ∅ / :{{θ,s,z,l,n,t,d}_ when, onset position}:'
   - rule_id: American-English-ɒ_2
     source: index_diachronica.html:5799
     rule: ɒ > ɔ / _C:[-front,+back,+hi,-lo]
@@ -11265,8 +11265,8 @@ sections:
   rules:
   - rule_id: Northern-Middle-English-Vː
     source: index_diachronica.html:5857
-    rule: V:[+long] > V:[-long] / _C{V:[+long],C} // _st{#,V} or when preceding a
-      cluster which had triggered a vowel to become long in Old V:[+front]nglish
+    rule: 'V:[+long] > V:[-long] / _C{V:[+long],C} // :{_st{#,V} or when preceding
+      a cluster which had triggered a vowel to become long, Old V:[+front]nglish}:'
   - rule_id: Northern-Middle-English-eɑ-eːɑ-eo-eːo
     source: index_diachronica.html:5858
     rule: eɑ e:[+long]ɑ eo e:[+long]o > ɑ ɛ:[+long] e e:[+long]
@@ -11298,8 +11298,8 @@ sections:
     rule: '{ɑ:[+long]ht,oht,o:[+long]ht} > ow'
   - rule_id: Northern-Middle-English-ɑ-e-o
     source: index_diachronica.html:5868
-    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / %[+lo] // in #% with the following
-      % containing i:[+long] or ending in one of /m n r l/'
+    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / %[+lo] // :{in #% with the following
+      % containing i:[+long] or ending, one of /m n r l/}:'
   - rule_id: Northern-Middle-English-yː
     source: index_diachronica.html:5869
     rule: '{y,y:[+long]} > {i,i:[+long]}'
@@ -11314,7 +11314,7 @@ sections:
     rule: j tʃ > ɡ k
   - rule_id: Northern-Middle-English-ʃ
     source: index_diachronica.html:5873
-    rule: ʃ > s / _ $[-stress]
+    rule: ʃ > s / <(..)_(..)>:[-stress]
   - rule_id: Northern-Middle-English-hn-wl,hl-hr
     source: index_diachronica.html:5875
     rule: hn {wl,hl} hr > w l r
@@ -11619,8 +11619,8 @@ sections:
   rules:
   - rule_id: Southern-Middle-English-Vː
     source: index_diachronica.html:5987
-    rule: V:[+long] > V:[-long] / _C{V:[+long],C} // _st{#,V} or when preceding a
-      cluster which had triggered a vowel to become long in Old V:[+front]nglish
+    rule: 'V:[+long] > V:[-long] / _C{V:[+long],C} // :{_st{#,V} or when preceding
+      a cluster which had triggered a vowel to become long, Old V:[+front]nglish}:'
   - rule_id: Southern-Middle-English-eɑ-eːɑ-eo-eːo
     source: index_diachronica.html:5988
     rule: eɑ e:[+long]ɑ eo e:[+long]o > ɑ ɛ:[+long] e e:[+long]
@@ -11655,8 +11655,8 @@ sections:
     rule: ɑ:[+long] > ɔ:[+long]
   - rule_id: Southern-Middle-English-ɑ-e-o
     source: index_diachronica.html:5998
-    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / %[+lo] // in #% with the following
-      % containing i:[+long] or ending in one of /m n r l/'
+    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / %[+lo] // :{in #% with the following
+      % containing i:[+long] or ending, one of /m n r l/}:'
   - rule_id: Southern-Middle-English-yː
     source: index_diachronica.html:5999
     rule: '{y,y:[+long]} > {i,i:[+long]}'
@@ -12154,7 +12154,7 @@ sections:
     rule: 'a > u / $u / // #<(..)_(..)>'
   - rule_id: Old-Norse-waː-naː
     source: index_diachronica.html:6205
-    rule: 'wa:[+long] na:[+long] > o:[+long] no:[+long] / $u in #%'
+    rule: 'wa:[+long] na:[+long] > o:[+long] no:[+long] / :{$u, #%}:'
   - rule_id: Old-Norse-aː-ae
     source: index_diachronica.html:6206
     rule: '{a,a:[+long]} ae > {o,o:[+long]} ɒø / #(C)(C)(C)_(C)(C)(C)u'
@@ -14612,8 +14612,8 @@ sections:
     rule: n > ŋ / _P:[-fr,+bk,+hi,-lo]
   - rule_id: Polish-Cʲ
     source: index_diachronica.html:7096
-    rule: C:[+cor,+dist] > C / _C:[+cor,+anterior,+dist] with developments of yers
-      in ablaut environments
+    rule: 'C:[+cor,+dist] > C / :{_C:[+cor,+anterior,+dist] with developments of yers,
+      ablaut environments}:'
   - rule_id: Polish-Cʲ_2
     source: index_diachronica.html:7097
     rule: C:[+cor,+dist] > C
@@ -15369,7 +15369,7 @@ sections:
     rule: '{u:[+stress],o:[+long, +stress]} o:[+stress] > o ɔ / _'
   - rule_id: Catalan-u,oː
     source: index_diachronica.html:7360
-    rule: '{u,o,o:[+long]} > u / _$V:[+stress] in V:[+front]ast Catalan'
+    rule: '{u,o,o:[+long]} > u / :{_$V:[+stress], V:[+front]ast Catalan}:'
   - rule_id: Catalan-u,oː_2
     source: index_diachronica.html:7361
     rule: '{u,o,o:[+long]} > o / _$V:[+stress] else'
@@ -15910,7 +15910,7 @@ sections:
     rule: ɛ ɔ > iɛ uɛ / _{Cj,jC}
   - rule_id: French-∅_6
     source: index_diachronica.html:7537
-    rule: ∅ > j / {ʃ,ʒ,sj,zj}{a:[+stress],e:[+stress]}_ in %[+lo]
+    rule: '∅ > j / :{{ʃ,ʒ,sj,zj}{a:[+stress],e:[+stress]}_, %[+lo]}:'
   - rule_id: French-sːj-zj-rj
     source: index_diachronica.html:7538
     rule: s:[+long]j zj rj > js:[+long] jz jr
@@ -15951,10 +15951,10 @@ sections:
     rule: o > ou / %[+hi]
   - rule_id: French-e
     source: index_diachronica.html:7550
-    rule: 'e > ə / #(C,0)_($,0):[+stress] in %[+lo]'
+    rule: 'e > ə / :{#(C,0)_($,0):[+stress], %[+lo]}:'
   - rule_id: French-e_2
     source: index_diachronica.html:7551
-    rule: 'e > ɛ / #(C,0)_($,0):[+stress] in %[+hi] or _V'
+    rule: 'e > ɛ / :{#(C,0)_($,0):[+stress], %[+hi] or _V}:'
   - rule_id: French-o
     source: index_diachronica.html:7552
     alternatives:
@@ -15962,7 +15962,7 @@ sections:
     - o > ɔ
   - rule_id: French-a_2
     source: index_diachronica.html:7553
-    rule: 'a > ə / #{tʃ,dʒ}_($,0):[+stress] in %[+lo]'
+    rule: 'a > ə / :{#{tʃ,dʒ}_($,0):[+stress], %[+lo]}:'
   - rule_id: French-a_3
     source: index_diachronica.html:7554
     rule: a > ɛ / %[+lo]
@@ -16539,7 +16539,7 @@ sections:
     rule: a > a / _N
   - rule_id: Old-Provençal-—-a_2
     source: index_diachronica.html:7748
-    rule: a > a / _# in monosyllables and oxytones
+    rule: 'a > a / :{_#, monosyllables and oxytones}:'
   - rule_id: Old-Provençal-—-a_3
     source: index_diachronica.html:7749
     rule: a > ɔ
@@ -18372,7 +18372,7 @@ sections:
     rule: ɡ > k
   - rule_id: Mekens-k
     source: index_diachronica.html:8424
-    rule: k > ɡ / _ $[+stress]
+    rule: k > ɡ / <(..)_(..)>:[+stress]
   - rule_id: Mekens-ɡʷ
     source: index_diachronica.html:8425
     rule: ɡʷ > k / _o
@@ -18477,7 +18477,7 @@ sections:
     rule: p t > l / _V
   - rule_id: Wayoró-k
     source: index_diachronica.html:8465
-    rule: k > ɡ / _ $[+stress]
+    rule: k > ɡ / <(..)_(..)>:[+stress]
   - rule_id: Wayoró-b
     source: index_diachronica.html:8466
     rule: b > ∅ / V_V
@@ -18645,7 +18645,7 @@ sections:
     rule: a > ə / _N#
   - rule_id: Guajajara-a_2
     source: index_diachronica.html:8527
-    rule: a > ə / if N in %#
+    rule: 'a > ə / :{if N, %#}:'
   - rule_id: Guajajara-o
     source: index_diachronica.html:8528
     rule: o > u // o(C,0)_(C,0)#
@@ -21804,13 +21804,13 @@ sections:
   rules:
   - rule_id: Proto-Bantu_2-S+-lenis-N+-lenis
     source: index_diachronica.html:10462
-    rule: P:[-tense] N:[-tense] > P:[+tense] N:[+tense] / _ in C=1 position
+    rule: 'P:[-tense] N:[-tense] > P:[+tense] N:[+tense] / :{_, C=1 position}:'
   - rule_id: Proto-Bantu_2-N+-lenis-N-lenis
     source: index_diachronica.html:10463
-    rule: N:[-tense] N:[+tense] > N:[+tense] N P / _ in C=2 position
+    rule: 'N:[-tense] N:[+tense] > N:[+tense] N P / :{_, C=2 position}:'
   - rule_id: Proto-Bantu_2-d2
     source: index_diachronica.html:10464
-    rule: d > d / _ in C=2 position
+    rule: 'd > d / :{_, C=2 position}:'
 - section: Proto-Bantu to Sebirwa
   index: 30.1.1.1
   rules:
@@ -21934,29 +21934,29 @@ sections:
   - rule_id: Proto-Manenguba-’p-’t-’d/d2-c-’ɟ-’k-ɡ
     source: index_diachronica.html:10541
     alternatives:
-    - p:[+cg] t:[+cg] d:[+cg]/d c ɟ:[+cg] k:[+cg] ɡ > f l ɟ s w k / _ in C=1 position
-    - p:[+cg] t:[+cg] d:[+cg]/d c ɟ:[+cg] k:[+cg] ɡ > f l ɟ s w / _ in C=1 position
+    - 'p:[+cg] t:[+cg] d:[+cg]/d c ɟ:[+cg] k:[+cg] ɡ > f l ɟ s w k / :{_, C=1 position}:'
+    - 'p:[+cg] t:[+cg] d:[+cg]/d c ɟ:[+cg] k:[+cg] ɡ > f l ɟ s w / :{_, C=1 position}:'
   - rule_id: Proto-Manenguba-N+-lenis
     source: index_diachronica.html:10542
-    rule: N:[-tense] > N:[+tense] / _ in C=1 position
+    rule: 'N:[-tense] > N:[+tense] / :{_, C=1 position}:'
   - rule_id: Proto-Manenguba-p-t-’t-’d,d2-c-k-’k
     source: index_diachronica.html:10543
     alternatives:
-    - p t t:[+cg] d:[+cg] c k k:[+cg] > b d l l ɟ ɡ / _ in C=2 position
-    - p t t:[+cg] d c k k:[+cg] > b d l ɟ ɡ / _ in C=2 position
+    - 'p t t:[+cg] d:[+cg] c k k:[+cg] > b d l l ɟ ɡ / :{_, C=2 position}:'
+    - 'p t t:[+cg] d c k k:[+cg] > b d l ɟ ɡ / :{_, C=2 position}:'
   - rule_id: Proto-Manenguba-’m-m-’n-n-’ɲ,ɲ-ŋ
     source: index_diachronica.html:10544
-    rule: m:[+cg] m n:[+cg] n {ɲ:[+cg],ɲ} ŋ > m {ᵐb,m} n {ⁿd,n} ɲ {ᵑɡ,ŋ} / _ in C=2
-      position
+    rule: 'm:[+cg] m n:[+cg] n {ɲ:[+cg],ɲ} ŋ > m {ᵐb,m} n {ⁿd,n} ɲ {ᵑɡ,ŋ} / :{_, C=2
+      position}:'
   - rule_id: Proto-Manenguba-u,o-ɛ,e,i
     source: index_diachronica.html:10545
-    rule: '{u,o} {ɛ,e,i} > w j / C_a in noun roots'
+    rule: '{u,o} {ɛ,e,i} > w j / :{C_a, noun roots}:'
   - rule_id: Proto-Manenguba-u,o-ɛ,e,i_2
     source: index_diachronica.html:10546
-    rule: '{u,o} {ɛ,e,i} > w j / C_(a) in verb roots'
+    rule: '{u,o} {ɛ,e,i} > w j / :{C_(a), verb roots}:'
   - rule_id: Proto-Manenguba-u,o-ɛ,e,i_3
     source: index_diachronica.html:10547
-    rule: '{u,o} {ɛ,e,i} > w j / C_$V in noun class prefixes'
+    rule: '{u,o} {ɛ,e,i} > w j / :{C_$V, noun class prefixes}:'
   - rule_id: Proto-Manenguba-f
     source: index_diachronica.html:10548
     rule: f > h
@@ -22466,13 +22466,13 @@ sections:
     rule: ʃ > s
   - rule_id: Tataltepec-Chatino-l-n
     source: index_diachronica.html:10823
-    rule: l n > lʲ nʲ / e_ in %[-long -stress]
+    rule: 'l n > lʲ nʲ / :{e_, %[-long -stress]}:'
   - rule_id: Tataltepec-Chatino-ç
     source: index_diachronica.html:10824
     rule: ç > ʔ (? Not sure if I:[+cg]m reading the phone(me)s right on this one)
   - rule_id: Tataltepec-Chatino-e
     source: index_diachronica.html:10825
-    rule: e > a / _ʔ in $[-stress]
+    rule: 'e > a / :{_ʔ, <(..)_(..)>:[-stress]}:'
   - rule_id: Tataltepec-Chatino-et-el-en
     source: index_diachronica.html:10826
     rule: et el en > itʲ elʲ enʲ
@@ -22547,10 +22547,10 @@ sections:
     rule: ʃ > ts / _i
   - rule_id: Yaitepec-Chatino-lʲ
     source: index_diachronica.html:10854
-    rule: 'lʲ > l / #_ in %[-long -stress]'
+    rule: 'lʲ > l / :{#_, %[-long -stress]}:'
   - rule_id: Yaitepec-Chatino-lʲ_2
     source: index_diachronica.html:10855
-    rule: 'lʲ > lj // #_ in %[-long -stress]'
+    rule: 'lʲ > lj // :{#_, %[-long -stress]}:'
   - rule_id: Yaitepec-Chatino-nʲ
     source: index_diachronica.html:10856
     rule: nʲ > j / _ã
@@ -23909,16 +23909,16 @@ sections:
   rules:
   - rule_id: Vowel-Shifts_3-em-emˀ
     source: index_diachronica.html:11719
-    rule: em emˀ > u uʔ / w_ in $[-stress]
+    rule: 'em emˀ > u uʔ / :{w_, <(..)_(..)>:[-stress]}:'
   - rule_id: Vowel-Shifts_3-em-emˀ_2
     source: index_diachronica.html:11720
-    rule: em emˀ > a aʔ / _ $[-stress] // {p:[+cg],p,m,mˀ}_
+    rule: em emˀ > a aʔ / <(..)_(..)>:[-stress] // {p:[+cg],p,m,mˀ}_
   - rule_id: Vowel-Shifts_3-en-enˀ
     source: index_diachronica.html:11721
-    rule: en enˀ > i iʔ / {ts:[+cg],ts,s,j,jˀ}_ in $[-stress]
+    rule: 'en enˀ > i iʔ / :{{ts:[+cg],ts,s,j,jˀ}_, <(..)_(..)>:[-stress]}:'
   - rule_id: Vowel-Shifts_3-en-enˀ_2
     source: index_diachronica.html:11722
-    rule: en enˀ > a ʔ / _ $[-stress] // {t:[+cg],t,lʲ,n,nˀ,l,lˀ}_
+    rule: en enˀ > a ʔ / <(..)_(..)>:[-stress] // {t:[+cg],t,lʲ,n,nˀ,l,lˀ}_
 - section: Shuswap to Spokane-Kalispel Shuswap Nasal-to-Vowel Shifts
   index: '35.4'
   rules:
@@ -24244,8 +24244,8 @@ sections:
   - rule_id: Guānhuà-yʔ_3
     source: index_diachronica.html:11858
     alternatives:
-    - yʔ > yʔ / {∅,C:[+laryngeal]}, in -juət-types
-    - yʔ > yɛʔ? / {∅,C:[+laryngeal]}, in -juət-types
+    - 'yʔ > yʔ / :{{∅,C:[+laryngeal]},, -juət-types}:'
+    - 'yʔ > yɛʔ? / :{{∅,C:[+laryngeal]},, -juət-types}:'
   - rule_id: Guānhuà-yʔ_4
     source: index_diachronica.html:11859
     steps:
@@ -24254,14 +24254,14 @@ sections:
   - rule_id: Guānhuà-yʔ_5
     source: index_diachronica.html:11860
     alternatives:
-    - yʔ > ɥʔ / C:[+cons, +cor, -ant, -dist], in -juət-types
-    - yʔ > yʔ / C:[+cons, +cor, -ant, -dist], in -juət-types
-    - yʔ > uʔ / C:[+cons, +cor, -ant, -dist], in -juət-types
+    - 'yʔ > ɥʔ / :{C:[+cons, +cor, -ant, -dist],, -juət-types}:'
+    - 'yʔ > yʔ / :{C:[+cons, +cor, -ant, -dist],, -juət-types}:'
+    - 'yʔ > uʔ / :{C:[+cons, +cor, -ant, -dist],, -juət-types}:'
   - rule_id: Guānhuà-yʔ_6
     source: index_diachronica.html:11861
     steps:
-    - yʔ > oʔ / C:[+cons, +cor, -ant, -dist]_, in -k-types
-    - oʔ > ʊʔ / C:[+cons, +cor, -ant, -dist]_, in -k-types
+    - 'yʔ > oʔ / :{C:[+cons, +cor, -ant, -dist]_,, -k-types}:'
+    - 'oʔ > ʊʔ / :{C:[+cons, +cor, -ant, -dist]_,, -k-types}:'
   - rule_id: Guānhuà-yjʔ
     source: index_diachronica.html:11862
     rule: yjʔ > yʔ
@@ -26236,7 +26236,7 @@ sections:
     rule: p > b / V_V
   - rule_id: Catawba-tʲ
     source: index_diachronica.html:12745
-    rule: tʲ > ʃ / _ %[+stress]
+    rule: tʲ > ʃ / <(..)_(..)>:[+stress]
   - rule_id: Catawba-tʲ_2
     source: index_diachronica.html:12746
     rule: tʲ > ʒ / else
@@ -26264,13 +26264,13 @@ sections:
     - p > w
   - rule_id: Dakota-tʲ
     source: index_diachronica.html:12757
-    rule: tʲ > ʃ / _ %[+stress]
+    rule: tʲ > ʃ / <(..)_(..)>:[+stress]
   - rule_id: Dakota-tʲ_2
     source: index_diachronica.html:12758
     rule: tʲ > ʒ / else
   - rule_id: Dakota-s
     source: index_diachronica.html:12759
-    rule: s > z / _ $[-stress]
+    rule: s > z / <(..)_(..)>:[-stress]
   - rule_id: Dakota-s_2
     source: index_diachronica.html:12760
     rule: s > z / V_V
@@ -26353,7 +26353,7 @@ sections:
     rule: L > r / _V:[-nas]
   - rule_id: Mandan-ã
     source: index_diachronica.html:12802
-    rule: ã > a / _ %[+stress]
+    rule: ã > a / <(..)_(..)>:[+stress]
   - rule_id: Mandan-tʲ
     source: index_diachronica.html:12804
     rule: tʲ > s / _ʔV
@@ -26410,10 +26410,10 @@ sections:
     rule: t > dʒ / _V:[+front, -stress]
   - rule_id: Proto-Čiwere-Winnebago-tʲ
     source: index_diachronica.html:12824
-    rule: tʲ > ʃ / _ %[+stress]
+    rule: tʲ > ʃ / <(..)_(..)>:[+stress]
   - rule_id: Proto-Čiwere-Winnebago-tʲ-s
     source: index_diachronica.html:12825
-    rule: tʲ s > ʒ z / _ $[-stress]
+    rule: tʲ s > ʒ z / <(..)_(..)>:[-stress]
   - rule_id: Proto-Čiwere-Winnebago-k
     source: index_diachronica.html:12826
     rule: k > ɡ / V:[+nas]_ // _#
@@ -26641,10 +26641,10 @@ sections:
     rule: w > ∅ / _t
   - rule_id: Proto-Dhegiha-t-tʲ-s
     source: index_diachronica.html:12921
-    rule: t tʲ s > d ʒ z / _ $[-stress]
+    rule: t tʲ s > d ʒ z / <(..)_(..)>:[-stress]
   - rule_id: Proto-Dhegiha-tʲ
     source: index_diachronica.html:12922
-    rule: tʲ > ʃ / _ %[+stress]
+    rule: tʲ > ʃ / <(..)_(..)>:[+stress]
   - rule_id: Proto-Dhegiha-k
     source: index_diachronica.html:12923
     rule: k > ɡ / V:[+stress]_
@@ -26662,7 +26662,7 @@ sections:
     rule: w > β
   - rule_id: Proto-Dhegiha-u
     source: index_diachronica.html:12928
-    rule: u > i / _ %[+stress]
+    rule: u > i / <(..)_(..)>:[+stress]
   - rule_id: Proto-Dhegiha-k_2
     source: index_diachronica.html:12929
     rule: 'k > ∅ / #t_'
@@ -28382,7 +28382,7 @@ sections:
   rules:
   - rule_id: Pre-Finnic-ŋ
     source: index_diachronica.html:13762
-    rule: ŋ > k / _#, in latives
+    rule: 'ŋ > k / :{_#,, latives}:'
   - rule_id: Pre-Finnic-ŋ_2
     source: index_diachronica.html:13763
     rule: ŋ > n / _# else

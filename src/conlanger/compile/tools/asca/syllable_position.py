@@ -26,13 +26,13 @@ _MECHANICAL_ENV_ASCA = {
 _COMMA_U_HASH_RE = re.compile(r"^#U\s*,\s*U#$")
 
 _SYLLABLE_STRESS_ENV_RAW = {
-    "U[-stress]": "_ %[-stress]",
-    "U[+stress]": "_ %[+stress]",
-    "in U[-stress]": "_ %[-stress]",
-    "in U[+stress]": "_ %[+stress]",
+    "U[-stress]": "<(..)_(..)>:[-stress]",
+    "U[+stress]": "<(..)_(..)>:[+stress]",
+    "in U[-stress]": "<(..)_(..)>:[-stress]",
+    "in U[+stress]": "<(..)_(..)>:[+stress]",
 }
 _STRESSED_MONOSYLLABLE_ENV_RAW = "#U[+stress]#"
-_STRESSED_MONOSYLLABLE_ENV_COMPILED = "#_[+stress]"
+_STRESSED_MONOSYLLABLE_ENV_COMPILED = "#<(..)_(..)>:[+stress]#"
 
 _IN_STRESS_COMMA_RE = re.compile(
     r",\s+in\s+(?:%\[(\+stress|-stress)\]|\$\[(\+stress|-stress)\])",
@@ -92,7 +92,7 @@ def _compile_syllable_stress_env_from_raw(raw: str | None) -> str | None:
 
 
 def _rewrite_in_u_stress_tail(feat: str) -> str:
-    return f" in ${feat}"
+    return f" in <(..)_(..)>:{feat}"
 
 
 def _matrix_brackets_from_tail(tail: str) -> str | None:
@@ -112,11 +112,11 @@ def _rewrite_legacy_whole_in_syllable_host_matrix(text: str) -> str:
         return text
     tail = match.group("tail")
     if re.fullmatch(r"\[-stress\]", tail):
-        return "_ $[-stress]"
+        return "<(..)_(..)>:[-stress]"
     matrix_tail = _matrix_brackets_from_tail(tail)
     if matrix_tail is None:
         return text
-    return f"_ %{matrix_tail}"
+    return f"<(..)_(..)>:{matrix_tail}"
 
 
 def project_position_in_compiled_field(text: str | None) -> str | None:
@@ -133,10 +133,14 @@ def project_position_in_compiled_field(text: str | None) -> str | None:
         lambda match: _rewrite_in_u_stress_tail(match.group("feat")),
         projected,
     )
-    return _WHOLE_IN_U_COLON_STRESS_RE.sub(
-        lambda match: f"_ ${match.group('feat')}",
+    projected = _WHOLE_IN_U_COLON_STRESS_RE.sub(
+        lambda match: f"<(..)_(..)>:{match.group('feat')}",
         projected,
     )
+    parts = projected.split(" in ")
+    if len(parts) == 2:
+        return f":{{{', '.join(parts)}}}:"
+    return projected
 
 
 def project_syllable_stress_compiled_env(
@@ -153,15 +157,13 @@ def project_syllable_stress_compiled_env(
 
     projected = compiled_env
     if projected in ("%[-stress]", "in %[-stress]"):
-        return "_ $[-stress]"
+        return "<(..)_(..)>:[-stress]"
     if projected in ("%[+stress]", "in %[+stress]"):
-        return "_ $[+stress]"
-    if projected == "#%[+stress]#":
-        return _STRESSED_MONOSYLLABLE_ENV_COMPILED
+        return "<(..)_(..)>:[+stress]"
 
     def _comma_in_stress_repl(match: re.Match[str]) -> str:
         feature = match.group(1) or match.group(2)
-        return f" in $[{feature}]"
+        return f" in <(..)_(..)>:[{feature}]"
 
     projected = _IN_STRESS_COMMA_RE.sub(_comma_in_stress_repl, projected)
     return project_position_in_compiled_field(projected)
