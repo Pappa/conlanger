@@ -8008,7 +8008,7 @@ section_index,section_name,rule_id,alt_idx,step_idx,source,ok,rule,failure_class
 37.1.2.2.1,Huron to Wyandot,Wyandot-∅_2,,,index_diachronica.html:12487,OK,"∅ > j / {e,e:[+long],ẽ,ẽ:[+long],i,i:[+long]}_V",,,,,
 37.1.2.2.1,Huron to Wyandot,Wyandot-x,,,index_diachronica.html:12488,OK,"x > ∅ / _{i,j}",,,,,
 37.1.2.2.1,Huron to Wyandot,Wyandot-x_2,,,index_diachronica.html:12489,OK,x > e / #_r,,,,,
-37.1.2.2.1,Huron to Wyandot,Wyandot-w-j,,,index_diachronica.html:12490,OK,w j > m ɲ / V_V,,,,,
+37.1.2.2.1,Huron to Wyandot,Wyandot-w-j,,,index_diachronica.html:12490,OK,"w j > m ɲ / V:[-nasal]_V:[+nasal], V:[+nasal]_V:[-nasal]",,,,,
 37.1.2.2.1,Huron to Wyandot,Wyandot-j,,,index_diachronica.html:12491,OK,"j > ʒ / {#,ʔ,V}_V",,,,,
 37.1.2.2.1,Huron to Wyandot,Wyandot-x_3,,,index_diachronica.html:12492,OK,x > j / _V,,,,,
 37.1.2.2.1,Huron to Wyandot,Wyandot-x_4,,,index_diachronica.html:12493,OK,x > ∅,,,,,

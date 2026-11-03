@@ -58935,8 +58935,7 @@ sections:
     stages:
     - w j
     - m ɲ
-    env: V_V
-    comment: between two vowels of unlike nasality
+    env: V[-nasal]_V[+nasal], V[+nasal]_V[-nasal]
   - rule_id: Wyandot-j
     source: index_diachronica.html:12491
     raw: j → ʒ / {#,ʔ,V}_V

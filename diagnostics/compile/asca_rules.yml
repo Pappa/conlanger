@@ -25691,7 +25691,7 @@ sections:
     rule: 'x > e / #_r'
   - rule_id: Wyandot-w-j
     source: index_diachronica.html:12490
-    rule: w j > m ɲ / V_V
+    rule: w j > m ɲ / V:[-nasal]_V:[+nasal], V:[+nasal]_V:[-nasal]
   - rule_id: Wyandot-j
     source: index_diachronica.html:12491
     rule: j > ʒ / {#,ʔ,V}_V

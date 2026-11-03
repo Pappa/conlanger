@@ -62,11 +62,6 @@ def test_apply_prose_position_env_conditions(input, expected):
             "#U[+stress]#",
             ["in accented or stressed monosyllables"],
         ),
-        (
-            "between two vowels of unlike nasality",
-            "V_V",
-            ["between two vowels of unlike nasality"],
-        ),
         ("not universal?", "_", ["not universal?"]),
         ("_k", "_k", []),
     ],

@@ -350,6 +350,9 @@
 - from: " / in open syllables "
   to: " ; in open syllables "
   reason: unhandled environment
+- from: " / between two vowels of unlike nasality"
+  to: " / V[-nasal]_V[+nasal], V[+nasal]_V[-nasal]"
+  reason: hardcoding env
 #endregion
 
 # these are wrong

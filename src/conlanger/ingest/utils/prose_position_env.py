@@ -24,10 +24,6 @@ _STRESSED_MONOSYLLABLE_RE = re.compile(
     r"^(?:in\s+)?accented\s+or\s+stressed\s+monosyllables?\s*$",
     re.IGNORECASE,
 )
-_BETWEEN_TWO_VOWELS_RE = re.compile(
-    r"^between\s+two\s+vowels(?:\s+of\s+unlike\s+nasality)?\s*$",
-    re.IGNORECASE,
-)
 _NOT_UNIVERSAL_RE = re.compile(r"^\(?not\s+universal\??\)?\s*$", re.IGNORECASE)
 
 
@@ -52,9 +48,6 @@ def normalize_bare_prose_position_env(
 
     if _STRESSED_MONOSYLLABLE_RE.match(stripped):
         return "#U[+stress]#", [stripped], flags
-
-    if _BETWEEN_TWO_VOWELS_RE.match(stripped):
-        return "V_V", [stripped], flags
 
     if _NOT_UNIVERSAL_RE.match(stripped):
         flags["sporadic"] = True
