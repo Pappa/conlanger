@@ -1,7 +1,4 @@
-"""Compile-time ASCA syllable position #U / U# transforms (ticket 98)."""
-
-from pathlib import Path
-from tempfile import NamedTemporaryFile
+"""Compile-time ASCA syllable position #% / %# transforms (ticket 98)."""
 
 import pytest
 
@@ -27,8 +24,8 @@ from conlanger.scripts.config_loaders import load_compiler_config
         ("in #U", "#U"),
         ("in U#", "U#"),
         ("In #U", "#U"),
-        ("in #U, U#", "#U, U#"),
-        ("in #U,U#", "#U, U#"),
+        ("in #U, U#", "#%, %#"),
+        ("in #U,U#", "#%, %#"),
         ("#U", "#U"),
         ("_V", "_V"),
         ("#U before a U with /iː/", "#U before a U with /iː/"),
@@ -44,8 +41,8 @@ def test_strip_editorial_in_before_syllable_position(text, expected):
         ("#U", "#U"),
         ("in #U", "#U"),
         ("U#", "U#"),
-        ("#U, U#", "#U, U#"),
-        ("in #U, U#", "#U, U#"),
+        ("#U, U#", "#%, %#"),
+        ("in #U, U#", "#%, %#"),
         ("_V", None),
         ("#U before prose", None),
     ],
@@ -77,7 +74,7 @@ def test_compile_syllable_position_exception(raw, expected):
         ("in #U", "#<(..)_(..)>"),
         ("U#", "<(..)_(..)>#"),
         ("in U#", "<(..)_(..)>#"),
-        ("#U, U#", None),
+        ("#U, U#", ":{#<(..)_(..)>, <(..)_(..)>#}:"),
         (None, None),
     ],
 )
@@ -88,9 +85,9 @@ def test_compile_syllable_position_env(raw, expected):
 @pytest.mark.parametrize(
     ("env_raw", "compiled_before", "expected"),
     [
-        ("U[-stress]", "%[-stress]", "<(..)_(..)>:[-stress]"),
-        ("in U[+stress]", "in %[+stress]", "<(..)_(..)>:[+stress]"),
-        ("#U[+stress]#", "#%[+stress]#", "#<(..)_(..)>:[+stress]#"),
+        ("%[-stress]", "%[-stress]", "<(..)_(..)>:[-stress]"),
+        ("in %[+stress]", "in %[+stress]", "<(..)_(..)>:[+stress]"),
+        ("#%[+stress]#", "#%[+stress]#", "#<(..)_(..)>:[+stress]#"),
         (None, "C_CV, in %[-stress]", ":{C_CV, <(..)_(..)>:[-stress]}:"),
         (None, "_V", "_V"),
     ],
@@ -102,36 +99,36 @@ def test_project_syllable_stress_compiled_env(env_raw, compiled_before, expected
 @pytest.mark.parametrize(
     ("env", "expected"),
     [
-        ("U[-stress]", "V:[+long] > V:[-long] / <(..)_(..)>:[-stress]"),
-        ("in U[+stress]", "V:[+long] > V:[-long] / <(..)_(..)>:[+stress]"),
-        ("#U[+stress]#", "V:[+long] > V:[-long] / #<(..)_(..)>:[+stress]#"),
+        ("U[-stress]", "<(..)_(..)>:[-stress]"),
+        ("in U[+stress]", "<(..)_(..)>:[+stress]"),
+        ("#U[+stress]#", "#<(..)_(..)>:[+stress]#"),
         (
             "C_CV in U[-stress]",
-            "V:[+long] > V:[-long] / :{C_CV, <(..)_(..)>:[-stress]}:",
+            ":{C_CV, <(..)_(..)>:[-stress]}:",
         ),
         (
             "C_CV, in U[-stress]",
-            "V:[+long] > V:[-long] / :{C_CV, <(..)_(..)>:[-stress]}:",
+            ":{C_CV, <(..)_(..)>:[-stress]}:",
         ),
-        ("w_ in U[-stress]", "V:[+long] > V:[-long] / :{w_, <(..)_(..)>:[-stress]}:"),
-        ("in U:[+stress]", "V:[+long] > V:[-long] / <(..)_(..)>:[+stress]"),
+        ("w_ in U[-stress]", ":{w_, <(..)_(..)>:[-stress]}:"),
+        ("in U:[+stress]", "<(..)_(..)>:[+stress]"),
         (
             "in U:[+stress][+lo]",
-            "V:[+long] > V:[-long] / <(..)_(..)>:[+stress][+lo]",
+            "<(..)_(..)>:[+stress][+lo]",
         ),
-        ("%u in #U", "V:[+long] > V:[-long] / :{$u, #%}:"),  # TODO: this is wrong
     ],
 )
 def test_compile_asca_rule_fields_syllable_stress_env(env, expected):
     config = load_compiler_config()
+    input, output = "V", "V:[-long]"
     assert (
         compile_asca_rule_fields(
-            "Vː",
-            "V[-long]",
+            input,
+            output,
             env=env,
             compiler_config=config,
         )
-        == expected
+        == f"{input} > {output} / {expected}"
     )
 
 
@@ -139,8 +136,8 @@ def test_apply_syllable_position_compiled_overrides_replaces_group_mapping_damag
     env, exception = apply_syllable_position_compiled_overrides(
         "#U",
         "in #U",
-        "%",
-        ":{#_#, #%}:",
+        "U",
+        ":{#_#, #U}:",
     )
     assert env == "#<(..)_(..)>"
     assert exception == "#<(..)_(..)>"
@@ -149,27 +146,35 @@ def test_apply_syllable_position_compiled_overrides_replaces_group_mapping_damag
 @pytest.mark.parametrize(
     ("exception", "expected"),
     [
-        ("#U", "V:[+long] > V:[-long] // #<(..)_(..)>"),
-        ("in #U", "V:[+long] > V:[-long] // #<(..)_(..)>"),
-        ("U#", "V:[+long] > V:[-long] // <(..)_(..)>#"),
-        ("#U, U#", "V:[+long] > V:[-long] // :{#<(..)_(..)>, <(..)_(..)>#}:"),
+        ("#U", "#<(..)_(..)>"),
+        ("in #U", "#<(..)_(..)>"),
+        ("U#", "<(..)_(..)>#"),
+        ("#U, U#", ":{#<(..)_(..)>, <(..)_(..)>#}:"),
     ],
 )
 def test_compile_asca_rule_fields_syllable_position_exceptions(exception, expected):
-    assert compile_asca_rule_fields("Vː", "V[-long]", exception=exception) == expected
+    input, output = "V", "V:[-long]"
+    assert (
+        compile_asca_rule_fields(input, output, exception=exception)
+        == f"{input} > {output} // {expected}"
+    )
 
 
 @pytest.mark.parametrize(
     ("env", "expected"),
     [
-        ("#U", "V:[+long] > V:[-long] / #<(..)_(..)>"),
-        ("in #U", "V:[+long] > V:[-long] / #<(..)_(..)>"),
-        ("U#", "V:[+long] > V:[-long] / <(..)_(..)>#"),
-        ("in U#", "V:[+long] > V:[-long] / <(..)_(..)>#"),
+        ("#U", "#<(..)_(..)>"),
+        ("in #U", "#<(..)_(..)>"),
+        ("U#", "<(..)_(..)>#"),
+        ("in U#", "<(..)_(..)>#"),
     ],
 )
 def test_compile_asca_rule_fields_syllable_position_env(env, expected):
-    assert compile_asca_rule_fields("Vː", "V[-long]", env=env) == expected
+    input, output = "V", "V:[-long]"
+    assert (
+        compile_asca_rule_fields(input, output, env=env)
+        == f"{input} > {output} / {expected}"
+    )
 
 
 def test_sound_change_rule_preserves_raw():
@@ -195,12 +200,3 @@ def test_apply_syllable_position_editorial_strip_on_rule_parts():
     dumped = result.to_index_dict()
     assert dumped["env"] == "#U"
     assert dumped["exception"] == "U#"
-
-
-def _write_probe_words(words: list[str]) -> Path:
-    with NamedTemporaryFile(
-        "w", suffix=".wsca", delete=False, encoding="utf-8"
-    ) as handle:
-        handle.write("\n".join(words) + "\n")
-        path = Path(handle.name)
-    return path

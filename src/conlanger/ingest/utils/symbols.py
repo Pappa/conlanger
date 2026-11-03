@@ -4,12 +4,6 @@ from __future__ import annotations
 
 import re
 
-# Protect Index stem ``$`` while remapping syllable-boundary ``%`` → ASCA ``$``.
-_STEM_BOUNDARY_PLACEHOLDER = "\ue000"
-# Protect ``%ː`` until ``normalize_asca_length_marks`` (compile) runs.
-_SYLLABLE_LENGTH_BOUNDARY_PLACEHOLDER = "\ue001"
-_LENGTH_MARK = "\u02d0"
-
 # Index Diachronica stress mark (Key to Abbreviations: ” = Stress).
 _INDEX_STRESS = "\u201d"
 
@@ -124,12 +118,8 @@ def _apply_stress_star_set_re(match: re.Match[str]) -> str:
     return "*{" + ",".join(f"{member}:[+stress]" for member in members) + "}"
 
 
-def normalize_stress_marks(text: str) -> str:
-    """Map Index ``”`` stress marks to ASCA ``:[+stress]`` on the marked segment.
-
-    Prose curly quotes (``"…"``) and English env prose after ``/`` are left
-    unchanged — only phonological stress positions are rewritten.
-    """
+def normalize_index_stress_marks(text: str) -> str:
+    """Map Index ``”`` stress marks to feature ``:[+stress]``."""
     if _INDEX_STRESS not in text:
         return text
     text = _STRESS_CLASS_BEFORE_UNDERSCORE_RE.sub(
@@ -154,32 +144,3 @@ def normalize_stress_marks(text: str) -> str:
     text = _STRESS_INFIX_RE.sub(_apply_stress_re, text)
     text = _STRESS_PREFIX_RE.sub(_apply_stress_re, text)
     return text
-
-
-def project_index_syllable_stem_symbols(text: str) -> str:
-    """Map Index ``%`` / ``$`` to ASCA boundary ``$`` at compile time.
-
-    Index ``%`` (syllable boundary) → ASCA ``$``; Index ``$`` (stem boundary) is
-    preserved. ``%ː`` is left for ``normalize_asca_length_marks`` (→ ``%:[+long]``).
-    """
-    if not text:
-        return text
-    syllable_length = f"%{_LENGTH_MARK}"
-    text = text.replace(syllable_length, _SYLLABLE_LENGTH_BOUNDARY_PLACEHOLDER)
-    text = text.replace("$", _STEM_BOUNDARY_PLACEHOLDER)
-    text = text.replace("%", "$")
-    text = text.replace(_STEM_BOUNDARY_PLACEHOLDER, "$")
-    text = text.replace(_SYLLABLE_LENGTH_BOUNDARY_PLACEHOLDER, syllable_length)
-    return text
-
-
-def normalize_symbols(text: str) -> str:
-    """Map Index stress ``”`` to postfix ``segment[+stress]`` before rule parsing.
-
-    Applied to the full rule line (not the stored ``raw``). Index ``%``, ``$``, ``#``,
-    and ``∅`` stay Index-shaped in the SoT; syllable/stem ``%``/``$`` → ASCA ``$`` at
-    compile (``project_index_syllable_stem_symbols``).
-    """
-    if not text:
-        return text
-    return normalize_stress_marks(text)

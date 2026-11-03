@@ -6,8 +6,8 @@
 - Rows: **9584** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9251** (96.5%)
-- Fail: **287** (3.0%)
+- OK: **9252** (96.5%)
+- Fail: **286** (3.0%)
 - Skipped: **46** (0.5%)
 
 
@@ -22,8 +22,8 @@ Fail: **1/126**
 
 ## Sections
 
-- All OK: **514 / 660** (77.9%)
-- Some OK: **145 / 660** (22.0%)
+- All OK: **515 / 660** (78.0%)
+- Some OK: **144 / 660** (21.8%)
 - None OK: **1 / 660** (0.2%)
 - Sections skipped: **0 / 660** (0.0%)
 
@@ -31,13 +31,13 @@ Fail: **1/126**
 
 | count | failure_class |
 |------:|---------------|
-| 105 | `expected_underscore` |
+| 102 | `expected_underscore` |
 | 34 | `expected_ipa` |
 | 24 | `unknown_character` |
-| 22 | `syntax_other` |
+| 23 | `syntax_other` |
 | 19 | `missing_slash_output_env` |
 | 14 | `nested_brackets` |
-| 10 | `segments_before_word` |
+| 11 | `segments_before_word` |
 | 10 | `empty_io_panic` |
 | 10 | `unknown_feature` |
 | 10 | `expected_number` |
@@ -70,6 +70,7 @@ Fail: **1/126**
 | count | description |
 |------:|-------------|
 | 6 | `A syllable can only have parameters stress and tone` |
+| 1 | `An underline already exists before this structure.` |
 | 1 | `Only a segment, matrix, group, or reference can be negated` |
 | 1 | `Feature 'lost' has no modifier` |
 | 1 | `Feature 'b' has no modifier` |
@@ -134,8 +135,8 @@ Fail: **1/126**
 
 | count | error_token |
 |------:|-------------|
-| 34 | `}:` |
-| 19 | `,` |
+| 33 | `}:` |
+| 17 | `,` |
 | 7 | `//` |
 | 3 | `/` |
 | 2 | `:` |
@@ -288,7 +289,7 @@ Fail: **1/126**
 
 | count | description |
 |------:|-------------|
-| 10 | `Cannot have segments before the beginning of a word` |
+| 11 | `Cannot have segments before the beginning of a word` |
 
 ### stuff_after_word_bound (error_token)
 

@@ -14,11 +14,11 @@ from pydantic import (
     model_serializer,
 )
 
+from conlanger.ingest.utils.symbols import normalize_index_stress_marks
 from conlanger.utils.gloss import apply_dialects_to_context
 from conlanger.utils.parsing import (
     extract_rule_parts,
 )
-from conlanger.utils.symbols import normalize_symbols
 
 PositionValue = bool | str | list[str]
 DialectValue = bool | str | list[str]
@@ -128,7 +128,7 @@ class IndexRule(BaseModel):
         if rule_comment:
             self.comment = join_rule_comment(self.comment, rule_comment)
 
-        self._working_line = normalize_symbols(self._working_line)
+        self._working_line = normalize_index_stress_marks(self._working_line)
         parts = extract_rule_parts(self._working_line)
 
         self.stages = list(parts.get("stages") or [])

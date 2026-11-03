@@ -1,4 +1,5 @@
 section_index,rule_id,error_token,rule
+7.4,Blackfoot-e_2,,"e > ∅ / O_ #<(..)_(..)> | ^^^^^^^^^^^ @ Rule 1, Line 1"
 7.15,"Ojibwe-j,wV-long",,"{j,w}V:[-long] > ∅ / C_# in disyllables with V:[+long] or in tri(-plus-)syllables | ^^ @ Rule 1, Line 1"
 17.2.1,Hittite-V,,"V > V:[+long] / <(..)_(..)>:[+stress, +lo] | ^^^ @ Rule 1, Line 1"
 17.2.2,Luwian-V,,"V > V:[+long] / <(..)_(..)>:[+stress, +lo] | ^^^ @ Rule 1, Line 1"

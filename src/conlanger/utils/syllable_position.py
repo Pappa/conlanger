@@ -8,7 +8,7 @@ _EDITORIAL_IN_RE = re.compile(
     r"^in\s+(#U(?:\s*,\s*U#)?|U#)\s*$",
     re.IGNORECASE,
 )
-_COMMA_U_HASH_RE = re.compile(r"^#U\s*,\s*U#$")
+_COMMA_U_HASH_RE = re.compile(r"^#(U|%)\s*,\s*(U|%)#$")
 
 
 def strip_editorial_in_before_syllable_position(text: str) -> str:
@@ -19,5 +19,5 @@ def strip_editorial_in_before_syllable_position(text: str) -> str:
         return text
     marker = match.group(1)
     if _COMMA_U_HASH_RE.fullmatch(marker):
-        return "#U, U#"
+        return "#%, %#"
     return marker

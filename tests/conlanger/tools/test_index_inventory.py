@@ -53,8 +53,8 @@ from conlanger.tools.index_inventory import (
     write_validation_csv,
 )
 from conlanger.tools.inventory_targets import (
-    _series_for_alternative,
     resolve_inventory_targets,
+    series_for_alternative,
 )
 from tests.conftest import ASCA_VALIDATE_INSTALLED
 
@@ -199,7 +199,7 @@ def test_series_for_alternative_wraps_compiled_rule_without_reparse():
     alternative = SoundChangeRule(
         input="d", output="∅", env="V_V", detect_alternatives=False
     )
-    series = _series_for_alternative(_SECTION, {}, "r0", alternative, None)
+    series = series_for_alternative(_SECTION, {}, "r0", alternative, None)
     rule_parts = [part for part in series.parts if isinstance(part, SoundChangeRule)]
     assert len(rule_parts) == 1
     assert rule_parts[0] is alternative

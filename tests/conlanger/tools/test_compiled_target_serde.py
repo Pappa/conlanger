@@ -23,8 +23,8 @@ from conlanger.tools.compiled_target_serde import (
 )
 from conlanger.tools.inventory_targets import (
     InventoryTarget,
-    _series_for_sound_change_rule,
     resolve_inventory_targets,
+    series_for_sound_change_rule,
 )
 
 _SECTION = {"index": "1.0", "section": "Test"}
@@ -103,7 +103,7 @@ def test_serialize_series_from_mini_series():
         detect_alternatives=False,
         compiler_config=CompilerConfig(),
     )
-    series = _series_for_sound_change_rule(_SECTION, "r0", rule)
+    series = series_for_sound_change_rule(_SECTION, "r0", rule)
     payload = serialize_series(series)
     restored = deserialize_series(payload)
     assert isinstance(restored, DiachronicSeries)

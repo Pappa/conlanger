@@ -27,10 +27,6 @@ class InventoryTarget(BaseModel):
     asca_rule: str | None = None
 
 
-# Back-compat alias for internal and test imports.
-_InventoryTarget = InventoryTarget
-
-
 def mini_section(
     section: dict[str, Any], rule: dict[str, Any], rule_id: str
 ) -> dict[str, Any]:
@@ -39,10 +35,6 @@ def mini_section(
         "section": f"{section.get('section', '')}#{rule_id}",
         "rules": [rule],
     }
-
-
-# Back-compat alias for tests and internal callers.
-_mini_section = mini_section
 
 
 def series_for_sound_change_rule(
@@ -61,9 +53,6 @@ def series_for_sound_change_rule(
     )
 
 
-_series_for_sound_change_rule = series_for_sound_change_rule
-
-
 def series_for_alternative(
     section: dict[str, Any],
     rule: dict[str, Any],
@@ -74,9 +63,6 @@ def series_for_alternative(
     """Build a standalone series for one already-compiled alternative."""
     del rule, compiler_config
     return series_for_sound_change_rule(section, rule_id, alternative)
-
-
-_series_for_alternative = series_for_alternative
 
 
 def _compiled_field_segment(

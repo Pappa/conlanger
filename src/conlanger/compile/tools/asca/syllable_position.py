@@ -7,57 +7,59 @@ import re
 from conlanger.compile.position_in_projection import (
     env_is_projected_position_in_compile_string,
 )
+from conlanger.compile.utils.symbols import normalize_symbols_for_asca
 from conlanger.utils.syllable_position import (
     strip_editorial_in_before_syllable_position,
 )
-from conlanger.utils.symbols import project_index_syllable_stem_symbols
 
-_MECHANICAL_EXCEPTION_ASCA = {
+SYLLABLE_AT_WORD_BOUNDARY = {
     "#U": "#<(..)_(..)>",
     "U#": "<(..)_(..)>#",
     "#U, U#": ":{#<(..)_(..)>, <(..)_(..)>#}:",
+    "#%": "#<(..)_(..)>",
+    "%#": "<(..)_(..)>#",
+    "#%, %#": ":{#<(..)_(..)>, <(..)_(..)>#}:",
 }
 
-_MECHANICAL_ENV_ASCA = {
-    "#U": "#<(..)_(..)>",
-    "U#": "<(..)_(..)>#",
-}
-
-_COMMA_U_HASH_RE = re.compile(r"^#U\s*,\s*U#$")
+_COMMA_U_HASH_RE = re.compile(r"^#(U|%)\s*,\s*(U|%)#$")
 
 _SYLLABLE_STRESS_ENV_RAW = {
     "U[-stress]": "<(..)_(..)>:[-stress]",
     "U[+stress]": "<(..)_(..)>:[+stress]",
     "in U[-stress]": "<(..)_(..)>:[-stress]",
     "in U[+stress]": "<(..)_(..)>:[+stress]",
+    "%[-stress]": "<(..)_(..)>:[-stress]",
+    "%[+stress]": "<(..)_(..)>:[+stress]",
+    "in %[-stress]": "<(..)_(..)>:[-stress]",
+    "in %[+stress]": "<(..)_(..)>:[+stress]",
 }
-_STRESSED_MONOSYLLABLE_ENV_RAW = "#U[+stress]#"
+_STRESSED_MONOSYLLABLE_ENVS_RAW = ("#U[+stress]#", "#%[+stress]#")
 _STRESSED_MONOSYLLABLE_ENV_COMPILED = "#<(..)_(..)>:[+stress]#"
 
 _IN_STRESS_COMMA_RE = re.compile(
-    r",\s+in\s+(?:%\[(\+stress|-stress)\]|\$\[(\+stress|-stress)\])",
+    r",\s+in\s+(?:U|%\[(\+stress|-stress)\]|\$\[(\+stress|-stress)\])",
 )
 
 _PROSE_AFTER_HASH_U_RE = re.compile(r"\bin\s+#U\s+(?:before|with)\b", re.IGNORECASE)
 
 _SYLLABLE_HOST_IN_STRESS_RE = re.compile(
-    r"(?P<sep>,\s+in\s+|\s+in\s+)(?:U:|%)(?P<feat>\[(?:\+stress|-stress)\])(?=$|\s*!)",
+    r"(?P<sep>,\s+in\s+|\s+in\s+)(?:U:|U|%:|%)(?P<feat>\[(?:\+stress|-stress)\])(?=$|\s*!)",
 )
-_WHOLE_IN_U_COLON_STRESS_RE = re.compile(r"^in\s+(?:U:|%:)(?P<feat>\[-stress\])$")
+_WHOLE_IN_U_COLON_STRESS_RE = re.compile(r"^in\s+(?:U:|U|%:|%)(?P<feat>\[-stress\])$")
 _WHOLE_IN_SYLLABLE_HOST_MATRIX_RE = re.compile(
-    r"^in\s+(?:U:|%:)(?P<tail>(?:\[[^\]]+\])+)$",
+    r"^in\s+(?:U:|U|%:|%)(?P<tail>(?:\[[^\]]+\])+)$",
 )
 
-_IN_MECHANICAL_HASH_U_TAIL_RE = re.compile(r"\bin\s+#U(?=\s*$|\s*!)")
-_IN_MECHANICAL_U_HASH_TAIL_RE = re.compile(r"\bin\s+U#(?=\s*$|\s*!)")
+_IN_MECHANICAL_HASH_U_TAIL_RE = re.compile(r"\bin\s+#(U|%)(?=\s*$|\s*!)")
+_IN_MECHANICAL_U_HASH_TAIL_RE = re.compile(r"\bin\s+(U|%)#(?=\s*$|\s*!)")
 
 
 def normalize_syllable_position_marker(text: str) -> str | None:
     """Return a mechanical ``#U`` / ``U#`` key when ``text`` matches exactly."""
     normalized = strip_editorial_in_before_syllable_position(text.strip())
     if _COMMA_U_HASH_RE.fullmatch(normalized):
-        return "#U, U#"
-    if normalized in _MECHANICAL_EXCEPTION_ASCA:
+        return "#%, %#"
+    if normalized in SYLLABLE_AT_WORD_BOUNDARY:
         return normalized
     return None
 
@@ -68,7 +70,7 @@ def compile_syllable_position_exception(raw: str | None) -> str | None:
     key = normalize_syllable_position_marker(raw)
     if key is None:
         return None
-    return _MECHANICAL_EXCEPTION_ASCA[key]
+    return SYLLABLE_AT_WORD_BOUNDARY[key]
 
 
 def compile_syllable_position_env(raw: str | None) -> str | None:
@@ -77,7 +79,7 @@ def compile_syllable_position_env(raw: str | None) -> str | None:
     key = normalize_syllable_position_marker(raw)
     if key is None:
         return None
-    return _MECHANICAL_ENV_ASCA.get(key)
+    return SYLLABLE_AT_WORD_BOUNDARY.get(key)
 
 
 def _compile_syllable_stress_env_from_raw(raw: str | None) -> str | None:
@@ -86,7 +88,7 @@ def _compile_syllable_stress_env_from_raw(raw: str | None) -> str | None:
     stripped = raw.strip()
     if stripped in _SYLLABLE_STRESS_ENV_RAW:
         return _SYLLABLE_STRESS_ENV_RAW[stripped]
-    if stripped == _STRESSED_MONOSYLLABLE_ENV_RAW:
+    if stripped in _STRESSED_MONOSYLLABLE_ENVS_RAW:
         return _STRESSED_MONOSYLLABLE_ENV_COMPILED
     return None
 
@@ -140,7 +142,8 @@ def project_position_in_compiled_field(text: str | None) -> str | None:
     parts = projected.split(" in ")
     if len(parts) == 2:
         return f":{{{', '.join(parts)}}}:"
-    return projected
+
+    return projected.strip()
 
 
 def project_syllable_stress_compiled_env(
@@ -150,15 +153,16 @@ def project_syllable_stress_compiled_env(
     """Project Index syllable-stress env strings to ASCA with segment focus ``_``."""
     from_raw = _compile_syllable_stress_env_from_raw(env_raw)
     if from_raw is not None:
-        return project_index_syllable_stem_symbols(from_raw)
+        return normalize_symbols_for_asca(from_raw)
 
     if compiled_env is None:
         return None
 
     projected = compiled_env
-    if projected in ("%[-stress]", "in %[-stress]"):
+
+    if projected in ("U[-stress]", "in U[-stress]", "%[-stress]", "in %[-stress]"):
         return "<(..)_(..)>:[-stress]"
-    if projected in ("%[+stress]", "in %[+stress]"):
+    if projected in ("U[+stress]", "in U[+stress]", "%[+stress]", "in %[+stress]"):
         return "<(..)_(..)>:[+stress]"
 
     def _comma_in_stress_repl(match: re.Match[str]) -> str:

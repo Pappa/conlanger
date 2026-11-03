@@ -8,13 +8,15 @@ from conlanger.utils.syllable_position import (
     strip_editorial_in_before_syllable_position,
 )
 
-_MECHANICAL_ENV_ASCA = {
-    "#U": "#<(..)_(..)>",
-    "U#": "<(..)_(..)>#",
+SYLLABLE_AT_WORD_BOUNDARY = {
+    "#%": "#<(..)_(..)>",
+    "%#": "<(..)_(..)>#",
+    "#%, %#": ":{#<(..)_(..)>, <(..)_(..)>#}:",
 }
-_COMMA_U_HASH_RE = re.compile(r"^#U\s*,\s*U#$")
+_COMMA_U_HASH_RE = re.compile(r"^#(U|%)\s*,\s*(U|%)#$")
 
-_STRESSED_MONOSYLLABLE_TARGET = "#U[+stress]#"
+_STRESSED_MONOSYLLABLE_TARGETS = ("#U[+stress]#", "%[+stress]#")
+
 _STRESSED_MONOSYLLABLE_ASCA = "#<(..)_(..)>:[+stress]#"
 
 _POSITION_IN_CONTEXT_STRESS_RE = re.compile(
@@ -35,7 +37,7 @@ def _mechanical_position_in_env(target: str) -> str | None:
     normalized = _normalize_position_in_target(target)
     if _COMMA_U_HASH_RE.fullmatch(normalized):
         return None
-    return _MECHANICAL_ENV_ASCA.get(normalized)
+    return SYLLABLE_AT_WORD_BOUNDARY.get(normalized)
 
 
 def _matrix_brackets_from_u_colon_target(target: str) -> str | None:
@@ -64,7 +66,7 @@ def project_position_in_target(target: str) -> str | None:
     if mechanical_asca is not None:
         return mechanical_asca
 
-    if normalized == _STRESSED_MONOSYLLABLE_TARGET:
+    if normalized in _STRESSED_MONOSYLLABLE_TARGETS:
         return _STRESSED_MONOSYLLABLE_ASCA
 
     if normalized in ("U[-stress]", "U[+stress]"):

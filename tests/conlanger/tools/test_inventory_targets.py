@@ -7,8 +7,8 @@ from pydantic import ValidationError
 
 from conlanger.tools.inventory_targets import (
     InventoryTarget,
-    _series_for_sound_change_rule,
     resolve_inventory_targets,
+    series_for_sound_change_rule,
 )
 
 _SECTION = {"index": "1.0", "section": "Test"}
@@ -102,5 +102,5 @@ def test_series_for_sound_change_rule_builds_mini_series():
         detect_alternatives=False,
         compiler_config=CompilerConfig(),
     )
-    series = _series_for_sound_change_rule(_SECTION, "r0", rule)
+    series = series_for_sound_change_rule(_SECTION, "r0", rule)
     assert str(series).strip().endswith("a > b")

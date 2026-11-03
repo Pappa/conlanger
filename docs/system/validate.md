@@ -80,7 +80,7 @@ flowchart TD
 | --- | --- | --- |
 | 1 | Parse HTML → applier-neutral YAML | `IndexDiachronicaParser` → `data/diachronica/index_diachronica.yml` |
 | 2 | For each index rule in each section | `iter_inventory_with_field_isolation()` in `index_inventory.py` |
-| 3 | Build mini-section (one rule) | `_mini_section()` |
+| 3 | Build mini-section (one rule) | `mini_section()` |
 | 4 | Compile | `DiachronicSeries(mini, compiler_config=…)` |
 | 5 | Validate | `validate_asca(..., probe_words=tests/fixtures/asca_probe_words.wsca)` |
 | 6 | Classify failure | `classify_error()`, `parse_unknown_token_error()` |

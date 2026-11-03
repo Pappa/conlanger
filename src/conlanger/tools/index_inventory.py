@@ -35,7 +35,6 @@ from conlanger.tools.inventory_error_clusters import (
 )
 from conlanger.tools.inventory_targets import (
     InventoryTarget,
-    _InventoryTarget,
     resolve_inventory_targets,
 )
 
@@ -913,7 +912,7 @@ def build_field_isolation_row(
 
 def field_isolation_rows_for_validation_rows(
     validation_rows: list[ValidationRow],
-    targets: list[_InventoryTarget],
+    targets: list[InventoryTarget],
     *,
     asca_bin: str | None = None,
 ) -> list[FieldIsolationRow]:
@@ -1061,7 +1060,7 @@ def validate_index_rule_with_targets(
     probe_words: Path | None,
     compiler_config: CompilerConfig | None = None,
     asca_bin: str | None = None,
-) -> tuple[list[ValidationRow], list[_InventoryTarget]]:
+) -> tuple[list[ValidationRow], list[InventoryTarget]]:
     """Validate one index rule and return inventory rows with compile targets."""
     section_index = str(section.get("index", ""))
     section_name = str(section.get("section", ""))
@@ -1213,7 +1212,7 @@ def _validation_rows_for_compiled_rule_entry(
     *,
     probe_words: Path | None,
     asca_bin: str | None = None,
-) -> tuple[list[ValidationRow], list[_InventoryTarget]]:
+) -> tuple[list[ValidationRow], list[InventoryTarget]]:
     rule_id = str(rule_entry.get("rule_id", ""))
     source = str(rule_entry.get("source", ""))
 

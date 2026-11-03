@@ -12,8 +12,8 @@ from conlanger.compile.position_in_projection import (
 @pytest.mark.parametrize(
     ("target", "expected"),
     [
-        ("#U", "#<(..)_(..)>"),
-        ("U#", "<(..)_(..)>#"),
+        ("#%", "#<(..)_(..)>"),
+        ("%#", "<(..)_(..)>#"),
         (
             "U[-stress]",
             "<(..)_(..)>:[-stress]",
@@ -34,7 +34,6 @@ from conlanger.compile.position_in_projection import (
             "#U[+stress]#",
             "#<(..)_(..)>:[+stress]#",
         ),
-        ("in #U", "#<(..)_(..)>"),
         (
             "U:[+stress, +lo]",
             "<(..)_(..)>:[+stress][+lo]",

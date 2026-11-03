@@ -330,12 +330,12 @@ def test_env_exception_input_to_string(input, expected):
             id="near_u",
         ),
         pytest.param(
-            IndexContext(position={"in": "U#"}),
+            IndexContext(position={"in": "%#"}),
             "<(..)_(..)>#",
             id="in_u_hash",
         ),
         pytest.param(
-            IndexContext(position={"in": "#U"}),
+            IndexContext(position={"in": "#%"}),
             "#<(..)_(..)>",
             id="in_hash_u",
         ),

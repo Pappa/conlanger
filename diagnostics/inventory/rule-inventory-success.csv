@@ -5844,6 +5844,7 @@ section_index,section_name,rule_id,alt_idx,step_idx,source,ok,rule,failure_class
 18.4.3,Proto-Tupí-Guaraní to Guajajara,Guajajara-b_2,,,index_diachronica.html:8524,OK,b > w // u_#,,,,,
 18.4.3,Proto-Tupí-Guaraní to Guajajara,Guajajara-u,,,index_diachronica.html:8525,OK,u > ∅ / k_w,,,,,
 18.4.3,Proto-Tupí-Guaraní to Guajajara,Guajajara-a,,,index_diachronica.html:8526,OK,a > ə / _N#,,,,,
+18.4.3,Proto-Tupí-Guaraní to Guajajara,Guajajara-a_2,,,index_diachronica.html:8527,OK,a > ə / if N  <(..)_(..)>#,,,,,
 18.4.3,Proto-Tupí-Guaraní to Guajajara,Guajajara-o,,,index_diachronica.html:8528,OK,"o > u // o(C,0)_(C,0)#",,,,,
 18.4.3,Proto-Tupí-Guaraní to Guajajara,"Guajajara-ã-ẽ-ı̃-ɨ̃-õ,ũ",,,index_diachronica.html:8529,OK,"ã ẽ j̃ ɨ̃ {õ,ũ} > ə e i ɨ o",,,,,
 18.4.4,Proto-Tupí-Guaraní to Guaraní,Guaraní-m-p,,,index_diachronica.html:8534,OK,m p > ŋ k / _w,,,,,

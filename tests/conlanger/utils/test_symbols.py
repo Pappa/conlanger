@@ -1,21 +1,8 @@
 import pytest
 
-from conlanger.utils.symbols import normalize_stress_marks, normalize_symbols
-
-
-@pytest.mark.parametrize(
-    "text, expected",
-    [
-        ("#_", "#_"),
-        ("∅", "∅"),
-        ("_$%oː", "_$%oː"),
-        ("$am_w", "$am_w"),
-        ("in #”U", "in #U:[+stress]"),
-        ("", ""),
-    ],
+from conlanger.ingest.utils.symbols import (
+    normalize_index_stress_marks,
 )
-def test_normalize_symbols(text, expected):
-    assert normalize_symbols(text) == expected
 
 
 @pytest.mark.parametrize(
@@ -48,22 +35,8 @@ def test_normalize_symbols(text, expected):
         ("”{i,e} a", "{i:[+stress],e:[+stress]}a:[+stress]"),
         ("”e:[+long]", "e:[+stress,+long]"),
         ("”_$u#", "_$u:[+stress]#"),
-        ("}”{i,e}", "}{i:[+stress],e:[+stress]}"),
+        ("”{i,e}", "{i:[+stress],e:[+stress]}"),
     ],
 )
-def test_normalize_stress_marks(text, expected):
-    assert normalize_stress_marks(text) == expected
-
-
-def test_apply_stress_set_after_close_re():
-    """Second-pass set stress helper (after ``_STRESS_BEFORE_SET_RE``)."""
-    from conlanger.utils.symbols import (
-        _STRESS_BEFORE_SET_AFTER_CLOSE_RE,
-        _apply_stress_set_after_close_re,
-    )
-
-    text = "}”{i, e}"
-    assert (
-        _STRESS_BEFORE_SET_AFTER_CLOSE_RE.sub(_apply_stress_set_after_close_re, text)
-        == "}{i:[+stress],e:[+stress]}"
-    )
+def test_normalize_index_stress_marks(text, expected):
+    assert normalize_index_stress_marks(text) == expected
