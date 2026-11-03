@@ -29,6 +29,9 @@ from conlanger.compile.tools.asca.identity_exceptions import (
     resolve_index_identity_exceptions,
 )
 from conlanger.compile.tools.asca.length_marks import normalize_asca_length_marks
+from conlanger.compile.tools.asca.meta_notation import (
+    expand_meta_notation,
+)
 from conlanger.compile.tools.asca.optional_length import (
     expand_optional_length_in_text,
     expand_optional_length_tokens,
@@ -39,10 +42,6 @@ from conlanger.compile.tools.asca.parallel import (
 )
 from conlanger.compile.tools.asca.pharyngealized_marks import (
     normalize_asca_pharyngealized_marks,
-)
-from conlanger.compile.tools.asca.planned import (
-    apply_section_local_abbreviations,
-    expand_meta_notation,
 )
 from conlanger.compile.tools.asca.prenasal_prefix import normalize_prenasal_prefix
 from conlanger.compile.tools.asca.segment_diacritics import (
@@ -97,7 +96,6 @@ def compile_asca_field_pre_subscript(
     text = apply_compiler_series_mappings(
         text, section_index=section_index, compiler_config=config
     )
-    text = apply_section_local_abbreviations(text)
     text = normalize_asca_superscript_modifiers(text, mappings)
     return apply_asca_group_mappings_to_string(text, mappings)
 

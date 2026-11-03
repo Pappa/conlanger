@@ -10,7 +10,7 @@ from conlanger.compile.tools.asca.cartesian_io_optionals import (
     _split_trailing_set,
     flatten_cartesian_io_optionals,
 )
-from conlanger.compile.tools.asca.planned import expand_meta_notation
+from conlanger.compile.tools.asca.meta_notation import expand_meta_notation
 
 
 @pytest.mark.parametrize(

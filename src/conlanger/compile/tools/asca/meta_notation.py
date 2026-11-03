@@ -1,5 +1,3 @@
-"""Planned ASCA compile transforms (spike 38 orders 4, 10)."""
-
 from conlanger.compile.tools.asca.cartesian_io_optionals import (
     flatten_cartesian_io_optionals,
 )
@@ -15,14 +13,8 @@ from conlanger.compile.tools.asca.slash_boundary import (
 from conlanger.compile.tools.asca.tilde import expand_index_tilde_notation
 
 __all__ = [
-    "apply_section_local_abbreviations",
     "expand_meta_notation",
 ]
-
-
-def apply_section_local_abbreviations(text: str) -> str:
-    """Section-local abbreviation table expansion (planned)."""
-    return text
 
 
 def expand_meta_notation(text: str) -> str:
