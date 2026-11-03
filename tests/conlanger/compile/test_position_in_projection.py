@@ -13,8 +13,8 @@ from conlanger.compile.position_in_projection import (
 @pytest.mark.parametrize(
     ("target", "expected"),
     [
-        ("#U", PositionInAsca("#<.._>", "#<.._>")),
-        ("U#", PositionInAsca("<.._>#", "<.._>#")),
+        ("#U", PositionInAsca("#<(..)_(..)>", "#<(..)_(..)>")),
+        ("U#", PositionInAsca("<(..)_(..)>#", "<(..)_(..)>#")),
         ("U[-stress]", PositionInAsca("_ $[-stress]", "$[-stress]")),
         ("U[+stress]", PositionInAsca("_ $[+stress]", "$[+stress]")),
         ("U:[+stress]", PositionInAsca("_ %[+stress]", "%[+stress]")),
@@ -23,7 +23,7 @@ from conlanger.compile.position_in_projection import (
             PositionInAsca("_ %[+stress][+lo]", "%[+stress][+lo]"),
         ),
         ("#U[+stress]#", PositionInAsca("#_[+stress]", "#_[+stress]")),
-        ("in #U", PositionInAsca("#<.._>", "#<.._>")),
+        ("in #U", PositionInAsca("#<(..)_(..)>", "#<(..)_(..)>")),
         ("U:[+stress, +lo]", PositionInAsca("_ %[+stress][+lo]", "%[+stress][+lo]")),
     ],
 )
@@ -58,13 +58,10 @@ def test_materialize_position_in_asca():
         ("C_CV in $[-stress]", True),
         ("_ %[-nas]", False),
         ("in U[+lo]", False),
-        ("prefix #<.._>", True),
+        ("prefix #<(..)_(..)>", True),
+        (None, False),
+        ("  ", False),
     ],
 )
 def test_env_is_projected_position_in_compile_string(raw, expected):
     assert env_is_projected_position_in_compile_string(raw) is expected
-
-
-def test_env_is_projected_position_in_compile_string_empty():
-    assert env_is_projected_position_in_compile_string(None) is False
-    assert env_is_projected_position_in_compile_string("  ") is False

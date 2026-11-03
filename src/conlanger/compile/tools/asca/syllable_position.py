@@ -13,14 +13,14 @@ from conlanger.utils.syllable_position import (
 from conlanger.utils.symbols import project_index_syllable_stem_symbols
 
 _MECHANICAL_EXCEPTION_ASCA = {
-    "#U": ":{#_#, #<.._>}:",
-    "U#": ":{#_#, <.._>#}:",
-    "#U, U#": ":{#_#, #<.._>, <.._>#}:",
+    "#U": "#<(..)_(..)>",
+    "U#": "<(..)_(..)>#",
+    "#U, U#": ":{#<(..)_(..)>, <(..)_(..)>#}:",
 }
 
 _MECHANICAL_ENV_ASCA = {
-    "#U": "#<.._>",
-    "U#": "<.._>#",
+    "#U": "#<(..)_(..)>",
+    "U#": "<(..)_(..)>#",
 }
 
 _COMMA_U_HASH_RE = re.compile(r"^#U\s*,\s*U#$")
@@ -125,8 +125,8 @@ def project_position_in_compiled_field(text: str | None) -> str | None:
         return None
     projected = text
     if not _PROSE_AFTER_HASH_U_RE.search(projected):
-        projected = _IN_MECHANICAL_HASH_U_TAIL_RE.sub(" #<.._>", projected)
-        projected = _IN_MECHANICAL_U_HASH_TAIL_RE.sub(" <.._>#", projected)
+        projected = _IN_MECHANICAL_HASH_U_TAIL_RE.sub(" #<(..)_(..)>", projected)
+        projected = _IN_MECHANICAL_U_HASH_TAIL_RE.sub(" <(..)_(..)>#", projected)
 
     projected = _rewrite_legacy_whole_in_syllable_host_matrix(projected)
     projected = _SYLLABLE_HOST_IN_STRESS_RE.sub(

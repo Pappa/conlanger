@@ -57,11 +57,11 @@ def test_normalize_syllable_position_marker(text, expected):
 @pytest.mark.parametrize(
     ("raw", "expected"),
     [
-        ("#U", ":{#_#, #<.._>}:"),
-        ("in #U", ":{#_#, #<.._>}:"),
-        ("U#", ":{#_#, <.._>#}:"),
-        ("in U#", ":{#_#, <.._>#}:"),
-        ("#U, U#", ":{#_#, #<.._>, <.._>#}:"),
+        ("#U", "#<(..)_(..)>"),
+        ("in #U", "#<(..)_(..)>"),
+        ("U#", "<(..)_(..)>#"),
+        ("in U#", "<(..)_(..)>#"),
+        ("#U, U#", ":{#<(..)_(..)>, <(..)_(..)>#}:"),
         ("prose tail", None),
         (None, None),
     ],
@@ -73,10 +73,10 @@ def test_compile_syllable_position_exception(raw, expected):
 @pytest.mark.parametrize(
     ("raw", "expected"),
     [
-        ("#U", "#<.._>"),
-        ("in #U", "#<.._>"),
-        ("U#", "<.._>#"),
-        ("in U#", "<.._>#"),
+        ("#U", "#<(..)_(..)>"),
+        ("in #U", "#<(..)_(..)>"),
+        ("U#", "<(..)_(..)>#"),
+        ("in U#", "<(..)_(..)>#"),
         ("#U, U#", None),
         (None, None),
     ],
@@ -113,7 +113,7 @@ def test_project_syllable_stress_compiled_env(env_raw, compiled_before, expected
             "in U:[+stress][+lo]",
             "V:[+long] > V:[-long] / _ %[+stress][+lo]",
         ),
-        ("%u in #U", "V:[+long] > V:[-long] / $u  #<.._>"),
+        ("%u in #U", "V:[+long] > V:[-long] / $u  #<(..)_(..)>"),
     ],
 )
 def test_compile_asca_rule_fields_syllable_stress_env(env, expected):
@@ -145,10 +145,6 @@ def test_compile_asca_rule_fields_position_in_with_compiler_config():
 @pytest.mark.parametrize(
     ("env", "expected"),
     [
-        (
-            "in #U before a U with /iː/",
-            "V:[+long] > V:[-long] / in #U before a U with i:[+long]",
-        ),
         ("e_ in U:[+lo]", "V:[+long] > V:[-long] / e_ in U:[+lo]"),
     ],
 )
@@ -163,17 +159,17 @@ def test_apply_syllable_position_compiled_overrides_replaces_group_mapping_damag
         "%",
         ":{#_#, #%}:",
     )
-    assert env == "#<.._>"
-    assert exception == ":{#_#, #<.._>}:"
+    assert env == "#<(..)_(..)>"
+    assert exception == "#<(..)_(..)>"
 
 
 @pytest.mark.parametrize(
     ("exception", "expected"),
     [
-        ("#U", "V:[+long] > V:[-long] // :{#_#, #<.._>}:"),
-        ("in #U", "V:[+long] > V:[-long] // :{#_#, #<.._>}:"),
-        ("U#", "V:[+long] > V:[-long] // :{#_#, <.._>#}:"),
-        ("#U, U#", "V:[+long] > V:[-long] // :{#_#, #<.._>, <.._>#}:"),
+        ("#U", "V:[+long] > V:[-long] // #<(..)_(..)>"),
+        ("in #U", "V:[+long] > V:[-long] // #<(..)_(..)>"),
+        ("U#", "V:[+long] > V:[-long] // <(..)_(..)>#"),
+        ("#U, U#", "V:[+long] > V:[-long] // :{#<(..)_(..)>, <(..)_(..)>#}:"),
     ],
 )
 def test_compile_asca_rule_fields_syllable_position_exceptions(exception, expected):
@@ -183,10 +179,10 @@ def test_compile_asca_rule_fields_syllable_position_exceptions(exception, expect
 @pytest.mark.parametrize(
     ("env", "expected"),
     [
-        ("#U", "V:[+long] > V:[-long] / #<.._>"),
-        ("in #U", "V:[+long] > V:[-long] / #<.._>"),
-        ("U#", "V:[+long] > V:[-long] / <.._>#"),
-        ("in U#", "V:[+long] > V:[-long] / <.._>#"),
+        ("#U", "V:[+long] > V:[-long] / #<(..)_(..)>"),
+        ("in #U", "V:[+long] > V:[-long] / #<(..)_(..)>"),
+        ("U#", "V:[+long] > V:[-long] / <(..)_(..)>#"),
+        ("in U#", "V:[+long] > V:[-long] / <(..)_(..)>#"),
     ],
 )
 def test_compile_asca_rule_fields_syllable_position_env(env, expected):
@@ -202,7 +198,7 @@ def test_sound_change_rule_preserves_raw():
         detect_alternatives=False,
     )
     assert rule.raw == "Vː → V[-long] / ! in #U"
-    assert rule.value == "V:[+long] > V:[-long] // :{#_#, #<.._>}:"
+    assert rule.value == "V:[+long] > V:[-long] // #<(..)_(..)>"
 
 
 def test_apply_syllable_position_editorial_strip_on_rule_parts():

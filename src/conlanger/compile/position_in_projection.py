@@ -10,8 +10,8 @@ from conlanger.utils.syllable_position import (
 )
 
 _MECHANICAL_ENV_ASCA = {
-    "#U": "#<.._>",
-    "U#": "<.._>#",
+    "#U": "#<(..)_(..)>",
+    "U#": "<(..)_(..)>#",
 }
 _COMMA_U_HASH_RE = re.compile(r"^#U\s*,\s*U#$")
 
@@ -21,7 +21,7 @@ _STRESSED_MONOSYLLABLE_ASCA = "#_[+stress]"
 _POSITION_IN_CONTEXT_STRESS_RE = re.compile(
     r"^.+ in \$[\[(](?:\+stress|-stress)\]$",
 )
-_POSITION_IN_CONTEXT_EDGE_RE = re.compile(r"^.+ #<.._>$")
+_POSITION_IN_CONTEXT_EDGE_RE = re.compile(r"^.+ #<\(\.\.\)_\(\.\.\)>$")
 _WHOLE_POSITION_IN_STRESS_RE = re.compile(r"^_\s*\$[\[(](?:\+stress|-stress)\]$")
 _WHOLE_POSITION_IN_MATRIX_RE = re.compile(
     r"^_\s*%\[\+stress\](?:\[[^\]]+\])*$",
@@ -108,7 +108,7 @@ def env_is_projected_position_in_compile_string(raw: str | None) -> bool:
     if raw is None or not raw.strip():
         return False
     text = raw.strip()
-    if text in ("#<.._>", "<.._>#", _STRESSED_MONOSYLLABLE_ASCA):
+    if text in ("#<(..)_(..)>", "<(..)_(..)>#", _STRESSED_MONOSYLLABLE_ASCA):
         return True
     if _WHOLE_POSITION_IN_STRESS_RE.fullmatch(text):
         return True

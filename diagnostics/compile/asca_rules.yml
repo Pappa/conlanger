@@ -3335,7 +3335,7 @@ sections:
     rule: f > p // _V
   - rule_id: Proto-Kypchak-ŋ
     source: index_diachronica.html:2305
-    rule: ŋ > ɡ / <.._>#
+    rule: ŋ > ɡ / <(..)_(..)>#
 - section: Proto-Kypchak to Kazakh
   index: 8.5.1.1
   rules:
@@ -6302,7 +6302,7 @@ sections:
     - u > i / _Cu
   - rule_id: Kwamera-ə
     source: index_diachronica.html:3652
-    rule: ə > a / <.._>#
+    rule: ə > a / <(..)_(..)>#
   - rule_id: Kwamera-ə_2
     source: index_diachronica.html:3653
     rule: ə > e / else
@@ -6435,7 +6435,7 @@ sections:
     - u > i / _Cu
   - rule_id: Southwest-Tanna-ə
     source: index_diachronica.html:3702
-    rule: ə > a / <.._>#
+    rule: ə > a / <(..)_(..)>#
 - section: Proto-Tanna to Whitesands
   index: 10.3.11.3.5
   rules:
@@ -8054,7 +8054,7 @@ sections:
     rule: '{ɾ,l,ɭ} > ∅ / V_P'
   - rule_id: Colloquial-Tamil-i-u_2
     source: index_diachronica.html:4553
-    rule: 'i u > ɨ ʉ / _ when unstressed // :{#_#, #<.._>}:'
+    rule: 'i u > ɨ ʉ / _ when unstressed // #<(..)_(..)>'
   - rule_id: Colloquial-Tamil-ɨ-ʉ
     source: index_diachronica.html:4554
     rule: ɨ ʉ > ∅ // _#
@@ -8412,7 +8412,7 @@ sections:
     rule: C:[+long] > C
   - rule_id: Kuskokwim-Yup’ik-C
     source: index_diachronica.html:4717
-    rule: 'C > C:[+long] / _V(..)V // :{#_#, #<.._>}:'
+    rule: 'C > C:[+long] / _V(..)V // #<(..)_(..)>'
   - rule_id: Kuskokwim-Yup’ik-S
     source: index_diachronica.html:4718
     rule: 'P > ∅ / #_F'
@@ -8469,10 +8469,10 @@ sections:
     rule: dʒ > ∅ / i_i
   - rule_id: Kuskokwim-Yup’ik-ə_4
     source: index_diachronica.html:4736
-    rule: 'ə > ∅ / _dʒ{a,u} // :{#_#, #<.._>}:'
+    rule: 'ə > ∅ / _dʒ{a,u} // #<(..)_(..)>'
   - rule_id: Kuskokwim-Yup’ik-a
     source: index_diachronica.html:4737
-    rule: 'a > ∅ / _dʒa // :{#_#, #<.._>}:'
+    rule: 'a > ∅ / _dʒa // #<(..)_(..)>'
   - rule_id: Kuskokwim-Yup’ik-in
     source: index_diachronica.html:4738
     rule: in > dʒ / _u
@@ -8484,7 +8484,7 @@ sections:
     rule: C:[+long] > C
   - rule_id: Nunivak-Yup’ik-C
     source: index_diachronica.html:4744
-    rule: 'C > C:[+long] / _V(..)V // :{#_#, #<.._>}:'
+    rule: 'C > C:[+long] / _V(..)V // #<(..)_(..)>'
   - rule_id: Nunivak-Yup’ik-S
     source: index_diachronica.html:4745
     rule: 'P > ∅ / #_F'
@@ -8547,7 +8547,7 @@ sections:
     rule: dʒ > ∅ / i_i
   - rule_id: Nunivak-Yup’ik-ə_4
     source: index_diachronica.html:4766
-    rule: 'ə > ∅ / _dʒ{a,u} // :{#_#, #<.._>}:'
+    rule: 'ə > ∅ / _dʒ{a,u} // #<(..)_(..)>'
   - rule_id: Nunivak-Yup’ik-a_2
     source: index_diachronica.html:4767
     rule: a > ∅ / _dʒa
@@ -8624,7 +8624,7 @@ sections:
     rule: dʒ > ∅ / i_i
   - rule_id: Siberian-Yup’ik-ə_4
     source: index_diachronica.html:4794
-    rule: 'ə > ∅ / _dʒ{a,u} // :{#_#, #<.._>}:'
+    rule: 'ə > ∅ / _dʒ{a,u} // #<(..)_(..)>'
   - rule_id: Siberian-Yup’ik-a_2
     source: index_diachronica.html:4795
     rule: a > ∅ / _dʒa
@@ -8699,7 +8699,7 @@ sections:
     rule: dʒ > ∅ / i_i
   - rule_id: Unaaliq-Yup’ik-ə_4
     source: index_diachronica.html:4822
-    rule: 'ə > ∅ / _dʒ{a,u} // :{#_#, #<.._>}:'
+    rule: 'ə > ∅ / _dʒ{a,u} // #<(..)_(..)>'
   - rule_id: Unaaliq-Yup’ik-a_2
     source: index_diachronica.html:4823
     rule: a > ∅ / _dʒa
@@ -10321,7 +10321,7 @@ sections:
     rule: e:[+long] > i:[+long]
   - rule_id: Proto-Celtic-—-oː
     source: index_diachronica.html:5483
-    rule: o:[+long] > u:[+long] / <.._>#
+    rule: o:[+long] > u:[+long] / <(..)_(..)>#
   - rule_id: Proto-Celtic-—-Vː
     source: index_diachronica.html:5484
     rule: V:[+long] > V:[-long] / _[+son,-syl]C
@@ -11135,7 +11135,7 @@ sections:
   - rule_id: Australian-English-ɜːɹ-ɑːɹ-ɔːɹ-eːɹ-oːɹ-iːɹ-uːɹ
     source: index_diachronica.html:5811
     rule: ɜ:[+long]ɹ ɑ:[+long]ɹ ɔ:[+long]ɹ e:[+long]ɹ o:[+long]ɹ i:[+long]ɹ u:[+long]ɹ
-      > ɜ:[+long] ɑ:[+long] ɔ:[+long] ɛə ɔə ɪə ʊə / <.._>#
+      > ɜ:[+long] ɑ:[+long] ɔ:[+long] ɛə ɔə ɪə ʊə / <(..)_(..)>#
   - rule_id: Australian-English-ɑ
     source: index_diachronica.html:5812
     rule: ɑ > ɒ
@@ -11237,7 +11237,7 @@ sections:
   - rule_id: British-English-ɜːɹ-ɑːɹ-ɔːɹ-eːɹ-oːɹ-iːɹ-uːɹ
     source: index_diachronica.html:5845
     rule: ɜ:[+long]ɹ ɑ:[+long]ɹ ɔ:[+long]ɹ e:[+long]ɹ o:[+long]ɹ i:[+long]ɹ u:[+long]ɹ
-      > ɜ:[+long] ɑ:[+long] ɔ:[+long] ɛə ɔə ɪə ʊə / <.._>#
+      > ɜ:[+long] ɑ:[+long] ɔ:[+long] ɛə ɔə ɪə ʊə / <(..)_(..)>#
   - rule_id: British-English-ɑ
     source: index_diachronica.html:5846
     rule: ɑ > ɒ
@@ -12048,7 +12048,7 @@ sections:
     rule: z x > ʀ h
   - rule_id: Proto-Norse-i
     source: index_diachronica.html:6168
-    rule: 'i > j / _V // :{#_#, #<.._>}:'
+    rule: 'i > j / _V // #<(..)_(..)>'
   - rule_id: Proto-Norse-j
     source: index_diachronica.html:6169
     rule: j > i / C_
@@ -12082,7 +12082,7 @@ sections:
     rule: '{o,ou} {ɔ,ɑ,au,ai,æ} {ja,jV:[+front],æ,æi,e,ei,y} > u a i'
   - rule_id: Proto-Norse-Vː
     source: index_diachronica.html:6179
-    rule: 'V:[+long] > V:[- long] // :{#_#, #<.._>, <.._>#}:'
+    rule: 'V:[+long] > V:[- long] // :{#<(..)_(..)>, <(..)_(..)>#}:'
 - section: Proto-Norse to Old Norse
   index: 17.7.3.1
   rules:
@@ -12124,7 +12124,7 @@ sections:
     rule: a > ∅ / {C,CC}_{ʀ,s,t,θ}#
   - rule_id: Old-Norse-VN
     source: index_diachronica.html:6195
-    rule: 'VN > ṽ / _# // :{#_#, #<.._>}:'
+    rule: 'VN > ṽ / _# // #<(..)_(..)>'
   - rule_id: Old-Norse-u-o,ɒ-a-au-juː
     source: index_diachronica.html:6196
     rule: u {o,ɒ} a au ju:[+long] > y ø æ y y:[+long] / _(C)(C)(C)j
@@ -12151,7 +12151,7 @@ sections:
     rule: a > ∅ / CC_%#
   - rule_id: Old-Norse-a_4
     source: index_diachronica.html:6204
-    rule: 'a > u / $u / // :{#_#, #<.._>}:'
+    rule: 'a > u / $u / // #<(..)_(..)>'
   - rule_id: Old-Norse-waː-naː
     source: index_diachronica.html:6205
     rule: 'wa:[+long] na:[+long] > o:[+long] no:[+long] / $u in #%'
@@ -12203,7 +12203,7 @@ sections:
     rule: u > o / _m#
   - rule_id: Old-Norse-Vː
     source: index_diachronica.html:6221
-    rule: 'V:[+long] > V:[- long] // :{#_#, #<.._>}:'
+    rule: 'V:[+long] > V:[- long] // #<(..)_(..)>'
   - rule_id: Old-Norse-u,we,wi-o,ɒ-a-au-juː
     source: index_diachronica.html:6222
     rule: '{u,we,wi} {o,ɒ} a au ju:[+long] > y ø æ æy y:[+long] / _(C)(C)(C)i'
@@ -12381,7 +12381,7 @@ sections:
     rule: lθ nθ > l:[+long] n:[+long]
   - rule_id: Old-Norse-Ṽ
     source: index_diachronica.html:6280
-    rule: 'ṽ > V:[+long] / #<.._>'
+    rule: 'ṽ > V:[+long] / #<(..)_(..)>'
   - rule_id: Old-Norse-Ṽ_2
     source: index_diachronica.html:6281
     rule: ṽ > V:[- nas]
@@ -12508,7 +12508,7 @@ sections:
     rule: r:[+long] l:[+long] > r l / {p,t,k,f,s}_
   - rule_id: Old-Norse-o-æ,e
     source: index_diachronica.html:6322
-    rule: 'o {æ,e} > u i // :{#_#, #<.._>}:'
+    rule: 'o {æ,e} > u i // #<(..)_(..)>'
   - rule_id: Old-Norse-o
     source: index_diachronica.html:6323
     rule: o > u / V_
@@ -16262,7 +16262,7 @@ sections:
     rule: V:[+nas, -stress] > V:[-nas] / _
   - rule_id: Portuguese-V+nas_2
     source: index_diachronica.html:7660
-    rule: V:[+nas] > V:[-nas] / <.._>#
+    rule: V:[+nas] > V:[-nas] / <(..)_(..)>#
   - rule_id: Portuguese-V0+nasV0-nas
     source: index_diachronica.html:7661
     rule: V:[+nas]=0 V:[-nas]=0 > 0:[+nas]
@@ -17317,7 +17317,7 @@ sections:
     - y > i
   - rule_id: Rhaeto-Romance-a-V
     source: index_diachronica.html:7994
-    rule: a V > e / <.._>#
+    rule: a V > e / <(..)_(..)>#
   - rule_id: Rhaeto-Romance-k-ɡ
     source: index_diachronica.html:7995
     rule: k ɡ > tʃ dʒ / _a
@@ -20585,7 +20585,7 @@ sections:
     rule: u i > w j / a_ when this a is a result of metathesis
   - rule_id: "AritinÅ\x8BitiÉ£-Vː"
     source: index_diachronica.html:9415
-    rule: 'V:[+long] > V:[-long] / #<.._>'
+    rule: 'V:[+long] > V:[-long] / #<(..)_(..)>'
 - section: "Proto-Paman to AwÅ\x8Btim"
   index: 24.1.2
   rules:
@@ -20612,7 +20612,7 @@ sections:
     rule: 'C > ∅ / #_'
   - rule_id: "AwÅ\x8Btim-Vː"
     source: index_diachronica.html:9427
-    rule: 'V:[+long] > ə / #<.._>'
+    rule: 'V:[+long] > ə / #<(..)_(..)>'
 - section: "Proto-Paman to LinÅ\x8BitiÉ£"
   index: 24.1.3
   rules:
@@ -20627,7 +20627,7 @@ sections:
     rule: 'C > ∅ / #_'
   - rule_id: "LinÅ\x8BitiÉ£-Vː-V-long"
     source: index_diachronica.html:9435
-    rule: 'V:[+long] V:[-long] > V:[-long] / #<.._>'
+    rule: 'V:[+long] V:[-long] > V:[-long] / #<(..)_(..)>'
 - section: Proto-Paman to Mbiywom
   index: 24.1.4
   rules:
@@ -20648,7 +20648,7 @@ sections:
     rule: u i > w j / a_ when this a is a result of metathesis
   - rule_id: Mbiywom-Vː
     source: index_diachronica.html:9445
-    rule: 'V:[+long] > V:[-long] / #<.._>'
+    rule: 'V:[+long] > V:[-long] / #<(..)_(..)>'
 - section: Proto-Paman to Mpalican
   index: 24.1.5
   rules:
@@ -20660,7 +20660,7 @@ sections:
     rule: 'C > ∅ / #_'
   - rule_id: Mpalican-Vː
     source: index_diachronica.html:9452
-    rule: 'V:[+long] > V:[-long] / #<.._>'
+    rule: 'V:[+long] > V:[-long] / #<(..)_(..)>'
 - section: Proto-Paman to UraÃ°i
   index: 24.1.6
   rules:
@@ -20669,7 +20669,7 @@ sections:
     rule: '{NP,P} > F / #(C)V_'
   - rule_id: UraÃ°i-Vː
     source: index_diachronica.html:9458
-    rule: 'V:[+long] > V:[-long] / #<.._>'
+    rule: 'V:[+long] > V:[-long] / #<(..)_(..)>'
 - section: Proto-Paman to Yinwum
   index: 24.1.7
   rules:
@@ -20696,7 +20696,7 @@ sections:
     rule: '∅ > w / #{u:[+long],uC:[+long]}_a'
   - rule_id: Yinwum-Vː
     source: index_diachronica.html:9470
-    rule: 'V:[+long] > V:[-long] / #<.._>'
+    rule: 'V:[+long] > V:[-long] / #<(..)_(..)>'
 - section: Proto-Tacanan to Cavineña
   index: 25.1.1
   rules:
@@ -25432,7 +25432,7 @@ sections:
     rule: V > V:[+stress]
   - rule_id: Proto-Northern-Iroquoian-Vː
     source: index_diachronica.html:12384
-    rule: 'V:[+long] > V:[-long] // :{#_#, <.._>#}:'
+    rule: V:[+long] > V:[-long] // <(..)_(..)>#
   - rule_id: Proto-Northern-Iroquoian-”V
     source: index_diachronica.html:12385
     rule: V:[+stress] > V:[+stress, +long]
@@ -25658,7 +25658,7 @@ sections:
   rules:
   - rule_id: Wyandot-Vː
     source: index_diachronica.html:12479
-    rule: V:[+long] > V:[+stress] / <.._>#
+    rule: V:[+long] > V:[+stress] / <(..)_(..)>#
   - rule_id: Wyandot-t
     source: index_diachronica.html:12480
     rule: t > k / _j
