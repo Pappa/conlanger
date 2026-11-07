@@ -11,3 +11,8 @@ section_index,rule_id,alt_idx,step_idx,source,ok,timestamp
 10.3.11.3.1,Kwamera-ə_2,,,index_diachronica.html:3653,OK,2026-11-07T17:20:23Z
 37.2.1,Catawba-tʲ_2,,,index_diachronica.html:12746,OK,2026-11-07T17:20:23Z
 37.2.2,Dakota-tʲ_2,,,index_diachronica.html:12758,OK,2026-11-07T17:20:23Z
+7.4,Blackfoot-aː_2,,,index_diachronica.html:1763,OK,2026-11-07T17:42:02Z
+17.7.2.1.4,Early-Modern-English-a_2,,,index_diachronica.html:5780,SKIPPED,2026-11-07T17:42:02Z
+17.7.2.1.6,Australian-English-uː_2,,0,index_diachronica.html:5820,OK,2026-11-07T17:42:02Z
+17.7.2.1.6,Australian-English-uː_2,,1,index_diachronica.html:5820,OK,2026-11-07T17:42:02Z
+37.1,Proto-Iroquoian-p_2,,,index_diachronica.html:12335,OK,2026-11-07T17:42:02Z

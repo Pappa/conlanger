@@ -4342,7 +4342,7 @@ sections:
     stages:
     - aː
     - a
-    env: else
+    env: W_{CC,Cː,#}
   - rule_id: Blackfoot-oː
     source: index_diachronica.html:1764
     raw: oː → o
@@ -24855,15 +24855,13 @@ sections:
     raw: a → ɑː / “in a few words, like ‘father’”
     stages:
     - a
-    - ɑː
-    comment: “in a few words, like ‘father’”
+    - '{ɑː,æ}'
   - rule_id: Early-Modern-English-a_2
     source: index_diachronica.html:5780
     raw: a → æ / else
-    stages:
-    - a
-    - æ
-    env: else
+    stages: []
+    comment: Merged with previous rule
+    status: skipped
   - rule_id: Early-Modern-English-əɪ-əʊ
     source: index_diachronica.html:5781
     raw: əɪ əʊ → ɑi æʊ / “in some parts of South-Eastern England”
@@ -25101,7 +25099,7 @@ sections:
     - uː
     - ʊʉ
     - ʉː
-    env: else
+    exception: _ɫ
   - rule_id: Australian-English-ɫ
     source: index_diachronica.html:5821
     raw: ɫ → əɫ / ! if one of the above vowel changes after the formation of /ɫ/ apply
@@ -58073,7 +58071,7 @@ sections:
     stages:
     - p
     - kʷ
-    env: else
+    exception: C_
   - rule_id: Proto-Iroquoian-pʰ
     source: index_diachronica.html:12336
     raw: pʰ → ʍ (this is a bit of a guess; the paper proper has 〈hw〉 here)
@@ -65902,7 +65900,7 @@ sections:
     stages:
     - ɣ
     - ∅
-    env: else
+    exception: VV₀_V₀
   - rule_id: Standard-Finnish-h
     source: index_diachronica.html:13880
     raw: h → ∅ / V[-stress](X)_V

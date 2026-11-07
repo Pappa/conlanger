@@ -3,18 +3,18 @@
 - Source YAML: `diagnostics/compile/asca_rules.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.3**
-- Rows: **9585** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
+- Rows: **9586** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9269** (96.7%)
-- Fail: **270** (2.8%)
-- Skipped: **46** (0.5%)
+- OK: **9274** (96.7%)
+- Fail: **265** (2.8%)
+- Skipped: **47** (0.5%)
 
 
 ## Corrections
 
-OK: **128/129**
-Fail: **1/129**
+OK: **130/131**
+Fail: **1/131**
 
 ### Failed corrections
 
@@ -22,8 +22,8 @@ Fail: **1/129**
 
 ## Sections
 
-- All OK: **519 / 660** (78.6%)
-- Some OK: **140 / 660** (21.2%)
+- All OK: **522 / 660** (79.1%)
+- Some OK: **137 / 660** (20.8%)
 - None OK: **1 / 660** (0.2%)
 - Sections skipped: **0 / 660** (0.0%)
 
@@ -31,7 +31,7 @@ Fail: **1/129**
 
 | count | failure_class |
 |------:|---------------|
-| 66 | `expected_underscore` |
+| 61 | `expected_underscore` |
 | 45 | `syntax_other` |
 | 34 | `expected_ipa` |
 | 24 | `unknown_character` |
@@ -144,7 +144,7 @@ Fail: **1/129**
 
 | count | description |
 |------:|-------------|
-| 22 | `Expected '_', but received ''` |
+| 17 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 

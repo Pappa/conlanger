@@ -1936,7 +1936,7 @@ sections:
     rule: a:[+long] > aa / G_ // when _{CC,C:[+long],#}
   - rule_id: Blackfoot-aː_2
     source: index_diachronica.html:1763
-    rule: a:[+long] > a / else
+    rule: a:[+long] > a / G_{CC,C:[+long],#}
   - rule_id: Blackfoot-oː
     source: index_diachronica.html:1764
     rule: o:[+long] > o
@@ -11060,10 +11060,13 @@ sections:
     rule: ɑʊ > ɔ:[+long] // _N
   - rule_id: Early-Modern-English-a
     source: index_diachronica.html:5779
-    rule: a > ɑ:[+long]
+    alternatives:
+    - a > ɑ:[+long]
+    - a > æ
   - rule_id: Early-Modern-English-a_2
     source: index_diachronica.html:5780
-    rule: a > æ / else
+    status: skipped
+    rule: "#\ta → æ / else"
   - rule_id: Early-Modern-English-əɪ-əʊ
     source: index_diachronica.html:5781
     rule: əɪ əʊ > ɑi æʊ
@@ -11171,8 +11174,8 @@ sections:
   - rule_id: Australian-English-uː_2
     source: index_diachronica.html:5820
     steps:
-    - u:[+long] > ʊʉ / else
-    - ʊʉ > ʉ:[+long] / else
+    - u:[+long] > ʊʉ // _ɫ
+    - ʊʉ > ʉ:[+long] // _ɫ
   - rule_id: Australian-English-ɫ
     source: index_diachronica.html:5821
     rule: ɫ > əɫ
@@ -25314,7 +25317,7 @@ sections:
     rule: p > ∅ / C_ // s_
   - rule_id: Proto-Iroquoian-p_2
     source: index_diachronica.html:12335
-    rule: p > kʷ / else
+    rule: p > kʷ // C_
   - rule_id: Proto-Iroquoian-pʰ
     source: index_diachronica.html:12336
     rule: pʰ > ʍ

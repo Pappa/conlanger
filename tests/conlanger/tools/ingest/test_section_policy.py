@@ -131,24 +131,6 @@ def test_resolve_catch_all_else_cascade_uses_immediate_prev_only():
     assert "env" not in dumped
 
 
-def test_resolve_catch_all_else_deferred_prev_env_and_exception():
-    rules = [
-        _rule(
-            {
-                "stages": ["p", "∅"],
-                "env": "C_",
-                "exception": "s_",
-                "raw": "p → ∅ / C_ ! s_",
-            }
-        ),
-        _rule({"stages": ["p", "kʷ"], "env": "else", "raw": "p → kʷ / else"}),
-    ]
-    resolved = resolve_catch_all_else_rules(rules)
-    dumped = _rule_dump(resolved[1])
-    assert dumped["env"] == "else"
-    assert "exception" not in dumped
-
-
 def test_resolve_catch_all_else_deferred_prev_neither():
     rules = [
         _rule({"stages": ["a", "ɑː"], "raw": "a → ɑː"}),

@@ -270,3 +270,5 @@ skip_rules:
     reason: "Not a valid environment"
   - id: Pre-Finnic-a
     reason: "Unsure how to represent 2nd mora"
+  - id: Early-Modern-English-a_2
+    reason: "Merged with previous rule"

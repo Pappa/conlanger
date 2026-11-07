@@ -55,8 +55,8 @@ def _normalize_catch_all_else_env(rule: IndexRule) -> IndexRule:
 
 
 def _complement_env_from_previous(prev: IndexRule | None) -> IndexContext | None:
-    """Previous rule env to use as this rule's ``exception``, or ``None`` if deferred."""
-    if prev is None or prev.exception is not None or prev.env is None:
+    """Previous rule env to use as this rule's ``exception``, or ``None``."""
+    if prev is None or prev.env is None:
         return None
     return prev.env.model_copy(deep=True)
 
@@ -64,7 +64,7 @@ def _complement_env_from_previous(prev: IndexRule | None) -> IndexContext | None
 def resolve_catch_all_else_rules(rules: list[IndexRule]) -> list[IndexRule]:
     """Rewrite complementary ``/ else`` rules using the immediately preceding env.
 
-    When the previous rule in the same section has ``env`` and no ``exception``,
+    When the previous rule in the same section has ``env``,
     the else rule omits ``env`` (any environment) and sets ``exception`` to that
     previous ``env``.
     """
