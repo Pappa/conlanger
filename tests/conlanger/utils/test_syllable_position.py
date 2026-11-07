@@ -10,6 +10,7 @@ from conlanger.compile.tools.asca.syllable_position import (
     compile_syllable_position_env,
     compile_syllable_position_exception,
     normalize_syllable_position_marker,
+    project_position_in_compiled_field,
     project_syllable_stress_compiled_env,
     strip_editorial_in_before_syllable_position,
 )
@@ -97,6 +98,35 @@ def test_compile_syllable_position_env(raw, expected):
 )
 def test_project_syllable_stress_compiled_env(env_raw, compiled_before, expected):
     assert project_syllable_stress_compiled_env(env_raw, compiled_before) == expected
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        (
+            "e:[+stress]_ in U[+lo]",
+            ":{e:[+stress]_, <(..)_(..)>:[+lo]}:",
+        ),
+        (
+            "e:[+stress]_ in %[+lo]",
+            ":{e:[+stress]_, <(..)_(..)>:[+lo]}:",
+        ),
+        (
+            ":{e:[+stress]_, %[+lo]}:",
+            ":{e:[+stress]_, <(..)_(..)>:[+lo]}:",
+        ),
+        (
+            "seg_ in U[+lo]",
+            ":{seg_, <(..)_(..)>:[+lo]}:",
+        ),
+        (
+            "_{m,ŋ} when posttonic in U[+hi] or when pretonic",
+            ":{_{m,ŋ} when posttonic, <(..)_(..)>:[+hi] or when pretonic}:",
+        ),
+    ],
+)
+def test_project_position_in_compiled_field_env_set_syllable_tail(text, expected):
+    assert project_position_in_compiled_field(text) == expected
 
 
 @pytest.mark.parametrize(

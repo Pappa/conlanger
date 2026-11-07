@@ -8445,7 +8445,7 @@ sections:
     rule: t > s / _{k,q}
   - rule_id: Kuskokwim-Yup’ik-i-a-u
     source: index_diachronica.html:4728
-    rule: 'i a u > ii aa uu / :{C_, %[+lo -initial -final] such that %[+lo]_}:'
+    rule: 'i a u > ii aa uu / :{C_, <(..)_(..)>:[+lo -initial -final] such that <(..)_(..)>:[+lo]_}:'
   - rule_id: Kuskokwim-Yup’ik-ə_3
     source: index_diachronica.html:4729
     rule: ə > i / u_
@@ -8523,7 +8523,7 @@ sections:
     rule: t > s / _{k,q}
   - rule_id: Nunivak-Yup’ik-i-a-u
     source: index_diachronica.html:4758
-    rule: 'i a u > ii aa uu / :{C_, %[+lo -initial -final] such that %[+lo]_}:'
+    rule: 'i a u > ii aa uu / :{C_, <(..)_(..)>:[+lo -initial -final] such that <(..)_(..)>:[+lo]_}:'
   - rule_id: Nunivak-Yup’ik-ə_3
     source: index_diachronica.html:4759
     rule: ə > i / {u,a}_
@@ -8678,7 +8678,7 @@ sections:
     rule: t > s / _{k,q}
   - rule_id: Unaaliq-Yup’ik-i-a-u
     source: index_diachronica.html:4815
-    rule: 'i a u > ii aa uu / :{C_, %[+lo -initial -final] such that %[+lo]_}:'
+    rule: 'i a u > ii aa uu / :{C_, <(..)_(..)>:[+lo -initial -final] such that <(..)_(..)>:[+lo]_}:'
   - rule_id: Unaaliq-Yup’ik-ə_3
     source: index_diachronica.html:4816
     rule: ə > i / {u,a}_
@@ -9190,10 +9190,10 @@ sections:
     rule: '{o,o:[+long]} æ:[+long] > {a,a:[+long]} e:[+long]'
   - rule_id: Hittite-e
     source: index_diachronica.html:5060
-    rule: 'e > i / :{_{m,ŋ} when posttonic, %[+hi] or when pretonic}:'
+    rule: 'e > i / :{_{m,ŋ} when posttonic, <(..)_(..)>:[+hi] or when pretonic}:'
   - rule_id: Hittite-e_2
     source: index_diachronica.html:5061
-    rule: 'e > a / :{_n, %[+lo +posttonic]}:'
+    rule: 'e > a / :{_n, <(..)_(..)>:[+lo +posttonic]}:'
   - rule_id: Hittite-e_3
     source: index_diachronica.html:5062
     rule: e > a / _{r,l}
@@ -9284,7 +9284,7 @@ sections:
   - rule_id: Luwian-D-R
     source: index_diachronica.html:5094
     rule: 'P:[+voice] [+son,-syl] > P:[+voice, +long] [+son,-syl, +long] / :{e:[+stress]_,
-      %[+lo]}:'
+      <(..)_(..)>:[+lo]}:'
   - rule_id: Luwian-ɛ,eː-æː
     source: index_diachronica.html:5095
     rule: '{ɛ,e}:[+long] æ:[+long] > i:[+long] a:[+long]'
@@ -9421,10 +9421,10 @@ sections:
     rule: e > i / j_
   - rule_id: Lydian-e,a,o
     source: index_diachronica.html:5146
-    rule: '{e,a,o} > e:[+long] / :{_N, %:[+stress, +hi]}:'
+    rule: '{e,a,o} > e:[+long] / :{_N, <(..)_(..)>:[+stress, +hi]}:'
   - rule_id: Lydian-e,a,o_2
     source: index_diachronica.html:5147
-    rule: '{e,a,o} > a:[+long] / :{_N, %:[+stress, +lo]}:'
+    rule: '{e,a,o} > a:[+long] / :{_N, <(..)_(..)>:[+stress, +lo]}:'
   - rule_id: Lydian-e,o
     source: index_diachronica.html:5148
     rule: '{e,o} > a / <(..)_(..)>:[-stress]'
@@ -10784,7 +10784,7 @@ sections:
     rule: iji > i:[+long] / %[- stress](C,0)_
   - rule_id: Gothic-iji_2
     source: index_diachronica.html:5671
-    rule: 'iji > i:[+long] / :{%[+ long +hi]_, the stem}:'
+    rule: 'iji > i:[+long] / :{<(..)_(..)>:[+ long +hi]_, the stem}:'
   - rule_id: Gothic-i
     source: index_diachronica.html:5672
     rule: i > ∅ / _ji
@@ -15910,7 +15910,7 @@ sections:
     rule: ɛ ɔ > iɛ uɛ / _{Cj,jC}
   - rule_id: French-∅_6
     source: index_diachronica.html:7537
-    rule: '∅ > j / :{{ʃ,ʒ,sj,zj}{a:[+stress],e:[+stress]}_, %[+lo]}:'
+    rule: '∅ > j / :{{ʃ,ʒ,sj,zj}{a:[+stress],e:[+stress]}_, <(..)_(..)>:[+lo]}:'
   - rule_id: French-sːj-zj-rj
     source: index_diachronica.html:7538
     rule: s:[+long]j zj rj > js:[+long] jz jr
@@ -15951,10 +15951,10 @@ sections:
     rule: o > ou / <(..)_(..)>:[+hi]
   - rule_id: French-e
     source: index_diachronica.html:7550
-    rule: 'e > ə / :{#(C,0)_($,0):[+stress], %[+lo]}:'
+    rule: 'e > ə / :{#(C,0)_($,0):[+stress], <(..)_(..)>:[+lo]}:'
   - rule_id: French-e_2
     source: index_diachronica.html:7551
-    rule: 'e > ɛ / :{#(C,0)_($,0):[+stress], %[+hi] or _V}:'
+    rule: 'e > ɛ / :{#(C,0)_($,0):[+stress], <(..)_(..)>:[+hi] or _V}:'
   - rule_id: French-o
     source: index_diachronica.html:7552
     alternatives:
@@ -15962,7 +15962,7 @@ sections:
     - o > ɔ
   - rule_id: French-a_2
     source: index_diachronica.html:7553
-    rule: 'a > ə / :{#{tʃ,dʒ}_($,0):[+stress], %[+lo]}:'
+    rule: 'a > ə / :{#{tʃ,dʒ}_($,0):[+stress], <(..)_(..)>:[+lo]}:'
   - rule_id: French-a_3
     source: index_diachronica.html:7554
     rule: a > ɛ / <(..)_(..)>:[+lo]
@@ -22466,7 +22466,7 @@ sections:
     rule: ʃ > s
   - rule_id: Tataltepec-Chatino-l-n
     source: index_diachronica.html:10823
-    rule: 'l n > lʲ nʲ / :{e_, %[-long -stress]}:'
+    rule: 'l n > lʲ nʲ / :{e_, <(..)_(..)>:[-long -stress]}:'
   - rule_id: Tataltepec-Chatino-ç
     source: index_diachronica.html:10824
     rule: ç > ʔ (? Not sure if I:[+cg]m reading the phone(me)s right on this one)
@@ -22547,10 +22547,10 @@ sections:
     rule: ʃ > ts / _i
   - rule_id: Yaitepec-Chatino-lʲ
     source: index_diachronica.html:10854
-    rule: 'lʲ > l / :{#_, %[-long -stress]}:'
+    rule: 'lʲ > l / :{#_, <(..)_(..)>:[-long -stress]}:'
   - rule_id: Yaitepec-Chatino-lʲ_2
     source: index_diachronica.html:10855
-    rule: 'lʲ > lj // :{#_, %[-long -stress]}:'
+    rule: 'lʲ > lj // :{#_, <(..)_(..)>:[-long -stress]}:'
   - rule_id: Yaitepec-Chatino-nʲ
     source: index_diachronica.html:10856
     rule: nʲ > j / _ã

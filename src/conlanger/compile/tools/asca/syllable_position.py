@@ -42,8 +42,17 @@ _IN_STRESS_COMMA_RE = re.compile(
 
 _PROSE_AFTER_HASH_U_RE = re.compile(r"\bin\s+#U\s+(?:before|with)\b", re.IGNORECASE)
 
-_SYLLABLE_HOST_IN_STRESS_RE = re.compile(
-    r"(?P<sep>,\s+in\s+|\s+in\s+)(?:U:|U|%:|%)(?P<feat>\[(?:\+stress|-stress)\])(?=$|\s*!)",
+_SYLLABLE_HOST_IN_MATRIX_RE = re.compile(
+    r"(?P<sep>,\s+in\s+|\s+in\s+)(?:U:|U|%:?)(?P<tail>(?:\[[^\]]+\])+)(?=\s|$|!|,|\bor\b)",
+)
+_ENV_SET_MEMBER_MATRIX_SUFFIX_RE = re.compile(
+    r"^(?P<host>(?:U|%)(?:\[[^\]]+\])+)(?P<suffix>.+)$",
+)
+_BARE_SYLLABLE_MATRIX_FRAGMENT_RE = re.compile(
+    r"(?<![A-Za-z0-9])(?:U|%)(?:\[[^\]]+\])+",
+)
+_IN_COMMA_SYLLABLE_HOST_MATRIX_RE = re.compile(
+    r",\s+in\s+(?:U:|U|%:?)(?P<tail>(?:\[[^\]]+\])+)",
 )
 _WHOLE_IN_U_COLON_STRESS_RE = re.compile(r"^in\s+(?:U:|U|%:|%)(?P<feat>\[-stress\])$")
 _WHOLE_IN_SYLLABLE_HOST_MATRIX_RE = re.compile(
@@ -104,8 +113,52 @@ def _compile_syllable_stress_env_from_raw(raw: str | None) -> str | None:
     return _scope_from_whole_syllable_host_matrix(stripped)
 
 
-def _rewrite_in_u_stress_tail(feat: str) -> str:
-    return f" in <(..)_(..)>:{feat}"
+def _rewrite_syllable_matrix_fragments_in_segment(segment: str) -> str:
+    def repl(match: re.Match[str]) -> str:
+        scope = _scope_from_whole_syllable_host_matrix(match.group(0))
+        return scope if scope is not None else match.group(0)
+
+    return _BARE_SYLLABLE_MATRIX_FRAGMENT_RE.sub(repl, segment)
+
+
+def _project_env_set_segment(segment: str) -> str:
+    segment = segment.strip()
+    scope = _scope_from_whole_syllable_host_matrix(segment)
+    if scope is not None:
+        return scope
+    matrix_suffix = _ENV_SET_MEMBER_MATRIX_SUFFIX_RE.match(segment)
+    if matrix_suffix is not None:
+        host_scope = _scope_from_whole_syllable_host_matrix(matrix_suffix.group("host"))
+        if host_scope is not None:
+            return host_scope + matrix_suffix.group("suffix")
+    return _rewrite_syllable_matrix_fragments_in_segment(segment)
+
+
+def _rewrite_env_set_syllable_host_members(text: str) -> str:
+    """Rewrite bare ``U[±F]`` / ``%[±F]`` members inside ``:{…}:`` env sets."""
+    stripped = text.strip()
+    if not stripped.startswith(":{") or not stripped.endswith("}:"):
+        return text
+    inner = stripped[2:-2]
+    members = [member.strip() for member in inner.split(",")]
+    rewritten = [_project_env_set_segment(member) for member in members]
+    if rewritten == members:
+        return text
+    return f":{{{', '.join(rewritten)}}}:"
+
+
+def _rewrite_in_syllable_host_matrix_tail(text: str) -> str:
+    return _SYLLABLE_HOST_IN_MATRIX_RE.sub(
+        lambda match: f"{match.group('sep')}<(..)_(..)>:{match.group('tail')}",
+        text,
+    )
+
+
+def _rewrite_comma_in_syllable_host_matrix(text: str) -> str:
+    return _IN_COMMA_SYLLABLE_HOST_MATRIX_RE.sub(
+        lambda match: f", in <(..)_(..)>:{match.group('tail')}",
+        text,
+    )
 
 
 def _matrix_brackets_from_tail(tail: str) -> str | None:
@@ -142,19 +195,19 @@ def project_position_in_compiled_field(text: str | None) -> str | None:
         projected = _IN_MECHANICAL_U_HASH_TAIL_RE.sub(" <(..)_(..)>#", projected)
 
     projected = _rewrite_legacy_whole_in_syllable_host_matrix(projected)
-    projected = _SYLLABLE_HOST_IN_STRESS_RE.sub(
-        lambda match: _rewrite_in_u_stress_tail(match.group("feat")),
-        projected,
-    )
+    projected = _rewrite_in_syllable_host_matrix_tail(projected)
     projected = _WHOLE_IN_U_COLON_STRESS_RE.sub(
         lambda match: f"<(..)_(..)>:{match.group('feat')}",
         projected,
     )
     parts = projected.split(" in ")
     if len(parts) == 2:
-        return f":{{{', '.join(parts)}}}:"
+        left = _project_env_set_segment(parts[0])
+        right = _project_env_set_segment(parts[1])
+        return _rewrite_env_set_syllable_host_members(f":{{{left}, {right}}}:")
 
-    return projected.strip()
+    projected = _rewrite_env_set_syllable_host_members(projected.strip())
+    return projected
 
 
 def project_syllable_stress_compiled_env(
@@ -185,7 +238,11 @@ def project_syllable_stress_compiled_env(
         return f" in <(..)_(..)>:[{feature}]"
 
     projected = _IN_STRESS_COMMA_RE.sub(_comma_in_stress_repl, projected)
-    return project_position_in_compiled_field(projected)
+    projected = _rewrite_comma_in_syllable_host_matrix(projected)
+    projected = project_position_in_compiled_field(projected)
+    if projected is None:
+        return None
+    return _rewrite_env_set_syllable_host_members(projected)
 
 
 def apply_syllable_position_compiled_overrides(
