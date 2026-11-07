@@ -624,3 +624,10 @@ rules:
           content: "u → {ɵ,o}"
           reason: |
               u(ː) → {ɵ,o}(ː)
+    - rule:
+          id: Old-Norse-waː-naː
+          content: "waː naː → oː noː / #U"
+          reason: |
+              No idea what this rule means and can't understand the original source.
+              http://www.kunstsprachen.de/s17/rules.sch
+              waː naː → oː noː / %u in #U
