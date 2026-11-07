@@ -5,7 +5,6 @@ from __future__ import annotations
 import re
 
 from conlanger.ingest.models.index_models import IndexContext, IndexRule
-from conlanger.ingest.utils.index_context_project import project_index_context
 from conlanger.utils.gloss import (
     extract_trailing_gloss_from_field,
     extract_uncertainty_qualifier_from_field,
@@ -23,16 +22,6 @@ def is_catch_all_else_env(env: str) -> bool:
 def is_else_env_candidate(env: str) -> bool:
     """Return whether ``env`` is a candidate for a catch-all ``else`` / ``else?``."""
     return bool(env and _ELSE_ENV_CANDIDATE_RE.search(env))
-
-
-def _effective_env_material(env: IndexContext) -> str:
-    """Env string used for catch-all ``else`` eligibility (context + position)."""
-    projected = project_index_context(env)
-    if projected:
-        return projected
-    if env.position and env.position.get("medial"):
-        return env.context or "_"
-    return env.context or ""
 
 
 def _strip_else_env_glosses(env: str) -> tuple[str, list[str]]:
@@ -69,9 +58,6 @@ def _complement_env_from_previous(prev: IndexRule | None) -> IndexContext | None
     """Previous rule env to use as this rule's ``exception``, or ``None`` if deferred."""
     if prev is None or prev.exception is not None or prev.env is None:
         return None
-    material = _effective_env_material(prev.env)
-    if not material or is_catch_all_else_env(material) or "_" not in material:
-        return None
     return prev.env.model_copy(deep=True)
 
 
@@ -79,10 +65,8 @@ def resolve_catch_all_else_rules(rules: list[IndexRule]) -> list[IndexRule]:
     """Rewrite complementary ``/ else`` rules using the immediately preceding env.
 
     When the previous rule in the same section has ``env`` and no ``exception``,
-    and that ``env`` contains ``_`` (ASCA structural focus), the else rule omits
-    ``env`` (any environment) and sets ``exception`` to that previous ``env``.
-    Deferred shapes (previous rule with both env and exception,
-    neither, or else-after-else) keep ``env: else`` / ``else?``.
+    the else rule omits ``env`` (any environment) and sets ``exception`` to that
+    previous ``env``.
     """
     if not rules:
         return rules

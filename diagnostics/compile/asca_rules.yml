@@ -6307,7 +6307,7 @@ sections:
     rule: ə > a / <(..)_(..)>#
   - rule_id: Kwamera-ə_2
     source: index_diachronica.html:3653
-    rule: ə > e / else
+    rule: ə > e // <(..)_(..)>#
 - section: Proto-Tanna to Lenakel
   index: 10.3.11.3.2
   rules:
@@ -22430,7 +22430,7 @@ sections:
     rule: ẽ > i / <(..)_(..)>:[+long -stress]
   - rule_id: Papabuco-Chatino-ẽ_4
     source: index_diachronica.html:10808
-    rule: ẽ > e / else
+    rule: ẽ > e // <(..)_(..)>:[+long -stress]
   - rule_id: Papabuco-Chatino-a
     source: index_diachronica.html:10809
     alternatives:
@@ -23965,7 +23965,7 @@ sections:
     rule: V5 > V4 / in syllables with a nasal or liquid
   - rule_id: Old-Mandarin-V5_3
     source: index_diachronica.html:11764
-    rule: V5 > V3 / else
+    rule: V5 > V3 // in syllables with a nasal or liquid
   - rule_id: Old-Mandarin-ɦ
     source: index_diachronica.html:11765
     rule: ɦ > h / P_V2
@@ -26241,7 +26241,7 @@ sections:
     rule: tʲ > ʃ / <(..)_(..)>:[+stress]
   - rule_id: Catawba-tʲ_2
     source: index_diachronica.html:12746
-    rule: tʲ > ʒ / else
+    rule: tʲ > ʒ // <(..)_(..)>:[+stress]
   - rule_id: Catawba-t
     source: index_diachronica.html:12747
     rule: 't > ∅ / _k // #_, _#'
@@ -26269,7 +26269,7 @@ sections:
     rule: tʲ > ʃ / <(..)_(..)>:[+stress]
   - rule_id: Dakota-tʲ_2
     source: index_diachronica.html:12758
-    rule: tʲ > ʒ / else
+    rule: tʲ > ʒ // <(..)_(..)>:[+stress]
   - rule_id: Dakota-s
     source: index_diachronica.html:12759
     rule: s > z / <(..)_(..)>:[-stress]

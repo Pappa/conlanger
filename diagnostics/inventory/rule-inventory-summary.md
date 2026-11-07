@@ -6,8 +6,8 @@
 - Rows: **9585** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9266** (96.7%)
-- Fail: **273** (2.8%)
+- OK: **9269** (96.7%)
+- Fail: **270** (2.8%)
 - Skipped: **46** (0.5%)
 
 
@@ -22,8 +22,8 @@ Fail: **1/129**
 
 ## Sections
 
-- All OK: **516 / 660** (78.2%)
-- Some OK: **143 / 660** (21.7%)
+- All OK: **519 / 660** (78.6%)
+- Some OK: **140 / 660** (21.2%)
 - None OK: **1 / 660** (0.2%)
 - Sections skipped: **0 / 660** (0.0%)
 
@@ -31,8 +31,8 @@ Fail: **1/129**
 
 | count | failure_class |
 |------:|---------------|
-| 70 | `expected_underscore` |
-| 44 | `syntax_other` |
+| 66 | `expected_underscore` |
+| 45 | `syntax_other` |
 | 34 | `expected_ipa` |
 | 24 | `unknown_character` |
 | 19 | `missing_slash_output_env` |
@@ -69,7 +69,7 @@ Fail: **1/129**
 
 | count | description |
 |------:|-------------|
-| 28 | `A syllable can only have parameters stress and tone` |
+| 29 | `A syllable can only have parameters stress and tone` |
 | 1 | `Only a segment, matrix, group, or reference can be negated` |
 | 1 | `Feature 'lost' has no modifier` |
 | 1 | `Feature 'b' has no modifier` |
@@ -144,7 +144,7 @@ Fail: **1/129**
 
 | count | description |
 |------:|-------------|
-| 26 | `Expected '_', but received ''` |
+| 22 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 

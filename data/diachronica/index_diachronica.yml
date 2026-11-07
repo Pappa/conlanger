@@ -14048,7 +14048,7 @@ sections:
     stages:
     - ə
     - e
-    env: else
+    exception: U#
 - section: Proto-Tanna to Lenakel
   index: 10.3.11.3.2
   citation: thetha, from Lynch, John (2001), The Linguistic History of Southern Vanuatu
@@ -50612,7 +50612,9 @@ sections:
     stages:
     - ẽ
     - e
-    env: else
+    exception:
+      position:
+        in: U[+long -stress]
   - rule_id: Papabuco-Chatino-a
     source: index_diachronica.html:10809
     raw: a → {i,e} “under special conditions”
@@ -54978,7 +54980,7 @@ sections:
     stages:
     - V5
     - V3
-    env: else
+    exception: in syllables with a nasal or liquid
   - rule_id: Old-Mandarin-ɦ
     source: index_diachronica.html:11765
     raw: ɦ → h / S_V2
@@ -60414,7 +60416,9 @@ sections:
     stages:
     - tʲ
     - ʒ
-    env: else
+    exception:
+      position:
+        in: U:[+stress]
   - rule_id: Catawba-t
     source: index_diachronica.html:12747
     raw: t → ∅ / _k, when medial
@@ -60481,7 +60485,9 @@ sections:
     stages:
     - tʲ
     - ʒ
-    env: else
+    exception:
+      position:
+        in: U:[+stress]
   - rule_id: Dakota-s
     source: index_diachronica.html:12759
     raw: s → z / in U[-stress]

@@ -160,31 +160,6 @@ def test_resolve_catch_all_else_deferred_prev_neither():
     assert "exception" not in dumped
 
 
-def test_resolve_catch_all_else_deferred_else_after_else():
-    rules = [
-        _rule(
-            {
-                "stages": ["aɪ", "ɑeː"],
-                "env": "else",
-                "comment": "only for some speakers",
-                "raw": "aɪ → ɑeː / else (only for some speakers)",
-            }
-        ),
-        _rule(
-            {
-                "stages": ["aɪ", "aː"],
-                "env": "else",
-                "comment": "only for some speakers",
-                "raw": "aɪ → aː / else (only for some speakers)",
-            }
-        ),
-    ]
-    resolved = resolve_catch_all_else_rules(rules)
-    dumped = _rule_dump(resolved[1])
-    assert dumped["env"] == "else"
-    assert "exception" not in dumped
-
-
 def test_resolve_catch_all_else_leaves_non_catch_all_fragments():
     rules = [
         _rule({"stages": ["a", "b"], "env": "#_", "raw": "a → b / #_"}),
@@ -193,21 +168,4 @@ def test_resolve_catch_all_else_leaves_non_catch_all_fragments():
     resolved = resolve_catch_all_else_rules(rules)
     dumped = _rule_dump(resolved[1])
     assert dumped["env"] == "_# else"
-    assert "exception" not in dumped
-
-
-def test_resolve_catch_all_else_deferred_when_prev_env_is_prose():
-    rules = [
-        _rule(
-            {
-                "stages": ["dʒ", "{d,ɡ}"],
-                "env": "if s or z occur somewhere else in the word",
-                "raw": "dʒ → {d,ɡ} / if s or z occur somewhere else in the word",
-            }
-        ),
-        _rule({"stages": ["dʒ", "ʒ"], "env": "else", "raw": "dʒ → ʒ / else"}),
-    ]
-    resolved = resolve_catch_all_else_rules(rules)
-    dumped = _rule_dump(resolved[1])
-    assert dumped["env"] == "else"
     assert "exception" not in dumped
