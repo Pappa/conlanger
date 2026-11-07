@@ -1,0 +1,479 @@
+{
+  "by_fix_family_0045": {
+    "F3-env-set-with-syllable-or-matrix": 15,
+    "U1-bare-else-prose": 12,
+    "U2-index-prose-env": 23,
+    "U3-double-slash-index": 6,
+    "U4-env-set-prose-delimiter": 8,
+    "U6-other-empty-token": 11,
+    "U7-character-in-env": 1
+  },
+  "by_fix_family_post_syllable": {
+    "U1-bare-else-prose": 12,
+    "U2-index-prose-env": 23,
+    "U3-double-slash-index": 6,
+    "U4-env-set-prose-delimiter": 23,
+    "U6-other-empty-token": 11,
+    "U7-character-in-env": 1
+  },
+  "expected_underscore_rows": 76,
+  "rows": [
+    {
+      "error_token": "}:",
+      "fix_family_0045": "U4-env-set-prose-delimiter",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Biblical-Hebrew-\u2014-a_5"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "U4-env-set-prose-delimiter",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Biblical-Hebrew-\u2014-a_6"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "U4-env-set-prose-delimiter",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Biblical-Hebrew-\u2014-i_2"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "U4-env-set-prose-delimiter",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Biblical-Hebrew-\u2014-i_3"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "U4-env-set-prose-delimiter",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Biblical-Hebrew-\u2014-u"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "U4-env-set-prose-delimiter",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Biblical-Hebrew-\u2014-u_2"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U1-bare-else-prose",
+      "fix_family_post_syllable": "U1-bare-else-prose",
+      "rule_id": "Blackfoot-a\u02d0_2"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "U4-env-set-prose-delimiter",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Menominee-V_2"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "U4-env-set-prose-delimiter",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Menominee-V\u02d0_2"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U1-bare-else-prose",
+      "fix_family_post_syllable": "U1-bare-else-prose",
+      "rule_id": "Kwamera-\u0259_2"
+    },
+    {
+      "error_token": "/",
+      "fix_family_0045": "U3-double-slash-index",
+      "fix_family_post_syllable": "U3-double-slash-index",
+      "rule_id": "Old-Irish-C\u2026C"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "Kentish-Middle-English-V\u02d0"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "Midlands-Middle-English-V\u02d0"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U1-bare-else-prose",
+      "fix_family_post_syllable": "U1-bare-else-prose",
+      "rule_id": "Early-Modern-English-a_2"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "F3-env-set-with-syllable-or-matrix",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "American-English-j"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U1-bare-else-prose",
+      "fix_family_post_syllable": "U1-bare-else-prose",
+      "rule_id": "Australian-English-u\u02d0_2"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U1-bare-else-prose",
+      "fix_family_post_syllable": "U1-bare-else-prose",
+      "rule_id": "Australian-English-u\u02d0_2"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "Northern-Middle-English-V\u02d0"
+    },
+    {
+      "error_token": ",",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "Scots-\u2014-u\u02d0"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "Southern-Middle-English-V\u02d0"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "Southern-Middle-English-e"
+    },
+    {
+      "error_token": "/",
+      "fix_family_0045": "U3-double-slash-index",
+      "fix_family_post_syllable": "U3-double-slash-index",
+      "rule_id": "Old-Norse-a_4"
+    },
+    {
+      "error_token": "/",
+      "fix_family_0045": "U3-double-slash-index",
+      "fix_family_post_syllable": "U3-double-slash-index",
+      "rule_id": "Polish-C"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "F3-env-set-with-syllable-or-matrix",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Polish-C\u02b2"
+    },
+    {
+      "error_token": ",",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "Polish-\u0255r\u031d-\u0291r\u031d"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "Polish-trk"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "Catalan-u,o\u02d0"
+    },
+    {
+      "error_token": ",",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "French-t_3"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U6-other-empty-token",
+      "fix_family_post_syllable": "U6-other-empty-token",
+      "rule_id": "French-ei,\u0254i"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "F3-env-set-with-syllable-or-matrix",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Old-Proven\u00e7al-\u2014-a_2"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U3-double-slash-index",
+      "fix_family_post_syllable": "U3-double-slash-index",
+      "rule_id": "Old-Proven\u00e7al-\u2014-a_4"
+    },
+    {
+      "error_token": ",",
+      "fix_family_0045": "U3-double-slash-index",
+      "fix_family_post_syllable": "U3-double-slash-index",
+      "rule_id": "Old-Proven\u00e7al-t_3"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U6-other-empty-token",
+      "fix_family_post_syllable": "U6-other-empty-token",
+      "rule_id": "Obokuitai-\u2205"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U6-other-empty-token",
+      "fix_family_post_syllable": "U6-other-empty-token",
+      "rule_id": "Sorowah\u00e1-\u0294"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U6-other-empty-token",
+      "fix_family_post_syllable": "U6-other-empty-token",
+      "rule_id": "Muskogean-V"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "F3-env-set-with-syllable-or-matrix",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Proto-Bantu_2-S+-lenis-N+-lenis"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "F3-env-set-with-syllable-or-matrix",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Proto-Bantu_2-N+-lenis-N-lenis"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "F3-env-set-with-syllable-or-matrix",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Proto-Bantu_2-d2"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "F3-env-set-with-syllable-or-matrix",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Proto-Manenguba-N+-lenis"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "F3-env-set-with-syllable-or-matrix",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Proto-Manenguba-p-t-\u2019t-\u2019d,d2-c-k-\u2019k"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "F3-env-set-with-syllable-or-matrix",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Proto-Manenguba-p-t-\u2019t-\u2019d,d2-c-k-\u2019k"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "F3-env-set-with-syllable-or-matrix",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Proto-Manenguba-\u2019m-m-\u2019n-n-\u2019\u0272,\u0272-\u014b"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "F3-env-set-with-syllable-or-matrix",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Proto-Manenguba-u,o-\u025b,e,i"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "F3-env-set-with-syllable-or-matrix",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Proto-Manenguba-u,o-\u025b,e,i_2"
+    },
+    {
+      "error_token": "}:",
+      "fix_family_0045": "F3-env-set-with-syllable-or-matrix",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Proto-Manenguba-u,o-\u025b,e,i_3"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U6-other-empty-token",
+      "fix_family_post_syllable": "U6-other-empty-token",
+      "rule_id": "Papabuco-Chatino-e_3"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U1-bare-else-prose",
+      "fix_family_post_syllable": "U1-bare-else-prose",
+      "rule_id": "Papabuco-Chatino-\u1ebd_4"
+    },
+    {
+      "error_token": ":",
+      "fix_family_0045": "F3-env-set-with-syllable-or-matrix",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Chilliwack-Halkomelem-\u2205"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U6-other-empty-token",
+      "fix_family_post_syllable": "U6-other-empty-token",
+      "rule_id": "Lushootseed-R\u0294"
+    },
+    {
+      "error_token": ":",
+      "fix_family_0045": "F3-env-set-with-syllable-or-matrix",
+      "fix_family_post_syllable": "U4-env-set-prose-delimiter",
+      "rule_id": "Nooksack-\u2205"
+    },
+    {
+      "error_token": ",",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "Old-Mandarin-V1"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U6-other-empty-token",
+      "fix_family_post_syllable": "U6-other-empty-token",
+      "rule_id": "Old-Mandarin-V3"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U6-other-empty-token",
+      "fix_family_post_syllable": "U6-other-empty-token",
+      "rule_id": "Old-Mandarin-V5"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U6-other-empty-token",
+      "fix_family_post_syllable": "U6-other-empty-token",
+      "rule_id": "Old-Mandarin-V5_2"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U1-bare-else-prose",
+      "fix_family_post_syllable": "U1-bare-else-prose",
+      "rule_id": "Old-Mandarin-V5_3"
+    },
+    {
+      "error_token": "\u02b2",
+      "fix_family_0045": "U7-character-in-env",
+      "fix_family_post_syllable": "U7-character-in-env",
+      "rule_id": "Old-Mandarin-w_2"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U6-other-empty-token",
+      "fix_family_post_syllable": "U6-other-empty-token",
+      "rule_id": "Gu\u0101nhu\u00e0-y\u0294"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U6-other-empty-token",
+      "fix_family_post_syllable": "U6-other-empty-token",
+      "rule_id": "Gu\u0101nhu\u00e0-y\u0294_2"
+    },
+    {
+      "error_token": ",",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "Gu\u0101nhu\u00e0-y\u0294_5"
+    },
+    {
+      "error_token": ",",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "Gu\u0101nhu\u00e0-y\u0294_5"
+    },
+    {
+      "error_token": ",",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "Gu\u0101nhu\u00e0-y\u0294_5"
+    },
+    {
+      "error_token": ",",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "Gu\u0101nhu\u00e0-y\u0294_6"
+    },
+    {
+      "error_token": ",",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "Gu\u0101nhu\u00e0-y\u0294_6"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U1-bare-else-prose",
+      "fix_family_post_syllable": "U1-bare-else-prose",
+      "rule_id": "Proto-Iroquoian-p_2"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U1-bare-else-prose",
+      "fix_family_post_syllable": "U1-bare-else-prose",
+      "rule_id": "Catawba-t\u02b2_2"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U1-bare-else-prose",
+      "fix_family_post_syllable": "U1-bare-else-prose",
+      "rule_id": "Dakota-t\u02b2_2"
+    },
+    {
+      "error_token": ",",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "Biloxi-p_2"
+    },
+    {
+      "error_token": ",",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "Central-Tai-l,r"
+    },
+    {
+      "error_token": ",",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "North-Tai-l"
+    },
+    {
+      "error_token": ",",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "North-Tai-l_2"
+    },
+    {
+      "error_token": ",",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "Southwest-Tai-l,r"
+    },
+    {
+      "error_token": ",",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "Pre-Finnic-\u014b"
+    },
+    {
+      "error_token": "//",
+      "fix_family_0045": "U3-double-slash-index",
+      "fix_family_post_syllable": "U3-double-slash-index",
+      "rule_id": "Livonian-Vh"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U1-bare-else-prose",
+      "fix_family_post_syllable": "U1-bare-else-prose",
+      "rule_id": "Livonian-y-\u00f8"
+    },
+    {
+      "error_token": ",",
+      "fix_family_0045": "U2-index-prose-env",
+      "fix_family_post_syllable": "U2-index-prose-env",
+      "rule_id": "Scots-Vowel-Shifts-u\u02d0"
+    },
+    {
+      "error_token": "",
+      "fix_family_0045": "U1-bare-else-prose",
+      "fix_family_post_syllable": "U1-bare-else-prose",
+      "rule_id": "Southern-United-States-Shift-English-a\u026a_4"
+    }
+  ],
+  "syllable_family_F1_F4_remaining": 0
+}

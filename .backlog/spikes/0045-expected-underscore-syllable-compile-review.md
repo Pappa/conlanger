@@ -140,6 +140,8 @@ Classifications reference [sound-change-applier.md](../../docs/system/sound-chan
 
 ## 3. Unrelated failures (do not treat as syllable compile)
 
+Post–0046–0048 disposition and current row counts: [0050 spike](0050-expected-underscore-u-families-disposition.md). Reclassifier: [`classify_expected_underscore_families.py`](../../diagnostics/inventory/analysis/classify_expected_underscore_families.py).
+
 | Family | Count | Notes |
 |--------|------:|-------|
 | U1 bare `else` | 13 | Index `else` is prose, not ASCA env (`/ else`). |

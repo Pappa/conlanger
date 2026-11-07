@@ -1,5 +1,5 @@
 Type: task
-Status: ready
+Status: resolved
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Hold out or fix remaining unrelated `expected_underscore` rows (prose, else, //).
 Blocked by:
@@ -18,9 +18,11 @@ Use triplet CSV [`diagnostics/inventory/analysis/0045-expected-underscore-triple
 
 ## Acceptance Criteria
 
-- [ ] Summary table in **Comments** (or linked spike addendum) lists each U-family, row count, and chosen disposition (fixed / skipped / deferred).
-- [ ] Any rule marked fixed passes validate for its inventory row; skipped rules have documented reason in YAML or corrections config.
-- [ ] Fresh inventory: no remaining `expected_underscore` rows are classified F1–F4 in a re-run of the 0045 classifier (or reclassify script updated and noted).
-- [ ] `uv run check` passes; **`Status: resolved`**; sync plan **Tasks** table.
+- [x] Summary table in **Comments** (or linked spike addendum) lists each U-family, row count, and chosen disposition (fixed / skipped / deferred).
+- [x] Any rule marked fixed passes validate for its inventory row; skipped rules have documented reason in YAML or corrections config.
+- [x] Fresh inventory: no remaining `expected_underscore` rows are classified F1–F4 in a re-run of the 0045 classifier (or reclassify script updated and noted).
+- [x] `uv run check` passes; **`Status: resolved`**; sync plan **Tasks** table.
 
 ## Comments
+
+Addendum: [0050-expected-underscore-u-families-disposition.md](../spikes/0050-expected-underscore-u-families-disposition.md). Reclassifier: `diagnostics/inventory/analysis/classify_expected_underscore_families.py` → `0050-expected-underscore-post-syllable-summary.json` (76 rows; **F1–F4 post-syllable = 0**). Syllable fixes: 0046–0048; no YAML skips in this task.
