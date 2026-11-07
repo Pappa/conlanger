@@ -1,5 +1,5 @@
 Type: task
-Status: ready
+Status: resolved
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Map whole-field `U[±F]` / `%[±F]` env strings to syllable underline scopes.
 Blocked by:
@@ -20,9 +20,11 @@ Extend **`project_syllable_stress_compiled_env`** / **`_compile_syllable_stress_
 
 ## Acceptance Criteria
 
-- [ ] Whole-field env raw forms such as `U[-nas]` and post-mapping `%[-nas]` rewrite to `<(..)_(..)>:[-nas]` (or equivalent validated ASCA syllable scope) before validate.
-- [ ] `Miami-Illinois-s-ʃ` inventory row is no longer `expected_underscore` after compile + validate (or held out in **Comments** with explicit blocker).
-- [ ] New or extended unit tests mirror `_SYLLABLE_STRESS_ENV_RAW` patterns for at least one non-stress feature matrix.
-- [ ] `uv run check` passes; **`Status: resolved`**; sync plan **Tasks** table.
+- [x] Whole-field env raw forms such as `U[-nas]` and post-mapping `%[-nas]` rewrite to `<(..)_(..)>:[-nas]` (or equivalent validated ASCA syllable scope) before validate.
+- [x] `Miami-Illinois-s-ʃ` inventory row is no longer `expected_underscore` after compile + validate (or held out in **Comments** with explicit blocker).
+- [x] New or extended unit tests mirror `_SYLLABLE_STRESS_ENV_RAW` patterns for at least one non-stress feature matrix.
+- [x] `uv run check` passes; **`Status: resolved`**; sync plan **Tasks** table.
 
 ## Comments
+
+Inventory (2026-11-07): `Miami-Illinois-s-ʃ` cleared `expected_underscore` (84 → 83 on that class). Row still **FAILED** with `syntax_other` — ASCA syllable tier allows only stress/tone, so `<(..)_(..)>:[-nas]` rejects at validate (same blocker family as 0046 `+hi`/`+lo` rows).

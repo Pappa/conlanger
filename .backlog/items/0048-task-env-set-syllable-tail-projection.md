@@ -2,7 +2,7 @@ Type: task
 Status: ready
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Project syllable tails inside `:{…}:` env sets from `… in U[+F]` string envs.
-Blocked by: 0047
+Blocked by:
 
 ## Problem Statement
 

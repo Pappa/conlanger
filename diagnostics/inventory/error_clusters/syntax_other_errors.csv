@@ -1,6 +1,7 @@
 section_index,rule_id,error_token,rule
 6.2.2.1.7,Egyptian-Arabic-aj-aw,,"aj aw > e:[+long] o:[+long] / <(..)_(..)>:[+hi] | ^^^ @ Rule 1, Line 1"
 7.4,Blackfoot-e_2,,"e > ∅ / O_ #<(..)_(..)> | ^^^^^^^^^^^ @ Rule 1, Line 1"
+7.13,Miami-Illinois-s-ʃ,,"s ʃ > N s N ʃ / <(..)_(..)>:[-nas] | ^^^^ @ Rule 1, Line 1"
 7.15,"Ojibwe-j,wV-long",,"{j,w}V:[-long] > ∅ / C_# in disyllables with V:[+long] or in tri(-plus-)syllables | ^^ @ Rule 1, Line 1"
 17.2.3,Lycian-e_2,",","e > a / _%[+u,a] | ^ @ Rule 1, Line 1"
 17.2.3,Lycian-a,",","a > e / _%[+e,i] | ^ @ Rule 1, Line 1"

@@ -2529,7 +2529,7 @@ sections:
     rule: 'P > N P / #NV_'
   - rule_id: Miami-Illinois-s-ʃ
     source: index_diachronica.html:1984
-    rule: s ʃ > N s N ʃ / %[-nas]
+    rule: s ʃ > N s N ʃ / <(..)_(..)>:[-nas]
   - rule_id: Miami-Illinois-h,ʔ
     source: index_diachronica.html:1985
     rule: '{h,ʔ} > ∅ / _m'

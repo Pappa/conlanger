@@ -31,8 +31,8 @@ Fail: **1/126**
 
 | count | failure_class |
 |------:|---------------|
-| 84 | `expected_underscore` |
-| 37 | `syntax_other` |
+| 83 | `expected_underscore` |
+| 38 | `syntax_other` |
 | 34 | `expected_ipa` |
 | 24 | `unknown_character` |
 | 19 | `missing_slash_output_env` |
@@ -69,7 +69,7 @@ Fail: **1/126**
 
 | count | description |
 |------:|-------------|
-| 20 | `A syllable can only have parameters stress and tone` |
+| 21 | `A syllable can only have parameters stress and tone` |
 | 1 | `An underline already exists before this structure.` |
 | 1 | `Only a segment, matrix, group, or reference can be negated` |
 | 1 | `Feature 'lost' has no modifier` |
@@ -145,7 +145,7 @@ Fail: **1/126**
 
 | count | description |
 |------:|-------------|
-| 27 | `Expected '_', but received ''` |
+| 26 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 

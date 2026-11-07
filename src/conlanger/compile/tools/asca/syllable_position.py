@@ -49,6 +49,9 @@ _WHOLE_IN_U_COLON_STRESS_RE = re.compile(r"^in\s+(?:U:|U|%:|%)(?P<feat>\[-stress
 _WHOLE_IN_SYLLABLE_HOST_MATRIX_RE = re.compile(
     r"^in\s+(?:U:|U|%:|%)(?P<tail>(?:\[[^\]]+\])+)$",
 )
+_WHOLE_SYLLABLE_HOST_BRACKET_MATRIX_RE = re.compile(
+    r"^(?:in\s+)?(?:U|%)(?P<tail>(?:\[[^\]]+\])+)$",
+)
 
 _IN_MECHANICAL_HASH_U_TAIL_RE = re.compile(r"\bin\s+#(U|%)(?=\s*$|\s*!)")
 _IN_MECHANICAL_U_HASH_TAIL_RE = re.compile(r"\bin\s+(U|%)#(?=\s*$|\s*!)")
@@ -82,6 +85,14 @@ def compile_syllable_position_env(raw: str | None) -> str | None:
     return SYLLABLE_AT_WORD_BOUNDARY.get(key)
 
 
+def _scope_from_whole_syllable_host_matrix(text: str) -> str | None:
+    """Map whole-field ``U[±F]`` / ``%[±F]`` env hosts to underline syllable scope."""
+    match = _WHOLE_SYLLABLE_HOST_BRACKET_MATRIX_RE.fullmatch(text.strip())
+    if match is None:
+        return None
+    return f"<(..)_(..)>:{match.group('tail')}"
+
+
 def _compile_syllable_stress_env_from_raw(raw: str | None) -> str | None:
     if raw is None:
         return None
@@ -90,7 +101,7 @@ def _compile_syllable_stress_env_from_raw(raw: str | None) -> str | None:
         return _SYLLABLE_STRESS_ENV_RAW[stripped]
     if stripped in _STRESSED_MONOSYLLABLE_ENVS_RAW:
         return _STRESSED_MONOSYLLABLE_ENV_COMPILED
-    return None
+    return _scope_from_whole_syllable_host_matrix(stripped)
 
 
 def _rewrite_in_u_stress_tail(feat: str) -> str:
@@ -164,6 +175,10 @@ def project_syllable_stress_compiled_env(
         return "<(..)_(..)>:[-stress]"
     if projected in ("U[+stress]", "in U[+stress]", "%[+stress]", "in %[+stress]"):
         return "<(..)_(..)>:[+stress]"
+
+    whole_scope = _scope_from_whole_syllable_host_matrix(projected)
+    if whole_scope is not None:
+        return whole_scope
 
     def _comma_in_stress_repl(match: re.Match[str]) -> str:
         feature = match.group(1) or match.group(2)

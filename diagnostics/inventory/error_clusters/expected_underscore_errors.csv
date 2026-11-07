@@ -8,7 +8,6 @@ section_index,rule_id,error_token,rule
 7.4,Blackfoot-aː_2,,"a:[+long] > a / else | ^ @ Rule 1, Line 1"
 7.12,Menominee-V_2,}:,"V > V:[+long] / :{_CC, even syllables}: | ^^ @ Rule 1, Line 1"
 7.12,Menominee-Vː_2,}:,"V:[+long] > V:[-long] / :{_C{V,#}, even syllables}: | ^^ @ Rule 1, Line 1"
-7.13,Miami-Illinois-s-ʃ,,"s ʃ > N s N ʃ / %[-nas] | ^ @ Rule 1, Line 1"
 10.3.11.3.1,Kwamera-ə_2,,"ə > e / else | ^ @ Rule 1, Line 1"
 17.2.1,Hittite-e,}:,"e > i / :{_{m,ŋ} when posttonic, %[+hi] or when pretonic}: | ^^ @ Rule 1, Line 1"
 17.2.2,Luwian-D-R,}:,"P:[+voice] [+son,-syl] > P:[+voice, +long] [+son,-syl, +long] / :{e:[+stress]_, %[+lo]}: | ^^ @ Rule 1, Line 1"

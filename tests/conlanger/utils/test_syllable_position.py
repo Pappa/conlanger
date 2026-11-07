@@ -88,6 +88,9 @@ def test_compile_syllable_position_env(raw, expected):
         ("%[-stress]", "%[-stress]", "<(..)_(..)>:[-stress]"),
         ("in %[+stress]", "in %[+stress]", "<(..)_(..)>:[+stress]"),
         ("#%[+stress]#", "#%[+stress]#", "#<(..)_(..)>:[+stress]#"),
+        ("U[-nas]", "U[-nas]", "<(..)_(..)>:[-nas]"),
+        ("%[-nas]", "%[-nas]", "<(..)_(..)>:[-nas]"),
+        ("in U[-nas]", "in U[-nas]", "<(..)_(..)>:[-nas]"),
         (None, "C_CV, in %[-stress]", ":{C_CV, <(..)_(..)>:[-stress]}:"),
         (None, "_V", "_V"),
     ],
@@ -116,6 +119,7 @@ def test_project_syllable_stress_compiled_env(env_raw, compiled_before, expected
             "in U:[+stress][+lo]",
             "<(..)_(..)>:[+stress][+lo]",
         ),
+        ("U[-nas]", "<(..)_(..)>:[-nas]"),
     ],
 )
 def test_compile_asca_rule_fields_syllable_stress_env(env, expected):

@@ -2,7 +2,7 @@ Type: task
 Status: ready
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Hold out or fix remaining unrelated `expected_underscore` rows (prose, else, //).
-Blocked by: 0047, 0048
+Blocked by: 0048
 
 ## Problem Statement
 
