@@ -15,17 +15,18 @@ Plans, decisions, tasks, and spikes for **duck-skills** (`epic-duck`, `rubber-du
 
 All backlog items share one counter under `.backlog/items/`. Next number = one greater than the highest existing `NNNN` prefix (four digits, from `0001`). Deleted numbers are never reused.
 
-| Kind | Path | `Type:` | Publisher |
+| Kind | Path | `Type:` | Publisher(s) |
 |------|------|---------|-----------|
 | Plan | `.backlog/items/<NNNN>-plan-<feature-slug>.md` | `epic-duck:plan` | epic-duck |
 | Decision | `.backlog/items/<NNNN>-decision-<slug>.md` | `epic-duck:decision` | epic-duck |
-| Planning task | `.backlog/items/<NNNN>-task-<slug>.md` | `epic-duck:task` | epic-duck |
-| Planning spike (item) | `.backlog/items/<NNNN>-spike-<slug>.md` | `epic-duck:spike` | epic-duck |
-| Implementation task | `.backlog/items/<NNNN>-task-<slug>.md` | `task` | rubber-duck |
-| Implementation spike (item) | `.backlog/items/<NNNN>-spike-<slug>.md` | `spike` | rubber-duck |
-| Spike (findings) | `.backlog/spikes/<NNNN>-<slug>.md` | (none) | spike-duck |
+| Task | `.backlog/items/<NNNN>-task-<slug>.md` | `task` | epic-duck, rubber-duck |
+| Spike (item) | `.backlog/items/<NNNN>-spike-<slug>.md` | `spike` | epic-duck, rubber-duck |
+| Spike (results) | `.backlog/spikes/<NNNN>-<slug>.md` | (none) | epic-duck, spike-duck |
 
-**Planning** items (`epic-duck:*`) support feature charting and refinement. **Implementation** items (`task`, `spike`) are for development work from **rubber-duck** sessions. Same **NNNN** counter for all rows.
+**Planning** items (`epic-duck:plan`, `epic-duck:decision`) support feature charting and refinement.
+**Implementation** items (`task`, `spike`) may be created and used by **epic-duck** or **rubber-duck**.
+Same **NNNN** counter for all rows.
+
 
 ### Common header
 
@@ -98,15 +99,15 @@ Read the path or file the user gave.
 
 ## Epic-duck operations
 
-Used by **epic-duck**. A **feature plan** is the planning artifact; **decisions**, **tasks**, and **spike items** are children.
+Used by **epic-duck**. A **epic plan** is the planning artifact; **decisions**, **tasks**, and **spike items** are children.
 
 - **Plan file**: `.backlog/items/<NNNN>-plan-<slug>.md` with `Type: epic-duck:plan`.
 - **Child decision**: `Type: epic-duck:decision`, `Plan:` backlink, `Status:`.
-- **Child task**: `Type: epic-duck:task`, `Plan:` backlink, `Status:`.
-- **Child spike**: `Type: epic-duck:spike`, result under `.backlog/spikes/`.
+- **Child task**: `Type: task`, `Plan:` backlink, `Status:`.
+- **Child spike**: `Type: spike`, result under `.backlog/spikes/`.
 - **Resolve decision**: `## Answer`, `Status: resolved`, one bullet under feature **Decisions so far**, blocker sweep, refresh tables.
 - **Resolve spike**: result file written, spike item `Status: resolved`, update **Spikes** table and **Decisions so far** when appropriate.
-- **Unanchored implementation items**: `Plan: (unanchored)` + `needs-triage` until **epic-duck** sets a feature plan link.
+- **Unanchored items**: `Plan: (unanchored)` + `needs-triage` until **epic-duck** sets an epic plan link.
 
 ### Starting a session (local)
 
