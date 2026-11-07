@@ -6,8 +6,8 @@
 - Rows: **9584** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9252** (96.5%)
-- Fail: **286** (3.0%)
+- OK: **9256** (96.6%)
+- Fail: **282** (2.9%)
 - Skipped: **46** (0.5%)
 
 
@@ -31,10 +31,10 @@ Fail: **1/126**
 
 | count | failure_class |
 |------:|---------------|
-| 102 | `expected_underscore` |
+| 84 | `expected_underscore` |
+| 37 | `syntax_other` |
 | 34 | `expected_ipa` |
 | 24 | `unknown_character` |
-| 23 | `syntax_other` |
 | 19 | `missing_slash_output_env` |
 | 14 | `nested_brackets` |
 | 11 | `segments_before_word` |
@@ -69,7 +69,7 @@ Fail: **1/126**
 
 | count | description |
 |------:|-------------|
-| 6 | `A syllable can only have parameters stress and tone` |
+| 20 | `A syllable can only have parameters stress and tone` |
 | 1 | `An underline already exists before this structure.` |
 | 1 | `Only a segment, matrix, group, or reference can be negated` |
 | 1 | `Feature 'lost' has no modifier` |
@@ -137,15 +137,15 @@ Fail: **1/126**
 |------:|-------------|
 | 33 | `}:` |
 | 17 | `,` |
-| 7 | `//` |
 | 3 | `/` |
 | 2 | `:` |
 | 1 | `ʲ` |
+| 1 | `//` |
 ### expected_underscore (description)
 
 | count | description |
 |------:|-------------|
-| 39 | `Expected '_', but received ''` |
+| 27 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 

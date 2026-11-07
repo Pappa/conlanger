@@ -38,6 +38,10 @@ from conlanger.compile.position_in_projection import (
             "U:[+stress, +lo]",
             "<(..)_(..)>:[+stress][+lo]",
         ),
+        ("U[+hi]", "<(..)_(..)>:[+hi]"),
+        ("U[+lo]", "<(..)_(..)>:[+lo]"),
+        ("#U:[+stress]", "#<(..)_(..)>:[+stress]"),
+        ("U[+long -stress]", "<(..)_(..)>:[+long -stress]"),
     ],
 )
 def test_project_position_in_target_classified(target, expected):
@@ -46,7 +50,7 @@ def test_project_position_in_target_classified(target, expected):
 
 @pytest.mark.parametrize(
     "target",
-    ["U[+lo]", "U:[-stress]", "#U, U#", "", "   "],
+    ["U:[-stress]", "#U, U#", "", "   "],
 )
 def test_project_position_in_target_unclassified(target):
     assert project_position_in_target(target) is None
@@ -70,6 +74,9 @@ def test_materialize_position_in_asca():
         ("_ $[-stress]", True),
         ("_ %[+stress][+lo]", True),
         ("C_CV in $[-stress]", True),
+        ("<(..)_(..)>:[+hi]", True),
+        ("#<(..)_(..)>:[+stress]", True),
+        ("C_CV in <(..)_(..)>:[+lo]", True),
         ("_ %[-nas]", False),
         ("in U[+lo]", False),
         ("prefix #<(..)_(..)>", True),

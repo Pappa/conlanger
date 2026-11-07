@@ -17,3 +17,18 @@ def test_materialize_position_in_from_inventory_rule_shape():
     )
     assert result["env"] == "<(..)_(..)>:[-stress]"
     assert result["exception"] == "{p(’),m(ˀ)}_"
+
+
+def test_materialize_position_in_open_closed_and_hash_stress_shapes():
+    cases = [
+        ({"position": {"in": "U[+hi]"}}, "<(..)_(..)>:[+hi]"),
+        ({"position": {"in": "U[+lo]"}}, "<(..)_(..)>:[+lo]"),
+        ({"position": {"in": "#U:[+stress]"}}, "#<(..)_(..)>:[+stress]"),
+        ({"position": {"in": "U[+long -stress]"}}, "<(..)_(..)>:[+long -stress]"),
+    ]
+    for env, expected in cases:
+        rule = {"rule_id": "fixture", "env": env}
+        result = materialize_index_rule_env_exception(
+            rule, compiler_config=CompilerConfig()
+        )
+        assert result["env"] == expected

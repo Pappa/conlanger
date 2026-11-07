@@ -23,10 +23,18 @@ _POSITION_IN_CONTEXT_STRESS_RE = re.compile(
     r"^.+ in \$[\[(](?:\+stress|-stress)\]$",
 )
 _POSITION_IN_CONTEXT_EDGE_RE = re.compile(r"^.+ #<\(\.\.\)_\(\.\.\)>$")
+_POSITION_IN_CONTEXT_SCOPE_RE = re.compile(
+    r"^.+ in (?:#)?<\(\.\.\)_\(\.\.\)>:(?:\[[^\]]+\])+$",
+)
 _WHOLE_POSITION_IN_STRESS_RE = re.compile(r"^_\s*\$[\[(](?:\+stress|-stress)\]$")
 _WHOLE_POSITION_IN_MATRIX_RE = re.compile(
     r"^_\s*%\[\+stress\](?:\[[^\]]+\])*$",
 )
+_WHOLE_POSITION_IN_SCOPE_RE = re.compile(
+    r"^(?:#)?<\(\.\.\)_\(\.\.\)>:(?:\[[^\]]+\])+$",
+)
+_U_BRACKET_MATRIX_RE = re.compile(r"^U(?:\[[^\]]+\])+$")
+_HASH_U_COLON_MATRIX_RE = re.compile(r"^#U:(?:\[[^\]]+\])+$")
 
 
 def _normalize_position_in_target(target: str) -> str:
@@ -40,6 +48,11 @@ def _mechanical_position_in_env(target: str) -> str | None:
     return SYLLABLE_AT_WORD_BOUNDARY.get(normalized)
 
 
+def _scope_from_matrix_tail(matrix_tail: str, *, word_initial: bool = False) -> str:
+    template = "#<(..)_(..)>" if word_initial else "<(..)_(..)>"
+    return f"{template}:{matrix_tail}"
+
+
 def _matrix_brackets_from_u_colon_target(target: str) -> str | None:
     if not target.startswith("U:"):
         return None
@@ -48,12 +61,26 @@ def _matrix_brackets_from_u_colon_target(target: str) -> str | None:
         return None
     if re.fullmatch(r"\[\+stress\](?:\[[^\]]+\])*", tail):
         return tail
-    if re.fullmatch(r"\[\+stress,\s*.+\]", tail) is None:
+    if re.fullmatch(r"\[\+stress,\s*.+\]", tail):
+        features = re.findall(r"\+[^\s,\]]+", tail)
+        if not features or features[0] != "+stress":
+            return None
+        return "".join(f"[{feature}]" for feature in features)
+    if re.fullmatch(r"(?:\[[^\]]+\])+", tail):
+        return tail
+    return None
+
+
+def _matrix_tail_from_u_bracket_target(target: str) -> str | None:
+    if not _U_BRACKET_MATRIX_RE.fullmatch(target):
         return None
-    features = re.findall(r"\+[^\s,\]]+", tail)
-    if not features or features[0] != "+stress":
+    return target[1:]
+
+
+def _matrix_tail_from_hash_u_colon_target(target: str) -> str | None:
+    if not _HASH_U_COLON_MATRIX_RE.fullmatch(target):
         return None
-    return "".join(f"[{feature}]" for feature in features)
+    return target[3:]
 
 
 def project_position_in_target(target: str) -> str | None:
@@ -71,13 +98,19 @@ def project_position_in_target(target: str) -> str | None:
 
     if normalized in ("U[-stress]", "U[+stress]"):
         feature = "[-stress]" if normalized == "U[-stress]" else "[+stress]"
-        scope = f"<(..)_(..)>:{feature}"
-        return scope
+        return _scope_from_matrix_tail(feature)
+
+    hash_u_tail = _matrix_tail_from_hash_u_colon_target(normalized)
+    if hash_u_tail is not None:
+        return _scope_from_matrix_tail(hash_u_tail, word_initial=True)
+
+    u_bracket_tail = _matrix_tail_from_u_bracket_target(normalized)
+    if u_bracket_tail is not None:
+        return _scope_from_matrix_tail(u_bracket_tail)
 
     matrix_tail = _matrix_brackets_from_u_colon_target(normalized)
     if matrix_tail is not None:
-        scope = f"<(..)_(..)>:{matrix_tail}"
-        return scope
+        return _scope_from_matrix_tail(matrix_tail)
 
     return None
 
@@ -104,6 +137,10 @@ def env_is_projected_position_in_compile_string(raw: str | None) -> bool:
         return True
     if _WHOLE_POSITION_IN_MATRIX_RE.fullmatch(text):
         return True
+    if _WHOLE_POSITION_IN_SCOPE_RE.fullmatch(text):
+        return True
     if _POSITION_IN_CONTEXT_STRESS_RE.match(text):
+        return True
+    if _POSITION_IN_CONTEXT_SCOPE_RE.match(text):
         return True
     return bool(_POSITION_IN_CONTEXT_EDGE_RE.match(text))

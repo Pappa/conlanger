@@ -1,5 +1,5 @@
 Type: task
-Status: ready
+Status: resolved
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Project structured `position.in` open/closed and stress-on-syllable targets to ASCA underline scopes.
 Blocked by:
@@ -20,9 +20,13 @@ Extend **`project_position_in_target()`** / **`materialize_position_in_asca()`**
 
 ## Acceptance Criteria
 
-- [ ] `project_position_in_target` classifies at least `U[+hi]`, `U[+lo]`, `#U:[+stress]`, and `U[+long -stress]` with expected strings matching underline-scope tests (no leading free `_`).
-- [ ] Rules in the F2 list above compile to env strings that pass `validate_rules` for their inventory rows (or are explicitly held out in **Comments** with reason if exception/`//` still fails).
-- [ ] `expected_underscore` count drops for those rule keys in a fresh inventory run; delta recorded in **Comments**.
-- [ ] `uv run check` passes; **`Status: resolved`**; sync plan **Tasks** table.
+- [x] `project_position_in_target` classifies at least `U[+hi]`, `U[+lo]`, `#U:[+stress]`, and `U[+long -stress]` with expected strings matching underline-scope tests (no leading free `_`).
+- [x] Rules in the F2 list above compile to env strings that pass `validate_rules` for their inventory rows (or are explicitly held out in **Comments** with reason if exception/`//` still fails).
+- [x] `expected_underscore` count drops for those rule keys in a fresh inventory run; delta recorded in **Comments**.
+- [x] `uv run check` passes; **`Status: resolved`**; sync plan **Tasks** table.
 
 ## Comments
+
+Inventory after `compile_rules` + `validate_rules` (2026-11-07): `expected_underscore` **102 → 84** (−18). All twelve F2 rule keys cleared that failure class; none remain `expected_underscore`.
+
+**Still failing validate (held out):** eleven F2 rows now fail `syntax_other` — ASCA rejects non-stress/tone on syllable tier (`A syllable can only have parameters stress and tone`) for `U[+hi]` / `U[+lo]` / `U[+long -stress]` projections (e.g. French-è, Egyptian-Arabic-aj-aw, Papabuco-Chatino-ẽ_3). **Luwian-V_2** (`#U:[+stress]`) flipped **OK**.

@@ -2,7 +2,7 @@ Type: task
 Status: ready
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Align sound-change-applier docs with syllable underline-scope compile behaviour.
-Blocked by: 0046, 0047, 0048
+Blocked by: 0047, 0048
 
 ## Problem Statement
 
