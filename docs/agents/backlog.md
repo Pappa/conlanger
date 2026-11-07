@@ -6,7 +6,7 @@ Plans, decisions, tasks, and spikes for **duck-skills** (`epic-duck`, `rubber-du
 
 ### Index
 
-- **Plan list**: `.backlog/features.md` — markdown table with columns **Plan**, **Overview**, **Status**.
+- **Plan list**: `.backlog/epics.md` — markdown table with columns **Plan**, **Overview**, **Status**.
   - **Plan**: link to the feature file, e.g. `[0003-plan-auth.md](items/0003-plan-auth.md)`.
   - **Overview**: one sentence (same as **Destination** on the feature file).
   - **Status**: workflow value from `docs/agents/ticket-statuses.md`.
@@ -35,7 +35,7 @@ All backlog items share one counter under `.backlog/items/`. Next number = one g
 
 `needs-triage` · `needs-detail` · `ready` · `in-progress` · `resolved` · `wontfix` · `out-of-scope`
 
-- **Canonical**: `Status:` on each item file. Update `features.md` and the feature’s **Decisions** / **Tasks** / **Spikes** tables in the same edit.
+- **Canonical**: `Status:` on each item file. Update `epics.md` and the feature’s **Decisions** / **Tasks** / **Spikes** tables in the same edit.
 - **Plan**: starts `needs-detail`; becomes `in-progress` when the first child is created; `resolved` / `out-of-scope` only by explicit choice (see epic duck).
 - **Child**: set `in-progress` when a session starts; `ready` when requirements are complete enough to pick up; `resolved` when done (spike item when the result file exists).
 
@@ -85,12 +85,12 @@ Append discussion under `## Comments` on decisions, tasks, and spikes.
 When finishing **`Type: task`**, **`Type: spike`**, or resolving a child under a feature plan:
 
 1. Set **`Status: resolved`** on the item file (decisions: record **`## Answer`** when applicable).
-2. Update the parent plan **Decisions** / **Tasks** / **Spikes** table and **`features.md`** when the plan’s status changes.
+2. Update the parent plan **Decisions** / **Tasks** / **Spikes** table and **`epics.md`** when the plan’s status changes.
 3. Run **`uv run check`** on a clean tree before push ([DEV.md](../DEV.md)).
 
 ## When a skill says "publish to the backlog"
 
-Apply **amigo-duck** to the draft (planning **`Type: epic-duck:*`** or implementation **`Type: task`** / **`Type: spike`**), then create the item file(s) under `.backlog/items/` and update the parent feature’s **Decisions** / **Tasks** / **Spikes** tables when **`Plan:`** links to a feature (and `features.md` when **epic-duck** adds a feature).
+Apply **amigo-duck** to the draft (planning **`Type: epic-duck:*`** or implementation **`Type: task`** / **`Type: spike`**), then create the item file(s) under `.backlog/items/` and update the parent feature’s **Decisions** / **Tasks** / **Spikes** tables when **`Plan:`** links to a feature (and `epics.md` when **epic-duck** adds a feature).
 
 ## When a skill says "fetch the relevant ticket"
 
@@ -110,7 +110,7 @@ Used by **epic-duck**. A **feature plan** is the planning artifact; **decisions*
 
 ### Starting a session (local)
 
-1. Resolve which feature to open (user input: path, `NNNN`, slug, or close name match — confirm with user; or list `needs-detail` / `in-progress` from `features.md`; or chart a new feature).
+1. Resolve which feature to open (user input: path, `NNNN`, slug, or close name match — confirm with user; or list `needs-detail` / `in-progress` from `epics.md`; or chart a new feature).
 2. **Git check** (once, before writes): if the feature file differs from `HEAD` (untracked file = plan-level change):
    - Hunks only under **Decisions** / **Tasks** / **Spikes** → warn that index tables changed; ask to continue.
    - Any change to plan sections (metadata, Destination, Notes, Decisions so far, fog, out of scope, or above **Decisions**) → list impact; ask how to proceed. Decline or wait → no writes.
