@@ -63,7 +63,7 @@ A **cleaned rule index** (applier-neutral YAML source of truth) derived from **I
 | Task | Overview | Status |
 |------|----------|--------|
 | [0012-task-correction-pass-asca-grouping-insertion.md](0012-task-correction-pass-asca-grouping-insertion.md) | Correction pass: grouping on insertion rules after **0011**. | needs-detail |
-| [0045-task-expected-underscore-syllable-compile-review.md](0045-task-expected-underscore-syllable-compile-review.md) | Classify `expected_underscore` failures; syllable-position compile fix families. | ready |
+| [0045-task-expected-underscore-syllable-compile-review.md](0045-task-expected-underscore-syllable-compile-review.md) | Classify `expected_underscore` failures; syllable-position compile fix families. | resolved |
 
 ## Spikes
 

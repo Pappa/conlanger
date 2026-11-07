@@ -1,5 +1,5 @@
 Type: task
-Status: ready
+Status: resolved
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Classify `expected_underscore` inventory failures and recommend compile fixes for syllable-position gaps.
 Blocked by:
@@ -32,12 +32,14 @@ Pay attention to:
 
 ## Acceptance Criteria
 
-- [ ] Every row with `failure_class` `expected_underscore` in `diagnostics/inventory/rule-inventory-error.csv` appears in the findings file (count in TLDR matches the CSV filter).
-- [ ] Each listed rule includes the three representations (raw HTML, parsed YAML excerpt, compiled YAML excerpt) or documents why a representation is missing.
-- [ ] Each rule has exactly one **primary** failure category: **syllable-position compile gap**, **compound env / env-set + position gap**, **unrelated (prose, syntax, other)**, or **needs follow-up spike**.
-- [ ] All rules in the two syllable-related categories are grouped into **fix families**; each family states intended ASCA shape, likely code seam, and whether it extends existing `position.in` projection or syllable-position pipeline behaviour.
-- [ ] Unrelated failures are listed separately so later compile tasks do not treat them as syllable-position work.
-- [ ] TLDR summarizes counts per category and fix family and names recommended follow-up tasks (titles only, no implementation).
-- [ ] Set **`Status: resolved`** on this item; sync the plan **Tasks** table; record the findings path in **Comments**.
+- [x] Every row with `failure_class` `expected_underscore` in `diagnostics/inventory/rule-inventory-error.csv` appears in the findings file (count in TLDR matches the CSV filter).
+- [x] Each listed rule includes the three representations (raw HTML, parsed YAML excerpt, compiled YAML excerpt) or documents why a representation is missing.
+- [x] Each rule has exactly one **primary** failure category: **syllable-position compile gap**, **compound env / env-set + position gap**, **unrelated (prose, syntax, other)**, or **needs follow-up spike**.
+- [x] All rules in the two syllable-related categories are grouped into **fix families**; each family states intended ASCA shape, likely code seam, and whether it extends existing `position.in` projection or syllable-position pipeline behaviour.
+- [x] Unrelated failures are listed separately so later compile tasks do not treat them as syllable-position work.
+- [x] TLDR summarizes counts per category and fix family and names recommended follow-up tasks (titles only, no implementation).
+- [x] Set **`Status: resolved`** on this item; sync the plan **Tasks** table; record the findings path in **Comments**.
 
 ## Comments
+
+Findings: [0045-expected-underscore-syllable-compile-review.md](../spikes/0045-expected-underscore-syllable-compile-review.md). Machine appendix: `diagnostics/inventory/analysis/0045-expected-underscore-triplets.csv` (102 rows).

@@ -1,0 +1,20 @@
+{
+  "count": 102,
+  "by_category": {
+    "syllable-position compile gap": 13,
+    "unrelated (prose, syntax, other)": 62,
+    "compound env / env-set + position gap": 27
+  },
+  "by_family": {
+    "F2-unclassified-position-in": 12,
+    "U4-env-set-prose-delimiter": 8,
+    "U1-bare-else-prose": 13,
+    "F1-bare-syllable-matrix-without-focus": 1,
+    "F3-env-set-with-syllable-or-matrix": 21,
+    "U3-double-slash-index": 6,
+    "U2-index-prose-env": 23,
+    "F4-env-plus-exception-prose": 6,
+    "U6-other-empty-token": 11,
+    "U7-character-in-env": 1
+  }
+}
