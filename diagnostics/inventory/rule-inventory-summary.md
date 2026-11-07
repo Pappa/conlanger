@@ -3,18 +3,18 @@
 - Source YAML: `diagnostics/compile/asca_rules.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.3**
-- Rows: **9584** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
+- Rows: **9585** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9256** (96.6%)
-- Fail: **282** (2.9%)
+- OK: **9264** (96.7%)
+- Fail: **275** (2.9%)
 - Skipped: **46** (0.5%)
 
 
 ## Corrections
 
-OK: **125/126**
-Fail: **1/126**
+OK: **126/127**
+Fail: **1/127**
 
 ### Failed corrections
 
@@ -22,8 +22,8 @@ Fail: **1/126**
 
 ## Sections
 
-- All OK: **515 / 660** (78.0%)
-- Some OK: **144 / 660** (21.8%)
+- All OK: **516 / 660** (78.2%)
+- Some OK: **143 / 660** (21.7%)
 - None OK: **1 / 660** (0.2%)
 - Sections skipped: **0 / 660** (0.0%)
 
@@ -31,7 +31,7 @@ Fail: **1/126**
 
 | count | failure_class |
 |------:|---------------|
-| 76 | `expected_underscore` |
+| 70 | `expected_underscore` |
 | 45 | `syntax_other` |
 | 34 | `expected_ipa` |
 | 24 | `unknown_character` |
@@ -45,13 +45,13 @@ Fail: **1/126**
 | 5 | `stuff_after_word_bound` |
 | 3 | `panic_other` |
 | 2 | `grouped_env_insertion` |
-| 2 | `uneven_parallel_sets` |
 | 2 | `format_error` |
 | 2 | `runtime_delete_only_segment` |
 | 2 | `multiple_underlines_env` |
 | 2 | `unknown_grouping` |
 | 1 | `incomplete_matrix` |
 | 1 | `invalid_ipa` |
+| 1 | `uneven_parallel_sets` |
 
 ## Common Errors
 
@@ -135,7 +135,7 @@ Fail: **1/126**
 
 | count | error_token |
 |------:|-------------|
-| 26 | `}:` |
+| 20 | `}:` |
 | 17 | `,` |
 | 3 | `/` |
 | 2 | `:` |
@@ -356,7 +356,7 @@ Fail: **1/126**
 
 | count | description |
 |------:|-------------|
-| 2 | `Two matched sets must have the same number of elements` |
+| 1 | `Two matched sets must have the same number of elements` |
 
 ### word_boundary_in_io (error_token)
 

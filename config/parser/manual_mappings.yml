@@ -213,6 +213,12 @@
   reason: sporadic environment
 
 - targets:
+    - " / ([A-Z]_|_[A-Z]),? (if )"
+  to: " / \\1 ; sporadic ; \\2"
+  use_regex: True
+  reason: sporadic comment
+
+- targets:
     # TODO: handle these properly
     - ", (in trisyllables)"
     - ", (in disyllables)"

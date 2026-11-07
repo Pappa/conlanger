@@ -2889,8 +2889,8 @@ sections:
     source: index_diachronica.html:1496
     raw: u(ː) → {ɵ,o}(ː)
     stages:
-    - u(ː)
-    - '{ɵ,o}(ː)'
+    - u
+    - '{ɵ,o}'
 - section: Classical Arabic to Tunisian Arabic
   index: 6.2.2.1.17
   citation: Pogostick Man, from http://en.wikipedia.org/wiki/Tunisian_Arabic
@@ -3078,42 +3078,54 @@ sections:
     stages:
     - a
     - ə
-    env: _R if ə in an adjacent syllable
+    env: _R
+    comment: sporadic ; if ə in an adjacent syllable
+    sporadic: true
   - rule_id: Biblical-Hebrew-—-a_6
     source: index_diachronica.html:1535
     raw: — a → ə / R_ if ə in an adjacent syllable
     stages:
     - a
     - ə
-    env: R_ if ə in an adjacent syllable
+    env: R_
+    comment: sporadic ; if ə in an adjacent syllable
+    sporadic: true
   - rule_id: Biblical-Hebrew-—-i_2
     source: index_diachronica.html:1536
     raw: — i → ə / _R if a frontal allophone of ə in an adjacent syllable
     stages:
     - i
     - ə
-    env: _R if a frontal allophone of ə in an adjacent syllable
+    env: _R
+    comment: sporadic ; if a frontal allophone of ə in an adjacent syllable
+    sporadic: true
   - rule_id: Biblical-Hebrew-—-i_3
     source: index_diachronica.html:1537
     raw: — i → ə / R_ if a frontal allophone of ə in an adjacent syllable
     stages:
     - i
     - ə
-    env: R_ if a frontal allophone of ə in an adjacent syllable
+    env: R_
+    comment: sporadic ; if a frontal allophone of ə in an adjacent syllable
+    sporadic: true
   - rule_id: Biblical-Hebrew-—-u
     source: index_diachronica.html:1538
     raw: — u → ə / _R if a backed allophone of ə in an adjacent syllable
     stages:
     - u
     - ə
-    env: _R if a backed allophone of ə in an adjacent syllable
+    env: _R
+    comment: sporadic ; if a backed allophone of ə in an adjacent syllable
+    sporadic: true
   - rule_id: Biblical-Hebrew-—-u_2
     source: index_diachronica.html:1539
     raw: — u → ə / R_ if a backed allophone of ə in an adjacent syllable
     stages:
     - u
     - ə
-    env: R_ if a backed allophone of ə in an adjacent syllable
+    env: R_
+    comment: sporadic ; if a backed allophone of ə in an adjacent syllable
+    sporadic: true
   - rule_id: Biblical-Hebrew-—-i_4
     source: index_diachronica.html:1540
     raw: — i → a / _R

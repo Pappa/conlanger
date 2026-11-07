@@ -32,6 +32,12 @@ section_index,section_name,rule_id,source,from_text,to_text
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-s,index_diachronica.html:1483, / if ʃ is somewhere, / sporadic ; if ʃ is somewhere
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-z,index_diachronica.html:1484, / if ʒ is somewhere, / sporadic ; if ʒ is somewhere
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-a,index_diachronica.html:1501, (/|!) (near|adjacent to) emphatics, \1 \2 [+emphatic]
+6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-a_5,index_diachronica.html:1534," / ([A-Z]_|_[A-Z]),? (if )", / \1 ; sporadic ; \2
+6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-a_6,index_diachronica.html:1535," / ([A-Z]_|_[A-Z]),? (if )", / \1 ; sporadic ; \2
+6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-i_2,index_diachronica.html:1536," / ([A-Z]_|_[A-Z]),? (if )", / \1 ; sporadic ; \2
+6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-i_3,index_diachronica.html:1537," / ([A-Z]_|_[A-Z]),? (if )", / \1 ; sporadic ; \2
+6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-u,index_diachronica.html:1538," / ([A-Z]_|_[A-Z]),? (if )", / \1 ; sporadic ; \2
+6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-u_2,index_diachronica.html:1539," / ([A-Z]_|_[A-Z]),? (if )", / \1 ; sporadic ; \2
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ə,index_diachronica.html:1557, (/|!) (near|adjacent to) gutturals, \1 \2 [+laryngeal]
 7.4,Proto-Algonquian to Blackfoot,"Blackfoot-θ,tʃ,ʃ,r",index_diachronica.html:1711, / (unless|when not) , / ! 
 7.4,Proto-Algonquian to Blackfoot,"Blackfoot-θ,tʃ,ʃ,r",index_diachronica.html:1711, (/|!) (near|adjacent to) (another consonant|consonants), \1 \2 C

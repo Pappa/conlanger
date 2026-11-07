@@ -1292,7 +1292,9 @@ sections:
     rule: dʒ q > ɡʲ ɢ
   - rule_id: Sudanese-Arabic-uː
     source: index_diachronica.html:1496
-    rule: '{u,u:[+long]} > {ɵ,o,ɵ:[+long],o:[+long]}'
+    alternatives:
+    - u > ɵ
+    - u > o
 - section: Classical Arabic to Tunisian Arabic
   index: 6.2.2.1.17
   rules:
@@ -1381,22 +1383,22 @@ sections:
     rule: "#\t— a → _$%%(…)”"
   - rule_id: Biblical-Hebrew-—-a_5
     source: index_diachronica.html:1534
-    rule: 'a > ə / :{_[+son,-syl] if ə, an adjacent syllable}:'
+    rule: a > ə / _[+son,-syl]
   - rule_id: Biblical-Hebrew-—-a_6
     source: index_diachronica.html:1535
-    rule: 'a > ə / :{[+son,-syl]_ if ə, an adjacent syllable}:'
+    rule: a > ə / [+son,-syl]_
   - rule_id: Biblical-Hebrew-—-i_2
     source: index_diachronica.html:1536
-    rule: 'i > ə / :{_[+son,-syl] if a frontal allophone of ə, an adjacent syllable}:'
+    rule: i > ə / _[+son,-syl]
   - rule_id: Biblical-Hebrew-—-i_3
     source: index_diachronica.html:1537
-    rule: 'i > ə / :{[+son,-syl]_ if a frontal allophone of ə, an adjacent syllable}:'
+    rule: i > ə / [+son,-syl]_
   - rule_id: Biblical-Hebrew-—-u
     source: index_diachronica.html:1538
-    rule: 'u > ə / :{_[+son,-syl] if a backed allophone of ə, an adjacent syllable}:'
+    rule: u > ə / _[+son,-syl]
   - rule_id: Biblical-Hebrew-—-u_2
     source: index_diachronica.html:1539
-    rule: 'u > ə / :{[+son,-syl]_ if a backed allophone of ə, an adjacent syllable}:'
+    rule: u > ə / [+son,-syl]_
   - rule_id: Biblical-Hebrew-—-i_4
     source: index_diachronica.html:1540
     rule: i > a / _[+son,-syl]
