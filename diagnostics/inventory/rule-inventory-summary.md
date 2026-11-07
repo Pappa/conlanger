@@ -3,18 +3,18 @@
 - Source YAML: `diagnostics/compile/asca_rules.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.3**
-- Rows: **9586** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
+- Rows: **9587** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9274** (96.7%)
-- Fail: **265** (2.8%)
-- Skipped: **47** (0.5%)
+- OK: **9280** (96.8%)
+- Fail: **259** (2.7%)
+- Skipped: **48** (0.5%)
 
 
 ## Corrections
 
-OK: **130/131**
-Fail: **1/131**
+OK: **135/136**
+Fail: **1/136**
 
 ### Failed corrections
 
@@ -31,16 +31,16 @@ Fail: **1/131**
 
 | count | failure_class |
 |------:|---------------|
-| 61 | `expected_underscore` |
+| 58 | `expected_underscore` |
 | 45 | `syntax_other` |
 | 34 | `expected_ipa` |
 | 24 | `unknown_character` |
-| 19 | `missing_slash_output_env` |
+| 18 | `missing_slash_output_env` |
 | 14 | `nested_brackets` |
-| 10 | `segments_before_word` |
-| 10 | `empty_io_panic` |
 | 10 | `unknown_feature` |
 | 10 | `expected_number` |
+| 9 | `segments_before_word` |
+| 9 | `empty_io_panic` |
 | 7 | `prose_or_expected_arrow` |
 | 5 | `stuff_after_word_bound` |
 | 3 | `panic_other` |
@@ -136,15 +136,14 @@ Fail: **1/131**
 |------:|-------------|
 | 20 | `}:` |
 | 17 | `,` |
-| 3 | `/` |
+| 2 | `/` |
 | 2 | `:` |
 | 1 | `ʲ` |
-| 1 | `//` |
 ### expected_underscore (description)
 
 | count | description |
 |------:|-------------|
-| 17 | `Expected '_', but received ''` |
+| 16 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -245,7 +244,7 @@ Fail: **1/131**
 
 | count | error_token |
 |------:|-------------|
-| 8 | `)` |
+| 7 | `)` |
 | 5 | `(` |
 | 3 | `ʲ` |
 | 1 | `*` |
@@ -288,7 +287,7 @@ Fail: **1/131**
 
 | count | description |
 |------:|-------------|
-| 10 | `Cannot have segments before the beginning of a word` |
+| 9 | `Cannot have segments before the beginning of a word` |
 
 ### stuff_after_word_bound (error_token)
 
@@ -321,8 +320,8 @@ Fail: **1/131**
 
 | count | description |
 |------:|-------------|
-| 5 | `The output of a deletion rule must only contain `*` or `∅`` |
 | 5 | `The input of an insertion rule must only contain `*` or `∅`` |
+| 4 | `The output of a deletion rule must only contain `*` or `∅`` |
 
 ### incomplete_matrix (error_token)
 

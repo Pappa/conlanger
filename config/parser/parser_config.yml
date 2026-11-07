@@ -272,3 +272,5 @@ skip_rules:
     reason: "Unsure how to represent 2nd mora"
   - id: Early-Modern-English-a_2
     reason: "Merged with previous rule"
+  - id: Southern-United-States-Shift-English-aɪ_4
+    reason: "Merged with previous rule"

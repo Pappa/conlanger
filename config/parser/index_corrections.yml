@@ -646,3 +646,29 @@ rules:
                   content: "a → {ɑː,æ}"
                   reason: |
                           merged with following rule
+        - rule:
+                  id: Livonian-Vh
+                  content: "Vh → Vːɦ / _C ! _{j,ʋ}"
+                  reason: |
+                          Vh → Vːɦ / _C, except maybe ! _j and/or _ʋ
+        - rule:
+                  id: Livonian-p-tʲ-sʲ-k
+                  content: "p t(ʲ) s(ʲ) k → b d(ʲ) z(ʲ) ɡ / ! #_, _C[-voice], C[-voice]_"
+                  reason: |
+                          p t(ʲ) s(ʲ) k → b d(ʲ) z(ʲ) ɡ / ! #_ or adjacent to C[-voice]
+        - rule:
+                  id: Southern-United-States-Shift-English-aɪ_3
+                  content: "aɪ → {ɑeː,aː} / else ; (only for some speakers)"
+                  reason: |
+                          aɪ → ɑeː / else (only for some speakers) 
+                          aɪ → aː / else (only for some speakers)
+        - rule:
+                  id: Polish-—-ь,ъ_2
+                  content: "{ь,ъ} → ∅ / in even syllables counting iambic from U# or a syllable not containing a yer"
+                  reason: |
+                          {ь,ъ} → ∅] / in even syllables counting iambic from U# or a syllable not containing a yer
+        - rule:
+                  id: Polish-C
+                  content: "{C,-j,-ɕ,-ʑ} → Cʲ / _E"
+                  reason: |
+                          C → Cʲ / _E ! /j ɕ ʑ

@@ -32261,8 +32261,8 @@ sections:
     stages:
     - ɛl
     - lɔ
-    env: T_T)
-    comment: “in certain cases (mostly after a PSl. palato-alveolar”
+    env: T_T
+    comment: “in certain cases (mostly after a PSl. palato-alveolar”)
   - rule_id: Polish-ɔl-ɔr-ɛl-ɛr
     source: index_diachronica.html:7019
     raw: ɔl ɔr ɛl ɛr → lɔ rɔ lɛ rɛ / T_T
@@ -32289,10 +32289,9 @@ sections:
     source: index_diachronica.html:7022
     raw: C → Cʲ / _E ! /j ɕ ʑ
     stages:
-    - C
+    - '{C,-j,-ɕ,-ʑ}'
     - Cʲ
     env: _E
-    exception: /j ɕ ʑ
   - rule_id: Polish-j
     source: index_diachronica.html:7023
     raw: j → lʲ / {p,b,m,v}_ (sporadic)
@@ -32324,16 +32323,18 @@ sections:
     stages:
     - '{ɪ,ɤ}'
     - e
-    env: iambic counting from U# or a syllable not containing a yer
+    comment: sporadic ; iambic counting from U# or a syllable not containing a yer
+    sporadic: true
   - rule_id: Polish-—-ь,ъ_2
     source: index_diachronica.html:7028
     raw: — {ь,ъ} → ∅] / in even syllables counting iambic from U# or a syllable not
       containing a yer
     stages:
     - '{ɪ,ɤ}'
-    - ∅]
-    env: in even syllables counting iambic from U# or a syllable not containing a
-      yer
+    - ∅
+    comment: sporadic ; in even syllables counting iambic from U# or a syllable not
+      containing a yer
+    sporadic: true
   - rule_id: Polish-ъ
     source: index_diachronica.html:7030
     raw: ъ → aː / _r
@@ -66099,8 +66100,8 @@ sections:
     stages:
     - Vh
     - Vːɦ
-    env: _C, except maybe
-    exception: _j and/or _ʋ
+    env: _C
+    exception: _{j,ʋ}
   - rule_id: Livonian-LV
     source: index_diachronica.html:13913
     raw: LV → VL / {#,V,O}_
@@ -66114,7 +66115,7 @@ sections:
     stages:
     - p t(ʲ) s(ʲ) k
     - b d(ʲ) z(ʲ) ɡ
-    exception: '#_ or adjacent to C[-voice]'
+    exception: '#_, _C[-voice], C[-voice]_'
   - rule_id: Livonian-∅
     source: index_diachronica.html:13915
     raw: ∅ → ʔ / (C)V_CV
@@ -68821,17 +68822,15 @@ sections:
     raw: aɪ → ɑeː / else (only for some speakers)
     stages:
     - aɪ
-    - ɑeː
+    - '{ɑeː,aː}'
     exception: _C[+voice]
     comment: (only for some speakers)
   - rule_id: Southern-United-States-Shift-English-aɪ_4
     source: index_diachronica.html:14479
     raw: aɪ → aː / else (only for some speakers)
-    stages:
-    - aɪ
-    - aː
-    env: else
-    comment: (only for some speakers)
+    stages: []
+    comment: Merged with previous rule
+    status: skipped
   - rule_id: Southern-United-States-Shift-English-æ-ɛ-ɪ
     source: index_diachronica.html:14480
     raw: æ ɛ ɪ → æj(ə) ɛj(ə) ɪj(ə)

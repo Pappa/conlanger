@@ -14394,7 +14394,7 @@ sections:
     rule: x > ɕ / V:[+front]_
   - rule_id: Polish-ɛl
     source: index_diachronica.html:7018
-    rule: ɛl > lɔ / P:[-voice]_P:[-voice])
+    rule: ɛl > lɔ / P:[-voice]_P:[-voice]
   - rule_id: Polish-ɔl-ɔr-ɛl-ɛr
     source: index_diachronica.html:7019
     rule: ɔl ɔr ɛl ɛr > lɔ rɔ lɛ rɛ / P:[-voice]_P:[-voice]
@@ -14406,7 +14406,7 @@ sections:
     rule: 'ɔr ɔl > rɔ lɔ / #_P:[-voice]'
   - rule_id: Polish-C
     source: index_diachronica.html:7022
-    rule: C > C:[+cor,+dist] / _V:[+front] // /j ɕ ʑ
+    rule: '{C,-j,-ɕ,-ʑ} > C:[+cor,+dist] / _V:[+front]'
   - rule_id: Polish-j
     source: index_diachronica.html:7023
     rule: j > lʲ / {p,b,m,v}_
@@ -14418,11 +14418,10 @@ sections:
     rule: ɛ:[+long] > ɛ
   - rule_id: Polish-—-ь,ъ
     source: index_diachronica.html:7027
-    rule: '{ɪ,ɤ} > e / iambic counting from %# or a syllable not containing a yer'
+    rule: '{ɪ,ɤ} > e'
   - rule_id: Polish-—-ь,ъ_2
     source: index_diachronica.html:7028
-    rule: '{ɪ,ɤ} > ∅] / in even syllables counting iambic from %# or a syllable not
-      containing a yer'
+    rule: '{ɪ,ɤ} > ∅'
   - rule_id: Polish-ъ
     source: index_diachronica.html:7030
     rule: ɤ > a:[+long] / _r
@@ -28543,13 +28542,13 @@ sections:
     rule: 'ɑ > ə / :{VC{ɑC,ɑCC}_#,VCC{ɑC,ɑCC}_#}:'
   - rule_id: Livonian-Vh
     source: index_diachronica.html:13912
-    rule: Vh > V:[+long]ɦ / _C, except maybe // _j and/or _ʋ
+    rule: Vh > V:[+long]ɦ / _C // _{j,ʋ}
   - rule_id: Livonian-LV
     source: index_diachronica.html:13913
     rule: LV > VL / {#,V,O}_
   - rule_id: Livonian-p-tʲ-sʲ-k
     source: index_diachronica.html:13914
-    rule: 'p {t,tʲ} {s,sʲ} k > b {d,dʲ} {z,zʲ} ɡ // #_ or adjacent to C:[-voice]'
+    rule: 'p {t,tʲ} {s,sʲ} k > b {d,dʲ} {z,zʲ} ɡ // #_, _C:[-voice], C:[-voice]_'
   - rule_id: Livonian-∅
     source: index_diachronica.html:13915
     rule: '∅ > ʔ / :{CV_CV,V_CV}:'
@@ -29660,10 +29659,13 @@ sections:
     rule: aɪ > a:[+long] / _C:[+voice]
   - rule_id: Southern-United-States-Shift-English-aɪ_3
     source: index_diachronica.html:14478
-    rule: aɪ > ɑe:[+long] // _C:[+voice]
+    alternatives:
+    - aɪ > ɑe:[+long] // _C:[+voice]
+    - aɪ > a:[+long] // _C:[+voice]
   - rule_id: Southern-United-States-Shift-English-aɪ_4
     source: index_diachronica.html:14479
-    rule: aɪ > a:[+long] / else
+    status: skipped
+    rule: "#\taɪ → aː / else (only for some speakers)"
   - rule_id: Southern-United-States-Shift-English-æ-ɛ-ɪ
     source: index_diachronica.html:14480
     rule: æ ɛ ɪ > {æj,æjə} {ɛj,ɛjə} {ɪj,ɪjə}

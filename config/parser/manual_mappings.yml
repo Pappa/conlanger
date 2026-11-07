@@ -224,6 +224,8 @@
     - ", (in disyllables)"
     - ", (in monosyllables)"
     - ", (in polysyllables)"
+    - " (?:/ )(in even syllables)"
+    - " (?:/ )(iambic counting)"
   to: " ; sporadic ; \\1"
   use_regex: True
   reason: sporadic comment
@@ -326,6 +328,7 @@
     - " (not sure what "
     - " “(before a prefix; "
     - " (note that "
+    - " “in certain cases"
     - " (?; included here based on "
     - " (at least one instance of "
     - " (velar fricative is conjectured"

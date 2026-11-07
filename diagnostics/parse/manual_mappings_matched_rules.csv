@@ -326,6 +326,9 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.8.8,Proto-Indo-European to Ionic Greek,Ionic-Greek-ej-ow,index_diachronica.html:6746,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.8.8,Proto-Indo-European to Ionic Greek,Ionic-Greek-oj,index_diachronica.html:6755, yj (→ yː sometimes),"{yj,yː}"
 17.9,Proto-Indo-European to Hittite,Hittite_2-h3,index_diachronica.html:6805, “(, ; “(
+17.11.1,Proto-Slavic to Polish,Polish-ɛl,index_diachronica.html:7018, “in certain cases, ; “in certain cases
+17.11.1,Proto-Slavic to Polish,"Polish-—-ь,ъ",index_diachronica.html:7027, (?:/ )(iambic counting), ; sporadic ; \1
+17.11.1,Proto-Slavic to Polish,"Polish-—-ь,ъ_2",index_diachronica.html:7028, (?:/ )(in even syllables), ; sporadic ; \1
 17.11.1,Proto-Slavic to Polish,Polish-V,index_diachronica.html:7057, / unstressed, / [-stress]
 17.11.1,Proto-Slavic to Polish,Polish-Vː,index_diachronica.html:7066, (in certain frequently-used words), / sporadic ; \1
 17.11.1,Proto-Slavic to Polish,Polish-ɔ̃_2,index_diachronica.html:7088,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
