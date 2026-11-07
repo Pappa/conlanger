@@ -27382,10 +27382,7 @@ sections:
     stages:
     - waː naː
     - oː noː
-    env:
-      context: '%u'
-      position:
-        in: '#U'
+    env: '#U'
   - rule_id: Old-Norse-aː-ae
     source: index_diachronica.html:6206
     raw: 'a(ː) ae → o(ː) ɒø / #(C)(C)(C)_(C)(C)(C)u'
@@ -41594,7 +41591,10 @@ sections:
     stages:
     - a
     - ə
-    env: if N in U#
+    env:
+      context: N_, _N
+      position:
+        in: U#
   - rule_id: Guajajara-o
     source: index_diachronica.html:8528
     raw: o → u / ! o(C…)_(C…)#

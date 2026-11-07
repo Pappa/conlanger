@@ -631,3 +631,8 @@ rules:
               No idea what this rule means and can't understand the original source.
               http://www.kunstsprachen.de/s17/rules.sch
               waː naː → oː noː / %u in #U
+    - rule:
+          id: Guajajara-a_2
+          content: "a → ə / N_, _N in U#"
+          reason: |
+              a → ə / if N in U#

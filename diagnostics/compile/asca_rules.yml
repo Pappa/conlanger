@@ -12156,7 +12156,7 @@ sections:
     rule: 'a > u / $u / // #<(..)_(..)>'
   - rule_id: Old-Norse-waː-naː
     source: index_diachronica.html:6205
-    rule: 'wa:[+long] na:[+long] > o:[+long] no:[+long] / :{$u,#<(..)_(..)>}:'
+    rule: 'wa:[+long] na:[+long] > o:[+long] no:[+long] / #<(..)_(..)>'
   - rule_id: Old-Norse-aː-ae
     source: index_diachronica.html:6206
     rule: '{a,a:[+long]} ae > {o,o:[+long]} ɒø / #(C)(C)(C)_(C)(C)(C)u'
@@ -18647,7 +18647,7 @@ sections:
     rule: a > ə / _N#
   - rule_id: Guajajara-a_2
     source: index_diachronica.html:8527
-    rule: a > ə / if N in <(..)_(..)>#
+    rule: 'a > ə / :{N_,_N,<(..)_(..)>#}:'
   - rule_id: Guajajara-o
     source: index_diachronica.html:8528
     rule: o > u // o(C,0)_(C,0)#

@@ -5,3 +5,6 @@ section_index,rule_id,alt_idx,step_idx,source,ok,timestamp
 6.2.2.1.18,Biblical-Hebrew-—-i_3,,,index_diachronica.html:1537,OK,2026-11-07T16:21:59Z
 6.2.2.1.18,Biblical-Hebrew-—-u,,,index_diachronica.html:1538,OK,2026-11-07T16:21:59Z
 6.2.2.1.18,Biblical-Hebrew-—-u_2,,,index_diachronica.html:1539,OK,2026-11-07T16:21:59Z
+17.7.3.1,Old-Norse-waː-naː,,,index_diachronica.html:6205,OK,2026-11-07T16:56:47Z
+18.4.3,Guajajara-a_2,,,index_diachronica.html:8527,FAILED,2026-11-07T16:56:47Z
+18.4.3,Guajajara-a_2,,,index_diachronica.html:8527,OK,2026-11-07T17:05:34Z
