@@ -67,7 +67,7 @@ A **cleaned rule index** (applier-neutral YAML source of truth) derived from **I
 | [0046-task-position-in-open-closed-syllable-scope.md](0046-task-position-in-open-closed-syllable-scope.md) | `position.in` open/closed → `<(..)_(..)>:[±F]` (F2). | resolved |
 | [0047-task-whole-field-syllable-matrix-env-scope.md](0047-task-whole-field-syllable-matrix-env-scope.md) | Whole-field `U[±F]` env → underline scope (F1). | resolved |
 | [0048-task-env-set-syllable-tail-projection.md](0048-task-env-set-syllable-tail-projection.md) | Syllable tails inside `:{…}:` env sets (F3). | resolved |
-| [0049-task-syllable-compile-docs-alignment.md](0049-task-syllable-compile-docs-alignment.md) | Align `sound-change-applier.md` with syllable compile tests. | ready |
+| [0049-task-syllable-compile-docs-alignment.md](0049-task-syllable-compile-docs-alignment.md) | Align `sound-change-applier.md` with syllable compile tests. | resolved |
 | [0050-task-expected-underscore-env-prose-cluster.md](0050-task-expected-underscore-env-prose-cluster.md) | Unrelated `expected_underscore` U1–U7 disposition (prose/else/`//`). | ready |
 
 ## Spikes

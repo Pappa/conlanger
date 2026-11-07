@@ -22,6 +22,8 @@ Roughly **40 of 102** failures have a syllable-position or `position.in` compile
 
 Hold prose, `else`, Index `//`, and editorial env sets for separate env/prose clusters (not syllable compile).
 
+Operator compile table for underline-scope syllable envs: [sound-change-applier.md](../../docs/system/sound-change-applier.md) (task **0049**).
+
 ---
 
 ## 1. Method

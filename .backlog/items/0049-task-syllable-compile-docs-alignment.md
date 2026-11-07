@@ -1,5 +1,5 @@
 Type: task
-Status: ready
+Status: resolved
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Align sound-change-applier docs with syllable underline-scope compile behaviour.
 Blocked by:
@@ -22,9 +22,11 @@ Optionally add a one-line pointer in [0045 spike](../spikes/0045-expected-unders
 
 ## Acceptance Criteria
 
-- [ ] `sound-change-applier.md` `position.in` and syllable-stress rows match actual compile output exercised by `uv run pytest tests/conlanger/compile/test_position_in_projection.py tests/conlanger/utils/test_syllable_position.py --no-cov`.
-- [ ] Doc explicitly states that whole-env syllable conditions use underline structures, not a leading free `_` before `%` or `$`.
-- [ ] No contradiction with [0039-index-syllable-position-u-hash](../spikes/0039-index-syllable-position-u-hash.md) or spike **0032** env focus rules.
-- [ ] `uv run check` passes; **`Status: resolved`**; sync plan **Tasks** table.
+- [x] `sound-change-applier.md` `position.in` and syllable-stress rows match actual compile output exercised by `uv run pytest tests/conlanger/compile/test_position_in_projection.py tests/conlanger/utils/test_syllable_position.py --no-cov`.
+- [x] Doc explicitly states that whole-env syllable conditions use underline structures, not a leading free `_` before `%` or `$`.
+- [x] No contradiction with [0039-index-syllable-position-u-hash](../spikes/0039-index-syllable-position-u-hash.md) or spike **0032** env focus rules.
+- [x] `uv run check` passes; **`Status: resolved`**; sync plan **Tasks** table.
 
 ## Comments
+
+Updated `docs/system/sound-change-applier.md` § Structured `env` / `exception`; cross-link in [0045](../spikes/0045-expected-underscore-syllable-compile-review.md) TLDR.
