@@ -69,7 +69,7 @@ A **cleaned rule index** (applier-neutral YAML source of truth) derived from **I
 | [0048-task-env-set-syllable-tail-projection.md](0048-task-env-set-syllable-tail-projection.md) | Syllable tails inside `:{…}:` env sets (F3). | resolved |
 | [0049-task-syllable-compile-docs-alignment.md](0049-task-syllable-compile-docs-alignment.md) | Align `sound-change-applier.md` with syllable compile tests. | resolved |
 | [0050-task-expected-underscore-env-prose-cluster.md](0050-task-expected-underscore-env-prose-cluster.md) | Unrelated `expected_underscore` U1–U7 disposition (prose/else/`//`). | resolved |
-| [0051-task-segment-context-plus-hash-u-env-set.md](0051-task-segment-context-plus-hash-u-env-set.md) | Segment `context` + `position.in` `#U` → `:{…, #<…>}:` env set. | ready |
+| [0051-task-segment-context-plus-hash-u-env-set.md](0051-task-segment-context-plus-hash-u-env-set.md) | Segment `context` + `position.in` `#U` → `:{…, #<…>}:` env set. | resolved |
 
 ## Spikes
 

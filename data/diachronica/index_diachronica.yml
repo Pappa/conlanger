@@ -4298,7 +4298,10 @@ sections:
     stages:
     - e
     - ∅
-    env: 'O_ in #U'
+    env:
+      context: O_
+      position:
+        in: '#U'
     comment: (not universal)
   - rule_id: Blackfoot-me,ne
     source: index_diachronica.html:1759
@@ -27379,7 +27382,10 @@ sections:
     stages:
     - waː naː
     - oː noː
-    env: '%u in #U'
+    env:
+      context: '%u'
+      position:
+        in: '#U'
   - rule_id: Old-Norse-aː-ae
     source: index_diachronica.html:6206
     raw: 'a(ː) ae → o(ː) ɒø / #(C)(C)(C)_(C)(C)(C)u'

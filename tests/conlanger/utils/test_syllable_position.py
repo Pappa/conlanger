@@ -4,6 +4,9 @@ import pytest
 
 from conlanger.compile.models.compile_fields import RuleEnv, RuleInput, RuleOutput
 from conlanger.compile.models.rules import SoundChangeRule
+from conlanger.compile.project_index_context import (
+    resolve_rule_env_exception_for_compile,
+)
 from conlanger.compile.tools.asca.pipeline import compile_asca_rule_fields
 from conlanger.compile.tools.asca.syllable_position import (
     apply_syllable_position_compiled_overrides,
@@ -120,6 +123,26 @@ def test_project_syllable_stress_compiled_env(env_raw, compiled_before, expected
             ":{seg_, <(..)_(..)>:[+lo]}:",
         ),
         (
+            "O_ in #U",
+            ":{O_, #<(..)_(..)>}:",
+        ),
+        (
+            "%u in #U",
+            ":{%u, #<(..)_(..)>}:",
+        ),
+        (
+            "O_ in U#",
+            ":{O_, <(..)_(..)>#}:",
+        ),
+        (
+            "in in #U",
+            "in  #<(..)_(..)>",
+        ),
+        (
+            "O_ in not-a-syllable-marker",
+            ":{O_, not-a-syllable-marker}:",
+        ),
+        (
             "_{m,ŋ} when posttonic in U[+hi] or when pretonic",
             ":{_{m,ŋ} when posttonic, <(..)_(..)>:[+hi] or when pretonic}:",
         ),
@@ -221,6 +244,42 @@ def test_sound_change_rule_preserves_raw():
     )
     assert rule.raw == "Vː → V[-long] / ! in #U"
     assert rule.value == "V:[+long] > V:[-long] // #<(..)_(..)>"
+
+
+@pytest.mark.parametrize(
+    ("context", "position_in", "input_stages", "output_stages", "expected_env"),
+    [
+        (
+            "O_",
+            "#U",
+            "e",
+            "∅",
+            "e > ∅ / :{O_,#<(..)_(..)>}:",
+        ),
+        (
+            "%u",
+            "#U",
+            "wa:[+long] na:[+long]",
+            "o:[+long] no:[+long]",
+            "wa:[+long] na:[+long] > o:[+long] no:[+long] / :{$u,#<(..)_(..)>}:",
+        ),
+    ],
+)
+def test_compile_asca_rule_fields_segment_context_in_hash_u(
+    context, position_in, input_stages, output_stages, expected_env
+):
+    config = load_compiler_config()
+    ctx = IndexContext(context=context, position={"in": position_in})
+    env_str, _ = resolve_rule_env_exception_for_compile(ctx, None)
+    assert (
+        compile_asca_rule_fields(
+            input_stages,
+            output_stages,
+            env=env_str,
+            compiler_config=config,
+        )
+        == expected_env
+    )
 
 
 def test_apply_syllable_position_editorial_strip_on_rule_parts():

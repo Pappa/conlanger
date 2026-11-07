@@ -18,6 +18,11 @@ _ADJACENT_TO_RE = r"adjacent\s+to"
 _NEAR_RE = r"near"
 _IN_RE = r"in"
 
+_COMPOUND_STRUCTURAL_IN_SYLLABLE_EDGE_RE = re.compile(
+    r"^(?P<context>.+?)\s+in\s+(?P<target>#U|U#|#%|%#)\s*$",
+    re.IGNORECASE,
+)
+
 _NEIGHBOUR_TARGETS = (
     _SET_RE,
     _SEGMENT_WITH_FEATURE_RE,
@@ -54,6 +59,19 @@ def _extract_neighbour_target(stripped: str) -> tuple[str, str] | tuple[None, No
     return None, None
 
 
+def _extract_structural_in_syllable_edge(
+    stripped: str,
+) -> tuple[str, dict[str, PositionValue]] | None:
+    match = _COMPOUND_STRUCTURAL_IN_SYLLABLE_EDGE_RE.match(stripped)
+    if match is None:
+        return None
+    context = match.group("context").strip()
+    if context.lower() == "in":
+        return None
+    target = match.group("target")
+    return context, {"in": target}
+
+
 def extract_position_from_context(
     text: str,
 ) -> tuple[str | None, dict[str, PositionValue]]:
@@ -67,6 +85,11 @@ def extract_position_from_context(
     normalized, is_medial = normalize_medial_env_field(stripped)
     if is_medial:
         return normalized or None, {"medial": True}
+
+    compound = _extract_structural_in_syllable_edge(stripped)
+    if compound is not None:
+        context, position = compound
+        return context, position
 
     relation, target = _extract_neighbour_target(stripped)
     if relation and target:

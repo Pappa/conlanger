@@ -4,6 +4,7 @@ from conlanger.ingest.models.index_models import IndexContext, IndexRule
 from conlanger.ingest.parser import IndexDiachronicaParser
 from conlanger.ingest.utils.index_context_position import (
     apply_index_context_position_extraction,
+    apply_position_extraction_to_context,
     extract_position_from_context,
 )
 
@@ -25,6 +26,12 @@ from conlanger.ingest.utils.index_context_position import (
             {"medial": True},
         ),
         ("_#", "_#", {}),
+        ("O_ in #U", "O_", {"in": "#U"}),
+        ("%u in #U", "%u", {"in": "#U"}),
+        ("O_ in U#", "O_", {"in": "U#"}),
+        ("in #U", None, {"in": "#U"}),
+        ("", "", {}),
+        ("in in #U", "in in #U", {}),
     ],
 )
 def test_extract_position_from_context(text, expected_context, expected_position):
@@ -83,6 +90,27 @@ def test_parser_adjacent_to_set_from_inventory_surface():
     parser = IndexDiachronicaParser()
     rule = parser.parse_rule_string("c332344f", "index:4755", raw)[0]
     assert rule.env == IndexContext(position={"adjacent_to": "{S,ts}"})
+
+
+def test_extract_position_from_context_whitespace_only():
+    context, position = extract_position_from_context("   ")
+    assert context is None
+    assert position == {}
+
+
+def test_apply_position_extraction_to_context_whitespace_clears_context():
+    assert apply_position_extraction_to_context(IndexContext(context="   ")) is None
+
+
+def test_apply_index_context_position_extraction_exception_syllable_edge():
+    rule = IndexRule(
+        raw="x",
+        source="t",
+        stages=["a", "b"],
+        exception=IndexContext(context="O_ in #U"),
+    )
+    result = apply_index_context_position_extraction(rule)
+    assert result.exception == IndexContext(context="O_", position={"in": "#U"})
 
 
 def test_parser_bare_medial_inventory_surface():

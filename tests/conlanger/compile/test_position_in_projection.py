@@ -13,6 +13,8 @@ from conlanger.compile.position_in_projection import (
     ("target", "expected"),
     [
         ("#%", "#<(..)_(..)>"),
+        ("#U", "#<(..)_(..)>"),
+        ("U#", "<(..)_(..)>#"),
         ("%#", "<(..)_(..)>#"),
         (
             "U[-stress]",
@@ -37,6 +39,10 @@ from conlanger.compile.position_in_projection import (
         (
             "U:[+stress, +lo]",
             "<(..)_(..)>:[+stress][+lo]",
+        ),
+        (
+            "U:[+stress, +open]",
+            "<(..)_(..)>:[+stress][+open]",
         ),
         ("U[+hi]", "<(..)_(..)>:[+hi]"),
         ("U[+lo]", "<(..)_(..)>:[+lo]"),
@@ -66,6 +72,19 @@ def test_materialize_position_in_asca():
         materialize_position_in_asca(stress, structural_context="C_CV")
         == "C_CV in <(..)_(..)>:[-stress]"
     )
+    edge = "#<(..)_(..)>"
+    assert (
+        materialize_position_in_asca(edge, structural_context="O_")
+        == ":{O_, #<(..)_(..)>}:"
+    )
+    assert (
+        materialize_position_in_asca(edge, structural_context="%u")
+        == ":{%u, #<(..)_(..)>}:"
+    )
+    assert (
+        materialize_position_in_asca(edge, structural_context="Vu")
+        == "Vu in #<(..)_(..)>"
+    )
 
 
 @pytest.mark.parametrize(
@@ -80,6 +99,8 @@ def test_materialize_position_in_asca():
         ("_ %[-nas]", False),
         ("in U[+lo]", False),
         ("prefix #<(..)_(..)>", True),
+        ("#<(..)_(..)>", True),
+        (":{O_,#<(..)_(..)>}:", False),
         (None, False),
         ("  ", False),
     ],

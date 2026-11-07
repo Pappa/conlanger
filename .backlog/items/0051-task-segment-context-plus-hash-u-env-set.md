@@ -1,5 +1,5 @@
 Type: task
-Status: ready
+Status: resolved
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Split segment env context from `position.in` `#U` and compile to ASCA env sets.
 Blocked by:
@@ -33,11 +33,13 @@ env:
 
 ## Acceptance Criteria
 
-- [ ] `Blackfoot-e_2` in `index_diachronica.yml` uses structured `env` with `context` + `position.in` for `#U` / `#%` (not scalar `O_ in #U`).
-- [ ] `Old-Norse-waː-naː` structured likewise (`%u` / syllable host + `position.in` edge).
-- [ ] Compile emits validated env shape for Blackfoot-e_2 equivalent to `:{O_, #<(..)_(..)>}:` (or ASCA-approved variant); inventory row passes `validate_rules` or failure is documented in **Comments** with a single explicit blocker.
-- [ ] Unit tests cover parse split, materialize env-set, and full `compile_asca_rule_fields` for both representatives.
-- [ ] [`sound-change-applier.md`](../../docs/system/sound-change-applier.md) notes segment context + `position.in` `#%` → env set when context already carries `_`.
-- [ ] `uv run check` passes; **`Status: resolved`**; sync plan **Tasks** table.
+- [x] `Blackfoot-e_2` in `index_diachronica.yml` uses structured `env` with `context` + `position.in` for `#U` / `#%` (not scalar `O_ in #U`).
+- [x] `Old-Norse-waː-naː` structured likewise (`%u` / syllable host + `position.in` edge).
+- [x] Compile emits validated env shape for Blackfoot-e_2 equivalent to `:{O_, #<(..)_(..)>}:` (or ASCA-approved variant); inventory row passes `validate_rules` or failure is documented in **Comments** with a single explicit blocker.
+- [x] Unit tests cover parse split, materialize env-set, and full `compile_asca_rule_fields` for both representatives.
+- [x] [`sound-change-applier.md`](../../docs/system/sound-change-applier.md) notes segment context + `position.in` `#%` → env set when context already carries `_`.
+- [x] `uv run check` passes; **`Status: resolved`**; sync plan **Tasks** table.
 
 ## Comments
+
+**Inventory (2026-11-07):** `Blackfoot-e_2` **OK** — `e > ∅ / :{O_,#<(..)_(..)>}:`. `Old-Norse-waː-naː` still **FAILED** `expected_underscore` on compile `… / :{$u,#<(..)_(..)>}:` (`Expected '_', but received ','` at env-set comma) despite mechanical env-set shape; likely multi-segment chain input interaction — hold for follow-up, not regressing prior `segments_before_word` class.

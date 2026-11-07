@@ -6,6 +6,8 @@ import re
 
 from conlanger.compile.position_in_projection import (
     env_is_projected_position_in_compile_string,
+    materialize_position_in_asca,
+    project_position_in_target,
 )
 from conlanger.compile.utils.symbols import normalize_symbols_for_asca
 from conlanger.utils.syllable_position import (
@@ -64,6 +66,10 @@ _WHOLE_SYLLABLE_HOST_BRACKET_MATRIX_RE = re.compile(
 
 _IN_MECHANICAL_HASH_U_TAIL_RE = re.compile(r"\bin\s+#(U|%)(?=\s*$|\s*!)")
 _IN_MECHANICAL_U_HASH_TAIL_RE = re.compile(r"\bin\s+(U|%)#(?=\s*$|\s*!)")
+_COMPOUND_MECHANICAL_SYLLABLE_EDGE_RE = re.compile(
+    r"^(?P<left>.+)\s+in\s+(?P<target>#U|U#|#%|%#)\s*$",
+    re.IGNORECASE,
+)
 
 
 def normalize_syllable_position_marker(text: str) -> str | None:
@@ -185,10 +191,26 @@ def _rewrite_legacy_whole_in_syllable_host_matrix(text: str) -> str:
     return f"<(..)_(..)>:{matrix_tail}"
 
 
+def _rewrite_compound_mechanical_syllable_edge_env(text: str) -> str | None:
+    match = _COMPOUND_MECHANICAL_SYLLABLE_EDGE_RE.match(text.strip())
+    if match is None:
+        return None
+    left = match.group("left").strip()
+    if left.lower() == "in":
+        return None
+    classified = project_position_in_target(match.group("target"))
+    if classified is None:
+        return None
+    return materialize_position_in_asca(classified, structural_context=left)
+
+
 def project_position_in_compiled_field(text: str | None) -> str | None:
     """Rewrite legacy string env tails with embedded ``in U…`` / ``in #U`` (ticket 174)."""
     if text is None:
         return None
+    compound = _rewrite_compound_mechanical_syllable_edge_env(text)
+    if compound is not None:
+        return compound
     projected = text
     if not _PROSE_AFTER_HASH_U_RE.search(projected):
         projected = _IN_MECHANICAL_HASH_U_TAIL_RE.sub(" #<(..)_(..)>", projected)

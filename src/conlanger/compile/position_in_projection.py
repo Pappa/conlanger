@@ -9,6 +9,9 @@ from conlanger.utils.syllable_position import (
 )
 
 SYLLABLE_AT_WORD_BOUNDARY = {
+    "#U": "#<(..)_(..)>",
+    "U#": "<(..)_(..)>#",
+    "#U, U#": ":{#<(..)_(..)>, <(..)_(..)>#}:",
     "#%": "#<(..)_(..)>",
     "%#": "<(..)_(..)>#",
     "#%, %#": ":{#<(..)_(..)>, <(..)_(..)>#}:",
@@ -115,12 +118,40 @@ def project_position_in_target(target: str) -> str | None:
     return None
 
 
+_MECHANICAL_SYLLABLE_EDGE_PROJECTIONS = frozenset(
+    {
+        "#<(..)_(..)>",
+        "<(..)_(..)>#",
+        _STRESSED_MONOSYLLABLE_ASCA,
+        ":{#<(..)_(..)>, <(..)_(..)>#}:",
+    }
+)
+
+_SEGMENT_SCOPED_SYLLABLE_HOST_RE = re.compile(r"^(?:%|U|\$)\S*$")
+
+
+def _context_warrants_syllable_edge_env_set(context: str) -> bool:
+    if "_" in context:
+        return True
+    return _SEGMENT_SCOPED_SYLLABLE_HOST_RE.fullmatch(context.strip()) is not None
+
+
+def _materialize_syllable_edge_env_set(left: str, right: str) -> str:
+    return f":{{{left}, {right}}}:"
+
+
 def materialize_position_in_asca(
     projection: str,
     *,
     structural_context: str | None,
 ) -> str:
     """Join structural ``context`` with classified ``in`` scope (ticket 163 ``context in $…``)."""
+    if (
+        structural_context
+        and projection in _MECHANICAL_SYLLABLE_EDGE_PROJECTIONS
+        and _context_warrants_syllable_edge_env_set(structural_context)
+    ):
+        return _materialize_syllable_edge_env_set(structural_context, projection)
     if structural_context:
         return f"{structural_context} in {projection}"
     return projection
