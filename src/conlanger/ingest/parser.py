@@ -203,6 +203,7 @@ class IndexDiachronicaParser:
         rule = apply_double_slash_env_conditions(rule)
         rule = apply_syllable_position_editorial_strip(rule)
         rule = apply_feature_mappings(rule, self._feature_mappings)
+        # TODO: can this be moved after apply_series_expansions?
         rule = apply_ipa_mappings(rule, self._ipa_mappings)
         rule = apply_index_context_position_extraction(rule)
         rule = rule.apply_dialects_to_env_fields()
