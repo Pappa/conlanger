@@ -196,6 +196,7 @@ class IndexDiachronicaParser:
 
         rule = apply_sporadic_qualifier(rule)
         rule = apply_trailing_glosses(rule)
+        # TODO: this just seems to extract the comment fragments, not apply the conditions
         rule = apply_stress_conditions(rule)
         rule = apply_prose_conditional_env_conditions(rule)
         rule = apply_prose_position_env_conditions(rule)
