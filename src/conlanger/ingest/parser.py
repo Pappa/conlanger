@@ -195,7 +195,6 @@ class IndexDiachronicaParser:
         rule = apply_sporadic_qualifier(rule)
         rule = apply_trailing_glosses(rule)
         rule = apply_stress_conditions(rule)
-        # Env pipeline (165): conditional → 107 → 108 → syllable strip → 119 → 143 → dialects.
         rule = apply_prose_conditional_env_conditions(rule)
         rule = apply_prose_position_env_conditions(rule)
         rule = apply_double_slash_env_conditions(rule)
