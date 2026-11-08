@@ -21197,7 +21197,7 @@ sections:
     - V
     - Vː
     env: U:[+stress][+lo]
-    comment: U:[+stress][+open]
+    comment: U:[+stress][+lo]
   - rule_id: Palaic-e
     source: index_diachronica.html:5162
     raw: e → i / pretonic
@@ -21212,7 +21212,7 @@ sections:
     stages:
     - e
     - a
-    comment: posttonic in U[+open]; sporadic
+    comment: posttonic in U[+lo]; sporadic
     sporadic: true
   - rule_id: Palaic-oː
     source: index_diachronica.html:5164
@@ -55611,7 +55611,7 @@ sections:
     - yʔ
     - ioʔ
     - iʊʔ
-    comment: dialectal / {∅,C[+guttural]}_, in -k-types
+    comment: dialectal / {∅,C[+laryngeal]}_, in -k-types
   - rule_id: Guānhuà-yʔ_5
     source: index_diachronica.html:11860
     raw: yʔ → {ɥʔ,yʔ,uʔ} / C̣, in -juət-types
@@ -66882,8 +66882,8 @@ sections:
     stages:
     - S[+tense]
     - S[- voice]ː
-    comment: (specifically, the source lists t[+ fortis] k[+ fortis] → t(ː) k(ː),
-      both of the tokens with optional length suffixes and *aTa → 〈atta〉, so I’m extrapolating)
+    comment: (specifically, the source lists t[+tense] k[+tense] → t(ː) k(ː), both
+      of the tokens with optional length suffixes and *aTa → 〈atta〉, so I’m extrapolating)
   - rule_id: Aquitanian-n+-fortis
     source: index_diachronica.html:14095
     raw: n[+ fortis] → n(ː) / V_V
