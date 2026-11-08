@@ -73,20 +73,17 @@ def test_section_index_prefixes_shortest_first():
 
 
 @pytest.mark.parametrize(
-    ("field_parts", "expected"),
+    ("rule", "expected"),
     [
-        ({"stages": ["sₓ", "ʃ"]}, {"stages": ["{s₁,s₂,s₃}", "ʃ"]}),
-        ({"stages": ["{Hₓ,m̩,n̩}", "a"]}, {"stages": ["{h₁,h₂,h₃,m̩,n̩}", "a"]}),
-        ({"env": "sₓ"}, {"env": "{s₁,s₂,s₃}"}),
-        ({"exception": "sₓ"}, {"exception": "{s₁,s₂,s₃}"}),
-        ({"stages": ["{sₓ,Hₓ}", "a"]}, {"stages": ["{s₁,s₂,s₃,h₁,h₂,h₃}", "a"]}),
+        ("sₓ → ʃ", "{s₁,s₂,s₃} → ʃ"),
+        ("{Hₓ,m̩,n̩} → a", "{h₁,h₂,h₃,m̩,n̩} → a"),
+        ("sₓ → ʃ / _sₓ", "{s₁,s₂,s₃} → ʃ / _{s₁,s₂,s₃}"),
+        ("sₓ → ʃ / _sₓ ! Hₓ_", "{s₁,s₂,s₃} → ʃ / _{s₁,s₂,s₃} ! {h₁,h₂,h₃}_"),
     ],
 )
-def test_apply_series_expansions(field_parts, expected):
+def test_apply_series_expansions(rule, expected):
     expansions = {
         "sₓ": ("s₁", "s₂", "s₃"),
         "Hₓ": ("h₁", "h₂", "h₃"),
     }
-    rule = IndexRule(raw="x", source="t", **field_parts)
-    expected_rule = IndexRule(raw="x", source="t", **expected)
-    assert apply_series_expansions(rule, expansions) == expected_rule
+    assert apply_series_expansions(rule, expansions) == expected

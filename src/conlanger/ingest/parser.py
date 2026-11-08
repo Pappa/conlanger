@@ -182,16 +182,18 @@ class IndexDiachronicaParser:
                 )
             )
 
-        rule.text = apply_section_mappings(rule.text, self._current_section_mappings)
-
         if is_quoted_prose_paragraph(rule.text):
             rule.stages = []
             rule.comment = raw.strip()
             return [rule]
 
+        rule.text = apply_section_mappings(rule.text, self._current_section_mappings)
+        rule.text = apply_series_expansions(
+            rule.text, self._parser_config.series_expansions
+        )
+
         rule.init()
 
-        rule = apply_series_expansions(rule, self._parser_config.series_expansions)
         rule = apply_sporadic_qualifier(rule)
         rule = apply_trailing_glosses(rule)
         rule = apply_stress_conditions(rule)

@@ -19,20 +19,12 @@ from conlanger.ingest.utils.series import expand_collectives_in_field
 
 
 def apply_series_expansions(
-    rule: IndexRule,
+    rule: str,
     series_expansions: dict[str, tuple[str, ...]],
 ) -> IndexRule:
     """Expand collective subscript tokens on stages and env/exception context."""
-    if not series_expansions:
-        return rule
     expansions = list(series_expansions.items())
-    rule.stages = [
-        expand_collectives_in_field(stage, expansions) for stage in rule.stages
-    ]
-    for ctx in rule.contexts:
-        if ctx.context:
-            ctx.context = expand_collectives_in_field(ctx.context, expansions)
-    return rule
+    return expand_collectives_in_field(rule, expansions)
 
 
 def apply_feature_mappings(
