@@ -10413,7 +10413,7 @@ sections:
     rule: V:[+long] > V / _N#
   - rule_id: Old-Irish-p-t-k-kʷ-b-d-ɡ-∅
     source: index_diachronica.html:5525
-    rule: p t k kʷ b d ɡ > b d ɡ ɡʷ mb nd ŋɡ n / n#_V:[+stress]
+    rule: 'p t k kʷ b d ɡ > b d ɡ ɡʷ mb nd ŋɡ n / #_V:[+stress]'
   - rule_id: Old-Irish-oː
     source: index_diachronica.html:5526
     rule: o:[+long] > u:[+long] / _(C,0)#
@@ -10431,7 +10431,7 @@ sections:
     rule: e > i / _(C,0)#
   - rule_id: Old-Irish-—-o
     source: index_diachronica.html:5532
-    rule: o > a / _{(C,0),u}#
+    rule: o > a / _(C,0)#, _u#
   - rule_id: Old-Irish-—-ai,oi
     source: index_diachronica.html:5533
     rule: '{ai,oi} > i:[+long] / _#'
@@ -10489,7 +10489,7 @@ sections:
   - rule_id: Old-Irish-—-l,hl-l,hr-lp,s,n-rp,s-ln
     source: index_diachronica.html:5555
     rule: '{l,h}l {l,h}r l{p,s,n} r{p,s} ln > l:[+long] r:[+long] l:[+long] r:[+long]
-      (l:[+long]?) / []_'
+      l:[+long] / []_'
   - rule_id: Old-Irish-—-Cː
     source: index_diachronica.html:5556
     rule: C:[+long] > C:[-long]

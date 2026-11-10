@@ -672,3 +672,18 @@ rules:
                   content: "{C,-j,-ɕ,-ʑ} → Cʲ / _E"
                   reason: |
                           C → Cʲ / _E ! /j ɕ ʑ
+        - rule:
+                  id: Old-Irish-p-t-k-kʷ-b-d-ɡ-∅
+                  content: "p t k kʷ b d ɡ ∅ → b d ɡ ɡʷ mb nd ŋɡ n / #_”V"
+                  reason: |
+                          p t k kʷ b d ɡ ∅ → b d ɡ ɡʷ mb nd ŋɡ n / n#_”V
+        - rule:
+                  id: Old-Irish-—-o
+                  content: "o → a / _(C…)#, _u#"
+                  reason: |
+                          o → a / _{(C…),u}#
+        - rule:
+                  id: Old-Irish-—-l,hl-l,hr-lp,s,n-rp,s-ln
+                  content: "{l,h}l {l,h}r l{p,s,n} r{p,s} ln → lː rː lː rː lː / [anything]_"
+                  reason: |
+                          {l,h}l {l,h}r l{p,s,n} r{p,s} ln → lː rː lː rː (lː?) / [anything]_

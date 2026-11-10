@@ -6,15 +6,15 @@
 - Rows: **9587** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9282** (96.8%)
-- Fail: **257** (2.7%)
+- OK: **9285** (96.8%)
+- Fail: **254** (2.6%)
 - Skipped: **48** (0.5%)
 
 
 ## Corrections
 
-OK: **135/136**
-Fail: **1/136**
+OK: **138/139**
+Fail: **1/139**
 
 ### Failed corrections
 
@@ -33,14 +33,14 @@ Fail: **1/136**
 |------:|---------------|
 | 56 | `expected_underscore` |
 | 45 | `syntax_other` |
-| 34 | `expected_ipa` |
+| 33 | `expected_ipa` |
 | 24 | `unknown_character` |
-| 18 | `missing_slash_output_env` |
+| 17 | `missing_slash_output_env` |
 | 14 | `nested_brackets` |
 | 10 | `unknown_feature` |
 | 10 | `expected_number` |
-| 9 | `segments_before_word` |
 | 9 | `empty_io_panic` |
+| 8 | `segments_before_word` |
 | 7 | `prose_or_expected_arrow` |
 | 5 | `stuff_after_word_bound` |
 | 3 | `panic_other` |
@@ -213,7 +213,7 @@ Fail: **1/136**
 
 | count | error_token |
 |------:|-------------|
-| 9 | `(` |
+| 8 | `(` |
 | 4 | `{` |
 | 4 | `∅` |
 | 3 | `*` |
@@ -245,7 +245,7 @@ Fail: **1/136**
 | count | error_token |
 |------:|-------------|
 | 7 | `)` |
-| 5 | `(` |
+| 4 | `(` |
 | 3 | `ʲ` |
 | 1 | `*` |
 | 1 | `#` |
@@ -287,7 +287,7 @@ Fail: **1/136**
 
 | count | description |
 |------:|-------------|
-| 9 | `Cannot have segments before the beginning of a word` |
+| 8 | `Cannot have segments before the beginning of a word` |
 
 ### stuff_after_word_bound (error_token)
 

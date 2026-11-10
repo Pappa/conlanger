@@ -23375,7 +23375,7 @@ sections:
     stages:
     - p t k kʷ b d ɡ ∅
     - b d ɡ ɡʷ mb nd ŋɡ n
-    env: n#_V:[+stress]
+    env: '#_V:[+stress]'
   - rule_id: Old-Irish-oː
     source: index_diachronica.html:5526
     raw: oː → uː / _(C…)#
@@ -23418,7 +23418,7 @@ sections:
     stages:
     - o
     - a
-    env: _{(C…),u}#
+    env: _(C…)#, _u#
   - rule_id: Old-Irish-—-ai,oi
     source: index_diachronica.html:5533
     raw: — {ai,oi} → iː / _#
@@ -23552,7 +23552,7 @@ sections:
     raw: — {l,h}l {l,h}r l{p,s,n} r{p,s} ln → lː rː lː rː (lː?) / [anything]_
     stages:
     - '{l,h}l {l,h}r l{p,s,n} r{p,s} ln'
-    - lː rː lː rː (lː?)
+    - lː rː lː rː lː
     env: '[]_'
   - rule_id: Old-Irish-—-Cː
     source: index_diachronica.html:5556
