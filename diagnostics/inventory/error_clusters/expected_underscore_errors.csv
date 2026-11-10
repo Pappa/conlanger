@@ -1,6 +1,4 @@
 section_index,rule_id,error_token,rule
-17.7.2.1.12,Southern-Middle-English-e,,"e > ∅ / if another e one syllable previous | ^ @ Rule 1, Line 1"
-17.7.3.1,Old-Norse-a_4,/,"a > u / $u / // #<(..)_(..)> | ^ @ Rule 1, Line 1"
 17.11.1,Polish-Cʲ,}:,"C:[+cor,+dist] > C / :{_C:[+cor,+anterior,+dist] with developments of yers, ablaut environments}: | ^^ @ Rule 1, Line 1"
 17.11.1,Polish-ɕr̝-ʑr̝,",","ɕʐ ʑʐ > ʂr ʐr / , respectively | ^ @ Rule 1, Line 1"
 17.11.1,Polish-trk,,"trk > kr / in the name of the river | ^ @ Rule 1, Line 1"

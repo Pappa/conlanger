@@ -11699,7 +11699,8 @@ sections:
     rule: '{e,ɑ,o} > ə / _#'
   - rule_id: Southern-Middle-English-e
     source: index_diachronica.html:6006
-    rule: e > ∅ / if another e one syllable previous
+    status: skipped
+    rule: "#\te → ∅ / if another /e/ one syllable previous"
 - section: Middle English to Yola
   index: 17.7.2.1.13
   rules:
@@ -12168,7 +12169,8 @@ sections:
     rule: a > ∅ / CC_%#
   - rule_id: Old-Norse-a_4
     source: index_diachronica.html:6204
-    rule: 'a > u / $u / // #<(..)_(..)>'
+    status: skipped
+    rule: "#\ta → u / %u / ! in #U"
   - rule_id: Old-Norse-waː-naː
     source: index_diachronica.html:6205
     rule: 'wa:[+long] na:[+long] > o:[+long] no:[+long] / #<(..)_(..)>'
@@ -12540,8 +12542,8 @@ sections:
     rule: ø ø:[+long] > e æ:[+long]
   - rule_id: Old-Norse-eːB,iː
     source: index_diachronica.html:6327
-    rule: '{eV:[+back],ei,ei:[+long],e:[+long]V:[+back],e:[+long]{i,i:[+long]}} >
-      {eu,e:[+long]u} / {v,w}_'
+    status: skipped
+    rule: "#\te(ː){B,i(ː)} → e(ː)u / {v,w}_"
   - rule_id: Old-Norse-eːBː,iː
     source: index_diachronica.html:6328
     rule: e:[+long]{V:[+back, +long],i,i:[+long]} > jo:[+long] / _C:[+cor,+anterior,-dist]#
@@ -13177,7 +13179,7 @@ sections:
     rule: 'h > ∅ / #_'
   - rule_id: Vandalic-eː
     source: index_diachronica.html:6541
-    rule: eː:[-stress] > i / _
+    rule: e:[+long, -stress] > i
   - rule_id: Vandalic-e
     source: index_diachronica.html:6542
     rule: e > i // {w,r,h}_

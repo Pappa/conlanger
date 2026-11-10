@@ -294,3 +294,9 @@ skip_rules:
     reason: "Unsure how to represent"
   - id: Southern-Middle-English-Vː_2
     reason: "Unsure how to represent"
+  - id: Southern-Middle-English-e
+    reason: "Unsure how to represent"
+  - id: Old-Norse-a_4
+    reason: "Unsure how to represent"
+  - id: Old-Norse-eːB,iː
+    reason: "Unsure how to represent"

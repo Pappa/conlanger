@@ -45,3 +45,7 @@ section_index,rule_id,alt_idx,step_idx,source,ok,timestamp
 17.7.2.1.8,Northern-Middle-English-Vː_2,,,index_diachronica.html:5870,SKIPPED,2026-11-10T22:15:05Z
 17.7.2.1.12,Southern-Middle-English-ɑ-e-o,,,index_diachronica.html:5998,SKIPPED,2026-11-10T22:15:05Z
 17.7.2.1.12,Southern-Middle-English-Vː_2,,,index_diachronica.html:6000,SKIPPED,2026-11-10T22:15:05Z
+17.7.2.1.12,Southern-Middle-English-e,,,index_diachronica.html:6006,SKIPPED,2026-11-10T22:24:47Z
+17.7.3.1,Old-Norse-a_4,,,index_diachronica.html:6204,SKIPPED,2026-11-10T22:24:47Z
+17.7.3.1,"Old-Norse-eːB,iː",,,index_diachronica.html:6327,SKIPPED,2026-11-10T22:24:47Z
+17.7.4,Vandalic-eː,,,index_diachronica.html:6541,OK,2026-11-10T22:24:47Z

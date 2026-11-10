@@ -26233,10 +26233,9 @@ sections:
   - rule_id: Southern-Middle-English-e
     source: index_diachronica.html:6006
     raw: e → ∅ / if another /e/ one syllable previous
-    stages:
-    - e
-    - ∅
-    env: if another /e/ one syllable previous
+    stages: []
+    comment: Unsure how to represent
+    status: skipped
 - section: Middle English to Yola
   index: 17.7.2.1.13
   citation: Pogostick Man and Marcas Brian MacStiofáin Ó Mhaitiú Ó Domhnaill, the
@@ -27340,11 +27339,9 @@ sections:
   - rule_id: Old-Norse-a_4
     source: index_diachronica.html:6204
     raw: 'a → u / %u / ! in #U'
-    stages:
-    - a
-    - u
-    env: '%u /'
-    exception: '#U'
+    stages: []
+    comment: Unsure how to represent
+    status: skipped
   - rule_id: Old-Norse-waː-naː
     source: index_diachronica.html:6205
     raw: 'waː naː → oː noː / %u in #U'
@@ -28190,10 +28187,9 @@ sections:
   - rule_id: Old-Norse-eːB,iː
     source: index_diachronica.html:6327
     raw: e(ː){B,i(ː)} → e(ː)u / {v,w}_
-    stages:
-    - e(ː){B,i(ː)}
-    - e(ː)u
-    env: '{v,w}_'
+    stages: []
+    comment: Unsure how to represent
+    status: skipped
   - rule_id: Old-Norse-eːBː,iː
     source: index_diachronica.html:6328
     raw: eː{Bː,i(ː)} → joː / _C[+ alveolar]#
@@ -29549,9 +29545,8 @@ sections:
     source: index_diachronica.html:6541
     raw: eː → i / unstressed
     stages:
-    - eː:[-stress]
+    - e[+long, -stress]
     - i
-    env: '[-stress]'
   - rule_id: Vandalic-e
     source: index_diachronica.html:6542
     raw: e → i / ! {w,r,h}_

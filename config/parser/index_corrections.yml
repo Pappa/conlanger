@@ -687,3 +687,8 @@ rules:
                   content: "{l,h}l {l,h}r l{p,s,n} r{p,s} ln → lː rː lː rː lː / [anything]_"
                   reason: |
                           {l,h}l {l,h}r l{p,s,n} r{p,s} ln → lː rː lː rː (lː?) / [anything]_
+        - rule:
+                  id: Vandalic-eː
+                  content: "e[+long, -stress] → i"
+                  reason: |
+                          eː → i / unstressed
