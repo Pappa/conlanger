@@ -338,13 +338,17 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.11.1,Proto-Slavic to Polish,Polish-ɛl,index_diachronica.html:7018, “in certain cases, ; “in certain cases
 17.11.1,Proto-Slavic to Polish,"Polish-—-ь,ъ",index_diachronica.html:7027, (?:/ )(iambic counting), ; sporadic ; \1
 17.11.1,Proto-Slavic to Polish,"Polish-—-ь,ъ_2",index_diachronica.html:7028, (?:/ )?(in even syllables), ; sporadic ; \1
+17.11.1,Proto-Slavic to Polish,Polish-a-ɛ-i-ɔ-u-ɨ-ã,index_diachronica.html:7041,[lost yer], ; [lost yer]
 17.11.1,Proto-Slavic to Polish,Polish-V,index_diachronica.html:7057, / unstressed, / [-stress]
 17.11.1,Proto-Slavic to Polish,Polish-Vː,index_diachronica.html:7066, (in certain frequently-used words), / sporadic ; \1
 17.11.1,Proto-Slavic to Polish,Polish-ɔ̃_2,index_diachronica.html:7088,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.11.1,Proto-Slavic to Polish,Polish-ɔ̃_2,index_diachronica.html:7088,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 17.11.1,Proto-Slavic to Polish,Polish-ɔ̃_2,index_diachronica.html:7088, (in some dialects, sporadic ; (in some dialects
+17.11.1,Proto-Slavic to Polish,Polish-Cʲ,index_diachronica.html:7096, with developments of yers, ; with developments of yers
 17.11.1,Proto-Slavic to Polish,Polish-Cʲ_2,index_diachronica.html:7097, (in select words), / sporadic ; \1
 17.11.1,Proto-Slavic to Polish,Polish-Cʲ_3,index_diachronica.html:7098, (in select words), / sporadic ; \1
+17.11.1,Proto-Slavic to Polish,Polish-ɕr̝-ʑr̝,index_diachronica.html:7129," / “‘szron’ and ‘żreć’”, respectively"," ; / “‘szron’ and ‘żreć’”, respectively"
+17.11.1,Proto-Slavic to Polish,Polish-trk,index_diachronica.html:7144, / (in the ), / sporadic ; \1
 17.12.1.1,Proto-Indo-European to Latin,Latin-aj,index_diachronica.html:7223,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.12.1.1,Proto-Indo-European to Latin,Latin-aj,index_diachronica.html:7223,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
 17.12.1.1,Proto-Indo-European to Latin,Latin-aw,index_diachronica.html:7226,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
@@ -370,6 +374,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.12.1.1.2,Latin to Catalan,Catalan-V_5,index_diachronica.html:7398, (“, ; (“
 17.12.1.1.2,Latin to Catalan,Catalan-ɛj-ɔj,index_diachronica.html:7447, / stressed, / [+stress]
 17.12.1.1.3,Latin to French,"French-—-m,n",index_diachronica.html:7460,# in polysyllables,# ; in polysyllables
+17.12.1.1.3,Latin to French,French-V,index_diachronica.html:7500, / (in the ), / sporadic ; \1
 17.12.1.1.3,Latin to French,French-V_2,index_diachronica.html:7501, / intertonic, / %[+str]_%[+str]
 17.12.1.1.3,Latin to French,French-a,index_diachronica.html:7502, / intertonic, / %[+str]_%[+str]
 17.12.1.1.3,Latin to French,French-o,index_diachronica.html:7552, “(, ; “(
@@ -468,7 +473,11 @@ section_index,section_name,rule_id,source,from_text,to_text
 29.1.1.1.27,Proto-Western Southern Athabaskan to Navajo,"Navajo-ɣ,h",index_diachronica.html:10237, / in prefixes related to, sporadic ; / in prefixes related to
 29.1.1.1.34,Tahltan-Kaska-Tagish to Kaska,Kaska-K,index_diachronica.html:10300,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 29.1.1.1.36,Tahltan-Kaska-Tagish to Tahltan,"Tahltan-TŠʷ,K",index_diachronica.html:10310,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
+29.1.1.1.37,Proto-Athabaskan to Tanacross,Tanacross-ʃ,index_diachronica.html:10323, / (in the ), / sporadic ; \1
+29.1.1.1.37,Proto-Athabaskan to Tanacross,Tanacross-ɬ,index_diachronica.html:10324, / (in the ), / sporadic ; \1
 29.1.1.1.38,Proto-Athabaskan to Lower Tanana,Lower-Tanana-Vˀ,index_diachronica.html:10333, (“, ; (“
+29.1.1.1.39,Proto-Athabaskan to Upper Tanana,Upper-Tanana-ʃ,index_diachronica.html:10346, / (in the ), / sporadic ; \1
+29.1.1.1.39,Proto-Athabaskan to Upper Tanana,Upper-Tanana-ɬ,index_diachronica.html:10347, / (in the ), / sporadic ; \1
 29.1.1.1.41,Proto-Athabaskan to Northern Tutchone,Northern-Tutchone-K,index_diachronica.html:10366,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 29.1.1.1.42,Proto-Athabaskan to Southern Tutchone,Southern-Tutchone-K,index_diachronica.html:10378,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 30.1.1.1,Proto-Bantu to Sebirwa,Sebirwa-i-u-VS,index_diachronica.html:10469,ATR,atr

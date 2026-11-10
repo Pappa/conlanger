@@ -32384,8 +32384,8 @@ sections:
     stages:
     - a ɛ i ɔ u ɨ ã
     - aː ɛː iː ɔː uː ɨː ãː
-    env: _{C/U}[+voice][lost yer]
-    comment: (i.e., a voiced consonant or a cluster with one)
+    env: _{C/U}[+voice]
+    comment: '[lost yer] (i.e., a voiced consonant or a cluster with one)'
   - rule_id: Polish-ajɛ
     source: index_diachronica.html:7042
     raw: ajɛ → ɛː in adjectives, aː in verbs
@@ -32761,7 +32761,8 @@ sections:
     stages:
     - Cʲ
     - C
-    env: _C[+cor,+anterior,+dist] with developments of yers in ablaut environments
+    env: _C[+cor,+anterior,+dist]
+    comment: with developments of yers in ablaut environments
   - rule_id: Polish-Cʲ_2
     source: index_diachronica.html:7097
     raw: Cʲ → C in select words due to prestige influence of Czech in the Middle Ages
@@ -32958,8 +32959,7 @@ sections:
     stages:
     - ɕr̝ ʑr̝
     - ʂr ʐr
-    env: ', respectively'
-    comment: “‘szron’ and ‘żreć’”
+    comment: / “‘szron’ and ‘żreć’”, respectively
   - rule_id: Polish-t_2
     source: index_diachronica.html:7130
     raw: t → ∅ / s_{ɫ,w}
@@ -33069,8 +33069,8 @@ sections:
     stages:
     - trk
     - kr
-    env: in the name of the river
-    comment: “Skrwa”
+    comment: in the name of the river “Skrwa”; sporadic
+    sporadic: true
   - rule_id: Polish-zdʲ-stʲ
     source: index_diachronica.html:7145
     raw: zdʲ stʲ → {ʑ,ɕ} {s,ɕ} / _n
@@ -35361,8 +35361,8 @@ sections:
     stages:
     - V
     - ∅
-    env: '%_'
-    comment: in the unstressed penult
+    comment: in the unstressed penult; sporadic
+    sporadic: true
   - rule_id: French-V_2
     source: index_diachronica.html:7501
     raw: V → ∅ / intertonic ! V = a
@@ -48641,17 +48641,16 @@ sections:
     stages:
     - ʃ
     - h
-    env:
-      position:
-        in: the
-    comment: “1sg subject prefix”
+    comment: in the “1sg subject prefix”; sporadic
+    sporadic: true
   - rule_id: Tanacross-ɬ
     source: index_diachronica.html:10324
     raw: ɬ → h / in the grammatical classifier
     stages:
     - ɬ
     - h
-    env: in the grammatical classifier
+    comment: in the grammatical classifier; sporadic
+    sporadic: true
   - rule_id: Tanacross-ɑ-ə-ʊ
     source: index_diachronica.html:10325
     raw: ɑ ə ʊ → {æ̆,ă} æ̆ ŏ
@@ -48754,17 +48753,16 @@ sections:
     stages:
     - ʃ
     - h
-    env:
-      position:
-        in: the
-    comment: “1sg subject prefix”
+    comment: in the “1sg subject prefix”; sporadic
+    sporadic: true
   - rule_id: Upper-Tanana-ɬ
     source: index_diachronica.html:10347
     raw: ɬ → h / in the grammatical classifier
     stages:
     - ɬ
     - h
-    env: in the grammatical classifier
+    comment: in the grammatical classifier; sporadic
+    sporadic: true
   - rule_id: Upper-Tanana-a,ɑ-e-i-u-ʊ
     source: index_diachronica.html:10348
     raw: '{a,ɑ} e i u ʊ → e(a) {i,ea} ju {a,ɨ} o'

@@ -14472,7 +14472,7 @@ sections:
   - rule_id: Polish-a-ɛ-i-ɔ-u-ɨ-ã
     source: index_diachronica.html:7041
     rule: a ɛ i ɔ u ɨ ã > a:[+long] ɛ:[+long] i:[+long] ɔ:[+long] u:[+long] ɨ:[+long]
-      ã:[+long] / _{C,%}[+voice, lost yer]
+      ã:[+long] / _{C,%}[+voice]
   - rule_id: Polish-ajɛ
     source: index_diachronica.html:7042
     rule: ajɛ > ɛ:[+long] in adjectives, a:[+long] in verbs
@@ -14630,8 +14630,7 @@ sections:
     rule: n > ŋ / _P:[-fr,+bk,+hi,-lo]
   - rule_id: Polish-Cʲ
     source: index_diachronica.html:7096
-    rule: 'C:[+cor,+dist] > C / :{_C:[+cor,+anterior,+dist] with developments of yers,
-      ablaut environments}:'
+    rule: C:[+cor,+dist] > C / _C:[+cor,+anterior,+dist]
   - rule_id: Polish-Cʲ_2
     source: index_diachronica.html:7097
     rule: C:[+cor,+dist] > C
@@ -14715,7 +14714,7 @@ sections:
     rule: ʐr > ʑr
   - rule_id: Polish-ɕr̝-ʑr̝
     source: index_diachronica.html:7129
-    rule: ɕʐ ʑʐ > ʂr ʐr / , respectively
+    rule: ɕʐ ʑʐ > ʂr ʐr
   - rule_id: Polish-t_2
     source: index_diachronica.html:7130
     rule: t > ∅ / s_{ɫ,w}
@@ -14760,7 +14759,7 @@ sections:
     rule: s > ∅ / _ɫza in
   - rule_id: Polish-trk
     source: index_diachronica.html:7144
-    rule: trk > kr / in the name of the river
+    rule: trk > kr
   - rule_id: Polish-zdʲ-stʲ
     source: index_diachronica.html:7145
     rule: zdʲ stʲ > {ʑ,ɕ} {s,ɕ} / _n
@@ -15821,7 +15820,7 @@ sections:
     rule: nk > ɲ / _t
   - rule_id: French-V
     source: index_diachronica.html:7500
-    rule: V > ∅ / $_
+    rule: V > ∅
   - rule_id: French-V_2
     source: index_diachronica.html:7501
     rule: '{V,-a} > ∅ / $[+str]_$[+str]'

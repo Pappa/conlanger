@@ -209,6 +209,7 @@
     # TODO: handle these properly
     - " / (when stem-final)"
     - " / (when-stem final)"
+    - " / (in the )"
   to: " / sporadic ; \\1"
   use_regex: True
   reason: sporadic environment
@@ -346,6 +347,9 @@
     - " or when preceding"
     - " in the stem"
     - " when in onset position"
+    - " with developments of yers"
+    - "[lost yer]"
+    - " / “‘szron’ and ‘żreć’”, respectively"
   comment: true
 - from: "#, though "
   to: "# ; though "
