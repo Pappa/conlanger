@@ -2446,10 +2446,10 @@ sections:
     rule: V:[+long] > V:[-long] / {CC,CCG}_C{V,#}
   - rule_id: Menominee-V_2
     source: index_diachronica.html:1955
-    rule: 'V > V:[+long] / :{_CC, even syllables}:'
+    rule: V > V:[+long] / _CC
   - rule_id: Menominee-Vː_2
     source: index_diachronica.html:1956
-    rule: 'V:[+long] > V:[-long] / :{_C{V,#}, even syllables}:'
+    rule: V:[+long] > V:[-long] / _C{V,#}
   - rule_id: Menominee-eː-i
     source: index_diachronica.html:1957
     rule: '{e,e:[+long]} i > {æ,æ:[+long]} e'
@@ -20595,7 +20595,7 @@ sections:
   rules:
   - rule_id: "AwÅ\x8Btim-iC-aC-uC"
     source: index_diachronica.html:9420
-    rule: 'iC aC uC > Cj Ca Cw / #_ // V_V'
+    rule: 'iC aC uC > Cj Ca Cw / #_'
   - rule_id: "AwÅ\x8Btim-u-i"
     source: index_diachronica.html:9421
     rule: u i > w j / a_ when this a is a result of the preceding metathesis

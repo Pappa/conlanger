@@ -11,10 +11,6 @@ from conlanger.utils.gloss import extract_uncertainty_qualifier_from_field
 
 _DOUBLE_SLASH_SEP = " // "
 
-_BEFORE_IDENTICAL_VOWEL_RE = re.compile(
-    r"^before\s+an?\s+identical\s+vowel\s*$",
-    re.IGNORECASE,
-)
 _DIALECT_NAME_RE = re.compile(r"^[A-Z][a-zA-Z]+$")
 _TYPICALLY_SUFFIX_RE = re.compile(r",\s*typically\s*$", re.IGNORECASE)
 _ODD_SYLLABLES_RE = re.compile(r"^(?:in\s+)?odd\s+syllables?\s*$", re.IGNORECASE)
@@ -89,9 +85,6 @@ def normalize_prose_exception_or_env_tail(
         captures.extend(pos_captures)
         flags.update(pos_flags)
         return IndexContext(context=normalized), captures, flags
-
-    if _BEFORE_IDENTICAL_VOWEL_RE.match(stripped):
-        return IndexContext(context="V_V"), [stripped], flags
 
     if _PENULT_RE.match(stripped):
         return IndexContext(position={"penult": True}), [stripped], flags

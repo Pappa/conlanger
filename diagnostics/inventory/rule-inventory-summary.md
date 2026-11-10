@@ -6,8 +6,8 @@
 - Rows: **9587** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9280** (96.8%)
-- Fail: **259** (2.7%)
+- OK: **9282** (96.8%)
+- Fail: **257** (2.7%)
 - Skipped: **48** (0.5%)
 
 
@@ -22,8 +22,8 @@ Fail: **1/136**
 
 ## Sections
 
-- All OK: **522 / 660** (79.1%)
-- Some OK: **137 / 660** (20.8%)
+- All OK: **523 / 660** (79.2%)
+- Some OK: **136 / 660** (20.6%)
 - None OK: **1 / 660** (0.2%)
 - Sections skipped: **0 / 660** (0.0%)
 
@@ -31,7 +31,7 @@ Fail: **1/136**
 
 | count | failure_class |
 |------:|---------------|
-| 58 | `expected_underscore` |
+| 56 | `expected_underscore` |
 | 45 | `syntax_other` |
 | 34 | `expected_ipa` |
 | 24 | `unknown_character` |
@@ -134,7 +134,7 @@ Fail: **1/136**
 
 | count | error_token |
 |------:|-------------|
-| 20 | `}:` |
+| 18 | `}:` |
 | 17 | `,` |
 | 2 | `/` |
 | 2 | `:` |

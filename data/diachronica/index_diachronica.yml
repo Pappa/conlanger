@@ -5486,7 +5486,9 @@ sections:
     stages:
     - V
     - Vː
-    env: _CC in even syllables
+    env: _CC
+    comment: sporadic ; in even syllables
+    sporadic: true
   - rule_id: Menominee-Vː_2
     source: index_diachronica.html:1956
     raw: Vː → V[-long] / _C{V,#} in even syllables; “does not apply in the second
@@ -5494,8 +5496,10 @@ sections:
     stages:
     - Vː
     - V[-long]
-    env: _C{V,#} in even syllables
-    comment: “does not apply in the second syllable of a non-glottal word”
+    env: _C{V,#}
+    comment: sporadic ; in even syllables; “does not apply in the second syllable
+      of a non-glottal word”
+    sporadic: true
   - rule_id: Menominee-eː-i
     source: index_diachronica.html:1957
     raw: e(ː) i → æ(ː) e
@@ -21197,7 +21201,7 @@ sections:
     - V
     - Vː
     env: U:[+stress][+lo]
-    comment: U:[+stress][+lo]
+    comment: U:[+stress][+open]
   - rule_id: Palaic-e
     source: index_diachronica.html:5162
     raw: e → i / pretonic
@@ -21212,7 +21216,7 @@ sections:
     stages:
     - e
     - a
-    comment: posttonic in U[+lo]; sporadic
+    comment: posttonic in U[+open]; sporadic
     sporadic: true
   - rule_id: Palaic-oː
     source: index_diachronica.html:5164
@@ -45236,8 +45240,7 @@ sections:
     - iC aC uC
     - Cj Ca Cw
     env: '#_'
-    exception: V_V
-    comment: before an identical vowel
+    comment: '! before an identical vowel'
   - rule_id: "AwÅ\x8Btim-u-i"
     source: index_diachronica.html:9421
     raw: u i → w j / a_ when this a is a result of the preceding metathesis
@@ -55611,7 +55614,7 @@ sections:
     - yʔ
     - ioʔ
     - iʊʔ
-    comment: dialectal / {∅,C[+laryngeal]}_, in -k-types
+    comment: dialectal / {∅,C[+guttural]}_, in -k-types
   - rule_id: Guānhuà-yʔ_5
     source: index_diachronica.html:11860
     raw: yʔ → {ɥʔ,yʔ,uʔ} / C̣, in -juət-types
@@ -66882,8 +66885,8 @@ sections:
     stages:
     - S[+tense]
     - S[- voice]ː
-    comment: (specifically, the source lists t[+tense] k[+tense] → t(ː) k(ː), both
-      of the tokens with optional length suffixes and *aTa → 〈atta〉, so I’m extrapolating)
+    comment: (specifically, the source lists t[+ fortis] k[+ fortis] → t(ː) k(ː),
+      both of the tokens with optional length suffixes and *aTa → 〈atta〉, so I’m extrapolating)
   - rule_id: Aquitanian-n+-fortis
     source: index_diachronica.html:14095
     raw: n[+ fortis] → n(ː) / V_V

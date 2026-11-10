@@ -224,7 +224,7 @@
     - ", (in disyllables)"
     - ", (in monosyllables)"
     - ", (in polysyllables)"
-    - " (?:/ )(in even syllables)"
+    - " (?:/ )?(in even syllables)"
     - " (?:/ )(iambic counting)"
   to: " ; sporadic ; \\1"
   use_regex: True
@@ -341,6 +341,7 @@
     - " (seems to "
     - " (this second one"
     - " (Marathi)"
+    - " ! before an identical vowel"
   comment: true
 - from: "#, though "
   to: "# ; though "

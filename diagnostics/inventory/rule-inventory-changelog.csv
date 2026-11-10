@@ -22,3 +22,5 @@ section_index,rule_id,alt_idx,step_idx,source,ok,timestamp
 17.11.1,Polish-C,,,index_diachronica.html:7022,OK,2026-11-07T18:26:29Z
 17.11.1,Polish-ɛl,,,index_diachronica.html:7018,OK,2026-11-07T18:30:31Z
 17.11.1,"Polish-—-ь,ъ",,,index_diachronica.html:7027,OK,2026-11-07T18:30:31Z
+7.12,Menominee-V_2,,,index_diachronica.html:1955,OK,2026-11-10T20:20:45Z
+7.12,Menominee-Vː_2,,,index_diachronica.html:1956,OK,2026-11-10T20:20:45Z

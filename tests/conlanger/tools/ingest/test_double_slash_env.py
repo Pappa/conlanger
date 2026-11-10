@@ -67,17 +67,6 @@ from conlanger.ingest.utils.index_context_position import (
         ),
         (
             {
-                "env": "#_",
-                "exception": "before an identical vowel",
-            },
-            {
-                "env": "#_",
-                "exception": "V_V",
-                "comment": "before an identical vowel",
-            },
-        ),
-        (
-            {
                 "env": "maybe",
                 "exception": "_#?",
             },
