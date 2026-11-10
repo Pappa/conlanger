@@ -10922,8 +10922,7 @@ sections:
   rules:
   - rule_id: Kentish-Middle-English-Vː
     source: index_diachronica.html:5727
-    rule: 'V:[+long] > V:[-long] / _C{V:[+long],C} // :{_st{#,V} or when preceding
-      a cluster which had triggered a vowel to become long, Old V:[+front]nglish}:'
+    rule: V:[+long] > V:[-long] / _C{V:[+long],C} // _st{#,V}
   - rule_id: Kentish-Middle-English-eɑ-eːɑ-eo-eːo
     source: index_diachronica.html:5728
     rule: eɑ e:[+long]ɑ eo e:[+long]o > ɑ ɛ:[+long] e e:[+long]
@@ -10958,8 +10957,7 @@ sections:
     rule: ɑ:[+long] {y,y:[+long]} > ɔ:[+long] {e,e:[+long]}
   - rule_id: Kentish-Middle-English-ɑ-e-o
     source: index_diachronica.html:5738
-    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / <(..)_(..)>:[+lo] // :{in #% with
-      the following % containing i:[+long] or ending, one of /m n r l/}:'
+    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / <(..)_(..)>:[+lo] // #%'
   - rule_id: Kentish-Middle-English-Vː_2
     source: index_diachronica.html:5740
     rule: 'V:[+long] > V:[-long] / in #% before a % with i:[+long]'
@@ -10982,8 +10980,7 @@ sections:
   rules:
   - rule_id: Midlands-Middle-English-Vː
     source: index_diachronica.html:5749
-    rule: 'V:[+long] > V:[-long] / _C{V:[+long],C} // :{_st{#,V} or when preceding
-      a cluster which had triggered a vowel to become long, Old V:[+front]nglish}:'
+    rule: V:[+long] > V:[-long] / _C{V:[+long],C} // _st{#,V}
   - rule_id: Midlands-Middle-English-eɑ-eːɑ-eo-eːo
     source: index_diachronica.html:5750
     rule: eɑ e:[+long]ɑ eo e:[+long]o > ɑ ɛ:[+long] e e:[+long]
@@ -11018,8 +11015,7 @@ sections:
     rule: ɑ:[+long] {y,y:[+long]} > ɔ:[+long] {i,i:[+long]}
   - rule_id: Midlands-Middle-English-ɑ-e-o
     source: index_diachronica.html:5760
-    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / <(..)_(..)>:[+lo] // :{in #% with
-      the following % containing i:[+long] or ending, one of /m n r l/}:'
+    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / <(..)_(..)>:[+lo] // #%'
   - rule_id: Midlands-Middle-English-Vː_2
     source: index_diachronica.html:5761
     rule: 'V:[+long] > V:[-long] / in #% before a % with i:[+long]'
@@ -11278,8 +11274,7 @@ sections:
   rules:
   - rule_id: Northern-Middle-English-Vː
     source: index_diachronica.html:5857
-    rule: 'V:[+long] > V:[-long] / _C{V:[+long],C} // :{_st{#,V} or when preceding
-      a cluster which had triggered a vowel to become long, Old V:[+front]nglish}:'
+    rule: V:[+long] > V:[-long] / _C{V:[+long],C} // _st{#,V}
   - rule_id: Northern-Middle-English-eɑ-eːɑ-eo-eːo
     source: index_diachronica.html:5858
     rule: eɑ e:[+long]ɑ eo e:[+long]o > ɑ ɛ:[+long] e e:[+long]
@@ -11311,8 +11306,7 @@ sections:
     rule: '{ɑ:[+long]ht,oht,o:[+long]ht} > ow'
   - rule_id: Northern-Middle-English-ɑ-e-o
     source: index_diachronica.html:5868
-    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / <(..)_(..)>:[+lo] // :{in #% with
-      the following % containing i:[+long] or ending, one of /m n r l/}:'
+    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / <(..)_(..)>:[+lo] // #%'
   - rule_id: Northern-Middle-English-yː
     source: index_diachronica.html:5869
     rule: '{y,y:[+long]} > {i,i:[+long]}'
@@ -11632,8 +11626,7 @@ sections:
   rules:
   - rule_id: Southern-Middle-English-Vː
     source: index_diachronica.html:5987
-    rule: 'V:[+long] > V:[-long] / _C{V:[+long],C} // :{_st{#,V} or when preceding
-      a cluster which had triggered a vowel to become long, Old V:[+front]nglish}:'
+    rule: V:[+long] > V:[-long] / _C{V:[+long],C} // _st{#,V}
   - rule_id: Southern-Middle-English-eɑ-eːɑ-eo-eːo
     source: index_diachronica.html:5988
     rule: eɑ e:[+long]ɑ eo e:[+long]o > ɑ ɛ:[+long] e e:[+long]
@@ -11668,8 +11661,7 @@ sections:
     rule: ɑ:[+long] > ɔ:[+long]
   - rule_id: Southern-Middle-English-ɑ-e-o
     source: index_diachronica.html:5998
-    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / <(..)_(..)>:[+lo] // :{in #% with
-      the following % containing i:[+long] or ending, one of /m n r l/}:'
+    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / <(..)_(..)>:[+lo] // #%'
   - rule_id: Southern-Middle-English-yː
     source: index_diachronica.html:5999
     rule: '{y,y:[+long]} > {i,i:[+long]}'

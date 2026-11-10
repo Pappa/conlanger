@@ -24533,9 +24533,9 @@ sections:
     - Vː
     - V[-long]
     env: _C{ː,C}
-    exception: _st{#,V} or when preceding a cluster which had triggered a vowel to
-      become long in Old English
-    comment: the book gives “Christ” vs. “Christmas” as an example
+    exception: _st{#,V}
+    comment: or when preceding a cluster which had triggered a vowel to become long
+      in Old English; the book gives “Christ” vs. “Christmas” as an example
   - rule_id: Kentish-Middle-English-eɑ-eːɑ-eo-eːo
     source: index_diachronica.html:5728
     raw: eɑ eːɑ eo eːo → ɑ ɛː e eː
@@ -24608,8 +24608,8 @@ sections:
     env:
       position:
         in: U[+lo]
-    exception: 'in #U with the following U containing /iː/ or ending in one of /m
-      n r l/'
+    exception: '#U'
+    comment: with the following U containing /iː/ or ending in one of /m n r l/
   - rule_id: Kentish-Middle-English-Vː_2
     source: index_diachronica.html:5740
     raw: 'Vː → V[-long] / in #U before a U with /iː/'
@@ -24662,9 +24662,9 @@ sections:
     - Vː
     - V[-long]
     env: _C{ː,C}
-    exception: _st{#,V} or when preceding a cluster which had triggered a vowel to
-      become long in Old English
-    comment: the book gives “Christ” vs. “Christmas” as an example
+    exception: _st{#,V}
+    comment: or when preceding a cluster which had triggered a vowel to become long
+      in Old English; the book gives “Christ” vs. “Christmas” as an example
   - rule_id: Midlands-Middle-English-eɑ-eːɑ-eo-eːo
     source: index_diachronica.html:5750
     raw: eɑ eːɑ eo eːo → ɑ ɛː e eː
@@ -24737,8 +24737,8 @@ sections:
     env:
       position:
         in: U[+lo]
-    exception: 'in #U with the following U containing /iː/ or ending in one of /m
-      n r l/'
+    exception: '#U'
+    comment: with the following U containing /iː/ or ending in one of /m n r l/
   - rule_id: Midlands-Middle-English-Vː_2
     source: index_diachronica.html:5761
     raw: 'Vː → V[-long] / in #U before a U with /iː/'
@@ -25318,9 +25318,9 @@ sections:
     - Vː
     - V[-long]
     env: _C{ː,C}
-    exception: _st{#,V} or when preceding a cluster which had triggered a vowel to
-      become long in Old English
-    comment: the book gives “Christ” vs. “Christmas” as an example
+    exception: _st{#,V}
+    comment: or when preceding a cluster which had triggered a vowel to become long
+      in Old English; the book gives “Christ” vs. “Christmas” as an example
   - rule_id: Northern-Middle-English-eɑ-eːɑ-eo-eːo
     source: index_diachronica.html:5858
     raw: eɑ eːɑ eo eːo → ɑ ɛː e eː
@@ -25387,8 +25387,8 @@ sections:
     env:
       position:
         in: U[+lo]
-    exception: 'in #U with the following U containing /iː/ or ending in one of /m
-      n r l/'
+    exception: '#U'
+    comment: with the following U containing /iː/ or ending in one of /m n r l/
   - rule_id: Northern-Middle-English-yː
     source: index_diachronica.html:5869
     raw: y(ː) → i(ː)
@@ -26127,9 +26127,9 @@ sections:
     - Vː
     - V[-long]
     env: _C{ː,C}
-    exception: _st{#,V} or when preceding a cluster which had triggered a vowel to
-      become long in Old English
-    comment: the book gives “Christ” vs. “Christmas” as an example
+    exception: _st{#,V}
+    comment: or when preceding a cluster which had triggered a vowel to become long
+      in Old English; the book gives “Christ” vs. “Christmas” as an example
   - rule_id: Southern-Middle-English-eɑ-eːɑ-eo-eːo
     source: index_diachronica.html:5988
     raw: eɑ eːɑ eo eːo → ɑ ɛː e eː
@@ -26202,8 +26202,8 @@ sections:
     env:
       position:
         in: U[+lo]
-    exception: 'in #U with the following U containing /iː/ or ending in one of /m
-      n r l/'
+    exception: '#U'
+    comment: with the following U containing /iː/ or ending in one of /m n r l/
   - rule_id: Southern-Middle-English-yː
     source: index_diachronica.html:5999
     raw: y(ː) → i(ː)

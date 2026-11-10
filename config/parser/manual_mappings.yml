@@ -342,6 +342,8 @@
     - " (this second one"
     - " (Marathi)"
     - " ! before an identical vowel"
+    - " or when preceding"
+    - " with the following"
   comment: true
 - from: "#, though "
   to: "# ; though "
