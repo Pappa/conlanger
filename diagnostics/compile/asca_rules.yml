@@ -10794,7 +10794,7 @@ sections:
     rule: iji > i:[+long] / %[- stress](C,0)_
   - rule_id: Gothic-iji_2
     source: index_diachronica.html:5671
-    rule: 'iji > i:[+long] / :{<(..)_(..)>:[+ long +hi]_, the stem}:'
+    rule: iji > i:[+long] / %[+ long +hi]_
   - rule_id: Gothic-i
     source: index_diachronica.html:5672
     rule: i > ∅ / _ji
@@ -10957,10 +10957,13 @@ sections:
     rule: ɑ:[+long] {y,y:[+long]} > ɔ:[+long] {e,e:[+long]}
   - rule_id: Kentish-Middle-English-ɑ-e-o
     source: index_diachronica.html:5738
-    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / <(..)_(..)>:[+lo] // #%'
+    status: skipped
+    rule: "#\tɑ e o → ɑː ɛː oː / in U[+open] ! in #U with the following U containing\
+      \ /iː/ or ending in one of /m n r l/"
   - rule_id: Kentish-Middle-English-Vː_2
     source: index_diachronica.html:5740
-    rule: 'V:[+long] > V:[-long] / in #% before a % with i:[+long]'
+    status: skipped
+    rule: "#\tVː → V[-long] / in #U before a U with /iː/"
   - rule_id: Kentish-Middle-English-m
     source: index_diachronica.html:5741
     steps:
@@ -11015,10 +11018,13 @@ sections:
     rule: ɑ:[+long] {y,y:[+long]} > ɔ:[+long] {i,i:[+long]}
   - rule_id: Midlands-Middle-English-ɑ-e-o
     source: index_diachronica.html:5760
-    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / <(..)_(..)>:[+lo] // #%'
+    status: skipped
+    rule: "#\tɑ e o → ɑː ɛː oː / in U[+open] ! in #U with the following U containing\
+      \ /iː/ or ending in one of /m n r l/"
   - rule_id: Midlands-Middle-English-Vː_2
     source: index_diachronica.html:5761
-    rule: 'V:[+long] > V:[-long] / in #% before a % with i:[+long]'
+    status: skipped
+    rule: "#\tVː → V[-long] / in #U before a U with /iː/"
   - rule_id: Midlands-Middle-English-m
     source: index_diachronica.html:5762
     steps:
@@ -11119,7 +11125,7 @@ sections:
     rule: æ > ɛ / _ɹ
   - rule_id: American-English-j
     source: index_diachronica.html:5798
-    rule: 'j > ∅ / :{{θ,s,z,l,n,t,d}_ when, onset position}:'
+    rule: j > ∅ / {θ,s,z,l,n,t,d}_
   - rule_id: American-English-ɒ_2
     source: index_diachronica.html:5799
     rule: ɒ > ɔ / _C:[-front,+back,+hi,-lo]

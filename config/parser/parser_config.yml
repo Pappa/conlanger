@@ -278,3 +278,11 @@ skip_rules:
     reason: "Unsure how to represent"
   - id: Old-Irish-C…C
     reason: "Unsure how to represent"
+  - id: Kentish-Middle-English-ɑ-e-o
+    reason: "Unsure how to represent"
+  - id: Kentish-Middle-English-Vː_2
+    reason: "Unsure how to represent"
+  - id: Midlands-Middle-English-ɑ-e-o
+    reason: "Unsure how to represent"
+  - id: Midlands-Middle-English-Vː_2
+    reason: "Unsure how to represent"

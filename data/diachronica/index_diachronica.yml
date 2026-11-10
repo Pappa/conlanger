@@ -2853,7 +2853,7 @@ sections:
     stages:
     - s
     - ʃ
-    comment: if ʃ is somewhere in the stem after it; sporadic
+    comment: if ʃ is somewhere ; in the stem after it; sporadic
     sporadic: true
   - rule_id: Moroccan-Arabic-z
     source: index_diachronica.html:1484
@@ -2861,7 +2861,7 @@ sections:
     stages:
     - z
     - ʒ
-    comment: if ʒ is somewhere in the stem after it; sporadic
+    comment: if ʒ is somewhere ; in the stem after it; sporadic
     sporadic: true
 - section: Classical Arabic to Sa‘idi Arabic
   index: 6.2.2.1.15
@@ -24229,7 +24229,8 @@ sections:
     stages:
     - iji
     - iː
-    env: U[+ long +hi]_ in the stem
+    env: U[+ long +hi]_
+    comment: in the stem
   - rule_id: Gothic-i
     source: index_diachronica.html:5672
     raw: i → ∅ / _ji
@@ -24602,21 +24603,15 @@ sections:
     source: index_diachronica.html:5738
     raw: 'ɑ e o → ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/
       or ending in one of /m n r l/'
-    stages:
-    - ɑ e o
-    - ɑː ɛː oː
-    env:
-      position:
-        in: U[+lo]
-    exception: '#U'
-    comment: with the following U containing /iː/ or ending in one of /m n r l/
+    stages: []
+    comment: Unsure how to represent
+    status: skipped
   - rule_id: Kentish-Middle-English-Vː_2
     source: index_diachronica.html:5740
     raw: 'Vː → V[-long] / in #U before a U with /iː/'
-    stages:
-    - Vː
-    - V[-long]
-    env: 'in #U before a U with /iː/'
+    stages: []
+    comment: Unsure how to represent
+    status: skipped
   - rule_id: Kentish-Middle-English-m
     source: index_diachronica.html:5741
     raw: m → n → ∅ / _# when unstressed
@@ -24731,21 +24726,15 @@ sections:
     source: index_diachronica.html:5760
     raw: 'ɑ e o → ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/
       or ending in one of /m n r l/'
-    stages:
-    - ɑ e o
-    - ɑː ɛː oː
-    env:
-      position:
-        in: U[+lo]
-    exception: '#U'
-    comment: with the following U containing /iː/ or ending in one of /m n r l/
+    stages: []
+    comment: Unsure how to represent
+    status: skipped
   - rule_id: Midlands-Middle-English-Vː_2
     source: index_diachronica.html:5761
     raw: 'Vː → V[-long] / in #U before a U with /iː/'
-    stages:
-    - Vː
-    - V[-long]
-    env: 'in #U before a U with /iː/'
+    stages: []
+    comment: Unsure how to represent
+    status: skipped
   - rule_id: Midlands-Middle-English-m
     source: index_diachronica.html:5762
     raw: m → n → ∅ / _# when unstressed
@@ -24966,7 +24955,8 @@ sections:
     stages:
     - j
     - ∅
-    env: '{θ,s,z,l,n,t,d}_ when in onset position'
+    env: '{θ,s,z,l,n,t,d}_'
+    comment: when in onset position
   - rule_id: American-English-ɒ_2
     source: index_diachronica.html:5799
     raw: ɒ → ɔ / _K “(partial)”

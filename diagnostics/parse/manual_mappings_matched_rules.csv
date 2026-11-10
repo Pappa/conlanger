@@ -30,7 +30,9 @@ section_index,section_name,rule_id,source,from_text,to_text
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-aː-iː-uː,index_diachronica.html:1476, (/|!) (near|adjacent to) emphatics, \1 \2 [+emphatic]
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-dʒ,index_diachronica.html:1481, / if s or z occur ," / near {s,z} ; if s or z occur "
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-s,index_diachronica.html:1483, / if ʃ is somewhere, / sporadic ; if ʃ is somewhere
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-s,index_diachronica.html:1483, in the stem, ; in the stem
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-z,index_diachronica.html:1484, / if ʒ is somewhere, / sporadic ; if ʒ is somewhere
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-z,index_diachronica.html:1484, in the stem, ; in the stem
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-a,index_diachronica.html:1501, (/|!) (near|adjacent to) emphatics, \1 \2 [+emphatic]
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-a_5,index_diachronica.html:1534," / ([A-Z]_|_[A-Z]),? (if )", / \1 ; sporadic ; \2
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-—-a_6,index_diachronica.html:1535," / ([A-Z]_|_[A-Z]),? (if )", / \1 ; sporadic ; \2
@@ -250,19 +252,19 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.5.2,Proto-Celtic to Middle Welsh,Middle-Welsh-V_4,index_diachronica.html:5599, / intertonic, / %[+str]_%[+str]
 17.6,Proto-Indo-European to Dacian,Dacian-ei,index_diachronica.html:5622, (“, ; (“
 17.7,Proto-Indo-European to Common Germanic,Common-Germanic-f-θ-s-x,index_diachronica.html:5634, “(, ; “(
+17.7.1,Common Germanic to Gothic,Gothic-iji_2,index_diachronica.html:5671, in the stem, ; in the stem
 17.7.1,Common Germanic to Gothic,Gothic-z,index_diachronica.html:5683,"#, though ",# ; though 
 17.7.1,Common Germanic to Gothic,Gothic-s_2,index_diachronica.html:5685, / in “, / sporadic ; in “
 17.7.1,Common Germanic to Gothic,Gothic-s_3,index_diachronica.html:5686, / in “, / sporadic ; in “
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-æː,index_diachronica.html:5704,“under to [sic] the influence of neighboring consonants”,/ sporadic ; “under to [sic] the influence of neighboring consonants”
 17.7.2.1,West Germanic to Anglo-Frisian,Anglo-Frisian-i-o,index_diachronica.html:5708, / unstressed, / [-stress]
 17.7.2.1.2,Old English to Kentish Middle English,Kentish-Middle-English-Vː,index_diachronica.html:5727, or when preceding, ; or when preceding
-17.7.2.1.2,Old English to Kentish Middle English,Kentish-Middle-English-ɑ-e-o,index_diachronica.html:5738, with the following, ; with the following
 17.7.2.1.3,Old English to Midlands Middle English,Midlands-Middle-English-Vː,index_diachronica.html:5749, or when preceding, ; or when preceding
-17.7.2.1.3,Old English to Midlands Middle English,Midlands-Middle-English-ɑ-e-o,index_diachronica.html:5760, with the following, ; with the following
 17.7.2.1.5,Early Modern English to American English,American-English-æ,index_diachronica.html:5788,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.7.2.1.5,Early Modern English to American English,American-English-æ,index_diachronica.html:5788, (“, ; (“
 17.7.2.1.5,Early Modern English to American English,American-English-o-ɔ,index_diachronica.html:5796,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.7.2.1.5,Early Modern English to American English,American-English-o-ɔ,index_diachronica.html:5796, (most dialects, ; (most dialects
+17.7.2.1.5,Early Modern English to American English,American-English-j,index_diachronica.html:5798, when in onset position, ; when in onset position
 17.7.2.1.5,Early Modern English to American English,American-English-ɒ_2,index_diachronica.html:5799, “(, ; “(
 17.7.2.1.5,Early Modern English to American English,American-English-w,index_diachronica.html:5803, for some C, ; sporadic ; for some C
 17.7.2.1.6,Early Modern English to Australian English,Australian-English-uː,index_diachronica.html:5819, in (Queensland( and New South Wales)?), in \1 dialects

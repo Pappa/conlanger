@@ -344,6 +344,8 @@
     - " ! before an identical vowel"
     - " or when preceding"
     - " with the following"
+    - " in the stem"
+    - " when in onset position"
   comment: true
 - from: "#, though "
   to: "# ; though "
