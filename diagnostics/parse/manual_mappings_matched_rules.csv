@@ -275,12 +275,12 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.7.2.1.6,Early Modern English to Australian English,Australian-English-sj-zj-lj,index_diachronica.html:5833, “(, ; “(
 17.7.2.1.6,Early Modern English to Australian English,Australian-English-æ_3,index_diachronica.html:5840, (rare) ! form of , / sporadic ; (rare) ! form of 
 17.7.2.1.8,Old English to Northern Middle English,Northern-Middle-English-Vː,index_diachronica.html:5857, or when preceding, ; or when preceding
-17.7.2.1.8,Old English to Northern Middle English,Northern-Middle-English-ɑ-e-o,index_diachronica.html:5868, with the following, ; with the following
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-t,index_diachronica.html:5884, (“, ; (“
 17.7.2.1.9,Early Northern Middle English to Scots,"Scots-ɸ,x",index_diachronica.html:5890, (seems to , ; (seems to 
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-ai,index_diachronica.html:5896, / (when stem-final), / sporadic ; \1
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-uː,index_diachronica.html:5897,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-uː,index_diachronica.html:5897,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
+17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-uː,index_diachronica.html:5897, / (when-stem final), / sporadic ; \1
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-øː,index_diachronica.html:5898,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-øː_2,index_diachronica.html:5899,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 17.7.2.1.9,Early Northern Middle English to Scots,Scots-—-øː_2,index_diachronica.html:5899,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
@@ -295,7 +295,6 @@ section_index,section_name,rule_id,source,from_text,to_text
 17.7.2.1.11,Scots to Falkirk Scots,Falkirk-Scots-k,index_diachronica.html:5976, “(, ; “(
 17.7.2.1.11,Scots to Falkirk Scots,Falkirk-Scots-ɡ,index_diachronica.html:5977, “(, ; “(
 17.7.2.1.12,Old English to Southern Middle English,Southern-Middle-English-Vː,index_diachronica.html:5987, or when preceding, ; or when preceding
-17.7.2.1.12,Old English to Southern Middle English,Southern-Middle-English-ɑ-e-o,index_diachronica.html:5998, with the following, ; with the following
 17.7.2.1.13,Middle English to Yola,Yola-t-d,index_diachronica.html:6012, (conditioning unclear), / sporadic ; (conditioning unclear)
 17.7.2.1.13,Middle English to Yola,Yola-ʍ,index_diachronica.html:6015, (at least one instance of , ; (at least one instance of 
 17.7.2.2,West Germanic to Old Low Franconian,Old-Low-Franconian-a,index_diachronica.html:6043,\(→ (\w+) ?\??\),→ \1
@@ -588,6 +587,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-ai,index_diachronica.html:14323, / (when stem-final), / sporadic ; \1
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-uː,index_diachronica.html:14324,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-uː,index_diachronica.html:14324,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects
+46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-uː,index_diachronica.html:14324, / (when-stem final), / sporadic ; \1
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-øː,index_diachronica.html:14325,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-øː_2,index_diachronica.html:14326,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 46.5,Old English-to-Scots Vowel Shifts,Scots-Vowel-Shifts-øː_2,index_diachronica.html:14326,in(?: the)?( some| most| all| many)?( [a-zA-Z]+)?( and [a-zA-Z]+)* dialects,in\1\2\3 dialects

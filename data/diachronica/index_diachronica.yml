@@ -25371,14 +25371,9 @@ sections:
     source: index_diachronica.html:5868
     raw: 'ɑ e o → ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/
       or ending in one of /m n r l/'
-    stages:
-    - ɑ e o
-    - ɑː ɛː oː
-    env:
-      position:
-        in: U[+lo]
-    exception: '#U'
-    comment: with the following U containing /iː/ or ending in one of /m n r l/
+    stages: []
+    comment: Unsure how to represent
+    status: skipped
   - rule_id: Northern-Middle-English-yː
     source: index_diachronica.html:5869
     raw: y(ː) → i(ː)
@@ -25388,10 +25383,9 @@ sections:
   - rule_id: Northern-Middle-English-Vː_2
     source: index_diachronica.html:5870
     raw: 'Vː → V[-long] / in #U before a U with /iː/'
-    stages:
-    - Vː
-    - V[-long]
-    env: 'in #U before a U with /iː/'
+    stages: []
+    comment: Unsure how to represent
+    status: skipped
   - rule_id: Northern-Middle-English-n
     source: index_diachronica.html:5871
     raw: n → ∅ / _# when unstressed (not clear as to whether m → n beforehand in this
@@ -25547,9 +25541,8 @@ sections:
     stages:
     - uː
     - ʌu
-    env:
-      context: when-stem final,
-      dialect: northern
+    comment: when-stem final, in northern dialects; sporadic
+    sporadic: true
   - rule_id: Scots-—-øː
     source: index_diachronica.html:5898
     raw: — øː → wi / {k,ɡ}_ (in Mid Northern dialects)
@@ -26186,14 +26179,9 @@ sections:
     source: index_diachronica.html:5998
     raw: 'ɑ e o → ɑː ɛː oː / in U[+open] ! in #U with the following U containing /iː/
       or ending in one of /m n r l/'
-    stages:
-    - ɑ e o
-    - ɑː ɛː oː
-    env:
-      position:
-        in: U[+lo]
-    exception: '#U'
-    comment: with the following U containing /iː/ or ending in one of /m n r l/
+    stages: []
+    comment: Unsure how to represent
+    status: skipped
   - rule_id: Southern-Middle-English-yː
     source: index_diachronica.html:5999
     raw: y(ː) → i(ː)
@@ -26203,10 +26191,9 @@ sections:
   - rule_id: Southern-Middle-English-Vː_2
     source: index_diachronica.html:6000
     raw: 'Vː → V[-long] / in #U before a U with /iː/'
-    stages:
-    - Vː
-    - V[-long]
-    env: 'in #U before a U with /iː/'
+    stages: []
+    comment: Unsure how to represent
+    status: skipped
   - rule_id: Southern-Middle-English-m
     source: index_diachronica.html:6001
     raw: m → n → ∅ / _# when unstressed
@@ -68146,9 +68133,8 @@ sections:
     stages:
     - uː
     - ʌu
-    env:
-      context: when-stem final,
-      dialect: northern
+    comment: when-stem final, in northern dialects; sporadic
+    sporadic: true
   - rule_id: Scots-Vowel-Shifts-øː
     source: index_diachronica.html:14325
     raw: øː → wi / {k,ɡ}_ (in Mid Northern dialects)

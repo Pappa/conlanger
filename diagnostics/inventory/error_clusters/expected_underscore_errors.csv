@@ -1,5 +1,4 @@
 section_index,rule_id,error_token,rule
-17.7.2.1.9,Scots-—-uː,",","u:[+long] > ʌu / when-stem final, | ^ @ Rule 1, Line 1"
 17.7.2.1.12,Southern-Middle-English-e,,"e > ∅ / if another e one syllable previous | ^ @ Rule 1, Line 1"
 17.7.3.1,Old-Norse-a_4,/,"a > u / $u / // #<(..)_(..)> | ^ @ Rule 1, Line 1"
 17.11.1,Polish-Cʲ,}:,"C:[+cor,+dist] > C / :{_C:[+cor,+anterior,+dist] with developments of yers, ablaut environments}: | ^^ @ Rule 1, Line 1"
@@ -48,4 +47,3 @@ section_index,rule_id,error_token,rule
 38.1.1.5,"Southwest-Tai-l,r",",","{l,r} > ∅ / t,ɗ_ | ^ @ Rule 1, Line 1"
 42.1,Pre-Finnic-ŋ,",","ŋ > k / :{_#,, latives}: | ^ @ Rule 1, Line 1"
 42.1.2,Livonian-y-ø,,"y ø > i e / else | ^ @ Rule 1, Line 1"
-46.5,Scots-Vowel-Shifts-uː,",","u:[+long] > ʌu / when-stem final, | ^ @ Rule 1, Line 1"

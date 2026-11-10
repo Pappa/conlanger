@@ -286,3 +286,11 @@ skip_rules:
     reason: "Unsure how to represent"
   - id: Midlands-Middle-English-Vː_2
     reason: "Unsure how to represent"
+  - id: Northern-Middle-English-ɑ-e-o
+    reason: "Unsure how to represent"
+  - id: Northern-Middle-English-Vː_2
+    reason: "Unsure how to represent"
+  - id: Southern-Middle-English-ɑ-e-o
+    reason: "Unsure how to represent"
+  - id: Southern-Middle-English-Vː_2
+    reason: "Unsure how to represent"

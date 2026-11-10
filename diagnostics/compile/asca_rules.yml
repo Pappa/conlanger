@@ -11312,13 +11312,16 @@ sections:
     rule: '{ɑ:[+long]ht,oht,o:[+long]ht} > ow'
   - rule_id: Northern-Middle-English-ɑ-e-o
     source: index_diachronica.html:5868
-    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / <(..)_(..)>:[+lo] // #%'
+    status: skipped
+    rule: "#\tɑ e o → ɑː ɛː oː / in U[+open] ! in #U with the following U containing\
+      \ /iː/ or ending in one of /m n r l/"
   - rule_id: Northern-Middle-English-yː
     source: index_diachronica.html:5869
     rule: '{y,y:[+long]} > {i,i:[+long]}'
   - rule_id: Northern-Middle-English-Vː_2
     source: index_diachronica.html:5870
-    rule: 'V:[+long] > V:[-long] / in #% before a % with i:[+long]'
+    status: skipped
+    rule: "#\tVː → V[-long] / in #U before a U with /iː/"
   - rule_id: Northern-Middle-English-n
     source: index_diachronica.html:5871
     rule: n > ∅ / _#
@@ -11384,7 +11387,7 @@ sections:
     - ɛi > əi
   - rule_id: Scots-—-uː
     source: index_diachronica.html:5897
-    rule: u:[+long] > ʌu / when-stem final,
+    rule: u:[+long] > ʌu
   - rule_id: Scots-—-øː
     source: index_diachronica.html:5898
     rule: ø:[+long] > wi / {k,ɡ}_
@@ -11667,13 +11670,16 @@ sections:
     rule: ɑ:[+long] > ɔ:[+long]
   - rule_id: Southern-Middle-English-ɑ-e-o
     source: index_diachronica.html:5998
-    rule: 'ɑ e o > ɑ:[+long] ɛ:[+long] o:[+long] / <(..)_(..)>:[+lo] // #%'
+    status: skipped
+    rule: "#\tɑ e o → ɑː ɛː oː / in U[+open] ! in #U with the following U containing\
+      \ /iː/ or ending in one of /m n r l/"
   - rule_id: Southern-Middle-English-yː
     source: index_diachronica.html:5999
     rule: '{y,y:[+long]} > {i,i:[+long]}'
   - rule_id: Southern-Middle-English-Vː_2
     source: index_diachronica.html:6000
-    rule: 'V:[+long] > V:[-long] / in #% before a % with i:[+long]'
+    status: skipped
+    rule: "#\tVː → V[-long] / in #U before a U with /iː/"
   - rule_id: Southern-Middle-English-m
     source: index_diachronica.html:6001
     steps:
@@ -29384,7 +29390,7 @@ sections:
     - ɛi > əi
   - rule_id: Scots-Vowel-Shifts-uː
     source: index_diachronica.html:14324
-    rule: u:[+long] > ʌu / when-stem final,
+    rule: u:[+long] > ʌu
   - rule_id: Scots-Vowel-Shifts-øː
     source: index_diachronica.html:14325
     rule: ø:[+long] > wi / {k,ɡ}_

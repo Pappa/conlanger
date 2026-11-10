@@ -208,6 +208,7 @@
     - ", (in nouns)"
     # TODO: handle these properly
     - " / (when stem-final)"
+    - " / (when-stem final)"
   to: " / sporadic ; \\1"
   use_regex: True
   reason: sporadic environment
@@ -343,7 +344,6 @@
     - " (Marathi)"
     - " ! before an identical vowel"
     - " or when preceding"
-    - " with the following"
     - " in the stem"
     - " when in onset position"
   comment: true

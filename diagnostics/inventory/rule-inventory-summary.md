@@ -6,9 +6,9 @@
 - Rows: **9587** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9291** (96.9%)
-- Fail: **242** (2.5%)
-- Skipped: **54** (0.6%)
+- OK: **9293** (96.9%)
+- Fail: **236** (2.5%)
+- Skipped: **58** (0.6%)
 
 
 ## Corrections
@@ -22,8 +22,8 @@ Fail: **1/139**
 
 ## Sections
 
-- All OK: **525 / 660** (79.5%)
-- Some OK: **134 / 660** (20.3%)
+- All OK: **527 / 660** (79.8%)
+- Some OK: **132 / 660** (20.0%)
 - None OK: **1 / 660** (0.2%)
 - Sections skipped: **0 / 660** (0.0%)
 
@@ -31,8 +31,8 @@ Fail: **1/139**
 
 | count | failure_class |
 |------:|---------------|
-| 50 | `expected_underscore` |
-| 42 | `syntax_other` |
+| 48 | `expected_underscore` |
+| 40 | `syntax_other` |
 | 33 | `expected_ipa` |
 | 24 | `unknown_character` |
 | 17 | `missing_slash_output_env` |
@@ -41,8 +41,8 @@ Fail: **1/139**
 | 10 | `expected_number` |
 | 9 | `empty_io_panic` |
 | 7 | `prose_or_expected_arrow` |
-| 6 | `segments_before_word` |
 | 5 | `stuff_after_word_bound` |
+| 4 | `segments_before_word` |
 | 3 | `panic_other` |
 | 2 | `grouped_env_insertion` |
 | 2 | `format_error` |
@@ -69,7 +69,7 @@ Fail: **1/139**
 
 | count | description |
 |------:|-------------|
-| 26 | `A syllable can only have parameters stress and tone` |
+| 24 | `A syllable can only have parameters stress and tone` |
 | 1 | `Only a segment, matrix, group, or reference can be negated` |
 | 1 | `Feature 'lost' has no modifier` |
 | 1 | `Feature 'b' has no modifier` |
@@ -134,7 +134,7 @@ Fail: **1/139**
 
 | count | error_token |
 |------:|-------------|
-| 17 | `,` |
+| 15 | `,` |
 | 13 | `}:` |
 | 2 | `:` |
 | 1 | `/` |
@@ -287,7 +287,7 @@ Fail: **1/139**
 
 | count | description |
 |------:|-------------|
-| 6 | `Cannot have segments before the beginning of a word` |
+| 4 | `Cannot have segments before the beginning of a word` |
 
 ### stuff_after_word_bound (error_token)
 
