@@ -5,8 +5,6 @@ section_index,rule_id,error_token,rule
 17.12.1.1.6,Old-Provençal-—-a_2,}:,"a > a / :{_#, monosyllables and oxytones}: | ^^ @ Rule 1, Line 1"
 17.12.1.1.6,Old-Provençal-—-a_4,,"a > o in most dialects // Gascon and Languedoc | ^ @ Rule 1, Line 1"
 17.12.1.1.6,Old-Provençal-t_3,",","t > ∅ / _# // , though it tended to drop | ^ @ Rule 1, Line 1"
-21.2.2.5,Obokuitai-∅,,"∅ > dz / iV | ^ @ Rule 1, Line 1"
-22.6,Sorowahá-ʔ,,"ʔ > ∅ / #_, possibly everywhere | ^ @ Rule 1, Line 1"
 28,Muskogean-V,,"V > V:[+long, +long] / _Cko, ko lost | ^ @ Rule 1, Line 1"
 30.1.1,Proto-Bantu_2-S+-lenis-N+-lenis,}:,"P:[-tense] N:[-tense] > P:[+tense] N:[+tense] / :{_, C=1 position}: | ^^ @ Rule 1, Line 1"
 30.1.1,Proto-Bantu_2-N+-lenis-N-lenis,}:,"N:[-tense] N:[+tense] > N:[+tense] N P / :{_, C=2 position}: | ^^ @ Rule 1, Line 1"

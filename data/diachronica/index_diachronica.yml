@@ -43659,10 +43659,9 @@ sections:
   - rule_id: Obokuitai-∅
     source: index_diachronica.html:9026
     raw: ∅ → dz / îV
-    stages:
-    - ∅
-    - dz
-    env: iV
+    stages: []
+    comment: Unsure how to represent
+    status: skipped
 - section: Proto-East Tariku to Sikaritai
   index: 21.2.2.6
   citation: 'Pogostick Man, from Clouse, Duane (1993), “Languages of the Western Lakes
@@ -44359,7 +44358,7 @@ sections:
     source: index_diachronica.html:9200
     raw: '{tʰ,ɗ → t'
     stages:
-    - '{tʰ,ɗ'
+    - '{tʰ,ɗ}'
     - t
   - rule_id: Sorowahá-kʰ
     source: index_diachronica.html:9201
@@ -44379,9 +44378,8 @@ sections:
     stages:
     - ʔ
     - ∅
-    env: '#_, possibly everywhere'
-    comment: '?'
-    sporadic: true
+    env: '#_'
+    comment: ', possibly everywhere?'
 - section: Proto-Arawá to Paumarí
   index: '22.7'
   citation: Pogostick Man, from Dixon, R.M.W. (2004), “Proto-Arawá Phonology”. Anthropological

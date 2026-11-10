@@ -19733,7 +19733,8 @@ sections:
     rule: iC uC > i u / _{C,#}
   - rule_id: Obokuitai-∅
     source: index_diachronica.html:9026
-    rule: ∅ > dz / iV
+    status: skipped
+    rule: "#\t∅ → dz / îV"
 - section: Proto-East Tariku to Sikaritai
   index: 21.2.2.6
   rules:
@@ -20210,7 +20211,7 @@ sections:
     rule: 'ɗ > d / #_'
   - rule_id: Sorowahá-tʰ,ɗ
     source: index_diachronica.html:9200
-    rule: '{tʰ,ɗ > t'
+    rule: '{tʰ,ɗ} > t'
   - rule_id: Sorowahá-kʰ
     source: index_diachronica.html:9201
     rule: kʰ > k
@@ -20219,7 +20220,7 @@ sections:
     rule: '{ts,tsʰ} > s'
   - rule_id: Sorowahá-ʔ
     source: index_diachronica.html:9203
-    rule: 'ʔ > ∅ / #_, possibly everywhere'
+    rule: 'ʔ > ∅ / #_'
 - section: Proto-Arawá to Paumarí
   index: '22.7'
   rules:

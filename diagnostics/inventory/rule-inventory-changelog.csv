@@ -53,3 +53,6 @@ section_index,rule_id,alt_idx,step_idx,source,ok,timestamp
 17.11.1,Polish-a-ɛ-i-ɔ-u-ɨ-ã,,,index_diachronica.html:7041,OK,2026-11-10T22:32:42Z
 17.11.1,Polish-ɕr̝-ʑr̝,,,index_diachronica.html:7129,OK,2026-11-10T22:32:42Z
 17.11.1,Polish-trk,,,index_diachronica.html:7144,OK,2026-11-10T22:33:58Z
+21.2.2.5,Obokuitai-∅,,,index_diachronica.html:9026,SKIPPED,2026-11-10T22:42:58Z
+22.6,"Sorowahá-tʰ,ɗ",,,index_diachronica.html:9200,OK,2026-11-10T22:42:58Z
+22.6,Sorowahá-ʔ,,,index_diachronica.html:9203,OK,2026-11-10T22:42:58Z

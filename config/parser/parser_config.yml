@@ -300,3 +300,5 @@ skip_rules:
     reason: "Unsure how to represent"
   - id: Old-Norse-eːB,iː
     reason: "Unsure how to represent"
+  - id: Obokuitai-∅
+    reason: "Unsure how to represent"

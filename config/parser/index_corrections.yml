@@ -692,3 +692,8 @@ rules:
                   content: "e[+long, -stress] → i"
                   reason: |
                           eː → i / unstressed
+        - rule:
+                  id: Sorowahá-tʰ,ɗ
+                  content: "{tʰ,ɗ} → t"
+                  reason: |
+                          {tʰ,ɗ → t

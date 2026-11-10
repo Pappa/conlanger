@@ -6,15 +6,15 @@
 - Rows: **9587** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9298** (97.0%)
-- Fail: **228** (2.4%)
-- Skipped: **61** (0.6%)
+- OK: **9300** (97.0%)
+- Fail: **225** (2.3%)
+- Skipped: **62** (0.6%)
 
 
 ## Corrections
 
-OK: **139/140**
-Fail: **1/140**
+OK: **140/141**
+Fail: **1/141**
 
 ### Failed corrections
 
@@ -22,8 +22,8 @@ Fail: **1/140**
 
 ## Sections
 
-- All OK: **528 / 660** (80.0%)
-- Some OK: **131 / 660** (19.8%)
+- All OK: **529 / 660** (80.2%)
+- Some OK: **130 / 660** (19.7%)
 - None OK: **1 / 660** (0.2%)
 - Sections skipped: **0 / 660** (0.0%)
 
@@ -31,9 +31,9 @@ Fail: **1/140**
 
 | count | failure_class |
 |------:|---------------|
-| 43 | `expected_underscore` |
+| 41 | `expected_underscore` |
 | 39 | `syntax_other` |
-| 32 | `expected_ipa` |
+| 31 | `expected_ipa` |
 | 23 | `unknown_character` |
 | 17 | `missing_slash_output_env` |
 | 13 | `nested_brackets` |
@@ -141,7 +141,7 @@ Fail: **1/140**
 
 | count | description |
 |------:|-------------|
-| 14 | `Expected '_', but received ''` |
+| 12 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -213,9 +213,9 @@ Fail: **1/140**
 |------:|-------------|
 | 8 | `(` |
 | 4 | `∅` |
-| 3 | `{` |
 | 3 | `*` |
 | 3 | `ʷ` |
+| 3 | `{` |
 | 3 | `…` |
 | 2 | `ʲ` |
 | 2 | `_` |
