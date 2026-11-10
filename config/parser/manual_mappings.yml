@@ -102,6 +102,8 @@
   to: " / _Ra[-long] ; "
 - from: C[+ affricate]
   to: A
+- from: C[+glide]
+  to: W
 - from: "high(er)"
   to: "hi"
 - from: + A POA

@@ -461,6 +461,7 @@ section_index,section_name,rule_id,source,from_text,to_text
 22.6,Proto-Arawá to Sorowahá,Sorowahá-ʔ,index_diachronica.html:9203,", possibly everywhere"," ; , possibly everywhere"
 23.1.1.1.1,Proto-Chibchan to Arhuaco,Arhuaco-ia,index_diachronica.html:9273, (“, ; (“
 24.1.2,Proto-Paman to AwÅtim,AwÅtim-iC-aC-uC,index_diachronica.html:9420, ! before an identical vowel, ; ! before an identical vowel
+27.3,Proto-Mayan to Huastecan,Huastecan-kV+roundC+glide,index_diachronica.html:9737,C[+glide],W
 29.1.1.1.1,Proto-Athabaskan to Ahtna,Ahtna-K,index_diachronica.html:9980, in (Mentasta Ahtna), in \1 dialects
 29.1.1.1.1,Proto-Athabaskan to Ahtna,Ahtna-K,index_diachronica.html:9980,(dialects|regions|varieties)( (or|and) (dialects|regions|varieties))*,dialects
 29.1.1.1.1,Proto-Athabaskan to Ahtna,Ahtna-K,index_diachronica.html:9980, (/|!) in ([\w ]+) dialects, \1 dialectal ; in \2 dialects

@@ -3,18 +3,18 @@
 - Source YAML: `diagnostics/compile/asca_rules.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.3**
-- Rows: **9587** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
+- Rows: **9496** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9300** (97.0%)
-- Fail: **225** (2.3%)
-- Skipped: **62** (0.6%)
+- OK: **9230** (97.2%)
+- Fail: **205** (2.2%)
+- Skipped: **61** (0.6%)
 
 
 ## Corrections
 
-OK: **140/141**
-Fail: **1/141**
+OK: **139/140**
+Fail: **1/140**
 
 ### Failed corrections
 
@@ -22,24 +22,24 @@ Fail: **1/141**
 
 ## Sections
 
-- All OK: **529 / 660** (80.2%)
-- Some OK: **130 / 660** (19.7%)
-- None OK: **1 / 660** (0.2%)
-- Sections skipped: **0 / 660** (0.0%)
+- All OK: **530 / 659** (80.4%)
+- Some OK: **128 / 659** (19.4%)
+- None OK: **1 / 659** (0.2%)
+- Sections skipped: **0 / 659** (0.0%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
-| 41 | `expected_underscore` |
-| 39 | `syntax_other` |
-| 31 | `expected_ipa` |
+| 36 | `syntax_other` |
+| 34 | `expected_underscore` |
+| 26 | `expected_ipa` |
 | 23 | `unknown_character` |
-| 17 | `missing_slash_output_env` |
+| 13 | `missing_slash_output_env` |
 | 13 | `nested_brackets` |
-| 10 | `unknown_feature` |
 | 10 | `expected_number` |
 | 9 | `empty_io_panic` |
+| 9 | `unknown_feature` |
 | 7 | `prose_or_expected_arrow` |
 | 5 | `stuff_after_word_bound` |
 | 4 | `segments_before_word` |
@@ -64,7 +64,6 @@ Fail: **1/141**
 | 1 | `End Of Line` |
 | 1 | `]` |
 | 1 | `l` |
-| 1 | `í` |
 ### syntax_other (description)
 
 | count | description |
@@ -73,8 +72,6 @@ Fail: **1/141**
 | 1 | `Only a segment, matrix, group, or reference can be negated` |
 | 1 | `Feature 'b' has no modifier` |
 | 1 | `Feature 's' has no modifier` |
-| 1 | `Feature 'long' has no modifier` |
-| 1 | `Feature 'truncated' has no modifier` |
 
 ### runtime_other (error_token)
 
@@ -133,15 +130,15 @@ Fail: **1/141**
 
 | count | error_token |
 |------:|-------------|
-| 14 | `,` |
 | 12 | `}:` |
+| 9 | `,` |
 | 2 | `:` |
 | 1 | `ʲ` |
 ### expected_underscore (description)
 
 | count | description |
 |------:|-------------|
-| 12 | `Expected '_', but received ''` |
+| 10 | `Expected '_', but received ''` |
 
 ### nested_brackets (error_token)
 
@@ -162,7 +159,6 @@ Fail: **1/141**
 | 2 | `fricative` | `rhotic` |
 | 1 | `posttonic` | `sonor` |
 | 1 | `tonic` | `cons` |
-| 1 | `glide` | `click` |
 | 1 | `accent` | `cont` |
 | 1 | `labiovelar` | `labiodental` |
 
@@ -211,16 +207,16 @@ Fail: **1/141**
 
 | count | error_token |
 |------:|-------------|
-| 8 | `(` |
-| 4 | `∅` |
+| 7 | `(` |
 | 3 | `*` |
-| 3 | `ʷ` |
 | 3 | `{` |
 | 3 | `…` |
-| 2 | `ʲ` |
+| 3 | `ʷ` |
 | 2 | `_` |
+| 2 | `ʲ` |
 | 1 | `,` |
 | 1 | `ʱ` |
+| 1 | `@` |
 ### expected_ipa (description)
 
 | count | description |
@@ -242,9 +238,9 @@ Fail: **1/141**
 
 | count | error_token |
 |------:|-------------|
-| 7 | `)` |
 | 4 | `(` |
 | 3 | `ʲ` |
+| 3 | `)` |
 | 1 | `*` |
 | 1 | `#` |
 | 1 | `_` |

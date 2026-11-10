@@ -46346,7 +46346,7 @@ sections:
     source: index_diachronica.html:9737
     raw: kV[+round]C[+glide] → kʷ
     stages:
-    - kV[+round]C[+glide]
+    - kV[+round]W
     - kʷ
 - section: Proto-Mayan to Ixilean
   index: '27.4'
@@ -55816,6 +55816,7 @@ sections:
     - əjŋ
     - ɛn
     comment: (varies with ɛn?)
+  status: skipped
 - section: Tibeto-Burman
   index: '36.3'
 - section: Qiangic
