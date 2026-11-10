@@ -274,3 +274,7 @@ skip_rules:
     reason: "Merged with previous rule"
   - id: Southern-United-States-Shift-English-aɪ_4
     reason: "Merged with previous rule"
+  - id: Old-Irish-V_3
+    reason: "Unsure how to represent"
+  - id: Old-Irish-C…C
+    reason: "Unsure how to represent"

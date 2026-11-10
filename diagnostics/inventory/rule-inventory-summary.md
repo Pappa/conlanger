@@ -7,8 +7,8 @@
 
 ## Rules
 - OK: **9285** (96.8%)
-- Fail: **254** (2.6%)
-- Skipped: **48** (0.5%)
+- Fail: **252** (2.6%)
+- Skipped: **50** (0.5%)
 
 
 ## Corrections
@@ -31,12 +31,12 @@ Fail: **1/139**
 
 | count | failure_class |
 |------:|---------------|
-| 56 | `expected_underscore` |
+| 55 | `expected_underscore` |
 | 45 | `syntax_other` |
 | 33 | `expected_ipa` |
 | 24 | `unknown_character` |
 | 17 | `missing_slash_output_env` |
-| 14 | `nested_brackets` |
+| 13 | `nested_brackets` |
 | 10 | `unknown_feature` |
 | 10 | `expected_number` |
 | 9 | `empty_io_panic` |
@@ -136,8 +136,8 @@ Fail: **1/139**
 |------:|-------------|
 | 18 | `}:` |
 | 17 | `,` |
-| 2 | `/` |
 | 2 | `:` |
+| 1 | `/` |
 | 1 | `ʲ` |
 ### expected_underscore (description)
 
@@ -154,7 +154,7 @@ Fail: **1/139**
 
 | count | description |
 |------:|-------------|
-| 14 | `Cannot have nested brackets of the same type` |
+| 13 | `Cannot have nested brackets of the same type` |
 
 ### unknown_feature (error_token)
 

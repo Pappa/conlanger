@@ -23573,12 +23573,9 @@ sections:
     source: index_diachronica.html:5558
     raw: C(…C) → ∅ / _# ! /l r/ and clusters containing them; “[t]his remained a phonologically
       conditioned rule in OIr”
-    stages:
-    - C(…C)
-    - ∅
-    env: _#
-    exception: /l r/ and clusters containing them
-    comment: “[t]his remained a phonologically conditioned rule in OIr”
+    stages: []
+    comment: Unsure how to represent
+    status: skipped
   - rule_id: Old-Irish-au,eu,ou
     source: index_diachronica.html:5559
     raw: '{au,eu,ou} → oː'
@@ -23659,16 +23656,9 @@ sections:
       dropped, if it’s unstressed. In some words, syncope didn’t apply because it
       would create an unwieldy consonant cluster: so PIE *komaktyom → OIr cumachte,
       not *cumchte”'
-    stages:
-    - V
-    - ∅
-    env: '#UU(_)U(U(_)U)'
-    exception: '[-stress]'
-    comment: 'this “remained as a phonologically conditioned rule in OIr”; “[t]hat’s
-      a little unclear, so let me try and enumerate: in words of more than three syllables,
-      every other vowel (only the even ones) dropped, if it’s unstressed. In some
-      words, syncope didn’t apply because it would create an unwieldy consonant cluster:
-      so PIE *komaktyom → OIr cumachte, not *cumchte”'
+    stages: []
+    comment: Unsure how to represent
+    status: skipped
 - section: Proto-Celtic to Middle Welsh
   index: 17.5.2
   citation: Dewrad & Pogostick Man, the latter citing Willis (David), “Old and Middle

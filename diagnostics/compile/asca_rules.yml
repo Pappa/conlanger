@@ -10498,7 +10498,9 @@ sections:
     rule: V > ∅ / C_# // j_#
   - rule_id: Old-Irish-C…C
     source: index_diachronica.html:5558
-    rule: C(..)C > ∅ / _# // /l r/ and clusters containing them
+    status: skipped
+    rule: "#\tC(…C) → ∅ / _# ! /l r/ and clusters containing them; “[t]his remained\
+      \ a phonologically conditioned rule in OIr”"
   - rule_id: Old-Irish-au,eu,ou
     source: index_diachronica.html:5559
     rule: '{au,eu,ou} > o:[+long]'
@@ -10531,7 +10533,13 @@ sections:
     rule: VO:[+son,-syl] > V:[+long, +son,-syl]
   - rule_id: Old-Irish-V_3
     source: index_diachronica.html:5570
-    rule: 'V:[+stress] > ∅ / #%%(_)%(%(_)%)'
+    status: skipped
+    rule: "#\tV → ∅ / #UU(_)U(U(_)U) / unstressed; this “remained as a phonologically\
+      \ conditioned rule in OIr”; “[t]hat’s a little unclear, so let me try and enumerate:\
+      \ in words of more than three syllables, every other vowel (only the even ones)\
+      \ dropped, if it’s unstressed. In some words, syncope didn’t apply because it\
+      \ would create an unwieldy consonant cluster: so PIE *komaktyom → OIr cumachte,\
+      \ not *cumchte”"
 - section: Proto-Celtic to Middle Welsh
   index: 17.5.2
   rules:
