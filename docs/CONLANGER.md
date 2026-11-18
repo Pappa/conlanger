@@ -39,27 +39,30 @@ I started reading about conlanging and a couple of things stood out.
 
 2. There's a ton of [cldf](https://cldf.clld.org/) data available on the properties and characteristics of the world's languages, and it can all be presented in tabular form. 
 
+| Phoible Data | WALS Data |
+|------|---------------|
+| ![Phoible Data](./assets/cross_linguistic_datasets/phoible_features.png) | ![WALS Data](./assets/cross_linguistic_datasets/wals_features.png) |
+
 So, I can represent the phoneme inventory of any language as a very simple 2d image:
 
 ![IPA phoneme inventory](./assets/2d_data/language_data_table.png)
 
 And represent other characteristics of any language as 2d images.
 
-**WALS data**
-
-![WALS data](./assets/2d_data/wals_data.png)
-
 **Phoible data**
 
 ![Phoible data](./assets/2d_data/phoible_data.png)
 
+**WALS data**
+
+![WALS data](./assets/2d_data/wals_data.png)
+
 The upshot of all this is that I realised I can use this data to train a GAN (or use some other method like SMOTE) to generate random, 
-but plausible skeleton languages, including a phoneme inventory and other characteristics of the language.
+but plausible languages, including a phoneme inventory and other characteristics of the language.
 
-<div style="text-align:center; width:100%">
-  <img src="./assets/Awesome_Face.svg" />
-</div>
-
+<p align="center">
+  <img src="./assets/Awesome_Face.svg" width="250"/>
+</p>
 
 ### Language Evolution
 
@@ -71,20 +74,28 @@ In the distant past of the internet, some mad bastard compiled the [Index Diachr
 encode how the sounds in a language change over time (typically as an ancestor language evolves into a descendent).
 
 
-Sound change rules have widely used syntax conventions, like:
+Sound change rules have widely used syntax conventions, like these from the evolution of _Proto-Indo-European to Latin_:
 
-`a → e / _j ! l_` - a changes to e when it preceeds j, but not if it follws l.
+```
+e o → i u / _ŋ
+e → o / _ɫ
+o → u / _{mb,mk,ɫ}
+o → e / w_{r,s,t}
+oː → uː / _r
+```
 
 I discovered that there are some sound change appliers, like [ASCA](https://github.com/Girv98/asca-rust) and [Brassica](https://github.com/bradrn/brassica) to apply sound changes programmatically, so I thought, _"cool I'll just parse the Index Diachronica html file and convert it to a format that can be read by ASCA or Brassica"_. The end goal would be to create a set of random but plausible sound change rules to apply to the newly generated language, to mimic the evolution of real languages from their proto-languages.
 
 
 Unfortunately, linguists aren't particularly consistent in their use of sound change rule conventions and often fall back to text descriptions to handle edge cases. As a result, Index Diachronica has a lot of rules like:
 
-- `C[+labial/+velar] → ʷ / adjacent to short u`
-- `j → s (possibly only initially?)`
-- `t → {t,r,kʷ} / #_ (I’m not kidding. That’s what’s listed as the reflexes.)`
-- `q (→ kw ?) → v (rare)`
-- `e → ə / _N, when unstressed (?)`
+```
+C[+labial/+velar] → ʷ / adjacent to short u
+j → s (possibly only initially?)
+t → {t,r,kʷ} / #_ (I’m not kidding. That’s what’s listed as the reflexes.)
+q (→ kw ?) → v (rare)
+e → ə / _N, when unstressed (?)
+```
 
 So, I've spent the past 2 years (on and off) trying to parse Index Diachronica programatically.
 
@@ -103,7 +114,6 @@ This has been far more successful so far, with > 80% of rules validated. There a
 ## The end goal for this project
 
 I want to press a button and watch a fully developed conlang appear before my eyes, complete with a written grammar, translations and sample audio of the language being spoken.
-
 
 The implementation will consist of 2 parts:
 
