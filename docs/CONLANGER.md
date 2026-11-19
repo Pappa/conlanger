@@ -64,6 +64,20 @@ but plausible languages, including a phoneme inventory and other characteristics
   <img src="./assets/Awesome_Face.svg" width="250"/>
 </p>
 
+### Synthetic Data
+
+Here are some examples of synthetic phoneme inventories, generated using a GAN, and for comparison, the languages that are a _closest match_ to the synthetic examples.
+
+| Synthetic | Real |
+|------|---------------|
+| ![Synthetic](./assets/2d_data/synthetic_phoneme_inventory.png) | ![Real](./assets/2d_data/synthetic_phoneme_inventory_closest_real.png) | 
+
+I tried the same approach to generate synthetic language features using WALS data, but couldn't get the GAN to stabilise. So, I tried SMOTE instead:
+
+| SMOTE | Real |
+|------|---------------|
+| ![Synthetic](./assets/2d_data/synthetic_wals_features.png) | ![Real](./assets/2d_data/synthetic_wals_features_closest_real.png) | 
+
 ### Language Evolution
 
 It's all well and good generating a fake but plausible language based on the properties of existing languages, but a good 
