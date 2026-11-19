@@ -68,6 +68,8 @@ but plausible languages, including a phoneme inventory and other characteristics
 
 Here are some examples of synthetic phoneme inventories, generated using a GAN, and for comparison, the languages that are a _closest match_ to the synthetic examples.
 
+While they look very similar, none of the synthetic examples are an exact match of the real ones.
+
 | Synthetic | Real |
 |------|---------------|
 | ![Synthetic](./assets/2d_data/synthetic_phoneme_inventory.png) | ![Real](./assets/2d_data/synthetic_phoneme_inventory_closest_real.png) | 
