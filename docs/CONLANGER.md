@@ -128,7 +128,7 @@ My first attempt got me to about a 60% success rate (meaning 60% of rules being 
 After a hiatus of a few months, I decided to let AI take a stab at it. I vibe-coded a solution with Cursor. The result was about 60% success, and the resulting code was unreadable with lots of incorrect transformations. I ditched the AI version and took another break.
 
 
-I've taken a more systematic approach, using AI to help me research the domain, define the requirements and implement and test the system incrementally. 
+I've taken a more systematic approach, using AI to help me research the domain, define the requirements and implement and test the system incrementally. I'm trying to create an _applier neutral_, and _machine readible_ source of truth to work with.
 
 
 This has been far more successful so far, with > 95% of rules validated. Though, I think this may contain a lot of false positives, becuase some ASCA errors aren't thrown unless a rule matches and applies a transformation. I've forked ASCA to create a rule validation command, but I'm not convinced it's doing what I expect. There are definitely a lot of bugs and incorrect assumptions baked into the current implementation, and the code is AI generated garbage in places, but it's probably getting close to _"good enough"_ for what I need.
