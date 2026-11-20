@@ -93,8 +93,7 @@ I tried the same approach to generate synthetic language features using WALS dat
 It's all well and good generating a fake but plausible language based on the properties of existing languages, but a good 
 conlang should have a history. It should evolve from a proto-language.
 
-In the distant past of the internet, some mad bastard compiled the [Index Diachronica](https://chridd.nfshost.com/diachronica/), a set of sound change rules for ~6000 languages, gathered from the published literature. The rules 
-encode how the sounds in a language change over time (typically as an ancestor language evolves into a descendent).
+In the distant past of the internet, some mad bastard compiled the [Index Diachronica](https://chridd.nfshost.com/diachronica/), a set of sound change rules for ~6000 languages, gathered from the published literature. Thanks [chridd](https://chridd.nfshost.com/)! The rules encode how the sounds in a language change over time (typically as an ancestor language evolves into a descendent).
 
 
 Sound change rules have widely used syntax conventions, like these from the evolution of _Proto-Indo-European to Latin_:
@@ -132,7 +131,7 @@ After a hiatus of a few months, I decided to let AI take a stab at it. I vibe-co
 I've taken a more systematic approach, using AI to help me research the domain, define the requirements and implement and test the system incrementally. 
 
 
-This has been far more successful so far, with > 95% of rules validated. Though, I think this maycontain a lot of false positives, becuase ASCA some ASCA errors aren't thrown unless a rule matches and applies a transformation. I've forked ASCA to create a rule validation command, but I'm not convinced it's doing what I expect. There are definitely bugs and incorrect bits and pieces in the current implementation, but it's probably getting close to _"good enough"_ for what I need.
+This has been far more successful so far, with > 95% of rules validated. Though, I think this may contain a lot of false positives, becuase some ASCA errors aren't thrown unless a rule matches and applies a transformation. I've forked ASCA to create a rule validation command, but I'm not convinced it's doing what I expect. There are definitely a lot of bugs and incorrect assumptions baked into the current implementation, and the code is AI generated garbage in places, but it's probably getting close to _"good enough"_ for what I need.
 
 ## The end goal for this project
 
