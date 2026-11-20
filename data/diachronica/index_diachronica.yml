@@ -9521,7 +9521,7 @@ sections:
     stages:
     - i u
     - e o
-    env: CC#
+    env: _CC#
     comment: (sporadic)
     sporadic: true
   - rule_id: Chamorro-a
@@ -13140,10 +13140,10 @@ sections:
     source: index_diachronica.html:3481
     raw: '{r,l} → l (occasionally → ∅?)'
     stages:
-    - '{r,l}'
+    - r
     - l
-    - ∅?)
-    comment: (occasionally
+    - ∅
+    comment: sporadic
     sporadic: true
 - section: Proto-Oceanic to Proto-Vanikoro
   index: 10.3.10

@@ -4196,7 +4196,7 @@ sections:
     rule: i u > e o / _C{C,#}
   - rule_id: Chamorro-i-u_2
     source: index_diachronica.html:2808
-    rule: i u > e o / CC#
+    rule: i u > e o / _CC#
   - rule_id: Chamorro-a
     source: index_diachronica.html:2809
     rule: a > æ
@@ -5876,8 +5876,8 @@ sections:
   - rule_id: Tanibili-r,l
     source: index_diachronica.html:3481
     steps:
-    - '{r,l} > l'
-    - l > ∅?)
+    - r > l
+    - l > ∅
 - section: Proto-Oceanic to Proto-Vanikoro
   index: 10.3.10
   rules:

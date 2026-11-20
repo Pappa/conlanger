@@ -6,15 +6,15 @@
 - Rows: **9496** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9230** (97.2%)
-- Fail: **205** (2.2%)
+- OK: **9232** (97.2%)
+- Fail: **203** (2.1%)
 - Skipped: **61** (0.6%)
 
 
 ## Corrections
 
-OK: **139/140**
-Fail: **1/140**
+OK: **141/142**
+Fail: **1/142**
 
 ### Failed corrections
 
@@ -22,8 +22,8 @@ Fail: **1/140**
 
 ## Sections
 
-- All OK: **530 / 659** (80.4%)
-- Some OK: **128 / 659** (19.4%)
+- All OK: **532 / 659** (80.7%)
+- Some OK: **126 / 659** (19.1%)
 - None OK: **1 / 659** (0.2%)
 - Sections skipped: **0 / 659** (0.0%)
 
@@ -38,12 +38,12 @@ Fail: **1/140**
 | 13 | `missing_slash_output_env` |
 | 13 | `nested_brackets` |
 | 10 | `expected_number` |
-| 9 | `empty_io_panic` |
 | 9 | `unknown_feature` |
+| 8 | `empty_io_panic` |
 | 7 | `prose_or_expected_arrow` |
 | 5 | `stuff_after_word_bound` |
-| 4 | `segments_before_word` |
 | 3 | `panic_other` |
+| 3 | `segments_before_word` |
 | 2 | `grouped_env_insertion` |
 | 2 | `format_error` |
 | 2 | `runtime_delete_only_segment` |
@@ -281,7 +281,7 @@ Fail: **1/140**
 
 | count | description |
 |------:|-------------|
-| 4 | `Cannot have segments before the beginning of a word` |
+| 3 | `Cannot have segments before the beginning of a word` |
 
 ### stuff_after_word_bound (error_token)
 
@@ -315,7 +315,7 @@ Fail: **1/140**
 | count | description |
 |------:|-------------|
 | 5 | `The input of an insertion rule must only contain `*` or `∅`` |
-| 4 | `The output of a deletion rule must only contain `*` or `∅`` |
+| 3 | `The output of a deletion rule must only contain `*` or `∅`` |
 
 ### incomplete_matrix (error_token)
 
