@@ -16,7 +16,6 @@ logger.setLevel(logging.INFO)
 from conlanger.ingest.parser import IndexDiachronicaParser
 from conlanger.scripts.config_loaders import load_parser_config
 from conlanger.scripts.pipeline_defaults import (
-    DEFAULT_COMMENT_SUMMARY,
     DEFAULT_HTML,
     DEFAULT_PARSE_DIR,
     DEFAULT_YAML,
@@ -26,7 +25,6 @@ from conlanger.tools.index_io import write_cleaned_index
 from conlanger.utils.file_io import (
     MANUAL_MAPPINGS_MATCHED_CSV_NAME,
     write_manual_mappings_matched_csv,
-    write_rule_comment_phrase_summary,
 )
 from conlanger.utils.parsing import load_html_document
 
@@ -39,7 +37,7 @@ def main() -> int:
         "--parse-dir",
         type=Path,
         default=DEFAULT_PARSE_DIR,
-        help=("writes manual_mappings_matched_rules.csv and rule-comment-phrases.md"),
+        help="writes manual_mappings_matched_rules.csv",
     )
     args = ap.parse_args()
 
@@ -53,8 +51,6 @@ def main() -> int:
     doc = parser.parse(html_root, source_file=args.html.name)
     write_cleaned_index(doc, args.yaml_out)
     args.parse_dir.mkdir(parents=True, exist_ok=True)
-    comment_summary_path = args.parse_dir / DEFAULT_COMMENT_SUMMARY.name
-    n_with_comment = write_rule_comment_phrase_summary(doc, comment_summary_path)
 
     matched_path = args.parse_dir / MANUAL_MAPPINGS_MATCHED_CSV_NAME
     write_manual_mappings_matched_csv(parser.manual_mapping_matches, matched_path)
@@ -79,9 +75,8 @@ def main() -> int:
     )
     print(
         f"wrote {args.yaml_out.relative_to(ROOT)} sections={n_sections} rules={n_rules} "
-        f"parse_skipped={n_skipped} rules_with_comment={n_with_comment}"
+        f"parse_skipped={n_skipped}"
     )
-    print(f"wrote {comment_summary_path.relative_to(ROOT)}")
     print(
         f"wrote {matched_path.relative_to(ROOT)} matches={len(parser.manual_mapping_matches)}"
     )

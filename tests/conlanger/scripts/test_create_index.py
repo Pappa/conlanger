@@ -26,13 +26,11 @@ def _configure_parser_mock(
     return mock_parser
 
 
-@patch.object(regen, "write_rule_comment_phrase_summary", return_value=0)
 @patch.object(regen, "write_cleaned_index")
 @patch.object(regen, "IndexDiachronicaParser")
 def test_create_index_writes_manual_mappings_matched_csv(
     mock_parser_cls,
     _mock_write_index,
-    _mock_comment_summary,
     tmp_path: Path,
     capsys,
 ):
@@ -73,6 +71,7 @@ def test_create_index_writes_manual_mappings_matched_csv(
 
     matched_path = parse_dir / "manual_mappings_matched_rules.csv"
     assert matched_path.is_file()
+    assert not (parse_dir / "rule-comment-phrases.md").exists()
     text = matched_path.read_text(encoding="utf-8")
     assert "from_text" in text
     assert "to_text" in text

@@ -2,39 +2,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from conlanger.utils.file_io import (
-    write_manual_mappings_matched_csv,
-    write_rule_comment_phrase_summary,
-)
-
-
-def test_write_rule_comment_phrase_summary(tmp_path: Path):
-    doc = {
-        "sections": [
-            {
-                "rules": [
-                    {"comment": "when stressed; sporadic in some dialects"},
-                    {"comment": "plain gloss"},
-                    {"stages": ["a", "b"]},
-                ]
-            }
-        ]
-    }
-    out = tmp_path / "comment-summary.md"
-    count = write_rule_comment_phrase_summary(doc, out)
-    text = out.read_text(encoding="utf-8")
-    assert count == 2
-    assert "when stressed" in text
-    assert "sporadic" in text
-    assert "plain gloss" in text
-
-
-def test_write_rule_comment_phrase_summary_empty_doc(tmp_path: Path):
-    out = tmp_path / "comment-summary.md"
-    count = write_rule_comment_phrase_summary({"sections": []}, out)
-    text = out.read_text(encoding="utf-8")
-    assert count == 0
-    assert "_(none matched)_" in text
+from conlanger.utils.file_io import write_manual_mappings_matched_csv
 
 
 def test_write_manual_mappings_matched_csv(tmp_path: Path):

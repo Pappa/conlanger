@@ -1,5 +1,5 @@
 Type: task
-Status: ready
+Status: resolved
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Remove `rule-comment-phrases.md` parse diagnostic and code used only to generate it.
 Blocked by:
@@ -31,9 +31,9 @@ Blocked by:
 
 ## Acceptance Criteria
 
-- [ ] Running `uv run create_index` writes cleaned YAML and `manual_mappings_matched_rules.csv` under `--parse-dir` and does **not** create `rule-comment-phrases.md`.
-- [ ] No references to `write_rule_comment_phrase_summary`, `DEFAULT_COMMENT_SUMMARY`, or `rule-comment-phrases.md` remain in `src/` or `tests/` (except git history).
-- [ ] `docs/system/validate.md` documents parse diagnostics without the comment phrase survey.
-- [ ] `diagnostics/parse/rule-comment-phrases.md` is removed from the working tree.
-- [ ] `uv run check` passes.
-- [ ] Set **`Status: resolved`** and sync the **Tasks** row on [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md).
+- [x] Running `uv run create_index` writes cleaned YAML and `manual_mappings_matched_rules.csv` under `--parse-dir` and does **not** create `rule-comment-phrases.md`.
+- [x] No references to `write_rule_comment_phrase_summary`, `DEFAULT_COMMENT_SUMMARY`, or `rule-comment-phrases.md` remain in `src/` or `tests/` (except git history).
+- [x] `docs/system/validate.md` documents parse diagnostics without the comment phrase survey.
+- [x] `diagnostics/parse/rule-comment-phrases.md` is removed from the working tree.
+- [x] `uv run check` passes.
+- [x] Set **`Status: resolved`** and sync the **Tasks** row on [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md).

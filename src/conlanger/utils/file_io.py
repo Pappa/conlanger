@@ -2,9 +2,7 @@
 
 from __future__ import annotations
 
-import re
 from pathlib import Path
-from typing import Any
 
 import pandas as pd
 
@@ -19,84 +17,6 @@ MANUAL_MAPPINGS_MATCHED_CSV_COLUMNS = [
     "to_text",
 ]
 MANUAL_MAPPINGS_MATCHED_CSV_NAME = "manual_mappings_matched_rules.csv"
-
-
-_RULE_COMMENT_QUALIFIER_PHRASES = (
-    "short only",
-    "long only",
-    "when unstressed",
-    "when stressed",
-    "except as below",
-    "sporadic(ally)?",
-    "sometimes",
-    "occasional(ly)?",
-    "typical(ly)?",
-    "rare(ly)?",
-    "usual(ly)?",
-    "not sure",
-    "not universal",
-    "unstressed",
-    "stressed",
-)
-_RULE_COMMENT_QUALIFIER_PHRASES_RE = [
-    re.compile(rf"\b{phrase}\b", re.IGNORECASE)
-    for phrase in _RULE_COMMENT_QUALIFIER_PHRASES
-]
-
-
-def write_rule_comment_phrase_summary(doc: dict[str, Any], path: Path) -> int:
-    """Write qualifier-phrase counts from index rule ``comment`` fields."""
-    comments: list[str] = []
-    for section in doc.get("sections") or []:
-        for rule in section.get("rules") or []:
-            comment = rule.get("comment")
-            if comment:
-                comments.append(str(comment))
-
-    phrase_counts: dict[str, int] = {}
-    for comment in comments:
-        for idx, phrase_re in enumerate(_RULE_COMMENT_QUALIFIER_PHRASES_RE):
-            if phrase_re.search(comment.lower()):
-                phrase = _RULE_COMMENT_QUALIFIER_PHRASES[idx].replace("?", "")
-                if phrase not in phrase_counts:
-                    phrase_counts[phrase] = 0
-                phrase_counts[phrase] += 1
-                break
-
-    semicolon_count = sum(1 for comment in comments if ";" in comment)
-
-    lines = [
-        "# Rule comment phrase summary",
-        "",
-        f"- Corpus rules with **`comment`**: **{len(comments)}**",
-        f"- Comments containing ``; `` (semicolon tails): **{semicolon_count}**",
-        "",
-        "## Qualifier phrases",
-        "",
-        "| phrase | rules |",
-        "| --- | ---: |",
-    ]
-    for phrase, count in sorted(
-        phrase_counts.items(), key=lambda item: (-item[1], item[0])
-    ):
-        lines.append(f"| `{phrase}` | {count} |")
-
-    if not phrase_counts:
-        lines.append("| _(none matched)_ | 0 |")
-
-    lines.extend(
-        [
-            "",
-            "## Sample comments (first 10)",
-            "",
-        ]
-    )
-    for comment in comments[:10]:
-        lines.append(f"- {comment}")
-
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    return len(comments)
 
 
 def write_csv_rows(path: Path, rows: list[dict[str, str]], columns: list[str]) -> None:

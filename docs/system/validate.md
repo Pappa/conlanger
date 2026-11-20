@@ -27,7 +27,6 @@ flowchart TD
   HTML[index_diachronica.html]
   Parse[IndexDiachronicaParser.parse]
   YAML[index_diachronica.yml]
-  CommentSummary[rule-comment-phrases.md]
   Compile[compile_rules]
   ASCA_Y[asca_rules.yml]
   Inv[iter_compiled_inventory_bundles]
@@ -36,7 +35,6 @@ flowchart TD
   Summary[rule-inventory-summary.md]
 
   HTML --> Parse --> YAML
-  Parse --> CommentSummary
   YAML --> Compile --> ASCA_Y --> Inv
   Inv --> Split
   Split --> Changelog
@@ -51,7 +49,6 @@ flowchart TD
 | Parse diagnostics | `diagnostics/parse/` |
 | Inventory dir | `diagnostics/inventory/` |
 | Compiled rules YAML | `diagnostics/compile/asca_rules.yml` (written by `compile_rules`; read by `validate_rules`) |
-| Comment phrase survey | `diagnostics/parse/rule-comment-phrases.md` |
 | Probe wordlist | `tests/fixtures/asca_probe_words.wsca` |
 
 **`validate_rules` flags:** `--limit N` (smoke), `--compiled-in`, `--inventory-dir`, `--probe-words`, `--field-isolation`, `--use-asca-fork`, `--reset-changelog`.
