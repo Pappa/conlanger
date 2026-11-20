@@ -45,48 +45,55 @@ I started reading about conlanging and a couple of things stood out.
 
 So, I can represent the phoneme inventory of any language as a very simple 2d image:
 
-![IPA phoneme inventory](./assets/2d_data/language_data_table.png)
-
-And represent other characteristics of any language as 2d images.
-
 **Phoible data**
 
 ![Phoible data](./assets/2d_data/phoible_data.png)
+
+| English | Korean | Spanish | Welsh | Xhosa |
+|---------|--------|---------|-------|-------|
+|  ![English](./assets/2d_data/english_phoible.png) | ![Korean](./assets/2d_data/korean_phoible.png) | ![Spanish](./assets/2d_data/spanish_phoible.png) | ![Welsh](./assets/2d_data/welsh_phoible.png) | ![Xhosa](./assets/2d_data/xhosa_phoible.png) | 
+
+| Median Language | Mean Language |
+|-----------------|---------------|
+|  ![Median Language](./assets/2d_data/median_language_phoible.png) | ![Mean Language](./assets/2d_data/mean_language_phoible.png) |
+
+
+And represent other features of any language as 2d images.
 
 **WALS data**
 
 ![WALS data](./assets/2d_data/wals_data.png)
 
 The upshot of all this is that I realised I can use this data to train a GAN (or use some other method like SMOTE) to generate random, 
-but plausible languages, including a phoneme inventory and other characteristics of the language.
+but plausible languages, including a phoneme inventory and any other features of the language.
 
 <p align="center">
   <img src="./assets/Awesome_Face.svg" width="250"/>
 </p>
 
-### Synthetic Data
+### Synthetic Languages
 
 Here are some examples of synthetic phoneme inventories, generated using a GAN, and for comparison, the languages that are a _closest match_ to the synthetic examples.
 
 While they look very similar, none of the synthetic examples are an exact match of the real ones.
 
-| Synthetic | Real |
+| Real | Synthetic (WGANGP) |
 |------|---------------|
-| ![Synthetic](./assets/2d_data/synthetic_phoneme_inventory.png) | ![Real](./assets/2d_data/synthetic_phoneme_inventory_closest_real.png) | 
+| ![Real](./assets/2d_data/synthetic_phoneme_inventory_closest_real.png) | ![Synthetic](./assets/2d_data/synthetic_phoneme_inventory.png) | 
+
 
 I tried the same approach to generate synthetic language features using WALS data, but couldn't get the GAN to stabilise. So, I tried SMOTE instead:
 
-| SMOTE | Real |
+| Real | Synthetic (SMOTE) |
 |------|---------------|
-| ![Synthetic](./assets/2d_data/synthetic_wals_features.png) | ![Real](./assets/2d_data/synthetic_wals_features_closest_real.png) | 
+ | ![Real](./assets/2d_data/synthetic_wals_features_closest_real.png) | ![Synthetic](./assets/2d_data/synthetic_wals_features.png) | 
 
 ### Language Evolution
 
 It's all well and good generating a fake but plausible language based on the properties of existing languages, but a good 
 conlang should have a history. It should evolve from a proto-language.
 
-
-In the distant past of the internet, some mad bastard compiled the [Index Diachronica](https://web.archive.org/web/20260722074750/https://chridd.nfshost.com/diachronica/all), a set of sound change rules for ~6000 languages, gathered from the published literature. The rules 
+In the distant past of the internet, some mad bastard compiled the [Index Diachronica](https://chridd.nfshost.com/diachronica/), a set of sound change rules for ~6000 languages, gathered from the published literature. The rules 
 encode how the sounds in a language change over time (typically as an ancestor language evolves into a descendent).
 
 
@@ -125,36 +132,48 @@ After a hiatus of a few months, I decided to let AI take a stab at it. I vibe-co
 I've taken a more systematic approach, using AI to help me research the domain, define the requirements and implement and test the system incrementally. 
 
 
-This has been far more successful so far, with > 80% of rules validated. There are definitely bugs and incorrect bits and pieces in the current implementation, but it's probably getting close to _"good enough"_ for what I need.
+This has been far more successful so far, with > 95% of rules validated. Though, I think this maycontain a lot of false positives, becuase ASCA some ASCA errors aren't thrown unless a rule matches and applies a transformation. I've forked ASCA to create a rule validation command, but I'm not convinced it's doing what I expect. There are definitely bugs and incorrect bits and pieces in the current implementation, but it's probably getting close to _"good enough"_ for what I need.
 
 ## The end goal for this project
 
-I want to press a button and watch a fully developed conlang appear before my eyes, complete with a written grammar, translations and sample audio of the language being spoken.
+I want to fully automate the process of creating a naturalistic conlang using an ML pipeline, complete with a written grammar, translations and sample audio of the language being spoken. I'm not doing this because I think it will be useful to conlangers. Conlangers create conlang becuase they like conlanging. Producing one fully formed, on demand, probably isn't going to appeal to the community. I'm just doing it for fun. I dislike AI-generated art produced for commercial gain, but I love seeing what ML models do when used for more creative endevours. 
 
-The implementation will consist of 2 parts:
+The full pipeline will consist of:
 
-### 1. Model Training
+### 1. Data Preparation
 
 - Ingest data
-  - IPA data
-  - CLDF data (Phoible, WALS, etc.)
-  - Parsable Index Diachronica sound change rules
+   - Language phoneme inventories - ([Phoible](https://phoible.org/))
+   - CLDF data - ([WALS](https://wals.info/))
+   - Sound change data - ([Index Diachronica](https://chridd.nfshost.com/diachronica/))
+- Parse/process data
+- Feature engineering
+
+### 2. Model Training
+
 - Train GANs
+- Use SMOTE or other approaches
+- Decode the model output back to human readable features
+- Validate outputs
+   - Confirm they are novel, different from all training samples
+   - Confirm they are plausible and naturalistic (no idea how yet)
 
-### 2. Generate a conlang on demand
+### 3. Generate a conlang on demand
 
-- Create the proto-language
+- Create the proto-language from the pre-trained models
   - Generate a phoneme inventory
   - Determine phonotactics
   - Generate root words
   - Determine basic grammar characteristics
+     - There's a lot going on under the hood here. I've been trying not to think about it too much as it may cause me to abandon the project, but I guess I'll have to implement some kind of Generative Grammar system programatically. Hopefully Mark Rosenfelder's stuff is open source. 😂
   - Create proto-language lexicon
 - Evolve the language
   - Generate plausible sound-change sequences
-  - Apply generated sound change rules to the proto-language
+     - I'll probably try using LSTM, but I don't have a clue yet really.
+  - Apply generated sound change rules to the proto-language (using ASCA, maybe Brassica)
   - Evolve/update the grammar
 - Publish conlang artefacts
-  - Generate sample translations
+  - Generate sample translations/glosses
   - Generate HTML/PDF language grammar document
   - Generate sample audio files
 
