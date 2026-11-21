@@ -4,7 +4,7 @@ import argparse
 import sys
 from pathlib import Path
 
-from conlanger.scripts.config_loaders import load_compiler_config
+from conlanger.scripts.config_loaders import CLI_UNSET, compiler_config_for_compile
 from conlanger.scripts.pipeline_defaults import (
     DEFAULT_COMPILED_YAML,
     DEFAULT_YAML,
@@ -29,6 +29,24 @@ def main() -> int:
         help=f"writes {COMPILED_RULES_YAML_NAME} (default: diagnostics/compile/)",
     )
     ap.add_argument("--limit", type=int, default=0, help="optional cap for smoke tests")
+    ap.add_argument(
+        "--sample-sporadic",
+        action=argparse.BooleanOptionalAction,
+        default=None,
+        help="override sample_sporadic from compiler config (default: use YAML)",
+    )
+    ap.add_argument(
+        "--sample-dialect",
+        action=argparse.BooleanOptionalAction,
+        default=None,
+        help="override sample_dialect from compiler config (default: use YAML)",
+    )
+    ap.add_argument(
+        "--seed",
+        type=int,
+        default=CLI_UNSET,
+        help="override compile RNG seed from compiler config",
+    )
     args = ap.parse_args()
 
     if not args.yaml_in.is_file():
@@ -36,7 +54,11 @@ def main() -> int:
         return 1
 
     doc = read_cleaned_index(args.yaml_in)
-    compiler_config = load_compiler_config()
+    compiler_config = compiler_config_for_compile(
+        sample_sporadic=args.sample_sporadic,
+        sample_dialect=args.sample_dialect,
+        seed=args.seed,
+    )
     bundles = iter_index_compile_bundles(doc, compiler_config=compiler_config)
     if args.limit:
         bundles = bundles[: args.limit]

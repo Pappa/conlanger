@@ -25,6 +25,8 @@ _SUPPORTED_FEATURE_MAPPING_KINDS = frozenset(
     {"rename", "rename_invert", "rename_polarity", "bundle", "tone"}
 )
 
+CLI_UNSET: object = object()
+
 
 def _load_yaml_list(path: Path) -> list[dict[str, Any]]:
     loaded = yaml.safe_load(path.read_text(encoding="utf-8")) or []
@@ -214,8 +216,49 @@ def load_parser_config(path: Path | None = None) -> ParserConfig:
     )
 
 
+def apply_compiler_config_cli_overrides(
+    config: CompilerConfig,
+    *,
+    sample_sporadic: bool | None = None,
+    sample_dialect: bool | None = None,
+    seed: int | None | object = CLI_UNSET,
+) -> CompilerConfig:
+    """Apply CLI scalar overrides on top of a loaded ``CompilerConfig``."""
+    updates: dict[str, Any] = {}
+    if sample_sporadic is not None:
+        updates["sample_sporadic"] = sample_sporadic
+    if sample_dialect is not None:
+        updates["sample_dialect"] = sample_dialect
+    if seed is not CLI_UNSET:
+        updates["seed"] = seed
+    if not updates:
+        return config
+    return config.model_copy(update=updates)
+
+
+def compiler_config_for_compile(
+    path: Path | None = None,
+    *,
+    sample_sporadic: bool | None = None,
+    sample_dialect: bool | None = None,
+    seed: int | None | object = CLI_UNSET,
+) -> CompilerConfig:
+    """Build ``CompilerConfig`` from YAML fragments with optional CLI scalar overrides."""
+    config = load_compiler_config(path)
+    return apply_compiler_config_cli_overrides(
+        config,
+        sample_sporadic=sample_sporadic,
+        sample_dialect=sample_dialect,
+        seed=seed,
+    )
+
+
 def load_compiler_config(path: Path | None = None) -> CompilerConfig:
-    """Load a fat ``CompilerConfig`` from ``config/compile/asca/`` YAML fragments."""
+    """Load ``CompilerConfig`` from ``config/compile/asca/`` YAML fragments.
+
+    Scalar keys present in the compiler YAML override ``CompilerConfig`` class
+    defaults; absent keys keep those defaults (not implicit ``false``).
+    """
     config_root = (
         _CONFIG_ROOT / "compile" / "asca" if path is None else Path(path).parent
     )
@@ -225,11 +268,13 @@ def load_compiler_config(path: Path | None = None) -> CompilerConfig:
     global_map, sections = _load_compiler_series(raw)
     group_path = config_root / "group_mappings.yml"
 
-    return CompilerConfig(
-        group_mappings=_load_group_mappings(group_path),
-        series_mappings_global=global_map,
-        series_mappings_sections=sections,
-        sample_sporadic=raw.get("sample_sporadic", False),
-        sample_dialect=raw.get("sample_dialect", False),
-        position_templates=raw.get("position_templates", {}),
-    )
+    payload: dict[str, Any] = {
+        "group_mappings": _load_group_mappings(group_path),
+        "series_mappings_global": global_map,
+        "series_mappings_sections": sections,
+    }
+    for key in ("sample_sporadic", "sample_dialect", "seed", "position_templates"):
+        if key in raw:
+            payload[key] = raw[key]
+
+    return CompilerConfig.model_validate(payload)

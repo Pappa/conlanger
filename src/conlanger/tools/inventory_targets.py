@@ -2,16 +2,13 @@
 
 from __future__ import annotations
 
-import random
 from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict
 
 from conlanger.compile.models.config import CompilerConfig
 from conlanger.compile.models.rules import DiachronicSeries, RuleTitle, SoundChangeRule
-
-# Fixed seed for inventory compile (optional-output / sporadic RNG); ticket 158.
-INVENTORY_COMPILE_RNG_SEED = 0
+from conlanger.compile.utils.rng import rng_for_compile_config
 
 
 class InventoryTarget(BaseModel):
@@ -109,7 +106,7 @@ def resolve_inventory_targets(
         scr = DiachronicSeries(
             mini,
             compiler_config=compiler_config,
-            rng=random.Random(INVENTORY_COMPILE_RNG_SEED),
+            rng=rng_for_compile_config(compiler_config),
         )
     except (KeyError, ValueError) as exc:
         return [

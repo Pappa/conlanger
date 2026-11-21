@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import random
 from pathlib import Path
 from typing import Any, Protocol
 
@@ -11,6 +10,7 @@ import yaml
 import conlanger.tools.index_io as _index_io  # noqa: F401 — registers YAML string representer
 from conlanger.compile.models.config import CompilerConfig
 from conlanger.compile.models.rules import DiachronicSeries, SoundChangeRule
+from conlanger.compile.utils.rng import rng_for_compile_config
 from conlanger.tools.compiled_rule_shape import inventory_targets_to_compiled_fields
 from conlanger.tools.compiled_target_serde import (
     deserialize_series,
@@ -19,11 +19,7 @@ from conlanger.tools.compiled_target_serde import (
     serialize_series,
     sound_change_rule_from_series,
 )
-from conlanger.tools.inventory_targets import (
-    INVENTORY_COMPILE_RNG_SEED,
-    InventoryTarget,
-    mini_section,
-)
+from conlanger.tools.inventory_targets import InventoryTarget, mini_section
 
 COMPILED_RULES_YAML_NAME = "asca_rules.yml"
 COMPILED_RULES_SCHEMA_VERSION = 3
@@ -51,7 +47,7 @@ def _skipped_rule_line(
     series = DiachronicSeries(
         mini,
         compiler_config=compiler_config,
-        rng=random.Random(INVENTORY_COMPILE_RNG_SEED),
+        rng=rng_for_compile_config(compiler_config),
     )
     for part in series.parts:
         if isinstance(part, SoundChangeRule):

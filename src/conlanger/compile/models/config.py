@@ -27,6 +27,7 @@ class CompilerConfig(BaseModel):
     series_mappings_sections: dict[str, dict[str, str]] = Field(default_factory=dict)
     sample_sporadic: bool = True
     sample_dialect: bool = True
+    seed: int | None = None
     position_templates: PositionTemplates = Field(default_factory=PositionTemplates)
 
     @field_validator("position_templates", mode="before")

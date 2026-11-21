@@ -1,5 +1,5 @@
 Type: task
-Status: ready
+Status: resolved
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Layer CompilerConfig from class defaults, YAML, and CLI; optional compile seed in config.
 Blocked by:
@@ -39,12 +39,12 @@ Introduce a dedicated merge path when building a `CompilerConfig` for compile op
 
 ## Acceptance Criteria
 
-- [ ] Building config with an **empty** YAML dict (only sidecar mappings loaded) yields `sample_sporadic=True`, `sample_dialect=True`, and `seed=None` unless tests inject overrides.
-- [ ] Committed `compiler_config.yml` with `sample_sporadic: false`, `sample_dialect: false`, and `seed: 0` loads to those values.
-- [ ] `compile_rules` CLI scalar override wins over YAML (test at least one boolean and `seed`).
-- [ ] `INVENTORY_COMPILE_RNG_SEED` is removed; grep clean in `src/` and `tests/`.
-- [ ] Two compile runs with the same index and `seed: 0` in config produce identical stochastic choices; with `seed` omitted (and no CLI seed), two runs **may** differ (smoke test optional).
-- [ ] [`validate.md`](../../docs/system/validate.md) mentions compile seed lives in `compiler_config.yml` (not the removed constant).
-- [ ] `uv run check` passes.
+- [x] Building config with an **empty** YAML dict (only sidecar mappings loaded) yields `sample_sporadic=True`, `sample_dialect=True`, and `seed=None` unless tests inject overrides.
+- [x] Committed `compiler_config.yml` with `sample_sporadic: false`, `sample_dialect: false`, and `seed: 0` loads to those values.
+- [x] `compile_rules` CLI scalar override wins over YAML (test at least one boolean and `seed`).
+- [x] `INVENTORY_COMPILE_RNG_SEED` is removed; grep clean in `src/` and `tests/`.
+- [x] Two compile runs with the same index and `seed: 0` in config produce identical stochastic choices; with `seed` omitted (and no CLI seed), two runs **may** differ (smoke test optional).
+- [x] [`validate.md`](../../docs/system/validate.md) mentions compile seed lives in `compiler_config.yml` (not the removed constant).
+- [x] `uv run check` passes.
 
 ## Comments

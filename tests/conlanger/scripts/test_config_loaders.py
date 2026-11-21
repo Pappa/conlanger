@@ -14,6 +14,7 @@ from conlanger.ingest.models.mappings import (
 from conlanger.scripts.config_loaders import (
     _load_yaml_dict,
     _load_yaml_list,
+    compiler_config_for_compile,
     load_compiler_config,
     load_parser_config,
 )
@@ -396,6 +397,40 @@ def test_load_compiler_config_merges_partial_position_templates(tmp_path: Path):
     assert config.position_templates.near == "near_{v}"
     assert config.position_templates.adjacent_to == "{v}_, _{v}"
     assert config.position_templates.in_ == "{v}"
+
+
+def test_load_compiler_config_absent_scalars_use_model_defaults(tmp_path: Path):
+    path = tmp_path / "compiler_config.yml"
+    path.write_text("series_mappings:\n  global: {}\n", encoding="utf-8")
+    (tmp_path / "group_mappings.yml").write_text("{}\n", encoding="utf-8")
+    config = load_compiler_config(path)
+    assert config.sample_sporadic is True
+    assert config.sample_dialect is True
+    assert config.seed is None
+
+
+def test_load_default_asca_compiler_profile():
+    config = load_compiler_config()
+    assert config.sample_sporadic is False
+    assert config.sample_dialect is False
+    assert config.seed == 0
+
+
+def test_apply_compiler_config_cli_overrides_win_over_yaml(tmp_path: Path):
+    path = tmp_path / "compiler_config.yml"
+    path.write_text(
+        "seed: 0\nsample_sporadic: false\nsample_dialect: false\n",
+        encoding="utf-8",
+    )
+    (tmp_path / "group_mappings.yml").write_text("{}\n", encoding="utf-8")
+    config = compiler_config_for_compile(
+        path,
+        sample_sporadic=True,
+        seed=99,
+    )
+    assert config.sample_sporadic is True
+    assert config.sample_dialect is False
+    assert config.seed == 99
 
 
 def test_load_compiler_config_skips_malformed_section_rows(tmp_path: Path):

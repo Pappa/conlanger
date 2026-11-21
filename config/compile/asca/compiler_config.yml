@@ -1,3 +1,5 @@
+# seed: compile RNG for reproducible validate/diagnostics; omit for unseeded compile
+seed: 0
 sample_sporadic: false
 sample_dialect: false
 position_templates:

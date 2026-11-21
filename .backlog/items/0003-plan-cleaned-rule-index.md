@@ -72,7 +72,7 @@ A **cleaned rule index** (applier-neutral YAML source of truth) derived from **I
 | [0050-task-expected-underscore-env-prose-cluster.md](0050-task-expected-underscore-env-prose-cluster.md) | Unrelated `expected_underscore` U1–U7 disposition (prose/else/`//`). | resolved |
 | [0051-task-segment-context-plus-hash-u-env-set.md](0051-task-segment-context-plus-hash-u-env-set.md) | Segment `context` + `position.in` `#U` → `:{…, #<…>}:` env set. | resolved |
 | [0052-task-remove-rule-comment-phrases-summary.md](0052-task-remove-rule-comment-phrases-summary.md) | Remove `rule-comment-phrases.md` parse diagnostic and dead writer code. | resolved |
-| [0055-task-compiler-config-merge-and-seed.md](0055-task-compiler-config-merge-and-seed.md) | CompilerConfig defaults ← YAML ← CLI; optional `seed`; remove inventory RNG constant. | ready |
+| [0055-task-compiler-config-merge-and-seed.md](0055-task-compiler-config-merge-and-seed.md) | CompilerConfig defaults ← YAML ← CLI; optional `seed`; remove inventory RNG constant. | resolved |
 | [0054-task-compile-rules-sample-mode-v4-schema.md](0054-task-compile-rules-sample-mode-v4-schema.md) | Pipeline vs validate compile output; v4 structured `asca_rules.yml`. | needs-detail |
 
 ## Spikes
