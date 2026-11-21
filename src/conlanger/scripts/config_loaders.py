@@ -25,8 +25,6 @@ _SUPPORTED_FEATURE_MAPPING_KINDS = frozenset(
     {"rename", "rename_invert", "rename_polarity", "bundle", "tone"}
 )
 
-CLI_UNSET: object = object()
-
 
 def _load_yaml_list(path: Path) -> list[dict[str, Any]]:
     loaded = yaml.safe_load(path.read_text(encoding="utf-8")) or []
@@ -221,7 +219,7 @@ def apply_compiler_config_cli_overrides(
     *,
     sample_sporadic: bool | None = None,
     sample_dialect: bool | None = None,
-    seed: int | None | object = CLI_UNSET,
+    seed: int | None = None,
 ) -> CompilerConfig:
     """Apply CLI scalar overrides on top of a loaded ``CompilerConfig``."""
     updates: dict[str, Any] = {}
@@ -229,7 +227,7 @@ def apply_compiler_config_cli_overrides(
         updates["sample_sporadic"] = sample_sporadic
     if sample_dialect is not None:
         updates["sample_dialect"] = sample_dialect
-    if seed is not CLI_UNSET:
+    if seed is not None:
         updates["seed"] = seed
     if not updates:
         return config
@@ -241,7 +239,7 @@ def compiler_config_for_compile(
     *,
     sample_sporadic: bool | None = None,
     sample_dialect: bool | None = None,
-    seed: int | None | object = CLI_UNSET,
+    seed: int | None = None,
 ) -> CompilerConfig:
     """Build ``CompilerConfig`` from YAML fragments with optional CLI scalar overrides."""
     config = load_compiler_config(path)

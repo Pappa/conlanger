@@ -4,7 +4,7 @@ import argparse
 import sys
 from pathlib import Path
 
-from conlanger.scripts.config_loaders import CLI_UNSET, compiler_config_for_compile
+from conlanger.scripts.config_loaders import compiler_config_for_compile
 from conlanger.scripts.pipeline_defaults import (
     DEFAULT_COMPILED_YAML,
     DEFAULT_YAML,
@@ -44,7 +44,7 @@ def main() -> int:
     ap.add_argument(
         "--seed",
         type=int,
-        default=CLI_UNSET,
+        default=None,
         help="override compile RNG seed from compiler config",
     )
     args = ap.parse_args()
