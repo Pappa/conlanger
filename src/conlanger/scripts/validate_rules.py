@@ -31,8 +31,7 @@ from conlanger.tools.index_inventory import (
     INVENTORY_ERROR_CSV_NAME,
     INVENTORY_SKIPPED_CSV_NAME,
     INVENTORY_SUCCESS_CSV_NAME,
-    IndexRuleInventoryBundle,
-    bundles_for_row_prefix,
+    CompiledIndexRule,
     field_isolation_rows_for_validation_rows,
     field_isolation_rows_to_dataframe,
     filter_field_isolation_error,
@@ -40,11 +39,12 @@ from conlanger.tools.index_inventory import (
     filter_field_isolation_success,
     filter_inventory_by_ok,
     filter_inventory_skipped,
-    iter_compiled_inventory_bundles,
+    iter_validated_compiled_rules,
     load_inventory_csv,
     matched_correction_rule_ids,
     ok_flip_changelog_rows,
     summarize_inventory,
+    trim_compiled_rules_for_row_limit,
     validation_rows_to_dataframe,
     write_field_isolation_csvs,
     write_filtered_inventory_csvs,
@@ -138,24 +138,26 @@ def main() -> int:
 
     compiled_doc = read_compiled_rules_yaml(args.compiled_in)
     parser_config = load_parser_config()
-    bundles: list[IndexRuleInventoryBundle] = iter_compiled_inventory_bundles(
+    bundles: list[CompiledIndexRule] = iter_validated_compiled_rules(
         compiled_doc,
         probe_words=args.probe_words,
         asca_bin=asca_command,
     )
-    rows = [row for bundle in bundles for row in bundle.rows]
+    rows = [row for bundle in bundles for row in bundle.validation_rows]
     field_rows: list = []
     if args.field_isolation:
         for bundle in bundles:
             field_rows.extend(
                 field_isolation_rows_for_validation_rows(
-                    bundle.rows, bundle.targets, asca_bin=asca_command
+                    bundle.validation_rows,
+                    bundle.compile_targets,
+                    asca_bin=asca_command,
                 )
             )
     if args.limit:
         rows = rows[: args.limit]
         field_rows = field_rows[: args.limit]
-        bundles = bundles_for_row_prefix(bundles, rows)
+        bundles = trim_compiled_rules_for_row_limit(bundles, rows)
 
     success_path = args.inventory_dir / INVENTORY_SUCCESS_CSV_NAME
     error_path = args.inventory_dir / INVENTORY_ERROR_CSV_NAME

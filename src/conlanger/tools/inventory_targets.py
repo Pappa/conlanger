@@ -69,24 +69,33 @@ def _compiled_field_segment(
     return (part.compiled or part.raw or "").strip()
 
 
-def _part_choices(part: SoundChangeRule) -> list[SoundChangeRule]:
+def _part_choices(
+    part: SoundChangeRule,
+    *,
+    sample_alternatives: bool,
+) -> list[SoundChangeRule]:
+    if sample_alternatives:
+        return [part]
     return list(part.alternatives) if part.alternatives else [part]
 
 
 def _enumerate_composed_chain_paths(
     parts: list[SoundChangeRule],
+    *,
+    sample_alternatives: bool,
 ) -> list[list[SoundChangeRule]]:
     """Enumerate valid stage sequences where each step's input matches prior output."""
     if not parts:
         return []
     paths: list[list[SoundChangeRule]] = [
-        [choice] for choice in _part_choices(parts[0])
+        [choice]
+        for choice in _part_choices(parts[0], sample_alternatives=sample_alternatives)
     ]
     for part in parts[1:]:
         extended: list[list[SoundChangeRule]] = []
         for path in paths:
             prior_output = _compiled_field_segment(path[-1], "output")
-            for choice in _part_choices(part):
+            for choice in _part_choices(part, sample_alternatives=sample_alternatives):
                 if _compiled_field_segment(choice, "input") == prior_output:
                     extended.append(path + [choice])
         paths = extended
@@ -124,7 +133,14 @@ def resolve_inventory_targets(
         ]
 
     multi_step = len(sound_change_parts) > 1
-    composed_paths = _enumerate_composed_chain_paths(sound_change_parts)
+    if compiler_config is None:
+        sample_alternatives = False
+    else:
+        sample_alternatives = compiler_config.sample_alternatives
+    composed_paths = _enumerate_composed_chain_paths(
+        sound_change_parts,
+        sample_alternatives=sample_alternatives,
+    )
     if not composed_paths:
         return [
             InventoryTarget(

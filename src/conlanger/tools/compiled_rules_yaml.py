@@ -1,4 +1,4 @@
-"""Compiled rules YAML v3 (`diagnostics/compile/asca_rules.yml`, tickets 159/161/169)."""
+"""Compiled rules YAML v4 (`diagnostics/compile/asca_rules.yml`, tickets 159/161/169)."""
 
 from __future__ import annotations
 
@@ -22,15 +22,15 @@ from conlanger.tools.compiled_target_serde import (
 from conlanger.tools.inventory_targets import InventoryTarget, mini_section
 
 COMPILED_RULES_YAML_NAME = "asca_rules.yml"
-COMPILED_RULES_SCHEMA_VERSION = 3
-SUPPORTED_COMPILED_RULES_SCHEMA_VERSIONS = frozenset({1, 2, 3})
+COMPILED_RULES_SCHEMA_VERSION = 4
+SUPPORTED_COMPILED_RULES_SCHEMA_VERSIONS = frozenset({1, 2, 3, 4})
 
 
-class _CompileRuleBundle(Protocol):
+class _CompiledRuleInput(Protocol):
     section: dict[str, Any]
     rule: dict[str, Any]
     rule_id: str
-    targets: list[InventoryTarget]
+    compile_targets: list[InventoryTarget]
 
 
 def _skipped_rule_line(
@@ -64,7 +64,7 @@ def compiled_rule_entry(
     section: dict[str, Any],
     compiler_config: CompilerConfig | None = None,
 ) -> dict[str, Any]:
-    """Build one ``rules`` entry for ``asca_rules.yml`` v3."""
+    """Build one ``rules`` entry for ``asca_rules.yml`` v4."""
     entry: dict[str, Any] = {"rule_id": rule_id, "source": source}
 
     if rule.get("status") == "skipped":
@@ -104,11 +104,11 @@ def compiled_rule_entry(
 
 
 def build_asca_rules_document(
-    bundles: list[_CompileRuleBundle],
+    bundles: list[_CompiledRuleInput],
     *,
     compiler_config: CompilerConfig | None = None,
 ) -> dict[str, Any]:
-    """Assemble v3 ``asca_rules.yml`` from compile targets (not validation rows)."""
+    """Assemble v4 ``asca_rules.yml`` from compile targets (not validation rows)."""
     sections_out: list[dict[str, Any]] = []
     current_key: tuple[str, str] | None = None
     current_section: dict[str, Any] | None = None
@@ -139,7 +139,7 @@ def build_asca_rules_document(
                 bundle.rule,
                 rule_id=bundle.rule_id,
                 source=source,
-                targets=bundle.targets,
+                targets=bundle.compile_targets,
                 section=section,
                 compiler_config=compiler_config,
             )

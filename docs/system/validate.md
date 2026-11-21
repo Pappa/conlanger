@@ -29,7 +29,7 @@ flowchart TD
   YAML[index_diachronica.yml]
   Compile[compile_rules]
   ASCA_Y[asca_rules.yml]
-  Inv[iter_compiled_inventory_bundles]
+  Inv[iter_validated_compiled_rules]
   Split[success / error CSVs]
   Changelog[ok-flip changelog]
   Summary[rule-inventory-summary.md]
@@ -192,7 +192,7 @@ resolve_asca_bin() -> str | None  # ASCA_BIN env, then PATH
 - `validate_asca_syntax("a > b / _")` → `asca validate -s …`
 - `validate_asca_part("env", "#_")` → `asca validate -s … -f context` (`env` maps to ASCA `context`)
 
-**Inventory integration** (`index_inventory.py`): `validate_rules` loads `asca_rules.yml` → `iter_compiled_inventory_bundles` deserialises each target’s `series` → `validate_asca` on each one-rule mini-series (`probe_words=tests/fixtures/asca_probe_words.wsca` by default). Compile-time target resolution (`resolve_inventory_targets`) runs only in `compile_rules`.
+**Inventory integration** (`index_inventory.py`): `validate_rules` loads `asca_rules.yml` → `iter_validated_compiled_rules` extracts each compiled `rule` string → `validate_asca` on each line (`probe_words=tests/fixtures/asca_probe_words.wsca` by default). Compile-time target resolution (`resolve_inventory_targets`) runs only in `compile_rules`.
 
 ### Probe wordlist
 

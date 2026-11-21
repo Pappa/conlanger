@@ -62,7 +62,13 @@ def test_resolve_inventory_targets_no_composed_chain_paths():
         detect_alternatives=False,
         compiler_config=config,
     )
-    assert _enumerate_composed_chain_paths([first, second]) == []
+    assert (
+        _enumerate_composed_chain_paths(
+            [first, second],
+            sample_alternatives=False,
+        )
+        == []
+    )
 
 
 def test_inventory_target_is_frozen_pydantic_model():

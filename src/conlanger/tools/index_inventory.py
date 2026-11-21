@@ -1141,7 +1141,7 @@ def validate_index_rule_with_targets(
     return rows, targets
 
 
-class IndexRuleInventoryBundle(BaseModel):
+class CompiledIndexRule(BaseModel):
     """Per index rule: validation rows and compile targets (ticket 159)."""
 
     model_config = ConfigDict(frozen=True, arbitrary_types_allowed=True)
@@ -1149,53 +1149,53 @@ class IndexRuleInventoryBundle(BaseModel):
     section: dict[str, Any]
     rule: dict[str, Any]
     rule_id: str
-    rows: list[ValidationRow]
-    targets: list[InventoryTarget]
+    validation_rows: list[ValidationRow]
+    compile_targets: list[InventoryTarget]
 
 
-def compile_index_rule_bundle(
+def compile_index_rule(
     section: dict[str, Any],
     rule: dict[str, Any],
     rule_id: str,
     *,
     compiler_config: CompilerConfig | None = None,
-) -> IndexRuleInventoryBundle:
+) -> CompiledIndexRule:
     """Compile one index rule to inventory targets (no ASCA validation)."""
     if rule.get("status") == "skipped":
-        return IndexRuleInventoryBundle(
+        return CompiledIndexRule(
             section=section,
             rule=rule,
             rule_id=rule_id,
-            rows=[],
-            targets=[InventoryTarget()],
+            validation_rows=[],
+            compile_targets=[InventoryTarget()],
         )
 
     targets = resolve_inventory_targets(
         section, rule, rule_id, compiler_config=compiler_config
     )
-    return IndexRuleInventoryBundle(
+    return CompiledIndexRule(
         section=section,
         rule=rule,
         rule_id=rule_id,
-        rows=[],
-        targets=targets,
+        validation_rows=[],
+        compile_targets=targets,
     )
 
 
-def iter_index_compile_bundles(
+def iter_compiled_index_rules(
     doc: dict[str, Any],
     *,
     compiler_config: CompilerConfig | None = None,
-) -> list[IndexRuleInventoryBundle]:
+) -> list[CompiledIndexRule]:
     """Compile every index rule and return bundles without ASCA validation."""
-    bundles: list[IndexRuleInventoryBundle] = []
+    bundles: list[CompiledIndexRule] = []
     for section in doc.get("sections") or []:
         if section.get("status") == "skipped":
             continue
         for rule in section.get("rules") or []:
             rule_id = str(rule.get("rule_id", ""))
             bundles.append(
-                compile_index_rule_bundle(
+                compile_index_rule(
                     section,
                     rule,
                     rule_id,
@@ -1297,14 +1297,14 @@ def _validation_rows_for_compiled_rule_entry(
     return rows, targets
 
 
-def iter_compiled_inventory_bundles(
+def iter_validated_compiled_rules(
     compiled_doc: dict[str, Any],
     *,
     probe_words: Path | None,
     asca_bin: str | None = None,
-) -> list[IndexRuleInventoryBundle]:
+) -> list[CompiledIndexRule]:
     """Validate compiled ``asca_rules.yml`` and return inventory bundles."""
-    bundles: list[IndexRuleInventoryBundle] = []
+    bundles: list[CompiledIndexRule] = []
     for section in compiled_doc.get("sections") or []:
         section_index = str(section.get("index", ""))
         section_name = str(section.get("section", ""))
@@ -1320,36 +1320,36 @@ def iter_compiled_inventory_bundles(
                 asca_bin=asca_bin,
             )
             bundles.append(
-                IndexRuleInventoryBundle(
+                CompiledIndexRule(
                     section=section_dict,
                     rule={"source": source},
                     rule_id=rule_id,
-                    rows=rows,
-                    targets=targets,
+                    validation_rows=rows,
+                    compile_targets=targets,
                 )
             )
     return bundles
 
 
-def bundles_for_row_prefix(
-    bundles: list[IndexRuleInventoryBundle],
+def trim_compiled_rules_for_row_limit(
+    bundles: list[CompiledIndexRule],
     rows: list[ValidationRow],
-) -> list[IndexRuleInventoryBundle]:
-    """Return bundles whose rows are a prefix of ``rows`` (for ``--limit``)."""
+) -> list[CompiledIndexRule]:
+    """Return rules whose validation rows are a prefix of ``rows`` (for ``--limit``)."""
     if not rows:
         return []
     remaining = list(rows)
-    trimmed: list[IndexRuleInventoryBundle] = []
+    trimmed: list[CompiledIndexRule] = []
     for bundle in bundles:
-        bundle_rows = bundle.rows
+        bundle_rows = bundle.validation_rows
         if len(bundle_rows) > len(remaining):
             trimmed.append(
-                IndexRuleInventoryBundle(
+                CompiledIndexRule(
                     section=bundle.section,
                     rule=bundle.rule,
                     rule_id=bundle.rule_id,
-                    rows=remaining,
-                    targets=bundle.targets[: len(remaining)],
+                    validation_rows=remaining,
+                    compile_targets=bundle.compile_targets[: len(remaining)],
                 )
             )
             break
@@ -1366,9 +1366,9 @@ def iter_index_rule_inventory_bundles(
     probe_words: Path | None,
     compiler_config: CompilerConfig | None = None,
     asca_bin: str | None = None,
-) -> list[IndexRuleInventoryBundle]:
+) -> list[CompiledIndexRule]:
     """Validate the index and return one bundle per index rule in document order."""
-    bundles: list[IndexRuleInventoryBundle] = []
+    bundles: list[CompiledIndexRule] = []
     for section in doc.get("sections") or []:
         rules = section.get("rules") or []
         for rule in rules:
@@ -1382,12 +1382,12 @@ def iter_index_rule_inventory_bundles(
                 asca_bin=asca_bin,
             )
             bundles.append(
-                IndexRuleInventoryBundle(
+                CompiledIndexRule(
                     section=section,
                     rule=rule,
                     rule_id=rule_id,
-                    rows=rows,
-                    targets=targets,
+                    validation_rows=rows,
+                    compile_targets=targets,
                 )
             )
     return bundles
@@ -1410,11 +1410,13 @@ def iter_inventory_with_field_isolation(
         compiler_config=compiler_config,
         asca_bin=asca_bin,
     ):
-        validation_rows.extend(bundle.rows)
+        validation_rows.extend(bundle.validation_rows)
         if field_isolation:
             field_rows.extend(
                 field_isolation_rows_for_validation_rows(
-                    bundle.rows, bundle.targets, asca_bin=asca_bin
+                    bundle.validation_rows,
+                    bundle.compile_targets,
+                    asca_bin=asca_bin,
                 )
             )
     return validation_rows, field_rows

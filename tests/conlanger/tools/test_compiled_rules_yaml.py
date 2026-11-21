@@ -8,6 +8,8 @@ import pytest
 import yaml
 
 from conlanger.compile.models.config import CompilerConfig
+
+_FAN_OUT = CompilerConfig(sample_alternatives=False, seed=0)
 from conlanger.compile.models.rules import SoundChangeRule
 from conlanger.tools.compiled_rules_yaml import (
     COMPILED_RULES_SCHEMA_VERSION,
@@ -18,7 +20,7 @@ from conlanger.tools.compiled_rules_yaml import (
     read_compiled_rules_yaml,
     write_compiled_rules_yaml,
 )
-from conlanger.tools.index_inventory import IndexRuleInventoryBundle
+from conlanger.tools.index_inventory import CompiledIndexRule
 from conlanger.tools.inventory_targets import (
     InventoryTarget,
     resolve_inventory_targets,
@@ -33,15 +35,15 @@ def _bundle(
     *,
     rule_id: str = "r0",
     targets: list[InventoryTarget] | None = None,
-) -> IndexRuleInventoryBundle:
+) -> CompiledIndexRule:
     if targets is None:
         targets = resolve_inventory_targets(_SECTION, rule, rule_id)
-    return IndexRuleInventoryBundle(
+    return CompiledIndexRule(
         section=_SECTION,
         rule=rule,
         rule_id=rule_id,
-        rows=[],
-        targets=targets,
+        validation_rows=[],
+        compile_targets=targets,
     )
 
 
@@ -67,10 +69,15 @@ def test_compiled_rule_entry_alternatives_and_steps():
         alt_rule,
         rule_id="opt",
         source="s:1",
-        targets=resolve_inventory_targets(_SECTION, alt_rule, "opt"),
+        targets=resolve_inventory_targets(
+            _SECTION, alt_rule, "opt", compiler_config=_FAN_OUT
+        ),
         section=_SECTION,
     )
-    assert alt_entry["alternatives"] == ["d > ∅ / V_V", "d > ð / V_V"]
+    assert [item["rule"] for item in alt_entry["alternatives"]] == [
+        "d > ∅ / V_V",
+        "d > ð / V_V",
+    ]
 
     chain_rule = {"stages": ["p", "t", "k"], "source": "s:2"}
     chain_entry = compiled_rule_entry(
@@ -80,7 +87,7 @@ def test_compiled_rule_entry_alternatives_and_steps():
         targets=resolve_inventory_targets(_SECTION, chain_rule, "chain"),
         section=_SECTION,
     )
-    assert chain_entry["steps"] == ["p > t", "t > k"]
+    assert [step["rule"] for step in chain_entry["steps"]] == ["p > t", "t > k"]
 
 
 def test_compiled_rule_entry_skipped_rule_line():
@@ -102,7 +109,7 @@ def test_compiled_rule_entry_skipped_rule_line():
 
 
 def test_build_document_omits_section_skipped():
-    skipped_bundle = IndexRuleInventoryBundle(
+    skipped_bundle = CompiledIndexRule(
         section={
             "index": "9",
             "section": "Skipped",
@@ -110,8 +117,8 @@ def test_build_document_omits_section_skipped():
         },
         rule={"stages": ["a", "b"], "rule_id": "x"},
         rule_id="x",
-        rows=[],
-        targets=[InventoryTarget()],
+        validation_rows=[],
+        compile_targets=[InventoryTarget()],
     )
     active = _bundle(
         {"stages": ["a", "b"], "rule_id": "active", "source": "s:1"},
@@ -167,7 +174,7 @@ def test_compiled_rule_entry_sporadic_skip():
         compiler_config=CompilerConfig(sample_sporadic=True, sample_dialect=True),
         rng=_RecordingRandom(random_values=[0.9]),
     )
-    bundle = IndexRuleInventoryBundle(
+    bundle = CompiledIndexRule(
         section=_SECTION,
         rule={
             "stages": ["p", "h"],
@@ -177,8 +184,8 @@ def test_compiled_rule_entry_sporadic_skip():
             "source": "s:1",
         },
         rule_id="sp",
-        rows=[],
-        targets=[InventoryTarget.model_construct(field_rule=sporadic_rule)],
+        validation_rows=[],
+        compile_targets=[InventoryTarget.model_construct(field_rule=sporadic_rule)],
     )
     doc = build_asca_rules_document([bundle])
     skipped = doc["sections"][0]["rules"][0]
@@ -191,12 +198,12 @@ def test_build_document_multiple_sections():
     doc = build_asca_rules_document(
         [
             _bundle({"stages": ["a", "b"], "rule_id": "r0", "source": "s:1"}),
-            IndexRuleInventoryBundle(
+            CompiledIndexRule(
                 section=other_section,
                 rule={"stages": ["c", "d"], "rule_id": "r1", "source": "s:2"},
                 rule_id="r1",
-                rows=[],
-                targets=resolve_inventory_targets(
+                validation_rows=[],
+                compile_targets=resolve_inventory_targets(
                     other_section, {"stages": ["c", "d"]}, "r1"
                 ),
             ),

@@ -13,13 +13,12 @@ from conlanger.tools.index_inventory import (
     OK_TRUE,
     RULE_SKIPPED_FAILURE_CLASS,
     SECTION_SKIPPED_FAILURE_CLASS,
+    CompiledIndexRule,
     FieldIsolationRow,
-    IndexRuleInventoryBundle,
     ValidationRow,
     _coerce_ok_value,
     append_ok_flip_changelog,
     build_field_isolation_row,
-    bundles_for_row_prefix,
     classify_error,
     corrections_outcome_stats,
     count_field_blame_categories,
@@ -31,9 +30,9 @@ from conlanger.tools.index_inventory import (
     filter_field_isolation_success,
     filter_inventory_by_ok,
     filter_inventory_skipped,
-    iter_compiled_inventory_bundles,
-    iter_index_compile_bundles,
+    iter_compiled_index_rules,
     iter_index_rule_inventory_bundles,
+    iter_validated_compiled_rules,
     load_inventory_csv,
     matched_correction_rule_ids,
     ok_flip_changelog_rows,
@@ -45,6 +44,7 @@ from conlanger.tools.index_inventory import (
     top_error_descriptions_from_dataframe,
     top_error_tokens,
     top_error_tokens_with_suggested_from_dataframe,
+    trim_compiled_rules_for_row_limit,
     validate_index_rule_with_targets,
     validation_rows_to_dataframe,
     write_field_isolation_csvs,
@@ -1945,7 +1945,7 @@ def test_iter_index_rule_inventory_bundles_one_per_rule(mock_validate):
     bundles = iter_index_rule_inventory_bundles(doc, probe_words=None)
     assert len(bundles) == 2
     assert [bundle.rule_id for bundle in bundles] == ["r0", "r1"]
-    assert len(bundles[0].rows) == 1
+    assert len(bundles[0].validation_rows) == 1
 
 
 @patch("conlanger.tools.index_inventory.validate_asca", return_value=True)
@@ -2052,7 +2052,7 @@ def test_field_isolation_integration_multi_blame():
     assert field_rows[0].blame == "multi"
 
 
-def test_bundles_for_row_prefix_truncates_mid_rule():
+def test_trim_compiled_rules_for_row_limit_truncates_mid_rule():
     section = {"index": "1", "section": "A"}
     rule = {"stages": ["a", "b", "c"], "source": "s:1"}
     targets = resolve_inventory_targets(section, rule, "chain")
@@ -2061,21 +2061,21 @@ def test_bundles_for_row_prefix_truncates_mid_rule():
         ValidationRow("1", "A", "chain", "s:1", OK_TRUE, rule="b > c", step_idx=1),
     ]
     bundles = [
-        IndexRuleInventoryBundle(
+        CompiledIndexRule(
             section=section,
             rule=rule,
             rule_id="chain",
-            rows=rows,
-            targets=targets,
+            validation_rows=rows,
+            compile_targets=targets,
         )
     ]
-    trimmed = bundles_for_row_prefix(bundles, rows[:1])
+    trimmed = trim_compiled_rules_for_row_limit(bundles, rows[:1])
     assert len(trimmed) == 1
-    assert len(trimmed[0].rows) == 1
-    assert bundles_for_row_prefix(bundles, []) == []
+    assert len(trimmed[0].validation_rows) == 1
+    assert trim_compiled_rules_for_row_limit(bundles, []) == []
 
 
-def test_iter_index_compile_bundles_skips_section_status():
+def test_iter_compiled_index_rules_skips_section_status():
     doc = {
         "sections": [
             {"index": "9", "section": "Skip", "status": "skipped", "rules": []},
@@ -2086,14 +2086,14 @@ def test_iter_index_compile_bundles_skips_section_status():
             },
         ]
     }
-    bundles = iter_index_compile_bundles(doc)
+    bundles = iter_compiled_index_rules(doc)
     assert len(bundles) == 1
     assert bundles[0].rule_id == "r0"
-    assert bundles[0].rows == []
+    assert bundles[0].validation_rows == []
 
 
 @patch("conlanger.tools.index_inventory.validate_asca_body", return_value=True)
-def test_iter_compiled_inventory_bundles_from_v1_document(mock_validate):
+def test_iter_validated_compiled_rules_from_v1_document(mock_validate):
     from conlanger.tools.compiled_rules_yaml import build_asca_rules_document
 
     doc = {
@@ -2111,12 +2111,12 @@ def test_iter_compiled_inventory_bundles_from_v1_document(mock_validate):
             }
         ]
     }
-    compile_bundles = iter_index_compile_bundles(doc)
+    compile_bundles = iter_compiled_index_rules(doc)
     compiled = build_asca_rules_document(compile_bundles)
-    bundles = iter_compiled_inventory_bundles(compiled, probe_words=None)
+    bundles = iter_validated_compiled_rules(compiled, probe_words=None)
     assert len(bundles) == 1
-    assert bundles[0].rows[0].ok == OK_TRUE
-    assert bundles[0].rows[0].rule == "a > b"
+    assert bundles[0].validation_rows[0].ok == OK_TRUE
+    assert bundles[0].validation_rows[0].rule == "a > b"
 
 
 @patch("conlanger.tools.index_inventory.validate_asca_body", return_value=True)
@@ -2142,15 +2142,15 @@ def test_compiled_validation_uses_rule_line_without_series_round_trip(mock_body)
             }
         ],
     }
-    bundles = iter_compiled_inventory_bundles(compiled, probe_words=None)
-    assert bundles[0].rows[0].ok == OK_TRUE
-    assert bundles[0].rows[0].rule == "{C,-r} > C:[+long] / _j"
+    bundles = iter_validated_compiled_rules(compiled, probe_words=None)
+    assert bundles[0].validation_rows[0].ok == OK_TRUE
+    assert bundles[0].validation_rows[0].rule == "{C,-r} > C:[+long] / _j"
     mock_body.assert_any_call(
         "{C,-r} > C:[+long] / _j",
         probe_words=None,
         asca_bin=None,
     )
-    assert bundles[1].rows[0].ok == OK_TRUE
+    assert bundles[1].validation_rows[0].ok == OK_TRUE
 
 
 def test_iter_compiled_inventory_rejects_ambiguous_rule_shape():
@@ -2171,9 +2171,9 @@ def test_iter_compiled_inventory_rejects_ambiguous_rule_shape():
             }
         ],
     }
-    bundles = iter_compiled_inventory_bundles(compiled, probe_words=None)
-    assert bundles[0].rows[0].ok == OK_FALSE
-    assert bundles[0].rows[0].failure_class == "format_error"
+    bundles = iter_validated_compiled_rules(compiled, probe_words=None)
+    assert bundles[0].validation_rows[0].ok == OK_FALSE
+    assert bundles[0].validation_rows[0].failure_class == "format_error"
 
 
 def test_iter_compiled_inventory_handles_skipped_and_compile_error():
@@ -2205,7 +2205,7 @@ def test_iter_compiled_inventory_handles_skipped_and_compile_error():
             }
         ],
     }
-    bundles = iter_compiled_inventory_bundles(compiled, probe_words=None)
-    assert bundles[0].rows[0].ok == OK_SKIPPED
-    assert bundles[1].rows[0].failure_class == "format_error"
-    assert bundles[2].rows[0].ok == OK_TRUE
+    bundles = iter_validated_compiled_rules(compiled, probe_words=None)
+    assert bundles[0].validation_rows[0].ok == OK_SKIPPED
+    assert bundles[1].validation_rows[0].failure_class == "format_error"
+    assert bundles[2].validation_rows[0].ok == OK_TRUE

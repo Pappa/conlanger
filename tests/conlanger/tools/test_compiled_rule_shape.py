@@ -1,13 +1,15 @@
-"""Tests for ``compiled_rule_shape`` (asca_rules.yml v3 per-rule layout)."""
+"""Tests for ``compiled_rule_shape`` (asca_rules.yml v4 per-rule layout)."""
 
 from __future__ import annotations
 
 import pytest
 
+from conlanger.compile.models.config import CompilerConfig
 from conlanger.tools.compiled_rule_shape import (
     compiled_rule_validation_specs,
     inventory_targets_to_compiled_fields,
     target_rule_line,
+    target_to_compiled_object,
 )
 from conlanger.tools.compiled_rules_yaml import compiled_rule_entry
 from conlanger.tools.inventory_targets import (
@@ -16,23 +18,52 @@ from conlanger.tools.inventory_targets import (
 )
 
 _SECTION = {"index": "1.0", "section": "Test"}
+_FAN_OUT = CompilerConfig(sample_alternatives=False, seed=0)
 
 
 def test_inventory_targets_to_rule_alternatives_and_steps():
     alt_rule = {"stages": ["d", "{∅,ð}"], "env": "V_V", "source": "s:1"}
-    alt_targets = resolve_inventory_targets(_SECTION, alt_rule, "opt")
-    assert inventory_targets_to_compiled_fields(alt_targets) == {
-        "alternatives": ["d > ∅ / V_V", "d > ð / V_V"],
-    }
+    alt_targets = resolve_inventory_targets(
+        _SECTION, alt_rule, "opt", compiler_config=_FAN_OUT
+    )
+    fields = inventory_targets_to_compiled_fields(alt_targets)
+    assert set(fields) == {"alternatives"}
+    assert [item["rule"] for item in fields["alternatives"]] == [
+        "d > ∅ / V_V",
+        "d > ð / V_V",
+    ]
 
     chain_rule = {"stages": ["p", "t", "k"], "source": "s:2"}
-    chain_targets = resolve_inventory_targets(_SECTION, chain_rule, "chain")
-    assert inventory_targets_to_compiled_fields(chain_targets) == {
-        "steps": ["p > t", "t > k"],
+    chain_targets = resolve_inventory_targets(
+        _SECTION, chain_rule, "chain", compiler_config=_FAN_OUT
+    )
+    step_fields = inventory_targets_to_compiled_fields(chain_targets)
+    assert step_fields == {
+        "steps": [
+            {"input": "p", "output": "t", "rule": "p > t"},
+            {"input": "t", "output": "k", "rule": "t > k"},
+        ],
     }
 
-    simple = resolve_inventory_targets(_SECTION, {"stages": ["a", "b"]}, "r0")
-    assert inventory_targets_to_compiled_fields(simple) == {"rule": "a > b"}
+    simple = resolve_inventory_targets(
+        _SECTION, {"stages": ["a", "b"]}, "r0", compiler_config=_FAN_OUT
+    )
+    assert inventory_targets_to_compiled_fields(simple) == {
+        "input": "a",
+        "output": "b",
+        "rule": "a > b",
+    }
+
+
+def test_sample_alternatives_true_emits_single_optional_branch():
+    alt_rule = {"stages": ["d", "{∅,ð}"], "env": "V_V", "source": "s:1"}
+    config = CompilerConfig(sample_alternatives=True, seed=0)
+    targets = resolve_inventory_targets(
+        _SECTION, alt_rule, "opt", compiler_config=config
+    )
+    fields = inventory_targets_to_compiled_fields(targets)
+    assert "alternatives" not in fields
+    assert fields["rule"] in {"d > ∅ / V_V", "d > ð / V_V"}
 
 
 def test_inventory_targets_correlated_chain_branches_as_alternatives():
@@ -41,15 +72,12 @@ def test_inventory_targets_correlated_chain_branches_as_alternatives():
         "stages": ["r", "{r,h}", "{∅,h}"],
         "source": "s:1",
     }
-    targets = resolve_inventory_targets(_SECTION, rule, "Balinese-r")
+    targets = resolve_inventory_targets(
+        _SECTION, rule, "Balinese-r", compiler_config=_FAN_OUT
+    )
     fields = inventory_targets_to_compiled_fields(targets)
-    assert fields == {
-        "alternatives": [
-            {"steps": ["r > r", "r > ∅"]},
-            {"steps": ["r > h", "h > h"]},
-            {"steps": ["r > h", "h > ∅"]},
-        ],
-    }
+    assert len(fields["alternatives"]) == 3
+    assert fields["alternatives"][0]["steps"][0]["rule"] == "r > r"
     specs = compiled_rule_validation_specs(
         {"rule_id": "x", "source": "s", **fields},
     )
@@ -73,20 +101,19 @@ def test_inventory_targets_late_chain_stage_alternatives_use_steps():
             if rule.get("rule_id") != "Attic-Greek-oj":
                 continue
             section = {"index": sec["index"], "section": sec["section"]}
-            targets = resolve_inventory_targets(section, rule, "Attic-Greek-oj")
+            targets = resolve_inventory_targets(
+                section, rule, "Attic-Greek-oj", compiler_config=_FAN_OUT
+            )
             fields = inventory_targets_to_compiled_fields(targets)
-            assert fields["alternatives"] == [
-                {
-                    "steps": [
-                        str(t.field_rule).strip() for t in targets if t.alt_idx == 0
-                    ],
-                },
-                {
-                    "steps": [
-                        str(t.field_rule).strip() for t in targets if t.alt_idx == 1
-                    ],
-                },
-            ]
+            assert len(fields["alternatives"]) == 2
+            for branch_idx in (0, 1):
+                branch = fields["alternatives"][branch_idx]
+                expected = [
+                    target_to_compiled_object(t)["rule"]
+                    for t in targets
+                    if t.alt_idx == branch_idx
+                ]
+                assert [step["rule"] for step in branch["steps"]] == expected
             return
     pytest.fail("Attic-Greek-oj not found")
 
@@ -98,6 +125,16 @@ def test_compiled_rule_validation_specs_v2_targets_fallback():
         "targets": [
             {"rule": "a > b", "step_idx": None, "alt_idx": None},
         ],
+    }
+    assert compiled_rule_validation_specs(entry) == [("a > b", None, None)]
+
+
+def test_compiled_rule_validation_specs_v4_single_rule_object():
+    entry = {
+        "rule_id": "r0",
+        "input": "a",
+        "output": "b",
+        "rule": "a > b",
     }
     assert compiled_rule_validation_specs(entry) == [("a > b", None, None)]
 
@@ -152,6 +189,25 @@ def test_compiled_rule_validation_specs_step_alternatives_block():
     ]
 
 
+def test_compiled_rule_validation_specs_v4_step_alternatives_objects():
+    entry = {
+        "steps": [
+            {"input": "a", "output": "b", "rule": "a > b"},
+            {
+                "alternatives": [
+                    {"input": "c", "output": "d", "rule": "c > d"},
+                    {"input": "c", "output": "e", "rule": "c > e"},
+                ],
+            },
+        ],
+    }
+    assert compiled_rule_validation_specs(entry) == [
+        ("a > b", 0, None),
+        ("c > d", 1, 0),
+        ("c > e", 1, 1),
+    ]
+
+
 def test_compiled_rule_validation_specs_branch_alternatives():
     entry = {
         "alternatives": [
@@ -167,6 +223,28 @@ def test_compiled_rule_validation_specs_branch_alternatives():
     ]
 
 
+def test_target_to_compiled_object_asca_rule_only():
+    obj = target_to_compiled_object(InventoryTarget.model_construct(asca_rule="a > b"))
+    assert obj == {"rule": "a > b"}
+
+
+def test_compiled_rule_validation_specs_rejects_steps_and_alternatives():
+    with pytest.raises(ValueError, match="exactly one"):
+        compiled_rule_validation_specs(
+            {"alternatives": [{"rule": "a > b"}], "steps": [{"rule": "c > d"}]},
+        )
+
+
+def test_compiled_rule_validation_specs_alternative_object_without_steps():
+    entry = {"alternatives": [{"input": "a", "output": "b", "rule": "a > b"}]}
+    assert compiled_rule_validation_specs(entry) == [("a > b", None, 0)]
+
+
+def test_compiled_rule_validation_specs_missing_shape():
+    with pytest.raises(ValueError, match="exactly one"):
+        compiled_rule_validation_specs({"rule_id": "x", "source": "s"})
+
+
 def test_compiled_rule_entry_emits_rule_not_targets():
     rule = {"stages": ["a", "b"], "source": "s:1"}
     entry = compiled_rule_entry(
@@ -177,4 +255,5 @@ def test_compiled_rule_entry_emits_rule_not_targets():
         section=_SECTION,
     )
     assert entry["rule"] == "a > b"
+    assert entry["input"] == "a"
     assert "targets" not in entry

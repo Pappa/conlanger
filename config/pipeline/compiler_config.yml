@@ -1,0 +1,27 @@
+# Pipeline/ML profile: class defaults for sample_* (stochastic sporadic/dialect).
+# Duplicate mappings from config/compile/asca/ (no shared loader indirection).
+position_templates:
+  adjacent_to: "{v}_, _{v}"
+  near: "{v}_, _{v}"
+  in: "{v}"
+series_mappings:
+  global:
+    h₁: h
+    h₂: x
+    h₃: ɣʷ
+  sections:
+    - section: "6"
+      s₁: F
+      s₂: F
+      s₃: F
+    - section: "6.1"
+      x₁: "{ɣ, ɣʷ, xʷ}"
+      x₂: x
+    - section: "30"
+      d₂: d
+    - section: "43"
+      Vₙ: "V:[+nas]"
+      Vₛ: "V:[-stress]"
+      Vᵤ: V
+      aₙ: "a:[+nas]"
+      ɨₙ: "ɨ:[+nas]"

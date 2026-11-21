@@ -1,5 +1,5 @@
 Type: task
-Status: ready
+Status: resolved
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Pipeline vs validate compile output and v4 structured rule objects in asca_rules.yml.
 Blocked by:
@@ -56,12 +56,12 @@ Keep **`bundle`** only for feature-mapping kind in parser config. Update tests, 
 
 ## Acceptance Criteria
 
-- [ ] With **no** `--compiler-config`, `compile_rules` uses Pydantic defaults only (`sample_alternatives` true) and writes v4 YAML with **one** branch per rule where optionals exist (same `seed` via CLI/config ⇒ identical output when seeded).
-- [ ] With **asca** config, compile fan-out matches current validate target counts (modulo v4 object shape).
-- [ ] Pipeline config path produces single-path output; sporadic skip yields `compile_skipped` when `sample_sporadic`/`sample_dialect` are true (defaults or explicit).
-- [ ] `validate_rules` passes against v4 YAML from asca-profile compile.
-- [ ] Docs: bare compile vs `--compiler-config` for asca (validate) and pipeline profiles.
-- [ ] `uv run check` passes after regeneration.
-- [ ] Compiler/inventory public names use **`CompiledIndexRule`** / **`iter_compiled_index_rules`** (no `*Bundle*` on this seam except parser `mapping_kind: bundle`).
+- [x] With **no** `--compiler-config`, `compile_rules` uses Pydantic defaults only (`sample_alternatives` true) and writes v4 YAML with **one** branch per rule where optionals exist (same `seed` via CLI/config ⇒ identical output when seeded).
+- [x] With **asca** config, compile fan-out matches current validate target counts (modulo v4 object shape).
+- [x] Pipeline config path produces single-path output; sporadic skip yields `compile_skipped` when `sample_sporadic`/`sample_dialect` are true (defaults or explicit).
+- [x] `validate_rules` passes against v4 YAML from asca-profile compile.
+- [x] Docs: bare compile vs `--compiler-config` for asca (validate) and pipeline profiles.
+- [x] `uv run check` passes after regeneration.
+- [x] Compiler/inventory public names use **`CompiledIndexRule`** / **`iter_compiled_index_rules`** (no `*Bundle*` on this seam except parser `mapping_kind: bundle`).
 
 ## Comments

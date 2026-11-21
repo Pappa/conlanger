@@ -15,7 +15,7 @@ from conlanger.tools.compiled_rules_yaml import (
     build_asca_rules_document,
     write_compiled_rules_yaml,
 )
-from conlanger.tools.index_inventory import iter_index_compile_bundles
+from conlanger.tools.index_inventory import iter_compiled_index_rules
 from conlanger.tools.index_io import read_cleaned_index
 
 
@@ -30,6 +30,12 @@ def main() -> int:
     )
     ap.add_argument("--limit", type=int, default=0, help="optional cap for smoke tests")
     ap.add_argument(
+        "--compiler-config",
+        type=Path,
+        default=None,
+        help="compiler YAML package (default: Pydantic defaults only, no file)",
+    )
+    ap.add_argument(
         "--sample-sporadic",
         action=argparse.BooleanOptionalAction,
         default=None,
@@ -40,6 +46,12 @@ def main() -> int:
         action=argparse.BooleanOptionalAction,
         default=None,
         help="override sample_dialect from compiler config (default: use YAML)",
+    )
+    ap.add_argument(
+        "--sample-alternatives",
+        action=argparse.BooleanOptionalAction,
+        default=None,
+        help="override sample_alternatives (single path vs validate fan-out)",
     )
     ap.add_argument(
         "--seed",
@@ -55,11 +67,13 @@ def main() -> int:
 
     doc = read_cleaned_index(args.yaml_in)
     compiler_config = compiler_config_for_compile(
+        args.compiler_config,
         sample_sporadic=args.sample_sporadic,
         sample_dialect=args.sample_dialect,
+        sample_alternatives=args.sample_alternatives,
         seed=args.seed,
     )
-    bundles = iter_index_compile_bundles(doc, compiler_config=compiler_config)
+    bundles = iter_compiled_index_rules(doc, compiler_config=compiler_config)
     if args.limit:
         bundles = bundles[: args.limit]
 

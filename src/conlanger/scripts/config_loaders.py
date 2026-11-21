@@ -219,6 +219,7 @@ def apply_compiler_config_cli_overrides(
     *,
     sample_sporadic: bool | None = None,
     sample_dialect: bool | None = None,
+    sample_alternatives: bool | None = None,
     seed: int | None = None,
 ) -> CompilerConfig:
     """Apply CLI scalar overrides on top of a loaded ``CompilerConfig``."""
@@ -227,6 +228,8 @@ def apply_compiler_config_cli_overrides(
         updates["sample_sporadic"] = sample_sporadic
     if sample_dialect is not None:
         updates["sample_dialect"] = sample_dialect
+    if sample_alternatives is not None:
+        updates["sample_alternatives"] = sample_alternatives
     if seed is not None:
         updates["seed"] = seed
     if not updates:
@@ -239,14 +242,19 @@ def compiler_config_for_compile(
     *,
     sample_sporadic: bool | None = None,
     sample_dialect: bool | None = None,
+    sample_alternatives: bool | None = None,
     seed: int | None = None,
 ) -> CompilerConfig:
-    """Build ``CompilerConfig`` from YAML fragments with optional CLI scalar overrides."""
-    config = load_compiler_config(path)
+    """Build ``CompilerConfig`` for ``compile_rules`` with optional CLI scalar overrides.
+
+    When ``path`` is omitted, uses Pydantic class defaults only (no YAML load).
+    """
+    config = CompilerConfig() if path is None else load_compiler_config(path)
     return apply_compiler_config_cli_overrides(
         config,
         sample_sporadic=sample_sporadic,
         sample_dialect=sample_dialect,
+        sample_alternatives=sample_alternatives,
         seed=seed,
     )
 
@@ -271,7 +279,13 @@ def load_compiler_config(path: Path | None = None) -> CompilerConfig:
         "series_mappings_global": global_map,
         "series_mappings_sections": sections,
     }
-    for key in ("sample_sporadic", "sample_dialect", "seed", "position_templates"):
+    for key in (
+        "sample_sporadic",
+        "sample_dialect",
+        "sample_alternatives",
+        "seed",
+        "position_templates",
+    ):
         if key in raw:
             payload[key] = raw[key]
 

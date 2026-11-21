@@ -31,11 +31,12 @@ def test_compile_rules_cli_passes_seed_override_to_config_builder(
 ):
     captured: dict[str, object] = {}
 
-    def _capture_config(**kwargs: object):
+    def _capture_config(path=None, **kwargs: object):
+        captured["path"] = path
         captured.update(kwargs)
         from conlanger.scripts.config_loaders import compiler_config_for_compile
 
-        return compiler_config_for_compile(**kwargs)
+        return compiler_config_for_compile(path, **kwargs)
 
     monkeypatch.setattr(compile_script, "compiler_config_for_compile", _capture_config)
     yaml_in = tmp_path / "index.yml"
@@ -73,7 +74,7 @@ sections:
     assert captured["sample_sporadic"] is True
 
 
-def test_compile_rules_smoke_writes_v3_yaml(tmp_path: Path):
+def test_compile_rules_smoke_writes_v4_yaml(tmp_path: Path):
     yaml_in = tmp_path / "index.yml"
     yaml_in.write_text(
         """
@@ -106,22 +107,24 @@ sections:
         assert compile_script.main() == 0
 
     loaded = yaml.safe_load(compiled_out.read_text(encoding="utf-8"))
-    assert loaded["schema_version"] == 3
+    assert loaded["schema_version"] == 4
     rule = loaded["sections"][0]["rules"][0]
     assert rule["rule_id"] == "r0"
     assert rule["rule"] == "a > b"
+    assert rule["input"] == "a"
+    assert rule["output"] == "b"
 
 
-def test_compiler_config_for_compile_cli_seed_overrides_repo_default():
+def test_compiler_config_for_compile_cli_seed_overrides_defaults():
     config = compiler_config_for_compile(seed=42)
     assert config.seed == 42
-    assert config.sample_sporadic is False
-
-
-def test_compiler_config_for_compile_cli_boolean_overrides_repo_default():
-    config = compiler_config_for_compile(sample_sporadic=True)
     assert config.sample_sporadic is True
-    assert config.sample_dialect is False
+
+
+def test_compiler_config_for_compile_cli_boolean_overrides_defaults():
+    config = compiler_config_for_compile(sample_sporadic=False)
+    assert config.sample_sporadic is False
+    assert config.sample_dialect is True
 
 
 def test_compile_rules_limit(tmp_path: Path):

@@ -14,8 +14,8 @@ from conlanger.scripts import validation_cli
 from conlanger.tools.index_inventory import (
     CHANGELOG_CSV_COLUMNS,
     OK_TRUE,
+    CompiledIndexRule,
     FieldIsolationRow,
-    IndexRuleInventoryBundle,
     ValidationRow,
     validation_rows_to_dataframe,
 )
@@ -27,13 +27,13 @@ def _bundle(
     rule: dict,
     rule_id: str,
     rows: list[ValidationRow],
-) -> IndexRuleInventoryBundle:
-    return IndexRuleInventoryBundle(
+) -> CompiledIndexRule:
+    return CompiledIndexRule(
         section=section,
         rule=rule,
         rule_id=rule_id,
-        rows=rows,
-        targets=[InventoryTarget()],
+        validation_rows=rows,
+        compile_targets=[InventoryTarget()],
     )
 
 
@@ -154,7 +154,7 @@ def test_validate_rules_errors_when_asca_fork_missing(
 @patch.object(validate, "write_filtered_inventory_csvs")
 @patch.object(validate, "ok_flip_changelog_rows")
 @patch.object(validate, "load_inventory_csv", return_value=None)
-@patch.object(validate, "iter_compiled_inventory_bundles")
+@patch.object(validate, "iter_validated_compiled_rules")
 @patch.object(validate, "read_compiled_rules_yaml")
 @patch.object(validate, "filter_field_isolation_error")
 @patch.object(validate, "filter_field_isolation_success")
@@ -306,7 +306,7 @@ def test_validate_rules_writes_validation_inventory(
 @patch.object(validate, "write_filtered_inventory_csvs")
 @patch.object(validate, "ok_flip_changelog_rows")
 @patch.object(validate, "load_inventory_csv", return_value=None)
-@patch.object(validate, "iter_compiled_inventory_bundles")
+@patch.object(validate, "iter_validated_compiled_rules")
 @patch.object(validate, "read_compiled_rules_yaml")
 def test_validate_rules_reset_changelog_overwrites_existing(
     mock_read_compiled,
@@ -376,7 +376,7 @@ def test_validate_rules_reset_changelog_overwrites_existing(
 @patch.object(validate, "write_error_cluster_csvs")
 @patch.object(validate, "write_filtered_inventory_csvs")
 @patch.object(validate, "load_inventory_csv")
-@patch.object(validate, "iter_compiled_inventory_bundles")
+@patch.object(validate, "iter_validated_compiled_rules")
 @patch.object(validate, "read_compiled_rules_yaml")
 def test_validate_rules_reset_changelog_empty_flips_writes_header_only(
     mock_read_compiled,
