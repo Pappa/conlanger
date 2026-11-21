@@ -12,3 +12,15 @@ DEFAULT_PARSE_DIR = ROOT / DEFAULT_DIAGNOSTICS_DIR / "parse"
 DEFAULT_COMPILE_DIR = ROOT / DEFAULT_DIAGNOSTICS_DIR / "compile"
 DEFAULT_COMPILED_YAML = DEFAULT_COMPILE_DIR / "asca_rules.yml"
 DEFAULT_PROBE = ROOT / "tests" / "fixtures" / "asca_probe_words.wsca"
+
+
+def path_for_operator_message(path: Path) -> str:
+    """Repo-relative path when under ``ROOT``, else resolved absolute.
+
+    CLI paths are often relative strings; resolve against cwd before comparing to ``ROOT``.
+    """
+    resolved = path.resolve()
+    root = ROOT.resolve()
+    if resolved.is_relative_to(root):
+        return str(resolved.relative_to(root))
+    return str(resolved)

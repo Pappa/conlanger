@@ -52,22 +52,19 @@ sections:
         encoding="utf-8",
     )
     compiled_out = tmp_path / "asca_rules.yml"
-    with (
-        patch.object(compile_script, "ROOT", tmp_path),
-        patch.object(
-            sys,
-            "argv",
-            [
-                "compile_rules",
-                "--yaml-in",
-                str(yaml_in),
-                "--compiled-out",
-                str(compiled_out),
-                "--seed",
-                "7",
-                "--sample-sporadic",
-            ],
-        ),
+    with patch.object(
+        sys,
+        "argv",
+        [
+            "compile_rules",
+            "--yaml-in",
+            str(yaml_in),
+            "--compiled-out",
+            str(compiled_out),
+            "--seed",
+            "7",
+            "--sample-sporadic",
+        ],
     ):
         assert compile_script.main() == 0
     assert captured["seed"] == 7
@@ -90,19 +87,16 @@ sections:
     )
     compiled_out = tmp_path / "asca_rules.yml"
 
-    with (
-        patch.object(compile_script, "ROOT", tmp_path),
-        patch.object(
-            sys,
-            "argv",
-            [
-                "compile_rules",
-                "--yaml-in",
-                str(yaml_in),
-                "--compiled-out",
-                str(compiled_out),
-            ],
-        ),
+    with patch.object(
+        sys,
+        "argv",
+        [
+            "compile_rules",
+            "--yaml-in",
+            str(yaml_in),
+            "--compiled-out",
+            str(compiled_out),
+        ],
     ):
         assert compile_script.main() == 0
 
@@ -144,23 +138,61 @@ sections:
     )
     compiled_out = tmp_path / "asca_rules.yml"
 
-    with (
-        patch.object(compile_script, "ROOT", tmp_path),
-        patch.object(
-            sys,
-            "argv",
-            [
-                "compile_rules",
-                "--yaml-in",
-                str(yaml_in),
-                "--compiled-out",
-                str(compiled_out),
-                "--limit",
-                "1",
-            ],
-        ),
+    with patch.object(
+        sys,
+        "argv",
+        [
+            "compile_rules",
+            "--yaml-in",
+            str(yaml_in),
+            "--compiled-out",
+            str(compiled_out),
+            "--limit",
+            "1",
+        ],
     ):
         assert compile_script.main() == 0
 
     loaded = yaml.safe_load(compiled_out.read_text(encoding="utf-8"))
     assert len(loaded["sections"][0]["rules"]) == 1
+
+
+def test_path_for_operator_message_resolves_relative_under_repo():
+    from conlanger.scripts.pipeline_defaults import path_for_operator_message
+
+    rel = Path("data/pipeline/asca_rules.yml")
+    assert path_for_operator_message(rel) == str(rel)
+
+
+def test_compile_rules_smoke_custom_outside_repo_root(tmp_path: Path, capsys):
+    yaml_in = tmp_path / "index.yml"
+    yaml_in.write_text(
+        """
+sections:
+- index: "1.0"
+  section: Test
+  rules:
+  - rule_id: r0
+    source: test:1
+    stages: [a, b]
+""".strip(),
+        encoding="utf-8",
+    )
+    compiled_out = tmp_path / "pipeline" / "asca_rules.yml"
+
+    with patch.object(
+        sys,
+        "argv",
+        [
+            "compile_rules",
+            "--yaml-in",
+            str(yaml_in),
+            "--compiled-out",
+            str(compiled_out),
+        ],
+    ):
+        assert compile_script.main() == 0
+
+    assert compiled_out.is_file()
+    out = capsys.readouterr().out
+    assert str(compiled_out.resolve()) in out

@@ -8,7 +8,7 @@ from conlanger.scripts.config_loaders import compiler_config_for_compile
 from conlanger.scripts.pipeline_defaults import (
     DEFAULT_COMPILED_YAML,
     DEFAULT_YAML,
-    ROOT,
+    path_for_operator_message,
 )
 from conlanger.tools.compiled_rules_yaml import (
     COMPILED_RULES_YAML_NAME,
@@ -84,7 +84,7 @@ def main() -> int:
         len(section.get("rules") or []) for section in document.get("sections") or []
     )
     print(
-        f"wrote {args.compiled_out.relative_to(ROOT)} "
+        f"wrote {path_for_operator_message(args.compiled_out)} "
         f"sections={len(document.get('sections') or [])} rules={rule_count}"
     )
     return 0
