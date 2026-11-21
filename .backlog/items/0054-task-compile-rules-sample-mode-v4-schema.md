@@ -1,55 +1,67 @@
 Type: task
-Status: needs-detail
+Status: ready
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Pipeline vs validate compile output and v4 structured rule objects in asca_rules.yml.
-Blocked by: 0053, 0055
+Blocked by:
 
 ## Problem Statement
 
-`compile_rules` always fans out optional outputs and composed chains for validate/diagnostics and always uses a hard-coded compile RNG seed. Pipeline consumers need **one stochastic path** per rule (when configured), decomposed **input / output / env / exception** on disk, and a single compile code path driven by **compiler config**, not a parallel exporter.
+`compile_rules` always fans out optional outputs and composed chains regardless of stochastic picks. Operators cannot rely on bare `CompilerConfig` defaults for pipeline-style output, and on-disk compile rows lack decomposed ASCA fields. Validate and pipeline need explicit config files, not implicit defaults tied to one YAML path.
 
 ## Description
 
-Implement the resolved [**0053**](0053-decision-compile-sample-mode-and-yaml-fields.md) (after [0055](0055-task-compiler-config-merge-and-seed.md)).
+Implement [0053-decision-compile-sample-mode-and-yaml-fields.md](0053-decision-compile-sample-mode-and-yaml-fields.md). Depends on [0055](0055-task-compiler-config-merge-and-seed.md) (config merge and `seed`).
 
 **Compile behaviour**
 
-- Depends on [0055](0055-task-compiler-config-merge-and-seed.md) for config precedence and `seed`.
-- Add pipeline compiler config at `config/pipeline/compiler_config.yml` and wire `compile_rules` to load the chosen config package (details per **0053** — **not** the discarded `--sample` draft).
-- Plumb merged `CompilerConfig` through `iter_index_compile_bundles` / `resolve_inventory_targets` (single-path vs enumerate per **0053**).
+- Add **`sample_alternatives`** to `CompilerConfig` and plumb through `resolve_inventory_targets` (`true` = single path, `false` = enumerate).
+- **`compile_rules`:** no default YAML load; optional **`--compiler-config`**. Scalar CLI overrides per 0055.
+- Create **`config/pipeline/compiler_config.yml`** with duplicated **`position_templates`**, **`series_mappings`**, and **`group_mappings.yml`** sibling (copy from asca tree).
+- Update **`config/compile/asca/compiler_config.yml`** with **`sample_alternatives: false`** (fan-out for validate).
 
 **Serialization (`schema_version: 4`)**
 
-- Extend [`compiled_rule_shape.py`](../../src/conlanger/tools/compiled_rule_shape.py) and [`compiled_rules_yaml.py`](../../src/conlanger/tools/compiled_rules_yaml.py) to emit rule records with `input`, `output`, `env`, `exception`, and joined `rule`; `alternatives` as object lists; update `steps` / correlated branches consistently.
-- Update [`compiled_rule_validation_specs`](../../src/conlanger/tools/compiled_rule_shape.py) to accept **v3 string** and **v4 object** rows.
+- [`compiled_rule_shape.py`](../../src/conlanger/tools/compiled_rule_shape.py) / [`compiled_rules_yaml.py`](../../src/conlanger/tools/compiled_rules_yaml.py): objects with `input`, `output`, `env`, `exception`, `rule`; object `alternatives`.
+- [`compiled_rule_validation_specs`](../../src/conlanger/tools/compiled_rule_shape.py): v3 strings and v4 objects.
 
 **Docs**
 
-- [compile-rules.md](../../docs/system/compile-rules.md), [validate.md](../../docs/system/validate.md), [asca-rules-yaml-schema.md](../../docs/system/asca-rules-yaml-schema.md) — per **0053** operator contract (no `--sample` unless decision reintroduces it).
-
-**Tests**
-
-- Single-path vs fan-out target counts; seed stability per config; sporadic `compile_skipped` only when pipeline sampling is on.
-- v4 round-trip and validate_specs for object alternatives.
+- [compile-rules.md](../../docs/system/compile-rules.md), [validate.md](../../docs/system/validate.md), [asca-rules-yaml-schema.md](../../docs/system/asca-rules-yaml-schema.md), [ADR-0018](../../docs/adr/0018-compiled-asca-rules-yaml.md) as needed.
 
 **Regeneration**
 
-- Re-run validate-profile compile and commit `diagnostics/compile/asca_rules.yml` when behaviour/schema stabilises.
+- `uv run compile_rules --compiler-config config/compile/asca/compiler_config.yml` then commit `diagnostics/compile/asca_rules.yml`.
+
+**Rename “bundle” (compiler / inventory seam)**
+
+Today **`IndexRuleInventoryBundle`** is one index rule plus **`targets`** (compile paths) and often **`rows`** (validate CSV rows). The name reflects an old compile+validate combine, not what it is.
+
+| Current | Proposed |
+|---------|----------|
+| `IndexRuleInventoryBundle` | `CompiledIndexRule` |
+| `targets` field | `compile_targets` |
+| `rows` field | `validation_rows` |
+| `compile_index_rule_bundle` | `compile_index_rule` |
+| `iter_index_compile_bundles` | `iter_compiled_index_rules` |
+| `iter_compiled_inventory_bundles` | `iter_validated_compiled_rules` |
+| `_CompileRuleBundle` | `_CompiledRuleInput` (protocol in `compiled_rules_yaml.py`) |
+| `bundles_for_row_prefix` | `trim_compiled_rules_for_row_limit` (or equivalent) |
+
+Keep **`bundle`** only for feature-mapping kind in parser config. Update tests, docs (`validate.md`), and [0053](0053-decision-compile-sample-mode-and-yaml-fields.md) **Answer** wording when touched.
 
 ## Out of scope
 
-- Filtering rules by `rule-inventory-error.csv`.
+- `rule-inventory-error.csv` filtering.
 - CSV export.
-- CompilerConfig merge / seed ([0055](0055-task-compiler-config-merge-and-seed.md)).
 
 ## Acceptance Criteria
 
-_(Refresh when **0053** is **resolved**; placeholders below.)_
-
-- [ ] Pipeline-profile compile writes v4 YAML with **one** branch per rule where optionals exist; same config `seed` yields identical output.
-- [ ] Validate-profile compile writes fan-out equivalent to current expectations (modulo v4 object shape).
-- [ ] `validate_rules` passes against v4 YAML from validate-profile compile.
-- [ ] Docs describe asca vs pipeline config (no stale `--sample` unless **0053** chooses it).
+- [ ] With **no** `--compiler-config`, `compile_rules` uses Pydantic defaults only (`sample_alternatives` true) and writes v4 YAML with **one** branch per rule where optionals exist (same `seed` via CLI/config ⇒ identical output when seeded).
+- [ ] With **asca** config, compile fan-out matches current validate target counts (modulo v4 object shape).
+- [ ] Pipeline config path produces single-path output; sporadic skip yields `compile_skipped` when `sample_sporadic`/`sample_dialect` are true (defaults or explicit).
+- [ ] `validate_rules` passes against v4 YAML from asca-profile compile.
+- [ ] Docs: bare compile vs `--compiler-config` for asca (validate) and pipeline profiles.
 - [ ] `uv run check` passes after regeneration.
+- [ ] Compiler/inventory public names use **`CompiledIndexRule`** / **`iter_compiled_index_rules`** (no `*Bundle*` on this seam except parser `mapping_kind: bundle`).
 
 ## Comments

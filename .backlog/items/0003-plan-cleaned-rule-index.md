@@ -26,6 +26,7 @@ A **cleaned rule index** (applier-neutral YAML source of truth) derived from **I
 - [Parse / compile package hygiene](0027-decision-parse-compile-package-hygiene.md): import seams; compile vs validate split; `asca_rules.yml`; position.in.
 - [Inventory ok semantics](0028-decision-inventory-ok-semantics.md): `FAILED` / `OK` / `SKIPPED`; validate all targets.
 - [Agent documentation](0029-decision-agent-documentation.md): GLOSSARY + SYSTEM + backlog closure checklist; plan indexes decisions.
+- [Pipeline vs validate compile mode](0053-decision-compile-sample-mode-and-yaml-fields.md): `sample_alternatives`; no default YAML; explicit `--compiler-config`; v4 fields.
 
 ## Not yet specified
 
@@ -57,7 +58,7 @@ A **cleaned rule index** (applier-neutral YAML source of truth) derived from **I
 | [0011-decision-asca-grouping-insertion.md](0011-decision-asca-grouping-insertion.md) | Grouping letters on insertion rules. | ready |
 | [0013-decision-section-mappings-feature-matrices.md](0013-decision-section-mappings-feature-matrices.md) | **section_mappings** feature matrices and YAML compile. | ready |
 | [0014-decision-composed-chain-path-inventory-policy.md](0014-decision-composed-chain-path-inventory-policy.md) | Composed chain path inventory policy. | ready |
-| [0053-decision-compile-sample-mode-and-yaml-fields.md](0053-decision-compile-sample-mode-and-yaml-fields.md) | Pipeline vs validate compile mode and v4 compiled-rule shape. | needs-detail |
+| [0053-decision-compile-sample-mode-and-yaml-fields.md](0053-decision-compile-sample-mode-and-yaml-fields.md) | Pipeline vs validate compile mode and v4 compiled-rule shape. | resolved |
 
 ## Tasks
 
@@ -73,7 +74,7 @@ A **cleaned rule index** (applier-neutral YAML source of truth) derived from **I
 | [0051-task-segment-context-plus-hash-u-env-set.md](0051-task-segment-context-plus-hash-u-env-set.md) | Segment `context` + `position.in` `#U` → `:{…, #<…>}:` env set. | resolved |
 | [0052-task-remove-rule-comment-phrases-summary.md](0052-task-remove-rule-comment-phrases-summary.md) | Remove `rule-comment-phrases.md` parse diagnostic and dead writer code. | resolved |
 | [0055-task-compiler-config-merge-and-seed.md](0055-task-compiler-config-merge-and-seed.md) | CompilerConfig defaults ← YAML ← CLI; optional `seed`; remove inventory RNG constant. | resolved |
-| [0054-task-compile-rules-sample-mode-v4-schema.md](0054-task-compile-rules-sample-mode-v4-schema.md) | Pipeline vs validate compile output; v4 structured `asca_rules.yml`. | needs-detail |
+| [0054-task-compile-rules-sample-mode-v4-schema.md](0054-task-compile-rules-sample-mode-v4-schema.md) | Pipeline vs validate compile output; v4 structured `asca_rules.yml`. | ready |
 
 ## Spikes
 
