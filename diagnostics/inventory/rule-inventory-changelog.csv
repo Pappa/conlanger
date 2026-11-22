@@ -59,3 +59,7 @@ section_index,rule_id,alt_idx,step_idx,source,ok,timestamp
 27.3,Huastecan-kV+roundC+glide,,,index_diachronica.html:9737,OK,2026-11-10T22:49:09Z
 10.3.9.3,"Tanibili-r,l",,1,index_diachronica.html:3481,OK,2026-11-20T19:17:49Z
 10.2.2,Chamorro-i-u_2,,,index_diachronica.html:2808,OK,2026-11-20T19:40:37Z
+17.5.1,Old-Irish-oː_3,,,index_diachronica.html:5561,FAILED,2026-11-22T17:09:39Z
+17.5.1,Old-Irish-eː_2,,,index_diachronica.html:5562,FAILED,2026-11-22T17:09:39Z
+17.6,Dacian-e,,,index_diachronica.html:5618,FAILED,2026-11-22T17:09:39Z
+17.6,Dacian-e_2,,,index_diachronica.html:5619,FAILED,2026-11-22T17:09:39Z

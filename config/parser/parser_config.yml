@@ -70,6 +70,8 @@ skip_sections:
     reason: "Onset glottal diacritic not supported"
   - id: "13.6"
     reason: "Onset glottal diacritic not supported"
+  - id: "33.3.1.2"
+    reason: "Only one rule, and I'm not sure what 'when stressed' refers to"
   - id: "36.1"
     reason: "Need to refer to the cited source to determine the correct rule syntax"
   - id: "36.3.1.2"
