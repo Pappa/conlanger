@@ -1719,10 +1719,10 @@ sections:
     rule: i > a / {q,ɣ,ʕ}_C:[-atr,+rtr]
   - rule_id: Cypriot-Arabic-a
     source: index_diachronica.html:1359
-    input: a
+    input: a:[+stress]
     output: i
-    env: _{C,CC} when stressed
-    rule: a > i / _{C,CC} when stressed
+    env: _{C,CC}
+    rule: a:[+stress] > i / _{C,CC}
   - rule_id: Cypriot-Arabic-u
     source: index_diachronica.html:1360
     input: u
@@ -1739,8 +1739,8 @@ sections:
     source: index_diachronica.html:1362
     input: '{u,a,i}'
     output: ∅
-    env: _$ when stressed
-    rule: '{u,a,i} > ∅ / _$ when stressed'
+    env: _$
+    rule: '{u,a,i} > ∅ / _$'
   - rule_id: Cypriot-Arabic-uː-iː_3
     source: index_diachronica.html:1364
     input: u:[+long] i:[+long]
@@ -7841,10 +7841,10 @@ sections:
     rule: p > w
   - rule_id: Palauan-wa
     source: index_diachronica.html:2928
-    input: wa
+    input: wa:[-stress]
     output: o
     env: '#_'
-    rule: 'wa > o / #_'
+    rule: 'wa:[-stress] > o / #_'
   - rule_id: Palauan-V
     source: index_diachronica.html:2929
     input: V:[-stress, -stress]
@@ -8991,10 +8991,11 @@ sections:
     rule: o e > ʊ ɪ
   - rule_id: Mwotlap-aCV+-high
     source: index_diachronica.html:3179
-    input: aCV[+ high, -stress, +secondary stress]
+    input: aCV[+ high, -stress, +secondary stress, -stress, +secondary stress]
     output: ɪ
     env: _
-    rule: aCV[+ high, -stress, +secondary stress] > ɪ / _
+    rule: aCV[+ high, -stress, +secondary stress, -stress, +secondary stress] > ɪ
+      / _
   - rule_id: Mwotlap-CV1C”V2
     source: index_diachronica.html:3180
     input: '{CV=1,V=1} CV:[+stress]=2'
@@ -11362,10 +11363,10 @@ sections:
     rule: V > ∅ / _#
   - rule_id: Marshallese-V+mid
     source: index_diachronica.html:3758
-    input: V:[-hi,-lo]
+    input: V:[-hi,-lo, +stress]
     output: ɘ
-    env: _C:[+high] when stressed
-    rule: V:[-hi,-lo] > ɘ / _C:[+high] when stressed
+    env: _C:[+high]
+    rule: V:[-hi,-lo, +stress] > ɘ / _C:[+high]
   - rule_id: Marshallese-V_2
     source: index_diachronica.html:3759
     input: V
@@ -11497,11 +11498,11 @@ sections:
     rule: h > j
   - rule_id: Proto-Ongan-e
     source: index_diachronica.html:3788
-    input: e
+    input: e:[-stress]
     output: ə
-    env: _N when unstressed
+    env: _N
     exception: C:[+front,+hi,-lo]_
-    rule: e > ə / _N when unstressed // C:[+front,+hi,-lo]_
+    rule: e:[-stress] > ə / _N // C:[+front,+hi,-lo]_
   - rule_id: Proto-Ongan-m,ɲ-n
     source: index_diachronica.html:3789
     input: ɲ n
@@ -11518,10 +11519,10 @@ sections:
   rules:
   - rule_id: Jarawa-e
     source: index_diachronica.html:3795
-    input: e
+    input: e:[-stress]
     output: ə
-    env: _N when unstressed
-    rule: e > ə / _N when unstressed
+    env: _N
+    rule: e:[-stress] > ə / _N
   - rule_id: Jarawa-n
     source: index_diachronica.html:3796
     input: n
@@ -11567,10 +11568,10 @@ sections:
   rules:
   - rule_id: Onge-e
     source: index_diachronica.html:3808
-    input: e
+    input: e:[-stress]
     output: ə
-    env: _N when unstressed
-    rule: e > ə / _N when unstressed
+    env: _N
+    rule: e:[-stress] > ə / _N
   - rule_id: Onge-n
     source: index_diachronica.html:3809
     input: n
@@ -13715,9 +13716,9 @@ sections:
     source: index_diachronica.html:4553
     input: i u
     output: ɨ ʉ
-    env: _ when unstressed
+    env: _
     exception: '#<(..)_(..)>'
-    rule: 'i u > ɨ ʉ / _ when unstressed // #<(..)_(..)>'
+    rule: 'i u > ɨ ʉ / _ // #<(..)_(..)>'
   - rule_id: Colloquial-Tamil-ɨ-ʉ
     source: index_diachronica.html:4554
     input: ɨ ʉ
@@ -18204,11 +18205,11 @@ sections:
     rule: C:[+long] > C:[-long]
   - rule_id: Old-Irish-V
     source: index_diachronica.html:5557
-    input: V
+    input: V:[-stress]
     output: ∅
     env: C_#
     exception: j_#
-    rule: V > ∅ / C_# // j_#
+    rule: V:[-stress] > ∅ / C_# // j_#
   - rule_id: Old-Irish-C…C
     source: index_diachronica.html:5558
     status: skipped
@@ -18226,16 +18227,16 @@ sections:
     rule: ei > e:[+long]
   - rule_id: Old-Irish-oː_3
     source: index_diachronica.html:5561
-    input: o:[+long]
+    input: o:[+long, +stress]
     output: ua
-    env: _[] when stressed
-    rule: o:[+long] > ua / _[] when stressed
+    env: _[]
+    rule: o:[+long, +stress] > ua / _[]
   - rule_id: Old-Irish-eː_2
     source: index_diachronica.html:5562
-    input: e:[+long]
+    input: e:[+long, +stress]
     output: ia
     env: _{#,C:[+cor,+dist]}
-    rule: e:[+long] > ia / _{#,C:[+cor,+dist]}
+    rule: e:[+long, +stress] > ia / _{#,C:[+cor,+dist]}
   - rule_id: Old-Irish-j
     source: index_diachronica.html:5563
     input: j
@@ -18260,10 +18261,10 @@ sections:
     rule: '{e,o} > a / _[]'
   - rule_id: Old-Irish-V_2
     source: index_diachronica.html:5568
-    input: V
+    input: V:[+stress]
     output: V:[+long]
     env: _#
-    rule: V > V:[+long] / _#
+    rule: V:[+stress] > V:[+long] / _#
   - rule_id: Old-Irish-VOR
     source: index_diachronica.html:5569
     input: VO:[+son,-syl]
@@ -18505,16 +18506,16 @@ sections:
     rule: o > a
   - rule_id: Dacian-e
     source: index_diachronica.html:5618
-    input: e
+    input: e:[+stress]
     output: je
-    env: _ when stressed
-    rule: e > je / _ when stressed
+    env: in open syllables
+    rule: e:[+stress] > je / in open syllables
   - rule_id: Dacian-e_2
     source: index_diachronica.html:5619
-    input: e
+    input: e:[+stress]
     output: ja
-    env: _ when stressed
-    rule: e > ja / _ when stressed
+    env: in closed syllables
+    rule: e:[+stress] > ja / in closed syllables
   - rule_id: Dacian-eː
     source: index_diachronica.html:5620
     input: e:[+long]
@@ -19027,10 +19028,10 @@ sections:
   - rule_id: Kentish-Middle-English-m
     source: index_diachronica.html:5741
     steps:
-    - input: m
+    - input: m:[-stress]
       output: n
       env: _#
-      rule: m > n / _#
+      rule: m:[-stress] > n / _#
     - input: n
       output: ∅
       env: _#
@@ -19129,10 +19130,10 @@ sections:
   - rule_id: Midlands-Middle-English-m
     source: index_diachronica.html:5762
     steps:
-    - input: m
+    - input: m:[-stress]
       output: n
       env: _#
-      rule: m > n / _#
+      rule: m:[-stress] > n / _#
     - input: n
       output: ∅
       env: _#
@@ -19273,10 +19274,10 @@ sections:
     rule: l > ɫ
   - rule_id: American-English-ɪ
     source: index_diachronica.html:5793
-    input: ɪ
+    input: ɪ:[-stress]
     output: i
     env: _#
-    rule: ɪ > i / _#
+    rule: ɪ:[-stress] > i / _#
   - rule_id: American-English-t,d
     source: index_diachronica.html:5794
     input: '{t,d}'
@@ -19429,10 +19430,10 @@ sections:
     rule: ɫ > əɫ
   - rule_id: Australian-English-ɪ
     source: index_diachronica.html:5822
-    input: ɪ
+    input: ɪ:[-stress]
     output: i:[+long]
     env: _#
-    rule: ɪ > i:[+long] / _#
+    rule: ɪ:[-stress] > i:[+long] / _#
   - rule_id: Australian-English-ɪ_2
     source: index_diachronica.html:5823
     input: ɪ
@@ -19662,10 +19663,10 @@ sections:
     rule: "#\tVː → V[-long] / in #U before a U with /iː/"
   - rule_id: Northern-Middle-English-n
     source: index_diachronica.html:5871
-    input: n
+    input: n:[-stress]
     output: ∅
     env: _#
-    rule: n > ∅ / _#
+    rule: n:[-stress] > ∅ / _#
   - rule_id: Northern-Middle-English-j-tʃ
     source: index_diachronica.html:5872
     input: j tʃ
@@ -20318,10 +20319,10 @@ sections:
   - rule_id: Southern-Middle-English-m
     source: index_diachronica.html:6001
     steps:
-    - input: m
+    - input: m:[-stress]
       output: n
       env: _#
-      rule: m > n / _#
+      rule: m:[-stress] > n / _#
     - input: n
       output: ∅
       env: _#
@@ -20760,10 +20761,10 @@ sections:
     rule: V:[+long] > V:[- long] / _$Cə{r,l,n}#
   - rule_id: Standard-German-V
     source: index_diachronica.html:6116
-    input: V
+    input: V:[+stress]
     output: V:[+long]
-    env: _$ when stressed
-    rule: V > V:[+long] / _$ when stressed
+    env: _$
+    rule: V:[+stress] > V:[+long] / _$
   - rule_id: Standard-German-V_2
     source: index_diachronica.html:6117
     input: V
@@ -25587,8 +25588,8 @@ sections:
     source: index_diachronica.html:7085
     input: '{i,ɨ}'
     output: ∅
-    env: _jV when unstressed
-    rule: '{i,ɨ} > ∅ / _jV when unstressed'
+    env: _jV
+    rule: '{i,ɨ} > ∅ / _jV'
   - rule_id: Polish-ɛ̃
     source: index_diachronica.html:7086
     input: ɛ̃
@@ -26291,79 +26292,79 @@ sections:
       rule: ou > u:[+long]
   - rule_id: Latin-V
     source: index_diachronica.html:7229
-    input: V
+    input: V:[-stress]
     output: i
-    env: $(C)(C)_$ when unstressed
-    rule: V > i / $(C)(C)_$ when unstressed
+    env: $(C)(C)_$
+    rule: V:[-stress] > i / $(C)(C)_$
   - rule_id: Latin-V_2
     source: index_diachronica.html:7230
-    input: V
+    input: V:[-stress]
     output: o
-    env: $(C)(C)V_$ when unstressed
-    rule: V > o / $(C)(C)V_$ when unstressed
+    env: $(C)(C)V_$
+    rule: V:[-stress] > o / $(C)(C)V_$
   - rule_id: Latin-V_3
     source: index_diachronica.html:7231
-    input: V
+    input: V:[-stress]
     output: e
-    env: $(C)(C)_$r when unstressed
-    rule: V > e / $(C)(C)_$r when unstressed
+    env: $(C)(C)_$r
+    rule: V:[-stress] > e / $(C)(C)_$r
   - rule_id: Latin-V_4
     source: index_diachronica.html:7232
-    input: V
+    input: V:[-stress]
     output: u
-    env: $(C)(C)_$C:[+labial] when unstressed
-    rule: V > u / $(C)(C)_$C:[+labial] when unstressed
+    env: $(C)(C)_$C:[+labial]
+    rule: V:[-stress] > u / $(C)(C)_$C:[+labial]
   - rule_id: Latin-a-o
     source: index_diachronica.html:7233
     input: a o
     output: e u
-    env: $(C)(C)_{C,CC}$ when unstressed
-    rule: a o > e u / $(C)(C)_{C,CC}$ when unstressed
+    env: $(C)(C)_{C,CC}$
+    rule: a o > e u / $(C)(C)_{C,CC}$
   - rule_id: Latin-a
     source: index_diachronica.html:7234
     steps:
-    - input: a
+    - input: a:[-stress]
       output: e
-      env: $(C)(C)_ŋ when unstressed
-      rule: a > e / $(C)(C)_ŋ when unstressed
+      env: $(C)(C)_ŋ
+      rule: a:[-stress] > e / $(C)(C)_ŋ
     - input: e
       output: i
-      env: $(C)(C)_ŋ when unstressed
-      rule: e > i / $(C)(C)_ŋ when unstressed
+      env: $(C)(C)_ŋ
+      rule: e > i / $(C)(C)_ŋ
   - rule_id: Latin-a_2
     source: index_diachronica.html:7235
     steps:
-    - input: a
+    - input: a:[-stress]
       output: e
-      env: $(C)(C)_ɫ when unstressed
-      rule: a > e / $(C)(C)_ɫ when unstressed
+      env: $(C)(C)_ɫ
+      rule: a:[-stress] > e / $(C)(C)_ɫ
     - input: e
       output: u
-      env: $(C)(C)_ɫ when unstressed
-      rule: e > u / $(C)(C)_ɫ when unstressed
+      env: $(C)(C)_ɫ
+      rule: e > u / $(C)(C)_ɫ
   - rule_id: Latin-e_2
     source: index_diachronica.html:7236
-    input: e
+    input: e:[-stress]
     output: u
-    env: $(C)(C)_ɫ when unstressed
-    rule: e > u / $(C)(C)_ɫ when unstressed
+    env: $(C)(C)_ɫ
+    rule: e:[-stress] > u / $(C)(C)_ɫ
   - rule_id: Latin-ai
     source: index_diachronica.html:7237
     steps:
-    - input: ai
+    - input: ai:[-stress]
       output: ei
-      env: $(C)(C)_ when unstressed
-      rule: ai > ei / $(C)(C)_ when unstressed
+      env: $(C)(C)_
+      rule: ai:[-stress] > ei / $(C)(C)_
     - input: ei
       output: i:[+long]
-      env: $(C)(C)_ when unstressed
-      rule: ei > i:[+long] / $(C)(C)_ when unstressed
+      env: $(C)(C)_
+      rule: ei > i:[+long] / $(C)(C)_
   - rule_id: Latin-ei-oi-ou
     source: index_diachronica.html:7238
     input: ei oi ou
     output: i:[+long] e:[+long] u:[+long]
-    env: $(C)(C)_ when unstressed
-    rule: ei oi ou > i:[+long] e:[+long] u:[+long] / $(C)(C)_ when unstressed
+    env: $(C)(C)_
+    rule: ei oi ou > i:[+long] e:[+long] u:[+long] / $(C)(C)_
   - rule_id: Latin-i,o
     source: index_diachronica.html:7239
     input: '{i,o}'
@@ -26871,8 +26872,8 @@ sections:
     source: index_diachronica.html:7323
     input: '{e,i}'
     output: j
-    env: C_V when unstressed
-    rule: '{e,i} > j / C_V when unstressed'
+    env: C_V
+    rule: '{e,i} > j / C_V'
   - rule_id: Classical-Latin-vs.-Vulgar-Latin-e,ai
     source: index_diachronica.html:7324
     input: '{e,ai}'
@@ -27003,10 +27004,10 @@ sections:
       rule: w > ∅
   - rule_id: Catalan-iː
     source: index_diachronica.html:7351
-    input: iː:[+stress]
+    input: i:[+long, +stress, +stress]
     output: i
     env: _
-    rule: iː:[+stress] > i / _
+    rule: i:[+long, +stress, +stress] > i / _
   - rule_id: Catalan-iː_2
     source: index_diachronica.html:7352
     input: i:[+long]
@@ -27033,10 +27034,10 @@ sections:
     rule: i > j / V:[+stress]_#
   - rule_id: Catalan-uː
     source: index_diachronica.html:7356
-    input: uː:[+stress]
+    input: u:[+long, +stress, +stress]
     output: u
     env: _
-    rule: uː:[+stress] > u / _
+    rule: u:[+long, +stress, +stress] > u / _
   - rule_id: Catalan-uː_2
     source: index_diachronica.html:7357
     input: u:[+long]
@@ -27573,16 +27574,16 @@ sections:
     rule: e > ɛ / _v
   - rule_id: Catalan-o_3
     source: index_diachronica.html:7443
-    input: o
+    input: o:[+stress]
     output: u
-    env: _{ɲ,nk,ŋ} when stressed
-    rule: o > u / _{ɲ,nk,ŋ} when stressed
+    env: _{ɲ,nk,ŋ}
+    rule: o:[+stress] > u / _{ɲ,nk,ŋ}
   - rule_id: Catalan-e_2
     source: index_diachronica.html:7444
-    input: e
+    input: e:[+stress]
     output: i
-    env: _{nk,ŋ} when stressed
-    rule: e > i / _{nk,ŋ} when stressed
+    env: _{nk,ŋ}
+    rule: e:[+stress] > i / _{nk,ŋ}
   - rule_id: Catalan-aj
     source: index_diachronica.html:7445
     steps:
@@ -27597,10 +27598,10 @@ sections:
       rule: ee > e
   - rule_id: Catalan-aj_2
     source: index_diachronica.html:7446
-    input: aj
+    input: aj:[+stress]
     output: ej
-    env: _ʃ when stressed
-    rule: aj > ej / _ʃ when stressed
+    env: _ʃ
+    rule: aj:[+stress] > ej / _ʃ
   - rule_id: Catalan-ɛj-ɔj
     source: index_diachronica.html:7447
     compile_error: no composed chain paths from stages
@@ -28681,10 +28682,10 @@ sections:
     rule: V > a / _{n,r}(C){V,VC}#
   - rule_id: Portuguese-V_5
     source: index_diachronica.html:7652
-    input: V
+    input: V:[+stress]
     output: V:[+nas]
-    env: _N$C when stressed
-    rule: V > V:[+nas] / _N$C when stressed
+    env: _N$C
+    rule: V:[+stress] > V:[+nas] / _N$C
   - rule_id: Portuguese-ɔ̃
     source: index_diachronica.html:7653
     input: ɔ̃
@@ -28723,10 +28724,10 @@ sections:
     rule: '{ã,ãe,õe} > ão / _#'
   - rule_id: Portuguese-V+nas
     source: index_diachronica.html:7659
-    input: V:[+nas, -stress]
+    input: V:[+nas, -stress, -stress]
     output: V:[-nas]
     env: _
-    rule: V:[+nas, -stress] > V:[-nas] / _
+    rule: V:[+nas, -stress, -stress] > V:[-nas] / _
   - rule_id: Portuguese-V+nas_2
     source: index_diachronica.html:7660
     input: V:[+nas]
@@ -29193,16 +29194,16 @@ sections:
     rule: e > j / {a,o,u}_
   - rule_id: Portuguese-a_2
     source: index_diachronica.html:7729
-    input: a
+    input: a:[+stress]
     output: e
-    env: _j when stressed
-    rule: a > e / _j when stressed
+    env: _j
+    rule: a:[+stress] > e / _j
   - rule_id: Portuguese-o_4
     source: index_diachronica.html:7730
-    input: o
+    input: o:[+stress]
     output: u
-    env: _ɲ when stressed
-    rule: o > u / _ɲ when stressed
+    env: _ɲ
+    rule: o:[+stress] > u / _ɲ
   - rule_id: Portuguese-V0V0_2
     source: index_diachronica.html:7731
     input: V=0 0
@@ -31361,28 +31362,28 @@ sections:
     rule: '{t,k} > ∅ / _#'
   - rule_id: Spanish-V
     source: index_diachronica.html:8133
-    input: V
+    input: V:[-stress]
     output: ∅
-    env: C_{r,l} when unstressed and not at a word boundary
-    rule: V > ∅ / C_{r,l} when unstressed and not at a word boundary
+    env: C_{r,l}
+    rule: V:[-stress] > ∅ / C_{r,l}
   - rule_id: Spanish-V_2
     source: index_diachronica.html:8134
-    input: V
+    input: V:[-stress]
     output: ∅
-    env: '{r,l}_C when unstressed and not at a word boundary'
-    rule: V > ∅ / {r,l}_C when unstressed and not at a word boundary
+    env: '{r,l}_C'
+    rule: V:[-stress] > ∅ / {r,l}_C
   - rule_id: Spanish-V_3
     source: index_diachronica.html:8135
-    input: V
+    input: V:[-stress]
     output: ∅
-    env: C_s when unstressed and not at a word boundary
-    rule: V > ∅ / C_s when unstressed and not at a word boundary
+    env: C_s
+    rule: V:[-stress] > ∅ / C_s
   - rule_id: Spanish-V_4
     source: index_diachronica.html:8136
-    input: V
+    input: V:[-stress]
     output: ∅
-    env: s_C when unstressed and not at a word boundary
-    rule: V > ∅ / s_C when unstressed and not at a word boundary
+    env: s_C
+    rule: V:[-stress] > ∅ / s_C
   - rule_id: Spanish-k,ɡ
     source: index_diachronica.html:8137
     steps:
@@ -32229,10 +32230,10 @@ sections:
     rule: ∅ > t / {N,L}_P
   - rule_id: Tocharian-B-ə
     source: index_diachronica.html:8320
-    input: ə
+    input: ə:[-stress]
     output: ∅
-    env: _$ when unstressed
-    rule: ə > ∅ / _$ when unstressed
+    env: _$
+    rule: ə:[-stress] > ∅ / _$
 - section: Pre-Bakairi to Eastern Bakairi
   index: 18.1.1
   rules:
@@ -35349,10 +35350,10 @@ sections:
     rule: n > ∅
   - rule_id: Chibcha-a
     source: index_diachronica.html:9288
-    input: a
+    input: a:[-stress]
     output: ∅
-    env: _i when unstressed
-    rule: a > ∅ / _i when unstressed
+    env: _i
+    rule: a:[-stress] > ∅ / _i
   - rule_id: Chibcha-a_2
     source: index_diachronica.html:9289
     input: a
@@ -38017,57 +38018,6 @@ sections:
     input: l
     output: d̪
     rule: l > d̪
-- section: Pre-Proto-Bantu to Proto-Manenguba
-  index: 30.1.2
-  rules:
-  - rule_id: Proto-Manenguba-’p-’t-’d/d2-c-’ɟ-’k-ɡ
-    source: index_diachronica.html:10541
-    input: p:[+cg] t:[+cg] d:[+cg]/d c ɟ:[+cg] k:[+cg] ɡ
-    output: f l ɟ s w
-    env: ':{_, C=1 position}:'
-    rule: 'p:[+cg] t:[+cg] d:[+cg]/d c ɟ:[+cg] k:[+cg] ɡ > f l ɟ s w / :{_, C=1 position}:'
-  - rule_id: Proto-Manenguba-N+-lenis
-    source: index_diachronica.html:10542
-    input: N:[-tense]
-    output: N:[+tense]
-    env: ':{_, C=1 position}:'
-    rule: 'N:[-tense] > N:[+tense] / :{_, C=1 position}:'
-  - rule_id: Proto-Manenguba-p-t-’t-’d,d2-c-k-’k
-    source: index_diachronica.html:10543
-    input: p t t:[+cg] d c k k:[+cg]
-    output: b d l ɟ ɡ
-    env: ':{_, C=2 position}:'
-    rule: 'p t t:[+cg] d c k k:[+cg] > b d l ɟ ɡ / :{_, C=2 position}:'
-  - rule_id: Proto-Manenguba-’m-m-’n-n-’ɲ,ɲ-ŋ
-    source: index_diachronica.html:10544
-    input: m:[+cg] m n:[+cg] n {ɲ:[+cg],ɲ} ŋ
-    output: m {ᵐb,m} n {ⁿd,n} ɲ {ᵑɡ,ŋ}
-    env: ':{_, C=2 position}:'
-    rule: 'm:[+cg] m n:[+cg] n {ɲ:[+cg],ɲ} ŋ > m {ᵐb,m} n {ⁿd,n} ɲ {ᵑɡ,ŋ} / :{_, C=2
-      position}:'
-  - rule_id: Proto-Manenguba-u,o-ɛ,e,i
-    source: index_diachronica.html:10545
-    input: '{u,o} {ɛ,e,i}'
-    output: w j
-    env: ':{C_a, noun roots}:'
-    rule: '{u,o} {ɛ,e,i} > w j / :{C_a, noun roots}:'
-  - rule_id: Proto-Manenguba-u,o-ɛ,e,i_2
-    source: index_diachronica.html:10546
-    input: '{u,o} {ɛ,e,i}'
-    output: w j
-    env: ':{C_(a), verb roots}:'
-    rule: '{u,o} {ɛ,e,i} > w j / :{C_(a), verb roots}:'
-  - rule_id: Proto-Manenguba-u,o-ɛ,e,i_3
-    source: index_diachronica.html:10547
-    input: '{u,o} {ɛ,e,i}'
-    output: w j
-    env: ':{C_$V, noun class prefixes}:'
-    rule: '{u,o} {ɛ,e,i} > w j / :{C_$V, noun class prefixes}:'
-  - rule_id: Proto-Manenguba-f
-    source: index_diachronica.html:10548
-    input: f
-    output: h
-    rule: f > h
 - section: Proto-Potou-Akanic-Bantu to Proto-Potou-Akanic
   index: '30.2'
   rules:
@@ -38659,8 +38609,8 @@ sections:
     source: index_diachronica.html:10741
     input: i{w,j}
     output: ∅
-    env: _a when unstressed
-    rule: i{w,j} > ∅ / _a when unstressed
+    env: _a
+    rule: i{w,j} > ∅ / _a
   - rule_id: Bardi-i
     source: index_diachronica.html:10742
     input: i
@@ -38699,10 +38649,10 @@ sections:
     rule: ubu:[+stress] aba:[+stress] > u:[+long] a:[+long] / _
   - rule_id: Bardi-ib
     source: index_diachronica.html:10748
-    input: ib
+    input: ib:[-stress]
     output: ∅
-    env: _i when unstressed
-    rule: ib > ∅ / _i when unstressed
+    env: _i
+    rule: ib:[-stress] > ∅ / _i
   - rule_id: Bardi-b
     source: index_diachronica.html:10749
     input: b
@@ -38737,10 +38687,10 @@ sections:
   rules:
   - rule_id: Papabuco-Chatino-t
     source: index_diachronica.html:10781
-    input: t
+    input: t:[-stress]
     output: ɾ
-    env: _{u,ẽ} when unstressed
-    rule: t > ɾ / _{u,ẽ} when unstressed
+    env: _{u,ẽ}
+    rule: t:[-stress] > ɾ / _{u,ẽ}
   - rule_id: Papabuco-Chatino-t_2
     source: index_diachronica.html:10782
     input: t
@@ -38855,16 +38805,16 @@ sections:
     rule: j̃ > i
   - rule_id: Papabuco-Chatino-e
     source: index_diachronica.html:10802
-    input: e
+    input: e:[-stress]
     output: a
-    env: _{l,ʔn} when unstressed
-    rule: e > a / _{l,ʔn} when unstressed
+    env: _{l,ʔn}
+    rule: e:[-stress] > a / _{l,ʔn}
   - rule_id: Papabuco-Chatino-e_2
     source: index_diachronica.html:10803
-    input: e
+    input: e:[+stress]
     output: i
-    env: '{kʲ,nt}_ when stressed'
-    rule: e > i / {kʲ,nt}_ when stressed
+    env: '{kʲ,nt}_'
+    rule: e:[+stress] > i / {kʲ,nt}_
   - rule_id: Papabuco-Chatino-e_3
     source: index_diachronica.html:10804
     input: e
@@ -39177,16 +39127,16 @@ sections:
     rule: kʲ > tʃ
   - rule_id: Zenzontepec-Chatino-e
     source: index_diachronica.html:10870
-    input: e
+    input: e:[-stress]
     output: i
-    env: l_ when unstressed
-    rule: e > i / l_ when unstressed
+    env: l_
+    rule: e:[-stress] > i / l_
   - rule_id: Zenzontepec-Chatino-e_2
     source: index_diachronica.html:10871
-    input: e
+    input: e:[+stress]
     output: i
-    env: kʲ_ when stressed
-    rule: e > i / kʲ_ when stressed
+    env: kʲ_
+    rule: e:[+stress] > i / kʲ_
 - section: Proto-Oto-Manguean to Tlapanec
   index: '32.2'
   rules:
@@ -39646,15 +39596,6 @@ sections:
     output: s
     env: '#_u'
     rule: 'tʰ > s / #_u'
-- section: Buena Vista Yokuts to Hometwoli
-  index: 33.3.1.2
-  rules:
-  - rule_id: Hometwoli-∅
-    source: index_diachronica.html:11071
-    input: ∅
-    output: h
-    env: '{V,V:[+long]}_ when stressed'
-    rule: ∅ > h / {V,V:[+long]}_ when stressed
 - section: Buena Vista Yokuts to Tulamni
   index: 33.3.1.3
   rules:
@@ -39802,11 +39743,11 @@ sections:
     rule: '{u,a} > e / _CVC#'
   - rule_id: Palewyami-i
     source: index_diachronica.html:11148
-    input: i
+    input: i:[+stress]
     output: e
     env: _CVC#
     exception: _[-place]
-    rule: i > e / _CVC# // _[-place]
+    rule: i:[+stress] > e / _CVC# // _[-place]
   - rule_id: Palewyami-V
     source: index_diachronica.html:11149
     input: V
@@ -48820,10 +48761,10 @@ sections:
     rule: O:[+delrel, -stress]w:[-stress] > o / _
   - rule_id: Pre-Finnic-i
     source: index_diachronica.html:13770
-    input: i
+    input: i:[-stress]
     output: e
-    env: _C when unstressed
-    rule: i > e / _C when unstressed
+    env: _C
+    rule: i:[-stress] > e / _C
   - rule_id: Pre-Finnic-iw
     source: index_diachronica.html:13771
     input: iw:[-stress, -stress]
@@ -49051,10 +48992,10 @@ sections:
     rule: '{V:[-stress, -stress],-ɑ} > ə / _'
   - rule_id: Livonian-ɑ
     source: index_diachronica.html:13911
-    input: ɑ
+    input: ɑ:[-stress]
     output: ə
     env: ':{VC{ɑC,ɑCC}_#,VCC{ɑC,ɑCC}_#}:'
-    rule: 'ɑ > ə / :{VC{ɑC,ɑCC}_#,VCC{ɑC,ɑCC}_#}:'
+    rule: 'ɑ:[-stress] > ə / :{VC{ɑC,ɑCC}_#,VCC{ɑC,ɑCC}_#}:'
   - rule_id: Livonian-Vh
     source: index_diachronica.html:13912
     input: Vh
