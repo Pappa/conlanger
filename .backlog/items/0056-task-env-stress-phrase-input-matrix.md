@@ -1,5 +1,5 @@
 Type: task
-Status: ready
+Status: resolved
 Plan: [0003-plan-cleaned-rule-index.md](0003-plan-cleaned-rule-index.md)
 Overview: Strip env stress prose to comment and attach [±stress] to rule input (pass D3).
 Blocked by:
@@ -37,17 +37,17 @@ Align `docs/system/index-diachronica-parser.md` step D3 and `docs/system/validat
 
 ## Acceptance Criteria
 
-- [ ] `a → i / _C(C), when stressed` parses to `env: _C(C)`, `comment` containing the full stress tail, input stage with `[+stress]` on `a`.
-- [ ] `V → ∅ / C_# when unstressed ! …` parses to `env: C_#`, stress tail in `comment`, input `V` with `[-stress]`.
-- [ ] `V_V, when neither vowel is stressed` parses to `env: V_V`, phrase in `comment`, input **unchanged** (no `[-stress]`).
-- [ ] Env-only `… when stressed unless primarily stressed` captures the **entire** tail in `comment` and applies `[+stress]` to input; env loses the tail.
-- [ ] `#_ when unstressed` strips tail to `comment` and applies `[-stress]` to input (not comment-only).
-- [ ] `test_normalize_stress_conditions` parametrization asserts **all** return values per row (`cleaned`, `captures`, and any added matrix flag); no ignored tuple slots.
-- [ ] `test_apply_stress_conditions` parametrization asserts `stages`, env/exception, and `comment` wherever the pass mutates them.
-- [ ] `uv run pytest tests/conlanger/tools/ingest/test_transforms.py --no-cov` passes.
-- [ ] Fresh `uv run create_index` yields no `when stressed` / `when unstressed` substrings in `env` or `exception` `context` for rules covered by the patterns above (material drop from the current ~136 occurrences).
-- [ ] D3 row in `docs/system/index-diachronica-parser.md` describes comment strip + input matrix, not “ASCA env with `_` focus prefix”.
-- [ ] `uv run check` passes on a clean tree after changes.
+- [x] `a → i / _C(C), when stressed` parses to `env: _C(C)`, `comment` containing the full stress tail, input stage with `[+stress]` on `a`.
+- [x] `V → ∅ / C_# when unstressed ! …` parses to `env: C_#`, stress tail in `comment`, input `V` with `[-stress]`.
+- [x] `V_V, when neither vowel is stressed` parses to `env: V_V`, phrase in `comment`, input **unchanged** (no `[-stress]`).
+- [x] Env-only `… when stressed unless primarily stressed` captures the **entire** tail in `comment` and applies `[+stress]` to input; env loses the tail.
+- [x] `#_ when unstressed` strips tail to `comment` and applies `[-stress]` to input (not comment-only).
+- [x] `test_normalize_stress_conditions` parametrization asserts **all** return values per row (`cleaned`, `captures`, and any added matrix flag); no ignored tuple slots.
+- [x] `test_apply_stress_conditions` parametrization asserts `stages`, env/exception, and `comment` wherever the pass mutates them.
+- [x] `uv run pytest tests/conlanger/tools/ingest/test_transforms.py --no-cov` passes.
+- [x] Fresh `uv run create_index` yields no `when stressed` / `when unstressed` substrings in `env` or `exception` `context` for rules covered by the patterns above (material drop from the current ~136 occurrences).
+- [x] D3 row in `docs/system/index-diachronica-parser.md` describes comment strip + input matrix, not “ASCA env with `_` focus prefix”.
+- [x] `uv run check` passes on a clean tree after changes.
 
 ## Comments
 

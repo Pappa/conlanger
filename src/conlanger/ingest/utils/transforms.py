@@ -12,6 +12,7 @@ from conlanger.utils.gloss import (
     extract_uncertainty_qualifier_from_field,
     field_has_uncertainty_qualifier,
 )
+from conlanger.utils.input_stage_matrix import attach_focus_matrix_to_input_stage
 from conlanger.utils.syllable_position import (
     strip_editorial_in_before_syllable_position,
 )
@@ -83,14 +84,21 @@ def apply_trailing_glosses(rule: IndexRule) -> IndexRule:
 
 
 def apply_stress_conditions(rule: IndexRule) -> IndexRule:
-    """Normalize ``when stressed`` / ``when unstressed`` in env and exception fields."""
+    """Strip env stress prose to comment; attach ``[±stress]`` on rule input when needed."""
     comment_fragments: list[str] = []
+    input_matrix: str | None = None
     for ctx in rule.contexts:
         if ctx.context is None:
             continue
-        value, captures = normalize_stress_conditions(ctx.context)
+        value, captures, matrix = normalize_stress_conditions(ctx.context)
         ctx.context = value if value else None
         comment_fragments.extend(captures)
+        if matrix is not None and input_matrix is None:
+            input_matrix = matrix
+    if input_matrix and rule.stages:
+        merged = attach_focus_matrix_to_input_stage(rule.stages, input_matrix)
+        if merged is not None:
+            rule.stages = merged
     rule.merge_comment(*comment_fragments)
     return rule
 

@@ -242,7 +242,7 @@ Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` e
 
 | Layer | Module | Examples (tickets 14–25) |
 | --- | --- | --- |
-| Parse-time | `IndexDiachronicaParser` / `parsers.py` | em dash 16, arrow 17, sporadic 19, glosses 21, stress 22, smart quotes 24 |
+| Parse-time | `IndexDiachronicaParser` / `parsers.py` | em dash 16, arrow 17, sporadic 19, glosses 21, stress env prose → comment + input `[±stress]` (22 / D3), smart quotes 24 |
 | Compile-time | `SoundChangeRule` in `rules.py` | class letters 14, length marks 15, 25, ejectives 20, labialized letters 23, chain expansion [compile-time chains](../src/conlanger/compile/tools/asca/chains.py) |
 
 **Policy highlights:**
@@ -252,7 +252,7 @@ Corpus `status: skipped` → `#\t{raw}` in ASCA output. `_active_rule_changes` e
 - During bulk correction, do **not** pre-emptively skip unmapped tokens (ticket 26).
 - Permanent skip / rare same-intent swaps → **project owner only**.
 
-**Resolved correction passes (14–25):** unknown_grouping, length marker ː, em dash, arrow →, compile-time chain expansion, sporadic glosses, ejective ʼ, trailing glosses, stress env, labialized class letters, smart quotes, bare length marker.
+**Resolved correction passes (14–25):** unknown_grouping, length marker ː, em dash, arrow →, compile-time chain expansion, sporadic glosses, ejective ʼ, trailing glosses, stress env prose strip + input matrix (D3), labialized class letters, smart quotes, bare length marker.
 
 **Follow-on cluster work:** correspondence-series 26–28, unknown_feature 32, positional/identity subscripts (planned compile-time, spike 38). (`samePOA` and other deferred unknown_feature leftovers: inventory-driven; no dedicated ticket.)
 

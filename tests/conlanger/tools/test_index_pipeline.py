@@ -37,8 +37,9 @@ _E2E_PARSE_SMOKE: list[tuple[str, str, dict[str, str | None]]] = [
         "4f873820",
         "a → e / _j when stressed",
         {
-            "stages": ["a", "e"],
-            "env": "_j when stressed",
+            "stages": ["a:[+stress]", "e"],
+            "env": "_j",
+            "comment": "when stressed",
         },
     ),
     ("63f9e7f4", "SN → N[- voice]", {"stages": ["SN", "N[- voice]"]}),

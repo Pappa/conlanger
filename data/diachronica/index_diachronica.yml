@@ -2183,9 +2183,10 @@ sections:
     source: index_diachronica.html:1359
     raw: a → i / _C(C), when stressed
     stages:
-    - a
+    - a:[+stress]
     - i
-    env: _C(C) when stressed
+    env: _C(C)
+    comment: when stressed
   - rule_id: Cypriot-Arabic-u
     source: index_diachronica.html:1360
     raw: u → o / _{ʕ,ɣ,x,r}
@@ -2206,8 +2207,8 @@ sections:
     stages:
     - '{u,a,i}'
     - ∅
-    env: _% when stressed
-    comment: (short only)
+    env: _%
+    comment: (short only); when stressed
   - rule_id: Cypriot-Arabic-uː-iː_3
     source: index_diachronica.html:1364
     raw: uː iː → u i
@@ -10122,7 +10123,7 @@ sections:
     source: index_diachronica.html:2928
     raw: 'wa → o / #_ when unstressed'
     stages:
-    - wa
+    - wa:[-stress]
     - o
     env: '#_'
     comment: when unstressed
@@ -14588,9 +14589,10 @@ sections:
     source: index_diachronica.html:3758
     raw: V[+mid] → ɘ / _C[+high] when stressed
     stages:
-    - V[-hi,-lo]
+    - V[-hi,-lo, +stress]
     - ɘ
-    env: _C[+high] when stressed
+    env: _C[+high]
+    comment: when stressed
   - rule_id: Marshallese-V_2
     source: index_diachronica.html:3759
     raw: V → ∅ / ”VC_
@@ -14763,12 +14765,12 @@ sections:
     raw: e → ə / _N when unstressed ! Ḱ_ (?; included here based on a comment earlier
       in the paper, but not listed on the correspondence list)
     stages:
-    - e
+    - e:[-stress]
     - ə
-    env: _N when unstressed
+    env: _N
     exception: Ḱ_
     comment: (?; included here based on a comment earlier in the paper, but not listed
-      on the correspondence list)
+      on the correspondence list); when unstressed
   - rule_id: Proto-Ongan-m,ɲ-n
     source: index_diachronica.html:3789
     raw: '{m,ɲ} n → {ɲ,∅} {ŋ,∅} / _# (first change marked “in progress?”)'
@@ -14795,10 +14797,10 @@ sections:
     source: index_diachronica.html:3795
     raw: e → ə / _N, when unstressed (?)
     stages:
-    - e
+    - e:[-stress]
     - ə
-    env: _N when unstressed
-    comment: (?)
+    env: _N
+    comment: (?); when unstressed
     sporadic: true
   - rule_id: Jarawa-n
     source: index_diachronica.html:3796
@@ -14863,10 +14865,10 @@ sections:
     source: index_diachronica.html:3808
     raw: e → ə / _N, when unstressed (?)
     stages:
-    - e
+    - e:[-stress]
     - ə
-    env: _N when unstressed
-    comment: (?)
+    env: _N
+    comment: (?); when unstressed
     sporadic: true
   - rule_id: Onge-n
     source: index_diachronica.html:3809
@@ -17852,8 +17854,9 @@ sections:
     stages:
     - i u
     - ɨ ʉ
-    env: _ when unstressed
+    env: _
     exception: '#U'
+    comment: when unstressed; short only
   - rule_id: Colloquial-Tamil-ɨ-ʉ
     source: index_diachronica.html:4554
     raw: ɨ ʉ → ∅ / ! _#
@@ -23564,7 +23567,7 @@ sections:
     source: index_diachronica.html:5557
     raw: V → ∅ / C_# when unstressed ! C = j
     stages:
-    - V
+    - V:[-stress]
     - ∅
     env: C_#
     exception: C = j
@@ -23592,15 +23595,16 @@ sections:
     source: index_diachronica.html:5561
     raw: oː → ua / _[anything], when stressed
     stages:
-    - oː
+    - oː:[+stress]
     - ua
-    env: _[] when stressed
+    env: _[]
+    comment: when stressed
   - rule_id: Old-Irish-eː_2
     source: index_diachronica.html:5562
     raw: eː → ia / _{#,Cʲ} when stressed; “ai and oi remain, but are written as <ae
       ai oe oi> seemingly randomly”
     stages:
-    - eː
+    - eː:[+stress]
     - ia
     env: _{#,Cʲ}
     comment: “ai and oi remain, but are written as <ae ai oe oi> seemingly randomly”;
@@ -23636,7 +23640,7 @@ sections:
     raw: V → Vː / _#, when stressed; “[t]his remained as a phonologically conditioned
       rule in OIr”
     stages:
-    - V
+    - V:[+stress]
     - Vː
     env: _#
     comment: “[t]his remained as a phonologically conditioned rule in OIr”; when stressed
@@ -23934,16 +23938,18 @@ sections:
     source: index_diachronica.html:5618
     raw: e → je / in open syllables, when stressed
     stages:
-    - e
+    - e:[+stress]
     - je
-    env: _ when stressed
+    env: in open syllables
+    comment: when stressed
   - rule_id: Dacian-e_2
     source: index_diachronica.html:5619
     raw: e → ja / in closed syllables, when stressed
     stages:
-    - e
+    - e:[+stress]
     - ja
-    env: _ when stressed
+    env: in closed syllables
+    comment: when stressed
   - rule_id: Dacian-eː
     source: index_diachronica.html:5620
     raw: eː → aː
@@ -24616,7 +24622,7 @@ sections:
     source: index_diachronica.html:5741
     raw: m → n → ∅ / _# when unstressed
     stages:
-    - m
+    - m:[-stress]
     - n
     - ∅
     env: _#
@@ -24739,7 +24745,7 @@ sections:
     source: index_diachronica.html:5762
     raw: m → n → ∅ / _# when unstressed
     stages:
-    - m
+    - m:[-stress]
     - n
     - ∅
     env: _#
@@ -24916,7 +24922,7 @@ sections:
     source: index_diachronica.html:5793
     raw: ɪ → i / _# when unstressed
     stages:
-    - ɪ
+    - ɪ:[-stress]
     - i
     env: _#
     comment: when unstressed
@@ -25097,7 +25103,7 @@ sections:
     source: index_diachronica.html:5822
     raw: ɪ → iː / _# when unstressed
     stages:
-    - ɪ
+    - ɪ:[-stress]
     - iː
     env: _#
     comment: when unstressed
@@ -25391,7 +25397,7 @@ sections:
     raw: n → ∅ / _# when unstressed (not clear as to whether m → n beforehand in this
       position or not)
     stages:
-    - n
+    - n:[-stress]
     - ∅
     env: _#
     comment: (not clear as to whether m > n beforehand in this position or not); when
@@ -26198,7 +26204,7 @@ sections:
     source: index_diachronica.html:6001
     raw: m → n → ∅ / _# when unstressed
     stages:
-    - m
+    - m:[-stress]
     - n
     - ∅
     env: _#
@@ -26818,10 +26824,10 @@ sections:
     source: index_diachronica.html:6116
     raw: V → Vː / _%, when stressed (except for /ə/?)
     stages:
-    - V
+    - V:[+stress]
     - Vː
-    env: _% when stressed
-    comment: (except for /ə/?)
+    env: _%
+    comment: (except for /ə/?); when stressed
   - rule_id: Standard-German-V_2
     source: index_diachronica.html:6117
     raw: V → Vː / _r{t,d,s,ts} (except /ə/)
@@ -32687,7 +32693,8 @@ sections:
     stages:
     - '{i,ɨ}'
     - ∅
-    env: _jV when unstressed
+    env: _jV
+    comment: when unstressed
   - rule_id: Polish-ɛ̃
     source: index_diachronica.html:7086
     raw: ɛ̃ → ɛ / _{#,l,ɫ}
@@ -33529,76 +33536,85 @@ sections:
     source: index_diachronica.html:7229
     raw: V → i / %(C)(C)_% when unstressed
     stages:
-    - V
+    - V:[-stress]
     - i
-    env: '%(C)(C)_% when unstressed'
+    env: '%(C)(C)_%'
+    comment: when unstressed
   - rule_id: Latin-V_2
     source: index_diachronica.html:7230
     raw: V → o / %(C)(C)V_% when unstressed
     stages:
-    - V
+    - V:[-stress]
     - o
-    env: '%(C)(C)V_% when unstressed'
+    env: '%(C)(C)V_%'
+    comment: when unstressed
   - rule_id: Latin-V_3
     source: index_diachronica.html:7231
     raw: V → e / %(C)(C)_%r when unstressed (with some exceptions)
     stages:
-    - V
+    - V:[-stress]
     - e
-    env: '%(C)(C)_%r when unstressed'
-    comment: (with some exceptions)
+    env: '%(C)(C)_%r'
+    comment: (with some exceptions); when unstressed
   - rule_id: Latin-V_4
     source: index_diachronica.html:7232
     raw: V → {i,u} / %(C)(C)_%P when unstressed
     stages:
-    - V
+    - V:[-stress]
     - '{i,u}'
-    env: '%(C)(C)_%P when unstressed'
+    env: '%(C)(C)_%P'
+    comment: when unstressed
   - rule_id: Latin-a-o
     source: index_diachronica.html:7233
     raw: a o → e u / %(C)(C)_C(C)% when unstressed
     stages:
     - a o
     - e u
-    env: '%(C)(C)_C(C)% when unstressed'
+    env: '%(C)(C)_C(C)%'
+    comment: when unstressed
   - rule_id: Latin-a
     source: index_diachronica.html:7234
     raw: a → e → i / %(C)(C)_ŋ when unstressed
     stages:
-    - a
+    - a:[-stress]
     - e
     - i
-    env: '%(C)(C)_ŋ when unstressed'
+    env: '%(C)(C)_ŋ'
+    comment: when unstressed
   - rule_id: Latin-a_2
     source: index_diachronica.html:7235
     raw: a → e → u / %(C)(C)_ɫ when unstressed
     stages:
-    - a
+    - a:[-stress]
     - e
     - u
-    env: '%(C)(C)_ɫ when unstressed'
+    env: '%(C)(C)_ɫ'
+    comment: when unstressed
   - rule_id: Latin-e_2
     source: index_diachronica.html:7236
     raw: e → u / %(C)(C)_ɫ when unstressed
     stages:
-    - e
+    - e:[-stress]
     - u
-    env: '%(C)(C)_ɫ when unstressed'
+    env: '%(C)(C)_ɫ'
+    comment: when unstressed
   - rule_id: Latin-ai
     source: index_diachronica.html:7237
     raw: ai → ei → iː / %(C)(C)_ when unstressed
     stages:
-    - ai
+    - ai:[-stress]
     - ei
     - iː
-    env: '%(C)(C)_ when unstressed'
+    env: '%(C)(C)_'
+    comment: when unstressed
   - rule_id: Latin-ei-oi-ou
     source: index_diachronica.html:7238
     raw: ei oi ou → iː eː uː / %(C)(C)_ when unstressed
     stages:
     - ei oi ou
     - iː eː uː
-    env: '%(C)(C)_ when unstressed'
+    env: '%(C)(C)_'
+    comment: when unstressed
   - rule_id: Latin-i,o
     source: index_diachronica.html:7239
     raw: '{i,o} → e / _#'
@@ -34176,7 +34192,8 @@ sections:
     stages:
     - '{e,i}'
     - j
-    env: C_V when unstressed
+    env: C_V
+    comment: when unstressed
   - rule_id: Classical-Latin-vs.-Vulgar-Latin-e,ai
     source: index_diachronica.html:7324
     raw: '{e,ai} → ɛ'
@@ -35003,17 +35020,18 @@ sections:
     source: index_diachronica.html:7443
     raw: o → u / _{ɲ,nk,ŋ} when stressed
     stages:
-    - o
+    - o:[+stress]
     - u
-    env: _{ɲ,nk,ŋ} when stressed
+    env: _{ɲ,nk,ŋ}
+    comment: when stressed
   - rule_id: Catalan-e_2
     source: index_diachronica.html:7444
     raw: e → i / _{nk,ŋ} when stressed (irregular)
     stages:
-    - e
+    - e:[+stress]
     - i
-    env: _{nk,ŋ} when stressed
-    comment: (irregular)
+    env: _{nk,ŋ}
+    comment: (irregular); when stressed
   - rule_id: Catalan-aj
     source: index_diachronica.html:7445
     raw: aj → ej → ee → e (irregular)
@@ -35027,10 +35045,10 @@ sections:
     source: index_diachronica.html:7446
     raw: aj → ej / _ʃ when stressed (irregular)
     stages:
-    - aj
+    - aj:[+stress]
     - ej
-    env: _ʃ when stressed
-    comment: (irregular)
+    env: _ʃ
+    comment: (irregular); when stressed
   - rule_id: Catalan-ɛj-ɔj
     source: index_diachronica.html:7447
     raw: ɛj ɔj → jɛj uei / i {u,ui} / stressed
@@ -36350,9 +36368,10 @@ sections:
     source: index_diachronica.html:7652
     raw: V → V[+nas] / _N$C when stressed
     stages:
-    - V
+    - V:[+stress]
     - V[+nas]
-    env: _N$C when stressed
+    env: _N$C
+    comment: when stressed
   - rule_id: Portuguese-ɔ̃
     source: index_diachronica.html:7653
     raw: ɔ̃ → õ
@@ -36903,16 +36922,18 @@ sections:
     source: index_diachronica.html:7729
     raw: a → e / _j when stressed
     stages:
-    - a
+    - a:[+stress]
     - e
-    env: _j when stressed
+    env: _j
+    comment: when stressed
   - rule_id: Portuguese-o_4
     source: index_diachronica.html:7730
     raw: o → u / _ɲ when stressed
     stages:
-    - o
+    - o:[+stress]
     - u
-    env: _ɲ when stressed
+    env: _ɲ
+    comment: when stressed
   - rule_id: Portuguese-V0V0_2
     source: index_diachronica.html:7731
     raw: V₀V₀ → V₀ (irregular)
@@ -39540,33 +39561,35 @@ sections:
     source: index_diachronica.html:8133
     raw: V → ∅ / C_{r,l} when unstressed and not at a word boundary
     stages:
-    - V
+    - V:[-stress]
     - ∅
-    env: C_{r,l} when unstressed and not at a word boundary
+    env: C_{r,l}
+    comment: when unstressed and not at a word boundary
   - rule_id: Spanish-V_2
     source: index_diachronica.html:8134
     raw: V → ∅ / {r,l}_C when unstressed and not at a word boundary
     stages:
-    - V
+    - V:[-stress]
     - ∅
-    env: '{r,l}_C when unstressed and not at a word boundary'
+    env: '{r,l}_C'
+    comment: when unstressed and not at a word boundary
   - rule_id: Spanish-V_3
     source: index_diachronica.html:8135
     raw: V → ∅ / C_s when unstressed and not at a word boundary (sporadic)
     stages:
-    - V
+    - V:[-stress]
     - ∅
-    env: C_s when unstressed and not at a word boundary
-    comment: (sporadic)
+    env: C_s
+    comment: (sporadic); when unstressed and not at a word boundary
     sporadic: true
   - rule_id: Spanish-V_4
     source: index_diachronica.html:8136
     raw: V → ∅ / s_C when unstressed and not at a word boundary (sporadic)
     stages:
-    - V
+    - V:[-stress]
     - ∅
-    env: s_C when unstressed and not at a word boundary
-    comment: (sporadic)
+    env: s_C
+    comment: (sporadic); when unstressed and not at a word boundary
     sporadic: true
   - rule_id: Spanish-k,ɡ
     source: index_diachronica.html:8137
@@ -40596,9 +40619,10 @@ sections:
     source: index_diachronica.html:8320
     raw: ə → ∅ / _%, when unstressed
     stages:
-    - ə
+    - ə:[-stress]
     - ∅
-    env: _% when unstressed
+    env: _%
+    comment: when unstressed
 - section: Je-Tupı́-Carib
   index: '18'
 - section: Cariban
@@ -44604,9 +44628,10 @@ sections:
     source: index_diachronica.html:9288
     raw: a → ∅ / _i, when unstressed
     stages:
-    - a
+    - a:[-stress]
     - ∅
-    env: _i when unstressed
+    env: _i
+    comment: when unstressed
   - rule_id: Chibcha-a_2
     source: index_diachronica.html:9289
     raw: a → i / _Ci
@@ -50266,7 +50291,8 @@ sections:
     stages:
     - i{w,j}
     - ∅
-    env: _a when unstressed
+    env: _a
+    comment: when unstressed
   - rule_id: Bardi-i
     source: index_diachronica.html:10742
     raw: i → u / _ju
@@ -50313,9 +50339,10 @@ sections:
     source: index_diachronica.html:10748
     raw: ib → ∅ / _i, when unstressed
     stages:
-    - ib
+    - ib:[-stress]
     - ∅
-    env: _i when unstressed
+    env: _i
+    comment: when unstressed
   - rule_id: Bardi-b
     source: index_diachronica.html:10749
     raw: b → w / a_u
@@ -50376,9 +50403,10 @@ sections:
     source: index_diachronica.html:10781
     raw: t → ɾ / _{u,ẽ} when unstressed
     stages:
-    - t
+    - t:[-stress]
     - ɾ
-    env: _{u,ẽ} when unstressed
+    env: _{u,ẽ}
+    comment: when unstressed
   - rule_id: Papabuco-Chatino-t_2
     source: index_diachronica.html:10782
     raw: t → ɾ / _”a
@@ -50522,16 +50550,18 @@ sections:
     source: index_diachronica.html:10802
     raw: e → a / _{l,ʔn} when unstressed
     stages:
-    - e
+    - e:[-stress]
     - a
-    env: _{l,ʔn} when unstressed
+    env: _{l,ʔn}
+    comment: when unstressed
   - rule_id: Papabuco-Chatino-e_2
     source: index_diachronica.html:10803
     raw: e → i / {kʲ,nt}_ when stressed
     stages:
-    - e
+    - e:[+stress]
     - i
-    env: '{kʲ,nt}_ when stressed'
+    env: '{kʲ,nt}_'
+    comment: when stressed
   - rule_id: Papabuco-Chatino-e_3
     source: index_diachronica.html:10804
     raw: e → i / in a few data sets “where obscure morphological developments (in
@@ -50927,16 +50957,18 @@ sections:
     source: index_diachronica.html:10870
     raw: e → i / l_ when unstressed
     stages:
-    - e
+    - e:[-stress]
     - i
-    env: l_ when unstressed
+    env: l_
+    comment: when unstressed
   - rule_id: Zenzontepec-Chatino-e_2
     source: index_diachronica.html:10871
     raw: e → i / kʲ_ when stressed
     stages:
-    - e
+    - e:[+stress]
     - i
-    env: kʲ_ when stressed
+    env: kʲ_
+    comment: when stressed
 - section: Proto-Oto-Manguean to Tlapanec
   index: '32.2'
   citation: Pogostick Man, from Rensch, Calvin R. (1977), “Classification of the Otomanguean
@@ -51564,10 +51596,10 @@ sections:
     source: index_diachronica.html:11071
     raw: ∅ → h / V(ː)_, when stressed (only sometimes, “particularly before consonants”)
     stages:
-    - ∅
+    - ∅:[+stress]
     - h
-    env: V(ː)_ when stressed
-    comment: (only sometimes, “particularly before consonants”)
+    env: V(ː)_
+    comment: (only sometimes, “particularly before consonants”); when stressed
     sporadic: true
 - section: Buena Vista Yokuts to Tulamni
   index: 33.3.1.3
@@ -51798,7 +51830,7 @@ sections:
     source: index_diachronica.html:11148
     raw: i → e / _CVC#, when stressed (! _H, short only)
     stages:
-    - i
+    - i:[+stress]
     - e
     env: _CVC#
     exception: _H
@@ -65148,9 +65180,10 @@ sections:
     source: index_diachronica.html:13770
     raw: i → e / _C, when unstressed
     stages:
-    - i
+    - i:[-stress]
     - e
-    env: _C when unstressed
+    env: _C
+    comment: when unstressed
   - rule_id: Pre-Finnic-iw
     source: index_diachronica.html:13771
     raw: iw → u / unstressed
@@ -65882,9 +65915,10 @@ sections:
     source: index_diachronica.html:13882
     raw: e → i / A_, when unstressed
     stages:
-    - e
+    - e:[-stress]
     - i
-    env: A_ when unstressed
+    env: A_
+    comment: when unstressed
   - rule_id: Standard-Finnish-Ue
     source: index_diachronica.html:13883
     raw: Ue → eː / unstressed
@@ -66052,7 +66086,7 @@ sections:
     source: index_diachronica.html:13911
     raw: ɑ → ə / VC(C)ɑC(C)_# when unstressed
     stages:
-    - ɑ
+    - ɑ:[-stress]
     - ə
     env: VC(C)ɑC(C)_#
     comment: when unstressed

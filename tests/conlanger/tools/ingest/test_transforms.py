@@ -113,23 +113,50 @@ def test_apply_sporadic_qualifier_unchanged_when_no_marker(rule, sporadic):
     [
         (
             {"env": "_C(C), when stressed"},
-            {"env": "_C(C) when stressed"},
+            {
+                "stages": ["a:[+stress]", "e"],
+                "env": "_C(C)",
+                "comment": "when stressed",
+            },
         ),
         (
             {"env": "V_V, when neither vowel is stressed"},
-            {"env": "V_V", "comment": "when neither vowel is stressed"},
+            {
+                "stages": ["a", "e"],
+                "env": "V_V",
+                "comment": "when neither vowel is stressed",
+            },
+        ),
+        (
+            {
+                "env": "C_# when unstressed",
+                "stages": ["V", "∅"],
+            },
+            {
+                "stages": ["V:[-stress]", "∅"],
+                "env": "C_#",
+                "comment": "when unstressed",
+            },
+        ),
+        (
+            {
+                "env": "_C[+high] when stressed",
+                "stages": ["V[+mid]", "ɘ"],
+            },
+            {
+                "stages": ["V[+mid, +stress]", "ɘ"],
+                "env": "_C[+high]",
+                "comment": "when stressed",
+            },
         ),
     ],
 )
 def test_apply_stress_conditions(input, output):
-    args = {
-        "raw": "x",
-        "source": "t",
-        "stages": ["a", "e"],
-    }
-    rule = IndexRule(**args, **input)
+    base = {"raw": "x", "source": "t", "stages": ["a", "e"]}
+    rule = IndexRule(**{**base, **input})
     result = apply_stress_conditions(rule)
-    assert result.to_index_dict() == {**args, **output}
+    expected = {**base, **output}
+    assert result.to_index_dict() == expected
 
 
 def test_apply_trailing_glosses():
@@ -207,30 +234,52 @@ def test_normalize_medial_env_field(text, expected_env, expected_medial):
 
 
 @pytest.mark.parametrize(
-    ("text", "expected"),
+    ("text", "expected_env", "expected_captures", "expected_matrix"),
     [
-        ("V_V, when neither vowel is stressed", "V_V"),
-        ("_C(C), when stressed", "_C(C) when stressed"),
-        ("_$, when stressed", "_$ when stressed"),
-        ("_N, when unstressed (?)", "_N when unstressed (?)"),
-        ("when unstressed", "_ when unstressed"),
+        (
+            "V_V, when neither vowel is stressed",
+            "V_V",
+            ["when neither vowel is stressed"],
+            None,
+        ),
+        ("_C(C), when stressed", "_C(C)", ["when stressed"], "[+stress]"),
+        ("_$, when stressed", "_$", ["when stressed"], "[+stress]"),
+        ("_N, when unstressed (?)", "_N", ["when unstressed (?)"], "[-stress]"),
+        ("when unstressed", "when unstressed", [], None),
         (
             "when stressed unless primarily stressed",
-            "_ when stressed unless primarily stressed",
+            "when stressed unless primarily stressed",
+            [],
+            None,
         ),
-        ("_# when unstressed", "_#"),
-        ("_#, when unstressed", "_#"),
-        ("C_# when unstressed", "C_#"),
-        ("in open syllables, when stressed", "_ when stressed"),
-        ("short only when unstressed", "_ when unstressed"),
-        ("_j when stressed", "_j when stressed"),
-        ("l_ when unstressed", "l_ when unstressed"),
-        ("_#", "_#"),
+        ("_# when unstressed", "_#", ["when unstressed"], "[-stress]"),
+        ("_#, when unstressed", "_#", ["when unstressed"], "[-stress]"),
+        ("C_# when unstressed", "C_#", ["when unstressed"], "[-stress]"),
+        (
+            "in open syllables, when stressed",
+            "in open syllables",
+            ["when stressed"],
+            "[+stress]",
+        ),
+        ("short only when unstressed", "short only", ["when unstressed"], "[-stress]"),
+        ("_j when stressed", "_j", ["when stressed"], "[+stress]"),
+        ("l_ when unstressed", "l_", ["when unstressed"], "[-stress]"),
+        (
+            "_C(C), when stressed unless primarily stressed",
+            "_C(C)",
+            ["when stressed unless primarily stressed"],
+            "[+stress]",
+        ),
+        ("_#", "_#", [], None),
     ],
 )
-def test_normalize_stress_conditions(text, expected):
-    cleaned, _ = normalize_stress_conditions(text)
-    assert cleaned == expected
+def test_normalize_stress_conditions(
+    text, expected_env, expected_captures, expected_matrix
+):
+    cleaned, captures, matrix = normalize_stress_conditions(text)
+    assert cleaned == expected_env
+    assert captures == expected_captures
+    assert matrix == expected_matrix
 
 
 def test_split_semicolon_comment_via_build():

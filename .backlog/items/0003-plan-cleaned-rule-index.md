@@ -75,7 +75,7 @@ A **cleaned rule index** (applier-neutral YAML source of truth) derived from **I
 | [0052-task-remove-rule-comment-phrases-summary.md](0052-task-remove-rule-comment-phrases-summary.md) | Remove `rule-comment-phrases.md` parse diagnostic and dead writer code. | resolved |
 | [0055-task-compiler-config-merge-and-seed.md](0055-task-compiler-config-merge-and-seed.md) | CompilerConfig defaults ← YAML ← CLI; optional `seed`; remove inventory RNG constant. | resolved |
 | [0054-task-compile-rules-sample-mode-v4-schema.md](0054-task-compile-rules-sample-mode-v4-schema.md) | Pipeline vs validate compile output; v4 structured `asca_rules.yml`. | resolved |
-| [0056-task-env-stress-phrase-input-matrix.md](0056-task-env-stress-phrase-input-matrix.md) | Pass D3: env stress prose → comment + input `[±stress]`. | ready |
+| [0056-task-env-stress-phrase-input-matrix.md](0056-task-env-stress-phrase-input-matrix.md) | Pass D3: env stress prose → comment + input `[±stress]`. | resolved |
 
 ## Spikes
 
