@@ -6,6 +6,7 @@ import re
 from typing import Any
 
 from conlanger.ingest.models.index_models import IndexRule
+from conlanger.utils.input_stage_matrix import attach_focus_matrix_to_input_stage
 
 _BARE_MATRIX_RE = re.compile(r"^\[(?P<inner>[^\]]+)\]$")
 _UNSTRESSED_PENULT_RE = re.compile(
@@ -38,20 +39,6 @@ _VAGUE_BARE_ENV_RE = re.compile(
     r"a\s+few\s+data\s+sets|something\s+to\s+do\s+with.+)$",
     re.IGNORECASE,
 )
-
-
-def _attach_bare_matrix_to_input_stage(
-    stages: list[str], matrix: str
-) -> list[str] | None:
-    """Merge a standalone feature matrix onto the rule input stage when unambiguous."""
-    if not stages:
-        return None
-    input_stage = stages[0].strip()
-    if not input_stage or ":" in input_stage or "[" in input_stage:
-        return None
-    if " " in input_stage or "{" in input_stage:
-        return None
-    return [f"{input_stage}:{matrix}", *stages[1:]]
 
 
 def normalize_prose_conditional_env_field(
@@ -132,7 +119,7 @@ def apply_prose_conditional_env_conditions(rule: IndexRule) -> IndexRule:
         if normalized != env or comment_fragments or flags or input_matrix:
             rule.env = normalized if normalized else None
             if input_matrix and rule.stages:
-                merged = _attach_bare_matrix_to_input_stage(rule.stages, input_matrix)
+                merged = attach_focus_matrix_to_input_stage(rule.stages, input_matrix)
                 if merged is not None:
                     rule.stages = merged
             if flags.get("sporadic"):

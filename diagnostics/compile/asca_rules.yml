@@ -9369,10 +9369,11 @@ sections:
     rule: o e > ʊ ɪ
   - rule_id: Mwotlap-aCV+-high
     source: index_diachronica.html:3179
-    input: aCV[+ high, -stress, +secondary stress]
+    input: aCV[+ high, -stress, +secondary stress, -stress, +secondary stress]
     output: ɪ
     env: _
-    rule: aCV[+ high, -stress, +secondary stress] > ɪ / _
+    rule: aCV[+ high, -stress, +secondary stress, -stress, +secondary stress] > ɪ
+      / _
   - rule_id: Mwotlap-CV1C”V2
     source: index_diachronica.html:3180
     input: '{CV=1,V=1} CV:[+stress]=2'
@@ -18967,16 +18968,16 @@ sections:
     rule: ei > e:[+long]
   - rule_id: Old-Irish-oː_3
     source: index_diachronica.html:5561
-    input: oː:[+stress]
+    input: o:[+long, +stress]
     output: ua
     env: _[]
-    rule: oː:[+stress] > ua / _[]
+    rule: o:[+long, +stress] > ua / _[]
   - rule_id: Old-Irish-eː_2
     source: index_diachronica.html:5562
-    input: eː:[+stress]
+    input: e:[+long, +stress]
     output: ia
     env: _{#,C:[+cor,+dist]}
-    rule: eː:[+stress] > ia / _{#,C:[+cor,+dist]}
+    rule: e:[+long, +stress] > ia / _{#,C:[+cor,+dist]}
   - rule_id: Old-Irish-j
     source: index_diachronica.html:5563
     input: j
@@ -27928,10 +27929,10 @@ sections:
       rule: w > ∅
   - rule_id: Catalan-iː
     source: index_diachronica.html:7351
-    input: iː:[+stress]
+    input: i:[+long, +stress, +stress]
     output: i
     env: _
-    rule: iː:[+stress] > i / _
+    rule: i:[+long, +stress, +stress] > i / _
   - rule_id: Catalan-iː_2
     source: index_diachronica.html:7352
     input: i:[+long]
@@ -27958,10 +27959,10 @@ sections:
     rule: i > j / V:[+stress]_#
   - rule_id: Catalan-uː
     source: index_diachronica.html:7356
-    input: uː:[+stress]
+    input: u:[+long, +stress, +stress]
     output: u
     env: _
-    rule: uː:[+stress] > u / _
+    rule: u:[+long, +stress, +stress] > u / _
   - rule_id: Catalan-uː_2
     source: index_diachronica.html:7357
     input: u:[+long]
@@ -29726,10 +29727,10 @@ sections:
     rule: '{ã,ãe,õe} > ão / _#'
   - rule_id: Portuguese-V+nas
     source: index_diachronica.html:7659
-    input: V:[+nas, -stress]
+    input: V:[+nas, -stress, -stress]
     output: V:[-nas]
     env: _
-    rule: V:[+nas, -stress] > V:[-nas] / _
+    rule: V:[+nas, -stress, -stress] > V:[-nas] / _
   - rule_id: Portuguese-V+nas_2
     source: index_diachronica.html:7660
     input: V:[+nas]

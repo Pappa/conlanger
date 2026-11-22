@@ -12,6 +12,8 @@ from conlanger.utils.input_stage_matrix import attach_focus_matrix_to_input_stag
     [
         (["V[+mid]", "ɘ"], "[+stress]", ["V[+mid, +stress]", "ɘ"]),
         (["V", "ɘ"], "[-stress]", ["V:[-stress]", "ɘ"]),
+        (["oː", "ua"], "[+stress]", ["o:[+long, +stress]", "ua"]),
+        (["eː", "ia"], "[+stress]", ["e:[+long, +stress]", "ia"]),
         (["V:[+long]", "Vː"], "[+stress]", ["V:[+long, +stress]", "Vː"]),
         (["", "a"], "[+stress]", None),
         ([], "[+stress]", None),

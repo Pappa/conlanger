@@ -6,8 +6,8 @@
 - Rows: **9495** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9227** (97.2%)
-- Fail: **207** (2.2%)
+- OK: **9231** (97.2%)
+- Fail: **203** (2.1%)
 - Skipped: **61** (0.6%)
 
 
@@ -34,7 +34,7 @@ Fail: **1/142**
 | 36 | `syntax_other` |
 | 36 | `expected_underscore` |
 | 26 | `expected_ipa` |
-| 25 | `unknown_character` |
+| 21 | `unknown_character` |
 | 13 | `missing_slash_output_env` |
 | 13 | `nested_brackets` |
 | 10 | `expected_number` |
@@ -88,7 +88,7 @@ Fail: **1/142**
 
 | count | error_token |
 |------:|-------------|
-| 10 | `ː` |
+| 6 | `ː` |
 | 3 | `₂` |
 | 3 | `͡` |
 | 2 | `ʝ` |

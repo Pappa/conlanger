@@ -11588,7 +11588,7 @@ sections:
     source: index_diachronica.html:3179
     raw: aCV[+ high] → ɪ / when stressed unless primarily stressed
     stages:
-    - aCV[+ high]
+    - aCV[+ high, -stress, +secondary stress]
     - ɪ
     env: '[-stress, +secondary stress]'
   - rule_id: Mwotlap-CV1C”V2
@@ -23595,7 +23595,7 @@ sections:
     source: index_diachronica.html:5561
     raw: oː → ua / _[anything], when stressed
     stages:
-    - oː:[+stress]
+    - o:[+long, +stress]
     - ua
     env: _[]
     comment: when stressed
@@ -23604,7 +23604,7 @@ sections:
     raw: eː → ia / _{#,Cʲ} when stressed; “ai and oi remain, but are written as <ae
       ai oe oi> seemingly randomly”
     stages:
-    - eː:[+stress]
+    - e:[+long, +stress]
     - ia
     env: _{#,Cʲ}
     comment: “ai and oi remain, but are written as <ae ai oe oi> seemingly randomly”;
@@ -34368,7 +34368,7 @@ sections:
     source: index_diachronica.html:7351
     raw: iː → i / stressed
     stages:
-    - iː:[+stress]
+    - i:[+long, +stress]
     - i
     env: '[+stress]'
   - rule_id: Catalan-iː_2
@@ -34403,7 +34403,7 @@ sections:
     source: index_diachronica.html:7356
     raw: uː → u / stressed
     stages:
-    - uː:[+stress]
+    - u:[+long, +stress]
     - u
     env: '[+stress]'
   - rule_id: Catalan-uː_2
@@ -36419,7 +36419,7 @@ sections:
     source: index_diachronica.html:7659
     raw: V[+nas] → V[-nas] / unstressed
     stages:
-    - V[+nas]
+    - V[+nas, -stress]
     - V[-nas]
     env: '[-stress]'
   - rule_id: Portuguese-V+nas_2

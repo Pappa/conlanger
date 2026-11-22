@@ -6,6 +6,10 @@ import re
 
 _POSTFIX_MATRIX_RE = re.compile(r"^(?P<host>.+?)(?P<mtx>\[[^\]]+\])$")
 _COLON_MATRIX_RE = re.compile(r"^(?P<host>.+?):\[(?P<inner>[^\]]+)\](?P<rest>.*)$")
+_LENGTH_MARK = "\u02d0"
+_TRAILING_LENGTH_SEGMENT_RE = re.compile(
+    rf"^(?P<body>[a-zA-Z\u00C0-\u024F\u0250-\u02AF\u0370-\u03FF]+){re.escape(_LENGTH_MARK)}$"
+)
 
 
 def _merge_matrix_inners(inner_a: str, inner_b: str) -> str:
@@ -48,5 +52,11 @@ def attach_focus_matrix_to_input_stage(
         return None
     if " " in input_stage or "{" in input_stage:
         return None
+
+    length_match = _TRAILING_LENGTH_SEGMENT_RE.match(input_stage)
+    if length_match is not None:
+        body = length_match.group("body")
+        merged = _merge_matrix_inners("+long", matrix_inner)
+        return [f"{body}:[{merged}]", *stages[1:]]
 
     return [f"{input_stage}:{matrix}", *stages[1:]]
