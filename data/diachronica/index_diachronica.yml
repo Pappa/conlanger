@@ -49548,6 +49548,7 @@ sections:
     - f
     - h
     comment: (perhaps not in all languages?)
+  status: skipped
 - section: Proto-Potou-Akanic-Bantu to Proto-Potou-Akanic
   index: '30.2'
   citation: Pogostick Man, from Stewart, John M. (2002), “The potential of proto-Potou-Akanic-Bantu

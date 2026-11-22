@@ -3,11 +3,11 @@
 - Source YAML: `diagnostics/compile/asca_rules.yml`
 - Probe words: `tests/fixtures/asca_probe_words.wsca`
 - Checker: `validate_asca` / asca **asca 0.10.3**
-- Rows: **9495** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
+- Rows: **9485** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9231** (97.2%)
-- Fail: **203** (2.1%)
+- OK: **9230** (97.3%)
+- Fail: **194** (2.0%)
 - Skipped: **61** (0.6%)
 
 
@@ -22,17 +22,17 @@ Fail: **1/142**
 
 ## Sections
 
-- All OK: **530 / 658** (80.5%)
-- Some OK: **127 / 658** (19.3%)
-- None OK: **1 / 658** (0.2%)
-- Sections skipped: **0 / 658** (0.0%)
+- All OK: **530 / 657** (80.7%)
+- Some OK: **126 / 657** (19.2%)
+- None OK: **1 / 657** (0.2%)
+- Sections skipped: **0 / 657** (0.0%)
 
 ## Failure classes
 
 | count | failure_class |
 |------:|---------------|
 | 36 | `syntax_other` |
-| 36 | `expected_underscore` |
+| 29 | `expected_underscore` |
 | 26 | `expected_ipa` |
 | 21 | `unknown_character` |
 | 13 | `missing_slash_output_env` |
@@ -40,7 +40,7 @@ Fail: **1/142**
 | 10 | `expected_number` |
 | 9 | `unknown_feature` |
 | 8 | `empty_io_panic` |
-| 7 | `prose_or_expected_arrow` |
+| 5 | `prose_or_expected_arrow` |
 | 5 | `stuff_after_word_bound` |
 | 3 | `panic_other` |
 | 3 | `segments_before_word` |
@@ -130,8 +130,8 @@ Fail: **1/142**
 
 | count | error_token |
 |------:|-------------|
-| 12 | `}:` |
 | 9 | `,` |
+| 5 | `}:` |
 | 2 | `:` |
 | 1 | `ʲ` |
 ### expected_underscore (description)
@@ -187,10 +187,10 @@ Fail: **1/142**
 
 | count | description |
 |------:|-------------|
-| 3 | `Expected '>', '->' or '=>', but received '/'` |
 | 2 | `Expected '>', '->' or '=>', but received '*'` |
 | 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
+| 1 | `Expected '>', '->' or '=>', but received '/'` |
 
 ### invalid_ipa (error_token)
 
