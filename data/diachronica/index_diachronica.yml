@@ -14673,7 +14673,7 @@ sections:
     raw: '{ç,s} x → tᵚ ∅'
     stages:
     - '{ç,s} x'
-    - tᵚ ∅
+    - tˠ ∅
   - rule_id: Marshallese-m-ɲ
     source: index_diachronica.html:3771
     raw: m ɲ → mʲ nʲ

@@ -8,7 +8,6 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 10.1.1,Proto-Malayo-Polynesian to Proto-Bali-Sasak-Sumbawan,Proto-Bali-Sasak-Sumbawan-HəS,,index_diachronica.html:2540,"[-place]əP > {hə(N)P,ə(N)P} / #_",FAILED,expected_ipa,,,,,,,,,,,,,multi
 10.3.3,Proto-Oceanic to Lemerig,Lemerig-—-aCa,,index_diachronica.html:3148,"aCa > {ɘ,a}C",FAILED,panic_other,,,,,,,,,,,,,multi
 10.3.11.3,Proto-Southern Vanuatu to Proto-Tanna,Proto-Tanna-s-c-*J,,index_diachronica.html:3632,"s c *{L,G} > {h,z} {s,z} z",FAILED,prose_or_expected_arrow,,,,,,,,,,,,,multi
-10.4.1,Proto-Micronesian to Marshallese,"Marshallese-ç,s-x",,index_diachronica.html:3770,"{ç,s} x > tᵚ",FAILED,unknown_character,,,,,,,,,,,,,multi
 10.5,Proto-Austronesian to Proto-Ongan,"Proto-Ongan-c,*C,s,*S",,index_diachronica.html:3782,"{c,C,s,*P} > c",FAILED,expected_ipa,,,,,,,,,,,,,multi
 10.5,Proto-Austronesian to Proto-Ongan,Proto-Ongan-ɟ-ɡ-*N-*R,,index_diachronica.html:3785,"ɟ ɡ *N [+son,-syl] > {ɟ,j} {ɟ,ɡ} {l,j} {l,r}",FAILED,prose_or_expected_arrow,,,,,,,,,,,,,multi
 10.5.1,Proto-Ongan to Jarawa,Jarawa-∅,,index_diachronica.html:3798,∅ > a / h#_,FAILED,segments_before_word,,,,,,,,,,,,,multi

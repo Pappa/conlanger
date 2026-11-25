@@ -6,8 +6,8 @@
 - Rows: **9485** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9230** (97.3%)
-- Fail: **194** (2.0%)
+- OK: **9231** (97.3%)
+- Fail: **193** (2.0%)
 - Skipped: **61** (0.6%)
 
 
@@ -22,8 +22,8 @@ Fail: **1/142**
 
 ## Sections
 
-- All OK: **530 / 657** (80.7%)
-- Some OK: **126 / 657** (19.2%)
+- All OK: **531 / 657** (80.8%)
+- Some OK: **125 / 657** (19.0%)
 - None OK: **1 / 657** (0.2%)
 - Sections skipped: **0 / 657** (0.0%)
 
@@ -34,7 +34,7 @@ Fail: **1/142**
 | 36 | `syntax_other` |
 | 29 | `expected_underscore` |
 | 26 | `expected_ipa` |
-| 21 | `unknown_character` |
+| 20 | `unknown_character` |
 | 13 | `missing_slash_output_env` |
 | 13 | `nested_brackets` |
 | 10 | `expected_number` |
@@ -92,12 +92,12 @@ Fail: **1/142**
 | 3 | `₂` |
 | 3 | `͡` |
 | 2 | `ʝ` |
-| 1 | `ᵚ` |
 | 1 | `ð` |
 | 1 | `”` |
 | 1 | `̣` |
 | 1 | `ḭ` |
 | 1 | `̺` |
+| 1 | `#` |
 ### unknown_character (description)
 
 | count | description |
@@ -366,7 +366,7 @@ Fail: **1/142**
 
 | count | blame |
 |------:|-------|
-| 194 | `multi` |
+| 193 | `multi` |
 
 ## Notes
 

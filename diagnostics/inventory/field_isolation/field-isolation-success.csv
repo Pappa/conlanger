@@ -2084,6 +2084,7 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 10.4.1,Proto-Micronesian to Marshallese,Marshallese-∅_3,,index_diachronica.html:3767,"∅ > w / #_{C:[+round],V:[+round]}",OK,,,,,,,,,,,,,,none
 10.4.1,Proto-Micronesian to Marshallese,"Marshallese-i,u-e,o",,index_diachronica.html:3768,"{i,u} {e,o} > ɨ ɜ",OK,,,,,,,,,,,,,,none
 10.4.1,Proto-Micronesian to Marshallese,"Marshallese-p-t,ts-c",,index_diachronica.html:3769,"p {t,ts} c > pʲ tʲ rʲ",OK,,,,,,,,,,,,,,none
+10.4.1,Proto-Micronesian to Marshallese,"Marshallese-ç,s-x",,index_diachronica.html:3770,"{ç,s} x > tˠ",OK,,,,,,,,,,,,,,none
 10.4.1,Proto-Micronesian to Marshallese,Marshallese-m-ɲ,,index_diachronica.html:3771,m ɲ > mʲ nʲ,OK,,,,,,,,,,,,,,none
 10.5,Proto-Austronesian to Proto-Ongan,Proto-Ongan-b,,index_diachronica.html:3778,"b > ∅ / #_{u,i}",OK,,,,,,,,,,,,,,none
 10.5,Proto-Austronesian to Proto-Ongan,Proto-Ongan-q,,index_diachronica.html:3779,q > ∅ / #_V,OK,,,,,,,,,,,,,,none

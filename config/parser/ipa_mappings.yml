@@ -221,6 +221,12 @@ r̀:
   confidence: medium
   notes: |
     https://en.wikipedia.org/wiki/Voiceless_velar_nasal
+tᵚ:
+  ipa_target: tˠ
+  confidence: high
+  notes: |
+    Velarized voiceless alveolar/dental stop
+    https://en.wikipedia.org/wiki/Help:IPA/Marshallese
 
 # t͜s:
 #   ipa_target: t͡s

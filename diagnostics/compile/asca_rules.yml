@@ -12023,8 +12023,8 @@ sections:
   - rule_id: Marshallese-ç,s-x
     source: index_diachronica.html:3770
     input: '{ç,s} x'
-    output: tᵚ
-    rule: '{ç,s} x > tᵚ'
+    output: tˠ
+    rule: '{ç,s} x > tˠ'
   - rule_id: Marshallese-m-ɲ
     source: index_diachronica.html:3771
     input: m ɲ
