@@ -361,6 +361,13 @@ Fail: **1/142**
 |------:|-------------|
 | — | _(none)_ |
 
+
+## Field isolation blame (error rows)
+
+| count | blame |
+|------:|-------|
+| 194 | `multi` |
+
 ## Notes
 
 - Inventory runs per index rule via `DiachronicSeries` + `validate_asca`.

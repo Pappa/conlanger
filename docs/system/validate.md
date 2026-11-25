@@ -15,12 +15,15 @@ After [Index Diachronica parse](./index-diachronica-parser.md) and [compile_rule
 The correction loop is driven by three commands:
 
 ```bash
-uv run create_index && uv run compile_rules && uv run validate_rules
+uv run create_index && \
+  uv run compile_rules --compiler-config config/compile/asca/compiler_config.yml && \
+  uv run validate_rules
 ```
 
 - **Parse-only** (YAML + parse diagnostics): `uv run create_index`
-- **Compile-only** (regenerate `asca_rules.yml`): `uv run compile_rules`
+- **Compile-only** (regenerate `asca_rules.yml`): `uv run compile_rules  --compiler-config config/compile/asca/compiler_config.yml`
 - **Validate-only** (inventory from compiled YAML): `uv run validate_rules`
+- **Validate- with field-isolation** (inventory from compiled YAML): `uv run validate_rules --field-isolation`
 
 ```mermaid
 flowchart TD
