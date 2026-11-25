@@ -12,8 +12,8 @@ class PositionTemplates(BaseModel):
 
     model_config = ConfigDict(frozen=True, populate_by_name=True)
 
-    adjacent_to: str = "{v}_, _{v}"
-    near: str = "{v}_, _{v}"
+    adjacent_to: str = "_,{v}"
+    near: str = "_,{v}"
     in_: str = Field(alias="in", default="{v}")
 
 

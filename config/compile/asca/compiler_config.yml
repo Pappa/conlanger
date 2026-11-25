@@ -4,8 +4,8 @@ sample_alternatives: false
 sample_sporadic: false
 sample_dialect: false
 position_templates:
-  adjacent_to: "{v}_, _{v}"
-  near: "{v}_, _{v}"
+  adjacent_to: "_,{v}"
+  near: "_,{v}"
   in: "{v}"
 series_mappings:
   global:

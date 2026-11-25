@@ -328,10 +328,10 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-V_2,,index_diachronica.html:1387,V > V:[+long] / _#,OK,,,,,,,,,,,,,,none
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,"Egyptian-Arabic-i,u",,index_diachronica.html:1388,"{i:[-stress,-long],u:[-stress,-long]} > ∅ / VC_CV",OK,,,,,,,,,,,,,,none
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-∅,,index_diachronica.html:1390,∅ > e / CVCC_CVCV,OK,,,,,,,,,,,,,,none
-6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː,,index_diachronica.html:1393,"{a,a:[+long]} > {ɑ,ɑ:[+long]} / [+rtr]_, _[+rtr]",OK,,,,,,,,,,,,,,none
-6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː_2,,index_diachronica.html:1394,"{a,a:[+long]} > {ɑ,ɑ:[+long]} / {ɑ,ɑ:[+long]}_, _{ɑ,ɑ:[+long]}",OK,,,,,,,,,,,,,,none
-6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː_3,0,index_diachronica.html:1395,"{a,a:[+long]} > {æ,æ:[+long]} // {ɑ,ɑ:[+long]}_, _{ɑ,ɑ:[+long]}",OK,,,,,,,,,,,,,,none
-6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː_3,1,index_diachronica.html:1395,"{a,a:[+long]} > {ɛ,ɛ:[+long]} // {ɑ,ɑ:[+long]}_, _{ɑ,ɑ:[+long]}",OK,,,,,,,,,,,,,,none
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː,,index_diachronica.html:1393,"{a,a:[+long]} > {ɑ,ɑ:[+long]} / _,[+rtr]",OK,,,,,,,,,,,,,,none
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː_2,,index_diachronica.html:1394,"{a,a:[+long]} > {ɑ,ɑ:[+long]} / _,{ɑ,ɑ:[+long]}",OK,,,,,,,,,,,,,,none
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː_3,0,index_diachronica.html:1395,"{a,a:[+long]} > {æ,æ:[+long]} // _,{ɑ,ɑ:[+long]}",OK,,,,,,,,,,,,,,none
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː_3,1,index_diachronica.html:1395,"{a,a:[+long]} > {ɛ,ɛ:[+long]} // _,{ɑ,ɑ:[+long]}",OK,,,,,,,,,,,,,,none
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-q,,index_diachronica.html:1396,q > ʔ,OK,,,,,,,,,,,,,,none
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,"Egyptian-Arabic-s,zˤ,ʒʃ",,index_diachronica.html:1398,"{s,sˤ,z,zˤ,ʒ}ʃ > ʃ:[+long]",OK,,,,,,,,,,,,,,none
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-ʕ,0,index_diachronica.html:1399,ʕ > ʕ̞ / _h,OK,,,,,,,,,,,,,,none
@@ -341,13 +341,13 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-θ-ð-ðˤ,,index_diachronica.html:1407,"θ ð ð:[-atr,+rtr] > t d d:[-atr,+rtr]",OK,,,,,,,,,,,,,,none
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-q,,index_diachronica.html:1408,q > ɡ,OK,,,,,,,,,,,,,,none
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-aː,,index_diachronica.html:1409,a:[+long] > e:[+long],OK,,,,,,,,,,,,,,none
-6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-aː_2,,index_diachronica.html:1410,"a:[+long] > æ:[+long] // [+rtr]_, _[+rtr]",OK,,,,,,,,,,,,,,none
+6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-aː_2,,index_diachronica.html:1410,"a:[+long] > æ:[+long] // _,[+rtr]",OK,,,,,,,,,,,,,,none
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-V-long,,index_diachronica.html:1412,V:[-long] > ∅ / #C_C,OK,,,,,,,,,,,,,,none
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-dʒ,,index_diachronica.html:1417,"dʒ > j, occasionally ɟ or dʒ in educated speech",OK,,,,,,,,,,,,,,none
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-θ-ð-ðˤ,,index_diachronica.html:1418,"θ ð ð:[-atr,+rtr] > t d d:[-atr,+rtr]",OK,,,,,,,,,,,,,,none
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-dˤ-q,,index_diachronica.html:1419,"d:[-atr,+rtr] q > ð:[-atr,+rtr] ɡ",OK,,,,,,,,,,,,,,none
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-aː,,index_diachronica.html:1420,a:[+long] > e:[+long],OK,,,,,,,,,,,,,,none
-6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-aː_2,,index_diachronica.html:1421,"a:[+long] > æ:[+long] // [+rtr]_, _[+rtr]",OK,,,,,,,,,,,,,,none
+6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-aː_2,,index_diachronica.html:1421,"a:[+long] > æ:[+long] // _,[+rtr]",OK,,,,,,,,,,,,,,none
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-V-long,,index_diachronica.html:1423,V:[-long] > ∅ / #C_C,OK,,,,,,,,,,,,,,none
 6.2.2.1.10,Classical Arabic to Hassāniyya Arabic,Hassāniyya-Arabic-dˤ-q,,index_diachronica.html:1429,"d:[-atr,+rtr] q > ð:[-atr,+rtr] ɡ",OK,,,,,,,,,,,,,,none
 6.2.2.1.10,Classical Arabic to Hassāniyya Arabic,Hassāniyya-Arabic-f-θ,,index_diachronica.html:1430,f θ > v z̪,OK,,,,,,,,,,,,,,none
@@ -376,28 +376,28 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-t,,index_diachronica.html:1467,t > t͡s,OK,,,,,,,,,,,,,,none
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,"Moroccan-Arabic-a,i",,index_diachronica.html:1468,"{a,i}[-long] > ə / _",OK,,,,,,,,,,,,,,none
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-u,,index_diachronica.html:1469,u:[-long] > ə / _,OK,,,,,,,,,,,,,,none
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,"Moroccan-Arabic-C+labial,+velar",,index_diachronica.html:1470,"{C:[+labial],C:[-fr,+bk,+hi,-lo]} > [+labial] / u:[-long]_, _u:[-long]",OK,,,,,,,,,,,,,,none
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,"Moroccan-Arabic-C+labial,+velar",,index_diachronica.html:1470,"{C:[+labial],C:[-fr,+bk,+hi,-lo]} > [+labial] / _,u:[-long]",OK,,,,,,,,,,,,,,none
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,"Moroccan-Arabic-u,ə",,index_diachronica.html:1471,"{u,ə} > ∅ // C_{C,CC}#",OK,,,,,,,,,,,,,,none
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə,,index_diachronica.html:1472,"ə > a / {ħ,ʕ}_, _{ħ,ʕ}",OK,,,,,,,,,,,,,,none
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə_2,,index_diachronica.html:1473,"ə > ɐ / [+rtr]_, _[+rtr]",OK,,,,,,,,,,,,,,none
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə_3,,index_diachronica.html:1474,"ə > ɪ // [+rtr]_, _[+rtr]",OK,,,,,,,,,,,,,,none
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə,,index_diachronica.html:1472,"ə > a / _,{ħ,ʕ}",OK,,,,,,,,,,,,,,none
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə_2,,index_diachronica.html:1473,"ə > ɐ / _,[+rtr]",OK,,,,,,,,,,,,,,none
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə_3,,index_diachronica.html:1474,"ə > ɪ // _,[+rtr]",OK,,,,,,,,,,,,,,none
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-u_2,,index_diachronica.html:1475,u:[-long] > ʊ / _,OK,,,,,,,,,,,,,,none
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-aː-iː-uː,,index_diachronica.html:1476,"a:[+long] i:[+long] u:[+long] > ɑ:[+long] e:[+long] o:[+long] / [+rtr]_, _[+rtr]",OK,,,,,,,,,,,,,,none
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-aː,,index_diachronica.html:1477,"a:[+long] > æ:[+long] // [+rtr]_, _[+rtr]",OK,,,,,,,,,,,,,,none
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-aː-iː-uː,,index_diachronica.html:1476,"a:[+long] i:[+long] u:[+long] > ɑ:[+long] e:[+long] o:[+long] / _,[+rtr]",OK,,,,,,,,,,,,,,none
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-aː,,index_diachronica.html:1477,"a:[+long] > æ:[+long] // _,[+rtr]",OK,,,,,,,,,,,,,,none
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-C1ˤC2,,index_diachronica.html:1478,C:[+pharyn]=1 C=2 > 1 2:[+pharyn],OK,,,,,,,,,,,,,,none
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-Cˤ,,index_diachronica.html:1479,"C:[-atr,+rtr] > C / {#,V}_V",OK,,,,,,,,,,,,,,none
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-q,0,index_diachronica.html:1480,q > q,OK,,,,,,,,,,,,,,none
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-q,1,index_diachronica.html:1480,q > ɡ,OK,,,,,,,,,,,,,,none
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-dʒ,0,index_diachronica.html:1481,"dʒ > d / {s,z}_, _{s,z}",OK,,,,,,,,,,,,,,none
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-dʒ,1,index_diachronica.html:1481,"dʒ > ɡ / {s,z}_, _{s,z}",OK,,,,,,,,,,,,,,none
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-dʒ_2,,index_diachronica.html:1482,"dʒ > ʒ // {s,z}_, _{s,z}",OK,,,,,,,,,,,,,,none
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-dʒ,0,index_diachronica.html:1481,"dʒ > d / _,{s,z}",OK,,,,,,,,,,,,,,none
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-dʒ,1,index_diachronica.html:1481,"dʒ > ɡ / _,{s,z}",OK,,,,,,,,,,,,,,none
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-dʒ_2,,index_diachronica.html:1482,"dʒ > ʒ // _,{s,z}",OK,,,,,,,,,,,,,,none
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-s,,index_diachronica.html:1483,s > ʃ,OK,,,,,,,,,,,,,,none
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-z,,index_diachronica.html:1484,z > ʒ,OK,,,,,,,,,,,,,,none
 6.2.2.1.15,Classical Arabic to Sa‘idi Arabic,Sa‘idi-Arabic-q-x-ɣ,,index_diachronica.html:1490,q x ɣ > ɡ χ ʁ,OK,,,,,,,,,,,,,,none
 6.2.2.1.16,Classical Arabic to Sudanese Arabic,Sudanese-Arabic-dʒ-q,,index_diachronica.html:1495,dʒ q > ɡʲ ɢ,OK,,,,,,,,,,,,,,none
 6.2.2.1.16,Classical Arabic to Sudanese Arabic,Sudanese-Arabic-uː,0,index_diachronica.html:1496,u > ɵ,OK,,,,,,,,,,,,,,none
 6.2.2.1.16,Classical Arabic to Sudanese Arabic,Sudanese-Arabic-uː,1,index_diachronica.html:1496,u > o,OK,,,,,,,,,,,,,,none
-6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-a,,index_diachronica.html:1501,"a > ɑ / [+rtr]_, _[+rtr]",OK,,,,,,,,,,,,,,none
+6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-a,,index_diachronica.html:1501,"a > ɑ / _,[+rtr]",OK,,,,,,,,,,,,,,none
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-a_2,,index_diachronica.html:1502,a > ɛ,OK,,,,,,,,,,,,,,none
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-dˤ-q,,index_diachronica.html:1503,"d:[-atr,+rtr] q > ð:[-atr,+rtr] {ɡ,q}",OK,,,,,,,,,,,,,,none
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-dʒ-x-ɣ,,index_diachronica.html:1504,dʒ x ɣ > ʒ χ ʁ,OK,,,,,,,,,,,,,,none
@@ -443,7 +443,7 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-at,,index_diachronica.html:1549,at > a:[+long] / _#,OK,,,,,,,,,,,,,,none
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,"Modern-Israeli-Hebrew-eː,ɛ",,index_diachronica.html:1555,"{e,e:[+long],ɛ} > ɛ",OK,,,,,,,,,,,,,,none
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-Vː,,index_diachronica.html:1556,V:[+long] > V:[-long],OK,,,,,,,,,,,,,,none
-6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ə,,index_diachronica.html:1557,"ə > a / [+laryngeal]_, _[+laryngeal]",OK,,,,,,,,,,,,,,none
+6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ə,,index_diachronica.html:1557,"ə > a / _,[+laryngeal]",OK,,,,,,,,,,,,,,none
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ə_2,,index_diachronica.html:1558,"ə > ɛ / #[+son,-syl]_C or when breaking up what would otherwise be a three-consonant cluster",OK,,,,,,,,,,,,,,none
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ə_3,,index_diachronica.html:1559,"ə > ∅ // #[+son,-syl]_C or when breaking up what would otherwise be a three-consonant cluster",OK,,,,,,,,,,,,,,none
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-w-θ-ð-ɣ,,index_diachronica.html:1560,w θ ð ɣ > v t d ɡ,OK,,,,,,,,,,,,,,none
@@ -547,7 +547,7 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,Gros-Ventre-V-longN,,index_diachronica.html:1704,"{V:[-long]N,N} > ∅ / _#",OK,,,,,,,,,,,,,,none
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,Gros-Ventre-∅,,index_diachronica.html:1705,∅ > ʔ / #_V,OK,,,,,,,,,,,,,,none
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,Gros-Ventre-n,,index_diachronica.html:1706,n > ∅ / _j,OK,,,,,,,,,,,,,,none
-7.4,Proto-Algonquian to Blackfoot,"Blackfoot-θ,tʃ,ʃ,r",,index_diachronica.html:1711,"{θ,tʃ,ʃ,r} > t // C_, _C",OK,,,,,,,,,,,,,,none
+7.4,Proto-Algonquian to Blackfoot,"Blackfoot-θ,tʃ,ʃ,r",,index_diachronica.html:1711,"{θ,tʃ,ʃ,r} > t // _,C",OK,,,,,,,,,,,,,,none
 7.4,Proto-Algonquian to Blackfoot,Blackfoot-∅,,index_diachronica.html:1712,"∅ > x / _s // _C{C,#}",OK,,,,,,,,,,,,,,none
 7.4,Proto-Algonquian to Blackfoot,Blackfoot-j,,index_diachronica.html:1713,j > s // C_,OK,,,,,,,,,,,,,,none
 7.4,Proto-Algonquian to Blackfoot,Blackfoot-h,,index_diachronica.html:1714,h > ∅ // _C,OK,,,,,,,,,,,,,,none
@@ -616,10 +616,10 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 7.5,Proto-Algonquian to Cheyenne,Cheyenne-ʃ-tʃ,,index_diachronica.html:1777,"ʃ tʃ > {ʃ,x} s",OK,,,,,,,,,,,,,,none
 7.5,Proto-Algonquian to Cheyenne,Cheyenne-w-j,,index_diachronica.html:1778,"w j > {v,o} {t,e}",OK,,,,,,,,,,,,,,none
 7.5,Proto-Algonquian to Cheyenne,"Cheyenne-kC,Ck",,index_diachronica.html:1779,"{kC,Ck} > ʔ",OK,,,,,,,,,,,,,,none
-7.5,Proto-Algonquian to Cheyenne,Cheyenne-C-nasal,,index_diachronica.html:1780,"C:[- nasal] > ∅ / N_, _N",OK,,,,,,,,,,,,,,none
-7.5,Proto-Algonquian to Cheyenne,Cheyenne-m,,index_diachronica.html:1781,"m > ∅ / N_, _N",OK,,,,,,,,,,,,,,none
-7.5,Proto-Algonquian to Cheyenne,Cheyenne-p,0,index_diachronica.html:1782,"p > t / C_, _C",OK,,,,,,,,,,,,,,none
-7.5,Proto-Algonquian to Cheyenne,Cheyenne-p,1,index_diachronica.html:1782,"p > ∅ / C_, _C",OK,,,,,,,,,,,,,,none
+7.5,Proto-Algonquian to Cheyenne,Cheyenne-C-nasal,,index_diachronica.html:1780,"C:[- nasal] > ∅ / _,N",OK,,,,,,,,,,,,,,none
+7.5,Proto-Algonquian to Cheyenne,Cheyenne-m,,index_diachronica.html:1781,"m > ∅ / _,N",OK,,,,,,,,,,,,,,none
+7.5,Proto-Algonquian to Cheyenne,Cheyenne-p,0,index_diachronica.html:1782,"p > t / _,C",OK,,,,,,,,,,,,,,none
+7.5,Proto-Algonquian to Cheyenne,Cheyenne-p,1,index_diachronica.html:1782,"p > ∅ / _,C",OK,,,,,,,,,,,,,,none
 7.5,Proto-Algonquian to Cheyenne,Cheyenne-W,,index_diachronica.html:1783,"G > ∅ / [+nasal]_, _[+nasal], t_, _t",OK,,,,,,,,,,,,,,none
 7.6,Proto-Algonquian to Northern East Cree,Northern-East-Cree-we,,index_diachronica.html:1788,we > o,OK,,,,,,,,,,,,,,none
 7.6,Proto-Algonquian to Northern East Cree,Northern-East-Cree-e-eː,,index_diachronica.html:1789,e e:[+long] > i a:[+long],OK,,,,,,,,,,,,,,none
@@ -721,8 +721,8 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-w_3,,index_diachronica.html:1902,"w > ∅ // {k,p,m}_",OK,,,,,,,,,,,,,,none
 7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-Cʷ,,index_diachronica.html:1903,"C:[+round] > C / _ə{Cp,p,Ckʷ,kʷ,m,w}",OK,,,,,,,,,,,,,,none
 7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-kw-pw-mw,,index_diachronica.html:1904,kw pw mw > kʷ pʷ mʷ,OK,,,,,,,,,,,,,,none
-7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-we,,index_diachronica.html:1905,"we > wə // {p,m,k}_, _{p,m,k}",OK,,,,,,,,,,,,,,none
-7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-we,,index_diachronica.html:1905,"wə > o:[+long] // {p,m,k}_, _{p,m,k}",OK,,,,,,,,,,,,,,none
+7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-we,,index_diachronica.html:1905,"we > wə // _,{p,m,k}",OK,,,,,,,,,,,,,,none
+7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-we,,index_diachronica.html:1905,"wə > o:[+long] // _,{p,m,k}",OK,,,,,,,,,,,,,,none
 7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-j,,index_diachronica.html:1906,j > ∅ / C_,OK,,,,,,,,,,,,,,none
 7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-ʔ,,index_diachronica.html:1907,ʔ > h / _C // _l,OK,,,,,,,,,,,,,,none
 7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-h,,index_diachronica.html:1908,"h > ∅ / _{s,x}",OK,,,,,,,,,,,,,,none
@@ -1368,7 +1368,7 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 10.2.4,Proto-Malayo-Polynesian to Proto-Malayo-Javanic,Proto-Malayo-Javanic-—-aw-aj,,index_diachronica.html:2864,aw aj > əw əj / _#,OK,,,,,,,,,,,,,,none
 10.2.4,Proto-Malayo-Polynesian to Proto-Malayo-Javanic,Proto-Malayo-Javanic-—-aw-aj_2,,index_diachronica.html:2866,aw aj > aw aj / _#,OK,,,,,,,,,,,,,,none
 10.2.4.1,Proto-Malayo-Javanic to Javanese,"Javanese-l,d-z",,index_diachronica.html:2871,"{l,d} z > r d",OK,,,,,,,,,,,,,,none
-10.2.4.1,Proto-Malayo-Javanic to Javanese,Javanese-b,,index_diachronica.html:2872,"b > w // C_, _C",OK,,,,,,,,,,,,,,none
+10.2.4.1,Proto-Malayo-Javanic to Javanese,Javanese-b,,index_diachronica.html:2872,"b > w // _,C",OK,,,,,,,,,,,,,,none
 10.2.4.1,Proto-Malayo-Javanic to Javanese,Javanese-ə,,index_diachronica.html:2873,ə > u / _h#,OK,,,,,,,,,,,,,,none
 10.2.4.1,Proto-Malayo-Javanic to Javanese,Javanese-R,,index_diachronica.html:2874,"[+son,-syl] > ∅",OK,,,,,,,,,,,,,,none
 10.2.4.1,Proto-Malayo-Javanic to Javanese,Javanese-h,,index_diachronica.html:2875,h > ∅ / #_,OK,,,,,,,,,,,,,,none
@@ -1421,7 +1421,7 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-j,,index_diachronica.html:2934,j > ∅ / C_i,OK,,,,,,,,,,,,,,none
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-ə_4,,index_diachronica.html:2935,ə > ∅ / _#,OK,,,,,,,,,,,,,,none
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-ə_5,,index_diachronica.html:2936,ə > ∅,OK,,,,,,,,,,,,,,none
-10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-t,,index_diachronica.html:2937,"t > ð // P_, _P",OK,,,,,,,,,,,,,,none
+10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-t,,index_diachronica.html:2937,"t > ð // _,P",OK,,,,,,,,,,,,,,none
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-s,,index_diachronica.html:2938,s > t,OK,,,,,,,,,,,,,,none
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-ʀ,,index_diachronica.html:2939,"ʀ > r / _C:[+cor,+anterior,+dist]",OK,,,,,,,,,,,,,,none
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-ʀ_2,,index_diachronica.html:2940,ʀ > s,OK,,,,,,,,,,,,,,none
@@ -1444,7 +1444,7 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-h,,index_diachronica.html:2959,h > ∅ / _#,OK,,,,,,,,,,,,,,none
 10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-h_2,,index_diachronica.html:2960,h > ʔ / V=0 _0,OK,,,,,,,,,,,,,,none
 10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-h_3,,index_diachronica.html:2961,"h > ʔ / a_{i,u}",OK,,,,,,,,,,,,,,none
-10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-ə,,index_diachronica.html:2962,"ə > ∅ / V_, _V",OK,,,,,,,,,,,,,,none
+10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-ə,,index_diachronica.html:2962,"ə > ∅ / _,V",OK,,,,,,,,,,,,,,none
 10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-a,,index_diachronica.html:2963,"a > ə / _%%(%,0)#",OK,,,,,,,,,,,,,,none
 10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-ə_2,,index_diachronica.html:2964,ə > ∅ / _V,OK,,,,,,,,,,,,,,none
 10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-ə_3,,index_diachronica.html:2965,ə > ∅ / VC_CV,OK,,,,,,,,,,,,,,none
@@ -1463,7 +1463,7 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 10.2.6.1,Proto-North Sarawak to Kiput,Kiput-∅,,index_diachronica.html:2985,∅ > h / a_#,OK,,,,,,,,,,,,,,none
 10.2.6.1,Proto-North Sarawak to Kiput,Kiput-s,,index_diachronica.html:2986,s > ∅ / V_V,OK,,,,,,,,,,,,,,none
 10.2.6.1,Proto-North Sarawak to Kiput,Kiput-V0V0,,index_diachronica.html:2987,V=0 0 > 0,OK,,,,,,,,,,,,,,none
-10.2.6.1,Proto-North Sarawak to Kiput,Kiput-ə_2,,index_diachronica.html:2988,"ə > ∅ / V_, _V",OK,,,,,,,,,,,,,,none
+10.2.6.1,Proto-North Sarawak to Kiput,Kiput-ə_2,,index_diachronica.html:2988,"ə > ∅ / _,V",OK,,,,,,,,,,,,,,none
 10.2.6.1,Proto-North Sarawak to Kiput,Kiput-ʀ,0,index_diachronica.html:2990,ʀ > l // _#,OK,,,,,,,,,,,,,,none
 10.2.6.1,Proto-North Sarawak to Kiput,Kiput-ʀ,1,index_diachronica.html:2990,ʀ > ɾ // _#,OK,,,,,,,,,,,,,,none
 10.2.6.1,Proto-North Sarawak to Kiput,Kiput-l,,index_diachronica.html:2991,l > ∅ // _#,OK,,,,,,,,,,,,,,none
@@ -1556,7 +1556,7 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 10.3.1,Proto-Oceanic to Hawai’ian,Hawai’ian-k-t,,index_diachronica.html:3102,k t > ʔ k,OK,,,,,,,,,,,,,,none
 10.3.1,Proto-Oceanic to Hawai’ian,Hawai’ian-ŋ-r-v,,index_diachronica.html:3103,ŋ r v > n l w,OK,,,,,,,,,,,,,,none
 10.3.2,Proto-Oceanic to Hiw,"Hiw-p-pʷ-c,*j-k-q",,index_diachronica.html:3108,"p pʷ {c,j} k q > β βʷ s ɣ",OK,,,,,,,,,,,,,,none
-10.3.2,Proto-Oceanic to Hiw,Hiw-β-b-m,,index_diachronica.html:3109,"β b m > βʷ bʷ mʷ / u_, _u",OK,,,,,,,,,,,,,,none
+10.3.2,Proto-Oceanic to Hiw,Hiw-β-b-m,,index_diachronica.html:3109,"β b m > βʷ bʷ mʷ / _,u",OK,,,,,,,,,,,,,,none
 10.3.2,Proto-Oceanic to Hiw,Hiw-dr-*r,,index_diachronica.html:3110,dr r > d r,OK,,,,,,,,,,,,,,none
 10.3.2,Proto-Oceanic to Hiw,Hiw-C,,index_diachronica.html:3111,C > ∅ / _#,OK,,,,,,,,,,,,,,none
 10.3.2,Proto-Oceanic to Hiw,Hiw-ɲ,,index_diachronica.html:3112,ɲ > n,OK,,,,,,,,,,,,,,none
@@ -1676,7 +1676,7 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-SN,,index_diachronica.html:3264,PN > N:[- voice],OK,,,,,,,,,,,,,,none
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-pwʰ-pʰ-tʰ-kʰ,,index_diachronica.html:3265,"pʷʰ pʰ tʰ kʰ > fw f r:[+spread,+voice] x",OK,,,,,,,,,,,,,,none
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-uCu,,index_diachronica.html:3266,uCu > iCi,OK,,,,,,,,,,,,,,none
-10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-V+-mid,,index_diachronica.html:3267,"V:[-hi,-lo] > a / N_, _N",OK,,,,,,,,,,,,,,none
+10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-V+-mid,,index_diachronica.html:3267,"V:[-hi,-lo] > a / _,N",OK,,,,,,,,,,,,,,none
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-u-i,,index_diachronica.html:3268,u i > o e,OK,,,,,,,,,,,,,,none
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-”V,,index_diachronica.html:3269,V:[+stress] > V:[+long],OK,,,,,,,,,,,,,,none
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-ŋ,,index_diachronica.html:3271,ŋ > n,OK,,,,,,,,,,,,,,none
@@ -2625,12 +2625,12 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-C,,index_diachronica.html:4717,C > C:[+long] / _V(..)V // #<(..)_(..)>,OK,,,,,,,,,,,,,,none
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-S,,index_diachronica.html:4718,P > ∅ / #_F,OK,,,,,,,,,,,,,,none
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-s,,index_diachronica.html:4719,s > ts,OK,,,,,,,,,,,,,,none
-15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-C+voice,,index_diachronica.html:4720,"C:[+voice] > C:[-voice] / {P,s,l̥}_, _{P,s,l̥}",OK,,,,,,,,,,,,,,none
+15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-C+voice,,index_diachronica.html:4720,"C:[+voice] > C:[-voice] / _,{P,s,l̥}",OK,,,,,,,,,,,,,,none
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-ɣ-ʁ,,index_diachronica.html:4721,ɣ ʁ > k q / _#,OK,,,,,,,,,,,,,,none
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-ə,,index_diachronica.html:4722,ə > a / _#,OK,,,,,,,,,,,,,,none
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-ə_2,,index_diachronica.html:4723,ə > ∅,OK,,,,,,,,,,,,,,none
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-i,,index_diachronica.html:4724,"i > ∅ / #C:[+cor,+anterior,+dist]_C:[+cor,+anterior,+dist]V",OK,,,,,,,,,,,,,,none
-15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-F+voice,,index_diachronica.html:4725,"F:[+voice] > F:[-voice] / {P,ts}_, _{P,ts}",OK,,,,,,,,,,,,,,none
+15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-F+voice,,index_diachronica.html:4725,"F:[+voice] > F:[-voice] / _,{P,ts}",OK,,,,,,,,,,,,,,none
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-F+voice_2,,index_diachronica.html:4726,"F:[+voice, α PLACE] > P:[α PLACE] / l̥_",OK,,,,,,,,,,,,,,none
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-t,,index_diachronica.html:4727,"t > s / _{k,q}",OK,,,,,,,,,,,,,,none
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-ə_3,,index_diachronica.html:4729,ə > i / u_,OK,,,,,,,,,,,,,,none
@@ -2647,14 +2647,14 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-C,,index_diachronica.html:4744,C > C:[+long] / _V(..)V // #<(..)_(..)>,OK,,,,,,,,,,,,,,none
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-S,,index_diachronica.html:4745,P > ∅ / #_F,OK,,,,,,,,,,,,,,none
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-s,,index_diachronica.html:4746,s > ts,OK,,,,,,,,,,,,,,none
-15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-C+voice,,index_diachronica.html:4747,"C:[+voice] > C:[-voice] / {P,s,l̥}_, _{P,s,l̥}",OK,,,,,,,,,,,,,,none
+15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-C+voice,,index_diachronica.html:4747,"C:[+voice] > C:[-voice] / _,{P,s,l̥}",OK,,,,,,,,,,,,,,none
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-ɣ-ʁ,,index_diachronica.html:4748,ɣ ʁ > x χ / _#,OK,,,,,,,,,,,,,,none
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-ə,,index_diachronica.html:4749,ə > a / _#,OK,,,,,,,,,,,,,,none
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-ə_2,,index_diachronica.html:4750,ə > ∅,OK,,,,,,,,,,,,,,none
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-i,,index_diachronica.html:4751,"i > ∅ / #C:[+cor,+anterior,+dist]_C:[+cor,+anterior,+dist]V",OK,,,,,,,,,,,,,,none
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-a,,index_diachronica.html:4752,"a > ∅ / C:[-fr,+bk,+hi,-lo]_C:[-fr,+bk,+hi,-lo]",OK,,,,,,,,,,,,,,none
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-v-ʁ,,index_diachronica.html:4754,v ʁ > f χ / P_,OK,,,,,,,,,,,,,,none
-15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-F+voice,,index_diachronica.html:4755,"F:[+voice] > F:[-voice] / {P,ts}_, _{P,ts}",OK,,,,,,,,,,,,,,none
+15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-F+voice,,index_diachronica.html:4755,"F:[+voice] > F:[-voice] / _,{P,ts}",OK,,,,,,,,,,,,,,none
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-F+voice_2,,index_diachronica.html:4756,F:[+voice] > P / l̥_,OK,,,,,,,,,,,,,,none
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-t,,index_diachronica.html:4757,"t > s / _{k,q}",OK,,,,,,,,,,,,,,none
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-ə_3,,index_diachronica.html:4759,"ə > i / {u,a}_",OK,,,,,,,,,,,,,,none
@@ -2671,13 +2671,13 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-S,,index_diachronica.html:4774,P > ∅ / #_F,OK,,,,,,,,,,,,,,none
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-s,,index_diachronica.html:4775,s > ts,OK,,,,,,,,,,,,,,none
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-s,,index_diachronica.html:4775,ts > tʃ,OK,,,,,,,,,,,,,,none
-15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-C+voice,,index_diachronica.html:4776,"C:[+voice] > C:[-voice] / {P,s,l̥}_, _{P,s,l̥}",OK,,,,,,,,,,,,,,none
+15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-C+voice,,index_diachronica.html:4776,"C:[+voice] > C:[-voice] / _,{P,s,l̥}",OK,,,,,,,,,,,,,,none
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-ɣ-ʁ,,index_diachronica.html:4777,ɣ ʁ > k q / _#,OK,,,,,,,,,,,,,,none
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-ə,,index_diachronica.html:4778,ə > a / _#,OK,,,,,,,,,,,,,,none
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-ə_2,,index_diachronica.html:4779,ə > ∅ / #_,OK,,,,,,,,,,,,,,none
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-i,,index_diachronica.html:4780,"i > ∅ / #C:[+cor,+anterior,+dist]_C:[+cor,+anterior,+dist]V",OK,,,,,,,,,,,,,,none
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-a,,index_diachronica.html:4781,"a > ∅ / C:[-fr,+bk,+hi,-lo]_C:[-fr,+bk,+hi,-lo]",OK,,,,,,,,,,,,,,none
-15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-F+voice,,index_diachronica.html:4782,"F:[+voice] > F:[-voice] / {P,ts}_, _{P,ts}",OK,,,,,,,,,,,,,,none
+15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-F+voice,,index_diachronica.html:4782,"F:[+voice] > F:[-voice] / _,{P,ts}",OK,,,,,,,,,,,,,,none
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-F+voice_2,,index_diachronica.html:4783,F:[+voice] > P / l̥_,OK,,,,,,,,,,,,,,none
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-∅,,index_diachronica.html:4784,∅ > n / #_iN,OK,,,,,,,,,,,,,,none
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-t,,index_diachronica.html:4785,"t > s / _{k,q}",OK,,,,,,,,,,,,,,none
@@ -2695,14 +2695,14 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-Cː,,index_diachronica.html:4801,C:[+long] > C,OK,,,,,,,,,,,,,,none
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-S,,index_diachronica.html:4803,P > ∅ / #_F,OK,,,,,,,,,,,,,,none
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-s,,index_diachronica.html:4804,s > ts,OK,,,,,,,,,,,,,,none
-15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-C+voice,,index_diachronica.html:4805,"C:[+voice] > C:[-voice] / {P,s,l̥}_, _{P,s,l̥}",OK,,,,,,,,,,,,,,none
+15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-C+voice,,index_diachronica.html:4805,"C:[+voice] > C:[-voice] / _,{P,s,l̥}",OK,,,,,,,,,,,,,,none
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-ɣ-ʁ,,index_diachronica.html:4806,ɣ ʁ > k q / _#,OK,,,,,,,,,,,,,,none
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-ə,,index_diachronica.html:4807,ə > a / _#,OK,,,,,,,,,,,,,,none
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-ə_2,,index_diachronica.html:4808,ə > ∅ / #_,OK,,,,,,,,,,,,,,none
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-i,,index_diachronica.html:4809,"i > ∅ / #C:[+cor,+anterior,+dist]_C:[+cor,+anterior,+dist]V",OK,,,,,,,,,,,,,,none
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-a,,index_diachronica.html:4810,"a > ∅ / C:[-fr,+bk,+hi,-lo]_C:[-fr,+bk,+hi,-lo]",OK,,,,,,,,,,,,,,none
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-v,,index_diachronica.html:4811,v > ft / _s,OK,,,,,,,,,,,,,,none
-15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-F+voice,,index_diachronica.html:4812,"F:[+voice] > F:[-voice] / {P,ts}_, _{P,ts}",OK,,,,,,,,,,,,,,none
+15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-F+voice,,index_diachronica.html:4812,"F:[+voice] > F:[-voice] / _,{P,ts}",OK,,,,,,,,,,,,,,none
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-F+voice_2,,index_diachronica.html:4813,F:[+voice] > P / l̥_,OK,,,,,,,,,,,,,,none
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-t,,index_diachronica.html:4814,"t > s / _{k,q}",OK,,,,,,,,,,,,,,none
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-ə_3,,index_diachronica.html:4816,"ə > i / {u,a}_",OK,,,,,,,,,,,,,,none
@@ -8084,7 +8084,7 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 37.1.2.5,Proto-Northern Iroquoian to Seneca,Seneca-o,,index_diachronica.html:12653,"o > o:[+long] / _{a:[+long],æ:[+long]}",OK,,,,,,,,,,,,,,none
 37.1.2.5,Proto-Northern Iroquoian to Seneca,Seneca-Vː,,index_diachronica.html:12654,V:[+long] > V / V_,OK,,,,,,,,,,,,,,none
 37.1.2.5,Proto-Northern Iroquoian to Seneca,Seneca-V1”V2,,index_diachronica.html:12655,V=1 V:[+stress]=2 > 1:[+stress] 2,OK,,,,,,,,,,,,,,none
-37.1.2.5,Proto-Northern Iroquoian to Seneca,Seneca-aː_2,,index_diachronica.html:12656,"{a,a:[+long]} > {ẽ,ẽ:[+long]} / V:[+nasal]_, _V:[+nasal]",OK,,,,,,,,,,,,,,none
+37.1.2.5,Proto-Northern Iroquoian to Seneca,Seneca-aː_2,,index_diachronica.html:12656,"{a,a:[+long]} > {ẽ,ẽ:[+long]} / _,V:[+nasal]",OK,,,,,,,,,,,,,,none
 37.1.2.5,Proto-Northern Iroquoian to Seneca,Seneca-ẽː,,index_diachronica.html:12657,"{ẽ,ẽ:[+long]} > {e,e:[+long]} / _{e,e:[+long],o,o:[+long]}",OK,,,,,,,,,,,,,,none
 37.1.2.5,Proto-Northern Iroquoian to Seneca,Seneca-ʔ,,index_diachronica.html:12658,"ʔ > ∅ / _{nk,nkʷ}",OK,,,,,,,,,,,,,,none
 37.1.2.5,Proto-Northern Iroquoian to Seneca,Seneca-n_2,,index_diachronica.html:12659,"n > t / _{k,kʷ}",OK,,,,,,,,,,,,,,none

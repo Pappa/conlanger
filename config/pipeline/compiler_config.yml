@@ -2,8 +2,8 @@
 # Duplicate mappings from config/compile/asca/ (no shared loader indirection).
 seed: 0
 position_templates:
-  adjacent_to: "{v}_, _{v}"
-  near: "{v}_, _{v}"
+  adjacent_to: "_,{v}"
+  near: "_,{v}"
   in: "{v}"
 series_mappings:
   global:

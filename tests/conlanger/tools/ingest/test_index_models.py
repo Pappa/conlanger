@@ -292,23 +292,23 @@ def test_env_exception_input_to_string(input, expected):
     [
         pytest.param(
             IndexContext(position={"adjacent_to": "C"}),
-            "C_, _C",
+            "_,C",
             id="adjacent_to_single_char",
         ),
         pytest.param(
             IndexContext(position={"adjacent_to": ["C"]}),
-            "C_, _C",
+            "_,C",
             id="adjacent_to_single_char_list",
         ),
         pytest.param(IndexContext(position={"medial": True}), "", id="medial"),
         pytest.param(
             IndexContext(context="#_", position={"adjacent_to": "C"}),
-            "#_, C_, _C",
+            "#_, _,C",
             id="merges_context_with_adjacent_to",
         ),
         pytest.param(
             IndexContext(context="V_C", position={"near": "u"}),
-            "V_C, u_, _u",
+            "V_C, _,u",
             id="merges_context_with_near",
         ),
         pytest.param(
@@ -321,12 +321,12 @@ def test_env_exception_input_to_string(input, expected):
         ),
         pytest.param(
             IndexContext(position={"adjacent_to": "CV"}),
-            "CV_, _CV",
+            "_,CV",
             id="ignores_multi_char_adjacent_to",
         ),
         pytest.param(
             IndexContext(position={"near": "u"}),
-            "u_, _u",
+            "_,u",
             id="near_u",
         ),
         pytest.param(
@@ -396,7 +396,7 @@ def test_resolve_index_context_skips_relation_without_template():
         (
             {"position": {"near": "u"}},
             None,
-            "u_, _u",
+            "_,u",
             None,
         ),
         (

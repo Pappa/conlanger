@@ -381,8 +381,8 @@ def test_load_compiler_config_null_position_templates_uses_defaults(tmp_path: Pa
     path.write_text("position_templates: null\n", encoding="utf-8")
     (tmp_path / "group_mappings.yml").write_text("{}\n", encoding="utf-8")
     config = load_compiler_config(path)
-    assert config.position_templates.near == "{v}_, _{v}"
-    assert config.position_templates.adjacent_to == "{v}_, _{v}"
+    assert config.position_templates.near == "_,{v}"
+    assert config.position_templates.adjacent_to == "_,{v}"
     assert config.position_templates.in_ == "{v}"
 
 
@@ -395,7 +395,7 @@ def test_load_compiler_config_merges_partial_position_templates(tmp_path: Path):
     (tmp_path / "group_mappings.yml").write_text("{}\n", encoding="utf-8")
     config = load_compiler_config(path)
     assert config.position_templates.near == "near_{v}"
-    assert config.position_templates.adjacent_to == "{v}_, _{v}"
+    assert config.position_templates.adjacent_to == "_,{v}"
     assert config.position_templates.in_ == "{v}"
 
 
