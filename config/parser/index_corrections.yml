@@ -143,6 +143,10 @@ rules:
                   content: "ɡʲʷ xʲʷ ɣʲʷ → ɡʷ xʷ ʁʷ"
                   reason: "Removing (?) - this may be wrong"
         - rule:
+                  id: Proto-Circassian-qʲʷː-qʲʷ-ɢʲʷ,ʁʲʷ-χʲʷ
+                  content: "qʲʷː qʲʷ {ɢʲʷ, ʁʲʷ} χʲʷ → qʷː ʔʷ ʁʷ χʷ"
+                  reason: "Missing bracket"
+        - rule:
                   id: Proto-Erromango-r
                   content: "r → L / sporadic"
                   reason: "Corrected from original source: https://www.ethnologue.com/language/erohttps://www.researchgate.net/publication/306887303_The_Linguistic_History_of_Southern_Vanuatu"

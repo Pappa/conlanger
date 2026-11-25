@@ -6,15 +6,15 @@
 - Rows: **9485** (one per compile-expanded validation target; optional outputs use `alt_idx`, multi-stage chains use `step_idx`)
 
 ## Rules
-- OK: **9231** (97.3%)
-- Fail: **193** (2.0%)
+- OK: **9232** (97.3%)
+- Fail: **192** (2.0%)
 - Skipped: **61** (0.6%)
 
 
 ## Corrections
 
-OK: **141/142**
-Fail: **1/142**
+OK: **142/143**
+Fail: **1/143**
 
 ### Failed corrections
 
@@ -22,8 +22,8 @@ Fail: **1/142**
 
 ## Sections
 
-- All OK: **531 / 657** (80.8%)
-- Some OK: **125 / 657** (19.0%)
+- All OK: **532 / 657** (81.0%)
+- Some OK: **124 / 657** (18.9%)
 - None OK: **1 / 657** (0.2%)
 - Sections skipped: **0 / 657** (0.0%)
 
@@ -40,8 +40,8 @@ Fail: **1/142**
 | 10 | `expected_number` |
 | 9 | `unknown_feature` |
 | 8 | `empty_io_panic` |
-| 5 | `prose_or_expected_arrow` |
 | 5 | `stuff_after_word_bound` |
+| 4 | `prose_or_expected_arrow` |
 | 3 | `panic_other` |
 | 3 | `segments_before_word` |
 | 2 | `grouped_env_insertion` |
@@ -188,7 +188,6 @@ Fail: **1/142**
 | count | description |
 |------:|-------------|
 | 2 | `Expected '>', '->' or '=>', but received '*'` |
-| 1 | `Expected '>', '->' or '=>', but received '}'` |
 | 1 | `Expected '>', '->' or '=>', but received 'ʷ'` |
 | 1 | `Expected '>', '->' or '=>', but received '/'` |
 
@@ -366,7 +365,7 @@ Fail: **1/142**
 
 | count | blame |
 |------:|-------|
-| 193 | `multi` |
+| 192 | `multi` |
 
 ## Notes
 

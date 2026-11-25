@@ -16713,7 +16713,7 @@ sections:
     source: index_diachronica.html:4265
     raw: qʲʷː qʲʷ ɢʲʷ,ʁʲʷ} χʲʷ → qʷː ʔʷ ʁʷ χʷ
     stages:
-    - qʲʷː qʲʷ ɢʲʷ,ʁʲʷ} χʲʷ
+    - qʲʷː qʲʷ {ɢʲʷ, ʁʲʷ} χʲʷ
     - qʷː ʔʷ ʁʷ χʷ
   - rule_id: Proto-Circassian-qˤː,qˤʼ-χˤ-ʁˤ
     source: index_diachronica.html:4266

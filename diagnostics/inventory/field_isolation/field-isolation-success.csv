@@ -2364,6 +2364,7 @@ section_index,section_name,rule_id,alt_idx,source,rule,whole_ok,failure_class,in
 12.2,Proto-Northwest Caucasian to Proto-Circassian,Proto-Circassian-qʲʼ-ʁʲ,,index_diachronica.html:4262,qʲ:[+cg] ʁʲ > ʔ ʁ,OK,,,,,,,,,,,,,,none
 12.2,Proto-Northwest Caucasian to Proto-Circassian,Proto-Circassian-qʷ,,index_diachronica.html:4263,qʷ > qʷ:[+long] // _,OK,,,,,,,,,,,,,,none
 12.2,Proto-Northwest Caucasian to Proto-Circassian,Proto-Circassian-qʷʼ-ɢʷ,,index_diachronica.html:4264,qʷ:[+cg] ɢʷ > qʷ:[+long] ʁʷ,OK,,,,,,,,,,,,,,none
+12.2,Proto-Northwest Caucasian to Proto-Circassian,"Proto-Circassian-qʲʷː-qʲʷ-ɢʲʷ,ʁʲʷ-χʲʷ",,index_diachronica.html:4265,"qʲʷ:[+long] qʲʷ {ɢʲʷ,ʁʲʷ} χʲʷ > qʷ:[+long] ʔʷ ʁʷ χʷ",OK,,,,,,,,,,,,,,none
 12.2,Proto-Northwest Caucasian to Proto-Circassian,"Proto-Circassian-qˤː,qˤʼ-χˤ-ʁˤ",,index_diachronica.html:4266,"{q:[-atr,+rtr, +long],qʼ:[-atr,+rtr]} χ:[-atr,+rtr] ʁ:[-atr,+rtr] > q:[+long] χ ʁ",OK,,,,,,,,,,,,,,none
 12.2,Proto-Northwest Caucasian to Proto-Circassian,"Proto-Circassian-qˤʲ,χˤʲ-qˤʲ-ʁˤʲ-qˤʲː-qˤʲʼ",,index_diachronica.html:4267,"{qʲ:[-atr,+rtr],χʲ:[-atr,+rtr]} qʲ:[-atr,+rtr] ʁʲ:[-atr,+rtr] {qʲ:[-atr,+rtr, +long] qʲʼ:[-atr,+rtr]} > ħ ʔ j",OK,,,,,,,,,,,,,,none
 12.2,Proto-Northwest Caucasian to Proto-Circassian,"Proto-Circassian-qˤʷː,qˤʷʼ-χˤʷ-ʁˤʷ",,index_diachronica.html:4268,"{qʷ:[-atr,+rtr, +long],qʷʼ:[-atr,+rtr]} χʷ:[-atr,+rtr] ʁʷ:[-atr,+rtr] > qʷ:[+long] χʷ ʁʷ",OK,,,,,,,,,,,,,,none

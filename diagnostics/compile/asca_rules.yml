@@ -13601,9 +13601,9 @@ sections:
     rule: qʷ:[+cg] ɢʷ > qʷ:[+long] ʁʷ
   - rule_id: Proto-Circassian-qʲʷː-qʲʷ-ɢʲʷ,ʁʲʷ-χʲʷ
     source: index_diachronica.html:4265
-    input: qʲʷ:[+long] qʲʷ ɢʲʷ,ʁʲʷ} χʲʷ
+    input: qʲʷ:[+long] qʲʷ {ɢʲʷ,ʁʲʷ} χʲʷ
     output: qʷ:[+long] ʔʷ ʁʷ χʷ
-    rule: qʲʷ:[+long] qʲʷ ɢʲʷ,ʁʲʷ} χʲʷ > qʷ:[+long] ʔʷ ʁʷ χʷ
+    rule: qʲʷ:[+long] qʲʷ {ɢʲʷ,ʁʲʷ} χʲʷ > qʷ:[+long] ʔʷ ʁʷ χʷ
   - rule_id: Proto-Circassian-qˤː,qˤʼ-χˤ-ʁˤ
     source: index_diachronica.html:4266
     input: '{q:[-atr,+rtr, +long],qʼ:[-atr,+rtr]} χ:[-atr,+rtr] ʁ:[-atr,+rtr]'
