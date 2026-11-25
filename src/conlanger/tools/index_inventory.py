@@ -224,6 +224,7 @@ FIELD_ISOLATION_CSV_COLUMNS = [
     "rule_id",
     "alt_idx",
     "source",
+    "rule",
     "whole_ok",
     "failure_class",
     "input_ok",
@@ -641,6 +642,7 @@ class FieldIsolationRow:
     section_name: str
     rule_id: str
     source: str
+    rule: str
     whole_ok: InventoryOk
     input_ok: bool | None
     output_ok: bool | None
@@ -670,6 +672,7 @@ class FieldIsolationRow:
             "rule_id": self.rule_id,
             "alt_idx": "" if self.alt_idx is None else self.alt_idx,
             "source": self.source,
+            "rule": self.rule,
             "whole_ok": self.whole_ok,
             "failure_class": self.failure_class,
             "input_ok": _field(self.input_ok),
@@ -845,6 +848,7 @@ def build_field_isolation_row(
         "rule_id": validation_row.rule_id,
         "alt_idx": validation_row.alt_idx,
         "source": validation_row.source,
+        "rule": validation_row.rule,
         "whole_ok": validation_row.ok,
         "failure_class": validation_row.failure_class,
     }

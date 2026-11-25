@@ -220,6 +220,7 @@ def test_validate_rules_writes_validation_inventory(
             section_name="A",
             rule_id=0,
             source="s:1",
+            rule="",
             whole_ok=True,
             input_ok=True,
             output_ok=True,
