@@ -366,9 +366,9 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-V_2,0,0,V,V:[+long],_#,
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,"Egyptian-Arabic-i,u",0,0,"{i:[-stress,-long],u:[-stress,-long]}",∅,VC_CV,
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-∅,0,0,∅,e,CVCC_CVCV,
-6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː,0,0,"{a,a:[+long]}","{ɑ,ɑ:[+long]}","[+rtr]_, _[+rtr]",
-6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː_2,0,0,"{a,a:[+long]}","{ɑ,ɑ:[+long]}","{ɑ,ɑ:[+long]}_, _{ɑ,ɑ:[+long]}",
-6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː_3,0,0,"{a,a:[+long]}","{ɛ,ɛ:[+long]}",,"{ɑ,ɑ:[+long]}_, _{ɑ,ɑ:[+long]}"
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː,0,0,"{a,a:[+long]}","{ɑ,ɑ:[+long]}","_,[+rtr]",
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː_2,0,0,"{a,a:[+long]}","{ɑ,ɑ:[+long]}","_,{ɑ,ɑ:[+long]}",
+6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-aː_3,0,0,"{a,a:[+long]}","{ɛ,ɛ:[+long]}",,"_,{ɑ,ɑ:[+long]}"
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-q,0,0,q,ʔ,,
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,"Egyptian-Arabic-s,zˤ,ʒʃ",0,0,"{s,sˤ,z,zˤ,ʒ}ʃ",ʃ:[+long],,
 6.2.2.1.7,Classical Arabic to Egyptian Arabic,Egyptian-Arabic-ʕ,0,0,ʕ,ħ,_h,
@@ -379,7 +379,7 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-θ-ð-ðˤ,0,2,"ð:[-atr,+rtr]","d:[-atr,+rtr]",,
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-q,0,0,q,ɡ,,
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-aː,0,0,a:[+long],e:[+long],,
-6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-aː_2,0,0,a:[+long],æ:[+long],,"[+rtr]_, _[+rtr]"
+6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-aː_2,0,0,a:[+long],æ:[+long],,"_,[+rtr]"
 6.2.2.1.8,Classical Arabic to Coastal Hadhrami Arabic,Coastal-Hadhrami-Arabic-V-long,0,0,V:[-long],∅,#C_C,
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-dʒ,0,0,dʒ,"j, occasionally ɟ or dʒ in educated speech",,
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-θ-ð-ðˤ,0,0,θ,t,,
@@ -388,7 +388,7 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-dˤ-q,0,0,"d:[-atr,+rtr]","ð:[-atr,+rtr]",,
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-dˤ-q,0,1,q,ɡ,,
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-aː,0,0,a:[+long],e:[+long],,
-6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-aː_2,0,0,a:[+long],æ:[+long],,"[+rtr]_, _[+rtr]"
+6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-aː_2,0,0,a:[+long],æ:[+long],,"_,[+rtr]"
 6.2.2.1.9,Classical Arabic to Wādı̄ Hadhrami Arabic,Wādı̄-Hadhrami-Arabic-V-long,0,0,V:[-long],∅,#C_C,
 6.2.2.1.10,Classical Arabic to Hassāniyya Arabic,Hassāniyya-Arabic-dˤ-q,0,0,"d:[-atr,+rtr]","ð:[-atr,+rtr]",,
 6.2.2.1.10,Classical Arabic to Hassāniyya Arabic,Hassāniyya-Arabic-dˤ-q,0,1,q,ɡ,,
@@ -428,22 +428,22 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-t,0,0,t,t͡s,,
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,"Moroccan-Arabic-a,i",0,0,"{a,i}[-long]",ə,_,
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-u,0,0,u:[-long],ə,_,
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,"Moroccan-Arabic-C+labial,+velar",0,0,"{C:[+labial],C:[-fr,+bk,+hi,-lo]}",[+labial],"u:[-long]_, _u:[-long]",
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,"Moroccan-Arabic-C+labial,+velar",0,0,"{C:[+labial],C:[-fr,+bk,+hi,-lo]}",[+labial],"_,u:[-long]",
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,"Moroccan-Arabic-u,ə",0,0,"{u,ə}",∅,,"C_{C,CC}#"
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə,0,0,ə,a,"{ħ,ʕ}_, _{ħ,ʕ}",
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə_2,0,0,ə,ɐ,"[+rtr]_, _[+rtr]",
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə_3,0,0,ə,ɪ,,"[+rtr]_, _[+rtr]"
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə,0,0,ə,a,"_,{ħ,ʕ}",
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə_2,0,0,ə,ɐ,"_,[+rtr]",
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-ə_3,0,0,ə,ɪ,,"_,[+rtr]"
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-u_2,0,0,u:[-long],ʊ,_,
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-aː-iː-uː,0,0,a:[+long],ɑ:[+long],"[+rtr]_, _[+rtr]",
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-aː-iː-uː,0,1,i:[+long],e:[+long],"[+rtr]_, _[+rtr]",
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-aː-iː-uː,0,2,u:[+long],o:[+long],"[+rtr]_, _[+rtr]",
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-aː,0,0,a:[+long],æ:[+long],,"[+rtr]_, _[+rtr]"
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-aː-iː-uː,0,0,a:[+long],ɑ:[+long],"_,[+rtr]",
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-aː-iː-uː,0,1,i:[+long],e:[+long],"_,[+rtr]",
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-aː-iː-uː,0,2,u:[+long],o:[+long],"_,[+rtr]",
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-aː,0,0,a:[+long],æ:[+long],,"_,[+rtr]"
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-C1ˤC2,0,0,C:[+pharyn]=1,1,,
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-C1ˤC2,0,1,C=2,2:[+pharyn],,
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-Cˤ,0,0,"C:[-atr,+rtr]",C,"{#,V}_V",
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-q,0,0,q,ɡ,,
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-dʒ,0,0,dʒ,ɡ,"{s,z}_, _{s,z}",
-6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-dʒ_2,0,0,dʒ,ʒ,,"{s,z}_, _{s,z}"
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-dʒ,0,0,dʒ,ɡ,"_,{s,z}",
+6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-dʒ_2,0,0,dʒ,ʒ,,"_,{s,z}"
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-s,0,0,s,ʃ,,
 6.2.2.1.14,Classical Arabic to Moroccan Arabic,Moroccan-Arabic-z,0,0,z,ʒ,,
 6.2.2.1.15,Classical Arabic to Sa‘idi Arabic,Sa‘idi-Arabic-q-x-ɣ,0,0,q,ɡ,,
@@ -452,7 +452,7 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 6.2.2.1.16,Classical Arabic to Sudanese Arabic,Sudanese-Arabic-dʒ-q,0,0,dʒ,ɡʲ,,
 6.2.2.1.16,Classical Arabic to Sudanese Arabic,Sudanese-Arabic-dʒ-q,0,1,q,ɢ,,
 6.2.2.1.16,Classical Arabic to Sudanese Arabic,Sudanese-Arabic-uː,0,0,u,o,,
-6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-a,0,0,a,ɑ,"[+rtr]_, _[+rtr]",
+6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-a,0,0,a,ɑ,"_,[+rtr]",
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-a_2,0,0,a,ɛ,,
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-dˤ-q,0,0,"d:[-atr,+rtr]","ð:[-atr,+rtr]",,
 6.2.2.1.17,Classical Arabic to Tunisian Arabic,Tunisian-Arabic-dˤ-q,0,1,q,"{ɡ,q}",,
@@ -514,7 +514,7 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 6.2.2.1.18,Proto-Semitic to Biblical Hebrew,Biblical-Hebrew-at,0,0,at,a:[+long],_#,
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,"Modern-Israeli-Hebrew-eː,ɛ",0,0,"{e,e:[+long],ɛ}",ɛ,,
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-Vː,0,0,V:[+long],V:[-long],,
-6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ə,0,0,ə,a,"[+laryngeal]_, _[+laryngeal]",
+6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ə,0,0,ə,a,"_,[+laryngeal]",
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ə_2,0,0,ə,ɛ,"#[+son,-syl]_C or when breaking up what would otherwise be a three-consonant cluster",
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-ə_3,0,0,ə,∅,,"#[+son,-syl]_C or when breaking up what would otherwise be a three-consonant cluster"
 6.2.2.1.19,Biblical Hebrew to Modern Israeli Hebrew,Modern-Israeli-Hebrew-w-θ-ð-ɣ,0,0,w,v,,
@@ -648,7 +648,7 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,Gros-Ventre-V-longN,0,0,"{V:[-long]N,N}",∅,_#,
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,Gros-Ventre-∅,0,0,∅,ʔ,#_V,
 7.3.2,Proto-Arapaho-Atsina to Gros Ventre,Gros-Ventre-n,0,0,n,∅,_j,
-7.4,Proto-Algonquian to Blackfoot,"Blackfoot-θ,tʃ,ʃ,r",0,0,"{θ,tʃ,ʃ,r}",t,,"C_, _C"
+7.4,Proto-Algonquian to Blackfoot,"Blackfoot-θ,tʃ,ʃ,r",0,0,"{θ,tʃ,ʃ,r}",t,,"_,C"
 7.4,Proto-Algonquian to Blackfoot,Blackfoot-∅,0,0,∅,x,_s,"_C{C,#}"
 7.4,Proto-Algonquian to Blackfoot,Blackfoot-j,0,0,j,s,,C_
 7.4,Proto-Algonquian to Blackfoot,Blackfoot-h,0,0,h,∅,,_C
@@ -725,9 +725,9 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 7.5,Proto-Algonquian to Cheyenne,Cheyenne-w-j,0,0,w,"{v,o}",,
 7.5,Proto-Algonquian to Cheyenne,Cheyenne-w-j,0,1,j,"{t,e}",,
 7.5,Proto-Algonquian to Cheyenne,"Cheyenne-kC,Ck",0,0,"{kC,Ck}",ʔ,,
-7.5,Proto-Algonquian to Cheyenne,Cheyenne-C-nasal,0,0,C:[- nasal],∅,"N_, _N",
-7.5,Proto-Algonquian to Cheyenne,Cheyenne-m,0,0,m,∅,"N_, _N",
-7.5,Proto-Algonquian to Cheyenne,Cheyenne-p,0,0,p,∅,"C_, _C",
+7.5,Proto-Algonquian to Cheyenne,Cheyenne-C-nasal,0,0,C:[- nasal],∅,"_,N",
+7.5,Proto-Algonquian to Cheyenne,Cheyenne-m,0,0,m,∅,"_,N",
+7.5,Proto-Algonquian to Cheyenne,Cheyenne-p,0,0,p,∅,"_,C",
 7.5,Proto-Algonquian to Cheyenne,Cheyenne-W,0,0,G,∅,"[+nasal]_, _[+nasal], t_, _t",
 7.6,Proto-Algonquian to Northern East Cree,Northern-East-Cree-we,0,0,we,o,,
 7.6,Proto-Algonquian to Northern East Cree,Northern-East-Cree-e-eː,0,0,e,i,,
@@ -838,8 +838,8 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-kw-pw-mw,0,0,kw,kʷ,,
 7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-kw-pw-mw,0,1,pw,pʷ,,
 7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-kw-pw-mw,0,2,mw,mʷ,,
-7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-we,0,0,we,wə,,"{p,m,k}_, _{p,m,k}"
-7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-we,1,0,wə,o:[+long],,"{p,m,k}_, _{p,m,k}"
+7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-we,0,0,we,wə,,"_,{p,m,k}"
+7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-we,1,0,wə,o:[+long],,"_,{p,m,k}"
 7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-j,0,0,j,∅,C_,
 7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-ʔ,0,0,ʔ,h,_C,_l
 7.11,Proto-Algonquian to Munsee Delaware,Munsee-Delaware-h,0,0,h,∅,"_{s,x}",
@@ -1619,7 +1619,7 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 10.2.4,Proto-Malayo-Polynesian to Proto-Malayo-Javanic,Proto-Malayo-Javanic-—-aw-aj_2,0,1,aj,aj,_#,
 10.2.4.1,Proto-Malayo-Javanic to Javanese,"Javanese-l,d-z",0,0,"{l,d}",r,,
 10.2.4.1,Proto-Malayo-Javanic to Javanese,"Javanese-l,d-z",0,1,z,d,,
-10.2.4.1,Proto-Malayo-Javanic to Javanese,Javanese-b,0,0,b,w,,"C_, _C"
+10.2.4.1,Proto-Malayo-Javanic to Javanese,Javanese-b,0,0,b,w,,"_,C"
 10.2.4.1,Proto-Malayo-Javanic to Javanese,Javanese-ə,0,0,ə,u,_h#,
 10.2.4.1,Proto-Malayo-Javanic to Javanese,Javanese-R,0,0,"[+son,-syl]",∅,,
 10.2.4.1,Proto-Malayo-Javanic to Javanese,Javanese-h,0,0,h,∅,#_,
@@ -1680,7 +1680,7 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-j,0,0,j,∅,C_i,
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-ə_4,0,0,ə,∅,_#,
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-ə_5,0,0,ə,∅,,
-10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-t,0,0,t,ð,,"P_, _P"
+10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-t,0,0,t,ð,,"_,P"
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-s,0,0,s,t,,
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-ʀ,0,0,ʀ,r,"_C:[+cor,+anterior,+dist]",
 10.2.5,Proto-Malayo-Polynesian to Palauan,Palauan-ʀ_2,0,0,ʀ,s,,
@@ -1703,7 +1703,7 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-h,0,0,h,∅,_#,
 10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-h_2,0,0,h,ʔ,V=0 _0,
 10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-h_3,0,0,h,ʔ,"a_{i,u}",
-10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-ə,0,0,ə,∅,"V_, _V",
+10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-ə,0,0,ə,∅,"_,V",
 10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-a,0,0,a,ə,"_%%(%,0)#",
 10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-ə_2,0,0,ə,∅,_V,
 10.2.6,Proto-Malayo-Polynesian to Proto-North Sarawak,Proto-North-Sarawak-ə_3,0,0,ə,∅,VC_CV,
@@ -1731,7 +1731,7 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 10.2.6.1,Proto-North Sarawak to Kiput,Kiput-∅,0,0,∅,h,a_#,
 10.2.6.1,Proto-North Sarawak to Kiput,Kiput-s,0,0,s,∅,V_V,
 10.2.6.1,Proto-North Sarawak to Kiput,Kiput-V0V0,0,0,V=0 0,0,,
-10.2.6.1,Proto-North Sarawak to Kiput,Kiput-ə_2,0,0,ə,∅,"V_, _V",
+10.2.6.1,Proto-North Sarawak to Kiput,Kiput-ə_2,0,0,ə,∅,"_,V",
 10.2.6.1,Proto-North Sarawak to Kiput,Kiput-ʀ,0,0,ʀ,ɾ,,_#
 10.2.6.1,Proto-North Sarawak to Kiput,Kiput-l,0,0,l,∅,,_#
 10.2.6.1,Proto-North Sarawak to Kiput,Kiput-u,0,0,u,əw,_V,
@@ -1859,9 +1859,9 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 10.3.1,Proto-Oceanic to Hawai’ian,Hawai’ian-ŋ-r-v,0,1,r,l,,
 10.3.1,Proto-Oceanic to Hawai’ian,Hawai’ian-ŋ-r-v,0,2,v,w,,
 10.3.2,Proto-Oceanic to Hiw,"Hiw-p-pʷ-c,*j-k-q",0,0,"p pʷ {c,j} k q",β βʷ s ɣ,,
-10.3.2,Proto-Oceanic to Hiw,Hiw-β-b-m,0,0,β,βʷ,"u_, _u",
-10.3.2,Proto-Oceanic to Hiw,Hiw-β-b-m,0,1,b,bʷ,"u_, _u",
-10.3.2,Proto-Oceanic to Hiw,Hiw-β-b-m,0,2,m,mʷ,"u_, _u",
+10.3.2,Proto-Oceanic to Hiw,Hiw-β-b-m,0,0,β,βʷ,"_,u",
+10.3.2,Proto-Oceanic to Hiw,Hiw-β-b-m,0,1,b,bʷ,"_,u",
+10.3.2,Proto-Oceanic to Hiw,Hiw-β-b-m,0,2,m,mʷ,"_,u",
 10.3.2,Proto-Oceanic to Hiw,Hiw-dr-*r,0,0,dr,d,,
 10.3.2,Proto-Oceanic to Hiw,Hiw-dr-*r,0,1,r,r,,
 10.3.2,Proto-Oceanic to Hiw,Hiw-C,0,0,C,∅,_#,
@@ -2048,7 +2048,7 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-pwʰ-pʰ-tʰ-kʰ,0,2,tʰ,"r:[+spread,+voice]",,
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-pwʰ-pʰ-tʰ-kʰ,0,3,kʰ,x,,
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-uCu,0,0,uCu,iCi,,
-10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-V+-mid,0,0,"V:[-hi,-lo]",a,"N_, _N",
+10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-V+-mid,0,0,"V:[-hi,-lo]",a,"_,N",
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-u-i,0,0,u,o,,
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-u-i,0,1,i,e,,
 10.3.5.4.1,Proto-Northern to Nixumwak-Nêlêmwa,Nixumwak-Nêlêmwa-”V,0,0,V:[+stress],V:[+long],,
@@ -3528,13 +3528,13 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-C,0,0,C,C:[+long],_V(..)V,#<(..)_(..)>
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-S,0,0,P,∅,#_F,
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-s,0,0,s,ts,,
-15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-C+voice,0,0,C:[+voice],C:[-voice],"{P,s,l̥}_, _{P,s,l̥}",
+15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-C+voice,0,0,C:[+voice],C:[-voice],"_,{P,s,l̥}",
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-ɣ-ʁ,0,0,ɣ,k,_#,
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-ɣ-ʁ,0,1,ʁ,q,_#,
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-ə,0,0,ə,a,_#,
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-ə_2,0,0,ə,∅,,
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-i,0,0,i,∅,"#C:[+cor,+anterior,+dist]_C:[+cor,+anterior,+dist]V",
-15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-F+voice,0,0,F:[+voice],F:[-voice],"{P,ts}_, _{P,ts}",
+15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-F+voice,0,0,F:[+voice],F:[-voice],"_,{P,ts}",
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-F+voice_2,0,0,"F:[+voice, α PLACE]",P:[α PLACE],l̥_,
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-t,0,0,t,s,"_{k,q}",
 15.2.5,Proto-Eskimo to Kuskokwim Yup’ik,Kuskokwim-Yup’ik-i-a-u,0,0,i,ii,":{C_, <(..)_(..)>:[+lo -initial -final] such that <(..)_(..)>:[+lo]_}:",
@@ -3554,7 +3554,7 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-C,0,0,C,C:[+long],_V(..)V,#<(..)_(..)>
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-S,0,0,P,∅,#_F,
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-s,0,0,s,ts,,
-15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-C+voice,0,0,C:[+voice],C:[-voice],"{P,s,l̥}_, _{P,s,l̥}",
+15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-C+voice,0,0,C:[+voice],C:[-voice],"_,{P,s,l̥}",
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-ɣ-ʁ,0,0,ɣ,x,_#,
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-ɣ-ʁ,0,1,ʁ,χ,_#,
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-ə,0,0,ə,a,_#,
@@ -3563,7 +3563,7 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-a,0,0,a,∅,"C:[-fr,+bk,+hi,-lo]_C:[-fr,+bk,+hi,-lo]",
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-v-ʁ,0,0,v,f,P_,
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-v-ʁ,0,1,ʁ,χ,P_,
-15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-F+voice,0,0,F:[+voice],F:[-voice],"{P,ts}_, _{P,ts}",
+15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-F+voice,0,0,F:[+voice],F:[-voice],"_,{P,ts}",
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-F+voice_2,0,0,F:[+voice],P,l̥_,
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-t,0,0,t,s,"_{k,q}",
 15.2.6,Proto-Eskimo to Nunivak Yup’ik,Nunivak-Yup’ik-i-a-u,0,0,i,ii,":{C_, <(..)_(..)>:[+lo -initial -final] such that <(..)_(..)>:[+lo]_}:",
@@ -3583,14 +3583,14 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-S,0,0,P,∅,#_F,
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-s,0,0,s,ts,,
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-s,1,0,ts,tʃ,,
-15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-C+voice,0,0,C:[+voice],C:[-voice],"{P,s,l̥}_, _{P,s,l̥}",
+15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-C+voice,0,0,C:[+voice],C:[-voice],"_,{P,s,l̥}",
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-ɣ-ʁ,0,0,ɣ,k,_#,
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-ɣ-ʁ,0,1,ʁ,q,_#,
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-ə,0,0,ə,a,_#,
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-ə_2,0,0,ə,∅,#_,
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-i,0,0,i,∅,"#C:[+cor,+anterior,+dist]_C:[+cor,+anterior,+dist]V",
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-a,0,0,a,∅,"C:[-fr,+bk,+hi,-lo]_C:[-fr,+bk,+hi,-lo]",
-15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-F+voice,0,0,F:[+voice],F:[-voice],"{P,ts}_, _{P,ts}",
+15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-F+voice,0,0,F:[+voice],F:[-voice],"_,{P,ts}",
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-F+voice_2,0,0,F:[+voice],P,l̥_,
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-∅,0,0,∅,n,#_iN,
 15.2.7,Proto-Eskimo to Siberian Yup’ik,Siberian-Yup’ik-t,0,0,t,s,"_{k,q}",
@@ -3609,7 +3609,7 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-C,0,0,C,C:[+long],"_V(..)V, after #%",
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-S,0,0,P,∅,#_F,
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-s,0,0,s,ts,,
-15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-C+voice,0,0,C:[+voice],C:[-voice],"{P,s,l̥}_, _{P,s,l̥}",
+15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-C+voice,0,0,C:[+voice],C:[-voice],"_,{P,s,l̥}",
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-ɣ-ʁ,0,0,ɣ,k,_#,
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-ɣ-ʁ,0,1,ʁ,q,_#,
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-ə,0,0,ə,a,_#,
@@ -3617,7 +3617,7 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-i,0,0,i,∅,"#C:[+cor,+anterior,+dist]_C:[+cor,+anterior,+dist]V",
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-a,0,0,a,∅,"C:[-fr,+bk,+hi,-lo]_C:[-fr,+bk,+hi,-lo]",
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-v,0,0,v,ft,_s,
-15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-F+voice,0,0,F:[+voice],F:[-voice],"{P,ts}_, _{P,ts}",
+15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-F+voice,0,0,F:[+voice],F:[-voice],"_,{P,ts}",
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-F+voice_2,0,0,F:[+voice],P,l̥_,
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-t,0,0,t,s,"_{k,q}",
 15.2.8,Proto-Eskimo to Unaaliq Yup’ik,Unaaliq-Yup’ik-i-a-u,0,0,i,ii,":{C_, <(..)_(..)>:[+lo -initial -final] such that <(..)_(..)>:[+lo]_}:",
@@ -10521,7 +10521,7 @@ section_index,section_name,rule_id,step_index,c_index,input,output,env,exception
 37.1.2.5,Proto-Northern Iroquoian to Seneca,Seneca-Vː,0,0,V:[+long],V,V_,
 37.1.2.5,Proto-Northern Iroquoian to Seneca,Seneca-V1”V2,0,0,V=1,1:[+stress],,
 37.1.2.5,Proto-Northern Iroquoian to Seneca,Seneca-V1”V2,0,1,V:[+stress]=2,2,,
-37.1.2.5,Proto-Northern Iroquoian to Seneca,Seneca-aː_2,0,0,"{a,a:[+long]}","{ẽ,ẽ:[+long]}","V:[+nasal]_, _V:[+nasal]",
+37.1.2.5,Proto-Northern Iroquoian to Seneca,Seneca-aː_2,0,0,"{a,a:[+long]}","{ẽ,ẽ:[+long]}","_,V:[+nasal]",
 37.1.2.5,Proto-Northern Iroquoian to Seneca,Seneca-ẽː,0,0,"{ẽ,ẽ:[+long]}","{e,e:[+long]}","_{e,e:[+long],o,o:[+long]}",
 37.1.2.5,Proto-Northern Iroquoian to Seneca,Seneca-ʔ,0,0,ʔ,∅,"_{nk,nkʷ}",
 37.1.2.5,Proto-Northern Iroquoian to Seneca,Seneca-n_2,0,0,n,t,"_{k,kʷ}",

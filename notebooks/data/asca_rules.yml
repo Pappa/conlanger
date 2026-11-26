@@ -1874,20 +1874,20 @@ sections:
     source: index_diachronica.html:1393
     input: '{a,a:[+long]}'
     output: '{ɑ,ɑ:[+long]}'
-    env: '[+rtr]_, _[+rtr]'
-    rule: '{a,a:[+long]} > {ɑ,ɑ:[+long]} / [+rtr]_, _[+rtr]'
+    env: _,[+rtr]
+    rule: '{a,a:[+long]} > {ɑ,ɑ:[+long]} / _,[+rtr]'
   - rule_id: Egyptian-Arabic-aː_2
     source: index_diachronica.html:1394
     input: '{a,a:[+long]}'
     output: '{ɑ,ɑ:[+long]}'
-    env: '{ɑ,ɑ:[+long]}_, _{ɑ,ɑ:[+long]}'
-    rule: '{a,a:[+long]} > {ɑ,ɑ:[+long]} / {ɑ,ɑ:[+long]}_, _{ɑ,ɑ:[+long]}'
+    env: _,{ɑ,ɑ:[+long]}
+    rule: '{a,a:[+long]} > {ɑ,ɑ:[+long]} / _,{ɑ,ɑ:[+long]}'
   - rule_id: Egyptian-Arabic-aː_3
     source: index_diachronica.html:1395
     input: '{a,a:[+long]}'
     output: '{ɛ,ɛ:[+long]}'
-    exception: '{ɑ,ɑ:[+long]}_, _{ɑ,ɑ:[+long]}'
-    rule: '{a,a:[+long]} > {ɛ,ɛ:[+long]} // {ɑ,ɑ:[+long]}_, _{ɑ,ɑ:[+long]}'
+    exception: _,{ɑ,ɑ:[+long]}
+    rule: '{a,a:[+long]} > {ɛ,ɛ:[+long]} // _,{ɑ,ɑ:[+long]}'
   - rule_id: Egyptian-Arabic-q
     source: index_diachronica.html:1396
     input: q
@@ -1937,8 +1937,8 @@ sections:
     source: index_diachronica.html:1410
     input: a:[+long]
     output: æ:[+long]
-    exception: '[+rtr]_, _[+rtr]'
-    rule: a:[+long] > æ:[+long] // [+rtr]_, _[+rtr]
+    exception: _,[+rtr]
+    rule: a:[+long] > æ:[+long] // _,[+rtr]
   - rule_id: Coastal-Hadhrami-Arabic-V-long
     source: index_diachronica.html:1412
     input: V:[-long]
@@ -1972,8 +1972,8 @@ sections:
     source: index_diachronica.html:1421
     input: a:[+long]
     output: æ:[+long]
-    exception: '[+rtr]_, _[+rtr]'
-    rule: a:[+long] > æ:[+long] // [+rtr]_, _[+rtr]
+    exception: _,[+rtr]
+    rule: a:[+long] > æ:[+long] // _,[+rtr]
   - rule_id: Wādı̄-Hadhrami-Arabic-V-long
     source: index_diachronica.html:1423
     input: V:[-long]
@@ -2130,8 +2130,8 @@ sections:
     source: index_diachronica.html:1470
     input: '{C:[+labial],C:[-fr,+bk,+hi,-lo]}'
     output: '[+labial]'
-    env: u:[-long]_, _u:[-long]
-    rule: '{C:[+labial],C:[-fr,+bk,+hi,-lo]} > [+labial] / u:[-long]_, _u:[-long]'
+    env: _,u:[-long]
+    rule: '{C:[+labial],C:[-fr,+bk,+hi,-lo]} > [+labial] / _,u:[-long]'
   - rule_id: Moroccan-Arabic-u,ə
     source: index_diachronica.html:1471
     input: '{u,ə}'
@@ -2142,20 +2142,20 @@ sections:
     source: index_diachronica.html:1472
     input: ə
     output: a
-    env: '{ħ,ʕ}_, _{ħ,ʕ}'
-    rule: ə > a / {ħ,ʕ}_, _{ħ,ʕ}
+    env: _,{ħ,ʕ}
+    rule: ə > a / _,{ħ,ʕ}
   - rule_id: Moroccan-Arabic-ə_2
     source: index_diachronica.html:1473
     input: ə
     output: ɐ
-    env: '[+rtr]_, _[+rtr]'
-    rule: ə > ɐ / [+rtr]_, _[+rtr]
+    env: _,[+rtr]
+    rule: ə > ɐ / _,[+rtr]
   - rule_id: Moroccan-Arabic-ə_3
     source: index_diachronica.html:1474
     input: ə
     output: ɪ
-    exception: '[+rtr]_, _[+rtr]'
-    rule: ə > ɪ // [+rtr]_, _[+rtr]
+    exception: _,[+rtr]
+    rule: ə > ɪ // _,[+rtr]
   - rule_id: Moroccan-Arabic-u_2
     source: index_diachronica.html:1475
     input: u:[-long]
@@ -2166,15 +2166,14 @@ sections:
     source: index_diachronica.html:1476
     input: a:[+long] i:[+long] u:[+long]
     output: ɑ:[+long] e:[+long] o:[+long]
-    env: '[+rtr]_, _[+rtr]'
-    rule: a:[+long] i:[+long] u:[+long] > ɑ:[+long] e:[+long] o:[+long] / [+rtr]_,
-      _[+rtr]
+    env: _,[+rtr]
+    rule: a:[+long] i:[+long] u:[+long] > ɑ:[+long] e:[+long] o:[+long] / _,[+rtr]
   - rule_id: Moroccan-Arabic-aː
     source: index_diachronica.html:1477
     input: a:[+long]
     output: æ:[+long]
-    exception: '[+rtr]_, _[+rtr]'
-    rule: a:[+long] > æ:[+long] // [+rtr]_, _[+rtr]
+    exception: _,[+rtr]
+    rule: a:[+long] > æ:[+long] // _,[+rtr]
   - rule_id: Moroccan-Arabic-C1ˤC2
     source: index_diachronica.html:1478
     input: C:[+pharyn]=1 C=2
@@ -2195,14 +2194,14 @@ sections:
     source: index_diachronica.html:1481
     input: dʒ
     output: ɡ
-    env: '{s,z}_, _{s,z}'
-    rule: dʒ > ɡ / {s,z}_, _{s,z}
+    env: _,{s,z}
+    rule: dʒ > ɡ / _,{s,z}
   - rule_id: Moroccan-Arabic-dʒ_2
     source: index_diachronica.html:1482
     input: dʒ
     output: ʒ
-    exception: '{s,z}_, _{s,z}'
-    rule: dʒ > ʒ // {s,z}_, _{s,z}
+    exception: _,{s,z}
+    rule: dʒ > ʒ // _,{s,z}
   - rule_id: Moroccan-Arabic-s
     source: index_diachronica.html:1483
     input: s
@@ -2241,8 +2240,8 @@ sections:
     source: index_diachronica.html:1501
     input: a
     output: ɑ
-    env: '[+rtr]_, _[+rtr]'
-    rule: a > ɑ / [+rtr]_, _[+rtr]
+    env: _,[+rtr]
+    rule: a > ɑ / _,[+rtr]
   - rule_id: Tunisian-Arabic-a_2
     source: index_diachronica.html:1502
     input: a
@@ -2484,8 +2483,8 @@ sections:
     source: index_diachronica.html:1557
     input: ə
     output: a
-    env: '[+laryngeal]_, _[+laryngeal]'
-    rule: ə > a / [+laryngeal]_, _[+laryngeal]
+    env: _,[+laryngeal]
+    rule: ə > a / _,[+laryngeal]
   - rule_id: Modern-Israeli-Hebrew-ə_2
     source: index_diachronica.html:1558
     input: ə
@@ -3100,8 +3099,8 @@ sections:
     source: index_diachronica.html:1711
     input: '{θ,tʃ,ʃ,r}'
     output: t
-    exception: C_, _C
-    rule: '{θ,tʃ,ʃ,r} > t // C_, _C'
+    exception: _,C
+    rule: '{θ,tʃ,ʃ,r} > t // _,C'
   - rule_id: Blackfoot-∅
     source: index_diachronica.html:1712
     input: ∅
@@ -3471,20 +3470,20 @@ sections:
     source: index_diachronica.html:1780
     input: C:[- nasal]
     output: ∅
-    env: N_, _N
-    rule: C:[- nasal] > ∅ / N_, _N
+    env: _,N
+    rule: C:[- nasal] > ∅ / _,N
   - rule_id: Cheyenne-m
     source: index_diachronica.html:1781
     input: m
     output: ∅
-    env: N_, _N
-    rule: m > ∅ / N_, _N
+    env: _,N
+    rule: m > ∅ / _,N
   - rule_id: Cheyenne-p
     source: index_diachronica.html:1782
     input: p
     output: ∅
-    env: C_, _C
-    rule: p > ∅ / C_, _C
+    env: _,C
+    rule: p > ∅ / _,C
   - rule_id: Cheyenne-W
     source: index_diachronica.html:1783
     input: G
@@ -4049,12 +4048,12 @@ sections:
     steps:
     - input: we
       output: wə
-      exception: '{p,m,k}_, _{p,m,k}'
-      rule: we > wə // {p,m,k}_, _{p,m,k}
+      exception: _,{p,m,k}
+      rule: we > wə // _,{p,m,k}
     - input: wə
       output: o:[+long]
-      exception: '{p,m,k}_, _{p,m,k}'
-      rule: wə > o:[+long] // {p,m,k}_, _{p,m,k}
+      exception: _,{p,m,k}
+      rule: wə > o:[+long] // _,{p,m,k}
   - rule_id: Munsee-Delaware-j
     source: index_diachronica.html:1906
     input: j
@@ -7624,8 +7623,8 @@ sections:
     source: index_diachronica.html:2872
     input: b
     output: w
-    exception: C_, _C
-    rule: b > w // C_, _C
+    exception: _,C
+    rule: b > w // _,C
   - rule_id: Javanese-ə
     source: index_diachronica.html:2873
     input: ə
@@ -7895,8 +7894,8 @@ sections:
     source: index_diachronica.html:2937
     input: t
     output: ð
-    exception: P_, _P
-    rule: t > ð // P_, _P
+    exception: _,P
+    rule: t > ð // _,P
   - rule_id: Palauan-s
     source: index_diachronica.html:2938
     input: s
@@ -8017,8 +8016,8 @@ sections:
     source: index_diachronica.html:2962
     input: ə
     output: ∅
-    env: V_, _V
-    rule: ə > ∅ / V_, _V
+    env: _,V
+    rule: ə > ∅ / _,V
   - rule_id: Proto-North-Sarawak-a
     source: index_diachronica.html:2963
     input: a
@@ -8129,8 +8128,8 @@ sections:
     source: index_diachronica.html:2988
     input: ə
     output: ∅
-    env: V_, _V
-    rule: ə > ∅ / V_, _V
+    env: _,V
+    rule: ə > ∅ / _,V
   - rule_id: Kiput-V+stress
     source: index_diachronica.html:2989
     status: skipped
@@ -8682,8 +8681,8 @@ sections:
     source: index_diachronica.html:3109
     input: β b m
     output: βʷ bʷ mʷ
-    env: u_, _u
-    rule: β b m > βʷ bʷ mʷ / u_, _u
+    env: _,u
+    rule: β b m > βʷ bʷ mʷ / _,u
   - rule_id: Hiw-dr-*r
     source: index_diachronica.html:3110
     input: dr r
@@ -9353,8 +9352,8 @@ sections:
     source: index_diachronica.html:3267
     input: V:[-hi,-lo]
     output: a
-    env: N_, _N
-    rule: V:[-hi,-lo] > a / N_, _N
+    env: _,N
+    rule: V:[-hi,-lo] > a / _,N
   - rule_id: Nixumwak-Nêlêmwa-u-i
     source: index_diachronica.html:3268
     input: u i
@@ -14413,8 +14412,8 @@ sections:
     source: index_diachronica.html:4720
     input: C:[+voice]
     output: C:[-voice]
-    env: '{P,s,l̥}_, _{P,s,l̥}'
-    rule: C:[+voice] > C:[-voice] / {P,s,l̥}_, _{P,s,l̥}
+    env: _,{P,s,l̥}
+    rule: C:[+voice] > C:[-voice] / _,{P,s,l̥}
   - rule_id: Kuskokwim-Yup’ik-ɣ-ʁ
     source: index_diachronica.html:4721
     input: ɣ ʁ
@@ -14442,8 +14441,8 @@ sections:
     source: index_diachronica.html:4725
     input: F:[+voice]
     output: F:[-voice]
-    env: '{P,ts}_, _{P,ts}'
-    rule: F:[+voice] > F:[-voice] / {P,ts}_, _{P,ts}
+    env: _,{P,ts}
+    rule: F:[+voice] > F:[-voice] / _,{P,ts}
   - rule_id: Kuskokwim-Yup’ik-F+voice_2
     source: index_diachronica.html:4726
     input: F:[+voice, α PLACE]
@@ -14554,8 +14553,8 @@ sections:
     source: index_diachronica.html:4747
     input: C:[+voice]
     output: C:[-voice]
-    env: '{P,s,l̥}_, _{P,s,l̥}'
-    rule: C:[+voice] > C:[-voice] / {P,s,l̥}_, _{P,s,l̥}
+    env: _,{P,s,l̥}
+    rule: C:[+voice] > C:[-voice] / _,{P,s,l̥}
   - rule_id: Nunivak-Yup’ik-ɣ-ʁ
     source: index_diachronica.html:4748
     input: ɣ ʁ
@@ -14595,8 +14594,8 @@ sections:
     source: index_diachronica.html:4755
     input: F:[+voice]
     output: F:[-voice]
-    env: '{P,ts}_, _{P,ts}'
-    rule: F:[+voice] > F:[-voice] / {P,ts}_, _{P,ts}
+    env: _,{P,ts}
+    rule: F:[+voice] > F:[-voice] / _,{P,ts}
   - rule_id: Nunivak-Yup’ik-F+voice_2
     source: index_diachronica.html:4756
     input: F:[+voice]
@@ -14703,8 +14702,8 @@ sections:
     source: index_diachronica.html:4776
     input: C:[+voice]
     output: C:[-voice]
-    env: '{P,s,l̥}_, _{P,s,l̥}'
-    rule: C:[+voice] > C:[-voice] / {P,s,l̥}_, _{P,s,l̥}
+    env: _,{P,s,l̥}
+    rule: C:[+voice] > C:[-voice] / _,{P,s,l̥}
   - rule_id: Siberian-Yup’ik-ɣ-ʁ
     source: index_diachronica.html:4777
     input: ɣ ʁ
@@ -14739,8 +14738,8 @@ sections:
     source: index_diachronica.html:4782
     input: F:[+voice]
     output: F:[-voice]
-    env: '{P,ts}_, _{P,ts}'
-    rule: F:[+voice] > F:[-voice] / {P,ts}_, _{P,ts}
+    env: _,{P,ts}
+    rule: F:[+voice] > F:[-voice] / _,{P,ts}
   - rule_id: Siberian-Yup’ik-F+voice_2
     source: index_diachronica.html:4783
     input: F:[+voice]
@@ -14855,8 +14854,8 @@ sections:
     source: index_diachronica.html:4805
     input: C:[+voice]
     output: C:[-voice]
-    env: '{P,s,l̥}_, _{P,s,l̥}'
-    rule: C:[+voice] > C:[-voice] / {P,s,l̥}_, _{P,s,l̥}
+    env: _,{P,s,l̥}
+    rule: C:[+voice] > C:[-voice] / _,{P,s,l̥}
   - rule_id: Unaaliq-Yup’ik-ɣ-ʁ
     source: index_diachronica.html:4806
     input: ɣ ʁ
@@ -14897,8 +14896,8 @@ sections:
     source: index_diachronica.html:4812
     input: F:[+voice]
     output: F:[-voice]
-    env: '{P,ts}_, _{P,ts}'
-    rule: F:[+voice] > F:[-voice] / {P,ts}_, _{P,ts}
+    env: _,{P,ts}
+    rule: F:[+voice] > F:[-voice] / _,{P,ts}
   - rule_id: Unaaliq-Yup’ik-F+voice_2
     source: index_diachronica.html:4813
     input: F:[+voice]
@@ -44750,8 +44749,8 @@ sections:
     source: index_diachronica.html:12656
     input: '{a,a:[+long]}'
     output: '{ẽ,ẽ:[+long]}'
-    env: V:[+nasal]_, _V:[+nasal]
-    rule: '{a,a:[+long]} > {ẽ,ẽ:[+long]} / V:[+nasal]_, _V:[+nasal]'
+    env: _,V:[+nasal]
+    rule: '{a,a:[+long]} > {ẽ,ẽ:[+long]} / _,V:[+nasal]'
   - rule_id: Seneca-ẽː
     source: index_diachronica.html:12657
     input: '{ẽ,ẽ:[+long]}'
